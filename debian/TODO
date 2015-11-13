@@ -1,0 +1,11 @@
+- package-contains-timestamped-gzip
+  https://github.com/cockpit-project/cockpit/issues/3163
+- building twice in a row fails
+  https://github.com/cockpit-project/cockpit/issues/3165
+- PAM integration missing
+- test-suite fails in a pbuilder chroot
+- proper Debian branding
+- enable/start cockpit.socket on installation
+- git builds (pulling deps via npm over the net) vs minified js in the dist
+  tarball
+- double-check package dependencies, make some of them arch:all?
