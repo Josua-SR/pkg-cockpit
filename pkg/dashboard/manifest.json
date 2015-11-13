@@ -1,0 +1,10 @@
+{
+    "version": 0,
+
+    "dashboard": {
+        "index": {
+            "label": "Dashboard",
+            "order": 0
+        }
+    }
+}

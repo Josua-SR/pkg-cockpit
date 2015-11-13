@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+	"http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd">
+<chapter id="packages">
+  <title>Cockpit Packages</title>
+
+  <para>Cockpit is separated into various packages, each of which brings specific
+    features and/or code.</para>
+
+  <warning>
+    <para>In addition, any APIs or behavior not explicitly documented here is an
+      internal API and can be changed at any time.</para>
+  </warning>
+
+  <section id="package-layout">
+    <title>Layout of Package Files</title>
+
+    <para>A package consists of one or more files placed in a directory or its
+      subdirectories. It must have a <code>manifest.json</code> file and follow
+      certain naming conventions.</para>
+
+    <para>The name of a package is the name of the directory.</para>
+
+    <para>The name of the package must be ASCII alphanumeric, and may contain an underscore.
+      Names of directories and files in the package must consist of ASCII alphanumeric
+      along with dash, underscore, dot, and comma. No spaces are allowed.</para>
+
+    <para>Cockpit uses the data directories from the
+      <ulink url="http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html">XDG Base Directory
+        Specification</ulink>
+      to locate packages. The <code>$XDG_DATA_DIRS</code> represents a colon separate list of system data
+      directories, and <code>$XDG_DATA_HOME</code> is a user specific data directory. If the environment
+      variables are not set, defaults are used, according to the spec. If cockpit has been built with an
+      alternate <code>--prefix=/path</code> then the <code>$prefix/share/cockpit</code> is used by
+      default.</para>
+
+    <para>A <code>cockpit/</code> subdirectories in any of these data directories is the location where
+      packages are loaded by Cockpit. If Cockpit finds a package with the same name, in multiple data
+      directories, then the first one wins. According to the spec the first data directory is
+      <code>$XDG_DATA_HOME</code> and then <code>$XDG_DATA_DIRS</code> in order.</para>
+
+    <para>This means that, by default the following directories are searched for cockpit packages, and
+      in this order:</para>
+
+    <itemizedlist>
+      <listitem><para><code>~/.local/share/cockpit/</code></para></listitem>
+      <listitem><para><code>/usr/local/share/cockpit/</code></para></listitem>
+      <listitem><para><code>/usr/share/cockpit/</code></para></listitem>
+    </itemizedlist>
+
+    <para>Packages placed in <code>$XDG_DATA_HOME</code> are not cached by Cockpit or the web browser.
+      Other packages are cached aggressively, and are accessed using a checksum of the files in
+      the packages and their names.</para>
+
+    <para>You can use the following command to list the packages installed on a server. You'll note that
+      it's output may change when you run the command as different users, if there are packages installed
+      in the user's home directory.</para>
+
+<programlisting>
+$ cockpit-bridge --packages
+...
+</programlisting>
+
+    <para>To further clarify things, here is an example package called "my-package" and its file layout:</para>
+
+<programlisting>
+/usr/share/cockpit/
+    my-package/
+        manifest.json
+        file.html
+        some.js
+</programlisting>
+
+    <para>Place or symlink packages in your <code>~/.local/share/cockpit</code> directory (or appropriate
+      <code>$XDG_DATA_HOME</code> location) that you would like to modify and develop. System installed
+      packages should not change while Cockpit is running.</para>
+
+  </section>
+
+  <section id="package-manifest">
+    <title>Package Manifest</title>
+
+    <para>Each package has a <code>manifest.json</code> file. It is a JSON object. The following
+      fields may be present in the manifest:</para>
+
+    <variablelist>
+      <varlistentry>
+        <term>menu</term>
+        <listitem><para>An optional JSON object containing any main menu items that this package
+          provides. These will be added into the Cockpit user interface on the side bar.
+          Each property on this object is named for the identifier of such an item, and the
+          property value is a JSON object described below.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>name</term>
+        <listitem><para>An optional string that changes the name of the package. Normally
+          packages derive their name from the directory that they are located in. This
+          field overrides that name.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>tools</term>
+        <listitem><para>An optional JSON object containing all the tools that this package
+          provides. These will be added into the Cockpit user interface under the 'Tools' menu.
+          Each property on this object is named for the identifier of such a tool, and the
+          property value is a JSON object described below.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>version</term>
+        <listitem><para>An informational version number for the package.</para></listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>Menu items and tools are registered using JSON objects that have the
+      following properties:</para>
+
+    <variablelist>
+      <varlistentry>
+        <term>label</term>
+        <listitem><para>The label for the tool.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>path</term>
+        <listitem><para>The relative path to the HTML file within the package that implements
+          the tool.</para></listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>An example manifest.json with some optional properties set:</para>
+
+<programlisting>
+{
+  "version": 0,
+  "tools": {
+     "mytool": {
+        "label": "My Tool",
+        "path": "tool.html"
+     }
+  }
+}
+</programlisting>
+
+  </section>
+
+  <section id="package-links">
+    <title>Package Links and Paths</title>
+
+    <para>When referring to files in your package, such as in a hyperlink or a <code>&lt;style&gt;</code>
+      tag or <code>&lt;script&gt;</code> tag, simply use a relative path, and refer to the files
+      in the same directory. When you need to refer to files in another package use a relative link.</para>
+
+    <para>For example here's how to include the base <code>cockpit.js</code> script in your HTML
+      from the <code>latest</code> package:</para>
+
+<programlisting>
+&lt;script src="../base1/cockpit.js"&gt;&lt;/script&gt;
+</programlisting>
+
+    <para>Do not assume you can link to any file in any other package. Refer to the
+      <link linkend="development">list of API packages</link> for those that are
+      available for use.</para>
+  </section>
+
+  <section id="package-minified">
+    <title>Content Negotiation</title>
+
+    <para>In order to support language specific files, gzipped and/or minified data, the
+      files in a package are loaded using content negotiation logic.</para>
+
+    <para>If a file does not exist at the expected path, Cockpit tries to insert
+      <code>.min</code> before its extension. It also tries adding a <code>.gz</code>
+      to both of those file names. If the file is still not found, and the request path has
+      more than one extension, the second to the last extension is popped off, and the above
+      process repeats.</para>
+
+    <para>This means that for the file <code>test.de.js</code> in the package named
+      <code>mypackage</code> the following files would be tried in this order:</para>
+
+<programlisting>
+mypackage/test.de.js
+mypackage/test.de.min.js
+mypackage/test.de.js.gz
+mypackage/test.de.min.js.gz
+mypackage/test.js
+mypackage/test.min.js
+mypackage/test.js.gz
+mypackage/test.min.js.gz
+</programlisting>
+
+    <para>When packages are loaded from a system directory, Cockpit optimizes the file
+      system lookups above, by pre-listing the files. This is one of the reasons that
+      you should never change packages installed to a system directory while Cockpit
+      is running.</para>
+  </section>
+
+  <section id="package-api">
+    <title>Using Cockpit API</title>
+
+    <para>Cockpit has API available for writing packages. There is no API available
+      for external callers to invoke via HTTP, REST or otherwise.</para>
+
+    <warning>
+      <para>Unless an API is explicitly marked as stable, it is unstable and can
+        be changed when Cockpit is upgraded.</para>
+    </warning>
+
+    <para>API from various packages can be used to implement Cockpit packages. Each package
+      listed here has some API available for use. Only the API explicitly documented should
+      be used. In some cases even though the API is available it is not (yet) stable.</para>
+
+    <itemizedlist>
+      <listitem><para><link linkend="development">API Listing</link></para></listitem>
+    </itemizedlist>
+
+    <para>To include javascript from the API, simply load it into your HTML using
+      a script tag. Alternatively you can use an javascript loader.</para>
+
+  </section>
+
+</chapter>

@@ -1,0 +1,14 @@
+{
+    "version": 0,
+
+    "linguas": {
+        "en": "English",
+        "ca": "Catalan",
+        "de": "Deutsch",
+        "da": "Dansk",
+        "pl": "Polski",
+        "pt_BR": "Portugueses",
+        "tr": "Türkçe",
+        "uk": "Українська"
+    }
+}

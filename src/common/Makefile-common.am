@@ -1,0 +1,176 @@
+test_dbus_generated = test-dbus-generated.h test-dbus-generated.c
+
+test-dbus-generated.h: test-dbus-generated.c
+test-dbus-generated.c: Makefile.am $(srcdir)/src/common/com.redhat.Cockpit.DBusTests.xml
+	$(AM_V_GEN) $(GDBUS_CODEGEN) \
+		--interface-prefix com.redhat.Cockpit.DBusTests \
+		--c-namespace Test \
+		--c-generate-object-manager \
+		--generate-c-code test-dbus-generated \
+		$(srcdir)/src/common/com.redhat.Cockpit.DBusTests.xml \
+		$(NULL)
+
+src/common/cockpitassets.h: src/common/cockpitassets.gresource.xml
+	@$(MKDIR_P) $(dir $@)
+	$(AM_V_GEN) glib-compile-resources --target=$@ --generate-header --sourcedir=$(dir $<) $<
+src/common/cockpitassets.c: src/common/cockpitassets.gresource.xml src/common/fail.html
+	@$(MKDIR_P) $(dir $@)
+	$(AM_V_GEN) glib-compile-resources --target=$@ --generate-source --sourcedir=$(dir $<) $<
+
+test_built_sources = $(test_dbus_generated)
+mock_dbus_sources = \
+	src/common/mock-service.c \
+	src/common/mock-service.h \
+	$(NULL)
+
+COCKPIT_ASSETS = \
+       src/common/cockpitassets.h \
+       src/common/cockpitassets.c \
+       $(NULL)
+
+BUILT_SOURCES += $(test_built_sources) $(COCKPIT_ASSETS)
+CLEANFILES += $(test_built_sources) $(COCKPIT_ASSETS)
+
+EXTRA_DIST += \
+	src/common/mock-content \
+	src/common/com.redhat.Cockpit.DBusTests.xml \
+	src/common/cockpitassets.gresource.xml \
+	src/common/fail.html \
+	$(NULL)
+
+noinst_LIBRARIES += libcockpit-common.a
+
+nodist_libcockpit_common_a_SOURCES = \
+	$(dbus_built_sources) \
+	$(NULL)
+libcockpit_common_a_SOURCES = \
+	src/common/cockpitcertificate.c \
+	src/common/cockpitcertificate.h \
+	src/common/cockpitenums.h \
+	src/common/cockpiterror.h src/common/cockpiterror.c \
+	src/common/cockpithex.c \
+	src/common/cockpithex.h \
+	src/common/cockpitjson.c \
+	src/common/cockpitjson.h \
+	src/common/cockpitlog.h src/common/cockpitlog.c \
+	src/common/cockpitloopback.c \
+	src/common/cockpitloopback.h \
+	src/common/cockpitmemory.c \
+	src/common/cockpitmemory.h \
+	src/common/cockpittypes.h \
+	src/common/cockpitpipe.c \
+	src/common/cockpitpipe.h \
+	src/common/cockpitpipetransport.c \
+	src/common/cockpitpipetransport.h \
+	src/common/cockpitstream.c \
+	src/common/cockpitstream.h \
+	src/common/cockpitsystem.c \
+	src/common/cockpitsystem.h \
+	src/common/cockpittemplate.c \
+	src/common/cockpittemplate.h \
+	src/common/cockpittest.c \
+	src/common/cockpittest.h \
+	src/common/cockpittransport.c \
+	src/common/cockpittransport.h \
+	src/common/cockpitunicode.c \
+	src/common/cockpitunicode.h \
+	src/common/cockpitunixfd.c \
+	src/common/cockpitunixfd.h \
+	src/common/cockpitunixsignal.c \
+	src/common/cockpitunixsignal.h \
+	src/common/cockpitwebfilter.h \
+	src/common/cockpitwebfilter.c \
+	src/common/cockpitwebinject.h \
+	src/common/cockpitwebinject.c \
+	src/common/cockpitwebresponse.h \
+	src/common/cockpitwebresponse.c \
+	src/common/cockpitwebserver.h \
+	src/common/cockpitwebserver.c \
+	src/common/cockpitconf.h \
+	src/common/cockpitconf.c \
+	$(COCKPIT_ASSETS)
+	$(NULL)
+
+libcockpit_common_a_CFLAGS = \
+	-DG_LOG_DOMAIN=\"cockpit-protocol\" \
+	$(COCKPIT_CFLAGS) \
+	$(NULL)
+
+libcockpit_common_a_LIBS = \
+	libcockpit-common.a \
+	libwebsocket.a \
+	$(COCKPIT_LIBS) \
+	$(NULL)
+
+# -----------------------------------------------------------------------------
+# TESTS
+
+COCKPIT_CHECKS = \
+	test-hex \
+	test-json \
+	test-pipe \
+	test-stream \
+	test-transport \
+	test-unixsignal \
+	test-template \
+	test-webresponse \
+	test-webserver \
+	test-config \
+	test-unicode \
+	$(NULL)
+
+test_hex_CFLAGS = $(libcockpit_common_a_CFLAGS)
+test_hex_SOURCES = src/common/test-hex.c
+test_hex_LDADD = $(libcockpit_common_a_LIBS)
+
+test_json_CFLAGS = $(libcockpit_common_a_CFLAGS)
+test_json_SOURCES = src/common/test-json.c
+test_json_LDADD = $(libcockpit_common_a_LIBS)
+
+test_pipe_CFLAGS = $(libcockpit_common_a_CFLAGS)
+test_pipe_SOURCES = src/common/test-pipe.c
+test_pipe_LDADD = $(libcockpit_common_a_LIBS)
+
+test_stream_CFLAGS = $(libcockpit_common_a_CFLAGS)
+test_stream_SOURCES = src/common/test-stream.c \
+	src/common/mock-io-stream.c src/common/mock-io-stream.h
+test_stream_LDADD = $(libcockpit_common_a_LIBS)
+
+test_template_CFLAGS = $(libcockpit_common_a_CFLAGS)
+test_template_SOURCES = src/common/test-template.c
+test_template_LDADD = $(libcockpit_common_a_LIBS)
+
+test_transport_CFLAGS = $(libcockpit_common_a_CFLAGS)
+test_transport_SOURCES = src/common/test-transport.c
+test_transport_LDADD = $(libcockpit_common_a_LIBS)
+
+test_unicode_CFLAGS = $(libcockpit_common_a_CFLAGS)
+test_unicode_SOURCES = src/common/test-unicode.c
+test_unicode_LDADD = $(libcockpit_common_a_LIBS)
+
+test_unixsignal_CFLAGS = $(libcockpit_common_a_CFLAGS)
+test_unixsignal_SOURCES = src/common/test-unixsignal.c
+test_unixsignal_LDADD = $(libcockpit_common_a_LIBS)
+
+test_webresponse_SOURCES = \
+	src/common/test-webresponse.c \
+	src/common/mock-io-stream.c src/common/mock-io-stream.h \
+	$(COCKPIT_ASSETS) \
+	$(NULL)
+test_webresponse_CFLAGS = $(libcockpit_common_a_CFLAGS)
+test_webresponse_LDADD = $(libcockpit_common_a_LIBS)
+
+test_webserver_SOURCES = src/common/test-webserver.c
+test_webserver_CFLAGS = $(libcockpit_common_a_CFLAGS)
+test_webserver_LDADD = $(libcockpit_common_a_LIBS)
+
+test_config_CFLAGS = $(libcockpit_common_a_CFLAGS)
+test_config_SOURCES = src/common/test-config.c
+test_config_LDADD = $(libcockpit_common_a_LIBS)
+
+noinst_PROGRAMS += $(COCKPIT_CHECKS)
+TESTS += $(COCKPIT_CHECKS)
+
+EXTRA_DIST += \
+	src/common/mock-stderr \
+	$(NULL)

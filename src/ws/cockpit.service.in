@@ -1,0 +1,10 @@
+[Unit]
+Description=Cockpit Web Service
+Documentation=man:cockpit-ws(8)
+
+[Service]
+ExecStartPre=@sbindir@/remotectl certificate --ensure --user=root --group=@group@
+ExecStart=@libexecdir@/cockpit-ws
+PermissionsStartOnly=true
+User=@user@
+Group=@group@

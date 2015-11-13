@@ -1,0 +1,12 @@
+{
+    "version": 0,
+    "name": "storage",
+
+    "menu": {
+        "index": {
+            "label": "Storage",
+            "order": 15
+        }
+    }
+
+}

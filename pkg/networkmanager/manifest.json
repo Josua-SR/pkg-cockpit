@@ -1,0 +1,12 @@
+{
+    "version": 0,
+    "name": "network",
+
+    "menu": {
+        "index": {
+            "label": "Networking",
+            "order": 20
+        }
+    }
+
+}

@@ -1,0 +1,10 @@
+{
+    "version": 0,
+
+    "menu": {
+        "index": {
+            "label": "Containers",
+            "order": 7
+        }
+    }
+}
