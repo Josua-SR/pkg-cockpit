@@ -35,9 +35,9 @@ Architecture: any
 Depends: ${misc:Depends},
          cockpit-bridge,
          cockpit-ws,
+         cockpit-shell,
          xdg-utils
 Recommends: cockpit-networkmanager,
-            cockpit-shell,
             cockpit-docker
 Suggests: cockpit-doc,
           cockpit-pcp
