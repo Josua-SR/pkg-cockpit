@@ -18,3 +18,4 @@
   https://github.com/cockpit-project/cockpit/releases
 - PolicyKit integration, cockpit-polkit needs to be setuid-root
   Add postinst to chmod 4755 /usr/lib/cockpit/cockpit-polkit.
+- Update/Review debian/copyright (e.g. for external resources)
