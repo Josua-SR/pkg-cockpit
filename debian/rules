@@ -6,6 +6,8 @@ DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 	dh $@
 
 override_dh_auto_configure:
+	# Hack! as long as we do not have the tools to rebuild the js bundles, ensure they are not rebuilt
+	touch `find * -name bundle.min.js` pkg/kubernetes/kubernetes.min.js
 	dh_auto_configure -- \
 		--with-pamdir=/lib/$(DEB_HOST_MULTIARCH)/security \
 		--libexecdir=/usr/lib/cockpit
