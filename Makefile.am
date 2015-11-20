@@ -29,6 +29,8 @@ V_GZIP = $(V_GZIP_$(V))
 V_GZIP_ = $(V_GZIP_$(AM_DEFAULT_VERBOSITY))
 V_GZIP_0 = @echo "  GZIP    " $@;
 
+GZIP = gzip -n
+
 MV = mv -f
 
 JSMODULE = $(srcdir)/tools/missing $(srcdir)/tools/jsmodule
@@ -48,19 +50,19 @@ CSSBUNDLE = $(srcdir)/tools/missing $(srcdir)/tools/cssbundle
 
 .min.css.min.css.gz:
 	@$(MKDIR_P) $(dir $@)
-	$(V_GZIP) gzip -c $< > $@.tmp && $(MV) $@.tmp $@
+	$(V_GZIP) $(GZIP) -c $< > $@.tmp && $(MV) $@.tmp $@
 .min.html.min.html.gz:
 	@$(MKDIR_P) $(dir $@)
-	$(V_GZIP) gzip -c $< > $@.tmp && $(MV) $@.tmp $@
+	$(V_GZIP) $(GZIP) -c $< > $@.tmp && $(MV) $@.tmp $@
 .js.js.gz:
 	@$(MKDIR_P) $(dir $@)
-	$(V_GZIP) gzip -c $< > $@.tmp && $(MV) $@.tmp $@
+	$(V_GZIP) $(GZIP) -c $< > $@.tmp && $(MV) $@.tmp $@
 .min.js.min.js.gz:
 	@$(MKDIR_P) $(dir $@)
-	$(V_GZIP) gzip -c $< > $@.tmp && $(MV) $@.tmp $@
+	$(V_GZIP) $(GZIP) -c $< > $@.tmp && $(MV) $@.tmp $@
 .woff.woff.gz:
 	@$(MKDIR_P) $(dir $@)
-	$(V_GZIP) gzip -c $< > $@.tmp && $(MV) $@.tmp $@
+	$(V_GZIP) $(GZIP) -c $< > $@.tmp && $(MV) $@.tmp $@
 
 po/po.%.js: po/%.po
 	@$(MKDIR_P) $(dir $@)
@@ -88,10 +90,12 @@ AM_CPPFLAGS = \
 	-DPACKAGE_LIBEXEC_DIR=\""$(libexecdir)"\" \
 	-DPACKAGE_SYSCONF_DIR=\""$(sysconfdir)"\" \
 	-DPACKAGE_BIN_DIR=\""$(bindir)"\" \
-	-DPACKAGE_LOCALSTATE_DIR=\""$(localstatedir)"\" \
+	-DPACKAGE_LOCALSTATE_DIR=\""$(localstatedir)/lib/cockpit"\" \
 	-DPACKAGE_LIB_DIR=\""$(libdir)"\" \
 	-D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT \
 	$(NULL)
+
+AM_LDFLAGS = -Wl,--as-needed
 
 LOG_DRIVER = $(top_srcdir)/tools/tap-driver
 LOG_COMPILER = $(top_srcdir)/tools/tap-gtester
@@ -146,6 +150,7 @@ SED_SUBST = sed \
         -e 's,[@]VERSION[@],$(VERSION),g' \
         -e 's,[@]user[@],$(COCKPIT_USER),g' \
         -e 's,[@]group[@],$(COCKPIT_GROUP),g' \
+        -e 's,[@]selinux_config_type[@],$(COCKPIT_SELINUX_CONFIG_TYPE),g' \
         $(NULL)
 
 GDBUS_CODEGEN = $(top_srcdir)/tools/gdbus-unbreak-codegen
@@ -250,7 +255,6 @@ include src/static/Makefile-static.am
 include src/remotectl/Makefile-remotectl.am
 include src/reauthorize/Makefile-reauthorize.am
 include src/retest/Makefile.am
-include src/selinux/Makefile-selinux.am
 include src/pam-ssh-add/Makefile.am
 include branding/default/Makefile.am
 include branding/fedora/Makefile.am
