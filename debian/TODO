@@ -6,7 +6,6 @@
 - git builds (pulling deps via npm over the net) vs minified js in the dist
   tarball
 - double-check package dependencies
-- make cockpit and cockpit-{docker,shell,networkmanager) arch:all?
 - package storaged
   https://github.com/cockpit-project/storaged
 - /var/lib/cockpit
@@ -16,3 +15,5 @@
 - PolicyKit integration, cockpit-polkit needs to be setuid-root
   Add postinst to chmod 4755 /usr/lib/cockpit/cockpit-polkit.
 - Update/Review debian/copyright (e.g. for external resources)
+- Intra-package dependencies (components should depend on a strict version of
+  cockpit-ws)
