@@ -1,5 +1,3 @@
-- package-contains-timestamped-gzip
-  https://github.com/cockpit-project/cockpit/issues/3163
 - building twice in a row fails
   https://github.com/cockpit-project/cockpit/issues/3165
 - PAM integration missing (tools/cockpit.pam), review PAM modules
