@@ -137,6 +137,7 @@ TESTS = $(am__EXEEXT_13) $(am__EXEEXT_14) $(am__EXEEXT_15) \
 @ENABLE_DOC_TRUE@	$(NULL)
 
 @ENABLE_DOC_TRUE@@WITH_COCKPIT_WS_TRUE@am__append_4 = \
+@ENABLE_DOC_TRUE@@WITH_COCKPIT_WS_TRUE@	doc/man/cockpit.1 \
 @ENABLE_DOC_TRUE@@WITH_COCKPIT_WS_TRUE@	doc/man/cockpit-ws.8 \
 @ENABLE_DOC_TRUE@@WITH_COCKPIT_WS_TRUE@	doc/man/cockpit.conf.5 \
 @ENABLE_DOC_TRUE@@WITH_COCKPIT_WS_TRUE@	doc/man/pam_ssh_add.8 \
@@ -144,6 +145,7 @@ TESTS = $(am__EXEEXT_13) $(am__EXEEXT_14) $(am__EXEEXT_15) \
 @ENABLE_DOC_TRUE@@WITH_COCKPIT_WS_TRUE@	$(NULL)
 
 @ENABLE_DOC_TRUE@@WITH_COCKPIT_WS_TRUE@am__append_5 = \
+@ENABLE_DOC_TRUE@@WITH_COCKPIT_WS_TRUE@	doc/man/cockpit.xml \
 @ENABLE_DOC_TRUE@@WITH_COCKPIT_WS_TRUE@	doc/man/cockpit-ws.xml \
 @ENABLE_DOC_TRUE@@WITH_COCKPIT_WS_TRUE@	doc/man/cockpit.conf.xml \
 @ENABLE_DOC_TRUE@@WITH_COCKPIT_WS_TRUE@	doc/man/pam_ssh_add.xml \
@@ -166,11 +168,9 @@ TESTS = $(am__EXEEXT_13) $(am__EXEEXT_14) $(am__EXEEXT_15) \
 @ENABLE_PCP_TRUE@am__append_12 = mock-pmda.so
 @WITH_COCKPIT_WS_TRUE@am__append_13 = libcockpit-ws.a
 @WITH_COCKPIT_WS_TRUE@am__append_14 = test_rsa_key \
-@WITH_COCKPIT_WS_TRUE@	cockpit-testing.service \
-@WITH_COCKPIT_WS_TRUE@	test-server.service
+@WITH_COCKPIT_WS_TRUE@	cockpit-testing.service
 @WITH_COCKPIT_WS_TRUE@am__append_15 = test_rsa_key $(NULL) \
-@WITH_COCKPIT_WS_TRUE@	cockpit-testing.service \
-@WITH_COCKPIT_WS_TRUE@	test-server.service cockpit.service \
+@WITH_COCKPIT_WS_TRUE@	cockpit-testing.service cockpit.service \
 @WITH_COCKPIT_WS_TRUE@	$(NULL) $(appdata_DATA) $(desktop_DATA) \
 @WITH_COCKPIT_WS_TRUE@	$(NULL)
 @WITH_COCKPIT_WS_TRUE@am__append_16 = src/ws/mock_rsa_key \
@@ -184,7 +184,6 @@ TESTS = $(am__EXEEXT_13) $(am__EXEEXT_14) $(am__EXEEXT_15) \
 @WITH_COCKPIT_WS_TRUE@	src/ws/mock-config.conf $(NULL) \
 @WITH_COCKPIT_WS_TRUE@	src/ws/cockpit.service.in \
 @WITH_COCKPIT_WS_TRUE@	src/ws/cockpit-testing.service.in \
-@WITH_COCKPIT_WS_TRUE@	src/ws/test-server.service.in \
 @WITH_COCKPIT_WS_TRUE@	$(firewall_DATA) $(NULL) \
 @WITH_COCKPIT_WS_TRUE@	$(appdata_in_files) $(desktop_in_files) \
 @WITH_COCKPIT_WS_TRUE@	$(pixmap_DATA) $(NULL) $(static_DATA) \
@@ -195,9 +194,7 @@ TESTS = $(am__EXEEXT_13) $(am__EXEEXT_14) $(am__EXEEXT_15) \
 @WITH_COCKPIT_WS_TRUE@am__append_18 = src/ws/cockpit.socket
 @WITH_COCKPIT_WS_TRUE@am__append_19 = cockpit.service
 @WITH_COCKPIT_WS_TRUE@am__append_20 = cockpit-testing.service \
-@WITH_COCKPIT_WS_TRUE@	$(srcdir)/src/ws/cockpit-testing.socket \
-@WITH_COCKPIT_WS_TRUE@	$(srcdir)/src/ws/test-server.socket \
-@WITH_COCKPIT_WS_TRUE@	test-server.service
+@WITH_COCKPIT_WS_TRUE@	$(srcdir)/src/ws/cockpit-testing.socket
 
 # ----------------------------------------------------------------------------------------------------
 @WITH_COCKPIT_WS_TRUE@am__append_21 = test-server $(WS_CHECKS) \
@@ -318,12 +315,17 @@ libcockpit_ws_a_LIBADD =
 am__libcockpit_ws_a_SOURCES_DIST = src/ws/cockpitws.h \
 	src/ws/cockpithandlers.h src/ws/cockpithandlers.c \
 	src/ws/cockpitauth.h src/ws/cockpitauth.c \
-	src/ws/cockpitcreds.h src/ws/cockpitcreds.c \
-	src/ws/cockpitwebservice.h src/ws/cockpitwebservice.c \
-	src/ws/cockpitsshtransport.h src/ws/cockpitsshtransport.c \
-	src/ws/cockpitsshagent.h src/ws/cockpitsshagent.c
+	src/ws/cockpitchannelresponse.h \
+	src/ws/cockpitchannelresponse.c src/ws/cockpitchannelsocket.h \
+	src/ws/cockpitchannelsocket.c src/ws/cockpitcreds.h \
+	src/ws/cockpitcreds.c src/ws/cockpitwebservice.h \
+	src/ws/cockpitwebservice.c src/ws/cockpitsshtransport.h \
+	src/ws/cockpitsshtransport.c src/ws/cockpitsshagent.h \
+	src/ws/cockpitsshagent.c
 @WITH_COCKPIT_WS_TRUE@am_libcockpit_ws_a_OBJECTS = src/ws/libcockpit_ws_a-cockpithandlers.$(OBJEXT) \
 @WITH_COCKPIT_WS_TRUE@	src/ws/libcockpit_ws_a-cockpitauth.$(OBJEXT) \
+@WITH_COCKPIT_WS_TRUE@	src/ws/libcockpit_ws_a-cockpitchannelresponse.$(OBJEXT) \
+@WITH_COCKPIT_WS_TRUE@	src/ws/libcockpit_ws_a-cockpitchannelsocket.$(OBJEXT) \
 @WITH_COCKPIT_WS_TRUE@	src/ws/libcockpit_ws_a-cockpitcreds.$(OBJEXT) \
 @WITH_COCKPIT_WS_TRUE@	src/ws/libcockpit_ws_a-cockpitwebservice.$(OBJEXT) \
 @WITH_COCKPIT_WS_TRUE@	src/ws/libcockpit_ws_a-cockpitsshtransport.$(OBJEXT) \
@@ -410,6 +412,7 @@ am__EXEEXT_7 = test-hex$(EXEEXT) test-json$(EXEEXT) test-pipe$(EXEEXT) \
 @WITH_COCKPIT_WS_TRUE@	test-sshtransport$(EXEEXT) \
 @WITH_COCKPIT_WS_TRUE@	test-sshagent$(EXEEXT) \
 @WITH_COCKPIT_WS_TRUE@	test-webservice$(EXEEXT) \
+@WITH_COCKPIT_WS_TRUE@	test-channelresponse$(EXEEXT) \
 @WITH_COCKPIT_WS_TRUE@	test-handlers$(EXEEXT) \
 @WITH_COCKPIT_WS_TRUE@	test-kerberos$(EXEEXT) $(am__EXEEXT_4)
 @WITH_COCKPIT_WS_TRUE@am__EXEEXT_9 = test-server$(EXEEXT) \
@@ -546,6 +549,20 @@ test_channel_OBJECTS = $(am_test_channel_OBJECTS)
 test_channel_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_channel_LINK = $(CCLD) $(test_channel_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+am__test_channelresponse_SOURCES_DIST = src/ws/test-channelresponse.c \
+	src/ws/mock-auth.c src/ws/mock-auth.h \
+	src/common/mock-io-stream.c src/common/mock-io-stream.h
+@WITH_COCKPIT_WS_TRUE@am_test_channelresponse_OBJECTS = src/ws/test_channelresponse-test-channelresponse.$(OBJEXT) \
+@WITH_COCKPIT_WS_TRUE@	src/ws/test_channelresponse-mock-auth.$(OBJEXT) \
+@WITH_COCKPIT_WS_TRUE@	src/common/test_channelresponse-mock-io-stream.$(OBJEXT) \
+@WITH_COCKPIT_WS_TRUE@	$(am__objects_1)
+test_channelresponse_OBJECTS = $(am_test_channelresponse_OBJECTS)
+@WITH_COCKPIT_WS_TRUE@test_channelresponse_DEPENDENCIES =  \
+@WITH_COCKPIT_WS_TRUE@	libwebsocket.a libcockpit-ws.a \
+@WITH_COCKPIT_WS_TRUE@	$(am__DEPENDENCIES_5) \
+@WITH_COCKPIT_WS_TRUE@	$(am__DEPENDENCIES_1)
+test_channelresponse_LINK = $(CCLD) $(test_channelresponse_CFLAGS) \
+	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_config_OBJECTS = src/common/test_config-test-config.$(OBJEXT)
 test_config_OBJECTS = $(am_test_config_OBJECTS)
 am__DEPENDENCIES_7 = libcockpit-common.a libwebsocket.a \
@@ -850,23 +867,24 @@ SOURCES = $(libcockpit_bridge_a_SOURCES) \
 	$(mock_agent_bridge_SOURCES) $(mock_bridge_SOURCES) \
 	$(mock_echo_SOURCES) $(mock_reauthorize_SOURCES) \
 	$(mock_sshd_SOURCES) $(remotectl_SOURCES) $(test_auth_SOURCES) \
-	$(test_channel_SOURCES) $(test_config_SOURCES) \
-	$(test_creds_SOURCES) $(test_fs_SOURCES) \
-	$(test_handlers_SOURCES) $(test_hex_SOURCES) \
-	$(test_httpstream_SOURCES) $(test_json_SOURCES) \
-	$(test_kerberos_SOURCES) $(test_metrics_SOURCES) \
-	$(test_packages_SOURCES) $(test_paths_SOURCES) \
-	$(test_pcp_SOURCES) $(test_pcp_archives_SOURCES) \
-	$(test_pipe_SOURCES) $(test_pipe_channel_SOURCES) \
-	$(test_portal_SOURCES) $(test_reauthorize_SOURCES) \
-	$(test_rules_SOURCES) $(test_server_SOURCES) \
-	$(nodist_test_server_SOURCES) $(test_setup_SOURCES) \
-	$(test_ssh_add_SOURCES) $(test_sshagent_SOURCES) \
-	$(test_sshtransport_SOURCES) $(test_stream_SOURCES) \
-	$(test_template_SOURCES) $(test_transport_SOURCES) \
-	$(test_unicode_SOURCES) $(test_unixsignal_SOURCES) \
-	$(test_webresponse_SOURCES) $(test_webserver_SOURCES) \
-	$(test_webservice_SOURCES) $(test_websocket_SOURCES)
+	$(test_channel_SOURCES) $(test_channelresponse_SOURCES) \
+	$(test_config_SOURCES) $(test_creds_SOURCES) \
+	$(test_fs_SOURCES) $(test_handlers_SOURCES) \
+	$(test_hex_SOURCES) $(test_httpstream_SOURCES) \
+	$(test_json_SOURCES) $(test_kerberos_SOURCES) \
+	$(test_metrics_SOURCES) $(test_packages_SOURCES) \
+	$(test_paths_SOURCES) $(test_pcp_SOURCES) \
+	$(test_pcp_archives_SOURCES) $(test_pipe_SOURCES) \
+	$(test_pipe_channel_SOURCES) $(test_portal_SOURCES) \
+	$(test_reauthorize_SOURCES) $(test_rules_SOURCES) \
+	$(test_server_SOURCES) $(nodist_test_server_SOURCES) \
+	$(test_setup_SOURCES) $(test_ssh_add_SOURCES) \
+	$(test_sshagent_SOURCES) $(test_sshtransport_SOURCES) \
+	$(test_stream_SOURCES) $(test_template_SOURCES) \
+	$(test_transport_SOURCES) $(test_unicode_SOURCES) \
+	$(test_unixsignal_SOURCES) $(test_webresponse_SOURCES) \
+	$(test_webserver_SOURCES) $(test_webservice_SOURCES) \
+	$(test_websocket_SOURCES)
 DIST_SOURCES = $(libcockpit_bridge_a_SOURCES) \
 	$(libcockpit_common_a_SOURCES) \
 	$(am__libcockpit_pcp_a_SOURCES_DIST) \
@@ -880,6 +898,7 @@ DIST_SOURCES = $(libcockpit_bridge_a_SOURCES) \
 	$(am__mock_echo_SOURCES_DIST) $(mock_reauthorize_SOURCES) \
 	$(am__mock_sshd_SOURCES_DIST) $(am__remotectl_SOURCES_DIST) \
 	$(am__test_auth_SOURCES_DIST) $(test_channel_SOURCES) \
+	$(am__test_channelresponse_SOURCES_DIST) \
 	$(test_config_SOURCES) $(am__test_creds_SOURCES_DIST) \
 	$(test_fs_SOURCES) $(am__test_handlers_SOURCES_DIST) \
 	$(test_hex_SOURCES) $(test_httpstream_SOURCES) \
@@ -1189,7 +1208,6 @@ am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(srcdir)/src/reauthorize/Makefile-reauthorize.am \
 	$(srcdir)/src/remotectl/Makefile-remotectl.am \
 	$(srcdir)/src/retest/Makefile.am \
-	$(srcdir)/src/selinux/Makefile-selinux.am \
 	$(srcdir)/src/static/Makefile-static.am \
 	$(srcdir)/src/websocket/Makefile-websocket.am \
 	$(srcdir)/src/ws/Makefile-ws.am \
@@ -1255,6 +1273,7 @@ CATOBJEXT = @CATOBJEXT@
 CC = @CC@
 CCDEPMODE = @CCDEPMODE@
 CFLAGS = @CFLAGS@
+CHCON = @CHCON@
 COCKPIT_BRIDGE_CFLAGS = @COCKPIT_BRIDGE_CFLAGS@
 COCKPIT_BRIDGE_LIBS = @COCKPIT_BRIDGE_LIBS@
 COCKPIT_CFLAGS = @COCKPIT_CFLAGS@
@@ -1264,6 +1283,7 @@ COCKPIT_PCP_CFLAGS = @COCKPIT_PCP_CFLAGS@
 COCKPIT_PCP_LIBS = @COCKPIT_PCP_LIBS@
 COCKPIT_POLKIT_CFLAGS = @COCKPIT_POLKIT_CFLAGS@
 COCKPIT_POLKIT_LIBS = @COCKPIT_POLKIT_LIBS@
+COCKPIT_SELINUX_CONFIG_TYPE = @COCKPIT_SELINUX_CONFIG_TYPE@
 COCKPIT_SESSION_CFLAGS = @COCKPIT_SESSION_CFLAGS@
 COCKPIT_SESSION_LIBS = @COCKPIT_SESSION_LIBS@
 COCKPIT_USER = @COCKPIT_USER@
@@ -1476,9 +1496,9 @@ EXTRA_DIST = README.md branding $(am__append_1) $(am__append_5) \
 	tools/qunit-config.js tools/gdbus-unbreak-codegen \
 	$(VALGRIND_SUPPRESSIONS) $(am__append_16) \
 	$(pam_reauthorize_FILES) $(NULL) $(pam_CONFIGS) \
-	$(SELINUX_FILES) $(pam_ssh_add_FILES) $(NULL) \
-	src/pam-ssh-add/mock-ssh-agent src/pam-ssh-add/mock-ssh-add \
-	src/pam-ssh-add/mock-environment $(NULL)
+	$(pam_ssh_add_FILES) $(NULL) src/pam-ssh-add/mock-ssh-agent \
+	src/pam-ssh-add/mock-ssh-add src/pam-ssh-add/mock-environment \
+	$(NULL)
 
 # ----------------------------------------------------------------------------------------------------
 CLEANFILES = $(man_MANS) $(am__append_2) pkg/base1/bundle.min.js \
@@ -1536,6 +1556,7 @@ V_CHECK_0 = @echo "  CHECK   " $@;
 V_GZIP = $(V_GZIP_$(V))
 V_GZIP_ = $(V_GZIP_$(AM_DEFAULT_VERBOSITY))
 V_GZIP_0 = @echo "  GZIP    " $@;
+GZIP = gzip -n
 MV = mv -f
 JSMODULE = $(srcdir)/tools/missing $(srcdir)/tools/jsmodule
 CSSBUNDLE = $(srcdir)/tools/missing $(srcdir)/tools/cssbundle
@@ -1559,11 +1580,12 @@ AM_CPPFLAGS = \
 	-DPACKAGE_LIBEXEC_DIR=\""$(libexecdir)"\" \
 	-DPACKAGE_SYSCONF_DIR=\""$(sysconfdir)"\" \
 	-DPACKAGE_BIN_DIR=\""$(bindir)"\" \
-	-DPACKAGE_LOCALSTATE_DIR=\""$(localstatedir)"\" \
+	-DPACKAGE_LOCALSTATE_DIR=\""$(localstatedir)/lib/cockpit"\" \
 	-DPACKAGE_LIB_DIR=\""$(libdir)"\" \
 	-D_POSIX_PTHREAD_SEMANTICS -D_REENTRANT \
 	$(NULL)
 
+AM_LDFLAGS = -Wl,--as-needed
 LOG_DRIVER = $(top_srcdir)/tools/tap-driver
 LOG_COMPILER = $(top_srcdir)/tools/tap-gtester
 TEST_EXTENSIONS = .html .sh
@@ -1601,6 +1623,7 @@ SED_SUBST = sed \
         -e 's,[@]VERSION[@],$(VERSION),g' \
         -e 's,[@]user[@],$(COCKPIT_USER),g' \
         -e 's,[@]group[@],$(COCKPIT_GROUP),g' \
+        -e 's,[@]selinux_config_type[@],$(COCKPIT_SELINUX_CONFIG_TYPE),g' \
         $(NULL)
 
 GDBUS_CODEGEN = $(top_srcdir)/tools/gdbus-unbreak-codegen
@@ -2580,6 +2603,10 @@ test_websocket_LDADD = libwebsocket.a $(GIO_LIBS)
 @WITH_COCKPIT_WS_TRUE@	src/ws/cockpitws.h				\
 @WITH_COCKPIT_WS_TRUE@	src/ws/cockpithandlers.h	src/ws/cockpithandlers.c	\
 @WITH_COCKPIT_WS_TRUE@	src/ws/cockpitauth.h		src/ws/cockpitauth.c		\
+@WITH_COCKPIT_WS_TRUE@	src/ws/cockpitchannelresponse.h \
+@WITH_COCKPIT_WS_TRUE@	src/ws/cockpitchannelresponse.c \
+@WITH_COCKPIT_WS_TRUE@	src/ws/cockpitchannelsocket.h \
+@WITH_COCKPIT_WS_TRUE@	src/ws/cockpitchannelsocket.c \
 @WITH_COCKPIT_WS_TRUE@	src/ws/cockpitcreds.h src/ws/cockpitcreds.c \
 @WITH_COCKPIT_WS_TRUE@	src/ws/cockpitwebservice.h \
 @WITH_COCKPIT_WS_TRUE@	src/ws/cockpitwebservice.c \
@@ -2653,6 +2680,7 @@ test_websocket_LDADD = libwebsocket.a $(GIO_LIBS)
 @WITH_COCKPIT_WS_TRUE@	test-sshtransport \
 @WITH_COCKPIT_WS_TRUE@	test-sshagent \
 @WITH_COCKPIT_WS_TRUE@	test-webservice \
+@WITH_COCKPIT_WS_TRUE@	test-channelresponse \
 @WITH_COCKPIT_WS_TRUE@	test-handlers \
 @WITH_COCKPIT_WS_TRUE@	test-kerberos \
 @WITH_COCKPIT_WS_TRUE@	$(NULL)
@@ -2665,6 +2693,18 @@ test_websocket_LDADD = libwebsocket.a $(GIO_LIBS)
 @WITH_COCKPIT_WS_TRUE@	$(NULL)
 
 @WITH_COCKPIT_WS_TRUE@test_auth_LDADD = \
+@WITH_COCKPIT_WS_TRUE@	libcockpit-ws.a \
+@WITH_COCKPIT_WS_TRUE@	$(cockpit_ws_LDADD) \
+@WITH_COCKPIT_WS_TRUE@	$(NULL)
+
+@WITH_COCKPIT_WS_TRUE@test_channelresponse_CFLAGS = $(cockpit_ws_CFLAGS)
+@WITH_COCKPIT_WS_TRUE@test_channelresponse_SOURCES = src/ws/test-channelresponse.c \
+@WITH_COCKPIT_WS_TRUE@	src/ws/mock-auth.c src/ws/mock-auth.h \
+@WITH_COCKPIT_WS_TRUE@	src/common/mock-io-stream.c src/common/mock-io-stream.h \
+@WITH_COCKPIT_WS_TRUE@	$(NULL)
+
+@WITH_COCKPIT_WS_TRUE@test_channelresponse_LDADD = \
+@WITH_COCKPIT_WS_TRUE@	libwebsocket.a \
 @WITH_COCKPIT_WS_TRUE@	libcockpit-ws.a \
 @WITH_COCKPIT_WS_TRUE@	$(cockpit_ws_LDADD) \
 @WITH_COCKPIT_WS_TRUE@	$(NULL)
@@ -2804,12 +2844,6 @@ libretest_a_SOURCES = \
 	src/retest/retest.h \
 	$(NULL)
 
-SELINUX_FILES = \
-	src/selinux/cockpit.fc \
-	src/selinux/cockpit.if \
-	src/selinux/cockpit.te \
-	$(NULL)
-
 libpam_ssh_add_a_SOURCES = \
 	src/pam-ssh-add/pam-ssh-add.c \
 	src/pam-ssh-add/pam-ssh-add.h \
@@ -2867,7 +2901,7 @@ all: $(BUILT_SOURCES) config.h
 .SUFFIXES: .css .min.css .min.css.gz .js .js.gz .min.js .min.js.gz .html .min.html .min.html.gz .woff .woff.gz .1 .8 .5 .c .html$(EXEEXT) .log .o .obj .sh .sh$(EXEEXT) .trs .xml
 am--refresh: Makefile
 	@:
-$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(srcdir)/doc/Makefile-doc.am $(srcdir)/doc/guide/Makefile-guide.am $(srcdir)/doc/man/Makefile-man.am $(srcdir)/pkg/base1/Makefile.am $(srcdir)/pkg/dashboard/Makefile.am $(srcdir)/pkg/docker/Makefile.am $(srcdir)/pkg/kubernetes/Makefile.am $(srcdir)/pkg/networkmanager/Makefile.am $(srcdir)/pkg/playground/Makefile.am $(srcdir)/pkg/realmd/Makefile.am $(srcdir)/pkg/shell/Makefile.am $(srcdir)/pkg/subscriptions/Makefile.am $(srcdir)/pkg/systemd/Makefile.am $(srcdir)/pkg/storaged/Makefile.am $(srcdir)/pkg/users/Makefile.am $(srcdir)/src/bridge/Makefile.am $(srcdir)/src/common/Makefile-common.am $(srcdir)/src/websocket/Makefile-websocket.am $(srcdir)/tools/Makefile-tools.am $(srcdir)/src/ws/Makefile-ws.am $(srcdir)/src/static/Makefile-static.am $(srcdir)/src/remotectl/Makefile-remotectl.am $(srcdir)/src/reauthorize/Makefile-reauthorize.am $(srcdir)/src/retest/Makefile.am $(srcdir)/src/selinux/Makefile-selinux.am $(srcdir)/src/pam-ssh-add/Makefile.am $(srcdir)/branding/default/Makefile.am $(srcdir)/branding/fedora/Makefile.am $(srcdir)/branding/centos/Makefile.am $(srcdir)/branding/rhel/Makefile.am $(am__configure_deps)
+$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(srcdir)/doc/Makefile-doc.am $(srcdir)/doc/guide/Makefile-guide.am $(srcdir)/doc/man/Makefile-man.am $(srcdir)/pkg/base1/Makefile.am $(srcdir)/pkg/dashboard/Makefile.am $(srcdir)/pkg/docker/Makefile.am $(srcdir)/pkg/kubernetes/Makefile.am $(srcdir)/pkg/networkmanager/Makefile.am $(srcdir)/pkg/playground/Makefile.am $(srcdir)/pkg/realmd/Makefile.am $(srcdir)/pkg/shell/Makefile.am $(srcdir)/pkg/subscriptions/Makefile.am $(srcdir)/pkg/systemd/Makefile.am $(srcdir)/pkg/storaged/Makefile.am $(srcdir)/pkg/users/Makefile.am $(srcdir)/src/bridge/Makefile.am $(srcdir)/src/common/Makefile-common.am $(srcdir)/src/websocket/Makefile-websocket.am $(srcdir)/tools/Makefile-tools.am $(srcdir)/src/ws/Makefile-ws.am $(srcdir)/src/static/Makefile-static.am $(srcdir)/src/remotectl/Makefile-remotectl.am $(srcdir)/src/reauthorize/Makefile-reauthorize.am $(srcdir)/src/retest/Makefile.am $(srcdir)/src/pam-ssh-add/Makefile.am $(srcdir)/branding/default/Makefile.am $(srcdir)/branding/fedora/Makefile.am $(srcdir)/branding/centos/Makefile.am $(srcdir)/branding/rhel/Makefile.am $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
 	    *$$dep*) \
@@ -2889,7 +2923,7 @@ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe)'; \
 	    cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe);; \
 	esac;
-$(srcdir)/doc/Makefile-doc.am $(srcdir)/doc/guide/Makefile-guide.am $(srcdir)/doc/man/Makefile-man.am $(srcdir)/pkg/base1/Makefile.am $(srcdir)/pkg/dashboard/Makefile.am $(srcdir)/pkg/docker/Makefile.am $(srcdir)/pkg/kubernetes/Makefile.am $(srcdir)/pkg/networkmanager/Makefile.am $(srcdir)/pkg/playground/Makefile.am $(srcdir)/pkg/realmd/Makefile.am $(srcdir)/pkg/shell/Makefile.am $(srcdir)/pkg/subscriptions/Makefile.am $(srcdir)/pkg/systemd/Makefile.am $(srcdir)/pkg/storaged/Makefile.am $(srcdir)/pkg/users/Makefile.am $(srcdir)/src/bridge/Makefile.am $(srcdir)/src/common/Makefile-common.am $(srcdir)/src/websocket/Makefile-websocket.am $(srcdir)/tools/Makefile-tools.am $(srcdir)/src/ws/Makefile-ws.am $(srcdir)/src/static/Makefile-static.am $(srcdir)/src/remotectl/Makefile-remotectl.am $(srcdir)/src/reauthorize/Makefile-reauthorize.am $(srcdir)/src/retest/Makefile.am $(srcdir)/src/selinux/Makefile-selinux.am $(srcdir)/src/pam-ssh-add/Makefile.am $(srcdir)/branding/default/Makefile.am $(srcdir)/branding/fedora/Makefile.am $(srcdir)/branding/centos/Makefile.am $(srcdir)/branding/rhel/Makefile.am $(am__empty):
+$(srcdir)/doc/Makefile-doc.am $(srcdir)/doc/guide/Makefile-guide.am $(srcdir)/doc/man/Makefile-man.am $(srcdir)/pkg/base1/Makefile.am $(srcdir)/pkg/dashboard/Makefile.am $(srcdir)/pkg/docker/Makefile.am $(srcdir)/pkg/kubernetes/Makefile.am $(srcdir)/pkg/networkmanager/Makefile.am $(srcdir)/pkg/playground/Makefile.am $(srcdir)/pkg/realmd/Makefile.am $(srcdir)/pkg/shell/Makefile.am $(srcdir)/pkg/subscriptions/Makefile.am $(srcdir)/pkg/systemd/Makefile.am $(srcdir)/pkg/storaged/Makefile.am $(srcdir)/pkg/users/Makefile.am $(srcdir)/src/bridge/Makefile.am $(srcdir)/src/common/Makefile-common.am $(srcdir)/src/websocket/Makefile-websocket.am $(srcdir)/tools/Makefile-tools.am $(srcdir)/src/ws/Makefile-ws.am $(srcdir)/src/static/Makefile-static.am $(srcdir)/src/remotectl/Makefile-remotectl.am $(srcdir)/src/reauthorize/Makefile-reauthorize.am $(srcdir)/src/retest/Makefile.am $(srcdir)/src/pam-ssh-add/Makefile.am $(srcdir)/branding/default/Makefile.am $(srcdir)/branding/fedora/Makefile.am $(srcdir)/branding/centos/Makefile.am $(srcdir)/branding/rhel/Makefile.am $(am__empty):
 
 $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
 	$(SHELL) ./config.status --recheck
@@ -3130,6 +3164,10 @@ src/ws/libcockpit_ws_a-cockpithandlers.$(OBJEXT):  \
 	src/ws/$(am__dirstamp) src/ws/$(DEPDIR)/$(am__dirstamp)
 src/ws/libcockpit_ws_a-cockpitauth.$(OBJEXT): src/ws/$(am__dirstamp) \
 	src/ws/$(DEPDIR)/$(am__dirstamp)
+src/ws/libcockpit_ws_a-cockpitchannelresponse.$(OBJEXT):  \
+	src/ws/$(am__dirstamp) src/ws/$(DEPDIR)/$(am__dirstamp)
+src/ws/libcockpit_ws_a-cockpitchannelsocket.$(OBJEXT):  \
+	src/ws/$(am__dirstamp) src/ws/$(DEPDIR)/$(am__dirstamp)
 src/ws/libcockpit_ws_a-cockpitcreds.$(OBJEXT): src/ws/$(am__dirstamp) \
 	src/ws/$(DEPDIR)/$(am__dirstamp)
 src/ws/libcockpit_ws_a-cockpitwebservice.$(OBJEXT):  \
@@ -3451,6 +3489,17 @@ src/bridge/test_channel-mock-transport.$(OBJEXT):  \
 test-channel$(EXEEXT): $(test_channel_OBJECTS) $(test_channel_DEPENDENCIES) $(EXTRA_test_channel_DEPENDENCIES) 
 	@rm -f test-channel$(EXEEXT)
 	$(AM_V_CCLD)$(test_channel_LINK) $(test_channel_OBJECTS) $(test_channel_LDADD) $(LIBS)
+src/ws/test_channelresponse-test-channelresponse.$(OBJEXT):  \
+	src/ws/$(am__dirstamp) src/ws/$(DEPDIR)/$(am__dirstamp)
+src/ws/test_channelresponse-mock-auth.$(OBJEXT):  \
+	src/ws/$(am__dirstamp) src/ws/$(DEPDIR)/$(am__dirstamp)
+src/common/test_channelresponse-mock-io-stream.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
+
+test-channelresponse$(EXEEXT): $(test_channelresponse_OBJECTS) $(test_channelresponse_DEPENDENCIES) $(EXTRA_test_channelresponse_DEPENDENCIES) 
+	@rm -f test-channelresponse$(EXEEXT)
+	$(AM_V_CCLD)$(test_channelresponse_LINK) $(test_channelresponse_OBJECTS) $(test_channelresponse_LDADD) $(LIBS)
 src/common/test_config-test-config.$(OBJEXT):  \
 	src/common/$(am__dirstamp) \
 	src/common/$(DEPDIR)/$(am__dirstamp)
@@ -3880,6 +3929,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebinject.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebresponse.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitwebserver.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_channelresponse-mock-io-stream.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_config-test-config.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_handlers-mock-io-stream.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_hex-test-hex.Po@am__quote@
@@ -3913,6 +3963,8 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/websocket/$(DEPDIR)/test_websocket-test-websocket.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/ws/$(DEPDIR)/cockpit_ws-main.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/ws/$(DEPDIR)/libcockpit_ws_a-cockpitauth.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/ws/$(DEPDIR)/libcockpit_ws_a-cockpitchannelresponse.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/ws/$(DEPDIR)/libcockpit_ws_a-cockpitchannelsocket.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/ws/$(DEPDIR)/libcockpit_ws_a-cockpitcreds.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/ws/$(DEPDIR)/libcockpit_ws_a-cockpithandlers.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/ws/$(DEPDIR)/libcockpit_ws_a-cockpitsshagent.Po@am__quote@
@@ -3924,6 +3976,8 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/ws/$(DEPDIR)/session.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/ws/$(DEPDIR)/test_auth-mock-auth.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/ws/$(DEPDIR)/test_auth-test-auth.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/ws/$(DEPDIR)/test_channelresponse-mock-auth.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/ws/$(DEPDIR)/test_channelresponse-test-channelresponse.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/ws/$(DEPDIR)/test_creds-test-creds.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/ws/$(DEPDIR)/test_handlers-mock-auth.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/ws/$(DEPDIR)/test_handlers-test-handlers.Po@am__quote@
@@ -4790,6 +4844,34 @@ src/ws/libcockpit_ws_a-cockpitauth.obj: src/ws/cockpitauth.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_ws_a_CFLAGS) $(CFLAGS) -c -o src/ws/libcockpit_ws_a-cockpitauth.obj `if test -f 'src/ws/cockpitauth.c'; then $(CYGPATH_W) 'src/ws/cockpitauth.c'; else $(CYGPATH_W) '$(srcdir)/src/ws/cockpitauth.c'; fi`
 
+src/ws/libcockpit_ws_a-cockpitchannelresponse.o: src/ws/cockpitchannelresponse.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_ws_a_CFLAGS) $(CFLAGS) -MT src/ws/libcockpit_ws_a-cockpitchannelresponse.o -MD -MP -MF src/ws/$(DEPDIR)/libcockpit_ws_a-cockpitchannelresponse.Tpo -c -o src/ws/libcockpit_ws_a-cockpitchannelresponse.o `test -f 'src/ws/cockpitchannelresponse.c' || echo '$(srcdir)/'`src/ws/cockpitchannelresponse.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/ws/$(DEPDIR)/libcockpit_ws_a-cockpitchannelresponse.Tpo src/ws/$(DEPDIR)/libcockpit_ws_a-cockpitchannelresponse.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/ws/cockpitchannelresponse.c' object='src/ws/libcockpit_ws_a-cockpitchannelresponse.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_ws_a_CFLAGS) $(CFLAGS) -c -o src/ws/libcockpit_ws_a-cockpitchannelresponse.o `test -f 'src/ws/cockpitchannelresponse.c' || echo '$(srcdir)/'`src/ws/cockpitchannelresponse.c
+
+src/ws/libcockpit_ws_a-cockpitchannelresponse.obj: src/ws/cockpitchannelresponse.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_ws_a_CFLAGS) $(CFLAGS) -MT src/ws/libcockpit_ws_a-cockpitchannelresponse.obj -MD -MP -MF src/ws/$(DEPDIR)/libcockpit_ws_a-cockpitchannelresponse.Tpo -c -o src/ws/libcockpit_ws_a-cockpitchannelresponse.obj `if test -f 'src/ws/cockpitchannelresponse.c'; then $(CYGPATH_W) 'src/ws/cockpitchannelresponse.c'; else $(CYGPATH_W) '$(srcdir)/src/ws/cockpitchannelresponse.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/ws/$(DEPDIR)/libcockpit_ws_a-cockpitchannelresponse.Tpo src/ws/$(DEPDIR)/libcockpit_ws_a-cockpitchannelresponse.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/ws/cockpitchannelresponse.c' object='src/ws/libcockpit_ws_a-cockpitchannelresponse.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_ws_a_CFLAGS) $(CFLAGS) -c -o src/ws/libcockpit_ws_a-cockpitchannelresponse.obj `if test -f 'src/ws/cockpitchannelresponse.c'; then $(CYGPATH_W) 'src/ws/cockpitchannelresponse.c'; else $(CYGPATH_W) '$(srcdir)/src/ws/cockpitchannelresponse.c'; fi`
+
+src/ws/libcockpit_ws_a-cockpitchannelsocket.o: src/ws/cockpitchannelsocket.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_ws_a_CFLAGS) $(CFLAGS) -MT src/ws/libcockpit_ws_a-cockpitchannelsocket.o -MD -MP -MF src/ws/$(DEPDIR)/libcockpit_ws_a-cockpitchannelsocket.Tpo -c -o src/ws/libcockpit_ws_a-cockpitchannelsocket.o `test -f 'src/ws/cockpitchannelsocket.c' || echo '$(srcdir)/'`src/ws/cockpitchannelsocket.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/ws/$(DEPDIR)/libcockpit_ws_a-cockpitchannelsocket.Tpo src/ws/$(DEPDIR)/libcockpit_ws_a-cockpitchannelsocket.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/ws/cockpitchannelsocket.c' object='src/ws/libcockpit_ws_a-cockpitchannelsocket.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_ws_a_CFLAGS) $(CFLAGS) -c -o src/ws/libcockpit_ws_a-cockpitchannelsocket.o `test -f 'src/ws/cockpitchannelsocket.c' || echo '$(srcdir)/'`src/ws/cockpitchannelsocket.c
+
+src/ws/libcockpit_ws_a-cockpitchannelsocket.obj: src/ws/cockpitchannelsocket.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_ws_a_CFLAGS) $(CFLAGS) -MT src/ws/libcockpit_ws_a-cockpitchannelsocket.obj -MD -MP -MF src/ws/$(DEPDIR)/libcockpit_ws_a-cockpitchannelsocket.Tpo -c -o src/ws/libcockpit_ws_a-cockpitchannelsocket.obj `if test -f 'src/ws/cockpitchannelsocket.c'; then $(CYGPATH_W) 'src/ws/cockpitchannelsocket.c'; else $(CYGPATH_W) '$(srcdir)/src/ws/cockpitchannelsocket.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/ws/$(DEPDIR)/libcockpit_ws_a-cockpitchannelsocket.Tpo src/ws/$(DEPDIR)/libcockpit_ws_a-cockpitchannelsocket.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/ws/cockpitchannelsocket.c' object='src/ws/libcockpit_ws_a-cockpitchannelsocket.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_ws_a_CFLAGS) $(CFLAGS) -c -o src/ws/libcockpit_ws_a-cockpitchannelsocket.obj `if test -f 'src/ws/cockpitchannelsocket.c'; then $(CYGPATH_W) 'src/ws/cockpitchannelsocket.c'; else $(CYGPATH_W) '$(srcdir)/src/ws/cockpitchannelsocket.c'; fi`
+
 src/ws/libcockpit_ws_a-cockpitcreds.o: src/ws/cockpitcreds.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_ws_a_CFLAGS) $(CFLAGS) -MT src/ws/libcockpit_ws_a-cockpitcreds.o -MD -MP -MF src/ws/$(DEPDIR)/libcockpit_ws_a-cockpitcreds.Tpo -c -o src/ws/libcockpit_ws_a-cockpitcreds.o `test -f 'src/ws/cockpitcreds.c' || echo '$(srcdir)/'`src/ws/cockpitcreds.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/ws/$(DEPDIR)/libcockpit_ws_a-cockpitcreds.Tpo src/ws/$(DEPDIR)/libcockpit_ws_a-cockpitcreds.Po
@@ -5167,6 +5249,48 @@ src/bridge/test_channel-mock-transport.obj: src/bridge/mock-transport.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_channel-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channel_CFLAGS) $(CFLAGS) -c -o src/bridge/test_channel-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
+
+src/ws/test_channelresponse-test-channelresponse.o: src/ws/test-channelresponse.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channelresponse_CFLAGS) $(CFLAGS) -MT src/ws/test_channelresponse-test-channelresponse.o -MD -MP -MF src/ws/$(DEPDIR)/test_channelresponse-test-channelresponse.Tpo -c -o src/ws/test_channelresponse-test-channelresponse.o `test -f 'src/ws/test-channelresponse.c' || echo '$(srcdir)/'`src/ws/test-channelresponse.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/ws/$(DEPDIR)/test_channelresponse-test-channelresponse.Tpo src/ws/$(DEPDIR)/test_channelresponse-test-channelresponse.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/ws/test-channelresponse.c' object='src/ws/test_channelresponse-test-channelresponse.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channelresponse_CFLAGS) $(CFLAGS) -c -o src/ws/test_channelresponse-test-channelresponse.o `test -f 'src/ws/test-channelresponse.c' || echo '$(srcdir)/'`src/ws/test-channelresponse.c
+
+src/ws/test_channelresponse-test-channelresponse.obj: src/ws/test-channelresponse.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channelresponse_CFLAGS) $(CFLAGS) -MT src/ws/test_channelresponse-test-channelresponse.obj -MD -MP -MF src/ws/$(DEPDIR)/test_channelresponse-test-channelresponse.Tpo -c -o src/ws/test_channelresponse-test-channelresponse.obj `if test -f 'src/ws/test-channelresponse.c'; then $(CYGPATH_W) 'src/ws/test-channelresponse.c'; else $(CYGPATH_W) '$(srcdir)/src/ws/test-channelresponse.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/ws/$(DEPDIR)/test_channelresponse-test-channelresponse.Tpo src/ws/$(DEPDIR)/test_channelresponse-test-channelresponse.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/ws/test-channelresponse.c' object='src/ws/test_channelresponse-test-channelresponse.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channelresponse_CFLAGS) $(CFLAGS) -c -o src/ws/test_channelresponse-test-channelresponse.obj `if test -f 'src/ws/test-channelresponse.c'; then $(CYGPATH_W) 'src/ws/test-channelresponse.c'; else $(CYGPATH_W) '$(srcdir)/src/ws/test-channelresponse.c'; fi`
+
+src/ws/test_channelresponse-mock-auth.o: src/ws/mock-auth.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channelresponse_CFLAGS) $(CFLAGS) -MT src/ws/test_channelresponse-mock-auth.o -MD -MP -MF src/ws/$(DEPDIR)/test_channelresponse-mock-auth.Tpo -c -o src/ws/test_channelresponse-mock-auth.o `test -f 'src/ws/mock-auth.c' || echo '$(srcdir)/'`src/ws/mock-auth.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/ws/$(DEPDIR)/test_channelresponse-mock-auth.Tpo src/ws/$(DEPDIR)/test_channelresponse-mock-auth.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/ws/mock-auth.c' object='src/ws/test_channelresponse-mock-auth.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channelresponse_CFLAGS) $(CFLAGS) -c -o src/ws/test_channelresponse-mock-auth.o `test -f 'src/ws/mock-auth.c' || echo '$(srcdir)/'`src/ws/mock-auth.c
+
+src/ws/test_channelresponse-mock-auth.obj: src/ws/mock-auth.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channelresponse_CFLAGS) $(CFLAGS) -MT src/ws/test_channelresponse-mock-auth.obj -MD -MP -MF src/ws/$(DEPDIR)/test_channelresponse-mock-auth.Tpo -c -o src/ws/test_channelresponse-mock-auth.obj `if test -f 'src/ws/mock-auth.c'; then $(CYGPATH_W) 'src/ws/mock-auth.c'; else $(CYGPATH_W) '$(srcdir)/src/ws/mock-auth.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/ws/$(DEPDIR)/test_channelresponse-mock-auth.Tpo src/ws/$(DEPDIR)/test_channelresponse-mock-auth.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/ws/mock-auth.c' object='src/ws/test_channelresponse-mock-auth.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channelresponse_CFLAGS) $(CFLAGS) -c -o src/ws/test_channelresponse-mock-auth.obj `if test -f 'src/ws/mock-auth.c'; then $(CYGPATH_W) 'src/ws/mock-auth.c'; else $(CYGPATH_W) '$(srcdir)/src/ws/mock-auth.c'; fi`
+
+src/common/test_channelresponse-mock-io-stream.o: src/common/mock-io-stream.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channelresponse_CFLAGS) $(CFLAGS) -MT src/common/test_channelresponse-mock-io-stream.o -MD -MP -MF src/common/$(DEPDIR)/test_channelresponse-mock-io-stream.Tpo -c -o src/common/test_channelresponse-mock-io-stream.o `test -f 'src/common/mock-io-stream.c' || echo '$(srcdir)/'`src/common/mock-io-stream.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_channelresponse-mock-io-stream.Tpo src/common/$(DEPDIR)/test_channelresponse-mock-io-stream.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-io-stream.c' object='src/common/test_channelresponse-mock-io-stream.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channelresponse_CFLAGS) $(CFLAGS) -c -o src/common/test_channelresponse-mock-io-stream.o `test -f 'src/common/mock-io-stream.c' || echo '$(srcdir)/'`src/common/mock-io-stream.c
+
+src/common/test_channelresponse-mock-io-stream.obj: src/common/mock-io-stream.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channelresponse_CFLAGS) $(CFLAGS) -MT src/common/test_channelresponse-mock-io-stream.obj -MD -MP -MF src/common/$(DEPDIR)/test_channelresponse-mock-io-stream.Tpo -c -o src/common/test_channelresponse-mock-io-stream.obj `if test -f 'src/common/mock-io-stream.c'; then $(CYGPATH_W) 'src/common/mock-io-stream.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-io-stream.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_channelresponse-mock-io-stream.Tpo src/common/$(DEPDIR)/test_channelresponse-mock-io-stream.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-io-stream.c' object='src/common/test_channelresponse-mock-io-stream.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channelresponse_CFLAGS) $(CFLAGS) -c -o src/common/test_channelresponse-mock-io-stream.obj `if test -f 'src/common/mock-io-stream.c'; then $(CYGPATH_W) 'src/common/mock-io-stream.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-io-stream.c'; fi`
 
 src/common/test_config-test-config.o: src/common/test-config.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_config_CFLAGS) $(CFLAGS) -MT src/common/test_config-test-config.o -MD -MP -MF src/common/$(DEPDIR)/test_config-test-config.Tpo -c -o src/common/test_config-test-config.o `test -f 'src/common/test-config.c' || echo '$(srcdir)/'`src/common/test-config.c
@@ -7504,6 +7628,13 @@ test-webservice.log: test-webservice$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-channelresponse.log: test-channelresponse$(EXEEXT)
+	@p='test-channelresponse$(EXEEXT)'; \
+	b='test-channelresponse'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-handlers.log: test-handlers$(EXEEXT)
 	@p='test-handlers$(EXEEXT)'; \
 	b='test-handlers'; \
@@ -8053,19 +8184,19 @@ uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 
 .min.css.min.css.gz:
 	@$(MKDIR_P) $(dir $@)
-	$(V_GZIP) gzip -c $< > $@.tmp && $(MV) $@.tmp $@
+	$(V_GZIP) $(GZIP) -c $< > $@.tmp && $(MV) $@.tmp $@
 .min.html.min.html.gz:
 	@$(MKDIR_P) $(dir $@)
-	$(V_GZIP) gzip -c $< > $@.tmp && $(MV) $@.tmp $@
+	$(V_GZIP) $(GZIP) -c $< > $@.tmp && $(MV) $@.tmp $@
 .js.js.gz:
 	@$(MKDIR_P) $(dir $@)
-	$(V_GZIP) gzip -c $< > $@.tmp && $(MV) $@.tmp $@
+	$(V_GZIP) $(GZIP) -c $< > $@.tmp && $(MV) $@.tmp $@
 .min.js.min.js.gz:
 	@$(MKDIR_P) $(dir $@)
-	$(V_GZIP) gzip -c $< > $@.tmp && $(MV) $@.tmp $@
+	$(V_GZIP) $(GZIP) -c $< > $@.tmp && $(MV) $@.tmp $@
 .woff.woff.gz:
 	@$(MKDIR_P) $(dir $@)
-	$(V_GZIP) gzip -c $< > $@.tmp && $(MV) $@.tmp $@
+	$(V_GZIP) $(GZIP) -c $< > $@.tmp && $(MV) $@.tmp $@
 
 po/po.%.js: po/%.po
 	@$(MKDIR_P) $(dir $@)
@@ -8421,9 +8552,6 @@ update-lib:: update-bower
 
 @WITH_COCKPIT_WS_TRUE@@INTLTOOL_DESKTOP_RULE@
 
-@WITH_COCKPIT_WS_TRUE@test-server.service : src/ws/test-server.service.in Makefile
-@WITH_COCKPIT_WS_TRUE@	$(AM_V_GEN) sed -e "s|\@libexecdir\@|$(libexecdir)|;s|\@datadir\@|$(datadir)|" $< > $@
-
 @WITH_COCKPIT_WS_TRUE@install-exec-hook::
 @WITH_COCKPIT_WS_TRUE@	mkdir -p $(DESTDIR)$(sysconfdir)/cockpit/ws-certs.d
 @WITH_COCKPIT_WS_TRUE@	-chmod 755 $(DESTDIR)$(sysconfdir)/cockpit/ws-certs.d $(DESTDIR)$(sysconfdir)/cockpit/ws-certs.d
@@ -8455,12 +8583,6 @@ enable-root-tests:
 
 disable-pam-tests:
 	chmod u-s $(builddir)/mock-reauthorize
-
-cockpit.pp: $(SELINUX_FILES)
-	cp $^ $(builddir)
-	$(MAKE) -j1 -f /usr/share/selinux/devel/Makefile cockpit.pp
-
-selinux: cockpit.pp
 pam_ssh_add.so: libpam_ssh_add.a $(pam_ssh_add_FILES)
 	$(AM_V_CCLD) $(CC) -fPIC -shared $(CFLAGS) $(libpam_ssh_add_a_CFLAGS) -I$(builddir) \
 		-o $@ $^ $(libpam_ssh_add_a_LIBS) $(LDFLAGS)
