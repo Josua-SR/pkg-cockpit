@@ -84,7 +84,6 @@ Description: Cockpit Web Service
 Package: cockpit-networkmanager
 Architecture: all
 Depends: ${misc:Depends},
-         ${shlib:Depends},
          network-manager,
          cockpit-ws (>= ${source:Version}),
          cockpit-ws (<< ${source:Version}.1~)
@@ -95,7 +94,6 @@ Description: Cockpit user interface for networking, using NetworkManager
 Package: cockpit-shell
 Architecture: all
 Depends: ${misc:Depends},
-         ${shlibs:Depends},
          cockpit-ws (>= ${source:Version}),
          cockpit-ws (<< ${source:Version}.1~)
 Description: Cockpit Shell user interface package
