@@ -41,6 +41,7 @@ Depends: ${misc:Depends},
          cockpit-shell,
          xdg-utils
 Recommends: cockpit-networkmanager,
+            cockpit-storaged,
             cockpit-docker
 Suggests: cockpit-doc,
           cockpit-pcp
@@ -94,6 +95,17 @@ Depends: ${misc:Depends},
 Description: Cockpit user interface for networking, using NetworkManager
  The Cockpit component for managing networking.  This package uses
  NetworkManager.
+
+Package: cockpit-storaged
+Architecture: all
+Depends: ${misc:Depends},
+         storaged (>= 2.1.1),
+         storaged-lvm2 (>= 2.1.1),
+         cockpit-ws (>= ${source:Version}),
+         cockpit-ws (<< ${source:Version}.1~)
+Description: Cockpit user interface for storage, using Storaged
+ The Cockpit component for managing storage.  This package uses
+ storaged.
 
 Package: cockpit-shell
 Architecture: all
