@@ -43,14 +43,6 @@ function is_array(it) {
     return Object.prototype.toString.call(it) === '[object Array]';
 }
 
-function BasicError(problem, message) {
-    this.problem = problem;
-    this.message = message || cockpit.message(problem);
-    this.toString = function() {
-        return this.message;
-    };
-}
-
 /* -------------------------------------------------------------------------
  * Channels
  *
@@ -58,6 +50,7 @@ function BasicError(problem, message) {
  */
 
 var default_transport = null;
+var public_transport = null;
 var reload_after_disconnect = false;
 var expect_disconnect = false;
 var init_callback = null;
@@ -66,9 +59,10 @@ var filters = [ ];
 
 var have_array_buffer = !!window.ArrayBuffer;
 
-var origin = window.location.origin;
-if (!origin) {
-    origin = window.location.protocol + "//" + window.location.hostname +
+var transport_origin = window.location.origin;
+
+if (!transport_origin) {
+    transport_origin = window.location.protocol + "//" + window.location.hostname +
         (window.location.port ? ':' + window.location.port: '');
 }
 
@@ -167,7 +161,7 @@ function event_mixin(obj, handlers) {
     obj.removeEventListener = function removeEventListener(type, handler) {
         var length = handlers[type] ? handlers[type].length : 0;
         for (var i = 0; i < length; i++) {
-            if (handlers[type][i] == handler) {
+            if (handlers[type][i] === handler) {
                 handlers[type][i] = null;
                 break;
             }
@@ -249,7 +243,7 @@ function ParentWebSocket(parent) {
     self.readyState = 0;
 
     window.addEventListener("message", function receive(event) {
-        if (event.origin !== origin || event.source !== parent)
+        if (event.origin !== transport_origin || event.source !== parent)
             return;
         var data = event.data;
         if (data === undefined || data.length === undefined)
@@ -263,12 +257,12 @@ function ParentWebSocket(parent) {
     }, false);
 
     self.send = function send(message) {
-        parent.postMessage(message, origin);
+        parent.postMessage(message, transport_origin);
     };
 
     self.close = function close() {
         self.readyState = 3;
-        parent.postMessage("", origin);
+        parent.postMessage("", transport_origin);
         self.onclose();
     };
 
@@ -446,8 +440,6 @@ function Transport() {
     };
 
     self.close = function close(options) {
-        if (self === default_transport)
-            default_transport = null;
         if (!options)
             options = { "problem": "disconnected" };
         options.command = "close";
@@ -486,15 +478,20 @@ function Transport() {
             channel_seed = String(options["channel-seed"]);
         if (options["host"])
             default_host = options["host"];
-        cockpit.transport.options = options;
+
+        if (public_transport) {
+            public_transport.options = options;
+            public_transport.csrf_token = options["csrf-token"];
+            public_transport.host = default_host;
+        }
+
+        if (init_callback)
+            init_callback(options);
 
         if (waiting_for_init) {
             waiting_for_init = false;
             ready_for_channels();
         }
-
-        if (init_callback)
-            init_callback(options);
     }
 
     function process_control(data) {
@@ -537,13 +534,11 @@ function Transport() {
     self.send_data = function send_data(data) {
         if (!ws) {
             console.log("transport closed, dropped message: ", data);
-        } else if (ws.readyState != 1) {
-            console.log("transport not ready (" + ws.readyState + "), dropped message: ", data);
+            return false;
         } else {
             ws.send(data);
             return true;
         }
-        return false;
     };
 
     self.send_message = function send_message(channel, payload) {
@@ -686,14 +681,11 @@ function Channel(options) {
         transport.register(id, on_control, on_message);
 
         /* Now open the channel */
-        var command = {
-            "command" : "open",
-            "channel": id
-        };
-        for (var i in options) {
-            if (options.hasOwnProperty(i) && command[i] === undefined)
-                command[i] = options[i];
-        }
+        var command = { };
+        for (var i in options)
+            command[i] = options[i];
+        command.command = "open";
+        command.channel = id;
 
         if (!command.host) {
             if (default_host)
@@ -825,7 +817,22 @@ function resolve_path_dots(parts) {
     return out;
 }
 
-function basic_scope(cockpit) {
+function basic_scope(cockpit, jquery) {
+
+    /* If jquery is available use it for now
+     * since it returns 0 durning testing to
+     * make tests stable
+     */
+    var now_func = function () {
+        return new Date().getTime();
+    };
+
+    if (jquery) {
+        now_func = function () {
+            return jquery.now();
+        };
+    }
+
     cockpit.channel = function channel(options) {
         return new Channel(options);
     };
@@ -924,21 +931,6 @@ function basic_scope(cockpit) {
     cockpit.base64_encode = base64_encode;
     cockpit.base64_decode = base64_decode;
 
-    cockpit.logout = function logout(reload) {
-        if (reload !== false)
-            reload_after_disconnect = true;
-        ensure_transport(function(transport) {
-            transport.send_control({ "command": "logout", "disconnect": true });
-        });
-    };
-
-    /* Not public API ... yet? */
-    cockpit.drop_privileges = function drop_privileges() {
-        ensure_transport(function(transport) {
-            transport.send_control({ "command": "logout", "disconnect": false });
-        });
-    };
-
     cockpit.kill = function kill(host, group) {
         var options = { "command": "kill" };
         if (host)
@@ -964,7 +956,7 @@ function basic_scope(cockpit) {
         });
     };
 
-    cockpit.transport = {
+    cockpit.transport = public_transport = {
         wait: ensure_transport,
         inject: function inject(message) {
             if (!default_transport)
@@ -975,28 +967,827 @@ function basic_scope(cockpit) {
             filters.push(callback);
         },
         close: function close(problem) {
-            if (!default_transport)
-                return;
             var options;
             if (problem)
                 options = {"problem": problem };
-            default_transport.close(options);
+            if (default_transport)
+                default_transport.close(options);
+            default_transport = null;
+            this.options = { };
         },
-        origin: origin,
+        origin: transport_origin,
         options: { },
         uri: calculate_url,
     };
 
-    Object.defineProperty(cockpit.transport, "host", {
-        enumerable: true,
-        get: function user_get() {
-            return default_host;
+
+    /* ---------------------------------------------------------------------
+     * Utilities
+     */
+
+    var fmt_re = /\$\{([^}]+)\}|\$([a-zA-Z0-9_]+)/g;
+    cockpit.format = function format(fmt, args) {
+        if (arguments.length != 2 || typeof args !== "object" || args === null)
+            args = Array.prototype.slice.call(arguments, 1);
+        return fmt.replace(fmt_re, function(m, x, y) { return args[x || y] || ""; });
+    };
+
+    function format_units(number, suffixes, factor, separate) {
+        var quotient;
+        var suffix = null;
+
+        /* Find that factor string */
+        if (typeof (factor) === "string") {
+            /* Prefer larger factors */
+            var keys = [];
+            for (var key in suffixes)
+                keys.push(key);
+            keys.sort().reverse();
+            for (var y = 0; y < keys.length; y++) {
+                for (var x = 0; x < suffixes[keys[y]].length; x++) {
+                    if (factor == suffixes[keys[y]][x]) {
+                        number = number / Math.pow(keys[y], x);
+                        suffix = factor;
+                        break;
+                    }
+                }
+                if (suffix)
+                    break;
+            }
+
+        /* @factor is a number */
+        } else if (factor in suffixes) {
+            var divisor = 1;
+            for (var i = 0; i < suffixes[factor].length; i++) {
+                quotient = number / divisor;
+                if (quotient < factor) {
+                    number = quotient;
+                    suffix = suffixes[factor][i];
+                    break;
+                }
+                divisor *= factor;
+            }
         }
-    });
+
+        /* non-zero values should never appear zero */
+        if (number > 0 && number < 0.1)
+            number = 0.1;
+        else if (number < 0 && number > -0.1)
+            number = -0.1;
+
+        var ret;
+
+        /* TODO: Make the decimal separator translatable */
+        var string_representation;
+
+        /* only show as integer if we have a natural number */
+        if (number % 1 === 0)
+            string_representation = number.toString();
+        else
+            string_representation = number.toFixed(1);
+
+        if (suffix)
+            ret = [string_representation, suffix];
+        else
+            ret = [string_representation];
+
+        if (!separate)
+            ret = ret.join(" ");
+
+        return ret;
+    }
+
+    var byte_suffixes = {
+        1000: [ null, "KB", "MB", "GB", "TB", "PB", "EB", "ZB" ],
+        1024: [ null, "KiB", "MiB", "GiB", "TiB", "PiB", "EiB", "ZiB" ]
+    };
+
+    cockpit.format_bytes = function format_bytes(number, factor, separate) {
+        if (factor === undefined)
+            factor = 1024;
+        return format_units(number, byte_suffixes, factor, separate);
+    };
+
+    var byte_sec_suffixes = {
+        1024: [ "B/s", "KiB/s", "MiB/s", "GiB/s", "TiB/s", "PiB/s", "EiB/s", "ZiB/s" ]
+    };
+
+    cockpit.format_bytes_per_sec = function format_bytes_per_sec(number, factor, separate) {
+        if (factor === undefined)
+            factor = 1024;
+        return format_units(number, byte_sec_suffixes, factor, separate);
+    };
+
+    var bit_suffixes = {
+        1000: [ "bps", "Kbps", "Mbps", "Gbps", "Tbps", "Pbps", "Ebps", "Zbps" ]
+    };
+
+    cockpit.format_bits_per_sec = function format_bits_per_sec(number, factor, separate) {
+        if (factor === undefined)
+            factor = 1000;
+        return format_units(number, bit_suffixes, factor, separate);
+    };
+
+    /* ---------------------------------------------------------------------
+     * Shared data cache.
+     *
+     * We cannot use sessionStorage when keeping lots of data in memory and
+     * sharing it between frames. It has a rather paltry limit on the amount
+     * of data it can hold ... so we use window properties instead.
+     */
+
+    function lookup_storage(win) {
+        var storage;
+        if (win.parent && win.parent !== win)
+            storage = lookup_storage(win.parent);
+        if (!storage) {
+            try {
+                storage = win["cv1-storage"];
+                if (!storage)
+                    win["cv1-storage"] = storage = { };
+            } catch(ex) { }
+        }
+        return storage;
+    }
+
+    function StorageCache(key, provider, consumer) {
+        var self = this;
+
+        /* For triggering events and ownership */
+        var trigger = window.sessionStorage;
+        var last;
+
+        var storage = lookup_storage(window);
+
+        var claimed = false;
+        var source;
+
+        function callback() {
+            /* Only run the callback if we have a result */
+            if (storage[key] !== undefined) {
+                if (consumer(storage[key], key) === false)
+                    self.close();
+            }
+        }
+
+        function result(value) {
+            if (source && !claimed)
+                claimed = true;
+            if (!claimed)
+                return;
+
+            // use a random number to avoid races by separate instances
+            var version = Math.floor(Math.random() * 10000000) + 1;
+
+            /* Event for the local window */
+            var ev = document.createEvent("StorageEvent");
+            ev.initStorageEvent("storage", false, false, key, null,
+                                version, window.location, trigger);
+
+            storage[key] = value;
+            trigger.setItem(key, version);
+            ev.self = self;
+            window.dispatchEvent(ev);
+        }
+
+        self.claim = function claim() {
+            if (!source)
+                source = provider(result, key);
+        };
+
+        function unclaim() {
+            if (source && source.close)
+                source.close();
+            source = null;
+
+            if (!claimed)
+                return;
+
+            claimed = false;
+
+            var current_value = trigger.getItem(key);
+            if (current_value)
+                current_value = parseInt(current_value, 10);
+            else
+                current_value = null;
+
+            if (last && last === current_value) {
+                var ev = document.createEvent("StorageEvent");
+                var version = trigger[key];
+                ev.initStorageEvent("storage", false, false, key, version,
+                                    null, window.location, trigger);
+                delete storage[key];
+                trigger.removeItem(key);
+                ev.self = self;
+                window.dispatchEvent(ev);
+            }
+        }
+
+        function changed(event) {
+            if (event.key !== key)
+                return;
+
+            /* check where the event came from
+               - it came from someone else:
+                   if it notifies their unclaim (new value null) and we haven't already claimed, do so
+               - it came from ourselves:
+                   if the new value doesn't match the actual value in the cache, and
+                   we tried to claim (from null to a number), cancel our claim
+             */
+            if (event.self !== self) {
+                if (!event.newValue && !claimed) {
+                    self.claim();
+                    return;
+                }
+            } else if (claimed && !event.oldValue && (event.newValue !== trigger.getItem(key))) {
+                unclaim();
+            }
+
+            var new_value = null;
+            if (event.newValue)
+                new_value = parseInt(event.newValue, 10);
+            if (last !== new_value) {
+                last = new_value;
+                callback();
+            }
+        }
+
+        self.close = function() {
+            window.removeEventListener("storage", changed, true);
+            unclaim();
+        };
+
+        window.addEventListener("storage", changed, true);
+
+        /* Always clear this data on unload */
+        window.addEventListener("beforeunload", function() {
+            self.close();
+        });
+        window.addEventListener("unload", function() {
+            self.close();
+        });
+
+        if (trigger.getItem(key))
+            callback();
+        else
+            self.claim();
+    }
+
+    cockpit.cache = function cache(key, provider, consumer) {
+        return new StorageCache(key, provider, consumer);
+    };
+
+    /* ---------------------------------------------------------------------
+     * Metrics
+     *
+     * Implements the cockpit.series and cockpit.grid. Part of the metrics
+     * implementations that do not require jquery.
+     */
+
+    function SeriesSink(interval, identifier, fetch_callback) {
+        var self = this;
+
+        self.interval = interval;
+        self.limit = identifier ? 64 * 1024 : 1024;
+
+        /*
+         * The cache sits on a window, either our own or a parent
+         * window whichever we can access properly.
+         *
+         * Entries in the index are:
+         *
+         * { beg: N, items: [], mapping: { }, next: item }
+         */
+        var index = setup_index(identifier);
+
+        /*
+         * A linked list through the index, that we use for expiry
+         * of the cache.
+         */
+        var count = 0;
+        var head = null;
+        var tail = null;
+
+        function setup_index(id) {
+            if (!id)
+                return [];
+
+            /* Try and find a good place to cache data */
+            var storage = lookup_storage(window);
+
+            var index = storage[id];
+            if (!index)
+                storage[id] = index = [];
+            return index;
+        }
+
+        function search(idx, beg) {
+            var low = 0;
+            var high = idx.length - 1;
+            var mid, val;
+
+            while (low <= high) {
+                mid = (low + high) / 2 | 0;
+                val = idx[mid].beg;
+                if (val < beg)
+                    low = mid + 1;
+                else if (val > beg)
+                    high = mid - 1;
+                else
+                    return mid; /* key found */
+            }
+            return low;
+        }
+
+        function fetch(beg, end, for_walking) {
+            if (fetch_callback) {
+                if (!for_walking) {
+                    /* Stash some fake data synchronously so that we don't ask
+                     * again for the same range while they are still fetching
+                     * it asynchronously.
+                     */
+                    stash(beg, new Array(end-beg), { });
+                }
+                fetch_callback(beg, end, for_walking);
+            }
+        }
+
+        self.load = function load(beg, end, for_walking) {
+            if (end <= beg)
+                return;
+
+            var at = search(index, beg);
+
+            var entry;
+            var b, e, eb, en, i, len = index.length;
+            var last = beg;
+
+            /* We do this in two phases: First, we walk the index to
+             * process what we already have and at the same time make
+             * notes about what we need to fetch.  Then we go over the
+             * notes and actually fetch what we need.  That way, the
+             * fetch callbacks in the second phase can modify the
+             * index data structure without disturbing the walk in the
+             * first phase.
+             */
+
+            var fetches = [ ];
+
+            /* Data relevant to this range can be at the found index, or earlier */
+            for (i = at > 0 ? at - 1 : at; i < len; i++) {
+                entry = index[i];
+                en = entry.items.length;
+                if (!en)
+                    continue;
+
+                eb = entry.beg;
+                b = Math.max(eb, beg);
+                e = Math.min(eb + en, end);
+
+                if (b < e) {
+                    if (b > last)
+                        fetches.push([ last, b ]);
+                    process(b, entry.items.slice(b - eb, e - eb), entry.mapping);
+                    last = e;
+                } else if (i >= at) {
+                    break; /* no further intersections */
+                }
+            }
+
+            for (i = 0; i < fetches.length; i++)
+                fetch(fetches[i][0], fetches[i][1], for_walking);
+
+            if (last != end)
+                fetch(last, end, for_walking);
+        };
+
+        function stash(beg, items, mapping) {
+            if (!items.length)
+                return;
+
+            var at = search(index, beg);
+
+            var end = beg + items.length;
+            var remove = [ ];
+            var entry;
+            var num;
+
+            var b, e, eb, en, i, len = index.length;
+            for (i = at > 0 ? at - 1 : at; i < len; i++) {
+                entry = index[i];
+                en = entry.items.length;
+                if (!en)
+                    continue;
+
+                eb = entry.beg;
+                b = Math.max(eb, beg);
+                e = Math.min(eb + en, end);
+
+                /*
+                 * We truncate blocks that intersect with this one
+                 *
+                 * We could adjust them, but in general the loaders are
+                 * intelligent enough to only load the required data, so
+                 * not doing this optimization yet.
+                 */
+
+                if (b < e) {
+                    num = e - b;
+                    entry.items.splice(b - eb, num);
+                    count -= num;
+                    if (b - eb === 0)
+                        entry.beg += (e - eb);
+                } else if (i >= at) {
+                    break; /* no further intersections */
+                }
+            }
+
+            /* Insert our item into the array */
+            entry = { beg: beg, items: items, mapping: mapping };
+            if (!head)
+                head = entry;
+            if (tail)
+                tail.next = entry;
+            tail = entry;
+            count += items.length;
+            index.splice(at, 0, entry);
+
+            /* Remove any items with zero length around insertion point */
+            for (at--; at <= i; at++) {
+                entry = index[at];
+                if (entry && !entry.items.length) {
+                    index.splice(at, 1);
+                    at--;
+                }
+            }
+
+            /* If our index has gotten too big, expire entries */
+            while (head && count > self.limit) {
+                count -= head.items.length;
+                head.items = [];
+                head.mapping = null;
+                head = head.next || null;
+            }
+
+            /* Remove any entries with zero length at beginning */
+            len = index.length;
+            for (i = 0; i < len; i++) {
+                if (index[i].items.length > 0)
+                    break;
+            }
+            index.splice(0, i);
+        }
+
+        /*
+         * Used to populate grids, the keys are grid ids and
+         * the values are objects: { grid, rows, notify }
+         *
+         * The rows field is an object indexed by paths
+         * container aliases, and the values are: [ row, path ]
+         */
+        var registered = { };
+
+        /* An undocumented function called by DataGrid */
+        self._register = function _register(grid, id) {
+            if (grid.interval != interval)
+                throw "mismatched metric interval between grid and sink";
+            var gdata = registered[id];
+            if (!gdata) {
+                gdata = registered[id] = { grid: grid, links: [ ] };
+                gdata.links.remove = function remove() {
+                    delete registered[id];
+                };
+            }
+            return gdata.links;
+        };
+
+        function process(beg, items, mapping) {
+            var i, j, jlen, k, klen;
+            var data, path, row, map;
+            var id, gdata, grid;
+            var f, t, n, b, e;
+
+            var end = beg + items.length;
+
+            for (id in registered) {
+                gdata = registered[id];
+                grid = gdata.grid;
+
+                b = Math.max(beg, grid.beg);
+                e = Math.min(end, grid.end);
+
+                /* Does this grid overlap the bounds of item? */
+                if (b < e) {
+
+                    /* Where in the items to take from */
+                    f = b - beg;
+
+                    /* Where and how many to place */
+                    t = b - grid.beg;
+
+                    /* How many to process */
+                    n = e - b;
+
+                    for (i = 0; i < n; i++) {
+                        klen = gdata.links.length;
+                        for (k = 0; k < klen; k++) {
+                            path = gdata.links[k][0];
+                            row = gdata.links[k][1];
+
+                            /* Calulate the data field to fill in */
+                            data = items[f + i];
+                            map = mapping;
+                            jlen = path.length;
+                            for (j = 0; data !== undefined && j < jlen; j++) {
+                                if (!data) {
+                                    data = undefined;
+                                } else if (map !== undefined && map !== null) {
+                                    map = map[path[j]];
+                                    if (map)
+                                        data = data[map[""]];
+                                    else
+                                        data = data[path[j]];
+                                } else {
+                                    data = data[path[j]];
+                                }
+                            }
+
+                            row[t + i] = data;
+                        }
+                    }
+
+                    /* Notify the grid, so it can call any functions */
+                    grid.notify(t, n);
+                }
+            }
+        }
+
+        self.input = function input(beg, items, mapping) {
+            process(beg, items, mapping);
+            stash(beg, items, mapping);
+        };
+    }
+
+    cockpit.series = function series(interval, cache, fetch) {
+        return new SeriesSink(interval, cache, fetch);
+    };
+
+    var unique = 1;
+
+    function SeriesGrid(interval, beg, end) {
+        var self = this;
+
+        /* We can trigger events */
+        event_mixin(self, { });
+
+        var rows = [];
+
+        self.interval = interval;
+        self.beg = 0;
+        self.end = 0;
+
+        /*
+         * Used to populate table data, the values are:
+         * [ callback, row ]
+         */
+        var callbacks = [ ];
+
+        var sinks = [ ];
+
+        var suppress = 0;
+
+        var id = "g1-" + unique;
+        unique += 1;
+
+        /* Used while walking */
+        var walking = null;
+        var offset = null;
+
+        self.notify = function notify(x, n) {
+            if (suppress)
+                return;
+            if (x + n > self.end - self.beg)
+                n = (self.end - self.beg) - x;
+            if (n <= 0)
+                return;
+            var j, jlen = callbacks.length;
+            var callback, row;
+            for (j = 0; j < jlen; j++) {
+                callback = callbacks[j][0];
+                row = callbacks[j][1];
+                callback.call(self, row, x, n);
+            }
+
+            var event = document.createEvent("CustomEvent");
+            event.initCustomEvent("notify", false, false, [ x, n ]);
+            self.dispatchEvent(event, x, n);
+        };
+
+        self.add = function add(/* sink, path */) {
+            var row = [];
+            rows.push(row);
+
+            var registered, sink, path, links, cb;
+
+            /* Called as add(sink, path) */
+            if (typeof (arguments[0]) === "object") {
+                sink = arguments[0];
+                sink = sink["series"] || sink;
+
+                /* The path argument can be an array, or a dot separated string */
+                path = arguments[1];
+                if (!path)
+                    path = [];
+                else if (typeof (path) === "string")
+                    path = path.split(".");
+
+                links = sink._register(self, id);
+                if (!links.length)
+                    sinks.push({ sink: sink, links: links });
+                links.push([path, row]);
+
+            /* Called as add(callback) */
+            } else if (typeof (arguments[0]) === "function") {
+                cb = [ arguments[0], row ];
+                if (arguments[1] === true)
+                    callbacks.unshift(cb);
+                else
+                    callbacks.push(cb);
+
+            /* Not called as add() */
+            } else if (arguments.length !== 0) {
+                throw "invalid args to grid.add()";
+            }
+
+            return row;
+        };
+
+        self.remove = function remove(row) {
+            var j, i, ilen, jlen;
+
+            /* Remove from the sinks */
+            ilen = sinks.length;
+            for (i = 0; i < ilen; i++) {
+                jlen = sinks[i].links.length;
+                for (j = 0; j < jlen; j++) {
+                    if (sinks[i].links[j][1] === row) {
+                        sinks[i].links.splice(j, 1);
+                        break;
+                    }
+                }
+            }
+
+            /* Remove from our list of rows */
+            ilen = rows.length;
+            for (i = 0; i < ilen; i++) {
+                if (rows[i] === row) {
+                    rows.splice(i, 1);
+                    break;
+                }
+            }
+        };
+
+        self.sync = function sync(for_walking) {
+            /* Suppress notifications */
+            suppress++;
+
+            /* Ask all sinks to load data */
+            var sink, i, len = sinks.length;
+            for (i = 0; i < len; i++) {
+                sink = sinks[i].sink;
+                sink.load(self.beg, self.end, for_walking);
+            }
+
+            suppress--;
+
+            /* Notify for all rows */
+            self.notify(0, self.end - self.beg);
+        };
+
+        /* Also works for negative zero */
+        function is_negative(n) {
+            return ((n = +n) || 1 / n) < 0;
+        }
+
+        function move_internal(beg, end, for_walking) {
+            if (end === undefined)
+                end = beg + (self.end - self.beg);
+
+            if (end < beg)
+                beg = end;
+
+            self.beg = beg;
+            self.end = end;
+
+            if (!rows.length)
+                return;
+
+            rows.forEach(function(row) {
+                row.length = 0;
+            });
+
+            self.sync(for_walking);
+        }
+
+        function stop_walking() {
+            window.clearInterval(walking);
+            walking = null;
+            offset = null;
+        }
+
+        self.move = function move(beg, end) {
+            stop_walking();
+            /* Some code paths use now twice.
+             * They should use the same value.
+             */
+            var now = null;
+
+            /* Treat negative numbers relative to now */
+            if (beg === undefined) {
+                beg = 0;
+            } else if (is_negative(beg)) {
+                now = now_func();
+                beg = Math.floor(now / self.interval) + beg;
+            }
+            if (end !== undefined && is_negative(end)) {
+                if (now === null)
+                    now = now_func();
+                end = Math.floor(now / self.interval) + end;
+            }
+
+            move_internal(beg, end, false);
+        };
+
+        self.walk = function walk() {
+            /* Don't overflow 32 signed bits with the interval since
+             * many browsers will mishandle it.  This means that plots
+             * that would make about one step every month don't walk
+             * at all, but I guess that is ok.
+             *
+             * For example,
+             * https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setTimeout
+             * says:
+             *
+             *    Browsers including Internet Explorer, Chrome,
+             *    Safari, and Firefox store the delay as a 32-bit
+             *    signed Integer internally. This causes an Integer
+             *    overflow when using delays larger than 2147483647,
+             *    resulting in the timeout being executed immediately.
+             */
+
+            var start = now_func();
+            if (self.interval > 2000000000)
+                return;
+
+            stop_walking();
+            offset = start - self.beg * self.interval;
+            walking = window.setInterval(function() {
+                var now = now_func();
+                move_internal(Math.floor((now - offset) / self.interval), undefined, true);
+            }, self.interval);
+        };
+
+        self.close = function close() {
+            stop_walking();
+            while (sinks.length)
+                (sinks.pop()).links.remove();
+        };
+
+        self.move(beg, end);
+    }
+
+    cockpit.grid = function grid(interval, beg, end) {
+        return new SeriesGrid(interval, beg, end);
+    };
 }
 
 
 function full_scope(cockpit, $, po) {
+
+    function BasicError(problem, message) {
+        this.problem = problem;
+        this.message = message || cockpit.message(problem);
+        this.toString = function() {
+            return this.message;
+        };
+    }
+
+    cockpit.logout = function logout(reload) {
+        window.sessionStorage.clear();
+        if (reload !== false)
+            reload_after_disconnect = true;
+        ensure_transport(function(transport) {
+            transport.send_control({ "command": "logout", "disconnect": true });
+        });
+        window.sessionStorage.setItem("logout-intent", "explicit");
+    };
+
+    /* Not public API ... yet? */
+    cockpit.drop_privileges = function drop_privileges() {
+        ensure_transport(function(transport) {
+            transport.send_control({ "command": "logout", "disconnect": false });
+        });
+    };
 
     /* ---------------------------------------------------------------------
      * User and system information
@@ -2028,13 +2819,26 @@ function full_scope(cockpit, $, po) {
                 }
             });
 
-            /* TODO - don't flood the channel when file_content is
-             *        very large.
-             */
-            if (file_content !== null)
-                replace_channel.send(file_content);
-            replace_channel.control({ command: "done" });
+            var len = 0, binary = false;
+            if (file_content) {
+                if (file_content.byteLength) {
+                    len = file_content.byteLength;
+                    binary = true;
+                } else if (file_content.length) {
+                    len = file_content.length;
+                }
+            }
 
+            var i, n, batch = 16 * 1024;
+            for (i = 0; i < len; i += batch) {
+                n = Math.min(len - i, batch);
+                if (binary)
+                    replace_channel.send(new window.Uint8Array(file_content.buffer, i, n));
+                else
+                    replace_channel.send(file_content.substr(i, n));
+            }
+
+            replace_channel.control({ command: "done" });
             return dfd.promise();
         }
 
@@ -2161,17 +2965,8 @@ function full_scope(cockpit, $, po) {
         }
 
         if (header) {
-            if (header["plural-forms"]) {
-                /*
-                 * This code has been cross checked when it was compiled by our
-                 * po2json tool. Therefore ignore warnings about eval being evil.
-                 */
-
-                /* jshint ignore:start */
-                po_plural = new Function("n", "var nplurals, plural; " +
-                                         header["plural-forms"] + "; return plural;");
-                /* jshint ignore:end */
-            }
+            if (header["plural-forms"])
+                po_plural = header["plural-forms"];
             if (header["language"])
                 lang = header["language"];
         }
@@ -2237,114 +3032,6 @@ function full_scope(cockpit, $, po) {
     /* Only for _() calls here in the cockpit code */
     var _ = cockpit.gettext;
 
-    /* ---------------------------------------------------------------------
-     * Utilities
-     */
-
-    var fmt_re = /\$\{([^}]+)\}|\$([a-zA-Z0-9_]+)/g;
-    cockpit.format = function format(fmt, args) {
-        if (arguments.length != 2 || typeof args !== "object" || args === null)
-            args = Array.prototype.slice.call(arguments, 1);
-        return fmt.replace(fmt_re, function(m, x, y) { return args[x || y] || ""; });
-    };
-
-    function format_units(number, suffixes, factor, separate) {
-        var quotient;
-        var suffix = null;
-
-        /* Find that factor string */
-        if (typeof (factor) === "string") {
-            /* Prefer larger factors */
-            var keys = [];
-            for (var key in suffixes)
-                keys.push(key);
-            keys.sort().reverse();
-            for (var y = 0; y < keys.length; y++) {
-                for (var x = 0; x < suffixes[keys[y]].length; x++) {
-                    if (factor == suffixes[keys[y]][x]) {
-                        number = number / Math.pow(keys[y], x);
-                        suffix = factor;
-                        break;
-                    }
-                }
-                if (suffix)
-                    break;
-            }
-
-        /* @factor is a number */
-        } else if (factor in suffixes) {
-            var divisor = 1;
-            for (var i = 0; i < suffixes[factor].length; i++) {
-                quotient = number / divisor;
-                if (quotient < factor) {
-                    number = quotient;
-                    suffix = suffixes[factor][i];
-                    break;
-                }
-                divisor *= factor;
-            }
-        }
-
-        /* non-zero values should never appear zero */
-        if (number > 0 && number < 0.1)
-            number = 0.1;
-        else if (number < 0 && number > -0.1)
-            number = -0.1;
-
-        var ret;
-
-        /* TODO: Make the decimal separator translatable */
-        var string_representation;
-
-        /* only show as integer if we have a natural number */
-        if (number % 1 === 0)
-            string_representation = number.toString();
-        else
-            string_representation = number.toFixed(1);
-
-        if (suffix)
-            ret = [string_representation, suffix];
-        else
-            ret = [string_representation];
-
-        if (!separate)
-            ret = ret.join(" ");
-
-        return ret;
-    }
-
-    var byte_suffixes = {
-        1024: [ null, "KB", "MB", "GB", "TB", "PB", "EB", "ZB" ],
-        1000: [ null, "KB", "MB", "GB", "TB", "PB", "EB", "ZB" ]
-        /* 1024: [ null, "KiB", "MiB", "GiB", "TiB", "PiB", "EiB", "ZiB" ] */
-    };
-
-    cockpit.format_bytes = function format_bytes(number, factor, separate) {
-        if (factor === undefined)
-            factor = 1024;
-        return format_units(number, byte_suffixes, factor, separate);
-    };
-
-    var byte_sec_suffixes = {
-        1024: [ "B/s", "KB/s", "MB/s", "GB/s", "TB/s", "PB/s", "EB/s", "ZB/s" ]
-    };
-
-    cockpit.format_bytes_per_sec = function format_bytes_per_sec(number, factor, separate) {
-        if (factor === undefined)
-            factor = 1024;
-        return format_units(number, byte_sec_suffixes, factor, separate);
-    };
-
-    var bit_suffixes = {
-        1000: [ "bps", "Kbps", "Mbps", "Gbps", "Tbps", "Pbps", "Ebps", "Zbps" ]
-    };
-
-    cockpit.format_bits_per_sec = function format_bits_per_sec(number, factor, separate) {
-        if (factor === undefined)
-            factor = 1000;
-        return format_units(number, bit_suffixes, factor, separate);
-    };
-
     cockpit.message = function message(arg) {
         if (arg.message)
             return arg.message;
@@ -2366,6 +3053,8 @@ function full_scope(cockpit, $, po) {
             return _("The server refused to authenticate using any supported methods.");
         else if (problem == "unknown-hostkey")
             return _("Untrusted host");
+        else if (problem == "invalid-hostkey")
+            return _("Host key is incorrect");
         else if (problem == "internal-error")
             return _("Internal error");
         else if (problem == "timeout")
@@ -2378,6 +3067,8 @@ function full_scope(cockpit, $, po) {
             return _("Server has closed the connection.");
         else if (problem == "not-supported")
             return _("Cockpit is not compatible with the software on the system.");
+        else if (problem == "no-host")
+            return _("Cockpit could not contact the given host.");
         else
             return problem;
     };
@@ -2415,6 +3106,7 @@ function full_scope(cockpit, $, po) {
     function HttpClient(endpoint, options) {
         var self = this;
 
+        self.options = options;
         options.payload = "http-stream1";
 
         if (endpoint !== undefined) {
@@ -2629,18 +3321,26 @@ function full_scope(cockpit, $, po) {
 
         var user = cockpit.user;
         var group = null;
+        var admin = false;
 
         if (options)
             group = options.group;
+
+        if (options && options.admin)
+            admin = true;
 
         function decide() {
             if (user.id === 0)
                 return true;
 
-            if (group && user.groups) {
+            if (user.groups) {
                 var allowed = false;
                 $.each(user.groups, function(i, name) {
                     if (name == group) {
+                        allowed = true;
+                        return false;
+                    }
+                    if (admin && (name == "wheel" || name == "sudo")) {
                         allowed = true;
                         return false;
                     }
@@ -2672,155 +3372,6 @@ function full_scope(cockpit, $, po) {
 
     cockpit.permission = function permission(arg) {
         return new Permission(arg);
-    };
-
-    /* ---------------------------------------------------------------------
-     * Shared data cache.
-     *
-     * We cannot use sessionStorage when keeping lots of data in memory and
-     * sharing it between frames. It has a rather paltry limit on the amount
-     * of data it can hold ... so we use window properties instead.
-     */
-
-    function lookup_storage(win) {
-        var storage;
-        if (win.parent && win.parent !== win)
-            storage = lookup_storage(win.parent);
-        if (!storage) {
-            try {
-                storage = win["cv1-storage"];
-                if (!storage)
-                    win["cv1-storage"] = storage = { };
-            } catch(ex) { }
-        }
-        return storage;
-    }
-
-    function StorageCache(key, provider, consumer) {
-        var self = this;
-
-        /* For triggering events and ownership */
-        var trigger = window.sessionStorage;
-        var last;
-
-        var storage = lookup_storage(window);
-
-        var claimed = false;
-        var source;
-
-        function callback() {
-            /* Only run the callback if we have a result */
-            if (storage[key] !== undefined) {
-                if (consumer(storage[key], key) === false)
-                    self.close();
-            }
-        }
-
-        function result(value) {
-            if (source && !claimed)
-                claimed = true;
-            if (!claimed)
-                return;
-
-            // use a random number to avoid races by separate instances
-            var version = Math.floor(Math.random() * 10000000) + 1;
-
-            /* Event for the local window */
-            var ev = document.createEvent("StorageEvent");
-            ev.initStorageEvent("storage", false, false, key, null,
-                                version, window.location, trigger);
-
-            storage[key] = value;
-            trigger.setItem(key, version);
-            ev.self = self;
-            window.dispatchEvent(ev);
-        }
-
-        self.claim = function claim() {
-            if (!source)
-                source = provider(result, key);
-        };
-
-        function unclaim() {
-            if (source && source.close)
-                source.close();
-            source = null;
-
-            if (!claimed)
-                return;
-
-            claimed = false;
-
-            var current_value = trigger.getItem(key);
-            if (current_value)
-                current_value = parseInt(current_value, 10);
-            else
-                current_value = null;
-
-            if (last && last === current_value) {
-                var ev = document.createEvent("StorageEvent");
-                var version = trigger[key];
-                ev.initStorageEvent("storage", false, false, key, version,
-                                    null, window.location, trigger);
-                delete storage[key];
-                trigger.removeItem(key);
-                ev.self = self;
-                window.dispatchEvent(ev);
-            }
-        }
-
-        function changed(event) {
-            if (event.key !== key)
-                return;
-
-            /* check where the event came from
-               - it came from someone else:
-                   if it notifies their unclaim (new value null) and we haven't already claimed, do so
-               - it came from ourselves:
-                   if the new value doesn't match the actual value in the cache, and
-                   we tried to claim (from null to a number), cancel our claim
-             */
-            if (event.self !== self) {
-                if (!event.newValue && !claimed) {
-                    self.claim();
-                    return;
-                }
-            } else if (claimed && !event.oldValue && (event.newValue !== trigger.getItem(key))) {
-                unclaim();
-            }
-
-            var new_value = null;
-            if (event.newValue)
-                new_value = parseInt(event.newValue, 10);
-            if (last !== new_value) {
-                last = new_value;
-                callback();
-            }
-        }
-
-        self.close = function() {
-            window.removeEventListener("storage", changed, true);
-            unclaim();
-        };
-
-        window.addEventListener("storage", changed, true);
-
-        /* Always clear this data on unload */
-        window.addEventListener("beforeunload", function() {
-            self.close();
-        });
-        window.addEventListener("unload", function() {
-            self.close();
-        });
-
-        if (trigger.getItem(key))
-            callback();
-        else
-            self.claim();
-    }
-
-    cockpit.cache = function cache(key, provider, consumer) {
-        return new StorageCache(key, provider, consumer);
     };
 
     /* ---------------------------------------------------------------------
@@ -3025,505 +3576,6 @@ function full_scope(cockpit, $, po) {
         return new MetricsChannel(interval, options);
     };
 
-    function SeriesSink(interval, identifier, fetch_callback) {
-        var self = this;
-
-        self.interval = interval;
-        self.limit = identifier ? 64 * 1024 : 1024;
-
-        /*
-         * The cache sits on a window, either our own or a parent
-         * window whichever we can access properly.
-         *
-         * Entries in the index are:
-         *
-         * { beg: N, items: [], mapping: { }, next: item }
-         */
-        var index = setup_index(identifier);
-
-        /*
-         * A linked list through the index, that we use for expiry
-         * of the cache.
-         */
-        var count = 0;
-        var head = null;
-        var tail = null;
-
-        function setup_index(id) {
-            if (!id)
-                return [];
-
-            /* Try and find a good place to cache data */
-            var storage = lookup_storage(window);
-
-            var index = storage[id];
-            if (!index)
-                storage[id] = index = [];
-            return index;
-        }
-
-        function search(idx, beg) {
-            var low = 0;
-            var high = idx.length - 1;
-            var mid, val;
-
-            while (low <= high) {
-                mid = (low + high) / 2 | 0;
-                val = idx[mid].beg;
-                if (val < beg)
-                    low = mid + 1;
-                else if (val > beg)
-                    high = mid - 1;
-                else
-                    return mid; /* key found */
-            }
-            return low;
-        }
-
-        function fetch(beg, end, for_walking) {
-            if (fetch_callback) {
-                if (!for_walking) {
-                    /* Stash some fake data synchronously so that we don't ask
-                     * again for the same range while they are still fetching
-                     * it asynchronously.
-                     */
-                    stash(beg, new Array(end-beg), { });
-                }
-                fetch_callback(beg, end, for_walking);
-            }
-        }
-
-        self.load = function load(beg, end, for_walking) {
-            if (end <= beg)
-                return;
-
-            var at = search(index, beg);
-
-            var entry;
-            var b, e, eb, en, i, len = index.length;
-            var last = beg;
-
-            /* We do this in two phases: First, we walk the index to
-             * process what we already have and at the same time make
-             * notes about what we need to fetch.  Then we go over the
-             * notes and actually fetch what we need.  That way, the
-             * fetch callbacks in the second phase can modify the
-             * index data structure without disturbing the walk in the
-             * first phase.
-             */
-
-            var fetches = [ ];
-
-            /* Data relevant to this range can be at the found index, or earlier */
-            for (i = at > 0 ? at - 1 : at; i < len; i++) {
-                entry = index[i];
-                en = entry.items.length;
-                if (!en)
-                    continue;
-
-                eb = entry.beg;
-                b = Math.max(eb, beg);
-                e = Math.min(eb + en, end);
-
-                if (b < e) {
-                    if (b > last)
-                        fetches.push([ last, b ]);
-                    process(b, entry.items.slice(b - eb, e - eb), entry.mapping);
-                    last = e;
-                } else if (i >= at) {
-                    break; /* no further intersections */
-                }
-            }
-
-            for (i = 0; i < fetches.length; i++)
-                fetch(fetches[i][0], fetches[i][1], for_walking);
-
-            if (last != end)
-                fetch(last, end, for_walking);
-        };
-
-        function stash(beg, items, mapping) {
-            if (!items.length)
-                return;
-
-            var at = search(index, beg);
-
-            var end = beg + items.length;
-            var remove = [ ];
-            var entry;
-            var num;
-
-            var b, e, eb, en, i, len = index.length;
-            for (i = at > 0 ? at - 1 : at; i < len; i++) {
-                entry = index[i];
-                en = entry.items.length;
-                if (!en)
-                    continue;
-
-                eb = entry.beg;
-                b = Math.max(eb, beg);
-                e = Math.min(eb + en, end);
-
-                /*
-                 * We truncate blocks that intersect with this one
-                 *
-                 * We could adjust them, but in general the loaders are
-                 * intelligent enough to only load the required data, so
-                 * not doing this optimization yet.
-                 */
-
-                if (b < e) {
-                    num = e - b;
-                    entry.items.splice(b - eb, num);
-                    count -= num;
-                    if (b - eb === 0)
-                        entry.beg += (e - eb);
-                } else if (i >= at) {
-                    break; /* no further intersections */
-                }
-            }
-
-            /* Insert our item into the array */
-            entry = { beg: beg, items: items, mapping: mapping };
-            if (!head)
-                head = entry;
-            if (tail)
-                tail.next = entry;
-            tail = entry;
-            count += items.length;
-            index.splice(at, 0, entry);
-
-            /* Remove any items with zero length around insertion point */
-            for (at--; at <= i; at++) {
-                entry = index[at];
-                if (entry && !entry.items.length) {
-                    index.splice(at, 1);
-                    at--;
-                }
-            }
-
-            /* If our index has gotten too big, expire entries */
-            while (head && count > self.limit) {
-                count -= head.items.length;
-                head.items = [];
-                head.mapping = null;
-                head = head.next || null;
-            }
-
-            /* Remove any entries with zero length at beginning */
-            len = index.length;
-            for (i = 0; i < len; i++) {
-                if (index[i].items.length > 0)
-                    break;
-            }
-            index.splice(0, i);
-        }
-
-        /*
-         * Used to populate grids, the keys are grid ids and
-         * the values are objects: { grid, rows, notify }
-         *
-         * The rows field is an object indexed by paths
-         * container aliases, and the values are: [ row, path ]
-         */
-        var registered = { };
-
-        /* An undocumented function called by DataGrid */
-        self._register = function _register(grid, id) {
-            if (grid.interval != interval)
-                throw "mismatched metric interval between grid and sink";
-            var gdata = registered[id];
-            if (!gdata) {
-                gdata = registered[id] = { grid: grid, links: [ ] };
-                gdata.links.remove = function remove() {
-                    delete registered[id];
-                };
-            }
-            return gdata.links;
-        };
-
-        function process(beg, items, mapping) {
-            var i, j, jlen, k, klen;
-            var data, path, row, map;
-            var id, gdata, grid;
-            var f, t, n, b, e;
-
-            var end = beg + items.length;
-
-            for (id in registered) {
-                gdata = registered[id];
-                grid = gdata.grid;
-
-                b = Math.max(beg, grid.beg);
-                e = Math.min(end, grid.end);
-
-                /* Does this grid overlap the bounds of item? */
-                if (b < e) {
-
-                    /* Where in the items to take from */
-                    f = b - beg;
-
-                    /* Where and how many to place */
-                    t = b - grid.beg;
-
-                    /* How many to process */
-                    n = e - b;
-
-                    for (i = 0; i < n; i++) {
-                        klen = gdata.links.length;
-                        for (k = 0; k < klen; k++) {
-                            path = gdata.links[k][0];
-                            row = gdata.links[k][1];
-
-                            /* Calulate the data field to fill in */
-                            data = items[f + i];
-                            map = mapping;
-                            jlen = path.length;
-                            for (j = 0; data !== undefined && j < jlen; j++) {
-                                if (!data) {
-                                    data = undefined;
-                                } else if (map !== undefined && map !== null) {
-                                    map = map[path[j]];
-                                    if (map)
-                                        data = data[map[""]];
-                                    else
-                                        data = data[path[j]];
-                                } else {
-                                    data = data[path[j]];
-                                }
-                            }
-
-                            row[t + i] = data;
-                        }
-                    }
-
-                    /* Notify the grid, so it can call any functions */
-                    grid.notify(t, n);
-                }
-            }
-        }
-
-        self.input = function input(beg, items, mapping) {
-            process(beg, items, mapping);
-            stash(beg, items, mapping);
-        };
-    }
-
-    cockpit.series = function series(interval, cache, fetch) {
-        return new SeriesSink(interval, cache, fetch);
-    };
-
-    var unique = 1;
-
-    function SeriesGrid(interval, beg, end) {
-        var self = this;
-
-        var rows = [];
-
-        self.interval = interval;
-        self.beg = 0;
-        self.end = 0;
-
-        /*
-         * Used to populate table data, the values are:
-         * [ callback, row ]
-         */
-        var callbacks = [ ];
-
-        var sinks = [ ];
-
-        var suppress = 0;
-
-        var id = "g1-" + unique;
-        unique += 1;
-
-        /* Used while walking */
-        var walking = null;
-        var offset = null;
-
-        self.notify = function notify(x, n) {
-            if (suppress)
-                return;
-            if (x + n > self.end - self.beg)
-                n = (self.end - self.beg) - x;
-            if (n <= 0)
-                return;
-            var j, jlen = callbacks.length;
-            var callback, row;
-            for (j = 0; j < jlen; j++) {
-                callback = callbacks[j][0];
-                row = callbacks[j][1];
-                callback.call(self, row, x, n);
-            }
-
-            $(self).triggerHandler("notify", [ x, n ]);
-        };
-
-        self.add = function add(/* sink, path */) {
-            var row = [];
-            rows.push(row);
-
-            var registered, sink, path, links, cb;
-
-            /* Called as add(sink, path) */
-            if (typeof (arguments[0]) === "object") {
-                sink = arguments[0];
-                sink = sink["series"] || sink;
-
-                /* The path argument can be an array, or a dot separated string */
-                path = arguments[1];
-                if (!path)
-                    path = [];
-                else if (typeof (path) === "string")
-                    path = path.split(".");
-
-                links = sink._register(self, id);
-                if (!links.length)
-                    sinks.push({ sink: sink, links: links });
-                links.push([path, row]);
-
-            /* Called as add(callback) */
-            } else if (typeof (arguments[0]) === "function") {
-                cb = [ arguments[0], row ];
-                if (arguments[1] === true)
-                    callbacks.unshift(cb);
-                else
-                    callbacks.push(cb);
-
-            /* Not called as add() */
-            } else if (arguments.length !== 0) {
-                throw "invalid args to grid.add()";
-            }
-
-            return row;
-        };
-
-        self.remove = function remove(row) {
-            var j, i, ilen, jlen;
-
-            /* Remove from the sinks */
-            ilen = sinks.length;
-            for (i = 0; i < ilen; i++) {
-                jlen = sinks[i].links.length;
-                for (j = 0; j < jlen; j++) {
-                    if (sinks[i].links[j][1] === row) {
-                        sinks[i].links.splice(j, 1);
-                        break;
-                    }
-                }
-            }
-
-            /* Remove from our list of rows */
-            ilen = rows.length;
-            for (i = 0; i < ilen; i++) {
-                if (rows[i] === row) {
-                    rows.splice(i, 1);
-                    break;
-                }
-            }
-        };
-
-        self.sync = function sync(for_walking) {
-            /* Suppress notifications */
-            suppress++;
-
-            /* Ask all sinks to load data */
-            var sink, i, len = sinks.length;
-            for (i = 0; i < len; i++) {
-                sink = sinks[i].sink;
-                sink.load(self.beg, self.end, for_walking);
-            }
-
-            suppress--;
-
-            /* Notify for all rows */
-            self.notify(0, self.end - self.beg);
-        };
-
-        /* Also works for negative zero */
-        function is_negative(n) {
-            return ((n = +n) || 1 / n) < 0;
-        }
-
-        function move_internal(beg, end, for_walking) {
-            if (end === undefined)
-                end = beg + (self.end - self.beg);
-
-            if (end < beg)
-                beg = end;
-
-            self.beg = beg;
-            self.end = end;
-
-            if (!rows.length)
-                return;
-
-            rows.forEach(function(row) {
-                row.length = 0;
-            });
-
-            self.sync(for_walking);
-        }
-
-        function stop_walking() {
-            window.clearInterval(walking);
-            walking = null;
-            offset = null;
-        }
-
-        self.move = function move(beg, end) {
-            stop_walking();
-
-            /* Treat negative numbers relative to now */
-            if (beg === undefined)
-                beg = 0;
-            else if (is_negative(beg))
-                beg = Math.floor($.now() / self.interval) + beg;
-            if (end !== undefined && is_negative(end))
-                end = Math.floor($.now() / self.interval) + end;
-
-            move_internal(beg, end, false);
-        };
-
-        self.walk = function walk() {
-            /* Don't overflow 32 signed bits with the interval since
-             * many browsers will mishandle it.  This means that plots
-             * that would make about one step every month don't walk
-             * at all, but I guess that is ok.
-             *
-             * For example,
-             * https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setTimeout
-             * says:
-             *
-             *    Browsers including Internet Explorer, Chrome,
-             *    Safari, and Firefox store the delay as a 32-bit
-             *    signed Integer internally. This causes an Integer
-             *    overflow when using delays larger than 2147483647,
-             *    resulting in the timeout being executed immediately.
-             */
-            if (self.interval > 2000000000)
-                return;
-
-            stop_walking();
-            offset = $.now() - self.beg * self.interval;
-            walking = window.setInterval(function() {
-                move_internal(Math.floor(($.now() - offset) / self.interval), undefined, true);
-            }, self.interval);
-        };
-
-        self.close = function close() {
-            stop_walking();
-            while (sinks.length)
-                (sinks.pop()).links.remove();
-        };
-
-        self.move(beg, end);
-    }
-
-    cockpit.grid = function grid(interval, beg, end) {
-        return new SeriesGrid(interval, beg, end);
-    };
-
     /* ---------------------------------------------------------------------
      * Ooops handling.
      *
@@ -3534,7 +3586,7 @@ function full_scope(cockpit, $, po) {
 
     cockpit.oops = function oops() {
         if (window.parent !== window && window.name.indexOf("cockpit1:") === 0)
-            window.parent.postMessage("\n{ \"command\": \"oops\" }", origin);
+            window.parent.postMessage("\n{ \"command\": \"oops\" }", transport_origin);
     };
 
     var old_onerror;
@@ -3558,9 +3610,10 @@ function full_scope(cockpit, $, po) {
 var cockpit = { };
 var basics = false;
 var extra = false;
+
 function factory(jquery) {
     if (!basics) {
-        basic_scope(cockpit);
+        basic_scope(cockpit, jquery);
         basics = true;
     }
     if (!extra) {

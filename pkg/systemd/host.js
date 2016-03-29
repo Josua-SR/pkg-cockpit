@@ -22,6 +22,7 @@ define([
     "base1/cockpit",
     "base1/mustache",
     "domain/operation",
+    "performance/dialog",
     "shell/controls",
     "shell/shell",
     "system/server",
@@ -32,13 +33,13 @@ define([
     "base1/bootstrap-datepicker",
     "base1/bootstrap-combobox",
     "base1/patterns",
-], function($, cockpit, Mustache, domain, controls, shell, server, service) {
+], function($, cockpit, Mustache, domain, performance, controls, shell, server, service) {
 "use strict";
 
 var _ = cockpit.gettext;
 var C_ = cockpit.gettext;
 
-var permission = cockpit.permission({ group: "wheel" });
+var permission = cockpit.permission({ admin: true });
 $(permission).on("changed", update_hostname_privileged);
 
 function update_hostname_privileged() {
@@ -105,7 +106,7 @@ function ServerTime() {
     }
 
     self.update = function update() {
-        cockpit.spawn(["/usr/bin/date", "+%s:%:z"])
+        cockpit.spawn(["date", "+%s:%:z"])
             .done(function(data) {
                 var parts = data.trim().split(":").map(function(x) {
                     return parseInt(x, 10);
@@ -125,7 +126,7 @@ function ServerTime() {
          * way to make sense of this date without a round trip to the
          * server ... the timezone is really server specific.
          */
-        cockpit.spawn(["/usr/bin/date", "--date=" + datestr + " " + hourstr + ":" + minstr, "+%s"])
+        cockpit.spawn(["date", "--date=" + datestr + " " + hourstr + ":" + minstr, "+%s"])
             .fail(function(ex) {
                 dfd.reject(ex);
             })
@@ -173,7 +174,6 @@ PageServer.prototype = {
     _init: function() {
         this.id = "server";
         this.server_time = null;
-        this.os_file_name = "/etc/os-release";
         this.client = null;
         this.hostname_proxy = null;
     },
@@ -193,6 +193,9 @@ PageServer.prototype = {
                     { title: _("Shutdown"),        action: 'shutdown' },
                   ])
         );
+        $('#system-ostree-version-link').on('click', function () {
+            cockpit.jump("/updates", cockpit.transport.host);
+        });
 
         $('#system_information_hostname_button').on('click', function () {
             PageSystemInformationChangeHostname.client = self.client;
@@ -205,6 +208,9 @@ PageServer.prototype = {
 
         self.domain_button = domain.button();
         $("#system-info-realms td.button-location").append(self.domain_button);
+
+        self.performance_button = performance.button();
+        $("#system-info-performance td.button-location").append(self.performance_button);
 
         self.server_time = new ServerTime();
         $(self.server_time).on("changed", function() {
@@ -327,36 +333,20 @@ PageServer.prototype = {
     enter: function() {
         var self = this;
 
+        self.ostree_client = cockpit.dbus('org.projectatomic.rpmostree1',
+                                          {"superuser" : true});
+        $(self.ostree_client).on("close", function () {
+            self.ostree_client = null;
+        });
+
+        self.sysroot = self.ostree_client.proxy('org.projectatomic.rpmostree1.Sysroot',
+                                                '/org/projectatomic/rpmostree1/Sysroot');
+        $(self.sysroot).on("changed", $.proxy(this, "sysroot_changed"));
+
         self.client = cockpit.dbus('org.freedesktop.hostname1');
         self.hostname_proxy = self.client.proxy('org.freedesktop.hostname1',
                                      '/org/freedesktop/hostname1');
         self.kernel_hostname = null;
-
-        // HACK: We really should use OperatingSystemPrettyName
-        // from hostname1 here. Once we require system > 211
-        // we should change this.
-        function parse_pretty_name(data, tag, ex) {
-            if (ex) {
-                console.warn("couldn't load os data: " + ex);
-                data = "";
-            }
-
-            var lines = data.split("\n");
-            for (var i = 0; i < lines.length; i++) {
-                var parts = lines[i].split("=");
-                if (parts[0] === "PRETTY_NAME") {
-                    var text = parts[1];
-                    try {
-                        text = JSON.parse(text);
-                    } catch (e) {}
-                    $("#system_information_os_text").text(text);
-                    break;
-                }
-            }
-        }
-
-        self.os_file = cockpit.file(self.os_file_name);
-        self.os_file.watch(parse_pretty_name);
 
         var series;
 
@@ -429,8 +419,8 @@ PageServer.prototype = {
         /* Disk IO graph */
 
         var disk_data = {
-            direct: [ "disk.dev.total_bytes" ],
-            internal: [ "block.device.read", "block.device.written" ],
+            direct: [ "disk.all.total_bytes" ],
+            internal: [ "disk.all.read", "disk.all.written" ],
             units: "bytes",
             derive: "rate"
         };
@@ -487,13 +477,10 @@ PageServer.prototype = {
             return ret;
         }
 
-        cockpit.spawn(["grep", "\\w", "bios_vendor", "bios_version", "bios_date", "sys_vendor", "product_name"],
+        cockpit.spawn(["grep", "\\w", "sys_vendor", "product_name"],
                       { directory: "/sys/devices/virtual/dmi/id", err: "ignore" })
             .done(function(output) {
                 var fields = parse_lines(output);
-                $("#system_information_bios_text").text(fields.bios_vendor + " " +
-                                                        fields.bios_version + " (" +
-                                                        fields.bios_date + ")");
                 $("#system_information_hardware_text").text(fields.sys_vendor + " " +
                                                             fields.product_name);
             })
@@ -528,6 +515,7 @@ PageServer.prototype = {
             if (!str)
                 str = _("Set Host name");
             $("#system_information_hostname_button").text(str);
+            $("#system_information_os_text").text(self.hostname_proxy.OperatingSystemPrettyName || "");
         }
 
         cockpit.spawn(["hostname"], { err: "ignore" })
@@ -557,9 +545,6 @@ PageServer.prototype = {
         self.disk_plot.destroy();
         self.network_plot.destroy();
 
-        self.os_file.close();
-        self.os_file = null;
-
         $(self.hostname_proxy).off();
         self.hostname_proxy = null;
 
@@ -567,6 +552,42 @@ PageServer.prototype = {
         self.client = null;
 
         $(cockpit).off('.server');
+
+        $(self.sysroot).off();
+        self.sysroot = null;
+        if (self.ostree_client) {
+            self.ostree_client.close();
+            self.ostree_client = null;
+        }
+    },
+
+    sysroot_changed: function() {
+        var self = this;
+
+        if (self.sysroot.Booted && self.ostree_client) {
+            var version = "";
+            self.ostree_client.call(self.sysroot.Booted,
+                                    "org.freedesktop.DBus.Properties", "Get",
+                                    ['org.projectatomic.rpmostree1.OS',
+                                     "BootedDeployment"])
+                .done(function (result) {
+                    if (result && result[0]) {
+                        var deployment = result[0].v;
+                        if (deployment && deployment.version)
+                            version = deployment.version.v;
+                    }
+                })
+                .fail(function (ex) {
+                    console.log(ex);
+                })
+                .always(function () {
+                    $("#system-ostree-version").toggleClass("hidden", !version);
+                    $("#system-ostree-version-link").text(version);
+                });
+        } else {
+            $("#system-ostree-version").toggleClass("hidden", true);
+            $("#system-ostree-version-link").text("");
+        }
     },
 
     shutdown: function(action_type) {
@@ -1138,31 +1159,30 @@ function PageSystemInformationChangeSystime() {
 PageShutdownDialog.prototype = {
     _init: function() {
         this.id = "shutdown-dialog";
+        this.delay = 0;
     },
 
     setup: function() {
-        $("#shutdown-delay").html(
-            this.delay_btn = shell.select_btn($.proxy(this, "update"),
-                                                [ { choice: "1",   title: _("1 Minute") },
-                                                  { choice: "5",   title: _("5 Minutes") },
-                                                  { choice: "20",  title: _("20 Minutes") },
-                                                  { choice: "40",  title: _("40 Minutes") },
-                                                  { choice: "60",  title: _("60 Minutes") },
-                                                  { group : [{ choice: "0",   title: _("No Delay") },
-                                                             { choice: "x",   title: _("Specific Time")}]}
-                                                ]).
-                css("display", "inline"));
+        var self = this;
 
-        $("#shutdown-time input").change($.proxy(this, "update"));
+        $("#shutdown-delay li").on("click", function(ev) {
+            self.delay = $(this).attr("value");
+            self.update();
+        });
+
+        $("#shutdown-time input").change($.proxy(self, "update"));
     },
 
     enter: function(event) {
+        var self = this;
+
         $("#shutdown-message").
             val("").
             attr("placeholder", _("Message to logged in users")).
             attr("rows", 5);
 
-        shell.select_btn_select(this.delay_btn, "1");
+        /* Track the value correctly */
+        self.delay = $("#shutdown-delay li:first-child").attr("value");
 
         if (PageShutdownDialog.type == 'shutdown') {
           $('#shutdown-dialog .modal-title').text(_("Shutdown"));
@@ -1183,11 +1203,11 @@ PageShutdownDialog.prototype = {
     },
 
     update: function() {
+        var self = this;
         var disabled = false;
 
-        var delay = shell.select_btn_selected(this.delay_btn);
-        $("#shutdown-time").toggle(delay == "x");
-        if (delay == "x") {
+        $("#shutdown-time").toggle(self.delay == "x");
+        if (self.delay == "x") {
             var h = parseInt($("#shutdown-time input:nth-child(1)").val(), 10);
             var m = parseInt($("#shutdown-time input:nth-child(3)").val(), 10);
             var valid = (h >= 0 && h < 24) && (m >= 0 && m < 60);
@@ -1196,28 +1216,28 @@ PageShutdownDialog.prototype = {
                 disabled = true;
         }
 
+        $("#shutdown-delay button span").text($("#shutdown-delay li[value='" + self.delay + "']").text());
         $("#shutdown-action").prop('disabled', disabled);
     },
 
     do_action: function(op) {
-        var delay = shell.select_btn_selected(this.delay_btn);
+        var self = this;
         var message = $("#shutdown-message").val();
         var when;
 
-        if (delay == "x")
+        if (self.delay == "x")
             when = ($("#shutdown-time input:nth-child(1)").val() + ":" +
                     $("#shutdown-time input:nth-child(3)").val());
         else
-            when = "+" + delay;
+            when = "+" + self.delay;
 
         var arg = (op == "shutdown") ? "--poweroff" : "--reboot";
 
+        if (op == "restart")
+            cockpit.hint("restart");
+
         var promise = cockpit.spawn(["shutdown", arg, when, message], { superuser: "try" });
         $('#shutdown-dialog').dialog("promise", promise);
-        promise.done(function() {
-            if (op == "restart")
-                cockpit.hint("restart");
-        });
     },
 
     restart: function() {

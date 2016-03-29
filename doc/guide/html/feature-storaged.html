@@ -21,9 +21,10 @@
 <div class="chapter">
 <div class="titlepage"><div><div><h2 class="title">
 <a name="feature-storaged"></a>storaged</h2></div></div></div>
-<p>Cockpit uses <a class="ulink" href="https://github.com/storaged-project/storaged/" target="_top"><code class="code">storaged</code></a>
-    to configure and monitor storage, disks, mounts etc. on the system. This functionality is present
-    in the Cockpit <span class="emphasis"><em>storaged</em></span> package.</p>
+<p>If available on the system, Cockpit uses <a class="ulink" href="https://github.com/storaged-project/storaged/" target="_top"><code class="code">storaged</code></a>
+    to configure and monitor storage, disks, mounts etc. on the
+    system. This functionality is present in the Cockpit
+    <span class="emphasis"><em>storaged</em></span> package.</p>
 <p>For non root users, storaged controls access to its APIs via
     <a class="link" href="privileges.html" title="Privileges and Permissions">Policy Kit</a> and a user logged into Cockpit will have
     the same permissions as they do from the command line.</p>
@@ -40,6 +41,8 @@ $ <span class="command"><strong>storagedctl dump</strong></span>
     the command line, you can control multipath features with the
     <code class="code">mpathconf</code>, <code class="code">multipathd</code>, and
     <code class="code">multipath</code> commands.</p>
+<p>To manage iSCSI initiators from the command line, you can use
+    <code class="code">iscsiadm</code> and related tools.</p>
 </div>
 <div class="footer"><hr></div>
 </body>

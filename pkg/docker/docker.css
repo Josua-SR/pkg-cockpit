@@ -84,7 +84,7 @@
 #containers .cell-buttons button,
 #containers .table > tbody > tr > .cell-buttons button {
     position: absolute;
-    right: 30px;
+    right: 36px;
     width: 28px;
     height: 28px;
 }
@@ -167,10 +167,6 @@
     vertical-align: top;
 }
 
-.containers-run-inline {
-    margin-left: 8px;
-}
-
 .containers-run-inline form .pficon-close,
 .containers-run-inline form .fa-plus {
     height: 26px;
@@ -228,8 +224,29 @@
 }
 
 /* workaround: make text red for select if contained in has-error, not in patternfly */
-.has-error > .bootstrap-select > button > span {
+.has-error > .dropdown > button > span {
     color: #A94442;
+}
+
+#containers-cpu-graph,
+#containers-mem-graph {
+    height: 120px;
+}
+
+/* Display properly when there are several tags */
+#image-details .panel-heading {
+    min-height: 44px;
+    height: auto;
+}
+
+#image-details .panel-heading .pull-right,
+#container-details .panel-heading .pull-right {
+    height: 25px;
+}
+
+.resource-value {
+    min-width: 8em;
+    text-align: right;
 }
 
 /*

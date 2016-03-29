@@ -32,7 +32,7 @@
 <p>Cockpit allows access to DBus services via this API.</p>
 </div>
 <div class="refsection">
-<a name="idm47524582632704"></a><h2>DBus Types</h2>
+<a name="idm47124857064336"></a><h2>DBus Types</h2>
 <p>DBus values are represented as javascript values and objects as follows:</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
@@ -137,8 +137,9 @@ client = cockpit.dbus(name, [options])
 </tr>
 <tr>
 <td><p><span class="term"><code class="code">"host"</code></span></p></td>
-<td><p>The host to open the channel to. If no host is specified
-          then the correct one will be automatically selected based on the page
+<td><p>The host to open the channel to. If an alternate user or port is
+          required it can be specified as <code class="code">"user@myhost:port"</code>. If no host is
+          specified then the correct one will be automatically selected based on the page
           calling this function.</p></td>
 </tr>
 <tr>

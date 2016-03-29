@@ -49,6 +49,7 @@ struct _CockpitPackage {
   gchar *directory;
   JsonObject *manifest;
   GHashTable *paths;
+  gchar *content_security_policy;
 };
 
 /*
@@ -74,6 +75,7 @@ cockpit_package_free (gpointer data)
   g_debug ("%s: freeing package", package->name);
   g_free (package->name);
   g_free (package->directory);
+  g_free (package->content_security_policy);
   if (package->paths)
     g_hash_table_unref (package->paths);
   if (package->manifest)
@@ -268,48 +270,74 @@ out:
 }
 
 static JsonObject *
-read_package_manifest (const gchar *directory,
-                       const gchar *package)
+read_json_file (const gchar *directory,
+                const gchar *name,
+                GError **error)
 {
-  JsonObject *manifest = NULL;
-  GError *error = NULL;
+  JsonObject *object;
   GMappedFile *mapped;
   gchar *filename;
   GBytes *bytes;
 
-  filename = g_build_filename (directory, "manifest.json", NULL);
-  mapped = g_mapped_file_new (filename, FALSE, &error);
+  filename = g_build_filename (directory, name, NULL);
+  mapped = g_mapped_file_new (filename, FALSE, error);
+  g_free (filename);
+
   if (!mapped)
     {
+      return NULL;
+    }
+
+  bytes = g_mapped_file_get_bytes (mapped);
+  object = cockpit_json_parse_bytes (bytes, error);
+  g_mapped_file_unref (mapped);
+  g_bytes_unref (bytes);
+
+  return object;
+}
+
+static JsonObject *
+read_package_manifest (const gchar *directory,
+                       const gchar *package)
+{
+  JsonObject *manifest = NULL;
+  JsonObject *override = NULL;
+  GError *error = NULL;
+
+
+  manifest = read_json_file (directory, "manifest.json", &error);
+  if (!manifest)
+    {
       if (g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_NOENT))
-        g_debug ("no manifest found: %s", filename);
-      else if (!g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_NOTDIR))
-        g_message ("%s: %s", package, error->message);
+        g_debug ("%s: no manifest found", package);
+      else
+        g_message ("%s: couldn't read manifest.json: %s", package, error->message);
       g_clear_error (&error);
+    }
+  else if (!validate_package (package))
+    {
+      g_warning ("%s: package has invalid name", package);
+      json_object_unref (manifest);
+      return NULL;
     }
   else
     {
-     if (!validate_package (package))
-       {
-         g_warning ("package has invalid name: %s", package);
-       }
-     else
-       {
-         bytes = g_mapped_file_get_bytes (mapped);
-         manifest = cockpit_json_parse_bytes (bytes, &error);
-         g_bytes_unref (bytes);
-
-         if (!manifest)
-           {
-             g_message ("%s: invalid manifest: %s", package, error->message);
-             g_clear_error (&error);
-           }
-       }
-
-      g_mapped_file_unref (mapped);
+      override = read_json_file (directory, "override.json", &error);
+      if (error)
+        {
+          if (g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_NOENT))
+            g_debug ("%s: no override found", package);
+          else
+            g_message ("%s: couldn't read override.json: %s", package, error->message);
+          g_clear_error (&error);
+        }
+      if (override)
+        {
+          cockpit_json_patch (manifest, override);
+          json_object_unref (override);
+        }
     }
 
-  g_free (filename);
   return manifest;
 }
 
@@ -333,6 +361,80 @@ read_package_name (JsonObject *manifest,
   return value;
 }
 
+static gboolean
+strv_have_prefix (gchar **strv,
+                  const gchar *prefix)
+{
+  gint i;
+
+  for (i = 0; strv && strv[i] != NULL; i++)
+    {
+      if (g_str_has_prefix (strv[i], prefix))
+        return TRUE;
+    }
+  return FALSE;
+}
+
+static gchar *
+build_content_security_policy (const gchar *input)
+{
+  const gchar *default_src = "default-src 'self'";
+  const gchar *connect_src = "connect-src 'self' ws: wss:";
+  gchar **parts = NULL;
+  GString *result;
+  gint i;
+
+  result = g_string_sized_new (128);
+
+  /*
+   * Note that browsers need to be explicitly told they can connect
+   * to a WebSocket. This is non-obvious, but it stems from the fact
+   * that some browsers treat 'https' and 'wss' as different protocols.
+   *
+   * Since each component could establish a WebSocket connection back to
+   * cockpit-ws, we need to insert that into the policy.
+   */
+
+  if (input)
+    parts = g_strsplit (input, ";", -1);
+  if (!strv_have_prefix (parts, "default-src "))
+    g_string_append_printf (result, "%s; ", default_src);
+  if (!strv_have_prefix (parts, "connect-src "))
+    g_string_append_printf (result, "%s; ", connect_src);
+
+  for (i = 0; parts && parts[i] != NULL; i++)
+    {
+      g_strstrip (parts[i]);
+      g_string_append_printf (result, "%s; ", parts[i]);
+    }
+
+  g_strfreev (parts);
+
+  /* Remove trailing semicolon */
+  g_string_set_size (result, result->len - 2);
+  return g_string_free (result, FALSE);
+}
+
+static void
+setup_package_manifest (CockpitPackage *package,
+                        JsonObject *manifest)
+{
+  const gchar *field = "content-security-policy";
+  const gchar *policy = NULL;
+
+  if (!cockpit_json_get_string (manifest, field, NULL, &policy) ||
+      (policy && !cockpit_web_response_is_header_value (policy)))
+    {
+      g_warning ("%s: invalid %s: %s", package->name, field, policy);
+      policy = NULL;
+    }
+
+  package->content_security_policy = build_content_security_policy (policy);
+  json_object_remove_member (manifest, field);
+
+  package->manifest = manifest;
+}
+
 static CockpitPackage *
 maybe_add_package (GHashTable *listing,
                    const gchar *parent,
@@ -345,18 +447,24 @@ maybe_add_package (GHashTable *listing,
   JsonObject *manifest = NULL;
   GHashTable *paths = NULL;
 
+  path = g_build_filename (parent, name, NULL);
+
+  manifest = read_package_manifest (path, name);
+  if (!manifest)
+    goto out;
+
+  /* Manifest could specify a different name */
+  name = read_package_name (manifest, name);
+  if (!name)
+    goto out;
+
+  /* In case the package is already present */
   package = g_hash_table_lookup (listing, name);
   if (package)
     {
       package = NULL;
       goto out;
     }
-
-  path = g_build_filename (parent, name, NULL);
-
-  manifest = read_package_manifest (path, name);
-  if (!manifest)
-    goto out;
 
   if (system)
     paths = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, NULL);
@@ -367,17 +475,12 @@ maybe_add_package (GHashTable *listing,
         goto out;
     }
 
-  /* Manifest could specify a different name */
-  name = read_package_name (manifest, name);
-  if (!name)
-    goto out;
-
   package = cockpit_package_new (name);
-
   package->directory = path;
-  package->manifest = manifest;
   if (paths)
     package->paths = g_hash_table_ref (paths);
+
+  setup_package_manifest (package, manifest);
 
   g_hash_table_replace (listing, package->name, package);
   g_debug ("%s: added package at %s", package->name, package->directory);
@@ -537,18 +640,6 @@ handle_package_checksum (CockpitWebServer *server,
   return TRUE;
 }
 
-static void
-add_cache_header (GHashTable *headers,
-                  CockpitPackages *packages,
-                  GHashTable *out_headers)
-{
-  const gchar *pragma;
-
-  pragma = g_hash_table_lookup (headers, "Pragma");
-  if (packages->checksum && (!pragma || !strstr (pragma, "no-cache")))
-    g_hash_table_insert (out_headers, g_strdup ("Cache-Control"), g_strdup ("max-age=31556926, public"));
-}
-
 static gboolean
 handle_package_manifests_js (CockpitWebServer *server,
                              const gchar *path,
@@ -566,7 +657,6 @@ handle_package_manifests_js (CockpitWebServer *server,
   suffix = g_bytes_new_static (");", 2);
 
   out_headers = cockpit_web_server_new_table ();
-  add_cache_header (headers, packages, out_headers);
 
   cockpit_web_response_content (response, out_headers, prefix, content, suffix, NULL);
 
@@ -588,7 +678,6 @@ handle_package_manifests_json (CockpitWebServer *server,
   GBytes *content;
 
   out_headers = cockpit_web_server_new_table ();
-  add_cache_header (headers, packages, out_headers);
 
   content = cockpit_json_write_bytes (packages->json);
 
@@ -613,6 +702,7 @@ handle_packages (CockpitWebServer *server,
   gchar *name;
   const gchar *path;
   GHashTable *out_headers = NULL;
+  const gchar *type;
   GBytes *bytes = NULL;
   gchar *chosen = NULL;
 
@@ -633,8 +723,6 @@ handle_packages (CockpitWebServer *server,
       cockpit_web_response_error (response, 404, NULL, NULL);
       goto out;
     }
-
-  add_cache_header (headers, packages, out_headers);
 
   bytes = cockpit_web_response_negotiation (filename, package->paths, &chosen, &error);
   if (error)
@@ -660,6 +748,17 @@ handle_packages (CockpitWebServer *server,
 
   if (g_str_has_suffix (chosen, ".gz"))
     g_hash_table_insert (out_headers, g_strdup ("Content-Encoding"), g_strdup ("gzip"));
+
+  type = cockpit_web_response_content_type (path);
+  if (type)
+    {
+      g_hash_table_insert (out_headers, g_strdup ("Content-Type"), g_strdup (type));
+      if (g_str_has_prefix (type, "text/html"))
+        {
+          g_hash_table_insert (out_headers, g_strdup ("Content-Security-Policy"),
+                               g_strdup (package->content_security_policy));
+        }
+    }
 
   cockpit_web_response_headers_full (response, 200, "OK", -1, out_headers);
 

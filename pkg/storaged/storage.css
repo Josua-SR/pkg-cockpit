@@ -18,7 +18,6 @@
  */
 
 #storage {
-    padding-top: 20px;
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -103,6 +102,10 @@
     text-overflow: ellipsis;
 }
 
+#storage .storage-sidebar .table td img {
+    margin-top: 8px;
+}
+
 #storage_raids .row span,
 #storage_vgs .row span,
 #storage_drives .row span {
@@ -126,20 +129,42 @@
     text-overflow: ellipsis;
 }
 
-.available-disks-group
-{
+.available-disks-group {
     margin-bottom: 0px;
 }
 
-.available-disks-group input[type='checkbox']
-{
+.available-disks-group input[type='checkbox'] {
     margin: 4px 4px 4px -20px;
 }
 
-.available-disks-group > .list-group-item
-{
-    border: none;
-    padding: 0px;
+
+/* Make the whole row a hit target */
+.available-disks-group .list-group-item {
+    padding: 0;
+}
+
+.available-disks-group .list-group-item label {
+    padding: 3px 10px;
+}
+
+.available-disks-group .checkbox label {
+    width: 100%;
+}
+
+.available-disks-group .checkbox label span {
+    display: block;
+    margin-left: 20px;
+    margin-top: 6px;
+    line-height: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 450px;
+}
+
+.available-disks-group .checkbox label input[type="checkbox"] {
+    margin-left: auto;
+    margin-top: 8px;
 }
 
 @media (min-width: 768px) {
@@ -149,4 +174,62 @@
     .storage-writing-graph-container {
         padding-left: 5px;
     }
+}
+
+.dialog-select-row-table {
+    width: 100%;
+
+}
+
+.dialog-select-row-table td,
+.dialog-select-row-table td:first-child {
+    text-align: left;
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+    padding-left: 0px;
+    padding-right: 0px;
+    vertical-align: top;
+    white-space: default;
+    color: black;
+    width: auto;
+    height: auto;
+    border-top: 1px solid #D1D1D1;
+    border-bottom: 1px solid #D1D1D1;
+}
+
+.dialog-select-row-table td:first-child {
+    padding-left: 0.75em;
+    border-left: 1px solid #D1D1D1;
+}
+
+.dialog-select-row-table td:last-child {
+    padding-right: 0.75em;
+    border-right: 1px solid #D1D1D1;
+}
+
+.dialog-select-row-table th {
+    font-weight: bold;
+    text-align: left;
+    color: #4D5258;
+    padding: 0px;
+    padding-top: 0.75em;
+    padding-bottom: 0.75em;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.dialog-select-row-table th:first-child {
+    padding-left: 0.75em;
+}
+
+.dialog-select-row-table th:last-child {
+    padding-right: 0.75em;
+}
+
+.arming-zone .needs-arming {
+    display: none;
+}
+
+.arming-zone.armed .needs-arming {
+    display: block;
 }

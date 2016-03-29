@@ -32,10 +32,10 @@
               <span id="content-user-name"></span><b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li>
+              <li class="display-language-menu">
                 <a data-toggle="modal" data-target="#display-language" translatable="yes">Display Language</a>
               </li>
-              <li class="divider"></li>
+              <li class="divider display-language-menu"></li>
               <li>
                 <a data-toggle="modal" data-target="#about" translatable="yes">About Cockpit</a>
               </li>
@@ -102,6 +102,14 @@
       </div>
     </div>
 
+    <div class="modal" id="troubleshoot-dialog" tabindex="-1" role="dialog"
+        data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+
     <div class="modal" id="display-language" tabindex="-1" role="dialog" data-backdrop="static">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -119,27 +127,6 @@
             </button>
             <button class="btn btn-primary" id="display-language-select-button" translatable="yes">
               Select
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal" id="disconnected-dialog" tabindex="-1" role="dialog" data-backdrop="static">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title" translatable="yes">Disconnected</h4>
-          </div>
-          <div class="modal-body">
-            <div id="disconnected-error"></div>
-          </div>
-          <div class="modal-footer">
-            <button class="btn btn-default" id="disconnected-reconnect" translatable="yes">
-              Try to reconnect
-            </button>
-            <button class="btn btn-default" id="disconnected-logout" translatable="yes">
-              Log in again
             </button>
           </div>
         </div>
@@ -337,7 +324,8 @@
       <h1 translatable="yes"></h1>
       <p></p>
       <div class="blank-slate-pf-main-action">
-        <button class="btn btn-primary btn-lg" translatable="yes">Reconnect</button>
+        <button id="machine-reconnect" class="btn btn-primary btn-lg" translatable="yes">Reconnect</button>
+        <button id="machine-troubleshoot" class="btn btn-primary btn-lg" translatable="yes">Troubleshoot</button>
       </div>
     </div>
 
@@ -359,13 +347,31 @@
             "base1/cockpit",
             "shell/index"
         ], function(cockpit, index) {
-            /* For debugging and such */
-            window.cockpit = cockpit;
+            function follow(arg) {
+                /* A promise of some sort */
+                if (arguments.length == 1 && typeof arg.then == "function") {
+                    arg.then(function() { console.log.apply(console, arguments); },
+                             function() { console.error.apply(console, arguments); });
+                    if (typeof arg.stream == "function")
+                        arg.stream(function() { console.log.apply(console,arguments); });
+                }
+            }
+
+            var zz_value;
+
+            /* For debugging utility */
+            Object.defineProperties(window, {
+                cockpit: { value: cockpit },
+                zz: {
+                    get: function() { return zz_value; },
+                    set: function(val) { zz_value = val; follow(val); }
+                }
+            });
 
             /* Drain any initial messages we receive into the router */
             cockpit.transport.wait(function() {
                 window.removeEventListener("message", message_queue, false);
-                index.router.start(messages);
+                index.start(messages);
                 messages = null;
             });
         });

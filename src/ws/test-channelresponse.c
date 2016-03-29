@@ -148,8 +148,11 @@ test_resource_simple (TestResourceCase *tc,
   bytes = g_memory_output_stream_steal_as_bytes (tc->output);
   cockpit_assert_bytes_eq (bytes,
                            "HTTP/1.1 200 OK\r\n"
+                           "Content-Security-Policy: default-src 'self'; connect-src 'self' ws: wss:\r\n"
                            "Content-Type: text/html\r\n"
                            "Transfer-Encoding: chunked\r\n"
+                           "Cache-Control: max-age=86400, private\r\n"
+                           "Vary: Cookie\r\n"
                            "\r\n"
                            "52\r\n"
                            "<html>\n"
@@ -241,7 +244,7 @@ test_resource_failure (TestResourceCase *tc,
   GBytes *bytes;
   GPid pid;
 
-  cockpit_expect_message ("*: failed to retrieve resource: terminated");
+  cockpit_expect_message ("*: external channel failed: terminated");
 
   response = cockpit_web_response_new (tc->io, "/unused", NULL, NULL);
 
@@ -317,7 +320,7 @@ test_resource_checksum (TestResourceCase *tc,
 
   response = cockpit_web_response_new (tc->io, "/unused", NULL, NULL);
   cockpit_channel_response_serve (tc->service, tc->headers, response,
-                                "$71100b932eb766ef9043f855974ae8e3834173e2",
+                                "$386257ed81a663cdd7ee12633056dee18d60ddca",
                                 "/test/sub/file.ext");
 
   while (cockpit_web_response_get_state (response) != COCKPIT_WEB_RESPONSE_SENT)
@@ -329,9 +332,9 @@ test_resource_checksum (TestResourceCase *tc,
   bytes = g_memory_output_stream_steal_as_bytes (tc->output);
   cockpit_assert_bytes_eq (bytes,
                            "HTTP/1.1 200 OK\r\n"
-                           "ETag: \"$71100b932eb766ef9043f855974ae8e3834173e2\"\r\n"
-                           "Cache-Control: max-age=31556926, public\r\n"
+                           "ETag: \"$386257ed81a663cdd7ee12633056dee18d60ddca\"\r\n"
                            "Transfer-Encoding: chunked\r\n"
+                           "Cache-Control: max-age=31556926, public\r\n"
                            "\r\n"
                            "32\r\n"
                            "These are the contents of file.ext\nOh marmalaaade\n"
@@ -385,7 +388,7 @@ test_resource_redirect_checksum (TestResourceCase *tc,
   cockpit_assert_bytes_eq (bytes,
                            "HTTP/1.1 307 Temporary Redirect\r\n"
                            "Content-Type: text/html\r\n"
-                           "Location: /cockpit/$71100b932eb766ef9043f855974ae8e3834173e2/test/sub/file.ext\r\n"
+                           "Location: /cockpit/$386257ed81a663cdd7ee12633056dee18d60ddca/test/sub/file.ext\r\n"
                            "Content-Length: 91\r\n"
                            "\r\n"
                            "<html><head><title>Temporary redirect</title></head><body>Access via checksum</body></html>",
@@ -514,8 +517,11 @@ test_resource_language_suffix (TestResourceCase *tc,
   bytes = g_memory_output_stream_steal_as_bytes (tc->output);
   cockpit_assert_bytes_eq (bytes,
                            "HTTP/1.1 200 OK\r\n"
+                           "Content-Security-Policy: default-src 'self'; connect-src 'self' ws: wss:\r\n"
                            "Content-Type: text/html\r\n"
                            "Transfer-Encoding: chunked\r\n"
+                           "Cache-Control: max-age=86400, private\r\n"
+                           "Vary: Cookie\r\n"
                            "\r\n"
                            "62\r\n"
                            "<html>\n"
@@ -552,8 +558,11 @@ test_resource_language_fallback (TestResourceCase *tc,
   bytes = g_memory_output_stream_steal_as_bytes (tc->output);
   cockpit_assert_bytes_eq (bytes,
                            "HTTP/1.1 200 OK\r\n"
+                           "Content-Security-Policy: default-src 'self'; connect-src 'self' ws: wss:\r\n"
                            "Content-Type: text/html\r\n"
                            "Transfer-Encoding: chunked\r\n"
+                           "Cache-Control: max-age=86400, private\r\n"
+                           "Vary: Cookie\r\n"
                            "\r\n"
                            "52\r\n"
                            "<html>\n"
@@ -592,11 +601,13 @@ test_resource_gzip_encoding (TestResourceCase *tc,
                            "Content-Encoding: gzip\r\n"
                            "Content-Type: text/plain\r\n"
                            "Transfer-Encoding: chunked\r\n"
+                           "Cache-Control: max-age=86400, private\r\n"
+                           "Vary: Cookie\r\n"
                            "\r\n"
                            "34\r\n"
                            "\x1F\x8B\x08\x08N1\x03U\x00\x03test-file.txt\x00sT(\xCEM\xCC\xC9Q(I-"
                            ".QH\xCB\xCCI\xE5\x02\x00>PjG\x12\x00\x00\x00\x0D\x0A" "0\x0D\x0A\x0D\x0A",
-                           160);
+                           213);
   g_bytes_unref (bytes);
   g_object_unref (response);
 }

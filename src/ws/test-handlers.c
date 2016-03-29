@@ -24,6 +24,7 @@
 #include "cockpithandlers.h"
 #include "cockpitws.h"
 
+#include "common/cockpitconf.h"
 #include "common/cockpittest.h"
 #include "common/mock-io-stream.h"
 #include "common/cockpitwebserver.h"
@@ -92,7 +93,7 @@ setup (Test *test,
 
   user = g_get_user_name ();
   test->auth = mock_auth_new (user, PASSWORD);
-  test->roots = cockpit_web_server_resolve_roots (SRCDIR "/src/static", SRCDIR "/branding/default", NULL);
+  test->roots = cockpit_web_server_resolve_roots (SRCDIR "/static", SRCDIR "/branding/default", NULL);
 
   test->data.auth = test->auth;
   test->data.static_roots = (const gchar **)test->roots;
@@ -268,6 +269,7 @@ test_login_accept (Test *test,
   const gchar *output;
   GHashTable *headers;
   CockpitCreds *creds;
+  const gchar *token;
 
   user = g_get_user_name ();
   headers = mock_auth_basic_header (user, PASSWORD);
@@ -290,6 +292,9 @@ test_login_accept (Test *test,
   creds = cockpit_web_service_get_creds (service);
   g_assert_cmpstr (cockpit_creds_get_user (creds), ==, user);
   g_assert_cmpstr (cockpit_creds_get_password (creds), ==, PASSWORD);
+
+  token = cockpit_creds_get_csrf_token (creds);
+  g_assert (strstr (output, token));
 
   g_hash_table_destroy (headers);
   g_object_unref (service);
@@ -335,6 +340,7 @@ typedef struct {
   const gchar *path;
   const gchar *auth;
   const gchar *expect;
+  const gchar *config;
   gboolean with_home;
 } DefaultFixture;
 
@@ -348,6 +354,8 @@ setup_default (Test *test,
   GAsyncResult *result = NULL;
   GHashTable *headers;
   const gchar *user;
+
+  cockpit_config_file = fixture->config;
 
   g_setenv ("XDG_DATA_DIRS", SRCDIR "/src/bridge/mock-resource/system", TRUE);
   if (fixture->with_home)
@@ -387,6 +395,7 @@ teardown_default (Test *test,
   g_unsetenv ("XDG_DATA_HOME");
 
   teardown (test, fixture->path);
+  cockpit_conf_cleanup ();
 };
 
 static void
@@ -410,7 +419,7 @@ test_default (Test *test,
 }
 
 static const DefaultFixture fixture_resource_checksum = {
-  .path = "/cockpit/$71100b932eb766ef9043f855974ae8e3834173e2/test/sub/file.ext",
+  .path = "/cockpit/$386257ed81a663cdd7ee12633056dee18d60ddca/test/sub/file.ext",
   .auth = "/cockpit",
   .expect = "HTTP/1.1 200*"
     "These are the contents of file.ext*"
@@ -464,11 +473,21 @@ static const DefaultFixture fixture_shell_index = {
       "<title>In home dir</title>*"
 };
 
+static const DefaultFixture fixture_shell_configured_index = {
+  .path = "/",
+  .auth = "/cockpit",
+  .with_home = TRUE,
+  .config = SRCDIR "/src/ws/mock-config.conf",
+  .expect = "HTTP/1.1 200*"
+      "<base href=\"/cockpit/@localhost/second/test.html\">*"
+      "<title>In system dir</title>*"
+};
+
 static const DefaultFixture fixture_shell_package = {
   .path = "/system/host",
   .auth = "/cockpit",
   .expect = "HTTP/1.1 200*"
-      "<base href=\"/cockpit/$71100b932eb766ef9043f855974ae8e3834173e2/another/test.html\">*"
+      "<base href=\"/cockpit/$386257ed81a663cdd7ee12633056dee18d60ddca/another/test.html\">*"
       "<title>In system dir</title>*"
 };
 
@@ -563,16 +582,16 @@ static const DefaultFixture fixture_static_simple = {
   .path = "/cockpit/static/branding.css",
   .auth = NULL,
   .expect = "HTTP/1.1 200*"
-    "#index-brand*"
-    "url(\"brand.png\");*"
+    "#badge*"
+    "url(\"logo.png\");*"
 };
 
 static const DefaultFixture fixture_static_application = {
   .path = "/cockpit+application/static/branding.css",
   .auth = NULL,
   .expect = "HTTP/1.1 200*"
-    "#index-brand*"
-    "url(\"brand.png\");*"
+    "#badge*"
+    "url(\"logo.png\");*"
 };
 
 static void
@@ -654,7 +673,7 @@ test_socket_unauthenticated (void)
   /* Matching the above origin */
   cockpit_ws_default_host_header = "127.0.0.1";
 
-  g_assert (cockpit_handler_socket (NULL, "/cockpit/socket", io_b, NULL, NULL, 0, NULL));
+  g_assert (cockpit_handler_socket (NULL, "/cockpit/socket", io_b, NULL, NULL, NULL));
 
   g_signal_connect (client, "message", G_CALLBACK (on_message_get_bytes), &received);
 
@@ -710,6 +729,8 @@ main (int argc,
               setup, test_ping, teardown);
 
   g_test_add ("/handlers/shell/index", Test, &fixture_shell_index,
+              setup_default, test_default, teardown_default);
+  g_test_add ("/handlers/shell/configured_index", Test, &fixture_shell_configured_index,
               setup_default, test_default, teardown_default);
   g_test_add ("/handlers/shell/package", Test, &fixture_shell_package,
               setup_default, test_default, teardown_default);

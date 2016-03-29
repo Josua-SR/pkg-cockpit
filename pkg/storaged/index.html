@@ -31,15 +31,9 @@
     <script src="../system/bundle.js"></script>
     <script src="../shell/shell.js"></script>
     <script src="bundle.js"></script>
-<script>
-    require([
-        "jquery",
-        "storage/devices",
-        "base1/bootstrap-select",
-    ], function($, devices) {
-        $(devices);
-    });
-</script>
+    <!-- debug:start -->
+    <script src="devices.js"></script>
+    <!-- debug:end -->
 </head>
 <body hidden>
 
@@ -53,7 +47,7 @@
 
   <!-- ALERT FOR BROKEN MULTIPATH -->
 
-  <div id="multipath-broken" class="container-fluid" hidden>
+  <div id="multipath-broken" class="container-fluid page" hidden>
     <div class="alert alert-danger">
       <span class="pficon pficon-error-circle-o"></span>
       <button id="activate-multipath" translatable="yes"
@@ -131,6 +125,44 @@
       {{^HasVGroups}}
       <div translatable="yes" class="empty-panel-text">No volume groups created</div>
       {{/HasVGroups}}
+    </div>
+  </script>
+
+  <script id="iscsi-sessions-tmpl" type="x-template/mustache">
+    <div class="panel panel-default arming-zone">
+      <div class="panel-heading">
+        <span class="pull-right">
+          {{#HasSessions}}
+          <button class="btn btn-default fa fa-check arm-button"></button>
+          {{/HasSessions}}
+          <button data-action="edit-iscsi" class="btn btn-default pficon pficon-edit"></button>
+          <button data-action="add-iscsi-portal" class="btn btn-primary fa fa-plus"></button>
+        </span>
+        <span translatable="yes">iSCSI Targets</span>
+      </div>
+      {{#HasSessions}}
+      <table class="table">
+        {{#Sessions}}
+        <tr>
+          <td style="width: 48px">
+            <div><img  src="images/storage-array.png"></div>
+          </td>
+          <td class="row">
+            <span class="col-md-12">{{Name}}</span>
+            <br>
+            <span class="col-md-12 col-lg-5" translatable="yes">{{Address}}:{{Port}}</span>
+          </td>
+          <td style="width: 48px">
+            <button class="btn btn-danger pficon pficon-delete btn-delete needs-arming"
+                    data-iscsi-session-remove="{{path}}">
+          </td>
+        </tr>
+        {{/Sessions}}
+      </table>
+      {{/HasSessions}}
+      {{^HasSessions}}
+      <div translatable="yes" class="empty-panel-text">No iSCSI targets set up</div>
+      {{/HasSessions}}
     </div>
   </script>
 
@@ -272,7 +304,7 @@
   </script>
 
   <div id="storage" hidden>
-    <div class="col-md-8 col-lg-9">
+    <div class="col-md-8 col-lg-9 page">
       <div id="storage-graph-toolbar" class="zoom-controls standard-zoom-controls">
         <div class="dropdown" style="display:inline-block">
           <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -320,9 +352,10 @@
       </div>
     </div>
 
-    <div class="col-md-4 col-lg-3 storage-sidebar">
+    <div class="col-md-4 col-lg-3 storage-sidebar page">
       <div id="mdraids"></div>
       <div id="vgroups"></div>
+      <div id="iscsi-sessions"></div>
       <div id="drives"></div>
       <div id="others"></div>
       <div id="jobs"></div>
@@ -482,7 +515,7 @@
             </td>
           </tr>
           <tr>
-            <td translatable="yes" context="storage">Multipath Devices</td>
+            <td translatable="yes" context="storage">Multipathed Devices</td>
             <td>{{#Devices}}{{.}} {{/Devices}}</td>
           </tr>
           {{/Multipath}}
@@ -724,7 +757,7 @@
                 </td>
                 {{/PassInput}}
                 {{#SizeInput}}
-                <td class="top">{{Title}} (MB)</td>
+                <td class="top">{{Title}} (MiB)</td>
                 <td>
                   <input class="form-control" type="text" {{#ValueMB}}value="{{.}}"{{/ValueMB}} data-field={{.}}>
                 </td>
@@ -753,17 +786,45 @@
                 {{#SelectMany}}
                 <td class="top">{{Title}}</td>
                 <td>
-                  <ul class="list-group available-disks-group" data-field={{.}}>
+                  <ul class="list-group available-disks-group dialog-list" data-field={{.}}>
                     {{#Options}}
                     <li class="list-group-item">
                       <div class="checkbox" style="margin:0px">
-                        <label><input type="checkbox">{{Title}}</label>
+                        <label><input type="checkbox"><span>{{Title}}</span></label>
                       </div>
                     </li>
                     {{/Options}}
                   </ul>
                 </td>
                 {{/SelectMany}}
+                {{#SelectRow}}
+                <td colspan="2">
+                  <table data-field={{.}} class="dialog-select-row-table">
+                    <thead>
+                      <tr>
+                        {{#Headers}}<th>{{.}}</th>{{/Headers}}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {{#Rows}}
+                      <tr>
+                        {{#Columns}}<td>{{.}}</td>{{/Columns}}
+                      </tr>
+                      {{/Rows}}
+                    </tbody>
+                  </table>
+                </td>
+                {{/SelectRow}}
+                {{#Arrow}}
+                <td colspan="2">
+                  <div data-field={{.}} class="dialog-arrow {{^Value}}collapsed{{/Value}}"
+                       style="color:black;cursor:pointer">
+                    <span class="fa {{^Value}}fa-angle-right{{/Value}}{{#Value}}fa-angle-down{{/Value}}"
+                          style="width:1em"></span>
+                    <span>{{Title}}</span>
+                  </div>
+                </td>
+                {{/Arrow}}
               </tr>
               {{/Fields}}
             </table>

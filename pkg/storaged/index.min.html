@@ -15,7 +15,7 @@
  *
  * You should have received a copy of the GNU Lesser General Public License
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
---> <html> <head> <title translatable="yes">Storage</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width,initial-scale=1"> <link href="../base1/cockpit.css" type="text/css" rel="stylesheet"> <link href="../system/journal.css" type="text/css" rel="stylesheet"> <link href="../shell/plot.css" type="text/css" rel="stylesheet"> <link href="storage.css" type="text/css" rel="stylesheet"> <script src="../base1/bundle.js"></script><script src="../system/bundle.js"></script><script src="../shell/shell.js"></script><script src="bundle.js"></script><script>require(["jquery","storage/devices","base1/bootstrap-select"],function(e,r){e(r)});</script></head><body hidden> <!-- CURTAIN --> <div id="unsupported" hidden> <div class="blank-slate-pf"> <h1 translatable="yes">The "storaged" API is not available on this system.</h1> </div> </div> <!-- ALERT FOR BROKEN MULTIPATH --> <div id="multipath-broken" class="container-fluid" hidden> <div class="alert alert-danger"> <span class="pficon pficon-error-circle-o"></span> <button id="activate-multipath" translatable="yes" class="btn btn-default pull-right">Start Multipath</button> <span class="alert-message" translatable="yes"> There are devices with multiple paths on the system, but the multipath service is not running. </span> </div> </div> <!-- OVERVIEW --> <script id="mdraids-tmpl" type="x-template/mustache"><div class="panel panel-default">
+--> <html> <head> <title translatable="yes">Storage</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width,initial-scale=1"> <link href="../base1/cockpit.css" type="text/css" rel="stylesheet"> <link href="../system/journal.css" type="text/css" rel="stylesheet"> <link href="../shell/plot.css" type="text/css" rel="stylesheet"> <link href="storage.css" type="text/css" rel="stylesheet"> <script src="../base1/bundle.js"></script><script src="../system/bundle.js"></script><script src="../shell/shell.js"></script><script src="bundle.js"></script></head><body hidden> <!-- CURTAIN --> <div id="unsupported" hidden> <div class="blank-slate-pf"> <h1 translatable="yes">The "storaged" API is not available on this system.</h1> </div> </div> <!-- ALERT FOR BROKEN MULTIPATH --> <div id="multipath-broken" class="container-fluid page" hidden> <div class="alert alert-danger"> <span class="pficon pficon-error-circle-o"></span> <button id="activate-multipath" translatable="yes" class="btn btn-default pull-right">Start Multipath</button> <span class="alert-message" translatable="yes"> There are devices with multiple paths on the system, but the multipath service is not running. </span> </div> </div> <!-- OVERVIEW --> <script id="mdraids-tmpl" type="x-template/mustache"><div class="panel panel-default">
       <div class="panel-heading">
         <span class="pull-right">
           <button id="create-mdraid" class="btn btn-primary fa fa-plus"></button>
@@ -75,6 +75,40 @@
       {{^HasVGroups}}
       <div translatable="yes" class="empty-panel-text">No volume groups created</div>
       {{/HasVGroups}}
+    </div></script> <script id="iscsi-sessions-tmpl" type="x-template/mustache"><div class="panel panel-default arming-zone">
+      <div class="panel-heading">
+        <span class="pull-right">
+          {{#HasSessions}}
+          <button class="btn btn-default fa fa-check arm-button"></button>
+          {{/HasSessions}}
+          <button data-action="edit-iscsi" class="btn btn-default pficon pficon-edit"></button>
+          <button data-action="add-iscsi-portal" class="btn btn-primary fa fa-plus"></button>
+        </span>
+        <span translatable="yes">iSCSI Targets</span>
+      </div>
+      {{#HasSessions}}
+      <table class="table">
+        {{#Sessions}}
+        <tr>
+          <td style="width: 48px">
+            <div><img  src="images/storage-array.png"></div>
+          </td>
+          <td class="row">
+            <span class="col-md-12">{{Name}}</span>
+            <br>
+            <span class="col-md-12 col-lg-5" translatable="yes">{{Address}}:{{Port}}</span>
+          </td>
+          <td style="width: 48px">
+            <button class="btn btn-danger pficon pficon-delete btn-delete needs-arming"
+                    data-iscsi-session-remove="{{path}}">
+          </td>
+        </tr>
+        {{/Sessions}}
+      </table>
+      {{/HasSessions}}
+      {{^HasSessions}}
+      <div translatable="yes" class="empty-panel-text">No iSCSI targets set up</div>
+      {{/HasSessions}}
     </div></script> <script id="drives-tmpl" type="x-template/mustache"><div class="panel panel-default">
       <div class="panel-heading">
         <span translatable="yes">Drives</span>
@@ -196,7 +230,7 @@
         {{/Jobs}}
       </table>
     </div>
-    {{/HasJobs}}</script> <div id="storage" hidden> <div class="col-md-8 col-lg-9"> <div id="storage-graph-toolbar" class="zoom-controls standard-zoom-controls"> <div class="dropdown" style="display:inline-block"> <button class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span style="width:6em;text-align:left;padding-left:5px;display:inline-block"></span> <span class="caret"></span> </button> <ul class="dropdown-menu" role="menu"> <li role="presentation"><a role="menuitem" tabindex="-1" data-action="goto-now" translatable="yes">Go to now</a></li> <li role="presentation" class="divider"></li> <li role="presentation"><a role="menuitem" tabindex="-1" data-range="300" translatable="yes">5 minutes</a></li> <li role="presentation"><a role="menuitem" tabindex="-1" data-range="3600" translatable="yes">1 hour</a></li> <li role="presentation"><a role="menuitem" tabindex="-1" data-range="21600" translatable="yes">6 hours</a></li> <li role="presentation"><a role="menuitem" tabindex="-1" data-range="86400" translatable="yes">1 day</a></li> <li role="presentation"><a role="menuitem" tabindex="-1" data-range="604800" translatable="yes">1 week</a></li> </ul> </div> <button class="btn btn-default" data-action="zoom-out"> <span class="glyphicon glyphicon-zoom-out"></span> </button> <div class="btn-group"> <button class="btn btn-default fa fa-angle-left" data-action="scroll-left"></button> <button class="btn btn-default fa fa-angle-right" data-action="scroll-right"></button> </div> </div> <div class="row"> <div class="col-sm-6 storage-reading-graph-container"> <div> <span class="plot-unit" id="storage-reading-unit"></span><span class="plot-title" translatable="yes">Reading</span> </div> <div style="height:120px" id="storage-reading-graph" class="zoomable-plot"></div> </div> <div class="col-sm-6 storage-writing-graph-container"> <div> <span class="plot-unit" id="storage-writing-unit"></span><span class="plot-title" translatable="yes">Writing</span> </div> <div style="height:120px" id="storage-writing-graph" class="zoomable-plot"></div> </div> </div> <br> <div id="mounts"></div> <div id="jobs"></div> <div class="panel panel-default cockpit-log-panel"> <div class="panel-heading" translatable="yes">Storage Logs</div> <div class="panel-body" id="storage-log"></div> </div> </div> <div class="col-md-4 col-lg-3 storage-sidebar"> <div id="mdraids"></div> <div id="vgroups"></div> <div id="drives"></div> <div id="others"></div> <div id="jobs"></div> </div> </div> <!-- DETAIL --> <script id="action-btn-tmpl" type="x-template/mustache"><div class="btn-group">
+    {{/HasJobs}}</script> <div id="storage" hidden> <div class="col-md-8 col-lg-9 page"> <div id="storage-graph-toolbar" class="zoom-controls standard-zoom-controls"> <div class="dropdown" style="display:inline-block"> <button class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span style="width:6em;text-align:left;padding-left:5px;display:inline-block"></span> <span class="caret"></span> </button> <ul class="dropdown-menu" role="menu"> <li role="presentation"><a role="menuitem" tabindex="-1" data-action="goto-now" translatable="yes">Go to now</a></li> <li role="presentation" class="divider"></li> <li role="presentation"><a role="menuitem" tabindex="-1" data-range="300" translatable="yes">5 minutes</a></li> <li role="presentation"><a role="menuitem" tabindex="-1" data-range="3600" translatable="yes">1 hour</a></li> <li role="presentation"><a role="menuitem" tabindex="-1" data-range="21600" translatable="yes">6 hours</a></li> <li role="presentation"><a role="menuitem" tabindex="-1" data-range="86400" translatable="yes">1 day</a></li> <li role="presentation"><a role="menuitem" tabindex="-1" data-range="604800" translatable="yes">1 week</a></li> </ul> </div> <button class="btn btn-default" data-action="zoom-out"> <span class="glyphicon glyphicon-zoom-out"></span> </button> <div class="btn-group"> <button class="btn btn-default fa fa-angle-left" data-action="scroll-left"></button> <button class="btn btn-default fa fa-angle-right" data-action="scroll-right"></button> </div> </div> <div class="row"> <div class="col-sm-6 storage-reading-graph-container"> <div> <span class="plot-unit" id="storage-reading-unit"></span><span class="plot-title" translatable="yes">Reading</span> </div> <div style="height:120px" id="storage-reading-graph" class="zoomable-plot"></div> </div> <div class="col-sm-6 storage-writing-graph-container"> <div> <span class="plot-unit" id="storage-writing-unit"></span><span class="plot-title" translatable="yes">Writing</span> </div> <div style="height:120px" id="storage-writing-graph" class="zoomable-plot"></div> </div> </div> <br> <div id="mounts"></div> <div id="jobs"></div> <div class="panel panel-default cockpit-log-panel"> <div class="panel-heading" translatable="yes">Storage Logs</div> <div class="panel-body" id="storage-log"></div> </div> </div> <div class="col-md-4 col-lg-3 storage-sidebar page"> <div id="mdraids"></div> <div id="vgroups"></div> <div id="iscsi-sessions"></div> <div id="drives"></div> <div id="others"></div> <div id="jobs"></div> </div> </div> <!-- DETAIL --> <script id="action-btn-tmpl" type="x-template/mustache"><div class="btn-group">
       <button data-action="{{def.action}}" data-arg="{{arg}}" class="btn btn-default storage-privileged">{{def.title}}</button>
       <button class="btn btn-default dropdown-toggle storage-privileged" data-toggle="dropdown">
         <span class="caret"></span>
@@ -338,7 +372,7 @@
             </td>
           </tr>
           <tr>
-            <td translatable="yes" context="storage">Multipath Devices</td>
+            <td translatable="yes" context="storage">Multipathed Devices</td>
             <td>{{#Devices}}{{.}} {{/Devices}}</td>
           </tr>
           {{/Multipath}}
@@ -531,7 +565,7 @@
                 </td>
                 {{/PassInput}}
                 {{#SizeInput}}
-                <td class="top">{{Title}} (MB)</td>
+                <td class="top">{{Title}} (MiB)</td>
                 <td>
                   <input class="form-control" type="text" {{#ValueMB}}value="{{.}}"{{/ValueMB}} data-field={{.}}>
                 </td>
@@ -560,17 +594,45 @@
                 {{#SelectMany}}
                 <td class="top">{{Title}}</td>
                 <td>
-                  <ul class="list-group available-disks-group" data-field={{.}}>
+                  <ul class="list-group available-disks-group dialog-list" data-field={{.}}>
                     {{#Options}}
                     <li class="list-group-item">
                       <div class="checkbox" style="margin:0px">
-                        <label><input type="checkbox">{{Title}}</label>
+                        <label><input type="checkbox"><span>{{Title}}</span></label>
                       </div>
                     </li>
                     {{/Options}}
                   </ul>
                 </td>
                 {{/SelectMany}}
+                {{#SelectRow}}
+                <td colspan="2">
+                  <table data-field={{.}} class="dialog-select-row-table">
+                    <thead>
+                      <tr>
+                        {{#Headers}}<th>{{.}}</th>{{/Headers}}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {{#Rows}}
+                      <tr>
+                        {{#Columns}}<td>{{.}}</td>{{/Columns}}
+                      </tr>
+                      {{/Rows}}
+                    </tbody>
+                  </table>
+                </td>
+                {{/SelectRow}}
+                {{#Arrow}}
+                <td colspan="2">
+                  <div data-field={{.}} class="dialog-arrow {{^Value}}collapsed{{/Value}}"
+                       style="color:black;cursor:pointer">
+                    <span class="fa {{^Value}}fa-angle-right{{/Value}}{{#Value}}fa-angle-down{{/Value}}"
+                          style="width:1em"></span>
+                    <span>{{Title}}</span>
+                  </div>
+                </td>
+                {{/Arrow}}
               </tr>
               {{/Fields}}
             </table>

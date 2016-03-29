@@ -1,0 +1,727 @@
+#graphs {
+  display: block;
+}
+#graphs svg {
+  font-size: 10px;
+}
+#graphs ul {
+  padding-top: 15px;
+  margin-right: 10px;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.axis .domain,
+.axis .tick line {
+  stroke: lightgrey;
+  opacity: 0.5;
+}
+.tick text {
+  fill: #545454;
+  font-size: 12px;
+}
+path.line {
+  stroke: steelblue;
+  fill: none;
+  stroke-width: 2;
+}
+path.line.highlight {
+  stroke-width: 4;
+}
+/* Page global stuff */
+.container-fluid {
+  margin-top: 0px;
+  padding-left: 0px;
+}
+.container-more {
+  margin-top: 10px;
+}
+/* Dashboard */
+#content {
+  margin-left: 110px;
+  margin-right: 0px;
+  min-height: 100%;
+}
+#content > .row {
+  margin-right: 0px;
+}
+.dashboard {
+  margin-top: 15px;
+}
+/* When panel is editable, then buttons are visible */
+.dashboard-list td button {
+  display: none;
+}
+.dashboard-list.editable td button {
+  display: block;
+}
+.dashboard-list.editable td.status > span {
+  display: none;
+}
+.dashboard-list.editable tr:hover td {
+  background-color: #FFF;
+  cursor: auto;
+}
+.dashboard-list td.status {
+  padding: 4px 10px 4px !important;
+  text-align: right;
+  white-space: nowrap;
+  vertical-align: middle;
+  width: 1%;
+  min-width: 50px;
+}
+.dashboard-list span.fa {
+  font-size: 24px;
+  color: black;
+  display: inline-block;
+}
+.dashboard-list span.spinner {
+  display: inline-block;
+}
+.dashboard-list span.fa-failed {
+  color: #af151a;
+}
+/* App deploy dialog */
+#deploy-app-deploying > span {
+  margin-left: 7px;
+}
+#deploy-app-manifest-file {
+  opacity: 0.0001;
+  height: 1px;
+}
+#deploy-app-manifest-file-button {
+  width: 100%;
+  padding-right: 25px;
+}
+.deploy-app-type-text {
+  font-style: normal;
+  text-align: left;
+}
+.manifest_file {
+  font-style: normal;
+  text-align: left;
+  font-size: 11px;
+}
+.manifest_file_default {
+  text-align: left;
+  font-style: italic;
+  font-size: 11px;
+}
+.combobox_option {
+  width: 100%;
+}
+.deploy-dialog-aids {
+  margin-bottom: 0px;
+}
+/* Replicas dialog */
+input.adjust-replica {
+  width: 70px;
+}
+#adjust-dialog .modal-dialog {
+  width: 400px;
+}
+#deploy-app-type-field > .bootstrap-select {
+  margin-bottom: 3px;
+}
+.app-name {
+  color: #333333;
+  margin-top: 10px;
+  text-align: left;
+}
+/* Used to hide angular elements until they are ready */
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}
+.adjust-entity {
+  float: right;
+  margin: 10px 5px 0px 10px;
+}
+.delete-entity {
+  float: right;
+  margin: 10px 10px 0px 0px;
+}
+input.adjust-replica {
+  width: 200px;
+}
+pre.logs {
+  background-color: #fcfcfc;
+  border: 1px solid #cccccc;
+}
+kubernetes-container-terminal {
+  position: relative;
+  display: block;
+}
+kubernetes-container-terminal .terminal {
+  font-family: monospace, courier new;
+  font-size: 10px;
+  color: #F0F0F0;
+  text-align: left;
+  outline: medium none;
+  background-color: black;
+  border: 1px solid black;
+  padding: 10px;
+  display: inline-block;
+  /* size DIV to contents */
+  line-height: 1em;
+}
+@media (min-width: 568px) {
+  kubernetes-container-terminal .terminal {
+    font-size: 12px;
+  }
+}
+kubernetes-container-terminal .terminal-cursor {
+  color: #000;
+  background: #f0f0f0;
+}
+kubernetes-container-terminal .terminal-wrapper {
+  display: inline-block;
+  vertical-align: top;
+}
+kubernetes-container-terminal .terminal-actions {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  top: 10px;
+  right: 34px;
+  z-index: 1;
+}
+/* https://github.com/patternfly/patternfly/pull/135 */
+.spinner-white {
+  border-bottom: 4px solid rgba(255, 255, 255, 0.25) !important;
+  border-left: 4px solid rgba(255, 255, 255, 0.25) !important;
+  border-right: 4px solid rgba(255, 255, 255, 0.25) !important;
+  border-top: 4px solid rgba(255, 255, 255, 0.75) !important;
+}
+.containers-listing {
+  width: 100%;
+}
+.containers-listing i.fa-cube {
+  position: relative;
+  font-size: 22px;
+}
+.containers-listing .console {
+  min-height: 310px;
+}
+.details-listing {
+  min-width: 70% !important;
+}
+.details-listing i.pficon-service {
+  font-size: 30px;
+  line-height: 20px;
+  position: relative;
+  padding-right: 5px;
+  left: -5px;
+}
+.details-listing i.pficon-route {
+  position: relative;
+  font-size: 25px;
+  line-height: 20px;
+  left: -2px;
+  padding-right: 8px;
+}
+.details-listing i.fa-server {
+  position: relative;
+  top: 3px;
+}
+.details-listing i.pficon-replicator {
+  position: relative;
+  font-size: 28px;
+  top: -6px;
+}
+.details-listing i.fa-gear {
+  position: relative;
+  font-size: 25px;
+  top: -3px;
+}
+kubernetes-topology-graph {
+  display: block;
+  user-select: none;
+}
+.kube-topology g {
+  font-family: PatternFlyIcons-webfont;
+  font-size: 18px;
+  text-anchor: middle;
+  cursor: pointer;
+}
+.kube-topology g text {
+  stroke: none;
+  stroke-width: 0px;
+}
+.kube-topology g.weak use {
+  opacity: .6;
+}
+.kube-topology g.Pod text {
+  font-family: FontAwesome;
+  fill: #1186C1;
+}
+.kube-topology g.Node text {
+  fill: #636363;
+  font-size: 22px;
+}
+.kube-topology g.Service text {
+  fill: #ff7f0e;
+  font-size: 24px;
+}
+.kube-topology g.ReplicationController text {
+  fill: #9467bd;
+  font-size: 24px;
+}
+.kube-topology g circle {
+  stroke: #aaa;
+  fill: #fff;
+}
+.kube-topology g.fixed use {
+  stroke-width: 2px;
+}
+.kube-topology g.selected use,
+.kube-topology g.selected circle {
+  stroke-width: 4px;
+}
+.kube-topology line {
+  stroke: #aaa;
+  stroke-width: 1;
+}
+.kube-topology line.ReplicationControllerPod {
+  stroke-linecap: round;
+  stroke-dasharray: 5, 2;
+}
+kubernetes-topology-icon {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  padding: 10px;
+  user-select: none;
+}
+kubernetes-topology-icon svg {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+kubernetes-topology-icon use {
+  opacity: 0.4;
+}
+kubernetes-topology-icon.active use {
+  opacity: 1;
+}
+kubernetes-topology-icon:hover use {
+  opacity: 0.7;
+}
+kubernetes-topology-graph {
+  margin-right: 25%;
+}
+.kube-pane {
+  float: right;
+  width: 25%;
+}
+.kube-pane .sidebar-pf {
+  position: fixed;
+  width: 25%;
+  height: 100%;
+  padding: 10px;
+  overflow: hidden;
+}
+.kube-pane .dl-horizontal dt {
+  text-align: left;
+  width: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.kube-pane .dl-horizontal dd {
+  margin-left: 100px;
+  margin-right: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.kube-pane .sidebar-help p {
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+.kube-pane .sidebar-help h3 {
+  padding-top: 7px;
+  padding-bottom: 10px;
+}
+kubernetes-topology-icon {
+  display: block;
+  float: left;
+  padding: 0 10px 5px 0;
+}
+.topology-actions {
+  float: right;
+  margin-right: 10px;
+}
+.kube-topology g.ReplicationController text {
+  font-size: 24px;
+}
+.kube-topology g.Route text {
+  fill: #888;
+  font-size: 22px;
+}
+.kube-topology g.DeploymentConfig text {
+  font-family: FontAwesome;
+  fill: #888;
+  font-size: 22px;
+}
+.revealable {
+  white-space: nowrap !important;
+  text-overflow: ellipsis;
+  overflow: hidden !important;
+}
+.revealable.clickable {
+  cursor: pointer;
+}
+.revealed {
+  white-space: normal !important;
+  overflow: visible !important;
+  cursor: pointer;
+  overflow-wrap: break-word;
+}
+.masked {
+  color: transparent;
+  position: relative;
+  text-ellipsis: none !important;
+  cursor: pointer;
+  max-width: 1;
+  display: inline-block;
+}
+.masked:after {
+  content: "●●●●";
+  position: absolute;
+  left: 0px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding-left: 2px;
+  color: black;
+  cursor: pointer;
+  line-height: 1.5;
+  opacity: 0.5;
+}
+.revealed .masked:after {
+  display: none;
+}
+.revealed .masked {
+  color: black;
+}
+.icon-sidebar {
+  width: 100px;
+}
+.icon-sidebar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 90px;
+  border-right: 1px solid #d0d0d0;
+  height: 100%;
+  position: fixed;
+  background-color: #fafafa;
+  top: 0px;
+  z-index: 1;
+}
+.icon-sidebar ul li {
+  border-bottom: 1px solid #d0d0d0;
+  display: block;
+  font-size: 13px;
+}
+.icon-sidebar ul li a {
+  border-bottom: 0;
+  background-color: #fff;
+  padding: 15px 10px;
+  text-align: center;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+}
+.icon-sidebar ul li a i {
+  display: inline;
+  font-size: 20px;
+  line-height: 20px;
+  color: #b3b3b3;
+}
+.icon-sidebar ul li a i.pficon-image {
+  font-size: 24px;
+  line-height: 20px;
+}
+.icon-sidebar ul li a:hover {
+  background-color: #f6f6f6;
+}
+.icon-sidebar ul li.active a {
+  color: #0099d3;
+}
+.icon-sidebar ul li.active a i {
+  color: #0099d3;
+}
+.icon-sidebar ul li.active a:hover {
+  background-color: #fff;
+}
+.icon-sidebar ul li.active a:after {
+  content: '';
+  width: 4px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: block;
+  position: absolute;
+  background-color: #0099d3;
+}
+.content-filter {
+  background-color: #fafafa;
+  padding: 10px 16px 10px 10px;
+  border-bottom: 1px #d0d0d0 solid;
+  position: fixed;
+  top: 0px;
+  left: 90px;
+  right: 0px;
+  z-index: 1;
+  height: 50px;
+}
+.content-filter h3 {
+  display: inline;
+  font-size: 18px;
+  line-height: 28px;
+}
+.content-filter h3 i {
+  font-size: 24px;
+  position: relative;
+  padding-right: 3px;
+}
+.content-filter i.pficon-image {
+  top: 3px;
+}
+.content-filter i.fa-folder {
+  top: 2px;
+  font-size: 22px;
+}
+.content-filter a {
+  padding-left: 30px;
+}
+.content-filter + div {
+  padding-top: 50px;
+}
+.namespace-filter .btn,
+.namespace-filter .dropdown-menu {
+  font-size: 13px;
+}
+.namespace-filter .btn-group.open .dropdown-toggle {
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.125) inset;
+}
+.namespace-filter .namespace-meta {
+  color: #888;
+}
+.filter-menu {
+  display: block;
+}
+.filter-menu .caret {
+  height: 10px;
+}
+.filter-menu > .btn + .dropdown-toggle {
+  padding: 3px 1px;
+  min-width: 0;
+  border-left: none;
+  height: 26px;
+}
+.filter-menu > .btn:first-child {
+  border-right: none;
+  height: 26px;
+  font-size: 15px;
+}
+.dropdown-menu li a:before {
+  font-family: FontAwesome;
+  content: "\f00c";
+  margin-right: 5px;
+  visibility: hidden;
+}
+.dropdown-menu li.checked a:before {
+  visibility: visible;
+}
+table.images-listing {
+  max-width: 2000px;
+  min-width: 85%;
+}
+table.images-listing tbody:hover {
+  background-color: #d4edfa;
+}
+table.images-listing thead th {
+  border-top: none;
+}
+table.images-listing tr.listing-item {
+  border-top: none;
+  border-bottom: none;
+}
+table.images-listing tr.listing-item td:first-child {
+  background: linear-gradient(90deg, transparent 30px, #0099d3 30px, #0099d3 32px, transparent 32px);
+}
+table.images-listing tbody.first tr.tag-item td {
+  padding-top: 20px;
+}
+table.images-listing tbody.last tr.listing-item.tag-item td:first-child {
+  background-size: 100% 20px;
+  background-repeat: no-repeat;
+}
+table.images-listing tbody.last tr.listing-item.image-item td:first-child {
+  background: none;
+}
+table.images-listing tr.imagestream-item {
+  border-top: 1px solid #eeeeee;
+}
+table.images-listing tr.imagestream-item th {
+  border-bottom: 2px solid #0099d3;
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+table.images-listing tr.tag-item td {
+  padding-bottom: 0px;
+}
+table.images-listing tr.image-item td {
+  padding-top: 0px;
+}
+table.images-listing tr.listing-item tt {
+  color: #888;
+}
+.listing-inline h3 {
+  margin-bottom: 20px;
+}
+dl.image-tags dt {
+  line-height: 30px;
+}
+dl.image-tags .image-tag {
+  padding: 2px 5px;
+  line-height: 30px;
+}
+dl.image-tags .image-tag:after {
+  content: '\a';
+  white-space: pre;
+}
+.image-tag {
+  border: 2px solid #0099d3;
+  border-radius: 7px;
+  padding: 3px 5px;
+  white-space: nowrap;
+  background-color: #d4edfa;
+}
+.imagestream-lock {
+  color: #ec7a08;
+  font-size: 1.5em;
+  vertical-align: middle;
+}
+a.image-tag {
+  color: inherit;
+}
+pre {
+  font-size: 13px;
+  padding: 5px 10px;
+  background-color: #eee;
+  border: none;
+  font-family: Monospace, Menlo, Consolas;
+}
+pre em {
+  font-weight: bold;
+  font-style: normal;
+}
+.fa-info-circle {
+  font-size: 15px;
+  color: #888;
+  padding: 0px 5px;
+}
+image-layers {
+  border: 1px solid #d0d0d0;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+}
+.image-layers {
+  overflow: hidden;
+}
+.image-layers .column {
+  fill-opacity: 0;
+  cursor: pointer;
+}
+.image-layers .layer {
+  fill: #4d4d4d;
+}
+.image-layers .selected .layer {
+  fill: #0099d3;
+}
+.image-layers .line {
+  stroke: #0099d3;
+  stroke-width: 1px;
+  fill: transparent;
+}
+.image-layers .label {
+  font-family: monospace;
+  font-weight: normal;
+}
+table.project-body {
+  margin-top: 0px;
+}
+table.project-body thead.th {
+  border-top: 0px;
+  font-size: 12px;
+}
+table.project-body tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+table.project-body tr.listing-item {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+table.listing > thead td {
+  padding-top: 0px;
+}
+.listing-head .pficon-project {
+  margin-bottom: 10px;
+}
+span.project-description {
+  font-size: 13px;
+  font-weight: normal;
+}
+p.project-description {
+  margin-top: 1em;
+}
+.project-panel {
+  padding-right: 25px;
+  padding-top: 0px;
+}
+table.projects-listing {
+  max-width: 2000px;
+  min-width: 85%;
+}
+table.projects-listing tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+table.projects-listing .details-listing {
+  min-width: 70% !important;
+}
+table.projects-listing tr.listing-item {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+table.projects-listing tr.inner-project-listing {
+  display: table-row;
+}
+table.projects-listing tbody.first tr.tag-item td {
+  padding-top: 20px;
+}
+table.projects-listing tbody.last tr.listing-item.tag-item td:first-child {
+  background-size: 100% 20px;
+  background-repeat: no-repeat;
+}
+table.projects-listing tr.tag-item td {
+  padding-bottom: 0px;
+}
+table.projects-listing tr.listing-item tt {
+  color: #888;
+}
