@@ -1,2 +1,2 @@
 version=3
-https://github.com/cockpit-project/cockpit/releases/ .*/cockpit-([\d\.]+)\.tar\.bz2
+https://github.com/cockpit-project/cockpit/releases/ .*/cockpit-([\d\.]+)\.tar\.xz
