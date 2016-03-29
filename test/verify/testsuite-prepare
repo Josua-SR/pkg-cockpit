@@ -1,0 +1,87 @@
+#!/bin/bash
+
+set -e
+
+SELF=testsuite-prepare
+BASE="$(dirname $0)/.."
+
+vm_install_opts=
+
+# TODO: This really needs to be migrated to python and use testinfra
+TEST_OS=${TEST_OS:-fedora-24}
+
+warning()
+{
+       echo >&2 "$SELF: $@"
+}
+
+silent()
+{
+       "$@" > /dev/null 2> /dev/null
+       return $?
+}
+
+usage()
+{
+    echo "usage: testsuite-prepare [--clean] [--quick] [--verbose]"
+}
+
+
+args=$(getopt -o "h,v,q" -l "help,verbose,quick" -- "$@")
+eval set -- "$args"
+while [ $# -gt 0 ]; do
+    case $1 in
+    -q|--quick)
+        vm_install_opts="$vm_install_opts --quick"
+        ;;
+    -v|--verbose)
+        vm_install_opts="$vm_install_opts --verbose"
+        ;;
+    -h|--help)
+        usage
+        exit 0
+        ;;
+    --)
+        shift
+        break
+        ;;
+    esac
+    shift
+done
+
+# The Atomic variants can't build their own packages, so we build in
+# their non-Atomic siblings.  For example, fedora-atomic is build
+# in fedora-23
+#
+if [ "$TEST_OS" = "fedora-atomic" ]; then
+    BUILD_OS="fedora-23"
+elif [ "$TEST_OS" = "rhel-atomic" ]; then
+    BUILD_OS="rhel-7"
+else
+    BUILD_OS="$TEST_OS"
+fi
+
+$BASE/vm-reset
+$BASE/vm-download \
+    $TEST_OS \
+    $BUILD_OS \
+    ipa \
+    openshift \
+    fedora-stock
+
+install_failed=no
+if ! $BASE/vm-install $vm_install_opts --build-image $BUILD_OS; then
+    install_failed=yes
+fi
+
+# Upload the build logs if desired
+if [ -n "${TEST_ATTACHMENTS:-}" ]; then
+    mkdir "$TEST_ATTACHMENTS"/build-results
+    cp -r $BASE/tmp/build-results/*.log "$TEST_ATTACHMENTS"/build-results
+fi
+
+if [ $install_failed == "yes" ]; then
+  exit 1
+fi
+
+exit 0

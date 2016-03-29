@@ -26,7 +26,7 @@ AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_AUX_DIR([tools])
 AC_CONFIG_MACRO_DIR([tools])
 
-AM_INIT_AUTOMAKE([1.9 foreign dist-bzip2 no-dist-gzip subdir-objects])
+AM_INIT_AUTOMAKE([1.9 foreign dist-xz no-dist-gzip subdir-objects tar-pax])
 AM_MAINTAINER_MODE([enable])
 
 AC_USE_SYSTEM_EXTENSIONS
@@ -184,8 +184,18 @@ else
   AC_CHECK_HEADER([pcp/pmapi.h], ,
     [AC_MSG_ERROR([Couldn't find pcp headers $disable_msg])]
   )
+  AC_CHECK_HEADERS([pcp/import.h pcp/pmda.h], ,
+    [AC_MSG_ERROR([Couldn't find pcp headers $disable_msg])],
+    [#include <pcp/pmapi.h>]
+  )
   AC_CHECK_LIB(pcp, pmNewContext, [ true ],
     [AC_MSG_ERROR([Couldn't find pcp library $disable_msg])]
+  )
+  AC_CHECK_LIB(pcp_pmda, pmdaCacheLookup, [ true ],
+    [AC_MSG_ERROR([Couldn't find pcp_pmda library $disable_msg])]
+  )
+  AC_CHECK_LIB(pcp_import, pmiStart, [ true ],
+    [AC_MSG_ERROR([Couldn't find pcp_import library $disable_msg])]
   )
   COCKPIT_PCP_LIBS="$COCKPIT_PCP_LIBS -lpcp -lm"
 fi
@@ -215,7 +225,7 @@ else
   fi
 fi
 AC_SUBST([systemdunitdir], [$systemdunitdir])
-AC_MSG_RESULT(systemdunitdir)
+AC_MSG_RESULT($systemdunitdir)
 
 # Internationalization
 
@@ -231,6 +241,11 @@ AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE],["$GETTEXT_PACKAGE"],[gettext domain])
 AC_PATH_PROG([PHANTOMJS], [phantomjs])
 AM_CONDITIONAL([WITH_PHANTOMJS], [test -n "$PHANTOMJS"])
 
+# go
+
+AC_PATH_PROG([GOLANG], [go])
+AM_CONDITIONAL([WITH_GOLANG], [test -n "$GOLANG"])
+
 # usermod
 #
 # usermod might not be world-executable, so AC_PATH_PROG might not
@@ -238,6 +253,21 @@ AM_CONDITIONAL([WITH_PHANTOMJS], [test -n "$PHANTOMJS"])
 
 AC_PATH_PROG([USERMOD], [usermod], [/usr/sbin/usermod], [$PATH:/usr/local/sbin:/usr/sbin:/sbin])
 AC_DEFINE_UNQUOTED([PATH_USERMOD],["$USERMOD"],[Location of usermod binary])
+
+# newusers
+AC_PATH_PROG([NEWUSERS], [newusers], [/usr/sbin/newusers], [$PATH:/usr/local/sbin:/usr/sbin:/sbin])
+AC_DEFINE_UNQUOTED([PATH_NEWUSERS],["$NEWUSERS"],[Location of newusers binary])
+AC_MSG_CHECKING(whether $NEWUSERS understands --crypt-method)
+if newusers --help | grep -q -e --crypt-method; then
+  AC_DEFINE_UNQUOTED([HAVE_NEWUSERS_CRYPT_METHOD],[1],[whether newusers understands --crypt-method])
+  AC_MSG_RESULT(yes)
+else
+  AC_MSG_RESULT(no)
+fi
+
+# chpasswd
+AC_PATH_PROG([CHPASSWD], [chpasswd], [/usr/sbin/chpasswd], [$PATH:/usr/local/sbin:/usr/sbin:/sbin])
+AC_DEFINE_UNQUOTED([PATH_CHPASSWD],["$CHPASSWD"],[Location of chpasswd binary])
 
 # pkexec
 AC_PATH_PROG([PKEXEC], [pkexec], [/usr/bin/pkexec], [$PATH:/usr/local/sbin:/usr/sbin:/sbin])

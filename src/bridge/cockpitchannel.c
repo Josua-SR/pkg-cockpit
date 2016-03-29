@@ -644,7 +644,7 @@ cockpit_channel_class_init (CockpitChannelClass *klass)
     {
       inet = g_inet_address_new_loopback (G_SOCKET_FAMILY_IPV4);
       address = g_inet_socket_address_new (inet, atoi (port));
-      cockpit_channel_internal_address ("test-server", address);
+      cockpit_channel_internal_address ("/test-server", address);
       g_object_unref (address);
       g_object_unref (inet);
     }
@@ -743,6 +743,7 @@ cockpit_channel_ready (CockpitChannel *self)
       g_queue_free (queue);
     }
 
+  cockpit_channel_control (self, "ready", NULL);
   self->priv->ready = TRUE;
 
   /* No more data coming? */
@@ -928,28 +929,32 @@ lookup_internal (const gchar *name,
                  GSocketConnectable **connectable)
 {
   const gchar *env;
+  gboolean ret = FALSE;
+  GSocketAddress *address;
 
   g_assert (name != NULL);
   g_assert (connectable != NULL);
 
-  if (g_str_equal (name, "ssh-agent"))
+  if (internal_addresses)
+    {
+      ret = g_hash_table_lookup_extended (internal_addresses, name, NULL,
+                                          (gpointer *)connectable);
+    }
+
+  if (!ret && g_str_equal (name, "ssh-agent"))
     {
       *connectable = NULL;
       env = g_getenv ("SSH_AUTH_SOCK");
       if (env != NULL && env[0] != '\0')
-        *connectable = G_SOCKET_CONNECTABLE (g_unix_socket_address_new (env));
-      else
-        *connectable = NULL;
-      return TRUE;
+        {
+          address = g_unix_socket_address_new (env);
+          *connectable = G_SOCKET_CONNECTABLE (address);
+          cockpit_channel_internal_address ("ssh-agent", address);
+        }
+      ret = TRUE;
     }
 
-  if (internal_addresses)
-    {
-      return g_hash_table_lookup_extended (internal_addresses, name, NULL,
-                                           (gpointer *)connectable);
-    }
-
-  return FALSE;
+  return ret;
 }
 
 void
@@ -977,10 +982,10 @@ cockpit_channel_remove_internal_address (const gchar *name)
   return ret;
 }
 
-GSocketConnectable *
-cockpit_channel_parse_connectable (CockpitChannel *self,
-                                   gchar **possible_name,
-                                   gboolean *local_address)
+static GSocketConnectable *
+parse_address (CockpitChannel *self,
+               gchar **possible_name,
+               gboolean *local_address)
 {
   const gchar *problem = "protocol-error";
   GSocketConnectable *connectable = NULL;
@@ -992,6 +997,7 @@ cockpit_channel_parse_connectable (CockpitChannel *self,
   GError *error = NULL;
   const gchar *host;
   gint64 port;
+  gchar *name = NULL;
 
   options = self->priv->open_options;
   if (!cockpit_json_get_string (options, "unix", NULL, &unix_path))
@@ -1057,14 +1063,12 @@ cockpit_channel_parse_connectable (CockpitChannel *self,
         }
       else
         {
-          if (possible_name)
-            *possible_name = g_strdup_printf ("%s:%d", host, (gint)port);
+          name = g_strdup_printf ("%s:%d", host, (gint)port);
         }
     }
   else if (unix_path)
     {
-      if (possible_name)
-        *possible_name = g_strdup (unix_path);
+      name = g_strdup (unix_path);
       connectable = G_SOCKET_CONNECTABLE (g_unix_socket_address_new (unix_path));
       local = FALSE;
     }
@@ -1081,8 +1085,7 @@ cockpit_channel_parse_connectable (CockpitChannel *self,
           goto out;
         }
 
-      if (possible_name)
-        *possible_name = g_strdup (internal);
+      name = g_strdup (internal);
       connectable = g_object_ref (connectable);
       local = FALSE;
     }
@@ -1105,9 +1108,13 @@ out:
     }
   else
     {
+      if (possible_name)
+          *possible_name = g_strdup (name);
       if (local_address)
         *local_address = local;
     }
+
+  g_free (name);
   return connectable;
 }
 
@@ -1121,7 +1128,7 @@ cockpit_channel_parse_address (CockpitChannel *self,
   GError *error = NULL;
   gchar *name = NULL;
 
-  connectable = cockpit_channel_parse_connectable (self, &name, NULL);
+  connectable = parse_address (self, &name, NULL);
   if (!connectable)
     return NULL;
 
@@ -1339,14 +1346,13 @@ parse_cert_option_as_database (JsonObject *options,
   return problem;
 }
 
-CockpitStreamOptions *
-cockpit_channel_parse_stream (CockpitChannel *self,
-                              gboolean local_address)
+static gboolean
+parse_stream_options (CockpitChannel *self,
+                      CockpitConnectable *connectable)
 {
   const gchar *problem = "protocol-error";
   GTlsCertificate *cert = NULL;
   GTlsDatabase *database = NULL;
-  CockpitStreamOptions *ret;
   gboolean use_tls = FALSE;
   GError *error = NULL;
   GString *pem = NULL;
@@ -1354,7 +1360,7 @@ cockpit_channel_parse_stream (CockpitChannel *self,
   JsonNode *node;
 
   /* No validation for local servers by default */
-  gboolean validate = !local_address;
+  gboolean validate = !connectable->local;
 
   node = json_object_get_member (self->priv->open_options, "tls");
   if (node && !JSON_NODE_HOLDS_OBJECT (node))
@@ -1415,30 +1421,27 @@ out:
   if (problem)
     {
       cockpit_channel_close (self, problem);
-      ret = NULL;
     }
   else
     {
-      ret = g_new0 (CockpitStreamOptions, 1);
-      ret->refs = 1;
-      ret->tls_client = use_tls;
-      ret->tls_cert = cert;
+      connectable->tls = use_tls;
+      connectable->tls_cert = cert;
       cert = NULL;
 
       if (database)
         {
-          ret->tls_database = database;
-          ret->tls_client_flags = G_TLS_CERTIFICATE_VALIDATE_ALL;
+          connectable->tls_database = database;
+          connectable->tls_flags = G_TLS_CERTIFICATE_VALIDATE_ALL;
           if (!validate)
-              ret->tls_client_flags &= ~(G_TLS_CERTIFICATE_INSECURE | G_TLS_CERTIFICATE_BAD_IDENTITY);
+              connectable->tls_flags &= ~(G_TLS_CERTIFICATE_INSECURE | G_TLS_CERTIFICATE_BAD_IDENTITY);
           database = NULL;
         }
       else
         {
           if (validate)
-            ret->tls_client_flags = G_TLS_CERTIFICATE_VALIDATE_ALL;
+            connectable->tls_flags = G_TLS_CERTIFICATE_VALIDATE_ALL;
           else
-            ret->tls_client_flags = G_TLS_CERTIFICATE_GENERIC_ERROR;
+            connectable->tls_flags = G_TLS_CERTIFICATE_GENERIC_ERROR;
         }
     }
 
@@ -1449,5 +1452,32 @@ out:
   if (database)
     g_object_unref (database);
 
-  return ret;
+  return problem == NULL;
+}
+
+CockpitConnectable *
+cockpit_channel_parse_stream (CockpitChannel *self)
+{
+  CockpitConnectable *connectable;
+  GSocketConnectable *address;
+  gboolean local;
+  gchar *name;
+
+  address = parse_address (self, &name, &local);
+  if (!address)
+    return NULL;
+
+  connectable = g_new0 (CockpitConnectable, 1);
+  connectable->address = address;
+  connectable->name = name;
+  connectable->refs = 1;
+  connectable->local = local;
+
+  if (!parse_stream_options (self, connectable))
+    {
+      cockpit_connectable_unref (connectable);
+      connectable = NULL;
+    }
+
+  return connectable;
 }

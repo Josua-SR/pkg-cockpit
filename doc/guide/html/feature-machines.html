@@ -7,7 +7,7 @@
 <link rel="home" href="index.html" title="Cockpit Guide">
 <link rel="up" href="features.html" title="Part&#160;II.&#160;Feature Internals">
 <link rel="prev" href="feature-kubernetes.html" title="Kubernetes">
-<link rel="next" href="development.html" title="Part&#160;III.&#160;Developer Guide">
+<link rel="next" href="feature-tuned.html" title="Tuned Profiles">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -16,7 +16,7 @@
 <td><a accesskey="u" href="features.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
 <td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
 <th width="100%" align="center">Cockpit Guide</th>
-<td><a accesskey="n" href="development.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+<td><a accesskey="n" href="feature-tuned.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
 </tr></table>
 <div class="chapter">
 <div class="titlepage"><div><div><h2 class="title">
@@ -27,6 +27,8 @@
     the first machine connected to, and are
     <a class="link" href="authentication.html" title="Cockpit Authentication">authenticated</a> with the logged in
     user's password and/or SSH keys.</p>
+<p>Using SSH keys is only supported when the system has the
+    necessary APIs in libssh.</p>
 <p>There is currently no command line interface for adding and/or removing
     machines from the dashboard. The machine data is stored in
     <code class="filename">/var/lib/cockpit/machines.json</code> and SSH host keys are

@@ -43,6 +43,7 @@ systemd_MIN = \
 	pkg/systemd/journal.min.js \
 	pkg/systemd/journalctl.min.js \
 	pkg/systemd/renderer.min.js \
+	pkg/systemd/service.min.js \
 	$(NULL)
 systemd_BUNDLE = \
 	pkg/systemd/journal_day_header.mustache \
@@ -81,8 +82,5 @@ EXTRA_DIST += \
 	pkg/systemd/service.min.js \
 	pkg/systemd/services.min.html \
 	pkg/systemd/terminal.min.html \
-	$(systemd_DATA) \
-	$(systemddebug_DATA) \
-	$(systemd_TESTS) \
 	$(systemd_BUNDLE) \
 	$(NULL)

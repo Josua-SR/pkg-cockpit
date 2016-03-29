@@ -128,6 +128,8 @@ ensure_certificate (const gchar *user,
       goto out;
     }
 
+  if (g_strcmp0 (selinux, "") == 0)
+    selinux = NULL;
   if (selinux)
     {
       chcon_argv[3] = path;
@@ -138,7 +140,7 @@ ensure_certificate (const gchar *user,
         {
           g_message ("couldn't change SELinux type context '%s' for certificate: %s: %s",
                      selinux, path, error->message);
-          goto out;
+          /* keep going, don't fail hard here */
         }
     }
 

@@ -137,7 +137,10 @@ define([
                 id = parts[1];
                 type = parts[0].substring(4).toUpperCase();
                 comment = parts.slice(2).join(" ");
-
+            } else if (parts[0].indexOf("ecdsa-") === 0) {
+                id = parts[1];
+                type = "ECDSA";
+                comment = parts.slice(2).join(" ");
             } else {
                 return;
             }
@@ -235,6 +238,7 @@ define([
 
             var dfd = $.Deferred();
             var buffer = "";
+            var output = "";
             var failure = _("Not a valid private key");
 
             var timeout = window.setTimeout(function() {
@@ -252,12 +256,14 @@ define([
                     dfd.resolve();
                 })
                 .fail(function(ex) {
+                    console.log(output);
                     if (ex.constructor.name == "ProcessError")
                         ex = new Error(failure);
                     dfd.reject(ex);
                 })
                 .stream(function(data) {
                     buffer += data;
+                    output += data;
                     if (perm_exp.test(buffer)) {
                         failure = _("Invalid file permissions");
                         buffer = "";
@@ -486,4 +492,10 @@ define([
                 }
             });
         });
+
+    return {
+        keys_instance: function () {
+            return new Keys();
+        }
+    };
 });

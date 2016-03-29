@@ -17,7 +17,7 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-define([
+require([
     "jquery",
     "base1/cockpit",
     "storage/client",
@@ -26,6 +26,7 @@ define([
     "storage/details",
     "storage/utils",
     "translated!base1/po",
+    "base1/bootstrap-select",
 ], function($, cockpit, client, jobs, overview, details, utils, po) {
     cockpit.locale(po);
     var _ = cockpit.gettext;
@@ -50,6 +51,8 @@ define([
         $('body').on('click', '[data-goto-vgroup]', function () {
             cockpit.location.go([ 'vg', $(this).attr('data-goto-vgroup') ]);
         });
+
+        utils.init_arming_zones($('body'));
 
         function navigate() {
             var path = cockpit.location.path;
@@ -114,5 +117,5 @@ define([
         });
     }
 
-    return init;
+    $(init);
 });

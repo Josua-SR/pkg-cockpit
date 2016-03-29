@@ -131,8 +131,8 @@ define([
                                 validate: function (size) {
                                     if (isNaN(size))
                                         return _("Size must be specified.");
-                                    if (size === 0)
-                                        return _("Size can not be zero.");
+                                    if (size <= 0)
+                                        return _("Size must be greater than zero.");
                                 }
                               },
                               { SelectOne: "erase",
@@ -575,27 +575,40 @@ define([
 
                 var block = client.lvols_block[path];
 
+                /* Resizing is only safe when lvol has a filesystem
+                   and that filesystem is resized at the same time.
+
+                   So we always resize the filesystem for lvols that
+                   have one, and refuse to shrink otherwise.
+
+                   Note that shrinking a filesystem will not always
+                   succeed, but it is never dangerous.
+                */
+
                 dialog.open({ Title: _("Resize Logical Volume"),
                               Fields: [
                                   { SizeInput: "size",
                                     Title: _("Size"),
                                     Value: lvol.Size,
                                     Max: "XXX"
-                                  },
-                                  { CheckBox: "fsys",
-                                    Title: _("Resize Filesystem"),
-                                    Value: block && block.IdUsage == "filesystem",
-                                    visible: function () {
-                                        return lvol.Type == "block";
-                                    }
                                   }
                               ],
                               Action: {
                                   Title: _("Resize"),
                                   action: function (vals) {
+
+                                      function error(msg) {
+                                          return $.Deferred().reject({ message: msg }).promise();
+                                      }
+
+                                      var fsys = (block && block.IdUsage == "filesystem");
+                                      if (!fsys && vals.size < lvol.Size)
+                                          return error(_("This logical volume can not be made smaller."));
+
                                       var options = { };
-                                      if (vals.fsys !== undefined)
-                                          options.resize_fsys = { t: 'b', v: vals.fsys };
+                                      if (fsys)
+                                          options.resize_fsys = { t: 'b', v: fsys };
+
                                       return lvol.Resize(vals.size, options);
                                   }
                               }
@@ -926,11 +939,15 @@ define([
         mustache.parse(action_btn_tmpl);
 
         function create_block_action_btn (target, is_crypto_locked, is_partition) {
-            var block = (target.iface == "org.storaged.Storaged.Block")? target : null;
+            function endsWith(str, suffix) {
+                return str.indexOf(suffix, str.length - suffix.length) !== -1;
+            }
+
+            var block = endsWith(target.iface, ".Block")? target : null;
             var block_fsys = block && client.blocks_fsys[block.path];
             var block_lvm2 = block && client.blocks_lvm2[block.path];
 
-            var lvol = (target.iface == "org.storaged.Storaged.LogicalVolume")? target : null;
+            var lvol = endsWith(target.iface, ".LogicalVolume")? target : null;
 
             var is_filesystem         = (block && block.IdUsage == 'filesystem');
             var is_filesystem_mounted = (block_fsys && block_fsys.MountPoints.length > 0);

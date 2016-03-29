@@ -13,6 +13,7 @@
     <script src="../shell/shell.js"></script>
     <script src="../system/bundle.js"></script>
     <script src="../domain/bundle.js"></script>
+    <script src="../performance/bundle.js"></script>
     <script>
         require([
             "jquery",
@@ -63,37 +64,37 @@
       {{/SubStatus}}
     </script>
 
-    <div id="server" class="container-fluid">
+    <div id="server" class="container-fluid page">
         <div class="col-md-4 col-lg-3 cockpit-info-table-container">
             <table class="cockpit-info-table">
                 <tr>
-                    <td>Hardware</td>
+                    <td translatable="yes">Hardware</td>
                     <td id="system_information_hardware_text"></td>
                 </tr>
                 <tr>
-                    <td>Asset Tag</td>
+                    <td translatable="yes">Asset Tag</td>
                     <td id="system_information_asset_tag_text"></td>
                 </tr>
                 <tr>
-                    <td>BIOS</td>
-                    <td id="system_information_bios_text"></td>
-                </tr>
-                <tr>
-                    <td>Operating System</td>
+                    <td translatable="yes">Operating System</td>
                     <td id="system_information_os_text"></td>
                 </tr>
+                <tr id="system-ostree-version" class="hidden">
+                    <td translatable="yes">Version</td>
+                    <td><a id="system-ostree-version-link"></a></td>
+                </tr>
                 <tr>
-                    <td>Host Name</td>
+                    <td translatable="yes">Host Name</td>
                     <td><button class="btn btn-default hostname-privileged"
                             id="system_information_hostname_button"></button></td>
                 </tr>
                 <tr id="system-info-realms">
-                    <td>Domain</td>
+                    <td translatable="yes">Domain</td>
                     <td class="button-location">
                     </td>
                 </tr>
                 <tr>
-                    <td>System Time</td>
+                    <td translatable="yes">System Time</td>
                     <td><button class="btn btn-default systime-privileged"
                                 id="system_information_systime_button"></button>
                       <a hidden id="system_information_systime_ntp_status"
@@ -107,8 +108,13 @@
                     <td translatable="yes">Power Options</td>
                     <td id="shutdown-group"></td>
                 </tr>
+                <tr id="system-info-performance">
+                    <td translatable="yes">Performance Profile</td>
+                    <td class="button-location">
+                    </td>
+                </tr>
                 <tr id="server-pmlogger-onoff-row" hidden>
-                    <td translatable="yes">Store performance data</td>
+                    <td translatable="yes">Store Performance Data</td>
                     <td>
                         <div class="btn-group btn-onoff" id="server-pmlogger-switch" data-toggle="buttons">
                             <label class="btn">
@@ -166,14 +172,14 @@
             <div style="height:120px" id="server_memory_graph" class="server-graph zoomable-plot"></div>
             <br/>
             <div>
-              <span class="plot-unit" id="server_network_traffic_unit"></span><a id="link-network">Network Traffic</a>
-            </div>
-            <div style="height:120px" id="server_network_traffic_graph" class="server-graph zoomable-plot"></div>
-            <br/>
-            <div>
               <span class="plot-unit" id="server_disk_io_unit"></span><a id="link-disk">Disk I/O</a>
             </div>
             <div style="height:120px" id="server_disk_io_graph" class="server-graph zoomable-plot"></div>
+            <br/>
+            <div>
+              <span class="plot-unit" id="server_network_traffic_unit"></span><a id="link-network">Network Traffic</a>
+            </div>
+            <div style="height:120px" id="server_network_traffic_graph" class="server-graph zoomable-plot"></div>
         </div>
     </div>
 
@@ -371,7 +377,25 @@
                     <table>
                         <tr>
                             <td translatable="yes">Delay</td>
-                            <td id="shutdown-delay"></td>
+                            <td id="shutdown-delay">
+                                <div class="btn-group bootstrap-select dropdown form-control">
+                                    <button class="btn btn-default dropdown-toggle" type="button"
+                                        data-toggle="dropdown">
+                                        <span class="pull-left" translatable="yes">1 Minute</span>
+                                        <div class="caret"></div>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li value="1"><a translatable="yes">1 Minute</a></li>
+                                        <li value="5"><a translatable="yes">5 Minutes</a></li>
+                                        <li value="20"><a translatable="yes">20 Minutes</a></li>
+                                        <li value="40"><a translatable="yes">40 Minutes</a></li>
+                                        <li value="60"><a translatable="yes">60 Minutes</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li value="0"><a translatable="yes">No Delay</a></li>
+                                        <li value="x"><a translatable="yes">Specific Time</a></li>
+                                    </ul>
+                                </div>
+                            </td>
                             <td>
                                 <div id="shutdown-time">
                                     <input class="form-control" style="width:3em;display:inline" value="18"/>

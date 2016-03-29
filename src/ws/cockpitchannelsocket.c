@@ -181,95 +181,66 @@ on_socket_close (WebSocketConnection *connection,
   cockpit_channel_socket_close (chock, problem);
 }
 
+static void
+respond_with_error (const gchar *path,
+                    GIOStream *io_stream,
+                    GHashTable *headers,
+                    guint status,
+                    const gchar *message)
+{
+  CockpitWebResponse *response;
+
+  response = cockpit_web_response_new (io_stream, path, NULL, headers);
+  cockpit_web_response_error (response, status, NULL, "%s", message);
+  g_object_unref (response);
+}
+
 void
-cockpit_channel_socket_open (CockpitWebService *self,
+cockpit_channel_socket_open (CockpitWebService *service,
+                             JsonObject *open,
                              const gchar *path,
-                             const gchar *escaped,
                              GIOStream *io_stream,
                              GHashTable *headers,
                              GByteArray *input_buffer)
 {
   CockpitChannelSocket *chock = NULL;
-  const gchar *array[] = { NULL, NULL };
-  CockpitWebResponse *response;
   WebSocketDataType data_type;
-  const gchar **protocols;
-  const gchar *protocol;
-  JsonObject *open = NULL;
-  GBytes *bytes = NULL;
-  const gchar *channel;
-  gchar *data;
+  CockpitTransport *transport;
+  gchar **protocols = NULL;
 
-  data = g_uri_unescape_string (escaped, "/");
-  if (data == NULL)
+  if (!cockpit_web_service_parse_external (open, NULL, NULL, &protocols) ||
+      !cockpit_web_service_parse_binary (open, &data_type))
     {
-      g_warning ("invalid sideband query string");
+      respond_with_error (path, io_stream, headers, 400, "Bad channel request");
       goto out;
     }
 
-  bytes = g_bytes_new_take (data, strlen (data));
-  if (!cockpit_transport_parse_command (bytes, NULL, &channel, &open))
+  transport = cockpit_web_service_ensure_transport (service, open);
+  if (!transport)
     {
-      g_warning ("invalid sideband command");
+      respond_with_error (path, io_stream, headers, 502, "Failed to open channel transport");
       goto out;
     }
-
-  if (channel != NULL)
-    {
-      g_warning ("should not specify \"channel\" in sideband command: %s", channel);
-      goto out;
-    }
-
-  if (!cockpit_json_get_string (open, "protocol", NULL, &protocol))
-    {
-      g_warning ("invalid sideband \"protocol\" option");
-      goto out;
-    }
-  else if (protocol)
-    {
-      array[0] = protocol;
-      protocols = array;
-    }
-  else
-    {
-      protocols = NULL;
-    }
-
-  json_object_set_string_member (open, "command", "open");
-
-  if (!cockpit_web_service_parse_binary (open, &data_type))
-    goto out;
 
   chock = g_new0 (CockpitChannelSocket, 1);
-  chock->channel = cockpit_web_service_unique_channel (self);
-  json_object_set_string_member (open, "channel", chock->channel);
+  chock->channel = cockpit_web_service_unique_channel (service);
   chock->open = json_object_ref (open);
   chock->data_type = data_type;
 
-  chock->socket = cockpit_web_service_create_socket (protocols, path, escaped,
+  json_object_set_string_member (open, "command", "open");
+  json_object_set_string_member (open, "channel", chock->channel);
+
+  chock->socket = cockpit_web_service_create_socket ((const gchar **)protocols, path,
                                                      io_stream, headers, input_buffer);
   chock->socket_open = g_signal_connect (chock->socket, "open", G_CALLBACK (on_socket_open), chock);
   chock->socket_message = g_signal_connect (chock->socket, "message", G_CALLBACK (on_socket_message), chock);
   chock->socket_close = g_signal_connect (chock->socket, "close", G_CALLBACK (on_socket_close), chock);
 
-  chock->transport = cockpit_web_service_ensure_transport (self, open);
+  chock->transport = g_object_ref (transport);
   chock->transport_recv = g_signal_connect (chock->transport, "recv", G_CALLBACK (on_transport_recv), chock);
   chock->transport_control = g_signal_connect (chock->transport, "control", G_CALLBACK (on_transport_control), chock);
   chock->transport_closed = g_signal_connect (chock->transport, "closed", G_CALLBACK (on_transport_closed), chock);
 
-  open = NULL;
-
 out:
-  if (bytes)
-    g_bytes_unref (bytes);
-  if (open)
-    json_object_unref (open);
-
-  if (!chock)
-    {
-      /* If above failed, then send back a 'Bad Request' response */
-      response = cockpit_web_response_new (io_stream, path, NULL, headers);
-      cockpit_web_response_error (response, 400, NULL, NULL);
-      g_object_unref (response);
-    }
+  g_free (protocols);
 }

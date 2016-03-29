@@ -26,7 +26,7 @@
 
 #include <string.h>
 
-#define DEBUG_BATCHES 1
+#define DEBUG_BATCHES 0
 
 /*
  * This is a cache of properties which tracks updates. The best way to do
@@ -1264,12 +1264,6 @@ cockpit_dbus_cache_dispose (GObject *object)
   batch_flush (self);
   barrier_flush (self);
 
-  if (self->connection)
-    {
-      g_object_unref (self->connection);
-      self->connection = NULL;
-    }
-
   G_OBJECT_CLASS (cockpit_dbus_cache_parent_class)->dispose (object);
 }
 
@@ -1277,6 +1271,9 @@ static void
 cockpit_dbus_cache_finalize (GObject *object)
 {
   CockpitDBusCache *self = COCKPIT_DBUS_CACHE (object);
+
+  g_clear_object (&self->connection);
+  g_object_unref (self->cancellable);
 
   g_free (self->name);
   g_free (self->logname);
@@ -1291,6 +1288,7 @@ cockpit_dbus_cache_finalize (GObject *object)
 
   g_hash_table_unref (self->introsent);
   g_hash_table_unref (self->introspected);
+  g_hash_table_unref (self->cache);
 
   g_hash_table_destroy (self->interned);
   g_list_free_full (self->trash, g_free);
@@ -1518,6 +1516,8 @@ process_introspect_children (CockpitDBusCache *self,
                                 NULL, NULL, NULL);
             }
         }
+
+      g_free (child_path);
     }
 
   /* Anything remaining in snapshot stays */
@@ -1588,6 +1588,12 @@ retrieve_properties (CockpitDBusCache *self,
                      GDBusInterfaceInfo *iface)
 {
   GetAllData *gad;
+
+  /* Don't bother getting properties for this well known interface
+   * that doesn't have any.  Also, NetworkManager returns an error.
+   */
+  if (g_strcmp0 (iface->name, "org.freedesktop.DBus.Properties") == 0)
+    return;
 
   g_debug ("%s: calling GetAll() for %s at %s", self->logname, iface->name, path);
 

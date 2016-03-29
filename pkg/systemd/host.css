@@ -35,3 +35,24 @@
 .systime-inline .form-group .form-control {
     width: 214px;
 }
+
+/* Make sure error message don't overflow the dialog */
+
+.realms-op-diagnostics {
+    max-width: 550px;
+}
+
+.realms-op-wait-message {
+    margin-left: 10px;
+}
+
+.realms-op-address-spinner {
+    margin-left: -30px;
+    margin-top:    2px;
+}
+
+.realms-op-address-error {
+    margin-left: -30px;
+    margin-top:    2px;
+    color:         red;
+}

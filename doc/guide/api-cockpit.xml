@@ -279,9 +279,10 @@ process = cockpit.spawn(args, [options])
         </varlistentry>
         <varlistentry>
           <term><code>"host"</code></term>
-          <listitem><para>The remote host to spawn the process on. If no host is specified
-            then the correct one will be automatically selected based on the page
-            calling this function.</para></listitem>
+          <listitem><para>The remote host to spawn the process on. If an alternate user
+            or port is required it can be specified as <code>"user@myhost:port"</code>.
+            If no host is specified then the correct one will be automatically selected based
+            on the page calling this function.</para></listitem>
         </varlistentry>
         <varlistentry>
           <term><code>"environ"</code></term>
@@ -637,8 +638,9 @@ client = cockpit.dbus(name, [options])
         </varlistentry>
         <varlistentry>
           <term><code>"host"</code></term>
-          <listitem><para>The host to open the channel to. If no host is specified
-            then the correct one will be automatically selected based on the page
+          <listitem><para>The host to open the channel to. If an alternate user or port is
+            required it can be specified as <code>"user@myhost:port"</code>. If no host
+            is specified then the correct one will be automatically selected based on the page
             calling this function.</para></listitem>
         </varlistentry>
         <varlistentry>
@@ -1402,6 +1404,11 @@ http = cockpit.http(options)
 
     </refsection>
 
+    <refsection id="cockpit-http-options">
+      <title>http.options</title>
+      <para>The channel options used to make the http requests.</para>
+    </refsection>
+
     <refsection id="cockpit-http-get">
       <title>http.get()</title>
 <programlisting>
@@ -1589,10 +1596,12 @@ request.close([problem])
 <refsection id="cockpit-permission">
     <title>Permission Lookup</title>
 
-    <para>Cockpit provides a mechanism for checking if the current user satisfies a
-      given criteria. Currently capable of checking for root users, and group
-      membership. This is meant for updating UI elements based on what actions the
-      user can perform. It is <emphasis>not an access control mechanism</emphasis>.</para>
+    <para>Cockpit provides a mechanism for checking if the current
+    user satisfies a given criteria. Currently capable of checking for
+    root users, group membership, and the ability to become
+    superuser. This is meant for updating UI elements based on what
+    actions the user can perform. It is <emphasis>not an access
+    control mechanism</emphasis>.</para>
 
     <refsection id="cockpit-permission-constructor">
       <title>cockpit.permission()</title>
@@ -1600,10 +1609,14 @@ request.close([problem])
 permission = cockpit.permission([options])
 </programlisting>
 
-      <para>Create a new permission object to check if the current user has permission.
-        The "root" user is always given permission. The <code>options</code> argument
-        can contain a <code>"group"</code> field, and members of that group are also
-        given permission.</para>
+      <para>Create a new permission object to check if the current
+      user has permission.  The "root" user is always given
+      permission. The <code>options</code> argument can contain a
+      <code>"group"</code> field, and members of that group are also
+      given permission.  The <code>options</code> argument can also
+      contain a <code>"admin"</code> field, and if set to true, users
+      that can open channels with a <code>{ superuser: true }</code>
+      option are given permission.</para>
     </refsection>
 
     <refsection id="cockpit-permission-allowed">
@@ -2473,9 +2486,10 @@ channel = cockpit.channel(options)
         </varlistentry>
         <varlistentry>
           <term><code>"host"</code></term>
-          <listitem><para>The host to open the channel to. If no host is specified
-            then the correct one will be automatically selected based on the page
-            calling this function.</para></listitem>
+          <listitem><para>The host to open the channel to. If an alternate user or port is
+            required it can be specified as <code>"user@myhost:port"</code>. If no host
+            is specified then the correct one will be automatically selected based on the
+            page calling this function.</para></listitem>
         </varlistentry>
         <varlistentry>
           <term><code>"payload"</code></term>
