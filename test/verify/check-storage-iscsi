@@ -25,19 +25,34 @@ import parent
 from testlib import *
 from storagelib import *
 
-@unittest.skipIf("rhel-7" in os.environ.get("TEST_OS", ""), "No storaged-iscsi on RHEL-7.")
+@skipImage("storaged-iscsi not packaged", "centos-7", "debian-unstable")
+@skipImage("UDisks doesn't have support for iSCSI", "debian-8", "ubuntu-1604")
 class TestStorage(StorageCase):
     def testISCSI(self):
         m = self.machine
         b = self.browser
+        b.wait_timeout(120)
+
+        # rhel-7 is missing the iSCSI session API
+        if m.image == "rhel-7":
+            self.login_and_go("/storage")
+            # The optional parts of the UI have been configured
+            # properly before the page is shown, so we can now
+            # reliably check for the visibility of the iSCSI panel.
+            # It won't show up later asynchronously.
+            b.wait_not_visible("#iscsi-sessions")
+            return
 
         target_iqn = "iqn.2015-09.cockpit.lan"
         initiator_iqn = "iqn.2015-10.cockpit.lan"
 
+        # Increase the iSCSI timeouts for heavy load during our testing
+        m.execute("""sed -i 's|^\(node\..*log.*_timeout = \).*|\\1 60|' /etc/iscsi/iscsid.conf""")
+
         # Setup a iSCSI target with authentication for discovery and join
         #
         m.execute("""
-                  targetcli /backstores/ramdisk create test 10M nullio=true
+                  targetcli /backstores/ramdisk create test 50M
                   targetcli /iscsi set discovery_auth enable=1 userid=admin password=foobar
                   targetcli /iscsi create %(tgt)s
                   targetcli /iscsi/%(tgt)s/tpg1/luns create /backstores/ramdisk/test
@@ -85,6 +100,18 @@ class TestStorage(StorageCase):
 
         b.wait_in_text('#iscsi-sessions', target_iqn)
         b.wait_in_text('#drives', "LIO-ORG test")
+
+        # Make a filesystem on it to prove that the disk really works.
+
+        b.click('#drives tr:contains("LIO-ORG test")')
+        b.wait_visible('#storage-detail')
+        self.content_row_wait_in_col(1, 1, "Unrecognized Data")
+        self.content_tab_action(1, 1, "Format")
+        self.dialog({ "type": "ext4",
+                      "name": "FILESYSTEM" })
+        self.content_row_wait_in_col(1, 1, "ext4 File System")
+        b.click('#storage-detail .breadcrumb a')
+        b.wait_visible('#storage')
 
         b.click('#iscsi-sessions .arm-button')
         b.wait_visible('#iscsi-sessions button[data-iscsi-session-remove]')

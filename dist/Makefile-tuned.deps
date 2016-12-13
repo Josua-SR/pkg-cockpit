@@ -1,0 +1,67 @@
+# Generated Makefile data for tuned
+# Stamp: Thu Nov 24 2016 16:15:59 GMT+0000 (UTC)
+
+tuned_INPUTS = \
+	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \
+	$(srcdir)/pkg/lib/page.css \
+	$(srcdir)/pkg/lib/service.js \
+	$(srcdir)/pkg/tuned/change-profile.jsx \
+	$(srcdir)/pkg/tuned/dialog.js \
+	$(srcdir)/pkg/tuned/link.html \
+	$(srcdir)/pkg/tuned/manifest.json \
+	$(NULL)
+
+tuned_OUTPUTS = \
+	dist/tuned/manifest.json \
+	dist/tuned/performance.css \
+	dist/tuned/performance.css.map \
+	dist/tuned/performance.min.js \
+	dist/tuned/performance.min.js.map \
+	$(NULL)
+
+tuned_INSTALL = \
+	dist/tuned/manifest.json \
+	dist/tuned/performance.css.gz \
+	dist/tuned/performance.min.js.gz \
+	$(NULL)
+
+tuned_DEBUG = \
+	dist/tuned/performance.css.map \
+	dist/tuned/performance.min.js.map \
+	$(NULL)
+
+tuned_TESTS = \
+	$(NULL)
+
+dist/Makefile-tuned.deps: $(WEBPACK_CONFIG) $(tuned_INPUTS)
+	$(WEBPACK_RULE) -d dist/Makefile-tuned.deps $(WEBPACK_CONFIG)
+
+dist/tuned/manifest.json: dist/Makefile-tuned.deps
+
+dist/tuned/performance.css: dist/Makefile-tuned.deps
+
+dist/tuned/performance.css.map: dist/Makefile-tuned.deps
+
+dist/tuned/performance.min.js: dist/Makefile-tuned.deps
+
+dist/tuned/performance.min.js.map: dist/Makefile-tuned.deps
+
+$(srcdir)/pkg/lib/cockpit-components-dialog.jsx:
+
+$(srcdir)/pkg/lib/page.css:
+
+$(srcdir)/pkg/lib/service.js:
+
+$(srcdir)/pkg/tuned/change-profile.jsx:
+
+$(srcdir)/pkg/tuned/dialog.js:
+
+$(srcdir)/pkg/tuned/link.html:
+
+$(srcdir)/pkg/tuned/manifest.json:
+
+WEBPACK_INPUTS += $(tuned_INPUTS)
+WEBPACK_OUTPUTS += $(tuned_OUTPUTS)
+WEBPACK_INSTALL += $(tuned_INSTALL)
+WEBPACK_DEBUG += $(tuned_DEBUG)
+TESTS += $(tuned_TESTS)

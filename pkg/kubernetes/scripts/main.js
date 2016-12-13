@@ -20,9 +20,37 @@
 (function() {
     "use strict";
 
+    /* Tell webpack what to bundle here */
+    var angular = require('angular');
+    require('angular-route');
+    require('angular-gettext/dist/angular-gettext.js');
+    require('angular-bootstrap/ui-bootstrap.js');
+    require('kubernetes-object-describer/dist/object-describer.js');
+    require('kubernetes-container-terminal/dist/container-terminal.js');
+
+    /* The kubernetes client */
+    require('./kube-client');
+    require('./kube-client-cockpit');
+
+    /* The other angular modules */
+    require('./containers');
+    require('./dashboard');
+    require('./details');
+    require('./graphs');
+    require('./policy');
+    require('./projects');
+    require('./images');
+    require('./nodes');
+    require('./topology');
+    require('./volumes');
+
+    /* And the actual application */
+    require('./app');
+
     angular.module('kubernetes', [
         'ngRoute',
         'ui.bootstrap',
+        'gettext',
         'kubeClient',
         'kubeClient.cockpit',
         'kubernetes.app',
@@ -31,7 +59,10 @@
         'kubernetes.containers',
         'kubernetes.details',
         'kubernetes.topology',
+        'kubernetes.volumes',
+        'kubernetes.nodes',
         'registry.images',
+        'registry.policy',
         'registry.projects',
         'kubernetesUI'
     ])
@@ -45,11 +76,12 @@
         'KubeFormatProvider',
         'kubernetesContainerSocketProvider',
         'KubeDiscoverSettingsProvider',
+        'KubeBrowserStorageProvider',
         '$provide',
         function($routeProvider, KubeWatchProvider, KubeRequestProvider,
                  KubeSocketProvider, KubeTranslateProvider, KubeFormatProvider,
                  kubernetesContainerSocketProvider, KubeDiscoverSettingsProvider,
-                 $provide) {
+                 KubeBrowserStorageProvider, $provide) {
 
             $routeProvider.otherwise({ redirectTo: '/' });
 
@@ -60,6 +92,7 @@
             KubeTranslateProvider.KubeTranslateFactory = "CockpitTranslate";
             KubeFormatProvider.KubeFormatFactory = "CockpitFormat";
             KubeDiscoverSettingsProvider.KubeDiscoverSettingsFactory = "cockpitKubeDiscoverSettings";
+            KubeBrowserStorageProvider.KubeBrowserStorageFactory = "cockpitBrowserStorage";
 
             /* Tell the container-terminal that we want to be involved in WebSocket creation */
             kubernetesContainerSocketProvider.WebSocketFactory = 'cockpitContainerWebSocket';

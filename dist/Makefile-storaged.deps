@@ -1,0 +1,204 @@
+# Generated Makefile data for storaged
+# Stamp: Thu Nov 24 2016 16:15:59 GMT+0000 (UTC)
+
+storaged_INPUTS = \
+	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
+	$(srcdir)/pkg/lib/cockpit-components-tooltip.jsx \
+	$(srcdir)/pkg/lib/journal.css \
+	$(srcdir)/pkg/lib/journal.js \
+	$(srcdir)/pkg/lib/journal_day_header.mustache \
+	$(srcdir)/pkg/lib/journal_line.mustache \
+	$(srcdir)/pkg/lib/journal_reboot.mustache \
+	$(srcdir)/pkg/lib/listing.css \
+	$(srcdir)/pkg/lib/page.css \
+	$(srcdir)/pkg/lib/patterns.js \
+	$(srcdir)/pkg/lib/plot.css \
+	$(srcdir)/pkg/lib/plot.js \
+	$(srcdir)/pkg/lib/qunit-config.js \
+	$(srcdir)/pkg/lib/qunit-template.html \
+	$(srcdir)/pkg/lib/qunit-tests.js \
+	$(srcdir)/pkg/lib/service.js \
+	$(srcdir)/pkg/lib/table.css \
+	$(srcdir)/pkg/lib/tooltip.css \
+	$(srcdir)/pkg/storaged/client.js \
+	$(srcdir)/pkg/storaged/content-views.jsx \
+	$(srcdir)/pkg/storaged/crypto-tab.jsx \
+	$(srcdir)/pkg/storaged/details.js \
+	$(srcdir)/pkg/storaged/devices.js \
+	$(srcdir)/pkg/storaged/dialog.js \
+	$(srcdir)/pkg/storaged/format-dialog.jsx \
+	$(srcdir)/pkg/storaged/fsys-tab.jsx \
+	$(srcdir)/pkg/storaged/images/storage-array.png \
+	$(srcdir)/pkg/storaged/images/storage-disk.png \
+	$(srcdir)/pkg/storaged/index.html \
+	$(srcdir)/pkg/storaged/jobs.js \
+	$(srcdir)/pkg/storaged/lvol-tabs.jsx \
+	$(srcdir)/pkg/storaged/manifest.json \
+	$(srcdir)/pkg/storaged/overview.js \
+	$(srcdir)/pkg/storaged/part-tab.jsx \
+	$(srcdir)/pkg/storaged/permissions.js \
+	$(srcdir)/pkg/storaged/pvol-tabs.jsx \
+	$(srcdir)/pkg/storaged/storage-controls.jsx \
+	$(srcdir)/pkg/storaged/storage.css \
+	$(srcdir)/pkg/storaged/swap-tab.jsx \
+	$(srcdir)/pkg/storaged/test-util.js \
+	$(srcdir)/pkg/storaged/unrecognized-tab.jsx \
+	$(srcdir)/pkg/storaged/utils.js \
+	$(NULL)
+
+storaged_OUTPUTS = \
+	dist/storaged/images/storage-array.png \
+	dist/storaged/images/storage-disk.png \
+	dist/storaged/index.html \
+	dist/storaged/manifest.json \
+	dist/storaged/storage.css \
+	dist/storaged/storage.css.map \
+	dist/storaged/storage.min.js \
+	dist/storaged/storage.min.js.map \
+	dist/storaged/test-util.css \
+	dist/storaged/test-util.css.map \
+	dist/storaged/test-util.html \
+	dist/storaged/test-util.min.js \
+	dist/storaged/test-util.min.js.map \
+	$(NULL)
+
+storaged_INSTALL = \
+	dist/storaged/images/storage-array.png \
+	dist/storaged/images/storage-disk.png \
+	dist/storaged/index.html.gz \
+	dist/storaged/manifest.json \
+	dist/storaged/storage.css.gz \
+	dist/storaged/storage.min.js.gz \
+	dist/storaged/test-util.css.gz \
+	dist/storaged/test-util.min.js.gz \
+	$(NULL)
+
+storaged_DEBUG = \
+	dist/storaged/storage.css.map \
+	dist/storaged/storage.min.js.map \
+	dist/storaged/test-util.css.map \
+	dist/storaged/test-util.min.js.map \
+	$(NULL)
+
+storaged_TESTS = \
+	dist/storaged/test-util.html \
+	$(NULL)
+
+dist/Makefile-storaged.deps: $(WEBPACK_CONFIG) $(storaged_INPUTS)
+	$(WEBPACK_RULE) -d dist/Makefile-storaged.deps $(WEBPACK_CONFIG)
+
+dist/storaged/images/storage-array.png: dist/Makefile-storaged.deps
+
+dist/storaged/images/storage-disk.png: dist/Makefile-storaged.deps
+
+dist/storaged/index.html: dist/Makefile-storaged.deps
+
+dist/storaged/manifest.json: dist/Makefile-storaged.deps
+
+dist/storaged/storage.css: dist/Makefile-storaged.deps
+
+dist/storaged/storage.css.map: dist/Makefile-storaged.deps
+
+dist/storaged/storage.min.js: dist/Makefile-storaged.deps
+
+dist/storaged/storage.min.js.map: dist/Makefile-storaged.deps
+
+dist/storaged/test-util.css: dist/Makefile-storaged.deps
+
+dist/storaged/test-util.css.map: dist/Makefile-storaged.deps
+
+dist/storaged/test-util.html: dist/Makefile-storaged.deps
+
+dist/storaged/test-util.min.js: dist/Makefile-storaged.deps
+
+dist/storaged/test-util.min.js.map: dist/Makefile-storaged.deps
+
+$(srcdir)/pkg/lib/cockpit-components-listing.jsx:
+
+$(srcdir)/pkg/lib/cockpit-components-tooltip.jsx:
+
+$(srcdir)/pkg/lib/journal.css:
+
+$(srcdir)/pkg/lib/journal.js:
+
+$(srcdir)/pkg/lib/journal_day_header.mustache:
+
+$(srcdir)/pkg/lib/journal_line.mustache:
+
+$(srcdir)/pkg/lib/journal_reboot.mustache:
+
+$(srcdir)/pkg/lib/listing.css:
+
+$(srcdir)/pkg/lib/page.css:
+
+$(srcdir)/pkg/lib/patterns.js:
+
+$(srcdir)/pkg/lib/plot.css:
+
+$(srcdir)/pkg/lib/plot.js:
+
+$(srcdir)/pkg/lib/qunit-config.js:
+
+$(srcdir)/pkg/lib/qunit-template.html:
+
+$(srcdir)/pkg/lib/qunit-tests.js:
+
+$(srcdir)/pkg/lib/service.js:
+
+$(srcdir)/pkg/lib/table.css:
+
+$(srcdir)/pkg/lib/tooltip.css:
+
+$(srcdir)/pkg/storaged/client.js:
+
+$(srcdir)/pkg/storaged/content-views.jsx:
+
+$(srcdir)/pkg/storaged/crypto-tab.jsx:
+
+$(srcdir)/pkg/storaged/details.js:
+
+$(srcdir)/pkg/storaged/devices.js:
+
+$(srcdir)/pkg/storaged/dialog.js:
+
+$(srcdir)/pkg/storaged/format-dialog.jsx:
+
+$(srcdir)/pkg/storaged/fsys-tab.jsx:
+
+$(srcdir)/pkg/storaged/images/storage-array.png:
+
+$(srcdir)/pkg/storaged/images/storage-disk.png:
+
+$(srcdir)/pkg/storaged/index.html:
+
+$(srcdir)/pkg/storaged/jobs.js:
+
+$(srcdir)/pkg/storaged/lvol-tabs.jsx:
+
+$(srcdir)/pkg/storaged/manifest.json:
+
+$(srcdir)/pkg/storaged/overview.js:
+
+$(srcdir)/pkg/storaged/part-tab.jsx:
+
+$(srcdir)/pkg/storaged/permissions.js:
+
+$(srcdir)/pkg/storaged/pvol-tabs.jsx:
+
+$(srcdir)/pkg/storaged/storage-controls.jsx:
+
+$(srcdir)/pkg/storaged/storage.css:
+
+$(srcdir)/pkg/storaged/swap-tab.jsx:
+
+$(srcdir)/pkg/storaged/test-util.js:
+
+$(srcdir)/pkg/storaged/unrecognized-tab.jsx:
+
+$(srcdir)/pkg/storaged/utils.js:
+
+WEBPACK_INPUTS += $(storaged_INPUTS)
+WEBPACK_OUTPUTS += $(storaged_OUTPUTS)
+WEBPACK_INSTALL += $(storaged_INSTALL)
+WEBPACK_DEBUG += $(storaged_DEBUG)
+TESTS += $(storaged_TESTS)

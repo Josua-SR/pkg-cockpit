@@ -17,14 +17,19 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-define([
-    "jquery",
-    "base1/cockpit",
-    "base1/mustache",
-    "docker/docker",
-    "docker/util",
-    "docker/run"
-], function($, cockpit, Mustache, docker, util, run_image) {
+(function() {
+    "use strict";
+
+    var $ = require("jquery");
+    var cockpit = require("cockpit");
+
+    var Mustache = require("mustache");
+
+    var docker = require("./docker");
+    var util = require("./util");
+
+    require("./run");
+
     var _ = cockpit.gettext;
     var C_ = cockpit.gettext;
 
@@ -42,15 +47,15 @@ define([
             var self = this;
             self.danger_enabled = val;
             $('#image-details-containers button.enable-danger').toggleClass('active', self.danger_enabled);
-            $("#image-details-containers td.container-col-actions").toggle(!self.danger_enabled);
-            $("#image-details-containers td.container-col-danger").toggle(self.danger_enabled);
+            $("#image-details-containers td.container-column-actions").toggle(!self.danger_enabled);
+            $("#image-details-containers td.container-column-danger").toggle(self.danger_enabled);
 
         },
 
         setup: function() {
             var self = this;
 
-            $('#image-details .breadcrumb a').on("click", function() {
+            $('#image-details .content-filter a').on("click", function() {
                 cockpit.location.go('/');
             });
 
@@ -59,12 +64,14 @@ define([
                                          self.toggle_danger(!self.danger_enabled);
                                      });
 
-            $('#image-details-run').on('click', $.proxy(this, "run_image"));
             $('#image-details-delete').on('click', $.proxy(this, "delete_image"));
         },
 
         enter: function(image_id) {
             var self = this;
+
+            /* Tells the image run dialog which image we're working with */
+            $('#image-details-run').attr("data-image", image_id);
 
             this.image_id = image_id;
             this.name = cockpit.format(_("Image $0"), this.image_id.slice(0,12));
@@ -113,7 +120,7 @@ define([
             if (info.RepoTags && info.RepoTags.length > 0)
                 this.name = info.RepoTags[0];
 
-            $('#image-details .breadcrumb .active').text(this.name);
+            $('#image-details .content-filter h3 span').text(this.name);
 
             $('#image-details-id').text(info.Id);
             $('#image-details-tags').html(util.multi_line(info.RepoTags));
@@ -136,10 +143,6 @@ define([
         render_container: function (id, container) {
             util.render_container(this.client, $('#image-details-containers'), "I",
                                   id, container, this.danger_enabled);
-        },
-
-        run_image: function () {
-            run_image(this.client, this.image_id);
         },
 
         delete_image: function () {
@@ -184,7 +187,7 @@ define([
         };
     }
 
-    return {
+    module.exports = {
         init: init_image_details
     };
-});
+}());

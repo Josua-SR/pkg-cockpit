@@ -35,7 +35,7 @@ file.close()
 </programlisting>
   </refsynopsisdiv>
 
-  <refsection>
+  <refsection id="cockpit-file-simple">
     <title>Simple reading and writing</title>
 
     <para>You can read a file with code like this:</para>
@@ -49,7 +49,7 @@ cockpit.file("/path/to/file").read()
     });
 </programlisting>
     <para>The <code>read()</code> method returns a
-      <ulink url="http://api.jquery.com/category/deferred-object/">jQuery promise</ulink>.</para>
+      <ulink url="https://www.promisejs.org/">promise</ulink>.</para>
     <para>When successful, the promise will be resolved with the content of the
       file. Unless you specify options to change this (see below), the file
       is assumed to be text in the UTF-8 encoding, and <code>content</code>
@@ -72,7 +72,7 @@ cockpit.file("/path/to/file").replace("my new content\n")
 </programlisting>
     </para>
     <para>The <code>replace()</code> method returns a
-      <ulink url="http://api.jquery.com/category/deferred-object/">jQuery promise</ulink>.</para>
+      <ulink url="https://www.promisejs.org/">promise</ulink>.</para>
     <para>When the promise is resolved, the file has been atomically replaced
       (via the <code>rename()</code> syscall) with the new content. As with
       <code>read()</code>, by default the new content is a string and will
@@ -93,7 +93,7 @@ cockpit.file("/path/to/file").replace("my new content\n")
       transactional updates to a file.</para>
   </refsection>
 
-  <refsection>
+  <refsection id="cockpit-file-format">
     <title>File format</title>
     <para>By default, a file is assumed to be text encoded in UTF-8, and the
       <code>read()</code> and <code>replace()</code> functions use strings to
@@ -124,7 +124,7 @@ cockpit.file("/path/to/file", { syntax: syntax_object })
       functions.</para>
   </refsection>
 
-  <refsection>
+  <refsection id="cockpit-file-binary">
     <title>Binary files</title>
     <para>By default the content of the file is assumed to be text encoded as
       UTF-8 and it can not contain zero bytes.  The content is represented
@@ -135,7 +135,7 @@ cockpit.file("/path/to/file", { syntax: syntax_object })
       JavaScript.</para>
   </refsection>
 
-  <refsection>
+  <refsection id="cockpit-file-atomic">
     <title>Atomic modifications</title>
     <para>Use <code>modify()</code> to modify the content of the file safely.  A
       call to <code>modify()</code> will read the content of the file, call
@@ -157,7 +157,7 @@ new_content = callback (old_content)
       callbacks. Returning <code>undefined</code> from the proxy is the
       same as returning <code>old_content</code>.</para>
     <para>The <code>modify()</code> method returns a
-      <ulink url="http://api.jquery.com/category/deferred-object/">jQuery promise</ulink>.</para>
+      <ulink url="https://www.promisejs.org/">promise</ulink>.</para>
     <para>The promise will be resolved with the new content and its tag, like so
 <programlisting>
 function shout(old_content) {
@@ -180,7 +180,7 @@ cockpit.file("/path/to/file").modify(shout)
       given values.</para>
   </refsection>
 
-  <refsection>
+  <refsection id="cockpit-file-notify">
     <title>Change notifications</title>
     <para>Calling <code>watch()</code> will start monitoring the file for
       external changes.
@@ -200,13 +200,13 @@ handle = file.watch(callback);
     <para>To free the resources used for monitoring, call <code>handle.remove()</code>.</para>
   </refsection>
 
-  <refsection>
+  <refsection id="cockpit-file-path">
     <title>file.path</title>
     <para>A string containing the path that was passed to the <code>cockpit.file()</code>
       method.</para>
   </refsection>
 
-  <refsection>
+  <refsection id="cockpit-file-close">
     <title>Closing</title>
     <para>Call the <code>close()</code> method on a file proxy to cancel all
       ongoing operations, such as reading, writing, and monitoring. The

@@ -113,11 +113,6 @@ th.networking-action {
     width: 28px;
 }
 
-td.networking-configure {
-    text-align: right;
-    vertical-align top;
-}
-
 td.networking-row-configure {
     text-align: right;
 }
@@ -158,5 +153,37 @@ span.inverted-switchbox {
     text-align: right;
     padding-right: 0;
 }
+.network-ip-settings-row td:last-child {
+    width: 28px;
+}
 
+.bootstrap-select {
+    min-width: 150px;
+}
 
+#network-ethernet-settings-dialog label {
+    font-weight: normal;
+}
+
+#network-ethernet-settings-dialog label input[type=radio] {
+    position: relative;
+    top: 3px;
+    margin-right: 0.5em;
+}
+
+#network-ethernet-settings-mtu-input {
+    margin-left: 0.5em;
+    width: 5em;
+    display: inline;
+}
+
+#testing-connection-curtain {
+    z-index: 2000;
+}
+
+#confirm-breaking-change-popup .pficon-warning-triangle-o {
+    float: left;
+    font-size: 36px;
+    margin-top: 6px;
+    margin-right: 20px;
+}

@@ -20,10 +20,23 @@
 (function() {
     "use strict";
 
+    var angular = require('angular');
+    require('angular-bootstrap/ui-bootstrap.js');
+    require('angular-bootstrap/ui-bootstrap-tpls.js');
+
+    require('./kube-client');
+    require('./kube-client-cockpit');
+    require('./connection');
+
+    require('../views/auth-dialog.html');
+    require('../views/filter-bar.html');
+    require('../views/filter-project.html');
+
     angular.module('kubernetes.app', [
         'ui.bootstrap',
         'kubeClient',
-        'kubeClient.cockpit'
+        'kubeClient.cockpit',
+        'kubernetes.connection'
     ])
 
     .controller('MainCtrl', [
@@ -31,11 +44,14 @@
         '$location',
         '$rootScope',
         '$timeout',
+        '$modal',
         'kubeLoader',
         'kubeSelect',
         'KubeDiscoverSettings',
         'filterService',
-        function($scope, $location, $rootScope, $timeout, loader, select, discoverSettings, filter) {
+        'connectionActions',
+        function($scope, $location, $rootScope, $timeout, $modal,
+                 loader, select, discoverSettings, filter, connectionActions) {
             $scope.settings = { };
 
             /* Used to set detect which route is active */
@@ -50,21 +66,25 @@
             };
 
             /* Used to build simple route URLs */
-            $scope.viewUrl = function(segment) {
-                var parts, namespace = loader.limits.namespace;
+            $scope.viewUrl = function(segment, forceQS) {
+                var namespace = loader.limits.namespace;
+                var path, parts = [];
                 if (angular.isArray(namespace))
                     namespace = null;
-                if (!segment) {
-                    if (namespace)
-                        return "/?namespace=" + encodeURIComponent(namespace);
-                    else
-                        return "/";
-                } else {
-                    parts = [ segment ];
-                    if (namespace)
-                        parts.push(namespace);
-                    return "/" + parts.map(encodeURIComponent).join("/");
-                }
+
+                if (segment)
+                    parts.push(segment);
+                else
+                    forceQS = true;
+
+                if (!forceQS && namespace)
+                    parts.push(namespace);
+
+                path = "/" + parts.map(encodeURIComponent).join("/");
+                if (namespace && forceQS)
+                    return path + "?namespace=" + encodeURIComponent(namespace);
+                else
+                    return path;
             };
 
             /* Used while debugging */
@@ -87,7 +107,11 @@
                     filter.globals(settings.isAdmin);
                     filter.load().then(visible);
                 }, function(resp) {
-                    $scope.curtains = { status: resp.status, message: resp.message || resp.statusText };
+                    $scope.curtains = {
+                        status: resp.status,
+                        resp: resp,
+                        message: resp.message || resp.statusText,
+                    };
                     $scope.settings = null;
                     visible();
                 });
@@ -97,8 +121,11 @@
             connect();
 
             /* Used by reconnect buttons */
-            $scope.reconnect = function() {
-                discoverSettings(true);
+            $scope.reconnect = function(force) {
+                if (force === undefined)
+                    force = true;
+
+                discoverSettings(force);
                 loader.reset();
                 connect();
             };
@@ -106,7 +133,26 @@
             /* When the loader changes digest */
             loader.listen(function() {
                 $rootScope.$applyAsync();
-            });
+            }, $rootScope);
+
+            $scope.changeAuth = function(ex) {
+                var promise = $modal.open({
+                    animation: false,
+                    controller: 'ChangeAuthCtrl',
+                    templateUrl: 'views/auth-dialog.html',
+                    resolve: {
+                        dialogData: function() {
+                            return connectionActions.load(ex);
+                        }
+                    },
+                }).result;
+
+                /* If the change is successful, reconnect */
+                promise.then(function(force) {
+                    $scope.reconnect(force);
+                });
+                return promise;
+            };
         }
     ])
 
@@ -116,6 +162,7 @@
             return {
                 restrict: 'E',
                 scope: true,
+                transclude: true,
                 link: function(scope, element, attrs) {
                     scope.filter =  filter;
                 },
@@ -163,12 +210,12 @@
             var globals = true;
 
             var promise = discoverSettings().then(function(settings) {
-                var ret;
+                var ret = [];
                 if (settings.flavor === "openshift")
-                    ret = loader.load("projects");
+                    ret.push(loader.load("projects"));
                 if (settings.isAdmin)
-                    ret = loader.watch("namespaces");
-                return ret || $q.when([]);
+                    ret.push(loader.watch("namespaces", $rootScope));
+                return $q.all(ret);
             });
 
             /*
@@ -222,7 +269,7 @@
                         value = null;
                 }
 
-                if (!angular.equals(value, loader.limit.namespaces)) {
+                if (!angular.equals(value, loader.limits.namespaces)) {
                     loader.limit({ namespace: value });
                 }
             }

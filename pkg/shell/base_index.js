@@ -19,12 +19,11 @@
 
 var phantom_checkpoint = phantom_checkpoint || function () { };
 
-define([
-    "jquery",
-    "base1/cockpit",
-    "manifests",
-], function($, cockpit, local_manifests) {
+(function() {
     "use strict";
+
+    var $ = require("jquery");
+    var cockpit = require("cockpit");
 
     var shell_embedded = window.location.pathname.indexOf(".html") !== -1;
     var _ = cockpit.gettext;
@@ -295,7 +294,8 @@ define([
                 name: name,
                 window: child,
                 channel_seed: seed,
-                default_host: host
+                default_host: host,
+                inited: false,
             };
             source_by_seed[seed] = source;
             source_by_name[name] = source;
@@ -349,6 +349,11 @@ define([
                             { command: "init", "host": source.default_host, "channel-seed": source.channel_seed }
                         );
                         child.postMessage("\n" + JSON.stringify(reply), origin);
+                        source.inited = true;
+
+                        /* If this new frame is not the current one, tell it */
+                        if (child.frameElement != index.current_frame())
+                            self.hint(child.frameElement.contentWindow, { "hidden": true });
                     }
 
                 } else if (control.command === "jump") {
@@ -389,6 +394,15 @@ define([
             window.addEventListener("message", message_handler, false);
             for (var i = 0, len = messages.length; i < len; i++)
                 message_handler(messages[i]);
+        };
+
+        self.hint = function hint(child, data) {
+            var message, source = source_by_name[child.name];
+            if (source && source.inited) {
+                data.command = "hint";
+                message = "\n" + JSON.stringify(data);
+                source.window.postMessage(message, origin);
+            }
         };
     }
 
@@ -462,14 +476,21 @@ define([
          * given state, then we try to find one that would show a sidebar.
          */
 
-        /* Encode navigate state into a string */
-        function encode(state, sidebar) {
+        /* Encode navigate state into a string
+         * If with_root is true the configured
+         * url root will be added to the generated
+         * url. with_root should be used when
+         * navigating to a new url or updating
+         * history, but is not needed when simply
+         * generating a string for a link.
+         */
+        function encode(state, sidebar, with_root) {
             var path = [];
             if (state.host && (sidebar || state.host !== "localhost"))
                 path.push("@" + state.host);
             if (state.component)
                 path.push.apply(path, state.component.split("/"));
-            var string = cockpit.location.encode(path);
+            var string = cockpit.location.encode(path, null, with_root);
             if (state.hash && state.hash !== "/")
                 string += "#" + state.hash;
             return string;
@@ -515,7 +536,7 @@ define([
                 navbar.hide();
             } else {
                 var local_compiled = new CompiledComponants();
-                local_compiled.load(local_manifests, "dashboard");
+                local_compiled.load(cockpit.manifests, "dashboard");
                 navbar.append(local_compiled.ordered("dashboard").map(links));
             }
         }
@@ -573,7 +594,8 @@ define([
             if (shell_embedded)
                 target = window.location;
             else
-                target = encode(state);
+                target = encode(state, null, true);
+
             if (replace) {
                 history.replaceState(state, "", target);
                 return false;
@@ -600,13 +622,24 @@ define([
         };
 
         self.current_frame = function (frame) {
-            if (frame !== undefined)
+            if (frame !== undefined) {
+                if (current_frame !== frame) {
+                    if (current_frame && current_frame.contentWindow)
+                        self.router.hint(current_frame.contentWindow, { "hidden": true });
+                    if (frame && frame.contentWindow)
+                        self.router.hint(frame.contentWindow, { "hidden": false });
+                }
                 current_frame = frame;
+            }
             return current_frame;
         };
 
-        self.start = function (messages) {
-            self.router.start(messages);
+        self.start = function() {
+            /* window.messages is initialized in shell/bundle.js */
+            var messages = window.messages;
+            if (messages)
+                messages.cancel();
+            self.router.start(messages || []);
         };
 
         self.ready = function () {
@@ -620,6 +653,7 @@ define([
 
             build_navbar();
             self.navigate();
+            cockpit.translate();
             $("body").show();
         };
 
@@ -635,10 +669,7 @@ define([
                 return;
             oops.children("a").on("click", function() {
                 $("#error-popup-title").text(_("Unexpected error"));
-                var details = _("Cockpit had an unexpected internal error. <br/><br/>") +
-                              _("You can try restarting Cockpit by pressing refresh in your browser. ") +
-                              _("The javascript console contains details about this error ") +
-                              _("(<b>Ctrl-Shift-J</b> in most browsers).");
+                var details = _("Cockpit had an unexpected internal error. <br/><br/>You can try restarting Cockpit by pressing refresh in your browser. The javascript console contains details about this error (<b>Ctrl-Shift-J</b> in most browsers).");
                 $("#error-popup-message").html(details);
                 $('#error-popup').modal('show');
             });
@@ -679,17 +710,23 @@ define([
              * to produce this list. Perhaps we would include it somewhere in a
              * separate automatically generated file. Need to see.
              */
-            var manifest = local_manifests["shell"] || { };
-            $(".display-language-menu").toggle(!!manifest.linguas);
-            $.each(manifest.linguas || { }, function(code, name) {
+            var manifest = cockpit.manifests["shell"] || { };
+            $(".display-language-menu").toggle(!!manifest.locales);
+            var language = document.cookie.replace(/(?:(?:^|.*;\s*)CockpitLang\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+            if (!language)
+                language = "en-us";
+            $.each(manifest.locales || { }, function(code, name) {
                 var el = $("<option>").text(name).val(code);
-                if (code == cockpit.language)
+                if (code == language)
                     el.attr("selected", "true");
                 $("#display-language-list").append(el);
             });
 
             $("#display-language-select-button").on("click", function(event) {
                 var code_to_select = $("#display-language-list").val();
+                var cookie = "CockpitLang=" + encodeURIComponent(code_to_select) +
+                             "; path=/; expires=Sun, 16 Jul 3567 06:23:41 GMT";
+                document.cookie = cookie;
                 window.localStorage.setItem("cockpit.lang", code_to_select);
                 window.location.reload(true);
                 return false;
@@ -710,27 +747,19 @@ define([
         }
 
         /* Account link */
-        function setup_account(id) {
+        function setup_account(id, user) {
             $(id).on("click", function() {
-                self.jump({ host: "localhost", component: "users", hash: "/" + cockpit.user["user"] });
-            });
+                self.jump({ host: "localhost", component: "users", hash: "/" + user.name });
+            }).show();
         }
 
         /* User information */
-        function setup_user(id) {
-            function update_user(first) {
-                var str = cockpit.user["name"] || cockpit.user["user"];
-                if (!str)
-                    str = first ? "" : "???";
-                $(id).text(str);
+        function setup_user(id, user) {
+            $(id).text(user.full_name || user.name || '???');
 
-                var is_root = (cockpit.user["user"] == "root");
-                var is_not_root = (cockpit.user["user"] && !is_root);
-                $('#deauthorize-item').toggle(is_not_root);
-            }
-
-            $(cockpit.user).on("changed", update_user);
-            update_user(true);
+            var is_root = (user.name == "root");
+            var is_not_root = (user.name && !is_root);
+            $('#deauthorize-item').toggle(is_not_root);
         }
 
         if (self.oops_sel)
@@ -742,18 +771,24 @@ define([
         if (self.language_sel)
             setup_language(self.language_sel);
 
-        if (self.brand_sel)
-            self.default_title = setup_brand(self.brand_sel);
+        var cal_title;
+        if (self.brand_sel) {
+            cal_title = setup_brand(self.brand_sel, self.default_title);
+            if (cal_title)
+                self.default_title = cal_title;
+        }
 
         if (self.about_sel)
             setup_about(self.about_sel);
 
-        if (self.user_sel)
-            setup_user(self.user_sel);
-
-        if (self.account_sel)
-            setup_account(self.account_sel);
-
+        if (self.user_sel || self.account_sel) {
+            cockpit.user().done(function (user) {
+                if (self.user_sel)
+                    setup_user(self.user_sel, user);
+                if (self.account_sel)
+                    setup_account(self.account_sel, user);
+            });
+        }
     }
 
     function CompiledComponants() {
@@ -802,7 +837,28 @@ define([
         };
     }
 
-    return {
+    function follow(arg) {
+        /* A promise of some sort */
+        if (arguments.length == 1 && typeof arg.then == "function") {
+            arg.then(function() { console.log.apply(console, arguments); },
+                     function() { console.error.apply(console, arguments); });
+            if (typeof arg.stream == "function")
+                arg.stream(function() { console.log.apply(console,arguments); });
+        }
+    }
+
+    var zz_value;
+
+    /* For debugging utility in the index window */
+    Object.defineProperties(window, {
+        cockpit: { value: cockpit },
+        zz: {
+            get: function() { return zz_value; },
+            set: function(val) { zz_value = val; follow(val); }
+        }
+    });
+
+    module.exports = {
         new_index_from_proto: function (proto) {
             var o = new Object(proto);
             Index.call(o);
@@ -813,4 +869,4 @@ define([
             return new CompiledComponants();
         },
     };
-});
+}());

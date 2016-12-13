@@ -17,8 +17,13 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
+/* globals angular */
+
 (function() {
     "use strict";
+
+    var angular = require('angular');
+    require('angular-bootstrap/ui-bootstrap.js');
 
     angular.module('ui.cockpit', [
         'ui.bootstrap',
@@ -113,6 +118,7 @@
 
                     var cancel = queryFirst(element, ".btn-cancel");
                     cancel.on("click", dismissDialog);
+                    scope.$on("$routeChangeStart", dismissDialog);
 
                     scope.$on("$destroy", function() {
                         cancel.off("click", dismissDialog);
@@ -162,7 +168,7 @@
 
         /* The wait field elements */
         var disabled = [];
-        var wait = angular.element("<div class='dialog-wait pull-left'>");
+        var wait = angular.element("<div class='dialog-wait-ct pull-left'>");
         wait.append(angular.element("<div class='spinner spinner-sm'>"));
         var notify = angular.element("<span>");
         wait.append(notify);

@@ -1,0 +1,191 @@
+# Generated Makefile data for shell
+# Stamp: Thu Nov 24 2016 16:15:59 GMT+0000 (UTC)
+
+shell_INPUTS = \
+	$(srcdir)/pkg/lib/credentials-ssh-private-keys.sh \
+	$(srcdir)/pkg/lib/credentials.js \
+	$(srcdir)/pkg/lib/listing.css \
+	$(srcdir)/pkg/lib/machine-add.html \
+	$(srcdir)/pkg/lib/machine-auth-failed.html \
+	$(srcdir)/pkg/lib/machine-change-auth.html \
+	$(srcdir)/pkg/lib/machine-change-port.html \
+	$(srcdir)/pkg/lib/machine-color-picker.html \
+	$(srcdir)/pkg/lib/machine-dialogs.js \
+	$(srcdir)/pkg/lib/machine-invalid-hostkey.html \
+	$(srcdir)/pkg/lib/machine-not-supported.html \
+	$(srcdir)/pkg/lib/machine-sync-users.html \
+	$(srcdir)/pkg/lib/machine-unknown-hostkey.html \
+	$(srcdir)/pkg/lib/machines.js \
+	$(srcdir)/pkg/lib/page.css \
+	$(srcdir)/pkg/lib/patterns.js \
+	$(srcdir)/pkg/lib/table.css \
+	$(srcdir)/pkg/shell/base_index.js \
+	$(srcdir)/pkg/shell/images/server-error.png \
+	$(srcdir)/pkg/shell/images/server-large.png \
+	$(srcdir)/pkg/shell/images/server-small.png \
+	$(srcdir)/pkg/shell/index-no-machines.js \
+	$(srcdir)/pkg/shell/index-stub.js \
+	$(srcdir)/pkg/shell/index.html \
+	$(srcdir)/pkg/shell/index.js \
+	$(srcdir)/pkg/shell/indexes.js \
+	$(srcdir)/pkg/shell/manifest.json \
+	$(srcdir)/pkg/shell/shell.css \
+	$(srcdir)/pkg/shell/shell.html \
+	$(srcdir)/pkg/shell/simple.html \
+	$(srcdir)/pkg/shell/stub.html \
+	$(NULL)
+
+shell_OUTPUTS = \
+	dist/shell/images/server-error.png \
+	dist/shell/images/server-large.png \
+	dist/shell/images/server-small.png \
+	dist/shell/index-no-machines.min.js \
+	dist/shell/index-no-machines.min.js.map \
+	dist/shell/index-stub.css \
+	dist/shell/index-stub.css.map \
+	dist/shell/index-stub.min.js \
+	dist/shell/index-stub.min.js.map \
+	dist/shell/index.css \
+	dist/shell/index.css.map \
+	dist/shell/index.html \
+	dist/shell/index.min.js \
+	dist/shell/index.min.js.map \
+	dist/shell/manifest.json \
+	dist/shell/shell.html \
+	dist/shell/simple.html \
+	dist/shell/stub.html \
+	$(NULL)
+
+shell_INSTALL = \
+	dist/shell/images/server-error.png \
+	dist/shell/images/server-large.png \
+	dist/shell/images/server-small.png \
+	dist/shell/index-no-machines.min.js.gz \
+	dist/shell/index-stub.css.gz \
+	dist/shell/index-stub.min.js.gz \
+	dist/shell/index.css.gz \
+	dist/shell/index.html \
+	dist/shell/index.min.js.gz \
+	dist/shell/manifest.json \
+	dist/shell/shell.html.gz \
+	dist/shell/simple.html \
+	dist/shell/stub.html \
+	$(NULL)
+
+shell_DEBUG = \
+	dist/shell/index-no-machines.min.js.map \
+	dist/shell/index-stub.css.map \
+	dist/shell/index-stub.min.js.map \
+	dist/shell/index.css.map \
+	dist/shell/index.min.js.map \
+	$(NULL)
+
+shell_TESTS = \
+	$(NULL)
+
+dist/Makefile-shell.deps: $(WEBPACK_CONFIG) $(shell_INPUTS)
+	$(WEBPACK_RULE) -d dist/Makefile-shell.deps $(WEBPACK_CONFIG)
+
+dist/shell/images/server-error.png: dist/Makefile-shell.deps
+
+dist/shell/images/server-large.png: dist/Makefile-shell.deps
+
+dist/shell/images/server-small.png: dist/Makefile-shell.deps
+
+dist/shell/index-no-machines.min.js: dist/Makefile-shell.deps
+
+dist/shell/index-no-machines.min.js.map: dist/Makefile-shell.deps
+
+dist/shell/index-stub.css: dist/Makefile-shell.deps
+
+dist/shell/index-stub.css.map: dist/Makefile-shell.deps
+
+dist/shell/index-stub.min.js: dist/Makefile-shell.deps
+
+dist/shell/index-stub.min.js.map: dist/Makefile-shell.deps
+
+dist/shell/index.css: dist/Makefile-shell.deps
+
+dist/shell/index.css.map: dist/Makefile-shell.deps
+
+dist/shell/index.html: dist/Makefile-shell.deps
+
+dist/shell/index.min.js: dist/Makefile-shell.deps
+
+dist/shell/index.min.js.map: dist/Makefile-shell.deps
+
+dist/shell/manifest.json: dist/Makefile-shell.deps
+
+dist/shell/shell.html: dist/Makefile-shell.deps
+
+dist/shell/simple.html: dist/Makefile-shell.deps
+
+dist/shell/stub.html: dist/Makefile-shell.deps
+
+$(srcdir)/pkg/lib/credentials-ssh-private-keys.sh:
+
+$(srcdir)/pkg/lib/credentials.js:
+
+$(srcdir)/pkg/lib/listing.css:
+
+$(srcdir)/pkg/lib/machine-add.html:
+
+$(srcdir)/pkg/lib/machine-auth-failed.html:
+
+$(srcdir)/pkg/lib/machine-change-auth.html:
+
+$(srcdir)/pkg/lib/machine-change-port.html:
+
+$(srcdir)/pkg/lib/machine-color-picker.html:
+
+$(srcdir)/pkg/lib/machine-dialogs.js:
+
+$(srcdir)/pkg/lib/machine-invalid-hostkey.html:
+
+$(srcdir)/pkg/lib/machine-not-supported.html:
+
+$(srcdir)/pkg/lib/machine-sync-users.html:
+
+$(srcdir)/pkg/lib/machine-unknown-hostkey.html:
+
+$(srcdir)/pkg/lib/machines.js:
+
+$(srcdir)/pkg/lib/page.css:
+
+$(srcdir)/pkg/lib/patterns.js:
+
+$(srcdir)/pkg/lib/table.css:
+
+$(srcdir)/pkg/shell/base_index.js:
+
+$(srcdir)/pkg/shell/images/server-error.png:
+
+$(srcdir)/pkg/shell/images/server-large.png:
+
+$(srcdir)/pkg/shell/images/server-small.png:
+
+$(srcdir)/pkg/shell/index-no-machines.js:
+
+$(srcdir)/pkg/shell/index-stub.js:
+
+$(srcdir)/pkg/shell/index.html:
+
+$(srcdir)/pkg/shell/index.js:
+
+$(srcdir)/pkg/shell/indexes.js:
+
+$(srcdir)/pkg/shell/manifest.json:
+
+$(srcdir)/pkg/shell/shell.css:
+
+$(srcdir)/pkg/shell/shell.html:
+
+$(srcdir)/pkg/shell/simple.html:
+
+$(srcdir)/pkg/shell/stub.html:
+
+WEBPACK_INPUTS += $(shell_INPUTS)
+WEBPACK_OUTPUTS += $(shell_OUTPUTS)
+WEBPACK_INSTALL += $(shell_INSTALL)
+WEBPACK_DEBUG += $(shell_DEBUG)
+TESTS += $(shell_TESTS)

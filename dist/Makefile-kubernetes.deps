@@ -1,0 +1,696 @@
+# Generated Makefile data for kubernetes
+# Stamp: Thu Nov 24 2016 16:15:59 GMT+0000 (UTC)
+
+kubernetes_INPUTS = \
+	$(srcdir)/pkg/kubernetes/index.html \
+	$(srcdir)/pkg/kubernetes/manifest.json \
+	$(srcdir)/pkg/kubernetes/override.json \
+	$(srcdir)/pkg/kubernetes/registry.html \
+	$(srcdir)/pkg/kubernetes/scripts/app.js \
+	$(srcdir)/pkg/kubernetes/scripts/charts.js \
+	$(srcdir)/pkg/kubernetes/scripts/connection.js \
+	$(srcdir)/pkg/kubernetes/scripts/containers.js \
+	$(srcdir)/pkg/kubernetes/scripts/dashboard.js \
+	$(srcdir)/pkg/kubernetes/scripts/date.js \
+	$(srcdir)/pkg/kubernetes/scripts/details.js \
+	$(srcdir)/pkg/kubernetes/scripts/dialog.js \
+	$(srcdir)/pkg/kubernetes/scripts/fixture-basic.js \
+	$(srcdir)/pkg/kubernetes/scripts/fixture-large.js \
+	$(srcdir)/pkg/kubernetes/scripts/graphs.js \
+	$(srcdir)/pkg/kubernetes/scripts/images.js \
+	$(srcdir)/pkg/kubernetes/scripts/kube-client-cockpit.js \
+	$(srcdir)/pkg/kubernetes/scripts/kube-client-mock.js \
+	$(srcdir)/pkg/kubernetes/scripts/kube-client.js \
+	$(srcdir)/pkg/kubernetes/scripts/listing.js \
+	$(srcdir)/pkg/kubernetes/scripts/main.js \
+	$(srcdir)/pkg/kubernetes/scripts/nodes.js \
+	$(srcdir)/pkg/kubernetes/scripts/policy.js \
+	$(srcdir)/pkg/kubernetes/scripts/projects.js \
+	$(srcdir)/pkg/kubernetes/scripts/registry.js \
+	$(srcdir)/pkg/kubernetes/scripts/tags.js \
+	$(srcdir)/pkg/kubernetes/scripts/test-connection.js \
+	$(srcdir)/pkg/kubernetes/scripts/test-images.js \
+	$(srcdir)/pkg/kubernetes/scripts/test-kube-client.js \
+	$(srcdir)/pkg/kubernetes/scripts/test-nodes.js \
+	$(srcdir)/pkg/kubernetes/scripts/test-projects.js \
+	$(srcdir)/pkg/kubernetes/scripts/test-tags.js \
+	$(srcdir)/pkg/kubernetes/scripts/test-utils.js \
+	$(srcdir)/pkg/kubernetes/scripts/test-volumes.js \
+	$(srcdir)/pkg/kubernetes/scripts/topology.js \
+	$(srcdir)/pkg/kubernetes/scripts/utils.js \
+	$(srcdir)/pkg/kubernetes/scripts/volumes.js \
+	$(srcdir)/pkg/kubernetes/styles/app.less \
+	$(srcdir)/pkg/kubernetes/styles/containers.less \
+	$(srcdir)/pkg/kubernetes/styles/dashboard.less \
+	$(srcdir)/pkg/kubernetes/styles/details.less \
+	$(srcdir)/pkg/kubernetes/styles/dropdown.less \
+	$(srcdir)/pkg/kubernetes/styles/filter.less \
+	$(srcdir)/pkg/kubernetes/styles/images.less \
+	$(srcdir)/pkg/kubernetes/styles/main.less \
+	$(srcdir)/pkg/kubernetes/styles/nodes.less \
+	$(srcdir)/pkg/kubernetes/styles/projects.less \
+	$(srcdir)/pkg/kubernetes/styles/registry.less \
+	$(srcdir)/pkg/kubernetes/styles/revealable.less \
+	$(srcdir)/pkg/kubernetes/styles/sidebar.less \
+	$(srcdir)/pkg/kubernetes/styles/tags.less \
+	$(srcdir)/pkg/kubernetes/styles/topology.less \
+	$(srcdir)/pkg/kubernetes/styles/variables.less \
+	$(srcdir)/pkg/kubernetes/styles/volumes.less \
+	$(srcdir)/pkg/kubernetes/views/add-group-dialog.html \
+	$(srcdir)/pkg/kubernetes/views/add-member-role-dialog.html \
+	$(srcdir)/pkg/kubernetes/views/add-role-dialog.html \
+	$(srcdir)/pkg/kubernetes/views/add-user-dialog.html \
+	$(srcdir)/pkg/kubernetes/views/auth-dialog.html \
+	$(srcdir)/pkg/kubernetes/views/auth-form.html \
+	$(srcdir)/pkg/kubernetes/views/auth-rejected-cert.html \
+	$(srcdir)/pkg/kubernetes/views/container-body.html \
+	$(srcdir)/pkg/kubernetes/views/container-page-inline.html \
+	$(srcdir)/pkg/kubernetes/views/container-page.html \
+	$(srcdir)/pkg/kubernetes/views/container-panel.html \
+	$(srcdir)/pkg/kubernetes/views/containers-listing.html \
+	$(srcdir)/pkg/kubernetes/views/containers-page.html \
+	$(srcdir)/pkg/kubernetes/views/dashboard-page.html \
+	$(srcdir)/pkg/kubernetes/views/default-panel.html \
+	$(srcdir)/pkg/kubernetes/views/deploy.html \
+	$(srcdir)/pkg/kubernetes/views/deploymentconfig-body.html \
+	$(srcdir)/pkg/kubernetes/views/deploymentconfig-page.html \
+	$(srcdir)/pkg/kubernetes/views/deploymentconfig-panel.html \
+	$(srcdir)/pkg/kubernetes/views/details-page.html \
+	$(srcdir)/pkg/kubernetes/views/file-button.html \
+	$(srcdir)/pkg/kubernetes/views/filter-bar.html \
+	$(srcdir)/pkg/kubernetes/views/filter-project.html \
+	$(srcdir)/pkg/kubernetes/views/group-delete.html \
+	$(srcdir)/pkg/kubernetes/views/group-page.html \
+	$(srcdir)/pkg/kubernetes/views/group-panel.html \
+	$(srcdir)/pkg/kubernetes/views/image-delete.html \
+	$(srcdir)/pkg/kubernetes/views/image-listing.html \
+	$(srcdir)/pkg/kubernetes/views/image-page.html \
+	$(srcdir)/pkg/kubernetes/views/image-panel.html \
+	$(srcdir)/pkg/kubernetes/views/images-page.html \
+	$(srcdir)/pkg/kubernetes/views/imagestream-delete.html \
+	$(srcdir)/pkg/kubernetes/views/imagestream-modify.html \
+	$(srcdir)/pkg/kubernetes/views/imagestream-page.html \
+	$(srcdir)/pkg/kubernetes/views/imagestream-panel.html \
+	$(srcdir)/pkg/kubernetes/views/item-delete.html \
+	$(srcdir)/pkg/kubernetes/views/node-add.html \
+	$(srcdir)/pkg/kubernetes/views/node-alerts.html \
+	$(srcdir)/pkg/kubernetes/views/node-body.html \
+	$(srcdir)/pkg/kubernetes/views/node-capacity.html \
+	$(srcdir)/pkg/kubernetes/views/node-delete.html \
+	$(srcdir)/pkg/kubernetes/views/node-page.html \
+	$(srcdir)/pkg/kubernetes/views/node-panel.html \
+	$(srcdir)/pkg/kubernetes/views/node-stats.html \
+	$(srcdir)/pkg/kubernetes/views/nodes-page.html \
+	$(srcdir)/pkg/kubernetes/views/pod-body.html \
+	$(srcdir)/pkg/kubernetes/views/pod-container.html \
+	$(srcdir)/pkg/kubernetes/views/pod-page.html \
+	$(srcdir)/pkg/kubernetes/views/pod-panel.html \
+	$(srcdir)/pkg/kubernetes/views/project-body.html \
+	$(srcdir)/pkg/kubernetes/views/project-delete.html \
+	$(srcdir)/pkg/kubernetes/views/project-listing.html \
+	$(srcdir)/pkg/kubernetes/views/project-modify.html \
+	$(srcdir)/pkg/kubernetes/views/project-page.html \
+	$(srcdir)/pkg/kubernetes/views/project-panel.html \
+	$(srcdir)/pkg/kubernetes/views/projects-page.html \
+	$(srcdir)/pkg/kubernetes/views/pv-body.html \
+	$(srcdir)/pkg/kubernetes/views/pv-claim.html \
+	$(srcdir)/pkg/kubernetes/views/pv-delete.html \
+	$(srcdir)/pkg/kubernetes/views/pv-modify.html \
+	$(srcdir)/pkg/kubernetes/views/pv-page.html \
+	$(srcdir)/pkg/kubernetes/views/pv-panel.html \
+	$(srcdir)/pkg/kubernetes/views/pvc-body.html \
+	$(srcdir)/pkg/kubernetes/views/pvc-delete.html \
+	$(srcdir)/pkg/kubernetes/views/registry-dashboard-page.html \
+	$(srcdir)/pkg/kubernetes/views/remove-role-dialog.html \
+	$(srcdir)/pkg/kubernetes/views/replicationcontroller-body.html \
+	$(srcdir)/pkg/kubernetes/views/replicationcontroller-modify.html \
+	$(srcdir)/pkg/kubernetes/views/replicationcontroller-page.html \
+	$(srcdir)/pkg/kubernetes/views/replicationcontroller-panel.html \
+	$(srcdir)/pkg/kubernetes/views/replicationcontroller-pods.html \
+	$(srcdir)/pkg/kubernetes/views/route-body.html \
+	$(srcdir)/pkg/kubernetes/views/route-modify.html \
+	$(srcdir)/pkg/kubernetes/views/route-page.html \
+	$(srcdir)/pkg/kubernetes/views/route-panel.html \
+	$(srcdir)/pkg/kubernetes/views/service-body.html \
+	$(srcdir)/pkg/kubernetes/views/service-endpoint.html \
+	$(srcdir)/pkg/kubernetes/views/service-modify.html \
+	$(srcdir)/pkg/kubernetes/views/service-page.html \
+	$(srcdir)/pkg/kubernetes/views/service-panel.html \
+	$(srcdir)/pkg/kubernetes/views/topology-page.html \
+	$(srcdir)/pkg/kubernetes/views/user-add-membership.html \
+	$(srcdir)/pkg/kubernetes/views/user-body.html \
+	$(srcdir)/pkg/kubernetes/views/user-delete.html \
+	$(srcdir)/pkg/kubernetes/views/user-group-add.html \
+	$(srcdir)/pkg/kubernetes/views/user-group-remove.html \
+	$(srcdir)/pkg/kubernetes/views/user-modify.html \
+	$(srcdir)/pkg/kubernetes/views/user-page.html \
+	$(srcdir)/pkg/kubernetes/views/user-panel.html \
+	$(srcdir)/pkg/kubernetes/views/user-remove-membership.html \
+	$(srcdir)/pkg/kubernetes/views/volume-body.html \
+	$(srcdir)/pkg/kubernetes/views/volumes-page.html \
+	$(srcdir)/pkg/lib/console.css \
+	$(srcdir)/pkg/lib/listing.css \
+	$(srcdir)/pkg/lib/page.css \
+	$(srcdir)/pkg/lib/qunit-config.js \
+	$(srcdir)/pkg/lib/qunit-template.html \
+	$(srcdir)/pkg/lib/qunit-tests.js \
+	$(srcdir)/pkg/lib/table.css \
+	$(srcdir)/pkg/lib/term.css \
+	$(NULL)
+
+kubernetes_OUTPUTS = \
+	dist/kubernetes/index.html \
+	dist/kubernetes/kubernetes.css \
+	dist/kubernetes/kubernetes.css.map \
+	dist/kubernetes/kubernetes.min.js \
+	dist/kubernetes/kubernetes.min.js.map \
+	dist/kubernetes/manifest.json \
+	dist/kubernetes/override.json \
+	dist/kubernetes/registry.css \
+	dist/kubernetes/registry.css.map \
+	dist/kubernetes/registry.html \
+	dist/kubernetes/registry.min.js \
+	dist/kubernetes/registry.min.js.map \
+	dist/kubernetes/scripts/test-connection.css \
+	dist/kubernetes/scripts/test-connection.css.map \
+	dist/kubernetes/scripts/test-connection.html \
+	dist/kubernetes/scripts/test-connection.min.js \
+	dist/kubernetes/scripts/test-connection.min.js.map \
+	dist/kubernetes/scripts/test-images.css \
+	dist/kubernetes/scripts/test-images.css.map \
+	dist/kubernetes/scripts/test-images.html \
+	dist/kubernetes/scripts/test-images.min.js \
+	dist/kubernetes/scripts/test-images.min.js.map \
+	dist/kubernetes/scripts/test-kube-client.css \
+	dist/kubernetes/scripts/test-kube-client.css.map \
+	dist/kubernetes/scripts/test-kube-client.html \
+	dist/kubernetes/scripts/test-kube-client.min.js \
+	dist/kubernetes/scripts/test-kube-client.min.js.map \
+	dist/kubernetes/scripts/test-nodes.css \
+	dist/kubernetes/scripts/test-nodes.css.map \
+	dist/kubernetes/scripts/test-nodes.html \
+	dist/kubernetes/scripts/test-nodes.min.js \
+	dist/kubernetes/scripts/test-nodes.min.js.map \
+	dist/kubernetes/scripts/test-projects.css \
+	dist/kubernetes/scripts/test-projects.css.map \
+	dist/kubernetes/scripts/test-projects.html \
+	dist/kubernetes/scripts/test-projects.min.js \
+	dist/kubernetes/scripts/test-projects.min.js.map \
+	dist/kubernetes/scripts/test-tags.css \
+	dist/kubernetes/scripts/test-tags.css.map \
+	dist/kubernetes/scripts/test-tags.html \
+	dist/kubernetes/scripts/test-tags.min.js \
+	dist/kubernetes/scripts/test-tags.min.js.map \
+	dist/kubernetes/scripts/test-utils.css \
+	dist/kubernetes/scripts/test-utils.css.map \
+	dist/kubernetes/scripts/test-utils.html \
+	dist/kubernetes/scripts/test-utils.min.js \
+	dist/kubernetes/scripts/test-utils.min.js.map \
+	dist/kubernetes/scripts/test-volumes.css \
+	dist/kubernetes/scripts/test-volumes.css.map \
+	dist/kubernetes/scripts/test-volumes.html \
+	dist/kubernetes/scripts/test-volumes.min.js \
+	dist/kubernetes/scripts/test-volumes.min.js.map \
+	$(NULL)
+
+kubernetes_INSTALL = \
+	dist/kubernetes/index.html.gz \
+	dist/kubernetes/kubernetes.css.gz \
+	dist/kubernetes/kubernetes.min.js.gz \
+	dist/kubernetes/manifest.json \
+	dist/kubernetes/override.json \
+	dist/kubernetes/registry.css.gz \
+	dist/kubernetes/registry.html.gz \
+	dist/kubernetes/registry.min.js.gz \
+	dist/kubernetes/scripts/test-connection.css.gz \
+	dist/kubernetes/scripts/test-connection.min.js.gz \
+	dist/kubernetes/scripts/test-images.css.gz \
+	dist/kubernetes/scripts/test-images.min.js.gz \
+	dist/kubernetes/scripts/test-kube-client.css.gz \
+	dist/kubernetes/scripts/test-kube-client.min.js.gz \
+	dist/kubernetes/scripts/test-nodes.css.gz \
+	dist/kubernetes/scripts/test-nodes.min.js.gz \
+	dist/kubernetes/scripts/test-projects.css.gz \
+	dist/kubernetes/scripts/test-projects.min.js.gz \
+	dist/kubernetes/scripts/test-tags.css.gz \
+	dist/kubernetes/scripts/test-tags.min.js.gz \
+	dist/kubernetes/scripts/test-utils.css.gz \
+	dist/kubernetes/scripts/test-utils.min.js.gz \
+	dist/kubernetes/scripts/test-volumes.css.gz \
+	dist/kubernetes/scripts/test-volumes.min.js.gz \
+	$(NULL)
+
+kubernetes_DEBUG = \
+	dist/kubernetes/kubernetes.css.map \
+	dist/kubernetes/kubernetes.min.js.map \
+	dist/kubernetes/registry.css.map \
+	dist/kubernetes/registry.min.js.map \
+	dist/kubernetes/scripts/test-connection.css.map \
+	dist/kubernetes/scripts/test-connection.min.js.map \
+	dist/kubernetes/scripts/test-images.css.map \
+	dist/kubernetes/scripts/test-images.min.js.map \
+	dist/kubernetes/scripts/test-kube-client.css.map \
+	dist/kubernetes/scripts/test-kube-client.min.js.map \
+	dist/kubernetes/scripts/test-nodes.css.map \
+	dist/kubernetes/scripts/test-nodes.min.js.map \
+	dist/kubernetes/scripts/test-projects.css.map \
+	dist/kubernetes/scripts/test-projects.min.js.map \
+	dist/kubernetes/scripts/test-tags.css.map \
+	dist/kubernetes/scripts/test-tags.min.js.map \
+	dist/kubernetes/scripts/test-utils.css.map \
+	dist/kubernetes/scripts/test-utils.min.js.map \
+	dist/kubernetes/scripts/test-volumes.css.map \
+	dist/kubernetes/scripts/test-volumes.min.js.map \
+	$(NULL)
+
+kubernetes_TESTS = \
+	dist/kubernetes/scripts/test-connection.html \
+	dist/kubernetes/scripts/test-images.html \
+	dist/kubernetes/scripts/test-kube-client.html \
+	dist/kubernetes/scripts/test-nodes.html \
+	dist/kubernetes/scripts/test-projects.html \
+	dist/kubernetes/scripts/test-tags.html \
+	dist/kubernetes/scripts/test-utils.html \
+	dist/kubernetes/scripts/test-volumes.html \
+	$(NULL)
+
+dist/Makefile-kubernetes.deps: $(WEBPACK_CONFIG) $(kubernetes_INPUTS)
+	$(WEBPACK_RULE) -d dist/Makefile-kubernetes.deps $(WEBPACK_CONFIG)
+
+dist/kubernetes/index.html: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/kubernetes.css: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/kubernetes.css.map: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/kubernetes.min.js: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/kubernetes.min.js.map: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/manifest.json: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/override.json: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/registry.css: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/registry.css.map: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/registry.html: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/registry.min.js: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/registry.min.js.map: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-connection.css: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-connection.css.map: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-connection.html: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-connection.min.js: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-connection.min.js.map: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-images.css: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-images.css.map: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-images.html: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-images.min.js: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-images.min.js.map: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-kube-client.css: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-kube-client.css.map: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-kube-client.html: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-kube-client.min.js: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-kube-client.min.js.map: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-nodes.css: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-nodes.css.map: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-nodes.html: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-nodes.min.js: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-nodes.min.js.map: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-projects.css: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-projects.css.map: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-projects.html: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-projects.min.js: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-projects.min.js.map: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-tags.css: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-tags.css.map: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-tags.html: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-tags.min.js: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-tags.min.js.map: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-utils.css: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-utils.css.map: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-utils.html: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-utils.min.js: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-utils.min.js.map: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-volumes.css: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-volumes.css.map: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-volumes.html: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-volumes.min.js: dist/Makefile-kubernetes.deps
+
+dist/kubernetes/scripts/test-volumes.min.js.map: dist/Makefile-kubernetes.deps
+
+$(srcdir)/pkg/kubernetes/index.html:
+
+$(srcdir)/pkg/kubernetes/manifest.json:
+
+$(srcdir)/pkg/kubernetes/override.json:
+
+$(srcdir)/pkg/kubernetes/registry.html:
+
+$(srcdir)/pkg/kubernetes/scripts/app.js:
+
+$(srcdir)/pkg/kubernetes/scripts/charts.js:
+
+$(srcdir)/pkg/kubernetes/scripts/connection.js:
+
+$(srcdir)/pkg/kubernetes/scripts/containers.js:
+
+$(srcdir)/pkg/kubernetes/scripts/dashboard.js:
+
+$(srcdir)/pkg/kubernetes/scripts/date.js:
+
+$(srcdir)/pkg/kubernetes/scripts/details.js:
+
+$(srcdir)/pkg/kubernetes/scripts/dialog.js:
+
+$(srcdir)/pkg/kubernetes/scripts/fixture-basic.js:
+
+$(srcdir)/pkg/kubernetes/scripts/fixture-large.js:
+
+$(srcdir)/pkg/kubernetes/scripts/graphs.js:
+
+$(srcdir)/pkg/kubernetes/scripts/images.js:
+
+$(srcdir)/pkg/kubernetes/scripts/kube-client-cockpit.js:
+
+$(srcdir)/pkg/kubernetes/scripts/kube-client-mock.js:
+
+$(srcdir)/pkg/kubernetes/scripts/kube-client.js:
+
+$(srcdir)/pkg/kubernetes/scripts/listing.js:
+
+$(srcdir)/pkg/kubernetes/scripts/main.js:
+
+$(srcdir)/pkg/kubernetes/scripts/nodes.js:
+
+$(srcdir)/pkg/kubernetes/scripts/policy.js:
+
+$(srcdir)/pkg/kubernetes/scripts/projects.js:
+
+$(srcdir)/pkg/kubernetes/scripts/registry.js:
+
+$(srcdir)/pkg/kubernetes/scripts/tags.js:
+
+$(srcdir)/pkg/kubernetes/scripts/test-connection.js:
+
+$(srcdir)/pkg/kubernetes/scripts/test-images.js:
+
+$(srcdir)/pkg/kubernetes/scripts/test-kube-client.js:
+
+$(srcdir)/pkg/kubernetes/scripts/test-nodes.js:
+
+$(srcdir)/pkg/kubernetes/scripts/test-projects.js:
+
+$(srcdir)/pkg/kubernetes/scripts/test-tags.js:
+
+$(srcdir)/pkg/kubernetes/scripts/test-utils.js:
+
+$(srcdir)/pkg/kubernetes/scripts/test-volumes.js:
+
+$(srcdir)/pkg/kubernetes/scripts/topology.js:
+
+$(srcdir)/pkg/kubernetes/scripts/utils.js:
+
+$(srcdir)/pkg/kubernetes/scripts/volumes.js:
+
+$(srcdir)/pkg/kubernetes/styles/app.less:
+
+$(srcdir)/pkg/kubernetes/styles/containers.less:
+
+$(srcdir)/pkg/kubernetes/styles/dashboard.less:
+
+$(srcdir)/pkg/kubernetes/styles/details.less:
+
+$(srcdir)/pkg/kubernetes/styles/dropdown.less:
+
+$(srcdir)/pkg/kubernetes/styles/filter.less:
+
+$(srcdir)/pkg/kubernetes/styles/images.less:
+
+$(srcdir)/pkg/kubernetes/styles/main.less:
+
+$(srcdir)/pkg/kubernetes/styles/nodes.less:
+
+$(srcdir)/pkg/kubernetes/styles/projects.less:
+
+$(srcdir)/pkg/kubernetes/styles/registry.less:
+
+$(srcdir)/pkg/kubernetes/styles/revealable.less:
+
+$(srcdir)/pkg/kubernetes/styles/sidebar.less:
+
+$(srcdir)/pkg/kubernetes/styles/tags.less:
+
+$(srcdir)/pkg/kubernetes/styles/topology.less:
+
+$(srcdir)/pkg/kubernetes/styles/variables.less:
+
+$(srcdir)/pkg/kubernetes/styles/volumes.less:
+
+$(srcdir)/pkg/kubernetes/views/add-group-dialog.html:
+
+$(srcdir)/pkg/kubernetes/views/add-member-role-dialog.html:
+
+$(srcdir)/pkg/kubernetes/views/add-role-dialog.html:
+
+$(srcdir)/pkg/kubernetes/views/add-user-dialog.html:
+
+$(srcdir)/pkg/kubernetes/views/auth-dialog.html:
+
+$(srcdir)/pkg/kubernetes/views/auth-form.html:
+
+$(srcdir)/pkg/kubernetes/views/auth-rejected-cert.html:
+
+$(srcdir)/pkg/kubernetes/views/container-body.html:
+
+$(srcdir)/pkg/kubernetes/views/container-page-inline.html:
+
+$(srcdir)/pkg/kubernetes/views/container-page.html:
+
+$(srcdir)/pkg/kubernetes/views/container-panel.html:
+
+$(srcdir)/pkg/kubernetes/views/containers-listing.html:
+
+$(srcdir)/pkg/kubernetes/views/containers-page.html:
+
+$(srcdir)/pkg/kubernetes/views/dashboard-page.html:
+
+$(srcdir)/pkg/kubernetes/views/default-panel.html:
+
+$(srcdir)/pkg/kubernetes/views/deploy.html:
+
+$(srcdir)/pkg/kubernetes/views/deploymentconfig-body.html:
+
+$(srcdir)/pkg/kubernetes/views/deploymentconfig-page.html:
+
+$(srcdir)/pkg/kubernetes/views/deploymentconfig-panel.html:
+
+$(srcdir)/pkg/kubernetes/views/details-page.html:
+
+$(srcdir)/pkg/kubernetes/views/file-button.html:
+
+$(srcdir)/pkg/kubernetes/views/filter-bar.html:
+
+$(srcdir)/pkg/kubernetes/views/filter-project.html:
+
+$(srcdir)/pkg/kubernetes/views/group-delete.html:
+
+$(srcdir)/pkg/kubernetes/views/group-page.html:
+
+$(srcdir)/pkg/kubernetes/views/group-panel.html:
+
+$(srcdir)/pkg/kubernetes/views/image-delete.html:
+
+$(srcdir)/pkg/kubernetes/views/image-listing.html:
+
+$(srcdir)/pkg/kubernetes/views/image-page.html:
+
+$(srcdir)/pkg/kubernetes/views/image-panel.html:
+
+$(srcdir)/pkg/kubernetes/views/images-page.html:
+
+$(srcdir)/pkg/kubernetes/views/imagestream-delete.html:
+
+$(srcdir)/pkg/kubernetes/views/imagestream-modify.html:
+
+$(srcdir)/pkg/kubernetes/views/imagestream-page.html:
+
+$(srcdir)/pkg/kubernetes/views/imagestream-panel.html:
+
+$(srcdir)/pkg/kubernetes/views/item-delete.html:
+
+$(srcdir)/pkg/kubernetes/views/node-add.html:
+
+$(srcdir)/pkg/kubernetes/views/node-alerts.html:
+
+$(srcdir)/pkg/kubernetes/views/node-body.html:
+
+$(srcdir)/pkg/kubernetes/views/node-capacity.html:
+
+$(srcdir)/pkg/kubernetes/views/node-delete.html:
+
+$(srcdir)/pkg/kubernetes/views/node-page.html:
+
+$(srcdir)/pkg/kubernetes/views/node-panel.html:
+
+$(srcdir)/pkg/kubernetes/views/node-stats.html:
+
+$(srcdir)/pkg/kubernetes/views/nodes-page.html:
+
+$(srcdir)/pkg/kubernetes/views/pod-body.html:
+
+$(srcdir)/pkg/kubernetes/views/pod-container.html:
+
+$(srcdir)/pkg/kubernetes/views/pod-page.html:
+
+$(srcdir)/pkg/kubernetes/views/pod-panel.html:
+
+$(srcdir)/pkg/kubernetes/views/project-body.html:
+
+$(srcdir)/pkg/kubernetes/views/project-delete.html:
+
+$(srcdir)/pkg/kubernetes/views/project-listing.html:
+
+$(srcdir)/pkg/kubernetes/views/project-modify.html:
+
+$(srcdir)/pkg/kubernetes/views/project-page.html:
+
+$(srcdir)/pkg/kubernetes/views/project-panel.html:
+
+$(srcdir)/pkg/kubernetes/views/projects-page.html:
+
+$(srcdir)/pkg/kubernetes/views/pv-body.html:
+
+$(srcdir)/pkg/kubernetes/views/pv-claim.html:
+
+$(srcdir)/pkg/kubernetes/views/pv-delete.html:
+
+$(srcdir)/pkg/kubernetes/views/pv-modify.html:
+
+$(srcdir)/pkg/kubernetes/views/pv-page.html:
+
+$(srcdir)/pkg/kubernetes/views/pv-panel.html:
+
+$(srcdir)/pkg/kubernetes/views/pvc-body.html:
+
+$(srcdir)/pkg/kubernetes/views/pvc-delete.html:
+
+$(srcdir)/pkg/kubernetes/views/registry-dashboard-page.html:
+
+$(srcdir)/pkg/kubernetes/views/remove-role-dialog.html:
+
+$(srcdir)/pkg/kubernetes/views/replicationcontroller-body.html:
+
+$(srcdir)/pkg/kubernetes/views/replicationcontroller-modify.html:
+
+$(srcdir)/pkg/kubernetes/views/replicationcontroller-page.html:
+
+$(srcdir)/pkg/kubernetes/views/replicationcontroller-panel.html:
+
+$(srcdir)/pkg/kubernetes/views/replicationcontroller-pods.html:
+
+$(srcdir)/pkg/kubernetes/views/route-body.html:
+
+$(srcdir)/pkg/kubernetes/views/route-modify.html:
+
+$(srcdir)/pkg/kubernetes/views/route-page.html:
+
+$(srcdir)/pkg/kubernetes/views/route-panel.html:
+
+$(srcdir)/pkg/kubernetes/views/service-body.html:
+
+$(srcdir)/pkg/kubernetes/views/service-endpoint.html:
+
+$(srcdir)/pkg/kubernetes/views/service-modify.html:
+
+$(srcdir)/pkg/kubernetes/views/service-page.html:
+
+$(srcdir)/pkg/kubernetes/views/service-panel.html:
+
+$(srcdir)/pkg/kubernetes/views/topology-page.html:
+
+$(srcdir)/pkg/kubernetes/views/user-add-membership.html:
+
+$(srcdir)/pkg/kubernetes/views/user-body.html:
+
+$(srcdir)/pkg/kubernetes/views/user-delete.html:
+
+$(srcdir)/pkg/kubernetes/views/user-group-add.html:
+
+$(srcdir)/pkg/kubernetes/views/user-group-remove.html:
+
+$(srcdir)/pkg/kubernetes/views/user-modify.html:
+
+$(srcdir)/pkg/kubernetes/views/user-page.html:
+
+$(srcdir)/pkg/kubernetes/views/user-panel.html:
+
+$(srcdir)/pkg/kubernetes/views/user-remove-membership.html:
+
+$(srcdir)/pkg/kubernetes/views/volume-body.html:
+
+$(srcdir)/pkg/kubernetes/views/volumes-page.html:
+
+$(srcdir)/pkg/lib/console.css:
+
+$(srcdir)/pkg/lib/listing.css:
+
+$(srcdir)/pkg/lib/page.css:
+
+$(srcdir)/pkg/lib/qunit-config.js:
+
+$(srcdir)/pkg/lib/qunit-template.html:
+
+$(srcdir)/pkg/lib/qunit-tests.js:
+
+$(srcdir)/pkg/lib/table.css:
+
+$(srcdir)/pkg/lib/term.css:
+
+WEBPACK_INPUTS += $(kubernetes_INPUTS)
+WEBPACK_OUTPUTS += $(kubernetes_OUTPUTS)
+WEBPACK_INSTALL += $(kubernetes_INSTALL)
+WEBPACK_DEBUG += $(kubernetes_DEBUG)
+TESTS += $(kubernetes_TESTS)

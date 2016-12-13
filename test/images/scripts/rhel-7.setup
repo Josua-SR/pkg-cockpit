@@ -6,8 +6,18 @@ set -e
 # depending on how it was compiled and which plugins are installed,
 # and will just silently not do it.  So we do it here.
 #
-xfs_growfs /
-df -h /
+df --output=source,fstype / | tail -n1 | while read source fstype; do
+    case $fstype in
+    ext*)
+	    resize2fs $source
+	    ;;
+    xfs*)
+	    xfs_growfs /
+	    ;;
+    esac
+done
+
+df -Th /
 
 # If the file /root/.skip_repos is present on the machine,
 # all actions regarding the repositories will be skipped:
@@ -39,7 +49,6 @@ if [ ! -f "$SKIP_REPO_FLAG" ]; then
     yum-config-manager --enable rhel-7-server-extras-rpms
 
     # the following don't necessarily need to work
-    yum-config-manager --enable rhel-7-server-beta-rpms || true
     yum-config-manager --disable rhel-sjis-for-rhel-7-server-rpms || true
     yum-config-manager --disable rhel-7-server-htb-rpms || true
 fi
@@ -52,6 +61,7 @@ echo foobar | passwd --stdin root
 # them to not spontaneously change from one test run to the next when
 # the distribution repository is updated.
 COCKPIT_DEPS="\
+atomic \
 device-mapper-multipath \
 docker \
 etcd \
@@ -59,15 +69,20 @@ glib-networking \
 json-glib \
 kubernetes \
 libssh \
+libvirt \
+libvirt-client \
+NetworkManager-team \
 pcp-libs \
 pcp \
 python-pip \
+qemu \
 realmd \
 selinux-policy-targeted \
+setroubleshoot-server \
 subscription-manager \
 storaged \
 storaged-lvm2 \
-atomic \
+storaged-iscsi \
 sos \
 tuned \
 "
@@ -84,32 +99,47 @@ sssd \
 
 TEST_PACKAGES="\
 systemtap-runtime-virtguest \
-valgrind
-gdb
+valgrind \
+gdb \
+yum-utils \
+virt-install \
+qemu-system-x86 \
+qemu-kvm \
 "
 
-# enable epel for mock and avocado
-if [ ! -f "$SKIP_REPO_FLAG" ]; then
-    mkdir /tmp/dep
-    cd /tmp/dep
-    yum -y install wget
-    wget -T 15 -t 4 http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-    rpm -Uvh epel-release-*.rpm
-    cd
-    rm -rf /tmp/dep
-fi
-
 yum install --nogpgcheck -y $TEST_PACKAGES $COCKPIT_DEPS $IPA_CLIENT_PACKAGES
+
+# For debugging storaged crashes
+debuginfo-install -y storaged storaged-lvm2 storaged-iscsi
 
 # Prepare for building
 
 # only install mock and build if TEST_SOURCE is set
 if [ -n "$TEST_SOURCE" ]; then
-    yum -y install mock rpm-build
+    yum -y install rpm-build
+
+    # enable epel for mock
+    if [ ! -f "$SKIP_REPO_FLAG" ]; then
+        mkdir /tmp/dep
+        cd /tmp/dep
+        yum -y install wget
+        wget -T 15 -t 4 http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+        yum -y remove wget
+        rpm -Uvh epel-release-*.rpm
+        cd
+        rm -rf /tmp/dep
+    fi
+    yum -y install mock
+
+    # disable epel again
+    yum-config-manager --disable 'epel*'
+
     useradd -c Builder -G mock builder
     srpm=$(/var/lib/testvm/make-srpm $TEST_SOURCE)
     su builder -c "/usr/bin/mock --verbose --installdeps $srpm"
 fi
+
+yum clean all || true
 
 if [ ! -f "$SKIP_REPO_FLAG" ]; then
     subscription-manager unregister
@@ -131,15 +161,19 @@ echo foobar | passwd --stdin admin
 # To enable persistent logging
 mkdir -p /var/log/journal
 
+# Configure kubernetes
+/var/lib/testvm/kubernetes.setup
+
 if type "docker" >/dev/null 2>&1; then
+    # HACK: docker falls over regularly, print its log if it does
+    systemctl start docker || journalctl -u docker
+
+    docker pull registry.access.redhat.com/rhel7/pod-infrastructure:latest
+
     # docker images that we need for integration testing
     /var/lib/testvm/docker-images.setup
 fi
 
-# Configure kubernetes
-/var/lib/testvm/kubernetes.setup
-
-yum clean all
 /var/lib/testvm/zero-disk.setup --keep-mock-cache
 
 # HACK - kdump.service interferes with our storage tests, by loading
@@ -157,7 +191,6 @@ systemctl disable kdump.service
 
 rm -rf /var/log/journal/*
 echo "kernel.core_pattern=|/usr/lib/systemd/systemd-coredump %p %u %g %s %t %e" > /etc/sysctl.d/50-coredump.conf
-printf "[Coredump]\nStorage=journal\n" > /etc/systemd/coredump.conf
 
 touch /.autorelabel
 

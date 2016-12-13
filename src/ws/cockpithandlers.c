@@ -36,7 +36,7 @@
 #include <json-glib/json-glib.h>
 
 #include <gio/gio.h>
-#include <glib/gi18n-lib.h>
+#include <glib/gi18n.h>
 
 #include <string.h>
 
@@ -69,11 +69,8 @@ handle_noauth_socket (GIOStream *io_stream,
                       GByteArray *input_buffer)
 {
   WebSocketConnection *connection;
-  gchar *application;
 
-  application = cockpit_auth_parse_application (path);
-  connection = cockpit_web_service_create_socket (NULL, application, io_stream, headers, input_buffer);
-  g_free (application);
+  connection = cockpit_web_service_create_socket (NULL, path, io_stream, headers, input_buffer);
 
   g_signal_connect (connection, "open", G_CALLBACK (on_web_socket_noauth), NULL);
 
@@ -84,6 +81,7 @@ handle_noauth_socket (GIOStream *io_stream,
 /* Called by @server when handling HTTP requests to /cockpit/socket */
 gboolean
 cockpit_handler_socket (CockpitWebServer *server,
+                        const gchar *original_path,
                         const gchar *path,
                         GIOStream *io_stream,
                         GHashTable *headers,
@@ -123,6 +121,7 @@ cockpit_handler_socket (CockpitWebServer *server,
 
 gboolean
 cockpit_handler_external (CockpitWebServer *server,
+                          const gchar *original_path,
                           const gchar *path,
                           GIOStream *io_stream,
                           GHashTable *headers,
@@ -196,7 +195,7 @@ cockpit_handler_external (CockpitWebServer *server,
 
   if (!open)
     {
-      response = cockpit_web_response_new (io_stream, path, NULL, headers);
+      response = cockpit_web_response_new (io_stream, original_path, path, NULL, headers);
       cockpit_web_response_error (response, 400, NULL, NULL);
       g_object_unref (response);
     }
@@ -205,11 +204,11 @@ cockpit_handler_external (CockpitWebServer *server,
       upgrade = g_hash_table_lookup (headers, "Upgrade");
       if (upgrade && g_ascii_strcasecmp (upgrade, "websocket") == 0)
         {
-          cockpit_channel_socket_open (service, open, path, io_stream, headers, input);
+          cockpit_channel_socket_open (service, open, original_path, path, io_stream, headers, input);
         }
       else
         {
-          response = cockpit_web_response_new (io_stream, path, NULL, headers);
+          response = cockpit_web_response_new (io_stream, original_path, path, NULL, headers);
           cockpit_channel_response_open (service, headers, response, open);
           g_object_unref (response);
         }
@@ -245,16 +244,30 @@ add_oauth_to_environment (JsonObject *environment)
 static GBytes *
 build_environment (GHashTable *os_release)
 {
+  /*
+   * We don't include entirety of os-release into the
+   * environment for the login.html page. There could
+   * be unexpected things in here.
+   *
+   * However since we are displaying branding based on
+   * the OS name variant flavor and version, including
+   * the corresponding information is not a leak.
+   */
+  static const gchar *release_fields[] = {
+    "NAME", "ID", "PRETTY_NAME", "VARIANT", "VARIANT_ID", "CPE_NAME",
+  };
+
   static const gchar *prefix = "\n    <script>\nvar environment = ";
   static const gchar *suffix = ";\n    </script>";
+
   GByteArray *buffer;
-  GHashTableIter iter;
   GBytes *bytes;
   JsonObject *object;
   const gchar *title;
   gchar *hostname;
-  gpointer key, value;
   JsonObject *osr;
+  const gchar *value;
+  gint i;
 
   object = json_object_new ();
 
@@ -271,9 +284,12 @@ build_environment (GHashTable *os_release)
   if (os_release)
     {
       osr = json_object_new ();
-      g_hash_table_iter_init (&iter, os_release);
-      while (g_hash_table_iter_next (&iter, &key, &value))
-        json_object_set_string_member (osr, key, value);
+      for (i = 0; i < G_N_ELEMENTS (release_fields); i++)
+        {
+          value = g_hash_table_lookup (os_release, release_fields[i]);
+          if (value)
+            json_object_set_string_member (osr, release_fields[i], value);
+        }
       json_object_set_object_member (object, "os-release", osr);
     }
 
@@ -293,17 +309,36 @@ send_login_html (CockpitWebResponse *response,
                  CockpitHandlerData *ws)
 {
   static const gchar *marker = "<head>";
+
   CockpitWebFilter *filter;
   GBytes *environment;
 
-  environment = build_environment (ws->os_release);
-  filter = cockpit_web_inject_new (marker, environment);
-  g_bytes_unref (environment);
+  GBytes *url_bytes = NULL;
+  CockpitWebFilter *filter2 = NULL;
+  const gchar *url_root = NULL;
+  gchar *base;
 
+  environment = build_environment (ws->os_release);
+  filter = cockpit_web_inject_new (marker, environment, 1);
+  g_bytes_unref (environment);
   cockpit_web_response_add_filter (response, filter);
+
+  url_root = cockpit_web_response_get_url_root (response);
+  if (url_root)
+    base = g_strdup_printf ("<base href=\"%s/\">", url_root);
+  else
+    base = g_strdup ("<base href=\"/\">");
+
+  url_bytes = g_bytes_new_take (base, strlen(base));
+  filter2 = cockpit_web_inject_new (marker, url_bytes, 1);
+  g_bytes_unref (url_bytes);
+  cockpit_web_response_add_filter (response, filter2);
+
   cockpit_web_response_set_cache_type (response, COCKPIT_WEB_RESPONSE_NO_CACHE);
   cockpit_web_response_file (response, "/login.html", ws->static_roots);
   g_object_unref (filter);
+  if (filter2)
+    g_object_unref (filter2);
 }
 
 static gchar *
@@ -341,23 +376,12 @@ get_remote_address (GIOStream *io)
 
 static void
 send_login_response (CockpitWebResponse *response,
-                     CockpitCreds *creds,
+                     JsonObject *object,
                      GHashTable *headers)
 {
-  JsonObject *object;
-  JsonObject *login_data;
   GBytes *content;
 
-  object = json_object_new ();
-  json_object_set_string_member (object, "user", cockpit_creds_get_user (creds));
-  json_object_set_string_member (object, "csrf-token", cockpit_creds_get_csrf_token (creds));
-
-  login_data = cockpit_creds_get_login_data (creds);
-  if (login_data)
-      json_object_set_object_member (object, "login-data", json_object_ref (login_data));
-
   content = cockpit_json_write_bytes (object);
-  json_object_unref (object);
 
   g_hash_table_replace (headers, g_strdup ("Content-Type"), g_strdup ("application/json"));
   cockpit_web_response_content (response, headers, content, NULL);
@@ -371,30 +395,45 @@ on_login_complete (GObject *object,
 {
   CockpitWebResponse *response = user_data;
   GError *error = NULL;
-  CockpitWebService *service;
+  JsonObject *response_data = NULL;
   CockpitAuthFlags flags = 0;
-  CockpitCreds *creds;
   GHashTable *headers;
   GIOStream *io_stream;
+  GBytes *content;
 
   io_stream = cockpit_web_response_get_stream (response);
   if (G_IS_SOCKET_CONNECTION (io_stream))
     flags |= COCKPIT_AUTH_COOKIE_INSECURE;
 
   headers = cockpit_web_server_new_table ();
-  service = cockpit_auth_login_finish (COCKPIT_AUTH (object), result, flags, headers, &error);
+  response_data = cockpit_auth_login_finish (COCKPIT_AUTH (object), result, flags, headers, &error);
 
+  /* Never cache a login response */
+  cockpit_web_response_set_cache_type (response, COCKPIT_WEB_RESPONSE_NO_CACHE);
   if (error)
     {
-      cockpit_web_response_gerror (response, headers, error);
+      if (response_data)
+        {
+          g_hash_table_insert (headers, g_strdup ("Content-Type"), g_strdup ("application/json"));
+          content = cockpit_json_write_bytes (response_data);
+          cockpit_web_response_headers_full (response, 401, "Authentication required", -1, headers);
+          cockpit_web_response_queue (response, content);
+          cockpit_web_response_complete (response);
+          g_bytes_unref (content);
+        }
+      else
+        {
+          cockpit_web_response_gerror (response, headers, error);
+        }
       g_error_free (error);
     }
   else
     {
-      creds = cockpit_web_service_get_creds (service);
-      send_login_response (response, creds, headers);
-      g_object_unref (service);
+      send_login_response (response, response_data, headers);
     }
+
+  if (response_data)
+    json_object_unref (response_data);
 
   g_hash_table_unref (headers);
   g_object_unref (response);
@@ -411,12 +450,14 @@ handle_login (CockpitHandlerData *data,
   gchar *remote_peer = NULL;
   GIOStream *io_stream;
   CockpitCreds *creds;
+  JsonObject *creds_json = NULL;
 
   if (service)
     {
       out_headers = cockpit_web_server_new_table ();
       creds = cockpit_web_service_get_creds (service);
-      send_login_response (response, creds, out_headers);
+      creds_json = cockpit_creds_to_json (creds);
+      send_login_response (response, creds_json, out_headers);
       g_hash_table_unref (out_headers);
     }
   else
@@ -427,6 +468,9 @@ handle_login (CockpitHandlerData *data,
                                 on_login_complete, g_object_ref (response));
       g_free (remote_peer);
     }
+
+  if (creds_json)
+    json_object_unref (creds_json);
 }
 
 static void
@@ -476,10 +520,15 @@ handle_shell (CockpitHandlerData *data,
   /* Check if a valid path for a shell to be served at */
   valid = g_str_equal (path, "/") ||
           g_str_has_prefix (path, "/@") ||
+          g_str_has_prefix (path, "/=") ||
           strspn (path + 1, COCKPIT_RESOURCE_PACKAGE_VALID) == strcspn (path + 1, "/");
 
-  if (g_str_has_prefix (path, "/@/") || g_str_has_prefix (path, "//"))
-    valid = FALSE;
+  if (g_str_has_prefix (path, "/=/") ||
+      g_str_has_prefix (path, "/@/") ||
+      g_str_has_prefix (path, "//"))
+    {
+      valid = FALSE;
+    }
 
   if (!valid)
     {

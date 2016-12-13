@@ -17,14 +17,13 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-define([
-    "jquery",
-    "base1/cockpit",
-    "docker/util",
-    "shell/shell",
-    "shell/cockpit-plot",
-    "shell/cockpit-util",
-], function($, cockpit, util, shell) {
+(function() {
+    "use strict";
+
+    var $ = require("jquery");
+    var cockpit = require("cockpit");
+    var util = require("./util");
+    var docker = require("./docker");
 
     /* DOCKER CLIENT
      */
@@ -50,13 +49,13 @@ define([
 
         /* This is a named function because we call it recursively */
         function connect_events() {
+            if (!connected)
+                return;
 
             /* Trigger the event signal when JSON from /events */
             events = http.get("/v1.12/events");
             events.stream(function(resp) {
                 util.docker_debug("event:", resp);
-                if (connected.state() == "pending")
-                    connected.resolve();
                 trigger_event();
             }).
 
@@ -83,6 +82,9 @@ define([
 
         /* Containers we're waiting for an action to complete on */
         this.waiting = { };
+
+        /* images we're currently pulling */
+        this.pulling = [];
 
         var containers_meta = { };
         var containers_by_name = { };
@@ -123,8 +125,6 @@ define([
             var name = container_to_name(container);
             if (name)
                 containers_by_name[name] = id;
-            if (!container.CGroup)
-                container.CGroup = cgroup_from_container(id);
         }
 
         function remove_container(id) {
@@ -147,8 +147,6 @@ define([
             http.get("/v1.12/containers/json", { all: 1 }).
                 done(function(data) {
                     var containers = JSON.parse(data);
-                    if (connected.state() == "pending")
-                        connected.resolve();
                     alive = true;
 
                     var seen = {};
@@ -163,18 +161,19 @@ define([
                             done(function(data) {
                                 var container = JSON.parse(data);
                                 populate_container(id, container);
+                                if (self.containers[id]) {
+                                    /* We need to rescue the CGroup
+                                     * from the old instance since we
+                                     * only set it once per ID in
+                                     * update_usage_grid below.
+                                     */
+                                    container.CGroup = self.containers[id].CGroup;
+                                }
                                 self.containers[id] = container;
-                                usage_samples[id] = [ usage_grid.add(usage_metrics_channel,
-                                                                     [ "cgroup.memory.usage", container.CGroup ]),
-                                                      usage_grid.add(usage_metrics_channel,
-                                                                     [ "cgroup.cpu.usage", container.CGroup ]),
-                                                      usage_grid.add(usage_metrics_channel,
-                                                                     [ "cgroup.memory.limit", container.CGroup ]),
-                                                      usage_grid.add(usage_metrics_channel,
-                                                                     [ "cgroup.cpu.shares", container.CGroup ])
-                                                    ];
+                                update_usage_grid();
                                 $(self).trigger("container", [id, container]);
                             });
+
                     });
 
                     var removed = [];
@@ -188,11 +187,53 @@ define([
                     });
                 }).
                 fail(function(ex) {
-                    if (connected.state() == "pending")
-                        connected.reject(ex);
-                    got_failure = true;
-                    $(self).trigger("failure", [ex]);
+                    if (connected) {
+                        got_failure = true;
+                        $(self).trigger("failure", [ex]);
+                    }
                 });
+        }
+
+        /* Various versions of docker + systemd use different scopes
+         * and cgroups.  The order matters: earlier ones are
+         * preferred, and that in turn matters for containers that
+         * have more than one cgroup.
+         */
+        var cgroup_prefixes = [
+            "init.scope/system.slice/docker-",
+            "system.slice/docker/",
+            "system.slice/docker-",
+            "docker/"
+        ];
+
+        function update_usage_grid() {
+            var meta = usage_metrics_channel.meta || { };
+            var metrics = meta.metrics || [ ];
+
+            metrics.forEach(function(metric) {
+                var instances = metric.instances || [ ];
+
+                /*
+                 * Take a look at all the cgroups and map them to all the
+                 * containers.
+                 */
+                cgroup_prefixes.forEach(function(prefix) {
+                    instances.forEach(function(cgroup) {
+                        if (cgroup.indexOf(prefix) === 0) {
+                            var id = cgroup.substr(prefix.length, 64);
+                            if (self.containers[id] && !usage_samples[id]) {
+                                self.containers[id].CGroup = cgroup;
+                                usage_samples[id] = [
+                                    usage_grid.add(usage_metrics_channel, [ "cgroup.memory.usage", cgroup ]),
+                                    usage_grid.add(usage_metrics_channel, [ "cgroup.cpu.usage", cgroup ]),
+                                    usage_grid.add(usage_metrics_channel, [ "cgroup.memory.limit", cgroup ]),
+                                    usage_grid.add(usage_metrics_channel, [ "cgroup.cpu.shares", cgroup ])
+                                ];
+                            }
+                        }
+                    });
+                });
+            });
         }
 
         function handle_usage_samples() {
@@ -251,8 +292,6 @@ define([
             http.get("/v1.12/images/json").
                 done(function(data) {
                     var images = JSON.parse(data);
-                    if (connected.state() == "pending")
-                        connected.resolve();
                     alive = true;
 
                     var seen = {};
@@ -283,16 +322,39 @@ define([
                     });
                 }).
                 fail(function(ex) {
-                    if (connected.state() == "pending")
+                    if (connected) {
+                        got_failure = true;
+                        $(self).trigger("failure", [ex]);
+                    }
+                });
+        }
+
+        function fetch_info() {
+            http.get("/v1.12/info")
+                .fail(function(ex) {
+                    util.docker_debug("info failed:", ex);
+
+                    /* Failed to connect */
+                    if (connected && connected.state() == "pending")
                         connected.reject(ex);
-                    got_failure = true;
-                    $(self).trigger("failure", [ex]);
+                })
+                .done(function(data) {
+                    util.docker_debug("info:", data);
+                    self.info = data && JSON.parse(data);
+                    $(self).triggerHandler("info", self.info);
+
+                    /* Ready to display stuff */
+                    if (connected && connected.state() == "pending")
+                        connected.resolve();
                 });
         }
 
         $(self).on("event", function() {
-            fetch_containers();
-            fetch_images();
+            if (connected) {
+                fetch_containers();
+                fetch_images();
+                fetch_info();
+            }
         });
 
         function perform_connect() {
@@ -305,23 +367,23 @@ define([
             if (watch && watch.valid)
                 watch.close();
 
-            http.get("/v1.12/info").done(function(data) {
-                var info = data && JSON.parse(data);
-                watch = cockpit.channel({ payload: "fslist1", path: info["DockerRootDir"], superuser: "try" });
-                $(watch).on("message", function(event, data) {
-                    trigger_event();
-                });
-                $(watch).on("close", function(event, options) {
-                    if (options.problem && options.problem != "not-found")
-                        console.warn("monitor for docker directory failed: " + options.problem);
-                });
+            function got_info() {
+                watch = cockpit.channel({ payload: "fslist1", path: self.info["DockerRootDir"], superuser: "try" });
+                $(watch)
+                    .on("message", function(event, data) {
+                        trigger_event();
+                    })
+                    .on("close", function(event, options) {
+                        if (options.problem && options.problem != "not-found")
+                            console.warn("monitor for docker directory failed: " + options.problem);
+                    });
+                $(self).off("info", got_info);
+            }
 
-                $(self).triggerHandler("event");
-            }).fail(function(err) {
-                if (err != "not-found")
-                    console.warn("monitor for docker directory failed: " + err);
-                $(self).triggerHandler("event");
-            });
+            $(self).on("info", got_info);
+
+            /* Starts fetching things */
+            $(self).triggerHandler("event");
 
             usage_metrics_channel = cockpit.metrics(1000,
                                                     { source: "internal",
@@ -340,39 +402,19 @@ define([
                                                                  }
                                                                ]
                                                     });
+
+            $(usage_metrics_channel).on("changed", function() {
+                update_usage_grid();
+            });
+
             usage_grid = cockpit.grid(1000, -1, -0);
+
+            usage_metrics_channel.follow();
             usage_grid.walk();
 
             $(usage_grid).on('notify', function (event, index, count) {
                 handle_usage_samples();
             });
-        }
-
-        var regex_docker_cgroup = /docker-([A-Fa-f0-9]{64})\.scope/;
-        var regex_geard_cgroup = /.*\/ctr-(.+).service/;
-        this.container_from_cgroup = container_from_cgroup;
-        function container_from_cgroup (cgroup) {
-            /*
-             * TODO: When we move to showing resources for systemd units
-             * instead of containers then we'll get rid of all this
-             * nastiness.
-             */
-
-            /* Docker created cgroups */
-            var match = regex_docker_cgroup.exec(cgroup);
-            if (match)
-                return match[1];
-
-            /* geard created cgroups */
-            match = regex_geard_cgroup.exec(cgroup);
-            if (match)
-                return containers_by_name[match[1]];
-            return null;
-        }
-
-        this.cgroup_from_container = cgroup_from_container;
-        function cgroup_from_container(id) {
-            return "system.slice/docker-" + id + ".scope";
         }
 
         function trigger_id(id) {
@@ -467,13 +509,14 @@ define([
         };
 
         this.create = function create(name, options) {
-            util.docker_debug("creating:", name);
+            var body = JSON.stringify(options || { });
+            util.docker_debug("creating:", name, body);
             return http.request({
                 method: "POST",
                 path: "/v1.12/containers/create",
                 params: { "name": name },
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(options || { })
+                body: body,
             })
                 .fail(function(ex) {
                     util.docker_debug("create failed:", name, ex);
@@ -566,32 +609,61 @@ define([
                 });
         };
 
+        this.pull = function (repo, tag, registry) {
+            var job = {
+                name: repo
+            };
+
+            docker.pull(repo, tag, registry).
+                progress(function(message, progress) {
+                    job.status = progress.status;
+                    if (progress.progressDetail && 'current' in progress.progressDetail && 'total' in progress.progressDetail)
+                        job.progress = progress.progressDetail;
+                    else
+                        delete job.progress;
+                    $(self).trigger("pulling");
+                }).
+                done(function () {
+                    self.pulling = self.pulling.filter(function (j) {
+                        return j !== job;
+                    });
+                    $(self).trigger("pulling");
+                }).
+                fail(function (error) {
+                    job.status = 'Error getting image: ' + error.message;
+                    delete job.progress;
+                    $(self).trigger("pulling");
+                });
+
+           self.pulling.push(job);
+        };
+
         function change_cgroup(directory, cgroup, filename, value) {
             /* TODO: Yup need a nicer way of doing this ... likely systemd once we're geard'd out */
             var path = "/sys/fs/cgroup/" + directory + "/" + cgroup + "/" + filename;
-            var command = "echo '" + value.toFixed(0) + "' > " + path;
+            var command = "if test -f " + path + "; then echo '" + value.toFixed(0) + "' > " + path + "; fi";
             util.docker_debug("changing cgroup:", command);
 
-            /*
-             * TODO: We need a sane UI for showing that the resources can't be changed
-             * Showing unexpected error isn't it.
-             */
-            cockpit.spawn(["sh", "-c", command]).
-                fail(function(ex) {
-                    console.warn(ex);
-                });
+            return cockpit.spawn(["sh", "-c", command], { "superuser": "try", "err": "message" });
         }
 
         this.change_memory_limit = function change_memory_limit(id, value) {
+            var cgroup = this.containers[id].CGroup;
             if (value === undefined || value <= 0)
                 value = -1;
-            return change_cgroup("memory", this.containers[id].CGroup, "memory.limit_in_bytes", value);
-        };
 
-        this.change_swap_limit = function change_swap_limit(id, value) {
-            if (value === undefined || value <= 0)
-                value = -1;
-            return change_cgroup("memory", this.containers[id].CGroup, "memory.memsw.limit_in_bytes", value);
+            /* The order in which we set memory.memsw and memory is important. */
+            if (value === -1) {
+                return change_cgroup("memory", cgroup, "memory.memsw.limit_in_bytes", -1)
+                    .then(function() {
+                        return change_cgroup("memory", cgroup, "memory.limit_in_bytes", -1);
+                    });
+            } else {
+                return change_cgroup("memory", cgroup, "memory.limit_in_bytes", value)
+                    .then(function() {
+                        return change_cgroup("memory", cgroup, "memory.memsw.limit_in_bytes", value * 2);
+                    });
+            }
         };
 
         this.change_cpu_priority = function change_cpu_priority(id, value) {
@@ -600,25 +672,16 @@ define([
             return change_cgroup("cpuacct", this.containers[id].CGroup, "cpu.shares", value);
         };
 
-        this.machine_info = function machine_info() {
-            return shell.util.machine_info();
-        };
-
-        this.info = function info() {
-            return http.get("/v1.12/info")
-                .fail(function(ex) {
-                    util.docker_debug("info failed:", ex);
-                })
-                .done(function(resp) {
-                    util.docker_debug("info:", resp);
-                });
-        };
-
         this.close = function close() {
             if (usage_metrics_channel) {
                 usage_metrics_channel.close();
+                $(usage_metrics_channel).off();
+                usage_metrics_channel = null;
                 usage_grid.close();
+                $(usage_grid).off();
+                usage_grid = null;
             }
+            http.close("closed");
             connected = null;
         };
 
@@ -635,12 +698,19 @@ define([
             }
             return connected.promise();
         };
+
+        /* Initially empty info data */
+        self.info = { };
     }
 
-    return {
-        init: function () {
-            return new DockerClient();
+    var client;
+
+    module.exports = {
+        instance: function() {
+            if (!client)
+                client = new DockerClient();
+            return client;
         }
     };
 
-});
+}());

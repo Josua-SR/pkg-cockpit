@@ -31,7 +31,7 @@ import re
 def kill_user_admin(machine):
     # logind from systemd 208 is buggy, so we use systemd directly if it fails
     # https://bugs.freedesktop.org/show_bug.cgi?id=71092
-    machine.execute("loginctl kill-user admin || systemctl kill user-1000.slice")
+    machine.execute("loginctl terminate-user admin || systemctl kill user-1000.slice")
 
 def authorize_user(m, user):
     m.execute("mkdir -p /home/{0}/.ssh".format(user))
@@ -50,34 +50,53 @@ LOAD_KEYS = [
 KEY_IDS = [
     "2048 SHA256:SRvBhCmkCEVnJ6ascVH0AoVEbS3nPbowZkNevJnXtgw /home/admin/.ssh/id_rsa (RSA)",
     "256 SHA256:dyHF4jiKz6RolQqORIATqhbZ4kil5cyiMQWizbQWU8k /home/admin/.ssh/id_ecdsa (ECDSA)",
-    "256 SHA256:Uht4NX54Gjz62cNA8+LrHo63HiFW/i5aWg/cl/A3X+c /home/admin/.ssh/id_ed25519 (ED25519)"
+    "256 SHA256:Wd028KYmG3OVLp7dBmdx0gMR7VcarJVIfaTtKqYCmak /home/admin/.ssh/id_ed25519 (ED25519)"
 ]
 
 KEY_IDS_MD5 = [
     "2048 93:40:9e:67:82:78:a8:99:89:39:d5:ba:e0:50:70:e1 /home/admin/.ssh/id_rsa (RSA)",
     "256 bd:56:df:c3:ff:e4:1d:9d:f5:c4:b9:cc:64:00:d5:93 /home/admin/.ssh/id_ecdsa (ECDSA)",
-    "256 7a:8a:54:6d:85:b3:e0:f2:7e:1f:14:7a:75:a8:33:d9 /home/admin/.ssh/id_ed25519 (ED25519)"
+    "256 b5:80:1b:f5:98:89:2a:39:f3:78:b3:64:5c:64:33:17 /home/admin/.ssh/id_ed25519 (ED25519)"
 ]
 
-# https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=805030
-@unittest.skipIf("debian" in os.environ.get("TEST_OS", ""), "No ssh keys on Debian (yet).")
+# HACK: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=805030
+@skipImage("libssh is too old", "debian-8", "debian-unstable", "ubuntu-1604")
 class TestMultiMachineKeyAuth(MachineCase):
+    additional_machines = {
+        'machine2': { }
+    }
 
     def load_key(self, name, password):
         self.browser.switch_to_top()
-        self.browser.eval_js("require('shell/credentials').keys_instance().load('{0}', '{1}')".format(name, password))
+        self.browser.eval_js("loaded = false")
+        self.browser.eval_js("""
+            load = function (user) {{
+                var proc = cockpit.spawn([ 'ssh-add', '{0}' ], {{ pty: true, directory: user.home + '/.ssh' }})
+                    .stream(function(data) {{
+                        if (data.indexOf('passphrase') !== -1)
+                            proc.input('{1}\\n', true);
+                        console.log(data);
+                    }})
+                    .done(function() {{
+                        loaded = true;
+                    }})
+                    .fail(function(ex) {{
+                        console.log(ex);
+                    }});
+            }}
+        """.format(name, password))
+        self.browser.eval_js("cockpit.user().done(load)")
 
     def check_keys(self, keys):
         def normalize(k):
-            return re.sub("/home/admin/\\.ssh/[^ ]*|pvolpe@pvolpe", "", k)
-        self.assertEqual(normalize(self.browser.eval_js("require('base1/cockpit').spawn([ 'ssh-add', '-l' ])")),
+            return re.sub("/home/admin/\\.ssh/[^ ]*|test@test", "", k)
+        self.assertEqual(normalize(self.browser.eval_js("cockpit.spawn([ 'ssh-add', '-l' ])")),
                          normalize("\n".join(keys) + "\n"))
 
     def setUp(self):
         MachineCase.setUp(self)
-        self.machine2 = self.new_machine()
-        self.machine2.start()
-        self.machine2.wait_boot()
+        self.machine2 = self.machines['machine2']
+
         # Add user
         self.machine2.disconnect()
         self.machine2.execute("useradd user -c 'User' || true", direct=True)
@@ -115,13 +134,14 @@ class TestMultiMachineKeyAuth(MachineCase):
         # pam-ssh-add isn't used on atomic
         if 'atomic' in m1.image:
             self.load_key('id_rsa', 'foobar')
-            if 'rhel' in m1.image:
+            b.wait_js_cond('loaded === true');
+            if 'rhel' in m1.image or 'centos' in m1.image or m1.image == "continuous-atomic":
                 self.check_keys([
                     "2048 93:40:9e:67:82:78:a8:99:89:39:d5:ba:e0:50:70:e1 id_rsa (RSA)"])
             else:
                 self.check_keys([
                     "2048 SHA256:SRvBhCmkCEVnJ6ascVH0AoVEbS3nPbowZkNevJnXtgw id_rsa (RSA)"])
-        elif 'rhel' in m1.image:
+        elif 'rhel' in m1.image or 'centos' in m1.image or m1.image == "continuous-atomic":
             self.check_keys(KEY_IDS_MD5)
         else:
             # Check our keys were loaded.
@@ -146,8 +166,8 @@ class TestMultiMachineKeyAuth(MachineCase):
         b.wait_present("#login-custom-user")
         self.assertEqual(b.val("#login-custom-user"), "")
         b.set_val("#login-custom-user", "user")
-        self.assertEqual(b.val("#login-type"), "stored")
-        b.wait_not_in_text("#login-type", "Password")
+        self.assertEqual(b.text("#login-type button span"), "Using available credentials")
+        b.wait_not_present("#login-type li[value=password] a");
         b.wait_visible("#login-available")
         b.wait_not_in_text("#login-available", "Login Password")
         b.wait_in_text("#login-available", "id_rsa")
@@ -167,11 +187,9 @@ class TestMultiMachineKeyAuth(MachineCase):
         # Logout
         b.logout()
         b.wait_visible("#login")
-        try:
-            m1.execute("ps xa | grep ssh-agent | grep -v grep")
-            assert False, "Logout did not stop ssh agent."
-        except subprocess.CalledProcessError:
-            pass
+
+        # Make sure ssh-agent exits
+        wait(lambda: "ssh-agent" not in m1.execute("ps xa | grep ss[h]-agent || true"))
 
         # Remove authorized keys
         m2.execute("rm /home/user/.ssh/authorized_keys")
@@ -188,6 +206,7 @@ class TestMultiMachineKeyAuth(MachineCase):
         b.click('#machine-troubleshoot')
         b.wait_popup('troubleshoot-dialog')
 
+        b.wait_present('#troubleshoot-dialog h4')
         b.wait_in_text('#troubleshoot-dialog h4', "Log in to")
         b.wait_present("#troubleshoot-dialog .btn-primary:not([disabled])")
         b.wait_visible("#login-available")

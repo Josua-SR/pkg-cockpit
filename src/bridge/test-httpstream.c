@@ -69,7 +69,7 @@ static void
 setup_general (TestGeneral *tt,
                gconstpointer host_fixture)
 {
-  tt->web_server = cockpit_web_server_new (0, NULL, NULL, NULL, NULL);
+  tt->web_server = cockpit_web_server_new (NULL, 0, NULL, NULL, NULL, NULL);
   tt->port = cockpit_web_server_get_port (tt->web_server);
   tt->transport = mock_transport_new ();
   tt->host = host_fixture;
@@ -241,7 +241,7 @@ test_cannot_connect (TestGeneral *tt,
   JsonObject *object;
   gboolean closed;
 
-  cockpit_expect_log ("cockpit-protocol", G_LOG_LEVEL_MESSAGE, "*couldn't connect*");
+  cockpit_expect_log ("cockpit-bridge", G_LOG_LEVEL_MESSAGE, "*couldn't connect*");
 
   options = json_object_new ();
   json_object_set_int_member (options, "port", 5555);
@@ -348,7 +348,7 @@ test_http_chunked (void)
   guint count;
   guint port;
 
-  web_server = cockpit_web_server_new (0, NULL,
+  web_server = cockpit_web_server_new (NULL, 0, NULL,
                                       NULL, NULL, NULL);
   g_assert (web_server);
   port = cockpit_web_server_get_port (web_server);
@@ -482,7 +482,7 @@ setup_tls (TestTls *test,
                                                         SRCDIR "/src/bridge/mock-server.key", &error);
   g_assert_no_error (error);
 
-  test->web_server = cockpit_web_server_new (0, test->certificate, NULL, NULL, &error);
+  test->web_server = cockpit_web_server_new (NULL, 0, test->certificate, NULL, NULL, &error);
   g_assert_no_error (error);
 
   test->port = cockpit_web_server_get_port (test->web_server);
@@ -500,17 +500,6 @@ teardown_tls (TestTls *test,
   g_object_unref (test->web_server);
   g_object_unref (test->transport);
   g_clear_object (&test->peer);
-}
-
-static void
-on_closed_get_problem (CockpitChannel *channel,
-                       const gchar *problem,
-                       gpointer user_data)
-{
-  gchar **result = user_data;
-  g_assert (problem != NULL);
-  g_assert (*result == NULL);
-  *result = g_strdup (problem);
 }
 
 static void
@@ -799,8 +788,14 @@ test_tls_authority_bad (TestTls *test,
   JsonObject *tls;
   GError *error = NULL;
   const gchar *control;
-  gchar *problem = NULL;
   GBytes *bytes;
+  JsonObject *resp;
+  gchar *expected_pem = NULL;
+  gchar *expected_json = NULL;
+  const gchar *expected_fmt;
+
+  g_object_get (test->certificate, "certificate-pem", &expected_pem, NULL);
+  g_assert_true (expected_pem != NULL);
 
   tls = cockpit_json_parse_object (json, -1, &error);
   g_assert_no_error (error);
@@ -818,8 +813,10 @@ test_tls_authority_bad (TestTls *test,
                           "options", options,
                           NULL);
 
-  cockpit_expect_log ("cockpit-protocol", G_LOG_LEVEL_MESSAGE,
+  cockpit_expect_log ("cockpit-bridge", G_LOG_LEVEL_MESSAGE,
                       "*Unacceptable TLS certificate:*untrusted-issuer*");
+  cockpit_expect_log ("cockpit-bridge", G_LOG_LEVEL_MESSAGE,
+                      "*Unacceptable TLS certificate");
 
   json_object_unref (options);
 
@@ -829,17 +826,22 @@ test_tls_authority_bad (TestTls *test,
   cockpit_transport_emit_recv (COCKPIT_TRANSPORT (test->transport), NULL, bytes);
   g_bytes_unref (bytes);
 
-  g_signal_connect (channel, "closed", G_CALLBACK (on_closed_get_problem), &problem);
-
-  while (problem == NULL)
+  while (mock_transport_count_sent (test->transport) < 2)
     g_main_context_iteration (NULL, TRUE);
 
-  g_assert_cmpstr (problem, ==, "unknown-hostkey");
-  g_free (problem);
+  resp = mock_transport_pop_control (test->transport);
+  cockpit_assert_json_eq (resp, "{\"command\":\"ready\",\"channel\":\"444\"}");
+
+  resp = mock_transport_pop_control (test->transport);
+  expected_fmt = "{\"command\":\"close\",\"channel\":\"444\",\"problem\":\"unknown-hostkey\", \"rejected-certificate\":\"%s\"}";
+  expected_json = g_strdup_printf (expected_fmt, expected_pem);
+  cockpit_assert_json_eq (resp, expected_json);
 
   g_object_add_weak_pointer (G_OBJECT (channel), (gpointer *)&channel);
   g_object_unref (channel);
   g_assert (channel == NULL);
+  g_free (expected_pem);
+  g_free (expected_json);
 }
 
 /* Declared in cockpitwebserver.c */

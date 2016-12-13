@@ -1,0 +1,110 @@
+# Generated Makefile data for dashboard
+# Stamp: Thu Nov 24 2016 16:15:59 GMT+0000 (UTC)
+
+dashboard_INPUTS = \
+	$(srcdir)/pkg/dashboard/image-editor.js \
+	$(srcdir)/pkg/dashboard/index.html \
+	$(srcdir)/pkg/dashboard/list.js \
+	$(srcdir)/pkg/dashboard/manifest.json \
+	$(srcdir)/pkg/lib/credentials-ssh-private-keys.sh \
+	$(srcdir)/pkg/lib/credentials.js \
+	$(srcdir)/pkg/lib/listing.css \
+	$(srcdir)/pkg/lib/machine-add.html \
+	$(srcdir)/pkg/lib/machine-auth-failed.html \
+	$(srcdir)/pkg/lib/machine-change-auth.html \
+	$(srcdir)/pkg/lib/machine-change-port.html \
+	$(srcdir)/pkg/lib/machine-color-picker.html \
+	$(srcdir)/pkg/lib/machine-dialogs.js \
+	$(srcdir)/pkg/lib/machine-invalid-hostkey.html \
+	$(srcdir)/pkg/lib/machine-not-supported.html \
+	$(srcdir)/pkg/lib/machine-sync-users.html \
+	$(srcdir)/pkg/lib/machine-unknown-hostkey.html \
+	$(srcdir)/pkg/lib/machines.js \
+	$(srcdir)/pkg/lib/patterns.js \
+	$(srcdir)/pkg/lib/plot.js \
+	$(NULL)
+
+dashboard_OUTPUTS = \
+	dist/dashboard/dashboard.css \
+	dist/dashboard/dashboard.css.map \
+	dist/dashboard/dashboard.min.js \
+	dist/dashboard/dashboard.min.js.map \
+	dist/dashboard/index.html \
+	dist/dashboard/manifest.json \
+	$(NULL)
+
+dashboard_INSTALL = \
+	dist/dashboard/dashboard.css.gz \
+	dist/dashboard/dashboard.min.js.gz \
+	dist/dashboard/index.html.gz \
+	dist/dashboard/manifest.json \
+	$(NULL)
+
+dashboard_DEBUG = \
+	dist/dashboard/dashboard.css.map \
+	dist/dashboard/dashboard.min.js.map \
+	$(NULL)
+
+dashboard_TESTS = \
+	$(NULL)
+
+dist/Makefile-dashboard.deps: $(WEBPACK_CONFIG) $(dashboard_INPUTS)
+	$(WEBPACK_RULE) -d dist/Makefile-dashboard.deps $(WEBPACK_CONFIG)
+
+dist/dashboard/dashboard.css: dist/Makefile-dashboard.deps
+
+dist/dashboard/dashboard.css.map: dist/Makefile-dashboard.deps
+
+dist/dashboard/dashboard.min.js: dist/Makefile-dashboard.deps
+
+dist/dashboard/dashboard.min.js.map: dist/Makefile-dashboard.deps
+
+dist/dashboard/index.html: dist/Makefile-dashboard.deps
+
+dist/dashboard/manifest.json: dist/Makefile-dashboard.deps
+
+$(srcdir)/pkg/dashboard/image-editor.js:
+
+$(srcdir)/pkg/dashboard/index.html:
+
+$(srcdir)/pkg/dashboard/list.js:
+
+$(srcdir)/pkg/dashboard/manifest.json:
+
+$(srcdir)/pkg/lib/credentials-ssh-private-keys.sh:
+
+$(srcdir)/pkg/lib/credentials.js:
+
+$(srcdir)/pkg/lib/listing.css:
+
+$(srcdir)/pkg/lib/machine-add.html:
+
+$(srcdir)/pkg/lib/machine-auth-failed.html:
+
+$(srcdir)/pkg/lib/machine-change-auth.html:
+
+$(srcdir)/pkg/lib/machine-change-port.html:
+
+$(srcdir)/pkg/lib/machine-color-picker.html:
+
+$(srcdir)/pkg/lib/machine-dialogs.js:
+
+$(srcdir)/pkg/lib/machine-invalid-hostkey.html:
+
+$(srcdir)/pkg/lib/machine-not-supported.html:
+
+$(srcdir)/pkg/lib/machine-sync-users.html:
+
+$(srcdir)/pkg/lib/machine-unknown-hostkey.html:
+
+$(srcdir)/pkg/lib/machines.js:
+
+$(srcdir)/pkg/lib/patterns.js:
+
+$(srcdir)/pkg/lib/plot.js:
+
+WEBPACK_INPUTS += $(dashboard_INPUTS)
+WEBPACK_OUTPUTS += $(dashboard_OUTPUTS)
+WEBPACK_INSTALL += $(dashboard_INSTALL)
+WEBPACK_DEBUG += $(dashboard_DEBUG)
+TESTS += $(dashboard_TESTS)

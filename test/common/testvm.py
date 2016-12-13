@@ -38,6 +38,7 @@ import threading
 import time
 
 import testinfra
+import vmimages
 
 import xml.etree.ElementTree as etree
 
@@ -68,10 +69,19 @@ def stdchannel_redirected(stdchannel, dest_filename):
             dest_file.close()
 
 class Timeout:
-    def __init__(self, seconds=1, error_message='Timeout'):
+    """ Add a timeout to an operation
+        Specify machine to ensure that a machine's ssh operations are canceled when the timer expires.
+    """
+    def __init__(self, seconds=1, error_message='Timeout', machine=None):
         self.seconds = seconds
         self.error_message = error_message
+        self.machine = machine
     def handle_timeout(self, signum, frame):
+        if self.machine:
+            if self.machine.ssh_process:
+                self.machine.ssh_process.terminate()
+            self.machine.disconnect()
+
         raise Exception(self.error_message)
     def __enter__(self):
         signal.signal(signal.SIGALRM, self.handle_timeout)
@@ -89,7 +99,7 @@ class RepeatableFailure(Failure):
     pass
 
 class Machine:
-    def __init__(self, address=None, image=None, verbose=False, label=None):
+    def __init__(self, address=None, image=None, verbose=False, label=None, fetch=True):
         self.verbose = verbose
 
         # Currently all images are x86_64. When that changes we will have
@@ -97,6 +107,7 @@ class Machine:
         self.arch = "x86_64"
 
         self.image = image or testinfra.DEFAULT_IMAGE
+        self.fetch = fetch
         self.vm_username = "root"
         self.address = address
         self.label = label or "UNKNOWN"
@@ -113,7 +124,7 @@ class Machine:
             return
         print " ".join(args)
 
-    def start(self, maintain=False, macaddr=None, memory_mb=None, cpus=None):
+    def start(self, maintain=False, macaddr=None, memory_mb=None, cpus=None, wait_for_ip=True):
         """Overridden by machine classes to start the machine"""
         self.message("Assuming machine is already running")
 
@@ -189,6 +200,13 @@ class Machine:
         self._kill_ssh_master()
 
         control = os.path.join(testinfra.TEST_DIR, "tmp", "ssh-%h-%p-%r-" + str(os.getpid()))
+
+        # unix domain socket names aren't allowed to be too long
+        # Since python doesn't expose the max allowed value as a constant
+        # we hard code 108 as a magic number, based on the default
+        # MAX_UNIX_FILE value on most linux systems.
+        if len(control) > 108:
+            control = os.path.join(tempfile.tempdir, "ssh-%h-%p-%r-" + str(os.getpid()))
 
         cmd = [
             "ssh",
@@ -278,6 +296,19 @@ class Machine:
         if not self._check_ssh_master():
             self._start_ssh_master()
 
+    def debug_shell(self):
+        """Run an interactive shell"""
+        cmd = [
+            "ssh",
+            "-p", str(self.ssh_port),
+            "-o", "StrictHostKeyChecking=no",
+            "-o", "UserKnownHostsFile=/dev/null",
+            "-i", self._calc_identity(),
+            "-l", self.vm_username,
+            self.address
+        ]
+        subprocess.call(cmd)
+
     def execute(self, command=None, script=None, input=None, environment={}, stdout=None, quiet=False, direct=False):
         """Execute a shell command in the test machine and return its output.
 
@@ -317,9 +348,14 @@ class Machine:
 
         if command:
             assert not environment, "Not yet supported"
-            cmd += [command]
-            if not quiet:
-                self.message("+", command)
+            if isinstance(command, basestring):
+                cmd += [command]
+                if not quiet:
+                    self.message("+", command)
+            else:
+                cmd += command
+                if not quiet:
+                    self.message("+", *command)
         else:
             assert not input, "input not supported to script"
             cmd += ["sh", "-s"]
@@ -432,7 +468,6 @@ class Machine:
 
         self.message("Downloading", source)
         self.message(" ".join(cmd))
-        subprocess.check_call([ "rm", "-rf", dest ])
         subprocess.check_call(cmd)
 
     def download_dir(self, source, dest):
@@ -460,7 +495,6 @@ class Machine:
         self.message("Downloading", source)
         self.message(" ".join(cmd))
         try:
-            subprocess.check_call([ "rm", "-rf", dest ])
             subprocess.check_call(cmd)
             subprocess.check_call([ "find", dest, "-type", "f", "-exec", "chmod", "0644", "{}", ";" ])
         except:
@@ -528,7 +562,7 @@ class Machine:
         return messages
 
     def get_admin_group(self):
-        if "debian" in self.image:
+        if "debian" in self.image or "ubuntu" in self.image:
             return "sudo"
         else:
             return "wheel"
@@ -539,6 +573,7 @@ class Machine:
         Cockpit is not running when the test virtual machine starts up, to
         allow you to make modifications before it starts.
         """
+
         if "atomic" in self.image:
             # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1228776
             # we want to run:
@@ -552,8 +587,9 @@ class Machine:
                 cmd += "/usr/bin/docker run -d --privileged --pid=host -v /:/host cockpit/ws /container/atomic-run --local-ssh\n"
             else:
                 cmd += "/usr/bin/docker run -d --privileged --pid=host -v /:/host cockpit/ws /container/atomic-run --local-ssh --no-tls\n"
-            with Timeout(seconds=30, error_message="Timeout while waiting for cockpit/ws to start"):
+            with Timeout(seconds=90, error_message="Timeout while waiting for cockpit/ws to start"):
                 self.execute(script=cmd)
+            if atomic_wait_for_host:
                 self.wait_for_cockpit_running(atomic_wait_for_host)
         elif tls:
             self.execute(script="""#!/bin/sh
@@ -575,17 +611,17 @@ class Machine:
         """Restart Cockpit.
         """
         if "atomic" in self.image:
-            with Timeout(seconds=30, error_message="Timeout while waiting for cockpit/ws to restart"):
+            with Timeout(seconds=90, error_message="Timeout while waiting for cockpit/ws to restart"):
                 self.execute("docker restart `docker ps | grep cockpit/ws | awk '{print $1;}'`")
-                self.wait_for_cockpit_running()
+            self.wait_for_cockpit_running()
         else:
-            self.execute("systemctl restart cockpit.socket")
+            self.execute("systemctl restart cockpit")
 
     def stop_cockpit(self):
         """Stop Cockpit.
         """
         if "atomic" in self.image:
-            with Timeout(seconds=30, error_message="Timeout while waiting for cockpit/ws to stop"):
+            with Timeout(seconds=60, error_message="Timeout while waiting for cockpit/ws to stop"):
                 self.execute("docker kill `docker ps | grep cockpit/ws | awk '{print $1;}'`")
         else:
             self.execute("systemctl stop cockpit.socket")
@@ -1040,6 +1076,9 @@ class VirtMachine(Machine):
             self._cleanup()
 
     def start(self, maintain=False, macaddr=None, memory_mb=None, cpus=None, wait_for_ip=True):
+        if self.fetch:
+            vmimages.download_images([self.image], False, [])
+
         tries = 0
         while True:
             try:
@@ -1113,11 +1152,12 @@ class VirtMachine(Machine):
     def reset_reboot_flag(self):
         self.event_handler.reset_domain_reboot_status(self._domain)
 
-    def wait_reboot(self):
+    def wait_reboot(self, wait_for_running_timeout=120):
+        self.disconnect()
         if not self.event_handler.wait_for_reboot(self._domain):
             raise Failure("system didn't notify us about a reboot")
         # we may have to check for a new dhcp lease, but the old one can be active for a bit
-        if not self.wait_execute(timeout_sec=60, get_new_address=lambda: self._ip_from_mac(self.macaddr, timeout_sec=5)):
+        if not self.wait_execute(timeout_sec=wait_for_running_timeout, get_new_address=lambda: self._ip_from_mac(self.macaddr, timeout_sec=5)):
             raise Failure("system didn't reboot properly")
         self.wait_user_login()
 
@@ -1125,6 +1165,9 @@ class VirtMachine(Machine):
         # we should check for selinux relabeling in progress here
         if not self.event_handler.wait_for_running(self._domain, timeout_sec=wait_for_running_timeout ):
             raise Failure("Machine %s didn't start." % (self.address))
+
+        if not self.address:
+            self.address = self._ip_from_mac(self.macaddr)
 
         # if we allow a reboot, the connection to test for a finished boot may be interrupted
         # by the reboot, causing an exception
@@ -1335,18 +1378,11 @@ class VirtMachine(Machine):
         if "atomic" in self.image:
             self.execute(command="mount -o remount,rw /usr")
 
-    def wait_for_cockpit_running(self, atomic_wait_for_host="localhost", port=9090):
-        """Wait until cockpit is running.
-
-        We only need to do this on atomic systems.
-        On other systems, systemctl blocks until the service is actually running.
-        """
-        if not "atomic" in self.image or not atomic_wait_for_host:
-            return
+    def wait_for_cockpit_running(self, address="localhost", port=9090, seconds=30):
         WAIT_COCKPIT_RUNNING = """#!/bin/sh
-until curl -s --connect-timeout 1 http://%s:%s >/dev/null; do
+until curl -s --connect-timeout 2 --max-time 3 http://%s:%s >/dev/null; do
     sleep 0.5;
 done;
-""" % (atomic_wait_for_host, port)
-        with Timeout(seconds=30, error_message="Timeout while waiting for cockpit/ws to start"):
+""" % (address, port)
+        with Timeout(seconds=seconds, error_message="Timeout while waiting for cockpit to start"):
             self.execute(script=WAIT_COCKPIT_RUNNING)

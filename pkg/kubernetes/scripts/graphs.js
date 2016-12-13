@@ -17,10 +17,15 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* globals d3 */
-
 (function() {
     "use strict";
+
+    var angular = require('angular');
+    var d3 = require('d3');
+
+    require('./kube-client');
+    require('./kube-client-cockpit');
+    require('./utils');
 
     angular.module('kubernetes.graph', [
         'kubeClient',
@@ -41,8 +46,8 @@
                 /* called when containers changed */
                 var callbacks = [];
 
-                /* cAdvisor has second intervals */
-                var interval = 1000;
+                /* cAdvisor has 10 second intervals */
+                var interval = 10000;
 
                 var last = { };
 
@@ -271,8 +276,8 @@
         "kubeSelect",
         "kubeLoader",
         function ServiceGrid(CAdvisorSeries, CockpitMetrics, select, loader) {
-            function CockpitServiceGrid() {
-                var self = CockpitMetrics.grid(1000, 0, 0);
+            function CockpitServiceGrid(until) {
+                var self = CockpitMetrics.grid(10000, 0, 0);
 
                 /* All the cadvisors that have been opened, one per host */
                 var cadvisors = { };
@@ -299,7 +304,7 @@
                 var container_tx = { };
 
                 /* Track Pods and Services */
-                var c = loader.listen(function() {
+                loader.listen(function() {
                     var changed = false;
                     var seen_services = {};
                     var seen_hosts = {};
@@ -371,10 +376,10 @@
                     /* Notify for all rows */
                     if (changed)
                         self.sync();
-                });
+                }, until);
 
-                loader.watch("Pod");
-                loader.watch("Service");
+                loader.watch("Pod", until);
+                loader.watch("Service", until);
 
                 function add_container(cadvisor, id) {
                     var cpu = self.add(cadvisor, [ id, "cpu", "usage", "total" ]);
@@ -555,7 +560,6 @@
                             cadvisor = null;
                         }
                     }
-                    c.cancel();
                     base_close.apply(self);
                 };
 
@@ -570,8 +574,8 @@
             }
 
             return {
-                new_grid: function () {
-                    return new CockpitServiceGrid();
+                new_grid: function (until) {
+                    return new CockpitServiceGrid(until);
                 }
             };
         }
@@ -584,8 +588,8 @@
         function kubernetesServiceGraph(ServiceGrid, KubeTranslate, KubeFormat) {
             var _ = KubeTranslate.gettext;
 
-            function service_graph(selector, highlighter) {
-                var grid = ServiceGrid.new_grid();
+            function service_graph($scope, selector, highlighter) {
+                var grid = ServiceGrid.new_grid($scope);
                 var outer = d3.select(selector);
 
                 var highlighted = null;
@@ -595,8 +599,8 @@
                 var tabs = {
                     cpu: {
                         label: _("CPU"),
-                        step: 1000 * 1000 * 1000,
-                        formatter: function(v) { return (v / (10 * 1000 * 1000)) + "%"; }
+                        step: 1000 * 1000 * 1000 * 10,
+                        formatter: function(v) { return (v / (100 * 1000 * 1000)) + "%"; }
                     },
                     memory: {
                         label: _("Memory"),
@@ -605,8 +609,8 @@
                     },
                     network: {
                         label: _("Network"),
-                        step: 1000 * 1000,
-                        formatter: function(v) { return KubeFormat.formatBitsPerSec(v, "Mbps"); }
+                        step: 1000 * 1000 * 10,
+                        formatter: function(v) { return KubeFormat.formatBitsPerSec((v / 10), "Mbps"); }
                     }
                 };
 
@@ -669,7 +673,7 @@
                     .x(function(d, i) { return x((grid.beg + i) - offset); })
                     .y(function(d, i) { return y(d); });
 
-                /* Initial display: 1024 px is 5 minutes of data */
+                /* Initial display: 1024 px, 5 minutes of data */
                 var factor = 300000 / 1024;
                 var width = 300;
                 var height = 300;
@@ -692,7 +696,6 @@
                 function jump() {
                     var interval = grid.interval;
                     var w = (width - margins.right) - margins.left;
-
                     /* This doesn't yet work for an arbitary ponit in time */
                     var now = new Date().getTime();
                     var end = Math.floor(now / interval);
@@ -737,7 +740,7 @@
 
                     /* Calculate ticks every 60 seconds in past */
                     var ticks = [];
-                    for (i = 60; i < end; i += 60)
+                    for (i = 6; i < end; i += 6)
                         ticks.push(Math.round(tsc(i)));
 
                     /* Make x-axis ticks into grid of right width */
@@ -746,7 +749,7 @@
                         .tickSize(-h, -h)
                         .tickFormat(function(d) {
                             d = Math.round(tsc.invert(d));
-                            return (d / 60) + " min";
+                            return (d / 6) + " min";
                         });
 
                     /* Re-render the X axis. Note that we also
@@ -811,7 +814,12 @@
                 window.addEventListener('resize', resized);
                 resized();
 
-                var timer = window.setInterval(jump, grid.interval);
+                var timer = window.setInterval(function () {
+                    if (!width)
+                        resized();
+                    else
+                        jump();
+                }, grid.interval);
 
                 return {
                     highlight: function highlight(uid) {
@@ -830,7 +838,7 @@
             return {
                 restrict: 'E',
                 link: function($scope, element, attributes) {
-                    var graph = service_graph(element[0], function(uid) {
+                    var graph = service_graph($scope, element[0], function(uid) {
                         $scope.$broadcast('highlight', uid);
                         $scope.$digest();
                     });

@@ -25,45 +25,58 @@ import os
 import subprocess
 import unittest
 
-def prepare_resolv(machine, address):
-    machine.execute("hostnamectl set-hostname x0.cockpit.lan")
-    # on Debian, /etc/resolv.conf can be a symbolic link
-    # so instead of overwriting, delete it and write a new one
-    machine.execute("echo -e 'domain cockpit.lan\nsearch cockpit.lan\nnameserver %s\n' >/etc/resolv2.conf; mv /etc/resolv2.conf /etc/resolv.conf; chattr +i /etc/resolv.conf" % address)
+RESOLV_SCRIPT = """
+set -e
+# HACK: Racing with operating systems reading/updating resolv.conf and
+# the fact that resolv.conf can be a symbolic link. Avoid failures like:
+# chattr: Operation not supported while reading flags on /etc/resolv.conf
+for x in 1 2 3 4 5; do
+    hostnamectl set-hostname x0.cockpit.lan
+    printf 'domain cockpit.lan\nsearch cockpit.lan\nnameserver {address}\n' >/etc/resolv2.conf
+    mv /etc/resolv2.conf /etc/resolv.conf
+    if chattr +i /etc/resolv.conf; then
+        break
+    else
+        sleep $x
+    fi
+done
+"""
 
-@unittest.skipIf("atomic" in os.environ.get("TEST_OS", ""), "atomic: missing bind-utils")
+def prepare_resolv(machine, address):
+    machine.execute(script=RESOLV_SCRIPT.format(address=address))
+
+@skipImage("No realmd available", "continuous-atomic", "fedora-atomic", "rhel-atomic")
+@skipImage("No freeipa available", "debian-8")
 class TestRealms(MachineCase):
+    additional_machines = {
+        'ipa': { 'machine': { 'image': 'ipa' } }
+    }
 
     def testIpa(self):
         m = self.machine
         b = self.browser
 
-        # Start the FreeIPA instance and use it as the DNS server
-        #
-        ipa = self.new_machine(image="ipa")
-        ipa.start()
-        ipa.wait_boot()
+        self.login_and_go("/system")
 
-        prepare_resolv(m, ipa.address)
+        # Use the FreeIPA instance as the DNS server
+        prepare_resolv(m, self.machines['ipa'].address)
 
         # Wait for DNS to work as expected.
         # https://bugzilla.redhat.com/show_bug.cgi?id=1071356#c11
         #
         wait(lambda: m.execute("nslookup -type=SRV _ldap._tcp.cockpit.lan"))
 
-        self.login_and_go("/system")
-
         def wait_number_domains(n):
             if n == 0:
-                b.wait_text("#system_information_realms_button", "Join Domain")
+                b.wait_text("#system-info-domain a", "Join Domain")
             else:
-                b.wait_text_not("#system_information_realms_button", "Join Domain")
-            b.wait_not_attr("#system_information_realms_button", "disabled", "disabled")
+                b.wait_text_not("#system-info-domain a", "Join Domain")
+            b.wait_not_attr("#system-info-domain a", "disabled", "disabled")
 
         wait_number_domains(0)
 
         # Join cockpit.lan
-        b.click("#system_information_realms_button")
+        b.click("#system-info-domain a")
         b.wait_popup("realms-op")
         with b.wait_timeout(180):
             b.set_val(".realms-op-address", "cockpit.lan")
@@ -77,14 +90,14 @@ class TestRealms(MachineCase):
             wait_number_domains(1)
 
         # Leave the domain
-        b.click("#system_information_realms_button")
+        b.click("#system-info-domain a")
         b.wait_popup("realms-op")
         b.click(".realms-op-apply")
         b.wait_popdown("realms-op")
         wait_number_domains(0)
 
         # Send a wrong password
-        b.click("#system_information_realms_button")
+        b.click("#system-info-domain a")
         b.wait_popup("realms-op")
         b.set_val(".realms-op-address", "cockpit.lan")
         b.wait_attr(".realms-op-admin", "placeholder", 'e.g. "admin"')
@@ -96,7 +109,7 @@ class TestRealms(MachineCase):
         b.wait_popdown("realms-op")
 
         # Try to join a non-existing domain
-        b.click("#system_information_realms_button")
+        b.click("#system-info-domain a")
         b.wait_popup("realms-op")
         b.set_val(".realms-op-address", "NOPE")
         b.wait_js_cond("$('.realms-op-address-error').attr('title') != ''")
@@ -104,7 +117,7 @@ class TestRealms(MachineCase):
         b.wait_popdown("realms-op")
 
         # Cancel a join
-        b.click("#system_information_realms_button")
+        b.click("#system-info-domain a")
         b.wait_popup("realms-op")
         b.set_val(".realms-op-address", "cockpit.lan")
         b.wait_attr(".realms-op-admin", "placeholder", 'e.g. "admin"')
@@ -115,8 +128,10 @@ class TestRealms(MachineCase):
         b.click(".realms-op-cancel")
         b.wait_popdown("realms-op")
 
-        # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1256636
-        self.allow_journal_messages(".*type=1400 audit.*denied.*nsupdate.*nsswitch.conf.*realmd_var_lib_t.*")
+        # HACK sssd regression
+        # https://github.com/cockpit-project/cockpit/issues/5142
+        # https://bugzilla.redhat.com/show_bug.cgi?id=1380953
+        self.allow_journal_messages('.*denied.*{ getattr } for.*comm="sssd" name="/".*')
 
     def testNotSupported(self):
         m = self.machine
@@ -125,28 +140,23 @@ class TestRealms(MachineCase):
         # Disable sssd support in realmd
 
         realmd_distro_conf = "/usr/lib/realmd/realmd-distro.conf"
-        if "rhel" in m.image:
+        if "rhel" in m.image or "centos" in m.image:
             realmd_distro_conf = "/usr/lib64/realmd/realmd-distro.conf"
 
         m.execute("echo -e '[providers]\nsssd = no\n' >>%s" % realmd_distro_conf)
 
-        # Start the FreeIPA instance and use it as the DNS server
-        #
-        ipa = self.new_machine(image="ipa")
-        ipa.start()
-        ipa.wait_boot()
+        self.login_and_go("/system")
 
-        prepare_resolv(m, ipa.address)
+        # Use the FreeIPA instance as the DNS server
+        prepare_resolv(m, self.machines['ipa'].address)
 
         # Wait for DNS to work as expected.
         # https://bugzilla.redhat.com/show_bug.cgi?id=1071356#c11
         #
         wait(lambda: m.execute("nslookup -type=SRV _ldap._tcp.cockpit.lan"))
 
-        self.login_and_go("/system")
-
         # Join cockpit.lan
-        b.click("#system_information_realms_button")
+        b.click("#system-info-domain a")
         b.wait_popup("realms-op")
         b.set_val(".realms-op-address", "cockpit.lan")
         b.wait_js_cond("$('.realms-op-address-error').attr('title') != ''")
@@ -154,22 +164,6 @@ class TestRealms(MachineCase):
         b.set_val(".realms-op-admin-password", "foobarfoo")
         b.click(".realms-op-apply")
         b.wait_text(".realms-op-error", "Joining this domain is not supported")
-
-KRB5_TEMPLATE = """
-[logging]
- default = FILE:%(dir)s/krb5.log
-[libdefaults]
- dns_lookup_realm = false
- default_realm = COCKPIT.LAN
- rdns = false
-[realms]
- COCKPIT.LAN = {
-   kdc = %(addr)s
-   master_kdc = %(addr)s
- }
-[domain_realm]
- %(addr)s = COCKPIT.LAN
-"""
 
 JOIN_SCRIPT = """
 set -e
@@ -192,35 +186,18 @@ ipa-getkeytab -q -s f0.cockpit.lan -p HTTP/x0.cockpit.lan -k /etc/krb5.keytab
 """
 
 # This is here because our test framework can't run ipa VM's twice
-@unittest.skipIf("atomic" in os.environ.get("TEST_OS", ""), "atomic: missing bind-utils")
+@skipImage("No realmd available", "continuous-atomic", "fedora-atomic", "rhel-atomic")
+@skipImage("No freeipa available", "debian-8")
 class TestKerberos(MachineCase):
-    def setUp(self):
-        self.ipa = self.new_machine(image="ipa")
-        self.ipa.start()
-        self.ipa.wait_boot()
-
-        MachineCase.setUp(self)
+    additional_machines = {
+        'ipa': { 'machine': { 'image': 'ipa' } }
+    }
 
     def configure_kerberos(self):
         # Setup a place for kerberos caches
-        ccache = "%s/krb5cc" % self.tmpdir
-        os.environ['KRB5CCNAME'] = ccache
-        config = "%s/krb5.conf" % self.tmpdir
-
-        args = { "addr": self.ipa.address, "dir": self.tmpdir, "password": "foobarfoo" }
-
-        # Setup a kerberos config that doesn't require DNS
-        os.environ['KRB5_CONFIG'] = config
-        with open(config, "w") as f:
-            data = KRB5_TEMPLATE % args
-            f.write(data)
-
-        prepare_resolv(self.machine, self.ipa.address)
+        args = { "addr": self.machines['ipa'].address, "password": "foobarfoo" }
+        prepare_resolv(self.machine, self.machines['ipa'].address)
         self.machine.execute(script=JOIN_SCRIPT % args)
-        env = os.environ.copy()
-        proc = subprocess.Popen(["kinit", "admin@COCKPIT.LAN"], env=env, stdin=subprocess.PIPE)
-        proc.communicate(args['password'])
-        self.assertEqual(proc.wait(), 0)
 
     def tearDown(self):
         if 'KRB5CCNAME' in os.environ:
@@ -235,18 +212,18 @@ class TestKerberos(MachineCase):
         # Make sure negotiate auth is not offered first
         self.machine.start_cockpit()
 
-        output = subprocess.check_output(['/usr/bin/curl', '-v', '-s',
-                                          '--resolve', 'x0.cockpit.lan:9090:%s' % self.machine.address,
-                                          'http://x0.cockpit.lan:9090/cockpit/login'], stderr=subprocess.STDOUT)
+        output = self.machine.execute(['/usr/bin/curl -v -s',
+                                       '--resolve', 'x0.cockpit.lan:9090:%s' % self.machine.address,
+                                       'http://x0.cockpit.lan:9090/cockpit/login', '2>&1'])
         self.assertIn("HTTP/1.1 401", output)
         self.assertNotIn("WWW-Authenticate: Negotiate", output)
 
         self.configure_kerberos()
         self.machine.restart_cockpit()
 
-        output = subprocess.check_output(['/usr/bin/curl', '-s', '--negotiate', '-u', ':', "-D", "-",
-                                          '--resolve', 'x0.cockpit.lan:9090:%s' % self.machine.address,
-                                          'http://x0.cockpit.lan:9090/cockpit/login'])
+        output = self.machine.execute(['/usr/bin/curl', '-s', '--negotiate', '-u', ':', "-D", "-",
+                                       '--resolve', 'x0.cockpit.lan:9090:%s' % self.machine.address,
+                                       'http://x0.cockpit.lan:9090/cockpit/login'])
         self.assertIn("HTTP/1.1 200 OK", output)
         self.assertIn('"admin@cockpit.lan"', output)
 

@@ -1,0 +1,50 @@
+# Generated Makefile data for realmd
+# Stamp: Thu Nov 24 2016 16:15:59 GMT+0000 (UTC)
+
+realmd_INPUTS = \
+	$(srcdir)/pkg/lib/patterns.js \
+	$(srcdir)/pkg/realmd/manifest.json \
+	$(srcdir)/pkg/realmd/operation.html \
+	$(srcdir)/pkg/realmd/operation.js \
+	$(NULL)
+
+realmd_OUTPUTS = \
+	dist/realmd/domain.min.js \
+	dist/realmd/domain.min.js.map \
+	dist/realmd/manifest.json \
+	$(NULL)
+
+realmd_INSTALL = \
+	dist/realmd/domain.min.js.gz \
+	dist/realmd/manifest.json \
+	$(NULL)
+
+realmd_DEBUG = \
+	dist/realmd/domain.min.js.map \
+	$(NULL)
+
+realmd_TESTS = \
+	$(NULL)
+
+dist/Makefile-realmd.deps: $(WEBPACK_CONFIG) $(realmd_INPUTS)
+	$(WEBPACK_RULE) -d dist/Makefile-realmd.deps $(WEBPACK_CONFIG)
+
+dist/realmd/domain.min.js: dist/Makefile-realmd.deps
+
+dist/realmd/domain.min.js.map: dist/Makefile-realmd.deps
+
+dist/realmd/manifest.json: dist/Makefile-realmd.deps
+
+$(srcdir)/pkg/lib/patterns.js:
+
+$(srcdir)/pkg/realmd/manifest.json:
+
+$(srcdir)/pkg/realmd/operation.html:
+
+$(srcdir)/pkg/realmd/operation.js:
+
+WEBPACK_INPUTS += $(realmd_INPUTS)
+WEBPACK_OUTPUTS += $(realmd_OUTPUTS)
+WEBPACK_INSTALL += $(realmd_INSTALL)
+WEBPACK_DEBUG += $(realmd_DEBUG)
+TESTS += $(realmd_TESTS)

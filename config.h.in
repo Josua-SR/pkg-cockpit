@@ -69,6 +69,9 @@
 /* Define to 1 if you have the <unistd.h> header file. */
 #undef HAVE_UNISTD_H
 
+/* Maximum size of packet messages */
+#undef MAX_PACKET_SIZE
+
 /* Name of package */
 #undef PACKAGE
 

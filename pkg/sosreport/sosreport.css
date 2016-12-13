@@ -1,6 +1,21 @@
+@import "/page.css";
+@import "/table.css";
+
 #sos-error-extra {
     width:      100%;
     max-width:  100%;
     min-width:  100%;
     min-height: 200px;
+}
+
+.page-ct {
+    text-align: center;
+}
+
+center > div:first-child {
+    margin-bottom: 5px;
+}
+
+#sos-progress .progress-bar {
+    width: 0%;
 }

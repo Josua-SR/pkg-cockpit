@@ -25,6 +25,7 @@ import shutil
 import sys
 import subprocess
 import glob
+import re
 
 # we use symlinked files
 # the directory structure breaks on the second run with .pyc files
@@ -67,11 +68,12 @@ def tap_output(machine):
     counter = 1
     for t in json_info['tests']:
         test_status = t['status']
-        test_name = t['test']
+        name_search = re.search("([^/]+):(.*)$", t['test'])
+        test_name = "%s (%s)" % (name_search.group(1), name_search.group(2))
         test_log = t['logfile']
-        test_time = t['time']
+        test_time_string = "duration: %ds" % t['time']
         print "# ----------------------------------------------------------------------"
-        print "# %s (time %d secs)" % (test_name, test_time)
+        print "# %s %s" % (test_name, test_time_string)
         print "#"
         try:
             print machine.execute(command="cat " + test_log, quiet=True)
@@ -80,14 +82,14 @@ def tap_output(machine):
             print e
         print "# TEST LOG END -------"
         if test_status == 'PASS':
-            print "ok %s %s (time %d secs)" % (counter, test_name, test_time)
+            print "ok %s %s %s" % (counter, test_name, test_time_string)
         else:
-            print "not ok %s %s (time %d secs)" % (counter, test_name, test_time)
+            print "not ok %s %s %s" % (counter, test_name, test_time_string)
         counter = counter + 1
     if len(json_info['tests']) != json_info['pass']:
-        print "# %d TESTS FAILED (time: %d secs)" % (len(json_info['tests']) - json_info['pass'], json_info['time'])
+        print "# %d TESTS FAILED duration: %ds" % (len(json_info['tests']) - json_info['pass'], json_info['time'])
     else:
-        print "# TESTS PASSED (time: %d secs)" %  json_info['time']
+        print "# TESTS PASSED duration: %ds" %  json_info['time']
 
 def run_avocado_tests(machine, avocado_tests, print_failed=True, env=[]):
     """ Execute avocado on the machine with the passed environment variables and run
@@ -134,21 +136,25 @@ def run_avocado_tests(machine, avocado_tests, print_failed=True, env=[]):
 
 def copy_avocado_logs(machine, title):
     if machine and machine.address:
-        dir = "%s-%s.avocado" % (machine.address, title)
         # check if the remote directory exists (if it doesn't, we want to quit silently)
         test_command = "if test -d '{0}'; then echo exists; fi".format(avocado_results_dir)
         if "exists" not in machine.execute(command=test_command,quiet=True):
             return
-        machine.download_dir(avocado_results_dir, dir)
-        if os.path.exists(dir):
-            # avocado creates a "latest" symlink, we can delete that here
-            shutil.rmtree(path=os.path.join(dir, "latest"), ignore_errors=True)
-            print "Avocado results copied to %s" % (dir)
-            for screenshot in glob.glob(os.path.join(dir,'*.png')):
-                shutil.move(screenshot, arg_attachments_dir)
-            # compress the logs and attach that
-            archive = os.path.join(arg_attachments_dir, "{0}.tar.gz".format(dir))
-            subprocess.call(["tar", "cfz", archive, dir])
+
+        # get the screenshots first and move them on the guest so they won't get archived
+        remote_screenshots = os.path.join(avocado_results_dir, "*.png")
+        remote_archive_dir = os.path.split(avocado_results_dir)[0]
+        test_command_screenshots = """for f in "{0}/"*.png; do [ -e  "$f" ] && echo "exists"; break; done""".format(avocado_results_dir)
+        if "exists" in machine.execute(command=test_command_screenshots,quiet=True):
+            machine.download(remote_screenshots, arg_attachments_dir)
+
+        # create a compressed archive on the remote host
+        remote_archive = os.path.join(remote_archive_dir, "avocado_logs.tar.gz")
+        machine.execute("cd {0} && tar cfz {1} {2} --exclude='*.png'".format(remote_archive_dir, remote_archive, os.path.split(avocado_results_dir)[1]))
+
+        # download and attach to our test
+        local_archive = os.path.join(arg_attachments_dir, "{0}-{1}.avocado.tar.gz".format(machine.address, title))
+        machine.download(remote_archive, local_archive)
 
 def wait_for_selenium_running(machine, host, port=4444):
     WAIT_SELENIUM_RUNNING = """#!/bin/sh
@@ -166,18 +172,19 @@ def run_avocado(avocado_tests, verbose, browser, download_logs):
     selenium = testvm.VirtMachine(image="selenium", label="selenium", verbose=verbose) if use_selenium else None
 
     try:
-        machine.start()
+        # just start the machine without waiting for it to boot, get the ip address later
+        machine.start(wait_for_ip=False)
         if selenium:
+            # actually wait here, because starting selenium takes a while
             selenium.start()
-
-        machine.wait_boot()
-        machine.start_cockpit()
-        if selenium:
             selenium.wait_boot()
 
             # start selenium on the server
             selenium.upload([ "avocado/selenium_start.sh"], "/root")
             selenium.execute(command="/root/selenium_start.sh")
+
+        machine.wait_boot()
+        machine.start_cockpit()
 
         machine.execute("adduser test")
         machine.execute("echo superhardpasswordtest5554 | passwd --stdin test")

@@ -1,0 +1,92 @@
+# Generated Makefile data for networkmanager
+# Stamp: Thu Nov 24 2016 16:15:59 GMT+0000 (UTC)
+
+networkmanager_INPUTS = \
+	$(srcdir)/pkg/lib/journal.css \
+	$(srcdir)/pkg/lib/journal.js \
+	$(srcdir)/pkg/lib/journal_day_header.mustache \
+	$(srcdir)/pkg/lib/journal_line.mustache \
+	$(srcdir)/pkg/lib/journal_reboot.mustache \
+	$(srcdir)/pkg/lib/page.css \
+	$(srcdir)/pkg/lib/patterns.js \
+	$(srcdir)/pkg/lib/plot.css \
+	$(srcdir)/pkg/lib/plot.js \
+	$(srcdir)/pkg/lib/table.css \
+	$(srcdir)/pkg/networkmanager/index.html \
+	$(srcdir)/pkg/networkmanager/interfaces.js \
+	$(srcdir)/pkg/networkmanager/manifest.json \
+	$(srcdir)/pkg/networkmanager/networking.css \
+	$(NULL)
+
+networkmanager_OUTPUTS = \
+	dist/networkmanager/index.html \
+	dist/networkmanager/manifest.json \
+	dist/networkmanager/network.css \
+	dist/networkmanager/network.css.map \
+	dist/networkmanager/network.min.js \
+	dist/networkmanager/network.min.js.map \
+	$(NULL)
+
+networkmanager_INSTALL = \
+	dist/networkmanager/index.html.gz \
+	dist/networkmanager/manifest.json \
+	dist/networkmanager/network.css.gz \
+	dist/networkmanager/network.min.js.gz \
+	$(NULL)
+
+networkmanager_DEBUG = \
+	dist/networkmanager/network.css.map \
+	dist/networkmanager/network.min.js.map \
+	$(NULL)
+
+networkmanager_TESTS = \
+	$(NULL)
+
+dist/Makefile-networkmanager.deps: $(WEBPACK_CONFIG) $(networkmanager_INPUTS)
+	$(WEBPACK_RULE) -d dist/Makefile-networkmanager.deps $(WEBPACK_CONFIG)
+
+dist/networkmanager/index.html: dist/Makefile-networkmanager.deps
+
+dist/networkmanager/manifest.json: dist/Makefile-networkmanager.deps
+
+dist/networkmanager/network.css: dist/Makefile-networkmanager.deps
+
+dist/networkmanager/network.css.map: dist/Makefile-networkmanager.deps
+
+dist/networkmanager/network.min.js: dist/Makefile-networkmanager.deps
+
+dist/networkmanager/network.min.js.map: dist/Makefile-networkmanager.deps
+
+$(srcdir)/pkg/lib/journal.css:
+
+$(srcdir)/pkg/lib/journal.js:
+
+$(srcdir)/pkg/lib/journal_day_header.mustache:
+
+$(srcdir)/pkg/lib/journal_line.mustache:
+
+$(srcdir)/pkg/lib/journal_reboot.mustache:
+
+$(srcdir)/pkg/lib/page.css:
+
+$(srcdir)/pkg/lib/patterns.js:
+
+$(srcdir)/pkg/lib/plot.css:
+
+$(srcdir)/pkg/lib/plot.js:
+
+$(srcdir)/pkg/lib/table.css:
+
+$(srcdir)/pkg/networkmanager/index.html:
+
+$(srcdir)/pkg/networkmanager/interfaces.js:
+
+$(srcdir)/pkg/networkmanager/manifest.json:
+
+$(srcdir)/pkg/networkmanager/networking.css:
+
+WEBPACK_INPUTS += $(networkmanager_INPUTS)
+WEBPACK_OUTPUTS += $(networkmanager_OUTPUTS)
+WEBPACK_INSTALL += $(networkmanager_INSTALL)
+WEBPACK_DEBUG += $(networkmanager_DEBUG)
+TESTS += $(networkmanager_TESTS)

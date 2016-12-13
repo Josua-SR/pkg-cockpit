@@ -1,0 +1,113 @@
+# Generated Makefile data for machines
+# Stamp: Thu Nov 24 2016 16:15:59 GMT+0000 (UTC)
+
+machines_INPUTS = \
+	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
+	$(srcdir)/pkg/lib/listing.css \
+	$(srcdir)/pkg/lib/page.css \
+	$(srcdir)/pkg/lib/table.css \
+	$(srcdir)/pkg/machines/actions.es6 \
+	$(srcdir)/pkg/machines/app.jsx \
+	$(srcdir)/pkg/machines/c3charts.jsx \
+	$(srcdir)/pkg/machines/config.es6 \
+	$(srcdir)/pkg/machines/helpers.es6 \
+	$(srcdir)/pkg/machines/hostvmslist.jsx \
+	$(srcdir)/pkg/machines/index.es6 \
+	$(srcdir)/pkg/machines/index.html \
+	$(srcdir)/pkg/machines/index.js \
+	$(srcdir)/pkg/machines/libvirt.es6 \
+	$(srcdir)/pkg/machines/machines.css \
+	$(srcdir)/pkg/machines/manifest.json \
+	$(srcdir)/pkg/machines/middlewares.es6 \
+	$(srcdir)/pkg/machines/reducers.es6 \
+	$(srcdir)/pkg/machines/selectors.es6 \
+	$(srcdir)/pkg/machines/services.es6 \
+	$(srcdir)/pkg/machines/store.es6 \
+	$(NULL)
+
+machines_OUTPUTS = \
+	dist/machines/index.html \
+	dist/machines/machines.css \
+	dist/machines/machines.css.map \
+	dist/machines/machines.min.js \
+	dist/machines/machines.min.js.map \
+	dist/machines/manifest.json \
+	$(NULL)
+
+machines_INSTALL = \
+	dist/machines/index.html.gz \
+	dist/machines/machines.css.gz \
+	dist/machines/machines.min.js.gz \
+	dist/machines/manifest.json \
+	$(NULL)
+
+machines_DEBUG = \
+	dist/machines/machines.css.map \
+	dist/machines/machines.min.js.map \
+	$(NULL)
+
+machines_TESTS = \
+	$(NULL)
+
+dist/Makefile-machines.deps: $(WEBPACK_CONFIG) $(machines_INPUTS)
+	$(WEBPACK_RULE) -d dist/Makefile-machines.deps $(WEBPACK_CONFIG)
+
+dist/machines/index.html: dist/Makefile-machines.deps
+
+dist/machines/machines.css: dist/Makefile-machines.deps
+
+dist/machines/machines.css.map: dist/Makefile-machines.deps
+
+dist/machines/machines.min.js: dist/Makefile-machines.deps
+
+dist/machines/machines.min.js.map: dist/Makefile-machines.deps
+
+dist/machines/manifest.json: dist/Makefile-machines.deps
+
+$(srcdir)/pkg/lib/cockpit-components-listing.jsx:
+
+$(srcdir)/pkg/lib/listing.css:
+
+$(srcdir)/pkg/lib/page.css:
+
+$(srcdir)/pkg/lib/table.css:
+
+$(srcdir)/pkg/machines/actions.es6:
+
+$(srcdir)/pkg/machines/app.jsx:
+
+$(srcdir)/pkg/machines/c3charts.jsx:
+
+$(srcdir)/pkg/machines/config.es6:
+
+$(srcdir)/pkg/machines/helpers.es6:
+
+$(srcdir)/pkg/machines/hostvmslist.jsx:
+
+$(srcdir)/pkg/machines/index.es6:
+
+$(srcdir)/pkg/machines/index.html:
+
+$(srcdir)/pkg/machines/index.js:
+
+$(srcdir)/pkg/machines/libvirt.es6:
+
+$(srcdir)/pkg/machines/machines.css:
+
+$(srcdir)/pkg/machines/manifest.json:
+
+$(srcdir)/pkg/machines/middlewares.es6:
+
+$(srcdir)/pkg/machines/reducers.es6:
+
+$(srcdir)/pkg/machines/selectors.es6:
+
+$(srcdir)/pkg/machines/services.es6:
+
+$(srcdir)/pkg/machines/store.es6:
+
+WEBPACK_INPUTS += $(machines_INPUTS)
+WEBPACK_OUTPUTS += $(machines_OUTPUTS)
+WEBPACK_INSTALL += $(machines_INSTALL)
+WEBPACK_DEBUG += $(machines_DEBUG)
+TESTS += $(machines_TESTS)

@@ -17,17 +17,15 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-require([
-    "jquery",
-    "base1/cockpit",
-    "base1/mustache",
-    "shell/controls",
-    "shell/shell",
-    "users/authorized-keys",
-    "base1/patterns",
-], function($, cockpit, Mustache, controls, shell, authorized_keys) {
-"use strict";
+var $ = require("jquery");
+var cockpit = require("cockpit");
 
+var Mustache = require("mustache");
+var authorized_keys = require("./authorized-keys");
+
+require("patterns");
+
+cockpit.translate();
 var _ = cockpit.gettext;
 var C_ = cockpit.gettext;
 
@@ -37,30 +35,27 @@ $(permission).on("changed", update_accounts_privileged);
 function update_accounts_privileged() {
     $(".accounts-self-privileged").addClass("accounts-privileged");
 
-    controls.update_privileged_ui(
-        permission,
-        ".accounts-privileged:not('.accounts-current-account')",
-        cockpit.format(
+    $(".accounts-privileged:not('.accounts-current-account')").update_privileged(
+        permission, cockpit.format(
             _("The user <b>$0</b> is not permitted to modify accounts"),
-            cockpit.user.name)
+            permission.user ? permission.user.name : ''),
+        "right"
     );
     $(".accounts-privileged").find("input")
         .attr('disabled', permission.allowed === false ||
                           $('#account-user-name').text() === 'root');
 
     // enable fields for current account.
-    controls.update_privileged_ui(
-        {allowed: true}, ".accounts-current-account", ""
+    $(".accounts-current-account").update_privileged(
+        {allowed: true}, ""
     );
     $(".accounts-current-account").find("input")
         .attr('disabled', false);
 
     if ($('#account-user-name').text() === 'root' && permission.allowed) {
-        controls.update_privileged_ui({allowed: false},
-                                      "#account-delete",
+        $("#account-delete").update_privileged({allowed: false},
                                       _("Unable to delete root account"));
-        controls.update_privileged_ui({allowed: false},
-                                      "#account-real-name-wrapper",
+        $("#account-real-name-wrapper").update_privileged({allowed: false},
                                       _("Unable to rename root account"));
     }
 }
@@ -244,7 +239,7 @@ function parse_group_content(content) {
 function password_quality(password) {
     var dfd = $.Deferred();
 
-    cockpit.spawn('/usr/bin/pwscore', { "environ": ["LC_ALL=C"] })
+    cockpit.spawn('/usr/bin/pwscore', { "err": "message" })
        .input(password)
        .done(function(content) {
            var quality = parseInt(content, 10);
@@ -260,8 +255,8 @@ function password_quality(password) {
                dfd.resolve("excellent");
            }
        })
-       .fail(function() {
-           dfd.reject(new Error(_("Password is not acceptable")));
+       .fail(function(ex) {
+           dfd.reject(new Error(ex.message || _("Password is not acceptable")));
        });
 
     return dfd.promise();
@@ -442,7 +437,7 @@ PageAccountsCreate.prototype = {
                 ex.target = "#accounts-create-user-name";
             });
 
-        return $.when(dfd, promise_password, promise_username);
+        return cockpit.all(dfd, promise_password, promise_username);
     },
 
     cancel: function() {
@@ -458,7 +453,7 @@ PageAccountsCreate.prototype = {
                     prog.push($('#accounts-create-real-name').val());
                 }
                 prog.push($('#accounts-create-user-name').val());
-                return cockpit.spawn(prog, { "superuser": "require" });
+                return cockpit.spawn(prog, { "superuser": "require", err: "message" });
             }
         ];
 
@@ -468,7 +463,7 @@ PageAccountsCreate.prototype = {
                     "/usr/sbin/usermod",
                     $('#accounts-create-user-name').val(),
                     "--lock"
-                ], { superuser: "require" });
+                ], { superuser: "require", err: "message" });
             });
         }
 
@@ -581,7 +576,7 @@ function PageAccountsCreate() {
 }
 
 PageAccount.prototype = {
-    _init: function() {
+    _init: function(user) {
         this.id = "account";
         this.section_id = "accounts";
         this.roles = [];
@@ -591,6 +586,8 @@ PageAccount.prototype = {
         this.keys_template = $("#authorized-keys-tmpl").html();
         Mustache.parse(this.keys_template);
         this.authorized_keys = null;
+
+        this.user = user;
     },
 
     getTitle: function() {
@@ -884,7 +881,7 @@ PageAccount.prototype = {
             // check accounts-self-privileged whether account is the same as currently logged in user
             $(".accounts-self-privileged").
                 toggleClass("accounts-current-account",
-                            cockpit.user.id == this.account["uid"]);
+                            this.user.id == this.account["uid"]);
 
         } else {
             $('#account').hide();
@@ -907,11 +904,11 @@ PageAccount.prototype = {
 
         if ($(ev.target).prop('checked')) {
             cockpit.spawn(["/usr/sbin/usermod", this.account["name"],
-                           "-G", id, "-a"], { "superuser": "require" })
+                           "-G", id, "-a"], { "superuser": "require", err: "message" })
                .fail(show_unexpected_error);
         } else {
             cockpit.spawn(["/usr/bin/gpasswd", "-d", this.account["name"],
-                           name], { "superuser": "require" })
+                           name], { "superuser": "require", err: "message" })
                    .fail(show_unexpected_error);
         }
     },
@@ -921,7 +918,7 @@ PageAccount.prototype = {
     },
 
     check_role_for_self_mod: function () {
-        return (this.account["name"] == cockpit.user["user"] ||
+        return (this.account["name"] == this.user.name ||
                 permission.allowed !== false);
     },
 
@@ -940,7 +937,7 @@ PageAccount.prototype = {
         var value = name.val();
 
         cockpit.spawn(["/usr/sbin/usermod", self.account["name"], "--comment", value],
-                      { "superuser": "try"})
+                      { "superuser": "try", err: "message"})
            .done(function(data) {
                self.account["gecos"] = value;
                self.update();
@@ -955,7 +952,7 @@ PageAccount.prototype = {
         var self = this;
         cockpit.spawn(["/usr/sbin/usermod",
                        this.account["name"],
-                       desired_lock_state ? "--lock" : "--unlock"], { "superuser": "require"})
+                       desired_lock_state ? "--lock" : "--unlock"], { "superuser": "require", err: "message"})
             .done(function() {
                 self.get_locked(false)
                     .done(function(locked) {
@@ -991,15 +988,16 @@ PageAccount.prototype = {
     },
 
     logout_account: function() {
-        cockpit.spawn(["/usr/bin/loginctl", "kill-user", this.account["name"]], { "superuser": "try"})
+        cockpit.spawn(["/usr/bin/loginctl", "terminate-user", this.account["name"]],
+                      { "superuser": "try", err: "message"})
            .done($.proxy (this, "get_logged"))
            .fail(show_unexpected_error);
 
     },
 };
 
-function PageAccount() {
-    this._init();
+function PageAccount(user) {
+    this._init(user);
 }
 
 var crop_handle_width = 20;
@@ -1032,7 +1030,7 @@ PageAccountConfirmDelete.prototype = {
 
         prog.push(PageAccountConfirmDelete.user_name);
 
-        cockpit.spawn(prog, { "superuser": "require" })
+        cockpit.spawn(prog, { "superuser": "require", err: "message" })
            .done(function () {
               $('#account-confirm-delete-dialog').modal('hide');
                cockpit.location.go("/");
@@ -1046,12 +1044,13 @@ function PageAccountConfirmDelete() {
 }
 
 PageAccountSetPassword.prototype = {
-    _init: function() {
+    _init: function(user) {
         this.id = "account-set-password-dialog";
+        this.user = user;
     },
 
     show: function() {
-        if (cockpit.user["user"] !== PageAccountSetPassword.user_name) {
+        if (this.user.name !== PageAccountSetPassword.user_name) {
             $('#account-set-password-old').parents('tr').toggle(false);
             $('#account-set-password-pw1').focus();
         } else {
@@ -1108,16 +1107,18 @@ PageAccountSetPassword.prototype = {
                 }
             });
 
-        return $.when(dfd, promise);
+        return cockpit.all(dfd, promise);
     },
 
     apply: function() {
+        var self = this;
+
         var promise = this.validate()
             .done(function() {
                 var user = PageAccountSetPassword.user_name;
                 var password = $('#account-set-password-pw1').val();
 
-                if (cockpit.user["user"] === user)
+                if (self.user.name === user)
                     promise = passwd_self($('#account-set-password-old').val(), password);
                 else
                     promise = passwd_change(user, password);
@@ -1132,8 +1133,8 @@ PageAccountSetPassword.prototype = {
     }
 };
 
-function PageAccountSetPassword() {
-    this._init();
+function PageAccountSetPassword(user) {
+    this._init(user);
 }
 
 /* INITIALIZATION AND NAVIGATION
@@ -1192,39 +1193,39 @@ function init() {
     var overview_page;
     var account_page;
 
-    function navigate() {
-        var path = cockpit.location.path;
+    cockpit.user().done(function (user) {
+        function navigate() {
+            var path = cockpit.location.path;
 
-        if (path.length === 0) {
-            page_hide(account_page);
-            page_show(overview_page);
-        } else if (path.length === 1) {
-            page_hide(overview_page);
-            page_show(account_page, path[0]);
-        } else { /* redirect */
-            console.warn("not a users location: " + path);
-            cockpit.location = '';
+            if (path.length === 0) {
+                page_hide(account_page);
+                page_show(overview_page);
+            } else if (path.length === 1) {
+                page_hide(overview_page);
+                page_show(account_page, path[0]);
+            } else { /* redirect */
+                console.warn("not a users location: " + path);
+                cockpit.location = '';
+            }
+
+            $("body").show();
         }
 
-        $("body").show();
-    }
+        cockpit.translate();
 
-    cockpit.translate();
+        overview_page = new PageAccounts();
+        overview_page.setup();
 
-    overview_page = new PageAccounts();
-    overview_page.setup();
+        account_page = new PageAccount(user);
+        account_page.setup();
 
-    account_page = new PageAccount();
-    account_page.setup();
+        dialog_setup(new PageAccountsCreate());
+        dialog_setup(new PageAccountConfirmDelete());
+        dialog_setup(new PageAccountSetPassword(user));
 
-    dialog_setup(new PageAccountsCreate());
-    dialog_setup(new PageAccountConfirmDelete());
-    dialog_setup(new PageAccountSetPassword());
-
-    $(cockpit).on("locationchanged", navigate);
-    navigate();
+        $(cockpit).on("locationchanged", navigate);
+        navigate();
+    });
 }
 
 $(init);
-
-});

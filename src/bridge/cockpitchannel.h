@@ -23,7 +23,8 @@
 #include <glib-object.h>
 #include <json-glib/json-glib.h>
 
-#include "common/cockpitconnect.h"
+#include "cockpitconnect.h"
+
 #include "common/cockpittransport.h"
 
 G_BEGIN_DECLS
@@ -72,6 +73,11 @@ GType               cockpit_channel_get_type          (void) G_GNUC_CONST;
 
 void                cockpit_channel_close             (CockpitChannel *self,
                                                        const gchar *problem);
+
+void                cockpit_channel_fail              (CockpitChannel *self,
+                                                       const gchar *problem,
+                                                       const gchar *format,
+                                                       ...) G_GNUC_PRINTF(3, 4);
 
 const gchar *       cockpit_channel_get_id            (CockpitChannel *self);
 

@@ -1,0 +1,78 @@
+# Generated Makefile data for sosreport
+# Stamp: Thu Nov 24 2016 16:15:59 GMT+0000 (UTC)
+
+sosreport_INPUTS = \
+	$(srcdir)/pkg/lib/page.css \
+	$(srcdir)/pkg/lib/table.css \
+	$(srcdir)/pkg/sosreport/index.html \
+	$(srcdir)/pkg/sosreport/index.js \
+	$(srcdir)/pkg/sosreport/manifest.json \
+	$(srcdir)/pkg/sosreport/run-sosreport.sh \
+	$(srcdir)/pkg/sosreport/sosreport.css \
+	$(srcdir)/pkg/sosreport/sosreport.png \
+	$(NULL)
+
+sosreport_OUTPUTS = \
+	dist/sosreport/index.html \
+	dist/sosreport/manifest.json \
+	dist/sosreport/sosreport.css \
+	dist/sosreport/sosreport.css.map \
+	dist/sosreport/sosreport.min.js \
+	dist/sosreport/sosreport.min.js.map \
+	dist/sosreport/sosreport.png \
+	$(NULL)
+
+sosreport_INSTALL = \
+	dist/sosreport/index.html.gz \
+	dist/sosreport/manifest.json \
+	dist/sosreport/sosreport.css.gz \
+	dist/sosreport/sosreport.min.js.gz \
+	dist/sosreport/sosreport.png \
+	$(NULL)
+
+sosreport_DEBUG = \
+	dist/sosreport/sosreport.css.map \
+	dist/sosreport/sosreport.min.js.map \
+	$(NULL)
+
+sosreport_TESTS = \
+	$(NULL)
+
+dist/Makefile-sosreport.deps: $(WEBPACK_CONFIG) $(sosreport_INPUTS)
+	$(WEBPACK_RULE) -d dist/Makefile-sosreport.deps $(WEBPACK_CONFIG)
+
+dist/sosreport/index.html: dist/Makefile-sosreport.deps
+
+dist/sosreport/manifest.json: dist/Makefile-sosreport.deps
+
+dist/sosreport/sosreport.css: dist/Makefile-sosreport.deps
+
+dist/sosreport/sosreport.css.map: dist/Makefile-sosreport.deps
+
+dist/sosreport/sosreport.min.js: dist/Makefile-sosreport.deps
+
+dist/sosreport/sosreport.min.js.map: dist/Makefile-sosreport.deps
+
+dist/sosreport/sosreport.png: dist/Makefile-sosreport.deps
+
+$(srcdir)/pkg/lib/page.css:
+
+$(srcdir)/pkg/lib/table.css:
+
+$(srcdir)/pkg/sosreport/index.html:
+
+$(srcdir)/pkg/sosreport/index.js:
+
+$(srcdir)/pkg/sosreport/manifest.json:
+
+$(srcdir)/pkg/sosreport/run-sosreport.sh:
+
+$(srcdir)/pkg/sosreport/sosreport.css:
+
+$(srcdir)/pkg/sosreport/sosreport.png:
+
+WEBPACK_INPUTS += $(sosreport_INPUTS)
+WEBPACK_OUTPUTS += $(sosreport_OUTPUTS)
+WEBPACK_INSTALL += $(sosreport_INSTALL)
+WEBPACK_DEBUG += $(sosreport_DEBUG)
+TESTS += $(sosreport_TESTS)

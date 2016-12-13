@@ -30,6 +30,9 @@
 
 G_BEGIN_DECLS
 
+#define MAX_AUTH_TIMEOUT 900
+#define MIN_AUTH_TIMEOUT 1
+
 #define COCKPIT_TYPE_AUTH         (cockpit_auth_get_type ())
 #define COCKPIT_AUTH(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), COCKPIT_TYPE_AUTH, CockpitAuth))
 #define COCKPIT_AUTH_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), COCKPIT_TYPE_AUTH, CockpitAuthClass))
@@ -46,8 +49,9 @@ struct _CockpitAuth
 {
   GObject parent_instance;
 
-  GByteArray *key;
+  GBytes *key;
   GHashTable *authenticated;
+  GHashTable *authentication_pending;
   guint64 nonce_seed;
   gboolean login_loopback;
   gulong timeout_tag;
@@ -72,6 +76,7 @@ struct _CockpitAuthClass
   CockpitCreds * (* login_finish)        (CockpitAuth *auth,
                                           GAsyncResult *result,
                                           GHashTable *out_headers,
+                                          JsonObject **prompt_data,
                                           CockpitTransport **transport,
                                           GError **error);
 };
@@ -89,11 +94,11 @@ void            cockpit_auth_login_async     (CockpitAuth *self,
                                               GAsyncReadyCallback callback,
                                               gpointer user_data);
 
-CockpitWebService *  cockpit_auth_login_finish    (CockpitAuth *self,
-                                                   GAsyncResult *result,
-                                                   CockpitAuthFlags flags,
-                                                   GHashTable *out_headers,
-                                                   GError **error);
+JsonObject *    cockpit_auth_login_finish    (CockpitAuth *self,
+                                              GAsyncResult *result,
+                                              CockpitAuthFlags flags,
+                                              GHashTable *out_headers,
+                                              GError **error);
 
 CockpitWebService *  cockpit_auth_check_cookie    (CockpitAuth *self,
                                                    const gchar *path,
