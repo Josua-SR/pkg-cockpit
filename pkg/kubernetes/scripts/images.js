@@ -20,6 +20,27 @@
 (function() {
     "use strict";
 
+    var angular = require('angular');
+    require("angular-route");
+
+    require('./dialog');
+    require('./kube-client');
+    require('./date');
+    require('./listing');
+    require('./tags');
+
+    require('registry-image-widgets/dist/image-widgets.js');
+
+    require('../views/images-page.html');
+    require('../views/imagestream-page.html');
+    require('../views/image-page.html');
+    require('../views/image-panel.html');
+    require('../views/image-listing.html');
+    require('../views/imagestream-delete.html');
+    require('../views/imagestream-modify.html');
+    require('../views/imagestream-modify.html');
+    require('../views/image-delete.html');
+
     /*
      * Executes callback for each stream.status.tag[x].item[y]
      * in a stream. Similar behavior to angular.forEach()
@@ -40,7 +61,8 @@
         'kubeClient',
         'kubernetes.date',
         'kubernetes.listing',
-        'registry.layers',
+        'registry.tags',
+        'registryUI.images',
     ])
 
     .config([
@@ -70,9 +92,12 @@
         'imageData',
         'imageActions',
         'ListingState',
+        'projectData',
         'filterService',
-        function($scope, $location, data, actions, ListingState) {
+        function($scope, $location, data, actions, ListingState, projectData) {
             $scope.imagestreams = data.allStreams;
+            $scope.sharedImages = projectData.sharedImages;
+
             angular.extend($scope, data);
 
             $scope.listing = new ListingState($scope);
@@ -81,10 +106,8 @@
             data.watchImages();
 
             $scope.$on("activate", function(ev, id) {
-                if (!$scope.listing.expandable) {
-                    ev.preventDefault();
-                    $location.path('/images/' + id);
-                }
+                ev.preventDefault();
+                $location.path('/images/' + id);
             });
 
             /* All the actions available on the $scope */
@@ -111,7 +134,8 @@
         'imageData',
         'imageActions',
         'ListingState',
-        function($scope, $location, $routeParams, select, loader, data, actions, ListingState) {
+        'projectData',
+        function($scope, $location, $routeParams, select, loader, data, actions, ListingState, projectData) {
             var target = $routeParams["target"] || "";
             var pos = target.indexOf(":");
 
@@ -129,10 +153,10 @@
             }
 
             /* There's no way to watch a single item ... so watch them all :( */
-            data.watchImages();
+            data.watchImages($scope);
 
 
-            var c = loader.listen(function() {
+            loader.listen(function() {
                 $scope.stream = select().kind("ImageStream").namespace(namespace).name(name).one();
                 $scope.image = $scope.config = $scope.layers = $scope.labels = $scope.tag = null;
 
@@ -143,14 +167,14 @@
 
 
                 if ($scope.tag)
-                    $scope.image = select().kind("Image").taggedBy($scope.tag).one();
+                    $scope.image = select().kind("Image").taggedFirst($scope.tag).one();
                 if ($scope.image) {
                     $scope.names = data.imageTagNames($scope.image);
                     $scope.config = data.imageConfig($scope.image);
                     $scope.layers = data.imageLayers($scope.image);
                     $scope.labels = data.imageLabels($scope.image);
                 }
-            });
+            }, $scope);
 
             $scope.listing = new ListingState($scope);
             $scope.listing.inline = true;
@@ -162,13 +186,10 @@
                 return { };
             };
 
-            $scope.$on("$destroy", function() {
-                c.cancel();
-            });
-
             /* All the data actions available on the $scope */
             angular.extend($scope, data);
             angular.extend($scope, actions);
+            $scope.sharedImages = projectData.sharedImages;
 
             /* But special case a few */
             $scope.deleteImageStream = function(stream) {
@@ -181,6 +202,11 @@
 
                 return promise;
             };
+
+            $scope.$on("activate", function(ev, id) {
+                ev.preventDefault();
+                $location.path('/images/' + id);
+            });
 
             $scope.deleteTag = function(stream, tag) {
                 var promise = actions.deleteTag(stream, tag);
@@ -213,7 +239,7 @@
                         return tab === name;
                     };
 
-                    var c = loader.listen(function() {
+                    loader.listen(function() {
                         scope.names = scope.config = scope.layers = scope.labels = null;
                         if (scope.image) {
                             scope.names = data.imageTagNames(scope.image);
@@ -221,61 +247,13 @@
                             scope.layers = data.imageLayers(scope.image);
                             scope.labels = data.imageLabels(scope.image);
                         }
-                    });
+                    }, scope);
 
-                    scope.$on("$destroy", function() {
-                        c.cancel();
-                    });
                 },
                 templateUrl: "views/image-panel.html"
             };
         }
     ])
-
-    .directive('imageBody',
-        function() {
-            return {
-                restrict: 'A',
-                templateUrl: 'views/image-body.html'
-            };
-        }
-    )
-
-    .directive('imageConfig',
-        function() {
-            return {
-                restrict: 'A',
-                templateUrl: 'views/image-config.html'
-            };
-        }
-    )
-
-    .directive('imageMeta',
-        function() {
-            return {
-                restrict: 'A',
-                templateUrl: 'views/image-meta.html'
-            };
-        }
-    )
-
-    .directive('imagestreamBody',
-        function() {
-            return {
-                restrict: 'A',
-                templateUrl: 'views/imagestream-body.html'
-            };
-        }
-    )
-
-    .directive('imagestreamMeta',
-        function() {
-            return {
-                restrict: 'A',
-                templateUrl: 'views/imagestream-meta.html'
-            };
-        }
-    )
 
     .directive('imageListing',
         function() {
@@ -292,12 +270,14 @@
         function(select, loader) {
 
             /* Called when we have to load images via imagestreams */
-            function handle_imagestreams(objects) {
+            loader.listen(function(objects) {
                 for (var link in objects) {
                     if (objects[link].kind === "ImageStream")
                         handle_imagestream(objects[link]);
+                    if (objects[link].kind === "Image")
+                        handle_image(objects[link]);
                 }
-            }
+            });
 
             function handle_imagestream(imagestream) {
                 var meta = imagestream.metadata || { };
@@ -312,12 +292,16 @@
                         var interim = { kind: "Image", apiVersion: "v1", metadata: { name: item.image } };
                         loader.handle(interim);
 
+                        if (!watching)
+                            return;
+
                         var name = meta.name + "@" + item.image;
                         loader.load("ImageStreamImage", name, meta.namespace).then(function(resource) {
                             var image = resource.image;
                             if (image) {
                                 image.kind = "Image";
                                 loader.handle(image);
+                                handle_image(image);
                             }
                         }, function(response) {
                             console.warn("couldn't load image: " + response.statusText);
@@ -327,25 +311,70 @@
                 });
             }
 
-            /* Load images, but fallback to loading individually */
-            var watching = null;
-            function watchImages() {
-                loader.watch("images");
-                if (!watching)
-                    watching = loader.watch("imagestreams");
-                return watching;
+            /*
+             * Create a pseudo-item with kind DockerImageManifest for
+             * each image with a dockerImageManifest that we see. Identical
+             * name to the image itself.
+             */
+            function handle_image(image) {
+                var item, history, manifest = image.dockerImageManifest;
+                if (manifest) {
+                    manifest = JSON.parse(manifest);
+                    angular.forEach(manifest.history || [], function(item) {
+                        if (typeof item.v1Compatibility == "string")
+                            item.v1Compatibility = JSON.parse(item.v1Compatibility);
+                    });
+                    item = {
+                        kind: "DockerImageManifest",
+                        metadata: {
+                            name: image.metadata.name,
+                            selfLink: "/internal/manifests/" + image.metadata.name
+                        },
+                        manifest: manifest,
+                    };
+                    loader.handle(item);
+                }
             }
 
-            loader.listen(handle_imagestreams);
+            /* Load images, but fallback to loading individually */
+            var watching = false;
+            function watchImages(until) {
+                watching = true;
+                var a = loader.watch("images", until);
+                var b = loader.watch("imagestreams", until);
+
+                return {
+                    cancel: function() {
+                        a.cancel();
+                        b.cancel();
+                    }
+                };
+            }
 
             /*
-             * Filters selection to those with names that are
+             * Filters selection to those with names that is
              * in the given TagEvent.
              */
             select.register("taggedBy", function(tag) {
                 var i, len, results = { };
+                // catch condition when tag.items is null due to imagestream import error
+                if (!tag.items)
+                    return select(null);
                 for (i = 0, len = tag.items.length; i < len; i++)
                     this.name(tag.items[i].image).extend(results);
+                return select(results);
+            });
+
+            /*
+             * Filters selection to those with names that is in the first
+             * item in the given TagEvent.
+             */
+            select.register("taggedFirst", function(tag) {
+                var len, results = { };
+                if (!tag.items)
+                    return select(null);
+                if (tag.items.length)
+                    this.name(tag.items[0].image).extend(results);
                 return select(results);
             });
 
@@ -376,27 +405,6 @@
                     });
                 });
                 return names;
-            });
-
-            /*
-             * Filter that gets docker image manifests for each of the
-             * images selected. Objects without a manifest will be
-             * dropped from the results.
-             */
-            select.register("dockerImageManifest", function() {
-                var results = { };
-                angular.forEach(this, function(image, key) {
-                    var history, manifest = image.dockerImageManifest;
-                    if (manifest) {
-                        manifest = JSON.parse(manifest);
-                        angular.forEach(manifest.history || [], function(item) {
-                            if (typeof item.v1Compatibility == "string")
-                                item.v1Compatibility = JSON.parse(item.v1Compatibility);
-                        });
-                        results[key] = manifest;
-                    }
-                });
-                return select(results);
             });
 
             /*
@@ -443,10 +451,12 @@
             function imageLayers(image) {
                 if (!image)
                     return null;
-                var manifest = select(image).dockerImageManifest().one();
-                if (!manifest || manifest.schemaVersion !== 1)
-                    return null;
-                return manifest.history;
+                var item = select().kind("DockerImageManifest").name(image.metadata.name).one();
+                if (item && item.manifest && item.manifest.schemaVersion === 1)
+                    return item.manifest.history;
+                if (image.dockerImageLayers)
+                    return image.dockerImageLayers;
+                return null;
             }
 
             /* HACK: We really want a metadata index here */
@@ -470,8 +480,8 @@
                 allStreams: function allStreams() {
                     return select().kind("ImageStream");
                 },
-                imagesByTag: function imagesByTag(tag) {
-                    return select().kind("Image").taggedBy(tag);
+                imageByTag: function imageByTag(tag) {
+                    return select().kind("Image").taggedFirst(tag);
                 },
                 imageLayers: imageLayers,
                 imageConfig: function imageConfig(image) {
@@ -481,7 +491,10 @@
                     return select().kind("ImageStream").listTagNames(image.metadata.name);
                 },
                 imageLabels: function imageLabels(image) {
-                    return select(image).dockerImageConfig().dockerConfigLabels().one();
+                    var labels = select(image).dockerImageConfig().dockerConfigLabels().one();
+                    if (labels && angular.equals({ }, labels))
+                        labels = null;
+                    return labels;
                 },
                 configCommand: configCommand,
             };
@@ -490,7 +503,8 @@
 
     .factory('imageActions', [
         '$modal',
-        function($modal) {
+        '$location',
+        function($modal, $location) {
             function deleteImageStream(stream) {
                 return $modal.open({
                     animation: false,
@@ -545,11 +559,17 @@
                 return modal.result;
             }
 
+            function modifyProject(project) {
+                $location.path("/projects/" + project);
+                return false;
+            }
+
             return {
                 createImageStream: createImageStream,
                 modifyImageStream: modifyImageStream,
                 deleteImageStream: deleteImageStream,
                 deleteTag: deleteTag,
+                modifyProject: modifyProject,
             };
         }
     ])
@@ -572,33 +592,49 @@
         "$scope",
         "$modalInstance",
         "dialogData",
+        "imageTagData",
         "kubeMethods",
         "filterService",
-        function($scope, $instance, dialogData, methods, filter) {
+        function($scope, $instance, dialogData, tagData, methods, filter) {
             var stream = dialogData.stream || { };
             var meta = stream.metadata || { };
             var spec = stream.spec || { };
 
+            var populate = "none";
+            if (spec.dockerImageRepository)
+                populate = "pull";
+            if (spec.tags)
+                populate = "tags";
+
             var fields = {
                 name: meta.name || "",
                 project: meta.namespace || filter.namespace() || "",
-                populate: spec.dockerImageRepository ? "pull" : "none",
+                populate: populate,
                 pull: spec.dockerImageRepository || "",
+                tags: tagData.parseSpec(spec),
+                insecure: hasInsecureTag(spec),
             };
 
             $scope.fields = fields;
             $scope.labels = {
                 populate: {
                     none: "Don't pull images automatically",
-                    pull: "Pull all tags from another image repository",
+                    pull: "Sync all tags from a remote image repository",
+                    tags: "Pull specific tags from another image repository",
                 }
             };
+
+            /* During creation we have a different label */
+            if (!dialogData.stream)
+                $scope.labels.populate.none = "Create empty image stream";
 
             function performModify() {
                 var data = { spec: { dockerImageRepository: null, tags: null } };
 
                 if (fields.populate != "none")
                     data.spec.dockerImageRepository = fields.pull.trim();
+                if (fields.populate == "tags")
+                    tagData.buildSpec(fields.tags, data.spec, fields.insecure);
 
                 return methods.patch(stream, data);
             }
@@ -612,11 +648,10 @@
                     }
                 };
 
-                if (fields.populate != "none") {
-                    data.spec = {
-                        dockerImageRepository: fields.pull.trim(),
-                    };
-                }
+                if (fields.populate != "none")
+                    data.spec = { dockerImageRepository: fields.pull.trim(), };
+                if (fields.populate == "tags")
+                    data.spec = tagData.buildSpec(fields.tags, data.spec, fields.insecure);
 
                 return methods.check(data, {
                     "metadata.name": "#imagestream-modify-name",
@@ -626,8 +661,24 @@
                 });
             }
 
+            function hasInsecureTag(spec) {
+                // loop through tags, check importPolicy.insecure boolean
+                // if one tag is insecure the intent is the imagestream is insecure
+                var insecure;
+                if (spec) {
+                    for (var tag in spec.tags) {
+                        if (spec.tags[tag].importPolicy.insecure) {
+                            insecure = spec.tags[tag].importPolicy.insecure;
+                            break;
+                        }
+                    }
+                }
+                return insecure;
+            }
+
             $scope.performCreate = performCreate;
             $scope.performModify = performModify;
+            $scope.hasInsecureTag = hasInsecureTag;
 
             $scope.projects = filter.namespaces;
             angular.extend($scope, dialogData);

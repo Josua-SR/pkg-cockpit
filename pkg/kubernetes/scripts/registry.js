@@ -20,15 +20,35 @@
 (function() {
     "use strict";
 
+    var angular = require('angular');
+    require('angular-route');
+    require('angular-gettext/dist/angular-gettext.js');
+    require('angular-bootstrap/ui-bootstrap.js');
+    require('angular-bootstrap/ui-bootstrap-tpls.js');
+
+    require('./app');
+    require('./date');
+    require('./images');
+    require('./projects');
+    require('./policy');
+    require('./kube-client');
+    require('./kube-client-cockpit');
+
+    require('../views/registry-dashboard-page.html');
+
     var MAX_RECENT_STREAMS = 15;
     var MAX_RECENT_TAGS = 8;
 
     angular.module('registry', [
         'ngRoute',
         'ui.bootstrap',
+        'ui.bootstrap.popover',
+        'gettext',
         'kubernetes.app',
+        'kubernetes.date',
         'registry.images',
         'registry.projects',
+        'registry.policy',
         'kubeClient',
         'kubeClient.cockpit'
     ])
@@ -77,9 +97,12 @@
         'imageData',
         'imageActions',
         'projectActions',
+        'projectData',
         'filterService',
-        function($scope, loader, select, imageData, imageActions, projectActions, filter) {
+        function($scope, loader, select, imageData, imageActions, projectActions, projectData, filter) {
             loader.load("projects");
+            /* Watch the policybindings for project access changes */
+            loader.watch("policybindings", $scope);
 
             /*
              * For now the dashboard  has to watch all images in
@@ -88,7 +111,7 @@
              * In the future we want to have a metadata or filtering
              * service that we can query for that data.
              */
-            imageData.watchImages();
+            imageData.watchImages($scope);
 
             function compareVersion(a, b) {
                 a = (a.metadata || { }).resourceVersion || 0;
@@ -96,8 +119,10 @@
                 return b - a;
             }
             function compareCreated(a, b) {
-                a = (a.items[0] || { }).created || "";
-                b = (b.items[0] || { }).created || "";
+                a = a.items && a.items[0] || {};
+                b = b.items && b.items[0] || {};
+                a = a.created || "";
+                b = b.created || "";
                 return (b < a ? -1 : (b > a ? 1 : 0));
             }
 
@@ -135,6 +160,7 @@
 
             $scope.createProject = projectActions.createProject;
             $scope.createImageStream = imageActions.createImageStream;
+            $scope.sharedImages = projectData.sharedImages;
 
             $scope.recentlyUpdated = function recentlyUpdated() {
                 return select().kind("ImageStream").buildRecentStreams();

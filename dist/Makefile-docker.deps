@@ -1,0 +1,191 @@
+# Generated Makefile data for docker
+# Stamp: Thu Nov 24 2016 16:15:59 GMT+0000 (UTC)
+
+docker_INPUTS = \
+	$(srcdir)/pkg/docker/bar.js \
+	$(srcdir)/pkg/docker/client.js \
+	$(srcdir)/pkg/docker/cockpit-atomic-storage \
+	$(srcdir)/pkg/docker/console.html \
+	$(srcdir)/pkg/docker/console.js \
+	$(srcdir)/pkg/docker/containers-view.jsx \
+	$(srcdir)/pkg/docker/containers.js \
+	$(srcdir)/pkg/docker/details.js \
+	$(srcdir)/pkg/docker/docker.css \
+	$(srcdir)/pkg/docker/docker.js \
+	$(srcdir)/pkg/docker/image.js \
+	$(srcdir)/pkg/docker/images/drive-harddisk-symbolic.svg \
+	$(srcdir)/pkg/docker/index.html \
+	$(srcdir)/pkg/docker/manifest.json \
+	$(srcdir)/pkg/docker/overview.js \
+	$(srcdir)/pkg/docker/run.js \
+	$(srcdir)/pkg/docker/search.js \
+	$(srcdir)/pkg/docker/storage.jsx \
+	$(srcdir)/pkg/docker/test-docker.js \
+	$(srcdir)/pkg/docker/util.js \
+	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \
+	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
+	$(srcdir)/pkg/lib/cockpit-components-select.jsx \
+	$(srcdir)/pkg/lib/console.css \
+	$(srcdir)/pkg/lib/listing.css \
+	$(srcdir)/pkg/lib/page.css \
+	$(srcdir)/pkg/lib/patterns.js \
+	$(srcdir)/pkg/lib/plot.css \
+	$(srcdir)/pkg/lib/plot.js \
+	$(srcdir)/pkg/lib/qunit-config.js \
+	$(srcdir)/pkg/lib/qunit-template.html \
+	$(srcdir)/pkg/lib/qunit-tests.js \
+	$(srcdir)/pkg/lib/service.js \
+	$(srcdir)/pkg/lib/table.css \
+	$(srcdir)/pkg/lib/term.css \
+	$(NULL)
+
+docker_OUTPUTS = \
+	dist/docker/console.html \
+	dist/docker/console.min.js \
+	dist/docker/console.min.js.map \
+	dist/docker/docker.css \
+	dist/docker/docker.css.map \
+	dist/docker/docker.min.js \
+	dist/docker/docker.min.js.map \
+	dist/docker/images/drive-harddisk-symbolic.svg \
+	dist/docker/index.html \
+	dist/docker/manifest.json \
+	dist/docker/test-docker.css \
+	dist/docker/test-docker.css.map \
+	dist/docker/test-docker.html \
+	dist/docker/test-docker.min.js \
+	dist/docker/test-docker.min.js.map \
+	$(NULL)
+
+docker_INSTALL = \
+	dist/docker/console.html.gz \
+	dist/docker/console.min.js.gz \
+	dist/docker/docker.css.gz \
+	dist/docker/docker.min.js.gz \
+	dist/docker/images/drive-harddisk-symbolic.svg.gz \
+	dist/docker/index.html.gz \
+	dist/docker/manifest.json \
+	dist/docker/test-docker.css.gz \
+	dist/docker/test-docker.min.js.gz \
+	$(NULL)
+
+docker_DEBUG = \
+	dist/docker/console.min.js.map \
+	dist/docker/docker.css.map \
+	dist/docker/docker.min.js.map \
+	dist/docker/test-docker.css.map \
+	dist/docker/test-docker.min.js.map \
+	$(NULL)
+
+docker_TESTS = \
+	dist/docker/test-docker.html \
+	$(NULL)
+
+dist/Makefile-docker.deps: $(WEBPACK_CONFIG) $(docker_INPUTS)
+	$(WEBPACK_RULE) -d dist/Makefile-docker.deps $(WEBPACK_CONFIG)
+
+dist/docker/console.html: dist/Makefile-docker.deps
+
+dist/docker/console.min.js: dist/Makefile-docker.deps
+
+dist/docker/console.min.js.map: dist/Makefile-docker.deps
+
+dist/docker/docker.css: dist/Makefile-docker.deps
+
+dist/docker/docker.css.map: dist/Makefile-docker.deps
+
+dist/docker/docker.min.js: dist/Makefile-docker.deps
+
+dist/docker/docker.min.js.map: dist/Makefile-docker.deps
+
+dist/docker/images/drive-harddisk-symbolic.svg: dist/Makefile-docker.deps
+
+dist/docker/index.html: dist/Makefile-docker.deps
+
+dist/docker/manifest.json: dist/Makefile-docker.deps
+
+dist/docker/test-docker.css: dist/Makefile-docker.deps
+
+dist/docker/test-docker.css.map: dist/Makefile-docker.deps
+
+dist/docker/test-docker.html: dist/Makefile-docker.deps
+
+dist/docker/test-docker.min.js: dist/Makefile-docker.deps
+
+dist/docker/test-docker.min.js.map: dist/Makefile-docker.deps
+
+$(srcdir)/pkg/docker/bar.js:
+
+$(srcdir)/pkg/docker/client.js:
+
+$(srcdir)/pkg/docker/cockpit-atomic-storage:
+
+$(srcdir)/pkg/docker/console.html:
+
+$(srcdir)/pkg/docker/console.js:
+
+$(srcdir)/pkg/docker/containers-view.jsx:
+
+$(srcdir)/pkg/docker/containers.js:
+
+$(srcdir)/pkg/docker/details.js:
+
+$(srcdir)/pkg/docker/docker.css:
+
+$(srcdir)/pkg/docker/docker.js:
+
+$(srcdir)/pkg/docker/image.js:
+
+$(srcdir)/pkg/docker/images/drive-harddisk-symbolic.svg:
+
+$(srcdir)/pkg/docker/index.html:
+
+$(srcdir)/pkg/docker/manifest.json:
+
+$(srcdir)/pkg/docker/overview.js:
+
+$(srcdir)/pkg/docker/run.js:
+
+$(srcdir)/pkg/docker/search.js:
+
+$(srcdir)/pkg/docker/storage.jsx:
+
+$(srcdir)/pkg/docker/test-docker.js:
+
+$(srcdir)/pkg/docker/util.js:
+
+$(srcdir)/pkg/lib/cockpit-components-dialog.jsx:
+
+$(srcdir)/pkg/lib/cockpit-components-listing.jsx:
+
+$(srcdir)/pkg/lib/cockpit-components-select.jsx:
+
+$(srcdir)/pkg/lib/console.css:
+
+$(srcdir)/pkg/lib/listing.css:
+
+$(srcdir)/pkg/lib/page.css:
+
+$(srcdir)/pkg/lib/patterns.js:
+
+$(srcdir)/pkg/lib/plot.css:
+
+$(srcdir)/pkg/lib/plot.js:
+
+$(srcdir)/pkg/lib/qunit-config.js:
+
+$(srcdir)/pkg/lib/qunit-template.html:
+
+$(srcdir)/pkg/lib/qunit-tests.js:
+
+$(srcdir)/pkg/lib/service.js:
+
+$(srcdir)/pkg/lib/table.css:
+
+$(srcdir)/pkg/lib/term.css:
+
+WEBPACK_INPUTS += $(docker_INPUTS)
+WEBPACK_OUTPUTS += $(docker_OUTPUTS)
+WEBPACK_INSTALL += $(docker_INSTALL)
+WEBPACK_DEBUG += $(docker_DEBUG)
+TESTS += $(docker_TESTS)

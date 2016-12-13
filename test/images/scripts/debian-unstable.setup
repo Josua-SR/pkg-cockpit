@@ -12,6 +12,7 @@ update-grub
 # the distribution repository is updated.
 #
 COCKPIT_DEPS="\
+cryptsetup \
 docker.io \
 libjson-glib-1.0-0 \
 libpcp3 \
@@ -19,11 +20,16 @@ libpolkit-agent-1-0 \
 libpolkit-gobject-1-0 \
 libpwquality-tools \
 libssh-4 \
+libteam-utils \
+libvirt-daemon-system \
 network-manager \
 pcp \
 policykit-1 \
 realmd \
 selinux-basics \
+storaged \
+storaged-lvm2 \
+thin-provisioning-tools \
 xdg-utils \
 "
 
@@ -51,6 +57,7 @@ libjson-glib-dev \
 libpam0g-dev \
 libpcp-import1-dev \
 libpcp-pmda3-dev \
+systemd \
 xsltproc \
 xmlto \
 docbook-xsl \
@@ -71,10 +78,17 @@ freeipa-client \
 
 TEST_PACKAGES="\
 curl \
+gdb \
+systemd-coredump \
+virtinst \
 "
 
 useradd -m -U -c Administrator -G sudo -s /bin/bash admin
 echo admin:foobar | chpasswd
+
+# For storaged
+echo "deb http://ftp.uk.debian.org/debian experimental main" >/etc/apt/sources.list.d/experimental.list
+apt-get -y update
 
 export DEBIAN_FRONTEND=noninteractive
 apt-get -y install $TEST_PACKAGES $COCKPIT_DEPS $IPA_CLIENT_PACKAGES
@@ -87,6 +101,12 @@ echo "apt-get -y install fakeroot $COCKPIT_BUILD_DEPS" >debian-8.install-build-d
 pbuilder --execute --save-after-exec debian-8.install-build-deps
 # Disable build-dep installation for the real builds
 echo PBUILDERSATISFYDEPENDSCMD=true >~/.pbuilderrc
+
+# Debian does not automatically start the default libvirt network
+virsh net-autostart default
+
+# HACK: docker falls over regularly, print its log if it does
+systemctl start docker || journalctl -u docker
 
 # docker images that we need for integration testing
 /var/lib/testvm/docker-images.setup

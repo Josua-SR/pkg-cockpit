@@ -1,0 +1,80 @@
+# Generated Makefile data for users
+# Stamp: Thu Nov 24 2016 16:15:59 GMT+0000 (UTC)
+
+users_INPUTS = \
+	$(srcdir)/pkg/lib/page.css \
+	$(srcdir)/pkg/lib/patterns.js \
+	$(srcdir)/pkg/lib/table.css \
+	$(srcdir)/pkg/users/authorized-keys.js \
+	$(srcdir)/pkg/users/index.html \
+	$(srcdir)/pkg/users/local.js \
+	$(srcdir)/pkg/users/manifest.json \
+	$(srcdir)/pkg/users/ssh-add-public-key.sh \
+	$(srcdir)/pkg/users/ssh-list-public-keys.sh \
+	$(srcdir)/pkg/users/users.css \
+	$(NULL)
+
+users_OUTPUTS = \
+	dist/users/index.html \
+	dist/users/manifest.json \
+	dist/users/users.css \
+	dist/users/users.css.map \
+	dist/users/users.min.js \
+	dist/users/users.min.js.map \
+	$(NULL)
+
+users_INSTALL = \
+	dist/users/index.html.gz \
+	dist/users/manifest.json \
+	dist/users/users.css.gz \
+	dist/users/users.min.js.gz \
+	$(NULL)
+
+users_DEBUG = \
+	dist/users/users.css.map \
+	dist/users/users.min.js.map \
+	$(NULL)
+
+users_TESTS = \
+	$(NULL)
+
+dist/Makefile-users.deps: $(WEBPACK_CONFIG) $(users_INPUTS)
+	$(WEBPACK_RULE) -d dist/Makefile-users.deps $(WEBPACK_CONFIG)
+
+dist/users/index.html: dist/Makefile-users.deps
+
+dist/users/manifest.json: dist/Makefile-users.deps
+
+dist/users/users.css: dist/Makefile-users.deps
+
+dist/users/users.css.map: dist/Makefile-users.deps
+
+dist/users/users.min.js: dist/Makefile-users.deps
+
+dist/users/users.min.js.map: dist/Makefile-users.deps
+
+$(srcdir)/pkg/lib/page.css:
+
+$(srcdir)/pkg/lib/patterns.js:
+
+$(srcdir)/pkg/lib/table.css:
+
+$(srcdir)/pkg/users/authorized-keys.js:
+
+$(srcdir)/pkg/users/index.html:
+
+$(srcdir)/pkg/users/local.js:
+
+$(srcdir)/pkg/users/manifest.json:
+
+$(srcdir)/pkg/users/ssh-add-public-key.sh:
+
+$(srcdir)/pkg/users/ssh-list-public-keys.sh:
+
+$(srcdir)/pkg/users/users.css:
+
+WEBPACK_INPUTS += $(users_INPUTS)
+WEBPACK_OUTPUTS += $(users_OUTPUTS)
+WEBPACK_INSTALL += $(users_INSTALL)
+WEBPACK_DEBUG += $(users_DEBUG)
+TESTS += $(users_TESTS)

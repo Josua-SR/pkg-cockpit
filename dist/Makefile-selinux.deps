@@ -1,0 +1,80 @@
+# Generated Makefile data for selinux
+# Stamp: Thu Nov 24 2016 16:15:59 GMT+0000 (UTC)
+
+selinux_INPUTS = \
+	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
+	$(srcdir)/pkg/lib/listing.css \
+	$(srcdir)/pkg/lib/page.css \
+	$(srcdir)/pkg/selinux/manifest.json \
+	$(srcdir)/pkg/selinux/selinux-client.es6 \
+	$(srcdir)/pkg/selinux/setroubleshoot-client.js \
+	$(srcdir)/pkg/selinux/setroubleshoot-view.jsx \
+	$(srcdir)/pkg/selinux/setroubleshoot.css \
+	$(srcdir)/pkg/selinux/setroubleshoot.html \
+	$(srcdir)/pkg/selinux/setroubleshoot.js \
+	$(NULL)
+
+selinux_OUTPUTS = \
+	dist/selinux/manifest.json \
+	dist/selinux/selinux.css \
+	dist/selinux/selinux.css.map \
+	dist/selinux/selinux.min.js \
+	dist/selinux/selinux.min.js.map \
+	dist/selinux/setroubleshoot.html \
+	$(NULL)
+
+selinux_INSTALL = \
+	dist/selinux/manifest.json \
+	dist/selinux/selinux.css.gz \
+	dist/selinux/selinux.min.js.gz \
+	dist/selinux/setroubleshoot.html.gz \
+	$(NULL)
+
+selinux_DEBUG = \
+	dist/selinux/selinux.css.map \
+	dist/selinux/selinux.min.js.map \
+	$(NULL)
+
+selinux_TESTS = \
+	$(NULL)
+
+dist/Makefile-selinux.deps: $(WEBPACK_CONFIG) $(selinux_INPUTS)
+	$(WEBPACK_RULE) -d dist/Makefile-selinux.deps $(WEBPACK_CONFIG)
+
+dist/selinux/manifest.json: dist/Makefile-selinux.deps
+
+dist/selinux/selinux.css: dist/Makefile-selinux.deps
+
+dist/selinux/selinux.css.map: dist/Makefile-selinux.deps
+
+dist/selinux/selinux.min.js: dist/Makefile-selinux.deps
+
+dist/selinux/selinux.min.js.map: dist/Makefile-selinux.deps
+
+dist/selinux/setroubleshoot.html: dist/Makefile-selinux.deps
+
+$(srcdir)/pkg/lib/cockpit-components-listing.jsx:
+
+$(srcdir)/pkg/lib/listing.css:
+
+$(srcdir)/pkg/lib/page.css:
+
+$(srcdir)/pkg/selinux/manifest.json:
+
+$(srcdir)/pkg/selinux/selinux-client.es6:
+
+$(srcdir)/pkg/selinux/setroubleshoot-client.js:
+
+$(srcdir)/pkg/selinux/setroubleshoot-view.jsx:
+
+$(srcdir)/pkg/selinux/setroubleshoot.css:
+
+$(srcdir)/pkg/selinux/setroubleshoot.html:
+
+$(srcdir)/pkg/selinux/setroubleshoot.js:
+
+WEBPACK_INPUTS += $(selinux_INPUTS)
+WEBPACK_OUTPUTS += $(selinux_OUTPUTS)
+WEBPACK_INSTALL += $(selinux_INSTALL)
+WEBPACK_DEBUG += $(selinux_DEBUG)
+TESTS += $(selinux_TESTS)

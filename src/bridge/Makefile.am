@@ -9,6 +9,8 @@ libcockpit_stub_a_SOURCES = \
 	src/bridge/cockpitbridge.h \
 	src/bridge/cockpitchannel.c \
 	src/bridge/cockpitchannel.h \
+	src/bridge/cockpitconnect.c \
+	src/bridge/cockpitconnect.h \
 	src/bridge/cockpitdbuscache.c \
 	src/bridge/cockpitdbuscache.h \
 	src/bridge/cockpitdbusinternal.h \
@@ -30,6 +32,8 @@ libcockpit_stub_a_SOURCES = \
 	src/bridge/cockpitpaths.h \
 	src/bridge/cockpitnullchannel.c \
 	src/bridge/cockpitnullchannel.h \
+	src/bridge/cockpitstream.c \
+	src/bridge/cockpitstream.h \
 	src/bridge/cockpitwebsocketstream.c \
 	src/bridge/cockpitwebsocketstream.h \
 	$(NULL)
@@ -45,6 +49,8 @@ libcockpit_bridge_a_SOURCES = \
 	src/bridge/cockpitblocksamples.h \
 	src/bridge/cockpitcgroupsamples.c \
 	src/bridge/cockpitcgroupsamples.h \
+	src/bridge/cockpitconnect.c \
+	src/bridge/cockpitconnect.h \
 	src/bridge/cockpitcpusamples.c \
 	src/bridge/cockpitcpusamples.h \
 	src/bridge/cockpitdbussetup.c \
@@ -150,10 +156,13 @@ BRIDGE_CHECKS = \
 	test-packages \
 	test-fs \
 	test-metrics \
+	test-connect \
+	test-stream \
 	test-httpstream \
 	test-setup \
 	test-websocketstream \
 	test-environment \
+	test-bridge \
 	$(NULL)
 
 mock_bridge_SOURCES = src/bridge/mock-bridge.c
@@ -163,11 +172,19 @@ mock_bridge_CFLAGS = \
 	$(NULL)
 mock_bridge_LDADD = $(libcockpit_bridge_LIBS)
 
+test_bridge_SOURCES = src/bridge/test-bridge.c
+test_bridge_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
+test_bridge_LDADD = $(libcockpit_bridge_LIBS)
+
 test_channel_SOURCES = \
 	src/bridge/test-channel.c \
 	src/bridge/mock-transport.c src/bridge/mock-transport.h
 test_channel_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
 test_channel_LDADD = $(libcockpit_bridge_LIBS)
+
+test_connect_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
+test_connect_SOURCES = src/bridge/test-connect.c
+test_connect_LDADD = $(libcockpit_bridge_LIBS)
 
 test_packages_SOURCES = src/bridge/test-packages.c \
 	src/bridge/mock-transport.c src/bridge/mock-transport.h
@@ -190,6 +207,11 @@ test_rules_LDADD = $(libcockpit_bridge_LIBS)
 test_setup_SOURCES = src/bridge/test-setup.c
 test_setup_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
 test_setup_LDADD = $(libcockpit_bridge_LIBS)
+
+test_stream_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
+test_stream_SOURCES = src/bridge/test-stream.c \
+	src/common/mock-io-stream.c src/common/mock-io-stream.h
+test_stream_LDADD = $(libcockpit_bridge_LIBS)
 
 test_environment_SOURCES = src/bridge/test-environment.c
 test_environment_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
@@ -253,6 +275,8 @@ libcockpit_pcp_a_SOURCES = \
 	src/bridge/cockpitbridge.h \
 	src/bridge/cockpitchannel.c \
 	src/bridge/cockpitchannel.h \
+	src/bridge/cockpitconnect.c \
+	src/bridge/cockpitconnect.h \
 	src/bridge/cockpitmetrics.c \
 	src/bridge/cockpitmetrics.h \
 	src/bridge/cockpitpcpmetrics.c \
@@ -290,7 +314,10 @@ BRIDGE_CHECKS += \
 
 noinst_DATA += mock-pmda.so
 
-CLEANFILES += mock-pmda.so
+CLEANFILES += \
+	mock-pmda.so \
+	mock-archives/* \
+	$(NULL)
 
 # This is non-portable, but I don't feel like dragging in libtool just
 # for this.

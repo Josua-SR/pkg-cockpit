@@ -17,10 +17,12 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-define([
-    "jquery",
-    "base1/cockpit",
-], function($, cockpit) {
+(function() {
+    "use strict";
+
+    var $ = require("jquery");
+    var cockpit = require("cockpit");
+
     var _ = cockpit.gettext;
     var C_ = cockpit.gettext;
 
@@ -57,13 +59,14 @@ define([
         update_privileged_ui(permission, ".storage-privileged",
                              cockpit.format(
                                  _("The user <b>$0</b> is not permitted to manage storage"),
-                                 cockpit.user.name));
+                                 permission.user ? permission.user.name : ''));
     }
 
     $(permission).on("changed", update_storage_privileged);
 
-    return {
+    module.exports = {
+        permission: permission,
         update: update_storage_privileged
     };
 
-});
+}());

@@ -1,0 +1,175 @@
+# Generated Makefile data for systemd
+# Stamp: Thu Nov 24 2016 16:15:59 GMT+0000 (UTC)
+
+systemd_INPUTS = \
+	$(srcdir)/pkg/lib/cockpit-components-terminal.jsx \
+	$(srcdir)/pkg/lib/console.css \
+	$(srcdir)/pkg/lib/journal.css \
+	$(srcdir)/pkg/lib/journal.js \
+	$(srcdir)/pkg/lib/journal_day_header.mustache \
+	$(srcdir)/pkg/lib/journal_line.mustache \
+	$(srcdir)/pkg/lib/journal_reboot.mustache \
+	$(srcdir)/pkg/lib/page.css \
+	$(srcdir)/pkg/lib/patterns.js \
+	$(srcdir)/pkg/lib/plot.css \
+	$(srcdir)/pkg/lib/plot.js \
+	$(srcdir)/pkg/lib/service.js \
+	$(srcdir)/pkg/lib/table.css \
+	$(srcdir)/pkg/lib/term.css \
+	$(srcdir)/pkg/systemd/host.css \
+	$(srcdir)/pkg/systemd/host.js \
+	$(srcdir)/pkg/systemd/index.html \
+	$(srcdir)/pkg/systemd/init.js \
+	$(srcdir)/pkg/systemd/logs.html \
+	$(srcdir)/pkg/systemd/logs.js \
+	$(srcdir)/pkg/systemd/manifest.json \
+	$(srcdir)/pkg/systemd/services.html \
+	$(srcdir)/pkg/systemd/shutdown.js \
+	$(srcdir)/pkg/systemd/ssh-list-host-keys.sh \
+	$(srcdir)/pkg/systemd/terminal.html \
+	$(srcdir)/pkg/systemd/terminal.jsx \
+	$(srcdir)/pkg/systemd/timer.css \
+	$(NULL)
+
+systemd_OUTPUTS = \
+	dist/systemd/index.html \
+	dist/systemd/logs.html \
+	dist/systemd/logs.min.js \
+	dist/systemd/logs.min.js.map \
+	dist/systemd/manifest.json \
+	dist/systemd/services.html \
+	dist/systemd/services.min.js \
+	dist/systemd/services.min.js.map \
+	dist/systemd/system.css \
+	dist/systemd/system.css.map \
+	dist/systemd/system.min.js \
+	dist/systemd/system.min.js.map \
+	dist/systemd/terminal.css \
+	dist/systemd/terminal.css.map \
+	dist/systemd/terminal.html \
+	dist/systemd/terminal.min.js \
+	dist/systemd/terminal.min.js.map \
+	$(NULL)
+
+systemd_INSTALL = \
+	dist/systemd/index.html.gz \
+	dist/systemd/logs.html.gz \
+	dist/systemd/logs.min.js.gz \
+	dist/systemd/manifest.json \
+	dist/systemd/services.html.gz \
+	dist/systemd/services.min.js.gz \
+	dist/systemd/system.css.gz \
+	dist/systemd/system.min.js.gz \
+	dist/systemd/terminal.css.gz \
+	dist/systemd/terminal.html.gz \
+	dist/systemd/terminal.min.js.gz \
+	$(NULL)
+
+systemd_DEBUG = \
+	dist/systemd/logs.min.js.map \
+	dist/systemd/services.min.js.map \
+	dist/systemd/system.css.map \
+	dist/systemd/system.min.js.map \
+	dist/systemd/terminal.css.map \
+	dist/systemd/terminal.min.js.map \
+	$(NULL)
+
+systemd_TESTS = \
+	$(NULL)
+
+dist/Makefile-systemd.deps: $(WEBPACK_CONFIG) $(systemd_INPUTS)
+	$(WEBPACK_RULE) -d dist/Makefile-systemd.deps $(WEBPACK_CONFIG)
+
+dist/systemd/index.html: dist/Makefile-systemd.deps
+
+dist/systemd/logs.html: dist/Makefile-systemd.deps
+
+dist/systemd/logs.min.js: dist/Makefile-systemd.deps
+
+dist/systemd/logs.min.js.map: dist/Makefile-systemd.deps
+
+dist/systemd/manifest.json: dist/Makefile-systemd.deps
+
+dist/systemd/services.html: dist/Makefile-systemd.deps
+
+dist/systemd/services.min.js: dist/Makefile-systemd.deps
+
+dist/systemd/services.min.js.map: dist/Makefile-systemd.deps
+
+dist/systemd/system.css: dist/Makefile-systemd.deps
+
+dist/systemd/system.css.map: dist/Makefile-systemd.deps
+
+dist/systemd/system.min.js: dist/Makefile-systemd.deps
+
+dist/systemd/system.min.js.map: dist/Makefile-systemd.deps
+
+dist/systemd/terminal.css: dist/Makefile-systemd.deps
+
+dist/systemd/terminal.css.map: dist/Makefile-systemd.deps
+
+dist/systemd/terminal.html: dist/Makefile-systemd.deps
+
+dist/systemd/terminal.min.js: dist/Makefile-systemd.deps
+
+dist/systemd/terminal.min.js.map: dist/Makefile-systemd.deps
+
+$(srcdir)/pkg/lib/cockpit-components-terminal.jsx:
+
+$(srcdir)/pkg/lib/console.css:
+
+$(srcdir)/pkg/lib/journal.css:
+
+$(srcdir)/pkg/lib/journal.js:
+
+$(srcdir)/pkg/lib/journal_day_header.mustache:
+
+$(srcdir)/pkg/lib/journal_line.mustache:
+
+$(srcdir)/pkg/lib/journal_reboot.mustache:
+
+$(srcdir)/pkg/lib/page.css:
+
+$(srcdir)/pkg/lib/patterns.js:
+
+$(srcdir)/pkg/lib/plot.css:
+
+$(srcdir)/pkg/lib/plot.js:
+
+$(srcdir)/pkg/lib/service.js:
+
+$(srcdir)/pkg/lib/table.css:
+
+$(srcdir)/pkg/lib/term.css:
+
+$(srcdir)/pkg/systemd/host.css:
+
+$(srcdir)/pkg/systemd/host.js:
+
+$(srcdir)/pkg/systemd/index.html:
+
+$(srcdir)/pkg/systemd/init.js:
+
+$(srcdir)/pkg/systemd/logs.html:
+
+$(srcdir)/pkg/systemd/logs.js:
+
+$(srcdir)/pkg/systemd/manifest.json:
+
+$(srcdir)/pkg/systemd/services.html:
+
+$(srcdir)/pkg/systemd/shutdown.js:
+
+$(srcdir)/pkg/systemd/ssh-list-host-keys.sh:
+
+$(srcdir)/pkg/systemd/terminal.html:
+
+$(srcdir)/pkg/systemd/terminal.jsx:
+
+$(srcdir)/pkg/systemd/timer.css:
+
+WEBPACK_INPUTS += $(systemd_INPUTS)
+WEBPACK_OUTPUTS += $(systemd_OUTPUTS)
+WEBPACK_INSTALL += $(systemd_INSTALL)
+WEBPACK_DEBUG += $(systemd_DEBUG)
+TESTS += $(systemd_TESTS)

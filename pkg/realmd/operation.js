@@ -1,11 +1,9 @@
-define([
-    "jquery",
-    "base1/cockpit",
-    "shell/controls",
-    "data!./operation.html",
-    "base1/bootstrap-select"
-], function(jQuery, cockpit, controls, html) {
-    var module = { };
+(function() {
+    "use strict";
+
+    var jQuery = require("jquery");
+    var cockpit = require("cockpit");
+    require("patterns");
 
     var _ = cockpit.gettext;
 
@@ -17,7 +15,7 @@ define([
     var REALM = "org.freedesktop.realmd.Realm";
 
     function instance(realmd, mode, realm, button) {
-        var dialog = jQuery.parseHTML(html)[0];
+        var dialog = jQuery.parseHTML(require("raw!./operation.html"))[0];
 
         /* Scope the jQuery selector to our dialog */
         var $ = function(selector, context) {
@@ -63,8 +61,11 @@ define([
             }
         });
 
-        $("select.realms-op-auth").selectpicker().on('change', function() {
-            var parts = ($("select.realms-op-auth").val() || "").split("/");
+        var auth = null;
+        function auth_changed(item) {
+            auth = item.attr('data-value');
+            $(".realms-op-auth span").text(item.text());
+            var parts = (auth || "").split("/");
             var type = parts[0];
             var owner = parts[1];
 
@@ -83,6 +84,10 @@ define([
             } else if (type == "secret") {
                 $(".realms-op-otp-row").show();
             }
+        }
+
+        $(".realms-op-auth").on('click', 'li', function() {
+            auth_changed($(this));
         });
 
         var title, label;
@@ -182,6 +187,23 @@ define([
             return check();
         }
 
+        /*
+         * The realmd dbus interface has an a(ss) Details
+         * property. Lookup the right value for the given
+         * field key.
+         */
+        function find_detail(realm, field) {
+            var result = null;
+            if (realm && realm.Details) {
+                realm.Details.forEach(function(value) {
+                    if (value[0] === field)
+                        result = value[1];
+                });
+            }
+            return result;
+        }
+
+
         function update() {
             var have_one = 0;
             var message;
@@ -190,11 +212,16 @@ define([
             $(".realms-op-wait-message").toggle(!!operation);
             $(".realms-op-field").prop('disabled', !!operation);
             $(".realms-op-apply").prop('disabled', !!operation);
+            $(".realm-active-directory-only").hide();
+
+            var server = find_detail(realm, "server-software");
 
             if (realm && kerberos && !kerberos.valid) {
                 message = cockpit.format(_("Domain $0 is not supported"), realm.Name);
                 $(".realms-op-address-spinner").hide();
                 $(".realms-op-address-error").show().attr('title', message);
+            } else {
+                $(".realms-op-address-error").hide();
             }
 
             if (operation)
@@ -205,54 +232,56 @@ define([
             if (mode != 'join')
                 return;
 
+            $(".realm-active-directory-only").toggle(!server || server == "active-directory");
+
             if (realm && realm.Name && !$(".realms-op-address")[0].placeholder) {
-                $(".realms-op-address")[0].placeholder = cockpit.format(_('e.g. "$0"'), realm.Name);
+                $(".realms-op-address")[0].placeholder = cockpit.format(_("e.g. \"$0\""), realm.Name);
             }
 
             var placeholder = "";
             if (kerberos) {
                 if (kerberos.SuggestedAdministrator)
-                    placeholder = cockpit.format(_('e.g. "$0"'), kerberos.SuggestedAdministrator);
+                    placeholder = cockpit.format(_("e.g. \"$0\""), kerberos.SuggestedAdministrator);
             }
             $(".realms-op-admin")[0].placeholder = placeholder;
 
-            var sel = $("select.realms-op-auth");
+            var list = $(".realms-op-auth .dropdown-menu");
             var supported = (kerberos && kerberos.SupportedJoinCredentials) || [ ];
             supported.push(["password", "administrator"]);
 
-            var first = null;
+            var first = true;
             var count = 0;
 
             function add_choice(owner, type, text) {
-                var choice, i, length = supported.length;
+                var item, choice, i, length = supported.length;
                 for (i = 0; i < length; i++) {
                     if ((!owner || owner == supported[i][1]) && type == supported[i][0]) {
                         choice = type + "/" + supported[i][1];
-                        sel.append($("<option>").attr("value", choice).text(text));
-                        if (!first)
-                            first = choice;
+                        item = $("<li>").attr("data-value", choice).append($("<a>").text(text));
+                        list.append(item);
+                        if (first) {
+                            auth_changed(item);
+                            first = false;
+                        }
                         count += 1;
                         break;
                     }
                 }
             }
 
-            sel.empty();
-            add_choice('administrator', "password", _('Administrator Password'));
-            add_choice('user', "password", _('User Password'));
-            add_choice(null, "secret", _('One Time Password'));
-            add_choice(null, "automatic", _('Automatic'));
+            list.empty();
+            add_choice('administrator', "password", _("Administrator Password"));
+            add_choice('user', "password", _("User Password"));
+            add_choice(null, "secret", _("One Time Password"));
+            add_choice(null, "automatic", _("Automatic"));
             $(".realms-authentification-row").toggle(count > 1);
-
-            sel.prop('disabled', !!operation).val(first);
-            sel.triggerHandler("change");
-            sel.selectpicker("refresh");
+            list.prop('disabled', !!operation).val(!first);
         }
 
         function credentials() {
             var creds, secret;
 
-            var parts = ($("select.realms-op-auth").val() || "").split("/");
+            var parts = (auth || "").split("/");
             var type = parts[0];
             var owner = parts[1];
 
@@ -302,7 +331,6 @@ define([
                     var diagnostics = "";
                     var sub = realmd.subscribe({ member: "Diagnostics" }, function(path, iface, signal, args) {
                         if (args[1] === id) {
-                            console.log(String(args[0]).trim());
                             diagnostics += args[0];
                         }
                     });
@@ -368,8 +396,10 @@ define([
         return dialog;
     }
 
-    module.button = function button() {
+    function setup() {
         var $ = jQuery;
+
+        var element = $("<a>");
 
         var realmd = cockpit.dbus("org.freedesktop.realmd");
         realmd.watch(MANAGER);
@@ -380,10 +410,6 @@ define([
         var joined = null;
 
         var permission = null;
-
-        var element = $("<button>")
-            .addClass("btn btn-default")
-            .attr("id", "system_information_realms_button");
 
         $(realmd).on("close", function(ev, options) {
             var message;
@@ -406,9 +432,9 @@ define([
             permission = cockpit.permission({ admin: true });
 
             function update_realm_privileged() {
-                controls.update_privileged_ui(permission, element,
+                $(element).update_privileged(permission,
                         cockpit.format(_("The user <b>$0</b> is not permitted to modify realms"),
-                            cockpit.user.name));
+                            permission.user ? permission.user.name : ''));
             }
 
             $(permission).on("changed", update_realm_privileged);
@@ -460,7 +486,16 @@ define([
         };
 
         return element;
-    };
+    }
+
+    /* Hook this in when loaded */
+    jQuery(function() {
+        var placeholder = jQuery("#system-info-domain");
+        if (placeholder.length) {
+            placeholder.find(".button-location").append(setup());
+            placeholder.removeAttr('hidden');
+        }
+    });
 
     return module;
-});
+}());

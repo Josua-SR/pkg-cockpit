@@ -28,6 +28,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/socket.h>
 
 #include <security/pam_appl.h>
 
@@ -53,7 +54,6 @@
  */
 
 #define DEBUG_SESSION 0
-#define MAX_BUFFER 64 * 1024
 #define AUTH_FD 3
 #define EX 127
 #define DEFAULT_PATH "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
@@ -63,7 +63,11 @@ const char *rhost;
 static pid_t child;
 static int want_session = 1;
 static char *auth_delimiter = "";
-static FILE *authf;
+static char *auth_msg = NULL;
+static size_t auth_msg_size = 0;
+static FILE *authf = NULL;
+static char *last_err_msg = NULL;
+static char *last_txt_msg = NULL;
 
 #if DEBUG_SESSION
 #define debug(fmt, ...) (fprintf (stderr, "cockpit-session: " fmt "\n", ##__VA_ARGS__))
@@ -72,48 +76,43 @@ static FILE *authf;
 #endif
 
 static char *
-read_fd_until_eof (int fd,
-                   const char *what,
-                   size_t *out_len)
+read_seqpacket_message (int fd,
+                        const char *what,
+                        size_t *out_len)
 {
-  size_t len = 0;
-  size_t alloc = 0;
-  char *buf = NULL;
+  struct iovec vec = { .iov_len = MAX_PACKET_SIZE, };
+  struct msghdr msg;
   int r;
 
+  vec.iov_base = malloc (vec.iov_len + 1);
+  if (!vec.iov_base)
+    errx (EX, "couldn't allocate memory for %s", what);
+
+  /* Assume only one successful read needed
+   * since this is a SOCK_SEQPACKET over AF_UNIX
+   */
   for (;;)
     {
-      if (alloc <= len)
-        {
-          alloc += 1024;
-          if (alloc > MAX_BUFFER)
-            errx (EX, "input data is too long for %s", what);
-          buf = realloc (buf, alloc);
-          if (!buf)
-            errx (EX, "couldn't allocate memory for %s", what);
-        }
-
-      r = read (fd, buf + len, alloc - len);
+      memset (&msg, 0, sizeof (msg));
+      msg.msg_iov = &vec;
+      msg.msg_iovlen = 1;
+      r = recvmsg (fd, &msg, 0);
       if (r < 0)
         {
           if (errno == EAGAIN)
             continue;
-          err (EX, "couldn't read %s", what);
-        }
-      else if (r == 0)
-        {
-          break;
+
+          err (EX, "couldn't recv %s", what);
         }
       else
         {
-          len += r;
+          break;
         }
     }
-
-  buf[len] = '\0';
+  ((char *)vec.iov_base)[r] = '\0';
   if (out_len)
-    *out_len = len;
-  return buf;
+    *out_len = r;
+  return vec.iov_base;
 }
 
 static void
@@ -123,6 +122,7 @@ write_auth_string (const char *field,
   const unsigned char *at;
   char buf[8];
 
+  debug ("Writing %s %s", field, str);
   fprintf (authf, "%s \"%s\": \"", auth_delimiter, field);
   for (at = (const unsigned char *)str; *at; at++)
     {
@@ -160,19 +160,23 @@ write_auth_hex (const char *field,
 }
 
 static void
-write_auth_begin (int result_code)
+write_auth_bool (const char *field,
+                 int val)
 {
-  authf = fdopen (AUTH_FD, "w");
-  if (!authf)
-    err (EX, "couldn't write result to cockpit-ws");
+  fprintf (authf, "%s \"%s\": %s",
+           auth_delimiter, field,
+           val ? "true" : "false");
+  auth_delimiter = ",";
+}
 
+static void
+write_auth_code (int result_code)
+{
   /*
    * The use of JSON here is not coincidental. It allows the cockpit-ws
    * to detect whether it received the entire result or not. Partial
    * JSON objects do not parse.
    */
-
-  fprintf (authf, "{ ");
 
   if (result_code == PAM_AUTH_ERR || result_code == PAM_USER_UNKNOWN)
     {
@@ -192,18 +196,69 @@ write_auth_begin (int result_code)
     }
 
   if (result_code != PAM_SUCCESS)
-    write_auth_string ("message", pam_strerror (NULL, result_code));
+    {
+      if (last_err_msg)
+        write_auth_string ("message", last_err_msg);
+      else
+        write_auth_string ("message", pam_strerror (NULL, result_code));
+    }
 
   debug ("wrote result %d to cockpit-ws", result_code);
 }
 
 static void
+write_auth_begin (void)
+{
+  assert (authf == NULL);
+  assert (auth_msg_size == 0);
+  assert (auth_msg == NULL);
+
+  authf = open_memstream (&auth_msg, &auth_msg_size);
+  fprintf (authf, "{ ");
+}
+
+static void
 write_auth_end (void)
 {
-  fprintf (authf, " }\n");
+  int r;
 
-  if (ferror (authf) || fclose (authf) != 0)
-    err (EX, "couldn't write result to cockpit-ws");
+  assert (authf != NULL);
+
+  fprintf (authf, "}\n");
+  fflush (authf);
+  fclose (authf);
+
+  assert (auth_msg_size > 0);
+  assert (auth_msg != NULL);
+
+  for (;;)
+    {
+      r = write (AUTH_FD, auth_msg, auth_msg_size);
+      if (r < 0)
+        {
+          if (errno == EAGAIN)
+            continue;
+
+          err (EX, "couldn't write auth response");
+        }
+      else
+        {
+          break;
+        }
+    }
+
+  free (auth_msg);
+  auth_msg = NULL;
+  authf = NULL;
+  auth_msg_size = 0;
+  auth_delimiter = "";
+}
+
+static void
+close_auth_pipe (void)
+{
+  if (close (AUTH_FD) != 0)
+    err (EX, "couldn't close auth pipe");
 }
 
 static void
@@ -314,9 +369,21 @@ pam_conv_func (int num_msg,
                void *appdata_ptr)
 {
   char **password = (char **)appdata_ptr;
+  char *prompt_resp = NULL;
+
+  char *err_msg = NULL;
+  char *txt_msg = NULL;
+  char *buf;
+  int ar;
+
   struct pam_response *resp;
   int success = 1;
   int i;
+
+  txt_msg = last_txt_msg;
+  last_txt_msg = NULL;
+  err_msg = last_err_msg;
+  last_err_msg = NULL;
 
   resp = calloc (sizeof (struct pam_response), num_msg);
   if (resp == NULL)
@@ -327,30 +394,84 @@ pam_conv_func (int num_msg,
 
   for (i = 0; i < num_msg; i++)
     {
-      if (msg[i]->msg_style == PAM_PROMPT_ECHO_OFF)
+      if (msg[i]->msg_style == PAM_PROMPT_ECHO_OFF &&
+          *password != NULL)
         {
-          if (*password == NULL)
+            debug ("answered pam password prompt");
+            resp[i].resp = *password;
+            resp[i].resp_retcode = 0;
+            *password = NULL;
+        }
+      else if (msg[i]->msg_style == PAM_ERROR_MSG)
+        {
+          if (err_msg)
             {
-              warnx ("pam asked us for unexpected password");
-              success = 0;
+              buf = err_msg;
+              ar = asprintf (&err_msg, "%s\n%s", buf, msg[i]->msg);
+              free (buf);
             }
           else
             {
-              debug ("answered pam password prompt");
-              resp[i].resp = *password;
-              resp[i].resp_retcode = 0;
-              *password = NULL;
+              ar = asprintf (&err_msg, "%s", msg[i]->msg);
             }
+
+          if (ar < 0)
+            errx (EX, "couldn't allocate memory for error variable");
+          warnx ("pam: %s", msg[i]->msg);
         }
-      else if (msg[i]->msg_style == PAM_ERROR_MSG ||
-               msg[i]->msg_style == PAM_TEXT_INFO)
+      else if (msg[i]->msg_style == PAM_TEXT_INFO)
         {
+          if (txt_msg)
+            {
+              buf = txt_msg;
+              ar = asprintf (&txt_msg, "%s\n%s", txt_msg, msg[i]->msg);
+              free (buf);
+            }
+          else
+            {
+              ar = asprintf (&txt_msg, "%s", msg[i]->msg);
+            }
+          if (ar < 0)
+            errx (EX, "couldn't allocate memory for text variable");
           warnx ("pam: %s", msg[i]->msg);
         }
       else
         {
-          warnx ("pam asked us for an unsupported info: %s", msg[i]->msg);
-          success = 0;
+          debug ("prompt for more data");
+          write_auth_begin ();
+          if (txt_msg)
+            write_auth_string ("message", txt_msg);
+          if (err_msg)
+            write_auth_string ("error", err_msg);
+
+          write_auth_bool ("echo", msg[i]->msg_style == PAM_PROMPT_ECHO_OFF ? 0 : 1);
+          write_auth_string ("prompt", msg[i]->msg);
+          write_auth_end ();
+
+          if (err_msg)
+            {
+              free (err_msg);
+              err_msg = NULL;
+            }
+
+          if (txt_msg)
+            {
+              free (txt_msg);
+              txt_msg = NULL;
+            }
+
+          prompt_resp = read_seqpacket_message (AUTH_FD, msg[i]->msg, NULL);
+
+          debug ("got prompt response");
+          if (prompt_resp)
+            {
+              resp[i].resp = prompt_resp;
+              resp[i].resp_retcode = 0;
+            }
+          else
+            {
+              success = 0;
+            }
         }
     }
 
@@ -362,6 +483,11 @@ pam_conv_func (int num_msg,
       return PAM_CONV_ERR;
     }
 
+  if (err_msg)
+    last_err_msg = err_msg;
+  if (txt_msg)
+    last_txt_msg = txt_msg;
+
   *ret_resp = resp;
   return PAM_SUCCESS;
 }
@@ -372,6 +498,7 @@ open_session (pam_handle_t *pamh)
   struct passwd *buf = NULL;
   const char *name;
   int res;
+  int i;
 
   name = NULL;
   pwd = NULL;
@@ -412,10 +539,29 @@ open_session (pam_handle_t *pamh)
     {
       debug ("checking access for %s", name);
       res = pam_acct_mgmt (pamh, 0);
+      if (res == PAM_NEW_AUTHTOK_REQD)
+        {
+          warnx ("user account or password has expired: %s: %s", name, pam_strerror (pamh, res));
+
+          /*
+           * Certain PAM implementations return PAM_AUTHTOK_ERR if the users input does not
+           * match criteria. Let the conversation happen three times in that case.
+           */
+          for (i = 0; i < 3; i++) {
+              res = pam_chauthtok (pamh, PAM_CHANGE_EXPIRED_AUTHTOK);
+              if (res != PAM_SUCCESS)
+                warnx ("unable to change expired account or password: %s: %s", name, pam_strerror (pamh, res));
+              if (res != PAM_AUTHTOK_ERR)
+                break;
+          }
+        }
+      else if (res != PAM_SUCCESS)
+        {
+          warnx ("user account access failed: %d %s: %s", res, name, pam_strerror (pamh, res));
+        }
+
       if (res != PAM_SUCCESS)
         {
-          warnx ("user account access failed: %s: %s", name, pam_strerror (pamh, res));
-
           /* We change PAM_AUTH_ERR to PAM_PERM_DENIED so that we can
            * distinguish between failures here and in *
            * pam_authenticate.
@@ -467,12 +613,13 @@ perform_basic (void)
   debug ("reading password from cockpit-ws");
 
   /* The input should be a user:password */
-  input = read_fd_until_eof (AUTH_FD, "password", NULL);
+  input = read_seqpacket_message (AUTH_FD, "password", NULL);
   password = strchr (input, ':');
   if (password == NULL || strchr (password + 1, '\n'))
     {
       debug ("bad basic auth input");
-      write_auth_begin (PAM_AUTH_ERR);
+      write_auth_begin ();
+      write_auth_code (PAM_AUTH_ERR);
       write_auth_end ();
       exit (5);
     }
@@ -497,10 +644,13 @@ perform_basic (void)
   if (res == PAM_SUCCESS)
     res = open_session (pamh);
 
-  write_auth_begin (res);
+  write_auth_begin ();
+  write_auth_code (res);
   if (res == PAM_SUCCESS && pwd)
     write_auth_string ("user", pwd->pw_name);
   write_auth_end ();
+
+  close_auth_pipe ();
 
   if (res != PAM_SUCCESS)
     exit (5);
@@ -542,7 +692,7 @@ perform_gssapi (void)
   setenv ("KRB5RCACHETYPE", "none", 1);
 
   debug ("reading kerberos auth from cockpit-ws");
-  input.value = read_fd_until_eof (AUTH_FD, "gssapi data", &input.length);
+  input.value = read_seqpacket_message (AUTH_FD, "gssapi data", &input.length);
 
   debug ("acquiring server credentials");
   major = gss_acquire_cred (&minor, GSS_C_NO_NAME, GSS_C_INDEFINITE, GSS_C_NO_OID_SET,
@@ -631,7 +781,8 @@ perform_gssapi (void)
   res = open_session (pamh);
 
 out:
-  write_auth_begin (res);
+  write_auth_begin ();
+  write_auth_code (res);
   if (pwd)
     write_auth_string ("user", pwd->pw_name);
   if (output.value)
@@ -1024,6 +1175,10 @@ main (int argc,
 
   pam_end (pamh, PAM_SUCCESS);
 
+  free (last_err_msg);
+  last_err_msg = NULL;
+  free (last_txt_msg);
+  last_txt_msg = NULL;
 
   if (WIFEXITED(status))
     exit (WEXITSTATUS(status));

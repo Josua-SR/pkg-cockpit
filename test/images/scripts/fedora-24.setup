@@ -2,9 +2,6 @@
 
 set -ex
 
-# HACK - While the repos and mirrors settle down
-DNF_OPTS="--allowerasing --nogpgcheck"
-
 # HACK - virt-resize might not be able to resize our xfs rootfs,
 # depending on how it was compiled and which plugins are installed,
 # and will just silently not do it.  So we do it here.
@@ -27,8 +24,12 @@ glib-networking \
 json-glib \
 kubernetes \
 libssh \
+libvirt \
+libvirt-client \
+NetworkManager-team \
 pcp \
 pcp-libs \
+qemu \
 realmd \
 selinux-policy-targeted \
 setroubleshoot-server \
@@ -38,6 +39,15 @@ storaged-lvm2 \
 storaged-iscsi \
 subscription-manager \
 tuned \
+virt-install \
+"
+
+AVOCADO_TEST_DEPS="\
+avocado \
+avocado-plugins-output-html \
+fontconfig \
+npm \
+python-selenium \
 "
 
 # We also install the packages necessary to join a FreeIPA domain so
@@ -70,7 +80,14 @@ useradd -c Administrator -G wheel admin
 echo foobar | passwd --stdin admin
 
 dnf $DNF_OPTS -y upgrade
-dnf $DNF_OPTS -y install $TEST_PACKAGES $COCKPIT_DEPS $IPA_CLIENT_PACKAGES
+
+# We need avocado for some integration tests
+dnf -y -q copr enable lmr/Autotest
+
+dnf $DNF_OPTS -y install $TEST_PACKAGES $COCKPIT_DEPS $IPA_CLIENT_PACKAGES $AVOCADO_TEST_DEPS
+
+# integration tests need phantomjs to run locally
+npm -g install phantomjs-prebuilt
 
 # Prepare for building
 dnf $DNF_OPTS -y install mock dnf-plugins-core rpm-build
@@ -88,8 +105,8 @@ sed -i -e 's/gpgcheck=1/gpgcheck=0/' /etc/mock/default.cfg
 srpm=$(/var/lib/testvm/make-srpm $TEST_SOURCE)
 su builder -c "/usr/bin/mock --verbose --installdeps $srpm"
 
-# docker images that we need for integration testing
-/var/lib/testvm/docker-images.setup
+# HACK: docker falls over regularly, print its log if it does
+systemctl start docker || journalctl -u docker
 
 # Setup basics for building images
 docker build -t cockpit/base /var/tmp/cockpit-base
@@ -97,13 +114,12 @@ docker build -t cockpit/base /var/tmp/cockpit-base
 # Configure kubernetes
 /var/lib/testvm/kubernetes.setup
 
+# docker images that we need for integration testing
+/var/lib/testvm/docker-images.setup
+
 # reduce image size
 dnf clean all
 /var/lib/testvm/zero-disk.setup
-
-# Final tweaks
-echo "kernel.core_pattern=|/usr/lib/systemd/systemd-coredump %p %u %g %s %t %e" > /etc/sysctl.d/50-coredump.conf
-printf "[Coredump]\nStorage=journal\n" > /etc/systemd/coredump.conf
 
 ln -sf ../selinux/config /etc/sysconfig/selinux
 printf "SELINUX=enforcing\nSELINUXTYPE=targeted\n" > /etc/selinux/config

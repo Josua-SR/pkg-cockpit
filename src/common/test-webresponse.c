@@ -86,7 +86,7 @@ setup (TestCase *tc,
       g_hash_table_insert (headers, g_strdup (fixture->header), g_strdup (fixture->value));
     }
 
-  tc->response = cockpit_web_response_new (io, path, NULL, headers);
+  tc->response = cockpit_web_response_new (io, path, path, NULL, headers);
 
   if (headers)
     g_hash_table_unref (headers);
@@ -567,7 +567,7 @@ test_web_filter_simple (TestCase *tc,
   GBytes *inject;
 
   inject = bytes_static ("<meta inject>");
-  filter = cockpit_web_inject_new ("<head>", inject);
+  filter = cockpit_web_inject_new ("<head>", inject, 1);
   cockpit_web_response_add_filter (tc->response, filter);
   g_object_unref (filter);
   g_bytes_unref (inject);
@@ -599,19 +599,25 @@ test_web_filter_multiple (TestCase *tc,
   GBytes *inject;
 
   inject = bytes_static ("<meta inject>");
-  filter = cockpit_web_inject_new ("<head>", inject);
+  filter = cockpit_web_inject_new ("<head>", inject, 1);
   cockpit_web_response_add_filter (tc->response, filter);
   g_object_unref (filter);
   g_bytes_unref (inject);
 
   inject = bytes_static ("<body>Body</body>");
-  filter = cockpit_web_inject_new ("</head>", inject);
+  filter = cockpit_web_inject_new ("</head>", inject, 1);
   cockpit_web_response_add_filter (tc->response, filter);
   g_object_unref (filter);
   g_bytes_unref (inject);
 
   inject = bytes_static ("Prefix ");
-  filter = cockpit_web_inject_new ("<title>", inject);
+  filter = cockpit_web_inject_new ("<title>", inject, 1);
+  cockpit_web_response_add_filter (tc->response, filter);
+  g_object_unref (filter);
+  g_bytes_unref (inject);
+
+  inject = bytes_static (" ");
+  filter = cockpit_web_inject_new (">", inject, 3);
   cockpit_web_response_add_filter (tc->response, filter);
   g_object_unref (filter);
   g_bytes_unref (inject);
@@ -627,8 +633,12 @@ test_web_filter_multiple (TestCase *tc,
   g_assert_cmpint (cockpit_web_response_get_state (tc->response), ==, COCKPIT_WEB_RESPONSE_SENT);
 
   g_assert_cmpstr (resp, ==, "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\n\r\n"
-                   "c\r\n<html><head>\r\n"
+                   "6\r\n<html>\r\n"
+                   "1\r\n \r\n"
+                   "6\r\n<head>\r\n"
+                   "1\r\n \r\n"
                    "d\r\n<meta inject>\r\n"
+                   "1\r\n \r\n"
                    "7\r\n<title>\r\n"
                    "7\r\nPrefix \r\n"
                    "18\r\nThe Title</title></head>\r\n"
@@ -649,19 +659,19 @@ test_web_filter_split (TestCase *tc,
   gsize i, x, len;
 
   inject = bytes_static ("<meta inject>");
-  filter = cockpit_web_inject_new ("<head>", inject);
+  filter = cockpit_web_inject_new ("<head>", inject, 1);
   cockpit_web_response_add_filter (tc->response, filter);
   g_object_unref (filter);
   g_bytes_unref (inject);
 
   inject = bytes_static ("<body>Body</body>");
-  filter = cockpit_web_inject_new ("</head>", inject);
+  filter = cockpit_web_inject_new ("</head>", inject, 1);
   cockpit_web_response_add_filter (tc->response, filter);
   g_object_unref (filter);
   g_bytes_unref (inject);
 
   inject = bytes_static ("Prefix ");
-  filter = cockpit_web_inject_new ("<title>", inject);
+  filter = cockpit_web_inject_new ("<title>", inject, 1);
   cockpit_web_response_add_filter (tc->response, filter);
   g_object_unref (filter);
   g_bytes_unref (inject);
@@ -709,6 +719,92 @@ test_web_filter_split (TestCase *tc,
 }
 
 static void
+test_web_filter_shift (TestCase *tc,
+                       gconstpointer data)
+{
+  CockpitWebFilter *filter;
+  const gchar *resp;
+  GBytes *block;
+  GBytes *inject;
+
+  inject = bytes_static ("injected");
+  filter = cockpit_web_inject_new ("foofn", inject, 1);
+  cockpit_web_response_add_filter (tc->response, filter);
+  g_object_unref (filter);
+  g_bytes_unref (inject);
+
+  cockpit_web_response_headers_full (tc->response, 200, "OK", -1, NULL);
+
+  /* Total content is foofoofn and split after the first 4 characters */
+  block = bytes_static ("foof");
+  g_assert (cockpit_web_response_queue (tc->response, block) == TRUE);
+  g_bytes_unref (block);
+  block = bytes_static ("oofn");
+  g_assert (cockpit_web_response_queue (tc->response, block) == TRUE);
+  g_bytes_unref (block);
+  cockpit_web_response_complete (tc->response);
+
+  while (cockpit_web_response_get_state (tc->response) != COCKPIT_WEB_RESPONSE_COMPLETE)
+    g_main_context_iteration (NULL, TRUE);
+
+  resp = output_as_string (tc);
+  g_assert_cmpint (cockpit_web_response_get_state (tc->response), ==, COCKPIT_WEB_RESPONSE_SENT);
+
+  g_assert_cmpstr (resp, ==, "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\n\r\n"
+                   "4\r\nfoof\r\n"
+                   "4\r\noofn\r\n"
+                   "8\r\ninjected\r\n"
+                   "0\r\n\r\n");
+}
+
+static void
+test_web_filter_shift_three (TestCase *tc,
+                             gconstpointer data)
+{
+  CockpitWebFilter *filter;
+  const gchar *resp;
+  GBytes *block;
+  GBytes *inject;
+
+  inject = bytes_static ("injected");
+  filter = cockpit_web_inject_new ("foofn", inject, 1);
+  cockpit_web_response_add_filter (tc->response, filter);
+  g_object_unref (filter);
+  g_bytes_unref (inject);
+
+  cockpit_web_response_headers_full (tc->response, 200, "OK", -1, NULL);
+
+  /* Total content is foofoofn and split across multiple packets after the first 4 characters */
+  block = bytes_static ("foof");
+  g_assert (cockpit_web_response_queue (tc->response, block) == TRUE);
+  g_bytes_unref (block);
+  block = bytes_static ("o");
+  g_assert (cockpit_web_response_queue (tc->response, block) == TRUE);
+  g_bytes_unref (block);
+  block = bytes_static ("of");
+  g_assert (cockpit_web_response_queue (tc->response, block) == TRUE);
+  g_bytes_unref (block);
+  block = bytes_static ("n");
+  g_assert (cockpit_web_response_queue (tc->response, block) == TRUE);
+  g_bytes_unref (block);
+  cockpit_web_response_complete (tc->response);
+
+  while (cockpit_web_response_get_state (tc->response) != COCKPIT_WEB_RESPONSE_COMPLETE)
+    g_main_context_iteration (NULL, TRUE);
+
+  resp = output_as_string (tc);
+  g_assert_cmpint (cockpit_web_response_get_state (tc->response), ==, COCKPIT_WEB_RESPONSE_SENT);
+
+  g_assert_cmpstr (resp, ==, "HTTP/1.1 200 OK\r\nTransfer-Encoding: chunked\r\n\r\n"
+                   "4\r\nfoof\r\n"
+                   "1\r\no\r\n"
+                   "2\r\nof\r\n"
+                   "1\r\nn\r\n"
+                   "8\r\ninjected\r\n"
+                   "0\r\n\r\n");
+}
+
+static void
 test_web_filter_passthrough (TestCase *tc,
                              gconstpointer data)
 {
@@ -718,7 +814,7 @@ test_web_filter_passthrough (TestCase *tc,
   GBytes *inject;
 
   inject = bytes_static ("<meta inject>");
-  filter = cockpit_web_inject_new ("<unknown>", inject);
+  filter = cockpit_web_inject_new ("<unknown>", inject, 1);
   cockpit_web_response_add_filter (tc->response, filter);
   g_object_unref (filter);
   g_bytes_unref (inject);
@@ -831,9 +927,11 @@ test_pop_path (TestPlain *tc,
 {
   CockpitWebResponse *response;
   gchar *part;
+  const gchar *start = "/cockpit/@localhost/another/test.html";
 
-  response = cockpit_web_response_new (tc->io, "/cockpit/@localhost/another/test.html", NULL, tc->headers);
-  g_assert_cmpstr (cockpit_web_response_get_path (response), ==, "/cockpit/@localhost/another/test.html");
+  response = cockpit_web_response_new (tc->io, start, start, NULL, tc->headers);
+  g_assert_cmpstr (cockpit_web_response_get_path (response), ==, start);
+  g_assert_cmpstr (cockpit_web_response_get_url_root (response), ==, NULL);
 
   part = cockpit_web_response_pop_path (response);
   g_assert_cmpstr (part, ==, "cockpit");
@@ -871,7 +969,7 @@ test_pop_path_root (TestPlain *tc,
   CockpitWebResponse *response;
   gchar *part;
 
-  response = cockpit_web_response_new (tc->io, "/", NULL, tc->headers);
+  response = cockpit_web_response_new (tc->io, "/", "/", NULL, tc->headers);
   g_assert_cmpstr (cockpit_web_response_get_path (response), ==, "/");
 
   part = cockpit_web_response_pop_path (response);
@@ -888,8 +986,9 @@ test_skip_path (TestPlain *tc,
                 gconstpointer unused)
 {
   CockpitWebResponse *response;
+  const gchar *start = "/cockpit/@localhost/another/test.html";
 
-  response = cockpit_web_response_new (tc->io, "/cockpit/@localhost/another/test.html", NULL, tc->headers);
+  response = cockpit_web_response_new (tc->io, start, start, NULL, tc->headers);
   g_assert_cmpstr (cockpit_web_response_get_path (response), ==, "/cockpit/@localhost/another/test.html");
 
   g_assert (cockpit_web_response_skip_path (response) == TRUE);
@@ -917,7 +1016,7 @@ test_skip_path_root (TestPlain *tc,
 {
   CockpitWebResponse *response;
 
-  response = cockpit_web_response_new (tc->io, "/", NULL, tc->headers);
+  response = cockpit_web_response_new (tc->io, "/", "/", NULL, tc->headers);
   g_assert_cmpstr (cockpit_web_response_get_path (response), ==, "/");
 
   g_assert (cockpit_web_response_skip_path (response) == FALSE);
@@ -925,6 +1024,43 @@ test_skip_path_root (TestPlain *tc,
 
   cockpit_web_response_abort (response);
   g_object_unref (response);
+}
+
+static void
+test_removed_prefix (TestPlain *tc,
+                     gconstpointer unused)
+{
+  CockpitWebResponse *response;
+
+  response = cockpit_web_response_new (tc->io, "/", "/", NULL, tc->headers);
+  g_assert_cmpstr (cockpit_web_response_get_path (response), ==, "/");
+  g_assert_cmpstr (cockpit_web_response_get_url_root (response), ==, NULL);
+  cockpit_web_response_abort (response);
+  g_clear_object (&response);
+
+  response = cockpit_web_response_new (tc->io, "/path/", "/path/", NULL, tc->headers);
+  g_assert_cmpstr (cockpit_web_response_get_path (response), ==, "/path/");
+  g_assert_cmpstr (cockpit_web_response_get_url_root (response), ==, NULL);
+  cockpit_web_response_abort (response);
+  g_clear_object (&response);
+
+  response = cockpit_web_response_new (tc->io, "/path/path2/", "/path2/", NULL, tc->headers);
+  g_assert_cmpstr (cockpit_web_response_get_path (response), ==, "/path2/");
+  g_assert_cmpstr (cockpit_web_response_get_url_root (response), ==, "/path");
+  cockpit_web_response_abort (response);
+  g_clear_object (&response);
+
+  response = cockpit_web_response_new (tc->io, "/mis/", "/match/", NULL, tc->headers);
+  g_assert_cmpstr (cockpit_web_response_get_path (response), ==, "/match/");
+  g_assert_cmpstr (cockpit_web_response_get_url_root (response), ==, NULL);
+  cockpit_web_response_abort (response);
+  g_clear_object (&response);
+
+  response = cockpit_web_response_new (tc->io, NULL, NULL, NULL, tc->headers);
+  g_assert_cmpstr (cockpit_web_response_get_path (response), ==, NULL);
+  g_assert_cmpstr (cockpit_web_response_get_url_root (response), ==, NULL);
+  cockpit_web_response_abort (response);
+  g_clear_object (&response);
 }
 
 static void
@@ -1000,7 +1136,7 @@ test_negotiation_first (void)
   GBytes *bytes;
 
   bytes = cockpit_web_response_negotiation (SRCDIR "/src/common/mock-content/test-file.txt",
-                                            NULL, &chosen, &error);
+                                            NULL, NULL, &chosen, &error);
 
   cockpit_assert_bytes_eq (bytes, "A small test file\n", -1);
   g_assert_no_error (error);
@@ -1019,7 +1155,7 @@ test_negotiation_last (void)
   GBytes *bytes;
 
   bytes = cockpit_web_response_negotiation (SRCDIR "/src/common/mock-content/large.js",
-                                            NULL, &chosen, &error);
+                                            NULL, NULL, &chosen, &error);
 
   g_assert_no_error (error);
   g_assert_cmpstr (chosen, ==, SRCDIR "/src/common/mock-content/large.min.js.gz");
@@ -1040,7 +1176,7 @@ test_negotiation_prune (void)
   GBytes *bytes;
 
   bytes = cockpit_web_response_negotiation (SRCDIR "/src/common/mock-content/test-file.extra.extension.txt",
-                                            NULL, &chosen, &error);
+                                            NULL, NULL, &chosen, &error);
 
   cockpit_assert_bytes_eq (bytes, "A small test file\n", -1);
   g_assert_no_error (error);
@@ -1062,7 +1198,7 @@ test_negotiation_with_listing (void)
   g_hash_table_add (existing, SRCDIR "/src/common/mock-content/test-file.txt.gz");
 
   bytes = cockpit_web_response_negotiation (SRCDIR "/src/common/mock-content/test-file.txt",
-                                            existing, NULL, &error);
+                                            existing, NULL, NULL, &error);
 
   cockpit_assert_bytes_eq (bytes, "\x1F\x8B\x08\x08N1\x03U\x00\x03test-file.txt\x00"
                            "sT(\xCEM\xCC\xC9Q(I-.QH\xCB\xCCI\xE5\x02\x00>PjG\x12\x00\x00\x00", 52);
@@ -1073,6 +1209,24 @@ test_negotiation_with_listing (void)
 }
 
 static void
+test_negotiation_locale (void)
+{
+  gchar *chosen = NULL;
+  GError *error = NULL;
+  GBytes *bytes;
+
+  bytes = cockpit_web_response_negotiation (SRCDIR "/src/common/mock-content/test-file.txt",
+                                            NULL, "zh-cn", &chosen, &error);
+
+  cockpit_assert_bytes_eq (bytes, "A translated test file\n", -1);
+  g_assert_no_error (error);
+  g_bytes_unref (bytes);
+
+  g_assert_cmpstr (chosen, ==, SRCDIR "/src/common/mock-content/test-file.zh_CN.txt");
+  g_free (chosen);
+}
+
+static void
 test_negotiation_notfound (void)
 {
   gchar *chosen = NULL;
@@ -1080,7 +1234,7 @@ test_negotiation_notfound (void)
   GBytes *bytes;
 
   bytes = cockpit_web_response_negotiation (SRCDIR "/src/common/mock-content/non-existant",
-                                            NULL, &chosen, &error);
+                                            NULL, NULL, &chosen, &error);
 
   g_assert_no_error (error);
   g_assert (bytes == NULL);
@@ -1096,7 +1250,7 @@ test_negotiation_failure (void)
   GBytes *bytes;
 
   bytes = cockpit_web_response_negotiation (SRCDIR "/src/common/mock-content/directory",
-                                            NULL, &chosen, &error);
+                                            NULL, NULL, &chosen, &error);
 
   g_assert (error != NULL);
   g_error_free (error);
@@ -1171,6 +1325,10 @@ main (int argc,
               setup, test_web_filter_passthrough, teardown);
   g_test_add ("/web-response/filter/split", TestCase, NULL,
               setup, test_web_filter_split, teardown);
+  g_test_add ("/web-response/filter/shift", TestCase, NULL,
+              setup, test_web_filter_shift, teardown);
+  g_test_add ("/web-response/filter/shift_three", TestCase, NULL,
+              setup, test_web_filter_shift_three, teardown);
 
   g_test_add ("/web-response/path/pop", TestPlain, NULL,
               setup_plain, test_pop_path, teardown_plain);
@@ -1180,6 +1338,8 @@ main (int argc,
               setup_plain, test_skip_path, teardown_plain);
   g_test_add ("/web-response/path/skip-root", TestPlain, NULL,
               setup_plain, test_skip_path_root, teardown_plain);
+  g_test_add ("/web-response/path/removed-prefix", TestPlain, NULL,
+              setup_plain, test_removed_prefix, teardown_plain);
 
   g_test_add_func ("/web-response/gunzip/small", test_gunzip_small);
   g_test_add_func ("/web-response/gunzip/large", test_gunzip_large);
@@ -1187,6 +1347,7 @@ main (int argc,
 
   g_test_add_func ("/web-response/negotiation/first", test_negotiation_first);
   g_test_add_func ("/web-response/negotiation/last", test_negotiation_last);
+  g_test_add_func ("/web-response/negotiation/locale", test_negotiation_locale);
   g_test_add_func ("/web-response/negotiation/prune", test_negotiation_prune);
   g_test_add_func ("/web-response/negotiation/with-listing", test_negotiation_with_listing);
   g_test_add_func ("/web-response/negotiation/notfound", test_negotiation_notfound);

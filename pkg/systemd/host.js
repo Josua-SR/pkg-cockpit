@@ -17,24 +17,21 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-define([
-    "jquery",
-    "base1/cockpit",
-    "base1/mustache",
-    "domain/operation",
-    "performance/dialog",
-    "shell/controls",
-    "shell/shell",
-    "system/server",
-    "system/service",
-    "shell/plot",
-    "shell/cockpit-plot",
-    "shell/cockpit-util",
-    "base1/bootstrap-datepicker",
-    "base1/bootstrap-combobox",
-    "base1/patterns",
-], function($, cockpit, Mustache, domain, performance, controls, shell, server, service) {
-"use strict";
+var $ = require("jquery");
+var cockpit = require("cockpit");
+
+var Mustache = require("mustache");
+var plot = require("plot");
+var service = require("service");
+
+/* These add themselves to jQuery so just including is enough */
+require("patterns");
+require("bootstrap-datepicker/dist/js/bootstrap-datepicker");
+require("bootstrap-combobox/js/bootstrap-combobox");
+
+var shutdown = require("./shutdown");
+
+var host_keys_script = require("raw!./ssh-list-host-keys.sh");
 
 var _ = cockpit.gettext;
 var C_ = cockpit.gettext;
@@ -43,17 +40,54 @@ var permission = cockpit.permission({ admin: true });
 $(permission).on("changed", update_hostname_privileged);
 
 function update_hostname_privileged() {
-    controls.update_privileged_ui(
-        permission, ".hostname-privileged",
-        cockpit.format(
+    $(".hostname-privileged").update_privileged(
+        permission, cockpit.format(
             _("The user <b>$0</b> is not permitted to modify hostnames"),
-            cockpit.user.name)
+            permission.user ? permission.user.name : '')
     );
 }
 
 function debug() {
     if (window.debugging == "all" || window.debugging == "system")
         console.debug.apply(console, arguments);
+}
+
+/* machine_info(address).done(function (info) { })
+ *
+ * Get information about the machine at ADDRESS.  The returned object
+ * has these fields:
+ *
+ * memory  -  amount of physical memory
+ */
+
+var machine_info_promises = { };
+
+function machine_info(address) {
+    var pr = machine_info_promises[address];
+    var dfd;
+    if (!pr) {
+        dfd = $.Deferred();
+        machine_info_promises[address] = pr = dfd.promise();
+
+        cockpit.spawn(["cat", "/proc/meminfo", "/proc/cpuinfo"]).
+            done(function(text) {
+                var info = { };
+                var match = text.match(/MemTotal:[^0-9]*([0-9]+) [kK]B/);
+                var total_kb = match && parseInt(match[1], 10);
+                if (total_kb)
+                    info.memory = total_kb*1024;
+
+                info.cpus = 0;
+                var re = new RegExp("^processor", "gm");
+                while (re.test(text))
+                    info.cpus += 1;
+                dfd.resolve(info);
+            }).
+            fail(function() {
+                dfd.reject();
+            });
+    }
+    return pr;
 }
 
 function ServerTime() {
@@ -76,7 +110,7 @@ function ServerTime() {
      * behavior and formatting of a Date() object in the absence of
      * IntlDateFormat and  friends.
      */
-    Object.defineProperty(self, 'now', {
+    Object.defineProperty(self, 'utc_fake_now', {
         enumerable: true,
         get: function get() {
             var offset = time_offset + remote_offset;
@@ -84,8 +118,15 @@ function ServerTime() {
         }
     });
 
+    Object.defineProperty(self, 'now', {
+        enumerable: true,
+        get: function get() {
+            return new Date(time_offset + (new Date()).valueOf());
+        }
+    });
+
     self.format = function format(and_time) {
-        var string = self.now.toISOString();
+        var string = self.utc_fake_now.toISOString();
         if (!and_time)
             return string.split('T')[0];
         var pos = string.lastIndexOf(':');
@@ -98,22 +139,29 @@ function ServerTime() {
         $(self).triggerHandler("changed");
     }, 30000);
 
-    function offsets(timems, offsetms) {
-        var now = new Date();
-        time_offset = (timems - now.valueOf());
-        remote_offset = offsetms;
-        $(self).triggerHandler("changed");
-    }
+    self.wait = function wait() {
+        if (remote_offset === null)
+            return self.update();
+        return cockpit.resolve();
+    };
 
     self.update = function update() {
-        cockpit.spawn(["date", "+%s:%:z"])
+        return cockpit.spawn(["date", "+%s:%:z"], { err: "message" })
             .done(function(data) {
                 var parts = data.trim().split(":").map(function(x) {
                     return parseInt(x, 10);
                 });
                 if (parts[1] < 0)
                     parts[2] = -(parts[2]);
-                offsets(parts[0] * 1000, (parts[1] * 3600000) + parts[2] * 60000);
+                var timems = parts[0] * 1000;
+                var offsetms = (parts[1] * 3600000) + parts[2] * 60000;
+                var now = new Date();
+                time_offset = (timems - now.valueOf());
+                remote_offset = offsetms;
+                $(self).triggerHandler("changed");
+            })
+            .fail(function(ex) {
+                console.log("Couldn't calculate server time offset: " + cockpit.message(ex));
             });
     };
 
@@ -186,13 +234,10 @@ PageServer.prototype = {
         var self = this;
         update_hostname_privileged();
 
-        $('#shutdown-group').append(
-              shell.action_btn(
-                  function (op) { self.shutdown(op); },
-                  [ { title: _("Restart"),         action: 'default' },
-                    { title: _("Shutdown"),        action: 'shutdown' },
-                  ])
-        );
+        $('#shutdown-group [data-action]').on("click", function() {
+            self.shutdown($(this).attr('data-action'));
+        });
+
         $('#system-ostree-version-link').on('click', function () {
             cockpit.jump("/updates", cockpit.transport.host);
         });
@@ -206,12 +251,6 @@ PageServer.prototype = {
             change_systime_dialog.display(self.server_time);
         });
 
-        self.domain_button = domain.button();
-        $("#system-info-realms td.button-location").append(self.domain_button);
-
-        self.performance_button = performance.button();
-        $("#system-info-performance td.button-location").append(self.performance_button);
-
         self.server_time = new ServerTime();
         $(self.server_time).on("changed", function() {
             $('#system_information_systime_button').text(self.server_time.format(true));
@@ -222,6 +261,13 @@ PageServer.prototype = {
 
         self.ntp_status_icon_tmpl = $("#ntp-status-icon-tmpl").html();
         Mustache.parse(this.ntp_status_icon_tmpl);
+
+        self.ssh_host_keys_tmpl = $("#ssh-host-keys-tmpl").html();
+        Mustache.parse(this.ssh_host_keys_tmpl);
+
+        $("#system_information_ssh_keys").on("show.bs.modal", function() {
+            self.host_keys_show();
+        });
 
         function update_ntp_status() {
             var $elt = $('#system_information_systime_ntp_status');
@@ -286,7 +332,7 @@ PageServer.prototype = {
             cockpit.jump("/system/services/#/" + window.encodeURIComponent(service));
         });
 
-        self.plot_controls = shell.setup_plot_controls($('#server'), $('#server-graph-toolbar'));
+        self.plot_controls = plot.setup_plot_controls($('#server'), $('#server-graph-toolbar'));
 
         var pmcd_service = service.proxy("pmcd");
         var pmlogger_service = service.proxy("pmlogger");
@@ -296,7 +342,7 @@ PageServer.prototype = {
             var val = $(this).onoff('value');
             if (pmlogger_service.exists) {
                 if (val) {
-                    pmlogger_promise = $.when(pmcd_service.enable(),
+                    pmlogger_promise = cockpit.all(pmcd_service.enable(),
                            pmcd_service.start(),
                            pmlogger_service.enable(),
                            pmlogger_service.start()).
@@ -304,7 +350,7 @@ PageServer.prototype = {
                             console.warn("Enabling pmlogger failed", error);
                         });
                 } else {
-                    pmlogger_promise = $.when(pmlogger_service.disable(),
+                    pmlogger_promise = cockpit.all(pmlogger_service.disable(),
                            pmlogger_service.stop()).
                         fail(function (error) {
                             console.warn("Disabling pmlogger failed", error);
@@ -333,6 +379,16 @@ PageServer.prototype = {
     enter: function() {
         var self = this;
 
+        var machine_id = cockpit.file("/etc/machine-id");
+        machine_id.read().done(function (content) {
+            $("#system_machine_id").text(content);
+            $("#system_machine_id").attr("title", content);
+        }).fail(function (ex) {
+            console.error("Error reading machine id", ex);
+        }).always(function () {
+            machine_id.close();
+        });
+
         self.ostree_client = cockpit.dbus('org.projectatomic.rpmostree1',
                                           {"superuser" : true});
         $(self.ostree_client).on("close", function () {
@@ -360,11 +416,11 @@ PageServer.prototype = {
             factor: 0.1  // millisec / sec -> percent
         };
 
-        var cpu_options = shell.plot_simple_template();
+        var cpu_options = plot.plot_simple_template();
         $.extend(cpu_options.yaxis, { tickFormatter: function(v) { return v.toFixed(0); },
                                       max: 100
                                     });
-        self.cpu_plot = shell.plot($("#server_cpu_graph"), 300);
+        self.cpu_plot = plot.plot($("#server_cpu_graph"), 300);
         self.cpu_plot.set_options(cpu_options);
         series = self.cpu_plot.add_metrics_sum_series(cpu_data, { });
 
@@ -376,16 +432,16 @@ PageServer.prototype = {
             units: "bytes"
         };
 
-        var memory_options = shell.plot_simple_template();
-        $.extend(memory_options.yaxis, { ticks: shell.memory_ticks,
-                                         tickFormatter: shell.format_bytes_tick_no_unit
+        var memory_options = plot.plot_simple_template();
+        $.extend(memory_options.yaxis, { ticks: plot.memory_ticks,
+                                         tickFormatter: plot.format_bytes_tick_no_unit
                                        });
-        memory_options.setup_hook = function memory_setup_hook(plot) {
-            var axes = plot.getAxes();
-            $('#server_memory_unit').text(shell.bytes_tick_unit(axes.yaxis));
+        memory_options.setup_hook = function memory_setup_hook(pl) {
+            var axes = pl.getAxes();
+            $('#server_memory_unit').text(plot.bytes_tick_unit(axes.yaxis));
         };
 
-        self.memory_plot = shell.plot($("#server_memory_graph"), 300);
+        self.memory_plot = plot.plot($("#server_memory_graph"), 300);
         self.memory_plot.set_options(memory_options);
         series = self.memory_plot.add_metrics_sum_series(memory_data, { });
 
@@ -398,21 +454,21 @@ PageServer.prototype = {
             derive: "rate"
         };
 
-        var network_options = shell.plot_simple_template();
-        $.extend(network_options.yaxis, { tickFormatter: shell.format_bits_per_sec_tick_no_unit
+        var network_options = plot.plot_simple_template();
+        $.extend(network_options.yaxis, { tickFormatter: plot.format_bits_per_sec_tick_no_unit
                                         });
-        network_options.setup_hook = function network_setup_hook(plot) {
-            var axes = plot.getAxes();
+        network_options.setup_hook = function network_setup_hook(pl) {
+            var axes = pl.getAxes();
             if (axes.yaxis.datamax < 100000)
                 axes.yaxis.options.max = 100000;
             else
                 axes.yaxis.options.max = null;
             axes.yaxis.options.min = 0;
 
-            $('#server_network_traffic_unit').text(shell.bits_per_sec_tick_unit(axes.yaxis));
+            $('#server_network_traffic_unit').text(plot.bits_per_sec_tick_unit(axes.yaxis));
         };
 
-        self.network_plot = shell.plot($("#server_network_traffic_graph"), 300);
+        self.network_plot = plot.plot($("#server_network_traffic_graph"), 300);
         self.network_plot.set_options(network_options);
         series = self.network_plot.add_metrics_sum_series(network_data, { });
 
@@ -425,26 +481,26 @@ PageServer.prototype = {
             derive: "rate"
         };
 
-        var disk_options = shell.plot_simple_template();
-        $.extend(disk_options.yaxis, { ticks: shell.memory_ticks,
-                                       tickFormatter: shell.format_bytes_per_sec_tick_no_unit
+        var disk_options = plot.plot_simple_template();
+        $.extend(disk_options.yaxis, { ticks: plot.memory_ticks,
+                                       tickFormatter: plot.format_bytes_per_sec_tick_no_unit
                                      });
-        disk_options.setup_hook = function disk_setup_hook(plot) {
-            var axes = plot.getAxes();
+        disk_options.setup_hook = function disk_setup_hook(pl) {
+            var axes = pl.getAxes();
             if (axes.yaxis.datamax < 100000)
                 axes.yaxis.options.max = 100000;
             else
                 axes.yaxis.options.max = null;
             axes.yaxis.options.min = 0;
 
-            $('#server_disk_io_unit').text(shell.bytes_per_sec_tick_unit(axes.yaxis));
+            $('#server_disk_io_unit').text(plot.bytes_per_sec_tick_unit(axes.yaxis));
         };
 
-        self.disk_plot = shell.plot($("#server_disk_io_graph"), 300);
+        self.disk_plot = plot.plot($("#server_disk_io_graph"), 300);
         self.disk_plot.set_options(disk_options);
         series = self.disk_plot.add_metrics_sum_series(disk_data, { });
 
-        shell.util.machine_info(null).
+        machine_info().
             done(function (info) {
                 cpu_options.yaxis.max = info.cpus * 100;
                 self.cpu_plot.set_options(cpu_options);
@@ -492,10 +548,13 @@ PageServer.prototype = {
                       { directory: "/sys/devices/virtual/dmi/id", superuser: "try", err: "ignore" })
             .done(function(output) {
                 var fields = parse_lines(output);
+                var present = !!(fields.product_serial || fields.chassis_serial);
                 $("#system_information_asset_tag_text").text(fields.product_serial ||
                                                              fields.chassis_serial);
+                $("#system-info-asset-row").toggle(present);
             })
             .fail(function(ex) {
+                $("#system-info-asset-row").toggle(false);
                 debug("couldn't read serial dmi info: " + ex);
             });
 
@@ -561,6 +620,68 @@ PageServer.prototype = {
         }
     },
 
+    host_keys_show: function() {
+        var self = this;
+        var parenthesis = /^\((.*)\)$/;
+        var spinner = $("#system_information_ssh_keys .spinner");
+        var content = $("#system_information_ssh_keys .content");
+        var error = $("#system_information_ssh_keys .alert");
+
+        content.toggle(false);
+        error.toggle(false);
+        spinner.toggle(true);
+
+        cockpit.script(host_keys_script, [],{ "superuser": "try",
+                                              "err": "message" })
+            .done(function(data) {
+                var seen = {};
+                var arr = [];
+                var keys = {};
+
+                var i, tmp, m;
+                var full = data.trim().split("\n");
+                for (i = 0; i < full.length; i++) {
+                    var line = full[i];
+                    if (!line)
+                        continue;
+
+                    var parts = line.trim().split(" ");
+                    var title, fp = parts[1];
+                    if (!seen[fp]) {
+                        seen[fp] = fp;
+                        title = parts[parts.length - 1];
+                        if (title) {
+                            m = title.match(parenthesis);
+                            if (m && m[1])
+                                title = m[1];
+                        }
+                        if (!keys[title])
+                            keys[title] = [];
+                        keys[title].push(fp);
+                    }
+                }
+
+                arr = Object.keys(keys);
+                arr.sort();
+                arr = arr.map(function (k) {
+                    return { title: k, fps: keys[k] };
+                });
+
+                tmp = Mustache.render(self.ssh_host_keys_tmpl, { keys: arr });
+                content.html(tmp);
+                spinner.toggle(false);
+                error.toggle(false);
+                content.toggle(true);
+            })
+            .fail(function(ex) {
+                var msg = cockpit.format(_("failed to list ssh host keys: $0"), ex.message);
+                content.toggle(false);
+                spinner.toggle(false);
+                $("#system_information_ssh_keys .alert strong").text(msg);
+                error.toggle(true);
+            });
+    },
+
     sysroot_changed: function() {
         var self = this;
 
@@ -591,8 +712,7 @@ PageServer.prototype = {
     },
 
     shutdown: function(action_type) {
-        PageShutdownDialog.type = action_type;
-        $('#shutdown-dialog').modal('show');
+        shutdown(action_type, this.server_time);
     },
 };
 
@@ -641,7 +761,7 @@ PageSystemInformationChangeHostname.prototype = {
 
         var one = self.hostname_proxy.call("SetStaticHostname", [new_name, true]);
         var two = self.hostname_proxy.call("SetPrettyHostname", [new_full_name, true]);
-        $("#system_information_change_hostname").dialog("promise", $.when(one, two));
+        $("#system_information_change_hostname").dialog("promise", cockpit.all(one, two));
     },
 
     _on_full_name_changed: function(event) {
@@ -674,8 +794,8 @@ PageSystemInformationChangeHostname.prototype = {
         var valid = false;
         var can_apply = false;
 
-        var charError = "Real host name can only contain lower-case characters, digits, dashes, and periods (with populated subdomains)";
-        var lengthError = "Real host name must be 64 characters or less";
+        var charError = _("Real host name can only contain lower-case characters, digits, dashes, and periods (with populated subdomains)");
+        var lengthError = _("Real host name must be 64 characters or less");
 
         var validLength = $("#sich-hostname").val().length <= 64;
         var hostname = $("#sich-hostname").val();
@@ -749,6 +869,7 @@ PageSystemInformationChangeSystime.prototype = {
     _init: function() {
         this.id = "system_information_change_systime";
         this.date = "";
+        this.ntp_type = null;
     },
 
     setup: function() {
@@ -758,8 +879,15 @@ PageSystemInformationChangeSystime.prototype = {
             $('#systime-apply-button').prop('disabled', false);
         }
 
+
         $("#systime-apply-button").on("click", $.proxy(this._on_apply_button, this));
-        $('#change_systime').on('change', $.proxy(this, "update"));
+
+        self.ntp_type = "manual_time";
+        $('#change_systime li').on('click', function() {
+            self.ntp_type = $(this).attr("value");
+            self.update();
+        });
+
         $('#systime-time-minutes').on('focusout', $.proxy(this, "update_minutes"));
         $('#systime-date-input').datepicker({
             autoclose: true,
@@ -773,6 +901,7 @@ PageSystemInformationChangeSystime.prototype = {
         $('#systime-time-hours').on('input', enable_apply_button);
         $('#systime-date-input').on('input', enable_apply_button);
         $('#systime-timezones').on('change', enable_apply_button);
+        $('#change_systime').on('click', enable_apply_button);
         $('#systime-date-input').on('focusin', $.proxy(this, "store_date"));
         $('#systime-date-input').on('focusout', $.proxy(this, "restore_date"));
 
@@ -808,16 +937,15 @@ PageSystemInformationChangeSystime.prototype = {
         var self = this;
 
         $('#systime-date-input').val(self.server_time.format());
-        $('#systime-time-minutes').val(self.server_time.now.getUTCMinutes());
-        $('#systime-time-hours').val(self.server_time.now.getUTCHours());
-        $('#change_systime').val(self.server_time.timedate.NTP ?
-                                 (self.custom_ntp_enabled ? 'ntp_time_custom' : 'ntp_time')
-                                 : 'manual_time');
+        $('#systime-time-minutes').val(self.server_time.utc_fake_now.getUTCMinutes());
+        $('#systime-time-hours').val(self.server_time.utc_fake_now.getUTCHours());
+
+        self.ntp_type = self.server_time.timedate.NTP ?
+                        (self.custom_ntp_enabled ? 'ntp_time_custom' : 'ntp_time') : 'manual_time';
         $('#change_systime [value="ntp_time"]').
-            attr("disabled", !self.server_time.timedate.CanNTP? "disabled" : null);
+            toggleClass("disabled", !self.server_time.timedate.CanNTP);
         $('#change_systime [value="ntp_time_custom"]').
-            attr("disabled", !(self.server_time.timedate.CanNTP && self.custom_ntp_supported)? "disabled" : null);
-        $('#change_systime').selectpicker('refresh');
+            toggleClass("disabled", !(self.server_time.timedate.CanNTP && self.custom_ntp_supported));
         $('#systime-parse-error').parents('tr').hide();
         $('#systime-timezone-error').parents('tr').hide();
         $('#systime-apply-button').prop('disabled', false);
@@ -984,8 +1112,8 @@ PageSystemInformationChangeSystime.prototype = {
         if (!self.check_input())
             return;
 
-        var manual_time = $('#change_systime').val() == 'manual_time';
-        var ntp_time_custom = $('#change_systime').val() == 'ntp_time_custom';
+        var manual_time = self.ntp_type == 'manual_time';
+        var ntp_time_custom = self.ntp_type == 'ntp_time_custom';
 
         self.sync_ntp_servers();
         var servers = self.custom_ntp_servers.filter(function (val) { return val !== ""; });
@@ -1050,21 +1178,22 @@ PageSystemInformationChangeSystime.prototype = {
                     }));
         }
 
-        $("#system_information_change_systime").dialog("promise", $.when.apply($, promises));
+        $("#system_information_change_systime").dialog("promise", cockpit.all(promises));
     },
 
     check_input: function() {
-        var time_error = false;
         var date_error = false;
         var timezone_error = false;
         var new_date;
 
-        var hours = parseInt($('#systime-time-hours').val(), 10);
-        var minutes = parseInt($('#systime-time-minutes').val(), 10);
+        var hours = $('#systime-time-hours').val();
+        var minutes = $('#systime-time-minutes').val();
+        var time_error = !/^[0-9]+$/.test(hours.trim()) || !/^[0-9]+$/.test(minutes.trim());
 
-        if (isNaN(hours) || hours < 0 || hours > 23  ||
-            isNaN(minutes) || minutes < 0 || minutes > 59) {
-           time_error = true;
+        if (!time_error) {
+            hours = Number(hours);
+            minutes = Number(minutes);
+            time_error = hours < 0 || hours > 23 || minutes < 0 || minutes > 59;
         }
 
         new_date = new Date($("#systime-date-input").val());
@@ -1091,7 +1220,8 @@ PageSystemInformationChangeSystime.prototype = {
         $('#systime-time-minutes').toggleClass("has-error", ! time_error);
         $('#systime-date-input').toggleClass("has-error", ! date_error);
 
-        $('#systime-parse-error').parents('tr').toggle(time_error || date_error);
+        $('#systime-parse-error').parents('tr').toggleClass("has-error", time_error || date_error);
+        $('#systime-parse-error').toggle(time_error || date_error);
         $('#systime-timezone-error').parents('tr').toggle(timezone_error);
 
         if (time_error || date_error || timezone_error) {
@@ -1104,10 +1234,14 @@ PageSystemInformationChangeSystime.prototype = {
     },
 
     update: function() {
-        var manual_time = $('#change_systime').val() === 'manual_time';
-        var ntp_time_custom = $('#change_systime').val() === 'ntp_time_custom';
+        var self = this;
+        var manual_time = self.ntp_type === 'manual_time';
+        var ntp_time_custom = self.ntp_type === 'ntp_time_custom';
+        var text = $("#change_systime li[value=" + self.ntp_type + "]").text();
+        $("#change_systime button span").text(text);
         $('#systime-manual-row, #systime-manual-error-row').toggle(manual_time);
         $('#systime-ntp-servers-row').toggle(ntp_time_custom);
+        $('#systime-parse-error').hide();
     },
 
     sync_ntp_servers: function() {
@@ -1156,103 +1290,6 @@ function PageSystemInformationChangeSystime() {
     this._init();
 }
 
-PageShutdownDialog.prototype = {
-    _init: function() {
-        this.id = "shutdown-dialog";
-        this.delay = 0;
-    },
-
-    setup: function() {
-        var self = this;
-
-        $("#shutdown-delay li").on("click", function(ev) {
-            self.delay = $(this).attr("value");
-            self.update();
-        });
-
-        $("#shutdown-time input").change($.proxy(self, "update"));
-    },
-
-    enter: function(event) {
-        var self = this;
-
-        $("#shutdown-message").
-            val("").
-            attr("placeholder", _("Message to logged in users")).
-            attr("rows", 5);
-
-        /* Track the value correctly */
-        self.delay = $("#shutdown-delay li:first-child").attr("value");
-
-        if (PageShutdownDialog.type == 'shutdown') {
-          $('#shutdown-dialog .modal-title').text(_("Shutdown"));
-          $("#shutdown-action").click($.proxy(this, "shutdown"));
-          $("#shutdown-action").text(_("Shutdown"));
-        } else {
-          $('#shutdown-dialog .modal-title').text(_("Restart"));
-          $("#shutdown-action").click($.proxy(this, "restart"));
-          $("#shutdown-action").text(_("Restart"));
-        }
-        this.update();
-    },
-
-    show: function(e) {
-    },
-
-    leave: function() {
-    },
-
-    update: function() {
-        var self = this;
-        var disabled = false;
-
-        $("#shutdown-time").toggle(self.delay == "x");
-        if (self.delay == "x") {
-            var h = parseInt($("#shutdown-time input:nth-child(1)").val(), 10);
-            var m = parseInt($("#shutdown-time input:nth-child(3)").val(), 10);
-            var valid = (h >= 0 && h < 24) && (m >= 0 && m < 60);
-            $("#shutdown-time").toggleClass("has-error", !valid);
-            if (!valid)
-                disabled = true;
-        }
-
-        $("#shutdown-delay button span").text($("#shutdown-delay li[value='" + self.delay + "']").text());
-        $("#shutdown-action").prop('disabled', disabled);
-    },
-
-    do_action: function(op) {
-        var self = this;
-        var message = $("#shutdown-message").val();
-        var when;
-
-        if (self.delay == "x")
-            when = ($("#shutdown-time input:nth-child(1)").val() + ":" +
-                    $("#shutdown-time input:nth-child(3)").val());
-        else
-            when = "+" + self.delay;
-
-        var arg = (op == "shutdown") ? "--poweroff" : "--reboot";
-
-        if (op == "restart")
-            cockpit.hint("restart");
-
-        var promise = cockpit.spawn(["shutdown", arg, when, message], { superuser: "try" });
-        $('#shutdown-dialog').dialog("promise", promise);
-    },
-
-    restart: function() {
-        this.do_action('restart');
-    },
-
-    shutdown: function() {
-        this.do_action('shutdown');
-    }
-};
-
-function PageShutdownDialog() {
-    this._init();
-}
-
 PageCpuStatus.prototype = {
     _init: function() {
         this.id = "cpu_status";
@@ -1280,7 +1317,6 @@ PageCpuStatus.prototype = {
                             [2.0*60, "3 min"],
                             [3.0*60, "2 min"],
                             [4.0*60, "1 min"]]},
-            legend: { show: true },
             x_rh_stack_graphs: true
         };
 
@@ -1316,9 +1352,9 @@ PageCpuStatus.prototype = {
         self.channel.follow();
         self.grid.walk();
 
-        this.plot = shell.setup_complicated_plot("#cpu_status_graph", self.grid, series, options);
+        this.plot = plot.setup_complicated_plot("#cpu_status_graph", self.grid, series, options);
 
-        shell.util.machine_info().
+        machine_info().
             done(function (info) {
                 self.plot.set_yaxis_max(info.cpus * 1000);
             });
@@ -1362,12 +1398,11 @@ PageMemoryStatus.prototype = {
                     }
                    },
             xaxis: {show: true,
-                    ticks: [[0.0*60, "5 min"],
-                            [1.0*60, "4 min"],
-                            [2.0*60, "3 min"],
-                            [3.0*60, "2 min"],
-                            [4.0*60, "1 min"]]},
-            legend: { show: true },
+                    ticks: [[0.0 * 60, _("5 min")],
+                            [1.0 * 60, _("4 min")],
+                            [2.0 * 60, _("3 min")],
+                            [3.0 * 60, _("2 min")],
+                            [4.0 * 60, _("1 min")]]},
             x_rh_stack_graphs: true
         };
 
@@ -1403,7 +1438,7 @@ PageMemoryStatus.prototype = {
         self.channel.follow();
         self.grid.walk();
 
-        this.plot = shell.setup_complicated_plot("#memory_status_graph", self.grid, series, options);
+        this.plot = plot.setup_complicated_plot("#memory_status_graph", self.grid, series, options);
     },
 
     show: function() {
@@ -1521,12 +1556,9 @@ function init() {
 
     dialog_setup(new PageSystemInformationChangeHostname());
     dialog_setup(change_systime_dialog = new PageSystemInformationChangeSystime());
-    dialog_setup(new PageShutdownDialog());
 
     $(cockpit).on("locationchanged", navigate);
     navigate();
 }
 
-return init;
-
-});
+$(init);

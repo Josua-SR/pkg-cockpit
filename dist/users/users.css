@@ -1,0 +1,508 @@
+a {
+    cursor: pointer;
+}
+
+.disabled {
+    pointer-events: auto;
+}
+
+.btn {
+    min-height: 26px;
+    min-width: 26px;
+}
+
+.btn.disabled {
+    pointer-events: auto;
+}
+
+.btn.disabled:hover {
+  z-index: auto;
+}
+
+.dropdown-menu > li > a.disabled,
+.dropdown-menu > li > a.disabled:hover,
+.dropdown-menu > li > a.disabled:focus {
+  color: #999999;
+}
+
+.dropdown-menu > li > a.disabled:hover,
+.dropdown-menu > li > a.disabled:focus {
+  text-decoration: none;
+  background-color: transparent;
+  background-image: none;
+  border-color: transparent;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  cursor: default;
+}
+
+/* Limit dropdown menus to 90% of the viewport size */
+.dropdown-menu {
+    height: auto;
+    overflow-x: hidden;
+    max-height: 90vh;
+}
+/* Align these buttons more nicely */
+.btn.fa-minus,
+.btn.fa-plus {
+    padding-top: 4px;
+}
+
+/* HACK: Workaround for https://github.com/patternfly/patternfly/issues/174*/
+
+.page-ct {
+    margin-top: 20px;
+}
+
+.highlight-ct {
+    background-color: #d4edfa;
+}
+
+/* Well and Blankslate */
+
+.curtains-ct {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+.panel .well {
+    margin-bottom: 0px;
+    border: none;
+    border-radius: 0px;
+    background-color: #FAFAFA;
+}
+
+.well.blank-slate-pf {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05) inset;
+    padding-top: 40px;
+}
+
+.blank-slate-pf .spinner-lg {
+    height: 58px;
+    width: 58px;
+}
+
+/*
+ * Control buttons such as play and stop
+ * Used with .btn .btn-default
+ */
+
+.btn-control-ct,
+.btn-control-ct:hover {
+    background-position: center center;
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-image: none;
+    -webkit-border-radius: 2;
+    -moz-border-radius: 2;
+    border-radius: 2px;
+    height: 28px;
+    width: 28px;
+    box-shadow: none;
+}
+
+.btn-control-ct {
+    background-color: #eeeeee;
+}
+
+.btn-control-ct:hover {
+   background-color: #e0e0e0;
+}
+
+
+/* On/off switch */
+
+.btn-onoff-ct {
+    margin: 1px 0px;
+    text-transform: uppercase;
+}
+
+.btn-onoff-ct .btn {
+    color: transparent;
+    border-color: #B7B7B7;
+    padding: 2px 6px 1px 6px;
+    background-color: white;
+    background-image: linear-gradient(to bottom, rgb(250, 250, 250) 0px, rgb(237, 237, 237) 100%);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    width: 37px;
+}
+
+.btn-onoff-ct .btn:first-child {
+    border-right: #00435F;
+}
+
+.btn-onoff-ct .btn:last-child {
+    border-left: #00435F;
+    padding-left: 5px;
+}
+
+.btn-onoff-ct .btn.active {
+    background-image: none;
+    width: 36px;
+}
+
+.btn-onoff-ct .btn.active:first-child {
+    background-color: #0086CF;
+    color: white;
+    border-right: 1px solid #0071b0;
+}
+
+.btn-onoff-ct .btn.active:last-child {
+    color: #000;
+    border-left: 1px solid #d6d6d6;
+}
+
+.btn-onoff-ct .btn.disabled {
+    pointer-events: none;
+    color: transparent !important;
+}
+
+.btn-onoff-ct .btn.active.disabled {
+    background-color: #888 !important;
+    color: white !important;
+}
+
+/* Small list inside a dialog */
+/* Alert fixups */
+
+/* HACK: word-wrap workaround for long alerts https://github.com/patternfly/patternfly/issues/491 */
+
+.modal-content .alert {
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    word-wrap: break-word;
+}
+
+.modal-content .alert .fa {
+    position: absolute;
+    left: 10px;
+    top: 6px;
+    font-size: 20px;
+}
+
+.modal-content .alert .pficon {
+    top: 5px;
+}
+
+.alert.alert-danger .fa {
+    color: #af151a;
+}
+
+/* Dialog patterns */
+
+.dialog-wait-ct {
+    margin-top: 3px;
+}
+
+.dialog-wait-ct .spinner {
+    display: inline-block;
+}
+
+.dialog-wait-ct span {
+    vertical-align: 4px;
+    padding-left: 10px;
+}
+
+.dialog-list-ct {
+    max-height: 230px;
+    overflow-x: auto;
+    border: 1px solid #CCC;
+    margin-bottom: 0px;
+}
+
+/* HACK: https://github.com/patternfly/patternfly/issues/255 */
+input[type=number] {
+  padding: 0 0 0 5px;
+}
+
+/* Make a dialog visible */
+.dialog-ct-visible {
+    display: block;
+}
+/* Panels don't draw borders between them */
+.panel > .table > tbody:first-child td {
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+/* Table headers should not generate a double border */
+.panel .table thead tr th {
+    border-bottom: none;
+}
+
+.panel-heading {
+    background: #F5F5F5;
+    height: 44px;
+}
+
+/* Vertically center dropdown buttons in panel headers */
+.panel-heading .btn {
+    margin-top: -3px;
+}
+
+/*
+ * Fix up table row hovering.
+ *
+ * When you hover over table rows it's because they're clickable.
+ * Make the table row hover color match the list-group-item.
+ */
+.table-hover > tbody > tr > td,
+.table-hover > tbody > tr > th,
+.dialog-list-ct .list-group-item {
+    cursor: pointer;
+}
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th,
+.dialog-list-ct .list-group-item:hover:not(.active) {
+    background-color: #d4edfa;
+}
+
+/* Override patternfly to fit buttons and such */
+.table > thead > tr > th,
+.table > tbody > tr > td {
+    padding: 8px;
+}
+
+/* Override the heavy patternfly headers */
+.table > thead {
+    background-image: none;
+    background-color: #fff;
+}
+
+/* Make things line up */
+.table tbody tr td:first-child,
+.table thead tr th:first-child {
+    padding-left: 15px;
+}
+
+.table tbody tr td:last-child,
+.table thead tr th:last-child {
+    padding-right: 15px;
+}
+
+.info-table-ct td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 0.75em;
+    padding-top: 0.25em;
+    vertical-align: top;
+    line-height: 26px;
+}
+
+.info-table-ct td:first-child {
+    text-align: right;
+    color: #888888;
+}
+
+.info-table-ct td:not(:first-child) {
+    color: black;
+}
+
+.info-table-ct td button {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.form-table-ct {
+    width: 100%;
+}
+
+.form-table-ct td {
+    padding-left: 0.75em;
+    padding-top: 0.25em;
+    line-height: 26px;
+}
+
+.form-table-ct td.top {
+    vertical-align: top;
+}
+
+.form-table-ct td:first-child {
+    text-align: right;
+    white-space: nowrap;
+    color: #888888;
+    width: 5px; /* will be expanded by nowrap */
+}
+
+.form-table-ct td[colspan] {
+    text-align: inherit;
+}
+
+.form-table-ct td {
+    height: 26px;
+}
+
+.form-table-ct td.header {
+    font-weight: bold;
+    text-align: left;
+    color: #4D5258;
+    padding: 20px 0 10px 0;
+}
+
+.form-table-ct label input[type='radio'],
+.form-table-ct label input[type='checkbox'] {
+    margin-right: 4px;
+}
+
+.form-table-ct label {
+    margin-bottom: 0px;
+}
+
+.form-table-ct label span {
+    vertical-align: super;
+}
+
+/* Break up sidebar in columns in smaller sizes*/
+
+@media (min-width: 992px) {
+    .info-table-ct-container .info-table-ct {
+        table-layout: fixed;
+        width: 100%;
+    }
+}
+.cockpit-account {
+    width: 250px;
+    height: 70px;
+    background: #FFF;
+    margin-top: 15px;
+    margin-right: 15px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.cockpit-account:hover {
+    background-color: #d4edfa;
+    cursor: pointer;
+}
+
+.cockpit-account > .cockpit-account-pic {
+    width: 48px;
+    height: 48px;
+    font-size: 48px;
+    color: #bebebe;
+    margin: 10px;
+    float: left;
+}
+
+.cockpit-account > .cockpit-account-real-name {
+    padding-top: 10px;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    min-height: 30px;
+}
+
+.cockpit-account > .cockpit-account-user-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#account-details td:first-child {
+    text-align: right;
+    color: #888;
+}
+
+#account-details td {
+     padding: 7px;
+}
+
+#account-details div.checkbox:first-child {
+	margin-top: 0px;
+}
+
+#account-details div.checkbox:last-child {
+	margin-bottom: 0px;
+}
+
+#dashboard_setup_address_discovered li:hover {
+    background-color: #d4edfa;
+}
+
+#account-pic {
+    background: #d3d7cf;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#account-authorized-keys-list div.comment {
+    width: 250px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+
+#account-authorized-keys-list div.fingerprint {
+    width: -moz-calc(100% - 30px - 260px);
+    width: -webkit-calc(100% - 30px - 260px);
+    width: calc(100% - 30px - 260px);
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+
+#account-authorized-keys-list div.action {
+    float: right;
+    width: 28px;
+}
+
+#authorized-key-add {
+    min-width: 28px;
+    min-height: 28px;
+}
+
+#authorized-keys-text {
+    height: 200px;
+    resize: none;
+    margin-bottom: 10px;
+}
+
+#account-real-name-wrapper {
+    vertical-align: bottom;
+}
+
+.align-top {
+    vertical-align: top;
+}
+
+.password-strength-meter {
+    height: 5px;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.password-strength-meter div {
+    width: 25%;
+    border-right: 3px solid #fff;
+    background-color: transparent;
+}
+
+.password-strength-meter div:last-child {
+    border-right: none;
+}
+
+.password-strength-meter.weak div:first-child {
+    background-color: #C00;
+}
+
+.password-strength-meter.okay div:nth-child(-n+2) {
+    background-color: #EC7A08;
+}
+
+.password-strength-meter.good div:nth-child(-n+3) {
+    background-color: #3F9C35;
+}
+
+.password-strength-meter.excellent div:nth-child(-n+4) {
+    background-color: #3F9C35;
+}
+
+/*# sourceMappingURL=users.css.map*/

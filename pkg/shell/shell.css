@@ -19,10 +19,17 @@
 
 /* ---------------------------------------------------------------------------------------------------- */
 
+@import "/page.css";
+@import "/table.css";
+
 /* Hacks on top for now */
 
 html, body {
     height: 100%;
+}
+
+html.index-page body {
+    overflow: hidden;
 }
 
 #dashboard-add {
@@ -125,6 +132,17 @@ html, body {
     float: right;
 }
 
+#dashboard-toolbar > div.dropdown {
+    display: inline-block;
+}
+
+#dashboard-toolbar .dropdown-toggle span {
+    display: inline-block;
+    width: 6em;
+    text-align: left;
+    padding-left: 5px;
+}
+
 @media (max-width: 400px) {
     #dashboard-hosts .list-group-item div.os {
         display: none;
@@ -149,6 +167,12 @@ html, body {
 
 .dashboard-plot {
     margin-bottom: 10px;
+    height: 250px;
+}
+
+#host-edit-color {
+    width:100px;
+    height:26px;
 }
 
 #host-edit-color-popover .popover-content {
@@ -162,6 +186,10 @@ html, body {
     margin: 2px;
 }
 
+#host-edit-avatar {
+    margin-top: 10px;
+}
+
 #host-edit-avatar canvas:hover,
 #host-edit-color:hover,
 #host-edit-color-popover .color-cell:hover {
@@ -171,6 +199,10 @@ html, body {
 
 #host-edit-apply {
     min-width: 55px;
+}
+
+#host-edit-file-input {
+    display: none;
 }
 
 /* Make the time range buttons equal width */
@@ -267,6 +299,10 @@ html, body {
     border-color: transparent;
 }
 
+#navbar-oops {
+    display: none;
+}
+
 /* The server avatar */
 #server-avatar {
     width:       128px;
@@ -287,34 +323,6 @@ html, body {
 .oops-status {
     color: red;
     font-weight: bold;
-}
-/*
- * Styling of bar graphs. See controls.js for more details
- */
-.bar-row {
-    min-width: 100px;
-    margin-top: 2px;
-    margin-bottom: 0px;
-    height: 15px;
-}
-
-.bar-row div.progress-bar {
-    background-color: #0099d3;
-}
-
-.bar-row-danger div.progress-bar {
-    background-color: #af151a;
-}
-
-.bar-row div.progress-no-limit {
-    /* used when no limit */
-    background-color: transparent;
-}
-
-.bar-row div.progress,
-.bar-row div.progress div.progress-bar {
-    /* minimum width of each bar */
-    min-width: 5px;
 }
 
 .slider {
@@ -379,34 +387,34 @@ html, body {
 }
 
 /* server overview dashboard */
-#server .cockpit-info-table button {
+#server .info-table-ct button {
   max-width: 300px;
 }
 
-#server .cockpit-info-table td:first-child {
+#server .info-table-ct td:first-child {
     max-width: 50%
 }
 
-#server .cockpit-info-table {
+#server .info-table-ct {
     width: 100%;
 }
 
 @media (min-width: 992px) {
-    #server .cockpit-info-table {
+    #server .info-table-ct {
         table-layout: fixed;
         width: 100%;
         min-width: 220px;
     }
 
   /* server overview dashboard */
-  #server .cockpit-info-table-container td button {
+  #server .info-table-ct-container td button {
       max-width: 100%;
   }
 }
 
 @media (max-width: 480px) {
   /* server overview dashboard */
-  #server .cockpit-info-table-container td button {
+  #server .info-table-ct-container td button {
       max-width: 200px;
   }
 }
@@ -429,22 +437,6 @@ html, body {
     padding:0px;
     padding-top:15px;
     border: none;
-}
-
-#shutdown-dialog td {
-  padding-right: 20px;
-}
-
-#shutdown-dialog .opt {
-  padding: 1px 10px;
-}
-
-#shutdown-delay {
-  min-width: 150px;
-}
-
-#shutdown-group {
-  overflow: visible;
 }
 
 #systime-date-input {
@@ -605,6 +597,10 @@ iframe.container-frame {
   color: #333;
 }
 
+#tools-panel {
+    height: 0px;
+}
+
 #tools-panel > .panel-body {
   border: none;
 }
@@ -632,7 +628,7 @@ iframe.container-frame {
     max-height: 500px;
 }
 
-#credentials-dialog .btn-onoff .btn {
+#credentials-dialog .btn-onoff-ct .btn {
     padding-top: 1px;
     padding-bottom: 1px;
     height: 24px;
@@ -700,4 +696,47 @@ tbody.unlock .credential-unlock {
     line-height: 75px;
     float: left;
     padding-right: 15px;
+}
+
+.listing-ct-body .alert {
+    border: none;
+    margin: 0px 0px 10px 0px;
+    padding: 0px;
+    background-color: transparent;
+}
+
+.listing-ct-body .alert .fa {
+    position: relative;
+    left: 0px;
+    top: 3px;
+    padding-right: 5px;
+}
+
+.spinner-white {
+  border-bottom: 4px solid rgba(255, 255, 255, 0.25);
+  border-left: 4px solid rgba(255, 255, 255, 0.25);
+  border-right: 4px solid rgba(255, 255, 255, 0.25);
+  border-top: 4px solid rgba(255, 255, 255, 0.75);
+}
+
+
+/* Scrollable modal body, needs max-height set elsewhere */
+.modal-scrollable {
+    overflow-y: auto;
+    margin-right: 7px;
+    padding-right: 8px;
+    margin-top: 15px;
+    padding-top: 0px;
+}
+
+/* allow text only branding */
+.navbar-pf .navbar-brand {
+    text-transform: uppercase;
+    margin: 0 8px;
+    height: 25px;
+    padding: 2px 0;
+}
+
+.navbar-pf .navbar-brand:hover {
+    color: #F1F1F1;
 }

@@ -20,10 +20,11 @@
 #include "config.h"
 
 #include "cockpitwebsocketstream.h"
-#include "cockpitchannel.h"
 
-#include "common/cockpitconnect.h"
-#include "common/cockpitstream.h"
+#include "cockpitchannel.h"
+#include "cockpitconnect.h"
+#include "cockpitstream.h"
+
 #include "common/cockpitjson.h"
 
 #include "websocket/websocket.h"
@@ -54,6 +55,7 @@ typedef struct _CockpitWebSocketStream {
   gulong sig_closing;
   gulong sig_close;
   gulong sig_error;
+  gulong sig_accept_cert;
 
   gboolean binary;
   gboolean closed;
@@ -125,6 +127,25 @@ static void
 cockpit_web_socket_stream_init (CockpitWebSocketStream *self)
 {
 
+}
+
+static gboolean
+on_rejected_certificate (GTlsConnection *conn,
+                         GTlsCertificate *peer_cert,
+                         GTlsCertificateFlags errors,
+                         gpointer user_data)
+{
+  CockpitChannel *channel = user_data;
+  JsonObject *close_options = NULL; // owned by channel
+  gchar *pem_data = NULL;
+
+  g_return_val_if_fail (peer_cert != NULL, FALSE);
+  g_object_get (peer_cert, "certificate-pem", &pem_data, NULL);
+  close_options = cockpit_channel_close_options (channel);
+  json_object_set_string_member (close_options, "rejected-certificate", pem_data);
+
+  g_free (pem_data);
+  return FALSE;
 }
 
 static void
@@ -254,7 +275,9 @@ on_socket_connect (GObject *object,
   io = cockpit_connect_stream_finish (result, &error);
   if (error)
     {
-      problem = cockpit_stream_problem (error, self->origin, "couldn't connect", NULL);
+      problem = cockpit_stream_problem (error, self->origin, "couldn't connect",
+                                        cockpit_channel_close_options (channel));
+      cockpit_channel_close (channel, problem);
       goto out;
     }
 
@@ -262,8 +285,21 @@ on_socket_connect (GObject *object,
 
   if (!cockpit_json_get_strv (options, "protocols", NULL, &protocols))
     {
-      g_warning ("%s: invalid \"protocol\" value in WebSocket stream request", self->origin);
+      cockpit_channel_fail (channel, "protocol-error",
+                            "%s: invalid \"protocol\" value in WebSocket stream request", self->origin);
       goto out;
+    }
+
+  if (G_IS_TLS_CONNECTION (io))
+    {
+      self->sig_accept_cert =  g_signal_connect (G_TLS_CONNECTION (io),
+                                                 "accept-certificate",
+                                                 G_CALLBACK (on_rejected_certificate),
+                                                 self);
+    }
+  else
+    {
+      self->sig_accept_cert = 0;
     }
 
   self->client = web_socket_client_new_for_stream (self->url, self->origin, (const gchar **)protocols, io);
@@ -273,7 +309,8 @@ on_socket_connect (GObject *object,
     {
       if (!JSON_NODE_HOLDS_OBJECT (node))
         {
-          g_warning ("%s: invalid \"headers\" field in WebSocket stream request", self->origin);
+          cockpit_channel_fail (channel, "protocol-error",
+                                "%s: invalid \"headers\" field in WebSocket stream request", self->origin);
           goto out;
         }
 
@@ -284,8 +321,9 @@ on_socket_connect (GObject *object,
           node = json_object_get_member (headers, l->data);
           if (!node || !JSON_NODE_HOLDS_VALUE (node) || json_node_get_value_type (node) != G_TYPE_STRING)
             {
-              g_warning ("%s: invalid header value in WebSocket stream request: %s",
-                         self->origin, (gchar *)l->data);
+              cockpit_channel_fail (channel, "protocol-error",
+                                    "%s: invalid header value in WebSocket stream request: %s",
+                                    self->origin, (gchar *)l->data);
               goto out;
             }
           value = json_node_get_string (node);
@@ -304,8 +342,6 @@ on_socket_connect (GObject *object,
   problem = NULL;
 
 out:
-  if (problem)
-    cockpit_channel_close (channel, problem);
   g_clear_error (&error);
   g_strfreev (protocols);
   if (io)
@@ -320,7 +356,6 @@ cockpit_web_socket_stream_prepare (CockpitChannel *channel)
   CockpitConnectable *connectable = NULL;
   JsonObject *options;
   const gchar *path;
-  gboolean started = FALSE;
 
   COCKPIT_CHANNEL_CLASS (cockpit_web_socket_stream_parent_class)->prepare (channel);
 
@@ -334,12 +369,14 @@ cockpit_web_socket_stream_prepare (CockpitChannel *channel)
   options = cockpit_channel_get_options (channel);
   if (!cockpit_json_get_string (options, "path", NULL, &path))
     {
-      g_warning ("%s: bad \"path\" field in WebSocket stream request", self->origin);
+      cockpit_channel_fail (channel, "protocol-error",
+                            "%s: bad \"path\" field in WebSocket stream request", self->origin);
       goto out;
     }
   else if (path == NULL || path[0] != '/')
     {
-      g_warning ("%s: invalid or missing \"path\" field in WebSocket stream request", self->origin);
+      cockpit_channel_fail (channel, "protocol-error",
+                            "%s: invalid or missing \"path\" field in WebSocket stream request", self->origin);
       goto out;
     }
 
@@ -350,21 +387,17 @@ cockpit_web_socket_stream_prepare (CockpitChannel *channel)
   self->binary = json_object_has_member (options, "binary");
 
   cockpit_connect_stream_full (connectable, NULL, on_socket_connect, g_object_ref (self));
-  started = TRUE;
 
 out:
   if (connectable)
-    {
-      cockpit_connectable_unref (connectable);
-      if (!started)
-        cockpit_channel_close (channel, "protocol-error");
-    }
+    cockpit_connectable_unref (connectable);
 }
 
 static void
 cockpit_web_socket_stream_dispose (GObject *object)
 {
   CockpitWebSocketStream *self = COCKPIT_WEB_SOCKET_STREAM (object);
+  GIOStream *io = NULL; // Owned by self->client;
 
   if (self->client)
     {
@@ -375,6 +408,11 @@ cockpit_web_socket_stream_dispose (GObject *object)
       g_signal_handler_disconnect (self->client, self->sig_closing);
       g_signal_handler_disconnect (self->client, self->sig_close);
       g_signal_handler_disconnect (self->client, self->sig_error);
+
+      io = web_socket_connection_get_io_stream (self->client);
+      if (io != NULL && self->sig_accept_cert)
+        g_signal_handler_disconnect (io, self->sig_accept_cert);
+
       g_object_unref (self->client);
       self->client = NULL;
     }

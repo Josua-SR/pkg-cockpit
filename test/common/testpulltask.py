@@ -1,3 +1,20 @@
+# This file is part of Cockpit.
+#
+# Copyright (C) 2016 Red Hat, Inc.
+#
+# Cockpit is free software; you can redistribute it and/or modify it
+# under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation; either version 2.1 of the License, or
+# (at your option) any later version.
+#
+# Cockpit is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
+
 import os
 import subprocess
 import sys
@@ -6,11 +23,12 @@ import traceback
 import testinfra
 
 class GithubPullTask(object):
-    def __init__(self, name, revision, ref, context):
+    def __init__(self, name, revision, ref, context, base=None):
         self.name = name
         self.revision = revision
         self.ref = ref
         self.context = context
+        self.base = base or "master"
 
         self.sink = None
         self.github_status_data = None
@@ -100,14 +118,15 @@ class GithubPullTask(object):
             return False
         return True
 
-    def rebase(self):
+    def rebase(self, offline=False):
         try:
-            sys.stderr.write("Rebasing onto origin/master ...\n")
-            subprocess.check_call([ "git", "fetch", "origin", "master" ])
+            sys.stderr.write("Rebasing onto origin/" + self.base + " ...\n")
+            if not offline:
+                subprocess.check_call([ "git", "fetch", "origin", self.base ])
             if self.sink:
-                master = subprocess.check_output([ "git", "rev-parse", "origin/master" ]).strip()
+                master = subprocess.check_output([ "git", "rev-parse", "origin/" + self.base ]).strip()
                 self.sink.status["master"] = master
-            subprocess.check_call([ "git", "rebase", "origin/master" ])
+            subprocess.check_call([ "git", "rebase", "origin/" + self.base ])
             return None
         except:
             subprocess.call([ "git", "rebase", "--abort" ])
@@ -147,16 +166,18 @@ class GithubPullTask(object):
 
         if self.ref:
             subprocess.check_call([ "git", "fetch", "origin", self.ref ])
-            subprocess.check_call([ "git", "checkout", self.revision ])
+            subprocess.check_call([ "git", "checkout", "-f", self.revision ])
 
-        # Split a value like verify/fedora-23
+        # Split a value like verify/fedora-24
         (prefix, unused, value) = self.context.partition("/")
 
         os.environ["TEST_NAME"] = self.name
         os.environ["TEST_REVISION"] = self.revision
 
-        if prefix == 'container':
-            os.environ["TEST_OS"] = 'fedora-23'
+        if prefix in [ 'selenium' ]:
+            os.environ["TEST_OS"] = 'fedora-24'
+        elif prefix in [ 'container' ]:
+            os.environ["TEST_OS"] = 'fedora-24'
         else:
             os.environ["TEST_OS"] = value
 
@@ -174,8 +195,9 @@ class GithubPullTask(object):
             cmd = [ "timeout", "120m", "./verify/run-tests", "--install", "--jobs", str(opts.jobs) ]
         elif prefix == "avocado":
             cmd = [ "timeout", "60m", "./avocado/run-tests", "--install", "--quick", "--tests" ]
+        elif prefix == "koji":
+            cmd = [ "timeout", "120m", "./koji/run-build" ]
         elif prefix == "selenium":
-            os.environ["TEST_OS"] = "fedora-23"
             if value not in ['firefox', 'chrome']:
                 ret = "Unknown browser for selenium test"
             cmd = [ "timeout", "60m", "./avocado/run-tests", "--install", "--quick", "--selenium-tests", "--browser", value]
@@ -187,7 +209,8 @@ class GithubPullTask(object):
         if cmd and opts.verbose:
             cmd.append("--verbose")
 
-        ret = ret or self.rebase()
+        offline = ('offline' in opts) and opts.offline
+        ret = ret or self.rebase(offline)
 
         # Actually run the tests
         if not ret:
@@ -199,3 +222,5 @@ class GithubPullTask(object):
         # All done
         if self.sink:
             self.stop_publishing(ret)
+
+        return ret

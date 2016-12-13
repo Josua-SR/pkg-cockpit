@@ -20,12 +20,25 @@
 (function() {
     "use strict";
 
+    var angular = require('angular');
+    require('angular-route');
+
+    require('./details');
+    require('./app');
+    require('./graphs');
+    require('./nodes');
+    require('./volumes');
+
+    require('../views/dashboard-page.html');
+    require('../views/deploy.html');
+    require('../views/file-button.html');
+
     angular.module('kubernetes.dashboard', [
         'ngRoute',
-        'ui.cockpit',
         'kubernetes.details',
         'kubernetes.app',
-        'kubernetes.graph'
+        'kubernetes.graph',
+        'kubernetes.nodes'
     ])
 
     .config(['$routeProvider', function($routeProvider) {
@@ -40,145 +53,54 @@
         '$scope',
         'kubeLoader',
         'kubeSelect',
+        'dashboardData',
         'dashboardActions',
         'itemActions',
+        'nodeActions',
+        'nodeData',
         '$location',
-        function($scope, loader, select, actions, itemActions, $location) {
+        function($scope, loader, select, data, actions, itemActions,
+                 nodeActions, nodeData, $location) {
 
-        var c = loader.listen(function() {
+        loader.listen(function() {
             $scope.services = select().kind("Service");
             $scope.nodes = select().kind("Node");
             $scope.pods = select().kind("Pod");
-        });
+            $scope.volumes = select().kind("PersistentVolume");
+            $scope.pvcs = select().kind("PersistentVolumeClaim");
 
-        $scope.$on("$destroy", function() {
-            c.cancel();
-        });
+            $scope.status = {
+                pods: {
+                    Pending: $scope.pods.statusPhase("Pending"),
+                    Failed: $scope.pods.statusPhase("Failed"),
+                    Unknown: $scope.pods.statusPhase("Unknown"),
+                },
+                nodes: {
+                    Pending: $scope.nodes.statusPhase("Pending"),
+                    Terminated: $scope.nodes.statusPhase("Terminated"),
+                    NotReady: $scope.nodes.conditionNotTrue("Ready"),
+                    OutOfDisk: $scope.nodes.conditionTrue("OutOfDisk"),
+                },
+                volumes: {
+                    Pending: $scope.volumes.statusPhase("Pending"),
+                    PendingClaims: $scope.pvcs.statusPhase("Pending"),
+                    Available: $scope.volumes.statusPhase("Available"),
+                    Released: $scope.volumes.statusPhase("Released"),
+                    Failed: $scope.volumes.statusPhase("Failed"),
+                },
+            };
+        }, $scope);
 
-        loader.watch("Node");
-        loader.watch("Service");
-        loader.watch("ReplicationController");
-        loader.watch("Pod");
+        loader.watch("Node", $scope);
+        loader.watch("Service", $scope);
+        loader.watch("ReplicationController", $scope);
+        loader.watch("Pod", $scope);
+        loader.watch("PersistentVolume", $scope);
+        loader.watch("PersistentVolumeClaim", $scope);
 
         $scope.editServices = false;
         $scope.toggleServiceChange = function toggleServiceChange() {
             $scope.editServices = !$scope.editServices;
-        };
-
-        $scope.serviceContainers = function serviceContainers(service) {
-            var spec = service.spec || { };
-            var meta = service.metadata || {};
-
-            /* Calculate number of containers */
-            var x = 0;
-            var y = 0;
-
-            /*
-             * Calculate "x of y" containers, where x is the current
-             * number and y is the expected number. If x==y then only
-             * show x. The calculation is based on the statuses of the
-             * containers within the pod.  Pod states: Pending,
-             * Running, Succeeded, Failed, and Unknown.
-             */
-            var pods = select().kind("Pod").namespace(meta.namespace || "")
-                        .label(spec.selector || {});
-            angular.forEach(pods, function(pod) {
-                if (!pod.status || !pod.status.phase)
-                    return;
-                var spec = pod.spec || { };
-                var n = 1;
-                if (spec.containers)
-                    n = spec.containers.length;
-                switch (pod.status.phase) {
-                case "Pending":
-                    y += n;
-                    break;
-                case "Running":
-                    x += n;
-                    y += n;
-                    break;
-                case "Succeeded": // don't increment either counter
-                    break;
-                case "Unknown":
-                    y += n;
-                    break;
-                case "Failed":
-                    /* falls through */
-                default: /* assume failed */
-                    y += n;
-                    break;
-                }
-            });
-
-            if (x != y)
-                return x + " of " + y;
-            else
-                return "" + x;
-        };
-
-        $scope.serviceStatus = function serviceStatus(service) {
-            var spec = service.spec || { };
-            var meta = service.metadata || { };
-            var state = "";
-
-            var pods = select().kind("Pod").namespace(meta.namespace || "")
-                        .label(spec.selector || {});
-            angular.forEach(pods, function(pod) {
-                if (!pod.status || !pod.status.phase)
-                    return;
-                switch (pod.status.phase) {
-                case "Pending":
-                    if (!state)
-                        state = "wait";
-                    break;
-                case "Running":
-                    break;
-                case "Succeeded":
-                    break;
-                case "Unknown":
-                    break;
-                case "Failed":
-                    /* falls through */
-                default: /* assume failed */
-                    state = "fail";
-                    break;
-                }
-            });
-
-            return state;
-        };
-
-        /* Node listing */
-        $scope.nodeContainers = function nodeContainers(node) {
-            var count = 0;
-            var meta = node.metadata || { };
-            angular.forEach(select().kind("Pod").host(meta.name), function(pod) {
-                var spec = pod.spec || { };
-                var n = 1;
-                if (spec.containers)
-                    n = spec.containers.length;
-                count += n;
-            });
-            return count;
-        };
-
-        $scope.nodeStatus = function nodeStatus(node) {
-            var status = node.status || { };
-            var conditions = status.conditions;
-            var state = "";
-
-            /* If no status.conditions then it hasn't even started */
-            if (!conditions) {
-                state = "wait";
-            } else {
-                conditions.forEach(function(condition) {
-                    if (condition.type == "Ready") {
-                        if (condition.status != "True")
-                            state = "fail";
-                    }
-                });
-            }
-            return state;
         };
 
         $scope.jumpService = function jumpService(ev, service) {
@@ -191,9 +113,18 @@
                 $location.path("/pods/" + encodeURIComponent(meta.namespace)).search(spec.selector);
         };
 
+        $scope.navigateNode = function(node) {
+            var meta = node.metadata || {};
+            if (meta.name)
+                $location.path("/nodes/" + encodeURIComponent(meta.name));
+        };
+
         /* All the actions available on the $scope */
         angular.extend($scope, actions);
+        angular.extend($scope, data);
+        angular.extend($scope, nodeData);
         $scope.modifyService = itemActions.modifyService;
+        $scope.addNode = nodeActions.addNode;
 
         /* Highlighting */
 
@@ -214,19 +145,6 @@
             return service ? 'ready' : 'empty';
         };
     }])
-
-    .directive('kubernetesStatusIcon', function() {
-        return {
-            restrict: 'A',
-            link: function($scope, element, attributes) {
-                $scope.$watch(attributes["status"], function(status) {
-                    element
-                        .toggleClass("spinner spinner-sm", status == "wait")
-                        .toggleClass("fa fa-exclamation-triangle fa-failed", status == "fail");
-                });
-            }
-        };
-    })
 
     .directive('kubernetesAddress', function() {
         return {
@@ -291,99 +209,140 @@
                 }).result;
             }
 
-            function addNode() {
-                return $modal.open({
-                    animation: false,
-                    controller: 'AddNodeCtrl',
-                    templateUrl: 'views/node-add.html',
-                    resolve: {},
-                }).result;
-            }
-
             return {
-                addNode: addNode,
                 deploy: deploy,
             };
         }
     ])
 
-    .controller("AddNodeCtrl", [
-        "$q",
-        "$scope",
-        "$modalInstance",
-        "kubeMethods",
-        "KubeTranslate",
-        function($q, $scope, $instance, methods, translate) {
-            var _ = translate.gettext;
-            var fields = {
-                "address" : "",
-                "name" : "",
-            };
-            var dirty = false;
+    .factory('dashboardData', [
+        'kubeSelect',
+        function(select) {
 
-            $scope.fields = fields;
-
-            function validate() {
-                var regex = /^[a-z0-9.-]+$/i;
-                var defer = $q.defer();
-                var address = fields.address.trim();
-                var name = fields.name.trim();
-                var ex;
-                var failures = [];
-                var item;
-
-                if (!address)
-                    ex = new Error(_("Please type an address"));
-                else if (!regex.test(address))
-                    ex = new Error(_("The address contains invalid characters"));
-
-                if (ex) {
-                    ex.target = "#node-address";
-                    failures.push(ex);
-                }
-
-                if (name && !regex.test(name)) {
-                    ex = new Error(_("The name contains invalid characters"));
-                    ex.target = "#node-name";
-                    failures.push(ex);
-                }
-
-                if (failures.length > 0) {
-                    defer.reject(failures);
-                } else {
-                    item = {
-                        "kind": "Node",
-                        "apiVersion": "v1",
-                        "metadata": {
-                            "name": name ? name : address,
-                        },
-                        "spec": {
-                            "externalID": address
-                        }
-                    };
-                    defer.resolve(item);
-                }
-
-                return defer.promise;
+            function conditionDigest(arg, match) {
+                if (typeof arg == "string")
+                    return [ arg ];
+                var conditions = (arg.status || { }).conditions || [ ];
+                var result = [ ];
+                conditions.forEach(function(condition) {
+                    if ((match && condition.status == "True") ||
+                        (!match && condition.status != "True")) {
+                        result.push(condition.type);
+                    }
+                });
+                return result;
             }
 
-            $scope.nameKeyUp = function nameKeyUp(event) {
-                dirty = true;
-                if (event.keyCode == 13)
-                    $scope.performAdd();
-            };
+            select.register({
+                name: "conditionTrue",
+                digests: function(arg) {
+                    return conditionDigest(arg, true);
+                }
+            });
 
-            $scope.addressKeyUp = function addressKeyUp(event) {
-                if (event.keyCode == 13)
-                    $scope.performAdd();
-                else if (!dirty)
-                    fields.name = event.target.value;
-            };
+            select.register({
+                name: "conditionNotTrue",
+                digests: function(arg) {
+                    return conditionDigest(arg, false);
+                }
+            });
 
-            $scope.performAdd = function performAdd() {
-                return validate().then(function(item) {
-                    return methods.create(item);
-                });
+            return {
+                nodeContainers: function nodeContainers(node) {
+                    var count = 0;
+                    var meta = node.metadata || { };
+                    angular.forEach(select().kind("Pod").host(meta.name), function(pod) {
+                        var spec = pod.spec || { };
+                        var n = 1;
+                        if (spec.containers)
+                            n = spec.containers.length;
+                        count += n;
+                    });
+                    return count;
+                },
+
+                serviceStatus: function serviceStatus(service) {
+                    var spec = service.spec || { };
+                    var meta = service.metadata || { };
+                    var state = "";
+
+                    var pods = select().kind("Pod").namespace(meta.namespace || "")
+                                .label(spec.selector || {});
+                    angular.forEach(pods, function(pod) {
+                        if (!pod.status || !pod.status.phase)
+                            return;
+                        switch (pod.status.phase) {
+                        case "Pending":
+                            if (!state)
+                                state = "wait";
+                            break;
+                        case "Running":
+                            break;
+                        case "Succeeded":
+                            break;
+                        case "Unknown":
+                            break;
+                        case "Failed":
+                            /* falls through */
+                        default: /* assume failed */
+                            state = "fail";
+                            break;
+                        }
+                    });
+
+                    return state;
+                },
+
+                serviceContainers: function serviceContainers(service) {
+                    var spec = service.spec || { };
+                    var meta = service.metadata || {};
+
+                    /* Calculate number of containers */
+                    var x = 0;
+                    var y = 0;
+
+                    /*
+                     * Calculate "x of y" containers, where x is the current
+                     * number and y is the expected number. If x==y then only
+                     * show x. The calculation is based on the statuses of the
+                     * containers within the pod.  Pod states: Pending,
+                     * Running, Succeeded, Failed, and Unknown.
+                     */
+                    var pods = select().kind("Pod").namespace(meta.namespace || "")
+                                .label(spec.selector || {});
+                    angular.forEach(pods, function(pod) {
+                        if (!pod.status || !pod.status.phase)
+                            return;
+                        var spec = pod.spec || { };
+                        var n = 1;
+                        if (spec.containers)
+                            n = spec.containers.length;
+                        switch (pod.status.phase) {
+                        case "Pending":
+                            y += n;
+                            break;
+                        case "Running":
+                            x += n;
+                            y += n;
+                            break;
+                        case "Succeeded": // don't increment either counter
+                            break;
+                        case "Unknown":
+                            y += n;
+                            break;
+                        case "Failed":
+                            /* falls through */
+                        default: /* assume failed */
+                            y += n;
+                            break;
+                        }
+                    });
+
+                    if (x != y)
+                        return x + " of " + y;
+                    else
+                        return "" + x;
+                }
             };
         }
     ])

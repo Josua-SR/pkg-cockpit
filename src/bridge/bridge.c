@@ -42,6 +42,7 @@
 #include "common/cockpitjson.h"
 #include "common/cockpitlog.h"
 #include "common/cockpitpipetransport.h"
+#include "common/cockpitsystem.h"
 #include "common/cockpittest.h"
 #include "common/cockpitunixfd.h"
 #include "common/cockpitwebresponse.h"
@@ -91,12 +92,21 @@ on_closed_set_flag (CockpitTransport *transport,
 }
 
 static void
-send_init_command (CockpitTransport *transport)
+send_init_command (CockpitTransport *transport,
+                   GHashTable *os_release)
 {
   const gchar *checksum;
-  const gchar *name;
+  const gchar *value;
   JsonObject *object;
+  JsonObject *block;
+  gchar **names;
   GBytes *bytes;
+  gint i;
+
+  /* Fields from /etc/os-release to send in init message */
+  static const gchar *os_release_fields[] = {
+    "NAME", "VERSION", "ID", "VERSION_ID", "PRETTY_NAME", "VARIANT", "VARIANT_ID", "CPE_NAME",
+  };
 
   object = json_object_new ();
   json_object_set_string_member (object, "command", "init");
@@ -106,10 +116,25 @@ send_init_command (CockpitTransport *transport)
   if (checksum)
     json_object_set_string_member (object, "checksum", checksum);
 
-  /* Happens when we're in --interact mode */
-  name = cockpit_dbus_internal_name ();
-  if (name)
-    json_object_set_string_member (object, "bridge-dbus-name", name);
+  /* This is encoded as an object to allow for future expansion */
+  block = json_object_new ();
+  names = cockpit_packages_get_names (packages);
+  for (i = 0; names && names[i] != NULL; i++)
+    json_object_set_null_member (block, names[i]);
+  json_object_set_object_member (object, "packages", block);
+  g_free (names);
+
+  if (os_release)
+    {
+      block = json_object_new ();
+      for (i = 0; i < G_N_ELEMENTS (os_release_fields); i++)
+        {
+          value = g_hash_table_lookup (os_release, os_release_fields[i]);
+          if (value)
+            json_object_set_string_member (block, os_release_fields[i], value);
+        }
+      json_object_set_object_member (object, "os-release", block);
+    }
 
   bytes = cockpit_json_write_bytes (object);
   json_object_unref (object);
@@ -363,7 +388,8 @@ run_bridge (const gchar *interactive,
   gboolean terminated = FALSE;
   gboolean interupted = FALSE;
   gboolean closed = FALSE;
-  gboolean init_received = FALSE;
+  const gchar *init_host = NULL;
+  GHashTable *os_release = NULL;
   CockpitPortal *super = NULL;
   CockpitPortal *pcp = NULL;
   gpointer polkit_agent = NULL;
@@ -441,7 +467,7 @@ run_bridge (const gchar *interactive,
   if (interactive)
     {
       /* Allow skipping the init message when interactive */
-      init_received = TRUE;
+      init_host = "localhost";
       transport = cockpit_interact_transport_new (0, outfd, interactive);
     }
   else
@@ -458,10 +484,11 @@ run_bridge (const gchar *interactive,
 
   g_resources_register (cockpitassets_get_resource ());
   cockpit_web_failure_resource = "/org/cockpit-project/Cockpit/fail.html";
+  os_release = cockpit_system_load_os_release ();
 
   pcp = cockpit_portal_new_pcp (transport);
 
-  bridge = cockpit_bridge_new (transport, payload_types, init_received);
+  bridge = cockpit_bridge_new (transport, payload_types, init_host);
   cockpit_dbus_user_startup (pwd);
   cockpit_dbus_setup_startup ();
   cockpit_dbus_environment_startup ();
@@ -470,7 +497,7 @@ run_bridge (const gchar *interactive,
   pwd = NULL;
 
   g_signal_connect (transport, "closed", G_CALLBACK (on_closed_set_flag), &closed);
-  send_init_command (transport);
+  send_init_command (transport, os_release);
 
   while (!terminated && !closed && !interupted)
     g_main_context_iteration (NULL, TRUE);
@@ -483,6 +510,7 @@ run_bridge (const gchar *interactive,
   g_object_unref (pcp);
   g_object_unref (bridge);
   g_object_unref (transport);
+  g_hash_table_unref (os_release);
 
   cockpit_dbus_internal_cleanup ();
   cockpit_packages_free (packages);

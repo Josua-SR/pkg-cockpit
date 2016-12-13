@@ -20,6 +20,8 @@
 (function() {
     "use strict";
 
+    var angular = require('angular');
+
     /*
      * Some notes on the create fields.
      *
@@ -45,12 +47,15 @@
         { kind: "ImageStream", type: "imagestreams", api: OPENSHIFT },
         { kind: "ImageStreamImage", type: "imagestreamimages", api: OPENSHIFT },
         { kind: "ImageStreamTag", type: "imagestreamtags", api: OPENSHIFT },
+        { kind: "LocalResourceAccessReview", type: "localresourceaccessreviews", api: OPENSHIFT },
         { kind: "Namespace", type: "namespaces", api: KUBE, global: true, create: -100 },
         { kind: "Node", type: "nodes", api: KUBE, global: true },
         { kind: "Pod", type: "pods", api: KUBE, create: -20 },
         { kind: "PolicyBinding", type: "policybindings", api: OPENSHIFT },
         { kind: "RoleBinding", type: "rolebindings", api: OPENSHIFT },
         { kind: "Route", type: "routes", api: OPENSHIFT },
+        { kind: "PersistentVolume", type: "persistentvolumes", api: KUBE, global: true, create: -100 },
+        { kind: "PersistentVolumeClaim", type: "persistentvolumeclaims", api: KUBE, create: -50 },
         { kind: "Project", type: "projects", api: OPENSHIFT, global: true, create: -90 },
         { kind: "ProjectRequest", type: "projectrequests", api: OPENSHIFT, global: true, create: -90 },
         { kind: "ReplicationController", type: "replicationcontrollers", api: KUBE, create: -60 },
@@ -302,6 +307,13 @@
     .value("KUBE_SCHEMA", SCHEMA)
 
     /**
+     * KUBE_NAME_RE
+     *
+     * Regular Expression that names in kubernetes must match.
+     */
+    .value("KUBE_NAME_RE", NAME_RE)
+
+    /**
      * kubeLoader
      *
      * Loads kubernetes objects either by watching them or loading
@@ -314,7 +326,7 @@
      * Tell the loader about a objects that has been loaded
      * or removed elsewhere.
      *
-     * loader.listen(callback)
+     * loader.listen(callback, until)
      *
      * Register a callback to be invoked some time after new
      * objects have been loaded. Returns an object with a
@@ -352,7 +364,7 @@
      *
      * A dict of all loaded objects.
      *
-     * promise = loader.watch(type)
+     * promise = loader.watch(type, until)
      *
      * Start watching the given resource type. The returned promise
      * will be resolved when an initial set of objects have been
@@ -361,17 +373,16 @@
 
     .factory("kubeLoader", [
         "$q",
-        "$exceptionHandler",
         "$timeout",
         "KubeWatch",
         "KubeRequest",
         "KUBE_SCHEMA",
-        function($q, $exceptionHandler, $timeout, KubeWatch, KubeRequest, KUBE_SCHEMA) {
+        function($q, $timeout, KubeWatch, KubeRequest, KUBE_SCHEMA) {
             var callbacks = [];
             var limits = { namespace: null };
 
             /* All the current watches */
-            var watches = { };
+            var watching = { };
 
             /* All the loaded objects */
             var objects = { };
@@ -380,30 +391,55 @@
             var batch = null;
             var batchTimeout = null;
 
-            function ensureWatch(what, namespace) {
+            function ensureWatch(what, namespace, increment) {
                 var schema = SCHEMA[what] || SCHEMA[""];
-                var path = schema.api;
+                var watch, path = schema.api;
                 if (!schema.global && namespace)
                     path += "/namespaces/" + namespace;
                 path += "/" + schema.type;
-                if (!(what in watches)) {
-                    watches[path] = new KubeWatch(path, handleFrames);
-                    watches[path].params = { what: what, global: schema.global, namespace: namespace };
+
+                if (!(path in watching)) {
+                    watch = new KubeWatch(path, handleFrames);
+                    watch.what = what;
+                    watch.global = schema.global;
+                    watch.namespace = namespace;
+                    watch.cancelWatch = watch.cancel;
+
+                    /* Replace the cancel function with one that does ref counting */
+                    watch.cancel = function() {
+                        var w = watching[path];
+                        if (w) {
+                            w.references -= 1;
+                            if (w.references <= 0) {
+                                w.cancelWatch();
+                                delete watching[path];
+                            }
+                        }
+                    };
+                    watching[path] = watch;
                 }
-                return watches[path];
+
+                /* Increase the references here */
+                watching[path].references += increment;
+                return watching[path];
             }
 
-            function ensureWatches(what) {
-                var parts, namespace = limits.namespace;
-                if (angular.isArray(namespace)) {
-                    parts = [];
-                    angular.forEach(namespace, function(val) {
-                        parts.push(ensureWatch(what, val));
+            function ensureWatches(what, increment) {
+                var namespace = limits.namespace;
+                if (!angular.isArray(namespace))
+                    return ensureWatch(what, namespace, increment);
+
+                var parts = [];
+                angular.forEach(namespace, function(val) {
+                    parts.push(ensureWatch(what, val, increment));
+                });
+                var ret = $q.all(parts);
+                ret.cancel = function() {
+                    angular.forEach(parts, function(val) {
+                        val.cancel();
                     });
-                    return $q.all(parts);
-                } else {
-                    return ensureWatch(what, namespace);
-                }
+                };
+                return ret;
             }
 
             function handleFrames(frames) {
@@ -423,6 +459,15 @@
                 handleFlush(invokeCallbacks);
             }
 
+            function resourceVersion(resource) {
+                var version;
+                if (resource && resource.metadata)
+                    version = parseInt(resource.metadata.resourceVersion, 10);
+
+                if (!isNaN(version))
+                    return version;
+            }
+
             function handleFlush(invoke) {
                 var drain = batch;
                 batch = null;
@@ -433,6 +478,7 @@
                 var present = { };
                 var removed = { };
                 var i, len, frame, link, resource, key;
+                var cVersion, lVersion;
                 for (i = 0, len = drain.length; i < len; i++) {
                     resource = drain[i].object;
                     if (resource) {
@@ -440,6 +486,21 @@
                         if (drain[i].type == "DELETED") {
                             delete objects[link];
                             removed[link] = resource;
+                        } else if (drain[i].checkResourceVersion) {
+                            /* There is a race between items loaded from
+                             * watchers and items loaded other ways such as
+                             * from KubeMethods callbacks, where we might
+                             * end up saving the older item if loader.load is
+                             * called after the watcher has already loaded fresher
+                             * data. Look at the resourceVersion and only add
+                             * if it is the same or newer than what we already have.
+                             */
+                            cVersion = resourceVersion(resource);
+                            lVersion = resourceVersion(objects[link]);
+                            if (!cVersion || !lVersion || cVersion >= lVersion) {
+                                present[link] = resource;
+                                objects[link] = resource;
+                            }
                         } else {
                             present[link] = resource;
                             objects[link] = resource;
@@ -455,12 +516,8 @@
                 var i, len, func;
                 for (i = 0, len = callbacks.length; i < len; i++) {
                     func = callbacks[i];
-                    try {
-                        if (func)
-                            func.apply(self, arguments);
-                    } catch (e) {
-                        $exceptionHandler(e);
-                    }
+                    if (func)
+                        func.apply(self, arguments);
                 }
             }
 
@@ -478,10 +535,10 @@
                 batch = null;
 
                 /* Cancel all the watches  */
-                var old = watches;
-                watches = { };
-                angular.forEach(old, function(watch) {
-                    watch.cancel();
+                var old = watching;
+                watching = { };
+                angular.forEach(old, function(w) {
+                    w.cancelWatch();
                 });
 
                 /* Clear out everything */
@@ -503,7 +560,8 @@
 
                     return {
                         type: removed ? "DELETED" : "ADDED",
-                        object: resource
+                        object: resource,
+                        checkResourceVersion: true
                     };
                 }));
                 handleFlush(invokeCallbacks);
@@ -526,7 +584,8 @@
                     }
                 }, function(response) {
                     req = null;
-                    return $q.reject(response);
+                    var resp = response.data;
+                    return $q.reject(resp || response);
                 });
                 promise.cancel = function cancel(ex) {
                     req.cancel(ex);
@@ -570,13 +629,13 @@
                 }
 
                 /* Cancel any watches not applicable to these namespaces */
-                var path, watch, reconnect = [ ];
-                for (path in watches) {
-                    watch = watches[path];
-                    if ((!only && watch.params.namespace) ||
-                        (only && !watch.params.global && !(watch.params.namespace in only))) {
-                        watches[path].cancel();
-                        reconnect.push(watch);
+                var path, w, reconnect = [ ];
+                for (path in watching) {
+                    w = watching[path];
+                    if ((!only && w.namespace) || (only && !w.global && !(w.namespace in only))) {
+                        w.cancelWatch();
+                        delete watching[path];
+                        reconnect.push(w);
                     }
                 }
 
@@ -584,13 +643,29 @@
                 invokeCallbacks(present, removed);
 
                 /* Reconnect all the watches we cancelled with proper namespace */
-                angular.forEach(reconnect, function(watch) {
-                    ensureWatches(watch.params.what);
+                angular.forEach(reconnect, function(w) {
+                    ensureWatches(w.what, w.references);
                 });
             }
 
+            function connectUntil(ret, until) {
+                if (until) {
+                    if (until.$on) {
+                        until.$on("destroy", function() {
+                            ret.cancel();
+                        });
+                    } else {
+                        console.warn("invalid until passed to watch", until);
+                    }
+                }
+            }
+
             var self = {
-                watch: ensureWatches,
+                watch: function watch(what, until) {
+                    var ret = ensureWatches(what, 1);
+                    connectUntil(ret, until);
+                    return ret;
+                },
                 load: function load(/* ... */) {
                     return loadObjects.apply(this, arguments);
                 },
@@ -599,8 +674,8 @@
                         adjustNamespace(options.namespace);
                 },
                 reset: resetLoader,
-                listen: function listen(callback, before) {
-                    if (before)
+                listen: function listen(callback, until) {
+                    if (callback.early)
                         callbacks.unshift(callback);
                     else
                         callbacks.push(callback);
@@ -608,7 +683,7 @@
                         timeout = null;
                         callback.call(self, objects);
                     }, 0);
-                    return {
+                    var ret = {
                         cancel: function() {
                             var i, len;
                             $timeout.cancel(timeout);
@@ -619,6 +694,8 @@
                             }
                         }
                     };
+                    connectUntil(ret, until);
+                    return ret;
                 },
                 handle: function handle(objects, removed, kind) {
                     if (!angular.isArray(objects))
@@ -694,7 +771,7 @@
             var weakmap = new SimpleWeakMap();
             var version = 1;
 
-            loader.listen(function(present, removed) {
+            function listener(present, removed) {
                 version += 1;
 
                 /* Get called like this when reset */
@@ -705,7 +782,10 @@
                 } else if (index) {
                     indexObjects(present);
                 }
-            }, true);
+            }
+
+            listener.early = true;
+            loader.listen(listener);
 
             /* Create a new index and populate */
             function indexCreate() {
@@ -925,7 +1005,10 @@
             registerFilter({
                 name: "label",
                 digests: function(arg) {
-                    var i, ret = [], meta = arg.metadata;
+                    var ret = [];
+                    if (!arg)
+                        return ret;
+                    var i, meta = arg.metadata;
                     var labels = meta ? meta.labels : arg;
                     for (i in labels || [])
                         ret.push(i + "=" + labels[i]);
@@ -937,6 +1020,8 @@
             registerFilter({
                 name: "namespace",
                 digest: function(arg) {
+                    if (!arg)
+                        return null;
                     if (typeof arg === "string")
                         return arg;
                     var meta = arg.metadata;
@@ -948,6 +1033,8 @@
             registerFilter({
                 name: "name",
                 digest: function(arg) {
+                    if (!arg)
+                        return null;
                     if (typeof arg === "string")
                         return arg;
                     var meta = arg.metadata;
@@ -959,6 +1046,8 @@
             registerFilter({
                 name: "kind",
                 digest: function(arg) {
+                    if (!arg)
+                        return null;
                     if (typeof arg === "string")
                         return arg;
                     return arg.kind;
@@ -969,11 +1058,39 @@
             registerFilter({
                 name: "host",
                 digest: function(arg) {
+                    if (!arg)
+                        return null;
                     if (typeof arg === "string")
                         return arg;
-
                     var spec = arg.spec;
                     return spec ? spec.nodeName : null;
+                }
+            });
+
+            /* The namespace filter */
+            registerFilter({
+                name: "uid",
+                digest: function(arg) {
+                    if (!arg)
+                        return null;
+                    if (typeof arg === "string")
+                        return arg;
+                    var meta = arg.metadata;
+                    return meta ? meta.uid : null;
+                }
+            });
+
+            /* The statusPhase filter */
+            registerFilter({
+                name: "statusPhase",
+                digest: function(arg) {
+                    var status;
+                    if (typeof arg == "string") {
+                        return arg;
+                    } else {
+                        status = arg.status || { };
+                        return status.phase ? status.phase : null;
+                    }
                 }
             });
 
@@ -1164,6 +1281,26 @@
                 });
             }
 
+            function generalMethodRequest(method, resource, body, config) {
+                var path = resourcePath([resource]);
+                var promise = new KubeRequest(method, path, JSON.stringify(body), config);
+                return promise.then(function(response) {
+                    var resp = response.data;
+                    return resp || response;
+                }, function(response) {
+                    var resp = response.data;
+                    return $q.reject(resp || response);
+                });
+            }
+
+            function putResource(resource, body, config) {
+                return generalMethodRequest("PUT", resource, body, config);
+            }
+
+            function postResource(resource, body, config) {
+                return generalMethodRequest("POST", resource, body, config);
+            }
+
             function checkResource(resource, targets) {
                 var defer = $q.defer();
                 var ex, exs = [];
@@ -1211,6 +1348,8 @@
                 "delete": deleteResource,
                 "check": checkResource,
                 "patch": patchResource,
+                post: postResource,
+                put: putResource,
             };
         }
     ])
@@ -1274,7 +1413,7 @@
     .factory("MissingKubeRequest", [
         function() {
             return function MissingKubeRequest(path, callback) {
-                throw "no KubeRequestFactory set";
+                throw new Error("no KubeRequestFactory set");
             };
         }
     ])
@@ -1332,7 +1471,7 @@
     .factory("MissingKubeSocket", [
         function() {
             return function MissingKubeSocket(path, callback) {
-                throw "no KubeSocketFactory set";
+                throw Error("no KubeSocketFactory set");
             };
         }
     ])
@@ -1389,7 +1528,7 @@
     .factory("MissingKubeWatch", [
         function() {
             return function MissingKubeWatch(path, callback) {
-                throw "no KubeWatchFactory set";
+                throw Error("no KubeWatchFactory set");
             };
         }
     ])
@@ -1420,7 +1559,7 @@
     .factory("MissingKubeDiscoverSettings", [
         function() {
             return function MissingKubeDiscoverSettings(path, callback) {
-                throw "no KubeDiscoverSettingsFactory set";
+                throw Error("no KubeDiscoverSettingsFactory set");
             };
         }
     ]);

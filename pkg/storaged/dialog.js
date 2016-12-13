@@ -17,11 +17,17 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-define([
-    "jquery",
-    "base1/mustache",
-    "base1/patterns"
-], function($, mustache) {
+(function() {
+    "use strict";
+
+    var $ = require("jquery");
+    var cockpit = require("cockpit");
+
+    var mustache = require("mustache");
+    require("patterns");
+
+    var _ = cockpit.gettext;
+    var C_ = cockpit.gettext;
 
     /* GENERIC STORAGE DIALOG SUPPORT
      */
@@ -36,13 +42,20 @@ define([
     var cur_dialog;
 
     function dialog_open(def) {
-        // Convert initial values for SizeInput fields to MB.
+
         def.Fields.forEach(function (f) {
+            // Convert initial values for SizeInput fields to MB.
             if (f.SizeInput && f.Value)
                 f.ValueMB = (f.Value / (1024*1024)).toFixed(0);
+
+            // Put in the Units for SizeSliders
+            if (f.SizeSlider && !f.Units)
+                f.Units = cockpit.get_byte_units(f.Value || f.Max);
         });
 
+
         function toggle_arrow(event) {
+            /* jshint validthis:true */
             var collapsed = $(this).hasClass('collapsed');
             if (collapsed) {
                 $(this).removeClass('collapsed');
@@ -55,10 +68,11 @@ define([
         }
 
         function select_row(event) {
+            /* jshint validthis:true */
             var tbody = $(this);
             var row = $(event.target).parent('tr');
-            tbody.find('tr').removeClass('highlight');
-            row.addClass('highlight');
+            tbody.find('tr').removeClass('highlight-ct');
+            row.addClass('highlight-ct');
         }
 
         if (cur_dialog)
@@ -72,16 +86,128 @@ define([
             $dialog.remove();
         });
 
-        $dialog.find('.selectpicker').selectpicker();
         $dialog.find('.dialog-arrow').on('click', toggle_arrow);
         $dialog.find('.dialog-select-row-table tbody').on('click', select_row);
-        $dialog.find('.dialog-select-row-table tbody tr:first-child').addClass('highlight');
+        $dialog.find('.dialog-select-row-table tbody tr:first-child').addClass('highlight-ct');
+
+        /* Dropdowns
+         */
+
+        function dropdown_option_clicked(target) {
+            if (target.hasClass("disabled"))
+                return false;
+            var parent = target.parents(".dropdown");
+            parent.find("button span").first().text(target.text());
+            parent.val(target.attr("value"));
+            parent.find("li.selected").removeClass("selected");
+            target.addClass("selected");
+            parent.trigger("change", [ ]);
+        }
+
+        $dialog.on("click", ".dropdown li[value]", function(ev) {
+            return dropdown_option_clicked($(this));
+        });
+
+        $dialog.find(".dropdown").each(function (i, parent) {
+            var selected;
+            $(parent).find("li[value]").each(function (i, target) {
+                if (!selected || $(target).attr("selected"))
+                    selected = $(target);
+            });
+            dropdown_option_clicked(selected);
+        });
+
+        /* Size sliders
+         */
+
+        function setup_size_slider(field) {
+            var value = field.Value || field.Max;
+            var parent = $dialog.find('[data-field="' + field.SizeSlider + '"]');
+            var slider = $("<div class='slider'>").
+                append($("<div class='slider-bar'>").
+                    append($("<div class='slider-thumb'>")));
+            $(slider).slider();
+
+            parent.data('max', field.Max);
+            parent.data('round', field.Round);
+            parent.find('.slider').replaceWith(slider);
+
+            $(slider).on('change', size_slider_changed);
+            parent.find('.size-text').on('change', size_text_changed);
+            parent.find('.size-unit').on('change', size_unit_changed);
+
+            slider.prop("value", value / field.Max);
+            slider.trigger("change", [value / field.Max]);
+        }
+
+        function size_slider_changed(event, value) {
+            /* jshint validthis:true */
+            var parent = $(this).parents('.size-slider');
+            var input = parent.find('.size-text');
+            var unit = parent.find('.size-unit');
+            var max = parent.data('max');
+            var round = parent.data('round');
+
+            value *= max;
+            if (round)
+                value = Math.round(value / round) * round;
+
+            if (value < 0)
+                value = 0;
+            if (value > max)
+                value = max;
+
+            parent.val(value);
+            input.val(cockpit.format_number(value / +unit.val()));
+        }
+
+        function size_text_changed(event) {
+            /* jshint validthis:true */
+            var input = $(this);
+            var parent = input.parents('.size-slider');
+            var unit = parent.find('.size-unit');
+            var unit_val = +unit.val();
+            var slider = parent.find('.slider');
+            var max = parent.data('max');
+            var value = +input.val() * unit_val;
+
+            // As a special case, if the user types something that
+            // looks like the maximum when formatted, always use
+            // exactly the maximum.  Otherwise we have the confusing
+            // possibility that with the exact same string in the text
+            // input, the size is sometimes too large and sometimes
+            // not.
+
+            var max_fmt = cockpit.format_number(max / unit_val);
+            var max_parse = +max_fmt * unit_val;
+
+            if (value == max_parse)
+                value = max;
+
+            slider.prop("value", value / max);
+            parent.val(value);
+        }
+
+        function size_unit_changed(event) {
+            /* jshint validthis:true */
+            var unit = $(this);
+            var parent = unit.parents('.size-slider');
+            var input = parent.find('.size-text');
+
+            input.val(cockpit.format_number(+parent.val() / +unit.val()));
+        }
+
+        def.Fields.forEach(function (f) {
+            if (f.SizeSlider) {
+                setup_size_slider(f);
+            }
+        });
 
         var invisible = { };
 
         function get_name(f) {
             return (f.TextInput || f.PassInput || f.SelectOne || f.SelectMany || f.SizeInput ||
-                    f.CheckBox || f.Arrow || f.SelectRow);
+                    f.SizeSlider || f.CheckBox || f.Arrow || f.SelectRow);
         }
 
         function get_field_values() {
@@ -97,7 +223,9 @@ define([
                 else if (f.SelectOne)
                     vals[n] = $f.val();
                 else if (f.SizeInput)
-                    vals[n] = parseInt($f.val())*1024*1024;
+                    vals[n] = parseInt($f.val(), 10)*1024*1024;
+                else if (f.SizeSlider)
+                    vals[n] = parseInt($f.val(), 10);
                 else if (f.CheckBox)
                     vals[n] = $f.prop('checked');
                 else if (f.SelectMany) {
@@ -108,7 +236,7 @@ define([
                     });
                 } else if (f.SelectRow) {
                     $f.find('tbody tr').each(function (i, e) {
-                        if ($(e).hasClass('highlight'))
+                        if ($(e).hasClass('highlight-ct'))
                             vals[n] = f.Rows[i].value;
                     });
                 } else if (f.Arrow) {
@@ -131,6 +259,26 @@ define([
             });
         }
 
+        function validate_field(field, val, vals) {
+            var msg = null;
+
+            if (field.SizeSlider) {
+                if (isNaN(val))
+                    msg = _("Size must be a number");
+                if (val === 0)
+                    msg = _("Size cannot be zero");
+                if (val < 0)
+                    msg = _("Size cannot be negative");
+                if (!field.AllowInfinite && val > field.Max)
+                    msg = _("Size is too large");
+            }
+
+            if (field.validate)
+                msg = field.validate(val, vals);
+
+            return msg;
+        }
+
         function get_validated_field_values() {
             var vals = get_field_values();
 
@@ -140,13 +288,11 @@ define([
                 if (invisible[n])
                     vals[n] = undefined;
                 else {
-                    if (f.validate) {
-                        var msg = f.validate(vals[n], vals);
-                        if (msg) {
-                            var err = new Error(msg);
-                            err.target = '[data-field="' + n + '"]';
-                            errors.push(err);
-                        }
+                    var msg = validate_field(f, vals[n], vals);
+                    if (msg) {
+                        var err = new Error(msg);
+                        err.target = '[data-field="' + n + '"]';
+                        errors.push(err);
                     }
                 }
             });
@@ -201,5 +347,5 @@ define([
 
     $(init_dialogs);
 
-    return { open: dialog_open };
-});
+    module.exports = { open: dialog_open };
+}());

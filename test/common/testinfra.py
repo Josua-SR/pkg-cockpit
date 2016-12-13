@@ -25,6 +25,7 @@ import json
 import urllib
 import os
 import random
+import re
 import shutil
 import socket
 import subprocess
@@ -45,22 +46,28 @@ WHITELIST = os.path.join(TEST_DIR, "github-whitelist")
 WHITELIST_LOCAL = "~/.config/github-whitelist"
 
 HOSTNAME = socket.gethostname().split(".")[0]
-DEFAULT_IMAGE = os.environ.get("TEST_OS", "fedora-24")
+DEFAULT_IMAGE = os.environ.get("TEST_OS", "fedora-25")
 
 BASELINE_PRIORITY = 10
 
 DEFAULT_VERIFY = {
-    'verify/fedora-23': [ 'master' ],
-    'verify/fedora-24': [ 'master', 'pulls' ],
-    'verify/rhel-7': [ 'master', 'pulls' ],
-    'verify/fedora-atomic': [ 'master', 'pulls' ],
-    'verify/rhel-atomic': [ 'master', 'pulls' ],
-    'verify/debian-unstable': [ 'master', 'pulls' ],
-    'verify/fedora-testing': [ 'master' ],
-    'avocado/fedora-23': [ 'master', 'pulls' ],
+    'avocado/fedora-24': [ 'master', 'pulls' ],
+    'container/kubernetes': [ 'master', 'pulls' ],
+    'koji/fedora-24': [ ],
+    'koji/fedora-25': [ ],
     'selenium/firefox': [ 'master', 'pulls' ],
     'selenium/chrome': [ 'master', 'pulls' ],
-    'container/kubernetes': [ ],
+    'verify/centos-7': [ 'master', 'pulls' ],
+    'verify/continuous-atomic': [ 'master' ],
+    'verify/debian-8': [ 'master', 'pulls', ],
+    'verify/debian-unstable': [ 'master', 'pulls' ],
+    'verify/fedora-24': [ ],
+    'verify/fedora-25': [ 'master', 'pulls' ],
+    'verify/fedora-atomic': [ 'master', 'pulls' ],
+    'verify/fedora-testing': [ ],
+    'verify/rhel-7': [ 'master', 'pulls' ],
+    'verify/rhel-atomic': [ 'master', 'pulls' ],
+    'verify/ubuntu-1604': [ 'master', 'pulls' ],
 }
 
 TESTING = "Testing in progress"
@@ -68,28 +75,37 @@ NOT_TESTED = "Not yet tested"
 NO_TESTING = "Manual testing required"
 
 DEFAULT_IMAGE_REFRESH = {
-    'fedora-23': {
-        'triggers': [
-            "verify/fedora-23",
-            "verify/fedora-atomic",  # builds in fedora-23
-            "avocado/fedora-23",
-            "selenium/firefox",
-            "selenium/chrome"
-        ]
+    'centos-7': {
+        'triggers': [ "verify/centos-7", ]
+    },
+    'continuous-atomic': {
+        'triggers': [ "verify/continuous-atomic", ]
+    },
+    'debian-unstable': {
+        'triggers': [ "verify/debian-unstable" ]
     },
     'fedora-24': {
         'triggers': [
+            "avocado/fedora-24",
+            "selenium/firefox",
+            "selenium/chrome",
             "verify/fedora-24",
+            "verify/fedora-atomic",  # builds in fedora-24
+        ]
+    },
+    'fedora-25': {
+        'triggers': [
+            "verify/fedora-25",
         ]
     },
     'fedora-atomic': {
         'triggers': [ "verify/fedora-atomic" ]
     },
-    'debian-unstable': {
-        'triggers': [ "verify/debian-unstable" ]
-    },
     'fedora-testing': {
         'triggers': [ "verify/fedora-testing" ]
+    },
+    'ubuntu-1604': {
+        'triggers': [ "verify/ubuntu-1604", ]
     }
 }
 
@@ -138,9 +154,38 @@ __all__ = (
     'HOSTNAME',
     'TESTING',
     'NOT_TESTED',
+    'NO_TESTING',
     'IMAGE_EXPIRE',
     'TEST_DIR',
 )
+
+def determine_github_base():
+    # pick a base
+    try:
+        # see where we get master from, e.g. origin
+        get_remote_command = ["git", "config", "--local", "--get", "branch.master.remote"]
+        remote = subprocess.Popen(get_remote_command, stdout=subprocess.PIPE, cwd=TEST_DIR).communicate()[0].strip()
+        # see if we have a git checkout - it can be in https or ssh format
+        formats = [
+            re.compile("""https:\/\/github\.com\/(.*)\.git"""),
+            re.compile("""git@github.com:(.*)\.git""")
+            ]
+        remote_output = subprocess.Popen(
+                ["git", "ls-remote", "--get-url", remote],
+                stdout=subprocess.PIPE, cwd=TEST_DIR
+            ).communicate()[0].strip()
+        for f in formats:
+            m = f.match(remote_output)
+            if m:
+                return list(m.groups())[0]
+    except:
+        sys.stderr.write("Unable to get git repo information, using defaults\n")
+
+    # if we still don't have something, default to cockpit-project/cockpit
+    return "cockpit-project/cockpit"
+
+# github base to use
+GITHUB_BASE = "/repos/{0}/".format(os.environ.get("GITHUB_BASE", determine_github_base()))
 
 def read_whitelist():
     # Try to load the whitelists
@@ -161,6 +206,41 @@ def read_whitelist():
 
     # remove duplicate entries
     return set(whitelist)
+
+def redact_audit_variables(message):
+    """ Reformat audit events so that the same error recorded at different
+        times will match when using string comparison
+        Match lines like
+        Error: audit: type=1400 audit(1458739098.632:268): avc:  denied  { read } for  pid=1290 comm="ssh-transport-c" \
+            name="unix" dev="proc" ino=4026532021 scontext=system_u:system_r:cockpit_ws_t:s0 \
+            tcontext=system_u:object_r:proc_net_t:s0 tclass=file permissive=0
+        Error: audit: type=1401 audit(1461925292.392:293): op=security_compute_av reason=bounds \
+            scontext=system_u:system_r:init_t:s0 tcontext=system_u:system_r:docker_t:s0 tclass=process perms=siginh
+        It will ignore changed timestamp, pid and ino entries
+    """
+    audit_timestamp_re = re.compile(r"""(^\s*Error: audit:.+audit\()([0-9\.\:]+)(.*)""")
+    audit_pid_re = re.compile(r"""(.*pid=)([0-9]+)(.*)""")
+    audit_ino_re = re.compile(r"""(.*ino=)([0-9]+)(.*)""")
+    lines = message.split("\n")
+    for line_idx, line in enumerate(lines):
+        if line.strip().startswith("Error: audit:"):
+            m = audit_timestamp_re.match(line)
+            if m and len(m.groups()) == 3:
+                fields = list(m.groups())
+                fields[1] = "[timestamp]"
+                line = "".join(fields)
+            m = audit_pid_re.match(line)
+            if m and len(m.groups()) == 3:
+                fields = list(m.groups())
+                fields[1] = "[pid]"
+                line = "".join(fields)
+            m = audit_ino_re.match(line)
+            if m and len(m.groups()) == 3:
+                fields = list(m.groups())
+                fields[1] = "[ino]"
+                line = "".join(fields)
+            lines[line_idx] = line
+    return "\n".join(lines)
 
 class Sink(object):
     def __init__(self, host, identifier, status=None):
@@ -235,7 +315,7 @@ def dict_is_subset(full, check):
     return True
 
 class GitHub(object):
-    def __init__(self, base="/repos/cockpit-project/cockpit/"):
+    def __init__(self, base=GITHUB_BASE):
         self.base = base
         self.conn = None
         self.token = None
@@ -374,6 +454,19 @@ class GitHub(object):
                 count = len(statuses)
         return result
 
+    def pulls(self):
+        result = [ ]
+        page = 1
+        count = 100
+        while count == 100:
+            pulls = self.get("pulls?page={0}&per_page={1}".format(page, count))
+            count = 0
+            page += 1
+            if pulls:
+                result += pulls
+                count = len(pulls)
+        return result
+
     def labels(self, issue):
         result = [ ]
         for label in self.get("issues/{0}/labels".format(issue)):
@@ -476,17 +569,21 @@ class GitHub(object):
                 if update_status(revision, context, status, changes):
                     results.append(GitHub.TaskEntry(priority, GithubPullTask("master", revision, "master", context)))
 
-        pulls = self.get("pulls")
-        for pull in pulls:
+        for pull in self.pulls():
             number = pull["number"]
             labels = self.labels(number)
             revision = pull["head"]["sha"]
             statuses = self.statuses(revision)
             login = pull["head"]["user"]["login"]
+            base = pull["base"]["ref"]  # The branch this pull request targets
 
             for context in contexts.keys():
                 status = statuses.get(context, None)
                 baseline = BASELINE_PRIORITY
+
+                # modify the baseline slightly to favor older pull requests, so that we don't
+                # end up with a bunch of half tested pull requests
+                baseline += 1.0 - (min(100000, float(number)) / 100000)
 
                 # Only create new status for those requested
                 if not status:
@@ -503,8 +600,8 @@ class GitHub(object):
 
                 (priority, changes) = self.prioritize(status, labels, baseline, context)
                 if update_status(revision, context, status, changes):
-                    results.append(GitHub.TaskEntry(priority, GithubPullTask("pull-%d" % number, revision,
-                                                                             "pull/%d/head" % number, context)))
+                    pulltask = GithubPullTask("pull-%d" % number, revision, "pull/%d/head" % number, context, base)
+                    results.append(GitHub.TaskEntry(priority, pulltask))
 
         return results
 
@@ -622,13 +719,14 @@ class GitHub(object):
 ```
 {0}
 ```""".format(err.strip())
+        redacted_err_key = redact_audit_variables(err_key)
         latest_occurrences = "Latest occurrences:\n\n"
         for comment in reversed(comments):
             if 'body' in comment and comment['body'].startswith(comment_key):
                 parts = comment['body'].split("<hr>")
                 updated = False
                 for part_idx, part in enumerate(parts):
-                    if part.startswith(err_key):
+                    if redact_audit_variables(part).startswith(redacted_err_key):
                         latest = part.split(latest_occurrences)
                         if len(latest) < 2:
                             sys.stderr.write("Error while parsing latest occurrences\n")
@@ -658,8 +756,13 @@ Times recorded: 1
 """.format(err_key, link, latest_occurrences))
                     updated = True
 
+                # This comment is already too long
+                body = "<hr>".join(parts)
+                if len(body) >= 65536:
+                    break
+
                 # update comment, no need to check others
-                return self.patch("issues/comments/{0}".format(comment['id']), { "body": "<hr>".join(parts) })
+                return self.patch("issues/comments/{0}".format(comment['id']), { "body": body })
 
         # create a new comment, since we didn't find one to update
 

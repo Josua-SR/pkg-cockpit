@@ -22,6 +22,7 @@
 #include "cockpitwebservice.h"
 #include "cockpitchannelresponse.h"
 #include "cockpitchannelsocket.h"
+#include "cockpitws.h"
 
 #include "common/cockpitpipe.h"
 #include "common/cockpitconf.h"
@@ -34,6 +35,9 @@
 #include <glib-unix.h>
 #include <glib/gstdio.h>
 #include <string.h>
+
+/* Override from cockpitconf.c */
+extern const gchar *cockpit_config_file;
 
 static GMainLoop *loop = NULL;
 static gboolean signalled = FALSE;
@@ -245,6 +249,7 @@ static CockpitPipe *bridge;
 
 static gboolean
 on_handle_stream_socket (CockpitWebServer *server,
+                         const gchar *original_path,
                          const gchar *path,
                          GIOStream *io_stream,
                          GHashTable *headers,
@@ -360,6 +365,7 @@ on_echo_socket_close (WebSocketConnection *ws,
 
 static gboolean
 on_handle_stream_external (CockpitWebServer *server,
+                           const gchar *original_path,
                            const gchar *path,
                            GIOStream *io_stream,
                            GHashTable *headers,
@@ -438,12 +444,12 @@ on_handle_stream_external (CockpitWebServer *server,
           upgrade = g_hash_table_lookup (headers, "Upgrade");
           if (upgrade && g_ascii_strcasecmp (upgrade, "websocket") == 0)
             {
-              cockpit_channel_socket_open (service, open, path, io_stream, headers, input);
+              cockpit_channel_socket_open (service, open, path, path, io_stream, headers, input);
               handled = TRUE;
             }
           else
             {
-              response = cockpit_web_response_new (io_stream, path, NULL, headers);
+              response = cockpit_web_response_new (io_stream, path, path, NULL, headers);
               cockpit_channel_response_open (service, headers, response, open);
               g_object_unref (response);
               handled = TRUE;
@@ -467,10 +473,10 @@ inject_address (CockpitWebResponse *response,
 
   if (value)
     {
-      line = g_strconcat ("\nvar ", name, " = '", value, "';\n", NULL);
+      line = g_strconcat ("\n<script>\nvar ", name, " = '", value, "';\n</script>", NULL);
 
       inject = g_bytes_new (line, strlen (line));
-      filter = cockpit_web_inject_new ("<script id='dbus-tests'>", inject);
+      filter = cockpit_web_inject_new ("<head>", inject, 1);
       g_bytes_unref (inject);
 
       cockpit_web_response_add_filter (response, filter);
@@ -478,6 +484,62 @@ inject_address (CockpitWebResponse *response,
     }
 
   g_free (line);
+}
+
+static void
+handle_raw_data (CockpitWebResponse *response,
+                 const gchar *data)
+{
+  GBytes *block;
+
+  /* For testing code that uses "manifests" return empty manifests for now */
+  block = g_bytes_new_static (data, strlen (data));
+  cockpit_web_response_content (response, NULL, block, NULL);
+  g_bytes_unref (block);
+}
+
+static void
+handle_manifests_js (CockpitWebResponse *response)
+{
+  /* For testing code that uses "manifests" return empty manifests for now */
+  handle_raw_data (response, "define({ });");
+}
+
+static void
+handle_manifests_json (CockpitWebResponse *response)
+{
+  /* For testing code that uses "/pkg/manifests.json" return empty manifests for now */
+  handle_raw_data (response, "{ }");
+}
+
+static void
+handle_package_file (CockpitWebServer *server,
+                     CockpitWebResponse *response,
+                     gchar **parts)
+{
+  gchar *rebuilt;
+
+  /* TODO: This needs a better implementation later, when the tests aren't all broken */
+  if (g_strcmp0 (parts[2], "system") == 0)
+    {
+      g_free (parts[2]);
+      parts[2] = g_strdup ("systemd");
+    }
+  if (g_strcmp0 (parts[2], "base1") == 0)
+    {
+      g_free (parts[1]);
+      parts[1] = g_strdup ("src");
+    }
+  else if (g_strcmp0 (parts[2], "lib") == 0)
+    {
+      g_free (parts[1]);
+      parts[1] = g_strdup("lib");
+      parts++;
+    }
+
+  rebuilt = g_strjoinv ("/", parts);
+  cockpit_web_response_file (response, rebuilt,  cockpit_web_server_get_document_roots (server));
+  g_free (rebuilt);
 }
 
 static gboolean
@@ -488,34 +550,44 @@ on_handle_resource (CockpitWebServer *server,
                     gpointer user_data)
 {
   gchar **parts;
-  gchar *rebuilt;
 
   g_assert (g_str_has_prefix (path, "/pkg"));
 
-  /* TODO: This needs a better implementation later, when the tests aren't all broken */
-  parts = g_strsplit (path, "/", -1);
-  if (g_strcmp0 (parts[2], "system") == 0)
-    {
-      g_free (parts[2]);
-      parts[2] = g_strdup ("systemd");
-    }
-
-  rebuilt = g_strjoinv ("/", parts);
-  inject_address (response, "bus_address", bus_address);
-  inject_address (response, "direct_address", direct_address);
-
   cockpit_web_response_set_cache_type (response, COCKPIT_WEB_RESPONSE_NO_CACHE);
-  cockpit_web_response_file (response, rebuilt,  cockpit_web_server_get_document_roots (server));
+
+  parts = g_strsplit (path, "/", -1);
+  if (g_strcmp0 (parts[2], "manifests.js") == 0 && !parts[3])
+    handle_manifests_js (response);
+  else if (g_strcmp0 (parts[2], "manifests.json") == 0 && !parts[3])
+    handle_manifests_json (response);
+  else
+    handle_package_file (server, response, parts);
 
   g_strfreev (parts);
-  g_free (rebuilt);
+  return TRUE;
+}
+
+static gboolean
+on_handle_source (CockpitWebServer *server,
+                  const gchar *path,
+                  GHashTable *headers,
+                  CockpitWebResponse *response,
+                  gpointer user_data)
+{
+  cockpit_web_response_set_cache_type (response, COCKPIT_WEB_RESPONSE_NO_CACHE);
+  if (g_str_has_suffix (path, ".html"))
+    {
+      inject_address (response, "bus_address", bus_address);
+      inject_address (response, "direct_address", direct_address);
+    }
+  cockpit_web_response_file (response, path,  cockpit_web_server_get_document_roots (server));
   return TRUE;
 }
 
 static void
 server_ready (void)
 {
-  const gchar *roots[] = { ".", SRCDIR, NULL };
+  const gchar *roots[] = { ".", SRCDIR, BUILDDIR, NULL };
   GError *error = NULL;
   CockpitWebServer *server;
   gchar *url;
@@ -525,7 +597,7 @@ server_ready (void)
   else
     server_port = 8765;
 
-  server = cockpit_web_server_new (server_port, /* TCP port to listen to */
+  server = cockpit_web_server_new (NULL, server_port, /* TCP port to listen to */
                                    NULL, /* TLS cert */
                                    roots,/* Where to serve files from */
                                    NULL, /* GCancellable* */
@@ -540,9 +612,10 @@ server_ready (void)
                     G_CALLBACK (on_handle_stream_socket), NULL);
   g_signal_connect (server, "handle-stream",
                     G_CALLBACK (on_handle_stream_external), NULL);
-  g_signal_connect (server,
-                    "handle-resource::/pkg/",
+  g_signal_connect (server, "handle-resource::/pkg/",
                     G_CALLBACK (on_handle_resource), NULL);
+  g_signal_connect (server, "handle-resource::/dist/",
+                    G_CALLBACK (on_handle_source), NULL);
   g_signal_connect (server, "handle-resource::/mock/",
                     G_CALLBACK (on_handle_mock), NULL);
 
@@ -558,7 +631,7 @@ server_ready (void)
       g_print ("**********************************************************************\n"
            "Please connect a supported web browser to\n"
            "\n"
-           " %s/pkg/base1/test-dbus.html\n"
+           " %s/dist/base1/test-dbus.html\n"
            "\n"
            "and check that the test suite passes. Press Ctrl+C to exit.\n"
            "**********************************************************************\n"
@@ -736,6 +809,9 @@ main (int argc,
   for (i = 0; i < argc; i++)
     bridge_argv[i] = argv[i];
   bridge_argv[i] = "cockpit-bridge";
+
+  // Use a local ssh session command
+  cockpit_ws_ssh_program = BUILDDIR "/cockpit-ssh";
 
   loop = g_main_loop_new (NULL, FALSE);
 

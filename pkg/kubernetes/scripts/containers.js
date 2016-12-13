@@ -19,6 +19,13 @@
 
 (function() {
     "use strict";
+
+    var angular = require('angular');
+    require('angular-route');
+    require('./kube-client');
+    require('./dialog');
+    require('./listing');
+
     var phantom_checkpoint = phantom_checkpoint || function () { };
 
     angular.module('kubernetes.containers', [
@@ -32,10 +39,18 @@
     .config([
         '$routeProvider',
         function($routeProvider) {
-            $routeProvider.when('/pods/:pod_namespace?', {
-                templateUrl: 'views/containers-page.html',
-                controller: 'ContainersCtrl'
-            });
+            $routeProvider
+                .when('/pods/:pod_namespace/:pod_name/:container_name', {
+                    templateUrl: 'views/container-page.html',
+                    controller: 'ContainerCtrl'
+                })
+                .when('/pods/:pod_namespace/:pod_name', {
+                    redirectTo: '/pods'
+                })
+                .when('/pods/:pod_namespace?', {
+                    templateUrl: 'views/containers-page.html',
+                    controller: 'ContainersCtrl'
+                });
         }
     ])
 
@@ -59,7 +74,7 @@
                     selector[key] = qs[key];
             }
 
-            var c = loader.listen(function() {
+            loader.listen(function() {
                 var pods = select().kind("Pod");
                 if ($routeParams.pod_namespace)
                     pods.namespace($routeParams.pod_namespace);
@@ -67,18 +82,57 @@
                     pods.label(selector);
 
                 $scope.pods = pods;
-            });
+            }, $scope);
 
-            $scope.$on("$destroy", function() {
-                c.cancel();
-            });
-
-            loader.watch("Pod");
+            loader.watch("Pod", $scope);
 
             $scope.listing = new ListingState($scope);
-            $scope.listing.forceInline = true;
 
             $scope.containers = containers;
+
+            $scope.$on("activate", function(ev, id) {
+                ev.preventDefault();
+                $location.path(id);
+            });
+
+            $scope.should_mask = function(name) {
+                return name.toLowerCase().indexOf("password") !== -1;
+            };
+        }
+    ])
+
+    /*
+     * The controller for the containers view.
+     */
+    .controller('ContainerCtrl', [
+        '$scope',
+        'KubeContainers',
+        'kubeLoader',
+        'kubeSelect',
+        '$routeParams',
+        '$route',
+        function($scope, containers, loader, select, $routeParams, $route) {
+
+            var target = $routeParams["container_name"] || "";
+            $scope.target = target;
+
+            loader.listen(function() {
+                $scope.pod = select().kind("Pod")
+                                   .namespace($routeParams.pod_namespace || "")
+                                   .name($routeParams.pod_name  || "").one();
+                if ($scope.pod) {
+                     angular.forEach(containers($scope.pod) || [], function (con) {
+                        if (con.spec && con.spec.name === target)
+                            $scope.container = con;
+                     });
+                }
+            }, $scope);
+
+            loader.watch("Pod", $scope);
+
+            $scope.back = function() {
+                $route.updateParams({ "container_name" : undefined });
+            };
 
             $scope.should_mask = function(name) {
                 return name.toLowerCase().indexOf("password") !== -1;
@@ -87,34 +141,19 @@
     ])
 
     /**
-     * containers
-     * Register 'containers' on kubeSelect.
-     * They look like this:
+     * Build an array of container objects where each object contains the data from both
+     * the spec and status sections of the pod. Looks like this:
      *   { id: id, spec: pod.spec.containers[n], status: pod.status.containerStatuses[n] }
      *
      * The returned array will not change once created for a given pod item.
      */
     .factory('KubeContainers', [
-        'kubeSelect',
-        function(select) {
-            /*
-             * Maps an array of objects with a name property to a
-             * map with the name as the key.
-             */
-            function mapNamedArray(array) {
-                var result = { };
-                var i, len;
-                if (array) {
-                    for (i = 0, len = array.length; i < len; i++)
-                        result[array[i].name] = array[i];
-                }
-                return result;
-            }
-
+        'KubeMapNamedArray',
+        function(mapNamedArray) {
             return function (item) {
                 var specs, statuses, pod_id;
                 if (!item.containers) {
-                    pod_id = item.metadata.namespace + "/pod/" + item.metadata.name;
+                    pod_id = "pods/" + item.metadata.namespace + "/" + item.metadata.name;
                     if (item.spec)
                         specs = mapNamedArray(item.spec.containers);
                     else
@@ -134,6 +173,24 @@
             };
         }
     ])
+
+    .directive('containersListing',
+        function() {
+            return {
+                restrict: 'A',
+                templateUrl: 'views/containers-listing.html'
+            };
+        }
+    )
+
+    .directive('containerPageInline',
+        function() {
+            return {
+                restrict: 'A',
+                templateUrl: 'views/container-page-inline.html'
+            };
+        }
+    )
 
     .directive('kubeContainerBody',
         function() {
@@ -173,10 +230,9 @@
                     var limit = 64 * 1024;
 
                     var outer = angular.element("<div>");
-                    outer.addClass("console");
+                    outer.addClass("console-ct");
                     element.append(outer);
                     var pre = angular.element("<pre>");
-                    pre.addClass("logs");
                     outer.append(pre);
                     var wait = null;
                     var ws = null;

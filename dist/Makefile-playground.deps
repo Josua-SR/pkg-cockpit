@@ -1,0 +1,261 @@
+# Generated Makefile data for playground
+# Stamp: Thu Nov 24 2016 16:15:59 GMT+0000 (UTC)
+
+playground_INPUTS = \
+	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \
+	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
+	$(srcdir)/pkg/lib/cockpit-components-select.jsx \
+	$(srcdir)/pkg/lib/cockpit-components-tooltip.jsx \
+	$(srcdir)/pkg/lib/listing.css \
+	$(srcdir)/pkg/lib/page.css \
+	$(srcdir)/pkg/lib/patterns.js \
+	$(srcdir)/pkg/lib/plot.css \
+	$(srcdir)/pkg/lib/plot.js \
+	$(srcdir)/pkg/lib/service.js \
+	$(srcdir)/pkg/lib/table.css \
+	$(srcdir)/pkg/lib/tooltip.css \
+	$(srcdir)/pkg/playground/hammer.gif \
+	$(srcdir)/pkg/playground/jquery-patterns.html \
+	$(srcdir)/pkg/playground/jquery-patterns.js \
+	$(srcdir)/pkg/playground/manifest.json \
+	$(srcdir)/pkg/playground/metrics.html \
+	$(srcdir)/pkg/playground/metrics.js \
+	$(srcdir)/pkg/playground/plot.html \
+	$(srcdir)/pkg/playground/plot.js \
+	$(srcdir)/pkg/playground/react-demo-dialog.jsx \
+	$(srcdir)/pkg/playground/react-demo-listing.jsx \
+	$(srcdir)/pkg/playground/react-demo-tooltip.jsx \
+	$(srcdir)/pkg/playground/react-patterns.html \
+	$(srcdir)/pkg/playground/react-patterns.js \
+	$(srcdir)/pkg/playground/service.html \
+	$(srcdir)/pkg/playground/service.js \
+	$(srcdir)/pkg/playground/speed.html \
+	$(srcdir)/pkg/playground/speed.js \
+	$(srcdir)/pkg/playground/test.html \
+	$(srcdir)/pkg/playground/test.js \
+	$(srcdir)/pkg/playground/translate.html \
+	$(srcdir)/pkg/playground/translate.js \
+	$(NULL)
+
+playground_OUTPUTS = \
+	dist/playground/hammer.gif \
+	dist/playground/jquery-patterns.css \
+	dist/playground/jquery-patterns.css.map \
+	dist/playground/jquery-patterns.html \
+	dist/playground/jquery-patterns.min.js \
+	dist/playground/jquery-patterns.min.js.map \
+	dist/playground/manifest.json \
+	dist/playground/metrics.css \
+	dist/playground/metrics.css.map \
+	dist/playground/metrics.html \
+	dist/playground/metrics.min.js \
+	dist/playground/metrics.min.js.map \
+	dist/playground/plot.css \
+	dist/playground/plot.css.map \
+	dist/playground/plot.html \
+	dist/playground/plot.min.js \
+	dist/playground/plot.min.js.map \
+	dist/playground/react-patterns.css \
+	dist/playground/react-patterns.css.map \
+	dist/playground/react-patterns.html \
+	dist/playground/react-patterns.min.js \
+	dist/playground/react-patterns.min.js.map \
+	dist/playground/service.html \
+	dist/playground/service.min.js \
+	dist/playground/service.min.js.map \
+	dist/playground/speed.html \
+	dist/playground/speed.min.js \
+	dist/playground/speed.min.js.map \
+	dist/playground/test.html \
+	dist/playground/test.min.js \
+	dist/playground/test.min.js.map \
+	dist/playground/translate.html \
+	dist/playground/translate.min.js \
+	dist/playground/translate.min.js.map \
+	$(NULL)
+
+playground_INSTALL = \
+	dist/playground/hammer.gif \
+	dist/playground/jquery-patterns.css.gz \
+	dist/playground/jquery-patterns.html.gz \
+	dist/playground/jquery-patterns.min.js.gz \
+	dist/playground/manifest.json \
+	dist/playground/metrics.css.gz \
+	dist/playground/metrics.html.gz \
+	dist/playground/metrics.min.js.gz \
+	dist/playground/plot.css.gz \
+	dist/playground/plot.html.gz \
+	dist/playground/plot.min.js.gz \
+	dist/playground/react-patterns.css.gz \
+	dist/playground/react-patterns.html.gz \
+	dist/playground/react-patterns.min.js.gz \
+	dist/playground/service.html.gz \
+	dist/playground/service.min.js.gz \
+	dist/playground/speed.html.gz \
+	dist/playground/speed.min.js.gz \
+	dist/playground/test.html.gz \
+	dist/playground/test.min.js.gz \
+	dist/playground/translate.html.gz \
+	dist/playground/translate.min.js.gz \
+	$(NULL)
+
+playground_DEBUG = \
+	dist/playground/jquery-patterns.css.map \
+	dist/playground/jquery-patterns.min.js.map \
+	dist/playground/metrics.css.map \
+	dist/playground/metrics.min.js.map \
+	dist/playground/plot.css.map \
+	dist/playground/plot.min.js.map \
+	dist/playground/react-patterns.css.map \
+	dist/playground/react-patterns.min.js.map \
+	dist/playground/service.min.js.map \
+	dist/playground/speed.min.js.map \
+	dist/playground/test.min.js.map \
+	dist/playground/translate.min.js.map \
+	$(NULL)
+
+playground_TESTS = \
+	$(NULL)
+
+dist/Makefile-playground.deps: $(WEBPACK_CONFIG) $(playground_INPUTS)
+	$(WEBPACK_RULE) -d dist/Makefile-playground.deps $(WEBPACK_CONFIG)
+
+dist/playground/hammer.gif: dist/Makefile-playground.deps
+
+dist/playground/jquery-patterns.css: dist/Makefile-playground.deps
+
+dist/playground/jquery-patterns.css.map: dist/Makefile-playground.deps
+
+dist/playground/jquery-patterns.html: dist/Makefile-playground.deps
+
+dist/playground/jquery-patterns.min.js: dist/Makefile-playground.deps
+
+dist/playground/jquery-patterns.min.js.map: dist/Makefile-playground.deps
+
+dist/playground/manifest.json: dist/Makefile-playground.deps
+
+dist/playground/metrics.css: dist/Makefile-playground.deps
+
+dist/playground/metrics.css.map: dist/Makefile-playground.deps
+
+dist/playground/metrics.html: dist/Makefile-playground.deps
+
+dist/playground/metrics.min.js: dist/Makefile-playground.deps
+
+dist/playground/metrics.min.js.map: dist/Makefile-playground.deps
+
+dist/playground/plot.css: dist/Makefile-playground.deps
+
+dist/playground/plot.css.map: dist/Makefile-playground.deps
+
+dist/playground/plot.html: dist/Makefile-playground.deps
+
+dist/playground/plot.min.js: dist/Makefile-playground.deps
+
+dist/playground/plot.min.js.map: dist/Makefile-playground.deps
+
+dist/playground/react-patterns.css: dist/Makefile-playground.deps
+
+dist/playground/react-patterns.css.map: dist/Makefile-playground.deps
+
+dist/playground/react-patterns.html: dist/Makefile-playground.deps
+
+dist/playground/react-patterns.min.js: dist/Makefile-playground.deps
+
+dist/playground/react-patterns.min.js.map: dist/Makefile-playground.deps
+
+dist/playground/service.html: dist/Makefile-playground.deps
+
+dist/playground/service.min.js: dist/Makefile-playground.deps
+
+dist/playground/service.min.js.map: dist/Makefile-playground.deps
+
+dist/playground/speed.html: dist/Makefile-playground.deps
+
+dist/playground/speed.min.js: dist/Makefile-playground.deps
+
+dist/playground/speed.min.js.map: dist/Makefile-playground.deps
+
+dist/playground/test.html: dist/Makefile-playground.deps
+
+dist/playground/test.min.js: dist/Makefile-playground.deps
+
+dist/playground/test.min.js.map: dist/Makefile-playground.deps
+
+dist/playground/translate.html: dist/Makefile-playground.deps
+
+dist/playground/translate.min.js: dist/Makefile-playground.deps
+
+dist/playground/translate.min.js.map: dist/Makefile-playground.deps
+
+$(srcdir)/pkg/lib/cockpit-components-dialog.jsx:
+
+$(srcdir)/pkg/lib/cockpit-components-listing.jsx:
+
+$(srcdir)/pkg/lib/cockpit-components-select.jsx:
+
+$(srcdir)/pkg/lib/cockpit-components-tooltip.jsx:
+
+$(srcdir)/pkg/lib/listing.css:
+
+$(srcdir)/pkg/lib/page.css:
+
+$(srcdir)/pkg/lib/patterns.js:
+
+$(srcdir)/pkg/lib/plot.css:
+
+$(srcdir)/pkg/lib/plot.js:
+
+$(srcdir)/pkg/lib/service.js:
+
+$(srcdir)/pkg/lib/table.css:
+
+$(srcdir)/pkg/lib/tooltip.css:
+
+$(srcdir)/pkg/playground/hammer.gif:
+
+$(srcdir)/pkg/playground/jquery-patterns.html:
+
+$(srcdir)/pkg/playground/jquery-patterns.js:
+
+$(srcdir)/pkg/playground/manifest.json:
+
+$(srcdir)/pkg/playground/metrics.html:
+
+$(srcdir)/pkg/playground/metrics.js:
+
+$(srcdir)/pkg/playground/plot.html:
+
+$(srcdir)/pkg/playground/plot.js:
+
+$(srcdir)/pkg/playground/react-demo-dialog.jsx:
+
+$(srcdir)/pkg/playground/react-demo-listing.jsx:
+
+$(srcdir)/pkg/playground/react-demo-tooltip.jsx:
+
+$(srcdir)/pkg/playground/react-patterns.html:
+
+$(srcdir)/pkg/playground/react-patterns.js:
+
+$(srcdir)/pkg/playground/service.html:
+
+$(srcdir)/pkg/playground/service.js:
+
+$(srcdir)/pkg/playground/speed.html:
+
+$(srcdir)/pkg/playground/speed.js:
+
+$(srcdir)/pkg/playground/test.html:
+
+$(srcdir)/pkg/playground/test.js:
+
+$(srcdir)/pkg/playground/translate.html:
+
+$(srcdir)/pkg/playground/translate.js:
+
+WEBPACK_INPUTS += $(playground_INPUTS)
+WEBPACK_OUTPUTS += $(playground_OUTPUTS)
+WEBPACK_INSTALL += $(playground_INSTALL)
+WEBPACK_DEBUG += $(playground_DEBUG)
+TESTS += $(playground_TESTS)

@@ -53,6 +53,9 @@
 
 static gboolean cockpit_test_init_was_called = FALSE;
 
+/* In cockpitconf.c */
+extern const gchar *cockpit_config_file;
+
 G_LOCK_DEFINE (expected);
 
 typedef struct {
@@ -65,6 +68,15 @@ typedef struct {
   gboolean skipable;
   gboolean optional;
 } ExpectedMessage;
+
+static void
+expected_message_free (gpointer data)
+{
+  ExpectedMessage *expected = data;
+  g_free (expected->log_domain);
+  g_free (expected->pattern);
+  g_free (expected);
+}
 
 static gint ignore_fatal_count = 0;
 static GSList *expected_messages = NULL;
@@ -150,9 +162,7 @@ expected_message_handler (const gchar *log_domain,
               g_pattern_match_simple (expected->pattern, message))
             {
               expected_messages = g_slist_delete_link (expected_messages, l);
-              g_free (expected->log_domain);
-              g_free (expected->pattern);
-              g_free (expected);
+              expected_message_free (expected);
               skip = TRUE;
               break;
             }
@@ -198,7 +208,7 @@ void
 cockpit_test_init (int *argc,
                    char ***argv)
 {
-  static gchar path[2048];
+  static gchar path[4096];
   gchar *basename;
 
   signal (SIGPIPE, SIG_IGN);
@@ -307,6 +317,8 @@ cockpit_assert_expected (void)
       g_free (message);
     }
 
+  g_slist_free_full (expected_messages, expected_message_free);
+  expected_messages = NULL;
   ignore_fatal_count = 0;
 }
 

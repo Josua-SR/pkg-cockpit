@@ -17,17 +17,20 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-define([
-    "jquery",
-    "base1/cockpit",
-    "base1/mustache",
-    "system/server",
-    "shell/shell",
-    "storage/utils",
-    "storage/dialog",
-    "storage/permissions",
-    "shell/plot"
-], function($, cockpit, mustache, server, shell, utils, dialog, permissions) {
+(function() {
+    "use strict";
+
+    var $ = require("jquery");
+    var cockpit = require("cockpit");
+
+    var mustache = require("mustache");
+    var plot = require("plot");
+    var journal = require("journal");
+
+    var utils = require("./utils");
+    var dialog = require("./dialog");
+    var permissions = require("./permissions");
+
     var _ = cockpit.gettext;
     var C_ = cockpit.gettext;
 
@@ -36,13 +39,8 @@ define([
 
     function init_overview(client, jobs) {
 
-        function update_features() {
-            $('#vgroups').toggle(client.features.lvm2);
-            $('#iscsi-sessions').toggle(client.features.iscsi);
-        }
-
-        $(client.features).on("changed", update_features);
-        update_features();
+        $('#vgroups').toggle(client.features.lvm2);
+        $('#iscsi-sessions').toggle(client.features.iscsi);
 
         var mdraids_tmpl = $("#mdraids-tmpl").html();
         mustache.parse(mdraids_tmpl);
@@ -305,6 +303,12 @@ define([
                                                { Mounts: m,
                                                  HasMounts: m.length > 0
                                                }));
+
+            /* Apply these styles */
+            $('#mounts [data-width]').each(function() {
+                $(this).css("width", $(this).attr("data-width"));
+            });
+
             permissions.update();
             jobs.update('#mounts');
         }
@@ -328,7 +332,7 @@ define([
                     axes.yaxis.options.max = null;
                 axes.yaxis.options.min = 0;
 
-                $(unit).text(shell.bytes_per_sec_tick_unit(axes.yaxis));
+                $(unit).text(plot.bytes_per_sec_tick_unit(axes.yaxis));
             };
         }
 
@@ -345,15 +349,15 @@ define([
             threshold: 1000
         };
 
-        var read_plot_options = shell.plot_simple_template();
-        $.extend(read_plot_options.yaxis, { ticks: shell.memory_ticks,
-                                            tickFormatter: shell.format_bytes_per_sec_tick_no_unit
+        var read_plot_options = plot.plot_simple_template();
+        $.extend(read_plot_options.yaxis, { ticks: plot.memory_ticks,
+                                            tickFormatter: plot.format_bytes_per_sec_tick_no_unit
                                           });
         $.extend(read_plot_options.grid,  { hoverable: true,
                                             autoHighlight: false
                                           });
         read_plot_options.setup_hook = make_plot_setup("#storage-reading-unit");
-        var read_plot = shell.plot($("#storage-reading-graph"), 300);
+        var read_plot = plot.plot($("#storage-reading-graph"), 300);
         read_plot.set_options(read_plot_options);
         var read_series = read_plot.add_metrics_stacked_instances_series(read_plot_data, { });
         read_plot.start_walking();
@@ -367,15 +371,15 @@ define([
             threshold: 1000
         };
 
-        var write_plot_options = shell.plot_simple_template();
-        $.extend(write_plot_options.yaxis, { ticks: shell.memory_ticks,
-                                             tickFormatter: shell.format_bytes_per_sec_tick_no_unit
+        var write_plot_options = plot.plot_simple_template();
+        $.extend(write_plot_options.yaxis, { ticks: plot.memory_ticks,
+                                             tickFormatter: plot.format_bytes_per_sec_tick_no_unit
                                            });
         $.extend(write_plot_options.grid,  { hoverable: true,
                                              autoHighlight: false
                                            });
         write_plot_options.setup_hook = make_plot_setup("#storage-writing-unit");
-        var write_plot = shell.plot($("#storage-writing-graph"), 300);
+        var write_plot = plot.plot($("#storage-writing-graph"), 300);
         write_plot.set_options(write_plot_options);
         var write_series = write_plot.add_metrics_stacked_instances_series(write_plot_data, { });
         write_plot.start_walking();
@@ -386,7 +390,7 @@ define([
             write_plot.resize();
         });
 
-        var plot_controls = shell.setup_plot_controls($('#storage'), $('#storage-graph-toolbar'));
+        var plot_controls = plot.setup_plot_controls($('#storage'), $('#storage-graph-toolbar'));
         plot_controls.reset([ read_plot, write_plot ]);
 
         render_mdraids();
@@ -398,7 +402,7 @@ define([
         render_jobs();
 
         $('#storage-log').append(
-            server.logbox([ "_SYSTEMD_UNIT=storaged.service", "+",
+            journal.logbox([ "_SYSTEMD_UNIT=storaged.service", "+",
                             "_SYSTEMD_UNIT=udisks2.service", "+",
                             "_SYSTEMD_UNIT=dm-event.service", "+",
                             "_SYSTEMD_UNIT=smartd.service", "+",
@@ -465,10 +469,26 @@ define([
         });
 
         $('#create-volume-group').on('click', function () {
+            function find_vgroup(name) {
+                for (var p in client.vgroups) {
+                    if (client.vgroups[p].Name == name)
+                        return client.vgroups[p];
+                }
+                return null;
+            }
+
+            var name;
+            for (var i = 0; i < 1000; i++) {
+                name = "vgroup" + i.toFixed();
+                if (!find_vgroup(name))
+                    break;
+            }
+
             dialog.open({ Title: _("Create Volume Group"),
                           Fields: [
                               { TextInput: "name",
                                 Title: _("Name"),
+                                Value: name,
                                 validate: utils.validate_lvm2_name
                               },
                               { SelectMany: "disks",
@@ -498,7 +518,7 @@ define([
                                 Title: _("Server Address"),
                                 validate: function (val) {
                                     if (val === "")
-                                        return _("Server address can not be empty.");
+                                        return _("Server address cannot be empty.");
                                 }
                               },
                               { TextInput: "username",
@@ -622,14 +642,14 @@ define([
         }
 
         function iscsi_add_with_creds(discover_vals, login_vals) {
-            dialog.open({ Title: "Authentication required",
+            dialog.open({ Title: _("Authentication required"),
                           Fields: [
                               { TextInput: "username",
-                                Title: "Username",
+                                Title: _("Username"),
                                 Value: discover_vals.username
                               },
                               { PassInput: "password",
-                                Title: "Password",
+                                Title: _("Password"),
                                 Value: discover_vals.password
                               }
                           ],
@@ -725,7 +745,7 @@ define([
         };
     }
 
-    return {
+    module.exports = {
         init: init_overview
     };
-});
+}());

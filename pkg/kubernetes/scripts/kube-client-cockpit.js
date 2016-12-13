@@ -17,10 +17,13 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* globals cockpit */
-
 (function() {
     "use strict";
+
+    var angular = require('angular');
+    var cockpit = require('cockpit');
+
+    require('./kube-client');
 
     function debug() {
         if (window.debugging == "all" || window.debugging == "kube")
@@ -69,84 +72,8 @@
         return window.btoa(window.unescape(encodeURIComponent(user + ":" + pass)));
     }
 
-    function parseKubeConfig(data, contextName) {
-        var config, blob, parser;
-        var options = { port: 8080, headers: { } };
-
-        try {
-            config = JSON.parse(data);
-        } catch(ex) {
-            console.warn("received invalid kubectl config", ex);
-            return null;
-        }
-
-        if (!contextName)
-            contextName = config["current-context"];
-        var contexts = config["contexts"] || [];
-
-        /* Find the cluster info */
-        var userName, clusterName;
-        contexts.forEach(function(info) {
-            if (info.name === contextName) {
-                var context = info.context || { };
-                userName = context.user;
-                clusterName = context.cluster;
-            }
-        });
-
-        /* Find the user info */
-        var user, users = config["users"] || [];
-        users.forEach(function(info) {
-            if (info.name === userName)
-                user = info.user;
-        });
-
-        /* Find the cluster info */
-        var cluster, clusters = config["clusters"] || [];
-        clusters.forEach(function(info) {
-            if (info.name == clusterName)
-                cluster = info.cluster;
-        });
-
-
-        if (cluster) {
-            if (cluster.server) {
-                parser = document.createElement('a');
-                parser.href = cluster.server;
-                if (parser.hostname)
-                    options.address = parser.hostname;
-                if (parser.port)
-                    options.port = parseInt(parser.port, 10);
-                if (parser.protocol == 'https:') {
-                    if (!parser.port || parser.port === "0")
-                        options.port = parser.href == cluster.server ? 6443 : 443;
-
-                    options.tls = { };
-                    options.tls.authority = parseCertOption(cluster, "certificate-authority");
-                    options.tls.validate = !cluster["insecure-skip-tls-verify"];
-                }
-            }
-        }
-
-        /* Currently only certificate auth is supported */
-        if (user) {
-            if (user.token)
-                options.headers["Authorization"] = "Bearer " + user.token;
-            if (user.username)
-                options.headers["Authorization"] = "Basic " + basicToken(user.username, user.password || "");
-            if (options.tls) {
-                options.tls.certificate = parseCertOption(user, "client-certificate");
-                options.tls.key = parseCertOption(user, "client-key");
-            }
-        }
-
-        debug("parsed kube config", options);
-        return options;
-    }
-
     angular.module("kubeClient.cockpit", [
         "kubeClient",
-        "kubeUtils",
     ])
 
     .factory("CockpitKubeWatch", [
@@ -557,7 +484,6 @@
                     channel.addEventListener("message", function(ev, data) {
                         if (base64)
                             data = "1" + window.btoa(data);
-                        /* It's because of phantomjs */
                         var mev = document.createEvent('MessageEvent');
                         if (!mev.initMessageEvent)
                             mev = new window.MessageEvent('message', { 'data': data });
@@ -584,10 +510,27 @@
                 }
 
                 function send(data) {
-                    if (base64)
+                    if (base64) {
+                        /*
+                         * HACK: container-terminal sends Width/Height commands but
+                         * many of the kubernetes implementations don't yet support
+                         * that. So filter them out here for now.
+                         */
+                        if (data[0] === "4")
+                            return;
                         data = window.atob(data.slice(1));
+                    }
+
                     if (channel)
                         channel.send(data);
+                }
+
+                var valid = true;
+                if (protocols) {
+                    if (angular.isArray(protocols))
+                        valid = base64 = protocols.indexOf("base64.channel.k8s.io") !== -1;
+                    else
+                        valid = base64 = protocols === "base64.channel.k8s.io";
                 }
 
                 /* A fake WebSocket */
@@ -601,14 +544,6 @@
                     close: { value: close },
                     send: { value: send },
                 });
-
-                var valid = true;
-                if (protocols) {
-                    if (angular.isArray(protocols))
-                        valid = base64 = protocols.indexOf("base64.channel.k8s.io") !== -1;
-                    else
-                        valid = base64 = "base64.channel.k8s.io";
-                }
 
                 if (valid) {
                     window.setTimeout(open);
@@ -627,6 +562,7 @@
         "$injector",
         function($q, $injector) {
             return function CockpitKubeSocket(url, config) {
+                var base64 = false;
                 var connect;
                 var state = 0; /* CONNECTING */
                 var ws = { };
@@ -661,6 +597,14 @@
                 }
 
                 function send(data) {
+                    /*
+                     * HACK: container-terminal sends Width/Height commands but
+                     * many of the kubernetes implementations don't yet support
+                     * that. So filter them out here for now.
+                     */
+                    if (base64 && data[0] === "4")
+                        return;
+
                     if (channel)
                         channel.send(data);
                 }
@@ -677,13 +621,15 @@
                     send: { value: send },
                 });
 
+                base64 = protocols.indexOf("base64.channel.k8s.io") !== -1;
+
                 $q.when(connect, function connected(options) {
                     cockpit.event_target(ws);
 
                     channel = cockpit.channel(angular.extend({ }, options, {
                         payload: "websocket-stream1",
                         path: url,
-                        protocols: protocols,
+                        protocols: protocols.length > 0 ? protocols : undefined,
                     }));
 
                     channel.addEventListener("close", function(ev, options) {
@@ -697,7 +643,6 @@
                     });
 
                     channel.addEventListener("message", function(ev, data) {
-                        /* It's because of phantomjs */
                         var mev = document.createEvent('MessageEvent');
                         if (!mev.initMessageEvent)
                             mev = new window.MessageEvent('message', { 'data': data });
@@ -773,13 +718,15 @@
                         var type;
                         channel = null;
 
+                        response.options = options;
                         if (options.problem) {
                             response.problem = response.statusText = options.problem;
                             response.status = 999;
                         }
 
                         var headers = response.headers || { };
-                        if (headers[CONTENT_TYPE] == JSON_TYPE) {
+                        var content_type = headers[CONTENT_TYPE] || headers[CONTENT_TYPE.toLowerCase()] || "";
+                        if (content_type.lastIndexOf(JSON_TYPE, 0) === 0) {
                             try {
                                 response.data = JSON.parse(response.data);
                             } catch (ex) {
@@ -817,15 +764,15 @@
         }
     ])
 
-    .factory("cockpitKubectlConfig", [
+    .factory("cockpitRunCommand", [
         '$q',
         function($q) {
-            return function cockpitKubectlConfig() {
+            return function runCommand(args) {
                 var defer = $q.defer();
                 var promise = defer.promise;
                 var channel = cockpit.channel({
                     "payload": "stream",
-                    "spawn": ["kubectl", "config", "view", "--output=json", "--raw"],
+                    "spawn": args,
                     "err": "message"
                 });
 
@@ -845,7 +792,108 @@
                     if (channel)
                         channel.close(options || "cancelled");
                 };
+
+                promise.send = function send(data) {
+                    if (channel)
+                        channel.send(data);
+                };
+
                 return promise;
+            };
+        }
+    ])
+
+    .factory("cockpitKubectlConfig", [
+        '$q',
+        'cockpitRunCommand',
+        function($q, runCommand) {
+
+            function generateKubeOptions(cluster, user) {
+                var parser;
+                var options = { port: 8080, headers: { } };
+
+                if (cluster && cluster.server) {
+                    parser = document.createElement('a');
+                    parser.href = cluster.server;
+                    if (parser.hostname)
+                        options.address = parser.hostname;
+                    if (parser.port)
+                        options.port = parseInt(parser.port, 10);
+                    if (parser.protocol == 'https:') {
+                        if (!parser.port || parser.port === "0")
+                            options.port = parser.href == cluster.server ? 6443 : 443;
+
+                        options.tls = { };
+                        options.tls.authority = parseCertOption(cluster, "certificate-authority");
+                        options.tls.validate = !cluster["insecure-skip-tls-verify"];
+                    }
+                }
+
+                if (user) {
+                    if (user.token)
+                        options.headers["Authorization"] = "Bearer " + user.token;
+                    if (user.username)
+                        options.headers["Authorization"] = "Basic " + basicToken(user.username, user.password || "");
+                    if (options.tls) {
+                        options.tls.certificate = parseCertOption(user, "client-certificate");
+                        options.tls.key = parseCertOption(user, "client-key");
+                    }
+                }
+
+                return options;
+            }
+
+            function parseKubeConfig(data, contextName) {
+                var config, options;
+
+                try {
+                    config = JSON.parse(data);
+                } catch(ex) {
+                    console.warn("received invalid kubectl config", ex);
+                    return null;
+                }
+
+                if (!contextName)
+                    contextName = config["current-context"];
+                var contexts = config["contexts"] || [];
+
+                /* Find the cluster info */
+                var userName, clusterName;
+                contexts.forEach(function(info) {
+                    if (info.name === contextName) {
+                        var context = info.context || { };
+                        userName = context.user;
+                        clusterName = context.cluster;
+                    }
+                });
+
+                /* Find the user info */
+                var user, users = config["users"] || [];
+                users.forEach(function(info) {
+                    if (info.name === userName)
+                        user = info.user;
+                });
+
+                /* Find the cluster info */
+                var cluster, clusters = config["clusters"] || [];
+                clusters.forEach(function(info) {
+                    if (info.name == clusterName)
+                        cluster = info.cluster;
+                });
+
+                options = generateKubeOptions(cluster, user);
+                debug("parsed kube config", options);
+                return options;
+            }
+
+            function read() {
+                return runCommand(["kubectl", "config", "view", "--output=json", "--raw"]);
+            }
+
+            return {
+                read: read,
+                parseKubeConfig: parseKubeConfig,
+                generateKubeOptions: generateKubeOptions,
             };
         }
     ])
@@ -855,7 +903,8 @@
         "CockpitKubeRequest",
         "cockpitKubectlConfig",
         "cockpitConnectionInfo",
-        function($q, CockpitKubeRequest, cockpitKubectlConfig, info) {
+        "cockpitBrowserStorage",
+        function($q, CockpitKubeRequest, cockpitKubectlConfig, info, browser) {
             var defer = null;
 
             return function cockpitKubeDiscover(force) {
@@ -863,7 +912,7 @@
                     return defer.promise;
 
                 var last, req, kubectl, loginOptions;
-                var loginData = window.sessionStorage.getItem('login-data');
+                var loginData = browser.localStorage.getItem('login-data', true);
                 defer = $q.defer();
 
                 var schemes = [
@@ -921,6 +970,7 @@
                         req = null;
                         kubectl = null;
                         last = response;
+
                         if (response.problem === "not-found") {
                             debug("api endpoint not found on:", options);
                             step();
@@ -932,10 +982,10 @@
                 }
 
                 function kubectlStep() {
-                    kubectl = cockpitKubectlConfig()
+                    kubectl = cockpitKubectlConfig.read()
                         .then(function(data) {
-                            var options = parseKubeConfig(data);
-                            step(options, options ? data : null);
+                            var options = cockpitKubectlConfig.parseKubeConfig(data);
+                            step(options, options ? JSON.parse(data) : null);
                         })
                         .catch(function(options) {
                             console.warn("kubectl failed: " + (options.message || options.problem));
@@ -943,10 +993,18 @@
                         });
                 }
 
-                schemes.unshift(kubectlStep);
-                if (loginData)
-                    loginOptions = parseKubeConfig(loginData);
-                step(loginOptions, loginOptions ? loginData : null);
+                if (force && typeof force === 'object') {
+                    schemes = [ force ];
+                    step();
+                } else if (force === "kubectl") {
+                    schemes = [ kubectlStep ];
+                    step();
+                } else {
+                    schemes.unshift(kubectlStep);
+                    if (loginData)
+                        loginOptions = cockpitKubectlConfig.parseKubeConfig(loginData);
+                    step(loginOptions, loginOptions ? JSON.parse(loginData) : null);
+                }
 
                 defer.promise.cancel = function cancel() {
                     if (kubectl && kubectl.cancel)
@@ -1003,31 +1061,47 @@
         "cockpitKubeDiscover",
         "CockpitEnvironment",
         'kubeLoader',
-        function($q, CockpitKubeRequest, cockpitKubeDiscover, CockpitEnvironment, loader) {
+        'cockpitConnectionInfo',
+        function($q, CockpitKubeRequest, cockpitKubeDiscover,
+                 CockpitEnvironment, loader, info) {
             var promise = null;
             return function kubeDiscoverSettings(force) {
                 if (!force && promise)
                     return promise;
 
                 var settings = {
-                    registry: {},
+                    registry: {
+                        host: "registry",
+                        host_explicit: false
+                    },
                     flavor: "kubernetes",
                     isAdmin: false,
+                    currentUser: null,
+                    canChangeConnection: false,
                 };
 
                 var env_p = CockpitEnvironment()
                     .then(function(result) {
-                        var value = result["REGISTRY_HOST"];
-                        if (value)
-                            settings.registry.host = value;
+                        var regHost = result["REGISTRY_HOST"];
+                        if (regHost) {
+                            settings.registry.host = regHost;
+                            settings.registry.host_explicit = true;
+                        }
+                        var openshifthost = result["OPENSHIFT_OAUTH_PROVIDER_URL"];
+                        if (openshifthost) {
+                            settings.registry.openshifthost = openshifthost.replace(/^http(s?):\/\//i, "");
+                            settings.registry.openshifthost_explicit = true;
+                        }
 
                     }, function(ex) {});
 
                 var discover_p = cockpitKubeDiscover(force)
                     .then(function(options) {
-                        var req = new CockpitKubeRequest("GET", "/oapi", "", options)
-                            .then(function() {
+                        var req = new CockpitKubeRequest("GET", "/oapi/v1/users/~", "", options)
+                            .then(function(response) {
                                 settings.flavor = "openshift";
+                                if (response)
+                                    settings.currentUser = response.data;
                             }, function () {
                                 settings.flavor = "kubernetes";
                             });
@@ -1051,10 +1125,25 @@
 
                 promise = $q.all([discover_p, env_p])
                     .then(function() {
+                        settings.canChangeConnection = info.type == "kubectl";
                         return settings;
                     });
 
                 return promise;
+            };
+        }
+    ])
+
+    .factory("cockpitBrowserStorage", [
+        "$window",
+        function($window) {
+            var base = $window;
+            if (cockpit && cockpit.sessionStorage && cockpit.localStorage)
+                base = cockpit;
+
+            return {
+                sessionStorage: base.sessionStorage,
+                localStorage: base.localStorage
             };
         }
     ])
@@ -1076,7 +1165,7 @@
                 if (info.type == "kubectl")
                     return kubectlSocket(url, protocols);
                 else
-                    return socket(url, protocols);
+                    return socket(url, { protocols: protocols });
             };
         }
     ])
@@ -1097,14 +1186,9 @@
     })
 
     .factory('CockpitTranslate', function() {
-        // TODO: Implement translations
         return {
-            gettext: function (context, value) {
-                if (arguments.length > 1)
-                    return value;
-                else
-                    return context;
-            },
+            gettext: cockpit.gettext,
+            ngettext: cockpit.ngettext,
         };
     });
 }());

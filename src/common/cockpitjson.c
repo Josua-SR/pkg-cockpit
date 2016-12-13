@@ -21,6 +21,7 @@
 
 #include "cockpitjson.h"
 
+#include <math.h>
 #include <string.h>
 
 gboolean
@@ -586,6 +587,14 @@ cockpit_json_parse_bytes (GBytes *data,
                           GError **error)
 {
   gsize length = g_bytes_get_size (data);
+
+  if (length == 0)
+    {
+      g_set_error (error, JSON_PARSER_ERROR, JSON_PARSER_ERROR_PARSE,
+                   "JSON data was empty");
+      return NULL;
+    }
+
   return cockpit_json_parse_object (g_bytes_get_data (data, NULL), length, error);
 }
 
@@ -720,11 +729,17 @@ dump_value (const gchar   *name,
     }
   else if (type == G_TYPE_DOUBLE)
     {
-        gchar buf[G_ASCII_DTOSTR_BUF_SIZE];
+      gchar buf[G_ASCII_DTOSTR_BUF_SIZE];
+      gdouble d = json_node_get_double (node);
 
-        g_string_append (buffer,
-                         g_ascii_dtostr (buf, sizeof (buf),
-                                         json_node_get_double (node)));
+      if (fpclassify (d) == FP_NAN || fpclassify (d) == FP_INFINITE)
+        {
+          g_string_append (buffer, "null");
+        }
+      else
+        {
+          g_string_append (buffer, g_ascii_dtostr (buf, sizeof (buf), d));
+        }
     }
   else if (type == G_TYPE_BOOLEAN)
     {

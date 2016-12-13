@@ -1,3 +1,5 @@
+export PATH := $(PATH):$(abs_srcdir)/node_modules/.bin
+
 NULL =
 man_MANS =
 BUILT_SOURCES =
@@ -11,10 +13,11 @@ sbin_PROGRAMS =
 noinst_LIBRARIES =
 noinst_DATA =
 nodist_noinst_DATA =
-TESTS =
 
 dist_systemdunit_DATA   =
 nodist_systemdunit_DATA =
+
+TESTS =
 
 CLEANFILES = \
 	$(man_MANS) \
@@ -24,16 +27,23 @@ CLEANFILES = \
 DISTCLEANFILES = \
 	$(srcdir)/Makefile \
 	node_modules \
+	cockpit-cache-*.tar.xz \
 	$(NULL)
 
 EXTRA_DIST = \
+	.bowerrc \
 	bower.json \
-	branding \
-	node_modules \
+	package.json \
+	src/branding \
 	README.md \
 	$(NULL)
 
-SUFFIXES = .css .min.css .min.css.gz .js .js.gz .min.js .min.js.gz .html .min.html .min.html.gz .woff .woff.gz .1 .8 .5
+clean-local:
+	find $(builddir) -name '*.gc??' -delete
+	find $(srcdir) -name '*.pyc' -delete
+	find $(builddir)/dist -mindepth 1 -name README.md -prune -o -print | xargs rm -rf
+
+SUFFIXES = .css .css.gz .html .html.gz .js .js.gz .jsx .map .map.gz .mo .po .svg .svg.gz .woff .woff.gz .1 .8 .5
 
 V_CHECK = $(V_CHECK_$(V))
 V_CHECK_ = $(V_CHECK_$(AM_DEFAULT_VERBOSITY))
@@ -43,54 +53,115 @@ V_GZIP = $(V_GZIP_$(V))
 V_GZIP_ = $(V_GZIP_$(AM_DEFAULT_VERBOSITY))
 V_GZIP_0 = @echo "  GZIP    " $@;
 
+V_COPY = $(V_COPY_$(V))
+V_COPY_ = $(V_COPY_$(AM_DEFAULT_VERBOSITY))
+V_COPY_0 = @echo "  COPY    " $@;
+
 MV = mv -f
 
-JSMODULE = $(srcdir)/tools/missing $(srcdir)/tools/jsmodule
-CSSBUNDLE = $(srcdir)/tools/missing $(srcdir)/tools/cssbundle
-
-MIN_JS_RULE = \
-	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(srcdir)/tools/missing $(srcdir)/tools/uglifyjs $< --mangle > $@.tmp && $(MV) $@.tmp $@
-
-MIN_CSS_RULE = \
-	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(srcdir)/tools/missing $(srcdir)/tools/r.js -o cssIn=$< optimizeCss=standard logLevel=3 out=$@
-
-MIN_HTML_RULE = \
-	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(srcdir)/tools/missing $(srcdir)/tools/htmlmin $@ $<
+COPY_RULE = \
+        $(V_COPY) $(MKDIR_P) $(dir $@) && \
+	cp -L $< $@.tmp && $(MV) $@.tmp $@
 
 GZ_RULE = \
 	$(V_GZIP) $(MKDIR_P) $(dir $@) && \
 	gzip -n -c $< > $@.tmp && $(MV) $@.tmp $@
 
-.css.min.css:
-	$(MIN_CSS_RULE)
-.js.min.js:
-	$(V_CHECK) $(srcdir)/tools/missing $(srcdir)/tools/jshint $<
-	$(MIN_JS_RULE)
-.html.min.html:
-	$(V_CHECK) $(srcdir)/tools/missing $(srcdir)/tools/jshint --extract=always $<
-	$(MIN_HTML_RULE)
-
-.min.css.min.css.gz:
+.css.css.gz:
 	$(GZ_RULE)
-.min.html.min.html.gz:
+.html.html.gz:
 	$(GZ_RULE)
 .js.js.gz:
 	$(GZ_RULE)
-.min.js.min.js.gz:
+.map.map.gz:
+	$(GZ_RULE)
+.svg.svg.gz:
 	$(GZ_RULE)
 .woff.woff.gz:
 	$(GZ_RULE)
 
-po/po.%.js: po/%.po
-	@$(MKDIR_P) $(dir $@)
-	$(AM_V_GEN) $(srcdir)/tools/missing $(srcdir)/tools/po2json --module $^ $@
+# Webpack related
+
+V_WEBPACK = $(V_WEBPACK_$(V))
+V_WEBPACK_ = $(V_WEBPACK_$(AM_DEFAULT_VERBOSITY))
+V_WEBPACK_0 = @echo "  WEBPACK  $(@:dist/Makefile-%.deps=%)";
+
+WEBPACK_CONFIG = $(srcdir)/webpack.config.js
+WEBPACK_INPUTS =
+WEBPACK_OUTPUTS =
+WEBPACK_INSTALL =
+
+WEBPACK_DEPS = \
+	dist/Makefile-dashboard.deps \
+	dist/Makefile-docker.deps \
+	dist/Makefile-kubernetes.deps \
+	dist/Makefile-machines.deps \
+	dist/Makefile-networkmanager.deps \
+	dist/Makefile-ostree.deps \
+	dist/Makefile-playground.deps \
+	dist/Makefile-realmd.deps \
+	dist/Makefile-selinux.deps \
+	dist/Makefile-shell.deps \
+	dist/Makefile-sosreport.deps \
+	dist/Makefile-storaged.deps \
+	dist/Makefile-subscriptions.deps \
+	dist/Makefile-systemd.deps \
+	dist/Makefile-tuned.deps \
+	dist/Makefile-users.deps \
+	$(NULL)
+
+noinst_SCRIPTS += $(WEBPACK_DEPS) $(WEBPACK_INSTALL)
+CLEANFILES += $(WEBPACK_DEPS) $(WEBPACK_OUTPUTS)
+EXTRA_DIST += $(WEBPACK_DEPS) webpack.config.js
+
+# Run webpack if we don't have the include file or if its out of date
+# If we have distributed a copy in a tarball, copy that into place
+dist/Makefile-%.deps: $(WEBPACK_CONFIG)
+	$(AM_V_GEN) if test $(srcdir)/dist/$(notdir $@) -nt $(WEBPACK_CONFIG); \
+	then $(MKDIR_P) $(dir $@) && cp -p $(srcdir)/dist/$(notdir $@) $@.tmp && $(MV) $@.tmp $@; \
+	else $(WEBPACK_MAKE) -d $@ $<; fi
+
+-include dist/Makefile-dashboard.deps
+-include dist/Makefile-docker.deps
+-include dist/Makefile-kubernetes.deps
+-include dist/Makefile-machines.deps
+-include dist/Makefile-networkmanager.deps
+-include dist/Makefile-ostree.deps
+-include dist/Makefile-playground.deps
+-include dist/Makefile-realmd.deps
+-include dist/Makefile-selinux.deps
+-include dist/Makefile-shell.deps
+-include dist/Makefile-sosreport.deps
+-include dist/Makefile-storaged.deps
+-include dist/Makefile-subscriptions.deps
+-include dist/Makefile-systemd.deps
+-include dist/Makefile-tuned.deps
+-include dist/Makefile-users.deps
+
+WEBPACK_MAKE = NODE_ENV=$(NODE_ENV) SRCDIR=$(srcdir) BUILDDIR=$(builddir) \
+	       $(srcdir)/tools/missing $(srcdir)/tools/webpack-make
+WEBPACK_RULE = $(V_WEBPACK) $(WEBPACK_MAKE)
+
+all-local:: $(WEBPACK_DEPS) $(WEBPACK_OUTPUTS) $(WEBPACK_INSTALL)
+	@true
+distclean-local::
+	rm -rf dist/
+install-data-local:: $(WEBPACK_INSTALL)
+	tar -cf - $^ | tar -C $(DESTDIR)$(pkgdatadir) --strip-components=1 -xvf -
+	$(SED_SUBST) -i $(DESTDIR)$(pkgdatadir)/*/manifest.json
+install-data-local:: $(WEBPACK_DEBUG)
+	tar -cf - $^ | tar -C $(DESTDIR)$(debugdir)$(pkgdatadir) --strip-components=1 -xvf -
+uninstall-local::
+	find $(DESTDIR)$(pkgdatadir) -type f -delete
+	find $(DESTDIR)$(pkgdatadir) -type d -empty -delete
+	find $(DESTDIR)$(debugdir)$(pkgdatadir) -type f -delete
+	find $(DESTDIR)$(debugdir)$(pkgdatadir) -type d -empty -delete
+dist-hook:: $(WEBPACK_INPUTS) $(WEBPACK_OUTPUTS)
+	tar -cf - $^ | tar -C $(distdir) -xf -
+
+#
 
 ACLOCAL_AMFLAGS = -I tools ${ACLOCAL_FLAGS}
-
-SUBDIRS = . po
 
 DISTCHECK_CONFIGURE_FLAGS=						        \
 	--disable-debug \
@@ -130,10 +201,10 @@ else
 HTML_LOG_DRIVER_FLAGS = --missing=phantomjs
 endif
 
-VALGRIND_ARGS = --trace-children=no --quiet --error-exitcode=33 \
+VALGRIND_ARGS = --trace-children=yes --quiet --error-exitcode=33 \
 	--suppressions=valgrind-suppressions --gen-suppressions=all \
 	--num-callers=16 --leak-check=yes --show-leak-kinds=definite \
-	--errors-for-leak-kinds=definite
+	--errors-for-leak-kinds=definite --trace-children-skip='*mock*,/bin*,/usr/bin/*,/usr/local/bin,*cockpit-bridge,*cockpit-stub'
 VALGRIND_SUPPRESSIONS = \
 	tools/gcrypt.supp \
 	tools/glib.supp \
@@ -175,6 +246,8 @@ SED_SUBST = sed \
         -e 's,[@]selinux_config_type[@],$(COCKPIT_SELINUX_CONFIG_TYPE),g' \
         $(NULL)
 
+UGLIFY_JS = $(srcdir)/node_modules/.bin/uglifyjs
+
 testassetsdir = $(datadir)/cockpit-test-assets
 testassets_programs =
 testassets_data =
@@ -189,20 +262,30 @@ install-test-assets: $(testassets_programs) $(testassets_data) $(testassets_syst
 	cd $(srcdir); for d in $(testassets_data); do $(INSTALL_DATA) -D $$d $(DESTDIR)$(testassetsdir)/$$d; done
 	for d in $(testassets_systemdunit_data); do $(INSTALL_DATA) $$d $(DESTDIR)$(systemdunitdir); done
 
-clean-local:
-	find $(builddir) -name '*.gc??' -delete
-	find $(srcdir) -name '*.pyc' -delete
-	rm -rf mock-archives
-
-uninstall-local:: uninstall-doc-local
-	@true
-
 install-data-hook::
 	mkdir -p $(DESTDIR)$(localstatedir)/lib/cockpit
 	chgrp wheel $(DESTDIR)$(localstatedir)/lib/cockpit || true
 	chmod 775 $(DESTDIR)$(localstatedir)/lib/cockpit
 
-LATEST = latest/
+# Fonts are used by multiple things so put them here
+OPENSANS_FONTS = \
+	dist/fonts/OpenSans-Bold-webfont.woff \
+	dist/fonts/OpenSans-BoldItalic-webfont.woff \
+	dist/fonts/OpenSans-ExtraBold-webfont.woff  \
+	dist/fonts/OpenSans-ExtraBoldItalic-webfont.woff \
+	dist/fonts/OpenSans-Italic-webfont.woff \
+	dist/fonts/OpenSans-Light-webfont.woff \
+	dist/fonts/OpenSans-LightItalic-webfont.woff \
+	dist/fonts/OpenSans-Regular-webfont.woff \
+	dist/fonts/OpenSans-Semibold-webfont.woff \
+	dist/fonts/OpenSans-SemiboldItalic-webfont.woff \
+	$(NULL)
+
+dist/fonts/%.woff:
+	$(V_COPY) $(MKDIR_P) $(dir $@) && \
+	cp -L $(subst dist/fonts,$(BOWER)/patternfly/dist/fonts,$@) $@.tmp && $(MV) $@.tmp $@
+
+EXTRA_DIST += $(OPENSANS_FONTS)
 
 if ENABLE_DOC
 
@@ -210,112 +293,84 @@ include doc/Makefile-doc.am
 include doc/guide/Makefile-guide.am
 include doc/man/Makefile-man.am
 
-noinst_DATA += doc/guide/html
-
-install-doc-local: doc/guide/html/index.html
-	$(MKDIR_P) $(DESTDIR)$(htmldir)
-	$(INSTALL_DATA) `dirname $<`/* $(DESTDIR)$(htmldir)
-
-uninstall-doc-local:
-	rm -rf $(DESTDIR)$(htmldir)
-
 dist-doc-hook:
 	@true
 
 else
 
-install-doc-local:
-	@true
-uninstall-doc-local:
-	@true
 dist-doc-hook:
 	@echo "*** doc must be enabled (ie: --enable-doc) in order to make dist or distcheck"
 
 endif
 
-install-data-local:: install-doc-local
+dist-hook:: dist-doc-hook
 	@true
+distcheck-hook:: dist-doc-hook
+	@true
+install-data-local:: dist/guide/html/index.html
+	$(MKDIR_P) $(DESTDIR)$(htmldir)
+	$(INSTALL_DATA) $(dir $<)/* $(DESTDIR)$(htmldir)
+uninstall-local::
+	rm -rf $(DESTDIR)$(htmldir)
+
+# See tools/make-source
+dump-dist-gzip:
+	@echo "$(abs_builddir)/$(distdir).tar.gz"
 
 # Subdirectories to distribute everything that's committed to git
 COMMITTED_DIST = \
-	bower_components/ \
 	pkg/ \
-	po/ \
 	tools/ \
 	test/ \
 	$(NULL)
 
-dist-hook: dist-doc-hook
-	( git -C $(srcdir) ls-tree HEAD --name-only -r $(COMMITTED_DIST) || echo $(COMMITTED_DIST) ) | \
-		tar -C $(srcdir) -cf - -T - | tar -C $(distdir) -xvf -
+# Build up the distribution using $COMMITTED_DIST and include node_modules and bower licenses
+dist-hook::
+	( cd $(srcdir); git ls-tree HEAD --name-only -r $(COMMITTED_DIST) || (echo $(COMMITTED_DIST) | tr ' ' '\n' ) ) | \
+		tar -C $(srcdir) -cf - -T - | tar -C $(distdir) -xf -
+	tar -C $(srcdir) -cf - --exclude='phantomjs*' node_modules/ | tar -C $(distdir) -xf -
+	tar -C $(srcdir) -cf - bower_components/ | tar -C $(distdir) -xf -
 	echo $(VERSION) > $(distdir)/.tarball
-	$(srcdir)/tools/build-copying $(srcdir)/node_modules > $(distdir)/COPYING.node
 	$(srcdir)/tools/build-copying $(BOWER) > $(distdir)/COPYING.bower
 
+DIST_TAR_MAIN = tar --format=posix -cf - --exclude='node_modules' --exclude='bower_components' "$(distdir)"
+DIST_TAR_CACHE = tar --format=posix -cf - "$(distdir)/node_modules" "$(distdir)/bower_components" "$(distdir)/package.json" "$(distdir)/bower.json" "$(distdir)/.bowerrc"
+
+DIST_ARCHIVES = \
+	cockpit-$(VERSION).tar.xz \
+	cockpit-cache-$(VERSION).tar.xz
+
+dist-gzip: distdir
+	$(DIST_TAR_MAIN) | GZIP=$(GZIP_ENV) gzip -c > $(distdir).tar.gz
+	$(DIST_TAR_CACHE) | GZIP=$(GZIP_ENV) gzip -c > cockpit-cache-$(VERSION).tar.gz
+	find "$(distdir)" -type d ! -perm -200 -exec chmod u+w {} ';' && rm -rf "$(distdir)"
 dist-xz: distdir
-	tar --format=posix -cf - "$(distdir)" | xz -ec > $(distdir).tar.xz
+	$(DIST_TAR_MAIN) | xz -ec > $(distdir).tar.xz
+	$(DIST_TAR_CACHE) | xz -ec > cockpit-cache-$(VERSION).tar.xz
 	find "$(distdir)" -type d ! -perm -200 -exec chmod u+w {} ';' && rm -rf "$(distdir)"
 
-distcheck-hook: dist-doc-hook
+distcheck-hook::
 	$(srcdir)/tools/check-dist $(distdir)
-
-update-pofiles:
-	cd $(srcdir) && \
-	echo "# Generated by make update-potfiles" > po/POTFILES.in && \
-	cat po/POTFILES.in.in >> po/POTFILES.in && \
-	find pkg/ -name "*.js" | xargs grep -l "gettext" >> po/POTFILES.in && \
-	find pkg/ -name "*.html" | xargs grep -l "translatable" | sed -e "s#\(.*\)#[type: gettext/glade] \1#g" >> po/POTFILES.in
-
-upload-pot:
-	zanata-cli push --project-config "$(srcdir)/tools/zanata.xml" -s "$(builddir)/po" -t "$(srcdir)/po"
-
-download-po:
-	zanata-cli -B pull --min-doc-percent 30 --project-config "$(srcdir)/tools/zanata.xml" -s "$(builddir)/po" -t "$(srcdir)/po"
 
 BOWER = $(srcdir)/bower_components
 
-BOWER_CLEAN = \
-	$(BOWER)/patternfly/components/bootstrap-treeview \
-	$(BOWER)/patternfly/components/google-code-prettify \
-	$(BOWER)/patternfly/components/datatables* \
-	$(BOWER)/patternfly/components/?3 \
-	$(BOWER)/patternfly/components/jquery \
-	$(BOWER)/patternfly/components/matchHeight \
-	$(NULL)
-
-update-bower:
-	cd $(srcdir) && bower update
-	rm -rf $(BOWER_CLEAN)
-
-include pkg/base1/Makefile.am
-include pkg/dashboard/Makefile.am
-include pkg/docker/Makefile.am
-include pkg/kubernetes/Makefile.am
-include pkg/networkmanager/Makefile.am
-include pkg/ostree/Makefile.am
-include pkg/playground/Makefile.am
-include pkg/realmd/Makefile.am
-include pkg/shell/Makefile.am
-include pkg/sosreport/Makefile.am
-include pkg/subscriptions/Makefile.am
-include pkg/systemd/Makefile.am
-include pkg/storaged/Makefile.am
-include pkg/tuned/Makefile.am
-include pkg/users/Makefile.am
+include po/Makefile.am
+include pkg/Makefile.am
+include src/base1/Makefile.am
+include src/branding/centos/Makefile.am
+include src/branding/debian/Makefile.am
+include src/branding/default/Makefile.am
+include src/branding/fedora/Makefile.am
+include src/branding/kubernetes/Makefile.am
+include src/branding/registry/Makefile.am
+include src/branding/rhel/Makefile.am
+include src/branding/ubuntu/Makefile.am
 include src/bridge/Makefile.am
 include src/common/Makefile-common.am
 include src/websocket/Makefile-websocket.am
 include tools/Makefile-tools.am
 include src/ws/Makefile-ws.am
-include src/remotectl/Makefile-remotectl.am
 include src/reauthorize/Makefile-reauthorize.am
 include src/retest/Makefile.am
 include src/pam-ssh-add/Makefile.am
-include static/Makefile-static.am
-include branding/centos/Makefile.am
-include branding/default/Makefile.am
-include branding/fedora/Makefile.am
-include branding/kubernetes/Makefile.am
-include branding/registry/Makefile.am
-include branding/rhel/Makefile.am
 include containers/Makefile.am

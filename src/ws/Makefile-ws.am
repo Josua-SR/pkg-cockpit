@@ -1,6 +1,15 @@
+
 if WITH_COCKPIT_WS
 
 COCKPIT_BUILD_INFO = "Built on $(shell date)"
+
+staticdir = $(datadir)/cockpit/static
+static_DATA = \
+	src/ws/login.html \
+	$(NULL)
+
+staticfontsdir = $(staticdir)/fonts
+staticfonts_DATA = $(OPENSANS_FONTS)
 
 noinst_LIBRARIES += libcockpit-ws.a
 
@@ -8,6 +17,12 @@ libcockpit_ws_a_SOURCES = \
 	src/ws/cockpitws.h				\
 	src/ws/cockpithandlers.h	src/ws/cockpithandlers.c	\
 	src/ws/cockpitauth.h		src/ws/cockpitauth.c		\
+	src/ws/cockpitauthoptions.h \
+	src/ws/cockpitauthoptions.c \
+	src/ws/cockpitauthprocess.h \
+	src/ws/cockpitauthprocess.c \
+	src/ws/cockpitcertificate.c \
+	src/ws/cockpitcertificate.h \
 	src/ws/cockpitchannelresponse.h \
 	src/ws/cockpitchannelresponse.c \
 	src/ws/cockpitchannelsocket.h \
@@ -53,17 +68,36 @@ EXTRA_DIST += \
 	src/ws/mock_cert \
 	src/ws/mock_known_hosts \
 	src/ws/mock-pid-cat \
+	src/ws/mock-cat-with-init \
 	src/ws/mock-kdc \
 	src/ws/mock-krb5.conf.in \
 	src/ws/mock-kdc.conf.in \
 	src/ws/mock-static \
-	src/ws/mock-config.conf \
-	src/ws/mock-auth-command \
+	src/ws/mock-config \
+	$(static_DATA) \
+	$(staticfonts_DATA) \
 	$(NULL)
 
 # ----------------------------------------------------------------------------------------------------
 
-libexec_PROGRAMS += cockpit-ws cockpit-session
+sbin_PROGRAMS += remotectl
+
+libexec_PROGRAMS += cockpit-ws cockpit-session cockpit-ssh
+
+cockpit_ssh_SOURCES = \
+	src/ws/cockpitauthoptions.h \
+	src/ws/cockpitauthoptions.c \
+	src/ws/ssh.c \
+	$(NULL)
+
+cockpit_ssh_LDADD = \
+	libcockpit-common.a \
+	$(COCKPIT_SSH_SESSION_LIBS) \
+	$(NULL)
+
+cockpit_ssh_CFLAGS = \
+	$(COCKPIT_SSH_SESSION_CFLAGS) \
+	$(NULL)
 
 cockpit_session_SOURCES = src/ws/session.c
 cockpit_session_LDADD = $(COCKPIT_SESSION_LIBS)
@@ -83,15 +117,28 @@ cockpit_ws_LDADD = 					\
 	$(COCKPIT_WS_LIBS)					\
 	$(NULL)
 
+remotectl_SOURCES = \
+	src/ws/cockpitcertificate.c \
+	src/ws/cockpitcertificate.h \
+	src/ws/remotectl-certificate.c \
+	src/ws/remotectl.c \
+	src/ws/remotectl.h \
+	$(NULL)
+
+remotectl_CFLAGS = \
+	$(COCKPIT_CFLAGS) \
+	$(NULL)
+
+remotectl_LDADD = \
+	libcockpit-common.a \
+	$(COCKPIT_LIBS) \
+	$(NULL)
+
 dist_systemdunit_DATA += src/ws/cockpit.socket
 
 cockpit.service : src/ws/cockpit.service.in Makefile.am
 	$(AM_V_GEN) $(SED_SUBST) $< > $@
 nodist_systemdunit_DATA += cockpit.service
-
-mock-auth-command: src/ws/mock-auth-command
-	$(AM_V_GEN) $(SED_SUBST) $< > $@
-	chmod +x $@
 
 firewalldir = $(prefix)/lib/firewalld/services
 firewall_DATA = src/ws/cockpit.xml
@@ -109,30 +156,33 @@ EXTRA_DIST += \
 
 CLEANFILES += \
 	cockpit.service \
-	mock-auth-command \
 	$(NULL)
 
-@INTLTOOL_XML_RULE@
 appdatadir = $(datadir)/appdata
-appdata_DATA = src/ws/cockpit.appdata.xml
-appdata_in_files = src/ws/cockpit.appdata.xml.in
+nodist_appdata_DATA = src/ws/cockpit.appdata.xml
+appdata_in = src/ws/cockpit.appdata.xml.in
 
-@INTLTOOL_DESKTOP_RULE@
+$(nodist_appdata_DATA): $(appdata_in) $(PO_FILES)
+	$(AM_V_GEN) LC_ALL=C $(INTLTOOL_MERGE) -q -x -u $(top_srcdir)/po $< $@
+
 desktopdir = $(datadir)/applications
-desktop_in_files = src/ws/cockpit.desktop.in
-desktop_DATA = src/ws/cockpit.desktop
+nodist_desktop_DATA = src/ws/cockpit.desktop
+desktop_in = src/ws/cockpit.desktop.in
+
+$(nodist_desktop_DATA): $(desktop_in) $(PO_FILES)
+	$(AM_V_GEN) LC_ALL=C $(INTLTOOL_MERGE) -q -d -u $(top_srcdir)/po $< $@
 
 pixmapdir = $(datadir)/pixmaps
 pixmap_DATA = src/ws/cockpit.png
 
 CLEANFILES += \
-	$(appdata_DATA) \
-	$(desktop_DATA) \
+	$(nodist_appdata_DATA) \
+	$(nodist_desktop_DATA) \
 	$(NULL)
 
 EXTRA_DIST += \
-	$(appdata_in_files) \
-	$(desktop_in_files) \
+	$(appdata_in) \
+	$(desktop_in) \
 	$(pixmap_DATA) \
 	$(NULL)
 
@@ -159,6 +209,7 @@ test_server_LDADD = 					\
 WS_CHECKS = \
 	test-creds \
 	test-auth \
+	test-authoptions \
 	test-sshtransport \
 	test-sshagent \
 	test-webservice \
@@ -179,6 +230,12 @@ test_auth_LDADD = \
 	libcockpit-ws.a \
 	$(cockpit_ws_LDADD) \
 	$(NULL)
+
+test_authoptions_CFLAGS = $(cockpit_ws_CFLAGS)
+test_authoptions_SOURCES = src/ws/test-authoptions.c
+test_authoptions_LDADD = \
+	libcockpit-ws.a \
+	$(cockpit_ws_LDADD)
 
 test_channelresponse_CFLAGS = $(cockpit_ws_CFLAGS)
 test_channelresponse_SOURCES = src/ws/test-channelresponse.c \
@@ -248,6 +305,7 @@ test_kerberos_CFLAGS = $(cockpit_ws_CFLAGS)
 
 mock_agent_bridge_SOURCES = src/ws/mock-agent-bridge.c \
 	src/bridge/cockpitchannel.c src/bridge/cockpitchannel.h \
+	src/bridge/cockpitconnect.c src/bridge/cockpitconnect.h \
 	src/bridge/cockpitpipechannel.c src/bridge/cockpitpipechannel.h \
     $(NULL)
 
@@ -260,26 +318,54 @@ mock_agent_bridge_LDADD = libcockpit-ws.a \
 	$(NULL)
 
 mock_sshd_SOURCES = src/ws/mock-sshd.c
-mock_sshd_CFLAGS =  $(COCKPIT_WS_CFLAGS)
-mock_sshd_LDADD = $(COCKPIT_WS_LIBS) -lutil
+
+mock_sshd_LDADD = \
+	$(COCKPIT_WS_LIBS) \
+	$(COCKPIT_SSH_SESSION_LIBS) \
+	$(NULL)
+
+mock_sshd_CFLAGS = \
+	$(COCKPIT_WS_CFLAGS) \
+	$(COCKPIT_SSH_SESSION_CFLAGS) \
+	$(NULL)
 
 mock_echo_SOURCES = src/ws/mock-echo.c
 mock_echo_CFLAGS = $(COCKPIT_WS_CFLAGS)
 mock_echo_LDADD = $(COCKPIT_WS_LIBS)
+
+mock_auth_command_SOURCES = src/ws/mock-auth-command.c
 
 noinst_PROGRAMS += \
 	$(WS_CHECKS) \
 	mock-sshd \
 	mock-echo \
 	mock-agent-bridge \
+	mock-auth-command \
 	$(NULL)
 
 noinst_SCRIPTS += \
 	src/ws/mock-pid-cat \
-	mock-auth-command \
+	src/ws/mock-cat-with-init \
 	$(NULL)
 
 TESTS += $(WS_CHECKS)
+
+mock_pam_conv_mod_SOURCES = src/ws/mock-pam-conv-mod.c
+mock-pam-conv-mod: $(mock_pam_conv_mod_SOURCES)
+	$(AM_V_CCLD) $(CC) -fPIC -shared $(CFLAGS) -I$(builddir) \
+		-o $@ $^ $(PAM_LIBS) $(LDFLAGS)
+
+noinst_PROGRAMS += \
+	mock-pam-conv-mod \
+	$(NULL)
+
+testassets_data += \
+	mock-pam-conv-mod \
+	$(NULL)
+
+CLEANFILES += \
+	mock-pam-conv-mod \
+	$(NULL)
 
 install-exec-hook::
 	mkdir -p $(DESTDIR)$(sysconfdir)/cockpit/ws-certs.d
@@ -291,3 +377,7 @@ update-known-hosts:
 			$(srcdir)/src/ws/mock_known_hosts
 
 endif
+
+prepare-po::
+	$(INTLTOOL_EXTRACT) -l --type=gettext/xml $(srcdir)/$(appdata_in)
+	$(INTLTOOL_EXTRACT) -l --type=gettext/ini $(srcdir)/$(desktop_in)

@@ -64,7 +64,7 @@ cockpit_channel_inject_perform (CockpitChannelInject *inject,
   static const gchar *marker = "<head>";
   CockpitWebFilter *filter;
   CockpitCreds *creds;
-  const gchar *application;
+  gchar *prefixed_application = NULL;
   const gchar *checksum;
   const gchar *host;
   GString *str;
@@ -76,25 +76,38 @@ cockpit_channel_inject_perform (CockpitChannelInject *inject,
     return;
 
   creds = cockpit_web_service_get_creds (inject->service);
-  application = cockpit_creds_get_application (creds);
+  if (cockpit_web_response_get_url_root (response))
+    {
+      prefixed_application = g_strdup_printf ("%s/%s",
+                                              cockpit_web_response_get_url_root (response),
+                                              cockpit_creds_get_application (creds));
+    }
+  else
+    {
+      prefixed_application = g_strdup_printf ("/%s", cockpit_creds_get_application (creds));
+    }
 
   checksum = cockpit_web_service_get_checksum (inject->service, transport);
   if (checksum)
     {
-      g_string_printf (str, "\n    <base href=\"/%s/$%s%s\">", application, checksum, inject->base_path);
+      g_string_printf (str, "\n    <base href=\"%s/$%s%s\">",
+                       prefixed_application,
+                       checksum, inject->base_path);
     }
   else
     {
       host = cockpit_web_service_get_host (inject->service, transport);
-      g_string_printf (str, "\n    <base href=\"/%s/@%s%s\">", application, host, inject->base_path);
+      g_string_printf (str, "\n    <base href=\"%s/@%s%s\">",
+                       prefixed_application, host, inject->base_path);
     }
 
   base = g_string_free_to_bytes (str);
-  filter = cockpit_web_inject_new (marker, base);
+  filter = cockpit_web_inject_new (marker, base, 1);
   g_bytes_unref (base);
 
   cockpit_web_response_add_filter (response, filter);
   g_object_unref (filter);
+  g_free (prefixed_application);
 }
 
 typedef struct {
@@ -128,9 +141,20 @@ redirect_to_checksum_path (CockpitWebService *service,
   gsize length;
 
   creds = cockpit_web_service_get_creds (service);
-  location = g_strdup_printf ("/%s/$%s%s",
-                              cockpit_creds_get_application (creds),
-                              checksum, path);
+  if (cockpit_web_response_get_url_root (response))
+    {
+      location = g_strdup_printf ("%s/%s/$%s%s",
+                                  cockpit_web_response_get_url_root (response),
+                                  cockpit_creds_get_application (creds),
+                                  checksum, path);
+    }
+  else
+    {
+      location = g_strdup_printf ("/%s/$%s%s",
+                                  cockpit_creds_get_application (creds),
+                                  checksum, path);
+    }
+
 
   body = "<html><head><title>Temporary redirect</title></head>"
          "<body>Access via checksum</body></html>";
@@ -210,7 +234,8 @@ cockpit_channel_response_close (CockpitChannelResponse *chesp,
       else if (g_str_equal (problem, "no-host") ||
                g_str_equal (problem, "no-cockpit") ||
                g_str_equal (problem, "unknown-hostkey") ||
-               g_str_equal (problem, "authentication-failed"))
+               g_str_equal (problem, "authentication-failed") ||
+               g_str_equal (problem, "disconnected"))
         {
           g_debug ("%s: remote server unavailable: %s", chesp->logname, problem);
           cockpit_web_response_error (chesp->response, 502, NULL, NULL);
@@ -476,6 +501,75 @@ cockpit_channel_response_create (CockpitWebService *service,
   return chesp;
 }
 
+static gboolean
+is_resource_a_package_file (const gchar *path)
+{
+  return path && path[0] && strchr (path + 1, '/') != NULL;
+}
+
+static gboolean
+parse_host_and_etag (CockpitWebService *service,
+                     GHashTable *headers,
+                     const gchar *where,
+                     const gchar *path,
+                     const gchar **host,
+                     gchar **etag)
+{
+  CockpitTransport *transport;
+  gchar **languages = NULL;
+  gboolean translatable;
+  gchar *language;
+
+  /* Parse the language out of the CockpitLang cookie and set Accept-Language */
+  language = cockpit_web_server_parse_cookie (headers, "CockpitLang");
+  if (language)
+    g_hash_table_replace (headers, g_strdup ("Accept-Language"), language);
+
+  if (!where)
+    {
+      *host = "localhost";
+      *etag = NULL;
+      return TRUE;
+    }
+  if (where[0] == '@')
+    {
+      *host = where + 1;
+      *etag = NULL;
+      return TRUE;
+    }
+
+  if (!where || where[0] != '$')
+    return FALSE;
+
+  transport = cockpit_web_service_find_transport (service, where + 1);
+  if (!transport)
+    return FALSE;
+
+  *host = cockpit_web_service_get_host (service, transport);
+  if (!*host)
+    {
+      g_warn_if_reached ();
+      return FALSE;
+    }
+
+  /* Top level resources (like the /manifests) are not translatable */
+  translatable = is_resource_a_package_file (path);
+
+  /* The ETag contains the language setting */
+  if (translatable)
+    {
+      languages = cockpit_web_server_parse_languages (headers, "C");
+      *etag = g_strdup_printf ("\"%s-%s\"", where, languages[0]);
+      g_strfreev (languages);
+    }
+  else
+    {
+      *etag = g_strdup_printf ("\"%s\"", where);
+    }
+
+  return TRUE;
+}
+
 void
 cockpit_channel_response_serve (CockpitWebService *service,
                                 GHashTable *in_headers,
@@ -493,7 +587,7 @@ cockpit_channel_response_serve (CockpitWebService *service,
   gchar *val = NULL;
   gboolean handled = FALSE;
   GHashTableIter iter;
-  const gchar *checksum;
+  const gchar *checksum = NULL;
   JsonObject *object = NULL;
   JsonObject *heads;
   gchar *channel = NULL;
@@ -505,44 +599,26 @@ cockpit_channel_response_serve (CockpitWebService *service,
   g_return_if_fail (COCKPIT_IS_WEB_RESPONSE (response));
   g_return_if_fail (path != NULL);
 
-  if (where == NULL)
+  /* Where might be NULL, but that's still valid */
+  if (!parse_host_and_etag (service, in_headers, where, path, &host, &quoted_etag))
     {
-      host = "localhost";
+      /* Did not recognize the where */
+      goto out;
     }
-  else if (where[0] == '@')
+
+  if (quoted_etag)
     {
-      host = where + 1;
-    }
-  else if (where[0] == '$')
-    {
-      quoted_etag = g_strdup_printf ("\"%s\"", where);
       cache_type = COCKPIT_WEB_RESPONSE_CACHE_FOREVER;
       pragma = g_hash_table_lookup (in_headers, "Pragma");
 
       if ((!pragma || !strstr (pragma, "no-cache")) &&
-          (g_strcmp0 (g_hash_table_lookup (in_headers, "If-None-Match"), where) == 0 ||
-           g_strcmp0 (g_hash_table_lookup (in_headers, "If-None-Match"), quoted_etag) == 0))
+           g_strcmp0 (g_hash_table_lookup (in_headers, "If-None-Match"), quoted_etag) == 0)
         {
           cockpit_web_response_headers (response, 304, "Not Modified", 0, "ETag", quoted_etag, NULL);
           cockpit_web_response_complete (response);
           handled = TRUE;
           goto out;
         }
-
-      transport = cockpit_web_service_find_transport (service, where + 1);
-      if (!transport)
-        goto out;
-
-      host = cockpit_web_service_get_host (service, transport);
-      if (!host)
-        {
-          g_warn_if_reached ();
-          goto out;
-        }
-    }
-  else
-    {
-      goto out;
     }
 
   cockpit_web_response_set_cache_type (response, cache_type);
@@ -555,12 +631,9 @@ cockpit_channel_response_serve (CockpitWebService *service,
                                          "binary", "raw",
                                          NULL);
 
+  transport = cockpit_web_service_ensure_transport (service, object);
   if (!transport)
-    {
-      transport = cockpit_web_service_ensure_transport (service, object);
-      if (!transport)
-        goto out;
-    }
+    goto out;
 
   if (where)
     {
