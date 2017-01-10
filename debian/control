@@ -37,15 +37,17 @@ Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/cockpit.git
 Package: cockpit
 Architecture: all
 Depends: ${misc:Depends},
-         cockpit-bridge,
-         cockpit-ws,
-         cockpit-system,
+         cockpit-bridge (>= ${source:Version}),
+         cockpit-bridge (<< ${source:Version}.1~),
+         cockpit-ws (>= ${source:Version}),
+         cockpit-ws (<< ${source:Version}.1~),
+         cockpit-system (= ${binary:Version}),
          xdg-utils
-Recommends: cockpit-networkmanager,
-            cockpit-storaged,
-            cockpit-docker
-Suggests: cockpit-doc,
-          cockpit-pcp
+Recommends: cockpit-docker (= ${binary:Version}),
+            cockpit-storaged (= ${binary:Version}),
+            cockpit-networkmanager (= ${binary:Version})
+Suggests: cockpit-doc (= ${binary:Version}),
+          cockpit-pcp (>= ${source:Version})
 Description: User interface for Linux servers
  Cockpit runs in a browser and can manage your network of GNU/Linux
  machines.
@@ -90,9 +92,9 @@ Description: Cockpit Web Service
 Package: cockpit-networkmanager
 Architecture: all
 Depends: ${misc:Depends},
-         network-manager,
          cockpit-bridge (>= ${source:Version}),
-         cockpit-bridge (<< ${source:Version}.1~)
+         cockpit-bridge (<< ${source:Version}.1~),
+         network-manager
 Description: Cockpit user interface for networking, using NetworkManager
  The Cockpit component for managing networking.  This package uses
  NetworkManager.
@@ -111,7 +113,8 @@ Description: Cockpit user interface for storage, using Storaged
 Package: cockpit-system
 Architecture: all
 Depends: ${misc:Depends},
-         cockpit-bridge (= ${binary:Version}),
+         cockpit-bridge (>= ${source:Version}),
+         cockpit-bridge (<< ${source:Version}.1~),
          libpwquality-tools
 Provides: cockpit-realmd,
           cockpit-shell,
