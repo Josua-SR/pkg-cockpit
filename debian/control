@@ -39,7 +39,7 @@ Architecture: all
 Depends: ${misc:Depends},
          cockpit-bridge,
          cockpit-ws,
-         cockpit-shell,
+         cockpit-system,
          xdg-utils
 Recommends: cockpit-networkmanager,
             cockpit-storaged,
@@ -108,13 +108,19 @@ Description: Cockpit user interface for storage, using Storaged
  The Cockpit component for managing storage.  This package uses
  storaged.
 
-Package: cockpit-shell
+Package: cockpit-system
 Architecture: all
 Depends: ${misc:Depends},
-         cockpit-ws (>= ${source:Version}),
-         cockpit-ws (<< ${source:Version}.1~)
-Description: Cockpit Shell user interface package
- This package contains the Cockpit shell UI assets.
+         cockpit-bridge (= ${binary:Version}),
+         libpwquality-tools
+Provides: cockpit-realmd,
+          cockpit-shell,
+          cockpit-systemd,
+          cockpit-tuned,
+          cockpit-users
+Description: Cockpit admin interface for a system
+ Cockpit admin interface package for configuring and
+ troubleshooting a system.
 
 Package: cockpit-docker
 Architecture: all
