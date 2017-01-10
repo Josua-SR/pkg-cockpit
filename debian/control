@@ -142,7 +142,7 @@ Description: Cockpit user interface for Docker containers
  This package is not yet complete.
 
 Package: cockpit-machines
-Architecture: any
+Architecture: all
 Depends: ${misc:Depends},
          libvirt-daemon-system
 Description: Cockpit user interface for virtual machines
