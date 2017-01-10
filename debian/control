@@ -122,6 +122,12 @@ Description: Cockpit admin interface for a system
  Cockpit admin interface package for configuring and
  troubleshooting a system.
 
+Package: cockpit-test-assets
+Architecture: all
+Depends: ${misc:Depends},
+         openssh-client
+Description: additional files for the Cockpit integration tests
+
 Package: cockpit-docker
 Architecture: all
 Depends: ${misc:Depends},
