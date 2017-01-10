@@ -491,6 +491,9 @@ out:
 static const gchar *
 verify_knownhost (CockpitSshData *data)
 {
+  FILE *fp = NULL;
+  const gchar *knownhosts_file;
+  gchar *tmp_knownhost_file = NULL;
   const gchar *ret = "invalid-hostkey";
   ssh_key key = NULL;
   unsigned char *hash = NULL;
@@ -531,82 +534,102 @@ verify_knownhost (CockpitSshData *data)
       ssh_clean_pubkey_hash (&hash);
     }
 
-  if (data->ssh_options->expected_hostkey)
+  if (data->ssh_options->knownhosts_data)
     {
-      /* Only check that the host key matches this specifically */
-      if (g_str_equal (data->host_key, data->ssh_options->expected_hostkey))
+      tmp_knownhost_file = create_knownhosts_temp ();
+      if (!tmp_knownhost_file)
         {
-          g_debug ("%s: host key matched expected", data->logname);
-          ret = NULL; /* success */
+          ret = "internal-error";
+          goto done;
         }
-      else
+
+      fp = fopen (tmp_knownhost_file, "a");
+      if (fp == NULL)
         {
-          /* A empty expect_key is used by the frontend to force
-             failure.  Don't warn about it.
-          */
-          if (data->ssh_options->expected_hostkey[0])
-            g_message ("%s: host key did not match expected", data->logname);
+          g_warning ("%s: couldn't open temporary known host file for data: %s",
+                     data->logname, tmp_knownhost_file);
+          ret = "internal-error";
+          goto done;
         }
+
+      if (fputs (data->ssh_options->knownhosts_data, fp) < 0)
+        {
+          g_warning ("%s: couldn't write to data to temporary known host file: %s",
+                     data->logname, g_strerror (errno));
+          ret = "internal-error";
+          fclose (fp);
+          goto done;
+        }
+
+      fclose (fp);
+      knownhosts_file = tmp_knownhost_file;
     }
   else
     {
-      if (ssh_options_set (data->session, SSH_OPTIONS_KNOWNHOSTS,
-                           data->ssh_options->knownhosts_file) != SSH_OK)
-        {
-          g_warning ("Couldn't set knownhosts file location");
-          ret = "internal-error";
-          goto done;
-        }
+      knownhosts_file = data->ssh_options->knownhosts_file;
+    }
 
-      state = ssh_is_server_known (data->session);
-      if (state == SSH_SERVER_KNOWN_OK)
-        {
-          g_debug ("%s: verified host key", data->logname);
-          ret = NULL; /* success */
-          goto done;
-        }
-      else if (state == SSH_SERVER_ERROR)
-        {
-          g_warning ("%s: couldn't check host key: %s", data->logname,
-                     ssh_get_error (data->session));
-          ret = "internal-error";
-          goto done;
-        }
+  if (ssh_options_set (data->session, SSH_OPTIONS_KNOWNHOSTS,
+                       knownhosts_file) != SSH_OK)
+    {
+      g_warning ("Couldn't set knownhosts file location");
+      ret = "internal-error";
+      goto done;
+    }
 
-      switch (state)
+  state = ssh_is_server_known (data->session);
+  if (state == SSH_SERVER_KNOWN_OK)
+    {
+      g_debug ("%s: verified host key", data->logname);
+      ret = NULL; /* success */
+      goto done;
+    }
+  else if (state == SSH_SERVER_ERROR)
+    {
+      g_warning ("%s: couldn't check host key: %s", data->logname,
+                 ssh_get_error (data->session));
+      ret = "internal-error";
+      goto done;
+    }
+
+  switch (state)
+    {
+    case SSH_SERVER_KNOWN_OK:
+    case SSH_SERVER_ERROR:
+      g_assert_not_reached ();
+      break;
+    case SSH_SERVER_KNOWN_CHANGED:
+      g_message ("%s: %s host key for server has changed to: %s",
+                 data->logname, data->host_key_type, data->host_fingerprint);
+      break;
+    case SSH_SERVER_FOUND_OTHER:
+      g_message ("%s: host key for this server changed key type: %s",
+                 data->logname, data->host_key_type);
+      break;
+    case SSH_SERVER_FILE_NOT_FOUND:
+      g_debug ("Couldn't find the known hosts file");
+      /* fall through */
+    case SSH_SERVER_NOT_KNOWN:
+      if (data->ssh_options->supports_hostkey_prompt)
+        ret = prompt_for_host_key (data);
+      else
+        ret = "unknown-hostkey";
+
+      if (ret)
         {
-        case SSH_SERVER_KNOWN_OK:
-        case SSH_SERVER_ERROR:
-          g_assert_not_reached ();
-          break;
-        case SSH_SERVER_KNOWN_CHANGED:
-          g_message ("%s: %s host key for server has changed to: %s",
+          g_message ("%s: %s host key for server is not known: %s",
                      data->logname, data->host_key_type, data->host_fingerprint);
-          break;
-        case SSH_SERVER_FOUND_OTHER:
-          g_message ("%s: host key for this server changed key type: %s",
-                     data->logname, data->host_key_type);
-          break;
-        case SSH_SERVER_FILE_NOT_FOUND:
-          g_debug ("Couldn't find the known hosts file");
-          /* fall through */
-        case SSH_SERVER_NOT_KNOWN:
-          if (data->auth_options->supports_conversations &&
-              data->ssh_options->supports_hostkey_prompt)
-            ret = prompt_for_host_key (data);
-          else
-            ret = "unknown-hostkey";
-
-          if (ret)
-            {
-              g_message ("%s: %s host key for server is not known: %s",
-                         data->logname, data->host_key_type, data->host_fingerprint);
-            }
-          break;
         }
+      break;
     }
 
 done:
+  if (tmp_knownhost_file)
+    {
+      g_unlink (tmp_knownhost_file);
+      g_free (tmp_knownhost_file);
+    }
+
   if (key)
     ssh_key_free (key);
   return ret;
@@ -631,13 +654,37 @@ auth_result_string (int rc)
     }
 }
 
+static const gchar *
+parse_auth_password (const gchar *auth_type,
+                     const gchar *auth_data)
+{
+  const gchar *password;
+
+  g_assert (auth_data != NULL);
+  g_assert (auth_type != NULL);
+
+  if (g_strcmp0 (auth_type, "basic") != 0)
+    return auth_data;
+
+  /* password is null terminated, see below */
+  password = strchr (auth_data, ':');
+  if (password != NULL)
+    password++;
+  else
+    password = "";
+
+  return password;
+}
+
 static int
 do_interactive_auth (CockpitSshData *data)
 {
   int rc;
   gboolean sent_pw = FALSE;
-  g_assert (data->initial_auth_data != NULL);
+  const gchar *password;
 
+  password = parse_auth_password (data->auth_options->auth_type,
+                                  data->initial_auth_data);
   rc = ssh_userauth_kbdint (data->session, NULL, NULL);
   while (rc == SSH_AUTH_INFO)
     {
@@ -647,7 +694,7 @@ do_interactive_auth (CockpitSshData *data)
       msg = ssh_userauth_kbdint_getinstruction (data->session);
       n = ssh_userauth_kbdint_getnprompts (data->session);
 
-      for (i = 0; i < n; i++)
+      for (i = 0; i < n && rc == SSH_AUTH_INFO; i++)
         {
           const char *prompt;
           char *answer = NULL;
@@ -657,7 +704,7 @@ do_interactive_auth (CockpitSshData *data)
           g_debug ("%s: Got prompt %s prompt", data->logname, prompt);
           if (!sent_pw)
             {
-              status = ssh_userauth_kbdint_setanswer (data->session, i, data->initial_auth_data);
+              status = ssh_userauth_kbdint_setanswer (data->session, i, password);
               sent_pw = TRUE;
             }
           else
@@ -679,7 +726,9 @@ do_interactive_auth (CockpitSshData *data)
               rc = SSH_AUTH_ERROR;
             }
         }
-      rc = ssh_userauth_kbdint (data->session, NULL, NULL);
+
+      if (rc == SSH_AUTH_INFO)
+        rc = ssh_userauth_kbdint (data->session, NULL, NULL);
     }
 
   return rc;
@@ -690,10 +739,12 @@ do_password_auth (CockpitSshData *data)
 {
   const gchar *msg;
   int rc;
+  const gchar *password;
 
-  g_assert (data->initial_auth_data != NULL);
+  password = parse_auth_password (data->auth_options->auth_type,
+                                  data->initial_auth_data);
 
-  rc = ssh_userauth_password (data->session, NULL, data->initial_auth_data);
+  rc = ssh_userauth_password (data->session, NULL, password);
   switch (rc)
     {
     case SSH_AUTH_SUCCESS:
@@ -723,19 +774,18 @@ do_key_auth (CockpitSshData *data)
 {
   int rc;
   const gchar *msg;
+  ssh_key key;
 
-  if (data->ssh_options->agent_fd)
+  g_assert (data->initial_auth_data != NULL);
+
+  rc = ssh_pki_import_privkey_base64 (data->initial_auth_data, NULL, NULL, NULL, &key);
+  if (rc != SSH_OK)
     {
-#ifdef HAVE_SSH_SET_AGENT_SOCKET
-      ssh_set_agent_socket (data->session, data->ssh_options->agent_fd);
-#else
-      g_message ("%s: Skipping key auth because it is not supported by this version of libssh",
-                 data->logname);
-      return SSH_AUTH_DENIED;
-#endif
+      g_message ("%s: Got invalid key data, %s", data->logname, data->initial_auth_data);
+      return rc;
     }
 
-  rc = ssh_userauth_agent (data->session, NULL);
+  rc = ssh_userauth_publickey (data->session, NULL, key);
   switch (rc)
     {
     case SSH_AUTH_SUCCESS:
@@ -754,6 +804,49 @@ do_key_auth (CockpitSshData *data)
       break;
     default:
       msg = ssh_get_error (data->session);
+      g_message ("%s: couldn't key authenticate: %s", data->logname, msg);
+    }
+
+  ssh_key_free (key);
+  return rc;
+}
+
+static int
+do_agent_auth (CockpitSshData *data)
+{
+  int rc;
+  const gchar *msg;
+
+  if (data->ssh_options->agent_fd)
+    {
+#ifdef HAVE_SSH_SET_AGENT_SOCKET
+      ssh_set_agent_socket (data->session, data->ssh_options->agent_fd);
+#else
+      g_message ("%s: Skipping key auth because it is not supported by this version of libssh",
+                 data->logname);
+      return SSH_AUTH_DENIED;
+#endif
+    }
+
+  rc = ssh_userauth_agent (data->session, NULL);
+  switch (rc)
+    {
+    case SSH_AUTH_SUCCESS:
+      g_debug ("%s: agent auth succeeded", data->logname);
+      break;
+    case SSH_AUTH_DENIED:
+      g_debug ("%s: agent auth failed", data->logname);
+      break;
+    case SSH_AUTH_PARTIAL:
+      g_message ("%s: agent auth worked, but server wants more authentication",
+                 data->logname);
+      break;
+    case SSH_AUTH_AGAIN:
+      g_message ("%s: agent auth failed: server asked for retry",
+                 data->logname);
+      break;
+    default:
+      msg = ssh_get_error (data->session);
       /*
         HACK: https://red.libssh.org/issues/201
         libssh returns error instead of denied
@@ -763,7 +856,7 @@ do_key_auth (CockpitSshData *data)
       if (strstr (msg, "Access denied"))
         rc = SSH_AUTH_DENIED;
       else
-        g_message ("%s: couldn't key authenticate: %s", data->logname, msg);
+        g_message ("%s: couldn't agent authenticate: %s", data->logname, msg);
     }
 
   return rc;
@@ -833,6 +926,9 @@ cockpit_ssh_authenticate (CockpitSshData *data)
 
 #ifdef HAVE_SSH_SET_AGENT_SOCKET
   methods_to_try = methods_to_try | SSH_AUTH_METHOD_PUBLICKEY;
+#else
+  if (g_strcmp0 (data->auth_options->auth_type, "private-key") == 0)
+    methods_to_try = methods_to_try | SSH_AUTH_METHOD_PUBLICKEY;
 #endif
 
   problem = "authentication-failed";
@@ -855,8 +951,7 @@ cockpit_ssh_authenticate (CockpitSshData *data)
   methods_server = ssh_userauth_list (data->session, NULL);
 
   /* If interactive isn't supported try password instead */
-  if (!(methods_server & SSH_AUTH_METHOD_INTERACTIVE) ||
-      !data->auth_options->supports_conversations)
+  if (!(methods_server & SSH_AUTH_METHOD_INTERACTIVE))
     {
       methods_to_try = methods_to_try | SSH_AUTH_METHOD_PASSWORD;
       methods_to_try = methods_to_try & ~SSH_AUTH_METHOD_INTERACTIVE;
@@ -872,25 +967,34 @@ cockpit_ssh_authenticate (CockpitSshData *data)
       if (methods_to_try & SSH_AUTH_METHOD_PUBLICKEY)
         {
           method = SSH_AUTH_METHOD_PUBLICKEY;
-          auth_func = do_key_auth;
-          has_creds = TRUE;
+          if (g_strcmp0 (data->auth_options->auth_type, "private-key") == 0)
+            {
+              auth_func = do_key_auth;
+              has_creds = data->initial_auth_data != NULL;
+            }
+          else
+            {
+              auth_func = do_agent_auth;
+              has_creds = TRUE;
+            }
         }
       else if (methods_to_try & SSH_AUTH_METHOD_INTERACTIVE)
         {
           auth_func = do_interactive_auth;
           method = SSH_AUTH_METHOD_INTERACTIVE;
           has_creds = data->initial_auth_data != NULL && \
-                      data->auth_options->supports_conversations &&
-                      g_strcmp0 (data->auth_options->auth_type,
-                                 auth_method_description (method)) == 0;
+                      (g_strcmp0 (data->auth_options->auth_type, "basic") == 0 ||
+                       g_strcmp0 (data->auth_options->auth_type,
+                                 auth_method_description (method)) == 0);
         }
       else if (methods_to_try & SSH_AUTH_METHOD_PASSWORD)
         {
           auth_func = do_password_auth;
           method = SSH_AUTH_METHOD_PASSWORD;
           has_creds = data->initial_auth_data != NULL && \
-                      g_strcmp0 (data->auth_options->auth_type,
-                                 auth_method_description (method)) == 0;
+                      (g_strcmp0 (data->auth_options->auth_type, "basic") == 0 ||
+                       g_strcmp0 (data->auth_options->auth_type,
+                                 auth_method_description (method)) == 0);
         }
       else
         {
@@ -1064,6 +1168,16 @@ parse_host (const gchar *host,
   g_free (user_arg);
 }
 
+static gchar *
+username_from_basic (const gchar *basic_data)
+{
+  gchar *tmp = strchr (basic_data, ':');
+  if (tmp != NULL)
+    return g_strndup (basic_data, tmp - basic_data);
+  else
+    return g_strdup (basic_data);
+}
+
 static const gchar*
 cockpit_ssh_connect (CockpitSshData *data,
                      const gchar *host_arg,
@@ -1078,6 +1192,13 @@ cockpit_ssh_connect (CockpitSshData *data,
   int rc;
 
   parse_host (host_arg, &host, &data->username, &port);
+
+  /* Username always comes from auth message when using basic */
+  if (g_strcmp0 (data->auth_options->auth_type, "basic") == 0)
+    {
+      g_free (data->username);
+      data->username = username_from_basic (data->initial_auth_data);
+    }
 
   if (!data->username)
     {
@@ -1108,8 +1229,8 @@ cockpit_ssh_connect (CockpitSshData *data,
   rc = ssh_connect (data->session);
   if (rc != SSH_OK)
     {
-      g_message ("%s: %d couldn't connect: %s", data->logname, rc,
-                 ssh_get_error (data->session));
+      g_message ("%s: %d couldn't connect: %s '%s' '%d'", data->logname, rc,
+                 ssh_get_error (data->session), host, port);
       problem = "no-host";
       goto out;
     }

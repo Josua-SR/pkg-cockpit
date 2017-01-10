@@ -1,5 +1,5 @@
 # Generated Makefile data for networkmanager
-# Stamp: Thu Nov 24 2016 16:15:59 GMT+0000 (UTC)
+# Stamp: Mon Jan 09 2017 11:58:41 GMT+0000 (UTC)
 
 networkmanager_INPUTS = \
 	$(srcdir)/pkg/lib/journal.css \
@@ -7,15 +7,21 @@ networkmanager_INPUTS = \
 	$(srcdir)/pkg/lib/journal_day_header.mustache \
 	$(srcdir)/pkg/lib/journal_line.mustache \
 	$(srcdir)/pkg/lib/journal_reboot.mustache \
+	$(srcdir)/pkg/lib/mustache.js \
 	$(srcdir)/pkg/lib/page.css \
 	$(srcdir)/pkg/lib/patterns.js \
 	$(srcdir)/pkg/lib/plot.css \
 	$(srcdir)/pkg/lib/plot.js \
+	$(srcdir)/pkg/lib/qunit-config.js \
+	$(srcdir)/pkg/lib/qunit-template.html \
+	$(srcdir)/pkg/lib/qunit-tests.js \
 	$(srcdir)/pkg/lib/table.css \
 	$(srcdir)/pkg/networkmanager/index.html \
 	$(srcdir)/pkg/networkmanager/interfaces.js \
 	$(srcdir)/pkg/networkmanager/manifest.json \
 	$(srcdir)/pkg/networkmanager/networking.css \
+	$(srcdir)/pkg/networkmanager/test-utils.js \
+	$(srcdir)/pkg/networkmanager/utils.js \
 	$(NULL)
 
 networkmanager_OUTPUTS = \
@@ -25,6 +31,11 @@ networkmanager_OUTPUTS = \
 	dist/networkmanager/network.css.map \
 	dist/networkmanager/network.min.js \
 	dist/networkmanager/network.min.js.map \
+	dist/networkmanager/test-utils.css \
+	dist/networkmanager/test-utils.css.map \
+	dist/networkmanager/test-utils.html \
+	dist/networkmanager/test-utils.min.js \
+	dist/networkmanager/test-utils.min.js.map \
 	$(NULL)
 
 networkmanager_INSTALL = \
@@ -32,14 +43,19 @@ networkmanager_INSTALL = \
 	dist/networkmanager/manifest.json \
 	dist/networkmanager/network.css.gz \
 	dist/networkmanager/network.min.js.gz \
+	dist/networkmanager/test-utils.css.gz \
+	dist/networkmanager/test-utils.min.js.gz \
 	$(NULL)
 
 networkmanager_DEBUG = \
 	dist/networkmanager/network.css.map \
 	dist/networkmanager/network.min.js.map \
+	dist/networkmanager/test-utils.css.map \
+	dist/networkmanager/test-utils.min.js.map \
 	$(NULL)
 
 networkmanager_TESTS = \
+	dist/networkmanager/test-utils.html \
 	$(NULL)
 
 dist/Makefile-networkmanager.deps: $(WEBPACK_CONFIG) $(networkmanager_INPUTS)
@@ -57,6 +73,16 @@ dist/networkmanager/network.min.js: dist/Makefile-networkmanager.deps
 
 dist/networkmanager/network.min.js.map: dist/Makefile-networkmanager.deps
 
+dist/networkmanager/test-utils.css: dist/Makefile-networkmanager.deps
+
+dist/networkmanager/test-utils.css.map: dist/Makefile-networkmanager.deps
+
+dist/networkmanager/test-utils.html: dist/Makefile-networkmanager.deps
+
+dist/networkmanager/test-utils.min.js: dist/Makefile-networkmanager.deps
+
+dist/networkmanager/test-utils.min.js.map: dist/Makefile-networkmanager.deps
+
 $(srcdir)/pkg/lib/journal.css:
 
 $(srcdir)/pkg/lib/journal.js:
@@ -67,6 +93,8 @@ $(srcdir)/pkg/lib/journal_line.mustache:
 
 $(srcdir)/pkg/lib/journal_reboot.mustache:
 
+$(srcdir)/pkg/lib/mustache.js:
+
 $(srcdir)/pkg/lib/page.css:
 
 $(srcdir)/pkg/lib/patterns.js:
@@ -74,6 +102,12 @@ $(srcdir)/pkg/lib/patterns.js:
 $(srcdir)/pkg/lib/plot.css:
 
 $(srcdir)/pkg/lib/plot.js:
+
+$(srcdir)/pkg/lib/qunit-config.js:
+
+$(srcdir)/pkg/lib/qunit-template.html:
+
+$(srcdir)/pkg/lib/qunit-tests.js:
 
 $(srcdir)/pkg/lib/table.css:
 
@@ -85,8 +119,21 @@ $(srcdir)/pkg/networkmanager/manifest.json:
 
 $(srcdir)/pkg/networkmanager/networking.css:
 
+$(srcdir)/pkg/networkmanager/test-utils.js:
+
+$(srcdir)/pkg/networkmanager/utils.js:
+
 WEBPACK_INPUTS += $(networkmanager_INPUTS)
 WEBPACK_OUTPUTS += $(networkmanager_OUTPUTS)
 WEBPACK_INSTALL += $(networkmanager_INSTALL)
 WEBPACK_DEBUG += $(networkmanager_DEBUG)
 TESTS += $(networkmanager_TESTS)
+
+networkmanager: dist/Makefile-networkmanager.deps $(networkmanager_OUTPUTS) $(networkmanager_INSTALL)
+	@true
+clean-networkmanager: 
+	rm -rf $(networkmanager_OUTPUTS) $(networkmanager_INSTALL) dist/Makefile-networkmanager.deps
+all-local:: networkmanager
+	@true
+clean-local:: clean-networkmanager
+	@true

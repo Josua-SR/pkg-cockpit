@@ -1,5 +1,5 @@
 # Generated Makefile data for storaged
-# Stamp: Thu Nov 24 2016 16:15:59 GMT+0000 (UTC)
+# Stamp: Mon Jan 09 2017 11:58:41 GMT+0000 (UTC)
 
 storaged_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
@@ -10,6 +10,7 @@ storaged_INPUTS = \
 	$(srcdir)/pkg/lib/journal_line.mustache \
 	$(srcdir)/pkg/lib/journal_reboot.mustache \
 	$(srcdir)/pkg/lib/listing.css \
+	$(srcdir)/pkg/lib/mustache.js \
 	$(srcdir)/pkg/lib/page.css \
 	$(srcdir)/pkg/lib/patterns.js \
 	$(srcdir)/pkg/lib/plot.css \
@@ -129,6 +130,8 @@ $(srcdir)/pkg/lib/journal_reboot.mustache:
 
 $(srcdir)/pkg/lib/listing.css:
 
+$(srcdir)/pkg/lib/mustache.js:
+
 $(srcdir)/pkg/lib/page.css:
 
 $(srcdir)/pkg/lib/patterns.js:
@@ -202,3 +205,12 @@ WEBPACK_OUTPUTS += $(storaged_OUTPUTS)
 WEBPACK_INSTALL += $(storaged_INSTALL)
 WEBPACK_DEBUG += $(storaged_DEBUG)
 TESTS += $(storaged_TESTS)
+
+storaged: dist/Makefile-storaged.deps $(storaged_OUTPUTS) $(storaged_INSTALL)
+	@true
+clean-storaged: 
+	rm -rf $(storaged_OUTPUTS) $(storaged_INSTALL) dist/Makefile-storaged.deps
+all-local:: storaged
+	@true
+clean-local:: clean-storaged
+	@true

@@ -23,7 +23,6 @@
 
 #include "cockpitchannel.h"
 
-#include "common/cockpitenums.h"
 #include "common/cockpithex.h"
 #include "common/cockpitjson.h"
 #include "common/cockpitlocale.h"
@@ -954,7 +953,7 @@ cockpit_packages_new (void)
 
   packages = g_new0 (CockpitPackages, 1);
 
-  packages->web_server = cockpit_web_server_new (NULL, -1, NULL, NULL, NULL, &error);
+  packages->web_server = cockpit_web_server_new (NULL, -1, NULL, NULL, &error);
   if (!packages->web_server)
     {
       g_warning ("couldn't initialize bridge package server: %s", error->message);

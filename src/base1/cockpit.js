@@ -31,6 +31,9 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
 (function() {
 "use strict";
 
+var cockpit = { };
+event_mixin(cockpit, { });
+
 if (typeof window.debugging === "undefined") {
     try {
         // Sometimes this throws a SecurityError such as during testing
@@ -106,7 +109,8 @@ var expect_disconnect = false;
 var init_callback = null;
 var default_host = null;
 var process_hints = null;
-var filters = [ ];
+var incoming_filters = null;
+var outgoing_filters = null;
 
 var have_array_buffer = !!window.ArrayBuffer;
 
@@ -379,6 +383,40 @@ function ParentWebSocket(parent) {
     }, 0);
 }
 
+function parse_channel(data) {
+    var binary, length, pos, channel;
+
+    /* A binary message, split out the channel */
+    if (have_array_buffer && data instanceof window.ArrayBuffer) {
+        binary = new window.Uint8Array(data);
+        length = binary.length;
+        for (pos = 0; pos < length; pos++) {
+            if (binary[pos] == 10) /* new line */
+                break;
+        }
+        if (pos === length) {
+            console.warn("binary message without channel");
+            return null;
+        } else if (pos === 0) {
+            console.warn("binary control message");
+            return null;
+        } else {
+            channel = String.fromCharCode.apply(null, binary.subarray(0, pos));
+        }
+
+    /* A textual message */
+    } else {
+        pos = data.indexOf('\n');
+        if (pos === -1) {
+            console.warn("text message without channel");
+            return null;
+        }
+        channel = data.substring(0, pos);
+    }
+
+    return channel;
+}
+
 /* Private Transport class */
 function Transport() {
     var self = this;
@@ -395,6 +433,7 @@ function Transport() {
 
     var ws;
     var check_health_timer;
+    var ignore_health_check = false;
     var got_message = false;
 
     /* See if we should communicate via parent */
@@ -428,8 +467,12 @@ function Transport() {
 
         check_health_timer = window.setInterval(function () {
             if (!got_message) {
-                console.log("health check failed");
-                self.close({ "problem": "timeout" });
+                if (ignore_health_check) {
+                    console.log("health check failure ignored");
+                } else {
+                    console.log("health check failed");
+                    self.close({ "problem": "timeout" });
+                }
             }
             got_message = false;
         }, 30000);
@@ -479,49 +522,21 @@ function Transport() {
         self.close();
     };
 
-    ws.onmessage = function(event) {
+    ws.onmessage = self.dispatch_data = function(arg) {
         got_message = true;
 
         /* The first line of a message is the channel */
-        var data = event.data;
-        var binary = null;
-        var length;
-        var channel;
-        var pos;
+        var message = arg.data;
 
-        /* A binary message, split out the channel */
-        if (have_array_buffer && data instanceof window.ArrayBuffer) {
-            binary = new window.Uint8Array(data);
-            length = binary.length;
-            for (pos = 0; pos < length; pos++) {
-                if (binary[pos] == 10) /* new line */
-                    break;
-            }
-            if (pos === length) {
-                console.warn("binary message without channel");
-                return;
-            } else if (pos === 0) {
-                console.warn("binary control message");
-                return;
-            } else {
-                channel = String.fromCharCode.apply(null, binary.subarray(0, pos));
-            }
-
-        /* A textual message */
-        } else {
-            pos = data.indexOf('\n');
-            if (pos === -1) {
-                console.warn("text message without channel");
-                return;
-            }
-            channel = data.substring(0, pos);
-        }
+        var channel = parse_channel(message);
+        if (channel === null)
+            return false;
 
         var payload, control;
-        if (binary)
-            payload = new window.Uint8Array(binary.buffer, pos + 1);
+        if (have_array_buffer && message instanceof window.ArrayBuffer)
+            payload = new window.Uint8Array(message, channel.length + 1);
         else
-            payload = data.substring(pos + 1);
+            payload = message.substring(channel.length + 1);
 
         /* A control message, always string */
         if (!channel) {
@@ -531,10 +546,10 @@ function Transport() {
             transport_debug("recv " + channel + ":", payload);
         }
 
-        length = filters.length;
-        for (var i = 0; i < length; i++) {
-            if (filters[i](data, channel, control) === false)
-                return;
+        var i, length = incoming_filters ? incoming_filters.length : 0;
+        for (i = 0; i < length; i++) {
+            if (incoming_filters[i](message, channel, control) === false)
+                return false;
         }
 
         if (!channel)
@@ -543,6 +558,7 @@ function Transport() {
             process_message(channel, payload);
 
         phantom_checkpoint();
+        return true;
     };
 
     self.close = function close(options) {
@@ -636,17 +652,29 @@ function Transport() {
             func.apply(null, [payload]);
     }
 
-    self.send_data = function send_data(data) {
+    /* The channel/control arguments is used by filters, and auto-populated if necessary */
+    self.send_data = function send_data(data, channel, control) {
         if (!ws) {
             console.log("transport closed, dropped message: ", data);
             return false;
-        } else {
-            ws.send(data);
-            return true;
         }
+
+        var i, length = outgoing_filters ? outgoing_filters.length : 0;
+        for (i = 0; i < length; i++) {
+            if (channel === undefined)
+                channel = parse_channel(data);
+            if (!channel && control === undefined)
+                control = JSON.parse(data);
+            if (outgoing_filters[i](data, channel, control) === false)
+                return false;
+        }
+
+        ws.send(data);
+        return true;
     };
 
-    self.send_message = function send_message(channel, payload) {
+    /* The control arguments is used by filters, and auto populated if necessary */
+    self.send_message = function send_message(payload, channel, control) {
         if (channel)
             transport_debug("send " + channel, payload);
         else
@@ -657,18 +685,24 @@ function Transport() {
             if (payload instanceof window.ArrayBuffer)
                 payload = new window.Uint8Array(payload);
             var output = join_data([array_from_raw_string(channel), [ 10 ], payload ], true);
-            return self.send_data(output.buffer);
+            return self.send_data(output.buffer, channel, control);
 
         /* A string message */
         } else {
-            return self.send_data(channel.toString() + "\n" + payload);
+            return self.send_data(channel.toString() + "\n" + payload, channel, control);
         }
     };
 
     self.send_control = function send_control(data) {
         if(!ws && (data.command == "close" || data.command == "kill"))
             return; /* don't complain if closed and closing */
-        self.send_message("", JSON.stringify(data));
+        if (check_health_timer &&
+            data.command == "hint" && data.hint == "ignore_transport_health_check") {
+            /* This is for us, process it directly. */
+            ignore_health_check = data.data;
+            return;
+        }
+        self.send_message(JSON.stringify(data), "", data);
     };
 
     self.register = function register(channel, control_cb, message_cb) {
@@ -703,7 +737,9 @@ function Channel(options) {
     event_mixin(self, { });
 
     var transport;
-    var valid = true;
+    var ready = null;
+    var closed = null;
+    var waiting = null;
     var received_done = false;
     var sent_done = false;
     var id = null;
@@ -717,7 +753,7 @@ function Channel(options) {
     var queue = [ ];
 
     /* Handy for callers, but not used by us */
-    self.valid = valid;
+    self.valid = true;
     self.options = options;
     self.binary = binary;
     self.id = id;
@@ -734,18 +770,28 @@ function Channel(options) {
     }
 
     function on_close(data) {
-        self.valid = valid = false;
+        closed = data;
+        self.valid = false;
         if (transport && id)
             transport.unregister(id);
-        if (data.message)
-            console.warn(data.message);
-        self.dispatchEvent("close", data);
+        if (closed.message)
+            console.warn(closed.message);
+        self.dispatchEvent("close", closed);
+        if (waiting)
+            waiting.resolve(closed);
+    }
+
+    function on_ready(data) {
+        ready = data;
+        self.dispatchEvent("ready", ready);
     }
 
     function on_control(data) {
         if (data.command == "close") {
             on_close(data);
             return;
+        } else if (data.command == "ready") {
+            on_ready(data);
         }
 
         var done = data.command === "done";
@@ -767,12 +813,12 @@ function Channel(options) {
             if (typeof payload !== "string")
                 payload = String(payload);
         }
-        transport.send_message(id, payload);
+        transport.send_message(payload, id);
     }
 
     ensure_transport(function(trans) {
         transport = trans;
-        if (!valid)
+        if (closed)
             return;
 
         id = transport.next_channel();
@@ -819,7 +865,7 @@ function Channel(options) {
     });
 
     self.send = function send(message) {
-        if (!valid)
+        if (closed)
             console.warn("sending message on closed channel");
         else if (sent_done)
             console.warn("sending message after done");
@@ -842,8 +888,30 @@ function Channel(options) {
             transport.send_control(options);
     };
 
+    self.wait = function wait(callback) {
+        if (!waiting) {
+            waiting = cockpit.defer();
+            if (closed) {
+                waiting.reject(closed);
+            } else if (ready) {
+                waiting.resolve(ready);
+            } else {
+                self.addEventListener("ready", function(event, data) {
+                    waiting.resolve(data);
+                });
+                self.addEventListener("close", function(event, data) {
+                    waiting.reject(data);
+                });
+            }
+        }
+        var promise = waiting.promise;
+        if (callback)
+            promise.then(callback, callback);
+        return promise;
+    };
+
     self.close = function close(options) {
-        if (!valid)
+        if (closed)
             return;
 
         if (!options)
@@ -905,7 +973,7 @@ function Channel(options) {
 
     self.toString = function toString() {
         var host = options["host"] || "localhost";
-        return "[Channel " + (valid ? id : "<invalid>") + " -> " + host + "]";
+        return "[Channel " + (self.valid ? id : "<invalid>") + " -> " + host + "]";
     };
 }
 
@@ -928,7 +996,7 @@ function resolve_path_dots(parts) {
     return out;
 }
 
-function basic_scope(cockpit, jquery) {
+function factory() {
 
     cockpit.channel = function channel(options) {
         return new Channel(options);
@@ -1045,14 +1113,13 @@ function basic_scope(cockpit, jquery) {
     };
 
     /* Not public API ... yet? */
-    cockpit.hint = function hint(name, host) {
-        if (!host)
-            host = default_host;
-
-        var options = { "command": "hint",
-                        "hint": name,
-                        "host": host };
-
+    cockpit.hint = function hint(name, options) {
+        if (!options)
+            options = default_host;
+        if (typeof options == "string")
+            options = { "host": options };
+        options["command"] = "hint";
+        options["hint"] = name;
         ensure_transport(function(transport) {
             transport.send_control(options);
         });
@@ -1060,13 +1127,24 @@ function basic_scope(cockpit, jquery) {
 
     cockpit.transport = public_transport = {
         wait: ensure_transport,
-        inject: function inject(message) {
+        inject: function inject(message, out) {
             if (!default_transport)
                 return false;
-            return default_transport.send_data(message);
+            if (out === undefined || out)
+                return default_transport.send_data(message);
+            else
+                return default_transport.dispatch_data({ data: message });
         },
-        filter: function filter(callback) {
-            filters.push(callback);
+        filter: function filter(callback, out) {
+            if (out) {
+                if (!outgoing_filters)
+                    outgoing_filters = [ ];
+                outgoing_filters.push(callback);
+            } else {
+                if (!incoming_filters)
+                    incoming_filters = [ ];
+                incoming_filters.push(callback);
+            }
         },
         close: function close(problem) {
             var options;
@@ -1598,10 +1676,15 @@ function basic_scope(cockpit, jquery) {
         var source;
 
         function callback() {
+            var value;
+
             /* Only run the callback if we have a result */
             if (storage[key] !== undefined) {
-                if (consumer(storage[key], org_key) === false)
-                    self.close();
+                value = storage[key];
+                window.setTimeout(function() {
+                    if (consumer(value, org_key) === false)
+                        self.close();
+                });
             }
         }
 
@@ -1626,8 +1709,18 @@ function basic_scope(cockpit, jquery) {
         }
 
         self.claim = function claim() {
-            if (!source)
-                source = provider(result, org_key);
+            if (source)
+                return;
+
+            /* In case we're unclaimed during the callback */
+            var claiming = { close: function() { } };
+            source = claiming;
+
+            var changed = provider(result, org_key);
+            if (source === claiming)
+                source = changed;
+            else
+                changed.close();
         };
 
         function unclaim() {
@@ -2644,7 +2737,7 @@ function basic_scope(cockpit, jquery) {
 
         var ret = dfd.promise;
         ret.stream = function(callback) {
-            buffer.callback = callback;
+            buffer.callback = callback.bind(ret);
             return this;
         };
 
@@ -2684,11 +2777,11 @@ function basic_scope(cockpit, jquery) {
             console.debug.apply(console, arguments);
     }
 
-    function DBusError(arg) {
+    function DBusError(arg, arg1) {
         if (typeof(arg) == "string") {
             this.problem = arg;
             this.name = null;
-            this.message = cockpit.message(arg);
+            this.message = arg1 || cockpit.message(arg);
         } else {
             this.problem = null;
             this.name = arg[0];
@@ -2984,13 +3077,16 @@ function basic_scope(cockpit, jquery) {
             extend(args, options);
         }
         args.payload = "dbus-json3";
-        args.name = name;
+        if (name)
+            args.name = name;
         self.options = options;
+        self.unique_name = null;
 
         dbus_debug("dbus open: ", args);
 
         var channel = cockpit.channel(args);
         var subscribers = { };
+        var published = { };
         var calls = { };
         var cache;
 
@@ -2999,9 +3095,21 @@ function basic_scope(cockpit, jquery) {
 
         self.constructors = { "*": DBusProxy };
 
+        /* Allows waiting on the channel if necessary */
+        self.wait = channel.wait;
+
         function ensure_cache() {
             if (!cache)
                 cache = new DBusCache();
+        }
+
+        function send(payload) {
+            if (channel && channel.valid) {
+                dbus_debug("dbus:", payload);
+                channel.send(payload);
+                return true;
+            }
+            return false;
         }
 
         function matches(signal, match) {
@@ -3013,7 +3121,7 @@ function basic_scope(cockpit, jquery) {
                 return false;
             if (match.member && signal[2] !== match.member)
                 return false;
-            if (match.arg0 && signal[3] !== match.arg0)
+            if (match.arg0 && (!signal[3] || signal[3][0] !== match.arg0))
                 return false;
             return true;
         }
@@ -3068,6 +3176,8 @@ function basic_scope(cockpit, jquery) {
                                 subscription.callback.apply(self, msg.signal);
                         }
                     }
+                } else if (msg.call) {
+                    handle(msg.call, msg.id);
                 } else if (msg.notify) {
                     notify(msg.notify);
                 } else if (msg.meta) {
@@ -3096,6 +3206,18 @@ function basic_scope(cockpit, jquery) {
             self.dispatchEvent("meta", data);
         }
 
+        self.meta = function(data, options) {
+            if (!channel || !channel.valid)
+                return;
+
+            var message = extend({ }, options, {
+                "meta": data
+            });
+
+            send(JSON.stringify(message));
+            meta(data);
+        };
+
         function notify(data) {
             ensure_cache();
             var path, iface, props;
@@ -3118,7 +3240,7 @@ function basic_scope(cockpit, jquery) {
             var id, outstanding = calls;
             calls = { };
             for (id in outstanding) {
-                outstanding[id].reject(new DBusError(closed));
+                outstanding[id].reject(new DBusError(closed, options.message));
             }
             self.dispatchEvent("close", options);
         }
@@ -3134,14 +3256,21 @@ function basic_scope(cockpit, jquery) {
                 close_perform(options);
         };
 
+        function on_ready(event, message) {
+            dbus_debug("dbus ready:", options);
+            self.unique_name = message["unique-name"];
+        }
+
         function on_close(event, options) {
             dbus_debug("dbus close:", options);
+            channel.removeEventListener("ready", on_ready);
             channel.removeEventListener("message", on_message);
             channel.removeEventListener("close", on_close);
             channel = null;
             close_perform(options);
         }
 
+        channel.addEventListener("control", on_ready);
         channel.addEventListener("message", on_message);
         channel.addEventListener("close", on_close);
 
@@ -3151,41 +3280,39 @@ function basic_scope(cockpit, jquery) {
             var dfd = cockpit.defer();
             var id = String(last_cookie);
             last_cookie++;
-            var method_call = {
+            var method_call = extend({ }, options, {
                 "call": [ path, iface, method, args || [] ],
                 "id": id
-            };
-            if (options) {
-                if (options.type)
-                    method_call.type = options.type;
-                if (options.flags !== undefined)
-                    method_call.flags = options.flags;
-            }
+            });
 
             var msg = JSON.stringify(method_call);
-            dbus_debug("dbus:", msg);
-
-            if (channel) {
-                channel.send(msg);
+            if (send(msg))
                 calls[id] = dfd;
-            } else {
+            else
                 dfd.reject(new DBusError(closed));
-            }
 
             return dfd.promise;
         };
 
+        self.signal = function signal(path, iface, member, args, options) {
+            if (!channel || !channel.valid)
+                return;
+
+            var message = extend({ }, options, {
+                "signal": [ path, iface, member, args || [] ]
+            });
+
+            send(JSON.stringify(message));
+        };
+
         this.subscribe = function subscribe(match, callback, rule) {
-            var subscription = {
-                match: match || { },
+            var msg, subscription = {
+                match: extend({ }, match),
                 callback: callback
             };
 
-            if (rule !== false && channel && channel.valid) {
-                var msg = JSON.stringify({ "add-match": subscription.match });
-                dbus_debug("dbus:", msg);
-                channel.send(msg);
-            }
+            if (rule !== false)
+                send(JSON.stringify({ "add-match": subscription.match }));
 
             var id;
             if (callback) {
@@ -3202,11 +3329,8 @@ function basic_scope(cockpit, jquery) {
                         if (prev)
                             delete subscribers[id];
                     }
-                    if (rule !== false && channel && channel.valid && prev) {
-                        var msg = JSON.stringify({ "remove-match": prev.match });
-                        dbus_debug("dbus:", msg);
-                        channel.send(msg);
-                    }
+                    if (rule !== false && prev)
+                        send(JSON.stringify({ "remove-match": prev.match }));
                 }
             };
         };
@@ -3214,31 +3338,109 @@ function basic_scope(cockpit, jquery) {
         self.watch = function watch(path) {
             var match;
             if (is_plain_object(path))
-                match = path;
+                match = extend({ }, path);
             else
                 match = { path: String(path) };
 
             var id = String(last_cookie);
             last_cookie++;
             var dfd = cockpit.defer();
-            calls[id] = dfd;
 
             var msg = JSON.stringify({ "watch": match, "id": id });
-            if (channel && channel.valid) {
-                dbus_debug("dbus:", msg);
-                channel.send(msg);
-            } else {
+            if (send(msg))
+                calls[id] = dfd;
+            else
                 dfd.reject(new DBusError(closed));
-            }
 
             var ret = dfd.promise;
             ret.remove = function remove() {
-                delete calls[id];
-                if (channel && channel.valid) {
-                    msg = JSON.stringify({ "unwatch": match });
-                    dbus_debug("dbus:", msg);
-                    channel.send(msg);
+                if (id in calls) {
+                    dfd.reject(new DBusError("cancelled"));
+                    delete calls[id];
                 }
+                send(JSON.stringify({ "unwatch": match }));
+            };
+            return ret;
+        };
+
+        function unknown_interface(path, iface) {
+            var message = "DBus interface " + iface + " not available at " + path;
+            return cockpit.reject(new DBusError([ "org.freedesktop.DBus.Error.UnknownInterface", [ message ] ]));
+        }
+
+        function unknown_method(path, iface, method) {
+            var message = "DBus method " + iface + " " + method + " not available at " + path;
+            return cockpit.reject(new DBusError([ "org.freedesktop.DBus.Error.UnknownMethod", [ message ] ]));
+        }
+
+        function not_implemented(path, iface, method) {
+            console.warn("method is not implemented properly: ", path, iface, method);
+            return unknown_method(path, iface, method);
+        }
+
+        function invoke(call) {
+            var path = call[0];
+            var iface = call[1];
+            var method = call[2];
+            var object = published[path + "\n" + iface];
+            var info = cache.meta[iface];
+            if (!object || !info)
+                return unknown_interface(path, iface);
+            if (!info.methods || !(method in info.methods))
+                return unknown_method(path, iface, method);
+            if (typeof object[method] != "function")
+                return not_implemented(path, iface, method);
+            return object[method].apply(object, call[3]);
+        }
+
+        function handle(call, cookie) {
+            var result = invoke(call);
+            if (!cookie)
+                return; /* Discard result */
+            cockpit.when(result).then(function() {
+                var out = Array.prototype.slice.call(arguments, 0);
+                if (out.length == 1 && typeof out[0] == "undefined")
+                    out = [ ];
+                send(JSON.stringify({ "reply": [ out ], "id": cookie }));
+            }, function(ex) {
+                var error = [ ];
+                error[0] = ex.name || " org.freedesktop.DBus.Error.Failed";
+                error[1] = [ cockpit.message(ex) || error[0] ];
+                send(JSON.stringify({ "error": error, "id": cookie }));
+            });
+        }
+
+        self.publish = function(path, iface, object, options) {
+            var publish = [ path, iface ];
+
+            var id = String(last_cookie);
+            last_cookie++;
+            var dfd = calls[id] = cockpit.defer();
+
+            var payload = JSON.stringify(extend({ }, options, {
+                "publish": publish,
+                "id": id,
+            }));
+
+            if (send(payload))
+                calls[id] = dfd;
+            else
+                dfd.reject(new DBusError(closed));
+
+            var key = path + "\n" + iface;
+            dfd.promise.then(function() {
+                published[key] = object;
+            });
+
+            /* Return a way to remove this object */
+            var ret = dfd.promise;
+            ret.remove = function remove() {
+                if (id in calls) {
+                    dfd.reject(new DBusError("cancelled"));
+                    delete calls[id];
+                }
+                delete published[key];
+                send(JSON.stringify({ "unpublish": publish }));
             };
             return ret;
         };
@@ -3271,9 +3473,52 @@ function basic_scope(cockpit, jquery) {
 
     }
 
+    /* Well known busses */
+    var shared_dbus = {
+        internal: null,
+        session: null,
+        system: null,
+    };
+
     /* public */
     cockpit.dbus = function dbus(name, options) {
-        return new DBusClient(name, options);
+        if (!options)
+            options = { "bus": "system" };
+
+        /*
+         * Figure out if this we should use a shared bus.
+         *
+         * This is only the case if a null name *and* the
+         * options are just a simple { "bus": "xxxx" }
+         */
+        var keys = Object.keys(options);
+        var bus = options.bus;
+        var shared = !name && keys.length == 1 && bus in shared_dbus;
+
+        if (shared && shared_dbus[bus])
+            return shared_dbus[bus];
+
+        var client = new DBusClient(name, options);
+
+        /*
+         * Store the shared bus for next time. Override the
+         * close function to only work when a problem is
+         * indicated.
+         */
+        var old_close;
+        if (shared) {
+            client.close = function() {
+                if (arguments.length > 0)
+                    old_close.apply(client, arguments);
+            };
+            client.addEventListener("close", function() {
+                if (shared_dbus[bus] == client)
+                    shared_dbus[bus] = null;
+            });
+            shared_dbus[bus] = client;
+        }
+
+        return client;
     };
 
     cockpit.variant = function variant(type, value) {
@@ -3781,6 +4026,7 @@ function basic_scope(cockpit, jquery) {
 
         self.request = function request(req) {
             var dfd = cockpit.defer();
+            var ret = dfd.promise;
 
             if (!req.path)
                 req.path = "/";
@@ -3842,14 +4088,14 @@ function basic_scope(cockpit, jquery) {
                     /* Anyone looking for response details? */
                     if (responsers) {
                         resp.headers = resp.headers || { };
-                        invoke_functions(responsers, self, [resp.status, resp.headers]);
+                        invoke_functions(responsers, ret, [resp.status, resp.headers]);
                     }
                     return true;
                 }
 
                 /* Fire any streamers */
                 if (resp.status >= 200 && resp.status <= 299 && streamer)
-                    return streamer(data);
+                    return streamer.call(ret, data);
 
                 return 0;
             });
@@ -3888,7 +4134,6 @@ function basic_scope(cockpit, jquery) {
 
             channel.addEventListener("close", on_close);
 
-            var ret = dfd.promise;
             ret.stream = function(callback) {
                 streamer = callback;
                 return ret;
@@ -4271,23 +4516,12 @@ function basic_scope(cockpit, jquery) {
         };
     }
 
+    return cockpit;
 } /* scope end */
 
 /*
  * Register this script as a module and/or with globals
  */
-
-var cockpit = { };
-event_mixin(cockpit, { });
-
-var basics = false;
-function factory() {
-    if (!basics) {
-        basic_scope(cockpit);
-        basics = true;
-    }
-    return cockpit;
-}
 
 var self_module_id;
 

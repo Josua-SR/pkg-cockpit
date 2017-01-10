@@ -46,6 +46,7 @@ static gint server_port = 0;
 static gchar **bridge_argv;
 static const gchar *bus_address;
 static const gchar *direct_address;
+static gchar **server_roots;
 
 /* ---------------------------------------------------------------------------------------------------- */
 
@@ -61,25 +62,40 @@ on_filter_func (GDBusConnection *connection,
                 gpointer user_data)
 {
   GError *error = NULL;
-  GDBusMessage *reply;
+  GDBusMessage *reply = NULL;
 
-  if (incoming &&
-      g_dbus_message_get_message_type (message) == G_DBUS_MESSAGE_TYPE_METHOD_CALL &&
-      g_str_equal (g_dbus_message_get_path (message), "/bork") &&
-      g_str_equal (g_dbus_message_get_interface (message), "borkety.Bork") &&
-      g_str_equal (g_dbus_message_get_member (message), "Echo"))
+  if (incoming)
     {
-      reply = g_dbus_message_new_method_reply (message);
-      g_dbus_message_set_body (reply, g_dbus_message_get_body (message));
-      g_dbus_connection_send_message (connection, reply, G_DBUS_SEND_MESSAGE_FLAGS_NONE, NULL, &error);
-      if (error != NULL)
+      if (g_dbus_message_get_message_type (message) == G_DBUS_MESSAGE_TYPE_METHOD_CALL &&
+          g_str_equal (g_dbus_message_get_path (message), "/bork") &&
+          g_str_equal (g_dbus_message_get_interface (message), "borkety.Bork") &&
+          g_str_equal (g_dbus_message_get_member (message), "Echo"))
+      {
+        reply = g_dbus_message_new_method_reply (message);
+        g_dbus_message_set_body (reply, g_dbus_message_get_body (message));
+      }
+
+      if (g_dbus_message_get_message_type (message) == G_DBUS_MESSAGE_TYPE_SIGNAL &&
+          g_str_equal (g_dbus_message_get_path (message), "/bork") &&
+          g_str_equal (g_dbus_message_get_interface (message), "borkety.Bork"))
         {
-          g_warning ("Couldn't send DBus message: %s", error->message);
-          g_error_free (error);
+          reply = g_dbus_message_new_signal ("/bork", "borkety.Bork",
+                                             g_dbus_message_get_member (message));
+          g_dbus_message_set_body (reply, g_dbus_message_get_body (message));
         }
-      g_object_unref (reply);
-      g_object_unref (message);
-      return NULL;
+
+      if (reply)
+        {
+          g_dbus_connection_send_message (connection, reply, G_DBUS_SEND_MESSAGE_FLAGS_NONE, NULL, &error);
+          if (error != NULL)
+            {
+              g_warning ("Couldn't send DBus message: %s", error->message);
+              g_error_free (error);
+            }
+          g_object_unref (reply);
+          g_object_unref (message);
+          return NULL;
+        }
     }
 
   return message;
@@ -538,7 +554,7 @@ handle_package_file (CockpitWebServer *server,
     }
 
   rebuilt = g_strjoinv ("/", parts);
-  cockpit_web_response_file (response, rebuilt,  cockpit_web_server_get_document_roots (server));
+  cockpit_web_response_file (response, rebuilt, (const gchar **)server_roots);
   g_free (rebuilt);
 }
 
@@ -580,7 +596,7 @@ on_handle_source (CockpitWebServer *server,
       inject_address (response, "bus_address", bus_address);
       inject_address (response, "direct_address", direct_address);
     }
-  cockpit_web_response_file (response, path,  cockpit_web_server_get_document_roots (server));
+  cockpit_web_response_file (response, path, (const gchar **)server_roots);
   return TRUE;
 }
 
@@ -597,9 +613,9 @@ server_ready (void)
   else
     server_port = 8765;
 
+  server_roots = cockpit_web_response_resolve_roots (roots);
   server = cockpit_web_server_new (NULL, server_port, /* TCP port to listen to */
                                    NULL, /* TLS cert */
-                                   roots,/* Where to serve files from */
                                    NULL, /* GCancellable* */
                                    &error);
   if (server == NULL)
@@ -853,6 +869,7 @@ main (int argc,
   g_clear_object (&direct_b);
   g_main_loop_unref (loop);
 
+  g_strfreev (server_roots);
   g_test_dbus_down (bus);
   g_object_unref (bus);
   g_free (bridge_argv);

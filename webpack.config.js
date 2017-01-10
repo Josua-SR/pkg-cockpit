@@ -30,7 +30,8 @@ var info = {
         ],
 
         "networkmanager/network": [
-            "networkmanager/interfaces.js"
+            "networkmanager/interfaces.js",
+            "networkmanager/utils.js"
         ],
 
         "ostree/ostree": [
@@ -128,6 +129,8 @@ var info = {
         "lib/test-journal-renderer",
         "lib/test-machines",
         "lib/test-patterns",
+
+        "networkmanager/test-utils",
 
         "storaged/test-util",
 
@@ -324,6 +327,9 @@ if (!section || section.indexOf("base1") === 0) {
     }, {
         from: bowerdir + path.sep + "jquery/dist/jquery.js",
         to: "base1/jquery.js"
+    }, {
+        from: srcdir + path.sep + "po/po.js",
+        to: "shell/po.js"
     });
 }
 
@@ -334,7 +340,6 @@ module.exports = {
             "angular-route": "angular-route/angular-route.js",
             "d3": "d3/d3.js",
             "moment": "momentjs/moment.js",
-            "mustache": "mustache/mustache.js",
             "react": "react-lite-cockpit/dist/react-lite.js",
             "term": "term.js-cockpit/src/term.js",
         },
@@ -396,17 +401,13 @@ module.exports = {
     },
 
     jshint: {
-        emitErrors: false,
+        emitErrors: true,
         failOnHint: true,
+        latedef: "nofunc",
         sub: true,
         multistr: true,
         undef: true,
+        unused: "vars",
         predef: [ "window", "document", "console" ],
-        reporter: function (errors) {
-            var loader = this;
-            errors.forEach(function(err) {
-                console.log(loader.resource + ":" + err.line + ":" + err.character + ": " + err.reason);
-            });
-        }
     },
 };

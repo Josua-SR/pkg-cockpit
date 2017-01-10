@@ -267,7 +267,7 @@
                     return [];
                 var projectName = toName(project);
                 var roleBinds = subjectRoleBindings(member, projectName);
-                var roleBind, meta, ret = [];
+                var meta, ret = [];
                 angular.forEach(roleBinds, function(roleBind) {
                     meta = roleBind.metadata || { };
                     if (meta.name)
@@ -282,7 +282,7 @@
                 var roleBinds = subjectRoleBindings(member, projectName);
                 var ocRegistryRoles = getOcRolesList();
                 var roles = [];
-                var roleBind, meta;
+                var meta;
                 angular.forEach(roleBinds, function(roleBind) {
                     meta = roleBind.metadata || { };
                     if (meta.name && ocRegistryRoles.indexOf(meta.name)!== -1) {
@@ -976,10 +976,12 @@
         '$location',
         '$timeout',
         "kubeMethods",
-        function($q, $scope, kselect, dialogData, projectData, $location, $timeout, methods) {
+        "gettextCatalog",
+        function($q, $scope, kselect, dialogData, projectData, $location, $timeout, methods, gettextCatalog) {
             var project = dialogData.project || { };
             var meta = project.metadata || { };
             var annotations = meta.annotations || { };
+            var _ = gettextCatalog.getString.bind(gettextCatalog);
 
             var DISPLAY = "openshift.io/display-name";
             var DESCRIPTION = "openshift.io/description";
@@ -1013,17 +1015,12 @@
             $scope.fields = fields;
             $scope.labels = {
                 access: {
-                    "private": "Private: Allow only specific users or groups to pull images",
-                    "shared": "Shared: Allow any authenticated user to pull images",
-                    "anonymous" : "Anonymous: Allow all unauthenticated users to pull images",
+                    "private": _("Private: Allow only specific users or groups to pull images"),
+                    "shared": _("Shared: Allow any authenticated user to pull images"),
+                    "anonymous" : _("Anonymous: Allow all unauthenticated users to pull images"),
                 }
             };
-            function getProjects() {
-                return kselect().kind("Project");
-            }
-            function getGroups() {
-                return kselect().kind("Group");
-            }
+
             $scope.performDelete = function performDelete(project) {
                 var promise = methods.delete(project)
                     .then(function() {
@@ -1035,8 +1032,6 @@
                 return promise;
             };
             $scope.performCreate = function performCreate() {
-                var defer;
-
                 var name = fields.name.trim();
                 var request = {
                     kind: "ProjectRequest",
@@ -1095,7 +1090,6 @@
             $scope.fields = fields;
 
             $scope.performCreate = function performCreate() {
-                var defer;
                 var identities = [];
                 if (fields.identities.trim() !== "")
                     identities = [fields.identities.trim()];
@@ -1214,7 +1208,6 @@
 
             $scope.performDelete = function performDelete(user) {
                 var chain = $q.when();
-                var fail = false;
 
                 chain = removeMemberFromParents(user);
                 var promise = chain.then(function() {
@@ -1259,12 +1252,8 @@
             }
 
             $scope.addMemberToParent = function addMemberToParent() {
-                var patchData;
-                var users;
-                var patchObj;
                 if ($scope.selected.parentObj.kind === "Project") {
                     var project = $scope.selected.parentObj.metadata.name;
-                    var policyBinding = getPolicyBinding(project);
                     var memberObj = $scope.fields.memberObj;
                     var role = $scope.selected.ocRole;
                     var subject = {
@@ -1348,7 +1337,6 @@
             }
             $scope.performDelete = function performDelete(group) {
                 var chain = $q.when();
-                var fail = false;
 
                 chain = removeMemberFromParents(group);
                 var promise = chain.then(function() {
@@ -1383,8 +1371,6 @@
 
             $scope.fields = fields;
             $scope.performCreate = function performCreate() {
-                var defer;
-
                 var group = {
                     "kind": "Group",
                     "apiVersion": "v1",

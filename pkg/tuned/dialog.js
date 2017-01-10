@@ -101,7 +101,7 @@
                     else
                         status = _("This system is using a custom profile");
 
-                    button.text(state == "running"? active : "none");
+                    button.text(state == "running"? active : _("none"));
                     button.prop('disabled', state == "not-installed");
                     button.toggleClass('disabled', state == "not-installed");
                     set_status(status);
@@ -158,8 +158,6 @@
                 var action = enable ? "start" : "stop";
                 return tuned.call('/Tuned', 'com.redhat.tuned.control', action, [])
                     .then(function(results) {
-                        var msg;
-
                         /* Yup this is how tuned returns failures */
                         if (!results[0]) {
                             console.warn("Failed to " + action + " tuned:", results);

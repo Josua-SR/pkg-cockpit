@@ -268,6 +268,7 @@
         'kubeSelect',
         'kubeLoader',
         function(select, loader) {
+            var watching = false;
 
             /* Called when we have to load images via imagestreams */
             loader.listen(function(objects) {
@@ -317,7 +318,7 @@
              * name to the image itself.
              */
             function handle_image(image) {
-                var item, history, manifest = image.dockerImageManifest;
+                var item, manifest = image.dockerImageManifest;
                 if (manifest) {
                     manifest = JSON.parse(manifest);
                     angular.forEach(manifest.history || [], function(item) {
@@ -337,7 +338,6 @@
             }
 
             /* Load images, but fallback to loading individually */
-            var watching = false;
             function watchImages(until) {
                 watching = true;
                 var a = loader.watch("images", until);
@@ -370,7 +370,7 @@
              * item in the given TagEvent.
              */
             select.register("taggedFirst", function(tag) {
-                var len, results = { };
+                var results = { };
                 if (!tag.items)
                     return select(null);
                 if (tag.items.length)
@@ -595,10 +595,12 @@
         "imageTagData",
         "kubeMethods",
         "filterService",
-        function($scope, $instance, dialogData, tagData, methods, filter) {
+        "gettextCatalog",
+        function($scope, $instance, dialogData, tagData, methods, filter, gettextCatalog) {
             var stream = dialogData.stream || { };
             var meta = stream.metadata || { };
             var spec = stream.spec || { };
+            var _ = gettextCatalog.getString.bind(gettextCatalog);
 
             var populate = "none";
             if (spec.dockerImageRepository)
@@ -618,15 +620,17 @@
             $scope.fields = fields;
             $scope.labels = {
                 populate: {
-                    none: "Don't pull images automatically",
-                    pull: "Sync all tags from a remote image repository",
-                    tags: "Pull specific tags from another image repository",
+                    none: _("Don't pull images automatically"),
+                    pull: _("Sync all tags from a remote image repository"),
+                    tags: _("Pull specific tags from another image repository"),
                 }
             };
 
+            $scope.placeholder = _("eg: my-image-stream");
+
             /* During creation we have a different label */
             if (!dialogData.stream)
-                $scope.labels.populate.none = "Create empty image stream";
+                $scope.labels.populate.none = _("Create empty image stream");
 
             function performModify() {
                 var data = { spec: { dockerImageRepository: null, tags: null } };

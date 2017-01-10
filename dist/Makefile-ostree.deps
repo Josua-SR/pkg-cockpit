@@ -1,5 +1,5 @@
 # Generated Makefile data for ostree
-# Stamp: Thu Nov 24 2016 16:15:59 GMT+0000 (UTC)
+# Stamp: Mon Jan 09 2017 11:58:41 GMT+0000 (UTC)
 
 ostree_INPUTS = \
 	$(srcdir)/pkg/lib/listing.css \
@@ -69,3 +69,12 @@ WEBPACK_OUTPUTS += $(ostree_OUTPUTS)
 WEBPACK_INSTALL += $(ostree_INSTALL)
 WEBPACK_DEBUG += $(ostree_DEBUG)
 TESTS += $(ostree_TESTS)
+
+ostree: dist/Makefile-ostree.deps $(ostree_OUTPUTS) $(ostree_INSTALL)
+	@true
+clean-ostree: 
+	rm -rf $(ostree_OUTPUTS) $(ostree_INSTALL) dist/Makefile-ostree.deps
+all-local:: ostree
+	@true
+clean-local:: clean-ostree
+	@true

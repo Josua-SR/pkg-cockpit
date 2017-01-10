@@ -18,8 +18,6 @@
  */
 #include "config.h"
 
-#include "cockpitbridge.h"
-
 #include "cockpitchannel.h"
 #include "cockpitdbusinternal.h"
 #include "cockpitdbusjson.h"
@@ -36,6 +34,7 @@
 #include "cockpitinternalmetrics.h"
 #include "cockpitpolkitagent.h"
 #include "cockpitportal.h"
+#include "cockpitrouter.h"
 #include "cockpitwebsocketstream.h"
 
 #include "common/cockpitassets.h"
@@ -92,21 +91,15 @@ on_closed_set_flag (CockpitTransport *transport,
 }
 
 static void
-send_init_command (CockpitTransport *transport,
-                   GHashTable *os_release)
+send_init_command (CockpitTransport *transport)
 {
   const gchar *checksum;
-  const gchar *value;
   JsonObject *object;
   JsonObject *block;
+  GHashTable *os_release;
   gchar **names;
   GBytes *bytes;
   gint i;
-
-  /* Fields from /etc/os-release to send in init message */
-  static const gchar *os_release_fields[] = {
-    "NAME", "VERSION", "ID", "VERSION_ID", "PRETTY_NAME", "VARIANT", "VARIANT_ID", "CPE_NAME",
-  };
 
   object = json_object_new ();
   json_object_set_string_member (object, "command", "init");
@@ -124,17 +117,12 @@ send_init_command (CockpitTransport *transport,
   json_object_set_object_member (object, "packages", block);
   g_free (names);
 
-  if (os_release)
-    {
-      block = json_object_new ();
-      for (i = 0; i < G_N_ELEMENTS (os_release_fields); i++)
-        {
-          value = g_hash_table_lookup (os_release, os_release_fields[i]);
-          if (value)
-            json_object_set_string_member (block, os_release_fields[i], value);
-        }
-      json_object_set_object_member (object, "os-release", block);
-    }
+  os_release = cockpit_system_load_os_release ();
+  block = cockpit_json_from_hash_table (os_release,
+                                        cockpit_system_os_release_fields ());
+  if (block)
+    json_object_set_object_member (object, "os-release", block);
+  g_hash_table_unref (os_release);
 
   bytes = cockpit_json_write_bytes (object);
   json_object_unref (object);
@@ -384,12 +372,11 @@ run_bridge (const gchar *interactive,
             gboolean privileged_slave)
 {
   CockpitTransport *transport;
-  CockpitBridge *bridge;
+  CockpitRouter *router;
   gboolean terminated = FALSE;
   gboolean interupted = FALSE;
   gboolean closed = FALSE;
   const gchar *init_host = NULL;
-  GHashTable *os_release = NULL;
   CockpitPortal *super = NULL;
   CockpitPortal *pcp = NULL;
   gpointer polkit_agent = NULL;
@@ -430,6 +417,9 @@ run_bridge (const gchar *interactive,
       g_setenv ("HOME", pwd->pw_dir, TRUE);
       g_setenv ("SHELL", pwd->pw_shell, TRUE);
     }
+
+  /* Set a path if nothing is set */
+  g_setenv ("PATH", "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin", 0);
 
   /* Reset the umask, typically this is done in .bashrc for a login shell */
   umask (022);
@@ -484,20 +474,19 @@ run_bridge (const gchar *interactive,
 
   g_resources_register (cockpitassets_get_resource ());
   cockpit_web_failure_resource = "/org/cockpit-project/Cockpit/fail.html";
-  os_release = cockpit_system_load_os_release ();
 
   pcp = cockpit_portal_new_pcp (transport);
 
-  bridge = cockpit_bridge_new (transport, payload_types, init_host);
+  router = cockpit_router_new (transport, payload_types, init_host);
   cockpit_dbus_user_startup (pwd);
   cockpit_dbus_setup_startup ();
-  cockpit_dbus_environment_startup ();
+  cockpit_dbus_process_startup ();
 
   g_free (pwd);
   pwd = NULL;
 
   g_signal_connect (transport, "closed", G_CALLBACK (on_closed_set_flag), &closed);
-  send_init_command (transport, os_release);
+  send_init_command (transport);
 
   while (!terminated && !closed && !interupted)
     g_main_context_iteration (NULL, TRUE);
@@ -508,9 +497,8 @@ run_bridge (const gchar *interactive,
     g_object_unref (super);
 
   g_object_unref (pcp);
-  g_object_unref (bridge);
+  g_object_unref (router);
   g_object_unref (transport);
-  g_hash_table_unref (os_release);
 
   cockpit_dbus_internal_cleanup ();
   cockpit_packages_free (packages);

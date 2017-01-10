@@ -1,7 +1,7 @@
 /*
  * This file is part of Cockpit.
  *
- * Copyright (C) 2013 Red Hat, Inc.
+ * Copyright (C) 2016 Red Hat, Inc.
  *
  * Cockpit is free software; you can redistribute it and/or modify it
  * under the terms of the GNU Lesser General Public License as published by
@@ -17,14 +17,20 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __COCKPIT_TYPES_H__
-#define __COCKPIT_TYPES_H__
+#ifndef COCKPIT_DBUS_META_H__
+#define COCKPIT_DBUS_META_H__
 
 #include <gio/gio.h>
-#include "common/cockpitenums.h"
+#include <json-glib/json-glib.h>
 
 G_BEGIN_DECLS
 
+JsonObject *             cockpit_dbus_meta_build     (GDBusInterfaceInfo *iface);
+
+GDBusInterfaceInfo *     cockpit_dbus_meta_parse     (const gchar *iface_name,
+                                                      JsonObject *interface,
+                                                      GError **error);
+
 G_END_DECLS
 
-#endif /* __COCKPIT_TYPES_H__ */
+#endif /* COCKPIT_DBUS_META_H__ */

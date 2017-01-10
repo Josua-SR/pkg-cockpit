@@ -1,5 +1,5 @@
 # Generated Makefile data for kubernetes
-# Stamp: Thu Nov 24 2016 16:15:59 GMT+0000 (UTC)
+# Stamp: Mon Jan 09 2017 11:58:41 GMT+0000 (UTC)
 
 kubernetes_INPUTS = \
 	$(srcdir)/pkg/kubernetes/index.html \
@@ -694,3 +694,12 @@ WEBPACK_OUTPUTS += $(kubernetes_OUTPUTS)
 WEBPACK_INSTALL += $(kubernetes_INSTALL)
 WEBPACK_DEBUG += $(kubernetes_DEBUG)
 TESTS += $(kubernetes_TESTS)
+
+kubernetes: dist/Makefile-kubernetes.deps $(kubernetes_OUTPUTS) $(kubernetes_INSTALL)
+	@true
+clean-kubernetes: 
+	rm -rf $(kubernetes_OUTPUTS) $(kubernetes_INSTALL) dist/Makefile-kubernetes.deps
+all-local:: kubernetes
+	@true
+clean-local:: clean-kubernetes
+	@true

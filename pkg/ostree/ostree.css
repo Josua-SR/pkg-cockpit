@@ -27,12 +27,6 @@
     display: none !important;
 }
 
-.curtains-ct {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-}
-
 #ostree-software-update {
     max-width: 1000px;
 }
@@ -72,4 +66,8 @@ table.listing-ct.listingtop thead h3 {
 
 .listing-ct-head .display-inline {
     display: inline;
+}
+
+.listing-ct-head .listing-ct-actions {
+    margin-top: -3px;
 }

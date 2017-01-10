@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Loading...</title>
+    <base href="/">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+var phantom_checkpoint = phantom_checkpoint || function() {};
+
+(function(e) {
+    var t;
+    window.localStorage.removeItem("url-root");
+    var n = window.environment || {};
+    var o = n.OAuth || null;
+    if (o) {
+        if (!o.TokenParam) o.TokenParam = "access_token";
+        if (!o.ErrorParam) o.ErrorParam = "error_description";
+    }
+    var i, a, r, s;
+    var l = /[?&]?([^=]+)=([^&]*)/g;
+    var c = null;
+    function u(e) {
+        e = e.split("+").join(" ");
+        var t = {};
+        var n;
+        for (;;) {
+            n = l.exec(e);
+            if (!n) break;
+            t[decodeURIComponent(n[1])] = decodeURIComponent(n[2]);
+        }
+        return t;
+    }
+    function d(e) {
+        e = e.trim();
+        if (e[0] == '"') e = e.substr(1, e.length - 2);
+        return e;
+    }
+    if (!e) e = function() {};
+    if (window.location.pathname.indexOf("/cockpit/") === 0 || window.location.pathname.indexOf("/cockpit+") === 0) document.documentElement.setAttribute("class", "inline");
+    function f(e) {
+        return document.getElementById(e);
+    }
+    function p(t) {
+        if (window.console) e.warn("fatal:", t);
+        f("login-again").style.display = "none";
+        f("login-wait-validating").style.display = "none";
+        if (c) {
+            f("login-again").href = c;
+            f("login-again").style.display = "block";
+        }
+        f("login").style.display = "none";
+        f("login-details").style.display = "none";
+        f("login-fatal").style.display = "block";
+        var n = f("login-fatal-message");
+        n.textContent = "";
+        n.appendChild(document.createTextNode(t));
+    }
+    var w = /\$\{([^}]+)\}|\$([a-zA-Z0-9_]+)/g;
+    function g(e, t) {
+        return e.replace(w, function(e, n, o) {
+            return t[n || o] || "";
+        });
+    }
+    function v(e, t) {
+        var n, o = f(e);
+        if (o) n = window.getComputedStyle(o);
+        if (!n) return;
+        var i, a = n.content;
+        if (a && a != "none" && a != "normal") {
+            i = a.length;
+            if ((a[0] === '"' || a[0] === "'") && i > 2 && a[i - 1] === a[0]) a = a.substr(1, i - 2);
+            o.innerHTML = g(a) || t;
+        }
+    }
+    function m() {
+        function e(e, t) {
+            var n;
+            try {
+                n = t[e];
+            } catch (o) {
+                p("The web browser configuration prevents Cockpit from running (inaccessible " + e + ")");
+                throw o;
+            }
+            if (n === undefined) {
+                p("This web browser is too old to run Cockpit (missing " + e + ")");
+                return false;
+            }
+            return true;
+        }
+        return ("MozWebSocket" in window || e("WebSocket", window)) && e("XMLHttpRequest", window) && e("localStorage", window) && e("sessionStorage", window) && e("JSON", window) && e("defineProperty", Object) && e("console", window) && e("pushState", window.history) && e("textContent", document);
+    }
+    function h(e) {
+        return e.replace(/^\s+|\s+$/g, "");
+    }
+    function y(e) {
+        var o = document.createElement("a");
+        var l = document.baseURI;
+        var c;
+        if (!l) {
+            c = document.getElementsByTagName("base");
+            if (c.length > 0) l = c[0].href; else l = "/";
+        }
+        e = e || "/";
+        o.href = l;
+        if (o.pathname != "/") {
+            t = o.pathname.replace(/^\/+|\/+$/g, "");
+            window.localStorage.setItem("url-root", t);
+            if (t && e.indexOf("/" + t) === 0) e = e.replace("/" + t, "") || "/";
+        }
+        if (e.indexOf("/=") === 0) {
+            n.hostname = e.substring(2);
+            e = "/cockpit+" + e.split("/")[1];
+        } else if (e.indexOf("/cockpit/") !== 0 && e.indexOf("/cockpit+") !== 0) {
+            e = "/cockpit";
+        }
+        a = e.split("/")[1];
+        i = "/" + a + "/login";
+        if (t) i = "/" + t + i;
+        s = a;
+        r = i;
+    }
+    function b(e, t) {
+        if (t === undefined) t = f("server-group").style.display === "none";
+        f("option-group").setAttribute("data-state", t);
+        if (t) {
+            f("server-group").style.display = "block";
+            f("option-caret").setAttribute("class", "caret caret-down");
+            f("option-caret").setAttribute("className", "caret caret-down");
+        } else {
+            f("server-group").style.display = "none";
+            f("option-caret").setAttribute("class", "caret caret-right");
+            f("option-caret").setAttribute("className", "caret caret-right");
+        }
+    }
+    function k() {
+        window.onload = null;
+        y(window.location.pathname);
+        var e = n.page.title;
+        if (!e) e = n.hostname;
+        document.title = e;
+        if (a.indexOf("cockpit+=") === 0) {
+            f("brand").style.display = "none";
+            f("badge").style.visibility = "hidden";
+        } else {
+            v("badge", "");
+            v("brand", "Cockpit");
+        }
+        f("option-group").addEventListener("click", b);
+        f("server-clear").addEventListener("click", function() {
+            var e = f("server-field");
+            e.value = "";
+            e.focus();
+        });
+        if (!m()) return;
+        var t = window.localStorage.getItem("authorized-default") || "";
+        if (t.indexOf("password") !== -1) f("authorized-input").checked = true;
+        var i = JSON.stringify(n["os-release"]);
+        var r = window.sessionStorage.getItem("logout-intent") == "explicit";
+        if (r) window.sessionStorage.removeItem("logout-intent");
+        window.localStorage.setItem("os-release", i);
+        if (o) {
+            f("login-details").style.display = "none";
+            f("login").style.display = "none";
+            if (r) {
+                S();
+                f("login-again").textContent = "Login Again";
+                p("Logout Successful");
+            } else {
+                T();
+            }
+        } else if (r) {
+            A();
+        } else {
+            x();
+        }
+    }
+    function x() {
+        var e = new XMLHttpRequest();
+        e.open("GET", i, true);
+        e.onreadystatechange = function() {
+            if (e.readyState != 4) {
+                return;
+            } else if (e.status == 200) {
+                q(JSON.parse(e.responseText));
+            } else if (e.status == 401) {
+                A();
+            } else if (e.statusText) {
+                p(decodeURIComponent(e.statusText));
+            } else if (e.status === 0) {
+                A();
+            } else {
+                p(e.status + " error");
+            }
+        };
+        e.send();
+    }
+    function S() {
+        var e = window.location.href.split("#", 2);
+        c = o.URL;
+        if (o.URL.indexOf("?") > -1) c += "&"; else c += "?";
+        c += "redirect_uri=" + encodeURIComponent(e[0]);
+    }
+    function T() {
+        var e = document.createElement("a");
+        if (!o.URL) return p("Cockpit authentication is configured incorrectly.");
+        var t = u(window.location.search);
+        if (!window.location.search && window.location.hash) t = u(window.location.hash.slice(1));
+        var n, a, r;
+        S();
+        if (t[o.TokenParam]) {
+            if (window.sessionStorage.getItem("login-wanted")) {
+                e.href = window.sessionStorage.getItem("login-wanted");
+                y(e.pathname);
+            }
+            n = t[o.TokenParam];
+            f("login-wait-validating").style.display = "block";
+            r = new XMLHttpRequest();
+            r.open("GET", i, true);
+            r.setRequestHeader("Authorization", "Bearer " + n);
+            r.onreadystatechange = function() {
+                if (r.readyState != 4) {
+                    return;
+                } else if (r.status == 200) {
+                    q(JSON.parse(r.responseText));
+                } else {
+                    a = U(r.getResponseHeader("WWW-Authenticate"), r.responseText);
+                    if (a) H(a); else p(r.statusText);
+                }
+            };
+            r.send();
+        } else if (t[o.ErrorParam]) {
+            p(t[o.ErrorParam]);
+        } else {
+            window.sessionStorage.setItem("login-wanted", window.location.href);
+            window.location = c;
+        }
+    }
+    function I() {
+        f("error-group").style.display = "none";
+        f("login-error-message").textContent = "";
+    }
+    function O(e, t) {
+        I();
+        if (e) {
+            if (o) {
+                p(e);
+            } else {
+                R(t);
+                f("login-error-message").textContent = e;
+                f("error-group").style.display = "block";
+            }
+        }
+    }
+    function C(e) {
+        var t = f("server-field").value;
+        if (!t) {
+            O(e, false);
+        } else {
+            I();
+            f("login-error-message").textContent = e;
+            f("error-group").style.display = "block";
+            b(null, true);
+            R();
+        }
+    }
+    function E(e) {
+        var t = f("login-note");
+        if (e) {
+            t.style.display = "block";
+            t.textContent = e;
+        } else {
+            t.innerHTML = "&nbsp;";
+        }
+    }
+    function L() {
+        O(null);
+        var e, t = h(f("login-user-input").value);
+        if (t === "") {
+            O("User name cannot be empty");
+        } else {
+            e = f("server-field").value;
+            if (e) {
+                a = "cockpit+=" + e;
+                i = r.replace("/" + s + "/", "/" + a + "/");
+            } else {
+                a = s;
+                i = r;
+            }
+            f("server-name").textContent = e || n.hostname;
+            f("login-button").removeEventListener("click", L);
+            var o = f("authorized-input").checked ? "password" : "";
+            var l = f("login-password-input").value;
+            window.localStorage.setItem("authorized-default", o);
+            var c = {
+                Authorization: "Basic " + window.btoa(N(t + ":" + l)),
+                "X-Authorize": o
+            };
+            z("GET", c, false);
+        }
+    }
+    function R(e) {
+        var t = n.page.connect;
+        var o = f("option-group").getAttribute("data-state");
+        f("login-wait-validating").style.display = "none";
+        f("login").style.visibility = "visible";
+        f("login").style.display = "block";
+        f("user-group").style.display = e ? "none" : "block";
+        f("password-group").style.display = e ? "none" : "block";
+        f("option-group").style.display = !t || e ? "none" : "block";
+        f("conversation-group").style.display = e ? "block" : "none";
+        f("login-button-text").textContent = "Log In";
+        f("login-password-input").value = "";
+        if (!t || e) {
+            f("server-group").style.display = "none";
+        } else {
+            f("server-group").style.display = o ? "block" : "none";
+        }
+        f("login-button").removeAttribute("disabled");
+        if (!e) f("login-button").addEventListener("click", L);
+    }
+    function A() {
+        f("server-name").textContent = document.title;
+        E("Log in with your server user account.");
+        f("login-user-input").addEventListener("keydown", function(e) {
+            O(null);
+            if (e.which == 13) f("login-password-input").focus();
+        }, false);
+        f("login-password-input").addEventListener("keydown", function(e) {
+            O(null);
+            if (e.which == 13) L();
+        });
+        R();
+        f("login-user-input").focus();
+        phantom_checkpoint();
+    }
+    function H(e) {
+        var t = e.echo ? "text" : "password";
+        f("conversation-prompt").textContent = e.prompt;
+        var n = f("conversation-message");
+        var o = e.error || e.message;
+        if (o) {
+            n.textContent = o;
+            n.style.display = "block";
+        } else {
+            n.style.display = "none";
+        }
+        var i = f("conversation-input");
+        i.value = "";
+        if (e.default) i.value = e.default;
+        i.setAttribute("type", t);
+        i.focus();
+        O("");
+        function a() {
+            f("conversation-input").removeEventListener("keydown", r);
+            f("login-button").removeEventListener("click", a);
+            O(null, true);
+            P(e.id, f("conversation-input").value);
+        }
+        function r(e) {
+            O(null, true);
+            if (e.which == 13) {
+                a();
+            }
+        }
+        f("conversation-input").addEventListener("keydown", r);
+        f("login-button").addEventListener("click", a);
+        R(true);
+        phantom_checkpoint();
+    }
+    function N(e) {
+        return window.unescape(encodeURIComponent(e));
+    }
+    function U(t, n) {
+        var o;
+        var i;
+        var a;
+        var r;
+        if (!t) return null;
+        o = t.split(" ");
+        if (o[0].toLowerCase() !== "x-conversation" && o.length != 3) return null;
+        r = o[1];
+        try {
+            i = window.atob(o[2]);
+        } catch (s) {
+            if (window.console) e.error("Invalid prompt data", s);
+            return null;
+        }
+        try {
+            a = JSON.parse(n);
+        } catch (s) {
+            if (window.console) e.log("Got invalid JSON response for prompt data", s);
+            a = {};
+        }
+        a.id = r;
+        a.prompt = i;
+        return a;
+    }
+    function z(t, n, o) {
+        f("login-button").setAttribute("disabled", "true");
+        var a = new XMLHttpRequest();
+        a.open("GET", i, true);
+        var r;
+        var s;
+        var l;
+        for (l in n) a.setRequestHeader(l, n[l]);
+        a.onreadystatechange = function() {
+            if (a.readyState != 4) {
+                return;
+            } else if (a.status == 200) {
+                var t = JSON.parse(a.responseText);
+                q(t);
+            } else if (a.status == 401) {
+                s = a.getResponseHeader("WWW-Authenticate");
+                if (s && s.toLowerCase().indexOf("x-conversation") === 0) {
+                    r = U(s, a.responseText);
+                    if (r) H(r); else p("Internal Error: Invalid challenge header");
+                } else {
+                    if (window.console) e.log(a.statusText);
+                    if (a.statusText.indexOf("authentication-not-supported") > -1) {
+                        var n = h(f("login-user-input").value);
+                        p("The server refused to authenticate '" + n + "' using password authentication, and no other supported authentication methods are available.");
+                    } else if (a.statusText.indexOf("terminated") > -1) {
+                        O("Authentication Failed: Server closed connection");
+                    } else if (a.statusText.indexOf("no-host") > -1) {
+                        C("Unable to connect to that address");
+                    } else if (a.statusText.indexOf("unknown-hostkey") > -1) {
+                        C("Refusing to connect. Hostkey is unknown");
+                    } else if (a.statusText.indexOf("unknown-host") > -1) {
+                        C("Refusing to connect. Host is unknown");
+                    } else if (a.statusText.indexOf("invalid-hostkey") > -1) {
+                        C("Refusing to connect. Hostkey does not match");
+                    } else if (o) {
+                        O("Authentication failed");
+                    } else {
+                        O("Wrong user name or password");
+                    }
+                }
+            } else if (a.status == 403) {
+                O(decodeURIComponent(a.statusText) || "Permission denied");
+            } else if (a.statusText) {
+                p(decodeURIComponent(a.statusText));
+            } else {
+                p(a.status + " error");
+            }
+            f("login-button").removeAttribute("disabled");
+            phantom_checkpoint();
+        };
+        a.send();
+    }
+    function P(e, t) {
+        var n = {
+            Authorization: "X-Conversation " + e + " " + window.btoa(N(t))
+        };
+        z("GET", n, true);
+    }
+    function _(e) {
+        if (e && e != window.location.href) window.location = e;
+        window.setTimeout(function() {
+            window.location.reload(true);
+        }, 100);
+    }
+    function J(e) {
+        var n = "/" + a + "/@localhost/";
+        if (t) n = "/" + t + n;
+        var o = n + "shell/index.html";
+        var i = new XMLHttpRequest();
+        i.open("GET", n + "manifests.json", true);
+        i.onreadystatechange = function() {
+            if (i.readyState != 4) {
+                return;
+            } else if (i.status == 200) {
+                var t = JSON.parse(i.responseText);
+                var n = t ? t["base1"] : {};
+                if (!n["version"] || n["version"] < "119.x") {
+                    _(o);
+                } else _(e);
+            } else {
+                _(o);
+            }
+            phantom_checkpoint();
+        };
+        i.send();
+    }
+    function W(e, t, n) {
+        var o = 0;
+        while (o < e.length) {
+            var i = e.key(o);
+            if (n && i.indexOf("cockpit") !== 0) e.removeItem(i); else if (i.indexOf(t) === 0) e.removeItem(i); else o++;
+        }
+    }
+    function M(n) {
+        W(window.sessionStorage, a, true);
+        window.localStorage.removeItem("login-data");
+        W(window.localStorage, a, false);
+        var o;
+        if (n && n["login-data"]) {
+            o = JSON.stringify(n["login-data"]);
+            try {
+                window.localStorage.setItem(a + "login-data", o);
+                window.localStorage.setItem("login-data", o);
+            } catch (i) {
+                e.warn("Error storing login-data:", i);
+            }
+        }
+        if (t) window.localStorage.setItem("url-root", t);
+    }
+    function q(e) {
+        var n = window.sessionStorage.getItem("login-wanted");
+        var o = f("server-field").value;
+        var i;
+        if (o && a != s) {
+            n = "/=" + o;
+            if (t) n = "/" + t + n;
+        }
+        W(window.sessionStorage, a, false);
+        M(e);
+        if (a.indexOf("cockpit+=") === 0) {
+            J(n);
+        } else {
+            _(n);
+        }
+    }
+    window.onload = k;
+})(window.console);
+//# sourceMappingURL=login.min.js.map
+    </script>
+    <style>
+#option-group,.btn,.cross,button{cursor:pointer}
+.btn,label{font-weight:600}
+.btn,img{vertical-align:middle}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-size:62.5%;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:"Open Sans",Helvetica,Arial,sans-serif;font-size:12px;line-height:1.66666667;background-color:#fff}
+a{background:0 0;color:#0099d3;text-decoration:none}
+.btn,.btn:active{background-image:none}
+a:focus{outline:dotted thin;outline:-webkit-focus-ring-color auto 5px;outline-offset:-2px}
+a:active,a:hover{outline:0}
+a:focus,a:hover{color:#00618a;text-decoration:underline}
+img{border:0}
+button,input,select,textarea{font-family:inherit;margin:0;font-size:inherit;line-height:inherit}
+button,input{line-height:normal}
+.btn,.form-control{line-height:1.66666667}
+button,select{text-transform:none}
+button{-webkit-appearance:button;overflow:visible}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+p{margin:0 0 10px}
+.container{margin-right:auto;margin-left:auto;padding-left:20px;padding-right:20px}
+.form-group,.row{margin-right:-20px}
+.container:after,.container:before,.row:after,.row:before{content:" ";display:table}
+.container:after,.row:after{clear:both}
+@media (min-width:768px){.container{width:760px}
+}
+@media (min-width:992px){.container{width:980px}
+}
+@media (min-width:1200px){.container{width:1180px}
+}
+.row{margin-left:-20px}
+.col-lg-5,.col-lg-7,.col-md-10,.col-md-2,.col-md-6,.col-sm-1,.col-sm-10,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-5,.col-sm-6,.col-sm-7,.col-xs-12{position:relative;min-height:1px;padding-left:20px;padding-right:20px}
+.col-xs-12{float:left;width:100%}
+@media (min-width:768px){.col-sm-1,.col-sm-10,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-5,.col-sm-6,.col-sm-7{float:left}
+.col-sm-12{width:100%}
+.col-sm-10{width:83.33333333333334%}
+.col-sm-7{width:58.333333333333336%}
+.col-sm-6{width:50%}
+.col-sm-5{width:41.66666666666667%}
+.col-sm-3{width:25%}
+.col-sm-2{width:16.666666666666664%}
+.col-sm-1{width:8.333333333333332%}
+.col-sm-offset-2{margin-left:16.666666666666664%}
+.control-label{text-align:right}
+}
+@media (min-width:992px){.col-md-10,.col-md-2,.col-md-6{float:left}
+.col-md-10{width:83.33333333333334%}
+.col-md-6{width:50%}
+.col-md-2{width:16.666666666666664%}
+}
+@media (min-width:1200px){.col-lg-5,.col-lg-7{float:left}
+.col-lg-7{width:58.333333333333336%}
+.col-lg-5{width:41.66666666666667%}
+}
+label{display:inline-block;margin-bottom:5px}
+.form-control{height:26px;color:#333}
+.form-control[type=text],.form-control[type=password]{display:block;width:100%;padding:2px 6px;font-size:12px;background-color:#fff;background-image:none;border:1px solid #bababa;border-radius:1px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075);-webkit-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s}
+.form-control:focus{border-color:#66afe9;outline:0;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)}
+.form-control:-moz-placeholder{color:#999;font-style:italic}
+.form-control::-moz-placeholder{color:#999;font-style:italic;opacity:1}
+.form-control:-ms-input-placeholder{color:#999;font-style:italic}
+.form-control::-webkit-input-placeholder{color:#999;font-style:italic}
+.help-block{display:block;margin-top:5px;margin-bottom:10px;color:#737373}
+.control-label{margin-top:0;margin-bottom:0;padding-top:3px}
+.form-group{margin-left:-20px}
+.form-group:after{clear:both;margin-bottom:15px}
+.form-group:after,.form-group:before{content:" ";display:table}
+.btn{display:inline-block;margin-bottom:0;text-align:center;border:1px solid transparent;white-space:nowrap;padding:2px 6px;font-size:12px;border-radius:1px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;-webkit-box-shadow:0 2px 3px rgba(0,0,0,.1);box-shadow:0 2px 3px rgba(0,0,0,.1)}
+.btn:focus{outline:dotted thin;outline:-webkit-focus-ring-color auto 5px;outline-offset:-2px}
+.btn:focus,.btn:hover{color:#4d5258;text-decoration:none}
+.alert-danger,.btn-primary,.login-pf .container .help-block,body{color:#fff}
+.btn:active{outline:0;-webkit-box-shadow:inset 0 2px 8px rgba(0,0,0,.2);box-shadow:inset 0 2px 8px rgba(0,0,0,.2)}
+.btn-lg{padding:6px 10px;font-size:14px;line-height:1.33;border-radius:1px}
+@-ms-viewport{width:device-width}
+.btn-primary{background-color:#189ad1;background-image:-webkit-linear-gradient(top,#1cace8 0,#1998cc 100%);background-image:linear-gradient(to bottom,#1cace8 0,#1998cc 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff1cace8', endColorstr='#ff1998cc', GradientType=0);border-color:#267da1}
+.btn-primary:active,.btn-primary:focus,.btn-primary:hover{background-color:#189ad1;background-image:none;border-color:#267da1;color:#fff}
+.btn-primary:active{background-image:none}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:url(cockpit/static/fonts/OpenSans-Regular-webfont.woff) format('woff')}
+@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;src:url(cockpit/static/fonts/OpenSans-Bold-webfont.woff) format('woff')}
+.form-control:hover{border-color:#7BB2DD}
+.login-pf{height:100%}
+.login-pf #brand{position:relative;top:-70px}
+.login-pf #brand img{display:block;margin:0 auto;max-width:100%}
+@media (min-width:768px){.login-pf #brand img{margin:0;text-align:left}
+}
+.login-pf #badge{display:block;margin:20px auto 70px;position:relative;text-align:center}
+.login-pf .container{background-color:#181818;background-color:rgba(255,255,255,.055);clear:right;padding-bottom:40px;padding-top:20px;width:auto}
+@media (min-width:768px){.login-pf #badge{float:right;margin-right:64px;margin-top:50px}
+.login-pf .container{bottom:13%;padding-left:80px;position:absolute;width:100%}
+}
+.caret,.server-box,.spinner{position:relative}
+.login-pf .container .details p:first-child{border-top:1px solid #474747;padding-top:25px;margin-top:25px}
+@media (min-width:768px){.login-pf .container .login-area{border-right:1px solid #474747}
+.login-pf .container .details{padding-left:40px}
+.login-pf .container .details p:first-child{border-top:0;padding-top:0;margin-top:0}
+}
+.login-pf .container .details p{margin-bottom:2px}
+.login-pf .container .control-label{font-size:13px;font-weight:400;text-align:left}
+.login-pf .container .form-group:last-child,.login-pf .container .form-group:last-child .help-block:last-child{margin-bottom:0}
+@-webkit-keyframes rotation{from{-webkit-transform:rotate(0)}
+to{-webkit-transform:rotate(359deg)}
+}
+@keyframes rotation{from{transform:rotate(0)}
+to{transform:rotate(359deg)}
+}
+.spinner{-webkit-animation:rotation .6s infinite linear;animation:rotation .6s infinite linear;border-bottom:4px solid rgba(0,0,0,.25);border-left:4px solid rgba(0,0,0,.25);border-right:4px solid rgba(0,0,0,.25);border-radius:100%;border-top:4px solid rgba(0,0,0,.75);height:24px;margin:4px 0 0;width:24px}
+.alert{padding:7px 11px;margin-bottom:20px;border:2px solid transparent;border-radius:1px}
+.alert-danger{background:0 0;border-color:#c00;font-weight:700}
+#option-group{margin-left:-20px;margin-right:-20px}
+#server-group:before{clear:both;margin-top:5px}
+.cross,.inline .container .help-block{color:#000}
+.login-fatal{font-size:130%}
+#login-wait-validating div{float:left}
+.conversation-prompt{white-space:normal;word-wrap:break-word}
+.control-label{white-space:nowrap;font-size:13px}
+.spinner{border-color:rgba(255,255,255,.75) rgba(255,255,255,.25) rgba(255,255,255,.25)}
+.inline #badge,.inline #brand,.inline #login-details{display:none}
+.inline body{background:0 0!important;color:#000}
+@media (min-width:768px){.login-button-container{float:right}
+}
+.caret{display:inline-block;top:4px}
+.caret-down{transform:rotate(90deg);-moz-transform:rotate(90deg);-webkit-transform:rotate(90deg);transform-origin:8px 8px;-moz-transform-origin:8px 8px;-webkit-transform-origin:8px 8px}
+.cross{position:absolute;right:25px;top:2px;font-weight:700;font-size:14px;opacity:.7}
+#option-group:hover svg,.cross:hover{opacity:1}
+#option-group div{margin-left:-3px;margin-top:3px;margin-bottom:10px}
+#option-group svg{opacity:.7}
+#authorized-input{width:13px;height:13px;padding:0;vertical-align:bottom;margin:8px 5px 3px 0}
+#login-button{padding:7px}
+#login-button .spinner{display:none}
+#login-button[disabled]{padding:0;background-color:#333;background-image:none;border-color:#555}
+#login-button[disabled] .spinner{display:inline-block}
+#login-button[disabled] #login-button-text{display:none}/*# sourceMappingURL=login.min.css.map */    </style>
+    <link href="cockpit/static/branding.css" type="text/css" rel="stylesheet">
+  </head>
+  <body class="login-pf">
+    <span id="badge">
+    </span>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="brand">
+          </div><!--/#brand-->
+        </div><!--/.col-*-->
+
+        <div id="login" class="col-sm-7 col-md-6 col-lg-5 login-area" style="visibility: hidden;">
+          <div role="form">
+
+            <div id="error-group" class="alert alert-danger" hidden>
+              <span id="login-error-message"></span>
+            </div>
+
+            <div id="conversation-group" class="form-group" hidden>
+              <div class="col-sm-12 col-md-12">
+                <div id="conversation-message"></div>
+                <label id="conversation-prompt" for="conversation-input"></label>
+              </div>
+              <div class="col-sm-12 col-md-12">
+                <input type="password" class="form-control" id="conversation-input" tabindex="1">
+              </div>
+            </div>
+
+            <div id="user-group" class="form-group">
+              <label for="login-user-input" class="col-sm-2 col-md-2 control-label">User name</label>
+              <div class="col-sm-10 col-md-10">
+                <input type="text" class="form-control" id="login-user-input" tabindex="1">
+              </div>
+            </div>
+
+            <div id="password-group" class="form-group">
+              <label for="login-password-input" class="col-sm-2 col-md-2 control-label">Password</label>
+              <div class="col-sm-10 col-md-10">
+                <input type="password" class="form-control" id="login-password-input" tabindex="2">
+              </div>
+              <div class="col-sm-2 col-md-2"></div>
+              <div class="col-sm-10 col-md-10">
+                <label class="control-label">
+                    <input type="checkbox" class="form-control" id="authorized-input">
+                    Reuse my password for privileged tasks
+                </label>
+              </div>
+            </div>
+
+            <div id="option-group">
+              <div class="col-sm-5 col-md-5">
+                <i id="option-caret" class="caret caret-right" aria-hidden="true">
+                    <svg height="16" width="16" viewBox="0 0 16 16">
+                        <polygon fill="#ffffff" points="4,0 4,14 12,7"/>
+                        <polygon>
+                    </svg>
+                </i>
+                <span>Other Options</span>
+              </div>
+            </div>
+
+            <div id="server-group" class="form-group" hidden>
+              <label title="Log in to another system. Leave blank to log in to the local system." for="server-field" class="col-sm-2 col-md-2 control-label">Connect to</label>
+              <div class="col-sm-10 col-md-10 server-box">
+                <input type="text" class="form-control" id="server-field" tabindex="2">
+                <span class="cross" id="server-clear" aria-hidden="true">&#x274c;</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-3 col-sm-3 login-button-container">
+                <button class="btn btn-primary btn-lg col-xs-12" id="login-button" tabindex="3">
+                  <div class="spinner"></div>
+                  <div id="login-button-text">Log In</div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div><!--/.col-*-->
+
+        <div class="col-sm-5 col-md-6 col-lg-7 details" id="login-details">
+          <p>
+            <label class="control-label">Server: <b id="server-name"></b></label>
+          </p>
+          <p id="login-note" class="login-note"></p>
+        </div><!--/.col-*-->
+
+        <div class="col-sm-5 col-md-6 col-lg-7" id="login-wait-validating" hidden>
+          <div class="col-sm-4">
+            <span class="help-block">Validating authentication token</span>
+          </div>
+          <div class="col-sm-1">
+            <div class="spinner col-xs-15">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-12" id="login-fatal" hidden>
+          <span id="login-fatal-message"></span>
+          <a id="login-again" hidden>Try Again</a>
+        </div>
+
+      </div><!--/.row-->
+    </div><!--/.container-->
+  </body>
+</html>
