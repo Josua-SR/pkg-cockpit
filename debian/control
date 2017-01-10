@@ -125,3 +125,10 @@ Depends: ${misc:Depends},
 Description: Cockpit user interface for Docker containers
  The Cockpit components for interacting with Docker and user interface.
  This package is not yet complete.
+
+Package: cockpit-machines
+Architecture: any
+Depends: ${misc:Depends},
+         libvirt-daemon-system
+Description: Cockpit user interface for virtual machines
+ The Cockpit components for managing virtual machines.
