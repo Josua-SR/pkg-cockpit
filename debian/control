@@ -52,6 +52,16 @@ Description: User interface for Linux servers
  Cockpit runs in a browser and can manage your network of GNU/Linux
  machines.
 
+Package: cockpit-bridge
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         glib-networking,
+         policykit-1
+Description: Cockpit bridge server-side component
+ The Cockpit bridge component installed server side and runs commands on
+ the system on behalf of the web based user interface.
+
 Package: cockpit-doc
 Section: doc
 Architecture: all
@@ -61,33 +71,21 @@ Description: Cockpit deployment and developer guide
  Cockpit on their machines as well as helps developers who want to embed
  or extend Cockpit.
 
-Package: cockpit-bridge
-Architecture: any
+Package: cockpit-docker
+Architecture: all
 Depends: ${misc:Depends},
-         ${shlibs:Depends},
-         passwd,
-         policykit-1
-Description: Cockpit bridge server-side component
- The Cockpit bridge component installed server side and runs commands on
- the system on behalf of the web based user interface.
+         docker.io (>= 1.3.0) | docker-engine (>= 1.3.0),
+         cockpit-bridge (>= ${source:Version}),
+         cockpit-bridge (<< ${source:Version}.1~)
+Description: Cockpit user interface for Docker containers
+ The Cockpit components for interacting with Docker and user interface.
 
-Package: cockpit-pcp
-Architecture: any
+Package: cockpit-machines
+Architecture: all
 Depends: ${misc:Depends},
-         ${shlibs:Depends},
-         cockpit-bridge (= ${binary:Version}),
-         pcp
-Description: Cockpit PCP integration
- Cockpit support for reading PCP metrics and loading PCP archives.
-
-Package: cockpit-ws
-Architecture: any
-Depends: ${misc:Depends},
-         ${shlibs:Depends},
-         cockpit-bridge (= ${binary:Version}),
-Description: Cockpit Web Service
- The Cockpit Web Service listens on the network, and authenticates
- users.
+         libvirt-daemon-system
+Description: Cockpit user interface for virtual machines
+ The Cockpit components for managing virtual machines.
 
 Package: cockpit-networkmanager
 Architecture: all
@@ -99,16 +97,23 @@ Description: Cockpit user interface for networking, using NetworkManager
  The Cockpit component for managing networking.  This package uses
  NetworkManager.
 
+Package: cockpit-pcp
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         cockpit-bridge (= ${binary:Version}),
+         pcp
+Description: Cockpit PCP integration
+ Cockpit support for reading PCP metrics and loading PCP archives.
+
 Package: cockpit-storaged
 Architecture: all
 Depends: ${misc:Depends},
-         storaged (>= 2.1.1),
-         storaged-lvm2 (>= 2.1.1),
+         udisks2 | storaged (>= 2.1.1),
          cockpit-bridge (>= ${source:Version}),
          cockpit-bridge (<< ${source:Version}.1~)
-Description: Cockpit user interface for storage, using Storaged
- The Cockpit component for managing storage.  This package uses
- storaged.
+Description: Cockpit user interface for storage
+ The Cockpit components for interacting with storage.
 
 Package: cockpit-system
 Architecture: all
@@ -129,21 +134,13 @@ Package: cockpit-test-assets
 Architecture: all
 Depends: ${misc:Depends},
          openssh-client
-Description: additional files for the Cockpit integration tests
+Description: Additional files for the Cockpit integration tests
 
-Package: cockpit-docker
-Architecture: all
+Package: cockpit-ws
+Architecture: any
 Depends: ${misc:Depends},
-         docker.io (>= 1.3.0),
-         cockpit-bridge (>= ${source:Version}),
-         cockpit-bridge (<< ${source:Version}.1~)
-Description: Cockpit user interface for Docker containers
- The Cockpit components for interacting with Docker and user interface.
- This package is not yet complete.
-
-Package: cockpit-machines
-Architecture: all
-Depends: ${misc:Depends},
-         libvirt-daemon-system
-Description: Cockpit user interface for virtual machines
- The Cockpit components for managing virtual machines.
+         ${shlibs:Depends},
+         glib-networking
+Description: Cockpit Web Service
+ The Cockpit Web Service listens on the network, and authenticates
+ users.
