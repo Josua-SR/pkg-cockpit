@@ -59,7 +59,7 @@
             var old = e.outerHTML;
             var translated = cockpit.gettext(e.getAttribute("context"), $(e).text());
             $(e).removeAttr("translatable").text(translated);
-            tmpl.replace(old, e.outerHTML);
+            tmpl = tmpl.replace(old, e.outerHTML);
         });
         mustache.parse(tmpl);
         return tmpl;
@@ -144,7 +144,8 @@
 
             var machine = self.machines_ins.lookup(address);
             if (machine && machine.host_key && !machine.on_disk) {
-                conn_options['temp-session'] = false;
+                conn_options['temp-session'] = false; /* Compatiblity option */
+                conn_options['session'] = 'shared';
                 conn_options['host-key'] = machine.host_key;
             }
             var client = cockpit.channel(conn_options);
@@ -200,8 +201,9 @@
                 }
             }, data, address_data);
 
-            var text = mustache.render(templates[template], context);
-            self.get_sel(".modal-content").html(text);
+            var output = $(mustache.render(templates[template], context));
+            cockpit.translate(output);
+            self.get_sel(".modal-content").html(output);
         };
 
         self.render_error = function render_error(error) {
@@ -612,16 +614,12 @@
         var self = this;
         var error_options = null;
         var allows_password = false;
-        var available = null;
-        var supported = null;
         var keys = null;
         var machine = dialog.machines_ins.lookup(dialog.address);
 
         self.user = { };
 
         function update_keys() {
-            var loaded_keys = [];
-            var txt;
             var key_div = dialog.get_sel('.keys');
 
             if (key_div) {
@@ -649,6 +647,7 @@
 
             if ($("#login-type").val() != 'stored') {
                 options['password'] = $("#login-custom-password").val();
+                options["session"] = 'shared';
                 if (!user) {
                     /* we don't want to save the default user for everyone
                      * so we pass current user as an option, but make sure the
@@ -656,7 +655,7 @@
                      */
                     if (self.user && self.user.name)
                         options["user"] = self.user.name;
-                    options["temp-session"] = false;
+                    options["temp-session"] = false; /* Compatibility option */
                 }
             }
 

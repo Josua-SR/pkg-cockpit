@@ -1,5 +1,5 @@
 # Generated Makefile data for shell
-# Stamp: Thu Nov 24 2016 16:15:59 GMT+0000 (UTC)
+# Stamp: Mon Jan 09 2017 11:58:41 GMT+0000 (UTC)
 
 shell_INPUTS = \
 	$(srcdir)/pkg/lib/credentials-ssh-private-keys.sh \
@@ -16,6 +16,7 @@ shell_INPUTS = \
 	$(srcdir)/pkg/lib/machine-sync-users.html \
 	$(srcdir)/pkg/lib/machine-unknown-hostkey.html \
 	$(srcdir)/pkg/lib/machines.js \
+	$(srcdir)/pkg/lib/mustache.js \
 	$(srcdir)/pkg/lib/page.css \
 	$(srcdir)/pkg/lib/patterns.js \
 	$(srcdir)/pkg/lib/table.css \
@@ -150,6 +151,8 @@ $(srcdir)/pkg/lib/machine-unknown-hostkey.html:
 
 $(srcdir)/pkg/lib/machines.js:
 
+$(srcdir)/pkg/lib/mustache.js:
+
 $(srcdir)/pkg/lib/page.css:
 
 $(srcdir)/pkg/lib/patterns.js:
@@ -189,3 +192,12 @@ WEBPACK_OUTPUTS += $(shell_OUTPUTS)
 WEBPACK_INSTALL += $(shell_INSTALL)
 WEBPACK_DEBUG += $(shell_DEBUG)
 TESTS += $(shell_TESTS)
+
+shell: dist/Makefile-shell.deps $(shell_OUTPUTS) $(shell_INSTALL)
+	@true
+clean-shell: 
+	rm -rf $(shell_OUTPUTS) $(shell_INSTALL) dist/Makefile-shell.deps
+all-local:: shell
+	@true
+clean-local:: clean-shell
+	@true

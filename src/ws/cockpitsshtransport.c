@@ -394,20 +394,19 @@ cockpit_ssh_transport_start_process (CockpitSshTransport *self,
   CockpitAuthOptions *options = g_new0 (CockpitAuthOptions, 1);
   CockpitSshOptions *ssh_options = g_new0 (CockpitSshOptions, 1);
 
-  const gchar *password;
+  GBytes *password;
   const gchar *gssapi_creds;
   gchar *host_arg = NULL;
 
   self->connecting = TRUE;
 
-  options->supports_conversations = TRUE;
   options->remote_peer = cockpit_creds_get_rhost (self->creds);
   ssh_options->allow_unknown_hosts = TRUE;
   ssh_options->supports_hostkey_prompt = self->prompt_hostkey;
   ssh_options->command = self->command;
   ssh_options->knownhosts_file = self->knownhosts_file;
   ssh_options->ignore_hostkey = self->ignore_hostkey;
-  ssh_options->expected_hostkey = self->expected_hostkey;
+  ssh_options->knownhosts_data = self->expected_hostkey;
 
   password = cockpit_creds_get_password (self->creds);
   gssapi_creds = cockpit_creds_get_gssapi_creds (self->creds);
@@ -422,7 +421,7 @@ cockpit_ssh_transport_start_process (CockpitSshTransport *self,
   else if (password)
     {
       options->auth_type = "password";
-      input = g_bytes_new_static (password, strlen (password));
+      input = g_bytes_ref (password);
       g_debug ("%s: preparing password creds", self->logname);
     }
 

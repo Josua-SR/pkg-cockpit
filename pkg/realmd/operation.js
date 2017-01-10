@@ -92,12 +92,12 @@
 
         var title, label;
         if (mode == 'join') {
-            title = _("page-title", "Join a Domain");
+            title = _("page-title", _("Join a Domain"));
             label = _("Join");
             $(".realms-op-join-only-row").show();
             check("");
         } else {
-            title = _("page-title", "Leave Domain");
+            title = _("page-title", _("Leave Domain"));
             label = _("Leave");
             $(".realms-op-join-only-row").hide();
         }
@@ -205,7 +205,6 @@
 
 
         function update() {
-            var have_one = 0;
             var message;
 
             $(".realms-op-spinner").toggle(!!operation);
@@ -358,7 +357,9 @@
                     call
                         .fail(function(ex) {
                             busy(null);
-                            if (ex.name != "com.redhat.Cockpit.Error.Cancelled") {
+                            if (ex.name == "org.freedesktop.realmd.Error.Cancelled") {
+                                $(dialog).modal("hide");
+                            } else {
                                 console.log("Failed to join domain: " + realm.Name + ": " + ex);
                                 $(".realms-op-error").empty().text(ex + " ").show();
                                 if (diagnostics) {
@@ -385,7 +386,7 @@
 
         function cancel() {
             if (operation) {
-                realmd.call(SERVICE, MANAGER, "Cancel", [ operation ]);
+                realmd.call(MANAGER, SERVICE, "Cancel", [ operation ]);
                 busy(null);
                 return true;
             }
@@ -473,6 +474,7 @@
                 .attr("id", "realms-op")
                 .appendTo("body")
                 .modal('show');
+            cockpit.translate();
         });
 
         element.close = function close() {

@@ -31,8 +31,6 @@
 #include "common/cockpitpipe.h"
 #include "common/cockpitpipetransport.h"
 
-#include <libssh/libssh.h>
-
 #include <sys/wait.h>
 #include <errno.h>
 #include <stdlib.h>
@@ -61,7 +59,6 @@ typedef struct {
   /* setup_mock_sshd */
   GPid mock_sshd;
   guint16 ssh_port;
-  int old_log_level;
 } TestCase;
 
 
@@ -87,7 +84,6 @@ typedef struct {
     gboolean no_password;
     gboolean ignore_key;
     gboolean prompt_hostkey;
-    int ssh_log_level;
 
     const TestAuthResponse *responses;
     int responses_size;
@@ -220,6 +216,7 @@ setup_transport (TestCase *tc,
   gchar *expect_knownhosts = NULL;
   gboolean ignore_key = FALSE;
   gboolean prompt_hostkey = FALSE;
+  GBytes *bytes;
 
   /* First time around */
   if (old_process_timeout == 0)
@@ -242,7 +239,13 @@ setup_transport (TestCase *tc,
   else
     password = fixture->client_password ? fixture->client_password : PASSWORD;
 
-  creds = cockpit_creds_new (g_get_user_name (), "cockpit", COCKPIT_CRED_PASSWORD, password, NULL);
+  if (password)
+    bytes = g_bytes_new_take (g_strdup (password), strlen (password));
+  else
+    bytes = NULL;
+
+  creds = cockpit_creds_new (g_get_user_name (), "cockpit", COCKPIT_CRED_PASSWORD, bytes, NULL);
+  g_bytes_unref (bytes);
 
   known_hosts = fixture->known_hosts;
   if (!known_hosts)
@@ -258,7 +261,13 @@ setup_transport (TestCase *tc,
     command = fixture_cat.ssh_command;
 
   if (fixture->expect_key)
-    expect_knownhosts = g_strdup_printf ("[127.0.0.1]:%d %s", (int)tc->ssh_port, fixture->expect_key);
+    {
+      if (fixture->expect_key[0] == '\0')
+        expect_knownhosts = g_strdup ("");
+      else
+        expect_knownhosts = g_strdup_printf ("[127.0.0.1]:%d %s", (int)tc->ssh_port, fixture->expect_key);
+
+    }
   ignore_key = fixture->ignore_key;
   prompt_hostkey = fixture->prompt_hostkey;
 
@@ -316,6 +325,8 @@ on_recv_get_payload (CockpitTransport *transport,
                      gpointer user_data)
 {
   GBytes **received = user_data;
+  if (channel == NULL)
+    return FALSE;
   g_assert_cmpstr (channel, ==, "546");
   g_assert (*received == NULL);
   *received = g_bytes_ref (message);
@@ -330,6 +341,9 @@ on_recv_multiple (CockpitTransport *transport,
 {
   gint *state = user_data;
   GBytes *check;
+
+  if (channel == NULL)
+    return FALSE;
 
   g_assert_cmpstr (channel, ==, "9");
 
@@ -961,8 +975,12 @@ test_cannot_connect (void)
   CockpitTransport *transport;
   CockpitCreds *creds;
   gchar *problem = NULL;
+  GBytes *password;
 
-  creds = cockpit_creds_new ("user", "cockpit", COCKPIT_CRED_PASSWORD, "unused password", NULL);
+  password = g_bytes_new_take (g_strdup ("unused password"), 15);
+  creds = cockpit_creds_new ("user", "cockpit", COCKPIT_CRED_PASSWORD, password, NULL);
+  g_bytes_unref (password);
+
   transport = cockpit_ssh_transport_new ("localhost", 65533, creds);
   g_signal_connect (transport, "closed", G_CALLBACK (on_closed_get_problem), &problem);
 

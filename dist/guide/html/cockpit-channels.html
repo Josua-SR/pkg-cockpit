@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>cockpit.js: Raw Channels</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="Cockpit Guide">
 <link rel="up" href="api-base1.html" title="API: base1">
 <link rel="prev" href="cockpit-series-data.html" title="cockpit.js: Series Data">
@@ -129,6 +129,18 @@ channel.control(options)
       options field. To indicate that no further messages will be sent through the channel.</p>
 </div>
 <div class="refsection">
+<a name="cockpit-channels-wait"></a><h2>channel.wait()</h2>
+<pre class="programlisting">
+promise = channel.wait([callback])
+</pre>
+<p>Returns a <code class="code">promise</code> that is ready when the channel is ready, or fails if the
+      client closes. If a <code class="code">callback</code> is specified, it is attached to the promise. The
+      promise will be rejected or resolved with the contents <code class="code">options</code> passed to the
+      <a class="link" href="cockpit-channels.html#cockpit-channels-onready" title="channel.onready">channel.onready</a> and
+      <a class="link" href="cockpit-channels.html#cockpit-channels-close-ev" title="channel.onclose">channel.onclose</a> events respectively.</p>
+<p>In general it's not necessary to wait for the channel before starting to use the channel.</p>
+</div>
+<div class="refsection">
 <a name="cockpit-channels-close"></a><h2>channel.close()</h2>
 <pre class="programlisting">
 channel.close([options])
@@ -165,6 +177,16 @@ channel.addEventListener("control", function(event, options) { ... })
       <code class="code">"done"</code> then no further messages will be received in the channel.
       The exact form of these messages depend on the <code class="code">"payload"</code> of the
       channel.</p>
+</div>
+<div class="refsection">
+<a name="cockpit-channels-onready"></a><h2>channel.onready</h2>
+<pre class="programlisting">
+$(channel).on("ready", function(event, options) { ... })
+channel.addEventListener("ready", function(event, options) { ... })
+</pre>
+<p>An event triggered when the other end of the channel is ready to start processing
+      messages. This indicates the channel is completely open. It is possible to start
+      sending messages on the channel before this point.</p>
 </div>
 <div class="refsection">
 <a name="cockpit-channels-close-ev"></a><h2>channel.onclose</h2>
@@ -222,6 +244,7 @@ cockpit.transport.wait(callback)
       This will start the initialization if not already in progress or completed. If the
       channel transport is already initialized, then <code class="code">callback</code> will be called
       immediately.</p>
+<p>In general it's not necessary to wait for the transport before starting to open channels.</p>
 </div>
 <div class="refsection">
 <a name="cockpit-transport-close"></a><h2>cockpit.transport.close()</h2>
@@ -235,28 +258,32 @@ cockpit.transport.close([problem])
 <div class="refsection">
 <a name="cockpit-transport-filter"></a><h2>cockpit.transport.filter()</h2>
 <pre class="programlisting">
-cockpit.transport.filter(function(message, channel, control) { ... })
+cockpit.transport.filter(function(message, channelid, control) { ... }, [out])
 </pre>
 <p>Add a filter to the underlying channel transport. All incoming messages will be
-      passed to each of the filter callbacks that are registered.</p>
+      passed to each of the filter callbacks that are registered. If the <code class="code">out</code>
+      argument is equal to <code class="code">true</code> then the filter will receive outgoing messages
+      that being sent on the underlying channel transport.</p>
 <p>This function is rarely used.</p>
 <p>Filter callbacks are called in the order they are registered. If a filter
       callback returns <code class="code">false</code> then the message will not be dispatched
       further, whether to other filters, or to channels, etc.</p>
 <p>The <code class="code">message</code> is the string or array with the raw message including,
-      the framing. If <code class="code">channel</code> is set to a string this is a payload
-      message in the specified channel. If <code class="code">control</code> is set then this is
-      a control message, and the <code class="code">control</code> argument contains the parsed
-      JSON object of the control message.</p>
+      the framing. The <code class="code">channelid</code> is the channel identifier or an empty string
+      for control messages. If <code class="code">control</code> is set then this is a control message,d
+      and the <code class="code">control</code> argument contains the parsed JSON object of the
+      control message.</p>
 </div>
 <div class="refsection">
 <a name="cockpit-transport-inject"></a><h2>cockpit.transport.inject()</h2>
 <pre class="programlisting">
-cockpit.transport.inject(message)
+cockpit.transport.inject(message, [out])
 </pre>
 <p>Inject a message into the underlying channel transport. The <code class="code">message</code>
       should be a <code class="code">string</code> or an array of bytes, and should be valid
-      according to the Cockpit message protocol.</p>
+      according to the Cockpit message protocol. If the <code class="code">out</code> argument is equal
+      to <code class="code">false</code> then the message will be injected as an incoming message as if
+      it was received on the underlying channel transport.</p>
 <p>This function is rarely used. In general you should only <code class="code">inject()</code>
       messages you got from a <code class="code"><a class="link" href="cockpit-channels.html#cockpit-transport-filter" title="cockpit.transport.filter()">filter()</a></code>.</p>
 </div>

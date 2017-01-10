@@ -1,5 +1,5 @@
 # Generated Makefile data for systemd
-# Stamp: Thu Nov 24 2016 16:15:59 GMT+0000 (UTC)
+# Stamp: Mon Jan 09 2017 11:58:41 GMT+0000 (UTC)
 
 systemd_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-terminal.jsx \
@@ -9,6 +9,7 @@ systemd_INPUTS = \
 	$(srcdir)/pkg/lib/journal_day_header.mustache \
 	$(srcdir)/pkg/lib/journal_line.mustache \
 	$(srcdir)/pkg/lib/journal_reboot.mustache \
+	$(srcdir)/pkg/lib/mustache.js \
 	$(srcdir)/pkg/lib/page.css \
 	$(srcdir)/pkg/lib/patterns.js \
 	$(srcdir)/pkg/lib/plot.css \
@@ -128,6 +129,8 @@ $(srcdir)/pkg/lib/journal_line.mustache:
 
 $(srcdir)/pkg/lib/journal_reboot.mustache:
 
+$(srcdir)/pkg/lib/mustache.js:
+
 $(srcdir)/pkg/lib/page.css:
 
 $(srcdir)/pkg/lib/patterns.js:
@@ -173,3 +176,12 @@ WEBPACK_OUTPUTS += $(systemd_OUTPUTS)
 WEBPACK_INSTALL += $(systemd_INSTALL)
 WEBPACK_DEBUG += $(systemd_DEBUG)
 TESTS += $(systemd_TESTS)
+
+systemd: dist/Makefile-systemd.deps $(systemd_OUTPUTS) $(systemd_INSTALL)
+	@true
+clean-systemd: 
+	rm -rf $(systemd_OUTPUTS) $(systemd_INSTALL) dist/Makefile-systemd.deps
+all-local:: systemd
+	@true
+clean-local:: clean-systemd
+	@true

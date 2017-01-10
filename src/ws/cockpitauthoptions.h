@@ -28,7 +28,6 @@ G_BEGIN_DECLS
 
 typedef struct {
   const gchar *remote_peer;
-  gboolean supports_conversations;
   const gchar *auth_type;
 } CockpitAuthOptions;
 
@@ -38,7 +37,7 @@ gchar **             cockpit_auth_options_to_env    (CockpitAuthOptions *options
                                                      gchar **env);
 
 typedef struct {
-  const gchar *expected_hostkey;
+  const gchar *knownhosts_data;
   const gchar *knownhosts_file;
   const gchar *command;
   const gchar *krb5_ccache_name;

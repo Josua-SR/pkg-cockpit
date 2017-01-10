@@ -1,5 +1,5 @@
 # Generated Makefile data for dashboard
-# Stamp: Thu Nov 24 2016 16:15:59 GMT+0000 (UTC)
+# Stamp: Mon Jan 09 2017 11:58:41 GMT+0000 (UTC)
 
 dashboard_INPUTS = \
 	$(srcdir)/pkg/dashboard/image-editor.js \
@@ -20,6 +20,7 @@ dashboard_INPUTS = \
 	$(srcdir)/pkg/lib/machine-sync-users.html \
 	$(srcdir)/pkg/lib/machine-unknown-hostkey.html \
 	$(srcdir)/pkg/lib/machines.js \
+	$(srcdir)/pkg/lib/mustache.js \
 	$(srcdir)/pkg/lib/patterns.js \
 	$(srcdir)/pkg/lib/plot.js \
 	$(NULL)
@@ -99,6 +100,8 @@ $(srcdir)/pkg/lib/machine-unknown-hostkey.html:
 
 $(srcdir)/pkg/lib/machines.js:
 
+$(srcdir)/pkg/lib/mustache.js:
+
 $(srcdir)/pkg/lib/patterns.js:
 
 $(srcdir)/pkg/lib/plot.js:
@@ -108,3 +111,12 @@ WEBPACK_OUTPUTS += $(dashboard_OUTPUTS)
 WEBPACK_INSTALL += $(dashboard_INSTALL)
 WEBPACK_DEBUG += $(dashboard_DEBUG)
 TESTS += $(dashboard_TESTS)
+
+dashboard: dist/Makefile-dashboard.deps $(dashboard_OUTPUTS) $(dashboard_INSTALL)
+	@true
+clean-dashboard: 
+	rm -rf $(dashboard_OUTPUTS) $(dashboard_INSTALL) dist/Makefile-dashboard.deps
+all-local:: dashboard
+	@true
+clean-local:: clean-dashboard
+	@true

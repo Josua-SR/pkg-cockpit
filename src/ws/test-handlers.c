@@ -56,6 +56,7 @@ typedef struct {
   GByteArray *buffer;
   gchar *scratch;
   gchar **roots;
+  gchar *login_html;
 } Test;
 
 static void
@@ -83,12 +84,11 @@ on_web_response_done_set_flag (CockpitWebResponse *response,
 static void
 base_setup (Test *test)
 {
-  const gchar *roots[] = { SRCDIR "/src/ws", NULL };
   const gchar *static_roots[] = { SRCDIR "/src/ws", SRCDIR "/src/branding/default", NULL };
   GError *error = NULL;
   const gchar *user;
 
-  test->server = cockpit_web_server_new (NULL, 0, NULL, roots, NULL, &error);
+  test->server = cockpit_web_server_new (NULL, 0, NULL, NULL, &error);
   g_assert_no_error (error);
 
   /* Other test->data fields are fine NULL */
@@ -96,10 +96,12 @@ base_setup (Test *test)
 
   user = g_get_user_name ();
   test->auth = mock_auth_new (user, PASSWORD);
-  test->roots = cockpit_web_server_resolve_roots (static_roots);
+  test->roots = cockpit_web_response_resolve_roots (static_roots);
+  test->login_html = g_strdup(SRCDIR "/src/ws/login.html");
 
   test->data.auth = test->auth;
-  test->data.static_roots = (const gchar **)test->roots;
+  test->data.branding_roots = (const gchar **)test->roots;
+  test->data.login_html = (const gchar *)test->login_html;
 
   test->headers = cockpit_web_server_new_table ();
 
@@ -130,6 +132,7 @@ teardown (Test *test,
   g_clear_object (&test->output);
   g_clear_object (&test->input);
   g_clear_object (&test->io);
+  g_free (test->login_html);
   g_hash_table_destroy (test->headers);
   g_free (test->scratch);
   g_object_unref (test->response);
@@ -193,11 +196,11 @@ test_login_with_cookie (Test *test,
   user = g_get_user_name ();
   headers = mock_auth_basic_header (user, PASSWORD);
 
-  cockpit_auth_login_async (test->auth, path, headers, NULL, on_ready_get_result, &result);
+  cockpit_auth_login_async (test->auth, path, NULL, headers, on_ready_get_result, &result);
   g_hash_table_unref (headers);
   while (result == NULL)
     g_main_context_iteration (NULL, TRUE);
-  response = cockpit_auth_login_finish (test->auth, result, 0, test->headers, &error);
+  response = cockpit_auth_login_finish (test->auth, result, NULL, test->headers, &error);
   g_object_unref (result);
 
   g_assert_no_error (error);
@@ -324,7 +327,7 @@ test_login_accept (Test *test,
   g_assert (service != NULL);
   creds = cockpit_web_service_get_creds (service);
   g_assert_cmpstr (cockpit_creds_get_user (creds), ==, user);
-  g_assert_cmpstr (cockpit_creds_get_password (creds), ==, PASSWORD);
+  g_assert_cmpstr (g_bytes_get_data (cockpit_creds_get_password (creds), NULL), ==, PASSWORD);
 
   token = cockpit_creds_get_csrf_token (creds);
   g_assert (strstr (output, token));
@@ -410,11 +413,11 @@ setup_default (Test *test,
       user = g_get_user_name ();
       headers = mock_auth_basic_header (user, PASSWORD);
 
-      cockpit_auth_login_async (test->auth, fixture->auth, headers, NULL, on_ready_get_result, &result);
+      cockpit_auth_login_async (test->auth, fixture->auth, NULL, headers, on_ready_get_result, &result);
       g_hash_table_unref (headers);
       while (result == NULL)
         g_main_context_iteration (NULL, TRUE);
-      response = cockpit_auth_login_finish (test->auth, result, 0, test->headers, &error);
+      response = cockpit_auth_login_finish (test->auth, result, NULL, test->headers, &error);
       g_object_unref (result);
 
       g_assert_no_error (error);
@@ -540,7 +543,7 @@ static const DefaultFixture fixture_shell_path_login = {
   .expect = "HTTP/1.1 200*"
       "<html>*"
       "<base href=\"/path/\">*"
-      "show_login()*"
+      "login-button*"
 };
 
 static const DefaultFixture fixture_shell_index = {
@@ -618,7 +621,7 @@ static const DefaultFixture fixture_shell_login = {
   .expect = "HTTP/1.1 200*"
       "<html>*"
       "<base href=\"/\">*"
-      "show_login()*"
+      "login-button*"
 };
 
 static const DefaultFixture fixture_resource_short = {
@@ -670,21 +673,37 @@ static const DefaultFixture fixture_resource_login = {
   .auth = NULL,
   .expect = "HTTP/1.1 200*"
     "<html>*"
-    "show_login()*"
+    "login-button*"
 };
 
 static const DefaultFixture fixture_static_simple = {
   .path = "/cockpit/static/branding.css",
-  .auth = NULL,
+  .auth = "/cockpit",
   .expect = "HTTP/1.1 200*"
+    "Cache-Control: max-age=31556926, public*"
     "#badge*"
     "url(\"logo.png\");*"
+};
+
+static const DefaultFixture fixture_host_static = {
+  .path = "/cockpit+=host/static/branding.css",
+  .auth = "/cockpit+=host",
+  .expect = "HTTP/1.1 200*"
+    "Cache-Control: max-age=86400, private*"
+    "#badge*"
+    "url(\"logo.png\");*"
+};
+
+static const DefaultFixture fixture_host_static_no_auth = {
+  .path = "/cockpit+=host/static/branding.css",
+  .expect = "HTTP/1.1 403*"
 };
 
 static const DefaultFixture fixture_static_application = {
   .path = "/cockpit+application/static/branding.css",
   .auth = NULL,
   .expect = "HTTP/1.1 200*"
+    "Cache-Control: max-age=31556926, public*"
     "#badge*"
     "url(\"logo.png\");*"
 };
@@ -876,6 +895,10 @@ main (int argc,
               setup_default, test_default, teardown_default);
 
   g_test_add ("/handlers/static/simple", Test, &fixture_static_simple,
+              setup_default, test_default, teardown_default);
+  g_test_add ("/handlers/static/host-static", Test, &fixture_host_static,
+              setup_default, test_default, teardown_default);
+  g_test_add ("/handlers/static/host-static-no-auth", Test, &fixture_host_static_no_auth,
               setup_default, test_default, teardown_default);
   g_test_add ("/handlers/static/application", Test, &fixture_static_application,
               setup_default, test_default, teardown_default);

@@ -5,8 +5,6 @@ noinst_LIBRARIES += \
 	$(NULL)
 
 libcockpit_stub_a_SOURCES = \
-	src/bridge/cockpitbridge.c \
-	src/bridge/cockpitbridge.h \
 	src/bridge/cockpitchannel.c \
 	src/bridge/cockpitchannel.h \
 	src/bridge/cockpitconnect.c \
@@ -17,9 +15,11 @@ libcockpit_stub_a_SOURCES = \
 	src/bridge/cockpitdbusinternal.c \
 	src/bridge/cockpitdbusjson.c \
 	src/bridge/cockpitdbusjson.h \
+	src/bridge/cockpitdbusprocess.c \
+	src/bridge/cockpitdbusmeta.c \
+	src/bridge/cockpitdbusmeta.h \
 	src/bridge/cockpitdbusrules.c \
 	src/bridge/cockpitdbusrules.h \
-	src/bridge/cockpitdbusenvironment.c \
 	src/bridge/cockpitechochannel.c \
 	src/bridge/cockpitechochannel.h \
 	src/bridge/cockpithttpstream.c \
@@ -32,6 +32,8 @@ libcockpit_stub_a_SOURCES = \
 	src/bridge/cockpitpaths.h \
 	src/bridge/cockpitnullchannel.c \
 	src/bridge/cockpitnullchannel.h \
+	src/bridge/cockpitrouter.c \
+	src/bridge/cockpitrouter.h \
 	src/bridge/cockpitstream.c \
 	src/bridge/cockpitstream.h \
 	src/bridge/cockpitwebsocketstream.c \
@@ -154,6 +156,7 @@ BRIDGE_CHECKS = \
 	test-portal \
 	test-pipe-channel \
 	test-packages \
+	test-dbus-meta \
 	test-fs \
 	test-metrics \
 	test-connect \
@@ -161,7 +164,7 @@ BRIDGE_CHECKS = \
 	test-httpstream \
 	test-setup \
 	test-websocketstream \
-	test-environment \
+	test-process \
 	test-bridge \
 	$(NULL)
 
@@ -185,6 +188,10 @@ test_channel_LDADD = $(libcockpit_bridge_LIBS)
 test_connect_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
 test_connect_SOURCES = src/bridge/test-connect.c
 test_connect_LDADD = $(libcockpit_bridge_LIBS)
+
+test_dbus_meta_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
+test_dbus_meta_SOURCES = src/bridge/test-dbus-meta.c
+test_dbus_meta_LDADD = $(libcockpit_bridge_LIBS)
 
 test_packages_SOURCES = src/bridge/test-packages.c \
 	src/bridge/mock-transport.c src/bridge/mock-transport.h
@@ -213,9 +220,9 @@ test_stream_SOURCES = src/bridge/test-stream.c \
 	src/common/mock-io-stream.c src/common/mock-io-stream.h
 test_stream_LDADD = $(libcockpit_bridge_LIBS)
 
-test_environment_SOURCES = src/bridge/test-environment.c
-test_environment_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
-test_environment_LDADD = $(libcockpit_bridge_LIBS)
+test_process_SOURCES = src/bridge/test-process.c
+test_process_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
+test_process_LDADD = $(libcockpit_bridge_LIBS)
 
 test_pipe_channel_SOURCES = \
 	src/bridge/test-pipe-channel.c \
@@ -271,8 +278,6 @@ libexec_PROGRAMS += cockpit-pcp
 noinst_LIBRARIES += libcockpit-pcp.a
 
 libcockpit_pcp_a_SOURCES = \
-	src/bridge/cockpitbridge.c \
-	src/bridge/cockpitbridge.h \
 	src/bridge/cockpitchannel.c \
 	src/bridge/cockpitchannel.h \
 	src/bridge/cockpitconnect.c \
@@ -281,6 +286,8 @@ libcockpit_pcp_a_SOURCES = \
 	src/bridge/cockpitmetrics.h \
 	src/bridge/cockpitpcpmetrics.c \
 	src/bridge/cockpitpcpmetrics.h \
+	src/bridge/cockpitrouter.c \
+	src/bridge/cockpitrouter.h \
 	$(NULL)
 
 libcockpit_pcp_a_CFLAGS = \

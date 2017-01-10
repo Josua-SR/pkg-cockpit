@@ -1,5 +1,5 @@
 # Generated Makefile data for realmd
-# Stamp: Thu Nov 24 2016 16:15:59 GMT+0000 (UTC)
+# Stamp: Mon Jan 09 2017 11:58:41 GMT+0000 (UTC)
 
 realmd_INPUTS = \
 	$(srcdir)/pkg/lib/patterns.js \
@@ -48,3 +48,12 @@ WEBPACK_OUTPUTS += $(realmd_OUTPUTS)
 WEBPACK_INSTALL += $(realmd_INSTALL)
 WEBPACK_DEBUG += $(realmd_DEBUG)
 TESTS += $(realmd_TESTS)
+
+realmd: dist/Makefile-realmd.deps $(realmd_OUTPUTS) $(realmd_INSTALL)
+	@true
+clean-realmd: 
+	rm -rf $(realmd_OUTPUTS) $(realmd_INSTALL) dist/Makefile-realmd.deps
+all-local:: realmd
+	@true
+clean-local:: clean-realmd
+	@true

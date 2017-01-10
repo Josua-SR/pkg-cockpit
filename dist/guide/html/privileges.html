@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Privileges and Permissions</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="Cockpit Guide">
 <link rel="up" href="guide.html" title="Part I. Deployment Guide">
 <link rel="prev" href="sso.html" title="Single Sign On">
@@ -28,8 +28,12 @@
     using <a class="ulink" href="http://www.freedesktop.org/wiki/Software/polkit/" target="_top">Policy Kit</a>
     or <a class="ulink" href="http://www.sudo.ws/" target="_top">sudo</a>. If the user is able to escalate
     privileges from the command line, then Cockpit will use that same capability to
-    perform certain privileged tasks. Cockpit can use the user's login password internally to
-    escalate privileges unless the user has chosen to prevent that from happening.</p>
+    perform certain privileged tasks.</p>
+<p>Cockpit can use the user's login password internally to escalate privileges
+    in these situations. By selecting the
+    <span class="emphasis"><em>Reuse my password for privileged tasks</em></span> option on the login screen
+    the login password will be cached internally and passed to <span class="emphasis"><em>Policy Kit</em></span>
+    when requested in order to escalate privileges.</p>
 <p>To test out whether Cockpit can escalate privileges, you can run these commands
     from a the <a class="link" href="feature-terminal.html" title="Terminal">terminal built into Cockpit</a>.</p>
 <pre class="programlisting">
@@ -41,8 +45,7 @@ $ pkexec cockpit-bridge
 <p>If either of these commands succeed without prompting for a password,
     Cockpit will be able to start a privileged copy of the
     <code class="filename">cockpit-bridge</code> and use it to perform privileged tasks
-    when necessary. When running these commands from the terminal built into Cockpit
-    neither should prompt for a password.</p>
+    when necessary.</p>
 <p>Usually a user needs to be in the <code class="code">wheel</code> Unix user group for the
     user to be able to escalate privileges in this way. However both Policy Kit and
     sudo may be configured to use other criteria.</p>
