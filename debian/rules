@@ -26,3 +26,5 @@ override_dh_systemd_start:
 override_dh_install:
 	dh_install --list-missing -Xusr/src/debug
 
+override_dh_fixperms:
+	dh_fixperms -Xcockpit-session -Xcockpit-polkit
