@@ -8,7 +8,7 @@
 - double-check package dependencies
 - package storaged
   https://github.com/cockpit-project/storaged
-- /var/lib/cockpit
+- /var/lib/cockpit might need a different group (unclear what it is being used for)
 - run cockpit-ws unpriviliged under cockpit-ws user
 - generate proper upstream changelog from
   https://github.com/cockpit-project/cockpit/releases
