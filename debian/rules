@@ -2,26 +2,31 @@
 
 DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
+# only build cockpit-pcp if pcp is available
+ifneq ($(shell dpkg -s libpcp3-dev >/dev/null 2>&1 && echo yes),yes)
+	export DH_OPTIONS = -Ncockpit-pcp
+	CONFIG_OPTIONS = --disable-pcp
+endif
+
 %:
 	dh $@ --with=systemd
 
 override_dh_auto_configure:
-	# Hack! as long as we do not have the tools to rebuild the js bundles, ensure they are not rebuilt
-	touch `find * -name bundle.min.js` pkg/kubernetes/kubernetes.min.js
 	dh_auto_configure -- \
+		--with-networkmanager-needs-root=yes \
 		--with-pamdir=/lib/$(DEB_HOST_MULTIARCH)/security \
-		--libexecdir=/usr/lib/cockpit
+		--libexecdir=/usr/lib/cockpit $(CONFIG_OPTIONS)
 
 override_dh_auto_install:
 	dh_auto_install -- install-test-assets
-	install -D -p -m 644 tools/cockpit.debian.pam debian/tmp/etc/pam.d/cockpit
+	mkdir -p debian/tmp/etc/pam.d
+	install -p -m 644 tools/cockpit.debian.pam debian/tmp/etc/pam.d/cockpit
 
 override_dh_systemd_enable:
 	dh_systemd_enable -p cockpit-ws --name=cockpit cockpit.socket
 
 override_dh_systemd_start:
 	dh_systemd_start -p cockpit-ws cockpit.socket
-	dh_systemd_start -p cockpit-ws --no-start --restart-after-upgrade cockpit.service
 
 override_dh_install:
 	dh_install --list-missing -Xusr/src/debug
