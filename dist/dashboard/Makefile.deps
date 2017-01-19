@@ -1,5 +1,5 @@
 # Generated Makefile data for dashboard
-# Stamp: Mon Jan 09 2017 11:58:41 GMT+0000 (UTC)
+# Stamp: Wed Jan 18 2017 13:53:56 GMT+0000 (UTC)
 
 dashboard_INPUTS = \
 	$(srcdir)/pkg/dashboard/image-editor.js \
@@ -49,20 +49,20 @@ dashboard_DEBUG = \
 dashboard_TESTS = \
 	$(NULL)
 
-dist/Makefile-dashboard.deps: $(WEBPACK_CONFIG) $(dashboard_INPUTS)
-	$(WEBPACK_RULE) -d dist/Makefile-dashboard.deps $(WEBPACK_CONFIG)
+dist/dashboard/Makefile.deps: $(WEBPACK_CONFIG) $(dashboard_INPUTS)
+	$(WEBPACK_RULE) -d dist/dashboard/Makefile.deps $(WEBPACK_CONFIG)
 
-dist/dashboard/dashboard.css: dist/Makefile-dashboard.deps
+dist/dashboard/dashboard.css: dist/dashboard/Makefile.deps
 
-dist/dashboard/dashboard.css.map: dist/Makefile-dashboard.deps
+dist/dashboard/dashboard.css.map: dist/dashboard/Makefile.deps
 
-dist/dashboard/dashboard.min.js: dist/Makefile-dashboard.deps
+dist/dashboard/dashboard.min.js: dist/dashboard/Makefile.deps
 
-dist/dashboard/dashboard.min.js.map: dist/Makefile-dashboard.deps
+dist/dashboard/dashboard.min.js.map: dist/dashboard/Makefile.deps
 
-dist/dashboard/index.html: dist/Makefile-dashboard.deps
+dist/dashboard/index.html: dist/dashboard/Makefile.deps
 
-dist/dashboard/manifest.json: dist/Makefile-dashboard.deps
+dist/dashboard/manifest.json: dist/dashboard/Makefile.deps
 
 $(srcdir)/pkg/dashboard/image-editor.js:
 
@@ -112,10 +112,10 @@ WEBPACK_INSTALL += $(dashboard_INSTALL)
 WEBPACK_DEBUG += $(dashboard_DEBUG)
 TESTS += $(dashboard_TESTS)
 
-dashboard: dist/Makefile-dashboard.deps $(dashboard_OUTPUTS) $(dashboard_INSTALL)
+dashboard: dist/dashboard/Makefile.deps $(dashboard_OUTPUTS) $(dashboard_INSTALL)
 	@true
 clean-dashboard: 
-	rm -rf $(dashboard_OUTPUTS) $(dashboard_INSTALL) dist/Makefile-dashboard.deps
+	rm -rf $(dashboard_OUTPUTS) $(dashboard_INSTALL) dist/dashboard/Makefile.deps
 all-local:: dashboard
 	@true
 clean-local:: clean-dashboard

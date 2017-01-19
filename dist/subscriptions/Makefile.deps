@@ -1,5 +1,5 @@
 # Generated Makefile data for subscriptions
-# Stamp: Mon Jan 09 2017 11:58:41 GMT+0000 (UTC)
+# Stamp: Wed Jan 18 2017 13:53:56 GMT+0000 (UTC)
 
 subscriptions_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \
@@ -41,20 +41,20 @@ subscriptions_DEBUG = \
 subscriptions_TESTS = \
 	$(NULL)
 
-dist/Makefile-subscriptions.deps: $(WEBPACK_CONFIG) $(subscriptions_INPUTS)
-	$(WEBPACK_RULE) -d dist/Makefile-subscriptions.deps $(WEBPACK_CONFIG)
+dist/subscriptions/Makefile.deps: $(WEBPACK_CONFIG) $(subscriptions_INPUTS)
+	$(WEBPACK_RULE) -d dist/subscriptions/Makefile.deps $(WEBPACK_CONFIG)
 
-dist/subscriptions/index.html: dist/Makefile-subscriptions.deps
+dist/subscriptions/index.html: dist/subscriptions/Makefile.deps
 
-dist/subscriptions/manifest.json: dist/Makefile-subscriptions.deps
+dist/subscriptions/manifest.json: dist/subscriptions/Makefile.deps
 
-dist/subscriptions/subscriptions.css: dist/Makefile-subscriptions.deps
+dist/subscriptions/subscriptions.css: dist/subscriptions/Makefile.deps
 
-dist/subscriptions/subscriptions.css.map: dist/Makefile-subscriptions.deps
+dist/subscriptions/subscriptions.css.map: dist/subscriptions/Makefile.deps
 
-dist/subscriptions/subscriptions.min.js: dist/Makefile-subscriptions.deps
+dist/subscriptions/subscriptions.min.js: dist/subscriptions/Makefile.deps
 
-dist/subscriptions/subscriptions.min.js.map: dist/Makefile-subscriptions.deps
+dist/subscriptions/subscriptions.min.js.map: dist/subscriptions/Makefile.deps
 
 $(srcdir)/pkg/lib/cockpit-components-dialog.jsx:
 
@@ -88,10 +88,10 @@ WEBPACK_INSTALL += $(subscriptions_INSTALL)
 WEBPACK_DEBUG += $(subscriptions_DEBUG)
 TESTS += $(subscriptions_TESTS)
 
-subscriptions: dist/Makefile-subscriptions.deps $(subscriptions_OUTPUTS) $(subscriptions_INSTALL)
+subscriptions: dist/subscriptions/Makefile.deps $(subscriptions_OUTPUTS) $(subscriptions_INSTALL)
 	@true
 clean-subscriptions: 
-	rm -rf $(subscriptions_OUTPUTS) $(subscriptions_INSTALL) dist/Makefile-subscriptions.deps
+	rm -rf $(subscriptions_OUTPUTS) $(subscriptions_INSTALL) dist/subscriptions/Makefile.deps
 all-local:: subscriptions
 	@true
 clean-local:: clean-subscriptions

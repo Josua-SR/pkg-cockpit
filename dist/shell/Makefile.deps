@@ -1,5 +1,5 @@
 # Generated Makefile data for shell
-# Stamp: Mon Jan 09 2017 11:58:41 GMT+0000 (UTC)
+# Stamp: Wed Jan 18 2017 13:53:56 GMT+0000 (UTC)
 
 shell_INPUTS = \
 	$(srcdir)/pkg/lib/credentials-ssh-private-keys.sh \
@@ -84,44 +84,44 @@ shell_DEBUG = \
 shell_TESTS = \
 	$(NULL)
 
-dist/Makefile-shell.deps: $(WEBPACK_CONFIG) $(shell_INPUTS)
-	$(WEBPACK_RULE) -d dist/Makefile-shell.deps $(WEBPACK_CONFIG)
+dist/shell/Makefile.deps: $(WEBPACK_CONFIG) $(shell_INPUTS)
+	$(WEBPACK_RULE) -d dist/shell/Makefile.deps $(WEBPACK_CONFIG)
 
-dist/shell/images/server-error.png: dist/Makefile-shell.deps
+dist/shell/images/server-error.png: dist/shell/Makefile.deps
 
-dist/shell/images/server-large.png: dist/Makefile-shell.deps
+dist/shell/images/server-large.png: dist/shell/Makefile.deps
 
-dist/shell/images/server-small.png: dist/Makefile-shell.deps
+dist/shell/images/server-small.png: dist/shell/Makefile.deps
 
-dist/shell/index-no-machines.min.js: dist/Makefile-shell.deps
+dist/shell/index-no-machines.min.js: dist/shell/Makefile.deps
 
-dist/shell/index-no-machines.min.js.map: dist/Makefile-shell.deps
+dist/shell/index-no-machines.min.js.map: dist/shell/Makefile.deps
 
-dist/shell/index-stub.css: dist/Makefile-shell.deps
+dist/shell/index-stub.css: dist/shell/Makefile.deps
 
-dist/shell/index-stub.css.map: dist/Makefile-shell.deps
+dist/shell/index-stub.css.map: dist/shell/Makefile.deps
 
-dist/shell/index-stub.min.js: dist/Makefile-shell.deps
+dist/shell/index-stub.min.js: dist/shell/Makefile.deps
 
-dist/shell/index-stub.min.js.map: dist/Makefile-shell.deps
+dist/shell/index-stub.min.js.map: dist/shell/Makefile.deps
 
-dist/shell/index.css: dist/Makefile-shell.deps
+dist/shell/index.css: dist/shell/Makefile.deps
 
-dist/shell/index.css.map: dist/Makefile-shell.deps
+dist/shell/index.css.map: dist/shell/Makefile.deps
 
-dist/shell/index.html: dist/Makefile-shell.deps
+dist/shell/index.html: dist/shell/Makefile.deps
 
-dist/shell/index.min.js: dist/Makefile-shell.deps
+dist/shell/index.min.js: dist/shell/Makefile.deps
 
-dist/shell/index.min.js.map: dist/Makefile-shell.deps
+dist/shell/index.min.js.map: dist/shell/Makefile.deps
 
-dist/shell/manifest.json: dist/Makefile-shell.deps
+dist/shell/manifest.json: dist/shell/Makefile.deps
 
-dist/shell/shell.html: dist/Makefile-shell.deps
+dist/shell/shell.html: dist/shell/Makefile.deps
 
-dist/shell/simple.html: dist/Makefile-shell.deps
+dist/shell/simple.html: dist/shell/Makefile.deps
 
-dist/shell/stub.html: dist/Makefile-shell.deps
+dist/shell/stub.html: dist/shell/Makefile.deps
 
 $(srcdir)/pkg/lib/credentials-ssh-private-keys.sh:
 
@@ -193,10 +193,10 @@ WEBPACK_INSTALL += $(shell_INSTALL)
 WEBPACK_DEBUG += $(shell_DEBUG)
 TESTS += $(shell_TESTS)
 
-shell: dist/Makefile-shell.deps $(shell_OUTPUTS) $(shell_INSTALL)
+shell: dist/shell/Makefile.deps $(shell_OUTPUTS) $(shell_INSTALL)
 	@true
 clean-shell: 
-	rm -rf $(shell_OUTPUTS) $(shell_INSTALL) dist/Makefile-shell.deps
+	rm -rf $(shell_OUTPUTS) $(shell_INSTALL) dist/shell/Makefile.deps
 all-local:: shell
 	@true
 clean-local:: clean-shell

@@ -1,5 +1,5 @@
 # Generated Makefile data for sosreport
-# Stamp: Mon Jan 09 2017 11:58:41 GMT+0000 (UTC)
+# Stamp: Wed Jan 18 2017 13:53:56 GMT+0000 (UTC)
 
 sosreport_INPUTS = \
 	$(srcdir)/pkg/lib/page.css \
@@ -38,22 +38,22 @@ sosreport_DEBUG = \
 sosreport_TESTS = \
 	$(NULL)
 
-dist/Makefile-sosreport.deps: $(WEBPACK_CONFIG) $(sosreport_INPUTS)
-	$(WEBPACK_RULE) -d dist/Makefile-sosreport.deps $(WEBPACK_CONFIG)
+dist/sosreport/Makefile.deps: $(WEBPACK_CONFIG) $(sosreport_INPUTS)
+	$(WEBPACK_RULE) -d dist/sosreport/Makefile.deps $(WEBPACK_CONFIG)
 
-dist/sosreport/index.html: dist/Makefile-sosreport.deps
+dist/sosreport/index.html: dist/sosreport/Makefile.deps
 
-dist/sosreport/manifest.json: dist/Makefile-sosreport.deps
+dist/sosreport/manifest.json: dist/sosreport/Makefile.deps
 
-dist/sosreport/sosreport.css: dist/Makefile-sosreport.deps
+dist/sosreport/sosreport.css: dist/sosreport/Makefile.deps
 
-dist/sosreport/sosreport.css.map: dist/Makefile-sosreport.deps
+dist/sosreport/sosreport.css.map: dist/sosreport/Makefile.deps
 
-dist/sosreport/sosreport.min.js: dist/Makefile-sosreport.deps
+dist/sosreport/sosreport.min.js: dist/sosreport/Makefile.deps
 
-dist/sosreport/sosreport.min.js.map: dist/Makefile-sosreport.deps
+dist/sosreport/sosreport.min.js.map: dist/sosreport/Makefile.deps
 
-dist/sosreport/sosreport.png: dist/Makefile-sosreport.deps
+dist/sosreport/sosreport.png: dist/sosreport/Makefile.deps
 
 $(srcdir)/pkg/lib/page.css:
 
@@ -77,10 +77,10 @@ WEBPACK_INSTALL += $(sosreport_INSTALL)
 WEBPACK_DEBUG += $(sosreport_DEBUG)
 TESTS += $(sosreport_TESTS)
 
-sosreport: dist/Makefile-sosreport.deps $(sosreport_OUTPUTS) $(sosreport_INSTALL)
+sosreport: dist/sosreport/Makefile.deps $(sosreport_OUTPUTS) $(sosreport_INSTALL)
 	@true
 clean-sosreport: 
-	rm -rf $(sosreport_OUTPUTS) $(sosreport_INSTALL) dist/Makefile-sosreport.deps
+	rm -rf $(sosreport_OUTPUTS) $(sosreport_INSTALL) dist/sosreport/Makefile.deps
 all-local:: sosreport
 	@true
 clean-local:: clean-sosreport

@@ -82,12 +82,13 @@ typedef struct {
 } TestCase;
 
 typedef struct {
-  WebSocketFlavor web_socket_flavor;
   const char *origin;
   const char *config;
   const char *forward;
   const char *bridge;
 } TestFixture;
+
+#ifdef WITH_COCKPIT_SSH
 
 static GString *
 read_all_into_string (int fd)
@@ -122,12 +123,15 @@ read_all_into_string (int fd)
     }
 }
 
-static void
+#endif
+
+static gboolean
 start_mock_sshd (const gchar *user,
                  const gchar *password,
                  GPid *out_pid,
                  gushort *out_port)
 {
+#ifdef WITH_COCKPIT_SSH
   GError *error = NULL;
   GString *port;
   gchar *endptr;
@@ -140,6 +144,7 @@ start_mock_sshd (const gchar *user,
       "--password", password,
       NULL
   };
+
 
   g_spawn_async_with_pipes (BUILDDIR, (gchar **)argv, NULL, G_SPAWN_DO_NOT_REAP_CHILD, NULL, NULL,
                             out_pid, NULL, &out_fd, NULL, &error);
@@ -162,6 +167,13 @@ start_mock_sshd (const gchar *user,
 
   *out_port = (gushort)value;
   g_string_free (port, TRUE);
+  return TRUE;
+#else
+
+  *out_pid = 0;
+  *out_port = 0;
+  return FALSE;
+#endif
 }
 
 static void
@@ -495,12 +507,11 @@ start_web_service_and_create_client (TestCase *test,
   if (!origin)
     origin = "http://127.0.0.1";
 
-  /* This is web_socket_client_new_for_stream() with a flavor passed in fixture */
+  /* This is web_socket_client_new_for_stream() */
   *ws = g_object_new (WEB_SOCKET_TYPE_CLIENT,
                      "url", "ws://127.0.0.1/unused",
                      "origin", origin,
                      "io-stream", test->io_a,
-                     "flavor", fixture ? fixture->web_socket_flavor : 0,
                      NULL);
 
   g_signal_connect (*ws, "error", G_CALLBACK (on_error_not_reached), NULL);
@@ -569,6 +580,12 @@ test_handshake_and_auth (TestCase *test,
 {
   WebSocketConnection *ws;
   CockpitWebService *service;
+
+  if (!test->mock_sshd)
+    {
+      cockpit_test_skip ("built without libssh and mock-sshd");
+      return;
+    }
 
   start_web_service_and_connect_client (test, data, &ws, &service);
   close_client_and_stop_web_service (test, ws, service);
@@ -641,6 +658,12 @@ test_handshake_and_echo (TestCase *test,
   gulong handler;
   const gchar *token;
 
+  if (!test->mock_sshd)
+    {
+      cockpit_test_skip ("built without libssh and mock-sshd");
+      return;
+    }
+
   /* Sends a "test" message in channel "4" */
   start_web_service_and_connect_client (test, data, &ws, &service);
 
@@ -683,6 +706,12 @@ test_echo_large (TestCase *test,
   gchar *contents;
   GBytes *sent;
   gulong handler;
+
+  if (!test->mock_sshd)
+    {
+      cockpit_test_skip ("built without libssh and mock-sshd");
+      return;
+    }
 
   start_web_service_and_create_client (test, data, &ws, &service);
   while (web_socket_connection_get_ready_state (ws) == WEB_SOCKET_STATE_CONNECTING)
@@ -729,6 +758,12 @@ test_close_error (TestCase *test,
   WebSocketConnection *ws;
   GBytes *received = NULL;
   CockpitWebService *service;
+
+  if (!test->mock_sshd)
+    {
+      cockpit_test_skip ("built without libssh and mock-sshd");
+      return;
+    }
 
   start_web_service_and_connect_client (test, data, &ws, &service);
   g_signal_connect (ws, "message", G_CALLBACK (on_message_get_bytes), &received);
@@ -908,6 +943,12 @@ test_specified_creds (TestCase *test,
   GBytes *sent;
   CockpitWebService *service;
 
+  if (!test->mock_sshd)
+    {
+      cockpit_test_skip ("built without libssh and mock-sshd");
+      return;
+    }
+
   start_web_service_and_create_client (test, data, &ws, &service);
   WAIT_UNTIL (web_socket_connection_get_ready_state (ws) != WEB_SOCKET_STATE_CONNECTING);
   g_assert (web_socket_connection_get_ready_state (ws) == WEB_SOCKET_STATE_OPEN);
@@ -941,6 +982,12 @@ test_specified_creds_overide_host (TestCase *test,
   GBytes *received = NULL;
   GBytes *sent;
   CockpitWebService *service;
+
+  if (!test->mock_sshd)
+    {
+      cockpit_test_skip ("built without libssh and mock-sshd");
+      return;
+    }
 
   start_web_service_and_create_client (test, data, &ws, &service);
   WAIT_UNTIL (web_socket_connection_get_ready_state (ws) != WEB_SOCKET_STATE_CONNECTING);
@@ -977,6 +1024,12 @@ test_user_host_fail (TestCase *test,
   GBytes *received = NULL;
   CockpitWebService *service;
   const gchar *expect_problem = "authentication-failed";
+
+  if (!test->mock_sshd)
+    {
+      cockpit_test_skip ("built without libssh and mock-sshd");
+      return;
+    }
 
   start_web_service_and_create_client (test, data, &ws, &service);
   WAIT_UNTIL (web_socket_connection_get_ready_state (ws) != WEB_SOCKET_STATE_CONNECTING);
@@ -1024,6 +1077,12 @@ test_user_host_reuse_password (TestCase *test,
   const gchar *user = g_get_user_name ();
   gchar *user_host = NULL;
 
+  if (!test->mock_sshd)
+    {
+      cockpit_test_skip ("built without libssh and mock-sshd");
+      return;
+    }
+
   start_web_service_and_create_client (test, data, &ws, &service);
   WAIT_UNTIL (web_socket_connection_get_ready_state (ws) != WEB_SOCKET_STATE_CONNECTING);
   g_assert (web_socket_connection_get_ready_state (ws) == WEB_SOCKET_STATE_OPEN);
@@ -1061,6 +1120,12 @@ test_host_port (TestCase *test,
   gchar *host = NULL;
   GPid pid;
   gushort port;
+
+  if (!test->mock_sshd)
+    {
+      cockpit_test_skip ("built without libssh and mock-sshd");
+      return;
+    }
 
   /* start a new mock sshd on a different port */
   start_mock_sshd ("auser", "apassword", &pid, &port);
@@ -1104,6 +1169,12 @@ test_specified_creds_fail (TestCase *test,
   WebSocketConnection *ws;
   GBytes *received = NULL;
   CockpitWebService *service;
+
+  if (!test->mock_sshd)
+    {
+      cockpit_test_skip ("built without libssh and mock-sshd");
+      return;
+    }
 
   start_web_service_and_create_client (test, data, &ws, &service);
   WAIT_UNTIL (web_socket_connection_get_ready_state (ws) != WEB_SOCKET_STATE_CONNECTING);
@@ -1182,7 +1253,15 @@ test_unknown_host_key (TestCase *test,
   WebSocketConnection *ws;
   CockpitWebService *service;
   GBytes *received = NULL;
-  gchar *knownhosts = g_strdup_printf ("[127.0.0.1]:%d %s", (int)test->ssh_port, MOCK_RSA_KEY);
+  gchar *knownhosts;
+
+  if (!test->mock_sshd)
+    {
+      cockpit_test_skip ("built without libssh and mock-sshd");
+      return;
+    }
+
+  knownhosts = g_strdup_printf ("[127.0.0.1]:%d %s", (int)test->ssh_port, MOCK_RSA_KEY);
 
   cockpit_expect_info ("*New connection from*");
 
@@ -1232,8 +1311,15 @@ test_expect_host_key (TestCase *test,
   GBytes *received = NULL;
   GBytes *message;
   gulong handler;
+  gchar *knownhosts;
 
-  gchar *knownhosts = g_strdup_printf ("[127.0.0.1]:%d %s", (int)test->ssh_port, MOCK_RSA_KEY);
+  if (!test->mock_sshd)
+    {
+      cockpit_test_skip ("built without libssh and mock-sshd");
+      return;
+    }
+
+  knownhosts = g_strdup_printf ("[127.0.0.1]:%d %s", (int)test->ssh_port, MOCK_RSA_KEY);
 
   /* No known hosts */
   cockpit_ws_known_hosts = "/dev/null";
@@ -1306,8 +1392,15 @@ test_expect_host_key_public (TestCase *test,
   GBytes *payload;
   JsonBuilder *builder;
   gulong handler;
+  gchar *knownhosts;
 
-  gchar *knownhosts = g_strdup_printf ("[127.0.0.1]:%d %s", (int)test->ssh_port, MOCK_RSA_KEY);
+  if (!test->mock_sshd)
+    {
+      cockpit_test_skip ("built without libssh and mock-sshd");
+      return;
+    }
+
+  knownhosts = g_strdup_printf ("[127.0.0.1]:%d %s", (int)test->ssh_port, MOCK_RSA_KEY);
 
   /* No known hosts */
   cockpit_ws_known_hosts = "/dev/null";
@@ -1370,44 +1463,27 @@ test_expect_host_key_public (TestCase *test,
 }
 
 static const TestFixture fixture_bad_origin_rfc6455 = {
-  .web_socket_flavor = WEB_SOCKET_FLAVOR_RFC6455,
-  .origin = "http://another-place.com",
-  .config = NULL
-};
-
-static const TestFixture fixture_bad_origin_hixie76 = {
-  .web_socket_flavor = WEB_SOCKET_FLAVOR_HIXIE76,
   .origin = "http://another-place.com",
   .config = NULL
 };
 
 static const TestFixture fixture_allowed_origin_rfc6455 = {
-  .web_socket_flavor = WEB_SOCKET_FLAVOR_RFC6455,
   .origin = "https://another-place.com",
   .config = SRCDIR "/src/ws/mock-config/cockpit/cockpit.conf"
 };
 
-static const TestFixture fixture_allowed_origin_hixie76 = {
-  .web_socket_flavor = WEB_SOCKET_FLAVOR_HIXIE76,
-  .origin = "https://another-place.com:9090",
-  .config = SRCDIR "/src/ws/mock-config/cockpit/cockpit.conf"
-};
-
 static const TestFixture fixture_allowed_origin_proto_header = {
-  .web_socket_flavor = WEB_SOCKET_FLAVOR_HIXIE76,
   .origin = "https://127.0.0.1",
   .forward = "https",
   .config = SRCDIR "/src/ws/mock-config/cockpit/cockpit-alt.conf"
 };
 
 static const TestFixture fixture_bad_origin_proto_no_header = {
-  .web_socket_flavor = WEB_SOCKET_FLAVOR_HIXIE76,
   .origin = "https://127.0.0.1",
   .config = SRCDIR "/src/ws/mock-config/cockpit/cockpit-alt.conf"
 };
 
 static const TestFixture fixture_bad_origin_proto_no_config = {
-  .web_socket_flavor = WEB_SOCKET_FLAVOR_HIXIE76,
   .origin = "https://127.0.0.1",
   .forward = "https",
   .config = NULL
@@ -1454,6 +1530,12 @@ test_auth_results (TestCase *test,
   gchar *ochannel = NULL;
   const gchar *channel;
   const gchar *command;
+
+  if (!test->mock_sshd)
+    {
+      cockpit_test_skip ("built without libssh and mock-sshd");
+      return;
+    }
 
   /* Fail to spawn this program */
   cockpit_ws_bridge_program = "/nonexistant";
@@ -1519,6 +1601,12 @@ test_fail_spawn (TestCase *test,
   GBytes *received = NULL;
   CockpitWebService *service;
 
+  if (!test->mock_sshd)
+    {
+      cockpit_test_skip ("built without libssh and mock-sshd");
+      return;
+    }
+
   /* Fail to spawn this program */
   cockpit_ws_bridge_program = "/nonexistant";
 
@@ -1568,6 +1656,12 @@ test_kill_group (TestCase *test,
   GBytes *sent;
   GBytes *payload;
   gulong handler;
+
+  if (!test->mock_sshd)
+    {
+      cockpit_test_skip ("built without libssh and mock-sshd");
+      return;
+    }
 
   /* Sends a "test" message in channel "4" */
   start_web_service_and_connect_client (test, data, &ws, &service);
@@ -1655,6 +1749,12 @@ test_kill_host (TestCase *test,
   GBytes *payload;
   gulong handler;
 
+  if (!test->mock_sshd)
+    {
+      cockpit_test_skip ("built without libssh and mock-sshd");
+      return;
+    }
+
   /* Sends a "test" message in channel "4" */
   start_web_service_and_connect_client (test, data, &ws, &service);
 
@@ -1733,6 +1833,12 @@ test_timeout_session (TestCase *test,
   pid_t pid;
   guint sig;
   guint tag;
+
+  if (!test->mock_sshd)
+    {
+      cockpit_test_skip ("built without libssh and mock-sshd");
+      return;
+    }
 
   cockpit_ws_session_timeout = 1;
 
@@ -1818,12 +1924,11 @@ test_idling (TestCase *test,
 
   cockpit_ws_default_host_header = "127.0.0.1";
 
-  /* This is web_socket_client_new_for_stream() with a flavor passed in fixture */
+  /* This is web_socket_client_new_for_stream() */
   client = g_object_new (WEB_SOCKET_TYPE_CLIENT,
                          "url", "ws://127.0.0.1/unused",
                          "origin", "http://127.0.0.1",
                          "io-stream", test->io_a,
-                         "flavor", 0,
                          NULL);
 
   pipe = cockpit_pipe_spawn (argv, NULL, NULL, COCKPIT_PIPE_FLAGS_NONE);
@@ -1872,12 +1977,11 @@ test_dispose (TestCase *test,
 
   cockpit_ws_default_host_header = "127.0.0.1";
 
-  /* This is web_socket_client_new_for_stream() with a flavor passed in fixture */
+  /* This is web_socket_client_new_for_stream() */
   client = g_object_new (WEB_SOCKET_TYPE_CLIENT,
                          "url", "ws://127.0.0.1/unused",
                          "origin", "http://127.0.0.1",
                          "io-stream", test->io_a,
-                         "flavor", 0,
                          NULL);
 
   pipe = cockpit_pipe_spawn (argv, NULL, NULL, COCKPIT_PIPE_FLAGS_NONE);
@@ -1989,6 +2093,12 @@ test_authorize_password (TestCase *test,
   gsize length;
   gulong handler1;
   gulong handler2;
+
+  if (!test->mock_sshd)
+    {
+      cockpit_test_skip ("built without libssh and mock-sshd");
+      return;
+    }
 
   start_web_service_and_create_client (test, data, &ws, &service);
   WAIT_UNTIL (web_socket_connection_get_ready_state (ws) != WEB_SOCKET_STATE_CONNECTING);
@@ -2213,27 +2323,15 @@ main (int argc,
   cockpit_ws_ping_interval = G_MAXUINT;
 
   static const TestFixture fixture_rfc6455 = {
-      .web_socket_flavor = WEB_SOCKET_FLAVOR_RFC6455,
-      .config = NULL
-  };
-
-  static const TestFixture fixture_hixie76 = {
-      .web_socket_flavor = WEB_SOCKET_FLAVOR_HIXIE76,
       .config = NULL
   };
 
   g_test_add ("/web-service/handshake-and-auth/rfc6455", TestCase,
               &fixture_rfc6455, setup_for_socket,
               test_handshake_and_auth, teardown_for_socket);
-  g_test_add ("/web-service/handshake-and-auth/hixie76", TestCase,
-              &fixture_hixie76, setup_for_socket,
-              test_handshake_and_auth, teardown_for_socket);
 
   g_test_add ("/web-service/echo-message/rfc6455", TestCase,
               &fixture_rfc6455, setup_for_socket,
-              test_handshake_and_echo, teardown_for_socket);
-  g_test_add ("/web-service/echo-message/hixie76", TestCase,
-              &fixture_hixie76, setup_for_socket,
               test_handshake_and_echo, teardown_for_socket);
   g_test_add ("/web-service/echo-message/large", TestCase,
               &fixture_rfc6455, setup_for_socket,
@@ -2263,17 +2361,11 @@ main (int argc,
   g_test_add ("/web-service/bad-origin/rfc6455", TestCase,
               &fixture_bad_origin_rfc6455, setup_for_socket,
               test_bad_origin, teardown_for_socket);
-  g_test_add ("/web-service/bad-origin/hixie76", TestCase,
-              &fixture_bad_origin_hixie76, setup_for_socket,
-              test_bad_origin, teardown_for_socket);
   g_test_add ("/web-service/bad-origin/withallowed", TestCase,
               &fixture_bad_origin_rfc6455, setup_for_socket,
               test_bad_origin, teardown_for_socket);
   g_test_add ("/web-service/allowed-origin/rfc6455", TestCase,
               &fixture_allowed_origin_rfc6455, setup_for_socket,
-              test_handshake_and_auth, teardown_for_socket);
-  g_test_add ("/web-service/allowed-origin/hixie76", TestCase,
-              &fixture_allowed_origin_hixie76, setup_for_socket,
               test_handshake_and_auth, teardown_for_socket);
 
   g_test_add ("/web-service/bad-origin/protocol-no-config", TestCase,
@@ -2291,9 +2383,6 @@ main (int argc,
               test_auth_results, teardown_for_socket);
   g_test_add ("/web-service/fail-spawn/rfc6455", TestCase,
               &fixture_rfc6455, setup_for_socket,
-              test_fail_spawn, teardown_for_socket);
-  g_test_add ("/web-service/fail-spawn/hixie76", TestCase,
-              &fixture_hixie76, setup_for_socket,
               test_fail_spawn, teardown_for_socket);
 
   g_test_add ("/web-service/kill-group", TestCase, &fixture_kill_group,

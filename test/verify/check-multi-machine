@@ -21,7 +21,6 @@
 import parent
 from testlib import *
 import subprocess
-import socket
 import time
 import re
 
@@ -107,6 +106,7 @@ def change_ssh_port(machine, port=None, timeout_sec=120):
 
     raise error
 
+@skipImage("No dashboard on Atomic", "continuous-atomic", "fedora-atomic", "rhel-atomic")
 class TestMultiMachineAdd(MachineCase):
     additional_machines = {
         'machine2': { },
@@ -128,7 +128,6 @@ class TestMultiMachineAdd(MachineCase):
 
     def testBasic(self):
         b = self.browser
-        m1 = self.machine
         m2 = self.machine2
         m3 = self.machine3
 
@@ -146,9 +145,11 @@ class TestMultiMachineAdd(MachineCase):
         b.go("/dashboard")
         b.enter_page("/dashboard")
         kill_user_admin(m2)
+        b.wait_present("#dashboard-hosts a[data-address='%s'] img" % m2.address)
         b.wait_attr("#dashboard-hosts a[data-address='%s'] img" % m2.address, 'src', '../shell/images/server-error.png')
 
         kill_user_admin(m3)
+        b.wait_present("#dashboard-hosts a[data-address='%s'] img" % m3.address)
         b.wait_attr("#dashboard-hosts a[data-address='%s'] img" % m3.address, 'src', '../shell/images/server-error.png')
 
         # Navigating reconnects
@@ -182,6 +183,7 @@ class TestMultiMachineAdd(MachineCase):
                                     ".*: bridge program failed: Child process exited with code .*")
 
 
+@skipImage("No dashboard on Atomic", "continuous-atomic", "fedora-atomic", "rhel-atomic")
 class TestMultiMachine(MachineCase):
     additional_machines = {
         'machine2': { }
@@ -489,7 +491,6 @@ class TestMultiMachine(MachineCase):
 
     def testFrameNavigation(self):
         b = self.browser
-        m1 = self.machine
         m2 = self.machine2
 
         m2_path = "/@%s/playground/test"% m2.address
@@ -574,7 +575,6 @@ class TestMultiMachine(MachineCase):
 
     def testFrameReload(self):
         b = self.browser
-        m1 = self.machine
         m2 = self.machine2
 
         frame = "cockpit1:%s/playground/test" % m2.address

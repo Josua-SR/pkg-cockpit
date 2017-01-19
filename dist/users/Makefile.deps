@@ -1,5 +1,5 @@
 # Generated Makefile data for users
-# Stamp: Mon Jan 09 2017 11:58:41 GMT+0000 (UTC)
+# Stamp: Wed Jan 18 2017 13:53:56 GMT+0000 (UTC)
 
 users_INPUTS = \
 	$(srcdir)/pkg/lib/mustache.js \
@@ -39,20 +39,20 @@ users_DEBUG = \
 users_TESTS = \
 	$(NULL)
 
-dist/Makefile-users.deps: $(WEBPACK_CONFIG) $(users_INPUTS)
-	$(WEBPACK_RULE) -d dist/Makefile-users.deps $(WEBPACK_CONFIG)
+dist/users/Makefile.deps: $(WEBPACK_CONFIG) $(users_INPUTS)
+	$(WEBPACK_RULE) -d dist/users/Makefile.deps $(WEBPACK_CONFIG)
 
-dist/users/index.html: dist/Makefile-users.deps
+dist/users/index.html: dist/users/Makefile.deps
 
-dist/users/manifest.json: dist/Makefile-users.deps
+dist/users/manifest.json: dist/users/Makefile.deps
 
-dist/users/users.css: dist/Makefile-users.deps
+dist/users/users.css: dist/users/Makefile.deps
 
-dist/users/users.css.map: dist/Makefile-users.deps
+dist/users/users.css.map: dist/users/Makefile.deps
 
-dist/users/users.min.js: dist/Makefile-users.deps
+dist/users/users.min.js: dist/users/Makefile.deps
 
-dist/users/users.min.js.map: dist/Makefile-users.deps
+dist/users/users.min.js.map: dist/users/Makefile.deps
 
 $(srcdir)/pkg/lib/mustache.js:
 
@@ -82,10 +82,10 @@ WEBPACK_INSTALL += $(users_INSTALL)
 WEBPACK_DEBUG += $(users_DEBUG)
 TESTS += $(users_TESTS)
 
-users: dist/Makefile-users.deps $(users_OUTPUTS) $(users_INSTALL)
+users: dist/users/Makefile.deps $(users_OUTPUTS) $(users_INSTALL)
 	@true
 clean-users: 
-	rm -rf $(users_OUTPUTS) $(users_INSTALL) dist/Makefile-users.deps
+	rm -rf $(users_OUTPUTS) $(users_INSTALL) dist/users/Makefile.deps
 all-local:: users
 	@true
 clean-local:: clean-users

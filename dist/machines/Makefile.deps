@@ -1,5 +1,5 @@
 # Generated Makefile data for machines
-# Stamp: Mon Jan 09 2017 11:58:41 GMT+0000 (UTC)
+# Stamp: Wed Jan 18 2017 13:53:56 GMT+0000 (UTC)
 
 machines_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
@@ -49,20 +49,20 @@ machines_DEBUG = \
 machines_TESTS = \
 	$(NULL)
 
-dist/Makefile-machines.deps: $(WEBPACK_CONFIG) $(machines_INPUTS)
-	$(WEBPACK_RULE) -d dist/Makefile-machines.deps $(WEBPACK_CONFIG)
+dist/machines/Makefile.deps: $(WEBPACK_CONFIG) $(machines_INPUTS)
+	$(WEBPACK_RULE) -d dist/machines/Makefile.deps $(WEBPACK_CONFIG)
 
-dist/machines/index.html: dist/Makefile-machines.deps
+dist/machines/index.html: dist/machines/Makefile.deps
 
-dist/machines/machines.css: dist/Makefile-machines.deps
+dist/machines/machines.css: dist/machines/Makefile.deps
 
-dist/machines/machines.css.map: dist/Makefile-machines.deps
+dist/machines/machines.css.map: dist/machines/Makefile.deps
 
-dist/machines/machines.min.js: dist/Makefile-machines.deps
+dist/machines/machines.min.js: dist/machines/Makefile.deps
 
-dist/machines/machines.min.js.map: dist/Makefile-machines.deps
+dist/machines/machines.min.js.map: dist/machines/Makefile.deps
 
-dist/machines/manifest.json: dist/Makefile-machines.deps
+dist/machines/manifest.json: dist/machines/Makefile.deps
 
 $(srcdir)/pkg/lib/cockpit-components-listing.jsx:
 
@@ -112,10 +112,10 @@ WEBPACK_INSTALL += $(machines_INSTALL)
 WEBPACK_DEBUG += $(machines_DEBUG)
 TESTS += $(machines_TESTS)
 
-machines: dist/Makefile-machines.deps $(machines_OUTPUTS) $(machines_INSTALL)
+machines: dist/machines/Makefile.deps $(machines_OUTPUTS) $(machines_INSTALL)
 	@true
 clean-machines: 
-	rm -rf $(machines_OUTPUTS) $(machines_INSTALL) dist/Makefile-machines.deps
+	rm -rf $(machines_OUTPUTS) $(machines_INSTALL) dist/machines/Makefile.deps
 all-local:: machines
 	@true
 clean-local:: clean-machines

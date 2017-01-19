@@ -1,5 +1,5 @@
 # Generated Makefile data for tuned
-# Stamp: Mon Jan 09 2017 11:58:41 GMT+0000 (UTC)
+# Stamp: Wed Jan 18 2017 13:53:56 GMT+0000 (UTC)
 
 tuned_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \
@@ -33,18 +33,18 @@ tuned_DEBUG = \
 tuned_TESTS = \
 	$(NULL)
 
-dist/Makefile-tuned.deps: $(WEBPACK_CONFIG) $(tuned_INPUTS)
-	$(WEBPACK_RULE) -d dist/Makefile-tuned.deps $(WEBPACK_CONFIG)
+dist/tuned/Makefile.deps: $(WEBPACK_CONFIG) $(tuned_INPUTS)
+	$(WEBPACK_RULE) -d dist/tuned/Makefile.deps $(WEBPACK_CONFIG)
 
-dist/tuned/manifest.json: dist/Makefile-tuned.deps
+dist/tuned/manifest.json: dist/tuned/Makefile.deps
 
-dist/tuned/performance.css: dist/Makefile-tuned.deps
+dist/tuned/performance.css: dist/tuned/Makefile.deps
 
-dist/tuned/performance.css.map: dist/Makefile-tuned.deps
+dist/tuned/performance.css.map: dist/tuned/Makefile.deps
 
-dist/tuned/performance.min.js: dist/Makefile-tuned.deps
+dist/tuned/performance.min.js: dist/tuned/Makefile.deps
 
-dist/tuned/performance.min.js.map: dist/Makefile-tuned.deps
+dist/tuned/performance.min.js.map: dist/tuned/Makefile.deps
 
 $(srcdir)/pkg/lib/cockpit-components-dialog.jsx:
 
@@ -66,10 +66,10 @@ WEBPACK_INSTALL += $(tuned_INSTALL)
 WEBPACK_DEBUG += $(tuned_DEBUG)
 TESTS += $(tuned_TESTS)
 
-tuned: dist/Makefile-tuned.deps $(tuned_OUTPUTS) $(tuned_INSTALL)
+tuned: dist/tuned/Makefile.deps $(tuned_OUTPUTS) $(tuned_INSTALL)
 	@true
 clean-tuned: 
-	rm -rf $(tuned_OUTPUTS) $(tuned_INSTALL) dist/Makefile-tuned.deps
+	rm -rf $(tuned_OUTPUTS) $(tuned_INSTALL) dist/tuned/Makefile.deps
 all-local:: tuned
 	@true
 clean-local:: clean-tuned

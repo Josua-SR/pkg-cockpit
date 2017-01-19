@@ -24,6 +24,7 @@ from testlib import *
 import os
 import unittest
 import time
+import sys
 
 from kubelib import *
 
@@ -49,7 +50,7 @@ def wait_project(machine, project):
             i = i + 1
             time.sleep(2)
 
-@skipImage("Kubernetes not packaged", "debian-8", "debian-unstable", "ubuntu-1604")
+@skipImage("Kubernetes not packaged", "debian-8", "debian-testing", "ubuntu-1604")
 @skipImage("No cockpit-kubernetes packaged", "continuous-atomic", "fedora-atomic", "rhel-atomic")
 class TestOpenshift(MachineCase, OpenshiftCommonTests):
     additional_machines = {
@@ -290,7 +291,7 @@ LABEL io.projectatomic.nulecule.atomicappversion="0.1.11" \
         b.wait_present(".details-listing tbody[data-id='pods/default/helloapache'] th")
         self.assertEqual(b.text(".details-listing tbody[data-id='pods/default/helloapache'] th"), "helloapache")
 
-@skipImage("Kubernetes not packaged", "debian-8", "debian-unstable", "ubuntu-1604")
+@skipImage("Kubernetes not packaged", "debian-8", "debian-testing", "ubuntu-1604")
 @skipImage("No cockpit-kubernetes packaged", "continuous-atomic", "fedora-atomic", "rhel-atomic")
 class TestRegistry(MachineCase):
     additional_machines = {
@@ -313,7 +314,6 @@ class TestRegistry(MachineCase):
 
     def testImages(self):
         b = self.browser
-        m = self.machine
         o = self.openshift
 
         self.login_and_go("/kubernetes/registry")
@@ -452,9 +452,7 @@ class TestRegistry(MachineCase):
         b.wait_in_text("tbody[data-id='marmalade/juggs:2.9'] registry-image-meta", "build-date=2016-03-04")
 
     def testProjectGroups(self):
-        o = self.openshift
         b = self.browser
-        m = self.machine
 
         self.login_and_go("/kubernetes/registry")
         b.go("#/projects")
@@ -510,12 +508,11 @@ class TestRegistry(MachineCase):
     def testProjectUsers(self):
         o = self.openshift
         b = self.browser
-        m = self.machine
 
         self.login_and_go("/kubernetes/registry")
         b.go("#/projects")
-        output = o.execute("oc get projects")
-        output = o.execute("oc get rolebinding -n marmalade")
+        o.execute("oc get projects")
+        o.execute("oc get rolebinding -n marmalade")
         b.wait_present("tbody[data-id='default']")
 
         # Create a new project
@@ -529,7 +526,7 @@ class TestRegistry(MachineCase):
 
         #wait for it
         b.wait_present("tbody[data-id='testprojectuserproj']")
-        output = o.execute("oc get projects")
+        o.execute("oc get projects")
 
         # Create a new user
         b.click("#add-user")
@@ -614,7 +611,6 @@ class TestRegistry(MachineCase):
     def testProjectPolicy(self):
         o = self.openshift
         b = self.browser
-        m = self.machine
 
         self.login_and_go("/kubernetes/registry")
         b.wait_present(".dashboard-images")
@@ -634,7 +630,7 @@ class TestRegistry(MachineCase):
 
         #wait for it
         b.wait_present("tbody[data-id='testprojectpolicyproj']")
-        output = o.execute("oc get projects")
+        o.execute("oc get projects")
 
         #goto project page
         b.click("tbody[data-id='testprojectpolicyproj'] tr:first-child td:nth-of-type(2)")

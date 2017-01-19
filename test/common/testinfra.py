@@ -60,7 +60,7 @@ DEFAULT_VERIFY = {
     'verify/centos-7': [ 'master', 'pulls' ],
     'verify/continuous-atomic': [ 'master' ],
     'verify/debian-8': [ 'master', 'pulls', ],
-    'verify/debian-unstable': [ 'master', 'pulls' ],
+    'verify/debian-testing': [ 'master', 'pulls' ],
     'verify/fedora-24': [ ],
     'verify/fedora-25': [ 'master', 'pulls' ],
     'verify/fedora-atomic': [ 'master', 'pulls' ],
@@ -81,8 +81,11 @@ DEFAULT_IMAGE_REFRESH = {
     'continuous-atomic': {
         'triggers': [ "verify/continuous-atomic", ]
     },
-    'debian-unstable': {
-        'triggers': [ "verify/debian-unstable" ]
+    'debian-testing': {
+        'triggers': [ "verify/debian-testing" ]
+    },
+    'debian-8': {
+        'triggers': [ "verify/debian-8" ]
     },
     'fedora-24': {
         'triggers': [
@@ -90,12 +93,12 @@ DEFAULT_IMAGE_REFRESH = {
             "selenium/firefox",
             "selenium/chrome",
             "verify/fedora-24",
-            "verify/fedora-atomic",  # builds in fedora-24
         ]
     },
     'fedora-25': {
         'triggers': [
             "verify/fedora-25",
+            "verify/fedora-atomic",  # builds in fedora-25
         ]
     },
     'fedora-atomic': {
@@ -151,6 +154,9 @@ IMAGE_REFRESH = 7
 # Days after which images expire if not in use
 IMAGE_EXPIRE = 14
 
+# Images which are Atomic based
+ATOMIC_IMAGES = ["rhel-atomic", "fedora-atomic", "continuous-atomic"]
+
 __all__ = (
     'Sink',
     'GitHub',
@@ -163,6 +169,7 @@ __all__ = (
     'NO_TESTING',
     'IMAGE_EXPIRE',
     'TEST_DIR',
+    'ATOMIC_IMAGES',
 )
 
 def determine_github_base():
@@ -257,10 +264,6 @@ class Sink(object):
         self.ssh = subprocess.Popen([ "ssh", host, "--", "python", "sink", identifier ], stdin=subprocess.PIPE)
 
         # Send the status line
-        if status is None:
-            line = "\n"
-        else:
-            json.dumps(status) + "\n"
         self.ssh.stdin.write(json.dumps(status) + "\n")
 
         # Now dup our own output and errors into the pipeline

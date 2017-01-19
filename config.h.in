@@ -148,6 +148,9 @@
 /* Version number of package */
 #undef VERSION
 
+/* Build cockpit-ssh and include libssh dependency */
+#undef WITH_COCKPIT_SSH
+
 /* Print debug output */
 #undef WITH_DEBUG
 
