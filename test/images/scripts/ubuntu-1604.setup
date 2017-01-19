@@ -46,7 +46,6 @@ autoconf \
 automake \
 intltool \
 libssh-dev \
-libssl-dev \
 zlib1g-dev \
 libkrb5-dev \
 libxslt1-dev \
@@ -64,9 +63,8 @@ xsltproc \
 xmlto \
 docbook-xsl \
 glib-networking \
-nodejs-legacy \
-npm \
 openssh-client \
+python \
 "
 
 # We also install the packages necessary to join a FreeIPA domain so
@@ -139,7 +137,7 @@ apt-get clean
 mkdir /var/log/journal
 
 # Allow root login with password
-sed -i 's/^PermitRootLogin .*/PermitRootLogin yes/' /etc/ssh/sshd_config
+sed -i 's/^[# ]*PermitRootLogin .*/PermitRootLogin yes/' /etc/ssh/sshd_config
 
 # Disable old SSH init script.  Something is calling "/etc/init.d/ssh
 # reload" during boot and that results in the ssh port being

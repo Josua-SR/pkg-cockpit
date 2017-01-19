@@ -551,6 +551,12 @@ div.timeline-ct.timeline-ct-end {
 div.timeline-ct.timeline-ct-end .timeline-ct-md {
     left: -10px;
 }
+/* on-off button styling depends on data-toggle in bootstrap */
+.btn-onoff-ct input {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+}
 a {
     cursor: pointer;
 }

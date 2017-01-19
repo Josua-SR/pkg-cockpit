@@ -1,5 +1,5 @@
 # Generated Makefile data for kubernetes
-# Stamp: Mon Jan 09 2017 11:58:41 GMT+0000 (UTC)
+# Stamp: Wed Jan 18 2017 13:53:56 GMT+0000 (UTC)
 
 kubernetes_INPUTS = \
 	$(srcdir)/pkg/kubernetes/index.html \
@@ -13,7 +13,6 @@ kubernetes_INPUTS = \
 	$(srcdir)/pkg/kubernetes/scripts/dashboard.js \
 	$(srcdir)/pkg/kubernetes/scripts/date.js \
 	$(srcdir)/pkg/kubernetes/scripts/details.js \
-	$(srcdir)/pkg/kubernetes/scripts/dialog.js \
 	$(srcdir)/pkg/kubernetes/scripts/fixture-basic.js \
 	$(srcdir)/pkg/kubernetes/scripts/fixture-large.js \
 	$(srcdir)/pkg/kubernetes/scripts/graphs.js \
@@ -148,6 +147,7 @@ kubernetes_INPUTS = \
 	$(srcdir)/pkg/kubernetes/views/user-remove-membership.html \
 	$(srcdir)/pkg/kubernetes/views/volume-body.html \
 	$(srcdir)/pkg/kubernetes/views/volumes-page.html \
+	$(srcdir)/pkg/lib/angular-dialog.js \
 	$(srcdir)/pkg/lib/console.css \
 	$(srcdir)/pkg/lib/listing.css \
 	$(srcdir)/pkg/lib/page.css \
@@ -274,112 +274,112 @@ kubernetes_TESTS = \
 	dist/kubernetes/scripts/test-volumes.html \
 	$(NULL)
 
-dist/Makefile-kubernetes.deps: $(WEBPACK_CONFIG) $(kubernetes_INPUTS)
-	$(WEBPACK_RULE) -d dist/Makefile-kubernetes.deps $(WEBPACK_CONFIG)
+dist/kubernetes/Makefile.deps: $(WEBPACK_CONFIG) $(kubernetes_INPUTS)
+	$(WEBPACK_RULE) -d dist/kubernetes/Makefile.deps $(WEBPACK_CONFIG)
 
-dist/kubernetes/index.html: dist/Makefile-kubernetes.deps
+dist/kubernetes/index.html: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/kubernetes.css: dist/Makefile-kubernetes.deps
+dist/kubernetes/kubernetes.css: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/kubernetes.css.map: dist/Makefile-kubernetes.deps
+dist/kubernetes/kubernetes.css.map: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/kubernetes.min.js: dist/Makefile-kubernetes.deps
+dist/kubernetes/kubernetes.min.js: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/kubernetes.min.js.map: dist/Makefile-kubernetes.deps
+dist/kubernetes/kubernetes.min.js.map: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/manifest.json: dist/Makefile-kubernetes.deps
+dist/kubernetes/manifest.json: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/override.json: dist/Makefile-kubernetes.deps
+dist/kubernetes/override.json: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/registry.css: dist/Makefile-kubernetes.deps
+dist/kubernetes/registry.css: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/registry.css.map: dist/Makefile-kubernetes.deps
+dist/kubernetes/registry.css.map: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/registry.html: dist/Makefile-kubernetes.deps
+dist/kubernetes/registry.html: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/registry.min.js: dist/Makefile-kubernetes.deps
+dist/kubernetes/registry.min.js: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/registry.min.js.map: dist/Makefile-kubernetes.deps
+dist/kubernetes/registry.min.js.map: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-connection.css: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-connection.css: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-connection.css.map: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-connection.css.map: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-connection.html: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-connection.html: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-connection.min.js: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-connection.min.js: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-connection.min.js.map: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-connection.min.js.map: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-images.css: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-images.css: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-images.css.map: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-images.css.map: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-images.html: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-images.html: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-images.min.js: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-images.min.js: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-images.min.js.map: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-images.min.js.map: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-kube-client.css: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-kube-client.css: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-kube-client.css.map: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-kube-client.css.map: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-kube-client.html: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-kube-client.html: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-kube-client.min.js: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-kube-client.min.js: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-kube-client.min.js.map: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-kube-client.min.js.map: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-nodes.css: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-nodes.css: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-nodes.css.map: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-nodes.css.map: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-nodes.html: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-nodes.html: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-nodes.min.js: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-nodes.min.js: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-nodes.min.js.map: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-nodes.min.js.map: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-projects.css: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-projects.css: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-projects.css.map: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-projects.css.map: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-projects.html: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-projects.html: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-projects.min.js: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-projects.min.js: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-projects.min.js.map: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-projects.min.js.map: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-tags.css: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-tags.css: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-tags.css.map: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-tags.css.map: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-tags.html: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-tags.html: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-tags.min.js: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-tags.min.js: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-tags.min.js.map: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-tags.min.js.map: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-utils.css: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-utils.css: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-utils.css.map: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-utils.css.map: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-utils.html: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-utils.html: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-utils.min.js: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-utils.min.js: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-utils.min.js.map: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-utils.min.js.map: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-volumes.css: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-volumes.css: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-volumes.css.map: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-volumes.css.map: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-volumes.html: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-volumes.html: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-volumes.min.js: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-volumes.min.js: dist/kubernetes/Makefile.deps
 
-dist/kubernetes/scripts/test-volumes.min.js.map: dist/Makefile-kubernetes.deps
+dist/kubernetes/scripts/test-volumes.min.js.map: dist/kubernetes/Makefile.deps
 
 $(srcdir)/pkg/kubernetes/index.html:
 
@@ -402,8 +402,6 @@ $(srcdir)/pkg/kubernetes/scripts/dashboard.js:
 $(srcdir)/pkg/kubernetes/scripts/date.js:
 
 $(srcdir)/pkg/kubernetes/scripts/details.js:
-
-$(srcdir)/pkg/kubernetes/scripts/dialog.js:
 
 $(srcdir)/pkg/kubernetes/scripts/fixture-basic.js:
 
@@ -673,6 +671,8 @@ $(srcdir)/pkg/kubernetes/views/volume-body.html:
 
 $(srcdir)/pkg/kubernetes/views/volumes-page.html:
 
+$(srcdir)/pkg/lib/angular-dialog.js:
+
 $(srcdir)/pkg/lib/console.css:
 
 $(srcdir)/pkg/lib/listing.css:
@@ -695,10 +695,10 @@ WEBPACK_INSTALL += $(kubernetes_INSTALL)
 WEBPACK_DEBUG += $(kubernetes_DEBUG)
 TESTS += $(kubernetes_TESTS)
 
-kubernetes: dist/Makefile-kubernetes.deps $(kubernetes_OUTPUTS) $(kubernetes_INSTALL)
+kubernetes: dist/kubernetes/Makefile.deps $(kubernetes_OUTPUTS) $(kubernetes_INSTALL)
 	@true
 clean-kubernetes: 
-	rm -rf $(kubernetes_OUTPUTS) $(kubernetes_INSTALL) dist/Makefile-kubernetes.deps
+	rm -rf $(kubernetes_OUTPUTS) $(kubernetes_INSTALL) dist/kubernetes/Makefile.deps
 all-local:: kubernetes
 	@true
 clean-local:: clean-kubernetes

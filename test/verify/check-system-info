@@ -21,8 +21,6 @@
 import parent
 from testlib import *
 import time
-import unittest
-import os
 import subprocess
 
 os_release = """
@@ -155,7 +153,7 @@ class TestSystemInfo(MachineCase):
         b.click("#system_information_change_hostname button:contains('Change')")
         b.wait_popdown("system_information_change_hostname")
 
-        if "atomic" in m.image:
+        if m.atomic_image:
             b.wait_present('#system-ostree-version')
             b.wait_visible('#system-ostree-version')
             b.wait_text('#system-ostree-version-link', "cockpit-base.1")
@@ -184,9 +182,6 @@ class TestSystemInfo(MachineCase):
         network_time_prefix = "Network time on"
         if m.image in {"debian-8", "rhel-7", "centos-7", "rhel-atomic", "continuous-atomic"}:
             network_time_prefix = "NTP enabled"
-
-        if m.image in [ "debian-unstable" ]:
-            m.execute("systemctl stop ntp")
 
         # make sure system is on expected timezone EEST
         m.execute("LC_ALL=C timedatectl set-timezone Europe/Helsinki")

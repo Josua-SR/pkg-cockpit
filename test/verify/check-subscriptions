@@ -22,8 +22,6 @@ import parent
 from testlib import *
 
 import os
-import unittest
-import time
 
 # The candlepin image has a lot of demo data preloaded
 # useful info/commands:
@@ -49,7 +47,7 @@ import time
 # register with: activation key "awesome_os_pool" and org "admin"
 # or: subscription-manager register --activationkey awesome_os_pool --org admin --serverurl https://$IP:8443/candlepin
 
-@skipImage("No subscriptions", "centos-7", "continuous-atomic", "debian-8", "debian-unstable", "fedora-24", "fedora-25", "fedora-atomic", "fedora-testing", "ubuntu-1604")
+@skipImage("No subscriptions", "centos-7", "continuous-atomic", "debian-8", "debian-testing", "fedora-24", "fedora-25", "fedora-atomic", "fedora-testing", "ubuntu-1604")
 class TestSubscriptions(MachineCase):
     additional_machines = {
         'candlepin': { 'machine': { 'image': 'candlepin' } }
@@ -76,7 +74,6 @@ class TestSubscriptions(MachineCase):
         m.execute("sed -i -e 's/insecure = 0/insecure = 1/g' /etc/rhsm/rhsm.conf")
 
     def testRegister(self):
-        m = self.machine
         b = self.browser
 
         self.login_and_go("/subscriptions")

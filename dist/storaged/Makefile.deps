@@ -1,5 +1,5 @@
 # Generated Makefile data for storaged
-# Stamp: Mon Jan 09 2017 11:58:41 GMT+0000 (UTC)
+# Stamp: Wed Jan 18 2017 13:53:56 GMT+0000 (UTC)
 
 storaged_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
@@ -85,34 +85,34 @@ storaged_TESTS = \
 	dist/storaged/test-util.html \
 	$(NULL)
 
-dist/Makefile-storaged.deps: $(WEBPACK_CONFIG) $(storaged_INPUTS)
-	$(WEBPACK_RULE) -d dist/Makefile-storaged.deps $(WEBPACK_CONFIG)
+dist/storaged/Makefile.deps: $(WEBPACK_CONFIG) $(storaged_INPUTS)
+	$(WEBPACK_RULE) -d dist/storaged/Makefile.deps $(WEBPACK_CONFIG)
 
-dist/storaged/images/storage-array.png: dist/Makefile-storaged.deps
+dist/storaged/images/storage-array.png: dist/storaged/Makefile.deps
 
-dist/storaged/images/storage-disk.png: dist/Makefile-storaged.deps
+dist/storaged/images/storage-disk.png: dist/storaged/Makefile.deps
 
-dist/storaged/index.html: dist/Makefile-storaged.deps
+dist/storaged/index.html: dist/storaged/Makefile.deps
 
-dist/storaged/manifest.json: dist/Makefile-storaged.deps
+dist/storaged/manifest.json: dist/storaged/Makefile.deps
 
-dist/storaged/storage.css: dist/Makefile-storaged.deps
+dist/storaged/storage.css: dist/storaged/Makefile.deps
 
-dist/storaged/storage.css.map: dist/Makefile-storaged.deps
+dist/storaged/storage.css.map: dist/storaged/Makefile.deps
 
-dist/storaged/storage.min.js: dist/Makefile-storaged.deps
+dist/storaged/storage.min.js: dist/storaged/Makefile.deps
 
-dist/storaged/storage.min.js.map: dist/Makefile-storaged.deps
+dist/storaged/storage.min.js.map: dist/storaged/Makefile.deps
 
-dist/storaged/test-util.css: dist/Makefile-storaged.deps
+dist/storaged/test-util.css: dist/storaged/Makefile.deps
 
-dist/storaged/test-util.css.map: dist/Makefile-storaged.deps
+dist/storaged/test-util.css.map: dist/storaged/Makefile.deps
 
-dist/storaged/test-util.html: dist/Makefile-storaged.deps
+dist/storaged/test-util.html: dist/storaged/Makefile.deps
 
-dist/storaged/test-util.min.js: dist/Makefile-storaged.deps
+dist/storaged/test-util.min.js: dist/storaged/Makefile.deps
 
-dist/storaged/test-util.min.js.map: dist/Makefile-storaged.deps
+dist/storaged/test-util.min.js.map: dist/storaged/Makefile.deps
 
 $(srcdir)/pkg/lib/cockpit-components-listing.jsx:
 
@@ -206,10 +206,10 @@ WEBPACK_INSTALL += $(storaged_INSTALL)
 WEBPACK_DEBUG += $(storaged_DEBUG)
 TESTS += $(storaged_TESTS)
 
-storaged: dist/Makefile-storaged.deps $(storaged_OUTPUTS) $(storaged_INSTALL)
+storaged: dist/storaged/Makefile.deps $(storaged_OUTPUTS) $(storaged_INSTALL)
 	@true
 clean-storaged: 
-	rm -rf $(storaged_OUTPUTS) $(storaged_INSTALL) dist/Makefile-storaged.deps
+	rm -rf $(storaged_OUTPUTS) $(storaged_INSTALL) dist/storaged/Makefile.deps
 all-local:: storaged
 	@true
 clean-local:: clean-storaged

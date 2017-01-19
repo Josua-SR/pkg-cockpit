@@ -44,7 +44,8 @@ const gchar * cockpit_bridge_local_address = NULL;
  * classes implement the actual payload contents, opening the channel
  * etc...
  *
- * The channel queues messages received until the implementation
+ * The channel queues messages received until unfrozen. The caller can
+ * start off a channel as frozen, and then the implementation later
  * indicates that it's open and ready to receive messages.
  *
  * A channel sends messages over a #CockpitTransport. If the transport
@@ -53,6 +54,34 @@ const gchar * cockpit_bridge_local_address = NULL;
  *
  * See doc/protocol.md for information about channels.
  */
+
+typedef struct {
+    JsonObject *control;
+    GBytes *payload;
+} FrozenMessage;
+
+static FrozenMessage *
+frozen_message_new (GBytes *payload,
+                    JsonObject *control)
+{
+  FrozenMessage *frozen = g_slice_new0 (FrozenMessage);
+  if (payload)
+    frozen->payload = g_bytes_ref (payload);
+  if (control)
+    frozen->control = json_object_ref (control);
+  return frozen;
+}
+
+static void
+frozen_message_free (gpointer data)
+{
+  FrozenMessage *frozen = data;
+  if (frozen->control)
+    json_object_unref (frozen->control);
+  if (frozen->payload)
+    g_bytes_unref (frozen->payload);
+  g_slice_free (FrozenMessage, frozen);
+}
 
 struct _CockpitChannelPrivate {
     gulong recv_sig;
@@ -66,8 +95,9 @@ struct _CockpitChannelPrivate {
     gchar **capabilities;
 
     /* Queued messages before channel is ready */
-    gboolean ready;
-    GQueue *received;
+    gboolean prepared;
+    guint prepare_tag;
+    GQueue *frozen;
 
     /* Whether we've sent a closed message */
     gboolean sent_close;
@@ -84,13 +114,9 @@ struct _CockpitChannelPrivate {
 
     /* Binary options */
     gboolean binary_ok;
-    gboolean base64_encoding;
 
     /* Other state */
     JsonObject *close_options;
-
-    /* If we've gotten to the main-loop yet */
-    guint prepare_tag;
 };
 
 enum {
@@ -99,6 +125,7 @@ enum {
     PROP_ID,
     PROP_OPTIONS,
     PROP_CAPABILITIES,
+    PROP_FROZEN,
 };
 
 static guint cockpit_channel_sig_closed;
@@ -110,7 +137,8 @@ on_idle_prepare (gpointer data)
 {
   CockpitChannel *self = COCKPIT_CHANNEL (data);
   g_object_ref (self);
-  cockpit_channel_prepare (self);
+  self->priv->prepare_tag = 0;
+  cockpit_channel_thaw (self);
   g_object_unref (self);
   return FALSE;
 }
@@ -120,57 +148,24 @@ cockpit_channel_init (CockpitChannel *self)
 {
   self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, COCKPIT_TYPE_CHANNEL,
                                             CockpitChannelPrivate);
-
-  self->priv->prepare_tag = g_idle_add_full (G_PRIORITY_HIGH, on_idle_prepare, self, NULL);
 }
 
-static GBytes *
-base64_decode (GBytes *bytes)
+static void
+process_recv (CockpitChannel *self,
+              GBytes *payload)
 {
-  gconstpointer data;
-  guchar *decoded;
-  gsize length;
-  gint state = 0;
-  guint save = 0;
+  CockpitChannelClass *klass;
 
-  data = g_bytes_get_data (bytes, &length);
-
-  if (length == 0)
-    return g_bytes_new_static ("", 0);
-
-  /* We can use a smaller limit here, since we know the saved state is 0,
-     +1 used to avoid calling g_malloc0(0), and hence returning NULL */
-  decoded = g_malloc0 ((length / 4) * 3 + 3);
-  length = g_base64_decode_step (data, length, decoded, &state, &save);
-
-  return g_bytes_new_take (decoded, length);
-}
-
-static GBytes *
-base64_encode (GBytes *bytes)
-{
-  gconstpointer data;
-  gchar *encoded;
-  gsize length;
-  gint state = 0;
-  gint save = 0;
-
-  data = g_bytes_get_data (bytes, &length);
-
-  if (length == 0)
-    return g_bytes_new_static ("", 0);
-
-  /* We can use a smaller limit here, since we know the saved state is 0,
-     +1 is needed for trailing \0, also check for unlikely integer overflow */
-
-  if (length >= ((G_MAXSIZE - 1) / 4 - 1) * 3)
-    g_error ("%s: input too large for Base64 encoding (%"G_GSIZE_FORMAT" chars)", G_STRLOC, length);
-
-  encoded = g_malloc ((length / 3 + 1) * 4 + 4);
-  length = g_base64_encode_step (data, length, FALSE, encoded, &state, &save);
-  length += g_base64_encode_close (FALSE, encoded + length, &state, &save);
-
-  return g_bytes_new_take (encoded, length);
+  if (self->priv->received_done)
+    {
+      cockpit_channel_fail (self, "protocol-error", "channel received message after done");
+    }
+  else
+    {
+      klass = COCKPIT_CHANNEL_GET_CLASS (self);
+      g_assert (klass->recv);
+      (klass->recv) (self, payload);
+    }
 }
 
 static gboolean
@@ -180,37 +175,46 @@ on_transport_recv (CockpitTransport *transport,
                    gpointer user_data)
 {
   CockpitChannel *self = user_data;
-  CockpitChannelClass *klass;
-  GBytes *decoded = NULL;
 
   if (g_strcmp0 (channel_id, self->priv->id) != 0)
     return FALSE;
 
-  if (self->priv->received_done)
-    {
-      cockpit_channel_fail (self, "protocol-error", "channel received message after done");
-      return TRUE;
-    }
-
-  if (self->priv->ready)
-    {
-      if (self->priv->base64_encoding)
-        data = decoded = base64_decode (data);
-      klass = COCKPIT_CHANNEL_GET_CLASS (self);
-      g_assert (klass->recv);
-      (klass->recv) (self, data);
-    }
+  if (self->priv->frozen)
+    g_queue_push_tail (self->priv->frozen, frozen_message_new (data, NULL));
   else
-    {
-      if (!self->priv->received)
-        self->priv->received = g_queue_new ();
-      g_queue_push_tail (self->priv->received, g_bytes_ref (data));
-    }
-
-  if (decoded)
-    g_bytes_unref (decoded);
+    process_recv (self, data);
 
   return TRUE;
+}
+
+static void
+process_control (CockpitChannel *self,
+                 const gchar *command,
+                 JsonObject *options)
+{
+  CockpitChannelClass *klass;
+  const gchar *problem;
+
+  if (g_str_equal (command, "close"))
+    {
+      g_debug ("close channel %s", self->priv->id);
+      if (!cockpit_json_get_string (options, "problem", NULL, &problem))
+        problem = NULL;
+      cockpit_channel_close (self, problem);
+      return;
+    }
+
+  if (g_str_equal (command, "done"))
+    {
+      if (self->priv->received_done)
+        cockpit_channel_fail (self, "protocol-error", "channel received second done");
+      else
+        self->priv->received_done = TRUE;
+    }
+
+  klass = COCKPIT_CHANNEL_GET_CLASS (self);
+  if (klass->control)
+    (klass->control) (self, command, options);
 }
 
 static gboolean
@@ -222,40 +226,16 @@ on_transport_control (CockpitTransport *transport,
                       gpointer user_data)
 {
   CockpitChannel *self = user_data;
-  CockpitChannelClass *klass;
-  const gchar *problem;
 
   if (g_strcmp0 (channel_id, self->priv->id) != 0)
     return FALSE;
 
-  klass = COCKPIT_CHANNEL_GET_CLASS (self);
-  if (g_str_equal (command, "close"))
-    {
-      g_debug ("close channel %s", channel_id);
-      if (!cockpit_json_get_string (options, "problem", NULL, &problem))
-        problem = NULL;
-      cockpit_channel_close (self, problem);
-      return TRUE;
-    }
+  if (self->priv->frozen)
+    g_queue_push_tail (self->priv->frozen, frozen_message_new (payload, options));
+  else
+    process_control (self, command, options);
 
-  if (g_str_equal (command, "done"))
-    {
-      if (self->priv->received_done)
-        {
-          cockpit_channel_fail (self, "protocol-error", "channel received second done");
-        }
-      else
-        {
-          self->priv->received_done = TRUE;
-          if (!self->priv->ready)
-            return TRUE;
-        }
-    }
-
-  if (klass->control)
-    return (klass->control) (self, command, options);
-
-  return FALSE;
+  return TRUE;
 }
 
 static void
@@ -287,6 +267,17 @@ cockpit_channel_constructed (GObject *object)
                                               G_CALLBACK (on_transport_control), self);
   self->priv->close_sig = g_signal_connect (self->priv->transport, "closed",
                                             G_CALLBACK (on_transport_closed), self);
+
+  /*
+   * If the caller didn't ask us to be frozen, then we temporarily
+   * freeze things and run the prepare. Message input will be frozen until
+   * cockpit_channel_ready() is called.
+   */
+  if (!self->priv->frozen)
+    {
+      self->priv->frozen = g_queue_new ();
+      self->priv->prepare_tag = g_idle_add_full (G_PRIORITY_HIGH, on_idle_prepare, self, NULL);
+    }
 }
 
 
@@ -387,11 +378,7 @@ cockpit_channel_real_prepare (CockpitChannel *channel)
   else if (binary != NULL)
     {
       self->priv->binary_ok = TRUE;
-      if (g_str_equal (binary, "base64"))
-        {
-          self->priv->base64_encoding = TRUE;
-        }
-      else if (!g_str_equal (binary, "raw"))
+      if (!g_str_equal (binary, "raw"))
         {
           cockpit_channel_fail (self, "protocol-error",
                                 "channel has invalid \"binary\" option: %s", binary);
@@ -444,6 +431,17 @@ cockpit_channel_set_property (GObject *object,
       g_return_if_fail (self->priv->capabilities == NULL);
       self->priv->capabilities = g_value_dup_boxed (value);
       break;
+    case PROP_FROZEN:
+      if (g_value_get_boolean (value))
+        {
+          if (!self->priv->frozen)
+            self->priv->frozen = g_queue_new ();
+        }
+      else
+        {
+          g_assert (self->priv->frozen == NULL);
+        }
+      break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
       break;
@@ -477,9 +475,9 @@ cockpit_channel_dispose (GObject *object)
     g_signal_handler_disconnect (self->priv->transport, self->priv->close_sig);
   self->priv->close_sig = 0;
 
-  if (self->priv->received)
-    g_queue_free_full (self->priv->received, (GDestroyNotify)g_bytes_unref);
-  self->priv->received = NULL;
+  if (self->priv->frozen)
+    g_queue_free_full (self->priv->frozen, frozen_message_free);
+  self->priv->frozen = NULL;
 
   if (!self->priv->emitted_close)
     cockpit_channel_close (self, "terminated");
@@ -601,6 +599,15 @@ cockpit_channel_class_init (CockpitChannelClass *klass)
                                                        "Channel Capabilities",
                                                        G_TYPE_STRV,
                                                        G_PARAM_WRITABLE | G_PARAM_STATIC_STRINGS));
+
+  /**
+   * CockpitChannel:frozen:
+   *
+   * Whether the channel starts off frozen or not.
+   */
+  g_object_class_install_property (gobject_class, PROP_FROZEN,
+                                   g_param_spec_boolean ("frozen", "frozen", "frozen", FALSE,
+                                                         G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY | G_PARAM_STATIC_STRINGS));
 
   /**
    * CockpitChannel::closed:
@@ -734,46 +741,37 @@ void
 cockpit_channel_ready (CockpitChannel *self,
                        JsonObject *message)
 {
-  CockpitChannelClass *klass;
-  GBytes *decoded;
-  GBytes *payload;
-  GQueue *queue;
+  FrozenMessage *frozen;
 
-  klass = COCKPIT_CHANNEL_GET_CLASS (self);
-  g_assert (klass->recv != NULL);
-  g_assert (klass->close != NULL);
+  g_return_if_fail (self->priv->frozen != NULL);
 
   g_object_ref (self);
-  while (self->priv->received)
+
+  while (self->priv->frozen)
     {
-      queue = self->priv->received;
-      self->priv->received = NULL;
-      for (;;)
+      frozen = g_queue_pop_head (self->priv->frozen);
+      if (frozen == NULL)
+        break;
+
+      /* Is it a control message */
+      if (frozen->control)
         {
-          payload = g_queue_pop_head (queue);
-          if (payload == NULL)
-            break;
-          if (self->priv->base64_encoding)
-            {
-              decoded = base64_decode (payload);
-              g_bytes_unref (payload);
-              payload = decoded;
-            }
-          (klass->recv) (self, payload);
-          g_bytes_unref (payload);
+          process_control (self, json_object_get_string_member (frozen->control, "command"),
+                           frozen->control);
         }
-      g_queue_free (queue);
+      else
+        {
+          process_recv (self, frozen->payload);
+        }
+
+      frozen_message_free (frozen);
     }
+
+  if (self->priv->frozen)
+    g_queue_free (self->priv->frozen);
+  self->priv->frozen = NULL;
 
   cockpit_channel_control (self, "ready", message);
-  self->priv->ready = TRUE;
-
-  /* No more data coming? */
-  if (self->priv->received_done)
-    {
-      if (klass->control)
-        (klass->control) (self, "done", NULL);
-    }
 
   g_object_unref (self);
 }
@@ -794,7 +792,6 @@ cockpit_channel_send (CockpitChannel *self,
                       GBytes *payload,
                       gboolean trust_is_utf8)
 {
-  GBytes *encoded = NULL;
   GBytes *validated = NULL;
 
   if (!trust_is_utf8)
@@ -803,13 +800,8 @@ cockpit_channel_send (CockpitChannel *self,
         payload = validated = cockpit_unicode_force_utf8 (payload);
     }
 
-  if (self->priv->base64_encoding)
-    payload = encoded = base64_encode (payload);
-
   cockpit_transport_send (self->priv->transport, self->priv->id, payload);
 
-  if (encoded)
-    g_bytes_unref (encoded);
   if (validated)
     g_bytes_unref (validated);
 }
@@ -862,26 +854,32 @@ cockpit_channel_get_id (CockpitChannel *self)
 }
 
 /**
- * cockpit_channel_prepare:
+ * cockpit_channel_thaw:
  * @self: the channel
  *
  * Usually this is automatically called after the channel is
  * created and control returns to the mainloop. However you
- * can preempt that by calling this function.
+ * can preempt that by calling this function. In the case of
+ * a frozen channel, this method needs to be called to set
+ * things in motion.
  */
 void
-cockpit_channel_prepare (CockpitChannel *self)
+cockpit_channel_thaw (CockpitChannel *self)
 {
   CockpitChannelClass *klass;
 
   g_return_if_fail (COCKPIT_IS_CHANNEL (self));
 
-  if (!self->priv->prepare_tag)
+  if (self->priv->prepared)
     return;
 
-  g_source_remove (self->priv->prepare_tag);
-  self->priv->prepare_tag = 0;
+  if (self->priv->prepare_tag)
+    {
+      g_source_remove (self->priv->prepare_tag);
+      self->priv->prepare_tag = 0;
+    }
 
+  self->priv->prepared = TRUE;
   if (!self->priv->emitted_close)
     {
       klass = COCKPIT_CHANNEL_GET_CLASS (self);

@@ -1,8 +1,10 @@
 # Generated Makefile data for selinux
-# Stamp: Mon Jan 09 2017 11:58:41 GMT+0000 (UTC)
+# Stamp: Wed Jan 18 2017 13:53:56 GMT+0000 (UTC)
 
 selinux_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
+	$(srcdir)/pkg/lib/cockpit-components-onoff.css \
+	$(srcdir)/pkg/lib/cockpit-components-onoff.jsx \
 	$(srcdir)/pkg/lib/listing.css \
 	$(srcdir)/pkg/lib/page.css \
 	$(srcdir)/pkg/selinux/manifest.json \
@@ -38,22 +40,26 @@ selinux_DEBUG = \
 selinux_TESTS = \
 	$(NULL)
 
-dist/Makefile-selinux.deps: $(WEBPACK_CONFIG) $(selinux_INPUTS)
-	$(WEBPACK_RULE) -d dist/Makefile-selinux.deps $(WEBPACK_CONFIG)
+dist/selinux/Makefile.deps: $(WEBPACK_CONFIG) $(selinux_INPUTS)
+	$(WEBPACK_RULE) -d dist/selinux/Makefile.deps $(WEBPACK_CONFIG)
 
-dist/selinux/manifest.json: dist/Makefile-selinux.deps
+dist/selinux/manifest.json: dist/selinux/Makefile.deps
 
-dist/selinux/selinux.css: dist/Makefile-selinux.deps
+dist/selinux/selinux.css: dist/selinux/Makefile.deps
 
-dist/selinux/selinux.css.map: dist/Makefile-selinux.deps
+dist/selinux/selinux.css.map: dist/selinux/Makefile.deps
 
-dist/selinux/selinux.min.js: dist/Makefile-selinux.deps
+dist/selinux/selinux.min.js: dist/selinux/Makefile.deps
 
-dist/selinux/selinux.min.js.map: dist/Makefile-selinux.deps
+dist/selinux/selinux.min.js.map: dist/selinux/Makefile.deps
 
-dist/selinux/setroubleshoot.html: dist/Makefile-selinux.deps
+dist/selinux/setroubleshoot.html: dist/selinux/Makefile.deps
 
 $(srcdir)/pkg/lib/cockpit-components-listing.jsx:
+
+$(srcdir)/pkg/lib/cockpit-components-onoff.css:
+
+$(srcdir)/pkg/lib/cockpit-components-onoff.jsx:
 
 $(srcdir)/pkg/lib/listing.css:
 
@@ -79,10 +85,10 @@ WEBPACK_INSTALL += $(selinux_INSTALL)
 WEBPACK_DEBUG += $(selinux_DEBUG)
 TESTS += $(selinux_TESTS)
 
-selinux: dist/Makefile-selinux.deps $(selinux_OUTPUTS) $(selinux_INSTALL)
+selinux: dist/selinux/Makefile.deps $(selinux_OUTPUTS) $(selinux_INSTALL)
 	@true
 clean-selinux: 
-	rm -rf $(selinux_OUTPUTS) $(selinux_INSTALL) dist/Makefile-selinux.deps
+	rm -rf $(selinux_OUTPUTS) $(selinux_INSTALL) dist/selinux/Makefile.deps
 all-local:: selinux
 	@true
 clean-local:: clean-selinux

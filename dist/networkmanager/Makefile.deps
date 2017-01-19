@@ -1,5 +1,5 @@
 # Generated Makefile data for networkmanager
-# Stamp: Mon Jan 09 2017 11:58:41 GMT+0000 (UTC)
+# Stamp: Wed Jan 18 2017 13:53:56 GMT+0000 (UTC)
 
 networkmanager_INPUTS = \
 	$(srcdir)/pkg/lib/journal.css \
@@ -58,30 +58,30 @@ networkmanager_TESTS = \
 	dist/networkmanager/test-utils.html \
 	$(NULL)
 
-dist/Makefile-networkmanager.deps: $(WEBPACK_CONFIG) $(networkmanager_INPUTS)
-	$(WEBPACK_RULE) -d dist/Makefile-networkmanager.deps $(WEBPACK_CONFIG)
+dist/networkmanager/Makefile.deps: $(WEBPACK_CONFIG) $(networkmanager_INPUTS)
+	$(WEBPACK_RULE) -d dist/networkmanager/Makefile.deps $(WEBPACK_CONFIG)
 
-dist/networkmanager/index.html: dist/Makefile-networkmanager.deps
+dist/networkmanager/index.html: dist/networkmanager/Makefile.deps
 
-dist/networkmanager/manifest.json: dist/Makefile-networkmanager.deps
+dist/networkmanager/manifest.json: dist/networkmanager/Makefile.deps
 
-dist/networkmanager/network.css: dist/Makefile-networkmanager.deps
+dist/networkmanager/network.css: dist/networkmanager/Makefile.deps
 
-dist/networkmanager/network.css.map: dist/Makefile-networkmanager.deps
+dist/networkmanager/network.css.map: dist/networkmanager/Makefile.deps
 
-dist/networkmanager/network.min.js: dist/Makefile-networkmanager.deps
+dist/networkmanager/network.min.js: dist/networkmanager/Makefile.deps
 
-dist/networkmanager/network.min.js.map: dist/Makefile-networkmanager.deps
+dist/networkmanager/network.min.js.map: dist/networkmanager/Makefile.deps
 
-dist/networkmanager/test-utils.css: dist/Makefile-networkmanager.deps
+dist/networkmanager/test-utils.css: dist/networkmanager/Makefile.deps
 
-dist/networkmanager/test-utils.css.map: dist/Makefile-networkmanager.deps
+dist/networkmanager/test-utils.css.map: dist/networkmanager/Makefile.deps
 
-dist/networkmanager/test-utils.html: dist/Makefile-networkmanager.deps
+dist/networkmanager/test-utils.html: dist/networkmanager/Makefile.deps
 
-dist/networkmanager/test-utils.min.js: dist/Makefile-networkmanager.deps
+dist/networkmanager/test-utils.min.js: dist/networkmanager/Makefile.deps
 
-dist/networkmanager/test-utils.min.js.map: dist/Makefile-networkmanager.deps
+dist/networkmanager/test-utils.min.js.map: dist/networkmanager/Makefile.deps
 
 $(srcdir)/pkg/lib/journal.css:
 
@@ -129,10 +129,10 @@ WEBPACK_INSTALL += $(networkmanager_INSTALL)
 WEBPACK_DEBUG += $(networkmanager_DEBUG)
 TESTS += $(networkmanager_TESTS)
 
-networkmanager: dist/Makefile-networkmanager.deps $(networkmanager_OUTPUTS) $(networkmanager_INSTALL)
+networkmanager: dist/networkmanager/Makefile.deps $(networkmanager_OUTPUTS) $(networkmanager_INSTALL)
 	@true
 clean-networkmanager: 
-	rm -rf $(networkmanager_OUTPUTS) $(networkmanager_INSTALL) dist/Makefile-networkmanager.deps
+	rm -rf $(networkmanager_OUTPUTS) $(networkmanager_INSTALL) dist/networkmanager/Makefile.deps
 all-local:: networkmanager
 	@true
 clean-local:: clean-networkmanager

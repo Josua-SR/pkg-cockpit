@@ -15,7 +15,6 @@ COCKPIT_DEPS="\
 cryptsetup \
 docker.io \
 libjson-glib-1.0-0 \
-libpcp3 \
 libpolkit-agent-1-0 \
 libpolkit-gobject-1-0 \
 libpwquality-tools \
@@ -23,7 +22,6 @@ libssh-4 \
 libteam-utils \
 libvirt-daemon-system \
 network-manager \
-pcp \
 policykit-1 \
 realmd \
 selinux-basics \
@@ -44,7 +42,6 @@ autoconf \
 automake \
 intltool \
 libssh-dev \
-libssl-dev \
 zlib1g-dev \
 libkrb5-dev \
 libxslt1-dev \
@@ -52,19 +49,15 @@ libkeyutils-dev \
 libglib2.0-dev \
 libsystemd-dev \
 libpolkit-agent-1-dev \
-libpcp3-dev \
 libjson-glib-dev \
 libpam0g-dev \
-libpcp-import1-dev \
-libpcp-pmda3-dev \
 systemd \
 xsltproc \
 xmlto \
 docbook-xsl \
 glib-networking \
-nodejs-legacy \
-npm \
 openssh-client \
+python \
 "
 
 # We also install the packages necessary to join a FreeIPA domain so
@@ -73,7 +66,6 @@ openssh-client \
 IPA_CLIENT_PACKAGES="\
 sssd-tools \
 packagekit \
-freeipa-client \
 "
 
 TEST_PACKAGES="\
@@ -87,7 +79,9 @@ useradd -m -U -c Administrator -G sudo -s /bin/bash admin
 echo admin:foobar | chpasswd
 
 # For storaged
-echo "deb http://ftp.uk.debian.org/debian experimental main" >/etc/apt/sources.list.d/experimental.list
+echo "deb http://deb.debian.org/debian experimental main" >/etc/apt/sources.list.d/experimental.list
+# FIXME: we need to enable jessie-backports until docker.io gets back into testing
+echo "deb http://deb.debian.org/debian jessie-backports main" >/etc/apt/sources.list.d/jessie-backports.list
 apt-get -y update
 
 export DEBIAN_FRONTEND=noninteractive
@@ -96,17 +90,20 @@ apt-get -y install $TEST_PACKAGES $COCKPIT_DEPS $IPA_CLIENT_PACKAGES
 # Prepare for building
 #
 apt-get -y install dpkg-dev pbuilder
+echo "DISTRIBUTION=testing" > ~/.pbuilderrc
 pbuilder --create
 echo "apt-get -y install fakeroot $COCKPIT_BUILD_DEPS" >debian-8.install-build-deps
 pbuilder --execute --save-after-exec debian-8.install-build-deps
 # Disable build-dep installation for the real builds
-echo PBUILDERSATISFYDEPENDSCMD=true >~/.pbuilderrc
+echo PBUILDERSATISFYDEPENDSCMD=true >>~/.pbuilderrc
 
 # Debian does not automatically start the default libvirt network
 virsh net-autostart default
 
 # HACK: docker falls over regularly, print its log if it does
-systemctl start docker || journalctl -u docker
+# we also need to restart it in case aufs-dkms was installed after docker.io
+# and thus docker.io auto-switches its backend
+systemctl restart docker || journalctl -u docker
 
 # docker images that we need for integration testing
 /var/lib/testvm/docker-images.setup
@@ -124,7 +121,7 @@ apt-get clean
 mkdir /var/log/journal
 
 # Allow root login with password
-sed -i 's/^PermitRootLogin .*/PermitRootLogin yes/' /etc/ssh/sshd_config
+sed -i 's/^[# ]*PermitRootLogin .*/PermitRootLogin yes/' /etc/ssh/sshd_config
 
 # Disable old SSH init script.  Something is calling "/etc/init.d/ssh
 # reload" during boot and that results in the ssh port being

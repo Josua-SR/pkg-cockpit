@@ -1,9 +1,11 @@
 # Generated Makefile data for playground
-# Stamp: Mon Jan 09 2017 11:58:41 GMT+0000 (UTC)
+# Stamp: Wed Jan 18 2017 13:53:56 GMT+0000 (UTC)
 
 playground_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \
 	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
+	$(srcdir)/pkg/lib/cockpit-components-onoff.css \
+	$(srcdir)/pkg/lib/cockpit-components-onoff.jsx \
 	$(srcdir)/pkg/lib/cockpit-components-select.jsx \
 	$(srcdir)/pkg/lib/cockpit-components-tooltip.jsx \
 	$(srcdir)/pkg/lib/listing.css \
@@ -25,6 +27,7 @@ playground_INPUTS = \
 	$(srcdir)/pkg/playground/plot.js \
 	$(srcdir)/pkg/playground/react-demo-dialog.jsx \
 	$(srcdir)/pkg/playground/react-demo-listing.jsx \
+	$(srcdir)/pkg/playground/react-demo-onoff.jsx \
 	$(srcdir)/pkg/playground/react-demo-tooltip.jsx \
 	$(srcdir)/pkg/playground/react-patterns.html \
 	$(srcdir)/pkg/playground/react-patterns.js \
@@ -118,80 +121,84 @@ playground_DEBUG = \
 playground_TESTS = \
 	$(NULL)
 
-dist/Makefile-playground.deps: $(WEBPACK_CONFIG) $(playground_INPUTS)
-	$(WEBPACK_RULE) -d dist/Makefile-playground.deps $(WEBPACK_CONFIG)
+dist/playground/Makefile.deps: $(WEBPACK_CONFIG) $(playground_INPUTS)
+	$(WEBPACK_RULE) -d dist/playground/Makefile.deps $(WEBPACK_CONFIG)
 
-dist/playground/hammer.gif: dist/Makefile-playground.deps
+dist/playground/hammer.gif: dist/playground/Makefile.deps
 
-dist/playground/jquery-patterns.css: dist/Makefile-playground.deps
+dist/playground/jquery-patterns.css: dist/playground/Makefile.deps
 
-dist/playground/jquery-patterns.css.map: dist/Makefile-playground.deps
+dist/playground/jquery-patterns.css.map: dist/playground/Makefile.deps
 
-dist/playground/jquery-patterns.html: dist/Makefile-playground.deps
+dist/playground/jquery-patterns.html: dist/playground/Makefile.deps
 
-dist/playground/jquery-patterns.min.js: dist/Makefile-playground.deps
+dist/playground/jquery-patterns.min.js: dist/playground/Makefile.deps
 
-dist/playground/jquery-patterns.min.js.map: dist/Makefile-playground.deps
+dist/playground/jquery-patterns.min.js.map: dist/playground/Makefile.deps
 
-dist/playground/manifest.json: dist/Makefile-playground.deps
+dist/playground/manifest.json: dist/playground/Makefile.deps
 
-dist/playground/metrics.css: dist/Makefile-playground.deps
+dist/playground/metrics.css: dist/playground/Makefile.deps
 
-dist/playground/metrics.css.map: dist/Makefile-playground.deps
+dist/playground/metrics.css.map: dist/playground/Makefile.deps
 
-dist/playground/metrics.html: dist/Makefile-playground.deps
+dist/playground/metrics.html: dist/playground/Makefile.deps
 
-dist/playground/metrics.min.js: dist/Makefile-playground.deps
+dist/playground/metrics.min.js: dist/playground/Makefile.deps
 
-dist/playground/metrics.min.js.map: dist/Makefile-playground.deps
+dist/playground/metrics.min.js.map: dist/playground/Makefile.deps
 
-dist/playground/plot.css: dist/Makefile-playground.deps
+dist/playground/plot.css: dist/playground/Makefile.deps
 
-dist/playground/plot.css.map: dist/Makefile-playground.deps
+dist/playground/plot.css.map: dist/playground/Makefile.deps
 
-dist/playground/plot.html: dist/Makefile-playground.deps
+dist/playground/plot.html: dist/playground/Makefile.deps
 
-dist/playground/plot.min.js: dist/Makefile-playground.deps
+dist/playground/plot.min.js: dist/playground/Makefile.deps
 
-dist/playground/plot.min.js.map: dist/Makefile-playground.deps
+dist/playground/plot.min.js.map: dist/playground/Makefile.deps
 
-dist/playground/react-patterns.css: dist/Makefile-playground.deps
+dist/playground/react-patterns.css: dist/playground/Makefile.deps
 
-dist/playground/react-patterns.css.map: dist/Makefile-playground.deps
+dist/playground/react-patterns.css.map: dist/playground/Makefile.deps
 
-dist/playground/react-patterns.html: dist/Makefile-playground.deps
+dist/playground/react-patterns.html: dist/playground/Makefile.deps
 
-dist/playground/react-patterns.min.js: dist/Makefile-playground.deps
+dist/playground/react-patterns.min.js: dist/playground/Makefile.deps
 
-dist/playground/react-patterns.min.js.map: dist/Makefile-playground.deps
+dist/playground/react-patterns.min.js.map: dist/playground/Makefile.deps
 
-dist/playground/service.html: dist/Makefile-playground.deps
+dist/playground/service.html: dist/playground/Makefile.deps
 
-dist/playground/service.min.js: dist/Makefile-playground.deps
+dist/playground/service.min.js: dist/playground/Makefile.deps
 
-dist/playground/service.min.js.map: dist/Makefile-playground.deps
+dist/playground/service.min.js.map: dist/playground/Makefile.deps
 
-dist/playground/speed.html: dist/Makefile-playground.deps
+dist/playground/speed.html: dist/playground/Makefile.deps
 
-dist/playground/speed.min.js: dist/Makefile-playground.deps
+dist/playground/speed.min.js: dist/playground/Makefile.deps
 
-dist/playground/speed.min.js.map: dist/Makefile-playground.deps
+dist/playground/speed.min.js.map: dist/playground/Makefile.deps
 
-dist/playground/test.html: dist/Makefile-playground.deps
+dist/playground/test.html: dist/playground/Makefile.deps
 
-dist/playground/test.min.js: dist/Makefile-playground.deps
+dist/playground/test.min.js: dist/playground/Makefile.deps
 
-dist/playground/test.min.js.map: dist/Makefile-playground.deps
+dist/playground/test.min.js.map: dist/playground/Makefile.deps
 
-dist/playground/translate.html: dist/Makefile-playground.deps
+dist/playground/translate.html: dist/playground/Makefile.deps
 
-dist/playground/translate.min.js: dist/Makefile-playground.deps
+dist/playground/translate.min.js: dist/playground/Makefile.deps
 
-dist/playground/translate.min.js.map: dist/Makefile-playground.deps
+dist/playground/translate.min.js.map: dist/playground/Makefile.deps
 
 $(srcdir)/pkg/lib/cockpit-components-dialog.jsx:
 
 $(srcdir)/pkg/lib/cockpit-components-listing.jsx:
+
+$(srcdir)/pkg/lib/cockpit-components-onoff.css:
+
+$(srcdir)/pkg/lib/cockpit-components-onoff.jsx:
 
 $(srcdir)/pkg/lib/cockpit-components-select.jsx:
 
@@ -235,6 +242,8 @@ $(srcdir)/pkg/playground/react-demo-dialog.jsx:
 
 $(srcdir)/pkg/playground/react-demo-listing.jsx:
 
+$(srcdir)/pkg/playground/react-demo-onoff.jsx:
+
 $(srcdir)/pkg/playground/react-demo-tooltip.jsx:
 
 $(srcdir)/pkg/playground/react-patterns.html:
@@ -263,10 +272,10 @@ WEBPACK_INSTALL += $(playground_INSTALL)
 WEBPACK_DEBUG += $(playground_DEBUG)
 TESTS += $(playground_TESTS)
 
-playground: dist/Makefile-playground.deps $(playground_OUTPUTS) $(playground_INSTALL)
+playground: dist/playground/Makefile.deps $(playground_OUTPUTS) $(playground_INSTALL)
 	@true
 clean-playground: 
-	rm -rf $(playground_OUTPUTS) $(playground_INSTALL) dist/Makefile-playground.deps
+	rm -rf $(playground_OUTPUTS) $(playground_INSTALL) dist/playground/Makefile.deps
 all-local:: playground
 	@true
 clean-local:: clean-playground

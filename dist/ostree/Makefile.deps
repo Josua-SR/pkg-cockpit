@@ -1,0 +1,127 @@
+# Generated Makefile data for ostree
+# Stamp: Wed Jan 18 2017 13:53:56 GMT+0000 (UTC)
+
+ostree_INPUTS = \
+	$(srcdir)/pkg/lib/angular-dialog.js \
+	$(srcdir)/pkg/lib/listing.css \
+	$(srcdir)/pkg/lib/page.css \
+	$(srcdir)/pkg/lib/qunit-config.js \
+	$(srcdir)/pkg/lib/qunit-template.html \
+	$(srcdir)/pkg/lib/qunit-tests.js \
+	$(srcdir)/pkg/lib/table.css \
+	$(srcdir)/pkg/ostree/app.js \
+	$(srcdir)/pkg/ostree/client.js \
+	$(srcdir)/pkg/ostree/index.html \
+	$(srcdir)/pkg/ostree/manifest.json \
+	$(srcdir)/pkg/ostree/ostree.css \
+	$(srcdir)/pkg/ostree/remotes.js \
+	$(srcdir)/pkg/ostree/sample.conf \
+	$(srcdir)/pkg/ostree/test-utils.js \
+	$(srcdir)/pkg/ostree/utils.js \
+	$(NULL)
+
+ostree_OUTPUTS = \
+	dist/ostree/index.html \
+	dist/ostree/manifest.json \
+	dist/ostree/ostree.css \
+	dist/ostree/ostree.css.map \
+	dist/ostree/ostree.min.js \
+	dist/ostree/ostree.min.js.map \
+	dist/ostree/test-utils.css \
+	dist/ostree/test-utils.css.map \
+	dist/ostree/test-utils.html \
+	dist/ostree/test-utils.min.js \
+	dist/ostree/test-utils.min.js.map \
+	$(NULL)
+
+ostree_INSTALL = \
+	dist/ostree/index.html.gz \
+	dist/ostree/manifest.json \
+	dist/ostree/ostree.css.gz \
+	dist/ostree/ostree.min.js.gz \
+	dist/ostree/test-utils.css.gz \
+	dist/ostree/test-utils.min.js.gz \
+	$(NULL)
+
+ostree_DEBUG = \
+	dist/ostree/ostree.css.map \
+	dist/ostree/ostree.min.js.map \
+	dist/ostree/test-utils.css.map \
+	dist/ostree/test-utils.min.js.map \
+	$(NULL)
+
+ostree_TESTS = \
+	dist/ostree/test-utils.html \
+	$(NULL)
+
+dist/ostree/Makefile.deps: $(WEBPACK_CONFIG) $(ostree_INPUTS)
+	$(WEBPACK_RULE) -d dist/ostree/Makefile.deps $(WEBPACK_CONFIG)
+
+dist/ostree/index.html: dist/ostree/Makefile.deps
+
+dist/ostree/manifest.json: dist/ostree/Makefile.deps
+
+dist/ostree/ostree.css: dist/ostree/Makefile.deps
+
+dist/ostree/ostree.css.map: dist/ostree/Makefile.deps
+
+dist/ostree/ostree.min.js: dist/ostree/Makefile.deps
+
+dist/ostree/ostree.min.js.map: dist/ostree/Makefile.deps
+
+dist/ostree/test-utils.css: dist/ostree/Makefile.deps
+
+dist/ostree/test-utils.css.map: dist/ostree/Makefile.deps
+
+dist/ostree/test-utils.html: dist/ostree/Makefile.deps
+
+dist/ostree/test-utils.min.js: dist/ostree/Makefile.deps
+
+dist/ostree/test-utils.min.js.map: dist/ostree/Makefile.deps
+
+$(srcdir)/pkg/lib/angular-dialog.js:
+
+$(srcdir)/pkg/lib/listing.css:
+
+$(srcdir)/pkg/lib/page.css:
+
+$(srcdir)/pkg/lib/qunit-config.js:
+
+$(srcdir)/pkg/lib/qunit-template.html:
+
+$(srcdir)/pkg/lib/qunit-tests.js:
+
+$(srcdir)/pkg/lib/table.css:
+
+$(srcdir)/pkg/ostree/app.js:
+
+$(srcdir)/pkg/ostree/client.js:
+
+$(srcdir)/pkg/ostree/index.html:
+
+$(srcdir)/pkg/ostree/manifest.json:
+
+$(srcdir)/pkg/ostree/ostree.css:
+
+$(srcdir)/pkg/ostree/remotes.js:
+
+$(srcdir)/pkg/ostree/sample.conf:
+
+$(srcdir)/pkg/ostree/test-utils.js:
+
+$(srcdir)/pkg/ostree/utils.js:
+
+WEBPACK_INPUTS += $(ostree_INPUTS)
+WEBPACK_OUTPUTS += $(ostree_OUTPUTS)
+WEBPACK_INSTALL += $(ostree_INSTALL)
+WEBPACK_DEBUG += $(ostree_DEBUG)
+TESTS += $(ostree_TESTS)
+
+ostree: dist/ostree/Makefile.deps $(ostree_OUTPUTS) $(ostree_INSTALL)
+	@true
+clean-ostree: 
+	rm -rf $(ostree_OUTPUTS) $(ostree_INSTALL) dist/ostree/Makefile.deps
+all-local:: ostree
+	@true
+clean-local:: clean-ostree
+	@true

@@ -1,5 +1,5 @@
 # Generated Makefile data for docker
-# Stamp: Mon Jan 09 2017 11:58:41 GMT+0000 (UTC)
+# Stamp: Wed Jan 18 2017 13:53:56 GMT+0000 (UTC)
 
 docker_INPUTS = \
 	$(srcdir)/pkg/docker/atomic.js \
@@ -83,38 +83,38 @@ docker_TESTS = \
 	dist/docker/test-docker.html \
 	$(NULL)
 
-dist/Makefile-docker.deps: $(WEBPACK_CONFIG) $(docker_INPUTS)
-	$(WEBPACK_RULE) -d dist/Makefile-docker.deps $(WEBPACK_CONFIG)
+dist/docker/Makefile.deps: $(WEBPACK_CONFIG) $(docker_INPUTS)
+	$(WEBPACK_RULE) -d dist/docker/Makefile.deps $(WEBPACK_CONFIG)
 
-dist/docker/console.html: dist/Makefile-docker.deps
+dist/docker/console.html: dist/docker/Makefile.deps
 
-dist/docker/console.min.js: dist/Makefile-docker.deps
+dist/docker/console.min.js: dist/docker/Makefile.deps
 
-dist/docker/console.min.js.map: dist/Makefile-docker.deps
+dist/docker/console.min.js.map: dist/docker/Makefile.deps
 
-dist/docker/docker.css: dist/Makefile-docker.deps
+dist/docker/docker.css: dist/docker/Makefile.deps
 
-dist/docker/docker.css.map: dist/Makefile-docker.deps
+dist/docker/docker.css.map: dist/docker/Makefile.deps
 
-dist/docker/docker.min.js: dist/Makefile-docker.deps
+dist/docker/docker.min.js: dist/docker/Makefile.deps
 
-dist/docker/docker.min.js.map: dist/Makefile-docker.deps
+dist/docker/docker.min.js.map: dist/docker/Makefile.deps
 
-dist/docker/images/drive-harddisk-symbolic.svg: dist/Makefile-docker.deps
+dist/docker/images/drive-harddisk-symbolic.svg: dist/docker/Makefile.deps
 
-dist/docker/index.html: dist/Makefile-docker.deps
+dist/docker/index.html: dist/docker/Makefile.deps
 
-dist/docker/manifest.json: dist/Makefile-docker.deps
+dist/docker/manifest.json: dist/docker/Makefile.deps
 
-dist/docker/test-docker.css: dist/Makefile-docker.deps
+dist/docker/test-docker.css: dist/docker/Makefile.deps
 
-dist/docker/test-docker.css.map: dist/Makefile-docker.deps
+dist/docker/test-docker.css.map: dist/docker/Makefile.deps
 
-dist/docker/test-docker.html: dist/Makefile-docker.deps
+dist/docker/test-docker.html: dist/docker/Makefile.deps
 
-dist/docker/test-docker.min.js: dist/Makefile-docker.deps
+dist/docker/test-docker.min.js: dist/docker/Makefile.deps
 
-dist/docker/test-docker.min.js.map: dist/Makefile-docker.deps
+dist/docker/test-docker.min.js.map: dist/docker/Makefile.deps
 
 $(srcdir)/pkg/docker/atomic.js:
 
@@ -196,10 +196,10 @@ WEBPACK_INSTALL += $(docker_INSTALL)
 WEBPACK_DEBUG += $(docker_DEBUG)
 TESTS += $(docker_TESTS)
 
-docker: dist/Makefile-docker.deps $(docker_OUTPUTS) $(docker_INSTALL)
+docker: dist/docker/Makefile.deps $(docker_OUTPUTS) $(docker_INSTALL)
 	@true
 clean-docker: 
-	rm -rf $(docker_OUTPUTS) $(docker_INSTALL) dist/Makefile-docker.deps
+	rm -rf $(docker_OUTPUTS) $(docker_INSTALL) dist/docker/Makefile.deps
 all-local:: docker
 	@true
 clean-local:: clean-docker

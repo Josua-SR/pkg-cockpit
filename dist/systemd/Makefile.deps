@@ -1,5 +1,5 @@
 # Generated Makefile data for systemd
-# Stamp: Mon Jan 09 2017 11:58:41 GMT+0000 (UTC)
+# Stamp: Wed Jan 18 2017 13:53:56 GMT+0000 (UTC)
 
 systemd_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-terminal.jsx \
@@ -78,42 +78,42 @@ systemd_DEBUG = \
 systemd_TESTS = \
 	$(NULL)
 
-dist/Makefile-systemd.deps: $(WEBPACK_CONFIG) $(systemd_INPUTS)
-	$(WEBPACK_RULE) -d dist/Makefile-systemd.deps $(WEBPACK_CONFIG)
+dist/systemd/Makefile.deps: $(WEBPACK_CONFIG) $(systemd_INPUTS)
+	$(WEBPACK_RULE) -d dist/systemd/Makefile.deps $(WEBPACK_CONFIG)
 
-dist/systemd/index.html: dist/Makefile-systemd.deps
+dist/systemd/index.html: dist/systemd/Makefile.deps
 
-dist/systemd/logs.html: dist/Makefile-systemd.deps
+dist/systemd/logs.html: dist/systemd/Makefile.deps
 
-dist/systemd/logs.min.js: dist/Makefile-systemd.deps
+dist/systemd/logs.min.js: dist/systemd/Makefile.deps
 
-dist/systemd/logs.min.js.map: dist/Makefile-systemd.deps
+dist/systemd/logs.min.js.map: dist/systemd/Makefile.deps
 
-dist/systemd/manifest.json: dist/Makefile-systemd.deps
+dist/systemd/manifest.json: dist/systemd/Makefile.deps
 
-dist/systemd/services.html: dist/Makefile-systemd.deps
+dist/systemd/services.html: dist/systemd/Makefile.deps
 
-dist/systemd/services.min.js: dist/Makefile-systemd.deps
+dist/systemd/services.min.js: dist/systemd/Makefile.deps
 
-dist/systemd/services.min.js.map: dist/Makefile-systemd.deps
+dist/systemd/services.min.js.map: dist/systemd/Makefile.deps
 
-dist/systemd/system.css: dist/Makefile-systemd.deps
+dist/systemd/system.css: dist/systemd/Makefile.deps
 
-dist/systemd/system.css.map: dist/Makefile-systemd.deps
+dist/systemd/system.css.map: dist/systemd/Makefile.deps
 
-dist/systemd/system.min.js: dist/Makefile-systemd.deps
+dist/systemd/system.min.js: dist/systemd/Makefile.deps
 
-dist/systemd/system.min.js.map: dist/Makefile-systemd.deps
+dist/systemd/system.min.js.map: dist/systemd/Makefile.deps
 
-dist/systemd/terminal.css: dist/Makefile-systemd.deps
+dist/systemd/terminal.css: dist/systemd/Makefile.deps
 
-dist/systemd/terminal.css.map: dist/Makefile-systemd.deps
+dist/systemd/terminal.css.map: dist/systemd/Makefile.deps
 
-dist/systemd/terminal.html: dist/Makefile-systemd.deps
+dist/systemd/terminal.html: dist/systemd/Makefile.deps
 
-dist/systemd/terminal.min.js: dist/Makefile-systemd.deps
+dist/systemd/terminal.min.js: dist/systemd/Makefile.deps
 
-dist/systemd/terminal.min.js.map: dist/Makefile-systemd.deps
+dist/systemd/terminal.min.js.map: dist/systemd/Makefile.deps
 
 $(srcdir)/pkg/lib/cockpit-components-terminal.jsx:
 
@@ -177,10 +177,10 @@ WEBPACK_INSTALL += $(systemd_INSTALL)
 WEBPACK_DEBUG += $(systemd_DEBUG)
 TESTS += $(systemd_TESTS)
 
-systemd: dist/Makefile-systemd.deps $(systemd_OUTPUTS) $(systemd_INSTALL)
+systemd: dist/systemd/Makefile.deps $(systemd_OUTPUTS) $(systemd_INSTALL)
 	@true
 clean-systemd: 
-	rm -rf $(systemd_OUTPUTS) $(systemd_INSTALL) dist/Makefile-systemd.deps
+	rm -rf $(systemd_OUTPUTS) $(systemd_INSTALL) dist/systemd/Makefile.deps
 all-local:: systemd
 	@true
 clean-local:: clean-systemd
