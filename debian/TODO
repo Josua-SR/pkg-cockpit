@@ -1,14 +1,7 @@
-- building twice in a row fails
-  https://github.com/cockpit-project/cockpit/issues/3165
 - test-suite fails in a pbuilder chroot
-- proper Debian branding
 - git builds (pulling deps via npm over the net) vs minified js in the dist
   tarball
-- double-check package dependencies
-- package storaged
-  https://github.com/cockpit-project/storaged
 - /var/lib/cockpit might need a different group (unclear what it is being used for)
 - run cockpit-ws unpriviliged under cockpit-ws user
 - generate proper upstream changelog from
   https://github.com/cockpit-project/cockpit/releases
-- Update/Review debian/copyright (e.g. for external resources)
