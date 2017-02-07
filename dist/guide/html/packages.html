@@ -109,6 +109,13 @@ $ cockpit-bridge --packages
 </td>
 </tr>
 <tr>
+<td><p><span class="term">dashboard</span></p></td>
+<td><p>An optional JSON object containing any dashboard items that this package
+          provides. These will be added into the Cockpit user interface on the top bar.
+          Each property on this object is named for the identifier of such an item, and the
+          property value is a JSON object described below.</p></td>
+</tr>
+<tr>
 <td><p><span class="term">menu</span></p></td>
 <td><p>An optional JSON object containing any main menu items that this package
           provides. These will be added into the Cockpit user interface on the side bar.
@@ -120,6 +127,12 @@ $ cockpit-bridge --packages
 <td><p>An optional string that changes the name of the package. Normally
           packages derive their name from the directory that they are located in. This
           field overrides that name.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">priority</span></p></td>
+<td><p>An optional number that specifies which package is prefered in cases
+          where there are conflicts. For example given two packages with the same
+          <code class="code">name</code> a package is chosen based on its priority.</p></td>
 </tr>
 <tr>
 <td><p><span class="term">requires</span></p></td>
@@ -151,6 +164,11 @@ $ cockpit-bridge --packages
 <tr>
 <td><p><span class="term">label</span></p></td>
 <td><p>The label for the tool.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">order</span></p></td>
+<td><p>An optional order number to place this menu item or tool. Lower numbers
+          are listed first.</p></td>
 </tr>
 <tr>
 <td><p><span class="term">path</span></p></td>

@@ -19,7 +19,7 @@
  */
 import cockpit from 'cockpit';
 import React, { PropTypes } from "react";
-import { shutdownVm, forceVmOff, forceRebootVm, rebootVm, startVm, hostVmsListToggleVmExpand, hostVmsListShowSubtab, setRefreshInterval } from "./actions.es6";
+import { shutdownVm, forceVmOff, forceRebootVm, rebootVm, startVm, setRefreshInterval } from "./actions.es6";
 import { canReset, canShutdown, canRun, rephraseUI, logDebug, toGigaBytes } from "./helpers.es6";
 import DonutChart from "./c3charts.jsx";
 import { Listing, ListingRow } from "cockpit-components-listing.jsx";
@@ -182,27 +182,46 @@ VmOverviewTabRecord.propTypes = {
     value: PropTypes.string.isRequired
 }
 
-const VmOverviewTab = ({ vm }) => {
-    return (<table className='machines-width-max'>
-        <tr className='machines-listing-ct-body-detail'>
-            <td>
-                <table className='form-table-ct'>
-                    <VmOverviewTabRecord id={`${vmId(vm.name)}-state`} descr='State:' value={vm.state}/>
-                    <VmOverviewTabRecord descr={_("Memory:")}
-                                         value={cockpit.format_bytes((vm.currentMemory ? vm.currentMemory : 0) * 1024)}/>
-                    <VmOverviewTabRecord descr={_("vCPUs:")} value={vm.vcpus}/>
-                </table>
-            </td>
+const VmLastMessage = ({ vm }) => {
+    if (!vm.lastMessage) {
+        return null;
+    }
 
-            <td>
-                <table className='form-table-ct'>
-                    <VmOverviewTabRecord descr={_("ID:")} value={vm.id}/>
-                    <VmOverviewTabRecord descr={_("OS Type:")} value={vm.osType}/>
-                    <VmOverviewTabRecord descr={_("Autostart:")} value={rephraseUI('autostart', vm.autostart)}/>
-                </table>
-            </td>
-        </tr>
-    </table>);
+    const detail = (vm.lastMessageDetail && vm.lastMessageDetail.exception) ? vm.lastMessageDetail.exception: vm.lastMessage;
+    return (
+        <p title={detail} data-toggle='tooltip'>
+            <span className='pficon-warning-triangle-o' />&nbsp;{vm.lastMessage}
+        </p>
+    );
+};
+VmLastMessage.propTypes = {
+    vm: PropTypes.object.isRequired
+}
+
+const VmOverviewTab = ({ vm }) => {
+    return (<div>
+        <table className='machines-width-max'>
+            <tr className='machines-listing-ct-body-detail'>
+                <td>
+                    <table className='form-table-ct'>
+                        <VmOverviewTabRecord id={`${vmId(vm.name)}-state`} descr='State:' value={vm.state}/>
+                        <VmOverviewTabRecord descr={_("Memory:")}
+                                             value={cockpit.format_bytes((vm.currentMemory ? vm.currentMemory : 0) * 1024)}/>
+                        <VmOverviewTabRecord descr={_("vCPUs:")} value={vm.vcpus}/>
+                    </table>
+                </td>
+
+                <td>
+                    <table className='form-table-ct'>
+                        <VmOverviewTabRecord descr={_("ID:")} value={vm.id}/>
+                        <VmOverviewTabRecord descr={_("OS Type:")} value={vm.osType}/>
+                        <VmOverviewTabRecord descr={_("Autostart:")} value={rephraseUI('autostart', vm.autostart)}/>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <VmLastMessage vm={vm} />
+    </div>);
 };
 VmOverviewTab.propTypes = {
     vm: PropTypes.object.isRequired
@@ -278,7 +297,7 @@ VmUsageTab.propTypes = {
 const Vm = ({ vm, onStart, onShutdown, onForceoff, onReboot, onForceReboot }) => {
     const stateIcon = (<StateIcon state={vm.state} />);
     return (<ListingRow
-        columns={[{name: vm.name, 'header': true}, stateIcon]}
+        columns={[{name: vm.name, 'header': true}, rephraseUI('connections', vm.connectionName), stateIcon]}
         tabRenderers={[ {name: _("Overview"), renderer: VmOverviewTab, data: {vm: vm}},
             {name: _("Usage"), renderer: VmUsageTab, data: {vm: vm}, presence: 'onlyActive' } ]}
         listingActions={VmActions({vmId: vmId(vm.name), state: vm.state,
@@ -304,13 +323,15 @@ const HostVmsList = ({ vms, dispatch }) => {
     }
 
     return (<div className='container-fluid'>
-        <Listing title={_("Virtual Machines")} columnTitles={[_("Name"), _("State")]}>
+        <Listing title={_("Virtual Machines")} columnTitles={[_("Name"), _("Connection"), _("State")]}>
             {vms.map(vm => {
                 return (
-                    <Vm vm={vm} onStart={() => dispatch(startVm(vm.name))} onReboot={() => dispatch(rebootVm(vm.name))}
-                        onForceReboot={() => dispatch(forceRebootVm(vm.name))}
-                        onShutdown={() => dispatch(shutdownVm(vm.name))}
-                        onForceoff={() => dispatch(forceVmOff(vm.name))}/>);
+                    <Vm vm={vm}
+                        onStart={() => dispatch(startVm(vm.connectionName, vm.name))}
+                        onReboot={() => dispatch(rebootVm(vm.connectionName, vm.name))}
+                        onForceReboot={() => dispatch(forceRebootVm(vm.connectionName, vm.name))}
+                        onShutdown={() => dispatch(shutdownVm(vm.connectionName, vm.name))}
+                        onForceoff={() => dispatch(forceVmOff(vm.connectionName, vm.name))}/>);
             })}
         </Listing>
     </div>);

@@ -1,12 +1,13 @@
 # Generated Makefile data for selinux
-# Stamp: Wed Jan 18 2017 13:53:56 GMT+0000 (UTC)
+# Stamp: Mon Feb 06 2017 19:47:25 GMT+0000 (UTC)
 
 selinux_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
 	$(srcdir)/pkg/lib/cockpit-components-onoff.css \
 	$(srcdir)/pkg/lib/cockpit-components-onoff.jsx \
-	$(srcdir)/pkg/lib/listing.css \
+	$(srcdir)/pkg/lib/listing.less \
 	$(srcdir)/pkg/lib/page.css \
+	$(srcdir)/pkg/lib/variables.less \
 	$(srcdir)/pkg/selinux/manifest.json \
 	$(srcdir)/pkg/selinux/selinux-client.es6 \
 	$(srcdir)/pkg/selinux/setroubleshoot-client.js \
@@ -61,9 +62,11 @@ $(srcdir)/pkg/lib/cockpit-components-onoff.css:
 
 $(srcdir)/pkg/lib/cockpit-components-onoff.jsx:
 
-$(srcdir)/pkg/lib/listing.css:
+$(srcdir)/pkg/lib/listing.less:
 
 $(srcdir)/pkg/lib/page.css:
+
+$(srcdir)/pkg/lib/variables.less:
 
 $(srcdir)/pkg/selinux/manifest.json:
 

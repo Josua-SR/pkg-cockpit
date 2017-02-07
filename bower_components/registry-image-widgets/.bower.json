@@ -1,0 +1,50 @@
+{
+  "name": "registry-image-widgets",
+  "version": "0.0.4",
+  "description": "Renders Openshift Image Resources",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "kubernetes",
+    "openshift",
+    "angularjs"
+  ],
+  "authors": [
+    "Stef Walter <stefw@redhat.com>"
+  ],
+  "ignore": [
+    "**/.*",
+    "Gruntfile.js",
+    "index.html",
+    "package.json",
+    "/*.js",
+    "node_modules",
+    "bower_components",
+    "scratch",
+    "tests"
+  ],
+  "main": [
+    "dist/image-widgets.js",
+    "dist/image-widgets.css"
+  ],
+  "dependencies": {
+    "angular": ">=1.3.8 <1.6",
+    "angular-gettext": ">=2.3.8"
+  },
+  "devDependencies": {
+    "patternfly": ">=2.9.0",
+    "font-awesome": "*",
+    "momentjs": "*"
+  },
+  "homepage": "https://github.com/openshift/registry-image-widgets",
+  "_release": "0.0.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.4",
+    "commit": "bd5f8b1f0fde2400e07dbb7c4af1d36353b91405"
+  },
+  "_source": "https://github.com/openshift/registry-image-widgets.git",
+  "_target": "0.0.4",
+  "_originalSource": "registry-image-widgets"
+}

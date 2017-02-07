@@ -209,6 +209,7 @@ var DialogFooter = React.createClass({
  *      extract all necessary information (e.g. for input validation) when an
  *      action is triggered.
  *  - footer (react element, top element should be of class modal-footer)
+ *  - id optional, id that is assigned to the top level dialog node, but not the backdrop
  */
 var Dialog = React.createClass({
     propTypes: {
@@ -216,6 +217,7 @@ var Dialog = React.createClass({
         no_backdrop: React.PropTypes.bool,
         body: React.PropTypes.element.isRequired,
         footer: React.PropTypes.element.isRequired,
+        id: React.PropTypes.string,
     },
     componentDidMount: function() {
         // if we used a button to open this, make sure it's not focused anymore
@@ -231,7 +233,7 @@ var Dialog = React.createClass({
             <div>
                 { backdrop }
                 <div className="modal fade in dialog-ct-visible" tabindex="-1">
-                    <div className="modal-dialog">
+                    <div id={this.props.id} className="modal-dialog">
                         <div className="modal-content">
                             <div className="modal-header">
                                 <h4 className="modal-title">{ this.props.title }</h4>
@@ -268,7 +270,7 @@ var show_modal_dialog = function(props, footerProps) {
 
     // register our own on-close callback
     var origCallback;
-    var closeCallback = function(args) {
+    var closeCallback = function() {
         if (origCallback)
             origCallback.apply(this, arguments);
         React.unmountComponentAtNode(rootElement);
@@ -287,7 +289,7 @@ var show_modal_dialog = function(props, footerProps) {
             dialogObj.props = { };
         dialogObj.props.footer = <DialogFooter {...dialogObj.footerProps} />;
         dialogObj.render();
-    };
+    }
     dialogObj.setFooterProps = function(footerProps) {
         /* Always log error messages to console for easier debugging */
         if (footerProps.static_error)

@@ -118,7 +118,7 @@ noinst_PROGRAMS = $(am__EXEEXT_6) mock-bridge$(EXEEXT) $(am__EXEEXT_7) \
 	$(am__EXEEXT_4) test-server$(EXEEXT) $(am__EXEEXT_9) \
 	mock-echo$(EXEEXT) mock-agent-bridge$(EXEEXT) \
 	mock-auth-command$(EXEEXT) $(am__EXEEXT_4) \
-	mock-pam-conv-mod$(EXEEXT) $(am__EXEEXT_4) $(am__EXEEXT_10) \
+	mock-pam-conv-mod.so$(EXEEXT) $(am__EXEEXT_4) $(am__EXEEXT_10) \
 	mock-reauthorize$(EXEEXT) $(am__EXEEXT_4) $(am__EXEEXT_11) \
 	$(am__EXEEXT_12)
 sbin_PROGRAMS = remotectl$(EXEEXT)
@@ -295,6 +295,7 @@ am_libcockpit_stub_a_OBJECTS =  \
 	src/bridge/libcockpit_stub_a-cockpitpaths.$(OBJEXT) \
 	src/bridge/libcockpit_stub_a-cockpitnullchannel.$(OBJEXT) \
 	src/bridge/libcockpit_stub_a-cockpitrouter.$(OBJEXT) \
+	src/bridge/libcockpit_stub_a-cockpitshim.$(OBJEXT) \
 	src/bridge/libcockpit_stub_a-cockpitstream.$(OBJEXT) \
 	src/bridge/libcockpit_stub_a-cockpitwebsocketstream.$(OBJEXT) \
 	$(am__objects_1)
@@ -354,7 +355,8 @@ am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" \
 	"$(DESTDIR)$(networkmanagerdir)" "$(DESTDIR)$(podir)" \
 	"$(DESTDIR)$(staticdir)" "$(DESTDIR)$(storageddir)" \
 	"$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(pixmapdir)" \
-	"$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" \
+	"$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" \
+	"$(DESTDIR)$(registrybrandingdir)" \
 	"$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticdebugdir)" \
 	"$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"
 @WITH_GOLANG_TRUE@am__EXEEXT_1 = cockpit-kube-auth$(EXEEXT) \
@@ -371,7 +373,8 @@ am__EXEEXT_6 = test-paths$(EXEEXT) test-rules$(EXEEXT) \
 	test-connect$(EXEEXT) test-stream$(EXEEXT) \
 	test-httpstream$(EXEEXT) test-setup$(EXEEXT) \
 	test-websocketstream$(EXEEXT) test-process$(EXEEXT) \
-	test-bridge$(EXEEXT) $(am__EXEEXT_4) $(am__EXEEXT_5)
+	test-bridge$(EXEEXT) test-router$(EXEEXT) $(am__EXEEXT_4) \
+	$(am__EXEEXT_5)
 am__EXEEXT_7 = test-hash$(EXEEXT) test-hex$(EXEEXT) test-json$(EXEEXT) \
 	test-locale$(EXEEXT) test-knownhosts$(EXEEXT) \
 	test-pipe$(EXEEXT) test-transport$(EXEEXT) \
@@ -495,9 +498,9 @@ mock_echo_OBJECTS = $(am_mock_echo_OBJECTS)
 mock_echo_DEPENDENCIES = $(am__DEPENDENCIES_1)
 mock_echo_LINK = $(CCLD) $(mock_echo_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 	$(LDFLAGS) -o $@
-am_mock_pam_conv_mod_OBJECTS = src/ws/mock-pam-conv-mod.$(OBJEXT)
-mock_pam_conv_mod_OBJECTS = $(am_mock_pam_conv_mod_OBJECTS)
-mock_pam_conv_mod_LDADD = $(LDADD)
+am_mock_pam_conv_mod_so_OBJECTS = src/ws/mock-pam-conv-mod.$(OBJEXT)
+mock_pam_conv_mod_so_OBJECTS = $(am_mock_pam_conv_mod_so_OBJECTS)
+mock_pam_conv_mod_so_LDADD = $(LDADD)
 am_mock_reauthorize_OBJECTS =  \
 	src/reauthorize/mock_reauthorize-mock-reauthorize.$(OBJEXT)
 mock_reauthorize_OBJECTS = $(am_mock_reauthorize_OBJECTS)
@@ -724,6 +727,12 @@ test_remotectlcertificate_DEPENDENCIES = libcockpit-common.a \
 test_remotectlcertificate_LINK = $(CCLD) \
 	$(test_remotectlcertificate_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 	$(LDFLAGS) -o $@
+am_test_router_OBJECTS = src/bridge/test_router-test-router.$(OBJEXT) \
+	src/bridge/test_router-mock-transport.$(OBJEXT)
+test_router_OBJECTS = $(am_test_router_OBJECTS)
+test_router_DEPENDENCIES = $(am__DEPENDENCIES_2)
+test_router_LINK = $(CCLD) $(test_router_CFLAGS) $(CFLAGS) \
+	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_rules_OBJECTS = src/bridge/test_rules-test-rules.$(OBJEXT)
 test_rules_OBJECTS = $(am_test_rules_OBJECTS)
 test_rules_DEPENDENCIES = $(am__DEPENDENCIES_2)
@@ -887,7 +896,7 @@ SOURCES = $(libcockpit_bridge_a_SOURCES) \
 	$(cockpit_ws_SOURCES) $(frob_websocket_SOURCES) \
 	$(mock_agent_bridge_SOURCES) $(mock_auth_command_SOURCES) \
 	$(mock_bridge_SOURCES) $(mock_echo_SOURCES) \
-	$(mock_pam_conv_mod_SOURCES) $(mock_reauthorize_SOURCES) \
+	$(mock_pam_conv_mod_so_SOURCES) $(mock_reauthorize_SOURCES) \
 	$(mock_sshd_SOURCES) $(remotectl_SOURCES) $(test_auth_SOURCES) \
 	$(test_authoptions_SOURCES) $(test_authssh_SOURCES) \
 	$(test_bridge_SOURCES) $(test_channel_SOURCES) \
@@ -903,16 +912,17 @@ SOURCES = $(libcockpit_bridge_a_SOURCES) \
 	$(test_pcp_archives_SOURCES) $(test_pipe_SOURCES) \
 	$(test_pipe_channel_SOURCES) $(test_portal_SOURCES) \
 	$(test_process_SOURCES) $(test_reauthorize_SOURCES) \
-	$(test_remotectlcertificate_SOURCES) $(test_rules_SOURCES) \
-	$(test_server_SOURCES) $(nodist_test_server_SOURCES) \
-	$(test_setup_SOURCES) $(test_ssh_add_SOURCES) \
-	$(test_sshagent_SOURCES) $(test_sshtransport_SOURCES) \
-	$(test_stream_SOURCES) $(test_system_SOURCES) \
-	$(test_template_SOURCES) $(test_transport_SOURCES) \
-	$(test_unicode_SOURCES) $(test_unixsignal_SOURCES) \
-	$(test_version_SOURCES) $(test_webresponse_SOURCES) \
-	$(test_webserver_SOURCES) $(test_webservice_SOURCES) \
-	$(test_websocket_SOURCES) $(test_websocketstream_SOURCES)
+	$(test_remotectlcertificate_SOURCES) $(test_router_SOURCES) \
+	$(test_rules_SOURCES) $(test_server_SOURCES) \
+	$(nodist_test_server_SOURCES) $(test_setup_SOURCES) \
+	$(test_ssh_add_SOURCES) $(test_sshagent_SOURCES) \
+	$(test_sshtransport_SOURCES) $(test_stream_SOURCES) \
+	$(test_system_SOURCES) $(test_template_SOURCES) \
+	$(test_transport_SOURCES) $(test_unicode_SOURCES) \
+	$(test_unixsignal_SOURCES) $(test_version_SOURCES) \
+	$(test_webresponse_SOURCES) $(test_webserver_SOURCES) \
+	$(test_webservice_SOURCES) $(test_websocket_SOURCES) \
+	$(test_websocketstream_SOURCES)
 DIST_SOURCES = $(libcockpit_bridge_a_SOURCES) \
 	$(libcockpit_common_a_SOURCES) \
 	$(am__libcockpit_pcp_a_SOURCES_DIST) \
@@ -927,7 +937,7 @@ DIST_SOURCES = $(libcockpit_bridge_a_SOURCES) \
 	$(cockpit_stub_SOURCES) $(cockpit_ws_SOURCES) \
 	$(frob_websocket_SOURCES) $(mock_agent_bridge_SOURCES) \
 	$(mock_auth_command_SOURCES) $(mock_bridge_SOURCES) \
-	$(mock_echo_SOURCES) $(mock_pam_conv_mod_SOURCES) \
+	$(mock_echo_SOURCES) $(mock_pam_conv_mod_so_SOURCES) \
 	$(mock_reauthorize_SOURCES) $(am__mock_sshd_SOURCES_DIST) \
 	$(remotectl_SOURCES) $(test_auth_SOURCES) \
 	$(test_authoptions_SOURCES) $(am__test_authssh_SOURCES_DIST) \
@@ -944,16 +954,16 @@ DIST_SOURCES = $(libcockpit_bridge_a_SOURCES) \
 	$(am__test_pcp_archives_SOURCES_DIST) $(test_pipe_SOURCES) \
 	$(test_pipe_channel_SOURCES) $(test_portal_SOURCES) \
 	$(test_process_SOURCES) $(test_reauthorize_SOURCES) \
-	$(test_remotectlcertificate_SOURCES) $(test_rules_SOURCES) \
-	$(test_server_SOURCES) $(test_setup_SOURCES) \
-	$(test_ssh_add_SOURCES) $(test_sshagent_SOURCES) \
-	$(am__test_sshtransport_SOURCES_DIST) $(test_stream_SOURCES) \
-	$(test_system_SOURCES) $(test_template_SOURCES) \
-	$(test_transport_SOURCES) $(test_unicode_SOURCES) \
-	$(test_unixsignal_SOURCES) $(test_version_SOURCES) \
-	$(test_webresponse_SOURCES) $(test_webserver_SOURCES) \
-	$(test_webservice_SOURCES) $(test_websocket_SOURCES) \
-	$(test_websocketstream_SOURCES)
+	$(test_remotectlcertificate_SOURCES) $(test_router_SOURCES) \
+	$(test_rules_SOURCES) $(test_server_SOURCES) \
+	$(test_setup_SOURCES) $(test_ssh_add_SOURCES) \
+	$(test_sshagent_SOURCES) $(am__test_sshtransport_SOURCES_DIST) \
+	$(test_stream_SOURCES) $(test_system_SOURCES) \
+	$(test_template_SOURCES) $(test_transport_SOURCES) \
+	$(test_unicode_SOURCES) $(test_unixsignal_SOURCES) \
+	$(test_version_SOURCES) $(test_webresponse_SOURCES) \
+	$(test_webserver_SOURCES) $(test_webservice_SOURCES) \
+	$(test_websocket_SOURCES) $(test_websocketstream_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -1000,9 +1010,10 @@ DATA = $(base_DATA) $(basedebug_DATA) $(basefonts_DATA) \
 	$(nodist_networkmanager_DATA) $(nodist_noinst_DATA) \
 	$(nodist_po_DATA) $(nodist_static_DATA) \
 	$(nodist_storaged_DATA) $(nodist_systemdunit_DATA) \
-	$(noinst_DATA) $(pixmap_DATA) $(pmlogconf_DATA) \
-	$(registrybranding_DATA) $(rhelbranding_DATA) \
-	$(staticdebug_DATA) $(staticfonts_DATA) $(ubuntubranding_DATA)
+	$(noinst_DATA) $(pixmap_DATA) $(playground_DATA) \
+	$(pmlogconf_DATA) $(registrybranding_DATA) \
+	$(rhelbranding_DATA) $(staticdebug_DATA) $(staticfonts_DATA) \
+	$(ubuntubranding_DATA)
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) \
 	$(LISP)config.h.in
 # Read a list of newline-separated strings from the standard input,
@@ -1480,7 +1491,7 @@ CLEANFILES = $(man_MANS) valgrind-suppressions $(NULL) $(WEBPACK_DEPS) \
 	dist/static/login.css dist/static/login.min.css $(NULL) \
 	test_rsa_key $(NULL) cockpit.service $(NULL) \
 	$(nodist_appdata_DATA) $(nodist_desktop_DATA) $(NULL) \
-	mock-pam-conv-mod $(NULL) $(pam_MODULES) pam_ssh_add.so \
+	mock-pam-conv-mod.so $(NULL) $(pam_MODULES) pam_ssh_add.so \
 	$(KUBERNETES_DIR)/rpms $(WS_DIR)/rpms
 DISTCLEANFILES = \
 	$(srcdir)/Makefile \
@@ -1492,15 +1503,16 @@ EXTRA_DIST = .bowerrc bower.json package.json src/branding README.md \
 	$(NULL) $(WEBPACK_DEPS) webpack.config.js $(OPENSANS_FONTS) \
 	$(am__append_1) $(PO_INPUTS) $(PO_JAVASCRIPT) po/LINGUAS \
 	po/po.js po/po2json po/zanata.xml $(NULL) \
+	dist/playground/de.po pkg/playground/de.po \
 	pkg/networkmanager/override.json.in \
 	pkg/storaged/override.json.in pkg/lib/qunit-template.html \
-	$(pkg_TESTS) dist/base1/cockpit.js dist/base1/cockpit.min.css \
-	dist/base1/cockpit.min.css.map dist/base1/cockpit.min.js \
-	dist/base1/cockpit.min.js.map dist/base1/jquery.js \
-	dist/base1/jquery.min.js dist/base1/jquery.min.js.map \
-	dist/base1/mustache.js dist/base1/mustache.min.js \
-	dist/base1/mustache.min.js.map dist/base1/patternfly-base.css \
-	dist/base1/patternfly.min.css \
+	$(playground_DATA) $(pkg_TESTS) dist/base1/cockpit.js \
+	dist/base1/cockpit.min.css dist/base1/cockpit.min.css.map \
+	dist/base1/cockpit.min.js dist/base1/cockpit.min.js.map \
+	dist/base1/jquery.js dist/base1/jquery.min.js \
+	dist/base1/jquery.min.js.map dist/base1/mustache.js \
+	dist/base1/mustache.min.js dist/base1/mustache.min.js.map \
+	dist/base1/patternfly-base.css dist/base1/patternfly.min.css \
 	dist/base1/patternfly.min.css.map \
 	dist/base1/patternfly.css.map \
 	dist/base1/patternfly-additions.css \
@@ -1586,6 +1598,7 @@ WEBPACK_INSTALL =
 WEBPACK_DEPS = \
 	dist/dashboard/Makefile.deps \
 	dist/docker/Makefile.deps \
+	dist/kdump/Makefile.deps \
 	dist/kubernetes/Makefile.deps \
 	dist/machines/Makefile.deps \
 	dist/networkmanager/Makefile.deps \
@@ -1677,7 +1690,7 @@ SED_SUBST = sed \
 
 testassetsdir = $(prefix)/lib/cockpit-test-assets
 testassets_programs = 
-testassets_data = mock-pam-conv-mod $(NULL)
+testassets_data = mock-pam-conv-mod.so $(NULL)
 testassets_systemdunit_data = 
 
 # Fonts are used by multiple things so put them here
@@ -1768,8 +1781,8 @@ COMMITTED_DIST = \
 	test/ \
 	$(NULL)
 
-DIST_TAR_MAIN = tar --format=posix -cf - --exclude='node_modules' --exclude='bower_components' "$(distdir)"
-DIST_TAR_CACHE = tar --format=posix -cf - "$(distdir)/node_modules" "$(distdir)/bower_components" "$(distdir)/package.json" "$(distdir)/bower.json" "$(distdir)/.bowerrc"
+DIST_TAR_MAIN = tar --format=posix -cf - --exclude='node_modules' "$(distdir)" "$(distdir)/bower.json" "$(distdir)/.bowerrc"
+DIST_TAR_CACHE = tar --format=posix -cf - "$(distdir)/node_modules" "$(distdir)/package.json"
 DIST_ARCHIVES = \
 	cockpit-$(VERSION).tar.xz \
 	cockpit-cache-$(VERSION).tar.xz
@@ -1813,6 +1826,13 @@ networkmanagerdir = $(pkgdatadir)/networkmanager
 nodist_networkmanager_DATA = \
        pkg/networkmanager/override.json \
        $(NULL)
+
+
+# Used for testing and the 'translate' playgruond
+playgrounddir = $(pkgdatadir)/playground
+playground_DATA = \
+	dist/playground/po.de.js \
+	$(NULL)
 
 @WITH_GOLANG_TRUE@AM_V_GO = $(am__v_GO_@AM_V@)
 @WITH_GOLANG_TRUE@am__v_GO_ = $(am__v_GO_@AM_DEFAULT_V@)
@@ -2002,6 +2022,8 @@ libcockpit_stub_a_SOURCES = \
 	src/bridge/cockpitnullchannel.h \
 	src/bridge/cockpitrouter.c \
 	src/bridge/cockpitrouter.h \
+	src/bridge/cockpitshim.c \
+	src/bridge/cockpitshim.h \
 	src/bridge/cockpitstream.c \
 	src/bridge/cockpitstream.h \
 	src/bridge/cockpitwebsocketstream.c \
@@ -2102,7 +2124,7 @@ BRIDGE_CHECKS = test-paths test-rules test-channel test-portal \
 	test-pipe-channel test-packages test-dbus-meta test-fs \
 	test-metrics test-connect test-stream test-httpstream \
 	test-setup test-websocketstream test-process test-bridge \
-	$(NULL) $(am__append_9)
+	test-router $(NULL) $(am__append_9)
 mock_bridge_SOURCES = src/bridge/mock-bridge.c
 mock_bridge_CFLAGS = \
 	-DG_LOG_DOMAIN=\"mock-bridge\" \
@@ -2138,6 +2160,11 @@ test_portal_SOURCES = src/bridge/test-portal.c \
 
 test_portal_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
 test_portal_LDADD = $(libcockpit_bridge_LIBS)
+test_router_SOURCES = src/bridge/test-router.c \
+	src/bridge/mock-transport.c src/bridge/mock-transport.h
+
+test_router_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
+test_router_LDADD = $(libcockpit_bridge_LIBS)
 test_rules_SOURCES = src/bridge/test-rules.c
 test_rules_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
 test_rules_LDADD = $(libcockpit_bridge_LIBS)
@@ -2615,7 +2642,7 @@ mock_echo_SOURCES = src/ws/mock-echo.c
 mock_echo_CFLAGS = $(COCKPIT_WS_CFLAGS)
 mock_echo_LDADD = $(COCKPIT_WS_LIBS)
 mock_auth_command_SOURCES = src/ws/mock-auth-command.c
-mock_pam_conv_mod_SOURCES = src/ws/mock-pam-conv-mod.c
+mock_pam_conv_mod_so_SOURCES = src/ws/mock-pam-conv-mod.c
 @WITH_COCKPIT_SSH_TRUE@cockpit_ssh_SOURCES = \
 @WITH_COCKPIT_SSH_TRUE@	src/ws/cockpitauthoptions.h \
 @WITH_COCKPIT_SSH_TRUE@	src/ws/cockpitauthoptions.c \
@@ -3005,6 +3032,9 @@ src/bridge/libcockpit_stub_a-cockpitnullchannel.$(OBJEXT):  \
 	src/bridge/$(am__dirstamp) \
 	src/bridge/$(DEPDIR)/$(am__dirstamp)
 src/bridge/libcockpit_stub_a-cockpitrouter.$(OBJEXT):  \
+	src/bridge/$(am__dirstamp) \
+	src/bridge/$(DEPDIR)/$(am__dirstamp)
+src/bridge/libcockpit_stub_a-cockpitshim.$(OBJEXT):  \
 	src/bridge/$(am__dirstamp) \
 	src/bridge/$(DEPDIR)/$(am__dirstamp)
 src/bridge/libcockpit_stub_a-cockpitstream.$(OBJEXT):  \
@@ -3611,6 +3641,16 @@ src/ws/test_remotectlcertificate-remotectl-certificate.$(OBJEXT):  \
 test-remotectlcertificate$(EXEEXT): $(test_remotectlcertificate_OBJECTS) $(test_remotectlcertificate_DEPENDENCIES) $(EXTRA_test_remotectlcertificate_DEPENDENCIES) 
 	@rm -f test-remotectlcertificate$(EXEEXT)
 	$(AM_V_CCLD)$(test_remotectlcertificate_LINK) $(test_remotectlcertificate_OBJECTS) $(test_remotectlcertificate_LDADD) $(LIBS)
+src/bridge/test_router-test-router.$(OBJEXT):  \
+	src/bridge/$(am__dirstamp) \
+	src/bridge/$(DEPDIR)/$(am__dirstamp)
+src/bridge/test_router-mock-transport.$(OBJEXT):  \
+	src/bridge/$(am__dirstamp) \
+	src/bridge/$(DEPDIR)/$(am__dirstamp)
+
+test-router$(EXEEXT): $(test_router_OBJECTS) $(test_router_DEPENDENCIES) $(EXTRA_test_router_DEPENDENCIES) 
+	@rm -f test-router$(EXEEXT)
+	$(AM_V_CCLD)$(test_router_LINK) $(test_router_OBJECTS) $(test_router_LDADD) $(LIBS)
 src/bridge/test_rules-test-rules.$(OBJEXT):  \
 	src/bridge/$(am__dirstamp) \
 	src/bridge/$(DEPDIR)/$(am__dirstamp)
@@ -3808,6 +3848,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitpackages.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitpaths.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitrouter.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitshim.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitstream.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitwebsocketstream.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/mock_agent_bridge-cockpitchannel.Po@am__quote@
@@ -3837,6 +3878,8 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_portal-mock-transport.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_portal-test-portal.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_process-test-process.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_router-mock-transport.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_router-test-router.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_rules-test-rules.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_setup-test-setup.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_stream-test-stream.Po@am__quote@
@@ -4899,6 +4942,20 @@ src/bridge/libcockpit_stub_a-cockpitrouter.obj: src/bridge/cockpitrouter.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/cockpitrouter.c' object='src/bridge/libcockpit_stub_a-cockpitrouter.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_stub_a_CFLAGS) $(CFLAGS) -c -o src/bridge/libcockpit_stub_a-cockpitrouter.obj `if test -f 'src/bridge/cockpitrouter.c'; then $(CYGPATH_W) 'src/bridge/cockpitrouter.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/cockpitrouter.c'; fi`
+
+src/bridge/libcockpit_stub_a-cockpitshim.o: src/bridge/cockpitshim.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_stub_a_CFLAGS) $(CFLAGS) -MT src/bridge/libcockpit_stub_a-cockpitshim.o -MD -MP -MF src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitshim.Tpo -c -o src/bridge/libcockpit_stub_a-cockpitshim.o `test -f 'src/bridge/cockpitshim.c' || echo '$(srcdir)/'`src/bridge/cockpitshim.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitshim.Tpo src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitshim.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/cockpitshim.c' object='src/bridge/libcockpit_stub_a-cockpitshim.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_stub_a_CFLAGS) $(CFLAGS) -c -o src/bridge/libcockpit_stub_a-cockpitshim.o `test -f 'src/bridge/cockpitshim.c' || echo '$(srcdir)/'`src/bridge/cockpitshim.c
+
+src/bridge/libcockpit_stub_a-cockpitshim.obj: src/bridge/cockpitshim.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_stub_a_CFLAGS) $(CFLAGS) -MT src/bridge/libcockpit_stub_a-cockpitshim.obj -MD -MP -MF src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitshim.Tpo -c -o src/bridge/libcockpit_stub_a-cockpitshim.obj `if test -f 'src/bridge/cockpitshim.c'; then $(CYGPATH_W) 'src/bridge/cockpitshim.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/cockpitshim.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitshim.Tpo src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitshim.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/cockpitshim.c' object='src/bridge/libcockpit_stub_a-cockpitshim.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_stub_a_CFLAGS) $(CFLAGS) -c -o src/bridge/libcockpit_stub_a-cockpitshim.obj `if test -f 'src/bridge/cockpitshim.c'; then $(CYGPATH_W) 'src/bridge/cockpitshim.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/cockpitshim.c'; fi`
 
 src/bridge/libcockpit_stub_a-cockpitstream.o: src/bridge/cockpitstream.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_stub_a_CFLAGS) $(CFLAGS) -MT src/bridge/libcockpit_stub_a-cockpitstream.o -MD -MP -MF src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitstream.Tpo -c -o src/bridge/libcockpit_stub_a-cockpitstream.o `test -f 'src/bridge/cockpitstream.c' || echo '$(srcdir)/'`src/bridge/cockpitstream.c
@@ -6090,6 +6147,34 @@ src/ws/test_remotectlcertificate-remotectl-certificate.obj: src/ws/remotectl-cer
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_remotectlcertificate_CFLAGS) $(CFLAGS) -c -o src/ws/test_remotectlcertificate-remotectl-certificate.obj `if test -f 'src/ws/remotectl-certificate.c'; then $(CYGPATH_W) 'src/ws/remotectl-certificate.c'; else $(CYGPATH_W) '$(srcdir)/src/ws/remotectl-certificate.c'; fi`
 
+src/bridge/test_router-test-router.o: src/bridge/test-router.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -MT src/bridge/test_router-test-router.o -MD -MP -MF src/bridge/$(DEPDIR)/test_router-test-router.Tpo -c -o src/bridge/test_router-test-router.o `test -f 'src/bridge/test-router.c' || echo '$(srcdir)/'`src/bridge/test-router.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_router-test-router.Tpo src/bridge/$(DEPDIR)/test_router-test-router.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/test-router.c' object='src/bridge/test_router-test-router.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -c -o src/bridge/test_router-test-router.o `test -f 'src/bridge/test-router.c' || echo '$(srcdir)/'`src/bridge/test-router.c
+
+src/bridge/test_router-test-router.obj: src/bridge/test-router.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -MT src/bridge/test_router-test-router.obj -MD -MP -MF src/bridge/$(DEPDIR)/test_router-test-router.Tpo -c -o src/bridge/test_router-test-router.obj `if test -f 'src/bridge/test-router.c'; then $(CYGPATH_W) 'src/bridge/test-router.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/test-router.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_router-test-router.Tpo src/bridge/$(DEPDIR)/test_router-test-router.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/test-router.c' object='src/bridge/test_router-test-router.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -c -o src/bridge/test_router-test-router.obj `if test -f 'src/bridge/test-router.c'; then $(CYGPATH_W) 'src/bridge/test-router.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/test-router.c'; fi`
+
+src/bridge/test_router-mock-transport.o: src/bridge/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -MT src/bridge/test_router-mock-transport.o -MD -MP -MF src/bridge/$(DEPDIR)/test_router-mock-transport.Tpo -c -o src/bridge/test_router-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_router-mock-transport.Tpo src/bridge/$(DEPDIR)/test_router-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_router-mock-transport.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -c -o src/bridge/test_router-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
+
+src/bridge/test_router-mock-transport.obj: src/bridge/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -MT src/bridge/test_router-mock-transport.obj -MD -MP -MF src/bridge/$(DEPDIR)/test_router-mock-transport.Tpo -c -o src/bridge/test_router-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_router-mock-transport.Tpo src/bridge/$(DEPDIR)/test_router-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_router-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -c -o src/bridge/test_router-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
+
 src/bridge/test_rules-test-rules.o: src/bridge/test-rules.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_rules_CFLAGS) $(CFLAGS) -MT src/bridge/test_rules-test-rules.o -MD -MP -MF src/bridge/$(DEPDIR)/test_rules-test-rules.Tpo -c -o src/bridge/test_rules-test-rules.o `test -f 'src/bridge/test-rules.c' || echo '$(srcdir)/'`src/bridge/test-rules.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_rules-test-rules.Tpo src/bridge/$(DEPDIR)/test_rules-test-rules.Po
@@ -6953,6 +7038,27 @@ uninstall-pixmapDATA:
 	@list='$(pixmap_DATA)'; test -n "$(pixmapdir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(pixmapdir)'; $(am__uninstall_files_from_dir)
+install-playgroundDATA: $(playground_DATA)
+	@$(NORMAL_INSTALL)
+	@list='$(playground_DATA)'; test -n "$(playgrounddir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(playgrounddir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(playgrounddir)" || exit 1; \
+	fi; \
+	for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  echo "$$d$$p"; \
+	done | $(am__base_list) | \
+	while read files; do \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(playgrounddir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(playgrounddir)" || exit $$?; \
+	done
+
+uninstall-playgroundDATA:
+	@$(NORMAL_UNINSTALL)
+	@list='$(playground_DATA)'; test -n "$(playgrounddir)" || list=; \
+	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+	dir='$(DESTDIR)$(playgrounddir)'; $(am__uninstall_files_from_dir)
 install-pmlogconfDATA: $(pmlogconf_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(pmlogconf_DATA)'; test -n "$(pmlogconfdir)" || list=; \
@@ -7392,6 +7498,13 @@ test-bridge.log: test-bridge$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-router.log: test-router$(EXEEXT)
+	@p='test-router$(EXEEXT)'; \
+	b='test-router'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-pcp.log: test-pcp$(EXEEXT)
 	@p='test-pcp$(EXEEXT)'; \
 	b='test-pcp'; \
@@ -7806,7 +7919,7 @@ check: $(BUILT_SOURCES)
 all-am: Makefile $(LIBRARIES) $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) \
 		config.h all-local
 installdirs:
-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(basedebugdir)" "$(DESTDIR)$(basefontsdir)" "$(DESTDIR)$(centosbrandingdir)" "$(DESTDIR)$(debianbrandingdir)" "$(DESTDIR)$(defaultbrandingdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" "$(DESTDIR)$(firewalldir)" "$(DESTDIR)$(kubernetesbrandingdir)" "$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(networkmanagerdir)" "$(DESTDIR)$(podir)" "$(DESTDIR)$(staticdir)" "$(DESTDIR)$(storageddir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" "$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticdebugdir)" "$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"; do \
+	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(basedebugdir)" "$(DESTDIR)$(basefontsdir)" "$(DESTDIR)$(centosbrandingdir)" "$(DESTDIR)$(debianbrandingdir)" "$(DESTDIR)$(defaultbrandingdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" "$(DESTDIR)$(firewalldir)" "$(DESTDIR)$(kubernetesbrandingdir)" "$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(networkmanagerdir)" "$(DESTDIR)$(podir)" "$(DESTDIR)$(staticdir)" "$(DESTDIR)$(storageddir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" "$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticdebugdir)" "$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: $(BUILT_SOURCES)
@@ -7895,10 +8008,10 @@ install-data-am: install-baseDATA install-basedebugDATA \
 	install-nodist_desktopDATA install-nodist_networkmanagerDATA \
 	install-nodist_poDATA install-nodist_staticDATA \
 	install-nodist_storagedDATA install-nodist_systemdunitDATA \
-	install-pixmapDATA install-pmlogconfDATA \
-	install-registrybrandingDATA install-rhelbrandingDATA \
-	install-staticdebugDATA install-staticfontsDATA \
-	install-ubuntubrandingDATA
+	install-pixmapDATA install-playgroundDATA \
+	install-pmlogconfDATA install-registrybrandingDATA \
+	install-rhelbrandingDATA install-staticdebugDATA \
+	install-staticfontsDATA install-ubuntubrandingDATA
 	@$(NORMAL_INSTALL)
 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
 install-dvi: install-dvi-am
@@ -7959,10 +8072,10 @@ uninstall-am: uninstall-baseDATA uninstall-basedebugDATA \
 	uninstall-nodist_networkmanagerDATA uninstall-nodist_poDATA \
 	uninstall-nodist_staticDATA uninstall-nodist_storagedDATA \
 	uninstall-nodist_systemdunitDATA uninstall-pixmapDATA \
-	uninstall-pmlogconfDATA uninstall-registrybrandingDATA \
-	uninstall-rhelbrandingDATA uninstall-sbinPROGRAMS \
-	uninstall-staticdebugDATA uninstall-staticfontsDATA \
-	uninstall-ubuntubrandingDATA
+	uninstall-playgroundDATA uninstall-pmlogconfDATA \
+	uninstall-registrybrandingDATA uninstall-rhelbrandingDATA \
+	uninstall-sbinPROGRAMS uninstall-staticdebugDATA \
+	uninstall-staticfontsDATA uninstall-ubuntubrandingDATA
 
 uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 
@@ -7995,10 +8108,11 @@ uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 	install-nodist_networkmanagerDATA install-nodist_poDATA \
 	install-nodist_staticDATA install-nodist_storagedDATA \
 	install-nodist_systemdunitDATA install-pdf install-pdf-am \
-	install-pixmapDATA install-pmlogconfDATA install-ps \
-	install-ps-am install-registrybrandingDATA \
-	install-rhelbrandingDATA install-sbinPROGRAMS \
-	install-staticdebugDATA install-staticfontsDATA install-strip \
+	install-pixmapDATA install-playgroundDATA \
+	install-pmlogconfDATA install-ps install-ps-am \
+	install-registrybrandingDATA install-rhelbrandingDATA \
+	install-sbinPROGRAMS install-staticdebugDATA \
+	install-staticfontsDATA install-strip \
 	install-ubuntubrandingDATA installcheck installcheck-am \
 	installdirs maintainer-clean maintainer-clean-generic \
 	mostlyclean mostlyclean-compile mostlyclean-generic pdf pdf-am \
@@ -8015,10 +8129,10 @@ uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 	uninstall-nodist_networkmanagerDATA uninstall-nodist_poDATA \
 	uninstall-nodist_staticDATA uninstall-nodist_storagedDATA \
 	uninstall-nodist_systemdunitDATA uninstall-pixmapDATA \
-	uninstall-pmlogconfDATA uninstall-registrybrandingDATA \
-	uninstall-rhelbrandingDATA uninstall-sbinPROGRAMS \
-	uninstall-staticdebugDATA uninstall-staticfontsDATA \
-	uninstall-ubuntubrandingDATA
+	uninstall-playgroundDATA uninstall-pmlogconfDATA \
+	uninstall-registrybrandingDATA uninstall-rhelbrandingDATA \
+	uninstall-sbinPROGRAMS uninstall-staticdebugDATA \
+	uninstall-staticfontsDATA uninstall-ubuntubrandingDATA
 
 .PRECIOUS: Makefile
 
@@ -8050,6 +8164,7 @@ dist/%/Makefile.deps: $(WEBPACK_CONFIG)
 
 -include dist/dashboard/Makefile.deps
 -include dist/docker/Makefile.deps
+-include dist/kdump/Makefile.deps
 -include dist/kubernetes/Makefile.deps
 -include dist/machines/Makefile.deps
 -include dist/networkmanager/Makefile.deps
@@ -8119,24 +8234,34 @@ dist/fonts/%.woff:
 @ENABLE_DOC_TRUE@		$(srcdir)/doc/cockpit-transport.svg
 
 @ENABLE_DOC_TRUE@dist/guide/html/%.woff: dist/fonts/%.woff
-@ENABLE_DOC_TRUE@	$(V_COPY) $(MKDIR_P) $(dir $@) && cp -L $^ $@.tmp && $(MV) $@.tmp $@
+@ENABLE_DOC_TRUE@	$(V_COPY) $(MKDIR_P) $(dir $@)
+@ENABLE_DOC_TRUE@	cp -L $^ $@.tmp
+@ENABLE_DOC_TRUE@	$(MV) $@.tmp $@
 
 @ENABLE_DOC_TRUE@dist/guide/html/index.html: $(GUIDE_DOCBOOK) $(GUIDE_INCLUDES) $(man_MANS) $(GUIDE_STATIC) $(GUIDE_XSLT) $(GUIDE_FONTS)
-@ENABLE_DOC_TRUE@	$(AM_V_GEN) $(MKDIR_P) dist/guide/html/ && \
-@ENABLE_DOC_TRUE@		cp $(addprefix $(srcdir)/,$(GUIDE_STATIC)) dist/guide/html/ && \
-@ENABLE_DOC_TRUE@		LANG=en_US.UTF-8 $(XMLTO) html -m $(srcdir)/doc/guide/gtk-doc.xsl -o dist/guide/html/ \
-@ENABLE_DOC_TRUE@			--searchpath $(abs_builddir):$(abs_srcdir):$(abs_builddir)/doc/guide \
-@ENABLE_DOC_TRUE@			$(srcdir)/$(GUIDE_DOCBOOK)
+@ENABLE_DOC_TRUE@	$(AM_V_GEN) $(MKDIR_P) dist/guide/html/
+@ENABLE_DOC_TRUE@	cp $(addprefix $(srcdir)/,$(GUIDE_STATIC)) dist/guide/html/
+@ENABLE_DOC_TRUE@	LANG=en_US.UTF-8 $(XMLTO) html -m $(srcdir)/doc/guide/gtk-doc.xsl -o dist/guide/html/ \
+@ENABLE_DOC_TRUE@		--searchpath $(abs_builddir):$(abs_srcdir):$(abs_builddir)/doc/guide \
+@ENABLE_DOC_TRUE@		$(srcdir)/$(GUIDE_DOCBOOK)
+@ENABLE_DOC_TRUE@	if grep -n -r 'name=\"id' dist/guide/html >&2; then \
+@ENABLE_DOC_TRUE@		echo "Unexpected generated id in the documentation" >&2; \
+@ENABLE_DOC_TRUE@		rm dist/guide/html/index.html; \
+@ENABLE_DOC_TRUE@		exit 1; \
+@ENABLE_DOC_TRUE@	fi
 
 @ENABLE_DOC_TRUE@dist/guide/html: dist/guide/html/index.html
 
 @ENABLE_DOC_TRUE@dist/guide/links.html:
-@ENABLE_DOC_TRUE@	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
+@ENABLE_DOC_TRUE@	$(AM_V_GEN) $(MKDIR_P) $(dir $@)
 @ENABLE_DOC_TRUE@	(git -C $(srcdir) tag -l '[0-9]*' --sort=-version:refname --format \
-@ENABLE_DOC_TRUE@		'<a href="./%(refname:strip=2)/">%(refname:strip=2)</a>' | head -n15 || true) > $@.tmp && mv $@.tmp $@
+@ENABLE_DOC_TRUE@		'<a href="./%(refname:strip=2)/">%(refname:strip=2)</a>' | head -n15 || true) > $@.tmp
+@ENABLE_DOC_TRUE@	mv $@.tmp $@
 
 @ENABLE_DOC_TRUE@dist/guide/index.html: doc/guide/directory.html dist/guide/links.html doc/guide/footer.html
-@ENABLE_DOC_TRUE@	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && cat $^ > $@.tmp && mv $@.tmp $@
+@ENABLE_DOC_TRUE@	$(AM_V_GEN) $(MKDIR_P) $(dir $@)
+@ENABLE_DOC_TRUE@	cat $^ > $@.tmp
+@ENABLE_DOC_TRUE@	mv $@.tmp $@
 
 @ENABLE_DOC_TRUE@.xml.8:
 @ENABLE_DOC_TRUE@	$(AM_V_GEN) $(MAN_PROC)
@@ -8289,6 +8414,9 @@ download-po:
 	po/cockpit*.pot \
 	po/po.js.gz \
 	$(NULL)
+
+dist/playground/de.po: pkg/playground/de.po
+	$(COPY_RULE)
 
 @WITH_GOLANG_TRUE@cockpit-kube-auth$(EXEEXT): $(COCKPIT_KUBE_AUTH)
 @WITH_GOLANG_TRUE@	$(AM_V_GO) $(GO_BUILD_RULE)
@@ -8514,7 +8642,7 @@ $(nodist_appdata_DATA): $(appdata_in) $(PO_FILES)
 
 $(nodist_desktop_DATA): $(desktop_in) $(PO_FILES)
 	$(AM_V_GEN) LC_ALL=C $(INTLTOOL_MERGE) -q -d -u $(top_srcdir)/po $< $@
-mock-pam-conv-mod$(EXEEXT): $(mock_pam_conv_mod_SOURCES)
+mock-pam-conv-mod.so: $(mock_pam_conv_mod_so_SOURCES)
 	$(AM_V_CCLD) $(CC) -fPIC -shared $(CFLAGS) -I$(builddir) \
 		-o $@ $^ $(PAM_LIBS) $(LDFLAGS)
 

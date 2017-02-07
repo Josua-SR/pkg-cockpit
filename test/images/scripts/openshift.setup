@@ -8,7 +8,10 @@ xfs_growfs /
 
 echo foobar | passwd --stdin root
 
-printf "\nOPENSHIFT CONSOLE: https://10.111.112.101:8443\n\n" >> /etc/issue
+printf "\nLOGIN\n  User: root/admin  Password: foobar\n\n" >> /etc/issue
+printf "SSH ACCESS\n  $ ssh root@10.111.112.101\n  Password: foobar\n\n" >> /etc/issue
+printf "OPENSHIFT CONSOLE\n  https://10.111.112.101:8443\n  Login: scruffy  Password: scruffy\n\n" >> /etc/issue
+printf "OPENSHIFT LISTENING ON LOCALHOST\n  $ ssh -NL 8443:localhost:8443 root@10.111.112.101\n\n" >> /etc/issue
 
 # Disable these things
 ln -sf ../selinux/config /etc/sysconfig/selinux
@@ -198,7 +201,7 @@ docker push registry:5000/pizzazz/monster
 oc config use-context default/10-111-112-101:8443/system:admin
 
 # Some roles for testing against
-oc patch --namespace=marmalade policybinding ':default' -p '{"roleBindings":[{"name":"admin","roleBinding":{"metadata":{"name":"admin","namespace":"marmalade"},"userNames":["scruffy"],"groupNames":null,"subjects":[{"kind":"User","name":"scruffy"}],"roleRef":{"name":"admin"}}},{"name":"edit","roleBinding":{"metadata":{"name":"edit","namespace":"marmalade"},"userNames":["scruffy","amanda"],"groupNames":null,"subjects":[{"kind":"User","name":"scruffy"},{"kind":"User","name":"amanda"}],"roleRef":{"name":"edit"}}},{"name":"view","roleBinding":{"metadata":{"name":"view","namespace":"marmalade"},"userNames":["scruffy","tom","amanda"],"groupNames":["sports"],"subjects":[{"kind":"User","name":"scruffy"},{"kind":"User","name":"tom"},{"kind":"User","name":"amanda"},{"kind":"Group","name":"sports"}],"roleRef":{"name":"view"}}}]}'
+oc patch --namespace=marmalade policybinding ':default' -p '{"roleBindings":[{"name":"admin","roleBinding":{"metadata":{"name":"admin","namespace":"marmalade"},"userNames":["scruffy"],"groupNames":null,"subjects":[{"kind":"User","name":"scruffy"}],"roleRef":{"name":"admin"}}},{"name":"registry-editor","roleBinding":{"metadata":{"name":"registry-editor","namespace":"marmalade","resourceVersion":"1"},"userNames":["scruffy","amanda"],"groupNames":null,"subjects":[{"kind":"User","name":"scruffy"},{"kind":"User","name":"amanda"}],"roleRef":{"name":"registry-editor"}}},{"name":"registry-viewer","roleBinding":{"metadata":{"name":"registry-viewer","namespace":"marmalade","resourceVersion":"1"},"userNames":["scruffy","tom","amanda"],"groupNames":["sports"],"subjects":[{"kind":"User","name":"scruffy"},{"kind":"User","name":"tom"},{"kind":"User","name":"amanda"},{"kind":"Group","name":"sports"}],"roleRef":{"name":"registry-viewer"}}}]}'
 
 # For testing the Cockpit OAuth client
 printf '{"kind":"OAuthClient","apiVersion":"v1","metadata":{"name":"cockpit-oauth-devel"},"respondWithChallenges":false,"secret":"secret","allowAnyScope":true,"redirectURIs":["http://localhost:9001"] }' | oc create -f -

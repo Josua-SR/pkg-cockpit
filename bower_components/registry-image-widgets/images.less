@@ -1,0 +1,50 @@
+@import "variables.less";
+
+dl.registry-image-tags {
+    dt {
+        line-height: 30px;
+    }
+
+    .registry-image-tag {
+        padding: 2px 5px;
+        line-height: 30px;
+    }
+
+    .registry-image-tag:after {
+        content: ' ';
+        white-space: pre;
+    }
+}
+
+registry-imagestream-body {
+    a[ng-click] {
+        cursor: pointer;
+    }
+}
+
+.registry-image-pull,
+.registry-imagestream-push {
+    code {
+	display: block;
+        white-space: pre;
+
+    	em, span.placeholder {
+            font-weight: bold;
+            font-style: normal;
+            color: #888;
+	}
+    }
+
+    .fa-info-circle {
+        font-size: 15px;
+        color: @metadata-color;
+        padding: 0px 5px;
+    }
+}
+
+.registry-imagestream-lock {
+    color: #deaa87;
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+

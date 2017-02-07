@@ -26,11 +26,12 @@
     var React = require("react");
     var dialog_view = require("cockpit-components-dialog.jsx");
     var cockpit_atomic_storage = require("raw!./cockpit-atomic-storage");
+    // FIXME: eventually convert all images to python 3
+    const pyinvoke = [ "sh", "-ec", "exec $(which python3 2>/dev/null || which python) $@", "--", "-" ];
 
     var _ = cockpit.gettext;
-    var C_ = cockpit.gettext;
 
-    function init_model(callback) {
+    function init_model() {
         var process;
 
         var self = {
@@ -48,7 +49,7 @@
 
         function update() {
             if (!cockpit.hidden && !process) {
-                process = cockpit.spawn([ "python", "-", "monitor" ],
+                process = cockpit.spawn(pyinvoke.concat(["monitor"]),
                                         { err: "ignore",
                                           superuser: true })
                                   .input(cockpit_atomic_storage)
@@ -146,7 +147,7 @@
 
         render: function() {
             var self = this;
-            var i, d;
+            var i;
 
             var button_enabled = false;
             var drive_rows = [ ];
@@ -381,11 +382,11 @@
             var devs = drives.map(function (d) { return d.path; });
             if (docker_will_be_stopped)
                 client.close();
-            var process = cockpit.spawn([ "python", "-", storage_action ].concat(devs),
+            var process = cockpit.spawn(pyinvoke.concat([storage_action]).concat(devs),
                                          { 'err': 'out',
                                            'superuser': true })
                                   .input(cockpit_atomic_storage)
-                                  .done(function (data) {
+                                  .done(function () {
                                       if (docker_will_be_stopped) {
                                           client.connect().done(function () {
                                               dfd.resolve();
@@ -415,7 +416,7 @@
         }
     }
 
-    function reset_storage(client, service) {
+    function reset_storage(client) {
         dialog_view.show_modal_dialog({ 'title': _("Reset Storage Pool"),
                                         'body': (
                                             <div className="modal-body">
@@ -429,14 +430,12 @@
         function reset() {
             var dfd = $.Deferred();
             client.close();
-            var process = cockpit.spawn([ "python", "-", "reset-and-reduce" ],
+            var process = cockpit.spawn(pyinvoke.concat(["reset-and-reduce"]),
                                         { 'err': 'out',
                                           'superuser': true })
                                   .input(cockpit_atomic_storage)
-                                  .done(function (data) {
-                                      client.connect().done(function () {
-                                          dfd.resolve();
-                                      });
+                                  .done(function () {
+                                      client.connect().done(dfd.resolve);
                                   }).
                                   fail(function (error, data) {
                                       client.connect();
@@ -458,12 +457,12 @@
         }
     }
 
-    function init_storage(client, service) {
+    function init_storage(client) {
         $('#storage .breadcrumb a').on("click", function() {
             cockpit.location.go('/');
         });
 
-        $('#storage-reset').on('click', function () { reset_storage(client, service); });
+        $('#storage-reset').on('click', function () { reset_storage(client); });
 
         function add_callback(drives, driver) {
             add_storage(client, drives, driver);
@@ -501,7 +500,7 @@
             $('#storage').hide();
         }
 
-        function show(id) {
+        function show() {
             $('#storage').show();
         }
 

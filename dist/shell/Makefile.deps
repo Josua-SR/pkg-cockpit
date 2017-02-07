@@ -1,10 +1,10 @@
 # Generated Makefile data for shell
-# Stamp: Wed Jan 18 2017 13:53:56 GMT+0000 (UTC)
+# Stamp: Mon Feb 06 2017 19:47:25 GMT+0000 (UTC)
 
 shell_INPUTS = \
 	$(srcdir)/pkg/lib/credentials-ssh-private-keys.sh \
 	$(srcdir)/pkg/lib/credentials.js \
-	$(srcdir)/pkg/lib/listing.css \
+	$(srcdir)/pkg/lib/listing.less \
 	$(srcdir)/pkg/lib/machine-add.html \
 	$(srcdir)/pkg/lib/machine-auth-failed.html \
 	$(srcdir)/pkg/lib/machine-change-auth.html \
@@ -20,6 +20,7 @@ shell_INPUTS = \
 	$(srcdir)/pkg/lib/page.css \
 	$(srcdir)/pkg/lib/patterns.js \
 	$(srcdir)/pkg/lib/table.css \
+	$(srcdir)/pkg/lib/variables.less \
 	$(srcdir)/pkg/shell/base_index.js \
 	$(srcdir)/pkg/shell/images/server-error.png \
 	$(srcdir)/pkg/shell/images/server-large.png \
@@ -127,7 +128,7 @@ $(srcdir)/pkg/lib/credentials-ssh-private-keys.sh:
 
 $(srcdir)/pkg/lib/credentials.js:
 
-$(srcdir)/pkg/lib/listing.css:
+$(srcdir)/pkg/lib/listing.less:
 
 $(srcdir)/pkg/lib/machine-add.html:
 
@@ -158,6 +159,8 @@ $(srcdir)/pkg/lib/page.css:
 $(srcdir)/pkg/lib/patterns.js:
 
 $(srcdir)/pkg/lib/table.css:
+
+$(srcdir)/pkg/lib/variables.less:
 
 $(srcdir)/pkg/shell/base_index.js:
 

@@ -736,10 +736,10 @@ table.listing-ct {
 }
 table.listing-ct > caption,
 table.listing-ct > thead h3 {
-  font-size: 22px;
+  font-size: 30px;
   padding: 10px 0px 10px;
   font-weight: 300;
-  margin-top: 0px;
+  margin-top: 0;
 }
 table.listing-ct > caption {
   color: inherit;
@@ -749,14 +749,14 @@ table.listing-ct > thead td {
   padding-top: 20px;
 }
 table.listing-ct > thead:first-child td {
-  padding-top: 0px;
+  padding-top: 0;
 }
 table.listing-ct > thead td > a {
   line-height: 30px;
-  padding: 10px 0px 10px;
+  padding: 10px 0 10px;
 }
 table.listing-ct thead th {
-  border-top: 1px solid #eee;
+  border-top: 1px solid #eeeeee;
   font-weight: normal;
   padding: 10px;
   color: #888;
@@ -769,15 +769,15 @@ table.listing-ct thead th:last-child {
 }
 /* A listing item is a row in the table */
 tbody tr.listing-ct-item {
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
   cursor: pointer;
 }
 table.listing-ct tbody:last-child {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eeeeee;
 }
 table.listing-ct tbody + thead {
-  border-top: 1px solid #eee;
+  border-top: 1px solid #eeeeee;
 }
 table.listing-ct tbody.open:last-child {
   border-bottom: none;
@@ -800,7 +800,7 @@ tbody.open tr.listing-ct-item th {
   border-top: 1px solid #ccc;
 }
 tbody.open td div.listing-ct-head {
-  background-color: white;
+  background-color: #fff;
 }
 tbody.open .listing-ct-panel {
   border: 1px solid #ccc;
@@ -817,7 +817,7 @@ tbody.open tr.listing-ct-panel td div.listing-ct-head {
 }
 /* only highlight the row if navigation is available */
 tbody:not(.open) tr.listing-ct-item:not(.listing-ct-nonavigate):hover {
-  background-color: #d4edfa;
+  background-color: #f5f5f5;
 }
 /* if we can't navigate to a row but expand is available, highlight the caret */
 tbody:not(.open) tr.listing-ct-item.listing-ct-nonavigate:hover td.listing-ct-toggle {
@@ -835,7 +835,7 @@ tbody.open tr.listing-ct-item:hover td.listing-ct-toggle {
 tr.listing-ct-item .listing-ct-toggle {
   padding: 0 !important;
   width: 35px;
-  color: #000000;
+  color: #030303;
 }
 table.listing-ct thead .listing-ct-toggle + th,
 tr.listing-ct-item .listing-ct-toggle + td,
@@ -876,9 +876,9 @@ tr.listing-ct-item th {
 }
 /* Listing caption is text next to the actions, text should be similar to nav (.nav-tabs-pf > li > a)*/
 .listing-ct-actions > .listing-ct-caption {
-  font-size: 13px;
+  font-size: 14px;
   vertical-align: middle;
-  color: #4d5258;
+  color: #337ab7;
   padding-right: 5px;
 }
 /* Listing actions can be used directly as a cell */
@@ -907,11 +907,11 @@ div.listing-ct-maybe {
   box-shadow: none;
 }
 div.listing-ct-head {
-  padding: 10px 10px 0px 10px;
-  background-color: #f6f6f6;
+  padding: 10px 10px 0 10px;
+  background-color: #f5f5f5;
   border-color: #ccc;
   border-style: solid;
-  border-width: 1px 1px 0px 1px;
+  border-width: 1px 1px 0 1px;
   overflow: hidden;
 }
 div.listing-ct-head:last-child {
@@ -919,7 +919,7 @@ div.listing-ct-head:last-child {
 }
 div.listing-ct-maybe div.listing-ct-head,
 div.listing-ct-maybe div.listing-ct-body {
-  background-color: white;
+  background-color: #fff;
   border: none;
 }
 tbody.active .listing-ct-head {
@@ -969,7 +969,7 @@ tbody.active .listing-ct-head {
   padding: 20px 25px;
   font-size: 13px;
   border: 1px solid #ccc;
-  background-color: white;
+  background-color: #fff;
 }
 .listing-ct-inline > .listing-ct-body {
   border: none;
@@ -1061,9 +1061,9 @@ tbody.open tr.listing-ct-body {
 tbody.open tr.listing-ct-head {
   border-color: #ccc;
   border-style: solid;
-  border-width: 1px 1px 0px 1px;
+  border-width: 1px 1px 0 1px;
   border-top: 3px solid #0099d3;
-  background-color: #f6f6f6;
+  background-color: #f5f5f5;
 }
 tr.listing-ct-head + tr.listing-ct-head {
   border-top: none;
@@ -1072,7 +1072,7 @@ tr.listing-ct-head + tr.listing-ct-head td {
   padding: 0px 10px 0px 10px;
 }
 tr.listing-ct-body td {
-  padding: 20px 25px;
+  padding: 20px 150px;
   font-size: 13px;
 }
 .listing-ct-empty {
@@ -1120,67 +1120,6 @@ tbody tr.listing-ct-noexpand {
 .nav-tabs-pf > li.active a:before {
   height: 3px;
   left: 0px;
-}
-/* Timelines */
-div.timeline-ct {
-  border-left: 6px solid #ccc;
-  position: relative;
-  margin-left: 25px;
-  padding-left: 30px;
-  min-height: 1px;
-  padding-bottom: 15px;
-}
-div.timeline-ct .timeline-ct-point {
-  position: absolute;
-  left: -13.5px;
-  font-size: 21px;
-  text-align: center;
-  width: 20px;
-  height: 27px;
-  display: block;
-  line-height: 21px;
-  background-color: white;
-  padding: 3px 0px;
-  color: #ccc;
-}
-div.timeline-ct .timeline-ct-point.active {
-  color: #3f9c35;
-}
-div.timeline-ct .timeline-ct-md {
-  font-size: 24px;
-  width: 24px;
-  height: 32px;
-  line-height: 24px;
-  padding: 4px 0px;
-  left: -16px;
-}
-div.timeline-ct .timeline-ct-lg {
-  font-size: 40px;
-  width: 40px;
-  height: 44px;
-  line-height: 40px;
-  left: -23.5px;
-  padding: 2px 0px;
-}
-div.timeline-ct .fa-caret-up {
-  font-size: 30px;
-  line-height: 20px;
-  height: 24px;
-}
-div.timeline-ct div.listing-ct-panel {
-  margin-bottom: 0px;
-}
-div.timeline-ct.timeline-ct-end {
-  min-height: 30px;
-  padding-left: 36px;
-  background-repeat: repeat-y;
-  background-position: 0% 100%;
-  background-size: 6px 5px;
-  background-image: linear-gradient(#ccc 33%, #fff 0%);
-  border-left: none;
-}
-div.timeline-ct.timeline-ct-end .timeline-ct-md {
-  left: -10px;
 }
 /* Our terminal or logs */
 .console-ct {
@@ -1625,7 +1564,7 @@ table.images-listing tr.listing-ct-item {
 }
 table.images-listing tr.listing-ct-item td.tag-label {
   vertical-align: top;
-  background: linear-gradient(90deg, transparent 10px, #0088ce 10px, #0088ce 12px, transparent 12px);
+  background: linear-gradient(90deg, transparent 10px, #337ab7 10px, #337ab7 12px, transparent 12px);
 }
 table.images-listing tr.listing-ct-item td.listing-ct-toggle:hover + td.tag-label {
   background-color: #ededed;
@@ -1638,11 +1577,11 @@ table.images-listing tbody.last tr.listing-ct-item.tag-item td.tag-label {
   background-repeat: no-repeat;
 }
 table.images-listing tr.imagestream-item {
-  border-top: 1px solid #f1f1f1;
+  border-top: 1px solid #eeeeee;
 }
 table.images-listing tr.imagestream-item th,
 table.images-listing tr.imagestream-item td {
-  border-bottom: 2px solid #0088ce;
+  border-bottom: 2px solid #337ab7;
   font-size: 14px;
   padding-bottom: 5px;
 }
@@ -1757,11 +1696,11 @@ table.projects-listing tr.listing-ct-item tt {
   color: #888;
 }
 .image-tag {
-  border: 2px solid #0088ce;
+  border: 2px solid #337ab7;
   border-radius: 7px;
   padding: 3px 5px;
   white-space: nowrap;
-  background-color: #def3ff;
+  background-color: #f5f5f5;
 }
 a.image-tag {
   color: inherit;
@@ -1833,10 +1772,10 @@ a.image-tag {
   cursor: pointer;
 }
 .dashboard-images .card-pf-body div:hover {
-  background-color: #def3ff;
+  background-color: #f5f5f5;
 }
 .dashboard-images .card-pf-body ul {
-  background: linear-gradient(90deg, transparent 20px, #0088ce 20px, #0088ce 22px, transparent 22px);
+  background: linear-gradient(90deg, transparent 20px, #337ab7 20px, #337ab7 22px, transparent 22px);
   background-size: 100% 20px;
   background-repeat: no-repeat;
   padding: 3px 0px 0px 20px;
@@ -1844,7 +1783,7 @@ a.image-tag {
   line-height: 30px;
 }
 .dashboard-images .card-pf-body ul li {
-  background: linear-gradient(180deg, transparent 8px, #0088ce 8px, #0088ce 10px, transparent 10px);
+  background: linear-gradient(180deg, transparent 8px, #337ab7 8px, #337ab7 10px, transparent 10px);
   background-repeat: no-repeat;
   padding-left: 7px;
   display: inline;
@@ -1960,7 +1899,7 @@ a.image-tag {
   background-color: #393f44;
 }
 .icon-sidebar ul li.active a i {
-  color: #0088ce;
+  color: #337ab7;
 }
 .icon-sidebar ul li.active a:after {
   content: '';
@@ -1970,7 +1909,7 @@ a.image-tag {
   top: 0;
   display: block;
   position: absolute;
-  background-color: #0088ce;
+  background-color: #337ab7;
 }
 
 /*# sourceMappingURL=registry.css.map*/

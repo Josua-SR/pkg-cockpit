@@ -576,6 +576,9 @@ class MachineCase(unittest.TestCase):
         # https://bugzilla.redhat.com/show_bug.cgi?id=1386624
         ".*type=1400 .*denied  { name_bind } for.*dhclient.*",
 
+        # https://bugzilla.redhat.com/show_bug.cgi?id=1419263
+        ".*type=1400 .*denied  { write } for.*firewalld.*__pycache__.*",
+
         # https://bugzilla.redhat.com/show_bug.cgi?id=1242656
         "(audit: )?type=1400 .*denied.*comm=\"cockpit-ws\".*name=\"unix\".*dev=\"proc\".*",
         "(audit: )?type=1400 .*denied.*comm=\"ssh-transport-c\".*name=\"unix\".*dev=\"proc\".*",
@@ -833,7 +836,7 @@ class Naughty(object):
             if fnmatch.fnmatchcase(trace, match) or fnmatch.fnmatchcase(trace, match.replace("[", "?")):
                 number = n
         if not number:
-            return False
+            return 0
 
         sys.stderr.write("Ignoring known issue #{0}\n{1}\n".format(number, trace))
         try:
@@ -841,7 +844,7 @@ class Naughty(object):
         except:
             sys.stderr.write("Failed to post known issue to GitHub\n")
             traceback.print_exc()
-        return True
+        return number
 
 class TapResult(unittest.TestResult):
     def __init__(self, stream, descriptions, verbosity):
@@ -864,9 +867,11 @@ class TapResult(unittest.TestResult):
 
     def known_issue(self, test, err):
         string = self._exc_info_to_string(err, test)
-        if self.naughty and self.naughty.check_issue(string):
-            self.addSkip(test, "Known issue")
-            return True
+        if self.naughty:
+            issue = self.naughty.check_issue(string)
+            if issue:
+                self.addSkip(test, "Known issue #{0}".format(issue))
+                return True
         return False
 
     def stop(self):
@@ -1129,8 +1134,8 @@ def wait(func, msg=None, delay=1, tries=60):
       msg: A error message to use when the timeout occurs.  Defaults
         to a generic message.
       delay: How long to wait between calls to FUNC, in seconds.
-        Defaults to 0.2.
-      tries: How often to call FUNC.  Defaults to 20.
+        Defaults to 1.
+      tries: How often to call FUNC.  Defaults to 60.
 
     Raises:
       Error: When a timeout occurs.
