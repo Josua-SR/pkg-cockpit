@@ -15,6 +15,11 @@ var info = {
             "docker/console.js",
         ],
 
+        "kdump/kdump": [
+            "kdump/kdump.js",
+            "kdump/kdump.css",
+        ],
+
         "kubernetes/kubernetes": [
             "kubernetes/styles/main.less",
             "kubernetes/scripts/main.js",
@@ -26,7 +31,7 @@ var info = {
 
         "machines/machines": [
             "machines/index.js",
-            "machines/machines.css",
+            "machines/machines.less",
         ],
 
         "networkmanager/network": [
@@ -36,7 +41,7 @@ var info = {
 
         "ostree/ostree": [
             "ostree/app.js",
-            "ostree/ostree.css",
+            "ostree/ostree.less",
         ],
 
         "playground/jquery-patterns": [
@@ -125,6 +130,8 @@ var info = {
     tests: [
         "docker/test-docker",
 
+        "kdump/test-config-client",
+
         "lib/test-dummy",
         "lib/test-journal-renderer",
         "lib/test-machines",
@@ -155,6 +162,9 @@ var info = {
         "docker/index.html",
         "docker/images/drive-harddisk-symbolic.svg",
 
+        "kdump/index.html",
+        "kdump/manifest.json",
+
         "kubernetes/manifest.json",
         "kubernetes/override.json",
         "kubernetes/index.html",
@@ -174,6 +184,7 @@ var info = {
         "playground/jquery-patterns.html",
         "playground/metrics.html",
         "playground/plot.html",
+        "playground/po.js",
         "playground/react-patterns.html",
         "playground/service.html",
         "playground/speed.html",
@@ -376,10 +387,6 @@ module.exports = {
                 loader: 'strict' // Adds "use strict"
             },
             {
-                test: /\.css$/,
-                loader: extract.extract("style-loader", "css-loader?minimize=&root=" + libdir)
-            },
-            {
                 test: /\.jsx$/,
                 loader: "babel-loader"
             },
@@ -388,8 +395,12 @@ module.exports = {
                 loader: "babel-loader"
             },
             {
+                test: /\.css$/,
+                loader: extract.extract("css-loader?minimize=&root=" + libdir)
+            },
+            {
                 test: /\.less$/,
-                loader: extract.extract('css?sourceMap&minimize=!' + 'less?sourceMap&compress=false')
+                loader: extract.extract("css-loader?sourceMap&minimize=!less-loader?sourceMap&compress=false&root=" + libdir)
             },
             {
                 test: /views\/[^\/]+\.html$/,

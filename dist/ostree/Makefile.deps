@@ -1,19 +1,21 @@
 # Generated Makefile data for ostree
-# Stamp: Wed Jan 18 2017 13:53:56 GMT+0000 (UTC)
+# Stamp: Mon Feb 06 2017 19:47:25 GMT+0000 (UTC)
 
 ostree_INPUTS = \
 	$(srcdir)/pkg/lib/angular-dialog.js \
-	$(srcdir)/pkg/lib/listing.css \
+	$(srcdir)/pkg/lib/listing.less \
 	$(srcdir)/pkg/lib/page.css \
 	$(srcdir)/pkg/lib/qunit-config.js \
 	$(srcdir)/pkg/lib/qunit-template.html \
 	$(srcdir)/pkg/lib/qunit-tests.js \
 	$(srcdir)/pkg/lib/table.css \
+	$(srcdir)/pkg/lib/timeline.css \
+	$(srcdir)/pkg/lib/variables.less \
 	$(srcdir)/pkg/ostree/app.js \
 	$(srcdir)/pkg/ostree/client.js \
 	$(srcdir)/pkg/ostree/index.html \
 	$(srcdir)/pkg/ostree/manifest.json \
-	$(srcdir)/pkg/ostree/ostree.css \
+	$(srcdir)/pkg/ostree/ostree.less \
 	$(srcdir)/pkg/ostree/remotes.js \
 	$(srcdir)/pkg/ostree/sample.conf \
 	$(srcdir)/pkg/ostree/test-utils.js \
@@ -81,7 +83,7 @@ dist/ostree/test-utils.min.js.map: dist/ostree/Makefile.deps
 
 $(srcdir)/pkg/lib/angular-dialog.js:
 
-$(srcdir)/pkg/lib/listing.css:
+$(srcdir)/pkg/lib/listing.less:
 
 $(srcdir)/pkg/lib/page.css:
 
@@ -93,6 +95,10 @@ $(srcdir)/pkg/lib/qunit-tests.js:
 
 $(srcdir)/pkg/lib/table.css:
 
+$(srcdir)/pkg/lib/timeline.css:
+
+$(srcdir)/pkg/lib/variables.less:
+
 $(srcdir)/pkg/ostree/app.js:
 
 $(srcdir)/pkg/ostree/client.js:
@@ -101,7 +107,7 @@ $(srcdir)/pkg/ostree/index.html:
 
 $(srcdir)/pkg/ostree/manifest.json:
 
-$(srcdir)/pkg/ostree/ostree.css:
+$(srcdir)/pkg/ostree/ostree.less:
 
 $(srcdir)/pkg/ostree/remotes.js:
 

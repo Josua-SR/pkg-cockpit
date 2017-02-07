@@ -1,5 +1,5 @@
 # Generated Makefile data for docker
-# Stamp: Wed Jan 18 2017 13:53:56 GMT+0000 (UTC)
+# Stamp: Mon Feb 06 2017 19:47:25 GMT+0000 (UTC)
 
 docker_INPUTS = \
 	$(srcdir)/pkg/docker/atomic.js \
@@ -27,7 +27,7 @@ docker_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
 	$(srcdir)/pkg/lib/cockpit-components-select.jsx \
 	$(srcdir)/pkg/lib/console.css \
-	$(srcdir)/pkg/lib/listing.css \
+	$(srcdir)/pkg/lib/listing.less \
 	$(srcdir)/pkg/lib/mustache.js \
 	$(srcdir)/pkg/lib/page.css \
 	$(srcdir)/pkg/lib/patterns.js \
@@ -39,6 +39,7 @@ docker_INPUTS = \
 	$(srcdir)/pkg/lib/service.js \
 	$(srcdir)/pkg/lib/table.css \
 	$(srcdir)/pkg/lib/term.css \
+	$(srcdir)/pkg/lib/variables.less \
 	$(NULL)
 
 docker_OUTPUTS = \
@@ -166,7 +167,7 @@ $(srcdir)/pkg/lib/cockpit-components-select.jsx:
 
 $(srcdir)/pkg/lib/console.css:
 
-$(srcdir)/pkg/lib/listing.css:
+$(srcdir)/pkg/lib/listing.less:
 
 $(srcdir)/pkg/lib/mustache.js:
 
@@ -189,6 +190,8 @@ $(srcdir)/pkg/lib/service.js:
 $(srcdir)/pkg/lib/table.css:
 
 $(srcdir)/pkg/lib/term.css:
+
+$(srcdir)/pkg/lib/variables.less:
 
 WEBPACK_INPUTS += $(docker_INPUTS)
 WEBPACK_OUTPUTS += $(docker_OUTPUTS)

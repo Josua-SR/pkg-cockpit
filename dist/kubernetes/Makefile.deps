@@ -1,5 +1,5 @@
 # Generated Makefile data for kubernetes
-# Stamp: Wed Jan 18 2017 13:53:56 GMT+0000 (UTC)
+# Stamp: Mon Feb 06 2017 19:47:25 GMT+0000 (UTC)
 
 kubernetes_INPUTS = \
 	$(srcdir)/pkg/kubernetes/index.html \
@@ -149,13 +149,14 @@ kubernetes_INPUTS = \
 	$(srcdir)/pkg/kubernetes/views/volumes-page.html \
 	$(srcdir)/pkg/lib/angular-dialog.js \
 	$(srcdir)/pkg/lib/console.css \
-	$(srcdir)/pkg/lib/listing.css \
+	$(srcdir)/pkg/lib/listing.less \
 	$(srcdir)/pkg/lib/page.css \
 	$(srcdir)/pkg/lib/qunit-config.js \
 	$(srcdir)/pkg/lib/qunit-template.html \
 	$(srcdir)/pkg/lib/qunit-tests.js \
 	$(srcdir)/pkg/lib/table.css \
 	$(srcdir)/pkg/lib/term.css \
+	$(srcdir)/pkg/lib/variables.less \
 	$(NULL)
 
 kubernetes_OUTPUTS = \
@@ -675,7 +676,7 @@ $(srcdir)/pkg/lib/angular-dialog.js:
 
 $(srcdir)/pkg/lib/console.css:
 
-$(srcdir)/pkg/lib/listing.css:
+$(srcdir)/pkg/lib/listing.less:
 
 $(srcdir)/pkg/lib/page.css:
 
@@ -688,6 +689,8 @@ $(srcdir)/pkg/lib/qunit-tests.js:
 $(srcdir)/pkg/lib/table.css:
 
 $(srcdir)/pkg/lib/term.css:
+
+$(srcdir)/pkg/lib/variables.less:
 
 WEBPACK_INPUTS += $(kubernetes_INPUTS)
 WEBPACK_OUTPUTS += $(kubernetes_OUTPUTS)

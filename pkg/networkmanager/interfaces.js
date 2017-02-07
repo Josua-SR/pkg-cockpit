@@ -1067,6 +1067,16 @@ function NetworkManagerModel() {
                         con.Interfaces.push(obj);
                     });
                 }
+
+                // Explicitly prefer the active connection.  The
+                // active connection should have the most recent
+                // timestamp, but only when the activation was
+                // successful.  Also, there don't seem to be change
+                // notifications when the timestamp changes.
+
+                if (obj.Device && obj.Device.ActiveConnection && obj.Device.ActiveConnection.Connection) {
+                    obj.MainConnection = obj.Device.ActiveConnection.Connection;
+                }
             }
         ]
 
@@ -1625,9 +1635,8 @@ PageNetworking.prototype = {
         self.model.list_interfaces().forEach(function (iface) {
 
             function has_master(iface) {
-                var connections =
-                    (iface.Device ? iface.Device.AvailableConnections : iface.Connections);
-                return connections.some(function (c) { return c.Masters && c.Masters.length > 0; });
+                return ((iface.Device && iface.Device.ActiveConnection && iface.Device.ActiveConnection.Master) ||
+                        (iface.MainConnection && iface.MainConnection.Masters.length > 0));
             }
 
             // Skip loopback
@@ -2736,6 +2745,9 @@ PageNetworkInterface.prototype = {
 
             con.Slaves.forEach(function (slave_con) {
                 slave_con.Interfaces.forEach(function(iface) {
+                    if (iface.MainConnection != slave_con)
+                        return;
+
                     var dev = iface.Device;
                     var is_active = (dev && dev.State == 100 && dev.Carrier === true);
 
@@ -3212,6 +3224,16 @@ function set_slave(model, master_connection, master_settings, slave_type,
          * activate it at the same time.
          */
 
+        var master_iface;
+        if (master_connection) {
+            master_iface = master_connection.Interfaces[0].Name;
+        } else {
+            master_iface = master_settings.connection.interface_name;
+        }
+
+        if (!master_iface)
+            return false;
+
         if (!main_connection) {
             if (!iface.Device)
                 return false;
@@ -3220,12 +3242,12 @@ function set_slave(model, master_connection, master_settings, slave_type,
                                                          { autoconnect: true,
                                                            interface_name: iface.Name,
                                                            slave_type: slave_type,
-                                                           master: master_settings.connection.uuid
+                                                           master: master_iface
                                                          }
                                                        });
         } else if (cs.master != master_settings.connection.uuid) {
             cs.slave_type = slave_type;
-            cs.master = master_settings.connection.uuid;
+            cs.master = master_iface;
             delete main_connection.Settings.ipv4;
             delete main_connection.Settings.ipv6;
             delete main_connection.Settings.team_port;
@@ -3240,7 +3262,7 @@ function set_slave(model, master_connection, master_settings, slave_type,
         /* Free the main_connection from being a slave if it is our slave.  If there is
          * no main_connection, we don't need to do anything.
          */
-        if (main_connection && cs.master == master_settings.connection.uuid) {
+        if (main_connection && main_connection.Masters.indexOf(master_connection) != -1) {
             free_slave_connection(main_connection);
         }
     }

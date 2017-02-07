@@ -1,0 +1,142 @@
+# Generated Makefile data for kdump
+# Stamp: Mon Feb 06 2017 19:47:25 GMT+0000 (UTC)
+
+kdump_INPUTS = \
+	$(srcdir)/pkg/kdump/config-client.es6 \
+	$(srcdir)/pkg/kdump/crashkernel.sh \
+	$(srcdir)/pkg/kdump/index.html \
+	$(srcdir)/pkg/kdump/kdump-client.es6 \
+	$(srcdir)/pkg/kdump/kdump-view.jsx \
+	$(srcdir)/pkg/kdump/kdump.css \
+	$(srcdir)/pkg/kdump/kdump.js \
+	$(srcdir)/pkg/kdump/manifest.json \
+	$(srcdir)/pkg/kdump/test-config-client.js \
+	$(srcdir)/pkg/kdump/testwritable.sh \
+	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \
+	$(srcdir)/pkg/lib/cockpit-components-onoff.css \
+	$(srcdir)/pkg/lib/cockpit-components-onoff.jsx \
+	$(srcdir)/pkg/lib/cockpit-components-select.jsx \
+	$(srcdir)/pkg/lib/cockpit-components-tooltip.jsx \
+	$(srcdir)/pkg/lib/page.css \
+	$(srcdir)/pkg/lib/qunit-config.js \
+	$(srcdir)/pkg/lib/qunit-template.html \
+	$(srcdir)/pkg/lib/qunit-tests.js \
+	$(srcdir)/pkg/lib/service.js \
+	$(srcdir)/pkg/lib/tooltip.css \
+	$(NULL)
+
+kdump_OUTPUTS = \
+	dist/kdump/index.html \
+	dist/kdump/kdump.css \
+	dist/kdump/kdump.css.map \
+	dist/kdump/kdump.min.js \
+	dist/kdump/kdump.min.js.map \
+	dist/kdump/manifest.json \
+	dist/kdump/test-config-client.css \
+	dist/kdump/test-config-client.css.map \
+	dist/kdump/test-config-client.html \
+	dist/kdump/test-config-client.min.js \
+	dist/kdump/test-config-client.min.js.map \
+	$(NULL)
+
+kdump_INSTALL = \
+	dist/kdump/index.html.gz \
+	dist/kdump/kdump.css.gz \
+	dist/kdump/kdump.min.js.gz \
+	dist/kdump/manifest.json \
+	dist/kdump/test-config-client.css.gz \
+	dist/kdump/test-config-client.min.js.gz \
+	$(NULL)
+
+kdump_DEBUG = \
+	dist/kdump/kdump.css.map \
+	dist/kdump/kdump.min.js.map \
+	dist/kdump/test-config-client.css.map \
+	dist/kdump/test-config-client.min.js.map \
+	$(NULL)
+
+kdump_TESTS = \
+	dist/kdump/test-config-client.html \
+	$(NULL)
+
+dist/kdump/Makefile.deps: $(WEBPACK_CONFIG) $(kdump_INPUTS)
+	$(WEBPACK_RULE) -d dist/kdump/Makefile.deps $(WEBPACK_CONFIG)
+
+dist/kdump/index.html: dist/kdump/Makefile.deps
+
+dist/kdump/kdump.css: dist/kdump/Makefile.deps
+
+dist/kdump/kdump.css.map: dist/kdump/Makefile.deps
+
+dist/kdump/kdump.min.js: dist/kdump/Makefile.deps
+
+dist/kdump/kdump.min.js.map: dist/kdump/Makefile.deps
+
+dist/kdump/manifest.json: dist/kdump/Makefile.deps
+
+dist/kdump/test-config-client.css: dist/kdump/Makefile.deps
+
+dist/kdump/test-config-client.css.map: dist/kdump/Makefile.deps
+
+dist/kdump/test-config-client.html: dist/kdump/Makefile.deps
+
+dist/kdump/test-config-client.min.js: dist/kdump/Makefile.deps
+
+dist/kdump/test-config-client.min.js.map: dist/kdump/Makefile.deps
+
+$(srcdir)/pkg/kdump/config-client.es6:
+
+$(srcdir)/pkg/kdump/crashkernel.sh:
+
+$(srcdir)/pkg/kdump/index.html:
+
+$(srcdir)/pkg/kdump/kdump-client.es6:
+
+$(srcdir)/pkg/kdump/kdump-view.jsx:
+
+$(srcdir)/pkg/kdump/kdump.css:
+
+$(srcdir)/pkg/kdump/kdump.js:
+
+$(srcdir)/pkg/kdump/manifest.json:
+
+$(srcdir)/pkg/kdump/test-config-client.js:
+
+$(srcdir)/pkg/kdump/testwritable.sh:
+
+$(srcdir)/pkg/lib/cockpit-components-dialog.jsx:
+
+$(srcdir)/pkg/lib/cockpit-components-onoff.css:
+
+$(srcdir)/pkg/lib/cockpit-components-onoff.jsx:
+
+$(srcdir)/pkg/lib/cockpit-components-select.jsx:
+
+$(srcdir)/pkg/lib/cockpit-components-tooltip.jsx:
+
+$(srcdir)/pkg/lib/page.css:
+
+$(srcdir)/pkg/lib/qunit-config.js:
+
+$(srcdir)/pkg/lib/qunit-template.html:
+
+$(srcdir)/pkg/lib/qunit-tests.js:
+
+$(srcdir)/pkg/lib/service.js:
+
+$(srcdir)/pkg/lib/tooltip.css:
+
+WEBPACK_INPUTS += $(kdump_INPUTS)
+WEBPACK_OUTPUTS += $(kdump_OUTPUTS)
+WEBPACK_INSTALL += $(kdump_INSTALL)
+WEBPACK_DEBUG += $(kdump_DEBUG)
+TESTS += $(kdump_TESTS)
+
+kdump: dist/kdump/Makefile.deps $(kdump_OUTPUTS) $(kdump_INSTALL)
+	@true
+clean-kdump: 
+	rm -rf $(kdump_OUTPUTS) $(kdump_INSTALL) dist/kdump/Makefile.deps
+all-local:: kdump
+	@true
+clean-local:: clean-kdump
+	@true

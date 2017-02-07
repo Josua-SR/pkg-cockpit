@@ -1,5 +1,5 @@
 # Generated Makefile data for playground
-# Stamp: Wed Jan 18 2017 13:53:56 GMT+0000 (UTC)
+# Stamp: Mon Feb 06 2017 19:47:25 GMT+0000 (UTC)
 
 playground_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \
@@ -8,7 +8,7 @@ playground_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-onoff.jsx \
 	$(srcdir)/pkg/lib/cockpit-components-select.jsx \
 	$(srcdir)/pkg/lib/cockpit-components-tooltip.jsx \
-	$(srcdir)/pkg/lib/listing.css \
+	$(srcdir)/pkg/lib/listing.less \
 	$(srcdir)/pkg/lib/mustache.js \
 	$(srcdir)/pkg/lib/page.css \
 	$(srcdir)/pkg/lib/patterns.js \
@@ -16,7 +16,9 @@ playground_INPUTS = \
 	$(srcdir)/pkg/lib/plot.js \
 	$(srcdir)/pkg/lib/service.js \
 	$(srcdir)/pkg/lib/table.css \
+	$(srcdir)/pkg/lib/timeline.css \
 	$(srcdir)/pkg/lib/tooltip.css \
+	$(srcdir)/pkg/lib/variables.less \
 	$(srcdir)/pkg/playground/hammer.gif \
 	$(srcdir)/pkg/playground/jquery-patterns.html \
 	$(srcdir)/pkg/playground/jquery-patterns.js \
@@ -25,6 +27,7 @@ playground_INPUTS = \
 	$(srcdir)/pkg/playground/metrics.js \
 	$(srcdir)/pkg/playground/plot.html \
 	$(srcdir)/pkg/playground/plot.js \
+	$(srcdir)/pkg/playground/po.js \
 	$(srcdir)/pkg/playground/react-demo-dialog.jsx \
 	$(srcdir)/pkg/playground/react-demo-listing.jsx \
 	$(srcdir)/pkg/playground/react-demo-onoff.jsx \
@@ -59,6 +62,7 @@ playground_OUTPUTS = \
 	dist/playground/plot.html \
 	dist/playground/plot.min.js \
 	dist/playground/plot.min.js.map \
+	dist/playground/po.js \
 	dist/playground/react-patterns.css \
 	dist/playground/react-patterns.css.map \
 	dist/playground/react-patterns.html \
@@ -90,6 +94,7 @@ playground_INSTALL = \
 	dist/playground/plot.css.gz \
 	dist/playground/plot.html.gz \
 	dist/playground/plot.min.js.gz \
+	dist/playground/po.js.gz \
 	dist/playground/react-patterns.css.gz \
 	dist/playground/react-patterns.html.gz \
 	dist/playground/react-patterns.min.js.gz \
@@ -158,6 +163,8 @@ dist/playground/plot.min.js: dist/playground/Makefile.deps
 
 dist/playground/plot.min.js.map: dist/playground/Makefile.deps
 
+dist/playground/po.js: dist/playground/Makefile.deps
+
 dist/playground/react-patterns.css: dist/playground/Makefile.deps
 
 dist/playground/react-patterns.css.map: dist/playground/Makefile.deps
@@ -204,7 +211,7 @@ $(srcdir)/pkg/lib/cockpit-components-select.jsx:
 
 $(srcdir)/pkg/lib/cockpit-components-tooltip.jsx:
 
-$(srcdir)/pkg/lib/listing.css:
+$(srcdir)/pkg/lib/listing.less:
 
 $(srcdir)/pkg/lib/mustache.js:
 
@@ -220,7 +227,11 @@ $(srcdir)/pkg/lib/service.js:
 
 $(srcdir)/pkg/lib/table.css:
 
+$(srcdir)/pkg/lib/timeline.css:
+
 $(srcdir)/pkg/lib/tooltip.css:
+
+$(srcdir)/pkg/lib/variables.less:
 
 $(srcdir)/pkg/playground/hammer.gif:
 
@@ -237,6 +248,8 @@ $(srcdir)/pkg/playground/metrics.js:
 $(srcdir)/pkg/playground/plot.html:
 
 $(srcdir)/pkg/playground/plot.js:
+
+$(srcdir)/pkg/playground/po.js:
 
 $(srcdir)/pkg/playground/react-demo-dialog.jsx:
 

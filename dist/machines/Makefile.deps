@@ -1,11 +1,12 @@
 # Generated Makefile data for machines
-# Stamp: Wed Jan 18 2017 13:53:56 GMT+0000 (UTC)
+# Stamp: Mon Feb 06 2017 19:47:25 GMT+0000 (UTC)
 
 machines_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
-	$(srcdir)/pkg/lib/listing.css \
+	$(srcdir)/pkg/lib/listing.less \
 	$(srcdir)/pkg/lib/page.css \
 	$(srcdir)/pkg/lib/table.css \
+	$(srcdir)/pkg/lib/variables.less \
 	$(srcdir)/pkg/machines/actions.es6 \
 	$(srcdir)/pkg/machines/app.jsx \
 	$(srcdir)/pkg/machines/c3charts.jsx \
@@ -16,7 +17,7 @@ machines_INPUTS = \
 	$(srcdir)/pkg/machines/index.html \
 	$(srcdir)/pkg/machines/index.js \
 	$(srcdir)/pkg/machines/libvirt.es6 \
-	$(srcdir)/pkg/machines/machines.css \
+	$(srcdir)/pkg/machines/machines.less \
 	$(srcdir)/pkg/machines/manifest.json \
 	$(srcdir)/pkg/machines/middlewares.es6 \
 	$(srcdir)/pkg/machines/reducers.es6 \
@@ -66,11 +67,13 @@ dist/machines/manifest.json: dist/machines/Makefile.deps
 
 $(srcdir)/pkg/lib/cockpit-components-listing.jsx:
 
-$(srcdir)/pkg/lib/listing.css:
+$(srcdir)/pkg/lib/listing.less:
 
 $(srcdir)/pkg/lib/page.css:
 
 $(srcdir)/pkg/lib/table.css:
+
+$(srcdir)/pkg/lib/variables.less:
 
 $(srcdir)/pkg/machines/actions.es6:
 
@@ -92,7 +95,7 @@ $(srcdir)/pkg/machines/index.js:
 
 $(srcdir)/pkg/machines/libvirt.es6:
 
-$(srcdir)/pkg/machines/machines.css:
+$(srcdir)/pkg/machines/machines.less:
 
 $(srcdir)/pkg/machines/manifest.json:
 

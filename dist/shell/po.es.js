@@ -8,24 +8,24 @@
         cockpit.locale(l);
         n = true;
     }
-    function o(e) {
-        var l, n, a, o, t = {};
-        for (l in e) {
-            if (l === "") continue;
-            a = l.split("");
-            o = e[l];
-            if (a[1]) {
-                n = a[0];
-                l = a[1];
+    function o(e, l) {
+        var n, a, o, t, i = {};
+        for (n in e) {
+            if (n === "") continue;
+            o = n.split("");
+            t = e[n];
+            if (o[1]) {
+                a = o[0];
+                n = o[1];
             } else {
-                n = "$$noContext";
-                l = a[0];
+                a = "$$noContext";
+                n = o[0];
             }
-            if (o[0] === null) o = o[1]; else o = o.slice(1);
-            if (!(l in t)) t[l] = {};
-            t[l][n] = o;
+            if (t[0] === null) t = t[1]; else t = t.slice(1);
+            if (!(n in i)) i[n] = {};
+            i[n][a] = t;
         }
-        return t;
+        return angular.extend(l, i);
     }
     if (typeof angular === "object") {
         try {
@@ -37,7 +37,8 @@
             n = true;
             a.run([ "gettextCatalog", function(e) {
                 var n = l[""]["language"];
-                e.setStrings(n, o(l));
+                var a = e.getCurrentLanguage() == n ? e.strings : {};
+                e.setStrings(n, o(l, a));
                 e.setCurrentLanguage(n);
             } ]);
         }

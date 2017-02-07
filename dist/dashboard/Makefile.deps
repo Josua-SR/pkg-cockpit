@@ -1,5 +1,5 @@
 # Generated Makefile data for dashboard
-# Stamp: Wed Jan 18 2017 13:53:56 GMT+0000 (UTC)
+# Stamp: Mon Feb 06 2017 19:47:25 GMT+0000 (UTC)
 
 dashboard_INPUTS = \
 	$(srcdir)/pkg/dashboard/image-editor.js \
@@ -8,7 +8,7 @@ dashboard_INPUTS = \
 	$(srcdir)/pkg/dashboard/manifest.json \
 	$(srcdir)/pkg/lib/credentials-ssh-private-keys.sh \
 	$(srcdir)/pkg/lib/credentials.js \
-	$(srcdir)/pkg/lib/listing.css \
+	$(srcdir)/pkg/lib/listing.less \
 	$(srcdir)/pkg/lib/machine-add.html \
 	$(srcdir)/pkg/lib/machine-auth-failed.html \
 	$(srcdir)/pkg/lib/machine-change-auth.html \
@@ -23,6 +23,7 @@ dashboard_INPUTS = \
 	$(srcdir)/pkg/lib/mustache.js \
 	$(srcdir)/pkg/lib/patterns.js \
 	$(srcdir)/pkg/lib/plot.js \
+	$(srcdir)/pkg/lib/variables.less \
 	$(NULL)
 
 dashboard_OUTPUTS = \
@@ -76,7 +77,7 @@ $(srcdir)/pkg/lib/credentials-ssh-private-keys.sh:
 
 $(srcdir)/pkg/lib/credentials.js:
 
-$(srcdir)/pkg/lib/listing.css:
+$(srcdir)/pkg/lib/listing.less:
 
 $(srcdir)/pkg/lib/machine-add.html:
 
@@ -105,6 +106,8 @@ $(srcdir)/pkg/lib/mustache.js:
 $(srcdir)/pkg/lib/patterns.js:
 
 $(srcdir)/pkg/lib/plot.js:
+
+$(srcdir)/pkg/lib/variables.less:
 
 WEBPACK_INPUTS += $(dashboard_INPUTS)
 WEBPACK_OUTPUTS += $(dashboard_OUTPUTS)

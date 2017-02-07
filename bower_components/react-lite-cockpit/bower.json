@@ -1,0 +1,15 @@
+{
+  "name": "react-lite-cockpit",
+  "description": "react-lite with open pull requests",
+  "main": [
+    "dist/react-lite.js"
+  ],
+  "ignore": [
+    "examples/*",
+    "lib/*",
+    "__tests__/*",
+    "build.js",
+    "src/*",
+    "jest/*"
+  ]
+}
