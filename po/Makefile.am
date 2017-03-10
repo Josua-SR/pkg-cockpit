@@ -8,10 +8,6 @@ LINGUAS = $(shell cat $(srcdir)/po/LINGUAS)
 PO_LINGUAS = $(addprefix po/,$(LINGUAS))
 PO_INPUTS = $(addsuffix .po,$(PO_LINGUAS))
 MO_FILES = $(addprefix src/ws/,$(addsuffix .mo,$(LINGUAS)))
-PO_JAVASCRIPT = $(addprefix dist/shell/po.,$(addsuffix .js,$(LINGUAS)))
-
-podir = $(pkgdatadir)/shell
-nodist_po_DATA = dist/shell/po.js.gz $(addsuffix .gz,$(PO_JAVASCRIPT))
 
 # Used to list files in src/ws in the po file
 FILTER_PO_SRC_WS = sed -ne 's|.*\(\(\.\./\)\?src/ws/[^:]\+\).*|-N \1|p' $<
@@ -21,28 +17,23 @@ src/ws/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
 	$(MSGGREP) `$(FILTER_PO_SRC_WS)` $< > $@.tmp && mv $@.tmp $@
 
-dist/shell/po.js: po/po.js
-	$(COPY_RULE)
-
-# A filtered po file without src/ws
-dist/shell/%.po: po/%.po
-	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) --invert-match `$(FILTER_PO_SRC_WS)` $< > $@.tmp && mv $@.tmp $@
-
 # Build a binary mo file from po
 .po.mo:
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
 	$(MSGFMT) -o $@.tmp $< && mv $@.tmp $@ && touch $@
 
+# Copy the empty translations to wherever they are needed
+%/po.js: po/po.empty.js
+	$(COPY_RULE)
+
 # Build a javascript file from a po
 po.%.js: %.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(srcdir)/tools/missing $(srcdir)/po/po2json -m $(srcdir)/po/po.js -o $@.js.tmp $< && \
-	$(srcdir)/tools/missing $(UGLIFY_JS) $@.js.tmp --mangle --beautify > $@.tmp && \
-	rm -f $@.js.tmp && mv $@.tmp $@
+	$(srcdir)/tools/missing $(srcdir)/po/po2json -m $(srcdir)/po/po.empty.js -o $@.js.tmp $< && \
+	mv $@.js.tmp $@
 
 # Always build the binary gettext data
-all-local:: $(MO_FILES) $(PO_JAVASCRIPT)
+all-local:: $(MO_FILES)
 
 # Called to install the binary gettext data
 install-data-local:: $(MO_FILES)
@@ -59,6 +50,7 @@ uninstall-local::
 TRANSLATE = \
 	pkg/ \
 	bower_components/registry-image-widgets/ \
+	src/ws/ \
 	$(NULL)
 
 # Lists of files we need to extract from
@@ -71,10 +63,13 @@ po/POTFILES.html.in:
 po/POTFILES.js.in:
 	$(MKDIR_P) $(notdir $@)
 	( cd $(srcdir) && find src/base1/ $(TRANSLATE) -name '*.js' -o -name '*.jsx' -o -name '*.es6' ) > $@
+po/POTFILES.manifest.in:
+	$(MKDIR_P) $(notdir $@)
+	( cd $(srcdir) && find $(TRANSLATE) -name 'manifest.json' ) > $@
 po/POTFILES.pre.in: prepare-po
 	$(MKDIR_P) $(notdir $@)
 	( cd tmp/ && find . -type f ) > $@
-.PHONY: po/POTFILES.c.in po/POTFILES.html.in po/POTFILES.js.in po/POTFILES.pre.in
+.PHONY: po/POTFILES.c.in po/POTFILES.html.in po/POTFILES.js.in po/POTFILES.manifest.in po/POTFILES.pre.in
 
 # Extract from GLib based C code files
 po/cockpit.c.pot: po/POTFILES.c.in
@@ -98,6 +93,9 @@ po/cockpit.js.pot: po/POTFILES.js.in
 		--keyword=gettextCatalog.getString:1,3c --keyword=gettextCatalog.getPlural:2,3,4c \
 		--from-code=UTF-8 --directory=$(srcdir) --files-from=$^
 
+po/cockpit.manifest.pot: po/POTFILES.manifest.in
+	$(srcdir)/tools/missing $(srcdir)/po/manifest2po -d $(srcdir) -f $^ -o $@
+
 # Extract pre-processed prepare-po data in tmp/
 po/cockpit.pre.pot: po/POTFILES.pre.in
 	$(XGETTEXT) --default-domain=cockpit --output=$@ \
@@ -105,8 +103,8 @@ po/cockpit.pre.pot: po/POTFILES.pre.in
 		--from-code=UTF-8 --directory=$(builddir)/tmp --files-from=$^
 
 # Combine the above pot files into one
-po/cockpit.pot: po/cockpit.c.pot po/cockpit.html.pot po/cockpit.js.pot po/cockpit.pre.pot
-	$(MSGCAT) --sort-output --use-first --output-file=$@ $^
+po/cockpit.pot: po/cockpit.c.pot po/cockpit.html.pot po/cockpit.js.pot po/cockpit.manifest.pot po/cockpit.pre.pot
+	$(MSGCAT) --sort-output --output-file=$@ $^
 
 # Actually update the old translations with new translatable text
 update-po: po/cockpit.pot
@@ -118,27 +116,29 @@ upload-pot:
 	zanata-cli push --includes cockpit.pot --project-config "$(srcdir)/po/zanata.xml" \
 		-s "$(builddir)/po"
 
+upload-translations:
+	zanata-cli push --includes=cockpit.pot --project-config "$(srcdir)/po/zanata.xml" \
+		--push-type trans -s "$(builddir)/po" -t "$(srcdir)/po"
+
 download-po:
-	zanata-cli -B pull --project-config "$(srcdir)/po/zanata.xml" \
+	zanata-cli -B pull --includes=cockpit.pot --project-config "$(srcdir)/po/zanata.xml" \
 		--min-doc-percent 1 -s "$(builddir)/po" -t "$(srcdir)/po"
 
 CLEANFILES += \
 	$(MO_FILES) \
 	$(POJS_FILES) \
 	$(nodist_po_DATA) \
-	$(PO_JAVASCRIPT) \
 	po/POTFILES.*.in \
-	dist/shell/*.po /
-	src/ws/*.po /
+	dist/shell/*.po \
+	src/ws/*.po \
 	po/cockpit*.pot \
-	po/po.js.gz \
+	po/po.empty.js.gz \
 	$(NULL)
 
 EXTRA_DIST += \
 	$(PO_INPUTS) \
-	$(PO_JAVASCRIPT) \
 	po/LINGUAS \
-	po/po.js \
+	po/po.empty.js \
 	po/po2json \
 	po/zanata.xml \
 	$(NULL)

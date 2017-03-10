@@ -1,0 +1,43 @@
+# Generated Makefile data for pcp
+# Stamp: Thu Mar 09 2017 15:00:42 GMT+0000 (UTC)
+
+pcp_INPUTS = \
+	$(NULL)
+
+pcp_OUTPUTS = \
+	$(NULL)
+
+pcp_PO = dist/pcp/po.js $(patsubst %,dist/pcp/po.%.js,$(LINGUAS))
+
+pcp_INSTALL = \
+	$(addsuffix .gz,$(pcp_PO)) \
+	$(NULL)
+
+pcp_DEBUG = \
+	$(NULL)
+
+pcp_TESTS = \
+	$(NULL)
+
+dist/pcp/%.po: po/%.po
+	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
+	$(MSGGREP)  $< > $@.tmp && mv $@.tmp $@
+
+dist/pcp/Makefile.deps: $(WEBPACK_CONFIG) $(pcp_INPUTS)
+	$(WEBPACK_RULE) -d dist/pcp/Makefile.deps $(WEBPACK_CONFIG)
+
+WEBPACK_INPUTS += $(pcp_INPUTS)
+WEBPACK_OUTPUTS += $(pcp_OUTPUTS)
+WEBPACK_PO += $(pcp_PO)
+WEBPACK_INSTALL += $(pcp_INSTALL)
+WEBPACK_DEBUG += $(pcp_DEBUG)
+TESTS += $(pcp_TESTS)
+
+pcp: dist/pcp/Makefile.deps $(pcp_OUTPUTS) $(pcp_INSTALL)
+	@true
+clean-pcp: 
+	rm -rf $(pcp_OUTPUTS) $(pcp_INSTALL) dist/pcp/Makefile.deps
+all-local:: pcp
+	@true
+clean-local:: clean-pcp
+	@true

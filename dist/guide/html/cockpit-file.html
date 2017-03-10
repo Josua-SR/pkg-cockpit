@@ -29,10 +29,15 @@
 </tr></table></div>
 <div class="refsynopsisdiv">
 <h2>Synopsis</h2>
+<p>The <code class="code">cockpit.file</code> API lets you read, write, and watch regular files in their entirety.
+    It cannot efficiently do random access in a big file or read non-regular files such as
+    <code class="code">/dev/random</code>.
+    </p>
 <pre class="programlisting">
 file = cockpit.file(path,
                     { syntax: syntax_object,
-                      binary: boolean
+                      binary: boolean,
+                      max_read_size: int,
                     })
 
 promise = file.read()
@@ -79,6 +84,10 @@ cockpit.file("/path/to/file").read()
 <p>It is not an error when the file does not exist. In this case, the
       <code class="code">done()</code> callback will be called with a <code class="code">null</code>
       value for <code class="code">content</code> and <code class="code">tag</code> is <code class="code">"-"</code>.</p>
+<p>You can use the <code class="code">max_read_size</code> option to limit
+      the amount of data that is read.  If the file is larger than the
+      given limit, no data is read and the channel is closed with
+      problem code <code class="code">too-large</code>.  The default limit is 16 MiB.</p>
 <p>To write to a file, use code like this:
 </p>
 <pre class="programlisting">

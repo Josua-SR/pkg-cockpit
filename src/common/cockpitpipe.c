@@ -665,6 +665,9 @@ cockpit_pipe_constructed (GObject *object)
 
   G_OBJECT_CLASS (cockpit_pipe_parent_class)->constructed (object);
 
+  if (self->priv->name == NULL)
+    self->priv->name = g_strdup ("pipe");
+
   if (self->priv->in_fd >= 0)
     {
       if (!g_unix_set_fd_nonblocking (self->priv->in_fd, TRUE, &error))
@@ -1116,11 +1119,18 @@ cockpit_pipe_connect (const gchar *name,
   else
     {
       if (!g_unix_set_fd_nonblocking (sock, TRUE, NULL))
-        g_return_val_if_reached (NULL);
+        {
+          close (sock);
+          g_return_val_if_reached (NULL);
+        }
+
       native_len = g_socket_address_get_native_size (address);
       native = g_malloc (native_len);
       if (!g_socket_address_to_native (address, native, native_len, NULL))
-        g_return_val_if_reached (NULL);
+        {
+          close (sock);
+          g_return_val_if_reached (NULL);
+        }
       if (connect (sock, native, native_len) < 0)
         {
           if (errno == EINPROGRESS)
@@ -1452,7 +1462,7 @@ cockpit_pipe_exit_status (CockpitPipe *self)
  * @length: length of data to consume
  * @after: amount of trailing bytes to discard
  *
- * Used to consume data from the buffer passed to the the
+ * Used to consume data from the buffer passed to the
  * read signal.
  *
  * @before + @length + @after bytes will be removed from the @buffer,
@@ -1530,4 +1540,86 @@ cockpit_pipe_new (const gchar *name,
                        "in-fd", in_fd,
                        "out-fd", out_fd,
                        NULL);
+}
+
+static gint
+environ_find (gchar **env,
+              const gchar *variable)
+{
+  gint len, x;
+  gchar *pos;
+
+  pos = strchr (variable, '=');
+  if (pos == NULL)
+    len = strlen (variable);
+  else
+    len = pos - variable;
+
+  for (x = 0; env && env[x]; x++)
+    {
+      if (strncmp (env[x], variable, len) == 0 &&
+          env[x][len] == '=')
+        return x;
+    }
+
+  return -1;
+}
+
+/**
+ * cockpit_pipe_get_environ:
+ * @input: Input environment array
+ * @directory: Working directory to put in environment
+ *
+ * Prepares an environment for spawning a CockpitPipe process.
+ * This merges the fields in @input with the current process
+ * environment.
+ *
+ * This is the standard way of processing an "environ" field
+ * in either an "open" message or a "bridges" definition in
+ * manifest.json.
+ *
+ * The current working @directory for the new process is
+ * optionally specified. It will set a $PWD environment
+ * variable as expected by shells.
+ *
+ * Returns: (transfer full): A new environment block to
+ *          be freed with g_strfreev().
+ */
+gchar **
+cockpit_pipe_get_environ (const gchar **input,
+                          const gchar *directory)
+{
+  gchar **env = g_get_environ ();
+  gsize length = g_strv_length (env);
+  gboolean had_pwd = FALSE;
+  gint i, x;
+
+  for (i = 0; input && input[i] != NULL; i++)
+    {
+      if (g_str_has_prefix (input[i], "PWD="))
+        had_pwd = TRUE;
+      x = environ_find (env, input[i]);
+      if (x != -1)
+        {
+          g_free (env[x]);
+          env[x] = g_strdup (input[i]);
+        }
+      else
+        {
+          env = g_renew (gchar *, env, length + 2);
+          env[length] = g_strdup (input[i]);
+          env[length + 1] = NULL;
+          length++;
+        }
+    }
+
+  /*
+   * The kernel only knows about the inode of the current directory.
+   * So when we spawn a shell, it won't know the directory it's
+   * meant to display. Pass it the path we care about in $PWD
+   */
+  if (!had_pwd && directory)
+    env = g_environ_setenv (env, "PWD", directory, TRUE);
+
+  return env;
 }

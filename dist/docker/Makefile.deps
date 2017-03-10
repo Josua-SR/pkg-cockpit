@@ -1,5 +1,5 @@
 # Generated Makefile data for docker
-# Stamp: Mon Feb 06 2017 19:47:25 GMT+0000 (UTC)
+# Stamp: Thu Mar 09 2017 15:00:42 GMT+0000 (UTC)
 
 docker_INPUTS = \
 	$(srcdir)/pkg/docker/atomic.js \
@@ -16,7 +16,6 @@ docker_INPUTS = \
 	$(srcdir)/pkg/docker/image.js \
 	$(srcdir)/pkg/docker/images/drive-harddisk-symbolic.svg \
 	$(srcdir)/pkg/docker/index.html \
-	$(srcdir)/pkg/docker/manifest.json \
 	$(srcdir)/pkg/docker/overview.js \
 	$(srcdir)/pkg/docker/run.js \
 	$(srcdir)/pkg/docker/search.js \
@@ -52,13 +51,14 @@ docker_OUTPUTS = \
 	dist/docker/docker.min.js.map \
 	dist/docker/images/drive-harddisk-symbolic.svg \
 	dist/docker/index.html \
-	dist/docker/manifest.json \
 	dist/docker/test-docker.css \
 	dist/docker/test-docker.css.map \
 	dist/docker/test-docker.html \
 	dist/docker/test-docker.min.js \
 	dist/docker/test-docker.min.js.map \
 	$(NULL)
+
+docker_PO = dist/docker/po.js $(patsubst %,dist/docker/po.%.js,$(LINGUAS))
 
 docker_INSTALL = \
 	dist/docker/console.html.gz \
@@ -68,8 +68,7 @@ docker_INSTALL = \
 	dist/docker/images/drive-harddisk-symbolic.svg.gz \
 	dist/docker/index.html.gz \
 	dist/docker/manifest.json \
-	dist/docker/test-docker.css.gz \
-	dist/docker/test-docker.min.js.gz \
+	$(addsuffix .gz,$(docker_PO)) \
 	$(NULL)
 
 docker_DEBUG = \
@@ -83,6 +82,10 @@ docker_DEBUG = \
 docker_TESTS = \
 	dist/docker/test-docker.html \
 	$(NULL)
+
+dist/docker/%.po: po/%.po
+	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
+	$(MSGGREP) -N pkg/docker/atomic.js -N pkg/docker/bar.js -N pkg/docker/client.js -N pkg/docker/cockpit-atomic-storage -N pkg/docker/console.html -N pkg/docker/console.js -N pkg/docker/containers-view.jsx -N pkg/docker/containers.js -N pkg/docker/details.js -N pkg/docker/docker.css -N pkg/docker/docker.js -N pkg/docker/image.js -N pkg/docker/images/drive-harddisk-symbolic.svg -N pkg/docker/index.html -N pkg/docker/overview.js -N pkg/docker/run.js -N pkg/docker/search.js -N pkg/docker/storage.jsx -N pkg/docker/test-docker.js -N pkg/docker/util.js -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-select.jsx -N pkg/lib/console.css -N pkg/lib/listing.less -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/plot.css -N pkg/lib/plot.js -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/service.js -N pkg/lib/table.css -N pkg/lib/term.css -N pkg/lib/variables.less $< > $@.tmp && mv $@.tmp $@
 
 dist/docker/Makefile.deps: $(WEBPACK_CONFIG) $(docker_INPUTS)
 	$(WEBPACK_RULE) -d dist/docker/Makefile.deps $(WEBPACK_CONFIG)
@@ -104,8 +107,6 @@ dist/docker/docker.min.js.map: dist/docker/Makefile.deps
 dist/docker/images/drive-harddisk-symbolic.svg: dist/docker/Makefile.deps
 
 dist/docker/index.html: dist/docker/Makefile.deps
-
-dist/docker/manifest.json: dist/docker/Makefile.deps
 
 dist/docker/test-docker.css: dist/docker/Makefile.deps
 
@@ -144,8 +145,6 @@ $(srcdir)/pkg/docker/image.js:
 $(srcdir)/pkg/docker/images/drive-harddisk-symbolic.svg:
 
 $(srcdir)/pkg/docker/index.html:
-
-$(srcdir)/pkg/docker/manifest.json:
 
 $(srcdir)/pkg/docker/overview.js:
 
@@ -195,6 +194,7 @@ $(srcdir)/pkg/lib/variables.less:
 
 WEBPACK_INPUTS += $(docker_INPUTS)
 WEBPACK_OUTPUTS += $(docker_OUTPUTS)
+WEBPACK_PO += $(docker_PO)
 WEBPACK_INSTALL += $(docker_INSTALL)
 WEBPACK_DEBUG += $(docker_DEBUG)
 TESTS += $(docker_TESTS)

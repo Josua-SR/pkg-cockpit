@@ -513,11 +513,7 @@ $(function() {
         { title: _("Start"),                 action: 'StartUnit' },
         { title: _("Stop"),                  action: 'StopUnit' },
         { title: _("Restart"),               action: 'RestartUnit' },
-        { title: _("Reload"),                action: 'ReloadUnit' },
-        { title: _("Reload or Restart"),     action: 'ReloadOrRestartUnit' },
-        { title: _("Try Restart"),           action: 'TryRestartUnit' },
-        { title: _("Reload or Try Restart"), action: 'ReloadOrTryRestartUnit' },
-        { title: _("Isolate"),               action: 'StartUnit:isolate' }
+        { title: _("Reload"),                action: 'ReloadUnit' }
     ];
 
     function unit_action() {
@@ -557,8 +553,8 @@ $(function() {
             if (force !== undefined)
                 args.push(force == "true");
             systemd_manager.call(method, args).
-                done(function () {
-                    if (arguments.length == 2 && !arguments[0])
+                done(function (results) {
+                    if (results.length == 2 && !results[0])
                         $('#service-no-install-info-dialog').modal('show');
                     systemd_manager.Reload();
                 }).

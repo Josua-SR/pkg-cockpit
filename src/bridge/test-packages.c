@@ -17,6 +17,8 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <stdio.h>
+
 #include "config.h"
 
 #include "cockpitchannel.h"
@@ -227,6 +229,54 @@ test_localized_unknown (TestCase *tc,
   g_bytes_unref (data);
 }
 
+static const Fixture fixture_prefer_region = {
+  .path = "/another/test.html",
+  .accept = { "pig-pen" },
+};
+
+static void
+test_localized_prefer_region (TestCase *tc,
+                              gconstpointer fixture)
+{
+  GBytes *data;
+  guint count;
+
+  g_assert (fixture == &fixture_prefer_region);
+
+  while (tc->closed == FALSE)
+    g_main_context_iteration (NULL, TRUE);
+  g_assert_cmpstr (tc->problem, ==, NULL);
+
+  data = mock_transport_combine_output (tc->transport, "444", &count);
+  cockpit_assert_bytes_eq (data, "{\"status\":200,\"reason\":\"OK\",\"headers\":{\"Content-Security-Policy\":\"default-src 'self'; connect-src 'self' ws: wss:\",\"Content-Type\":\"text/html\",\"Cache-Control\":\"no-cache, no-store\"}}<html>\n<head>\n<title>Inway omeha irda</title>\n</head>\n<body>Inway omeha irda</body>\n</html>\n", -1);
+  g_assert_cmpuint (count, ==, 2);
+  g_bytes_unref (data);
+}
+
+static const Fixture fixture_fallback = {
+  .path = "/another/test.html",
+  .accept = { "pig-barn" },
+};
+
+static void
+test_localized_fallback (TestCase *tc,
+                         gconstpointer fixture)
+{
+  GBytes *data;
+  guint count;
+
+  g_assert (fixture == &fixture_fallback);
+
+  while (tc->closed == FALSE)
+    g_main_context_iteration (NULL, TRUE);
+  g_assert_cmpstr (tc->problem, ==, NULL);
+
+  data = mock_transport_combine_output (tc->transport, "444", &count);
+  cockpit_assert_bytes_eq (data, "{\"status\":200,\"reason\":\"OK\",\"headers\":{\"Content-Security-Policy\":\"default-src 'self'; connect-src 'self' ws: wss:\",\"Content-Type\":\"text/html\",\"Cache-Control\":\"no-cache, no-store\"}}<html>\n<head>\n<title>Inlay omehay irday</title>\n</head>\n<body>Inlay omehay irday</body>\n</html>\n", -1);
+  g_assert_cmpuint (count, ==, 2);
+  g_bytes_unref (data);
+}
+
 static const Fixture fixture_version = {
   .path = "/incompatible/test.html",
 };
@@ -347,12 +397,19 @@ test_listing (TestCase *tc,
                           "  \"description\" : \"another\""
                           " },"
                           " \"second\": {"
-                          "  \"description\": \"second dummy description\""
+                          "  \"description\": \"second dummy description\","
+                          "  \"priority\": 2,"
+                          "  \"bridges\": [{ \"match\": { \"second\": null }, \"problem\": \"never-a-second\"}]"
                           " },"
                           " \"test\": {"
                           "   \"name\": \"test\","
                           "   \"priority\": 15,"
-                          "   \"description\" : \"dummy\""
+                          "   \"description\" : \"dummy\","
+                          "   \"bridges\": [{ \"match\": { \"blah\": \"test*\" },"
+                          "                  \"spawn\": [\"/usr/bin/cat\"],"
+                          "                  \"environ\": [\"TEST_ENV=test\"]},"
+                          "                { \"match\": { \"blah\": \"marmalade*\"},"
+                          "                  \"problem\": \"bogus-channel\"}]"
                           " },"
                           " \"incompatible\": {"
                           "   \"description\" : \"incompatible package\","
@@ -526,12 +583,52 @@ test_list_bad_name (TestCase *tc,
   g_bytes_unref (data);
 }
 
+static const Fixture fixture_glob = {
+    .datadirs = { SRCDIR "/src/bridge/mock-resource/glob", NULL },
+    .path = "/*/file.txt"
+};
+
+static void
+test_glob (TestCase *tc,
+           gconstpointer fixture)
+{
+  GError *error = NULL;
+  GBytes *message;
+  JsonObject *object;
+
+  while (tc->closed == FALSE)
+    g_main_context_iteration (NULL, TRUE);
+  g_assert_cmpstr (tc->problem, ==, NULL);
+
+  message = mock_transport_pop_channel (tc->transport, "444");
+  object = cockpit_json_parse_bytes (message, &error);
+  g_assert_no_error (error);
+  cockpit_assert_json_eq (object, "{\"status\":200,\"reason\":\"OK\",\"headers\":{\"Content-Type\":\"text/plain\"}}");
+  json_object_unref (object);
+
+  message = mock_transport_pop_channel (tc->transport, "444");
+  cockpit_assert_bytes_eq (message, "a\n", 2);
+
+  message = mock_transport_pop_channel (tc->transport, "444");
+  cockpit_assert_bytes_eq (message, "b\n", 2);
+}
+
 static void
 setup_basic (TestCase *tc,
              gconstpointer data)
 {
-  cockpit_expect_message ("incompatible: package requires a later version of cockpit: 999.5*");
-  cockpit_expect_message ("requires: package has an unknown requirement: unknown");
+  const Fixture *fixture = data;
+
+  if (fixture && fixture->datadirs[0])
+    {
+      cockpit_bridge_data_dirs = (const gchar **)fixture->datadirs;
+    }
+  else
+    {
+      cockpit_expect_message ("incompatible: package requires a later version of cockpit: 999.5*");
+      cockpit_expect_message ("requires: package has an unknown requirement: unknown");
+    }
+
   tc->packages = cockpit_packages_new ();
 }
 
@@ -542,6 +639,8 @@ teardown_basic (TestCase *tc,
   cockpit_assert_expected ();
 
   cockpit_packages_free (tc->packages);
+
+  cockpit_bridge_data_dirs = NULL;
 }
 
 static void
@@ -628,6 +727,73 @@ test_get_names (TestCase *tc,
   g_free (names);
 }
 
+static void
+test_get_bridges (TestCase *tc,
+                  gconstpointer fixture)
+{
+  GList *bridges, *l;
+  JsonObject *bridge;
+  guint i;
+
+  bridges = cockpit_packages_get_bridges (tc->packages);
+  g_assert (bridges != NULL);
+
+  for (i = 0, l = bridges; l != NULL; l = g_list_next (l), i++)
+    {
+      bridge = l->data;
+      switch (i)
+        {
+        case 0:
+          cockpit_assert_json_eq (json_object_get_object_member (bridge, "match"),
+                                  "{ \"blah\": \"test*\" }");
+          cockpit_assert_json_eq (json_object_get_array_member (bridge, "environ"),
+                                  "[\"TEST_ENV=test\"]");
+          cockpit_assert_json_eq (json_object_get_array_member (bridge, "spawn"),
+                                  "[\"/usr/bin/cat\"]");
+          break;
+        case 1:
+          cockpit_assert_json_eq (json_object_get_object_member (bridge, "match"),
+                                  "{ \"blah\": \"marmalade*\" }");
+          g_assert_cmpstr (json_object_get_string_member (bridge, "problem"), ==, "bogus-channel");
+          break;
+        case 2:
+          cockpit_assert_json_eq (json_object_get_object_member (bridge, "match"),
+                                  "{ \"second\": null }");
+          g_assert_cmpstr (json_object_get_string_member (bridge, "problem"), ==, "never-a-second");
+          break;
+        default:
+          g_assert_not_reached ();
+        }
+    }
+
+  g_assert_cmpint (i, ==, 3);
+  g_list_free (bridges);
+}
+
+static const Fixture fixture_bad_bridges = {
+    .datadirs = { SRCDIR "/src/bridge/mock-resource/bad-bridges", NULL },
+};
+
+static void
+test_get_bridges_broken (TestCase *tc,
+                         gconstpointer fixture)
+{
+  GList *bridges;
+
+  g_assert (fixture == &fixture_bad_bridges);
+
+  cockpit_expect_message ("missing-match: missing \"match\" field in package manifest");
+  cockpit_expect_message ("broken-problem: invalid \"problem\" field in package manifest");
+  cockpit_expect_message ("broken-environ: invalid \"environ\" field in package manifest");
+  cockpit_expect_message ("broken-spawn: invalid \"spawn\" field in package manifest");
+  cockpit_expect_message ("broken-match: invalid \"match\" field in package manifest");
+  cockpit_expect_message ("broken-bridges: invalid \"bridges\" field in package manifest");
+  cockpit_expect_message ("broken-bridge: invalid bridge in \"bridges\" field in package manifest");
+
+  bridges = cockpit_packages_get_bridges (tc->packages);
+  g_assert (bridges == NULL);
+}
+
 int
 main (int argc,
       char *argv[])
@@ -645,6 +811,10 @@ main (int argc,
               setup, test_localized_translated, teardown);
   g_test_add ("/packages/localized-unknown", TestCase, &fixture_unknown,
               setup, test_localized_unknown, teardown);
+  g_test_add ("/packages/localized-prefer-region", TestCase, &fixture_prefer_region,
+              setup, test_localized_prefer_region, teardown);
+  g_test_add ("/packages/localized-fallback", TestCase, &fixture_fallback,
+              setup, test_localized_fallback, teardown);
   g_test_add ("/packages/incompatible/version", TestCase, &fixture_version,
               setup, test_incompatible_version, teardown);
   g_test_add ("/packages/incompatible/requires", TestCase, &fixture_requires,
@@ -671,6 +841,8 @@ main (int argc,
   g_test_add ("/packages/listing-bad-name", TestCase, &fixture_list_bad_name,
               setup, test_list_bad_name, teardown);
 
+  g_test_add ("/packages/glob", TestCase, &fixture_glob,
+              setup, test_glob, teardown);
 
   g_test_add ("/packages/resolve/simple", TestCase, NULL,
               setup_basic, test_resolve, teardown_basic);
@@ -685,6 +857,11 @@ main (int argc,
 
   g_test_add ("/packages/get-names", TestCase, NULL,
               setup_basic, test_get_names, teardown_basic);
+
+  g_test_add ("/packages/get-bridges/normal", TestCase, NULL,
+              setup_basic, test_get_bridges, teardown_basic);
+  g_test_add ("/packages/get-bridges/broken", TestCase, &fixture_bad_bridges,
+              setup_basic, test_get_bridges_broken, teardown_basic);
 
   return g_test_run ();
 }

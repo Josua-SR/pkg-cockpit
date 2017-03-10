@@ -12,7 +12,8 @@
 #  * wip 1
 #
 
-# earliest base that the subpackages work on
+# earliest base that the subpackages work on; the instances of this get computed/updated
+# by tools/gen-spec-dependencies during "make dist", but keep a hardcoded fallback
 %define required_base 122
 
 %if 0%{?centos}
@@ -20,6 +21,9 @@
 %endif
 
 %define _hardened_build 1
+
+# define to build the dashboard
+%define build_dashboard 1
 
 %define libssh_version 0.7.1
 %if 0%{?fedora} > 0 && 0%{?fedora} < 22
@@ -49,7 +53,9 @@ BuildRequires: pam-devel
 BuildRequires: autoconf automake
 BuildRequires: /usr/bin/python
 BuildRequires: intltool
+%if %{defined build_dashboard}
 BuildRequires: libssh-devel >= %{libssh_version}
+%endif
 BuildRequires: openssl-devel
 BuildRequires: zlib-devel
 BuildRequires: krb5-devel
@@ -75,7 +81,9 @@ BuildRequires: xmlto
 
 Requires: %{name}-bridge = %{version}-%{release}
 Requires: %{name}-ws = %{version}-%{release}
+%if %{defined build_dashboard}
 Requires: %{name}-dashboard = %{version}-%{release}
+%endif
 Requires: %{name}-system = %{version}-%{release}
 
 # Optional components (for f24 we use soft deps)
@@ -116,17 +124,23 @@ machines.
 %prep
 %setup -q
 
-# Apply patches using git
-git init
-git config user.email "unused@example.com" && git config user.name "Unused"
-git config core.autocrlf false && git config core.safecrlf false && git config gc.auto 0
-git add -f . && git commit -a -q -m "Base"
-echo "" | git am --whitespace=nowarn %{patches}
-rm -rf .git
+# Apply patches using git in order to support binary patches. Note that
+# we also reset mtimes since patches should be "complete" and include both
+# generated and source file changes
+# Keep this in sync with tools/debian/rules.
+if [ -n "%{patches}" ]; then
+	git init
+	git config user.email "unused@example.com" && git config user.name "Unused"
+	git config core.autocrlf false && git config core.safecrlf false && git config gc.auto 0
+	git add -f . && git commit -a -q -m "Base" && git tag -a initial --message="initial"
+	git am --whitespace=nowarn %{patches}
+	touch -r $(git diff --name-only initial..HEAD) .git
+	rm -rf .git
+fi
 
 %build
 exec 2>&1
-%configure --disable-silent-rules --with-cockpit-user=cockpit-ws --with-branding=auto --with-selinux-config-type=etc_t %{?rhel:--without-storaged-iscsi-sessions}
+%configure --disable-silent-rules --with-cockpit-user=cockpit-ws --with-branding=auto --with-selinux-config-type=etc_t %{?rhel:--without-storaged-iscsi-sessions} %{!?build_dashboard:--disable-ssh}
 make -j4 %{?extra_flags} all
 
 %check
@@ -135,11 +149,7 @@ make -j4 check
 
 %install
 make install DESTDIR=%{buildroot}
-%if %{defined wip} || 0%{?rhel}
-make install-test-assets DESTDIR=%{buildroot}
-%else
-rm -rf %{buildroot}/%{_datadir}/%{name}/playground
-%endif
+make install-tests DESTDIR=%{buildroot}
 mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/pam.d
 install -p -m 644 tools/cockpit.pam $RPM_BUILD_ROOT%{_sysconfdir}/pam.d/cockpit
 rm -f %{buildroot}/%{_libdir}/cockpit/*.so
@@ -153,9 +163,18 @@ echo '{ "linguas": null, "machine-limit": 5 }' > %{buildroot}%{_datadir}/%{name}
 # Build the package lists for resource packages
 echo '%dir %{_datadir}/%{name}/base1' > base.list
 find %{buildroot}%{_datadir}/%{name}/base1 -type f >> base.list
+echo '%{_sysconfdir}/cockpit/machines.d' >> base.list
 
+%if %{defined build_dashboard}
 echo '%dir %{_datadir}/%{name}/dashboard' >> dashboard.list
 find %{buildroot}%{_datadir}/%{name}/dashboard -type f >> dashboard.list
+%else
+rm -rf %{buildroot}/%{_datadir}/%{name}/dashboard
+touch dashboard.list
+%endif
+
+echo '%dir %{_datadir}/%{name}/pcp' >> pcp.list
+find %{buildroot}%{_datadir}/%{name}/pcp -type f >> pcp.list
 
 echo '%dir %{_datadir}/%{name}/realmd' >> system.list
 find %{buildroot}%{_datadir}/%{name}/realmd -type f >> system.list
@@ -286,8 +305,8 @@ embed or extend Cockpit.
 
 %package machines
 Summary: Cockpit user interface for virtual machines
-Requires: %{name}-bridge >= %{required_base}
-Requires: %{name}-system >= %{required_base}
+Requires: %{name}-bridge >= 122
+Requires: %{name}-system >= 122
 Requires: libvirt
 Requires: libvirt-client
 
@@ -299,8 +318,8 @@ The Cockpit components for managing virtual machines.
 %package ostree
 Summary: Cockpit user interface for rpm-ostree
 # Requires: Uses new translations functionality
-Requires: %{name}-bridge > 124
-Requires: %{name}-system > 124
+Requires: %{name}-bridge >= 124.x
+Requires: %{name}-system >= 124.x
 %if 0%{?fedora} > 0 && 0%{?fedora} < 24
 Requires: rpm-ostree >= 2015.10-1
 %else
@@ -320,7 +339,7 @@ Requires: pcp
 %description pcp
 Cockpit support for reading PCP metrics and loading PCP archives.
 
-%files pcp
+%files pcp -f pcp.list
 %{_libexecdir}/cockpit-pcp
 %{_localstatedir}/lib/pcp/config/pmlogconf/tools/cockpit
 
@@ -330,6 +349,7 @@ Cockpit support for reading PCP metrics and loading PCP archives.
 # be out of sync with reality.
 /usr/share/pcp/lib/pmlogger condrestart
 
+%if %{defined build_dashboard}
 %package dashboard
 Summary: Cockpit SSH remoting and dashboard
 Requires: libssh >= %{libssh_version}
@@ -346,6 +366,7 @@ Cockpit support for remoting to other servers, bastion hosts, and a basic dashbo
 # HACK: Until policy changes make it downstream
 # https://bugzilla.redhat.com/show_bug.cgi?id=1381331
 test -f %{_bindir}/chcon && chcon -t cockpit_ws_exec_t %{_libexecdir}/cockpit-ssh
+%endif
 
 %package storaged
 Summary: Cockpit user interface for storage, using Storaged
@@ -354,7 +375,7 @@ Summary: Cockpit user interface for storage, using Storaged
 %if 0%{?rhel}
 Requires: %{name}-bridge >= %{version}-%{release}
 %endif
-Requires: %{name}-shell >= %{required_base}
+Requires: %{name}-shell >= 122
 Requires: storaged >= 2.1.1
 %if 0%{?fedora} >= 24 || 0%{?rhel} >= 8
 Recommends: storaged-lvm2 >= 2.1.1
@@ -408,6 +429,23 @@ This package contains the Cockpit shell and system configuration interfaces.
 
 %files system -f system.list
 
+%package tests
+Summary: Tests for Cockpit
+Requires: %{name}-bridge >= %{version}-%{release}
+Requires: %{name}-shell >= %{version}-%{release}
+Requires: openssh-clients
+Provides: %{name}-test-assets
+Obsoletes: %{name}-test-assets < 132
+
+%description tests
+This package contains tests and files used while testing Cockpit.
+These files are not required for running Cockpit.
+
+%files tests
+%{_unitdir}/cockpit.service.d
+%{_datadir}/%{name}/playground
+%{_prefix}/lib/cockpit-test-assets
+
 %package ws
 Summary: Cockpit Web Service
 Requires: glib-networking
@@ -426,7 +464,7 @@ The Cockpit Web Service listens on the network, and authenticates users.
 %doc %{_mandir}/man8/cockpit-ws.8.gz
 %doc %{_mandir}/man8/remotectl.8.gz
 %doc %{_mandir}/man8/pam_ssh_add.8.gz
-%config(noreplace) %{_sysconfdir}/%{name}
+%config(noreplace) %{_sysconfdir}/%{name}/ws-certs.d
 %config(noreplace) %{_sysconfdir}/pam.d/cockpit
 %{_unitdir}/cockpit.service
 %{_unitdir}/cockpit.socket
@@ -463,8 +501,8 @@ test -f %{_bindir}/firewall-cmd && firewall-cmd --reload --quiet || true
 
 %package kdump
 Summary: Cockpit user interface for kernel crash dumping
-Requires: %{name}-bridge >= %{required_base}
-Requires: %{name}-shell >= %{required_base}
+Requires: %{name}-bridge >= 122
+Requires: %{name}-shell >= 122
 Requires: kexec-tools
 BuildArch: noarch
 
@@ -475,8 +513,8 @@ The Cockpit component for configuring kernel crash dumping.
 
 %package sosreport
 Summary: Cockpit user interface for diagnostic reports
-Requires: %{name}-bridge >= %{required_base}
-Requires: %{name}-shell >= %{required_base}
+Requires: %{name}-bridge >= 122
+Requires: %{name}-shell >= 122
 Requires: sos
 BuildArch: noarch
 
@@ -488,8 +526,8 @@ sosreport tool.
 
 %package subscriptions
 Summary: Cockpit subscription user interface package
-Requires: %{name}-bridge >= %{required_base}
-Requires: %{name}-shell >= %{required_base}
+Requires: %{name}-bridge >= 122
+Requires: %{name}-shell >= 122
 Requires: subscription-manager >= 1.13
 BuildArch: noarch
 
@@ -501,8 +539,8 @@ subscription management.
 
 %package networkmanager
 Summary: Cockpit user interface for networking, using NetworkManager
-Requires: %{name}-bridge >= %{required_base}
-Requires: %{name}-shell >= %{required_base}
+Requires: %{name}-bridge >= 122
+Requires: %{name}-shell >= 122
 Requires: NetworkManager
 # Optional components (only when soft deps are supported)
 %if 0%{?fedora} >= 24 || 0%{?rhel} >= 8
@@ -521,8 +559,8 @@ The Cockpit component for managing networking.  This package uses NetworkManager
 
 %package selinux
 Summary: Cockpit SELinux package
-Requires: %{name}-bridge >= %{required_base}
-Requires: %{name}-shell >= %{required_base}
+Requires: %{name}-bridge >= 122
+Requires: %{name}-shell >= 122
 Requires: setroubleshoot-server >= 3.3.3
 BuildArch: noarch
 
@@ -538,8 +576,8 @@ utility setroubleshoot to diagnose and resolve SELinux issues.
 
 %package docker
 Summary: Cockpit user interface for Docker containers
-Requires: %{name}-bridge >= %{required_base}
-Requires: %{name}-shell >= %{required_base}
+Requires: %{name}-bridge >= 122
+Requires: %{name}-shell >= 122
 Requires: docker >= 1.3.0
 Requires: python
 
@@ -557,8 +595,8 @@ This package is not yet complete.
 Summary: Cockpit user interface for Kubernetes cluster
 Requires: /usr/bin/kubectl
 # Requires: Needs newer localization support
-Requires: %{name}-bridge > 124
-Requires: %{name}-shell > 124
+Requires: %{name}-bridge >= 124.x
+Requires: %{name}-shell >= 124.x
 BuildRequires: golang-bin
 BuildRequires: golang-src
 
@@ -569,25 +607,6 @@ cluster. Installed on the Kubernetes master. This package is not yet complete.
 %files kubernetes -f kubernetes.list
 %{_libexecdir}/cockpit-kube-auth
 %{_libexecdir}/cockpit-kube-launch
-
-%endif
-
-# we only build test assets on rhel or if we're building from a specific commit
-%if %{defined wip} || 0%{?rhel}
-
-%package test-assets
-Summary: Additional stuff for testing Cockpit
-Requires: %{name}-bridge >= %{required_base}
-Requires: %{name}-shell >= %{required_base}
-Requires: openssh-clients
-
-%description test-assets
-This package contains programs and other files for testing Cockpit, and
-pulls in some necessary packages via dependencies.
-
-%files test-assets
-%{_datadir}/%{name}/playground
-%{_prefix}/lib/cockpit-test-assets
 
 %endif
 

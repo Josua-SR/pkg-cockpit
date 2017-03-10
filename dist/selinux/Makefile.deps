@@ -1,5 +1,5 @@
 # Generated Makefile data for selinux
-# Stamp: Mon Feb 06 2017 19:47:25 GMT+0000 (UTC)
+# Stamp: Thu Mar 09 2017 15:00:42 GMT+0000 (UTC)
 
 selinux_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
@@ -8,7 +8,6 @@ selinux_INPUTS = \
 	$(srcdir)/pkg/lib/listing.less \
 	$(srcdir)/pkg/lib/page.css \
 	$(srcdir)/pkg/lib/variables.less \
-	$(srcdir)/pkg/selinux/manifest.json \
 	$(srcdir)/pkg/selinux/selinux-client.es6 \
 	$(srcdir)/pkg/selinux/setroubleshoot-client.js \
 	$(srcdir)/pkg/selinux/setroubleshoot-view.jsx \
@@ -18,7 +17,6 @@ selinux_INPUTS = \
 	$(NULL)
 
 selinux_OUTPUTS = \
-	dist/selinux/manifest.json \
 	dist/selinux/selinux.css \
 	dist/selinux/selinux.css.map \
 	dist/selinux/selinux.min.js \
@@ -26,11 +24,14 @@ selinux_OUTPUTS = \
 	dist/selinux/setroubleshoot.html \
 	$(NULL)
 
+selinux_PO = dist/selinux/po.js $(patsubst %,dist/selinux/po.%.js,$(LINGUAS))
+
 selinux_INSTALL = \
 	dist/selinux/manifest.json \
 	dist/selinux/selinux.css.gz \
 	dist/selinux/selinux.min.js.gz \
 	dist/selinux/setroubleshoot.html.gz \
+	$(addsuffix .gz,$(selinux_PO)) \
 	$(NULL)
 
 selinux_DEBUG = \
@@ -41,10 +42,12 @@ selinux_DEBUG = \
 selinux_TESTS = \
 	$(NULL)
 
+dist/selinux/%.po: po/%.po
+	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
+	$(MSGGREP) -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-onoff.css -N pkg/lib/cockpit-components-onoff.jsx -N pkg/lib/listing.less -N pkg/lib/page.css -N pkg/lib/variables.less -N pkg/selinux/selinux-client.es6 -N pkg/selinux/setroubleshoot-client.js -N pkg/selinux/setroubleshoot-view.jsx -N pkg/selinux/setroubleshoot.css -N pkg/selinux/setroubleshoot.html -N pkg/selinux/setroubleshoot.js $< > $@.tmp && mv $@.tmp $@
+
 dist/selinux/Makefile.deps: $(WEBPACK_CONFIG) $(selinux_INPUTS)
 	$(WEBPACK_RULE) -d dist/selinux/Makefile.deps $(WEBPACK_CONFIG)
-
-dist/selinux/manifest.json: dist/selinux/Makefile.deps
 
 dist/selinux/selinux.css: dist/selinux/Makefile.deps
 
@@ -68,8 +71,6 @@ $(srcdir)/pkg/lib/page.css:
 
 $(srcdir)/pkg/lib/variables.less:
 
-$(srcdir)/pkg/selinux/manifest.json:
-
 $(srcdir)/pkg/selinux/selinux-client.es6:
 
 $(srcdir)/pkg/selinux/setroubleshoot-client.js:
@@ -84,6 +85,7 @@ $(srcdir)/pkg/selinux/setroubleshoot.js:
 
 WEBPACK_INPUTS += $(selinux_INPUTS)
 WEBPACK_OUTPUTS += $(selinux_OUTPUTS)
+WEBPACK_PO += $(selinux_PO)
 WEBPACK_INSTALL += $(selinux_INSTALL)
 WEBPACK_DEBUG += $(selinux_DEBUG)
 TESTS += $(selinux_TESTS)

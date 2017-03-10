@@ -17,6 +17,8 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
 
+import subprocess
+import re
 from testlib import *
 
 class NetworkCase(MachineCase):
@@ -29,10 +31,27 @@ class NetworkCase(MachineCase):
         # connections that might still be here from the time of
         # creating the image and we prevent NM from automatically
         # creating new connections.
+        # if the command fails, try again
+        failures_allowed = 3
+        while True:
+            try:
+                print m.execute("nmcli con show")
+                m.execute("""nmcli -f UUID,DEVICE connection show | awk '$2 == "--" { print $1 }' | xargs -r nmcli con del""")
+                break
+            except subprocess.CalledProcessError:
+                failures_allowed -= 1
+                if failures_allowed == 0:
+                    raise
 
-        m.execute("""nmcli -f UUID,DEVICE connection show | awk '$2 == "--" { print $1 }' | xargs -r nmcli con del""")
         m.write("/etc/NetworkManager/conf.d/99-test.conf", "[main]\nno-auto-default=*\n")
         m.execute("systemctl reload-or-restart NetworkManager")
+
+        ver = self.machine.execute("busctl --system get-property org.freedesktop.NetworkManager /org/freedesktop/NetworkManager org.freedesktop.NetworkManager Version || true")
+        m = re.match('s "(.*)"', ver)
+        if m:
+            self.networkmanager_version = map(int, m.group(1).split("."))
+        else:
+            self.networkmanager_version = [ 0 ]
 
     def get_iface(self, m, mac):
         def getit():

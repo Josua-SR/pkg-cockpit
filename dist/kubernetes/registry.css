@@ -736,7 +736,7 @@ table.listing-ct {
 }
 table.listing-ct > caption,
 table.listing-ct > thead h3 {
-  font-size: 30px;
+  font-size: 22px;
   padding: 10px 0px 10px;
   font-weight: 300;
   margin-top: 0;
@@ -756,7 +756,7 @@ table.listing-ct > thead td > a {
   padding: 10px 0 10px;
 }
 table.listing-ct thead th {
-  border-top: 1px solid #eeeeee;
+  border-top: 1px solid #f1f1f1;
   font-weight: normal;
   padding: 10px;
   color: #888;
@@ -769,15 +769,15 @@ table.listing-ct thead th:last-child {
 }
 /* A listing item is a row in the table */
 tbody tr.listing-ct-item {
-  border-top: 1px solid #eeeeee;
-  border-bottom: 1px solid #eeeeee;
+  border-top: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
   cursor: pointer;
 }
 table.listing-ct tbody:last-child {
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #f1f1f1;
 }
 table.listing-ct tbody + thead {
-  border-top: 1px solid #eeeeee;
+  border-top: 1px solid #f1f1f1;
 }
 table.listing-ct tbody.open:last-child {
   border-bottom: none;
@@ -817,7 +817,7 @@ tbody.open tr.listing-ct-panel td div.listing-ct-head {
 }
 /* only highlight the row if navigation is available */
 tbody:not(.open) tr.listing-ct-item:not(.listing-ct-nonavigate):hover {
-  background-color: #f5f5f5;
+  background-color: #def3ff;
 }
 /* if we can't navigate to a row but expand is available, highlight the caret */
 tbody:not(.open) tr.listing-ct-item.listing-ct-nonavigate:hover td.listing-ct-toggle {
@@ -876,9 +876,9 @@ tr.listing-ct-item th {
 }
 /* Listing caption is text next to the actions, text should be similar to nav (.nav-tabs-pf > li > a)*/
 .listing-ct-actions > .listing-ct-caption {
-  font-size: 14px;
+  font-size: 13px;
   vertical-align: middle;
-  color: #337ab7;
+  color: #0088ce;
   padding-right: 5px;
 }
 /* Listing actions can be used directly as a cell */
@@ -1564,7 +1564,7 @@ table.images-listing tr.listing-ct-item {
 }
 table.images-listing tr.listing-ct-item td.tag-label {
   vertical-align: top;
-  background: linear-gradient(90deg, transparent 10px, #337ab7 10px, #337ab7 12px, transparent 12px);
+  background: linear-gradient(90deg, transparent 10px, #0088ce 10px, #0088ce 12px, transparent 12px);
 }
 table.images-listing tr.listing-ct-item td.listing-ct-toggle:hover + td.tag-label {
   background-color: #ededed;
@@ -1577,11 +1577,11 @@ table.images-listing tbody.last tr.listing-ct-item.tag-item td.tag-label {
   background-repeat: no-repeat;
 }
 table.images-listing tr.imagestream-item {
-  border-top: 1px solid #eeeeee;
+  border-top: 1px solid #f1f1f1;
 }
 table.images-listing tr.imagestream-item th,
 table.images-listing tr.imagestream-item td {
-  border-bottom: 2px solid #337ab7;
+  border-bottom: 2px solid #0088ce;
   font-size: 14px;
   padding-bottom: 5px;
 }
@@ -1696,11 +1696,11 @@ table.projects-listing tr.listing-ct-item tt {
   color: #888;
 }
 .image-tag {
-  border: 2px solid #337ab7;
+  border: 2px solid #0088ce;
   border-radius: 7px;
   padding: 3px 5px;
   white-space: nowrap;
-  background-color: #f5f5f5;
+  background-color: #def3ff;
 }
 a.image-tag {
   color: inherit;
@@ -1772,10 +1772,10 @@ a.image-tag {
   cursor: pointer;
 }
 .dashboard-images .card-pf-body div:hover {
-  background-color: #f5f5f5;
+  background-color: #def3ff;
 }
 .dashboard-images .card-pf-body ul {
-  background: linear-gradient(90deg, transparent 20px, #337ab7 20px, #337ab7 22px, transparent 22px);
+  background: linear-gradient(90deg, transparent 20px, #0088ce 20px, #0088ce 22px, transparent 22px);
   background-size: 100% 20px;
   background-repeat: no-repeat;
   padding: 3px 0px 0px 20px;
@@ -1783,7 +1783,7 @@ a.image-tag {
   line-height: 30px;
 }
 .dashboard-images .card-pf-body ul li {
-  background: linear-gradient(180deg, transparent 8px, #337ab7 8px, #337ab7 10px, transparent 10px);
+  background: linear-gradient(180deg, transparent 8px, #0088ce 8px, #0088ce 10px, transparent 10px);
   background-repeat: no-repeat;
   padding-left: 7px;
   display: inline;
@@ -1899,7 +1899,7 @@ a.image-tag {
   background-color: #393f44;
 }
 .icon-sidebar ul li.active a i {
-  color: #337ab7;
+  color: #0088ce;
 }
 .icon-sidebar ul li.active a:after {
   content: '';
@@ -1909,7 +1909,7 @@ a.image-tag {
   top: 0;
   display: block;
   position: absolute;
-  background-color: #337ab7;
+  background-color: #0088ce;
 }
 
 /*# sourceMappingURL=registry.css.map*/

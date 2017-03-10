@@ -27,6 +27,8 @@
 <dt><span class="section"><a href="packages.html#package-links">Package Links and Paths</a></span></dt>
 <dt><span class="section"><a href="packages.html#package-minified">Content Negotiation</a></span></dt>
 <dt><span class="section"><a href="packages.html#package-api">Using Cockpit API</a></span></dt>
+<dt><span class="section"><a href="packages.html#package-bridges">Bridges for specific tasks</a></span></dt>
+<dt><span class="section"><a href="packages.html#package-replace">Replacing an existing package</a></span></dt>
 </dl></div>
 <p>Cockpit is separated into various packages, each of which brings specific
     features and/or code.</p>
@@ -249,6 +251,104 @@ mypackage/test.min.js.gz
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="link" href="development.html" title="Part III. Developer Guide">API Listing</a></p></li></ul></div>
 <p>To include javascript from the API, simply load it into your HTML using
       a script tag. Alternatively you can use an javascript loader.</p>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="package-bridges"></a>Bridges for specific tasks</h2></div></div></div>
+<p>On the server side the
+      <GTKDOCLINK HREF="cockpit-bridge.1"><code class="filename">cockpit-bridge</code></GTKDOCLINK> connects
+      to various system APIs that the front end UI requests it to. There are additional
+      bridges for specific tasks that the main <code class="filename">cockpit-bridge</code> cannot
+      handle. For example tasks that should be carried out with privilege escalation.</p>
+<p>These additional bridges can be registered in a <code class="code">"bridges"</code> section of a
+      package's <code class="filename">manifest.json</code> file. Building such a bridge is a complex tasks, and
+      we will skip over that here. However it is useful to adjust how these additional bridges
+      are called, and so we'll look at how they are registered.</p>
+<p>An example <code class="filename">manifest.json</code> with a bridges section:</p>
+<pre class="programlisting">
+{
+  "bridges": [
+    {
+      "match": { "superuser": null },
+      "environ": [ "SUDO_ASKPASS=/usr/bin/my-password-tool" ],
+      "spawn: [ "/usr/bin/sudo", "-n", "cockpit-bridge", "--privileged" ],
+      "problem": "access-denied"
+    }
+  ]
+}
+</pre>
+<p>The bridges are considered in the order they are listed in the array. Use the
+      <code class="filename">manifest.json</code><code class="code">"priority"</code> field to control order between
+      packages. The bridges are registered using JSON objects that have the following
+      properties:</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term">environ</span></p></td>
+<td><p>Optional, additional environment variables to pass to the bridge
+            command.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">match</span></p></td>
+<td><p>The <code class="code">"match"</code> object describes which channel open command
+            options need to match for a given channel to be handed over to this
+            bridge.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">problem</span></p></td>
+<td><p>If a problem is specified, and this bridge fails to start up then
+            channels will be closed with this problem code. Otherwise later bridges or internal
+            handlers for the channel will be invoked.</p></td>
+</tr>
+<tr>
+<td><p><span class="term">spawn</span></p></td>
+<td><p>The command and arguments to invoke.</p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="section">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="package-replace"></a>Replacing an existing package</h2></div></div></div>
+<p>If the functionality in a package replaces that of another package
+      then it can replace that package by claiming the same <code class="code">name</code> and a
+      higher <code class="code">priority</code>.</p>
+<p>For example, a package in the <code class="filename">/usr/share/cockpit/disks</code>
+      directory could replace Cockpit's <span class="emphasis"><em>storage</em></span> package with
+      a <code class="filename">manifest.json</code> like this:</p>
+<pre class="programlisting">
+{
+  "version": 0,
+  "name": "storage",
+  "priority": 10,
+  "menu": {
+     "index": {
+        "label": "Disk Storage",
+        "order": 15
+     }
+  }
+}
+</pre>
+<p>It is also possible to hide or change labels on the menu items of an existing
+      package by including a <code class="filename">override.json</code> in that existing package's
+      directory.</p>
+<p>For example an <code class="filename">/usr/share/cockpit/systemd/override.json</code> could
+      hide the <span class="emphasis"><em>Logs</em></span> menu item and move the <span class="emphasis"><em>Services</em></span>
+      menu item to the top of the menu.</p>
+<pre class="programlisting">
+{
+  "menu": {
+    "logs": null,
+    "services": {
+      "order": -1
+    }
+  }
+}
+</pre>
 </div>
 </div>
 <div class="footer"><hr></div>

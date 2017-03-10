@@ -1,5 +1,5 @@
 # Generated Makefile data for playground
-# Stamp: Mon Feb 06 2017 19:47:25 GMT+0000 (UTC)
+# Stamp: Thu Mar 09 2017 15:00:42 GMT+0000 (UTC)
 
 playground_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \
@@ -22,12 +22,10 @@ playground_INPUTS = \
 	$(srcdir)/pkg/playground/hammer.gif \
 	$(srcdir)/pkg/playground/jquery-patterns.html \
 	$(srcdir)/pkg/playground/jquery-patterns.js \
-	$(srcdir)/pkg/playground/manifest.json \
 	$(srcdir)/pkg/playground/metrics.html \
 	$(srcdir)/pkg/playground/metrics.js \
 	$(srcdir)/pkg/playground/plot.html \
 	$(srcdir)/pkg/playground/plot.js \
-	$(srcdir)/pkg/playground/po.js \
 	$(srcdir)/pkg/playground/react-demo-dialog.jsx \
 	$(srcdir)/pkg/playground/react-demo-listing.jsx \
 	$(srcdir)/pkg/playground/react-demo-onoff.jsx \
@@ -51,7 +49,6 @@ playground_OUTPUTS = \
 	dist/playground/jquery-patterns.html \
 	dist/playground/jquery-patterns.min.js \
 	dist/playground/jquery-patterns.min.js.map \
-	dist/playground/manifest.json \
 	dist/playground/metrics.css \
 	dist/playground/metrics.css.map \
 	dist/playground/metrics.html \
@@ -62,7 +59,6 @@ playground_OUTPUTS = \
 	dist/playground/plot.html \
 	dist/playground/plot.min.js \
 	dist/playground/plot.min.js.map \
-	dist/playground/po.js \
 	dist/playground/react-patterns.css \
 	dist/playground/react-patterns.css.map \
 	dist/playground/react-patterns.html \
@@ -82,6 +78,8 @@ playground_OUTPUTS = \
 	dist/playground/translate.min.js.map \
 	$(NULL)
 
+playground_PO = dist/playground/po.js $(patsubst %,dist/playground/po.%.js,$(LINGUAS))
+
 playground_INSTALL = \
 	dist/playground/hammer.gif \
 	dist/playground/jquery-patterns.css.gz \
@@ -94,7 +92,6 @@ playground_INSTALL = \
 	dist/playground/plot.css.gz \
 	dist/playground/plot.html.gz \
 	dist/playground/plot.min.js.gz \
-	dist/playground/po.js.gz \
 	dist/playground/react-patterns.css.gz \
 	dist/playground/react-patterns.html.gz \
 	dist/playground/react-patterns.min.js.gz \
@@ -106,6 +103,7 @@ playground_INSTALL = \
 	dist/playground/test.min.js.gz \
 	dist/playground/translate.html.gz \
 	dist/playground/translate.min.js.gz \
+	$(addsuffix .gz,$(playground_PO)) \
 	$(NULL)
 
 playground_DEBUG = \
@@ -126,6 +124,10 @@ playground_DEBUG = \
 playground_TESTS = \
 	$(NULL)
 
+dist/playground/%.po: po/%.po
+	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
+	$(MSGGREP) -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-onoff.css -N pkg/lib/cockpit-components-onoff.jsx -N pkg/lib/cockpit-components-select.jsx -N pkg/lib/cockpit-components-tooltip.jsx -N pkg/lib/listing.less -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/plot.css -N pkg/lib/plot.js -N pkg/lib/service.js -N pkg/lib/table.css -N pkg/lib/timeline.css -N pkg/lib/tooltip.css -N pkg/lib/variables.less -N pkg/playground/hammer.gif -N pkg/playground/jquery-patterns.html -N pkg/playground/jquery-patterns.js -N pkg/playground/metrics.html -N pkg/playground/metrics.js -N pkg/playground/plot.html -N pkg/playground/plot.js -N pkg/playground/react-demo-dialog.jsx -N pkg/playground/react-demo-listing.jsx -N pkg/playground/react-demo-onoff.jsx -N pkg/playground/react-demo-tooltip.jsx -N pkg/playground/react-patterns.html -N pkg/playground/react-patterns.js -N pkg/playground/service.html -N pkg/playground/service.js -N pkg/playground/speed.html -N pkg/playground/speed.js -N pkg/playground/test.html -N pkg/playground/test.js -N pkg/playground/translate.html -N pkg/playground/translate.js $< > $@.tmp && mv $@.tmp $@
+
 dist/playground/Makefile.deps: $(WEBPACK_CONFIG) $(playground_INPUTS)
 	$(WEBPACK_RULE) -d dist/playground/Makefile.deps $(WEBPACK_CONFIG)
 
@@ -140,8 +142,6 @@ dist/playground/jquery-patterns.html: dist/playground/Makefile.deps
 dist/playground/jquery-patterns.min.js: dist/playground/Makefile.deps
 
 dist/playground/jquery-patterns.min.js.map: dist/playground/Makefile.deps
-
-dist/playground/manifest.json: dist/playground/Makefile.deps
 
 dist/playground/metrics.css: dist/playground/Makefile.deps
 
@@ -162,8 +162,6 @@ dist/playground/plot.html: dist/playground/Makefile.deps
 dist/playground/plot.min.js: dist/playground/Makefile.deps
 
 dist/playground/plot.min.js.map: dist/playground/Makefile.deps
-
-dist/playground/po.js: dist/playground/Makefile.deps
 
 dist/playground/react-patterns.css: dist/playground/Makefile.deps
 
@@ -239,8 +237,6 @@ $(srcdir)/pkg/playground/jquery-patterns.html:
 
 $(srcdir)/pkg/playground/jquery-patterns.js:
 
-$(srcdir)/pkg/playground/manifest.json:
-
 $(srcdir)/pkg/playground/metrics.html:
 
 $(srcdir)/pkg/playground/metrics.js:
@@ -248,8 +244,6 @@ $(srcdir)/pkg/playground/metrics.js:
 $(srcdir)/pkg/playground/plot.html:
 
 $(srcdir)/pkg/playground/plot.js:
-
-$(srcdir)/pkg/playground/po.js:
 
 $(srcdir)/pkg/playground/react-demo-dialog.jsx:
 
@@ -281,6 +275,7 @@ $(srcdir)/pkg/playground/translate.js:
 
 WEBPACK_INPUTS += $(playground_INPUTS)
 WEBPACK_OUTPUTS += $(playground_OUTPUTS)
+WEBPACK_PO += $(playground_PO)
 WEBPACK_INSTALL += $(playground_INSTALL)
 WEBPACK_DEBUG += $(playground_DEBUG)
 TESTS += $(playground_TESTS)

@@ -1,5 +1,5 @@
 # Generated Makefile data for storaged
-# Stamp: Mon Feb 06 2017 19:47:25 GMT+0000 (UTC)
+# Stamp: Thu Mar 09 2017 15:00:42 GMT+0000 (UTC)
 
 storaged_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
@@ -35,7 +35,6 @@ storaged_INPUTS = \
 	$(srcdir)/pkg/storaged/index.html \
 	$(srcdir)/pkg/storaged/jobs.js \
 	$(srcdir)/pkg/storaged/lvol-tabs.jsx \
-	$(srcdir)/pkg/storaged/manifest.json \
 	$(srcdir)/pkg/storaged/overview.js \
 	$(srcdir)/pkg/storaged/part-tab.jsx \
 	$(srcdir)/pkg/storaged/permissions.js \
@@ -52,7 +51,6 @@ storaged_OUTPUTS = \
 	dist/storaged/images/storage-array.png \
 	dist/storaged/images/storage-disk.png \
 	dist/storaged/index.html \
-	dist/storaged/manifest.json \
 	dist/storaged/storage.css \
 	dist/storaged/storage.css.map \
 	dist/storaged/storage.min.js \
@@ -64,6 +62,8 @@ storaged_OUTPUTS = \
 	dist/storaged/test-util.min.js.map \
 	$(NULL)
 
+storaged_PO = dist/storaged/po.js $(patsubst %,dist/storaged/po.%.js,$(LINGUAS))
+
 storaged_INSTALL = \
 	dist/storaged/images/storage-array.png \
 	dist/storaged/images/storage-disk.png \
@@ -71,8 +71,7 @@ storaged_INSTALL = \
 	dist/storaged/manifest.json \
 	dist/storaged/storage.css.gz \
 	dist/storaged/storage.min.js.gz \
-	dist/storaged/test-util.css.gz \
-	dist/storaged/test-util.min.js.gz \
+	$(addsuffix .gz,$(storaged_PO)) \
 	$(NULL)
 
 storaged_DEBUG = \
@@ -86,6 +85,10 @@ storaged_TESTS = \
 	dist/storaged/test-util.html \
 	$(NULL)
 
+dist/storaged/%.po: po/%.po
+	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
+	$(MSGGREP) -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-tooltip.jsx -N pkg/lib/journal.css -N pkg/lib/journal.js -N pkg/lib/journal_day_header.mustache -N pkg/lib/journal_line.mustache -N pkg/lib/journal_reboot.mustache -N pkg/lib/listing.less -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/plot.css -N pkg/lib/plot.js -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/service.js -N pkg/lib/table.css -N pkg/lib/tooltip.css -N pkg/lib/variables.less -N pkg/storaged/client.js -N pkg/storaged/content-views.jsx -N pkg/storaged/crypto-tab.jsx -N pkg/storaged/details.js -N pkg/storaged/devices.js -N pkg/storaged/dialog.js -N pkg/storaged/format-dialog.jsx -N pkg/storaged/fsys-tab.jsx -N pkg/storaged/images/storage-array.png -N pkg/storaged/images/storage-disk.png -N pkg/storaged/index.html -N pkg/storaged/jobs.js -N pkg/storaged/lvol-tabs.jsx -N pkg/storaged/overview.js -N pkg/storaged/part-tab.jsx -N pkg/storaged/permissions.js -N pkg/storaged/pvol-tabs.jsx -N pkg/storaged/storage-controls.jsx -N pkg/storaged/storage.css -N pkg/storaged/swap-tab.jsx -N pkg/storaged/test-util.js -N pkg/storaged/unrecognized-tab.jsx -N pkg/storaged/utils.js $< > $@.tmp && mv $@.tmp $@
+
 dist/storaged/Makefile.deps: $(WEBPACK_CONFIG) $(storaged_INPUTS)
 	$(WEBPACK_RULE) -d dist/storaged/Makefile.deps $(WEBPACK_CONFIG)
 
@@ -94,8 +97,6 @@ dist/storaged/images/storage-array.png: dist/storaged/Makefile.deps
 dist/storaged/images/storage-disk.png: dist/storaged/Makefile.deps
 
 dist/storaged/index.html: dist/storaged/Makefile.deps
-
-dist/storaged/manifest.json: dist/storaged/Makefile.deps
 
 dist/storaged/storage.css: dist/storaged/Makefile.deps
 
@@ -181,8 +182,6 @@ $(srcdir)/pkg/storaged/jobs.js:
 
 $(srcdir)/pkg/storaged/lvol-tabs.jsx:
 
-$(srcdir)/pkg/storaged/manifest.json:
-
 $(srcdir)/pkg/storaged/overview.js:
 
 $(srcdir)/pkg/storaged/part-tab.jsx:
@@ -205,6 +204,7 @@ $(srcdir)/pkg/storaged/utils.js:
 
 WEBPACK_INPUTS += $(storaged_INPUTS)
 WEBPACK_OUTPUTS += $(storaged_OUTPUTS)
+WEBPACK_PO += $(storaged_PO)
 WEBPACK_INSTALL += $(storaged_INSTALL)
 WEBPACK_DEBUG += $(storaged_DEBUG)
 TESTS += $(storaged_TESTS)

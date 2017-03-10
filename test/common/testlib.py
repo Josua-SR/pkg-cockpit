@@ -24,6 +24,7 @@ Tools for writing Cockpit test cases.
 from time import sleep
 
 import argparse
+import errno
 import fnmatch
 import subprocess
 import os
@@ -400,7 +401,7 @@ class Browser:
         Arguments:
             title: Used for the filename.
         """
-        if self.phantom:
+        if self.phantom and self.phantom.valid:
             filename = "{0}-{1}.png".format(label or self.label, title)
             self.phantom.show(filename)
             attach(filename)
@@ -408,28 +409,6 @@ class Browser:
     def kill(self):
         self.phantom.kill()
 
-class InterceptResult(object):
-    def __init__(self, original, func):
-        self.original = original
-        self.func = func
-
-    def __getattr__(self, name):
-        return getattr(self.original, name)
-
-    def addError(self, test, err):
-        func = self.func
-        func(test, self._exc_info_to_string(err, test))
-        self.original.addError(test, err)
-
-    def addFailure(self, test, err):
-        func = self.func
-        func(test, self._exc_info_to_string(err, test))
-        self.original.addFailure(test, err)
-
-    def addUnexpectedSuccess(self, test):
-        func = self.func
-        func(test, "Unexpected success: " + str(test))
-        self.original.addFailure(test, Exception("unexpected success"))
 
 class MachineCase(unittest.TestCase):
     runner = None
@@ -481,19 +460,25 @@ class MachineCase(unittest.TestCase):
             if startTestRun is not None:
                 startTestRun()
 
-        def intercept(test, err):
-            self.failed = True
-            self.snapshot("FAIL")
-            self.copy_journal("FAIL")
-            self.copy_cores("FAIL")
-            if opts.sit:
-                print >> sys.stderr, err
-                if self.machine:
-                    print >> sys.stderr, "ADDRESS: %s" % self.machine.address
-                sit()
+        self.currentResult = result
 
-        intercept = InterceptResult(result, intercept)
-        super(MachineCase, self).run(intercept)
+        # Here's the loop to actually retry running the test. It's an awkward
+        # place for this loop, since it only applies to MachineCase based
+        # TestCases. However for the time being there is no better place for it.
+        #
+        # Policy actually dictates retries.  The number here is an upper bound to
+        # prevent endless retries if Policy.check_retry is buggy.
+        max_retry_hard_limit = 10
+        for retry in range(0, max_retry_hard_limit):
+            try:
+                super(MachineCase, self).run(result)
+            except RetryError, ex:
+                assert retry < max_retry_hard_limit
+                sys.stderr.write("{0}\n".format(ex))
+            else:
+                break
+
+        self.currentResult = None
 
         # Standard book keeping that we have to do
         if orig_result is None:
@@ -528,8 +513,23 @@ class MachineCase(unittest.TestCase):
         self.browser = self.new_browser()
         self.tmpdir = tempfile.mkdtemp()
 
+        def sitter():
+            if opts.sit and not self.currentResult.wasSuccessful():
+                self.currentResult.printErrors()
+                if self.machine:
+                    print >> sys.stderr, "ADDRESS: %s" % self.machine.address
+                sit()
+        self.addCleanup(sitter)
+
+        def intercept():
+            if not self.currentResult.wasSuccessful():
+                self.snapshot("FAIL")
+                self.copy_journal("FAIL")
+                self.copy_cores("FAIL")
+        self.addCleanup(intercept)
+
     def tearDown(self):
-        if not getattr(self, "failed", False) and self.machine.address:
+        if self.currentResult.wasSuccessful() and self.machine.address:
             self.check_journal_messages()
         shutil.rmtree(self.tmpdir)
 
@@ -545,6 +545,10 @@ class MachineCase(unittest.TestCase):
         '.*Reauthorizing unix-user:.*',
         '.*user .* was reauthorized.*',
         'cockpit-polkit helper exited with status: 0',
+
+        # Happens when the user logs out during reauthorization
+        "Error executing command as another user: Not authorized",
+        "This incident has been reported.",
 
         # Reboots are ok
         "-- Reboot --",
@@ -589,6 +593,9 @@ class MachineCase(unittest.TestCase):
 
         # SELinux fighting with systemd: https://bugzilla.redhat.com/show_bug.cgi?id=1253319
         "(audit: )?type=1400 audit.*systemd-journal.*path=2F6D656D66643A73642D73797374656D642D636F726564756D202864656C6574656429",
+
+        # SELinux and plymouth: https://bugzilla.redhat.com/show_bug.cgi?id=1427884
+        "(audit: )?type=1400 audit.*connectto.*plymouth.*unix_stream_socket.*",
 
         # apparmor loading
         "(audit: )?type=1400.*apparmor=\"STATUS\".*",
@@ -641,12 +648,10 @@ class MachineCase(unittest.TestCase):
 
     def allow_authorize_journal_messages(self):
         self.allow_journal_messages("cannot reauthorize identity.*:.*unix-user:admin.*",
-                                    "Error executing command as another user: Not authorized",
-                                    "This incident has been reported.",
                                     ".*: a password is required",
                                     "user user was reauthorized",
-                                    ".*: sorry, you must have a tty to run sudo"
-                                    )
+                                    ".*: sorry, you must have a tty to run sudo",
+                                    ".*/pkexec: bridge exited")
 
 
     def check_journal_messages(self, machine=None):
@@ -701,9 +706,10 @@ class MachineCase(unittest.TestCase):
                 m.download_dir("/var/lib/systemd/coredump", dest)
                 try:
                     os.rmdir(dest)
-                except OSError:
-                    print "Core dumps downloaded to %s" % (dest)
-                    attach(dest)
+                except OSError, ex:
+                    if ex.errno == errno.ENOTEMPTY:
+                        print "Core dumps downloaded to %s" % (dest)
+                        attach(dest)
 
 some_failed = False
 
@@ -715,6 +721,7 @@ class Phantom:
     def __init__(self, lang=None):
         self.lang = lang
         self.timeout = 60
+        self.valid = False
         self._driver = None
 
     def __getattr__(self, name):
@@ -734,6 +741,9 @@ class Phantom:
         }).replace("\n", " ") + "\n"
         self._driver.stdin.write(line)
         line = self._driver.stdout.readline()
+        if not line:
+            self.kill()
+            raise Error("PhantomJS or driver broken")
         try:
             res = json.loads(line)
         except:
@@ -760,17 +770,13 @@ class Phantom:
             "%s/sizzle.js" % path,
             "%s/phantom-lib.js" % path
         ]
+        self.valid = True
         self._driver = subprocess.Popen(command, env=environ,
                                         stdout=subprocess.PIPE,
                                         stdin=subprocess.PIPE, close_fds=True)
 
-    def quit(self):
-        self._invoke("ping")
-        self._driver.stdin.close()
-        self._driver.wait()
-        self._driver = None
-
     def kill(self):
+        self.valid = False
         if self._driver:
             self._driver.terminate()
             self._driver.wait()
@@ -789,7 +795,10 @@ def skipImage(reason, *args):
         return unittest.skip("{0}: {1}".format(image, reason))
     return lambda func: func
 
-class Naughty(object):
+class Policy(object):
+    def __init__(self, retryable=True):
+        self.retryable = retryable
+
     def normalize_traceback(self, trace):
         # All file paths converted to basename
         return re.sub(r'File "[^"]*/([^/"]+)"', 'File "\\1"', trace.strip())
@@ -846,10 +855,45 @@ class Naughty(object):
             traceback.print_exc()
         return number
 
+    def check_retry(self, trace, tries):
+        # Never try more than five times
+        if not self.retryable or tries >= 5:
+            return False
+
+        # We check for persistent but test harness or framework specific
+        # failures that otherwise cause flakiness and false positives.
+        #
+        # The things we check here must:
+        #  * have no impact on users of Cockpit in the real world
+        #  * be things we tried to resolve in other ways. This is a last resort
+        #
+        trace = self.normalize_traceback(trace)
+
+        # HACK: An issue in phantomjs and QtWebkit
+        # http://stackoverflow.com/questions/35337304/qnetworkreply-network-access-is-disabled-in-qwebview
+        # https://github.com/owncloud/client/issues/3600
+        # https://github.com/ariya/phantomjs/issues/14789
+        if "PhantomJS or driver broken" in trace:
+            return True
+
+        # HACK: Interacting with sshd during boot is not always predictable
+        # We're using an implementation detail of the server as our "way in" for testing.
+        # This often has to do with sshd being restarted for some reason
+        if "SSH master process exited with code: 255" in trace:
+            return True
+
+        # HACK: Intermittently the new libvirt machine won't get an IP address
+        # or SSH will completely fail to start. We've tried various approaches
+        # to minimize this, but it happens every 100,000 tests or so
+        if "Failure: Unable to reach machine " in trace:
+            return True
+
+        return False
+
 class TapResult(unittest.TestResult):
     def __init__(self, stream, descriptions, verbosity):
         self.offset = 0
-        self.naughty = None
+        self.policy = None
         super(TapResult, self).__init__(stream, descriptions, verbosity)
 
     def ok(self, test):
@@ -865,13 +909,19 @@ class TapResult(unittest.TestResult):
     def skip(self, test, reason):
         sys.stdout.write("ok {0} {1} duration: {2}s # SKIP {3}\n".format(self.offset, str(test), int(time.time() - self.start_time), reason))
 
-    def known_issue(self, test, err):
+    def maybeIgnore(self, test, err):
         string = self._exc_info_to_string(err, test)
-        if self.naughty:
-            issue = self.naughty.check_issue(string)
+        if self.policy:
+            issue = self.policy.check_issue(string)
             if issue:
                 self.addSkip(test, "Known issue #{0}".format(issue))
                 return True
+            tries = getattr(test, "retryCount", 1)
+            if self.policy.check_retry(string, tries):
+                self.offset -= 1
+                setattr(test, "retryCount", tries + 1)
+                test.doCleanups()
+                raise RetryError("Retrying due to failure of test harness or framework")
         return False
 
     def stop(self):
@@ -885,17 +935,16 @@ class TapResult(unittest.TestResult):
         super(TapResult, self).startTest(test)
 
     def stopTest(self, test):
-        test.result = None
         sys.stdout.write("\n")
         super(TapResult, self).stopTest(test)
 
     def addError(self, test, err):
-        if not self.known_issue(test, err):
+        if not self.maybeIgnore(test, err):
             self.not_ok(test, err)
             super(TapResult, self).addError(test, err)
 
     def addFailure(self, test, err):
-        if not self.known_issue(test, err):
+        if not self.maybeIgnore(test, err):
             self.not_ok(test, err)
             super(TapResult, self).addError(test, err)
 
@@ -961,6 +1010,23 @@ class TapRunner(object):
         self.thorough = thorough
         self.jobs = jobs
 
+    def runOne(self, test, offset):
+        result = TapResult(self.stream, False, self.verbosity)
+        result.offset = offset
+        if not self.thorough:
+            result.policy = Policy()
+        try:
+            test(result)
+        except KeyboardInterrupt:
+            return False
+        except:
+            sys.stderr.write("Unexpected exception while running {0}\n".format(test))
+            traceback.print_exc(file=sys.stderr)
+            return False
+        else:
+            result.printErrors()
+            return result.wasSuccessful()
+
     def run(self, testable):
         count = testable.countTestCases()
         sys.stdout.write("1..{0}\n".format(count))
@@ -982,7 +1048,10 @@ class TapRunner(object):
             while len(pids) > n:
                 if buffer:
                     buffer.drain()
-                (pid, code) = os.waitpid(-1, options)
+                try:
+                    (pid, code) = os.waitpid(-1, options)
+                except KeyboardInterrupt:
+                    sys.exit(255)
                 if pid:
                     if buffer:
                         sys.stdout.write(buffer.pop(pid))
@@ -1004,26 +1073,14 @@ class TapRunner(object):
             sys.stderr.flush()
             pid = os.fork()
             if not pid:
-                try:
-                    if buffer:
-                        os.dup2(wfd, 1)
-                        os.dup2(wfd, 2)
-                    random.seed()
-                    result = TapResult(self.stream, False, self.verbosity)
-                    if not self.thorough:
-                        result.naughty = Naughty()
-                    result.offset = offset
-                    test(result)
-                    result.printErrors()
-                except:
-                    sys.stderr.write("Unexpected exception while running {0}\n".format(test))
-                    traceback.print_exc(file=sys.stderr)
-                    sys.exit(1)
+                if buffer:
+                    os.dup2(wfd, 1)
+                    os.dup2(wfd, 2)
+                random.seed()
+                if self.runOne(test, offset):
+                    sys.exit(0)
                 else:
-                    if result.wasSuccessful():
-                        sys.exit(0)
-                    else:
-                        sys.exit(1)
+                    sys.exit(1)
 
             # The parent process
             pids.add(pid)
@@ -1119,6 +1176,9 @@ class Error(Exception):
         self.msg = msg
     def __str__(self):
         return self.msg
+
+class RetryError(Error):
+    pass
 
 def wait(func, msg=None, delay=1, tries=60):
     """

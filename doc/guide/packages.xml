@@ -250,6 +250,111 @@ mypackage/test.min.js.gz
 
     <para>To include javascript from the API, simply load it into your HTML using
       a script tag. Alternatively you can use an javascript loader.</para>
+  </section>
+
+  <section id="package-bridges">
+    <title>Bridges for specific tasks</title>
+
+    <para>On the server side the
+      <link linkend="cockpit-bridge.1"><filename>cockpit-bridge</filename></link> connects
+      to various system APIs that the front end UI requests it to. There are additional
+      bridges for specific tasks that the main <filename>cockpit-bridge</filename> cannot
+      handle. For example tasks that should be carried out with privilege escalation.</para>
+
+    <para>These additional bridges can be registered in a <code>"bridges"</code> section of a
+      package's <filename>manifest.json</filename> file. Building such a bridge is a complex tasks, and
+      we will skip over that here. However it is useful to adjust how these additional bridges
+      are called, and so we'll look at how they are registered.</para>
+
+    <para>An example <filename>manifest.json</filename> with a bridges section:</para>
+
+<programlisting>
+{
+  "bridges": [
+    {
+      "match": { "superuser": null },
+      "environ": [ "SUDO_ASKPASS=/usr/bin/my-password-tool" ],
+      "spawn: [ "/usr/bin/sudo", "-n", "cockpit-bridge", "--privileged" ],
+      "problem": "access-denied"
+    }
+  ]
+}
+</programlisting>
+
+    <para>The bridges are considered in the order they are listed in the array. Use the
+      <filename>manifest.json</filename><code>"priority"</code> field to control order between
+      packages. The bridges are registered using JSON objects that have the following
+      properties:</para>
+
+    <variablelist>
+      <varlistentry>
+        <term>environ</term>
+        <listitem><para>Optional, additional environment variables to pass to the bridge
+            command.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>match</term>
+        <listitem><para>The <code>"match"</code> object describes which channel open command
+            options need to match for a given channel to be handed over to this
+            bridge.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>problem</term>
+        <listitem><para>If a problem is specified, and this bridge fails to start up then
+            channels will be closed with this problem code. Otherwise later bridges or internal
+            handlers for the channel will be invoked.</para></listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>spawn</term>
+        <listitem><para>The command and arguments to invoke.</para></listitem>
+      </varlistentry>
+    </variablelist>
+
+  </section>
+
+  <section id="package-replace">
+    <title>Replacing an existing package</title>
+
+    <para>If the functionality in a package replaces that of another package
+      then it can replace that package by claiming the same <code>name</code> and a
+      higher <code>priority</code>.</para>
+
+    <para>For example, a package in the <filename>/usr/share/cockpit/disks</filename>
+      directory could replace Cockpit's <emphasis>storage</emphasis> package with
+      a <filename>manifest.json</filename> like this:</para>
+
+<programlisting>
+{
+  "version": 0,
+  "name": "storage",
+  "priority": 10,
+  "menu": {
+     "index": {
+        "label": "Disk Storage",
+        "order": 15
+     }
+  }
+}
+</programlisting>
+
+    <para>It is also possible to hide or change labels on the menu items of an existing
+      package by including a <filename>override.json</filename> in that existing package's
+      directory.</para>
+
+    <para>For example an <filename>/usr/share/cockpit/systemd/override.json</filename> could
+      hide the <emphasis>Logs</emphasis> menu item and move the <emphasis>Services</emphasis>
+      menu item to the top of the menu.</para>
+
+<programlisting>
+{
+  "menu": {
+    "logs": null,
+    "services": {
+      "order": -1
+    }
+  }
+}
+</programlisting>
 
   </section>
 

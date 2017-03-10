@@ -1,5 +1,5 @@
 # Generated Makefile data for networkmanager
-# Stamp: Mon Feb 06 2017 19:47:25 GMT+0000 (UTC)
+# Stamp: Thu Mar 09 2017 15:00:42 GMT+0000 (UTC)
 
 networkmanager_INPUTS = \
 	$(srcdir)/pkg/lib/journal.css \
@@ -18,7 +18,6 @@ networkmanager_INPUTS = \
 	$(srcdir)/pkg/lib/table.css \
 	$(srcdir)/pkg/networkmanager/index.html \
 	$(srcdir)/pkg/networkmanager/interfaces.js \
-	$(srcdir)/pkg/networkmanager/manifest.json \
 	$(srcdir)/pkg/networkmanager/networking.css \
 	$(srcdir)/pkg/networkmanager/test-utils.js \
 	$(srcdir)/pkg/networkmanager/utils.js \
@@ -26,7 +25,6 @@ networkmanager_INPUTS = \
 
 networkmanager_OUTPUTS = \
 	dist/networkmanager/index.html \
-	dist/networkmanager/manifest.json \
 	dist/networkmanager/network.css \
 	dist/networkmanager/network.css.map \
 	dist/networkmanager/network.min.js \
@@ -38,13 +36,14 @@ networkmanager_OUTPUTS = \
 	dist/networkmanager/test-utils.min.js.map \
 	$(NULL)
 
+networkmanager_PO = dist/networkmanager/po.js $(patsubst %,dist/networkmanager/po.%.js,$(LINGUAS))
+
 networkmanager_INSTALL = \
 	dist/networkmanager/index.html.gz \
 	dist/networkmanager/manifest.json \
 	dist/networkmanager/network.css.gz \
 	dist/networkmanager/network.min.js.gz \
-	dist/networkmanager/test-utils.css.gz \
-	dist/networkmanager/test-utils.min.js.gz \
+	$(addsuffix .gz,$(networkmanager_PO)) \
 	$(NULL)
 
 networkmanager_DEBUG = \
@@ -58,12 +57,14 @@ networkmanager_TESTS = \
 	dist/networkmanager/test-utils.html \
 	$(NULL)
 
+dist/networkmanager/%.po: po/%.po
+	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
+	$(MSGGREP) -N pkg/lib/journal.css -N pkg/lib/journal.js -N pkg/lib/journal_day_header.mustache -N pkg/lib/journal_line.mustache -N pkg/lib/journal_reboot.mustache -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/plot.css -N pkg/lib/plot.js -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/table.css -N pkg/networkmanager/index.html -N pkg/networkmanager/interfaces.js -N pkg/networkmanager/networking.css -N pkg/networkmanager/test-utils.js -N pkg/networkmanager/utils.js $< > $@.tmp && mv $@.tmp $@
+
 dist/networkmanager/Makefile.deps: $(WEBPACK_CONFIG) $(networkmanager_INPUTS)
 	$(WEBPACK_RULE) -d dist/networkmanager/Makefile.deps $(WEBPACK_CONFIG)
 
 dist/networkmanager/index.html: dist/networkmanager/Makefile.deps
-
-dist/networkmanager/manifest.json: dist/networkmanager/Makefile.deps
 
 dist/networkmanager/network.css: dist/networkmanager/Makefile.deps
 
@@ -115,8 +116,6 @@ $(srcdir)/pkg/networkmanager/index.html:
 
 $(srcdir)/pkg/networkmanager/interfaces.js:
 
-$(srcdir)/pkg/networkmanager/manifest.json:
-
 $(srcdir)/pkg/networkmanager/networking.css:
 
 $(srcdir)/pkg/networkmanager/test-utils.js:
@@ -125,6 +124,7 @@ $(srcdir)/pkg/networkmanager/utils.js:
 
 WEBPACK_INPUTS += $(networkmanager_INPUTS)
 WEBPACK_OUTPUTS += $(networkmanager_OUTPUTS)
+WEBPACK_PO += $(networkmanager_PO)
 WEBPACK_INSTALL += $(networkmanager_INSTALL)
 WEBPACK_DEBUG += $(networkmanager_DEBUG)
 TESTS += $(networkmanager_TESTS)

@@ -1,0 +1,13 @@
+{
+    "version": "@VERSION@",
+    "requires": {
+	"cockpit": "122"
+    },
+
+    "tools": {
+        "setroubleshoot": {
+            "label": "SELinux",
+            "order": 8
+        }
+    }
+}

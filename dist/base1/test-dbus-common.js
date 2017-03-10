@@ -39,6 +39,24 @@ function common_dbus_tests(channel_options, bus_name)
             });
     });
 
+    QUnit.asyncTest("call method with timeout", function() {
+        assert.expect(2);
+
+        var dbus = cockpit.dbus(bus_name, channel_options);
+        dbus.call("/otree/frobber", "com.redhat.Cockpit.DBusTests.Frobber",
+            "NeverReturn", [], { timeout: 10 }).
+            done(function(reply) {
+                assert(false, "should not be reached");
+            }).
+            fail(function(ex) {
+                assert.equal(ex.name, "org.freedesktop.DBus.Error.Timeout");
+            }).
+            always(function() {
+                assert.equal(this.state(), "rejected", "call timed out");
+                QUnit.start();
+            });
+    });
+
     QUnit.asyncTest("close immediately", function() {
         assert.expect(1);
         var dbus = cockpit.dbus(bus_name, channel_options);
@@ -106,6 +124,55 @@ function common_dbus_tests(channel_options, bus_name)
                 assert.equal(this.state(), "resolved", "finished successfuly");
                 QUnit.start();
             });
+    });
+
+    QUnit.asyncTest("integer bounds", function() {
+        assert.expect(35);
+
+        var dbus = cockpit.dbus(bus_name, channel_options);
+
+        function testNumber(type, value, valid) {
+            QUnit.stop();
+            dbus.call("/otree/frobber", "com.redhat.Cockpit.DBusTests.Frobber",
+                      "TestVariant", [ { t: type, v: value } ]).
+                fail(function(ex) {
+                    assert.equal(ex.name, "org.freedesktop.DBus.Error.InvalidArgs");
+                }).
+                always(function() {
+                    if (valid)
+                        assert.equal(this.state(), "resolved", "accepted in bounds number");
+                    else
+                        assert.equal(this.state(), "rejected", "rejected out of bounds number");
+                    QUnit.start();
+                });
+        }
+
+        testNumber('y', 0, true);
+        testNumber('y', 0xff, true);
+        testNumber('y', -1, false);
+        testNumber('y', 0xff + 1, false);
+        testNumber('n', -300, true);
+        testNumber('n', 300, true);
+        testNumber('n', -0x8000 -1, false);
+        testNumber('n', 0x7fff + 1, false);
+        testNumber('q', 0, true);
+        testNumber('q', 300, true);
+        testNumber('q', -1, false);
+        testNumber('q', 0xffff + 1, false);
+        testNumber('i', -0xfffff, true);
+        testNumber('i', 0xfffff, true);
+        testNumber('i', -0x80000000 -1, false);
+        testNumber('i', 0x7fffffff + 1, false);
+        testNumber('u', 0, true);
+        testNumber('u', 0xfffff, true);
+        testNumber('u', -1, false);
+        testNumber('u', 0xffffffff + 1, false);
+        testNumber('x', -0xfffffffff, true);
+        testNumber('x', 0xfffffffff, true);
+        testNumber('t', 0xfffffffff, true);
+        testNumber('t', -1, false);
+
+        QUnit.start();
     });
 
     QUnit.asyncTest("non-primitive types", function() {
@@ -851,6 +918,23 @@ function common_dbus_tests(channel_options, bus_name)
             }).
             always(function() {
                 assert.equal(this.state(), "resolved", "method called");
+                $(dbus).off();
+                QUnit.start();
+            });
+    });
+
+    QUnit.asyncTest("proxy call with timeout", function() {
+        assert.expect(2);
+
+        var dbus = cockpit.dbus(bus_name, channel_options);
+        var proxy = dbus.proxy("com.redhat.Cockpit.DBusTests.Frobber", "/otree/frobber");
+
+        proxy.call('NeverReturn', [], { timeout: 10 }).
+            fail(function (ex) {
+                assert.equal(ex.name, "org.freedesktop.DBus.Error.Timeout");
+            }).
+            always(function() {
+                assert.equal(this.state(), "rejected", "call timed out");
                 $(dbus).off();
                 QUnit.start();
             });

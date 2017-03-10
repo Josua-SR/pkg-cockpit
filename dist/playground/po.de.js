@@ -1,58 +1,182 @@
-(function(e, n) {
-    var t, a;
-    if (typeof define === "function" && define.amd) {
-        define(n);
-        t = true;
+(function (root, data) {
+    var loaded, module;
+
+    /* Load into AMD if desired */
+    if (typeof define === 'function' && define.amd) {
+        define(data);
+        loaded = true;
     }
-    if (typeof cockpit === "object") {
-        cockpit.locale(n);
-        t = true;
+
+    /* Load into Cockpit locale */
+    if (typeof cockpit === 'object') {
+        cockpit.locale(data)
+        loaded = true;
     }
-    function i(e, n) {
-        var t, a, i, r, u = {};
-        for (t in e) {
-            if (t === "") continue;
-            i = t.split("");
-            r = e[t];
-            if (i[1]) {
-                a = i[0];
-                t = i[1];
+
+    function transformAngular(data, prev) {
+        var key, context, parts, value, result = { };
+        for (key in data) {
+            if (key === "")
+                continue;
+            parts = key.split("\u0004");
+            value = data[key];
+            if (parts[1]) {
+                context = parts[0];
+                key = parts[1];
             } else {
-                a = "$$noContext";
-                t = i[0];
+                context = "$$noContext";
+                key = parts[0];
             }
-            if (r[0] === null) r = r[1]; else r = r.slice(1);
-            if (!(t in u)) u[t] = {};
-            u[t][a] = r;
+            if (value[0] === null)
+                value = value[1];
+            else
+                value = value.slice(1);
+            if (!(key in result))
+                result[key] = { };
+            result[key][context] = value;
         }
-        return angular.extend(n, u);
+        return angular.extend(prev, result);
     }
-    if (typeof angular === "object") {
+
+    /* Load into angular here */
+    if (typeof angular === 'object') {
         try {
-            a = angular.module([ "gettext" ]);
-        } catch (r) {
-            console.log(r);
-        }
-        if (a) {
-            t = true;
-            a.run([ "gettextCatalog", function(e) {
-                var t = n[""]["language"];
-                var a = e.getCurrentLanguage() == t ? e.strings : {};
-                e.setStrings(t, i(n, a));
-                e.setCurrentLanguage(t);
-            } ]);
+            module = angular.module(["gettext"]);
+        } catch(ex) { console.log(ex); /* Either no angular or angular-gettext */ };
+        if (module) {
+            loaded = true;
+            module.run(['gettextCatalog', function(gettextCatalog) {
+                var lang = data[""]["language"];
+                var prev = (gettextCatalog.getCurrentLanguage() == lang) ? gettextCatalog.strings : { };
+                gettextCatalog.setStrings(lang, transformAngular(data, prev));
+                gettextCatalog.setCurrentLanguage(lang);
+            }]);
         }
     }
-    if (!t) e.po = n;
-})(this, {
-    "": {
-        "plural-forms": function(e) {
-            var n, t;
-            n = 2;
-            t = e != 1;
-            return t;
-        },
-        language: "de"
-    },
-    "Delete '{{ name }}'": [ null, "'{{ name }}' löschen!!!" ]
-});
+
+    if (!loaded)
+        root.po = data;
+
+/* The syntax of this line is important  by po2json */
+}(this, {
+ "": {'plural-forms':function(n) {
+var nplurals, plural;
+nplurals=2; plural=(n != 1);
+return plural;
+},
+  "language": "de",
+  "x-generator": "Zanata 3.9.6"
+ },
+ "$0 day": [
+  "$0 days",
+  "",
+  ""
+ ],
+ "$0 disk is missing": [
+  "$0 disks are missing",
+  "$0 Festplatte fehlt",
+  "$0 Festplatten fehlen"
+ ],
+ "$0 hour": [
+  "$0 hours",
+  "",
+  ""
+ ],
+ "$0 minute": [
+  "$0 minutes",
+  "",
+  ""
+ ],
+ "$0 month": [
+  "$0 months",
+  "",
+  ""
+ ],
+ "$0 week": [
+  "$0 weeks",
+  "",
+  ""
+ ],
+ "$0 year": [
+  "$0 years",
+  "",
+  ""
+ ],
+ "Cancel": [
+  null,
+  "Abbrechen"
+ ],
+ "Control": [
+  null,
+  "Steuerung"
+ ],
+ "Delete '{{ name }}'": [
+  null,
+  "'{{ name }}' löschen"
+ ],
+ "Empty": [
+  null,
+  "Leer"
+ ],
+ "Error": [
+  null,
+  "Fehler"
+ ],
+ "Memory": [
+  null,
+  "Speicher"
+ ],
+ "Network": [
+  null,
+  "Netzwerk"
+ ],
+ "Not Ready": [
+  null,
+  "Nicht bereit"
+ ],
+ "Off": [
+  null,
+  "Aus"
+ ],
+ "Ok": [
+  null,
+  ""
+ ],
+ "On": [
+  null,
+  "Ein"
+ ],
+ "Ready": [
+  null,
+  "Bereit"
+ ],
+ "Unavailable": [
+  null,
+  "Nicht verfügbar"
+ ],
+ "User": [
+  null,
+  "Benutzer"
+ ],
+ "undefined": [
+  null,
+  ""
+ ],
+ "disk-non-rotational\u0004$0 disk is missing": [
+  "$0 disks are missing",
+  "$0 Datenträger fehlt",
+  "$0 Datenträger fehlen"
+ ],
+ "key\u0004Control": [
+  null,
+  "Strg"
+ ],
+ "verb\u0004Empty": [
+  null,
+  "Leeren"
+ ],
+ "verb\u0004Ready": [
+  null,
+  "Bereiten"
+ ]
+}));

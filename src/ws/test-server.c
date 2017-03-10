@@ -765,6 +765,8 @@ main (int argc,
   int i;
   gchar *guid = NULL;
   GDBusServer *direct_dbus_server = NULL;
+  gchar *config_dir, *machines_dir;
+  gchar *rm_rf_argv[] = {"rm", "-rfv", NULL, NULL};
 
   GOptionEntry entries[] = {
     { NULL }
@@ -774,8 +776,16 @@ main (int argc,
   /* avoid gvfs (http://bugzilla.gnome.org/show_bug.cgi?id=526454) */
   g_setenv ("GIO_USE_VFS", "local", TRUE);
 
+  /* playground config directory */
+  config_dir = g_dir_make_tmp ("cockpit.config.XXXXXX", NULL);
+  g_assert (config_dir);
+  machines_dir = g_build_filename (config_dir, "machines.d", NULL);
+  g_assert (g_mkdir (machines_dir, 0755) == 0);
+  g_free (machines_dir);
+
   g_setenv ("XDG_DATA_HOME", SRCDIR "/src/bridge/mock-resource/home", TRUE);
   g_setenv ("XDG_DATA_DIRS", SRCDIR "/src/bridge/mock-resource/system", TRUE);
+  g_setenv ("COCKPIT_TEST_CONFIG_DIR", config_dir, TRUE);
 
   setup_path (argv[0]);
 
@@ -874,6 +884,11 @@ main (int argc,
   g_object_unref (bus);
   g_free (bridge_argv);
   g_free (guid);
+
+  /* clean up temporary config dir */
+  rm_rf_argv[2] = config_dir;
+  g_spawn_sync (NULL, rm_rf_argv, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL);
+  g_free (config_dir);
 
   return exit_code;
 }
