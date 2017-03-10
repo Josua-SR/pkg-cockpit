@@ -14,6 +14,31 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
             oauth.ErrorParam = "error_description";
     }
 
+    var fmt_re = /\$\{([^}]+)\}|\$([a-zA-Z0-9_]+)/g;
+    function format(fmt /* ... */) {
+        var args = Array.prototype.slice.call(arguments, 1);
+        return fmt.replace(fmt_re, function(m, x, y) { return args[x || y] || ""; });
+    }
+
+    function gettext(key) {
+        if (window.cockpit_po) {
+            var translated = window.cockpit_po[key];
+            if (translated && translated[1])
+                return translated[1];
+        }
+        return key;
+    }
+
+    function translate() {
+        if (!document.querySelectorAll)
+            return;
+        var list = document.querySelectorAll("[translate]");
+        for (var i = 0; i < list.length; i++)
+            list[i].textContent = gettext(list[i].textContent);
+    }
+
+    var _ = gettext;
+
     var login_path, application, org_login_path, org_application;
     var qs_re = /[?&]?([^=]+)=([^&]*)/g;
     var oauth_redirect_to = null;
@@ -73,11 +98,6 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
         el.appendChild(document.createTextNode(msg));
     }
 
-    var fmt_re = /\$\{([^}]+)\}|\$([a-zA-Z0-9_]+)/g;
-    function format(fmt, args) {
-        return fmt.replace(fmt_re, function(m, x, y) { return args[x || y] || ""; });
-    }
-
     function brand(_id, def) {
         var style, elt = id(_id);
         if (elt)
@@ -91,7 +111,7 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
             if ((content[0] === '"' || content[0] === '\'') &&
                 len > 2 && content[len - 1] === content[0])
                 content = content.substr(1, len - 2);
-            elt.innerHTML = format(content) || def;
+            elt.innerHTML = content || def;
         }
     }
 
@@ -101,11 +121,12 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
             try {
                 ret = (obj[name]);
             } catch(ex) {
-                fatal("The web browser configuration prevents Cockpit from running (inaccessible " + name + ")");
+                fatal(format(_("The web browser configuration prevents Cockpit from running (inaccessible $0)"),
+                             name));
                 throw ex;
             }
             if (ret === undefined) {
-                fatal("This web browser is too old to run Cockpit (missing " + name + ")");
+                fatal(format(_("This web browser is too old to run Cockpit (missing $0)"), name));
                 return false;
             }
             return true;
@@ -183,6 +204,8 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
     function boot() {
         window.onload = null;
 
+        translate();
+
         setup_path_globals (window.location.pathname);
 
         // Setup title
@@ -226,8 +249,8 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
             id("login").style.display = 'none';
             if (logout_intent) {
                 build_oauth_redirect_to();
-                id("login-again").textContent = "Login Again";
-                fatal("Logout Successful");
+                id("login-again").textContent = _("Login Again");
+                fatal(_("Logout Successful"));
             } else {
                 oauth_auto_login();
             }
@@ -253,7 +276,7 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
             } else if (xhr.status === 0) {
                 show_login();
             } else {
-                fatal(xhr.status + " error");
+                fatal(format(_("$0 error"), xhr.status));
             }
         };
         xhr.send();
@@ -272,7 +295,7 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
     function oauth_auto_login() {
         var parser = document.createElement('a');
         if (!oauth.URL)
-            return fatal("Cockpit authentication is configured incorrectly.");
+            return fatal(_("Cockpit authentication is configured incorrectly."));
 
         var query = QueryParams(window.location.search);
         if (!window.location.search && window.location.hash)
@@ -367,7 +390,7 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
         login_failure(null);
         var machine, user = trim(id("login-user-input").value);
         if (user === "") {
-            login_failure("User name cannot be empty");
+            login_failure(_("User name cannot be empty"));
         } else {
             machine = id("server-field").value;
             if (machine) {
@@ -547,35 +570,35 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
                     if (prompt_data)
                         show_converse(prompt_data);
                     else
-                        fatal("Internal Error: Invalid challenge header");
+                        fatal(_("Internal Error: Invalid challenge header"));
                 } else {
                     if (window.console)
                         console.log(xhr.statusText);
                     if (xhr.statusText.indexOf("authentication-not-supported") > -1) {
                         var user = trim(id("login-user-input").value);
-                        fatal("The server refused to authenticate '" + user + "' using password authentication, and no other supported authentication methods are available.");
+                        fatal(format(_("The server refused to authenticate '$0' using password authentication, and no other supported authentication methods are available."), user));
                     } else if (xhr.statusText.indexOf("terminated") > -1) {
-                        login_failure("Authentication Failed: Server closed connection");
+                        login_failure(_("Authentication Failed: Server closed connection"));
                     } else if (xhr.statusText.indexOf("no-host") > -1) {
-                        host_failure("Unable to connect to that address");
+                        host_failure(_("Unable to connect to that address"));
                     } else if (xhr.statusText.indexOf("unknown-hostkey") > -1) {
-                        host_failure("Refusing to connect. Hostkey is unknown");
+                        host_failure(_("Refusing to connect. Hostkey is unknown"));
                     } else if (xhr.statusText.indexOf("unknown-host") > -1) {
-                        host_failure("Refusing to connect. Host is unknown");
+                        host_failure(_("Refusing to connect. Host is unknown"));
                     } else if (xhr.statusText.indexOf("invalid-hostkey") > -1) {
-                        host_failure("Refusing to connect. Hostkey does not match");
+                        host_failure(_("Refusing to connect. Hostkey does not match"));
                     } else if (is_conversation) {
-                        login_failure("Authentication failed");
+                        login_failure(_("Authentication failed"));
                     } else {
-                        login_failure("Wrong user name or password");
+                        login_failure(_("Wrong user name or password"));
                     }
                 }
             } else if (xhr.status == 403) {
-                login_failure(decodeURIComponent(xhr.statusText) || "Permission denied");
+                login_failure(decodeURIComponent(xhr.statusText) || _("Permission denied"));
             } else if (xhr.statusText) {
                 fatal(decodeURIComponent(xhr.statusText));
             } else {
-                fatal(xhr.status + " error");
+                fatal(format(_("$0 error"), xhr.status));
             }
             id("login-button").removeAttribute('disabled');
             phantom_checkpoint();

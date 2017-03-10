@@ -26,7 +26,6 @@ var authorized_keys = require("./authorized-keys");
 
 require("patterns");
 
-cockpit.translate();
 var _ = cockpit.gettext;
 var C_ = cockpit.gettext;
 
@@ -39,8 +38,7 @@ function update_accounts_privileged() {
     $(".accounts-privileged:not('.accounts-current-account')").update_privileged(
         permission, cockpit.format(
             _("The user <b>$0</b> is not permitted to modify accounts"),
-            permission.user ? permission.user.name : ''),
-        "right"
+            permission.user ? permission.user.name : '')
     );
     $(".accounts-privileged").find("input")
         .attr('disabled', permission.allowed === false ||

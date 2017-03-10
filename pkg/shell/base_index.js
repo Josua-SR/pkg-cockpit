@@ -324,6 +324,7 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
             if (event.origin !== origin)
                 return;
 
+            var forward_command = false;
             var data = event.data;
             var child = event.source;
             if (!child || typeof data !== "string")
@@ -362,6 +363,9 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
                     perform_jump(child, control);
                     return;
 
+                } else if (control.command == "logout" || control.command == "kill") {
+                    forward_command = true;
+
                 } else if (control.command === "hint") {
                     if (control.hint == "restart") {
                         /* watchdog handles current host for now */
@@ -375,7 +379,7 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
                     return;
 
                 /* Only control messages with a channel are forwardable */
-                } else if (control.channel === undefined) {
+                } else if (control.channel === undefined && !forward_command) {
                     return;
 
                 /* Add the child's group to all open channel messages */
@@ -414,7 +418,7 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
     /*
      * New instances of Index must be created by new_index_from_proto
      * and the caller must include a navigation function in the given
-     * prototype. That function will be called by by Frames and
+     * prototype. That function will be called by Frames and
      * Router to actually perform any navigation action.
      *
      * As a convenience, common menu items can be setup by adding the

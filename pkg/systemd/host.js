@@ -234,6 +234,24 @@ PageServer.prototype = {
         var self = this;
         update_hostname_privileged();
 
+        cockpit.file("/etc/motd").watch(function (content) {
+            if (content)
+                content = $.trim(content);
+            if (content && content != window.localStorage.getItem('dismissed-motd')) {
+                $('#motd').text(content);
+                $('#motd-box').show();
+            } else {
+                $('#motd-box').hide();
+            }
+            // To help the tests known when we have loaded motd
+            $('#motd-box').attr('data-stable', 'yes');
+        });
+
+        $('#motd-box button.close').click(function () {
+            window.localStorage.setItem('dismissed-motd', $('#motd').text());
+            $('#motd-box').hide();
+        });
+
         $('#shutdown-group [data-action]').on("click", function() {
             self.shutdown($(this).attr('data-action'));
         });
@@ -267,6 +285,10 @@ PageServer.prototype = {
 
         $("#system_information_ssh_keys").on("show.bs.modal", function() {
             self.host_keys_show();
+        });
+
+        $("#system_information_ssh_keys").on("hide.bs.modal", function() {
+            self.host_keys_hide();
         });
 
         function update_ntp_status() {
@@ -622,14 +644,27 @@ PageServer.prototype = {
 
     host_keys_show: function() {
         var self = this;
+        $("#system_information_ssh_keys .spinner").toggle(true);
+        $("#system_information_ssh_keys .content").toggle(false);
+        $("#system_information_ssh_keys .alert").toggle(false);
+
+        /*
+         * Yes, we do refresh the keys while the dialog is open.
+         * It may occur that sshd is not running at the point when
+         * we try, or in rare cases the keys may change.
+         */
+        self.host_keys_interval = window.setInterval(function() {
+            self.host_keys_update();
+        }, 10 * 1000);
+        self.host_keys_update();
+    },
+
+    host_keys_update: function() {
+        var self = this;
         var parenthesis = /^\((.*)\)$/;
         var spinner = $("#system_information_ssh_keys .spinner");
         var content = $("#system_information_ssh_keys .content");
         var error = $("#system_information_ssh_keys .alert");
-
-        content.toggle(false);
-        error.toggle(false);
-        spinner.toggle(true);
 
         cockpit.script(host_keys_script, [],{ "superuser": "try",
                                               "err": "message" })
@@ -680,6 +715,12 @@ PageServer.prototype = {
                 $("#system_information_ssh_keys .alert strong").text(msg);
                 error.toggle(true);
             });
+    },
+
+    host_keys_hide: function() {
+        var self = this;
+        window.clearInterval(self.host_keys_interval);
+        self.host_keys_interval = null;
     },
 
     sysroot_changed: function() {

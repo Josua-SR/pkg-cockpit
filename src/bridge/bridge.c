@@ -33,9 +33,7 @@
 #include "cockpitpipechannel.h"
 #include "cockpitinternalmetrics.h"
 #include "cockpitpolkitagent.h"
-#include "cockpitportal.h"
 #include "cockpitrouter.h"
-#include "cockpitshim.h"
 #include "cockpitwebsocketstream.h"
 
 #include "common/cockpitassets.h"
@@ -77,10 +75,21 @@ static CockpitPayloadType payload_types[] = {
   { "fslist1", cockpit_fslist_get_type },
   { "null", cockpit_null_channel_get_type },
   { "echo", cockpit_echo_channel_get_type },
-  { "metrics1", cockpit_internal_metrics_get_type },
   { "websocket-stream1", cockpit_web_socket_stream_get_type },
   { NULL },
 };
+
+static void
+add_router_channels (CockpitRouter *router)
+{
+  JsonObject *match;
+
+  match = json_object_new ();
+  json_object_set_string_member (match, "payload", "metrics1");
+  json_object_set_string_member (match, "source", "internal");
+  cockpit_router_add_channel (router, match, cockpit_internal_metrics_get_type);
+  json_object_unref (match);
+}
 
 static void
 on_closed_set_flag (CockpitTransport *transport,
@@ -91,8 +100,23 @@ on_closed_set_flag (CockpitTransport *transport,
   *flag = TRUE;
 }
 
+static gboolean
+on_logout_set_flag (CockpitTransport *transport,
+                    const gchar *command,
+                    const gchar *channel,
+                    JsonObject *options,
+                    GBytes *payload,
+                    gpointer user_data)
+{
+  gboolean *flag = user_data;
+  if (g_str_equal (command, "logout"))
+    *flag = TRUE;
+  return FALSE;
+}
+
 static void
-send_init_command (CockpitTransport *transport)
+send_init_command (CockpitTransport *transport,
+                   gboolean interactive)
 {
   const gchar *checksum;
   JsonObject *object;
@@ -106,29 +130,43 @@ send_init_command (CockpitTransport *transport)
   json_object_set_string_member (object, "command", "init");
   json_object_set_int_member (object, "version", 1);
 
-  checksum = cockpit_packages_get_checksum (packages);
-  if (checksum)
-    json_object_set_string_member (object, "checksum", checksum);
+  /*
+   * When in interactive mode pretend we received an init
+   * message, and don't print one out.
+   */
+  if (interactive)
+    {
+      json_object_set_string_member (object, "host", "localhost");
+    }
+  else
+    {
+      checksum = cockpit_packages_get_checksum (packages);
+      if (checksum)
+        json_object_set_string_member (object, "checksum", checksum);
 
-  /* This is encoded as an object to allow for future expansion */
-  block = json_object_new ();
-  names = cockpit_packages_get_names (packages);
-  for (i = 0; names && names[i] != NULL; i++)
-    json_object_set_null_member (block, names[i]);
-  json_object_set_object_member (object, "packages", block);
-  g_free (names);
+      /* This is encoded as an object to allow for future expansion */
+      block = json_object_new ();
+      names = cockpit_packages_get_names (packages);
+      for (i = 0; names && names[i] != NULL; i++)
+        json_object_set_null_member (block, names[i]);
+      json_object_set_object_member (object, "packages", block);
+      g_free (names);
 
-  os_release = cockpit_system_load_os_release ();
-  block = cockpit_json_from_hash_table (os_release,
-                                        cockpit_system_os_release_fields ());
-  if (block)
-    json_object_set_object_member (object, "os-release", block);
-  g_hash_table_unref (os_release);
+      os_release = cockpit_system_load_os_release ();
+      block = cockpit_json_from_hash_table (os_release,
+                                            cockpit_system_os_release_fields ());
+      if (block)
+        json_object_set_object_member (object, "os-release", block);
+      g_hash_table_unref (os_release);
+    }
 
   bytes = cockpit_json_write_bytes (object);
   json_object_unref (object);
 
-  cockpit_transport_send (transport, NULL, bytes);
+  if (interactive)
+    cockpit_transport_emit_recv (transport, NULL, bytes);
+  else
+    cockpit_transport_send (transport, NULL, bytes);
   g_bytes_unref (bytes);
 }
 
@@ -368,45 +406,6 @@ getpwuid_a (uid_t uid)
   return ret;
 }
 
-static CockpitChannel *
-pcp_shim (CockpitRouter *router,
-          CockpitTransport *transport,
-          const gchar *channel_id,
-          JsonObject *options,
-          gboolean frozen)
-{
-  CockpitChannel *channel = NULL;
-  CockpitTransport *shim_transport = NULL;
-  const gchar *payload;
-  const gchar *source;
-
-  static const gchar *argv[] = {
-    PACKAGE_LIBEXEC_DIR "/cockpit-pcp",
-    NULL
-  };
-
-  if (!cockpit_json_get_string (options, "payload", NULL, &payload))
-    payload = NULL;
-  if (!cockpit_json_get_string (options, "source", NULL, &source))
-    source = NULL;
-
-  if (g_strcmp0 (payload, "metrics1") == 0 &&
-      g_strcmp0 (source, "internal") != 0)
-    {
-        shim_transport = cockpit_router_ensure_external_bridge (router, channel_id,
-                                                                NULL, argv, NULL);
-        channel = COCKPIT_CHANNEL (g_object_new (COCKPIT_TYPE_SHIM,
-                                                 "transport", transport,
-                                                 "id", channel_id,
-                                                 "options", options,
-                                                 "frozen", frozen,
-                                                 "shim-transport", shim_transport,
-                                                 NULL));
-    }
-
-  return channel;
-}
-
 static int
 run_bridge (const gchar *interactive,
             gboolean privileged_slave)
@@ -416,13 +415,12 @@ run_bridge (const gchar *interactive,
   gboolean terminated = FALSE;
   gboolean interupted = FALSE;
   gboolean closed = FALSE;
-  const gchar *init_host = NULL;
-  CockpitPortal *super = NULL;
   gpointer polkit_agent = NULL;
   const gchar *directory;
   struct passwd *pwd;
   GPid daemon_pid = 0;
   GPid agent_pid = 0;
+  GList *bridges = NULL;
   guint sig_term;
   guint sig_int;
   int outfd;
@@ -473,6 +471,8 @@ run_bridge (const gchar *interactive,
   if (outfd < 0 || dup2 (2, 1) < 1)
     {
       g_warning ("bridge couldn't redirect stdout to stderr");
+      if (outfd > -1)
+        close (outfd);
       outfd = 1;
     }
 
@@ -496,7 +496,6 @@ run_bridge (const gchar *interactive,
   if (interactive)
     {
       /* Allow skipping the init message when interactive */
-      init_host = "localhost";
       transport = cockpit_interact_transport_new (0, outfd, interactive);
     }
   else
@@ -508,35 +507,50 @@ run_bridge (const gchar *interactive,
     {
       if (!interactive)
         polkit_agent = cockpit_polkit_agent_register (transport, NULL);
-      super = cockpit_portal_new_superuser (transport);
     }
 
   g_resources_register (cockpitassets_get_resource ());
   cockpit_web_failure_resource = "/org/cockpit-project/Cockpit/fail.html";
 
-  router = cockpit_router_new (transport, payload_types, init_host);
-  cockpit_router_add_channel_function (router, pcp_shim);
+  if (privileged_slave)
+    {
+      /*
+       * When in privileged mode, exit right away when we get any sort of logout
+       * This enforces the fact that the user no longer has privileges.
+       */
+      g_signal_connect (transport, "control", G_CALLBACK (on_logout_set_flag), &closed);
+    }
+  else
+    {
+      /* All the other bridges we can invoke for specific channels */
+      bridges = cockpit_packages_get_bridges (packages);
+    }
+
+  router = cockpit_router_new (transport, payload_types, bridges);
+  add_router_channels (router);
+
   cockpit_dbus_user_startup (pwd);
   cockpit_dbus_setup_startup ();
   cockpit_dbus_process_startup ();
+  cockpit_dbus_machines_startup ();
 
   g_free (pwd);
   pwd = NULL;
 
   g_signal_connect (transport, "closed", G_CALLBACK (on_closed_set_flag), &closed);
-  send_init_command (transport);
+  send_init_command (transport, interactive ? TRUE : FALSE);
 
   while (!terminated && !closed && !interupted)
     g_main_context_iteration (NULL, TRUE);
 
   if (polkit_agent)
     cockpit_polkit_agent_unregister (polkit_agent);
-  if (super)
-    g_object_unref (super);
 
   g_object_unref (router);
   g_object_unref (transport);
+  g_list_free (bridges);
 
+  cockpit_dbus_machines_cleanup ();
   cockpit_dbus_internal_cleanup ();
   cockpit_packages_free (packages);
   packages = NULL;

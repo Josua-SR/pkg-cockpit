@@ -17,6 +17,8 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <stdio.h>
+
 #include "config.h"
 
 #include "cockpitpackages.h"
@@ -103,20 +105,6 @@ static gboolean
 validate_package (const gchar *name)
 {
   gsize len = strspn (name, COCKPIT_RESOURCE_PACKAGE_VALID);
-  return len && name[len] == '\0';
-}
-
-static gboolean
-validate_checksum (const gchar *name)
-{
-  static const gchar *allowed = "abcdef0123456789";
-  gsize len;
-
-  if (name[0] != '$')
-    return FALSE;
-
-  name++;
-  len = strspn (name, allowed);
   return len && name[len] == '\0';
 }
 
@@ -370,17 +358,18 @@ read_package_name (JsonObject *manifest,
 }
 
 static gint
-compar_package_priority (const gchar *name,
-                         JsonObject *manifest1,
-                         JsonObject *manifest2)
+compar_manifest_priority (JsonObject *manifest1,
+                          JsonObject *manifest2,
+                          const gchar *name)
 {
-  gint64 priority1 = 1;
-  gint64 priority2 = 2;
+  gdouble priority1 = 1;
+  gdouble priority2 = 1;
 
-  if (!cockpit_json_get_int (manifest1, "priority", 1, &priority1) ||
-      !cockpit_json_get_int (manifest2, "priority", 1, &priority2))
+  if (!cockpit_json_get_double (manifest1, "priority", 1, &priority1) ||
+      !cockpit_json_get_double (manifest2, "priority", 1, &priority2))
     {
-      g_message ("%s: invalid \"priority\" field in package manifest", name);
+      g_message ("%s%sinvalid \"priority\" field in package manifest",
+                 name ? name : "", name ? ": " : "");
     }
 
   if (priority1 == priority2)
@@ -389,6 +378,16 @@ compar_package_priority (const gchar *name,
     return -1;
   else
     return 1;
+}
+
+static gint
+compar_package_priority (gconstpointer value1,
+                         gconstpointer value2,
+                         gpointer user_data)
+{
+  const CockpitPackage *package1 = value1;
+  const CockpitPackage *package2 = value2;
+  return compar_manifest_priority (package1->manifest, package2->manifest, user_data);
 }
 
 static gboolean
@@ -580,7 +579,7 @@ maybe_add_package (GHashTable *listing,
   package = g_hash_table_lookup (listing, name);
   if (package)
     {
-      if (compar_package_priority (name, manifest, package->manifest) <= 0)
+      if (compar_manifest_priority (manifest, package->manifest, name) <= 0)
         {
           package = NULL;
           goto out;
@@ -731,7 +730,7 @@ cockpit_packages_resolve (CockpitPackages *packages,
       return NULL;
     }
 
-  if (!validate_checksum (name) && !validate_package (name))
+  if (!validate_package (name))
     {
       g_message ("invalid 'package' name: %s", name);
       return NULL;
@@ -832,21 +831,167 @@ handle_package_manifests_json (CockpitWebServer *server,
 }
 
 static gboolean
+package_content (CockpitPackages *packages,
+                 CockpitWebResponse *response,
+                 const gchar *name,
+                 const gchar *path,
+                 const gchar *language,
+                 GHashTable *headers)
+{
+  GBytes *uncompressed = NULL;
+  CockpitPackage *package;
+  gboolean result = FALSE;
+  GList *l, *names = NULL;
+  gchar *filename = NULL;
+  GError *error = NULL;
+  GBytes *bytes = NULL;
+  gchar *chosen = NULL;
+  gboolean globbing;
+  gboolean gzipped;
+  const gchar *type;
+
+  globbing = g_str_equal (name, "*");
+  if (globbing)
+    names = g_hash_table_get_keys (packages->listing);
+  else
+    names = g_list_append (names, (gchar *)name);
+
+  names = g_list_sort (names, (GCompareFunc)g_strcmp0);
+
+  for (l = names; l != NULL; l = g_list_next (l))
+    {
+      name = l->data;
+      g_free (filename);
+      package = NULL;
+
+      /* Resolve the path name and check it */
+      filename = cockpit_packages_resolve (packages, name, path, &package);
+
+      if (!filename)
+        {
+          /* On the first round */
+          if (l == names)
+            cockpit_web_response_error (response, 404, NULL, NULL);
+          else
+            cockpit_web_response_abort (response);
+          goto out;
+        }
+
+      if (bytes)
+        g_bytes_unref (bytes);
+
+      g_clear_error (&error);
+      g_free (chosen);
+      chosen = NULL;
+
+      bytes = cockpit_web_response_negotiation (filename, package ? package->paths : NULL, language, &chosen, &error);
+
+      /* When globbing most errors result in a zero length block */
+      if (globbing)
+        {
+          if (error)
+            {
+              g_message ("%s", error->message);
+              chosen = g_strdup ("");
+              bytes = g_bytes_new_static ("", 0);
+            }
+        }
+      else
+        {
+          if (error)
+            {
+              if (g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_ACCES) ||
+                  g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_PERM))
+                {
+                  g_message ("%s", error->message);
+                  cockpit_web_response_error (response, 403, NULL, NULL);
+                }
+              else if (error)
+                {
+                  g_message ("%s", error->message);
+                  cockpit_web_response_error (response, 500, NULL, NULL);
+                }
+              goto out;
+            }
+          else if (!bytes)
+            {
+              cockpit_web_response_error (response, 404, NULL, NULL);
+              goto out;
+            }
+          else if (package && package->unavailable)
+            {
+              cockpit_web_response_error (response, 503, NULL, "%s", package->unavailable);
+              goto out;
+            }
+        }
+
+      gzipped = chosen && g_str_has_suffix (chosen, ".gz");
+
+      /* If globbing, we need to uncompress these */
+      if (gzipped && globbing)
+        {
+          g_clear_error (&error);
+          uncompressed = cockpit_web_response_gunzip (bytes, &error);
+          if (error)
+            {
+              g_message ("couldn't decompress: %s: %s", chosen, error->message);
+              g_clear_error (&error);
+              uncompressed = g_bytes_new_static ("", 0);
+            }
+          g_bytes_unref (bytes);
+          bytes = uncompressed;
+          gzipped = FALSE;
+        }
+
+      /* The first one */
+      if (l == names)
+        {
+          if (gzipped)
+            g_hash_table_insert (headers, g_strdup ("Content-Encoding"), g_strdup ("gzip"));
+
+          type = cockpit_web_response_content_type (path);
+          if (type)
+            {
+              g_hash_table_insert (headers, g_strdup ("Content-Type"), g_strdup (type));
+              if (g_str_has_prefix (type, "text/html"))
+                {
+                  if (package && package->content_security_policy)
+                    {
+                      g_hash_table_insert (headers, g_strdup ("Content-Security-Policy"),
+                                           g_strdup (package->content_security_policy));
+                    }
+                }
+            }
+          cockpit_web_response_headers_full (response, 200, "OK", -1, headers);
+        }
+
+      if (bytes && !cockpit_web_response_queue (response, bytes))
+        goto out;
+    }
+
+  cockpit_web_response_complete (response);
+  result = TRUE;
+
+out:
+  if (bytes)
+    g_bytes_unref (bytes);
+  g_list_free (names);
+  g_free (chosen);
+  g_free (filename);
+  g_clear_error (&error);
+  return result;
+}
+
+static gboolean
 handle_packages (CockpitWebServer *server,
                  const gchar *unused,
                  GHashTable *headers,
                  CockpitWebResponse *response,
                  CockpitPackages *packages)
 {
-  CockpitPackage *package;
-  gchar *filename = NULL;
-  GError *error = NULL;
   gchar *name;
   const gchar *path;
   GHashTable *out_headers = NULL;
-  const gchar *type;
-  GBytes *bytes = NULL;
-  gchar *chosen = NULL;
   gchar **languages = NULL;
 
   name = cockpit_web_response_pop_path (response);
@@ -860,13 +1005,6 @@ handle_packages (CockpitWebServer *server,
 
   out_headers = cockpit_web_server_new_table ();
 
-  filename = cockpit_packages_resolve (packages, name, path, &package);
-  if (!filename)
-    {
-      cockpit_web_response_error (response, 404, NULL, NULL);
-      goto out;
-    }
-
   languages = cockpit_web_server_parse_languages (headers, NULL);
 
   /*
@@ -876,69 +1014,16 @@ handle_packages (CockpitWebServer *server,
    */
   cockpit_locale_set_language (languages[0]);
 
-  bytes = cockpit_web_response_negotiation (filename, package->paths, languages[0], &chosen, &error);
-  if (error)
-    {
-      if (g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_ACCES) ||
-          g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_PERM))
-        {
-          g_message ("%s", error->message);
-          cockpit_web_response_error (response, 403, NULL, NULL);
-        }
-      else if (error)
-        {
-          g_message ("%s", error->message);
-          cockpit_web_response_error (response, 500, NULL, NULL);
-        }
-      goto out;
-    }
-  else if (!bytes)
-    {
-      cockpit_web_response_error (response, 404, NULL, NULL);
-      goto out;
-    }
-  else if (package->unavailable)
-    {
-      cockpit_web_response_error (response, 503, NULL, "%s", package->unavailable);
-      goto out;
-    }
-
-  if (g_str_has_suffix (chosen, ".gz"))
-    g_hash_table_insert (out_headers, g_strdup ("Content-Encoding"), g_strdup ("gzip"));
-
-  type = cockpit_web_response_content_type (path);
-  if (type)
-    {
-      g_hash_table_insert (out_headers, g_strdup ("Content-Type"), g_strdup (type));
-      if (g_str_has_prefix (type, "text/html"))
-        {
-          if (package->content_security_policy)
-            {
-              g_hash_table_insert (out_headers, g_strdup ("Content-Security-Policy"),
-                                   g_strdup (package->content_security_policy));
-            }
-        }
-    }
-
   if (!packages->checksum)
     cockpit_web_response_set_cache_type (response, COCKPIT_WEB_RESPONSE_NO_CACHE);
 
-  cockpit_web_response_headers_full (response, 200, "OK", -1, out_headers);
-
-  cockpit_web_response_queue (response, bytes);
-
-  cockpit_web_response_complete (response);
+  package_content (packages, response, name, path, languages[0], out_headers);
 
 out:
-  if (bytes)
-    g_bytes_unref (bytes);
   if (out_headers)
     g_hash_table_unref (out_headers);
   g_strfreev (languages);
   g_free (name);
-  g_free (chosen);
-  g_clear_error (&error);
-  g_free (filename);
   return TRUE;
 }
 
@@ -1056,6 +1141,88 @@ cockpit_packages_get_names (CockpitPackages *packages)
   g_ptr_array_add (array, NULL);
 
   return (gchar **)g_ptr_array_free (array, FALSE);
+}
+
+/**
+ * cockpit_packages_get_bridges:
+ * @packages: The packages object
+ *
+ * Get a list of configured "bridges" JSON config objects in
+ * the order of priority. See doc/guide/ for the actual format
+ * of the JSON objects.
+ *
+ * Returns: (transfer container): A list of JSONObject each owned
+ *          by CockpitPackages. Free with g_list_free() when done.
+ */
+GList *
+cockpit_packages_get_bridges (CockpitPackages *packages)
+{
+  CockpitPackage *package;
+  GList *l, *listing;
+  GList *result = NULL;
+  JsonArray *bridges;
+  JsonArray *bridge;
+  JsonObject *item;
+  JsonObject *match;
+  const gchar *problem;
+  JsonNode *node;
+  guint i;
+
+  g_return_val_if_fail (packages != NULL, NULL);
+
+  listing = g_hash_table_get_values (packages->listing);
+  listing = g_list_sort_with_data (listing, compar_package_priority, NULL);
+  listing = g_list_reverse (listing);
+
+  /* Convert every package to the equivalent bridge listing */
+  for (l = listing; l != NULL; l = g_list_next (l))
+    {
+      package = l->data;
+      if (!cockpit_json_get_array (package->manifest, "bridges", NULL, &bridges))
+        {
+          g_message ("%s: invalid \"bridges\" field in package manifest", package->name);
+          continue;
+        }
+
+      for (i = 0; bridges && i < json_array_get_length (bridges); i++)
+        {
+          node = json_array_get_element (bridges, i);
+          if (!node || !JSON_NODE_HOLDS_OBJECT (node))
+            {
+              g_message ("%s: invalid bridge in \"bridges\" field in package manifest", package->name);
+              continue;
+            }
+
+          item = json_node_get_object (node);
+          if (!cockpit_json_get_array (item, "spawn", NULL, &bridge))
+            {
+              g_message ("%s: invalid \"spawn\" field in package manifest", package->name);
+            }
+          else if (!cockpit_json_get_array (item, "environ", NULL, &bridge))
+            {
+              g_message ("%s: invalid \"environ\" field in package manifest", package->name);
+            }
+          else if (!cockpit_json_get_object (item, "match", NULL, &match))
+            {
+              g_message ("%s: invalid \"match\" field in package manifest", package->name);
+            }
+          else if (match == NULL)
+            {
+              g_message ("%s: missing \"match\" field in package manifest", package->name);
+            }
+          else if (!cockpit_json_get_string (item, "problem", NULL, &problem))
+            {
+              g_message ("%s: invalid \"problem\" field in package manifest", package->name);
+            }
+          else
+            {
+              result = g_list_prepend (result, item);
+            }
+        }
+    }
+
+  g_list_free (listing);
+  return g_list_reverse (result);
 }
 
 void

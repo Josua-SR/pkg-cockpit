@@ -1,10 +1,13 @@
 # Generated Makefile data for machines
-# Stamp: Mon Feb 06 2017 19:47:25 GMT+0000 (UTC)
+# Stamp: Thu Mar 09 2017 15:00:42 GMT+0000 (UTC)
 
 machines_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
 	$(srcdir)/pkg/lib/listing.less \
 	$(srcdir)/pkg/lib/page.css \
+	$(srcdir)/pkg/lib/qunit-config.js \
+	$(srcdir)/pkg/lib/qunit-template.html \
+	$(srcdir)/pkg/lib/qunit-tests.js \
 	$(srcdir)/pkg/lib/table.css \
 	$(srcdir)/pkg/lib/variables.less \
 	$(srcdir)/pkg/machines/actions.es6 \
@@ -18,12 +21,13 @@ machines_INPUTS = \
 	$(srcdir)/pkg/machines/index.js \
 	$(srcdir)/pkg/machines/libvirt.es6 \
 	$(srcdir)/pkg/machines/machines.less \
-	$(srcdir)/pkg/machines/manifest.json \
 	$(srcdir)/pkg/machines/middlewares.es6 \
+	$(srcdir)/pkg/machines/provider.es6 \
 	$(srcdir)/pkg/machines/reducers.es6 \
 	$(srcdir)/pkg/machines/selectors.es6 \
 	$(srcdir)/pkg/machines/services.es6 \
 	$(srcdir)/pkg/machines/store.es6 \
+	$(srcdir)/pkg/machines/test-machines.js \
 	$(NULL)
 
 machines_OUTPUTS = \
@@ -32,23 +36,37 @@ machines_OUTPUTS = \
 	dist/machines/machines.css.map \
 	dist/machines/machines.min.js \
 	dist/machines/machines.min.js.map \
-	dist/machines/manifest.json \
+	dist/machines/test-machines.css \
+	dist/machines/test-machines.css.map \
+	dist/machines/test-machines.html \
+	dist/machines/test-machines.min.js \
+	dist/machines/test-machines.min.js.map \
 	$(NULL)
+
+machines_PO = dist/machines/po.js $(patsubst %,dist/machines/po.%.js,$(LINGUAS))
 
 machines_INSTALL = \
 	dist/machines/index.html.gz \
 	dist/machines/machines.css.gz \
 	dist/machines/machines.min.js.gz \
 	dist/machines/manifest.json \
+	$(addsuffix .gz,$(machines_PO)) \
 	$(NULL)
 
 machines_DEBUG = \
 	dist/machines/machines.css.map \
 	dist/machines/machines.min.js.map \
+	dist/machines/test-machines.css.map \
+	dist/machines/test-machines.min.js.map \
 	$(NULL)
 
 machines_TESTS = \
+	dist/machines/test-machines.html \
 	$(NULL)
+
+dist/machines/%.po: po/%.po
+	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
+	$(MSGGREP) -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/listing.less -N pkg/lib/page.css -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/table.css -N pkg/lib/variables.less -N pkg/machines/actions.es6 -N pkg/machines/app.jsx -N pkg/machines/c3charts.jsx -N pkg/machines/config.es6 -N pkg/machines/helpers.es6 -N pkg/machines/hostvmslist.jsx -N pkg/machines/index.es6 -N pkg/machines/index.html -N pkg/machines/index.js -N pkg/machines/libvirt.es6 -N pkg/machines/machines.less -N pkg/machines/middlewares.es6 -N pkg/machines/provider.es6 -N pkg/machines/reducers.es6 -N pkg/machines/selectors.es6 -N pkg/machines/services.es6 -N pkg/machines/store.es6 -N pkg/machines/test-machines.js $< > $@.tmp && mv $@.tmp $@
 
 dist/machines/Makefile.deps: $(WEBPACK_CONFIG) $(machines_INPUTS)
 	$(WEBPACK_RULE) -d dist/machines/Makefile.deps $(WEBPACK_CONFIG)
@@ -63,13 +81,27 @@ dist/machines/machines.min.js: dist/machines/Makefile.deps
 
 dist/machines/machines.min.js.map: dist/machines/Makefile.deps
 
-dist/machines/manifest.json: dist/machines/Makefile.deps
+dist/machines/test-machines.css: dist/machines/Makefile.deps
+
+dist/machines/test-machines.css.map: dist/machines/Makefile.deps
+
+dist/machines/test-machines.html: dist/machines/Makefile.deps
+
+dist/machines/test-machines.min.js: dist/machines/Makefile.deps
+
+dist/machines/test-machines.min.js.map: dist/machines/Makefile.deps
 
 $(srcdir)/pkg/lib/cockpit-components-listing.jsx:
 
 $(srcdir)/pkg/lib/listing.less:
 
 $(srcdir)/pkg/lib/page.css:
+
+$(srcdir)/pkg/lib/qunit-config.js:
+
+$(srcdir)/pkg/lib/qunit-template.html:
+
+$(srcdir)/pkg/lib/qunit-tests.js:
 
 $(srcdir)/pkg/lib/table.css:
 
@@ -97,9 +129,9 @@ $(srcdir)/pkg/machines/libvirt.es6:
 
 $(srcdir)/pkg/machines/machines.less:
 
-$(srcdir)/pkg/machines/manifest.json:
-
 $(srcdir)/pkg/machines/middlewares.es6:
+
+$(srcdir)/pkg/machines/provider.es6:
 
 $(srcdir)/pkg/machines/reducers.es6:
 
@@ -109,8 +141,11 @@ $(srcdir)/pkg/machines/services.es6:
 
 $(srcdir)/pkg/machines/store.es6:
 
+$(srcdir)/pkg/machines/test-machines.js:
+
 WEBPACK_INPUTS += $(machines_INPUTS)
 WEBPACK_OUTPUTS += $(machines_OUTPUTS)
+WEBPACK_PO += $(machines_PO)
 WEBPACK_INSTALL += $(machines_INSTALL)
 WEBPACK_DEBUG += $(machines_DEBUG)
 TESTS += $(machines_TESTS)

@@ -105,17 +105,11 @@
 /* Location of newusers binary */
 #undef PATH_NEWUSERS
 
-/* Location of pkexec binary */
-#undef PATH_PKEXEC
-
 /* Location of ssh-add binary */
 #undef PATH_SSH_ADD
 
 /* Location of ssh-agent binary */
 #undef PATH_SSH_AGENT
-
-/* Location of sudo binary */
-#undef PATH_SUDO
 
 /* Location of usermod binary */
 #undef PATH_USERMOD

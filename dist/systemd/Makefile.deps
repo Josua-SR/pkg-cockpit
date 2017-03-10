@@ -1,5 +1,5 @@
 # Generated Makefile data for systemd
-# Stamp: Mon Feb 06 2017 19:47:25 GMT+0000 (UTC)
+# Stamp: Thu Mar 09 2017 15:00:42 GMT+0000 (UTC)
 
 systemd_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-terminal.jsx \
@@ -23,7 +23,6 @@ systemd_INPUTS = \
 	$(srcdir)/pkg/systemd/init.js \
 	$(srcdir)/pkg/systemd/logs.html \
 	$(srcdir)/pkg/systemd/logs.js \
-	$(srcdir)/pkg/systemd/manifest.json \
 	$(srcdir)/pkg/systemd/services.html \
 	$(srcdir)/pkg/systemd/shutdown.js \
 	$(srcdir)/pkg/systemd/ssh-list-host-keys.sh \
@@ -37,7 +36,6 @@ systemd_OUTPUTS = \
 	dist/systemd/logs.html \
 	dist/systemd/logs.min.js \
 	dist/systemd/logs.min.js.map \
-	dist/systemd/manifest.json \
 	dist/systemd/services.html \
 	dist/systemd/services.min.js \
 	dist/systemd/services.min.js.map \
@@ -52,6 +50,8 @@ systemd_OUTPUTS = \
 	dist/systemd/terminal.min.js.map \
 	$(NULL)
 
+systemd_PO = dist/systemd/po.js $(patsubst %,dist/systemd/po.%.js,$(LINGUAS))
+
 systemd_INSTALL = \
 	dist/systemd/index.html.gz \
 	dist/systemd/logs.html.gz \
@@ -64,6 +64,7 @@ systemd_INSTALL = \
 	dist/systemd/terminal.css.gz \
 	dist/systemd/terminal.html.gz \
 	dist/systemd/terminal.min.js.gz \
+	$(addsuffix .gz,$(systemd_PO)) \
 	$(NULL)
 
 systemd_DEBUG = \
@@ -78,6 +79,10 @@ systemd_DEBUG = \
 systemd_TESTS = \
 	$(NULL)
 
+dist/systemd/%.po: po/%.po
+	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
+	$(MSGGREP) -N pkg/lib/cockpit-components-terminal.jsx -N pkg/lib/console.css -N pkg/lib/journal.css -N pkg/lib/journal.js -N pkg/lib/journal_day_header.mustache -N pkg/lib/journal_line.mustache -N pkg/lib/journal_reboot.mustache -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/plot.css -N pkg/lib/plot.js -N pkg/lib/service.js -N pkg/lib/table.css -N pkg/lib/term.css -N pkg/systemd/host.css -N pkg/systemd/host.js -N pkg/systemd/index.html -N pkg/systemd/init.js -N pkg/systemd/logs.html -N pkg/systemd/logs.js -N pkg/systemd/services.html -N pkg/systemd/shutdown.js -N pkg/systemd/ssh-list-host-keys.sh -N pkg/systemd/terminal.html -N pkg/systemd/terminal.jsx -N pkg/systemd/timer.css $< > $@.tmp && mv $@.tmp $@
+
 dist/systemd/Makefile.deps: $(WEBPACK_CONFIG) $(systemd_INPUTS)
 	$(WEBPACK_RULE) -d dist/systemd/Makefile.deps $(WEBPACK_CONFIG)
 
@@ -88,8 +93,6 @@ dist/systemd/logs.html: dist/systemd/Makefile.deps
 dist/systemd/logs.min.js: dist/systemd/Makefile.deps
 
 dist/systemd/logs.min.js.map: dist/systemd/Makefile.deps
-
-dist/systemd/manifest.json: dist/systemd/Makefile.deps
 
 dist/systemd/services.html: dist/systemd/Makefile.deps
 
@@ -157,8 +160,6 @@ $(srcdir)/pkg/systemd/logs.html:
 
 $(srcdir)/pkg/systemd/logs.js:
 
-$(srcdir)/pkg/systemd/manifest.json:
-
 $(srcdir)/pkg/systemd/services.html:
 
 $(srcdir)/pkg/systemd/shutdown.js:
@@ -173,6 +174,7 @@ $(srcdir)/pkg/systemd/timer.css:
 
 WEBPACK_INPUTS += $(systemd_INPUTS)
 WEBPACK_OUTPUTS += $(systemd_OUTPUTS)
+WEBPACK_PO += $(systemd_PO)
 WEBPACK_INSTALL += $(systemd_INSTALL)
 WEBPACK_DEBUG += $(systemd_DEBUG)
 TESTS += $(systemd_TESTS)

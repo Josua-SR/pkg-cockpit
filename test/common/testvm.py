@@ -328,7 +328,9 @@ class Machine:
         if not direct:
             self._ensure_ssh_master()
 
+        # default to no translations; can be overridden in environment
         cmd = [
+            "env", "-u", "LANGUAGE", "LC_ALL=C",
             "ssh",
             "-p", str(self.ssh_port),
             "-o", "StrictHostKeyChecking=no",
@@ -844,6 +846,44 @@ class VirtEventHandler():
         self.eventLoopThread.setDaemon(True)
         self.eventLoopThread.start()
 
+TEST_DOMAIN_XML="""
+<domain type='%(type)s'>
+  <name>%(name)s</name>
+  %(cpu)s
+  <os>
+    <type arch='%(arch)s'>hvm</type>
+    <boot dev='hd'/>
+  </os>
+  <memory unit='MiB'>%(memory_in_mib)d</memory>
+  <currentMemory unit='MiB'>%(memory_in_mib)d</currentMemory>
+  <features>
+    <acpi/>
+  </features>
+  <devices>
+    <disk type='file' snapshot='external'>
+      <driver name='qemu' type='qcow2'/>
+      <source file='%(drive)s'/>
+      <target dev='vda' bus='virtio'/>
+      <serial>ROOT</serial>
+    </disk>
+    <controller type='scsi' model='virtio-scsi' index='0' id='hot'/>
+    <interface type='bridge'>
+      <source bridge='cockpit1'/>
+      <model type='virtio'/>
+      %(mac)s
+    </interface>
+    <console type='pty'>
+      <target type='serial' port='0'/>
+    </console>
+    <disk type='file' device='cdrom'>
+      <source file='%(iso)s'/>
+      <target dev='hdb' bus='ide'/>
+      <readonly/>
+    </disk>
+  </devices>
+</domain>
+"""
+
 class VirtMachine(Machine):
     memory_mb = None
     cpus = None
@@ -936,9 +976,17 @@ class VirtMachine(Machine):
         else:
             return True
 
-    def _choose_macaddr(self):
-        mac = None
+    def reserve_macaddr(self):
+        pid = os.getpid()
+        for seed in range(1, 64 * 1024):
+            mac = "9E%02x%02x%02x%04x" % ((pid >> 16) & 0xff, (pid >> 8) & 0xff, pid & 0xff, seed)
+            mac = ":".join([mac[i:i+2] for i in range(0, len(mac), 2)])
+            if self._lock_resource(mac):
+                return mac
 
+        raise Failure("Couldn't find unused mac address for '%s'" % (self.image))
+
+    def _choose_macaddr(self):
         # Check if this has a forced mac address
         for h in self._network_description.find(".//dhcp"):
             image = h.get("{urn:cockpit-project.org:cockpit}image")
@@ -947,23 +995,10 @@ class VirtMachine(Machine):
                 if mac:
                     return mac
 
-        # Now try to lock that address
-        pid = os.getpid()
-        for seed in range(1, 64 * 1024):
-            if not mac:
-                mac = "9E%02x%02x%02x%04x" % ((pid >> 16) & 0xff, (pid >> 8) & 0xff, pid & 0xff, seed)
-                mac = ":".join([mac[i:i+2] for i in range(0, len(mac), 2)])
-            if self._lock_resource(mac):
-                return mac
-            mac = None
-
-        raise Failure("Couldn't find unused mac address for '%s'" % (self.image))
+        # If not, get a random one
+        return self.reserve_macaddr()
 
     def _start_qemu(self, maintain=False, macaddr=None, wait_for_ip=True, memory_mb=None, cpus=None):
-        memory_mb = memory_mb or VirtMachine.memory_mb or MEMORY_MB;
-        cpus = cpus or VirtMachine.cpus or 1
-
-        # make sure we have a clean slate
         self._cleanup()
 
         if not os.path.exists(self.run_dir):
@@ -1000,45 +1035,47 @@ class VirtMachine(Machine):
             lease = self._static_lease_from_mac(macaddr)
             if lease:
                 static_domain_name = self.image + "_" + lease['name']
-
-        # domain xml
-        test_domain_desc_original = ""
-        with open(os.path.join(testinfra.TEST_DIR, "common/test-domain.xml"), "r") as dom_desc:
-            test_domain_desc_original = dom_desc.read()
-
-        # add the virtual machine
-        dom = None
         mac_desc = ""
+        cpu_desc = ""
+        domain_type = "qemu"
+        if os.path.exists("/dev/kvm"):
+            domain_type = "kvm"
+            cpu_desc += "<cpu mode='host-passthrough'/>\n"
+            cpu_desc += "<vcpu>%(cpus)d</vcpu>\n" % { 'cpus': cpus or VirtMachine.cpus or 1 }
+        else:
+            print >> sys.stderr, "WARNING: Starting virtual machine with emulation due to missing KVM"
+            print >> sys.stderr, "WARNING: Machine will run about 10-20 times slower"
         if macaddr:
             mac_desc = "<mac address='%(mac)s'/>" % {'mac': macaddr}
+        if static_domain_name:
+            domain_name = static_domain_name
+        else:
+            rand_extension = '-' + ''.join(random.choice(string.digits + string.ascii_lowercase) for i in range(4))
+            domain_name = self.image + rand_extension
+
+        test_domain_desc = TEST_DOMAIN_XML % {
+                                        "name": domain_name,
+                                        "type": domain_type,
+                                        "arch": self.arch,
+                                        "cpu": cpu_desc,
+                                        "memory_in_mib": memory_mb or VirtMachine.memory_mb or MEMORY_MB,
+                                        "drive": image_to_use,
+                                        "mac": mac_desc,
+                                        "iso": os.path.join(testinfra.TEST_DIR, "common/cloud-init.iso")
+                                      }
+
+        # add the virtual machine
         try:
-            if static_domain_name:
-                domain_name = static_domain_name
-            else:
-                rand_extension = '-' + ''.join(random.choice(string.digits + string.ascii_lowercase) for i in range(4))
-                domain_name = self.image + rand_extension
-            test_domain_desc = test_domain_desc_original % {
-                                            "name": domain_name,
-                                            "arch": self.arch,
-                                            "cpus": cpus,
-                                            "memory_in_mib": memory_mb,
-                                            "drive": image_to_use,
-                                            "disk_serial": "ROOT",
-                                            "mac": mac_desc,
-                                            "iso": os.path.join(testinfra.TEST_DIR, "common/cloud-init.iso")
-                                          }
             # allow debug output for this domain
             self.event_handler.allow_domain_debug_output(domain_name)
-            dom = self.virt_connection.createXML(test_domain_desc, libvirt.VIR_DOMAIN_START_AUTODESTROY)
+            self._domain = self.virt_connection.createXML(test_domain_desc, libvirt.VIR_DOMAIN_START_AUTODESTROY)
         except libvirt.libvirtError, le:
             # remove the debug output
             self.event_handler.forbid_domain_debug_output(domain_name)
-            if not static_domain_name and 'already exists with uuid' in le.message:
+            if 'already exists with uuid' in le.message:
                 raise RepeatableFailure("libvirt domain already exists: " + le.message)
             else:
                 raise
-
-        self._domain = dom
 
         macs = self._qemu_network_macs()
         if not macs:
@@ -1088,9 +1125,9 @@ class VirtMachine(Machine):
                 self._maintaining = maintain
             except RepeatableFailure:
                 self.kill()
-                if tries < 5:
+                if tries < 10:
                     tries += 1
-                    time.sleep(2)
+                    time.sleep(tries)
                     continue
                 else:
                     raise
@@ -1351,10 +1388,9 @@ class VirtMachine(Machine):
         return macs
 
     def add_netiface(self, mac=None, vlan=0):
-        cmd = "device_add e1000"
-        if mac:
-            cmd += ",mac=%s" % mac
-        macs = self._qemu_network_macs()
+        if not mac:
+            mac = self.reserve_macaddr()
+        cmd = "device_add e1000,mac=%s" % mac
         if vlan == 0:
             # selinux can prevent the creation of the bridge
             # https://bugzilla.redhat.com/show_bug.cgi?id=1267217
@@ -1366,12 +1402,7 @@ class VirtMachine(Machine):
         else:
             cmd += ",vlan=%d" % vlan
         self._qemu_monitor(cmd)
-        if mac:
-            return mac
-        for mac in self._qemu_network_macs():
-            if mac not in macs:
-                return mac
-        raise Failure("Unable to find mac address of the new network adapter")
+        return mac
 
     def needs_writable_usr(self):
         # On atomic systems, we need a hack to change files in /usr/lib/systemd

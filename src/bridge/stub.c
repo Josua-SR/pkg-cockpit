@@ -46,7 +46,7 @@
 #include <glib-unix.h>
 #include <glib/gstdio.h>
 
-/* This program is is meant to be used in place of cockpit-bridge
+/* This program is meant to be used in place of cockpit-bridge
  * in non-system setting. As such only payloads that make no changes
  * to the system or support their own forms of authentication (ei: http)
  * should be included here.
@@ -76,7 +76,8 @@ on_closed_set_flag (CockpitTransport *transport,
 }
 
 static void
-send_init_command (CockpitTransport *transport)
+send_init_command (CockpitTransport *transport,
+                   gboolean interactive)
 {
   const gchar *checksum;
   JsonObject *object;
@@ -86,14 +87,28 @@ send_init_command (CockpitTransport *transport)
   json_object_set_string_member (object, "command", "init");
   json_object_set_int_member (object, "version", 1);
 
-  checksum = cockpit_packages_get_checksum (packages);
-  if (checksum)
-    json_object_set_string_member (object, "checksum", checksum);
+  /*
+   * When in interactive mode pretend we received an init
+   * message, and don't print one out.
+   */
+  if (interactive)
+    {
+      json_object_set_string_member (object, "host", "localhost");
+    }
+  else
+    {
+      checksum = cockpit_packages_get_checksum (packages);
+      if (checksum)
+        json_object_set_string_member (object, "checksum", checksum);
+    }
 
   bytes = cockpit_json_write_bytes (object);
   json_object_unref (object);
 
-  cockpit_transport_send (transport, NULL, bytes);
+  if (interactive)
+    cockpit_transport_emit_recv (transport, NULL, bytes);
+  else
+    cockpit_transport_send (transport, NULL, bytes);
   g_bytes_unref (bytes);
 }
 
@@ -113,7 +128,6 @@ run_bridge (const gchar *interactive)
   gboolean terminated = FALSE;
   gboolean interupted = FALSE;
   gboolean closed = FALSE;
-  const gchar *init_host = NULL;
   guint sig_term;
   guint sig_int;
   int outfd;
@@ -130,6 +144,8 @@ run_bridge (const gchar *interactive)
   if (outfd < 0 || dup2 (2, 1) < 1)
     {
       g_warning ("bridge couldn't redirect stdout to stderr");
+      if (outfd > -1)
+        close (outfd);
       outfd = 1;
     }
 
@@ -145,8 +161,6 @@ run_bridge (const gchar *interactive)
 
   if (interactive)
     {
-      /* Allow skipping the init message when interactive */
-      init_host = "localhost";
       transport = cockpit_interact_transport_new (0, outfd, interactive);
     }
   else
@@ -160,11 +174,11 @@ run_bridge (const gchar *interactive)
   /* Set a path if nothing is set */
   g_setenv ("PATH", "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin", 0);
 
-  router = cockpit_router_new (transport, payload_types, init_host);
+  router = cockpit_router_new (transport, payload_types, NULL);
   cockpit_dbus_process_startup ();
 
   g_signal_connect (transport, "closed", G_CALLBACK (on_closed_set_flag), &closed);
-  send_init_command (transport);
+  send_init_command (transport, interactive ? TRUE : FALSE);
 
   while (!terminated && !closed && !interupted)
     g_main_context_iteration (NULL, TRUE);

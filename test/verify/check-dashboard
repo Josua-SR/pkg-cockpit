@@ -23,14 +23,6 @@ import parent
 from testlib import *
 
 class DashBoardHelpers:
-    def inject_extras(self, b):
-        b.eval_js("""
-        dashboard_addresses = function () {
-          var addresses = $('#dashboard-hosts .list-group-item').map(function(i,e) { return $(e).data("address"); }).get();
-          return addresses;
-        }
-        """)
-
     def check_discovered_addresses(self, b, addresses):
         b.click('#dashboard-add')
         b.wait_popup('dashboard_setup_server_dialog')
@@ -40,15 +32,22 @@ class DashBoardHelpers:
 
     def wait_discovered_addresses(self, b, expected):
         b.wait_js_func(
-            """(function (expected) {
-                var actual = $('#dashboard_setup_server_dialog datalist option').map(function(i,e) { return $(e).val() }).get();
+            """(function(expected) {
+                var nodes = document.querySelectorAll('#dashboard_setup_server_dialog datalist option');
+                var actual = Array.prototype.map.call(nodes, function(e) {
+                    return e.getAttribute("value");
+                });
                 return expected.sort().toString() == actual.sort().toString();
                 })""", expected)
 
     def wait_dashboard_addresses(self, b, expected):
         b.wait_js_func(
-            """(function (expected) {
-            return expected.sort().toString() == dashboard_addresses().sort().toString();
+            """(function(expected) {
+                var nodes = document.querySelectorAll('#dashboard-hosts .list-group-item');
+                var addresses = Array.prototype.map.call(nodes, function(e) {
+                    return e.getAttribute("data-address");
+                });
+                return expected.sort().toString() == addresses.sort().toString();
             })""", expected)
 
     def machine_remove(self, b, address):
@@ -84,7 +83,6 @@ class TestBasicDashboard(MachineCase, DashBoardHelpers):
         m3 = self.machines['machine3']
 
         self.login_and_go("/dashboard")
-        self.inject_extras(b)
 
         self.wait_dashboard_addresses (b, [ "localhost" ])
 
@@ -92,7 +90,6 @@ class TestBasicDashboard(MachineCase, DashBoardHelpers):
         b2 = self.new_browser()
         b2.default_user = "root"
         b2.login_and_go("/dashboard")
-        self.inject_extras(b2)
         self.wait_dashboard_addresses (b2, [ "localhost" ])
         b.wait_present("#dashboard-hosts a[data-address='localhost'] button.pficon-delete.disabled")
 
@@ -216,7 +213,6 @@ class TestDashboardSetup(MachineCase, DashBoardHelpers):
         # Sync them via Setup.
 
         self.login_and_go("/dashboard")
-        self.inject_extras(b)
 
         self.wait_dashboard_addresses (b, [ "localhost" ])
         b.click('#dashboard-add')
@@ -245,6 +241,7 @@ class TestDashboardSetup(MachineCase, DashBoardHelpers):
         b.click('#dashboard_setup_server_dialog .btn-primary')
         b.wait_present("#dashboard_setup_server_dialog .btn-primary:not([disabled])")
         b.wait_text('#dashboard_setup_server_dialog .dialog-error', "Login failed")
+        b.wait_present('#sync-password')
         b.set_val('#sync-password', "foobar")
 
         b.click('#dashboard_setup_server_dialog .btn-primary')
@@ -278,6 +275,42 @@ class TestDashboardSetup(MachineCase, DashBoardHelpers):
         m2.execute("ps aux | grep cockpit-bridge | grep admin")
         self.allow_hostkey_messages()
 
+    def testMachinesJsonVarMigration(self):
+        b = self.browser
+        m = self.machine
+
+        # create obsolete machines.json in /var
+        blue_conf = '{"blue": {"address": "1.2.3.4", "visible": true}}'
+        m.execute("echo '%s' > /var/lib/cockpit/machines.json" % blue_conf)
+        # prevent migration due to permission error; should not crash and keep/respect the old file
+        m.execute("""chattr +i /etc/cockpit/machines.d""")
+        self.login_and_go("/dashboard")
+        wait(lambda: m.execute("journalctl -b | grep 'migration.*machines.json.*failed'"))
+        self.wait_dashboard_addresses (b, [ "localhost", "1.2.3.4" ])
+        b.logout()
+        # should not have written anything and left the original file untouched
+        m.execute('chattr -i /etc/cockpit/machines.d && [ "$(ls /etc/cockpit/machines.d)" = "" ]')
+        self.assertEqual(m.execute("cat /var/lib/cockpit/machines.json").strip(), blue_conf)
+        self.allow_journal_messages(".*migration of /var/lib/cockpit/machines.json to /etc/cockpit/machines.d/99-webui.json failed:.*")
+
+        # now machines.d/ is writable, should migrate
+        self.login_and_go("/dashboard")
+        wait(lambda: m.execute("test ! -e /var/lib/cockpit/machines.json && ls /etc/cockpit/machines.d/99-webui.json"))
+        self.wait_dashboard_addresses (b, [ "localhost", "1.2.3.4" ])
+        b.logout()
+        self.assertEqual(m.execute('cat /etc/cockpit/machines.d/99-webui.json').strip(), blue_conf)
+
+        # old /var file should not clobber existing 99-webui.json but move to 98-migrated.json and merge its data
+        green_conf = '{"green": {"address": "9.8.7.6", "visible": true}}'
+        m.execute("echo '%s' > /var/lib/cockpit/machines.json" % green_conf)
+        self.login_and_go("/dashboard")
+        wait(lambda: m.execute("test ! -e /var/lib/cockpit/machines.json && ls /etc/cockpit/machines.d/98-migrated.json"))
+        self.wait_dashboard_addresses (b, [ "localhost", "1.2.3.4", "9.8.7.6" ])
+        b.logout()
+        self.assertEqual(m.execute('cat /etc/cockpit/machines.d/99-webui.json').strip(), blue_conf)
+        self.assertEqual(m.execute('cat /etc/cockpit/machines.d/98-migrated.json').strip(), green_conf)
+
+
 @skipImage("No dashboard on Atomic", "continuous-atomic", "fedora-atomic", "rhel-atomic")
 class TestDashboardEditLimits(MachineCase, DashBoardHelpers):
     def testEdit(self):
@@ -285,7 +318,6 @@ class TestDashboardEditLimits(MachineCase, DashBoardHelpers):
         m = self.machine
 
         self.login_and_go("/dashboard")
-        self.inject_extras(b)
         self.wait_dashboard_addresses (b, [ "localhost" ])
         old_style = b.attr("#dashboard-hosts .list-group-item[data-address='localhost']", "style")
 
@@ -325,7 +357,7 @@ class TestDashboardEditLimits(MachineCase, DashBoardHelpers):
                 n = "bad{0}".format(i)
                 d[n] = {"visible":True,"address":n}
 
-            m.execute("echo '{0}' > /var/lib/cockpit/machines.json".format(json.dumps(d)))
+            m.execute("echo '{0}' > /etc/cockpit/machines.d/99-webui.json".format(json.dumps(d)))
             return d.keys()
 
         def check_limit(limit):
@@ -341,7 +373,6 @@ class TestDashboardEditLimits(MachineCase, DashBoardHelpers):
             b.click("#dashboard_setup_server_dialog .btn-default")
 
         self.login_and_go("/dashboard")
-        self.inject_extras(b)
 
         self.wait_dashboard_addresses (b, [ "localhost" ])
         check_limit(0)

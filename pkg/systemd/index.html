@@ -9,7 +9,7 @@
     <link href="system.css" rel="stylesheet">
     <script src="../base1/jquery.js"></script>
     <script src="../base1/cockpit.js"></script>
-    <script src="../shell/po.js"></script>
+    <script src="../*/po.js"></script>
 </head>
 <body hidden>
 
@@ -69,6 +69,16 @@
       <div class="small-messages">{{SubStatus}}</div>
       {{/SubStatus}}
     </script>
+
+    <div id="motd-box" class="container-fluid page-ct" hidden>
+      <div class="alert alert-info">
+        <button type="button" class="close" aria-hidden="true">
+          <span class="pficon pficon-close"></span>
+        </button>
+        <span class="pficon pficon-info"></span>
+        <pre id="motd"></pre>
+      </div>
+    </div>
 
     <div id="server" class="container-fluid page-ct">
         <div class="col-md-4 col-lg-3 info-table-ct-container">
@@ -256,22 +266,6 @@
             </li>
         </ul>
         <div id="memory_status_graph"></div>
-    </div>
-
-    <div class="modal" id="error-popup" tabindex="-1" role="dialog" data-backdrop="static">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="error-popup-title" translate>Unexpected error</h4>
-                </div>
-                <div class="modal-body">
-                    <p id="error-popup-message"></p>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary" data-dismiss="modal" translate>Close</button>
-                </div>
-            </div>
-        </div>
     </div>
 
     <div class="modal" id="system_information_ssh_keys" tabindex="-1"

@@ -1,12 +1,11 @@
 # Generated Makefile data for sosreport
-# Stamp: Mon Feb 06 2017 19:47:25 GMT+0000 (UTC)
+# Stamp: Thu Mar 09 2017 15:00:42 GMT+0000 (UTC)
 
 sosreport_INPUTS = \
 	$(srcdir)/pkg/lib/page.css \
 	$(srcdir)/pkg/lib/table.css \
 	$(srcdir)/pkg/sosreport/index.html \
 	$(srcdir)/pkg/sosreport/index.js \
-	$(srcdir)/pkg/sosreport/manifest.json \
 	$(srcdir)/pkg/sosreport/run-sosreport.sh \
 	$(srcdir)/pkg/sosreport/sosreport.css \
 	$(srcdir)/pkg/sosreport/sosreport.png \
@@ -14,7 +13,6 @@ sosreport_INPUTS = \
 
 sosreport_OUTPUTS = \
 	dist/sosreport/index.html \
-	dist/sosreport/manifest.json \
 	dist/sosreport/sosreport.css \
 	dist/sosreport/sosreport.css.map \
 	dist/sosreport/sosreport.min.js \
@@ -22,12 +20,15 @@ sosreport_OUTPUTS = \
 	dist/sosreport/sosreport.png \
 	$(NULL)
 
+sosreport_PO = dist/sosreport/po.js $(patsubst %,dist/sosreport/po.%.js,$(LINGUAS))
+
 sosreport_INSTALL = \
 	dist/sosreport/index.html.gz \
 	dist/sosreport/manifest.json \
 	dist/sosreport/sosreport.css.gz \
 	dist/sosreport/sosreport.min.js.gz \
 	dist/sosreport/sosreport.png \
+	$(addsuffix .gz,$(sosreport_PO)) \
 	$(NULL)
 
 sosreport_DEBUG = \
@@ -38,12 +39,14 @@ sosreport_DEBUG = \
 sosreport_TESTS = \
 	$(NULL)
 
+dist/sosreport/%.po: po/%.po
+	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
+	$(MSGGREP) -N pkg/lib/page.css -N pkg/lib/table.css -N pkg/sosreport/index.html -N pkg/sosreport/index.js -N pkg/sosreport/run-sosreport.sh -N pkg/sosreport/sosreport.css -N pkg/sosreport/sosreport.png $< > $@.tmp && mv $@.tmp $@
+
 dist/sosreport/Makefile.deps: $(WEBPACK_CONFIG) $(sosreport_INPUTS)
 	$(WEBPACK_RULE) -d dist/sosreport/Makefile.deps $(WEBPACK_CONFIG)
 
 dist/sosreport/index.html: dist/sosreport/Makefile.deps
-
-dist/sosreport/manifest.json: dist/sosreport/Makefile.deps
 
 dist/sosreport/sosreport.css: dist/sosreport/Makefile.deps
 
@@ -63,8 +66,6 @@ $(srcdir)/pkg/sosreport/index.html:
 
 $(srcdir)/pkg/sosreport/index.js:
 
-$(srcdir)/pkg/sosreport/manifest.json:
-
 $(srcdir)/pkg/sosreport/run-sosreport.sh:
 
 $(srcdir)/pkg/sosreport/sosreport.css:
@@ -73,6 +74,7 @@ $(srcdir)/pkg/sosreport/sosreport.png:
 
 WEBPACK_INPUTS += $(sosreport_INPUTS)
 WEBPACK_OUTPUTS += $(sosreport_OUTPUTS)
+WEBPACK_PO += $(sosreport_PO)
 WEBPACK_INSTALL += $(sosreport_INSTALL)
 WEBPACK_DEBUG += $(sosreport_DEBUG)
 TESTS += $(sosreport_TESTS)

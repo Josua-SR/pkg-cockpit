@@ -2874,7 +2874,7 @@ function factory() {
                     return waits.promise;
                 }
             },
-            "call": { value: function(name, args) { return client.call(path, iface, name, args); },
+            "call": { value: function(name, args, options) { return client.call(path, iface, name, args, options); },
                       enumerable: false, writable: false },
             "data": { value: { }, enumerable: false }
         });
@@ -3937,6 +3937,8 @@ function factory() {
             return _("Cockpit is not compatible with the software on the system.");
         else if (problem == "no-host")
             return _("Cockpit could not contact the given host.");
+        else if (problem == "too-large")
+            return _("Too much data");
         else
             return problem;
     };

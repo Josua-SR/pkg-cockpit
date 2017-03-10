@@ -554,6 +554,12 @@ invocation = client.call(path, interface, method, args, [options])
             absence of this, the DBus service will be introspected (and the result cached) to
             ask what the method type signature is.</para></listitem>
       </varlistentry>
+      <varlistentry>
+        <term><code>timeout</code></term>
+        <listitem><para>The timeout of the call in milliseconds. The call will fail with
+           the <code>"timeout"</code> problem code. If "timeout" is not given,
+           the call will never time out.</para></listitem>
+      </varlistentry>
     </variablelist>
   </refsection>
 
@@ -628,7 +634,7 @@ invocation.always(function() { ... })
 </programlisting>
     <para>This is a standard
       <ulink url="http://api.jquery.com/category/deferred-object/">jQuery promise</ulink> method.
-      It sets up a handler to be called when when the DBus method call finishes whether successfully,
+      It sets up a handler to be called when the DBus method call finishes whether successfully,
       or fails.</para>
   </refsection>
 

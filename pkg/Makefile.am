@@ -4,32 +4,19 @@ pkg_TESTS = \
 
 TESTS += $(pkg_TESTS)
 
-# HACK: https://github.com/storaged-project/storaged/pull/68
-storageddir = $(pkgdatadir)/storaged
-nodist_storaged_DATA = \
-       pkg/storaged/override.json \
-       $(NULL)
-
-# HACK: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=808162
-networkmanagerdir = $(pkgdatadir)/networkmanager
-nodist_networkmanager_DATA = \
-       pkg/networkmanager/override.json \
-       $(NULL)
-
-# Used for testing and the 'translate' playgruond
+# Used for testing and the 'translate' playground
 playgrounddir = $(pkgdatadir)/playground
 playground_DATA = \
-	dist/playground/po.de.js \
+	dist/playground/po.extra.de.js \
 	$(NULL)
 
-dist/playground/de.po: pkg/playground/de.po
+dist/playground/extra.de.po: pkg/playground/extra.de.po
 	$(COPY_RULE)
 
 EXTRA_DIST += \
-	dist/playground/de.po \
-	pkg/playground/de.po \
-	pkg/networkmanager/override.json.in \
-	pkg/storaged/override.json.in \
+	dist/playground/extra.de.po \
+	pkg/playground/extra.de.po \
+	pkg/users/mock \
 	pkg/lib/qunit-template.html \
 	$(playground_DATA) \
 	$(pkg_TESTS)

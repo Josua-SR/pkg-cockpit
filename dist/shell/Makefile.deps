@@ -1,5 +1,5 @@
 # Generated Makefile data for shell
-# Stamp: Mon Feb 06 2017 19:47:25 GMT+0000 (UTC)
+# Stamp: Thu Mar 09 2017 15:00:42 GMT+0000 (UTC)
 
 shell_INPUTS = \
 	$(srcdir)/pkg/lib/credentials-ssh-private-keys.sh \
@@ -30,7 +30,6 @@ shell_INPUTS = \
 	$(srcdir)/pkg/shell/index.html \
 	$(srcdir)/pkg/shell/index.js \
 	$(srcdir)/pkg/shell/indexes.js \
-	$(srcdir)/pkg/shell/manifest.json \
 	$(srcdir)/pkg/shell/shell.css \
 	$(srcdir)/pkg/shell/shell.html \
 	$(srcdir)/pkg/shell/simple.html \
@@ -52,11 +51,12 @@ shell_OUTPUTS = \
 	dist/shell/index.html \
 	dist/shell/index.min.js \
 	dist/shell/index.min.js.map \
-	dist/shell/manifest.json \
 	dist/shell/shell.html \
 	dist/shell/simple.html \
 	dist/shell/stub.html \
 	$(NULL)
+
+shell_PO = dist/shell/po.js $(patsubst %,dist/shell/po.%.js,$(LINGUAS))
 
 shell_INSTALL = \
 	dist/shell/images/server-error.png \
@@ -68,10 +68,10 @@ shell_INSTALL = \
 	dist/shell/index.css.gz \
 	dist/shell/index.html \
 	dist/shell/index.min.js.gz \
-	dist/shell/manifest.json \
 	dist/shell/shell.html.gz \
 	dist/shell/simple.html \
 	dist/shell/stub.html \
+	$(addsuffix .gz,$(shell_PO)) \
 	$(NULL)
 
 shell_DEBUG = \
@@ -84,6 +84,10 @@ shell_DEBUG = \
 
 shell_TESTS = \
 	$(NULL)
+
+dist/shell/%.po: po/%.po
+	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
+	$(MSGGREP) -N pkg/lib/credentials-ssh-private-keys.sh -N pkg/lib/credentials.js -N pkg/lib/listing.less -N pkg/lib/machine-add.html -N pkg/lib/machine-auth-failed.html -N pkg/lib/machine-change-auth.html -N pkg/lib/machine-change-port.html -N pkg/lib/machine-color-picker.html -N pkg/lib/machine-dialogs.js -N pkg/lib/machine-invalid-hostkey.html -N pkg/lib/machine-not-supported.html -N pkg/lib/machine-sync-users.html -N pkg/lib/machine-unknown-hostkey.html -N pkg/lib/machines.js -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/table.css -N pkg/lib/variables.less -N pkg/shell/base_index.js -N pkg/shell/images/server-error.png -N pkg/shell/images/server-large.png -N pkg/shell/images/server-small.png -N pkg/shell/index-no-machines.js -N pkg/shell/index-stub.js -N pkg/shell/index.html -N pkg/shell/index.js -N pkg/shell/indexes.js -N pkg/shell/shell.css -N pkg/shell/shell.html -N pkg/shell/simple.html -N pkg/shell/stub.html $(addprefix -N ,$(shell find pkg/ -name manifest.json)) $< > $@.tmp && mv $@.tmp $@
 
 dist/shell/Makefile.deps: $(WEBPACK_CONFIG) $(shell_INPUTS)
 	$(WEBPACK_RULE) -d dist/shell/Makefile.deps $(WEBPACK_CONFIG)
@@ -115,8 +119,6 @@ dist/shell/index.html: dist/shell/Makefile.deps
 dist/shell/index.min.js: dist/shell/Makefile.deps
 
 dist/shell/index.min.js.map: dist/shell/Makefile.deps
-
-dist/shell/manifest.json: dist/shell/Makefile.deps
 
 dist/shell/shell.html: dist/shell/Makefile.deps
 
@@ -180,8 +182,6 @@ $(srcdir)/pkg/shell/index.js:
 
 $(srcdir)/pkg/shell/indexes.js:
 
-$(srcdir)/pkg/shell/manifest.json:
-
 $(srcdir)/pkg/shell/shell.css:
 
 $(srcdir)/pkg/shell/shell.html:
@@ -192,6 +192,7 @@ $(srcdir)/pkg/shell/stub.html:
 
 WEBPACK_INPUTS += $(shell_INPUTS)
 WEBPACK_OUTPUTS += $(shell_OUTPUTS)
+WEBPACK_PO += $(shell_PO)
 WEBPACK_INSTALL += $(shell_INSTALL)
 WEBPACK_DEBUG += $(shell_DEBUG)
 TESTS += $(shell_TESTS)

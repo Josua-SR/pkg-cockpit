@@ -1,5 +1,5 @@
 # Generated Makefile data for users
-# Stamp: Mon Feb 06 2017 19:47:25 GMT+0000 (UTC)
+# Stamp: Thu Mar 09 2017 15:00:42 GMT+0000 (UTC)
 
 users_INPUTS = \
 	$(srcdir)/pkg/lib/mustache.js \
@@ -9,7 +9,6 @@ users_INPUTS = \
 	$(srcdir)/pkg/users/authorized-keys.js \
 	$(srcdir)/pkg/users/index.html \
 	$(srcdir)/pkg/users/local.js \
-	$(srcdir)/pkg/users/manifest.json \
 	$(srcdir)/pkg/users/ssh-add-public-key.sh \
 	$(srcdir)/pkg/users/ssh-list-public-keys.sh \
 	$(srcdir)/pkg/users/users.css \
@@ -17,18 +16,20 @@ users_INPUTS = \
 
 users_OUTPUTS = \
 	dist/users/index.html \
-	dist/users/manifest.json \
 	dist/users/users.css \
 	dist/users/users.css.map \
 	dist/users/users.min.js \
 	dist/users/users.min.js.map \
 	$(NULL)
 
+users_PO = dist/users/po.js $(patsubst %,dist/users/po.%.js,$(LINGUAS))
+
 users_INSTALL = \
 	dist/users/index.html.gz \
 	dist/users/manifest.json \
 	dist/users/users.css.gz \
 	dist/users/users.min.js.gz \
+	$(addsuffix .gz,$(users_PO)) \
 	$(NULL)
 
 users_DEBUG = \
@@ -39,12 +40,14 @@ users_DEBUG = \
 users_TESTS = \
 	$(NULL)
 
+dist/users/%.po: po/%.po
+	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
+	$(MSGGREP) -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/table.css -N pkg/users/authorized-keys.js -N pkg/users/index.html -N pkg/users/local.js -N pkg/users/ssh-add-public-key.sh -N pkg/users/ssh-list-public-keys.sh -N pkg/users/users.css $< > $@.tmp && mv $@.tmp $@
+
 dist/users/Makefile.deps: $(WEBPACK_CONFIG) $(users_INPUTS)
 	$(WEBPACK_RULE) -d dist/users/Makefile.deps $(WEBPACK_CONFIG)
 
 dist/users/index.html: dist/users/Makefile.deps
-
-dist/users/manifest.json: dist/users/Makefile.deps
 
 dist/users/users.css: dist/users/Makefile.deps
 
@@ -68,8 +71,6 @@ $(srcdir)/pkg/users/index.html:
 
 $(srcdir)/pkg/users/local.js:
 
-$(srcdir)/pkg/users/manifest.json:
-
 $(srcdir)/pkg/users/ssh-add-public-key.sh:
 
 $(srcdir)/pkg/users/ssh-list-public-keys.sh:
@@ -78,6 +79,7 @@ $(srcdir)/pkg/users/users.css:
 
 WEBPACK_INPUTS += $(users_INPUTS)
 WEBPACK_OUTPUTS += $(users_OUTPUTS)
+WEBPACK_PO += $(users_PO)
 WEBPACK_INSTALL += $(users_INSTALL)
 WEBPACK_DEBUG += $(users_DEBUG)
 TESTS += $(users_TESTS)

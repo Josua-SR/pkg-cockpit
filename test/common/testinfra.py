@@ -52,9 +52,11 @@ BASELINE_PRIORITY = 10
 
 DEFAULT_VERIFY = {
     'avocado/fedora-24': [ 'master', 'pulls' ],
+    'avocado/fedora-25': [ ],
     'container/kubernetes': [ 'master', 'pulls' ],
     'koji/fedora-24': [ ],
     'koji/fedora-25': [ ],
+    'koji/fedora-26': [ ],
     'selenium/firefox': [ 'master', 'pulls' ],
     'selenium/chrome': [ 'master', 'pulls' ],
     'verify/centos-7': [ 'master', 'pulls' ],
@@ -63,6 +65,7 @@ DEFAULT_VERIFY = {
     'verify/debian-testing': [ 'master', 'pulls' ],
     'verify/fedora-24': [ ],
     'verify/fedora-25': [ 'master', 'pulls' ],
+    'verify/fedora-26': [ ],
     'verify/fedora-atomic': [ 'master', 'pulls' ],
     'verify/fedora-testing': [ ],
     'verify/rhel-7': [ 'master', 'pulls' ],

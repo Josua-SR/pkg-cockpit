@@ -1,5 +1,5 @@
 # Generated Makefile data for subscriptions
-# Stamp: Mon Feb 06 2017 19:47:25 GMT+0000 (UTC)
+# Stamp: Thu Mar 09 2017 15:00:42 GMT+0000 (UTC)
 
 subscriptions_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \
@@ -11,7 +11,6 @@ subscriptions_INPUTS = \
 	$(srcdir)/pkg/lib/variables.less \
 	$(srcdir)/pkg/subscriptions/index.html \
 	$(srcdir)/pkg/subscriptions/main.js \
-	$(srcdir)/pkg/subscriptions/manifest.json \
 	$(srcdir)/pkg/subscriptions/subscriptions-client.js \
 	$(srcdir)/pkg/subscriptions/subscriptions-register.jsx \
 	$(srcdir)/pkg/subscriptions/subscriptions-view.jsx \
@@ -20,18 +19,20 @@ subscriptions_INPUTS = \
 
 subscriptions_OUTPUTS = \
 	dist/subscriptions/index.html \
-	dist/subscriptions/manifest.json \
 	dist/subscriptions/subscriptions.css \
 	dist/subscriptions/subscriptions.css.map \
 	dist/subscriptions/subscriptions.min.js \
 	dist/subscriptions/subscriptions.min.js.map \
 	$(NULL)
 
+subscriptions_PO = dist/subscriptions/po.js $(patsubst %,dist/subscriptions/po.%.js,$(LINGUAS))
+
 subscriptions_INSTALL = \
 	dist/subscriptions/index.html.gz \
 	dist/subscriptions/manifest.json \
 	dist/subscriptions/subscriptions.css.gz \
 	dist/subscriptions/subscriptions.min.js.gz \
+	$(addsuffix .gz,$(subscriptions_PO)) \
 	$(NULL)
 
 subscriptions_DEBUG = \
@@ -42,12 +43,14 @@ subscriptions_DEBUG = \
 subscriptions_TESTS = \
 	$(NULL)
 
+dist/subscriptions/%.po: po/%.po
+	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
+	$(MSGGREP) -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-select.jsx -N pkg/lib/listing.less -N pkg/lib/page.css -N pkg/lib/table.css -N pkg/lib/variables.less -N pkg/subscriptions/index.html -N pkg/subscriptions/main.js -N pkg/subscriptions/subscriptions-client.js -N pkg/subscriptions/subscriptions-register.jsx -N pkg/subscriptions/subscriptions-view.jsx -N pkg/subscriptions/subscriptions.css $< > $@.tmp && mv $@.tmp $@
+
 dist/subscriptions/Makefile.deps: $(WEBPACK_CONFIG) $(subscriptions_INPUTS)
 	$(WEBPACK_RULE) -d dist/subscriptions/Makefile.deps $(WEBPACK_CONFIG)
 
 dist/subscriptions/index.html: dist/subscriptions/Makefile.deps
-
-dist/subscriptions/manifest.json: dist/subscriptions/Makefile.deps
 
 dist/subscriptions/subscriptions.css: dist/subscriptions/Makefile.deps
 
@@ -75,8 +78,6 @@ $(srcdir)/pkg/subscriptions/index.html:
 
 $(srcdir)/pkg/subscriptions/main.js:
 
-$(srcdir)/pkg/subscriptions/manifest.json:
-
 $(srcdir)/pkg/subscriptions/subscriptions-client.js:
 
 $(srcdir)/pkg/subscriptions/subscriptions-register.jsx:
@@ -87,6 +88,7 @@ $(srcdir)/pkg/subscriptions/subscriptions.css:
 
 WEBPACK_INPUTS += $(subscriptions_INPUTS)
 WEBPACK_OUTPUTS += $(subscriptions_OUTPUTS)
+WEBPACK_PO += $(subscriptions_PO)
 WEBPACK_INSTALL += $(subscriptions_INSTALL)
 WEBPACK_DEBUG += $(subscriptions_DEBUG)
 TESTS += $(subscriptions_TESTS)
