@@ -12,7 +12,7 @@ endif
 export HOME=$(CURDIR)/debian/tmp/home
 
 %:
-	dh $@ --with=systemd
+	dh $@ --with=systemd,autoreconf
 
 # Apply patches using git in order to support binary patches. Note that
 # we also reset mtimes since patches should be "complete" and include both
