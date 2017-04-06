@@ -1,3 +1,2 @@
-- test-suite fails in a pbuilder chroot (fixed in 138)
 - generate proper upstream changelog from
   https://github.com/cockpit-project/cockpit/releases
