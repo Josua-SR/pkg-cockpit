@@ -1,0 +1,47 @@
+From 14df73739c5b2b2bf9698a7a949bc3da1802dca5 Mon Sep 17 00:00:00 2001
+From: Martin Pitt <mpitt@redhat.com>
+Date: Sun, 2 Apr 2017 23:23:30 +0200
+Subject: [PATCH] test: Run with temporary $XDG_RUNTIME_DIR
+
+Complete commit 9a23bb7b by also running tests with a temporary runtime
+directory.
+
+Drop setting $HOME in debian/rules.
+
+Fixes #6245
+Reviewed-by: Peter <petervo@redhat.com>
+---
+ src/base1/Makefile.am | 2 +-
+ tools/debian/rules    | 3 ---
+ 2 files changed, 1 insertion(+), 4 deletions(-)
+
+diff --git a/src/base1/Makefile.am b/src/base1/Makefile.am
+index f0bd918..b475cb8 100644
+--- a/src/base1/Makefile.am
++++ b/src/base1/Makefile.am
+@@ -23,7 +23,7 @@ basedebug_DATA = \
+ 	dist/base1/cockpit.min.js.map \
+ 	$(NULL)
+ 
+-AM_TESTS_ENVIRONMENT = export G_DEBUG=fatal-criticals,fatal-warnings ; export XDG_CACHE_HOME=$$(mktemp -d) ;
++AM_TESTS_ENVIRONMENT = export G_DEBUG=fatal-criticals,fatal-warnings ; export XDG_CACHE_HOME=$$(mktemp -d) ; export XDG_RUNTIME_DIR=$$XDG_CACHE_HOME ;
+ 
+ dist/base1/cockpit.min.css: src/base1/cockpit.css
+ 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
+diff --git a/tools/debian/rules b/tools/debian/rules
+index e0878bf..ac08a22 100755
+--- a/tools/debian/rules
++++ b/tools/debian/rules
+@@ -8,9 +8,6 @@ ifneq ($(shell dpkg -s libpcp3-dev >/dev/null 2>&1 && echo yes),yes)
+ 	CONFIG_OPTIONS = --disable-pcp
+ endif
+ 
+-# pbuilder's user has home dir /nonexistent, but our tests want to have working $XDG dirs
+-export HOME=$(CURDIR)/debian/tmp/home
+-
+ %:
+ 	dh $@ --with=systemd
+ 
+-- 
+2.9.3
+
