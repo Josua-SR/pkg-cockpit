@@ -8,6 +8,9 @@ ifneq ($(shell dpkg -s libpcp3-dev >/dev/null 2>&1 && echo yes),yes)
 	CONFIG_OPTIONS = --disable-pcp
 endif
 
+# pbuilder's user has home dir /nonexistent, but our tests want to have working $XDG dirs
+export HOME=$(CURDIR)/debian/tmp/home
+
 %:
 	dh $@ --with=systemd
 
@@ -58,7 +61,7 @@ override_dh_install:
 	make install-tests DESTDIR=debian/cockpit-tests
 
 override_dh_fixperms:
-	dh_fixperms -Xcockpit-session -Xcockpit-polkit
+	dh_fixperms -Xcockpit-session
 
 override_dh_gencontrol:
 	dh_gencontrol -- -Vbridge:minversion="$(shell tools/min-base-version)"

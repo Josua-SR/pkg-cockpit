@@ -1,3 +1,13 @@
+cockpit (137-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Does not use kernel keyring any more, thus this should fix the FTBFS on
+      mips/mipsel and Ubuntu armhf.
+  * Update packaging for moving from pam_reauthorize.so and cockpit-polkit
+    to cockpit-askpass helper.
+
+ -- Martin Pitt <mpitt@debian.org>  Thu, 06 Apr 2017 08:10:15 +0200
+
 cockpit (134-1) experimental; urgency=medium
 
   * Initial release. (Closes: #820107)
