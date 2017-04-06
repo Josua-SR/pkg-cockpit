@@ -1,7 +1,4 @@
-- test-suite fails in a pbuilder chroot
-- git builds (pulling deps via npm over the net) vs minified js in the dist
-  tarball
-- /var/lib/cockpit might need a different group (unclear what it is being used for)
+- test-suite fails in a pbuilder chroot (fixed in 138)
 - run cockpit-ws unpriviliged under cockpit-ws user
 - generate proper upstream changelog from
   https://github.com/cockpit-project/cockpit/releases
