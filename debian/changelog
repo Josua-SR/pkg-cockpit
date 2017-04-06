@@ -1,3 +1,11 @@
+cockpit (137-3) unstable; urgency=medium
+
+  * Build with autoreconf.
+    This will make the previous patches actually effective, and also ensure
+    good architecture support.
+
+ -- Martin Pitt <mpitt@debian.org>  Thu, 06 Apr 2017 14:06:31 +0200
+
 cockpit (137-2) unstable; urgency=medium
 
   * Cherry-pick upstream patches to fix build with inaccessible home directory.
