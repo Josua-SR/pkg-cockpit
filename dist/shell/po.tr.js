@@ -315,6 +315,10 @@ return plural;
   null,
   "Kapalı"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "Old Password": [
   null,
   "Eski Parola"

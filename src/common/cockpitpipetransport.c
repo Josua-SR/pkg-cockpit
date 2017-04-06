@@ -21,6 +21,7 @@
 
 #include "cockpitpipetransport.h"
 
+#include "cockpitframe.h"
 #include "cockpitpipe.h"
 
 #include <glib-unix.h>
@@ -335,8 +336,8 @@ cockpit_transport_read_from_pipe (CockpitTransport *self,
   GBytes *message;
   GBytes *payload;
   gchar *channel;
-  guint32 i, size;
-  gchar *data;
+  gssize size;
+  gsize i;
 
   /* This may be updated during the loop. */
   g_assert (closed != NULL);
@@ -344,38 +345,27 @@ cockpit_transport_read_from_pipe (CockpitTransport *self,
 
   while (!*closed)
     {
-      size = 0;
-      data = (gchar *)input->data;
-      for (i = 0; i < input->len; i++)
-        {
-          /* Check invalid characters, prevent integer overflow, limit max length */
-          if (i > 7 || data[i] < '0' || data[i] > '9')
-            break;
-          size *= 10;
-          size += data[i] - '0';
-        }
+      size = cockpit_frame_parse (input->data, input->len, &i);
 
-      if (i == input->len)
+      if (size == 0)
         {
           if (!end_of_data)
             g_debug ("%s: want more data", logname);
           break;
         }
-
-      if (data[i] != '\n')
+      else if (size < 0)
         {
           g_warning ("%s: incorrect protocol: received invalid length prefix", logname);
           cockpit_pipe_close (pipe, "protocol-error");
           break;
         }
-
-      if (input->len < i + 1 + size)
+      else if (input->len < i + size)
         {
           g_debug ("%s: want more data 2", logname);
           break;
         }
 
-      message = cockpit_pipe_consume (input, i + 1, size, 0);
+      message = cockpit_pipe_consume (input, i, size, 0);
       payload = cockpit_transport_parse_frame (message, &channel);
       if (payload)
         {

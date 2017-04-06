@@ -110,6 +110,14 @@
 <td><p>A javascript plain object with the <code class="code">"t"</code> property set to a DBus type string,
             and the <code class="code">"v"</code> property set to a value.</p></td>
 </tr>
+<tr>
+<td><p><span class="term"><code class="code">HANDLE 'h'</code></span></p></td>
+<td><p>A javascript object that describes a cockpit channel which represents the
+           passed file descriptor. The <code class="code">payload</code> is always set to <code class="code">stream</code>.
+           Pass it to <a class="link" href="cockpit-channels.html#cockpit-channels-channel" title="cockpit.channel()">cockpit.channel()</a> to create
+           the channel and start reading or writing on it. Handles can only be
+           received, not sent from within cockpit.</p></td>
+</tr>
 </tbody>
 </table></div>
 </div>
@@ -520,8 +528,10 @@ invocation = client.call(path, interface, method, args, [options])
 <tbody>
 <tr>
 <td><p><span class="term"><code class="code">flags</code></span></p></td>
-<td><p>A string containing DBus message flags. No flags are defined at
-          this time.</p></td>
+<td><p>A string containing DBus message flags. The character <code class="code">"i"</code>
+            indicates to the dbus service that interactive authentication is allowed. If the
+            entire <code class="code">flags</code> field is missing, then <code class="code">"i"</code> is set by
+            default.</p></td>
 </tr>
 <tr>
 <td><p><span class="term"><code class="code">type</code></span></p></td>

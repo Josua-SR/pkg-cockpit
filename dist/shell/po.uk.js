@@ -315,6 +315,10 @@ return plural;
   null,
   "Вимкнено"
  ],
+ "Ok": [
+  null,
+  "Гаразд"
+ ],
  "Old Password": [
   null,
   "Старий пароль"

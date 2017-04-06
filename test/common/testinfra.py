@@ -65,6 +65,7 @@ DEFAULT_VERIFY = {
     'verify/debian-testing': [ 'master', 'pulls' ],
     'verify/fedora-24': [ ],
     'verify/fedora-25': [ 'master', 'pulls' ],
+    'verify/fedora-i386': [ 'master', 'pulls' ],
     'verify/fedora-26': [ ],
     'verify/fedora-atomic': [ 'master', 'pulls' ],
     'verify/fedora-testing': [ ],
@@ -90,14 +91,6 @@ DEFAULT_IMAGE_REFRESH = {
     'debian-8': {
         'triggers': [ "verify/debian-8" ]
     },
-    'fedora-24': {
-        'triggers': [
-            "avocado/fedora-24",
-            "selenium/firefox",
-            "selenium/chrome",
-            "verify/fedora-24",
-        ]
-    },
     'fedora-25': {
         'triggers': [
             "verify/fedora-25",
@@ -110,6 +103,9 @@ DEFAULT_IMAGE_REFRESH = {
     'fedora-testing': {
         'triggers': [ "verify/fedora-testing" ]
     },
+    'fedora-i386': {
+        'triggers': [ "verify/fedora-i386" ]
+    },
     'ubuntu-1604': {
         'triggers': [ "verify/ubuntu-1604", ]
     },
@@ -118,6 +114,13 @@ DEFAULT_IMAGE_REFRESH = {
                       "verify/fedora-25",
                       "verify/rhel-7" ],
         'refresh-days': 30
+    },
+    'ipa': {
+        'triggers': [ "verify/fedora-25",
+                      "verify/rhel-7",
+                      "verify/ubuntu-1604",
+                      "verify/debian-8" ],
+        'refresh-days': 120
     }
 }
 
@@ -634,17 +637,9 @@ class GitHub(object):
 
     def scan_for_image_tasks(self):
         results = [ ]
-
-        # Trigger based on how old the youngest issue is
-        for image, wait_time in self.scan_image_wait_times().items():
-            if wait_time <= 0:
-                results.append(GitHub.TaskEntry(BASELINE_PRIORITY, GithubImageTask("refresh-" + image,
-                                                                                   image,
-                                                                                   DEFAULT_IMAGE_REFRESH[image],
-                                                                                   None)))
+        requested = set()
 
         # Trigger on explicit requests
-
         def issue_requests_image_refresh(issue, comments, image):
             request = "bot: " + ISSUE_TITLE_IMAGE_REFRESH.format(image)
             in_process_prefix = "Image creation for {} in process".format(image)
@@ -661,10 +656,19 @@ class GitHub(object):
             comments = self.get(issue['comments_url'])
             for image in DEFAULT_IMAGE_REFRESH:
                 if issue_requests_image_refresh(issue, comments, image):
+                    requested.add(image)
                     results.append(GitHub.TaskEntry(BASELINE_PRIORITY, GithubImageTask("refresh-" + image,
                                                                                        image,
                                                                                        DEFAULT_IMAGE_REFRESH[image],
                                                                                        issue)))
+
+        # Trigger based on how old the youngest issue is
+        for image, wait_time in self.scan_image_wait_times().items():
+            if wait_time <= 0 and image not in requested:
+                results.append(GitHub.TaskEntry(BASELINE_PRIORITY, GithubImageTask("refresh-" + image,
+                                                                                   image,
+                                                                                   DEFAULT_IMAGE_REFRESH[image],
+                                                                                   None)))
 
         return results
 

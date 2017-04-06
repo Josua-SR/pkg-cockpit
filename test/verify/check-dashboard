@@ -78,6 +78,7 @@ class TestBasicDashboard(MachineCase, DashBoardHelpers):
 
     def testBasic(self):
         b = self.browser
+        m = self.machine
 
         m2 = self.machines['machine2']
         m3 = self.machines['machine3']
@@ -96,6 +97,12 @@ class TestBasicDashboard(MachineCase, DashBoardHelpers):
         self.add_machine (b, m2.address)
         self.wait_dashboard_addresses (b, [ "localhost", m2.address ])
         self.wait_dashboard_addresses (b2, [ "localhost", m2.address ])
+
+        # Should show successful state and icon
+        b.wait_present("#dashboard-hosts a.connected[data-address='%s'] img" % m2.address)
+        b.wait_attr("#dashboard-hosts a.connected[data-address='%s'] img" % m2.address, 'src', '../shell/images/server-small.png')
+        b2.wait_present("#dashboard-hosts a.connected[data-address='%s'] img" % m2.address)
+        b2.wait_attr("#dashboard-hosts a.connected[data-address='%s'] img" % m2.address, 'src', '../shell/images/server-small.png')
 
         self.add_machine (b, m3.address)
         self.wait_dashboard_addresses (b, [ "localhost", m3.address, m2.address ])
@@ -122,12 +129,29 @@ class TestBasicDashboard(MachineCase, DashBoardHelpers):
         self.check_discovered_addresses (b, [ m3.address ])
         self.check_discovered_addresses (b2, [ m3.address ])
 
+        # Should show successful state and icon again
+        b.wait_present("#dashboard-hosts a.connected[data-address='%s'] img" % m2.address)
+        b.wait_attr("#dashboard-hosts a.connected[data-address='%s'] img" % m2.address, 'src', '../shell/images/server-small.png')
+        b2.wait_present("#dashboard-hosts a.connected[data-address='%s'] img" % m2.address)
+        b2.wait_attr("#dashboard-hosts a.connected[data-address='%s'] img" % m2.address, 'src', '../shell/images/server-small.png')
+
         # And the second one, check addresses on both browsers
         self.add_machine (b, m3.address, True)
         self.wait_dashboard_addresses (b, [ "localhost", m2.address, m3.address ])
         self.wait_dashboard_addresses (b2, [ "localhost", m2.address, m3.address ])
         self.check_discovered_addresses (b, [  ])
         self.check_discovered_addresses (b2, [  ])
+
+        # Move m2 known host key to ~/.ssh, verify that it's known
+        self.machine_remove (b, m2.address)
+        self.wait_dashboard_addresses (b, [ "localhost", m3.address ])
+        key = m.execute("grep '{0}' /etc/ssh/ssh_known_hosts && sed -i '/{0}/d' /etc/ssh/ssh_known_hosts".format(m2.address))
+        m.execute("mkdir ~admin/.ssh && echo '{0}' > ~admin/.ssh/known_hosts && chown -R admin:admin ~admin/.ssh""".format(key))
+        self.add_machine (b, m2.address, True)
+        self.wait_dashboard_addresses (b, [ "localhost", m2.address, m3.address ])
+        # Should be connected, no error
+        b.wait_present("#dashboard-hosts a.connected[data-address='%s'] img" % m2.address)
+        b.wait_attr("#dashboard-hosts a.connected[data-address='%s'] img" % m2.address, 'src', '../shell/images/server-small.png')
 
         # Test change user, not doing in edit to reuse machines
 
@@ -309,7 +333,7 @@ class TestDashboardSetup(MachineCase, DashBoardHelpers):
         b.logout()
         self.assertEqual(m.execute('cat /etc/cockpit/machines.d/99-webui.json').strip(), blue_conf)
         self.assertEqual(m.execute('cat /etc/cockpit/machines.d/98-migrated.json').strip(), green_conf)
-
+        self.allow_journal_messages('.* couldn\'t connect: .*')
 
 @skipImage("No dashboard on Atomic", "continuous-atomic", "fedora-atomic", "rhel-atomic")
 class TestDashboardEditLimits(MachineCase, DashBoardHelpers):
@@ -378,16 +402,10 @@ class TestDashboardEditLimits(MachineCase, DashBoardHelpers):
         check_limit(0)
 
         self.wait_dashboard_addresses (b, fake_machines(3))
-        if 'rhel' in m.image:
-            check_limit(5)
-        else:
-            check_limit(0)
+        check_limit(0)
 
         self.wait_dashboard_addresses (b, fake_machines(14))
-        if 'rhel' in m.image:
-            check_limit(5)
-        else:
-            check_limit(20)
+        check_limit(20)
         self.allow_journal_messages(".*couldn't connect: Failed to resolve hostname bad.*")
 
 if __name__ == '__main__':

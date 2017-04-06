@@ -22,6 +22,7 @@
 #include "cockpitdbusjson.h"
 
 #include "cockpitchannel.h"
+#include "cockpitpipechannel.h"
 #include "cockpitdbuscache.h"
 #include "cockpitdbusinternal.h"
 #include "cockpitdbusmeta.h"
@@ -30,6 +31,8 @@
 #include "common/cockpitjson.h"
 
 #include <json-glib/json-glib.h>
+
+#include <gio/gunixfdlist.h>
 
 #include <string.h>
 
@@ -41,6 +44,9 @@
  */
 
 gboolean cockpit_dbus_json_allow_external = TRUE;
+
+/* The maximum number of DBus passed fds open without a channel */
+#define MAX_RECEIVED_DBUS_FDS 16
 
 #define COCKPIT_DBUS_JSON(o)    (G_TYPE_CHECK_INSTANCE_CAST ((o), COCKPIT_TYPE_DBUS_JSON, CockpitDBusJson))
 
@@ -68,6 +74,9 @@ typedef struct {
   GHashTable *invocations;
   GHashTable *registered;
   guint last_invocation;
+
+  /* File descriptors */
+  GQueue *fd_channel_ids;
 } CockpitDBusJson;
 
 typedef struct {
@@ -91,6 +100,10 @@ typedef struct {
 } CockpitDBusJsonClass;
 
 G_DEFINE_TYPE (CockpitDBusJson, cockpit_dbus_json, COCKPIT_TYPE_CHANNEL);
+
+#if !GLIB_CHECK_VERSION(2,46,0)
+#define G_DBUS_MESSAGE_FLAGS_ALLOW_INTERACTIVE_AUTHORIZATION (1<<2)
+#endif
 
 static const gchar *
 value_type_name (JsonNode *node)
@@ -138,7 +151,7 @@ check_int_type (JsonNode *node,
   if (value < min || value > max)
     {
       g_set_error(error, G_DBUS_ERROR, G_DBUS_ERROR_INVALID_ARGS,
-                  "Number '%li' is not in range for the expected type '%.*s'", value,
+                  "Number '%" G_GINT64_FORMAT "' is not in range for the expected type '%.*s'", value,
                   (int) g_variant_type_get_string_length (type),
                   g_variant_type_peek_string (type));
       return FALSE;
@@ -588,11 +601,18 @@ parse_json (JsonNode *node,
   return NULL;
 }
 
+typedef struct {
+  GUnixFDList *fdlist;
+  GQueue *fdids;
+} VariantContext;
+
 static JsonNode *
-build_json (GVariant *value);
+build_json (GVariant *value,
+            VariantContext *context);
 
 static JsonObject *
-build_json_variant (GVariant *value)
+build_json_variant (GVariant *value,
+                    VariantContext *context)
 {
   GVariant *child;
   JsonObject *object;
@@ -600,7 +620,7 @@ build_json_variant (GVariant *value)
   child = g_variant_get_variant (value);
   object = json_object_new ();
   json_object_set_string_member (object, "t", g_variant_get_type_string (child));
-  json_object_set_member (object, "v", build_json (child));
+  json_object_set_member (object, "v", build_json (child, context));
 
   g_variant_unref (child);
 
@@ -628,7 +648,8 @@ build_json_byte_array (GVariant *value)
 }
 
 static JsonArray *
-build_json_array_or_tuple (GVariant *value)
+build_json_array_or_tuple (GVariant *value,
+                           VariantContext *context)
 {
   GVariantIter iter;
   GVariant *child;
@@ -639,7 +660,7 @@ build_json_array_or_tuple (GVariant *value)
   g_variant_iter_init (&iter, value);
   while ((child = g_variant_iter_next_value (&iter)) != NULL)
     {
-      json_array_add_element (array, build_json (child));
+      json_array_add_element (array, build_json (child, context));
       g_variant_unref (child);
     }
 
@@ -648,7 +669,8 @@ build_json_array_or_tuple (GVariant *value)
 
 static JsonObject *
 build_json_dictionary (const GVariantType *entry_type,
-                       GVariant *dict)
+                       GVariant *dict,
+                       VariantContext *context)
 {
   const GVariantType *key_type;
   GVariantIter iter;
@@ -674,12 +696,12 @@ build_json_dictionary (const GVariantType *entry_type,
 
       if (is_string)
         {
-          json_object_set_member (object, g_variant_get_string (key, NULL), build_json (value));
+          json_object_set_member (object, g_variant_get_string (key, NULL), build_json (value, context));
         }
       else
         {
           key_string = g_variant_print (key, FALSE);
-          json_object_set_member (object, key_string, build_json (value));
+          json_object_set_member (object, key_string, build_json (value, context));
           g_free (key_string);
         }
 
@@ -691,7 +713,64 @@ build_json_dictionary (const GVariantType *entry_type,
 }
 
 static JsonNode *
-build_json (GVariant *value)
+build_json_fd_channel (GVariant *value,
+                       VariantContext *context)
+{
+  JsonObject *object;
+  GError *error = NULL;
+  JsonNode *node;
+  gint fd = -1;
+  gchar *old;
+  const gchar *id;
+
+  if (context->fdlist)
+    {
+      fd = g_unix_fd_list_get (context->fdlist, g_variant_get_handle (value), &error);
+      if (fd == -1)
+        {
+          g_warning ("couldn't dup file descriptor from DBus message: %s", error->message);
+          g_clear_error (&error);
+        }
+    }
+
+  if (fd < 0)
+    {
+      node = json_node_new (JSON_NODE_NULL);
+    }
+  else
+    {
+      g_assert (context->fdlist != NULL);
+      g_assert (context->fdids != NULL);
+
+      node = json_node_new (JSON_NODE_OBJECT);
+
+      /* Add a new internal channel name for this file descriptor */
+      id = cockpit_pipe_channel_add_internal_fd (fd);
+      g_queue_push_tail (context->fdids, (gpointer) g_strdup (id));
+
+      /* And only keep the last N ready for opening channels */
+      while (g_queue_get_length (context->fdids) > MAX_RECEIVED_DBUS_FDS)
+        {
+          old = (gchar *)g_queue_pop_head (context->fdids);
+          cockpit_pipe_channel_remove_internal_fd (old);
+
+          g_free (old);
+        }
+
+      /* This is sent back as the list of channel options to use */
+      object = json_object_new ();
+      json_object_set_string_member (object, "payload", "stream");
+      json_object_set_string_member (object, "internal", id);
+      json_node_set_object (node, object);
+      json_object_unref (object);
+    }
+
+  return node;
+}
+
+static JsonNode *
+build_json (GVariant *value,
+            VariantContext *context)
 {
   const GVariantType *type;
   const GVariantType *element_type;
@@ -742,8 +821,7 @@ build_json (GVariant *value)
       return node;
 
     case G_VARIANT_CLASS_HANDLE:
-      node = json_node_new (JSON_NODE_VALUE);
-      json_node_set_int (node, g_variant_get_handle (value));
+      node = build_json_fd_channel (value, context);
       return node;
 
     case G_VARIANT_CLASS_DOUBLE:
@@ -759,7 +837,7 @@ build_json (GVariant *value)
       return node;
 
     case G_VARIANT_CLASS_VARIANT:
-      object = build_json_variant (value);
+      object = build_json_variant (value, context);
       node = json_node_new (JSON_NODE_OBJECT);
       json_node_take_object (node, object);
       return node;
@@ -769,7 +847,7 @@ build_json (GVariant *value)
       element_type = g_variant_type_element (type);
       if (g_variant_type_is_dict_entry (element_type))
         {
-          object = build_json_dictionary (element_type, value);
+          object = build_json_dictionary (element_type, value, context);
           node = json_node_new (JSON_NODE_OBJECT);
           json_node_take_object (node, object);
         }
@@ -779,7 +857,7 @@ build_json (GVariant *value)
         }
       else
         {
-          array = build_json_array_or_tuple (value);
+          array = build_json_array_or_tuple (value, context);
           node = json_node_new (JSON_NODE_ARRAY);
           json_node_set_array (node, array);
           json_array_unref (array);
@@ -787,7 +865,7 @@ build_json (GVariant *value)
       return node;
 
     case G_VARIANT_CLASS_TUPLE:
-      array = build_json_array_or_tuple (value);
+      array = build_json_array_or_tuple (value, context);
       node = json_node_new (JSON_NODE_ARRAY);
       json_node_set_array (node, array);
       json_array_unref (array);
@@ -859,13 +937,14 @@ build_signature (GVariant *variant)
 
 static JsonNode *
 build_json_body (GVariant *body,
+                 VariantContext *context,
                  gchar **type)
 {
   if (body)
     {
       if (type)
         *type = build_signature (body);
-      return build_json (body);
+      return build_json (body, context);
     }
   else
     {
@@ -883,13 +962,14 @@ build_json_signal (const gchar *path,
 {
   JsonObject *object;
   JsonArray *signal;
+  VariantContext context = { NULL };
 
   object = json_object_new ();
   signal = json_array_new ();
   json_array_add_string_element (signal, path);
   json_array_add_string_element (signal, interface);
   json_array_add_string_element (signal, member);
-  json_array_add_element (signal, build_json_body (body, NULL));
+  json_array_add_element (signal, build_json_body (body, &context, NULL));
   json_object_set_array_member (object, "signal", signal);
 
   return object;
@@ -982,6 +1062,7 @@ send_dbus_reply (CockpitDBusJson *self,
                  GDBusMessage *message)
 {
   CockpitDBusPeer *peer;
+  VariantContext context = { NULL };
   GVariant *scrape = NULL;
   JsonObject *object;
   GString *flags;
@@ -1006,7 +1087,15 @@ send_dbus_reply (CockpitDBusJson *self,
       scrape = g_dbus_message_get_body (message);
     }
 
-  json_array_add_element (reply, build_json_body (g_dbus_message_get_body (message),
+  context.fdlist = g_dbus_message_get_unix_fd_list (message);
+  if (context.fdlist)
+    {
+      if (!self->fd_channel_ids)
+        self->fd_channel_ids = g_queue_new ();
+      context.fdids = self->fd_channel_ids;
+    }
+
+  json_array_add_element (reply, build_json_body (g_dbus_message_get_body (message), &context,
                                                   call->type != NULL ? &type : NULL));
 
   if (type)
@@ -1147,6 +1236,10 @@ handle_dbus_call_on_interface (CockpitDBusJson *self,
                                             call->interface,
                                             call->method);
 
+  /* When no flags or interactive flags not set */
+  if (!call->flags || strchr (call->flags, 'i'))
+    g_dbus_message_set_flags (message, G_DBUS_MESSAGE_FLAGS_ALLOW_INTERACTIVE_AUTHORIZATION);
+
   g_dbus_message_set_body (message, parameters);
   parameters = NULL;
 
@@ -1216,12 +1309,6 @@ array_string_element (JsonArray *array,
     return json_node_get_string (node);
   return NULL;
 }
-
-/* Useful analogs for the errors below if not yet defined by glib */
-#if !GLIB_CHECK_VERSION(2,42,0)
-#define G_DBUS_ERROR_UNKNOWN_INTERFACE G_DBUS_ERROR_UNKNOWN_METHOD
-#define G_DBUS_ERROR_UNKNOWN_OBJECT G_DBUS_ERROR_UNKNOWN_METHOD
-#endif
 
 static gboolean
 parse_json_method (CockpitDBusJson *self,
@@ -1919,7 +2006,7 @@ build_json_update (GHashTable *paths)
 
               g_hash_table_iter_init (&k, properties);
               while (g_hash_table_iter_next (&k, (gpointer *)&property, (gpointer *)&value))
-                json_object_set_member (iface, property, build_json (value));
+                json_object_set_member (iface, property, build_json (value, NULL));
 
               json_object_set_object_member (object, interface, iface);
             }
@@ -2243,6 +2330,7 @@ on_method_invocation (GDBusConnection *connection,
   gchar *cookie = NULL;
   JsonObject *object;
   JsonArray *call;
+  VariantContext context = { NULL };
 
   message = g_dbus_method_invocation_get_message (invocation);
   flags = g_dbus_message_get_flags (message);
@@ -2252,7 +2340,7 @@ on_method_invocation (GDBusConnection *connection,
   json_array_add_string_element (call, object_path);
   json_array_add_string_element (call, interface_name);
   json_array_add_string_element (call, method_name);
-  json_array_add_element (call, build_json (parameters));
+  json_array_add_element (call, build_json (parameters, &context));
   json_object_set_array_member (object, "call", call);
 
   if (!(flags & G_DBUS_MESSAGE_FLAGS_NO_REPLY_EXPECTED))
@@ -2876,10 +2964,15 @@ cockpit_dbus_json_dispose (GObject *object)
       peer = value;
 
       g_free (peer->name);
-      g_signal_handler_disconnect (peer->cache, peer->meta_sig);
-      g_signal_handler_disconnect (peer->cache, peer->update_sig);
-      g_object_run_dispose (G_OBJECT (peer->cache));
-      g_object_unref (peer->cache);
+
+      if (peer->cache)
+        {
+          g_signal_handler_disconnect (peer->cache, peer->meta_sig);
+          g_signal_handler_disconnect (peer->cache, peer->update_sig);
+          g_object_run_dispose (G_OBJECT (peer->cache));
+          g_object_unref (peer->cache);
+        }
+
       cockpit_dbus_rules_free (peer->rules);
 
       if (self->connection)
@@ -2910,6 +3003,22 @@ cockpit_dbus_json_dispose (GObject *object)
           g_dbus_method_invocation_return_dbus_error (value, "org.freedesktop.DBus.Error.Failed",
                                                       "The DBus interface for this method has been disconnected");
         }
+    }
+
+  if (self->fd_channel_ids)
+    {
+      while (!g_queue_is_empty (self->fd_channel_ids))
+        {
+          gchar *id;
+
+          id = (gchar *)g_queue_pop_head (self->fd_channel_ids);
+          cockpit_pipe_channel_remove_internal_fd (id);
+
+          g_free (id);
+        }
+
+      g_queue_free (self->fd_channel_ids);
+      self->fd_channel_ids = NULL;
     }
 
   /* Divorce ourselves the outstanding calls */

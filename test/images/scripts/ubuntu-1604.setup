@@ -15,9 +15,8 @@ COCKPIT_DEPS="\
 cryptsetup \
 docker.io \
 libjson-glib-1.0-0 \
-libpcp3 \
 libpolkit-agent-1-0 \
-libpolkit-gobject-1-0 \
+libpcp3 \
 libpwquality-tools \
 libssh-4 \
 libvirt-daemon-system \
@@ -51,7 +50,6 @@ libssh-dev \
 zlib1g-dev \
 libkrb5-dev \
 libxslt1-dev \
-libkeyutils-dev \
 libglib2.0-dev \
 libsystemd-dev \
 libpolkit-agent-1-dev \
@@ -141,8 +139,6 @@ mkdir /var/log/journal
 # Allow root login with password
 sed -i 's/^[# ]*PermitRootLogin .*/PermitRootLogin yes/' /etc/ssh/sshd_config
 
-# Disable old SSH init script.  Something is calling "/etc/init.d/ssh
-# reload" during boot and that results in the ssh port being
-# unreachable temporarily.
-#
-chmod a-x /etc/init.d/ssh
+# HACK: https://bugzilla.mindrot.org/show_bug.cgi?id=2512
+# Disable the restarting of sshd when networking changes
+ln -snf /bin/true /etc/network/if-up.d/openssh-server

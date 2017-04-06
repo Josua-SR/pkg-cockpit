@@ -1,12 +1,12 @@
 /*!
  * QUnit @VERSION
- * http://qunitjs.com/
+ * https://qunitjs.com/
  *
- * Copyright 2013 jQuery Foundation and other contributors
+ * Copyright jQuery Foundation and other contributors
  * Released under the MIT license
- * http://jquery.org/license
+ * https://jquery.org/license
  *
  * Date: @DATE
  */
 
-(function( window ) {
+( function( global ) {

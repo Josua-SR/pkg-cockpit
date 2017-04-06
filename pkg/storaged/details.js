@@ -43,6 +43,27 @@
 
         var multipathd_service = utils.get_multipathd_service();
 
+        function filter_inside_mdraid(mdraid) {
+            return function (spc) {
+                var block = spc.block;
+                if (client.blocks_part[block.path])
+                    block = client.blocks[client.blocks_part[block.path].Table];
+                return block && block.MDRaid != mdraid.path;
+            };
+        }
+
+        function filter_inside_vgroup(vgroup) {
+            return function (spc) {
+                var block = spc.block;
+                if (client.blocks_part[block.path])
+                    block = client.blocks[client.blocks_part[block.path].Table];
+                var lvol = (block &&
+                            client.blocks_lvm2[block.path] &&
+                            client.lvols[client.blocks_lvm2[block.path].LogicalVolume]);
+                return !lvol || lvol.VolumeGroup != vgroup.path;
+            };
+        }
+
         var actions = {
             mdraid_start: function mdraid_start(path) {
                 return client.mdraids[path].Start({ "start-degraded": { t: 'b', v: true } });
@@ -67,15 +88,12 @@
                               Fields: [
                                   { SelectMany: "disks",
                                     Title: _("Disks"),
-                                    Options: (utils.get_free_blockdevs(client).
-                                              filter(function (b) {
-                                                  if (client.blocks_part[b.path])
-                                                      b = client.blocks[client.blocks_part[b.path].Table];
-                                                  return b && client.blocks[b.path].MDRaid != path;
-                                              }).
-                                              map(function (b) {
-                                                  return { value: b.path, Title: b.Name + " " + b.Description };
-                                              })),
+                                    Options: (
+                                        utils.get_available_spaces(client)
+                                            .filter(filter_inside_mdraid(mdraid))
+                                            .map(utils.available_space_to_option)
+                                    ),
+                                    EmptyWarning: _("No disks are available."),
                                     validate: function (disks) {
                                         if (disks.length === 0)
                                             return _("At least one disk is needed.");
@@ -85,9 +103,12 @@
                               Action: {
                                   Title: _("Add"),
                                   action: function (vals) {
-                                      return cockpit.all(vals.disks.map(function (p) {
-                                          return mdraid.AddDevice(p, {});
-                                      }));
+                                      return utils.prepare_available_spaces(client, vals.disks).then(function () {
+                                          var paths = Array.prototype.slice.call(arguments);
+                                          return cockpit.all(paths.map(function(p) {
+                                              return mdraid.AddDevice(p, {});
+                                          }));
+                                      });
                                   }
                               }
                             });
@@ -200,18 +221,12 @@
                               Fields: [
                                   { SelectMany: "disks",
                                     Title: _("Disks"),
-                                    Options: (utils.get_free_blockdevs(client).
-                                              filter(function (b) {
-                                                  if (client.blocks_part[b.path])
-                                                      b = client.blocks[client.blocks_part[b.path].Table];
-                                                  var lvol = (b &&
-                                                              client.blocks_lvm2[b.path] &&
-                                                              client.lvols[client.blocks_lvm2[b.path].LogicalVolume]);
-                                                  return !lvol || lvol.VolumeGroup != path;
-                                              }).
-                                              map(function (b) {
-                                                  return { value: b.path, Title: b.Name + " " + b.Description };
-                                              })),
+                                    Options: (
+                                        utils.get_available_spaces(client)
+                                            .filter(filter_inside_vgroup(vgroup))
+                                            .map(utils.available_space_to_option)
+                                    ),
+                                    EmptyWarning: _("No disks are available."),
                                     validate: function (disks) {
                                         if (disks.length === 0)
                                             return _("At least one disk is needed.");
@@ -221,9 +236,12 @@
                               Action: {
                                   Title: _("Add"),
                                   action: function (vals) {
-                                      return cockpit.all(vals.disks.map(function (p) {
-                                          return vgroup.AddDevice(p, {});
-                                      }));
+                                      return utils.prepare_available_spaces(client, vals.disks).then(function () {
+                                          var paths = Array.prototype.slice.call(arguments);
+                                          return cockpit.all(paths.map(function(p) {
+                                              return vgroup.AddDevice(p, {});
+                                          }));
+                                      });
                                   }
                               }
                             });
@@ -278,8 +296,6 @@
         mustache.parse(block_detail_tmpl);
 
         function render_block() {
-            $('#storage-detail .breadcrumb .active').text(name);
-
             var block = client.slashdevs_block[name];
             if (!block)
                 return;
@@ -323,7 +339,8 @@
                 };
             }
 
-            return { header: mustache.render(block_detail_tmpl,
+            return { breadcrumb: drive && utils.drive_name(drive),
+                     header: mustache.render(block_detail_tmpl,
                                              { Block: block_model,
                                                Drive: drive_model
                                              }),
@@ -397,6 +414,8 @@
                 };
             }
 
+            var members = client.mdraids_members[mdraid.path];
+
             function make_member(block) {
                 var active_state = utils.array_find(mdraid.ActiveDevices, function (as) {
                     return as[0] == block.path;
@@ -419,7 +438,8 @@
                     LinkTarget: utils.get_block_link_target(client, block.path),
                     Description: utils.decode_filename(block.PreferredDevice),
                     Slot: active_state && active_state[1] >= 0 && active_state[1].toString(),
-                    States: active_state && active_state[2].map(make_state)
+                    States: active_state && active_state[2].map(make_state),
+                    Excuse: (members.length <= 1)? _("The last disk of a MDRAID device cannot be removed.") : false
                 };
             }
 
@@ -437,7 +457,8 @@
             else
                 def_action = actions[0];  // Start
 
-            return { header: mustache.render(mdraid_detail_tmpl,
+            return { breadcrumb: utils.mdraid_name(mdraid),
+                     header: mustache.render(mdraid_detail_tmpl,
                                              { MDRaid: mdraid_model,
                                                MDRaidButton: mustache.render(action_btn_tmpl,
                                                                              { arg: mdraid.path,
@@ -448,7 +469,7 @@
                                              }),
                      sidebar: mustache.render(mdraid_members_tmpl,
                                               { MDRaid: mdraid_model,
-                                                Members: client.mdraids_members[mdraid.path].map(make_member),
+                                                Members: members.map(make_member),
                                                 DynamicMembers: (mdraid.Level != "raid0")
                                               }),
                    };
@@ -514,7 +535,8 @@
                 { action: "vgroup_delete", title: _("Delete") }
             ];
 
-            return { header: mustache.render(vgroup_detail_tmpl,
+            return { breadcrumb: vgroup.Name,
+                     header: mustache.render(vgroup_detail_tmpl,
                                              { VGroup: vgroup_model,
                                                VGroupButton: mustache.render(action_btn_tmpl,
                                                                              { arg: vgroup.path,
@@ -530,8 +552,6 @@
         }
 
         function render() {
-            $('#storage-detail .breadcrumb .active').text(name);
-
             var html;
             if (type == 'block')
                 html = render_block();
@@ -541,6 +561,7 @@
                 html = render_vgroup();
 
             if (html) {
+                $('#storage-detail .breadcrumb .active').text(html.breadcrumb || name);
                 $('button.tooltip-ct').tooltip('destroy');
                 $('#detail-header').amend(html.header);
                 $('#detail-sidebar').amend(html.sidebar);
@@ -552,6 +573,7 @@
                     $('#detail-body').attr("class", "col-md-12");
 
             } else {
+                $('#storage-detail .breadcrumb .active').text(name);
                 $('#detail-header').text(_("Not found"));
                 $('#detail-sidebar').empty();
             }

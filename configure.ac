@@ -113,11 +113,6 @@ COCKPIT_SESSION_LIBS="$KRB5_LIBS"
 AC_SUBST(COCKPIT_SESSION_CFLAGS)
 AC_SUBST(COCKPIT_SESSION_LIBS)
 
-COCKPIT_POLKIT_CFLAGS="$GIO_CFLAGS $POLKIT_CFLAGS"
-COCKPIT_POLKIT_LIBS="$GIO_LIBS $POLKIT_LIBS"
-AC_SUBST(COCKPIT_POLKIT_CFLAGS)
-AC_SUBST(COCKPIT_POLKIT_LIBS)
-
 COCKPIT_WS_CFLAGS="$COCKPIT_CFLAGS $KRB5_CFLAGS"
 COCKPIT_WS_LIBS="$COCKPIT_LIBS $KRB5_LIBS"
 AC_SUBST(COCKPIT_WS_CFLAGS)
@@ -130,15 +125,6 @@ if test "$enable_ssh" != "no"; then
   enable_ssh="yes"
   AC_MSG_RESULT([$enable_ssh])
   PKG_CHECK_MODULES(LIBSSH, [libssh >= $LIBSSH_VERSION libssh_threads])
-
-  AC_CHECK_LIB(ssh, ssh_gssapi_set_creds, [
-    AC_DEFINE_UNQUOTED(HAVE_SSH_GSSAPI_SET_CREDS, 1, Whether ssh_gssapi_set_creds is available)
-  ])
-
-  AC_CHECK_LIB(ssh, ssh_set_agent_socket, [
-    AC_DEFINE_UNQUOTED(HAVE_SSH_SET_AGENT_SOCKET, 1, Whether ssh_set_agent_socket is available)
-    key_auth="yes"
-  ], [key_auth="no"])
 
   AC_DEFINE_UNQUOTED(WITH_COCKPIT_SSH, 1, [Build cockpit-ssh and include libssh dependency])
 
@@ -164,7 +150,6 @@ AC_CHECK_LIB(pam, pam_open_session, [ true ],
 PAM_LIBS="-lpam"
 COCKPIT_SESSION_LIBS="$COCKPIT_SESSION_LIBS $PAM_LIBS"
 COCKPIT_WS_LIBS="$COCKPIT_WS_LIBS $PAM_LIBS"
-REAUTHORIZE_LIBS="$REAUTHORIZE_LIBS $PAM_LIBS"
 
 # pam module directory
 AC_ARG_WITH([pamdir],
@@ -174,16 +159,6 @@ AC_ARG_WITH([pamdir],
 pamdir=$with_pamdir
 AC_SUBST(pamdir)
 
-# keyutils
-AC_CHECK_HEADER([keyutils.h], ,
-  [AC_MSG_ERROR([Couldn't find keyutils headers. Try installing keyutils-libs-devel])]
-)
-AC_CHECK_LIB(keyutils, keyctl_join_session_keyring, [ true ],
-  [AC_MSG_ERROR([Couldn't find keyutils library. Try installing keyutils-libs-devel])]
-)
-COCKPIT_SESSION_LIBS="$COCKPIT_SESSION_LIBS -lkeyutils"
-REAUTHORIZE_LIBS="$REAUTHORIZE_LIBS -lkeyutils"
-
 # crypt
 AC_CHECK_HEADER([crypt.h], ,
   [AC_MSG_ERROR([Couldn't find crypt headers. Try installing glibc-headers])]
@@ -192,7 +167,6 @@ AC_CHECK_LIB(crypt, crypt_r, [ true ],
   [AC_MSG_ERROR([Couldn't find crypt library. Try installing glibc-devel])]
 )
 COCKPIT_WS_LIBS="$COCKPIT_WS_LIBS -lcrypt"
-REAUTHORIZE_LIBS="$REAUTHORIZE_LIBS -lcrypt"
 
 # pcp
 AC_MSG_CHECKING([whether to build with PCP])
@@ -231,8 +205,9 @@ fi
 AM_CONDITIONAL([ENABLE_PCP], [test "$enable_pcp" = "yes"])
 
 # gssapi
-AC_CHECK_LIB(gssapi_krb5, gss_import_cred,
-  [AC_DEFINE_UNQUOTED(HAVE_GSS_IMPORT_CRED, 1, Whether gss_import_cred is available)])
+AC_CHECK_LIB(gssapi_krb5, gss_store_cred, [ true ],
+  [AC_MSG_ERROR([Couldn't find GSSAPI KRB5 library. Try installing krb5-devel])]
+)
 
 # systemd
 AC_ARG_WITH([systemdunitdir], [AC_HELP_STRING([--with-systemdunitdir=DIR],
@@ -292,8 +267,9 @@ fi
 
 # phantomjs
 
-AC_PATH_PROG([PHANTOMJS], [phantomjs], [], [$PATH$PATH_SEPARATOR$srcdir/node_modules/.bin/])
+AC_PATH_PROG([PHANTOMJS], [phantomjs], [], [$srcdir/node_modules/.bin$PATH_SEPARATOR$PATH])
 AM_CONDITIONAL([WITH_PHANTOMJS], [test -n "$PHANTOMJS"])
+AC_SUBST([PHANTOMJS])
 
 # go
 
@@ -349,7 +325,8 @@ if test "x$GCC" = "xyes"; then
           -Werror=strict-prototypes -Werror=missing-prototypes \
           -Werror=implicit-function-declaration \
           -Werror=pointer-arith -Werror=init-self \
-          -Werror=format-security \
+          -Werror=format=2 \
+          -Werror=return-type \
           -Werror=missing-include-dirs $CFLAGS"
 fi
 changequote([,])dnl
@@ -556,7 +533,6 @@ AC_MSG_RESULT($enable_strict)
 # Generate
 #
 
-AC_SUBST(REAUTHORIZE_LIBS)
 AC_SUBST(PAM_LIBS)
 
 AC_DEFINE([MAX_PACKET_SIZE], [65536], [Maximum size of packet messages])

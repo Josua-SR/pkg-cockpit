@@ -52,6 +52,7 @@
  */
 
 static gboolean cockpit_test_init_was_called = FALSE;
+static const gchar *orig_g_debug;
 
 /* In cockpitconf.c */
 extern const gchar *cockpit_config_file;
@@ -219,6 +220,9 @@ cockpit_test_init (int *argc,
 
   g_assert (g_snprintf (path, sizeof (path), "%s:%s", BUILDDIR, g_getenv ("PATH")) < sizeof (path));
   g_setenv ("PATH", path, TRUE);
+
+  /* For our process (children are handled through $G_DEBUG) */
+  g_log_set_always_fatal (G_LOG_LEVEL_ERROR | G_LOG_LEVEL_CRITICAL | G_LOG_LEVEL_WARNING);
 
   g_type_init ();
 
@@ -728,4 +732,23 @@ cockpit_test_find_non_loopback_address (void)
 
   freeifaddrs (ifas);
   return inet;
+}
+
+void
+cockpit_test_allow_warnings (void)
+{
+  /* make some noise if this gets called twice */
+  g_return_if_fail (orig_g_debug == NULL);
+  orig_g_debug = g_getenv ("G_DEBUG");
+  g_setenv ("G_DEBUG", "fatal-criticals", TRUE);
+}
+
+void
+cockpit_test_reset_warnings (void)
+{
+  if (orig_g_debug != NULL)
+    {
+      g_setenv ("G_DEBUG", orig_g_debug, TRUE);
+      orig_g_debug = NULL;
+    }
 }

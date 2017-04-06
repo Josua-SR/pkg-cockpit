@@ -227,14 +227,24 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
                 el.toggleClass("active", el.attr("data-component") === state.component);
             });
 
+            /* When no dashboard type components show a minimal navbar */
+            var minimal = Object.keys(compiled.items).every(function(key) {
+                return compiled.items[key].section != "dashboard";
+            });
+
+            /* Unless there are more than one machine */
+            if (machines.list.length > 1)
+                minimal = false;
+
             var hide;
             if (machine && machine.static_hostname) {
                 hide = $(".dashboard-link").length < 2 && machines.list.length < 2;
-                $('#content-navbar').toggleClass("hidden", hide);
+                $('#content-navbar').toggleClass("hidden", hide || minimal);
             } else {
-                $('#content-navbar').toggleClass("hidden", false);
+                $('#content-navbar').toggleClass("hidden", minimal);
             }
 
+            /* When a dashboard no machine or sidebar */
             var item = compiled.items[state.component];
             if (item && item.section == "dashboard") {
                 delete state.sidebar;
@@ -259,7 +269,7 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
                 color = "transparent";
             else
                 color = machine.color || "";
-            $("#machine-color").css("border-left-color", color);
+            $(".machine-color").css("border-left-color", color);
 
             $("#machine-dropdown").toggleClass("active", !!machine);
 
@@ -274,11 +284,11 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
 
         function update_sidebar(machine, state, compiled) {
             function links(component) {
-                return $("<li>")
+                return $("<li class='list-group-item'>")
                     .toggleClass("active", state.component === component.path)
                     .append($("<a>")
                         .attr("href", index.href({ host: machine.address, component: component.path }))
-                        .text(component.label));
+                        .append($("<span>").text(component.label)));
             }
 
             var menu = compiled.ordered("menu").map(links);
@@ -286,7 +296,6 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
 
             var tools = compiled.ordered("tools").map(links);
             $("#sidebar-tools").empty().append(tools);
-            $('#tools-panel li.active').parents('#tools-panel').collapse('show');
         }
 
         function update_title(label, machine) {
