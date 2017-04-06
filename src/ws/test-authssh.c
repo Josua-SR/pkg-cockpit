@@ -241,7 +241,7 @@ test_basic_fail (TestCase *test,
   g_assert_null (cockpit_auth_login_finish (test->auth, result, NULL, headers, &error));
   g_object_unref (result);
   g_assert_error (error, COCKPIT_ERROR, COCKPIT_ERROR_AUTHENTICATION_FAILED);
-  g_assert_cmpstr ("Authentication failed", ==, error->message);
+  g_assert (g_str_has_prefix (error->message, "Authentication failed"));
 
   g_clear_error (&error);
   g_hash_table_unref (headers);
@@ -410,7 +410,7 @@ main (int argc,
       char *argv[])
 {
   cockpit_ws_ssh_program = BUILDDIR "/cockpit-ssh";
-  cockpit_ws_known_hosts = SRCDIR "/src/ws/mock_known_hosts";
+  cockpit_ws_known_hosts = SRCDIR "/src/ssh/mock_known_hosts";
 
   g_setenv ("COCKPIT_SSH_BRIDGE_COMMAND", BUILDDIR "/cockpit-bridge", TRUE);
 

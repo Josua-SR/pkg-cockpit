@@ -218,7 +218,10 @@ start_dbus_daemon (void)
 
   if (error != NULL)
     {
-      g_warning ("couldn't start %s: %s", dbus_argv[0], error->message);
+      if (g_error_matches (error, G_SPAWN_ERROR, G_SPAWN_ERROR_NOENT))
+        g_debug ("couldn't start %s: %s", dbus_argv[0], error->message);
+      else
+        g_message ("couldn't start %s: %s", dbus_argv[0], error->message);
       g_error_free (error);
       pid = 0;
       goto out;
@@ -260,7 +263,7 @@ start_dbus_daemon (void)
 
   if (address->str[0] == '\0')
     {
-      g_warning ("dbus-daemon didn't send us a dbus address");
+      g_message ("dbus-daemon didn't send us a dbus address; not installed?");
     }
   else
     {
@@ -428,19 +431,6 @@ run_bridge (const gchar *interactive,
 
   cockpit_set_journal_logging (G_LOG_DOMAIN, !isatty (2));
 
-  /*
-   * The bridge always runs from within $XDG_RUNTIME_DIR
-   * This makes it easy to create user sockets and/or files.
-   */
-  if (!privileged_slave)
-    {
-      directory = g_get_user_runtime_dir ();
-      if (g_mkdir_with_parents (directory, 0700) < 0)
-        g_warning ("couldn't create runtime dir: %s: %s", directory, g_strerror (errno));
-      else if (g_chdir (directory) < 0)
-        g_warning ("couldn't change to runtime dir: %s: %s", directory, g_strerror (errno));
-    }
-
   /* Always set environment variables early */
   uid = geteuid();
   pwd = getpwuid_a (uid);
@@ -457,6 +447,19 @@ run_bridge (const gchar *interactive,
 
   /* Set a path if nothing is set */
   g_setenv ("PATH", "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin", 0);
+
+  /*
+   * The bridge always runs from within $XDG_RUNTIME_DIR
+   * This makes it easy to create user sockets and/or files.
+   */
+  if (!privileged_slave)
+    {
+      directory = g_get_user_runtime_dir ();
+      if (g_mkdir_with_parents (directory, 0700) < 0)
+        g_warning ("couldn't create runtime dir: %s: %s", directory, g_strerror (errno));
+      else if (g_chdir (directory) < 0)
+        g_warning ("couldn't change to runtime dir: %s: %s", directory, g_strerror (errno));
+    }
 
   /* Reset the umask, typically this is done in .bashrc for a login shell */
   umask (022);
@@ -627,10 +630,8 @@ main (int argc,
   signal (SIGPIPE, SIG_IGN);
 
   /* Debugging issues during testing */
-#if WITH_DEBUG
   signal (SIGABRT, cockpit_test_signal_backtrace);
   signal (SIGSEGV, cockpit_test_signal_backtrace);
-#endif
 
   /*
    * We have to tell GLib about an alternate default location for XDG_DATA_DIRS

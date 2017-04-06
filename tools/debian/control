@@ -14,7 +14,6 @@ Build-Depends: debhelper (>= 9.20141010),
                zlib1g-dev,
                libkrb5-dev,
                libxslt1-dev,
-               libkeyutils-dev,
                libglib2.0-dev,
                libsystemd-dev,
                libpolkit-agent-1-dev,
@@ -44,12 +43,12 @@ Depends: ${misc:Depends},
          cockpit-ws (>= ${source:Version}),
          cockpit-ws (<< ${source:Version}.1~),
          cockpit-system (= ${binary:Version}),
-         xdg-utils
 Recommends: cockpit-docker (= ${binary:Version}),
             cockpit-storaged (= ${binary:Version}),
             cockpit-networkmanager (= ${binary:Version})
 Suggests: cockpit-doc (= ${binary:Version}),
-          cockpit-pcp (>= ${source:Version})
+          cockpit-pcp (>= ${source:Version}),
+          xdg-utils,
 Description: User interface for Linux servers
  Cockpit runs in a browser and can manage your network of GNU/Linux
  machines.
@@ -58,8 +57,7 @@ Package: cockpit-bridge
 Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends},
-         glib-networking,
-         policykit-1
+         glib-networking
 Description: Cockpit bridge server-side component
  The Cockpit bridge component installed server side and runs commands on
  the system on behalf of the web based user interface.
@@ -146,6 +144,7 @@ Package: cockpit-tests
 Architecture: any
 Depends: ${misc:Depends},
          ${shlibs:Depends},
+         cockpit-system (>= ${source:Version}),
          openssh-client
 Conflicts: cockpit-test-assets
 Replaces: cockpit-test-assets

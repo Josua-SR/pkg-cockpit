@@ -40,17 +40,17 @@ typedef struct {
   const gchar *knownhosts_data;
   const gchar *knownhosts_file;
   const gchar *command;
-  const gchar *krb5_ccache_name;
   gboolean allow_unknown_hosts;
   gboolean supports_hostkey_prompt;
   gboolean ignore_hostkey;
-  guint agent_fd;
 } CockpitSshOptions;
 
 CockpitSshOptions * cockpit_ssh_options_from_env   (gchar **env);
 
-gchar **             cockpit_ssh_options_to_env     (CockpitSshOptions *options,
-                                                     gchar **env);
+gchar **            cockpit_ssh_options_to_env     (CockpitSshOptions *options,
+                                                    gchar **env);
+
+const gchar *       cockpit_get_default_knownhosts  (void);
 
 G_END_DECLS
 

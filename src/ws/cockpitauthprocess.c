@@ -29,7 +29,6 @@
 #include "config.h"
 
 #include "cockpitauthprocess.h"
-#include "cockpitsshagent.h"
 
 #include "common/cockpiterror.h"
 #include "common/cockpitjson.h"
@@ -49,7 +48,7 @@ guint default_timeout = 60;
 typedef struct {
   guint wanted_fd_number;
   gint auth_fd;
-  gint agent_fd;
+  gint io_fd;
 } ChildFds;
 
 struct  _CockpitAuthProcess {
@@ -78,8 +77,7 @@ struct  _CockpitAuthProcess {
 
   gboolean send_signal;
 
-  gint process_in;
-  gint process_out;
+  gint process_io;
   GPid process_pid;
 };
 
@@ -147,10 +145,9 @@ cockpit_auth_process_dispose (GObject *object)
 
   g_clear_object (&self->pipe);
 
-  if (self->process_in != -1)
-    close (self->process_in);
-  if (self->process_out != -1)
-    close (self->process_out);
+  if (self->process_io != -1)
+    close (self->process_io);
+  self->process_io = -1;
 
   if (self->process_pid != 0)
     cockpit_auth_process_terminate (self);
@@ -177,64 +174,31 @@ static void
 spawn_child_setup (gpointer data)
 {
   ChildFds *child_fds = data;
-  gint wanted;
-  gint large;
-  gint small;
 
-  if (child_fds->agent_fd > 0)
+  if (dup2 (child_fds->io_fd, 0) < 0 || dup2 (child_fds->io_fd, 1) < 0)
     {
-      /* Two fds to keep open, close everything bigger than the larger
-       * of the two and then everything except smaller upto the larger fd
-       */
-
-      large = child_fds->auth_fd > child_fds->agent_fd ? child_fds->auth_fd : child_fds->agent_fd;
-      small = child_fds->auth_fd < child_fds->agent_fd ? child_fds->auth_fd : child_fds->agent_fd;
-
-      if (cockpit_unix_fd_close_all (large, large) < 0)
-        {
-          g_printerr ("couldn't close larger file descriptors: %m");
-          _exit (127);
-        }
-
-      if (cockpit_unix_fd_close_until (3, small, large) < 0)
-        {
-          g_printerr ("couldn't close smaller file descriptors: %m");
-          _exit (127);
-        }
+      g_printerr ("couldn't set child stdin/stout file descriptors\n");
+      _exit (127);
     }
-  else
+
+  close (child_fds->io_fd);
+
+  if (cockpit_unix_fd_close_all (3, child_fds->auth_fd) < 0)
     {
-      if (cockpit_unix_fd_close_all (3, child_fds->auth_fd) < 0)
-        {
-          g_printerr ("couldn't close file descriptors: %m");
-          _exit (127);
-        }
+      g_printerr ("couldn't close file descriptors: %m\n");
+      _exit (127);
     }
 
   /* Dup to the configured fd */
   if (child_fds->auth_fd != child_fds->wanted_fd_number &&
       dup2 (child_fds->auth_fd, child_fds->wanted_fd_number) < 0)
     {
-      g_printerr ("couldn't dup file descriptor: %m");
+      g_printerr ("couldn't dup file descriptor: %m\n");
       _exit (127);
     }
 
   if (child_fds->auth_fd != child_fds->wanted_fd_number)
     close (child_fds->auth_fd);
-
-  if (child_fds->agent_fd > 0)
-    {
-      /* Dup to the wanted fd + 1 */
-      wanted = child_fds->wanted_fd_number + 1;
-      if (dup2 (child_fds->agent_fd, wanted) < 0)
-        {
-          g_printerr ("couldn't dup agent file descriptor: %m");
-          _exit (127);
-        }
-
-      if (child_fds->agent_fd != wanted)
-        close (child_fds->agent_fd);
-    }
 }
 
 static gboolean
@@ -561,12 +525,11 @@ cockpit_auth_process_claim_as_pipe (CockpitAuthProcess *self)
   pipe = g_object_new (COCKPIT_TYPE_PIPE,
                        "name", self->name,
                        "pid", self->process_pid,
-                       "in-fd", self->process_out,
-                       "out-fd", self->process_in,
+                       "in-fd", self->process_io,
+                       "out-fd", self->process_io,
                        NULL);
   self->process_pid = 0;
-  self->process_out = -1;
-  self->process_in = -1;
+  self->process_io = -1;
 
   return pipe;
 }
@@ -727,27 +690,33 @@ gboolean
 cockpit_auth_process_start (CockpitAuthProcess *self,
                             const gchar** command_args,
                             const gchar** env,
-                            gint agent_fd,
                             gboolean should_respond,
                             GError **error)
 {
   gboolean ret;
+  int fds[2];
 
   g_debug ("spawning %s", command_args[0]);
 
-  self->child_data.agent_fd = agent_fd;
+  /* The main stdin/stdout for the socket ... both are read/writable */
+  if (socketpair (PF_LOCAL, SOCK_STREAM, 0, fds) < 0)
+    {
+      g_warning ("couldn't create loopback socket: %s", g_strerror (errno));
+      return FALSE;
+    }
+
+  self->child_data.io_fd = fds[0];
   ret = g_spawn_async_with_pipes (NULL, (gchar **) command_args, (gchar **) env,
                                   G_SPAWN_DO_NOT_REAP_CHILD | G_SPAWN_LEAVE_DESCRIPTORS_OPEN,
                                   spawn_child_setup, &self->child_data,
-                                  &self->process_pid, &self->process_in,
-                                  &self->process_out, NULL, error);
+                                  &self->process_pid, NULL, NULL, NULL, error);
+
+  self->process_io = fds[1];
+  close (fds[0]);
 
   /* Child process end of pipe */
   close (self->child_data.auth_fd);
   self->child_data.auth_fd = -1;
-  self->child_data.agent_fd = -1;
-  if (agent_fd > 0)
-    close (agent_fd);
 
   if (ret && should_respond)
     expect_response (self);

@@ -107,8 +107,17 @@ function select_btn_selected(btn) {
 }
 
 function connection_settings(c) {
-    var settings = (c || { }).Settings || { };
-    return settings.connection || { };
+    if (c && c.Settings && c.Settings.connection) {
+        return c.Settings.connection;
+    } else {
+        // It is a programming error if we ever access a Connection
+        // object that doesn't have it's settings yet, and we expect
+        // each Connection object to have "connection" settings.
+        console.warn("Incomplete 'Connection' object accessed", c);
+        // HACK - phantomjs console.trace() prints nothing
+        try { throw new Error(); } catch (e) { console.log(e.stack); }
+        return { };
+    }
 }
 
 /* NetworkManagerModel
@@ -360,6 +369,8 @@ function NetworkManagerModel() {
         drop_object(path);
     }
 
+    var export_model_deferred = null;
+
     function export_model() {
         function doit() {
             var phase, path, obj, exp;
@@ -373,6 +384,10 @@ function NetworkManagerModel() {
             }
 
             $(self).trigger('changed');
+            if (export_model_deferred) {
+                export_model_deferred.resolve();
+                export_model_deferred = null;
+            }
         }
 
         if (!export_pending) {
@@ -380,6 +395,16 @@ function NetworkManagerModel() {
             window.setTimeout(function () { export_pending = false; doit(); }, 300);
         }
     }
+
+    self.synchronize = function synchronize() {
+        if (outstanding_refreshes === 0) {
+            return cockpit.resolve();
+        } else {
+            if (!export_model_deferred)
+                export_model_deferred = cockpit.defer();
+            return export_model_deferred.promise();
+        }
+    };
 
     client.call("/org/freedesktop/NetworkManager",
                 "org.freedesktop.DBus.Properties", "Get",
@@ -759,24 +784,15 @@ function NetworkManagerModel() {
     var connections_by_uuid = { };
 
     function set_settings(obj, settings) {
-        var cs = connection_settings(obj);
-        if (cs.uuid)
-            delete connections_by_uuid[cs.uuid];
+        if (obj.Settings && obj.Settings.connection && obj.Settings.connection.uuid)
+            delete connections_by_uuid[obj.Settings.connection.uuid];
         obj.Settings = settings;
-        cs = connection_settings(obj);
-        if (cs.uuid)
-            connections_by_uuid[cs.uuid] = obj;
+        if (settings && settings.connection && settings.connection.uuid)
+            connections_by_uuid[settings.connection.uuid] = obj;
     }
 
     function refresh_settings(obj) {
         push_refresh();
-
-        /* Make sure that there always is a skeleton Settings
-         * property.  This simplifies the rest of the code.
-         */
-        if (!obj.Settings)
-            obj.Settings = { connection: { } };
-
         client.call(objpath(obj), "org.freedesktop.NetworkManager.Settings.Connection", "GetSettings").
             always(pop_refresh).
             fail(complain).
@@ -908,8 +924,9 @@ function NetworkManagerModel() {
 
             null,
 
-            // Needs: type_Interface.Device
-            //        type_Interface.Connections
+            null,
+
+            // Needs: type_Interface.Connections
             //
             // Sets:  type_Connection.Slaves
             //        type_Connection.Masters
@@ -942,10 +959,7 @@ function NetworkManagerModel() {
                     } else {
                         iface = peek_interface(cs.master);
                         if (iface) {
-                            if (iface.Device)
-                                iface.Device.AvailableConnections.forEach(check_con);
-                            else
-                                iface.Connections.forEach(check_con);
+                            iface.Connections.forEach(check_con);
                         }
                     }
                 }
@@ -1043,6 +1057,7 @@ function NetworkManagerModel() {
         exporters: [
             function (obj) {
                 obj.Device = null;
+                obj._NonDeviceConnections = [ ];
                 obj.Connections = [ ];
                 obj.MainConnection = null;
             },
@@ -1050,13 +1065,14 @@ function NetworkManagerModel() {
             null,
 
             // Needs: type_Interface.Device
-            //        type_Interface.Connections
+            //        type_Interface._NonDeviceConnections
             //
             // Sets:  type_Connection.Interfaces
+            //        type_Interface.Connections
             //        type_Interface.MainConnection
 
             function (obj) {
-                if (!obj.Device && obj.Connections.length === 0) {
+                if (!obj.Device && obj._NonDeviceConnections.length === 0) {
                     drop_object(priv(obj).path);
                     return;
                 }
@@ -1068,17 +1084,19 @@ function NetworkManagerModel() {
                     }
                 }
 
+                obj.Connections = obj._NonDeviceConnections;
+
                 if (obj.Device) {
                     obj.Device.AvailableConnections.forEach(function (con) {
-                        consider_for_main(con);
-                        con.Interfaces.push(obj);
-                    });
-                } else {
-                    obj.Connections.forEach(function (con) {
-                        consider_for_main(con);
-                        con.Interfaces.push(obj);
+                        if (obj.Connections.indexOf(con) == -1)
+                            obj.Connections.push(con);
                     });
                 }
+
+                obj.Connections.forEach(function (con) {
+                    consider_for_main(con);
+                    con.Interfaces.push(obj);
+                });
 
                 // Explicitly prefer the active connection.  The
                 // active connection should have the most recent
@@ -1138,17 +1156,22 @@ function NetworkManagerModel() {
         exporters: [
             null,
 
-            // Sets: type_Interface.Connections
+            // Sets: type_Interface._NonDeviceConnections
             //
             function (obj) {
                 if (obj.Connections) {
                     obj.Connections.forEach(function (con) {
                         function add_to_interface(name) {
-                            if (name)
-                                get_interface(name).Connections.push(con);
+                            if (name) {
+                                var cons = get_interface(name)._NonDeviceConnections;
+                                if (cons.indexOf(con) == -1)
+                                    cons.push(con);
+                            }
                         }
 
                         if (con.Settings) {
+                            if (con.Settings.connection)
+                                add_to_interface(con.Settings.connection.interface_name);
                             if (con.Settings.bond)
                                 add_to_interface(con.Settings.bond.interface_name);
                             if (con.Settings.team)
@@ -1305,6 +1328,21 @@ function NetworkManagerModel() {
     get_object("/org/freedesktop/NetworkManager/Settings", type_Settings);
     return self;
 }
+
+// Add a "syn_click" method to jQuery.  This will invoke the event
+// handler with the additional guarantee that the model is consistent.
+
+$.fn.extend({
+    syn_click: function(model, fun) {
+        return this.click(function() {
+            var self = this;
+            var self_args = arguments;
+            model.synchronize().then(function() {
+                fun.apply(self, self_args);
+            });
+        });
+    }
+});
 
 function render_interface_link(iface) {
     return $('<a>').
@@ -1528,10 +1566,10 @@ PageNetworking.prototype = {
         var self = this;
 
         update_network_privileged();
-        $("#networking-add-bond").click($.proxy(this, "add_bond"));
-        $("#networking-add-team").click($.proxy(this, "add_team"));
-        $("#networking-add-bridge").click($.proxy(this, "add_bridge"));
-        $("#networking-add-vlan").click($.proxy(this, "add_vlan"));
+        $("#networking-add-bond").syn_click(self.model, $.proxy(this, "add_bond"));
+        $("#networking-add-team").syn_click(self.model, $.proxy(this, "add_team"));
+        $("#networking-add-bridge").syn_click(self.model, $.proxy(this, "add_bridge"));
+        $("#networking-add-vlan").syn_click(self.model, $.proxy(this, "add_vlan"));
 
         /* HACK - hide "Add Team" if it doesn't work due to missing bits
          * https://bugzilla.redhat.com/show_bug.cgi?id=1375967
@@ -1540,8 +1578,8 @@ PageNetworking.prototype = {
         $("#networking-add-team").hide();
         // We need both the plugin and teamd
         cockpit.script("test -f /usr/bin/teamd && " +
-                       "( test -f /usr/lib64/NetworkManager/libnm-device-plugin-team.so || " +
-                       "  test -f /usr/lib/x86_64-linux-gnu/NetworkManager/libnm-device-plugin-team.so)",
+                       "( test -f /usr/lib*/NetworkManager/libnm-device-plugin-team.so || " +
+                       "  test -f /usr/lib/*-linux-gnu/NetworkManager/libnm-device-plugin-team.so)",
                        { err: "ignore" }).
             done(function () {
                 $("#networking-add-team").show();
@@ -2057,7 +2095,7 @@ function with_checkpoint(model, modify, options) {
                                 dialog.find('.modal-footer .btn-danger').
                                     off('click').
                                     text(options.anyway_text).
-                                    click(function () {
+                                    syn_click(model, function () {
                                         dialog.modal('hide');
                                         modify();
                                     });
@@ -2103,7 +2141,7 @@ PageNetworkInterface.prototype = {
             cockpit.location.go('/');
         });
 
-        $('#network-interface-delete').click($.proxy(this, "delete_connections"));
+        $('#network-interface-delete').syn_click(self.model, $.proxy(this, "delete_connections"));
 
         this.device_onoff = $("#network-interface-delete-switch").onoff()
             .on("change", function() {
@@ -2266,10 +2304,7 @@ PageNetworkInterface.prototype = {
         }
 
         function delete_iface_connections(iface) {
-            if (iface.Device)
-                return delete_connections(iface.Device.AvailableConnections);
-            else
-                return delete_connections(iface.Connections);
+            return delete_connections(iface.Connections);
         }
 
         var location = cockpit.location;
@@ -2414,14 +2449,17 @@ PageNetworkInterface.prototype = {
             $('#network-interface-mac').append(
                 $('<a>').
                     text(mac).
-                    click(function () {
+                    syn_click(self.model, function () {
                         self.set_mac();
                     }));
         } else {
             $('#network-interface-mac').text(mac);
         }
 
-        this.device_onoff.onoff("disabled", !iface);
+        /* Disable the On/Off button for interfaces that we don't know about at all,
+           and for devices that NM declares to be unavailable. Neither can be activated.
+         */
+        this.device_onoff.onoff("disabled", !!(!iface || (dev && dev.State == 20)));
         this.device_onoff.onoff("value", !!(dev && dev.ActiveConnection));
         this.device_onoff.toggle(managed);
 
@@ -2578,7 +2616,7 @@ PageNetworkInterface.prototype = {
                     $('<td>').append(
                         $('<a class="network-privileged">').
                             append(link_text).
-                            click(function () { configure(); })));
+                            syn_click(self.model, function () { configure(); })));
             }
 
             function render_ip_settings_row(topic, title) {
@@ -2890,7 +2928,7 @@ PageNetworkInterface.prototype = {
                                        }, "network-privileged")),
                                    $('<td width="28px">').append(
                                        $('<button class="btn btn-default btn-control-ct network-privileged fa fa-minus">').
-                                           click(function () {
+                                           syn_click(self.model, function () {
                                                with_checkpoint(
                                                    self.model,
                                                    function () {
@@ -2935,7 +2973,7 @@ PageNetworkInterface.prototype = {
                                     return $('<li role="presentation">').append(
                                         $('<a role="menuitem" class="network-privileged">').
                                             text(iface.Name).
-                                            click(function () {
+                                            syn_click(self.model, function () {
                                                 with_checkpoint(
                                                     self.model,
                                                     function () {
@@ -2961,7 +2999,8 @@ PageNetworkInterface.prototype = {
             update_network_privileged();
         }
 
-        update_connection_slaves(self.main_connection);
+        if (self.main_connection)
+            update_connection_slaves(self.main_connection);
     }
 
 };
@@ -3429,8 +3468,10 @@ function apply_master_slave(choices, model, apply_master, master_connection, mas
 
     function set_all_slaves() {
         var deferreds = choices.find('input[data-iface]').map(function (i, elt) {
-            return set_slave(model, master_connection, master_settings, slave_type,
-                             $(elt).attr("data-iface"), $(elt).prop('checked'));
+            return model.synchronize().then(function () {
+                return set_slave(model, master_connection, master_settings, slave_type,
+                                 $(elt).attr("data-iface"), $(elt).prop('checked'));
+            });
         });
         return cockpit.all(deferreds.get());
     }
@@ -4489,18 +4530,20 @@ function init() {
     function navigate() {
         var path = cockpit.location.path;
 
-        if (path.length === 0) {
-            page_hide(interface_page);
-            page_show(overview_page);
-        } else if (path.length === 1) {
-            page_hide(overview_page);
-            page_show(interface_page, path[0]);
-        } else { /* redirect */
-            console.warn("not a networking location: " + path);
-            cockpit.location = '';
-        }
+        model.synchronize().then(function() {
+            if (path.length === 0) {
+                page_hide(interface_page);
+                page_show(overview_page);
+            } else if (path.length === 1) {
+                page_hide(overview_page);
+                page_show(interface_page, path[0]);
+            } else { /* redirect */
+                console.warn("not a networking location: " + path);
+                cockpit.location = '';
+            }
 
-        $("body").show();
+            $("body").show();
+        });
     }
 
     cockpit.translate();

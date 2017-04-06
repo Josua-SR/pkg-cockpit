@@ -315,6 +315,10 @@ return plural;
   null,
   "Isključi"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "Old Password": [
   null,
   ""

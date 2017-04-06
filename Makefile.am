@@ -157,6 +157,7 @@ WEBPACK_PACKAGES = \
 	selinux \
 	shell \
 	sosreport \
+	ssh \
 	storaged \
 	subscriptions \
 	systemd \
@@ -249,7 +250,7 @@ SH_LOG_DRIVER = $(top_srcdir)/tools/tap-driver
 HTML_LOG_DRIVER = $(top_srcdir)/tools/tap-driver
 HTML_TEST_SERVER = $(builddir)/test-server
 if WITH_PHANTOMJS
-HTML_LOG_COMPILER = $(top_srcdir)/tools/tap-phantom --strip=$(top_srcdir)/ -- $(HTML_TEST_SERVER)
+HTML_LOG_COMPILER = $(PHANTOMJS) $(top_srcdir)/tools/tap-phantom --strip=$(top_srcdir)/ -- $(HTML_TEST_SERVER)
 else
 HTML_LOG_DRIVER_FLAGS = --missing=phantomjs
 endif
@@ -393,8 +394,8 @@ include src/bridge/Makefile.am
 include src/common/Makefile-common.am
 include src/websocket/Makefile-websocket.am
 include tools/Makefile-tools.am
+include src/ssh/Makefile-ssh.am
 include src/ws/Makefile-ws.am
-include src/reauthorize/Makefile-reauthorize.am
 include src/retest/Makefile.am
 include src/pam-ssh-add/Makefile.am
 include containers/Makefile.am

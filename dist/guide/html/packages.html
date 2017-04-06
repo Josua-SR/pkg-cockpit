@@ -310,6 +310,36 @@ mypackage/test.min.js.gz
 </tr>
 </tbody>
 </table></div>
+<p>The <code class="code">spawn</code> and <code class="code">environ</code> values can be dynamically
+    taken from a matching open command values. When a value in either the <code class="code">spawn</code>
+    or <code class="code">environ</code> array contains a named variable wrapped in <code class="code">${}</code>,
+    the variable will be replaced with the value contained in the matching open command.
+    Only named variables are supported and name can only contain letters, numbers and
+    the following symbols: <code class="code">._-</code></p>
+<p>For example a bridges section like:</p>
+<pre class="programlisting">
+{
+  "bridges": [
+    {
+      "match": { "payload": "example" },
+      "environ": [ "TAG=${tag}" ],
+      "spawn: [ "/example-bridge", "--tag", "${tag}" ],
+      "problem": "access-denied"
+    }
+  ]
+}
+</pre>
+<p>when a open command is received with a payload of <code class="code">example</code>
+        with <code class="code">tag</code> value of <code class="code">tag1</code>. The following
+        command will be spawned</p>
+<pre class="programlisting">TAG=tag1 /example-bridge --tag tag1</pre>
+<p>Processes that are reused so if another open command with a "tag" of
+        <code class="code">tag1</code> is received. The open command will be passed to
+        existing process, rather than spawning a new one. However a open command
+        with an tag of <code class="code">tag2</code> will spawn a new command:</p>
+<pre class="programlisting">TAG=tag2 /example-bridge --tag tag2</pre>
+<p>If you need to include <code class="code">${}</code>, as an actual value in your arguments
+    you can escape it by prefixing it with a <code class="code">\</code></p>
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h2 class="title" style="clear: both">

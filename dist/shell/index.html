@@ -24,7 +24,19 @@
       </div>
       <div class="collapse navbar-collapse navbar-collapse-1">
         <ul class="nav navbar-nav navbar-utility">
-          <li id="navbar-oops">
+          <li class="credential-lock">
+            <a data-toggle="tooltip" data-placement="bottom" translate="title"
+                title="Privileged tasks not available">
+              <i class="fa fa-lock"></i>
+              <span translate>Locked</span>
+            </a>
+            <a data-toggle="tooltip" data-placement="bottom" translate="title"
+                title="Lock to prevent privileged tasks" class="credential-clear">
+              <i class="fa fa-unlock-alt"></i>
+              <span translate>Unlocked</span>
+            </a>
+          </li>
+          <li id="navbar-oops" hidden>
             <a><span class="oops-status" translatable="yes">Ooops!</span></a>
           </li>
           <li class="dropdown">
@@ -39,6 +51,9 @@
               <li class="divider display-language-menu"></li>
               <li>
                 <a data-toggle="modal" data-target="#about" translatable="yes">About Cockpit</a>
+              </li>
+              <li>
+                <a id="active-pages" translatable="yes" class="navbar-advanced">Active Pages</a>
               </li>
               <li class="divider"></li>
               <li id="go-account" hidden>
@@ -60,7 +75,7 @@
             </div>
           </li>
           <li class="dropdown" id="machine-dropdown">
-            <a id="machine-color"></a>
+            <a class="machine-color"></a>
             <a id="machine-link" class="dropdown-toggle" data-toggle="dropdown"
                 aria-haspopup="true" role="button" aria-expanded="false">
                <img src="../shell/images/server-small.png" id="machine-avatar" class="machine-avatar"><span translate>Machines</span>
@@ -148,14 +163,20 @@
                 </div>
                 <div class="modal-body modal-scrollable">
                     <table class="listing-ct credential-listing">
-                        <thead>
-                            <tr id="credential-authorize" hidden>
-                                <td translatable="yes" colspan="2">Use my password for privileged tasks and to connect to other machines</td>
+                        <thead class="credential-lock">
+                            <tr>
+                                <td translate colspan="2">Password not usable for privileged tasks or to connect to other machines</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td translate colspan="2">Reuse my password for privileged tasks and to connect to other machines</td>
                                 <td class="listing-ct-actions">
-                                    <button class="btn btn-default pficon pficon-close" id="deauthorize-item">
+                                    <button class="btn btn-default pficon pficon-close credential-clear">
                                     </button>
                                 </td>
                             </tr>
+                        </thead>
+                        <thead>
                             <tr id="credential-keys">
                                 <td translatable="yes" colspan="2">Use the following keys to authenticate against other systems</td>
                                 <td class="listing-ct-actions">
@@ -278,26 +299,11 @@
         </div>
     </div>
 
-    <div id="sidebar" class="sidebar-pf sidebar-pf-left" hidden>
-      <div class="nav-category">
-        <ul id="sidebar-menu" class="nav nav-pills nav-stacked">
+    <div id="sidebar" class="nav-pf-vertical nav-sidebar" hidden>
+        <ul class="list-group machine-color" id="sidebar-menu">
         </ul>
-      </div>
-      <div id="tools-menu" class="panel-group">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-target="#tools-panel" class="collapsed" translatable="yes">Tools</a>
-            </h4>
-          </div>
-          <div id="tools-panel" class="panel-collapse collapse">
-            <div class="panel-body">
-              <ul id="sidebar-tools" class="nav nav-pills nav-stacked">
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+        <ul class="list-group machine-color" id="sidebar-tools">
+        </ul>
     </div>
 
     <div class="curtains-ct blank-slate-pf" hidden>

@@ -315,6 +315,10 @@ return plural;
   null,
   ""
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "Old Password": [
   null,
   "Indtast adgangskode"

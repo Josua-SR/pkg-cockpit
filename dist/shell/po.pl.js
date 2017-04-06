@@ -315,6 +315,10 @@ return plural;
   null,
   "Wyłączone"
  ],
+ "Ok": [
+  null,
+  "OK"
+ ],
  "Old Password": [
   null,
   "Poprzednie hasło"

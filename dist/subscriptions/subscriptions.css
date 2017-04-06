@@ -248,48 +248,48 @@ table.listing-ct > thead td > a {
   line-height: 30px;
   padding: 10px 0 10px;
 }
-table.listing-ct thead th {
+table.listing-ct > thead th {
   border-top: 1px solid #f1f1f1;
   font-weight: normal;
   padding: 10px;
   color: #888;
 }
-table.listing-ct thead th:first-child {
+table.listing-ct > thead th:first-child {
   padding-left: 20px;
 }
-table.listing-ct thead th:last-child {
+table.listing-ct > thead th:last-child {
   text-align: right;
 }
 /* A listing item is a row in the table */
-tbody tr.listing-ct-item {
+tbody > tr.listing-ct-item {
   border-top: 1px solid #f1f1f1;
   border-bottom: 1px solid #f1f1f1;
   cursor: pointer;
 }
-table.listing-ct tbody:last-child {
+table.listing-ct > tbody:last-child {
   border-bottom: 1px solid #f1f1f1;
 }
-table.listing-ct tbody + thead {
+table.listing-ct > tbody + thead {
   border-top: 1px solid #f1f1f1;
 }
-table.listing-ct tbody.open:last-child {
+table.listing-ct > tbody.open:last-child {
   border-bottom: none;
 }
-table.listing-ct tbody.open + thead {
+table.listing-ct > tbody.open + thead {
   border-top: none;
 }
-tbody tr.listing-ct-item.listing-ct-warning {
+tbody > tr.listing-ct-item.listing-ct-warning {
   background-color: #fbc7c7;
 }
-tbody.open tr.listing-ct-item {
+tbody.open > tr.listing-ct-item {
   background-color: #ededed;
   border-bottom: none;
   border-top: none;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
 }
-tbody.open tr.listing-ct-item td,
-tbody.open tr.listing-ct-item th {
+tbody.open > tr.listing-ct-item td,
+tbody.open > tr.listing-ct-item th {
   border-top: 1px solid #ccc;
 }
 tbody.open td div.listing-ct-head {
@@ -301,28 +301,28 @@ tbody.open .listing-ct-panel {
 tbody.open .listing-ct-panel .listing-ct-body {
   border: none;
 }
-tbody.open tr.listing-ct-panel + tr.listing-ct-body {
+tbody.open > tr.listing-ct-panel + tr.listing-ct-body {
   border-top: none;
 }
-tbody.open tr.listing-ct-panel td div.listing-ct-head {
+tbody.open > tr.listing-ct-panel td div.listing-ct-head {
   border: none;
   border-bottom: 1px solid #ccc;
 }
 /* only highlight the row if navigation is available */
-tbody:not(.open) tr.listing-ct-item:not(.listing-ct-nonavigate):hover {
+tbody:not(.open) > tr.listing-ct-item:not(.listing-ct-nonavigate):hover {
   background-color: #def3ff;
 }
 /* if we can't navigate to a row but expand is available, highlight the caret */
-tbody:not(.open) tr.listing-ct-item.listing-ct-nonavigate:hover td.listing-ct-toggle {
+tbody:not(.open) > tr.listing-ct-item.listing-ct-nonavigate:hover td.listing-ct-toggle {
   color: #65bedf;
 }
 /* use gray for a row that's expanded or if navigation isn't available */
-tbody.open tr.listing-ct-item:hover,
+tbody.open > tr.listing-ct-item:hover,
 tr.listing-ct-item.listing-ct-nonavigate:hover {
   background-color: #ededed;
 }
 /* always highlight caret when hovering over an expanded row */
-tbody.open tr.listing-ct-item:hover td.listing-ct-toggle {
+tbody.open > tr.listing-ct-item:hover td.listing-ct-toggle {
   color: #65bedf;
 }
 tr.listing-ct-item .listing-ct-toggle {
@@ -335,8 +335,12 @@ tr.listing-ct-item .listing-ct-toggle + td,
 tr.listing-ct-item .listing-ct-toggle + th {
   padding-left: 0;
 }
-td.listing-ct-toggle:hover {
+tr:not(.listing-ct-selected) td.listing-ct-toggle:hover {
   color: #65bedf;
+  background-color: #ededed;
+}
+tr:not(.listing-ct-selected) td.listing-ct-toggle:hover ~ td,
+tr:not(.listing-ct-selected) td.listing-ct-toggle:hover ~ th {
   background-color: #ededed;
 }
 td.listing-ct-toggle i {
@@ -355,10 +359,6 @@ tbody.open td.listing-ct-toggle i {
 }
 tbody.open td.listing-ct-toggle i:before {
   content: "\F107";
-}
-td.listing-ct-toggle:hover ~ td,
-td.listing-ct-toggle:hover ~ th {
-  background-color: #ededed;
 }
 /* Listing items have decent padding ... */
 tr.listing-ct-item td {
@@ -380,6 +380,22 @@ td.listing-ct-actions {
   padding: 5px 10px;
   text-align: right;
   float: none;
+}
+/* if the entire row is selected, highlight */
+tr.listing-ct-item.listing-ct-selected {
+  background-color: #0088ce;
+  color: #fff;
+  border-color: #007ebf;
+}
+tr.listing-ct-item.listing-ct-selected:hover {
+  background-color: #007ebf;
+  border-color: #007ebf;
+}
+tr.listing-ct-item.listing-ct-selected .badge {
+  background-color: #00537e;
+}
+tr.listing-ct-item.listing-ct-selected .badge:hover {
+  background-color: #003e5f;
 }
 .listing-ct-head .listing-ct-actions {
   margin-top: -7px;

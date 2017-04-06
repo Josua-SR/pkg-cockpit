@@ -315,6 +315,10 @@ return plural;
   null,
   "Apagat"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "Old Password": [
   null,
   "Contrasenya antiga"

@@ -18,9 +18,6 @@
 /* Define if the GNU gettext() function is already present or preinstalled. */
 #undef HAVE_GETTEXT
 
-/* Whether gss_import_cred is available */
-#undef HAVE_GSS_IMPORT_CRED
-
 /* Define to 1 if you have the <inttypes.h> header file. */
 #undef HAVE_INTTYPES_H
 
@@ -41,12 +38,6 @@
 
 /* Define to 1 if you have the <pcp/pmda.h> header file. */
 #undef HAVE_PCP_PMDA_H
-
-/* Whether ssh_gssapi_set_creds is available */
-#undef HAVE_SSH_GSSAPI_SET_CREDS
-
-/* Whether ssh_set_agent_socket is available */
-#undef HAVE_SSH_SET_AGENT_SOCKET
 
 /* Define to 1 if you have the <stdint.h> header file. */
 #undef HAVE_STDINT_H

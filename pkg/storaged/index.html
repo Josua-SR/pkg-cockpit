@@ -601,7 +601,8 @@
           </td>
           {{#DynamicMembers}}
           <td class="storage-action">
-            <button class="btn btn-default btn-control-ct fa fa-minus"
+            <button class="btn btn-default btn-control-ct fa fa-minus tooltip-ct"
+                    {{#Excuse}}disabled title="{{.}}"{{/Excuse}}
                     data-action="mdraid_remove_disk" data-arg="{{path}}">
             </button>
           </td>
@@ -717,10 +718,7 @@
           <div class="modal-body">
             {{#Alerts}}
             <div class="alert alert-danger">
-              <span class="pficon-layered">
-                <span class="pficon pficon-error-octagon"></span>
-                <span class="pficon pficon-error-exclamation"></span>
-              </span>
+              <span class="pficon pficon-error-circle-o"></span>
               <span class="alert-message">{{Message}}</span>
             </div>
             {{/Alerts}}
@@ -810,15 +808,25 @@
                 {{#SelectMany}}
                 <td class="top">{{Title}}</td>
                 <td>
+                  {{#HasOptions}}
                   <ul class="list-group available-disks-group dialog-list-ct" data-field={{.}}>
                     {{#Options}}
                     <li class="list-group-item">
                       <div class="checkbox">
-                        <label><input type="checkbox"><span>{{Title}}</span></label>
+                        <label><input type="checkbox">
+                          {{#Label}}
+                          <span class="pull-right">{{.}}</span>
+                          {{/Label}}
+                          <span>{{Title}}</span>
+                        </label>
                       </div>
                     </li>
                     {{/Options}}
                   </ul>
+                  {{/HasOptions}}
+                  {{^HasOptions}}
+                  <span class="text-danger">{{EmptyWarning}}</span>
+                  {{/HasOptions}}
                 </td>
                 {{/SelectMany}}
                 {{#SelectRow}}

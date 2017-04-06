@@ -72,6 +72,8 @@ libcockpit_ws_a_SOURCES = \
 	src/ws/cockpitws.h				\
 	src/ws/cockpithandlers.h	src/ws/cockpithandlers.c	\
 	src/ws/cockpitauth.h		src/ws/cockpitauth.c		\
+	src/ws/cockpitauthorize.c \
+	src/ws/cockpitauthorize.h \
 	src/ws/cockpitauthoptions.h \
 	src/ws/cockpitauthoptions.c \
 	src/ws/cockpitauthprocess.h \
@@ -87,10 +89,6 @@ libcockpit_ws_a_SOURCES = \
 	src/ws/cockpitcreds.h src/ws/cockpitcreds.c \
 	src/ws/cockpitwebservice.h \
 	src/ws/cockpitwebservice.c \
-	src/ws/cockpitsshagent.h \
-	src/ws/cockpitsshagent.c \
-	src/ws/cockpitsshtransport.h \
-	src/ws/cockpitsshtransport.c \
 	$(NULL)
 
 libcockpit_ws_a_CFLAGS = \
@@ -104,27 +102,11 @@ libcockpit_ws_LIBS = \
 	libcockpit-ws.a \
 	libcockpit-common.a \
 	libwebsocket.a \
-	libreauthorize.a \
 	$(COCKPIT_WS_LIBS) \
-	$(REAUTHORIZE_LIBS) \
-	$(NULL)
-
-test_rsa_key: src/ws/test_rsa
-	$(AM_V_GEN) cp $< $@ && chmod 600 $@
-noinst_DATA += test_rsa_key
-
-CLEANFILES += \
-	test_rsa_key \
 	$(NULL)
 
 EXTRA_DIST += \
-	src/ws/mock_rsa_key \
-	src/ws/mock_dsa_key \
-	src/ws/test_rsa \
-	src/ws/test_rsa.pub \
 	src/ws/mock_cert \
-	src/ws/mock_known_hosts \
-	src/ws/mock-pid-cat \
 	src/ws/mock-cat-with-init \
 	src/ws/mock-kdc \
 	src/ws/mock-krb5.conf.in \
@@ -139,7 +121,13 @@ sbin_PROGRAMS += remotectl
 
 libexec_PROGRAMS += cockpit-ws cockpit-session
 
-cockpit_session_SOURCES = src/ws/session.c
+cockpit_session_SOURCES = \
+	src/common/cockpitmemory.c \
+	src/common/cockpitmemory.h \
+	src/common/cockpithex.c \
+	src/common/cockpithex.h \
+	src/ws/session.c \
+	$(NULL)
 cockpit_session_LDADD = $(COCKPIT_SESSION_LIBS)
 
 cockpit_ws_SOURCES =					\
@@ -247,11 +235,11 @@ WS_CHECKS = \
 	test-creds \
 	test-auth \
 	test-authoptions \
-	test-sshagent \
 	test-webservice \
 	test-channelresponse \
 	test-handlers \
 	test-kerberos \
+	test-authorize \
 	test-remotectlcertificate \
 	$(NULL)
 
@@ -304,6 +292,10 @@ test_handlers_LDADD = \
 	$(cockpit_ws_LDADD) \
 	$(NULL)
 
+test_authorize_CFLAGS = $(cockpit_ws_CFLAGS)
+test_authorize_SOURCES = src/ws/test-authorize.c $(NULL)
+test_authorize_LDADD = libretest.a $(cockpit_ws_LDADD)
+
 test_remotectlcertificate_CFLAGS = \
 	$(COCKPIT_CFLAGS) \
 	$(NULL)
@@ -318,13 +310,6 @@ test_remotectlcertificate_LDADD = \
 	libcockpit-common.a \
 	$(COCKPIT_LIBS) \
 	$(NULL)
-
-test_sshagent_CFLAGS = $(cockpit_ws_CFLAGS)
-test_sshagent_SOURCES = src/ws/test-sshagent.c
-
-test_sshagent_LDADD = \
-	libcockpit-ws.a \
-	$(cockpit_ws_LDADD)
 
 test_webservice_SOURCES = \
 	src/ws/test-webservice.c \
@@ -344,20 +329,6 @@ test_kerberos_SOURCES = src/ws/test-kerberos.c
 test_kerberos_LDADD = libcockpit-ws.a $(cockpit_ws_LDADD)
 test_kerberos_CFLAGS = $(cockpit_ws_CFLAGS)
 
-mock_agent_bridge_SOURCES = src/ws/mock-agent-bridge.c \
-	src/bridge/cockpitchannel.c src/bridge/cockpitchannel.h \
-	src/bridge/cockpitconnect.c src/bridge/cockpitconnect.h \
-	src/bridge/cockpitpipechannel.c src/bridge/cockpitpipechannel.h \
-    $(NULL)
-
-mock_agent_bridge_CFLAGS = \
-	-DG_LOG_DOMAIN=\"mock-agent-bridge\" \
-    $(COCKPIT_WS_CFLAGS) \
-	$(NULL)
-mock_agent_bridge_LDADD = libcockpit-ws.a \
-	$(cockpit_ws_LDADD) \
-	$(NULL)
-
 mock_echo_SOURCES = src/ws/mock-echo.c
 mock_echo_CFLAGS = $(COCKPIT_WS_CFLAGS)
 mock_echo_LDADD = $(COCKPIT_WS_LIBS)
@@ -367,14 +338,30 @@ mock_auth_command_SOURCES = src/ws/mock-auth-command.c
 noinst_PROGRAMS += \
 	$(WS_CHECKS) \
 	mock-echo \
-	mock-agent-bridge \
 	mock-auth-command \
 	$(NULL)
 
 noinst_SCRIPTS += \
-	src/ws/mock-pid-cat \
 	src/ws/mock-cat-with-init \
 	$(NULL)
+
+if WITH_COCKPIT_SSH
+
+WS_CHECKS += \
+	test-authssh \
+	$(NULL)
+
+test_authssh_CFLAGS = $(cockpit_ws_CFLAGS)
+test_authssh_SOURCES = \
+	src/ws/test-authssh.c \
+	src/ws/mock-auth.c \
+	src/ws/mock-auth.h \
+	$(NULL)
+test_authssh_LDADD = \
+	libcockpit-ws.a \
+	$(cockpit_ws_LDADD)
+
+endif
 
 TESTS += $(WS_CHECKS)
 
@@ -399,73 +386,6 @@ install-exec-hook::
 	mkdir -p $(DESTDIR)$(sysconfdir)/cockpit/ws-certs.d $(DESTDIR)$(sysconfdir)/cockpit/machines.d
 	chmod 755 $(DESTDIR)$(sysconfdir)/cockpit/ws-certs.d $(DESTDIR)$(sysconfdir)/cockpit/machines.d
 
-update-known-hosts:
-	cat $(srcdir)/src/ws/mock_*.pub | \
-		sed -ne 's/\(.*\) [^ ]\+$$/[localhost]:*,[127.0.0.1]:* \1/p' > \
-			$(srcdir)/src/ws/mock_known_hosts
-
 prepare-po::
 	$(INTLTOOL_EXTRACT) -l --type=gettext/xml $(srcdir)/$(appdata_in)
 	$(INTLTOOL_EXTRACT) -l --type=gettext/ini $(srcdir)/$(desktop_in)
-
-# ----------------------------------------------------------------------------------------------------
-
-if WITH_COCKPIT_SSH
-
-libexec_PROGRAMS += cockpit-ssh
-
-cockpit_ssh_SOURCES = \
-	src/ws/cockpitauthoptions.h \
-	src/ws/cockpitauthoptions.c \
-	src/ws/ssh.c \
-	$(NULL)
-
-cockpit_ssh_LDADD = \
-	libcockpit-common.a \
-	$(COCKPIT_SSH_SESSION_LIBS) \
-	$(NULL)
-
-cockpit_ssh_CFLAGS = \
-	$(COCKPIT_SSH_SESSION_CFLAGS) \
-	$(NULL)
-
-noinst_PROGRAMS += mock-sshd
-
-mock_sshd_SOURCES = src/ws/mock-sshd.c
-
-mock_sshd_LDADD = \
-	$(COCKPIT_WS_LIBS) \
-	$(COCKPIT_SSH_SESSION_LIBS) \
-	$(NULL)
-
-mock_sshd_CFLAGS = \
-	$(COCKPIT_WS_CFLAGS) \
-	$(COCKPIT_SSH_SESSION_CFLAGS) \
-	$(NULL)
-
-WS_CHECKS += \
-	test-authssh \
-	test-sshtransport \
-	$(NULL)
-
-test_authssh_CFLAGS = $(cockpit_ws_CFLAGS)
-test_authssh_SOURCES = \
-	src/ws/test-authssh.c \
-	src/ws/mock-auth.c \
-	src/ws/mock-auth.h \
-	$(NULL)
-test_authssh_LDADD = \
-	libcockpit-ws.a \
-	$(cockpit_ws_LDADD)
-
-test_sshtransport_SOURCES = \
-	src/ws/test-sshtransport.c \
-	$(NULL)
-test_sshtransport_CFLAGS = $(cockpit_ws_CFLAGS)
-test_sshtransport_LDADD = \
-	libwebsocket.a \
-	libcockpit-ws.a \
-	$(cockpit_ws_LDADD) \
-	$(NULL)
-
-endif

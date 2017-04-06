@@ -76,6 +76,12 @@ class TestMultiOS(MachineCase):
         dev_m = self.machine
         dev_b = self.browser
 
+        # Newer bridges running under an old cockpit-ws don't get the
+        # support that they need to prompt for the password. So open
+        # up sudo for this test.
+        dev_m.execute("echo '%wheel ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers.d/user-override")
+        dev_m.execute("echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers.d/user-override")
+
         self.allow_hostkey_messages()
 
         self.login_and_go("/dashboard")
@@ -163,6 +169,7 @@ class TestMultiOS(MachineCase):
         self.allow_journal_messages("g_hash_table_iter_next: assertion 'ri->version == ri->hash_table->version' failed")
         self.allow_journal_messages("couldn't run usermod command: Child process exited with code 6")
         self.allow_journal_messages("usermod: user 'postfix' does not exist")
+        self.allow_journal_messages(".*pam_authenticate failed: Authentication failure")
 
     @skipImage("No dashboard on Atomic", "continuous-atomic", "fedora-atomic", "rhel-atomic")
     def testFedora22(self):

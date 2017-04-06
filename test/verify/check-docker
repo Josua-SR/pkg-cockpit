@@ -23,6 +23,7 @@ from testlib import *
 import json
 import os
 
+@skipImage("No cockpit-docker on i386", "fedora-i386")
 class TestDocker(MachineCase):
     def confirm(self):
         b = self.browser
@@ -318,7 +319,7 @@ CMD ["/bin/sh"]
         b.set_val("#select-mounted-volumes form:eq(0) input:eq(0)", "/blah")
         b.set_val("#select-mounted-volumes form:eq(0) input:eq(1)", "/mnt")
         if m.image not in [ "debian-8", "debian-testing", "ubuntu-1604" ]:
-            m.execute("chcon -Rt svirt_sandbox_file_t /mnt")
+            m.execute("chcon --dereference -HRt svirt_sandbox_file_t /mnt")
         m.execute("touch /mnt/dripping.txt")
 
         # And run it without a terminal
@@ -346,8 +347,10 @@ CMD ["/bin/sh"]
         m = self.machine
 
         # Try to access docker without admin (wheel, sudo, ...) group
+        # also need to disable Ubuntu's legacy "admin" sudo group as it happens
+        # to have the same name as our admin test user
         m.execute("systemctl start docker")
-        m.execute("usermod -G '' admin")
+        m.execute("usermod -G '' admin; sed -i '/^%admin/d' /etc/sudoers")
 
         # HACK: Logging in without the admin group will try to write to
         # /var/lib/cockpit/, but this will fail.
@@ -356,7 +359,7 @@ CMD ["/bin/sh"]
         self.allow_journal_messages(".*Failed to create file '/var/lib/cockpit/.*': Permission denied")
         self.allow_journal_messages("http:///var/run/docker.sock/.*: couldn't connect: .*")
 
-        self.login_and_go("/docker")
+        self.login_and_go("/docker", authorized=False)
 
         # We can not become root, so we can't access docker.
         b.wait_visible("#curtain")
@@ -366,7 +369,7 @@ CMD ["/bin/sh"]
         # Give "admin" access via the admin group and login again
         m.execute("usermod -G %s admin" % m.get_admin_group())
         m.execute("systemctl stop docker")
-        b.relogin("/docker")
+        b.relogin("/docker", authorized=True)
         self.allow_restart_journal_messages()
 
         # Now we can become root and start docker
@@ -505,7 +508,7 @@ CMD ["/bin/sh"]
         # This should be updated
         b.wait_in_text("#container-details-cpu-row", "1024 shares")
 
-@skipImage("Skip on systems without atomic and ones with missing deps", "centos-7", "debian-8", "debian-testing", "ubuntu-1604", "rhel-atomic", "fedora-atomic")
+@skipImage("Skip on systems without atomic and ones with missing deps", "centos-7", "debian-8", "debian-testing", "ubuntu-1604", "rhel-atomic", "fedora-atomic", "fedora-i386")
 class TestAtomicScan(MachineCase):
     def testBasic(self):
         b = self.browser
@@ -518,7 +521,7 @@ class TestAtomicScan(MachineCase):
         # This mimics what `atomic scan` would put there, without us having to install
         # a known vulnerable image and initiating a scan from this test.
 
-        infos = json.loads(m.execute("docker inspect docker.io/busybox"))
+        infos = json.loads(m.execute("docker inspect busybox"))
         image_id = infos[0]["Id"]
         short_id = image_id.replace("sha256:", "")
         result_path = os.path.join("/var/lib/atomic/atomic_scan_openscap/2016-12-11-12-09-57-674487/", short_id)

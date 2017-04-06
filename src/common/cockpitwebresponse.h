@@ -46,6 +46,8 @@ typedef enum {
   COCKPIT_WEB_RESPONSE_CACHE_PRIVATE,
 } CockpitCacheType;
 
+#define COCKPIT_CHECKSUM_HEADER "X-Cockpit-Pkg-Checksum"
+
 typedef struct _CockpitWebResponse        CockpitWebResponse;
 
 extern const gchar *  cockpit_web_exception_escape_root;
@@ -59,6 +61,9 @@ CockpitWebResponse *  cockpit_web_response_new           (GIOStream *io,
                                                           const gchar *path,
                                                           const gchar *query,
                                                           GHashTable *in_headers);
+void                  cockpit_web_response_set_method    (CockpitWebResponse *response,
+                                                          const gchar *method);
+
 
 const gchar *         cockpit_web_response_get_path      (CockpitWebResponse *self);
 

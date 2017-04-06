@@ -322,14 +322,14 @@ class KubernetesCommonTests(VolumeTests):
         m.execute("kubectl create -f /tmp/mock-k8s-tiny-app.json")
         b.wait_in_text("#service-list", "mock")
 
-        pods = m.execute('kubectl get pods --output=template --template="{{ range .items }}{{.metadata.name}}|{{ end }}"')
-        podl = pods.split("|")
         b.click("a[href='#/list']")
         b.wait_present("#content .details-listing")
         b.wait_present("#content .details-listing tbody[data-id='services/default/mock']")
         self.assertEqual(b.text(".details-listing tbody[data-id='services/default/mock'] th"), "mock")
         b.wait_present("#content .details-listing tbody[data-id='replicationcontrollers/default/mock']")
         self.assertEqual(b.text(".details-listing tbody[data-id='replicationcontrollers/default/mock'] th"), "mock")
+        b.wait_present(".details-listing tbody[data-id^='pods/default/'] th")
+        podl = m.execute('kubectl get pods --output=template --template="{{ range .items }}{{.metadata.name}}|{{ end }}"').split("|")
         b.wait_present(".details-listing tbody[data-id='pods/default/"+podl[0]+"'] th")
         self.assertEqual(b.text(".details-listing tbody[data-id='pods/default/"+podl[0]+"'] th"), podl[0])
 
@@ -736,7 +736,7 @@ class OpenshiftCommonTests(VolumeTests):
         b.wait_in_text(".curtains-ct", "Login failed")
 
         # Nothing was saved
-        self.assertFalse(m.execute("grep 10.111.112.101 /var/lib/cockpit/known_hosts || true"))
+        self.assertFalse(m.execute("grep 10.111.112.101 /etc/ssh/ssh_known_hosts || true"))
         self.assertFalse(m.execute("grep 10.111.112.101 /etc/cockpit/machines.d/99-webui.json || true"))
 
         self.allow_hostkey_messages()

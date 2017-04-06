@@ -315,6 +315,10 @@ return plural;
   null,
   "关"
  ],
+ "Ok": [
+  null,
+  "确认"
+ ],
  "Old Password": [
   null,
   "旧密码"

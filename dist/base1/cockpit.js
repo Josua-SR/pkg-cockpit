@@ -1083,14 +1083,12 @@ function factory() {
     cockpit.base64_decode = base64_decode;
 
     cockpit.kill = function kill(host, group) {
-        var options = { "command": "kill" };
+        var options = { };
         if (host)
             options.host = host;
         if (group)
             options.group = group;
-        ensure_transport(function(transport) {
-            transport.send_control(options);
-        });
+        cockpit.transport.control("kill", options);
     };
 
     /* Not public API ... yet? */
@@ -1099,11 +1097,8 @@ function factory() {
             options = default_host;
         if (typeof options == "string")
             options = { "host": options };
-        options["command"] = "hint";
         options["hint"] = name;
-        ensure_transport(function(transport) {
-            transport.send_control(options);
-        });
+        cockpit.transport.control("hint", options);
     };
 
     cockpit.transport = public_transport = {
@@ -1139,6 +1134,13 @@ function factory() {
         origin: transport_origin,
         options: { },
         uri: calculate_url,
+        control: function(command, options) {
+            options = extend({ }, options);
+            options["command"] = command;
+            ensure_transport(function(transport) {
+                transport.send_control(options);
+            });
+        },
         application: function () {
             if (!default_transport || window.mock)
                 return calculate_application();
@@ -2389,7 +2391,7 @@ function factory() {
      */
 
     document.addEventListener("click", function(ev) {
-        if (in_array(ev.target.classList, 'disabled'))
+        if (ev.target.classList && in_array(ev.target.classList, 'disabled'))
           ev.stopPropagation();
     }, true);
 
@@ -3249,7 +3251,7 @@ function factory() {
             close_perform(options);
         }
 
-        channel.addEventListener("control", on_ready);
+        channel.addEventListener("ready", on_ready);
         channel.addEventListener("message", on_message);
         channel.addEventListener("close", on_close);
 
@@ -3977,7 +3979,7 @@ function factory() {
         var self = this;
 
         self.options = options;
-        options.payload = "http-stream1";
+        options.payload = "http-stream2";
 
         var active_requests = [ ];
 
@@ -4055,31 +4057,25 @@ function factory() {
             var streamer = null;
             var responsers = null;
 
-            var count = 0;
             var resp = null;
 
             var buffer = channel.buffer(function(data) {
-                count += 1;
+                /* Fire any streamers */
+                if (resp && resp.status >= 200 && resp.status <= 299 && streamer)
+                    return streamer.call(ret, data);
+                return 0;
+            });
 
-                if (count === 1) {
-                    if (channel.binary)
-                        data = cockpit.utf8_decoder().decode(data);
-                    resp = JSON.parse(data);
-
-                    /* Anyone looking for response details? */
+            function on_control(event, options) {
+                /* Anyone looking for response details? */
+                if (options.command == "response") {
+                    resp = options;
                     if (responsers) {
                         resp.headers = resp.headers || { };
                         invoke_functions(responsers, ret, [resp.status, resp.headers]);
                     }
-                    return true;
                 }
-
-                /* Fire any streamers */
-                if (resp.status >= 200 && resp.status <= 299 && streamer)
-                    return streamer.call(ret, data);
-
-                return 0;
-            });
+            }
 
             function on_close(event, options) {
                 var pos = active_requests.indexOf(ret);
@@ -4110,9 +4106,11 @@ function factory() {
                     }
                 }
 
+                channel.removeEventListener("control", on_control);
                 channel.removeEventListener("close", on_close);
             }
 
+            channel.addEventListener("control", on_control);
             channel.addEventListener("close", on_close);
 
             ret.stream = function(callback) {

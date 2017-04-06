@@ -72,6 +72,9 @@ $ sudo klist -k
 $ getent passwd user@example.com
 user@example.com:*:381001109:381000513:User Name:/home/user:/bin/sh
 </pre>
+<p>If you wish to delegate your kerberos credentials to Cockpit, and allow Cockpit
+      to then connect to other machines using those credentials, you should enable delegation
+      for the hosts running Cockpit, and in some cases the <code class="code">HTTP</code> service as well.</p>
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h2 class="title" style="clear: both">
@@ -80,7 +83,7 @@ user@example.com:*:381001109:381000513:User Name:/home/user:/bin/sh
       ticket in the current user session. A command like this will get one:</p>
 <pre class="programlisting">
 $ kinit user@EXAMPLE.COM
-Password for user@EXAMPLE.COM:  
+Password for user@EXAMPLE.COM:
 </pre>
 <p>In addition your browser must be usually be configured to allow kerberos
       authentication for the domain.</p>
@@ -121,7 +124,25 @@ Password for user@EXAMPLE.COM:
 <p>Use a fully qualified server name (with the domain name at the end) to access
       Cockpit in your web browser.</p>
 <p>If you wish to connect from one server to another in Cockpit using kerberos SSO,
-      then you have to explicitly enable this in your web browsers.</p>
+      then you have to explicitly enable all sorts of things. For starters, make sure that
+      delegated credentials are allowed by your domain (see above). Next when requesting your
+      kerberos ticket make sure that forwardable tickets are requested:</p>
+<pre class="programlisting">
+$ kinit -f user@EXAMPLE.COM
+Password for user@EXAMPLE.COM:
+</pre>
+<p>Make sure that the forwardable flag <code class="code">F</code> is present in your ticket:</p>
+<pre class="programlisting">
+$ klist -f
+Ticket cache: KEYRING:persistent:1000:1000
+Default principal: user@EXAMPLE.COM
+
+Valid starting       Expires              Service principal
+18.03.2017 05:39:23  19.03.2017 05:39:20  krbtgt/EXAMPLE.COM@EXAMPLE.COM
+	Flags: FIA
+</pre>
+<p>Lastly configure your browser to allow delegated, forwardable kerberos
+      credentials to be sent to Cockpit:</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">

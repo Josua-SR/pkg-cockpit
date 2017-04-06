@@ -1,7 +1,9 @@
 # Generated Makefile data for shell
-# Stamp: Thu Mar 09 2017 15:00:42 GMT+0000 (UTC)
+# Stamp: Thu Mar 30 2017 10:38:49 GMT+0000 (UTC)
 
 shell_INPUTS = \
+	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \
+	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
 	$(srcdir)/pkg/lib/credentials-ssh-private-keys.sh \
 	$(srcdir)/pkg/lib/credentials.js \
 	$(srcdir)/pkg/lib/listing.less \
@@ -21,6 +23,9 @@ shell_INPUTS = \
 	$(srcdir)/pkg/lib/patterns.js \
 	$(srcdir)/pkg/lib/table.css \
 	$(srcdir)/pkg/lib/variables.less \
+	$(srcdir)/pkg/shell/active-pages-dialog.jsx \
+	$(srcdir)/pkg/shell/active-pages.js \
+	$(srcdir)/pkg/shell/active-pages.less \
 	$(srcdir)/pkg/shell/base_index.js \
 	$(srcdir)/pkg/shell/images/server-error.png \
 	$(srcdir)/pkg/shell/images/server-large.png \
@@ -30,16 +35,21 @@ shell_INPUTS = \
 	$(srcdir)/pkg/shell/index.html \
 	$(srcdir)/pkg/shell/index.js \
 	$(srcdir)/pkg/shell/indexes.js \
-	$(srcdir)/pkg/shell/shell.css \
+	$(srcdir)/pkg/shell/privileges.js \
 	$(srcdir)/pkg/shell/shell.html \
+	$(srcdir)/pkg/shell/shell.less \
 	$(srcdir)/pkg/shell/simple.html \
 	$(srcdir)/pkg/shell/stub.html \
+	$(srcdir)/pkg/shell/switcher.less \
+	$(srcdir)/pkg/shell/variables.less \
 	$(NULL)
 
 shell_OUTPUTS = \
 	dist/shell/images/server-error.png \
 	dist/shell/images/server-large.png \
 	dist/shell/images/server-small.png \
+	dist/shell/index-no-machines.css \
+	dist/shell/index-no-machines.css.map \
 	dist/shell/index-no-machines.min.js \
 	dist/shell/index-no-machines.min.js.map \
 	dist/shell/index-stub.css \
@@ -62,6 +72,7 @@ shell_INSTALL = \
 	dist/shell/images/server-error.png \
 	dist/shell/images/server-large.png \
 	dist/shell/images/server-small.png \
+	dist/shell/index-no-machines.css.gz \
 	dist/shell/index-no-machines.min.js.gz \
 	dist/shell/index-stub.css.gz \
 	dist/shell/index-stub.min.js.gz \
@@ -75,6 +86,7 @@ shell_INSTALL = \
 	$(NULL)
 
 shell_DEBUG = \
+	dist/shell/index-no-machines.css.map \
 	dist/shell/index-no-machines.min.js.map \
 	dist/shell/index-stub.css.map \
 	dist/shell/index-stub.min.js.map \
@@ -87,7 +99,7 @@ shell_TESTS = \
 
 dist/shell/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N pkg/lib/credentials-ssh-private-keys.sh -N pkg/lib/credentials.js -N pkg/lib/listing.less -N pkg/lib/machine-add.html -N pkg/lib/machine-auth-failed.html -N pkg/lib/machine-change-auth.html -N pkg/lib/machine-change-port.html -N pkg/lib/machine-color-picker.html -N pkg/lib/machine-dialogs.js -N pkg/lib/machine-invalid-hostkey.html -N pkg/lib/machine-not-supported.html -N pkg/lib/machine-sync-users.html -N pkg/lib/machine-unknown-hostkey.html -N pkg/lib/machines.js -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/table.css -N pkg/lib/variables.less -N pkg/shell/base_index.js -N pkg/shell/images/server-error.png -N pkg/shell/images/server-large.png -N pkg/shell/images/server-small.png -N pkg/shell/index-no-machines.js -N pkg/shell/index-stub.js -N pkg/shell/index.html -N pkg/shell/index.js -N pkg/shell/indexes.js -N pkg/shell/shell.css -N pkg/shell/shell.html -N pkg/shell/simple.html -N pkg/shell/stub.html $(addprefix -N ,$(shell find pkg/ -name manifest.json)) $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/credentials-ssh-private-keys.sh -N pkg/lib/credentials.js -N pkg/lib/listing.less -N pkg/lib/machine-add.html -N pkg/lib/machine-auth-failed.html -N pkg/lib/machine-change-auth.html -N pkg/lib/machine-change-port.html -N pkg/lib/machine-color-picker.html -N pkg/lib/machine-dialogs.js -N pkg/lib/machine-invalid-hostkey.html -N pkg/lib/machine-not-supported.html -N pkg/lib/machine-sync-users.html -N pkg/lib/machine-unknown-hostkey.html -N pkg/lib/machines.js -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/table.css -N pkg/lib/variables.less -N pkg/shell/active-pages-dialog.jsx -N pkg/shell/active-pages.js -N pkg/shell/active-pages.less -N pkg/shell/base_index.js -N pkg/shell/images/server-error.png -N pkg/shell/images/server-large.png -N pkg/shell/images/server-small.png -N pkg/shell/index-no-machines.js -N pkg/shell/index-stub.js -N pkg/shell/index.html -N pkg/shell/index.js -N pkg/shell/indexes.js -N pkg/shell/privileges.js -N pkg/shell/shell.html -N pkg/shell/shell.less -N pkg/shell/simple.html -N pkg/shell/stub.html -N pkg/shell/switcher.less -N pkg/shell/variables.less $(addprefix -N ,$(shell find pkg/ -name manifest.json)) $< > $@.tmp && mv $@.tmp $@
 
 dist/shell/Makefile.deps: $(WEBPACK_CONFIG) $(shell_INPUTS)
 	$(WEBPACK_RULE) -d dist/shell/Makefile.deps $(WEBPACK_CONFIG)
@@ -97,6 +109,10 @@ dist/shell/images/server-error.png: dist/shell/Makefile.deps
 dist/shell/images/server-large.png: dist/shell/Makefile.deps
 
 dist/shell/images/server-small.png: dist/shell/Makefile.deps
+
+dist/shell/index-no-machines.css: dist/shell/Makefile.deps
+
+dist/shell/index-no-machines.css.map: dist/shell/Makefile.deps
 
 dist/shell/index-no-machines.min.js: dist/shell/Makefile.deps
 
@@ -125,6 +141,10 @@ dist/shell/shell.html: dist/shell/Makefile.deps
 dist/shell/simple.html: dist/shell/Makefile.deps
 
 dist/shell/stub.html: dist/shell/Makefile.deps
+
+$(srcdir)/pkg/lib/cockpit-components-dialog.jsx:
+
+$(srcdir)/pkg/lib/cockpit-components-listing.jsx:
 
 $(srcdir)/pkg/lib/credentials-ssh-private-keys.sh:
 
@@ -164,6 +184,12 @@ $(srcdir)/pkg/lib/table.css:
 
 $(srcdir)/pkg/lib/variables.less:
 
+$(srcdir)/pkg/shell/active-pages-dialog.jsx:
+
+$(srcdir)/pkg/shell/active-pages.js:
+
+$(srcdir)/pkg/shell/active-pages.less:
+
 $(srcdir)/pkg/shell/base_index.js:
 
 $(srcdir)/pkg/shell/images/server-error.png:
@@ -182,13 +208,19 @@ $(srcdir)/pkg/shell/index.js:
 
 $(srcdir)/pkg/shell/indexes.js:
 
-$(srcdir)/pkg/shell/shell.css:
+$(srcdir)/pkg/shell/privileges.js:
 
 $(srcdir)/pkg/shell/shell.html:
+
+$(srcdir)/pkg/shell/shell.less:
 
 $(srcdir)/pkg/shell/simple.html:
 
 $(srcdir)/pkg/shell/stub.html:
+
+$(srcdir)/pkg/shell/switcher.less:
+
+$(srcdir)/pkg/shell/variables.less:
 
 WEBPACK_INPUTS += $(shell_INPUTS)
 WEBPACK_OUTPUTS += $(shell_OUTPUTS)

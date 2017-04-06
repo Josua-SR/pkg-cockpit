@@ -124,6 +124,10 @@
         return s;
     };
 
+    utils.format_size_and_text = function format_size_and_text(size, text) {
+        return cockpit.format(_("${size} ${desc}"), { size: utils.fmt_size(size), desc: text});
+    };
+
     utils.validate_lvm2_name = function validate_lvm2_name(name) {
         if (name === "")
             return _("Name cannot be empty.");
@@ -254,7 +258,80 @@
         };
     };
 
-    utils.get_free_blockdevs = function get_free_blockdevs(client) {
+    utils.get_partitions = function get_partitions(client, block) {
+        var partitions = client.blocks_partitions[block.path];
+
+        function process_level(level, container_start, container_size) {
+            var n;
+            var last_end = container_start;
+            var total_end = container_start + container_size;
+            var block, start, size, is_container, is_contained;
+
+            var result = [ ];
+
+            function append_free_space(start, size) {
+                // There is a lot of rounding and aligning going on in
+                // the storage stack.  All of udisks2, libblockdev,
+                // and libparted seem to contribute their own ideas of
+                // where a partition really should start.
+                //
+                // The start of partitions are aggressively rounded
+                // up, sometimes twice, but the end is not aligned in
+                // the same way.  This means that a few megabytes of
+                // free space will show up between partitions.
+                //
+                // We hide these small free spaces because they are
+                // unexpected and can't be used for anything anyway.
+                //
+                // "Small" is anything less than 3 MiB, which seems to
+                // work okay.  (The worst case is probably creating
+                // the first logical partition inside a extended
+                // partition with udisks+libblockdev.  It leads to a 2
+                // MiB gap.)
+
+                if (size >= 3*1024*1024) {
+                    result.push({ type: 'free', start: start, size: size });
+                }
+            }
+
+            for (n = 0; n < partitions.length; n++) {
+                block = client.blocks[partitions[n].path];
+                start = partitions[n].Offset;
+                size = partitions[n].Size;
+                is_container = partitions[n].IsContainer;
+                is_contained = partitions[n].IsContained;
+
+                if (block === null)
+                    continue;
+
+                if (level === 0 && is_contained)
+                    continue;
+
+                if (level == 1 && !is_contained)
+                    continue;
+
+                if (start < container_start || start+size > container_start+container_size)
+                    continue;
+
+                append_free_space(last_end, start - last_end);
+                if (is_container) {
+                    result.push({ type: 'container', block: block, size: size,
+                                  partitions: process_level(level+1, start, size) });
+                } else {
+                    result.push({ type: 'block', block: block });
+                }
+                last_end = start + size;
+            }
+
+            append_free_space(last_end, total_end - last_end);
+
+            return result;
+        }
+
+        return process_level(0, 0, block.Size);
+    };
+
+    utils.get_available_spaces = function get_available_spaces(client) {
         function is_free(path) {
             var block = client.blocks[path];
             var block_ptable = client.blocks_ptable[path];
@@ -298,15 +375,49 @@
             var block = client.blocks[path];
             var link = utils.get_block_link_target(client, path);
             var text = $('<div>').html(link.html).text();
-
-            return {
-                path: path,
-                Name: utils.block_name(block),
-                Description: utils.fmt_size(block.Size) + " " + text
-            };
+            return { type: 'block', block: block, size: block.Size, desc: text };
         }
 
-        return Object.keys(client.blocks).filter(is_free).sort(utils.make_block_path_cmp(client)).map(make);
+        var spaces = Object.keys(client.blocks).filter(is_free).sort(utils.make_block_path_cmp(client)).map(make);
+
+        function add_free_spaces(block) {
+            var parts = utils.get_partitions(client, block);
+            var i, p, link, text;
+            for (i in parts) {
+                p = parts[i];
+                if (p.type == 'free') {
+                    link = utils.get_block_link_target(client, block.path);
+                    text = $('<div>').html(link.html).text();
+                    spaces.push({ type: 'free', block: block, start: p.start, size: p.size,
+                                  desc: cockpit.format(_("unpartitioned space on $0"), text) });
+                }
+            }
+        }
+
+        for (var p in client.blocks_ptable)
+            add_free_spaces(client.blocks[p]);
+
+        return spaces;
+    };
+
+    utils.available_space_to_option = function available_space_to_option(spc) {
+        return {
+            value: spc,
+            Title: utils.format_size_and_text(spc.size, spc.desc),
+            Label: utils.block_name(spc.block)
+        };
+    };
+
+    utils.prepare_available_spaces = function prepare_available_spaces(client, spcs) {
+        function prepare(spc) {
+            if (spc.type == 'block')
+                return cockpit.resolve(spc.block.path);
+            else if (spc.type == 'free') {
+                var block_ptable = client.blocks_ptable[spc.block.path];
+                return block_ptable.CreatePartition(spc.start, spc.size, "", "", { });
+            }
+        }
+        return cockpit.all(spcs.map(prepare));
     };
 
     /* Comparison function for sorting lists of block devices.

@@ -1,0 +1,43 @@
+# Generated Makefile data for ssh
+# Stamp: Thu Mar 30 2017 10:38:49 GMT+0000 (UTC)
+
+ssh_INPUTS = \
+	$(NULL)
+
+ssh_OUTPUTS = \
+	$(NULL)
+
+ssh_PO = dist/ssh/po.js $(patsubst %,dist/ssh/po.%.js,$(LINGUAS))
+
+ssh_INSTALL = \
+	$(addsuffix .gz,$(ssh_PO)) \
+	$(NULL)
+
+ssh_DEBUG = \
+	$(NULL)
+
+ssh_TESTS = \
+	$(NULL)
+
+dist/ssh/%.po: po/%.po
+	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
+	$(MSGGREP)  $< > $@.tmp && mv $@.tmp $@
+
+dist/ssh/Makefile.deps: $(WEBPACK_CONFIG) $(ssh_INPUTS)
+	$(WEBPACK_RULE) -d dist/ssh/Makefile.deps $(WEBPACK_CONFIG)
+
+WEBPACK_INPUTS += $(ssh_INPUTS)
+WEBPACK_OUTPUTS += $(ssh_OUTPUTS)
+WEBPACK_PO += $(ssh_PO)
+WEBPACK_INSTALL += $(ssh_INSTALL)
+WEBPACK_DEBUG += $(ssh_DEBUG)
+TESTS += $(ssh_TESTS)
+
+ssh: dist/ssh/Makefile.deps $(ssh_OUTPUTS) $(ssh_INSTALL)
+	@true
+clean-ssh: 
+	rm -rf $(ssh_OUTPUTS) $(ssh_INSTALL) dist/ssh/Makefile.deps
+all-local:: ssh
+	@true
+clean-local:: clean-ssh
+	@true

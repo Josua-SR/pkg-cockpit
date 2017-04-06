@@ -2,9 +2,9 @@
  * QUnit-TAP - A TAP Output Producer Plugin for QUnit
  *
  * https://github.com/twada/qunit-tap
- * version: 1.5.0
+ * version: 1.5.1
  *
- * Copyright (c) 2010-2014 Takuto Wada
+ * Copyright (c) 2010-2016 Takuto Wada
  * Dual licensed under the MIT and GPLv2 licenses.
  *   https://raw.github.com/twada/qunit-tap/master/MIT-LICENSE.txt
  *   https://raw.github.com/twada/qunit-tap/master/GPL-LICENSE.txt
@@ -28,7 +28,7 @@
 }(this, function () {
     'use strict';
 
-    var qunitTapVersion = '1.5.0',
+    var qunitTapVersion = '1.5.1',
         slice = Array.prototype.slice;
 
     // borrowed from qunit.js
@@ -140,8 +140,6 @@
 
         var qu = qunitObject,
             tap = {},
-            jsDumpExists = (typeof qu.jsDump !== 'undefined' && typeof qu.jsDump.parse === 'function'),
-            explain = (jsDumpExists ? function explain (obj) { return qu.jsDump.parse(obj); } : noop),
             deprecateOption = function deprecateOption (optionName, fallback) {
                 // option deprecation and fallback function
                 if (!options || typeof options !== 'object') {
@@ -160,8 +158,20 @@
                 'testDone',
                 'done'
             ],
-            registeredCallbacks = {};
-
+            registeredCallbacks = {},
+            explain = (function () {
+                if (typeof qu.dump !== 'undefined' && typeof qu.dump.parse === 'function') {
+                    return function explain (obj) {
+                        return qu.dump.parse(obj);
+                    };
+                }
+                if (typeof qu.jsDump !== 'undefined' && typeof qu.jsDump.parse === 'function') {
+                    return function explain (obj) {
+                        return qu.jsDump.parse(obj);
+                    };
+                }
+                return noop;
+            })();
 
         tap.config = extend(
             {

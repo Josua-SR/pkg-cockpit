@@ -32,23 +32,30 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
         var self = this;
 
         /* Lists of frames, by host */
-        var iframes = { };
+        self.iframes = { };
 
         function remove_frame(frame) {
             $(frame.contentWindow).off();
             $(frame).remove();
         }
-        self.remove = function remove(machine) {
-            var address = machine.address;
+
+        self.remove = function remove(machine, component) {
+            var address;
+            if (typeof machine == "string")
+                address = machine;
+            else if (machine)
+                address = machine.address;
             if (!address)
                 address = "localhost";
-            var list = iframes[address];
-            if (list) {
-                delete iframes[address];
-                $.each(list, function(i, frame) {
-                    remove_frame(frame);
-                });
-            }
+            var list = self.iframes[address] || { };
+            if (!component)
+                delete self.iframes[address];
+            Object.keys(list).forEach(function(key) {
+                if (!component || component == key) {
+                    remove_frame(list[key]);
+                    delete list[component];
+                }
+            });
         };
 
         function frame_ready(frame, count) {
@@ -82,45 +89,26 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
             }
         }
 
-        self.lookup_component_hash = function(machine, component) {
-            var address, list, frame, src;
-
-            if (machine)
-                address = machine.address;
-
-            if (!address)
-                address = "localhost";
-
-            list = iframes[address];
-            if (list)
-                frame = list[component];
-
-            if (frame) {
-                src = frame.getAttribute('src');
-                if (src)
-                    return src.split("#")[1];
-            }
-        };
-
         self.lookup = function lookup(machine, component, hash) {
             var host;
             var address;
             var new_frame = false;
 
-            if (machine) {
+            if (typeof machine == "string") {
+                address = host = machine;
+            } else if (machine) {
                 host = machine.connection_string;
                 address = machine.address;
             }
 
             if (!host)
                 host = "localhost";
-
             if (!address)
                 address = host;
 
-            var list = iframes[address];
+            var list = self.iframes[address];
             if (!list)
-                iframes[address] = list = { };
+                self.iframes[address] = list = { };
 
             var name = "cockpit1:" + host + "/" + component;
             var frame = list[component];
@@ -200,8 +188,10 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
                     for (seed in source_by_seed)
                         source_by_seed[seed].window.postMessage(message, origin);
                 } else if (control.command == "hint") {
-                    if (control.credential)
-                        index.authorize_changed(control.credential);
+                    if (control.credential) {
+                        if (index.privileges)
+                            index.privileges.update(control);
+                    }
                 }
 
             /* Forward message to relevant frame */
@@ -543,7 +533,7 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
             if (shell_embedded) {
                 navbar.hide();
             } else {
-                var local_compiled = new CompiledComponants();
+                var local_compiled = new CompiledComponents();
                 local_compiled.load(cockpit.manifests, "dashboard");
                 navbar.append(local_compiled.ordered("dashboard").map(links));
             }
@@ -576,6 +566,25 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
             return state;
         };
 
+        function lookup_component_hash(address, component) {
+            var iframe, src;
+
+            if (!address)
+                address = "localhost";
+
+            var list = self.frames.iframes[address];
+            if (list)
+                iframe = list[component];
+
+            if (iframe) {
+                src = iframe.getAttribute('src');
+                if (src)
+                    return src.split("#")[1];
+            }
+
+            return null;
+        }
+
         /* Jumps to a given navigate state */
         self.jump = function (state, replace) {
             if (typeof (state) === "string")
@@ -594,10 +603,8 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
             var frame_change = (state.host !== current.host ||
                                 state.component !== current.component);
 
-            if (frame_change && !state.hash) {
-                state.hash = self.frames.lookup_component_hash(state.host,
-                                                               state.component);
-            }
+            if (frame_change && !state.hash)
+                state.hash = lookup_component_hash(state.host, state.component);
 
             if (shell_embedded)
                 target = window.location;
@@ -667,10 +674,6 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
 
         self.expect_restart = function (host) {
             $(self).triggerHandler("expect_restart", host);
-        };
-
-        self.authorize_changed = function(value) {
-            $(self.credential_sel).toggle(value != "clear");
         };
 
         /* Menu items */
@@ -765,13 +768,16 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
             }).show();
         }
 
+        function setup_killer(id) {
+            $(id).on("click", function(ev) {
+                if (ev && ev.button === 0)
+                    require("./active-pages").showDialog(self.frames);
+            });
+        }
+
         /* User information */
         function setup_user(id, user) {
             $(id).text(user.full_name || user.name || '???');
-
-            var is_root = (user.name == "root");
-            var is_not_root = (user.name && !is_root);
-            $('#deauthorize-item').toggle(is_not_root);
         }
 
         if (self.oops_sel)
@@ -792,6 +798,8 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
 
         if (self.about_sel)
             setup_about(self.about_sel);
+        if (self.killer_sel)
+            setup_killer(self.killer_sel);
 
         if (self.user_sel || self.account_sel) {
             cockpit.user().done(function (user) {
@@ -803,7 +811,7 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
         }
     }
 
-    function CompiledComponants() {
+    function CompiledComponents() {
         var self = this;
         self.items = {};
 
@@ -836,7 +844,12 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
                 if (!section || self.items[x].section === section)
                     list.push(self.items[x]);
             }
-            list.sort(function(a, b) { return a.order - b.order; });
+            list.sort(function(a, b) {
+                var ret = a.order - b.order;
+                if (ret === 0)
+                    ret = a.label.localeCompare(b.label);
+                return ret;
+            });
             return list;
         };
 
@@ -878,7 +891,7 @@ var phantom_checkpoint = phantom_checkpoint || function () { };
         },
 
         new_compiled: function () {
-            return new CompiledComponants();
+            return new CompiledComponents();
         },
     };
 }());

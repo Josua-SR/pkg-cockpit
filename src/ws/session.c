@@ -19,6 +19,9 @@
 
 #include "config.h"
 
+#include "common/cockpithex.h"
+#include "common/cockpitmemory.h"
+
 #include <assert.h>
 #include <ctype.h>
 #include <err.h>
@@ -47,6 +50,7 @@
 #include <gssapi/gssapi.h>
 #include <gssapi/gssapi_generic.h>
 #include <gssapi/gssapi_krb5.h>
+#include <krb5/krb5.h>
 
 /* This program opens a session for a given user and runs the bridge in
  * it.  It is used to manage localhost; for remote hosts sshd does
@@ -69,6 +73,7 @@ static size_t auth_msg_size = 0;
 static FILE *authf = NULL;
 static char *last_err_msg = NULL;
 static char *last_txt_msg = NULL;
+static gss_cred_id_t creds = GSS_C_NO_CREDENTIAL;
 
 #if DEBUG_SESSION
 #define debug(fmt, ...) (fprintf (stderr, "cockpit-session: " fmt "\n", ##__VA_ARGS__))
@@ -149,19 +154,16 @@ write_auth_hex (const char *field,
                 const unsigned char *src,
                 size_t len)
 {
-  static const char hex[] = "0123456789abcdef";
-  size_t i;
+  char *encoded;
 
   debug ("writing %s", field);
   fprintf (authf, "%s \"%s\": \"", auth_delimiter, field);
-  for (i = 0; i < len; i++)
-    {
-      unsigned char byte = src[i];
-      fputc_unlocked (hex[byte >> 4], authf);
-      fputc_unlocked (hex[byte & 0xf], authf);
-    }
+
+  encoded = cockpit_hex_encode (src, len);
+  fputs_unlocked (encoded, authf);
   fputc_unlocked ('\"', authf);
   auth_delimiter = ",";
+  free (encoded);
 }
 
 static void
@@ -658,7 +660,7 @@ perform_basic (const char *rhost)
 
   if (input)
     {
-      memset (input, 0, strlen (input));
+      cockpit_memory_clear (input, strlen (input));
       free (input);
     }
 
@@ -759,10 +761,6 @@ perform_gssapi (const char *rhost)
 
   res = PAM_AUTH_ERR;
 
-  /* We shouldn't be writing to kerberos caches here */
-  setenv ("KRB5CCNAME", "FILE:/dev/null", 1);
-  setenv ("KRB5RCACHETYPE", "none", 1);
-
   debug ("reading kerberos auth from cockpit-ws");
   input.value = read_seqpacket_message (AUTH_FD, "gssapi data", &input.length);
 
@@ -781,13 +779,6 @@ perform_gssapi (const char *rhost)
       goto out;
     }
 
-  if (input.length == 0)
-    {
-      debug ("initial gssapi negotiate output");
-      write_auth_hex ("gssapi-output", NULL, 0);
-      goto out;
-    }
-
   for (;;)
     {
       debug ("gssapi negotiation");
@@ -799,9 +790,17 @@ perform_gssapi (const char *rhost)
       if (output.value)
         gss_release_buffer (&minor, &output);
 
-      major = gss_accept_sec_context (&minor, &context, server, &input,
-                                      GSS_C_NO_CHANNEL_BINDINGS, &name, &mech_type,
-                                      &output, &flags, &caps, &client);
+      if (input.length > 0)
+        {
+          major = gss_accept_sec_context (&minor, &context, server, &input,
+                                          GSS_C_NO_CHANNEL_BINDINGS, &name, &mech_type,
+                                          &output, &flags, &caps, &client);
+        }
+      else
+        {
+          debug ("initial gssapi negotiate output");
+          major = GSS_S_CONTINUE_NEEDED;
+        }
 
       if (GSS_ERROR (major))
         {
@@ -848,19 +847,8 @@ out:
   if (pwd)
     write_auth_string ("user", pwd->pw_name);
 
-  if (caps & GSS_C_DELEG_FLAG && client != GSS_C_NO_CREDENTIAL)
-    {
-#ifdef HAVE_GSS_IMPORT_CRED
-      major = gss_export_cred (&minor, client, &export);
-      if (GSS_ERROR (major))
-        warnx ("couldn't export gssapi credentials: %s", gssapi_strerror (mech_type, major, minor));
-      else if (export.value)
-        write_auth_hex ("gssapi-creds", export.value, export.length);
-#else
-      /* cockpit-ws will complain for us, if they're ever used */
-      write_auth_hex ("gssapi-creds", (void *)"", 0);
-#endif
-    }
+  /* The creds are used and cleaned up later */
+  creds = client;
 
   write_auth_end ();
 
@@ -868,8 +856,6 @@ out:
     gss_release_buffer (&minor, &output);
   if (export.value)
     gss_release_buffer (&minor, &export);
-  if (client != GSS_C_NO_CREDENTIAL)
-    gss_release_cred (&minor, &client);
   if (server != GSS_C_NO_CREDENTIAL)
     gss_release_cred (&minor, &server);
   if (name != GSS_C_NO_NAME)
@@ -878,8 +864,6 @@ out:
      gss_delete_sec_context (&minor, &context, GSS_C_NO_BUFFER);
   free (input.value);
   free (str);
-
-  unsetenv ("KRB5CCNAME");
 
   if (res != PAM_SUCCESS)
     exit (5);
@@ -1021,11 +1005,43 @@ static int
 session (char **env)
 {
   char *argv[] = { "cockpit-bridge", NULL };
+  gss_key_value_set_desc store;
+  struct gss_key_value_element_struct element;
+  OM_uint32 major, minor;
+  krb5_context k5;
+  int res;
+
+  if (creds != GSS_C_NO_CREDENTIAL)
+    {
+      res = krb5_init_context (&k5);
+      if (res == 0)
+        {
+          store.count = 1;
+          store.elements = &element;
+          element.key = "ccache";
+          element.value = krb5_cc_default_name (k5);
+
+          debug ("storing kerberos credentials in session: %s", element.value);
+
+          major = gss_store_cred_into (&minor, creds, GSS_C_INITIATE, GSS_C_NULL_OID, 1, 1, &store, NULL, NULL);
+          if (GSS_ERROR (major))
+            warnx ("couldn't store gssapi credentials: %s", gssapi_strerror (GSS_C_NO_OID, major, minor));
+
+          krb5_free_context (k5);
+        }
+      else
+        {
+          warnx ("couldn't initialize kerberos context: %s", krb5_get_error_message (NULL, res));
+        }
+    }
+
   debug ("executing bridge: %s", argv[0]);
+
   if (env)
     execvpe (argv[0], argv, env);
   else
     execvp (argv[0], argv);
+
   warn ("can't exec %s", argv[0]);
   return 127;
 }
@@ -1138,6 +1154,7 @@ main (int argc,
       char **argv)
 {
   pam_handle_t *pamh = NULL;
+  OM_uint32 minor;
   const char *auth;
   const char *rhost;
   char **env;
@@ -1164,12 +1181,9 @@ main (int argc,
   /* When setuid root, make sure our group is also root */
   if (geteuid () == 0)
     {
-      /* Never trust the environment when running setuid() */
-      if (getuid() != 0)
-        {
-          if (clearenv () != 0)
-            err (1, "couldn't clear environment");
-        }
+      /* Always clear the environment */
+      if (clearenv () != 0)
+        err (1, "couldn't clear environment");
 
       /* set a minimal environment */
       setenv ("PATH", DEFAULT_PATH, 1);
@@ -1243,6 +1257,9 @@ main (int argc,
   last_err_msg = NULL;
   free (last_txt_msg);
   last_txt_msg = NULL;
+
+  if (creds != GSS_C_NO_CREDENTIAL)
+    gss_release_cred (&minor, &creds);
 
   if (WIFEXITED(status))
     exit (WEXITSTATUS(status));

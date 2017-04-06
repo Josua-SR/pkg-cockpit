@@ -61,14 +61,12 @@ BuildRequires: zlib-devel
 BuildRequires: krb5-devel
 BuildRequires: libxslt-devel
 BuildRequires: docbook-style-xsl
-BuildRequires: keyutils-libs-devel
 BuildRequires: glib-networking
 BuildRequires: sed
 BuildRequires: git
 
 BuildRequires: glib2-devel >= 2.37.4
 BuildRequires: systemd-devel
-BuildRequires: polkit
 BuildRequires: pcp-libs-devel
 BuildRequires: krb5-server
 BuildRequires: gdb
@@ -81,13 +79,11 @@ BuildRequires: xmlto
 
 Requires: %{name}-bridge = %{version}-%{release}
 Requires: %{name}-ws = %{version}-%{release}
-%if %{defined build_dashboard}
-Requires: %{name}-dashboard = %{version}-%{release}
-%endif
 Requires: %{name}-system = %{version}-%{release}
 
 # Optional components (for f24 we use soft deps)
 %if 0%{?fedora} >= 24 || 0%{?rhel} >= 8
+Recommends: %{name}-dashboard = %{version}-%{release}
 Recommends: %{name}-networkmanager = %{version}-%{release}
 Recommends: %{name}-storaged = %{version}-%{release}
 %ifarch x86_64 %{arm} aarch64 ppc64le
@@ -96,14 +92,6 @@ Recommends: %{name}-docker = %{version}-%{release}
 Suggests: %{name}-pcp = %{version}-%{release}
 Suggests: %{name}-kubernetes = %{version}-%{release}
 Suggests: %{name}-selinux = %{version}-%{release}
-
-# Older releases need to have strict requirements
-%else
-Requires: %{name}-networkmanager = %{version}-%{release}
-Requires: %{name}-storaged = %{version}-%{release}
-%ifarch x86_64 armv7hl
-Requires: %{name}-docker = %{version}-%{release}
-%endif
 
 %endif
 
@@ -157,7 +145,7 @@ install -p -m 644 AUTHORS COPYING README.md %{buildroot}%{_docdir}/%{name}/
 
 # On RHEL we don't yet show options for changing language
 %if 0%{?rhel}
-echo '{ "linguas": null, "machine-limit": 5 }' > %{buildroot}%{_datadir}/%{name}/shell/override.json
+echo '{ "linguas": null }' > %{buildroot}%{_datadir}/%{name}/shell/override.json
 %endif
 
 # Build the package lists for resource packages
@@ -168,8 +156,10 @@ echo '%{_sysconfdir}/cockpit/machines.d' >> base.list
 %if %{defined build_dashboard}
 echo '%dir %{_datadir}/%{name}/dashboard' >> dashboard.list
 find %{buildroot}%{_datadir}/%{name}/dashboard -type f >> dashboard.list
+find %{buildroot}%{_datadir}/%{name}/ssh -type f >> dashboard.list
 %else
 rm -rf %{buildroot}/%{_datadir}/%{name}/dashboard
+rm -rf %{buildroot}/%{_datadir}/%{name}/ssh
 touch dashboard.list
 %endif
 
@@ -228,7 +218,7 @@ rm -rf %{buildroot}/%{_datadir}/%{name}/docker
 touch docker.list
 %endif
 
-%ifarch x86_64 ppc64le
+%ifarch aarch64 x86_64 ppc64le s390x
 %if %{defined wip}
 %else
 rm %{buildroot}/%{_datadir}/%{name}/kubernetes/override.json
@@ -237,6 +227,9 @@ echo '%dir %{_datadir}/%{name}/kubernetes' > kubernetes.list
 find %{buildroot}%{_datadir}/%{name}/kubernetes -type f >> kubernetes.list
 %else
 rm -rf %{buildroot}/%{_datadir}/%{name}/kubernetes
+rm -f %{buildroot}/%{_libexecdir}/cockpit-kube-auth
+rm -f %{buildroot}/%{_libexecdir}/cockpit-kube-launch
+rm %{buildroot}/%{_libexecdir}/cockpit-stub
 touch kubernetes.list
 %endif
 
@@ -274,9 +267,7 @@ cat kdump.list subscriptions.list sosreport.list networkmanager.list selinux.lis
 
 %package bridge
 Summary: Cockpit bridge server-side component
-Obsoletes: %{name}-daemon < 0.48-2
 Requires: glib-networking
-Requires: polkit
 
 %description bridge
 The Cockpit bridge component installed server side and runs commands on the
@@ -286,8 +277,7 @@ system on behalf of the web based user interface.
 %{_datadir}/%{name}/base1/bundle.min.js.gz
 %doc %{_mandir}/man1/cockpit-bridge.1.gz
 %{_bindir}/cockpit-bridge
-%attr(4755, -, -) %{_libexecdir}/cockpit-polkit
-%{_libdir}/security/pam_reauthorize.so
+%{_libexecdir}/cockpit-askpass
 
 %package doc
 Summary: Cockpit deployment and developer guide
@@ -333,7 +323,7 @@ The Cockpit components for managing software updates for ostree based systems.
 
 %package pcp
 Summary: Cockpit PCP integration
-Requires: %{name}-bridge = %{version}-%{release}
+Requires: %{name}-bridge >= 134.x
 Requires: pcp
 
 %description pcp
@@ -353,8 +343,10 @@ Cockpit support for reading PCP metrics and loading PCP archives.
 %package dashboard
 Summary: Cockpit SSH remoting and dashboard
 Requires: libssh >= %{libssh_version}
-Requires: cockpit-ws = %{version}-%{release}
-Provides: cockpit-ssh = %{version}-%{release}
+Provides: %{name}-ssh
+# nothing depends on the dashboard, but we can't use it with older versions of the bridge
+Conflicts: %{name}-bridge < 135
+Conflicts: %{name}-ws < 135
 
 %description dashboard
 Cockpit support for remoting to other servers, bastion hosts, and a basic dashboard
@@ -370,11 +362,6 @@ test -f %{_bindir}/chcon && chcon -t cockpit_ws_exec_t %{_libexecdir}/cockpit-ss
 
 %package storaged
 Summary: Cockpit user interface for storage, using Storaged
-# Lock bridge dependency due to --with-storaged-iscsi-sessions
-# which uses new less stable /manifests.js request path.
-%if 0%{?rhel}
-Requires: %{name}-bridge >= %{version}-%{release}
-%endif
 Requires: %{name}-shell >= 122
 Requires: storaged >= 2.1.1
 %if 0%{?fedora} >= 24 || 0%{?rhel} >= 8
@@ -396,13 +383,11 @@ The Cockpit component for managing storage.  This package uses Storaged.
 %package system
 Summary: Cockpit admin interface package for configuring and troubleshooting a system
 BuildArch: noarch
-Requires: %{name}-bridge = %{version}-%{release}
+Requires: %{name}-bridge >= %{version}-%{release}
 Requires: shadow-utils
 Requires: grep
 Requires: libpwquality
 Requires: /usr/bin/date
-Provides: %{name}-assets
-Obsoletes: %{name}-assets < 0.32
 Provides: %{name}-realmd = %{version}-%{release}
 Provides: %{name}-shell = %{version}-%{release}
 Obsoletes: %{name}-shell < 127
@@ -415,8 +400,9 @@ Requires: NetworkManager
 Provides: %{name}-kdump = %{version}-%{release}
 Requires: kexec-tools
 # Optional components (only when soft deps are supported)
-%if 0%{?fedora} >= 24 || 0%{?rhel} >= 8
+%if 0%{?rhel} >= 8
 Recommends: NetworkManager-team
+Recommends: setroubleshoot-server >= 3.3.3
 %endif
 Provides: %{name}-selinux = %{version}-%{release}
 Provides: %{name}-sosreport = %{version}-%{release}
@@ -432,7 +418,7 @@ This package contains the Cockpit shell and system configuration interfaces.
 %package tests
 Summary: Tests for Cockpit
 Requires: %{name}-bridge >= %{version}-%{release}
-Requires: %{name}-shell >= %{version}-%{release}
+Requires: %{name}-system >= %{version}-%{release}
 Requires: openssh-clients
 Provides: %{name}-test-assets
 Obsoletes: %{name}-test-assets < 132
@@ -451,7 +437,6 @@ Summary: Cockpit Web Service
 Requires: glib-networking
 Requires: openssl
 Requires: glib2 >= 2.37.4
-Obsoletes: cockpit-selinux-policy <= 0.83
 Requires(post): systemd
 Requires(preun): systemd
 Requires(postun): systemd
@@ -472,7 +457,6 @@ The Cockpit Web Service listens on the network, and authenticates users.
 %{_sbindir}/remotectl
 %{_libdir}/security/pam_ssh_add.so
 %{_libexecdir}/cockpit-ws
-%{_libexecdir}/cockpit-stub
 %attr(4750, root, cockpit-ws) %{_libexecdir}/cockpit-session
 %attr(775, -, wheel) %{_localstatedir}/lib/%{name}
 %{_datadir}/%{name}/static
@@ -561,7 +545,9 @@ The Cockpit component for managing networking.  This package uses NetworkManager
 Summary: Cockpit SELinux package
 Requires: %{name}-bridge >= 122
 Requires: %{name}-shell >= 122
-Requires: setroubleshoot-server >= 3.3.3
+%if 0%{?fedora} >= 24 || 0%{?rhel} >= 8
+Recommends: setroubleshoot-server >= 3.3.3
+%endif
 BuildArch: noarch
 
 %description selinux
@@ -589,7 +575,7 @@ This package is not yet complete.
 
 %endif
 
-%ifarch x86_64 ppc64le
+%ifarch aarch64 x86_64 ppc64le s390x
 
 %package kubernetes
 Summary: Cockpit user interface for Kubernetes cluster
@@ -599,6 +585,7 @@ Requires: %{name}-bridge >= 124.x
 Requires: %{name}-shell >= 124.x
 BuildRequires: golang-bin
 BuildRequires: golang-src
+Provides: cockpit-stub = %{version}-%{release}
 
 %description kubernetes
 The Cockpit components for visualizing and configuring a Kubernetes
@@ -607,7 +594,7 @@ cluster. Installed on the Kubernetes master. This package is not yet complete.
 %files kubernetes -f kubernetes.list
 %{_libexecdir}/cockpit-kube-auth
 %{_libexecdir}/cockpit-kube-launch
-
+%{_libexecdir}/cockpit-stub
 %endif
 
 # The changelog is automatically generated and merged

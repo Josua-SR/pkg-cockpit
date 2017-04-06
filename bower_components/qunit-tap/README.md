@@ -1,24 +1,26 @@
 QUnit-TAP
 ================================
 
-[![NPM version](https://badge.fury.io/js/qunit-tap.png)](http://badge.fury.io/js/qunit-tap)
-[![Dependency Status](https://gemnasium.com/twada/qunit-tap.png)](https://gemnasium.com/twada/qunit-tap)
-
 A TAP Output Producer Plugin for QUnit
+
+[![Build Status][travis-image]][travis-url]
+[![NPM version][npm-image]][npm-url]
+[![Dependency Status][depstat-image]][depstat-url]
 
 
 DESCRIPTION
 ---------------------------------------
-QUnit-TAP is a simple plugin for [QUnit](http://qunitjs.com/) to produce [TAP](http://testanything.org/) output.
+QUnit-TAP is a simple plugin for [QUnit](https://qunitjs.com/) to produce [TAP](https://testanything.org/) output.
 
-QUnit-TAP provides TAP output feature for *ANY* version of QUnit (but there are some exceptions. see TESTED ENVIRONMENTS section below). With QUnit-TAP you can run your QUnit test scripts on your terminal, use TAP Consumers like [prove](http://perldoc.perl.org/prove.html) for test automation, pass test output to [Jenkins](http://jenkins-ci.org/), and so on.
+QUnit-TAP provides TAP output feature for *ANY* version of QUnit (But there are some exceptions. See [TESTED ENVIRONMENTS](https://github.com/twada/qunit-tap#tested-environments) section below). With QUnit-TAP you can run your QUnit test scripts on your terminal, use TAP Consumers like [prove](http://perldoc.perl.org/prove.html) for test automation, pass test output to [Jenkins](https://jenkins-ci.org/), and so on.
 
-QUnit-TAP runs under headless browsers like [PhantomJS](http://phantomjs.org/), command-line js environments (like [SpiderMonkey](https://developer.mozilla.org/en/SpiderMonkey) or [Rhino](https://developer.mozilla.org/en/Rhino)), and [CommonJS](http://commonjs.org/) environments like [Node.js](http://nodejs.org/), and of cource, runs on your real browser too.
+QUnit-TAP runs under headless browsers like [PhantomJS](http://phantomjs.org/), command-line js environments (like [SpiderMonkey](https://developer.mozilla.org/en/SpiderMonkey) or [Rhino](https://developer.mozilla.org/en/Rhino)), and [CommonJS](http://commonjs.org/) environments like [Node.js](https://nodejs.org/), and of cource, runs on your real browser too.
 
 
 CHANGELOG
 ---------------------------------------
-* (2014/12/10) Release 1.5.0: Now supports 1.15.0 and 1.16.0. Drops support for too old before-1.0.0 QUnit.
+* (2016/06/20) Release 1.5.1: Supports QUnit 2.0.0 and above.
+* (2014/12/10) Release 1.5.0: Now supports QUnit 1.15.0 and above. Drops support for too old QUnit versions (before-1.0.0).
 * (2013/08/08) Release 1.4.0: Now QUnit-TAP exports single `qunitTap` function as `module.exports`. Therefore, `require("qunit-tap")` returns `qunitTap` function itself. Please fix your code if you are using Node.js (or any CommonJS env). Provide tap#unsubscribe method to unsubscribe specified logging events.
 * (2013/01/10) Release 1.3.0: Deprecate `noPlan` option: Now QUnit-TAP works as with `noPlan: true` by default. If you want to delare plan explicitly, please use `QUnit.config.requireExpects` option instead. Stop using `QUnit.tap` as namespace: `qunitTap` function now returns an object that represents QUnit-TAP API and customization subject.
 * (2012/09/13) Release 1.2.0: Reorganize configuration options. Some options are marked as deprecated (with safe fallbacks). Changed output message format a little.
@@ -32,7 +34,7 @@ CAUTION for Node.js users
 TESTED ENVIRONMENTS
 ---------------------------------------
 
-| QUnit version | [PhantomJS](http://phantomjs.org/) | [Node.js](http://nodejs.org/) | [Rhino](https://developer.mozilla.org/en/Rhino) |
+| QUnit version | [PhantomJS](http://phantomjs.org/) | [Node.js](https://nodejs.org/) | [Rhino](https://developer.mozilla.org/en/Rhino) |
 |:--------------|:----------|:--------|:------|
 | 1.0.0         | OK        | OK      | OK    |
 | 1.1.0         | OK        | OK      | OK    |
@@ -51,12 +53,21 @@ TESTED ENVIRONMENTS
 | 1.14.0        | OK        | OK      | OK    |
 | 1.15.0        | OK        | OK      | OK    |
 | 1.16.0        | OK        | OK      | OK    |
-| HEAD          | OK        | OK      | OK    |
+| 1.17.0        | OK        | OK      | OK    |
+| 1.17.1        | OK        | OK      | OK    |
+| 1.18.0        | OK        | OK      | OK    |
+| 1.19.0        | OK        | OK      | NG    |
+| 1.20.0        | OK        | OK      | NG    |
+| 1.21.0        | OK        | OK      | NG    |
+| 1.22.0        | OK        | OK      | NG    |
+| 1.23.0        | OK        | OK      | NG    |
+| 1.23.1        | OK        | OK      | NG    |
+| 2.0.0         | OK        | OK      | NG    |
 
 
 DOWNLOAD
 ---------------------------------------
-* Just download [qunit-tap.js](http://github.com/twada/qunit-tap/raw/master/lib/qunit-tap.js)
+* Just download [qunit-tap.js](https://github.com/twada/qunit-tap/raw/master/lib/qunit-tap.js)
 * or download archives from [qunit-tap tags](https://github.com/twada/qunit-tap/tags)
 * or `git clone git://github.com/twada/qunit-tap.git`
 * or `npm install qunit-tap` if you use npm.
@@ -99,8 +110,8 @@ First, declare qunitjs and qunit-tap as devDependencies in your package.json, th
 {
     . . .
     "devDependencies": {
-        "qunitjs": "1.14.0",
-        "qunit-tap": "1.5.0",
+        "qunitjs": "2.0.0",
+        "qunit-tap": "1.5.1",
         . . .
     },
     . . .
@@ -110,10 +121,9 @@ First, declare qunitjs and qunit-tap as devDependencies in your package.json, th
 Next, require and configure them.
 
 ```javascript
-var util = require("util"),
-    QUnit = require('qunitjs'),
-    qunitTap = require('qunit-tap');
-qunitTap(QUnit, util.puts);
+var QUnit = require('qunitjs');
+var qunitTap = require('qunit-tap');
+qunitTap(QUnit, function() { console.log.apply(console, arguments); });
 QUnit.config.autorun = false;
 
 // your tests
@@ -171,7 +181,7 @@ tap.moduleStart = function(arg) {
 
 TAP OUTPUT EXAMPLE
 ---------------------------------------
-QUnit-TAP produces output based on [TAP](http://testanything.org/) specification.
+QUnit-TAP produces output based on [TAP](https://testanything.org/) specification.
 
     # module: math module
     # test: add
@@ -244,7 +254,7 @@ RUNNING EXAMPLES
     # with prove
     $ prove --exec=sh phantomjs_test.sh
 
-for details, see [phantomjs_test.sh](http://github.com/twada/qunit-tap/tree/master/sample/js/phantomjs_test.sh)
+for details, see [phantomjs_test.sh](https://github.com/twada/qunit-tap/tree/master/sample/js/phantomjs_test.sh)
 
 
 ### to run with Rhino/SpiderMonkey
@@ -253,7 +263,7 @@ for details, see [phantomjs_test.sh](http://github.com/twada/qunit-tap/tree/mast
     $ cd sample/js/
     $ java -jar /path/to/js.jar run_tests.js
 
-for details, see [sample/js/](http://github.com/twada/qunit-tap/tree/master/sample/js/)
+for details, see [sample/js/](https://github.com/twada/qunit-tap/tree/master/sample/js/)
 
 
 ### to run under CommonJS environment (includes Node.js)
@@ -266,7 +276,7 @@ for details, see [sample/js/](http://github.com/twada/qunit-tap/tree/master/samp
     # with prove
     $ prove --exec=/path/to/node test/*.js
 
-for details, see [sample/commonjs/](http://github.com/twada/qunit-tap/tree/master/sample/commonjs/)
+for details, see [sample/commonjs/](https://github.com/twada/qunit-tap/tree/master/sample/commonjs/)
 
 
 TROUBLE SHOOTING
@@ -332,19 +342,29 @@ HOW TO RUN REGRESSION TESTS FOR DEVELOPMENT
 
 AUTHOR
 ---------------------------------------
-* [Takuto Wada](http://github.com/twada)
+* [Takuto Wada](https://github.com/twada)
 
 
 CONTRIBUTORS
 ---------------------------------------
-* [Nikita Vasilyev](http://github.com/NV)
-* [Hiroki Kondo](http://github.com/kompiro)
-* [Keiji Yoshimi](http://github.com/walf443)
-* [Hiroki Honda](http://github.com/Cside)
-* [gyles19](http://github.com/gyles19)
+* [Nikita Vasilyev](https://github.com/NV)
+* [Hiroki Kondo](https://github.com/kompiro)
+* [Keiji Yoshimi](https://github.com/walf443)
+* [Hiroki Honda](https://github.com/Cside)
+* [gyles19](https://github.com/gyles19)
 * [Alexander Mackay-Austin](https://github.com/am-a)
 
 
 LICENSE
 ---------------------------------------
 Dual licensed under the [MIT](https://raw.github.com/twada/qunit-tap/master/MIT-LICENSE.txt) and [GPLv2](https://raw.github.com/twada/qunit-tap/master/GPL-LICENSE.txt) licenses.
+
+
+[npm-url]: https://npmjs.org/package/qunit-tap
+[npm-image]: https://badge.fury.io/js/qunit-tap.svg
+
+[travis-url]: https://travis-ci.org/twada/qunit-tap
+[travis-image]: https://secure.travis-ci.org/twada/qunit-tap.svg?branch=master
+
+[depstat-url]: https://gemnasium.com/twada/qunit-tap
+[depstat-image]: https://gemnasium.com/twada/qunit-tap.svg

@@ -1,7 +1,7 @@
 {
     "version": "@VERSION@",
     "requires": {
-	"cockpit": "122"
+	"cockpit": "134.x"
     },
 
     "locales": {
@@ -25,7 +25,8 @@
         },
         {
             "match": { "superuser": null },
-            "spawn": [ "@SUDO@", "-n", "cockpit-bridge", "--privileged" ]
+            "environ": [ "SUDO_ASKPASS=@libexecdir@/cockpit-askpass" ],
+            "spawn": [ "@SUDO@", "-A", "cockpit-bridge", "--privileged" ]
         }
     ]
 }

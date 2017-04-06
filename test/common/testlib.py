@@ -84,7 +84,7 @@ class Browser:
     def title(self):
         return self.phantom.eval('document.title')
 
-    def open(self, href):
+    def open(self, href, cookie=None):
         """
         Load a page into the browser.
 
@@ -103,6 +103,8 @@ class Browser:
         def tryopen(hard=False):
             try:
                 self.phantom.kill()
+                if cookie is not None:
+                    self.phantom.cookies(cookie)
                 self.phantom.open(href)
                 return True
             except:
@@ -371,6 +373,7 @@ class Browser:
     def logout(self):
         self.switch_to_top()
         self.wait_present("#navbar-dropdown")
+        self.wait_visible("#navbar-dropdown")
         self.click("#navbar-dropdown")
         self.click('#go-logout')
         self.expect_load()
@@ -475,6 +478,7 @@ class MachineCase(unittest.TestCase):
             except RetryError, ex:
                 assert retry < max_retry_hard_limit
                 sys.stderr.write("{0}\n".format(ex))
+                sleep(retry * 10)
             else:
                 break
 
@@ -544,7 +548,6 @@ class MachineCase(unittest.TestCase):
         # Reauth stuff
         '.*Reauthorizing unix-user:.*',
         '.*user .* was reauthorized.*',
-        'cockpit-polkit helper exited with status: 0',
 
         # Happens when the user logs out during reauthorization
         "Error executing command as another user: Not authorized",
@@ -648,11 +651,19 @@ class MachineCase(unittest.TestCase):
 
     def allow_authorize_journal_messages(self):
         self.allow_journal_messages("cannot reauthorize identity.*:.*unix-user:admin.*",
+                                    ".*: pam_authenticate failed: Authentication failure",
+                                    ".*is not in the sudoers file.  This incident will be reported.",
                                     ".*: a password is required",
                                     "user user was reauthorized",
                                     ".*: sorry, you must have a tty to run sudo",
-                                    ".*/pkexec: bridge exited")
-
+                                    ".*/pkexec: bridge exited",
+                                    "We trust you have received the usual lecture from the local System",
+                                    "Administrator. It usually boils down to these three things:",
+                                    "#1\) Respect the privacy of others.",
+                                    "#2\) Think before you type.",
+                                    "#3\) With great power comes great responsibility.",
+                                    ".*Sorry, try again.",
+                                    ".*incorrect password attempt.*")
 
     def check_journal_messages(self, machine=None):
         """Check for unexpected journal entries."""
@@ -886,6 +897,11 @@ class Policy(object):
         # or SSH will completely fail to start. We've tried various approaches
         # to minimize this, but it happens every 100,000 tests or so
         if "Failure: Unable to reach machine " in trace:
+            return True
+
+        # HACK: For when the verify machine runs out of available processes
+        # We should retry this test process
+        if "self.pid = os.fork()\nOSError: [Errno 11] Resource temporarily unavailable" in trace:
             return True
 
         return False

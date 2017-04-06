@@ -23,7 +23,6 @@
 
 #include "cockpitauthoptions.h"
 #include "cockpitauthprocess.h"
-#include "cockpitsshtransport.h"
 #include "cockpitws.h"
 
 #include "websocket/websocket.h"
@@ -50,6 +49,15 @@
 #define ACTION_SSH "remote-login-ssh"
 #define ACTION_NONE "none"
 #define LOGIN_REPLY_HEADER "X-Conversation"
+
+/* Some tunables that can be set from tests */
+const gchar *cockpit_ws_session_program =
+    PACKAGE_LIBEXEC_DIR "/cockpit-session";
+
+const gchar *cockpit_ws_ssh_program =
+    PACKAGE_LIBEXEC_DIR "/cockpit-ssh";
+
+const gchar *cockpit_ws_bridge_program = NULL;
 
 /* Timeout of authenticated session when no connections */
 guint cockpit_ws_service_idle = 15;
@@ -366,7 +374,7 @@ str_skip (gchar *v,
 static void
 clear_free_authorization (gpointer data)
 {
-  cockpit_secclear (data, strlen (data));
+  cockpit_memory_clear (data, strlen (data));
   g_free (data);
 }
 
@@ -430,7 +438,7 @@ cockpit_auth_steal_authorization (GHashTable *headers,
        * or not, then we ask our session to try to do Negotiate auth
        * but without any input data.
        */
-      if (gssapi_available == -1)
+      if (gssapi_available != 0)
         line = g_strdup ("Negotiate");
       else
         return NULL;
@@ -545,7 +553,7 @@ build_gssapi_output_header (JsonObject *results)
   /* We've received indication from the bridge that GSSAPI is supported */
   gssapi_available = 1;
 
-  data = cockpit_hex_decode (output, &length);
+  data = cockpit_hex_decode (output, -1, &length);
   if (!data)
     {
       g_warning ("received invalid gssapi-output field");
@@ -599,7 +607,6 @@ create_creds_for_spawn_authenticated (CockpitAuth *self,
                                       const gchar *raw_data)
 {
   GBytes *password = NULL;
-  const gchar *gssapi_creds = NULL;
   CockpitCreds *creds = NULL;
   gchar *csrf_token;
 
@@ -611,12 +618,6 @@ create_creds_for_spawn_authenticated (CockpitAuth *self,
   if (ad->authorize_password && g_str_equal (ad->auth_type, "basic"))
     password = parse_basic_auth_password (ad->authorization, NULL);
 
-  if (!cockpit_json_get_string (results, "gssapi-creds", NULL, &gssapi_creds))
-    {
-      g_warning ("received bad gssapi-creds");
-      gssapi_creds = NULL;
-    }
-
   csrf_token = cockpit_auth_nonce (self);
 
   creds = cockpit_creds_new (user,
@@ -624,7 +625,6 @@ create_creds_for_spawn_authenticated (CockpitAuth *self,
                              COCKPIT_CRED_LOGIN_DATA, raw_data,
                              COCKPIT_CRED_PASSWORD, password,
                              COCKPIT_CRED_RHOST, ad->remote_peer,
-                             COCKPIT_CRED_GSSAPI, gssapi_creds,
                              COCKPIT_CRED_CSRF_TOKEN, csrf_token,
                              NULL);
 
@@ -797,7 +797,7 @@ start_auth_process (CockpitAuth *self,
 
   if (cockpit_auth_process_start (ad->auth_process, argv,
                                   (const gchar **) env,
-                                  -1, FALSE, &error))
+                                  FALSE, &error))
     {
       g_signal_connect (ad->auth_process, "message",
                         G_CALLBACK (on_auth_process_message),

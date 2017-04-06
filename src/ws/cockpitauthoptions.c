@@ -21,7 +21,7 @@
 
 #include "cockpitauthoptions.h"
 
-static const gchar *default_knownhosts = PACKAGE_LOCALSTATE_DIR "/known_hosts";
+static const gchar *default_knownhosts = PACKAGE_SYSCONF_DIR "/ssh/ssh_known_hosts";
 static const gchar *default_command = "cockpit-bridge";
 static const gchar *ignore_hosts_data = "*";
 static const gchar *hostkey_mismatch_data = "* invalid key";
@@ -76,24 +76,6 @@ set_environment_bool (gchar **env,
   return g_environ_setenv (env, name, val ? "1" : "", TRUE);
 }
 
-static guint
-get_agent_fd (gchar **env)
-{
-  const gchar *socket;
-  gchar *endptr = NULL;
-  guint agent_fd = 0;
-  socket = g_environ_getenv (env, "SSH_AUTH_SOCK");
-
-  if (socket)
-    agent_fd = g_ascii_strtoull (socket, &endptr, 10);
-
-  if (agent_fd > 3 && agent_fd < G_MAXINT &&
-      (endptr == NULL || endptr[0] == '\0'))
-    return agent_fd;
-
-  return 0;
-}
-
 static gboolean
 get_allow_unknown_hosts (gchar **env)
 {
@@ -141,9 +123,7 @@ cockpit_ssh_options_from_env (gchar **env)
   options->knownhosts_file = get_environment_val (env, "COCKPIT_SSH_KNOWN_HOSTS_FILE",
                                                   default_knownhosts);
   options->command = get_environment_val (env, "COCKPIT_SSH_BRIDGE_COMMAND", default_command);
-  options->krb5_ccache_name = get_environment_val (env, "KRB5CCNAME", NULL);
   options->supports_hostkey_prompt = get_environment_bool (env, "COCKPIT_SSH_SUPPORTS_HOST_KEY_PROMPT", FALSE);
-  options->agent_fd = get_agent_fd (env);
 
   if (options->knownhosts_data != NULL)
     options->allow_unknown_hosts = TRUE;
@@ -157,7 +137,6 @@ gchar **
 cockpit_ssh_options_to_env (CockpitSshOptions *options,
                             gchar **env)
 {
-  gchar *agent = NULL;
   const gchar *knownhosts_data;
 
   env = set_environment_bool (env, "COCKPIT_SSH_ALLOW_UNKNOWN",
@@ -176,7 +155,6 @@ cockpit_ssh_options_to_env (CockpitSshOptions *options,
 
   env = set_environment_val (env, "COCKPIT_SSH_KNOWN_HOSTS_DATA",
                              knownhosts_data);
-  env = set_environment_val (env, "KRB5CCNAME", options->krb5_ccache_name);
 
   /* Don't reset these vars unless we have values for them */
   if (options->command)
@@ -185,12 +163,11 @@ cockpit_ssh_options_to_env (CockpitSshOptions *options,
                                  options->command);
     }
 
-  if (options->agent_fd)
-    {
-      agent = g_strdup_printf ("%d", options->agent_fd);
-      env = g_environ_setenv (env, "SSH_AUTH_SOCK", agent, TRUE);
-    }
-
-  g_free (agent);
   return env;
+}
+
+const gchar *
+cockpit_get_default_knownhosts (void)
+{
+  return default_knownhosts;
 }
