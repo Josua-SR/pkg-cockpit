@@ -387,6 +387,96 @@ create_channel (CockpitRouter *self,
 }
 
 static gboolean
+is_empty (const gchar *s)
+{
+  return !s || s[0] == '\0';
+}
+
+/*
+ * For backwards compatibility we need to normalize some host params
+ * so they can be matched against.
+ *
+ * Some sessions shouldn't be shared by multiple channels, such as those that
+ * explicitly specify a host-key or specific user. This changed over time
+ * so modify things to make it a simple match.
+ *
+ * If the given user is the current user, remove it. Preserves the current
+ * behavior.
+ *
+ */
+static void
+cockpit_router_normalize_host_params (JsonObject *options)
+{
+  const gchar *sharable = NULL;
+  const gchar *user = NULL;
+  gboolean needs_private = FALSE;
+
+  if (!cockpit_json_get_string (options, "session", NULL, &sharable))
+    sharable = NULL;
+
+  if (!cockpit_json_get_string (options, "user", NULL, &user))
+    user = NULL;
+
+  if (!sharable)
+    {
+      /* Fallback to older ways of indicating this */
+      if (user || json_object_has_member (options, "host-key"))
+        needs_private = TRUE;
+
+      if (json_object_has_member (options, "temp-session"))
+        {
+          if (needs_private && !cockpit_json_get_bool (options, "temp-session",
+                                                       TRUE, &needs_private))
+            needs_private = TRUE;
+          json_object_remove_member (options, "temp-session");
+        }
+    }
+
+  if (g_strcmp0 (user, g_get_user_name ()) == 0)
+    json_object_remove_member (options, "user");
+
+  if (needs_private)
+    json_object_set_string_member (options, "session", "private");
+}
+
+static gboolean
+cockpit_router_normalize_host (CockpitRouter *self,
+                               JsonObject *options)
+{
+  const gchar *host;
+  gchar *actual_host = NULL;
+  gchar *key = NULL;
+  gchar **parts = NULL;
+
+  if (!cockpit_json_get_string (options, "host", self->init_host, &host))
+    return FALSE;
+
+  parts = g_strsplit (host, "+", 3);
+  if (g_strv_length (parts) == 3 && !is_empty (parts[0]) &&
+      !is_empty (parts[1]) && !is_empty (parts[2]))
+    {
+      key = g_strdup_printf ("host-%s", parts[1]);
+      if (!json_object_has_member (options, key))
+        {
+          json_object_set_string_member (options, key, parts[2]);
+          actual_host = parts[0];
+        }
+    }
+
+  if (!actual_host)
+    actual_host = (gchar *) host;
+
+  if (g_strcmp0 (self->init_host, actual_host) == 0)
+    json_object_remove_member (options, "host");
+  else if (g_strcmp0 (host, actual_host) != 0)
+    json_object_set_string_member (options, "host", actual_host);
+
+  g_strfreev (parts);
+  g_free (key);
+  return TRUE;
+}
+
+static gboolean
 process_open_channel (CockpitRouter *self,
                       const gchar *channel,
                       JsonObject *options,
@@ -497,6 +587,7 @@ process_open_dynamic_peer (CockpitRouter *self,
   DynamicKey key = { NULL, NULL };
   DynamicPeer *dp = user_data;
   JsonObject *config = NULL;
+  GList *l, *names = NULL;
 
   if (dp->spawn)
     add_dynamic_args_to_array (&key.argv, dp->spawn, options);
@@ -508,16 +599,11 @@ process_open_dynamic_peer (CockpitRouter *self,
   if (!peer)
     {
       config = json_object_new ();
-      if (json_object_has_member (dp->config, "problem"))
+      names = json_object_get_members (dp->config);
+      for (l = names; l != NULL; l = g_list_next (l))
         {
-          json_object_set_member (config, "problem",
-                                  json_object_dup_member (dp->config, "problem"));
-        }
-
-      if (json_object_has_member (dp->config, "directory"))
-        {
-          json_object_set_member (config, "directory",
-                                  json_object_dup_member (dp->config, "directory"));
+          if (!g_str_equal (l->data, "spawn") && !g_str_equal (l->data, "environ"))
+            json_object_set_member (config, l->data, json_object_dup_member (dp->config, l->data));
         }
 
       if (key.argv)
@@ -538,6 +624,7 @@ process_open_dynamic_peer (CockpitRouter *self,
   if (config)
     json_object_unref (config);
 
+  g_list_free (names);
   return cockpit_peer_handle (peer, channel, options, data);
 }
 
@@ -569,7 +656,6 @@ process_open (CockpitRouter *self,
               JsonObject *options,
               GBytes *data)
 {
-  const gchar *host;
   GList *l;
   GBytes *new_payload = NULL;
 
@@ -597,7 +683,7 @@ process_open (CockpitRouter *self,
       cockpit_transport_emit_control (self->transport, "open", channel, options, data);
     }
 
-  else if (!cockpit_json_get_string (options, "host", self->init_host, &host))
+  else if (!cockpit_router_normalize_host (self, options))
     {
       g_warning ("%s: caller specified invalid 'host' field in open message", channel);
       process_open_not_supported (self, channel, options, data, NULL);
@@ -606,9 +692,7 @@ process_open (CockpitRouter *self,
   /* Now go throgh the rules */
   else
     {
-      if (g_strcmp0 (self->init_host, host) == 0)
-        json_object_remove_member (options, "host");
-
+      cockpit_router_normalize_host_params (options);
       new_payload = cockpit_json_write_bytes (options);
       for (l = self->rules; l != NULL; l = g_list_next (l))
         {

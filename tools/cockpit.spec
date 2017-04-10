@@ -581,8 +581,8 @@ This package is not yet complete.
 Summary: Cockpit user interface for Kubernetes cluster
 Requires: /usr/bin/kubectl
 # Requires: Needs newer localization support
-Requires: %{name}-bridge >= 124.x
-Requires: %{name}-shell >= 124.x
+Requires: %{name}-bridge >= 137.x
+Requires: %{name}-shell >= 137.x
 BuildRequires: golang-bin
 BuildRequires: golang-src
 Provides: cockpit-stub = %{version}-%{release}
