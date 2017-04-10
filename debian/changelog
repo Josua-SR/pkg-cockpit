@@ -1,3 +1,13 @@
+cockpit (138-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Only allow mdraid disk removal when it won't destroy data
+    - Allow DN style usernames in the Kubernetes dashboard
+    - Simplify protocol that cockpit talks to session authentication processes
+  * Sync packaging with upstream.
+
+ -- Martin Pitt <mpitt@debian.org>  Mon, 10 Apr 2017 14:52:14 +0200
+
 cockpit (137-3) unstable; urgency=medium
 
   * Build with autoreconf.
