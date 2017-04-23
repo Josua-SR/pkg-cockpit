@@ -433,7 +433,7 @@ am__EXEEXT_7 = test-hash$(EXEEXT) test-hex$(EXEEXT) test-json$(EXEEXT) \
 	test-version$(EXEEXT) test-system$(EXEEXT) \
 	test-base64$(EXEEXT) test-authorize$(EXEEXT) $(am__EXEEXT_4)
 @WITH_COCKPIT_SSH_TRUE@am__EXEEXT_8 = test-sshoptions$(EXEEXT) \
-@WITH_COCKPIT_SSH_TRUE@	$(am__EXEEXT_4)
+@WITH_COCKPIT_SSH_TRUE@	test-sshbridge$(EXEEXT) $(am__EXEEXT_4)
 @WITH_COCKPIT_SSH_TRUE@am__EXEEXT_9 = mock-sshd$(EXEEXT) \
 @WITH_COCKPIT_SSH_TRUE@	$(am__EXEEXT_8)
 @WITH_COCKPIT_SSH_TRUE@am__EXEEXT_10 = test-authssh$(EXEEXT) \
@@ -811,12 +811,19 @@ am__DEPENDENCIES_9 = libpam_ssh_add.a $(am__DEPENDENCIES_1)
 test_ssh_add_DEPENDENCIES = $(am__DEPENDENCIES_9) libretest.a
 test_ssh_add_LINK = $(CCLD) $(test_ssh_add_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
-am__test_sshoptions_SOURCES_DIST = src/ssh/test-sshoptions.c
-@WITH_COCKPIT_SSH_TRUE@am_test_sshoptions_OBJECTS = src/ssh/test_sshoptions-test-sshoptions.$(OBJEXT)
-test_sshoptions_OBJECTS = $(am_test_sshoptions_OBJECTS)
+am__test_sshbridge_SOURCES_DIST = src/ssh/test-sshbridge.c
+@WITH_COCKPIT_SSH_TRUE@am_test_sshbridge_OBJECTS = src/ssh/test_sshbridge-test-sshbridge.$(OBJEXT)
+test_sshbridge_OBJECTS = $(am_test_sshbridge_OBJECTS)
 @WITH_COCKPIT_SSH_TRUE@am__DEPENDENCIES_10 = $(am__DEPENDENCIES_4) \
 @WITH_COCKPIT_SSH_TRUE@	$(am__DEPENDENCIES_1) \
 @WITH_COCKPIT_SSH_TRUE@	$(am__DEPENDENCIES_1)
+@WITH_COCKPIT_SSH_TRUE@test_sshbridge_DEPENDENCIES = libcockpit-ssh.a \
+@WITH_COCKPIT_SSH_TRUE@	$(am__DEPENDENCIES_10)
+test_sshbridge_LINK = $(CCLD) $(test_sshbridge_CFLAGS) $(CFLAGS) \
+	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+am__test_sshoptions_SOURCES_DIST = src/ssh/test-sshoptions.c
+@WITH_COCKPIT_SSH_TRUE@am_test_sshoptions_OBJECTS = src/ssh/test_sshoptions-test-sshoptions.$(OBJEXT)
+test_sshoptions_OBJECTS = $(am_test_sshoptions_OBJECTS)
 @WITH_COCKPIT_SSH_TRUE@test_sshoptions_DEPENDENCIES =  \
 @WITH_COCKPIT_SSH_TRUE@	libcockpit-ssh.a $(am__DEPENDENCIES_10)
 test_sshoptions_LINK = $(CCLD) $(test_sshoptions_CFLAGS) $(CFLAGS) \
@@ -962,13 +969,13 @@ SOURCES = $(libcockpit_bridge_a_SOURCES) \
 	$(test_router_SOURCES) $(test_rules_SOURCES) \
 	$(test_server_SOURCES) $(nodist_test_server_SOURCES) \
 	$(test_setup_SOURCES) $(test_ssh_add_SOURCES) \
-	$(test_sshoptions_SOURCES) $(test_stream_SOURCES) \
-	$(test_system_SOURCES) $(test_template_SOURCES) \
-	$(test_transport_SOURCES) $(test_unicode_SOURCES) \
-	$(test_unixsignal_SOURCES) $(test_version_SOURCES) \
-	$(test_webresponse_SOURCES) $(test_webserver_SOURCES) \
-	$(test_webservice_SOURCES) $(test_websocket_SOURCES) \
-	$(test_websocketstream_SOURCES)
+	$(test_sshbridge_SOURCES) $(test_sshoptions_SOURCES) \
+	$(test_stream_SOURCES) $(test_system_SOURCES) \
+	$(test_template_SOURCES) $(test_transport_SOURCES) \
+	$(test_unicode_SOURCES) $(test_unixsignal_SOURCES) \
+	$(test_version_SOURCES) $(test_webresponse_SOURCES) \
+	$(test_webserver_SOURCES) $(test_webservice_SOURCES) \
+	$(test_websocket_SOURCES) $(test_websocketstream_SOURCES)
 DIST_SOURCES = $(libcockpit_bridge_a_SOURCES) \
 	$(libcockpit_common_a_SOURCES) \
 	$(am__libcockpit_pcp_a_SOURCES_DIST) \
@@ -1003,13 +1010,14 @@ DIST_SOURCES = $(libcockpit_bridge_a_SOURCES) \
 	$(test_process_SOURCES) $(test_remotectlcertificate_SOURCES) \
 	$(test_router_SOURCES) $(test_rules_SOURCES) \
 	$(test_server_SOURCES) $(test_setup_SOURCES) \
-	$(test_ssh_add_SOURCES) $(am__test_sshoptions_SOURCES_DIST) \
-	$(test_stream_SOURCES) $(test_system_SOURCES) \
-	$(test_template_SOURCES) $(test_transport_SOURCES) \
-	$(test_unicode_SOURCES) $(test_unixsignal_SOURCES) \
-	$(test_version_SOURCES) $(test_webresponse_SOURCES) \
-	$(test_webserver_SOURCES) $(test_webservice_SOURCES) \
-	$(test_websocket_SOURCES) $(test_websocketstream_SOURCES)
+	$(test_ssh_add_SOURCES) $(am__test_sshbridge_SOURCES_DIST) \
+	$(am__test_sshoptions_SOURCES_DIST) $(test_stream_SOURCES) \
+	$(test_system_SOURCES) $(test_template_SOURCES) \
+	$(test_transport_SOURCES) $(test_unicode_SOURCES) \
+	$(test_unixsignal_SOURCES) $(test_version_SOURCES) \
+	$(test_webresponse_SOURCES) $(test_webserver_SOURCES) \
+	$(test_webservice_SOURCES) $(test_websocket_SOURCES) \
+	$(test_websocketstream_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -1588,7 +1596,7 @@ EXTRA_DIST = .bowerrc bower.json package.json src/branding README.md \
 	$(appdata_in) $(desktop_in) $(pixmap_DATA) $(NULL) \
 	src/ws/fatal.conf $(pam_ssh_add_FILES) $(NULL) \
 	src/pam-ssh-add/mock-ssh-agent src/pam-ssh-add/mock-ssh-add \
-	src/pam-ssh-add/mock-environment $(NULL)
+	src/pam-ssh-add/mock-environment $(NULL) $(ATOMIC_SETUP)
 SUFFIXES = \
 	.css .css.gz \
 	.html .html.gz \
@@ -2559,11 +2567,15 @@ test_websocket_LDADD = libwebsocket.a $(GIO_LIBS)
 
 @WITH_COCKPIT_SSH_TRUE@SSH_CHECKS = \
 @WITH_COCKPIT_SSH_TRUE@	test-sshoptions \
+@WITH_COCKPIT_SSH_TRUE@	test-sshbridge \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
 @WITH_COCKPIT_SSH_TRUE@test_sshoptions_CFLAGS = $(cockpit_ssh_CFLAGS)
 @WITH_COCKPIT_SSH_TRUE@test_sshoptions_SOURCES = src/ssh/test-sshoptions.c
 @WITH_COCKPIT_SSH_TRUE@test_sshoptions_LDADD = libcockpit-ssh.a $(cockpit_ssh_LDADD)
+@WITH_COCKPIT_SSH_TRUE@test_sshbridge_CFLAGS = $(cockpit_ssh_CFLAGS)
+@WITH_COCKPIT_SSH_TRUE@test_sshbridge_SOURCES = src/ssh/test-sshbridge.c
+@WITH_COCKPIT_SSH_TRUE@test_sshbridge_LDADD = libcockpit-ssh.a $(cockpit_ssh_LDADD)
 COCKPIT_BUILD_INFO = "Built on $(shell date)"
 LOGIN_PO_FILES = $(patsubst %,dist/static/login.po.%.html,$(LINGUAS))
 staticdir = $(datadir)/cockpit/static
@@ -2814,6 +2826,14 @@ test_ssh_add_CFLAGS = $(libpam_ssh_add_a_CFLAGS)
 test_ssh_add_LDADD = $(libpam_ssh_add_a_LIBS) libretest.a
 KUBERNETES_DIR = $(srcdir)/containers/kubernetes
 WS_DIR = $(srcdir)/containers/ws
+
+# needed for installed integration tests
+ATOMIC_SETUP = \
+	$(WS_DIR)/atomic-install   \
+	$(WS_DIR)/atomic-run       \
+	$(WS_DIR)/atomic-uninstall \
+	$(NULL)
+
 all: $(BUILT_SOURCES) config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
@@ -3790,6 +3810,12 @@ src/pam-ssh-add/test_ssh_add-test-ssh-add.$(OBJEXT):  \
 test-ssh-add$(EXEEXT): $(test_ssh_add_OBJECTS) $(test_ssh_add_DEPENDENCIES) $(EXTRA_test_ssh_add_DEPENDENCIES) 
 	@rm -f test-ssh-add$(EXEEXT)
 	$(AM_V_CCLD)$(test_ssh_add_LINK) $(test_ssh_add_OBJECTS) $(test_ssh_add_LDADD) $(LIBS)
+src/ssh/test_sshbridge-test-sshbridge.$(OBJEXT):  \
+	src/ssh/$(am__dirstamp) src/ssh/$(DEPDIR)/$(am__dirstamp)
+
+test-sshbridge$(EXEEXT): $(test_sshbridge_OBJECTS) $(test_sshbridge_DEPENDENCIES) $(EXTRA_test_sshbridge_DEPENDENCIES) 
+	@rm -f test-sshbridge$(EXEEXT)
+	$(AM_V_CCLD)$(test_sshbridge_LINK) $(test_sshbridge_OBJECTS) $(test_sshbridge_LDADD) $(LIBS)
 src/ssh/test_sshoptions-test-sshoptions.$(OBJEXT):  \
 	src/ssh/$(am__dirstamp) src/ssh/$(DEPDIR)/$(am__dirstamp)
 
@@ -4069,6 +4095,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/ssh/$(DEPDIR)/libcockpit_ssh_a-cockpitsshoptions.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/ssh/$(DEPDIR)/libcockpit_ssh_a-cockpitsshrelay.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/ssh/$(DEPDIR)/mock_sshd-mock-sshd.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/ssh/$(DEPDIR)/test_sshbridge-test-sshbridge.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/ssh/$(DEPDIR)/test_sshoptions-test-sshoptions.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/websocket/$(DEPDIR)/frob_websocket-frob-websocket.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/websocket/$(DEPDIR)/libwebsocket_a-websocket.Po@am__quote@
@@ -6549,6 +6576,20 @@ src/pam-ssh-add/test_ssh_add-test-ssh-add.obj: src/pam-ssh-add/test-ssh-add.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_ssh_add_CFLAGS) $(CFLAGS) -c -o src/pam-ssh-add/test_ssh_add-test-ssh-add.obj `if test -f 'src/pam-ssh-add/test-ssh-add.c'; then $(CYGPATH_W) 'src/pam-ssh-add/test-ssh-add.c'; else $(CYGPATH_W) '$(srcdir)/src/pam-ssh-add/test-ssh-add.c'; fi`
 
+src/ssh/test_sshbridge-test-sshbridge.o: src/ssh/test-sshbridge.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_sshbridge_CFLAGS) $(CFLAGS) -MT src/ssh/test_sshbridge-test-sshbridge.o -MD -MP -MF src/ssh/$(DEPDIR)/test_sshbridge-test-sshbridge.Tpo -c -o src/ssh/test_sshbridge-test-sshbridge.o `test -f 'src/ssh/test-sshbridge.c' || echo '$(srcdir)/'`src/ssh/test-sshbridge.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/ssh/$(DEPDIR)/test_sshbridge-test-sshbridge.Tpo src/ssh/$(DEPDIR)/test_sshbridge-test-sshbridge.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/ssh/test-sshbridge.c' object='src/ssh/test_sshbridge-test-sshbridge.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_sshbridge_CFLAGS) $(CFLAGS) -c -o src/ssh/test_sshbridge-test-sshbridge.o `test -f 'src/ssh/test-sshbridge.c' || echo '$(srcdir)/'`src/ssh/test-sshbridge.c
+
+src/ssh/test_sshbridge-test-sshbridge.obj: src/ssh/test-sshbridge.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_sshbridge_CFLAGS) $(CFLAGS) -MT src/ssh/test_sshbridge-test-sshbridge.obj -MD -MP -MF src/ssh/$(DEPDIR)/test_sshbridge-test-sshbridge.Tpo -c -o src/ssh/test_sshbridge-test-sshbridge.obj `if test -f 'src/ssh/test-sshbridge.c'; then $(CYGPATH_W) 'src/ssh/test-sshbridge.c'; else $(CYGPATH_W) '$(srcdir)/src/ssh/test-sshbridge.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/ssh/$(DEPDIR)/test_sshbridge-test-sshbridge.Tpo src/ssh/$(DEPDIR)/test_sshbridge-test-sshbridge.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/ssh/test-sshbridge.c' object='src/ssh/test_sshbridge-test-sshbridge.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_sshbridge_CFLAGS) $(CFLAGS) -c -o src/ssh/test_sshbridge-test-sshbridge.obj `if test -f 'src/ssh/test-sshbridge.c'; then $(CYGPATH_W) 'src/ssh/test-sshbridge.c'; else $(CYGPATH_W) '$(srcdir)/src/ssh/test-sshbridge.c'; fi`
+
 src/ssh/test_sshoptions-test-sshoptions.o: src/ssh/test-sshoptions.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_sshoptions_CFLAGS) $(CFLAGS) -MT src/ssh/test_sshoptions-test-sshoptions.o -MD -MP -MF src/ssh/$(DEPDIR)/test_sshoptions-test-sshoptions.Tpo -c -o src/ssh/test_sshoptions-test-sshoptions.o `test -f 'src/ssh/test-sshoptions.c' || echo '$(srcdir)/'`src/ssh/test-sshoptions.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/ssh/$(DEPDIR)/test_sshoptions-test-sshoptions.Tpo src/ssh/$(DEPDIR)/test_sshoptions-test-sshoptions.Po
@@ -7900,6 +7941,13 @@ test-sshoptions.log: test-sshoptions$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-sshbridge.log: test-sshbridge$(EXEEXT)
+	@p='test-sshbridge$(EXEEXT)'; \
+	b='test-sshbridge'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-creds.log: test-creds$(EXEEXT)
 	@p='test-creds$(EXEEXT)'; \
 	b='test-creds'; \
@@ -8535,6 +8583,12 @@ dist-xz: distdir
 distcheck-hook::
 	$(srcdir)/tools/check-dist $(distdir)
 
+install-integration-tests::
+	$(MKDIR_P) $(DESTDIR)$(pkgdatadir)
+	( cd $(srcdir); git ls-tree HEAD --full-tree --name-only -r test || echo test ) | \
+		tar -C $(srcdir) -cf - -T - | tar -C $(DESTDIR)$(pkgdatadir) -xf -
+	rm -r $(DESTDIR)$(pkgdatadir)/test/tmp; ln -sf /var/tmp/cockpit $(DESTDIR)$(pkgdatadir)/test/tmp
+
 # A filtered po file with just src/ws
 src/ws/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
@@ -8925,6 +8979,10 @@ registry-container-shell:
 		--env=REGISTRY_ONLY=true \
 		--env=REGISTRY_HOST=10.111.112.101:5000 \
 		cockpit/kubernetes /bin/bash
+
+install-integration-tests::
+	$(MKDIR_P) $(DESTDIR)/$(pkgdatadir)/containers/ws/
+	$(INSTALL_DATA) $(ATOMIC_SETUP) $(DESTDIR)/$(pkgdatadir)/containers/ws/
 
 ws-container:
 	rm -rf $(WS_DIR)/rpms && mkdir -p $(WS_DIR)/rpms

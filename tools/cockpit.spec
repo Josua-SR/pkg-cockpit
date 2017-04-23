@@ -138,6 +138,7 @@ make -j4 check
 %install
 make install DESTDIR=%{buildroot}
 make install-tests DESTDIR=%{buildroot}
+make install-integration-tests DESTDIR=%{buildroot}
 mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/pam.d
 install -p -m 644 tools/cockpit.pam $RPM_BUILD_ROOT%{_sysconfdir}/pam.d/cockpit
 rm -f %{buildroot}/%{_libdir}/cockpit/*.so
@@ -356,8 +357,18 @@ Cockpit support for remoting to other servers, bastion hosts, and a basic dashbo
 
 %post dashboard
 # HACK: Until policy changes make it downstream
-# https://bugzilla.redhat.com/show_bug.cgi?id=1381331
+echo "Applying workaround for broken SELinux policy: https://bugzilla.redhat.com/show_bug.cgi?id=1381331" >&2
 test -f %{_bindir}/chcon && chcon -t cockpit_ws_exec_t %{_libexecdir}/cockpit-ssh
+%if 0%{?fedora} > 0 && 0%{?fedora} >= 26
+if type semodule >/dev/null 2>&1; then
+    tmp=$(mktemp -d)
+    echo 'module local 1.0; require { type cockpit_ws_exec_t; type cockpit_ws_t; class file execute_no_trans; } allow cockpit_ws_t cockpit_ws_exec_t:file execute_no_trans;' > "$tmp/local.te"
+    checkmodule -M -m -o "$tmp/local.mod" "$tmp/local.te"
+    semodule_package -o "$tmp/local.pp" -m "$tmp/local.mod"
+    semodule -i "$tmp/local.pp"
+    rm -rf "$tmp"
+fi
+%endif
 %endif
 
 %package storaged
@@ -431,6 +442,30 @@ These files are not required for running Cockpit.
 %{_unitdir}/cockpit.service.d
 %{_datadir}/%{name}/playground
 %{_prefix}/lib/cockpit-test-assets
+
+%package integration-tests
+Summary: Integration tests for Cockpit
+Requires: curl
+Requires: expect
+Requires: libvirt
+Requires: libvirt-client
+Requires: libvirt-daemon
+Requires: libvirt-python
+Requires: qemu-kvm
+Requires: npm
+Requires: python
+Requires: rsync
+Requires: xz
+Requires: openssh-clients
+Requires: fontconfig
+
+%description integration-tests
+This package contains Cockpit's integration tests for running in VMs.
+These are not required for running Cockpit.
+
+%files integration-tests
+%{_datadir}/%{name}/test
+%{_datadir}/%{name}/containers
 
 %package ws
 Summary: Cockpit Web Service
@@ -564,7 +599,7 @@ utility setroubleshoot to diagnose and resolve SELinux issues.
 Summary: Cockpit user interface for Docker containers
 Requires: %{name}-bridge >= 122
 Requires: %{name}-shell >= 122
-Requires: docker >= 1.3.0
+Requires: /usr/bin/docker
 Requires: python
 
 %description docker
