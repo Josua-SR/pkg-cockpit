@@ -1,3 +1,14 @@
+cockpit (139-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Show more information about virtual machines, such as boot order
+    - Fix enablement of timer systemd units created on Services page
+    - Fix Storage crash on multiple iSCSI sessions
+    - cockpit-docker is now installable with docker-ce or other alternatives
+    - Hide docker push commands on Registry image pages for  "pull" roles
+
+ -- Martin Pitt <mpitt@debian.org>  Sun, 23 Apr 2017 22:10:41 +0200
+
 cockpit (138-1) unstable; urgency=medium
 
   * New upstream release:
