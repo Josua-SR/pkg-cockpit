@@ -47,6 +47,8 @@
    * For simple UI extensions, JQuery can be used as well but please do not update React-rendered DOM via JQuery.
    */
   var TestSubtabReactComponent = null;
+  var VmActionsComponent = null;
+  var VmOverviewPropsComponent = null;
 
   var PROVIDER = {};
   PROVIDER = {
@@ -264,11 +266,28 @@
     reducer: undefined, // optional reference to reducer function extending the application Redux state tree, see cockpit-machines-ovirt-provider for more detailed example
 
     /**
+     * Extend list of VM actions (along Shut Down or Run buttons) for provider's specific ones.
+     *
+     * Factory method returning a React component.
+     */
+    vmActionsFactory: function () {
+      return VmActionsComponent; // React is lazily initialized, see the init() function
+    },
+
+    /**
+     * Extend the Overview tab for provider-specific properties
+     *
+     */
+    vmOverviewPropsFactory: function () {
+      return VmOverviewPropsComponent;
+    },
+
+    /**
      * Optional array of
      * {
-   *  name: 'My Tab Title',
-   *  componentFactory: () => yourReactComponentRenderingSubtabBody
-   *  }
+     *  name: 'My Tab Title',
+     *  componentFactory: () => yourReactComponentRenderingSubtabBody
+     *  }
      *
      * Please note, the React components have to be created lazily via `providerContext.React` passed to the init() function.
      */
@@ -325,6 +344,38 @@
           render: function () {
             var vm = this.props.vm;
             return React.createElement('div', {id: 'test-subtab-body-' + vm.name}, 'Content of subtab');
+          }
+        }
+    );
+
+    VmActionsComponent = React.createClass(
+        {
+          propTypes: {
+            vm: React.PropTypes.object.isRequired,
+            providerState: React.PropTypes.object.isRequired,
+          },
+          render: function () {
+            var vm = this.props.vm;
+
+            return React.createElement('div', {className: 'btn-group'},
+                React.createElement('button', {id: 'test-vm-action-' + vm.name, className: 'btn btn-default'}, 'Provider Action')
+            );
+          }
+        }
+    );
+
+    VmOverviewPropsComponent = React.createClass(
+        {
+          propTypes: {
+            vm: React.PropTypes.object.isRequired,
+            providerState: React.PropTypes.object.isRequired,
+          },
+          render: function () {
+            var vm = this.props.vm;
+
+            return React.createElement('td', null,
+                React.createElement('div', {id: 'test-vm-props-' + vm.name}, 'Test Provider Property')
+            );
           }
         }
     );

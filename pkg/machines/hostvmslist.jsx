@@ -38,47 +38,64 @@ const NoVm = () => {
     </div>);
 }
 
-const VmActions = ({ vmId, state, config, onStart, onReboot, onForceReboot, onShutdown, onForceoff }) => {
-    const reset = config.provider.canReset(state) ? DropdownButtons({
-        buttons: [{
-            title: _("Restart"),
-            action: onReboot,
-            id: `${vmId}-reboot`
-        }, {
-            title: _("Force Restart"),
-            action: onForceReboot,
-            id: `${vmId}-forceReboot`
-        }]
-    }) : '';
+const VmActions = ({ vm, config, dispatch, onStart, onReboot, onForceReboot, onShutdown, onForceoff }) => {
+    const id = vmId(vm.name);
+    const state = vm.state;
 
-    const shutdown = config.provider.canShutdown(state) ? DropdownButtons({
-        buttons: [{
-            title: _("Shut Down"),
-            action: onShutdown,
-            id: `${vmId}-off`
-        }, {
-            title: _("Force Shut Down"),
-            action: onForceoff,
-            id: `${vmId}-forceOff`
-        }]
-    }) : '';
+    let reset = null;
+    if (config.provider.canReset(state)) {
+        reset = DropdownButtons({
+            buttons: [{
+                title: _("Restart"),
+                action: onReboot,
+                id: `${id}-reboot`
+            }, {
+                title: _("Force Restart"),
+                action: onForceReboot,
+                id: `${id}-forceReboot`
+            }]
+        });
+    }
 
-    const run = config.provider.canRun(state) ?
-        (<button className="btn btn-default btn-danger" onClick={onStart} id={`${vmId}-run`}>
+    let shutdown = null;
+    if (config.provider.canShutdown(state)) {
+        shutdown = DropdownButtons({
+            buttons: [{
+                title: _("Shut Down"),
+                action: onShutdown,
+                id: `${id}-off`
+            }, {
+                title: _("Force Shut Down"),
+                action: onForceoff,
+                id: `${id}-forceOff`
+            }]
+        });
+    }
+
+    let run = null;
+    if (config.provider.canRun(state)) {
+        run = (<button className="btn btn-default btn-danger" onClick={onStart} id={`${id}-run`}>
             {_("Run")}
-        </button>)
-        : '';
+        </button>);
+    }
+
+    let providerActions = null;
+    if (config.provider.vmActionsFactory) {
+        const ProviderActions = config.provider.vmActionsFactory();
+        providerActions = <ProviderActions vm={vm} providerState={config.providerState} dispatch={dispatch} />;
+    }
 
     return (<div>
         {reset}
         {shutdown}
         {run}
+        {providerActions}
     </div>);
 }
 VmActions.propTypes = {
-    vmId: PropTypes.string.isRequired,
-    state: PropTypes.string.isRequired,
+    vm: PropTypes.object.isRequired,
     config: PropTypes.string.isRequired,
+    dispatch: PropTypes.func.isRequired,
     onStart: PropTypes.func.isRequired,
     onReboot: PropTypes.func.isRequired,
     onForceReboot: PropTypes.func.isRequired,
@@ -98,7 +115,7 @@ IconElement.propTypes = {
     state: PropTypes.string.isRequired,
 }
 
-export const StateIcon = ({ state, config }) => {
+export const StateIcon = ({ state, config, valueId }) => {
     if (state === undefined) {
         return (<div/>);
     }
@@ -121,7 +138,9 @@ export const StateIcon = ({ state, config }) => {
     if (stateMap[state]) {
         return (
             <span title={stateMap[state].title} data-toggle='tooltip' data-placement='left'>
-                {rephraseUI('vmStates', state)}&nbsp;<i className={stateMap[state].className} />
+                <span id={valueId}>{rephraseUI('vmStates', state)}</span>
+                &nbsp;
+                <i className={stateMap[state].className} />
             </span>);
     }
     return (<small>{state}</small>);
@@ -191,55 +210,82 @@ VmOverviewTabRecord.propTypes = {
 
 const VmLastMessage = ({ vm }) => {
     if (!vm.lastMessage) {
-        return null;
+        return (<tr />); // reserve space to keep rendered structure
     }
 
     const msgId = `${vmId(vm.name)}-last-message`;
     const detail = (vm.lastMessageDetail && vm.lastMessageDetail.exception) ? vm.lastMessageDetail.exception: vm.lastMessage;
+
     return (
-        <tr>
-            <td>
-                <span className='pficon-warning-triangle-o' />
-            </td>
-            <td>
-                <div title={detail} data-toggle='tooltip' id={msgId}>
-                    {vm.lastMessage}
-                </div>
-            </td>
-        </tr>
+        <div>
+            <span className='pficon-warning-triangle-o' />&nbsp;
+            <span title={detail} data-toggle='tooltip' id={msgId}>
+                {vm.lastMessage}
+            </span>
+        </div>
     );
 };
 VmLastMessage.propTypes = {
     vm: PropTypes.object.isRequired
 }
 
-const VmOverviewTab = ({ vm }) => {
+const VmBootOrder = ({ vm }) => {
+    let bootOrder = _("No boot device found");
+
+    if (vm.bootOrder && vm.bootOrder.devices && vm.bootOrder.devices.length > 0) {
+        bootOrder = vm.bootOrder.devices.map(bootDevice => bootDevice.type).join(); // Example: network,disk,disk
+    }
+
+    return (<VmOverviewTabRecord id={`${vmId(vm.name)}-bootorder`} descr={_("Boot Order:")} value={bootOrder}/>);
+};
+VmBootOrder.propTypes = {
+    vm: PropTypes.object.isRequired
+};
+
+const VmOverviewTab = ({ vm, config }) => {
+    let providerContent = null;
+    if (config.provider.vmOverviewPropsFactory) {
+        const ProviderContent = config.provider.vmOverviewPropsFactory();
+        providerContent = (<ProviderContent vm={vm} providerState={config.providerState}/>);
+    }
+
     return (<div>
         <table className='machines-width-max'>
             <tr className='machines-listing-ct-body-detail'>
-                <td>
+                <td className='machines-listing-detail-top-column'>
                     <table className='form-table-ct'>
-                        <VmOverviewTabRecord id={`${vmId(vm.name)}-state`} descr={_("State:")} value={vm.state}/>
                         <VmOverviewTabRecord descr={_("Memory:")}
                                              value={cockpit.format_bytes((vm.currentMemory ? vm.currentMemory : 0) * 1024)}/>
                         <VmOverviewTabRecord id={`${vmId(vm.name)}-vcpus`} descr={_("vCPUs:")} value={vm.vcpus}/>
-                        <VmLastMessage vm={vm} />
                     </table>
                 </td>
 
-                <td>
+                <td className='machines-listing-detail-top-column'>
                     <table className='form-table-ct'>
-                        <VmOverviewTabRecord descr={_("ID:")} value={vm.id}/>
-                        <VmOverviewTabRecord descr={_("OS Type:")} value={vm.osType}/>
-                        <VmOverviewTabRecord descr={_("Autostart:")} value={rephraseUI('autostart', vm.autostart)}/>
+                        <VmOverviewTabRecord id={`${vmId(vm.name)}-emulatedmachine`}
+                                             descr={_("Emulated Machine:")} value={vm.emulatedMachine}/>
+                        <VmOverviewTabRecord id={`${vmId(vm.name)}-cputype`}
+                                             descr={_("CPU Type:")} value={vm.cpuModel}/>
                     </table>
                 </td>
+
+                <td className='machines-listing-detail-top-column'>
+                    <table className='form-table-ct'>
+                        <VmBootOrder vm={vm} />
+                        <VmOverviewTabRecord id={`${vmId(vm.name)}-autostart`}
+                                             descr={_("Autostart:")} value={rephraseUI('autostart', vm.autostart)}/>
+                    </table>
+                </td>
+
+                {providerContent}
             </tr>
         </table>
+        <VmLastMessage vm={vm} />
     </div>);
 };
 VmOverviewTab.propTypes = {
-    vm: PropTypes.object.isRequired
+    vm: PropTypes.object.isRequired,
+    config: PropTypes.object.isRequired,
 }
 
 const VmUsageTab = ({ vm }) => {
@@ -311,10 +357,10 @@ VmUsageTab.propTypes = {
 /** One VM in the list (a row)
  */
 const Vm = ({ vm, config, onStart, onShutdown, onForceoff, onReboot, onForceReboot, dispatch }) => {
-    const stateIcon = (<StateIcon state={vm.state} config={config}/>);
+    const stateIcon = (<StateIcon state={vm.state} config={config} valueId={`${vmId(vm.name)}-state`} />);
 
     let tabRenderers = [
-        {name: _("Overview"), renderer: VmOverviewTab, data: {vm: vm}},
+        {name: _("Overview"), renderer: VmOverviewTab, data: {vm: vm, config: config }},
         {name: _("Usage"), renderer: VmUsageTab, data: {vm: vm}, presence: 'onlyActive' },
         {name: (<div id={`${vmId(vm.name)}-disks`}>{_("Disks")}</div>), renderer: VmDisksTab, data: {vm: vm, provider: config.provider}, presence: 'onlyActive' }
     ];
@@ -341,7 +387,7 @@ const Vm = ({ vm, config, onStart, onShutdown, onForceoff, onReboot, onForceRebo
             stateIcon
             ]}
         tabRenderers={tabRenderers}
-        listingActions={VmActions({vmId: vmId(vm.name), config, state: vm.state,
+        listingActions={VmActions({vm, config, dispatch,
             onStart, onReboot, onForceReboot, onShutdown, onForceoff})}/>);
 };
 Vm.propTypes = {

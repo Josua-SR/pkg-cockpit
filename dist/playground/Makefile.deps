@@ -1,5 +1,5 @@
 # Generated Makefile data for playground
-# Stamp: Mon Apr 10 2017 11:04:40 GMT+0000 (UTC)
+# Stamp: Fri Apr 21 2017 13:00:58 GMT+0000 (UTC)
 
 playground_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \
