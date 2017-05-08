@@ -61,7 +61,7 @@ DEFAULT_VERIFY = {
     'selenium/chrome': [ 'master', 'pulls' ],
     'verify/centos-7': [ 'master', 'pulls' ],
     'verify/continuous-atomic': [ 'master' ],
-    'verify/debian-8': [ 'master', 'pulls', ],
+    'verify/debian-stable': [ 'master', 'pulls', ],
     'verify/debian-testing': [ 'master', 'pulls' ],
     'verify/fedora-24': [ ],
     'verify/fedora-25': [ 'master', 'pulls' ],
@@ -88,8 +88,8 @@ DEFAULT_IMAGE_REFRESH = {
     'debian-testing': {
         'triggers': [ "verify/debian-testing" ]
     },
-    'debian-8': {
-        'triggers': [ "verify/debian-8" ]
+    'debian-stable': {
+        'triggers': [ "verify/debian-stable" ]
     },
     'fedora-25': {
         'triggers': [
@@ -124,7 +124,7 @@ DEFAULT_IMAGE_REFRESH = {
         'triggers': [ "verify/fedora-25",
                       "verify/rhel-7",
                       "verify/ubuntu-1604",
-                      "verify/debian-8" ],
+                      "verify/debian-stable" ],
         'refresh-days': 120
     }
 }
@@ -354,8 +354,8 @@ class GitHub(object):
         # Try to load the whitelists
         self.whitelist = read_whitelist()
 
-        # The cache directory
-        self.cache_directory = os.path.join(TEST_DIR, "tmp", "cache")
+        # The cache directory is $TEST_DATA/github or test/tmp
+        self.cache_directory = os.path.join(os.environ.get("TEST_DATA", os.path.join(TEST_DIR, "tmp")), "github")
         if not os.path.exists(self.cache_directory):
             os.makedirs(self.cache_directory)
         now = time.time()
@@ -399,7 +399,7 @@ class GitHub(object):
         }
 
     def cache(self, resource, response=None):
-        path = os.path.join(self.cache_directory, urllib.quote(resource, safe=''))
+        path = os.path.join(self.cache_directory, urllib.quote(self.qualify(resource), safe=''))
         if response is None:
             if not os.path.exists(path):
                 return None
@@ -409,8 +409,10 @@ class GitHub(object):
                 except ValueError:
                     return None
         else:
-            with open(path, 'w') as fp:
+            (fd, temp) = tempfile.mkstemp(dir=self.cache_directory)
+            with os.fdopen(fd, 'w') as fp:
                 json.dump(response, fp)
+            os.rename(temp, path)
 
     def get(self, resource):
         headers = { }
@@ -425,6 +427,7 @@ class GitHub(object):
         elif cached and response['status'] == 304: # Not modified
             return json.loads(cached['data'])
         elif response['status'] < 200 or response['status'] >= 300:
+            sys.stderr.write("{0}\n{1}\n".format(resource, response['data']))
             raise Exception("GitHub API problem: {0}".format(response['reason'] or response['status']))
         else:
             self.cache(resource, response)

@@ -1815,6 +1815,9 @@ a.image-tag {
 .dashboard-images .namespace-filter {
   margin-top: -3px;
 }
+.dashboard-images .namespace-filter button {
+  margin-bottom: 0px;
+}
 .dashboard-images .all-images {
   display: block;
   float: right;

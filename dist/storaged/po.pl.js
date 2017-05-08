@@ -71,25 +71,11 @@ return plural;
   null,
   "Urządzenie blokowe $0"
  ],
- "$0 Chunk Size": [
-  null,
-  "Rozmiar bloku: $0"
- ],
- "$0 Disks": [
-  null,
-  "Dyski: $0"
- ],
  "$0 day": [
   "$0 days",
   "$0 dzień",
   "$0 dni",
   "$0 dni"
- ],
- "$0 disk is missing": [
-  "$0 disks are missing",
-  "Brak $0 dysku",
-  "Brak $0 dysków",
-  "Brak $0 dysków"
  ],
  "$0 hour": [
   "$0 hours",
@@ -124,10 +110,6 @@ return plural;
   "$0 rok",
   "$0 lata",
   "$0 lat"
- ],
- "$0, $1 free": [
-  null,
-  "$0, wolne: $1"
  ],
  "$name (from $host)": [
   null,
@@ -229,10 +211,6 @@ return plural;
   null,
   "Dodaj"
  ],
- "Add Disks": [
-  null,
-  "Dodaj dyski"
- ],
  "Add iSCSI Portal": [
   null,
   "Dodaj portal iSCSI"
@@ -272,10 +250,6 @@ return plural;
  "Block device for filesystems": [
   null,
   "Urządzenie blokowe dla systemów plików"
- ],
- "Blocked": [
-  null,
-  "Zablokowane"
  ],
  "Can't delete while unlocked": [
   null,
@@ -433,10 +407,6 @@ return plural;
   null,
   "Usuwanie $target"
  ],
- "Deleting a RAID device will erase all data on it.": [
-  null,
-  "Usunięcie urządzenia RAID usunie wszystkie znajdujące się na nim dane."
- ],
  "Deleting a logical volume will delete all data in it.": [
   null,
   "Usunięcie woluminu logicznego usunie wszystkie znajdujące się na nim dane."
@@ -444,10 +414,6 @@ return plural;
  "Deleting a partition will delete all data in it.": [
   null,
   "Usunięcie partycji usunie wszystkie znajdujące się na niej dane."
- ],
- "Deleting a volume group will erase all data on it.": [
-  null,
-  "Usunięcie grupy woluminów usunie wszystkie znajdujące się w niej dane."
  ],
  "Deleting volume group $target": [
   null,
@@ -533,10 +499,6 @@ return plural;
   null,
   "Rozszerzona partycja"
  ],
- "FAILED": [
-  null,
-  "NIEPOWODZENIE"
- ],
  "Filesystem": [
   null,
   "System plików"
@@ -588,10 +550,6 @@ return plural;
  "Go to now": [
   null,
   "Przejdź teraz"
- ],
- "In Sync": [
-  null,
-  "Zsynchronizowane"
  ],
  "Inactive volume": [
   null,
@@ -729,14 +687,6 @@ return plural;
   null,
   "Nie utworzono grup woluminów"
  ],
- "Not found": [
-  null,
-  "Nie odnaleziono"
- ],
- "Not running": [
-  null,
-  "Niedziałające"
- ],
  "Off": [
   null,
   "Wyłączone"
@@ -825,53 +775,25 @@ return plural;
   null,
   "Zastosowanie"
  ],
- "RAID ($0)": [
-  null,
-  "RAID ($0)"
- ],
- "RAID 0": [
-  null,
-  "RAID 0"
- ],
  "RAID 0 (Stripe)": [
   null,
   "RAID 0 (Striping)"
- ],
- "RAID 1": [
-  null,
-  "RAID 1"
  ],
  "RAID 1 (Mirror)": [
   null,
   "RAID 1 (Lustrzany)"
  ],
- "RAID 10": [
-  null,
-  "RAID 10"
- ],
  "RAID 10 (Stripe of Mirrors)": [
   null,
   "RID 10 (Striping lustrzany)"
- ],
- "RAID 4": [
-  null,
-  "RAID 4"
  ],
  "RAID 4 (Dedicated Parity)": [
   null,
   "RAID 4 (Dedykowana parzystość)"
  ],
- "RAID 5": [
-  null,
-  "RAID 5"
- ],
  "RAID 5 (Distributed Parity)": [
   null,
   "RAID 5 (Rozproszona parzystość)"
- ],
- "RAID 6": [
-  null,
-  "RAID 6"
  ],
  "RAID 6 (Double Distributed Parity)": [
   null,
@@ -905,10 +827,6 @@ return plural;
   null,
   "Uruchom ponownie"
  ],
- "Recovering": [
-  null,
-  "Odzyskiwanie"
- ],
  "Recovering RAID Device $target": [
   null,
   "Przywracanie urządzenia RAID $target"
@@ -929,10 +847,6 @@ return plural;
   null,
   "Zmiana nazwy woluminu logicznego"
  ],
- "Rename Volume Group": [
-  null,
-  "Zmień nazwę grupy woluminów"
- ],
  "Renaming $target": [
   null,
   "Zmienianie nazwy $target"
@@ -952,10 +866,6 @@ return plural;
  "Resizing $target": [
   null,
   "Zmienianie rozmiaru $target"
- ],
- "Running": [
-  null,
-  "Działające"
  ],
  "SMART self-test of $target": [
   null,
@@ -997,10 +907,6 @@ return plural;
   null,
   "Rozmiar musi być liczbą"
  ],
- "Spare": [
-  null,
-  "Zapasowe"
- ],
  "Start": [
   null,
   "Rozpocznij"
@@ -1008,10 +914,6 @@ return plural;
  "Start Multipath": [
   null,
   "Uruchom urządzenie wielościeżkowe"
- ],
- "Start Scrubbing": [
-  null,
-  "Rozpocznij kontrolę"
  ],
  "Starting RAID Device $target": [
   null,
@@ -1024,10 +926,6 @@ return plural;
  "Stop": [
   null,
   "Zatrzymaj"
- ],
- "Stop Scrubbing": [
-  null,
-  "Zatrzymaj kontrolę"
  ],
  "Stopping RAID Device $target": [
   null,
@@ -1081,10 +979,6 @@ return plural;
   null,
   "Macierz RAID jest w stanie zdegradowanym"
  ],
- "The last physical volume of a volume group cannot be removed.": [
-  null,
-  "Nie można usunąć ostatniego woluminu fizycznego grupy woluminów."
- ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "Użytkownik <b>$0</b> nie ma zezwolenia na zarządzanie urządzeniami do przechowywania danych"
@@ -1092,10 +986,6 @@ return plural;
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
   null,
   "W systemie obecne są urządzenia z wieloma ścieżkami, ale usługa urządzeń wielościeżkowych nie jest uruchomiona."
- ],
- "There is not enough free space elsewhere to remove this physical volume.  At least $0 more free space is needed.": [
-  null,
-  "Za mało wolnego miejsca, aby usunąć ten wolumin fizyczny. Wymagane jest co najmniej $0 wolnego miejsca więcej."
  ],
  "Thin Logical Volume": [
   null,
@@ -1120,10 +1010,6 @@ return plural;
  "Unknown": [
   null,
   "Nieznane"
- ],
- "Unknown ($0)": [
-  null,
-  "Nieznane ($0)"
  ],
  "Unknown host name": [
   null,
@@ -1188,10 +1074,6 @@ return plural;
  "Volume Groups": [
   null,
   "Grupy woluminów"
- ],
- "Write-mostly": [
-  null,
-  "Głównie zapisywane"
  ],
  "Writing": [
   null,

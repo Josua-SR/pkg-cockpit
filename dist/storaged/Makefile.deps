@@ -1,5 +1,5 @@
 # Generated Makefile data for storaged
-# Stamp: Fri Apr 21 2017 13:00:58 GMT+0000 (UTC)
+# Stamp: Mon May 08 2017 19:28:55 GMT+0000 (UTC)
 
 storaged_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
@@ -25,7 +25,7 @@ storaged_INPUTS = \
 	$(srcdir)/pkg/storaged/client.js \
 	$(srcdir)/pkg/storaged/content-views.jsx \
 	$(srcdir)/pkg/storaged/crypto-tab.jsx \
-	$(srcdir)/pkg/storaged/details.js \
+	$(srcdir)/pkg/storaged/details.jsx \
 	$(srcdir)/pkg/storaged/devices.js \
 	$(srcdir)/pkg/storaged/dialog.js \
 	$(srcdir)/pkg/storaged/format-dialog.jsx \
@@ -39,6 +39,7 @@ storaged_INPUTS = \
 	$(srcdir)/pkg/storaged/part-tab.jsx \
 	$(srcdir)/pkg/storaged/permissions.js \
 	$(srcdir)/pkg/storaged/pvol-tabs.jsx \
+	$(srcdir)/pkg/storaged/sidebar-views.jsx \
 	$(srcdir)/pkg/storaged/storage-controls.jsx \
 	$(srcdir)/pkg/storaged/storage.css \
 	$(srcdir)/pkg/storaged/swap-tab.jsx \
@@ -87,7 +88,7 @@ storaged_TESTS = \
 
 dist/storaged/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-tooltip.jsx -N pkg/lib/journal.css -N pkg/lib/journal.js -N pkg/lib/journal_day_header.mustache -N pkg/lib/journal_line.mustache -N pkg/lib/journal_reboot.mustache -N pkg/lib/listing.less -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/plot.css -N pkg/lib/plot.js -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/service.js -N pkg/lib/table.css -N pkg/lib/tooltip.css -N pkg/lib/variables.less -N pkg/storaged/client.js -N pkg/storaged/content-views.jsx -N pkg/storaged/crypto-tab.jsx -N pkg/storaged/details.js -N pkg/storaged/devices.js -N pkg/storaged/dialog.js -N pkg/storaged/format-dialog.jsx -N pkg/storaged/fsys-tab.jsx -N pkg/storaged/images/storage-array.png -N pkg/storaged/images/storage-disk.png -N pkg/storaged/index.html -N pkg/storaged/jobs.js -N pkg/storaged/lvol-tabs.jsx -N pkg/storaged/overview.js -N pkg/storaged/part-tab.jsx -N pkg/storaged/permissions.js -N pkg/storaged/pvol-tabs.jsx -N pkg/storaged/storage-controls.jsx -N pkg/storaged/storage.css -N pkg/storaged/swap-tab.jsx -N pkg/storaged/test-util.js -N pkg/storaged/unrecognized-tab.jsx -N pkg/storaged/utils.js $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-tooltip.jsx -N pkg/lib/journal.css -N pkg/lib/journal.js -N pkg/lib/journal_day_header.mustache -N pkg/lib/journal_line.mustache -N pkg/lib/journal_reboot.mustache -N pkg/lib/listing.less -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/plot.css -N pkg/lib/plot.js -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/service.js -N pkg/lib/table.css -N pkg/lib/tooltip.css -N pkg/lib/variables.less -N pkg/storaged/client.js -N pkg/storaged/content-views.jsx -N pkg/storaged/crypto-tab.jsx -N pkg/storaged/details.jsx -N pkg/storaged/devices.js -N pkg/storaged/dialog.js -N pkg/storaged/format-dialog.jsx -N pkg/storaged/fsys-tab.jsx -N pkg/storaged/images/storage-array.png -N pkg/storaged/images/storage-disk.png -N pkg/storaged/index.html -N pkg/storaged/jobs.js -N pkg/storaged/lvol-tabs.jsx -N pkg/storaged/overview.js -N pkg/storaged/part-tab.jsx -N pkg/storaged/permissions.js -N pkg/storaged/pvol-tabs.jsx -N pkg/storaged/sidebar-views.jsx -N pkg/storaged/storage-controls.jsx -N pkg/storaged/storage.css -N pkg/storaged/swap-tab.jsx -N pkg/storaged/test-util.js -N pkg/storaged/unrecognized-tab.jsx -N pkg/storaged/utils.js $< > $@.tmp && mv $@.tmp $@
 
 dist/storaged/Makefile.deps: $(WEBPACK_CONFIG) $(storaged_INPUTS)
 	$(WEBPACK_RULE) -d dist/storaged/Makefile.deps $(WEBPACK_CONFIG)
@@ -162,7 +163,7 @@ $(srcdir)/pkg/storaged/content-views.jsx:
 
 $(srcdir)/pkg/storaged/crypto-tab.jsx:
 
-$(srcdir)/pkg/storaged/details.js:
+$(srcdir)/pkg/storaged/details.jsx:
 
 $(srcdir)/pkg/storaged/devices.js:
 
@@ -189,6 +190,8 @@ $(srcdir)/pkg/storaged/part-tab.jsx:
 $(srcdir)/pkg/storaged/permissions.js:
 
 $(srcdir)/pkg/storaged/pvol-tabs.jsx:
+
+$(srcdir)/pkg/storaged/sidebar-views.jsx:
 
 $(srcdir)/pkg/storaged/storage-controls.jsx:
 

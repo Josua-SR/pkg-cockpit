@@ -71,21 +71,9 @@ return plural;
   null,
   "$0 块设备"
  ],
- "$0 Chunk Size": [
-  null,
-  "$0 区块大小"
- ],
- "$0 Disks": [
-  null,
-  "$0 磁盘"
- ],
  "$0 day": [
   "$0 days",
   "$0 天"
- ],
- "$0 disk is missing": [
-  "$0 disks are missing",
-  "$0 磁盘缺失"
  ],
  "$0 hour": [
   "$0 hours",
@@ -110,10 +98,6 @@ return plural;
  "$0 year": [
   "$0 years",
   "$0 年"
- ],
- "$0, $1 free": [
-  null,
-  "$0, $1 可用"
  ],
  "$name (from $host)": [
   null,
@@ -215,10 +199,6 @@ return plural;
   null,
   "添加"
  ],
- "Add Disks": [
-  null,
-  "添加磁盘"
- ],
  "Add iSCSI Portal": [
   null,
   "添加 iSCSI 门户"
@@ -258,10 +238,6 @@ return plural;
  "Block device for filesystems": [
   null,
   "块设备的文件系统"
- ],
- "Blocked": [
-  null,
-  "受阻"
  ],
  "Can't delete while unlocked": [
   null,
@@ -419,10 +395,6 @@ return plural;
   null,
   "删除 $target"
  ],
- "Deleting a RAID device will erase all data on it.": [
-  null,
-  "删除 RAID 设备将擦除其中的所有数据."
- ],
  "Deleting a logical volume will delete all data in it.": [
   null,
   "删除逻辑卷将擦除其中的所有数据。"
@@ -430,10 +402,6 @@ return plural;
  "Deleting a partition will delete all data in it.": [
   null,
   "删除分区将擦除其中的所有数据。"
- ],
- "Deleting a volume group will erase all data on it.": [
-  null,
-  "删除卷组将擦除其中的所有数据。"
  ],
  "Deleting volume group $target": [
   null,
@@ -519,10 +487,6 @@ return plural;
   null,
   "扩展分区"
  ],
- "FAILED": [
-  null,
-  "失败"
- ],
  "Filesystem": [
   null,
   "文件系统"
@@ -574,10 +538,6 @@ return plural;
  "Go to now": [
   null,
   "转到现在"
- ],
- "In Sync": [
-  null,
-  "同步中"
  ],
  "Inactive volume": [
   null,
@@ -715,14 +675,6 @@ return plural;
   null,
   "没有创建的卷组"
  ],
- "Not found": [
-  null,
-  "未找到"
- ],
- "Not running": [
-  null,
-  "未运行"
- ],
  "Off": [
   null,
   "关"
@@ -811,53 +763,25 @@ return plural;
   null,
   "目的"
  ],
- "RAID ($0)": [
-  null,
-  "RAID ($0)"
- ],
- "RAID 0": [
-  null,
-  "RAID 0"
- ],
  "RAID 0 (Stripe)": [
   null,
   "RAID 0 (条带)"
- ],
- "RAID 1": [
-  null,
-  "RAID 1"
  ],
  "RAID 1 (Mirror)": [
   null,
   "RAID 1 (镜像)"
  ],
- "RAID 10": [
-  null,
-  "RAID 10"
- ],
  "RAID 10 (Stripe of Mirrors)": [
   null,
   "RAID 10 (条带镜像)"
- ],
- "RAID 4": [
-  null,
-  "RAID 4"
  ],
  "RAID 4 (Dedicated Parity)": [
   null,
   "RAID 4 (奇偶校验)"
  ],
- "RAID 5": [
-  null,
-  "RAID 5"
- ],
  "RAID 5 (Distributed Parity)": [
   null,
   "RAID 5 (奇偶校验)"
- ],
- "RAID 6": [
-  null,
-  "RAID 6"
  ],
  "RAID 6 (Double Distributed Parity)": [
   null,
@@ -891,10 +815,6 @@ return plural;
   null,
   "重启"
  ],
- "Recovering": [
-  null,
-  "恢复"
- ],
  "Recovering RAID Device $target": [
   null,
   "恢复 RAID 设备 $target"
@@ -915,10 +835,6 @@ return plural;
   null,
   "重命名逻辑卷"
  ],
- "Rename Volume Group": [
-  null,
-  "重命名卷组"
- ],
  "Renaming $target": [
   null,
   "重命名 $target"
@@ -938,10 +854,6 @@ return plural;
  "Resizing $target": [
   null,
   "调整大小 $target"
- ],
- "Running": [
-  null,
-  "运行中"
  ],
  "SMART self-test of $target": [
   null,
@@ -983,10 +895,6 @@ return plural;
   null,
   "大小必须是一个数字"
  ],
- "Spare": [
-  null,
-  "备用"
- ],
  "Start": [
   null,
   "启动"
@@ -994,10 +902,6 @@ return plural;
  "Start Multipath": [
   null,
   "启用多路径"
- ],
- "Start Scrubbing": [
-  null,
-  "开始擦除"
  ],
  "Starting RAID Device $target": [
   null,
@@ -1010,10 +914,6 @@ return plural;
  "Stop": [
   null,
   "停止"
- ],
- "Stop Scrubbing": [
-  null,
-  "停止擦除"
  ],
  "Stopping RAID Device $target": [
   null,
@@ -1067,10 +967,6 @@ return plural;
   null,
   "RAID 阵列处于降级状态"
  ],
- "The last physical volume of a volume group cannot be removed.": [
-  null,
-  "不能删除一个卷组的最后一个物理卷。"
- ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "用户 <b>$0</b> 不允许管理存储"
@@ -1078,10 +974,6 @@ return plural;
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
   null,
   "该系统上有多路径设备，但是多路径服务未运行。"
- ],
- "There is not enough free space elsewhere to remove this physical volume.  At least $0 more free space is needed.": [
-  null,
-  "没有任何空闲的空间来移除改物理卷。至少需要超过 $0 空闲的空间。"
  ],
  "Thin Logical Volume": [
   null,
@@ -1106,10 +998,6 @@ return plural;
  "Unknown": [
   null,
   "未知"
- ],
- "Unknown ($0)": [
-  null,
-  "未知 ($0)"
  ],
  "Unknown host name": [
   null,
@@ -1174,10 +1062,6 @@ return plural;
  "Volume Groups": [
   null,
   "卷组"
- ],
- "Write-mostly": [
-  null,
-  "Write-mostly"
  ],
  "Writing": [
   null,

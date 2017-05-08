@@ -1,5 +1,5 @@
 # Generated Makefile data for selinux
-# Stamp: Fri Apr 21 2017 13:00:58 GMT+0000 (UTC)
+# Stamp: Mon May 08 2017 19:28:55 GMT+0000 (UTC)
 
 selinux_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \

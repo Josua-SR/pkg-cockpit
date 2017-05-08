@@ -71,23 +71,10 @@ return plural;
   null,
   "$0 blockorientiertes Gerät"
  ],
- "$0 Chunk Size": [
-  null,
-  "$0 Chunk Size"
- ],
- "$0 Disks": [
-  null,
-  "$0 Datenträger"
- ],
  "$0 day": [
   "$0 days",
   "",
   ""
- ],
- "$0 disk is missing": [
-  "$0 disks are missing",
-  "$0 Festplatte fehlt",
-  "$0 Festplatten fehlen"
  ],
  "$0 hour": [
   "$0 hours",
@@ -116,10 +103,6 @@ return plural;
  "$0 year": [
   "$0 years",
   "",
-  ""
- ],
- "$0, $1 free": [
-  null,
   ""
  ],
  "$name (from $host)": [
@@ -222,10 +205,6 @@ return plural;
   null,
   "Hinzufügen"
  ],
- "Add Disks": [
-  null,
-  "Datenträger hinzufügen"
- ],
  "Add iSCSI Portal": [
   null,
   ""
@@ -265,10 +244,6 @@ return plural;
  "Block device for filesystems": [
   null,
   ""
- ],
- "Blocked": [
-  null,
-  "Gesperrt"
  ],
  "Can't delete while unlocked": [
   null,
@@ -426,10 +401,6 @@ return plural;
   null,
   "Lösche $target"
  ],
- "Deleting a RAID device will erase all data on it.": [
-  null,
-  "Das Löschen eines RAID-Gerätes löscht alle darauf vorhandenen Daten."
- ],
  "Deleting a logical volume will delete all data in it.": [
   null,
   ""
@@ -437,10 +408,6 @@ return plural;
  "Deleting a partition will delete all data in it.": [
   null,
   ""
- ],
- "Deleting a volume group will erase all data on it.": [
-  null,
-  "Das Löschen eines Datenträgerverbunds löscht alle sich darin befindenden Daten."
  ],
  "Deleting volume group $target": [
   null,
@@ -526,10 +493,6 @@ return plural;
   null,
   "Erweiterte Partition"
  ],
- "FAILED": [
-  null,
-  "KAPUTT"
- ],
  "Filesystem": [
   null,
   "Dateisystem"
@@ -581,10 +544,6 @@ return plural;
  "Go to now": [
   null,
   "Zu 'Jetzt' gehen"
- ],
- "In Sync": [
-  null,
-  "Synchron"
  ],
  "Inactive volume": [
   null,
@@ -722,14 +681,6 @@ return plural;
   null,
   "Keine Datenträgerverbünde erzeugt"
  ],
- "Not found": [
-  null,
-  "Nicht gefunden"
- ],
- "Not running": [
-  null,
-  "Läuft nicht"
- ],
  "Off": [
   null,
   "Aus"
@@ -818,53 +769,25 @@ return plural;
   null,
   ""
  ],
- "RAID ($0)": [
-  null,
-  "RAID ($0)"
- ],
- "RAID 0": [
-  null,
-  "RAID 0"
- ],
  "RAID 0 (Stripe)": [
   null,
   "RAID 0 (Gestreift)"
- ],
- "RAID 1": [
-  null,
-  "RAID 1"
  ],
  "RAID 1 (Mirror)": [
   null,
   "RAID 1 (Gespiegelt)"
  ],
- "RAID 10": [
-  null,
-  "RAID 10"
- ],
  "RAID 10 (Stripe of Mirrors)": [
   null,
   "RID 10 (Gestreifte Spiegel)"
- ],
- "RAID 4": [
-  null,
-  "RAID 4"
  ],
  "RAID 4 (Dedicated Parity)": [
   null,
   "RAID 4 (Dedizierte Parität)"
  ],
- "RAID 5": [
-  null,
-  "RAID 5"
- ],
  "RAID 5 (Distributed Parity)": [
   null,
   "RAID 5 (Verteilte Parität)"
- ],
- "RAID 6": [
-  null,
-  "RAID 6"
  ],
  "RAID 6 (Double Distributed Parity)": [
   null,
@@ -898,10 +821,6 @@ return plural;
   null,
   "Neustart"
  ],
- "Recovering": [
-  null,
-  "Am Erholen"
- ],
  "Recovering RAID Device $target": [
   null,
   "Stoppe RAID-Gerät $target"
@@ -922,10 +841,6 @@ return plural;
   null,
   ""
  ],
- "Rename Volume Group": [
-  null,
-  "Datenträgerverbund umbennen"
- ],
  "Renaming $target": [
   null,
   "$target wird umbenannt"
@@ -945,10 +860,6 @@ return plural;
  "Resizing $target": [
   null,
   "Größenänderung von $target"
- ],
- "Running": [
-  null,
-  "Läuft"
  ],
  "SMART self-test of $target": [
   null,
@@ -990,10 +901,6 @@ return plural;
   null,
   ""
  ],
- "Spare": [
-  null,
-  "Ersatz"
- ],
  "Start": [
   null,
   "Starten"
@@ -1001,10 +908,6 @@ return plural;
  "Start Multipath": [
   null,
   ""
- ],
- "Start Scrubbing": [
-  null,
-  "Schrubben Starten"
  ],
  "Starting RAID Device $target": [
   null,
@@ -1017,10 +920,6 @@ return plural;
  "Stop": [
   null,
   "Stoppen"
- ],
- "Stop Scrubbing": [
-  null,
-  "Schrubben Stoppen"
  ],
  "Stopping RAID Device $target": [
   null,
@@ -1074,19 +973,11 @@ return plural;
   null,
   ""
  ],
- "The last physical volume of a volume group cannot be removed.": [
-  null,
-  ""
- ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "Der Benutzer <b>$0</b> hat keine Rechte, Speicher zu verwalten."
  ],
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
-  null,
-  ""
- ],
- "There is not enough free space elsewhere to remove this physical volume.  At least $0 more free space is needed.": [
   null,
   ""
  ],
@@ -1113,10 +1004,6 @@ return plural;
  "Unknown": [
   null,
   "Unbekannt"
- ],
- "Unknown ($0)": [
-  null,
-  "Unbekannt ($0)"
  ],
  "Unknown host name": [
   null,
@@ -1181,10 +1068,6 @@ return plural;
  "Volume Groups": [
   null,
   "Datenträgerverbünde"
- ],
- "Write-mostly": [
-  null,
-  "Hauptsächlich Schreiben"
  ],
  "Writing": [
   null,
