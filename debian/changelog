@@ -1,3 +1,18 @@
+cockpit (140-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Use SSCG to generate SSL certificates if available
+    - Add a "cockpit-bridge --rules" option to output the rules
+    - Allow auth commands to store credentials for future challenges
+    - Allow users to change Docker container environment variables
+    - Disable shutdown/reboot button for unprivileged users on the System page
+    - Fix binary channel data for child iframes, used e. g. in Docker terminals
+    - Don't install broken branding symlinks. (Closes: #859870)
+  * Drop cockpit-pcp package. It wasn't meant to be packaged as long as pcp is
+    not in testing.
+
+ -- Martin Pitt <mpitt@debian.org>  Mon, 08 May 2017 23:24:19 +0200
+
 cockpit (139-1) unstable; urgency=medium
 
   * New upstream release:
