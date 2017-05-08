@@ -71,22 +71,8 @@ return plural;
   null,
   "$0 Blok uređaj"
  ],
- "$0 Chunk Size": [
-  null,
-  ""
- ],
- "$0 Disks": [
-  null,
-  ""
- ],
  "$0 day": [
   "$0 days",
-  "",
-  "",
-  ""
- ],
- "$0 disk is missing": [
-  "$0 disks are missing",
   "",
   "",
   ""
@@ -123,10 +109,6 @@ return plural;
   "$0 years",
   "",
   "",
-  ""
- ],
- "$0, $1 free": [
-  null,
   ""
  ],
  "$name (from $host)": [
@@ -229,10 +211,6 @@ return plural;
   null,
   "Dodaj"
  ],
- "Add Disks": [
-  null,
-  ""
- ],
  "Add iSCSI Portal": [
   null,
   ""
@@ -270,10 +248,6 @@ return plural;
   ""
  ],
  "Block device for filesystems": [
-  null,
-  ""
- ],
- "Blocked": [
   null,
   ""
  ],
@@ -433,19 +407,11 @@ return plural;
   null,
   ""
  ],
- "Deleting a RAID device will erase all data on it.": [
-  null,
-  ""
- ],
  "Deleting a logical volume will delete all data in it.": [
   null,
   ""
  ],
  "Deleting a partition will delete all data in it.": [
-  null,
-  ""
- ],
- "Deleting a volume group will erase all data on it.": [
   null,
   ""
  ],
@@ -533,10 +499,6 @@ return plural;
   null,
   "Proširena particija"
  ],
- "FAILED": [
-  null,
-  ""
- ],
  "Filesystem": [
   null,
   ""
@@ -586,10 +548,6 @@ return plural;
   ""
  ],
  "Go to now": [
-  null,
-  ""
- ],
- "In Sync": [
   null,
   ""
  ],
@@ -729,14 +687,6 @@ return plural;
   null,
   ""
  ],
- "Not found": [
-  null,
-  "Nije pronađeno"
- ],
- "Not running": [
-  null,
-  ""
- ],
  "Off": [
   null,
   "Isključi"
@@ -825,35 +775,15 @@ return plural;
   null,
   ""
  ],
- "RAID ($0)": [
-  null,
-  ""
- ],
- "RAID 0": [
-  null,
-  ""
- ],
  "RAID 0 (Stripe)": [
   null,
   "RAID 0 (Stripe)"
- ],
- "RAID 1": [
-  null,
-  ""
  ],
  "RAID 1 (Mirror)": [
   null,
   "RAID 1 (Mirror)"
  ],
- "RAID 10": [
-  null,
-  ""
- ],
  "RAID 10 (Stripe of Mirrors)": [
-  null,
-  ""
- ],
- "RAID 4": [
   null,
   ""
  ],
@@ -861,17 +791,9 @@ return plural;
   null,
   "RAID 4 (Dedicated Parity)"
  ],
- "RAID 5": [
-  null,
-  ""
- ],
  "RAID 5 (Distributed Parity)": [
   null,
   "RAID 5 (Distributed Parity)"
- ],
- "RAID 6": [
-  null,
-  ""
  ],
  "RAID 6 (Double Distributed Parity)": [
   null,
@@ -905,10 +827,6 @@ return plural;
   null,
   ""
  ],
- "Recovering": [
-  null,
-  ""
- ],
  "Recovering RAID Device $target": [
   null,
   ""
@@ -926,10 +844,6 @@ return plural;
   ""
  ],
  "Rename Logical Volume": [
-  null,
-  ""
- ],
- "Rename Volume Group": [
   null,
   ""
  ],
@@ -952,10 +866,6 @@ return plural;
  "Resizing $target": [
   null,
   ""
- ],
- "Running": [
-  null,
-  "Pokrenuto"
  ],
  "SMART self-test of $target": [
   null,
@@ -997,19 +907,11 @@ return plural;
   null,
   "Veličina mora biti specificirana."
  ],
- "Spare": [
-  null,
-  ""
- ],
  "Start": [
   null,
   ""
  ],
  "Start Multipath": [
-  null,
-  ""
- ],
- "Start Scrubbing": [
   null,
   ""
  ],
@@ -1022,10 +924,6 @@ return plural;
   ""
  ],
  "Stop": [
-  null,
-  ""
- ],
- "Stop Scrubbing": [
   null,
   ""
  ],
@@ -1081,19 +979,11 @@ return plural;
   null,
   ""
  ],
- "The last physical volume of a volume group cannot be removed.": [
-  null,
-  ""
- ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   ""
  ],
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
-  null,
-  ""
- ],
- "There is not enough free space elsewhere to remove this physical volume.  At least $0 more free space is needed.": [
   null,
   ""
  ],
@@ -1120,10 +1010,6 @@ return plural;
  "Unknown": [
   null,
   "Nepoznato"
- ],
- "Unknown ($0)": [
-  null,
-  ""
  ],
  "Unknown host name": [
   null,
@@ -1186,10 +1072,6 @@ return plural;
   ""
  ],
  "Volume Groups": [
-  null,
-  ""
- ],
- "Write-mostly": [
   null,
   ""
  ],

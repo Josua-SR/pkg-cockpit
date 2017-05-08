@@ -533,7 +533,7 @@ class MachineCase(unittest.TestCase):
         self.addCleanup(intercept)
 
     def tearDown(self):
-        if self.currentResult.wasSuccessful() and self.machine.address:
+        if self.currentResult.wasSuccessful() and len(self.currentResult.skipped) == 0 and self.machine.address:
             self.check_journal_messages()
         shutil.rmtree(self.tmpdir)
 
@@ -600,6 +600,9 @@ class MachineCase(unittest.TestCase):
         # SELinux and plymouth: https://bugzilla.redhat.com/show_bug.cgi?id=1427884
         "(audit: )?type=1400 audit.*connectto.*plymouth.*unix_stream_socket.*",
 
+        # SELinux and nfs-utils fighting: https://bugzilla.redhat.com/show_bug.cgi?id=1447854
+        ".*type=1400 .*denied  { execute } for.*sm-notify.*init_t.*",
+
         # apparmor loading
         "(audit: )?type=1400.*apparmor=\"STATUS\".*",
 
@@ -656,6 +659,7 @@ class MachineCase(unittest.TestCase):
                                     ".*is not in the sudoers file.  This incident will be reported.",
                                     ".*: a password is required",
                                     "user user was reauthorized",
+                                    "sudo: unable to resolve host .*",
                                     ".*: sorry, you must have a tty to run sudo",
                                     ".*/pkexec: bridge exited",
                                     "We trust you have received the usual lecture from the local System",

@@ -71,21 +71,8 @@ return plural;
   null,
   "Dispositiu de blocs $0"
  ],
- "$0 Chunk Size": [
-  null,
-  "$0 de mida del tros"
- ],
- "$0 Disks": [
-  null,
-  "$0 discs"
- ],
  "$0 day": [
   "$0 days",
-  "",
-  ""
- ],
- "$0 disk is missing": [
-  "$0 disks are missing",
   "",
   ""
  ],
@@ -117,10 +104,6 @@ return plural;
   "$0 years",
   "",
   ""
- ],
- "$0, $1 free": [
-  null,
-  "$0 amb $1 lliures"
  ],
  "$name (from $host)": [
   null,
@@ -222,10 +205,6 @@ return plural;
   null,
   "Afegeix"
  ],
- "Add Disks": [
-  null,
-  "Afegeix discs"
- ],
  "Add iSCSI Portal": [
   null,
   "Afegeix un portal iSCSI"
@@ -265,10 +244,6 @@ return plural;
  "Block device for filesystems": [
   null,
   ""
- ],
- "Blocked": [
-  null,
-  "Bloquejat"
  ],
  "Can't delete while unlocked": [
   null,
@@ -426,10 +401,6 @@ return plural;
   null,
   "S'està suprimint $target"
  ],
- "Deleting a RAID device will erase all data on it.": [
-  null,
-  "La supressió d'un dispositiu RAID n'esborrarà totes les dades."
- ],
  "Deleting a logical volume will delete all data in it.": [
   null,
   "La supressió d'un volum lògic n'esborrarà totes les dades."
@@ -437,10 +408,6 @@ return plural;
  "Deleting a partition will delete all data in it.": [
   null,
   "La supressió d'una partició n'esborrarà totes les dades."
- ],
- "Deleting a volume group will erase all data on it.": [
-  null,
-  "La supressió d'un grup de volums n'esborrarà totes les dades."
  ],
  "Deleting volume group $target": [
   null,
@@ -526,10 +493,6 @@ return plural;
   null,
   "Partició estesa"
  ],
- "FAILED": [
-  null,
-  "FALLAT"
- ],
  "Filesystem": [
   null,
   "Sistema de fitxers"
@@ -581,10 +544,6 @@ return plural;
  "Go to now": [
   null,
   "Vés a ara"
- ],
- "In Sync": [
-  null,
-  "En sincronització"
  ],
  "Inactive volume": [
   null,
@@ -722,14 +681,6 @@ return plural;
   null,
   "Cap grup de volums creat"
  ],
- "Not found": [
-  null,
-  "No s'ha trobat"
- ],
- "Not running": [
-  null,
-  "No s'està executant"
- ],
  "Off": [
   null,
   "Apagat"
@@ -818,53 +769,25 @@ return plural;
   null,
   ""
  ],
- "RAID ($0)": [
-  null,
-  "RAID ($0)"
- ],
- "RAID 0": [
-  null,
-  "RAID 0"
- ],
  "RAID 0 (Stripe)": [
   null,
   "RAID 0 (segmentació)"
- ],
- "RAID 1": [
-  null,
-  "RAID 1"
  ],
  "RAID 1 (Mirror)": [
   null,
   "RAID 1 (rèplica)"
  ],
- "RAID 10": [
-  null,
-  "RAID 10"
- ],
  "RAID 10 (Stripe of Mirrors)": [
   null,
   "RAID 10 (segmentació de rèpliques)"
- ],
- "RAID 4": [
-  null,
-  "RAID 4"
  ],
  "RAID 4 (Dedicated Parity)": [
   null,
   "RAID 4 (paritat dedicada)"
  ],
- "RAID 5": [
-  null,
-  "RAID 5"
- ],
  "RAID 5 (Distributed Parity)": [
   null,
   "RAID 5 (paritat distribuïda)"
- ],
- "RAID 6": [
-  null,
-  "RAID 6"
  ],
  "RAID 6 (Double Distributed Parity)": [
   null,
@@ -898,10 +821,6 @@ return plural;
   null,
   "Rearrencada"
  ],
- "Recovering": [
-  null,
-  "Recuperació"
- ],
  "Recovering RAID Device $target": [
   null,
   ""
@@ -922,10 +841,6 @@ return plural;
   null,
   ""
  ],
- "Rename Volume Group": [
-  null,
-  "Reanomena un grup de volums"
- ],
  "Renaming $target": [
   null,
   "S'està reanomenant $target"
@@ -945,10 +860,6 @@ return plural;
  "Resizing $target": [
   null,
   "S'està redimensionant $target"
- ],
- "Running": [
-  null,
-  "En execució"
  ],
  "SMART self-test of $target": [
   null,
@@ -990,10 +901,6 @@ return plural;
   null,
   ""
  ],
- "Spare": [
-  null,
-  "Recanvi"
- ],
  "Start": [
   null,
   "Inicia"
@@ -1001,10 +908,6 @@ return plural;
  "Start Multipath": [
   null,
   "Inicia el multicamí"
- ],
- "Start Scrubbing": [
-  null,
-  "Inicia el tractament de neteja"
  ],
  "Starting RAID Device $target": [
   null,
@@ -1017,10 +920,6 @@ return plural;
  "Stop": [
   null,
   "Atura"
- ],
- "Stop Scrubbing": [
-  null,
-  "Atura el tractament de neteja"
  ],
  "Stopping RAID Device $target": [
   null,
@@ -1074,19 +973,11 @@ return plural;
   null,
   ""
  ],
- "The last physical volume of a volume group cannot be removed.": [
-  null,
-  ""
- ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "A l'usuari <b>$0</b> no se li permet gestionar l'emmagatzematge"
  ],
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
-  null,
-  ""
- ],
- "There is not enough free space elsewhere to remove this physical volume.  At least $0 more free space is needed.": [
   null,
   ""
  ],
@@ -1113,10 +1004,6 @@ return plural;
  "Unknown": [
   null,
   "Desconegut"
- ],
- "Unknown ($0)": [
-  null,
-  "Desconegut ($0)"
  ],
  "Unknown host name": [
   null,
@@ -1181,10 +1068,6 @@ return plural;
  "Volume Groups": [
   null,
   "Grups de volums"
- ],
- "Write-mostly": [
-  null,
-  "Escriptura-majoritària"
  ],
  "Writing": [
   null,
