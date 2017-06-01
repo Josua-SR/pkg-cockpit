@@ -159,15 +159,15 @@ StateIcon.propTypes = {
  * @constructor
  */
 export const DropdownButtons = ({ buttons }) => {
-    const buttonsHtml = buttons.map(
-        button => {
+    const buttonsHtml = buttons
+        .filter(button => buttons[0].id === undefined || buttons[0].id !== button.id)
+        .map(button => {
             return (<li className='presentation'>
                 <a role='menuitem' onClick={button.action} id={button.id}>
                     {button.title}
                 </a>
             </li>)
-        }
-    );
+        });
 
     const caretId = buttons[0]['id'] ? `${buttons[0]['id']}-caret` : undefined;
     return (<div className='btn-group'>
@@ -410,9 +410,13 @@ const HostVmsList = ({ vms, config, dispatch }) => {
         </div>);
     }
 
+    const sortFunction = (vmA, vmB) => vmA.name.localeCompare(vmB.name);
+
     return (<div className='container-fluid'>
         <Listing title={_("Virtual Machines")} columnTitles={[_("Name"), _("Connection"), _("State")]}>
-            {vms.map(vm => {
+            {vms
+                .sort(sortFunction)
+                .map(vm => {
                 return (
                     <Vm vm={vm} config={config}
                         onStart={() => dispatch(startVm(vm))}

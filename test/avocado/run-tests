@@ -34,7 +34,7 @@ sys.dont_write_bytecode = True
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 sys.path.append(os.path.abspath(os.path.dirname(os.path.realpath(__file__))))
 
-from common import testinfra
+from common import testlib
 from common import testvm
 
 machine_test_dir = "/tmp/avocado_tests"
@@ -168,7 +168,7 @@ done;
 
 def run_avocado(avocado_tests, verbose, browser, download_logs):
     use_selenium = (browser != 'none')
-    machine = testvm.VirtMachine(verbose=verbose, label="avocado")
+    machine = testvm.VirtMachine(testvm.DEFAULT_IMAGE, verbose=verbose, label="avocado")
     selenium = testvm.VirtMachine(image="selenium", label="selenium", verbose=verbose) if use_selenium else None
 
     try:
@@ -219,8 +219,6 @@ def main():
     parser.add_argument('-v', '--verbose', dest="verbosity", action='store_true',
                         help='Verbose output')
     parser.add_argument('-q', '--quick', action='store_true', help='Build faster')
-    parser.add_argument('--install', dest='install', action='store_true',
-                        help='Build and install Cockpit into test VMs')
     parser.add_argument("-b", "--browser", choices=['none', 'firefox', 'chrome'],
                     default='none',
                     help="selenium browser choice - in case of none, selenium isn't started")
@@ -233,17 +231,6 @@ def main():
     parser.add_argument('tests', nargs='*')
 
     opts = parser.parse_args()
-    if opts.install:
-        sys.stderr.write("Building and installing Cockpit ...\n")
-        subprocess.check_call([ os.path.join(testinfra.TEST_DIR, "vm-download"), testinfra.DEFAULT_IMAGE, "selenium" ])
-        subprocess.check_call([ os.path.join(testinfra.TEST_DIR, "vm-reset") ])
-
-        cmd = [ os.path.join(testinfra.TEST_DIR, "vm-install") ]
-        if opts.verbosity:
-            cmd.append("--verbose")
-        if opts.quick:
-            cmd.append("--quick")
-        subprocess.check_call(cmd)
 
     regular_tests = [ "checklogin-basic.py", "checklogin-raw.py" ]
     browser_tests = [ "selenium-base.py", "selenium-storage.py", "selenium-docker.py", "selenium-sosreport.py" ]

@@ -1,5 +1,5 @@
 # Generated Makefile data for kdump
-# Stamp: Mon May 08 2017 19:28:55 GMT+0000 (UTC)
+# Stamp: Thu Jun 01 2017 11:55:52 GMT+0000 (UTC)
 
 kdump_INPUTS = \
 	$(srcdir)/pkg/kdump/config-client.es6 \

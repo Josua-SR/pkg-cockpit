@@ -25,11 +25,11 @@ from time import sleep
 
 import argparse
 import errno
-import fnmatch
 import subprocess
 import os
 import select
 import shutil
+import socket
 import sys
 import traceback
 import random
@@ -39,7 +39,13 @@ import tempfile
 import time
 import unittest
 
-import testinfra
+import tap
+import testvm
+
+TEST_DIR = os.path.normpath(os.path.dirname(os.path.realpath(os.path.join(__file__, ".."))))
+BOTS_DIR = os.path.normpath(os.path.join(TEST_DIR, "..", "bots"))
+
+os.environ["PATH"] = "{0}:{1}:{2}".format(os.environ.get("PATH"), BOTS_DIR, TEST_DIR)
 
 __all__ = (
     # Test definitions
@@ -53,6 +59,7 @@ __all__ = (
     'sit',
     'wait',
     'opts',
+    'TEST_DIR',
 )
 
 # Command line options
@@ -429,7 +436,7 @@ class MachineCase(unittest.TestCase):
         (unused, sep, label) = self.id().partition(".")
         return label.replace(".", "-")
 
-    def new_machine(self, machine_key, image=None):
+    def new_machine(self, machine_key, image=testvm.DEFAULT_IMAGE):
         import testvm
         machine_class = self.machine_class
         if opts.address:
@@ -642,6 +649,7 @@ class MachineCase(unittest.TestCase):
                                     "localhost: bridge program failed: Child process killed by signal 9",
                                     "request timed out, closing",
                                     "PolicyKit daemon disconnected from the bus.",
+                                    ".*couldn't create polkit session subject: No session for pid.*",
                                     "We are no longer a registered authentication agent.",
                                     ".*: failed to retrieve resource: terminated",
                                     # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1253319
@@ -798,17 +806,9 @@ class Phantom:
             self._driver.wait()
             self._driver = None
 
-def list_directories(dirs):
-    result = [ ];
-    for d in dirs:
-        for f in os.listdir(d):
-            result.append(os.path.join(d, f))
-    return result
-
 def skipImage(reason, *args):
-    image = testinfra.DEFAULT_IMAGE
-    if image in args:
-        return unittest.skip("{0}: {1}".format(image, reason))
+    if testvm.DEFAULT_IMAGE in args:
+        return unittest.skip("{0}: {1}".format(testvm.DEFAULT_IMAGE, reason))
     return lambda func: func
 
 class Policy(object):
@@ -819,57 +819,18 @@ class Policy(object):
         # All file paths converted to basename
         return re.sub(r'File "[^"]*/([^/"]+)"', 'File "\\1"', trace.strip())
 
-    def post_github(self, number, err):
-        github = testinfra.GitHub()
-
-        # Ignore this if we were not given a token
-        if not github.available:
-            return False
-
-        context = "verify/{0}".format(testinfra.DEFAULT_IMAGE)
-
-        # Lookup the link being logged to
-        link = None
-        revision = os.environ.get("TEST_REVISION", None)
-        if revision:
-            link = "revision {0}".format(revision)
-            statuses = github.get("commits/{0}/statuses".format(revision))
-            if statuses:
-                for status in statuses:
-                    if status["context"] == context:
-                        link = "revision {0}, [logs]({1})".format(revision, status["target_url"])
-                        break
-        github.update_known_issue(number, err, link, context)
-        return True
-
     def check_issue(self, trace):
-        directories =  [ ]
-        image_naughty = os.path.join(testinfra.TEST_DIR, "verify", "naughty-" + testinfra.DEFAULT_IMAGE)
-        if os.path.exists(image_naughty):
-            directories.append(image_naughty)
-        trace = self.normalize_traceback(trace)
-        number = 0
-        for naughty in list_directories(directories):
-            (prefix, unused, name) = os.path.basename(naughty).partition("-")
-            try:
-                n = int(prefix)
-            except:
-                continue
-            with open(naughty, "r") as fp:
-                match = "*" + self.normalize_traceback(fp.read()) + "*"
-            # Match as in a file name glob, albeit multi line, and account for literal pastes with '[]'
-            if fnmatch.fnmatchcase(trace, match) or fnmatch.fnmatchcase(trace, match.replace("[", "?")):
-                number = n
-        if not number:
-            return 0
+        cmd = [ "image-naughty", testvm.DEFAULT_IMAGE ]
 
-        sys.stderr.write("Ignoring known issue #{0}\n{1}\n".format(number, trace))
         try:
-            self.post_github(number, trace)
-        except:
-            sys.stderr.write("Failed to post known issue to GitHub\n")
-            traceback.print_exc()
-        return number
+            proc = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+            (output, error) = proc.communicate(str(trace))
+        except OSError, ex:
+            if getattr(ex, 'errno', 0) != errno.ENOENT:
+                sys.stderr.write("Couldn't check known issue: {0}\n".format(str(ex)))
+            output = ""
+
+        return output
 
     def check_retry(self, trace, tries):
         # Never try more than five times
@@ -911,24 +872,10 @@ class Policy(object):
 
         return False
 
-class TapResult(unittest.TestResult):
+class TestResult(tap.TapResult):
     def __init__(self, stream, descriptions, verbosity):
-        self.offset = 0
         self.policy = None
-        super(TapResult, self).__init__(stream, descriptions, verbosity)
-
-    def ok(self, test):
-        data = "ok {0} {1} duration: {2}s\n".format(self.offset, str(test), int(time.time() - self.start_time))
-        sys.stdout.write(data)
-
-    def not_ok(self, test, err):
-        data = "not ok {0} {1} duration: {2}s\n".format(self.offset, str(test), int(time.time() - self.start_time))
-        if err:
-            data += self._exc_info_to_string(err, test)
-        sys.stdout.write(data)
-
-    def skip(self, test, reason):
-        sys.stdout.write("ok {0} {1} duration: {2}s # SKIP {3}\n".format(self.offset, str(test), int(time.time() - self.start_time), reason))
+        super(TestResult, self).__init__(verbosity)
 
     def maybeIgnore(self, test, err):
         string = self._exc_info_to_string(err, test)
@@ -945,45 +892,23 @@ class TapResult(unittest.TestResult):
                 raise RetryError("Retrying due to failure of test harness or framework")
         return False
 
-    def stop(self):
-        sys.stdout.write("Bail out!\n")
-        super(TapResult, self).stop()
-
-    def startTest(self, test):
-        self.start_time = time.time()
-        self.offset += 1
-        sys.stdout.write("# {0}\n# {1}\n#\n".format('-' * 70, str(test)))
-        super(TapResult, self).startTest(test)
-
-    def stopTest(self, test):
-        sys.stdout.write("\n")
-        super(TapResult, self).stopTest(test)
-
     def addError(self, test, err):
         if not self.maybeIgnore(test, err):
-            self.not_ok(test, err)
-            super(TapResult, self).addError(test, err)
+            super(TestResult, self).addError(test, err)
 
     def addFailure(self, test, err):
         if not self.maybeIgnore(test, err):
-            self.not_ok(test, err)
-            super(TapResult, self).addError(test, err)
+            super(TestResult, self).addError(test, err)
 
-    def addSuccess(self, test):
-        self.ok(test)
-        super(TapResult, self).addSuccess(test)
+    def startTest(self, test):
+        sys.stdout.write("# {0}\n# {1}\n#\n".format('-' * 70, str(test)))
+        sys.stdout.flush()
+        super(TestResult, self).startTest(test)
 
-    def addSkip(self, test, reason):
-        self.skip(test, reason)
-        super(TapResult, self).addSkip(test, reason)
-
-    def addExpectedFailure(self, test, err):
-        self.ok(test)
-        super(TapResult, self).addExpectedFailure(test, err)
-
-    def addUnexpectedSuccess(self, test):
-        self.not_ok(test, None)
-        super(TapResult, self).addUnexpectedSuccess(test)
+    def stopTest(self, test):
+        sys.stdout.write("\n")
+        sys.stdout.flush()
+        super(TestResult, self).stopTest(test)
 
 class OutputBuffer(object):
     def __init__(self):
@@ -1023,7 +948,7 @@ class OutputBuffer(object):
         return buffer
 
 class TapRunner(object):
-    resultclass = TapResult
+    resultclass = TestResult
 
     def __init__(self, verbosity=1, jobs=1, thorough=False):
         self.stream = unittest.runner._WritelnDecorator(sys.stderr)
@@ -1032,7 +957,7 @@ class TapRunner(object):
         self.jobs = jobs
 
     def runOne(self, test, offset):
-        result = TapResult(self.stream, False, self.verbosity)
+        result = TestResult(self.stream, False, self.verbosity)
         result.offset = offset
         if not self.thorough:
             result.policy = Policy()
@@ -1049,9 +974,8 @@ class TapRunner(object):
             return result.wasSuccessful()
 
     def run(self, testable):
+        tap.TapResult.plan(testable)
         count = testable.countTestCases()
-        sys.stdout.write("1..{0}\n".format(count))
-        sys.stdout.flush()
 
         # For statistics
         start = time.time()
@@ -1115,7 +1039,8 @@ class TapRunner(object):
 
         # Report on the results
         duration = int(time.time() - start)
-        details = "[{0}s on {1}]".format(duration, testinfra.HOSTNAME)
+        hostname = socket.gethostname().split(".")[0]
+        details = "[{0}s on {1}]".format(duration, hostname)
         count = failures["count"]
         if count:
             sys.stdout.write("# {0} TESTS FAILED {1}\n".format(count, details))

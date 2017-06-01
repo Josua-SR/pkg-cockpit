@@ -1,2 +1,0 @@
-#! /bin/sh -ex
-exec $(dirname $0)/lib/debian.bootstrap "$1" "$2" debian-8 "deb http://deb.debian.org/debian testing main"

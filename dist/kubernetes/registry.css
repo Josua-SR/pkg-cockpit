@@ -1457,6 +1457,9 @@ code {
   font-size: 13px;
   margin-bottom: 1em;
 }
+.form-table-ct label span[translate] {
+  vertical-align: top;
+}
 dl.registry-image-tags dt {
   line-height: 30px;
 }

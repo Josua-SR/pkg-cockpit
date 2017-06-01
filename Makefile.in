@@ -119,10 +119,10 @@ noinst_PROGRAMS = $(am__EXEEXT_6) mock-bridge$(EXEEXT) $(am__EXEEXT_7) \
 	$(am__EXEEXT_11) mock-echo$(EXEEXT) mock-auth-command$(EXEEXT) \
 	$(am__EXEEXT_4) mock-pam-conv-mod.so$(EXEEXT) $(am__EXEEXT_12)
 sbin_PROGRAMS = remotectl$(EXEEXT)
-TESTS = $(am__EXEEXT_13) $(am__EXEEXT_16) $(am__EXEEXT_6) \
-	$(am__EXEEXT_7) test-websocket$(EXEEXT) $(am__EXEEXT_4) \
-	tools/static-code-tests $(am__EXEEXT_17) $(am__EXEEXT_11) \
-	$(am__EXEEXT_12)
+TESTS = tools/test-bots $(am__EXEEXT_13) $(am__EXEEXT_16) \
+	$(am__EXEEXT_6) $(am__EXEEXT_7) test-websocket$(EXEEXT) \
+	$(am__EXEEXT_4) tools/static-code-tests tools/test-bots \
+	$(am__EXEEXT_17) $(am__EXEEXT_11) $(am__EXEEXT_12)
 @ENABLE_DOC_TRUE@am__append_1 = doc/cockpit-transport.svg \
 @ENABLE_DOC_TRUE@	doc/cockpit-transport.png $(NULL) \
 @ENABLE_DOC_TRUE@	$(GUIDE_DOCBOOK) $(GUIDE_INCLUDES) \
@@ -185,6 +185,7 @@ TESTS = $(am__EXEEXT_13) $(am__EXEEXT_16) $(am__EXEEXT_6) \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock_known_hosts \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock-pid-cat \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock-config \
+@WITH_COCKPIT_SSH_TRUE@	src/ssh/invalid_known_hosts \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
 @WITH_COCKPIT_SSH_TRUE@am__append_18 = \
@@ -1548,14 +1549,13 @@ DISTCLEANFILES = \
 	cockpit-cache-*.tar.xz \
 	$(NULL)
 
-EXTRA_DIST = .bowerrc bower.json package.json src/branding README.md \
-	$(NULL) $(WEBPACK_DEPS) $(WEBPACK_MANIFEST_IN) \
-	webpack.config.js $(OPENSANS_FONTS) $(am__append_1) \
-	$(PO_INPUTS) po/LINGUAS po/po.empty.js po/po2json \
-	po/zanata.xml $(NULL) dist/playground/extra.de.po \
-	pkg/playground/extra.de.po pkg/users/mock \
-	pkg/lib/qunit-template.html $(playground_DATA) $(pkg_TESTS) \
-	dist/base1/cockpit.js dist/base1/cockpit.min.css \
+EXTRA_DIST = .bowerrc bower.json package.json README.md $(NULL) \
+	$(WEBPACK_DEPS) $(WEBPACK_MANIFEST_IN) webpack.config.js \
+	$(OPENSANS_FONTS) $(am__append_1) $(PO_INPUTS) po/LINGUAS \
+	po/po.empty.js po/po2json po/zanata.xml $(NULL) \
+	dist/playground/extra.de.po pkg/playground/extra.de.po \
+	pkg/users/mock pkg/lib/qunit-template.html $(playground_DATA) \
+	$(pkg_TESTS) dist/base1/cockpit.js dist/base1/cockpit.min.css \
 	dist/base1/cockpit.min.css.map dist/base1/cockpit.min.js \
 	dist/base1/cockpit.min.js.map dist/base1/jquery.js \
 	dist/base1/jquery.min.js dist/base1/jquery.min.js.map \
@@ -1573,7 +1573,11 @@ EXTRA_DIST = .bowerrc bower.json package.json src/branding README.md \
 	src/base1/require-loaders.js src/base1/simple-tap.js \
 	src/base1/test-dbus-common.js $(base_DATA) $(basefonts_DATA) \
 	$(base_TESTS) $(base_TESTS_DEPS) $(base_TESTS_SOURCE) \
-	$(base_TESTS_JAVASCRIPT) $(NULL) \
+	$(base_TESTS_JAVASCRIPT) $(NULL) $(centosbranding_DATA) \
+	$(debianbranding_DATA) $(defaultbranding_DATA) \
+	src/branding/default/logo.svg $(NULL) $(fedorabranding_DATA) \
+	$(kubernetesbranding_DATA) $(registrybranding_DATA) \
+	$(rhelbranding_DATA) $(ubuntubranding_DATA) \
 	src/bridge/cockpit.pam.insecure $(NULL) \
 	src/bridge/mock-resource src/bridge/mock-setup \
 	src/bridge/mock-pmda.c src/bridge/mock-pmns \
@@ -2009,17 +2013,18 @@ centosbranding_DATA = \
 debianbrandingdir = $(datadir)/cockpit/branding/debian
 debianbranding_DATA = \
 	src/branding/debian/branding.css \
+	src/branding/debian/favicon.ico \
 	$(NULL)
 
 defaultbrandingdir = $(datadir)/cockpit/branding/default
 defaultbranding_DATA = \
-	src/branding/default/branding.css \
+	src/branding/default/apple-touch-icon.png \
 	src/branding/default/bg-login.jpg \
 	src/branding/default/bg-plain.jpg \
+	src/branding/default/branding.css \
 	src/branding/default/brand-large.png \
-	src/branding/default/logo.png \
-	src/branding/default/apple-touch-icon.png \
 	src/branding/default/favicon.ico \
+	src/branding/default/logo.png \
 	$(NULL)
 
 fedorabrandingdir = $(datadir)/cockpit/branding/fedora
@@ -2046,6 +2051,7 @@ rhelbranding_DATA = \
 ubuntubrandingdir = $(datadir)/cockpit/branding/ubuntu
 ubuntubranding_DATA = \
 	src/branding/ubuntu/branding.css \
+	src/branding/ubuntu/favicon.ico \
 	$(NULL)
 
 libcockpit_stub_a_SOURCES = \
@@ -7668,6 +7674,13 @@ recheck: all $(check_PROGRAMS) $(check_SCRIPTS)
 	        am__force_recheck=am--force-recheck \
 	        TEST_LOGS="$$log_list"; \
 	exit $$?
+tools/test-bots.log: tools/test-bots
+	@p='tools/test-bots'; \
+	b='tools/test-bots'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-paths.log: test-paths$(EXEEXT)
 	@p='test-paths$(EXEEXT)'; \
 	b='test-paths'; \

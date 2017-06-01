@@ -19,7 +19,6 @@
 # along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
 
 import parent
-import testinfra
 from testlib import *
 import os
 import subprocess
@@ -113,7 +112,7 @@ def rhsmcertd_hack(m):
     m.execute("systemctl stop rhsmcertd || true")
 
 
-@skipImage("No OSTree available", "centos-7", "debian-stable", "debian-testing", "fedora-24", "fedora-25", "fedora-26", "fedora-testing", "fedora-i386", "rhel-7", "ubuntu-1604")
+@skipImage("No OSTree available", "centos-7", "debian-stable", "debian-testing", "fedora-24", "fedora-25", "fedora-26", "fedora-testing", "fedora-i386", "rhel-7", "ubuntu-1604", "ubuntu-stable")
 class OstreeRestartCase(MachineCase):
 
     def setUp(self):
@@ -418,7 +417,7 @@ class OstreeRestartCase(MachineCase):
 
         self.allow_restart_journal_messages()
 
-@skipImage("No OSTree available", "centos-7", "debian-stable", "debian-testing", "fedora-24", "fedora-25", "fedora-26", "fedora-testing", "fedora-i386", "rhel-7", "ubuntu-1604")
+@skipImage("No OSTree available", "centos-7", "debian-stable", "debian-testing", "fedora-24", "fedora-25", "fedora-26", "fedora-testing", "fedora-i386", "rhel-7", "ubuntu-1604", "ubuntu-stable")
 class OstreeCase(MachineCase):
 
     def testRemoteManagement(self):
@@ -554,8 +553,7 @@ class OstreeCase(MachineCase):
         b.click("modal-dialog .group-buttons button.btn-primary")
         b.wait_present("modal-dialog .group-buttons div.dialog-error")
 
-        with open(os.path.join(testinfra.TEST_DIR, "verify",
-                               "files", "publickey.asc"), 'rb') as fp:
+        with open(os.path.join(TEST_DIR, "verify", "files", "publickey.asc"), 'rb') as fp:
             gpg_data = fp.read()
 
         b.set_val("modal-dialog #gpg-data", gpg_data)
