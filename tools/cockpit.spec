@@ -87,7 +87,7 @@ Recommends: %{name}-dashboard = %{version}-%{release}
 Recommends: %{name}-networkmanager = %{version}-%{release}
 Recommends: %{name}-storaged = %{version}-%{release}
 Recommends: sscg >= 2.0.4
-%ifarch x86_64 %{arm} aarch64 ppc64le
+%ifarch x86_64 %{arm} aarch64 ppc64le i686
 Recommends: %{name}-docker = %{version}-%{release}
 %endif
 Suggests: %{name}-pcp = %{version}-%{release}
@@ -212,7 +212,7 @@ echo '%dir %{_datadir}/%{name}/selinux' > selinux.list
 find %{buildroot}%{_datadir}/%{name}/selinux -type f >> selinux.list
 %endif
 
-%ifarch x86_64 %{arm} aarch64 ppc64le
+%ifarch x86_64 %{arm} aarch64 ppc64le i686
 echo '%dir %{_datadir}/%{name}/docker' > docker.list
 find %{buildroot}%{_datadir}/%{name}/docker -type f >> docker.list
 %else
@@ -359,7 +359,7 @@ Cockpit support for remoting to other servers, bastion hosts, and a basic dashbo
 %post dashboard
 # HACK: Until policy changes make it downstream
 echo "Applying workaround for broken SELinux policy: https://bugzilla.redhat.com/show_bug.cgi?id=1381331" >&2
-test -f %{_bindir}/chcon && chcon -t cockpit_ws_exec_t %{_libexecdir}/cockpit-ssh
+chcon -t cockpit_ws_exec_t %{_libexecdir}/cockpit-ssh || true
 %if 0%{?fedora} > 0 && 0%{?fedora} >= 26
 if type semodule >/dev/null 2>&1; then
     tmp=$(mktemp -d)
@@ -594,7 +594,7 @@ utility setroubleshoot to diagnose and resolve SELinux issues.
 
 %endif
 
-%ifarch x86_64 %{arm} aarch64 ppc64le
+%ifarch x86_64 %{arm} aarch64 ppc64le i686
 
 %package docker
 Summary: Cockpit user interface for Docker containers

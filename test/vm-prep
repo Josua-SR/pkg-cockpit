@@ -56,6 +56,12 @@ prepare()
 		$VIRSH net-undefine $NETWORK_NAME
 	fi
 
+	# In case a network has leaked in from elsewhere
+	if ip address show dev $NETWORK_NAME >/dev/null 2>/dev/null; then
+		ip link set $NETWORK_NAME down || true
+		brctl delbr $NETWORK_NAME || true
+	fi
+
 	# HACK: NetworkManager races with dnsmasq-dhcp on bridge
 	# https://bugzilla.redhat.com/show_bug.cgi?id=1205081
 	cat > /etc/sysconfig/network-scripts/ifcfg-$NETWORK_NAME << EOF
@@ -63,9 +69,14 @@ DEVICE=$NETWORK_NAME
 NM_CONTROLLED=no
 EOF
 
+    # HACK: In case of read-only /sys avoid libvirt writing there
+    mount -o bind /mnt /sys/devices/virtual/net/
+
     $VIRSH net-define $BASE/common/network-cockpit.xml
-	$VIRSH net-autostart $NETWORK_NAME
-	$VIRSH net-start $NETWORK_NAME
+    $VIRSH net-autostart $NETWORK_NAME
+    $VIRSH net-start $NETWORK_NAME
+
+    umount /sys/devices/virtual/net
 
 	if [ ! -u $QEMU_BRIDGE_HELPER ]; then
 		chmod -v u+s $QEMU_BRIDGE_HELPER

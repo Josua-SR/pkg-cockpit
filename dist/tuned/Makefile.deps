@@ -1,5 +1,5 @@
 # Generated Makefile data for tuned
-# Stamp: Mon May 08 2017 19:28:55 GMT+0000 (UTC)
+# Stamp: Thu Jun 01 2017 11:55:52 GMT+0000 (UTC)
 
 tuned_INPUTS = \
 	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \

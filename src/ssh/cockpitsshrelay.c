@@ -1180,6 +1180,13 @@ send_auth_reply (CockpitSshData *data,
   if (data->host_fingerprint)
     json_object_set_string_member (object, "host-fingerprint", data->host_fingerprint);
 
+  if (g_strcmp0 (problem, "invalid-hostkey") == 0 &&
+      tmp_knownhost_file == NULL)
+    {
+      json_object_set_string_member (object, "invalid-hostkey-file",
+                                     data->ssh_options->knownhosts_file);
+    }
+
   json_object_set_string_member (object, "problem", problem);
   json_object_set_string_member (object, "error", problem);
 
@@ -1279,6 +1286,7 @@ cockpit_ssh_connect (CockpitSshData *data,
 {
   const gchar *ignore_hostkey;
   const gchar *problem;
+  const gchar *knownhosts;
 
   guint port = 22;
   gchar *host;
@@ -1305,7 +1313,7 @@ cockpit_ssh_connect (CockpitSshData *data,
   g_warn_if_fail (ssh_options_set (data->session, SSH_OPTIONS_USER, data->username) == 0);
   g_warn_if_fail (ssh_options_set (data->session, SSH_OPTIONS_PORT, &port) == 0);
 
-  g_warn_if_fail (ssh_options_set (data->session, SSH_OPTIONS_HOST, host) == 0);;
+  g_warn_if_fail (ssh_options_set (data->session, SSH_OPTIONS_HOST, host) == 0);
 
   if (!data->ssh_options->ignore_hostkey)
     {
@@ -1322,7 +1330,15 @@ cockpit_ssh_connect (CockpitSshData *data,
       problem = set_knownhosts_file (data, host, port);
       if (problem != NULL)
         goto out;
+      knownhosts = data->ssh_options->knownhosts_file;
     }
+  else
+    {
+      knownhosts = "/dev/null";
+    }
+
+  // Set knownhosts before trying to connect to ensure key exchange uses the right file
+  g_warn_if_fail (ssh_options_set (data->session, SSH_OPTIONS_KNOWNHOSTS, knownhosts) == 0);
 
   rc = ssh_connect (data->session);
   if (rc != SSH_OK)
