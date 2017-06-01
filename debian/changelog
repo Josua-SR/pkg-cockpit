@@ -1,3 +1,15 @@
+cockpit (141-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Attempt to tear down used partitions when formatting disks
+    - Show the correct known_hosts path on missing/mismatching host keys
+    - Set HTML content type when serving login page, for better reverse proxy
+      operation
+    - Fix Kubernetes page incompatibility with recent Firefox versions
+    - Set the system:authenticated role on anonymous Kubernetes projects
+
+ -- Martin Pitt <mpitt@debian.org>  Thu, 01 Jun 2017 15:09:10 +0200
+
 cockpit (140-1) unstable; urgency=medium
 
   * New upstream release:
