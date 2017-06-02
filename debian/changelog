@@ -1,4 +1,4 @@
-cockpit (141-2) UNRELEASED; urgency=medium
+cockpit (141-2) unstable; urgency=medium
 
   * Fix autopkgtest:
     - Latest avocado now requires python-libvirt, add it as test dependency.
@@ -10,7 +10,7 @@ cockpit (141-2) UNRELEASED; urgency=medium
     - Drop stray "sudo" command. The test already runs as root, this was a
       copy&paste leftover.
 
- -- Martin Pitt <mpitt@debian.org>  Fri, 02 Jun 2017 08:46:21 +0200
+ -- Martin Pitt <mpitt@debian.org>  Fri, 02 Jun 2017 08:47:31 +0200
 
 cockpit (141-1) unstable; urgency=medium
 
