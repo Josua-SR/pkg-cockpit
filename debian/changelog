@@ -1,3 +1,14 @@
+cockpit (142-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Virtual machines display an interactive console, either in browser, or a
+      popup viewer
+    - Fix Virtual Machines operations on non-English locales
+    - Add documentation explaining how to grant/restrict access via polkit
+      rules
+
+ -- Martin Pitt <mpitt@debian.org>  Fri, 09 Jun 2017 17:30:36 +0200
+
 cockpit (141-2) unstable; urgency=medium
 
   * Fix autopkgtest:
