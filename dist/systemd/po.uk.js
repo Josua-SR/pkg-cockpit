@@ -491,10 +491,6 @@ return plural;
   null,
   "Некоректний часовий пояс"
  ],
- "Isolate": [
-  null,
-  "Ізолювати"
- ],
  "Journal": [
   null,
   "Журнал"
@@ -683,14 +679,6 @@ return plural;
   null,
   "Перезавантажити"
  ],
- "Reload or Restart": [
-  null,
-  "Перезавантажити або перезапустити"
- ],
- "Reload or Try Restart": [
-  null,
-  "Перезавантажити або спробувати перезапустити"
- ],
  "Repeat Daily": [
   null,
   "Повторювати щодня"
@@ -843,6 +831,10 @@ return plural;
   null,
   "Користувачу <b>$0</b> не дозволено змінювати назви вузлів"
  ],
+ "The user <b>$0</b> is not permitted to shutdown or restart this server": [
+  null,
+  "Користувачеві <b>$0</b> заборонено вимикати або перезапускати цей сервер"
+ ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
   "Цей день є не в усіх місяцях.<br> Таймер виконуватиметься лише у місяці, у яких є 31 день."
@@ -870,10 +862,6 @@ return plural;
  "Timers": [
   null,
   "Таймери"
- ],
- "Try Restart": [
-  null,
-  "Спробувати перезапустити"
  ],
  "Trying to synchronize with {{Server}}": [
   null,

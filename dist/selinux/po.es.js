@@ -69,32 +69,32 @@ return plural;
  },
  "$0 occurrence": [
   "$1 occurrences",
-  "$1 ocurrencias",
+  "$1 ocurrencia",
   "$1 ocurrencias"
  ],
  "Apply this solution": [
   null,
-  ""
+  "Aplicar esta solución"
  ],
  "Applying solution...": [
   null,
-  ""
+  "Aplicando solución..."
  ],
  "Audit log": [
   null,
-  ""
+  "Registro de auditoria"
  ],
  "Connecting to SETroubleshoot daemon...": [
   null,
-  ""
+  "Conectando al demonio SETroubleshoot..."
  ],
  "Enforce policy:": [
   null,
-  ""
+  "Aplicar la política:"
  ],
  "Error while deleting alert: $0": [
   null,
-  ""
+  "Error mientras se eliminaba la alerta: $0"
  ],
  "Error while setting SELinux mode: '$0'": [
   null,
@@ -102,15 +102,15 @@ return plural;
  ],
  "Failed to delete alert: $0": [
   null,
-  ""
+  "Fallo al eliminar la alerta: $0"
  ],
  "Install setroubleshoot-server to troubleshoot SELinux events.": [
   null,
-  ""
+  "Instale «setroubleshoot-server» para solucionar problemas con sucesos de SELinux."
  ],
  "No SELinux alerts.": [
   null,
-  ""
+  "No hay ninguna alerta de SELinux."
  ],
  "Not connected": [
   null,
@@ -118,11 +118,11 @@ return plural;
  ],
  "Occurred $0": [
   null,
-  ""
+  "Ocurrió $0"
  ],
  "Occurred between $0 and $1": [
   null,
-  ""
+  "Ocurrió entre $0 y $1"
  ],
  "Off": [
   null,
@@ -134,27 +134,27 @@ return plural;
  ],
  "SELinux Access Control Errors": [
   null,
-  ""
+  "Errores de control de acceso de SELinux"
  ],
  "SELinux Policy": [
   null,
-  ""
+  "Normativa de SELinux"
  ],
  "SELinux Troubleshoot": [
   null,
-  ""
+  "Solución de problemas de SELinux"
  ],
  "SELinux is disabled on the system": [
   null,
-  "Cockpit no esta instalado en el sistema"
+  "Se ha desactivado SELinux en el sistema"
  ],
  "SELinux is disabled on the system.": [
   null,
-  ""
+  "Se ha desactivado SELinux en el sistema."
  ],
  "SELinux system status is unknown.": [
   null,
-  ""
+  "Se desconoce el estado de sistema de SELinux."
  ],
  "Setting deviates from the configured state and will revert on the next boot.": [
   null,
@@ -202,6 +202,6 @@ return plural;
  ],
  "solution details": [
   null,
-  ""
+  "detalles de solución"
  ]
 }));

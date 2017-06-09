@@ -73,11 +73,11 @@ return plural;
  ],
  "$0 package": [
   null,
-  ""
+  "$0 paquet"
  ],
  "$0 packages": [
   null,
-  ""
+  "$0 paquets"
  ],
  "- Add New Repository": [
   null,
@@ -89,7 +89,7 @@ return plural;
  ],
  "Add Another Key": [
   null,
-  ""
+  "Ajouter une autre clé"
  ],
  "Additions": [
   null,

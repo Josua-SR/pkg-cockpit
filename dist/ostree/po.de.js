@@ -69,19 +69,19 @@ return plural;
  },
  "$0 key ID": [
   null,
-  ""
+  "$0 Schlüssel-ID"
  ],
  "$0 package": [
   null,
-  ""
+  "$0 Paket"
  ],
  "$0 packages": [
   null,
-  ""
+  "$0 Pakete"
  ],
  "- Add New Repository": [
   null,
-  "Repository"
+  "- Neues Repository hinzufügen"
  ],
  "Add": [
   null,
@@ -89,7 +89,7 @@ return plural;
  ],
  "Add Another Key": [
   null,
-  ""
+  "Einen weiteren Schlüssel hinzufügen"
  ],
  "Additions": [
   null,
@@ -105,7 +105,7 @@ return plural;
  ],
  "Begins with '-----BEGIN PGP PUBLIC KEY BLOCK-----'": [
   null,
-  ""
+  "Beginnt mit '-----BEGIN PGP PUBLIC KEY BLOCK-----'"
  ],
  "Cancel": [
   null,
@@ -113,15 +113,15 @@ return plural;
  ],
  "Change Repository": [
   null,
-  "Repository"
+  "Repository ändern"
  ],
  "Check for Updates": [
   null,
-  ""
+  "Nach Aktualisierungen suchen"
  ],
  "Checking for updates": [
   null,
-  ""
+  "Suche nach Aktualisierungen"
  ],
  "Connecting to OSTree": [
   null,
@@ -253,7 +253,7 @@ return plural;
  ],
  "Roll Back and Reboot": [
   null,
-  ""
+  "Rückgängig machen und Neustarten"
  ],
  "Running": [
   null,
@@ -265,15 +265,15 @@ return plural;
  ],
  "Signature": [
   null,
-  ""
+  "Signatur"
  ],
  "Signed by": [
   null,
-  ""
+  "Signiert von"
  ],
  "Software Updates": [
   null,
-  ""
+  "Software Updates"
  ],
  "Status": [
   null,
@@ -289,27 +289,27 @@ return plural;
  ],
  "URL": [
   null,
-  ""
+  "URL"
  ],
  "Unable to communicate with OSTree": [
   null,
-  ""
+  "Kann nicht mit OSTree kommunizieren"
  ],
  "Update and Reboot": [
   null,
-  ""
+  "Aktualisieren und Neustarten"
  ],
  "Updates": [
   null,
-  ""
+  "Aktualisierungen"
  ],
  "Updating": [
   null,
-  ""
+  "Aktualisiere"
  ],
  "Use trusted GPG key": [
   null,
-  ""
+  "Benutze vertrauenswürdigen GPG-Schlüssel"
  ],
  "Version": [
   null,

@@ -402,11 +402,14 @@ am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" \
 	"$(DESTDIR)$(defaultbrandingdir)" \
 	"$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" \
 	"$(DESTDIR)$(firewalldir)" \
-	"$(DESTDIR)$(kubernetesbrandingdir)" "$(DESTDIR)$(appdatadir)" \
-	"$(DESTDIR)$(basedir)" "$(DESTDIR)$(desktopdir)" \
-	"$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" \
-	"$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(playgrounddir)" \
-	"$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" \
+	"$(DESTDIR)$(kubernetesbrandingdir)" \
+	"$(DESTDIR)$(machinesincludedir)" \
+	"$(DESTDIR)$(machinesincludechromedir)" \
+	"$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" \
+	"$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(staticdir)" \
+	"$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(pixmapdir)" \
+	"$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" \
+	"$(DESTDIR)$(registrybrandingdir)" \
 	"$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticdebugdir)" \
 	"$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"
 @WITH_GOLANG_TRUE@am__EXEEXT_1 = cockpit-kube-auth$(EXEEXT) \
@@ -1060,7 +1063,8 @@ DATA = $(base_DATA) $(basedebug_DATA) $(basefonts_DATA) \
 	$(centosbranding_DATA) $(debianbranding_DATA) \
 	$(defaultbranding_DATA) $(dist_systemdunit_DATA) \
 	$(fedorabranding_DATA) $(firewall_DATA) \
-	$(kubernetesbranding_DATA) $(nodist_appdata_DATA) \
+	$(kubernetesbranding_DATA) $(machinesinclude_DATA) \
+	$(machinesincludechrome_DATA) $(nodist_appdata_DATA) \
 	$(nodist_base_DATA) $(nodist_desktop_DATA) \
 	$(nodist_noinst_DATA) $(nodist_static_DATA) \
 	$(nodist_systemdunit_DATA) $(noinst_DATA) $(pixmap_DATA) \
@@ -1549,19 +1553,25 @@ DISTCLEANFILES = \
 	cockpit-cache-*.tar.xz \
 	$(NULL)
 
-EXTRA_DIST = .bowerrc bower.json package.json README.md $(NULL) \
-	$(WEBPACK_DEPS) $(WEBPACK_MANIFEST_IN) webpack.config.js \
-	$(OPENSANS_FONTS) $(am__append_1) $(PO_INPUTS) po/LINGUAS \
-	po/po.empty.js po/po2json po/zanata.xml $(NULL) \
-	dist/playground/extra.de.po pkg/playground/extra.de.po \
-	pkg/users/mock pkg/lib/qunit-template.html $(playground_DATA) \
-	$(pkg_TESTS) dist/base1/cockpit.js dist/base1/cockpit.min.css \
-	dist/base1/cockpit.min.css.map dist/base1/cockpit.min.js \
-	dist/base1/cockpit.min.js.map dist/base1/jquery.js \
-	dist/base1/jquery.min.js dist/base1/jquery.min.js.map \
-	dist/base1/mustache.js dist/base1/mustache.min.js \
-	dist/base1/mustache.min.js.map dist/base1/patternfly-base.css \
-	dist/base1/patternfly.min.css \
+EXTRA_DIST = package.json README.md $(NULL) $(WEBPACK_DEPS) \
+	$(WEBPACK_MANIFEST_IN) webpack.config.js $(OPENSANS_FONTS) \
+	$(am__append_1) $(PO_INPUTS) po/LINGUAS po/po.empty.js \
+	po/po2json po/zanata.xml $(NULL) dist/playground/extra.de.po \
+	pkg/playground/extra.de.po pkg/users/mock \
+	pkg/lib/qunit-template.html $(shell ls -1 \
+	$(srcdir)/node_modules/noVNC/include | grep \
+	".*\.\(js\|css\|ttf\|woff\)" | sed -e \
+	's/^/dist\/machines\/include\//') $(shell ls -1 \
+	$(srcdir)/node_modules/noVNC/include/chrome-app | grep \
+	".*\.\(js\|css\|ttf\|woff\)" | sed -e \
+	's/^/dist\/machines\/include\/chrome-app\//') \
+	$(playground_DATA) $(pkg_TESTS) dist/base1/cockpit.js \
+	dist/base1/cockpit.min.css dist/base1/cockpit.min.css.map \
+	dist/base1/cockpit.min.js dist/base1/cockpit.min.js.map \
+	dist/base1/jquery.js dist/base1/jquery.min.js \
+	dist/base1/jquery.min.js.map dist/base1/mustache.js \
+	dist/base1/mustache.min.js dist/base1/mustache.min.js.map \
+	dist/base1/patternfly-base.css dist/base1/patternfly.min.css \
 	dist/base1/patternfly.min.css.map \
 	dist/base1/patternfly.css.map \
 	dist/base1/patternfly-additions.css \
@@ -1641,7 +1651,7 @@ UGLIFY_JS = $(srcdir)/node_modules/.bin/uglifyjs
 CLEAN_CSS = $(srcdir)/node_modules/.bin/cleancss
 MIN_JS_RULE = \
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(srcdir)/tools/missing $(UGLIFY_JS) $^ --mangle --comments 'preserve' --beautify \
+	$(srcdir)/tools/missing $(UGLIFY_JS) $(filter-out %.deps, $^) --mangle --comments 'preserve' --beautify \
 		--source-map $@.map --source-map-url $(notdir $@).map --source-map-include-sources > $@.tmp && \
 	$(MV) $@.tmp $@
 
@@ -1855,13 +1865,14 @@ COMMITTED_DIST = \
 	test/ \
 	$(NULL)
 
-DIST_TAR_MAIN = tar --format=posix -cf - --exclude='node_modules' "$(distdir)" "$(distdir)/bower.json" "$(distdir)/.bowerrc"
-DIST_TAR_CACHE = tar --format=posix -cf - "$(distdir)/node_modules" "$(distdir)/package.json"
+DIST_TAR_MAIN = tar --format=posix -cf - "$(distdir)"
+DIST_TAR_CACHE = tar --format=posix -cf - --exclude='phantomjs*' --transform="s/^/$(distdir)/" \
+	"$(srcdir)/node_modules" "$(srcdir)/package.json"
+
 DIST_ARCHIVES = \
 	cockpit-$(VERSION).tar.xz \
 	cockpit-cache-$(VERSION).tar.xz
 
-BOWER = $(srcdir)/bower_components
 
 # The concrete set of linguas we are using
 LINGUAS = $(shell cat $(srcdir)/po/LINGUAS)
@@ -1877,10 +1888,11 @@ FILTER_PO_SRC_WS = sed -ne 's|.*\(\(\.\./\)\?src/ws/[^:]\+\).*|-N \1|p' $<
 # General code packages to translate
 TRANSLATE = \
 	pkg/ \
-	bower_components/registry-image-widgets/ \
+	node_modules/registry-image-widgets/ \
 	src/ws/ \
 	$(NULL)
 
+ZANATA_CLI = LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 zanata-cli -B
 pkg_TESTS = \
 	pkg/users/test-list-public-keys.sh \
 	$(NULL)
@@ -1890,6 +1902,16 @@ pkg_TESTS = \
 playgrounddir = $(pkgdatadir)/playground
 playground_DATA = \
 	dist/playground/po.extra.de.js \
+	$(NULL)
+
+machinesincludedir = $(pkgdatadir)/machines/include
+machinesinclude_DATA = \
+	$(shell ls -1 $(srcdir)/node_modules/noVNC/include | grep ".*\.\(js\|css\|ttf\|woff\)" | sed -e 's/^/dist\/machines\/include\//') \
+	$(NULL)
+
+machinesincludechromedir = $(pkgdatadir)/machines/include/chrome-app
+machinesincludechrome_DATA = \
+	$(shell ls -1 $(srcdir)/node_modules/noVNC/include/chrome-app | grep ".*\.\(js\|css\|ttf\|woff\)" | sed -e 's/^/dist\/machines\/include\/chrome-app\//') \
 	$(NULL)
 
 @WITH_GOLANG_TRUE@AM_V_GO = $(am__v_GO_@AM_V@)
@@ -7200,6 +7222,48 @@ uninstall-kubernetesbrandingDATA:
 	@list='$(kubernetesbranding_DATA)'; test -n "$(kubernetesbrandingdir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(kubernetesbrandingdir)'; $(am__uninstall_files_from_dir)
+install-machinesincludeDATA: $(machinesinclude_DATA)
+	@$(NORMAL_INSTALL)
+	@list='$(machinesinclude_DATA)'; test -n "$(machinesincludedir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(machinesincludedir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(machinesincludedir)" || exit 1; \
+	fi; \
+	for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  echo "$$d$$p"; \
+	done | $(am__base_list) | \
+	while read files; do \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(machinesincludedir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(machinesincludedir)" || exit $$?; \
+	done
+
+uninstall-machinesincludeDATA:
+	@$(NORMAL_UNINSTALL)
+	@list='$(machinesinclude_DATA)'; test -n "$(machinesincludedir)" || list=; \
+	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+	dir='$(DESTDIR)$(machinesincludedir)'; $(am__uninstall_files_from_dir)
+install-machinesincludechromeDATA: $(machinesincludechrome_DATA)
+	@$(NORMAL_INSTALL)
+	@list='$(machinesincludechrome_DATA)'; test -n "$(machinesincludechromedir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(machinesincludechromedir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(machinesincludechromedir)" || exit 1; \
+	fi; \
+	for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  echo "$$d$$p"; \
+	done | $(am__base_list) | \
+	while read files; do \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(machinesincludechromedir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(machinesincludechromedir)" || exit $$?; \
+	done
+
+uninstall-machinesincludechromeDATA:
+	@$(NORMAL_UNINSTALL)
+	@list='$(machinesincludechrome_DATA)'; test -n "$(machinesincludechromedir)" || list=; \
+	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+	dir='$(DESTDIR)$(machinesincludechromedir)'; $(am__uninstall_files_from_dir)
 install-nodist_appdataDATA: $(nodist_appdata_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(nodist_appdata_DATA)'; test -n "$(appdatadir)" || list=; \
@@ -8229,7 +8293,7 @@ check: $(BUILT_SOURCES)
 all-am: Makefile $(LIBRARIES) $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) \
 		config.h all-local
 installdirs:
-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(basedebugdir)" "$(DESTDIR)$(basefontsdir)" "$(DESTDIR)$(centosbrandingdir)" "$(DESTDIR)$(debianbrandingdir)" "$(DESTDIR)$(defaultbrandingdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" "$(DESTDIR)$(firewalldir)" "$(DESTDIR)$(kubernetesbrandingdir)" "$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" "$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticdebugdir)" "$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"; do \
+	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(basedebugdir)" "$(DESTDIR)$(basefontsdir)" "$(DESTDIR)$(centosbrandingdir)" "$(DESTDIR)$(debianbrandingdir)" "$(DESTDIR)$(defaultbrandingdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" "$(DESTDIR)$(firewalldir)" "$(DESTDIR)$(kubernetesbrandingdir)" "$(DESTDIR)$(machinesincludedir)" "$(DESTDIR)$(machinesincludechromedir)" "$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" "$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticdebugdir)" "$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: $(BUILT_SOURCES)
@@ -8313,7 +8377,8 @@ install-data-am: install-baseDATA install-basedebugDATA \
 	install-data-local install-debianbrandingDATA \
 	install-defaultbrandingDATA install-dist_systemdunitDATA \
 	install-fedorabrandingDATA install-firewallDATA \
-	install-kubernetesbrandingDATA install-man \
+	install-kubernetesbrandingDATA install-machinesincludeDATA \
+	install-machinesincludechromeDATA install-man \
 	install-nodist_appdataDATA install-nodist_baseDATA \
 	install-nodist_desktopDATA install-nodist_staticDATA \
 	install-nodist_systemdunitDATA install-pixmapDATA \
@@ -8376,14 +8441,15 @@ uninstall-am: uninstall-baseDATA uninstall-basedebugDATA \
 	uninstall-defaultbrandingDATA uninstall-dist_systemdunitDATA \
 	uninstall-fedorabrandingDATA uninstall-firewallDATA \
 	uninstall-kubernetesbrandingDATA uninstall-libexecPROGRAMS \
-	uninstall-local uninstall-man uninstall-nodist_appdataDATA \
-	uninstall-nodist_baseDATA uninstall-nodist_desktopDATA \
-	uninstall-nodist_staticDATA uninstall-nodist_systemdunitDATA \
-	uninstall-pixmapDATA uninstall-playgroundDATA \
-	uninstall-pmlogconfDATA uninstall-registrybrandingDATA \
-	uninstall-rhelbrandingDATA uninstall-sbinPROGRAMS \
-	uninstall-staticdebugDATA uninstall-staticfontsDATA \
-	uninstall-ubuntubrandingDATA
+	uninstall-local uninstall-machinesincludeDATA \
+	uninstall-machinesincludechromeDATA uninstall-man \
+	uninstall-nodist_appdataDATA uninstall-nodist_baseDATA \
+	uninstall-nodist_desktopDATA uninstall-nodist_staticDATA \
+	uninstall-nodist_systemdunitDATA uninstall-pixmapDATA \
+	uninstall-playgroundDATA uninstall-pmlogconfDATA \
+	uninstall-registrybrandingDATA uninstall-rhelbrandingDATA \
+	uninstall-sbinPROGRAMS uninstall-staticdebugDATA \
+	uninstall-staticfontsDATA uninstall-ubuntubrandingDATA
 
 uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 
@@ -8410,8 +8476,9 @@ uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 	install-exec-local install-fedorabrandingDATA \
 	install-firewallDATA install-html install-html-am install-info \
 	install-info-am install-kubernetesbrandingDATA \
-	install-libexecPROGRAMS install-man install-man1 install-man5 \
-	install-man8 install-nodist_appdataDATA \
+	install-libexecPROGRAMS install-machinesincludeDATA \
+	install-machinesincludechromeDATA install-man install-man1 \
+	install-man5 install-man8 install-nodist_appdataDATA \
 	install-nodist_baseDATA install-nodist_desktopDATA \
 	install-nodist_staticDATA install-nodist_systemdunitDATA \
 	install-pdf install-pdf-am install-pixmapDATA \
@@ -8429,15 +8496,16 @@ uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 	uninstall-defaultbrandingDATA uninstall-dist_systemdunitDATA \
 	uninstall-fedorabrandingDATA uninstall-firewallDATA \
 	uninstall-kubernetesbrandingDATA uninstall-libexecPROGRAMS \
-	uninstall-local uninstall-man uninstall-man1 uninstall-man5 \
-	uninstall-man8 uninstall-nodist_appdataDATA \
-	uninstall-nodist_baseDATA uninstall-nodist_desktopDATA \
-	uninstall-nodist_staticDATA uninstall-nodist_systemdunitDATA \
-	uninstall-pixmapDATA uninstall-playgroundDATA \
-	uninstall-pmlogconfDATA uninstall-registrybrandingDATA \
-	uninstall-rhelbrandingDATA uninstall-sbinPROGRAMS \
-	uninstall-staticdebugDATA uninstall-staticfontsDATA \
-	uninstall-ubuntubrandingDATA
+	uninstall-local uninstall-machinesincludeDATA \
+	uninstall-machinesincludechromeDATA uninstall-man \
+	uninstall-man1 uninstall-man5 uninstall-man8 \
+	uninstall-nodist_appdataDATA uninstall-nodist_baseDATA \
+	uninstall-nodist_desktopDATA uninstall-nodist_staticDATA \
+	uninstall-nodist_systemdunitDATA uninstall-pixmapDATA \
+	uninstall-playgroundDATA uninstall-pmlogconfDATA \
+	uninstall-registrybrandingDATA uninstall-rhelbrandingDATA \
+	uninstall-sbinPROGRAMS uninstall-staticdebugDATA \
+	uninstall-staticfontsDATA uninstall-ubuntubrandingDATA
 
 .PRECIOUS: Makefile
 
@@ -8510,7 +8578,7 @@ install-data-hook::
 
 dist/fonts/%.woff:
 	$(V_COPY) $(MKDIR_P) $(dir $@) && \
-	cp -L $(subst dist/fonts,$(BOWER)/patternfly/dist/fonts,$@) $@.tmp && $(MV) $@.tmp $@
+	cp -L $(subst dist/fonts,$(srcdir)/node_modules/patternfly/dist/fonts,$@) $@.tmp && $(MV) $@.tmp $@
 
 @ENABLE_DOC_TRUE@render-doc-images:
 @ENABLE_DOC_TRUE@	 inkscape --without-gui --export-area-page \
@@ -8572,16 +8640,14 @@ uninstall-local::
 dump-dist-gzip:
 	@echo "$(abs_builddir)/$(distdir).tar.gz"
 
-# Build up the distribution using $COMMITTED_DIST and include node_modules and bower licenses
+# Build up the distribution using $COMMITTED_DIST and include node_modules licenses
 # also automatically update minimum base dependency in RPM spec file
 dist-hook::
 	( cd $(srcdir); git ls-tree HEAD --name-only -r $(COMMITTED_DIST) || (echo $(COMMITTED_DIST) | tr ' ' '\n' ) ) | \
 		tar -C $(srcdir) -cf - -T - | tar -C $(distdir) -xf -
-	tar -C $(srcdir) -cf - --exclude='phantomjs*' node_modules/ | tar -C $(distdir) -xf -
-	tar -C $(srcdir) -cf - bower_components/ | tar -C $(distdir) -xf -
 	echo $(VERSION) > $(distdir)/.tarball
-	$(srcdir)/tools/build-copying $(BOWER) > $(distdir)/COPYING.bower
-	[ ! -d $(distdir)/tools/debian ] || $(srcdir)/tools/build-debian-copyright $(BOWER) > $(distdir)/tools/debian/copyright
+	$(srcdir)/tools/build-copying $(distdir)/node_modules > $(distdir)/COPYING.node
+	[ ! -d $(distdir)/tools/debian ] || $(srcdir)/tools/build-debian-copyright $(distdir)/node_modules > $(distdir)/tools/debian/copyright
 	[ ! -e $(distdir)/tools/cockpit.spec ] || $(srcdir)/tools/gen-spec-dependencies $(distdir)/tools/cockpit.spec
 
 dist-gzip: distdir
@@ -8695,19 +8761,32 @@ update-po: po/cockpit.pot
 		$(MSGMERGE) --output-file=$(srcdir)/po/$$lang.po $(srcdir)/po/$$lang.po $<; \
 	done
 
-upload-pot:
-	zanata-cli push --includes cockpit.pot --project-config "$(srcdir)/po/zanata.xml" \
+upload-pot: po/cockpit.pot
+	$(ZANATA_CLI) push --includes cockpit.pot --project-config "$(srcdir)/po/zanata.xml" \
 		-s "$(builddir)/po"
 
 upload-translations:
-	zanata-cli push --includes=cockpit.pot --project-config "$(srcdir)/po/zanata.xml" \
+	$(ZANATA_CLI) push --includes=cockpit.pot --project-config "$(srcdir)/po/zanata.xml" \
 		--push-type trans -s "$(builddir)/po" -t "$(srcdir)/po"
 
 download-po:
-	zanata-cli -B pull --includes=cockpit.pot --project-config "$(srcdir)/po/zanata.xml" \
+	$(ZANATA_CLI) pull --includes=cockpit.pot --project-config "$(srcdir)/po/zanata.xml" \
 		--min-doc-percent 1 -s "$(builddir)/po" -t "$(srcdir)/po"
+	sh -c 'cd $(srcdir)/po; ls *.po' | sed 's/\.po//g' | sort > $(srcdir)/po/LINGUAS
 
 dist/playground/extra.de.po: pkg/playground/extra.de.po
+	$(COPY_RULE)
+
+# preprocess noVNC's keysymdef.js, logo.js to fix "upatchable file" error
+# preprocessed file needs to go to "dist" package since node_modules with "uglify" are missing in the .tar.gz
+dist/machines/include/keysymdef.js: node_modules/noVNC/include/keysymdef.js
+	$(MIN_JS_RULE)
+
+# just copy the rest
+dist/machines/include/chrome-app/%: node_modules/noVNC/include/chrome-app/%
+	$(COPY_RULE)
+
+dist/machines/include/%: node_modules/noVNC/include/%
 	$(COPY_RULE)
 
 @WITH_GOLANG_TRUE@cockpit-kube-auth$(EXEEXT): $(COCKPIT_KUBE_AUTH)
@@ -8723,12 +8802,12 @@ dist/base1/patternfly.min.css: dist/base1/patternfly-base.css dist/base1/pattern
 	$(MIN_CSS_RULE)
 dist/base1/require.js: src/base1/deprecated.js src/base1/require-config.js src/base1/require-loaders.js
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	cat $(srcdir)/src/base1/deprecated.js $(srcdir)/src/base1/require-config.js $(BOWER)/requirejs/require.js $(srcdir)/src/base1/require-loaders.js > $@.tmp && $(MV) $@.tmp $@
+	cat $(srcdir)/src/base1/deprecated.js $(srcdir)/src/base1/require-config.js $(srcdir)/node_modules/requirejs/require.js $(srcdir)/src/base1/require-loaders.js > $@.tmp && $(MV) $@.tmp $@
 dist/base1/require.min.js: dist/base1/require.js
 	$(MIN_JS_RULE)
 dist/base1/jquery.js:
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	cat $(BOWER)/jquery/dist/jquery.js $(BOWER)/bootstrap/dist/js/bootstrap.js $(BOWER)/patternfly/dist/js/patternfly.js > $@.tmp && $(MV) $@.tmp $@
+	cat $(srcdir)/node_modules/jquery/dist/jquery.js $(srcdir)/node_modules/bootstrap/dist/js/bootstrap.js $(srcdir)/node_modules/patternfly/dist/js/patternfly.js > $@.tmp && $(MV) $@.tmp $@
 dist/base1/jquery.min.js: dist/base1/jquery.js
 	$(MIN_JS_RULE)
 dist/base1/cockpit.js: src/base1/cockpit.js
@@ -8738,7 +8817,7 @@ dist/base1/cockpit.min.js: dist/base1/cockpit.js
 	$(MIN_JS_RULE)
 dist/base1/mustache.js: src/base1/deprecated.js
 	$(V_COPY) $(MKDIR_P) $(dir $@) && \
-	cat $(srcdir)/src/base1/deprecated.js $(BOWER)/mustache/mustache.js > $@.tmp && $(MV) $@.tmp $@
+	cat $(srcdir)/src/base1/deprecated.js $(srcdir)/node_modules/mustache/mustache.js > $@.tmp && $(MV) $@.tmp $@
 dist/base1/mustache.min.js: dist/base1/mustache.js
 	$(MIN_JS_RULE)
 dist/base1/manifest.json: src/base1/manifest.json
@@ -8760,39 +8839,39 @@ dist/base1/patternfly.min.css.map: dist/base1/patternfly.min.css
 # Modify the patternfly files appropriately
 dist/base1/patternfly-base.css: dist/base1/patternfly.css.map
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	sed -f $(srcdir)/tools/patternfly.sed $(BOWER)/patternfly/dist/css/patternfly.css > $@.tmp && $(MV) $@.tmp $@
+	sed -f $(srcdir)/tools/patternfly.sed $(srcdir)/node_modules/patternfly/dist/css/patternfly.css > $@.tmp && $(MV) $@.tmp $@
 dist/base1/patternfly.css.map:
 	$(V_COPY) $(MKDIR_P) $(dir $@) && \
-	cp $(BOWER)/patternfly/dist/css/patternfly.css.map $@.tmp && $(MV) $@.tmp $@
+	cp $(srcdir)/node_modules/patternfly/dist/css/patternfly.css.map $@.tmp && $(MV) $@.tmp $@
 dist/base1/patternfly-additions.css: dist/base1/patternfly-additions.css.map
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	sed -f $(srcdir)/tools/patternfly.sed $(BOWER)/patternfly/dist/css/patternfly-additions.css > $@.tmp && $(MV) $@.tmp $@
+	sed -f $(srcdir)/tools/patternfly.sed $(srcdir)/node_modules/patternfly/dist/css/patternfly-additions.css > $@.tmp && $(MV) $@.tmp $@
 dist/base1/patternfly-additions.css.map:
 	$(V_COPY) $(MKDIR_P) $(dir $@) && \
-	cp $(BOWER)/patternfly/dist/css/patternfly-additions.css.map $@.tmp && $(MV) $@.tmp $@
+	cp $(srcdir)/node_modules/patternfly/dist/css/patternfly-additions.css.map $@.tmp && $(MV) $@.tmp $@
 
 dist/base1/fonts/fontawesome.woff:
 	$(V_COPY) $(MKDIR_P) $(dir $@) && \
-	cp $(BOWER)/patternfly/dist/fonts/fontawesome-webfont.woff $@.tmp && $(MV) $@.tmp $@
+	cp $(srcdir)/node_modules/patternfly/dist/fonts/fontawesome-webfont.woff $@.tmp && $(MV) $@.tmp $@
 dist/base1/fonts/glyphicons.woff:
 	$(V_COPY) $(MKDIR_P) $(dir $@) && \
-	cp $(BOWER)/patternfly/dist/fonts/glyphicons-halflings-regular.woff $@.tmp && $(MV) $@.tmp $@
+	cp $(srcdir)/node_modules/patternfly/dist/fonts/glyphicons-halflings-regular.woff $@.tmp && $(MV) $@.tmp $@
 dist/base1/fonts/patternfly.woff:
 	$(V_COPY) $(MKDIR_P) $(dir $@) && \
-	cp $(BOWER)/patternfly/dist/fonts/PatternFlyIcons-webfont.woff $@.tmp && $(MV) $@.tmp $@
+	cp $(srcdir)/node_modules/patternfly/dist/fonts/PatternFlyIcons-webfont.woff $@.tmp && $(MV) $@.tmp $@
 
 install-data-local::
 	$(LN_S) -nf require.min.js.gz $(DESTDIR)$(pkgdatadir)/base1/bundle.min.js.gz
 
 dist/base1/qunit.js:
 	$(V_COPY) $(MKDIR_P) $(dir $@) && \
-	cat $(BOWER)/qunit/qunit/qunit.js \
-	    $(BOWER)/qunit-tap/lib/qunit-tap.js \
+	cat $(srcdir)/node_modules/qunitjs/qunit/qunit.js \
+	    $(srcdir)/node_modules/qunit-tap/lib/qunit-tap.js \
             $(srcdir)/pkg/lib/qunit-config.js > $@.tmp && $(MV) $@.tmp $@
 
 dist/base1/qunit.css:
 	$(V_COPY) $(MKDIR_P) $(dir $@) && \
-	cp $(BOWER)/qunit/qunit/qunit.css $@.tmp && $(MV) $@.tmp $@
+	cp $(srcdir)/node_modules/qunitjs/qunit/qunit.css $@.tmp && $(MV) $@.tmp $@
 
 dist/base1/test-dbus-common.js: src/base1/test-dbus-common.js
 	$(JSHINT_RULE)
@@ -8951,9 +9030,15 @@ install-exec-hook::
 	mkdir -p $(DESTDIR)$(sysconfdir)/cockpit/ws-certs.d $(DESTDIR)$(sysconfdir)/cockpit/machines.d
 	chmod 755 $(DESTDIR)$(sysconfdir)/cockpit/ws-certs.d $(DESTDIR)$(sysconfdir)/cockpit/machines.d
 
-prepare-po::
-	$(INTLTOOL_EXTRACT) -l --type=gettext/xml $(srcdir)/$(appdata_in)
-	$(INTLTOOL_EXTRACT) -l --type=gettext/ini $(srcdir)/$(desktop_in)
+prepare-po-appdata: $(appdata_in)
+	cp $< .
+	$(INTLTOOL_EXTRACT) -l --type=gettext/xml $(notdir $(appdata_in))
+
+prepare-po-desktop: $(desktop_in)
+	cp $< .
+	$(INTLTOOL_EXTRACT) -l --type=gettext/ini $(notdir $(desktop_in))
+
+prepare-po:: prepare-po-appdata prepare-po-desktop
 pam_ssh_add.so: libpam_ssh_add.a $(pam_ssh_add_FILES)
 	$(AM_V_CCLD) $(CC) -fPIC -shared $(CFLAGS) $(libpam_ssh_add_a_CFLAGS) -I$(builddir) \
 		-o $@ $^ $(libpam_ssh_add_a_LIBS) $(LDFLAGS)

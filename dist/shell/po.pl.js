@@ -79,6 +79,10 @@ return plural;
   null,
   "Ustawienia konta"
  ],
+ "Active Pages": [
+  null,
+  "Aktywne strony"
+ ],
  "Add": [
   null,
   "Dodaj"
@@ -126,6 +130,10 @@ return plural;
  "Close": [
   null,
   "Zamknij"
+ ],
+ "Close Selected Pages": [
+  null,
+  "Zamknij zaznaczone strony"
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
@@ -209,7 +217,7 @@ return plural;
  ],
  "Display Language": [
   null,
-  "Wyświetl język"
+  "Język"
  ],
  "Enter IP address or host name": [
   null,
@@ -270,6 +278,14 @@ return plural;
  "Licensed under:": [
   null,
   "Na warunkach licencji:"
+ ],
+ "Lock to prevent privileged tasks": [
+  null,
+  "Zablokuj, aby uniemożliwić zdania wymagające uprawnień"
+ ],
+ "Locked": [
+  null,
+  "Zablokowano"
  ],
  "Log In": [
   null,
@@ -343,9 +359,17 @@ return plural;
   null,
   "Nie przyjęto hasła"
  ],
+ "Password not usable for privileged tasks or to connect to other machines": [
+  null,
+  "Hasło nieodpowiednie dla zadań wymagających uprawnień lub do łączenia z innymi komputerami"
+ ],
  "Port": [
   null,
   "Port"
+ ],
+ "Privileged tasks not available": [
+  null,
+  "Zadania wymagające uprawnień są niedostępne"
  ],
  "Project website": [
   null,
@@ -366,6 +390,10 @@ return plural;
  "Reconnect": [
   null,
   "Połącz ponownie"
+ ],
+ "Reuse my password for privileged tasks and to connect to other machines": [
+  null,
+  "Użycie istniejącego hasła do zadań wymagających uprawnień i łączenia z innymi komputerami"
  ],
  "Select": [
   null,
@@ -403,6 +431,10 @@ return plural;
   null,
   "Hasła się nie zgadzają."
  ],
+ "There are currently no active pages": [
+  null,
+  "Obecnie nie ma aktywnych stron"
+ ],
  "This machine has already been added.": [
   null,
   "Ten komputer został już dodany."
@@ -413,15 +445,11 @@ return plural;
  ],
  "Tip: Make your key password match your login password to automatically authenticate against other systems.": [
   null,
-  "Wskazówka: ustawienie hasła klucza na takie samo, jak                                                    hasło logowania automatycznie uwierzytelni                                                    w innych systemach."
+  "Wskazówka: ustawienie hasła klucza na takie samo, jak hasło logowania automatycznie uwierzytelni w innych systemach."
  ],
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
   null,
   "Należy zaktualizować cockpit-ws do nowszej wersji, aby spróbować innego portu."
- ],
- "Tools": [
-  null,
-  "Narzędzia"
  ],
  "Troubleshoot": [
   null,
@@ -451,13 +479,13 @@ return plural;
   null,
   "Odblokuj klucz"
  ],
+ "Unlocked": [
+  null,
+  "Odblokowano"
+ ],
  "Update": [
   null,
   "Zaktualizuj"
- ],
- "Use my password for privileged tasks and to connect to other machines": [
-  null,
-  "Użycie hasła do zadań wymagających uprawnień i łączenia z innymi komputerami"
  ],
  "Use the following keys to authenticate against other systems": [
   null,
@@ -482,5 +510,9 @@ return plural;
  "You can remove the previously stored key by running the following command": [
   null,
   "Można usunąć poprzednio przechowywany klucz wykonując następujące polecenie"
+ ],
+ "active": [
+  null,
+  "aktywne"
  ]
 }));

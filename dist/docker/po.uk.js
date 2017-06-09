@@ -301,7 +301,7 @@ return plural;
  ],
  "Entrypoint": [
   null,
-  "Точка входження:"
+  "Точка входження"
  ],
  "Environment": [
   null,
@@ -603,7 +603,7 @@ return plural;
  ],
  "Security": [
   null,
-  ""
+  "Безпека"
  ],
  "Set container environment variables": [
   null,
@@ -679,7 +679,7 @@ return plural;
  ],
  "This image does not exist.": [
   null,
-  "Кокона «{{ target }}» не існує."
+  "Цього образу не існує."
  ],
  "Total": [
   null,
@@ -715,7 +715,7 @@ return plural;
  ],
  "Used by Containers": [
   null,
-  "Контейнери"
+  "Використано контейнерами"
  ],
  "Volumes": [
   null,
@@ -779,6 +779,6 @@ return plural;
  ],
  "page-title\u0004Images": [
   null,
-  "Зображення"
+  "Образи"
  ]
 }));

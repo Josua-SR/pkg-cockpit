@@ -485,10 +485,6 @@ return plural;
   null,
   ""
  ],
- "Isolate": [
-  null,
-  ""
- ],
  "Journal": [
   null,
   ""
@@ -677,14 +673,6 @@ return plural;
   null,
   ""
  ],
- "Reload or Restart": [
-  null,
-  ""
- ],
- "Reload or Try Restart": [
-  null,
-  ""
- ],
  "Repeat Daily": [
   null,
   ""
@@ -837,6 +825,10 @@ return plural;
   null,
   ""
  ],
+ "The user <b>$0</b> is not permitted to shutdown or restart this server": [
+  null,
+  ""
+ ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
   ""
@@ -862,10 +854,6 @@ return plural;
   "Zaman Dilimi"
  ],
  "Timers": [
-  null,
-  ""
- ],
- "Try Restart": [
   null,
   ""
  ],

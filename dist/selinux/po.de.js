@@ -86,7 +86,7 @@ return plural;
  ],
  "Connecting to SETroubleshoot daemon...": [
   null,
-  "Verbinde zu OSTree"
+  "Verbinde zum SETroubleshoot Daemon..."
  ],
  "Enforce policy:": [
   null,
@@ -146,39 +146,39 @@ return plural;
  ],
  "SELinux is disabled on the system": [
   null,
-  "Docker ist auf Ihrem System entweder nicht installiert oder nicht aktiviert"
+  "SELinux ist auf dem System deaktiviert"
  ],
  "SELinux is disabled on the system.": [
   null,
-  ""
+  "SELinux ist auf dem System deaktiviert"
  ],
  "SELinux system status is unknown.": [
   null,
-  ""
+  "Der Status von SELinux ist unbekannt."
  ],
  "Setting deviates from the configured state and will revert on the next boot.": [
   null,
-  ""
+  "Abweichungen vom konfigurierten Zustand werden beim nächsten Neustart zurückgesetzt."
  ],
  "Solution applied successfully": [
   null,
-  ""
+  "Lösung erfolgreich angewendet"
  ],
  "Solution failed": [
   null,
-  ""
+  "Lösung fehlgeschlagen"
  ],
  "Solutions": [
   null,
-  ""
+  "Lösungen"
  ],
  "The configured state is unknown, it might change on the next boot.": [
   null,
-  ""
+  "Der konfigurierte Zustand ist unbekannt und kann sich beim nächsten Neustart ändern."
  ],
  "Unable to apply this solution automatically": [
   null,
-  ""
+  "Kann diese Lösung nicht automatisiert anwenden"
  ],
  "Unable to get alert details.": [
   null,
@@ -194,7 +194,7 @@ return plural;
  ],
  "Unable to start setroubleshootd": [
   null,
-  ""
+  "Kann setroubleshootd nicht starten"
  ],
  "Waiting for details...": [
   null,
@@ -202,6 +202,6 @@ return plural;
  ],
  "solution details": [
   null,
-  ""
+  "Lösungsdetails"
  ]
 }));

@@ -71,13 +71,29 @@ return plural;
   null,
   "$0 块设备"
  ],
+ "$0 Chunk Size": [
+  null,
+  "$0 区块大小"
+ ],
+ "$0 Disks": [
+  null,
+  "$0 磁盘"
+ ],
  "$0 day": [
   "$0 days",
   "$0 天"
  ],
+ "$0 disk is missing": [
+  "$0 disks are missing",
+  "$0 磁盘缺失"
+ ],
  "$0 hour": [
   "$0 hours",
   "$0 小时"
+ ],
+ "$0 is in active use": [
+  null,
+  ""
  ],
  "$0 minute": [
   "$0 minutes",
@@ -99,9 +115,17 @@ return plural;
   "$0 years",
   "$0 年"
  ],
+ "$0, $1 free": [
+  null,
+  "$0, $1 可用"
+ ],
  "$name (from $host)": [
   null,
   "$name (从 $host)"
+ ],
+ "${size} ${desc}": [
+  null,
+  ""
  ],
  "(default)": [
   null,
@@ -187,6 +211,10 @@ return plural;
   null,
   "<span>分区 $0</span>"
  ],
+ "A spare disk needs to be added first before this disk can be removed.": [
+  null,
+  ""
+ ],
  "Activate": [
   null,
   "激活"
@@ -198,6 +226,10 @@ return plural;
  "Add": [
   null,
   "添加"
+ ],
+ "Add Disks": [
+  null,
+  "添加磁盘"
  ],
  "Add iSCSI Portal": [
   null,
@@ -238,6 +270,10 @@ return plural;
  "Block device for filesystems": [
   null,
   "块设备的文件系统"
+ ],
+ "Blocked": [
+  null,
+  "受阻"
  ],
  "Can't delete while unlocked": [
   null,
@@ -395,6 +431,10 @@ return plural;
   null,
   "删除 $target"
  ],
+ "Deleting a RAID device will erase all data on it.": [
+  null,
+  "删除 RAID 设备将擦除其中的所有数据."
+ ],
  "Deleting a logical volume will delete all data in it.": [
   null,
   "删除逻辑卷将擦除其中的所有数据。"
@@ -403,21 +443,13 @@ return plural;
   null,
   "删除分区将擦除其中的所有数据。"
  ],
+ "Deleting a volume group will erase all data on it.": [
+  null,
+  "删除卷组将擦除其中的所有数据。"
+ ],
  "Deleting volume group $target": [
   null,
   "删除卷组 $target"
- ],
- "Device $0 is a member of RAID Array $1": [
-  null,
-  "设备 $0 是 RAID 阵列 $1 的成员"
- ],
- "Device $0 is a physical volume of $1": [
-  null,
-  "设备 $0 是 $1 的物理卷"
- ],
- "Device $0 is mounted on $1": [
-  null,
-  "设备 $0 已挂载至 $1"
  ],
  "Device is read-only": [
   null,
@@ -455,9 +487,21 @@ return plural;
   null,
   "清空 $target"
  ],
+ "Encrypted $0": [
+  null,
+  ""
+ ],
  "Encrypted EXT4 (LUKS)": [
   null,
   "加密 EXT4 (LUKS)"
+ ],
+ "Encrypted Logical Volume of $0": [
+  null,
+  ""
+ ],
+ "Encrypted Partition of $0": [
+  null,
+  ""
  ],
  "Encrypted XFS (LUKS)": [
   null,
@@ -486,6 +530,10 @@ return plural;
  "Extended Partition": [
   null,
   "扩展分区"
+ ],
+ "FAILED": [
+  null,
+  "失败"
  ],
  "Filesystem": [
   null,
@@ -539,6 +587,10 @@ return plural;
   null,
   "转到现在"
  ],
+ "In Sync": [
+  null,
+  "同步中"
+ ],
  "Inactive volume": [
   null,
   "暂停卷"
@@ -566,6 +618,10 @@ return plural;
  "Logical Volume (Snapshot)": [
   null,
   "逻辑卷 (快照)"
+ ],
+ "Logical Volume of $0": [
+  null,
+  ""
  ],
  "Marking $target as faulty": [
   null,
@@ -647,6 +703,10 @@ return plural;
   null,
   "没有逻辑卷"
  ],
+ "No disks are available.": [
+  null,
+  ""
+ ],
  "No drives attached": [
   null,
   "没有附件的驱动器"
@@ -675,6 +735,14 @@ return plural;
   null,
   "没有创建的卷组"
  ],
+ "Not found": [
+  null,
+  "未找到"
+ ],
+ "Not running": [
+  null,
+  "未运行"
+ ],
  "Off": [
   null,
   "关"
@@ -702,6 +770,10 @@ return plural;
  "Partition": [
   null,
   "分区"
+ ],
+ "Partition of $0": [
+  null,
+  ""
  ],
  "Partitioning": [
   null,
@@ -763,25 +835,53 @@ return plural;
   null,
   "目的"
  ],
+ "RAID ($0)": [
+  null,
+  "RAID ($0)"
+ ],
+ "RAID 0": [
+  null,
+  "RAID 0"
+ ],
  "RAID 0 (Stripe)": [
   null,
   "RAID 0 (条带)"
+ ],
+ "RAID 1": [
+  null,
+  "RAID 1"
  ],
  "RAID 1 (Mirror)": [
   null,
   "RAID 1 (镜像)"
  ],
+ "RAID 10": [
+  null,
+  "RAID 10"
+ ],
  "RAID 10 (Stripe of Mirrors)": [
   null,
   "RAID 10 (条带镜像)"
+ ],
+ "RAID 4": [
+  null,
+  "RAID 4"
  ],
  "RAID 4 (Dedicated Parity)": [
   null,
   "RAID 4 (奇偶校验)"
  ],
+ "RAID 5": [
+  null,
+  "RAID 5"
+ ],
  "RAID 5 (Distributed Parity)": [
   null,
   "RAID 5 (奇偶校验)"
+ ],
+ "RAID 6": [
+  null,
+  "RAID 6"
  ],
  "RAID 6 (Double Distributed Parity)": [
   null,
@@ -815,6 +915,10 @@ return plural;
   null,
   "重启"
  ],
+ "Recovering": [
+  null,
+  "恢复"
+ ],
  "Recovering RAID Device $target": [
   null,
   "恢复 RAID 设备 $target"
@@ -835,6 +939,10 @@ return plural;
   null,
   "重命名逻辑卷"
  ],
+ "Rename Volume Group": [
+  null,
+  "重命名卷组"
+ ],
  "Renaming $target": [
   null,
   "重命名 $target"
@@ -854,6 +962,10 @@ return plural;
  "Resizing $target": [
   null,
   "调整大小 $target"
+ ],
+ "Running": [
+  null,
+  "运行中"
  ],
  "SMART self-test of $target": [
   null,
@@ -895,6 +1007,10 @@ return plural;
   null,
   "大小必须是一个数字"
  ],
+ "Spare": [
+  null,
+  "备用"
+ ],
  "Start": [
   null,
   "启动"
@@ -902,6 +1018,10 @@ return plural;
  "Start Multipath": [
   null,
   "启用多路径"
+ ],
+ "Start Scrubbing": [
+  null,
+  "开始擦除"
  ],
  "Starting RAID Device $target": [
   null,
@@ -914,6 +1034,10 @@ return plural;
  "Stop": [
   null,
   "停止"
+ ],
+ "Stop Scrubbing": [
+  null,
+  "停止擦除"
  ],
  "Stopping RAID Device $target": [
   null,
@@ -967,6 +1091,22 @@ return plural;
   null,
   "RAID 阵列处于降级状态"
  ],
+ "The RAID device must be running in order to add spare disks.": [
+  null,
+  ""
+ ],
+ "The RAID device must be running in order to remove disks.": [
+  null,
+  ""
+ ],
+ "The last disk of a RAID device cannot be removed.": [
+  null,
+  ""
+ ],
+ "The last physical volume of a volume group cannot be removed.": [
+  null,
+  "不能删除一个卷组的最后一个物理卷。"
+ ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "用户 <b>$0</b> 不允许管理存储"
@@ -975,9 +1115,37 @@ return plural;
   null,
   "该系统上有多路径设备，但是多路径服务未运行。"
  ],
+ "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
+  null,
+  ""
+ ],
  "Thin Logical Volume": [
   null,
   "稀疏逻辑卷"
+ ],
+ "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
+  null,
+  ""
+ ],
+ "This device is currently used for RAID devices.": [
+  null,
+  ""
+ ],
+ "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
+  null,
+  ""
+ ],
+ "This device is currently used for volume groups.": [
+  null,
+  ""
+ ],
+ "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
+  null,
+  ""
+ ],
+ "This disk cannot be removed while the device is recovering.": [
+  null,
+  ""
  ],
  "This logical volume cannot be made smaller.": [
   null,
@@ -998,6 +1166,10 @@ return plural;
  "Unknown": [
   null,
   "未知"
+ ],
+ "Unknown ($0)": [
+  null,
+  "未知 ($0)"
  ],
  "Unknown host name": [
   null,
@@ -1063,6 +1235,10 @@ return plural;
   null,
   "卷组"
  ],
+ "Write-mostly": [
+  null,
+  "Write-mostly"
+ ],
  "Writing": [
   null,
   "写入中"
@@ -1094,6 +1270,10 @@ return plural;
  "unknown target": [
   null,
   "未知目标"
+ ],
+ "unpartitioned space on $0": [
+  null,
+  ""
  ],
  "storage-id-desc\u0004$0 File System": [
   null,

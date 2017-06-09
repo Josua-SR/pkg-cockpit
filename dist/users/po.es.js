@@ -73,7 +73,7 @@ return plural;
  ],
  "Account not available or cannot be edited.": [
   null,
-  "Cuenta no disponible o no puede ser editada"
+  "La cuenta no está disponible o no se puede modificar."
  ],
  "Accounts": [
   null,
@@ -81,15 +81,15 @@ return plural;
  ],
  "Add key": [
   null,
-  ""
+  "Añadir clave"
  ],
  "Add public key": [
   null,
-  "Agregar llave pública"
+  "Añadir clave pública"
  ],
  "Adding key": [
   null,
-  "Agregando llave"
+  "Añadiendo clave"
  ],
  "Authorized Public SSH Keys": [
   null,
@@ -97,7 +97,7 @@ return plural;
  ],
  "Back to Accounts": [
   null,
-  ""
+  "Regreso a las Cuentas"
  ],
  "Cancel": [
   null,
@@ -233,7 +233,7 @@ return plural;
  ],
  "Paste the contents of your public SSH key file here": [
   null,
-  ""
+  "Pegue aquí el contenido de su archivo de clave SSH pública"
  ],
  "Prompting via passwd timed out": [
   null,

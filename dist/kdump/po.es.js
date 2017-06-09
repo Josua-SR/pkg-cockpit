@@ -77,19 +77,19 @@ return plural;
  ],
  "Compress crash dumps to save space": [
   null,
-  ""
+  "Comprimir volcado de errores para ahorrar espacio"
  ],
  "Compression": [
   null,
-  ""
+  "Compresión"
  ],
  "Crash dump location": [
   null,
-  ""
+  "Localización del volcado de errores"
  ],
  "Crash system": [
   null,
-  ""
+  "Error del sistema"
  ],
  "Directory": [
   null,
@@ -97,15 +97,15 @@ return plural;
  ],
  "Directory $0 isn't writable or doesn't exist.": [
   null,
-  ""
+  "El directorio $0 no es editable o no existe."
  ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
-  ""
+  "No se ha instalado el servicio Kdump. Asegúrese de que esté instalado el paquete «kexec-tools»."
  ],
  "Kernel dump configuration": [
   null,
-  "Configuración desconocida"
+  "Configuración de volcado de núcleo"
  ],
  "Loading...": [
   null,
@@ -113,15 +113,15 @@ return plural;
  ],
  "Local Filesystem": [
   null,
-  "Ningún Sistema de Archivos"
+  "Sistema de archivos local"
  ],
  "Location": [
   null,
-  "Anotaciones"
+  "Ubicación"
  ],
  "More details": [
   null,
-  "Detalles"
+  "Más detalles"
  ],
  "Mount": [
   null,
@@ -129,11 +129,11 @@ return plural;
  ],
  "No configuration found": [
   null,
-  "Configuración desconocida"
+  "No se encontró ninguna configuración"
  ],
  "No memory reserved. Append a crashkernel option to the kernel command line (e.g. in /etc/default/grub) to reserve memory at boot time. Example: crashkernel=512M": [
   null,
-  ""
+  "No se ha reservado memoria. Anexe una opción de «crashkernel» a la consola del núcleo (p. ej. en /etc/default/grub) para reservar memoria durante el arranque. Ejemplo: crashkernel=512M"
  ],
  "None": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "Aceptar"
  ],
  "On": [
   null,
@@ -153,7 +153,7 @@ return plural;
  ],
  "On a mounted device": [
   null,
-  ""
+  "Al montarse un dispositivo"
  ],
  "Raw to a device": [
   null,
@@ -161,11 +161,11 @@ return plural;
  ],
  "Reading...": [
   null,
-  "Leyendo"
+  "Consultando…"
  ],
  "Remote over NFS": [
   null,
-  ""
+  "Remoto a través de NFS"
  ],
  "Remote over SSH": [
   null,
@@ -173,7 +173,7 @@ return plural;
  ],
  "Reserved memory": [
   null,
-  ""
+  "Memoria reservada"
  ],
  "Server": [
   null,
@@ -181,27 +181,27 @@ return plural;
  ],
  "Service has an error": [
   null,
-  ""
+  "El servicio tiene un error"
  ],
  "Service is running": [
   null,
-  "Tuned no se esta ejecutando"
+  "Se está ejecutando el servicio"
  ],
  "Service is starting": [
   null,
-  "La máquina se está reiniciando"
+  "Se está iniciando el servicio"
  ],
  "Service is stopped": [
   null,
-  "Servicios"
+  "Se ha detenido el servicio"
  ],
  "Service is stopping": [
   null,
-  "Bitácoras del Servicio"
+  "Se está deteniendo el servicio"
  ],
  "Test Configuration": [
   null,
-  "Configuración"
+  "Comprobar la configuración"
  ],
  "Test is only available while the kdump service is running.": [
   null,
@@ -233,7 +233,7 @@ return plural;
  ],
  "kdump status": [
   null,
-  ""
+  "estado de kdump"
  ],
  "locally in $0": [
   null,
@@ -241,10 +241,10 @@ return plural;
  ],
  "ssh key": [
   null,
-  ""
+  "clave ssh"
  ],
  "undefined": [
   null,
-  ""
+  "sin definir"
  ]
 }));

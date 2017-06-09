@@ -73,37 +73,37 @@ return plural;
  ],
  "$0 day": [
   "$0 days",
-  "",
-  ""
+  "$0 jour",
+  "$0 jours"
  ],
  "$0 hour": [
   "$0 hours",
-  "",
-  ""
+  "$0 heure",
+  "$0 heures"
  ],
  "$0 minute": [
   "$0 minutes",
-  "",
-  ""
+  "$0 minute",
+  "$0 minutes"
  ],
  "$0 month": [
   "$0 months",
-  "",
-  ""
+  "$0 mois",
+  "$0 mois"
  ],
  "$0 week": [
   "$0 weeks",
-  "",
-  ""
+  "$0 semaine",
+  "$0 semaines"
  ],
  "$0 year": [
   "$0 years",
-  "",
-  ""
+  "$0 an",
+  "$0 ans"
  ],
  "1 Minute": [
   null,
-  ""
+  "1 minute"
  ],
  "1 day": [
   null,
@@ -115,7 +115,7 @@ return plural;
  ],
  "1 min": [
   null,
-  ""
+  "1 min"
  ],
  "1 week": [
   null,
@@ -123,135 +123,135 @@ return plural;
  ],
  "10th": [
   null,
-  ""
+  "10e"
  ],
  "11th": [
   null,
-  ""
+  "11e"
  ],
  "12th": [
   null,
-  ""
+  "12e"
  ],
  "13th": [
   null,
-  ""
+  "13e"
  ],
  "14th": [
   null,
-  ""
+  "14e"
  ],
  "15th": [
   null,
-  ""
+  "15e"
  ],
  "16th": [
   null,
-  ""
+  "16e"
  ],
  "17th": [
   null,
-  ""
+  "17e"
  ],
  "18th": [
   null,
-  ""
+  "18e"
  ],
  "19th": [
   null,
-  ""
+  "19e"
  ],
  "1st": [
   null,
-  ""
+  "1er"
  ],
  "2 min": [
   null,
-  ""
+  "2 min"
  ],
  "20 Minutes": [
   null,
-  ""
+  "20 minutes"
  ],
  "20th": [
   null,
-  ""
+  "20e"
  ],
  "21st": [
   null,
-  ""
+  "21e"
  ],
  "22nd": [
   null,
-  ""
+  "22e"
  ],
  "23rd": [
   null,
-  ""
+  "23e"
  ],
  "24th": [
   null,
-  ""
+  "24e"
  ],
  "25th": [
   null,
-  ""
+  "25e"
  ],
  "26th": [
   null,
-  ""
+  "26e"
  ],
  "27th": [
   null,
-  ""
+  "27e"
  ],
  "28th": [
   null,
-  ""
+  "28e"
  ],
  "29th": [
   null,
-  ""
+  "29e"
  ],
  "2nd": [
   null,
-  ""
+  "2e"
  ],
  "3 min": [
   null,
-  ""
+  "3 min"
  ],
  "30th": [
   null,
-  ""
+  "30e"
  ],
  "31st": [
   null,
-  ""
+  "31e"
  ],
  "3rd": [
   null,
-  ""
+  "3e"
  ],
  "4 min": [
   null,
-  ""
+  "4 min"
  ],
  "40 Minutes": [
   null,
-  ""
+  "40 minutes"
  ],
  "4th": [
   null,
-  ""
+  "4e"
  ],
  "5 Minutes": [
   null,
-  ""
+  "5 minutes"
  ],
  "5 min": [
   null,
-  ""
+  "5 min"
  ],
  "5 minutes": [
   null,
@@ -259,7 +259,7 @@ return plural;
  ],
  "5th": [
   null,
-  ""
+  "5e"
  ],
  "6 hours": [
   null,
@@ -267,23 +267,23 @@ return plural;
  ],
  "60 Minutes": [
   null,
-  ""
+  "60 minutes"
  ],
  "6th": [
   null,
-  ""
+  "6e"
  ],
  "7th": [
   null,
-  ""
+  "7e"
  ],
  "8th": [
   null,
-  ""
+  "8e"
  ],
  "9th": [
   null,
-  ""
+  "9e"
  ],
  "After": [
   null,
@@ -485,10 +485,6 @@ return plural;
   null,
   ""
  ],
- "Isolate": [
-  null,
-  "Isoler"
- ],
  "Journal": [
   null,
   ""
@@ -677,14 +673,6 @@ return plural;
   null,
   "Recharger"
  ],
- "Reload or Restart": [
-  null,
-  "Recharger ou redémarrer"
- ],
- "Reload or Try Restart": [
-  null,
-  "Recharger ou essayer de redémarrer"
- ],
  "Repeat Daily": [
   null,
   ""
@@ -837,6 +825,10 @@ return plural;
   null,
   "L'utilisateur <b>$0</b> n'a pas le droit de modifier les noms d'hôtes"
  ],
+ "The user <b>$0</b> is not permitted to shutdown or restart this server": [
+  null,
+  ""
+ ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
   ""
@@ -864,10 +856,6 @@ return plural;
  "Timers": [
   null,
   ""
- ],
- "Try Restart": [
-  null,
-  "Essayer de redémarrer"
  ],
  "Trying to synchronize with {{Server}}": [
   null,

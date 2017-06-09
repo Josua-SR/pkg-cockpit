@@ -77,11 +77,11 @@ return plural;
  ],
  "Access denied": [
   null,
-  ""
+  "Accès interdit"
  ],
  "Activation Key": [
   null,
-  ""
+  "Clé d'activation"
  ],
  "Architecture": [
   null,

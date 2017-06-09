@@ -128,4 +128,5 @@ to{transform:rotate(359deg)}
 #login-button .spinner{display:none}
 #login-button[disabled]{padding:0;background-color:#333;background-image:none;border-color:#555}
 #login-button[disabled] .spinner{display:inline-block}
-#login-button[disabled] #login-button-text{display:none}/*# sourceMappingURL=login.min.css.map */
+#login-button[disabled] #login-button-text{display:none}
+/*# sourceMappingURL=login.min.css.map */

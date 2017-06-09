@@ -485,10 +485,6 @@ return plural;
   null,
   ""
  ],
- "Isolate": [
-  null,
-  "Isolar"
- ],
  "Journal": [
   null,
   ""
@@ -677,14 +673,6 @@ return plural;
   null,
   "Recarregar"
  ],
- "Reload or Restart": [
-  null,
-  "Recarregar ou Reiniciar"
- ],
- "Reload or Try Restart": [
-  null,
-  "Recarregue ou Tente Reiniciar"
- ],
  "Repeat Daily": [
   null,
   ""
@@ -837,6 +825,10 @@ return plural;
   null,
   ""
  ],
+ "The user <b>$0</b> is not permitted to shutdown or restart this server": [
+  null,
+  ""
+ ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
   ""
@@ -864,10 +856,6 @@ return plural;
  "Timers": [
   null,
   "Temporizadores"
- ],
- "Try Restart": [
-  null,
-  "Tente Reiniciar"
  ],
  "Trying to synchronize with {{Server}}": [
   null,

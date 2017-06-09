@@ -75,17 +75,45 @@ return plural;
   null,
   "Dostępne"
  ],
+ "Boot Order:": [
+  null,
+  "Kolejność uruchamiania:"
+ ],
+ "Bus": [
+  null,
+  "Magistrala"
+ ],
+ "CPU Type:": [
+  null,
+  "Typ procesora:"
+ ],
+ "Capacity": [
+  null,
+  "Pojemność"
+ ],
  "Connection": [
   null,
-  "Połącz"
+  "Połączenie"
  ],
- "FORCEOFF_VM action failed": [
+ "Count:": [
   null,
-  ""
+  "Liczba:"
  ],
- "FORCEREBOOT_VM action failed": [
+ "Device": [
   null,
-  ""
+  "Urządzenie"
+ ],
+ "Disks": [
+  null,
+  "Dyski"
+ ],
+ "Emulated Machine:": [
+  null,
+  "Emulowany komputer:"
+ ],
+ "File": [
+  null,
+  "Plik"
  ],
  "Force Restart": [
   null,
@@ -95,9 +123,13 @@ return plural;
   null,
   "Wymuś wyłączenie"
  ],
- "ID:": [
+ "GB": [
   null,
-  "Identyfikator:"
+  "GB"
+ ],
+ "Host": [
+  null,
+  "Gospodarz"
  ],
  "Memory:": [
   null,
@@ -111,17 +143,33 @@ return plural;
   null,
   "Brak uruchomionych lub określonych maszyn wirtualnych na tym gospodarzu"
  ],
- "OS Type:": [
+ "No boot device found": [
   null,
-  "Typ systemu operacyjnego:"
+  "Nie odnaleziono żadnego urządzenia startowego"
+ ],
+ "No disks defined for this VM": [
+  null,
+  "Nie określono dysków dla tej maszyny wirtualnej"
  ],
  "Overview": [
   null,
   "Przegląd"
  ],
- "REBOOT_VM action failed": [
+ "Pool": [
   null,
-  ""
+  "Pula"
+ ],
+ "Port": [
+  null,
+  "Port"
+ ],
+ "Protocol": [
+  null,
+  "Protokół"
+ ],
+ "Readonly": [
+  null,
+  "Tylko do odczytu"
  ],
  "Restart": [
   null,
@@ -131,33 +179,29 @@ return plural;
   null,
   "Uruchom"
  ],
- "SHUTDOWN_VM action failed": [
-  null,
-  "Rozwiązanie się nie powiodło"
- ],
- "START_VM action failed": [
-  null,
-  "Rozwiązanie się nie powiodło"
- ],
  "Session": [
   null,
-  "Wersja"
+  "Sesja"
  ],
  "Shut Down": [
   null,
   "Wyłącz"
  ],
+ "Source": [
+  null,
+  "Źródło"
+ ],
  "State": [
   null,
   "Stan"
  ],
- "State:": [
-  null,
-  "Stan:"
- ],
  "System": [
   null,
   "System"
+ ],
+ "Target": [
+  null,
+  "Cel"
  ],
  "The VM crashed.": [
   null,
@@ -191,6 +235,10 @@ return plural;
   null,
   "Maszyna wirtualna jest uśpiona przez zarządzanie zasilaniem."
  ],
+ "Upgrade to a more recent version of libvirt to view disk statistics": [
+  null,
+  "Należy zaktualizować do nowszej wersji biblioteki libvirt, aby przeglądać statystyki dysku"
+ ],
  "Usage": [
   null,
   "Użycie"
@@ -199,52 +247,108 @@ return plural;
   null,
   "Używane"
  ],
+ "VM FORCE OFF action failed": [
+  null,
+  "Działanie VM FORCE OFF się nie powiodło"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "Działanie VM FORCE REBOOT się nie powiodło"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "Działanie VM REBOOT się nie powiodło"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "Działanie VM SHUT DOWN się nie powiodło"
+ ],
+ "VM START action failed": [
+  null,
+  "Działanie VM START się nie powiodło"
+ ],
  "Virtual Machines": [
   null,
   "Maszyny wirtualne"
  ],
+ "Volume": [
+  null,
+  "Wolumin"
+ ],
+ "cdrom": [
+  null,
+  "CD-ROM"
+ ],
  "crashed": [
   null,
-  "Maszyna wirtualna uległa awarii."
+  "uległo awarii"
+ ],
+ "custom": [
+  null,
+  "niestandardowe"
  ],
  "disabled": [
   null,
-  "Wyłączone"
+  "wyłączone"
+ ],
+ "disk": [
+  null,
+  "dysk"
  ],
  "dying": [
   null,
-  ""
+  "w trakcie umierania"
  ],
  "enabled": [
   null,
-  "Włączone"
+  "włączone"
+ ],
+ "host": [
+  null,
+  "gospodarz"
  ],
  "idle": [
   null,
-  ""
+  "bezczynne"
+ ],
+ "network": [
+  null,
+  "sieć"
+ ],
+ "no": [
+  null,
+  "nie"
+ ],
+ "other": [
+  null,
+  "inne"
  ],
  "paused": [
   null,
-  ""
+  "wstrzymane"
  ],
  "running": [
   null,
-  "Działające"
+  "działanie"
  ],
  "shut off": [
   null,
-  ""
+  "wyłącz"
  ],
  "shutdown": [
   null,
-  ""
+  "wyłączenie"
  ],
  "suspended (PM)": [
   null,
-  ""
+  "uśpione (PM)"
  ],
  "vCPUs:": [
   null,
   "Wirtualne procesory:"
+ ],
+ "yes": [
+  null,
+  "tak"
  ]
 }));

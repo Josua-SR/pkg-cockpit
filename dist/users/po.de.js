@@ -73,19 +73,19 @@ return plural;
  ],
  "Account not available or cannot be edited.": [
   null,
-  ""
+  "Konto nicht verfügbar oder Änderungen nicht möglich."
  ],
  "Accounts": [
   null,
-  ""
+  "Konten"
  ],
  "Add key": [
   null,
-  ""
+  "Schlüssel hinzufügen"
  ],
  "Add public key": [
   null,
-  ""
+  "Öffentlichen Schlüssel hinzufügen"
  ],
  "Adding key": [
   null,
@@ -105,7 +105,7 @@ return plural;
  ],
  "Close": [
   null,
-  "Schliessen"
+  "Schließen"
  ],
  "Confirm": [
   null,
@@ -125,7 +125,7 @@ return plural;
  ],
  "Create New Account": [
   null,
-  ""
+  "Neues Konto anlegen"
  ],
  "Delete": [
   null,
@@ -241,7 +241,7 @@ return plural;
  ],
  "Roles": [
   null,
-  ""
+  "Rollen"
  ],
  "Server Administrator": [
   null,
@@ -257,11 +257,11 @@ return plural;
  ],
  "Terminate Session": [
   null,
-  ""
+  "Sitzung beenden"
  ],
  "The key you provided was not valid.": [
   null,
-  ""
+  "Der von Ihnen angegebene Schlüssel ist ungültig."
  ],
  "The passwords do not match": [
   null,
@@ -273,7 +273,7 @@ return plural;
  ],
  "The user name can only consist of letters from a-z, digits, dots, dashes and underscores.": [
   null,
-  ""
+  "Der Benutzername darf nur aus Buchstaben, Zahlen, Punkten, Binde- und Unterstrichen bestehen."
  ],
  "There are no authorized public keys for this account.": [
   null,

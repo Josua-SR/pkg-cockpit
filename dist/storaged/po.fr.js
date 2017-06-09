@@ -69,57 +69,82 @@ return plural;
  },
  "$0 Block Device": [
   null,
-  ""
+  "Périphérique de bloc de $0"
+ ],
+ "$0 Chunk Size": [
+  null,
+  "taille de bloc $0"
+ ],
+ "$0 Disks": [
+  null,
+  "$0 disques"
  ],
  "$0 day": [
   "$0 days",
-  "",
-  ""
+  "$0 jour",
+  "$0 jours"
+ ],
+ "$0 disk is missing": [
+  "$0 disks are missing",
+  "$0 disque est manquant",
+  "$0 disques sont manquants"
  ],
  "$0 hour": [
   "$0 hours",
-  "",
+  "$0 heure",
+  "$0 heures"
+ ],
+ "$0 is in active use": [
+  null,
   ""
  ],
  "$0 minute": [
   "$0 minutes",
-  "",
-  ""
+  "$0 minute",
+  "$0 minutes"
  ],
  "$0 month": [
   "$0 months",
-  "",
-  ""
+  "$0 mois",
+  "$0 mois"
  ],
  "$0 of $1": [
   null,
-  ""
+  "$0 de $1"
  ],
  "$0 week": [
   "$0 weeks",
-  "",
-  ""
+  "$0 semaine",
+  "$0 semaines"
  ],
  "$0 year": [
   "$0 years",
-  "",
+  "$0 an",
+  "$0 ans"
+ ],
+ "$0, $1 free": [
+  null,
   ""
  ],
  "$name (from $host)": [
   null,
   "$name (de $host)"
  ],
- "(default)": [
+ "${size} ${desc}": [
   null,
   ""
+ ],
+ "(default)": [
+  null,
+  "(défaut)"
  ],
  "(none)": [
   null,
-  ""
+  "(aucun)"
  ],
  "1 MiB": [
   null,
-  ""
+  "1 Mio"
  ],
  "1 day": [
   null,
@@ -135,23 +160,23 @@ return plural;
  ],
  "128 KiB": [
   null,
-  ""
+  "128 Kio"
  ],
  "16 KiB": [
   null,
-  ""
+  "16 Kio"
  ],
  "2 MiB": [
   null,
-  ""
+  "2 Mio"
  ],
  "32 KiB": [
   null,
-  ""
+  "32 Kio"
  ],
  "4 KiB": [
   null,
-  ""
+  "4 Kio"
  ],
  "5 minutes": [
   null,
@@ -159,7 +184,7 @@ return plural;
  ],
  "512 KiB": [
   null,
-  ""
+  "512 Kio"
  ],
  "6 hours": [
   null,
@@ -167,11 +192,11 @@ return plural;
  ],
  "64 KiB": [
   null,
-  ""
+  "64 Kio"
  ],
  "8 KiB": [
   null,
-  ""
+  "8 Kio"
  ],
  "<span>Encrypted $0</span>": [
   null,
@@ -193,17 +218,25 @@ return plural;
   null,
   "<span>Partition de $0</span>"
  ],
+ "A spare disk needs to be added first before this disk can be removed.": [
+  null,
+  ""
+ ],
  "Activate": [
   null,
   "Activer"
  ],
  "Activating $target": [
   null,
-  ""
+  "Activation de $target"
  ],
  "Add": [
   null,
   "Ajouter"
+ ],
+ "Add Disks": [
+  null,
+  "Ajouter des disques"
  ],
  "Add iSCSI Portal": [
   null,
@@ -244,6 +277,10 @@ return plural;
  "Block device for filesystems": [
   null,
   ""
+ ],
+ "Blocked": [
+  null,
+  "Bloqué"
  ],
  "Can't delete while unlocked": [
   null,
@@ -401,6 +438,10 @@ return plural;
   null,
   "Suppression de $target"
  ],
+ "Deleting a RAID device will erase all data on it.": [
+  null,
+  "Supprimer un périphérique RAID en effacera toutes les données qu'il contient."
+ ],
  "Deleting a logical volume will delete all data in it.": [
   null,
   "Supprimer un volume logique en effacera toutes les données qu'il contient."
@@ -409,21 +450,13 @@ return plural;
   null,
   "Supprimer une partition en effacera toutes les données qu'elle contient."
  ],
+ "Deleting a volume group will erase all data on it.": [
+  null,
+  "Supprimer un groupe de volumes en effacera toutes les données qu'il contient."
+ ],
  "Deleting volume group $target": [
   null,
   ""
- ],
- "Device $0 is a member of RAID Array $1": [
-  null,
-  "Le périphérique $0 est membre de la grappe RAID $1"
- ],
- "Device $0 is a physical volume of $1": [
-  null,
-  "Le périphérique $0 est un volume physique de $1"
- ],
- "Device $0 is mounted on $1": [
-  null,
-  "Le périphérique $0 est monté sur $1"
  ],
  "Device is read-only": [
   null,
@@ -461,9 +494,21 @@ return plural;
   null,
   ""
  ],
+ "Encrypted $0": [
+  null,
+  ""
+ ],
  "Encrypted EXT4 (LUKS)": [
   null,
   "EXT4 chiffré (LUKS)"
+ ],
+ "Encrypted Logical Volume of $0": [
+  null,
+  ""
+ ],
+ "Encrypted Partition of $0": [
+  null,
+  ""
  ],
  "Encrypted XFS (LUKS)": [
   null,
@@ -492,6 +537,10 @@ return plural;
  "Extended Partition": [
   null,
   "Partition étendue"
+ ],
+ "FAILED": [
+  null,
+  "EN ÉCHEC"
  ],
  "Filesystem": [
   null,
@@ -545,6 +594,10 @@ return plural;
   null,
   "Aller à maintenant"
  ],
+ "In Sync": [
+  null,
+  "En cours de synchronisation"
+ ],
  "Inactive volume": [
   null,
   ""
@@ -572,6 +625,10 @@ return plural;
  "Logical Volume (Snapshot)": [
   null,
   "Volume logique (instantané)"
+ ],
+ "Logical Volume of $0": [
+  null,
+  ""
  ],
  "Marking $target as faulty": [
   null,
@@ -653,6 +710,10 @@ return plural;
   null,
   ""
  ],
+ "No disks are available.": [
+  null,
+  ""
+ ],
  "No drives attached": [
   null,
   ""
@@ -678,6 +739,14 @@ return plural;
   ""
  ],
  "No volume groups created": [
+  null,
+  ""
+ ],
+ "Not found": [
+  null,
+  "Non trouvé"
+ ],
+ "Not running": [
   null,
   ""
  ],
@@ -708,6 +777,10 @@ return plural;
  "Partition": [
   null,
   "Partition"
+ ],
+ "Partition of $0": [
+  null,
+  ""
  ],
  "Partitioning": [
   null,
@@ -769,25 +842,53 @@ return plural;
   null,
   ""
  ],
+ "RAID ($0)": [
+  null,
+  "RAID ($0)"
+ ],
+ "RAID 0": [
+  null,
+  "RAID 0"
+ ],
  "RAID 0 (Stripe)": [
   null,
   "RAID 0 (Réparti par bande)"
+ ],
+ "RAID 1": [
+  null,
+  "RAID 1"
  ],
  "RAID 1 (Mirror)": [
   null,
   "RAID 1 (Miroir)"
  ],
+ "RAID 10": [
+  null,
+  "RAID 10"
+ ],
  "RAID 10 (Stripe of Mirrors)": [
   null,
   ""
+ ],
+ "RAID 4": [
+  null,
+  "RAID 4"
  ],
  "RAID 4 (Dedicated Parity)": [
   null,
   "RAID 4 (Parité Dédié)"
  ],
+ "RAID 5": [
+  null,
+  "RAID 5"
+ ],
  "RAID 5 (Distributed Parity)": [
   null,
   "RAID 5 (Parité Distribué)"
+ ],
+ "RAID 6": [
+  null,
+  "RAID 6"
  ],
  "RAID 6 (Double Distributed Parity)": [
   null,
@@ -821,6 +922,10 @@ return plural;
   null,
   "Redémarrer"
  ],
+ "Recovering": [
+  null,
+  "Récupération en cours"
+ ],
  "Recovering RAID Device $target": [
   null,
   ""
@@ -841,6 +946,10 @@ return plural;
   null,
   ""
  ],
+ "Rename Volume Group": [
+  null,
+  "Renommer un groupe de volumes"
+ ],
  "Renaming $target": [
   null,
   ""
@@ -860,6 +969,10 @@ return plural;
  "Resizing $target": [
   null,
   ""
+ ],
+ "Running": [
+  null,
+  "En fonctionnement"
  ],
  "SMART self-test of $target": [
   null,
@@ -901,6 +1014,10 @@ return plural;
   null,
   ""
  ],
+ "Spare": [
+  null,
+  "Rechange"
+ ],
  "Start": [
   null,
   "Démarrer"
@@ -908,6 +1025,10 @@ return plural;
  "Start Multipath": [
   null,
   ""
+ ],
+ "Start Scrubbing": [
+  null,
+  "Démarrer la scrutation"
  ],
  "Starting RAID Device $target": [
   null,
@@ -920,6 +1041,10 @@ return plural;
  "Stop": [
   null,
   "Arrêter"
+ ],
+ "Stop Scrubbing": [
+  null,
+  "Arrêter la scrutation"
  ],
  "Stopping RAID Device $target": [
   null,
@@ -973,6 +1098,22 @@ return plural;
   null,
   ""
  ],
+ "The RAID device must be running in order to add spare disks.": [
+  null,
+  ""
+ ],
+ "The RAID device must be running in order to remove disks.": [
+  null,
+  ""
+ ],
+ "The last disk of a RAID device cannot be removed.": [
+  null,
+  ""
+ ],
+ "The last physical volume of a volume group cannot be removed.": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   ""
@@ -981,7 +1122,35 @@ return plural;
   null,
   ""
  ],
+ "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
+  null,
+  ""
+ ],
  "Thin Logical Volume": [
+  null,
+  ""
+ ],
+ "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
+  null,
+  ""
+ ],
+ "This device is currently used for RAID devices.": [
+  null,
+  ""
+ ],
+ "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
+  null,
+  ""
+ ],
+ "This device is currently used for volume groups.": [
+  null,
+  ""
+ ],
+ "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
+  null,
+  ""
+ ],
+ "This disk cannot be removed while the device is recovering.": [
   null,
   ""
  ],
@@ -1004,6 +1173,10 @@ return plural;
  "Unknown": [
   null,
   "Inconnu"
+ ],
+ "Unknown ($0)": [
+  null,
+  "Inconnu ($0)"
  ],
  "Unknown host name": [
   null,
@@ -1069,6 +1242,10 @@ return plural;
   null,
   "Groupes de volumes"
  ],
+ "Write-mostly": [
+  null,
+  "Écriture favorisée"
+ ],
  "Writing": [
   null,
   "Ecriture"
@@ -1098,6 +1275,10 @@ return plural;
   ""
  ],
  "unknown target": [
+  null,
+  ""
+ ],
+ "unpartitioned space on $0": [
   null,
   ""
  ],

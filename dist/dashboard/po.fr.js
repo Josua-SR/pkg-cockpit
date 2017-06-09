@@ -69,33 +69,33 @@ return plural;
  },
  "$0 day": [
   "$0 days",
-  "",
-  ""
+  "$0 jour",
+  "$0 jours"
  ],
  "$0 hour": [
   "$0 hours",
-  "",
-  ""
+  "$0 heure",
+  "$0 heures"
  ],
  "$0 minute": [
   "$0 minutes",
-  "",
-  ""
+  "$0 minute",
+  "$0 minutes"
  ],
  "$0 month": [
   "$0 months",
-  "",
-  ""
+  "$0 mois",
+  "$0 mois"
  ],
  "$0 week": [
   "$0 weeks",
-  "",
-  ""
+  "$0 semaine",
+  "$0 semaines"
  ],
  "$0 year": [
   "$0 years",
-  "",
-  ""
+  "$0 an",
+  "$0 ans"
  ],
  "1 day": [
   null,
@@ -119,7 +119,7 @@ return plural;
  ],
  "A compatible version of Cockpit is not installed on {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "Une version compatible de Cockpit n''est pas installée sur {{#strong}}{{host}}{{/strong}}."
  ],
  "Add": [
   null,
@@ -127,7 +127,7 @@ return plural;
  ],
  "Add Machine to Dashboard": [
   null,
-  ""
+  "Ajouter une machine au tableau de bord"
  ],
  "Address": [
   null,
@@ -211,7 +211,7 @@ return plural;
  ],
  "Dashboard": [
   null,
-  ""
+  "Tableau de bord"
  ],
  "Disk I/O": [
   null,

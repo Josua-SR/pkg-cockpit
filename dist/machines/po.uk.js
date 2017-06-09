@@ -75,17 +75,45 @@ return plural;
   null,
   "Доступні"
  ],
+ "Boot Order:": [
+  null,
+  "Порядок завантаження:"
+ ],
+ "Bus": [
+  null,
+  "Канал"
+ ],
+ "CPU Type:": [
+  null,
+  "Тип процесора:"
+ ],
+ "Capacity": [
+  null,
+  "Місткість"
+ ],
  "Connection": [
   null,
-  "З'єднатися"
+  "З’єднання"
  ],
- "FORCEOFF_VM action failed": [
+ "Count:": [
   null,
-  ""
+  "Кількість:"
  ],
- "FORCEREBOOT_VM action failed": [
+ "Device": [
   null,
-  ""
+  "Пристрій"
+ ],
+ "Disks": [
+  null,
+  "Диски"
+ ],
+ "Emulated Machine:": [
+  null,
+  "Емуляція машини:"
+ ],
+ "File": [
+  null,
+  "Файл"
  ],
  "Force Restart": [
   null,
@@ -95,9 +123,13 @@ return plural;
   null,
   "Примусово вимкнути"
  ],
- "ID:": [
+ "GB": [
   null,
-  "Ід.:"
+  "ГБ"
+ ],
+ "Host": [
+  null,
+  "Вузол"
  ],
  "Memory:": [
   null,
@@ -111,17 +143,33 @@ return plural;
   null,
   "У цій основній системі не запущено або не визначено віртуальних машин"
  ],
- "OS Type:": [
+ "No boot device found": [
   null,
-  "Тип ОС:"
+  "Не знайдено пристрою для завантаження"
+ ],
+ "No disks defined for this VM": [
+  null,
+  "Для цієї ВМ не визначено дисків"
  ],
  "Overview": [
   null,
   "Огляд"
  ],
- "REBOOT_VM action failed": [
+ "Pool": [
   null,
-  ""
+  "Буфер"
+ ],
+ "Port": [
+  null,
+  "Порт"
+ ],
+ "Protocol": [
+  null,
+  "Протокол"
+ ],
+ "Readonly": [
+  null,
+  "Лише запис"
  ],
  "Restart": [
   null,
@@ -131,33 +179,29 @@ return plural;
   null,
   "Запустити"
  ],
- "SHUTDOWN_VM action failed": [
-  null,
-  "Помилка рішення"
- ],
- "START_VM action failed": [
-  null,
-  "Помилка рішення"
- ],
  "Session": [
   null,
-  "Версія"
+  "Сеанс"
  ],
  "Shut Down": [
   null,
   "Вимкнути"
  ],
+ "Source": [
+  null,
+  "Джерело"
+ ],
  "State": [
   null,
   "Стан"
  ],
- "State:": [
-  null,
-  "Стан:"
- ],
  "System": [
   null,
   "Система"
+ ],
+ "Target": [
+  null,
+  "Призначення"
  ],
  "The VM crashed.": [
   null,
@@ -191,6 +235,10 @@ return plural;
   null,
   "Роботу віртуальної машини призупинено засобами керування живленням гостьової системи."
  ],
+ "Upgrade to a more recent version of libvirt to view disk statistics": [
+  null,
+  "Щоб мати змогу переглядати статистику дисків, оновіться до новішої версії libvirt"
+ ],
  "Usage": [
   null,
   "Використання"
@@ -199,52 +247,108 @@ return plural;
   null,
   "Використано"
  ],
+ "VM FORCE OFF action failed": [
+  null,
+  "Не вдалося виконати дію FORCE OFF для ВМ"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "Не вдалося виконати дію FORCE REBOOT для ВМ"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "Не вдалося виконати дію REBOOT для ВМ"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "Не вдалося виконати дію SHUT DOWN для ВМ"
+ ],
+ "VM START action failed": [
+  null,
+  "Не вдалося виконати дію START для ВМ"
+ ],
  "Virtual Machines": [
   null,
   "Віртуальні машини"
  ],
+ "Volume": [
+  null,
+  "Том"
+ ],
+ "cdrom": [
+  null,
+  "cdrom"
+ ],
  "crashed": [
   null,
-  "Віртуальна машина аварійно завершила роботу."
+  "аварійне завершення"
+ ],
+ "custom": [
+  null,
+  "нетиповий"
  ],
  "disabled": [
   null,
-  "Вимкнено"
+  "вимкнено"
+ ],
+ "disk": [
+  null,
+  "диск"
  ],
  "dying": [
   null,
-  ""
+  "вмирає"
  ],
  "enabled": [
   null,
-  "Увімкнено"
+  "увімкнено"
+ ],
+ "host": [
+  null,
+  "вузол"
  ],
  "idle": [
   null,
-  ""
+  "бездіяльний"
+ ],
+ "network": [
+  null,
+  "мережа"
+ ],
+ "no": [
+  null,
+  "ні"
+ ],
+ "other": [
+  null,
+  "інше"
  ],
  "paused": [
   null,
-  ""
+  "призупинено"
  ],
  "running": [
   null,
-  "Працює"
+  "працює"
  ],
  "shut off": [
   null,
-  ""
+  "вимкнути"
  ],
  "shutdown": [
   null,
-  ""
+  "завершити роботу"
  ],
  "suspended (PM)": [
   null,
-  ""
+  "призупинено (PM)"
  ],
  "vCPUs:": [
   null,
   "vCPU:"
+ ],
+ "yes": [
+  null,
+  "так"
  ]
 }));

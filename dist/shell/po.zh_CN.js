@@ -79,6 +79,10 @@ return plural;
   null,
   "账户设置"
  ],
+ "Active Pages": [
+  null,
+  ""
+ ],
  "Add": [
   null,
   "添加"
@@ -126,6 +130,10 @@ return plural;
  "Close": [
   null,
   "关闭"
+ ],
+ "Close Selected Pages": [
+  null,
+  ""
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
@@ -271,6 +279,14 @@ return plural;
   null,
   "授权为："
  ],
+ "Lock to prevent privileged tasks": [
+  null,
+  ""
+ ],
+ "Locked": [
+  null,
+  ""
+ ],
  "Log In": [
   null,
   "登录"
@@ -343,9 +359,17 @@ return plural;
   null,
   "密码未接受"
  ],
+ "Password not usable for privileged tasks or to connect to other machines": [
+  null,
+  ""
+ ],
  "Port": [
   null,
   "端口"
+ ],
+ "Privileged tasks not available": [
+  null,
+  ""
  ],
  "Project website": [
   null,
@@ -366,6 +390,10 @@ return plural;
  "Reconnect": [
   null,
   "重新连接"
+ ],
+ "Reuse my password for privileged tasks and to connect to other machines": [
+  null,
+  ""
  ],
  "Select": [
   null,
@@ -403,6 +431,10 @@ return plural;
   null,
   "密码不匹配"
  ],
+ "There are currently no active pages": [
+  null,
+  ""
+ ],
  "This machine has already been added.": [
   null,
   "该主机已经被添加。"
@@ -418,10 +450,6 @@ return plural;
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
   null,
   "需要更新 cockpit-ws 到一个新版本来尝试一个不同的端口。"
- ],
- "Tools": [
-  null,
-  "工具"
  ],
  "Troubleshoot": [
   null,
@@ -451,13 +479,13 @@ return plural;
   null,
   "解锁密钥"
  ],
+ "Unlocked": [
+  null,
+  ""
+ ],
  "Update": [
   null,
   "更新"
- ],
- "Use my password for privileged tasks and to connect to other machines": [
-  null,
-  "为特权任务使用密码并连接到其他主机"
  ],
  "Use the following keys to authenticate against other systems": [
   null,
@@ -482,5 +510,9 @@ return plural;
  "You can remove the previously stored key by running the following command": [
   null,
   "可以通过使用以下命令来移除之前保存的密钥"
+ ],
+ "active": [
+  null,
+  ""
  ]
 }));

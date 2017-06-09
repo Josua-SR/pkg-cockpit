@@ -13,15 +13,15 @@ return plural;
  },
  "$0 error": [
   null,
-  "Помилка"
+  "Помилка $0"
  ],
  "Authentication Failed: Server closed connection": [
   null,
-  "Не вдалося пройти розпізнавання"
+  "Не вдалося пройти розпізнавання: з’єднання розірвано сервером"
  ],
  "Authentication failed": [
   null,
-  "Не вдалося пройти розпізнавання"
+  "Помилка розпізнавання"
  ],
  "Cannot decrypt PEM-encoded private key": [
   null,
@@ -29,11 +29,11 @@ return plural;
  ],
  "Cockpit authentication is configured incorrectly.": [
   null,
-  ""
+  "Розпізнавання у Cockpit налаштовано з помилками."
  ],
  "Connect to": [
   null,
-  "З'єднатися"
+  "З’єднатися з"
  ],
  "Could not parse PEM-encoded certificate": [
   null,
@@ -45,7 +45,7 @@ return plural;
  ],
  "Internal Error: Invalid challenge header": [
   null,
-  ""
+  "Внутрішня помилка: некоректний заголовок виклику"
  ],
  "Log In": [
   null,
@@ -53,11 +53,11 @@ return plural;
  ],
  "Login Again": [
   null,
-  "Знову увійти"
+  "Користувач ще раз"
  ],
  "Logout Successful": [
   null,
-  ""
+  "Успішний вихід"
  ],
  "No PEM-encoded certificate found": [
   null,
@@ -69,7 +69,7 @@ return plural;
  ],
  "Other Options": [
   null,
-  "Параметри живлення"
+  "Інші параметри"
  ],
  "Password": [
   null,
@@ -81,15 +81,15 @@ return plural;
  ],
  "Refusing to connect. Host is unknown": [
   null,
-  "Перевіряємо з’єднання"
+  "Відмовляємо у з’єднанні. Невідомий вузол."
  ],
  "Refusing to connect. Hostkey does not match": [
   null,
-  ""
+  "Відмовляємо у з’єднанні. Ключі вузла не збігаються."
  ],
  "Refusing to connect. Hostkey is unknown": [
   null,
-  ""
+  "Відмовляємо у з’єднанні. Невідомий ключ вузла."
  ],
  "Server": [
   null,
@@ -97,23 +97,23 @@ return plural;
  ],
  "The server refused to authenticate '$0' using password authentication, and no other supported authentication methods are available.": [
   null,
-  "Сервер відмовився розпізнавати користувача за допомогою будь-якого з підтримуваних методів."
+  "Сервером відмовлено у розпізнаванні «$0» за допомогою пароля. Інших підтримуваних способів розпізнавання не передбачено."
  ],
  "The web browser configuration prevents Cockpit from running (inaccessible $0)": [
   null,
-  ""
+  "Налаштування програми для перегляду інтернету забороняють запуск Cockpit (недоступна можливість $0)"
  ],
  "This web browser is too old to run Cockpit (missing $0)": [
   null,
-  ""
+  "Ця програма для перегляду інтернету є надто старою для роботи з Cockpit (не вистачає можливості $0)"
  ],
  "Try Again": [
   null,
-  "Повторити спробу"
+  "Спробувати ще раз"
  ],
  "Unable to connect to that address": [
   null,
-  "Не вдалось з'єднатись"
+  "Не вдалося встановити з’єднання із цією адресою"
  ],
  "User name": [
   null,
@@ -121,15 +121,15 @@ return plural;
  ],
  "User name cannot be empty": [
   null,
-  "Назва не може бути порожньою."
+  "Ім’я користувача не може бути порожнім"
  ],
  "Validating authentication token": [
   null,
-  ""
+  "Перевіряємо ключ розпізнавання"
  ],
  "Wrong user name or password": [
   null,
-  "Некоректне ім’я користувача чи пароль"
+  "Помилкове ім’я користувача чи пароль"
  ]
 }));
 </script>

@@ -317,7 +317,7 @@ return plural;
  ],
  "Creating this bond will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "Utworzenie tego mostka zerwie połączenie z serwerem i uniemożliwi korzystanie z interfejsu administracji."
+  "Utworzenie tego wiązania zerwie połączenie z serwerem i uniemożliwi korzystanie z interfejsu administracji."
  ],
  "Creating this bridge will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -325,7 +325,7 @@ return plural;
  ],
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "Utworzenie tego mostka zerwie połączenie z serwerem i uniemożliwi korzystanie z interfejsu administracji."
+  "Utworzenie tego zespołu zerwie połączenie z serwerem i uniemożliwi korzystanie z interfejsu administracji."
  ],
  "DNS": [
   null,
@@ -365,7 +365,7 @@ return plural;
  ],
  "Ethernet MAC": [
   null,
-  "MTU ethernetu"
+  "MAC ethernetu"
  ],
  "Ethernet MTU": [
   null,
@@ -445,19 +445,19 @@ return plural;
  ],
  "Invalid address $0": [
   null,
-  "Dodatkowy adres $val"
+  "Nieprawidłowy adres $0"
  ],
  "Invalid metric $0": [
   null,
-  "Nieprawidłowy numer."
+  "Nieprawidłowe parametry $0"
  ],
  "Invalid prefix $0": [
   null,
-  "Nieprawidłowy port"
+  "Nieprawidłowy przedrostek $0"
  ],
  "Invalid prefix or netmask $0": [
   null,
-  "Nieprawidłowy port"
+  "Nieprawidłowy przedrostek lub maska sieci $0"
  ],
  "Keep connection": [
   null,
@@ -493,7 +493,7 @@ return plural;
  ],
  "MAC": [
   null,
-  ""
+  "MAC"
  ],
  "MII (Recommended)": [
   null,
@@ -597,7 +597,7 @@ return plural;
  ],
  "Permanent": [
   null,
-  ""
+  "Trwałe"
  ],
  "Ping Interval": [
   null,
@@ -625,7 +625,7 @@ return plural;
  ],
  "Preserve": [
   null,
-  "Ustaw wstępnie"
+  "Zachowaj"
  ],
  "Primary": [
   null,
@@ -641,7 +641,7 @@ return plural;
  ],
  "Random": [
   null,
-  ""
+  "Losowo"
  ],
  "Reboot": [
   null,
@@ -661,7 +661,7 @@ return plural;
  ],
  "Restoring connection": [
   null,
-  "Testowanie połączenia"
+  "Przywracanie połączenia"
  ],
  "Round Robin": [
   null,
@@ -713,7 +713,7 @@ return plural;
  ],
  "Stable": [
   null,
-  "Włącz"
+  "Stabilna"
  ],
  "Status": [
   null,
@@ -817,7 +817,7 @@ return plural;
  ],
  "[$0 bytes of binary data]": [
   null,
-  "[$0 bajtów danych binarnych]"
+  "[$0 B danych binarnych]"
  ],
  "[binary data]": [
   null,

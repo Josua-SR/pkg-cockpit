@@ -81,7 +81,7 @@ return plural;
  ],
  "- Add New Repository": [
   null,
-  "Сховище"
+  "- Додати нове сховище"
  ],
  "Add": [
   null,
@@ -89,7 +89,7 @@ return plural;
  ],
  "Add Another Key": [
   null,
-  ""
+  "Додати ще один ключ"
  ],
  "Additions": [
   null,
@@ -105,7 +105,7 @@ return plural;
  ],
  "Begins with '-----BEGIN PGP PUBLIC KEY BLOCK-----'": [
   null,
-  ""
+  "Починається з '-----BEGIN PGP PUBLIC KEY BLOCK-----'"
  ],
  "Cancel": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "Change Repository": [
   null,
-  "Сховище"
+  "Змінити сховище"
  ],
  "Check for Updates": [
   null,
@@ -129,11 +129,11 @@ return plural;
  ],
  "Couldn't load settings for '$0': $1": [
   null,
-  "Не вдалося завантажити дані користувача"
+  "Не вдалося завантажити параметри для «$0»: $1"
  ],
  "Currently using:": [
   null,
-  ""
+  "Зараз використовуємо:"
  ],
  "Default": [
   null,
@@ -149,7 +149,7 @@ return plural;
  ],
  "Error loading remotes: $0": [
   null,
-  "Помилка під час вилучення нагадування: $0"
+  "Помилка під час спроби завантажити віддалені сховища: $0"
  ],
  "Expired Signature": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "No configuration data found": [
   null,
-  "Помилки у налаштуваннях"
+  "Не знайдено даних налаштувань"
  ],
  "No signature avaliable": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "Origin": [
   null,
-  ""
+  "Походження"
  ],
  "Packages": [
   null,
@@ -217,7 +217,7 @@ return plural;
  ],
  "Please provide a valid URL": [
   null,
-  "Будь ласка, вкажіть коректну назву"
+  "Будь ласка, вкажіть коректну адресу"
  ],
  "Please provide a valid name": [
   null,
@@ -225,7 +225,7 @@ return plural;
  ],
  "Rebase and Reboot": [
   null,
-  "Оновити і перезавантажити"
+  "Перенести і перезавантажити"
  ],
  "Receiving delta parts": [
   null,
@@ -309,7 +309,7 @@ return plural;
  ],
  "Use trusted GPG key": [
   null,
-  ""
+  "Використовувати надійний ключ GPG"
  ],
  "Version": [
   null,
@@ -325,6 +325,6 @@ return plural;
  ],
  "at": [
   null,
-  "Шлях"
+  "на"
  ]
 }));

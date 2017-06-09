@@ -93,7 +93,7 @@ return plural;
  ],
  "Download report": [
   null,
-  ""
+  "Informe de descarga"
  ],
  "Generating report": [
   null,

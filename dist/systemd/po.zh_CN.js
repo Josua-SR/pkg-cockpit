@@ -479,10 +479,6 @@ return plural;
   null,
   "无效的时区"
  ],
- "Isolate": [
-  null,
-  "隔离"
- ],
  "Journal": [
   null,
   "日志"
@@ -671,14 +667,6 @@ return plural;
   null,
   "重载"
  ],
- "Reload or Restart": [
-  null,
-  "重载或重启"
- ],
- "Reload or Try Restart": [
-  null,
-  "重载或尝试重启"
- ],
  "Repeat Daily": [
   null,
   "每天重复"
@@ -831,6 +819,10 @@ return plural;
   null,
   "用户 <b>$0</b> 不允许修改的主机名"
  ],
+ "The user <b>$0</b> is not permitted to shutdown or restart this server": [
+  null,
+  ""
+ ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
   "这天不是所有月份都有。<br> 定时器将只会在有31号的月份执行。"
@@ -858,10 +850,6 @@ return plural;
  "Timers": [
   null,
   "计时器"
- ],
- "Try Restart": [
-  null,
-  "尝试重启"
  ],
  "Trying to synchronize with {{Server}}": [
   null,

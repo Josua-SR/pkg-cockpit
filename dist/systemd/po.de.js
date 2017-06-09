@@ -73,33 +73,33 @@ return plural;
  ],
  "$0 day": [
   "$0 days",
-  "",
-  ""
+  "$0 Tag",
+  "$0 Tage"
  ],
  "$0 hour": [
   "$0 hours",
-  "",
-  ""
+  "$0 Stunde",
+  "$0 Stunden"
  ],
  "$0 minute": [
   "$0 minutes",
-  "",
-  ""
+  "$0 Minute",
+  "$0 Minuten"
  ],
  "$0 month": [
   "$0 months",
-  "",
-  ""
+  "$0 Monat",
+  "$0 Monate"
  ],
  "$0 week": [
   "$0 weeks",
-  "",
-  ""
+  "$0 Woche",
+  "$0 Wochen"
  ],
  "$0 year": [
   "$0 years",
-  "",
-  ""
+  "$0 Jahr",
+  "$0 Jahre"
  ],
  "1 Minute": [
   null,
@@ -115,7 +115,7 @@ return plural;
  ],
  "1 min": [
   null,
-  ""
+  "1 Minute"
  ],
  "1 week": [
   null,
@@ -123,51 +123,51 @@ return plural;
  ],
  "10th": [
   null,
-  ""
+  "10."
  ],
  "11th": [
   null,
-  ""
+  "11."
  ],
  "12th": [
   null,
-  ""
+  "12."
  ],
  "13th": [
   null,
-  ""
+  "13."
  ],
  "14th": [
   null,
-  ""
+  "14."
  ],
  "15th": [
   null,
-  ""
+  "15."
  ],
  "16th": [
   null,
-  ""
+  "16."
  ],
  "17th": [
   null,
-  ""
+  "17."
  ],
  "18th": [
   null,
-  ""
+  "18."
  ],
  "19th": [
   null,
-  ""
+  "19."
  ],
  "1st": [
   null,
-  ""
+  "1."
  ],
  "2 min": [
   null,
-  ""
+  "2 Minuten"
  ],
  "20 Minutes": [
   null,
@@ -175,67 +175,67 @@ return plural;
  ],
  "20th": [
   null,
-  ""
+  "20."
  ],
  "21st": [
   null,
-  ""
+  "21."
  ],
  "22nd": [
   null,
-  ""
+  "22."
  ],
  "23rd": [
   null,
-  ""
+  "23."
  ],
  "24th": [
   null,
-  ""
+  "24."
  ],
  "25th": [
   null,
-  ""
+  "25."
  ],
  "26th": [
   null,
-  ""
+  "26."
  ],
  "27th": [
   null,
-  ""
+  "27."
  ],
  "28th": [
   null,
-  ""
+  "28."
  ],
  "29th": [
   null,
-  ""
+  "29."
  ],
  "2nd": [
   null,
-  ""
+  "2."
  ],
  "3 min": [
   null,
-  ""
+  "3 Minuten"
  ],
  "30th": [
   null,
-  ""
+  "30."
  ],
  "31st": [
   null,
-  ""
+  "31."
  ],
  "3rd": [
   null,
-  ""
+  "3."
  ],
  "4 min": [
   null,
-  ""
+  "4 Minuten"
  ],
  "40 Minutes": [
   null,
@@ -243,7 +243,7 @@ return plural;
  ],
  "4th": [
   null,
-  ""
+  "4."
  ],
  "5 Minutes": [
   null,
@@ -251,7 +251,7 @@ return plural;
  ],
  "5 min": [
   null,
-  ""
+  "5 Minuten"
  ],
  "5 minutes": [
   null,
@@ -259,7 +259,7 @@ return plural;
  ],
  "5th": [
   null,
-  ""
+  "5."
  ],
  "6 hours": [
   null,
@@ -271,19 +271,19 @@ return plural;
  ],
  "6th": [
   null,
-  ""
+  "6."
  ],
  "7th": [
   null,
-  ""
+  "7."
  ],
  "8th": [
   null,
-  ""
+  "8."
  ],
  "9th": [
   null,
-  ""
+  "9."
  ],
  "After": [
   null,
@@ -307,11 +307,11 @@ return plural;
  ],
  "Automatically using NTP": [
   null,
-  ""
+  "Automatisch (NTP)"
  ],
  "Automatically using specific NTP servers": [
   null,
-  ""
+  "Automatisch (spezifische NTP-Server)"
  ],
  "CPU": [
   null,
@@ -319,7 +319,7 @@ return plural;
  ],
  "Cached": [
   null,
-  ""
+  "Zwischengespeichert"
  ],
  "Cancel": [
   null,
@@ -327,7 +327,7 @@ return plural;
  ],
  "Cannot schedule event in the past": [
   null,
-  ""
+  "Vorgang kann nicht für die Vergangenheit geplant werden"
  ],
  "Change": [
   null,
@@ -335,15 +335,15 @@ return plural;
  ],
  "Change Host Name": [
   null,
-  ""
+  "Hostnamen ändern"
  ],
  "Change System Time": [
   null,
-  ""
+  "Systemzeit ändern"
  ],
  "Close": [
   null,
-  "Schliessen"
+  "Schließen"
  ],
  "Command": [
   null,
@@ -484,10 +484,6 @@ return plural;
  "Invalid time zone": [
   null,
   ""
- ],
- "Isolate": [
-  null,
-  "Isolieren"
  ],
  "Journal": [
   null,
@@ -677,33 +673,25 @@ return plural;
   null,
   "Neu Laden"
  ],
- "Reload or Restart": [
-  null,
-  "Neu Laden oder Neu Starten"
- ],
- "Reload or Try Restart": [
-  null,
-  "Neu Laden oder Neustart Versuchen"
- ],
  "Repeat Daily": [
   null,
-  ""
+  "Täglich wiederholen"
  ],
  "Repeat Hourly": [
   null,
-  ""
+  "Stündlich wiederholen"
  ],
  "Repeat Monthly": [
   null,
-  ""
+  "Monatlich wiederholen"
  ],
  "Repeat Weekly": [
   null,
-  ""
+  "Wöchentlich wiederholen"
  ],
  "Repeat Yearly": [
   null,
-  ""
+  "Jährlich wiederholen"
  ],
  "Reset": [
   null,
@@ -719,15 +707,15 @@ return plural;
  ],
  "Saturday": [
   null,
-  ""
+  "Samstag"
  ],
  "Save": [
   null,
-  ""
+  "Speichern"
  ],
  "Seconds": [
   null,
-  ""
+  "Sekunden"
  ],
  "Secure Shell Keys": [
   null,
@@ -739,11 +727,11 @@ return plural;
  ],
  "Service name": [
   null,
-  "Gerätedatei"
+  "Dienstname"
  ],
  "Services": [
   null,
-  ""
+  "Dienste"
  ],
  "Set Host name": [
   null,
@@ -751,7 +739,7 @@ return plural;
  ],
  "Set Time": [
   null,
-  ""
+  "Zeit setzen"
  ],
  "Show fingerprints": [
   null,
@@ -779,7 +767,7 @@ return plural;
  ],
  "State": [
   null,
-  ""
+  "Status"
  ],
  "Static": [
   null,
@@ -795,23 +783,23 @@ return plural;
  ],
  "Sunday": [
   null,
-  ""
+  "Sonntag"
  ],
  "Swap Used": [
   null,
-  ""
+  "Benutzter Auslagerungsspeicher"
  ],
  "Synchronized": [
   null,
-  ""
+  "Synchronisiert"
  ],
  "Synchronized with {{Server}}": [
   null,
-  ""
+  "Synchronisiert mit {{Server}}"
  ],
  "System": [
   null,
-  ""
+  "System"
  ],
  "System Services": [
   null,
@@ -819,11 +807,11 @@ return plural;
  ],
  "System Time": [
   null,
-  ""
+  "Systemzeit"
  ],
  "Targets": [
   null,
-  ""
+  "Ziele"
  ],
  "Terminal": [
   null,
@@ -831,19 +819,23 @@ return plural;
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,
-  "Der Benutzer <b>$0</b> hat keine Rechte, um Server zu administrieren"
+  "Der Benutzer <b>$0</b> hat keine Rechte zum Anlegen von Timern"
  ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
+  null,
+  "Der Benutzer <b>$0</b> hat keine Rechte, Hostnamen zu verändern"
+ ],
+ "The user <b>$0</b> is not permitted to shutdown or restart this server": [
   null,
   ""
  ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
-  ""
+  "Dieser Tag ist nicht in allen Monaten vorhanden.<br> Die Aktion wird nur in Monaten mit 31 Tagen ausgeführt."
  ],
  "This field cannot be empty.": [
   null,
-  "Name darf nicht leer sein."
+  "Dieses Feld darf nicht leer sein."
  ],
  "This unit is an instance of the $0 template.": [
   null,
@@ -855,27 +847,23 @@ return plural;
  ],
  "Thursday": [
   null,
-  ""
+  "Donnerstag"
  ],
  "Time Zone": [
   null,
-  ""
+  "Zeitzone"
  ],
  "Timers": [
   null,
   ""
  ],
- "Try Restart": [
-  null,
-  "Neustart Versuchen"
- ],
  "Trying to synchronize with {{Server}}": [
   null,
-  ""
+  "Versuche mit  {{Server}} zu synchronisieren"
  ],
  "Tuesday": [
   null,
-  ""
+  "Dienstag"
  ],
  "Unmask": [
   null,
@@ -895,35 +883,35 @@ return plural;
  ],
  "Warnings": [
   null,
-  ""
+  "Warnungen"
  ],
  "Wednesday": [
   null,
-  ""
+  "Mittwoch"
  ],
  "Weeks": [
   null,
-  ""
+  "Wochen"
  ],
  "[$0 bytes of binary data]": [
   null,
-  ""
+  "[$0 bytes Binäredaten]"
  ],
  "[binary data]": [
   null,
-  ""
+  "[Binärdaten]"
  ],
  "[no data]": [
   null,
-  ""
+  "[keine Daten]"
  ],
  "failed to list ssh host keys: $0": [
   null,
-  ""
+  "Kann SSH-Hostschlüssel nicht anzeigen: $0"
  ],
  "unknown": [
   null,
-  ""
+  "unbekannt"
  ],
  "page-title\u0004CPU Status": [
   null,

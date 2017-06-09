@@ -69,33 +69,33 @@ return plural;
  },
  "$0 day": [
   "$0 days",
-  "",
-  ""
+  "$0 Tag",
+  "$0 Tage"
  ],
  "$0 hour": [
   "$0 hours",
-  "",
-  ""
+  "$0 Stunde",
+  "$0 Stunden"
  ],
  "$0 minute": [
   "$0 minutes",
-  "",
-  ""
+  "$0 Minute",
+  "$0 Minuten"
  ],
  "$0 month": [
   "$0 months",
-  "",
-  ""
+  "$0 Monat",
+  "$0 Monate"
  ],
  "$0 week": [
   "$0 weeks",
-  "",
-  ""
+  "$0 Woche",
+  "$0 Wochen"
  ],
  "$0 year": [
   "$0 years",
-  "",
-  ""
+  "$0 Jahr",
+  "$0 Jahre"
  ],
  "$mtu": [
   null,
@@ -127,7 +127,7 @@ return plural;
  ],
  "802.3ad LACP": [
   null,
-  "802.3ad"
+  "802.3ad LACP"
  ],
  "ARP": [
   null,
@@ -139,7 +139,7 @@ return plural;
  ],
  "ARP Ping": [
   null,
-  "ARP-Überwachung"
+  "ARP-Ping"
  ],
  "Active": [
   null,
@@ -159,7 +159,7 @@ return plural;
  ],
  "Add $0": [
   null,
-  ""
+  "$0 hinzufügen"
  ],
  "Add Bond": [
   null,
@@ -171,7 +171,7 @@ return plural;
  ],
  "Add Team": [
   null,
-  ""
+  "Team hinzufügen"
  ],
  "Add VLAN": [
   null,
@@ -179,7 +179,7 @@ return plural;
  ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Das Hinzufügen von <b>$0</b> wird die Verbindung zum Server unterbrechen und damit den Zugriff auf die Benutzeroberfläche unmöglich machen."
  ],
  "Additional DNS $val": [
   null,
@@ -195,7 +195,7 @@ return plural;
  ],
  "Address $val": [
   null,
-  ""
+  "Adresse $val"
  ],
  "Addresses": [
   null,
@@ -255,7 +255,7 @@ return plural;
  ],
  "Broken configuration": [
   null,
-  "Unbekannte Konfiguration"
+  "Fehlerhafte Konfiguration"
  ],
  "Cancel": [
   null,
@@ -271,7 +271,7 @@ return plural;
  ],
  "Changing the settings will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Das Ändern der Einstellungen wird die Verbindung zum Server unterbrechen und damit den Zugriff auf die Benutzeroberfläche unmöglich machen."
  ],
  "Checking IP": [
   null,
@@ -279,7 +279,7 @@ return plural;
  ],
  "Close": [
   null,
-  "Schliessen"
+  "Schließen"
  ],
  "Configure": [
   null,
@@ -307,7 +307,7 @@ return plural;
  ],
  "Creating this VLAN will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Das Erzeugen dieses VLANs wird die Verbindung zum Server unterbrechen und damit den Zugriff auf die Benutzeroberfläche unmöglich machen."
  ],
  "Creating this bond will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -315,7 +315,7 @@ return plural;
  ],
  "Creating this bridge will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Das Erzeugen dieser Netzwerkbrücke wird die Verbindung zum Server unterbrechen und damit den Zugriff auf die Benutzeroberfläche unmöglich machen."
  ],
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -327,7 +327,7 @@ return plural;
  ],
  "DNS $val": [
   null,
-  ""
+  "DNS $val"
  ],
  "DNS Search Domains": [
   null,
@@ -651,7 +651,7 @@ return plural;
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Das Entfernen von <b>$0</b> wird die Verbindung zum Server unterbrechen und damit den Zugriff auf die Benutzeroberfläche unmöglich machen."
  ],
  "Restoring connection": [
   null,
@@ -707,7 +707,7 @@ return plural;
  ],
  "Stable": [
   null,
-  "Einschalten"
+  "Stabil"
  ],
  "Status": [
   null,
@@ -719,23 +719,23 @@ return plural;
  ],
  "Switch off $0": [
   null,
-  ""
+  "$0 ausschalten"
  ],
  "Switch on $0": [
   null,
-  ""
+  "$0 anschalten"
  ],
  "Switching off <b>$0</b>  will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Das Ausschalten von <b>$0</b> wird die Verbindung zum Server unterbrechen und damit den Zugriff auf die Benutzeroberfläche unmöglich machen."
  ],
  "Switching off <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Das Ausschalten von <b>$0</b> wird die Verbindung zum Server unterbrechen und damit den Zugriff auf die Benutzeroberfläche unmöglich machen."
  ],
  "Switching on <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Das Einschalten von <b>$0</b> wird die Verbindung zum Server unterbrechen und damit den Zugriff auf die Benutzeroberfläche unmöglich machen."
  ],
  "Team": [
   null,
@@ -755,7 +755,7 @@ return plural;
  ],
  "Testing connection": [
   null,
-  ""
+  "Prüfe Verbindung"
  ],
  "The user <b>$0</b> is not permitted to modify network settings": [
   null,
@@ -763,7 +763,7 @@ return plural;
  ],
  "This device cannot be managed here.": [
   null,
-  ""
+  "Dieses Gerät kann hier nicht verwaltet werden."
  ],
  "Unexpected error": [
   null,
@@ -783,7 +783,7 @@ return plural;
  ],
  "Unmanaged Interfaces": [
   null,
-  "Schnittstellen"
+  "Unverwaltete Schnittstellen"
  ],
  "VLAN": [
   null,
@@ -811,15 +811,15 @@ return plural;
  ],
  "[$0 bytes of binary data]": [
   null,
-  ""
+  "[$0 bytes Binäredaten]"
  ],
  "[binary data]": [
   null,
-  ""
+  "[Binärdaten]"
  ],
  "[no data]": [
   null,
-  ""
+  "[keine Daten]"
  ],
  "page-title\u0004Networking": [
   null,

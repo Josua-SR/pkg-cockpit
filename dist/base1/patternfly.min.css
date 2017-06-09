@@ -3345,4 +3345,5 @@ to{transform:rotate(359deg)}
 .nav-pf-persistent-secondary .secondary-collapse-toggle-pf.collapsed:before{content:'\f18e'}
 .show-mobile-nav .persistent-secondary:hover .nav-pf-persistent-secondary{display:none}
 .show-mobile-nav .persistent-secondary.mobile-nav-item-pf:hover .nav-pf-persistent-secondary{display:block}
-.force-hide-secondary-nav-pf .persistent-secondary .nav-pf-persistent-secondary{display:none!important}/*# sourceMappingURL=patternfly.min.css.map */
+.force-hide-secondary-nav-pf .persistent-secondary .nav-pf-persistent-secondary{display:none!important}
+/*# sourceMappingURL=patternfly.min.css.map */

@@ -69,7 +69,7 @@ return plural;
  },
  "A compatible version of Cockpit is not installed on {{#strong}}{{host}}{{/strong}}.": [
   null,
-  "Una versión compatible de Cockpit no está instalada en {{#strong}}{{host}}{{/strong}}."
+  "No se ha instalado una versión compatible de Cockpit en {{#strong}}{{host}}{{/strong}}."
  ],
  "About Cockpit": [
   null,
@@ -79,13 +79,17 @@ return plural;
   null,
   "Configuración de la cuenta"
  ],
+ "Active Pages": [
+  null,
+  ""
+ ],
  "Add": [
   null,
-  "Agregar"
+  "Añadir"
  ],
  "Add Machine to Dashboard": [
   null,
-  "Agregar Máquina al Tablero de Mandos"
+  "Añadir máquina al tablero"
  ],
  "Address": [
   null,
@@ -127,45 +131,49 @@ return plural;
   null,
   "Cerrar"
  ],
+ "Close Selected Pages": [
+  null,
+  ""
+ ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
   "Cockpit no pudo contactar al servidor $0. Asegúrese que el servidor esta corriendo ssh en el puerto $1, o especifique otro puerto en la dirección."
  ],
  "Cockpit had an unexpected internal error. <br/><br/>You can try restarting Cockpit by pressing refresh in your browser. The javascript console contains details about this error (<b>Ctrl-Shift-J</b> in most browsers).": [
   null,
-  ""
+  "Cockpit ha experimentado un error interno inesperado. <br/><br/>Puede intentar reiniciarlo si utiliza la opción Actualizar del navegador. La consola de JavaScript contiene detalles del error (<b>Ctrl + Mayús. + J</b> en la mayoría de los navegadores)."
  ],
  "Cockpit is an interactive Linux server admin interface.": [
   null,
-  ""
+  "Cockpit es una interfaz interactiva de gestión de servidores Linux."
  ],
  "Cockpit is an interactive Linux server admin interface. ": [
   null,
-  ""
+  "Cockpit es una interfaz interactiva de gestión de servidores Linux. "
  ],
  "Cockpit is not installed": [
   null,
-  "Cockpit no esta instalado"
+  "Cockpit no está instalado"
  ],
  "Cockpit was unable to contact {{#strong}}{{host}}{{/strong}}.": [
   null,
-  "Cockpit no fue capaz de contactar {{#strong}}{{host}}{{/strong}}."
+  "Cockpit no pudo ponerse en contacto con {{#strong}}{{host}}{{/strong}}."
  ],
  "Cockpit was unable to log in to {{#strong}}{{host}}{{/strong}}. {{#can_sync}}You may want to try to {{#sync_link}}synchronize users{{/sync_link}}.{{/can_sync}} For more authentication options and troubleshooting support please upgrade cockpit-ws to a newer version.": [
   null,
-  ""
+  "Cockpit no pudo ingresar en {{#strong}}{{host}}{{/strong}}. {{#can_sync}}Puede que desee probar a {{#sync_link}}sincronizar usuarios{{/sync_link}}.{{/can_sync}} Para obtener más opciones de autenticación y asistencia para solucionar problemas, actualice cockpit-ws a una versión más reciente."
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}.": [
   null,
-  "Cockpit fue incapaz de iniciar session en {{#strong}}{{host}}{{/strong}}."
+  "Cockpit no pudo ingresar en {{#strong}}{{host}}{{/strong}}."
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. To use this machine with cockpit you will need to enable one of the following authentication methods in the sshd config on {{#strong}}{{host}}{{/strong}}:": [
   null,
-  ""
+  "Cockpit no pudo ingresar en {{#strong}}{{host}}{{/strong}}. Para usar está máquina con Cockpit, necesitará activar uno de los métodos de autenticación siguientes en la configuración de sshd {{#strong}}{{host}}{{/strong}}:"
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. You can change your authentication credentials below. {{#can_sync}}You may prefer to {{#sync_link}}synchronize accounts and passwords{{/sync_link}}.{{/can_sync}}": [
   null,
-  ""
+  "Cockpit no pudo ingresar en {{#strong}}{{host}}{{/strong}}. Puede cambiar sus credenciales de autenticación más abajo. {{#can_sync}}Puede que desee {{#sync_link}}sincronizar cuentas y contraseñas{{/sync_link}}.{{/can_sync}}"
  ],
  "Color": [
   null,
@@ -217,7 +225,7 @@ return plural;
  ],
  "Entering a different password here means you will need to retype it every time you reconnect to this machine": [
   null,
-  ""
+  "Introducir una contraseña diferente aquí significa que necesitará volver a teclear cada vez que vuelva a esa máquina"
  ],
  "Error loading users: {{perm_failed}}": [
   null,
@@ -241,7 +249,7 @@ return plural;
  ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "Con el objetivo de sincronizar usuarios, necesita acceder a {{#strong}}{{host}}{{/strong}}."
  ],
  "Incorrect Host Key": [
   null,
@@ -265,9 +273,17 @@ return plural;
  ],
  "Leave blank to connect to this machine as the currently logged in user{{#user}} ({{user}}){{/user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
-  ""
+  "Déjelo vacío para conectar con este equipo como el usuario cuya sesión está iniciada actualmente{{#user}} ({{user}}){{/user}}. Si proporciona un nombre de usuario distinto, siempre se utilizará ese usuario cuando se conecte con esta máquina."
  ],
  "Licensed under:": [
+  null,
+  "Disponible según los términos de:"
+ ],
+ "Lock to prevent privileged tasks": [
+  null,
+  ""
+ ],
+ "Locked": [
   null,
   ""
  ],
@@ -277,7 +293,7 @@ return plural;
  ],
  "Log in again": [
   null,
-  ""
+  "Ingresar de nuevo"
  ],
  "Log in to {{host}}": [
   null,
@@ -317,7 +333,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "Aceptar"
  ],
  "Old Password": [
   null,
@@ -343,13 +359,21 @@ return plural;
   null,
   "Contraseña no aceptada"
  ],
+ "Password not usable for privileged tasks or to connect to other machines": [
+  null,
+  ""
+ ],
  "Port": [
   null,
   "Puerto"
  ],
- "Project website": [
+ "Privileged tasks not available": [
   null,
   ""
+ ],
+ "Project website": [
+  null,
+  "Sitio web del proyecto"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -366,6 +390,10 @@ return plural;
  "Reconnect": [
   null,
   "Reconectarse"
+ ],
+ "Reuse my password for privileged tasks and to connect to other machines": [
+  null,
+  ""
  ],
  "Select": [
   null,
@@ -403,6 +431,10 @@ return plural;
   null,
   "Las contraseñas no coinciden."
  ],
+ "There are currently no active pages": [
+  null,
+  ""
+ ],
  "This machine has already been added.": [
   null,
   "Esta maquina ya ha sido agregada"
@@ -413,15 +445,11 @@ return plural;
  ],
  "Tip: Make your key password match your login password to automatically authenticate against other systems.": [
   null,
-  "Use la siguiente llave para autenticarse en otros sistemas"
+  "Consejo: haga que coincidan su contraseña de clave y su contraseña de acceso para efectuar autenticaciones automáticamente en otros sistemas."
  ],
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
   null,
   "Para tratar un puerto diferente usted va a necesitar actualizar cockpit-ws a una nueva versión."
- ],
- "Tools": [
-  null,
-  ""
  ],
  "Troubleshoot": [
   null,
@@ -451,13 +479,13 @@ return plural;
   null,
   "Llave de Desbloqueo"
  ],
+ "Unlocked": [
+  null,
+  ""
+ ],
  "Update": [
   null,
   "Actualizar"
- ],
- "Use my password for privileged tasks and to connect to other machines": [
-  null,
-  "Utiliza mi contraseña para tareas privilegiadas y para conectarse a otras máquinas"
  ],
  "Use the following keys to authenticate against other systems": [
   null,
@@ -481,6 +509,10 @@ return plural;
  ],
  "You can remove the previously stored key by running the following command": [
   null,
-  "Usted puede remover la llave almacenada previamente al correr el siguiente comando"
+  "Puede quitar la clave almacenada anteriormente si ejecuta esta orden"
+ ],
+ "active": [
+  null,
+  ""
  ]
 }));

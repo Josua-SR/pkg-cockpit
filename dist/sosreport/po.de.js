@@ -73,7 +73,7 @@ return plural;
  ],
  "Close": [
   null,
-  "Schliessen"
+  "Schließen"
  ],
  "Create diagnostic report": [
   null,
@@ -81,7 +81,7 @@ return plural;
  ],
  "Create report": [
   null,
-  ""
+  "Report erstellen"
  ],
  "Diagnostic reports": [
   null,
@@ -105,7 +105,7 @@ return plural;
  ],
  "The collected information will be stored locally on the system.": [
   null,
-  ""
+  "Die gesammelten Informationen werden lokal auf dem System gespeichert."
  ],
  "The generated archive contains data considered sensitive and its content should be reviewed by the originating organization before being passed to any third party.": [
   null,

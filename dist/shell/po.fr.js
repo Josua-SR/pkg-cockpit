@@ -69,7 +69,7 @@ return plural;
  },
  "A compatible version of Cockpit is not installed on {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "Une version compatible de Cockpit n''est pas installée sur {{#strong}}{{host}}{{/strong}}."
  ],
  "About Cockpit": [
   null,
@@ -79,13 +79,17 @@ return plural;
   null,
   "Paramètres de compte"
  ],
+ "Active Pages": [
+  null,
+  ""
+ ],
  "Add": [
   null,
   "Ajouter"
  ],
  "Add Machine to Dashboard": [
   null,
-  ""
+  "Ajouter une machine au tableau de bord"
  ],
  "Address": [
   null,
@@ -126,6 +130,10 @@ return plural;
  "Close": [
   null,
   "Fermer"
+ ],
+ "Close Selected Pages": [
+  null,
+  ""
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
@@ -271,6 +279,14 @@ return plural;
   null,
   ""
  ],
+ "Lock to prevent privileged tasks": [
+  null,
+  ""
+ ],
+ "Locked": [
+  null,
+  ""
+ ],
  "Log In": [
   null,
   ""
@@ -343,7 +359,15 @@ return plural;
   null,
   "Mot de passe refusé"
  ],
+ "Password not usable for privileged tasks or to connect to other machines": [
+  null,
+  ""
+ ],
  "Port": [
+  null,
+  ""
+ ],
+ "Privileged tasks not available": [
   null,
   ""
  ],
@@ -366,6 +390,10 @@ return plural;
  "Reconnect": [
   null,
   "Reconnecter"
+ ],
+ "Reuse my password for privileged tasks and to connect to other machines": [
+  null,
+  ""
  ],
  "Select": [
   null,
@@ -403,6 +431,10 @@ return plural;
   null,
   "Les mots de passe ne correspondent pas."
  ],
+ "There are currently no active pages": [
+  null,
+  ""
+ ],
  "This machine has already been added.": [
   null,
   "Cette machine a été déjà été ajoutée."
@@ -416,10 +448,6 @@ return plural;
   ""
  ],
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
-  null,
-  ""
- ],
- "Tools": [
   null,
   ""
  ],
@@ -451,11 +479,11 @@ return plural;
   null,
   ""
  ],
- "Update": [
+ "Unlocked": [
   null,
   ""
  ],
- "Use my password for privileged tasks and to connect to other machines": [
+ "Update": [
   null,
   ""
  ],
@@ -480,6 +508,10 @@ return plural;
   ""
  ],
  "You can remove the previously stored key by running the following command": [
+  null,
+  ""
+ ],
+ "active": [
   null,
   ""
  ]

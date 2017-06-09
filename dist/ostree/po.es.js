@@ -81,15 +81,15 @@ return plural;
  ],
  "- Add New Repository": [
   null,
-  "Repositorio"
+  "- Añadir un repositorio nuevo"
  ],
  "Add": [
   null,
-  "Agregar"
+  "Añadir"
  ],
  "Add Another Key": [
   null,
-  ""
+  "Añadir otra clave"
  ],
  "Additions": [
   null,
@@ -105,7 +105,7 @@ return plural;
  ],
  "Begins with '-----BEGIN PGP PUBLIC KEY BLOCK-----'": [
   null,
-  ""
+  "Empieza con '-----BEGIN PGP PUBLIC KEY BLOCK-----'"
  ],
  "Cancel": [
   null,
@@ -113,11 +113,11 @@ return plural;
  ],
  "Change Repository": [
   null,
-  "Repositorio"
+  "Cambiar Repositorio"
  ],
  "Check for Updates": [
   null,
-  ""
+  "Comprobacióin de Actualizaciones"
  ],
  "Checking for updates": [
   null,
@@ -125,15 +125,15 @@ return plural;
  ],
  "Connecting to OSTree": [
   null,
-  ""
+  "Conectando al Árbol de SO"
  ],
  "Couldn't load settings for '$0': $1": [
   null,
-  "No se pudo cargar los datos del usuario"
+  "No podría cargar ajustes para '$0': $1"
  ],
  "Currently using:": [
   null,
-  ""
+  "Usando actualmente:"
  ],
  "Default": [
   null,
@@ -145,15 +145,15 @@ return plural;
  ],
  "Downgrades": [
   null,
-  ""
+  "Rebajas"
  ],
  "Error loading remotes: $0": [
   null,
-  "Error al guardar llaves autorizadas:"
+  "Error cargando remotos: $0"
  ],
  "Expired Signature": [
   null,
-  ""
+  "Firma caducada"
  ],
  "Failed": [
   null,
@@ -161,11 +161,11 @@ return plural;
  ],
  "Good Signature": [
   null,
-  ""
+  "Buena Firma"
  ],
  "Invalid Signature": [
   null,
-  ""
+  "La firma no es válida"
  ],
  "Name": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "No configuration data found": [
   null,
-  "Configuración desconocida"
+  "No se encontró ningún dato de configuración"
  ],
  "No signature avaliable": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "Origin": [
   null,
-  ""
+  "Origen"
  ],
  "Packages": [
   null,
@@ -217,7 +217,7 @@ return plural;
  ],
  "Please provide a valid URL": [
   null,
-  "Por favor provea un nombre valido"
+  "Proporcione un URL válido"
  ],
  "Please provide a valid name": [
   null,
@@ -225,7 +225,7 @@ return plural;
  ],
  "Rebase and Reboot": [
   null,
-  ""
+  "Reorganizar y reiniciar"
  ],
  "Receiving delta parts": [
   null,
@@ -253,7 +253,7 @@ return plural;
  ],
  "Roll Back and Reboot": [
   null,
-  ""
+  "Revertir y reiniciar"
  ],
  "Running": [
   null,

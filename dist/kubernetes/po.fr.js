@@ -69,29 +69,29 @@ return plural;
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
-  ""
+  " 1\"Désirez-vous supprimer les noeuds suivants?"
  ],
  "$0% Free": [
   "$0% Free",
-  "",
-  ""
+  "$0% disponible",
+  "$0% disponible"
  ],
  "$0% Used": [
   "$0% Used",
-  "",
-  ""
+  "$0% utilisé",
+  "$0% utilisé"
  ],
  "AWS Elastic Block Store": [
   null,
-  ""
+  "Elastic Block Store AWS"
  ],
  "Access Modes": [
   null,
-  ""
+  "Modes d'accès"
  ],
  "Access Policy": [
   null,
-  ""
+  "Politique d'accès"
  ],
  "Actual": [
   null,
@@ -103,15 +103,15 @@ return plural;
  ],
  "Add Cluster Node": [
   null,
-  ""
+  "Ajouter une noeud de cluster"
  ],
  "Add Group": [
   null,
-  ""
+  "Ajouter un group"
  ],
  "Add Kubernetes Node": [
   null,
-  ""
+  "Ajouter un noeud Kubernetes"
  ],
  "Add Member": [
   null,

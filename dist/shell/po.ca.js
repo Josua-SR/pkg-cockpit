@@ -79,6 +79,10 @@ return plural;
   null,
   "Paràmetres dels comptes"
  ],
+ "Active Pages": [
+  null,
+  ""
+ ],
  "Add": [
   null,
   "Afegeix"
@@ -126,6 +130,10 @@ return plural;
  "Close": [
   null,
   "Tanca"
+ ],
+ "Close Selected Pages": [
+  null,
+  ""
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
@@ -271,6 +279,14 @@ return plural;
   null,
   ""
  ],
+ "Lock to prevent privileged tasks": [
+  null,
+  ""
+ ],
+ "Locked": [
+  null,
+  ""
+ ],
  "Log In": [
   null,
   "Inici de la sessió"
@@ -305,7 +321,7 @@ return plural;
  ],
  "No such file or directory": [
   null,
-  "El fitxer o directori no existeix"
+  "No existeix el fitxer o el directori"
  ],
  "Not a valid private key": [
   null,
@@ -343,9 +359,17 @@ return plural;
   null,
   "Contrasenya no acceptada"
  ],
+ "Password not usable for privileged tasks or to connect to other machines": [
+  null,
+  ""
+ ],
  "Port": [
   null,
   "Port"
+ ],
+ "Privileged tasks not available": [
+  null,
+  ""
  ],
  "Project website": [
   null,
@@ -366,6 +390,10 @@ return plural;
  "Reconnect": [
   null,
   "Torna a connectar"
+ ],
+ "Reuse my password for privileged tasks and to connect to other machines": [
+  null,
+  ""
  ],
  "Select": [
   null,
@@ -403,6 +431,10 @@ return plural;
   null,
   "Les contrasenyes no coincideixen."
  ],
+ "There are currently no active pages": [
+  null,
+  ""
+ ],
  "This machine has already been added.": [
   null,
   "La màquina ja ha estat afegida."
@@ -416,10 +448,6 @@ return plural;
   ""
  ],
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
-  null,
-  ""
- ],
- "Tools": [
   null,
   ""
  ],
@@ -451,13 +479,13 @@ return plural;
   null,
   ""
  ],
+ "Unlocked": [
+  null,
+  ""
+ ],
  "Update": [
   null,
   "Actualitza"
- ],
- "Use my password for privileged tasks and to connect to other machines": [
-  null,
-  ""
  ],
  "Use the following keys to authenticate against other systems": [
   null,
@@ -482,5 +510,9 @@ return plural;
  "You can remove the previously stored key by running the following command": [
   null,
   "Podeu suprimir la clau prèviament emmagatzemada amb l'execució de la següent ordre"
+ ],
+ "active": [
+  null,
+  "actiu"
  ]
 }));

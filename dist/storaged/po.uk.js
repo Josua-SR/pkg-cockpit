@@ -71,17 +71,35 @@ return plural;
   null,
   "$0, блоковий пристрій"
  ],
+ "$0 Chunk Size": [
+  null,
+  "Розмір фрагмента $0"
+ ],
+ "$0 Disks": [
+  null,
+  "Диски $0"
+ ],
  "$0 day": [
   "$0 days",
   "$0 день",
   "$0 дні",
   "$0 днів"
  ],
+ "$0 disk is missing": [
+  "$0 disks are missing",
+  "Не вистачає $0 диска",
+  "Не вистачає $0 дисків",
+  "Не вистачає $0 дисків"
+ ],
  "$0 hour": [
   "$0 hours",
   "$0 година",
   "$0 години",
   "$0 годин"
+ ],
+ "$0 is in active use": [
+  null,
+  "$0 активно використовується"
  ],
  "$0 minute": [
   "$0 minutes",
@@ -111,9 +129,17 @@ return plural;
   "$0 роки",
   "$0 років"
  ],
+ "$0, $1 free": [
+  null,
+  "$0, вільно $1"
+ ],
  "$name (from $host)": [
   null,
   "$name (з $host)"
+ ],
+ "${size} ${desc}": [
+  null,
+  "${size} ${desc}"
  ],
  "(default)": [
   null,
@@ -199,6 +225,10 @@ return plural;
   null,
   "<span>Розділ $0</span>"
  ],
+ "A spare disk needs to be added first before this disk can be removed.": [
+  null,
+  "Перш ніж вилучати цей диск, слід додати резервний диск."
+ ],
  "Activate": [
   null,
   "Задіяти"
@@ -210,6 +240,10 @@ return plural;
  "Add": [
   null,
   "Додати"
+ ],
+ "Add Disks": [
+  null,
+  "Додати диски"
  ],
  "Add iSCSI Portal": [
   null,
@@ -250,6 +284,10 @@ return plural;
  "Block device for filesystems": [
   null,
   "Блоковий пристрій для файлових систем"
+ ],
+ "Blocked": [
+  null,
+  "Заблоковано"
  ],
  "Can't delete while unlocked": [
   null,
@@ -407,6 +445,10 @@ return plural;
   null,
   "Вилучаємо $target"
  ],
+ "Deleting a RAID device will erase all data on it.": [
+  null,
+  "Вилучення пристрою RAID призведе до витирання з нього усіх даних."
+ ],
  "Deleting a logical volume will delete all data in it.": [
   null,
   "Вилучення логічного тому призведе до витирання усіх даних, що на ньому зберігаються."
@@ -415,21 +457,13 @@ return plural;
   null,
   "Вилучення розділу призведе до вилучення усіх даних, що на ньому зберігаються."
  ],
+ "Deleting a volume group will erase all data on it.": [
+  null,
+  "Вилучення групи томів призведе до витирання усіх даних, що у ній зберігаються."
+ ],
  "Deleting volume group $target": [
   null,
   "Вилучаємо групу томів $target"
- ],
- "Device $0 is a member of RAID Array $1": [
-  null,
-  "Пристрій $0 є елементом масиву RAID $1"
- ],
- "Device $0 is a physical volume of $1": [
-  null,
-  "Пристрій $0 є фізичним томом $1"
- ],
- "Device $0 is mounted on $1": [
-  null,
-  "Пристрій $0 змонтовано до $1"
  ],
  "Device is read-only": [
   null,
@@ -467,9 +501,21 @@ return plural;
   null,
   "Спорожняємо $target"
  ],
+ "Encrypted $0": [
+  null,
+  "Зашифрований $0"
+ ],
  "Encrypted EXT4 (LUKS)": [
   null,
   "Шифрована EXT4 (LUKS)"
+ ],
+ "Encrypted Logical Volume of $0": [
+  null,
+  "Зашифрований логічний том $0"
+ ],
+ "Encrypted Partition of $0": [
+  null,
+  "Шифрований розділ $0"
  ],
  "Encrypted XFS (LUKS)": [
   null,
@@ -498,6 +544,10 @@ return plural;
  "Extended Partition": [
   null,
   "Розширений розділ"
+ ],
+ "FAILED": [
+  null,
+  "ПОМИЛКА"
  ],
  "Filesystem": [
   null,
@@ -551,6 +601,10 @@ return plural;
   null,
   "Перейти зараз"
  ],
+ "In Sync": [
+  null,
+  "Синхронізовано"
+ ],
  "Inactive volume": [
   null,
   "Неактивний том"
@@ -578,6 +632,10 @@ return plural;
  "Logical Volume (Snapshot)": [
   null,
   "Логічний том (знімок)"
+ ],
+ "Logical Volume of $0": [
+  null,
+  "Логічний том $0"
  ],
  "Marking $target as faulty": [
   null,
@@ -659,6 +717,10 @@ return plural;
   null,
   "Немає логічних томів"
  ],
+ "No disks are available.": [
+  null,
+  "Немає доступних дисків."
+ ],
  "No drives attached": [
   null,
   "Не долучено жодного диска"
@@ -687,6 +749,14 @@ return plural;
   null,
   "Груп томів не створено"
  ],
+ "Not found": [
+  null,
+  "Не знайдено"
+ ],
+ "Not running": [
+  null,
+  "Зупинено"
+ ],
  "Off": [
   null,
   "Вимкнено"
@@ -714,6 +784,10 @@ return plural;
  "Partition": [
   null,
   "Розділ"
+ ],
+ "Partition of $0": [
+  null,
+  "Розділ $0"
  ],
  "Partitioning": [
   null,
@@ -775,25 +849,53 @@ return plural;
   null,
   "Призначення"
  ],
+ "RAID ($0)": [
+  null,
+  "RAID ($0)"
+ ],
+ "RAID 0": [
+  null,
+  "RAID 0"
+ ],
  "RAID 0 (Stripe)": [
   null,
   "RAID 0 (Стрічка)"
+ ],
+ "RAID 1": [
+  null,
+  "RAID 1"
  ],
  "RAID 1 (Mirror)": [
   null,
   "RAID 1 (Дзеркало)"
  ],
+ "RAID 10": [
+  null,
+  "RAID 10"
+ ],
  "RAID 10 (Stripe of Mirrors)": [
   null,
   "RAID 10 (Стрічка дзеркал)"
+ ],
+ "RAID 4": [
+  null,
+  "RAID 4"
  ],
  "RAID 4 (Dedicated Parity)": [
   null,
   "RAID 4 (Пов’язана парність)"
  ],
+ "RAID 5": [
+  null,
+  "RAID 5"
+ ],
  "RAID 5 (Distributed Parity)": [
   null,
   "RAID 5 (Розподілена парність)"
+ ],
+ "RAID 6": [
+  null,
+  "RAID 6"
  ],
  "RAID 6 (Double Distributed Parity)": [
   null,
@@ -827,6 +929,10 @@ return plural;
   null,
   "Перезавантажити"
  ],
+ "Recovering": [
+  null,
+  "Відновлюємо"
+ ],
  "Recovering RAID Device $target": [
   null,
   "Відновлюємо пристрій RAID $target"
@@ -847,6 +953,10 @@ return plural;
   null,
   "Перейменувати логічний том"
  ],
+ "Rename Volume Group": [
+  null,
+  "Перейменувати групу томів"
+ ],
  "Renaming $target": [
   null,
   "Перейменовуємо $target"
@@ -866,6 +976,10 @@ return plural;
  "Resizing $target": [
   null,
   "Зміна розміру $target"
+ ],
+ "Running": [
+  null,
+  "Працює"
  ],
  "SMART self-test of $target": [
   null,
@@ -907,6 +1021,10 @@ return plural;
   null,
   "Розмір має бути числом"
  ],
+ "Spare": [
+  null,
+  "Запас"
+ ],
  "Start": [
   null,
   "Почати"
@@ -914,6 +1032,10 @@ return plural;
  "Start Multipath": [
   null,
   "Запустити Multipath"
+ ],
+ "Start Scrubbing": [
+  null,
+  "Почати витирання"
  ],
  "Starting RAID Device $target": [
   null,
@@ -926,6 +1048,10 @@ return plural;
  "Stop": [
   null,
   "Зупинити"
+ ],
+ "Stop Scrubbing": [
+  null,
+  "Зупинити витирання"
  ],
  "Stopping RAID Device $target": [
   null,
@@ -979,6 +1105,22 @@ return plural;
   null,
   "Масив RAID перебуває у стані із погіршеними властивостями"
  ],
+ "The RAID device must be running in order to add spare disks.": [
+  null,
+  "Для додавання резервних дисків має працювати пристрій RAID."
+ ],
+ "The RAID device must be running in order to remove disks.": [
+  null,
+  "Для вилучення дисків має працювати пристрій RAID."
+ ],
+ "The last disk of a RAID device cannot be removed.": [
+  null,
+  "Останній диск пристрою RAID вилучати не можна."
+ ],
+ "The last physical volume of a volume group cannot be removed.": [
+  null,
+  "Не можна вилучати останній фізичний том із групи томів."
+ ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "Користувачу <b>$0</b> не дозволено керувати сховищем даних"
@@ -987,9 +1129,37 @@ return plural;
   null,
   "У системі є пристрої із декількома шляхами доступу, але службу multipath не запущено."
  ],
+ "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
+  null,
+  "Для вилучення цього фізичного тому недостатньо вільного місця. Потрібно принаймні $0 вільного місця."
+ ],
  "Thin Logical Volume": [
   null,
   "Тонкий логічний том"
+ ],
+ "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
+  null,
+  "На цьому пристрої міститься файлова система, яка зараз використовується. Виконання дії призведе до демонтування усіх файлових систем на пристрої."
+ ],
+ "This device is currently used for RAID devices.": [
+  null,
+  "Цей пристрій зараз використовується для пристроїв RAID."
+ ],
+ "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
+  null,
+  "Цей пристрій зараз використовується для формування пристроїв RAID. Якщо дію буде виконано, пристрій буде вилучено із його пристроїв RAID."
+ ],
+ "This device is currently used for volume groups.": [
+  null,
+  "Цей пристрій зараза використовується для груп томів."
+ ],
+ "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
+  null,
+  "Цей пристрій зараз використовується для груп томів. Якщо дію буде виконано, пристрій буде вилучено із його груп томів."
+ ],
+ "This disk cannot be removed while the device is recovering.": [
+  null,
+  "Цей диск не можна вилучати, доки пристрій перебуває у стані відновлення."
  ],
  "This logical volume cannot be made smaller.": [
   null,
@@ -1010,6 +1180,10 @@ return plural;
  "Unknown": [
   null,
   "Невідомий"
+ ],
+ "Unknown ($0)": [
+  null,
+  "Невідомий ($0)"
  ],
  "Unknown host name": [
   null,
@@ -1075,6 +1249,10 @@ return plural;
   null,
   "Групи томів"
  ],
+ "Write-mostly": [
+  null,
+  "Здебільшого запис"
+ ],
  "Writing": [
   null,
   "Запис"
@@ -1106,6 +1284,10 @@ return plural;
  "unknown target": [
   null,
   "невідоме призначення"
+ ],
+ "unpartitioned space on $0": [
+  null,
+  "нерозподілене місце на $0"
  ],
  "storage-id-desc\u0004$0 File System": [
   null,

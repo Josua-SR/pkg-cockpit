@@ -69,15 +69,15 @@ return plural;
  },
  "Access": [
   null,
-  ""
+  "Accès"
  ],
  "Account not available or cannot be edited.": [
   null,
-  ""
+  "Compte non disponible ou ne peut être édité."
  ],
  "Accounts": [
   null,
-  ""
+  "Comptes"
  ],
  "Add key": [
   null,

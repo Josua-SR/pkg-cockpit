@@ -69,27 +69,27 @@ return plural;
  },
  " (shared with the OS)": [
   null,
-  ""
+  " (partagé avec le système d'exploitation)"
  ],
  "$0 day": [
   "$0 days",
-  "",
-  ""
+  "$0 jour",
+  "$0 jours"
  ],
  "$0 hour": [
   "$0 hours",
-  "",
-  ""
+  "$0 heure",
+  "$0 heures"
  ],
  "$0 minute": [
   "$0 minutes",
-  "",
-  ""
+  "$0 minute",
+  "$0 minutes"
  ],
  "$0 month": [
   "$0 months",
-  "",
-  ""
+  "$0 mois",
+  "$0 mois"
  ],
  "$0 shares": [
   null,
@@ -97,13 +97,13 @@ return plural;
  ],
  "$0 week": [
   "$0 weeks",
-  "",
-  ""
+  "$0 semaine",
+  "$0 semaines"
  ],
  "$0 year": [
   "$0 years",
-  "",
-  ""
+  "$0 an",
+  "$0 ans"
  ],
  "${hip}:${hport} -> $cport": [
   null,
@@ -111,7 +111,7 @@ return plural;
  ],
  "Add Additional Storage": [
   null,
-  ""
+  "Ajouter du stockage supplémentaire"
  ],
  "Add Storage": [
   null,
@@ -123,7 +123,7 @@ return plural;
  ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
-  ""
+  "Toutes les données sur les disques sélectionnés seront effacées et les disques seront ajoutés au pool de stockage."
  ],
  "Always": [
   null,

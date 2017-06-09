@@ -319,7 +319,7 @@ return plural;
  ],
  "No such file or directory": [
   null,
-  "El fitxer o directori no existeix"
+  "No existeix el fitxer o el directori"
  ],
  "Not a valid private key": [
   null,

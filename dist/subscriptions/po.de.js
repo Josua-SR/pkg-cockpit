@@ -77,11 +77,11 @@ return plural;
  ],
  "Access denied": [
   null,
-  ""
+  "Zugriff verweigert"
  ],
  "Activation Key": [
   null,
-  "Aktivieren"
+  "Aktivierungsschlüssel"
  ],
  "Architecture": [
   null,
@@ -97,7 +97,7 @@ return plural;
  ],
  "Custom URL": [
   null,
-  "Benutzerdefiniert"
+  "Benutzerdefinierte URL"
  ],
  "Default": [
   null,
@@ -173,11 +173,11 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "Server"
  ],
  "Starts": [
   null,
-  "Starten"
+  "Startet"
  ],
  "Status": [
   null,
@@ -185,11 +185,11 @@ return plural;
  ],
  "Status: $0": [
   null,
-  "Status"
+  "Status: $0"
  ],
  "Status: System isn't registered": [
   null,
-  ""
+  "Status: System ist nicht registriert"
  ],
  "Subscriptions": [
   null,
@@ -197,15 +197,15 @@ return plural;
  ],
  "The current user isn't allowed to access system subscription status.": [
   null,
-  ""
+  "Der aktuelle Nutzer ist nicht berechtigt auf den Status der Subscriptions zuzugreifen."
  ],
  "URL": [
   null,
-  ""
+  "URL"
  ],
  "Unable to connect": [
   null,
-  "Erneut verbinden"
+  "Kann keine Verbindung herstellen"
  ],
  "Unregister": [
   null,
@@ -213,15 +213,15 @@ return plural;
  ],
  "Unregistering system...": [
   null,
-  "Registriere System..."
+  "Deregistriere System..."
  ],
  "Updating": [
   null,
-  ""
+  "Aktualisiere"
  ],
  "Use proxy server": [
   null,
-  ""
+  "Benutze Proxy-Server"
  ],
  "User": [
   null,
@@ -233,6 +233,6 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "nicht definiert"
  ]
 }));

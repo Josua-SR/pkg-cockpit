@@ -305,7 +305,7 @@ return plural;
  ],
  "Creating this bond will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "创建该网桥将会中断与服务器的连接，并且将会导致管理界面不可用。"
+  ""
  ],
  "Creating this bridge will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -313,7 +313,7 @@ return plural;
  ],
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "创建该网桥将会中断与服务器的连接，并且将会导致管理界面不可用。"
+  ""
  ],
  "DNS": [
   null,

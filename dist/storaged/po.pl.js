@@ -71,17 +71,35 @@ return plural;
   null,
   "Urządzenie blokowe $0"
  ],
+ "$0 Chunk Size": [
+  null,
+  "Rozmiar bloku: $0"
+ ],
+ "$0 Disks": [
+  null,
+  "Dyski: $0"
+ ],
  "$0 day": [
   "$0 days",
   "$0 dzień",
   "$0 dni",
   "$0 dni"
  ],
+ "$0 disk is missing": [
+  "$0 disks are missing",
+  "Brak $0 dysku",
+  "Brak $0 dysków",
+  "Brak $0 dysków"
+ ],
  "$0 hour": [
   "$0 hours",
   "$0 godzina",
   "$0 godziny",
   "$0 godzin"
+ ],
+ "$0 is in active use": [
+  null,
+  "$0 jest obecnie używane"
  ],
  "$0 minute": [
   "$0 minutes",
@@ -97,7 +115,7 @@ return plural;
  ],
  "$0 of $1": [
   null,
-  "$0 z $1"
+  "$0 z $1"
  ],
  "$0 week": [
   "$0 weeks",
@@ -111,9 +129,17 @@ return plural;
   "$0 lata",
   "$0 lat"
  ],
+ "$0, $1 free": [
+  null,
+  "$0, wolne: $1"
+ ],
  "$name (from $host)": [
   null,
-  "$name (z $host)"
+  "$name (z $host)"
+ ],
+ "${size} ${desc}": [
+  null,
+  "${size} ${desc}"
  ],
  "(default)": [
   null,
@@ -125,7 +151,7 @@ return plural;
  ],
  "1 MiB": [
   null,
-  "1 MiB"
+  "1 MiB"
  ],
  "1 day": [
   null,
@@ -141,23 +167,23 @@ return plural;
  ],
  "128 KiB": [
   null,
-  "128 KiB"
+  "128 KiB"
  ],
  "16 KiB": [
   null,
-  "16 KiB"
+  "16 KiB"
  ],
  "2 MiB": [
   null,
-  "2 MiB"
+  "2 MiB"
  ],
  "32 KiB": [
   null,
-  "32 KiB"
+  "32 KiB"
  ],
  "4 KiB": [
   null,
-  "4 KiB"
+  "4 KiB"
  ],
  "5 minutes": [
   null,
@@ -165,7 +191,7 @@ return plural;
  ],
  "512 KiB": [
   null,
-  "512 KiB"
+  "512 KiB"
  ],
  "6 hours": [
   null,
@@ -173,11 +199,11 @@ return plural;
  ],
  "64 KiB": [
   null,
-  "64 KiB"
+  "64 KiB"
  ],
  "8 KiB": [
   null,
-  "8 KiB"
+  "8 KiB"
  ],
  "<span>Encrypted $0</span>": [
   null,
@@ -199,6 +225,10 @@ return plural;
   null,
   "<span>Partycja $0</span>"
  ],
+ "A spare disk needs to be added first before this disk can be removed.": [
+  null,
+  "Przed usunięciem tego dysku należy najpierw dodać dysk zapasowy."
+ ],
  "Activate": [
   null,
   "Aktywuj"
@@ -210,6 +240,10 @@ return plural;
  "Add": [
   null,
   "Dodaj"
+ ],
+ "Add Disks": [
+  null,
+  "Dodaj dyski"
  ],
  "Add iSCSI Portal": [
   null,
@@ -250,6 +284,10 @@ return plural;
  "Block device for filesystems": [
   null,
   "Urządzenie blokowe dla systemów plików"
+ ],
+ "Blocked": [
+  null,
+  "Zablokowane"
  ],
  "Can't delete while unlocked": [
   null,
@@ -293,7 +331,7 @@ return plural;
  ],
  "Compatible with modern system and hard disks > 2TB (GPT)": [
   null,
-  "Zgodne z nowoczesnymi systemami i dyskami twardymi > 2 TB (GPT)"
+  "Zgodne z nowoczesnymi systemami i dyskami twardymi > 2 TB (GPT)"
  ],
  "Confirm passphrase": [
   null,
@@ -373,11 +411,11 @@ return plural;
  ],
  "Custom": [
   null,
-  "Własne"
+  "Niestandardowe"
  ],
  "Custom (Enter filesystem type)": [
   null,
-  "Własne (proszę podać typ systemu plików)"
+  "Niestandardowe (proszę podać typ systemu plików)"
  ],
  "DISK IS FAILING": [
   null,
@@ -407,6 +445,10 @@ return plural;
   null,
   "Usuwanie $target"
  ],
+ "Deleting a RAID device will erase all data on it.": [
+  null,
+  "Usunięcie urządzenia RAID usunie wszystkie znajdujące się na nim dane."
+ ],
  "Deleting a logical volume will delete all data in it.": [
   null,
   "Usunięcie woluminu logicznego usunie wszystkie znajdujące się na nim dane."
@@ -415,21 +457,13 @@ return plural;
   null,
   "Usunięcie partycji usunie wszystkie znajdujące się na niej dane."
  ],
+ "Deleting a volume group will erase all data on it.": [
+  null,
+  "Usunięcie grupy woluminów usunie wszystkie znajdujące się w niej dane."
+ ],
  "Deleting volume group $target": [
   null,
   "Usuwanie grupy woluminów $target"
- ],
- "Device $0 is a member of RAID Array $1": [
-  null,
-  "Urządzenie $0 jest elementem macierzy RAID $1"
- ],
- "Device $0 is a physical volume of $1": [
-  null,
-  "Urządzenie $0 jest fizycznym woluminem $1"
- ],
- "Device $0 is mounted on $1": [
-  null,
-  "Urządzenie $0 jest zamontowane w $1"
  ],
  "Device is read-only": [
   null,
@@ -467,9 +501,21 @@ return plural;
   null,
   "Opróżnianie $target"
  ],
+ "Encrypted $0": [
+  null,
+  "Zaszyfrowane $0"
+ ],
  "Encrypted EXT4 (LUKS)": [
   null,
   "Szyfrowane EXT4 (LUKS)"
+ ],
+ "Encrypted Logical Volume of $0": [
+  null,
+  "Zaszyfrowany wolumin logiczny $0"
+ ],
+ "Encrypted Partition of $0": [
+  null,
+  "Zaszyfrowana partycja $0"
  ],
  "Encrypted XFS (LUKS)": [
   null,
@@ -498,6 +544,10 @@ return plural;
  "Extended Partition": [
   null,
   "Rozszerzona partycja"
+ ],
+ "FAILED": [
+  null,
+  "NIEPOWODZENIE"
  ],
  "Filesystem": [
   null,
@@ -551,6 +601,10 @@ return plural;
   null,
   "Przejdź teraz"
  ],
+ "In Sync": [
+  null,
+  "Zsynchronizowane"
+ ],
  "Inactive volume": [
   null,
   "Nieaktywny wolumin"
@@ -578,6 +632,10 @@ return plural;
  "Logical Volume (Snapshot)": [
   null,
   "Wolumin logiczny (migawka)"
+ ],
+ "Logical Volume of $0": [
+  null,
+  "Wolumin logiczny $0"
  ],
  "Marking $target as faulty": [
   null,
@@ -659,6 +717,10 @@ return plural;
   null,
   "Brak woluminów logicznych"
  ],
+ "No disks are available.": [
+  null,
+  "Brak dostępnych dysków."
+ ],
  "No drives attached": [
   null,
   "Nie dołączono dysków"
@@ -687,6 +749,14 @@ return plural;
   null,
   "Nie utworzono grup woluminów"
  ],
+ "Not found": [
+  null,
+  "Nie odnaleziono"
+ ],
+ "Not running": [
+  null,
+  "Niedziałające"
+ ],
  "Off": [
   null,
   "Wyłączone"
@@ -714,6 +784,10 @@ return plural;
  "Partition": [
   null,
   "Partycja"
+ ],
+ "Partition of $0": [
+  null,
+  "Partycja $0"
  ],
  "Partitioning": [
   null,
@@ -775,25 +849,53 @@ return plural;
   null,
   "Zastosowanie"
  ],
+ "RAID ($0)": [
+  null,
+  "RAID ($0)"
+ ],
+ "RAID 0": [
+  null,
+  "RAID 0"
+ ],
  "RAID 0 (Stripe)": [
   null,
   "RAID 0 (Striping)"
+ ],
+ "RAID 1": [
+  null,
+  "RAID 1"
  ],
  "RAID 1 (Mirror)": [
   null,
   "RAID 1 (Lustrzany)"
  ],
+ "RAID 10": [
+  null,
+  "RAID 10"
+ ],
  "RAID 10 (Stripe of Mirrors)": [
   null,
   "RID 10 (Striping lustrzany)"
+ ],
+ "RAID 4": [
+  null,
+  "RAID 4"
  ],
  "RAID 4 (Dedicated Parity)": [
   null,
   "RAID 4 (Dedykowana parzystość)"
  ],
+ "RAID 5": [
+  null,
+  "RAID 5"
+ ],
  "RAID 5 (Distributed Parity)": [
   null,
   "RAID 5 (Rozproszona parzystość)"
+ ],
+ "RAID 6": [
+  null,
+  "RAID 6"
  ],
  "RAID 6 (Double Distributed Parity)": [
   null,
@@ -827,6 +929,10 @@ return plural;
   null,
   "Uruchom ponownie"
  ],
+ "Recovering": [
+  null,
+  "Odzyskiwanie"
+ ],
  "Recovering RAID Device $target": [
   null,
   "Przywracanie urządzenia RAID $target"
@@ -847,6 +953,10 @@ return plural;
   null,
   "Zmiana nazwy woluminu logicznego"
  ],
+ "Rename Volume Group": [
+  null,
+  "Zmień nazwę grupy woluminów"
+ ],
  "Renaming $target": [
   null,
   "Zmienianie nazwy $target"
@@ -866,6 +976,10 @@ return plural;
  "Resizing $target": [
   null,
   "Zmienianie rozmiaru $target"
+ ],
+ "Running": [
+  null,
+  "Działające"
  ],
  "SMART self-test of $target": [
   null,
@@ -907,6 +1021,10 @@ return plural;
   null,
   "Rozmiar musi być liczbą"
  ],
+ "Spare": [
+  null,
+  "Zapasowe"
+ ],
  "Start": [
   null,
   "Rozpocznij"
@@ -914,6 +1032,10 @@ return plural;
  "Start Multipath": [
   null,
   "Uruchom urządzenie wielościeżkowe"
+ ],
+ "Start Scrubbing": [
+  null,
+  "Rozpocznij kontrolę"
  ],
  "Starting RAID Device $target": [
   null,
@@ -927,6 +1049,10 @@ return plural;
   null,
   "Zatrzymaj"
  ],
+ "Stop Scrubbing": [
+  null,
+  "Zatrzymaj kontrolę"
+ ],
  "Stopping RAID Device $target": [
   null,
   "Zatrzymywanie urządzenia RAID $target"
@@ -937,7 +1063,7 @@ return plural;
  ],
  "Storage": [
   null,
-  "Urządzenia do przechowywania danych"
+  "Przechowywanie danych"
  ],
  "Storage Log": [
   null,
@@ -979,6 +1105,22 @@ return plural;
   null,
   "Macierz RAID jest w stanie zdegradowanym"
  ],
+ "The RAID device must be running in order to add spare disks.": [
+  null,
+  "Urządzenie RAID musi być uruchomione, aby dodać zapasowe dyski."
+ ],
+ "The RAID device must be running in order to remove disks.": [
+  null,
+  "Urządzenie RAID musi być uruchomione, aby usunąć dyski."
+ ],
+ "The last disk of a RAID device cannot be removed.": [
+  null,
+  "Nie można usuwać ostatniego dysku urządzenia RAID."
+ ],
+ "The last physical volume of a volume group cannot be removed.": [
+  null,
+  "Nie można usunąć ostatniego woluminu fizycznego grupy woluminów."
+ ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "Użytkownik <b>$0</b> nie ma zezwolenia na zarządzanie urządzeniami do przechowywania danych"
@@ -987,9 +1129,37 @@ return plural;
   null,
   "W systemie obecne są urządzenia z wieloma ścieżkami, ale usługa urządzeń wielościeżkowych nie jest uruchomiona."
  ],
+ "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
+  null,
+  "Za mało wolnego miejsca, aby usunąć ten wolumin fizyczny. Wymagane jest co najmniej $0 wolnego miejsca więcej."
+ ],
  "Thin Logical Volume": [
   null,
   "Cienki wolumin logiczny"
+ ],
+ "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
+  null,
+  "To urządzenie ma obecnie używane systemy plików.                Kontynuacja odmontuje wszystkie jego systemy plików."
+ ],
+ "This device is currently used for RAID devices.": [
+  null,
+  "To urządzenie jest obecnie używane dla urządzeń RAID."
+ ],
+ "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
+  null,
+  "To urządzenie jest obecnie używane dla urządzeń RAID.                Kontynuacja usunie je z jego urządzeń RAID."
+ ],
+ "This device is currently used for volume groups.": [
+  null,
+  "To urządzenie jest obecnie używane dla grup woluminów."
+ ],
+ "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
+  null,
+  "To urządzenie jest obecnie używane dla grup woluminów.                Kontynuacja usunie je z jego grup woluminów."
+ ],
+ "This disk cannot be removed while the device is recovering.": [
+  null,
+  "Ten dysk nie może zostać usunięty podczas przywracania urządzenia."
  ],
  "This logical volume cannot be made smaller.": [
   null,
@@ -1010,6 +1180,10 @@ return plural;
  "Unknown": [
   null,
   "Nieznane"
+ ],
+ "Unknown ($0)": [
+  null,
+  "Nieznane ($0)"
  ],
  "Unknown host name": [
   null,
@@ -1075,6 +1249,10 @@ return plural;
   null,
   "Grupy woluminów"
  ],
+ "Write-mostly": [
+  null,
+  "Głównie zapisywane"
+ ],
  "Writing": [
   null,
   "Zapisywanie"
@@ -1085,7 +1263,7 @@ return plural;
  ],
  "[$0 bytes of binary data]": [
   null,
-  "[$0 bajtów danych binarnych]"
+  "[$0 B danych binarnych]"
  ],
  "[binary data]": [
   null,
@@ -1106,6 +1284,10 @@ return plural;
  "unknown target": [
   null,
   "nieznany cel"
+ ],
+ "unpartitioned space on $0": [
+  null,
+  "nieprzydzielone miejsce na $0"
  ],
  "storage-id-desc\u0004$0 File System": [
   null,
@@ -1201,6 +1383,6 @@ return plural;
  ],
  "format-bytes\u0004bytes": [
   null,
-  "bajtów"
+  "B"
  ]
 }));

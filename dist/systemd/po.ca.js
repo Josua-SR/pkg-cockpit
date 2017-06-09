@@ -485,10 +485,6 @@ return plural;
   null,
   ""
  ],
- "Isolate": [
-  null,
-  "Aïlla"
- ],
  "Journal": [
   null,
   "Publicacions"
@@ -677,14 +673,6 @@ return plural;
   null,
   "Recarrega"
  ],
- "Reload or Restart": [
-  null,
-  "Recarrega o reinicia"
- ],
- "Reload or Try Restart": [
-  null,
-  "Recarrega o prova de reiniciar"
- ],
  "Repeat Daily": [
   null,
   ""
@@ -837,6 +825,10 @@ return plural;
   null,
   "A l'usuari <b>$0</b> no se li permet modificar el noms dels amfitrions"
  ],
+ "The user <b>$0</b> is not permitted to shutdown or restart this server": [
+  null,
+  ""
+ ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
   ""
@@ -864,10 +856,6 @@ return plural;
  "Timers": [
   null,
   "Rellotges"
- ],
- "Try Restart": [
-  null,
-  "Prova de reiniciar"
  ],
  "Trying to synchronize with {{Server}}": [
   null,

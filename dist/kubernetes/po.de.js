@@ -69,17 +69,17 @@ return plural;
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
-  ""
+  "1\"Sind Sie sicher, dass Sie die folgenden Nodes löschen möchten?"
  ],
  "$0% Free": [
   "$0% Free",
-  "",
-  ""
+  "$0% verfügbar",
+  "$0% verfügbar"
  ],
  "$0% Used": [
   "$0% Used",
-  "",
-  ""
+  "$0% in Benutzung",
+  "$0% in Benutzung"
  ],
  "AWS Elastic Block Store": [
   null,
@@ -107,39 +107,39 @@ return plural;
  ],
  "Add Group": [
   null,
-  ""
+  "Gruppe hinzufügen"
  ],
  "Add Kubernetes Node": [
   null,
-  ""
+  "Kubernetes Node hinzufügen"
  ],
  "Add Member": [
   null,
-  ""
+  "Mitglied hinzufügen"
  ],
  "Add Membership": [
   null,
-  ""
+  "Mitgliedschaft hinzufügen"
  ],
  "Add New Cluster": [
   null,
-  ""
+  "Neuen Cluster hinzufügen"
  ],
  "Add New User": [
   null,
-  ""
+  "Neuen Nutzer anlegen"
  ],
  "Add Role": [
   null,
-  ""
+  "Neue Rolle hinzufügen"
  ],
  "Add User": [
   null,
-  ""
+  "Benutzer hinzufügen"
  ],
  "Add membership": [
   null,
-  ""
+  "Mitgliedschaft hinzufügen"
  ],
  "Address": [
   null,
@@ -163,7 +163,7 @@ return plural;
  ],
  "Adjust Route": [
   null,
-  ""
+  "Route anpassen"
  ],
  "Adjust Service": [
   null,
@@ -171,11 +171,11 @@ return plural;
  ],
  "Admin": [
   null,
-  ""
+  "Administrator"
  ],
  "All Projects": [
   null,
-  ""
+  "Alle Projekte"
  ],
  "All Types": [
   null,
@@ -215,7 +215,7 @@ return plural;
  ],
  "Azure": [
   null,
-  ""
+  "Azure"
  ],
  "Boot ID": [
   null,
@@ -227,7 +227,7 @@ return plural;
  ],
  "CPU Utilization: $0%": [
   null,
-  ""
+  "CPU Auslastung: $0%"
  ],
  "Cancel": [
   null,
@@ -235,7 +235,7 @@ return plural;
  ],
  "Capacity": [
   null,
-  ""
+  "Kapazität"
  ],
  "Ceph Filesystem Mount": [
   null,
@@ -275,7 +275,7 @@ return plural;
  ],
  "Client Certificate": [
   null,
-  ""
+  "Client-Zertifikat"
  ],
  "Cluster": [
   null,
@@ -283,7 +283,7 @@ return plural;
  ],
  "Configuration": [
   null,
-  ""
+  "Konfiguration"
  ],
  "Configure Flannel networking": [
   null,
@@ -299,19 +299,19 @@ return plural;
  ],
  "Connecting...": [
   null,
-  ""
+  "Verbinde..."
  ],
  "Connection Error": [
   null,
-  ""
+  "Fehler bei der Verbindung"
  ],
  "Connection Error: $0": [
   null,
-  ""
+  "Fehler bei der Verbindung: $0"
  ],
  "Connection Settings": [
   null,
-  ""
+  "Verbindungseinstellungen"
  ],
  "Container": [
   null,
@@ -319,7 +319,7 @@ return plural;
  ],
  "Container ID": [
   null,
-  ""
+  "Container ID"
  ],
  "Container Runtime Version": [
   null,
@@ -327,7 +327,7 @@ return plural;
  ],
  "Containers": [
   null,
-  "Containers"
+  "Container"
  ],
  "Could not list services": [
   null,
@@ -335,7 +335,7 @@ return plural;
  ],
  "Couldn't connect to server": [
   null,
-  ""
+  "Verbindung zum Server konnte nicht hergstellt werden"
  ],
  "Couldn't find running API server": [
   null,
@@ -355,11 +355,11 @@ return plural;
  ],
  "Created": [
   null,
-  ""
+  "Erstellt"
  ],
  "DNS Policy": [
   null,
-  ""
+  "DNS Policy"
  ],
  "Delete": [
   null,
@@ -1183,11 +1183,11 @@ return plural;
  ],
  "Replication Controller": [
   null,
-  ""
+  "Replication Controller"
  ],
  "Replication Controllers": [
   null,
-  ""
+  "Replication Controller"
  ],
  "Replication controllers dynamically create instances of pods from templates, and remove pods when necessary.": [
   null,
@@ -1195,7 +1195,7 @@ return plural;
  ],
  "Repository URL": [
   null,
-  ""
+  "Repository URL"
  ],
  "Requested": [
   null,
@@ -1227,15 +1227,15 @@ return plural;
  ],
  "Role": [
   null,
-  ""
+  "Rolle"
  ],
  "Roles": [
   null,
-  ""
+  "Rollen"
  ],
  "Route": [
   null,
-  ""
+  "Route"
  ],
  "Routes": [
   null,
@@ -1271,15 +1271,15 @@ return plural;
  ],
  "Select an object to see more details.": [
   null,
-  ""
+  "Wählen Sie ein Objekt aus, um weitere Details anzuzeigen."
  ],
  "Server": [
   null,
-  ""
+  "Server"
  ],
  "Service": [
   null,
-  ""
+  "Dienst"
  ],
  "Service Account": [
   null,
@@ -1287,7 +1287,7 @@ return plural;
  ],
  "Services": [
   null,
-  ""
+  "Dienste"
  ],
  "Services group pods and provide a common DNS name and an optional, load-balanced IP address to access them.": [
   null,
@@ -1299,7 +1299,7 @@ return plural;
  ],
  "Share Name": [
   null,
-  ""
+  "Freigabe Name"
  ],
  "Shared: Allow any authenticated user to pull images": [
   null,
@@ -1311,7 +1311,7 @@ return plural;
  ],
  "Show all Containers": [
   null,
-  ""
+  "Zeige alle Container an"
  ],
  "Show all Deployment Configs": [
   null,
@@ -1319,11 +1319,11 @@ return plural;
  ],
  "Show all Nodes": [
   null,
-  ""
+  "Zeige alle Knoten an"
  ],
  "Show all Persistent Volumes": [
   null,
-  ""
+  "Zeige alle persistenten Datenträger an"
  ],
  "Show all Pod Containers": [
   null,
@@ -1335,19 +1335,19 @@ return plural;
  ],
  "Show all Projects": [
   null,
-  ""
+  "Zeige alle Projekte an"
  ],
  "Show all Replication Controllers": [
   null,
-  ""
+  "Zeige alle Replication Controller an"
  ],
  "Show all Routes": [
   null,
-  ""
+  "Zeige alle Routen an"
  ],
  "Show all Services": [
   null,
-  ""
+  "Zeige alle Dienste an"
  ],
  "Show all image streams": [
   null,
@@ -1367,15 +1367,15 @@ return plural;
  ],
  "Skip Certificate Verification": [
   null,
-  ""
+  "Zertifikatprüfung überspringen"
  ],
  "Sorry, I don't know how to modify this volume": [
   null,
-  ""
+  "Entschuldigung, ich weiß nicht, wie ich diesen Datenträger modifizieren soll"
  ],
  "State": [
   null,
-  ""
+  "Status"
  ],
  "Status": [
   null,
@@ -1399,7 +1399,7 @@ return plural;
  ],
  "Target": [
   null,
-  ""
+  "Ziel"
  ],
  "Target Portal": [
   null,
@@ -1411,7 +1411,7 @@ return plural;
  ],
  "Template": [
   null,
-  ""
+  "Vorlage"
  ],
  "The address contains invalid characters": [
   null,
@@ -1419,7 +1419,7 @@ return plural;
  ],
  "The container '{{ target }}' does not exist.": [
   null,
-  ""
+  "Der Container '{{ target }}' existiert nicht."
  ],
  "The deployment config '{{ target }}' does not exist.": [
   null,
@@ -1427,7 +1427,7 @@ return plural;
  ],
  "The group '{{ groupName }}' does not exist.": [
   null,
-  ""
+  "Die Gruppe '{{ groupName }}' existiert nicht."
  ],
  "The maximum number of replicas is 128": [
   null,
@@ -1435,19 +1435,19 @@ return plural;
  ],
  "The name contains invalid characters": [
   null,
-  ""
+  "Der Name enthält ungültige Zeichen"
  ],
  "The node '{{ target }}' does not exist.": [
   null,
-  ""
+  "Der Knoten '{{ target }}' existiert nicht."
  ],
  "The node doesn't have enough disk space": [
   null,
-  ""
+  "Dieser Knoten verfügt nicht über ausreichend freien Speicherplatz"
  ],
  "The node doesn't have enough free memory": [
   null,
-  ""
+  "Dieser Knoten verfügt nicht über ausreichend freien Arbeitsspeicher"
  ],
  "The persistent volume '{{ target }}' does not exist.": [
   null,
@@ -1455,19 +1455,19 @@ return plural;
  ],
  "The pod '{{ target }}' does not exist.": [
   null,
-  ""
+  "Der Pod '{{ target }}' existiert nicht."
  ],
  "The project '{{ projName }}' does not exist.": [
   null,
-  ""
+  "Das Projekt '{{ projName }}' existiert nicht."
  ],
  "The replication controller '{{ target }}' does not exist.": [
   null,
-  ""
+  "Der Replication Controller '{{ target }}' existiert nicht."
  ],
  "The route '{{ target }}' does not exist.": [
   null,
-  ""
+  "Die Route '{{ target }}' existiert nicht."
  ],
  "The selected file is not a valid Kubernetes application manifest.": [
   null,
@@ -1475,15 +1475,15 @@ return plural;
  ],
  "The server uses a certificate signed by an unknown authority.": [
   null,
-  ""
+  "Der Server nutzt ein Zertifikat, das von einer unbekannten Stelle signiert wurde."
  ],
  "The service '{{ target }}' does not exist.": [
   null,
-  ""
+  "Der Dienst '{{ target }}' existiert nicht."
  ],
  "The user '{{ userName }}' does not exist.": [
   null,
-  ""
+  "Der Benutzer '{{ userName }}' existiert nicht."
  ],
  "This claim is in use. Deleting it may cause issues with the following pod:": [
   null,
@@ -1503,11 +1503,11 @@ return plural;
  ],
  "Token": [
   null,
-  ""
+  "Token"
  ],
  "Topology": [
   null,
-  ""
+  "Topologie"
  ],
  "Triggers": [
   null,
@@ -1515,11 +1515,11 @@ return plural;
  ],
  "Troubleshoot": [
   null,
-  ""
+  "Fehlersuche"
  ],
  "Trust this certificate for this connection": [
   null,
-  ""
+  "Diesem Zertifikat für diese Verbindung vertrauen"
  ],
  "Type": [
   null,
@@ -1527,11 +1527,11 @@ return plural;
  ],
  "Type:": [
   null,
-  ""
+  "Typ:"
  ],
  "Unable to decode Kubernetes application manifest.": [
   null,
-  ""
+  "Kann Kubernetes Applikationsmanifest nicht verarbeiten."
  ],
  "Unable to read the Kubernetes application manifest. Code $0.": [
   null,
@@ -1559,15 +1559,15 @@ return plural;
  ],
  "User or Group": [
   null,
-  ""
+  "Benutzer oder Gruppe"
  ],
  "Username": [
   null,
-  ""
+  "Benutzername"
  ],
  "Users": [
   null,
-  ""
+  "Benutzer"
  ],
  "Volume": [
   null,
@@ -1591,11 +1591,11 @@ return plural;
  ],
  "Warning:": [
   null,
-  ""
+  "Warnung:"
  ],
  "Welcome to the Image Registry": [
   null,
-  ""
+  "Willkommen bei der Image Registry"
  ],
  "When": [
   null,
@@ -1607,7 +1607,7 @@ return plural;
  ],
  "You can bypass the certificate check, but any data you send to the server could be intercepted by others.": [
   null,
-  ""
+  "Sie können die Zertifikatsprüfung umgehen, dann könnten jedoch sämtliche an den Server gesendete Daten von Dritten mitgelesen werden."
  ],
  "You can deploy an application to your cluster.": [
   null,
@@ -1615,7 +1615,7 @@ return plural;
  ],
  "Your login credentials do not give you access to use the docker registry from the command line.": [
   null,
-  ""
+  "Ihre Zugangsdaten erlauben Ihnen keinen Zugang zur Docker Registry von der Kommandozeile."
  ],
  "eg: my-image-stream": [
   null,
@@ -1623,7 +1623,7 @@ return plural;
  ],
  "no": [
   null,
-  ""
+  "Nein"
  ],
  "none": [
   null,
@@ -1635,6 +1635,6 @@ return plural;
  ],
  "yes": [
   null,
-  ""
+  "Ja"
  ]
 }));

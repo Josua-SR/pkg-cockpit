@@ -69,8 +69,8 @@ return plural;
  },
  "$0 occurrence": [
   "$1 occurrences",
-  "",
-  ""
+  "$0 occurrence",
+  "$0 occurrences"
  ],
  "Apply this solution": [
   null,
