@@ -75,15 +75,43 @@ return plural;
   null,
   "可用的"
  ],
+ "Boot Order:": [
+  null,
+  ""
+ ],
+ "Bus": [
+  null,
+  ""
+ ],
+ "CPU Type:": [
+  null,
+  ""
+ ],
+ "Capacity": [
+  null,
+  "容量"
+ ],
  "Connection": [
   null,
   "连接"
  ],
- "FORCEOFF_VM action failed": [
+ "Count:": [
   null,
   ""
  ],
- "FORCEREBOOT_VM action failed": [
+ "Device": [
+  null,
+  ""
+ ],
+ "Disks": [
+  null,
+  "磁盘"
+ ],
+ "Emulated Machine:": [
+  null,
+  ""
+ ],
+ "File": [
   null,
   ""
  ],
@@ -95,9 +123,13 @@ return plural;
   null,
   "强制关机"
  ],
- "ID:": [
+ "GB": [
   null,
-  "编号："
+  ""
+ ],
+ "Host": [
+  null,
+  "主机"
  ],
  "Memory:": [
   null,
@@ -111,15 +143,31 @@ return plural;
   null,
   "该主机上没有虚拟机运行或定义。"
  ],
- "OS Type:": [
+ "No boot device found": [
   null,
-  "操作系统类型："
+  ""
+ ],
+ "No disks defined for this VM": [
+  null,
+  ""
  ],
  "Overview": [
   null,
   "概览"
  ],
- "REBOOT_VM action failed": [
+ "Pool": [
+  null,
+  "池"
+ ],
+ "Port": [
+  null,
+  "端口"
+ ],
+ "Protocol": [
+  null,
+  ""
+ ],
+ "Readonly": [
   null,
   ""
  ],
@@ -131,14 +179,6 @@ return plural;
   null,
   "运行"
  ],
- "SHUTDOWN_VM action failed": [
-  null,
-  "方案失败"
- ],
- "START_VM action failed": [
-  null,
-  "方案失败"
- ],
  "Session": [
   null,
   "版本"
@@ -147,17 +187,21 @@ return plural;
   null,
   "关机"
  ],
+ "Source": [
+  null,
+  ""
+ ],
  "State": [
   null,
   "状态"
  ],
- "State:": [
-  null,
-  "阶段："
- ],
  "System": [
   null,
   "系统"
+ ],
+ "Target": [
+  null,
+  "目标"
  ],
  "The VM crashed.": [
   null,
@@ -191,6 +235,10 @@ return plural;
   null,
   "虚拟机已被客户机电源管理暂停。"
  ],
+ "Upgrade to a more recent version of libvirt to view disk statistics": [
+  null,
+  ""
+ ],
  "Usage": [
   null,
   "使用情况"
@@ -199,17 +247,53 @@ return plural;
   null,
   "已使用"
  ],
+ "VM FORCE OFF action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  ""
+ ],
+ "VM START action failed": [
+  null,
+  ""
+ ],
  "Virtual Machines": [
   null,
   "虚拟机"
+ ],
+ "Volume": [
+  null,
+  "卷"
+ ],
+ "cdrom": [
+  null,
+  ""
  ],
  "crashed": [
   null,
   "虚拟机已崩溃。"
  ],
+ "custom": [
+  null,
+  ""
+ ],
  "disabled": [
   null,
   "禁用"
+ ],
+ "disk": [
+  null,
+  ""
  ],
  "dying": [
   null,
@@ -219,7 +303,23 @@ return plural;
   null,
   "启用"
  ],
+ "host": [
+  null,
+  ""
+ ],
  "idle": [
+  null,
+  ""
+ ],
+ "network": [
+  null,
+  ""
+ ],
+ "no": [
+  null,
+  "否"
+ ],
+ "other": [
   null,
   ""
  ],
@@ -246,5 +346,9 @@ return plural;
  "vCPUs:": [
   null,
   "虚拟 CPU："
+ ],
+ "yes": [
+  null,
+  "是"
  ]
 }));

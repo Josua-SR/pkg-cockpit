@@ -77,19 +77,19 @@ return plural;
  ],
  "Compress crash dumps to save space": [
   null,
-  ""
+  "Стиснути дампи аварійних завершень для заощадження місця"
  ],
  "Compression": [
   null,
-  ""
+  "Стискання"
  ],
  "Crash dump location": [
   null,
-  ""
+  "Розташування дампу аварійного завершення"
  ],
  "Crash system": [
   null,
-  ""
+  "Аварійно завершити роботу системи"
  ],
  "Directory": [
   null,
@@ -97,15 +97,15 @@ return plural;
  ],
  "Directory $0 isn't writable or doesn't exist.": [
   null,
-  ""
+  "Каталог $0 є непридатним до запису або не існує."
  ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
-  ""
+  "Не встановлено службу Kdump. Будь ласка, переконайтеся, що у системі встановлено пакунок kexec-tools."
  ],
  "Kernel dump configuration": [
   null,
-  "Помилки у налаштуваннях"
+  "Налаштування дампу ядра"
  ],
  "Loading...": [
   null,
@@ -113,15 +113,15 @@ return plural;
  ],
  "Local Filesystem": [
   null,
-  "Немає файлової системи"
+  "Локальна файлова система"
  ],
  "Location": [
   null,
-  "Місце монтування"
+  "Розташування"
  ],
  "More details": [
   null,
-  "параметри рішення"
+  "Докладніше"
  ],
  "Mount": [
   null,
@@ -129,11 +129,11 @@ return plural;
  ],
  "No configuration found": [
   null,
-  "Помилки у налаштуваннях"
+  "Не знайдено налаштувань"
  ],
  "No memory reserved. Append a crashkernel option to the kernel command line (e.g. in /etc/default/grub) to reserve memory at boot time. Example: crashkernel=512M": [
   null,
-  ""
+  "Немає зарезервованої пам’яті. Додайте параметр crashkernel до командного рядка ядра (наприклад у /etc/default/grub), щоб зарезервувати пам’ять під час завантаження. Приклад: crashkernel=512M"
  ],
  "None": [
   null,
@@ -153,27 +153,27 @@ return plural;
  ],
  "On a mounted device": [
   null,
-  ""
+  "На змонтованому пристрої"
  ],
  "Raw to a device": [
   null,
-  "Блоковий пристрій Rados"
+  "Без обробки на пристрій"
  ],
  "Reading...": [
   null,
-  "Читання"
+  "Читання…"
  ],
  "Remote over NFS": [
   null,
-  "Вилучити роль"
+  "Віддалене на основі NFS"
  ],
  "Remote over SSH": [
   null,
-  "Вилучити роль"
+  "Віддалене на основі SSH"
  ],
  "Reserved memory": [
   null,
-  ""
+  "Зарезервована пам’ять"
  ],
  "Server": [
   null,
@@ -181,67 +181,67 @@ return plural;
  ],
  "Service has an error": [
   null,
-  "Назва служби"
+  "Помилка у службі"
  ],
  "Service is running": [
   null,
-  "Віртуальна машина працює."
+  "Службу запущено"
  ],
  "Service is starting": [
   null,
-  "Комп’ютер перезавантажується"
+  "Служба запускається"
  ],
  "Service is stopped": [
   null,
-  "Служби"
+  "Службу зупинено"
  ],
  "Service is stopping": [
   null,
-  "Журнали служб"
+  "Служба зупиняється"
  ],
  "Test Configuration": [
   null,
-  "Налаштування"
+  "Налаштування перевірки"
  ],
  "Test is only available while the kdump service is running.": [
   null,
-  ""
+  "Перевірка є доступною, лише якщо запущено службу kdump."
  ],
  "Test kdump settings": [
   null,
-  "Параметри команди"
+  "Перевірити параметри kdump"
  ],
  "This will test kdump settings by crashing the kernel and thereby the system. Depending on the settings, the system may not automatically reboot and the process may take a while.": [
   null,
-  ""
+  "Виконати тестування параметрів kdump, аварійно завершивши роботу ядра, а отже і системи. Залежно від параметрів, система може автоматично перезавантажитися, що потребуватиме певного часу."
  ],
  "This will test the kdump configuration by crashing the kernel.": [
   null,
-  ""
+  "Перевіряє налаштування kdump, аварійно завершуючи роботу ядра."
  ],
  "Unable to apply settings: $0": [
   null,
-  "Не вдалося отримати нагадування: $0"
+  "Не вдалося застосувати параметри: $0"
  ],
  "Use the setting in /etc/kdump.conf": [
   null,
-  ""
+  "Використовувати параметр у /etc/kdump.conf"
  ],
  "invalid: multiple targets defined": [
   null,
-  ""
+  "помилка: визначено декілька цілей"
  ],
  "kdump status": [
   null,
-  ""
+  "стан kdump"
  ],
  "locally in $0": [
   null,
-  ""
+  "локально у $0"
  ],
  "ssh key": [
   null,
-  ""
+  "ключ ssh"
  ],
  "undefined": [
   null,

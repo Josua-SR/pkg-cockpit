@@ -317,7 +317,7 @@ return plural;
  ],
  "Creating this bond will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "Створення цього містка призведе до розірвання з’єднання із сервером і зробить адміністративний інтерфейс користувача недоступним."
+  "Створення цього зв’язку призведе до розірвання з’єднання із сервером і зробить адміністративний інтерфейс користувача недоступним."
  ],
  "Creating this bridge will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -325,7 +325,7 @@ return plural;
  ],
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "Створення цього містка призведе до розірвання з’єднання із сервером і зробить адміністративний інтерфейс користувача недоступним."
+  "Створення цієї команди призведе до розірвання з’єднання із сервером і зробить адміністративний інтерфейс користувача недоступним."
  ],
  "DNS": [
   null,
@@ -365,7 +365,7 @@ return plural;
  ],
  "Ethernet MAC": [
   null,
-  "MTU Ethernet"
+  "MAC Ethernet"
  ],
  "Ethernet MTU": [
   null,
@@ -445,19 +445,19 @@ return plural;
  ],
  "Invalid address $0": [
   null,
-  "Додаткова адреса $val"
+  "Некоректна адреса $0"
  ],
  "Invalid metric $0": [
   null,
-  "Некоректне число."
+  "Некоректна метрика $0"
  ],
  "Invalid prefix $0": [
   null,
-  "Некоректний порт"
+  "Некоректний префікс $0"
  ],
  "Invalid prefix or netmask $0": [
   null,
-  "Некоректний порт"
+  "Некоректний префікс або маска мережі $0"
  ],
  "Keep connection": [
   null,
@@ -493,7 +493,7 @@ return plural;
  ],
  "MAC": [
   null,
-  ""
+  "MAC"
  ],
  "MII (Recommended)": [
   null,
@@ -597,7 +597,7 @@ return plural;
  ],
  "Permanent": [
   null,
-  ""
+  "Постійний"
  ],
  "Ping Interval": [
   null,
@@ -625,7 +625,7 @@ return plural;
  ],
  "Preserve": [
   null,
-  "Шаблон"
+  "Зберегти"
  ],
  "Primary": [
   null,
@@ -641,7 +641,7 @@ return plural;
  ],
  "Random": [
   null,
-  ""
+  "Випадковий"
  ],
  "Reboot": [
   null,
@@ -661,7 +661,7 @@ return plural;
  ],
  "Restoring connection": [
   null,
-  "Перевіряємо з’єднання"
+  "Відновлюємо з’єднання"
  ],
  "Round Robin": [
   null,
@@ -713,7 +713,7 @@ return plural;
  ],
  "Stable": [
   null,
-  "Увімкнути"
+  "Стабільний"
  ],
  "Status": [
   null,

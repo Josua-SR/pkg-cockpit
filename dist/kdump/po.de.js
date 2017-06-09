@@ -77,15 +77,15 @@ return plural;
  ],
  "Compress crash dumps to save space": [
   null,
-  ""
+  "Absturzberichte komprimieren um Speicherplatz zu sparen"
  ],
  "Compression": [
   null,
-  ""
+  "Komprimierung"
  ],
  "Crash dump location": [
   null,
-  ""
+  "Ort für Absturzberichte"
  ],
  "Crash system": [
   null,
@@ -177,39 +177,39 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "Server"
  ],
  "Service has an error": [
   null,
-  "Gerätedatei"
+  "Dienst hat einen Fehler"
  ],
  "Service is running": [
   null,
-  "Tuned läuft nicht"
+  "Dienst läuft nicht"
  ],
  "Service is starting": [
   null,
-  "Die Maschine startet neu"
+  "Dienst startet"
  ],
  "Service is stopped": [
   null,
-  "Gerätedatei"
+  "Dienst ist beendet"
  ],
  "Service is stopping": [
   null,
-  ""
+  "Dienst wird beendet"
  ],
  "Test Configuration": [
   null,
-  "Unbekannte Konfiguration"
+  "Konfiguration prüfen"
  ],
  "Test is only available while the kdump service is running.": [
   null,
-  ""
+  "Der Test ist nur verfügbar, wenn der Dienst kdump läuft."
  ],
  "Test kdump settings": [
   null,
-  "IP Einstellungen"
+  "kdump-Einstellungen prüfen"
  ],
  "This will test kdump settings by crashing the kernel and thereby the system. Depending on the settings, the system may not automatically reboot and the process may take a while.": [
   null,
@@ -217,15 +217,15 @@ return plural;
  ],
  "This will test the kdump configuration by crashing the kernel.": [
   null,
-  ""
+  "Dies wird die kdump-Konfiguration durch einen Kernel-Absturz testen."
  ],
  "Unable to apply settings: $0": [
   null,
-  ""
+  "Kann Einstellungen nicht anwenden: $0"
  ],
  "Use the setting in /etc/kdump.conf": [
   null,
-  ""
+  "Benutze die Einstellungen in /etc/kdump.conf"
  ],
  "invalid: multiple targets defined": [
   null,
@@ -233,18 +233,18 @@ return plural;
  ],
  "kdump status": [
   null,
-  ""
+  "kdump Status"
  ],
  "locally in $0": [
   null,
-  ""
+  "lokal in $0"
  ],
  "ssh key": [
   null,
-  ""
+  "SSH-Schlüssel"
  ],
  "undefined": [
   null,
-  ""
+  "nicht definiert"
  ]
 }));

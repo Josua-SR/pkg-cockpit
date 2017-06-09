@@ -79,6 +79,10 @@ return plural;
   null,
   "계정 설정"
  ],
+ "Active Pages": [
+  null,
+  ""
+ ],
  "Add": [
   null,
   "추가"
@@ -126,6 +130,10 @@ return plural;
  "Close": [
   null,
   "닫기"
+ ],
+ "Close Selected Pages": [
+  null,
+  ""
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
@@ -271,6 +279,14 @@ return plural;
   null,
   ""
  ],
+ "Lock to prevent privileged tasks": [
+  null,
+  ""
+ ],
+ "Locked": [
+  null,
+  ""
+ ],
  "Log In": [
   null,
   ""
@@ -343,7 +359,15 @@ return plural;
   null,
   ""
  ],
+ "Password not usable for privileged tasks or to connect to other machines": [
+  null,
+  ""
+ ],
  "Port": [
+  null,
+  ""
+ ],
+ "Privileged tasks not available": [
   null,
   ""
  ],
@@ -366,6 +390,10 @@ return plural;
  "Reconnect": [
   null,
   "재연결"
+ ],
+ "Reuse my password for privileged tasks and to connect to other machines": [
+  null,
+  ""
  ],
  "Select": [
   null,
@@ -403,6 +431,10 @@ return plural;
   null,
   ""
  ],
+ "There are currently no active pages": [
+  null,
+  ""
+ ],
  "This machine has already been added.": [
   null,
   ""
@@ -416,10 +448,6 @@ return plural;
   ""
  ],
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
-  null,
-  ""
- ],
- "Tools": [
   null,
   ""
  ],
@@ -451,11 +479,11 @@ return plural;
   null,
   ""
  ],
- "Update": [
+ "Unlocked": [
   null,
   ""
  ],
- "Use my password for privileged tasks and to connect to other machines": [
+ "Update": [
   null,
   ""
  ],
@@ -480,6 +508,10 @@ return plural;
   ""
  ],
  "You can remove the previously stored key by running the following command": [
+  null,
+  ""
+ ],
+ "active": [
   null,
   ""
  ]

@@ -90,6 +90,45 @@ $ <span class="command"><strong>systemctl status cockpit</strong></span>
            ├─ 6957 /usr/libexec/cockpit-ws
            └─29598 /usr/bin/ssh-agent
 </pre>
+<p>In order to customize who can perform various actions in system,
+    <a class="link" href="privileges.html#privileges-polkit" title="Customizing Polkit Privileges">create polkit rules</a> with the following
+    actions and details:</p>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td><p><span class="term"><code class="option">org.freedesktop.systemd1.manage-units</code></span></p></td>
+<td><p>Permission to manage system services or other units.
+        Details available: <code class="code">unit</code>, <code class="code">verb</code></p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">org.freedesktop.systemd1.manage-unit-files</code></span></p></td>
+<td><p>Permission to manage system services or other unit files.</p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">org.freedesktop.systemd1.reload-daemon</code></span></p></td>
+<td><p>Permission to reload the systemd state.</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>For example, placing the following polkit rule to
+    <code class="filename">/etc/polkit-1.rules.d/10-http.rule</code> allows all users in the
+    <code class="code">operators</code> group start, stop, and restart the Apache HTTP service:</p>
+<pre class="programlisting">
+polkit.addRule(function(action, subject) {
+    if (action.id == "org.freedesktop.systemd1.manage-units") {
+        if (subject.isInGroup("operators") &amp;&amp; action.lookup("unit") == "httpd.service") {
+            var verb = action.lookup("verb");
+            if (verb == "start" || verb == "stop" || verb == "restart") {
+                return polkit.Result.YES;
+            }
+        }
+    }
+});
+</pre>
 </div>
 <div class="footer"><hr></div>
 </body>

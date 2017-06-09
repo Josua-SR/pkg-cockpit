@@ -73,23 +73,23 @@ return plural;
  ],
  "$0 day": [
   "$0 days",
-  "",
-  ""
+  "$0 Tag",
+  "$0 Tage"
  ],
  "$0 hour": [
   "$0 hours",
-  "",
-  ""
+  "$0 Stunde",
+  "$0 Stunden"
  ],
  "$0 minute": [
   "$0 minutes",
-  "",
-  ""
+  "$0 Minute",
+  "$0 Minuten"
  ],
  "$0 month": [
   "$0 months",
-  "",
-  ""
+  "$0 Monat",
+  "$0 Monate"
  ],
  "$0 shares": [
   null,
@@ -97,13 +97,13 @@ return plural;
  ],
  "$0 week": [
   "$0 weeks",
-  "",
-  ""
+  "$0 Woche",
+  "$0 Wochen"
  ],
  "$0 year": [
   "$0 years",
-  "",
-  ""
+  "$0 Jahr",
+  "$0 Jahre"
  ],
  "${hip}:${hport} -> $cport": [
   null,
@@ -111,11 +111,11 @@ return plural;
  ],
  "Add Additional Storage": [
   null,
-  ""
+  "Zusätzlichen Speicher hinzufügen"
  ],
  "Add Storage": [
   null,
-  ""
+  "Speicher hinzufügen"
  ],
  "Additional Storage": [
   null,
@@ -123,7 +123,7 @@ return plural;
  ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
-  ""
+  "Die ausgewählten Datenträger werden zum Storage Pool hinzugefügt. Dabei werden sämtliche Daten auf den ausgewählten Datenträgern gelöscht."
  ],
  "Always": [
   null,
@@ -151,7 +151,7 @@ return plural;
  ],
  "Can&rsquo;t connect to Docker": [
   null,
-  ""
+  "Verbindung zu Docker kann nicht hergestellt werden"
  ],
  "Cancel": [
   null,
@@ -163,15 +163,15 @@ return plural;
  ],
  "Change resource limits": [
   null,
-  ""
+  "Ressourcenlimits anpassen"
  ],
  "Change resources limits": [
   null,
-  ""
+  "Ressourcenlimits anpassen"
  ],
  "Close": [
   null,
-  "Schliessen"
+  "Schließen"
  ],
  "Combined CPU usage": [
   null,
@@ -187,11 +187,11 @@ return plural;
  ],
  "Command can't be empty": [
   null,
-  "Name darf nicht leer sein."
+  "Befehl darf nicht leer sein."
  ],
  "Command:": [
   null,
-  ""
+  "Befehl:"
  ],
  "Commit": [
   null,
@@ -227,11 +227,11 @@ return plural;
  ],
  "Container:": [
   null,
-  ""
+  "Container:"
  ],
  "Containers": [
   null,
-  "Containers"
+  "Container"
  ],
  "Could not add all disks": [
   null,
@@ -239,15 +239,15 @@ return plural;
  ],
  "Could not reset the storage pool": [
   null,
-  ""
+  "Konnte den Storage Pool nicht zurücksetzen"
  ],
  "Created": [
   null,
-  ""
+  "Erstellt"
  ],
  "Created:": [
   null,
-  ""
+  "Erstellt:"
  ],
  "Default": [
   null,
@@ -568,7 +568,7 @@ return plural;
  ],
  "Resetting the storage pool will erase all containers and release disks in the pool.": [
   null,
-  ""
+  "Das Zurücksetzen des Storage Pool löscht alle Container und Datenträger im Pool."
  ],
  "Restart": [
   null,
@@ -596,15 +596,15 @@ return plural;
  ],
  "Security": [
   null,
-  ""
+  "Sicherheit"
  ],
  "Set container environment variables": [
   null,
-  ""
+  "Umgebungsvariablen für Container setzen"
  ],
  "Show all containers": [
   null,
-  "Containers"
+  "Zeige alle Container an"
  ],
  "Show all images": [
   null,
@@ -628,11 +628,11 @@ return plural;
  ],
  "State": [
   null,
-  ""
+  "Status"
  ],
  "State:": [
   null,
-  ""
+  "Status:"
  ],
  "Stop": [
   null,
@@ -664,19 +664,19 @@ return plural;
  ],
  "The Docker storage pool cannot be managed on this system.": [
   null,
-  ""
+  "Der Docker Storage Pool kann auf diesem System nicht verwaltet werden."
  ],
  "The storage pool will be reset to optimize its layout.  All containers will be erased.": [
   null,
-  ""
+  "Der Storage Pool wird zurückgesetzt, um das Layout zu optimieren. Alle Container werden gelöscht."
  ],
  "This image does not exist.": [
   null,
-  "Name darf nicht leer sein."
+  "Dieses Image existiert nicht."
  ],
  "Total": [
   null,
-  ""
+  "Insgesamt"
  ],
  "Try again": [
   null,
@@ -684,7 +684,7 @@ return plural;
  ],
  "Type to filter…": [
   null,
-  ""
+  "Zum Filtern tippen..."
  ],
  "UDP": [
   null,
@@ -708,7 +708,7 @@ return plural;
  ],
  "Used by Containers": [
   null,
-  "Containers"
+  "Genutzt von Containern"
  ],
  "Volumes": [
   null,
@@ -720,7 +720,7 @@ return plural;
  ],
  "You don't have permission to manage the Docker storage pool.": [
   null,
-  "Sie haben keine Berechtigung, die autorisierten öffentlichen Schlüssel von diesem Konto anzuzeigen."
+  "Sie haben keine Berechtigung, den Docker Storage Pool zu verwalten."
  ],
  "alias": [
   null,
@@ -732,7 +732,7 @@ return plural;
  ],
  "key": [
   null,
-  ""
+  "Schlüssel"
  ],
  "none": [
   null,
@@ -740,15 +740,15 @@ return plural;
  ],
  "search by name, namespace or description": [
   null,
-  ""
+  "Suche nach Name, Namensraum oder Beschreibung"
  ],
  "select container": [
   null,
-  ""
+  "Container auswählen"
  ],
  "shares": [
   null,
-  ""
+  "Freigaben"
  ],
  "to host path": [
   null,
@@ -760,15 +760,15 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "nicht definiert"
  ],
  "value": [
   null,
-  ""
+  "Wert"
  ],
  "page-title\u0004Containers": [
   null,
-  "Containers"
+  "Container"
  ],
  "page-title\u0004Images": [
   null,

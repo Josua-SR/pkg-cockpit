@@ -397,7 +397,7 @@ return plural;
  ],
  "Deleting a Pod will kill all associated containers. Pods may be automatically created again in some cases.": [
   null,
-  "Usunięcie pojemnika zakończy wszystkie powiązane kontenery. W niektórych przypadkach pojemniki mogą być automatycznie tworzone ponownie.\n          "
+  "Usunięcie pojemnika zakończy wszystkie powiązane kontenery. W niektórych przypadkach pojemniki mogą być automatycznie tworzone ponownie."
  ],
  "Deploy": [
   null,

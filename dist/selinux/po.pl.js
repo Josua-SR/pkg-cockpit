@@ -87,7 +87,7 @@ return plural;
  ],
  "Connecting to SETroubleshoot daemon...": [
   null,
-  "Łączenie z OSTree"
+  "Łączenie z usługą SETroubleshoot…"
  ],
  "Enforce policy:": [
   null,
@@ -107,7 +107,7 @@ return plural;
  ],
  "Install setroubleshoot-server to troubleshoot SELinux events.": [
   null,
-  ""
+  "Należy zainstalować setroubleshoot-server, aby rozwiązywać problemy ze zdarzeniami SELinuksa."
  ],
  "No SELinux alerts.": [
   null,
@@ -147,7 +147,7 @@ return plural;
  ],
  "SELinux is disabled on the system": [
   null,
-  "SELinux jest wyłączony w systemie."
+  "SELinux jest wyłączony w systemie"
  ],
  "SELinux is disabled on the system.": [
   null,

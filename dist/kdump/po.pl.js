@@ -77,19 +77,19 @@ return plural;
  ],
  "Compress crash dumps to save space": [
   null,
-  ""
+  "Kompresowanie zrzutów awarii, aby oszczędzać miejsce"
  ],
  "Compression": [
   null,
-  ""
+  "Kompresja"
  ],
  "Crash dump location": [
   null,
-  ""
+  "Położenie zrzutu awarii"
  ],
  "Crash system": [
   null,
-  ""
+  "System awarii"
  ],
  "Directory": [
   null,
@@ -97,15 +97,15 @@ return plural;
  ],
  "Directory $0 isn't writable or doesn't exist.": [
   null,
-  ""
+  "Katalog $0 nie jest zapisywalny lub nie istnieje."
  ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
-  ""
+  "Usługa Kdump nie jest zainstalowana. Proszę się upewnić, że pakiet kexec-tools jest zainstalowany."
  ],
  "Kernel dump configuration": [
   null,
-  "Uszkodzona konfiguracja"
+  "Konfiguracja zrzutu jądra"
  ],
  "Loading...": [
   null,
@@ -113,15 +113,15 @@ return plural;
  ],
  "Local Filesystem": [
   null,
-  "Brak systemu plików"
+  "Lokalny system plików"
  ],
  "Location": [
   null,
-  "Położenie punktu montowania"
+  "Położenie"
  ],
  "More details": [
   null,
-  "informacje o rozwiązaniu"
+  "Więcej informacji"
  ],
  "Mount": [
   null,
@@ -129,11 +129,11 @@ return plural;
  ],
  "No configuration found": [
   null,
-  "Uszkodzona konfiguracja"
+  "Nie odnaleziono konfiguracji"
  ],
  "No memory reserved. Append a crashkernel option to the kernel command line (e.g. in /etc/default/grub) to reserve memory at boot time. Example: crashkernel=512M": [
   null,
-  ""
+  "Brak zastrzeżonej pamięci. Proszę dodać opcję crashkernel do wiersza poleceń jądra (tzn. w /etc/default/grub), aby zastrzec pamięć w czasie uruchamiania. Przykład: crashkernel=512M"
  ],
  "None": [
   null,
@@ -153,27 +153,27 @@ return plural;
  ],
  "On a mounted device": [
   null,
-  ""
+  "Na zamontowanym urządzeniu"
  ],
  "Raw to a device": [
   null,
-  "Urządzenie blokowe Rados"
+  "Surowe do urządzenia"
  ],
  "Reading...": [
   null,
-  "Odczytywanie"
+  "Odczytywanie…"
  ],
  "Remote over NFS": [
   null,
-  "Usuń rolę"
+  "Zdalnie przez NFS"
  ],
  "Remote over SSH": [
   null,
-  "Usuń rolę"
+  "Zdalnie przez SSH"
  ],
  "Reserved memory": [
   null,
-  ""
+  "Zastrzeżona pamięć"
  ],
  "Server": [
   null,
@@ -181,67 +181,67 @@ return plural;
  ],
  "Service has an error": [
   null,
-  "Nazwa usługi"
+  "Usługa ma błąd"
  ],
  "Service is running": [
   null,
-  "Maszyna wirtualna jest uruchomiona."
+  "Usługa jest uruchomiona"
  ],
  "Service is starting": [
   null,
-  "Komputer jest ponownie uruchamiany"
+  "Usługa jest uruchamiana"
  ],
  "Service is stopped": [
   null,
-  "Usługi"
+  "Usługa jest zatrzymana"
  ],
  "Service is stopping": [
   null,
-  "Dzienniki serwera"
+  "Usługa jest zatrzymywana"
  ],
  "Test Configuration": [
   null,
-  "Konfiguracja"
+  "Przetestuj konfigurację"
  ],
  "Test is only available while the kdump service is running.": [
   null,
-  ""
+  "Test jest dostępny tylko, jeśli usługa kdump jest uruchomiona."
  ],
  "Test kdump settings": [
   null,
-  "Ustawienia zespołu"
+  "Przetestuj ustawienia kdump"
  ],
  "This will test kdump settings by crashing the kernel and thereby the system. Depending on the settings, the system may not automatically reboot and the process may take a while.": [
   null,
-  ""
+  "Przetestuje to ustawienia kdump przez zawieszenie jądra, a razem z tym komputera. W zależności od ustawień, komputer może nie zostać automatycznie włączony ponownie, a cały proces może chwilę zająć."
  ],
  "This will test the kdump configuration by crashing the kernel.": [
   null,
-  ""
+  "Przetestuje to konfigurację kdump przez zawieszenie jądra."
  ],
  "Unable to apply settings: $0": [
   null,
-  "Nie można pobrać alarmu: $0"
+  "Nie można zastosować ustawień: $0"
  ],
  "Use the setting in /etc/kdump.conf": [
   null,
-  ""
+  "Użycie ustawień z /etc/kdump.conf"
  ],
  "invalid: multiple targets defined": [
   null,
-  ""
+  "nieprawidłowe: podano wiele celów"
  ],
  "kdump status": [
   null,
-  ""
+  "stan kdump"
  ],
  "locally in $0": [
   null,
-  ""
+  "lokalnie w $0"
  ],
  "ssh key": [
   null,
-  ""
+  "klucz SSH"
  ],
  "undefined": [
   null,

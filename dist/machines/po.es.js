@@ -69,39 +69,71 @@ return plural;
  },
  "Autostart:": [
   null,
-  ""
+  "Auto inicio:"
  ],
  "Available": [
   null,
   "Disponible"
  ],
- "Connection": [
-  null,
-  "Conectar"
- ],
- "FORCEOFF_VM action failed": [
+ "Boot Order:": [
   null,
   ""
  ],
- "FORCEREBOOT_VM action failed": [
+ "Bus": [
+  null,
+  ""
+ ],
+ "CPU Type:": [
+  null,
+  ""
+ ],
+ "Capacity": [
+  null,
+  "Capacidad"
+ ],
+ "Connection": [
+  null,
+  "Conexión"
+ ],
+ "Count:": [
+  null,
+  ""
+ ],
+ "Device": [
+  null,
+  ""
+ ],
+ "Disks": [
+  null,
+  "Discos"
+ ],
+ "Emulated Machine:": [
+  null,
+  ""
+ ],
+ "File": [
   null,
   ""
  ],
  "Force Restart": [
   null,
-  ""
+  "Forzar Reinicio"
  ],
  "Force Shut Down": [
   null,
-  ""
+  "Forzar Apagado"
  ],
- "ID:": [
+ "GB": [
   null,
   ""
+ ],
+ "Host": [
+  null,
+  "Anfitrión"
  ],
  "Memory:": [
   null,
-  ""
+  "Memoria:"
  ],
  "Name": [
   null,
@@ -109,17 +141,33 @@ return plural;
  ],
  "No VM is running or defined on this host": [
   null,
+  "No hay ninguna MV en ejecución o definida en este anfitrión"
+ ],
+ "No boot device found": [
+  null,
   ""
  ],
- "OS Type:": [
+ "No disks defined for this VM": [
   null,
   ""
  ],
  "Overview": [
   null,
+  "Visión conjunta"
+ ],
+ "Pool": [
+  null,
+  "Grupo"
+ ],
+ "Port": [
+  null,
+  "Puerto"
+ ],
+ "Protocol": [
+  null,
   ""
  ],
- "REBOOT_VM action failed": [
+ "Readonly": [
   null,
   ""
  ],
@@ -129,21 +177,17 @@ return plural;
  ],
  "Run": [
   null,
-  ""
- ],
- "SHUTDOWN_VM action failed": [
-  null,
-  ""
- ],
- "START_VM action failed": [
-  null,
-  ""
+  "Ejecutar"
  ],
  "Session": [
   null,
-  "Versión"
+  "Sesión"
  ],
  "Shut Down": [
+  null,
+  ""
+ ],
+ "Source": [
   null,
   ""
  ],
@@ -151,11 +195,11 @@ return plural;
   null,
   "Estado"
  ],
- "State:": [
+ "System": [
   null,
   ""
  ],
- "System": [
+ "Target": [
   null,
   ""
  ],
@@ -191,6 +235,10 @@ return plural;
   null,
   ""
  ],
+ "Upgrade to a more recent version of libvirt to view disk statistics": [
+  null,
+  ""
+ ],
  "Usage": [
   null,
   ""
@@ -199,7 +247,35 @@ return plural;
   null,
   "Usado"
  ],
+ "VM FORCE OFF action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  ""
+ ],
+ "VM START action failed": [
+  null,
+  ""
+ ],
  "Virtual Machines": [
+  null,
+  ""
+ ],
+ "Volume": [
+  null,
+  ""
+ ],
+ "cdrom": [
   null,
   ""
  ],
@@ -207,9 +283,17 @@ return plural;
   null,
   ""
  ],
+ "custom": [
+  null,
+  ""
+ ],
  "disabled": [
   null,
-  "Deshabilitado"
+  "desactivado"
+ ],
+ "disk": [
+  null,
+  ""
  ],
  "dying": [
   null,
@@ -217,19 +301,35 @@ return plural;
  ],
  "enabled": [
   null,
-  "Habilitado"
+  "activado"
+ ],
+ "host": [
+  null,
+  ""
  ],
  "idle": [
+  null,
+  "inactivo"
+ ],
+ "network": [
+  null,
+  ""
+ ],
+ "no": [
+  null,
+  "no"
+ ],
+ "other": [
   null,
   ""
  ],
  "paused": [
   null,
-  ""
+  "en pausa"
  ],
  "running": [
   null,
-  "Corriendo"
+  "en ejecución"
  ],
  "shut off": [
   null,
@@ -246,5 +346,9 @@ return plural;
  "vCPUs:": [
   null,
   ""
+ ],
+ "yes": [
+  null,
+  "sí"
  ]
 }));

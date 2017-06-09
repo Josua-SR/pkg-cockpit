@@ -71,14 +71,31 @@ return plural;
   null,
   "Dispositiu de blocs $0"
  ],
+ "$0 Chunk Size": [
+  null,
+  "$0 de mida del tros"
+ ],
+ "$0 Disks": [
+  null,
+  "$0 discs"
+ ],
  "$0 day": [
   "$0 days",
+  "",
+  ""
+ ],
+ "$0 disk is missing": [
+  "$0 disks are missing",
   "",
   ""
  ],
  "$0 hour": [
   "$0 hours",
   "",
+  ""
+ ],
+ "$0 is in active use": [
+  null,
   ""
  ],
  "$0 minute": [
@@ -105,9 +122,17 @@ return plural;
   "",
   ""
  ],
+ "$0, $1 free": [
+  null,
+  "$0 amb $1 lliures"
+ ],
  "$name (from $host)": [
   null,
   "$name (de $host)"
+ ],
+ "${size} ${desc}": [
+  null,
+  ""
  ],
  "(default)": [
   null,
@@ -193,6 +218,10 @@ return plural;
   null,
   "<span>Partició de $0</span>"
  ],
+ "A spare disk needs to be added first before this disk can be removed.": [
+  null,
+  ""
+ ],
  "Activate": [
   null,
   "Activa"
@@ -204,6 +233,10 @@ return plural;
  "Add": [
   null,
   "Afegeix"
+ ],
+ "Add Disks": [
+  null,
+  "Afegeix discs"
  ],
  "Add iSCSI Portal": [
   null,
@@ -244,6 +277,10 @@ return plural;
  "Block device for filesystems": [
   null,
   ""
+ ],
+ "Blocked": [
+  null,
+  "Bloquejat"
  ],
  "Can't delete while unlocked": [
   null,
@@ -401,6 +438,10 @@ return plural;
   null,
   "S'està suprimint $target"
  ],
+ "Deleting a RAID device will erase all data on it.": [
+  null,
+  "La supressió d'un dispositiu RAID n'esborrarà totes les dades."
+ ],
  "Deleting a logical volume will delete all data in it.": [
   null,
   "La supressió d'un volum lògic n'esborrarà totes les dades."
@@ -409,21 +450,13 @@ return plural;
   null,
   "La supressió d'una partició n'esborrarà totes les dades."
  ],
+ "Deleting a volume group will erase all data on it.": [
+  null,
+  "La supressió d'un grup de volums n'esborrarà totes les dades."
+ ],
  "Deleting volume group $target": [
   null,
   "S'està suprimint el grup de volums $target"
- ],
- "Device $0 is a member of RAID Array $1": [
-  null,
-  "El dispositiu $0 és un membre de la matriu RAID $1"
- ],
- "Device $0 is a physical volume of $1": [
-  null,
-  "El dispositiu $0 és un volum físic de $1"
- ],
- "Device $0 is mounted on $1": [
-  null,
-  "El dispositiu $0 està muntat a $1"
  ],
  "Device is read-only": [
   null,
@@ -461,9 +494,21 @@ return plural;
   null,
   "S'està buidant $target"
  ],
+ "Encrypted $0": [
+  null,
+  ""
+ ],
  "Encrypted EXT4 (LUKS)": [
   null,
   "EXT4 xifrat (LUKS)"
+ ],
+ "Encrypted Logical Volume of $0": [
+  null,
+  ""
+ ],
+ "Encrypted Partition of $0": [
+  null,
+  ""
  ],
  "Encrypted XFS (LUKS)": [
   null,
@@ -492,6 +537,10 @@ return plural;
  "Extended Partition": [
   null,
   "Partició estesa"
+ ],
+ "FAILED": [
+  null,
+  "FALLAT"
  ],
  "Filesystem": [
   null,
@@ -545,6 +594,10 @@ return plural;
   null,
   "Vés a ara"
  ],
+ "In Sync": [
+  null,
+  "En sincronització"
+ ],
  "Inactive volume": [
   null,
   ""
@@ -572,6 +625,10 @@ return plural;
  "Logical Volume (Snapshot)": [
   null,
   "Volum lògic (instantània)"
+ ],
+ "Logical Volume of $0": [
+  null,
+  ""
  ],
  "Marking $target as faulty": [
   null,
@@ -653,6 +710,10 @@ return plural;
   null,
   ""
  ],
+ "No disks are available.": [
+  null,
+  ""
+ ],
  "No drives attached": [
   null,
   "Sense unitats connectades"
@@ -681,6 +742,14 @@ return plural;
   null,
   "Cap grup de volums creat"
  ],
+ "Not found": [
+  null,
+  "No s'ha trobat"
+ ],
+ "Not running": [
+  null,
+  "No s'està executant"
+ ],
  "Off": [
   null,
   "Apagat"
@@ -708,6 +777,10 @@ return plural;
  "Partition": [
   null,
   "Partició"
+ ],
+ "Partition of $0": [
+  null,
+  ""
  ],
  "Partitioning": [
   null,
@@ -769,25 +842,53 @@ return plural;
   null,
   ""
  ],
+ "RAID ($0)": [
+  null,
+  "RAID ($0)"
+ ],
+ "RAID 0": [
+  null,
+  "RAID 0"
+ ],
  "RAID 0 (Stripe)": [
   null,
   "RAID 0 (segmentació)"
+ ],
+ "RAID 1": [
+  null,
+  "RAID 1"
  ],
  "RAID 1 (Mirror)": [
   null,
   "RAID 1 (rèplica)"
  ],
+ "RAID 10": [
+  null,
+  "RAID 10"
+ ],
  "RAID 10 (Stripe of Mirrors)": [
   null,
   "RAID 10 (segmentació de rèpliques)"
+ ],
+ "RAID 4": [
+  null,
+  "RAID 4"
  ],
  "RAID 4 (Dedicated Parity)": [
   null,
   "RAID 4 (paritat dedicada)"
  ],
+ "RAID 5": [
+  null,
+  "RAID 5"
+ ],
  "RAID 5 (Distributed Parity)": [
   null,
   "RAID 5 (paritat distribuïda)"
+ ],
+ "RAID 6": [
+  null,
+  "RAID 6"
  ],
  "RAID 6 (Double Distributed Parity)": [
   null,
@@ -821,6 +922,10 @@ return plural;
   null,
   "Rearrencada"
  ],
+ "Recovering": [
+  null,
+  "Recuperació"
+ ],
  "Recovering RAID Device $target": [
   null,
   ""
@@ -841,6 +946,10 @@ return plural;
   null,
   ""
  ],
+ "Rename Volume Group": [
+  null,
+  "Reanomena un grup de volums"
+ ],
  "Renaming $target": [
   null,
   "S'està reanomenant $target"
@@ -860,6 +969,10 @@ return plural;
  "Resizing $target": [
   null,
   "S'està redimensionant $target"
+ ],
+ "Running": [
+  null,
+  "En execució"
  ],
  "SMART self-test of $target": [
   null,
@@ -901,6 +1014,10 @@ return plural;
   null,
   ""
  ],
+ "Spare": [
+  null,
+  "Recanvi"
+ ],
  "Start": [
   null,
   "Inicia"
@@ -908,6 +1025,10 @@ return plural;
  "Start Multipath": [
   null,
   "Inicia el multicamí"
+ ],
+ "Start Scrubbing": [
+  null,
+  "Inicia el tractament de neteja"
  ],
  "Starting RAID Device $target": [
   null,
@@ -920,6 +1041,10 @@ return plural;
  "Stop": [
   null,
   "Atura"
+ ],
+ "Stop Scrubbing": [
+  null,
+  "Atura el tractament de neteja"
  ],
  "Stopping RAID Device $target": [
   null,
@@ -973,6 +1098,22 @@ return plural;
   null,
   ""
  ],
+ "The RAID device must be running in order to add spare disks.": [
+  null,
+  ""
+ ],
+ "The RAID device must be running in order to remove disks.": [
+  null,
+  ""
+ ],
+ "The last disk of a RAID device cannot be removed.": [
+  null,
+  ""
+ ],
+ "The last physical volume of a volume group cannot be removed.": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "A l'usuari <b>$0</b> no se li permet gestionar l'emmagatzematge"
@@ -981,9 +1122,37 @@ return plural;
   null,
   ""
  ],
+ "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
+  null,
+  ""
+ ],
  "Thin Logical Volume": [
   null,
   "Volums lògics disgregats"
+ ],
+ "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
+  null,
+  ""
+ ],
+ "This device is currently used for RAID devices.": [
+  null,
+  ""
+ ],
+ "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
+  null,
+  ""
+ ],
+ "This device is currently used for volume groups.": [
+  null,
+  ""
+ ],
+ "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
+  null,
+  ""
+ ],
+ "This disk cannot be removed while the device is recovering.": [
+  null,
+  ""
  ],
  "This logical volume cannot be made smaller.": [
   null,
@@ -1004,6 +1173,10 @@ return plural;
  "Unknown": [
   null,
   "Desconegut"
+ ],
+ "Unknown ($0)": [
+  null,
+  "Desconegut ($0)"
  ],
  "Unknown host name": [
   null,
@@ -1069,6 +1242,10 @@ return plural;
   null,
   "Grups de volums"
  ],
+ "Write-mostly": [
+  null,
+  "Escriptura-majoritària"
+ ],
  "Writing": [
   null,
   "Escriptura"
@@ -1100,6 +1277,10 @@ return plural;
  "unknown target": [
   null,
   "objectiu desconegut"
+ ],
+ "unpartitioned space on $0": [
+  null,
+  ""
  ],
  "storage-id-desc\u0004$0 File System": [
   null,

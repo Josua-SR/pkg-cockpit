@@ -67,9 +67,21 @@ return plural;
   "language": "fr",
   "x-generator": "Zanata 3.9.6"
  },
+ "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
+  null,
+  ""
+ ],
  "Administrator Password": [
   null,
   "Mot de passe de l'administrateur"
+ ],
+ "Are you sure you want to leave the '$0' domain?": [
+  null,
+  ""
+ ],
+ "Are you sure you want to leave this domain?": [
+  null,
+  ""
  ],
  "Authentication": [
   null,

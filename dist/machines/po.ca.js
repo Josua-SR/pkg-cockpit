@@ -75,15 +75,43 @@ return plural;
   null,
   "Disponible"
  ],
+ "Boot Order:": [
+  null,
+  ""
+ ],
+ "Bus": [
+  null,
+  ""
+ ],
+ "CPU Type:": [
+  null,
+  ""
+ ],
+ "Capacity": [
+  null,
+  ""
+ ],
  "Connection": [
   null,
   "Connecta"
  ],
- "FORCEOFF_VM action failed": [
+ "Count:": [
   null,
   ""
  ],
- "FORCEREBOOT_VM action failed": [
+ "Device": [
+  null,
+  ""
+ ],
+ "Disks": [
+  null,
+  "Discs"
+ ],
+ "Emulated Machine:": [
+  null,
+  ""
+ ],
+ "File": [
   null,
   ""
  ],
@@ -95,9 +123,13 @@ return plural;
   null,
   ""
  ],
- "ID:": [
+ "GB": [
   null,
   ""
+ ],
+ "Host": [
+  null,
+  "Amfitrió"
  ],
  "Memory:": [
   null,
@@ -111,7 +143,11 @@ return plural;
   null,
   ""
  ],
- "OS Type:": [
+ "No boot device found": [
+  null,
+  ""
+ ],
+ "No disks defined for this VM": [
   null,
   ""
  ],
@@ -119,7 +155,19 @@ return plural;
   null,
   ""
  ],
- "REBOOT_VM action failed": [
+ "Pool": [
+  null,
+  ""
+ ],
+ "Port": [
+  null,
+  "Port"
+ ],
+ "Protocol": [
+  null,
+  ""
+ ],
+ "Readonly": [
   null,
   ""
  ],
@@ -131,14 +179,6 @@ return plural;
   null,
   ""
  ],
- "SHUTDOWN_VM action failed": [
-  null,
-  ""
- ],
- "START_VM action failed": [
-  null,
-  ""
- ],
  "Session": [
   null,
   "Versió"
@@ -147,15 +187,19 @@ return plural;
   null,
   ""
  ],
+ "Source": [
+  null,
+  ""
+ ],
  "State": [
   null,
   "Estat"
  ],
- "State:": [
+ "System": [
   null,
   ""
  ],
- "System": [
+ "Target": [
   null,
   ""
  ],
@@ -191,6 +235,10 @@ return plural;
   null,
   ""
  ],
+ "Upgrade to a more recent version of libvirt to view disk statistics": [
+  null,
+  ""
+ ],
  "Usage": [
   null,
   ""
@@ -199,7 +247,35 @@ return plural;
   null,
   "Utilitzat"
  ],
+ "VM FORCE OFF action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  ""
+ ],
+ "VM START action failed": [
+  null,
+  ""
+ ],
  "Virtual Machines": [
+  null,
+  ""
+ ],
+ "Volume": [
+  null,
+  "Volum"
+ ],
+ "cdrom": [
   null,
   ""
  ],
@@ -207,9 +283,17 @@ return plural;
   null,
   ""
  ],
+ "custom": [
+  null,
+  ""
+ ],
  "disabled": [
   null,
-  "Inhabilitat"
+  "inhabilitat"
+ ],
+ "disk": [
+  null,
+  ""
  ],
  "dying": [
   null,
@@ -217,9 +301,25 @@ return plural;
  ],
  "enabled": [
   null,
-  "Habilitat"
+  "habilitat"
+ ],
+ "host": [
+  null,
+  ""
  ],
  "idle": [
+  null,
+  ""
+ ],
+ "network": [
+  null,
+  ""
+ ],
+ "no": [
+  null,
+  "no"
+ ],
+ "other": [
   null,
   ""
  ],
@@ -229,7 +329,7 @@ return plural;
  ],
  "running": [
   null,
-  "En execució"
+  "executant"
  ],
  "shut off": [
   null,
@@ -246,5 +346,9 @@ return plural;
  "vCPUs:": [
   null,
   ""
+ ],
+ "yes": [
+  null,
+  "sí"
  ]
 }));

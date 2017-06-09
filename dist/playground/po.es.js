@@ -69,13 +69,13 @@ return plural;
  },
  "$0 day": [
   "$0 days",
-  "$0 días",
+  "$0 día",
   "$0 días"
  ],
  "$0 disk is missing": [
   "$0 disks are missing",
-  "$0 discos han desaparecido",
-  "$0 discos han desaparecido"
+  "Falta $0 disco",
+  "Faltan $0 discos"
  ],
  "$0 hour": [
   "$0 hours",
@@ -84,22 +84,22 @@ return plural;
  ],
  "$0 minute": [
   "$0 minutes",
-  "$0 minutos",
+  "$0 minuto",
   "$0 minutos"
  ],
  "$0 month": [
   "$0 months",
-  "$0 meses",
+  "$0 mes",
   "$0 meses"
  ],
  "$0 week": [
   "$0 weeks",
-  "$0 semanas",
+  "$0 semana",
   "$0 semanas"
  ],
  "$0 year": [
   "$0 years",
-  "$0 años",
+  "$0 año",
   "$0 años"
  ],
  "Cancel": [
@@ -108,11 +108,11 @@ return plural;
  ],
  "Control": [
   null,
-  ""
+  "Control"
  ],
  "Delete '{{ name }}'": [
   null,
-  ""
+  "Borrar '{{ nombre }}'"
  ],
  "Empty": [
   null,
@@ -140,7 +140,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "Aceptar"
  ],
  "On": [
   null,
@@ -160,23 +160,23 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "sin definir"
  ],
  "disk-non-rotational\u0004$0 disk is missing": [
   "$0 disks are missing",
-  "$0 discos han desaparecido",
-  "$0 discos han desaparecido"
+  "Falta $0 disco",
+  "Faltan $0 discos"
  ],
  "key\u0004Control": [
   null,
-  ""
+  "Control"
  ],
  "verb\u0004Empty": [
   null,
-  ""
+  "Vacío"
  ],
  "verb\u0004Ready": [
   null,
-  ""
+  "Preparado"
  ]
 }));

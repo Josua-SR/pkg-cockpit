@@ -71,12 +71,28 @@ return plural;
   null,
   ""
  ],
+ "$0 Chunk Size": [
+  null,
+  ""
+ ],
+ "$0 Disks": [
+  null,
+  ""
+ ],
  "$0 day": [
   "$0 days",
   ""
  ],
+ "$0 disk is missing": [
+  "$0 disks are missing",
+  ""
+ ],
  "$0 hour": [
   "$0 hours",
+  ""
+ ],
+ "$0 is in active use": [
+  null,
   ""
  ],
  "$0 minute": [
@@ -99,9 +115,17 @@ return plural;
   "$0 years",
   ""
  ],
+ "$0, $1 free": [
+  null,
+  ""
+ ],
  "$name (from $host)": [
   null,
   "$name ($host에서)"
+ ],
+ "${size} ${desc}": [
+  null,
+  ""
  ],
  "(default)": [
   null,
@@ -187,6 +211,10 @@ return plural;
   null,
   "<span>$0의 파티션</span>"
  ],
+ "A spare disk needs to be added first before this disk can be removed.": [
+  null,
+  ""
+ ],
  "Activate": [
   null,
   ""
@@ -198,6 +226,10 @@ return plural;
  "Add": [
   null,
   "추가"
+ ],
+ "Add Disks": [
+  null,
+  "디스크 추가"
  ],
  "Add iSCSI Portal": [
   null,
@@ -236,6 +268,10 @@ return plural;
   ""
  ],
  "Block device for filesystems": [
+  null,
+  ""
+ ],
+ "Blocked": [
   null,
   ""
  ],
@@ -395,6 +431,10 @@ return plural;
   null,
   ""
  ],
+ "Deleting a RAID device will erase all data on it.": [
+  null,
+  "RAID 장치를 제거하면 내부의 모든 데이터를 지우게 됩니다."
+ ],
  "Deleting a logical volume will delete all data in it.": [
   null,
   ""
@@ -403,21 +443,13 @@ return plural;
   null,
   ""
  ],
- "Deleting volume group $target": [
+ "Deleting a volume group will erase all data on it.": [
   null,
   ""
  ],
- "Device $0 is a member of RAID Array $1": [
+ "Deleting volume group $target": [
   null,
-  "장치 $0는 RAID 어레이 $1에 속해 있습니다"
- ],
- "Device $0 is a physical volume of $1": [
-  null,
-  "장치 $0는  $1의 물리 볼륨입니다"
- ],
- "Device $0 is mounted on $1": [
-  null,
-  "장치 $0는 $1에 마운트되어 있습니다"
+  ""
  ],
  "Device is read-only": [
   null,
@@ -455,7 +487,19 @@ return plural;
   null,
   ""
  ],
+ "Encrypted $0": [
+  null,
+  ""
+ ],
  "Encrypted EXT4 (LUKS)": [
+  null,
+  ""
+ ],
+ "Encrypted Logical Volume of $0": [
+  null,
+  ""
+ ],
+ "Encrypted Partition of $0": [
   null,
   ""
  ],
@@ -484,6 +528,10 @@ return plural;
   ""
  ],
  "Extended Partition": [
+  null,
+  ""
+ ],
+ "FAILED": [
   null,
   ""
  ],
@@ -539,6 +587,10 @@ return plural;
   null,
   "지금 바로 가기"
  ],
+ "In Sync": [
+  null,
+  ""
+ ],
  "Inactive volume": [
   null,
   ""
@@ -566,6 +618,10 @@ return plural;
  "Logical Volume (Snapshot)": [
   null,
   "논리 볼륨 (스냅샷)"
+ ],
+ "Logical Volume of $0": [
+  null,
+  ""
  ],
  "Marking $target as faulty": [
   null,
@@ -647,6 +703,10 @@ return plural;
   null,
   ""
  ],
+ "No disks are available.": [
+  null,
+  ""
+ ],
  "No drives attached": [
   null,
   ""
@@ -675,6 +735,14 @@ return plural;
   null,
   ""
  ],
+ "Not found": [
+  null,
+  "찾을 수 없습니다."
+ ],
+ "Not running": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "비활성"
@@ -700,6 +768,10 @@ return plural;
   ""
  ],
  "Partition": [
+  null,
+  ""
+ ],
+ "Partition of $0": [
   null,
   ""
  ],
@@ -763,7 +835,19 @@ return plural;
   null,
   ""
  ],
+ "RAID ($0)": [
+  null,
+  ""
+ ],
+ "RAID 0": [
+  null,
+  ""
+ ],
  "RAID 0 (Stripe)": [
+  null,
+  ""
+ ],
+ "RAID 1": [
   null,
   ""
  ],
@@ -771,7 +855,15 @@ return plural;
   null,
   ""
  ],
+ "RAID 10": [
+  null,
+  ""
+ ],
  "RAID 10 (Stripe of Mirrors)": [
+  null,
+  ""
+ ],
+ "RAID 4": [
   null,
   ""
  ],
@@ -779,7 +871,15 @@ return plural;
   null,
   ""
  ],
+ "RAID 5": [
+  null,
+  ""
+ ],
  "RAID 5 (Distributed Parity)": [
+  null,
+  ""
+ ],
+ "RAID 6": [
   null,
   ""
  ],
@@ -815,6 +915,10 @@ return plural;
   null,
   ""
  ],
+ "Recovering": [
+  null,
+  ""
+ ],
  "Recovering RAID Device $target": [
   null,
   ""
@@ -832,6 +936,10 @@ return plural;
   ""
  ],
  "Rename Logical Volume": [
+  null,
+  ""
+ ],
+ "Rename Volume Group": [
   null,
   ""
  ],
@@ -854,6 +962,10 @@ return plural;
  "Resizing $target": [
   null,
   ""
+ ],
+ "Running": [
+  null,
+  "작동중"
  ],
  "SMART self-test of $target": [
   null,
@@ -895,11 +1007,19 @@ return plural;
   null,
   ""
  ],
+ "Spare": [
+  null,
+  ""
+ ],
  "Start": [
   null,
   ""
  ],
  "Start Multipath": [
+  null,
+  ""
+ ],
+ "Start Scrubbing": [
   null,
   ""
  ],
@@ -912,6 +1032,10 @@ return plural;
   ""
  ],
  "Stop": [
+  null,
+  ""
+ ],
+ "Stop Scrubbing": [
   null,
   ""
  ],
@@ -967,6 +1091,22 @@ return plural;
   null,
   ""
  ],
+ "The RAID device must be running in order to add spare disks.": [
+  null,
+  ""
+ ],
+ "The RAID device must be running in order to remove disks.": [
+  null,
+  ""
+ ],
+ "The last disk of a RAID device cannot be removed.": [
+  null,
+  ""
+ ],
+ "The last physical volume of a volume group cannot be removed.": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   ""
@@ -975,9 +1115,37 @@ return plural;
   null,
   ""
  ],
+ "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
+  null,
+  ""
+ ],
  "Thin Logical Volume": [
   null,
   "Thin 논리 볼륨"
+ ],
+ "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
+  null,
+  ""
+ ],
+ "This device is currently used for RAID devices.": [
+  null,
+  ""
+ ],
+ "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
+  null,
+  ""
+ ],
+ "This device is currently used for volume groups.": [
+  null,
+  ""
+ ],
+ "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
+  null,
+  ""
+ ],
+ "This disk cannot be removed while the device is recovering.": [
+  null,
+  ""
  ],
  "This logical volume cannot be made smaller.": [
   null,
@@ -998,6 +1166,10 @@ return plural;
  "Unknown": [
   null,
   "알 수 없음"
+ ],
+ "Unknown ($0)": [
+  null,
+  ""
  ],
  "Unknown host name": [
   null,
@@ -1063,6 +1235,10 @@ return plural;
   null,
   ""
  ],
+ "Write-mostly": [
+  null,
+  ""
+ ],
  "Writing": [
   null,
   ""
@@ -1092,6 +1268,10 @@ return plural;
   ""
  ],
  "unknown target": [
+  null,
+  ""
+ ],
+ "unpartitioned space on $0": [
   null,
   ""
  ],

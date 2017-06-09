@@ -1,7 +1,123 @@
 # Generated Makefile data for docker
-# Stamp: Thu Jun 01 2017 11:55:52 GMT+0000 (UTC)
+# Stamp: Fri Jun 09 2017 13:15:59 GMT+0000 (UTC)
 
 docker_INPUTS = \
+	$(srcdir)/node_modules/bootstrap/LICENSE \
+	$(srcdir)/node_modules/bootstrap/README.md \
+	$(srcdir)/node_modules/bootstrap/less/variables.less \
+	$(srcdir)/node_modules/jquery-flot/LICENSE.txt \
+	$(srcdir)/node_modules/jquery-flot/README.md \
+	$(srcdir)/node_modules/jquery-flot/jquery.flot.js \
+	$(srcdir)/node_modules/jquery-flot/jquery.flot.selection.js \
+	$(srcdir)/node_modules/jquery-flot/jquery.flot.time.js \
+	$(srcdir)/node_modules/moment/LICENSE \
+	$(srcdir)/node_modules/moment/README.md \
+	$(srcdir)/node_modules/moment/locale/af.js \
+	$(srcdir)/node_modules/moment/locale/ar-ma.js \
+	$(srcdir)/node_modules/moment/locale/ar-sa.js \
+	$(srcdir)/node_modules/moment/locale/ar-tn.js \
+	$(srcdir)/node_modules/moment/locale/ar.js \
+	$(srcdir)/node_modules/moment/locale/az.js \
+	$(srcdir)/node_modules/moment/locale/be.js \
+	$(srcdir)/node_modules/moment/locale/bg.js \
+	$(srcdir)/node_modules/moment/locale/bn.js \
+	$(srcdir)/node_modules/moment/locale/bo.js \
+	$(srcdir)/node_modules/moment/locale/br.js \
+	$(srcdir)/node_modules/moment/locale/bs.js \
+	$(srcdir)/node_modules/moment/locale/ca.js \
+	$(srcdir)/node_modules/moment/locale/cs.js \
+	$(srcdir)/node_modules/moment/locale/cv.js \
+	$(srcdir)/node_modules/moment/locale/cy.js \
+	$(srcdir)/node_modules/moment/locale/da.js \
+	$(srcdir)/node_modules/moment/locale/de-at.js \
+	$(srcdir)/node_modules/moment/locale/de.js \
+	$(srcdir)/node_modules/moment/locale/el.js \
+	$(srcdir)/node_modules/moment/locale/en-au.js \
+	$(srcdir)/node_modules/moment/locale/en-ca.js \
+	$(srcdir)/node_modules/moment/locale/en-gb.js \
+	$(srcdir)/node_modules/moment/locale/eo.js \
+	$(srcdir)/node_modules/moment/locale/es.js \
+	$(srcdir)/node_modules/moment/locale/et.js \
+	$(srcdir)/node_modules/moment/locale/eu.js \
+	$(srcdir)/node_modules/moment/locale/fa.js \
+	$(srcdir)/node_modules/moment/locale/fi.js \
+	$(srcdir)/node_modules/moment/locale/fo.js \
+	$(srcdir)/node_modules/moment/locale/fr-ca.js \
+	$(srcdir)/node_modules/moment/locale/fr.js \
+	$(srcdir)/node_modules/moment/locale/fy.js \
+	$(srcdir)/node_modules/moment/locale/gl.js \
+	$(srcdir)/node_modules/moment/locale/he.js \
+	$(srcdir)/node_modules/moment/locale/hi.js \
+	$(srcdir)/node_modules/moment/locale/hr.js \
+	$(srcdir)/node_modules/moment/locale/hu.js \
+	$(srcdir)/node_modules/moment/locale/hy-am.js \
+	$(srcdir)/node_modules/moment/locale/id.js \
+	$(srcdir)/node_modules/moment/locale/is.js \
+	$(srcdir)/node_modules/moment/locale/it.js \
+	$(srcdir)/node_modules/moment/locale/ja.js \
+	$(srcdir)/node_modules/moment/locale/jv.js \
+	$(srcdir)/node_modules/moment/locale/ka.js \
+	$(srcdir)/node_modules/moment/locale/km.js \
+	$(srcdir)/node_modules/moment/locale/ko.js \
+	$(srcdir)/node_modules/moment/locale/lb.js \
+	$(srcdir)/node_modules/moment/locale/lt.js \
+	$(srcdir)/node_modules/moment/locale/lv.js \
+	$(srcdir)/node_modules/moment/locale/me.js \
+	$(srcdir)/node_modules/moment/locale/mk.js \
+	$(srcdir)/node_modules/moment/locale/ml.js \
+	$(srcdir)/node_modules/moment/locale/mr.js \
+	$(srcdir)/node_modules/moment/locale/ms-my.js \
+	$(srcdir)/node_modules/moment/locale/ms.js \
+	$(srcdir)/node_modules/moment/locale/my.js \
+	$(srcdir)/node_modules/moment/locale/nb.js \
+	$(srcdir)/node_modules/moment/locale/ne.js \
+	$(srcdir)/node_modules/moment/locale/nl.js \
+	$(srcdir)/node_modules/moment/locale/nn.js \
+	$(srcdir)/node_modules/moment/locale/pl.js \
+	$(srcdir)/node_modules/moment/locale/pt-br.js \
+	$(srcdir)/node_modules/moment/locale/pt.js \
+	$(srcdir)/node_modules/moment/locale/ro.js \
+	$(srcdir)/node_modules/moment/locale/ru.js \
+	$(srcdir)/node_modules/moment/locale/si.js \
+	$(srcdir)/node_modules/moment/locale/sk.js \
+	$(srcdir)/node_modules/moment/locale/sl.js \
+	$(srcdir)/node_modules/moment/locale/sq.js \
+	$(srcdir)/node_modules/moment/locale/sr-cyrl.js \
+	$(srcdir)/node_modules/moment/locale/sr.js \
+	$(srcdir)/node_modules/moment/locale/sv.js \
+	$(srcdir)/node_modules/moment/locale/ta.js \
+	$(srcdir)/node_modules/moment/locale/th.js \
+	$(srcdir)/node_modules/moment/locale/tl-ph.js \
+	$(srcdir)/node_modules/moment/locale/tr.js \
+	$(srcdir)/node_modules/moment/locale/tzl.js \
+	$(srcdir)/node_modules/moment/locale/tzm-latn.js \
+	$(srcdir)/node_modules/moment/locale/tzm.js \
+	$(srcdir)/node_modules/moment/locale/uk.js \
+	$(srcdir)/node_modules/moment/locale/uz.js \
+	$(srcdir)/node_modules/moment/locale/vi.js \
+	$(srcdir)/node_modules/moment/locale/zh-cn.js \
+	$(srcdir)/node_modules/moment/locale/zh-tw.js \
+	$(srcdir)/node_modules/moment/moment.js \
+	$(srcdir)/node_modules/mustache/LICENSE \
+	$(srcdir)/node_modules/mustache/README.md \
+	$(srcdir)/node_modules/mustache/mustache.js \
+	$(srcdir)/node_modules/patternfly/LICENSE.txt \
+	$(srcdir)/node_modules/patternfly/README.md \
+	$(srcdir)/node_modules/patternfly/less/color-variables.less \
+	$(srcdir)/node_modules/patternfly/less/variables.less \
+	$(srcdir)/node_modules/qunit-tap/GPL-LICENSE.txt \
+	$(srcdir)/node_modules/qunit-tap/MIT-LICENSE.txt \
+	$(srcdir)/node_modules/qunit-tap/lib/qunit-tap.js \
+	$(srcdir)/node_modules/qunitjs/LICENSE.txt \
+	$(srcdir)/node_modules/qunitjs/README.md \
+	$(srcdir)/node_modules/qunitjs/qunit/qunit.css \
+	$(srcdir)/node_modules/qunitjs/qunit/qunit.js \
+	$(srcdir)/node_modules/react-lite-cockpit/LICENSE \
+	$(srcdir)/node_modules/react-lite-cockpit/README.md \
+	$(srcdir)/node_modules/react-lite-cockpit/dist/react-lite.js \
+	$(srcdir)/node_modules/term.js-cockpit/LICENSE \
+	$(srcdir)/node_modules/term.js-cockpit/README.md \
+	$(srcdir)/node_modules/term.js-cockpit/src/term.js \
 	$(srcdir)/pkg/docker/atomic.js \
 	$(srcdir)/pkg/docker/bar.js \
 	$(srcdir)/pkg/docker/client.js \
@@ -85,7 +201,7 @@ docker_TESTS = \
 
 dist/docker/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N pkg/docker/atomic.js -N pkg/docker/bar.js -N pkg/docker/client.js -N pkg/docker/cockpit-atomic-storage -N pkg/docker/console.html -N pkg/docker/console.js -N pkg/docker/containers-view.jsx -N pkg/docker/containers.js -N pkg/docker/details.js -N pkg/docker/docker.css -N pkg/docker/docker.js -N pkg/docker/image.js -N pkg/docker/images/drive-harddisk-symbolic.svg -N pkg/docker/index.html -N pkg/docker/overview.js -N pkg/docker/run.js -N pkg/docker/search.js -N pkg/docker/storage.jsx -N pkg/docker/test-docker.js -N pkg/docker/util.js -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-select.jsx -N pkg/lib/console.css -N pkg/lib/listing.less -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/plot.css -N pkg/lib/plot.js -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/service.js -N pkg/lib/table.css -N pkg/lib/term.css -N pkg/lib/variables.less $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/jquery-flot/jquery.flot.js -N node_modules/jquery-flot/jquery.flot.selection.js -N node_modules/jquery-flot/jquery.flot.time.js -N node_modules/moment/locale/af.js -N node_modules/moment/locale/ar-ma.js -N node_modules/moment/locale/ar-sa.js -N node_modules/moment/locale/ar-tn.js -N node_modules/moment/locale/ar.js -N node_modules/moment/locale/az.js -N node_modules/moment/locale/be.js -N node_modules/moment/locale/bg.js -N node_modules/moment/locale/bn.js -N node_modules/moment/locale/bo.js -N node_modules/moment/locale/br.js -N node_modules/moment/locale/bs.js -N node_modules/moment/locale/ca.js -N node_modules/moment/locale/cs.js -N node_modules/moment/locale/cv.js -N node_modules/moment/locale/cy.js -N node_modules/moment/locale/da.js -N node_modules/moment/locale/de-at.js -N node_modules/moment/locale/de.js -N node_modules/moment/locale/el.js -N node_modules/moment/locale/en-au.js -N node_modules/moment/locale/en-ca.js -N node_modules/moment/locale/en-gb.js -N node_modules/moment/locale/eo.js -N node_modules/moment/locale/es.js -N node_modules/moment/locale/et.js -N node_modules/moment/locale/eu.js -N node_modules/moment/locale/fa.js -N node_modules/moment/locale/fi.js -N node_modules/moment/locale/fo.js -N node_modules/moment/locale/fr-ca.js -N node_modules/moment/locale/fr.js -N node_modules/moment/locale/fy.js -N node_modules/moment/locale/gl.js -N node_modules/moment/locale/he.js -N node_modules/moment/locale/hi.js -N node_modules/moment/locale/hr.js -N node_modules/moment/locale/hu.js -N node_modules/moment/locale/hy-am.js -N node_modules/moment/locale/id.js -N node_modules/moment/locale/is.js -N node_modules/moment/locale/it.js -N node_modules/moment/locale/ja.js -N node_modules/moment/locale/jv.js -N node_modules/moment/locale/ka.js -N node_modules/moment/locale/km.js -N node_modules/moment/locale/ko.js -N node_modules/moment/locale/lb.js -N node_modules/moment/locale/lt.js -N node_modules/moment/locale/lv.js -N node_modules/moment/locale/me.js -N node_modules/moment/locale/mk.js -N node_modules/moment/locale/ml.js -N node_modules/moment/locale/mr.js -N node_modules/moment/locale/ms-my.js -N node_modules/moment/locale/ms.js -N node_modules/moment/locale/my.js -N node_modules/moment/locale/nb.js -N node_modules/moment/locale/ne.js -N node_modules/moment/locale/nl.js -N node_modules/moment/locale/nn.js -N node_modules/moment/locale/pl.js -N node_modules/moment/locale/pt-br.js -N node_modules/moment/locale/pt.js -N node_modules/moment/locale/ro.js -N node_modules/moment/locale/ru.js -N node_modules/moment/locale/si.js -N node_modules/moment/locale/sk.js -N node_modules/moment/locale/sl.js -N node_modules/moment/locale/sq.js -N node_modules/moment/locale/sr-cyrl.js -N node_modules/moment/locale/sr.js -N node_modules/moment/locale/sv.js -N node_modules/moment/locale/ta.js -N node_modules/moment/locale/th.js -N node_modules/moment/locale/tl-ph.js -N node_modules/moment/locale/tr.js -N node_modules/moment/locale/tzl.js -N node_modules/moment/locale/tzm-latn.js -N node_modules/moment/locale/tzm.js -N node_modules/moment/locale/uk.js -N node_modules/moment/locale/uz.js -N node_modules/moment/locale/vi.js -N node_modules/moment/locale/zh-cn.js -N node_modules/moment/locale/zh-tw.js -N node_modules/moment/moment.js -N node_modules/mustache/mustache.js -N node_modules/patternfly/less/color-variables.less -N node_modules/patternfly/less/variables.less -N node_modules/qunit-tap/lib/qunit-tap.js -N node_modules/qunitjs/qunit/qunit.css -N node_modules/qunitjs/qunit/qunit.js -N node_modules/react-lite-cockpit/dist/react-lite.js -N node_modules/term.js-cockpit/src/term.js -N pkg/docker/atomic.js -N pkg/docker/bar.js -N pkg/docker/client.js -N pkg/docker/cockpit-atomic-storage -N pkg/docker/console.html -N pkg/docker/console.js -N pkg/docker/containers-view.jsx -N pkg/docker/containers.js -N pkg/docker/details.js -N pkg/docker/docker.css -N pkg/docker/docker.js -N pkg/docker/image.js -N pkg/docker/images/drive-harddisk-symbolic.svg -N pkg/docker/index.html -N pkg/docker/overview.js -N pkg/docker/run.js -N pkg/docker/search.js -N pkg/docker/storage.jsx -N pkg/docker/test-docker.js -N pkg/docker/util.js -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-select.jsx -N pkg/lib/console.css -N pkg/lib/listing.less -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/plot.css -N pkg/lib/plot.js -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/service.js -N pkg/lib/table.css -N pkg/lib/term.css -N pkg/lib/variables.less $< > $@.tmp && mv $@.tmp $@
 
 dist/docker/Makefile.deps: $(WEBPACK_CONFIG) $(docker_INPUTS)
 	$(WEBPACK_RULE) -d dist/docker/Makefile.deps $(WEBPACK_CONFIG)
@@ -117,6 +233,238 @@ dist/docker/test-docker.html: dist/docker/Makefile.deps
 dist/docker/test-docker.min.js: dist/docker/Makefile.deps
 
 dist/docker/test-docker.min.js.map: dist/docker/Makefile.deps
+
+$(srcdir)/node_modules/bootstrap/LICENSE:
+
+$(srcdir)/node_modules/bootstrap/README.md:
+
+$(srcdir)/node_modules/bootstrap/less/variables.less:
+
+$(srcdir)/node_modules/jquery-flot/LICENSE.txt:
+
+$(srcdir)/node_modules/jquery-flot/README.md:
+
+$(srcdir)/node_modules/jquery-flot/jquery.flot.js:
+
+$(srcdir)/node_modules/jquery-flot/jquery.flot.selection.js:
+
+$(srcdir)/node_modules/jquery-flot/jquery.flot.time.js:
+
+$(srcdir)/node_modules/moment/LICENSE:
+
+$(srcdir)/node_modules/moment/README.md:
+
+$(srcdir)/node_modules/moment/locale/af.js:
+
+$(srcdir)/node_modules/moment/locale/ar-ma.js:
+
+$(srcdir)/node_modules/moment/locale/ar-sa.js:
+
+$(srcdir)/node_modules/moment/locale/ar-tn.js:
+
+$(srcdir)/node_modules/moment/locale/ar.js:
+
+$(srcdir)/node_modules/moment/locale/az.js:
+
+$(srcdir)/node_modules/moment/locale/be.js:
+
+$(srcdir)/node_modules/moment/locale/bg.js:
+
+$(srcdir)/node_modules/moment/locale/bn.js:
+
+$(srcdir)/node_modules/moment/locale/bo.js:
+
+$(srcdir)/node_modules/moment/locale/br.js:
+
+$(srcdir)/node_modules/moment/locale/bs.js:
+
+$(srcdir)/node_modules/moment/locale/ca.js:
+
+$(srcdir)/node_modules/moment/locale/cs.js:
+
+$(srcdir)/node_modules/moment/locale/cv.js:
+
+$(srcdir)/node_modules/moment/locale/cy.js:
+
+$(srcdir)/node_modules/moment/locale/da.js:
+
+$(srcdir)/node_modules/moment/locale/de-at.js:
+
+$(srcdir)/node_modules/moment/locale/de.js:
+
+$(srcdir)/node_modules/moment/locale/el.js:
+
+$(srcdir)/node_modules/moment/locale/en-au.js:
+
+$(srcdir)/node_modules/moment/locale/en-ca.js:
+
+$(srcdir)/node_modules/moment/locale/en-gb.js:
+
+$(srcdir)/node_modules/moment/locale/eo.js:
+
+$(srcdir)/node_modules/moment/locale/es.js:
+
+$(srcdir)/node_modules/moment/locale/et.js:
+
+$(srcdir)/node_modules/moment/locale/eu.js:
+
+$(srcdir)/node_modules/moment/locale/fa.js:
+
+$(srcdir)/node_modules/moment/locale/fi.js:
+
+$(srcdir)/node_modules/moment/locale/fo.js:
+
+$(srcdir)/node_modules/moment/locale/fr-ca.js:
+
+$(srcdir)/node_modules/moment/locale/fr.js:
+
+$(srcdir)/node_modules/moment/locale/fy.js:
+
+$(srcdir)/node_modules/moment/locale/gl.js:
+
+$(srcdir)/node_modules/moment/locale/he.js:
+
+$(srcdir)/node_modules/moment/locale/hi.js:
+
+$(srcdir)/node_modules/moment/locale/hr.js:
+
+$(srcdir)/node_modules/moment/locale/hu.js:
+
+$(srcdir)/node_modules/moment/locale/hy-am.js:
+
+$(srcdir)/node_modules/moment/locale/id.js:
+
+$(srcdir)/node_modules/moment/locale/is.js:
+
+$(srcdir)/node_modules/moment/locale/it.js:
+
+$(srcdir)/node_modules/moment/locale/ja.js:
+
+$(srcdir)/node_modules/moment/locale/jv.js:
+
+$(srcdir)/node_modules/moment/locale/ka.js:
+
+$(srcdir)/node_modules/moment/locale/km.js:
+
+$(srcdir)/node_modules/moment/locale/ko.js:
+
+$(srcdir)/node_modules/moment/locale/lb.js:
+
+$(srcdir)/node_modules/moment/locale/lt.js:
+
+$(srcdir)/node_modules/moment/locale/lv.js:
+
+$(srcdir)/node_modules/moment/locale/me.js:
+
+$(srcdir)/node_modules/moment/locale/mk.js:
+
+$(srcdir)/node_modules/moment/locale/ml.js:
+
+$(srcdir)/node_modules/moment/locale/mr.js:
+
+$(srcdir)/node_modules/moment/locale/ms-my.js:
+
+$(srcdir)/node_modules/moment/locale/ms.js:
+
+$(srcdir)/node_modules/moment/locale/my.js:
+
+$(srcdir)/node_modules/moment/locale/nb.js:
+
+$(srcdir)/node_modules/moment/locale/ne.js:
+
+$(srcdir)/node_modules/moment/locale/nl.js:
+
+$(srcdir)/node_modules/moment/locale/nn.js:
+
+$(srcdir)/node_modules/moment/locale/pl.js:
+
+$(srcdir)/node_modules/moment/locale/pt-br.js:
+
+$(srcdir)/node_modules/moment/locale/pt.js:
+
+$(srcdir)/node_modules/moment/locale/ro.js:
+
+$(srcdir)/node_modules/moment/locale/ru.js:
+
+$(srcdir)/node_modules/moment/locale/si.js:
+
+$(srcdir)/node_modules/moment/locale/sk.js:
+
+$(srcdir)/node_modules/moment/locale/sl.js:
+
+$(srcdir)/node_modules/moment/locale/sq.js:
+
+$(srcdir)/node_modules/moment/locale/sr-cyrl.js:
+
+$(srcdir)/node_modules/moment/locale/sr.js:
+
+$(srcdir)/node_modules/moment/locale/sv.js:
+
+$(srcdir)/node_modules/moment/locale/ta.js:
+
+$(srcdir)/node_modules/moment/locale/th.js:
+
+$(srcdir)/node_modules/moment/locale/tl-ph.js:
+
+$(srcdir)/node_modules/moment/locale/tr.js:
+
+$(srcdir)/node_modules/moment/locale/tzl.js:
+
+$(srcdir)/node_modules/moment/locale/tzm-latn.js:
+
+$(srcdir)/node_modules/moment/locale/tzm.js:
+
+$(srcdir)/node_modules/moment/locale/uk.js:
+
+$(srcdir)/node_modules/moment/locale/uz.js:
+
+$(srcdir)/node_modules/moment/locale/vi.js:
+
+$(srcdir)/node_modules/moment/locale/zh-cn.js:
+
+$(srcdir)/node_modules/moment/locale/zh-tw.js:
+
+$(srcdir)/node_modules/moment/moment.js:
+
+$(srcdir)/node_modules/mustache/LICENSE:
+
+$(srcdir)/node_modules/mustache/README.md:
+
+$(srcdir)/node_modules/mustache/mustache.js:
+
+$(srcdir)/node_modules/patternfly/LICENSE.txt:
+
+$(srcdir)/node_modules/patternfly/README.md:
+
+$(srcdir)/node_modules/patternfly/less/color-variables.less:
+
+$(srcdir)/node_modules/patternfly/less/variables.less:
+
+$(srcdir)/node_modules/qunit-tap/GPL-LICENSE.txt:
+
+$(srcdir)/node_modules/qunit-tap/MIT-LICENSE.txt:
+
+$(srcdir)/node_modules/qunit-tap/lib/qunit-tap.js:
+
+$(srcdir)/node_modules/qunitjs/LICENSE.txt:
+
+$(srcdir)/node_modules/qunitjs/README.md:
+
+$(srcdir)/node_modules/qunitjs/qunit/qunit.css:
+
+$(srcdir)/node_modules/qunitjs/qunit/qunit.js:
+
+$(srcdir)/node_modules/react-lite-cockpit/LICENSE:
+
+$(srcdir)/node_modules/react-lite-cockpit/README.md:
+
+$(srcdir)/node_modules/react-lite-cockpit/dist/react-lite.js:
+
+$(srcdir)/node_modules/term.js-cockpit/LICENSE:
+
+$(srcdir)/node_modules/term.js-cockpit/README.md:
+
+$(srcdir)/node_modules/term.js-cockpit/src/term.js:
 
 $(srcdir)/pkg/docker/atomic.js:
 

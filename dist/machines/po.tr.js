@@ -75,15 +75,43 @@ return plural;
   null,
   ""
  ],
+ "Boot Order:": [
+  null,
+  ""
+ ],
+ "Bus": [
+  null,
+  ""
+ ],
+ "CPU Type:": [
+  null,
+  ""
+ ],
+ "Capacity": [
+  null,
+  "Kapasite"
+ ],
  "Connection": [
   null,
   "Docker'a bağlanılıyor"
  ],
- "FORCEOFF_VM action failed": [
+ "Count:": [
   null,
   ""
  ],
- "FORCEREBOOT_VM action failed": [
+ "Device": [
+  null,
+  ""
+ ],
+ "Disks": [
+  null,
+  "Diskler"
+ ],
+ "Emulated Machine:": [
+  null,
+  ""
+ ],
+ "File": [
   null,
   ""
  ],
@@ -95,9 +123,13 @@ return plural;
   null,
   ""
  ],
- "ID:": [
+ "GB": [
   null,
   ""
+ ],
+ "Host": [
+  null,
+  "Host"
  ],
  "Memory:": [
   null,
@@ -111,7 +143,11 @@ return plural;
   null,
   ""
  ],
- "OS Type:": [
+ "No boot device found": [
+  null,
+  ""
+ ],
+ "No disks defined for this VM": [
   null,
   ""
  ],
@@ -119,7 +155,19 @@ return plural;
   null,
   "Servis"
  ],
- "REBOOT_VM action failed": [
+ "Pool": [
+  null,
+  ""
+ ],
+ "Port": [
+  null,
+  ""
+ ],
+ "Protocol": [
+  null,
+  ""
+ ],
+ "Readonly": [
   null,
   ""
  ],
@@ -131,14 +179,6 @@ return plural;
   null,
   ""
  ],
- "SHUTDOWN_VM action failed": [
-  null,
-  ""
- ],
- "START_VM action failed": [
-  null,
-  ""
- ],
  "Session": [
   null,
   "Sürüm"
@@ -147,15 +187,19 @@ return plural;
   null,
   ""
  ],
+ "Source": [
+  null,
+  ""
+ ],
  "State": [
   null,
   ""
  ],
- "State:": [
+ "System": [
   null,
   ""
  ],
- "System": [
+ "Target": [
   null,
   ""
  ],
@@ -191,6 +235,10 @@ return plural;
   null,
   ""
  ],
+ "Upgrade to a more recent version of libvirt to view disk statistics": [
+  null,
+  ""
+ ],
  "Usage": [
   null,
   ""
@@ -199,7 +247,35 @@ return plural;
   null,
   "Kullanılmış"
  ],
+ "VM FORCE OFF action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  ""
+ ],
+ "VM START action failed": [
+  null,
+  ""
+ ],
  "Virtual Machines": [
+  null,
+  ""
+ ],
+ "Volume": [
+  null,
+  "Mantıksal Bölüm"
+ ],
+ "cdrom": [
   null,
   ""
  ],
@@ -207,9 +283,17 @@ return plural;
   null,
   ""
  ],
+ "custom": [
+  null,
+  ""
+ ],
  "disabled": [
   null,
   "Etkin değil"
+ ],
+ "disk": [
+  null,
+  ""
  ],
  "dying": [
   null,
@@ -219,7 +303,23 @@ return plural;
   null,
   "Etkin değil"
  ],
+ "host": [
+  null,
+  ""
+ ],
  "idle": [
+  null,
+  ""
+ ],
+ "network": [
+  null,
+  ""
+ ],
+ "no": [
+  null,
+  ""
+ ],
+ "other": [
   null,
   ""
  ],
@@ -244,6 +344,10 @@ return plural;
   ""
  ],
  "vCPUs:": [
+  null,
+  ""
+ ],
+ "yes": [
   null,
   ""
  ]

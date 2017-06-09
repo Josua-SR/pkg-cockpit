@@ -491,10 +491,6 @@ return plural;
   null,
   "Nieprawidłowa strefa czasowa"
  ],
- "Isolate": [
-  null,
-  "Izoluj"
- ],
  "Journal": [
   null,
   "Dziennik"
@@ -683,14 +679,6 @@ return plural;
   null,
   "Wczytaj ponownie"
  ],
- "Reload or Restart": [
-  null,
-  "Wczytaj lub uruchom ponownie"
- ],
- "Reload or Try Restart": [
-  null,
-  "Wczytaj ponownie lub spróbuj uruchomić ponownie"
- ],
  "Repeat Daily": [
   null,
   "Powtarzanie codziennie"
@@ -843,6 +831,10 @@ return plural;
   null,
   "Użytkownik <b>$0</b> nie ma zezwolenia na modyfikowanie nazw komputerów"
  ],
+ "The user <b>$0</b> is not permitted to shutdown or restart this server": [
+  null,
+  "Użytkownik <b>$0</b> nie może wyłączać ani ponownie uruchamiać tego serwera"
+ ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
   "Ten dzień nie istnieje we wszystkich miesiącach.<br> Licznik będzie wykonywany tylko w miesiącach z 31. dniem."
@@ -870,10 +862,6 @@ return plural;
  "Timers": [
   null,
   "Liczniki"
- ],
- "Try Restart": [
-  null,
-  "Spróbuj uruchomić ponownie"
  ],
  "Trying to synchronize with {{Server}}": [
   null,
@@ -913,7 +901,7 @@ return plural;
  ],
  "[$0 bytes of binary data]": [
   null,
-  "[$0 bajtów danych binarnych]"
+  "[$0 B danych binarnych]"
  ],
  "[binary data]": [
   null,

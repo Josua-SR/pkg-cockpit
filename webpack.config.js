@@ -174,6 +174,9 @@ var info = {
 
         "machines/index.html",
         "machines/manifest.json",
+        "machines/vnc.html",
+        "machines/vnc.css",
+        // noVNC files from machines/include are added dynamically later
 
         "networkmanager/index.html",
         "networkmanager/manifest.json",
@@ -257,11 +260,21 @@ var srcdir = process.env.SRCDIR || __dirname;
 var builddir = process.env.BUILDDIR || __dirname;
 var distdir = builddir + path.sep + "dist";
 var libdir = path.resolve(srcdir, "pkg" + path.sep + "lib");
-var bowerdir = path.resolve(srcdir, "bower_components");
+var nodedir = path.resolve(srcdir, "node_modules");
 var section = process.env.ONLYDIR || null;
 
 /* A standard nodejs and webpack pattern */
 var production = process.env.NODE_ENV === 'production';
+
+/* Dynamically add noVNC dependencies to the info.files */
+var noVncIncludes = fs.readdirSync(nodedir + "/noVNC/include")
+    .filter(function (fileName) {
+        return fileName.match(/.*(js|css|ttf|woff)$/);
+    })
+    .map(function (fileName) {
+        return "machines/include/" + fileName;
+    });
+Array.prototype.push.apply(info.files, noVncIncludes);
 
 /*
  * Note that we're avoiding the use of path.join as webpack and nodejs
@@ -310,11 +323,13 @@ info.files = files;
 
 var plugins = [
     new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
+        'process.env': {
+            'NODE_ENV': JSON.stringify(production ? 'production' : 'development')
+        }
     }),
     new copy(info.files),
     new extract("[name].css")
-    ];
+];
 
 var output = {
     path: distdir,
@@ -357,7 +372,7 @@ if (!section || section.indexOf("base1") === 0) {
         from: srcdir + path.sep + "src/base1/cockpit.js",
         to: "base1/cockpit.js"
     }, {
-        from: bowerdir + path.sep + "jquery/dist/jquery.js",
+        from: nodedir + path.sep + "jquery/dist/jquery.js",
         to: "base1/jquery.js"
     }, {
         from: srcdir + path.sep + "po/po.js",
@@ -365,20 +380,26 @@ if (!section || section.indexOf("base1") === 0) {
     });
 }
 
+var aliases = {
+    "angular": "angular/angular.js",
+    "angular-route": "angular-route/angular-route.js",
+    "d3": "d3/d3.js",
+    "moment": "moment/moment.js",
+    "react": "react-lite-cockpit/dist/react-lite.js",
+    "term": "term.js-cockpit/src/term.js",
+};
+
+/* HACK: To get around redux warning about reminimizing code */
+if (production)
+    aliases["redux/dist/redux"] = "redux/dist/redux.min.js";
+
 module.exports = {
     resolve: {
-        alias: {
-            "angular": "angular/angular.js",
-            "angular-route": "angular-route/angular-route.js",
-            "d3": "d3/d3.js",
-            "moment": "momentjs/moment.js",
-            "react": "react-lite-cockpit/dist/react-lite.js",
-            "term": "term.js-cockpit/src/term.js",
-        },
-        modulesDirectories: [ libdir, bowerdir ]
+        alias: aliases,
+        modulesDirectories: [ libdir, nodedir ]
     },
     resolveLoader: {
-        root: path.resolve(srcdir, 'node_modules')
+        root: nodedir
     },
     entry: info.entries,
     output: output,
@@ -391,7 +412,7 @@ module.exports = {
         preLoaders: [
             {
                 test: /\.js$/, // include .js files
-                exclude: /bower_components\/.*\/|\/node_modules/, // exclude external dependencies
+                exclude: /\/node_modules\/.*\//, // exclude external dependencies
                 loader: "jshint-loader"
             },
             {
@@ -400,14 +421,14 @@ module.exports = {
             },
             {
                 test: /\.jsx$/,
-                exclude: /bower_components\/.*\/|\/node_modules/, // exclude external dependencies
+                exclude: /\/node_modules\/.*\//, // exclude external dependencies
                 loader: "eslint-loader"
             }
         ],
         loaders: [
             {
                 test: /\.js$/,
-                exclude: /bower_components\/.*\/|\/node_modules/,
+                exclude: /\/node_modules\/.*\//, // exclude external dependencies
                 loader: 'strict' // Adds "use strict"
             },
             {

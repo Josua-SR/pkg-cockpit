@@ -75,15 +75,43 @@ return plural;
   null,
   ""
  ],
- "Connection": [
-  null,
-  "Erneut verbinden"
- ],
- "FORCEOFF_VM action failed": [
+ "Boot Order:": [
   null,
   ""
  ],
- "FORCEREBOOT_VM action failed": [
+ "Bus": [
+  null,
+  ""
+ ],
+ "CPU Type:": [
+  null,
+  ""
+ ],
+ "Capacity": [
+  null,
+  "Kapazität"
+ ],
+ "Connection": [
+  null,
+  "Verbindung"
+ ],
+ "Count:": [
+  null,
+  ""
+ ],
+ "Device": [
+  null,
+  ""
+ ],
+ "Disks": [
+  null,
+  "Datenträger"
+ ],
+ "Emulated Machine:": [
+  null,
+  ""
+ ],
+ "File": [
   null,
   ""
  ],
@@ -95,9 +123,13 @@ return plural;
   null,
   ""
  ],
- "ID:": [
+ "GB": [
   null,
   ""
+ ],
+ "Host": [
+  null,
+  "Host"
  ],
  "Memory:": [
   null,
@@ -111,7 +143,11 @@ return plural;
   null,
   ""
  ],
- "OS Type:": [
+ "No boot device found": [
+  null,
+  ""
+ ],
+ "No disks defined for this VM": [
   null,
   ""
  ],
@@ -119,7 +155,19 @@ return plural;
   null,
   ""
  ],
- "REBOOT_VM action failed": [
+ "Pool": [
+  null,
+  ""
+ ],
+ "Port": [
+  null,
+  ""
+ ],
+ "Protocol": [
+  null,
+  ""
+ ],
+ "Readonly": [
   null,
   ""
  ],
@@ -131,49 +179,45 @@ return plural;
   null,
   "Läuft"
  ],
- "SHUTDOWN_VM action failed": [
-  null,
-  ""
- ],
- "START_VM action failed": [
-  null,
-  ""
- ],
  "Session": [
   null,
-  "Version"
+  "Sitzung"
  ],
  "Shut Down": [
   null,
   "Herunterfahren"
  ],
- "State": [
+ "Source": [
   null,
   ""
  ],
- "State:": [
+ "State": [
   null,
-  ""
+  "Status"
  ],
  "System": [
   null,
-  ""
+  "System"
+ ],
+ "Target": [
+  null,
+  "Ziel"
  ],
  "The VM crashed.": [
   null,
-  ""
+  "Die VM ist abgestürzt."
  ],
  "The VM is down.": [
   null,
-  ""
+  "Die VM ist ausgeschaltet."
  ],
  "The VM is going down.": [
   null,
-  ""
+  "Die VM wird ausgeschaltet."
  ],
  "The VM is idle.": [
   null,
-  ""
+  "Die VM ist untätig."
  ],
  "The VM is in process of dying (shut down or crash is not completed).": [
   null,
@@ -181,13 +225,17 @@ return plural;
  ],
  "The VM is paused.": [
   null,
-  ""
+  "Die VM ist pausiert."
  ],
  "The VM is running.": [
   null,
-  ""
+  "Die VM läuft."
  ],
  "The VM is suspended by guest power management.": [
+  null,
+  "Die VM ist vom Gast Power Management suspendiert."
+ ],
+ "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   ""
  ],
@@ -199,17 +247,53 @@ return plural;
   null,
   "Benutzt"
  ],
+ "VM FORCE OFF action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  ""
+ ],
+ "VM START action failed": [
+  null,
+  ""
+ ],
  "Virtual Machines": [
+  null,
+  "Virtuelle Maschinen"
+ ],
+ "Volume": [
+  null,
+  ""
+ ],
+ "cdrom": [
   null,
   ""
  ],
  "crashed": [
   null,
+  "abgestürzt"
+ ],
+ "custom": [
+  null,
   ""
  ],
  "disabled": [
   null,
-  "Deaktiviert"
+  "Aus"
+ ],
+ "disk": [
+  null,
+  ""
  ],
  "dying": [
   null,
@@ -217,15 +301,31 @@ return plural;
  ],
  "enabled": [
   null,
-  "Aktiviert"
+  "An"
+ ],
+ "host": [
+  null,
+  ""
  ],
  "idle": [
   null,
   ""
  ],
- "paused": [
+ "network": [
   null,
   ""
+ ],
+ "no": [
+  null,
+  "Nein"
+ ],
+ "other": [
+  null,
+  ""
+ ],
+ "paused": [
+  null,
+  "pausiert"
  ],
  "running": [
   null,
@@ -237,14 +337,18 @@ return plural;
  ],
  "shutdown": [
   null,
-  ""
+  "Herunterfahren"
  ],
  "suspended (PM)": [
   null,
-  ""
+  "Angehalten (PM)"
  ],
  "vCPUs:": [
   null,
-  ""
+  "vCPUs:"
+ ],
+ "yes": [
+  null,
+  "Ja"
  ]
 }));

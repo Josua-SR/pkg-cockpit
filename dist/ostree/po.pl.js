@@ -81,7 +81,7 @@ return plural;
  ],
  "- Add New Repository": [
   null,
-  "Repozytorium"
+  "— Dodaj nowe repozytorium"
  ],
  "Add": [
   null,
@@ -89,7 +89,7 @@ return plural;
  ],
  "Add Another Key": [
   null,
-  ""
+  "Dodaj inny klucz"
  ],
  "Additions": [
   null,
@@ -105,7 +105,7 @@ return plural;
  ],
  "Begins with '-----BEGIN PGP PUBLIC KEY BLOCK-----'": [
   null,
-  ""
+  "Zaczyna się od „-----BEGIN PGP PUBLIC KEY BLOCK-----”"
  ],
  "Cancel": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "Change Repository": [
   null,
-  "Repozytorium"
+  "Zmień repozytorium"
  ],
  "Check for Updates": [
   null,
@@ -129,11 +129,11 @@ return plural;
  ],
  "Couldn't load settings for '$0': $1": [
   null,
-  "Nie można wczytać danych użytkownika"
+  "Nie można wczytać ustawień dla „$0”: $1"
  ],
  "Currently using:": [
   null,
-  ""
+  "Obecnie używane:"
  ],
  "Default": [
   null,
@@ -149,7 +149,7 @@ return plural;
  ],
  "Error loading remotes: $0": [
   null,
-  "Błąd podczas usuwania alarmu: $0"
+  "Błąd podczas wczytywania repozytoriów: $0"
  ],
  "Expired Signature": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "No configuration data found": [
   null,
-  "Uszkodzona konfiguracja"
+  "Nie odnaleziono danych konfiguracji"
  ],
  "No signature avaliable": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "Origin": [
   null,
-  ""
+  "Pochodzenie"
  ],
  "Packages": [
   null,
@@ -217,7 +217,7 @@ return plural;
  ],
  "Please provide a valid URL": [
   null,
-  "Proszę podać prawidłową nazwę"
+  "Proszę podać prawidłowy adres URL"
  ],
  "Please provide a valid name": [
   null,
@@ -225,7 +225,7 @@ return plural;
  ],
  "Rebase and Reboot": [
   null,
-  "Zaktualizuj i uruchom ponownie            "
+  "Zaktualizuj i uruchom ponownie"
  ],
  "Receiving delta parts": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "This deployment contains the same packages as your currently booted system": [
   null,
-  "To wdrożenie zawiera takie same pakiety, co obecnie uruchomiony system            "
+  "To wdrożenie zawiera takie same pakiety, co obecnie uruchomiony system"
  ],
  "Tree": [
   null,
@@ -297,7 +297,7 @@ return plural;
  ],
  "Update and Reboot": [
   null,
-  "Zaktualizuj i uruchom ponownie            "
+  "Zaktualizuj i uruchom ponownie"
  ],
  "Updates": [
   null,
@@ -309,7 +309,7 @@ return plural;
  ],
  "Use trusted GPG key": [
   null,
-  ""
+  "Użycie zaufanego klucza GPG"
  ],
  "Version": [
   null,
@@ -325,6 +325,6 @@ return plural;
  ],
  "at": [
   null,
-  "Ścieżka"
+  "w"
  ]
 }));

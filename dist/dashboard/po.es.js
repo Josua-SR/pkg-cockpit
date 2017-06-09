@@ -69,7 +69,7 @@ return plural;
  },
  "$0 day": [
   "$0 days",
-  "$0 días",
+  "$0 día",
   "$0 días"
  ],
  "$0 hour": [
@@ -79,22 +79,22 @@ return plural;
  ],
  "$0 minute": [
   "$0 minutes",
-  "$0 minutos",
+  "$0 minuto",
   "$0 minutos"
  ],
  "$0 month": [
   "$0 months",
-  "$0 meses",
+  "$0 mes",
   "$0 meses"
  ],
  "$0 week": [
   "$0 weeks",
-  "$0 semanas",
+  "$0 semana",
   "$0 semanas"
  ],
  "$0 year": [
   "$0 years",
-  "$0 años",
+  "$0 año",
   "$0 años"
  ],
  "1 day": [
@@ -119,15 +119,15 @@ return plural;
  ],
  "A compatible version of Cockpit is not installed on {{#strong}}{{host}}{{/strong}}.": [
   null,
-  "Una versión compatible de Cockpit no está instalada en {{#strong}}{{host}}{{/strong}}."
+  "No se ha instalado una versión compatible de Cockpit en {{#strong}}{{host}}{{/strong}}."
  ],
  "Add": [
   null,
-  "Agregar"
+  "Añadir"
  ],
  "Add Machine to Dashboard": [
   null,
-  "Agregar Máquina al Tablero de Mandos"
+  "Añadir máquina al tablero"
  ],
  "Address": [
   null,
@@ -171,27 +171,27 @@ return plural;
  ],
  "Cockpit is not installed": [
   null,
-  "Cockpit no esta instalado"
+  "Cockpit no está instalado"
  ],
  "Cockpit was unable to contact {{#strong}}{{host}}{{/strong}}.": [
   null,
-  "Cockpit no fue capaz de contactar {{#strong}}{{host}}{{/strong}}."
+  "Cockpit no pudo ponerse en contacto con {{#strong}}{{host}}{{/strong}}."
  ],
  "Cockpit was unable to log in to {{#strong}}{{host}}{{/strong}}. {{#can_sync}}You may want to try to {{#sync_link}}synchronize users{{/sync_link}}.{{/can_sync}} For more authentication options and troubleshooting support please upgrade cockpit-ws to a newer version.": [
   null,
-  ""
+  "Cockpit no pudo ingresar en {{#strong}}{{host}}{{/strong}}. {{#can_sync}}Puede que desee probar a {{#sync_link}}sincronizar usuarios{{/sync_link}}.{{/can_sync}} Para obtener más opciones de autenticación y asistencia para solucionar problemas, actualice cockpit-ws a una versión más reciente."
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}.": [
   null,
-  "Cockpit fue incapaz de iniciar session en {{#strong}}{{host}}{{/strong}}."
+  "Cockpit no pudo ingresar en {{#strong}}{{host}}{{/strong}}."
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. To use this machine with cockpit you will need to enable one of the following authentication methods in the sshd config on {{#strong}}{{host}}{{/strong}}:": [
   null,
-  ""
+  "Cockpit no pudo ingresar en {{#strong}}{{host}}{{/strong}}. Para usar está máquina con Cockpit, necesitará activar uno de los métodos de autenticación siguientes en la configuración de sshd {{#strong}}{{host}}{{/strong}}:"
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. You can change your authentication credentials below. {{#can_sync}}You may prefer to {{#sync_link}}synchronize accounts and passwords{{/sync_link}}.{{/can_sync}}": [
   null,
-  ""
+  "Cockpit no pudo ingresar en {{#strong}}{{host}}{{/strong}}. Puede cambiar sus credenciales de autenticación más abajo. {{#can_sync}}Puede que desee {{#sync_link}}sincronizar cuentas y contraseñas{{/sync_link}}.{{/can_sync}}"
  ],
  "Color": [
   null,
@@ -211,15 +211,15 @@ return plural;
  ],
  "Dashboard": [
   null,
-  ""
+  "Tablero"
  ],
  "Disk I/O": [
   null,
-  ""
+  "Disco I/O"
  ],
  "Edit Server": [
   null,
-  ""
+  "Editar Servidor"
  ],
  "Enter IP address or host name": [
   null,
@@ -227,7 +227,7 @@ return plural;
  ],
  "Entering a different password here means you will need to retype it every time you reconnect to this machine": [
   null,
-  ""
+  "Introducir una contraseña diferente aquí significa que necesitará volver a teclear cada vez que vuelva a esa máquina"
  ],
  "Error loading users: {{perm_failed}}": [
   null,
@@ -255,11 +255,11 @@ return plural;
  ],
  "Host Name": [
   null,
-  ""
+  "Nombre de Host"
  ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "Con el objetivo de sincronizar usuarios, necesita acceder a {{#strong}}{{host}}{{/strong}}."
  ],
  "Incorrect Host Key": [
   null,
@@ -283,11 +283,11 @@ return plural;
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
-  ""
+  "Déjelo vacío para conectar con este equipo como el usuario cuya sesión está iniciada actualmente. Si proporciona un nombre de usuario distinto, siempre se utilizará ese usuario cuando se conecte con esta máquina."
  ],
  "Leave blank to connect to this machine as the currently logged in user{{#user}} ({{user}}){{/user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
-  ""
+  "Déjelo vacío para conectar con este equipo como el usuario cuya sesión está iniciada actualmente{{#user}} ({{user}}){{/user}}. Si proporciona un nombre de usuario distinto, siempre se utilizará ese usuario cuando se conecte con esta máquina."
  ],
  "Log In": [
   null,
@@ -367,7 +367,7 @@ return plural;
  ],
  "Servers": [
   null,
-  ""
+  "Servidores"
  ],
  "Set": [
   null,
@@ -447,6 +447,6 @@ return plural;
  ],
  "You can remove the previously stored key by running the following command": [
   null,
-  "Usted puede remover la llave almacenada previamente al correr el siguiente comando"
+  "Puede quitar la clave almacenada anteriormente si ejecuta esta orden"
  ]
 }));

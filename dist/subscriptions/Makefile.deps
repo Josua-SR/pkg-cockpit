@@ -1,7 +1,17 @@
 # Generated Makefile data for subscriptions
-# Stamp: Thu Jun 01 2017 11:55:52 GMT+0000 (UTC)
+# Stamp: Fri Jun 09 2017 13:15:59 GMT+0000 (UTC)
 
 subscriptions_INPUTS = \
+	$(srcdir)/node_modules/bootstrap/LICENSE \
+	$(srcdir)/node_modules/bootstrap/README.md \
+	$(srcdir)/node_modules/bootstrap/less/variables.less \
+	$(srcdir)/node_modules/patternfly/LICENSE.txt \
+	$(srcdir)/node_modules/patternfly/README.md \
+	$(srcdir)/node_modules/patternfly/less/color-variables.less \
+	$(srcdir)/node_modules/patternfly/less/variables.less \
+	$(srcdir)/node_modules/react-lite-cockpit/LICENSE \
+	$(srcdir)/node_modules/react-lite-cockpit/README.md \
+	$(srcdir)/node_modules/react-lite-cockpit/dist/react-lite.js \
 	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \
 	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
 	$(srcdir)/pkg/lib/cockpit-components-select.jsx \
@@ -45,7 +55,7 @@ subscriptions_TESTS = \
 
 dist/subscriptions/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-select.jsx -N pkg/lib/listing.less -N pkg/lib/page.css -N pkg/lib/table.css -N pkg/lib/variables.less -N pkg/subscriptions/index.html -N pkg/subscriptions/main.js -N pkg/subscriptions/subscriptions-client.js -N pkg/subscriptions/subscriptions-register.jsx -N pkg/subscriptions/subscriptions-view.jsx -N pkg/subscriptions/subscriptions.css $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/patternfly/less/color-variables.less -N node_modules/patternfly/less/variables.less -N node_modules/react-lite-cockpit/dist/react-lite.js -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-select.jsx -N pkg/lib/listing.less -N pkg/lib/page.css -N pkg/lib/table.css -N pkg/lib/variables.less -N pkg/subscriptions/index.html -N pkg/subscriptions/main.js -N pkg/subscriptions/subscriptions-client.js -N pkg/subscriptions/subscriptions-register.jsx -N pkg/subscriptions/subscriptions-view.jsx -N pkg/subscriptions/subscriptions.css $< > $@.tmp && mv $@.tmp $@
 
 dist/subscriptions/Makefile.deps: $(WEBPACK_CONFIG) $(subscriptions_INPUTS)
 	$(WEBPACK_RULE) -d dist/subscriptions/Makefile.deps $(WEBPACK_CONFIG)
@@ -59,6 +69,26 @@ dist/subscriptions/subscriptions.css.map: dist/subscriptions/Makefile.deps
 dist/subscriptions/subscriptions.min.js: dist/subscriptions/Makefile.deps
 
 dist/subscriptions/subscriptions.min.js.map: dist/subscriptions/Makefile.deps
+
+$(srcdir)/node_modules/bootstrap/LICENSE:
+
+$(srcdir)/node_modules/bootstrap/README.md:
+
+$(srcdir)/node_modules/bootstrap/less/variables.less:
+
+$(srcdir)/node_modules/patternfly/LICENSE.txt:
+
+$(srcdir)/node_modules/patternfly/README.md:
+
+$(srcdir)/node_modules/patternfly/less/color-variables.less:
+
+$(srcdir)/node_modules/patternfly/less/variables.less:
+
+$(srcdir)/node_modules/react-lite-cockpit/LICENSE:
+
+$(srcdir)/node_modules/react-lite-cockpit/README.md:
+
+$(srcdir)/node_modules/react-lite-cockpit/dist/react-lite.js:
 
 $(srcdir)/pkg/lib/cockpit-components-dialog.jsx:
 

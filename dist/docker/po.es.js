@@ -73,7 +73,7 @@ return plural;
  ],
  "$0 day": [
   "$0 days",
-  "$0 días",
+  "$0 día",
   "$0 días"
  ],
  "$0 hour": [
@@ -83,47 +83,47 @@ return plural;
  ],
  "$0 minute": [
   "$0 minutes",
-  "$0 minutos",
+  "$0 minuto",
   "$0 minutos"
  ],
  "$0 month": [
   "$0 months",
-  "$0 meses",
+  "$0 mes",
   "$0 meses"
  ],
  "$0 shares": [
   null,
-  "$0 Acciones"
+  "$0 comparticiones"
  ],
  "$0 week": [
   "$0 weeks",
-  "$0 semanas",
+  "$0 semana",
   "$0 semanas"
  ],
  "$0 year": [
   "$0 years",
-  "$0 años",
+  "$0 año",
   "$0 años"
  ],
  "${hip}:${hport} -> $cport": [
   null,
-  "${hip}:${hport} -> $cport"
+  "${hip}:${hport} → $cport"
  ],
  "Add Additional Storage": [
   null,
-  ""
+  "Añadir almacenamiento adicional"
  ],
  "Add Storage": [
   null,
-  ""
+  "Añadir almacenamiento"
  ],
  "Additional Storage": [
   null,
-  ""
+  "Almacenamiento Adicional"
  ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
-  ""
+  "Todos los datos en los discos seleccionados serán borrados y los discos serán añadidos al pool de almacenamiento."
  ],
  "Always": [
   null,
@@ -131,7 +131,7 @@ return plural;
  ],
  "Are you sure you want to delete this image?": [
   null,
-  ""
+  "¿Está seguro de que desea borrar esta imagen?"
  ],
  "Author": [
   null,
@@ -147,11 +147,11 @@ return plural;
  ],
  "CPU usage:": [
   null,
-  ""
+  "Utilización de CPU:"
  ],
  "Can&rsquo;t connect to Docker": [
   null,
-  ""
+  "Can&rsquo;t connect to Docker"
  ],
  "Cancel": [
   null,
@@ -163,11 +163,11 @@ return plural;
  ],
  "Change resource limits": [
   null,
-  ""
+  "Cambiar los límites de recurso"
  ],
  "Change resources limits": [
   null,
-  ""
+  "Cambiar límites de recursos"
  ],
  "Close": [
   null,
@@ -175,7 +175,7 @@ return plural;
  ],
  "Combined CPU usage": [
   null,
-  ""
+  "Utilización combinada de CPU"
  ],
  "Combined memory usage": [
   null,
@@ -183,27 +183,27 @@ return plural;
  ],
  "Command": [
   null,
-  "Comando"
+  "Orden"
  ],
  "Command can't be empty": [
   null,
-  ""
+  "La orden no puede estar vacía"
  ],
  "Command:": [
   null,
-  ""
+  "Orden:"
  ],
  "Commit": [
   null,
-  ""
+  "Consigna"
  ],
  "Commit Image": [
   null,
-  ""
+  "Imagen de consigna"
  ],
  "Configure storage...": [
   null,
-  ""
+  "Configurar almacenamiento..."
  ],
  "Connecting to Docker": [
   null,
@@ -227,7 +227,7 @@ return plural;
  ],
  "Container:": [
   null,
-  ""
+  "Contenedor:"
  ],
  "Containers": [
   null,
@@ -235,11 +235,11 @@ return plural;
  ],
  "Could not add all disks": [
   null,
-  ""
+  "No podría añadir todos los discos"
  ],
  "Could not reset the storage pool": [
   null,
-  ""
+  "No podría reiniciar el pool de almacenamiento"
  ],
  "Created": [
   null,
@@ -247,7 +247,7 @@ return plural;
  ],
  "Created:": [
   null,
-  ""
+  "Creado:"
  ],
  "Default": [
   null,
@@ -279,7 +279,7 @@ return plural;
  ],
  "Download": [
   null,
-  ""
+  "Descarga"
  ],
  "Drive": [
   null,
@@ -295,7 +295,7 @@ return plural;
  ],
  "Entrypoint": [
   null,
-  "Entrada"
+  "Punto de entrada"
  ],
  "Environment": [
   null,
@@ -303,11 +303,11 @@ return plural;
  ],
  "Erase containers and reset storage pool": [
   null,
-  ""
+  "Borrar contenedores y reajustar el pool de almacenamiento"
  ],
  "Erase containers, reformat disks, and add them": [
   null,
-  ""
+  "Borrar contenedores, reformatear discos y añadirlos"
  ],
  "Error message from Docker:": [
   null,
@@ -315,7 +315,7 @@ return plural;
  ],
  "Everything": [
   null,
-  ""
+  "Todo"
  ],
  "Exited $ExitCode": [
   null,
@@ -323,7 +323,7 @@ return plural;
  ],
  "Expose container ports": [
   null,
-  ""
+  "Exponer puertos de contenedores"
  ],
  "Failed to start Docker: $0": [
   null,
@@ -343,23 +343,23 @@ return plural;
  ],
  "Gateway:": [
   null,
-  ""
+  "Pasarela:"
  ],
  "Get new image": [
   null,
-  ""
+  "Obtener nueva imagen"
  ],
  "Hard Disk": [
   null,
-  ""
+  "Disco Duro"
  ],
  "IP Address:": [
   null,
-  ""
+  "Dirección IP:"
  ],
  "IP Prefix Length:": [
   null,
-  ""
+  "Longitud de Prefijo IP:"
  ],
  "Id": [
   null,
@@ -367,7 +367,7 @@ return plural;
  ],
  "Id:": [
   null,
-  ""
+  "Id:"
  ],
  "Image": [
   null,
@@ -379,11 +379,11 @@ return plural;
  ],
  "Image Search": [
   null,
-  ""
+  "Buscar Imagen"
  ],
  "Image:": [
   null,
-  ""
+  "Imagen:"
  ],
  "Images": [
   null,
@@ -391,11 +391,11 @@ return plural;
  ],
  "Images and running containers": [
   null,
-  ""
+  "Imágenes y contenedores corriendo"
  ],
  "Information about the Docker storage pool is not available.": [
   null,
-  ""
+  "No hay información disponible sobre el grupo de almacenamiento de Docker."
  ],
  "Invalid port": [
   null,
@@ -403,7 +403,7 @@ return plural;
  ],
  "Link to another container": [
   null,
-  ""
+  "Enlazar con otro contenedor"
  ],
  "Links": [
   null,
@@ -411,15 +411,15 @@ return plural;
  ],
  "Links:": [
   null,
-  ""
+  "Enlaces:"
  ],
  "Local Disks": [
   null,
-  ""
+  "Discos locales"
  ],
  "MAC Address:": [
   null,
-  ""
+  "Dirección MAC:"
  ],
  "Memory": [
   null,
@@ -431,15 +431,15 @@ return plural;
  ],
  "Memory usage:": [
   null,
-  ""
+  "Uso de memoria:"
  ],
  "MiB": [
   null,
-  ""
+  "MiB"
  ],
  "Mount container volumes": [
   null,
-  ""
+  "Montar volúmenes de contenedores"
  ],
  "Name": [
   null,
@@ -451,7 +451,7 @@ return plural;
  ],
  "No additional local storage found.": [
   null,
-  ""
+  "No se encontró ningún almacenamiento local adicional."
  ],
  "No alias specified": [
   null,
@@ -463,23 +463,23 @@ return plural;
  ],
  "No containers": [
   null,
-  ""
+  "No hay ningún contenedor"
  ],
  "No containers that match the current filter": [
   null,
-  ""
+  "Ningún contenedor corresponde al filtro actual"
  ],
  "No images": [
   null,
-  ""
+  "No hay imágenes"
  ],
  "No images that match the current filter": [
   null,
-  ""
+  "No hay imágenes que correspondan al filtro actual"
  ],
  "No results for $0": [
   null,
-  ""
+  "No hay resultados para $0"
  ],
  "No running containers": [
   null,
@@ -503,7 +503,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "Aceptar"
  ],
  "On": [
   null,
@@ -511,16 +511,16 @@ return plural;
  ],
  "On Failure": [
   null,
-  ""
+  "Al producirse un fallo"
  ],
  "On failure, retry $0 time": [
   "On failure, retry $0 times",
-  "",
-  ""
+  "Al producirse un fallo, reintentar $0 vez",
+  "Al producirse un fallo, reintentar $0 veces"
  ],
  "Overview": [
   null,
-  ""
+  "Visión conjunta"
  ],
  "Please confirm deletion of $0": [
   null,
@@ -532,7 +532,7 @@ return plural;
  ],
  "Please try another term": [
   null,
-  ""
+  "Pruebe con otro término"
  ],
  "Ports": [
   null,
@@ -540,19 +540,19 @@ return plural;
  ],
  "Ports:": [
   null,
-  ""
+  "Puertos:"
  ],
  "ReadOnly": [
   null,
-  ""
+  "SoloLectura"
  ],
  "ReadWrite": [
   null,
-  ""
+  "LecturaEscritura"
  ],
  "Reformat and add disks": [
   null,
-  ""
+  "Reformatear y añadir discos"
  ],
  "Repository": [
   null,
@@ -564,11 +564,11 @@ return plural;
  ],
  "Reset Storage Pool": [
   null,
-  ""
+  "Restablecer grupo de almacenamiento"
  ],
  "Resetting the storage pool will erase all containers and release disks in the pool.": [
   null,
-  ""
+  "Si restablece el grupo de almacenamiento se borrarán todos los contenedores y los discos de liberación del grupo."
  ],
  "Restart": [
   null,
@@ -576,23 +576,23 @@ return plural;
  ],
  "Restart Policy": [
   null,
-  ""
+  "Normativa de reinicios"
  ],
  "Restart Policy:": [
   null,
-  ""
+  "Normativa de reinicios:"
  ],
  "Retries:": [
   null,
-  ""
+  "Reintentos:"
  ],
  "Run": [
   null,
-  ""
+  "Ejecutar"
  ],
  "Run Image": [
   null,
-  ""
+  "Ejecutar imagen"
  ],
  "Security": [
   null,
@@ -708,7 +708,7 @@ return plural;
  ],
  "Used by Containers": [
   null,
-  "Contenedores"
+  "Utilizado por contenedores"
  ],
  "Volumes": [
   null,
@@ -732,7 +732,7 @@ return plural;
  ],
  "key": [
   null,
-  "llave"
+  "clave"
  ],
  "none": [
   null,
@@ -740,7 +740,7 @@ return plural;
  ],
  "search by name, namespace or description": [
   null,
-  ""
+  "buscar por nombre, espacio de nombres o descripción"
  ],
  "select container": [
   null,
@@ -748,11 +748,11 @@ return plural;
  ],
  "shares": [
   null,
-  ""
+  "comparticiones"
  ],
  "to host path": [
   null,
-  "hacía directorio en el host"
+  "al trayecto de anfitrión"
  ],
  "to host port": [
   null,
@@ -760,7 +760,7 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "sin definir"
  ],
  "value": [
   null,

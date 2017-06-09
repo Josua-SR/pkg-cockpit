@@ -69,19 +69,19 @@ return plural;
  },
  "'Organization' required to register.": [
   null,
-  "'Organización' requerida para registrar."
+  "Se necesita «Organización» para efectuar el registro."
  ],
  "'Organization' required when using activation keys.": [
   null,
-  "'Organización' requerida cuando se usan claves de activación."
+  "Se necesita «Organización» al utilizar claves de activación."
  ],
  "Access denied": [
   null,
-  ""
+  "Acceso denegado"
  ],
  "Activation Key": [
   null,
-  ""
+  "Clave de activación"
  ],
  "Architecture": [
   null,
@@ -93,11 +93,11 @@ return plural;
  ],
  "Couldn't get system subscription status. Please ensure subscription-manager is installed.": [
   null,
-  ""
+  "No podría obtener el estado del sistema de suscripción. Por favor asegura que el gestor de suscripción está instalado."
  ],
  "Custom URL": [
   null,
-  ""
+  "URL personal"
  ],
  "Default": [
   null,
@@ -109,15 +109,15 @@ return plural;
  ],
  "Ends": [
   null,
-  ""
+  "Finales"
  ],
  "Installed products": [
   null,
-  ""
+  "Productos instalados"
  ],
  "Invalid credentials": [
   null,
-  ""
+  "Las credenciales no son válidas"
  ],
  "Invalid username or password": [
   null,
@@ -125,23 +125,23 @@ return plural;
  ],
  "Login": [
   null,
-  ""
+  "Ingresar"
  ],
  "Login/password or activation key required to register.": [
   null,
-  ""
+  "Para registrarse es necesario un usuario y contraseña o una clave de activación."
  ],
  "No installed products on the system.": [
   null,
-  ""
+  "No hay ningún producto instalado en el sistema."
  ],
  "Ok": [
   null,
-  ""
+  "Aceptar"
  ],
  "Organization": [
   null,
-  ""
+  "Organización"
  ],
  "Password": [
   null,
@@ -161,7 +161,7 @@ return plural;
  ],
  "Register": [
   null,
-  ""
+  "Registrar"
  ],
  "Register system": [
   null,
@@ -169,7 +169,7 @@ return plural;
  ],
  "Retrieving subscription status...": [
   null,
-  ""
+  "Obteniendo el estado de la suscripción…"
  ],
  "Server": [
   null,
@@ -233,6 +233,6 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "sin definir"
  ]
 }));

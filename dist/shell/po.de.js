@@ -69,7 +69,7 @@ return plural;
  },
  "A compatible version of Cockpit is not installed on {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "Auf {{#strong}}{{host}}{{/strong}} ist keine kompatible Version von Cockpit installiert."
  ],
  "About Cockpit": [
   null,
@@ -78,6 +78,10 @@ return plural;
  "Account Settings": [
   null,
   "Kontoeinstellungen"
+ ],
+ "Active Pages": [
+  null,
+  ""
  ],
  "Add": [
   null,
@@ -97,7 +101,7 @@ return plural;
  ],
  "Authentication Failed": [
   null,
-  ""
+  "Authentifizierung fehlgeschlagen"
  ],
  "Available": [
   null,
@@ -113,7 +117,7 @@ return plural;
  ],
  "Change Password": [
   null,
-  ""
+  "Passwort ändern"
  ],
  "Checking for public keys": [
   null,
@@ -125,31 +129,35 @@ return plural;
  ],
  "Close": [
   null,
-  "Schliessen"
+  "Schließen"
+ ],
+ "Close Selected Pages": [
+  null,
+  ""
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
-  ""
+  "Cockpit konnte den angegebenen Host $0 nicht erreichen. Stellen Sie sicher, dass SSH auf Port $1 läuft oder geben Sie einen anderen Port in der Adresse an."
  ],
  "Cockpit had an unexpected internal error. <br/><br/>You can try restarting Cockpit by pressing refresh in your browser. The javascript console contains details about this error (<b>Ctrl-Shift-J</b> in most browsers).": [
   null,
-  ""
+  "Es trat ein unerwarteter interner Fehler auf. <br/><br/>Sie können Versuchen, Cockpit durch Aktualisieren der Seite neu zu starten. Die Javascript Konsole enthält Details zum Fehler (<b>Strg-Umschalt-J</b> in den meisten Browsern)."
  ],
  "Cockpit is an interactive Linux server admin interface.": [
   null,
-  ""
+  "Cockpit ist ein interaktives Administrationsinterface für Linux Server.\n            "
  ],
  "Cockpit is an interactive Linux server admin interface. ": [
   null,
-  ""
+  "Cockpit ist ein interaktives Administrationsinterface für Linux Server."
  ],
  "Cockpit is not installed": [
   null,
-  ""
+  "Cockpit ist nicht installiert"
  ],
  "Cockpit was unable to contact {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "Cockpit konnte den Host {{#strong}}{{host}}{{/strong}} nicht erreichen."
  ],
  "Cockpit was unable to log in to {{#strong}}{{host}}{{/strong}}. {{#can_sync}}You may want to try to {{#sync_link}}synchronize users{{/sync_link}}.{{/can_sync}} For more authentication options and troubleshooting support please upgrade cockpit-ws to a newer version.": [
   null,
@@ -157,7 +165,7 @@ return plural;
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "Cockpit konnte sich bei {{#strong}}{{host}}{{/strong}} nicht einloggen."
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. To use this machine with cockpit you will need to enable one of the following authentication methods in the sshd config on {{#strong}}{{host}}{{/strong}}:": [
   null,
@@ -169,11 +177,11 @@ return plural;
  ],
  "Color": [
   null,
-  ""
+  "Farbe"
  ],
  "Comment": [
   null,
-  ""
+  "Kommentar"
  ],
  "Confirm": [
   null,
@@ -185,7 +193,7 @@ return plural;
  ],
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
-  ""
+  "Das gleichzeitige Verbinden zu mehr als  {{ limit }} Maschinen wird nicht unterstützt."
  ],
  "Connecting to the machine": [
   null,
@@ -193,7 +201,7 @@ return plural;
  ],
  "Could not contact {{host}}": [
   null,
-  ""
+  "Konnte Host {{host}} nicht erreichen"
  ],
  "Couldn't connect to the machine": [
   null,
@@ -271,6 +279,14 @@ return plural;
   null,
   ""
  ],
+ "Lock to prevent privileged tasks": [
+  null,
+  ""
+ ],
+ "Locked": [
+  null,
+  ""
+ ],
  "Log In": [
   null,
   ""
@@ -343,7 +359,15 @@ return plural;
   null,
   "Passwort wurde nicht akzeptiert"
  ],
+ "Password not usable for privileged tasks or to connect to other machines": [
+  null,
+  ""
+ ],
  "Port": [
+  null,
+  ""
+ ],
+ "Privileged tasks not available": [
   null,
   ""
  ],
@@ -367,21 +391,25 @@ return plural;
   null,
   "Erneut verbinden"
  ],
+ "Reuse my password for privileged tasks and to connect to other machines": [
+  null,
+  ""
+ ],
  "Select": [
   null,
   ""
  ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
-  ""
+  "Wählen Sie die Nutzer aus, die mit {{#strong}}{{host}}{{/strong}} synchronisiert werden sollen"
  ],
  "Synchronize": [
   null,
-  ""
+  "Synchronisieren"
  ],
  "Synchronize users": [
   null,
-  ""
+  "Benutzer synchronisieren"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -389,11 +417,11 @@ return plural;
  ],
  "The authenticity of host {{#strong}}{{host}}{{/strong}} can't be established. Are you sure you want to continue connecting?": [
   null,
-  ""
+  "Die Authentizität von Host {{#strong}}{{host}}{{/strong}} kann nicht bestätigt werden. Sind Sie sicher, dass Sie fortfahren wollen?"
  ],
  "The key of {{#strong}}{{host}}{{/strong}} does not match the key previously in use. Unless this machine was recently replaced, it is likely that someone is trying to attack your connection to this machine.": [
   null,
-  ""
+  "Der Schlüssel von {{#strong}}{{host}}{{/strong}} stimmt nicht mit dem zuletzt benutzten Schlüssel überein. Falls die Maschine nicht kürzlich ausgetauscht wurde, ist ein Angriff auf die Verbindung zur Maschine sehr wahrscheinlich."
  ],
  "The machine is restarting": [
   null,
@@ -403,33 +431,33 @@ return plural;
   null,
   "Die Passwörter stimmen nicht überein."
  ],
+ "There are currently no active pages": [
+  null,
+  ""
+ ],
  "This machine has already been added.": [
   null,
   "Diese Maschine wurde bereits hinzugefügt"
  ],
  "This version of cockpit-ws does not support connecting to a host with an alternate user or port": [
   null,
-  ""
+  "Das Verbinden zu einem Host mit alternativen Benutzernamen oder auf anderen Ports wird von dieser Version von cockpit-ws nicht unterstützt"
  ],
  "Tip: Make your key password match your login password to automatically authenticate against other systems.": [
   null,
-  ""
+  "Tipp: Wenn Ihr Schlüsselpasswort mit Ihrem Login-Passwort übereinstimmt, können Sie sich an anderen Systemen automatisiert anmelden."
  ],
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
   null,
-  ""
- ],
- "Tools": [
-  null,
-  ""
+  "Um einen anderen Port zu benutzen müssen Sie cockpit-ws aktualisieren."
  ],
  "Troubleshoot": [
   null,
-  ""
+  "Fehlersuche"
  ],
  "Try to reconnect": [
   null,
-  ""
+  "Versuche neu zu verbinden"
  ],
  "Type": [
   null,
@@ -437,7 +465,7 @@ return plural;
  ],
  "Type a password": [
   null,
-  ""
+  "Geben Sie ein Passwort ein"
  ],
  "Unexpected error": [
   null,
@@ -445,31 +473,31 @@ return plural;
  ],
  "Unknown Host Key": [
   null,
-  ""
+  "Unbekannter Host-Schlüssel"
  ],
  "Unlock Key": [
   null,
   ""
  ],
- "Update": [
+ "Unlocked": [
   null,
   ""
  ],
- "Use my password for privileged tasks and to connect to other machines": [
+ "Update": [
   null,
-  ""
+  "Update"
  ],
  "Use the following keys to authenticate against other systems": [
   null,
-  ""
+  "Benutze die folgenen Schlüssel zur Authentifizierung an anderen Systemen"
  ],
  "User name": [
   null,
-  ""
+  "Benutzername"
  ],
  "Using available credentials": [
   null,
-  ""
+  "Benutze verfügbare Zugangsdaten"
  ],
  "Version": [
   null,
@@ -477,10 +505,14 @@ return plural;
  ],
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
-  ""
+  "Sie sind mit {{#strong}}{{host}}{{/strong}} verbunden, zum Synchronisieren von Nutzern sind jedoch Administratorrechte erforderlich."
  ],
  "You can remove the previously stored key by running the following command": [
   null,
-  ""
+  "Sie können den zuvor gespeicherten Schlüssel mit dem folgenden Befehl entfernen"
+ ],
+ "active": [
+  null,
+  "Aktiv"
  ]
 }));

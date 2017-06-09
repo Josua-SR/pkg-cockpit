@@ -97,7 +97,7 @@ return plural;
  ],
  "Custom URL": [
   null,
-  "Własny adres URL"
+  "Niestandardowy adres URL"
  ],
  "Default": [
   null,

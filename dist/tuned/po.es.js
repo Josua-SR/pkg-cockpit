@@ -81,7 +81,7 @@ return plural;
  ],
  "Communication with tuned has failed": [
   null,
-  "La comunicación con tuned a fallado"
+  "Falló la comunicación con «tuned»"
  ],
  "Disable tuned": [
   null,
@@ -109,7 +109,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "Aceptar"
  ],
  "This system is using a custom profile": [
   null,

@@ -69,77 +69,77 @@ return plural;
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
-  " 1\"¿Desea borrar los siguientes Nodos?"
+  " 1\"¿Quiere eliminar los nodos siguientes?"
  ],
  "$0% Free": [
   "$0% Free",
-  "$0% Libre",
-  "$0% Libre"
+  "$0 % disponible",
+  "$0 % disponible"
  ],
  "$0% Used": [
   "$0% Used",
-  "$0% Usado",
-  "$0% Usado"
+  "$0 % en uso",
+  "$0 % en uso"
  ],
  "AWS Elastic Block Store": [
   null,
-  ""
+  "AWS Almacén Elástico de Bloque"
  ],
  "Access Modes": [
   null,
-  ""
+  "Modos de acceso"
  ],
  "Access Policy": [
   null,
-  "Política de Acceso"
+  "Normativa de acceso"
  ],
  "Actual": [
   null,
-  ""
+  "Real"
  ],
  "Add": [
   null,
-  "Agregar"
+  "Añadir"
  ],
  "Add Cluster Node": [
   null,
-  ""
+  "Añadir nodo de agrupación"
  ],
  "Add Group": [
   null,
-  "Agregar Grupo"
+  "Añadir grupo"
  ],
  "Add Kubernetes Node": [
   null,
-  ""
+  "Añadir nodo de Kubernetes"
  ],
  "Add Member": [
   null,
-  "Agregar Miembro"
+  "Añadir miembro"
  ],
  "Add Membership": [
   null,
-  ""
+  "Añadir afiliación"
  ],
  "Add New Cluster": [
   null,
-  ""
+  "Añadir agrupación nueva"
  ],
  "Add New User": [
   null,
-  ""
+  "Añadir usuario nuevo"
  ],
  "Add Role": [
   null,
-  ""
+  "Añadir rol"
  ],
  "Add User": [
   null,
-  ""
+  "Añadir usuario"
  ],
  "Add membership": [
   null,
-  ""
+  "Añadir afiliación"
  ],
  "Address": [
   null,
@@ -155,15 +155,15 @@ return plural;
  ],
  "Adjust Persistent Volume '{{ item.metadata.name }}'": [
   null,
-  ""
+  "Ajustar Volumen Persistente '{{ item.metadata.name }}'"
  ],
  "Adjust Replication Controller {{ item.metadata.name }}": [
   null,
-  ""
+  "Ajustar el Controlador de Replicación {{ item.metadata.name }}"
  ],
  "Adjust Route": [
   null,
-  ""
+  "Ajustar Ruta"
  ],
  "Adjust Service": [
   null,
@@ -171,7 +171,7 @@ return plural;
  ],
  "Admin": [
   null,
-  ""
+  "Administración"
  ],
  "All Projects": [
   null,
@@ -179,11 +179,11 @@ return plural;
  ],
  "All Types": [
   null,
-  ""
+  "Todos los Tipos"
  ],
  "All healthy": [
   null,
-  ""
+  "Todo saludable"
  ],
  "All images": [
   null,
@@ -191,11 +191,11 @@ return plural;
  ],
  "All in use": [
   null,
-  ""
+  "Todo en uso"
  ],
  "All running": [
   null,
-  ""
+  "Todo corriendo"
  ],
  "Annotations": [
   null,
@@ -203,7 +203,7 @@ return plural;
  ],
  "Anonymous: Allow all unauthenticated users to pull images": [
   null,
-  ""
+  "Anónimo: Permite a todos los usuarios no autentificados tirar de las imágenes"
  ],
  "Authentication": [
   null,
@@ -219,7 +219,7 @@ return plural;
  ],
  "Boot ID": [
   null,
-  ""
+  "ID de Arranque"
  ],
  "CPU": [
   null,
@@ -235,15 +235,15 @@ return plural;
  ],
  "Capacity": [
   null,
-  ""
+  "Capacidad"
  ],
  "Ceph Filesystem Mount": [
   null,
-  ""
+  "Montaje del Sistema de Archivos Ceph"
  ],
  "Ceph Monitors": [
   null,
-  ""
+  "Monitores Ceph"
  ],
  "Change": [
   null,
@@ -251,11 +251,11 @@ return plural;
  ],
  "Change User": [
   null,
-  ""
+  "Cambiar Usuario"
  ],
  "Change image stream": [
   null,
-  ""
+  "Cambiar flujo de imagen"
  ],
  "Change project": [
   null,
@@ -267,19 +267,19 @@ return plural;
  ],
  "Claim": [
   null,
-  ""
+  "Reclamación"
  ],
  "Claim Name": [
   null,
-  ""
+  "Nombre de Reclamación"
  ],
  "Client Certificate": [
   null,
-  ""
+  "Certificado de Cliente"
  ],
  "Cluster": [
   null,
-  ""
+  "Cluster"
  ],
  "Configuration": [
   null,
@@ -303,7 +303,7 @@ return plural;
  ],
  "Connection Error": [
   null,
-  ""
+  "Error de Conexión"
  ],
  "Connection Error: $0": [
   null,
@@ -311,7 +311,7 @@ return plural;
  ],
  "Connection Settings": [
   null,
-  ""
+  "Ajustes de Conexión"
  ],
  "Container": [
   null,
@@ -323,7 +323,7 @@ return plural;
  ],
  "Container Runtime Version": [
   null,
-  ""
+  "Contenedor de Versión en Tiempo de Ejecución"
  ],
  "Containers": [
   null,
@@ -347,11 +347,11 @@ return plural;
  ],
  "Create empty image stream": [
   null,
-  ""
+  "Crea un flujo de imágenes vacío"
  ],
  "Create image stream": [
   null,
-  ""
+  "Crear un flujo de imagen"
  ],
  "Created": [
   null,
@@ -359,7 +359,7 @@ return plural;
  ],
  "DNS Policy": [
   null,
-  ""
+  "Política DNS"
  ],
  "Delete": [
   null,
@@ -367,35 +367,35 @@ return plural;
  ],
  "Delete Node": [
   null,
-  ""
+  "Borrar Nodo"
  ],
  "Delete Persistent Volume": [
   null,
-  ""
+  "Borrar Volumen Persitente"
  ],
  "Delete Persistent Volume Claim": [
   null,
-  ""
+  "Eliminar la Reclamación de Volumen Persistente"
  ],
  "Delete Project": [
   null,
-  ""
+  "Borrar Proyecto"
  ],
  "Delete Selected": [
   null,
-  ""
+  "Borrar Seleccionado"
  ],
  "Delete image stream": [
   null,
-  ""
+  "Eliminar el flujo de imágenes"
  ],
  "Delete {{ item.kind }}": [
   null,
-  ""
+  "Eliminar {{ item.kind }}"
  ],
  "Deleting a Pod will kill all associated containers. Pods may be automatically created again in some cases.": [
   null,
-  ""
+  "Eliminando un Pod matará todos los contenedores asociados. Los Pods pueden ser creados automáticamente otra vez en algunos casos."
  ],
  "Deploy": [
   null,
@@ -439,47 +439,47 @@ return plural;
  ],
  "Display name": [
   null,
-  ""
+  "Visualizar nombre"
  ],
  "Do you want to add the role '{{ fields.displayRole }}'?": [
   null,
-  ""
+  "¿Desea añadir el rol? '{{ fields.displayRole }}'?"
  ],
  "Do you want to delete the '{{stream.metadata.namespace}}/{{stream.metadata.name}}' image stream?": [
   null,
-  ""
+  "¿Desea eliminar el flujo de imagen '{{stream.metadata.namespace}}/{{stream.metadata.name}}' ?"
  ],
  "Do you want to delete the Persistent Volume '{{item.metadata.name}}'?": [
   null,
-  ""
+  "¿Desea eliminar el Volumen Persitente '{{item.metadata.name}}'?"
  ],
  "Do you want to delete the Persistent Volume Claim '{{item.metadata.name}}'?": [
   null,
-  ""
+  "¿Desea eliminar la Reclamación de Volumen Persistente '{{item.metadata.name}}'?"
  ],
  "Do you want to delete the {{ item.kind }} '{{item.metadata.name}}'?": [
   null,
-  ""
+  "¿Desea eliminar {{ item.kind }} '{{item.metadata.name}}'?"
  ],
  "Do you want to delete this Node?": [
   null,
-  ""
+  "¿Desea eliminar este Nodo?"
  ],
  "Do you want to remove the image tagged as '{{stream.metadata.namespace}}/{{stream.metadata.name}}:{{tag.tag}}'?": [
   null,
-  ""
+  "¿Desea borrar la imagen etiquetada como '{{stream.metadata.namespace}}/{{stream.metadata.name}}:{{tag.tag}}'?"
  ],
  "Do you want to remove the role '{{ fields.displayRole }}' from member {{ fields.member.metadata.name }}?": [
   null,
-  ""
+  "¿Desea borrar el rol '{{ fields.displayRole }}' del miembro {{ fields.member.metadata.name }}?"
  ],
  "Don't pull images automatically": [
   null,
-  ""
+  "No tire de las imágenes automáticamente"
  ],
  "Driver": [
   null,
-  ""
+  "Driver"
  ],
  "Empty Directory": [
   null,
@@ -487,15 +487,15 @@ return plural;
  ],
  "Endpoint": [
   null,
-  ""
+  "Punto final"
  ],
  "Endpoint Name": [
   null,
-  ""
+  "Nombre del Punto final"
  ],
  "Endpoints": [
   null,
-  ""
+  "Puntos finales"
  ],
  "Environment": [
   null,
@@ -511,11 +511,11 @@ return plural;
  ],
  "Fibre Channel": [
   null,
-  ""
+  "Canal de Fibra"
  ],
  "Filesystem Type": [
   null,
-  ""
+  "Tipo de Sistema de archivos"
  ],
  "Flex": [
   null,
@@ -527,11 +527,11 @@ return plural;
  ],
  "Flocker Dataset Name": [
   null,
-  ""
+  "Nombre del Conjunto de Datos Flocker"
  ],
  "GCE Persistent Disk": [
   null,
-  ""
+  "Disco GCE Persistente"
  ],
  "Git Repository": [
   null,
@@ -547,19 +547,19 @@ return plural;
  ],
  "Grant additional push or admin access to specific members below.": [
   null,
-  ""
+  "Obtener empuje adicional o administrar el acceso a los miembros específicos de abajo."
  ],
  "Group Members": [
   null,
-  ""
+  "Miembros del Grupo"
  ],
  "Group or Project": [
   null,
-  ""
+  "Grupo o Proyecto"
  ],
  "Groups": [
   null,
-  ""
+  "Grupos"
  ],
  "Host": [
   null,
@@ -567,7 +567,7 @@ return plural;
  ],
  "Host Path": [
   null,
-  "Ruta del Host"
+  "Trayecto del anfitrión"
  ],
  "IP": [
   null,
@@ -579,11 +579,11 @@ return plural;
  ],
  "Identities": [
   null,
-  ""
+  "Identidades"
  ],
  "Identity": [
   null,
-  ""
+  "Identidad"
  ],
  "Image": [
   null,
@@ -595,19 +595,19 @@ return plural;
  ],
  "Image Name": [
   null,
-  ""
+  "Nombre de Imagen"
  ],
  "Image Registry": [
   null,
-  ""
+  "Registro de Imagen"
  ],
  "Image Stream": [
   null,
-  ""
+  "Corriente de Imagen"
  ],
  "Image commands": [
   null,
-  ""
+  "Órdenes de imagen"
  ],
  "Images": [
   null,
@@ -619,31 +619,31 @@ return plural;
  ],
  "Images pushed recently": [
   null,
-  ""
+  "Imágenes utilizadas recientemente"
  ],
  "In order to begin pushing images to the registry, use the commands below.": [
   null,
-  ""
+  "Para comenzar a insertar imágenes en el registro, utilice las órdenes siguientes."
  ],
  "In order to begin pushing images to the registry, you need to create a project.": [
   null,
-  ""
+  "Con el objetivo de llevar imágenes al registro, usted necesita crear un proyecto."
  ],
  "Interface": [
   null,
-  ""
+  "Interfaz"
  ],
  "Kernel Version": [
   null,
-  ""
+  "Versión del núcleo"
  ],
  "Key Ring Path": [
   null,
-  ""
+  "Trayecto del llavero"
  ],
  "Kubelet Version": [
   null,
-  ""
+  "Versión de Kubelet"
  ],
  "Kubernetes Cluster": [
   null,
@@ -671,7 +671,7 @@ return plural;
  ],
  "Log into OpenShift command line tools:": [
   null,
-  ""
+  "Ingrese a las herramientas de consola de OpenShift:"
  ],
  "Log into the registry:": [
   null,
@@ -679,19 +679,19 @@ return plural;
  ],
  "Logical Unit Number": [
   null,
-  ""
+  "Número de unidad lógica"
  ],
  "Login commands": [
   null,
-  ""
+  "Órdenes de ingreso"
  ],
  "Logs": [
   null,
-  ""
+  "Registros"
  ],
  "Machine ID": [
   null,
-  ""
+  "Id. de máquina"
  ],
  "Manifest": [
   null,
@@ -727,19 +727,19 @@ return plural;
  ],
  "Metadata": [
   null,
-  ""
+  "Metadatos"
  ],
  "Modify": [
   null,
-  ""
+  "Modificar"
  ],
  "Monitors": [
   null,
-  ""
+  "Monitores"
  ],
  "Mount Location": [
   null,
-  ""
+  "Ubicación de montaje"
  ],
  "NFS": [
   null,
@@ -767,15 +767,15 @@ return plural;
  ],
  "New Group": [
   null,
-  ""
+  "Grupo nuevo"
  ],
  "New Project": [
   null,
-  ""
+  "Proyecto nuevo"
  ],
  "New image stream": [
   null,
-  ""
+  "Flujo de imágenes nuevo"
  ],
  "New project": [
   null,
@@ -791,15 +791,15 @@ return plural;
  ],
  "No Volume Bound": [
   null,
-  ""
+  "No hay ningún vínculo de volumen"
  ],
  "No groups are present.": [
   null,
-  ""
+  "No hay ningún grupo presente."
  ],
  "No image streams are present.": [
   null,
-  ""
+  "No hay ningún flujo de imágenes presente."
  ],
  "No images pushed": [
   null,
@@ -875,15 +875,15 @@ return plural;
  ],
  "Not deployed": [
   null,
-  ""
+  "No distribuido"
  ],
  "OS": [
   null,
-  ""
+  "SO"
  ],
  "OS Versions": [
   null,
-  ""
+  "Versiones de SO"
  ],
  "Operating System": [
   null,
@@ -895,11 +895,11 @@ return plural;
  ],
  "Overview": [
   null,
-  ""
+  "Visión conjunta"
  ],
  "PD Name": [
   null,
-  ""
+  "Nombre de PD"
  ],
  "Partition": [
   null,
@@ -911,7 +911,7 @@ return plural;
  ],
  "Path": [
   null,
-  ""
+  "Trayecto"
  ],
  "Pending Volume Claims": [
   null,
@@ -919,11 +919,11 @@ return plural;
  ],
  "Persistent Volumes": [
   null,
-  ""
+  "Volúmenes persistentes"
  ],
  "Phase": [
   null,
-  ""
+  "Fase"
  ],
  "Please create another namespace for $0 \"$1\"": [
   null,
@@ -967,7 +967,7 @@ return plural;
  ],
  "Please provide a valid path": [
   null,
-  "Por favor provea una ruta valida"
+  "Proporcione un trayecto válido"
  ],
  "Please provide a valid qualified name": [
   null,
@@ -1027,11 +1027,11 @@ return plural;
  ],
  "Pool Name": [
   null,
-  ""
+  "Nombre del grupo"
  ],
  "Populate": [
   null,
-  ""
+  "Rellenar"
  ],
  "Ports": [
   null,
@@ -1067,7 +1067,7 @@ return plural;
  ],
  "Projects": [
   null,
-  ""
+  "Proyectos"
  ],
  "Proxy Version": [
   null,
@@ -1079,11 +1079,11 @@ return plural;
  ],
  "Pull from": [
   null,
-  ""
+  "Extraer desde"
  ],
  "Pull specific tags from another image repository": [
   null,
-  ""
+  "Extraer etiquetas específicas desde otro repositorio de imágenes"
  ],
  "Push an image:": [
   null,
@@ -1099,7 +1099,7 @@ return plural;
  ],
  "Read Only": [
   null,
-  ""
+  "Solo lectura"
  ],
  "Read and write from a single node": [
   null,
@@ -1123,7 +1123,7 @@ return plural;
  ],
  "Reclaim Policy": [
   null,
-  ""
+  "Normativa de reclamación"
  ],
  "Reconnect": [
   null,
@@ -1135,15 +1135,15 @@ return plural;
  ],
  "Register": [
   null,
-  ""
+  "Registrar"
  ],
  "Register New Volume": [
   null,
-  ""
+  "Registrar volumen nuevo"
  ],
  "Register Persistent Volume": [
   null,
-  ""
+  "Registrar volumen persistente"
  ],
  "Remote registry is insecure": [
   null,
@@ -1159,15 +1159,15 @@ return plural;
  ],
  "Remove Member": [
   null,
-  ""
+  "Quitar miembro"
  ],
  "Remove Role": [
   null,
-  ""
+  "Quitar rol"
  ],
  "Remove User": [
   null,
-  ""
+  "Quitar usuario"
  ],
  "Remove image tag": [
   null,
@@ -1175,7 +1175,7 @@ return plural;
  ],
  "Remove membership": [
   null,
-  ""
+  "Quitar afiliación"
  ],
  "Replicas": [
   null,
@@ -1195,19 +1195,19 @@ return plural;
  ],
  "Repository URL": [
   null,
-  ""
+  "URL del repositorio"
  ],
  "Requested": [
   null,
-  ""
+  "Solicitado"
  ],
  "Requests": [
   null,
-  ""
+  "Solicitudes"
  ],
  "Requires Authentication": [
   null,
-  ""
+  "Necesita autenticación"
  ],
  "Restart Count": [
   null,
@@ -1215,7 +1215,7 @@ return plural;
  ],
  "Restart Policy": [
   null,
-  ""
+  "Normativa de reinicios"
  ],
  "Retain": [
   null,
@@ -1223,11 +1223,11 @@ return plural;
  ],
  "Revision": [
   null,
-  ""
+  "Revisión"
  ],
  "Role": [
   null,
-  ""
+  "Rol"
  ],
  "Roles": [
   null,
@@ -1235,7 +1235,7 @@ return plural;
  ],
  "Route": [
   null,
-  ""
+  "Ruta"
  ],
  "Routes": [
   null,
@@ -1283,7 +1283,7 @@ return plural;
  ],
  "Service Account": [
   null,
-  ""
+  "Cuenta de servicio"
  ],
  "Services": [
   null,
@@ -1303,7 +1303,7 @@ return plural;
  ],
  "Shared: Allow any authenticated user to pull images": [
   null,
-  ""
+  "Compartido: permitir a cualquier usuario autenticado extraer imágenes"
  ],
  "Shell": [
   null,
@@ -1311,19 +1311,19 @@ return plural;
  ],
  "Show all Containers": [
   null,
-  ""
+  "Mostrar todos los contenedores"
  ],
  "Show all Deployment Configs": [
   null,
-  ""
+  "Mostrar todas las configuraciones de distribución"
  ],
  "Show all Nodes": [
   null,
-  ""
+  "Mostrar todos los nodos"
  ],
  "Show all Persistent Volumes": [
   null,
-  ""
+  "Mostrar todos los volúmenes persistentes"
  ],
  "Show all Pod Containers": [
   null,
@@ -1335,7 +1335,7 @@ return plural;
  ],
  "Show all Projects": [
   null,
-  ""
+  "Mostrar todos los proyectos"
  ],
  "Show all Replication Controllers": [
   null,
@@ -1343,11 +1343,11 @@ return plural;
  ],
  "Show all Routes": [
   null,
-  ""
+  "Mostrar todas las rutas"
  ],
  "Show all Services": [
   null,
-  ""
+  "Mostrar todos los servicios"
  ],
  "Show all image streams": [
   null,
@@ -1615,7 +1615,7 @@ return plural;
  ],
  "Your login credentials do not give you access to use the docker registry from the command line.": [
   null,
-  "Tus credenciales de acceso no te dan acceso a usar el registro docker desde la línea de comandos."
+  "Sus credenciales de acceso no le conceden acceso para utilizar el registro de Docker a partir de la consola."
  ],
  "eg: my-image-stream": [
   null,
@@ -1635,6 +1635,6 @@ return plural;
  ],
  "yes": [
   null,
-  "si"
+  "sí"
  ]
 }));

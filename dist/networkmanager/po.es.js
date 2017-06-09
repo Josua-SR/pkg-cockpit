@@ -69,7 +69,7 @@ return plural;
  },
  "$0 day": [
   "$0 days",
-  "$0 días",
+  "$0 día",
   "$0 días"
  ],
  "$0 hour": [
@@ -79,22 +79,22 @@ return plural;
  ],
  "$0 minute": [
   "$0 minutes",
-  "$0 minutos",
+  "$0 minuto",
   "$0 minutos"
  ],
  "$0 month": [
   "$0 months",
-  "$0 meses",
+  "$0 mes",
   "$0 meses"
  ],
  "$0 week": [
   "$0 weeks",
-  "$0 semanas",
+  "$0 semana",
   "$0 semanas"
  ],
  "$0 year": [
   "$0 years",
-  "$0 años",
+  "$0 año",
   "$0 años"
  ],
  "$mtu": [
@@ -127,7 +127,7 @@ return plural;
  ],
  "802.3ad LACP": [
   null,
-  ""
+  "802.3ad LACP"
  ],
  "ARP": [
   null,
@@ -139,7 +139,7 @@ return plural;
  ],
  "ARP Ping": [
   null,
-  ""
+  "Ping ARP"
  ],
  "Active": [
   null,
@@ -147,7 +147,7 @@ return plural;
  ],
  "Active Backup": [
   null,
-  "Respaldo activo"
+  "Copia de seguridad activa"
  ],
  "Adaptive load balancing": [
   null,
@@ -159,7 +159,7 @@ return plural;
  ],
  "Add $0": [
   null,
-  ""
+  "Añadir $0"
  ],
  "Add Bond": [
   null,
@@ -167,11 +167,11 @@ return plural;
  ],
  "Add Bridge": [
   null,
-  "Añadir Puente"
+  "Añadir puente"
  ],
  "Add Team": [
   null,
-  ""
+  "Añadir equipo"
  ],
  "Add VLAN": [
   null,
@@ -179,23 +179,23 @@ return plural;
  ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Si se añade <b>$0</b> se romperá la conexión con el servidor y se indisponibilizará el acceso a la IU de administración."
  ],
  "Additional DNS $val": [
   null,
-  ""
+  "DNA adicional $val"
  ],
  "Additional DNS Search Domains $val": [
   null,
-  ""
+  "Búsqueda de Dominios DNA Adicional $val"
  ],
  "Additional address $val": [
   null,
-  ""
+  "Dirección adicional $val"
  ],
  "Address $val": [
   null,
-  ""
+  "Dirección $val"
  ],
  "Addresses": [
   null,
@@ -223,7 +223,7 @@ return plural;
  ],
  "Balancer": [
   null,
-  ""
+  "Balanceador"
  ],
  "Bond": [
   null,
@@ -255,7 +255,7 @@ return plural;
  ],
  "Broken configuration": [
   null,
-  ""
+  "Configuración rota"
  ],
  "Cancel": [
   null,
@@ -267,11 +267,11 @@ return plural;
  ],
  "Change the settings": [
   null,
-  ""
+  "Cambiar los ajustes"
  ],
  "Changing the settings will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Cambiando los ajustes romperá la conexión al servidor y ha la administración de UI no disponible."
  ],
  "Checking IP": [
   null,
@@ -299,15 +299,15 @@ return plural;
  ],
  "Connection will be lost": [
   null,
-  ""
+  "Se perderá la conexión"
  ],
  "Create it": [
   null,
-  ""
+  "Crearlo"
  ],
  "Creating this VLAN will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "La creación de esta VLAN romperá la conexión con el servidor y hará a la administración de UI no disponible."
  ],
  "Creating this bond will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -315,7 +315,7 @@ return plural;
  ],
  "Creating this bridge will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "La creación de este puente romperá la conexión con el servidor y hará la administración de UI no disponible."
  ],
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -327,7 +327,7 @@ return plural;
  ],
  "DNS $val": [
   null,
-  ""
+  "DNS $val"
  ],
  "DNS Search Domains": [
   null,
@@ -335,7 +335,7 @@ return plural;
  ],
  "DNS Search Domains $val": [
   null,
-  ""
+  "Buscar Dominios DNS $val"
  ],
  "Deactivating": [
   null,
@@ -351,7 +351,7 @@ return plural;
  ],
  "Deleting <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Eliminando <b>$0</b> romperá la conexión al servidor y hara no disponible la administración UI."
  ],
  "Disabled": [
   null,
@@ -359,15 +359,15 @@ return plural;
  ],
  "Ethernet MAC": [
   null,
-  ""
+  "Ethernet MAC"
  ],
  "Ethernet MTU": [
   null,
-  ""
+  "Ethernet MTU"
  ],
  "Ethtool": [
   null,
-  ""
+  "Ethtool"
  ],
  "Failed": [
   null,
@@ -439,27 +439,27 @@ return plural;
  ],
  "Invalid address $0": [
   null,
-  "Llave inválida"
+  "La dirección $0 no es válida"
  ],
  "Invalid metric $0": [
   null,
-  "Llave inválida"
+  "La métrica $0 no es válida"
  ],
  "Invalid prefix $0": [
   null,
-  "Puerto invalido"
+  "El prefijo $0 no es válido"
  ],
  "Invalid prefix or netmask $0": [
   null,
-  "Puerto invalido"
+  "El prefijo o la máscara de red $0 no es válido"
  ],
  "Keep connection": [
   null,
-  ""
+  "Mantener la conexión"
  ],
  "LACP Key": [
   null,
-  ""
+  "Clave de LACP"
  ],
  "Link Monitoring": [
   null,
@@ -483,11 +483,11 @@ return plural;
  ],
  "Load Balancing": [
   null,
-  ""
+  "Equilibrio de carga"
  ],
  "MAC": [
   null,
-  ""
+  "MAC"
  ],
  "MII (Recommended)": [
   null,
@@ -499,7 +499,7 @@ return plural;
  ],
  "MTU must be a positive number": [
   null,
-  ""
+  "El MTU debe ser un número positivo"
  ],
  "Manual": [
   null,
@@ -531,7 +531,7 @@ return plural;
  ],
  "NSNA Ping": [
   null,
-  ""
+  "«Ping» de NSNA"
  ],
  "Name": [
   null,
@@ -579,23 +579,23 @@ return plural;
  ],
  "Passive": [
   null,
-  ""
+  "Pasivo"
  ],
  "Path cost": [
   null,
-  "Costo ruta"
+  "Costo de trayecto"
  ],
  "Path cost $path_cost": [
   null,
-  "Costo ruta $path_cost"
+  "Costo de trayecto $path_cost"
  ],
  "Permanent": [
   null,
-  ""
+  "Permanente"
  ],
  "Ping Interval": [
   null,
-  ""
+  "Intervalo entre cada «ping»"
  ],
  "Ping Target": [
   null,
@@ -619,7 +619,7 @@ return plural;
  ],
  "Preserve": [
   null,
-  "Ajustar"
+  "Conservar"
  ],
  "Primary": [
   null,
@@ -635,7 +635,7 @@ return plural;
  ],
  "Random": [
   null,
-  ""
+  "Al azar"
  ],
  "Reboot": [
   null,
@@ -655,7 +655,7 @@ return plural;
  ],
  "Restoring connection": [
   null,
-  "Reconectarse"
+  "Restableciendo la conexión"
  ],
  "Round Robin": [
   null,
@@ -667,7 +667,7 @@ return plural;
  ],
  "Runner": [
   null,
-  ""
+  "Ejecutor"
  ],
  "STP Forward delay": [
   null,
@@ -707,7 +707,7 @@ return plural;
  ],
  "Stable": [
   null,
-  "Habilitar"
+  "Estable"
  ],
  "Status": [
   null,

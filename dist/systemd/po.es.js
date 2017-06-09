@@ -73,7 +73,7 @@ return plural;
  ],
  "$0 day": [
   "$0 days",
-  "$0 días",
+  "$0 día",
   "$0 días"
  ],
  "$0 hour": [
@@ -83,27 +83,27 @@ return plural;
  ],
  "$0 minute": [
   "$0 minutes",
-  "$0 minutos",
+  "$0 minuto",
   "$0 minutos"
  ],
  "$0 month": [
   "$0 months",
-  "$0 meses",
+  "$0 mes",
   "$0 meses"
  ],
  "$0 week": [
   "$0 weeks",
-  "$0 semanas",
+  "$0 semana",
   "$0 semanas"
  ],
  "$0 year": [
   "$0 years",
-  "$0 años",
+  "$0 año",
   "$0 años"
  ],
  "1 Minute": [
   null,
-  "1 Minuto"
+  "1 minuto"
  ],
  "1 day": [
   null,
@@ -123,47 +123,47 @@ return plural;
  ],
  "10th": [
   null,
-  "10º"
+  "10.º"
  ],
  "11th": [
   null,
-  "11º"
+  "11.º"
  ],
  "12th": [
   null,
-  "12º"
+  "12.º"
  ],
  "13th": [
   null,
-  "13º"
+  "13.º"
  ],
  "14th": [
   null,
-  "14º"
+  "14.º"
  ],
  "15th": [
   null,
-  "15º"
+  "15.º"
  ],
  "16th": [
   null,
-  "16º"
+  "16.º"
  ],
  "17th": [
   null,
-  "17º"
+  "17.º"
  ],
  "18th": [
   null,
-  "18º"
+  "18.º"
  ],
  "19th": [
   null,
-  "19º"
+  "19.º"
  ],
  "1st": [
   null,
-  "1º"
+  "1.º"
  ],
  "2 min": [
   null,
@@ -171,51 +171,51 @@ return plural;
  ],
  "20 Minutes": [
   null,
-  "20 Minutos"
+  "20 minutos"
  ],
  "20th": [
   null,
-  "20º"
+  "20.º"
  ],
  "21st": [
   null,
-  "21º"
+  "21.º"
  ],
  "22nd": [
   null,
-  "22º"
+  "22.º"
  ],
  "23rd": [
   null,
-  "23º"
+  "23.º"
  ],
  "24th": [
   null,
-  "24º"
+  "24.º"
  ],
  "25th": [
   null,
-  "25º"
+  "25.º"
  ],
  "26th": [
   null,
-  "26º"
+  "26.º"
  ],
  "27th": [
   null,
-  "27º"
+  "27.º"
  ],
  "28th": [
   null,
-  "28º"
+  "28.º"
  ],
  "29th": [
   null,
-  "29º"
+  "29.º"
  ],
  "2nd": [
   null,
-  "2º"
+  "2.º"
  ],
  "3 min": [
   null,
@@ -223,35 +223,35 @@ return plural;
  ],
  "30th": [
   null,
-  "30º"
+  "30.º"
  ],
  "31st": [
   null,
-  "31º"
+  "31.º"
  ],
  "3rd": [
   null,
-  "3º"
+  "3.º"
  ],
  "4 min": [
   null,
-  ""
+  "4 min"
  ],
  "40 Minutes": [
   null,
-  "40 Minutos"
+  "40 minutos"
  ],
  "4th": [
   null,
-  ""
+  "4.º"
  ],
  "5 Minutes": [
   null,
-  "5 Minutos"
+  "5 minutos"
  ],
  "5 min": [
   null,
-  ""
+  "5 min"
  ],
  "5 minutes": [
   null,
@@ -259,7 +259,7 @@ return plural;
  ],
  "5th": [
   null,
-  ""
+  "5.º"
  ],
  "6 hours": [
   null,
@@ -267,31 +267,31 @@ return plural;
  ],
  "60 Minutes": [
   null,
-  "60 Minutos"
+  "60 minutos"
  ],
  "6th": [
   null,
-  ""
+  "6.º"
  ],
  "7th": [
   null,
-  ""
+  "7.º"
  ],
  "8th": [
   null,
-  ""
+  "8.º"
  ],
  "9th": [
   null,
-  ""
+  "9.º"
  ],
  "After": [
   null,
-  ""
+  "Después"
  ],
  "After system boot": [
   null,
-  ""
+  "Después de que el sistema arranque"
  ],
  "All": [
   null,
@@ -299,19 +299,19 @@ return plural;
  ],
  "Asset Tag": [
   null,
-  ""
+  "Etiqueta de Propiedad"
  ],
  "At specific time": [
   null,
-  ""
+  "A hora espacífica"
  ],
  "Automatically using NTP": [
   null,
-  ""
+  "Usando automáticamente NTP"
  ],
  "Automatically using specific NTP servers": [
   null,
-  ""
+  "Usando automáticamente servidores NTP específicos"
  ],
  "CPU": [
   null,
@@ -327,7 +327,7 @@ return plural;
  ],
  "Cannot schedule event in the past": [
   null,
-  ""
+  "No puede planificar un evento en el pasado"
  ],
  "Change": [
   null,
@@ -335,11 +335,11 @@ return plural;
  ],
  "Change Host Name": [
   null,
-  ""
+  "Cambiar el Nombre de Host"
  ],
  "Change System Time": [
   null,
-  ""
+  "Cambiar la Hora del Sistema"
  ],
  "Close": [
   null,
@@ -347,15 +347,15 @@ return plural;
  ],
  "Command": [
   null,
-  "Comando"
+  "Orden"
  ],
  "Create Timer": [
   null,
-  ""
+  "Crear temporizador"
  ],
  "Create Timers": [
   null,
-  ""
+  "Crear Temporizadores"
  ],
  "Current boot": [
   null,
@@ -363,7 +363,7 @@ return plural;
  ],
  "Delay": [
   null,
-  ""
+  "Retraso"
  ],
  "Description": [
   null,
@@ -379,7 +379,7 @@ return plural;
  ],
  "Disk I/O": [
   null,
-  ""
+  "Disco I/O"
  ],
  "Domain": [
   null,
@@ -387,7 +387,7 @@ return plural;
  ],
  "Don't Repeat": [
   null,
-  ""
+  "No repetir"
  ],
  "Enable": [
   null,
@@ -419,7 +419,7 @@ return plural;
  ],
  "Friday": [
   null,
-  ""
+  "Viernes"
  ],
  "Go to": [
   null,
@@ -435,19 +435,19 @@ return plural;
  ],
  "Host Name": [
   null,
-  ""
+  "Nombre de Host"
  ],
  "Hour : Minute": [
   null,
-  ""
+  "Hora : Minuto"
  ],
  "Hour needs to be a number between 0-23": [
   null,
-  ""
+  "La hora es necesario que sea un número entre 0 y 23"
  ],
  "Hours": [
   null,
-  ""
+  "Horas"
  ],
  "I/O Wait": [
   null,
@@ -471,11 +471,11 @@ return plural;
  ],
  "Invalid date format.": [
   null,
-  ""
+  "El formato de fecha no es válido."
  ],
  "Invalid number.": [
   null,
-  ""
+  "El número no es válido."
  ],
  "Invalid time format": [
   null,
@@ -483,11 +483,7 @@ return plural;
  ],
  "Invalid time zone": [
   null,
-  ""
- ],
- "Isolate": [
-  null,
-  "Aislar"
+  "El huso horario no es válido"
  ],
  "Journal": [
   null,
@@ -527,23 +523,23 @@ return plural;
  ],
  "Log messages": [
   null,
-  ""
+  "Mensajes de registro"
  ],
  "Logs": [
   null,
-  ""
+  "Registros"
  ],
  "Machine ID": [
   null,
-  ""
+  "Id. de máquina"
  ],
  "Machine SSH Key Fingerprints": [
   null,
-  ""
+  "Huellas de clave SSH de la máquina"
  ],
  "Manually": [
   null,
-  ""
+  "Manualmente"
  ],
  "Mask": [
   null,
@@ -563,15 +559,15 @@ return plural;
  ],
  "Minute needs to be a number between 0-59": [
   null,
-  ""
+  "El minuto debe ser un número comprendido entre 0 y 59"
  ],
  "Minutes": [
   null,
-  ""
+  "Minutos"
  ],
  "Monday": [
   null,
-  ""
+  "Lunes"
  ],
  "NTP Server": [
   null,
@@ -583,7 +579,7 @@ return plural;
  ],
  "Network Traffic": [
   null,
-  ""
+  "Tránsito de redes"
  ],
  "Next Run": [
   null,
@@ -595,15 +591,15 @@ return plural;
  ],
  "No Delay": [
   null,
-  ""
+  "Sin retardo"
  ],
  "No host keys found.": [
   null,
-  ""
+  "No se encontró ninguna clave de anfitrión."
  ],
  "Not synchronized": [
   null,
-  ""
+  "No sincronizado"
  ],
  "Note": [
   null,
@@ -623,7 +619,7 @@ return plural;
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
-  ""
+  "Solo se permiten caracteres alfanuméricos y  : , _ , . , @ , -."
  ],
  "Operating System": [
   null,
@@ -631,11 +627,11 @@ return plural;
  ],
  "Paths": [
   null,
-  "Rutas"
+  "Trayectos"
  ],
  "Performance Profile": [
   null,
-  ""
+  "Perfil de rendimiento"
  ],
  "Power Options": [
   null,
@@ -655,15 +651,15 @@ return plural;
  ],
  "Real Host Name": [
   null,
-  ""
+  "Nombre de anfitrión real"
  ],
  "Real host name can only contain lower-case characters, digits, dashes, and periods (with populated subdomains)": [
   null,
-  ""
+  "El nombre real de anfitrión únicamente puede contener caracteres en minúscula, dígitos, guiones y puntos (con subdominios rellenados)"
  ],
  "Real host name must be 64 characters or less": [
   null,
-  ""
+  "El nombre real de anfitrión debe tener 64 caracteres o menos"
  ],
  "Reboot": [
   null,
@@ -677,33 +673,25 @@ return plural;
   null,
   "Recargar"
  ],
- "Reload or Restart": [
-  null,
-  "Recargue para Reiniciar"
- ],
- "Reload or Try Restart": [
-  null,
-  "Recargar o intente reiniciar"
- ],
  "Repeat Daily": [
   null,
-  ""
+  "Repetir cada día"
  ],
  "Repeat Hourly": [
   null,
-  ""
+  "Repetir cada hora"
  ],
  "Repeat Monthly": [
   null,
-  ""
+  "Repetir cada mes"
  ],
  "Repeat Weekly": [
   null,
-  ""
+  "Repetir cada semana"
  ],
  "Repeat Yearly": [
   null,
-  ""
+  "Repetir cada año"
  ],
  "Reset": [
   null,
@@ -715,19 +703,19 @@ return plural;
  ],
  "Run": [
   null,
-  ""
+  "Ejecutar"
  ],
  "Saturday": [
   null,
-  ""
+  "Sábado"
  ],
  "Save": [
   null,
-  ""
+  "Guardar"
  ],
  "Seconds": [
   null,
-  ""
+  "Segundos"
  ],
  "Secure Shell Keys": [
   null,
@@ -739,7 +727,7 @@ return plural;
  ],
  "Service name": [
   null,
-  ""
+  "Nombre de servicio"
  ],
  "Services": [
   null,
@@ -837,6 +825,10 @@ return plural;
   null,
   "El usuario <b>$0</b> no está autorizado a modificar dominios"
  ],
+ "The user <b>$0</b> is not permitted to shutdown or restart this server": [
+  null,
+  ""
+ ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
   ""
@@ -864,10 +856,6 @@ return plural;
  "Timers": [
   null,
   "Temporizadores"
- ],
- "Try Restart": [
-  null,
-  "Intente Reniciar"
  ],
  "Trying to synchronize with {{Server}}": [
   null,

@@ -301,7 +301,7 @@ return plural;
  ],
  "Entrypoint": [
   null,
-  "Punkt wejścia:"
+  "Punkt wejścia"
  ],
  "Environment": [
   null,
@@ -603,7 +603,7 @@ return plural;
  ],
  "Security": [
   null,
-  ""
+  "Zabezpieczenia"
  ],
  "Set container environment variables": [
   null,
@@ -651,7 +651,7 @@ return plural;
  ],
  "Storage": [
   null,
-  "Urządzenia do przechowywania danych"
+  "Przechowywanie danych"
  ],
  "Storage pool": [
   null,
@@ -679,7 +679,7 @@ return plural;
  ],
  "This image does not exist.": [
   null,
-  "Pojemnik „{{ target }}” nie istnieje."
+  "Ten obraz nie istnieje."
  ],
  "Total": [
   null,
@@ -715,7 +715,7 @@ return plural;
  ],
  "Used by Containers": [
   null,
-  "Kontenery"
+  "Używane przez kontenery"
  ],
  "Volumes": [
   null,

@@ -79,6 +79,10 @@ return plural;
   null,
   "Параметри облікового запису"
  ],
+ "Active Pages": [
+  null,
+  "Активні сторінки"
+ ],
  "Add": [
   null,
   "Додати"
@@ -126,6 +130,10 @@ return plural;
  "Close": [
   null,
   "Закрити"
+ ],
+ "Close Selected Pages": [
+  null,
+  "Закрити позначені сторінки"
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
@@ -271,6 +279,14 @@ return plural;
   null,
   "Умови ліцензування:"
  ],
+ "Lock to prevent privileged tasks": [
+  null,
+  "Заблокувати, щоб запобігти виконанню привілейованих завдань"
+ ],
+ "Locked": [
+  null,
+  "Заблоковано"
+ ],
  "Log In": [
   null,
   "Увійти"
@@ -343,9 +359,17 @@ return plural;
   null,
   "Пароль не прийнято"
  ],
+ "Password not usable for privileged tasks or to connect to other machines": [
+  null,
+  "Пароль непридатний для виконання для привілейованих завдань та з’єднання з іншими комп’ютерами"
+ ],
  "Port": [
   null,
   "Порт"
+ ],
+ "Privileged tasks not available": [
+  null,
+  "Привілейовані завдання недоступні"
  ],
  "Project website": [
   null,
@@ -366,6 +390,10 @@ return plural;
  "Reconnect": [
   null,
   "Повторно з’єднатися"
+ ],
+ "Reuse my password for privileged tasks and to connect to other machines": [
+  null,
+  "Повторно використати ваш пароль для привілейованих завдань та з’єднання з іншими комп’ютерами"
  ],
  "Select": [
   null,
@@ -403,6 +431,10 @@ return plural;
   null,
   "Паролі не збігаються."
  ],
+ "There are currently no active pages": [
+  null,
+  "Зараз активних сторінок немає"
+ ],
  "This machine has already been added.": [
   null,
   "Цей комп’ютер вже було додано."
@@ -418,10 +450,6 @@ return plural;
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
   null,
   "Щоб спробувати інший порт, вам слід оновити cockpit-ws."
- ],
- "Tools": [
-  null,
-  "Інструменти"
  ],
  "Troubleshoot": [
   null,
@@ -451,13 +479,13 @@ return plural;
   null,
   "Розблокувати ключ"
  ],
+ "Unlocked": [
+  null,
+  "Розблоковано"
+ ],
  "Update": [
   null,
   "Оновити"
- ],
- "Use my password for privileged tasks and to connect to other machines": [
-  null,
-  "Використати ваш пароль для привілейованих завдань та з’єднання з іншими комп’ютерами"
  ],
  "Use the following keys to authenticate against other systems": [
   null,
@@ -482,5 +510,9 @@ return plural;
  "You can remove the previously stored key by running the following command": [
   null,
   "Вилучити раніше збережений ключ можна за допомогою такої команди"
+ ],
+ "active": [
+  null,
+  "активний"
  ]
 }));
