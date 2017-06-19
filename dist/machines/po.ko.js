@@ -67,6 +67,14 @@ return plural;
   "language": "ko",
   "x-generator": "Zanata 3.9.6"
  },
+ "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
+  null,
+  ""
+ ],
+ "Address:": [
+  null,
+  ""
+ ],
  "Autostart:": [
   null,
   ""
@@ -91,9 +99,29 @@ return plural;
   null,
   ""
  ],
+ "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
+  null,
+  ""
+ ],
+ "Connect with Remote Viewer": [
+  null,
+  ""
+ ],
+ "Connect with any $0 viewer application.": [
+  null,
+  ""
+ ],
+ "Connect with any SPICE or VNC viewer application.": [
+  null,
+  ""
+ ],
  "Connection": [
   null,
   "Docker에 연결중입니다."
+ ],
+ "Console": [
+  null,
+  ""
  ],
  "Count:": [
   null,
@@ -104,6 +132,10 @@ return plural;
   ""
  ],
  "Disks": [
+  null,
+  ""
+ ],
+ "Download the MSI from $0": [
   null,
   ""
  ],
@@ -131,7 +163,19 @@ return plural;
   null,
   "호스트"
  ],
+ "Launch Remote Viewer": [
+  null,
+  ""
+ ],
+ "Manual Connection": [
+  null,
+  ""
+ ],
  "Memory:": [
+  null,
+  ""
+ ],
+ "More Information": [
   null,
   ""
  ],
@@ -151,7 +195,15 @@ return plural;
   null,
   ""
  ],
+ "No graphics console is defined for this virtual machine.": [
+  null,
+  ""
+ ],
  "Overview": [
+  null,
+  ""
+ ],
+ "Please start the virtual machine to access its graphics console.": [
   null,
   ""
  ],
@@ -179,6 +231,22 @@ return plural;
   null,
   ""
  ],
+ "SPICE": [
+  null,
+  ""
+ ],
+ "SPICE Address:": [
+  null,
+  ""
+ ],
+ "SPICE Port:": [
+  null,
+  ""
+ ],
+ "SPICE TLS Port:": [
+  null,
+  ""
+ ],
  "Session": [
   null,
   "버전"
@@ -192,6 +260,14 @@ return plural;
   ""
  ],
  "State": [
+  null,
+  ""
+ ],
+ "Switch to Desktop Viewer": [
+  null,
+  ""
+ ],
+ "Switch to In-Browser Viewer": [
   null,
   ""
  ],
@@ -267,6 +343,22 @@ return plural;
   null,
   ""
  ],
+ "VNC": [
+  null,
+  ""
+ ],
+ "VNC Address:": [
+  null,
+  ""
+ ],
+ "VNC Port:": [
+  null,
+  ""
+ ],
+ "VNC TLS Port:": [
+  null,
+  ""
+ ],
  "Virtual Machines": [
   null,
   ""
@@ -274,6 +366,10 @@ return plural;
  "Volume": [
   null,
   "논리 볼륨"
+ ],
+ "Your browser does not support iframes.": [
+  null,
+  ""
  ],
  "cdrom": [
   null,

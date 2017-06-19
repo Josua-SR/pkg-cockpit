@@ -145,7 +145,7 @@ return plural;
  ],
  "Authentication Failed": [
   null,
-  "Uwierzytelnienie się nie powiodło"
+  "Uwierzytelnienie się nie powiodło"
  ],
  "Available": [
   null,

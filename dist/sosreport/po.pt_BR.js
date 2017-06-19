@@ -93,7 +93,7 @@ return plural;
  ],
  "Download report": [
   null,
-  ""
+  "Relatório de download"
  ],
  "Generating report": [
   null,
@@ -101,18 +101,18 @@ return plural;
  ],
  "No archive has been created.": [
   null,
-  ""
+  "Nenhum arquivo foi criado."
  ],
  "The collected information will be stored locally on the system.": [
   null,
-  ""
+  "As informações coletadas serão armazenadas localmente no sistema."
  ],
  "The generated archive contains data considered sensitive and its content should be reviewed by the originating organization before being passed to any third party.": [
   null,
-  ""
+  "O arquivo gerado contém dados considerados confidenciais e seu conteúdo deve ser revisado pela organização de origem antes de ser passado para quaisquer terceiros."
  ],
  "This tool will collect system configuration and diagnostic information from this system for use with diagnosing problems with the system.": [
   null,
-  ""
+  "Esta ferramenta irá coletar a configuração do sistema e informações diagnósticas deste sistema para diagnosticar problemas com o mesmo."
  ]
 }));

@@ -157,7 +157,6 @@ channel.close([options])
 <div class="refsection">
 <a name="cockpit-channels-message"></a><h2>channel.onmessage</h2>
 <pre class="programlisting">
-$(channel).on("message", function(event, data) { ... })
 channel.addEventListener("message", function(event, data) { ... })
 </pre>
 <p>An event triggered when the channel receives a message. The message is
@@ -169,7 +168,6 @@ channel.addEventListener("message", function(event, data) { ... })
 <div class="refsection">
 <a name="cockpit-channels-oncontrol"></a><h2>channel.oncontrol</h2>
 <pre class="programlisting">
-$(channel).on("control", function(event, options) { ... })
 channel.addEventListener("control", function(event, options) { ... })
 </pre>
 <p>An event triggered when the channel receives an control message in the
@@ -181,7 +179,6 @@ channel.addEventListener("control", function(event, options) { ... })
 <div class="refsection">
 <a name="cockpit-channels-onready"></a><h2>channel.onready</h2>
 <pre class="programlisting">
-$(channel).on("ready", function(event, options) { ... })
 channel.addEventListener("ready", function(event, options) { ... })
 </pre>
 <p>An event triggered when the other end of the channel is ready to start processing
@@ -191,7 +188,6 @@ channel.addEventListener("ready", function(event, options) { ... })
 <div class="refsection">
 <a name="cockpit-channels-close-ev"></a><h2>channel.onclose</h2>
 <pre class="programlisting">
-$(channel).on("close", function(options) { ... })
 channel.addEventListener("close", function(event, options) { ... })
 </pre>
 <p>An event triggered when the channel closes. This can happen either because

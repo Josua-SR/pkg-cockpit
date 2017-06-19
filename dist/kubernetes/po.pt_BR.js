@@ -69,33 +69,33 @@ return plural;
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
-  ""
+  "1 \"Deseja excluir os seguintes nós?"
  ],
  "$0% Free": [
   "$0% Free",
-  "",
-  ""
+  "$0% Livre",
+  "$0% Livres"
  ],
  "$0% Used": [
   "$0% Used",
-  "",
-  ""
+  "$0% Usado",
+  "$0% Usados"
  ],
  "AWS Elastic Block Store": [
   null,
-  ""
+  "AWS Loja de Blocos Elásticos"
  ],
  "Access Modes": [
   null,
-  ""
+  "Modos de Acesso"
  ],
  "Access Policy": [
   null,
-  ""
+  "Política de Acesso"
  ],
  "Actual": [
   null,
-  ""
+  "Atual"
  ],
  "Add": [
   null,
@@ -103,43 +103,43 @@ return plural;
  ],
  "Add Cluster Node": [
   null,
-  ""
+  "Adicionar Nó de Cluster"
  ],
  "Add Group": [
   null,
-  ""
+  "Adicionar Grupo"
  ],
  "Add Kubernetes Node": [
   null,
-  ""
+  "Adicionar Nó Kubernetes"
  ],
  "Add Member": [
   null,
-  ""
+  "Adicionar Membro"
  ],
  "Add Membership": [
   null,
-  ""
+  "Adicionar Associação"
  ],
  "Add New Cluster": [
   null,
-  ""
+  "Adicionar Novo Cluster"
  ],
  "Add New User": [
   null,
-  ""
+  "Adicionar Novo Usuário"
  ],
  "Add Role": [
   null,
-  ""
+  "Adicionar Função"
  ],
  "Add User": [
   null,
-  ""
+  "Adicionar Usuário"
  ],
  "Add membership": [
   null,
-  ""
+  "Adicionar associação"
  ],
  "Address": [
   null,
@@ -155,15 +155,15 @@ return plural;
  ],
  "Adjust Persistent Volume '{{ item.metadata.name }}'": [
   null,
-  ""
+  "Ajustar Volume Persistente '{{ item.metadata.name }}'"
  ],
  "Adjust Replication Controller {{ item.metadata.name }}": [
   null,
-  ""
+  "Ajustar o Controlador de Replicação {{ item.metadata.name }}"
  ],
  "Adjust Route": [
   null,
-  ""
+  "Ajustar Rota"
  ],
  "Adjust Service": [
   null,
@@ -171,43 +171,43 @@ return plural;
  ],
  "Admin": [
   null,
-  ""
+  "Admin"
  ],
  "All Projects": [
   null,
-  ""
+  "Todos os Projetos"
  ],
  "All Types": [
   null,
-  ""
+  "Todos os Tipos"
  ],
  "All healthy": [
   null,
-  ""
+  "Tudo saudável"
  ],
  "All images": [
   null,
-  ""
+  "Todas as imagens"
  ],
  "All in use": [
   null,
-  ""
+  "Tudo em uso"
  ],
  "All running": [
   null,
-  ""
+  "Tudo executando"
  ],
  "Annotations": [
   null,
-  ""
+  "Anotações"
  ],
  "Anonymous: Allow all unauthenticated users to pull images": [
   null,
-  ""
+  "Anônimo: permitir que todos os usuários não autenticados baixem imagens"
  ],
  "Authentication": [
   null,
-  ""
+  "Autenticação"
  ],
  "Author": [
   null,
@@ -215,19 +215,19 @@ return plural;
  ],
  "Azure": [
   null,
-  ""
+  "Azure"
  ],
  "Boot ID": [
   null,
-  ""
+  "ID de Boot"
  ],
  "CPU": [
   null,
-  ""
+  "CPU"
  ],
  "CPU Utilization: $0%": [
   null,
-  ""
+  "Utilização da CPU: $0%"
  ],
  "Cancel": [
   null,
@@ -235,83 +235,83 @@ return plural;
  ],
  "Capacity": [
   null,
-  ""
+  "Capacidade"
  ],
  "Ceph Filesystem Mount": [
   null,
-  ""
+  "Sistema de Arquivos de Montagem Ceph"
  ],
  "Ceph Monitors": [
   null,
-  ""
+  "Monitores Ceph"
  ],
  "Change": [
   null,
-  ""
+  "Alterar"
  ],
  "Change User": [
   null,
-  ""
+  "Alterar Usuário"
  ],
  "Change image stream": [
   null,
-  ""
+  "Alterar stream de imagem"
  ],
  "Change project": [
   null,
-  ""
+  "Alterar projeto"
  ],
  "Cinder": [
   null,
-  ""
+  "Cinzas"
  ],
  "Claim": [
   null,
-  ""
+  "Reivindicar"
  ],
  "Claim Name": [
   null,
-  ""
+  "Nome da reivindicação"
  ],
  "Client Certificate": [
   null,
-  ""
+  "Certificado de Cliente"
  ],
  "Cluster": [
   null,
-  ""
+  "Cluster"
  ],
  "Configuration": [
   null,
-  ""
+  "Configuração"
  ],
  "Configure Flannel networking": [
   null,
-  ""
+  "Configurar rede de Flanela"
  ],
  "Configure Kubelet and Proxy": [
   null,
-  ""
+  "Configurar Kubelet e o Proxy"
  ],
  "Connect": [
   null,
-  ""
+  "Conectar"
  ],
  "Connecting...": [
   null,
-  ""
+  "Conectando..."
  ],
  "Connection Error": [
   null,
-  ""
+  "Erro de Conexão"
  ],
  "Connection Error: $0": [
   null,
-  ""
+  "Erro de Conexão: $0"
  ],
  "Connection Settings": [
   null,
-  ""
+  "Configurações de Conexão"
  ],
  "Container": [
   null,
@@ -319,11 +319,11 @@ return plural;
  ],
  "Container ID": [
   null,
-  ""
+  "ID do Contêiner"
  ],
  "Container Runtime Version": [
   null,
-  ""
+  "Versão de Tempo de Execução do Contêiner"
  ],
  "Containers": [
   null,
@@ -335,31 +335,31 @@ return plural;
  ],
  "Couldn't connect to server": [
   null,
-  ""
+  "Não foi possível conectar ao servidor"
  ],
  "Couldn't find running API server": [
   null,
-  ""
+  "Não foi possível localizar o servidor API em execução"
  ],
  "Create": [
   null,
-  ""
+  "Criar"
  ],
  "Create empty image stream": [
   null,
-  ""
+  "Criar um stream de imagem vazio"
  ],
  "Create image stream": [
   null,
-  ""
+  "Criar Stream de Imagem"
  ],
  "Created": [
   null,
-  ""
+  "Criado"
  ],
  "DNS Policy": [
   null,
-  ""
+  "Política de DNS"
  ],
  "Delete": [
   null,
@@ -367,35 +367,35 @@ return plural;
  ],
  "Delete Node": [
   null,
-  ""
+  "Deletar Nó"
  ],
  "Delete Persistent Volume": [
   null,
-  ""
+  "Deletar Volume Persistente"
  ],
  "Delete Persistent Volume Claim": [
   null,
-  ""
+  "Deletar Declaração de Volume Persistente"
  ],
  "Delete Project": [
   null,
-  ""
+  "Deletar Projeto"
  ],
  "Delete Selected": [
   null,
-  ""
+  "Deletar o Selecionado"
  ],
  "Delete image stream": [
   null,
-  ""
+  "Deletar stream de imagem"
  ],
  "Delete {{ item.kind }}": [
   null,
-  ""
+  "Excluir {{ item.kind }}"
  ],
  "Deleting a Pod will kill all associated containers. Pods may be automatically created again in some cases.": [
   null,
-  ""
+  "Excluir um Pod irá matar todos os contêineres associados. Pods podem ser automaticamente criados novamente em alguns casos."
  ],
  "Deploy": [
   null,
@@ -407,159 +407,159 @@ return plural;
  ],
  "Deployment Causes": [
   null,
-  ""
+  "Causas de Implantação"
  ],
  "Deployment Config": [
   null,
-  ""
+  "Config de Implantação"
  ],
  "Deployment Configs": [
   null,
-  ""
+  "Configs de Implantação"
  ],
  "Description": [
   null,
-  ""
+  "Descrição"
  ],
  "Details": [
   null,
-  ""
+  "Detalhes"
  ],
  "Directory": [
   null,
-  ""
+  "Diretório"
  ],
  "Disk": [
   null,
-  ""
+  "Disco"
  ],
  "Disk Utilization: $0%": [
   null,
-  ""
+  "Utilização do disco: $0%"
  ],
  "Display name": [
   null,
-  ""
+  "Nome exibido"
  ],
  "Do you want to add the role '{{ fields.displayRole }}'?": [
   null,
-  ""
+  "Deseja adicionar a função '{{ fields.displayRole }}'?"
  ],
  "Do you want to delete the '{{stream.metadata.namespace}}/{{stream.metadata.name}}' image stream?": [
   null,
-  ""
+  "Deseja deletar o stream de imagem '{{stream.metadata.namespace}}/{{stream.metadata.name}}'?"
  ],
  "Do you want to delete the Persistent Volume '{{item.metadata.name}}'?": [
   null,
-  ""
+  "Deseja deletar o Volume Persistente '{{item.metadata.name}}'?"
  ],
  "Do you want to delete the Persistent Volume Claim '{{item.metadata.name}}'?": [
   null,
-  ""
+  "Deseja excluir a declaração de volume persistente '{{item.metadata.name}}'?"
  ],
  "Do you want to delete the {{ item.kind }} '{{item.metadata.name}}'?": [
   null,
-  ""
+  "Deseja excluir o {{ item.kind }} '{{item.metadata.name}}'?"
  ],
  "Do you want to delete this Node?": [
   null,
-  ""
+  "Deseja excluir este Nó?"
  ],
  "Do you want to remove the image tagged as '{{stream.metadata.namespace}}/{{stream.metadata.name}}:{{tag.tag}}'?": [
   null,
-  ""
+  "Deseja remover a imagem marcada como '{{stream.metadata.namespace}}/{{stream.metadata.name}}:{{tag.tag}}'?"
  ],
  "Do you want to remove the role '{{ fields.displayRole }}' from member {{ fields.member.metadata.name }}?": [
   null,
-  ""
+  "Deseja remover a função '{{ fields.displayRole }}' from member {{ fields.member.metadata.name }}?"
  ],
  "Don't pull images automatically": [
   null,
-  ""
+  "Não baixe imagens automaticamente"
  ],
  "Driver": [
   null,
-  ""
+  "Driver"
  ],
  "Empty Directory": [
   null,
-  ""
+  "Diretório Vazio"
  ],
  "Endpoint": [
   null,
-  ""
+  "Ponto final"
  ],
  "Endpoint Name": [
   null,
-  ""
+  "Nome do Ponto de extremidade"
  ],
  "Endpoints": [
   null,
-  ""
+  "Pontos finais"
  ],
  "Environment": [
   null,
-  ""
+  "Ambiente"
  ],
  "Error getting certificate details: $0": [
   null,
-  ""
+  "Erro ao obter detalhes do certificado: $0"
  ],
  "Error writing kubectl config": [
   null,
-  ""
+  "Erro ao escrever kubectl config"
  ],
  "Fibre Channel": [
   null,
-  ""
+  "Canal de Fibra"
  ],
  "Filesystem Type": [
   null,
-  ""
+  "Tipo do Sistema de Arquivos"
  ],
  "Flex": [
   null,
-  ""
+  "Flex"
  ],
  "Flocker": [
   null,
-  ""
+  "Flocker"
  ],
  "Flocker Dataset Name": [
   null,
-  ""
+  "Nome do Flocker Dataset"
  ],
  "GCE Persistent Disk": [
   null,
-  ""
+  "Disco Persistente GCE"
  ],
  "Git Repository": [
   null,
-  ""
+  "Repositório Git"
  ],
  "Gluster FS": [
   null,
-  ""
+  "Gluster FS"
  ],
  "GlusterFS": [
   null,
-  ""
+  "GlusterFS"
  ],
  "Grant additional push or admin access to specific members below.": [
   null,
-  ""
+  "Conceder acesso adicional de envio ou admin a membros específicos abaixo."
  ],
  "Group Members": [
   null,
-  ""
+  "Membros do Grupo"
  ],
  "Group or Project": [
   null,
-  ""
+  "Grupo ou Projeto"
  ],
  "Groups": [
   null,
-  ""
+  "Grupos"
  ],
  "Host": [
   null,
@@ -567,23 +567,23 @@ return plural;
  ],
  "Host Path": [
   null,
-  ""
+  "Campo de Host"
  ],
  "IP": [
   null,
-  ""
+  "IP"
  ],
  "ISCSI": [
   null,
-  ""
+  "ISCSI"
  ],
  "Identities": [
   null,
-  ""
+  "Identidades"
  ],
  "Identity": [
   null,
-  ""
+  "Ìdentidade"
  ],
  "Image": [
   null,
@@ -591,59 +591,59 @@ return plural;
  ],
  "Image ID": [
   null,
-  ""
+  "ID da Imagem"
  ],
  "Image Name": [
   null,
-  ""
+  "Nome da Imagem"
  ],
  "Image Registry": [
   null,
-  ""
+  "Registro de Imagem"
  ],
  "Image Stream": [
   null,
-  ""
+  "Stream de Imagem"
  ],
  "Image commands": [
   null,
-  ""
+  "Comandos da Imagem"
  ],
  "Images": [
   null,
-  ""
+  "Imagens"
  ],
  "Images by project": [
   null,
-  ""
+  "Imagens do projeto"
  ],
  "Images pushed recently": [
   null,
-  ""
+  "Imagens enviadas recentemente"
  ],
  "In order to begin pushing images to the registry, use the commands below.": [
   null,
-  ""
+  "A fim de começar a enviar imagens para o registro, use os comandos abaixo."
  ],
  "In order to begin pushing images to the registry, you need to create a project.": [
   null,
-  ""
+  "A fim de começar a enviar imagens para o registro, você precisa criar um projeto."
  ],
  "Interface": [
   null,
-  ""
+  "Interface"
  ],
  "Kernel Version": [
   null,
-  ""
+  "Versão do Kernel"
  ],
  "Key Ring Path": [
   null,
-  ""
+  "Trajeto Chave do Anel"
  ],
  "Kubelet Version": [
   null,
-  ""
+  "Versão Kubelet"
  ],
  "Kubernetes Cluster": [
   null,
@@ -655,55 +655,55 @@ return plural;
  ],
  "Last Heartbeat": [
   null,
-  ""
+  "Último Batimento Cardíaco"
  ],
  "Last Status Change": [
   null,
-  ""
+  "Última Mudança de Status"
  ],
  "Last Updated": [
   null,
-  ""
+  "Ultima Atualização"
  ],
  "Latest Version": [
   null,
-  ""
+  "Versão Mais Recente"
  ],
  "Log into OpenShift command line tools:": [
   null,
-  ""
+  "Logar em OpenShift ferramentas de linha de comando:"
  ],
  "Log into the registry:": [
   null,
-  ""
+  "Logar no registro:"
  ],
  "Logical Unit Number": [
   null,
-  ""
+  "Número da Unidade Lógica"
  ],
  "Login commands": [
   null,
-  ""
+  "Comandos de login"
  ],
  "Logs": [
   null,
-  ""
+  "Logs"
  ],
  "Machine ID": [
   null,
-  ""
+  "ID de Máquina"
  ],
  "Manifest": [
   null,
-  ""
+  "Manifesto"
  ],
  "Medium": [
   null,
-  ""
+  "Médio"
  ],
  "Member of": [
   null,
-  ""
+  "Membro de"
  ],
  "Members": [
   null,
@@ -711,43 +711,43 @@ return plural;
  ],
  "Membership": [
   null,
-  ""
+  "Associação"
  ],
  "Memory": [
   null,
-  ""
+  "Memória"
  ],
  "Memory Utilization: $0%": [
   null,
-  ""
+  "Utilização de Memória: $0%"
  ],
  "Message": [
   null,
-  ""
+  "Mensagem"
  ],
  "Metadata": [
   null,
-  ""
+  "Metadados"
  ],
  "Modify": [
   null,
-  ""
+  "Modificar"
  ],
  "Monitors": [
   null,
-  ""
+  "Monitores"
  ],
  "Mount Location": [
   null,
-  ""
+  "Montar Locação"
  ],
  "NFS": [
   null,
-  ""
+  "NFS"
  ],
  "NFS Mount": [
   null,
-  ""
+  "Montagem NFS"
  ],
  "Name": [
   null,
@@ -763,23 +763,23 @@ return plural;
  ],
  "Network": [
   null,
-  ""
+  "Rede"
  ],
  "New Group": [
   null,
-  ""
+  "Novo Grupo"
  ],
  "New Project": [
   null,
-  ""
+  "Novo Projeto"
  ],
  "New image stream": [
   null,
-  ""
+  "Novo stream de imagem"
  ],
  "New project": [
   null,
-  ""
+  "Novo projeto"
  ],
  "No": [
   null,
@@ -787,23 +787,23 @@ return plural;
  ],
  "No Pods are using this claim": [
   null,
-  ""
+  "Sem Pods usando esta afirmação"
  ],
  "No Volume Bound": [
   null,
-  ""
+  "Nenhuma Ligação de Volume"
  ],
  "No groups are present.": [
   null,
-  ""
+  "Nenhum grupo presente."
  ],
  "No image streams are present.": [
   null,
-  ""
+  "Nenhum stream de imagem está presente."
  ],
  "No images pushed": [
   null,
-  ""
+  "Nenhuma imagem inserida"
  ],
  "No metadata file was selected. Please select a Kubernetes metadata file.": [
   null,
@@ -811,39 +811,39 @@ return plural;
  ],
  "No nodes in cluster": [
   null,
-  ""
+  "Não há nós no cluster"
  ],
  "No pods deployed": [
   null,
-  ""
+  "Sem pods implantados"
  ],
  "No pods replicated": [
   null,
-  ""
+  "Sem pods replicados"
  ],
  "No pods scheduled": [
   null,
-  ""
+  "Sem pods agendados"
  ],
  "No pods selected": [
   null,
-  ""
+  "Sem pods selecionados"
  ],
  "No projects are present.": [
   null,
-  ""
+  "Nenhum projeto presente."
  ],
  "No users are present.": [
   null,
-  ""
+  "Não há usuários presentes."
  ],
  "No volumes are present.": [
   null,
-  ""
+  "Não há volumes presentes."
  ],
  "No volumes in use": [
   null,
-  ""
+  "Não há volumes em uso"
  ],
  "Node": [
   null,
@@ -851,11 +851,11 @@ return plural;
  ],
  "Nodes": [
   null,
-  ""
+  "Nós"
  ],
  "Nodes are the machines that run your containers.": [
   null,
-  ""
+  "Nós são as máquinas que executam seus contêineres."
  ],
  "None": [
   null,
@@ -871,23 +871,23 @@ return plural;
  ],
  "Not a valid value for Host": [
   null,
-  ""
+  "Não é um valor válido para o Host"
  ],
  "Not deployed": [
   null,
-  ""
+  "Não Implantado"
  ],
  "OS": [
   null,
-  ""
+  "OS"
  ],
  "OS Versions": [
   null,
-  ""
+  "Versões de OS"
  ],
  "Operating System": [
   null,
-  ""
+  "Sistema Operacional"
  ],
  "Options": [
   null,
@@ -895,11 +895,11 @@ return plural;
  ],
  "Overview": [
   null,
-  ""
+  "Visão geral"
  ],
  "PD Name": [
   null,
-  ""
+  "Nome de PD"
  ],
  "Partition": [
   null,
@@ -911,19 +911,19 @@ return plural;
  ],
  "Path": [
   null,
-  ""
+  "Caminho"
  ],
  "Pending Volume Claims": [
   null,
-  ""
+  "Declarações de Volume Pendentes"
  ],
  "Persistent Volumes": [
   null,
-  ""
+  "Volumes Persistentes"
  ],
  "Phase": [
   null,
-  ""
+  "Fase"
  ],
  "Please create another namespace for $0 \"$1\"": [
   null,
@@ -931,35 +931,35 @@ return plural;
  ],
  "Please provide a GlusterFS volume name": [
   null,
-  ""
+  "Por favor, forneça um nome de volume GlusterFS"
  ],
  "Please provide a username": [
   null,
-  ""
+  "Por favor, forneça um nome de usuário"
  ],
  "Please provide a valid NFS server": [
   null,
-  ""
+  "Por favor, forneça um servidor NFS válido"
  ],
  "Please provide a valid address": [
   null,
-  ""
+  "Por favor, forneça um endereço válido"
  ],
  "Please provide a valid filesystem type": [
   null,
-  ""
+  "Por favor, forneça um tipo de sistema de arquivos válido"
  ],
  "Please provide a valid interface": [
   null,
-  ""
+  "Por favor, forneça uma interface válida"
  ],
  "Please provide a valid logical unit number": [
   null,
-  ""
+  "Por favor, forneça um número lógico válido de unidade"
  ],
  "Please provide a valid name": [
   null,
-  ""
+  "Por favor, forneça um nome válido"
  ],
  "Please provide a valid namespace.": [
   null,
@@ -967,71 +967,71 @@ return plural;
  ],
  "Please provide a valid path": [
   null,
-  ""
+  "Por favor, forneça um caminho válido"
  ],
  "Please provide a valid qualified name": [
   null,
-  ""
+  "Por favor, forneça um nome qualificado válido"
  ],
  "Please provide a valid storage capacity.": [
   null,
-  ""
+  "Por favor, forneça uma capacidade de armazenamento válida."
  ],
  "Please provide a valid target": [
   null,
-  ""
+  "Por favor, forneça um alvo válido"
  ],
  "Please select a valid access mode": [
   null,
-  ""
+  "Por favor, selecione um modo de acesso válido"
  ],
  "Please select a valid endpoint": [
   null,
-  ""
+  "Por favor, selecione um ponto de extremidade válido"
  ],
  "Please select a valid policy option.": [
   null,
-  ""
+  "Por favor, selecione uma opção de diretiva válida."
  ],
  "Please type an address": [
   null,
-  ""
+  "Por favor, digite um endereço"
  ],
  "Pod": [
   null,
-  ""
+  "Pod"
  ],
  "Pod Address": [
   null,
-  ""
+  "Endereço Pod"
  ],
  "Pod Endpoints": [
   null,
-  ""
+  "Extremidades Pod"
  ],
  "Pod Replicated": [
   null,
-  ""
+  "Pod Replicado"
  ],
  "Pod Selector": [
   null,
-  ""
+  "Seletor Pod"
  ],
  "Pods": [
   null,
-  ""
+  "Pods"
  ],
  "Pods contain one or more containers that run together on a node, containing your application code.": [
   null,
-  ""
+  "Pods contêm um ou mais conteiners que são executados juntos em um nó, que contém o código do aplicativo."
  ],
  "Pool Name": [
   null,
-  ""
+  "Nome do Pool"
  ],
  "Populate": [
   null,
-  ""
+  "Preencher"
  ],
  "Ports": [
   null,
@@ -1039,7 +1039,7 @@ return plural;
  ],
  "Private: Allow only specific users or groups to pull images": [
   null,
-  ""
+  "Privado: permite que apenas usuários específicos ou grupos puxem imagens"
  ],
  "Project": [
   null,
@@ -1047,71 +1047,71 @@ return plural;
  ],
  "Project Members": [
   null,
-  ""
+  "Membros do Projeto"
  ],
  "Project access policy allows anonymous users to pull images.": [
   null,
-  ""
+  "A diretiva de acesso ao projeto permite que usuários anônimos baixem imagens."
  ],
  "Project access policy allows any authenticated user to pull images.": [
   null,
-  ""
+  "A diretiva de acesso a projetos permite que qualquer usuário autenticado puxe imagens."
  ],
  "Project access policy only allows specific members to access images.": [
   null,
-  ""
+  "A diretiva de acesso ao projeto só permite que membros específicos acessem imagens."
  ],
  "Project:": [
   null,
-  ""
+  "Projeto:"
  ],
  "Projects": [
   null,
-  ""
+  "Projetos"
  ],
  "Proxy Version": [
   null,
-  ""
+  "Versão do Proxy"
  ],
  "Pull an image:": [
   null,
-  ""
+  "Baixar uma imagem:"
  ],
  "Pull from": [
   null,
-  ""
+  "Baixar de"
  ],
  "Pull specific tags from another image repository": [
   null,
-  ""
+  "Resgatar tags específicas de outro repositório de imagem"
  ],
  "Push an image:": [
   null,
-  ""
+  "Enviar uma imagem:"
  ],
  "Qualified Name": [
   null,
-  ""
+  "Nome Qualificado"
  ],
  "Rados Block Device": [
   null,
-  ""
+  "Dispositivo Rados Bloqueado"
  ],
  "Read Only": [
   null,
-  ""
+  "Somente leitura"
  ],
  "Read and write from a single node": [
   null,
-  ""
+  "Ler e gravar a partir de um único nó"
  ],
  "Read and write from multiple nodes": [
   null,
-  ""
+  "Ler e gravar a partir de vários nós"
  ],
  "Read only from multiple nodes": [
   null,
-  ""
+  "Somente leitura de vários nós"
  ],
  "Ready": [
   null,
@@ -1119,35 +1119,35 @@ return plural;
  ],
  "Reason": [
   null,
-  ""
+  "Razão"
  ],
  "Reclaim Policy": [
   null,
-  ""
+  "Recuperar Política"
  ],
  "Reconnect": [
   null,
-  ""
+  "Reconectar"
  ],
  "Recycle": [
   null,
-  ""
+  "Reciclar"
  ],
  "Register": [
   null,
-  ""
+  "Registrar"
  ],
  "Register New Volume": [
   null,
-  ""
+  "Registrar Novo Volume"
  ],
  "Register Persistent Volume": [
   null,
-  ""
+  "Registrar Volume Persistente"
  ],
  "Remote registry is insecure": [
   null,
-  ""
+  "Registro remoto é inseguro"
  ],
  "Remove": [
   null,
@@ -1155,27 +1155,27 @@ return plural;
  ],
  "Remove Group": [
   null,
-  ""
+  "Remover Grupo"
  ],
  "Remove Member": [
   null,
-  ""
+  "Remover Membro"
  ],
  "Remove Role": [
   null,
-  ""
+  "Remover Função"
  ],
  "Remove User": [
   null,
-  ""
+  "Remover Usuário"
  ],
  "Remove image tag": [
   null,
-  ""
+  "Remover tag de imagem"
  ],
  "Remove membership": [
   null,
-  ""
+  "Remover associação"
  ],
  "Replicas": [
   null,
@@ -1183,51 +1183,51 @@ return plural;
  ],
  "Replication Controller": [
   null,
-  ""
+  "Controlador de Replicação"
  ],
  "Replication Controllers": [
   null,
-  ""
+  "Controladores de Replicação"
  ],
  "Replication controllers dynamically create instances of pods from templates, and remove pods when necessary.": [
   null,
-  ""
+  "Os controladores de replicação criam dinamicamente instâncias modelos de pods e removem esses pods quando necessário."
  ],
  "Repository URL": [
   null,
-  ""
+  "URL do Repositório"
  ],
  "Requested": [
   null,
-  ""
+  "Requisitado"
  ],
  "Requests": [
   null,
-  ""
+  "Requisições"
  ],
  "Requires Authentication": [
   null,
-  ""
+  "Requer Autenticação"
  ],
  "Restart Count": [
   null,
-  ""
+  "Reiniciar Contagem"
  ],
  "Restart Policy": [
   null,
-  ""
+  "Reinicie a Política"
  ],
  "Retain": [
   null,
-  ""
+  "Manter"
  ],
  "Revision": [
   null,
-  ""
+  "Revisão"
  ],
  "Role": [
   null,
-  ""
+  "Função"
  ],
  "Roles": [
   null,
@@ -1235,7 +1235,7 @@ return plural;
  ],
  "Route": [
   null,
-  ""
+  "Rota"
  ],
  "Routes": [
   null,
@@ -1243,27 +1243,27 @@ return plural;
  ],
  "Scheduled Pods": [
   null,
-  ""
+  "Pods Agendados"
  ],
  "Scheduling Disabled": [
   null,
-  ""
+  "Agendamento Desativado"
  ],
  "Secret": [
   null,
-  ""
+  "Secreto"
  ],
  "Secret File": [
   null,
-  ""
+  "Arquivo Secreto"
  ],
  "Secret Name": [
   null,
-  ""
+  "Nome Secreto"
  ],
  "Secret Volume": [
   null,
-  ""
+  "Volume Secreto"
  ],
  "Select Manifest File...": [
   null,
@@ -1275,7 +1275,7 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "Servidor"
  ],
  "Service": [
   null,
@@ -1283,7 +1283,7 @@ return plural;
  ],
  "Service Account": [
   null,
-  ""
+  "Serviço de Conta"
  ],
  "Services": [
   null,
@@ -1291,71 +1291,71 @@ return plural;
  ],
  "Services group pods and provide a common DNS name and an optional, load-balanced IP address to access them.": [
   null,
-  ""
+  "Pods de grupo de serviços fornecem um nome DNS comum e um endereço IP opcional, balanceado por carga para acessá-los."
  ],
  "Session Affinity": [
   null,
-  ""
+  "Afinidade de Sessão"
  ],
  "Share Name": [
   null,
-  ""
+  "Compartilhar Nome"
  ],
  "Shared: Allow any authenticated user to pull images": [
   null,
-  ""
+  "Compartilhado: permitir que qualquer usuário autenticado baixe imagens"
  ],
  "Shell": [
   null,
-  ""
+  "Shell"
  ],
  "Show all Containers": [
   null,
-  ""
+  "Exibir todos os Contêineres"
  ],
  "Show all Deployment Configs": [
   null,
-  ""
+  "Exibir todas as Configs de Implantação"
  ],
  "Show all Nodes": [
   null,
-  ""
+  "Exibir todos os Nós"
  ],
  "Show all Persistent Volumes": [
   null,
-  ""
+  "Exibir todos os Volumes Persistentes"
  ],
  "Show all Pod Containers": [
   null,
-  ""
+  "Exibir todos os Contêineres Pod"
  ],
  "Show all Pods": [
   null,
-  ""
+  "Exibir todos os Pods"
  ],
  "Show all Projects": [
   null,
-  ""
+  "Exibir todos os Projetos"
  ],
  "Show all Replication Controllers": [
   null,
-  ""
+  "Exibir todos os Controladores de Replicação"
  ],
  "Show all Routes": [
   null,
-  ""
+  "Exibir todas as Rotas"
  ],
  "Show all Services": [
   null,
-  ""
+  "Exibir todos os Serviços"
  ],
  "Show all image streams": [
   null,
-  ""
+  "Exibir todos os streams de imagem"
  ],
  "Show all images": [
   null,
-  ""
+  "Exibir todas as imagens"
  ],
  "Since": [
   null,
@@ -1363,19 +1363,19 @@ return plural;
  ],
  "Size": [
   null,
-  ""
+  "Tamanho"
  ],
  "Skip Certificate Verification": [
   null,
-  ""
+  "Ignorar Verificação de Certificado"
  ],
  "Sorry, I don't know how to modify this volume": [
   null,
-  ""
+  "Desculpe, eu não sei como modificar este volume"
  ],
  "State": [
   null,
-  ""
+  "Estado"
  ],
  "Status": [
   null,
@@ -1383,51 +1383,51 @@ return plural;
  ],
  "Strategy": [
   null,
-  ""
+  "Estratégia"
  ],
  "Sync all tags from a remote image repository": [
   null,
-  ""
+  "Sincronizar todas as tags de um repositório de imagens remotas"
  ],
  "TLS Termination": [
   null,
-  ""
+  "Término de TLS"
  ],
  "Tags": [
   null,
-  ""
+  "Tags"
  ],
  "Target": [
   null,
-  ""
+  "Alvo"
  ],
  "Target Portal": [
   null,
-  ""
+  "Portal Alvo"
  ],
  "Target World Wide Names": [
   null,
-  ""
+  "Nomes de Alvos Mundiais"
  ],
  "Template": [
   null,
-  ""
+  "Modelo"
  ],
  "The address contains invalid characters": [
   null,
-  ""
+  "O endereço contém caracteres inválidos"
  ],
  "The container '{{ target }}' does not exist.": [
   null,
-  ""
+  "O contêiner '{{ target }}' não existe."
  ],
  "The deployment config '{{ target }}' does not exist.": [
   null,
-  ""
+  "O Deployment config '{{target}}' não existe."
  ],
  "The group '{{ groupName }}' does not exist.": [
   null,
-  ""
+  "O grupo '{{ groupName }}' não existe."
  ],
  "The maximum number of replicas is 128": [
   null,
@@ -1435,39 +1435,39 @@ return plural;
  ],
  "The name contains invalid characters": [
   null,
-  ""
+  "O nome contém caracteres inválidos"
  ],
  "The node '{{ target }}' does not exist.": [
   null,
-  ""
+  "O nó '{{ target }}' não existe."
  ],
  "The node doesn't have enough disk space": [
   null,
-  ""
+  "O nó não tem espaço em disco suficiente"
  ],
  "The node doesn't have enough free memory": [
   null,
-  ""
+  "O nó não tem memória livre suficiente"
  ],
  "The persistent volume '{{ target }}' does not exist.": [
   null,
-  ""
+  "O volume persistente '{{ target }}' não existe."
  ],
  "The pod '{{ target }}' does not exist.": [
   null,
-  ""
+  "O pod '{{ target }}' não existe."
  ],
  "The project '{{ projName }}' does not exist.": [
   null,
-  ""
+  "O projeto '{{ projName }}' não existe."
  ],
  "The replication controller '{{ target }}' does not exist.": [
   null,
-  ""
+  "O controlador de replicação '{{ target }}' não existe."
  ],
  "The route '{{ target }}' does not exist.": [
   null,
-  ""
+  "A rota '{{ target }}' não existe."
  ],
  "The selected file is not a valid Kubernetes application manifest.": [
   null,
@@ -1475,51 +1475,51 @@ return plural;
  ],
  "The server uses a certificate signed by an unknown authority.": [
   null,
-  ""
+  "O servidor usa um certificado assinado por uma autoridade desconhecida."
  ],
  "The service '{{ target }}' does not exist.": [
   null,
-  ""
+  "O serviço '{{ target }}' não existe."
  ],
  "The user '{{ userName }}' does not exist.": [
   null,
-  ""
+  "O usuário '{{ userName }}' não existe."
  ],
  "This claim is in use. Deleting it may cause issues with the following pod:": [
   null,
-  ""
+  "Esta afirmação está em uso. Excluí-lo pode causar problemas com o seguinte pod:"
  ],
  "This option is for single node testing only – local storage will not work in a multi-node cluster": [
   null,
-  ""
+  "Esta opção é apenas para testes de nó único – o armazenamento local não funcionará em um cluster de vários nós"
  ],
  "This volume has been claimed by {{ item.item.spec.claimRef.namespace }} / {{ item.item.spec.claimRef.name }}. Deleting it will break that claim and may cause issues with any pods depending on it.": [
   null,
-  ""
+  "Este volume foi reivindicado por {{ item.item.spec.claimRef.namespace }} / {{ item.item.spec.claimRef.name }}. Excluí-lo vai parar essa reivindicação e pode causar problemas com quaisquer pods, dependendo dele."
  ],
  "This volume has not been claimed": [
   null,
-  ""
+  "Este volume não foi reivindicado"
  ],
  "Token": [
   null,
-  ""
+  "Token"
  ],
  "Topology": [
   null,
-  ""
+  "Topologia"
  ],
  "Triggers": [
   null,
-  ""
+  "Triggers"
  ],
  "Troubleshoot": [
   null,
-  ""
+  "Solução de problemas"
  ],
  "Trust this certificate for this connection": [
   null,
-  ""
+  "Confie neste certificado para esta conexão"
  ],
  "Type": [
   null,
@@ -1527,11 +1527,11 @@ return plural;
  ],
  "Type:": [
   null,
-  ""
+  "Tipo:"
  ],
  "Unable to decode Kubernetes application manifest.": [
   null,
-  ""
+  "Não é possível decodificar o manifesto do aplicativo Kubernetes."
  ],
  "Unable to read the Kubernetes application manifest. Code $0.": [
   null,
@@ -1539,7 +1539,7 @@ return plural;
  ],
  "Unavailable": [
   null,
-  ""
+  "Indisponível"
  ],
  "Unknown": [
   null,
@@ -1551,55 +1551,55 @@ return plural;
  ],
  "Used": [
   null,
-  ""
+  "Usado"
  ],
  "User": [
   null,
-  ""
+  "Usuário"
  ],
  "User or Group": [
   null,
-  ""
+  "Usuário ou Grupo"
  ],
  "Username": [
   null,
-  ""
+  "Nome de Usuário"
  ],
  "Users": [
   null,
-  ""
+  "Usuários"
  ],
  "Volume": [
   null,
-  ""
+  "Volume"
  ],
  "Volume ID": [
   null,
-  ""
+  "ID do Volume"
  ],
  "Volume Name": [
   null,
-  ""
+  "Nome do Volume"
  ],
  "Volume Type": [
   null,
-  ""
+  "Tipo do Volume"
  ],
  "Volumes": [
   null,
-  ""
+  "Volumes"
  ],
  "Warning:": [
   null,
-  ""
+  "Aviso:"
  ],
  "Welcome to the Image Registry": [
   null,
-  ""
+  "Bem vindo ao Registro de Imagem"
  ],
  "When": [
   null,
-  ""
+  "Quando"
  ],
  "Yes": [
   null,
@@ -1607,7 +1607,7 @@ return plural;
  ],
  "You can bypass the certificate check, but any data you send to the server could be intercepted by others.": [
   null,
-  ""
+  "Você pode ignorar a verificação do certificado, mas os dados que você enviar para o servidor podem ser interceptados por outros."
  ],
  "You can deploy an application to your cluster.": [
   null,
@@ -1615,15 +1615,15 @@ return plural;
  ],
  "Your login credentials do not give you access to use the docker registry from the command line.": [
   null,
-  ""
+  "As credenciais de login não lhe dão acesso para usar o registro de docker na linha de comando."
  ],
  "eg: my-image-stream": [
   null,
-  ""
+  "eg: meu-stream-de-imagem"
  ],
  "no": [
   null,
-  ""
+  "não"
  ],
  "none": [
   null,
@@ -1631,10 +1631,10 @@ return plural;
  ],
  "pending volume claims": [
   null,
-  ""
+  "declarações de volume pendentes"
  ],
  "yes": [
   null,
-  ""
+  "sim"
  ]
 }));

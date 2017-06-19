@@ -50,99 +50,111 @@ Files: tools/install-sh
 Copyright: Copyright (C) 1994 X Consortium
 License: MIT/X11
 
-Files: cockpit-142/node_modules/angular/*
+Files: cockpit-143/node_modules/angular/*
 Copyright: Copyright (c) 2010-2015 Google, Inc. http://angularjs.org
 License: MIT
 
-Files: cockpit-142/node_modules/angular-bootstrap-npm/*
+Files: cockpit-143/node_modules/angular-bootstrap-npm/*
 Copyright: Copyright (c) 2014 Neohapsis Inc.
 License: MIT
 
-Files: cockpit-142/node_modules/angular-gettext/*
+Files: cockpit-143/node_modules/angular-gettext/*
 Copyright: Copyright (C) 2013-2015 by Ruben Vermeersch <ruben@rocketeer.be>
 License: MIT
 
-Files: cockpit-142/node_modules/angular-route/*
+Files: cockpit-143/node_modules/angular-route/*
 Copyright: Copyright (c) 2010-2015 Google, Inc. http://angularjs.org
 License: MIT
 
-Files: cockpit-142/node_modules/bootstrap/*
+Files: cockpit-143/node_modules/bootstrap/*
 Copyright: Copyright (c) 2011-2015 Twitter, Inc
 License: MIT
 
-Files: cockpit-142/node_modules/bootstrap-datepicker/*
+Files: cockpit-143/node_modules/bootstrap-datepicker/*
 Copyright: Copyright 2012 Stefan Petre
 License: Apache-2.0
 
-Files: cockpit-142/node_modules/c3/*
+Files: cockpit-143/node_modules/c3/*
 Copyright: Copyright (c) 2013 Masayuki Tanaka
 License: MIT
 
-Files: cockpit-142/node_modules/d3/*
+Files: cockpit-143/node_modules/d3/*
 Copyright: Copyright (c) 2010-2015, Michael Bostock
 License: BSD-3-clause
 
-Files: cockpit-142/node_modules/jquery-flot/*
+Files: cockpit-143/node_modules/jquery-flot/*
 Copyright: Copyright (c) 2007-2014 IOLA and Ole Laursen
 License: MIT
 
-Files: cockpit-142/node_modules/kubernetes-container-terminal/*
+Files: cockpit-143/node_modules/kubernetes-container-terminal/*
 Copyright: Copyright (C) 1991, 1999 Free Software Foundation, Inc.
  Copyright (C) 2015 Red Hat, Inc.
 License: LGPL-2.1
 
-Files: cockpit-142/node_modules/kubernetes-object-describer/*
+Files: cockpit-143/node_modules/kubernetes-object-describer/*
 Copyright:(C) 2015-2017 Red Hat, Inc.
 License: Apache-2.0
 
-Files: cockpit-142/node_modules/kubernetes-topology-graph/*
+Files: cockpit-143/node_modules/kubernetes-topology-graph/*
 Copyright: Copyright (C) 1991, 1999 Free Software Foundation, Inc.
  Copyright (C) 2015 Red Hat, Inc.
 License: LGPL-2.1
 
-Files: cockpit-142/node_modules/moment/*
+Files: cockpit-143/node_modules/moment/*
 Copyright: Copyright (c) 2011-2015 Tim Wood, Iskren Chernev, Moment.js contributors
 License: MIT
 
-Files: cockpit-142/node_modules/mustache/*
+Files: cockpit-143/node_modules/mustache/*
 Copyright: Copyright (c) 2009 Chris Wanstrath (Ruby)
  Copyright (c) 2010 Jan Lehnardt (JavaScript)
 License: MIT
 
-Files: cockpit-142/node_modules/patternfly/*
+Files: cockpit-143/node_modules/noVNC/*
+Copyright: Copyright (C) 1996 by Jef Poskanzer <jef@acme.com>.  All rights reserved
+ Copyright (C) 1999 AT&T Laboratories Cambridge.  All Rights Reserved
+ Copyright (C) 2012 Joel Martin
+ Copyright (C) 2013 NTT corp
+ Copyright (C) 2013 Samuel Mannehed for Cendio AB
+ Copyright (C) 2015 Samuel Mannehed for Cendio AB
+ Copyright (C) 2016 Samuel Mannehed for Cendio AB
+ Copyright (c) 1996 Widget Workshop, Inc. All Rights Reserved
+ Copyright 2012 Google Inc.
+License: MPL-2.0
+
+Files: cockpit-143/node_modules/patternfly/*
 Copyright: Modifications to Bootstrap are copyright 2013 Red Hat, Inc.
 License: Apache-2.0
 
-Files: cockpit-142/node_modules/patternfly-bootstrap-combobox/*
+Files: cockpit-143/node_modules/patternfly-bootstrap-combobox/*
 Copyright: Copyright 2012 Daniel Farrell
 License: Apache-2.0
 
-Files: cockpit-142/node_modules/qunit-tap/*
+Files: cockpit-143/node_modules/qunit-tap/*
 Copyright: Copyright (C) 1989, 1991 Free Software Foundation, Inc.
  Copyright (c) 2010-2016 Takuto Wada
  Copyright (c) 2010-2016 Takuto Wada, https://github.com/twada/qunit-tap
  Copyright 2012 jQuery Foundation and other contributors
 License: MIT
 
-Files: cockpit-142/node_modules/qunitjs/*
+Files: cockpit-143/node_modules/qunitjs/*
 Copyright: Copyright 2006 Google Inc.
 License: MIT
 
-Files: cockpit-142/node_modules/react-lite-cockpit/*
+Files: cockpit-143/node_modules/react-lite-cockpit/*
 Copyright: Copyright (c) 2015 工业聚
 License: MIT
 
-Files: cockpit-142/node_modules/redux/*
+Files: cockpit-143/node_modules/redux/*
 Copyright: Copyright (c) 2015-present Dan Abramov
 (c) 2015-present Dan Abramov
 License: MIT
 
-Files: cockpit-142/node_modules/registry-image-widgets/*
+Files: cockpit-143/node_modules/registry-image-widgets/*
 Copyright: Copyright (C) 1991, 1999 Free Software Foundation, Inc.
  Copyright (C) 2016 Red Hat, Inc.
 License: LGPL-2.1
 
-Files: cockpit-142/node_modules/term.js-cockpit/*
+Files: cockpit-143/node_modules/term.js-cockpit/*
 Copyright: Copyright (c) 2011 Fabrice Bellard
  Copyright (c) 2012-2013, Christopher Jeffrey (MIT License)
  Copyright (c) 2012-2013, Christopher Jeffrey (https://github.com/chjj/)

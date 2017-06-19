@@ -84,42 +84,42 @@ return plural;
  ],
  "$0 month": [
   "$0 months",
-  "",
-  ""
+  "$0 mês",
+  "$0 meses"
  ],
  "$0 week": [
   "$0 weeks",
-  "",
-  ""
+  "$0 semana",
+  "$0 semanas"
  ],
  "$0 year": [
   "$0 years",
-  "",
-  ""
+  "$0 ano",
+  "$0 anos"
  ],
  "$mtu": [
   null,
-  ""
+  "$mtu"
  ],
  "1 day": [
   null,
-  ""
+  "1 dia"
  ],
  "1 hour": [
   null,
-  ""
+  "1 hora"
  ],
  "1 week": [
   null,
-  ""
+  "1 semana"
  ],
  "5 minutes": [
   null,
-  ""
+  "5 minutos"
  ],
  "6 hours": [
   null,
-  ""
+  "6 horas"
  ],
  "802.3ad": [
   null,
@@ -127,7 +127,7 @@ return plural;
  ],
  "802.3ad LACP": [
   null,
-  ""
+  "802.3ad LACP"
  ],
  "ARP": [
   null,
@@ -139,7 +139,7 @@ return plural;
  ],
  "ARP Ping": [
   null,
-  ""
+  "ARP Ping"
  ],
  "Active": [
   null,
@@ -159,43 +159,43 @@ return plural;
  ],
  "Add $0": [
   null,
-  ""
+  "Adicionar $0"
  ],
  "Add Bond": [
   null,
-  ""
+  "Adicionar Vínculo"
  ],
  "Add Bridge": [
   null,
-  ""
+  "Adicionar Ponte"
  ],
  "Add Team": [
   null,
-  ""
+  "Adicionar Equipe"
  ],
  "Add VLAN": [
   null,
-  ""
+  "Adicionar VLAN"
  ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Adicionando <b>$0</b> a conexão com o servidor será interrompida e tornará a administração da interface do usuário indisponível."
  ],
  "Additional DNS $val": [
   null,
-  ""
+  "DNS Adicional $val"
  ],
  "Additional DNS Search Domains $val": [
   null,
-  ""
+  "Domínios de Pesquisa de DNS Adicionais $val"
  ],
  "Additional address $val": [
   null,
-  ""
+  "Endereço adicional $val"
  ],
  "Address $val": [
   null,
-  ""
+  "Endereço $val"
  ],
  "Addresses": [
   null,
@@ -203,7 +203,7 @@ return plural;
  ],
  "Apply": [
   null,
-  ""
+  "Aplicar"
  ],
  "Authenticating": [
   null,
@@ -223,7 +223,7 @@ return plural;
  ],
  "Balancer": [
   null,
-  ""
+  "Balanceador"
  ],
  "Bond": [
   null,
@@ -231,7 +231,7 @@ return plural;
  ],
  "Bond Settings": [
   null,
-  ""
+  "Configurações de Vínculo"
  ],
  "Bridge": [
   null,
@@ -239,11 +239,11 @@ return plural;
  ],
  "Bridge Port Settings": [
   null,
-  ""
+  "Configurações da Porta de Ponte"
  ],
  "Bridge Settings": [
   null,
-  ""
+  "Configurações de Ponte"
  ],
  "Bridge port": [
   null,
@@ -255,7 +255,7 @@ return plural;
  ],
  "Broken configuration": [
   null,
-  ""
+  "Configuração quebrada"
  ],
  "Cancel": [
   null,
@@ -267,11 +267,11 @@ return plural;
  ],
  "Change the settings": [
   null,
-  ""
+  "Alterar as configurações"
  ],
  "Changing the settings will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Alterar as configurações irá encerrar a conexão com o servidor, e tornará a administração interface do usuário indisponível."
  ],
  "Checking IP": [
   null,
@@ -299,27 +299,27 @@ return plural;
  ],
  "Connection will be lost": [
   null,
-  ""
+  "A conexão será perdida"
  ],
  "Create it": [
   null,
-  ""
+  "Criá-lo"
  ],
  "Creating this VLAN will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Criando esta VLAN a conexão com o servidor será encerrada, e tornará a administração da interface do usuário indisponível."
  ],
  "Creating this bond will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Criando essa ligação a conexão com o servidor será encerrada, e tornará a administração da interface do usuário indisponível."
  ],
  "Creating this bridge will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Criando essa ponte a conexão com o servidor será encerrada, e tornará a administração da interface do usuário indisponível."
  ],
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Criando essa equipe a conexão com o servidor será encerrada e tornará a administração da interface do usuário indisponível."
  ],
  "DNS": [
   null,
@@ -327,7 +327,7 @@ return plural;
  ],
  "DNS $val": [
   null,
-  ""
+  "DNS $val"
  ],
  "DNS Search Domains": [
   null,
@@ -335,7 +335,7 @@ return plural;
  ],
  "DNS Search Domains $val": [
   null,
-  ""
+  "Domínios de Pesquisa DNS $val"
  ],
  "Deactivating": [
   null,
@@ -347,11 +347,11 @@ return plural;
  ],
  "Delete $0": [
   null,
-  ""
+  "Deletar $0"
  ],
  "Deleting <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Excluindo <b>$0</b> a conexão com o servidor será encerrada, e tornará a administração da interface do usuário indisponível."
  ],
  "Disabled": [
   null,
@@ -359,15 +359,15 @@ return plural;
  ],
  "Ethernet MAC": [
   null,
-  ""
+  "Ethernet MAC"
  ],
  "Ethernet MTU": [
   null,
-  ""
+  "Ethernet MTU"
  ],
  "Ethtool": [
   null,
-  ""
+  "Ethtool"
  ],
  "Failed": [
   null,
@@ -383,7 +383,7 @@ return plural;
  ],
  "Go to now": [
   null,
-  ""
+  "Ir para agora"
  ],
  "Hair Pin mode": [
   null,
@@ -399,11 +399,11 @@ return plural;
  ],
  "IP Address": [
   null,
-  ""
+  "Endereço IP"
  ],
  "IP Settings": [
   null,
-  ""
+  "Configurações de IP"
  ],
  "IPv4": [
   null,
@@ -439,27 +439,27 @@ return plural;
  ],
  "Invalid address $0": [
   null,
-  "Porta inválida"
+  "Endereço inválido $0"
  ],
  "Invalid metric $0": [
   null,
-  "Porta inválida"
+  "Métrica inválida $0"
  ],
  "Invalid prefix $0": [
   null,
-  "Porta inválida"
+  "Prefixo inválido $0"
  ],
  "Invalid prefix or netmask $0": [
   null,
-  "Porta inválida"
+  "Prefixo ou máscara de rede inválidos $0"
  ],
  "Keep connection": [
   null,
-  ""
+  "Manter conexão"
  ],
  "LACP Key": [
   null,
-  ""
+  "Chave LACP"
  ],
  "Link Monitoring": [
   null,
@@ -467,7 +467,7 @@ return plural;
  ],
  "Link Watch": [
   null,
-  ""
+  "Link Watch"
  ],
  "Link down delay": [
   null,
@@ -483,11 +483,11 @@ return plural;
  ],
  "Load Balancing": [
   null,
-  ""
+  "Balanceamento de Carga"
  ],
  "MAC": [
   null,
-  ""
+  "MAC"
  ],
  "MII (Recommended)": [
   null,
@@ -495,11 +495,11 @@ return plural;
  ],
  "MTU": [
   null,
-  ""
+  "MTU"
  ],
  "MTU must be a positive number": [
   null,
-  ""
+  "O MTU deve ser um número positivo"
  ],
  "Manual": [
   null,
@@ -531,7 +531,7 @@ return plural;
  ],
  "NSNA Ping": [
   null,
-  ""
+  "NSNA Ping"
  ],
  "Name": [
   null,
@@ -539,11 +539,11 @@ return plural;
  ],
  "Networking": [
   null,
-  ""
+  "Rede"
  ],
  "Networking Logs": [
   null,
-  ""
+  "Logs de rede"
  ],
  "No": [
   null,
@@ -579,7 +579,7 @@ return plural;
  ],
  "Passive": [
   null,
-  ""
+  "Passivo"
  ],
  "Path cost": [
   null,
@@ -591,15 +591,15 @@ return plural;
  ],
  "Permanent": [
   null,
-  ""
+  "Permanente"
  ],
  "Ping Interval": [
   null,
-  ""
+  "Intervalo de Ping"
  ],
  "Ping Target": [
   null,
-  ""
+  "Alvo do Ping"
  ],
  "Ports": [
   null,
@@ -619,7 +619,7 @@ return plural;
  ],
  "Preserve": [
   null,
-  "Preset"
+  "Preservar"
  ],
  "Primary": [
   null,
@@ -635,7 +635,7 @@ return plural;
  ],
  "Random": [
   null,
-  ""
+  "Aleatório(a)"
  ],
  "Reboot": [
   null,
@@ -643,19 +643,19 @@ return plural;
  ],
  "Receiving": [
   null,
-  ""
+  "Recebendo"
  ],
  "Remove $0": [
   null,
-  ""
+  "Remover $0"
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Removendo <b>$0</b> irá encerrar a conexão com o servidor e tornará a administração da interface do usuário indisponível."
  ],
  "Restoring connection": [
   null,
-  "Erro ao se conectar."
+  "Restaurando conexão"
  ],
  "Round Robin": [
   null,
@@ -667,7 +667,7 @@ return plural;
  ],
  "Runner": [
   null,
-  ""
+  "Executor"
  ],
  "STP Forward delay": [
   null,
@@ -687,11 +687,11 @@ return plural;
  ],
  "Sending": [
   null,
-  ""
+  "Enviando"
  ],
  "Set to": [
   null,
-  ""
+  "Configurado para"
  ],
  "Shared": [
   null,
@@ -707,7 +707,7 @@ return plural;
  ],
  "Stable": [
   null,
-  "Habilitar"
+  "Estável"
  ],
  "Status": [
   null,
@@ -715,47 +715,47 @@ return plural;
  ],
  "Sticky": [
   null,
-  ""
+  "Sticky"
  ],
  "Switch off $0": [
   null,
-  ""
+  "Desligar $0"
  ],
  "Switch on $0": [
   null,
-  ""
+  "Ligar $0"
  ],
  "Switching off <b>$0</b>  will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Desligando <b>$0</b> irá encerrar a conexão com o servidor, e tornará a administração da interface do usuário indisdisponível."
  ],
  "Switching off <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Desligando <b>$0</b> irá encerrar a conexão com o servidor, e tornará a administração da interface do usuário indisponível."
  ],
  "Switching on <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Ligando <b>$0</b> irá encerrar a conexão com o servidor e tornará a administração da interface do usuário indisponível."
  ],
  "Team": [
   null,
-  ""
+  "Equipe"
  ],
  "Team Port": [
   null,
-  ""
+  "Porta da Equipe"
  ],
  "Team Port Settings": [
   null,
-  ""
+  "Configurações da Porta da Equipe"
  ],
  "Team Settings": [
   null,
-  ""
+  "Configurações da Equipe"
  ],
  "Testing connection": [
   null,
-  ""
+  "Testando conexão"
  ],
  "The user <b>$0</b> is not permitted to modify network settings": [
   null,
@@ -763,7 +763,7 @@ return plural;
  ],
  "This device cannot be managed here.": [
   null,
-  ""
+  "Este dispositivo não pode ser gerenciado aqui."
  ],
  "Unexpected error": [
   null,
@@ -775,7 +775,7 @@ return plural;
  ],
  "Unknown \"$0\"": [
   null,
-  ""
+  "Desconhecido \"$0\""
  ],
  "Unknown configuration": [
   null,
@@ -783,7 +783,7 @@ return plural;
  ],
  "Unmanaged Interfaces": [
   null,
-  ""
+  "Interfaces Não Gerenciadas"
  ],
  "VLAN": [
   null,
@@ -795,7 +795,7 @@ return plural;
  ],
  "VLAN Settings": [
   null,
-  ""
+  "Configurações VLAN"
  ],
  "Waiting": [
   null,
@@ -811,15 +811,15 @@ return plural;
  ],
  "[$0 bytes of binary data]": [
   null,
-  ""
+  "[$0 bytes de data bynária]"
  ],
  "[binary data]": [
   null,
-  ""
+  "[dados binários]"
  ],
  "[no data]": [
   null,
-  ""
+  "[sem dados]"
  ],
  "page-title\u0004Networking": [
   null,

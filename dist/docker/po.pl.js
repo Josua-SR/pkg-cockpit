@@ -673,6 +673,14 @@ return plural;
   null,
   "Pula urządzeń do przechowywania danych Docker nie może być zarządzana na tym systemie."
  ],
+ "The scan from $time ($type) found no vulnerabilities.": [
+  null,
+  ""
+ ],
+ "The scan from $time ($type) was not successful.": [
+  null,
+  ""
+ ],
  "The storage pool will be reset to optimize its layout.  All containers will be erased.": [
   null,
   "Pula urządzeń do przechowywania danych zostanie przywrócona w celu optymalizacji układu. Wszystkie kontenery zostaną usunięte."

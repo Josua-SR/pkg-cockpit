@@ -67,6 +67,14 @@ return plural;
   "language": "zh-CN",
   "x-generator": "Zanata 3.9.6"
  },
+ "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
+  null,
+  ""
+ ],
+ "Address:": [
+  null,
+  ""
+ ],
  "Autostart:": [
   null,
   "自动启动："
@@ -91,9 +99,29 @@ return plural;
   null,
   "容量"
  ],
+ "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
+  null,
+  ""
+ ],
+ "Connect with Remote Viewer": [
+  null,
+  ""
+ ],
+ "Connect with any $0 viewer application.": [
+  null,
+  ""
+ ],
+ "Connect with any SPICE or VNC viewer application.": [
+  null,
+  ""
+ ],
  "Connection": [
   null,
   "连接"
+ ],
+ "Console": [
+  null,
+  ""
  ],
  "Count:": [
   null,
@@ -106,6 +134,10 @@ return plural;
  "Disks": [
   null,
   "磁盘"
+ ],
+ "Download the MSI from $0": [
+  null,
+  ""
  ],
  "Emulated Machine:": [
   null,
@@ -131,9 +163,21 @@ return plural;
   null,
   "主机"
  ],
+ "Launch Remote Viewer": [
+  null,
+  ""
+ ],
+ "Manual Connection": [
+  null,
+  ""
+ ],
  "Memory:": [
   null,
   "内存："
+ ],
+ "More Information": [
+  null,
+  ""
  ],
  "Name": [
   null,
@@ -151,9 +195,17 @@ return plural;
   null,
   ""
  ],
+ "No graphics console is defined for this virtual machine.": [
+  null,
+  ""
+ ],
  "Overview": [
   null,
   "概览"
+ ],
+ "Please start the virtual machine to access its graphics console.": [
+  null,
+  ""
  ],
  "Pool": [
   null,
@@ -179,6 +231,22 @@ return plural;
   null,
   "运行"
  ],
+ "SPICE": [
+  null,
+  ""
+ ],
+ "SPICE Address:": [
+  null,
+  ""
+ ],
+ "SPICE Port:": [
+  null,
+  ""
+ ],
+ "SPICE TLS Port:": [
+  null,
+  ""
+ ],
  "Session": [
   null,
   "版本"
@@ -194,6 +262,14 @@ return plural;
  "State": [
   null,
   "状态"
+ ],
+ "Switch to Desktop Viewer": [
+  null,
+  ""
+ ],
+ "Switch to In-Browser Viewer": [
+  null,
+  ""
  ],
  "System": [
   null,
@@ -267,6 +343,22 @@ return plural;
   null,
   ""
  ],
+ "VNC": [
+  null,
+  ""
+ ],
+ "VNC Address:": [
+  null,
+  ""
+ ],
+ "VNC Port:": [
+  null,
+  ""
+ ],
+ "VNC TLS Port:": [
+  null,
+  ""
+ ],
  "Virtual Machines": [
   null,
   "虚拟机"
@@ -274,6 +366,10 @@ return plural;
  "Volume": [
   null,
   "卷"
+ ],
+ "Your browser does not support iframes.": [
+  null,
+  ""
  ],
  "cdrom": [
   null,

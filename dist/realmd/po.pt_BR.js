@@ -69,23 +69,23 @@ return plural;
  },
  "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  ""
+  "$0 Somente usuários com credenciais locais poderão efetuar login nesta máquina. Isso também pode afetar outros serviços como configurações de resolução de DNS e a lista de CAS confiáveis pode mudar."
  ],
  "Administrator Password": [
   null,
-  ""
+  "Senha de Administrador"
  ],
  "Are you sure you want to leave the '$0' domain?": [
   null,
-  ""
+  "Tem certeza de que deseja abandonar o domínio '$0'?"
  ],
  "Are you sure you want to leave this domain?": [
   null,
-  ""
+  "Tem certeza de que deseja abandonar este domínio?"
  ],
  "Authentication": [
   null,
-  ""
+  "Autenticação"
  ],
  "Automatic": [
   null,
@@ -97,59 +97,59 @@ return plural;
  ],
  "Cannot join a domain because realmd is not available on this system": [
   null,
-  ""
+  "Não é possível ingressar em um domínio porque o realmd não está disponível neste sistema"
  ],
  "Computer OU": [
   null,
-  ""
+  "Computador OU"
  ],
  "Domain $0 could not be contacted": [
   null,
-  ""
+  "O Domínio $0 não pôde ser contatado"
  ],
  "Domain $0 is not supported": [
   null,
-  ""
+  "O Domínio $0 não é suportado"
  ],
  "Domain Address": [
   null,
-  ""
+  "Endereço do Domínio"
  ],
  "Domain Administrator Name": [
   null,
-  ""
+  "Nome do Administrador de Domínio"
  ],
  "Domain Administrator Password": [
   null,
-  ""
+  "Senha do Administrador de Domínio"
  ],
  "Join": [
   null,
-  ""
+  "Afiliar-se"
  ],
  "Join Domain": [
   null,
-  ""
+  "Associar-se ao domínio"
  ],
  "Join a Domain": [
   null,
-  ""
+  "Ingressar em um domínio"
  ],
  "Joining this domain is not supported": [
   null,
-  ""
+  "A adesão à este domínio não é suportada"
  ],
  "Leave": [
   null,
-  ""
+  "Deixar"
  ],
  "Leave Domain": [
   null,
-  "DNS Busca de Domínios"
+  "Abandonar Domínio"
  ],
  "More": [
   null,
-  ""
+  "Mais"
  ],
  "Next": [
   null,
@@ -165,15 +165,15 @@ return plural;
  ],
  "One Time Password": [
   null,
-  ""
+  "Uma senha do tempo"
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
-  ""
+  "O usuário <b> $0 </b> não tem permissão para modificar reinos"
  ],
  "This may take a while": [
   null,
-  ""
+  "Isso pode demorar um pouco"
  ],
  "User Name": [
   null,
@@ -181,10 +181,10 @@ return plural;
  ],
  "User Password": [
   null,
-  ""
+  "Senha de Usuário"
  ],
  "e.g. \"$0\"": [
   null,
-  ""
+  "e.g. \"$0\""
  ]
 }));

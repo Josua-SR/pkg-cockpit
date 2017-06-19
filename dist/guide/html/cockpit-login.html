@@ -80,7 +80,7 @@ promise.done(function (user) { ... });
 <div class="refsection">
 <a name="cockpit-info-changed"></a><h2>cockpit.user.onchanged</h2>
 <pre class="programlisting">
-$(cockpit.user).on("changed", function() { ... })
+cockpit.user.addEventListener("changed", function() { ... })
 </pre>
 <p>This event is fired when the user info changes or first becomes available.</p>
 </div>
@@ -111,7 +111,7 @@ permission = cockpit.permission([options])
 <div class="refsection">
 <a name="cockpit-permission-changed"></a><h3>permission.onchanged</h3>
 <pre class="programlisting">
-$(permission).on("changed", function() { ... })
+permission.addEventListener("changed", function() { ... })
 </pre>
 <p>This event is fired when the permission changes. In particular the
         <a class="link" href="cockpit-login.html#cockpit-permission-allowed" title="permission.allowed">permission.allowed</a> property.</p>

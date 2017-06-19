@@ -73,31 +73,31 @@ return plural;
  ],
  "Account not available or cannot be edited.": [
   null,
-  ""
+  "Conta não disponível ou não pode ser editada."
  ],
  "Accounts": [
   null,
-  ""
+  "Contas"
  ],
  "Add key": [
   null,
-  ""
+  "Adicionar chave"
  ],
  "Add public key": [
   null,
-  ""
+  "Adicionar chave pública"
  ],
  "Adding key": [
   null,
-  ""
+  "Adicionando chave"
  ],
  "Authorized Public SSH Keys": [
   null,
-  ""
+  "Chaves Públicas Autorizadas de SSH"
  ],
  "Back to Accounts": [
   null,
-  ""
+  "Voltar para Contas"
  ],
  "Cancel": [
   null,
@@ -117,11 +117,11 @@ return plural;
  ],
  "Container Administrator": [
   null,
-  ""
+  "Administrador de contêineres"
  ],
  "Create": [
   null,
-  ""
+  "Criar"
  ],
  "Create New Account": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "Delete $0": [
   null,
-  ""
+  "Deletar $0"
  ],
  "Delete Files": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "Error saving authorized keys: ": [
   null,
-  ""
+  "Erro ao salvar chaves autorizadas:"
  ],
  "Excellent password": [
   null,
@@ -157,7 +157,7 @@ return plural;
  ],
  "Failed to load authorized keys.": [
   null,
-  ""
+  "Falha ao carregar as chaves autorizadas."
  ],
  "Full Name": [
   null,
@@ -165,7 +165,7 @@ return plural;
  ],
  "Invalid key": [
   null,
-  ""
+  "Chave inválida"
  ],
  "Last Login": [
   null,
@@ -173,7 +173,7 @@ return plural;
  ],
  "Local Accounts": [
   null,
-  ""
+  "Contas Locais"
  ],
  "Lock Account": [
   null,
@@ -181,11 +181,11 @@ return plural;
  ],
  "Logged In": [
   null,
-  ""
+  "Logado"
  ],
  "Never": [
   null,
-  ""
+  "Nunca"
  ],
  "New Password": [
   null,
@@ -197,7 +197,7 @@ return plural;
  ],
  "No real name specified": [
   null,
-  "Nenhum nome real  foi especificado"
+  "Nenhum nome real especificado"
  ],
  "No user name specified": [
   null,
@@ -213,7 +213,7 @@ return plural;
  ],
  "Old password not accepted": [
   null,
-  "Senha antida não aceita"
+  "Senha antiga não aceita"
  ],
  "On": [
   null,
@@ -233,11 +233,11 @@ return plural;
  ],
  "Paste the contents of your public SSH key file here": [
   null,
-  ""
+  "Cole o conteúdo do seu arquivo de chave pública SSH aqui"
  ],
  "Prompting via passwd timed out": [
   null,
-  "Tempo excedido na tentativa via senha"
+  "Tempo excedido na tentativa de solicitação via senha"
  ],
  "Roles": [
   null,
@@ -249,19 +249,19 @@ return plural;
  ],
  "Set": [
   null,
-  ""
+  "Definir"
  ],
  "Set Password": [
   null,
-  ""
+  "Definir uma Senha"
  ],
  "Terminate Session": [
   null,
-  ""
+  "Encerrar Sessão"
  ],
  "The key you provided was not valid.": [
   null,
-  ""
+  "A chave que você forneceu não era válida."
  ],
  "The passwords do not match": [
   null,
@@ -277,7 +277,7 @@ return plural;
  ],
  "There are no authorized public keys for this account.": [
   null,
-  ""
+  "Não existem chaves públicas autorizadas para esta conta."
  ],
  "This user name already exists": [
   null,
@@ -297,7 +297,7 @@ return plural;
  ],
  "Unnamed": [
   null,
-  ""
+  "Não nomeado"
  ],
  "User Name": [
   null,
@@ -305,11 +305,11 @@ return plural;
  ],
  "Validating key": [
   null,
-  ""
+  "Validando chave"
  ],
  "You do not have permission to view the authorized public keys for this account.": [
   null,
-  ""
+  "Você não tem permissão para exibir as chaves públicas autorizadas para esta conta."
  ],
  "page-title\u0004Accounts": [
   null,
