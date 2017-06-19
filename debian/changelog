@@ -1,11 +1,11 @@
-cockpit (143-1) UNRELEASED; urgency=medium
+cockpit (143-1) unstable; urgency=medium
 
   * New upstream release:
     - Add "Software Updates" page for package (rpm/deb) based operating
       systems
     - Fix cockpit-machines package to make inline VNC console actually work
 
- -- Martin Pitt <mpitt@debian.org>  Mon, 19 Jun 2017 16:43:11 +0200
+ -- Martin Pitt <mpitt@debian.org>  Mon, 19 Jun 2017 16:44:35 +0200
 
 cockpit (142-1) unstable; urgency=medium
 
