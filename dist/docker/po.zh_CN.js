@@ -659,6 +659,14 @@ return plural;
   null,
   "该系统上容器存储池不能被管理。"
  ],
+ "The scan from $time ($type) found no vulnerabilities.": [
+  null,
+  ""
+ ],
+ "The scan from $time ($type) was not successful.": [
+  null,
+  ""
+ ],
  "The storage pool will be reset to optimize its layout.  All containers will be erased.": [
   null,
   "存储池将会重置来优化分区表。所有容器将被擦除。"

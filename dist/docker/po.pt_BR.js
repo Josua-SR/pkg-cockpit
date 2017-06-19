@@ -88,8 +88,8 @@ return plural;
  ],
  "$0 month": [
   "$0 months",
-  "",
-  ""
+  "$0 mês",
+  "$0 meses"
  ],
  "$0 shares": [
   null,
@@ -97,13 +97,13 @@ return plural;
  ],
  "$0 week": [
   "$0 weeks",
-  "",
-  ""
+  "$0 semana",
+  "$0 semanas"
  ],
  "$0 year": [
   "$0 years",
-  "",
-  ""
+  "$0 ano",
+  "$0 anos"
  ],
  "${hip}:${hport} -> $cport": [
   null,
@@ -111,27 +111,27 @@ return plural;
  ],
  "Add Additional Storage": [
   null,
-  ""
+  "Inserir Armazenamento Adicional"
  ],
  "Add Storage": [
   null,
-  ""
+  "Adicionar Armazenamento"
  ],
  "Additional Storage": [
   null,
-  ""
+  "Armazenamento Adicional"
  ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
-  ""
+  "Todos os dados em discos selecionados serão apagados e os discos serão adicionados ao pool de armazenamento."
  ],
  "Always": [
   null,
-  ""
+  "Sempre"
  ],
  "Are you sure you want to delete this image?": [
   null,
-  ""
+  "Tem certeza de que deseja excluir esta imagem?"
  ],
  "Author": [
   null,
@@ -139,7 +139,7 @@ return plural;
  ],
  "CPU": [
   null,
-  ""
+  "CPU"
  ],
  "CPU priority": [
   null,
@@ -147,11 +147,11 @@ return plural;
  ],
  "CPU usage:": [
   null,
-  ""
+  "Uso da CPU:"
  ],
  "Can&rsquo;t connect to Docker": [
   null,
-  ""
+  "Pode&rsquo;t conectar ao Docker"
  ],
  "Cancel": [
   null,
@@ -159,15 +159,15 @@ return plural;
  ],
  "Change": [
   null,
-  ""
+  "Alterar"
  ],
  "Change resource limits": [
   null,
-  ""
+  "Alterar limites de recursos"
  ],
  "Change resources limits": [
   null,
-  ""
+  "Alterar limites de recursos"
  ],
  "Close": [
   null,
@@ -175,11 +175,11 @@ return plural;
  ],
  "Combined CPU usage": [
   null,
-  ""
+  "Uso Combinado da CPU"
  ],
  "Combined memory usage": [
   null,
-  ""
+  "Uso de memória combinada"
  ],
  "Command": [
   null,
@@ -187,23 +187,23 @@ return plural;
  ],
  "Command can't be empty": [
   null,
-  ""
+  "O comando não pode estar vazio"
  ],
  "Command:": [
   null,
-  ""
+  "Comando:"
  ],
  "Commit": [
   null,
-  ""
+  "Commit"
  ],
  "Commit Image": [
   null,
-  ""
+  "Imagem Commit "
  ],
  "Configure storage...": [
   null,
-  ""
+  "Configurar armazenamento..."
  ],
  "Connecting to Docker": [
   null,
@@ -227,7 +227,7 @@ return plural;
  ],
  "Container:": [
   null,
-  ""
+  "Contêiner:"
  ],
  "Containers": [
   null,
@@ -235,19 +235,19 @@ return plural;
  ],
  "Could not add all disks": [
   null,
-  ""
+  "Não foi possível adicionar todos os discos"
  ],
  "Could not reset the storage pool": [
   null,
-  ""
+  "Não foi possível redefinir o pool de armazenamento"
  ],
  "Created": [
   null,
-  ""
+  "Criado"
  ],
  "Created:": [
   null,
-  ""
+  "Criado:"
  ],
  "Default": [
   null,
@@ -259,7 +259,7 @@ return plural;
  ],
  "Delete $0": [
   null,
-  ""
+  "Deletar $0"
  ],
  "Deleting a container will erase all data in it.": [
   null,
@@ -271,7 +271,7 @@ return plural;
  ],
  "Details": [
   null,
-  ""
+  "Detalhes"
  ],
  "Docker is not installed or activated on the system": [
   null,
@@ -279,7 +279,7 @@ return plural;
  ],
  "Download": [
   null,
-  ""
+  "Baixar"
  ],
  "Drive": [
   null,
@@ -295,19 +295,19 @@ return plural;
  ],
  "Entrypoint": [
   null,
-  ""
+  "Ponto de entrada"
  ],
  "Environment": [
   null,
-  ""
+  "Ambiente"
  ],
  "Erase containers and reset storage pool": [
   null,
-  ""
+  "Apagar contêineres e redefinir pool de armazenamento"
  ],
  "Erase containers, reformat disks, and add them": [
   null,
-  ""
+  "Apagar contêineres, reformatar discos e adicioná-los"
  ],
  "Error message from Docker:": [
   null,
@@ -315,7 +315,7 @@ return plural;
  ],
  "Everything": [
   null,
-  ""
+  "Tudo"
  ],
  "Exited $ExitCode": [
   null,
@@ -323,7 +323,7 @@ return plural;
  ],
  "Expose container ports": [
   null,
-  ""
+  "Expor portas de contêiner"
  ],
  "Failed to start Docker: $0": [
   null,
@@ -339,35 +339,35 @@ return plural;
  ],
  "Free": [
   null,
-  ""
+  "Livre"
  ],
  "Gateway:": [
   null,
-  ""
+  "Gateway:"
  ],
  "Get new image": [
   null,
-  ""
+  "Obter nova imagem"
  ],
  "Hard Disk": [
   null,
-  ""
+  "Disco Rígido"
  ],
  "IP Address:": [
   null,
-  ""
+  "Endereço IP:"
  ],
  "IP Prefix Length:": [
   null,
-  ""
+  "Comprimento do prefixo IP:"
  ],
  "Id": [
   null,
-  ""
+  "Id"
  ],
  "Id:": [
   null,
-  ""
+  "Id:"
  ],
  "Image": [
   null,
@@ -379,23 +379,23 @@ return plural;
  ],
  "Image Search": [
   null,
-  ""
+  "Pesquisa de Imagem"
  ],
  "Image:": [
   null,
-  ""
+  "Imagem:"
  ],
  "Images": [
   null,
-  ""
+  "Imagens"
  ],
  "Images and running containers": [
   null,
-  ""
+  "Imagens e contêineres em execução"
  ],
  "Information about the Docker storage pool is not available.": [
   null,
-  ""
+  "As informações sobre o pool de armazenamento do Docker não estão disponíveis."
  ],
  "Invalid port": [
   null,
@@ -403,7 +403,7 @@ return plural;
  ],
  "Link to another container": [
   null,
-  ""
+  "Link para outro contêiner"
  ],
  "Links": [
   null,
@@ -411,19 +411,19 @@ return plural;
  ],
  "Links:": [
   null,
-  ""
+  "Links:"
  ],
  "Local Disks": [
   null,
-  ""
+  "Discos Locais"
  ],
  "MAC Address:": [
   null,
-  ""
+  "Endereço MAC:"
  ],
  "Memory": [
   null,
-  ""
+  "Memória"
  ],
  "Memory limit": [
   null,
@@ -431,15 +431,15 @@ return plural;
  ],
  "Memory usage:": [
   null,
-  ""
+  "Uso de memória:"
  ],
  "MiB": [
   null,
-  ""
+  "MiB"
  ],
  "Mount container volumes": [
   null,
-  ""
+  "Montar contêiners de volumes"
  ],
  "Name": [
   null,
@@ -451,7 +451,7 @@ return plural;
  ],
  "No additional local storage found.": [
   null,
-  ""
+  "Nenhum armazenamento local adicional encontrado."
  ],
  "No alias specified": [
   null,
@@ -463,31 +463,31 @@ return plural;
  ],
  "No containers": [
   null,
-  ""
+  "Nenhum contêiner"
  ],
  "No containers that match the current filter": [
   null,
-  ""
+  "Nenhum contêiner que corresponda ao filtro atual"
  ],
  "No images": [
   null,
-  ""
+  "Nenhuma imagem"
  ],
  "No images that match the current filter": [
   null,
-  ""
+  "Sem imagens que correspondam ao filtro atual"
  ],
  "No results for $0": [
   null,
-  ""
+  "Nenhum resuldado para $0"
  ],
  "No running containers": [
   null,
-  ""
+  "Sem contêiners em execução"
  ],
  "No running containers that match the current filter": [
   null,
-  ""
+  "Sem contêineres em execução que correspondem ao filtro atual"
  ],
  "Not authorized to access Docker on this system": [
   null,
@@ -503,7 +503,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "Ok"
  ],
  "On": [
   null,
@@ -511,16 +511,16 @@ return plural;
  ],
  "On Failure": [
   null,
-  ""
+  "Em Falha"
  ],
  "On failure, retry $0 time": [
   "On failure, retry $0 times",
-  "",
-  ""
+  "Em falha, repetir $0 vez",
+  "Em falha, repetir $0 vezes"
  ],
  "Overview": [
   null,
-  ""
+  "Visão geral"
  ],
  "Please confirm deletion of $0": [
   null,
@@ -532,7 +532,7 @@ return plural;
  ],
  "Please try another term": [
   null,
-  ""
+  "Por favor, tente outro termo"
  ],
  "Ports": [
   null,
@@ -540,19 +540,19 @@ return plural;
  ],
  "Ports:": [
   null,
-  ""
+  "Portas:"
  ],
  "ReadOnly": [
   null,
-  ""
+  "SomenteLeitura"
  ],
  "ReadWrite": [
   null,
-  ""
+  "LeituraEscrita"
  ],
  "Reformat and add disks": [
   null,
-  ""
+  "Reformatar e adicionar discos"
  ],
  "Repository": [
   null,
@@ -564,11 +564,11 @@ return plural;
  ],
  "Reset Storage Pool": [
   null,
-  ""
+  "Resetar Pool de Armazenamento"
  ],
  "Resetting the storage pool will erase all containers and release disks in the pool.": [
   null,
-  ""
+  "A redefinição do pool de armazenamento apagará todos os recipientes e discos de liberação no pool."
  ],
  "Restart": [
   null,
@@ -576,47 +576,47 @@ return plural;
  ],
  "Restart Policy": [
   null,
-  ""
+  "Reinicie a Política"
  ],
  "Restart Policy:": [
   null,
-  ""
+  "Reinicie a Política:"
  ],
  "Retries:": [
   null,
-  ""
+  "Tentativas:"
  ],
  "Run": [
   null,
-  ""
+  "Executar"
  ],
  "Run Image": [
   null,
-  ""
+  "Executar Imagem"
  ],
  "Security": [
   null,
-  ""
+  "Segurança"
  ],
  "Set container environment variables": [
   null,
-  ""
+  "Definir variáveis de ambiente de contêiner"
  ],
  "Show all containers": [
   null,
-  ""
+  "Exibir todos os contêineres"
  ],
  "Show all images": [
   null,
-  ""
+  "Exibir todas as imagens"
  ],
  "Size": [
   null,
-  ""
+  "Tamanho"
  ],
  "Solid-State Disk": [
   null,
-  ""
+  "Disco de Estado Sólido"
  ],
  "Start": [
   null,
@@ -628,11 +628,11 @@ return plural;
  ],
  "State": [
   null,
-  ""
+  "Estado"
  ],
  "State:": [
   null,
-  ""
+  "Estado:"
  ],
  "Stop": [
   null,
@@ -644,11 +644,11 @@ return plural;
  ],
  "Storage": [
   null,
-  ""
+  "Armazenamento"
  ],
  "Storage pool": [
   null,
-  ""
+  "Pool de Armazenamento"
  ],
  "TCP": [
   null,
@@ -660,23 +660,31 @@ return plural;
  ],
  "Tags": [
   null,
-  ""
+  "Tags"
  ],
  "The Docker storage pool cannot be managed on this system.": [
+  null,
+  "O pool de armazenamento do Docker não pode ser gerenciado neste sistema."
+ ],
+ "The scan from $time ($type) found no vulnerabilities.": [
+  null,
+  ""
+ ],
+ "The scan from $time ($type) was not successful.": [
   null,
   ""
  ],
  "The storage pool will be reset to optimize its layout.  All containers will be erased.": [
   null,
-  ""
+  "O pool de armazenamento será redefinido para otimizar seu layout. Todos os contêineres serão apagados."
  ],
  "This image does not exist.": [
   null,
-  ""
+  "Esta imagem não existe."
  ],
  "Total": [
   null,
-  ""
+  "Total"
  ],
  "Try again": [
   null,
@@ -684,7 +692,7 @@ return plural;
  ],
  "Type to filter…": [
   null,
-  ""
+  "Tipo para filtrar..."
  ],
  "UDP": [
   null,
@@ -696,7 +704,7 @@ return plural;
  ],
  "Unless Stopped": [
   null,
-  ""
+  "Parou-se"
  ],
  "Up since $StartedAt": [
   null,
@@ -704,15 +712,15 @@ return plural;
  ],
  "Used": [
   null,
-  ""
+  "Usado"
  ],
  "Used by Containers": [
   null,
-  "Containers"
+  "Usado pelos Contêineres"
  ],
  "Volumes": [
   null,
-  ""
+  "Volumes"
  ],
  "With terminal": [
   null,
@@ -720,7 +728,7 @@ return plural;
  ],
  "You don't have permission to manage the Docker storage pool.": [
   null,
-  ""
+  "Você não tem permissão para gerenciar o Docker e pool de armazenamento."
  ],
  "alias": [
   null,
@@ -732,7 +740,7 @@ return plural;
  ],
  "key": [
   null,
-  ""
+  "chave"
  ],
  "none": [
   null,
@@ -740,19 +748,19 @@ return plural;
  ],
  "search by name, namespace or description": [
   null,
-  ""
+  "pesquisar por nome, tamanho do nome ou descrição"
  ],
  "select container": [
   null,
-  ""
+  "selecionar contêiner"
  ],
  "shares": [
   null,
-  ""
+  "compartilhamentos"
  ],
  "to host path": [
   null,
-  ""
+  "para hospedar o caminho"
  ],
  "to host port": [
   null,
@@ -760,11 +768,11 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "indefinido"
  ],
  "value": [
   null,
-  ""
+  "valor"
  ],
  "page-title\u0004Containers": [
   null,
@@ -772,6 +780,6 @@ return plural;
  ],
  "page-title\u0004Images": [
   null,
-  "Imagem"
+  "Imagens"
  ]
 }));

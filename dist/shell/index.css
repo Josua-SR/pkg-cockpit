@@ -357,7 +357,7 @@ tr.listing-ct-head + tr.listing-ct-head td {
   padding: 0px 10px 0px 10px;
 }
 tr.listing-ct-body td {
-  padding: 20px 150px;
+  padding: 20px 25px;
   font-size: 13px;
 }
 .listing-ct-empty {
@@ -1319,6 +1319,12 @@ html.index-page body {
 .credential-lock.credential-unlocked > *:last-child {
   display: block !important;
 }
+thead.credential-lock.credential-locked > *:first-child {
+  display: table-row !important;
+}
+thead.credential-lock.credential-unlocked > *:last-child {
+  display: table-row !important;
+}
 @-webkit-keyframes blink {
   0% {
     opacity: 0;
@@ -1500,6 +1506,7 @@ iframe.container-frame {
   padding-bottom: 1px;
   height: 24px;
   line-height: 24px;
+  display: inline;
 }
 table.credential-listing {
   margin-top: 0px;

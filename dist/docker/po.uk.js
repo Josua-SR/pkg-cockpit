@@ -673,6 +673,14 @@ return plural;
   null,
   "У цій системі не можна керувати резервним сховищем даних Docker."
  ],
+ "The scan from $time ($type) found no vulnerabilities.": [
+  null,
+  ""
+ ],
+ "The scan from $time ($type) was not successful.": [
+  null,
+  ""
+ ],
  "The storage pool will be reset to optimize its layout.  All containers will be erased.": [
   null,
   "Для оптимізації компонування буде відновлено початковий стан резервного сховища даних. Усі контейнери буде витерто."

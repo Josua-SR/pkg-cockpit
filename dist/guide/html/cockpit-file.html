@@ -38,6 +38,8 @@ file = cockpit.file(path,
                     { syntax: syntax_object,
                       binary: boolean,
                       max_read_size: int,
+                      superuser: string,
+                      host: string
                     })
 
 promise = file.read()
@@ -84,6 +86,9 @@ cockpit.file("/path/to/file").read()
 <p>It is not an error when the file does not exist. In this case, the
       <code class="code">done()</code> callback will be called with a <code class="code">null</code>
       value for <code class="code">content</code> and <code class="code">tag</code> is <code class="code">"-"</code>.</p>
+<p>The <code class="code">superuser</code> and <code class="code">host</code> options can be used the same way
+      as described in the <a class="link" href="cockpit-channels.html#cockpit-channels-channel" title="cockpit.channel()">cockpit.channel()</a>
+      to provide a different access level to the file.</p>
 <p>You can use the <code class="code">max_read_size</code> option to limit
       the amount of data that is read.  If the file is larger than the
       given limit, no data is read and the channel is closed with

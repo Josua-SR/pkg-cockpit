@@ -50,6 +50,9 @@ var info = {
         "playground/metrics": [
             "playground/metrics.js",
         ],
+        "playground/pkgs": [
+            "playground/pkgs.js",
+        ],
         "playground/plot": [
             "playground/plot.js",
         ],
@@ -121,6 +124,11 @@ var info = {
             "tuned/dialog.js",
         ],
 
+        "packagekit/updates": [
+            "packagekit/updates.jsx",
+            "packagekit/updates.css",
+        ],
+
         "users/users": [
             "users/local.js",
             "users/users.css",
@@ -176,7 +184,6 @@ var info = {
         "machines/manifest.json",
         "machines/vnc.html",
         "machines/vnc.css",
-        // noVNC files from machines/include are added dynamically later
 
         "networkmanager/index.html",
         "networkmanager/manifest.json",
@@ -184,10 +191,14 @@ var info = {
         "ostree/manifest.json",
         "ostree/index.html",
 
+        "packagekit/index.html",
+        "packagekit/manifest.json",
+
         "playground/hammer.gif",
         "playground/manifest.json",
         "playground/jquery-patterns.html",
         "playground/metrics.html",
+        "playground/pkgs.html",
         "playground/plot.html",
         "playground/po.js",
         "playground/react-patterns.html",
@@ -265,16 +276,6 @@ var section = process.env.ONLYDIR || null;
 
 /* A standard nodejs and webpack pattern */
 var production = process.env.NODE_ENV === 'production';
-
-/* Dynamically add noVNC dependencies to the info.files */
-var noVncIncludes = fs.readdirSync(nodedir + "/noVNC/include")
-    .filter(function (fileName) {
-        return fileName.match(/.*(js|css|ttf|woff)$/);
-    })
-    .map(function (fileName) {
-        return "machines/include/" + fileName;
-    });
-Array.prototype.push.apply(info.files, noVncIncludes);
 
 /*
  * Note that we're avoiding the use of path.join as webpack and nodejs

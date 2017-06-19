@@ -69,11 +69,11 @@ return plural;
  },
  "$0 Block Device": [
   null,
-  ""
+  "$0 Dispositivos de Bloco"
  ],
  "$0 Chunk Size": [
   null,
-  ""
+  "$0 Tamanho do Bloco"
  ],
  "$0 Disks": [
   null,
@@ -96,7 +96,7 @@ return plural;
  ],
  "$0 is in active use": [
   null,
-  ""
+  "$0 está ativo e em uso"
  ],
  "$0 minute": [
   "$0 minutes",
@@ -105,8 +105,8 @@ return plural;
  ],
  "$0 month": [
   "$0 months",
-  "",
-  ""
+  "$0 mês",
+  "$0 meses"
  ],
  "$0 of $1": [
   null,
@@ -114,17 +114,17 @@ return plural;
  ],
  "$0 week": [
   "$0 weeks",
-  "",
-  ""
+  "$0 semana",
+  "$0 semanas"
  ],
  "$0 year": [
   "$0 years",
-  "",
-  ""
+  "$0 ano",
+  "$0 anos"
  ],
  "$0, $1 free": [
   null,
-  ""
+  "$0, $1 livre"
  ],
  "$name (from $host)": [
   null,
@@ -132,95 +132,95 @@ return plural;
  ],
  "${size} ${desc}": [
   null,
-  ""
+  "${size} ${desc}"
  ],
  "(default)": [
   null,
-  ""
+  "(padrão)"
  ],
  "(none)": [
   null,
-  ""
+  "(nenhum)"
  ],
  "1 MiB": [
   null,
-  ""
+  "1 MiB"
  ],
  "1 day": [
   null,
-  ""
+  "1 dia"
  ],
  "1 hour": [
   null,
-  ""
+  "1 hora"
  ],
  "1 week": [
   null,
-  ""
+  "1 semana"
  ],
  "128 KiB": [
   null,
-  ""
+  "128 KiB"
  ],
  "16 KiB": [
   null,
-  ""
+  "16 KiB"
  ],
  "2 MiB": [
   null,
-  ""
+  "2 MiB"
  ],
  "32 KiB": [
   null,
-  ""
+  "32 KiB"
  ],
  "4 KiB": [
   null,
-  ""
+  "4 KiB"
  ],
  "5 minutes": [
   null,
-  ""
+  "5 minutos"
  ],
  "512 KiB": [
   null,
-  ""
+  "512 KiB"
  ],
  "6 hours": [
   null,
-  ""
+  "6 horas"
  ],
  "64 KiB": [
   null,
-  ""
+  "64 KiB"
  ],
  "8 KiB": [
   null,
-  ""
+  "8 KiB"
  ],
  "<span>Encrypted $0</span>": [
   null,
-  ""
+  "<span>Criptografado $0</span>"
  ],
  "<span>Encrypted Logical Volume of $0</span>": [
   null,
-  ""
+  "<span>Volume Lógico Criptografado de $0</span>"
  ],
  "<span>Encrypted Partition of $0</span>": [
   null,
-  ""
+  "<span>Partição Criptografada de $0</span>"
  ],
  "<span>Logical Volume of $0</span>": [
   null,
-  ""
+  "<span>Volume Lógico de $0</span>"
  ],
  "<span>Partition of $0</span>": [
   null,
-  ""
+  "<span>Partição de $0</span>"
  ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
-  ""
+  "Um disco de reposição precisa ser adicionado primeiro antes que este disco possa ser removido."
  ],
  "Activate": [
   null,
@@ -228,7 +228,7 @@ return plural;
  ],
  "Activating $target": [
   null,
-  ""
+  "Ativando $target"
  ],
  "Add": [
   null,
@@ -236,15 +236,15 @@ return plural;
  ],
  "Add Disks": [
   null,
-  ""
+  "Adicionar Discos"
  ],
  "Add iSCSI Portal": [
   null,
-  ""
+  "Adicionar Portal iSCSI"
  ],
  "Adding physical volume to $target": [
   null,
-  ""
+  "Adicionando volume físico a $target"
  ],
  "Address": [
   null,
@@ -252,23 +252,23 @@ return plural;
  ],
  "Apply": [
   null,
-  ""
+  "Aplicar"
  ],
  "At least $0 disks are needed.": [
   null,
-  ""
+  "Pelo menos $0 discos são necessários."
  ],
  "At least one disk is needed.": [
   null,
-  ""
+  "Pelo menos um disco é necessário."
  ],
  "Authentication required": [
   null,
-  ""
+  "Autenticação requerida"
  ],
  "Available targets on $0": [
   null,
-  ""
+  "Alvos disponíveis em $0"
  ],
  "Block Device": [
   null,
@@ -276,7 +276,7 @@ return plural;
  ],
  "Block device for filesystems": [
   null,
-  ""
+  "Dispositivo de bloqueio para sistemas de arquivos"
  ],
  "Blocked": [
   null,
@@ -284,7 +284,7 @@ return plural;
  ],
  "Can't delete while unlocked": [
   null,
-  ""
+  "Não é possível excluir enquanto desbloqueado"
  ],
  "Cancel": [
   null,
@@ -292,19 +292,19 @@ return plural;
  ],
  "Change": [
   null,
-  ""
+  "Alterar"
  ],
  "Change iSCSI Initiator Name": [
   null,
-  ""
+  "Alterar Nome do Iniciador iSCSI"
  ],
  "Checking RAID Device $target": [
   null,
-  ""
+  "Checando Dispositivo RAID $target"
  ],
  "Checking and Repairing RAID Device $target": [
   null,
-  ""
+  "Checando e Reparando o Dispositivo RAID $target"
  ],
  "Chunk Size": [
   null,
@@ -312,7 +312,7 @@ return plural;
  ],
  "Cleaning up for $target": [
   null,
-  ""
+  "Limpando $target"
  ],
  "Close": [
   null,
@@ -320,15 +320,15 @@ return plural;
  ],
  "Compatible with all systems and devices (MBR)": [
   null,
-  ""
+  "Compatível com todos os sistemas e dispositivos (MBR)"
  ],
  "Compatible with modern system and hard disks > 2TB (GPT)": [
   null,
-  ""
+  "Compatível com sistema moderno e discos rígidos > 2TB (GPT)"
  ],
  "Confirm passphrase": [
   null,
-  ""
+  "Confirmar senha"
  ],
  "Content": [
   null,
@@ -336,11 +336,11 @@ return plural;
  ],
  "Create": [
   null,
-  ""
+  "Criar"
  ],
  "Create Logical Volume": [
   null,
-  ""
+  "Criar Volume Lógico"
  ],
  "Create Partition": [
   null,
@@ -364,7 +364,7 @@ return plural;
  ],
  "Create new Logical Volume": [
   null,
-  ""
+  "Criar novo Volume Lógico"
  ],
  "Create partition": [
   null,
@@ -372,15 +372,15 @@ return plural;
  ],
  "Create partition on $0": [
   null,
-  ""
+  "Criar partição em $0"
  ],
  "Create partition table": [
   null,
-  ""
+  "Criar tabela de partições"
  ],
  "Creating RAID Device $target": [
   null,
-  ""
+  "Criando Dispositivo RAID $target"
  ],
  "Creating filesystem on $target": [
   null,
@@ -388,19 +388,19 @@ return plural;
  ],
  "Creating logical volume $target": [
   null,
-  ""
+  "Criando volume lógico $target"
  ],
  "Creating partition $target": [
   null,
-  ""
+  "Criando partição $target"
  ],
  "Creating snapshot of $target": [
   null,
-  ""
+  "Criando snapshot de $target"
  ],
  "Creating volume group $target": [
   null,
-  ""
+  "Criando grupo de volume $target"
  ],
  "Custom": [
   null,
@@ -408,15 +408,15 @@ return plural;
  ],
  "Custom (Enter filesystem type)": [
   null,
-  ""
+  "Customizado (Digite tipo de sistema de arquivos)"
  ],
  "DISK IS FAILING": [
   null,
-  ""
+  "O DISCO ESTÁ FALHANDO"
  ],
  "Data Used": [
   null,
-  ""
+  "Dados Usados"
  ],
  "Deactivate": [
   null,
@@ -424,7 +424,7 @@ return plural;
  ],
  "Deactivating $target": [
   null,
-  ""
+  "Desativando $target"
  ],
  "Default": [
   null,
@@ -436,15 +436,15 @@ return plural;
  ],
  "Deleting $target": [
   null,
-  ""
+  "Deletando $0"
  ],
  "Deleting a RAID device will erase all data on it.": [
   null,
-  ""
+  "A exclusão de um dispositivo RAID apagará todos os dados nele."
  ],
  "Deleting a logical volume will delete all data in it.": [
   null,
-  ""
+  "Excluindo um volume lógico irá excluir todos os dados nele."
  ],
  "Deleting a partition will delete all data in it.": [
   null,
@@ -456,15 +456,15 @@ return plural;
  ],
  "Deleting volume group $target": [
   null,
-  ""
+  "Excluindo grupo de volume $target"
  ],
  "Device is read-only": [
   null,
-  ""
+  "Dispositivo é somente leitura"
  ],
  "Disk is OK": [
   null,
-  ""
+  "O Disco está OK"
  ],
  "Disks": [
   null,
@@ -472,7 +472,7 @@ return plural;
  ],
  "Don't overwrite existing data": [
   null,
-  ""
+  "Não sobrescrever dados existentes"
  ],
  "Drive": [
   null,
@@ -484,11 +484,11 @@ return plural;
  ],
  "Edit": [
   null,
-  ""
+  "Editar"
  ],
  "Ejecting $target": [
   null,
-  ""
+  "Ejetando $target"
  ],
  "Emptying $target": [
   null,
@@ -496,7 +496,7 @@ return plural;
  ],
  "Encrypted $0": [
   null,
-  ""
+  "Encriptado"
  ],
  "Encrypted EXT4 (LUKS)": [
   null,
@@ -504,11 +504,11 @@ return plural;
  ],
  "Encrypted Logical Volume of $0": [
   null,
-  ""
+  "Volume Lógico Criptografado de $0"
  ],
  "Encrypted Partition of $0": [
   null,
-  ""
+  "Partição Criptografada de $0"
  ],
  "Encrypted XFS (LUKS)": [
   null,
@@ -516,7 +516,7 @@ return plural;
  ],
  "Encryption": [
   null,
-  ""
+  "Encriptação"
  ],
  "Encryption Options": [
   null,
@@ -548,15 +548,15 @@ return plural;
  ],
  "Filesystem Mounting": [
   null,
-  ""
+  "Montagem do Sistema de Arquivos"
  ],
  "Filesystem Name": [
   null,
-  ""
+  "Nome do Sistema de Arquivos"
  ],
  "Filesystem type": [
   null,
-  ""
+  "Tipo do Sistema de Arquivos"
  ],
  "Filesystems": [
   null,
@@ -584,15 +584,15 @@ return plural;
  ],
  "Free": [
   null,
-  ""
+  "Livre"
  ],
  "Free Space": [
   null,
-  ""
+  "Espaço Livre"
  ],
  "Go to now": [
   null,
-  ""
+  "Ir para agora"
  ],
  "In Sync": [
   null,
@@ -600,15 +600,15 @@ return plural;
  ],
  "Inactive volume": [
   null,
-  ""
+  "Volume inativo"
  ],
  "Invalid username or password": [
   null,
-  ""
+  "Nome de usuário ou senha inválidos"
  ],
  "Jobs": [
   null,
-  ""
+  "Trabalhos"
  ],
  "Lock": [
   null,
@@ -616,7 +616,7 @@ return plural;
  ],
  "Locking $target": [
   null,
-  ""
+  "Bloqueando $target"
  ],
  "Logical Volume": [
   null,
@@ -628,27 +628,27 @@ return plural;
  ],
  "Logical Volume of $0": [
   null,
-  ""
+  "Volume Lógico de $0"
  ],
  "Marking $target as faulty": [
   null,
-  ""
+  "Marcando $target como defeituoso"
  ],
  "Member of RAID Device": [
   null,
-  ""
+  "Membro do Dispositivo RAID"
  ],
  "Member of RAID Device $0": [
   null,
-  ""
+  "Membro do Dispositivo RAID $0"
  ],
  "Metadata Used": [
   null,
-  ""
+  "Metadados Usados"
  ],
  "Modifying $target": [
   null,
-  ""
+  "Modificando $target"
  ],
  "Mount": [
   null,
@@ -664,19 +664,19 @@ return plural;
  ],
  "Mounted At": [
   null,
-  ""
+  "Montado Em"
  ],
  "Mounting": [
   null,
-  ""
+  "Montando"
  ],
  "Mounting $target": [
   null,
-  ""
+  "Montando $target"
  ],
  "NTFS - Compatible with most systems": [
   null,
-  ""
+  "NTFS - Compatível com a maioria dos sistemas"
  ],
  "Name": [
   null,
@@ -684,15 +684,15 @@ return plural;
  ],
  "Name cannot be empty.": [
   null,
-  ""
+  "O nome não pode estar vazio."
  ],
  "Name cannot be longer than 127 characters.": [
   null,
-  ""
+  "O nome não pode ser maior do que 127 caracteres."
  ],
  "Name cannot contain the character '$0'.": [
   null,
-  ""
+  "O nome não pode conter o caractere '$0'."
  ],
  "Name cannot contain whitespace.": [
   null,
@@ -708,39 +708,39 @@ return plural;
  ],
  "No Logical Volumes": [
   null,
-  ""
+  "Nenhum Volume Lógico"
  ],
  "No disks are available.": [
   null,
-  ""
+  "Sem discos disponíveis."
  ],
  "No drives attached": [
   null,
-  ""
+  "Não há unidades anexadas"
  ],
  "No free space": [
   null,
-  ""
+  "Não há espaço livre"
  ],
  "No iSCSI targets set up": [
   null,
-  ""
+  "Nenhum destino iSCSI configurado"
  ],
  "No media inserted": [
   null,
-  ""
+  "Nenhuma mídia inserida"
  ],
  "No partitioning": [
   null,
-  ""
+  "Sem particionamento"
  ],
  "No storage set up as RAID": [
   null,
-  ""
+  "Nenhum armazenamento configurado como RAID"
  ],
  "No volume groups created": [
   null,
-  ""
+  "Nenhum grupo de volume criado"
  ],
  "Not found": [
   null,
@@ -760,7 +760,7 @@ return plural;
  ],
  "Operation '$operation' on $target": [
   null,
-  ""
+  "Operação '$operation' em $target"
  ],
  "Options": [
   null,
@@ -772,7 +772,7 @@ return plural;
  ],
  "Overwrite existing data with zeros": [
   null,
-  ""
+  "Sobrescrever dados existentes com zeros"
  ],
  "Partition": [
   null,
@@ -780,7 +780,7 @@ return plural;
  ],
  "Partition of $0": [
   null,
-  ""
+  "Partição de $0"
  ],
  "Partitioning": [
   null,
@@ -792,11 +792,11 @@ return plural;
  ],
  "Passphrase cannot be empty": [
   null,
-  ""
+  "A senha não pode estar vazia"
  ],
  "Passphrases do not match": [
   null,
-  ""
+  "As senhas não correspondem"
  ],
  "Password": [
   null,
@@ -804,7 +804,7 @@ return plural;
  ],
  "Physical Volume": [
   null,
-  ""
+  "Volume Físico"
  ],
  "Physical Volumes": [
   null,
@@ -812,7 +812,7 @@ return plural;
  ],
  "Physical volume of $0": [
   null,
-  ""
+  "Volume físico de $0"
  ],
  "Please confirm deletion of $0": [
   null,
@@ -820,7 +820,7 @@ return plural;
  ],
  "Pool": [
   null,
-  ""
+  "Pool"
  ],
  "Pool for Thin Logical Volumes": [
   null,
@@ -828,23 +828,23 @@ return plural;
  ],
  "Pool for Thin Volumes": [
   null,
-  ""
+  "Pool para Volumes Finos"
  ],
  "Pool for thinly provisioned volumes": [
   null,
-  ""
+  "Pool para volumes finamente provisionados"
  ],
  "Port": [
   null,
-  ""
+  "Porta"
  ],
  "Purpose": [
   null,
-  ""
+  "Propósito"
  ],
  "RAID ($0)": [
   null,
-  ""
+  "RAID ($0)"
  ],
  "RAID 0": [
   null,
@@ -900,11 +900,11 @@ return plural;
  ],
  "RAID Device $0": [
   null,
-  ""
+  "Dispositivo RAID $0"
  ],
  "RAID Devices": [
   null,
-  ""
+  "Dispositivos RAID"
  ],
  "RAID Level": [
   null,
@@ -912,11 +912,11 @@ return plural;
  ],
  "RAID Member": [
   null,
-  ""
+  "Membro RAID"
  ],
  "Reading": [
   null,
-  ""
+  "Lendo"
  ],
  "Reboot": [
   null,
@@ -928,15 +928,15 @@ return plural;
  ],
  "Recovering RAID Device $target": [
   null,
-  ""
+  "Recuperando Dispositivo RAID $target"
  ],
  "Removing $target from RAID Device": [
   null,
-  ""
+  "Removendo $target de Dispositivo RAID"
  ],
  "Removing physical volume from $target": [
   null,
-  ""
+  "Removendo volume físico de $target"
  ],
  "Rename": [
   null,
@@ -944,15 +944,15 @@ return plural;
  ],
  "Rename Logical Volume": [
   null,
-  ""
+  "Renomear Volume Lógico"
  ],
  "Rename Volume Group": [
   null,
-  ""
+  "Renomear Grupo de Volume"
  ],
  "Renaming $target": [
   null,
-  ""
+  "Renomeando $target"
  ],
  "Resize": [
   null,
@@ -960,15 +960,15 @@ return plural;
  ],
  "Resize Filesystem": [
   null,
-  ""
+  "Redimensionar Sistema de Arquivos"
  ],
  "Resize Logical Volume": [
   null,
-  ""
+  "Redimensionar Volume Lógico"
  ],
  "Resizing $target": [
   null,
-  ""
+  "Redimensionando $target"
  ],
  "Running": [
   null,
@@ -976,47 +976,47 @@ return plural;
  ],
  "SMART self-test of $target": [
   null,
-  ""
+  "SMART auto-teste de $target"
  ],
  "Securely erasing $target": [
   null,
-  ""
+  "Apagando com segurança $target"
  ],
  "Server Address": [
   null,
-  ""
+  "Endereço do Servidor"
  ],
  "Server address cannot be empty.": [
   null,
-  ""
+  "O endereço do servidor não pode estar vazio."
  ],
  "Setting up loop device $target": [
   null,
-  ""
+  "Configurando o dispositivo de loop $target"
  ],
  "Size": [
   null,
-  ""
+  "Tamanho"
  ],
  "Size cannot be negative": [
   null,
-  ""
+  "O tamanho não pode ser negativo"
  ],
  "Size cannot be zero": [
   null,
-  ""
+  "O tamanho não pode ser zero"
  ],
  "Size is too large": [
   null,
-  ""
+  "O tamanho é muito extenso"
  ],
  "Size must be a number": [
   null,
-  ""
+  "O tamanho deve ser um número"
  ],
  "Spare": [
   null,
-  "Disponível"
+  "Reposição"
  ],
  "Start": [
   null,
@@ -1024,7 +1024,7 @@ return plural;
  ],
  "Start Multipath": [
   null,
-  ""
+  "Iniciar Multipath"
  ],
  "Start Scrubbing": [
   null,
@@ -1032,11 +1032,11 @@ return plural;
  ],
  "Starting RAID Device $target": [
   null,
-  ""
+  "Iniciando o Dispositivo RAID $target"
  ],
  "Starting swapspace $target": [
   null,
-  ""
+  "Iniciando swapspace $target"
  ],
  "Stop": [
   null,
@@ -1048,15 +1048,15 @@ return plural;
  ],
  "Stopping RAID Device $target": [
   null,
-  ""
+  "Parando o Dispositivo RAID $target"
  ],
  "Stopping swapspace $target": [
   null,
-  ""
+  "Parando swapspace $target"
  ],
  "Storage": [
   null,
-  ""
+  "Armazenamento"
  ],
  "Storage Log": [
   null,
@@ -1064,11 +1064,11 @@ return plural;
  ],
  "Storage Logs": [
   null,
-  ""
+  "Logs de Armazenamento"
  ],
  "Store passphrase": [
   null,
-  ""
+  "Armazene a senha"
  ],
  "Stored Passphrase": [
   null,
@@ -1076,15 +1076,15 @@ return plural;
  ],
  "Stored passphrase": [
   null,
-  ""
+  "Senha armazenada"
  ],
  "Swap": [
   null,
-  ""
+  "Swap"
  ],
  "Synchronizing RAID Device $target": [
   null,
-  ""
+  "Sincronizando Dispositivo RAID $target"
  ],
  "Targets": [
   null,
@@ -1092,27 +1092,27 @@ return plural;
  ],
  "The \"storaged\" API is not available on this system.": [
   null,
-  ""
+  "A API \"armazenada\" não está disponível neste sistema."
  ],
  "The RAID Array is in a degraded state": [
   null,
-  ""
+  "A matriz RAID está em um estado degradado"
  ],
  "The RAID device must be running in order to add spare disks.": [
   null,
-  ""
+  "O dispositivo RAID deve estar em execução para adicionar discos sobressalentes."
  ],
  "The RAID device must be running in order to remove disks.": [
   null,
-  ""
+  "O dispositivo RAID deve estar em execução para remover discos."
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
-  ""
+  "O último disco de um dispositivo RAID não pode ser removido."
  ],
  "The last physical volume of a volume group cannot be removed.": [
   null,
-  ""
+  "O último volume físico de um grupo de volumes não pode ser removido."
  ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
@@ -1120,11 +1120,11 @@ return plural;
  ],
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
   null,
-  ""
+  "Há dispositivos com vários caminhos no sistema, mas o serviço de multicaminho não está sendo executado."
  ],
  "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
   null,
-  ""
+  "Não há espaço livre suficiente em outro lugar para remover este volume físico. Pelo menos mais $0 de espaço livre é necessário."
  ],
  "Thin Logical Volume": [
   null,
@@ -1132,31 +1132,31 @@ return plural;
  ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
-  ""
+  "Não há sistemas de arquivos que você possa montar ou desmontar.\nContate seu administrador de sistemas."
  ],
  "This device is currently used for RAID devices.": [
   null,
-  ""
+  "Este dispositivo é atualmente usado por dispositivos RAID."
  ],
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
   null,
-  ""
+  "Este dispositivo é usado atualmente para dispositivos RAID.                Proceder o removerá dos seus dispositivos RAID."
  ],
  "This device is currently used for volume groups.": [
   null,
-  ""
+  "Este dispositivo é usado atualmente para grupos de volumes."
  ],
  "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
   null,
-  ""
+  "Este dispositivo é usado atualmente para grupos de volumes.                Proceder irá removê-lo dos seus grupos de volumes."
  ],
  "This disk cannot be removed while the device is recovering.": [
   null,
-  ""
+  "Este disco não pode ser removido enquanto o dispositivo está se recuperando."
  ],
  "This logical volume cannot be made smaller.": [
   null,
-  ""
+  "Este volume lógico não pode ser reduzido."
  ],
  "Type": [
   null,
@@ -1164,11 +1164,11 @@ return plural;
  ],
  "UUID": [
   null,
-  ""
+  "UUID"
  ],
  "Unable to reach server": [
   null,
-  ""
+  "Não é possível acessar o servidor"
  ],
  "Unknown": [
   null,
@@ -1180,7 +1180,7 @@ return plural;
  ],
  "Unknown host name": [
   null,
-  ""
+  "Nome de host desconhecido"
  ],
  "Unlock": [
   null,
@@ -1188,7 +1188,7 @@ return plural;
  ],
  "Unlocking $target": [
   null,
-  ""
+  "Desbloqueando $target"
  ],
  "Unmount": [
   null,
@@ -1196,39 +1196,39 @@ return plural;
  ],
  "Unmounting $target": [
   null,
-  ""
+  "Desmontando $target"
  ],
  "Unrecognized Data": [
   null,
-  ""
+  "Dados não reconhecidos"
  ],
  "Unsupported volume": [
   null,
-  ""
+  "Volume não suportado"
  ],
  "Usage": [
   null,
-  ""
+  "Uso"
  ],
  "Used": [
   null,
-  ""
+  "Usado"
  ],
  "Username": [
   null,
-  ""
+  "Nome de Usuário"
  ],
  "VFAT - Compatible with all systems and devices": [
   null,
-  ""
+  "VFAT - Compatível com todos os sistemas e dispositivos"
  ],
  "Very securely erasing $target": [
   null,
-  ""
+  "Apagando com muita segurança $target"
  ],
  "Volume": [
   null,
-  ""
+  "Volume"
  ],
  "Volume Group": [
   null,
@@ -1236,11 +1236,11 @@ return plural;
  ],
  "Volume Group $0": [
   null,
-  ""
+  "Grupo do Volume $0"
  ],
  "Volume Groups": [
   null,
-  ""
+  "Grupos do Volume"
  ],
  "Write-mostly": [
   null,
@@ -1248,39 +1248,39 @@ return plural;
  ],
  "Writing": [
   null,
-  ""
+  "Escrevendo"
  ],
  "XFS - Red Hat Enterprise Linux 7 default": [
   null,
-  ""
+  "XFS - Red Hat Enterprise Linux 7 padrão"
  ],
  "[$0 bytes of binary data]": [
   null,
-  ""
+  "[$0 bytes de data bynária]"
  ],
  "[binary data]": [
   null,
-  ""
+  "[dados binários]"
  ],
  "[no data]": [
   null,
-  ""
+  "[sem dados]"
  ],
  "ext4 - Red Hat Enterprise Linux 6 default": [
   null,
-  ""
+  "ext4 - Red Hat Enterprise Linux 6 padrão"
  ],
  "iSCSI Targets": [
   null,
-  ""
+  "Alvos iSCSI"
  ],
  "unknown target": [
   null,
-  ""
+  "alvo desconhecido"
  ],
  "unpartitioned space on $0": [
   null,
-  ""
+  "espaço não particionado em $0"
  ],
  "storage-id-desc\u0004$0 File System": [
   null,
@@ -1288,7 +1288,7 @@ return plural;
  ],
  "storage-id-desc\u0004Encrypted data": [
   null,
-  ""
+  "Dados encriptados"
  ],
  "storage-id-desc\u0004Other Data": [
   null,
@@ -1340,7 +1340,7 @@ return plural;
  ],
  "storage\u0004Multipathed Devices": [
   null,
-  ""
+  "Dispositivos Multipath"
  ],
  "storage\u0004Optical Drive": [
   null,

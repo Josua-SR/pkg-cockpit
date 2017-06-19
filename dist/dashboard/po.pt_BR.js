@@ -84,42 +84,42 @@ return plural;
  ],
  "$0 month": [
   "$0 months",
-  "",
-  ""
+  "$0 mês",
+  "$0 meses"
  ],
  "$0 week": [
   "$0 weeks",
-  "",
-  ""
+  "$0 semana",
+  "$0 semanas"
  ],
  "$0 year": [
   "$0 years",
-  "",
-  ""
+  "$0 ano",
+  "$0 anos"
  ],
  "1 day": [
   null,
-  ""
+  "1 dia"
  ],
  "1 hour": [
   null,
-  ""
+  "1 hora"
  ],
  "1 week": [
   null,
-  ""
+  "1 semana"
  ],
  "5 minutes": [
   null,
-  ""
+  "5 minutos"
  ],
  "6 hours": [
   null,
-  ""
+  "6 horas"
  ],
  "A compatible version of Cockpit is not installed on {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "Uma versão compatível do Cockpit não está instalada em {{#strong}}{{host}}{{/strong}}."
  ],
  "Add": [
   null,
@@ -127,7 +127,7 @@ return plural;
  ],
  "Add Machine to Dashboard": [
   null,
-  ""
+  "Adicionar Máquina ao Painel"
  ],
  "Address": [
   null,
@@ -135,23 +135,23 @@ return plural;
  ],
  "Authentication": [
   null,
-  ""
+  "Autenticação"
  ],
  "Authentication Failed": [
   null,
-  ""
+  "Falha na Autenticação"
  ],
  "Available": [
   null,
-  ""
+  "Disponível"
  ],
  "Avatar": [
   null,
-  ""
+  "Avatar"
  ],
  "CPU": [
   null,
-  ""
+  "CPU"
  ],
  "Cancel": [
   null,
@@ -159,7 +159,7 @@ return plural;
  ],
  "Checking for public keys": [
   null,
-  ""
+  "Checando chaves públicas"
  ],
  "Close": [
   null,
@@ -171,55 +171,55 @@ return plural;
  ],
  "Cockpit is not installed": [
   null,
-  ""
+  "Cockpit não está instalado"
  ],
  "Cockpit was unable to contact {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "O Cockpit não foi capaz de entrar em contato {{#strong}}{{host}}{{/strong}}."
  ],
  "Cockpit was unable to log in to {{#strong}}{{host}}{{/strong}}. {{#can_sync}}You may want to try to {{#sync_link}}synchronize users{{/sync_link}}.{{/can_sync}} For more authentication options and troubleshooting support please upgrade cockpit-ws to a newer version.": [
   null,
-  ""
+  "O Cockpit não pôde fazer login no {{#strong}}{{host}}{{/strong}}. {{#can_sync}}Talvez você queira tentar {{#sync_link}}sincronizar usuários{{/sync_link}}.{{/can_sync}} Para obter mais opções de autenticação e suporte a solução de problemas, atualize o cockpit-ws para uma versão mais recente."
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "O Cockpit não foi capaz de efetuar log in em {{#strong}}{{host}}{{/strong}}."
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. To use this machine with cockpit you will need to enable one of the following authentication methods in the sshd config on {{#strong}}{{host}}{{/strong}}:": [
   null,
-  ""
+  "O Cockpit não pôde efetuar login em {{#strong}}{{host}}{{/strong}}. Para usar esta máquina com Cockpit você precisará habilitar um dos seguintes métodos de autenticação no sshd config em {{#strong}}{{host}}{{/strong}}:"
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. You can change your authentication credentials below. {{#can_sync}}You may prefer to {{#sync_link}}synchronize accounts and passwords{{/sync_link}}.{{/can_sync}}": [
   null,
-  ""
+  "O Cockpit não pôde efetuar login em {{#strong}}{{host}}{{/strong}}. Você pode alterar as credenciais de autenticação abaixo. {{#can_sync}}Você pode preferir {{#sync_link}} sincronizar contas e senhas{{/sync_link}}.{{/can_sync}}"
  ],
  "Color": [
   null,
-  ""
+  "Cor"
  ],
  "Connect": [
   null,
-  ""
+  "Conectar"
  ],
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
-  ""
+  "Conectando simultaneamente a mais de {{ limit }} as máquinas não são suportadas."
  ],
  "Could not contact {{host}}": [
   null,
-  ""
+  "Não foi possível contatar {{host}}"
  ],
  "Dashboard": [
   null,
-  ""
+  "Painel"
  ],
  "Disk I/O": [
   null,
-  ""
+  "Entrada e Saida de disco"
  ],
  "Edit Server": [
   null,
-  ""
+  "Editar Servidor"
  ],
  "Enter IP address or host name": [
   null,
@@ -227,11 +227,11 @@ return plural;
  ],
  "Entering a different password here means you will need to retype it every time you reconnect to this machine": [
   null,
-  ""
+  "Introduzir uma senha diferente aqui significa que você precisará digitá-la cada vez que você se reconecta a esta máquina"
  ],
  "Error loading users: {{perm_failed}}": [
   null,
-  ""
+  "Erro ao carregar usuários: {{perm_failed}}"
  ],
  "Failed to add machine: $0": [
   null,
@@ -247,23 +247,23 @@ return plural;
  ],
  "Fingerprint": [
   null,
-  ""
+  "Digital"
  ],
  "Go to now": [
   null,
-  ""
+  "Ir para agora"
  ],
  "Host Name": [
   null,
-  ""
+  "Nome do host"
  ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "Para sincronizar os usuários, você precisa fazer login em {{#strong}}{{host}}{{/strong}}."
  ],
  "Incorrect Host Key": [
   null,
-  ""
+  "Chave de Host Incorreta"
  ],
  "Invalid file permissions": [
   null,
@@ -271,35 +271,35 @@ return plural;
  ],
  "Is sshd running on a different port?": [
   null,
-  ""
+  "O sshd está sendo executado em uma porta diferente?"
  ],
  "Kerberos Based SSO": [
   null,
-  ""
+  "Baseado no Kerberos SSO"
  ],
  "Kerberos Ticket": [
   null,
-  ""
+  "Tíquete Kerberos"
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
-  ""
+  "Deixe em branco para se conectar a esta máquina como o usuário conectado no momento. Se você digitar um nome de usuário diferente, esse usuário sempre será usado ao se conectar a esta máquina."
  ],
  "Leave blank to connect to this machine as the currently logged in user{{#user}} ({{user}}){{/user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
-  ""
+  "Deixe em branco para se conectar a esta máquina como o usuário conectado no momento{{#user}} ({{user}}){{/user}}. Se você digitar um nome de usuário diferente, esse usuário sempre será usado para conectar-se a esta máquina."
  ],
  "Log In": [
   null,
-  ""
+  "Entrar"
  ],
  "Log in to {{host}}": [
   null,
-  ""
+  "Logar em {{host}}"
  ],
  "Login Password": [
   null,
-  ""
+  "Senha de Login"
  ],
  "Lost connection. Trying to reconnect": [
   null,
@@ -307,11 +307,11 @@ return plural;
  ],
  "Memory": [
   null,
-  ""
+  "Memória"
  ],
  "Network": [
   null,
-  ""
+  "Rede"
  ],
  "New password was not accepted": [
   null,
@@ -331,7 +331,7 @@ return plural;
  ],
  "Old password not accepted": [
   null,
-  "Senha antida não aceita"
+  "Senha antiga não aceita"
  ],
  "On": [
   null,
@@ -347,39 +347,39 @@ return plural;
  ],
  "Port": [
   null,
-  ""
+  "Porta"
  ],
  "Prompting via ssh-add timed out": [
   null,
-  ""
+  "A solicitação via ssh-add expirou"
  ],
  "Prompting via ssh-keygen timed out": [
   null,
-  "tempo excedido na tentativa via chave ssh"
+  "Solicitação via ssh-keygen expirou"
  ],
  "Public Key": [
   null,
-  ""
+  "Chave Pública"
  ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
-  ""
+  "Selecione os usuários que você gostaria de ser sincronizado com {{#strong}}{{host}}{{/strong}}"
  ],
  "Servers": [
   null,
-  ""
+  "Servidores"
  ],
  "Set": [
   null,
-  ""
+  "Definir"
  ],
  "Synchronize": [
   null,
-  ""
+  "Sincronizar"
  ],
  "Synchronize users": [
   null,
-  ""
+  "Sincronizar usuários"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -387,11 +387,11 @@ return plural;
  ],
  "The authenticity of host {{#strong}}{{host}}{{/strong}} can't be established. Are you sure you want to continue connecting?": [
   null,
-  ""
+  "A autenticidade do host {{#strong}}{{host}}{{/strong}} não pode ser estabelecida. Tem certeza de que deseja continuar conectando?"
  ],
  "The key of {{#strong}}{{host}}{{/strong}} does not match the key previously in use. Unless this machine was recently replaced, it is likely that someone is trying to attack your connection to this machine.": [
   null,
-  ""
+  "A chave de {{#strong}}{{host}}{{/strong}} não corresponde à chave anteriormente em uso. A menos que esta máquina foi recentemente substituída, é provável que alguém está tentando atacar a sua conexão com esta máquina."
  ],
  "The passwords do not match.": [
   null,
@@ -411,35 +411,35 @@ return plural;
  ],
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
   null,
-  ""
+  "Para tentar uma porta diferente, você precisará atualizar o cockpit-ws para uma versão mais recente."
  ],
  "Type a password": [
   null,
-  ""
+  "Digite uma senha"
  ],
  "Unknown Host Key": [
   null,
-  ""
+  "Chave de Host Desconhecida"
  ],
  "Update": [
   null,
-  ""
+  "Atualizar"
  ],
  "User": [
   null,
-  ""
+  "Usuário"
  ],
  "User name": [
   null,
-  ""
+  "Nome de usuário"
  ],
  "Using available credentials": [
   null,
-  ""
+  "Usando credenciais disponíveis"
  ],
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
-  ""
+  "Você está conectado a {{#strong}}{{host}}{{/strong}}, no entanto, para sincronizar os usuários, é necessário um usuário com privilégios de superusuário."
  ],
  "You are currently connected directly to this server. You cannot delete it.": [
   null,
@@ -447,6 +447,6 @@ return plural;
  ],
  "You can remove the previously stored key by running the following command": [
   null,
-  ""
+  "Você pode remover a chave previamente armazenada executando o seguinte comando"
  ]
 }));

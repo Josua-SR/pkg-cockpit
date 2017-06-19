@@ -117,7 +117,7 @@ href = location.encode(path, [options])
 <div class="refsection">
 <a name="cockpit-location-changed"></a><h3>cockpit.onlocationchanged</h3>
 <pre class="programlisting">
-$(cockpit).on("locationchanged", function() { ... })
+cockpit.addEventListener("locationchanged", function() { ... })
 </pre>
 <p>An event emitted when over the <code class="code">cockpit.location</code> changes. Typically a
         component reacts to this event by updating its interface to reflect the new

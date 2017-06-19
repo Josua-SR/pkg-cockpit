@@ -89,18 +89,18 @@ return plural;
  ],
  "$0 month": [
   "$0 months",
-  "",
-  ""
+  "$0 mês",
+  "$0 meses"
  ],
  "$0 week": [
   "$0 weeks",
-  "",
-  ""
+  "$0 semana",
+  "$0 semanas"
  ],
  "$0 year": [
   "$0 years",
-  "",
-  ""
+  "$0 ano",
+  "$0 anos"
  ],
  "Cancel": [
   null,
@@ -108,11 +108,11 @@ return plural;
  ],
  "Control": [
   null,
-  ""
+  "Controle"
  ],
  "Delete '{{ name }}'": [
   null,
-  ""
+  "Deletar '{{ name }}'"
  ],
  "Empty": [
   null,
@@ -124,11 +124,11 @@ return plural;
  ],
  "Memory": [
   null,
-  ""
+  "Memória"
  ],
  "Network": [
   null,
-  ""
+  "Rede"
  ],
  "Not Ready": [
   null,
@@ -140,7 +140,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "Ok"
  ],
  "On": [
   null,
@@ -152,15 +152,15 @@ return plural;
  ],
  "Unavailable": [
   null,
-  ""
+  "Indisponível"
  ],
  "User": [
   null,
-  ""
+  "Usuário"
  ],
  "undefined": [
   null,
-  ""
+  "indefinido"
  ],
  "disk-non-rotational\u0004$0 disk is missing": [
   "$0 disks are missing",
@@ -169,14 +169,14 @@ return plural;
  ],
  "key\u0004Control": [
   null,
-  ""
+  "Controle"
  ],
  "verb\u0004Empty": [
   null,
-  ""
+  "Vazio"
  ],
  "verb\u0004Ready": [
   null,
-  ""
+  "Pronto"
  ]
 }));

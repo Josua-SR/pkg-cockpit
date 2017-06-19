@@ -67,6 +67,14 @@ return plural;
   "language": "fi",
   "x-generator": "Zanata 3.9.6"
  },
+ "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
+  null,
+  ""
+ ],
+ "Address:": [
+  null,
+  ""
+ ],
  "Autostart:": [
   null,
   "Autostart:"
@@ -91,9 +99,29 @@ return plural;
   null,
   "Koko"
  ],
+ "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
+  null,
+  ""
+ ],
+ "Connect with Remote Viewer": [
+  null,
+  ""
+ ],
+ "Connect with any $0 viewer application.": [
+  null,
+  ""
+ ],
+ "Connect with any SPICE or VNC viewer application.": [
+  null,
+  ""
+ ],
  "Connection": [
   null,
   "Yhteys"
+ ],
+ "Console": [
+  null,
+  ""
  ],
  "Count:": [
   null,
@@ -106,6 +134,10 @@ return plural;
  "Disks": [
   null,
   "Levyt"
+ ],
+ "Download the MSI from $0": [
+  null,
+  ""
  ],
  "Emulated Machine:": [
   null,
@@ -131,7 +163,19 @@ return plural;
   null,
   "Kone"
  ],
+ "Launch Remote Viewer": [
+  null,
+  ""
+ ],
+ "Manual Connection": [
+  null,
+  ""
+ ],
  "Memory:": [
+  null,
+  ""
+ ],
+ "More Information": [
   null,
   ""
  ],
@@ -151,7 +195,15 @@ return plural;
   null,
   ""
  ],
+ "No graphics console is defined for this virtual machine.": [
+  null,
+  ""
+ ],
  "Overview": [
+  null,
+  ""
+ ],
+ "Please start the virtual machine to access its graphics console.": [
   null,
   ""
  ],
@@ -179,6 +231,22 @@ return plural;
   null,
   ""
  ],
+ "SPICE": [
+  null,
+  ""
+ ],
+ "SPICE Address:": [
+  null,
+  ""
+ ],
+ "SPICE Port:": [
+  null,
+  ""
+ ],
+ "SPICE TLS Port:": [
+  null,
+  ""
+ ],
  "Session": [
   null,
   ""
@@ -192,6 +260,14 @@ return plural;
   ""
  ],
  "State": [
+  null,
+  ""
+ ],
+ "Switch to Desktop Viewer": [
+  null,
+  ""
+ ],
+ "Switch to In-Browser Viewer": [
   null,
   ""
  ],
@@ -267,6 +343,22 @@ return plural;
   null,
   ""
  ],
+ "VNC": [
+  null,
+  ""
+ ],
+ "VNC Address:": [
+  null,
+  ""
+ ],
+ "VNC Port:": [
+  null,
+  ""
+ ],
+ "VNC TLS Port:": [
+  null,
+  ""
+ ],
  "Virtual Machines": [
   null,
   "Virtuaalikoneet"
@@ -274,6 +366,10 @@ return plural;
  "Volume": [
   null,
   "Taltio"
+ ],
+ "Your browser does not support iframes.": [
+  null,
+  ""
  ],
  "cdrom": [
   null,

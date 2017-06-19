@@ -93,7 +93,7 @@ return plural;
  ],
  "Failed to disable tuned profile": [
   null,
-  "Falha para desabilitar perfil tuned"
+  "Falha ao desabilitar perfil tuned"
  ],
  "Failed to enable tuned": [
   null,
@@ -109,7 +109,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "Ok"
  ],
  "This system is using a custom profile": [
   null,
@@ -141,6 +141,6 @@ return plural;
  ],
  "recommended": [
   null,
-  ""
+  "recomendado"
  ]
 }));

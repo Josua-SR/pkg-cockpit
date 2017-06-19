@@ -666,6 +666,14 @@ return plural;
   null,
   "Der Docker Storage Pool kann auf diesem System nicht verwaltet werden."
  ],
+ "The scan from $time ($type) found no vulnerabilities.": [
+  null,
+  ""
+ ],
+ "The scan from $time ($type) was not successful.": [
+  null,
+  ""
+ ],
  "The storage pool will be reset to optimize its layout.  All containers will be erased.": [
   null,
   "Der Storage Pool wird zurückgesetzt, um das Layout zu optimieren. Alle Container werden gelöscht."

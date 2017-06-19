@@ -81,7 +81,7 @@ return plural;
  ],
  "- Add New Repository": [
   null,
-  "Repositório"
+  "- Adicionar Novo Repositório"
  ],
  "Add": [
   null,
@@ -89,23 +89,23 @@ return plural;
  ],
  "Add Another Key": [
   null,
-  ""
+  "Adicionar Outra Chave"
  ],
  "Additions": [
   null,
-  ""
+  "Adições"
  ],
  "Apply": [
   null,
-  ""
+  "Aplicar"
  ],
  "Available": [
   null,
-  ""
+  "Disponível"
  ],
  "Begins with '-----BEGIN PGP PUBLIC KEY BLOCK-----'": [
   null,
-  ""
+  "Começa com '-----BEGIN PGP PUBLIC KEY BLOCK-----'"
  ],
  "Cancel": [
   null,
@@ -113,27 +113,27 @@ return plural;
  ],
  "Change Repository": [
   null,
-  "Repositório"
+  "Alterar Repositório"
  ],
  "Check for Updates": [
   null,
-  ""
+  "Verificar Atualizações"
  ],
  "Checking for updates": [
   null,
-  ""
+  "Verificando atualizações"
  ],
  "Connecting to OSTree": [
   null,
-  ""
+  "Conectando à OSTree"
  ],
  "Couldn't load settings for '$0': $1": [
   null,
-  "Não foi possível carregar os dados do usuário"
+  "Não foi possível carregar as configurações para '$0': $1"
  ],
  "Currently using:": [
   null,
-  ""
+  "Atualmente usando:"
  ],
  "Default": [
   null,
@@ -145,15 +145,15 @@ return plural;
  ],
  "Downgrades": [
   null,
-  ""
+  "Downgrades"
  ],
  "Error loading remotes: $0": [
   null,
-  ""
+  "Erros de carregamento remotos: $0"
  ],
  "Expired Signature": [
   null,
-  ""
+  "Assinatura Expirada"
  ],
  "Failed": [
   null,
@@ -161,11 +161,11 @@ return plural;
  ],
  "Good Signature": [
   null,
-  ""
+  "Assinatura Boa"
  ],
  "Invalid Signature": [
   null,
-  ""
+  "Assinatura Inválida"
  ],
  "Name": [
   null,
@@ -173,87 +173,87 @@ return plural;
  ],
  "No Deployments": [
   null,
-  ""
+  "Sem Implantações"
  ],
  "No OSTree deployments found": [
   null,
-  ""
+  "Não foram encontradas implantações OSTree"
  ],
  "No configuration data found": [
   null,
-  "Configuração desconhecida"
+  "Não foram encontrados dados de configuração"
  ],
  "No signature avaliable": [
   null,
-  ""
+  "Nenhuma assinatura disponível"
  ],
  "Not authorized to update software on this system": [
   null,
-  ""
+  "Não autorizado a atualizar o software neste sistema"
  ],
  "OS $0 not found": [
   null,
-  ""
+  "OS 0$ não encontrado"
  ],
  "OSTree is not available on this system": [
   null,
-  ""
+  "OSTree não está disponível neste sistema"
  ],
  "Operating System": [
   null,
-  ""
+  "Sistema Operacional"
  ],
  "Operating System Updates": [
   null,
-  ""
+  "Atualizações do Sistema Operacional"
  ],
  "Origin": [
   null,
-  ""
+  "Origem"
  ],
  "Packages": [
   null,
-  ""
+  "Pacotes"
  ],
  "Please provide a valid URL": [
   null,
-  "Por favor, forneça um namespace válido."
+  "Por favor, forneça um URL válido"
  ],
  "Please provide a valid name": [
   null,
-  ""
+  "Por favor, forneça um nome válido"
  ],
  "Rebase and Reboot": [
   null,
-  ""
+  "Rebase e Reiniciar"
  ],
  "Receiving delta parts": [
   null,
-  ""
+  "Recebendo partes delta"
  ],
  "Receiving metadata objects": [
   null,
-  ""
+  "Recebendo objetos de metadados"
  ],
  "Receiving objects: $0%": [
   null,
-  ""
+  "Recebendo objetos: $0%"
  ],
  "Reconnect": [
   null,
-  ""
+  "Reconectar"
  ],
  "Released": [
   null,
-  ""
+  "Lançado"
  ],
  "Removals": [
   null,
-  ""
+  "Remoções"
  ],
  "Roll Back and Reboot": [
   null,
-  ""
+  "Retroceder e Reiniciar"
  ],
  "Running": [
   null,
@@ -261,19 +261,19 @@ return plural;
  ],
  "Scanning metadata": [
   null,
-  ""
+  "Escaneando metadados"
  ],
  "Signature": [
   null,
-  ""
+  "Assinatura"
  ],
  "Signed by": [
   null,
-  ""
+  "Assinado por"
  ],
  "Software Updates": [
   null,
-  ""
+  "Atualizações de Software"
  ],
  "Status": [
   null,
@@ -281,50 +281,50 @@ return plural;
  ],
  "This deployment contains the same packages as your currently booted system": [
   null,
-  ""
+  "Essa implantação contém os mesmos pacotes que o sistema atualmente inicializado"
  ],
  "Tree": [
   null,
-  ""
+  "Árvore"
  ],
  "URL": [
   null,
-  ""
+  "URL"
  ],
  "Unable to communicate with OSTree": [
   null,
-  ""
+  "Incapaz de se comunicar com OSTree"
  ],
  "Update and Reboot": [
   null,
-  ""
+  "Atualizar e Reiniciar"
  ],
  "Updates": [
   null,
-  ""
+  "Atualizações"
  ],
  "Updating": [
   null,
-  ""
+  "Atualizando"
  ],
  "Use trusted GPG key": [
   null,
-  ""
+  "Usar chave GPG confiável"
  ],
  "Version": [
   null,
-  ""
+  "Versão"
  ],
  "When": [
   null,
-  ""
+  "Quando"
  ],
  "Writing objects": [
   null,
-  ""
+  "Escrevendo objetos"
  ],
  "at": [
   null,
-  ""
+  "no"
  ]
 }));

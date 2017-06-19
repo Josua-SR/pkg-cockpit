@@ -1561,6 +1561,13 @@ EXTRA_DIST = package.json README.md $(NULL) $(WEBPACK_DEPS) \
 	pkg/lib/qunit-template.html $(shell ls -1 \
 	$(srcdir)/node_modules/noVNC/include | grep \
 	".*\.\(js\|css\|ttf\|woff\)" | sed -e \
+	's/^/node_modules\/noVNC\/include\//') $(shell ls -1 \
+	$(srcdir)/node_modules/noVNC/include/chrome-app | grep \
+	".*\.\(js\|css\|ttf\|woff\)" | sed -e \
+	's/^/node_modules\/noVNC\/include\/chrome-app\//') \
+	node_modules/noVNC/package.json $(shell ls -1 \
+	$(srcdir)/node_modules/noVNC/include | grep \
+	".*\.\(js\|css\|ttf\|woff\)" | sed -e \
 	's/^/dist\/machines\/include\//') $(shell ls -1 \
 	$(srcdir)/node_modules/noVNC/include/chrome-app | grep \
 	".*\.\(js\|css\|ttf\|woff\)" | sed -e \
@@ -1697,6 +1704,7 @@ WEBPACK_PACKAGES = \
 	networkmanager \
 	ostree \
 	pcp \
+	packagekit \
 	playground \
 	realmd \
 	selinux \
@@ -1821,6 +1829,7 @@ OPENSANS_FONTS = \
 @ENABLE_DOC_TRUE@	doc/guide/feature-machines.xml \
 @ENABLE_DOC_TRUE@	doc/guide/feature-networkmanager.xml \
 @ENABLE_DOC_TRUE@	doc/guide/feature-ostree.xml \
+@ENABLE_DOC_TRUE@	doc/guide/feature-packagekit.xml \
 @ENABLE_DOC_TRUE@	doc/guide/feature-pcp.xml \
 @ENABLE_DOC_TRUE@	doc/guide/feature-realmd.xml \
 @ENABLE_DOC_TRUE@	doc/guide/feature-selinux.xml \
@@ -8777,12 +8786,6 @@ download-po:
 dist/playground/extra.de.po: pkg/playground/extra.de.po
 	$(COPY_RULE)
 
-# preprocess noVNC's keysymdef.js, logo.js to fix "upatchable file" error
-# preprocessed file needs to go to "dist" package since node_modules with "uglify" are missing in the .tar.gz
-dist/machines/include/keysymdef.js: node_modules/noVNC/include/keysymdef.js
-	$(MIN_JS_RULE)
-
-# just copy the rest
 dist/machines/include/chrome-app/%: node_modules/noVNC/include/chrome-app/%
 	$(COPY_RULE)
 

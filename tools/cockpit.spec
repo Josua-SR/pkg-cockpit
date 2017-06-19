@@ -87,12 +87,13 @@ Recommends: %{name}-dashboard = %{version}-%{release}
 Recommends: %{name}-networkmanager = %{version}-%{release}
 Recommends: %{name}-storaged = %{version}-%{release}
 Recommends: sscg >= 2.0.4
-%ifarch x86_64 %{arm} aarch64 ppc64le i686
+%ifarch x86_64 %{arm} aarch64 ppc64le i686 s390x
 Recommends: %{name}-docker = %{version}-%{release}
 %endif
 Suggests: %{name}-pcp = %{version}-%{release}
 Suggests: %{name}-kubernetes = %{version}-%{release}
 Suggests: %{name}-selinux = %{version}-%{release}
+Suggests: %{name}-packagekit = %{version}-%{release}
 
 %endif
 
@@ -201,6 +202,9 @@ find %{buildroot}%{_datadir}/%{name}/networkmanager -type f >> networkmanager.li
 echo '%dir %{_datadir}/%{name}/ostree' > ostree.list
 find %{buildroot}%{_datadir}/%{name}/ostree -type f >> ostree.list
 
+echo '%dir %{_datadir}/%{name}/packagekit' >> packagekit.list
+find %{buildroot}%{_datadir}/%{name}/packagekit -type f >> packagekit.list
+
 echo '%dir %{_datadir}/%{name}/machines' > machines.list
 find %{buildroot}%{_datadir}/%{name}/machines -type f >> machines.list
 
@@ -212,7 +216,7 @@ echo '%dir %{_datadir}/%{name}/selinux' > selinux.list
 find %{buildroot}%{_datadir}/%{name}/selinux -type f >> selinux.list
 %endif
 
-%ifarch x86_64 %{arm} aarch64 ppc64le i686
+%ifarch x86_64 %{arm} aarch64 ppc64le i686 s390x
 echo '%dir %{_datadir}/%{name}/docker' > docker.list
 find %{buildroot}%{_datadir}/%{name}/docker -type f >> docker.list
 %else
@@ -594,7 +598,7 @@ utility setroubleshoot to diagnose and resolve SELinux issues.
 
 %endif
 
-%ifarch x86_64 %{arm} aarch64 ppc64le i686
+%ifarch x86_64 %{arm} aarch64 ppc64le i686 s390x
 
 %package docker
 Summary: Cockpit user interface for Docker containers
@@ -632,6 +636,16 @@ cluster. Installed on the Kubernetes master. This package is not yet complete.
 %{_libexecdir}/cockpit-kube-launch
 %{_libexecdir}/cockpit-stub
 %endif
+
+%package packagekit
+Summary: Cockpit user interface for package updates
+Requires: %{name}-bridge >= 138
+Requires: PackageKit
+
+%description packagekit
+The Cockpit component for installing package updates, via PackageKit.
+
+%files packagekit -f packagekit.list
 
 # The changelog is automatically generated and merged
 %changelog
