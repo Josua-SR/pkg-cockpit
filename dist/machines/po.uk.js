@@ -69,11 +69,11 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  ""
+  "$0 можна користуватися у більшості операційних систем. Щоб встановити пакунок із програмою, знайдіть відповідний запис у Програмних засобах GNOME або віддайте таку команду:"
  ],
  "Address:": [
   null,
-  ""
+  "Адреса:"
  ],
  "Autostart:": [
   null,
@@ -101,19 +101,19 @@ return plural;
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  ""
+  "У результаті натискання «Запустити віддалений переглядач» буде отримано файл .vv і запущено $0."
  ],
  "Connect with Remote Viewer": [
   null,
-  ""
+  "З’єднатися із Віддаленим переглядачем"
  ],
  "Connect with any $0 viewer application.": [
   null,
-  ""
+  "З’єднатися із будь-якою програмою перегляду $0."
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  ""
+  "З’єднатися із будь-якою програмою перегляду SPICE або VNC."
  ],
  "Connection": [
   null,
@@ -121,7 +121,7 @@ return plural;
  ],
  "Console": [
   null,
-  ""
+  "Консоль"
  ],
  "Count:": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Download the MSI from $0": [
   null,
-  ""
+  "Отримати MSI з $0"
  ],
  "Emulated Machine:": [
   null,
@@ -165,11 +165,11 @@ return plural;
  ],
  "Launch Remote Viewer": [
   null,
-  ""
+  "Запустити віддалений переглядач"
  ],
  "Manual Connection": [
   null,
-  ""
+  "З’єднання вручну"
  ],
  "Memory:": [
   null,
@@ -177,7 +177,7 @@ return plural;
  ],
  "More Information": [
   null,
-  ""
+  "Докладніше"
  ],
  "Name": [
   null,
@@ -197,7 +197,7 @@ return plural;
  ],
  "No graphics console is defined for this virtual machine.": [
   null,
-  ""
+  "Для цієї віртуальної машини не визначено графічної консолі."
  ],
  "Overview": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Please start the virtual machine to access its graphics console.": [
   null,
-  ""
+  "Будь ласка, запустіть віртуальну машину, щоб отримати доступ до її графічної консолі."
  ],
  "Pool": [
   null,
@@ -233,19 +233,19 @@ return plural;
  ],
  "SPICE": [
   null,
-  ""
+  "SPICE"
  ],
  "SPICE Address:": [
   null,
-  ""
+  "Адреса SPICE:"
  ],
  "SPICE Port:": [
   null,
-  ""
+  "Порт SPICE:"
  ],
  "SPICE TLS Port:": [
   null,
-  ""
+  "Порт TLS SPICE:"
  ],
  "Session": [
   null,
@@ -265,11 +265,11 @@ return plural;
  ],
  "Switch to Desktop Viewer": [
   null,
-  ""
+  "Перемкнутися на перегляд стільниці"
  ],
  "Switch to In-Browser Viewer": [
   null,
-  ""
+  "Перемкнутися на перегляд у браузері"
  ],
  "System": [
   null,
@@ -345,19 +345,19 @@ return plural;
  ],
  "VNC": [
   null,
-  ""
+  "VNC"
  ],
  "VNC Address:": [
   null,
-  ""
+  "Адреса VNC:"
  ],
  "VNC Port:": [
   null,
-  ""
+  "Порт VNC:"
  ],
  "VNC TLS Port:": [
   null,
-  ""
+  "Порт TLS VNC:"
  ],
  "Virtual Machines": [
   null,
@@ -369,7 +369,7 @@ return plural;
  ],
  "Your browser does not support iframes.": [
   null,
-  ""
+  "У браузері не передбачено підтримки iframe."
  ],
  "cdrom": [
   null,

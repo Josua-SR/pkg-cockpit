@@ -291,15 +291,15 @@ return plural;
   null,
   ""
  ],
+ "Log Out": [
+  null,
+  ""
+ ],
  "Log in again": [
   null,
   ""
  ],
  "Log in to {{host}}": [
-  null,
-  ""
- ],
- "Log out": [
   null,
   ""
  ],

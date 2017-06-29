@@ -75,13 +75,13 @@ return plural;
   null,
   "Tanca"
  ],
+ "Create Report": [
+  null,
+  ""
+ ],
  "Create diagnostic report": [
   null,
   "Crea l'informe de diagnòstic"
- ],
- "Create report": [
-  null,
-  "Crea l'informe"
  ],
  "Diagnostic reports": [
   null,

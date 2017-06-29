@@ -69,11 +69,11 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  ""
+  "$0 jest dostępne dla większości systemów operacyjnych. Aby zainstalować, wyszukaj w Menedżerze oprogramowania GNOME lub wykonaj polecenie:"
  ],
  "Address:": [
   null,
-  ""
+  "Adres:"
  ],
  "Autostart:": [
   null,
@@ -101,19 +101,19 @@ return plural;
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  ""
+  "Kliknięcie „Uruchom zdalną przeglądarkę” pobierze plik .vv i uruchomi $0."
  ],
  "Connect with Remote Viewer": [
   null,
-  ""
+  "Połącz ze zdalną przeglądarką"
  ],
  "Connect with any $0 viewer application.": [
   null,
-  ""
+  "Połącz z dowolną przeglądarką $0."
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  ""
+  "Połącz z dowolną przeglądarką Spice lub VNC."
  ],
  "Connection": [
   null,
@@ -121,7 +121,7 @@ return plural;
  ],
  "Console": [
   null,
-  ""
+  "Konsola"
  ],
  "Count:": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Download the MSI from $0": [
   null,
-  ""
+  "Pobierz plik MSI z $0"
  ],
  "Emulated Machine:": [
   null,
@@ -165,11 +165,11 @@ return plural;
  ],
  "Launch Remote Viewer": [
   null,
-  ""
+  "Uruchom zdalną przeglądarkę"
  ],
  "Manual Connection": [
   null,
-  ""
+  "Ręczne połączenie"
  ],
  "Memory:": [
   null,
@@ -177,7 +177,7 @@ return plural;
  ],
  "More Information": [
   null,
-  ""
+  "Więcej informacji"
  ],
  "Name": [
   null,
@@ -197,7 +197,7 @@ return plural;
  ],
  "No graphics console is defined for this virtual machine.": [
   null,
-  ""
+  "Dla tej maszyny wirtualnej nie określono żadnej konsoli graficznej."
  ],
  "Overview": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Please start the virtual machine to access its graphics console.": [
   null,
-  ""
+  "Proszę uruchomić maszynę wirtualną, aby uzyskać dostęp do jej konsoli graficznej."
  ],
  "Pool": [
   null,
@@ -233,19 +233,19 @@ return plural;
  ],
  "SPICE": [
   null,
-  ""
+  "Spice"
  ],
  "SPICE Address:": [
   null,
-  ""
+  "Adres Spice:"
  ],
  "SPICE Port:": [
   null,
-  ""
+  "Port Spice:"
  ],
  "SPICE TLS Port:": [
   null,
-  ""
+  "Port TLS Spice:"
  ],
  "Session": [
   null,
@@ -265,11 +265,11 @@ return plural;
  ],
  "Switch to Desktop Viewer": [
   null,
-  ""
+  "Przełącz na przeglądarkę pulpitu"
  ],
  "Switch to In-Browser Viewer": [
   null,
-  ""
+  "Przełącz na przeglądarkę w przeglądarce internetowej"
  ],
  "System": [
   null,
@@ -345,19 +345,19 @@ return plural;
  ],
  "VNC": [
   null,
-  ""
+  "VNC"
  ],
  "VNC Address:": [
   null,
-  ""
+  "Adres VNC:"
  ],
  "VNC Port:": [
   null,
-  ""
+  "Port VNC:"
  ],
  "VNC TLS Port:": [
   null,
-  ""
+  "Port TLS VNC:"
  ],
  "Virtual Machines": [
   null,
@@ -369,7 +369,7 @@ return plural;
  ],
  "Your browser does not support iframes.": [
   null,
-  ""
+  "Przeglądarka nie obsługuje „iframe”."
  ],
  "cdrom": [
   null,

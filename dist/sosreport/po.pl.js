@@ -75,13 +75,13 @@ return plural;
   null,
   "Zamknij"
  ],
+ "Create Report": [
+  null,
+  ""
+ ],
  "Create diagnostic report": [
   null,
   "Utwórz raport diagnostyczny"
- ],
- "Create report": [
-  null,
-  "Utwórz raport"
  ],
  "Diagnostic reports": [
   null,

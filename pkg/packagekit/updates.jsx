@@ -29,6 +29,7 @@ const _ = cockpit.gettext;
 const STATE_HEADINGS = {
     "loading": _("Loading available updates, please wait..."),
     "locked": _("Some other program is currently using the package manager, please wait..."),
+    "refreshing": _("Refreshing package information"),
     "uptodate": _("No updates pending"),
     "applying": _("Applying updates"),
     "updateError": _("Applying updates failed"),
@@ -38,6 +39,7 @@ const STATE_HEADINGS = {
 // see https://github.com/hughsie/PackageKit/blob/master/lib/packagekit-glib2/pk-enum.h
 const PK_EXIT_ENUM_SUCCESS = 1;
 const PK_EXIT_ENUM_FAILED = 2;
+const PK_EXIT_ENUM_CANCELLED = 3;
 const PK_ROLE_ENUM_REFRESH_CACHE = 13;
 const PK_ROLE_ENUM_UPDATE_PACKAGES = 22;
 const PK_INFO_ENUM_SECURITY = 8;
@@ -49,7 +51,7 @@ const PK_STATUS_STRINGS = {
     8: _("Downloading"),
     9: _("Installing"),
     10: _("Updating"),
-    11: _("Cleaning up"),
+    11: _("Setting up"),
     14: _("Verifying"),
 }
 
@@ -109,23 +111,26 @@ function HeaderBar(props) {
     }
 
     var lastChecked;
-    if (props.timeSinceRefresh) {
-        lastChecked = (
-            <span style={{paddingRight: "3ex"}}>
-                {cockpit.format(_("Last checked: $0 ago"), moment.duration(props.timeSinceRefresh * 1000).humanize())}
-            </span>
-        );
+    var actionButton;
+    if (props.state == "uptodate" || props.state == "available") {
+        actionButton = <button className="btn btn-default" onClick={() => props.onRefresh()} >{_("Check for updates")}</button>;
+        if (props.timeSinceRefresh !== null) {
+            lastChecked = (
+                <span style={ {paddingRight: "3ex"} }>
+                    {cockpit.format(_("Last checked: $0 ago"), moment.duration(props.timeSinceRefresh * 1000).humanize())}
+                </span>
+            );
+        }
+    } else if (props.state == "applying") {
+        actionButton = <button className="btn btn-default" onClick={() => props.onCancel()} disabled={!props.allowCancel} >{_("Cancel")}</button>;
     }
-    var refreshButton;
-    if (props.state == "uptodate" || props.state == "available")
-        refreshButton = <button className="btn btn-default" onClick={() => props.onRefresh()} >Check for updates</button>;
 
     return (
         <div className="content-header-extra">
             <table width="100%">
                 <tr>
                     <td id="state">{state}</td>
-                    <td className="text-right">{lastChecked} {refreshButton}</td>
+                    <td className="text-right">{lastChecked} {actionButton}</td>
                 </tr>
             </table>
         </div>
@@ -246,14 +251,14 @@ class ApplyUpdates extends React.Component {
         if (this.state.percentage !== null)
             progressBar = (
                 <div className="progress progress-label-top-right">
-                    <div className="progress-bar" role="progressbar" style={{width: this.state.percentage + "%"}}>
+                    <div className="progress-bar" role="progressbar" style={ {width: this.state.percentage + "%"} }>
                         {this.state.timeRemaining !== null ? <span>{moment.duration(this.state.timeRemaining * 1000).humanize()}</span> : null}
                     </div>
                 </div>
             );
 
         return (
-            <div>
+            <div className="progress-main-view">
                 <div className="progress-description">
                     <div className="spinner spinner-xs spinner-inline"></div>
                     {action}
@@ -268,7 +273,7 @@ class OsUpdates extends React.Component {
     constructor() {
         super();
         this.state = {state: "loading", errorMessages: [], updates: {}, haveSecurity: false, timeSinceRefresh: null,
-                      loadPercent: null, waiting: false, cockpitUpdate: false};
+                      loadPercent: null, waiting: false, cockpitUpdate: false, allowCancel: null};
         this.handleLoadError = this.handleLoadError.bind(this);
         this.handleRefresh = this.handleRefresh.bind(this);
     }
@@ -294,12 +299,12 @@ class OsUpdates extends React.Component {
                         }
 
                         // no running updates found, proceed to showing available updates
-                        this.loadUpdates();
+                        this.initialLoadOrRefresh();
                     })
                     .fail(ex => {
                         console.warn("GetTransactionList: failed to read PackageKit transaction roles:", ex.message);
                         // be robust, try to continue with loading updates anyway
-                        this.loadUpdates();
+                        this.initialLoadOrRefresh();
                     });
 
             });
@@ -311,7 +316,7 @@ class OsUpdates extends React.Component {
                 err = _("PackageKit is not installed")
             else
                 err = _("PackageKit crashed");
-            if (this.state.state == "loading") {
+            if (this.state.state == "loading" || this.state.state == "refreshing") {
                 this.handleLoadError(err);
             } else if (this.state.state == "applying") {
                 this.state.errorMessages.push(err);
@@ -420,41 +425,46 @@ class OsUpdates extends React.Component {
                     .fail(this.handleLoadError);
             })
             .fail(ex => this.handleLoadError((ex.problem == "not-found") ? _("PackageKit is not installed") : ex));
+    }
 
+    initialLoadOrRefresh() {
         dbus_pk.call("/org/freedesktop/PackageKit", "org.freedesktop.PackageKit", "GetTimeSinceAction",
                      [PK_ROLE_ENUM_REFRESH_CACHE], {timeout: 5000})
             .done(seconds => {
-                const ONE_DAY = 86400;
-                const TEN_YEARS = 10 * 365 * ONE_DAY;
-
-                // return type is "u", but returns -1 if not supported; so ignore implausibly high values (> 10 years)
-                if (seconds > TEN_YEARS)
-                    return;
-
                 this.setState({timeSinceRefresh: seconds});
 
-                // automatically trigger refresh for ≥ 1 day
-                if (seconds >= ONE_DAY)
+                // automatically trigger refresh for ≥ 1 day or if never refreshed
+                if (seconds >= 24 * 3600 || seconds < 0)
                     this.handleRefresh();
+                else
+                    this.loadUpdates();
 
             })
-            .fail(ex => console.warn("failed to get time of last refresh: " + ex.message));
+            .fail(ex => this.handleLoadError((ex.problem == "not-found") ? _("PackageKit is not installed") : ex));
     }
 
     watchUpdates(transProxy) {
-        this.setState({state: "applying", applyTransaction: transProxy});
+        this.setState({state: "applying", applyTransaction: transProxy, allowCancel: transProxy.AllowCancel});
 
         transProxy.addEventListener("ErrorCode", (event, code, details) => this.state.errorMessages.push(details));
+
         transProxy.addEventListener("Finished", (event, exit) => {
-            if (exit == PK_EXIT_ENUM_SUCCESS) {
+            this.setState({applyTransaction: null, allowCancel: null});
+
+            if (exit == PK_EXIT_ENUM_SUCCESS || exit == PK_EXIT_ENUM_CANCELLED) {
                 this.setState({state: "loading", haveSecurity: false, loadPercent: null});
                 this.loadUpdates();
             } else {
                 // normally we get FAILED here with ErrorCodes; handle unexpected errors to allow for some debugging
                 if (exit != PK_EXIT_ENUM_FAILED)
-                    this.state.errorMessages.push(cockpit.format(_("PackageKit reported error code {0}"), exit));
+                    this.state.errorMessages.push(cockpit.format(_("PackageKit reported error code $0"), exit));
                 this.setState({state: "updateError"});
             }
+        });
+
+        transProxy.addEventListener("changed", (event, data) => {
+            if ("AllowCancel" in data)
+                this.setState({allowCancel: data.AllowCancel});
         });
 
         // not working/being used in at least Fedora
@@ -486,23 +496,25 @@ class OsUpdates extends React.Component {
     renderContent() {
         switch (this.state.state) {
             case "loading":
+            case "refreshing":
             case "locked":
                 if (this.state.loadPercent)
                     return (
-                        <div className="progress">
-                          <div className="progress-bar" role="progressbar"
-                               style={{width: this.state.loadPercent + "%"}}>
-                          </div>
-                      </div>)
+                        <div className="progress-main-view">
+                            <div className="progress">
+                                <div className="progress-bar" role="progressbar" style={ {width: this.state.loadPercent + "%"} }></div>
+                            </div>
+                        </div>
+                    );
                 else
-                    return <div className="spinner spinner-lg" />;
+                    return <div className="spinner spinner-lg progress-main-view" />;
 
             case "available":
                 return (
                     <div>
                         <table width="100%">
                             <tr>
-                                <td><h2>{_("Available Packages")}</h2></td>
+                                <td><h2>{_("Available Updates")}</h2></td>
                                 <td className="text-right">
                                     { this.state.haveSecurity
                                       ? <button className="btn btn-default"
@@ -556,15 +568,17 @@ class OsUpdates extends React.Component {
     }
 
     handleRefresh() {
-        this.setState({state: "loading", loadPercent: null});
+        this.setState({state: "refreshing", loadPercent: null});
         pkTransaction()
             .done(transProxy =>  {
                 transProxy.addEventListener("ErrorCode", (event, code, details) => this.handleLoadError(details));
                 transProxy.addEventListener("Finished", (event, exit) => {
-                    if (exit == PK_EXIT_ENUM_SUCCESS)
+                    if (exit == PK_EXIT_ENUM_SUCCESS) {
+                        this.setState({timeSinceRefresh: 0});
                         this.loadUpdates();
-                    else
+                    } else {
                         this.setState({state: "loadError"});
+                    }
                 });
 
                 transProxy.addEventListener("changed", (event, data) => {
@@ -581,7 +595,9 @@ class OsUpdates extends React.Component {
     render() {
         return (
             <div>
-                <HeaderBar state={this.state.state} updates={this.state.updates} timeSinceRefresh={this.state.timeSinceRefresh} onRefresh={this.handleRefresh}/>
+                <HeaderBar state={this.state.state} updates={this.state.updates}
+                           timeSinceRefresh={this.state.timeSinceRefresh} onRefresh={this.handleRefresh}
+                           allowCancel={this.state.allowCancel} onCancel={() => this.state.applyTransaction.Cancel()} />
                 <div className="container-fluid">
                     {this.renderContent()}
                 </div>

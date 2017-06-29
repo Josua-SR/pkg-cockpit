@@ -83,7 +83,7 @@ return plural;
   null,
   ""
  ],
- "Available Packages": [
+ "Available Updates": [
   null,
   ""
  ],
@@ -91,9 +91,13 @@ return plural;
   null,
   ""
  ],
- "Cleaning up": [
+ "Cancel": [
   null,
-  ""
+  "取消"
+ ],
+ "Check for updates": [
+  null,
+  "检查更新"
  ],
  "Cockpit itself will be updated.": [
   null,
@@ -151,11 +155,19 @@ return plural;
   null,
   ""
  ],
- "PackageKit reported error code {0}": [
+ "PackageKit reported error code $0": [
+  null,
+  ""
+ ],
+ "Refreshing package information": [
   null,
   ""
  ],
  "Security Update": [
+  null,
+  ""
+ ],
+ "Setting up": [
   null,
   ""
  ],

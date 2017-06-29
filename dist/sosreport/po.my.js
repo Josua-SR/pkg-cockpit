@@ -75,11 +75,11 @@ return plural;
   null,
   "ပိတ္ပါ။"
  ],
- "Create diagnostic report": [
+ "Create Report": [
   null,
   ""
  ],
- "Create report": [
+ "Create diagnostic report": [
   null,
   ""
  ],

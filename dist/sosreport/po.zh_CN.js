@@ -75,13 +75,13 @@ return plural;
   null,
   "关闭"
  ],
+ "Create Report": [
+  null,
+  ""
+ ],
  "Create diagnostic report": [
   null,
   "创建诊断报告"
- ],
- "Create report": [
-  null,
-  "创建报告"
  ],
  "Diagnostic reports": [
   null,

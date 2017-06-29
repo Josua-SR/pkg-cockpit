@@ -75,13 +75,13 @@ return plural;
   null,
   "Закрити"
  ],
+ "Create Report": [
+  null,
+  ""
+ ],
  "Create diagnostic report": [
   null,
   "Створити діагностичний звіт"
- ],
- "Create report": [
-  null,
-  "Створити звіт"
  ],
  "Diagnostic reports": [
   null,

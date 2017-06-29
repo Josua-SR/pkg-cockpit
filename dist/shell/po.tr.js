@@ -291,6 +291,10 @@ return plural;
   null,
   ""
  ],
+ "Log Out": [
+  null,
+  ""
+ ],
  "Log in again": [
   null,
   ""
@@ -298,10 +302,6 @@ return plural;
  "Log in to {{host}}": [
   null,
   ""
- ],
- "Log out": [
-  null,
-  "Çıkış Yap"
  ],
  "Login Password": [
   null,

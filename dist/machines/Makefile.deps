@@ -1,5 +1,5 @@
 # Generated Makefile data for machines
-# Stamp: Mon Jun 19 2017 12:02:32 GMT+0000 (UTC)
+# Stamp: Thu Jun 29 2017 15:28:18 GMT+0000 (UTC)
 
 machines_INPUTS = \
 	$(srcdir)/node_modules/bootstrap/LICENSE \
@@ -23,9 +23,9 @@ machines_INPUTS = \
 	$(srcdir)/node_modules/qunitjs/README.md \
 	$(srcdir)/node_modules/qunitjs/qunit/qunit.css \
 	$(srcdir)/node_modules/qunitjs/qunit/qunit.js \
-	$(srcdir)/node_modules/react-lite-cockpit/LICENSE \
-	$(srcdir)/node_modules/react-lite-cockpit/README.md \
-	$(srcdir)/node_modules/react-lite-cockpit/dist/react-lite.js \
+	$(srcdir)/node_modules/react-lite/LICENSE \
+	$(srcdir)/node_modules/react-lite/README.md \
+	$(srcdir)/node_modules/react-lite/dist/react-lite.js \
 	$(srcdir)/node_modules/redux/LICENSE.md \
 	$(srcdir)/node_modules/redux/README.md \
 	$(srcdir)/node_modules/redux/dist/redux.min.js \
@@ -103,7 +103,7 @@ machines_TESTS = \
 
 dist/machines/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/c3/c3.css -N node_modules/c3/c3.js -N node_modules/d3/d3.js -N node_modules/patternfly/less/color-variables.less -N node_modules/patternfly/less/variables.less -N node_modules/qunit-tap/lib/qunit-tap.js -N node_modules/qunitjs/qunit/qunit.css -N node_modules/qunitjs/qunit/qunit.js -N node_modules/react-lite-cockpit/dist/react-lite.js -N node_modules/redux/dist/redux.min.js -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/listing.less -N pkg/lib/page.css -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/table.css -N pkg/lib/variables.less -N pkg/machines/actions.es6 -N pkg/machines/app.jsx -N pkg/machines/c3charts.jsx -N pkg/machines/components/desktopConsole.jsx -N pkg/machines/components/graphicsConsole.jsx -N pkg/machines/components/vnc.jsx -N pkg/machines/config.es6 -N pkg/machines/helpers.es6 -N pkg/machines/hostvmslist.jsx -N pkg/machines/index.es6 -N pkg/machines/index.html -N pkg/machines/index.js -N pkg/machines/libvirt.es6 -N pkg/machines/machines.less -N pkg/machines/middlewares.es6 -N pkg/machines/provider.es6 -N pkg/machines/reducers.es6 -N pkg/machines/selectors.es6 -N pkg/machines/services.es6 -N pkg/machines/store.es6 -N pkg/machines/test-machines.js -N pkg/machines/vmdiskstab.jsx -N pkg/machines/vnc.css -N pkg/machines/vnc.html $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/c3/c3.css -N node_modules/c3/c3.js -N node_modules/d3/d3.js -N node_modules/patternfly/less/color-variables.less -N node_modules/patternfly/less/variables.less -N node_modules/qunit-tap/lib/qunit-tap.js -N node_modules/qunitjs/qunit/qunit.css -N node_modules/qunitjs/qunit/qunit.js -N node_modules/react-lite/dist/react-lite.js -N node_modules/redux/dist/redux.min.js -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/listing.less -N pkg/lib/page.css -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/table.css -N pkg/lib/variables.less -N pkg/machines/actions.es6 -N pkg/machines/app.jsx -N pkg/machines/c3charts.jsx -N pkg/machines/components/desktopConsole.jsx -N pkg/machines/components/graphicsConsole.jsx -N pkg/machines/components/vnc.jsx -N pkg/machines/config.es6 -N pkg/machines/helpers.es6 -N pkg/machines/hostvmslist.jsx -N pkg/machines/index.es6 -N pkg/machines/index.html -N pkg/machines/index.js -N pkg/machines/libvirt.es6 -N pkg/machines/machines.less -N pkg/machines/middlewares.es6 -N pkg/machines/provider.es6 -N pkg/machines/reducers.es6 -N pkg/machines/selectors.es6 -N pkg/machines/services.es6 -N pkg/machines/store.es6 -N pkg/machines/test-machines.js -N pkg/machines/vmdiskstab.jsx -N pkg/machines/vnc.css -N pkg/machines/vnc.html $< > $@.tmp && mv $@.tmp $@
 
 dist/machines/Makefile.deps: $(WEBPACK_CONFIG) $(machines_INPUTS)
 	$(WEBPACK_RULE) -d dist/machines/Makefile.deps $(WEBPACK_CONFIG)
@@ -174,11 +174,11 @@ $(srcdir)/node_modules/qunitjs/qunit/qunit.css:
 
 $(srcdir)/node_modules/qunitjs/qunit/qunit.js:
 
-$(srcdir)/node_modules/react-lite-cockpit/LICENSE:
+$(srcdir)/node_modules/react-lite/LICENSE:
 
-$(srcdir)/node_modules/react-lite-cockpit/README.md:
+$(srcdir)/node_modules/react-lite/README.md:
 
-$(srcdir)/node_modules/react-lite-cockpit/dist/react-lite.js:
+$(srcdir)/node_modules/react-lite/dist/react-lite.js:
 
 $(srcdir)/node_modules/redux/LICENSE.md:
 

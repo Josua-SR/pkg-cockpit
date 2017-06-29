@@ -82,10 +82,10 @@ $ sudo remotectl certificate
 <p>If using <code class="code">certmonger</code> to manage certificates, following command can
     be used to automatically prepare concatenated .cert file:</p>
 <pre class="programlisting">
-CERT_FILE=/etc/pki/tls/certs/${hostname).pem
-KEY_FILE=/etc/pki/tls/private/${hostname).key
+CERT_FILE=/etc/pki/tls/certs/$(hostname).pem
+KEY_FILE=/etc/pki/tls/private/$(hostname).key
 
-getcert request -f ${CERT_FILE} -k ${KEY_FILE} -C "sed -n w/etc/cockpit/ws-certs.d/50-from-certmonger.cert ${CERT_FILE} ${KEY_FILE}"
+getcert request -f ${CERT_FILE} -k ${KEY_FILE} -D $(hostname --fqdn) -C "sed -n w/etc/cockpit/ws-certs.d/50-from-certmonger.cert ${CERT_FILE} ${KEY_FILE}"
     </pre>
 </div>
 <div class="section">

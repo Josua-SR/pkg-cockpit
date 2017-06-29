@@ -69,39 +69,43 @@ return plural;
  },
  "$0 update": [
   "$0 updates",
-  "",
-  "",
-  ""
+  "$0 оновлення",
+  "$0 оновлення",
+  "$0 оновлень"
  ],
  ", including $1 security fix": [
   ", including $1 security fixes",
-  "",
-  "",
-  ""
+  ", включно із $1 виправленням захисту",
+  ", включно із $1 виправленнями захисту",
+  ", включно із $1 виправленнями захисту"
  ],
  "Applying updates": [
   null,
-  ""
+  "Застосовуємо оновлення"
  ],
  "Applying updates failed": [
   null,
-  ""
+  "Не вдалося застосувати оновлення"
  ],
- "Available Packages": [
+ "Available Updates": [
   null,
   ""
  ],
  "Bugs": [
   null,
-  ""
+  "Вади"
  ],
- "Cleaning up": [
+ "Cancel": [
   null,
-  ""
+  "Скасувати"
+ ],
+ "Check for updates": [
+  null,
+  "Перевірити оновлення"
  ],
  "Cockpit itself will be updated.": [
   null,
-  ""
+  "Сам Cockpit буде оновлено."
  ],
  "Details": [
   null,
@@ -109,35 +113,35 @@ return plural;
  ],
  "Downloading": [
   null,
-  ""
+  "Отримуємо"
  ],
  "Initializing...": [
   null,
-  ""
+  "Ініціалізація…"
  ],
  "Install all updates": [
   null,
-  ""
+  "Встановити усі оновлення"
  ],
  "Install security updates": [
   null,
-  ""
+  "Встановити оновлення захисту"
  ],
  "Installing": [
   null,
-  ""
+  "Встановлення"
  ],
  "Last checked: $0 ago": [
   null,
-  ""
+  "Востаннє перевірено: $0 тому"
  ],
  "Loading available updates failed": [
   null,
-  ""
+  "Не вдалося завантажити список доступних оновлень"
  ],
  "Loading available updates, please wait...": [
   null,
-  ""
+  "Завантажуємо доступні оновлення, зачекайте…"
  ],
  "Name": [
   null,
@@ -145,21 +149,29 @@ return plural;
  ],
  "No updates pending": [
   null,
-  ""
+  "У черзі немає оновлень"
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "Аварійне завершення роботи PackageKit"
  ],
  "PackageKit is not installed": [
   null,
+  "PackageKit не встановлено"
+ ],
+ "PackageKit reported error code $0": [
+  null,
   ""
  ],
- "PackageKit reported error code {0}": [
+ "Refreshing package information": [
   null,
   ""
  ],
  "Security Update": [
+  null,
+  "Оновлення захисту"
+ ],
+ "Setting up": [
   null,
   ""
  ],
@@ -169,11 +181,11 @@ return plural;
  ],
  "Some other program is currently using the package manager, please wait...": [
   null,
-  ""
+  "Програмою для керування пакунків користується якась інша програма, будь ласка, зачекайте…"
  ],
  "System is up to date": [
   null,
-  ""
+  "Система не потребує оновлення"
  ],
  "Updating": [
   null,
@@ -181,7 +193,7 @@ return plural;
  ],
  "Verifying": [
   null,
-  ""
+  "Перевіряємо"
  ],
  "Version": [
   null,
@@ -189,6 +201,6 @@ return plural;
  ],
  "When you get disconnected, the updates will continue in the background. You can reconnect and resume watching the update progress.": [
   null,
-  ""
+  "Коли з’єднання буде розірвано, оновлення продовжуватиметься у фоновому режимі. Ви можете повторно встановити з’єднання і відновити спостереження за поступом оновлення."
  ]
 }));

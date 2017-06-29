@@ -1,10 +1,10 @@
 # Generated Makefile data for tuned
-# Stamp: Mon Jun 19 2017 12:02:32 GMT+0000 (UTC)
+# Stamp: Thu Jun 29 2017 15:28:18 GMT+0000 (UTC)
 
 tuned_INPUTS = \
-	$(srcdir)/node_modules/react-lite-cockpit/LICENSE \
-	$(srcdir)/node_modules/react-lite-cockpit/README.md \
-	$(srcdir)/node_modules/react-lite-cockpit/dist/react-lite.js \
+	$(srcdir)/node_modules/react-lite/LICENSE \
+	$(srcdir)/node_modules/react-lite/README.md \
+	$(srcdir)/node_modules/react-lite/dist/react-lite.js \
 	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \
 	$(srcdir)/pkg/lib/page.css \
 	$(srcdir)/pkg/lib/service.js \
@@ -39,7 +39,7 @@ tuned_TESTS = \
 
 dist/tuned/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/react-lite-cockpit/dist/react-lite.js -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/page.css -N pkg/lib/service.js -N pkg/tuned/change-profile.jsx -N pkg/tuned/dialog.js -N pkg/tuned/link.html $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/react-lite/dist/react-lite.js -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/page.css -N pkg/lib/service.js -N pkg/tuned/change-profile.jsx -N pkg/tuned/dialog.js -N pkg/tuned/link.html $< > $@.tmp && mv $@.tmp $@
 
 dist/tuned/Makefile.deps: $(WEBPACK_CONFIG) $(tuned_INPUTS)
 	$(WEBPACK_RULE) -d dist/tuned/Makefile.deps $(WEBPACK_CONFIG)
@@ -52,11 +52,11 @@ dist/tuned/performance.min.js: dist/tuned/Makefile.deps
 
 dist/tuned/performance.min.js.map: dist/tuned/Makefile.deps
 
-$(srcdir)/node_modules/react-lite-cockpit/LICENSE:
+$(srcdir)/node_modules/react-lite/LICENSE:
 
-$(srcdir)/node_modules/react-lite-cockpit/README.md:
+$(srcdir)/node_modules/react-lite/README.md:
 
-$(srcdir)/node_modules/react-lite-cockpit/dist/react-lite.js:
+$(srcdir)/node_modules/react-lite/dist/react-lite.js:
 
 $(srcdir)/pkg/lib/cockpit-components-dialog.jsx:
 

@@ -80,14 +80,17 @@ function inject_basics(loading) {
      */
     var injected = page.evaluate(function(canary, loading) {
         if (loading) {
+            /* A load is not complete until all resources are done */
+	    if (document.readyState !== "complete") {
+                document.addEventListener("readystatechange", function() {
+                    console.log("-*-CHECKPOINT-*-");
+                });
+		return null;
+            }
             if (typeof loading !== "string")
                 loading = window.location.href;
-            if (window.location.href !== loading || document.readyState === "loading") {
-                document.onreadystatechange = function() {
-                    console.log("-*-CHECKPOINT-*-");
-                };
+            if (window.location.href !== loading)
                 return null;
-            }
         }
         return canary in window;
     }, canary, loading || false);
@@ -424,10 +427,7 @@ page.onResourceError = function(ex) {
      * Certain resource errors seem to be noise caused by
      * cancelled loads, and racy state in phantomjs
      */
-    if (ex.errorString === "Operation cancelled" ||
-        ex.errorString === "Operation canceled") {
-        prefix = "Ignoring Resource Error: ";
-    } else if (ex.errorString.indexOf("Network access is disabled") !== -1) {
+    if (ex.errorString.indexOf("Network access is disabled") !== -1) {
         sys.stderr.writeLine("ERROR: fatal problem: " + ex.errorString);
         phantom.exit(1);
         process.exit(1);

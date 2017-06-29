@@ -75,11 +75,11 @@ return plural;
   null,
   "닫기"
  ],
- "Create diagnostic report": [
+ "Create Report": [
   null,
   ""
  ],
- "Create report": [
+ "Create diagnostic report": [
   null,
   ""
  ],
