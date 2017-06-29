@@ -291,6 +291,10 @@ return plural;
   null,
   "登录"
  ],
+ "Log Out": [
+  null,
+  ""
+ ],
  "Log in again": [
   null,
   "重新登录"
@@ -298,10 +302,6 @@ return plural;
  "Log in to {{host}}": [
   null,
   "登录到 {{host}}"
- ],
- "Log out": [
-  null,
-  "登出"
  ],
  "Login Password": [
   null,

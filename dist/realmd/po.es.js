@@ -69,7 +69,7 @@ return plural;
  },
  "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  ""
+  "$0 Sólo usuarios con credenciales locales serán capacs de acceder a esta máquina. Esto puede afectar también a otros servicios como los ajustes de la resolución DNS y la lista de CA de confianza puede cambiar."
  ],
  "Administrator Password": [
   null,

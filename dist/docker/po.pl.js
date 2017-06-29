@@ -675,11 +675,11 @@ return plural;
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,
-  ""
+  "Wyszukiwanie z $time ($type) nie zwróciło żadnych zagrożeń."
  ],
  "The scan from $time ($type) was not successful.": [
   null,
-  ""
+  "Wyszukiwanie z $time ($type) się nie powiodło."
  ],
  "The storage pool will be reset to optimize its layout.  All containers will be erased.": [
   null,

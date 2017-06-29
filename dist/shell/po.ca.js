@@ -291,6 +291,10 @@ return plural;
   null,
   "Inici de la sessió"
  ],
+ "Log Out": [
+  null,
+  ""
+ ],
  "Log in again": [
   null,
   ""
@@ -298,10 +302,6 @@ return plural;
  "Log in to {{host}}": [
   null,
   "Inicia la sessió a {{host}}"
- ],
- "Log out": [
-  null,
-  "Tanca la sessió"
  ],
  "Login Password": [
   null,

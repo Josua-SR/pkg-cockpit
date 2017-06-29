@@ -75,13 +75,13 @@ return plural;
   null,
   "Sulje"
  ],
+ "Create Report": [
+  null,
+  ""
+ ],
  "Create diagnostic report": [
   null,
   "Luo diagnostiikkaraportti"
- ],
- "Create report": [
-  null,
-  "Luo raportti"
  ],
  "Diagnostic reports": [
   null,

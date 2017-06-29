@@ -69,39 +69,43 @@ return plural;
  },
  "$0 update": [
   "$0 updates",
-  "",
-  "",
-  ""
+  "$0 aktualizacja",
+  "$0 aktualizacje",
+  "$0 aktualizacji"
  ],
  ", including $1 security fix": [
   ", including $1 security fixes",
-  "",
-  "",
-  ""
+  ", w tym $1 poprawka zabezpieczeń",
+  ", w tym $1 poprawki zabezpieczeń",
+  ", w tym $1 poprawek zabezpieczeń"
  ],
  "Applying updates": [
   null,
-  ""
+  "Zastosowywanie aktualizacji"
  ],
  "Applying updates failed": [
   null,
-  ""
+  "Zastosowanie aktualizacji się nie powiodło"
  ],
- "Available Packages": [
+ "Available Updates": [
   null,
   ""
  ],
  "Bugs": [
   null,
-  ""
+  "Błędy"
  ],
- "Cleaning up": [
+ "Cancel": [
   null,
-  ""
+  "Anuluj"
+ ],
+ "Check for updates": [
+  null,
+  "Wyszukaj aktualizacje"
  ],
  "Cockpit itself will be updated.": [
   null,
-  ""
+  "Cockpit zostanie zaktualizowany."
  ],
  "Details": [
   null,
@@ -109,35 +113,35 @@ return plural;
  ],
  "Downloading": [
   null,
-  ""
+  "Pobieranie"
  ],
  "Initializing...": [
   null,
-  ""
+  "Inicjowanie…"
  ],
  "Install all updates": [
   null,
-  ""
+  "Zainstaluj wszystkie aktualizacje"
  ],
  "Install security updates": [
   null,
-  ""
+  "Zainstaluj aktualizacje zabezpieczeń"
  ],
  "Installing": [
   null,
-  ""
+  "Instalowanie"
  ],
  "Last checked: $0 ago": [
   null,
-  ""
+  "Ostatnio wyszukano: $0 temu"
  ],
  "Loading available updates failed": [
   null,
-  ""
+  "Wczytanie dostępnych aktualizacji się nie powiodło"
  ],
  "Loading available updates, please wait...": [
   null,
-  ""
+  "Wczytywanie dostępnych aktualizacji, proszę czekać…"
  ],
  "Name": [
   null,
@@ -145,21 +149,29 @@ return plural;
  ],
  "No updates pending": [
   null,
-  ""
+  "Brak oczekujących aktualizacji"
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "Usługa PackageKit uległa awarii"
  ],
  "PackageKit is not installed": [
   null,
+  "Usługa PackageKit nie jest zainstalowana"
+ ],
+ "PackageKit reported error code $0": [
+  null,
   ""
  ],
- "PackageKit reported error code {0}": [
+ "Refreshing package information": [
   null,
   ""
  ],
  "Security Update": [
+  null,
+  "Aktualizacja zabezpieczeń"
+ ],
+ "Setting up": [
   null,
   ""
  ],
@@ -169,11 +181,11 @@ return plural;
  ],
  "Some other program is currently using the package manager, please wait...": [
   null,
-  ""
+  "Inny program obecnie używa menedżera pakietów, proszę czekać…"
  ],
  "System is up to date": [
   null,
-  ""
+  "System jest aktualny"
  ],
  "Updating": [
   null,
@@ -181,7 +193,7 @@ return plural;
  ],
  "Verifying": [
   null,
-  ""
+  "Sprawdzanie poprawności"
  ],
  "Version": [
   null,
@@ -189,6 +201,6 @@ return plural;
  ],
  "When you get disconnected, the updates will continue in the background. You can reconnect and resume watching the update progress.": [
   null,
-  ""
+  "Po rozłączeniu aktualizacje będą kontynuowane w tle. Można połączyć ponownie i wznowić obserwowanie postępu aktualizacji."
  ]
 }));

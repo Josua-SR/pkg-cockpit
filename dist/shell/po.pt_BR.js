@@ -291,6 +291,10 @@ return plural;
   null,
   "Entrar"
  ],
+ "Log Out": [
+  null,
+  ""
+ ],
  "Log in again": [
   null,
   "Entrar novamente"
@@ -298,10 +302,6 @@ return plural;
  "Log in to {{host}}": [
   null,
   "Logar em {{host}}"
- ],
- "Log out": [
-  null,
-  "Deslogar"
  ],
  "Login Password": [
   null,
