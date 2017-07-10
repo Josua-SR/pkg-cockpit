@@ -670,20 +670,6 @@ tbody tr.listing-ct-noexpand {
     z-index:       1;           /* but on top of it */
     position:      relative;
 }
-.terminal {
-  float: left;
-  border: #000000 solid 5px;
-  font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
-  font-size: 11px;
-  color: #f0f0f0;
-  background: #000000;
-}
-
-.terminal-cursor {
-  color: #000000;
-  background: #f0f0f0;
-}
-
 .term-bg-color-0 { background-color: #2e3436; }
 .term-fg-color-0 { color: #2e3436; }
 .term-bg-color-1 { background-color: #cc0000; }
@@ -1242,17 +1228,11 @@ tbody tr.listing-ct-noexpand {
     background-color: black;
     border: 1px solid black;
     padding: 10px;
-    display: inline-block; /* size DIV to contents */
 }
 
 .console-ct .terminal-cursor {
     color: #000;
     background: #f0f0f0;
-}
-
-.console-ct-container {
-    display: table;
-    margin: 1em auto;
 }
 /* Panels don't draw borders between them */
 .panel > .table > tbody:first-child td {

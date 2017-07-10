@@ -19,12 +19,14 @@
  */
 import cockpit from 'cockpit';
 import React, { PropTypes } from "react";
-import { shutdownVm, forceVmOff, forceRebootVm, rebootVm, startVm } from "./actions.es6";
+import { shutdownVm, forceVmOff, forceRebootVm, rebootVm, startVm,
+         usageStartPolling, usageStopPolling } from "./actions.es6";
 import { rephraseUI, logDebug, toGigaBytes, toFixedPrecision, vmId } from "./helpers.es6";
 import DonutChart from "./c3charts.jsx";
 import { Listing, ListingRow } from "cockpit-components-listing.jsx";
 import VmDisksTab from './vmdiskstab.jsx';
 import GraphicsConsole from './components/graphicsConsole.jsx';
+import { deleteDialog } from "./components/deleteDialog.jsx";
 
 const _ = cockpit.gettext;
 
@@ -95,11 +97,22 @@ const VmActions = ({ vm, config, dispatch, onStart, onReboot, onForceReboot, onS
         providerActions = <ProviderActions vm={vm} providerState={config.providerState} dispatch={dispatch} />;
     }
 
+    let deleteAction = null;
+    if (state !== undefined && config.provider.canDelete && config.provider.canDelete(state)) {
+        deleteAction = (
+            <button className="btn btn-danger" id={`${id}-delete`}
+                    onClick={ mouseClick(() => deleteDialog(vm, dispatch)) }>
+                {_("Delete")}
+            </button>
+        );
+    }
+
     return (<div>
         {reset}
         {shutdown}
         {run}
         {providerActions}
+        {deleteAction}
     </div>);
 }
 VmActions.propTypes = {
@@ -302,83 +315,98 @@ VmOverviewTab.propTypes = {
     config: PropTypes.object.isRequired,
 }
 
-const VmUsageTab = ({ vm }) => {
-    const width = 220;
-    const height = 170;
-
-    const rssMem = vm["rssMemory"] ? vm["rssMemory"] : 0; // in KiB
-    const memTotal = vm["currentMemory"] ? vm["currentMemory"] : 0; // in KiB
-    let available = memTotal - rssMem; // in KiB
-    available = available < 0 ? 0 : available;
-
-    const totalCpus = vm['vcpus'] > 0 ? vm['vcpus'] : 0;
-    // 4 CPU system can have usage 400%, let's keep % between 0..100
-    let cpuUsage = vm['cpuUsage'] / (totalCpus > 0 ? totalCpus : 1);
-    cpuUsage = isNaN(cpuUsage) ? 0 : cpuUsage;
-    cpuUsage = toFixedPrecision(cpuUsage, 1);
-
-    logDebug(`VmUsageTab.render(): rssMem: ${rssMem} KiB, memTotal: ${memTotal} KiB, available: ${available} KiB, totalCpus: ${totalCpus}, cpuUsage: ${cpuUsage}`);
-
-    const memChartData = {
-        columns: [
-            [_("Used"), toGigaBytes(rssMem, 'KiB')],
-            [_("Available"), toGigaBytes(available, 'KiB')]
-        ],
-        groups: [
-            ["used", "available"]
-        ],
-        order: null
-    };
-
-    const cpuChartData = {
-        columns: [
-            [_("Used"), cpuUsage],
-            [_("Available"), 100.0 - cpuUsage]
-        ],
-        groups: [
-            ["used", "available"]
-        ],
-        order: null
-    };
-
-    const chartSize = {
-        width, // keep the .usage-donut-caption CSS in sync
-        height
+class VmUsageTab extends React.Component {
+    componentDidMount() {
+        this.props.onUsageStartPolling();
     }
 
-    return (<table>
-            <tr>
-                <td>
-                    <DonutChart data={memChartData} size={chartSize} width='8' tooltipText=' '
-                                primaryTitle={toGigaBytes(rssMem, 'KiB')} secondaryTitle='GB'
-                                caption={`used from ${cockpit.format_bytes(memTotal * 1024)} memory`}/>
-                </td>
+    componentWillUnmount() {
+        this.props.onUsageStopPolling();
+    }
 
-                <td>
-                    <DonutChart data={cpuChartData} size={chartSize} width='8' tooltipText=' '
-                                primaryTitle={cpuUsage} secondaryTitle='%'
-                                caption={`used from ${totalCpus} vCPUs`}/>
-                </td>
-            </tr>
-        </table>
+    render() {
+        const vm = this.props.vm;
+        const width = 220;
+        const height = 170;
 
-    );
-};
+        const rssMem = vm["rssMemory"] ? vm["rssMemory"] : 0; // in KiB
+        const memTotal = vm["currentMemory"] ? vm["currentMemory"] : 0; // in KiB
+        let available = memTotal - rssMem; // in KiB
+        available = available < 0 ? 0 : available;
+
+        const totalCpus = vm['vcpus'] > 0 ? vm['vcpus'] : 0;
+        // 4 CPU system can have usage 400%, let's keep % between 0..100
+        let cpuUsage = vm['cpuUsage'] / (totalCpus > 0 ? totalCpus : 1);
+        cpuUsage = isNaN(cpuUsage) ? 0 : cpuUsage;
+        cpuUsage = toFixedPrecision(cpuUsage, 1);
+
+        logDebug(`VmUsageTab.render(): rssMem: ${rssMem} KiB, memTotal: ${memTotal} KiB, available: ${available} KiB, totalCpus: ${totalCpus}, cpuUsage: ${cpuUsage}`);
+
+        const memChartData = {
+            columns: [
+                [_("Used"), toGigaBytes(rssMem, 'KiB')],
+                [_("Available"), toGigaBytes(available, 'KiB')]
+            ],
+            groups: [
+                ["used", "available"]
+            ],
+            order: null
+        };
+
+        const cpuChartData = {
+            columns: [
+                [_("Used"), cpuUsage],
+                [_("Available"), 100.0 - cpuUsage]
+            ],
+            groups: [
+                ["used", "available"]
+            ],
+            order: null
+        };
+
+        const chartSize = {
+            width, // keep the .usage-donut-caption CSS in sync
+            height
+        }
+
+        return (<table>
+                <tr>
+                    <td>
+                        <DonutChart data={memChartData} size={chartSize} width='8' tooltipText=' '
+                                    primaryTitle={toGigaBytes(rssMem, 'KiB')} secondaryTitle='GB'
+                                    caption={`used from ${cockpit.format_bytes(memTotal * 1024)} memory`}/>
+                    </td>
+
+                    <td>
+                        <DonutChart data={cpuChartData} size={chartSize} width='8' tooltipText=' '
+                                    primaryTitle={cpuUsage} secondaryTitle='%'
+                                    caption={`used from ${totalCpus} vCPUs`}/>
+                    </td>
+                </tr>
+            </table>
+
+        );
+    }
+}
 VmUsageTab.propTypes = {
-    vm: React.PropTypes.object.isRequired
+    vm: React.PropTypes.object.isRequired,
+    onUsageStartPolling: PropTypes.func.isRequired,
+    onUsageStopPolling: PropTypes.func.isRequired,
 };
 
 /** One VM in the list (a row)
  */
-const Vm = ({ vm, config, onStart, onShutdown, onForceoff, onReboot, onForceReboot, dispatch }) => {
+const Vm = ({ vm, config, onStart, onShutdown, onForceoff, onReboot, onForceReboot,
+              onUsageStartPolling, onUsageStopPolling, dispatch }) => {
     const stateIcon = (<StateIcon state={vm.state} config={config} valueId={`${vmId(vm.name)}-state`} />);
 
+    const usageTabName = (<div id={`${vmId(vm.name)}-usage`}>{_("Usage")}</div>);
     const disksTabName = (<div id={`${vmId(vm.name)}-disks`}>{_("Disks")}</div>);
     const consolesTabName = (<div id={`${vmId(vm.name)}-consoles`}>{_("Console")}</div>);
 
     let tabRenderers = [
         {name: _("Overview"), renderer: VmOverviewTab, data: {vm: vm, config: config }},
-        {name: _("Usage"), renderer: VmUsageTab, data: {vm: vm}, presence: 'onlyActive' },
+        {name: usageTabName, renderer: VmUsageTab, data: {vm, onUsageStartPolling, onUsageStopPolling}, presence: 'onlyActive' },
         {name: disksTabName, renderer: VmDisksTab, data: {vm: vm, provider: config.provider}, presence: 'onlyActive' },
         {name: consolesTabName, renderer: GraphicsConsole, data: { vm, config, dispatch }}
     ];
@@ -416,6 +444,8 @@ Vm.propTypes = {
     onForceoff: PropTypes.func.isRequired,
     onReboot: PropTypes.func.isRequired,
     onForceReboot: PropTypes.func.isRequired,
+    onUsageStartPolling: PropTypes.func.isRequired,
+    onUsageStopPolling: PropTypes.func.isRequired,
     dispatch: PropTypes.func.isRequired,
 };
 
@@ -443,6 +473,8 @@ const HostVmsList = ({ vms, config, dispatch }) => {
                         onForceReboot={() => dispatch(forceRebootVm(vm))}
                         onShutdown={() => dispatch(shutdownVm(vm))}
                         onForceoff={() => dispatch(forceVmOff(vm))}
+                        onUsageStartPolling={() => dispatch(usageStartPolling(vm))}
+                        onUsageStopPolling={() => dispatch(usageStopPolling(vm))}
                         dispatch={dispatch}
                     />);
             })}

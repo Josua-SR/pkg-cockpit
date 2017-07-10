@@ -95,6 +95,10 @@ return plural;
   null,
   "Tipo de CPU:"
  ],
+ "Cancel": [
+  null,
+  "Cancelar"
+ ],
  "Capacity": [
   null,
   "Capacidade"
@@ -198,6 +202,10 @@ return plural;
  "No graphics console is defined for this virtual machine.": [
   null,
   ""
+ ],
+ "Ok": [
+  null,
+  "Ok"
  ],
  "Overview": [
   null,

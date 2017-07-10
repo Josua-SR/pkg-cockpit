@@ -32,6 +32,7 @@ const STATE_HEADINGS = {
     "refreshing": _("Refreshing package information"),
     "uptodate": _("No updates pending"),
     "applying": _("Applying updates"),
+    "updateSuccess": null,
     "updateError": _("Applying updates failed"),
     "loadError": _("Loading available updates failed"),
 }
@@ -109,6 +110,9 @@ function HeaderBar(props) {
     } else {
         state = STATE_HEADINGS[props.state];
     }
+
+    if (!state)
+        return null;
 
     var lastChecked;
     var actionButton;
@@ -218,7 +222,7 @@ function UpdatesList(props) {
 class ApplyUpdates extends React.Component {
     constructor() {
         super();
-        this.state = {percentage: null, timeRemaining: null, curStatus: null, curPackage: null};
+        this.state = {percentage: 0, timeRemaining: null, curStatus: null, curPackage: null};
     }
 
     componentDidMount() {
@@ -229,7 +233,7 @@ class ApplyUpdates extends React.Component {
             // info: see PK_STATUS_* at https://github.com/hughsie/PackageKit/blob/master/lib/packagekit-glib2/pk-enum.h
             this.setState({curPackage: pfields[0] + " " + pfields[1],
                            curStatus: info,
-                           percentage: transProxy.Percentage <= 100 ? transProxy.Percentage : null,
+                           percentage: transProxy.Percentage <= 100 ? transProxy.Percentage : 0,
                            timeRemaining: transProxy.RemainingTime > 0 ? transProxy.RemainingTime : null});
         });
     }
@@ -247,26 +251,34 @@ class ApplyUpdates extends React.Component {
         else
             action = _("Initializing...");
 
-        var progressBar;
-        if (this.state.percentage !== null)
-            progressBar = (
-                <div className="progress progress-label-top-right">
-                    <div className="progress-bar" role="progressbar" style={ {width: this.state.percentage + "%"} }>
-                        {this.state.timeRemaining !== null ? <span>{moment.duration(this.state.timeRemaining * 1000).humanize()}</span> : null}
-                    </div>
-                </div>
-            );
-
         return (
             <div className="progress-main-view">
                 <div className="progress-description">
                     <div className="spinner spinner-xs spinner-inline"></div>
                     {action}
                 </div>
-                {progressBar}
+                <div className="progress progress-label-top-right">
+                    <div className="progress-bar" role="progressbar" style={ {width: this.state.percentage + "%"} }>
+                        {this.state.timeRemaining !== null ? <span>{moment.duration(this.state.timeRemaining * 1000).humanize()}</span> : null}
+                    </div>
+                </div>
             </div>
         );
     }
+}
+
+function AskRestart(props) {
+    return (
+        <div className="blank-slate-pf">
+            <h1>{_("Restart Recommended")}</h1>
+            <p>{_("Updated packages may require a restart to take effect.")}</p>
+            <div className="blank-slate-pf-secondary-action">
+                <button className="btn btn-default" onClick={() => props.onIgnore()}>{_("Ignore")}</button>
+                &nbsp;
+                <button className="btn btn-primary" onClick={() => props.onRestart()}>{_("Restart Now")}</button>
+            </div>
+        </div>
+    );
 }
 
 class OsUpdates extends React.Component {
@@ -276,6 +288,8 @@ class OsUpdates extends React.Component {
                       loadPercent: null, waiting: false, cockpitUpdate: false, allowCancel: null};
         this.handleLoadError = this.handleLoadError.bind(this);
         this.handleRefresh = this.handleRefresh.bind(this);
+        this.handleRestart = this.handleRestart.bind(this);
+        this.loadUpdates = this.loadUpdates.bind(this);
     }
 
     componentDidMount() {
@@ -451,7 +465,9 @@ class OsUpdates extends React.Component {
         transProxy.addEventListener("Finished", (event, exit) => {
             this.setState({applyTransaction: null, allowCancel: null});
 
-            if (exit == PK_EXIT_ENUM_SUCCESS || exit == PK_EXIT_ENUM_CANCELLED) {
+            if (exit == PK_EXIT_ENUM_SUCCESS)
+                this.setState({state: "updateSuccess", haveSecurity: false, loadPercent: null});
+            else if (exit == PK_EXIT_ENUM_CANCELLED) {
                 this.setState({state: "loading", haveSecurity: false, loadPercent: null});
                 this.loadUpdates();
             } else {
@@ -553,6 +569,19 @@ class OsUpdates extends React.Component {
             case "applying":
                 return <ApplyUpdates transaction={this.state.applyTransaction}/>
 
+            case "updateSuccess":
+                return <AskRestart onRestart={this.handleRestart} onIgnore={this.loadUpdates} />
+
+            case "restart":
+                return (
+                    <div className="blank-slate-pf">
+                        <div class="blank-slate-pf-icon">
+                            <div className="spinner spinner-lg"></div>
+                        </div>
+                        <h1>{_("Restarting")}</h1>
+                        <p>{_("Your server will close the connection soon. You can reconnect after it has restarted.")}</p>
+                    </div>);
+
             case "uptodate":
                 return (
                     <div className="blank-slate-pf">
@@ -590,6 +619,18 @@ class OsUpdates extends React.Component {
                     .fail(this.handleLoadError);
             })
             .fail(this.handleLoadError);
+    }
+
+    handleRestart() {
+        this.setState({state: "restart"})
+        // give the user a chance to actually read the message
+        window.setTimeout(() => {
+            cockpit.spawn(["shutdown", "--reboot", "now"], {superuser: true, err: "message"})
+                .fail(ex => {
+                    this.state.errorMessages.push(ex);
+                    this.setState({state: "updateError"});
+                });
+        }, 5000);
     }
 
     render() {

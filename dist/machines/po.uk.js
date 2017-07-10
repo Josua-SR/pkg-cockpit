@@ -95,6 +95,10 @@ return plural;
   null,
   "Тип процесора:"
  ],
+ "Cancel": [
+  null,
+  "Скасувати"
+ ],
  "Capacity": [
   null,
   "Місткість"
@@ -198,6 +202,10 @@ return plural;
  "No graphics console is defined for this virtual machine.": [
   null,
   "Для цієї віртуальної машини не визначено графічної консолі."
+ ],
+ "Ok": [
+  null,
+  "Гаразд"
  ],
  "Overview": [
   null,

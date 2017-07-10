@@ -95,6 +95,10 @@ return plural;
   null,
   ""
  ],
+ "Cancel": [
+  null,
+  "Peru"
+ ],
  "Capacity": [
   null,
   "Koko"
@@ -196,6 +200,10 @@ return plural;
   ""
  ],
  "No graphics console is defined for this virtual machine.": [
+  null,
+  ""
+ ],
+ "Ok": [
   null,
   ""
  ],
