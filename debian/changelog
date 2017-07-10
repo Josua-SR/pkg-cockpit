@@ -1,3 +1,16 @@
+cockpit (145-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Resize the terminal dynamically to use all available space
+    - Let the Machines page update immediately after changes
+    - Add delete VM functionality to the Machines page
+    - Retire support for external Machines provider API
+    - Always recommend rebooting after applying Software Updates
+    - Group D-Bus channels to avoid hitting connection limits
+    - Fix building on Fedora Rawhide/glibc 2.25.90
+
+ -- Martin Pitt <mpitt@debian.org>  Mon, 10 Jul 2017 14:22:08 +0200
+
 cockpit (144-1) unstable; urgency=medium
 
   * New upstream release:
