@@ -95,6 +95,10 @@ return plural;
   null,
   "Typ procesora:"
  ],
+ "Cancel": [
+  null,
+  "Anuluj"
+ ],
  "Capacity": [
   null,
   "Pojemność"
@@ -198,6 +202,10 @@ return plural;
  "No graphics console is defined for this virtual machine.": [
   null,
   "Dla tej maszyny wirtualnej nie określono żadnej konsoli graficznej."
+ ],
+ "Ok": [
+  null,
+  "OK"
  ],
  "Overview": [
   null,

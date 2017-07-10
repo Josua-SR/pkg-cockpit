@@ -75,6 +75,10 @@ return plural;
   null,
   ""
  ],
+ "Cancel": [
+  null,
+  "Annullér"
+ ],
  "Connection": [
   null,
   ""
@@ -112,6 +116,10 @@ return plural;
   ""
  ],
  "OS Type:": [
+  null,
+  ""
+ ],
+ "Ok": [
   null,
   ""
  ],

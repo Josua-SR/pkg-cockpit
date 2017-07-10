@@ -419,6 +419,13 @@ class Browser:
             self.phantom.dump(filename)
             attach(filename)
 
+    def copy_js_log(self, title, label=None):
+        """Copy the current javascript log"""
+        if self.phantom and self.phantom.valid:
+            filename = "{0}-{1}.js.log".format(label or self.label, title)
+            self.phantom.dump_log(filename)
+            attach(filename)
+
     def kill(self):
         self.phantom.kill()
 
@@ -538,6 +545,7 @@ class MachineCase(unittest.TestCase):
         def intercept():
             if not self.currentResult.wasSuccessful():
                 self.snapshot("FAIL")
+                self.copy_js_log("FAIL")
                 self.copy_journal("FAIL")
                 self.copy_cores("FAIL")
         self.addCleanup(intercept)
@@ -613,6 +621,9 @@ class MachineCase(unittest.TestCase):
         # SELinux and nfs-utils fighting: https://bugzilla.redhat.com/show_bug.cgi?id=1447854
         ".*type=1400 .*denied  { execute } for.*sm-notify.*init_t.*",
 
+        # SELinux prevents agetty from being executed by systemd: https://bugzilla.redhat.com/show_bug.cgi?id=1449569
+        ".*type=1400 .*denied  { execute } for.*agetty.*init_t.*",
+
         # apparmor loading
         "(audit: )?type=1400.*apparmor=\"STATUS\".*",
 
@@ -631,8 +642,7 @@ class MachineCase(unittest.TestCase):
 
         # HACK https://bugzilla.redhat.com/show_bug.cgi?id=1461893
         # selinux errors while logging in via ssh
-        'type=1401 audit(.*): op=security_compute_av reason=bounds scontext=system_u:system_r:sshd_t:s0-s0:c0.c1023 tcontext=unconfined_u:system_r:svirt_lxc_net_t:s0-s0:c0.c1023 tclass=process perms=transition,sigchld,sigstop,signull,signal,getattr',
-        'type=1401 audit(.*): op=security_compute_av reason=bounds scontext=system_u:system_r:sshd_t:s0-s0:c0.c1023 tcontext=unconfined_u:unconfined_r:svirt_lxc_net_t:s0-s0:c0.c1023 tclass=process perms=transition,sigchld,sigstop,signull,signal,getattr',
+        'type=1401 audit(.*): op=security_compute_av reason=bounds .* tclass=process perms=transition.*',
 
         # Various operating systems see this from time to time
         "Journal file.*truncated, ignoring file.",
@@ -709,6 +719,7 @@ class MachineCase(unittest.TestCase):
                 if not first:
                     first = m
         if not all_found:
+            self.copy_js_log("FAIL")
             self.copy_journal("FAIL")
             self.copy_cores("FAIL")
             raise Error(first)
@@ -721,6 +732,10 @@ class MachineCase(unittest.TestCase):
         """
         if self.browser is not None:
             self.browser.snapshot(title, label)
+
+    def copy_js_log(self, title, label=None):
+        if self.browser is not None:
+            self.browser.copy_js_log(title, label)
 
     def copy_journal(self, title, label=None):
         for name, m in self.machines.iteritems():

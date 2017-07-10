@@ -35,7 +35,6 @@ def readFile(name):
 # rmmod kvm-intel && modprobe kvm-intel || true
 
 @skipImage("Atomic cannot run virtual machines", "fedora-atomic", "rhel-atomic", "continuous-atomic")
-@skipImage("Debian Stable creates paused machines", "debian-stable")
 class TestMachines(MachineCase):
     def startVm(self, name, console='spice'):
         m = self.machine
@@ -54,16 +53,15 @@ class TestMachines(MachineCase):
         m.execute("virt-install --cpu host -r 128 --pxe --force --graphics {3},listen=127.0.0.1 --noautoconsole "
                   "--disk path={0},size=1,format=qcow2 --disk path={1},size=2,format=qcow2 "
                   "--boot hd,network "
-                  "-n {2} || true"
+                  "-n {2}"
                   .format(img1, img2, name, console))
 
-        state = m.execute("virsh domstate {0}".format(name)).strip()
-        # debug info: machine state
-        m.message("state: '{0}'".format(state))
-        self.assertIn(state, ["running"])
+        m.execute('[ "$(virsh domstate {0})" = running ] || '
+                  '{{ virsh dominfo {0} >&2; cat /var/log/libvirt/qemu/{0}.log >&2; exit 1; }}'.format(name))
 
     def testBasic(self):
         b = self.browser
+        m = self.machine
 
         self.startVm("subVmTest1")
 
@@ -73,7 +71,7 @@ class TestMachines(MachineCase):
 
         b.click("tbody tr th") # click on the row header
         b.wait_present("#vm-subVmTest1-state")
-        b.wait_in_text("#vm-subVmTest1-state", "running") # running or paused
+        b.wait_in_text("#vm-subVmTest1-state", "running")
         b.wait_present("#vm-subVmTest1-vcpus")
         b.wait_in_text("#vm-subVmTest1-vcpus", "1")
 
@@ -83,10 +81,73 @@ class TestMachines(MachineCase):
         emulated_machine = b.eval_js("$('#vm-subVmTest1-emulatedmachine').text()")
         self.assertTrue(len(emulated_machine) > 0) # emulated machine varies across test machines
 
+        # switch to and check Usage
+        b.wait_present("#vm-subVmTest1-usage")
+        b.click("#vm-subVmTest1-usage")
+        b.wait_present("tbody.open .listing-ct-body td:nth-child(1) .usage-donut-caption")
+        b.wait_in_text("tbody.open .listing-ct-body td:nth-child(1) .usage-donut-caption", "128 MiB")
+        b.wait_present("#chart-donut-0 .donut-title-big-pf")
+        b.wait(lambda: float(b.text("#chart-donut-0 .donut-title-big-pf")) > 0.0)
+        b.wait_present("tbody.open .listing-ct-body td:nth-child(2) .usage-donut-caption")
+        b.wait_in_text("tbody.open .listing-ct-body td:nth-child(2) .usage-donut-caption", "1 vCPU")
+        # CPU usage cannot be nonzero with blank image, so just ensure it's a percentage
+        b.wait_present("#chart-donut-1 .donut-title-big-pf")
+        self.assertLessEqual(float(b.text("#chart-donut-1 .donut-title-big-pf")), 100.0)
+
+        # suspend/resume
+        m.execute("virsh suspend subVmTest1")
+        b.wait_in_text("#vm-subVmTest1-state", "paused")
+        # resume sometimes fails with "unable to execute QEMU command 'cont': Resetting the Virtual Machine is required"
+        m.execute('virsh resume subVmTest1 || { virsh destroy subVmTest1 && virsh start subVmTest1; }')
+        b.wait_in_text("#vm-subVmTest1-state", "running")
+
+        # shut off
         b.click("#vm-subVmTest1-off-caret")
         b.wait_visible("#vm-subVmTest1-forceOff")
         b.click("#vm-subVmTest1-forceOff")
         b.wait_in_text("#vm-subVmTest1-state", "shut off")
+
+        # usage should drop to zero
+        b.wait_in_text("#chart-donut-0 .donut-title-big-pf", "0.00")
+        b.wait_in_text("#chart-donut-1 .donut-title-big-pf", "0.0")
+
+        # start another one, should appear automatically
+        self.startVm("subVmTest2")
+        b.wait_present("#app .listing-ct tbody:nth-of-type(2) th")
+        b.wait_in_text("#app .listing-ct tbody:nth-of-type(2) th", "subVmTest2")
+        b.click("#app .listing-ct tbody:nth-of-type(2) th") # click on the row header
+        b.wait_present("#vm-subVmTest2-state")
+        b.wait_in_text("#vm-subVmTest2-state", "running")
+        b.wait_present("#vm-subVmTest2-vcpus")
+        b.wait_in_text("#vm-subVmTest2-vcpus", "1")
+        b.wait_in_text("#vm-subVmTest2-bootorder", "disk,network")
+
+        # restart libvirtd
+        m.execute("systemctl stop libvirtd")
+        b.wait_present("#app .blank-slate-pf")
+        b.wait_visible("#app .blank-slate-pf")
+        b.wait_in_text("#app .blank-slate-pf", "No VM is running")
+        m.execute("systemctl start libvirtd")
+        b.wait_present("#app .listing-ct tbody:nth-of-type(1) th")
+        b.wait_in_text("#app .listing-ct tbody:nth-of-type(1) th", "subVmTest1")
+        b.wait_present("#app .listing-ct tbody:nth-of-type(2) th")
+        b.wait_in_text("#app .listing-ct tbody:nth-of-type(2) th", "subVmTest2")
+        b.wait_present("#vm-subVmTest1-state")
+        b.wait_in_text("#vm-subVmTest1-state", "shut off")
+        b.wait_present("#vm-subVmTest2-state")
+        b.wait_in_text("#vm-subVmTest2-state", "running")
+
+        # stop second VM, event handling should still work
+        b.wait_present("#app .listing-ct tbody:nth-of-type(2) th")
+        b.wait_in_text("#app .listing-ct tbody:nth-of-type(2) th", "subVmTest2")
+        b.click("#app .listing-ct tbody:nth-of-type(2) th") # click on the row header
+        b.click("#vm-subVmTest2-off-caret")
+        b.wait_visible("#vm-subVmTest2-forceOff")
+        b.click("#vm-subVmTest2-forceOff")
+        b.wait_in_text("#vm-subVmTest2-state", "shut off")
+
+        # HACK: restarting libvirtd causes this completely unrelated SELinux issue
+        self.allow_journal_messages('.*denied.*search.*"systemd-machine".*dev="proc".*')
 
     def wait_for_disk_stats(self, name, target):
         b = self.browser
@@ -175,50 +236,6 @@ class TestMachines(MachineCase):
         b.wait_in_text("#vm-subVmTest1-disks-hda-target", "hda")
         b.wait_in_text("#vm-subVmTest1-disks-hdb-target", "hdb")
 
-    def testProvider(self):
-        b = self.browser
-        m = self.machine
-
-        self.startVm("subVmTest1")
-
-        self.login_and_go("/machines")
-        b.wait_in_text("body", "Virtual Machines")
-        b.wait_in_text("tbody tr th", "subVmTest1")
-
-        # install the provider
-        m.execute("mkdir /usr/share/cockpit/machines/provider")
-        m.upload(["verify/files/cockpitMachinesTestExternalProvider.js"], "/usr/share/cockpit/machines/provider") # do not rename
-        m.execute("mv /usr/share/cockpit/machines/provider/cockpitMachinesTestExternalProvider.js /usr/share/cockpit/machines/provider/index.js")
-
-        self.login_and_go("/machines")
-        b.wait_in_text("body", "Virtual Machines")
-        b.wait_present("#vm-vm1-row") # is VM listed so the provider is correctly loaded, initialized and GET_ALL_VMS() passed??
-
-        b.click("#vm-vm1-row") # click on the row header
-        b.wait_present("#vm-vm1-state")
-        b.wait_in_text("#vm-vm1-state", "running")
-
-        b.wait_present("#test-vm-action-vm1") # is provider-specific action button rendered?
-        b.wait_in_text("#test-vm-props-vm1", "Test Provider Property") # are provider-specific VM props rendered?
-
-        b.click("#vm-vm1-off-caret")
-        b.wait_visible("#vm-vm1-off")
-
-        b.click("#vm-vm1-off") # click the Shut Down button
-        b.wait_in_text("#vm-vm1-state", "shut off")
-
-        b.click("a:contains('Test Subtab')") # Click on the subtab injected by the Provider
-        b.wait_visible("#test-subtab-body-vm1") # is subtab rendered?
-        b.wait_in_text("#test-subtab-body-vm1", "Content of subtab")
-
-        b.click("#vm-vm1-run") # click the Run button which intentionally leads to an error, so check it
-        b.click("a:contains('Overview')") # where the error message is rendered
-        b.wait_visible("#vm-vm1-vcpus") # wait till the tab is fully rendered
-        b.wait_present("#vm-vm1-last-message")
-        b.wait_in_text("#vm-vm1-last-message", "VM failed to start")
-
-        self.allow_journal_messages(".*Error receiving data: Connection reset by peer.*")
-
     def testExternalConsole(self):
         b = self.browser
 
@@ -268,6 +285,41 @@ class TestMachines(MachineCase):
         with b.wait_timeout(360):
             b.wait(lambda: b.eval_js("document.documentElement.outerHTML.indexOf('noVNC_status_normal') >= 0"))
         b.wait(lambda: b.eval_js("document.documentElement.outerHTML.indexOf('Connected (unencrypted) to: QEMU (subVmTest1)') >= 0"))
+
+    def testDelete(self):
+        b = self.browser
+        m = self.machine
+
+        name = "subVmTest1"
+        img1 = "/var/lib/libvirt/images/{0}.img".format(name)
+        img2 = "/var/lib/libvirt/images/{0}-2.img".format(name)
+
+        self.startVm(name, console='vnc')
+
+        self.login_and_go("/machines")
+        b.wait_in_text("body", "Virtual Machines")
+        b.wait_in_text("tbody tr th", name)
+
+        m.execute("test -f {0}".format(img1))
+        m.execute("test -f {0}".format(img2))
+
+        b.click("tbody tr th") # click on the row header
+        b.wait_present("#vm-{0}-delete".format(name))
+        b.click("#vm-{0}-delete".format(name))
+
+        b.wait_present("#cockpit_modal_dialog")
+        b.wait_present("#cockpit_modal_dialog div:contains(The VM is running)")
+        b.wait_present("#cockpit_modal_dialog tr:contains({0})".format(img1))
+        b.wait_present("#cockpit_modal_dialog tr:contains({0})".format(img2))
+        b.click("#cockpit_modal_dialog button:contains(Delete)")
+        b.wait_not_present("#cockpit_modal_dialog")
+
+        b.wait_not_present("#vm-{0}-row".format(name))
+
+        m.execute("! test -f {0}".format(img1))
+        m.execute("! test -f {0}".format(img2))
+
+        self.assertNotIn(name, m.execute("virsh list --all"))
 
 if __name__ == '__main__':
     test_main()
