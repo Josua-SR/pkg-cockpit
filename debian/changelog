@@ -1,3 +1,14 @@
+cockpit (146-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Show recent updates and live update log on Software Updates page
+    - Improve available Software Updates table layout for small/mobile screens
+    - Support OAuth Kubernetes logins to work with Google Compute Engine
+    - Fix reporting ABRT crashes that are already known to the server
+    - Scroll the virtual machine VNC console into view automatically
+
+ -- Martin Pitt <mpitt@debian.org>  Fri, 21 Jul 2017 11:23:22 +0200
+
 cockpit (145-1) unstable; urgency=medium
 
   * New upstream release:
