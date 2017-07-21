@@ -77,7 +77,7 @@ return plural;
  ],
  "Create Report": [
   null,
-  ""
+  "Створити звіт"
  ],
  "Create diagnostic report": [
   null,

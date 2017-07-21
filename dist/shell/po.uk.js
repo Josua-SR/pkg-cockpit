@@ -293,7 +293,7 @@ return plural;
  ],
  "Log Out": [
   null,
-  ""
+  "Вийти"
  ],
  "Log in again": [
   null,

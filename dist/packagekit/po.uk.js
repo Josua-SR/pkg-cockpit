@@ -89,7 +89,7 @@ return plural;
  ],
  "Available Updates": [
   null,
-  ""
+  "Доступні оновлення"
  ],
  "Bugs": [
   null,
@@ -114,6 +114,10 @@ return plural;
  "Downloading": [
   null,
   "Отримуємо"
+ ],
+ "Ignore": [
+  null,
+  "Ігнорувати"
  ],
  "Initializing...": [
   null,
@@ -161,11 +165,23 @@ return plural;
  ],
  "PackageKit reported error code $0": [
   null,
-  ""
+  "PackageKit повідомлено про помилку із кодом $0"
  ],
  "Refreshing package information": [
   null,
-  ""
+  "Оновлюємо дані щодо пакунків"
+ ],
+ "Restart Now": [
+  null,
+  "Перезапустити зараз"
+ ],
+ "Restart Recommended": [
+  null,
+  "Рекомендовано перезапустити"
+ ],
+ "Restarting": [
+  null,
+  "Перезапускаємо"
  ],
  "Security Update": [
   null,
@@ -173,7 +189,7 @@ return plural;
  ],
  "Setting up": [
   null,
-  ""
+  "Налаштовуємо"
  ],
  "Software Updates": [
   null,
@@ -186,6 +202,10 @@ return plural;
  "System is up to date": [
   null,
   "Система не потребує оновлення"
+ ],
+ "Updated packages may require a restart to take effect.": [
+  null,
+  "Використання оновлених пакунків може потребувати перезапуску."
  ],
  "Updating": [
   null,
@@ -202,5 +222,9 @@ return plural;
  "When you get disconnected, the updates will continue in the background. You can reconnect and resume watching the update progress.": [
   null,
   "Коли з’єднання буде розірвано, оновлення продовжуватиметься у фоновому режимі. Ви можете повторно встановити з’єднання і відновити спостереження за поступом оновлення."
+ ],
+ "Your server will close the connection soon. You can reconnect after it has restarted.": [
+  null,
+  "Невдовзі ваш сервер розірве з’єднання. Ви можете відновити це з’єднання, щойно сервер буде перезапущено."
  ]
 }));

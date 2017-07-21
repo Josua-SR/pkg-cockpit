@@ -22,10 +22,6 @@ import parent
 from testlib import *
 
 class TestJournal(MachineCase):
-    def setUp(self):
-        # we need a static ip for this test
-        MachineCase.setUp(self, macaddr='52:54:00:9e:00:F4')
-
     def testBasic(self):
         b = self.browser
         b.wait_timeout(120)
@@ -211,10 +207,6 @@ ExecStart=/bin/sh -c 'for s in $(seq 10); do echo SLOW; sleep 0.1; done; sleep 1
         b.go("#/?prio=*&start=oldest&service=slow10.service")
         wait_slow10()
 
-        # Debian 8 doesn't have persistent journal logging across boots
-        if m.image in [ "debian-stable" ]:
-            return
-
         # insert messages as errors because we know these will be shown by default
         m.execute("systemctl start systemd-journald.service")
         m.execute("logger -p user.err --tag check-journal BEFORE BOOT");
@@ -374,8 +366,15 @@ s.send("PRIORITY=3\\nFOO=bar\\n")'
     @skipImage("Newer version of ABRT required", "centos-7", "rhel-7", "fedora-25", "fedora-i386", "fedora-testing", "rhel-7-4")
     @skipImage("ABRT not available", "debian-stable", "debian-testing", "ubuntu-stable", "ubuntu-1604", "rhel-atomic", "fedora-atomic")
     def testAbrtReport(self):
+        # The testing server is located at verify/files/mock-faf-server.py
+        # Adjust Handler.known for for the expected succession of known/unknown problems
         b = self.browser
         m = self.machine
+
+        # start mock FAF server
+        m.upload(["verify/files/mock-faf-server.py"], "/tmp/")
+        m.execute("setsid python /tmp/mock-faf-server.py >/tmp/mock-faf.log 2>&1 &")
+        m.execute("echo 'URL=http://localhost:12345' >> /etc/libreport/plugins/ureport.conf")
 
         self.login_and_go("/system/logs")
 
@@ -392,10 +391,28 @@ s.send("PRIORITY=3\\nFOO=bar\\n")'
         b.wait_present(sel)
         b.wait_visible(sel)
 
-        # If 'Reported' then skip test
+        sel = "#journal-entry-fields .nav .btn-primary:contains('Report')"
+        b.wait_present(sel)
+        b.wait_visible(sel)
+        b.click(sel)
+
         sel = "#journal-entry-fields .nav .problem-btn:contains('Reported')"
-        if b.is_present(sel):
-            return
+        b.wait_present(sel)
+        b.wait_visible(sel)
+        self.assertIn("/reports/bthash/123deadbeef", b.attr(sel, 'href'))
+
+        # "Unreport" the problem to test reporting unknown problem
+        m.execute('find /var/spool/abrt -name "reported_to" | xargs rm')
+
+        b.reload()
+        b.enter_page("/system/logs")
+
+        sel = "#journal-entry-fields"
+        b.wait_present(sel)
+
+        self.allow_journal_messages('.*This problem has already been reported.')
+        self.allow_journal_messages('.*http://localhost:12345/reports/42/')
+        self.allow_journal_messages('.*https://bugzilla.example.com/show_bug.cgi\?id=123456')
 
         sel = "#journal-entry-fields .nav .btn-primary:contains('Report')"
         b.wait_present(sel)
@@ -405,7 +422,8 @@ s.send("PRIORITY=3\\nFOO=bar\\n")'
         sel = "#journal-entry-fields .nav .problem-btn:contains('Reported')"
         b.wait_present(sel)
         b.wait_visible(sel)
-        self.assertTrue("/reports/bthash/" in b.attr(sel, 'href'))
+        self.assertIn("/reports/bthash/123deadbeef", b.attr(sel, 'href'))
+
 
 if __name__ == '__main__':
     test_main()

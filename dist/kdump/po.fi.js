@@ -103,9 +103,9 @@ return plural;
   null,
   "Kdump-palvelua ei ole asennettu. Varmista, että paketti kexec-tools on asennettu."
  ],
- "Kernel dump configuration": [
+ "Kernel Dump": [
   null,
-  "Kernel dump -konfiguraatio"
+  ""
  ],
  "Loading...": [
   null,

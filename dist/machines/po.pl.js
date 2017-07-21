@@ -69,7 +69,7 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  "$0 jest dostępne dla większości systemów operacyjnych. Aby zainstalować, wyszukaj w Menedżerze oprogramowania GNOME lub wykonaj polecenie:"
+  "$0 jest dostępne dla większości systemów operacyjnych. Aby zainstalować, należy wyszukać w Menedżerze oprogramowania GNOME lub wykonać polecenie:"
  ],
  "Address:": [
   null,
@@ -107,6 +107,10 @@ return plural;
   null,
   "Kliknięcie „Uruchom zdalną przeglądarkę” pobierze plik .vv i uruchomi $0."
  ],
+ "Confirm deletion of $0": [
+  null,
+  "Proszę potwierdzić usunięcie $0"
+ ],
  "Connect with Remote Viewer": [
   null,
   "Połącz ze zdalną przeglądarką"
@@ -117,7 +121,7 @@ return plural;
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  "Połącz z dowolną przeglądarką Spice lub VNC."
+  "Połącz z dowolną przeglądarką SPICE lub VNC."
  ],
  "Connection": [
   null,
@@ -130,6 +134,14 @@ return plural;
  "Count:": [
   null,
   "Liczba:"
+ ],
+ "Delete": [
+  null,
+  "Usuń"
+ ],
+ "Delete associated storage files:": [
+  null,
+  "Usunięcie powiązanych plików urządzeń do przechowywania danych:"
  ],
  "Device": [
   null,
@@ -241,19 +253,19 @@ return plural;
  ],
  "SPICE": [
   null,
-  "Spice"
+  "SPICE"
  ],
  "SPICE Address:": [
   null,
-  "Adres Spice:"
+  "Adres SPICE:"
  ],
  "SPICE Port:": [
   null,
-  "Port Spice:"
+  "Port SPICE:"
  ],
  "SPICE TLS Port:": [
   null,
-  "Port TLS Spice:"
+  "Port TLS SPICE:"
  ],
  "Session": [
   null,
@@ -310,6 +322,10 @@ return plural;
  "The VM is paused.": [
   null,
   "Maszyna wirtualna jest wstrzymana."
+ ],
+ "The VM is running and will be forced off before deletion.": [
+  null,
+  "Maszyna wirtualna jest uruchomiona i przed jej usunięciem zostanie wymuszone jej wyłączenie."
  ],
  "The VM is running.": [
   null,

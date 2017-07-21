@@ -103,7 +103,7 @@ return plural;
   null,
   ""
  ],
- "Kernel dump configuration": [
+ "Kernel Dump": [
   null,
   ""
  ],

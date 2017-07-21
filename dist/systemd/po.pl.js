@@ -299,10 +299,6 @@ return plural;
   null,
   "Po uruchomieniu systemu"
  ],
- "All": [
-  null,
-  "Wszystkie"
- ],
  "Asset Tag": [
   null,
   "Etykieta zasobu"
@@ -415,9 +411,9 @@ return plural;
   null,
   "Błąd"
  ],
- "Errors": [
+ "Everything": [
   null,
-  "Błędy"
+  "Wszystko"
  ],
  "Free": [
   null,
@@ -603,6 +599,10 @@ return plural;
   null,
   "Nie odnaleziono kluczy komputera."
  ],
+ "Not authorized to upload-report": [
+  null,
+  "Brak upoważnienia do „upload-report”"
+ ],
  "Not synchronized": [
   null,
   "Niesynchronizowane"
@@ -611,10 +611,6 @@ return plural;
   null,
   "Uwaga"
  ],
- "Notices": [
-  null,
-  "Uwagi"
- ],
  "Off": [
   null,
   "Wyłączone"
@@ -622,6 +618,10 @@ return plural;
  "On": [
   null,
   "Włączone"
+ ],
+ "Only Problems": [
+  null,
+  "Tylko problemy"
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
@@ -654,6 +654,18 @@ return plural;
  "Pretty Host Name": [
   null,
   "Czytelna nazwa komputera"
+ ],
+ "Problems, Errors": [
+  null,
+  "Problemy, błędy"
+ ],
+ "Problems, Errors, Warnings": [
+  null,
+  "Problemy, błędy, ostrzeżenia"
+ ],
+ "Problems, Errors, Warnings, Notices": [
+  null,
+  "Problemy, błędy, ostrzeżenia, uwagi"
  ],
  "Real Host Name": [
   null,
@@ -698,6 +710,14 @@ return plural;
  "Repeat Yearly": [
   null,
   "Powtarzanie co roku"
+ ],
+ "Reporter 'reporter-ureport' not found.": [
+  null,
+  "Nie odnaleziono modułu zgłaszania „reporter-ureport”."
+ ],
+ "Reporting was unsucessful. Try running `reporter-ureport -d ": [
+  null,
+  "Zgłoszenie się nie powiodło. Proszę wykonać „reporter-ureport -d "
  ],
  "Reset": [
   null,
@@ -746,6 +766,10 @@ return plural;
  "Set Time": [
   null,
   "Ustaw czas"
+ ],
+ "Severity": [
+  null,
+  "Ważność"
  ],
  "Show fingerprints": [
   null,
@@ -886,10 +910,6 @@ return plural;
  "Version": [
   null,
   "Wersja"
- ],
- "Warnings": [
-  null,
-  "Ostrzeżenia"
  ],
  "Wednesday": [
   null,

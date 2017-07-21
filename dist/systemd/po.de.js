@@ -293,10 +293,6 @@ return plural;
   null,
   ""
  ],
- "All": [
-  null,
-  "Alle"
- ],
  "Asset Tag": [
   null,
   ""
@@ -409,7 +405,7 @@ return plural;
   null,
   "Fehler"
  ],
- "Errors": [
+ "Everything": [
   null,
   ""
  ],
@@ -597,15 +593,15 @@ return plural;
   null,
   ""
  ],
+ "Not authorized to upload-report": [
+  null,
+  ""
+ ],
  "Not synchronized": [
   null,
   ""
  ],
  "Note": [
-  null,
-  ""
- ],
- "Notices": [
   null,
   ""
  ],
@@ -616,6 +612,10 @@ return plural;
  "On": [
   null,
   "Ein"
+ ],
+ "Only Problems": [
+  null,
+  ""
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
@@ -646,6 +646,18 @@ return plural;
   "Gewaltsam Voreinstellen"
  ],
  "Pretty Host Name": [
+  null,
+  ""
+ ],
+ "Problems, Errors": [
+  null,
+  ""
+ ],
+ "Problems, Errors, Warnings": [
+  null,
+  ""
+ ],
+ "Problems, Errors, Warnings, Notices": [
   null,
   ""
  ],
@@ -692,6 +704,14 @@ return plural;
  "Repeat Yearly": [
   null,
   "Jährlich wiederholen"
+ ],
+ "Reporter 'reporter-ureport' not found.": [
+  null,
+  ""
+ ],
+ "Reporting was unsucessful. Try running `reporter-ureport -d ": [
+  null,
+  ""
  ],
  "Reset": [
   null,
@@ -740,6 +760,10 @@ return plural;
  "Set Time": [
   null,
   "Zeit setzen"
+ ],
+ "Severity": [
+  null,
+  ""
  ],
  "Show fingerprints": [
   null,
@@ -880,10 +904,6 @@ return plural;
  "Version": [
   null,
   "Version"
- ],
- "Warnings": [
-  null,
-  "Warnungen"
  ],
  "Wednesday": [
   null,

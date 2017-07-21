@@ -115,6 +115,20 @@ ProtocolHeader = X-Forwarded-Proto
 </table></div>
 </div>
 <div class="refsect1">
+<a name="cockpit-conf-log"></a><h2>Log</h2>
+<div class="variablelist"><table border="0" class="variablelist">
+<colgroup>
+<col align="left" valign="top">
+<col>
+</colgroup>
+<tbody><tr>
+<td><p><span class="term"><code class="option">Fatal</code></span></p></td>
+<td><p>The kind of log messages in the bridge to treat as fatal. Separate multiple values
+            with spaces. Relevant values are: <code class="code">criticals</code> and <code class="code">warnings</code>.</p></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
 <a name="cockpit-conf-oauth"></a><h2>OAuth</h2>
 <p>Cockpit can be configured to support the <a class="ulink" href="https://tools.ietf.org/html/rfc6749#section-4.2" target="_top">
         implicit grant</a> OAuth authorization flow. When successful the resulting oauth

@@ -103,9 +103,9 @@ return plural;
   null,
   "Не встановлено службу Kdump. Будь ласка, переконайтеся, що у системі встановлено пакунок kexec-tools."
  ],
- "Kernel dump configuration": [
+ "Kernel Dump": [
   null,
-  "Налаштування дампу ядра"
+  "Дамп ядра"
  ],
  "Loading...": [
   null,

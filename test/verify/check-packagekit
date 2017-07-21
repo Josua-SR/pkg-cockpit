@@ -24,6 +24,10 @@ from testlib import *
 @skipImage("Image uses OSTree", "continuous-atomic", "fedora-atomic", "rhel-atomic")
 @skipImage("PackageKit crashes, https://launchpad.net/bugs/1689820", "ubuntu-1604")
 class TestUpdates(MachineCase):
+    provision = {
+        "machine1": { "address": "10.111.113.2/20", "dns": "10.111.113.2" }
+    }
+
     def setUp(self):
         MachineCase.setUp(self)
 
@@ -38,11 +42,10 @@ class TestUpdates(MachineCase):
         # have PackageKit start from a clean slate
         self.machine.execute("systemctl stop packagekit; rm -rf /var/cache/PackageKit")
 
-        if self.machine.image in ["ubuntu-1604", "debian-stable"]:
-            # old PackageKit+NM on Debian/Ubuntu misdetect online status with ifupdown; work around
-            # https://launchpad.net/bugs/1694438; this doesn't affect pure ifupdown systems (servers) and
-            # pure NM systems (desktops)
-            self.machine.execute("sed -i '/managed=/ s/false/true/' /etc/NetworkManager/NetworkManager.conf; systemctl restart NetworkManager")
+        # PackageKit refuses to operate when being offline (as on our test images); it's hard to fake
+        # NetworkManager's "is online" state, so disable it and let PackageKit fall back to the "unix"
+        # network stack; add a bogus default route to coerce it into being "online".
+        self.machine.execute("systemctl stop NetworkManager; ip route add default via 10.111.113.1 dev eth1")
 
         self.updateInfo = {}
 
@@ -63,9 +66,11 @@ class TestUpdates(MachineCase):
         # empty state visible in main area
         b.wait_present(".container-fluid div.blank-slate-pf")
 
-        # create two updates
+        install_lockfile = "/tmp/finish-pk"
+        # create two updates; force installing chocolate before vanilla
         self.createPackage("vanilla", "1.0", "1", install=True)
-        self.createPackage("vanilla", "1.0", "2")
+        self.createPackage("vanilla", "1.0", "2", depends="chocolate",
+                           postinst="while [ ! -e {0} ]; do sleep 1; done; rm -f {0}".format(install_lockfile))
         self.createPackage("chocolate", "2.0", "1", install=True)
         self.createPackage("chocolate", "2.0", "2")
         self.enableRepo()
@@ -77,6 +82,7 @@ class TestUpdates(MachineCase):
         b.wait_present(".content-header-extra td.text-right span")
         self.assertEqual(b.text(".content-header-extra td.text-right span"), "Last checked: a few seconds ago")
 
+        # no Update History yet, should be unique
         b.wait_present(".container-fluid h2")
         b.wait_in_text(".container-fluid h2", "Available Updates")
         self.assertEqual(b.text("#state"), "2 updates")
@@ -114,7 +120,20 @@ class TestUpdates(MachineCase):
         # Cancel button should eventually get disabled
         b.wait_present(".content-header-extra td button:disabled")
 
-        # should have succeeded and show restart page; cancel
+        # update log only exists in the expander, collapsed by default
+        self.assertFalse(b.is_present("#update-log"))
+        # expand it
+        b.wait_present(".expander-title span")
+        b.click(".expander-title span")
+        b.wait_present("#update-log")
+        b.wait_visible("#update-log")
+        # should eventually show chocolate when vanilla starts installing
+        b.wait_in_text("#update-log", "chocolate")
+
+        # finish the package installation
+        m.execute("touch {0}".format(install_lockfile))
+
+        # update should succeed and show restart page; cancel
         b.wait_present("#app .container-fluid h1")
         b.wait_in_text("#app .container-fluid h1", "Restart Recommended")
         b.wait_present("#app .container-fluid button.btn-primary")
@@ -135,7 +154,6 @@ class TestUpdates(MachineCase):
         # new versions are now installed
         m.execute("test -f /stamp-vanilla-1.0-2 && test -f /stamp-chocolate-2.0-2")
 
-    @skipImage("apt on Debian 8 does not yet support custom changelog servers", "debian-stable")
     def testInfoSecurity(self):
         b = self.browser
         m = self.machine
@@ -152,7 +170,7 @@ class TestUpdates(MachineCase):
         # security fix with proper CVE list and severity
         self.createPackage("secdeclare", "3", "4.a1", install=True)
         self.createPackage("secdeclare", "3", "4.b1", severity="security",
-                           changes="stop kittens from dying", cves=['CVE-2016-0001'])
+                           changes="Will crash your data center", cves=['CVE-2016-0001'])
         # security fix with parsing from changes
         self.createPackage("secparse", "4", "1", install=True)
         self.createPackage("secparse", "4", "2", changes="Fix CVE-2017-0001 and CVE-2017-0002.")
@@ -162,6 +180,7 @@ class TestUpdates(MachineCase):
 
         m.start_cockpit()
         b.login_and_go("/updates")
+        # no Update History yet, should be unique
         b.wait_present(".container-fluid h2")
         b.wait_in_text(".container-fluid h2", "Available Updates")
         self.assertEqual(b.text("#state"), "5 updates, including 2 security fixes")
@@ -176,7 +195,7 @@ class TestUpdates(MachineCase):
         self.assertEqual(b.text("#app .listing-ct tbody:nth-of-type(1) td:nth-of-type(3) span.security-label-text"),
                          "Security Update: ")
         desc = b.text("#app .listing-ct tbody:nth-of-type(1) td:nth-of-type(3)")
-        self.assertIn("stop kittens from dying", desc)
+        self.assertIn("Will crash your data center", desc)
         self.assertIn("CVE-2016-0001", desc)
 
         # secparse should also be considered a security update as the changelog mentions CVEs
@@ -208,20 +227,41 @@ class TestUpdates(MachineCase):
         b.wait_in_text("#state", "Applying updates")
         b.wait_present("#app div.progress-bar")
 
-        # should have succeeded and show restart page; cancel
+        # should have succeeded and show restart page
         b.wait_present("#app .container-fluid h1")
         b.wait_in_text("#app .container-fluid h1", "Restart Recommended")
+
+        def assertHistory(path, updates):
+            selector = path + " .tooltip-ct-outer:nth-child({0}) li"
+            b.wait_present(path)
+            b.wait_present(selector.format(len(updates)))
+            for index, pkg in enumerate(updates, start=1):
+                self.assertEqual(b.text(selector.format(index)), pkg)
+            # make sure we don't have any extra ones
+            self.assertFalse(b.is_present(selector.format(len(updates) + 1)))
+
+        # history on restart page should show the two security updates
+        b.wait_present(".expander-title span")
+        b.click(".expander-title span")
+        assertHistory("ul", ["secdeclare", "secparse"])
+
+        # ignore restarting
         b.wait_present("#app .container-fluid button.btn-default")
         b.click("#app .container-fluid button.btn-default")
 
         # should have succeeded; 3 non-security updates left
         b.wait_present("#state")
         b.wait_in_text("#state", "3 updates")
-        b.wait_in_text(".container-fluid h2", "Available Updates")
+        b.wait_present(".container-fluid #available h2")
+        b.wait_in_text(".container-fluid #available h2", "Available Updates")
         b.wait_in_text("table.listing-ct", "norefs-doc")
         self.assertIn("buggy", b.text("table.listing-ct"))
         self.assertNotIn("secdeclare", b.text("table.listing-ct"))
         self.assertNotIn("secparse", b.text("table.listing-ct"))
+
+        # history should show the security updates
+        b.wait_present(".container-fluid #history h2")
+        assertHistory("#history ul", ["secdeclare", "secparse"])
 
         # new security versions are now installed
         m.execute("test -f /stamp-secdeclare-3-4.b1 && test -f /stamp-secparse-4-2")
@@ -243,8 +283,12 @@ class TestUpdates(MachineCase):
         # new versions are now installed
         m.execute("test -f /stamp-norefs-bin-2-1 && test -f /stamp-norefs-doc-2-1")
 
+        # history on restart page should show the three non-security updates
+        b.wait_present(".expander-title span")
+        b.click(".expander-title span")
+        assertHistory("ul", ["buggy", "norefs-bin", "norefs-doc"])
+
         # do the reboot; this will disconnect the web UI
-        m.reset_reboot_flag()
         b.click("#app .container-fluid button.btn-primary")
         b.switch_to_top()
         b.wait_present(".curtains-ct")
@@ -263,7 +307,92 @@ class TestUpdates(MachineCase):
         # empty state visible in main area
         b.wait_present(".container-fluid div.blank-slate-pf")
 
+        # history on "up to date" page should show the recent update
+        assertHistory("ul", ["buggy", "norefs-bin", "norefs-doc"])
+
         self.allow_restart_journal_messages()
+
+    def testInfoTruncation(self):
+        b = self.browser
+        m = self.machine
+
+        # update with not too many binary packages
+        for i in range(8):
+            self.createPackage("coarse{:02}".format(i), "1", "1", install=True)
+            self.createPackage("coarse{:02}".format(i), "1", "2", changes="make it greener")
+
+        # update with lots of binary packages
+        for i in range(25):
+            self.createPackage("fine{:02}".format(i), "1", "1", install=True)
+            self.createPackage("fine{:02}".format(i), "1", "2", changes="make it better")
+
+        # update with long changelog
+        long_changelog = ""
+        for i in range(30):
+            long_changelog += " - Things change #{:02}\n".format(i)
+        self.createPackage("verbose", "1", "1", install=True)
+        self.createPackage("verbose", "1", "2", changes=long_changelog)
+
+        # update with lots of packages and long changelog
+        for i in range(20):
+            self.createPackage("wide-n-tall{:02}".format(i), "3", "1", install=True)
+            self.createPackage("wide-n-tall{:02}".format(i), "3", "2", changes=long_changelog)
+
+        self.enableRepo()
+
+        m.start_cockpit()
+        b.login_and_go("/updates")
+
+        b.wait_present("table.listing-ct")
+        b.wait_in_text("table.listing-ct", "Things change #05")
+
+        # "coarse" package list should be complete
+        t = b.text("#app .listing-ct tbody:nth-of-type(1) th")
+        self.assertIn("coarse00", t)
+        self.assertIn("coarse07", t)
+        self.assertNotIn("more", t)
+
+        # "fine" package list should be truncated
+        t = b.text("#app .listing-ct tbody:nth-of-type(2) th")
+        self.assertIn("fine00", t)
+        self.assertIn("fine10", t)
+        self.assertNotIn("fine20", t)
+        b.wait_present("#app .listing-ct tbody:nth-of-type(2) th a")
+        b.wait_in_text("#app .listing-ct tbody:nth-of-type(2) th a", "10 more")
+
+        # verbose changelog should be truncated
+        t = b.text("#app .listing-ct tbody:nth-of-type(3) td:nth-of-type(3)")
+        self.assertIn("Things change #00", t)
+        self.assertIn("Things change #04", t)
+        self.assertNotIn("Things change #07", t)
+        self.assertNotIn("Things change #20", t)
+        b.wait_present("#app .listing-ct tbody:nth-of-type(3) td:nth-of-type(3) a")
+        b.wait_in_text("#app .listing-ct tbody:nth-of-type(3) td:nth-of-type(3) a", "More information")
+
+        # wide-n-tall package list and changelog should both be truncated
+        t = b.text("#app .listing-ct tbody:nth-of-type(4) td:nth-of-type(3)")
+        self.assertIn("Things change #04", t)
+        self.assertNotIn("Things change #07", t)
+        b.wait_present("#app .listing-ct tbody:nth-of-type(4) th a")
+        b.wait_in_text("#app .listing-ct tbody:nth-of-type(4) th a", "5 more")
+        b.wait_present("#app .listing-ct tbody:nth-of-type(4) td:nth-of-type(3) a")
+        b.wait_in_text("#app .listing-ct tbody:nth-of-type(4) td:nth-of-type(3) a", "More information")
+
+        # expand fine package list by clicking on the "more" link
+        b.click("#app .listing-ct tbody:nth-of-type(2) th a")
+        b.wait_in_text("#app .listing-ct tbody:nth-of-type(2) th", "fine24")
+        b.wait_not_present("#app .listing-ct tbody:nth-of-type(2) th a")
+
+        # expand verbose changelog by clicking on he truncated text
+        b.click("#app .listing-ct tbody:nth-of-type(3) td:nth-of-type(3) div")
+        b.wait_in_text("#app .listing-ct tbody:nth-of-type(3) td:nth-of-type(3)", "Things change #29")
+        b.wait_not_present("#app .listing-ct tbody:nth-of-type(3) td:nth-of-type(3) a")
+
+        # clicking on package list should also expand changelog
+        b.click("#app .listing-ct tbody:nth-of-type(4) th a")
+        b.wait_in_text("#app .listing-ct tbody:nth-of-type(4) th", "wide-n-tall19")
+        b.wait_in_text("#app .listing-ct tbody:nth-of-type(4) td:nth-of-type(3)", "Things change #29")
+        b.wait_not_present("#app .listing-ct tbody:nth-of-type(4) td:nth-of-type(3) a")
 
     def testUpdateError(self):
         b = self.browser
@@ -306,9 +435,10 @@ class TestUpdates(MachineCase):
         b = self.browser
         m = self.machine
 
+        install_lockfile = "/tmp/finish-pk"
         # updating this package takes longer than a cockpit start and building the page
         self.createPackage("slow", "1", "1", install=True)
-        self.createPackage("slow", "1", "2",  postinst='sleep 10')
+        self.createPackage("slow", "1", "2",  postinst="while [ ! -e {0} ]; do sleep 1; done; rm -f {0}".format(install_lockfile))
         self.enableRepo()
         m.execute("pkcon refresh")
 
@@ -318,6 +448,8 @@ class TestUpdates(MachineCase):
         b.wait_present("#app .container-fluid button")
         b.click("#app .container-fluid button")
         b.wait_in_text("#state", "Applying updates")
+        b.wait_present("#app div.progress-description")
+        b.wait_in_text("#app div.progress-description", "slow")
 
         # restarting should pick up that install progress
         m.restart_cockpit()
@@ -325,6 +457,9 @@ class TestUpdates(MachineCase):
         b.wait_present("#state")
         b.wait_in_text("#state", "Applying updates")
         b.wait_present("#app div.progress-bar")
+
+        # finish the package installation
+        m.execute("touch {0}".format(install_lockfile))
 
         # should have succeeded and show restart page; cancel
         b.wait_present("#app .container-fluid h1")
@@ -341,8 +476,8 @@ class TestUpdates(MachineCase):
         b.wait_in_text(".content-header-extra td button", "Check for updates")
         b.click(".content-header-extra td button")
 
-        b.wait_present(".container-fluid h2")
-        b.wait_in_text(".container-fluid h2", "Available Updates")
+        b.wait_present(".container-fluid #available h2")
+        b.wait_in_text(".container-fluid #available h2", "Available Updates")
         self.assertEqual(b.text("#state"), "2 updates")
 
         b.wait_present("table.listing-ct")
@@ -357,7 +492,8 @@ class TestUpdates(MachineCase):
 
         # make sure we have enough time to crash PK
         self.createPackage("slow", "1", "1", install=True)
-        self.createPackage("slow", "1", "2",  postinst='sleep 10')
+        # we don't want this installation to finish
+        self.createPackage("slow", "1", "2", postinst="sleep infinity")
         self.enableRepo()
         m.execute("pkcon refresh")
 
@@ -374,6 +510,8 @@ class TestUpdates(MachineCase):
         b.wait_in_text("#state", "Applying updates failed")
         b.wait_present("#app .container-fluid pre")
         self.assertEqual(b.text("#app .container-fluid pre"), "PackageKit crashed")
+
+        self.allow_journal_messages(".*org.freedesktop.PackageKit.*Error.NoReply.*")
 
     def testNoPackageKit(self):
         b = self.browser
@@ -396,20 +534,20 @@ class TestUpdates(MachineCase):
     # Helper functions for creating packages/repository
     #
 
-    def createPackage(self, name, version, release, install=False, postinst=None, **updateinfo):
+    def createPackage(self, name, version, release, install=False, postinst=None, depends="", **updateinfo):
         '''Create a dummy package in /tmp/repo on self.machine
 
         If install is True, install the package. Otherwise, update the package
         index in /tmp/repo.
         '''
         if self.isApt:
-            self.createDeb(name, version + '-' + release, postinst, install)
+            self.createDeb(name, version + '-' + release, depends, postinst, install)
         else:
-            self.createRpm(name, version, release, postinst, install)
+            self.createRpm(name, version, release, depends, postinst, install)
         if updateinfo:
             self.updateInfo[(name, version, release)] = updateinfo
 
-    def createDeb(self, name, version, postinst, install):
+    def createDeb(self, name, version, depends, postinst, install):
         '''Create a dummy deb in /tmp/repo on self.machine
 
         If install is True, install the package. Otherwise, update the package
@@ -421,17 +559,17 @@ class TestUpdates(MachineCase):
         else:
             postinstcode = ''
         cmd = '''mkdir -p /tmp/b/DEBIAN /tmp/repo
-                 printf "Package: {0}\nVersion: {1}\nPriority: optional\nSection: test\nMaintainer: foo\nArchitecture: all\nDescription: dummy {0}\n" > /tmp/b/DEBIAN/control
-                 {3}
+                 printf "Package: {0}\nVersion: {1}\nPriority: optional\nSection: test\nMaintainer: foo\nDepends: {2}\nArchitecture: all\nDescription: dummy {0}\n" > /tmp/b/DEBIAN/control
+                 {4}
                  touch /tmp/b/stamp-{0}-{1}
-                 dpkg -b /tmp/b {2}
+                 dpkg -b /tmp/b {3}
                  rm -r /tmp/b
-                 '''.format(name, version, deb, postinstcode)
+                 '''.format(name, version, depends, deb, postinstcode)
         if install:
             cmd += "dpkg -i " + deb
         self.machine.execute(cmd)
 
-    def createRpm(self, name, version, release, post, install):
+    def createRpm(self, name, version, release, requires, post, install):
         '''Create a dummy rpm in /tmp/repo on self.machine
 
         If install is True, install the package. Otherwise, update the package
@@ -441,16 +579,18 @@ class TestUpdates(MachineCase):
             postcode = '\n%%post\n' + post
         else:
             postcode = ''
-        cmd = '''printf 'Summary: dummy {0}\nName: {0}\nVersion: {1}\nRelease: {2}\nLicense: BSD\nBuildArch: noarch\n
+        if requires:
+            requires = "Requires: %s\n" % requires
+        cmd = '''printf 'Summary: dummy {0}\nName: {0}\nVersion: {1}\nRelease: {2}\nLicense: BSD\nBuildArch: noarch\n{3}
 %%install\ntouch $RPM_BUILD_ROOT/stamp-{0}-{1}-{2}\n
 %%description\nTest package.\n
 %%files\n/stamp-*\n
-{3}' > /tmp/spec
+{4}' > /tmp/spec
                  rpmbuild -bb  /tmp/spec
                  mkdir -p /tmp/repo
                  cp ~/rpmbuild/RPMS/noarch/*.rpm /tmp/repo
                  rm -rf ~/rpmbuild
-                 '''.format(name, version, release, postcode)
+                 '''.format(name, version, release, requires, postcode)
         if install:
             cmd += "rpm -i /tmp/repo/{0}-{1}-{2}.*.rpm".format(name, version, release)
         self.machine.execute(cmd)

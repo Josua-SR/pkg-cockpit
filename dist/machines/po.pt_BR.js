@@ -107,6 +107,10 @@ return plural;
   null,
   ""
  ],
+ "Confirm deletion of $0": [
+  null,
+  ""
+ ],
  "Connect with Remote Viewer": [
   null,
   ""
@@ -130,6 +134,14 @@ return plural;
  "Count:": [
   null,
   "Contagem:"
+ ],
+ "Delete": [
+  null,
+  "Excluir"
+ ],
+ "Delete associated storage files:": [
+  null,
+  ""
  ],
  "Device": [
   null,
@@ -310,6 +322,10 @@ return plural;
  "The VM is paused.": [
   null,
   "A VM está pausada."
+ ],
+ "The VM is running and will be forced off before deletion.": [
+  null,
+  ""
  ],
  "The VM is running.": [
   null,

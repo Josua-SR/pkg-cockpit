@@ -103,9 +103,9 @@ return plural;
   null,
   "Usługa Kdump nie jest zainstalowana. Proszę się upewnić, że pakiet kexec-tools jest zainstalowany."
  ],
- "Kernel dump configuration": [
+ "Kernel Dump": [
   null,
-  "Konfiguracja zrzutu jądra"
+  "Zrzut jądra"
  ],
  "Loading...": [
   null,

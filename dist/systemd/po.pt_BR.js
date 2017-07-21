@@ -293,10 +293,6 @@ return plural;
   null,
   "Após a inicialização do sistema"
  ],
- "All": [
-  null,
-  "Todos"
- ],
  "Asset Tag": [
   null,
   "Tag do Recurso"
@@ -409,9 +405,9 @@ return plural;
   null,
   "Erro"
  ],
- "Errors": [
+ "Everything": [
   null,
-  "Erros"
+  "Tudo"
  ],
  "Free": [
   null,
@@ -597,6 +593,10 @@ return plural;
   null,
   "Nenhuma chave de host encontrada."
  ],
+ "Not authorized to upload-report": [
+  null,
+  ""
+ ],
  "Not synchronized": [
   null,
   "Não sincronizado"
@@ -605,10 +605,6 @@ return plural;
   null,
   "Nota"
  ],
- "Notices": [
-  null,
-  "Avisos"
- ],
  "Off": [
   null,
   "Desligado"
@@ -616,6 +612,10 @@ return plural;
  "On": [
   null,
   "Ligado"
+ ],
+ "Only Problems": [
+  null,
+  ""
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
@@ -648,6 +648,18 @@ return plural;
  "Pretty Host Name": [
   null,
   "Nome de Host Bonito"
+ ],
+ "Problems, Errors": [
+  null,
+  ""
+ ],
+ "Problems, Errors, Warnings": [
+  null,
+  ""
+ ],
+ "Problems, Errors, Warnings, Notices": [
+  null,
+  ""
  ],
  "Real Host Name": [
   null,
@@ -692,6 +704,14 @@ return plural;
  "Repeat Yearly": [
   null,
   "Repita Anualmente"
+ ],
+ "Reporter 'reporter-ureport' not found.": [
+  null,
+  ""
+ ],
+ "Reporting was unsucessful. Try running `reporter-ureport -d ": [
+  null,
+  ""
  ],
  "Reset": [
   null,
@@ -740,6 +760,10 @@ return plural;
  "Set Time": [
   null,
   "Definir Tempo"
+ ],
+ "Severity": [
+  null,
+  ""
  ],
  "Show fingerprints": [
   null,
@@ -880,10 +904,6 @@ return plural;
  "Version": [
   null,
   "Versão"
- ],
- "Warnings": [
-  null,
-  "Avisos"
  ],
  "Wednesday": [
   null,

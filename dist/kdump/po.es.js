@@ -103,9 +103,9 @@ return plural;
   null,
   "No se ha instalado el servicio Kdump. Asegúrese de que esté instalado el paquete «kexec-tools»."
  ],
- "Kernel dump configuration": [
+ "Kernel Dump": [
   null,
-  "Configuración de volcado de núcleo"
+  ""
  ],
  "Loading...": [
   null,

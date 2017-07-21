@@ -113,6 +113,10 @@ return plural;
   null,
   ""
  ],
+ "Ignore": [
+  null,
+  "Ignora"
+ ],
  "Initializing...": [
   null,
   ""
@@ -165,6 +169,18 @@ return plural;
   null,
   ""
  ],
+ "Restart Now": [
+  null,
+  ""
+ ],
+ "Restart Recommended": [
+  null,
+  ""
+ ],
+ "Restarting": [
+  null,
+  ""
+ ],
  "Security Update": [
   null,
   ""
@@ -185,6 +201,10 @@ return plural;
   null,
   ""
  ],
+ "Updated packages may require a restart to take effect.": [
+  null,
+  ""
+ ],
  "Updating": [
   null,
   "S'està actualitzant"
@@ -198,6 +218,10 @@ return plural;
   "Versió"
  ],
  "When you get disconnected, the updates will continue in the background. You can reconnect and resume watching the update progress.": [
+  null,
+  ""
+ ],
+ "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,
   ""
  ]

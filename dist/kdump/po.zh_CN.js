@@ -103,9 +103,9 @@ return plural;
   null,
   ""
  ],
- "Kernel dump configuration": [
+ "Kernel Dump": [
   null,
-  "错误的配置"
+  ""
  ],
  "Loading...": [
   null,
