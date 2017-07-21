@@ -103,9 +103,9 @@ return plural;
   null,
   ""
  ],
- "Kernel dump configuration": [
+ "Kernel Dump": [
   null,
-  "알 수 없는 설정"
+  ""
  ],
  "Loading...": [
   null,

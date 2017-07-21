@@ -89,7 +89,7 @@ return plural;
  ],
  "Available Updates": [
   null,
-  ""
+  "Dostępne aktualizacje"
  ],
  "Bugs": [
   null,
@@ -114,6 +114,10 @@ return plural;
  "Downloading": [
   null,
   "Pobieranie"
+ ],
+ "Ignore": [
+  null,
+  "Ignorowanie"
  ],
  "Initializing...": [
   null,
@@ -161,11 +165,23 @@ return plural;
  ],
  "PackageKit reported error code $0": [
   null,
-  ""
+  "Usługa PackageKit zgłosiła kod błędu $0"
  ],
  "Refreshing package information": [
   null,
-  ""
+  "Odświeżanie informacji o pakietach"
+ ],
+ "Restart Now": [
+  null,
+  "Uruchom ponownie teraz"
+ ],
+ "Restart Recommended": [
+  null,
+  "Ponowne uruchomienie jest zalecane"
+ ],
+ "Restarting": [
+  null,
+  "Ponowne uruchamianie"
  ],
  "Security Update": [
   null,
@@ -173,7 +189,7 @@ return plural;
  ],
  "Setting up": [
   null,
-  ""
+  "Ustawianie"
  ],
  "Software Updates": [
   null,
@@ -186,6 +202,10 @@ return plural;
  "System is up to date": [
   null,
   "System jest aktualny"
+ ],
+ "Updated packages may require a restart to take effect.": [
+  null,
+  "Zaktualizowane pakiety mogą wymagać ponownego uruchomienia."
  ],
  "Updating": [
   null,
@@ -202,5 +222,9 @@ return plural;
  "When you get disconnected, the updates will continue in the background. You can reconnect and resume watching the update progress.": [
   null,
   "Po rozłączeniu aktualizacje będą kontynuowane w tle. Można połączyć ponownie i wznowić obserwowanie postępu aktualizacji."
+ ],
+ "Your server will close the connection soon. You can reconnect after it has restarted.": [
+  null,
+  "Serwer niedługo zamknie połączenie. Można połączyć jeszcze raz po jego ponownym uruchomieniu."
  ]
 }));

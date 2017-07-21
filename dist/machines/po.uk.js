@@ -107,6 +107,10 @@ return plural;
   null,
   "У результаті натискання «Запустити віддалений переглядач» буде отримано файл .vv і запущено $0."
  ],
+ "Confirm deletion of $0": [
+  null,
+  "Підтвердження вилучення $0"
+ ],
  "Connect with Remote Viewer": [
   null,
   "З’єднатися із Віддаленим переглядачем"
@@ -130,6 +134,14 @@ return plural;
  "Count:": [
   null,
   "Кількість:"
+ ],
+ "Delete": [
+  null,
+  "Вилучити"
+ ],
+ "Delete associated storage files:": [
+  null,
+  "Вилучити пов’язані файли у сховищі даних:"
  ],
  "Device": [
   null,
@@ -310,6 +322,10 @@ return plural;
  "The VM is paused.": [
   null,
   "Роботу віртуальної машини призупинено."
+ ],
+ "The VM is running and will be forced off before deletion.": [
+  null,
+  "Запущено віртуальну машину. Її буде примусово зупинено перед вилученням."
  ],
  "The VM is running.": [
   null,

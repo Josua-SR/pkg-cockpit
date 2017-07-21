@@ -293,10 +293,6 @@ return plural;
   null,
   ""
  ],
- "All": [
-  null,
-  "Tots"
- ],
  "Asset Tag": [
   null,
   "Etiqueta de recurs"
@@ -409,9 +405,9 @@ return plural;
   null,
   "Error"
  ],
- "Errors": [
+ "Everything": [
   null,
-  "Errors"
+  ""
  ],
  "Free": [
   null,
@@ -597,6 +593,10 @@ return plural;
   null,
   ""
  ],
+ "Not authorized to upload-report": [
+  null,
+  ""
+ ],
  "Not synchronized": [
   null,
   "No sincronitzat"
@@ -605,10 +605,6 @@ return plural;
   null,
   "Nota"
  ],
- "Notices": [
-  null,
-  "Anuncis"
- ],
  "Off": [
   null,
   "Apagat"
@@ -616,6 +612,10 @@ return plural;
  "On": [
   null,
   "Engegat"
+ ],
+ "Only Problems": [
+  null,
+  ""
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
@@ -648,6 +648,18 @@ return plural;
  "Pretty Host Name": [
   null,
   "Nom de l'amfitrió de nivell superior"
+ ],
+ "Problems, Errors": [
+  null,
+  ""
+ ],
+ "Problems, Errors, Warnings": [
+  null,
+  ""
+ ],
+ "Problems, Errors, Warnings, Notices": [
+  null,
+  ""
  ],
  "Real Host Name": [
   null,
@@ -690,6 +702,14 @@ return plural;
   ""
  ],
  "Repeat Yearly": [
+  null,
+  ""
+ ],
+ "Reporter 'reporter-ureport' not found.": [
+  null,
+  ""
+ ],
+ "Reporting was unsucessful. Try running `reporter-ureport -d ": [
   null,
   ""
  ],
@@ -740,6 +760,10 @@ return plural;
  "Set Time": [
   null,
   "Ajusta l'hora"
+ ],
+ "Severity": [
+  null,
+  ""
  ],
  "Show fingerprints": [
   null,
@@ -880,10 +904,6 @@ return plural;
  "Version": [
   null,
   "Versió"
- ],
- "Warnings": [
-  null,
-  "Advertències"
  ],
  "Wednesday": [
   null,

@@ -1273,7 +1273,7 @@ return plural;
  ],
  "Select an object to see more details.": [
   null,
-  "Proszę wybrać obiekt, aby wyświetlić więcej informacji."
+  "Wybranie obiektu wyświetli więcej informacji."
  ],
  "Server": [
   null,

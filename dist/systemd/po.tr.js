@@ -293,10 +293,6 @@ return plural;
   null,
   ""
  ],
- "All": [
-  null,
-  "Hepsi"
- ],
  "Asset Tag": [
   null,
   ""
@@ -409,7 +405,7 @@ return plural;
   null,
   "Hata"
  ],
- "Errors": [
+ "Everything": [
   null,
   ""
  ],
@@ -597,15 +593,15 @@ return plural;
   null,
   "Bulunamadı"
  ],
+ "Not authorized to upload-report": [
+  null,
+  ""
+ ],
  "Not synchronized": [
   null,
   ""
  ],
  "Note": [
-  null,
-  ""
- ],
- "Notices": [
   null,
   ""
  ],
@@ -616,6 +612,10 @@ return plural;
  "On": [
   null,
   "Açık"
+ ],
+ "Only Problems": [
+  null,
+  ""
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
@@ -646,6 +646,18 @@ return plural;
   ""
  ],
  "Pretty Host Name": [
+  null,
+  ""
+ ],
+ "Problems, Errors": [
+  null,
+  ""
+ ],
+ "Problems, Errors, Warnings": [
+  null,
+  ""
+ ],
+ "Problems, Errors, Warnings, Notices": [
   null,
   ""
  ],
@@ -690,6 +702,14 @@ return plural;
   ""
  ],
  "Repeat Yearly": [
+  null,
+  ""
+ ],
+ "Reporter 'reporter-ureport' not found.": [
+  null,
+  ""
+ ],
+ "Reporting was unsucessful. Try running `reporter-ureport -d ": [
   null,
   ""
  ],
@@ -740,6 +760,10 @@ return plural;
  "Set Time": [
   null,
   "Zamanı Ayarla"
+ ],
+ "Severity": [
+  null,
+  ""
  ],
  "Show fingerprints": [
   null,
@@ -880,10 +904,6 @@ return plural;
  "Version": [
   null,
   "Sürüm"
- ],
- "Warnings": [
-  null,
-  ""
  ],
  "Wednesday": [
   null,

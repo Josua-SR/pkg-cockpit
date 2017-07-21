@@ -293,10 +293,6 @@ return plural;
   null,
   "Järjestelmän käynnistyksen jälkeen"
  ],
- "All": [
-  null,
-  "Kaikki"
- ],
  "Asset Tag": [
   null,
   ""
@@ -409,9 +405,9 @@ return plural;
   null,
   "Virhe"
  ],
- "Errors": [
+ "Everything": [
   null,
-  "Virheitä"
+  "Kaikki"
  ],
  "Free": [
   null,
@@ -597,6 +593,10 @@ return plural;
   null,
   ""
  ],
+ "Not authorized to upload-report": [
+  null,
+  ""
+ ],
  "Not synchronized": [
   null,
   ""
@@ -605,15 +605,15 @@ return plural;
   null,
   ""
  ],
- "Notices": [
-  null,
-  ""
- ],
  "Off": [
   null,
   ""
  ],
  "On": [
+  null,
+  ""
+ ],
+ "Only Problems": [
   null,
   ""
  ],
@@ -646,6 +646,18 @@ return plural;
   ""
  ],
  "Pretty Host Name": [
+  null,
+  ""
+ ],
+ "Problems, Errors": [
+  null,
+  ""
+ ],
+ "Problems, Errors, Warnings": [
+  null,
+  ""
+ ],
+ "Problems, Errors, Warnings, Notices": [
   null,
   ""
  ],
@@ -690,6 +702,14 @@ return plural;
   ""
  ],
  "Repeat Yearly": [
+  null,
+  ""
+ ],
+ "Reporter 'reporter-ureport' not found.": [
+  null,
+  ""
+ ],
+ "Reporting was unsucessful. Try running `reporter-ureport -d ": [
   null,
   ""
  ],
@@ -738,6 +758,10 @@ return plural;
   ""
  ],
  "Set Time": [
+  null,
+  ""
+ ],
+ "Severity": [
   null,
   ""
  ],
@@ -880,10 +904,6 @@ return plural;
  "Version": [
   null,
   "Versio"
- ],
- "Warnings": [
-  null,
-  "Varoitukset"
  ],
  "Wednesday": [
   null,

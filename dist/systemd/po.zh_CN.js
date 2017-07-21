@@ -287,10 +287,6 @@ return plural;
   null,
   "系统启动后"
  ],
- "All": [
-  null,
-  "所有"
- ],
  "Asset Tag": [
   null,
   "资产标记"
@@ -403,9 +399,9 @@ return plural;
   null,
   "错误"
  ],
- "Errors": [
+ "Everything": [
   null,
-  "错误"
+  "所有内容"
  ],
  "Free": [
   null,
@@ -591,6 +587,10 @@ return plural;
   null,
   "没有找到主机密钥。"
  ],
+ "Not authorized to upload-report": [
+  null,
+  ""
+ ],
  "Not synchronized": [
   null,
   "未同步"
@@ -599,10 +599,6 @@ return plural;
   null,
   "注意"
  ],
- "Notices": [
-  null,
-  "通知"
- ],
  "Off": [
   null,
   "关"
@@ -610,6 +606,10 @@ return plural;
  "On": [
   null,
   "开"
+ ],
+ "Only Problems": [
+  null,
+  ""
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
@@ -642,6 +642,18 @@ return plural;
  "Pretty Host Name": [
   null,
   "短主机名"
+ ],
+ "Problems, Errors": [
+  null,
+  ""
+ ],
+ "Problems, Errors, Warnings": [
+  null,
+  ""
+ ],
+ "Problems, Errors, Warnings, Notices": [
+  null,
+  ""
  ],
  "Real Host Name": [
   null,
@@ -686,6 +698,14 @@ return plural;
  "Repeat Yearly": [
   null,
   "每年重复"
+ ],
+ "Reporter 'reporter-ureport' not found.": [
+  null,
+  ""
+ ],
+ "Reporting was unsucessful. Try running `reporter-ureport -d ": [
+  null,
+  ""
  ],
  "Reset": [
   null,
@@ -734,6 +754,10 @@ return plural;
  "Set Time": [
   null,
   "设置时间"
+ ],
+ "Severity": [
+  null,
+  ""
  ],
  "Show fingerprints": [
   null,
@@ -874,10 +898,6 @@ return plural;
  "Version": [
   null,
   "版本"
- ],
- "Warnings": [
-  null,
-  "警告"
  ],
  "Wednesday": [
   null,

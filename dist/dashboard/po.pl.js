@@ -229,7 +229,7 @@ return plural;
  ],
  "Enter IP address or host name": [
   null,
-  "Proszę podać adres IP lub nazwę komputera"
+  "Adres IP lub nazwa komputera"
  ],
  "Entering a different password here means you will need to retype it every time you reconnect to this machine": [
   null,

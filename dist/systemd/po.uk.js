@@ -299,10 +299,6 @@ return plural;
   null,
   "Після завантаження системи"
  ],
- "All": [
-  null,
-  "Всі"
- ],
  "Asset Tag": [
   null,
   "Мітка активу"
@@ -415,9 +411,9 @@ return plural;
   null,
   "Помилка"
  ],
- "Errors": [
+ "Everything": [
   null,
-  "Помилки"
+  "Все"
  ],
  "Free": [
   null,
@@ -603,6 +599,10 @@ return plural;
   null,
   "Не знайдено ключів вузлів."
  ],
+ "Not authorized to upload-report": [
+  null,
+  "Не уповноважено на вивантаження звітів"
+ ],
  "Not synchronized": [
   null,
   "Не синхронізовано"
@@ -611,10 +611,6 @@ return plural;
   null,
   "Примітка"
  ],
- "Notices": [
-  null,
-  "Примітки"
- ],
  "Off": [
   null,
   "Вимкнено"
@@ -622,6 +618,10 @@ return plural;
  "On": [
   null,
   "Увімкнено"
+ ],
+ "Only Problems": [
+  null,
+  "Лише проблеми"
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
@@ -654,6 +654,18 @@ return plural;
  "Pretty Host Name": [
   null,
   "Зручна назва вузла"
+ ],
+ "Problems, Errors": [
+  null,
+  "Проблеми, помилки"
+ ],
+ "Problems, Errors, Warnings": [
+  null,
+  "Проблеми, помилки, попередження"
+ ],
+ "Problems, Errors, Warnings, Notices": [
+  null,
+  "Проблеми, помилки, попередження, зауваження"
  ],
  "Real Host Name": [
   null,
@@ -698,6 +710,14 @@ return plural;
  "Repeat Yearly": [
   null,
   "Повторювати щороку"
+ ],
+ "Reporter 'reporter-ureport' not found.": [
+  null,
+  "Не знайдено засіб звітування «reporter-ureport»."
+ ],
+ "Reporting was unsucessful. Try running `reporter-ureport -d ": [
+  null,
+  "Не вдалося надіслати звіт. Спробуйте віддати команду «reporter-ureport -d "
  ],
  "Reset": [
   null,
@@ -746,6 +766,10 @@ return plural;
  "Set Time": [
   null,
   "Встановити час"
+ ],
+ "Severity": [
+  null,
+  "Важливість"
  ],
  "Show fingerprints": [
   null,
@@ -886,10 +910,6 @@ return plural;
  "Version": [
   null,
   "Версія"
- ],
- "Warnings": [
-  null,
-  "Попередження"
  ],
  "Wednesday": [
   null,

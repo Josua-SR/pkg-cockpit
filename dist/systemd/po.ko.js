@@ -287,10 +287,6 @@ return plural;
   null,
   ""
  ],
- "All": [
-  null,
-  "모두"
- ],
  "Asset Tag": [
   null,
   ""
@@ -403,7 +399,7 @@ return plural;
   null,
   ""
  ],
- "Errors": [
+ "Everything": [
   null,
   ""
  ],
@@ -591,15 +587,15 @@ return plural;
   null,
   "찾을 수 없습니다."
  ],
+ "Not authorized to upload-report": [
+  null,
+  ""
+ ],
  "Not synchronized": [
   null,
   ""
  ],
  "Note": [
-  null,
-  ""
- ],
- "Notices": [
   null,
   ""
  ],
@@ -610,6 +606,10 @@ return plural;
  "On": [
   null,
   "활성"
+ ],
+ "Only Problems": [
+  null,
+  ""
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
@@ -640,6 +640,18 @@ return plural;
   ""
  ],
  "Pretty Host Name": [
+  null,
+  ""
+ ],
+ "Problems, Errors": [
+  null,
+  ""
+ ],
+ "Problems, Errors, Warnings": [
+  null,
+  ""
+ ],
+ "Problems, Errors, Warnings, Notices": [
   null,
   ""
  ],
@@ -684,6 +696,14 @@ return plural;
   ""
  ],
  "Repeat Yearly": [
+  null,
+  ""
+ ],
+ "Reporter 'reporter-ureport' not found.": [
+  null,
+  ""
+ ],
+ "Reporting was unsucessful. Try running `reporter-ureport -d ": [
   null,
   ""
  ],
@@ -732,6 +752,10 @@ return plural;
   ""
  ],
  "Set Time": [
+  null,
+  ""
+ ],
+ "Severity": [
   null,
   ""
  ],
@@ -874,10 +898,6 @@ return plural;
  "Version": [
   null,
   "버전"
- ],
- "Warnings": [
-  null,
-  ""
  ],
  "Wednesday": [
   null,

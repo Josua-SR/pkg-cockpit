@@ -299,10 +299,6 @@ return plural;
   null,
   ""
  ],
- "All": [
-  null,
-  ""
- ],
  "Asset Tag": [
   null,
   ""
@@ -415,7 +411,7 @@ return plural;
   null,
   "Chyba"
  ],
- "Errors": [
+ "Everything": [
   null,
   ""
  ],
@@ -603,6 +599,10 @@ return plural;
   null,
   ""
  ],
+ "Not authorized to upload-report": [
+  null,
+  ""
+ ],
  "Not synchronized": [
   null,
   ""
@@ -611,15 +611,15 @@ return plural;
   null,
   ""
  ],
- "Notices": [
-  null,
-  ""
- ],
  "Off": [
   null,
   ""
  ],
  "On": [
+  null,
+  ""
+ ],
+ "Only Problems": [
   null,
   ""
  ],
@@ -652,6 +652,18 @@ return plural;
   ""
  ],
  "Pretty Host Name": [
+  null,
+  ""
+ ],
+ "Problems, Errors": [
+  null,
+  ""
+ ],
+ "Problems, Errors, Warnings": [
+  null,
+  ""
+ ],
+ "Problems, Errors, Warnings, Notices": [
   null,
   ""
  ],
@@ -696,6 +708,14 @@ return plural;
   ""
  ],
  "Repeat Yearly": [
+  null,
+  ""
+ ],
+ "Reporter 'reporter-ureport' not found.": [
+  null,
+  ""
+ ],
+ "Reporting was unsucessful. Try running `reporter-ureport -d ": [
   null,
   ""
  ],
@@ -744,6 +764,10 @@ return plural;
   ""
  ],
  "Set Time": [
+  null,
+  ""
+ ],
+ "Severity": [
   null,
   ""
  ],
@@ -884,10 +908,6 @@ return plural;
   ""
  ],
  "Version": [
-  null,
-  ""
- ],
- "Warnings": [
   null,
   ""
  ],

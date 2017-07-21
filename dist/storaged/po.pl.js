@@ -415,7 +415,7 @@ return plural;
  ],
  "Custom (Enter filesystem type)": [
   null,
-  "Niestandardowe (proszę podać typ systemu plików)"
+  "Niestandardowe (podanie typu systemu plików)"
  ],
  "DISK IS FAILING": [
   null,
