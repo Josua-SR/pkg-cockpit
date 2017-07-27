@@ -137,6 +137,10 @@ return plural;
   null,
   "Мережа"
  ],
+ "No matching files found": [
+  null,
+  ""
+ ],
  "Not Ready": [
   null,
   "Не готовий"
@@ -153,9 +157,17 @@ return plural;
   null,
   "Увімкнено"
  ],
+ "Path to file": [
+  null,
+  ""
+ ],
  "Ready": [
   null,
   "Готовий"
+ ],
+ "Too many files found": [
+  null,
+  ""
  ],
  "Unavailable": [
   null,

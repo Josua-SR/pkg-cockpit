@@ -402,14 +402,11 @@ am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" \
 	"$(DESTDIR)$(defaultbrandingdir)" \
 	"$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" \
 	"$(DESTDIR)$(firewalldir)" \
-	"$(DESTDIR)$(kubernetesbrandingdir)" \
-	"$(DESTDIR)$(machinesincludedir)" \
-	"$(DESTDIR)$(machinesincludechromedir)" \
-	"$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" \
-	"$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(staticdir)" \
-	"$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(pixmapdir)" \
-	"$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" \
-	"$(DESTDIR)$(registrybrandingdir)" \
+	"$(DESTDIR)$(kubernetesbrandingdir)" "$(DESTDIR)$(appdatadir)" \
+	"$(DESTDIR)$(basedir)" "$(DESTDIR)$(desktopdir)" \
+	"$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" \
+	"$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(playgrounddir)" \
+	"$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" \
 	"$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticdebugdir)" \
 	"$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"
 @WITH_GOLANG_TRUE@am__EXEEXT_1 = cockpit-kube-auth$(EXEEXT) \
@@ -1063,8 +1060,7 @@ DATA = $(base_DATA) $(basedebug_DATA) $(basefonts_DATA) \
 	$(centosbranding_DATA) $(debianbranding_DATA) \
 	$(defaultbranding_DATA) $(dist_systemdunit_DATA) \
 	$(fedorabranding_DATA) $(firewall_DATA) \
-	$(kubernetesbranding_DATA) $(machinesinclude_DATA) \
-	$(machinesincludechrome_DATA) $(nodist_appdata_DATA) \
+	$(kubernetesbranding_DATA) $(nodist_appdata_DATA) \
 	$(nodist_base_DATA) $(nodist_desktop_DATA) \
 	$(nodist_noinst_DATA) $(nodist_static_DATA) \
 	$(nodist_systemdunit_DATA) $(noinst_DATA) $(pixmap_DATA) \
@@ -1558,20 +1554,7 @@ EXTRA_DIST = package.json README.md $(NULL) $(WEBPACK_DEPS) \
 	$(am__append_1) $(PO_INPUTS) po/LINGUAS po/po.empty.js \
 	po/po2json po/zanata.xml $(NULL) dist/playground/extra.de.po \
 	pkg/playground/extra.de.po pkg/users/mock \
-	pkg/lib/qunit-template.html $(shell ls -1 \
-	$(srcdir)/node_modules/noVNC/include | grep \
-	".*\.\(js\|css\|ttf\|woff\)" | sed -e \
-	's/^/node_modules\/noVNC\/include\//') $(shell ls -1 \
-	$(srcdir)/node_modules/noVNC/include/chrome-app | grep \
-	".*\.\(js\|css\|ttf\|woff\)" | sed -e \
-	's/^/node_modules\/noVNC\/include\/chrome-app\//') \
-	node_modules/noVNC/package.json $(shell ls -1 \
-	$(srcdir)/node_modules/noVNC/include | grep \
-	".*\.\(js\|css\|ttf\|woff\)" | sed -e \
-	's/^/dist\/machines\/include\//') $(shell ls -1 \
-	$(srcdir)/node_modules/noVNC/include/chrome-app | grep \
-	".*\.\(js\|css\|ttf\|woff\)" | sed -e \
-	's/^/dist\/machines\/include\/chrome-app\//') \
+	pkg/lib/qunit-template.html node_modules/noVNC/package.json \
 	$(playground_DATA) $(pkg_TESTS) dist/base1/cockpit.js \
 	dist/base1/cockpit.min.css dist/base1/cockpit.min.css.map \
 	dist/base1/cockpit.min.js dist/base1/cockpit.min.js.map \
@@ -1911,16 +1894,6 @@ pkg_TESTS = \
 playgrounddir = $(pkgdatadir)/playground
 playground_DATA = \
 	dist/playground/po.extra.de.js \
-	$(NULL)
-
-machinesincludedir = $(pkgdatadir)/machines/include
-machinesinclude_DATA = \
-	$(shell ls -1 $(srcdir)/node_modules/noVNC/include | grep ".*\.\(js\|css\|ttf\|woff\)" | sed -e 's/^/dist\/machines\/include\//') \
-	$(NULL)
-
-machinesincludechromedir = $(pkgdatadir)/machines/include/chrome-app
-machinesincludechrome_DATA = \
-	$(shell ls -1 $(srcdir)/node_modules/noVNC/include/chrome-app | grep ".*\.\(js\|css\|ttf\|woff\)" | sed -e 's/^/dist\/machines\/include\/chrome-app\//') \
 	$(NULL)
 
 @WITH_GOLANG_TRUE@AM_V_GO = $(am__v_GO_@AM_V@)
@@ -7231,48 +7204,6 @@ uninstall-kubernetesbrandingDATA:
 	@list='$(kubernetesbranding_DATA)'; test -n "$(kubernetesbrandingdir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(kubernetesbrandingdir)'; $(am__uninstall_files_from_dir)
-install-machinesincludeDATA: $(machinesinclude_DATA)
-	@$(NORMAL_INSTALL)
-	@list='$(machinesinclude_DATA)'; test -n "$(machinesincludedir)" || list=; \
-	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(machinesincludedir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(machinesincludedir)" || exit 1; \
-	fi; \
-	for p in $$list; do \
-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-	  echo "$$d$$p"; \
-	done | $(am__base_list) | \
-	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(machinesincludedir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(machinesincludedir)" || exit $$?; \
-	done
-
-uninstall-machinesincludeDATA:
-	@$(NORMAL_UNINSTALL)
-	@list='$(machinesinclude_DATA)'; test -n "$(machinesincludedir)" || list=; \
-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	dir='$(DESTDIR)$(machinesincludedir)'; $(am__uninstall_files_from_dir)
-install-machinesincludechromeDATA: $(machinesincludechrome_DATA)
-	@$(NORMAL_INSTALL)
-	@list='$(machinesincludechrome_DATA)'; test -n "$(machinesincludechromedir)" || list=; \
-	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(machinesincludechromedir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(machinesincludechromedir)" || exit 1; \
-	fi; \
-	for p in $$list; do \
-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-	  echo "$$d$$p"; \
-	done | $(am__base_list) | \
-	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(machinesincludechromedir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(machinesincludechromedir)" || exit $$?; \
-	done
-
-uninstall-machinesincludechromeDATA:
-	@$(NORMAL_UNINSTALL)
-	@list='$(machinesincludechrome_DATA)'; test -n "$(machinesincludechromedir)" || list=; \
-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	dir='$(DESTDIR)$(machinesincludechromedir)'; $(am__uninstall_files_from_dir)
 install-nodist_appdataDATA: $(nodist_appdata_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(nodist_appdata_DATA)'; test -n "$(appdatadir)" || list=; \
@@ -8302,7 +8233,7 @@ check: $(BUILT_SOURCES)
 all-am: Makefile $(LIBRARIES) $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) \
 		config.h all-local
 installdirs:
-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(basedebugdir)" "$(DESTDIR)$(basefontsdir)" "$(DESTDIR)$(centosbrandingdir)" "$(DESTDIR)$(debianbrandingdir)" "$(DESTDIR)$(defaultbrandingdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" "$(DESTDIR)$(firewalldir)" "$(DESTDIR)$(kubernetesbrandingdir)" "$(DESTDIR)$(machinesincludedir)" "$(DESTDIR)$(machinesincludechromedir)" "$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" "$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticdebugdir)" "$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"; do \
+	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(basedebugdir)" "$(DESTDIR)$(basefontsdir)" "$(DESTDIR)$(centosbrandingdir)" "$(DESTDIR)$(debianbrandingdir)" "$(DESTDIR)$(defaultbrandingdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" "$(DESTDIR)$(firewalldir)" "$(DESTDIR)$(kubernetesbrandingdir)" "$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" "$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticdebugdir)" "$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: $(BUILT_SOURCES)
@@ -8386,8 +8317,7 @@ install-data-am: install-baseDATA install-basedebugDATA \
 	install-data-local install-debianbrandingDATA \
 	install-defaultbrandingDATA install-dist_systemdunitDATA \
 	install-fedorabrandingDATA install-firewallDATA \
-	install-kubernetesbrandingDATA install-machinesincludeDATA \
-	install-machinesincludechromeDATA install-man \
+	install-kubernetesbrandingDATA install-man \
 	install-nodist_appdataDATA install-nodist_baseDATA \
 	install-nodist_desktopDATA install-nodist_staticDATA \
 	install-nodist_systemdunitDATA install-pixmapDATA \
@@ -8450,15 +8380,14 @@ uninstall-am: uninstall-baseDATA uninstall-basedebugDATA \
 	uninstall-defaultbrandingDATA uninstall-dist_systemdunitDATA \
 	uninstall-fedorabrandingDATA uninstall-firewallDATA \
 	uninstall-kubernetesbrandingDATA uninstall-libexecPROGRAMS \
-	uninstall-local uninstall-machinesincludeDATA \
-	uninstall-machinesincludechromeDATA uninstall-man \
-	uninstall-nodist_appdataDATA uninstall-nodist_baseDATA \
-	uninstall-nodist_desktopDATA uninstall-nodist_staticDATA \
-	uninstall-nodist_systemdunitDATA uninstall-pixmapDATA \
-	uninstall-playgroundDATA uninstall-pmlogconfDATA \
-	uninstall-registrybrandingDATA uninstall-rhelbrandingDATA \
-	uninstall-sbinPROGRAMS uninstall-staticdebugDATA \
-	uninstall-staticfontsDATA uninstall-ubuntubrandingDATA
+	uninstall-local uninstall-man uninstall-nodist_appdataDATA \
+	uninstall-nodist_baseDATA uninstall-nodist_desktopDATA \
+	uninstall-nodist_staticDATA uninstall-nodist_systemdunitDATA \
+	uninstall-pixmapDATA uninstall-playgroundDATA \
+	uninstall-pmlogconfDATA uninstall-registrybrandingDATA \
+	uninstall-rhelbrandingDATA uninstall-sbinPROGRAMS \
+	uninstall-staticdebugDATA uninstall-staticfontsDATA \
+	uninstall-ubuntubrandingDATA
 
 uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 
@@ -8485,9 +8414,8 @@ uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 	install-exec-local install-fedorabrandingDATA \
 	install-firewallDATA install-html install-html-am install-info \
 	install-info-am install-kubernetesbrandingDATA \
-	install-libexecPROGRAMS install-machinesincludeDATA \
-	install-machinesincludechromeDATA install-man install-man1 \
-	install-man5 install-man8 install-nodist_appdataDATA \
+	install-libexecPROGRAMS install-man install-man1 install-man5 \
+	install-man8 install-nodist_appdataDATA \
 	install-nodist_baseDATA install-nodist_desktopDATA \
 	install-nodist_staticDATA install-nodist_systemdunitDATA \
 	install-pdf install-pdf-am install-pixmapDATA \
@@ -8505,16 +8433,15 @@ uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 	uninstall-defaultbrandingDATA uninstall-dist_systemdunitDATA \
 	uninstall-fedorabrandingDATA uninstall-firewallDATA \
 	uninstall-kubernetesbrandingDATA uninstall-libexecPROGRAMS \
-	uninstall-local uninstall-machinesincludeDATA \
-	uninstall-machinesincludechromeDATA uninstall-man \
-	uninstall-man1 uninstall-man5 uninstall-man8 \
-	uninstall-nodist_appdataDATA uninstall-nodist_baseDATA \
-	uninstall-nodist_desktopDATA uninstall-nodist_staticDATA \
-	uninstall-nodist_systemdunitDATA uninstall-pixmapDATA \
-	uninstall-playgroundDATA uninstall-pmlogconfDATA \
-	uninstall-registrybrandingDATA uninstall-rhelbrandingDATA \
-	uninstall-sbinPROGRAMS uninstall-staticdebugDATA \
-	uninstall-staticfontsDATA uninstall-ubuntubrandingDATA
+	uninstall-local uninstall-man uninstall-man1 uninstall-man5 \
+	uninstall-man8 uninstall-nodist_appdataDATA \
+	uninstall-nodist_baseDATA uninstall-nodist_desktopDATA \
+	uninstall-nodist_staticDATA uninstall-nodist_systemdunitDATA \
+	uninstall-pixmapDATA uninstall-playgroundDATA \
+	uninstall-pmlogconfDATA uninstall-registrybrandingDATA \
+	uninstall-rhelbrandingDATA uninstall-sbinPROGRAMS \
+	uninstall-staticdebugDATA uninstall-staticfontsDATA \
+	uninstall-ubuntubrandingDATA
 
 .PRECIOUS: Makefile
 
@@ -8784,12 +8711,6 @@ download-po:
 	sh -c 'cd $(srcdir)/po; ls *.po' | sed 's/\.po//g' | sort > $(srcdir)/po/LINGUAS
 
 dist/playground/extra.de.po: pkg/playground/extra.de.po
-	$(COPY_RULE)
-
-dist/machines/include/chrome-app/%: node_modules/noVNC/include/chrome-app/%
-	$(COPY_RULE)
-
-dist/machines/include/%: node_modules/noVNC/include/%
 	$(COPY_RULE)
 
 @WITH_GOLANG_TRUE@cockpit-kube-auth$(EXEEXT): $(COCKPIT_KUBE_AUTH)

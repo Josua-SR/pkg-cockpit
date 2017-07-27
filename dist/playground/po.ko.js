@@ -123,6 +123,10 @@ return plural;
   null,
   "네트워크"
  ],
+ "No matching files found": [
+  null,
+  ""
+ ],
  "Not Ready": [
   null,
   "준비되지 않음"
@@ -139,9 +143,17 @@ return plural;
   null,
   "활성"
  ],
+ "Path to file": [
+  null,
+  ""
+ ],
  "Ready": [
   null,
   "준비됨"
+ ],
+ "Too many files found": [
+  null,
+  ""
  ],
  "Unavailable": [
   null,

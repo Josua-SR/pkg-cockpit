@@ -67,6 +67,10 @@ return plural;
   "language": "pl",
   "x-generator": "Zanata 3.9.6"
  },
+ "$0 more…": [
+  null,
+  ""
+ ],
  "$0 update": [
   "$0 updates",
   "$0 aktualizacja",
@@ -111,6 +115,10 @@ return plural;
   null,
   "Szczegóły"
  ],
+ "Downloaded": [
+  null,
+  ""
+ ],
  "Downloading": [
   null,
   "Pobieranie"
@@ -131,6 +139,10 @@ return plural;
   null,
   "Zainstaluj aktualizacje zabezpieczeń"
  ],
+ "Installed": [
+  null,
+  ""
+ ],
  "Installing": [
   null,
   "Instalowanie"
@@ -147,6 +159,10 @@ return plural;
   null,
   "Wczytywanie dostępnych aktualizacji, proszę czekać…"
  ],
+ "More information…": [
+  null,
+  ""
+ ],
  "Name": [
   null,
   "Nazwa"
@@ -154,6 +170,10 @@ return plural;
  "No updates pending": [
   null,
   "Brak oczekujących aktualizacji"
+ ],
+ "Package information": [
+  null,
+  ""
  ],
  "PackageKit crashed": [
   null,
@@ -187,6 +207,10 @@ return plural;
   null,
   "Aktualizacja zabezpieczeń"
  ],
+ "Set up": [
+  null,
+  ""
+ ],
  "Setting up": [
   null,
   "Ustawianie"
@@ -203,6 +227,26 @@ return plural;
   null,
   "System jest aktualny"
  ],
+ "The following packages were recently updated:": [
+  null,
+  ""
+ ],
+ "The following packages were updated $0:": [
+  null,
+  ""
+ ],
+ "Update History": [
+  null,
+  ""
+ ],
+ "Update Log": [
+  null,
+  ""
+ ],
+ "Updated": [
+  null,
+  ""
+ ],
  "Updated packages may require a restart to take effect.": [
   null,
   "Zaktualizowane pakiety mogą wymagać ponownego uruchomienia."
@@ -210,6 +254,10 @@ return plural;
  "Updating": [
   null,
   "Aktualizowanie"
+ ],
+ "Verified": [
+  null,
+  ""
  ],
  "Verifying": [
   null,

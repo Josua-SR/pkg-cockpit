@@ -123,6 +123,10 @@ return plural;
   null,
   "网络"
  ],
+ "No matching files found": [
+  null,
+  ""
+ ],
  "Not Ready": [
   null,
   "未就绪"
@@ -139,9 +143,17 @@ return plural;
   null,
   "开"
  ],
+ "Path to file": [
+  null,
+  ""
+ ],
  "Ready": [
   null,
   "就绪"
+ ],
+ "Too many files found": [
+  null,
+  ""
  ],
  "Unavailable": [
   null,

@@ -130,6 +130,10 @@ return plural;
   null,
   "Ağ"
  ],
+ "No matching files found": [
+  null,
+  ""
+ ],
  "Not Ready": [
   null,
   "Hazır değil"
@@ -146,9 +150,17 @@ return plural;
   null,
   "Açık"
  ],
+ "Path to file": [
+  null,
+  ""
+ ],
  "Ready": [
   null,
   "Hazır"
+ ],
+ "Too many files found": [
+  null,
+  ""
  ],
  "Unavailable": [
   null,

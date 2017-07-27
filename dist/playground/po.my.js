@@ -123,6 +123,10 @@ return plural;
   null,
   "ကွန်ယက်"
  ],
+ "No matching files found": [
+  null,
+  ""
+ ],
  "Not Ready": [
   null,
   "အဆင်သင့်မဖြစ်သေးပါ။"
@@ -139,9 +143,17 @@ return plural;
   null,
   "ပိတ်"
  ],
+ "Path to file": [
+  null,
+  ""
+ ],
  "Ready": [
   null,
   "အဆင်သင့်ပါ။"
+ ],
+ "Too many files found": [
+  null,
+  ""
  ],
  "Unavailable": [
   null,

@@ -130,6 +130,10 @@ return plural;
   null,
   "Rede"
  ],
+ "No matching files found": [
+  null,
+  ""
+ ],
  "Not Ready": [
   null,
   "Não está pronto"
@@ -146,9 +150,17 @@ return plural;
   null,
   "Ligado"
  ],
+ "Path to file": [
+  null,
+  ""
+ ],
  "Ready": [
   null,
   "Pronto"
+ ],
+ "Too many files found": [
+  null,
+  ""
  ],
  "Unavailable": [
   null,

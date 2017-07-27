@@ -130,6 +130,10 @@ return plural;
   null,
   "Red"
  ],
+ "No matching files found": [
+  null,
+  ""
+ ],
  "Not Ready": [
   null,
   "No está listo"
@@ -146,9 +150,17 @@ return plural;
   null,
   "Encencido"
  ],
+ "Path to file": [
+  null,
+  ""
+ ],
  "Ready": [
   null,
   "Listo"
+ ],
+ "Too many files found": [
+  null,
+  ""
  ],
  "Unavailable": [
   null,
