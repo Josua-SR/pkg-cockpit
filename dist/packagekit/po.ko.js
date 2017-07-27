@@ -67,6 +67,10 @@ return plural;
   "language": "ko",
   "x-generator": "Zanata 3.9.6"
  },
+ "$0 more…": [
+  null,
+  ""
+ ],
  "$0 update": [
   "$0 updates",
   ""
@@ -107,6 +111,10 @@ return plural;
   null,
   ""
  ],
+ "Downloaded": [
+  null,
+  ""
+ ],
  "Downloading": [
   null,
   ""
@@ -127,6 +135,10 @@ return plural;
   null,
   ""
  ],
+ "Installed": [
+  null,
+  ""
+ ],
  "Installing": [
   null,
   ""
@@ -143,11 +155,19 @@ return plural;
   null,
   ""
  ],
+ "More information…": [
+  null,
+  ""
+ ],
  "Name": [
   null,
   "이름"
  ],
  "No updates pending": [
+  null,
+  ""
+ ],
+ "Package information": [
   null,
   ""
  ],
@@ -183,6 +203,10 @@ return plural;
   null,
   ""
  ],
+ "Set up": [
+  null,
+  ""
+ ],
  "Setting up": [
   null,
   ""
@@ -199,11 +223,35 @@ return plural;
   null,
   ""
  ],
+ "The following packages were recently updated:": [
+  null,
+  ""
+ ],
+ "The following packages were updated $0:": [
+  null,
+  ""
+ ],
+ "Update History": [
+  null,
+  ""
+ ],
+ "Update Log": [
+  null,
+  ""
+ ],
+ "Updated": [
+  null,
+  ""
+ ],
  "Updated packages may require a restart to take effect.": [
   null,
   ""
  ],
  "Updating": [
+  null,
+  ""
+ ],
+ "Verified": [
   null,
   ""
  ],

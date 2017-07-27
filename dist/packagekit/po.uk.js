@@ -67,6 +67,10 @@ return plural;
   "language": "uk",
   "x-generator": "Zanata 3.9.6"
  },
+ "$0 more…": [
+  null,
+  ""
+ ],
  "$0 update": [
   "$0 updates",
   "$0 оновлення",
@@ -111,6 +115,10 @@ return plural;
   null,
   "Подробиці"
  ],
+ "Downloaded": [
+  null,
+  ""
+ ],
  "Downloading": [
   null,
   "Отримуємо"
@@ -131,6 +139,10 @@ return plural;
   null,
   "Встановити оновлення захисту"
  ],
+ "Installed": [
+  null,
+  ""
+ ],
  "Installing": [
   null,
   "Встановлення"
@@ -147,6 +159,10 @@ return plural;
   null,
   "Завантажуємо доступні оновлення, зачекайте…"
  ],
+ "More information…": [
+  null,
+  ""
+ ],
  "Name": [
   null,
   "Назва"
@@ -154,6 +170,10 @@ return plural;
  "No updates pending": [
   null,
   "У черзі немає оновлень"
+ ],
+ "Package information": [
+  null,
+  ""
  ],
  "PackageKit crashed": [
   null,
@@ -187,6 +207,10 @@ return plural;
   null,
   "Оновлення захисту"
  ],
+ "Set up": [
+  null,
+  ""
+ ],
  "Setting up": [
   null,
   "Налаштовуємо"
@@ -203,6 +227,26 @@ return plural;
   null,
   "Система не потребує оновлення"
  ],
+ "The following packages were recently updated:": [
+  null,
+  ""
+ ],
+ "The following packages were updated $0:": [
+  null,
+  ""
+ ],
+ "Update History": [
+  null,
+  ""
+ ],
+ "Update Log": [
+  null,
+  ""
+ ],
+ "Updated": [
+  null,
+  ""
+ ],
  "Updated packages may require a restart to take effect.": [
   null,
   "Використання оновлених пакунків може потребувати перезапуску."
@@ -210,6 +254,10 @@ return plural;
  "Updating": [
   null,
   "Оновлення"
+ ],
+ "Verified": [
+  null,
+  ""
  ],
  "Verifying": [
   null,

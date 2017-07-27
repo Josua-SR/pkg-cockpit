@@ -427,6 +427,17 @@ a {
   z-index: auto;
 }
 
+a.disabled {
+    cursor: not-allowed !important;
+    text-decoration: none;
+    pointer-events: none;
+    color: #8b8d8f;
+}
+
+a.disabled:hover {
+    text-decoration: none;
+}
+
 .dropdown-menu > li > a.disabled,
 .dropdown-menu > li > a.disabled:hover,
 .dropdown-menu > li > a.disabled:focus {
@@ -658,6 +669,15 @@ a {
 }
 .btn.disabled:hover {
   z-index: auto;
+}
+a.disabled {
+  cursor: not-allowed !important;
+  text-decoration: none;
+  pointer-events: none;
+  color: #8b8d8f;
+}
+a.disabled:hover {
+  text-decoration: none;
 }
 .dropdown-menu > li > a.disabled,
 .dropdown-menu > li > a.disabled:hover,
@@ -1415,6 +1435,7 @@ tbody tr.listing-ct-noexpand {
   stroke-width: 0;
 }
 .c3-bar._expanded_ {
+  fill-opacity: 1;
   fill-opacity: 0.75;
 }
 /*-- Focus --*/
@@ -1521,6 +1542,12 @@ tbody tr.listing-ct-noexpand {
 .c3-chart-arc .c3-gauge-value {
   fill: #000;
   /*  font-size: 28px !important;*/
+}
+.c3-chart-arc.c3-target g path {
+  opacity: 1;
+}
+.c3-chart-arc.c3-target.c3-focused g path {
+  opacity: 1;
 }
 .icon-2x-vms {
   font-size: 2em;

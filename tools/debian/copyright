@@ -59,7 +59,7 @@ Copyright: Copyright (c) 2014 Neohapsis Inc.
 License: MIT
 
 Files: node_modules/angular-gettext/*
-Copyright: Copyright (C) 2013-2015 by Ruben Vermeersch <ruben@rocketeer.be>
+Copyright: Copyright (C) 2013-2017 by Ruben Vermeersch <ruben@rocketeer.be>
 License: MIT
 
 Files: node_modules/angular-route/*
@@ -79,7 +79,7 @@ Copyright: Copyright (c) 2013 Masayuki Tanaka
 License: MIT
 
 Files: node_modules/d3/*
-Copyright: Copyright (c) 2010-2015, Michael Bostock
+Copyright: Copyright (c) 2010-2016, Michael Bostock
 License: BSD-3-clause
 
 Files: node_modules/jquery-flot/*
@@ -110,15 +110,15 @@ Copyright: Copyright (c) 2009 Chris Wanstrath (Ruby)
 License: MIT
 
 Files: node_modules/noVNC/*
-Copyright: Copyright (C) 1996 by Jef Poskanzer <jef@acme.com>.  All rights reserved
+Copyright: (Copyright 2009 Matt McInerney)
+ Copyright (C) 1996 by Jef Poskanzer <jef@acme.com>.  All rights reserved
  Copyright (C) 1999 AT&T Laboratories Cambridge.  All Rights Reserved
  Copyright (C) 2012 Joel Martin
  Copyright (C) 2013 NTT corp
  Copyright (C) 2013 Samuel Mannehed for Cendio AB
  Copyright (C) 2015 Samuel Mannehed for Cendio AB
- Copyright (C) 2016 Samuel Mannehed for Cendio AB
  Copyright (c) 1996 Widget Workshop, Inc. All Rights Reserved
- Copyright 2012 Google Inc.
+ noVNC is Copyright (C) 2011 Joel Martin <github@martintribe.org>
 License: MPL-2.0
 
 Files: node_modules/patternfly/*

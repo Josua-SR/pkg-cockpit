@@ -1,7 +1,10 @@
 # Generated Makefile data for users
-# Stamp: Fri Jul 21 2017 07:59:42 GMT+0000 (UTC)
+# Stamp: Thu Jul 27 2017 11:55:24 GMT+0000 (UTC)
 
 users_INPUTS = \
+	$(srcdir)/node_modules/bootstrap-datepicker/LICENSE \
+	$(srcdir)/node_modules/bootstrap-datepicker/README.md \
+	$(srcdir)/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js \
 	$(srcdir)/node_modules/mustache/LICENSE \
 	$(srcdir)/node_modules/mustache/README.md \
 	$(srcdir)/node_modules/mustache/mustache.js \
@@ -48,7 +51,7 @@ users_TESTS = \
 
 dist/users/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/mustache/mustache.js -N node_modules/react-lite/dist/react-lite.js -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/table.css -N pkg/users/authorized-keys.js -N pkg/users/index.html -N pkg/users/local.js -N pkg/users/ssh-add-public-key.sh -N pkg/users/ssh-list-public-keys.sh -N pkg/users/users.css $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js -N node_modules/mustache/mustache.js -N node_modules/react-lite/dist/react-lite.js -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/table.css -N pkg/users/authorized-keys.js -N pkg/users/index.html -N pkg/users/local.js -N pkg/users/ssh-add-public-key.sh -N pkg/users/ssh-list-public-keys.sh -N pkg/users/users.css $< > $@.tmp && mv $@.tmp $@
 
 dist/users/Makefile.deps: $(WEBPACK_CONFIG) $(users_INPUTS)
 	$(WEBPACK_RULE) -d dist/users/Makefile.deps $(WEBPACK_CONFIG)
@@ -62,6 +65,12 @@ dist/users/users.css.map: dist/users/Makefile.deps
 dist/users/users.min.js: dist/users/Makefile.deps
 
 dist/users/users.min.js.map: dist/users/Makefile.deps
+
+$(srcdir)/node_modules/bootstrap-datepicker/LICENSE:
+
+$(srcdir)/node_modules/bootstrap-datepicker/README.md:
+
+$(srcdir)/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js:
 
 $(srcdir)/node_modules/mustache/LICENSE:
 

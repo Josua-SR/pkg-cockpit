@@ -130,6 +130,10 @@ return plural;
   null,
   "Xarxa"
  ],
+ "No matching files found": [
+  null,
+  ""
+ ],
  "Not Ready": [
   null,
   "No a punt"
@@ -146,9 +150,17 @@ return plural;
   null,
   "Engegat"
  ],
+ "Path to file": [
+  null,
+  ""
+ ],
  "Ready": [
   null,
   "A punt"
+ ],
+ "Too many files found": [
+  null,
+  ""
  ],
  "Unavailable": [
   null,

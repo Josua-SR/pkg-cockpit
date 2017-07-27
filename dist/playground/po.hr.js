@@ -137,6 +137,10 @@ return plural;
   null,
   "Mreža"
  ],
+ "No matching files found": [
+  null,
+  ""
+ ],
  "Not Ready": [
   null,
   ""
@@ -153,9 +157,17 @@ return plural;
   null,
   "Uključi"
  ],
+ "Path to file": [
+  null,
+  ""
+ ],
  "Ready": [
   null,
   "Spreman"
+ ],
+ "Too many files found": [
+  null,
+  ""
  ],
  "Unavailable": [
   null,
