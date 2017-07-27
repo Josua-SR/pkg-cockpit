@@ -1,3 +1,13 @@
+cockpit (147-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Add configuration of account locking and password expiry to Accounts
+      page
+    - Consistently ignore loopback traffic on all network load graphs
+    - Fix the Kdump page in Internet Exporer
+
+ -- Martin Pitt <mpitt@debian.org>  Thu, 27 Jul 2017 15:25:38 +0200
+
 cockpit (146-1) unstable; urgency=medium
 
   * New upstream release:
