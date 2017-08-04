@@ -71,6 +71,10 @@ return plural;
   null,
   "Acesso"
  ],
+ "Account Expiration": [
+  null,
+  ""
+ ],
  "Account not available or cannot be edited.": [
   null,
   "Conta não disponível ou não pode ser editada."
@@ -102,6 +106,10 @@ return plural;
  "Cancel": [
   null,
   "Cancelar"
+ ],
+ "Change": [
+  null,
+  "Alterar"
  ],
  "Close": [
   null,
@@ -159,13 +167,29 @@ return plural;
   null,
   "Falha ao carregar as chaves autorizadas."
  ],
+ "Force Change": [
+  null,
+  ""
+ ],
+ "Force password change": [
+  null,
+  ""
+ ],
  "Full Name": [
   null,
   "Nome Completo"
  ],
+ "Invalid expiration date": [
+  null,
+  ""
+ ],
  "Invalid key": [
   null,
   "Chave inválida"
+ ],
+ "Invalid number of days": [
+  null,
+  ""
  ],
  "Last Login": [
   null,
@@ -179,6 +203,10 @@ return plural;
   null,
   "Bloquear Conta"
  ],
+ "Lock account on $0": [
+  null,
+  ""
+ ],
  "Logged In": [
   null,
   "Logado"
@@ -186,6 +214,14 @@ return plural;
  "Never": [
   null,
   "Nunca"
+ ],
+ "Never expire password": [
+  null,
+  ""
+ ],
+ "Never lock account": [
+  null,
+  ""
  ],
  "New Password": [
   null,
@@ -223,6 +259,10 @@ return plural;
   null,
   "Senha"
  ],
+ "Password Expiration": [
+  null,
+  ""
+ ],
  "Password is not acceptable": [
   null,
   "Senha não é aceitavél"
@@ -231,13 +271,33 @@ return plural;
   null,
   "Senha é muito fraca"
  ],
+ "Password must be changed": [
+  null,
+  ""
+ ],
  "Paste the contents of your public SSH key file here": [
   null,
   "Cole o conteúdo do seu arquivo de chave pública SSH aqui"
  ],
+ "Please specify an expiration date": [
+  null,
+  ""
+ ],
  "Prompting via passwd timed out": [
   null,
   "Tempo excedido na tentativa de solicitação via senha"
+ ],
+ "Require password change every $0 days": [
+  null,
+  ""
+ ],
+ "Require password change on $0": [
+  null,
+  ""
+ ],
+ "Reset": [
+  null,
+  "Redefinir"
  ],
  "Roles": [
   null,
@@ -258,6 +318,10 @@ return plural;
  "Terminate Session": [
   null,
   "Encerrar Sessão"
+ ],
+ "The account '$0' will be forced to change their password on next login": [
+  null,
+  ""
  ],
  "The key you provided was not valid.": [
   null,

@@ -121,7 +121,7 @@ noinst_PROGRAMS = $(am__EXEEXT_6) mock-bridge$(EXEEXT) $(am__EXEEXT_7) \
 sbin_PROGRAMS = remotectl$(EXEEXT)
 TESTS = tools/test-bots $(am__EXEEXT_13) $(am__EXEEXT_16) \
 	$(am__EXEEXT_6) $(am__EXEEXT_7) test-websocket$(EXEEXT) \
-	$(am__EXEEXT_4) tools/static-code-tests tools/test-bots \
+	$(am__EXEEXT_4) tools/test-static-code tools/test-bots \
 	$(am__EXEEXT_17) $(am__EXEEXT_11) $(am__EXEEXT_12)
 @ENABLE_DOC_TRUE@am__append_1 = doc/cockpit-transport.svg \
 @ENABLE_DOC_TRUE@	doc/cockpit-transport.png $(NULL) \
@@ -7944,9 +7944,9 @@ test-websocket.log: test-websocket$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
-tools/static-code-tests.log: tools/static-code-tests
-	@p='tools/static-code-tests'; \
-	b='tools/static-code-tests'; \
+tools/test-static-code.log: tools/test-static-code
+	@p='tools/test-static-code'; \
+	b='tools/test-static-code'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \

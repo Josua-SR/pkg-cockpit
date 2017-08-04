@@ -211,10 +211,6 @@ return plural;
   null,
   ""
  ],
- "Author": [
-  null,
-  ""
- ],
  "Azure": [
   null,
   ""
@@ -663,10 +659,6 @@ return plural;
   null,
   ""
  ],
- "Last Updated": [
-  null,
-  ""
- ],
  "Latest Version": [
   null,
   ""
@@ -796,10 +788,6 @@ return plural;
   ""
  ],
  "No groups are present.": [
-  null,
-  ""
- ],
- "No image streams are present.": [
   null,
   ""
  ],

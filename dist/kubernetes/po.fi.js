@@ -209,10 +209,6 @@ return plural;
   null,
   "Tunnistautuminen"
  ],
- "Author": [
-  null,
-  "Tekijä"
- ],
  "Azure": [
   null,
   "Azure"
@@ -661,10 +657,6 @@ return plural;
   null,
   "Edellinen Tilamuutos"
  ],
- "Last Updated": [
-  null,
-  "Viimeksi Päivitetty"
- ],
  "Latest Version": [
   null,
   "Viimeisin Versio"
@@ -794,10 +786,6 @@ return plural;
   ""
  ],
  "No groups are present.": [
-  null,
-  ""
- ],
- "No image streams are present.": [
   null,
   ""
  ],

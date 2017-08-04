@@ -69,7 +69,7 @@ return plural;
  },
  "$0 more…": [
   null,
-  ""
+  "І ще $0…"
  ],
  "$0 update": [
   "$0 updates",
@@ -117,7 +117,7 @@ return plural;
  ],
  "Downloaded": [
   null,
-  ""
+  "Отримано"
  ],
  "Downloading": [
   null,
@@ -141,7 +141,7 @@ return plural;
  ],
  "Installed": [
   null,
-  ""
+  "Встановлено"
  ],
  "Installing": [
   null,
@@ -161,7 +161,7 @@ return plural;
  ],
  "More information…": [
   null,
-  ""
+  "Докладніші відомості…"
  ],
  "Name": [
   null,
@@ -173,7 +173,7 @@ return plural;
  ],
  "Package information": [
   null,
-  ""
+  "Дані щодо пакунка"
  ],
  "PackageKit crashed": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "Set up": [
   null,
-  ""
+  "Налаштувати"
  ],
  "Setting up": [
   null,
@@ -229,23 +229,23 @@ return plural;
  ],
  "The following packages were recently updated:": [
   null,
-  ""
+  "Нещодавно було оновлено такі пакунки:"
  ],
  "The following packages were updated $0:": [
   null,
-  ""
+  "Оновлено такі пакунки $0:"
  ],
  "Update History": [
   null,
-  ""
+  "Історія оновлень"
  ],
  "Update Log": [
   null,
-  ""
+  "Журнал оновлень"
  ],
  "Updated": [
   null,
-  ""
+  "Оновлено"
  ],
  "Updated packages may require a restart to take effect.": [
   null,
@@ -257,7 +257,7 @@ return plural;
  ],
  "Verified": [
   null,
-  ""
+  "Перевірено"
  ],
  "Verifying": [
   null,

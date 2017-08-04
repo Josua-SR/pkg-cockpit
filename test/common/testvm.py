@@ -77,7 +77,7 @@ class Timeout:
                 self.machine.ssh_process.terminate()
             self.machine.disconnect()
 
-        raise Exception(self.error_message)
+        raise RuntimeError(self.error_message)
     def __enter__(self):
         signal.signal(signal.SIGALRM, self.handle_timeout)
         signal.alarm(self.seconds)
@@ -212,14 +212,18 @@ class Machine:
            user sessions are allowed (and cockit-ws will let "admin"
            in) before declaring a test machine as "booted".
 
-           Returns the boot id of the system.
+           Returns the boot id of the system, or None if ssh timed out.
         """
         tries_left = 60
         while (tries_left > 0):
             try:
-                return self.execute("! test -f /run/nologin && cat /proc/sys/kernel/random/boot_id")
+                with Timeout(seconds=30):
+                    return self.execute("! test -f /run/nologin && cat /proc/sys/kernel/random/boot_id", direct=True)
             except subprocess.CalledProcessError:
                 pass
+            except RuntimeError:
+                # timeout; assume that ssh just went down during reboot, go back to wait_boot()
+                return None
             tries_left = tries_left - 1
             time.sleep(1)
         raise Failure("Timed out waiting for /run/nologin to disappear")
@@ -227,15 +231,15 @@ class Machine:
     def wait_boot(self, timeout_sec=120):
         """Wait for a machine to boot"""
         start_time = time.time()
-        connected = False
+        boot_id = None
         while (time.time() - start_time) < timeout_sec:
             if self.wait_execute(timeout_sec=15):
-                connected = True
-                break
-        if connected:
-            self.boot_id = self.wait_user_login()
-        else:
+                boot_id = self.wait_user_login()
+                if boot_id:
+                    break
+        if not boot_id:
             raise Failure("Unable to reach machine {0} via ssh: {1}:{2}".format(self.label, self.ssh_address, self.ssh_port))
+        self.boot_id = boot_id
 
     def wait_reboot(self, timeout_sec=120):
         self.disconnect()
@@ -622,7 +626,7 @@ class Machine:
         else:
             return "wheel"
 
-    def start_cockpit(self, atomic_wait_for_host="localhost", tls=False):
+    def start_cockpit(self, atomic_wait_for_host=None, tls=False):
         """Start Cockpit.
 
         Cockpit is not running when the test virtual machine starts up, to
@@ -645,8 +649,7 @@ class Machine:
                 cmd += "/usr/bin/docker run -d --privileged --pid=host -v /:/host cockpit/ws /container/atomic-run --local-ssh --no-tls\n"
             with Timeout(seconds=90, error_message="Timeout while waiting for cockpit/ws to start"):
                 self.execute(script=cmd)
-            if atomic_wait_for_host:
-                self.wait_for_cockpit_running(atomic_wait_for_host)
+            self.wait_for_cockpit_running(atomic_wait_for_host or "localhost")
         elif tls:
             self.execute(script="""#!/bin/sh
             rm -f /etc/systemd/system/cockpit.service.d/notls.conf &&
@@ -700,6 +703,23 @@ class Machine:
         cmd = "dnsmasq --domain=cockpit.lan --interface=\"$(grep -l '{mac}' /sys/class/net/*/address | cut -d / -f 5)\" --bind-dynamic"
         self.execute(cmd.format(mac=mac))
 
+TEST_CONSOLE_XML="""
+    <console type='pty'>
+      <target type='serial' port='0'/>
+    </console>
+"""
+
+TEST_GRAPHICS_XML="""
+    <video>
+      <model type='vga' heads='1' primary='yes'/>
+      <alias name='video0'/>
+      <address type='pci' bus='0x00' slot='0x07'/>
+    </video>
+    <graphics type='vnc' autoport='yes' listen='127.0.0.1'>
+      <listen type='address' address='127.0.0.1'/>
+    </graphics>
+"""
+
 TEST_DOMAIN_XML="""
 <domain type='{type}' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
   <name>{label}</name>
@@ -717,13 +737,11 @@ TEST_DOMAIN_XML="""
     <disk type='file' snapshot='external'>
       <driver name='qemu' type='qcow2'/>
       <source file='{drive}'/>
-      <target dev='vda' bus='virtio'/>
+      <target dev='vda' bus='{disk}'/>
       <serial>ROOT</serial>
     </disk>
     <controller type='scsi' model='virtio-scsi' index='0' id='hot'/>
-    <console type='pty'>
-      <target type='serial' port='0'/>
-    </console>
+    {console}
     <disk type='file' device='cdrom'>
       <source file='{iso}'/>
       <target dev='hdb' bus='ide'/>
@@ -731,7 +749,8 @@ TEST_DOMAIN_XML="""
     </disk>
   </devices>
   <qemu:commandline>
-    {qemu}
+    {ethernet}
+    {redir}
   </qemu:commandline>
 </domain>
 """
@@ -833,7 +852,7 @@ class VirtNetwork:
         self.hostnet += 1
         result = {
             "number": self.offset + number,
-            "mac": '52:54:01:{:02x}:{:02x}:{:02x}'.format(mac & 0xff0000 >> 24, mac & 0xff00 >> 16, mac & 0xff),
+            "mac": '52:54:01:{:02x}:{:02x}:{:02x}'.format((mac >> 16) & 0xff, (mac >> 8) & 0xff, mac & 0xff),
             "name": "m{0}.cockpit.lan".format(mac),
             "mcast": self.network,
             "hostnet": "hostnet{0}".format(hostnet)
@@ -859,15 +878,15 @@ class VirtNetwork:
 
         if isolate:
             result["bridge"] = ""
-            result["qemu"] = ""
+            result["ethernet"] = ""
         elif self.bridge:
             result["bridge"] = self.bridge
-            result["qemu"] = TEST_BRIDGE_XML.format(**result)
+            result["ethernet"] = TEST_BRIDGE_XML.format(**result)
         else:
             result["bridge"] = ""
-            result["qemu"] = TEST_MCAST_XML.format(**result)
+            result["ethernet"] = TEST_MCAST_XML.format(**result)
         result["forwards"] = ",".join(forwards)
-        result["qemu"] += TEST_REDIR_XML.format(**result)
+        result["redir"] = TEST_REDIR_XML.format(**result)
         return result
 
     def kill(self):
@@ -984,6 +1003,15 @@ class VirtMachine(Machine):
 
         keys.update(self.networking)
         keys["name"] = "{image}-{control}".format(**keys)
+
+        # No need or use for redir network on windows
+        if "windows" in self.image:
+            keys["disk"] = "ide"
+            keys["console"] = TEST_GRAPHICS_XML.format(**keys)
+            keys["redir"] = ""
+        else:
+            keys["disk"] = "virtio"
+            keys["console"] = TEST_CONSOLE_XML.format(**keys)
         test_domain_desc = TEST_DOMAIN_XML.format(**keys)
 
         # add the virtual machine
@@ -998,17 +1026,16 @@ class VirtMachine(Machine):
 
     # start virsh console
     def qemu_console(self):
-        try:
-            self._start_qemu()
-            self.message("Started machine {0}".format(self.label))
-            if self.maintain:
-                message = "\nWARNING: Uncontrolled shutdown can lead to a corrupted image\n"
-            else:
-                message = "\nWARNING: All changes are discarded, the image file won't be changed\n"
-            message += self.diagnose() + "\nlogin: "
-            message = message.replace("\n", "\r\n")
+        self.message("Started machine {0}".format(self.label))
+        if self.maintain:
+            message = "\nWARNING: Uncontrolled shutdown can lead to a corrupted image\n"
+        else:
+            message = "\nWARNING: All changes are discarded, the image file won't be changed\n"
+        message += self.diagnose() + "\nlogin: "
+        message = message.replace("\n", "\r\n")
 
-            proc = subprocess.Popen("virsh -c qemu:///session console %s" % self._domain.ID(), shell=True)
+        try:
+            proc = subprocess.Popen("virsh -c qemu:///session console %s" % str(self._domain.ID()), shell=True)
 
             # Fill in information into /etc/issue about login access
             pid = 0
@@ -1032,8 +1059,28 @@ class VirtMachine(Machine):
                 # the domain may have already been freed (shutdown) while the console was running
                 self.message("libvirt error during shutdown: %s" % (le.get_error_message()))
 
-        except:
-            raise
+        except OSError, ex:
+            raise Failure("Failed to launch virsh command: {0}".format(ex.strerror))
+        finally:
+            self._cleanup()
+
+    def graphics_console(self):
+        self.message("Started machine {0}".format(self.label))
+        if self.maintain:
+            message = "\nWARNING: Uncontrolled shutdown can lead to a corrupted image\n"
+        else:
+            message = "\nWARNING: All changes are discarded, the image file won't be changed\n"
+        if "bridge" in self.networking:
+            message += "\nIn the machine a web browser can access Cockpit on parent host:\n\n"
+            message += "    https://10.111.112.1:9090\n"
+        message = message.replace("\n", "\r\n")
+
+        try:
+            proc = subprocess.Popen(["virt-viewer", str(self._domain.ID())])
+            sys.stderr.write(message)
+            proc.wait()
+        except OSError, ex:
+            raise Failure("Failed to launch virt-viewer command: {0}".format(ex.strerror))
         finally:
             self._cleanup()
 

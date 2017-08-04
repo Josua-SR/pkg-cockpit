@@ -139,7 +139,7 @@ return plural;
  ],
  "No matching files found": [
   null,
-  ""
+  "Відповідних файлів не знайдено"
  ],
  "Not Ready": [
   null,
@@ -159,7 +159,7 @@ return plural;
  ],
  "Path to file": [
   null,
-  ""
+  "Шлях до файла"
  ],
  "Ready": [
   null,
@@ -167,7 +167,7 @@ return plural;
  ],
  "Too many files found": [
   null,
-  ""
+  "Знайдено забагато файлів"
  ],
  "Unavailable": [
   null,
