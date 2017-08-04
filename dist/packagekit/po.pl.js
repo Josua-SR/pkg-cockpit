@@ -69,7 +69,7 @@ return plural;
  },
  "$0 more…": [
   null,
-  ""
+  "$0 więcej…"
  ],
  "$0 update": [
   "$0 updates",
@@ -117,7 +117,7 @@ return plural;
  ],
  "Downloaded": [
   null,
-  ""
+  "Pobrano"
  ],
  "Downloading": [
   null,
@@ -141,7 +141,7 @@ return plural;
  ],
  "Installed": [
   null,
-  ""
+  "Zainstalowano"
  ],
  "Installing": [
   null,
@@ -161,7 +161,7 @@ return plural;
  ],
  "More information…": [
   null,
-  ""
+  "Więcej informacji…"
  ],
  "Name": [
   null,
@@ -173,7 +173,7 @@ return plural;
  ],
  "Package information": [
   null,
-  ""
+  "Informacje o pakiecie"
  ],
  "PackageKit crashed": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "Set up": [
   null,
-  ""
+  "Ustaw"
  ],
  "Setting up": [
   null,
@@ -229,23 +229,23 @@ return plural;
  ],
  "The following packages were recently updated:": [
   null,
-  ""
+  "Poniższe pakiety zostały niedawno zaktualizowane:"
  ],
  "The following packages were updated $0:": [
   null,
-  ""
+  "Poniższe pakiety zostały zaktualizowane $0:"
  ],
  "Update History": [
   null,
-  ""
+  "Historia aktualizacji"
  ],
  "Update Log": [
   null,
-  ""
+  "Dziennik aktualizacji"
  ],
  "Updated": [
   null,
-  ""
+  "Zaktualizowano"
  ],
  "Updated packages may require a restart to take effect.": [
   null,
@@ -257,7 +257,7 @@ return plural;
  ],
  "Verified": [
   null,
-  ""
+  "Sprawdzono poprawność"
  ],
  "Verifying": [
   null,

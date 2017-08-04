@@ -207,10 +207,6 @@ return plural;
   null,
   ""
  ],
- "Author": [
-  null,
-  "작성자"
- ],
  "Azure": [
   null,
   ""
@@ -659,10 +655,6 @@ return plural;
   null,
   ""
  ],
- "Last Updated": [
-  null,
-  ""
- ],
  "Latest Version": [
   null,
   ""
@@ -792,10 +784,6 @@ return plural;
   "볼륨 그룹 $0"
  ],
  "No groups are present.": [
-  null,
-  ""
- ],
- "No image streams are present.": [
   null,
   ""
  ],

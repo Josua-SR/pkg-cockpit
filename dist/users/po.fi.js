@@ -71,6 +71,10 @@ return plural;
   null,
   "Pääsy"
  ],
+ "Account Expiration": [
+  null,
+  ""
+ ],
  "Account not available or cannot be edited.": [
   null,
   "Tili ei ole käytettävissä tai sitä ei voi muokata"
@@ -102,6 +106,10 @@ return plural;
  "Cancel": [
   null,
   "Peru"
+ ],
+ "Change": [
+  null,
+  "Vaihda"
  ],
  "Close": [
   null,
@@ -159,13 +167,29 @@ return plural;
   null,
   "Ei voitu ladata valtuutettuja avaimia."
  ],
+ "Force Change": [
+  null,
+  ""
+ ],
+ "Force password change": [
+  null,
+  ""
+ ],
  "Full Name": [
   null,
   "Koko nimi"
  ],
+ "Invalid expiration date": [
+  null,
+  ""
+ ],
  "Invalid key": [
   null,
   "Virheellinen avain"
+ ],
+ "Invalid number of days": [
+  null,
+  ""
  ],
  "Last Login": [
   null,
@@ -179,11 +203,23 @@ return plural;
   null,
   ""
  ],
+ "Lock account on $0": [
+  null,
+  ""
+ ],
  "Logged In": [
   null,
   ""
  ],
  "Never": [
+  null,
+  ""
+ ],
+ "Never expire password": [
+  null,
+  ""
+ ],
+ "Never lock account": [
   null,
   ""
  ],
@@ -223,6 +259,10 @@ return plural;
   null,
   ""
  ],
+ "Password Expiration": [
+  null,
+  ""
+ ],
  "Password is not acceptable": [
   null,
   ""
@@ -231,11 +271,31 @@ return plural;
   null,
   ""
  ],
+ "Password must be changed": [
+  null,
+  ""
+ ],
  "Paste the contents of your public SSH key file here": [
   null,
   ""
  ],
+ "Please specify an expiration date": [
+  null,
+  ""
+ ],
  "Prompting via passwd timed out": [
+  null,
+  ""
+ ],
+ "Require password change every $0 days": [
+  null,
+  ""
+ ],
+ "Require password change on $0": [
+  null,
+  ""
+ ],
+ "Reset": [
   null,
   ""
  ],
@@ -256,6 +316,10 @@ return plural;
   ""
  ],
  "Terminate Session": [
+  null,
+  ""
+ ],
+ "The account '$0' will be forced to change their password on next login": [
   null,
   ""
  ],

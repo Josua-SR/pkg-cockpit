@@ -211,10 +211,6 @@ return plural;
   null,
   "Розпізнавання"
  ],
- "Author": [
-  null,
-  "Автор"
- ],
  "Azure": [
   null,
   "Azure"
@@ -663,10 +659,6 @@ return plural;
   null,
   "Остання зміна стану"
  ],
- "Last Updated": [
-  null,
-  "Останнє оновлення"
- ],
  "Latest Version": [
   null,
   "Найсвіжіша версія"
@@ -798,10 +790,6 @@ return plural;
  "No groups are present.": [
   null,
   "Немає груп."
- ],
- "No image streams are present.": [
-  null,
-  "Немає потоків образів."
  ],
  "No images pushed": [
   null,

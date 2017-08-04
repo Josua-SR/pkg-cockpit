@@ -71,6 +71,10 @@ return plural;
   null,
   "访问"
  ],
+ "Account Expiration": [
+  null,
+  ""
+ ],
  "Account not available or cannot be edited.": [
   null,
   "帐户不可用或不能编辑."
@@ -102,6 +106,10 @@ return plural;
  "Cancel": [
   null,
   "取消"
+ ],
+ "Change": [
+  null,
+  "变更"
  ],
  "Close": [
   null,
@@ -159,13 +167,29 @@ return plural;
   null,
   "载入 authorized key 失败。"
  ],
+ "Force Change": [
+  null,
+  ""
+ ],
+ "Force password change": [
+  null,
+  ""
+ ],
  "Full Name": [
   null,
   "全名"
  ],
+ "Invalid expiration date": [
+  null,
+  ""
+ ],
  "Invalid key": [
   null,
   "无效的 key"
+ ],
+ "Invalid number of days": [
+  null,
+  ""
  ],
  "Last Login": [
   null,
@@ -179,6 +203,10 @@ return plural;
   null,
   "锁定账户"
  ],
+ "Lock account on $0": [
+  null,
+  ""
+ ],
  "Logged In": [
   null,
   "登录"
@@ -186,6 +214,14 @@ return plural;
  "Never": [
   null,
   "从不"
+ ],
+ "Never expire password": [
+  null,
+  ""
+ ],
+ "Never lock account": [
+  null,
+  ""
  ],
  "New Password": [
   null,
@@ -223,6 +259,10 @@ return plural;
   null,
   "密码"
  ],
+ "Password Expiration": [
+  null,
+  ""
+ ],
  "Password is not acceptable": [
   null,
   "不接受该密码"
@@ -231,13 +271,33 @@ return plural;
   null,
   "密码太弱"
  ],
+ "Password must be changed": [
+  null,
+  ""
+ ],
  "Paste the contents of your public SSH key file here": [
   null,
   "在这里粘贴 SSH 公钥文件内容"
  ],
+ "Please specify an expiration date": [
+  null,
+  ""
+ ],
  "Prompting via passwd timed out": [
   null,
   "passwd 提示已超时"
+ ],
+ "Require password change every $0 days": [
+  null,
+  ""
+ ],
+ "Require password change on $0": [
+  null,
+  ""
+ ],
+ "Reset": [
+  null,
+  "重置"
  ],
  "Roles": [
   null,
@@ -258,6 +318,10 @@ return plural;
  "Terminate Session": [
   null,
   "终止会话"
+ ],
+ "The account '$0' will be forced to change their password on next login": [
+  null,
+  ""
  ],
  "The key you provided was not valid.": [
   null,

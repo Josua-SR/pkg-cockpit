@@ -209,10 +209,6 @@ return plural;
   null,
   "Autenticació"
  ],
- "Author": [
-  null,
-  "Autor"
- ],
  "Azure": [
   null,
   ""
@@ -661,10 +657,6 @@ return plural;
   null,
   ""
  ],
- "Last Updated": [
-  null,
-  "Últim cop actualitzat"
- ],
  "Latest Version": [
   null,
   "Última versió"
@@ -794,10 +786,6 @@ return plural;
   ""
  ],
  "No groups are present.": [
-  null,
-  ""
- ],
- "No image streams are present.": [
   null,
   ""
  ],

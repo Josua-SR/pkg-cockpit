@@ -71,6 +71,10 @@ return plural;
   null,
   "Accès"
  ],
+ "Account Expiration": [
+  null,
+  ""
+ ],
  "Account not available or cannot be edited.": [
   null,
   "Compte non disponible ou ne peut être édité."
@@ -102,6 +106,10 @@ return plural;
  "Cancel": [
   null,
   "Annuler"
+ ],
+ "Change": [
+  null,
+  ""
  ],
  "Close": [
   null,
@@ -159,11 +167,27 @@ return plural;
   null,
   ""
  ],
+ "Force Change": [
+  null,
+  ""
+ ],
+ "Force password change": [
+  null,
+  ""
+ ],
  "Full Name": [
   null,
   ""
  ],
+ "Invalid expiration date": [
+  null,
+  ""
+ ],
  "Invalid key": [
+  null,
+  ""
+ ],
+ "Invalid number of days": [
   null,
   ""
  ],
@@ -179,6 +203,10 @@ return plural;
   null,
   ""
  ],
+ "Lock account on $0": [
+  null,
+  ""
+ ],
  "Logged In": [
   null,
   "Connecté"
@@ -186,6 +214,14 @@ return plural;
  "Never": [
   null,
   "Jamais"
+ ],
+ "Never expire password": [
+  null,
+  ""
+ ],
+ "Never lock account": [
+  null,
+  ""
  ],
  "New Password": [
   null,
@@ -223,6 +259,10 @@ return plural;
   null,
   "Mot de passe"
  ],
+ "Password Expiration": [
+  null,
+  ""
+ ],
  "Password is not acceptable": [
   null,
   "Le mot de passe n'est pas acceptable"
@@ -231,13 +271,33 @@ return plural;
   null,
   "Le mot de passe est trop faible"
  ],
+ "Password must be changed": [
+  null,
+  ""
+ ],
  "Paste the contents of your public SSH key file here": [
+  null,
+  ""
+ ],
+ "Please specify an expiration date": [
   null,
   ""
  ],
  "Prompting via passwd timed out": [
   null,
   "Temps d'attente dépassé sur saisie avec passwd"
+ ],
+ "Require password change every $0 days": [
+  null,
+  ""
+ ],
+ "Require password change on $0": [
+  null,
+  ""
+ ],
+ "Reset": [
+  null,
+  ""
  ],
  "Roles": [
   null,
@@ -256,6 +316,10 @@ return plural;
   ""
  ],
  "Terminate Session": [
+  null,
+  ""
+ ],
+ "The account '$0' will be forced to change their password on next login": [
   null,
   ""
  ],

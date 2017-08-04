@@ -207,10 +207,6 @@ return plural;
   null,
   "认证"
  ],
- "Author": [
-  null,
-  "作者"
- ],
  "Azure": [
   null,
   "Azure"
@@ -659,10 +655,6 @@ return plural;
   null,
   "最近的状态变更"
  ],
- "Last Updated": [
-  null,
-  "最近更新时间"
- ],
  "Latest Version": [
   null,
   "最近的版本"
@@ -794,10 +786,6 @@ return plural;
  "No groups are present.": [
   null,
   "没有组用于显示。"
- ],
- "No image streams are present.": [
-  null,
-  "没有镜像流用于显示。"
  ],
  "No images pushed": [
   null,

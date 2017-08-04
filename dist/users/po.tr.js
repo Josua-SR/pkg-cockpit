@@ -71,6 +71,10 @@ return plural;
   null,
   "Erişim"
  ],
+ "Account Expiration": [
+  null,
+  ""
+ ],
  "Account not available or cannot be edited.": [
   null,
   ""
@@ -102,6 +106,10 @@ return plural;
  "Cancel": [
   null,
   "İptal"
+ ],
+ "Change": [
+  null,
+  ""
  ],
  "Close": [
   null,
@@ -159,13 +167,29 @@ return plural;
   null,
   "Yetkilendirilmiş anahtarların yüklemesi başarısız oldu."
  ],
+ "Force Change": [
+  null,
+  ""
+ ],
+ "Force password change": [
+  null,
+  ""
+ ],
  "Full Name": [
   null,
   "Tam İsim"
  ],
+ "Invalid expiration date": [
+  null,
+  ""
+ ],
  "Invalid key": [
   null,
   "Geçersiz anahtar"
+ ],
+ "Invalid number of days": [
+  null,
+  ""
  ],
  "Last Login": [
   null,
@@ -179,6 +203,10 @@ return plural;
   null,
   "Hesabı Kilitle"
  ],
+ "Lock account on $0": [
+  null,
+  ""
+ ],
  "Logged In": [
   null,
   "Giriş Yapıldı"
@@ -186,6 +214,14 @@ return plural;
  "Never": [
   null,
   "Asla"
+ ],
+ "Never expire password": [
+  null,
+  ""
+ ],
+ "Never lock account": [
+  null,
+  ""
  ],
  "New Password": [
   null,
@@ -223,6 +259,10 @@ return plural;
   null,
   "Parola"
  ],
+ "Password Expiration": [
+  null,
+  ""
+ ],
  "Password is not acceptable": [
   null,
   "Parola kabul edilebilir değil"
@@ -231,11 +271,31 @@ return plural;
   null,
   "Parola çok güçsüz"
  ],
+ "Password must be changed": [
+  null,
+  ""
+ ],
  "Paste the contents of your public SSH key file here": [
   null,
   ""
  ],
+ "Please specify an expiration date": [
+  null,
+  ""
+ ],
  "Prompting via passwd timed out": [
+  null,
+  ""
+ ],
+ "Require password change every $0 days": [
+  null,
+  ""
+ ],
+ "Require password change on $0": [
+  null,
+  ""
+ ],
+ "Reset": [
   null,
   ""
  ],
@@ -256,6 +316,10 @@ return plural;
   "Parola Belirle"
  ],
  "Terminate Session": [
+  null,
+  ""
+ ],
+ "The account '$0' will be forced to change their password on next login": [
   null,
   ""
  ],

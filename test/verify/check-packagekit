@@ -18,36 +18,31 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
 
+import os
+
 import parent
 from testlib import *
+from packagelib import PackageCase
+
+WAIT_SCRIPT = """
+set -ex
+for x in $(seq 1 200); do
+    if curl --insecure -s https://%(addr)s:8443/candlepin; then
+        break
+    else
+        sleep 1
+    fi
+done
+"""
 
 @skipImage("Image uses OSTree", "continuous-atomic", "fedora-atomic", "rhel-atomic")
 @skipImage("PackageKit crashes, https://launchpad.net/bugs/1689820", "ubuntu-1604")
-class TestUpdates(MachineCase):
-    provision = {
-        "machine1": { "address": "10.111.113.2/20", "dns": "10.111.113.2" }
-    }
-
+class TestUpdates(PackageCase):
     def setUp(self):
-        MachineCase.setUp(self)
+        PackageCase.setUp(self)
 
-        self.isApt = "debian" in self.machine.image or "ubuntu" in self.machine.image
-
-        # disable all existing repositories to avoid hitting the network
-        if self.isApt:
-            self.machine.execute("rm -f /etc/apt/sources.list.d/*; echo > /etc/apt/sources.list; apt-get update")
-        else:
-            self.machine.execute("rm -f /etc/yum.repos.d/* /var/cache/yum/*")
-
-        # have PackageKit start from a clean slate
-        self.machine.execute("systemctl stop packagekit; rm -rf /var/cache/PackageKit")
-
-        # PackageKit refuses to operate when being offline (as on our test images); it's hard to fake
-        # NetworkManager's "is online" state, so disable it and let PackageKit fall back to the "unix"
-        # network stack; add a bogus default route to coerce it into being "online".
-        self.machine.execute("systemctl stop NetworkManager; ip route add default via 10.111.113.1 dev eth1")
-
-        self.updateInfo = {}
+        # Disable Subscription Manager for these tests; subscriptions are tested in a separate class
+        self.machine.execute("[ ! -f /usr/libexec/rhsmd ] || mv /usr/libexec/rhsmd /usr/libexec/rhsmd.disabled")
 
     def testBasic(self):
         # no security updates, no changelogs
@@ -530,140 +525,117 @@ class TestUpdates(MachineCase):
         b.wait_present("#app pre")
         b.wait_in_text("#app pre", "PackageKit is not installed")
 
-    #
-    # Helper functions for creating packages/repository
-    #
 
-    def createPackage(self, name, version, release, install=False, postinst=None, depends="", **updateinfo):
-        '''Create a dummy package in /tmp/repo on self.machine
+@skipImage("Image uses OSTree", "continuous-atomic", "fedora-atomic", "rhel-atomic")
+@skipImage("No subscriptions", "centos-7", "debian-stable", "debian-testing", "fedora-24", "fedora-25", "fedora-26", "fedora-i386", "fedora-testing", "ubuntu-1604", "ubuntu-stable")
+class TestUpdatesSubscriptions(PackageCase):
+    provision = {
+        "0": { "address": "10.111.113.2/20", "dns": "10.111.113.2" },
+        "candlepin": { "image": "candlepin", "address": "10.111.113.5/20" }
+    }
 
-        If install is True, install the package. Otherwise, update the package
-        index in /tmp/repo.
-        '''
-        if self.isApt:
-            self.createDeb(name, version + '-' + release, depends, postinst, install)
-        else:
-            self.createRpm(name, version, release, depends, postinst, install)
-        if updateinfo:
-            self.updateInfo[(name, version, release)] = updateinfo
+    def register(self):
+        # this fails with "Unable to find available subscriptions for all your installed products", but works anyway
+        self.machine.execute("subscription-manager register --insecure --serverurl https://10.111.113.5:8443/candlepin --org=admin --activationkey=awesome_os_pool || true")
+        self.machine.execute("subscription-manager attach --auto")
 
-    def createDeb(self, name, version, depends, postinst, install):
-        '''Create a dummy deb in /tmp/repo on self.machine
+    def setUp(self):
+        PackageCase.setUp(self)
+        self.candlepin = self.machines['candlepin']
+        m = self.machine
 
-        If install is True, install the package. Otherwise, update the package
-        index in /tmp/repo.
-        '''
-        deb = "/tmp/repo/{0}_{1}_all.deb".format(name, version)
-        if postinst:
-            postinstcode = "printf '#!/bin/sh\n{0}' > /tmp/b/DEBIAN/postinst; chmod 755 /tmp/b/DEBIAN/postinst".format(postinst)
-        else:
-            postinstcode = ''
-        cmd = '''mkdir -p /tmp/b/DEBIAN /tmp/repo
-                 printf "Package: {0}\nVersion: {1}\nPriority: optional\nSection: test\nMaintainer: foo\nDepends: {2}\nArchitecture: all\nDescription: dummy {0}\n" > /tmp/b/DEBIAN/control
-                 {4}
-                 touch /tmp/b/stamp-{0}-{1}
-                 dpkg -b /tmp/b {3}
-                 rm -r /tmp/b
-                 '''.format(name, version, depends, deb, postinstcode)
-        if install:
-            cmd += "dpkg -i " + deb
-        self.machine.execute(cmd)
+        # wait for candlepin to be active and verify
+        self.candlepin.execute("systemctl start tomcat")
 
-    def createRpm(self, name, version, release, requires, post, install):
-        '''Create a dummy rpm in /tmp/repo on self.machine
+        # remove all existing products (RHEL server), as we can't control them
+        m.execute("rm /etc/pki/product-default/*.pem /etc/pki/product/*.pem")
 
-        If install is True, install the package. Otherwise, update the package
-        index in /tmp/repo.
-        '''
-        if post:
-            postcode = '\n%%post\n' + post
-        else:
-            postcode = ''
-        if requires:
-            requires = "Requires: %s\n" % requires
-        cmd = '''printf 'Summary: dummy {0}\nName: {0}\nVersion: {1}\nRelease: {2}\nLicense: BSD\nBuildArch: noarch\n{3}
-%%install\ntouch $RPM_BUILD_ROOT/stamp-{0}-{1}-{2}\n
-%%description\nTest package.\n
-%%files\n/stamp-*\n
-{4}' > /tmp/spec
-                 rpmbuild -bb  /tmp/spec
-                 mkdir -p /tmp/repo
-                 cp ~/rpmbuild/RPMS/noarch/*.rpm /tmp/repo
-                 rm -rf ~/rpmbuild
-                 '''.format(name, version, release, requires, postcode)
-        if install:
-            cmd += "rpm -i /tmp/repo/{0}-{1}-{2}.*.rpm".format(name, version, release)
-        self.machine.execute(cmd)
+        # download product info from the candlepin machine and install it
+        product_file = os.path.join(self.tmpdir, "88888.pem")
+        self.candlepin.download("/root/candlepin/generated_certs/88888.pem", product_file)
 
-    def createAptChangelogs(self):
-        # apt metadata has no formal field for bugs/CVEs, they are parsed from the changelog
-        for ((pkg, ver, rel), info) in self.updateInfo.items():
-            changes = info.get("changes", "some changes")
-            if info.get("bugs"):
-                changes += " (Closes: {0})".format(", ".join(["#" + str(b) for b in info["bugs"]]))
-            if info.get("cves"):
-                changes += "\n  * " + ", ".join(info["cves"])
+        # # upload product info to the test machine
+        m.upload([product_file], "/etc/pki/product")
 
-            path = "/tmp/repo/changelogs/{0}/{1}/{1}_{2}-{3}".format(pkg[0], pkg, ver, rel)
-            contents = '''{0} ({1}-{2}) unstable; urgency=medium
+        # make sure that rhsm skips certificate checks for the server
+        m.execute("sed -i -e 's/insecure = 0/insecure = 1/g' /etc/rhsm/rhsm.conf")
 
-  * {3}
+        # Wait for the web service to be accessible
+        m.execute(script=WAIT_SCRIPT % { "addr": "10.111.113.5" })
 
- -- Joe Developer <joe@example.com>  Wed, 31 May 2017 14:52:25 +0200
-'''.format(pkg, ver, rel, changes)
-            self.machine.execute("mkdir -p $(dirname {0}); echo '{1}' > {0}".format(path, contents))
+    def testNoUpdates(self):
+        m = self.machine
+        b = self.browser
 
-    def createYumUpdateInfo(self):
-        xml = '<?xml version="1.0" encoding="UTF-8"?>\n<updates>\n'
-        for ((pkg, ver, rel), info) in self.updateInfo.items():
-            refs = ""
-            for b in info.get("bugs", []):
-                refs += '      <reference href="https://bugs.example.com?bug={0}" id="{0}" type="bugzilla"/>\n'.format(b)
-            for c in info.get("cves", []):
-                refs += '      <reference href="https://cve.mitre.org/cgi-bin/cvename.cgi?name={0}" id="{0}" type="cve"/>\n'.format(c)
+        # fresh machine, no updates available; by default our rhel-* images are not registered
+        m.start_cockpit()
+        b.login_and_go("/updates")
 
-            xml += '''  <update from="test@example.com" status="stable" type="{severity}" version="2.0">
-    <id>UPDATE-{pkg}-{ver}-{rel}</id>
-    <title>{pkg} {ver}-{rel} update</title>
-    <issued date="2017-01-01 12:34:56"/>
-    <description>{desc}</description>
-    <references>
-{refs}
-    </references>
-    <pkglist>
-     <collection short="0815">
-        <package name="{pkg}" version="{ver}" release="{rel}" epoch="0" arch="noarch">
-          <filename>{pkg}-{ver}-{rel}.noarch.rpm</filename>
-        </package>
-      </collection>
-    </pkglist>
-  </update>
-'''.format(pkg=pkg, ver=ver, rel=rel, refs=refs,
-            desc=info.get("changes", ""), severity=info.get("severity", "bugfix"))
+        # empty state visible in main area
+        b.wait_present(".container-fluid div.blank-slate-pf button")
+        b.wait_in_text(".container-fluid div.blank-slate-pf", "This system is not registered")
+        # hides the header bar
+        self.assertFalse(b.is_present(".content-header-extra"))
 
-        xml += '</updates>\n'
-        return xml
+        # use the button to switch to Subscriptions
+        b.click(".container-fluid div.blank-slate-pf button")
+        b.switch_to_top()
+        b.wait_js_cond('window.location.pathname === "/subscriptions"')
 
-    def enableRepo(self):
-        if self.isApt:
-            self.createAptChangelogs()
-            # HACK: on Debian jessie, apt has an error propagation bug that causes "Err file: Packages" for each absent
-            # compression format with file:// sources, which breaks PackageKit; work around by providing all formats
-            self.machine.execute('''echo 'deb [trusted=yes] file:///tmp/repo /' > /etc/apt/sources.list.d/test.list
-                                    cd /tmp/repo; apt-ftparchive packages . > Packages
-                                    gzip -c Packages > Packages.gz; bzip2 -c Packages > Packages.bz2; xz -c Packages > Packages.xz
-                                    O=$(apt-ftparchive -o APT::FTPArchive::Release::Origin=cockpittest release .); echo "$O" > Release
-                                    echo 'Changelogs: http://localhost:12345/changelogs/@CHANGEPATH@' >> Release
-                                    setsid python -m SimpleHTTPServer 12345 >/dev/null 2>&1 < /dev/null &
-                                    ''')
-            self.machine.wait_for_cockpit_running(port=12345)  # wait for changelog HTTP server to start up
-        else:
-            self.machine.execute('''printf '[updates]\nname=cockpittest\nbaseurl=file:///tmp/repo\nenabled=1\ngpgcheck=0\n' > /etc/yum.repos.d/cockpittest.repo
-                                    echo '{0}' > /tmp/updateinfo.xml
-                                    createrepo_c /tmp/repo
-                                    modifyrepo_c /tmp/updateinfo.xml /tmp/repo/repodata
-                                    $(which dnf 2>/dev/null|| which yum) clean all'''.format(self.createYumUpdateInfo()))
+        # after registration it should show the usual "system is up to date", through the "status changed" signal
+        self.register()
+        b.go("/updates")
+        b.enter_page("/updates")
+        b.wait_present(".content-header-extra td button")
+        b.wait_present("#state")
+        b.wait_in_text("#state", "No updates pending")
+        b.wait_present(".container-fluid div.blank-slate-pf")
+        b.wait_in_text(".container-fluid div.blank-slate-pf", "up to date")
 
+    def testAvailableUpdates(self):
+        m = self.machine
+        b = self.browser
+
+        # one available update
+        self.createPackage("vanilla", "1.0", "1", install=True)
+        self.createPackage("vanilla", "1.0", "2")
+        self.enableRepo()
+
+        # by default our rhel-* images are not registered; should show available update and unregistered warning, but no
+        # other action buttons
+        m.start_cockpit()
+        b.login_and_go("/updates")
+
+        b.wait_present(".alert-warning")
+        b.wait_in_text(".alert-warning", "subscribe")
+        b.wait_present("table.listing-ct")
+        b.wait_in_text("table.listing-ct", "vanilla")
+        # should show header bar
+        b.wait_present("#state")
+        self.assertEqual(b.text("#state"), "1 update")
+        b.wait_present(".content-header-extra")
+        self.assertEqual(b.text(".content-header-extra td.text-right span"), "Last checked: a few seconds ago")
+        # should be unique; no other action buttons
+        b.wait_present("button")
+        b.wait_in_text("button", "Registration")
+
+        # use the button to switch to Subscriptions
+        b.click("button")
+        b.switch_to_top()
+        b.wait_js_cond('window.location.pathname === "/subscriptions"')
+
+        # after registration it should show the usual "system is up to date"
+        self.register()
+        b.go("/updates")
+        b.enter_page("/updates")
+        b.wait_not_present(".alert-warning")
+        # h2 should now be unique, no update history yet, no warning any more
+        b.wait_present(".container-fluid h2")
+        b.wait_in_text(".container-fluid h2", "Available Updates")
+        # has action buttons
+        b.wait_present(".content-header-extra td button")
+        b.wait_present("#app .container-fluid button")
+        self.assertEqual(b.text("#app .container-fluid button"), "Install all updates")
 
 
 if __name__ == '__main__':

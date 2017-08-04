@@ -209,10 +209,6 @@ return plural;
   null,
   "Autenticación"
  ],
- "Author": [
-  null,
-  "Autor"
- ],
  "Azure": [
   null,
   "Azure"
@@ -661,10 +657,6 @@ return plural;
   null,
   "Último Cambio de Estado"
  ],
- "Last Updated": [
-  null,
-  "Última Actualización"
- ],
  "Latest Version": [
   null,
   "Última Versión"
@@ -796,10 +788,6 @@ return plural;
  "No groups are present.": [
   null,
   "No hay ningún grupo presente."
- ],
- "No image streams are present.": [
-  null,
-  "No hay ningún flujo de imágenes presente."
  ],
  "No images pushed": [
   null,
