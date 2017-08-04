@@ -1,3 +1,12 @@
+cockpit (148-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Fix navigation and various JavaScript errors with Internet Explorer
+    - Detect unregistered RHEL systems on Software Updates page
+    - debian/copryight: Add missing copyrights and licenses (Closes: #869934)
+
+ -- Martin Pitt <mpitt@debian.org>  Fri, 04 Aug 2017 13:04:31 +0200
+
 cockpit (147-1) unstable; urgency=medium
 
   * New upstream release:
