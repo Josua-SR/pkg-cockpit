@@ -147,6 +147,10 @@ Copyright: (Copyright 2009 Matt McInerney)
  noVNC is Copyright (C) 2011 Joel Martin <github@martintribe.org>
 License: MPL-2.0
 
+Files: node_modules/object-describer/*
+Copyright: (C) 2015-2017 Red Hat, Inc.
+License: Apache-2.0
+
 Files: node_modules/patternfly/*
 Copyright: Modifications to Bootstrap are copyright 2013 Red Hat, Inc.
 License: Apache-2.0
