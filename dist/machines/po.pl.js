@@ -267,6 +267,10 @@ return plural;
   null,
   "Port TLS SPICE:"
  ],
+ "Send Non-Maskable Interrupt": [
+  null,
+  "Wyślij niemaskowalne przerwanie"
+ ],
  "Session": [
   null,
   "Sesja"
@@ -358,6 +362,10 @@ return plural;
  "VM REBOOT action failed": [
   null,
   "Działanie VM REBOOT się nie powiodło"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "Działanie VM SEND niemaskowalnego przerwania się nie powiodło"
  ],
  "VM SHUT DOWN action failed": [
   null,

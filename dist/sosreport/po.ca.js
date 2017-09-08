@@ -77,7 +77,7 @@ return plural;
  ],
  "Create Report": [
   null,
-  ""
+  "Crea l'informe"
  ],
  "Create diagnostic report": [
   null,
@@ -93,7 +93,7 @@ return plural;
  ],
  "Download report": [
   null,
-  ""
+  "Baixa l'informe"
  ],
  "Generating report": [
   null,
@@ -105,7 +105,7 @@ return plural;
  ],
  "The collected information will be stored locally on the system.": [
   null,
-  ""
+  "La informació recopilada s'emmagatzemarà localment al sistema."
  ],
  "The generated archive contains data considered sensitive and its content should be reviewed by the originating organization before being passed to any third party.": [
   null,
@@ -113,6 +113,6 @@ return plural;
  ],
  "This tool will collect system configuration and diagnostic information from this system for use with diagnosing problems with the system.": [
   null,
-  ""
+  "Aquesta eina recopilarà la configuració del sistema i la informació de diagnòstic d'aquest sistema per al seu ús amb el diagnòstic de problemes amb el sistema."
  ]
 }));

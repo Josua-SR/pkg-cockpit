@@ -267,6 +267,10 @@ return plural;
   null,
   "Порт TLS SPICE:"
  ],
+ "Send Non-Maskable Interrupt": [
+  null,
+  "Надіслати немасковане переривання"
+ ],
  "Session": [
   null,
   "Сеанс"
@@ -358,6 +362,10 @@ return plural;
  "VM REBOOT action failed": [
   null,
   "Не вдалося виконати дію REBOOT для ВМ"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "Спроба виконати дію немаскованого переривання VM SEND завершилася невдало"
  ],
  "VM SHUT DOWN action failed": [
   null,

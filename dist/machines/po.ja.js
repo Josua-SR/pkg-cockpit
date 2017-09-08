@@ -267,6 +267,10 @@ return plural;
   null,
   ""
  ],
+ "Send Non-Maskable Interrupt": [
+  null,
+  ""
+ ],
  "Session": [
   null,
   "セッション"
@@ -358,6 +362,10 @@ return plural;
  "VM REBOOT action failed": [
   null,
   "VM REBOOT アクションに失敗しました"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  ""
  ],
  "VM SHUT DOWN action failed": [
   null,

@@ -407,8 +407,8 @@ am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" \
 	"$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" \
 	"$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(playgrounddir)" \
 	"$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" \
-	"$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticdebugdir)" \
-	"$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"
+	"$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticfontsdir)" \
+	"$(DESTDIR)$(ubuntubrandingdir)"
 @WITH_GOLANG_TRUE@am__EXEEXT_1 = cockpit-kube-auth$(EXEEXT) \
 @WITH_GOLANG_TRUE@	cockpit-kube-launch$(EXEEXT)
 @ENABLE_PCP_TRUE@am__EXEEXT_2 = cockpit-pcp$(EXEEXT)
@@ -1065,7 +1065,7 @@ DATA = $(base_DATA) $(basedebug_DATA) $(basefonts_DATA) \
 	$(nodist_noinst_DATA) $(nodist_static_DATA) \
 	$(nodist_systemdunit_DATA) $(noinst_DATA) $(pixmap_DATA) \
 	$(playground_DATA) $(pmlogconf_DATA) $(registrybranding_DATA) \
-	$(rhelbranding_DATA) $(staticdebug_DATA) $(staticfonts_DATA) \
+	$(rhelbranding_DATA) $(staticfonts_DATA) \
 	$(ubuntubranding_DATA)
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) \
 	$(LISP)config.h.in
@@ -2590,8 +2590,6 @@ COCKPIT_BUILD_INFO = "Built on $(shell date)"
 LOGIN_PO_FILES = $(patsubst %,dist/static/login.po.%.html,$(LINGUAS))
 staticdir = $(datadir)/cockpit/static
 nodist_static_DATA = dist/static/login.min.html dist/static/login.po.html $(LOGIN_PO_FILES)
-staticdebugdir = $(debugdir)$(staticdir)
-staticdebug_DATA = dist/static/login.html
 staticfontsdir = $(staticdir)/fonts
 staticfonts_DATA = $(OPENSANS_FONTS)
 libcockpit_ws_a_SOURCES = \
@@ -2674,7 +2672,7 @@ remotectl_LDADD = \
 
 firewalldir = $(prefix)/lib/firewalld/services
 firewall_DATA = src/ws/cockpit.xml
-appdatadir = $(datadir)/appdata
+appdatadir = $(datadir)/metainfo
 nodist_appdata_DATA = src/ws/cockpit.appdata.xml
 appdata_in = src/ws/cockpit.appdata.xml.in
 desktopdir = $(datadir)/applications
@@ -7414,27 +7412,6 @@ uninstall-rhelbrandingDATA:
 	@list='$(rhelbranding_DATA)'; test -n "$(rhelbrandingdir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(rhelbrandingdir)'; $(am__uninstall_files_from_dir)
-install-staticdebugDATA: $(staticdebug_DATA)
-	@$(NORMAL_INSTALL)
-	@list='$(staticdebug_DATA)'; test -n "$(staticdebugdir)" || list=; \
-	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(staticdebugdir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(staticdebugdir)" || exit 1; \
-	fi; \
-	for p in $$list; do \
-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-	  echo "$$d$$p"; \
-	done | $(am__base_list) | \
-	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(staticdebugdir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(staticdebugdir)" || exit $$?; \
-	done
-
-uninstall-staticdebugDATA:
-	@$(NORMAL_UNINSTALL)
-	@list='$(staticdebug_DATA)'; test -n "$(staticdebugdir)" || list=; \
-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	dir='$(DESTDIR)$(staticdebugdir)'; $(am__uninstall_files_from_dir)
 install-staticfontsDATA: $(staticfonts_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(staticfonts_DATA)'; test -n "$(staticfontsdir)" || list=; \
@@ -8233,7 +8210,7 @@ check: $(BUILT_SOURCES)
 all-am: Makefile $(LIBRARIES) $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) \
 		config.h all-local
 installdirs:
-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(basedebugdir)" "$(DESTDIR)$(basefontsdir)" "$(DESTDIR)$(centosbrandingdir)" "$(DESTDIR)$(debianbrandingdir)" "$(DESTDIR)$(defaultbrandingdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" "$(DESTDIR)$(firewalldir)" "$(DESTDIR)$(kubernetesbrandingdir)" "$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" "$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticdebugdir)" "$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"; do \
+	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(basedebugdir)" "$(DESTDIR)$(basefontsdir)" "$(DESTDIR)$(centosbrandingdir)" "$(DESTDIR)$(debianbrandingdir)" "$(DESTDIR)$(defaultbrandingdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" "$(DESTDIR)$(firewalldir)" "$(DESTDIR)$(kubernetesbrandingdir)" "$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" "$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: $(BUILT_SOURCES)
@@ -8323,8 +8300,7 @@ install-data-am: install-baseDATA install-basedebugDATA \
 	install-nodist_systemdunitDATA install-pixmapDATA \
 	install-playgroundDATA install-pmlogconfDATA \
 	install-registrybrandingDATA install-rhelbrandingDATA \
-	install-staticdebugDATA install-staticfontsDATA \
-	install-ubuntubrandingDATA
+	install-staticfontsDATA install-ubuntubrandingDATA
 	@$(NORMAL_INSTALL)
 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
 install-dvi: install-dvi-am
@@ -8386,8 +8362,7 @@ uninstall-am: uninstall-baseDATA uninstall-basedebugDATA \
 	uninstall-pixmapDATA uninstall-playgroundDATA \
 	uninstall-pmlogconfDATA uninstall-registrybrandingDATA \
 	uninstall-rhelbrandingDATA uninstall-sbinPROGRAMS \
-	uninstall-staticdebugDATA uninstall-staticfontsDATA \
-	uninstall-ubuntubrandingDATA
+	uninstall-staticfontsDATA uninstall-ubuntubrandingDATA
 
 uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 
@@ -8422,7 +8397,7 @@ uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 	install-playgroundDATA install-pmlogconfDATA install-ps \
 	install-ps-am install-registrybrandingDATA \
 	install-rhelbrandingDATA install-sbinPROGRAMS \
-	install-staticdebugDATA install-staticfontsDATA install-strip \
+	install-staticfontsDATA install-strip \
 	install-ubuntubrandingDATA installcheck installcheck-am \
 	installdirs maintainer-clean maintainer-clean-generic \
 	mostlyclean mostlyclean-compile mostlyclean-generic pdf pdf-am \
@@ -8440,8 +8415,7 @@ uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 	uninstall-pixmapDATA uninstall-playgroundDATA \
 	uninstall-pmlogconfDATA uninstall-registrybrandingDATA \
 	uninstall-rhelbrandingDATA uninstall-sbinPROGRAMS \
-	uninstall-staticdebugDATA uninstall-staticfontsDATA \
-	uninstall-ubuntubrandingDATA
+	uninstall-staticfontsDATA uninstall-ubuntubrandingDATA
 
 .PRECIOUS: Makefile
 

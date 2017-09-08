@@ -81,8 +81,8 @@ return plural;
  ],
  "$0 day": [
   "$0 days",
-  "",
-  ""
+  "$0 dia",
+  "$0 dies"
  ],
  "$0 disk is missing": [
   "$0 disks are missing",
@@ -91,8 +91,8 @@ return plural;
  ],
  "$0 hour": [
   "$0 hours",
-  "",
-  ""
+  "$0 hora",
+  "$0 hores"
  ],
  "$0 is in active use": [
   null,
@@ -100,13 +100,13 @@ return plural;
  ],
  "$0 minute": [
   "$0 minutes",
-  "",
-  ""
+  "$0 minut",
+  "$0 minuts"
  ],
  "$0 month": [
   "$0 months",
-  "",
-  ""
+  "$0 mes",
+  "$0 mesos"
  ],
  "$0 of $1": [
   null,
@@ -114,13 +114,13 @@ return plural;
  ],
  "$0 week": [
   "$0 weeks",
-  "",
-  ""
+  "$0 setmana",
+  "$0 setmanes"
  ],
  "$0 year": [
   "$0 years",
-  "",
-  ""
+  "$0 any",
+  "$0 anys"
  ],
  "$0, $1 free": [
   null,
@@ -136,11 +136,11 @@ return plural;
  ],
  "(default)": [
   null,
-  ""
+  "(predeterminat)"
  ],
  "(none)": [
   null,
-  ""
+  "(sense)"
  ],
  "1 MiB": [
   null,
@@ -264,7 +264,7 @@ return plural;
  ],
  "Authentication required": [
   null,
-  ""
+  "Autenticació requerida"
  ],
  "Available targets on $0": [
   null,
@@ -276,7 +276,7 @@ return plural;
  ],
  "Block device for filesystems": [
   null,
-  ""
+  "Dispositiu de blocs per al sistema de fitxers"
  ],
  "Blocked": [
   null,
@@ -284,7 +284,7 @@ return plural;
  ],
  "Can't delete while unlocked": [
   null,
-  ""
+  "No es pot suprimir mentre estigui desbloquejat"
  ],
  "Cancel": [
   null,
@@ -340,7 +340,7 @@ return plural;
  ],
  "Create Logical Volume": [
   null,
-  ""
+  "Crea un volum lògic"
  ],
  "Create Partition": [
   null,
@@ -364,7 +364,7 @@ return plural;
  ],
  "Create new Logical Volume": [
   null,
-  ""
+  "Crea un volum lògic nou"
  ],
  "Create partition": [
   null,
@@ -384,7 +384,7 @@ return plural;
  ],
  "Creating filesystem on $target": [
   null,
-  "S'està creat el sistema de fitxers a $target"
+  "S'està creant el sistema de fitxers a $target"
  ],
  "Creating logical volume $target": [
   null,
@@ -416,7 +416,7 @@ return plural;
  ],
  "Data Used": [
   null,
-  ""
+  "Dades utilitzades"
  ],
  "Deactivate": [
   null,
@@ -460,7 +460,7 @@ return plural;
  ],
  "Device is read-only": [
   null,
-  ""
+  "El dispositiu és de només lectura"
  ],
  "Disk is OK": [
   null,
@@ -484,7 +484,7 @@ return plural;
  ],
  "Edit": [
   null,
-  ""
+  "Edita"
  ],
  "Ejecting $target": [
   null,
@@ -504,7 +504,7 @@ return plural;
  ],
  "Encrypted Logical Volume of $0": [
   null,
-  ""
+  "Volum lògic xifrat de $0"
  ],
  "Encrypted Partition of $0": [
   null,
@@ -516,7 +516,7 @@ return plural;
  ],
  "Encryption": [
   null,
-  ""
+  "Xifratge"
  ],
  "Encryption Options": [
   null,
@@ -548,11 +548,11 @@ return plural;
  ],
  "Filesystem Mounting": [
   null,
-  ""
+  "Muntatge del sistema de fitxers"
  ],
  "Filesystem Name": [
   null,
-  ""
+  "Nom del sistema de fitxers"
  ],
  "Filesystem type": [
   null,
@@ -588,7 +588,7 @@ return plural;
  ],
  "Free Space": [
   null,
-  ""
+  "Espai lliure"
  ],
  "Go to now": [
   null,
@@ -600,7 +600,7 @@ return plural;
  ],
  "Inactive volume": [
   null,
-  ""
+  "Volum inactiu"
  ],
  "Invalid username or password": [
   null,
@@ -628,7 +628,7 @@ return plural;
  ],
  "Logical Volume of $0": [
   null,
-  ""
+  "Volum lògic de $0"
  ],
  "Marking $target as faulty": [
   null,
@@ -636,15 +636,15 @@ return plural;
  ],
  "Member of RAID Device": [
   null,
-  ""
+  "Membre del dispositiu RAID"
  ],
  "Member of RAID Device $0": [
   null,
-  ""
+  "Membre del dispositiu RAID $0"
  ],
  "Metadata Used": [
   null,
-  ""
+  "Metadades utilitzades"
  ],
  "Modifying $target": [
   null,
@@ -664,7 +664,7 @@ return plural;
  ],
  "Mounted At": [
   null,
-  ""
+  "Muntat a"
  ],
  "Mounting": [
   null,
@@ -708,11 +708,11 @@ return plural;
  ],
  "No Logical Volumes": [
   null,
-  ""
+  "Sense volums lògics"
  ],
  "No disks are available.": [
   null,
-  ""
+  "No hi ha disponible cap disc."
  ],
  "No drives attached": [
   null,
@@ -720,11 +720,11 @@ return plural;
  ],
  "No free space": [
   null,
-  ""
+  "Sense espai lliure"
  ],
  "No iSCSI targets set up": [
   null,
-  "Sense destinacions iSCSI preparades"
+  "Cap destinació iSCSI preparada"
  ],
  "No media inserted": [
   null,
@@ -736,7 +736,7 @@ return plural;
  ],
  "No storage set up as RAID": [
   null,
-  "Cap emmagatgematge preparat com a RAID"
+  "Cap emmagatzematge preparat com a RAID"
  ],
  "No volume groups created": [
   null,
@@ -752,11 +752,11 @@ return plural;
  ],
  "Off": [
   null,
-  "Apagat"
+  "Off"
  ],
  "On": [
   null,
-  "Engegat"
+  "On"
  ],
  "Operation '$operation' on $target": [
   null,
@@ -780,7 +780,7 @@ return plural;
  ],
  "Partition of $0": [
   null,
-  ""
+  "Partició de $0"
  ],
  "Partitioning": [
   null,
@@ -804,7 +804,7 @@ return plural;
  ],
  "Physical Volume": [
   null,
-  ""
+  "Volum físic"
  ],
  "Physical Volumes": [
   null,
@@ -812,7 +812,7 @@ return plural;
  ],
  "Physical volume of $0": [
   null,
-  ""
+  "Volum físic de $0"
  ],
  "Please confirm deletion of $0": [
   null,
@@ -820,7 +820,7 @@ return plural;
  ],
  "Pool": [
   null,
-  ""
+  "Agrupació"
  ],
  "Pool for Thin Logical Volumes": [
   null,
@@ -828,7 +828,7 @@ return plural;
  ],
  "Pool for Thin Volumes": [
   null,
-  ""
+  "Agrupació per als volums disgregats"
  ],
  "Pool for thinly provisioned volumes": [
   null,
@@ -840,7 +840,7 @@ return plural;
  ],
  "Purpose": [
   null,
-  ""
+  "Propòsit"
  ],
  "RAID ($0)": [
   null,
@@ -912,7 +912,7 @@ return plural;
  ],
  "RAID Member": [
   null,
-  ""
+  "Membre RAID"
  ],
  "Reading": [
   null,
@@ -944,7 +944,7 @@ return plural;
  ],
  "Rename Logical Volume": [
   null,
-  ""
+  "Reanomena el volum lògic"
  ],
  "Rename Volume Group": [
   null,
@@ -1000,19 +1000,19 @@ return plural;
  ],
  "Size cannot be negative": [
   null,
-  ""
+  "La mida no pot ser negativa"
  ],
  "Size cannot be zero": [
   null,
-  ""
+  "La mida no pot ser zero"
  ],
  "Size is too large": [
   null,
-  ""
+  "La mida és massa gran"
  ],
  "Size must be a number": [
   null,
-  ""
+  "La mida ha de ser un número"
  ],
  "Spare": [
   null,
@@ -1132,7 +1132,7 @@ return plural;
  ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
-  ""
+  "Aquest dispositiu té sistemes de fitxers actualment en ús. El procediment desmuntarà tots els sistemes de fitxers que conté."
  ],
  "This device is currently used for RAID devices.": [
   null,
@@ -1204,7 +1204,7 @@ return plural;
  ],
  "Unsupported volume": [
   null,
-  ""
+  "Volum no admès"
  ],
  "Usage": [
   null,
@@ -1216,7 +1216,7 @@ return plural;
  ],
  "Username": [
   null,
-  ""
+  "Nom d'usuari"
  ],
  "VFAT - Compatible with all systems and devices": [
   null,
@@ -1288,7 +1288,7 @@ return plural;
  ],
  "storage-id-desc\u0004Encrypted data": [
   null,
-  ""
+  "Dades xifrades"
  ],
  "storage-id-desc\u0004Other Data": [
   null,

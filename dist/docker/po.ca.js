@@ -69,27 +69,27 @@ return plural;
  },
  " (shared with the OS)": [
   null,
-  ""
+  " (compartit amb el SO)"
  ],
  "$0 day": [
   "$0 days",
-  "",
-  ""
+  "$0 dia",
+  "$0 dies"
  ],
  "$0 hour": [
   "$0 hours",
-  "",
-  ""
+  "$0 hora",
+  "$0 hores"
  ],
  "$0 minute": [
   "$0 minutes",
-  "",
-  ""
+  "$0 minut",
+  "$0 minuts"
  ],
  "$0 month": [
   "$0 months",
-  "",
-  ""
+  "$0 mes",
+  "$0 mesos"
  ],
  "$0 shares": [
   null,
@@ -97,13 +97,13 @@ return plural;
  ],
  "$0 week": [
   "$0 weeks",
-  "",
-  ""
+  "$0 setmana",
+  "$0 setmanes"
  ],
  "$0 year": [
   "$0 years",
-  "",
-  ""
+  "$0 any",
+  "$0 anys"
  ],
  "${hip}:${hport} -> $cport": [
   null,
@@ -111,15 +111,15 @@ return plural;
  ],
  "Add Additional Storage": [
   null,
-  ""
+  "Afegeix emmagatzematge addicional"
  ],
  "Add Storage": [
   null,
-  ""
+  "Afegeix emmagatzematge"
  ],
  "Additional Storage": [
   null,
-  ""
+  "Emmagatzematge addicional"
  ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
@@ -131,7 +131,7 @@ return plural;
  ],
  "Are you sure you want to delete this image?": [
   null,
-  ""
+  "Esteu segur que voleu suprimir aquesta imatge?"
  ],
  "Author": [
   null,
@@ -147,7 +147,7 @@ return plural;
  ],
  "CPU usage:": [
   null,
-  ""
+  "Ús de la CPU:"
  ],
  "Can&rsquo;t connect to Docker": [
   null,
@@ -163,11 +163,11 @@ return plural;
  ],
  "Change resource limits": [
   null,
-  ""
+  "Canvia els límits dels recursos"
  ],
  "Change resources limits": [
   null,
-  ""
+  "Canvia els límits dels recursos"
  ],
  "Close": [
   null,
@@ -191,7 +191,7 @@ return plural;
  ],
  "Command:": [
   null,
-  ""
+  "Ordre:"
  ],
  "Commit": [
   null,
@@ -203,11 +203,11 @@ return plural;
  ],
  "Configure storage...": [
   null,
-  ""
+  "Configura l'emmagatzematge..."
  ],
  "Connecting to Docker": [
   null,
-  "S'està connectant al Docker"
+  "S'està connectant a Docker"
  ],
  "Container": [
   null,
@@ -227,7 +227,7 @@ return plural;
  ],
  "Container:": [
   null,
-  ""
+  "Contenidor:"
  ],
  "Containers": [
   null,
@@ -279,7 +279,7 @@ return plural;
  ],
  "Download": [
   null,
-  ""
+  "Baixa"
  ],
  "Drive": [
   null,
@@ -311,11 +311,11 @@ return plural;
  ],
  "Error message from Docker:": [
   null,
-  "Missatge d'error del Docker:"
+  "Missatge d'error de Docker:"
  ],
  "Everything": [
   null,
-  ""
+  "Tot"
  ],
  "Exited $ExitCode": [
   null,
@@ -323,15 +323,15 @@ return plural;
  ],
  "Expose container ports": [
   null,
-  ""
+  "Exposa els ports del contenidor"
  ],
  "Failed to start Docker: $0": [
   null,
-  "Ha fallat l'inici del Docker: $0"
+  "Ha fallat l'inici de Docker: $0"
  ],
  "Failed to stop Docker scope: $0": [
   null,
-  "Ha fallat l'aturada de l'àmbit del Docker: $0"
+  "Ha fallat l'aturada de l'àmbit de Docker: $0"
  ],
  "Force Delete": [
   null,
@@ -343,15 +343,15 @@ return plural;
  ],
  "Gateway:": [
   null,
-  ""
+  "Passarel·la:"
  ],
  "Get new image": [
   null,
-  ""
+  "Obtén una imatge nova"
  ],
  "Hard Disk": [
   null,
-  ""
+  "Disc dur"
  ],
  "IP Address:": [
   null,
@@ -367,7 +367,7 @@ return plural;
  ],
  "Id:": [
   null,
-  ""
+  "Id:"
  ],
  "Image": [
   null,
@@ -379,11 +379,11 @@ return plural;
  ],
  "Image Search": [
   null,
-  ""
+  "Cerca de la imatge"
  ],
  "Image:": [
   null,
-  ""
+  "Imatge:"
  ],
  "Images": [
   null,
@@ -391,7 +391,7 @@ return plural;
  ],
  "Images and running containers": [
   null,
-  ""
+  "Imatges i contenidors en execució"
  ],
  "Information about the Docker storage pool is not available.": [
   null,
@@ -403,7 +403,7 @@ return plural;
  ],
  "Link to another container": [
   null,
-  ""
+  "Enllaça a un altre contenidor"
  ],
  "Links": [
   null,
@@ -411,15 +411,15 @@ return plural;
  ],
  "Links:": [
   null,
-  ""
+  "Enllaços:"
  ],
  "Local Disks": [
   null,
-  ""
+  "Discs locals"
  ],
  "MAC Address:": [
   null,
-  ""
+  "Adreça MAC:"
  ],
  "Memory": [
   null,
@@ -431,7 +431,7 @@ return plural;
  ],
  "Memory usage:": [
   null,
-  ""
+  "Ús de la memòria: "
  ],
  "MiB": [
   null,
@@ -439,7 +439,7 @@ return plural;
  ],
  "Mount container volumes": [
   null,
-  ""
+  "Munta els volums del contenidor"
  ],
  "Name": [
   null,
@@ -463,7 +463,7 @@ return plural;
  ],
  "No containers": [
   null,
-  ""
+  "Sense contenidors"
  ],
  "No containers that match the current filter": [
   null,
@@ -471,7 +471,7 @@ return plural;
  ],
  "No images": [
   null,
-  ""
+  "Sense imatges"
  ],
  "No images that match the current filter": [
   null,
@@ -479,11 +479,11 @@ return plural;
  ],
  "No results for $0": [
   null,
-  ""
+  "Cap resultat per a $0"
  ],
  "No running containers": [
   null,
-  ""
+  "Cap contenidor en execució"
  ],
  "No running containers that match the current filter": [
   null,
@@ -499,7 +499,7 @@ return plural;
  ],
  "Off": [
   null,
-  "Apagat"
+  "Off"
  ],
  "Ok": [
   null,
@@ -507,7 +507,7 @@ return plural;
  ],
  "On": [
   null,
-  "Engegat"
+  "On"
  ],
  "On Failure": [
   null,
@@ -520,7 +520,7 @@ return plural;
  ],
  "Overview": [
   null,
-  ""
+  "Visió de conjunt"
  ],
  "Please confirm deletion of $0": [
   null,
@@ -532,7 +532,7 @@ return plural;
  ],
  "Please try another term": [
   null,
-  ""
+  "Si us plau, proveu un altre terme"
  ],
  "Ports": [
   null,
@@ -544,11 +544,11 @@ return plural;
  ],
  "ReadOnly": [
   null,
-  ""
+  "NomésLectura"
  ],
  "ReadWrite": [
   null,
-  ""
+  "LexturaEscriptura"
  ],
  "Reformat and add disks": [
   null,
@@ -564,7 +564,7 @@ return plural;
  ],
  "Reset Storage Pool": [
   null,
-  ""
+  "Restableix l'agrupació d'emmagatzematge"
  ],
  "Resetting the storage pool will erase all containers and release disks in the pool.": [
   null,
@@ -588,23 +588,23 @@ return plural;
  ],
  "Run": [
   null,
-  ""
+  "Executa"
  ],
  "Run Image": [
   null,
-  ""
+  "Executa la imatge"
  ],
  "Security": [
   null,
-  ""
+  "Seguretat"
  ],
  "Set container environment variables": [
   null,
-  ""
+  "Estableix les variables d'entorn del contenidor"
  ],
  "Show all containers": [
   null,
-  ""
+  "Mostra tots els contenidors"
  ],
  "Show all images": [
   null,
@@ -616,7 +616,7 @@ return plural;
  ],
  "Solid-State Disk": [
   null,
-  ""
+  "Disc d'estat sòlid"
  ],
  "Start": [
   null,
@@ -648,7 +648,7 @@ return plural;
  ],
  "Storage pool": [
   null,
-  ""
+  "Agrupació d'emmagatzematge"
  ],
  "TCP": [
   null,
@@ -656,7 +656,7 @@ return plural;
  ],
  "Tag": [
   null,
-  "Tag"
+  "Etiqueta"
  ],
  "Tags": [
   null,
@@ -692,7 +692,7 @@ return plural;
  ],
  "Type to filter…": [
   null,
-  ""
+  "Teclegeu per filtrar..."
  ],
  "UDP": [
   null,
@@ -724,7 +724,7 @@ return plural;
  ],
  "With terminal": [
   null,
-  "Amb el terminal"
+  "Amb terminal"
  ],
  "You don't have permission to manage the Docker storage pool.": [
   null,
@@ -748,15 +748,15 @@ return plural;
  ],
  "search by name, namespace or description": [
   null,
-  ""
+  "cerqueu pel nom, per l'espai de noms o per la descripció"
  ],
  "select container": [
   null,
-  "selecciona el contenidor"
+  "seleccioneu el contenidor"
  ],
  "shares": [
   null,
-  ""
+  "comparticions"
  ],
  "to host path": [
   null,

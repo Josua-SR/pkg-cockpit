@@ -89,7 +89,7 @@ return plural;
  ],
  "Add Another Key": [
   null,
-  ""
+  "Afegeix una altra clau"
  ],
  "Additions": [
   null,
@@ -105,7 +105,7 @@ return plural;
  ],
  "Begins with '-----BEGIN PGP PUBLIC KEY BLOCK-----'": [
   null,
-  ""
+  "Comença amb '-----BEGIN PGP PUBLIC KEY BLOCK-----'"
  ],
  "Cancel": [
   null,
@@ -117,7 +117,7 @@ return plural;
  ],
  "Check for Updates": [
   null,
-  ""
+  "Comprova si hi ha actualitzacions"
  ],
  "Checking for updates": [
   null,
@@ -129,7 +129,7 @@ return plural;
  ],
  "Couldn't load settings for '$0': $1": [
   null,
-  "No s'han pogut carregar les dades de l'usuari"
+  "No s'ha pogut carregar els ajusts per a '$0': $1"
  ],
  "Currently using:": [
   null,
@@ -165,7 +165,7 @@ return plural;
  ],
  "Invalid Signature": [
   null,
-  ""
+  "Signatura no vàlida"
  ],
  "Name": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "No configuration data found": [
   null,
-  "Configuració desconeguda"
+  "No s'ha trobat cap dada de configuració"
  ],
  "No signature avaliable": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "Origin": [
   null,
-  ""
+  "Origen"
  ],
  "Packages": [
   null,
@@ -217,11 +217,11 @@ return plural;
  ],
  "Please provide a valid URL": [
   null,
-  "Si us plau, un espai de noms vàlid."
+  "Si us plau, proporcioneu un URL vàlid"
  ],
  "Please provide a valid name": [
   null,
-  ""
+  "Si us plau, proporcioneu un nom vàlid"
  ],
  "Rebase and Reboot": [
   null,
@@ -245,7 +245,7 @@ return plural;
  ],
  "Released": [
   null,
-  ""
+  "Llançat"
  ],
  "Removals": [
   null,
@@ -297,7 +297,7 @@ return plural;
  ],
  "Update and Reboot": [
   null,
-  ""
+  "Actualitza i reinicia"
  ],
  "Updates": [
   null,
@@ -309,7 +309,7 @@ return plural;
  ],
  "Use trusted GPG key": [
   null,
-  ""
+  "Utilitza una clau GPG de confiança"
  ],
  "Version": [
   null,

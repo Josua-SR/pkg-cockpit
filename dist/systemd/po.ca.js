@@ -73,33 +73,33 @@ return plural;
  ],
  "$0 day": [
   "$0 days",
-  "",
-  ""
+  "$0 dia",
+  "$0 dies"
  ],
  "$0 hour": [
   "$0 hours",
-  "",
-  ""
+  "$0 hora",
+  "$0 hores"
  ],
  "$0 minute": [
   "$0 minutes",
-  "",
-  ""
+  "$0 minut",
+  "$0 minuts"
  ],
  "$0 month": [
   "$0 months",
-  "",
-  ""
+  "$0 mes",
+  "$0 mesos"
  ],
  "$0 week": [
   "$0 weeks",
-  "",
-  ""
+  "$0 setmana",
+  "$0 setmanes"
  ],
  "$0 year": [
   "$0 years",
-  "",
-  ""
+  "$0 any",
+  "$0 anys"
  ],
  "1 Minute": [
   null,
@@ -115,7 +115,7 @@ return plural;
  ],
  "1 min": [
   null,
-  ""
+  "1 min"
  ],
  "1 week": [
   null,
@@ -123,51 +123,51 @@ return plural;
  ],
  "10th": [
   null,
-  ""
+  "10è"
  ],
  "11th": [
   null,
-  ""
+  "11è"
  ],
  "12th": [
   null,
-  ""
+  "12è"
  ],
  "13th": [
   null,
-  ""
+  "13è"
  ],
  "14th": [
   null,
-  ""
+  "14è"
  ],
  "15th": [
   null,
-  ""
+  "15è"
  ],
  "16th": [
   null,
-  ""
+  "16è"
  ],
  "17th": [
   null,
-  ""
+  "17è"
  ],
  "18th": [
   null,
-  ""
+  "18è"
  ],
  "19th": [
   null,
-  ""
+  "19è"
  ],
  "1st": [
   null,
-  ""
+  "1r"
  ],
  "2 min": [
   null,
-  ""
+  "2 min"
  ],
  "20 Minutes": [
   null,
@@ -175,67 +175,67 @@ return plural;
  ],
  "20th": [
   null,
-  ""
+  "20è"
  ],
  "21st": [
   null,
-  ""
+  "21è"
  ],
  "22nd": [
   null,
-  ""
+  "22è"
  ],
  "23rd": [
   null,
-  ""
+  "23è"
  ],
  "24th": [
   null,
-  ""
+  "24è"
  ],
  "25th": [
   null,
-  ""
+  "25è"
  ],
  "26th": [
   null,
-  ""
+  "26è"
  ],
  "27th": [
   null,
-  ""
+  "27è"
  ],
  "28th": [
   null,
-  ""
+  "28è"
  ],
  "29th": [
   null,
-  ""
+  "29è"
  ],
  "2nd": [
   null,
-  ""
+  "2n"
  ],
  "3 min": [
   null,
-  ""
+  "3 min"
  ],
  "30th": [
   null,
-  ""
+  "30è"
  ],
  "31st": [
   null,
-  ""
+  "31è"
  ],
  "3rd": [
   null,
-  ""
+  "3r"
  ],
  "4 min": [
   null,
-  ""
+  "4 min"
  ],
  "40 Minutes": [
   null,
@@ -243,7 +243,7 @@ return plural;
  ],
  "4th": [
   null,
-  ""
+  "4t"
  ],
  "5 Minutes": [
   null,
@@ -251,7 +251,7 @@ return plural;
  ],
  "5 min": [
   null,
-  ""
+  "5 min"
  ],
  "5 minutes": [
   null,
@@ -259,7 +259,7 @@ return plural;
  ],
  "5th": [
   null,
-  ""
+  "5è"
  ],
  "6 hours": [
   null,
@@ -271,27 +271,27 @@ return plural;
  ],
  "6th": [
   null,
-  ""
+  "6è"
  ],
  "7th": [
   null,
-  ""
+  "7è"
  ],
  "8th": [
   null,
-  ""
+  "8è"
  ],
  "9th": [
   null,
-  ""
+  "9è"
  ],
  "After": [
   null,
-  ""
+  "Després"
  ],
  "After system boot": [
   null,
-  ""
+  "Després de l'arrencada del sistema"
  ],
  "Asset Tag": [
   null,
@@ -299,7 +299,7 @@ return plural;
  ],
  "At specific time": [
   null,
-  ""
+  "A l'instant específic"
  ],
  "Automatically using NTP": [
   null,
@@ -345,6 +345,14 @@ return plural;
   null,
   "Ordre"
  ],
+ "Condition $0=$1 was not met": [
+  null,
+  ""
+ ],
+ "Condition failed": [
+  null,
+  ""
+ ],
  "Create Timer": [
   null,
   ""
@@ -375,7 +383,7 @@ return plural;
  ],
  "Disk I/O": [
   null,
-  ""
+  "E/S del disc"
  ],
  "Domain": [
   null,
@@ -407,7 +415,7 @@ return plural;
  ],
  "Everything": [
   null,
-  ""
+  "Tot"
  ],
  "Free": [
   null,
@@ -435,7 +443,7 @@ return plural;
  ],
  "Hour : Minute": [
   null,
-  ""
+  "hora : minut"
  ],
  "Hour needs to be a number between 0-23": [
   null,
@@ -443,7 +451,7 @@ return plural;
  ],
  "Hours": [
   null,
-  ""
+  "Hores"
  ],
  "I/O Wait": [
   null,
@@ -467,19 +475,19 @@ return plural;
  ],
  "Invalid date format.": [
   null,
-  ""
+  "Format de data no vàlid."
  ],
  "Invalid number.": [
   null,
-  ""
+  "Número no vàlid."
  ],
  "Invalid time format": [
   null,
-  "format d'hora no vàlid"
+  "Format d'hora no vàlid"
  ],
  "Invalid time zone": [
   null,
-  ""
+  "Zona horària no vàlida"
  ],
  "Journal": [
   null,
@@ -495,7 +503,7 @@ return plural;
  ],
  "Kernel": [
   null,
-  "Nucli del sistema operatiu"
+  "Kernel"
  ],
  "Last 24 hours": [
   null,
@@ -531,7 +539,7 @@ return plural;
  ],
  "Machine SSH Key Fingerprints": [
   null,
-  ""
+  "Empremtes de les claus SSH de la màquina"
  ],
  "Manually": [
   null,
@@ -559,11 +567,11 @@ return plural;
  ],
  "Minutes": [
   null,
-  ""
+  "Minuts"
  ],
  "Monday": [
   null,
-  ""
+  "Dilluns"
  ],
  "NTP Server": [
   null,
@@ -575,7 +583,7 @@ return plural;
  ],
  "Network Traffic": [
   null,
-  ""
+  "Trànsit de xarxa"
  ],
  "Next Run": [
   null,
@@ -595,7 +603,7 @@ return plural;
  ],
  "Not authorized to upload-report": [
   null,
-  ""
+  "No autoritzat per pujar l'informe"
  ],
  "Not synchronized": [
   null,
@@ -607,15 +615,15 @@ return plural;
  ],
  "Off": [
   null,
-  "Apagat"
+  "Off"
  ],
  "On": [
   null,
-  "Engegat"
+  "On"
  ],
  "Only Problems": [
   null,
-  ""
+  "Només els problemes"
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
@@ -651,15 +659,15 @@ return plural;
  ],
  "Problems, Errors": [
   null,
-  ""
+  "Problemes i errors"
  ],
  "Problems, Errors, Warnings": [
   null,
-  ""
+  "Problemes, errors i avisos"
  ],
  "Problems, Errors, Warnings, Notices": [
   null,
-  ""
+  "Problemes, errors, avisos i notificacions"
  ],
  "Real Host Name": [
   null,
@@ -687,23 +695,23 @@ return plural;
  ],
  "Repeat Daily": [
   null,
-  ""
+  "Repeteix diàriament"
  ],
  "Repeat Hourly": [
   null,
-  ""
+  "Repeteix cada hora"
  ],
  "Repeat Monthly": [
   null,
-  ""
+  "Repeteix cada mes"
  ],
  "Repeat Weekly": [
   null,
-  ""
+  "Repeteix cada setmana"
  ],
  "Repeat Yearly": [
   null,
-  ""
+  "Repeteix cada any"
  ],
  "Reporter 'reporter-ureport' not found.": [
   null,
@@ -723,7 +731,7 @@ return plural;
  ],
  "Run": [
   null,
-  ""
+  "Executa"
  ],
  "Saturday": [
   null,
@@ -731,15 +739,15 @@ return plural;
  ],
  "Save": [
   null,
-  ""
+  "Desa"
  ],
  "Seconds": [
   null,
-  ""
+  "segons"
  ],
  "Secure Shell Keys": [
   null,
-  ""
+  "Claus de shell segures"
  ],
  "Service Logs": [
   null,
@@ -763,15 +771,15 @@ return plural;
  ],
  "Severity": [
   null,
-  ""
+  "Gravetat"
  ],
  "Show fingerprints": [
   null,
-  "Mostra les empremptes"
+  "Mostra les empremtes"
  ],
  "Shut Down": [
   null,
-  ""
+  "Apaga"
  ],
  "Since $0": [
   null,
@@ -783,7 +791,7 @@ return plural;
  ],
  "Specific Time": [
   null,
-  "Temps específic"
+  "Instant concret"
  ],
  "Start": [
   null,
@@ -823,7 +831,7 @@ return plural;
  ],
  "System": [
   null,
-  ""
+  "Sistema"
  ],
  "System Services": [
   null,

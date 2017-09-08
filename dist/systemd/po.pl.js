@@ -351,6 +351,14 @@ return plural;
   null,
   "Polecenie"
  ],
+ "Condition $0=$1 was not met": [
+  null,
+  "Warunek $0=$1 nie został spełniony"
+ ],
+ "Condition failed": [
+  null,
+  "Warunek się nie powiódł"
+ ],
  "Create Timer": [
   null,
   "Utwórz licznik"

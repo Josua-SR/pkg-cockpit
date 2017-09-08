@@ -74,11 +74,11 @@ return plural;
  ],
  "Apply this solution": [
   null,
-  ""
+  "Aplica aquesta solució"
  ],
  "Applying solution...": [
   null,
-  ""
+  "S'està aplicant la solució..."
  ],
  "Audit log": [
   null,
@@ -98,7 +98,7 @@ return plural;
  ],
  "Error while setting SELinux mode: '$0'": [
   null,
-  ""
+  "Error mentre s'establia el mode de SELinux: '$0'"
  ],
  "Failed to delete alert: $0": [
   null,
@@ -110,11 +110,11 @@ return plural;
  ],
  "No SELinux alerts.": [
   null,
-  ""
+  "Sense alertes de SELinux."
  ],
  "Not connected": [
   null,
-  ""
+  "No connectat"
  ],
  "Occurred $0": [
   null,
@@ -126,11 +126,11 @@ return plural;
  ],
  "Off": [
   null,
-  "Apagat"
+  "Off"
  ],
  "On": [
   null,
-  "Engegat"
+  "On"
  ],
  "SELinux Access Control Errors": [
   null,
@@ -138,23 +138,23 @@ return plural;
  ],
  "SELinux Policy": [
   null,
-  ""
+  "Política de SELinux"
  ],
  "SELinux Troubleshoot": [
   null,
-  ""
+  "Solució de problema de SELinux"
  ],
  "SELinux is disabled on the system": [
   null,
-  "Cockpit no està instal·lat al sistema."
+  "SELinux no està inhabilitat al sistema"
  ],
  "SELinux is disabled on the system.": [
   null,
-  ""
+  "SELinux no està inhabilitat al sistema."
  ],
  "SELinux system status is unknown.": [
   null,
-  ""
+  "Es desconeix l'estat del sistema SELinux."
  ],
  "Setting deviates from the configured state and will revert on the next boot.": [
   null,
@@ -162,15 +162,15 @@ return plural;
  ],
  "Solution applied successfully": [
   null,
-  ""
+  "S'ha aplicat la solució amb èxit"
  ],
  "Solution failed": [
   null,
-  ""
+  "Ha fallat la solució"
  ],
  "Solutions": [
   null,
-  ""
+  "Solucions"
  ],
  "The configured state is unknown, it might change on the next boot.": [
   null,
@@ -198,7 +198,7 @@ return plural;
  ],
  "Waiting for details...": [
   null,
-  ""
+  "S'estan esperant els detalls..."
  ],
  "solution details": [
   null,

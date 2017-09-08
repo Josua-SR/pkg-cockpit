@@ -20,7 +20,7 @@
 import cockpit from 'cockpit';
 import React, { PropTypes } from "react";
 import { shutdownVm, forceVmOff, forceRebootVm, rebootVm, startVm,
-         usageStartPolling, usageStopPolling } from "./actions.es6";
+         usageStartPolling, usageStopPolling, sendNMI } from "./actions.es6";
 import { rephraseUI, logDebug, toGigaBytes, toFixedPrecision, vmId } from "./helpers.es6";
 import DonutChart from "./c3charts.jsx";
 import { Listing, ListingRow } from "cockpit-components-listing.jsx";
@@ -50,7 +50,7 @@ const NoVm = () => {
     </div>);
 }
 
-const VmActions = ({ vm, config, dispatch, onStart, onReboot, onForceReboot, onShutdown, onForceoff }) => {
+const VmActions = ({ vm, config, dispatch, onStart, onReboot, onForceReboot, onShutdown, onForceoff, onSendNMI}) => {
     const id = vmId(vm.name);
     const state = vm.state;
 
@@ -71,17 +71,23 @@ const VmActions = ({ vm, config, dispatch, onStart, onReboot, onForceReboot, onS
 
     let shutdown = null;
     if (config.provider.canShutdown(state)) {
-        shutdown = DropdownButtons({
-            buttons: [{
-                title: _("Shut Down"),
-                action: onShutdown,
-                id: `${id}-off`
-            }, {
-                title: _("Force Shut Down"),
-                action: onForceoff,
-                id: `${id}-forceOff`
-            }]
-        });
+	let buttons = [{
+            title: _("Shut Down"),
+            action: onShutdown,
+            id: `${id}-off`
+        }, {
+            title: _("Force Shut Down"),
+            action: onForceoff,
+            id: `${id}-forceOff`
+        }];
+        if (config.provider.canSendNMI && config.provider.canSendNMI(state)) {
+            buttons.push({
+                title: _("Send Non-Maskable Interrupt"),
+                action: onSendNMI,
+                id: `${id}-sendNMI`
+            })
+        }
+        shutdown = DropdownButtons({ buttons: buttons });
     }
 
     let run = null;
@@ -124,6 +130,7 @@ VmActions.propTypes = {
     onForceReboot: PropTypes.func.isRequired,
     onShutdown: PropTypes.func.isRequired,
     onForceoff: PropTypes.func.isRequired,
+    onSendNMI: PropTypes.func.isRequired,
 }
 
 const IconElement = ({ onClick, className, title, state }) => {
@@ -162,8 +169,6 @@ export const StateIcon = ({ state, config, valueId }) => {
         return (
             <span title={stateMap[state].title} data-toggle='tooltip' data-placement='left'>
                 <span id={valueId}>{rephraseUI('vmStates', state)}</span>
-                &nbsp;
-                <i className={stateMap[state].className} />
             </span>);
     }
     return (<small>{state}</small>);
@@ -397,7 +402,7 @@ VmUsageTab.propTypes = {
 /** One VM in the list (a row)
  */
 const Vm = ({ vm, config, onStart, onShutdown, onForceoff, onReboot, onForceReboot,
-              onUsageStartPolling, onUsageStopPolling, dispatch }) => {
+              onUsageStartPolling, onUsageStopPolling, onSendNMI, dispatch }) => {
     const stateIcon = (<StateIcon state={vm.state} config={config} valueId={`${vmId(vm.name)}-state`} />);
 
     const usageTabName = (<div id={`${vmId(vm.name)}-usage`}>{_("Usage")}</div>);
@@ -435,7 +440,7 @@ const Vm = ({ vm, config, onStart, onShutdown, onForceoff, onReboot, onForceRebo
             ]}
         tabRenderers={tabRenderers}
         listingActions={VmActions({vm, config, dispatch,
-            onStart, onReboot, onForceReboot, onShutdown, onForceoff})}/>);
+            onStart, onReboot, onForceReboot, onShutdown, onForceoff, onSendNMI})}/>);
 };
 Vm.propTypes = {
     vm: PropTypes.object.isRequired,
@@ -447,6 +452,7 @@ Vm.propTypes = {
     onForceReboot: PropTypes.func.isRequired,
     onUsageStartPolling: PropTypes.func.isRequired,
     onUsageStopPolling: PropTypes.func.isRequired,
+    onSendNMI: React.PropTypes.func.isRequired,
     dispatch: PropTypes.func.isRequired,
 };
 
@@ -476,6 +482,7 @@ const HostVmsList = ({ vms, config, dispatch }) => {
                         onForceoff={() => dispatch(forceVmOff(vm))}
                         onUsageStartPolling={() => dispatch(usageStartPolling(vm))}
                         onUsageStopPolling={() => dispatch(usageStopPolling(vm))}
+                        onSendNMI={() => dispatch(sendNMI(vm))}
                         dispatch={dispatch}
                     />);
             })}

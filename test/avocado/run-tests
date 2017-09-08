@@ -167,7 +167,7 @@ done;
 
 def run_avocado(avocado_tests, verbose, browser, download_logs, sit):
     use_selenium = (browser != 'none')
-    image = os.environ.get("TEST_OS", "fedora-24")
+    image = os.environ.get("TEST_OS", "fedora-25")
     network = testvm.VirtNetwork()
     machine = testvm.VirtMachine(verbose=verbose, networking=network.host(), image=image)
     selenium = windows = None
@@ -183,6 +183,7 @@ def run_avocado(avocado_tests, verbose, browser, download_logs, sit):
         machine.start()
         if selenium:
             # actually wait here, because starting selenium takes a while
+            selenium.pull(selenium.image_file)
             selenium.start()
             selenium.wait_boot()
             selenium.set_address("10.111.112.10/20")
@@ -192,6 +193,7 @@ def run_avocado(avocado_tests, verbose, browser, download_logs, sit):
             selenium.execute(command="/root/selenium_start.sh")
         elif windows:
             selenium = windows
+            selenium.pull(selenium.image_file)
             selenium.start()
 
         machine.wait_boot()

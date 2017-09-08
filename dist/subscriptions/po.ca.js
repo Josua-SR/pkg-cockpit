@@ -77,11 +77,11 @@ return plural;
  ],
  "Access denied": [
   null,
-  ""
+  "Accés denegat"
  ],
  "Activation Key": [
   null,
-  ""
+  "Clau d'activació"
  ],
  "Architecture": [
   null,
@@ -113,11 +113,11 @@ return plural;
  ],
  "Installed products": [
   null,
-  ""
+  "Productes instal·lats"
  ],
  "Invalid credentials": [
   null,
-  ""
+  "Credencials no vàlides"
  ],
  "Invalid username or password": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "No installed products on the system.": [
   null,
-  ""
+  "No hi ha cap producte instal·lat al sistema."
  ],
  "Ok": [
   null,
@@ -141,7 +141,7 @@ return plural;
  ],
  "Organization": [
   null,
-  ""
+  "Organització"
  ],
  "Password": [
   null,
@@ -157,7 +157,7 @@ return plural;
  ],
  "Proxy": [
   null,
-  ""
+  "Servidor intermediari"
  ],
  "Register": [
   null,
@@ -173,7 +173,7 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "Servidor"
  ],
  "Starts": [
   null,
@@ -189,7 +189,7 @@ return plural;
  ],
  "Status: System isn't registered": [
   null,
-  ""
+  "Estat: el sistema no està registrat"
  ],
  "Subscriptions": [
   null,

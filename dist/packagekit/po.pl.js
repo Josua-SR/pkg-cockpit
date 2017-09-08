@@ -191,6 +191,10 @@ return plural;
   null,
   "Odświeżanie informacji o pakietach"
  ],
+ "Register…": [
+  null,
+  "Zarejestruj…"
+ ],
  "Restart Now": [
   null,
   "Uruchom ponownie teraz"
@@ -235,6 +239,18 @@ return plural;
   null,
   "Poniższe pakiety zostały zaktualizowane $0:"
  ],
+ "This system is not registered": [
+  null,
+  "Ten system nie jest zarejestrowany"
+ ],
+ "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
+  null,
+  "Aby otrzymywać aktualizacje oprogramowania, ten system musi zostać zarejestrowany w firmie Red Hat za pomocą serwisu Red Hat Customer Portal lub lokalnego serwera subskrypcji."
+ ],
+ "Unregistered System": [
+  null,
+  "Niezarejestrowany system"
+ ],
  "Update History": [
   null,
   "Historia aktualizacji"
@@ -250,6 +266,10 @@ return plural;
  "Updated packages may require a restart to take effect.": [
   null,
   "Zaktualizowane pakiety mogą wymagać ponownego uruchomienia."
+ ],
+ "Updates are disabled.": [
+  null,
+  "Aktualizacje są wyłączone."
  ],
  "Updating": [
   null,
@@ -267,9 +287,17 @@ return plural;
   null,
   "Wersja"
  ],
+ "View Registration Details": [
+  null,
+  "Wyświetl informacje o rejestracji"
+ ],
  "When you get disconnected, the updates will continue in the background. You can reconnect and resume watching the update progress.": [
   null,
   "Po rozłączeniu aktualizacje będą kontynuowane w tle. Można połączyć ponownie i wznowić obserwowanie postępu aktualizacji."
+ ],
+ "You need to re-subscribe this system.": [
+  null,
+  "Należy ponownie subskrybować ten system."
  ],
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,

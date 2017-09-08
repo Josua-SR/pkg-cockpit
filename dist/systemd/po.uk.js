@@ -351,6 +351,14 @@ return plural;
   null,
   "Команда"
  ],
+ "Condition $0=$1 was not met": [
+  null,
+  "Умову $0=$1 не виконано"
+ ],
+ "Condition failed": [
+  null,
+  "Не виконано умову"
+ ],
  "Create Timer": [
   null,
   "Створити таймер"

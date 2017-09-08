@@ -77,11 +77,11 @@ return plural;
  ],
  "Are you sure you want to leave the '$0' domain?": [
   null,
-  ""
+  "Esteu segur que voleu abandonar el domini '$0'?"
  ],
  "Are you sure you want to leave this domain?": [
   null,
-  ""
+  "Esteu segur que voleu abandonar aquest domini?"
  ],
  "Authentication": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "Join a Domain": [
   null,
-  "Uneix-te al domini"
+  "Uneix-te a un domini"
  ],
  "Joining this domain is not supported": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "Leave Domain": [
   null,
-  "Domini"
+  "Abandona el domini"
  ],
  "More": [
   null,
@@ -157,11 +157,11 @@ return plural;
  ],
  "Off": [
   null,
-  "Apagat"
+  "Off"
  ],
  "On": [
   null,
-  "Engegat"
+  "On"
  ],
  "One Time Password": [
   null,

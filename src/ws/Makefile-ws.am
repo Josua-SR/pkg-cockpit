@@ -6,9 +6,6 @@ LOGIN_PO_FILES = $(patsubst %,dist/static/login.po.%.html,$(LINGUAS))
 staticdir = $(datadir)/cockpit/static
 nodist_static_DATA = dist/static/login.min.html dist/static/login.po.html $(LOGIN_PO_FILES)
 
-staticdebugdir = $(debugdir)$(staticdir)
-staticdebug_DATA = dist/static/login.html
-
 dist/static/login.js: src/ws/login.js
 	$(JSHINT_RULE)
 	$(COPY_RULE)
@@ -183,7 +180,7 @@ CLEANFILES += \
 	src/ws/cockpit.service \
 	$(NULL)
 
-appdatadir = $(datadir)/appdata
+appdatadir = $(datadir)/metainfo
 nodist_appdata_DATA = src/ws/cockpit.appdata.xml
 appdata_in = src/ws/cockpit.appdata.xml.in
 

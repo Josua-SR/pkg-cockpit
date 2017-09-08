@@ -191,6 +191,10 @@ return plural;
   null,
   "Оновлюємо дані щодо пакунків"
  ],
+ "Register…": [
+  null,
+  "Зареєструвати…"
+ ],
  "Restart Now": [
   null,
   "Перезапустити зараз"
@@ -235,6 +239,18 @@ return plural;
   null,
   "Оновлено такі пакунки $0:"
  ],
+ "This system is not registered": [
+  null,
+  "Цю систему не зареєстровано"
+ ],
+ "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
+  null,
+  "Щоб отримувати оновлення програмного забезпечення, цю систему слід зареєструвати у Red Hat або за допомогою порталу клієнтів Red Hat, або за допомогою локального сервера передплати."
+ ],
+ "Unregistered System": [
+  null,
+  "Незареєстрована система"
+ ],
  "Update History": [
   null,
   "Історія оновлень"
@@ -250,6 +266,10 @@ return plural;
  "Updated packages may require a restart to take effect.": [
   null,
   "Використання оновлених пакунків може потребувати перезапуску."
+ ],
+ "Updates are disabled.": [
+  null,
+  "Оновлення вимкнено."
  ],
  "Updating": [
   null,
@@ -267,9 +287,17 @@ return plural;
   null,
   "Версія"
  ],
+ "View Registration Details": [
+  null,
+  "Переглянути параметри реєстрації"
+ ],
  "When you get disconnected, the updates will continue in the background. You can reconnect and resume watching the update progress.": [
   null,
   "Коли з’єднання буде розірвано, оновлення продовжуватиметься у фоновому режимі. Ви можете повторно встановити з’єднання і відновити спостереження за поступом оновлення."
+ ],
+ "You need to re-subscribe this system.": [
+  null,
+  "Вам слід поновити передплату для цієї системи."
  ],
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,

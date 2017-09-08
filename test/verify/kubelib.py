@@ -316,10 +316,10 @@ class KubernetesCommonTests(VolumeTests):
         b.click("tbody.open .listing-ct-panel .listing-ct-head li a.shell")
         b.wait_present("tbody.open .listing-ct-panel div.terminal")
         b.wait_visible("tbody.open .listing-ct-panel div.terminal")
-        b.wait_in_text("tbody.open .listing-ct-panel .terminal div:nth-child(1)", "#")
+        b.wait_in_text("tbody.open .listing-ct-panel div.terminal", "#")
         b.focus('tbody.open .listing-ct-panel .terminal')
         b.key_press( [ 'w', 'h', 'o', 'a', 'm', 'i', 'Return' ] )
-        b.wait_in_text("tbody.open .listing-ct-panel .terminal div:nth-child(2)", "root")
+        b.wait_in_text("tbody.open .listing-ct-panel div.terminal", "root")
 
     def testDelete(self):
         b = self.browser
@@ -639,6 +639,38 @@ class KubernetesCommonTests(VolumeTests):
         # Assert that at least one link between Service and Pod has loaded
         b.wait_present("svg line.ServicePod")
 
+        # Make sure that details display works
+        b.wait_present("svg g.Node")
+        b.wait_js_func(
+            """(function() {
+                var el = window.Sizzle("svg g.Node");
+                var i;
+                for (i = 0; i < el.length; i++) {
+                    var x = el[i].getAttribute("cx");
+                    var y = el[i].getAttribute("cy");
+                    if (x && y) {
+                        var ev = document.createEvent("MouseEvent");
+                        ev.initMouseEvent(
+                            "mousedown",
+                            true /* bubble */, true /* cancelable */,
+                            window, null,
+                            0, 0, 0, 0, /* coordinates */
+                            false, false, false, false, /* modifier keys */
+                            0 /*left*/, null);
+
+                        /* Now dispatch the event */
+                        el[i].dispatchEvent(ev);
+                        return true;
+                    }
+                }
+
+            })""", "true")
+
+        b.wait_present("div.sidebar-pf-right")
+        b.wait_present("div.sidebar-pf-right kubernetes-object-describer")
+        b.wait_in_text("div.sidebar-pf-right kubernetes-object-describer", "127.0.0.1")
+        b.wait_in_text("div.sidebar-pf-right kubernetes-object-describer h3:first", "Node")
+
 class OpenshiftCommonTests(VolumeTests):
 
     def testBasic(self):
@@ -748,12 +780,37 @@ class OpenshiftCommonTests(VolumeTests):
         b.reload()
         b.wait_visible("#machine-troubleshoot")
         b.wait_in_text(".curtains-ct", "Login failed")
+        b.click('#machine-troubleshoot')
+        b.wait_popup('troubleshoot-dialog')
+        b.wait_in_text("#troubleshoot-dialog", 'Log in to')
+        b.wait_present("#login-type button")
+        b.click("#login-type button");
+        b.click("#login-type li[value=password] a");
+        b.wait_in_text("#login-type button span", "Type a password");
+        b.wait_visible("#login-diff-password")
+        b.wait_not_visible("#login-available")
+        self.assertEqual(b.val("#login-custom-password"), "")
+        self.assertEqual(b.val("#login-custom-user"), "")
+        b.set_val("#login-custom-user", "root")
+        b.set_val("#login-custom-password", "foobar")
+        b.click('#troubleshoot-dialog .btn-primary')
+        b.wait_popdown('troubleshoot-dialog')
+
+        b.wait_not_visible(".curtains-ct")
+        b.enter_page('/system', "root@10.111.112.101")
+        b.wait_present('#system_information_os_text')
+        b.wait_visible('#system_information_os_text')
+        b.wait_text_not("#system_information_os_text", "")
+        b.logout()
 
         # Nothing was saved
         self.assertFalse(m.execute("grep 10.111.112.101 /etc/ssh/ssh_known_hosts || true"))
         self.assertFalse(m.execute("grep 10.111.112.101 /etc/cockpit/machines.d/99-webui.json || true"))
 
         self.allow_hostkey_messages()
-        self.allow_journal_messages('.* host key for server is not known: .*',
+        self.allow_journal_messages('/usr/libexec/cockpit-pcp: bridge was killed: .*',
+                                    '.* host key for server is not known: .*',
+                                    'invalid or unusable locale: .*',
+                                    '.* warning: setlocale: .*',
                                     'connection unexpectedly closed by peer',
                                     'Error receiving data: Connection reset by peer')
