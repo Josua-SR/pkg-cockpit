@@ -1,4 +1,4 @@
-cockpit (150-1) UNRELEASED; urgency=medium
+cockpit (150-1) unstable; urgency=medium
 
   * New upstream release 149:
     - Support sending non-maskable interrupt to VMs
@@ -7,7 +7,7 @@ cockpit (150-1) UNRELEASED; urgency=medium
   * New upstream release 150:
     - Automatically enable and start newly created timers on the Services page
 
- -- Martin Pitt <mpitt@debian.org>  Fri, 08 Sep 2017 12:40:35 +0200
+ -- Martin Pitt <mpitt@debian.org>  Fri, 08 Sep 2017 12:42:10 +0200
 
 cockpit (148-1) unstable; urgency=medium
 
