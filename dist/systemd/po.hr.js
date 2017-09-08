@@ -351,6 +351,14 @@ return plural;
   null,
   "Naredba"
  ],
+ "Condition $0=$1 was not met": [
+  null,
+  ""
+ ],
+ "Condition failed": [
+  null,
+  ""
+ ],
  "Create Timer": [
   null,
   ""

@@ -191,6 +191,10 @@ return plural;
   null,
   ""
  ],
+ "Register…": [
+  null,
+  ""
+ ],
  "Restart Now": [
   null,
   ""
@@ -235,6 +239,18 @@ return plural;
   null,
   ""
  ],
+ "This system is not registered": [
+  null,
+  ""
+ ],
+ "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
+  null,
+  ""
+ ],
+ "Unregistered System": [
+  null,
+  ""
+ ],
  "Update History": [
   null,
   ""
@@ -248,6 +264,10 @@ return plural;
   ""
  ],
  "Updated packages may require a restart to take effect.": [
+  null,
+  ""
+ ],
+ "Updates are disabled.": [
   null,
   ""
  ],
@@ -267,7 +287,15 @@ return plural;
   null,
   "Inačica"
  ],
+ "View Registration Details": [
+  null,
+  ""
+ ],
  "When you get disconnected, the updates will continue in the background. You can reconnect and resume watching the update progress.": [
+  null,
+  ""
+ ],
+ "You need to re-subscribe this system.": [
   null,
   ""
  ],

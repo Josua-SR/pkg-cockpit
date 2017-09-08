@@ -69,33 +69,33 @@ return plural;
  },
  "$0 day": [
   "$0 days",
-  "",
-  ""
+  "$0 dia",
+  "$0 dies"
  ],
  "$0 hour": [
   "$0 hours",
-  "",
-  ""
+  "$0 hora",
+  "$0 hores"
  ],
  "$0 minute": [
   "$0 minutes",
-  "",
-  ""
+  "$0 minut",
+  "$0 minuts"
  ],
  "$0 month": [
   "$0 months",
-  "",
-  ""
+  "$0 mes",
+  "$0 mesos"
  ],
  "$0 week": [
   "$0 weeks",
-  "",
-  ""
+  "$0 setmana",
+  "$0 setmanes"
  ],
  "$0 year": [
   "$0 years",
-  "",
-  ""
+  "$0 any",
+  "$0 anys"
  ],
  "1 day": [
   null,
@@ -127,7 +127,7 @@ return plural;
  ],
  "Add Machine to Dashboard": [
   null,
-  ""
+  "Afegeix la màquina al tauler de control"
  ],
  "Address": [
   null,
@@ -211,11 +211,11 @@ return plural;
  ],
  "Dashboard": [
   null,
-  ""
+  "Tauler de control"
  ],
  "Disk I/O": [
   null,
-  ""
+  "E/S del disc"
  ],
  "Edit Server": [
   null,
@@ -327,7 +327,7 @@ return plural;
  ],
  "Off": [
   null,
-  "Apagat"
+  "Off"
  ],
  "Old password not accepted": [
   null,
@@ -335,7 +335,7 @@ return plural;
  ],
  "On": [
   null,
-  "Engegat"
+  "On"
  ],
  "Password": [
   null,
@@ -367,7 +367,7 @@ return plural;
  ],
  "Servers": [
   null,
-  ""
+  "Servidors"
  ],
  "Set": [
   null,

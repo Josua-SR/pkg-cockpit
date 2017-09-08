@@ -81,7 +81,7 @@ return plural;
  ],
  "Compression": [
   null,
-  ""
+  "Compressió"
  ],
  "Crash dump location": [
   null,
@@ -105,7 +105,7 @@ return plural;
  ],
  "Kernel Dump": [
   null,
-  ""
+  "Bolcat del Kernel"
  ],
  "Loading...": [
   null,
@@ -113,15 +113,15 @@ return plural;
  ],
  "Local Filesystem": [
   null,
-  "Sense sistema de fitxers"
+  "Sistema de fitxers local"
  ],
  "Location": [
   null,
-  "Anotacions"
+  "Ubicació"
  ],
  "More details": [
   null,
-  "Detalls"
+  "Més detalls"
  ],
  "Mount": [
   null,
@@ -129,7 +129,7 @@ return plural;
  ],
  "No configuration found": [
   null,
-  "Configuració desconeguda"
+  "No s'ha trobat cap configuració"
  ],
  "No memory reserved. Append a crashkernel option to the kernel command line (e.g. in /etc/default/grub) to reserve memory at boot time. Example: crashkernel=512M": [
   null,
@@ -141,7 +141,7 @@ return plural;
  ],
  "Off": [
   null,
-  "Apagat"
+  "Off"
  ],
  "Ok": [
   null,
@@ -149,7 +149,7 @@ return plural;
  ],
  "On": [
   null,
-  "Engegat"
+  "On"
  ],
  "On a mounted device": [
   null,
@@ -161,27 +161,27 @@ return plural;
  ],
  "Reading...": [
   null,
-  "Lectura"
+  "S'està llegint..."
  ],
  "Remote over NFS": [
   null,
-  "Suprimeix l'usuari"
+  "Remot sobre NFS"
  ],
  "Remote over SSH": [
   null,
-  "Suprimeix l'usuari"
+  "Remot sobre SSH"
  ],
  "Reserved memory": [
   null,
-  ""
+  "Memòria reservada"
  ],
  "Server": [
   null,
-  ""
+  "Servidor"
  ],
  "Service has an error": [
   null,
-  ""
+  "El servei té un error"
  ],
  "Service is running": [
   null,
@@ -221,7 +221,7 @@ return plural;
  ],
  "Unable to apply settings: $0": [
   null,
-  ""
+  "No es poden aplicar els ajusts: $0"
  ],
  "Use the setting in /etc/kdump.conf": [
   null,
@@ -241,7 +241,7 @@ return plural;
  ],
  "ssh key": [
   null,
-  ""
+  "clau ssh"
  ],
  "undefined": [
   null,

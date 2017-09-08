@@ -106,7 +106,7 @@ machines.
 %{_docdir}/%{name}/COPYING
 %{_docdir}/%{name}/README.md
 %dir %{_datadir}/%{name}
-%{_datadir}/appdata/cockpit.appdata.xml
+%{_datadir}/metainfo/cockpit.appdata.xml
 %{_datadir}/applications/cockpit.desktop
 %{_datadir}/pixmaps/cockpit.png
 %doc %{_mandir}/man1/cockpit.1.gz
@@ -259,8 +259,12 @@ cat kdump.list subscriptions.list sosreport.list networkmanager.list selinux.lis
 # dwz has trouble with the go binaries
 # https://fedoraproject.org/wiki/PackagingDrafts/Go
 %global _dwz_low_mem_die_limit 0
+%if 0%{?fedora} >= 27
+%global _debugsource_packages 1
+%global _debuginfo_subpackages 0
+%endif
 
-%define find_debug_info %{_rpmconfigdir}/find-debuginfo.sh %{?_missing_build_ids_terminate_build:--strict-build-id} %{?_include_minidebuginfo:-m} %{?_find_debuginfo_dwz_opts} %{?_find_debuginfo_opts} "%{_builddir}/%{?buildsubdir}"
+%define find_debug_info %{_rpmconfigdir}/find-debuginfo.sh %{?_missing_build_ids_terminate_build:--strict-build-id} %{?_include_minidebuginfo:-m} %{?_find_debuginfo_dwz_opts} %{?_find_debuginfo_opts} %{?_debugsource_packages:-S debugsourcefiles.list} "%{_builddir}/%{?buildsubdir}"
 
 # Redefine how debug info is built to slip in our extra debug files
 %define __debug_install_post   \

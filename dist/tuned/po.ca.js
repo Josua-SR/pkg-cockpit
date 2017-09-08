@@ -73,7 +73,7 @@ return plural;
  ],
  "Change Performance Profile": [
   null,
-  ""
+  "Canvia el perfil de rendiment"
  ],
  "Change Profile": [
   null,
@@ -141,6 +141,6 @@ return plural;
  ],
  "recommended": [
   null,
-  ""
+  "recomanat"
  ]
 }));

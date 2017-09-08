@@ -73,7 +73,7 @@ return plural;
  ],
  "Account Expiration": [
   null,
-  ""
+  "Строк дії облікового запису"
  ],
  "Account not available or cannot be edited.": [
   null,
@@ -169,11 +169,11 @@ return plural;
  ],
  "Force Change": [
   null,
-  ""
+  "Примусова зміна"
  ],
  "Force password change": [
   null,
-  ""
+  "Примусова зміна пароля"
  ],
  "Full Name": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Invalid expiration date": [
   null,
-  ""
+  "Некоректна дата строку завершення дії"
  ],
  "Invalid key": [
   null,
@@ -189,7 +189,7 @@ return plural;
  ],
  "Invalid number of days": [
   null,
-  ""
+  "Некоректна кількість днів"
  ],
  "Last Login": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Lock account on $0": [
   null,
-  ""
+  "Заблокувати обліковий запис $0"
  ],
  "Logged In": [
   null,
@@ -217,11 +217,11 @@ return plural;
  ],
  "Never expire password": [
   null,
-  ""
+  "Необмежений строк дії пароля"
  ],
  "Never lock account": [
   null,
-  ""
+  "Ніколи не блокувати обліковий запис"
  ],
  "New Password": [
   null,
@@ -261,7 +261,7 @@ return plural;
  ],
  "Password Expiration": [
   null,
-  ""
+  "Строк дії пароля"
  ],
  "Password is not acceptable": [
   null,
@@ -273,7 +273,7 @@ return plural;
  ],
  "Password must be changed": [
   null,
-  ""
+  "Пароль має бути змінено"
  ],
  "Paste the contents of your public SSH key file here": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "Please specify an expiration date": [
   null,
-  ""
+  "Будь ласка, вкажіть кінцеву дату строку дії"
  ],
  "Prompting via passwd timed out": [
   null,
@@ -289,11 +289,11 @@ return plural;
  ],
  "Require password change every $0 days": [
   null,
-  ""
+  "Вимагати зміну пароля кожні $0 днів"
  ],
  "Require password change on $0": [
   null,
-  ""
+  "Вимагати зміну пароля $0"
  ],
  "Reset": [
   null,
@@ -321,7 +321,7 @@ return plural;
  ],
  "The account '$0' will be forced to change their password on next login": [
   null,
-  ""
+  "Обліковий запис «$0» має примусово змінити пароль під час наступного входу"
  ],
  "The key you provided was not valid.": [
   null,

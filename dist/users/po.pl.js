@@ -73,7 +73,7 @@ return plural;
  ],
  "Account Expiration": [
   null,
-  ""
+  "Wygasanie konta"
  ],
  "Account not available or cannot be edited.": [
   null,
@@ -169,11 +169,11 @@ return plural;
  ],
  "Force Change": [
   null,
-  ""
+  "Wymuś zmianę"
  ],
  "Force password change": [
   null,
-  ""
+  "Wymuszenie zmiany hasła"
  ],
  "Full Name": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Invalid expiration date": [
   null,
-  ""
+  "Nieprawidłowa data wygaśnięcia"
  ],
  "Invalid key": [
   null,
@@ -189,7 +189,7 @@ return plural;
  ],
  "Invalid number of days": [
   null,
-  ""
+  "Nieprawidłowa liczba dni"
  ],
  "Last Login": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Lock account on $0": [
   null,
-  ""
+  "Zablokowanie konta w dniu $0"
  ],
  "Logged In": [
   null,
@@ -217,11 +217,11 @@ return plural;
  ],
  "Never expire password": [
   null,
-  ""
+  "Bez wygasania hasła"
  ],
  "Never lock account": [
   null,
-  ""
+  "Bez blokowania konta"
  ],
  "New Password": [
   null,
@@ -261,7 +261,7 @@ return plural;
  ],
  "Password Expiration": [
   null,
-  ""
+  "Wygasanie hasła"
  ],
  "Password is not acceptable": [
   null,
@@ -273,7 +273,7 @@ return plural;
  ],
  "Password must be changed": [
   null,
-  ""
+  "Należy zmienić hasło"
  ],
  "Paste the contents of your public SSH key file here": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "Please specify an expiration date": [
   null,
-  ""
+  "Proszę podać datę wygaśnięcia"
  ],
  "Prompting via passwd timed out": [
   null,
@@ -289,11 +289,11 @@ return plural;
  ],
  "Require password change every $0 days": [
   null,
-  ""
+  "Wymaganie zmiany hasła co $0 dni"
  ],
  "Require password change on $0": [
   null,
-  ""
+  "Wymaganie zmiany hasła w dniu $0"
  ],
  "Reset": [
   null,
@@ -321,7 +321,7 @@ return plural;
  ],
  "The account '$0' will be forced to change their password on next login": [
   null,
-  ""
+  "Konto „$0” będzie zmuszone do zmiany hasła podczas następnego logowania"
  ],
  "The key you provided was not valid.": [
   null,

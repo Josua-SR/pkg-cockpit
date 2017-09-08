@@ -69,12 +69,12 @@ return plural;
  },
  "$0 more…": [
   null,
-  ""
+  "$0 més…"
  ],
  "$0 update": [
   "$0 updates",
-  "",
-  ""
+  "$0 actualització",
+  "$0 actualitzacions"
  ],
  ", including $1 security fix": [
   ", including $1 security fixes",
@@ -87,15 +87,15 @@ return plural;
  ],
  "Applying updates failed": [
   null,
-  ""
+  "Ha fallat l'aplicació de les actualitzacions"
  ],
  "Available Updates": [
   null,
-  ""
+  "Actualitzacions disponibles"
  ],
  "Bugs": [
   null,
-  ""
+  "Errors de programari"
  ],
  "Cancel": [
   null,
@@ -119,7 +119,7 @@ return plural;
  ],
  "Downloading": [
   null,
-  ""
+  "S'està baixant"
  ],
  "Ignore": [
   null,
@@ -127,19 +127,19 @@ return plural;
  ],
  "Initializing...": [
   null,
-  ""
+  "S'està inicialitzant..."
  ],
  "Install all updates": [
   null,
-  ""
+  "Instal·la totes les actualitzacions"
  ],
  "Install security updates": [
   null,
-  ""
+  "Instal·la les actualitzacions de seguretat"
  ],
  "Installed": [
   null,
-  ""
+  "Instal·lat"
  ],
  "Installing": [
   null,
@@ -147,7 +147,7 @@ return plural;
  ],
  "Last checked: $0 ago": [
   null,
-  ""
+  "Última comprovació: fa $0"
  ],
  "Loading available updates failed": [
   null,
@@ -159,7 +159,7 @@ return plural;
  ],
  "More information…": [
   null,
-  ""
+  "Més informació..."
  ],
  "Name": [
   null,
@@ -171,7 +171,7 @@ return plural;
  ],
  "Package information": [
   null,
-  ""
+  "Informació del paquet"
  ],
  "PackageKit crashed": [
   null,
@@ -179,7 +179,7 @@ return plural;
  ],
  "PackageKit is not installed": [
   null,
-  ""
+  "PackageKit no està instal·lat"
  ],
  "PackageKit reported error code $0": [
   null,
@@ -189,9 +189,13 @@ return plural;
   null,
   ""
  ],
- "Restart Now": [
+ "Register…": [
   null,
   ""
+ ],
+ "Restart Now": [
+  null,
+  "Reinicia ara"
  ],
  "Restart Recommended": [
   null,
@@ -223,13 +227,25 @@ return plural;
  ],
  "System is up to date": [
   null,
-  ""
+  "El sistema està al dia"
  ],
  "The following packages were recently updated:": [
   null,
   ""
  ],
  "The following packages were updated $0:": [
+  null,
+  ""
+ ],
+ "This system is not registered": [
+  null,
+  "Aquest sistema no està registrat"
+ ],
+ "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
+  null,
+  ""
+ ],
+ "Unregistered System": [
   null,
   ""
  ],
@@ -249,6 +265,10 @@ return plural;
   null,
   ""
  ],
+ "Updates are disabled.": [
+  null,
+  ""
+ ],
  "Updating": [
   null,
   "S'està actualitzant"
@@ -265,7 +285,15 @@ return plural;
   null,
   "Versió"
  ],
+ "View Registration Details": [
+  null,
+  ""
+ ],
  "When you get disconnected, the updates will continue in the background. You can reconnect and resume watching the update progress.": [
+  null,
+  ""
+ ],
+ "You need to re-subscribe this system.": [
   null,
   ""
  ],

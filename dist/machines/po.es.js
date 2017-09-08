@@ -267,6 +267,10 @@ return plural;
   null,
   ""
  ],
+ "Send Non-Maskable Interrupt": [
+  null,
+  ""
+ ],
  "Session": [
   null,
   "Sesión"
@@ -356,6 +360,10 @@ return plural;
   ""
  ],
  "VM REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
   null,
   ""
  ],

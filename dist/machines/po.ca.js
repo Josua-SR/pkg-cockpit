@@ -73,7 +73,7 @@ return plural;
  ],
  "Address:": [
   null,
-  ""
+  "Adreça:"
  ],
  "Autostart:": [
   null,
@@ -85,15 +85,15 @@ return plural;
  ],
  "Boot Order:": [
   null,
-  ""
+  "Ordre d'arrencada:"
  ],
  "Bus": [
   null,
-  ""
+  "Bus"
  ],
  "CPU Type:": [
   null,
-  ""
+  "Tipus de CPU:"
  ],
  "Cancel": [
   null,
@@ -101,7 +101,7 @@ return plural;
  ],
  "Capacity": [
   null,
-  ""
+  "Capacitat"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -109,11 +109,11 @@ return plural;
  ],
  "Confirm deletion of $0": [
   null,
-  ""
+  "Confirma la supressió de $0"
  ],
  "Connect with Remote Viewer": [
   null,
-  ""
+  "Connecta amb el visualitzador remot"
  ],
  "Connect with any $0 viewer application.": [
   null,
@@ -125,15 +125,15 @@ return plural;
  ],
  "Connection": [
   null,
-  "Connecta"
+  "Connexió"
  ],
  "Console": [
   null,
-  ""
+  "Consola"
  ],
  "Count:": [
   null,
-  ""
+  "Nombre:"
  ],
  "Delete": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "Device": [
   null,
-  ""
+  "Dispositiu"
  ],
  "Disks": [
   null,
@@ -153,7 +153,7 @@ return plural;
  ],
  "Download the MSI from $0": [
   null,
-  ""
+  "Baixa el MSI de $0"
  ],
  "Emulated Machine:": [
   null,
@@ -161,19 +161,19 @@ return plural;
  ],
  "File": [
   null,
-  ""
+  "Fitxer"
  ],
  "Force Restart": [
   null,
-  ""
+  "Força el reinici"
  ],
  "Force Shut Down": [
   null,
-  ""
+  "Força l'apagada"
  ],
  "GB": [
   null,
-  ""
+  "GB"
  ],
  "Host": [
   null,
@@ -181,19 +181,19 @@ return plural;
  ],
  "Launch Remote Viewer": [
   null,
-  ""
+  "Llança el visualitzador remot"
  ],
  "Manual Connection": [
   null,
-  ""
+  "Connexió manual"
  ],
  "Memory:": [
   null,
-  ""
+  "Memòria:"
  ],
  "More Information": [
   null,
-  ""
+  "Més informació"
  ],
  "Name": [
   null,
@@ -205,11 +205,11 @@ return plural;
  ],
  "No boot device found": [
   null,
-  ""
+  "No s'ha trobat cap dispositiu d'arrencada"
  ],
  "No disks defined for this VM": [
   null,
-  ""
+  "No hi ha definit cap disc per a aquesta MV"
  ],
  "No graphics console is defined for this virtual machine.": [
   null,
@@ -221,15 +221,15 @@ return plural;
  ],
  "Overview": [
   null,
-  ""
+  "Visió de conjunt"
  ],
  "Please start the virtual machine to access its graphics console.": [
   null,
-  ""
+  "Si us plau, inicieu la màquina virtual per accedir a la consola gràfica."
  ],
  "Pool": [
   null,
-  ""
+  "Agrupació"
  ],
  "Port": [
   null,
@@ -237,11 +237,11 @@ return plural;
  ],
  "Protocol": [
   null,
-  ""
+  "Protocol"
  ],
  "Readonly": [
   null,
-  ""
+  "NomésLectura"
  ],
  "Restart": [
   null,
@@ -249,21 +249,25 @@ return plural;
  ],
  "Run": [
   null,
-  ""
+  "Executa"
  ],
  "SPICE": [
   null,
-  ""
+  "SPICE"
  ],
  "SPICE Address:": [
   null,
-  ""
+  "Adreça SPICE:"
  ],
  "SPICE Port:": [
   null,
-  ""
+  "Port SPICE:"
  ],
  "SPICE TLS Port:": [
+  null,
+  "Port TLS SPICE:"
+ ],
+ "Send Non-Maskable Interrupt": [
   null,
   ""
  ],
@@ -273,11 +277,11 @@ return plural;
  ],
  "Shut Down": [
   null,
-  ""
+  "Apaga"
  ],
  "Source": [
   null,
-  ""
+  "Origen"
  ],
  "State": [
   null,
@@ -293,7 +297,7 @@ return plural;
  ],
  "System": [
   null,
-  ""
+  "Sistema"
  ],
  "Target": [
   null,
@@ -329,7 +333,7 @@ return plural;
  ],
  "The VM is running.": [
   null,
-  ""
+  "La MV està en execució."
  ],
  "The VM is suspended by guest power management.": [
   null,
@@ -359,6 +363,10 @@ return plural;
   null,
   ""
  ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  ""
+ ],
  "VM SHUT DOWN action failed": [
   null,
   ""
@@ -385,7 +393,7 @@ return plural;
  ],
  "Virtual Machines": [
   null,
-  ""
+  "Màquines virtuals"
  ],
  "Volume": [
   null,
@@ -433,7 +441,7 @@ return plural;
  ],
  "network": [
   null,
-  ""
+  "xarxa"
  ],
  "no": [
   null,
@@ -449,7 +457,7 @@ return plural;
  ],
  "running": [
   null,
-  "executant"
+  "en execució"
  ],
  "shut off": [
   null,

@@ -77,11 +77,11 @@ return plural;
  ],
  "Account Settings": [
   null,
-  "Paràmetres dels comptes"
+  "Ajusts dels comptes"
  ],
  "Active Pages": [
   null,
-  ""
+  "Pàgines actives"
  ],
  "Add": [
   null,
@@ -89,7 +89,7 @@ return plural;
  ],
  "Add Machine to Dashboard": [
   null,
-  ""
+  "Afegeix la màquina al tauler de control"
  ],
  "Address": [
   null,
@@ -145,11 +145,11 @@ return plural;
  ],
  "Cockpit is an interactive Linux server admin interface.": [
   null,
-  ""
+  "Cockpit és una interfície interactiva d'administració del servidor Linux."
  ],
  "Cockpit is an interactive Linux server admin interface. ": [
   null,
-  ""
+  "Cockpit és una interfície interactiva d'administració del servidor Linux."
  ],
  "Cockpit is not installed": [
   null,
@@ -217,7 +217,7 @@ return plural;
  ],
  "Display Language": [
   null,
-  "Idioma de la pantalla"
+  "Idioma de la visualització"
  ],
  "Enter IP address or host name": [
   null,
@@ -277,7 +277,7 @@ return plural;
  ],
  "Licensed under:": [
   null,
-  ""
+  "Llicenciat sota:"
  ],
  "Lock to prevent privileged tasks": [
   null,
@@ -285,7 +285,7 @@ return plural;
  ],
  "Locked": [
   null,
-  ""
+  "Bloquejat"
  ],
  "Log In": [
   null,
@@ -293,7 +293,7 @@ return plural;
  ],
  "Log Out": [
   null,
-  ""
+  "Tanca la sessió"
  ],
  "Log in again": [
   null,
@@ -329,7 +329,7 @@ return plural;
  ],
  "Off": [
   null,
-  "Apagat"
+  "Off"
  ],
  "Ok": [
   null,
@@ -345,7 +345,7 @@ return plural;
  ],
  "On": [
   null,
-  "Engegat"
+  "On"
  ],
  "Ooops!": [
   null,
@@ -373,7 +373,7 @@ return plural;
  ],
  "Project website": [
   null,
-  ""
+  "Lloc web del projecte"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -393,11 +393,11 @@ return plural;
  ],
  "Reuse my password for privileged tasks and to connect to other machines": [
   null,
-  ""
+  "Torna a utilitzar la meva contrasenya per a tasques privilegiades i connecta't a altres màquines"
  ],
  "Select": [
   null,
-  ""
+  "Selecciona"
  ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
@@ -477,11 +477,11 @@ return plural;
  ],
  "Unlock Key": [
   null,
-  ""
+  "Clau de desbloqueig"
  ],
  "Unlocked": [
   null,
-  ""
+  "Desbloquejat"
  ],
  "Update": [
   null,
@@ -489,7 +489,7 @@ return plural;
  ],
  "Use the following keys to authenticate against other systems": [
   null,
-  ""
+  "Utilitza les següents claus per autenticar contra altres sistemes"
  ],
  "User name": [
   null,

@@ -69,7 +69,7 @@ return plural;
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
-  ""
+  " 1\"Wil je de volgenden Nodes verwijderen?"
  ],
  "$0% Free": [
   "$0% Free",
@@ -439,35 +439,35 @@ return plural;
  ],
  "Do you want to add the role '{{ fields.displayRole }}'?": [
   null,
-  ""
+  "Wil je de role '{{ fields.displayRole }}' toevoegen?"
  ],
  "Do you want to delete the '{{stream.metadata.namespace}}/{{stream.metadata.name}}' image stream?": [
   null,
-  ""
+  "Wil je de image stream '{{stream.metadata.namespace}}/{{stream.metadata.name}}' verwijderen?"
  ],
  "Do you want to delete the Persistent Volume '{{item.metadata.name}}'?": [
   null,
-  ""
+  "Wil je de Persistent Volume '{{item.metadata.name}}' verwijderen?"
  ],
  "Do you want to delete the Persistent Volume Claim '{{item.metadata.name}}'?": [
   null,
-  ""
+  "Wil je de Persistent Volume Claim '{{item.metadata.name}}' verwijderen?"
  ],
  "Do you want to delete the {{ item.kind }} '{{item.metadata.name}}'?": [
   null,
-  ""
+  "Wil je de {{ item.kind }} '{{item.metadata.name}}' verwijderen?"
  ],
  "Do you want to delete this Node?": [
   null,
-  ""
+  "Wil je deze Node verwijderen?"
  ],
  "Do you want to remove the image tagged as '{{stream.metadata.namespace}}/{{stream.metadata.name}}:{{tag.tag}}'?": [
   null,
-  ""
+  "Wil je de image tagged als '{{stream.metadata.namespace}}/{{stream.metadata.name}}:{{tag.tag}}' verwijderen?"
  ],
  "Do you want to remove the role '{{ fields.displayRole }}' from member {{ fields.member.metadata.name }}?": [
   null,
-  ""
+  "Wil je de role '{{ fields.displayRole }}' van lid {{ fields.member.metadata.name }} verwijderen?"
  ],
  "Don't pull images automatically": [
   null,

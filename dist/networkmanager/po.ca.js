@@ -69,33 +69,33 @@ return plural;
  },
  "$0 day": [
   "$0 days",
-  "",
-  ""
+  "$0 dia",
+  "$0 dies"
  ],
  "$0 hour": [
   "$0 hours",
-  "",
-  ""
+  "$0 hora",
+  "$0 hores"
  ],
  "$0 minute": [
   "$0 minutes",
-  "",
-  ""
+  "$0 minut",
+  "$0 minuts"
  ],
  "$0 month": [
   "$0 months",
-  "",
-  ""
+  "$0 mes",
+  "$0 mesos"
  ],
  "$0 week": [
   "$0 weeks",
-  "",
-  ""
+  "$0 setmana",
+  "$0 setmanes"
  ],
  "$0 year": [
   "$0 years",
-  "",
-  ""
+  "$0 any",
+  "$0 anys"
  ],
  "$mtu": [
   null,
@@ -127,7 +127,7 @@ return plural;
  ],
  "802.3ad LACP": [
   null,
-  ""
+  "802.3ad LACP"
  ],
  "ARP": [
   null,
@@ -139,7 +139,7 @@ return plural;
  ],
  "ARP Ping": [
   null,
-  ""
+  "Ping ARP"
  ],
  "Active": [
   null,
@@ -147,7 +147,7 @@ return plural;
  ],
  "Active Backup": [
   null,
-  "Activa la còpia de seguretat"
+  "Còpia de seguretat activa"
  ],
  "Adaptive load balancing": [
   null,
@@ -159,7 +159,7 @@ return plural;
  ],
  "Add $0": [
   null,
-  ""
+  "Afegeix $0"
  ],
  "Add Bond": [
   null,
@@ -171,7 +171,7 @@ return plural;
  ],
  "Add Team": [
   null,
-  ""
+  "Afegeix un equip"
  ],
  "Add VLAN": [
   null,
@@ -191,11 +191,11 @@ return plural;
  ],
  "Additional address $val": [
   null,
-  ""
+  "Adreça addicional $val"
  ],
  "Address $val": [
   null,
-  ""
+  "Adreça $val"
  ],
  "Addresses": [
   null,
@@ -255,7 +255,7 @@ return plural;
  ],
  "Broken configuration": [
   null,
-  ""
+  "Configuració trencada"
  ],
  "Cancel": [
   null,
@@ -267,7 +267,7 @@ return plural;
  ],
  "Change the settings": [
   null,
-  ""
+  "Canvia els ajusts"
  ],
  "Changing the settings will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -327,7 +327,7 @@ return plural;
  ],
  "DNS $val": [
   null,
-  ""
+  "DNS $val"
  ],
  "DNS Search Domains": [
   null,
@@ -411,7 +411,7 @@ return plural;
  ],
  "IPv4 Settings": [
   null,
-  "Ajustos d'IPv4"
+  "Ajusts d'IPv4"
  ],
  "IPv6": [
   null,
@@ -419,7 +419,7 @@ return plural;
  ],
  "IPv6 Settings": [
   null,
-  "Ajustos d'IPv6"
+  "Ajusts d'IPv6"
  ],
  "Id $id": [
   null,
@@ -455,11 +455,11 @@ return plural;
  ],
  "Keep connection": [
   null,
-  ""
+  "Mantén la connexió"
  ],
  "LACP Key": [
   null,
-  ""
+  "Clau LACP"
  ],
  "Link Monitoring": [
   null,
@@ -467,7 +467,7 @@ return plural;
  ],
  "Link Watch": [
   null,
-  ""
+  "Observació de l'enllaç"
  ],
  "Link down delay": [
   null,
@@ -475,7 +475,7 @@ return plural;
  ],
  "Link local": [
   null,
-  "Enllaça localment"
+  "Enllaç local"
  ],
  "Link up delay": [
   null,
@@ -483,11 +483,11 @@ return plural;
  ],
  "Load Balancing": [
   null,
-  ""
+  "Balanceig de càrrega"
  ],
  "MAC": [
   null,
-  ""
+  "MAC"
  ],
  "MII (Recommended)": [
   null,
@@ -531,7 +531,7 @@ return plural;
  ],
  "NSNA Ping": [
   null,
-  ""
+  "Ping NSNA"
  ],
  "Name": [
   null,
@@ -559,11 +559,11 @@ return plural;
  ],
  "Off": [
   null,
-  "Apagat"
+  "Off"
  ],
  "On": [
   null,
-  "Engegat"
+  "On"
  ],
  "Parent": [
   null,
@@ -579,7 +579,7 @@ return plural;
  ],
  "Passive": [
   null,
-  ""
+  "Passiu"
  ],
  "Path cost": [
   null,
@@ -591,11 +591,11 @@ return plural;
  ],
  "Permanent": [
   null,
-  ""
+  "Permanent"
  ],
  "Ping Interval": [
   null,
-  ""
+  "Interval de ping"
  ],
  "Ping Target": [
   null,
@@ -619,7 +619,7 @@ return plural;
  ],
  "Preserve": [
   null,
-  "Preajusta"
+  "Preserva"
  ],
  "Primary": [
   null,
@@ -635,7 +635,7 @@ return plural;
  ],
  "Random": [
   null,
-  ""
+  "Aleatòria"
  ],
  "Reboot": [
   null,
@@ -647,7 +647,7 @@ return plural;
  ],
  "Remove $0": [
   null,
-  ""
+  "Suprimeix $0"
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -691,7 +691,7 @@ return plural;
  ],
  "Set to": [
   null,
-  ""
+  "Estableix a"
  ],
  "Shared": [
   null,
@@ -707,7 +707,7 @@ return plural;
  ],
  "Stable": [
   null,
-  "Habilita"
+  "Estable"
  ],
  "Status": [
   null,
@@ -739,19 +739,19 @@ return plural;
  ],
  "Team": [
   null,
-  ""
+  "Equip"
  ],
  "Team Port": [
   null,
-  ""
+  "Port de l'equip"
  ],
  "Team Port Settings": [
   null,
-  ""
+  "Ajusts del port de l'equip"
  ],
  "Team Settings": [
   null,
-  ""
+  "Ajusts de l'equip"
  ],
  "Testing connection": [
   null,
@@ -759,7 +759,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to modify network settings": [
   null,
-  "A l'usuari <b>$0</b> no se li permet modificar els ajustos de xarxa"
+  "A l'usuari <b>$0</b> no se li permet modificar els ajusts de xarxa"
  ],
  "This device cannot be managed here.": [
   null,

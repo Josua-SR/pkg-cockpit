@@ -633,6 +633,14 @@ $(function() {
                 template_description = cockpit.format(_("This unit is an instance of the $0 template."), link);
             }
 
+            var conditions = cur_unit.Conditions;
+            var not_met_conditions = [];
+            for (var i = 0; i < conditions.length; i++) {
+                if (conditions[i][4] < 0) {
+                    not_met_conditions.push(cockpit.format(_("Condition $0=$1 was not met"), conditions[i][0], conditions[i][3]));
+                }
+            }
+
             var text = mustache.render(unit_template,
                                        {
                                            Unit: cur_unit,
@@ -643,6 +651,7 @@ $(function() {
                                            TemplateDescription: template_description,
                                            UnitButton: unit_action_btn,
                                            FileButton: file_action_btn,
+                                           NotMetConditions: not_met_conditions,
                                        });
             $('#service-unit').html(text);
             $('#service-unit-action').on('click', "[data-action]", unit_action);
@@ -1291,6 +1300,26 @@ $(function() {
         var timer_path = "/etc/systemd/system/" + timer_unit.name + ".timer";
         file = cockpit.file(timer_path, { superuser: 'try' });
         file.replace(timer_file).
+            done(function(tag) {
+                // enable timer; LoadUnit() is unfortunately not sufficient
+                systemd_manager.Reload().
+                    done(function(unit) {
+                        systemd_manager.EnableUnitFiles([timer_unit.name + ".timer"], false, false).
+                            fail(function(error) {
+                                console.warn("Failed to enable timer unit:", error);
+                            });
+                        // start calendar timers
+                        if (timer_unit.Calendar_or_Boot == "Calendar") {
+                            systemd_manager.StartUnit(timer_unit.name + ".timer", "replace").
+                                fail(function(error) {
+                                    console.warn("Failed to start timer unit:", error);
+                                });
+                        }
+                    }).
+                    fail(function(error) {
+                        console.warn("Failed to reload systemd:", error);
+                    });
+            }).
             fail(function(error) {
                 console.log(error);
             });

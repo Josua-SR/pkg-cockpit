@@ -69,17 +69,17 @@ return plural;
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
-  ""
+  " 1\"Voleu suprimir els següents nodes?"
  ],
  "$0% Free": [
   "$0% Free",
-  "",
-  ""
+  "$0% lliure",
+  "$0% lliures"
  ],
  "$0% Used": [
   "$0% Used",
-  "",
-  ""
+  "$0% utilitzat",
+  "$0% utilitzats"
  ],
  "AWS Elastic Block Store": [
   null,
@@ -87,7 +87,7 @@ return plural;
  ],
  "Access Modes": [
   null,
-  ""
+  "Modes d'accés"
  ],
  "Access Policy": [
   null,
@@ -95,7 +95,7 @@ return plural;
  ],
  "Actual": [
   null,
-  ""
+  "Real"
  ],
  "Add": [
   null,
@@ -111,7 +111,7 @@ return plural;
  ],
  "Add Kubernetes Node": [
   null,
-  ""
+  "Afegeix un node Kubernetes"
  ],
  "Add Member": [
   null,
@@ -119,7 +119,7 @@ return plural;
  ],
  "Add Membership": [
   null,
-  ""
+  "Afegeix una pertinença"
  ],
  "Add New Cluster": [
   null,
@@ -127,7 +127,7 @@ return plural;
  ],
  "Add New User": [
   null,
-  ""
+  "Afegeix un usuari nou"
  ],
  "Add Role": [
   null,
@@ -139,7 +139,7 @@ return plural;
  ],
  "Add membership": [
   null,
-  ""
+  "Afegeix una pertinença"
  ],
  "Address": [
   null,
@@ -211,11 +211,11 @@ return plural;
  ],
  "Azure": [
   null,
-  ""
+  "Azure"
  ],
  "Boot ID": [
   null,
-  ""
+  "Id. d'arrencada"
  ],
  "CPU": [
   null,
@@ -223,7 +223,7 @@ return plural;
  ],
  "CPU Utilization: $0%": [
   null,
-  ""
+  "Utilització de la CPU: $0%"
  ],
  "Cancel": [
   null,
@@ -231,7 +231,7 @@ return plural;
  ],
  "Capacity": [
   null,
-  ""
+  "Capacitat"
  ],
  "Ceph Filesystem Mount": [
   null,
@@ -271,7 +271,7 @@ return plural;
  ],
  "Client Certificate": [
   null,
-  ""
+  "Certificat de client"
  ],
  "Cluster": [
   null,
@@ -303,7 +303,7 @@ return plural;
  ],
  "Connection Error: $0": [
   null,
-  ""
+  "Error de connexió: $0"
  ],
  "Connection Settings": [
   null,
@@ -335,7 +335,7 @@ return plural;
  ],
  "Couldn't find running API server": [
   null,
-  ""
+  "No s'ha pogut trobar el servidor de l'API en execució"
  ],
  "Create": [
   null,
@@ -363,7 +363,7 @@ return plural;
  ],
  "Delete Node": [
   null,
-  ""
+  "Suprimeix el node"
  ],
  "Delete Persistent Volume": [
   null,
@@ -387,7 +387,7 @@ return plural;
  ],
  "Delete {{ item.kind }}": [
   null,
-  ""
+  "Suprimeix {{ item.kind }}"
  ],
  "Deleting a Pod will kill all associated containers. Pods may be automatically created again in some cases.": [
   null,
@@ -455,11 +455,11 @@ return plural;
  ],
  "Do you want to delete the {{ item.kind }} '{{item.metadata.name}}'?": [
   null,
-  ""
+  "Voleu suprimir {{ item.kind }} '{{item.metadata.name}}'?"
  ],
  "Do you want to delete this Node?": [
   null,
-  ""
+  "Voleu suprimir aquest node?"
  ],
  "Do you want to remove the image tagged as '{{stream.metadata.namespace}}/{{stream.metadata.name}}:{{tag.tag}}'?": [
   null,
@@ -507,7 +507,7 @@ return plural;
  ],
  "Fibre Channel": [
   null,
-  ""
+  "Fibre Channel"
  ],
  "Filesystem Type": [
   null,
@@ -515,11 +515,11 @@ return plural;
  ],
  "Flex": [
   null,
-  ""
+  "Flex"
  ],
  "Flocker": [
   null,
-  ""
+  "Flocker"
  ],
  "Flocker Dataset Name": [
   null,
@@ -535,11 +535,11 @@ return plural;
  ],
  "Gluster FS": [
   null,
-  ""
+  "Gluster FS"
  ],
  "GlusterFS": [
   null,
-  ""
+  "GlusterFS"
  ],
  "Grant additional push or admin access to specific members below.": [
   null,
@@ -547,11 +547,11 @@ return plural;
  ],
  "Group Members": [
   null,
-  ""
+  "Membres del grup"
  ],
  "Group or Project": [
   null,
-  ""
+  "Grup o projecte"
  ],
  "Groups": [
   null,
@@ -591,19 +591,19 @@ return plural;
  ],
  "Image Name": [
   null,
-  ""
+  "Nom de la imatge"
  ],
  "Image Registry": [
   null,
-  ""
+  "Registre de la imatge"
  ],
  "Image Stream": [
   null,
-  ""
+  "Flux de la imatge"
  ],
  "Image commands": [
   null,
-  ""
+  "Ordres de la imatge"
  ],
  "Images": [
   null,
@@ -631,11 +631,11 @@ return plural;
  ],
  "Kernel Version": [
   null,
-  ""
+  "Versió del Kernel"
  ],
  "Key Ring Path": [
   null,
-  ""
+  "Camí a l'anell de claus"
  ],
  "Kubelet Version": [
   null,
@@ -651,11 +651,11 @@ return plural;
  ],
  "Last Heartbeat": [
   null,
-  ""
+  "Últim bateg"
  ],
  "Last Status Change": [
   null,
-  ""
+  "Últim canvi d'estat"
  ],
  "Latest Version": [
   null,
@@ -711,7 +711,7 @@ return plural;
  ],
  "Memory Utilization: $0%": [
   null,
-  ""
+  "Utilització de la memòria:  $0%"
  ],
  "Message": [
   null,
@@ -727,7 +727,7 @@ return plural;
  ],
  "Monitors": [
   null,
-  ""
+  "Monitors"
  ],
  "Mount Location": [
   null,
@@ -739,7 +739,7 @@ return plural;
  ],
  "NFS Mount": [
   null,
-  ""
+  "Muntatge NFS"
  ],
  "Name": [
   null,
@@ -759,11 +759,11 @@ return plural;
  ],
  "New Group": [
   null,
-  "Nou grup"
+  "Grup nou"
  ],
  "New Project": [
   null,
-  "Nou projecte"
+  "Projecte nou"
  ],
  "New image stream": [
   null,
@@ -771,7 +771,7 @@ return plural;
  ],
  "New project": [
   null,
-  "Nou projecte"
+  "Projecte nou"
  ],
  "No": [
   null,
@@ -799,7 +799,7 @@ return plural;
  ],
  "No nodes in cluster": [
   null,
-  ""
+  "Cap node al clúster"
  ],
  "No pods deployed": [
   null,
@@ -871,7 +871,7 @@ return plural;
  ],
  "OS Versions": [
   null,
-  ""
+  "Versions del SO"
  ],
  "Operating System": [
   null,
@@ -883,7 +883,7 @@ return plural;
  ],
  "Overview": [
   null,
-  ""
+  "Visió de conjunt"
  ],
  "PD Name": [
   null,
@@ -907,7 +907,7 @@ return plural;
  ],
  "Persistent Volumes": [
   null,
-  ""
+  "Volums persistents"
  ],
  "Phase": [
   null,
@@ -919,23 +919,23 @@ return plural;
  ],
  "Please provide a GlusterFS volume name": [
   null,
-  ""
+  "Si us plau, proporcioneu un nom de volum GlusterFS"
  ],
  "Please provide a username": [
   null,
-  ""
+  "Si us plau, proporcioneu un nom d'usuari vàlid"
  ],
  "Please provide a valid NFS server": [
   null,
-  ""
+  "Si us plau, proporcioneu un servidor NFS vàlid"
  ],
  "Please provide a valid address": [
   null,
-  ""
+  "Si us plau, proporcioneu una adreça vàlida"
  ],
  "Please provide a valid filesystem type": [
   null,
-  ""
+  "Si us plau, proporcioneu un tipus de sistema de fitxers vàlid"
  ],
  "Please provide a valid interface": [
   null,
@@ -947,15 +947,15 @@ return plural;
  ],
  "Please provide a valid name": [
   null,
-  ""
+  "Si us plau, proporcioneu un nom vàlid"
  ],
  "Please provide a valid namespace.": [
   null,
-  "Si us plau, un espai de noms vàlid."
+  "Si us plau, proporcioneu un espai de noms vàlid."
  ],
  "Please provide a valid path": [
   null,
-  ""
+  "Si us plau, proporcioneu un camí vàlid"
  ],
  "Please provide a valid qualified name": [
   null,
@@ -963,27 +963,27 @@ return plural;
  ],
  "Please provide a valid storage capacity.": [
   null,
-  ""
+  "Si us plau, proporcioneu una capacitat d'emmagatzematge vàlida."
  ],
  "Please provide a valid target": [
   null,
-  ""
+  "Si us plau, proporcioneu un objectiu vàlid"
  ],
  "Please select a valid access mode": [
   null,
-  ""
+  "Si us plau, seleccioneu un mode d'accés vàlid"
  ],
  "Please select a valid endpoint": [
   null,
-  ""
+  "Si us plau, seleccioneu un extrem vàlid"
  ],
  "Please select a valid policy option.": [
   null,
-  ""
+  "Si us plau, seleccioneu una opció de política vàlida."
  ],
  "Please type an address": [
   null,
-  "Si us plau, introduïu una adreça"
+  "Si us plau, teclegeu una adreça"
  ],
  "Pod": [
   null,
@@ -1015,7 +1015,7 @@ return plural;
  ],
  "Pool Name": [
   null,
-  ""
+  "Nom de l'agrupació"
  ],
  "Populate": [
   null,
@@ -1151,7 +1151,7 @@ return plural;
  ],
  "Remove Role": [
   null,
-  ""
+  "Suprimeix el rol"
  ],
  "Remove User": [
   null,
@@ -1159,11 +1159,11 @@ return plural;
  ],
  "Remove image tag": [
   null,
-  ""
+  "Suprimeix l'etiqueta de la imatge"
  ],
  "Remove membership": [
   null,
-  ""
+  "Suprimeix la pertinença"
  ],
  "Replicas": [
   null,
@@ -1195,7 +1195,7 @@ return plural;
  ],
  "Requires Authentication": [
   null,
-  ""
+  "Requereix autenticació"
  ],
  "Restart Count": [
   null,
@@ -1215,7 +1215,7 @@ return plural;
  ],
  "Role": [
   null,
-  ""
+  "Rol"
  ],
  "Roles": [
   null,
@@ -1263,7 +1263,7 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "Servidor"
  ],
  "Service": [
   null,
@@ -1287,7 +1287,7 @@ return plural;
  ],
  "Share Name": [
   null,
-  ""
+  "Nom de compartició"
  ],
  "Shared: Allow any authenticated user to pull images": [
   null,
@@ -1299,7 +1299,7 @@ return plural;
  ],
  "Show all Containers": [
   null,
-  ""
+  "Mostra tots els contenidors"
  ],
  "Show all Deployment Configs": [
   null,
@@ -1307,7 +1307,7 @@ return plural;
  ],
  "Show all Nodes": [
   null,
-  ""
+  "Mostra tots els nodes"
  ],
  "Show all Persistent Volumes": [
   null,
@@ -1323,11 +1323,11 @@ return plural;
  ],
  "Show all Projects": [
   null,
-  ""
+  "Mostra tots els projectes"
  ],
  "Show all Replication Controllers": [
   null,
-  ""
+  "Mostra tots els controladors de replicació"
  ],
  "Show all Routes": [
   null,
@@ -1335,7 +1335,7 @@ return plural;
  ],
  "Show all Services": [
   null,
-  ""
+  "Mostra tots els serveis"
  ],
  "Show all image streams": [
   null,
@@ -1355,7 +1355,7 @@ return plural;
  ],
  "Skip Certificate Verification": [
   null,
-  ""
+  "Omet la verificació del certificat"
  ],
  "Sorry, I don't know how to modify this volume": [
   null,
@@ -1551,7 +1551,7 @@ return plural;
  ],
  "Username": [
   null,
-  ""
+  "Nom d'usuari"
  ],
  "Users": [
   null,
@@ -1567,11 +1567,11 @@ return plural;
  ],
  "Volume Name": [
   null,
-  ""
+  "Nom del volum"
  ],
  "Volume Type": [
   null,
-  ""
+  "Tipus del volum"
  ],
  "Volumes": [
   null,

@@ -74,11 +74,11 @@ return plural;
  ],
  "Apply this solution": [
   null,
-  ""
+  "Deze oplossing toepassen"
  ],
  "Applying solution...": [
   null,
-  ""
+  "Oplossing toepassen..."
  ],
  "Audit log": [
   null,
@@ -162,15 +162,15 @@ return plural;
  ],
  "Solution applied successfully": [
   null,
-  ""
+  "Oplossing succesvol toegepast"
  ],
  "Solution failed": [
   null,
-  ""
+  "Oplossing mislukt"
  ],
  "Solutions": [
   null,
-  ""
+  "Oplossingen"
  ],
  "The configured state is unknown, it might change on the next boot.": [
   null,
@@ -178,7 +178,7 @@ return plural;
  ],
  "Unable to apply this solution automatically": [
   null,
-  ""
+  "Kan deze oplossing niet automatisch toepassen"
  ],
  "Unable to get alert details.": [
   null,
@@ -202,6 +202,6 @@ return plural;
  ],
  "solution details": [
   null,
-  ""
+  "Oplossing details"
  ]
 }));

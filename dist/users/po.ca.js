@@ -73,7 +73,7 @@ return plural;
  ],
  "Account Expiration": [
   null,
-  ""
+  "Venciment del compte"
  ],
  "Account not available or cannot be edited.": [
   null,
@@ -85,7 +85,7 @@ return plural;
  ],
  "Add key": [
   null,
-  ""
+  "Afegeix la clau"
  ],
  "Add public key": [
   null,
@@ -101,7 +101,7 @@ return plural;
  ],
  "Back to Accounts": [
   null,
-  ""
+  "Torna als comptes"
  ],
  "Cancel": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "Create New Account": [
   null,
-  "Crea un nou compte"
+  "Crea un compte nou"
  ],
  "Delete": [
   null,
@@ -169,11 +169,11 @@ return plural;
  ],
  "Force Change": [
   null,
-  ""
+  "Obliga el canvi"
  ],
  "Force password change": [
   null,
-  ""
+  "Obliga el canvi de contrasenya"
  ],
  "Full Name": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Invalid expiration date": [
   null,
-  ""
+  "Data de venciment no vàlida"
  ],
  "Invalid key": [
   null,
@@ -189,7 +189,7 @@ return plural;
  ],
  "Invalid number of days": [
   null,
-  ""
+  "Nombre de dies no vàlid"
  ],
  "Last Login": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Lock account on $0": [
   null,
-  ""
+  "Bloqueja el compte el $0"
  ],
  "Logged In": [
   null,
@@ -217,11 +217,11 @@ return plural;
  ],
  "Never expire password": [
   null,
-  ""
+  "Mai venç la contrasenya"
  ],
  "Never lock account": [
   null,
-  ""
+  "No es bloqueja mai el compte"
  ],
  "New Password": [
   null,
@@ -241,7 +241,7 @@ return plural;
  ],
  "Off": [
   null,
-  "Apagat"
+  "Off"
  ],
  "Old Password": [
   null,
@@ -253,7 +253,7 @@ return plural;
  ],
  "On": [
   null,
-  "Engegat"
+  "On"
  ],
  "Password": [
   null,
@@ -261,7 +261,7 @@ return plural;
  ],
  "Password Expiration": [
   null,
-  ""
+  "Venciment de la contrasenya"
  ],
  "Password is not acceptable": [
   null,
@@ -277,11 +277,11 @@ return plural;
  ],
  "Paste the contents of your public SSH key file here": [
   null,
-  ""
+  "Enganxeu aquí el contingut del fitxer de la vostra clau SSH pública"
  ],
  "Please specify an expiration date": [
   null,
-  ""
+  "Si us plau, especifiqueu una data de venciment"
  ],
  "Prompting via passwd timed out": [
   null,
@@ -321,7 +321,7 @@ return plural;
  ],
  "The account '$0' will be forced to change their password on next login": [
   null,
-  ""
+  "El compte '$0' es veurà forçat a canviar de contrasenya el pròxim com que iniciï la sessió."
  ],
  "The key you provided was not valid.": [
   null,

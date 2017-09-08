@@ -69,8 +69,8 @@ return plural;
  },
  "$0 day": [
   "$0 days",
-  "",
-  ""
+  "$0 dia",
+  "$0 dies"
  ],
  "$0 disk is missing": [
   "$0 disks are missing",
@@ -79,28 +79,28 @@ return plural;
  ],
  "$0 hour": [
   "$0 hours",
-  "",
-  ""
+  "$0 hora",
+  "$0 hores"
  ],
  "$0 minute": [
   "$0 minutes",
-  "",
-  ""
+  "$0 minut",
+  "$0 minuts"
  ],
  "$0 month": [
   "$0 months",
-  "",
-  ""
+  "$0 mes",
+  "$0 mesos"
  ],
  "$0 week": [
   "$0 weeks",
-  "",
-  ""
+  "$0 setmana",
+  "$0 setmanes"
  ],
  "$0 year": [
   "$0 years",
-  "",
-  ""
+  "$0 any",
+  "$0 anys"
  ],
  "Cancel": [
   null,
@@ -112,7 +112,7 @@ return plural;
  ],
  "Delete '{{ name }}'": [
   null,
-  ""
+  "Suprimeix '{{ name }}'"
  ],
  "Empty": [
   null,
@@ -132,7 +132,7 @@ return plural;
  ],
  "No matching files found": [
   null,
-  ""
+  "No s'ha trobat cap fitxer que coincideixi"
  ],
  "Not Ready": [
   null,
@@ -140,7 +140,7 @@ return plural;
  ],
  "Off": [
   null,
-  "Apagat"
+  "Off"
  ],
  "Ok": [
   null,
@@ -148,11 +148,11 @@ return plural;
  ],
  "On": [
   null,
-  "Engegat"
+  "On"
  ],
  "Path to file": [
   null,
-  ""
+  "Camí al fitxer"
  ],
  "Ready": [
   null,
