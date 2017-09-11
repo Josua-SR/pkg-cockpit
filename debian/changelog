@@ -1,3 +1,10 @@
+cockpit (150-2) unstable; urgency=medium
+
+  * Drop nodejs-legacy autopkgtest dependency. That package ceased to exist,
+    and the tests don't need the /usr/bin/node binary.
+
+ -- Martin Pitt <mpitt@debian.org>  Mon, 11 Sep 2017 08:28:22 +0200
+
 cockpit (150-1) unstable; urgency=medium
 
   * New upstream release 149:
