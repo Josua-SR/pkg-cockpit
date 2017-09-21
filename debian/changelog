@@ -1,3 +1,20 @@
+cockpit (151-1) unstable; urgency=medium
+
+  * New upstream release:
+    - Support loading SSH keys from arbitrary paths
+  * Ignore PhantomJS crashes in avocado autopkgtest
+    checklogin-basic.py causes a PhantomJS crash on Ubuntu artful on amd64
+    which does not reproduce in QEMU. (Closes: #873241)
+  * Add smoke autopkgtest that can run in containers.
+    Add a simple test of cockpit-bridge and the login page to ensure that
+    packages have the right dependencies and contents, and that the systemd
+    units are set up correctly to get a login page on
+    https://localhost:9090.
+    This can also run in a container and thus in Debian's CI and on all
+    Ubuntu architectures.
+
+ -- Martin Pitt <mpitt@debian.org>  Thu, 21 Sep 2017 10:25:46 +0200
+
 cockpit (150-2) unstable; urgency=medium
 
   * Drop nodejs-legacy autopkgtest dependency. That package ceased to exist,
