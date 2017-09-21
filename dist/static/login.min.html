@@ -471,10 +471,15 @@ var phantom_checkpoint = phantom_checkpoint || function() {};
         q("GET", n, true);
     }
     function W(e) {
-        if (e && e != window.location.href) window.location = e;
-        window.setTimeout(function() {
+        var t = window.setTimeout(function() {
+            t = null;
             window.location.reload(true);
         }, 100);
+        if (e && e != window.location.href) window.location = e;
+        window.onbeforeunload = function() {
+            if (t) window.clearTimeout(t);
+            t = null;
+        };
     }
     function $(e) {
         var n = "/" + u + "/@localhost/";

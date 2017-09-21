@@ -1,3 +1,43 @@
+.combobox-container input {
+    padding-right: 24px;
+}
+
+.combobox-container ul {
+    max-height: 250px;
+}
+
+.combobox-container .alert {
+    margin: 0;
+    border: none;
+    padding: 0 24px 0 6px;
+}
+
+.combobox-container .error input {
+    border-color: red;
+}
+
+.combobox-container .error input {
+    border-color: red;
+}
+
+.combobox-container .error ul {
+    border-color: red;
+    padding: 0;
+}
+
+.combobox-container span.spinner,
+.combobox-container span.caret {
+    position: absolute;
+    top: 7px;
+    z-index: 9;
+}
+
+.combobox-container span.caret {
+    width: 1.5em;
+    height: 1.5em;
+    cursor: pointer;
+    pointer-events: all;
+}
 /* Listing pattern */
 table.listing-ct {
   margin-top: 15px;
@@ -1528,44 +1568,74 @@ iframe.container-frame {
   line-height: 24px;
   display: inline;
 }
-table.credential-listing {
+#credentials-dialog table.credential-listing {
   margin-top: 0px;
   width: 100%;
 }
-.credential-listing thead td {
+#credentials-dialog table.credential-listing thead tr.load-custom-key td.has-error div.dialog-error {
+  display: block;
+}
+#credentials-dialog table.credential-listing thead tr.load-custom-key td {
   padding-left: 15px;
   padding-bottom: 15px;
+  padding-top: 0;
+}
+#credentials-dialog table.credential-listing thead tr.load-custom-key td .dropdown-menu {
+  max-height: 100px;
+}
+#credentials-dialog table.credential-listing thead tr.load-custom-key td input {
+  width: 500px;
+}
+#credentials-dialog table.credential-listing thead tr.load-custom-key td button {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+#credentials-dialog table.credential-listing thead tr.load-custom-key td span.input-group-btn {
+  border-left: 2px solid transparent;
+}
+#credentials-dialog table.credential-listing thead tr.load-custom-key td div.dialog-error {
+  display: none;
+}
+#credentials-dialog table.credential-listing tbody.ssh-add-key-body {
+  display: none;
+}
+#credentials-dialog table.credential-listing tbody.ssh-add-key-body.unlock {
+  display: table-row-group;
+}
+#credentials-dialog table.credential-listing dd,
+#credentials-dialog table.credential-listing dt {
+  padding-top: 3px;
+  min-height: 26px;
+}
+#credentials-dialog table.credential-listing dt {
+  min-width: 80px;
+  max-width: 100px;
+}
+#credentials-dialog table.credential-listing input[type='password'] {
+  width: 300px;
+}
+#credentials-dialog table.credential-listing textarea {
+  color: #222 !important;
+}
+#credentials-dialog table.credential-listing dt label {
+  margin-bottom: 0px;
+}
+#credentials-dialog thead td {
+  padding-left: 15px;
+  padding-bottom: 15px;
+}
+#credentials-dialog tbody .credential-unlock {
+  display: none;
+}
+#credentials-dialog tbody.unlock .credential-panel {
+  display: none !important;
+}
+#credentials-dialog tbody.unlock .credential-unlock {
+  display: block;
 }
 .credential-data {
   word-wrap: break-word;
   word-break: break-all;
-}
-.credential-listing dd,
-.credential-listing dt {
-  padding-top: 3px;
-  min-height: 26px;
-}
-.credential-listing dt {
-  min-width: 80px;
-  max-width: 100px;
-}
-.credential-listing input[type='password'] {
-  width: 300px;
-}
-.credential-listing textarea {
-  color: #222 !important;
-}
-.credential-listing dt label {
-  margin-bottom: 0px;
-}
-tbody .credential-unlock {
-  display: none;
-}
-tbody.unlock .credential-panel {
-  display: none !important;
-}
-tbody.unlock .credential-unlock {
-  display: block;
 }
 .banned {
   color: #ff0000;

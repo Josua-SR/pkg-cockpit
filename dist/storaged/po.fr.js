@@ -96,7 +96,7 @@ return plural;
  ],
  "$0 is in active use": [
   null,
-  ""
+  "$0 est actuellement utilisé"
  ],
  "$0 minute": [
   "$0 minutes",

@@ -1520,6 +1520,10 @@ kubernetes-container-terminal .terminal-actions {
 .containers-listing .console-ct {
   min-height: 310px;
 }
+kubernetes-container-terminal .terminal-actions {
+  position: relative;
+  z-index: auto;
+}
 .details-listing {
   min-width: 70% !important;
 }

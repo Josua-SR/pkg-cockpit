@@ -249,8 +249,9 @@ process.input(data, [stream])
 <pre class="programlisting">
 process.close([problem])
 </pre>
-<p>Close the process. If <code class="code">problem</code> is specified it should be a
-      standard <a class="link" href="cockpit-error.html#cockpit-problems" title="Problem Codes">problem code</a> string. In this case the
+<p>Close the process by closing its standard input and output. If <code class="code">problem</code> is
+      specified it should be a standard
+      <a class="link" href="cockpit-error.html#cockpit-problems" title="Problem Codes">problem code</a> string. In this case the
       process will be terminated with a signal.</p>
 </div>
 </div>
