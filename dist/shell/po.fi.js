@@ -319,6 +319,10 @@ return plural;
   null,
   ""
  ],
+ "No matching files found": [
+  null,
+  ""
+ ],
  "No such file or directory": [
   null,
   ""
@@ -360,6 +364,10 @@ return plural;
   ""
  ],
  "Password not usable for privileged tasks or to connect to other machines": [
+  null,
+  ""
+ ],
+ "Path to file": [
   null,
   ""
  ],
@@ -450,6 +458,10 @@ return plural;
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
   null,
   "Kokeillaksesi toista porttia sinun tulee päivittää cockpit-ws uudempaan versioon."
+ ],
+ "Too many files found": [
+  null,
+  ""
  ],
  "Troubleshoot": [
   null,

@@ -319,6 +319,10 @@ return plural;
   null,
   "Новий пароль не прийнято"
  ],
+ "No matching files found": [
+  null,
+  "Відповідних файлів не знайдено"
+ ],
  "No such file or directory": [
   null,
   "Немає такого файла або каталогу"
@@ -362,6 +366,10 @@ return plural;
  "Password not usable for privileged tasks or to connect to other machines": [
   null,
   "Пароль непридатний для виконання для привілейованих завдань та з’єднання з іншими комп’ютерами"
+ ],
+ "Path to file": [
+  null,
+  "Шлях до файла"
  ],
  "Port": [
   null,
@@ -450,6 +458,10 @@ return plural;
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
   null,
   "Щоб спробувати інший порт, вам слід оновити cockpit-ws."
+ ],
+ "Too many files found": [
+  null,
+  "Знайдено забагато файлів"
  ],
  "Troubleshoot": [
   null,

@@ -319,6 +319,10 @@ return plural;
   null,
   "No s'ha acceptat la nova contrasenya"
  ],
+ "No matching files found": [
+  null,
+  "No s'ha trobat cap fitxer que coincideixi"
+ ],
  "No such file or directory": [
   null,
   "No existeix el fitxer o el directori"
@@ -362,6 +366,10 @@ return plural;
  "Password not usable for privileged tasks or to connect to other machines": [
   null,
   ""
+ ],
+ "Path to file": [
+  null,
+  "Camí al fitxer"
  ],
  "Port": [
   null,
@@ -448,6 +456,10 @@ return plural;
   ""
  ],
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
+  null,
+  ""
+ ],
+ "Too many files found": [
   null,
   ""
  ],

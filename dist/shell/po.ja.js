@@ -319,6 +319,10 @@ return plural;
   null,
   "新規パスワードは受け入れられませんでした"
  ],
+ "No matching files found": [
+  null,
+  "ホストキーが見つかりません。"
+ ],
  "No such file or directory": [
   null,
   "このようなファイルまたはディレクトリーがありません"
@@ -362,6 +366,10 @@ return plural;
  "Password not usable for privileged tasks or to connect to other machines": [
   null,
   "特権タスクの実行または他のマシンへの接続のためにパスワードを使用できません"
+ ],
+ "Path to file": [
+  null,
+  ""
  ],
  "Port": [
   null,
@@ -450,6 +458,10 @@ return plural;
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
   null,
   "別のポートを試すには、cockpit-ws を新しいバージョンにアップグレードする必要があります。"
+ ],
+ "Too many files found": [
+  null,
+  ""
  ],
  "Troubleshoot": [
   null,

@@ -319,6 +319,10 @@ return plural;
   null,
   "Nova senha não foi aceita"
  ],
+ "No matching files found": [
+  null,
+  ""
+ ],
  "No such file or directory": [
   null,
   "Diretório ou arquivo não encontrado"
@@ -362,6 +366,10 @@ return plural;
  "Password not usable for privileged tasks or to connect to other machines": [
   null,
   "Senha não utilizável para tarefas privilegiadas ou para se conectar a outras máquinas"
+ ],
+ "Path to file": [
+  null,
+  ""
  ],
  "Port": [
   null,
@@ -450,6 +458,10 @@ return plural;
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
   null,
   "Para tentar uma porta diferente, você precisará atualizar o cockpit-ws para uma versão mais recente."
+ ],
+ "Too many files found": [
+  null,
+  ""
  ],
  "Troubleshoot": [
   null,

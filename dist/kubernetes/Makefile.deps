@@ -1,5 +1,5 @@
 # Generated Makefile data for kubernetes
-# Stamp: Fri Sep 08 2017 09:04:43 GMT+0000 (UTC)
+# Stamp: Thu Sep 21 2017 06:32:05 GMT+0000 (UTC)
 
 kubernetes_INPUTS = \
 	$(srcdir)/node_modules/angular-bootstrap-npm/LICENSE \

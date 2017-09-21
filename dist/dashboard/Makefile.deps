@@ -1,10 +1,7 @@
 # Generated Makefile data for dashboard
-# Stamp: Fri Sep 08 2017 09:04:34 GMT+0000 (UTC)
+# Stamp: Thu Sep 21 2017 06:31:59 GMT+0000 (UTC)
 
 dashboard_INPUTS = \
-	$(srcdir)/node_modules/bootstrap/LICENSE \
-	$(srcdir)/node_modules/bootstrap/README.md \
-	$(srcdir)/node_modules/bootstrap/less/variables.less \
 	$(srcdir)/node_modules/jquery-flot/LICENSE.txt \
 	$(srcdir)/node_modules/jquery-flot/README.md \
 	$(srcdir)/node_modules/jquery-flot/jquery.flot.js \
@@ -13,16 +10,12 @@ dashboard_INPUTS = \
 	$(srcdir)/node_modules/mustache/LICENSE \
 	$(srcdir)/node_modules/mustache/README.md \
 	$(srcdir)/node_modules/mustache/mustache.js \
-	$(srcdir)/node_modules/patternfly/LICENSE.txt \
-	$(srcdir)/node_modules/patternfly/README.md \
-	$(srcdir)/node_modules/patternfly/less/color-variables.less \
-	$(srcdir)/node_modules/patternfly/less/variables.less \
 	$(srcdir)/pkg/dashboard/image-editor.js \
 	$(srcdir)/pkg/dashboard/index.html \
 	$(srcdir)/pkg/dashboard/list.js \
 	$(srcdir)/pkg/lib/credentials-ssh-private-keys.sh \
+	$(srcdir)/pkg/lib/credentials-ssh-remove-key.sh \
 	$(srcdir)/pkg/lib/credentials.js \
-	$(srcdir)/pkg/lib/listing.less \
 	$(srcdir)/pkg/lib/machine-add.html \
 	$(srcdir)/pkg/lib/machine-auth-failed.html \
 	$(srcdir)/pkg/lib/machine-change-auth.html \
@@ -37,12 +30,9 @@ dashboard_INPUTS = \
 	$(srcdir)/pkg/lib/mustache.js \
 	$(srcdir)/pkg/lib/patterns.js \
 	$(srcdir)/pkg/lib/plot.js \
-	$(srcdir)/pkg/lib/variables.less \
 	$(NULL)
 
 dashboard_OUTPUTS = \
-	dist/dashboard/dashboard.css \
-	dist/dashboard/dashboard.css.map \
 	dist/dashboard/dashboard.min.js \
 	dist/dashboard/dashboard.min.js.map \
 	dist/dashboard/index.html \
@@ -51,7 +41,6 @@ dashboard_OUTPUTS = \
 dashboard_PO = dist/dashboard/po.js $(patsubst %,dist/dashboard/po.%.js,$(LINGUAS))
 
 dashboard_INSTALL = \
-	dist/dashboard/dashboard.css.gz \
 	dist/dashboard/dashboard.min.js.gz \
 	dist/dashboard/index.html.gz \
 	dist/dashboard/manifest.json \
@@ -59,7 +48,6 @@ dashboard_INSTALL = \
 	$(NULL)
 
 dashboard_DEBUG = \
-	dist/dashboard/dashboard.css.map \
 	dist/dashboard/dashboard.min.js.map \
 	$(NULL)
 
@@ -68,26 +56,16 @@ dashboard_TESTS = \
 
 dist/dashboard/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/jquery-flot/jquery.flot.js -N node_modules/jquery-flot/jquery.flot.selection.js -N node_modules/jquery-flot/jquery.flot.time.js -N node_modules/mustache/mustache.js -N node_modules/patternfly/less/color-variables.less -N node_modules/patternfly/less/variables.less -N pkg/dashboard/image-editor.js -N pkg/dashboard/index.html -N pkg/dashboard/list.js -N pkg/lib/credentials-ssh-private-keys.sh -N pkg/lib/credentials.js -N pkg/lib/listing.less -N pkg/lib/machine-add.html -N pkg/lib/machine-auth-failed.html -N pkg/lib/machine-change-auth.html -N pkg/lib/machine-change-port.html -N pkg/lib/machine-color-picker.html -N pkg/lib/machine-dialogs.js -N pkg/lib/machine-invalid-hostkey.html -N pkg/lib/machine-not-supported.html -N pkg/lib/machine-sync-users.html -N pkg/lib/machine-unknown-hostkey.html -N pkg/lib/machines.js -N pkg/lib/mustache.js -N pkg/lib/patterns.js -N pkg/lib/plot.js -N pkg/lib/variables.less $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/jquery-flot/jquery.flot.js -N node_modules/jquery-flot/jquery.flot.selection.js -N node_modules/jquery-flot/jquery.flot.time.js -N node_modules/mustache/mustache.js -N pkg/dashboard/image-editor.js -N pkg/dashboard/index.html -N pkg/dashboard/list.js -N pkg/lib/credentials-ssh-private-keys.sh -N pkg/lib/credentials-ssh-remove-key.sh -N pkg/lib/credentials.js -N pkg/lib/machine-add.html -N pkg/lib/machine-auth-failed.html -N pkg/lib/machine-change-auth.html -N pkg/lib/machine-change-port.html -N pkg/lib/machine-color-picker.html -N pkg/lib/machine-dialogs.js -N pkg/lib/machine-invalid-hostkey.html -N pkg/lib/machine-not-supported.html -N pkg/lib/machine-sync-users.html -N pkg/lib/machine-unknown-hostkey.html -N pkg/lib/machines.js -N pkg/lib/mustache.js -N pkg/lib/patterns.js -N pkg/lib/plot.js $< > $@.tmp && mv $@.tmp $@
 
 dist/dashboard/Makefile.deps: $(WEBPACK_CONFIG) $(dashboard_INPUTS)
 	$(WEBPACK_RULE) -d dist/dashboard/Makefile.deps $(WEBPACK_CONFIG)
-
-dist/dashboard/dashboard.css: dist/dashboard/Makefile.deps
-
-dist/dashboard/dashboard.css.map: dist/dashboard/Makefile.deps
 
 dist/dashboard/dashboard.min.js: dist/dashboard/Makefile.deps
 
 dist/dashboard/dashboard.min.js.map: dist/dashboard/Makefile.deps
 
 dist/dashboard/index.html: dist/dashboard/Makefile.deps
-
-$(srcdir)/node_modules/bootstrap/LICENSE:
-
-$(srcdir)/node_modules/bootstrap/README.md:
-
-$(srcdir)/node_modules/bootstrap/less/variables.less:
 
 $(srcdir)/node_modules/jquery-flot/LICENSE.txt:
 
@@ -105,14 +83,6 @@ $(srcdir)/node_modules/mustache/README.md:
 
 $(srcdir)/node_modules/mustache/mustache.js:
 
-$(srcdir)/node_modules/patternfly/LICENSE.txt:
-
-$(srcdir)/node_modules/patternfly/README.md:
-
-$(srcdir)/node_modules/patternfly/less/color-variables.less:
-
-$(srcdir)/node_modules/patternfly/less/variables.less:
-
 $(srcdir)/pkg/dashboard/image-editor.js:
 
 $(srcdir)/pkg/dashboard/index.html:
@@ -121,9 +91,9 @@ $(srcdir)/pkg/dashboard/list.js:
 
 $(srcdir)/pkg/lib/credentials-ssh-private-keys.sh:
 
-$(srcdir)/pkg/lib/credentials.js:
+$(srcdir)/pkg/lib/credentials-ssh-remove-key.sh:
 
-$(srcdir)/pkg/lib/listing.less:
+$(srcdir)/pkg/lib/credentials.js:
 
 $(srcdir)/pkg/lib/machine-add.html:
 
@@ -152,8 +122,6 @@ $(srcdir)/pkg/lib/mustache.js:
 $(srcdir)/pkg/lib/patterns.js:
 
 $(srcdir)/pkg/lib/plot.js:
-
-$(srcdir)/pkg/lib/variables.less:
 
 WEBPACK_INPUTS += $(dashboard_INPUTS)
 WEBPACK_OUTPUTS += $(dashboard_OUTPUTS)

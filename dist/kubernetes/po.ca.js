@@ -651,7 +651,7 @@ return plural;
  ],
  "Last Heartbeat": [
   null,
-  "Últim bateg"
+  "Últim batec"
  ],
  "Last Status Change": [
   null,
