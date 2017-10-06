@@ -91,6 +91,10 @@ return plural;
   null,
   "Afegeix la màquina al tauler de control"
  ],
+ "Add key": [
+  null,
+  "Afegeix la clau"
+ ],
  "Address": [
   null,
   "Adreça"
@@ -133,7 +137,7 @@ return plural;
  ],
  "Close Selected Pages": [
   null,
-  ""
+  "Tanca les pàgines seleccionades"
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
@@ -221,7 +225,7 @@ return plural;
  ],
  "Enter IP address or host name": [
   null,
-  "Introduïu l'adreça IP o el nom de l'amfitrió"
+  "Introduïu l'adreça IP o el nom d'amfitrió"
  ],
  "Entering a different password here means you will need to retype it every time you reconnect to this machine": [
   null,
@@ -241,7 +245,7 @@ return plural;
  ],
  "Failed to edit machine: $0": [
   null,
-  "No s'ha pogut editar la màquina: $0"
+  "Ha fallat l'edició de la màquina: $0"
  ],
  "Fingerprint": [
   null,
@@ -249,7 +253,7 @@ return plural;
  ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "Per sincronitzar els usuaris, cal que inicieu la sessió a {{#strong}}{{host}}{{/strong}}."
  ],
  "Incorrect Host Key": [
   null,
@@ -271,7 +275,7 @@ return plural;
   null,
   "Tiquet de Kerberos"
  ],
- "Leave blank to connect to this machine as the currently logged in user{{#user}} ({{user}}){{/user}}. If you enter a different username, that user will always be used connecting to this machine.": [
+ "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
   ""
  ],
@@ -281,7 +285,7 @@ return plural;
  ],
  "Lock to prevent privileged tasks": [
   null,
-  ""
+  "Bloqueja per evitar tasques privilegiades"
  ],
  "Locked": [
   null,
@@ -289,7 +293,7 @@ return plural;
  ],
  "Log In": [
   null,
-  "Inici de la sessió"
+  "Inicia la sessió"
  ],
  "Log Out": [
   null,
@@ -297,7 +301,7 @@ return plural;
  ],
  "Log in again": [
   null,
-  ""
+  "Torna a iniciar la sessió"
  ],
  "Log in to {{host}}": [
   null,
@@ -337,7 +341,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "D'acord"
  ],
  "Old Password": [
   null,
@@ -377,7 +381,7 @@ return plural;
  ],
  "Privileged tasks not available": [
   null,
-  ""
+  "No hi ha tasques privilegiades disponibles"
  ],
  "Project website": [
   null,
@@ -385,11 +389,11 @@ return plural;
  ],
  "Prompting via ssh-add timed out": [
   null,
-  ""
+  "Per mitjà del temps d'espera de ssh-add"
  ],
  "Prompting via ssh-keygen timed out": [
   null,
-  ""
+  "Per mitjà del temps d'espera de ssh-keygen"
  ],
  "Public Key": [
   null,
@@ -401,7 +405,7 @@ return plural;
  ],
  "Reuse my password for privileged tasks and to connect to other machines": [
   null,
-  "Torna a utilitzar la meva contrasenya per a tasques privilegiades i connecta't a altres màquines"
+  "Torna a utilitzar la meva contrasenya per a les tasques privilegiades i per connectar a altres màquines"
  ],
  "Select": [
   null,
@@ -441,7 +445,7 @@ return plural;
  ],
  "There are currently no active pages": [
   null,
-  ""
+  "Actualment no hi ha pàgines actives"
  ],
  "This machine has already been added.": [
   null,
@@ -453,15 +457,15 @@ return plural;
  ],
  "Tip: Make your key password match your login password to automatically authenticate against other systems.": [
   null,
-  ""
+  "Consell: feu que la contrasenya de la clau coincideixi amb la vostra contrasenya d'inici de sessió per autenticar automàticament contra altres sistemes."
  ],
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
   null,
-  ""
+  "Per provar un port diferent, haureu d'actualitzar cockpit-ws a una versió més recent."
  ],
  "Too many files found": [
   null,
-  ""
+  "S'han trobat massa fitxers"
  ],
  "Troubleshoot": [
   null,
@@ -469,7 +473,7 @@ return plural;
  ],
  "Try to reconnect": [
   null,
-  ""
+  "Intenta tornar a connectar"
  ],
  "Type": [
   null,

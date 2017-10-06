@@ -101,7 +101,7 @@ return plural;
  ],
  "Add": [
   null,
-  ""
+  "Přidat"
  ],
  "Add Cluster Node": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Add User": [
   null,
-  ""
+  "Přidat uživatele"
  ],
  "Add membership": [
   null,
@@ -145,11 +145,11 @@ return plural;
  ],
  "Address": [
   null,
-  ""
+  "Adresa"
  ],
  "Addresses": [
   null,
-  ""
+  "Adresa"
  ],
  "Adjust": [
   null,
@@ -233,7 +233,7 @@ return plural;
  ],
  "Capacity": [
   null,
-  ""
+  "Kapacita"
  ],
  "Ceph Filesystem Mount": [
   null,
@@ -277,11 +277,11 @@ return plural;
  ],
  "Cluster": [
   null,
-  ""
+  "Cluster"
  ],
  "Configuration": [
   null,
-  ""
+  "Nastavení"
  ],
  "Configure Flannel networking": [
   null,
@@ -293,11 +293,11 @@ return plural;
  ],
  "Connect": [
   null,
-  ""
+  "Spojení"
  ],
  "Connecting...": [
   null,
-  ""
+  "Připojování..."
  ],
  "Connection Error": [
   null,
@@ -325,7 +325,7 @@ return plural;
  ],
  "Containers": [
   null,
-  ""
+  "Kontejnery"
  ],
  "Could not list services": [
   null,
@@ -361,7 +361,7 @@ return plural;
  ],
  "Delete": [
   null,
-  ""
+  "Smazat"
  ],
  "Delete Node": [
   null,
@@ -417,19 +417,19 @@ return plural;
  ],
  "Description": [
   null,
-  ""
+  "Popis"
  ],
  "Details": [
   null,
-  ""
+  "Podrobnosti"
  ],
  "Directory": [
   null,
-  ""
+  "Adresář"
  ],
  "Disk": [
   null,
-  ""
+  "Disk"
  ],
  "Disk Utilization: $0%": [
   null,
@@ -477,7 +477,7 @@ return plural;
  ],
  "Driver": [
   null,
-  ""
+  "Driver"
  ],
  "Empty Directory": [
   null,
@@ -557,11 +557,11 @@ return plural;
  ],
  "Groups": [
   null,
-  ""
+  "Skupiny"
  ],
  "Host": [
   null,
-  ""
+  "Počítač"
  ],
  "Host Path": [
   null,
@@ -629,7 +629,7 @@ return plural;
  ],
  "Interface": [
   null,
-  ""
+  "Rozhraní"
  ],
  "Kernel Version": [
   null,
@@ -693,7 +693,7 @@ return plural;
  ],
  "Medium": [
   null,
-  ""
+  "Středně"
  ],
  "Member of": [
   null,
@@ -701,7 +701,7 @@ return plural;
  ],
  "Members": [
   null,
-  ""
+  "Členové"
  ],
  "Membership": [
   null,
@@ -709,7 +709,7 @@ return plural;
  ],
  "Memory": [
   null,
-  ""
+  "Paměť"
  ],
  "Memory Utilization: $0%": [
   null,
@@ -717,7 +717,7 @@ return plural;
  ],
  "Message": [
   null,
-  ""
+  "Zpráva"
  ],
  "Metadata": [
   null,
@@ -725,7 +725,7 @@ return plural;
  ],
  "Modify": [
   null,
-  ""
+  "Upravit"
  ],
  "Monitors": [
   null,
@@ -765,7 +765,7 @@ return plural;
  ],
  "New Project": [
   null,
-  ""
+  "Nový projekt"
  ],
  "New image stream": [
   null,
@@ -881,11 +881,11 @@ return plural;
  ],
  "Options": [
   null,
-  ""
+  "Přepínače"
  ],
  "Overview": [
   null,
-  ""
+  "Přehled"
  ],
  "PD Name": [
   null,
@@ -893,15 +893,15 @@ return plural;
  ],
  "Partition": [
   null,
-  ""
+  "Oddíl"
  ],
  "Password": [
   null,
-  ""
+  "Heslo"
  ],
  "Path": [
   null,
-  ""
+  "Cesta"
  ],
  "Pending Volume Claims": [
   null,
@@ -1025,7 +1025,7 @@ return plural;
  ],
  "Ports": [
   null,
-  ""
+  "Porty"
  ],
  "Private: Allow only specific users or groups to pull images": [
   null,
@@ -1089,7 +1089,7 @@ return plural;
  ],
  "Read Only": [
   null,
-  ""
+  "Pouze pro čtení"
  ],
  "Read and write from a single node": [
   null,
@@ -1141,7 +1141,7 @@ return plural;
  ],
  "Remove": [
   null,
-  ""
+  "Odstranit"
  ],
  "Remove Group": [
   null,
@@ -1213,11 +1213,11 @@ return plural;
  ],
  "Revision": [
   null,
-  ""
+  "Revize"
  ],
  "Role": [
   null,
-  ""
+  "Role"
  ],
  "Roles": [
   null,
@@ -1241,7 +1241,7 @@ return plural;
  ],
  "Secret": [
   null,
-  ""
+  "Tajné"
  ],
  "Secret File": [
   null,
@@ -1265,11 +1265,11 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "Server"
  ],
  "Service": [
   null,
-  ""
+  "Služba"
  ],
  "Service Account": [
   null,
@@ -1277,7 +1277,7 @@ return plural;
  ],
  "Services": [
   null,
-  ""
+  "Služby"
  ],
  "Services group pods and provide a common DNS name and an optional, load-balanced IP address to access them.": [
   null,
@@ -1297,7 +1297,7 @@ return plural;
  ],
  "Shell": [
   null,
-  ""
+  "Shell"
  ],
  "Show all Containers": [
   null,
@@ -1353,7 +1353,7 @@ return plural;
  ],
  "Size": [
   null,
-  ""
+  "Velikost"
  ],
  "Skip Certificate Verification": [
   null,
@@ -1365,11 +1365,11 @@ return plural;
  ],
  "State": [
   null,
-  ""
+  "Stav"
  ],
  "Status": [
   null,
-  ""
+  "Stav"
  ],
  "Strategy": [
   null,
@@ -1389,7 +1389,7 @@ return plural;
  ],
  "Target": [
   null,
-  ""
+  "Cíl"
  ],
  "Target Portal": [
   null,
@@ -1505,7 +1505,7 @@ return plural;
  ],
  "Troubleshoot": [
   null,
-  ""
+  "Řešit potíže"
  ],
  "Trust this certificate for this connection": [
   null,
@@ -1513,11 +1513,11 @@ return plural;
  ],
  "Type": [
   null,
-  ""
+  "Typ"
  ],
  "Type:": [
   null,
-  ""
+  "Typ:"
  ],
  "Unable to decode Kubernetes application manifest.": [
   null,
@@ -1529,11 +1529,11 @@ return plural;
  ],
  "Unavailable": [
   null,
-  ""
+  "Nedostupné"
  ],
  "Unknown": [
   null,
-  ""
+  "Neznámý"
  ],
  "Updating $0...": [
   null,
@@ -1545,7 +1545,7 @@ return plural;
  ],
  "User": [
   null,
-  ""
+  "Uživatel"
  ],
  "User or Group": [
   null,
@@ -1553,15 +1553,15 @@ return plural;
  ],
  "Username": [
   null,
-  ""
+  "Jméno uživatele"
  ],
  "Users": [
   null,
-  ""
+  "Uživatelé"
  ],
  "Volume": [
   null,
-  ""
+  "Svazek"
  ],
  "Volume ID": [
   null,
@@ -1593,7 +1593,7 @@ return plural;
  ],
  "Yes": [
   null,
-  ""
+  "Ano"
  ],
  "You can bypass the certificate check, but any data you send to the server could be intercepted by others.": [
   null,
@@ -1625,6 +1625,6 @@ return plural;
  ],
  "yes": [
   null,
-  ""
+  "ano"
  ]
 }));

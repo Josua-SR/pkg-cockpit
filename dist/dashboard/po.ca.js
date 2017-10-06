@@ -219,11 +219,11 @@ return plural;
  ],
  "Edit Server": [
   null,
-  ""
+  "Edit el servidor"
  ],
  "Enter IP address or host name": [
   null,
-  "Introduïu l'adreça IP o el nom de l'amfitrió"
+  "Introduïu l'adreça IP o el nom d'amfitrió"
  ],
  "Entering a different password here means you will need to retype it every time you reconnect to this machine": [
   null,
@@ -243,7 +243,7 @@ return plural;
  ],
  "Failed to edit machine: $0": [
   null,
-  "No s'ha pogut editar la màquina: $0"
+  "Ha fallat l'edició de la màquina: $0"
  ],
  "Fingerprint": [
   null,
@@ -259,7 +259,7 @@ return plural;
  ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "Per sincronitzar els usuaris, cal que inicieu la sessió a {{#strong}}{{host}}{{/strong}}."
  ],
  "Incorrect Host Key": [
   null,
@@ -283,15 +283,15 @@ return plural;
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
-  ""
+  "Deixeu-ho en blanc per connectar a aquesta màquina amb l'usuari que heu iniciat la sessió. Si introduïu un altre nom d'usuari, sempre s'utilitzarà aquest usuari quan es connecti a aquesta màquina."
  ],
- "Leave blank to connect to this machine as the currently logged in user{{#user}} ({{user}}){{/user}}. If you enter a different username, that user will always be used connecting to this machine.": [
+ "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
   ""
  ],
  "Log In": [
   null,
-  "Inici de la sessió"
+  "Inicia la sessió"
  ],
  "Log in to {{host}}": [
   null,
@@ -351,11 +351,11 @@ return plural;
  ],
  "Prompting via ssh-add timed out": [
   null,
-  ""
+  "Per mitjà del temps d'espera de ssh-add"
  ],
  "Prompting via ssh-keygen timed out": [
   null,
-  ""
+  "Per mitjà del temps d'espera de ssh-keygen"
  ],
  "Public Key": [
   null,
@@ -411,7 +411,7 @@ return plural;
  ],
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
   null,
-  ""
+  "Per provar un port diferent, haureu d'actualitzar cockpit-ws a una versió més recent."
  ],
  "Type a password": [
   null,

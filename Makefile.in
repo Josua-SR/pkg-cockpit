@@ -1587,7 +1587,8 @@ EXTRA_DIST = package.json README.md $(NULL) $(WEBPACK_DEPS) \
 	src/common/mock_known_hosts src/common/mock-stderr \
 	src/common/com.redhat.Cockpit.DBusTests.xml \
 	src/common/cockpitassets.gresource.xml src/common/fail.html \
-	$(test_locale_PO) $(NULL) $(am__append_17) \
+	$(test_locale_PO) $(NULL) \
+	pkg/apps/content-security-policy.override $(am__append_17) \
 	dist/static/login.html dist/static/login.min.html \
 	dist/static/login.js dist/static/login.min.js \
 	dist/static/login.css dist/static/login.min.css \
@@ -1679,6 +1680,7 @@ SUBST_RULE = \
 
 # Webpack related
 WEBPACK_PACKAGES = \
+	apps \
 	dashboard \
 	docker \
 	kdump \
@@ -1753,7 +1755,7 @@ HTML_TEST_SERVER = $(builddir)/test-server
 VALGRIND_ARGS = --trace-children=yes --quiet --error-exitcode=33 \
 	--suppressions=valgrind-suppressions --gen-suppressions=all \
 	--num-callers=16 --leak-check=yes --show-leak-kinds=definite \
-	--errors-for-leak-kinds=definite --trace-children-skip='*mock*,/bin*,/usr/bin/*,/usr/local/bin,*cockpit-bridge,*cockpit-stub'
+	--errors-for-leak-kinds=definite --trace-children-skip='*mock*,/bin*,/usr/bin/*,/usr/local/bin'
 
 VALGRIND_SUPPRESSIONS = \
 	tools/gcrypt.supp \

@@ -78,12 +78,12 @@ return plural;
  ],
  ", including $1 security fix": [
   ", including $1 security fixes",
-  "",
-  ""
+  ", incloent-hi $1 correcció de seguretat",
+  ", incloent-hi $1 correccions de seguretat"
  ],
  "Applying updates": [
   null,
-  ""
+  "Aplicació de les actualitzacions"
  ],
  "Applying updates failed": [
   null,
@@ -101,13 +101,13 @@ return plural;
   null,
   "Cancel·la"
  ],
- "Check for updates": [
+ "Check for Updates": [
   null,
   "Comprova si hi ha actualitzacions"
  ],
  "Cockpit itself will be updated.": [
   null,
-  ""
+  "S'actualitzarà el mateix Cockpit."
  ],
  "Details": [
   null,
@@ -115,7 +115,7 @@ return plural;
  ],
  "Downloaded": [
   null,
-  ""
+  "Baixat"
  ],
  "Downloading": [
   null,
@@ -129,13 +129,13 @@ return plural;
   null,
   "S'està inicialitzant..."
  ],
- "Install all updates": [
+ "Install All Updates": [
   null,
-  "Instal·la totes les actualitzacions"
+  ""
  ],
- "Install security updates": [
+ "Install Security Updates": [
   null,
-  "Instal·la les actualitzacions de seguretat"
+  ""
  ],
  "Installed": [
   null,
@@ -143,7 +143,7 @@ return plural;
  ],
  "Installing": [
   null,
-  ""
+  "S'està instal·lant"
  ],
  "Last checked: $0 ago": [
   null,
@@ -151,11 +151,11 @@ return plural;
  ],
  "Loading available updates failed": [
   null,
-  ""
+  "Ha fallat la càrrega de les actualitzacions disponibles"
  ],
  "Loading available updates, please wait...": [
   null,
-  ""
+  "S'estan carregant les actualitzacions disponibles, espereu..."
  ],
  "More information…": [
   null,
@@ -167,15 +167,23 @@ return plural;
  ],
  "No updates pending": [
   null,
-  ""
+  "No hi ha actualitzacions pendents"
+ ],
+ "Off": [
+  null,
+  "Off"
+ ],
+ "On": [
+  null,
+  "On"
  ],
  "Package information": [
   null,
-  "Informació del paquet"
+  "Informació dels paquets"
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "PackageKit s'ha estavellat."
  ],
  "PackageKit is not installed": [
   null,
@@ -183,15 +191,15 @@ return plural;
  ],
  "PackageKit reported error code $0": [
   null,
-  ""
+  "PackageKit ha informat un codi d'error $0"
  ],
  "Refreshing package information": [
   null,
-  ""
+  "Refrescament de la informació dels paquets"
  ],
  "Register…": [
   null,
-  ""
+  "Registra..."
  ],
  "Restart Now": [
   null,
@@ -199,27 +207,27 @@ return plural;
  ],
  "Restart Recommended": [
   null,
-  ""
+  "Reinici recomanat"
  ],
  "Restarting": [
   null,
-  ""
+  "S'està reiniciant"
  ],
  "Security Update": [
   null,
-  ""
+  "Actualització de seguretat"
  ],
  "Set up": [
   null,
-  ""
+  "Configurat"
  ],
  "Setting up": [
   null,
-  ""
+  "S'està configurant"
  ],
  "Software Updates": [
   null,
-  "Actualitzacions de programari"
+  "Actualitzacions"
  ],
  "Some other program is currently using the package manager, please wait...": [
   null,
@@ -231,11 +239,11 @@ return plural;
  ],
  "The following packages were recently updated:": [
   null,
-  ""
+  "Els paquets següents s'han actualitzat recentment:"
  ],
  "The following packages were updated $0:": [
   null,
-  ""
+  "Els paquets següents s'han actualitzat $0:"
  ],
  "This system is not registered": [
   null,
@@ -243,31 +251,31 @@ return plural;
  ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
-  ""
+  "Per obtenir actualitzacions de programari, aquest sistema ha d'estar registrat a Red Hat, ja sigui utilitzant el Portal de clients de Red Hat o un servidor de subscripció local."
  ],
  "Unregistered System": [
   null,
-  ""
+  "Sistema sense registrar"
  ],
  "Update History": [
   null,
-  ""
+  "Historial d'actualitzacions"
  ],
  "Update Log": [
   null,
-  ""
+  "Registre d'actualitzacions"
  ],
  "Updated": [
   null,
-  ""
+  "Actualitzat"
  ],
  "Updated packages may require a restart to take effect.": [
   null,
-  ""
+  "Els paquets actualitzats poden requerir un reinici perquè tinguin efecte."
  ],
  "Updates are disabled.": [
   null,
-  ""
+  "Les actualitzacions estan inhabilitades."
  ],
  "Updating": [
   null,
@@ -275,11 +283,11 @@ return plural;
  ],
  "Verified": [
   null,
-  ""
+  "Verificat"
  ],
  "Verifying": [
   null,
-  ""
+  "S'està verificant"
  ],
  "Version": [
   null,
@@ -287,18 +295,22 @@ return plural;
  ],
  "View Registration Details": [
   null,
-  ""
+  "Mostra els detalls del registrament"
  ],
  "When you get disconnected, the updates will continue in the background. You can reconnect and resume watching the update progress.": [
   null,
-  ""
+  "Quan us desconnecteu, les actualitzacions continuaran en segon pla. Podeu tornar a connectar i continuar veient el progrés de l'actualització."
  ],
  "You need to re-subscribe this system.": [
   null,
-  ""
+  "Heu de tornar a subscriure aquest sistema."
  ],
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,
-  ""
+  "El vostre servidor tancarà la connexió aviat. Podeu tornar a connectar un cop s'hagi reiniciat."
+ ],
+ "undefined": [
+  null,
+  "indefinit"
  ]
 }));

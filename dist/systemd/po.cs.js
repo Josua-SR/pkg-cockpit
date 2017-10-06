@@ -345,11 +345,11 @@ return plural;
  ],
  "Close": [
   null,
-  ""
+  "Zavřít"
  ],
  "Command": [
   null,
-  ""
+  "Příkaz"
  ],
  "Condition $0=$1 was not met": [
   null,
@@ -377,11 +377,11 @@ return plural;
  ],
  "Description": [
   null,
-  ""
+  "Popis"
  ],
  "Disable": [
   null,
-  ""
+  "Zakázat"
  ],
  "Disabled": [
   null,
@@ -389,7 +389,7 @@ return plural;
  ],
  "Disk I/O": [
   null,
-  ""
+  "Diskové I/O"
  ],
  "Domain": [
   null,
@@ -413,7 +413,7 @@ return plural;
  ],
  "Entry": [
   null,
-  ""
+  "Položka"
  ],
  "Error": [
   null,
@@ -421,15 +421,15 @@ return plural;
  ],
  "Everything": [
   null,
-  ""
+  "Vše"
  ],
  "Free": [
   null,
-  ""
+  "Volno"
  ],
  "Friday": [
   null,
-  ""
+  "pátek"
  ],
  "Go to": [
   null,
@@ -441,11 +441,11 @@ return plural;
  ],
  "Hardware": [
   null,
-  ""
+  "Hardware"
  ],
  "Host Name": [
   null,
-  ""
+  "Název počítače"
  ],
  "Hour : Minute": [
   null,
@@ -457,7 +457,7 @@ return plural;
  ],
  "Hours": [
   null,
-  ""
+  "Hodin"
  ],
  "I/O Wait": [
   null,
@@ -465,7 +465,7 @@ return plural;
  ],
  "Id": [
   null,
-  ""
+  "Id"
  ],
  "Instantiate": [
   null,
@@ -497,7 +497,7 @@ return plural;
  ],
  "Journal": [
   null,
-  ""
+  "Žurnál"
  ],
  "Journal entry": [
   null,
@@ -509,7 +509,7 @@ return plural;
  ],
  "Kernel": [
   null,
-  ""
+  "Jádro"
  ],
  "Last 24 hours": [
   null,
@@ -561,7 +561,7 @@ return plural;
  ],
  "Memory": [
   null,
-  ""
+  "Paměť"
  ],
  "Message to logged in users": [
   null,
@@ -573,11 +573,11 @@ return plural;
  ],
  "Minutes": [
   null,
-  ""
+  "Minut"
  ],
  "Monday": [
   null,
-  ""
+  "pondělí"
  ],
  "NTP Server": [
   null,
@@ -617,7 +617,7 @@ return plural;
  ],
  "Note": [
   null,
-  ""
+  "Poznámka"
  ],
  "Off": [
   null,
@@ -641,7 +641,7 @@ return plural;
  ],
  "Paths": [
   null,
-  ""
+  "Cesty"
  ],
  "Performance Profile": [
   null,
@@ -729,7 +729,7 @@ return plural;
  ],
  "Reset": [
   null,
-  ""
+  "Reset"
  ],
  "Restart": [
   null,
@@ -737,7 +737,7 @@ return plural;
  ],
  "Run": [
   null,
-  ""
+  "Spustit"
  ],
  "Saturday": [
   null,
@@ -765,7 +765,7 @@ return plural;
  ],
  "Services": [
   null,
-  ""
+  "Služby"
  ],
  "Set Host name": [
   null,
@@ -777,7 +777,7 @@ return plural;
  ],
  "Severity": [
   null,
-  ""
+  "Závažnost"
  ],
  "Show fingerprints": [
   null,
@@ -785,7 +785,7 @@ return plural;
  ],
  "Shut Down": [
   null,
-  ""
+  "Ukončit"
  ],
  "Since $0": [
   null,
@@ -805,7 +805,7 @@ return plural;
  ],
  "State": [
   null,
-  ""
+  "Stav"
  ],
  "Static": [
   null,
@@ -813,7 +813,7 @@ return plural;
  ],
  "Stop": [
   null,
-  ""
+  "Zastavit"
  ],
  "Store Performance Data": [
   null,
@@ -821,7 +821,7 @@ return plural;
  ],
  "Sunday": [
   null,
-  ""
+  "neděle"
  ],
  "Swap Used": [
   null,
@@ -837,7 +837,7 @@ return plural;
  ],
  "System": [
   null,
-  ""
+  "Systém"
  ],
  "System Services": [
   null,
@@ -885,7 +885,7 @@ return plural;
  ],
  "Thursday": [
   null,
-  ""
+  "čtvrtek"
  ],
  "Time Zone": [
   null,
@@ -901,7 +901,7 @@ return plural;
  ],
  "Tuesday": [
   null,
-  ""
+  "úterý"
  ],
  "Unmask": [
   null,
@@ -913,11 +913,11 @@ return plural;
  ],
  "User": [
   null,
-  ""
+  "Uživatel"
  ],
  "Version": [
   null,
-  ""
+  "Verze"
  ],
  "Wednesday": [
   null,
@@ -945,7 +945,7 @@ return plural;
  ],
  "unknown": [
   null,
-  ""
+  "neznámý"
  ],
  "page-title\u0004CPU Status": [
   null,

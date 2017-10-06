@@ -1661,6 +1661,9 @@ kubernetes-topology-graph {
   float: right;
   width: 25%;
 }
+.kube-pane .sidebar-pf-right {
+  right: 0px;
+}
 .kube-pane .sidebar-pf {
   position: fixed;
   width: 25%;
@@ -1695,7 +1698,6 @@ kubernetes-topology-icon {
 }
 .topology-actions {
   float: right;
-  margin-right: 20px;
 }
 .kube-topology g.ReplicationController text {
   font-size: 24px;

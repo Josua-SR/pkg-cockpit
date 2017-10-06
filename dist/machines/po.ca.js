@@ -69,7 +69,7 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  ""
+  "$0 està disponible per a la majoria de sistemes operatius. Per instal·lar-ho, cerqueu-ho a GNOME Software o executeu el següent:"
  ],
  "Address:": [
   null,
@@ -117,11 +117,11 @@ return plural;
  ],
  "Connect with any $0 viewer application.": [
   null,
-  ""
+  "Connecta amb qualsevol aplicació de visualització $0."
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  ""
+  "Connecta amb qualsevol aplicació de visualització SPICE o VNC."
  ],
  "Connection": [
   null,
@@ -141,7 +141,7 @@ return plural;
  ],
  "Delete associated storage files:": [
   null,
-  ""
+  "Suprimeix els fitxers d'emmagatzematge associats:"
  ],
  "Device": [
   null,
@@ -157,7 +157,7 @@ return plural;
  ],
  "Emulated Machine:": [
   null,
-  ""
+  "Màquina emulada:"
  ],
  "File": [
   null,
@@ -201,7 +201,7 @@ return plural;
  ],
  "No VM is running or defined on this host": [
   null,
-  ""
+  "No hi ha cap MV en execució o definida en aquest amfitrió"
  ],
  "No boot device found": [
   null,
@@ -217,7 +217,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "D'acord"
  ],
  "Overview": [
   null,
@@ -273,7 +273,7 @@ return plural;
  ],
  "Session": [
   null,
-  "Versió"
+  "Sessió"
  ],
  "Shut Down": [
   null,
@@ -301,11 +301,11 @@ return plural;
  ],
  "Target": [
   null,
-  ""
+  "Objectiu"
  ],
  "The VM crashed.": [
   null,
-  ""
+  "La MV s'ha estavellat."
  ],
  "The VM is down.": [
   null,
@@ -341,11 +341,11 @@ return plural;
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
-  ""
+  "Actualitzeu a una versió més recent de libvirt per visualitzar les estadístiques dels discs"
  ],
  "Usage": [
   null,
-  ""
+  "Ús"
  ],
  "Used": [
   null,
@@ -353,15 +353,15 @@ return plural;
  ],
  "VM FORCE OFF action failed": [
   null,
-  ""
+  "Ha fallat l'acció VM FORCE OFF"
  ],
  "VM FORCE REBOOT action failed": [
   null,
-  ""
+  "Ha fallat l'acció VM FORCE REBOOT"
  ],
  "VM REBOOT action failed": [
   null,
-  ""
+  "Ha fallat l'acció VM REBOOT"
  ],
  "VM SEND Non-Maskable Interrrupt action failed": [
   null,
@@ -369,27 +369,27 @@ return plural;
  ],
  "VM SHUT DOWN action failed": [
   null,
-  ""
+  "Ha fallat l'acció VM SHUT DOWN"
  ],
  "VM START action failed": [
   null,
-  ""
+  "Ha fallat l'acció VM START"
  ],
  "VNC": [
   null,
-  ""
+  "VNC"
  ],
  "VNC Address:": [
   null,
-  ""
+  "Adreça VNC:"
  ],
  "VNC Port:": [
   null,
-  ""
+  "Port VNC:"
  ],
  "VNC TLS Port:": [
   null,
-  ""
+  "Port TLS VNC:"
  ],
  "Virtual Machines": [
   null,
@@ -401,19 +401,19 @@ return plural;
  ],
  "Your browser does not support iframes.": [
   null,
-  ""
+  "El vostre navegador no admet iframes."
  ],
  "cdrom": [
   null,
-  ""
+  "cdrom"
  ],
  "crashed": [
   null,
-  ""
+  "estavellat"
  ],
  "custom": [
   null,
-  ""
+  "personalitzat"
  ],
  "disabled": [
   null,
@@ -421,11 +421,11 @@ return plural;
  ],
  "disk": [
   null,
-  ""
+  "disc"
  ],
  "dying": [
   null,
-  ""
+  "morint"
  ],
  "enabled": [
   null,
@@ -433,11 +433,11 @@ return plural;
  ],
  "host": [
   null,
-  ""
+  "amfitrió"
  ],
  "idle": [
   null,
-  ""
+  "ociós"
  ],
  "network": [
   null,
@@ -449,7 +449,7 @@ return plural;
  ],
  "other": [
   null,
-  ""
+  "altres"
  ],
  "paused": [
   null,
@@ -461,19 +461,19 @@ return plural;
  ],
  "shut off": [
   null,
-  ""
+  "apagat"
  ],
  "shutdown": [
   null,
-  ""
+  "apaga"
  ],
  "suspended (PM)": [
   null,
-  ""
+  "suspès (PM)"
  ],
  "vCPUs:": [
   null,
-  ""
+  "vCPUs:"
  ],
  "yes": [
   null,

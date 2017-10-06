@@ -133,7 +133,7 @@ return plural;
  ],
  "Always": [
   null,
-  ""
+  "Vždy"
  ],
  "Are you sure you want to delete this image?": [
   null,
@@ -141,7 +141,7 @@ return plural;
  ],
  "Author": [
   null,
-  ""
+  "Autor"
  ],
  "CPU": [
   null,
@@ -177,7 +177,7 @@ return plural;
  ],
  "Close": [
   null,
-  ""
+  "Zavřít"
  ],
  "Combined CPU usage": [
   null,
@@ -189,7 +189,7 @@ return plural;
  ],
  "Command": [
   null,
-  ""
+  "Příkaz"
  ],
  "Command can't be empty": [
   null,
@@ -237,7 +237,7 @@ return plural;
  ],
  "Containers": [
   null,
-  ""
+  "Kontejnery"
  ],
  "Could not add all disks": [
   null,
@@ -257,11 +257,11 @@ return plural;
  ],
  "Default": [
   null,
-  ""
+  "Výchozí"
  ],
  "Delete": [
   null,
-  ""
+  "Smazat"
  ],
  "Delete $0": [
   null,
@@ -277,7 +277,7 @@ return plural;
  ],
  "Details": [
   null,
-  ""
+  "Podrobnosti"
  ],
  "Docker is not installed or activated on the system": [
   null,
@@ -285,11 +285,11 @@ return plural;
  ],
  "Download": [
   null,
-  ""
+  "Stáhnout"
  ],
  "Drive": [
   null,
-  ""
+  "Mechanika"
  ],
  "Duplicate alias": [
   null,
@@ -321,7 +321,7 @@ return plural;
  ],
  "Everything": [
   null,
-  ""
+  "Vše"
  ],
  "Exited $ExitCode": [
   null,
@@ -345,7 +345,7 @@ return plural;
  ],
  "Free": [
   null,
-  ""
+  "Volno"
  ],
  "Gateway:": [
   null,
@@ -357,11 +357,11 @@ return plural;
  ],
  "Hard Disk": [
   null,
-  ""
+  "Pevný disk"
  ],
  "IP Address:": [
   null,
-  ""
+  "IP adresa:"
  ],
  "IP Prefix Length:": [
   null,
@@ -369,11 +369,11 @@ return plural;
  ],
  "Id": [
   null,
-  ""
+  "Id"
  ],
  "Id:": [
   null,
-  ""
+  "Id:"
  ],
  "Image": [
   null,
@@ -429,7 +429,7 @@ return plural;
  ],
  "Memory": [
   null,
-  ""
+  "Paměť"
  ],
  "Memory limit": [
   null,
@@ -441,7 +441,7 @@ return plural;
  ],
  "MiB": [
   null,
-  ""
+  "MiB"
  ],
  "Mount container volumes": [
   null,
@@ -501,7 +501,7 @@ return plural;
  ],
  "Not found": [
   null,
-  ""
+  "Nenalezeno"
  ],
  "Off": [
   null,
@@ -527,7 +527,7 @@ return plural;
  ],
  "Overview": [
   null,
-  ""
+  "Přehled"
  ],
  "Please confirm deletion of $0": [
   null,
@@ -543,7 +543,7 @@ return plural;
  ],
  "Ports": [
   null,
-  ""
+  "Porty"
  ],
  "Ports:": [
   null,
@@ -563,11 +563,11 @@ return plural;
  ],
  "Repository": [
   null,
-  ""
+  "Repozitář"
  ],
  "Reset": [
   null,
-  ""
+  "Reset"
  ],
  "Reset Storage Pool": [
   null,
@@ -595,7 +595,7 @@ return plural;
  ],
  "Run": [
   null,
-  ""
+  "Spustit"
  ],
  "Run Image": [
   null,
@@ -603,7 +603,7 @@ return plural;
  ],
  "Security": [
   null,
-  ""
+  "Bezpečnost"
  ],
  "Set container environment variables": [
   null,
@@ -619,7 +619,7 @@ return plural;
  ],
  "Size": [
   null,
-  ""
+  "Velikost"
  ],
  "Solid-State Disk": [
   null,
@@ -635,23 +635,23 @@ return plural;
  ],
  "State": [
   null,
-  ""
+  "Stav"
  ],
  "State:": [
   null,
-  ""
+  "Stav:"
  ],
  "Stop": [
   null,
-  ""
+  "Zastavit"
  ],
  "Stopped": [
   null,
-  ""
+  "Zastaveno"
  ],
  "Storage": [
   null,
-  ""
+  "Úložiště"
  ],
  "Storage pool": [
   null,
@@ -691,7 +691,7 @@ return plural;
  ],
  "Total": [
   null,
-  ""
+  "Celkový"
  ],
  "Try again": [
   null,
@@ -743,7 +743,7 @@ return plural;
  ],
  "default": [
   null,
-  ""
+  "výchozí"
  ],
  "key": [
   null,
@@ -783,7 +783,7 @@ return plural;
  ],
  "page-title\u0004Containers": [
   null,
-  ""
+  "Kontejnery"
  ],
  "page-title\u0004Images": [
   null,

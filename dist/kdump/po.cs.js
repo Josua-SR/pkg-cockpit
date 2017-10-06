@@ -69,7 +69,7 @@ return plural;
  },
  "Apply": [
   null,
-  ""
+  "Použít"
  ],
  "Cancel": [
   null,
@@ -93,7 +93,7 @@ return plural;
  ],
  "Directory": [
   null,
-  ""
+  "Adresář"
  ],
  "Directory $0 isn't writable or doesn't exist.": [
   null,
@@ -117,11 +117,11 @@ return plural;
  ],
  "Location": [
   null,
-  ""
+  "Umístění"
  ],
  "More details": [
   null,
-  ""
+  "Více podrobností"
  ],
  "Mount": [
   null,
@@ -177,7 +177,7 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "Server"
  ],
  "Service has an error": [
   null,

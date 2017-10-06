@@ -187,7 +187,7 @@ return plural;
  ],
  "Command can't be empty": [
   null,
-  ""
+  "L'ordre no pot estar en blanc"
  ],
  "Command:": [
   null,
@@ -195,11 +195,11 @@ return plural;
  ],
  "Commit": [
   null,
-  ""
+  "Consigna"
  ],
  "Commit Image": [
   null,
-  ""
+  "Consigna la imatge"
  ],
  "Configure storage...": [
   null,
@@ -235,11 +235,11 @@ return plural;
  ],
  "Could not add all disks": [
   null,
-  ""
+  "No s'han pogut afegir tots els discs"
  ],
  "Could not reset the storage pool": [
   null,
-  ""
+  "No s'ha pogut restablir l'agrupació d'emmagatzematge"
  ],
  "Created": [
   null,
@@ -247,7 +247,7 @@ return plural;
  ],
  "Created:": [
   null,
-  ""
+  "Creat:"
  ],
  "Default": [
   null,
@@ -303,11 +303,11 @@ return plural;
  ],
  "Erase containers and reset storage pool": [
   null,
-  ""
+  "Esborra els contenidors i restableix l'agrupació d'emmagatzematge"
  ],
  "Erase containers, reformat disks, and add them": [
   null,
-  ""
+  "Esborra els contenidors, torna formatar els discs i afegeix-los"
  ],
  "Error message from Docker:": [
   null,
@@ -359,7 +359,7 @@ return plural;
  ],
  "IP Prefix Length:": [
   null,
-  ""
+  "Longitud del prefix IP:"
  ],
  "Id": [
   null,
@@ -503,7 +503,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "D'acord"
  ],
  "On": [
   null,
@@ -511,12 +511,12 @@ return plural;
  ],
  "On Failure": [
   null,
-  ""
+  "Amb la fallada"
  ],
  "On failure, retry $0 time": [
   "On failure, retry $0 times",
-  "",
-  ""
+  "Amb la fallada, reintenta $0 cop",
+  "Amb la fallada, reintenta $0 cops"
  ],
  "Overview": [
   null,
@@ -540,7 +540,7 @@ return plural;
  ],
  "Ports:": [
   null,
-  ""
+  "Ports:"
  ],
  "ReadOnly": [
   null,
@@ -580,11 +580,11 @@ return plural;
  ],
  "Restart Policy:": [
   null,
-  ""
+  "Reinicia la política:"
  ],
  "Retries:": [
   null,
-  ""
+  "Intents:"
  ],
  "Run": [
   null,
@@ -632,7 +632,7 @@ return plural;
  ],
  "State:": [
   null,
-  ""
+  "Estat:"
  ],
  "Stop": [
   null,
@@ -680,11 +680,11 @@ return plural;
  ],
  "This image does not exist.": [
   null,
-  ""
+  "No existeix aquesta image."
  ],
  "Total": [
   null,
-  ""
+  "Total"
  ],
  "Try again": [
   null,
@@ -704,7 +704,7 @@ return plural;
  ],
  "Unless Stopped": [
   null,
-  ""
+  "A menys que s'aturi"
  ],
  "Up since $StartedAt": [
   null,
@@ -716,7 +716,7 @@ return plural;
  ],
  "Used by Containers": [
   null,
-  "Contenidors"
+  "Utilitzat pels contenidors"
  ],
  "Volumes": [
   null,
@@ -728,7 +728,7 @@ return plural;
  ],
  "You don't have permission to manage the Docker storage pool.": [
   null,
-  ""
+  "No teniu els permisos per gestionar l'agrupació d'emmagatzematge de Docker."
  ],
  "alias": [
   null,
@@ -760,7 +760,7 @@ return plural;
  ],
  "to host path": [
   null,
-  ""
+  "al camí de l'amfitrió"
  ],
  "to host port": [
   null,
@@ -768,7 +768,7 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "indefinit"
  ],
  "value": [
   null,

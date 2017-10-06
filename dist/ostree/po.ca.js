@@ -81,7 +81,7 @@ return plural;
  ],
  "- Add New Repository": [
   null,
-  "Dipòsit"
+  "- Afegeix un dipòsit nou"
  ],
  "Add": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "Change Repository": [
   null,
-  "Dipòsit"
+  "Canvia de dipòsit"
  ],
  "Check for Updates": [
   null,
@@ -121,11 +121,11 @@ return plural;
  ],
  "Checking for updates": [
   null,
-  "S'està comprovant si hi ha actualitzacions"
+  "Comprovació per si hi ha actualitzacions"
  ],
  "Connecting to OSTree": [
   null,
-  ""
+  "S'està connectant a OSTree"
  ],
  "Couldn't load settings for '$0': $1": [
   null,
@@ -161,7 +161,7 @@ return plural;
  ],
  "Good Signature": [
   null,
-  ""
+  "Bona signatura"
  ],
  "Invalid Signature": [
   null,
@@ -265,15 +265,15 @@ return plural;
  ],
  "Signature": [
   null,
-  ""
+  "Signatura"
  ],
  "Signed by": [
   null,
-  ""
+  "Signat per"
  ],
  "Software Updates": [
   null,
-  "Actualitzacions de programari"
+  "Actualitzacions"
  ],
  "Status": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "This deployment contains the same packages as your currently booted system": [
   null,
-  ""
+  "Aquest desplegament conté els mateixos paquets que el vostre sistema arrencat actualment"
  ],
  "Tree": [
   null,
@@ -289,7 +289,7 @@ return plural;
  ],
  "URL": [
   null,
-  ""
+  "URL"
  ],
  "Unable to communicate with OSTree": [
   null,
@@ -317,7 +317,7 @@ return plural;
  ],
  "When": [
   null,
-  ""
+  "Quan"
  ],
  "Writing objects": [
   null,

@@ -109,10 +109,10 @@ return plural;
  ],
  "The generated archive contains data considered sensitive and its content should be reviewed by the originating organization before being passed to any third party.": [
   null,
-  ""
+  "L'arxiu generat conté dades considerades com a sensibles i el seu contingut s'ha de revisar abans de passar-ho a un tercer."
  ],
  "This tool will collect system configuration and diagnostic information from this system for use with diagnosing problems with the system.": [
   null,
-  "Aquesta eina recopilarà la configuració del sistema i la informació de diagnòstic d'aquest sistema per al seu ús amb el diagnòstic de problemes amb el sistema."
+  "Aquesta eina recopilarà la configuració i la informació de diagnòstic d'aquest sistema per a l'ús amb el diagnòstic de problemes amb el sistema."
  ]
 }));

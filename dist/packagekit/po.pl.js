@@ -103,7 +103,7 @@ return plural;
   null,
   "Anuluj"
  ],
- "Check for updates": [
+ "Check for Updates": [
   null,
   "Wyszukaj aktualizacje"
  ],
@@ -131,13 +131,13 @@ return plural;
   null,
   "Inicjowanie…"
  ],
- "Install all updates": [
+ "Install All Updates": [
   null,
-  "Zainstaluj wszystkie aktualizacje"
+  ""
  ],
- "Install security updates": [
+ "Install Security Updates": [
   null,
-  "Zainstaluj aktualizacje zabezpieczeń"
+  ""
  ],
  "Installed": [
   null,
@@ -170,6 +170,14 @@ return plural;
  "No updates pending": [
   null,
   "Brak oczekujących aktualizacji"
+ ],
+ "Off": [
+  null,
+  "Wyłączone"
+ ],
+ "On": [
+  null,
+  "Włączone"
  ],
  "Package information": [
   null,
@@ -302,5 +310,9 @@ return plural;
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,
   "Serwer niedługo zamknie połączenie. Można połączyć jeszcze raz po jego ponownym uruchomieniu."
+ ],
+ "undefined": [
+  null,
+  "nieokreślone"
  ]
 }));

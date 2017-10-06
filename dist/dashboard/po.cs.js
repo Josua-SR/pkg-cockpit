@@ -129,7 +129,7 @@ return plural;
  ],
  "Add": [
   null,
-  ""
+  "Přidat"
  ],
  "Add Machine to Dashboard": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Address": [
   null,
-  ""
+  "Adresa"
  ],
  "Authentication": [
   null,
@@ -149,7 +149,7 @@ return plural;
  ],
  "Available": [
   null,
-  ""
+  "Dostupný"
  ],
  "Avatar": [
   null,
@@ -169,7 +169,7 @@ return plural;
  ],
  "Close": [
   null,
-  ""
+  "Zavřít"
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Connect": [
   null,
-  ""
+  "Spojení"
  ],
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
@@ -221,7 +221,7 @@ return plural;
  ],
  "Disk I/O": [
   null,
-  ""
+  "Diskové I/O"
  ],
  "Edit Server": [
   null,
@@ -253,7 +253,7 @@ return plural;
  ],
  "Fingerprint": [
   null,
-  ""
+  "Otisk"
  ],
  "Go to now": [
   null,
@@ -261,7 +261,7 @@ return plural;
  ],
  "Host Name": [
   null,
-  ""
+  "Název počítače"
  ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
@@ -291,13 +291,13 @@ return plural;
   null,
   ""
  ],
- "Leave blank to connect to this machine as the currently logged in user{{#user}} ({{user}}){{/user}}. If you enter a different username, that user will always be used connecting to this machine.": [
+ "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
   ""
  ],
  "Log In": [
   null,
-  ""
+  "Přihlášení"
  ],
  "Log in to {{host}}": [
   null,
@@ -313,7 +313,7 @@ return plural;
  ],
  "Memory": [
   null,
-  ""
+  "Paměť"
  ],
  "Network": [
   null,
@@ -345,7 +345,7 @@ return plural;
  ],
  "Password": [
   null,
-  ""
+  "Heslo"
  ],
  "Password not accepted": [
   null,
@@ -353,7 +353,7 @@ return plural;
  ],
  "Port": [
   null,
-  ""
+  "Port"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -373,11 +373,11 @@ return plural;
  ],
  "Servers": [
   null,
-  ""
+  "Servery"
  ],
  "Set": [
   null,
-  ""
+  "Sada"
  ],
  "Synchronize": [
   null,
@@ -433,11 +433,11 @@ return plural;
  ],
  "User": [
   null,
-  ""
+  "Uživatel"
  ],
  "User name": [
   null,
-  ""
+  "Uživatelské jméno"
  ],
  "Using available credentials": [
   null,

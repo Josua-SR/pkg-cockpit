@@ -97,13 +97,13 @@ return plural;
  ],
  "Bugs": [
   null,
-  ""
+  "Chyby"
  ],
  "Cancel": [
   null,
   "Zrušit"
  ],
- "Check for updates": [
+ "Check for Updates": [
   null,
   ""
  ],
@@ -113,7 +113,7 @@ return plural;
  ],
  "Details": [
   null,
-  ""
+  "Podrobnosti"
  ],
  "Downloaded": [
   null,
@@ -121,31 +121,31 @@ return plural;
  ],
  "Downloading": [
   null,
-  ""
+  "Stažení"
  ],
  "Ignore": [
   null,
-  ""
+  "Ignorovat"
  ],
  "Initializing...": [
   null,
   ""
  ],
- "Install all updates": [
+ "Install All Updates": [
   null,
   ""
  ],
- "Install security updates": [
+ "Install Security Updates": [
   null,
   ""
  ],
  "Installed": [
   null,
-  ""
+  "Nainstalováno"
  ],
  "Installing": [
   null,
-  ""
+  "Instalování"
  ],
  "Last checked: $0 ago": [
   null,
@@ -168,6 +168,14 @@ return plural;
   ""
  ],
  "No updates pending": [
+  null,
+  ""
+ ],
+ "Off": [
+  null,
+  ""
+ ],
+ "On": [
   null,
   ""
  ],
@@ -261,7 +269,7 @@ return plural;
  ],
  "Updated": [
   null,
-  ""
+  "Aktualizováno"
  ],
  "Updated packages may require a restart to take effect.": [
   null,
@@ -281,11 +289,11 @@ return plural;
  ],
  "Verifying": [
   null,
-  ""
+  "Ověřuji"
  ],
  "Version": [
   null,
-  ""
+  "Verze"
  ],
  "View Registration Details": [
   null,
@@ -300,6 +308,10 @@ return plural;
   ""
  ],
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
+  null,
+  ""
+ ],
+ "undefined": [
   null,
   ""
  ]

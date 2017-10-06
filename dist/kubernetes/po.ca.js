@@ -103,7 +103,7 @@ return plural;
  ],
  "Add Cluster Node": [
   null,
-  ""
+  "Afegeix un node de clúster"
  ],
  "Add Group": [
   null,
@@ -123,7 +123,7 @@ return plural;
  ],
  "Add New Cluster": [
   null,
-  ""
+  "Afegeix un dispositiu nou"
  ],
  "Add New User": [
   null,
@@ -155,11 +155,11 @@ return plural;
  ],
  "Adjust Persistent Volume '{{ item.metadata.name }}'": [
   null,
-  ""
+  "Ajusta el volum persistent '{{ item.metadata.name }}'"
  ],
  "Adjust Replication Controller {{ item.metadata.name }}": [
   null,
-  ""
+  "Ajusta el controlador de replicació {{ item.metadata.name }}"
  ],
  "Adjust Route": [
   null,
@@ -171,7 +171,7 @@ return plural;
  ],
  "Admin": [
   null,
-  ""
+  "Administrador"
  ],
  "All Projects": [
   null,
@@ -203,7 +203,7 @@ return plural;
  ],
  "Anonymous: Allow all unauthenticated users to pull images": [
   null,
-  ""
+  "Anònim: permet que tots els usuaris no autenticats recuperin imatges"
  ],
  "Authentication": [
   null,
@@ -247,11 +247,11 @@ return plural;
  ],
  "Change User": [
   null,
-  ""
+  "Canvia l'usuari"
  ],
  "Change image stream": [
   null,
-  ""
+  "Canvia el flux d'imatges"
  ],
  "Change project": [
   null,
@@ -263,11 +263,11 @@ return plural;
  ],
  "Claim": [
   null,
-  ""
+  "Reclama"
  ],
  "Claim Name": [
   null,
-  ""
+  "Nom de la reclamació"
  ],
  "Client Certificate": [
   null,
@@ -287,7 +287,7 @@ return plural;
  ],
  "Configure Kubelet and Proxy": [
   null,
-  "Configura el Kubelet i el servidor intermediari"
+  "Configura Kubelet i el servidor intermediari"
  ],
  "Connect": [
   null,
@@ -343,11 +343,11 @@ return plural;
  ],
  "Create empty image stream": [
   null,
-  ""
+  "Crea un flux d'imatges buit"
  ],
  "Create image stream": [
   null,
-  ""
+  "Crea un flux d'imatges"
  ],
  "Created": [
   null,
@@ -367,11 +367,11 @@ return plural;
  ],
  "Delete Persistent Volume": [
   null,
-  ""
+  "Suprimeix el volum persistent"
  ],
  "Delete Persistent Volume Claim": [
   null,
-  ""
+  "Suprimeix la reclamació del volum persistent"
  ],
  "Delete Project": [
   null,
@@ -379,11 +379,11 @@ return plural;
  ],
  "Delete Selected": [
   null,
-  ""
+  "Suprimeix la selecció"
  ],
  "Delete image stream": [
   null,
-  ""
+  "Suprimeix el flux d'imatges"
  ],
  "Delete {{ item.kind }}": [
   null,
@@ -411,7 +411,7 @@ return plural;
  ],
  "Deployment Configs": [
   null,
-  "Configuracions del desplegament"
+  "Configuracions de desplegaments"
  ],
  "Description": [
   null,
@@ -439,15 +439,15 @@ return plural;
  ],
  "Do you want to add the role '{{ fields.displayRole }}'?": [
   null,
-  ""
+  "Voleu afegir el rol '{{ fields.displayRole }}'?"
  ],
  "Do you want to delete the '{{stream.metadata.namespace}}/{{stream.metadata.name}}' image stream?": [
   null,
-  ""
+  "Voleu suprimir el flux d'imatges '{{stream.metadata.namespace}}/{{stream.metadata.name}}'?"
  ],
  "Do you want to delete the Persistent Volume '{{item.metadata.name}}'?": [
   null,
-  ""
+  "Voleu suprimir el volum persistent '{{item.metadata.name}}'?"
  ],
  "Do you want to delete the Persistent Volume Claim '{{item.metadata.name}}'?": [
   null,
@@ -463,15 +463,15 @@ return plural;
  ],
  "Do you want to remove the image tagged as '{{stream.metadata.namespace}}/{{stream.metadata.name}}:{{tag.tag}}'?": [
   null,
-  ""
+  "Voleu suprimir la imatge etiquetada com a '{{stream.metadata.namespace}}/{{stream.metadata.name}}:{{tag.tag}}'?"
  ],
  "Do you want to remove the role '{{ fields.displayRole }}' from member {{ fields.member.metadata.name }}?": [
   null,
-  ""
+  "Voleu suprimir el rol '{{ fields.displayRole }}' del membre {{ fields.member.metadata.name }}?"
  ],
  "Don't pull images automatically": [
   null,
-  ""
+  "No recuperis automàticament les imatges"
  ],
  "Driver": [
   null,
@@ -491,7 +491,7 @@ return plural;
  ],
  "Endpoints": [
   null,
-  ""
+  "Extrems"
  ],
  "Environment": [
   null,
@@ -499,11 +499,11 @@ return plural;
  ],
  "Error getting certificate details: $0": [
   null,
-  ""
+  "S'ha produït un error en obtenir els certificats: $0"
  ],
  "Error writing kubectl config": [
   null,
-  ""
+  "S'ha produït un error en escriure la configuració de kubectl"
  ],
  "Fibre Channel": [
   null,
@@ -527,7 +527,7 @@ return plural;
  ],
  "GCE Persistent Disk": [
   null,
-  ""
+  "Disc persistent GCE"
  ],
  "Git Repository": [
   null,
@@ -563,7 +563,7 @@ return plural;
  ],
  "Host Path": [
   null,
-  ""
+  "Camí a l'amfitrió"
  ],
  "IP": [
   null,
@@ -595,11 +595,11 @@ return plural;
  ],
  "Image Registry": [
   null,
-  "Registre de la imatge"
+  "Registre d'imatges"
  ],
  "Image Stream": [
   null,
-  "Flux de la imatge"
+  "Flux d'imatges"
  ],
  "Image commands": [
   null,
@@ -767,7 +767,7 @@ return plural;
  ],
  "New image stream": [
   null,
-  ""
+  "Flux d'imatges nou"
  ],
  "New project": [
   null,
@@ -827,11 +827,11 @@ return plural;
  ],
  "No volumes are present.": [
   null,
-  ""
+  "No hi ha volums presents."
  ],
  "No volumes in use": [
   null,
-  ""
+  "Sense volums en ús"
  ],
  "Node": [
   null,
@@ -903,7 +903,7 @@ return plural;
  ],
  "Pending Volume Claims": [
   null,
-  ""
+  "Reclamacions de volums pendents"
  ],
  "Persistent Volumes": [
   null,
@@ -939,7 +939,7 @@ return plural;
  ],
  "Please provide a valid interface": [
   null,
-  ""
+  "Proporcioneu una interfície vàlida"
  ],
  "Please provide a valid logical unit number": [
   null,
@@ -1027,7 +1027,7 @@ return plural;
  ],
  "Private: Allow only specific users or groups to pull images": [
   null,
-  ""
+  "Privat: permet que només els usuaris o grups específics recuperin imatges"
  ],
  "Project": [
   null,
@@ -1039,11 +1039,11 @@ return plural;
  ],
  "Project access policy allows anonymous users to pull images.": [
   null,
-  ""
+  "La política d'accés de projecte permet que els usuaris anònims recuperin imatges."
  ],
  "Project access policy allows any authenticated user to pull images.": [
   null,
-  ""
+  "La política d'accés públic permet que qualsevol usuari o grup autenticat recuperi imatges."
  ],
  "Project access policy only allows specific members to access images.": [
   null,
@@ -1063,15 +1063,15 @@ return plural;
  ],
  "Pull an image:": [
   null,
-  ""
+  "Recupera una imatge:"
  ],
  "Pull from": [
   null,
-  ""
+  "Recupera de"
  ],
  "Pull specific tags from another image repository": [
   null,
-  ""
+  "Recupera les etiquetes específiques d'un altre dipòsit d'imatges"
  ],
  "Push an image:": [
   null,
@@ -1119,19 +1119,19 @@ return plural;
  ],
  "Recycle": [
   null,
-  ""
+  "Recicla"
  ],
  "Register": [
   null,
-  ""
+  "Registra"
  ],
  "Register New Volume": [
   null,
-  ""
+  "Registra un volum nou"
  ],
  "Register Persistent Volume": [
   null,
-  ""
+  "Registra un volum persistent"
  ],
  "Remote registry is insecure": [
   null,
@@ -1139,7 +1139,7 @@ return plural;
  ],
  "Remove": [
   null,
-  "Elimina"
+  "Suprimeix"
  ],
  "Remove Group": [
   null,
@@ -1227,7 +1227,7 @@ return plural;
  ],
  "Routes": [
   null,
-  "Rutes"
+  "Encaminaments"
  ],
  "Scheduled Pods": [
   null,
@@ -1235,7 +1235,7 @@ return plural;
  ],
  "Scheduling Disabled": [
   null,
-  ""
+  "Planificació inhabilitada"
  ],
  "Secret": [
   null,
@@ -1243,15 +1243,15 @@ return plural;
  ],
  "Secret File": [
   null,
-  ""
+  "Fitxer secret"
  ],
  "Secret Name": [
   null,
-  ""
+  "Nom secret"
  ],
  "Secret Volume": [
   null,
-  ""
+  "Volum secret"
  ],
  "Select Manifest File...": [
   null,
@@ -1291,7 +1291,7 @@ return plural;
  ],
  "Shared: Allow any authenticated user to pull images": [
   null,
-  ""
+  "Compartit: permet que qualsevol usuari autenticat recuperi imatges"
  ],
  "Shell": [
   null,
@@ -1303,7 +1303,7 @@ return plural;
  ],
  "Show all Deployment Configs": [
   null,
-  ""
+  "Mostra totes les configuracions de desplegament"
  ],
  "Show all Nodes": [
   null,
@@ -1311,7 +1311,7 @@ return plural;
  ],
  "Show all Persistent Volumes": [
   null,
-  ""
+  "Mostra tots els volums persistents"
  ],
  "Show all Pod Containers": [
   null,
@@ -1339,7 +1339,7 @@ return plural;
  ],
  "Show all image streams": [
   null,
-  ""
+  "Mostra tots els fluxos d'imatges"
  ],
  "Show all images": [
   null,
@@ -1371,7 +1371,7 @@ return plural;
  ],
  "Strategy": [
   null,
-  ""
+  "Estratègia"
  ],
  "Sync all tags from a remote image repository": [
   null,
@@ -1387,7 +1387,7 @@ return plural;
  ],
  "Target": [
   null,
-  ""
+  "Objectiu"
  ],
  "Target Portal": [
   null,
@@ -1407,15 +1407,15 @@ return plural;
  ],
  "The container '{{ target }}' does not exist.": [
   null,
-  ""
+  "El contenidor '{{ target }}' no existeix."
  ],
  "The deployment config '{{ target }}' does not exist.": [
   null,
-  ""
+  "La configuració del desplegament '{{ target }}' no existeix."
  ],
  "The group '{{ groupName }}' does not exist.": [
   null,
-  ""
+  "El grup '{{ groupName }}' no existeix."
  ],
  "The maximum number of replicas is 128": [
   null,
@@ -1427,35 +1427,35 @@ return plural;
  ],
  "The node '{{ target }}' does not exist.": [
   null,
-  ""
+  "El node '{{ target }}' no existeix."
  ],
  "The node doesn't have enough disk space": [
   null,
-  ""
+  "El node no té prou espai lliure al disc"
  ],
  "The node doesn't have enough free memory": [
   null,
-  ""
+  "El node no té prou memòria lliure al disc"
  ],
  "The persistent volume '{{ target }}' does not exist.": [
   null,
-  ""
+  "El volum persistent '{{ target }}' no existeix."
  ],
  "The pod '{{ target }}' does not exist.": [
   null,
-  ""
+  "El pod '{{ target }}' no existeix."
  ],
  "The project '{{ projName }}' does not exist.": [
   null,
-  ""
+  "El projecte '{{ projName }}' no existeix."
  ],
  "The replication controller '{{ target }}' does not exist.": [
   null,
-  ""
+  "El controlador de replicació '{{ target }}' no existeix."
  ],
  "The route '{{ target }}' does not exist.": [
   null,
-  ""
+  "L'encaminament '{{ target }}' no existeix."
  ],
  "The selected file is not a valid Kubernetes application manifest.": [
   null,
@@ -1463,15 +1463,15 @@ return plural;
  ],
  "The server uses a certificate signed by an unknown authority.": [
   null,
-  ""
+  "El servidor utilitza un certificat signat per una autoritat desconeguda."
  ],
  "The service '{{ target }}' does not exist.": [
   null,
-  ""
+  "El servei '{{ target }}' no existeix."
  ],
  "The user '{{ userName }}' does not exist.": [
   null,
-  ""
+  "L'usuari '{{ userName }}' no existeix."
  ],
  "This claim is in use. Deleting it may cause issues with the following pod:": [
   null,
@@ -1479,7 +1479,7 @@ return plural;
  ],
  "This option is for single node testing only – local storage will not work in a multi-node cluster": [
   null,
-  ""
+  "Aquesta opció només és per a proves de node únic: l'emmagatzematge local no funcionarà en un clúster de diversos nodes"
  ],
  "This volume has been claimed by {{ item.item.spec.claimRef.namespace }} / {{ item.item.spec.claimRef.name }}. Deleting it will break that claim and may cause issues with any pods depending on it.": [
   null,
@@ -1487,15 +1487,15 @@ return plural;
  ],
  "This volume has not been claimed": [
   null,
-  ""
+  "Aquest volum no ha estat reclamat"
  ],
  "Token": [
   null,
-  ""
+  "Testimoni"
  ],
  "Topology": [
   null,
-  ""
+  "Topologia"
  ],
  "Triggers": [
   null,
@@ -1507,7 +1507,7 @@ return plural;
  ],
  "Trust this certificate for this connection": [
   null,
-  ""
+  "Confia en aquest certificat per a aquesta connexió"
  ],
  "Type": [
   null,
@@ -1519,7 +1519,7 @@ return plural;
  ],
  "Unable to decode Kubernetes application manifest.": [
   null,
-  ""
+  "No es pot descodificar el manifest d'aplicació de Kubernetes."
  ],
  "Unable to read the Kubernetes application manifest. Code $0.": [
   null,
@@ -1527,7 +1527,7 @@ return plural;
  ],
  "Unavailable": [
   null,
-  ""
+  "No disponible"
  ],
  "Unknown": [
   null,
@@ -1547,7 +1547,7 @@ return plural;
  ],
  "User or Group": [
   null,
-  ""
+  "Usuari o grup"
  ],
  "Username": [
   null,
@@ -1579,15 +1579,15 @@ return plural;
  ],
  "Warning:": [
   null,
-  ""
+  "Advertència:"
  ],
  "Welcome to the Image Registry": [
   null,
-  ""
+  "Benvingut al registre d'imatges"
  ],
  "When": [
   null,
-  ""
+  "Quan"
  ],
  "Yes": [
   null,
@@ -1619,7 +1619,7 @@ return plural;
  ],
  "pending volume claims": [
   null,
-  ""
+  "reclamacions de volums pendents"
  ],
  "yes": [
   null,

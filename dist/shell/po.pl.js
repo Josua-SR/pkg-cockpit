@@ -91,6 +91,10 @@ return plural;
   null,
   "Dodaj komputer do panelu kontrolnego"
  ],
+ "Add key": [
+  null,
+  "Dodaj klucz"
+ ],
  "Address": [
   null,
   "Adres"
@@ -271,9 +275,9 @@ return plural;
   null,
   "Zgłoszenie Kerberos"
  ],
- "Leave blank to connect to this machine as the currently logged in user{{#user}} ({{user}}){{/user}}. If you enter a different username, that user will always be used connecting to this machine.": [
+ "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
-  "Pozostawienie pustego pola spowoduje łączenie z tą maszyną jako obecnie zalogowany użytkownik {{#user}}({{user}}){{/user}}. Jeśli zostanie podana inna nazwa użytkownika, to będzie ona zawsze używana podczas łączenia z tą maszyną."
+  "Pozostawienie pustego pola spowoduje łączenie z tą maszyną jako obecnie zalogowany użytkownik {{#default_user}}({{default_user}}){{/default_user}}. Jeśli zostanie podana inna nazwa użytkownika, to będzie ona zawsze używana podczas łączenia z tą maszyną."
  ],
  "Licensed under:": [
   null,

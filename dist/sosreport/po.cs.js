@@ -73,7 +73,7 @@ return plural;
  ],
  "Close": [
   null,
-  ""
+  "Zavřít"
  ],
  "Create Report": [
   null,
@@ -89,7 +89,7 @@ return plural;
  ],
  "Done!": [
   null,
-  ""
+  "Hotovo!"
  ],
  "Download report": [
   null,

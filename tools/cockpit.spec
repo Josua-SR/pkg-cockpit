@@ -51,7 +51,7 @@ BuildRequires: pkgconfig(polkit-agent-1) >= 0.105
 BuildRequires: pam-devel
 
 BuildRequires: autoconf automake
-BuildRequires: /usr/bin/python
+BuildRequires: /usr/bin/python2
 BuildRequires: intltool
 %if %{defined build_dashboard}
 BuildRequires: libssh-devel >= %{libssh_version}
@@ -205,6 +205,9 @@ find %{buildroot}%{_datadir}/%{name}/ostree -type f >> ostree.list
 echo '%dir %{_datadir}/%{name}/packagekit' >> packagekit.list
 find %{buildroot}%{_datadir}/%{name}/packagekit -type f >> packagekit.list
 
+echo '%dir %{_datadir}/%{name}/apps' >> packagekit.list
+find %{buildroot}%{_datadir}/%{name}/apps -type f >> packagekit.list
+
 echo '%dir %{_datadir}/%{name}/machines' > machines.list
 find %{buildroot}%{_datadir}/%{name}/machines -type f >> machines.list
 
@@ -259,7 +262,7 @@ cat kdump.list subscriptions.list sosreport.list networkmanager.list selinux.lis
 # dwz has trouble with the go binaries
 # https://fedoraproject.org/wiki/PackagingDrafts/Go
 %global _dwz_low_mem_die_limit 0
-%if 0%{?fedora} >= 27
+%if 0%{?fedora} >= 27 || 0%{?rhel} >= 8
 %global _debugsource_packages 1
 %global _debuginfo_subpackages 0
 %endif
@@ -468,7 +471,7 @@ Requires: libvirt-daemon
 Requires: libvirt-python
 Requires: qemu-kvm
 Requires: npm
-Requires: python
+Requires: python2
 Requires: rsync
 Requires: xz
 Requires: openssh-clients
@@ -615,7 +618,7 @@ Summary: Cockpit user interface for Docker containers
 Requires: %{name}-bridge >= 122
 Requires: %{name}-shell >= 122
 Requires: /usr/bin/docker
-Requires: python
+Requires: python2
 
 %description docker
 The Cockpit components for interacting with Docker and user interface.
@@ -648,12 +651,13 @@ cluster. Installed on the Kubernetes master. This package is not yet complete.
 %endif
 
 %package packagekit
-Summary: Cockpit user interface for package updates
+Summary: Cockpit user interface for packages
 Requires: %{name}-bridge >= 138
 Requires: PackageKit
 
 %description packagekit
-The Cockpit component for installing package updates, via PackageKit.
+The Cockpit components for installing OS updates and Cockpit add-ons,
+via PackageKit.
 
 %files packagekit -f packagekit.list
 

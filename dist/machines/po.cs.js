@@ -73,15 +73,15 @@ return plural;
  ],
  "Address:": [
   null,
-  ""
+  "Adresa:"
  ],
  "Autostart:": [
   null,
-  ""
+  "Automatické spuštění"
  ],
  "Available": [
   null,
-  ""
+  "Dostupný"
  ],
  "Boot Order:": [
   null,
@@ -101,7 +101,7 @@ return plural;
  ],
  "Capacity": [
   null,
-  ""
+  "Kapacita"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -125,11 +125,11 @@ return plural;
  ],
  "Connection": [
   null,
-  ""
+  "Spojení"
  ],
  "Console": [
   null,
-  ""
+  "Konzole"
  ],
  "Count:": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Delete": [
   null,
-  ""
+  "Smazat"
  ],
  "Delete associated storage files:": [
   null,
@@ -145,11 +145,11 @@ return plural;
  ],
  "Device": [
   null,
-  ""
+  "Zařízení"
  ],
  "Disks": [
   null,
-  ""
+  "Disky"
  ],
  "Download the MSI from $0": [
   null,
@@ -161,7 +161,7 @@ return plural;
  ],
  "File": [
   null,
-  ""
+  "Soubor"
  ],
  "Force Restart": [
   null,
@@ -177,7 +177,7 @@ return plural;
  ],
  "Host": [
   null,
-  ""
+  "Počítač"
  ],
  "Launch Remote Viewer": [
   null,
@@ -189,7 +189,7 @@ return plural;
  ],
  "Memory:": [
   null,
-  ""
+  "Paměť:"
  ],
  "More Information": [
   null,
@@ -221,7 +221,7 @@ return plural;
  ],
  "Overview": [
   null,
-  ""
+  "Přehled"
  ],
  "Please start the virtual machine to access its graphics console.": [
   null,
@@ -229,15 +229,15 @@ return plural;
  ],
  "Pool": [
   null,
-  ""
+  "Úložiště"
  ],
  "Port": [
   null,
-  ""
+  "Port"
  ],
  "Protocol": [
   null,
-  ""
+  "Protokol"
  ],
  "Readonly": [
   null,
@@ -249,7 +249,7 @@ return plural;
  ],
  "Run": [
   null,
-  ""
+  "Spustit"
  ],
  "SPICE": [
   null,
@@ -277,15 +277,15 @@ return plural;
  ],
  "Shut Down": [
   null,
-  ""
+  "Ukončit"
  ],
  "Source": [
   null,
-  ""
+  "Zdroj"
  ],
  "State": [
   null,
-  ""
+  "Stav"
  ],
  "Switch to Desktop Viewer": [
   null,
@@ -297,11 +297,11 @@ return plural;
  ],
  "System": [
   null,
-  ""
+  "Systém"
  ],
  "Target": [
   null,
-  ""
+  "Cíl"
  ],
  "The VM crashed.": [
   null,
@@ -345,7 +345,7 @@ return plural;
  ],
  "Usage": [
   null,
-  ""
+  "Použití"
  ],
  "Used": [
   null,
@@ -377,7 +377,7 @@ return plural;
  ],
  "VNC": [
   null,
-  ""
+  "VNC"
  ],
  "VNC Address:": [
   null,
@@ -397,7 +397,7 @@ return plural;
  ],
  "Volume": [
   null,
-  ""
+  "Svazek"
  ],
  "Your browser does not support iframes.": [
   null,
@@ -409,7 +409,7 @@ return plural;
  ],
  "crashed": [
   null,
-  ""
+  "pád"
  ],
  "custom": [
   null,
@@ -417,7 +417,7 @@ return plural;
  ],
  "disabled": [
   null,
-  ""
+  "zakázáno"
  ],
  "disk": [
   null,
@@ -429,7 +429,7 @@ return plural;
  ],
  "enabled": [
   null,
-  ""
+  "povoleno"
  ],
  "host": [
   null,
@@ -437,7 +437,7 @@ return plural;
  ],
  "idle": [
   null,
-  ""
+  "nečinný"
  ],
  "network": [
   null,
@@ -477,6 +477,6 @@ return plural;
  ],
  "yes": [
   null,
-  ""
+  "ano"
  ]
 }));

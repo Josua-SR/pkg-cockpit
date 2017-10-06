@@ -279,9 +279,9 @@ return plural;
   null,
   "現在ログインしているユーザーとしてこのマシンに接続する場合は空白のままにします。異なるユーザー名を入力した場合は、このマシンへの接続時にそのユーザーが常に使用されます。"
  ],
- "Leave blank to connect to this machine as the currently logged in user{{#user}} ({{user}}){{/user}}. If you enter a different username, that user will always be used connecting to this machine.": [
+ "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
-  "現在ログインしているユーザー {{#user}} ({{user}}){{/user}} としてこのマシンに接続する場合は空白のままにします。異なるユーザー名を入力した場合は、このマシンへの接続時にそのユーザーが常に使用されます。"
+  ""
  ],
  "Log In": [
   null,

@@ -129,7 +129,7 @@ return plural;
  ],
  "Login/password or activation key required to register.": [
   null,
-  ""
+  "Per registrar es requereix un usuari/contrasenya o una clau d'activació."
  ],
  "No installed products on the system.": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "D'acord"
  ],
  "Organization": [
   null,
@@ -161,7 +161,7 @@ return plural;
  ],
  "Register": [
   null,
-  ""
+  "Registra"
  ],
  "Register system": [
   null,
@@ -185,7 +185,7 @@ return plural;
  ],
  "Status: $0": [
   null,
-  ""
+  "Estat: $0"
  ],
  "Status: System isn't registered": [
   null,
@@ -201,19 +201,19 @@ return plural;
  ],
  "URL": [
   null,
-  ""
+  "URL"
  ],
  "Unable to connect": [
   null,
-  ""
+  "No es pot connectar"
  ],
  "Unregister": [
   null,
-  ""
+  "Desregistra"
  ],
  "Unregistering system...": [
   null,
-  ""
+  "S'està desregistrant el sistema..."
  ],
  "Updating": [
   null,
@@ -221,7 +221,7 @@ return plural;
  ],
  "Use proxy server": [
   null,
-  ""
+  "Utilitza un servidor intermediari"
  ],
  "User": [
   null,
@@ -233,6 +233,6 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "indefinit"
  ]
 }));

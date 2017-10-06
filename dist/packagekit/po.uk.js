@@ -103,9 +103,9 @@ return plural;
   null,
   "Скасувати"
  ],
- "Check for updates": [
+ "Check for Updates": [
   null,
-  "Перевірити оновлення"
+  "Перевірити наявність оновлень"
  ],
  "Cockpit itself will be updated.": [
   null,
@@ -131,13 +131,13 @@ return plural;
   null,
   "Ініціалізація…"
  ],
- "Install all updates": [
+ "Install All Updates": [
   null,
-  "Встановити усі оновлення"
+  ""
  ],
- "Install security updates": [
+ "Install Security Updates": [
   null,
-  "Встановити оновлення захисту"
+  ""
  ],
  "Installed": [
   null,
@@ -170,6 +170,14 @@ return plural;
  "No updates pending": [
   null,
   "У черзі немає оновлень"
+ ],
+ "Off": [
+  null,
+  "Вимкнено"
+ ],
+ "On": [
+  null,
+  "Увімкнено"
  ],
  "Package information": [
   null,
@@ -302,5 +310,9 @@ return plural;
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,
   "Невдовзі ваш сервер розірве з’єднання. Ви можете відновити це з’єднання, щойно сервер буде перезапущено."
+ ],
+ "undefined": [
+  null,
+  "не визначено"
  ]
 }));

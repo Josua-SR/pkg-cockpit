@@ -331,11 +331,11 @@ return plural;
  ],
  "Change Host Name": [
   null,
-  ""
+  "Canvia el nom d'amfitrió"
  ],
  "Change System Time": [
   null,
-  ""
+  "Canvia l'hora del sistema"
  ],
  "Close": [
   null,
@@ -351,15 +351,15 @@ return plural;
  ],
  "Condition failed": [
   null,
-  ""
+  "Ha fallat la condició"
  ],
  "Create Timer": [
   null,
-  ""
+  "Crea un temporitzador"
  ],
  "Create Timers": [
   null,
-  ""
+  "Crea temporitzadors"
  ],
  "Current boot": [
   null,
@@ -391,7 +391,7 @@ return plural;
  ],
  "Don't Repeat": [
   null,
-  ""
+  "No repeteixis"
  ],
  "Enable": [
   null,
@@ -423,7 +423,7 @@ return plural;
  ],
  "Friday": [
   null,
-  ""
+  "Divendres"
  ],
  "Go to": [
   null,
@@ -447,7 +447,7 @@ return plural;
  ],
  "Hour needs to be a number between 0-23": [
   null,
-  ""
+  "L'hora ha de ser un nombre entre 0-23"
  ],
  "Hours": [
   null,
@@ -467,11 +467,11 @@ return plural;
  ],
  "Invalid date format": [
   null,
-  "format de data no vàlid"
+  "Format de data no vàlid"
  ],
  "Invalid date format and invalid time format": [
   null,
-  "format no vàlid de la data i l'hora"
+  "Format no vàlid de la data i l'hora"
  ],
  "Invalid date format.": [
   null,
@@ -515,7 +515,7 @@ return plural;
  ],
  "Last Trigger": [
   null,
-  ""
+  "Últim disparador"
  ],
  "Load earlier entries": [
   null,
@@ -527,7 +527,7 @@ return plural;
  ],
  "Log messages": [
   null,
-  ""
+  "Missatges del registre"
  ],
  "Logs": [
   null,
@@ -559,11 +559,11 @@ return plural;
  ],
  "Message to logged in users": [
   null,
-  "Missatge als usuaris que hagin iniciat la sessió"
+  "Missatge per als usuaris que hagin iniciat la sessió"
  ],
  "Minute needs to be a number between 0-59": [
   null,
-  ""
+  "El minut ha de ser un nombre entre 0-59"
  ],
  "Minutes": [
   null,
@@ -587,7 +587,7 @@ return plural;
  ],
  "Next Run": [
   null,
-  ""
+  "Següent execució"
  ],
  "Nice": [
   null,
@@ -655,7 +655,7 @@ return plural;
  ],
  "Pretty Host Name": [
   null,
-  "Nom de l'amfitrió de nivell superior"
+  "Nom d'amfitrió bonic"
  ],
  "Problems, Errors": [
   null,
@@ -671,15 +671,15 @@ return plural;
  ],
  "Real Host Name": [
   null,
-  "Nom real de l'amfitrió"
+  "Nom d'amfitrió real"
  ],
  "Real host name can only contain lower-case characters, digits, dashes, and periods (with populated subdomains)": [
   null,
-  ""
+  "El nom d'amfitrió real només pot contenir caràcters en minúscules, dígits, guions i punts (amb subdominis poblats)"
  ],
  "Real host name must be 64 characters or less": [
   null,
-  ""
+  "El nom d'amfitrió real pot tenir com a molt 64 caràcters"
  ],
  "Reboot": [
   null,
@@ -735,7 +735,7 @@ return plural;
  ],
  "Saturday": [
   null,
-  ""
+  "Dissabte"
  ],
  "Save": [
   null,
@@ -755,7 +755,7 @@ return plural;
  ],
  "Service name": [
   null,
-  ""
+  "Nom del servei"
  ],
  "Services": [
   null,
@@ -763,7 +763,7 @@ return plural;
  ],
  "Set Host name": [
   null,
-  "Estableix el nom de l'amfitrió"
+  "Estableix el nom d'amfitrió"
  ],
  "Set Time": [
   null,
@@ -811,11 +811,11 @@ return plural;
  ],
  "Store Performance Data": [
   null,
-  "Emmagatzema dades de rendiment"
+  "Desa dades de rendiment"
  ],
  "Sunday": [
   null,
-  ""
+  "Diumenge"
  ],
  "Swap Used": [
   null,
@@ -851,35 +851,35 @@ return plural;
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,
-  ""
+  "A l'usuari <b>$0</b> no se li permet crear temporitzadors"
  ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
-  "A l'usuari <b>$0</b> no se li permet modificar el noms dels amfitrions"
+  "A l'usuari <b>$0</b> no se li permet modificar els noms d'amfitrions"
  ],
  "The user <b>$0</b> is not permitted to shutdown or restart this server": [
   null,
-  ""
+  "A l'usuari <b>$0</b> no se li permet apagar o reiniciar aquest servidor."
  ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
-  ""
+  "Aquest dia no existeix en tots els mesos.<br> El temporitzador només s'executarà en aquells mesos que en tinguin 31."
  ],
  "This field cannot be empty.": [
   null,
-  ""
+  "Aquest camp no pot estar en blanc."
  ],
  "This unit is an instance of the $0 template.": [
   null,
-  "Aquesta unitat és una instantània de la plantilla $0."
+  "Aquesta unitat és una instància de la plantilla $0."
  ],
  "This unit is not designed to be enabled explicitly.": [
   null,
-  ""
+  "Aquesta unitat no està dissenyada per estar explícitament activada."
  ],
  "Thursday": [
   null,
-  ""
+  "Dijous"
  ],
  "Time Zone": [
   null,
@@ -887,7 +887,7 @@ return plural;
  ],
  "Timers": [
   null,
-  "Rellotges"
+  "Temporitzadors"
  ],
  "Trying to synchronize with {{Server}}": [
   null,
@@ -895,7 +895,7 @@ return plural;
  ],
  "Tuesday": [
   null,
-  ""
+  "Dimarts"
  ],
  "Unmask": [
   null,
@@ -915,11 +915,11 @@ return plural;
  ],
  "Wednesday": [
   null,
-  ""
+  "Dimecres"
  ],
  "Weeks": [
   null,
-  ""
+  "Setmanes"
  ],
  "[$0 bytes of binary data]": [
   null,
@@ -935,7 +935,7 @@ return plural;
  ],
  "failed to list ssh host keys: $0": [
   null,
-  ""
+  "no s'han pogut llistar les claus d'amfitrions ssh: $0"
  ],
  "unknown": [
   null,

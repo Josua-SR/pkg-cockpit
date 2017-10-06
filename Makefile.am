@@ -142,6 +142,7 @@ SUBST_RULE = \
 # Webpack related
 
 WEBPACK_PACKAGES = \
+	apps \
 	dashboard \
 	docker \
 	kdump \
@@ -257,7 +258,7 @@ endif
 VALGRIND_ARGS = --trace-children=yes --quiet --error-exitcode=33 \
 	--suppressions=valgrind-suppressions --gen-suppressions=all \
 	--num-callers=16 --leak-check=yes --show-leak-kinds=definite \
-	--errors-for-leak-kinds=definite --trace-children-skip='*mock*,/bin*,/usr/bin/*,/usr/local/bin,*cockpit-bridge,*cockpit-stub'
+	--errors-for-leak-kinds=definite --trace-children-skip='*mock*,/bin*,/usr/bin/*,/usr/local/bin'
 VALGRIND_SUPPRESSIONS = \
 	tools/gcrypt.supp \
 	tools/glib.supp \
