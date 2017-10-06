@@ -153,7 +153,7 @@ return plural;
  ],
  "Error saving authorized keys: ": [
   null,
-  "S'ha produït un error en desar les claus autoritzades:"
+  "S'ha produït un error en desar les claus autoritzades: "
  ],
  "Excellent password": [
   null,
@@ -273,7 +273,7 @@ return plural;
  ],
  "Password must be changed": [
   null,
-  ""
+  "S'ha de canviar la contrasenya"
  ],
  "Paste the contents of your public SSH key file here": [
   null,
@@ -285,15 +285,15 @@ return plural;
  ],
  "Prompting via passwd timed out": [
   null,
-  "Expiració de temps en la deferència a través passwd"
+  "Per mitjà del temps d'espera de passwd"
  ],
  "Require password change every $0 days": [
   null,
-  ""
+  "Requereix el canvi de la contrasenya cada $0 dies"
  ],
  "Require password change on $0": [
   null,
-  ""
+  "Requereix el canvi de la contrasenya el $0"
  ],
  "Reset": [
   null,
@@ -337,7 +337,7 @@ return plural;
  ],
  "The user name can only consist of letters from a-z, digits, dots, dashes and underscores.": [
   null,
-  ""
+  "El nom d'usuari només pot contenir lletres a-z, dígits, punts, guions baixos i guions."
  ],
  "There are no authorized public keys for this account.": [
   null,

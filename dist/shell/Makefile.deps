@@ -1,5 +1,5 @@
 # Generated Makefile data for shell
-# Stamp: Thu Sep 21 2017 06:31:59 GMT+0000 (UTC)
+# Stamp: Fri Oct 06 2017 12:52:16 GMT+0000 (UTC)
 
 shell_INPUTS = \
 	$(srcdir)/node_modules/bootstrap/LICENSE \
@@ -10,8 +10,8 @@ shell_INPUTS = \
 	$(srcdir)/node_modules/mustache/mustache.js \
 	$(srcdir)/node_modules/patternfly/LICENSE.txt \
 	$(srcdir)/node_modules/patternfly/README.md \
-	$(srcdir)/node_modules/patternfly/less/color-variables.less \
-	$(srcdir)/node_modules/patternfly/less/variables.less \
+	$(srcdir)/node_modules/patternfly/src/less/color-variables.less \
+	$(srcdir)/node_modules/patternfly/src/less/variables.less \
 	$(srcdir)/node_modules/react-lite/LICENSE \
 	$(srcdir)/node_modules/react-lite/README.md \
 	$(srcdir)/node_modules/react-lite/dist/react-lite.js \
@@ -117,7 +117,7 @@ shell_TESTS = \
 
 dist/shell/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/mustache/mustache.js -N node_modules/patternfly/less/color-variables.less -N node_modules/patternfly/less/variables.less -N node_modules/react-lite/dist/react-lite.js -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-file-autocomplete.css -N pkg/lib/cockpit-components-file-autocomplete.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/credentials-ssh-private-keys.sh -N pkg/lib/credentials-ssh-remove-key.sh -N pkg/lib/credentials.js -N pkg/lib/listing.less -N pkg/lib/machine-add.html -N pkg/lib/machine-auth-failed.html -N pkg/lib/machine-change-auth.html -N pkg/lib/machine-change-port.html -N pkg/lib/machine-color-picker.html -N pkg/lib/machine-dialogs.js -N pkg/lib/machine-invalid-hostkey.html -N pkg/lib/machine-not-supported.html -N pkg/lib/machine-sync-users.html -N pkg/lib/machine-unknown-hostkey.html -N pkg/lib/machines.js -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/table.css -N pkg/lib/variables.less -N pkg/shell/active-pages-dialog.jsx -N pkg/shell/active-pages.js -N pkg/shell/active-pages.less -N pkg/shell/base_index.js -N pkg/shell/credentials.js -N pkg/shell/images/server-error.png -N pkg/shell/images/server-large.png -N pkg/shell/images/server-small.png -N pkg/shell/index-no-machines.js -N pkg/shell/index-stub.js -N pkg/shell/index.html -N pkg/shell/index.js -N pkg/shell/indexes.js -N pkg/shell/privileges.js -N pkg/shell/shell.html -N pkg/shell/shell.less -N pkg/shell/simple.html -N pkg/shell/ssh-file-autocomplete.jsx -N pkg/shell/stub.html -N pkg/shell/switcher.less -N pkg/shell/variables.less $(addprefix -N ,$(shell find pkg/ -name manifest.json)) $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/mustache/mustache.js -N node_modules/patternfly/src/less/color-variables.less -N node_modules/patternfly/src/less/variables.less -N node_modules/react-lite/dist/react-lite.js -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-file-autocomplete.css -N pkg/lib/cockpit-components-file-autocomplete.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/credentials-ssh-private-keys.sh -N pkg/lib/credentials-ssh-remove-key.sh -N pkg/lib/credentials.js -N pkg/lib/listing.less -N pkg/lib/machine-add.html -N pkg/lib/machine-auth-failed.html -N pkg/lib/machine-change-auth.html -N pkg/lib/machine-change-port.html -N pkg/lib/machine-color-picker.html -N pkg/lib/machine-dialogs.js -N pkg/lib/machine-invalid-hostkey.html -N pkg/lib/machine-not-supported.html -N pkg/lib/machine-sync-users.html -N pkg/lib/machine-unknown-hostkey.html -N pkg/lib/machines.js -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/table.css -N pkg/lib/variables.less -N pkg/shell/active-pages-dialog.jsx -N pkg/shell/active-pages.js -N pkg/shell/active-pages.less -N pkg/shell/base_index.js -N pkg/shell/credentials.js -N pkg/shell/images/server-error.png -N pkg/shell/images/server-large.png -N pkg/shell/images/server-small.png -N pkg/shell/index-no-machines.js -N pkg/shell/index-stub.js -N pkg/shell/index.html -N pkg/shell/index.js -N pkg/shell/indexes.js -N pkg/shell/privileges.js -N pkg/shell/shell.html -N pkg/shell/shell.less -N pkg/shell/simple.html -N pkg/shell/ssh-file-autocomplete.jsx -N pkg/shell/stub.html -N pkg/shell/switcher.less -N pkg/shell/variables.less $(addprefix -N ,$(shell find pkg/ -name manifest.json)) $< > $@.tmp && mv $@.tmp $@
 
 dist/shell/Makefile.deps: $(WEBPACK_CONFIG) $(shell_INPUTS)
 	$(WEBPACK_RULE) -d dist/shell/Makefile.deps $(WEBPACK_CONFIG)
@@ -176,9 +176,9 @@ $(srcdir)/node_modules/patternfly/LICENSE.txt:
 
 $(srcdir)/node_modules/patternfly/README.md:
 
-$(srcdir)/node_modules/patternfly/less/color-variables.less:
+$(srcdir)/node_modules/patternfly/src/less/color-variables.less:
 
-$(srcdir)/node_modules/patternfly/less/variables.less:
+$(srcdir)/node_modules/patternfly/src/less/variables.less:
 
 $(srcdir)/node_modules/react-lite/LICENSE:
 

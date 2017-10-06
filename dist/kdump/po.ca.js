@@ -77,7 +77,7 @@ return plural;
  ],
  "Compress crash dumps to save space": [
   null,
-  ""
+  "Comprimeix els estavellaments per estalviar espai"
  ],
  "Compression": [
   null,
@@ -85,7 +85,7 @@ return plural;
  ],
  "Crash dump location": [
   null,
-  ""
+  "Ubicació del bolcat de l'estavellament"
  ],
  "Crash system": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "No memory reserved. Append a crashkernel option to the kernel command line (e.g. in /etc/default/grub) to reserve memory at boot time. Example: crashkernel=512M": [
   null,
-  ""
+  "No hi ha memòria reservada. Afegiu crashkernel a la línia d'ordres del kernel (p. ex. a /etc/default/grub) per reservar memòria en temps d'arrencada. Exemple: crashkernel=512M"
  ],
  "None": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "D'acord"
  ],
  "On": [
   null,
@@ -153,7 +153,7 @@ return plural;
  ],
  "On a mounted device": [
   null,
-  ""
+  "Amb un dispositiu muntat"
  ],
  "Raw to a device": [
   null,
@@ -185,39 +185,39 @@ return plural;
  ],
  "Service is running": [
   null,
-  "Tuned no s'està executant"
+  "El servei s'està executant"
  ],
  "Service is starting": [
   null,
-  "La màquina s'està reiniciant"
+  "El servei s'està iniciant"
  ],
  "Service is stopped": [
   null,
-  "Serveis"
+  "El servei està aturat"
  ],
  "Service is stopping": [
   null,
-  "Registres del servei"
+  "El servei s'està aturant"
  ],
  "Test Configuration": [
   null,
-  "Configuració"
+  "Prova la configuració"
  ],
  "Test is only available while the kdump service is running.": [
   null,
-  ""
+  "Això només està disponible mentre el servei kdump està en execució."
  ],
  "Test kdump settings": [
   null,
-  ""
+  "Prova els ajusts de kdump"
  ],
  "This will test kdump settings by crashing the kernel and thereby the system. Depending on the settings, the system may not automatically reboot and the process may take a while.": [
   null,
-  ""
+  "Això provarà la configuració de kdump en fer estavellar el kernel i, per tant, el sistema. En funció dels ajusts, el sistema pot no reiniciar-se automàticament i el procés pot trigar una estona."
  ],
  "This will test the kdump configuration by crashing the kernel.": [
   null,
-  ""
+  "Això provarà la configuració de kdump en fer estavellar el kernel."
  ],
  "Unable to apply settings: $0": [
   null,
@@ -225,19 +225,19 @@ return plural;
  ],
  "Use the setting in /etc/kdump.conf": [
   null,
-  ""
+  "Utilitza l'ajust de /etc/kdump.conf"
  ],
  "invalid: multiple targets defined": [
   null,
-  ""
+  "no és vàlid: s'han definit diversos objectius"
  ],
  "kdump status": [
   null,
-  ""
+  "Estat de kdump"
  ],
  "locally in $0": [
   null,
-  ""
+  "localment a $0"
  ],
  "ssh key": [
   null,
@@ -245,6 +245,6 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "indefinit"
  ]
 }));

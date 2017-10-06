@@ -183,11 +183,11 @@ return plural;
  ],
  "Additional DNS $val": [
   null,
-  ""
+  "DNS addicional $val"
  ],
  "Additional DNS Search Domains $val": [
   null,
-  ""
+  "Dominis de cerca DNS addicionals $val"
  ],
  "Additional address $val": [
   null,
@@ -299,11 +299,11 @@ return plural;
  ],
  "Connection will be lost": [
   null,
-  ""
+  "Es perdrà la connexió"
  ],
  "Create it": [
   null,
-  ""
+  "Crea-ho"
  ],
  "Creating this VLAN will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -335,7 +335,7 @@ return plural;
  ],
  "DNS Search Domains $val": [
   null,
-  ""
+  "Dominis de cerca DNS $val"
  ],
  "Deactivating": [
   null,
@@ -439,19 +439,19 @@ return plural;
  ],
  "Invalid address $0": [
   null,
-  "Clau no vàlida"
+  "Adreça no vàlida $0"
  ],
  "Invalid metric $0": [
   null,
-  "Clau no vàlida"
+  "Mètrica no vàlida $0"
  ],
  "Invalid prefix $0": [
   null,
-  "Port no vàlid"
+  "Prefix no vàlid $0"
  ],
  "Invalid prefix or netmask $0": [
   null,
-  "Port no vàlid"
+  "Prefix o màscara de xarxa no vàlid $0"
  ],
  "Keep connection": [
   null,
@@ -655,7 +655,7 @@ return plural;
  ],
  "Restoring connection": [
   null,
-  "Torna a connectar"
+  "S'està restaurant la connexió"
  ],
  "Round Robin": [
   null,
@@ -663,7 +663,7 @@ return plural;
  ],
  "Routes": [
   null,
-  "Rutes"
+  "Encaminaments"
  ],
  "Runner": [
   null,
@@ -719,7 +719,7 @@ return plural;
  ],
  "Switch off $0": [
   null,
-  ""
+  "Apaga $0"
  ],
  "Switch on $0": [
   null,
@@ -763,7 +763,7 @@ return plural;
  ],
  "This device cannot be managed here.": [
   null,
-  ""
+  "Aquest dispositiu no es pot gestionar aquí."
  ],
  "Unexpected error": [
   null,
@@ -783,7 +783,7 @@ return plural;
  ],
  "Unmanaged Interfaces": [
   null,
-  ""
+  "Interfícies sense gestionar"
  ],
  "VLAN": [
   null,

@@ -77,7 +77,7 @@ return plural;
  ],
  "Access denied": [
   null,
-  ""
+  "Přístup odepřen"
  ],
  "Activation Key": [
   null,
@@ -85,7 +85,7 @@ return plural;
  ],
  "Architecture": [
   null,
-  ""
+  "Architektura"
  ],
  "Cancel": [
   null,
@@ -101,11 +101,11 @@ return plural;
  ],
  "Default": [
   null,
-  ""
+  "Výchozí"
  ],
  "Details": [
   null,
-  ""
+  "Podrobnosti"
  ],
  "Ends": [
   null,
@@ -125,7 +125,7 @@ return plural;
  ],
  "Login": [
   null,
-  ""
+  "Přihlásit"
  ],
  "Login/password or activation key required to register.": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "Password": [
   null,
-  ""
+  "Heslo"
  ],
  "Product ID": [
   null,
@@ -157,7 +157,7 @@ return plural;
  ],
  "Proxy": [
   null,
-  ""
+  "Proxy"
  ],
  "Register": [
   null,
@@ -173,7 +173,7 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "Server"
  ],
  "Starts": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Status": [
   null,
-  ""
+  "Stav"
  ],
  "Status: $0": [
   null,
@@ -201,7 +201,7 @@ return plural;
  ],
  "URL": [
   null,
-  ""
+  "URL"
  ],
  "Unable to connect": [
   null,
@@ -225,11 +225,11 @@ return plural;
  ],
  "User": [
   null,
-  ""
+  "Uživatel"
  ],
  "Version": [
   null,
-  ""
+  "Verze"
  ],
  "undefined": [
   null,

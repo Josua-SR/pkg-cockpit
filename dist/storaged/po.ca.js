@@ -132,7 +132,7 @@ return plural;
  ],
  "${size} ${desc}": [
   null,
-  ""
+  "${desc} de ${size}"
  ],
  "(default)": [
   null,
@@ -496,7 +496,7 @@ return plural;
  ],
  "Encrypted $0": [
   null,
-  ""
+  "$0 xifrat"
  ],
  "Encrypted EXT4 (LUKS)": [
   null,
@@ -508,7 +508,7 @@ return plural;
  ],
  "Encrypted Partition of $0": [
   null,
-  ""
+  "Partició xifrada de $0"
  ],
  "Encrypted XFS (LUKS)": [
   null,
@@ -792,7 +792,7 @@ return plural;
  ],
  "Passphrase cannot be empty": [
   null,
-  ""
+  "La contrasenya no pot estar en blanc"
  ],
  "Passphrases do not match": [
   null,
@@ -988,7 +988,7 @@ return plural;
  ],
  "Server address cannot be empty.": [
   null,
-  ""
+  "L'adreça del servidor no pot estar en blanc."
  ],
  "Setting up loop device $target": [
   null,
@@ -1076,11 +1076,11 @@ return plural;
  ],
  "Stored passphrase": [
   null,
-  ""
+  "Contrasenya emmagatzemada"
  ],
  "Swap": [
   null,
-  ""
+  "Intercanvi"
  ],
  "Synchronizing RAID Device $target": [
   null,
@@ -1120,11 +1120,11 @@ return plural;
  ],
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
   null,
-  ""
+  "Hi ha dispositius amb diversos camins al sistema, però no s'està executant el servei multipath."
  ],
  "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
   null,
-  ""
+  "No hi ha prou espai lliure als altres llocs per suprimir aquest volum físic. Es necessiten almenys $0 més d'espai lliure."
  ],
  "Thin Logical Volume": [
   null,
@@ -1136,27 +1136,27 @@ return plural;
  ],
  "This device is currently used for RAID devices.": [
   null,
-  ""
+  "Aquest dispositiu s'utilitza actualment amb dispositius RAID."
  ],
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
   null,
-  ""
+  "Aquest dispositiu s'utilitza actualment amb dispositius RAID.                Si continueu, s'eliminarà dels dispositius\n RAID."
  ],
  "This device is currently used for volume groups.": [
   null,
-  ""
+  "Aquest dispositiu s'utilitza actualment amb grups de volums."
  ],
  "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
   null,
-  ""
+  "Aquest dispositiu s'utilitza actualment amb grups de volums.                Si continueu, s'eliminarà dels grups de volums."
  ],
  "This disk cannot be removed while the device is recovering.": [
   null,
-  ""
+  "Aquest disc no es pot treure quan s'està recuperant el dispositiu."
  ],
  "This logical volume cannot be made smaller.": [
   null,
-  ""
+  "Aquest volum lògic no es pot fer més petit."
  ],
  "Type": [
   null,
@@ -1164,7 +1164,7 @@ return plural;
  ],
  "UUID": [
   null,
-  ""
+  "UUID"
  ],
  "Unable to reach server": [
   null,
@@ -1200,7 +1200,7 @@ return plural;
  ],
  "Unrecognized Data": [
   null,
-  ""
+  "Dades no reconegudes"
  ],
  "Unsupported volume": [
   null,
@@ -1208,7 +1208,7 @@ return plural;
  ],
  "Usage": [
   null,
-  ""
+  "Ús"
  ],
  "Used": [
   null,
@@ -1252,7 +1252,7 @@ return plural;
  ],
  "XFS - Red Hat Enterprise Linux 7 default": [
   null,
-  "XFS - per defecte Red Hat Enterprise Linux 7"
+  "XFS - per defecte a Red Hat Enterprise Linux 7"
  ],
  "[$0 bytes of binary data]": [
   null,
@@ -1280,11 +1280,11 @@ return plural;
  ],
  "unpartitioned space on $0": [
   null,
-  ""
+  "espai sense particionar a $0"
  ],
  "storage-id-desc\u0004$0 File System": [
   null,
-  "sistema de fitxers $0"
+  "Sistema de fitxers $0"
  ],
  "storage-id-desc\u0004Encrypted data": [
   null,
@@ -1296,7 +1296,7 @@ return plural;
  ],
  "storage-id-desc\u0004Swap Space": [
   null,
-  "espai d'intercanvi"
+  "Espai d'intercanvi"
  ],
  "storage-id-desc\u0004Unrecognized Data": [
   null,

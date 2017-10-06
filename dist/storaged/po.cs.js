@@ -239,7 +239,7 @@ return plural;
  ],
  "Add": [
   null,
-  ""
+  "Přidat"
  ],
  "Add Disks": [
   null,
@@ -255,11 +255,11 @@ return plural;
  ],
  "Address": [
   null,
-  ""
+  "Adresa"
  ],
  "Apply": [
   null,
-  ""
+  "Použít"
  ],
  "At least $0 disks are needed.": [
   null,
@@ -271,7 +271,7 @@ return plural;
  ],
  "Authentication required": [
   null,
-  ""
+  "Vyžadována autentizace"
  ],
  "Available targets on $0": [
   null,
@@ -279,7 +279,7 @@ return plural;
  ],
  "Block Device": [
   null,
-  ""
+  "Blokové zařízení"
  ],
  "Block device for filesystems": [
   null,
@@ -323,7 +323,7 @@ return plural;
  ],
  "Close": [
   null,
-  ""
+  "Zavřít"
  ],
  "Compatible with all systems and devices (MBR)": [
   null,
@@ -339,7 +339,7 @@ return plural;
  ],
  "Content": [
   null,
-  ""
+  "Obsah"
  ],
  "Create": [
   null,
@@ -351,7 +351,7 @@ return plural;
  ],
  "Create Partition": [
   null,
-  ""
+  "Vytvořit oddíl"
  ],
  "Create RAID Device": [
   null,
@@ -411,7 +411,7 @@ return plural;
  ],
  "Custom": [
   null,
-  ""
+  "Vlastní"
  ],
  "Custom (Enter filesystem type)": [
   null,
@@ -435,11 +435,11 @@ return plural;
  ],
  "Default": [
   null,
-  ""
+  "Výchozí"
  ],
  "Delete": [
   null,
-  ""
+  "Smazat"
  ],
  "Deleting $target": [
   null,
@@ -475,7 +475,7 @@ return plural;
  ],
  "Disks": [
   null,
-  ""
+  "Disky"
  ],
  "Don't overwrite existing data": [
   null,
@@ -483,7 +483,7 @@ return plural;
  ],
  "Drive": [
   null,
-  ""
+  "Mechanika"
  ],
  "Drives": [
   null,
@@ -491,7 +491,7 @@ return plural;
  ],
  "Edit": [
   null,
-  ""
+  "Upravit"
  ],
  "Ejecting $target": [
   null,
@@ -523,7 +523,7 @@ return plural;
  ],
  "Encryption": [
   null,
-  ""
+  "Šifrování"
  ],
  "Encryption Options": [
   null,
@@ -531,7 +531,7 @@ return plural;
  ],
  "Erase": [
   null,
-  ""
+  "Smazat"
  ],
  "Erasing $target": [
   null,
@@ -547,11 +547,11 @@ return plural;
  ],
  "FAILED": [
   null,
-  ""
+  "SELHALO"
  ],
  "Filesystem": [
   null,
-  ""
+  "Systém souborů"
  ],
  "Filesystem Mounting": [
   null,
@@ -567,11 +567,11 @@ return plural;
  ],
  "Filesystems": [
   null,
-  ""
+  "Souborové systémy"
  ],
  "Format": [
   null,
-  ""
+  "Formát"
  ],
  "Format $0": [
   null,
@@ -591,11 +591,11 @@ return plural;
  ],
  "Free": [
   null,
-  ""
+  "Volno"
  ],
  "Free Space": [
   null,
-  ""
+  "Volné místo"
  ],
  "Go to now": [
   null,
@@ -619,7 +619,7 @@ return plural;
  ],
  "Lock": [
   null,
-  ""
+  "Uzamknout"
  ],
  "Locking $target": [
   null,
@@ -667,7 +667,7 @@ return plural;
  ],
  "Mount Point": [
   null,
-  ""
+  "Připojit do"
  ],
  "Mounted At": [
   null,
@@ -707,7 +707,7 @@ return plural;
  ],
  "Next": [
   null,
-  ""
+  "Další"
  ],
  "No Filesystem": [
   null,
@@ -727,7 +727,7 @@ return plural;
  ],
  "No free space": [
   null,
-  ""
+  "Žádné volné místo"
  ],
  "No iSCSI targets set up": [
   null,
@@ -751,7 +751,7 @@ return plural;
  ],
  "Not found": [
   null,
-  ""
+  "Nenalezeno"
  ],
  "Not running": [
   null,
@@ -771,7 +771,7 @@ return plural;
  ],
  "Options": [
   null,
-  ""
+  "Přepínače"
  ],
  "Other Devices": [
   null,
@@ -783,7 +783,7 @@ return plural;
  ],
  "Partition": [
   null,
-  ""
+  "Oddíl"
  ],
  "Partition of $0": [
   null,
@@ -791,11 +791,11 @@ return plural;
  ],
  "Partitioning": [
   null,
-  ""
+  "Vytváření oddílů"
  ],
  "Passphrase": [
   null,
-  ""
+  "Heslo"
  ],
  "Passphrase cannot be empty": [
   null,
@@ -807,7 +807,7 @@ return plural;
  ],
  "Password": [
   null,
-  ""
+  "Heslo"
  ],
  "Physical Volume": [
   null,
@@ -827,7 +827,7 @@ return plural;
  ],
  "Pool": [
   null,
-  ""
+  "Úložiště"
  ],
  "Pool for Thin Logical Volumes": [
   null,
@@ -843,7 +843,7 @@ return plural;
  ],
  "Port": [
   null,
-  ""
+  "Port"
  ],
  "Purpose": [
   null,
@@ -903,7 +903,7 @@ return plural;
  ],
  "RAID Device": [
   null,
-  ""
+  "RAID zařízení"
  ],
  "RAID Device $0": [
   null,
@@ -911,7 +911,7 @@ return plural;
  ],
  "RAID Devices": [
   null,
-  ""
+  "RAID zařízení"
  ],
  "RAID Level": [
   null,
@@ -963,7 +963,7 @@ return plural;
  ],
  "Resize": [
   null,
-  ""
+  "Změnit velikost"
  ],
  "Resize Filesystem": [
   null,
@@ -979,7 +979,7 @@ return plural;
  ],
  "Running": [
   null,
-  ""
+  "Běží"
  ],
  "SMART self-test of $target": [
   null,
@@ -1003,7 +1003,7 @@ return plural;
  ],
  "Size": [
   null,
-  ""
+  "Velikost"
  ],
  "Size cannot be negative": [
   null,
@@ -1047,7 +1047,7 @@ return plural;
  ],
  "Stop": [
   null,
-  ""
+  "Zastavit"
  ],
  "Stop Scrubbing": [
   null,
@@ -1063,7 +1063,7 @@ return plural;
  ],
  "Storage": [
   null,
-  ""
+  "Úložiště"
  ],
  "Storage Log": [
   null,
@@ -1087,7 +1087,7 @@ return plural;
  ],
  "Swap": [
   null,
-  ""
+  "Odkládací oddíl"
  ],
  "Synchronizing RAID Device $target": [
   null,
@@ -1167,11 +1167,11 @@ return plural;
  ],
  "Type": [
   null,
-  ""
+  "Typ"
  ],
  "UUID": [
   null,
-  ""
+  "UUID:"
  ],
  "Unable to reach server": [
   null,
@@ -1179,7 +1179,7 @@ return plural;
  ],
  "Unknown": [
   null,
-  ""
+  "Neznámý"
  ],
  "Unknown ($0)": [
   null,
@@ -1199,7 +1199,7 @@ return plural;
  ],
  "Unmount": [
   null,
-  ""
+  "Odpojit"
  ],
  "Unmounting $target": [
   null,
@@ -1215,7 +1215,7 @@ return plural;
  ],
  "Usage": [
   null,
-  ""
+  "Použití"
  ],
  "Used": [
   null,
@@ -1223,7 +1223,7 @@ return plural;
  ],
  "Username": [
   null,
-  ""
+  "Jméno uživatele"
  ],
  "VFAT - Compatible with all systems and devices": [
   null,
@@ -1235,11 +1235,11 @@ return plural;
  ],
  "Volume": [
   null,
-  ""
+  "Svazek"
  ],
  "Volume Group": [
   null,
-  ""
+  "Skupina oddílů"
  ],
  "Volume Group $0": [
   null,
@@ -1255,7 +1255,7 @@ return plural;
  ],
  "Writing": [
   null,
-  ""
+  "Psaní"
  ],
  "XFS - Red Hat Enterprise Linux 7 default": [
   null,
@@ -1323,7 +1323,7 @@ return plural;
  ],
  "storage\u0004Device": [
   null,
-  ""
+  "Zařízení"
  ],
  "storage\u0004Device File": [
   null,
@@ -1331,7 +1331,7 @@ return plural;
  ],
  "storage\u0004Drive": [
   null,
-  ""
+  "Mechanika"
  ],
  "storage\u0004Firmware Version": [
   null,
@@ -1339,11 +1339,11 @@ return plural;
  ],
  "storage\u0004Hard Disk": [
   null,
-  ""
+  "Pevný disk"
  ],
  "storage\u0004Model": [
   null,
-  ""
+  "Model"
  ],
  "storage\u0004Multipathed Devices": [
   null,
@@ -1363,7 +1363,7 @@ return plural;
  ],
  "storage\u0004Serial Number": [
   null,
-  ""
+  "Sériové číslo"
  ],
  "storage\u0004Solid-State Disk": [
   null,
@@ -1371,11 +1371,11 @@ return plural;
  ],
  "storage\u0004State": [
   null,
-  ""
+  "Stav"
  ],
  "storage\u0004UUID": [
   null,
-  ""
+  "UUID:"
  ],
  "storage\u0004World Wide Name": [
   null,
@@ -1383,6 +1383,6 @@ return plural;
  ],
  "format-bytes\u0004bytes": [
   null,
-  ""
+  "byty"
  ]
 }));

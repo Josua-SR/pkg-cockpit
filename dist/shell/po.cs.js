@@ -85,15 +85,19 @@ return plural;
  ],
  "Add": [
   null,
-  ""
+  "Přidat"
  ],
  "Add Machine to Dashboard": [
   null,
   ""
  ],
- "Address": [
+ "Add key": [
   null,
   ""
+ ],
+ "Address": [
+  null,
+  "Adresa"
  ],
  "Authentication": [
   null,
@@ -105,7 +109,7 @@ return plural;
  ],
  "Available": [
   null,
-  ""
+  "Dostupný"
  ],
  "Cancel": [
   null,
@@ -129,7 +133,7 @@ return plural;
  ],
  "Close": [
   null,
-  ""
+  "Zavřít"
  ],
  "Close Selected Pages": [
   null,
@@ -181,15 +185,15 @@ return plural;
  ],
  "Comment": [
   null,
-  ""
+  "Poznámka"
  ],
  "Confirm": [
   null,
-  ""
+  "Potvrdit"
  ],
  "Connect": [
   null,
-  ""
+  "Spojení"
  ],
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
@@ -209,7 +213,7 @@ return plural;
  ],
  "Details": [
   null,
-  ""
+  "Podrobnosti"
  ],
  "Disconnected": [
   null,
@@ -245,7 +249,7 @@ return plural;
  ],
  "Fingerprint": [
   null,
-  ""
+  "Otisk"
  ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
@@ -271,7 +275,7 @@ return plural;
   null,
   ""
  ],
- "Leave blank to connect to this machine as the currently logged in user{{#user}} ({{user}}){{/user}}. If you enter a different username, that user will always be used connecting to this machine.": [
+ "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
   ""
  ],
@@ -289,11 +293,11 @@ return plural;
  ],
  "Log In": [
   null,
-  ""
+  "Přihlášení"
  ],
  "Log Out": [
   null,
-  ""
+  "Odhlásit"
  ],
  "Log in again": [
   null,
@@ -357,7 +361,7 @@ return plural;
  ],
  "Password": [
   null,
-  ""
+  "Heslo"
  ],
  "Password not accepted": [
   null,
@@ -373,7 +377,7 @@ return plural;
  ],
  "Port": [
   null,
-  ""
+  "Port"
  ],
  "Privileged tasks not available": [
   null,
@@ -465,7 +469,7 @@ return plural;
  ],
  "Troubleshoot": [
   null,
-  ""
+  "Řešit potíže"
  ],
  "Try to reconnect": [
   null,
@@ -473,7 +477,7 @@ return plural;
  ],
  "Type": [
   null,
-  ""
+  "Typ"
  ],
  "Type a password": [
   null,
@@ -505,7 +509,7 @@ return plural;
  ],
  "User name": [
   null,
-  ""
+  "Uživatelské jméno"
  ],
  "Using available credentials": [
   null,
@@ -513,7 +517,7 @@ return plural;
  ],
  "Version": [
   null,
-  ""
+  "Verze"
  ],
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
@@ -525,6 +529,6 @@ return plural;
  ],
  "active": [
   null,
-  ""
+  "aktivní"
  ]
 }));

@@ -113,11 +113,11 @@ return plural;
  ],
  "Close": [
   null,
-  ""
+  "Zavřít"
  ],
  "Confirm": [
   null,
-  ""
+  "Potvrdit"
  ],
  "Confirm New Password": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Delete": [
   null,
-  ""
+  "Smazat"
  ],
  "Delete $0": [
   null,
@@ -177,7 +177,7 @@ return plural;
  ],
  "Full Name": [
   null,
-  ""
+  "Celé jméno"
  ],
  "Invalid expiration date": [
   null,
@@ -257,7 +257,7 @@ return plural;
  ],
  "Password": [
   null,
-  ""
+  "Heslo"
  ],
  "Password Expiration": [
   null,
@@ -297,7 +297,7 @@ return plural;
  ],
  "Reset": [
   null,
-  ""
+  "Reset"
  ],
  "Roles": [
   null,
@@ -309,7 +309,7 @@ return plural;
  ],
  "Set": [
   null,
-  ""
+  "Sada"
  ],
  "Set Password": [
   null,
@@ -365,7 +365,7 @@ return plural;
  ],
  "User Name": [
   null,
-  ""
+  "Uživatelské jméno"
  ],
  "Validating key": [
   null,

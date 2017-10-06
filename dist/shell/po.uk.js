@@ -91,6 +91,10 @@ return plural;
   null,
   "Додати запис комп’ютера на панель"
  ],
+ "Add key": [
+  null,
+  "Додати клавішу"
+ ],
  "Address": [
   null,
   "Адреса"
@@ -271,9 +275,9 @@ return plural;
   null,
   "Квиток Kerberos"
  ],
- "Leave blank to connect to this machine as the currently logged in user{{#user}} ({{user}}){{/user}}. If you enter a different username, that user will always be used connecting to this machine.": [
+ "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
-  "Не заповнюйте, щоб встановити з’єднання із цією машиною від імені поточного користувача системи{{#user}} ({{user}}){{/user}}. Якщо ви введете ім’я іншого користувача, для встановлення з’єднання із цією машиною завжди використовуватиметься це ім’я."
+  "Не заповнюйте, щоб встановити з’єднання із цією машиною від імені поточного користувача системи{{#default_user}} ({{default_user}}){{/default_user}}. Якщо ви введете ім’я іншого користувача, для встановлення з’єднання із цією машиною завжди використовуватиметься це ім’я."
  ],
  "Licensed under:": [
   null,

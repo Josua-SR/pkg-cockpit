@@ -1,0 +1,116 @@
+# Generated Makefile data for apps
+# Stamp: Fri Oct 06 2017 12:52:16 GMT+0000 (UTC)
+
+apps_INPUTS = \
+	$(srcdir)/node_modules/react-lite/LICENSE \
+	$(srcdir)/node_modules/react-lite/README.md \
+	$(srcdir)/node_modules/react-lite/dist/react-lite.js \
+	$(srcdir)/pkg/apps/application-list.jsx \
+	$(srcdir)/pkg/apps/application.css \
+	$(srcdir)/pkg/apps/application.jsx \
+	$(srcdir)/pkg/apps/appstream.js \
+	$(srcdir)/pkg/apps/default.png \
+	$(srcdir)/pkg/apps/index.html \
+	$(srcdir)/pkg/apps/index.jsx \
+	$(srcdir)/pkg/apps/packagekit.js \
+	$(srcdir)/pkg/apps/utils.jsx \
+	$(srcdir)/pkg/apps/watch-appstream.py \
+	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \
+	$(srcdir)/pkg/lib/page.css \
+	$(srcdir)/pkg/lib/table.css \
+	$(NULL)
+
+apps_OUTPUTS = \
+	dist/apps/apps.css \
+	dist/apps/apps.css.map \
+	dist/apps/apps.min.js \
+	dist/apps/apps.min.js.map \
+	dist/apps/default.png \
+	dist/apps/index.html \
+	$(NULL)
+
+apps_PO = dist/apps/po.js $(patsubst %,dist/apps/po.%.js,$(LINGUAS))
+
+apps_INSTALL = \
+	dist/apps/apps.css.gz \
+	dist/apps/apps.min.js.gz \
+	dist/apps/default.png \
+	dist/apps/index.html.gz \
+	dist/apps/manifest.json \
+	$(addsuffix .gz,$(apps_PO)) \
+	$(NULL)
+
+apps_DEBUG = \
+	dist/apps/apps.css.map \
+	dist/apps/apps.min.js.map \
+	$(NULL)
+
+apps_TESTS = \
+	$(NULL)
+
+dist/apps/%.po: po/%.po
+	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
+	$(MSGGREP) -N node_modules/react-lite/dist/react-lite.js -N pkg/apps/application-list.jsx -N pkg/apps/application.css -N pkg/apps/application.jsx -N pkg/apps/appstream.js -N pkg/apps/default.png -N pkg/apps/index.html -N pkg/apps/index.jsx -N pkg/apps/packagekit.js -N pkg/apps/utils.jsx -N pkg/apps/watch-appstream.py -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/page.css -N pkg/lib/table.css $< > $@.tmp && mv $@.tmp $@
+
+dist/apps/Makefile.deps: $(WEBPACK_CONFIG) $(apps_INPUTS)
+	$(WEBPACK_RULE) -d dist/apps/Makefile.deps $(WEBPACK_CONFIG)
+
+dist/apps/apps.css: dist/apps/Makefile.deps
+
+dist/apps/apps.css.map: dist/apps/Makefile.deps
+
+dist/apps/apps.min.js: dist/apps/Makefile.deps
+
+dist/apps/apps.min.js.map: dist/apps/Makefile.deps
+
+dist/apps/default.png: dist/apps/Makefile.deps
+
+dist/apps/index.html: dist/apps/Makefile.deps
+
+$(srcdir)/node_modules/react-lite/LICENSE:
+
+$(srcdir)/node_modules/react-lite/README.md:
+
+$(srcdir)/node_modules/react-lite/dist/react-lite.js:
+
+$(srcdir)/pkg/apps/application-list.jsx:
+
+$(srcdir)/pkg/apps/application.css:
+
+$(srcdir)/pkg/apps/application.jsx:
+
+$(srcdir)/pkg/apps/appstream.js:
+
+$(srcdir)/pkg/apps/default.png:
+
+$(srcdir)/pkg/apps/index.html:
+
+$(srcdir)/pkg/apps/index.jsx:
+
+$(srcdir)/pkg/apps/packagekit.js:
+
+$(srcdir)/pkg/apps/utils.jsx:
+
+$(srcdir)/pkg/apps/watch-appstream.py:
+
+$(srcdir)/pkg/lib/cockpit-components-dialog.jsx:
+
+$(srcdir)/pkg/lib/page.css:
+
+$(srcdir)/pkg/lib/table.css:
+
+WEBPACK_INPUTS += $(apps_INPUTS)
+WEBPACK_OUTPUTS += $(apps_OUTPUTS)
+WEBPACK_PO += $(apps_PO)
+WEBPACK_INSTALL += $(apps_INSTALL)
+WEBPACK_DEBUG += $(apps_DEBUG)
+TESTS += $(apps_TESTS)
+
+apps: dist/apps/Makefile.deps $(apps_OUTPUTS) $(apps_INSTALL)
+	@true
+clean-apps: 
+	rm -rf $(apps_OUTPUTS) $(apps_INSTALL) dist/apps/Makefile.deps
+all-local:: apps
+	@true
+clean-local:: clean-apps
+	@true

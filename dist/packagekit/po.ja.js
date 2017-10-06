@@ -99,7 +99,7 @@ return plural;
   null,
   "取り消し"
  ],
- "Check for updates": [
+ "Check for Updates": [
   null,
   "更新の確認"
  ],
@@ -127,13 +127,13 @@ return plural;
   null,
   ""
  ],
- "Install all updates": [
+ "Install All Updates": [
   null,
-  "インストールされた製品"
+  ""
  ],
- "Install security updates": [
+ "Install Security Updates": [
   null,
-  "インストールされた製品"
+  ""
  ],
  "Installed": [
   null,
@@ -166,6 +166,14 @@ return plural;
  "No updates pending": [
   null,
   ""
+ ],
+ "Off": [
+  null,
+  "オフ"
+ ],
+ "On": [
+  null,
+  "オン"
  ],
  "Package information": [
   null,
@@ -298,5 +306,9 @@ return plural;
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,
   ""
+ ],
+ "undefined": [
+  null,
+  "未定義"
  ]
 }));

@@ -123,7 +123,7 @@ return plural;
  ],
  "Empty": [
   null,
-  ""
+  "Prázdný"
  ],
  "Error": [
   null,
@@ -131,7 +131,7 @@ return plural;
  ],
  "Memory": [
   null,
-  ""
+  "Paměť"
  ],
  "Network": [
   null,
@@ -171,11 +171,11 @@ return plural;
  ],
  "Unavailable": [
   null,
-  ""
+  "Nedostupné"
  ],
  "User": [
   null,
-  ""
+  "Uživatel"
  ],
  "undefined": [
   null,
@@ -193,7 +193,7 @@ return plural;
  ],
  "verb\u0004Empty": [
   null,
-  ""
+  "Prázdný"
  ],
  "verb\u0004Ready": [
   null,

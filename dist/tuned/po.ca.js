@@ -89,19 +89,19 @@ return plural;
  ],
  "Failed to disable tuned": [
   null,
-  ""
+  "Ha fallat la inhabilitació de tuned"
  ],
  "Failed to disable tuned profile": [
   null,
-  ""
+  "Ha fallat la inhabilitació del perfil de tuned"
  ],
  "Failed to enable tuned": [
   null,
-  ""
+  "Ha fallat l'habilitació de tuned"
  ],
  "Failed to switch profile": [
   null,
-  ""
+  "Ha fallat el canvi de perfil"
  ],
  "None": [
   null,
@@ -109,7 +109,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "D'acord"
  ],
  "This system is using a custom profile": [
   null,

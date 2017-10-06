@@ -101,9 +101,9 @@ return plural;
   null,
   "Cancelar"
  ],
- "Check for updates": [
+ "Check for Updates": [
   null,
-  ""
+  "Verificar Atualizações"
  ],
  "Cockpit itself will be updated.": [
   null,
@@ -129,11 +129,11 @@ return plural;
   null,
   ""
  ],
- "Install all updates": [
+ "Install All Updates": [
   null,
   ""
  ],
- "Install security updates": [
+ "Install Security Updates": [
   null,
   ""
  ],
@@ -168,6 +168,14 @@ return plural;
  "No updates pending": [
   null,
   ""
+ ],
+ "Off": [
+  null,
+  "Desligado"
+ ],
+ "On": [
+  null,
+  "Ligado"
  ],
  "Package information": [
   null,
@@ -300,5 +308,9 @@ return plural;
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,
   ""
+ ],
+ "undefined": [
+  null,
+  "indefinido"
  ]
 }));

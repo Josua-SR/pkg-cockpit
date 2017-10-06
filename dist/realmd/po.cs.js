@@ -89,7 +89,7 @@ return plural;
  ],
  "Automatic": [
   null,
-  ""
+  "Automatický"
  ],
  "Cancel": [
   null,
@@ -125,11 +125,11 @@ return plural;
  ],
  "Join": [
   null,
-  ""
+  "Přidejte se"
  ],
  "Join Domain": [
   null,
-  ""
+  "Připojit se k doméně"
  ],
  "Join a Domain": [
   null,
@@ -149,11 +149,11 @@ return plural;
  ],
  "More": [
   null,
-  ""
+  "Další"
  ],
  "Next": [
   null,
-  ""
+  "Další"
  ],
  "Off": [
   null,
@@ -177,7 +177,7 @@ return plural;
  ],
  "User Name": [
   null,
-  ""
+  "Uživatelské jméno"
  ],
  "User Password": [
   null,

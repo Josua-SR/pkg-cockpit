@@ -85,7 +85,7 @@ return plural;
  ],
  "Add": [
   null,
-  ""
+  "Přidat"
  ],
  "Add Another Key": [
   null,
@@ -97,11 +97,11 @@ return plural;
  ],
  "Apply": [
   null,
-  ""
+  "Použít"
  ],
  "Available": [
   null,
-  ""
+  "Dostupný"
  ],
  "Begins with '-----BEGIN PGP PUBLIC KEY BLOCK-----'": [
   null,
@@ -137,11 +137,11 @@ return plural;
  ],
  "Default": [
   null,
-  ""
+  "Výchozí"
  ],
  "Delete": [
   null,
-  ""
+  "Smazat"
  ],
  "Downgrades": [
   null,
@@ -157,7 +157,7 @@ return plural;
  ],
  "Failed": [
   null,
-  ""
+  "Neúspěšný"
  ],
  "Good Signature": [
   null,
@@ -209,11 +209,11 @@ return plural;
  ],
  "Origin": [
   null,
-  ""
+  "Původ"
  ],
  "Packages": [
   null,
-  ""
+  "Balíčky"
  ],
  "Please provide a valid URL": [
   null,
@@ -257,7 +257,7 @@ return plural;
  ],
  "Running": [
   null,
-  ""
+  "Běží"
  ],
  "Scanning metadata": [
   null,
@@ -277,7 +277,7 @@ return plural;
  ],
  "Status": [
   null,
-  ""
+  "Stav"
  ],
  "This deployment contains the same packages as your currently booted system": [
   null,
@@ -289,7 +289,7 @@ return plural;
  ],
  "URL": [
   null,
-  ""
+  "URL"
  ],
  "Unable to communicate with OSTree": [
   null,
@@ -301,7 +301,7 @@ return plural;
  ],
  "Updates": [
   null,
-  ""
+  "Aktualizace"
  ],
  "Updating": [
   null,
@@ -313,7 +313,7 @@ return plural;
  ],
  "Version": [
   null,
-  ""
+  "Verze"
  ],
  "When": [
   null,

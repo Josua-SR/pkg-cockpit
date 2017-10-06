@@ -149,7 +149,7 @@ return plural;
  ],
  "Active": [
   null,
-  ""
+  "Aktivní"
  ],
  "Active Backup": [
   null,
@@ -205,11 +205,11 @@ return plural;
  ],
  "Addresses": [
   null,
-  ""
+  "Adresa"
  ],
  "Apply": [
   null,
-  ""
+  "Použít"
  ],
  "Authenticating": [
   null,
@@ -217,7 +217,7 @@ return plural;
  ],
  "Automatic": [
   null,
-  ""
+  "Automatický"
  ],
  "Automatic (DHCP only)": [
   null,
@@ -233,7 +233,7 @@ return plural;
  ],
  "Bond": [
   null,
-  ""
+  "Vazba"
  ],
  "Bond Settings": [
   null,
@@ -241,7 +241,7 @@ return plural;
  ],
  "Bridge": [
   null,
-  ""
+  "Most"
  ],
  "Bridge Port Settings": [
   null,
@@ -257,7 +257,7 @@ return plural;
  ],
  "Broadcast": [
   null,
-  ""
+  "Vysílání"
  ],
  "Broken configuration": [
   null,
@@ -285,11 +285,11 @@ return plural;
  ],
  "Close": [
   null,
-  ""
+  "Zavřít"
  ],
  "Configure": [
   null,
-  ""
+  "Nastavit"
  ],
  "Configuring": [
   null,
@@ -329,7 +329,7 @@ return plural;
  ],
  "DNS": [
   null,
-  ""
+  "DNS"
  ],
  "DNS $val": [
   null,
@@ -349,7 +349,7 @@ return plural;
  ],
  "Delete": [
   null,
-  ""
+  "Smazat"
  ],
  "Delete $0": [
   null,
@@ -377,7 +377,7 @@ return plural;
  ],
  "Failed": [
   null,
-  ""
+  "Neúspěšný"
  ],
  "Forward delay $forward_delay": [
   null,
@@ -405,7 +405,7 @@ return plural;
  ],
  "IP Address": [
   null,
-  ""
+  "IP adresa"
  ],
  "IP Settings": [
   null,
@@ -413,7 +413,7 @@ return plural;
  ],
  "IPv4": [
   null,
-  ""
+  "IPv4"
  ],
  "IPv4 Settings": [
   null,
@@ -421,7 +421,7 @@ return plural;
  ],
  "IPv6": [
   null,
-  ""
+  "IPv6"
  ],
  "IPv6 Settings": [
   null,
@@ -433,7 +433,7 @@ return plural;
  ],
  "Ignore": [
   null,
-  ""
+  "Ignorovat"
  ],
  "Inactive": [
   null,
@@ -441,7 +441,7 @@ return plural;
  ],
  "Interfaces": [
   null,
-  ""
+  "Rozhraní"
  ],
  "Invalid address $0": [
   null,
@@ -509,7 +509,7 @@ return plural;
  ],
  "Manual": [
   null,
-  ""
+  "Ruční"
  ],
  "Master": [
   null,
@@ -521,7 +521,7 @@ return plural;
  ],
  "Members": [
   null,
-  ""
+  "Členové"
  ],
  "Mode": [
   null,
@@ -545,7 +545,7 @@ return plural;
  ],
  "Networking": [
   null,
-  ""
+  "Sítě"
  ],
  "Networking Logs": [
   null,
@@ -573,7 +573,7 @@ return plural;
  ],
  "Parent": [
   null,
-  ""
+  "Rodič"
  ],
  "Parent $parent": [
   null,
@@ -597,7 +597,7 @@ return plural;
  ],
  "Permanent": [
   null,
-  ""
+  "Trvalá"
  ],
  "Ping Interval": [
   null,
@@ -609,7 +609,7 @@ return plural;
  ],
  "Ports": [
   null,
-  ""
+  "Porty"
  ],
  "Prefix length": [
   null,
@@ -621,19 +621,19 @@ return plural;
  ],
  "Preparing": [
   null,
-  ""
+  "Příprava"
  ],
  "Preserve": [
   null,
-  ""
+  "Zachovat"
  ],
  "Primary": [
   null,
-  ""
+  "primární"
  ],
  "Priority": [
   null,
-  ""
+  "Priorita"
  ],
  "Priority $priority": [
   null,
@@ -701,7 +701,7 @@ return plural;
  ],
  "Shared": [
   null,
-  ""
+  "Sdílená"
  ],
  "Spanning Tree Protocol": [
   null,
@@ -717,7 +717,7 @@ return plural;
  ],
  "Status": [
   null,
-  ""
+  "Stav"
  ],
  "Sticky": [
   null,
@@ -745,7 +745,7 @@ return plural;
  ],
  "Team": [
   null,
-  ""
+  "Tým"
  ],
  "Team Port": [
   null,
@@ -777,7 +777,7 @@ return plural;
  ],
  "Unknown": [
   null,
-  ""
+  "Neznámý"
  ],
  "Unknown \"$0\"": [
   null,
@@ -793,7 +793,7 @@ return plural;
  ],
  "VLAN": [
   null,
-  ""
+  "VLAN"
  ],
  "VLAN Id": [
   null,
@@ -813,7 +813,7 @@ return plural;
  ],
  "Yes": [
   null,
-  ""
+  "Ano"
  ],
  "[$0 bytes of binary data]": [
   null,
@@ -829,6 +829,6 @@ return plural;
  ],
  "page-title\u0004Networking": [
   null,
-  ""
+  "Sítě"
  ]
 }));

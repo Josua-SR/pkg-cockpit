@@ -91,6 +91,10 @@ return plural;
   null,
   "添加主机到仪表板"
  ],
+ "Add key": [
+  null,
+  "添加密钥"
+ ],
  "Address": [
   null,
   "地址"
@@ -271,9 +275,9 @@ return plural;
   null,
   "Kerberos 权证"
  ],
- "Leave blank to connect to this machine as the currently logged in user{{#user}} ({{user}}){{/user}}. If you enter a different username, that user will always be used connecting to this machine.": [
+ "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
-  "以当前登录的用户{{#user}} ({{user}}){{/user}}来连接该主机则保留为空。如果输入一个不同的用户名，将总会用那个用户连接该主机。"
+  ""
  ],
  "Licensed under:": [
   null,

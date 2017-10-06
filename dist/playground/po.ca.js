@@ -144,7 +144,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "D'acord"
  ],
  "On": [
   null,
@@ -160,11 +160,11 @@ return plural;
  ],
  "Too many files found": [
   null,
-  ""
+  "S'han trobat massa fitxers"
  ],
  "Unavailable": [
   null,
-  ""
+  "No disponible"
  ],
  "User": [
   null,
@@ -172,7 +172,7 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "indefinit"
  ],
  "disk-non-rotational\u0004$0 disk is missing": [
   "$0 disks are missing",
@@ -185,7 +185,7 @@ return plural;
  ],
  "verb\u0004Empty": [
   null,
-  ""
+  "Buit"
  ],
  "verb\u0004Ready": [
   null,

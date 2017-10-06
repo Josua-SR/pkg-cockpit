@@ -69,8 +69,8 @@ return plural;
  },
  "$0 occurrence": [
   "$1 occurrences",
-  "",
-  ""
+  "$0 ocurrència",
+  "$0 ocurrències"
  ],
  "Apply this solution": [
   null,
@@ -82,19 +82,19 @@ return plural;
  ],
  "Audit log": [
   null,
-  ""
+  "Registre d'auditoria"
  ],
  "Connecting to SETroubleshoot daemon...": [
   null,
-  ""
+  "S'està connectant al dimoni de SETroubleshoot..."
  ],
  "Enforce policy:": [
   null,
-  ""
+  "Aplica la política:"
  ],
  "Error while deleting alert: $0": [
   null,
-  ""
+  "Error mentre se suprimia l'alerta: $0"
  ],
  "Error while setting SELinux mode: '$0'": [
   null,
@@ -102,7 +102,7 @@ return plural;
  ],
  "Failed to delete alert: $0": [
   null,
-  ""
+  "Ha fallat la supressió de l'alerta: $0"
  ],
  "Install setroubleshoot-server to troubleshoot SELinux events.": [
   null,
@@ -122,7 +122,7 @@ return plural;
  ],
  "Occurred between $0 and $1": [
   null,
-  ""
+  "S'ha produït entre $0 i $1"
  ],
  "Off": [
   null,
@@ -134,7 +134,7 @@ return plural;
  ],
  "SELinux Access Control Errors": [
   null,
-  ""
+  "Errors de control d'accés de SELinux"
  ],
  "SELinux Policy": [
   null,
@@ -178,23 +178,23 @@ return plural;
  ],
  "Unable to apply this solution automatically": [
   null,
-  ""
+  "No es pot aplicar automàticament aquesta solució"
  ],
  "Unable to get alert details.": [
   null,
-  ""
+  "No es poden obtenir els detalls de l'alerta."
  ],
  "Unable to get alert: $0": [
   null,
-  ""
+  "No es pot obtenir l'alerta: $0"
  ],
  "Unable to run fix: %0": [
   null,
-  ""
+  "No es pot executar la correcció: %0"
  ],
  "Unable to start setroubleshootd": [
   null,
-  ""
+  "No es pot iniciar setroubleshootd"
  ],
  "Waiting for details...": [
   null,
@@ -202,6 +202,6 @@ return plural;
  ],
  "solution details": [
   null,
-  ""
+  "detalls de la solució"
  ]
 }));
