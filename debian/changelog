@@ -1,11 +1,11 @@
-cockpit (152-1) UNRELEASED; urgency=medium
+cockpit (152-1) unstable; urgency=medium
 
   * New upstream release:
     - Add Applications page
     - Add automatic update configuration for dnf to Software Updates
     - Fix cockpit-bridge crash if /etc/os-release does not exist
 
- -- Cockpit Project <cockpituous@gmail.com>  Fri, 06 Oct 2017 17:21:15 +0200
+ -- Martin Pitt <mpitt@debian.org>  Fri, 06 Oct 2017 17:23:09 +0200
 
 cockpit (151-1) unstable; urgency=medium
 
