@@ -675,7 +675,7 @@ return plural;
  ],
  "Login commands": [
   null,
-  ""
+  "Ordres d'inici de sessió"
  ],
  "Logs": [
   null,

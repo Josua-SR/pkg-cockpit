@@ -1,15 +1,17 @@
 # Generated Makefile data for systemd
-# Stamp: Fri Oct 06 2017 12:52:16 GMT+0000 (UTC)
+# Stamp: Tue Oct 17 2017 07:23:11 GMT+0000 (UTC)
 
 systemd_INPUTS = \
 	$(srcdir)/node_modules/bootstrap-datepicker/LICENSE \
 	$(srcdir)/node_modules/bootstrap-datepicker/README.md \
 	$(srcdir)/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js \
+	$(srcdir)/node_modules/bootstrap-datepicker/package.json \
 	$(srcdir)/node_modules/jquery-flot/LICENSE.txt \
 	$(srcdir)/node_modules/jquery-flot/README.md \
 	$(srcdir)/node_modules/jquery-flot/jquery.flot.js \
 	$(srcdir)/node_modules/jquery-flot/jquery.flot.selection.js \
 	$(srcdir)/node_modules/jquery-flot/jquery.flot.time.js \
+	$(srcdir)/node_modules/jquery-flot/package.json \
 	$(srcdir)/node_modules/moment/LICENSE \
 	$(srcdir)/node_modules/moment/README.md \
 	$(srcdir)/node_modules/moment/locale/af.js \
@@ -98,16 +100,21 @@ systemd_INPUTS = \
 	$(srcdir)/node_modules/moment/locale/zh-cn.js \
 	$(srcdir)/node_modules/moment/locale/zh-tw.js \
 	$(srcdir)/node_modules/moment/moment.js \
+	$(srcdir)/node_modules/moment/package.json \
 	$(srcdir)/node_modules/mustache/LICENSE \
 	$(srcdir)/node_modules/mustache/README.md \
 	$(srcdir)/node_modules/mustache/mustache.js \
+	$(srcdir)/node_modules/mustache/package.json \
 	$(srcdir)/node_modules/patternfly-bootstrap-combobox/README.md \
 	$(srcdir)/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js \
+	$(srcdir)/node_modules/patternfly-bootstrap-combobox/package.json \
 	$(srcdir)/node_modules/react-lite/LICENSE \
 	$(srcdir)/node_modules/react-lite/README.md \
 	$(srcdir)/node_modules/react-lite/dist/react-lite.js \
+	$(srcdir)/node_modules/react-lite/package.json \
 	$(srcdir)/node_modules/term.js-cockpit/LICENSE \
 	$(srcdir)/node_modules/term.js-cockpit/README.md \
+	$(srcdir)/node_modules/term.js-cockpit/package.json \
 	$(srcdir)/node_modules/term.js-cockpit/src/term.js \
 	$(srcdir)/pkg/lib/cockpit-components-terminal.jsx \
 	$(srcdir)/pkg/lib/console.css \
@@ -232,6 +239,8 @@ $(srcdir)/node_modules/bootstrap-datepicker/README.md:
 
 $(srcdir)/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js:
 
+$(srcdir)/node_modules/bootstrap-datepicker/package.json:
+
 $(srcdir)/node_modules/jquery-flot/LICENSE.txt:
 
 $(srcdir)/node_modules/jquery-flot/README.md:
@@ -241,6 +250,8 @@ $(srcdir)/node_modules/jquery-flot/jquery.flot.js:
 $(srcdir)/node_modules/jquery-flot/jquery.flot.selection.js:
 
 $(srcdir)/node_modules/jquery-flot/jquery.flot.time.js:
+
+$(srcdir)/node_modules/jquery-flot/package.json:
 
 $(srcdir)/node_modules/moment/LICENSE:
 
@@ -418,15 +429,21 @@ $(srcdir)/node_modules/moment/locale/zh-tw.js:
 
 $(srcdir)/node_modules/moment/moment.js:
 
+$(srcdir)/node_modules/moment/package.json:
+
 $(srcdir)/node_modules/mustache/LICENSE:
 
 $(srcdir)/node_modules/mustache/README.md:
 
 $(srcdir)/node_modules/mustache/mustache.js:
 
+$(srcdir)/node_modules/mustache/package.json:
+
 $(srcdir)/node_modules/patternfly-bootstrap-combobox/README.md:
 
 $(srcdir)/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js:
+
+$(srcdir)/node_modules/patternfly-bootstrap-combobox/package.json:
 
 $(srcdir)/node_modules/react-lite/LICENSE:
 
@@ -434,9 +451,13 @@ $(srcdir)/node_modules/react-lite/README.md:
 
 $(srcdir)/node_modules/react-lite/dist/react-lite.js:
 
+$(srcdir)/node_modules/react-lite/package.json:
+
 $(srcdir)/node_modules/term.js-cockpit/LICENSE:
 
 $(srcdir)/node_modules/term.js-cockpit/README.md:
+
+$(srcdir)/node_modules/term.js-cockpit/package.json:
 
 $(srcdir)/node_modules/term.js-cockpit/src/term.js:
 

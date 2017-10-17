@@ -1,16 +1,19 @@
 # Generated Makefile data for users
-# Stamp: Fri Oct 06 2017 12:52:16 GMT+0000 (UTC)
+# Stamp: Tue Oct 17 2017 07:23:11 GMT+0000 (UTC)
 
 users_INPUTS = \
 	$(srcdir)/node_modules/bootstrap-datepicker/LICENSE \
 	$(srcdir)/node_modules/bootstrap-datepicker/README.md \
 	$(srcdir)/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js \
+	$(srcdir)/node_modules/bootstrap-datepicker/package.json \
 	$(srcdir)/node_modules/mustache/LICENSE \
 	$(srcdir)/node_modules/mustache/README.md \
 	$(srcdir)/node_modules/mustache/mustache.js \
+	$(srcdir)/node_modules/mustache/package.json \
 	$(srcdir)/node_modules/react-lite/LICENSE \
 	$(srcdir)/node_modules/react-lite/README.md \
 	$(srcdir)/node_modules/react-lite/dist/react-lite.js \
+	$(srcdir)/node_modules/react-lite/package.json \
 	$(srcdir)/pkg/lib/mustache.js \
 	$(srcdir)/pkg/lib/page.css \
 	$(srcdir)/pkg/lib/patterns.js \
@@ -72,17 +75,23 @@ $(srcdir)/node_modules/bootstrap-datepicker/README.md:
 
 $(srcdir)/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js:
 
+$(srcdir)/node_modules/bootstrap-datepicker/package.json:
+
 $(srcdir)/node_modules/mustache/LICENSE:
 
 $(srcdir)/node_modules/mustache/README.md:
 
 $(srcdir)/node_modules/mustache/mustache.js:
 
+$(srcdir)/node_modules/mustache/package.json:
+
 $(srcdir)/node_modules/react-lite/LICENSE:
 
 $(srcdir)/node_modules/react-lite/README.md:
 
 $(srcdir)/node_modules/react-lite/dist/react-lite.js:
+
+$(srcdir)/node_modules/react-lite/package.json:
 
 $(srcdir)/pkg/lib/mustache.js:
 

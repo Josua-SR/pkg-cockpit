@@ -12193,7 +12193,7 @@ if (typeof jQuery === 'undefined') {
   'use strict';
 
   var patternfly = {
-    version: "3.27.6"
+    version: "3.27.7"
   };
 
   // definition of breakpoint sizes for tablet and desktop modes

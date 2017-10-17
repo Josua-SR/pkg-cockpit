@@ -69,7 +69,7 @@ return plural;
  },
  "Applications": [
   null,
-  ""
+  "Програми"
  ],
  "Cancel": [
   null,
@@ -77,7 +77,7 @@ return plural;
  ],
  "Checking for new applications": [
   null,
-  ""
+  "Шукаємо нові програми"
  ],
  "Close": [
   null,
@@ -89,11 +89,11 @@ return plural;
  ],
  "Go to Application": [
   null,
-  ""
+  "Перейти до програми"
  ],
  "Install": [
   null,
-  ""
+  "Встановити"
  ],
  "Installing": [
   null,
@@ -101,11 +101,11 @@ return plural;
  ],
  "No applications installed or available": [
   null,
-  ""
+  "Немає встановлених або доступних програм"
  ],
  "No installation package found for this application.": [
   null,
-  ""
+  "Для цієї програми не знайдено пакунка для встановлення."
  ],
  "Ok": [
   null,
@@ -117,14 +117,14 @@ return plural;
  ],
  "Removing": [
   null,
-  ""
+  "Вилучаємо"
  ],
  "Unknown Application": [
   null,
-  ""
+  "Невідома програма"
  ],
  "Waiting for other programs to finish using the package manager...": [
   null,
-  ""
+  "Очікуємо на завершення роботи з програмою для керування пакунками інших програм…"
  ]
 }));

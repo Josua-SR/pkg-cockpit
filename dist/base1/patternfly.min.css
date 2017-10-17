@@ -3148,6 +3148,7 @@ a.disabled{color:#8b8d8f;cursor:not-allowed;text-decoration:none}
 .list-pf-expansion .list-pf-container{border-top:1px solid #bbb}
 @media (min-width:992px){.list-pf:not(.list-pf-stacked) .list-pf-container{-ms-flex-align:center;align-items:center}
 }
+.list-pf-chevron{min-width:1.2em}
 .list-pf-chevron,.list-pf-select{margin-right:10px}
 .list-pf-chevron+.list-pf-content,.list-pf-select+.list-pf-content{border-left:1px solid #d1d1d1;padding-left:20px}
 .list-pf-chevron .fa,.list-pf-select .fa{font-size:22px}

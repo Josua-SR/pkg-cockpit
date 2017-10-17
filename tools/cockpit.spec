@@ -20,6 +20,12 @@
 %define rhel 0
 %endif
 
+# for testing this already gets set in fedora.install, as we want the target
+# VERSION_ID, not the mock chroot's one
+%if "%{!?os_version_id:1}"
+%define os_version_id %(. /etc/os-release; echo $VERSION_ID)
+%endif
+
 %define _hardened_build 1
 
 # define to build the dashboard
@@ -119,13 +125,13 @@ machines.
 # generated and source file changes
 # Keep this in sync with tools/debian/rules.
 if [ -n "%{patches}" ]; then
-	git init
-	git config user.email "unused@example.com" && git config user.name "Unused"
-	git config core.autocrlf false && git config core.safecrlf false && git config gc.auto 0
-	git add -f . && git commit -a -q -m "Base" && git tag -a initial --message="initial"
-	git am --whitespace=nowarn %{patches}
-	touch -r $(git diff --name-only initial..HEAD) .git
-	rm -rf .git
+    git init
+    git config user.email "unused@example.com" && git config user.name "Unused"
+    git config core.autocrlf false && git config core.safecrlf false && git config gc.auto 0
+    git add -f . && git commit -a -q -m "Base" && git tag -a initial --message="initial"
+    git am --whitespace=nowarn %{patches}
+    touch -r $(git diff --name-only initial..HEAD) .git
+    rm -rf .git
 fi
 
 %build
@@ -211,6 +217,9 @@ find %{buildroot}%{_datadir}/%{name}/apps -type f >> packagekit.list
 echo '%dir %{_datadir}/%{name}/machines' > machines.list
 find %{buildroot}%{_datadir}/%{name}/machines -type f >> machines.list
 
+echo '%dir %{_datadir}/%{name}/ovirt' > ovirt.list
+find %{buildroot}%{_datadir}/%{name}/ovirt -type f >> ovirt.list
+
 # on CentOS systems we don't have the required setroubleshoot-server packages
 %if 0%{?centos}
 rm -rf %{buildroot}%{_datadir}/%{name}/selinux
@@ -278,6 +287,8 @@ cat kdump.list subscriptions.list sosreport.list networkmanager.list selinux.lis
 # -------------------------------------------------------------------------------
 # Sub-packages
 
+%define __lib lib
+
 %package bridge
 Summary: Cockpit bridge server-side component
 Requires: glib-networking
@@ -318,6 +329,18 @@ The Cockpit components for managing virtual machines.
 
 %files machines -f machines.list
 
+%package ovirt
+Summary: Cockpit user interface for oVirt virtual machines
+Requires: %{name}-bridge >= 122
+Requires: %{name}-system >= 122
+Requires: libvirt
+Requires: libvirt-client
+
+%description ovirt
+The Cockpit components for managing oVirt virtual machines.
+
+%files ovirt -f ovirt.list
+
 %package ostree
 Summary: Cockpit user interface for rpm-ostree
 # Requires: Uses new translations functionality
@@ -354,15 +377,16 @@ Cockpit support for reading PCP metrics and loading PCP archives.
 
 %if %{defined build_dashboard}
 %package dashboard
-Summary: Cockpit SSH remoting and dashboard
+Summary: Cockpit remote servers and dashboard
 Requires: libssh >= %{libssh_version}
-Provides: %{name}-ssh
+Provides: %{name}-ssh = %{version}-%{release}
 # nothing depends on the dashboard, but we can't use it with older versions of the bridge
 Conflicts: %{name}-bridge < 135
 Conflicts: %{name}-ws < 135
 
 %description dashboard
-Cockpit support for remoting to other servers, bastion hosts, and a basic dashboard
+Cockpit support for connecting to remote servers (through ssh),
+bastion hosts, and a basic dashboard.
 
 %files dashboard -f dashboard.list
 %{_libexecdir}/cockpit-ssh
@@ -388,18 +412,39 @@ fi
 %endif
 %endif
 
+# storaged on RHEL 7.4 and Fedora < 27, udisks on newer ones
+# Recommends: not supported in RHEL < 8
 %package storaged
 Summary: Cockpit user interface for storage, using Storaged
 Requires: %{name}-shell >= 122
+%if (0%{?rhel} == 7 && "%{os_version_id}" == "7.4") || 0%{?centos} == 7
 Requires: storaged >= 2.1.1
-%if 0%{?fedora} >= 24 || 0%{?rhel} >= 8
-Recommends: storaged-lvm2 >= 2.1.1
-Recommends: storaged-iscsi >= 2.1.1
-Recommends: device-mapper-multipath
-%else
 Requires: storaged-lvm2 >= 2.1.1
 Requires: storaged-iscsi >= 2.1.1
 Requires: device-mapper-multipath
+%else
+%if 0%{?rhel} == 7
+Requires: udisks2 >= 2.6
+# FIXME: udisks2 modules not yet available on 7.5
+%if "%{os_version_id}" != "7.5"
+Requires: udisks2-lvm2 >= 2.6
+Requires: udisks2-iscsi >= 2.6
+%endif
+Requires: device-mapper-multipath
+%else
+%if 0%{?fedora} >= 27 || 0%{?rhel} >= 8
+Requires: udisks2 >= 2.6
+Recommends: udisks2-lvm2 >= 2.6
+Recommends: udisks2-iscsi >= 2.6
+Recommends: device-mapper-multipath
+%else
+# Fedora < 27
+Requires: storaged >= 2.1.1
+Recommends: storaged-lvm2 >= 2.1.1
+Recommends: storaged-iscsi >= 2.1.1
+Recommends: device-mapper-multipath
+%endif
+%endif
 %endif
 BuildArch: noarch
 
@@ -449,7 +494,7 @@ Summary: Tests for Cockpit
 Requires: %{name}-bridge >= 138
 Requires: %{name}-system >= 138
 Requires: openssh-clients
-Provides: %{name}-test-assets
+Provides: %{name}-test-assets = %{version}-%{release}
 Obsoletes: %{name}-test-assets < 132
 
 %description tests
@@ -459,7 +504,7 @@ These files are not required for running Cockpit.
 %files tests
 %config(noreplace) %{_sysconfdir}/cockpit/cockpit.conf
 %{_datadir}/%{name}/playground
-%{_prefix}/lib/cockpit-test-assets
+%{_prefix}/%{__lib}/cockpit-test-assets
 
 %package integration-tests
 Summary: Integration tests for Cockpit
@@ -468,7 +513,11 @@ Requires: expect
 Requires: libvirt
 Requires: libvirt-client
 Requires: libvirt-daemon
+%if 0%{?rhel}%{?centos} == 0 || 0%{?rhel} >= 8 || 0%{?centos} >= 8
+Requires: python2-libvirt
+%else
 Requires: libvirt-python
+%endif
 Requires: qemu-kvm
 Requires: npm
 Requires: python2
@@ -506,7 +555,7 @@ The Cockpit Web Service listens on the network, and authenticates users.
 %config(noreplace) %{_sysconfdir}/pam.d/cockpit
 %{_unitdir}/cockpit.service
 %{_unitdir}/cockpit.socket
-%{_prefix}/lib/firewalld/services/cockpit.xml
+%{_prefix}/%{__lib}/firewalld/services/cockpit.xml
 %{_sbindir}/remotectl
 %{_libdir}/security/pam_ssh_add.so
 %{_libexecdir}/cockpit-ws

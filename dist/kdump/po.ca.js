@@ -101,7 +101,7 @@ return plural;
  ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
-  ""
+  "El servei de Kdump no està instal·lat. Assegureu-vos que el paquet kexec-tools estigui instal·lat."
  ],
  "Kernel Dump": [
   null,

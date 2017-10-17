@@ -402,11 +402,13 @@ am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" \
 	"$(DESTDIR)$(defaultbrandingdir)" \
 	"$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" \
 	"$(DESTDIR)$(firewalldir)" \
-	"$(DESTDIR)$(kubernetesbrandingdir)" "$(DESTDIR)$(appdatadir)" \
+	"$(DESTDIR)$(kubernetesbrandingdir)" \
+	"$(DESTDIR)$(machinesdir)" "$(DESTDIR)$(appdatadir)" \
 	"$(DESTDIR)$(basedir)" "$(DESTDIR)$(desktopdir)" \
 	"$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" \
-	"$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(playgrounddir)" \
-	"$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" \
+	"$(DESTDIR)$(ovirtdir)" "$(DESTDIR)$(pixmapdir)" \
+	"$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" \
+	"$(DESTDIR)$(registrybrandingdir)" \
 	"$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticfontsdir)" \
 	"$(DESTDIR)$(ubuntubrandingdir)"
 @WITH_GOLANG_TRUE@am__EXEEXT_1 = cockpit-kube-auth$(EXEEXT) \
@@ -1060,11 +1062,12 @@ DATA = $(base_DATA) $(basedebug_DATA) $(basefonts_DATA) \
 	$(centosbranding_DATA) $(debianbranding_DATA) \
 	$(defaultbranding_DATA) $(dist_systemdunit_DATA) \
 	$(fedorabranding_DATA) $(firewall_DATA) \
-	$(kubernetesbranding_DATA) $(nodist_appdata_DATA) \
-	$(nodist_base_DATA) $(nodist_desktop_DATA) \
-	$(nodist_noinst_DATA) $(nodist_static_DATA) \
-	$(nodist_systemdunit_DATA) $(noinst_DATA) $(pixmap_DATA) \
-	$(playground_DATA) $(pmlogconf_DATA) $(registrybranding_DATA) \
+	$(kubernetesbranding_DATA) $(machines_DATA) \
+	$(nodist_appdata_DATA) $(nodist_base_DATA) \
+	$(nodist_desktop_DATA) $(nodist_noinst_DATA) \
+	$(nodist_static_DATA) $(nodist_systemdunit_DATA) \
+	$(noinst_DATA) $(ovirt_DATA) $(pixmap_DATA) $(playground_DATA) \
+	$(pmlogconf_DATA) $(registrybranding_DATA) \
 	$(rhelbranding_DATA) $(staticfonts_DATA) \
 	$(ubuntubranding_DATA)
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) \
@@ -1555,13 +1558,15 @@ EXTRA_DIST = package.json README.md $(NULL) $(WEBPACK_DEPS) \
 	po/po2json po/zanata.xml $(NULL) dist/playground/extra.de.po \
 	pkg/playground/extra.de.po pkg/users/mock \
 	pkg/lib/qunit-template.html node_modules/noVNC/package.json \
-	$(playground_DATA) $(pkg_TESTS) dist/base1/cockpit.js \
-	dist/base1/cockpit.min.css dist/base1/cockpit.min.css.map \
-	dist/base1/cockpit.min.js dist/base1/cockpit.min.js.map \
-	dist/base1/jquery.js dist/base1/jquery.min.js \
-	dist/base1/jquery.min.js.map dist/base1/mustache.js \
-	dist/base1/mustache.min.js dist/base1/mustache.min.js.map \
-	dist/base1/patternfly-base.css dist/base1/patternfly.min.css \
+	node_modules/noVNC/include/base.css pkg/ovirt/install.sh \
+	$(playground_DATA) $(pkg_TESTS) $(ovirt_DATA) \
+	dist/base1/cockpit.js dist/base1/cockpit.min.css \
+	dist/base1/cockpit.min.css.map dist/base1/cockpit.min.js \
+	dist/base1/cockpit.min.js.map dist/base1/jquery.js \
+	dist/base1/jquery.min.js dist/base1/jquery.min.js.map \
+	dist/base1/mustache.js dist/base1/mustache.min.js \
+	dist/base1/mustache.min.js.map dist/base1/patternfly-base.css \
+	dist/base1/patternfly.min.css \
 	dist/base1/patternfly.min.css.map \
 	dist/base1/patternfly.css.map \
 	dist/base1/patternfly-additions.css \
@@ -1688,6 +1693,7 @@ WEBPACK_PACKAGES = \
 	machines \
 	networkmanager \
 	ostree \
+	ovirt \
 	pcp \
 	packagekit \
 	playground \
@@ -1825,6 +1831,8 @@ OPENSANS_FONTS = \
 @ENABLE_DOC_TRUE@	doc/guide/feature-terminal.xml \
 @ENABLE_DOC_TRUE@	doc/guide/feature-tuned.xml \
 @ENABLE_DOC_TRUE@	doc/guide/feature-users.xml \
+@ENABLE_DOC_TRUE@	doc/guide/feature-virtualmachines.xml \
+@ENABLE_DOC_TRUE@	doc/guide/feature-ovirt.xml \
 @ENABLE_DOC_TRUE@	doc/guide/packages.xml \
 @ENABLE_DOC_TRUE@	doc/guide/privileges.xml \
 @ENABLE_DOC_TRUE@	doc/guide/https.xml \
@@ -1896,6 +1904,17 @@ pkg_TESTS = \
 playgrounddir = $(pkgdatadir)/playground
 playground_DATA = \
 	dist/playground/po.extra.de.js \
+	$(NULL)
+
+machinesdir = $(pkgdatadir)/machines
+machines_DATA = \
+	dist/machines/base.css \
+	$(NULL)
+
+ovirtdir = $(pkgdatadir)/ovirt
+ovirt_DATA = \
+	dist/ovirt/install.sh \
+	dist/ovirt/base.css \
 	$(NULL)
 
 @WITH_GOLANG_TRUE@AM_V_GO = $(am__v_GO_@AM_V@)
@@ -7204,6 +7223,27 @@ uninstall-kubernetesbrandingDATA:
 	@list='$(kubernetesbranding_DATA)'; test -n "$(kubernetesbrandingdir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(kubernetesbrandingdir)'; $(am__uninstall_files_from_dir)
+install-machinesDATA: $(machines_DATA)
+	@$(NORMAL_INSTALL)
+	@list='$(machines_DATA)'; test -n "$(machinesdir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(machinesdir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(machinesdir)" || exit 1; \
+	fi; \
+	for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  echo "$$d$$p"; \
+	done | $(am__base_list) | \
+	while read files; do \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(machinesdir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(machinesdir)" || exit $$?; \
+	done
+
+uninstall-machinesDATA:
+	@$(NORMAL_UNINSTALL)
+	@list='$(machines_DATA)'; test -n "$(machinesdir)" || list=; \
+	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+	dir='$(DESTDIR)$(machinesdir)'; $(am__uninstall_files_from_dir)
 install-nodist_appdataDATA: $(nodist_appdata_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(nodist_appdata_DATA)'; test -n "$(appdatadir)" || list=; \
@@ -7309,6 +7349,27 @@ uninstall-nodist_systemdunitDATA:
 	@list='$(nodist_systemdunit_DATA)'; test -n "$(systemdunitdir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(systemdunitdir)'; $(am__uninstall_files_from_dir)
+install-ovirtDATA: $(ovirt_DATA)
+	@$(NORMAL_INSTALL)
+	@list='$(ovirt_DATA)'; test -n "$(ovirtdir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(ovirtdir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(ovirtdir)" || exit 1; \
+	fi; \
+	for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  echo "$$d$$p"; \
+	done | $(am__base_list) | \
+	while read files; do \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(ovirtdir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(ovirtdir)" || exit $$?; \
+	done
+
+uninstall-ovirtDATA:
+	@$(NORMAL_UNINSTALL)
+	@list='$(ovirt_DATA)'; test -n "$(ovirtdir)" || list=; \
+	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+	dir='$(DESTDIR)$(ovirtdir)'; $(am__uninstall_files_from_dir)
 install-pixmapDATA: $(pixmap_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(pixmap_DATA)'; test -n "$(pixmapdir)" || list=; \
@@ -8212,7 +8273,7 @@ check: $(BUILT_SOURCES)
 all-am: Makefile $(LIBRARIES) $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) \
 		config.h all-local
 installdirs:
-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(basedebugdir)" "$(DESTDIR)$(basefontsdir)" "$(DESTDIR)$(centosbrandingdir)" "$(DESTDIR)$(debianbrandingdir)" "$(DESTDIR)$(defaultbrandingdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" "$(DESTDIR)$(firewalldir)" "$(DESTDIR)$(kubernetesbrandingdir)" "$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" "$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"; do \
+	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(basedebugdir)" "$(DESTDIR)$(basefontsdir)" "$(DESTDIR)$(centosbrandingdir)" "$(DESTDIR)$(debianbrandingdir)" "$(DESTDIR)$(defaultbrandingdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" "$(DESTDIR)$(firewalldir)" "$(DESTDIR)$(kubernetesbrandingdir)" "$(DESTDIR)$(machinesdir)" "$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(ovirtdir)" "$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" "$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: $(BUILT_SOURCES)
@@ -8296,13 +8357,14 @@ install-data-am: install-baseDATA install-basedebugDATA \
 	install-data-local install-debianbrandingDATA \
 	install-defaultbrandingDATA install-dist_systemdunitDATA \
 	install-fedorabrandingDATA install-firewallDATA \
-	install-kubernetesbrandingDATA install-man \
-	install-nodist_appdataDATA install-nodist_baseDATA \
+	install-kubernetesbrandingDATA install-machinesDATA \
+	install-man install-nodist_appdataDATA install-nodist_baseDATA \
 	install-nodist_desktopDATA install-nodist_staticDATA \
-	install-nodist_systemdunitDATA install-pixmapDATA \
-	install-playgroundDATA install-pmlogconfDATA \
-	install-registrybrandingDATA install-rhelbrandingDATA \
-	install-staticfontsDATA install-ubuntubrandingDATA
+	install-nodist_systemdunitDATA install-ovirtDATA \
+	install-pixmapDATA install-playgroundDATA \
+	install-pmlogconfDATA install-registrybrandingDATA \
+	install-rhelbrandingDATA install-staticfontsDATA \
+	install-ubuntubrandingDATA
 	@$(NORMAL_INSTALL)
 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
 install-dvi: install-dvi-am
@@ -8358,9 +8420,10 @@ uninstall-am: uninstall-baseDATA uninstall-basedebugDATA \
 	uninstall-defaultbrandingDATA uninstall-dist_systemdunitDATA \
 	uninstall-fedorabrandingDATA uninstall-firewallDATA \
 	uninstall-kubernetesbrandingDATA uninstall-libexecPROGRAMS \
-	uninstall-local uninstall-man uninstall-nodist_appdataDATA \
-	uninstall-nodist_baseDATA uninstall-nodist_desktopDATA \
-	uninstall-nodist_staticDATA uninstall-nodist_systemdunitDATA \
+	uninstall-local uninstall-machinesDATA uninstall-man \
+	uninstall-nodist_appdataDATA uninstall-nodist_baseDATA \
+	uninstall-nodist_desktopDATA uninstall-nodist_staticDATA \
+	uninstall-nodist_systemdunitDATA uninstall-ovirtDATA \
 	uninstall-pixmapDATA uninstall-playgroundDATA \
 	uninstall-pmlogconfDATA uninstall-registrybrandingDATA \
 	uninstall-rhelbrandingDATA uninstall-sbinPROGRAMS \
@@ -8391,15 +8454,15 @@ uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 	install-exec-local install-fedorabrandingDATA \
 	install-firewallDATA install-html install-html-am install-info \
 	install-info-am install-kubernetesbrandingDATA \
-	install-libexecPROGRAMS install-man install-man1 install-man5 \
-	install-man8 install-nodist_appdataDATA \
-	install-nodist_baseDATA install-nodist_desktopDATA \
-	install-nodist_staticDATA install-nodist_systemdunitDATA \
-	install-pdf install-pdf-am install-pixmapDATA \
-	install-playgroundDATA install-pmlogconfDATA install-ps \
-	install-ps-am install-registrybrandingDATA \
-	install-rhelbrandingDATA install-sbinPROGRAMS \
-	install-staticfontsDATA install-strip \
+	install-libexecPROGRAMS install-machinesDATA install-man \
+	install-man1 install-man5 install-man8 \
+	install-nodist_appdataDATA install-nodist_baseDATA \
+	install-nodist_desktopDATA install-nodist_staticDATA \
+	install-nodist_systemdunitDATA install-ovirtDATA install-pdf \
+	install-pdf-am install-pixmapDATA install-playgroundDATA \
+	install-pmlogconfDATA install-ps install-ps-am \
+	install-registrybrandingDATA install-rhelbrandingDATA \
+	install-sbinPROGRAMS install-staticfontsDATA install-strip \
 	install-ubuntubrandingDATA installcheck installcheck-am \
 	installdirs maintainer-clean maintainer-clean-generic \
 	mostlyclean mostlyclean-compile mostlyclean-generic pdf pdf-am \
@@ -8410,10 +8473,11 @@ uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 	uninstall-defaultbrandingDATA uninstall-dist_systemdunitDATA \
 	uninstall-fedorabrandingDATA uninstall-firewallDATA \
 	uninstall-kubernetesbrandingDATA uninstall-libexecPROGRAMS \
-	uninstall-local uninstall-man uninstall-man1 uninstall-man5 \
-	uninstall-man8 uninstall-nodist_appdataDATA \
-	uninstall-nodist_baseDATA uninstall-nodist_desktopDATA \
-	uninstall-nodist_staticDATA uninstall-nodist_systemdunitDATA \
+	uninstall-local uninstall-machinesDATA uninstall-man \
+	uninstall-man1 uninstall-man5 uninstall-man8 \
+	uninstall-nodist_appdataDATA uninstall-nodist_baseDATA \
+	uninstall-nodist_desktopDATA uninstall-nodist_staticDATA \
+	uninstall-nodist_systemdunitDATA uninstall-ovirtDATA \
 	uninstall-pixmapDATA uninstall-playgroundDATA \
 	uninstall-pmlogconfDATA uninstall-registrybrandingDATA \
 	uninstall-rhelbrandingDATA uninstall-sbinPROGRAMS \
@@ -8507,6 +8571,7 @@ dist/fonts/%.woff:
 @ENABLE_DOC_TRUE@	$(AM_V_GEN) LANG=en_US.UTF-8 $(XMLTO) html -m $(srcdir)/doc/guide/gtk-doc.xsl -o dist/guide/html/ \
 @ENABLE_DOC_TRUE@		--searchpath $(abs_builddir):$(abs_srcdir):$(abs_builddir)/doc/guide \
 @ENABLE_DOC_TRUE@		$(srcdir)/$(GUIDE_DOCBOOK)
+@ENABLE_DOC_TRUE@	rm -f dist/guide/html/cockpit-guide.proc
 
 @ENABLE_DOC_TRUE@dist/guide/html: dist/guide/html/index.html
 
@@ -8687,6 +8752,15 @@ download-po:
 	sh -c 'cd $(srcdir)/po; ls *.po' | sed 's/\.po//g' | sort > $(srcdir)/po/LINGUAS
 
 dist/playground/extra.de.po: pkg/playground/extra.de.po
+	$(COPY_RULE)
+
+dist/machines/base.css: node_modules/noVNC/include/base.css
+	$(COPY_RULE)
+
+dist/ovirt/install.sh: pkg/ovirt/install.sh
+	$(COPY_RULE)
+
+dist/ovirt/base.css: node_modules/noVNC/include/base.css
 	$(COPY_RULE)
 
 @WITH_GOLANG_TRUE@cockpit-kube-auth$(EXEEXT): $(COCKPIT_KUBE_AUTH)
@@ -8980,7 +9054,7 @@ registry-container-shell:
 
 install-integration-tests::
 	$(MKDIR_P) $(DESTDIR)/$(pkgdatadir)/containers/ws/
-	$(INSTALL_DATA) $(ATOMIC_SETUP) $(DESTDIR)/$(pkgdatadir)/containers/ws/
+	$(INSTALL_PROGRAM) $(ATOMIC_SETUP) $(DESTDIR)/$(pkgdatadir)/containers/ws/
 
 ws-container:
 	rm -rf $(WS_DIR)/rpms && mkdir -p $(WS_DIR)/rpms

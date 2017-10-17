@@ -93,7 +93,7 @@ return plural;
  ],
  "Couldn't get system subscription status. Please ensure subscription-manager is installed.": [
   null,
-  ""
+  "No s'ha pogut obtenir l'estat de subscripció del sistema. Assegureu-vos que subscription-manager estigui instal·lat."
  ],
  "Custom URL": [
   null,
@@ -125,7 +125,7 @@ return plural;
  ],
  "Login": [
   null,
-  ""
+  "Usuari"
  ],
  "Login/password or activation key required to register.": [
   null,

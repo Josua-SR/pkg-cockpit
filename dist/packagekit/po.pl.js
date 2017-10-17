@@ -83,6 +83,14 @@ return plural;
   ", w tym $1 poprawki zabezpieczeń",
   ", w tym $1 poprawek zabezpieczeń"
  ],
+ "Apply all updates": [
+  null,
+  ""
+ ],
+ "Apply security updates": [
+  null,
+  ""
+ ],
  "Applying updates": [
   null,
   "Zastosowywanie aktualizacji"
@@ -90,6 +98,10 @@ return plural;
  "Applying updates failed": [
   null,
   "Zastosowanie aktualizacji się nie powiodło"
+ ],
+ "Automatic Updates": [
+  null,
+  ""
  ],
  "Available Updates": [
   null,
@@ -133,11 +145,11 @@ return plural;
  ],
  "Install All Updates": [
   null,
-  ""
+  "Zainstaluj wszystkie aktualizacje"
  ],
  "Install Security Updates": [
   null,
-  ""
+  "Zainstaluj aktualizacje zabezpieczeń"
  ],
  "Installed": [
   null,
@@ -310,6 +322,46 @@ return plural;
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,
   "Serwer niedługo zamknie połączenie. Można połączyć jeszcze raz po jego ponownym uruchomieniu."
+ ],
+ "and restart the machine automatically.": [
+  null,
+  ""
+ ],
+ "at": [
+  null,
+  "w"
+ ],
+ "every day": [
+  null,
+  ""
+ ],
+ "on Fridays": [
+  null,
+  ""
+ ],
+ "on Mondays": [
+  null,
+  ""
+ ],
+ "on Saturdays": [
+  null,
+  ""
+ ],
+ "on Sundays": [
+  null,
+  ""
+ ],
+ "on Thursdays": [
+  null,
+  ""
+ ],
+ "on Tuesdays": [
+  null,
+  ""
+ ],
+ "on Wednesdays": [
+  null,
+  ""
  ],
  "undefined": [
   null,

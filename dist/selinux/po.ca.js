@@ -106,7 +106,7 @@ return plural;
  ],
  "Install setroubleshoot-server to troubleshoot SELinux events.": [
   null,
-  ""
+  "Instal·leu setroubleshoot-server per resoldre els esdeveniments de SELinux."
  ],
  "No SELinux alerts.": [
   null,
