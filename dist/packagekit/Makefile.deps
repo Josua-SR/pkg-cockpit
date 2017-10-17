@@ -1,10 +1,11 @@
 # Generated Makefile data for packagekit
-# Stamp: Fri Oct 06 2017 12:52:16 GMT+0000 (UTC)
+# Stamp: Tue Oct 17 2017 07:23:13 GMT+0000 (UTC)
 
 packagekit_INPUTS = \
 	$(srcdir)/node_modules/bootstrap/LICENSE \
 	$(srcdir)/node_modules/bootstrap/README.md \
 	$(srcdir)/node_modules/bootstrap/less/variables.less \
+	$(srcdir)/node_modules/bootstrap/package.json \
 	$(srcdir)/node_modules/moment/LICENSE \
 	$(srcdir)/node_modules/moment/README.md \
 	$(srcdir)/node_modules/moment/locale/af.js \
@@ -93,13 +94,16 @@ packagekit_INPUTS = \
 	$(srcdir)/node_modules/moment/locale/zh-cn.js \
 	$(srcdir)/node_modules/moment/locale/zh-tw.js \
 	$(srcdir)/node_modules/moment/moment.js \
+	$(srcdir)/node_modules/moment/package.json \
 	$(srcdir)/node_modules/patternfly/LICENSE.txt \
 	$(srcdir)/node_modules/patternfly/README.md \
+	$(srcdir)/node_modules/patternfly/package.json \
 	$(srcdir)/node_modules/patternfly/src/less/color-variables.less \
 	$(srcdir)/node_modules/patternfly/src/less/variables.less \
 	$(srcdir)/node_modules/react-lite/LICENSE \
 	$(srcdir)/node_modules/react-lite/README.md \
 	$(srcdir)/node_modules/react-lite/dist/react-lite.js \
+	$(srcdir)/node_modules/react-lite/package.json \
 	$(srcdir)/pkg/lib/cockpit-components-onoff.css \
 	$(srcdir)/pkg/lib/cockpit-components-onoff.jsx \
 	$(srcdir)/pkg/lib/cockpit-components-select.jsx \
@@ -162,6 +166,8 @@ $(srcdir)/node_modules/bootstrap/LICENSE:
 $(srcdir)/node_modules/bootstrap/README.md:
 
 $(srcdir)/node_modules/bootstrap/less/variables.less:
+
+$(srcdir)/node_modules/bootstrap/package.json:
 
 $(srcdir)/node_modules/moment/LICENSE:
 
@@ -339,9 +345,13 @@ $(srcdir)/node_modules/moment/locale/zh-tw.js:
 
 $(srcdir)/node_modules/moment/moment.js:
 
+$(srcdir)/node_modules/moment/package.json:
+
 $(srcdir)/node_modules/patternfly/LICENSE.txt:
 
 $(srcdir)/node_modules/patternfly/README.md:
+
+$(srcdir)/node_modules/patternfly/package.json:
 
 $(srcdir)/node_modules/patternfly/src/less/color-variables.less:
 
@@ -352,6 +362,8 @@ $(srcdir)/node_modules/react-lite/LICENSE:
 $(srcdir)/node_modules/react-lite/README.md:
 
 $(srcdir)/node_modules/react-lite/dist/react-lite.js:
+
+$(srcdir)/node_modules/react-lite/package.json:
 
 $(srcdir)/pkg/lib/cockpit-components-onoff.css:
 

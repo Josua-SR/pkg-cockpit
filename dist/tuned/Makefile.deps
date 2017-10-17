@@ -1,10 +1,11 @@
 # Generated Makefile data for tuned
-# Stamp: Fri Oct 06 2017 12:52:16 GMT+0000 (UTC)
+# Stamp: Tue Oct 17 2017 07:23:06 GMT+0000 (UTC)
 
 tuned_INPUTS = \
 	$(srcdir)/node_modules/react-lite/LICENSE \
 	$(srcdir)/node_modules/react-lite/README.md \
 	$(srcdir)/node_modules/react-lite/dist/react-lite.js \
+	$(srcdir)/node_modules/react-lite/package.json \
 	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \
 	$(srcdir)/pkg/lib/page.css \
 	$(srcdir)/pkg/lib/service.js \
@@ -57,6 +58,8 @@ $(srcdir)/node_modules/react-lite/LICENSE:
 $(srcdir)/node_modules/react-lite/README.md:
 
 $(srcdir)/node_modules/react-lite/dist/react-lite.js:
+
+$(srcdir)/node_modules/react-lite/package.json:
 
 $(srcdir)/pkg/lib/cockpit-components-dialog.jsx:
 

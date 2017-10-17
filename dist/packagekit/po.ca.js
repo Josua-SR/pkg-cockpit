@@ -81,6 +81,14 @@ return plural;
   ", incloent-hi $1 correcció de seguretat",
   ", incloent-hi $1 correccions de seguretat"
  ],
+ "Apply all updates": [
+  null,
+  ""
+ ],
+ "Apply security updates": [
+  null,
+  ""
+ ],
  "Applying updates": [
   null,
   "Aplicació de les actualitzacions"
@@ -88,6 +96,10 @@ return plural;
  "Applying updates failed": [
   null,
   "Ha fallat l'aplicació de les actualitzacions"
+ ],
+ "Automatic Updates": [
+  null,
+  ""
  ],
  "Available Updates": [
   null,
@@ -131,11 +143,11 @@ return plural;
  ],
  "Install All Updates": [
   null,
-  ""
+  "Instal·la totes les actualitzacions"
  ],
  "Install Security Updates": [
   null,
-  ""
+  "Instal·la les actualitzacions de seguretat"
  ],
  "Installed": [
   null,
@@ -251,7 +263,7 @@ return plural;
  ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
-  "Per obtenir actualitzacions de programari, aquest sistema ha d'estar registrat a Red Hat, ja sigui utilitzant el Portal de clients de Red Hat o un servidor de subscripció local."
+  "Per obtenir actualitzacions de programari, aquest sistema ha d'estar registrat a Red Hat, ja sigui utilitzant Red Hat Customer Portal o un servidor de subscripció local."
  ],
  "Unregistered System": [
   null,
@@ -308,6 +320,46 @@ return plural;
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,
   "El vostre servidor tancarà la connexió aviat. Podeu tornar a connectar un cop s'hagi reiniciat."
+ ],
+ "and restart the machine automatically.": [
+  null,
+  ""
+ ],
+ "at": [
+  null,
+  "Camí"
+ ],
+ "every day": [
+  null,
+  ""
+ ],
+ "on Fridays": [
+  null,
+  ""
+ ],
+ "on Mondays": [
+  null,
+  ""
+ ],
+ "on Saturdays": [
+  null,
+  ""
+ ],
+ "on Sundays": [
+  null,
+  ""
+ ],
+ "on Thursdays": [
+  null,
+  ""
+ ],
+ "on Tuesdays": [
+  null,
+  ""
+ ],
+ "on Wednesdays": [
+  null,
+  ""
  ],
  "undefined": [
   null,

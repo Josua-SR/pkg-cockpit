@@ -69,7 +69,7 @@ return plural;
  },
  "Applications": [
   null,
-  ""
+  "Aplicacions"
  ],
  "Cancel": [
   null,
@@ -77,7 +77,7 @@ return plural;
  ],
  "Checking for new applications": [
   null,
-  ""
+  "Comprovació per si hi ha noves aplicacions"
  ],
  "Close": [
   null,
@@ -89,11 +89,11 @@ return plural;
  ],
  "Go to Application": [
   null,
-  ""
+  "Vés a l'aplicació"
  ],
  "Install": [
   null,
-  ""
+  "Instal·la"
  ],
  "Installing": [
   null,
@@ -101,11 +101,11 @@ return plural;
  ],
  "No applications installed or available": [
   null,
-  ""
+  "No hi ha cap aplicació instal·lada o disponible"
  ],
  "No installation package found for this application.": [
   null,
-  ""
+  "No s'ha trobat cap paquet d'instal·lació per a aquesta aplicació."
  ],
  "Ok": [
   null,
@@ -121,7 +121,7 @@ return plural;
  ],
  "Unknown Application": [
   null,
-  ""
+  "Aplicació desconeguda"
  ],
  "Waiting for other programs to finish using the package manager...": [
   null,

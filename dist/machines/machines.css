@@ -1663,5 +1663,8 @@ tbody tr.listing-ct-noexpand {
 .machines-desktop-install-instructs-row {
   display: inline-flex;
 }
+.dropdown-buttons-container {
+  display: inline-flex !important;
+}
 
 /*# sourceMappingURL=machines.css.map*/

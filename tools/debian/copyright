@@ -106,7 +106,7 @@ License: MIT
 
 Files: node_modules/d3/*
 Copyright: Copyright (c) 2010-2016, Michael Bostock
-License: BSD-3-clause
+License: BSD-3-Clause
 
 Files: node_modules/jquery-flot/*
 Copyright: Copyright (c) 2007-2014 IOLA and Ole Laursen
@@ -143,6 +143,7 @@ Copyright: (Copyright 2009 Matt McInerney)
  Copyright (C) 2013 NTT corp
  Copyright (C) 2013 Samuel Mannehed for Cendio AB
  Copyright (C) 2015 Samuel Mannehed for Cendio AB
+ Copyright (C) 2016 Samuel Mannehed for Cendio AB
  Copyright (c) 1996 Widget Workshop, Inc. All Rights Reserved
  noVNC is Copyright (C) 2011 Joel Martin <github@martintribe.org>
 License: MPL-2.0

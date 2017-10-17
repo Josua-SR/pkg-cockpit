@@ -83,6 +83,14 @@ return plural;
   ", включно із $1 виправленнями захисту",
   ", включно із $1 виправленнями захисту"
  ],
+ "Apply all updates": [
+  null,
+  ""
+ ],
+ "Apply security updates": [
+  null,
+  ""
+ ],
  "Applying updates": [
   null,
   "Застосовуємо оновлення"
@@ -90,6 +98,10 @@ return plural;
  "Applying updates failed": [
   null,
   "Не вдалося застосувати оновлення"
+ ],
+ "Automatic Updates": [
+  null,
+  ""
  ],
  "Available Updates": [
   null,
@@ -133,11 +145,11 @@ return plural;
  ],
  "Install All Updates": [
   null,
-  ""
+  "Встановити усі оновлення"
  ],
  "Install Security Updates": [
   null,
-  ""
+  "Встановити оновлення захисту"
  ],
  "Installed": [
   null,
@@ -310,6 +322,46 @@ return plural;
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,
   "Невдовзі ваш сервер розірве з’єднання. Ви можете відновити це з’єднання, щойно сервер буде перезапущено."
+ ],
+ "and restart the machine automatically.": [
+  null,
+  ""
+ ],
+ "at": [
+  null,
+  "на"
+ ],
+ "every day": [
+  null,
+  ""
+ ],
+ "on Fridays": [
+  null,
+  ""
+ ],
+ "on Mondays": [
+  null,
+  ""
+ ],
+ "on Saturdays": [
+  null,
+  ""
+ ],
+ "on Sundays": [
+  null,
+  ""
+ ],
+ "on Thursdays": [
+  null,
+  ""
+ ],
+ "on Tuesdays": [
+  null,
+  ""
+ ],
+ "on Wednesdays": [
+  null,
+  ""
  ],
  "undefined": [
   null,

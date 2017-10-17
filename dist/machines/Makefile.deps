@@ -1,17 +1,20 @@
 # Generated Makefile data for machines
-# Stamp: Fri Oct 06 2017 12:52:16 GMT+0000 (UTC)
+# Stamp: Tue Oct 17 2017 07:23:13 GMT+0000 (UTC)
 
 machines_INPUTS = \
 	$(srcdir)/node_modules/bootstrap/LICENSE \
 	$(srcdir)/node_modules/bootstrap/README.md \
 	$(srcdir)/node_modules/bootstrap/less/variables.less \
+	$(srcdir)/node_modules/bootstrap/package.json \
 	$(srcdir)/node_modules/c3/LICENSE \
 	$(srcdir)/node_modules/c3/README.md \
 	$(srcdir)/node_modules/c3/c3.css \
 	$(srcdir)/node_modules/c3/c3.js \
+	$(srcdir)/node_modules/c3/package.json \
 	$(srcdir)/node_modules/d3/LICENSE \
 	$(srcdir)/node_modules/d3/README.md \
 	$(srcdir)/node_modules/d3/d3.js \
+	$(srcdir)/node_modules/d3/package.json \
 	$(srcdir)/node_modules/noVNC/LICENSE.txt \
 	$(srcdir)/node_modules/noVNC/README.md \
 	$(srcdir)/node_modules/noVNC/include/base64.js \
@@ -26,23 +29,29 @@ machines_INPUTS = \
 	$(srcdir)/node_modules/noVNC/include/util.js \
 	$(srcdir)/node_modules/noVNC/include/websock.js \
 	$(srcdir)/node_modules/noVNC/include/webutil.js \
+	$(srcdir)/node_modules/noVNC/package.json \
 	$(srcdir)/node_modules/patternfly/LICENSE.txt \
 	$(srcdir)/node_modules/patternfly/README.md \
+	$(srcdir)/node_modules/patternfly/package.json \
 	$(srcdir)/node_modules/patternfly/src/less/color-variables.less \
 	$(srcdir)/node_modules/patternfly/src/less/variables.less \
 	$(srcdir)/node_modules/qunit-tap/GPL-LICENSE.txt \
 	$(srcdir)/node_modules/qunit-tap/MIT-LICENSE.txt \
 	$(srcdir)/node_modules/qunit-tap/lib/qunit-tap.js \
+	$(srcdir)/node_modules/qunit-tap/package.json \
 	$(srcdir)/node_modules/qunitjs/LICENSE.txt \
 	$(srcdir)/node_modules/qunitjs/README.md \
+	$(srcdir)/node_modules/qunitjs/package.json \
 	$(srcdir)/node_modules/qunitjs/qunit/qunit.css \
 	$(srcdir)/node_modules/qunitjs/qunit/qunit.js \
 	$(srcdir)/node_modules/react-lite/LICENSE \
 	$(srcdir)/node_modules/react-lite/README.md \
 	$(srcdir)/node_modules/react-lite/dist/react-lite.js \
+	$(srcdir)/node_modules/react-lite/package.json \
 	$(srcdir)/node_modules/redux/LICENSE.md \
 	$(srcdir)/node_modules/redux/README.md \
 	$(srcdir)/node_modules/redux/dist/redux.min.js \
+	$(srcdir)/node_modules/redux/package.json \
 	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \
 	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
 	$(srcdir)/pkg/lib/listing.less \
@@ -165,6 +174,8 @@ $(srcdir)/node_modules/bootstrap/README.md:
 
 $(srcdir)/node_modules/bootstrap/less/variables.less:
 
+$(srcdir)/node_modules/bootstrap/package.json:
+
 $(srcdir)/node_modules/c3/LICENSE:
 
 $(srcdir)/node_modules/c3/README.md:
@@ -173,11 +184,15 @@ $(srcdir)/node_modules/c3/c3.css:
 
 $(srcdir)/node_modules/c3/c3.js:
 
+$(srcdir)/node_modules/c3/package.json:
+
 $(srcdir)/node_modules/d3/LICENSE:
 
 $(srcdir)/node_modules/d3/README.md:
 
 $(srcdir)/node_modules/d3/d3.js:
+
+$(srcdir)/node_modules/d3/package.json:
 
 $(srcdir)/node_modules/noVNC/LICENSE.txt:
 
@@ -207,9 +222,13 @@ $(srcdir)/node_modules/noVNC/include/websock.js:
 
 $(srcdir)/node_modules/noVNC/include/webutil.js:
 
+$(srcdir)/node_modules/noVNC/package.json:
+
 $(srcdir)/node_modules/patternfly/LICENSE.txt:
 
 $(srcdir)/node_modules/patternfly/README.md:
+
+$(srcdir)/node_modules/patternfly/package.json:
 
 $(srcdir)/node_modules/patternfly/src/less/color-variables.less:
 
@@ -221,9 +240,13 @@ $(srcdir)/node_modules/qunit-tap/MIT-LICENSE.txt:
 
 $(srcdir)/node_modules/qunit-tap/lib/qunit-tap.js:
 
+$(srcdir)/node_modules/qunit-tap/package.json:
+
 $(srcdir)/node_modules/qunitjs/LICENSE.txt:
 
 $(srcdir)/node_modules/qunitjs/README.md:
+
+$(srcdir)/node_modules/qunitjs/package.json:
 
 $(srcdir)/node_modules/qunitjs/qunit/qunit.css:
 
@@ -235,11 +258,15 @@ $(srcdir)/node_modules/react-lite/README.md:
 
 $(srcdir)/node_modules/react-lite/dist/react-lite.js:
 
+$(srcdir)/node_modules/react-lite/package.json:
+
 $(srcdir)/node_modules/redux/LICENSE.md:
 
 $(srcdir)/node_modules/redux/README.md:
 
 $(srcdir)/node_modules/redux/dist/redux.min.js:
+
+$(srcdir)/node_modules/redux/package.json:
 
 $(srcdir)/pkg/lib/cockpit-components-dialog.jsx:
 

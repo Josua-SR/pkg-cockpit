@@ -79,11 +79,23 @@ return plural;
   ", including $1 security fixes",
   ""
  ],
+ "Apply all updates": [
+  null,
+  ""
+ ],
+ "Apply security updates": [
+  null,
+  ""
+ ],
  "Applying updates": [
   null,
   ""
  ],
  "Applying updates failed": [
+  null,
+  ""
+ ],
+ "Automatic Updates": [
   null,
   ""
  ],
@@ -304,6 +316,46 @@ return plural;
   ""
  ],
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
+  null,
+  ""
+ ],
+ "and restart the machine automatically.": [
+  null,
+  ""
+ ],
+ "at": [
+  null,
+  "路径"
+ ],
+ "every day": [
+  null,
+  ""
+ ],
+ "on Fridays": [
+  null,
+  ""
+ ],
+ "on Mondays": [
+  null,
+  ""
+ ],
+ "on Saturdays": [
+  null,
+  ""
+ ],
+ "on Sundays": [
+  null,
+  ""
+ ],
+ "on Thursdays": [
+  null,
+  ""
+ ],
+ "on Tuesdays": [
+  null,
+  ""
+ ],
+ "on Wednesdays": [
   null,
   ""
  ],

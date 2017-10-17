@@ -29,10 +29,10 @@ Build-Depends: debhelper (>= 9.20141010),
                glib-networking,
                openssh-client <!nocheck>,
                python,
-Standards-Version: 4.0.0
+Standards-Version: 4.1.0
 Homepage: http://cockpit-project.org/
-#Vcs-Git: git://anonscm.debian.org/collab-maint/cockpit.git
-#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/cockpit.git
+Vcs-Git: git://anonscm.debian.org/collab-maint/cockpit.git
+Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/cockpit.git
 
 Package: cockpit
 Architecture: all
@@ -70,9 +70,9 @@ Depends: ${misc:Depends},
          cockpit-ws (= ${binary:Version})
 Provides: cockpit-ssh
 Replaces: cockpit-system (<< 128), cockpit-ws (<< 128)
-Description: Cockpit SSH remoting and dashboard
- Cockpit support for remoting to other servers, bastion hosts, and
- a basic dashboard.
+Description: Cockpit remote servers and dashboard
+ Cockpit support for connecting to remote servers (through ssh)
+ bastion hosts, and a basic dashboard.
 
 Package: cockpit-doc
 Section: doc
@@ -98,6 +98,13 @@ Depends: ${misc:Depends},
          libvirt-daemon-system
 Description: Cockpit user interface for virtual machines
  The Cockpit components for managing virtual machines.
+
+Package: cockpit-ovirt
+Architecture: all
+Depends: ${misc:Depends},
+         libvirt-daemon-system
+Description: Cockpit user interface for oVirt virtual machines
+ The Cockpit components for managing virtual machines running on an oVirt host..
 
 Package: cockpit-networkmanager
 Architecture: all
@@ -127,7 +134,8 @@ Description: Cockpit user interface for packages
 Package: cockpit-storaged
 Architecture: all
 Depends: ${misc:Depends},
-         udisks2 | storaged,
+         udisks2,
+         udisks2 (<< 2.7) | libblockdev-mdraid2,
          cockpit-bridge (>= ${bridge:minversion}),
 Description: Cockpit user interface for storage
  The Cockpit components for interacting with storage.

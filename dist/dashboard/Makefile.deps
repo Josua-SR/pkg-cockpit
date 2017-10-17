@@ -1,5 +1,5 @@
 # Generated Makefile data for dashboard
-# Stamp: Fri Oct 06 2017 12:52:16 GMT+0000 (UTC)
+# Stamp: Tue Oct 17 2017 07:23:08 GMT+0000 (UTC)
 
 dashboard_INPUTS = \
 	$(srcdir)/node_modules/jquery-flot/LICENSE.txt \
@@ -7,9 +7,11 @@ dashboard_INPUTS = \
 	$(srcdir)/node_modules/jquery-flot/jquery.flot.js \
 	$(srcdir)/node_modules/jquery-flot/jquery.flot.selection.js \
 	$(srcdir)/node_modules/jquery-flot/jquery.flot.time.js \
+	$(srcdir)/node_modules/jquery-flot/package.json \
 	$(srcdir)/node_modules/mustache/LICENSE \
 	$(srcdir)/node_modules/mustache/README.md \
 	$(srcdir)/node_modules/mustache/mustache.js \
+	$(srcdir)/node_modules/mustache/package.json \
 	$(srcdir)/pkg/dashboard/image-editor.js \
 	$(srcdir)/pkg/dashboard/index.html \
 	$(srcdir)/pkg/dashboard/list.js \
@@ -77,11 +79,15 @@ $(srcdir)/node_modules/jquery-flot/jquery.flot.selection.js:
 
 $(srcdir)/node_modules/jquery-flot/jquery.flot.time.js:
 
+$(srcdir)/node_modules/jquery-flot/package.json:
+
 $(srcdir)/node_modules/mustache/LICENSE:
 
 $(srcdir)/node_modules/mustache/README.md:
 
 $(srcdir)/node_modules/mustache/mustache.js:
+
+$(srcdir)/node_modules/mustache/package.json:
 
 $(srcdir)/pkg/dashboard/image-editor.js:
 

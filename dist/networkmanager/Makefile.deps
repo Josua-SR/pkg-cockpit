@@ -1,5 +1,5 @@
 # Generated Makefile data for networkmanager
-# Stamp: Fri Oct 06 2017 12:52:16 GMT+0000 (UTC)
+# Stamp: Tue Oct 17 2017 07:23:08 GMT+0000 (UTC)
 
 networkmanager_INPUTS = \
 	$(srcdir)/node_modules/jquery-flot/LICENSE.txt \
@@ -7,14 +7,18 @@ networkmanager_INPUTS = \
 	$(srcdir)/node_modules/jquery-flot/jquery.flot.js \
 	$(srcdir)/node_modules/jquery-flot/jquery.flot.selection.js \
 	$(srcdir)/node_modules/jquery-flot/jquery.flot.time.js \
+	$(srcdir)/node_modules/jquery-flot/package.json \
 	$(srcdir)/node_modules/mustache/LICENSE \
 	$(srcdir)/node_modules/mustache/README.md \
 	$(srcdir)/node_modules/mustache/mustache.js \
+	$(srcdir)/node_modules/mustache/package.json \
 	$(srcdir)/node_modules/qunit-tap/GPL-LICENSE.txt \
 	$(srcdir)/node_modules/qunit-tap/MIT-LICENSE.txt \
 	$(srcdir)/node_modules/qunit-tap/lib/qunit-tap.js \
+	$(srcdir)/node_modules/qunit-tap/package.json \
 	$(srcdir)/node_modules/qunitjs/LICENSE.txt \
 	$(srcdir)/node_modules/qunitjs/README.md \
+	$(srcdir)/node_modules/qunitjs/package.json \
 	$(srcdir)/node_modules/qunitjs/qunit/qunit.css \
 	$(srcdir)/node_modules/qunitjs/qunit/qunit.js \
 	$(srcdir)/pkg/lib/journal.css \
@@ -109,11 +113,15 @@ $(srcdir)/node_modules/jquery-flot/jquery.flot.selection.js:
 
 $(srcdir)/node_modules/jquery-flot/jquery.flot.time.js:
 
+$(srcdir)/node_modules/jquery-flot/package.json:
+
 $(srcdir)/node_modules/mustache/LICENSE:
 
 $(srcdir)/node_modules/mustache/README.md:
 
 $(srcdir)/node_modules/mustache/mustache.js:
+
+$(srcdir)/node_modules/mustache/package.json:
 
 $(srcdir)/node_modules/qunit-tap/GPL-LICENSE.txt:
 
@@ -121,9 +129,13 @@ $(srcdir)/node_modules/qunit-tap/MIT-LICENSE.txt:
 
 $(srcdir)/node_modules/qunit-tap/lib/qunit-tap.js:
 
+$(srcdir)/node_modules/qunit-tap/package.json:
+
 $(srcdir)/node_modules/qunitjs/LICENSE.txt:
 
 $(srcdir)/node_modules/qunitjs/README.md:
+
+$(srcdir)/node_modules/qunitjs/package.json:
 
 $(srcdir)/node_modules/qunitjs/qunit/qunit.css:
 
