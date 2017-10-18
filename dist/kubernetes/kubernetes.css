@@ -1336,10 +1336,12 @@ path.line.highlight {
   margin-left: 110px;
   margin-right: 0px;
   min-height: 100%;
-  padding-bottom: 20px;
 }
 #content > .row {
   margin-right: 0px;
+}
+#content > *:last-child {
+  padding-bottom: 20px;
 }
 /* When panel is editable, then buttons are visible */
 .dashboard-list td button {
@@ -1656,6 +1658,9 @@ kubernetes-topology-icon:hover use {
 }
 kubernetes-topology-graph {
   margin-right: 25%;
+  margin-top: 55px;
+  padding-bottom: 0px !important;
+  overflow: hidden;
 }
 .kube-pane {
   float: right;
@@ -1895,7 +1900,7 @@ code {
     width: 115px;
   }
   .nav-sidebar a {
-    padding: 5px 8px !important;
+    padding: 7px 8px 5px 8px !important;
     height: 40px !important;
     width: 115px !important;
   }
@@ -1906,6 +1911,8 @@ code {
   .nav-sidebar a span {
     display: inline !important;
     font-size: 12px;
+    margin-left: 4px;
+    margin-top: 2px;
   }
   #content {
     margin-left: 135px;
