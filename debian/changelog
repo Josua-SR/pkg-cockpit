@@ -1,10 +1,10 @@
-cockpit (154-1) UNRELEASED; urgency=medium
+cockpit (154-1) unstable; urgency=medium
 
   * New upstream release:
     - Center the "Disconnected" message in the content area
     - Remove long-obsolete "./configure --branding" option
 
- -- Martin Pitt <mpitt@debian.org>  Wed, 18 Oct 2017 11:41:10 +0200
+ -- Martin Pitt <mpitt@debian.org>  Wed, 18 Oct 2017 11:42:03 +0200
 
 cockpit (153-1) unstable; urgency=medium
 
