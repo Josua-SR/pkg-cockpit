@@ -1148,6 +1148,7 @@ html.index-page body {
 }
 .curtains-ct {
   top: auto;
+  position: static;
 }
 #dashboard-add {
   height: 28px;
