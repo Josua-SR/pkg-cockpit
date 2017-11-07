@@ -453,7 +453,7 @@ return plural;
  ],
  "This version of cockpit-ws does not support connecting to a host with an alternate user or port": [
   null,
-  "Aquesta versió decockpit-ws no és compatible amb la connexió a un amfitrió amb un usuari o port alternatius"
+  "Aquesta versió de cockpit-ws no és compatible amb la connexió a un amfitrió amb un usuari o port alternatius"
  ],
  "Tip: Make your key password match your login password to automatically authenticate against other systems.": [
   null,

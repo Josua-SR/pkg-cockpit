@@ -548,7 +548,7 @@ return plural;
  ],
  "ReadWrite": [
   null,
-  "LexturaEscriptura"
+  "LecturaEscriptura"
  ],
  "Reformat and add disks": [
   null,

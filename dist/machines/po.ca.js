@@ -77,7 +77,7 @@ return plural;
  ],
  "Autostart:": [
   null,
-  ""
+  "Inici automàtic:"
  ],
  "Available": [
   null,
@@ -289,11 +289,11 @@ return plural;
  ],
  "Switch to Desktop Viewer": [
   null,
-  ""
+  "Commuta al visualitzador d'escriptoris"
  ],
  "Switch to In-Browser Viewer": [
   null,
-  ""
+  "Commuta al visualitzador integrat del navegador"
  ],
  "System": [
   null,

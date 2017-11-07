@@ -1,94 +1,94 @@
 # Generated Makefile data for machines
-# Stamp: Wed Oct 18 2017 08:05:46 GMT+0000 (UTC)
+# Stamp: Tue Nov 07 2017 07:34:44 GMT+0000 (UTC)
 
 machines_INPUTS = \
-	$(srcdir)/node_modules/bootstrap/LICENSE \
-	$(srcdir)/node_modules/bootstrap/README.md \
-	$(srcdir)/node_modules/bootstrap/less/variables.less \
-	$(srcdir)/node_modules/bootstrap/package.json \
-	$(srcdir)/node_modules/c3/LICENSE \
-	$(srcdir)/node_modules/c3/README.md \
-	$(srcdir)/node_modules/c3/c3.css \
-	$(srcdir)/node_modules/c3/c3.js \
-	$(srcdir)/node_modules/c3/package.json \
-	$(srcdir)/node_modules/d3/LICENSE \
-	$(srcdir)/node_modules/d3/README.md \
-	$(srcdir)/node_modules/d3/d3.js \
-	$(srcdir)/node_modules/d3/package.json \
-	$(srcdir)/node_modules/noVNC/LICENSE.txt \
-	$(srcdir)/node_modules/noVNC/README.md \
-	$(srcdir)/node_modules/noVNC/include/base64.js \
-	$(srcdir)/node_modules/noVNC/include/des.js \
-	$(srcdir)/node_modules/noVNC/include/display.js \
-	$(srcdir)/node_modules/noVNC/include/inflator.js \
-	$(srcdir)/node_modules/noVNC/include/input.js \
-	$(srcdir)/node_modules/noVNC/include/keyboard.js \
-	$(srcdir)/node_modules/noVNC/include/keysym.js \
-	$(srcdir)/node_modules/noVNC/include/keysymdef.js \
-	$(srcdir)/node_modules/noVNC/include/rfb.js \
-	$(srcdir)/node_modules/noVNC/include/util.js \
-	$(srcdir)/node_modules/noVNC/include/websock.js \
-	$(srcdir)/node_modules/noVNC/include/webutil.js \
-	$(srcdir)/node_modules/noVNC/package.json \
-	$(srcdir)/node_modules/patternfly/LICENSE.txt \
-	$(srcdir)/node_modules/patternfly/README.md \
-	$(srcdir)/node_modules/patternfly/package.json \
-	$(srcdir)/node_modules/patternfly/src/less/color-variables.less \
-	$(srcdir)/node_modules/patternfly/src/less/variables.less \
-	$(srcdir)/node_modules/qunit-tap/GPL-LICENSE.txt \
-	$(srcdir)/node_modules/qunit-tap/MIT-LICENSE.txt \
-	$(srcdir)/node_modules/qunit-tap/lib/qunit-tap.js \
-	$(srcdir)/node_modules/qunit-tap/package.json \
-	$(srcdir)/node_modules/qunitjs/LICENSE.txt \
-	$(srcdir)/node_modules/qunitjs/README.md \
-	$(srcdir)/node_modules/qunitjs/package.json \
-	$(srcdir)/node_modules/qunitjs/qunit/qunit.css \
-	$(srcdir)/node_modules/qunitjs/qunit/qunit.js \
-	$(srcdir)/node_modules/react-lite/LICENSE \
-	$(srcdir)/node_modules/react-lite/README.md \
-	$(srcdir)/node_modules/react-lite/dist/react-lite.js \
-	$(srcdir)/node_modules/react-lite/package.json \
-	$(srcdir)/node_modules/redux/LICENSE.md \
-	$(srcdir)/node_modules/redux/README.md \
-	$(srcdir)/node_modules/redux/dist/redux.min.js \
-	$(srcdir)/node_modules/redux/package.json \
-	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \
-	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
-	$(srcdir)/pkg/lib/listing.less \
-	$(srcdir)/pkg/lib/page.css \
-	$(srcdir)/pkg/lib/qunit-config.js \
-	$(srcdir)/pkg/lib/qunit-template.html \
-	$(srcdir)/pkg/lib/qunit-tests.js \
-	$(srcdir)/pkg/lib/table.css \
-	$(srcdir)/pkg/lib/variables.less \
-	$(srcdir)/pkg/machines/actions.es6 \
-	$(srcdir)/pkg/machines/app.jsx \
-	$(srcdir)/pkg/machines/c3charts.jsx \
-	$(srcdir)/pkg/machines/cat.js \
-	$(srcdir)/pkg/machines/components/deleteDialog.css \
-	$(srcdir)/pkg/machines/components/deleteDialog.jsx \
-	$(srcdir)/pkg/machines/components/desktopConsole.jsx \
-	$(srcdir)/pkg/machines/components/graphicsConsole.jsx \
-	$(srcdir)/pkg/machines/components/vnc.jsx \
-	$(srcdir)/pkg/machines/config.es6 \
-	$(srcdir)/pkg/machines/helpers.es6 \
-	$(srcdir)/pkg/machines/hostvmslist.jsx \
-	$(srcdir)/pkg/machines/index.es6 \
-	$(srcdir)/pkg/machines/index.html \
-	$(srcdir)/pkg/machines/index.js \
-	$(srcdir)/pkg/machines/libvirt.es6 \
-	$(srcdir)/pkg/machines/machines.less \
-	$(srcdir)/pkg/machines/middlewares.es6 \
-	$(srcdir)/pkg/machines/provider.es6 \
-	$(srcdir)/pkg/machines/reducers.es6 \
-	$(srcdir)/pkg/machines/selectors.es6 \
-	$(srcdir)/pkg/machines/services.es6 \
-	$(srcdir)/pkg/machines/store.es6 \
-	$(srcdir)/pkg/machines/test-machines.js \
-	$(srcdir)/pkg/machines/vmdiskstab.jsx \
-	$(srcdir)/pkg/machines/vnc.css \
-	$(srcdir)/pkg/machines/vnc.html \
-	$(srcdir)/pkg/machines/vnc.js \
+	node_modules/bootstrap/LICENSE \
+	node_modules/bootstrap/README.md \
+	node_modules/bootstrap/less/variables.less \
+	node_modules/bootstrap/package.json \
+	node_modules/c3/LICENSE \
+	node_modules/c3/README.md \
+	node_modules/c3/c3.css \
+	node_modules/c3/c3.js \
+	node_modules/c3/package.json \
+	node_modules/d3/LICENSE \
+	node_modules/d3/README.md \
+	node_modules/d3/d3.js \
+	node_modules/d3/package.json \
+	node_modules/noVNC/LICENSE.txt \
+	node_modules/noVNC/README.md \
+	node_modules/noVNC/include/base64.js \
+	node_modules/noVNC/include/des.js \
+	node_modules/noVNC/include/display.js \
+	node_modules/noVNC/include/inflator.js \
+	node_modules/noVNC/include/input.js \
+	node_modules/noVNC/include/keyboard.js \
+	node_modules/noVNC/include/keysym.js \
+	node_modules/noVNC/include/keysymdef.js \
+	node_modules/noVNC/include/rfb.js \
+	node_modules/noVNC/include/util.js \
+	node_modules/noVNC/include/websock.js \
+	node_modules/noVNC/include/webutil.js \
+	node_modules/noVNC/package.json \
+	node_modules/patternfly/LICENSE.txt \
+	node_modules/patternfly/README.md \
+	node_modules/patternfly/package.json \
+	node_modules/patternfly/src/less/color-variables.less \
+	node_modules/patternfly/src/less/variables.less \
+	node_modules/qunit-tap/GPL-LICENSE.txt \
+	node_modules/qunit-tap/MIT-LICENSE.txt \
+	node_modules/qunit-tap/lib/qunit-tap.js \
+	node_modules/qunit-tap/package.json \
+	node_modules/qunitjs/LICENSE.txt \
+	node_modules/qunitjs/README.md \
+	node_modules/qunitjs/package.json \
+	node_modules/qunitjs/qunit/qunit.css \
+	node_modules/qunitjs/qunit/qunit.js \
+	node_modules/react-lite/LICENSE \
+	node_modules/react-lite/README.md \
+	node_modules/react-lite/dist/react-lite.js \
+	node_modules/react-lite/package.json \
+	node_modules/redux/LICENSE.md \
+	node_modules/redux/README.md \
+	node_modules/redux/dist/redux.min.js \
+	node_modules/redux/package.json \
+	pkg/lib/cockpit-components-dialog.jsx \
+	pkg/lib/cockpit-components-listing.jsx \
+	pkg/lib/listing.less \
+	pkg/lib/page.css \
+	pkg/lib/qunit-config.js \
+	pkg/lib/qunit-template.html \
+	pkg/lib/qunit-tests.js \
+	pkg/lib/table.css \
+	pkg/lib/variables.less \
+	pkg/machines/actions.es6 \
+	pkg/machines/app.jsx \
+	pkg/machines/c3charts.jsx \
+	pkg/machines/cat.js \
+	pkg/machines/components/deleteDialog.css \
+	pkg/machines/components/deleteDialog.jsx \
+	pkg/machines/components/desktopConsole.jsx \
+	pkg/machines/components/graphicsConsole.jsx \
+	pkg/machines/components/vnc.jsx \
+	pkg/machines/config.es6 \
+	pkg/machines/helpers.es6 \
+	pkg/machines/hostvmslist.jsx \
+	pkg/machines/index.es6 \
+	pkg/machines/index.html \
+	pkg/machines/index.js \
+	pkg/machines/libvirt.es6 \
+	pkg/machines/machines.less \
+	pkg/machines/middlewares.es6 \
+	pkg/machines/provider.es6 \
+	pkg/machines/reducers.es6 \
+	pkg/machines/selectors.es6 \
+	pkg/machines/services.es6 \
+	pkg/machines/store.es6 \
+	pkg/machines/test-machines.js \
+	pkg/machines/vmdiskstab.jsx \
+	pkg/machines/vnc.css \
+	pkg/machines/vnc.html \
+	pkg/machines/vnc.js \
 	$(NULL)
 
 machines_OUTPUTS = \
@@ -168,179 +168,179 @@ dist/machines/vnc.min.js: dist/machines/Makefile.deps
 
 dist/machines/vnc.min.js.map: dist/machines/Makefile.deps
 
-$(srcdir)/node_modules/bootstrap/LICENSE:
+node_modules/bootstrap/LICENSE:
 
-$(srcdir)/node_modules/bootstrap/README.md:
+node_modules/bootstrap/README.md:
 
-$(srcdir)/node_modules/bootstrap/less/variables.less:
+node_modules/bootstrap/less/variables.less:
 
-$(srcdir)/node_modules/bootstrap/package.json:
+node_modules/bootstrap/package.json:
 
-$(srcdir)/node_modules/c3/LICENSE:
+node_modules/c3/LICENSE:
 
-$(srcdir)/node_modules/c3/README.md:
+node_modules/c3/README.md:
 
-$(srcdir)/node_modules/c3/c3.css:
+node_modules/c3/c3.css:
 
-$(srcdir)/node_modules/c3/c3.js:
+node_modules/c3/c3.js:
 
-$(srcdir)/node_modules/c3/package.json:
+node_modules/c3/package.json:
 
-$(srcdir)/node_modules/d3/LICENSE:
+node_modules/d3/LICENSE:
 
-$(srcdir)/node_modules/d3/README.md:
+node_modules/d3/README.md:
 
-$(srcdir)/node_modules/d3/d3.js:
+node_modules/d3/d3.js:
 
-$(srcdir)/node_modules/d3/package.json:
+node_modules/d3/package.json:
 
-$(srcdir)/node_modules/noVNC/LICENSE.txt:
+node_modules/noVNC/LICENSE.txt:
 
-$(srcdir)/node_modules/noVNC/README.md:
+node_modules/noVNC/README.md:
 
-$(srcdir)/node_modules/noVNC/include/base64.js:
+node_modules/noVNC/include/base64.js:
 
-$(srcdir)/node_modules/noVNC/include/des.js:
+node_modules/noVNC/include/des.js:
 
-$(srcdir)/node_modules/noVNC/include/display.js:
+node_modules/noVNC/include/display.js:
 
-$(srcdir)/node_modules/noVNC/include/inflator.js:
+node_modules/noVNC/include/inflator.js:
 
-$(srcdir)/node_modules/noVNC/include/input.js:
+node_modules/noVNC/include/input.js:
 
-$(srcdir)/node_modules/noVNC/include/keyboard.js:
+node_modules/noVNC/include/keyboard.js:
 
-$(srcdir)/node_modules/noVNC/include/keysym.js:
+node_modules/noVNC/include/keysym.js:
 
-$(srcdir)/node_modules/noVNC/include/keysymdef.js:
+node_modules/noVNC/include/keysymdef.js:
 
-$(srcdir)/node_modules/noVNC/include/rfb.js:
+node_modules/noVNC/include/rfb.js:
 
-$(srcdir)/node_modules/noVNC/include/util.js:
+node_modules/noVNC/include/util.js:
 
-$(srcdir)/node_modules/noVNC/include/websock.js:
+node_modules/noVNC/include/websock.js:
 
-$(srcdir)/node_modules/noVNC/include/webutil.js:
+node_modules/noVNC/include/webutil.js:
 
-$(srcdir)/node_modules/noVNC/package.json:
+node_modules/noVNC/package.json:
 
-$(srcdir)/node_modules/patternfly/LICENSE.txt:
+node_modules/patternfly/LICENSE.txt:
 
-$(srcdir)/node_modules/patternfly/README.md:
+node_modules/patternfly/README.md:
 
-$(srcdir)/node_modules/patternfly/package.json:
+node_modules/patternfly/package.json:
 
-$(srcdir)/node_modules/patternfly/src/less/color-variables.less:
+node_modules/patternfly/src/less/color-variables.less:
 
-$(srcdir)/node_modules/patternfly/src/less/variables.less:
+node_modules/patternfly/src/less/variables.less:
 
-$(srcdir)/node_modules/qunit-tap/GPL-LICENSE.txt:
+node_modules/qunit-tap/GPL-LICENSE.txt:
 
-$(srcdir)/node_modules/qunit-tap/MIT-LICENSE.txt:
+node_modules/qunit-tap/MIT-LICENSE.txt:
 
-$(srcdir)/node_modules/qunit-tap/lib/qunit-tap.js:
+node_modules/qunit-tap/lib/qunit-tap.js:
 
-$(srcdir)/node_modules/qunit-tap/package.json:
+node_modules/qunit-tap/package.json:
 
-$(srcdir)/node_modules/qunitjs/LICENSE.txt:
+node_modules/qunitjs/LICENSE.txt:
 
-$(srcdir)/node_modules/qunitjs/README.md:
+node_modules/qunitjs/README.md:
 
-$(srcdir)/node_modules/qunitjs/package.json:
+node_modules/qunitjs/package.json:
 
-$(srcdir)/node_modules/qunitjs/qunit/qunit.css:
+node_modules/qunitjs/qunit/qunit.css:
 
-$(srcdir)/node_modules/qunitjs/qunit/qunit.js:
+node_modules/qunitjs/qunit/qunit.js:
 
-$(srcdir)/node_modules/react-lite/LICENSE:
+node_modules/react-lite/LICENSE:
 
-$(srcdir)/node_modules/react-lite/README.md:
+node_modules/react-lite/README.md:
 
-$(srcdir)/node_modules/react-lite/dist/react-lite.js:
+node_modules/react-lite/dist/react-lite.js:
 
-$(srcdir)/node_modules/react-lite/package.json:
+node_modules/react-lite/package.json:
 
-$(srcdir)/node_modules/redux/LICENSE.md:
+node_modules/redux/LICENSE.md:
 
-$(srcdir)/node_modules/redux/README.md:
+node_modules/redux/README.md:
 
-$(srcdir)/node_modules/redux/dist/redux.min.js:
+node_modules/redux/dist/redux.min.js:
 
-$(srcdir)/node_modules/redux/package.json:
+node_modules/redux/package.json:
 
-$(srcdir)/pkg/lib/cockpit-components-dialog.jsx:
+pkg/lib/cockpit-components-dialog.jsx:
 
-$(srcdir)/pkg/lib/cockpit-components-listing.jsx:
+pkg/lib/cockpit-components-listing.jsx:
 
-$(srcdir)/pkg/lib/listing.less:
+pkg/lib/listing.less:
 
-$(srcdir)/pkg/lib/page.css:
+pkg/lib/page.css:
 
-$(srcdir)/pkg/lib/qunit-config.js:
+pkg/lib/qunit-config.js:
 
-$(srcdir)/pkg/lib/qunit-template.html:
+pkg/lib/qunit-template.html:
 
-$(srcdir)/pkg/lib/qunit-tests.js:
+pkg/lib/qunit-tests.js:
 
-$(srcdir)/pkg/lib/table.css:
+pkg/lib/table.css:
 
-$(srcdir)/pkg/lib/variables.less:
+pkg/lib/variables.less:
 
-$(srcdir)/pkg/machines/actions.es6:
+pkg/machines/actions.es6:
 
-$(srcdir)/pkg/machines/app.jsx:
+pkg/machines/app.jsx:
 
-$(srcdir)/pkg/machines/c3charts.jsx:
+pkg/machines/c3charts.jsx:
 
-$(srcdir)/pkg/machines/cat.js:
+pkg/machines/cat.js:
 
-$(srcdir)/pkg/machines/components/deleteDialog.css:
+pkg/machines/components/deleteDialog.css:
 
-$(srcdir)/pkg/machines/components/deleteDialog.jsx:
+pkg/machines/components/deleteDialog.jsx:
 
-$(srcdir)/pkg/machines/components/desktopConsole.jsx:
+pkg/machines/components/desktopConsole.jsx:
 
-$(srcdir)/pkg/machines/components/graphicsConsole.jsx:
+pkg/machines/components/graphicsConsole.jsx:
 
-$(srcdir)/pkg/machines/components/vnc.jsx:
+pkg/machines/components/vnc.jsx:
 
-$(srcdir)/pkg/machines/config.es6:
+pkg/machines/config.es6:
 
-$(srcdir)/pkg/machines/helpers.es6:
+pkg/machines/helpers.es6:
 
-$(srcdir)/pkg/machines/hostvmslist.jsx:
+pkg/machines/hostvmslist.jsx:
 
-$(srcdir)/pkg/machines/index.es6:
+pkg/machines/index.es6:
 
-$(srcdir)/pkg/machines/index.html:
+pkg/machines/index.html:
 
-$(srcdir)/pkg/machines/index.js:
+pkg/machines/index.js:
 
-$(srcdir)/pkg/machines/libvirt.es6:
+pkg/machines/libvirt.es6:
 
-$(srcdir)/pkg/machines/machines.less:
+pkg/machines/machines.less:
 
-$(srcdir)/pkg/machines/middlewares.es6:
+pkg/machines/middlewares.es6:
 
-$(srcdir)/pkg/machines/provider.es6:
+pkg/machines/provider.es6:
 
-$(srcdir)/pkg/machines/reducers.es6:
+pkg/machines/reducers.es6:
 
-$(srcdir)/pkg/machines/selectors.es6:
+pkg/machines/selectors.es6:
 
-$(srcdir)/pkg/machines/services.es6:
+pkg/machines/services.es6:
 
-$(srcdir)/pkg/machines/store.es6:
+pkg/machines/store.es6:
 
-$(srcdir)/pkg/machines/test-machines.js:
+pkg/machines/test-machines.js:
 
-$(srcdir)/pkg/machines/vmdiskstab.jsx:
+pkg/machines/vmdiskstab.jsx:
 
-$(srcdir)/pkg/machines/vnc.css:
+pkg/machines/vnc.css:
 
-$(srcdir)/pkg/machines/vnc.html:
+pkg/machines/vnc.html:
 
-$(srcdir)/pkg/machines/vnc.js:
+pkg/machines/vnc.js:
 
 WEBPACK_INPUTS += $(machines_INPUTS)
 WEBPACK_OUTPUTS += $(machines_OUTPUTS)

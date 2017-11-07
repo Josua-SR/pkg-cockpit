@@ -1,80 +1,80 @@
 # Generated Makefile data for playground
-# Stamp: Wed Oct 18 2017 08:05:46 GMT+0000 (UTC)
+# Stamp: Tue Nov 07 2017 07:34:44 GMT+0000 (UTC)
 
 playground_INPUTS = \
-	$(srcdir)/node_modules/angular-gettext/LICENSE \
-	$(srcdir)/node_modules/angular-gettext/README.md \
-	$(srcdir)/node_modules/angular-gettext/dist/angular-gettext.js \
-	$(srcdir)/node_modules/angular-gettext/package.json \
-	$(srcdir)/node_modules/angular/README.md \
-	$(srcdir)/node_modules/angular/angular.js \
-	$(srcdir)/node_modules/angular/package.json \
-	$(srcdir)/node_modules/bootstrap/LICENSE \
-	$(srcdir)/node_modules/bootstrap/README.md \
-	$(srcdir)/node_modules/bootstrap/less/variables.less \
-	$(srcdir)/node_modules/bootstrap/package.json \
-	$(srcdir)/node_modules/jquery-flot/LICENSE.txt \
-	$(srcdir)/node_modules/jquery-flot/README.md \
-	$(srcdir)/node_modules/jquery-flot/jquery.flot.js \
-	$(srcdir)/node_modules/jquery-flot/jquery.flot.selection.js \
-	$(srcdir)/node_modules/jquery-flot/jquery.flot.time.js \
-	$(srcdir)/node_modules/jquery-flot/package.json \
-	$(srcdir)/node_modules/mustache/LICENSE \
-	$(srcdir)/node_modules/mustache/README.md \
-	$(srcdir)/node_modules/mustache/mustache.js \
-	$(srcdir)/node_modules/mustache/package.json \
-	$(srcdir)/node_modules/patternfly/LICENSE.txt \
-	$(srcdir)/node_modules/patternfly/README.md \
-	$(srcdir)/node_modules/patternfly/package.json \
-	$(srcdir)/node_modules/patternfly/src/less/color-variables.less \
-	$(srcdir)/node_modules/patternfly/src/less/variables.less \
-	$(srcdir)/node_modules/react-lite/LICENSE \
-	$(srcdir)/node_modules/react-lite/README.md \
-	$(srcdir)/node_modules/react-lite/dist/react-lite.js \
-	$(srcdir)/node_modules/react-lite/package.json \
-	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \
-	$(srcdir)/pkg/lib/cockpit-components-file-autocomplete.css \
-	$(srcdir)/pkg/lib/cockpit-components-file-autocomplete.jsx \
-	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
-	$(srcdir)/pkg/lib/cockpit-components-onoff.css \
-	$(srcdir)/pkg/lib/cockpit-components-onoff.jsx \
-	$(srcdir)/pkg/lib/cockpit-components-select.jsx \
-	$(srcdir)/pkg/lib/cockpit-components-tooltip.jsx \
-	$(srcdir)/pkg/lib/listing.less \
-	$(srcdir)/pkg/lib/mustache.js \
-	$(srcdir)/pkg/lib/page.css \
-	$(srcdir)/pkg/lib/patterns.js \
-	$(srcdir)/pkg/lib/plot.css \
-	$(srcdir)/pkg/lib/plot.js \
-	$(srcdir)/pkg/lib/service.js \
-	$(srcdir)/pkg/lib/table.css \
-	$(srcdir)/pkg/lib/timeline.css \
-	$(srcdir)/pkg/lib/tooltip.css \
-	$(srcdir)/pkg/lib/variables.less \
-	$(srcdir)/pkg/playground/hammer.gif \
-	$(srcdir)/pkg/playground/jquery-patterns.html \
-	$(srcdir)/pkg/playground/jquery-patterns.js \
-	$(srcdir)/pkg/playground/metrics.html \
-	$(srcdir)/pkg/playground/metrics.js \
-	$(srcdir)/pkg/playground/pkgs.html \
-	$(srcdir)/pkg/playground/pkgs.js \
-	$(srcdir)/pkg/playground/plot.html \
-	$(srcdir)/pkg/playground/plot.js \
-	$(srcdir)/pkg/playground/react-demo-dialog.jsx \
-	$(srcdir)/pkg/playground/react-demo-file-autocomplete.jsx \
-	$(srcdir)/pkg/playground/react-demo-listing.jsx \
-	$(srcdir)/pkg/playground/react-demo-onoff.jsx \
-	$(srcdir)/pkg/playground/react-demo-tooltip.jsx \
-	$(srcdir)/pkg/playground/react-patterns.html \
-	$(srcdir)/pkg/playground/react-patterns.js \
-	$(srcdir)/pkg/playground/service.html \
-	$(srcdir)/pkg/playground/service.js \
-	$(srcdir)/pkg/playground/speed.html \
-	$(srcdir)/pkg/playground/speed.js \
-	$(srcdir)/pkg/playground/test.html \
-	$(srcdir)/pkg/playground/test.js \
-	$(srcdir)/pkg/playground/translate.html \
-	$(srcdir)/pkg/playground/translate.js \
+	node_modules/angular-gettext/LICENSE \
+	node_modules/angular-gettext/README.md \
+	node_modules/angular-gettext/dist/angular-gettext.js \
+	node_modules/angular-gettext/package.json \
+	node_modules/angular/README.md \
+	node_modules/angular/angular.js \
+	node_modules/angular/package.json \
+	node_modules/bootstrap/LICENSE \
+	node_modules/bootstrap/README.md \
+	node_modules/bootstrap/less/variables.less \
+	node_modules/bootstrap/package.json \
+	node_modules/jquery-flot/LICENSE.txt \
+	node_modules/jquery-flot/README.md \
+	node_modules/jquery-flot/jquery.flot.js \
+	node_modules/jquery-flot/jquery.flot.selection.js \
+	node_modules/jquery-flot/jquery.flot.time.js \
+	node_modules/jquery-flot/package.json \
+	node_modules/mustache/LICENSE \
+	node_modules/mustache/README.md \
+	node_modules/mustache/mustache.js \
+	node_modules/mustache/package.json \
+	node_modules/patternfly/LICENSE.txt \
+	node_modules/patternfly/README.md \
+	node_modules/patternfly/package.json \
+	node_modules/patternfly/src/less/color-variables.less \
+	node_modules/patternfly/src/less/variables.less \
+	node_modules/react-lite/LICENSE \
+	node_modules/react-lite/README.md \
+	node_modules/react-lite/dist/react-lite.js \
+	node_modules/react-lite/package.json \
+	pkg/lib/cockpit-components-dialog.jsx \
+	pkg/lib/cockpit-components-file-autocomplete.css \
+	pkg/lib/cockpit-components-file-autocomplete.jsx \
+	pkg/lib/cockpit-components-listing.jsx \
+	pkg/lib/cockpit-components-onoff.css \
+	pkg/lib/cockpit-components-onoff.jsx \
+	pkg/lib/cockpit-components-select.jsx \
+	pkg/lib/cockpit-components-tooltip.jsx \
+	pkg/lib/listing.less \
+	pkg/lib/mustache.js \
+	pkg/lib/page.css \
+	pkg/lib/patterns.js \
+	pkg/lib/plot.css \
+	pkg/lib/plot.js \
+	pkg/lib/service.js \
+	pkg/lib/table.css \
+	pkg/lib/timeline.css \
+	pkg/lib/tooltip.css \
+	pkg/lib/variables.less \
+	pkg/playground/hammer.gif \
+	pkg/playground/jquery-patterns.html \
+	pkg/playground/jquery-patterns.js \
+	pkg/playground/metrics.html \
+	pkg/playground/metrics.js \
+	pkg/playground/pkgs.html \
+	pkg/playground/pkgs.js \
+	pkg/playground/plot.html \
+	pkg/playground/plot.js \
+	pkg/playground/react-demo-dialog.jsx \
+	pkg/playground/react-demo-file-autocomplete.jsx \
+	pkg/playground/react-demo-listing.jsx \
+	pkg/playground/react-demo-onoff.jsx \
+	pkg/playground/react-demo-tooltip.jsx \
+	pkg/playground/react-patterns.html \
+	pkg/playground/react-patterns.js \
+	pkg/playground/service.html \
+	pkg/playground/service.js \
+	pkg/playground/speed.html \
+	pkg/playground/speed.js \
+	pkg/playground/test.html \
+	pkg/playground/test.js \
+	pkg/playground/translate.html \
+	pkg/playground/translate.js \
 	$(NULL)
 
 playground_OUTPUTS = \
@@ -244,151 +244,151 @@ dist/playground/translate.min.js: dist/playground/Makefile.deps
 
 dist/playground/translate.min.js.map: dist/playground/Makefile.deps
 
-$(srcdir)/node_modules/angular-gettext/LICENSE:
+node_modules/angular-gettext/LICENSE:
 
-$(srcdir)/node_modules/angular-gettext/README.md:
+node_modules/angular-gettext/README.md:
 
-$(srcdir)/node_modules/angular-gettext/dist/angular-gettext.js:
+node_modules/angular-gettext/dist/angular-gettext.js:
 
-$(srcdir)/node_modules/angular-gettext/package.json:
+node_modules/angular-gettext/package.json:
 
-$(srcdir)/node_modules/angular/README.md:
+node_modules/angular/README.md:
 
-$(srcdir)/node_modules/angular/angular.js:
+node_modules/angular/angular.js:
 
-$(srcdir)/node_modules/angular/package.json:
+node_modules/angular/package.json:
 
-$(srcdir)/node_modules/bootstrap/LICENSE:
+node_modules/bootstrap/LICENSE:
 
-$(srcdir)/node_modules/bootstrap/README.md:
+node_modules/bootstrap/README.md:
 
-$(srcdir)/node_modules/bootstrap/less/variables.less:
+node_modules/bootstrap/less/variables.less:
 
-$(srcdir)/node_modules/bootstrap/package.json:
+node_modules/bootstrap/package.json:
 
-$(srcdir)/node_modules/jquery-flot/LICENSE.txt:
+node_modules/jquery-flot/LICENSE.txt:
 
-$(srcdir)/node_modules/jquery-flot/README.md:
+node_modules/jquery-flot/README.md:
 
-$(srcdir)/node_modules/jquery-flot/jquery.flot.js:
+node_modules/jquery-flot/jquery.flot.js:
 
-$(srcdir)/node_modules/jquery-flot/jquery.flot.selection.js:
+node_modules/jquery-flot/jquery.flot.selection.js:
 
-$(srcdir)/node_modules/jquery-flot/jquery.flot.time.js:
+node_modules/jquery-flot/jquery.flot.time.js:
 
-$(srcdir)/node_modules/jquery-flot/package.json:
+node_modules/jquery-flot/package.json:
 
-$(srcdir)/node_modules/mustache/LICENSE:
+node_modules/mustache/LICENSE:
 
-$(srcdir)/node_modules/mustache/README.md:
+node_modules/mustache/README.md:
 
-$(srcdir)/node_modules/mustache/mustache.js:
+node_modules/mustache/mustache.js:
 
-$(srcdir)/node_modules/mustache/package.json:
+node_modules/mustache/package.json:
 
-$(srcdir)/node_modules/patternfly/LICENSE.txt:
+node_modules/patternfly/LICENSE.txt:
 
-$(srcdir)/node_modules/patternfly/README.md:
+node_modules/patternfly/README.md:
 
-$(srcdir)/node_modules/patternfly/package.json:
+node_modules/patternfly/package.json:
 
-$(srcdir)/node_modules/patternfly/src/less/color-variables.less:
+node_modules/patternfly/src/less/color-variables.less:
 
-$(srcdir)/node_modules/patternfly/src/less/variables.less:
+node_modules/patternfly/src/less/variables.less:
 
-$(srcdir)/node_modules/react-lite/LICENSE:
+node_modules/react-lite/LICENSE:
 
-$(srcdir)/node_modules/react-lite/README.md:
+node_modules/react-lite/README.md:
 
-$(srcdir)/node_modules/react-lite/dist/react-lite.js:
+node_modules/react-lite/dist/react-lite.js:
 
-$(srcdir)/node_modules/react-lite/package.json:
+node_modules/react-lite/package.json:
 
-$(srcdir)/pkg/lib/cockpit-components-dialog.jsx:
+pkg/lib/cockpit-components-dialog.jsx:
 
-$(srcdir)/pkg/lib/cockpit-components-file-autocomplete.css:
+pkg/lib/cockpit-components-file-autocomplete.css:
 
-$(srcdir)/pkg/lib/cockpit-components-file-autocomplete.jsx:
+pkg/lib/cockpit-components-file-autocomplete.jsx:
 
-$(srcdir)/pkg/lib/cockpit-components-listing.jsx:
+pkg/lib/cockpit-components-listing.jsx:
 
-$(srcdir)/pkg/lib/cockpit-components-onoff.css:
+pkg/lib/cockpit-components-onoff.css:
 
-$(srcdir)/pkg/lib/cockpit-components-onoff.jsx:
+pkg/lib/cockpit-components-onoff.jsx:
 
-$(srcdir)/pkg/lib/cockpit-components-select.jsx:
+pkg/lib/cockpit-components-select.jsx:
 
-$(srcdir)/pkg/lib/cockpit-components-tooltip.jsx:
+pkg/lib/cockpit-components-tooltip.jsx:
 
-$(srcdir)/pkg/lib/listing.less:
+pkg/lib/listing.less:
 
-$(srcdir)/pkg/lib/mustache.js:
+pkg/lib/mustache.js:
 
-$(srcdir)/pkg/lib/page.css:
+pkg/lib/page.css:
 
-$(srcdir)/pkg/lib/patterns.js:
+pkg/lib/patterns.js:
 
-$(srcdir)/pkg/lib/plot.css:
+pkg/lib/plot.css:
 
-$(srcdir)/pkg/lib/plot.js:
+pkg/lib/plot.js:
 
-$(srcdir)/pkg/lib/service.js:
+pkg/lib/service.js:
 
-$(srcdir)/pkg/lib/table.css:
+pkg/lib/table.css:
 
-$(srcdir)/pkg/lib/timeline.css:
+pkg/lib/timeline.css:
 
-$(srcdir)/pkg/lib/tooltip.css:
+pkg/lib/tooltip.css:
 
-$(srcdir)/pkg/lib/variables.less:
+pkg/lib/variables.less:
 
-$(srcdir)/pkg/playground/hammer.gif:
+pkg/playground/hammer.gif:
 
-$(srcdir)/pkg/playground/jquery-patterns.html:
+pkg/playground/jquery-patterns.html:
 
-$(srcdir)/pkg/playground/jquery-patterns.js:
+pkg/playground/jquery-patterns.js:
 
-$(srcdir)/pkg/playground/metrics.html:
+pkg/playground/metrics.html:
 
-$(srcdir)/pkg/playground/metrics.js:
+pkg/playground/metrics.js:
 
-$(srcdir)/pkg/playground/pkgs.html:
+pkg/playground/pkgs.html:
 
-$(srcdir)/pkg/playground/pkgs.js:
+pkg/playground/pkgs.js:
 
-$(srcdir)/pkg/playground/plot.html:
+pkg/playground/plot.html:
 
-$(srcdir)/pkg/playground/plot.js:
+pkg/playground/plot.js:
 
-$(srcdir)/pkg/playground/react-demo-dialog.jsx:
+pkg/playground/react-demo-dialog.jsx:
 
-$(srcdir)/pkg/playground/react-demo-file-autocomplete.jsx:
+pkg/playground/react-demo-file-autocomplete.jsx:
 
-$(srcdir)/pkg/playground/react-demo-listing.jsx:
+pkg/playground/react-demo-listing.jsx:
 
-$(srcdir)/pkg/playground/react-demo-onoff.jsx:
+pkg/playground/react-demo-onoff.jsx:
 
-$(srcdir)/pkg/playground/react-demo-tooltip.jsx:
+pkg/playground/react-demo-tooltip.jsx:
 
-$(srcdir)/pkg/playground/react-patterns.html:
+pkg/playground/react-patterns.html:
 
-$(srcdir)/pkg/playground/react-patterns.js:
+pkg/playground/react-patterns.js:
 
-$(srcdir)/pkg/playground/service.html:
+pkg/playground/service.html:
 
-$(srcdir)/pkg/playground/service.js:
+pkg/playground/service.js:
 
-$(srcdir)/pkg/playground/speed.html:
+pkg/playground/speed.html:
 
-$(srcdir)/pkg/playground/speed.js:
+pkg/playground/speed.js:
 
-$(srcdir)/pkg/playground/test.html:
+pkg/playground/test.html:
 
-$(srcdir)/pkg/playground/test.js:
+pkg/playground/test.js:
 
-$(srcdir)/pkg/playground/translate.html:
+pkg/playground/translate.html:
 
-$(srcdir)/pkg/playground/translate.js:
+pkg/playground/translate.js:
 
 WEBPACK_INPUTS += $(playground_INPUTS)
 WEBPACK_OUTPUTS += $(playground_OUTPUTS)

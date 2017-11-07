@@ -122,10 +122,6 @@ return plural;
   "$0 ano",
   "$0 anos"
  ],
- "$0, $1 free": [
-  null,
-  "$0, $1 livre"
- ],
  "$name (from $host)": [
   null,
   "$nome(vindo de $host)"
@@ -218,10 +214,6 @@ return plural;
   null,
   "<span>Partição de $0</span>"
  ],
- "A spare disk needs to be added first before this disk can be removed.": [
-  null,
-  "Um disco de reposição precisa ser adicionado primeiro antes que este disco possa ser removido."
- ],
  "Activate": [
   null,
   "Ativar"
@@ -233,10 +225,6 @@ return plural;
  "Add": [
   null,
   "Adicionar"
- ],
- "Add Disks": [
-  null,
-  "Adicionar Discos"
  ],
  "Add iSCSI Portal": [
   null,
@@ -277,10 +265,6 @@ return plural;
  "Block device for filesystems": [
   null,
   "Dispositivo de bloqueio para sistemas de arquivos"
- ],
- "Blocked": [
-  null,
-  "Bloqueado"
  ],
  "Can't delete while unlocked": [
   null,
@@ -410,6 +394,14 @@ return plural;
   null,
   "Customizado (Digite tipo de sistema de arquivos)"
  ],
+ "Custom encryption options": [
+  null,
+  ""
+ ],
+ "Custom mount options": [
+  null,
+  ""
+ ],
  "DISK IS FAILING": [
   null,
   "O DISCO ESTÁ FALHANDO"
@@ -538,10 +530,6 @@ return plural;
   null,
   "Partição Extendida"
  ],
- "FAILED": [
-  null,
-  "FALHOU"
- ],
  "Filesystem": [
   null,
   "Sistema de arquivos"
@@ -593,10 +581,6 @@ return plural;
  "Go to now": [
   null,
   "Ir para agora"
- ],
- "In Sync": [
-  null,
-  "Em Sincronização"
  ],
  "Inactive volume": [
   null,
@@ -661,6 +645,22 @@ return plural;
  "Mount Point": [
   null,
   "Ponto de Montagem"
+ ],
+ "Mount at boot": [
+  null,
+  ""
+ ],
+ "Mount options": [
+  null,
+  ""
+ ],
+ "Mount point can not be empty": [
+  null,
+  ""
+ ],
+ "Mount read only": [
+  null,
+  ""
  ],
  "Mounted At": [
   null,
@@ -806,10 +806,6 @@ return plural;
   null,
   "Volume Físico"
  ],
- "Physical Volumes": [
-  null,
-  "Volumes Físicos"
- ],
  "Physical volume of $0": [
   null,
   "Volume físico de $0"
@@ -922,10 +918,6 @@ return plural;
   null,
   "Reiniciar"
  ],
- "Recovering": [
-  null,
-  "Recuperação"
- ],
  "Recovering RAID Device $target": [
   null,
   "Recuperando Dispositivo RAID $target"
@@ -1014,10 +1006,6 @@ return plural;
   null,
   "O tamanho deve ser um número"
  ],
- "Spare": [
-  null,
-  "Reposição"
- ],
  "Start": [
   null,
   "Iniciar"
@@ -1098,22 +1086,6 @@ return plural;
   null,
   "A matriz RAID está em um estado degradado"
  ],
- "The RAID device must be running in order to add spare disks.": [
-  null,
-  "O dispositivo RAID deve estar em execução para adicionar discos sobressalentes."
- ],
- "The RAID device must be running in order to remove disks.": [
-  null,
-  "O dispositivo RAID deve estar em execução para remover discos."
- ],
- "The last disk of a RAID device cannot be removed.": [
-  null,
-  "O último disco de um dispositivo RAID não pode ser removido."
- ],
- "The last physical volume of a volume group cannot be removed.": [
-  null,
-  "O último volume físico de um grupo de volumes não pode ser removido."
- ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "Ao usuário <b>$0</b> não é permitido gerenciar o armazaenamento"
@@ -1121,10 +1093,6 @@ return plural;
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
   null,
   "Há dispositivos com vários caminhos no sistema, mas o serviço de multicaminho não está sendo executado."
- ],
- "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
-  null,
-  "Não há espaço livre suficiente em outro lugar para remover este volume físico. Pelo menos mais $0 de espaço livre é necessário."
  ],
  "Thin Logical Volume": [
   null,
@@ -1150,10 +1118,6 @@ return plural;
   null,
   "Este dispositivo é usado atualmente para grupos de volumes.                Proceder irá removê-lo dos seus grupos de volumes."
  ],
- "This disk cannot be removed while the device is recovering.": [
-  null,
-  "Este disco não pode ser removido enquanto o dispositivo está se recuperando."
- ],
  "This logical volume cannot be made smaller.": [
   null,
   "Este volume lógico não pode ser reduzido."
@@ -1174,10 +1138,6 @@ return plural;
   null,
   "Desconhecido"
  ],
- "Unknown ($0)": [
-  null,
-  "Desconhecido ($0)"
- ],
  "Unknown host name": [
   null,
   "Nome de host desconhecido"
@@ -1185,6 +1145,14 @@ return plural;
  "Unlock": [
   null,
   "Destravar"
+ ],
+ "Unlock at boot": [
+  null,
+  ""
+ ],
+ "Unlock read only": [
+  null,
+  ""
  ],
  "Unlocking $target": [
   null,
@@ -1241,10 +1209,6 @@ return plural;
  "Volume Groups": [
   null,
   "Grupos do Volume"
- ],
- "Write-mostly": [
-  null,
-  "Maioria-Escrita"
  ],
  "Writing": [
   null,

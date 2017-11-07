@@ -69,7 +69,7 @@ return plural;
  },
  "Applications": [
   null,
-  ""
+  "应用"
  ],
  "Cancel": [
   null,
@@ -77,7 +77,7 @@ return plural;
  ],
  "Checking for new applications": [
   null,
-  ""
+  "检查新的应用"
  ],
  "Close": [
   null,
@@ -89,23 +89,23 @@ return plural;
  ],
  "Go to Application": [
   null,
-  ""
+  "导航到应用"
  ],
  "Install": [
   null,
-  ""
+  "安装"
  ],
  "Installing": [
   null,
-  ""
+  "正在安装"
  ],
  "No applications installed or available": [
   null,
-  ""
+  "没有应用被安装或不可用"
  ],
  "No installation package found for this application.": [
   null,
-  ""
+  "没有找到为该应用的安装包"
  ],
  "Ok": [
   null,
@@ -117,14 +117,14 @@ return plural;
  ],
  "Removing": [
   null,
-  ""
+  "正在移除"
  ],
  "Unknown Application": [
   null,
-  ""
+  "未知应用"
  ],
  "Waiting for other programs to finish using the package manager...": [
   null,
-  ""
+  "正在等待其他程序来结束使用中的软件包管理器"
  ]
 }));

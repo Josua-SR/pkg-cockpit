@@ -81,7 +81,7 @@ return plural;
  ],
  "Active Pages": [
   null,
-  ""
+  "Páginas Activas"
  ],
  "Add": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Close Selected Pages": [
   null,
-  ""
+  "Cerrar Paginas Seleccionas"
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
@@ -285,11 +285,11 @@ return plural;
  ],
  "Lock to prevent privileged tasks": [
   null,
-  ""
+  "Bloqueo para evitar tareas privilegiadas."
  ],
  "Locked": [
   null,
-  ""
+  "Bloqueado"
  ],
  "Log In": [
   null,
@@ -297,7 +297,7 @@ return plural;
  ],
  "Log Out": [
   null,
-  ""
+  "Salir"
  ],
  "Log in again": [
   null,

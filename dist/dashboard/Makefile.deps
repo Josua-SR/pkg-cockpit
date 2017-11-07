@@ -1,37 +1,37 @@
 # Generated Makefile data for dashboard
-# Stamp: Wed Oct 18 2017 08:05:41 GMT+0000 (UTC)
+# Stamp: Tue Nov 07 2017 07:34:39 GMT+0000 (UTC)
 
 dashboard_INPUTS = \
-	$(srcdir)/node_modules/jquery-flot/LICENSE.txt \
-	$(srcdir)/node_modules/jquery-flot/README.md \
-	$(srcdir)/node_modules/jquery-flot/jquery.flot.js \
-	$(srcdir)/node_modules/jquery-flot/jquery.flot.selection.js \
-	$(srcdir)/node_modules/jquery-flot/jquery.flot.time.js \
-	$(srcdir)/node_modules/jquery-flot/package.json \
-	$(srcdir)/node_modules/mustache/LICENSE \
-	$(srcdir)/node_modules/mustache/README.md \
-	$(srcdir)/node_modules/mustache/mustache.js \
-	$(srcdir)/node_modules/mustache/package.json \
-	$(srcdir)/pkg/dashboard/image-editor.js \
-	$(srcdir)/pkg/dashboard/index.html \
-	$(srcdir)/pkg/dashboard/list.js \
-	$(srcdir)/pkg/lib/credentials-ssh-private-keys.sh \
-	$(srcdir)/pkg/lib/credentials-ssh-remove-key.sh \
-	$(srcdir)/pkg/lib/credentials.js \
-	$(srcdir)/pkg/lib/machine-add.html \
-	$(srcdir)/pkg/lib/machine-auth-failed.html \
-	$(srcdir)/pkg/lib/machine-change-auth.html \
-	$(srcdir)/pkg/lib/machine-change-port.html \
-	$(srcdir)/pkg/lib/machine-color-picker.html \
-	$(srcdir)/pkg/lib/machine-dialogs.js \
-	$(srcdir)/pkg/lib/machine-invalid-hostkey.html \
-	$(srcdir)/pkg/lib/machine-not-supported.html \
-	$(srcdir)/pkg/lib/machine-sync-users.html \
-	$(srcdir)/pkg/lib/machine-unknown-hostkey.html \
-	$(srcdir)/pkg/lib/machines.js \
-	$(srcdir)/pkg/lib/mustache.js \
-	$(srcdir)/pkg/lib/patterns.js \
-	$(srcdir)/pkg/lib/plot.js \
+	node_modules/jquery-flot/LICENSE.txt \
+	node_modules/jquery-flot/README.md \
+	node_modules/jquery-flot/jquery.flot.js \
+	node_modules/jquery-flot/jquery.flot.selection.js \
+	node_modules/jquery-flot/jquery.flot.time.js \
+	node_modules/jquery-flot/package.json \
+	node_modules/mustache/LICENSE \
+	node_modules/mustache/README.md \
+	node_modules/mustache/mustache.js \
+	node_modules/mustache/package.json \
+	pkg/dashboard/image-editor.js \
+	pkg/dashboard/index.html \
+	pkg/dashboard/list.js \
+	pkg/lib/credentials-ssh-private-keys.sh \
+	pkg/lib/credentials-ssh-remove-key.sh \
+	pkg/lib/credentials.js \
+	pkg/lib/machine-add.html \
+	pkg/lib/machine-auth-failed.html \
+	pkg/lib/machine-change-auth.html \
+	pkg/lib/machine-change-port.html \
+	pkg/lib/machine-color-picker.html \
+	pkg/lib/machine-dialogs.js \
+	pkg/lib/machine-invalid-hostkey.html \
+	pkg/lib/machine-not-supported.html \
+	pkg/lib/machine-sync-users.html \
+	pkg/lib/machine-unknown-hostkey.html \
+	pkg/lib/machines.js \
+	pkg/lib/mustache.js \
+	pkg/lib/patterns.js \
+	pkg/lib/plot.js \
 	$(NULL)
 
 dashboard_OUTPUTS = \
@@ -69,65 +69,65 @@ dist/dashboard/dashboard.min.js.map: dist/dashboard/Makefile.deps
 
 dist/dashboard/index.html: dist/dashboard/Makefile.deps
 
-$(srcdir)/node_modules/jquery-flot/LICENSE.txt:
+node_modules/jquery-flot/LICENSE.txt:
 
-$(srcdir)/node_modules/jquery-flot/README.md:
+node_modules/jquery-flot/README.md:
 
-$(srcdir)/node_modules/jquery-flot/jquery.flot.js:
+node_modules/jquery-flot/jquery.flot.js:
 
-$(srcdir)/node_modules/jquery-flot/jquery.flot.selection.js:
+node_modules/jquery-flot/jquery.flot.selection.js:
 
-$(srcdir)/node_modules/jquery-flot/jquery.flot.time.js:
+node_modules/jquery-flot/jquery.flot.time.js:
 
-$(srcdir)/node_modules/jquery-flot/package.json:
+node_modules/jquery-flot/package.json:
 
-$(srcdir)/node_modules/mustache/LICENSE:
+node_modules/mustache/LICENSE:
 
-$(srcdir)/node_modules/mustache/README.md:
+node_modules/mustache/README.md:
 
-$(srcdir)/node_modules/mustache/mustache.js:
+node_modules/mustache/mustache.js:
 
-$(srcdir)/node_modules/mustache/package.json:
+node_modules/mustache/package.json:
 
-$(srcdir)/pkg/dashboard/image-editor.js:
+pkg/dashboard/image-editor.js:
 
-$(srcdir)/pkg/dashboard/index.html:
+pkg/dashboard/index.html:
 
-$(srcdir)/pkg/dashboard/list.js:
+pkg/dashboard/list.js:
 
-$(srcdir)/pkg/lib/credentials-ssh-private-keys.sh:
+pkg/lib/credentials-ssh-private-keys.sh:
 
-$(srcdir)/pkg/lib/credentials-ssh-remove-key.sh:
+pkg/lib/credentials-ssh-remove-key.sh:
 
-$(srcdir)/pkg/lib/credentials.js:
+pkg/lib/credentials.js:
 
-$(srcdir)/pkg/lib/machine-add.html:
+pkg/lib/machine-add.html:
 
-$(srcdir)/pkg/lib/machine-auth-failed.html:
+pkg/lib/machine-auth-failed.html:
 
-$(srcdir)/pkg/lib/machine-change-auth.html:
+pkg/lib/machine-change-auth.html:
 
-$(srcdir)/pkg/lib/machine-change-port.html:
+pkg/lib/machine-change-port.html:
 
-$(srcdir)/pkg/lib/machine-color-picker.html:
+pkg/lib/machine-color-picker.html:
 
-$(srcdir)/pkg/lib/machine-dialogs.js:
+pkg/lib/machine-dialogs.js:
 
-$(srcdir)/pkg/lib/machine-invalid-hostkey.html:
+pkg/lib/machine-invalid-hostkey.html:
 
-$(srcdir)/pkg/lib/machine-not-supported.html:
+pkg/lib/machine-not-supported.html:
 
-$(srcdir)/pkg/lib/machine-sync-users.html:
+pkg/lib/machine-sync-users.html:
 
-$(srcdir)/pkg/lib/machine-unknown-hostkey.html:
+pkg/lib/machine-unknown-hostkey.html:
 
-$(srcdir)/pkg/lib/machines.js:
+pkg/lib/machines.js:
 
-$(srcdir)/pkg/lib/mustache.js:
+pkg/lib/mustache.js:
 
-$(srcdir)/pkg/lib/patterns.js:
+pkg/lib/patterns.js:
 
-$(srcdir)/pkg/lib/plot.js:
+pkg/lib/plot.js:
 
 WEBPACK_INPUTS += $(dashboard_INPUTS)
 WEBPACK_OUTPUTS += $(dashboard_OUTPUTS)

@@ -71,9 +71,21 @@ return plural;
   null,
   "$0 можна користуватися у більшості операційних систем. Щоб встановити пакунок із програмою, знайдіть відповідний запис у Програмних засобах GNOME або віддайте таку команду:"
  ],
+ "Action": [
+  null,
+  "Дія"
+ ],
  "Address:": [
   null,
   "Адреса:"
+ ],
+ "All running virtual machines will be turned off.": [
+  null,
+  ""
+ ],
+ "Automatically selected host": [
+  null,
+  "Автоматично вибраний вузол"
  ],
  "Autostart:": [
   null,
@@ -82,6 +94,18 @@ return plural;
  "Available": [
   null,
   "Доступні"
+ ],
+ "Base Template": [
+  null,
+  "Базовий шаблон"
+ ],
+ "Base template": [
+  null,
+  "Базовий шаблон"
+ ],
+ "Base template:": [
+  null,
+  "Базовий шаблон:"
  ],
  "Boot Order:": [
   null,
@@ -95,6 +119,10 @@ return plural;
   null,
   "Тип процесора:"
  ],
+ "CREATE VM action failed": [
+  null,
+  "Не вдалося виконати дію CREATE VM"
+ ],
  "Cancel": [
   null,
   "Скасувати"
@@ -107,9 +135,37 @@ return plural;
   null,
   "У результаті натискання «Запустити віддалений переглядач» буде отримано файл .vv і запущено $0."
  ],
+ "Cluster": [
+  null,
+  "Кластер"
+ ],
+ "Cluster Templates": [
+  null,
+  "Шаблони кластера"
+ ],
+ "Cluster Virtual Machines": [
+  null,
+  "Віртуальні машини кластера"
+ ],
  "Confirm deletion of $0": [
   null,
   "Підтвердження вилучення $0"
+ ],
+ "Confirm migration": [
+  null,
+  "Підтвердження перенесення"
+ ],
+ "Confirm reload:": [
+  null,
+  "Підтвердження перезавантаження:"
+ ],
+ "Confirm save:": [
+  null,
+  "Підтвердження збереження:"
+ ],
+ "Connect to oVirt Engine": [
+  null,
+  "З'єднатися із рушієм oVirt"
  ],
  "Connect with Remote Viewer": [
   null,
@@ -135,6 +191,14 @@ return plural;
   null,
   "Кількість:"
  ],
+ "Create": [
+  null,
+  "Створити"
+ ],
+ "Create VM": [
+  null,
+  "Створення ВМ"
+ ],
  "Delete": [
   null,
   "Вилучити"
@@ -142,6 +206,14 @@ return plural;
  "Delete associated storage files:": [
   null,
   "Вилучити пов’язані файли у сховищі даних:"
+ ],
+ "Description": [
+  null,
+  "Опис"
+ ],
+ "Description:": [
+  null,
+  "Опис:"
  ],
  "Device": [
   null,
@@ -155,9 +227,21 @@ return plural;
   null,
   "Отримати MSI з $0"
  ],
+ "Edit the vdsm.conf": [
+  null,
+  "Редагувати vdsm.conf"
+ ],
  "Emulated Machine:": [
   null,
   "Емуляція машини:"
+ ],
+ "Enter New VM name": [
+  null,
+  "Введіть назву нової ВМ"
+ ],
+ "FQDN": [
+  null,
+  "FQDN"
  ],
  "File": [
   null,
@@ -175,21 +259,49 @@ return plural;
   null,
   "ГБ"
  ],
+ "HA": [
+  null,
+  "HA"
+ ],
+ "HA:": [
+  null,
+  "HA:"
+ ],
  "Host": [
   null,
   "Вузол"
+ ],
+ "Host to Maintenance": [
+  null,
+  ""
  ],
  "Launch Remote Viewer": [
   null,
   "Запустити віддалений переглядач"
  ],
+ "Loading data ...": [
+  null,
+  "Завантажуємо дані…"
+ ],
+ "MIGRATE action failed": [
+  null,
+  "Не вдалося виконати дію MIGRATE"
+ ],
  "Manual Connection": [
   null,
   "З’єднання вручну"
  ],
+ "Memory": [
+  null,
+  "Пам'ять"
+ ],
  "Memory:": [
   null,
   "Пам’ять:"
+ ],
+ "Migrate To:": [
+  null,
+  "Перенести до:"
  ],
  "More Information": [
   null,
@@ -198,6 +310,10 @@ return plural;
  "Name": [
   null,
   "Назва"
+ ],
+ "No VM found in oVirt.": [
+  null,
+  "У oVirt не знайдено ВМ."
  ],
  "No VM is running or defined on this host": [
   null,
@@ -215,17 +331,57 @@ return plural;
   null,
   "Для цієї віртуальної машини не визначено графічної консолі."
  ],
+ "OK": [
+  null,
+  "Гаразд"
+ ],
+ "OS": [
+  null,
+  "ОС"
+ ],
+ "OS Type:": [
+  null,
+  "Тип ОС:"
+ ],
  "Ok": [
   null,
   "Гаразд"
+ ],
+ "Optimized for:": [
+  null,
+  "Оптимізовано для:"
  ],
  "Overview": [
   null,
   "Огляд"
  ],
+ "Please confirm, the host shall be switched to maintenance mode.": [
+  null,
+  ""
+ ],
+ "Please provide fully qualified domain name and port of the oVirt engine.": [
+  null,
+  "Будь ласка, вкажіть повну доменну назву та порт рушія oVirt."
+ ],
+ "Please provide valid oVirt engine fully qualified domain name (FQDN) and port (443 by default)": [
+  null,
+  "Будь ласка, вкажіть повну доменну адресу (FQDN) і порт (типово 443) рушія oVirt"
+ ],
+ "Please refer to oVirt's $0 for more information about Remote Viewer setup.": [
+  null,
+  "Будь ласка, зверніться до $0 oVirt, щоб дізнатися більше про налаштовування засобу віддаленого перегляду."
+ ],
  "Please start the virtual machine to access its graphics console.": [
   null,
   "Будь ласка, запустіть віртуальну машину, щоб отримати доступ до її графічної консолі."
+ ],
+ "Please wait till VMs list is loaded from the server.": [
+  null,
+  "Будь ласка, зачекайте, доки список віртуальних машин буде завантажено із сервера."
+ ],
+ "Please wait till list of templates is loaded from the server.": [
+  null,
+  "Будь ласка, зачекайте, доки з сервера буде завантажено список шаблонів."
  ],
  "Pool": [
   null,
@@ -235,13 +391,33 @@ return plural;
   null,
   "Порт"
  ],
+ "Preparing for Maintenance": [
+  null,
+  "Готуємося до обслуговування"
+ ],
  "Protocol": [
   null,
   "Протокол"
  ],
+ "REBOOT action failed": [
+  null,
+  "Не вдалося виконати дію REBOOT"
+ ],
  "Readonly": [
   null,
   "Лише запис"
+ ],
+ "Register oVirt": [
+  null,
+  "Зареєструвати oVirt"
+ ],
+ "Registering oVirt to Cockpit": [
+  null,
+  "Реєструємо oVirt на Cockpit"
+ ],
+ "Reload": [
+  null,
+  "Перезавантажити"
  ],
  "Restart": [
   null,
@@ -250,6 +426,14 @@ return plural;
  "Run": [
   null,
   "Запустити"
+ ],
+ "Run Here": [
+  null,
+  "Запустити тут"
+ ],
+ "SHUTDOWN action failed": [
+  null,
+  "Не вдалося виконати дію SHUTDOWN"
  ],
  "SPICE": [
   null,
@@ -266,6 +450,18 @@ return plural;
  "SPICE TLS Port:": [
   null,
   "Порт TLS SPICE:"
+ ],
+ "START action failed": [
+  null,
+  "Не вдалося виконати дію START"
+ ],
+ "SUSPEND action failed": [
+  null,
+  "Не вдалося виконати дію SUSPEND"
+ ],
+ "Save": [
+  null,
+  "Зберегти"
  ],
  "Send Non-Maskable Interrupt": [
   null,
@@ -287,6 +483,22 @@ return plural;
   null,
   "Стан"
  ],
+ "Stateless": [
+  null,
+  "Без збереження стану"
+ ],
+ "Stateless:": [
+  null,
+  "Без збереження стану:"
+ ],
+ "Suspend": [
+  null,
+  "Призупинити"
+ ],
+ "Switch Host to Maintenance": [
+  null,
+  ""
+ ],
  "Switch to Desktop Viewer": [
   null,
   "Перемкнутися на перегляд стільниці"
@@ -295,6 +507,14 @@ return plural;
   null,
   "Перемкнутися на перегляд у браузері"
  ],
+ "Switching host to maintenance mode failed. Received error: ": [
+  null,
+  ""
+ ],
+ "Switching host to maintenance mode in progress ...": [
+  null,
+  ""
+ ],
  "System": [
   null,
   "Система"
@@ -302,6 +522,18 @@ return plural;
  "Target": [
   null,
   "Призначення"
+ ],
+ "Template": [
+  null,
+  "Шаблон"
+ ],
+ "Templates": [
+  null,
+  "Шаблони"
+ ],
+ "Templates of $0 cluster": [
+  null,
+  ""
  ],
  "The VM crashed.": [
   null,
@@ -339,6 +571,10 @@ return plural;
   null,
   "Роботу віртуальної машини призупинено засобами керування живленням гостьової системи."
  ],
+ "This virtual machine is not managed by oVirt": [
+  null,
+  "Ця віртуальна машина не керується з боку oVirt"
+ ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "Щоб мати змогу переглядати статистику дисків, оновіться до новішої версії libvirt"
@@ -350,6 +586,14 @@ return plural;
  "Used": [
   null,
   "Використано"
+ ],
+ "VDSM": [
+  null,
+  "VDSM"
+ ],
+ "VDSM Service Management": [
+  null,
+  "Керування службою VDSM"
  ],
  "VM FORCE OFF action failed": [
   null,
@@ -375,6 +619,10 @@ return plural;
   null,
   "Не вдалося виконати дію START для ВМ"
  ],
+ "VM icon": [
+  null,
+  "Піктограма ВМ"
+ ],
  "VNC": [
   null,
   "VNC"
@@ -391,9 +639,21 @@ return plural;
   null,
   "Порт TLS VNC:"
  ],
+ "Version": [
+  null,
+  "Версія"
+ ],
+ "Version num": [
+  null,
+  "Номер версії"
+ ],
  "Virtual Machines": [
   null,
   "Віртуальні машини"
+ ],
+ "Virtual Machines of $0 cluster": [
+  null,
+  ""
  ],
  "Volume": [
   null,
@@ -406,6 +666,14 @@ return plural;
  "cdrom": [
   null,
   "cdrom"
+ ],
+ "connecting": [
+  null,
+  "встановлюємо з'єднання"
+ ],
+ "cores": [
+  null,
+  "ядра"
  ],
  "crashed": [
   null,
@@ -423,6 +691,10 @@ return plural;
   null,
   "диск"
  ],
+ "down": [
+  null,
+  "нижче"
+ ],
  "dying": [
   null,
   "вмирає"
@@ -430,6 +702,10 @@ return plural;
  "enabled": [
   null,
   "увімкнено"
+ ],
+ "error": [
+  null,
+  "помилка"
  ],
  "host": [
   null,
@@ -439,6 +715,26 @@ return plural;
   null,
   "бездіяльний"
  ],
+ "initializing": [
+  null,
+  "ініціалізація"
+ ],
+ "installation failed": [
+  null,
+  "не вдалося встановити"
+ ],
+ "installing OS": [
+  null,
+  "встановлюємо ОС"
+ ],
+ "kdumping": [
+  null,
+  "створюємо дамп ядра"
+ ],
+ "maintenance": [
+  null,
+  "супровід"
+ ],
  "network": [
   null,
   "мережа"
@@ -447,6 +743,38 @@ return plural;
   null,
   "ні"
  ],
+ "non operational": [
+  null,
+  "не придатна до роботи"
+ ],
+ "non responsive": [
+  null,
+  "не відповідає"
+ ],
+ "oVirt": [
+  null,
+  "oVirt"
+ ],
+ "oVirt Host State:": [
+  null,
+  ""
+ ],
+ "oVirt Provider installation script failed due to missing arguments.": [
+  null,
+  "Не вдалося виконати сценарій встановлення засобу забезпечення oVirt через пропущені аргументи."
+ ],
+ "oVirt Provider installation script failed: Can't write to /etc/cockpit/machines-ovirt.config, try as root.": [
+  null,
+  "Не вдалося виконати сценарій встановлення засобу забезпечення oVirt: не вдалося виконати запис до /etc/cockpit/machines-ovirt.config, спробуйте від імені root."
+ ],
+ "oVirt installation script failed with following output: ": [
+  null,
+  "Не вдалося виконати сценарій встановлення oVirt із таким виведенням: "
+ ],
+ "oVirt login in progress": [
+  null,
+  "Виконуємо вхід до oVirt"
+ ],
  "other": [
   null,
   "інше"
@@ -454,6 +782,14 @@ return plural;
  "paused": [
   null,
   "призупинено"
+ ],
+ "pending approval": [
+  null,
+  "чекаємо на підтвердження"
+ ],
+ "reboot": [
+  null,
+  "перезавантаження"
  ],
  "running": [
   null,
@@ -467,9 +803,29 @@ return plural;
   null,
   "завершити роботу"
  ],
+ "sockets": [
+  null,
+  "сокети"
+ ],
  "suspended (PM)": [
   null,
   "призупинено (PM)"
+ ],
+ "threads": [
+  null,
+  "потоки"
+ ],
+ "unassigned": [
+  null,
+  "не прив'язано"
+ ],
+ "up": [
+  null,
+  "вище"
+ ],
+ "vCPUs": [
+  null,
+  "Вірт. проц."
  ],
  "vCPUs:": [
   null,

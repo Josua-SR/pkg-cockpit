@@ -153,7 +153,7 @@ return plural;
  ],
  "Expired Signature": [
   null,
-  ""
+  "Signatura vençuda"
  ],
  "Failed": [
   null,

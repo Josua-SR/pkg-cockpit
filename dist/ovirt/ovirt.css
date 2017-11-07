@@ -697,6 +697,24 @@ table.delete-dialog-disks.table tbody tr td:nth-child(3) {
     width:100%;
     min-height: 300px;
 }
+.ovirt-action-padding {
+    padding-right: 5px;
+}
+.ovirt-host-status-wrapper {
+    width: 100%;
+    text-align: right;
+}
+
+.ovirt-host-status {
+    /*float: right;*/
+    display: inline-flex;
+}
+
+.ovirt-host-status-label {
+    text-align: right;
+    color: #888888;
+    font-weight: 600;
+}
 a {
   cursor: pointer;
 }
@@ -1619,9 +1637,13 @@ tbody tr.listing-ct-noexpand {
 .machines-disks-source-descr {
   color: #888888;
   text-align: right;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 .machines-disks-source-value {
   text-align: left !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 .machines-disks-alias {
   white-space: nowrap;

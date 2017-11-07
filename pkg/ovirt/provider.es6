@@ -36,9 +36,11 @@ import ConsoleClientResources from './components/ConsoleClientResources.jsx';
 import OVirtTab from './components/OVirtTab.jsx';
 
 const _ = cockpit.gettext;
+
+const OVIRT_PROVIDER = Object.create(LIBVIRT_PROVIDER); // inherit whatever is not implemented here
+
 const QEMU_SYSTEM = 'system'; // conforms connection name defined in parent's cockpit:machines/config.es6
 
-const OVIRT_PROVIDER = Object.create(LIBVIRT_PROVIDER);
 OVIRT_PROVIDER.name = 'oVirt';
 OVIRT_PROVIDER.ovirtApiMetadata = {
     passed: undefined, // check for oVirt API version
@@ -57,6 +59,10 @@ OVIRT_PROVIDER.vmTabRenderers = [
         component: OVirtTab,
     },
 ];
+
+// --- enable/disable actions in UI
+OVIRT_PROVIDER.canDelete = (vmState, vmId, providerState) =>
+    isVmManagedByOvirt(providerState, vmId) ? false : LIBVIRT_PROVIDER.canDelete(vmState, vmId);
 
 // --- verbs
 OVIRT_PROVIDER.init = function ({ dispatch }) {
@@ -81,12 +87,12 @@ OVIRT_PROVIDER.SHUTDOWN_VM = function (payload) {
         forceNextOvirtPoll();
         return ovirtApiPost(
             `vms/${id}/shutdown`,
-            '<action />',
+            '<action><async>false</async></action>',
             buildFailHandler({
                 dispatch,
                 name: vmName,
                 connectionName: payload.connectionName,
-                msg: _("SHUTDOWN action failed")
+                message: _("SHUTDOWN action failed")
             })
         );
     };
@@ -105,12 +111,12 @@ OVIRT_PROVIDER.FORCEOFF_VM = function (payload) {
         forceNextOvirtPoll();
         return ovirtApiPost(
             `vms/${id}/stop`,
-            '<action />',
+            '<action><async>false</async></action>',
             buildFailHandler({
                 dispatch,
                 name: vmName,
                 connectionName: payload.connectionName,
-                msg: _("SHUTDOWN action failed")
+                message: _("SHUTDOWN action failed")
             })
         );
     };
@@ -129,12 +135,12 @@ OVIRT_PROVIDER.REBOOT_VM = function (payload) {
         forceNextOvirtPoll();
         return ovirtApiPost(
             `vms/${id}/reboot`,
-            '<action />',
+            '<action><async>false</async></action>',
             buildFailHandler({
                 dispatch,
                 name: vmName,
                 connectionName: payload.connectionName,
-                msg: _("REBOOT action failed")
+                message: _("REBOOT action failed")
             })
         );
     };
@@ -157,8 +163,8 @@ OVIRT_PROVIDER.START_VM = function (payload) {
     const hostName = payload.hostName; // optional
 
     const actionXml = hostName ?
-        `<action><vm><placement_policy><hosts><host><name>${hostName}</name></host></hosts></placement_policy></vm></action>`
-        : '<action />';
+        `<action><async>false</async><vm><placement_policy><hosts><host><name>${hostName}</name></host></hosts></placement_policy></vm></action>`
+        : '<action><async>false</async></action>';
 
     return (dispatch) => {
         forceNextOvirtPoll();
@@ -170,7 +176,7 @@ OVIRT_PROVIDER.START_VM = function (payload) {
                 dispatch,
                 name: vmName,
                 connectionName: payload.connectionName,
-                msg: _("START action failed")
+                message: _("START action failed")
             })
         );
     };
@@ -192,17 +198,20 @@ OVIRT_PROVIDER.CREATE_VM_FROM_TEMPLATE = function (payload) {
     const cluster =  `<cluster><name>${clusterName}</name></cluster>`;
     const action = `<vm>${name}${cluster}${template}</vm>`;
 
-    return (dispatch) => ovirtApiPost(
-        `vms`,
-        action,
-        buildFailHandler({
-            dispatch,
-            name: vm.name,
-            connectionName: QEMU_SYSTEM,
-            msg: _("CREATE VM action failed"),
-            extraPayload: { templateName },
-        })
-    );
+    return (dispatch) => {
+        forceNextOvirtPoll();
+        return ovirtApiPost(
+            `vms`,
+            action,
+            buildFailHandler({
+                dispatch,
+                name: vm.name,
+                connectionName: QEMU_SYSTEM,
+                message: _("CREATE VM action failed"),
+                extraPayload: { templateName },
+            })
+        );
+    };
 };
 
 OVIRT_PROVIDER.MIGRATE_VM = function ({ vmId, vmName, hostId }) {
@@ -213,7 +222,7 @@ OVIRT_PROVIDER.MIGRATE_VM = function ({ vmId, vmName, hostId }) {
     }
 
     const action = hostId ?
-        `<action><host id="${hostId}"/></action>` :
+        `<action><async>false</async><host id="${hostId}"/></action>` :
         '<action/>';
 
     return (dispatch) => {
@@ -225,7 +234,7 @@ OVIRT_PROVIDER.MIGRATE_VM = function ({ vmId, vmName, hostId }) {
                 dispatch,
                 name: vmName,
                 connectionName: undefined, // TODO: oVirt-only, not implemented for Libvirt
-                msg: _("MIGRATE action failed")
+                message: _("MIGRATE action failed")
             })
         );
     };
@@ -245,7 +254,7 @@ OVIRT_PROVIDER.SUSPEND_VM = function ({ id, name }) {
             dispatch,
             name,
             connectionName: undefined, // TODO: oVirt-only, not implemented for Libvirt
-            msg: _("SUSPEND action failed")
+            message: _("SUSPEND action failed")
         })).then( data => {
             logDebug('SUSPEND_VM finished', data);
             window.setTimeout(forceNextOvirtPoll, 5000); // hack for better user experience
@@ -336,6 +345,33 @@ OVIRT_PROVIDER.CONSOLE_VM = function (payload) { // download a .vv file generate
                 mimeType: 'application/x-virt-viewer'
             });
         });
+    };
+};
+
+OVIRT_PROVIDER.HOST_TO_MAINTENANCE = function ({ hostId }) {
+    logDebug(`HOST_TO_MAINTENANCE(hostId=${hostId})`);
+    if (!isOvirtApiCheckPassed()) {
+        logDebug('oVirt API version does not match but the HOST_TO_MAINTENANCE action is not supported by Libvirt provider, skipping' );
+        return () => {};
+    }
+
+    return (dispatch) => {
+        forceNextOvirtPoll();
+
+        const dfd = cockpit.defer();
+        dfd.notify(_("Switching host to maintenance mode in progress ..."));
+
+        ovirtApiPost(
+            `hosts/${hostId}/deactivate`,
+            '<action/>',
+            ({ data, exception }) => {
+                dfd.reject(_("Switching host to maintenance mode failed. Received error: ") + data);
+            }
+        ).then(() => {
+            dfd.resolve();
+        });
+
+        return dfd.promise;
     };
 };
 

@@ -305,7 +305,7 @@ return plural;
  ],
  "Creating this bond will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "创建该绑定将会断开与服务器的连接，并且将会使管理界面不能访问。"
  ],
  "Creating this bridge will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -313,7 +313,7 @@ return plural;
  ],
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "创建该组将断开与服务器的连接，并将使用管理界面不可用。"
  ],
  "DNS": [
   null,
@@ -353,7 +353,7 @@ return plural;
  ],
  "Ethernet MAC": [
   null,
-  "以太网 MTU"
+  "以太网 MAC"
  ],
  "Ethernet MTU": [
   null,
@@ -433,19 +433,19 @@ return plural;
  ],
  "Invalid address $0": [
   null,
-  "额外的地址 $val"
+  "无效的地址 $0"
  ],
  "Invalid metric $0": [
   null,
-  "无效的编号。"
+  "无效的度量 $0"
  ],
  "Invalid prefix $0": [
   null,
-  "无效端口"
+  "无效的前缀 $0"
  ],
  "Invalid prefix or netmask $0": [
   null,
-  "无效端口"
+  "无效的前缀或掩码 $0"
  ],
  "Keep connection": [
   null,
@@ -481,7 +481,7 @@ return plural;
  ],
  "MAC": [
   null,
-  ""
+  "MAC"
  ],
  "MII (Recommended)": [
   null,
@@ -585,7 +585,7 @@ return plural;
  ],
  "Permanent": [
   null,
-  ""
+  "永久的"
  ],
  "Ping Interval": [
   null,
@@ -629,7 +629,7 @@ return plural;
  ],
  "Random": [
   null,
-  ""
+  "随机"
  ],
  "Reboot": [
   null,
@@ -649,7 +649,7 @@ return plural;
  ],
  "Restoring connection": [
   null,
-  "测试连接"
+  "恢复连接"
  ],
  "Round Robin": [
   null,
@@ -701,7 +701,7 @@ return plural;
  ],
  "Stable": [
   null,
-  "启用"
+  "稳定的"
  ],
  "Status": [
   null,

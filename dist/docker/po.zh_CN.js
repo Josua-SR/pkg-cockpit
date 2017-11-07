@@ -289,7 +289,7 @@ return plural;
  ],
  "Entrypoint": [
   null,
-  "入口点："
+  "入口点"
  ],
  "Environment": [
   null,
@@ -589,7 +589,7 @@ return plural;
  ],
  "Security": [
   null,
-  ""
+  "安全性"
  ],
  "Set container environment variables": [
   null,
@@ -661,11 +661,11 @@ return plural;
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,
-  ""
+  "从 $time ($type) 开始的扫描没有找到缺陷。"
  ],
  "The scan from $time ($type) was not successful.": [
   null,
-  ""
+  "从 $time ($type) 开始的扫描未成功。"
  ],
  "The storage pool will be reset to optimize its layout.  All containers will be erased.": [
   null,
@@ -673,7 +673,7 @@ return plural;
  ],
  "This image does not exist.": [
   null,
-  "容器舱 '{{ target }}' 不存在。"
+  "该镜像不存在。"
  ],
  "Total": [
   null,
@@ -709,7 +709,7 @@ return plural;
  ],
  "Used by Containers": [
   null,
-  "容器"
+  "被容器使用"
  ],
  "Volumes": [
   null,

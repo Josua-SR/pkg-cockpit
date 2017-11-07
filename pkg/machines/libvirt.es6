@@ -84,7 +84,16 @@ function getValueFromLine(parsedLines, pattern) {
  */
 export function buildFailHandler({ dispatch, name, connectionName, message, extraPayload }) {
     return ({ exception, data }) =>
-        dispatch(vmActionFailed({name, connectionName, message, detail: {exception, data}}, extraPayload));
+        dispatch(vmActionFailed({
+            name,
+            connectionName,
+            message,
+            detail: {
+                exception,
+                data,
+            },
+            extraPayload,
+        }));
 }
 
 let LIBVIRT_PROVIDER = {};
@@ -106,7 +115,7 @@ LIBVIRT_PROVIDER = {
 
     canReset: (vmState) => vmState == 'running' || vmState == 'idle' || vmState == 'paused',
     canShutdown: (vmState) => LIBVIRT_PROVIDER.canReset(vmState),
-    canDelete: (vmState) => true,
+    canDelete: (vmState, vmId, providerState) => true,
     isRunning: (vmState) => LIBVIRT_PROVIDER.canReset(vmState),
     canRun: (vmState) => vmState == 'shut off',
     canConsole: (vmState) => vmState == 'running',

@@ -407,7 +407,7 @@ return plural;
  ],
  "This version of cockpit-ws does not support connecting to a host with an alternate user or port": [
   null,
-  "Aquesta versió decockpit-ws no és compatible amb la connexió a un amfitrió amb un usuari o port alternatius"
+  "Aquesta versió de cockpit-ws no és compatible amb la connexió a un amfitrió amb un usuari o port alternatius"
  ],
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
   null,
@@ -443,7 +443,7 @@ return plural;
  ],
  "You are currently connected directly to this server. You cannot delete it.": [
   null,
-  "Actualment esteu connectat directament a aquest servidor. No podeu suprimir-ho."
+  "Actualment esteu connectat directament a aquest servidor. No el podeu suprimir."
  ],
  "You can remove the previously stored key by running the following command": [
   null,

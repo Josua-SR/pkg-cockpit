@@ -73,7 +73,7 @@ return plural;
  ],
  "Account Expiration": [
   null,
-  ""
+  "Expiración de la cuenta"
  ],
  "Account not available or cannot be edited.": [
   null,
@@ -169,11 +169,11 @@ return plural;
  ],
  "Force Change": [
   null,
-  ""
+  "Cambio forzado"
  ],
  "Force password change": [
   null,
-  ""
+  "Cambio de clave forzado"
  ],
  "Full Name": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Invalid expiration date": [
   null,
-  ""
+  "Fecha de expiración invalida"
  ],
  "Invalid key": [
   null,
@@ -189,7 +189,7 @@ return plural;
  ],
  "Invalid number of days": [
   null,
-  ""
+  "Numero de días incorrecto."
  ],
  "Last Login": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Lock account on $0": [
   null,
-  ""
+  "Cuenta bloqueada en $0"
  ],
  "Logged In": [
   null,
@@ -217,11 +217,11 @@ return plural;
  ],
  "Never expire password": [
   null,
-  ""
+  "La clave nunca expira"
  ],
  "Never lock account": [
   null,
-  ""
+  "Cuenta nunca bloqueada"
  ],
  "New Password": [
   null,

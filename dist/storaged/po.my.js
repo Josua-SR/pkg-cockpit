@@ -115,10 +115,6 @@ return plural;
   "$0 years",
   ""
  ],
- "$0, $1 free": [
-  null,
-  ""
- ],
  "$name (from $host)": [
   null,
   ""
@@ -211,10 +207,6 @@ return plural;
   null,
   ""
  ],
- "A spare disk needs to be added first before this disk can be removed.": [
-  null,
-  ""
- ],
  "Activate": [
   null,
   ""
@@ -224,10 +216,6 @@ return plural;
   ""
  ],
  "Add": [
-  null,
-  ""
- ],
- "Add Disks": [
   null,
   ""
  ],
@@ -268,10 +256,6 @@ return plural;
   ""
  ],
  "Block device for filesystems": [
-  null,
-  ""
- ],
- "Blocked": [
   null,
   ""
  ],
@@ -403,6 +387,14 @@ return plural;
   null,
   ""
  ],
+ "Custom encryption options": [
+  null,
+  ""
+ ],
+ "Custom mount options": [
+  null,
+  ""
+ ],
  "DISK IS FAILING": [
   null,
   ""
@@ -531,10 +523,6 @@ return plural;
   null,
   ""
  ],
- "FAILED": [
-  null,
-  ""
- ],
  "Filesystem": [
   null,
   ""
@@ -584,10 +572,6 @@ return plural;
   ""
  ],
  "Go to now": [
-  null,
-  ""
- ],
- "In Sync": [
   null,
   ""
  ],
@@ -652,6 +636,22 @@ return plural;
   ""
  ],
  "Mount Point": [
+  null,
+  ""
+ ],
+ "Mount at boot": [
+  null,
+  ""
+ ],
+ "Mount options": [
+  null,
+  ""
+ ],
+ "Mount point can not be empty": [
+  null,
+  ""
+ ],
+ "Mount read only": [
   null,
   ""
  ],
@@ -799,10 +799,6 @@ return plural;
   null,
   ""
  ],
- "Physical Volumes": [
-  null,
-  ""
- ],
  "Physical volume of $0": [
   null,
   ""
@@ -915,10 +911,6 @@ return plural;
   null,
   ""
  ],
- "Recovering": [
-  null,
-  ""
- ],
  "Recovering RAID Device $target": [
   null,
   ""
@@ -1007,10 +999,6 @@ return plural;
   null,
   ""
  ],
- "Spare": [
-  null,
-  ""
- ],
  "Start": [
   null,
   ""
@@ -1091,31 +1079,11 @@ return plural;
   null,
   ""
  ],
- "The RAID device must be running in order to add spare disks.": [
-  null,
-  ""
- ],
- "The RAID device must be running in order to remove disks.": [
-  null,
-  ""
- ],
- "The last disk of a RAID device cannot be removed.": [
-  null,
-  ""
- ],
- "The last physical volume of a volume group cannot be removed.": [
-  null,
-  ""
- ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   ""
  ],
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
-  null,
-  ""
- ],
- "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
   null,
   ""
  ],
@@ -1143,10 +1111,6 @@ return plural;
   null,
   ""
  ],
- "This disk cannot be removed while the device is recovering.": [
-  null,
-  ""
- ],
  "This logical volume cannot be made smaller.": [
   null,
   ""
@@ -1167,15 +1131,19 @@ return plural;
   null,
   ""
  ],
- "Unknown ($0)": [
-  null,
-  ""
- ],
  "Unknown host name": [
   null,
   ""
  ],
  "Unlock": [
+  null,
+  ""
+ ],
+ "Unlock at boot": [
+  null,
+  ""
+ ],
+ "Unlock read only": [
   null,
   ""
  ],
@@ -1232,10 +1200,6 @@ return plural;
   ""
  ],
  "Volume Groups": [
-  null,
-  ""
- ],
- "Write-mostly": [
   null,
   ""
  ],

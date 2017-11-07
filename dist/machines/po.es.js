@@ -69,11 +69,11 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  ""
+  "$0 esta disponible para muchos sistemas operativos. Para instalarlo, búscalo en \"GNOME Software\" o ejecuta el siguiente comando:"
  ],
  "Address:": [
   null,
-  ""
+  "Dirección:"
  ],
  "Autostart:": [
   null,
@@ -85,15 +85,15 @@ return plural;
  ],
  "Boot Order:": [
   null,
-  ""
+  "Orden de Inicio:"
  ],
  "Bus": [
   null,
-  ""
+  "Bus"
  ],
  "CPU Type:": [
   null,
-  ""
+  "Tipo de CPU"
  ],
  "Cancel": [
   null,
@@ -105,23 +105,23 @@ return plural;
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  ""
+  "Dar click en \"Lanzar Visor Remoto\" descargará un archivo con la extensión .vv y lo ejecutará $0."
  ],
  "Confirm deletion of $0": [
   null,
-  ""
+  "Confirma la eliminación de $0"
  ],
  "Connect with Remote Viewer": [
   null,
-  ""
+  "Conectar con Visor Remoto"
  ],
  "Connect with any $0 viewer application.": [
   null,
-  ""
+  "Conectar con alguna Aplicación para ver $0"
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  ""
+  "Conectar con alguna aplicación para ver SPICE o VNC"
  ],
  "Connection": [
   null,
@@ -129,11 +129,11 @@ return plural;
  ],
  "Console": [
   null,
-  ""
+  "Consola"
  ],
  "Count:": [
   null,
-  ""
+  "Conteo:"
  ],
  "Delete": [
   null,
@@ -141,11 +141,11 @@ return plural;
  ],
  "Delete associated storage files:": [
   null,
-  ""
+  "Eliminar archivos de almacenamiento asociados:"
  ],
  "Device": [
   null,
-  ""
+  "Dispositivo"
  ],
  "Disks": [
   null,
@@ -153,15 +153,15 @@ return plural;
  ],
  "Download the MSI from $0": [
   null,
-  ""
+  "Descargar el MSI desde $0"
  ],
  "Emulated Machine:": [
   null,
-  ""
+  "Maquina Emulada:"
  ],
  "File": [
   null,
-  ""
+  "Archivo"
  ],
  "Force Restart": [
   null,
@@ -173,7 +173,7 @@ return plural;
  ],
  "GB": [
   null,
-  ""
+  "GB"
  ],
  "Host": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Launch Remote Viewer": [
   null,
-  ""
+  "Lanzar Visualizador remoto"
  ],
  "Manual Connection": [
   null,
@@ -193,7 +193,7 @@ return plural;
  ],
  "More Information": [
   null,
-  ""
+  "Mas información"
  ],
  "Name": [
   null,

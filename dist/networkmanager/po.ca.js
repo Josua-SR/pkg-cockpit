@@ -223,7 +223,7 @@ return plural;
  ],
  "Balancer": [
   null,
-  ""
+  "Eina de balanceig"
  ],
  "Bond": [
   null,
@@ -499,7 +499,7 @@ return plural;
  ],
  "MTU must be a positive number": [
   null,
-  ""
+  "El valor de la MTU ha de ser un nombre positiu"
  ],
  "Manual": [
   null,
@@ -723,7 +723,7 @@ return plural;
  ],
  "Switch on $0": [
   null,
-  ""
+  "Engega $0"
  ],
  "Switching off <b>$0</b>  will break the connection to the server, and will make the administration UI unavailable.": [
   null,

@@ -96,7 +96,7 @@ return plural;
  ],
  "$0 is in active use": [
   null,
-  ""
+  "$0 esta en uso actualmente"
  ],
  "$0 minute": [
   "$0 minutes",
@@ -122,17 +122,13 @@ return plural;
   "$0 año",
   "$0 años"
  ],
- "$0, $1 free": [
-  null,
-  "$0, $1 disponible"
- ],
  "$name (from $host)": [
   null,
   "$name (de $host)"
  ],
  "${size} ${desc}": [
   null,
-  ""
+  "${size} ${desc}"
  ],
  "(default)": [
   null,
@@ -218,10 +214,6 @@ return plural;
   null,
   "<span>Partición de $0</span>"
  ],
- "A spare disk needs to be added first before this disk can be removed.": [
-  null,
-  ""
- ],
  "Activate": [
   null,
   "Activar"
@@ -233,10 +225,6 @@ return plural;
  "Add": [
   null,
   "Añadir"
- ],
- "Add Disks": [
-  null,
-  "Añadir discos"
  ],
  "Add iSCSI Portal": [
   null,
@@ -277,10 +265,6 @@ return plural;
  "Block device for filesystems": [
   null,
   "Dispositivo de bloque para sistemas de archivos"
- ],
- "Blocked": [
-  null,
-  "Bloqueado"
  ],
  "Can't delete while unlocked": [
   null,
@@ -410,6 +394,14 @@ return plural;
   null,
   "Personalizado (Ingrese el sistema de archivos)"
  ],
+ "Custom encryption options": [
+  null,
+  ""
+ ],
+ "Custom mount options": [
+  null,
+  ""
+ ],
  "DISK IS FAILING": [
   null,
   "DISCO ESTÁ FALLANDO"
@@ -496,7 +488,7 @@ return plural;
  ],
  "Encrypted $0": [
   null,
-  ""
+  "Encriptado $0"
  ],
  "Encrypted EXT4 (LUKS)": [
   null,
@@ -504,11 +496,11 @@ return plural;
  ],
  "Encrypted Logical Volume of $0": [
   null,
-  ""
+  "Volumen lógico encriptado de $0"
  ],
  "Encrypted Partition of $0": [
   null,
-  ""
+  "Partición encriptada de $0"
  ],
  "Encrypted XFS (LUKS)": [
   null,
@@ -537,10 +529,6 @@ return plural;
  "Extended Partition": [
   null,
   "Partición Extendida"
- ],
- "FAILED": [
-  null,
-  "Fallido"
  ],
  "Filesystem": [
   null,
@@ -594,10 +582,6 @@ return plural;
   null,
   "Ir a ahora"
  ],
- "In Sync": [
-  null,
-  "En Sincronía"
- ],
  "Inactive volume": [
   null,
   "Volumen inactivo"
@@ -628,7 +612,7 @@ return plural;
  ],
  "Logical Volume of $0": [
   null,
-  ""
+  "Volumen lógico de $0"
  ],
  "Marking $target as faulty": [
   null,
@@ -636,11 +620,11 @@ return plural;
  ],
  "Member of RAID Device": [
   null,
-  ""
+  "Miembro del dispositivo RAID"
  ],
  "Member of RAID Device $0": [
   null,
-  ""
+  "Miembro del dispositivo RAID $0"
  ],
  "Metadata Used": [
   null,
@@ -661,6 +645,22 @@ return plural;
  "Mount Point": [
   null,
   "Punto de Montaje"
+ ],
+ "Mount at boot": [
+  null,
+  ""
+ ],
+ "Mount options": [
+  null,
+  ""
+ ],
+ "Mount point can not be empty": [
+  null,
+  ""
+ ],
+ "Mount read only": [
+  null,
+  ""
  ],
  "Mounted At": [
   null,
@@ -806,10 +806,6 @@ return plural;
   null,
   "Volumen físico"
  ],
- "Physical Volumes": [
-  null,
-  "Volúmenea Físicos"
- ],
  "Physical volume of $0": [
   null,
   "Volumen físico de $0"
@@ -922,10 +918,6 @@ return plural;
   null,
   "Reiniciar"
  ],
- "Recovering": [
-  null,
-  "Recuperando"
- ],
  "Recovering RAID Device $target": [
   null,
   ""
@@ -1014,10 +1006,6 @@ return plural;
   null,
   "Tamaña debe ser un número"
  ],
- "Spare": [
-  null,
-  "Libre"
- ],
  "Start": [
   null,
   "Iniciar"
@@ -1098,22 +1086,6 @@ return plural;
   null,
   ""
  ],
- "The RAID device must be running in order to add spare disks.": [
-  null,
-  ""
- ],
- "The RAID device must be running in order to remove disks.": [
-  null,
-  ""
- ],
- "The last disk of a RAID device cannot be removed.": [
-  null,
-  ""
- ],
- "The last physical volume of a volume group cannot be removed.": [
-  null,
-  ""
- ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "Al usuario <b>$0</b> no le es permitido administrar el almacenamiento "
@@ -1121,10 +1093,6 @@ return plural;
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
   null,
   "Hay dispositivos con múltiples trayectos en el sistema, pero no se está ejecutando el servicio de multitrayecto."
- ],
- "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
-  null,
-  ""
  ],
  "Thin Logical Volume": [
   null,
@@ -1150,10 +1118,6 @@ return plural;
   null,
   ""
  ],
- "This disk cannot be removed while the device is recovering.": [
-  null,
-  ""
- ],
  "This logical volume cannot be made smaller.": [
   null,
   ""
@@ -1174,10 +1138,6 @@ return plural;
   null,
   "Desconocido"
  ],
- "Unknown ($0)": [
-  null,
-  "Desconocido ($0)"
- ],
  "Unknown host name": [
   null,
   "Nombre de host desconocido "
@@ -1185,6 +1145,14 @@ return plural;
  "Unlock": [
   null,
   "Desbloquear"
+ ],
+ "Unlock at boot": [
+  null,
+  ""
+ ],
+ "Unlock read only": [
+  null,
+  ""
  ],
  "Unlocking $target": [
   null,
@@ -1241,10 +1209,6 @@ return plural;
  "Volume Groups": [
   null,
   ""
- ],
- "Write-mostly": [
-  null,
-  "Escribir casi todo"
  ],
  "Writing": [
   null,

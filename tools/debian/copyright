@@ -118,7 +118,7 @@ Copyright: Copyright (C) 1991, 1999 Free Software Foundation, Inc.
 License: LGPL-2.1
 
 Files: node_modules/kubernetes-object-describer/*
-Copyright: (C) 2015-2017 Red Hat, Inc.
+Copyright: Jessica Forrester
 License: Apache-2.0
 
 Files: node_modules/kubernetes-topology-graph/*
@@ -149,7 +149,7 @@ Copyright: (Copyright 2009 Matt McInerney)
 License: MPL-2.0
 
 Files: node_modules/object-describer/*
-Copyright: (C) 2015-2017 Red Hat, Inc.
+Copyright: Jessica Forrester
 License: Apache-2.0
 
 Files: node_modules/patternfly/*

@@ -97,7 +97,7 @@ return plural;
  ],
  "Directory $0 isn't writable or doesn't exist.": [
   null,
-  ""
+  "No es pot escriure al directori $0 o bé no existeix."
  ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,

@@ -122,10 +122,6 @@ return plural;
   "",
   ""
  ],
- "$0, $1 free": [
-  null,
-  ""
- ],
  "$name (from $host)": [
   null,
   ""
@@ -218,10 +214,6 @@ return plural;
   null,
   ""
  ],
- "A spare disk needs to be added first before this disk can be removed.": [
-  null,
-  "Een extra schijf dient toegevoegd te worden voordat deze schijf kan worden verwijderd."
- ],
  "Activate": [
   null,
   ""
@@ -233,10 +225,6 @@ return plural;
  "Add": [
   null,
   ""
- ],
- "Add Disks": [
-  null,
-  "Schijven toevoegen"
  ],
  "Add iSCSI Portal": [
   null,
@@ -277,10 +265,6 @@ return plural;
  "Block device for filesystems": [
   null,
   "Blok apparaat voor bestandsystemen"
- ],
- "Blocked": [
-  null,
-  "Geblokkeerd"
  ],
  "Can't delete while unlocked": [
   null,
@@ -407,6 +391,14 @@ return plural;
   ""
  ],
  "Custom (Enter filesystem type)": [
+  null,
+  ""
+ ],
+ "Custom encryption options": [
+  null,
+  ""
+ ],
+ "Custom mount options": [
   null,
   ""
  ],
@@ -538,10 +530,6 @@ return plural;
   null,
   ""
  ],
- "FAILED": [
-  null,
-  ""
- ],
  "Filesystem": [
   null,
   ""
@@ -591,10 +579,6 @@ return plural;
   ""
  ],
  "Go to now": [
-  null,
-  ""
- ],
- "In Sync": [
   null,
   ""
  ],
@@ -659,6 +643,22 @@ return plural;
   ""
  ],
  "Mount Point": [
+  null,
+  ""
+ ],
+ "Mount at boot": [
+  null,
+  ""
+ ],
+ "Mount options": [
+  null,
+  ""
+ ],
+ "Mount point can not be empty": [
+  null,
+  ""
+ ],
+ "Mount read only": [
   null,
   ""
  ],
@@ -806,10 +806,6 @@ return plural;
   null,
   ""
  ],
- "Physical Volumes": [
-  null,
-  ""
- ],
  "Physical volume of $0": [
   null,
   ""
@@ -922,10 +918,6 @@ return plural;
   null,
   ""
  ],
- "Recovering": [
-  null,
-  ""
- ],
  "Recovering RAID Device $target": [
   null,
   ""
@@ -1014,10 +1006,6 @@ return plural;
   null,
   ""
  ],
- "Spare": [
-  null,
-  ""
- ],
  "Start": [
   null,
   ""
@@ -1098,31 +1086,11 @@ return plural;
   null,
   ""
  ],
- "The RAID device must be running in order to add spare disks.": [
-  null,
-  "Het RAID apparaat dient te draaien om een extra schijf toe te kunnen voegen."
- ],
- "The RAID device must be running in order to remove disks.": [
-  null,
-  "Het RAID apparaat dient te draaien om een extra schijf toe te kunnen verwijderen."
- ],
- "The last disk of a RAID device cannot be removed.": [
-  null,
-  "De laatste schijf van een RAID apparaat kan niet worden verwijderd."
- ],
- "The last physical volume of a volume group cannot be removed.": [
-  null,
-  ""
- ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   ""
  ],
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
-  null,
-  ""
- ],
- "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
   null,
   ""
  ],
@@ -1150,10 +1118,6 @@ return plural;
   null,
   ""
  ],
- "This disk cannot be removed while the device is recovering.": [
-  null,
-  "Deze schijf kan niet worden verwijderd gedurende de herstel periode."
- ],
  "This logical volume cannot be made smaller.": [
   null,
   ""
@@ -1174,15 +1138,19 @@ return plural;
   null,
   ""
  ],
- "Unknown ($0)": [
-  null,
-  ""
- ],
  "Unknown host name": [
   null,
   ""
  ],
  "Unlock": [
+  null,
+  ""
+ ],
+ "Unlock at boot": [
+  null,
+  ""
+ ],
+ "Unlock read only": [
   null,
   ""
  ],
@@ -1239,10 +1207,6 @@ return plural;
   ""
  ],
  "Volume Groups": [
-  null,
-  ""
- ],
- "Write-mostly": [
   null,
   ""
  ],

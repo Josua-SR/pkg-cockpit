@@ -1712,7 +1712,7 @@ WEBPACK_PACKAGES = \
 V_WEBPACK = $(V_WEBPACK_$(V))
 V_WEBPACK_ = $(V_WEBPACK_$(AM_DEFAULT_VERBOSITY))
 V_WEBPACK_0 = @echo "  WEBPACK  $(@:dist/%/Makefile.deps=%)";
-WEBPACK_MAKE = NODE_ENV=$(NODE_ENV) SRCDIR=$(srcdir) BUILDDIR=$(builddir) \
+WEBPACK_MAKE = NODE_ENV=$(NODE_ENV) SRCDIR=$(abspath $(srcdir)) BUILDDIR=$(builddir) \
 	       $(srcdir)/tools/missing $(srcdir)/tools/webpack-make
 
 WEBPACK_RULE = $(V_WEBPACK) $(WEBPACK_MAKE)
@@ -2863,6 +2863,7 @@ ATOMIC_SETUP = \
 	$(WS_DIR)/atomic-uninstall \
 	$(NULL)
 
+UNIT_TESTS_DIR = $(srcdir)/containers/unit-tests
 all: $(BUILT_SOURCES) config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
@@ -9064,6 +9065,18 @@ ws-container:
 ws-container-shell:
 	sudo docker run -ti --rm --publish=9001:9090 \
 		cockpit/ws /bin/bash
+
+unit-tests-container:
+	sudo docker build -t cockpit/unit-tests $(UNIT_TESTS_DIR)
+	sudo docker tag  cockpit/unit-tests:latest docker.io/cockpit/unit-tests:latest
+	sudo docker build --build-arg arch=i386 -t cockpit/unit-tests:i386 containers/unit-tests/
+	sudo docker tag  cockpit/unit-tests:i386 docker.io/cockpit/unit-tests:i386
+
+unit-tests-container-run:
+	sudo docker run -ti --rm -v $(abs_srcdir):/source:ro cockpit/unit-tests
+
+unit-tests-container-shell:
+	sudo docker run -ti --rm -v $(abs_srcdir):/source:ro cockpit/unit-tests /bin/bash
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

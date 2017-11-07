@@ -129,10 +129,6 @@ return plural;
   "$0 lata",
   "$0 lat"
  ],
- "$0, $1 free": [
-  null,
-  "$0, wolne: $1"
- ],
  "$name (from $host)": [
   null,
   "$name (z $host)"
@@ -225,10 +221,6 @@ return plural;
   null,
   "<span>Partycja $0</span>"
  ],
- "A spare disk needs to be added first before this disk can be removed.": [
-  null,
-  "Przed usunięciem tego dysku należy najpierw dodać dysk zapasowy."
- ],
  "Activate": [
   null,
   "Aktywuj"
@@ -240,10 +232,6 @@ return plural;
  "Add": [
   null,
   "Dodaj"
- ],
- "Add Disks": [
-  null,
-  "Dodaj dyski"
  ],
  "Add iSCSI Portal": [
   null,
@@ -284,10 +272,6 @@ return plural;
  "Block device for filesystems": [
   null,
   "Urządzenie blokowe dla systemów plików"
- ],
- "Blocked": [
-  null,
-  "Zablokowane"
  ],
  "Can't delete while unlocked": [
   null,
@@ -417,6 +401,14 @@ return plural;
   null,
   "Niestandardowe (podanie typu systemu plików)"
  ],
+ "Custom encryption options": [
+  null,
+  ""
+ ],
+ "Custom mount options": [
+  null,
+  ""
+ ],
  "DISK IS FAILING": [
   null,
   "NA DYSKU WYSTĘPUJĄ BŁĘDY"
@@ -545,10 +537,6 @@ return plural;
   null,
   "Rozszerzona partycja"
  ],
- "FAILED": [
-  null,
-  "NIEPOWODZENIE"
- ],
  "Filesystem": [
   null,
   "System plików"
@@ -600,10 +588,6 @@ return plural;
  "Go to now": [
   null,
   "Przejdź teraz"
- ],
- "In Sync": [
-  null,
-  "Zsynchronizowane"
  ],
  "Inactive volume": [
   null,
@@ -668,6 +652,22 @@ return plural;
  "Mount Point": [
   null,
   "Punkt montowania"
+ ],
+ "Mount at boot": [
+  null,
+  ""
+ ],
+ "Mount options": [
+  null,
+  ""
+ ],
+ "Mount point can not be empty": [
+  null,
+  ""
+ ],
+ "Mount read only": [
+  null,
+  ""
  ],
  "Mounted At": [
   null,
@@ -813,10 +813,6 @@ return plural;
   null,
   "Wolumin fizyczny"
  ],
- "Physical Volumes": [
-  null,
-  "Woluminy fizyczne"
- ],
  "Physical volume of $0": [
   null,
   "Wolumin fizyczny $0"
@@ -929,10 +925,6 @@ return plural;
   null,
   "Uruchom ponownie"
  ],
- "Recovering": [
-  null,
-  "Odzyskiwanie"
- ],
  "Recovering RAID Device $target": [
   null,
   "Przywracanie urządzenia RAID $target"
@@ -1021,10 +1013,6 @@ return plural;
   null,
   "Rozmiar musi być liczbą"
  ],
- "Spare": [
-  null,
-  "Zapasowe"
- ],
  "Start": [
   null,
   "Rozpocznij"
@@ -1105,22 +1093,6 @@ return plural;
   null,
   "Macierz RAID jest w stanie zdegradowanym"
  ],
- "The RAID device must be running in order to add spare disks.": [
-  null,
-  "Urządzenie RAID musi być uruchomione, aby dodać zapasowe dyski."
- ],
- "The RAID device must be running in order to remove disks.": [
-  null,
-  "Urządzenie RAID musi być uruchomione, aby usunąć dyski."
- ],
- "The last disk of a RAID device cannot be removed.": [
-  null,
-  "Nie można usuwać ostatniego dysku urządzenia RAID."
- ],
- "The last physical volume of a volume group cannot be removed.": [
-  null,
-  "Nie można usunąć ostatniego woluminu fizycznego grupy woluminów."
- ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "Użytkownik <b>$0</b> nie ma zezwolenia na zarządzanie urządzeniami do przechowywania danych"
@@ -1128,10 +1100,6 @@ return plural;
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
   null,
   "W systemie obecne są urządzenia z wieloma ścieżkami, ale usługa urządzeń wielościeżkowych nie jest uruchomiona."
- ],
- "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
-  null,
-  "Za mało wolnego miejsca, aby usunąć ten wolumin fizyczny. Wymagane jest co najmniej $0 wolnego miejsca więcej."
  ],
  "Thin Logical Volume": [
   null,
@@ -1157,10 +1125,6 @@ return plural;
   null,
   "To urządzenie jest obecnie używane dla grup woluminów.                Kontynuacja usunie je z jego grup woluminów."
  ],
- "This disk cannot be removed while the device is recovering.": [
-  null,
-  "Ten dysk nie może zostać usunięty podczas przywracania urządzenia."
- ],
  "This logical volume cannot be made smaller.": [
   null,
   "Nie można zmniejszyć tego woluminu logicznego."
@@ -1181,10 +1145,6 @@ return plural;
   null,
   "Nieznane"
  ],
- "Unknown ($0)": [
-  null,
-  "Nieznane ($0)"
- ],
  "Unknown host name": [
   null,
   "Nieznana nazwa komputera"
@@ -1192,6 +1152,14 @@ return plural;
  "Unlock": [
   null,
   "Odblokuj"
+ ],
+ "Unlock at boot": [
+  null,
+  ""
+ ],
+ "Unlock read only": [
+  null,
+  ""
  ],
  "Unlocking $target": [
   null,
@@ -1248,10 +1216,6 @@ return plural;
  "Volume Groups": [
   null,
   "Grupy woluminów"
- ],
- "Write-mostly": [
-  null,
-  "Głównie zapisywane"
  ],
  "Writing": [
   null,

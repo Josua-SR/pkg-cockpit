@@ -85,7 +85,7 @@ return plural;
  ],
  "Connecting to SETroubleshoot daemon...": [
   null,
-  "连接到系统树"
+  "连接到 SETroubleshoot 守护进程..."
  ],
  "Enforce policy:": [
   null,
@@ -105,7 +105,7 @@ return plural;
  ],
  "Install setroubleshoot-server to troubleshoot SELinux events.": [
   null,
-  ""
+  "安装 setroubleshoot-server 来排查 SELinux 事件。"
  ],
  "No SELinux alerts.": [
   null,

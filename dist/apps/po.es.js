@@ -69,7 +69,7 @@ return plural;
  },
  "Applications": [
   null,
-  ""
+  "Aplicaciones"
  ],
  "Cancel": [
   null,
@@ -77,7 +77,7 @@ return plural;
  ],
  "Checking for new applications": [
   null,
-  ""
+  "Requisitos para las nuevas aplicaciones"
  ],
  "Close": [
   null,
@@ -89,19 +89,19 @@ return plural;
  ],
  "Go to Application": [
   null,
-  ""
+  "Ir a la aplicación"
  ],
  "Install": [
   null,
-  ""
+  "Instalar"
  ],
  "Installing": [
   null,
-  ""
+  "Instalando"
  ],
  "No applications installed or available": [
   null,
-  ""
+  "No hay aplicaciones instaladas o disponibles"
  ],
  "No installation package found for this application.": [
   null,

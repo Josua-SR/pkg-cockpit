@@ -71,9 +71,21 @@ return plural;
   null,
   "$0 jest dostępne dla większości systemów operacyjnych. Aby zainstalować, należy wyszukać w Menedżerze oprogramowania GNOME lub wykonać polecenie:"
  ],
+ "Action": [
+  null,
+  "Działanie"
+ ],
  "Address:": [
   null,
   "Adres:"
+ ],
+ "All running virtual machines will be turned off.": [
+  null,
+  ""
+ ],
+ "Automatically selected host": [
+  null,
+  "Automatycznie wybrany gospodarz"
  ],
  "Autostart:": [
   null,
@@ -82,6 +94,18 @@ return plural;
  "Available": [
   null,
   "Dostępne"
+ ],
+ "Base Template": [
+  null,
+  "Podstawowy szablon"
+ ],
+ "Base template": [
+  null,
+  "Podstawowy szablon"
+ ],
+ "Base template:": [
+  null,
+  "Podstawowy szablon:"
  ],
  "Boot Order:": [
   null,
@@ -95,6 +119,10 @@ return plural;
   null,
   "Typ procesora:"
  ],
+ "CREATE VM action failed": [
+  null,
+  "Działanie CREATE VM się nie powiodło"
+ ],
  "Cancel": [
   null,
   "Anuluj"
@@ -107,9 +135,37 @@ return plural;
   null,
   "Kliknięcie „Uruchom zdalną przeglądarkę” pobierze plik .vv i uruchomi $0."
  ],
+ "Cluster": [
+  null,
+  "Klaster"
+ ],
+ "Cluster Templates": [
+  null,
+  "Szablony klastrów"
+ ],
+ "Cluster Virtual Machines": [
+  null,
+  "Maszyny wirtualne klastrów"
+ ],
  "Confirm deletion of $0": [
   null,
   "Proszę potwierdzić usunięcie $0"
+ ],
+ "Confirm migration": [
+  null,
+  "Potwierdź migrację"
+ ],
+ "Confirm reload:": [
+  null,
+  "Potwierdzenie ponownego wczytania:"
+ ],
+ "Confirm save:": [
+  null,
+  "Potwierdzenie zapisu:"
+ ],
+ "Connect to oVirt Engine": [
+  null,
+  "Połącz z mechanizmem oVirt"
  ],
  "Connect with Remote Viewer": [
   null,
@@ -135,6 +191,14 @@ return plural;
   null,
   "Liczba:"
  ],
+ "Create": [
+  null,
+  "Utwórz"
+ ],
+ "Create VM": [
+  null,
+  "Utwórz maszynę wirtualną"
+ ],
  "Delete": [
   null,
   "Usuń"
@@ -142,6 +206,14 @@ return plural;
  "Delete associated storage files:": [
   null,
   "Usunięcie powiązanych plików urządzeń do przechowywania danych:"
+ ],
+ "Description": [
+  null,
+  "Opis"
+ ],
+ "Description:": [
+  null,
+  "Opis:"
  ],
  "Device": [
   null,
@@ -155,9 +227,21 @@ return plural;
   null,
   "Pobierz plik MSI z $0"
  ],
+ "Edit the vdsm.conf": [
+  null,
+  "Modyfikuj plik vdsm.conf"
+ ],
  "Emulated Machine:": [
   null,
   "Emulowany komputer:"
+ ],
+ "Enter New VM name": [
+  null,
+  "Nazwa nowej maszyny wirtualnej"
+ ],
+ "FQDN": [
+  null,
+  "FQDN"
  ],
  "File": [
   null,
@@ -175,21 +259,49 @@ return plural;
   null,
   "GB"
  ],
+ "HA": [
+  null,
+  "HA"
+ ],
+ "HA:": [
+  null,
+  "HA:"
+ ],
  "Host": [
   null,
   "Gospodarz"
+ ],
+ "Host to Maintenance": [
+  null,
+  ""
  ],
  "Launch Remote Viewer": [
   null,
   "Uruchom zdalną przeglądarkę"
  ],
+ "Loading data ...": [
+  null,
+  "Wczytywanie danych…"
+ ],
+ "MIGRATE action failed": [
+  null,
+  "Działanie MIGRATE się nie powiodło"
+ ],
  "Manual Connection": [
   null,
   "Ręczne połączenie"
  ],
+ "Memory": [
+  null,
+  "Pamięć"
+ ],
  "Memory:": [
   null,
   "Pamięć:"
+ ],
+ "Migrate To:": [
+  null,
+  "Migracja do:"
  ],
  "More Information": [
   null,
@@ -198,6 +310,10 @@ return plural;
  "Name": [
   null,
   "Nazwa"
+ ],
+ "No VM found in oVirt.": [
+  null,
+  "Nie odnaleziono maszyn wirtualnych w oprogramowaniu oVirt."
  ],
  "No VM is running or defined on this host": [
   null,
@@ -215,17 +331,57 @@ return plural;
   null,
   "Dla tej maszyny wirtualnej nie określono żadnej konsoli graficznej."
  ],
+ "OK": [
+  null,
+  "OK"
+ ],
+ "OS": [
+  null,
+  "System operacyjny"
+ ],
+ "OS Type:": [
+  null,
+  "Typ systemu operacyjnego:"
+ ],
  "Ok": [
   null,
   "OK"
+ ],
+ "Optimized for:": [
+  null,
+  "Optymalizacja dla:"
  ],
  "Overview": [
   null,
   "Przegląd"
  ],
+ "Please confirm, the host shall be switched to maintenance mode.": [
+  null,
+  ""
+ ],
+ "Please provide fully qualified domain name and port of the oVirt engine.": [
+  null,
+  "Proszę podać w pełni kwalifikowaną nazwę domeny i port mechanizmu oVirt."
+ ],
+ "Please provide valid oVirt engine fully qualified domain name (FQDN) and port (443 by default)": [
+  null,
+  "Proszę podać prawidłową w pełni kwalifikowaną nazwę domeny mechanizmu oVirt (FQDN) i port (domyślnie 443)"
+ ],
+ "Please refer to oVirt's $0 for more information about Remote Viewer setup.": [
+  null,
+  "$0 oprogramowania oVirt zawiera więcej informacji o ustawianiu zdalnej przeglądarki."
+ ],
  "Please start the virtual machine to access its graphics console.": [
   null,
   "Proszę uruchomić maszynę wirtualną, aby uzyskać dostęp do jej konsoli graficznej."
+ ],
+ "Please wait till VMs list is loaded from the server.": [
+  null,
+  "Proszę poczekać na wczytanie listy maszyn wirtualnych z serwera."
+ ],
+ "Please wait till list of templates is loaded from the server.": [
+  null,
+  "Proszę poczekać na wczytanie listy szablonów z serwera."
  ],
  "Pool": [
   null,
@@ -235,13 +391,33 @@ return plural;
   null,
   "Port"
  ],
+ "Preparing for Maintenance": [
+  null,
+  "Przygotowywanie do konserwacji"
+ ],
  "Protocol": [
   null,
   "Protokół"
  ],
+ "REBOOT action failed": [
+  null,
+  "Działanie REBOOT się nie powiodło"
+ ],
  "Readonly": [
   null,
   "Tylko do odczytu"
+ ],
+ "Register oVirt": [
+  null,
+  "Zarejestruj oprogramowanie oVirt"
+ ],
+ "Registering oVirt to Cockpit": [
+  null,
+  "Rejestrowanie oprogramowania oVirt w programie Cockpit"
+ ],
+ "Reload": [
+  null,
+  "Wczytaj ponownie"
  ],
  "Restart": [
   null,
@@ -250,6 +426,14 @@ return plural;
  "Run": [
   null,
   "Uruchom"
+ ],
+ "Run Here": [
+  null,
+  "Uruchom tutaj"
+ ],
+ "SHUTDOWN action failed": [
+  null,
+  "Działanie SHUTDOWN się nie powiodło"
  ],
  "SPICE": [
   null,
@@ -266,6 +450,18 @@ return plural;
  "SPICE TLS Port:": [
   null,
   "Port TLS SPICE:"
+ ],
+ "START action failed": [
+  null,
+  "Działanie START się nie powiodło"
+ ],
+ "SUSPEND action failed": [
+  null,
+  "Działanie SUSPEND się nie powiodło"
+ ],
+ "Save": [
+  null,
+  "Zapisz"
  ],
  "Send Non-Maskable Interrupt": [
   null,
@@ -287,6 +483,22 @@ return plural;
   null,
   "Stan"
  ],
+ "Stateless": [
+  null,
+  "Bez stanu"
+ ],
+ "Stateless:": [
+  null,
+  "Bez stanu:"
+ ],
+ "Suspend": [
+  null,
+  "Uśpij"
+ ],
+ "Switch Host to Maintenance": [
+  null,
+  ""
+ ],
  "Switch to Desktop Viewer": [
   null,
   "Przełącz na przeglądarkę pulpitu"
@@ -295,6 +507,14 @@ return plural;
   null,
   "Przełącz na przeglądarkę w przeglądarce internetowej"
  ],
+ "Switching host to maintenance mode failed. Received error: ": [
+  null,
+  ""
+ ],
+ "Switching host to maintenance mode in progress ...": [
+  null,
+  ""
+ ],
  "System": [
   null,
   "System"
@@ -302,6 +522,18 @@ return plural;
  "Target": [
   null,
   "Cel"
+ ],
+ "Template": [
+  null,
+  "Szablon"
+ ],
+ "Templates": [
+  null,
+  "Szablony"
+ ],
+ "Templates of $0 cluster": [
+  null,
+  ""
  ],
  "The VM crashed.": [
   null,
@@ -339,6 +571,10 @@ return plural;
   null,
   "Maszyna wirtualna jest uśpiona przez zarządzanie zasilaniem."
  ],
+ "This virtual machine is not managed by oVirt": [
+  null,
+  "Ta maszyna wirtualna nie jest zarządzana przez oprogramowanie oVirt"
+ ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "Należy zaktualizować do nowszej wersji biblioteki libvirt, aby przeglądać statystyki dysku"
@@ -350,6 +586,14 @@ return plural;
  "Used": [
   null,
   "Używane"
+ ],
+ "VDSM": [
+  null,
+  "VDSM"
+ ],
+ "VDSM Service Management": [
+  null,
+  "Zarządzanie usługami VDSM"
  ],
  "VM FORCE OFF action failed": [
   null,
@@ -375,6 +619,10 @@ return plural;
   null,
   "Działanie VM START się nie powiodło"
  ],
+ "VM icon": [
+  null,
+  "Ikona maszyny wirtualnej"
+ ],
  "VNC": [
   null,
   "VNC"
@@ -391,9 +639,21 @@ return plural;
   null,
   "Port TLS VNC:"
  ],
+ "Version": [
+  null,
+  "Wersja"
+ ],
+ "Version num": [
+  null,
+  "Numer wersji"
+ ],
  "Virtual Machines": [
   null,
   "Maszyny wirtualne"
+ ],
+ "Virtual Machines of $0 cluster": [
+  null,
+  ""
  ],
  "Volume": [
   null,
@@ -406,6 +666,14 @@ return plural;
  "cdrom": [
   null,
   "CD-ROM"
+ ],
+ "connecting": [
+  null,
+  "łączenie"
+ ],
+ "cores": [
+  null,
+  "rdzenie"
  ],
  "crashed": [
   null,
@@ -423,6 +691,10 @@ return plural;
   null,
   "dysk"
  ],
+ "down": [
+  null,
+  "w dół"
+ ],
  "dying": [
   null,
   "w trakcie umierania"
@@ -430,6 +702,10 @@ return plural;
  "enabled": [
   null,
   "włączone"
+ ],
+ "error": [
+  null,
+  "błąd"
  ],
  "host": [
   null,
@@ -439,6 +715,26 @@ return plural;
   null,
   "bezczynne"
  ],
+ "initializing": [
+  null,
+  "inicjowanie"
+ ],
+ "installation failed": [
+  null,
+  "instalacja się nie powiodła"
+ ],
+ "installing OS": [
+  null,
+  "instalowanie systemu operacyjnego"
+ ],
+ "kdumping": [
+  null,
+  "zrzucanie kdump"
+ ],
+ "maintenance": [
+  null,
+  "konserwacja"
+ ],
  "network": [
   null,
   "sieć"
@@ -447,6 +743,38 @@ return plural;
   null,
   "nie"
  ],
+ "non operational": [
+  null,
+  "nie działa"
+ ],
+ "non responsive": [
+  null,
+  "nie odpowiada"
+ ],
+ "oVirt": [
+  null,
+  "oVirt"
+ ],
+ "oVirt Host State:": [
+  null,
+  ""
+ ],
+ "oVirt Provider installation script failed due to missing arguments.": [
+  null,
+  "Skrypt instalacji dostawcy oVirt się nie powiódł z powodu brakujących parametrów."
+ ],
+ "oVirt Provider installation script failed: Can't write to /etc/cockpit/machines-ovirt.config, try as root.": [
+  null,
+  "Skrypt instalacji dostawcy oVirt się nie powiódł: nie można zapisać do pliku /etc/cockpit/machines-ovirt.config, próbowanie jako root."
+ ],
+ "oVirt installation script failed with following output: ": [
+  null,
+  "Skrypt instalacji oVirt się nie powiódł, jego wyjście:"
+ ],
+ "oVirt login in progress": [
+  null,
+  "Trwa logowanie oprogramowania oVirt"
+ ],
  "other": [
   null,
   "inne"
@@ -454,6 +782,14 @@ return plural;
  "paused": [
   null,
   "wstrzymane"
+ ],
+ "pending approval": [
+  null,
+  "oczekuje na akceptację"
+ ],
+ "reboot": [
+  null,
+  "uruchom ponownie"
  ],
  "running": [
   null,
@@ -467,9 +803,29 @@ return plural;
   null,
   "wyłączenie"
  ],
+ "sockets": [
+  null,
+  "gniazda"
+ ],
  "suspended (PM)": [
   null,
   "uśpione (PM)"
+ ],
+ "threads": [
+  null,
+  "wątki"
+ ],
+ "unassigned": [
+  null,
+  "nieprzydzielone"
+ ],
+ "up": [
+  null,
+  "w górę"
+ ],
+ "vCPUs": [
+  null,
+  "Wirtualne procesory"
  ],
  "vCPUs:": [
   null,

@@ -83,11 +83,11 @@ return plural;
  ],
  "Apply all updates": [
   null,
-  ""
+  "Aplica totes les actualitzacions"
  ],
  "Apply security updates": [
   null,
-  ""
+  "Aplica les actualitzacions de seguretat"
  ],
  "Applying updates": [
   null,
@@ -99,7 +99,7 @@ return plural;
  ],
  "Automatic Updates": [
   null,
-  ""
+  "Actualitzacions automàtiques"
  ],
  "Available Updates": [
   null,
@@ -331,35 +331,35 @@ return plural;
  ],
  "every day": [
   null,
-  ""
+  "cada dia"
  ],
  "on Fridays": [
   null,
-  ""
+  "els divendres"
  ],
  "on Mondays": [
   null,
-  ""
+  "els dilluns"
  ],
  "on Saturdays": [
   null,
-  ""
+  "els dissabtes"
  ],
  "on Sundays": [
   null,
-  ""
+  "els diumenges"
  ],
  "on Thursdays": [
   null,
-  ""
+  "els dijous"
  ],
  "on Tuesdays": [
   null,
-  ""
+  "els dimarts"
  ],
  "on Wednesdays": [
   null,
-  ""
+  "els dimecres"
  ],
  "undefined": [
   null,

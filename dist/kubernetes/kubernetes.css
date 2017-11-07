@@ -1139,7 +1139,7 @@ tbody tr.listing-ct-noexpand {
   margin-bottom: 0;
   font-size: 10px;
   text-align: center;
-  line-height: 1;
+  line-height: normal;
 }
 @media (min-width: 568px) {
   .console-ct {
@@ -1166,9 +1166,22 @@ tbody tr.listing-ct-noexpand {
   border: 1px solid black;
   padding: 10px;
 }
-.console-ct .terminal-cursor {
-  color: #000;
-  background: #f0f0f0;
+.terminal .terminal-cursor {
+  border: 1px solid #f0f0f0;
+}
+.terminal:focus .terminal-cursor {
+  border: none;
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+  from {
+    color: #000;
+    background: #f0f0f0;
+  }
+  50% {
+    color: #f0f0f0;
+    background: #000;
+  }
 }
 /* Panels don't draw borders between them */
 .panel > .table > tbody:first-child td {

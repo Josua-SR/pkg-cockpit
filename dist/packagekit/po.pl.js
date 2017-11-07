@@ -85,11 +85,11 @@ return plural;
  ],
  "Apply all updates": [
   null,
-  ""
+  "Zastosuj wszystkie aktualizacje"
  ],
  "Apply security updates": [
   null,
-  ""
+  "Zastosuj aktualizacje zabezpieczeń"
  ],
  "Applying updates": [
   null,
@@ -101,7 +101,7 @@ return plural;
  ],
  "Automatic Updates": [
   null,
-  ""
+  "Automatyczne aktualizacje"
  ],
  "Available Updates": [
   null,
@@ -325,7 +325,7 @@ return plural;
  ],
  "and restart the machine automatically.": [
   null,
-  ""
+  "i automatycznie uruchom komputer ponownie."
  ],
  "at": [
   null,
@@ -333,35 +333,35 @@ return plural;
  ],
  "every day": [
   null,
-  ""
+  "codziennie"
  ],
  "on Fridays": [
   null,
-  ""
+  "w piątki"
  ],
  "on Mondays": [
   null,
-  ""
+  "w poniedziałki"
  ],
  "on Saturdays": [
   null,
-  ""
+  "w soboty"
  ],
  "on Sundays": [
   null,
-  ""
+  "w niedziele"
  ],
  "on Thursdays": [
   null,
-  ""
+  "w czwartki"
  ],
  "on Tuesdays": [
   null,
-  ""
+  "we wtorki"
  ],
  "on Wednesdays": [
   null,
-  ""
+  "w środy"
  ],
  "undefined": [
   null,

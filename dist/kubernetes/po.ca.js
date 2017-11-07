@@ -255,7 +255,7 @@ return plural;
  ],
  "Change project": [
   null,
-  ""
+  "Canvia el projecte"
  ],
  "Cinder": [
   null,
@@ -1331,7 +1331,7 @@ return plural;
  ],
  "Show all Routes": [
   null,
-  ""
+  "Mostra tots els encaminaments"
  ],
  "Show all Services": [
   null,

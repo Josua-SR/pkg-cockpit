@@ -71,7 +71,19 @@ return plural;
   null,
   ""
  ],
+ "Action": [
+  null,
+  ""
+ ],
  "Address:": [
+  null,
+  ""
+ ],
+ "All running virtual machines will be turned off.": [
+  null,
+  ""
+ ],
+ "Automatically selected host": [
   null,
   ""
  ],
@@ -82,6 +94,18 @@ return plural;
  "Available": [
   null,
   "Disponível"
+ ],
+ "Base Template": [
+  null,
+  ""
+ ],
+ "Base template": [
+  null,
+  ""
+ ],
+ "Base template:": [
+  null,
+  ""
  ],
  "Boot Order:": [
   null,
@@ -95,6 +119,10 @@ return plural;
   null,
   "Tipo de CPU:"
  ],
+ "CREATE VM action failed": [
+  null,
+  ""
+ ],
  "Cancel": [
   null,
   "Cancelar"
@@ -107,7 +135,35 @@ return plural;
   null,
   ""
  ],
+ "Cluster": [
+  null,
+  "Cluster"
+ ],
+ "Cluster Templates": [
+  null,
+  ""
+ ],
+ "Cluster Virtual Machines": [
+  null,
+  ""
+ ],
  "Confirm deletion of $0": [
+  null,
+  ""
+ ],
+ "Confirm migration": [
+  null,
+  ""
+ ],
+ "Confirm reload:": [
+  null,
+  ""
+ ],
+ "Confirm save:": [
+  null,
+  ""
+ ],
+ "Connect to oVirt Engine": [
   null,
   ""
  ],
@@ -135,11 +191,27 @@ return plural;
   null,
   "Contagem:"
  ],
+ "Create": [
+  null,
+  "Criar"
+ ],
+ "Create VM": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "Excluir"
  ],
  "Delete associated storage files:": [
+  null,
+  ""
+ ],
+ "Description": [
+  null,
+  "Descrição"
+ ],
+ "Description:": [
   null,
   ""
  ],
@@ -155,9 +227,21 @@ return plural;
   null,
   ""
  ],
+ "Edit the vdsm.conf": [
+  null,
+  ""
+ ],
  "Emulated Machine:": [
   null,
   "Máquina Emulada:"
+ ],
+ "Enter New VM name": [
+  null,
+  ""
+ ],
+ "FQDN": [
+  null,
+  ""
  ],
  "File": [
   null,
@@ -175,11 +259,31 @@ return plural;
   null,
   "GB"
  ],
+ "HA": [
+  null,
+  ""
+ ],
+ "HA:": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "Máquina"
  ],
+ "Host to Maintenance": [
+  null,
+  ""
+ ],
  "Launch Remote Viewer": [
+  null,
+  ""
+ ],
+ "Loading data ...": [
+  null,
+  ""
+ ],
+ "MIGRATE action failed": [
   null,
   ""
  ],
@@ -187,9 +291,17 @@ return plural;
   null,
   ""
  ],
+ "Memory": [
+  null,
+  "Memória"
+ ],
  "Memory:": [
   null,
   "Memória:"
+ ],
+ "Migrate To:": [
+  null,
+  ""
  ],
  "More Information": [
   null,
@@ -198,6 +310,10 @@ return plural;
  "Name": [
   null,
   "Nome"
+ ],
+ "No VM found in oVirt.": [
+  null,
+  ""
  ],
  "No VM is running or defined on this host": [
   null,
@@ -215,15 +331,55 @@ return plural;
   null,
   ""
  ],
+ "OK": [
+  null,
+  ""
+ ],
+ "OS": [
+  null,
+  "OS"
+ ],
+ "OS Type:": [
+  null,
+  ""
+ ],
  "Ok": [
   null,
   "Ok"
+ ],
+ "Optimized for:": [
+  null,
+  ""
  ],
  "Overview": [
   null,
   "Visão geral"
  ],
+ "Please confirm, the host shall be switched to maintenance mode.": [
+  null,
+  ""
+ ],
+ "Please provide fully qualified domain name and port of the oVirt engine.": [
+  null,
+  ""
+ ],
+ "Please provide valid oVirt engine fully qualified domain name (FQDN) and port (443 by default)": [
+  null,
+  ""
+ ],
+ "Please refer to oVirt's $0 for more information about Remote Viewer setup.": [
+  null,
+  ""
+ ],
  "Please start the virtual machine to access its graphics console.": [
+  null,
+  ""
+ ],
+ "Please wait till VMs list is loaded from the server.": [
+  null,
+  ""
+ ],
+ "Please wait till list of templates is loaded from the server.": [
   null,
   ""
  ],
@@ -235,13 +391,33 @@ return plural;
   null,
   "Porta"
  ],
+ "Preparing for Maintenance": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protocolo"
  ],
+ "REBOOT action failed": [
+  null,
+  ""
+ ],
  "Readonly": [
   null,
   "Apenasleitura"
+ ],
+ "Register oVirt": [
+  null,
+  ""
+ ],
+ "Registering oVirt to Cockpit": [
+  null,
+  ""
+ ],
+ "Reload": [
+  null,
+  "Recarregar"
  ],
  "Restart": [
   null,
@@ -250,6 +426,14 @@ return plural;
  "Run": [
   null,
   "Executar"
+ ],
+ "Run Here": [
+  null,
+  ""
+ ],
+ "SHUTDOWN action failed": [
+  null,
+  ""
  ],
  "SPICE": [
   null,
@@ -266,6 +450,18 @@ return plural;
  "SPICE TLS Port:": [
   null,
   ""
+ ],
+ "START action failed": [
+  null,
+  ""
+ ],
+ "SUSPEND action failed": [
+  null,
+  ""
+ ],
+ "Save": [
+  null,
+  "Salvar"
  ],
  "Send Non-Maskable Interrupt": [
   null,
@@ -287,11 +483,35 @@ return plural;
   null,
   "Estado"
  ],
+ "Stateless": [
+  null,
+  ""
+ ],
+ "Stateless:": [
+  null,
+  ""
+ ],
+ "Suspend": [
+  null,
+  ""
+ ],
+ "Switch Host to Maintenance": [
+  null,
+  ""
+ ],
  "Switch to Desktop Viewer": [
   null,
   ""
  ],
  "Switch to In-Browser Viewer": [
+  null,
+  ""
+ ],
+ "Switching host to maintenance mode failed. Received error: ": [
+  null,
+  ""
+ ],
+ "Switching host to maintenance mode in progress ...": [
   null,
   ""
  ],
@@ -302,6 +522,18 @@ return plural;
  "Target": [
   null,
   "Alvo"
+ ],
+ "Template": [
+  null,
+  "Modelo"
+ ],
+ "Templates": [
+  null,
+  ""
+ ],
+ "Templates of $0 cluster": [
+  null,
+  ""
  ],
  "The VM crashed.": [
   null,
@@ -339,6 +571,10 @@ return plural;
   null,
   "A VM é suspensa pela gerência de poder do convidado."
  ],
+ "This virtual machine is not managed by oVirt": [
+  null,
+  ""
+ ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "Atualize para uma versão mais recente do libvirt para exibir estatísticas de disco"
@@ -350,6 +586,14 @@ return plural;
  "Used": [
   null,
   "Usado"
+ ],
+ "VDSM": [
+  null,
+  ""
+ ],
+ "VDSM Service Management": [
+  null,
+  ""
  ],
  "VM FORCE OFF action failed": [
   null,
@@ -375,6 +619,10 @@ return plural;
   null,
   "ação VM START falhou"
  ],
+ "VM icon": [
+  null,
+  ""
+ ],
  "VNC": [
   null,
   ""
@@ -391,9 +639,21 @@ return plural;
   null,
   ""
  ],
+ "Version": [
+  null,
+  "Versão"
+ ],
+ "Version num": [
+  null,
+  ""
+ ],
  "Virtual Machines": [
   null,
   "Máquinas Virtuais"
+ ],
+ "Virtual Machines of $0 cluster": [
+  null,
+  ""
  ],
  "Volume": [
   null,
@@ -406,6 +666,14 @@ return plural;
  "cdrom": [
   null,
   "cdrom"
+ ],
+ "connecting": [
+  null,
+  ""
+ ],
+ "cores": [
+  null,
+  ""
  ],
  "crashed": [
   null,
@@ -423,6 +691,10 @@ return plural;
   null,
   "disco"
  ],
+ "down": [
+  null,
+  ""
+ ],
  "dying": [
   null,
   "morrendo"
@@ -430,6 +702,10 @@ return plural;
  "enabled": [
   null,
   "habilitado"
+ ],
+ "error": [
+  null,
+  "erro"
  ],
  "host": [
   null,
@@ -439,6 +715,26 @@ return plural;
   null,
   "ocioso"
  ],
+ "initializing": [
+  null,
+  ""
+ ],
+ "installation failed": [
+  null,
+  ""
+ ],
+ "installing OS": [
+  null,
+  ""
+ ],
+ "kdumping": [
+  null,
+  ""
+ ],
+ "maintenance": [
+  null,
+  ""
+ ],
  "network": [
   null,
   "rede"
@@ -447,6 +743,38 @@ return plural;
   null,
   "não"
  ],
+ "non operational": [
+  null,
+  ""
+ ],
+ "non responsive": [
+  null,
+  ""
+ ],
+ "oVirt": [
+  null,
+  ""
+ ],
+ "oVirt Host State:": [
+  null,
+  ""
+ ],
+ "oVirt Provider installation script failed due to missing arguments.": [
+  null,
+  ""
+ ],
+ "oVirt Provider installation script failed: Can't write to /etc/cockpit/machines-ovirt.config, try as root.": [
+  null,
+  ""
+ ],
+ "oVirt installation script failed with following output: ": [
+  null,
+  ""
+ ],
+ "oVirt login in progress": [
+  null,
+  ""
+ ],
  "other": [
   null,
   "outro"
@@ -454,6 +782,14 @@ return plural;
  "paused": [
   null,
   "pausado"
+ ],
+ "pending approval": [
+  null,
+  ""
+ ],
+ "reboot": [
+  null,
+  ""
  ],
  "running": [
   null,
@@ -467,9 +803,29 @@ return plural;
   null,
   "desligar"
  ],
+ "sockets": [
+  null,
+  ""
+ ],
  "suspended (PM)": [
   null,
   "suspenso (PM)"
+ ],
+ "threads": [
+  null,
+  ""
+ ],
+ "unassigned": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "vCPUs": [
+  null,
+  ""
  ],
  "vCPUs:": [
   null,

@@ -71,9 +71,21 @@ return plural;
   null,
   ""
  ],
+ "Action": [
+  null,
+  ""
+ ],
  "Address:": [
   null,
   "アドレス:"
+ ],
+ "All running virtual machines will be turned off.": [
+  null,
+  ""
+ ],
+ "Automatically selected host": [
+  null,
+  ""
  ],
  "Autostart:": [
   null,
@@ -82,6 +94,18 @@ return plural;
  "Available": [
   null,
   "利用可能"
+ ],
+ "Base Template": [
+  null,
+  ""
+ ],
+ "Base template": [
+  null,
+  ""
+ ],
+ "Base template:": [
+  null,
+  ""
  ],
  "Boot Order:": [
   null,
@@ -95,6 +119,10 @@ return plural;
   null,
   "種類:"
  ],
+ "CREATE VM action failed": [
+  null,
+  ""
+ ],
  "Cancel": [
   null,
   "取り消し"
@@ -107,9 +135,37 @@ return plural;
   null,
   ""
  ],
+ "Cluster": [
+  null,
+  "クラスター"
+ ],
+ "Cluster Templates": [
+  null,
+  ""
+ ],
+ "Cluster Virtual Machines": [
+  null,
+  ""
+ ],
  "Confirm deletion of $0": [
   null,
   "$0 の削除を確定してください"
+ ],
+ "Confirm migration": [
+  null,
+  ""
+ ],
+ "Confirm reload:": [
+  null,
+  ""
+ ],
+ "Confirm save:": [
+  null,
+  ""
+ ],
+ "Connect to oVirt Engine": [
+  null,
+  ""
  ],
  "Connect with Remote Viewer": [
   null,
@@ -135,11 +191,27 @@ return plural;
   null,
   "数量:"
  ],
+ "Create": [
+  null,
+  "作成"
+ ],
+ "Create VM": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "削除"
  ],
  "Delete associated storage files:": [
+  null,
+  ""
+ ],
+ "Description": [
+  null,
+  "説明"
+ ],
+ "Description:": [
   null,
   ""
  ],
@@ -155,9 +227,21 @@ return plural;
   null,
   ""
  ],
+ "Edit the vdsm.conf": [
+  null,
+  ""
+ ],
  "Emulated Machine:": [
   null,
   "仮想マシン"
+ ],
+ "Enter New VM name": [
+  null,
+  ""
+ ],
+ "FQDN": [
+  null,
+  ""
  ],
  "File": [
   null,
@@ -175,11 +259,31 @@ return plural;
   null,
   "GB"
  ],
+ "HA": [
+  null,
+  ""
+ ],
+ "HA:": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "ホスト"
  ],
+ "Host to Maintenance": [
+  null,
+  ""
+ ],
  "Launch Remote Viewer": [
+  null,
+  ""
+ ],
+ "Loading data ...": [
+  null,
+  ""
+ ],
+ "MIGRATE action failed": [
   null,
   ""
  ],
@@ -187,9 +291,17 @@ return plural;
   null,
   "接続"
  ],
+ "Memory": [
+  null,
+  "メモリ"
+ ],
  "Memory:": [
   null,
   "メモリー:"
+ ],
+ "Migrate To:": [
+  null,
+  ""
  ],
  "More Information": [
   null,
@@ -198,6 +310,10 @@ return plural;
  "Name": [
   null,
   "名前"
+ ],
+ "No VM found in oVirt.": [
+  null,
+  ""
  ],
  "No VM is running or defined on this host": [
   null,
@@ -215,15 +331,55 @@ return plural;
   null,
   ""
  ],
+ "OK": [
+  null,
+  ""
+ ],
+ "OS": [
+  null,
+  "OS"
+ ],
+ "OS Type:": [
+  null,
+  ""
+ ],
  "Ok": [
   null,
   "OK"
+ ],
+ "Optimized for:": [
+  null,
+  ""
  ],
  "Overview": [
   null,
   "概要"
  ],
+ "Please confirm, the host shall be switched to maintenance mode.": [
+  null,
+  ""
+ ],
+ "Please provide fully qualified domain name and port of the oVirt engine.": [
+  null,
+  ""
+ ],
+ "Please provide valid oVirt engine fully qualified domain name (FQDN) and port (443 by default)": [
+  null,
+  ""
+ ],
+ "Please refer to oVirt's $0 for more information about Remote Viewer setup.": [
+  null,
+  ""
+ ],
  "Please start the virtual machine to access its graphics console.": [
+  null,
+  ""
+ ],
+ "Please wait till VMs list is loaded from the server.": [
+  null,
+  ""
+ ],
+ "Please wait till list of templates is loaded from the server.": [
   null,
   ""
  ],
@@ -235,13 +391,33 @@ return plural;
   null,
   "ポート"
  ],
+ "Preparing for Maintenance": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "プロトコル"
  ],
+ "REBOOT action failed": [
+  null,
+  ""
+ ],
  "Readonly": [
   null,
   "読み取り専用"
+ ],
+ "Register oVirt": [
+  null,
+  ""
+ ],
+ "Registering oVirt to Cockpit": [
+  null,
+  ""
+ ],
+ "Reload": [
+  null,
+  "再読み込み"
  ],
  "Restart": [
   null,
@@ -250,6 +426,14 @@ return plural;
  "Run": [
   null,
   "実行"
+ ],
+ "Run Here": [
+  null,
+  ""
+ ],
+ "SHUTDOWN action failed": [
+  null,
+  ""
  ],
  "SPICE": [
   null,
@@ -266,6 +450,18 @@ return plural;
  "SPICE TLS Port:": [
   null,
   ""
+ ],
+ "START action failed": [
+  null,
+  ""
+ ],
+ "SUSPEND action failed": [
+  null,
+  ""
+ ],
+ "Save": [
+  null,
+  "保存"
  ],
  "Send Non-Maskable Interrupt": [
   null,
@@ -287,11 +483,35 @@ return plural;
   null,
   "状態"
  ],
+ "Stateless": [
+  null,
+  ""
+ ],
+ "Stateless:": [
+  null,
+  ""
+ ],
+ "Suspend": [
+  null,
+  ""
+ ],
+ "Switch Host to Maintenance": [
+  null,
+  ""
+ ],
  "Switch to Desktop Viewer": [
   null,
   ""
  ],
  "Switch to In-Browser Viewer": [
+  null,
+  ""
+ ],
+ "Switching host to maintenance mode failed. Received error: ": [
+  null,
+  ""
+ ],
+ "Switching host to maintenance mode in progress ...": [
   null,
   ""
  ],
@@ -302,6 +522,18 @@ return plural;
  "Target": [
   null,
   "ターゲット"
+ ],
+ "Template": [
+  null,
+  "テンプレート"
+ ],
+ "Templates": [
+  null,
+  ""
+ ],
+ "Templates of $0 cluster": [
+  null,
+  ""
  ],
  "The VM crashed.": [
   null,
@@ -339,6 +571,10 @@ return plural;
   null,
   "VM はゲストの電源管理によって一時停止されています。"
  ],
+ "This virtual machine is not managed by oVirt": [
+  null,
+  ""
+ ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "ディスクの統計情報を表示するには libvirt の新しいバージョンにアップグレードしてください"
@@ -350,6 +586,14 @@ return plural;
  "Used": [
   null,
   "Used"
+ ],
+ "VDSM": [
+  null,
+  ""
+ ],
+ "VDSM Service Management": [
+  null,
+  ""
  ],
  "VM FORCE OFF action failed": [
   null,
@@ -375,6 +619,10 @@ return plural;
   null,
   "VM START アクションに失敗しました"
  ],
+ "VM icon": [
+  null,
+  ""
+ ],
  "VNC": [
   null,
   ""
@@ -391,9 +639,21 @@ return plural;
   null,
   ""
  ],
+ "Version": [
+  null,
+  "バージョン"
+ ],
+ "Version num": [
+  null,
+  ""
+ ],
  "Virtual Machines": [
   null,
   "仮想マシン"
+ ],
+ "Virtual Machines of $0 cluster": [
+  null,
+  ""
  ],
  "Volume": [
   null,
@@ -404,6 +664,14 @@ return plural;
   ""
  ],
  "cdrom": [
+  null,
+  ""
+ ],
+ "connecting": [
+  null,
+  ""
+ ],
+ "cores": [
   null,
   ""
  ],
@@ -423,6 +691,10 @@ return plural;
   null,
   ""
  ],
+ "down": [
+  null,
+  ""
+ ],
  "dying": [
   null,
   "終了中"
@@ -430,6 +702,10 @@ return plural;
  "enabled": [
   null,
   "有効"
+ ],
+ "error": [
+  null,
+  ""
  ],
  "host": [
   null,
@@ -439,6 +715,26 @@ return plural;
   null,
   "アイドル"
  ],
+ "initializing": [
+  null,
+  ""
+ ],
+ "installation failed": [
+  null,
+  ""
+ ],
+ "installing OS": [
+  null,
+  ""
+ ],
+ "kdumping": [
+  null,
+  ""
+ ],
+ "maintenance": [
+  null,
+  ""
+ ],
  "network": [
   null,
   "ネットワーク"
@@ -447,6 +743,38 @@ return plural;
   null,
   "いいえ"
  ],
+ "non operational": [
+  null,
+  ""
+ ],
+ "non responsive": [
+  null,
+  ""
+ ],
+ "oVirt": [
+  null,
+  ""
+ ],
+ "oVirt Host State:": [
+  null,
+  ""
+ ],
+ "oVirt Provider installation script failed due to missing arguments.": [
+  null,
+  ""
+ ],
+ "oVirt Provider installation script failed: Can't write to /etc/cockpit/machines-ovirt.config, try as root.": [
+  null,
+  ""
+ ],
+ "oVirt installation script failed with following output: ": [
+  null,
+  ""
+ ],
+ "oVirt login in progress": [
+  null,
+  ""
+ ],
  "other": [
   null,
   ""
@@ -454,6 +782,14 @@ return plural;
  "paused": [
   null,
   "一時停止"
+ ],
+ "pending approval": [
+  null,
+  ""
+ ],
+ "reboot": [
+  null,
+  ""
  ],
  "running": [
   null,
@@ -467,9 +803,29 @@ return plural;
   null,
   "shutdown"
  ],
+ "sockets": [
+  null,
+  ""
+ ],
  "suspended (PM)": [
   null,
   "一時停止中 (PM)"
+ ],
+ "threads": [
+  null,
+  ""
+ ],
+ "unassigned": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "vCPUs": [
+  null,
+  ""
  ],
  "vCPUs:": [
   null,
