@@ -73,7 +73,7 @@ return plural;
  ],
  "Account Expiration": [
   null,
-  ""
+  "账号过期"
  ],
  "Account not available or cannot be edited.": [
   null,
@@ -169,11 +169,11 @@ return plural;
  ],
  "Force Change": [
   null,
-  ""
+  "强制变更"
  ],
  "Force password change": [
   null,
-  ""
+  "强制密码变更"
  ],
  "Full Name": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Invalid expiration date": [
   null,
-  ""
+  "无效的过期时间"
  ],
  "Invalid key": [
   null,
@@ -189,7 +189,7 @@ return plural;
  ],
  "Invalid number of days": [
   null,
-  ""
+  "无效的天数"
  ],
  "Last Login": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Lock account on $0": [
   null,
-  ""
+  "锁定 $0 上的账号"
  ],
  "Logged In": [
   null,
@@ -217,11 +217,11 @@ return plural;
  ],
  "Never expire password": [
   null,
-  ""
+  "密码从不过期"
  ],
  "Never lock account": [
   null,
-  ""
+  "账号从不锁定"
  ],
  "New Password": [
   null,
@@ -261,7 +261,7 @@ return plural;
  ],
  "Password Expiration": [
   null,
-  ""
+  "密码过期"
  ],
  "Password is not acceptable": [
   null,
@@ -273,7 +273,7 @@ return plural;
  ],
  "Password must be changed": [
   null,
-  ""
+  "密码必须被修改"
  ],
  "Paste the contents of your public SSH key file here": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "Please specify an expiration date": [
   null,
-  ""
+  "请指定一个过期时间"
  ],
  "Prompting via passwd timed out": [
   null,
@@ -289,11 +289,11 @@ return plural;
  ],
  "Require password change every $0 days": [
   null,
-  ""
+  "要求每 $0 天修改密码"
  ],
  "Require password change on $0": [
   null,
-  ""
+  "要求于 $0 修改密码"
  ],
  "Reset": [
   null,
@@ -321,7 +321,7 @@ return plural;
  ],
  "The account '$0' will be forced to change their password on next login": [
   null,
-  ""
+  "账号 '$0' 将在下次登录时被强制变更其密码"
  ],
  "The key you provided was not valid.": [
   null,

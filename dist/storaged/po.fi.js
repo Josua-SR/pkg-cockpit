@@ -122,10 +122,6 @@ return plural;
   "$0 vuosi",
   "$0 vuotta"
  ],
- "$0, $1 free": [
-  null,
-  "$0, $1 vapaana"
- ],
  "$name (from $host)": [
   null,
   "$name (kohteesta $host)"
@@ -218,10 +214,6 @@ return plural;
   null,
   "<span>$0:n osio</span>"
  ],
- "A spare disk needs to be added first before this disk can be removed.": [
-  null,
-  ""
- ],
  "Activate": [
   null,
   "Aktivoi"
@@ -233,10 +225,6 @@ return plural;
  "Add": [
   null,
   "Lisää"
- ],
- "Add Disks": [
-  null,
-  "Lisää Levyjä"
  ],
  "Add iSCSI Portal": [
   null,
@@ -277,10 +265,6 @@ return plural;
  "Block device for filesystems": [
   null,
   "Lohkolaite tiedostojärjestelmille"
- ],
- "Blocked": [
-  null,
-  "Estetty"
  ],
  "Can't delete while unlocked": [
   null,
@@ -410,6 +394,14 @@ return plural;
   null,
   "Mukautettu (Lisää tiedostojärjestelmän tyyppi)"
  ],
+ "Custom encryption options": [
+  null,
+  ""
+ ],
+ "Custom mount options": [
+  null,
+  ""
+ ],
  "DISK IS FAILING": [
   null,
   "LEVY ON PETTÄMÄSSÄ"
@@ -538,10 +530,6 @@ return plural;
   null,
   "Laajennettu Osio"
  ],
- "FAILED": [
-  null,
-  "EPÄONNISTUI"
- ],
  "Filesystem": [
   null,
   "Tiedostojärjestelmä"
@@ -593,10 +581,6 @@ return plural;
  "Go to now": [
   null,
   "Mene nyt"
- ],
- "In Sync": [
-  null,
-  "Synkronoitu"
  ],
  "Inactive volume": [
   null,
@@ -659,6 +643,22 @@ return plural;
   ""
  ],
  "Mount Point": [
+  null,
+  ""
+ ],
+ "Mount at boot": [
+  null,
+  ""
+ ],
+ "Mount options": [
+  null,
+  ""
+ ],
+ "Mount point can not be empty": [
+  null,
+  ""
+ ],
+ "Mount read only": [
   null,
   ""
  ],
@@ -806,10 +806,6 @@ return plural;
   null,
   ""
  ],
- "Physical Volumes": [
-  null,
-  ""
- ],
  "Physical volume of $0": [
   null,
   ""
@@ -922,10 +918,6 @@ return plural;
   null,
   ""
  ],
- "Recovering": [
-  null,
-  ""
- ],
  "Recovering RAID Device $target": [
   null,
   ""
@@ -1014,10 +1006,6 @@ return plural;
   null,
   ""
  ],
- "Spare": [
-  null,
-  ""
- ],
  "Start": [
   null,
   ""
@@ -1098,31 +1086,11 @@ return plural;
   null,
   ""
  ],
- "The RAID device must be running in order to add spare disks.": [
-  null,
-  ""
- ],
- "The RAID device must be running in order to remove disks.": [
-  null,
-  ""
- ],
- "The last disk of a RAID device cannot be removed.": [
-  null,
-  ""
- ],
- "The last physical volume of a volume group cannot be removed.": [
-  null,
-  ""
- ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   ""
  ],
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
-  null,
-  ""
- ],
- "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
   null,
   ""
  ],
@@ -1150,10 +1118,6 @@ return plural;
   null,
   ""
  ],
- "This disk cannot be removed while the device is recovering.": [
-  null,
-  ""
- ],
  "This logical volume cannot be made smaller.": [
   null,
   "Tätä loogista taltiota ei voida pienentää."
@@ -1174,10 +1138,6 @@ return plural;
   null,
   "Tuntematon"
  ],
- "Unknown ($0)": [
-  null,
-  "Tuntematon ($0)"
- ],
  "Unknown host name": [
   null,
   ""
@@ -1185,6 +1145,14 @@ return plural;
  "Unlock": [
   null,
   "Avaa"
+ ],
+ "Unlock at boot": [
+  null,
+  ""
+ ],
+ "Unlock read only": [
+  null,
+  ""
  ],
  "Unlocking $target": [
   null,
@@ -1239,10 +1207,6 @@ return plural;
   "Taltioryhmä $0"
  ],
  "Volume Groups": [
-  null,
-  ""
- ],
- "Write-mostly": [
   null,
   ""
  ],

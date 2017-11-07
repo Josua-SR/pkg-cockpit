@@ -69,45 +69,45 @@ return plural;
  },
  "$0 more…": [
   null,
-  ""
+  "$0 mas ..."
  ],
  "$0 update": [
   "$0 updates",
-  "",
-  ""
+  "$0 actualización.",
+  "$0 actualizaciones."
  ],
  ", including $1 security fix": [
   ", including $1 security fixes",
-  "",
-  ""
+  ", incluyendo la corrección de seguridad $1 ",
+  ", incluyendo las correcciones de seguridad $1"
  ],
  "Apply all updates": [
   null,
-  ""
+  "Aplicar todas las actualizaciones"
  ],
  "Apply security updates": [
   null,
-  ""
+  "Aplicar actualizaciones de seguridad"
  ],
  "Applying updates": [
   null,
-  ""
+  "Aplicando actualizaciones"
  ],
  "Applying updates failed": [
   null,
-  ""
+  "Falló aplicar actualizaciones. "
  ],
  "Automatic Updates": [
   null,
-  ""
+  "Actualizaciones Automáticas"
  ],
  "Available Updates": [
   null,
-  ""
+  "Actualizaciones Disponibles"
  ],
  "Bugs": [
   null,
-  ""
+  "Bugs"
  ],
  "Cancel": [
   null,
@@ -119,7 +119,7 @@ return plural;
  ],
  "Cockpit itself will be updated.": [
   null,
-  ""
+  "El nucleo de Cockpit será actualizado"
  ],
  "Details": [
   null,
@@ -127,11 +127,11 @@ return plural;
  ],
  "Downloaded": [
   null,
-  ""
+  "Descargado"
  ],
  "Downloading": [
   null,
-  ""
+  "Descargando"
  ],
  "Ignore": [
   null,
@@ -139,39 +139,39 @@ return plural;
  ],
  "Initializing...": [
   null,
-  ""
+  "Inicializando..."
  ],
  "Install All Updates": [
   null,
-  ""
+  "Instalar todas las Actualizaciones"
  ],
  "Install Security Updates": [
   null,
-  ""
+  "Instalar Actualizaciones de Seguridad"
  ],
  "Installed": [
   null,
-  ""
+  "Instalado"
  ],
  "Installing": [
   null,
-  ""
+  "Instalando"
  ],
  "Last checked: $0 ago": [
   null,
-  ""
+  "Ultima revisión: $0 atrás"
  ],
  "Loading available updates failed": [
   null,
-  ""
+  "Fallo la carga de  las actualizaciones disponibles "
  ],
  "Loading available updates, please wait...": [
   null,
-  ""
+  "Leyendo actualizaciones disponibles, por favor espere..."
  ],
  "More information…": [
   null,
-  ""
+  "Mas información ..."
  ],
  "Name": [
   null,

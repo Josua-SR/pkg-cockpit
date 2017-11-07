@@ -311,7 +311,7 @@ return plural;
  ],
  "Creating this bond will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "La creación de este enlace romperá la conexión con el servidor y hará que la interfaz de usuario de administración no esté disponible."
  ],
  "Creating this bridge will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -319,7 +319,7 @@ return plural;
  ],
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "La creación de este equipo romperá la conexión con el servidor y hará que la interfaz de usuario de administración no esté disponible."
  ],
  "DNS": [
   null,
@@ -467,7 +467,7 @@ return plural;
  ],
  "Link Watch": [
   null,
-  ""
+  "Enlace para ver"
  ],
  "Link down delay": [
   null,

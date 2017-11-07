@@ -695,7 +695,7 @@ return plural;
  ],
  "Member of": [
   null,
-  ""
+  "Miembro de"
  ],
  "Members": [
   null,

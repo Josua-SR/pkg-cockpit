@@ -347,11 +347,11 @@ return plural;
  ],
  "Condition $0=$1 was not met": [
   null,
-  ""
+  "La condición $0=$1 no se cumple"
  ],
  "Condition failed": [
   null,
-  ""
+  "Condición fallida"
  ],
  "Create Timer": [
   null,

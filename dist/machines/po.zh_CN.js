@@ -69,11 +69,11 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  ""
+  "$0 对大多数操作系统可用。为了安装它，在 GNOME 软件中心搜索它或运行以下命令： "
  ],
  "Address:": [
   null,
-  ""
+  "地址："
  ],
  "Autostart:": [
   null,
@@ -85,15 +85,15 @@ return plural;
  ],
  "Boot Order:": [
   null,
-  ""
+  "启动顺序："
  ],
  "Bus": [
   null,
-  ""
+  "总线"
  ],
  "CPU Type:": [
   null,
-  ""
+  "处理器类型："
  ],
  "Cancel": [
   null,
@@ -105,23 +105,23 @@ return plural;
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  ""
+  "点击 \"加载远程查看其\" 将下载一个  .vv 文件并加载 $0。"
  ],
  "Confirm deletion of $0": [
   null,
-  ""
+  "确认删除 $0"
  ],
  "Connect with Remote Viewer": [
   null,
-  ""
+  "使用远程查看器连接"
  ],
  "Connect with any $0 viewer application.": [
   null,
-  ""
+  "使用任何 $0 查看器应用来连接。"
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  ""
+  "使用任何  SPICE 或 VNC 查看器应用来连接。"
  ],
  "Connection": [
   null,
@@ -129,11 +129,11 @@ return plural;
  ],
  "Console": [
   null,
-  ""
+  "控制台"
  ],
  "Count:": [
   null,
-  ""
+  "计数："
  ],
  "Delete": [
   null,
@@ -141,11 +141,11 @@ return plural;
  ],
  "Delete associated storage files:": [
   null,
-  ""
+  "删除关联的存储文件："
  ],
  "Device": [
   null,
-  ""
+  "设备"
  ],
  "Disks": [
   null,
@@ -153,15 +153,15 @@ return plural;
  ],
  "Download the MSI from $0": [
   null,
-  ""
+  "从 $0 下载MSI"
  ],
  "Emulated Machine:": [
   null,
-  ""
+  "模拟的机器："
  ],
  "File": [
   null,
-  ""
+  "文件"
  ],
  "Force Restart": [
   null,
@@ -173,7 +173,7 @@ return plural;
  ],
  "GB": [
   null,
-  ""
+  "GB"
  ],
  "Host": [
   null,
@@ -181,11 +181,11 @@ return plural;
  ],
  "Launch Remote Viewer": [
   null,
-  ""
+  "加载 Remote Viewer"
  ],
  "Manual Connection": [
   null,
-  ""
+  "手动连接"
  ],
  "Memory:": [
   null,
@@ -193,7 +193,7 @@ return plural;
  ],
  "More Information": [
   null,
-  ""
+  "更多信息"
  ],
  "Name": [
   null,
@@ -205,15 +205,15 @@ return plural;
  ],
  "No boot device found": [
   null,
-  ""
+  "没有找到启动设备"
  ],
  "No disks defined for this VM": [
   null,
-  ""
+  "没有为该虚拟机定义磁盘"
  ],
  "No graphics console is defined for this virtual machine.": [
   null,
-  ""
+  "没有为该虚拟机定义图形控制台。"
  ],
  "Ok": [
   null,
@@ -225,7 +225,7 @@ return plural;
  ],
  "Please start the virtual machine to access its graphics console.": [
   null,
-  ""
+  "请启动虚拟机来访问其图形控制台。"
  ],
  "Pool": [
   null,
@@ -237,11 +237,11 @@ return plural;
  ],
  "Protocol": [
   null,
-  ""
+  "协议"
  ],
  "Readonly": [
   null,
-  ""
+  "只读"
  ],
  "Restart": [
   null,
@@ -253,27 +253,27 @@ return plural;
  ],
  "SPICE": [
   null,
-  ""
+  "SPICE"
  ],
  "SPICE Address:": [
   null,
-  ""
+  "SPICE 地址："
  ],
  "SPICE Port:": [
   null,
-  ""
+  "SPICE 端口："
  ],
  "SPICE TLS Port:": [
   null,
-  ""
+  "SPICE TLS 端口："
  ],
  "Send Non-Maskable Interrupt": [
   null,
-  ""
+  "发送非屏蔽中断"
  ],
  "Session": [
   null,
-  "版本"
+  "会话"
  ],
  "Shut Down": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "Source": [
   null,
-  ""
+  "源"
  ],
  "State": [
   null,
@@ -289,11 +289,11 @@ return plural;
  ],
  "Switch to Desktop Viewer": [
   null,
-  ""
+  "切换到桌面查看器"
  ],
  "Switch to In-Browser Viewer": [
   null,
-  ""
+  "切换到浏览器查看器"
  ],
  "System": [
   null,
@@ -329,7 +329,7 @@ return plural;
  ],
  "The VM is running and will be forced off before deletion.": [
   null,
-  ""
+  "虚拟机正在运行并将在被删除前强制关闭。"
  ],
  "The VM is running.": [
   null,
@@ -341,7 +341,7 @@ return plural;
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
-  ""
+  "升级到一个更新版本的 libvirt 来查看磁盘统计数据"
  ],
  "Usage": [
   null,
@@ -353,43 +353,43 @@ return plural;
  ],
  "VM FORCE OFF action failed": [
   null,
-  ""
+  "虚拟机强制关闭操作失败"
  ],
  "VM FORCE REBOOT action failed": [
   null,
-  ""
+  "虚拟机强制重启操作失败"
  ],
  "VM REBOOT action failed": [
   null,
-  ""
+  "虚拟机重启操作失败"
  ],
  "VM SEND Non-Maskable Interrrupt action failed": [
   null,
-  ""
+  "虚拟机发送非屏蔽中断操作失败"
  ],
  "VM SHUT DOWN action failed": [
   null,
-  ""
+  "虚拟机关机操作失败"
  ],
  "VM START action failed": [
   null,
-  ""
+  "虚拟机启动操作失败"
  ],
  "VNC": [
   null,
-  ""
+  "VNC"
  ],
  "VNC Address:": [
   null,
-  ""
+  "VNC 地址："
  ],
  "VNC Port:": [
   null,
-  ""
+  "VNC 端口："
  ],
  "VNC TLS Port:": [
   null,
-  ""
+  "VNC TLS 端口："
  ],
  "Virtual Machines": [
   null,
@@ -401,47 +401,47 @@ return plural;
  ],
  "Your browser does not support iframes.": [
   null,
-  ""
+  "你的浏览器不支持 iframes。"
  ],
  "cdrom": [
   null,
-  ""
+  "光驱"
  ],
  "crashed": [
   null,
-  "虚拟机已崩溃。"
+  "已崩溃"
  ],
  "custom": [
   null,
-  ""
+  "自定义"
  ],
  "disabled": [
   null,
-  "禁用"
+  "已禁用"
  ],
  "disk": [
   null,
-  ""
+  "磁盘"
  ],
  "dying": [
   null,
-  ""
+  "失活的"
  ],
  "enabled": [
   null,
-  "启用"
+  "已启用"
  ],
  "host": [
   null,
-  ""
+  "主机"
  ],
  "idle": [
   null,
-  ""
+  "休眠的"
  ],
  "network": [
   null,
-  ""
+  "网络"
  ],
  "no": [
   null,
@@ -449,11 +449,11 @@ return plural;
  ],
  "other": [
   null,
-  ""
+  "其他"
  ],
  "paused": [
   null,
-  ""
+  "已暂停"
  ],
  "running": [
   null,
@@ -461,15 +461,15 @@ return plural;
  ],
  "shut off": [
   null,
-  ""
+  "关闭"
  ],
  "shutdown": [
   null,
-  ""
+  "关机"
  ],
  "suspended (PM)": [
   null,
-  ""
+  "已挂起 （电源管理）"
  ],
  "vCPUs:": [
   null,

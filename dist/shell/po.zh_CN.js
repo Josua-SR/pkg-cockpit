@@ -81,7 +81,7 @@ return plural;
  ],
  "Active Pages": [
   null,
-  ""
+  "激活页面"
  ],
  "Add": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Close Selected Pages": [
   null,
-  ""
+  "关闭已选的页面"
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
@@ -277,7 +277,7 @@ return plural;
  ],
  "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
-  ""
+  "以当前登录的用户 {{#default_user}} ({{default_user}}){{/default_user}} 来连接该主机则保留为空。如果输入一个不同的用户名，将总会用那个用户连接该主机。"
  ],
  "Licensed under:": [
   null,
@@ -285,11 +285,11 @@ return plural;
  ],
  "Lock to prevent privileged tasks": [
   null,
-  ""
+  "锁定以阻止特权任务"
  ],
  "Locked": [
   null,
-  ""
+  "已锁定"
  ],
  "Log In": [
   null,
@@ -297,7 +297,7 @@ return plural;
  ],
  "Log Out": [
   null,
-  ""
+  "注销"
  ],
  "Log in again": [
   null,
@@ -325,7 +325,7 @@ return plural;
  ],
  "No matching files found": [
   null,
-  ""
+  "没有找到匹配的文件"
  ],
  "No such file or directory": [
   null,
@@ -369,11 +369,11 @@ return plural;
  ],
  "Password not usable for privileged tasks or to connect to other machines": [
   null,
-  ""
+  "密码对特权任务和连接到其他主机不可用"
  ],
  "Path to file": [
   null,
-  ""
+  "文件路径"
  ],
  "Port": [
   null,
@@ -381,7 +381,7 @@ return plural;
  ],
  "Privileged tasks not available": [
   null,
-  ""
+  "特权任务不可用"
  ],
  "Project website": [
   null,
@@ -405,7 +405,7 @@ return plural;
  ],
  "Reuse my password for privileged tasks and to connect to other machines": [
   null,
-  ""
+  "为特权任务和连接其他主机重用我的密码"
  ],
  "Select": [
   null,
@@ -445,7 +445,7 @@ return plural;
  ],
  "There are currently no active pages": [
   null,
-  ""
+  "当前没有激活的页面"
  ],
  "This machine has already been added.": [
   null,
@@ -457,7 +457,7 @@ return plural;
  ],
  "Tip: Make your key password match your login password to automatically authenticate against other systems.": [
   null,
-  "提示：使关键密码匹配                                                    登录密码来自动认证                                                    其他系统。"
+  "提示：使关键密码匹配登录密码来自动认证 其他系统。"
  ],
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
   null,
@@ -465,7 +465,7 @@ return plural;
  ],
  "Too many files found": [
   null,
-  ""
+  "太多文件未找到"
  ],
  "Troubleshoot": [
   null,
@@ -497,7 +497,7 @@ return plural;
  ],
  "Unlocked": [
   null,
-  ""
+  "解锁"
  ],
  "Update": [
   null,
@@ -529,6 +529,6 @@ return plural;
  ],
  "active": [
   null,
-  ""
+  "激活"
  ]
 }));

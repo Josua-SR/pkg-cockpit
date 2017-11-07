@@ -105,7 +105,7 @@ return plural;
  ],
  "Kernel Dump": [
   null,
-  ""
+  "Volcado del Kernel"
  ],
  "Loading...": [
   null,

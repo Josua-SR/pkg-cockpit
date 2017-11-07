@@ -115,10 +115,6 @@ return plural;
   "$0 years",
   "$0 年"
  ],
- "$0, $1 free": [
-  null,
-  "$0, $1 空き"
- ],
  "$name (from $host)": [
   null,
   "$name ($host)"
@@ -211,10 +207,6 @@ return plural;
   null,
   "<span>$0 のパーティション</span>"
  ],
- "A spare disk needs to be added first before this disk can be removed.": [
-  null,
-  "このディスクを削除する前に、スペアディスクを追加する必要があります。"
- ],
  "Activate": [
   null,
   "有効化"
@@ -226,10 +218,6 @@ return plural;
  "Add": [
   null,
   "追加する"
- ],
- "Add Disks": [
-  null,
-  "ディスクの追加"
  ],
  "Add iSCSI Portal": [
   null,
@@ -270,10 +258,6 @@ return plural;
  "Block device for filesystems": [
   null,
   "ファイルシステム用ブロックデバイス"
- ],
- "Blocked": [
-  null,
-  "ブロック済み"
  ],
  "Can't delete while unlocked": [
   null,
@@ -403,6 +387,14 @@ return plural;
   null,
   "カスタム (ファイルシステムタイプの入力)"
  ],
+ "Custom encryption options": [
+  null,
+  ""
+ ],
+ "Custom mount options": [
+  null,
+  ""
+ ],
  "DISK IS FAILING": [
   null,
   "ディスクで障害が発生中"
@@ -531,10 +523,6 @@ return plural;
   null,
   "拡張パーティション"
  ],
- "FAILED": [
-  null,
-  "失敗"
- ],
  "Filesystem": [
   null,
   "ファイルシステム"
@@ -586,10 +574,6 @@ return plural;
  "Go to now": [
   null,
   "今すぐ移動"
- ],
- "In Sync": [
-  null,
-  "同期"
  ],
  "Inactive volume": [
   null,
@@ -654,6 +638,22 @@ return plural;
  "Mount Point": [
   null,
   "マウントポイント"
+ ],
+ "Mount at boot": [
+  null,
+  ""
+ ],
+ "Mount options": [
+  null,
+  ""
+ ],
+ "Mount point can not be empty": [
+  null,
+  ""
+ ],
+ "Mount read only": [
+  null,
+  ""
  ],
  "Mounted At": [
   null,
@@ -799,10 +799,6 @@ return plural;
   null,
   "物理ボリューム"
  ],
- "Physical Volumes": [
-  null,
-  "物理ボリューム"
- ],
  "Physical volume of $0": [
   null,
   "$0 の物理ボリューム"
@@ -915,10 +911,6 @@ return plural;
   null,
   "再起動"
  ],
- "Recovering": [
-  null,
-  "復旧"
- ],
  "Recovering RAID Device $target": [
   null,
   "RAID デバイス $target の復旧"
@@ -1007,10 +999,6 @@ return plural;
   null,
   "サイズは数値である必要があります"
  ],
- "Spare": [
-  null,
-  "スペア"
- ],
  "Start": [
   null,
   "開始日"
@@ -1091,22 +1079,6 @@ return plural;
   null,
   "RAID アレイは劣化状態にあります"
  ],
- "The RAID device must be running in order to add spare disks.": [
-  null,
-  "スペアディスクを追加する場合は、MDRAID デバイスが実行中である必要があります。"
- ],
- "The RAID device must be running in order to remove disks.": [
-  null,
-  "ディスクを取り外す場合は、RAID デバイスが実行中である必要があります。"
- ],
- "The last disk of a RAID device cannot be removed.": [
-  null,
-  "RAID デバイスの最後のディスクは取り外すことができません。"
- ],
- "The last physical volume of a volume group cannot be removed.": [
-  null,
-  "ボリュームグループの最後の物理ボリュームは削除できません。"
- ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "ユーザー <b>$0</b> はストレージを管理することを許可されていません"
@@ -1114,10 +1086,6 @@ return plural;
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
   null,
   "システムに複数のパスを持つデバイスがありますが、マルチパスサービスが実行されていません。"
- ],
- "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
-  null,
-  "この物理ボリュームを削除するのに十分な空き領域がありません。少なくとも $0 の空き領域が必要です。"
  ],
  "Thin Logical Volume": [
   null,
@@ -1143,10 +1111,6 @@ return plural;
   null,
   ""
  ],
- "This disk cannot be removed while the device is recovering.": [
-  null,
-  "このディスクは、デバイスが復旧中に取り外すことができません。"
- ],
  "This logical volume cannot be made smaller.": [
   null,
   "この論理ボリュームは小さくすることができません。"
@@ -1167,10 +1131,6 @@ return plural;
   null,
   "不明"
  ],
- "Unknown ($0)": [
-  null,
-  "不明な ($0)"
- ],
  "Unknown host name": [
   null,
   "不明なホスト名"
@@ -1178,6 +1138,14 @@ return plural;
  "Unlock": [
   null,
   "ロック解除"
+ ],
+ "Unlock at boot": [
+  null,
+  ""
+ ],
+ "Unlock read only": [
+  null,
+  ""
  ],
  "Unlocking $target": [
   null,
@@ -1234,10 +1202,6 @@ return plural;
  "Volume Groups": [
   null,
   "ボリュームグループ"
- ],
- "Write-mostly": [
-  null,
-  "Write-mostly"
  ],
  "Writing": [
   null,

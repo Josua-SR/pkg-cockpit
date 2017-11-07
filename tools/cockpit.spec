@@ -446,6 +446,13 @@ Recommends: device-mapper-multipath
 %endif
 %endif
 %endif
+%if 0%{?fedora}
+Requires: python3
+Requires: python3-dbus
+%else
+Requires: python
+Requires: python-dbus
+%endif
 BuildArch: noarch
 
 %description storaged
@@ -513,7 +520,7 @@ Requires: expect
 Requires: libvirt
 Requires: libvirt-client
 Requires: libvirt-daemon
-%if 0%{?rhel}%{?centos} == 0 || 0%{?rhel} >= 8 || 0%{?centos} >= 8
+%if 0%{?rhel} >= 8 || 0%{?centos} >= 8 || 0%{?fedora} >= 27
 Requires: python2-libvirt
 %else
 Requires: libvirt-python

@@ -71,17 +71,41 @@ return plural;
   null,
   "$0 està disponible per a la majoria de sistemes operatius. Per instal·lar-ho, cerqueu-ho a GNOME Software o executeu el següent:"
  ],
+ "Action": [
+  null,
+  ""
+ ],
  "Address:": [
   null,
   "Adreça:"
  ],
- "Autostart:": [
+ "All running virtual machines will be turned off.": [
   null,
   ""
+ ],
+ "Automatically selected host": [
+  null,
+  ""
+ ],
+ "Autostart:": [
+  null,
+  "Inici automàtic:"
  ],
  "Available": [
   null,
   "Disponible"
+ ],
+ "Base Template": [
+  null,
+  ""
+ ],
+ "Base template": [
+  null,
+  ""
+ ],
+ "Base template:": [
+  null,
+  ""
  ],
  "Boot Order:": [
   null,
@@ -95,6 +119,10 @@ return plural;
   null,
   "Tipus de CPU:"
  ],
+ "CREATE VM action failed": [
+  null,
+  ""
+ ],
  "Cancel": [
   null,
   "Cancel·la"
@@ -107,9 +135,37 @@ return plural;
   null,
   ""
  ],
+ "Cluster": [
+  null,
+  "Clúster"
+ ],
+ "Cluster Templates": [
+  null,
+  ""
+ ],
+ "Cluster Virtual Machines": [
+  null,
+  ""
+ ],
  "Confirm deletion of $0": [
   null,
   "Confirma la supressió de $0"
+ ],
+ "Confirm migration": [
+  null,
+  ""
+ ],
+ "Confirm reload:": [
+  null,
+  ""
+ ],
+ "Confirm save:": [
+  null,
+  ""
+ ],
+ "Connect to oVirt Engine": [
+  null,
+  ""
  ],
  "Connect with Remote Viewer": [
   null,
@@ -135,6 +191,14 @@ return plural;
   null,
   "Nombre:"
  ],
+ "Create": [
+  null,
+  "Crea"
+ ],
+ "Create VM": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "Suprimeix"
@@ -142,6 +206,14 @@ return plural;
  "Delete associated storage files:": [
   null,
   "Suprimeix els fitxers d'emmagatzematge associats:"
+ ],
+ "Description": [
+  null,
+  "Descripció"
+ ],
+ "Description:": [
+  null,
+  ""
  ],
  "Device": [
   null,
@@ -155,9 +227,21 @@ return plural;
   null,
   "Baixa el MSI de $0"
  ],
+ "Edit the vdsm.conf": [
+  null,
+  ""
+ ],
  "Emulated Machine:": [
   null,
   "Màquina emulada:"
+ ],
+ "Enter New VM name": [
+  null,
+  ""
+ ],
+ "FQDN": [
+  null,
+  ""
  ],
  "File": [
   null,
@@ -175,21 +259,49 @@ return plural;
   null,
   "GB"
  ],
+ "HA": [
+  null,
+  ""
+ ],
+ "HA:": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "Amfitrió"
+ ],
+ "Host to Maintenance": [
+  null,
+  ""
  ],
  "Launch Remote Viewer": [
   null,
   "Llança el visualitzador remot"
  ],
+ "Loading data ...": [
+  null,
+  ""
+ ],
+ "MIGRATE action failed": [
+  null,
+  ""
+ ],
  "Manual Connection": [
   null,
   "Connexió manual"
  ],
+ "Memory": [
+  null,
+  "Memòria"
+ ],
  "Memory:": [
   null,
   "Memòria:"
+ ],
+ "Migrate To:": [
+  null,
+  ""
  ],
  "More Information": [
   null,
@@ -198,6 +310,10 @@ return plural;
  "Name": [
   null,
   "Nom"
+ ],
+ "No VM found in oVirt.": [
+  null,
+  ""
  ],
  "No VM is running or defined on this host": [
   null,
@@ -215,17 +331,57 @@ return plural;
   null,
   ""
  ],
+ "OK": [
+  null,
+  ""
+ ],
+ "OS": [
+  null,
+  "SO"
+ ],
+ "OS Type:": [
+  null,
+  ""
+ ],
  "Ok": [
   null,
   "D'acord"
+ ],
+ "Optimized for:": [
+  null,
+  ""
  ],
  "Overview": [
   null,
   "Visió de conjunt"
  ],
+ "Please confirm, the host shall be switched to maintenance mode.": [
+  null,
+  ""
+ ],
+ "Please provide fully qualified domain name and port of the oVirt engine.": [
+  null,
+  ""
+ ],
+ "Please provide valid oVirt engine fully qualified domain name (FQDN) and port (443 by default)": [
+  null,
+  ""
+ ],
+ "Please refer to oVirt's $0 for more information about Remote Viewer setup.": [
+  null,
+  ""
+ ],
  "Please start the virtual machine to access its graphics console.": [
   null,
   "Si us plau, inicieu la màquina virtual per accedir a la consola gràfica."
+ ],
+ "Please wait till VMs list is loaded from the server.": [
+  null,
+  ""
+ ],
+ "Please wait till list of templates is loaded from the server.": [
+  null,
+  ""
  ],
  "Pool": [
   null,
@@ -235,13 +391,33 @@ return plural;
   null,
   "Port"
  ],
+ "Preparing for Maintenance": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protocol"
  ],
+ "REBOOT action failed": [
+  null,
+  ""
+ ],
  "Readonly": [
   null,
   "NomésLectura"
+ ],
+ "Register oVirt": [
+  null,
+  ""
+ ],
+ "Registering oVirt to Cockpit": [
+  null,
+  ""
+ ],
+ "Reload": [
+  null,
+  "Recarrega"
  ],
  "Restart": [
   null,
@@ -250,6 +426,14 @@ return plural;
  "Run": [
   null,
   "Executa"
+ ],
+ "Run Here": [
+  null,
+  ""
+ ],
+ "SHUTDOWN action failed": [
+  null,
+  ""
  ],
  "SPICE": [
   null,
@@ -266,6 +450,18 @@ return plural;
  "SPICE TLS Port:": [
   null,
   "Port TLS SPICE:"
+ ],
+ "START action failed": [
+  null,
+  ""
+ ],
+ "SUSPEND action failed": [
+  null,
+  ""
+ ],
+ "Save": [
+  null,
+  "Desa"
  ],
  "Send Non-Maskable Interrupt": [
   null,
@@ -287,11 +483,35 @@ return plural;
   null,
   "Estat"
  ],
- "Switch to Desktop Viewer": [
+ "Stateless": [
   null,
   ""
  ],
+ "Stateless:": [
+  null,
+  ""
+ ],
+ "Suspend": [
+  null,
+  ""
+ ],
+ "Switch Host to Maintenance": [
+  null,
+  ""
+ ],
+ "Switch to Desktop Viewer": [
+  null,
+  "Commuta al visualitzador d'escriptoris"
+ ],
  "Switch to In-Browser Viewer": [
+  null,
+  "Commuta al visualitzador integrat del navegador"
+ ],
+ "Switching host to maintenance mode failed. Received error: ": [
+  null,
+  ""
+ ],
+ "Switching host to maintenance mode in progress ...": [
   null,
   ""
  ],
@@ -302,6 +522,18 @@ return plural;
  "Target": [
   null,
   "Objectiu"
+ ],
+ "Template": [
+  null,
+  "Plantilla"
+ ],
+ "Templates": [
+  null,
+  ""
+ ],
+ "Templates of $0 cluster": [
+  null,
+  ""
  ],
  "The VM crashed.": [
   null,
@@ -339,6 +571,10 @@ return plural;
   null,
   ""
  ],
+ "This virtual machine is not managed by oVirt": [
+  null,
+  ""
+ ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "Actualitzeu a una versió més recent de libvirt per visualitzar les estadístiques dels discs"
@@ -350,6 +586,14 @@ return plural;
  "Used": [
   null,
   "Utilitzat"
+ ],
+ "VDSM": [
+  null,
+  ""
+ ],
+ "VDSM Service Management": [
+  null,
+  ""
  ],
  "VM FORCE OFF action failed": [
   null,
@@ -375,6 +619,10 @@ return plural;
   null,
   "Ha fallat l'acció VM START"
  ],
+ "VM icon": [
+  null,
+  ""
+ ],
  "VNC": [
   null,
   "VNC"
@@ -391,9 +639,21 @@ return plural;
   null,
   "Port TLS VNC:"
  ],
+ "Version": [
+  null,
+  "Versió"
+ ],
+ "Version num": [
+  null,
+  ""
+ ],
  "Virtual Machines": [
   null,
   "Màquines virtuals"
+ ],
+ "Virtual Machines of $0 cluster": [
+  null,
+  ""
  ],
  "Volume": [
   null,
@@ -406,6 +666,14 @@ return plural;
  "cdrom": [
   null,
   "cdrom"
+ ],
+ "connecting": [
+  null,
+  ""
+ ],
+ "cores": [
+  null,
+  ""
  ],
  "crashed": [
   null,
@@ -423,6 +691,10 @@ return plural;
   null,
   "disc"
  ],
+ "down": [
+  null,
+  ""
+ ],
  "dying": [
   null,
   "morint"
@@ -430,6 +702,10 @@ return plural;
  "enabled": [
   null,
   "habilitat"
+ ],
+ "error": [
+  null,
+  "error"
  ],
  "host": [
   null,
@@ -439,6 +715,26 @@ return plural;
   null,
   "ociós"
  ],
+ "initializing": [
+  null,
+  ""
+ ],
+ "installation failed": [
+  null,
+  ""
+ ],
+ "installing OS": [
+  null,
+  ""
+ ],
+ "kdumping": [
+  null,
+  ""
+ ],
+ "maintenance": [
+  null,
+  ""
+ ],
  "network": [
   null,
   "xarxa"
@@ -447,11 +743,51 @@ return plural;
   null,
   "no"
  ],
+ "non operational": [
+  null,
+  ""
+ ],
+ "non responsive": [
+  null,
+  ""
+ ],
+ "oVirt": [
+  null,
+  ""
+ ],
+ "oVirt Host State:": [
+  null,
+  ""
+ ],
+ "oVirt Provider installation script failed due to missing arguments.": [
+  null,
+  ""
+ ],
+ "oVirt Provider installation script failed: Can't write to /etc/cockpit/machines-ovirt.config, try as root.": [
+  null,
+  ""
+ ],
+ "oVirt installation script failed with following output: ": [
+  null,
+  ""
+ ],
+ "oVirt login in progress": [
+  null,
+  ""
+ ],
  "other": [
   null,
   "altres"
  ],
  "paused": [
+  null,
+  ""
+ ],
+ "pending approval": [
+  null,
+  ""
+ ],
+ "reboot": [
   null,
   ""
  ],
@@ -467,9 +803,29 @@ return plural;
   null,
   "apaga"
  ],
+ "sockets": [
+  null,
+  ""
+ ],
  "suspended (PM)": [
   null,
   "suspès (PM)"
+ ],
+ "threads": [
+  null,
+  ""
+ ],
+ "unassigned": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "vCPUs": [
+  null,
+  ""
  ],
  "vCPUs:": [
   null,

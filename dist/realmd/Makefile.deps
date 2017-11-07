@@ -1,10 +1,10 @@
 # Generated Makefile data for realmd
-# Stamp: Wed Oct 18 2017 08:04:22 GMT+0000 (UTC)
+# Stamp: Tue Nov 07 2017 07:33:12 GMT+0000 (UTC)
 
 realmd_INPUTS = \
-	$(srcdir)/pkg/lib/patterns.js \
-	$(srcdir)/pkg/realmd/operation.html \
-	$(srcdir)/pkg/realmd/operation.js \
+	pkg/lib/patterns.js \
+	pkg/realmd/operation.html \
+	pkg/realmd/operation.js \
 	$(NULL)
 
 realmd_OUTPUTS = \
@@ -38,11 +38,11 @@ dist/realmd/domain.min.js: dist/realmd/Makefile.deps
 
 dist/realmd/domain.min.js.map: dist/realmd/Makefile.deps
 
-$(srcdir)/pkg/lib/patterns.js:
+pkg/lib/patterns.js:
 
-$(srcdir)/pkg/realmd/operation.html:
+pkg/realmd/operation.html:
 
-$(srcdir)/pkg/realmd/operation.js:
+pkg/realmd/operation.js:
 
 WEBPACK_INPUTS += $(realmd_INPUTS)
 WEBPACK_OUTPUTS += $(realmd_OUTPUTS)

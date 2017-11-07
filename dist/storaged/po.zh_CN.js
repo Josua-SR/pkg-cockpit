@@ -93,7 +93,7 @@ return plural;
  ],
  "$0 is in active use": [
   null,
-  ""
+  "$0 正处于激活使用中"
  ],
  "$0 minute": [
   "$0 minutes",
@@ -115,17 +115,13 @@ return plural;
   "$0 years",
   "$0 年"
  ],
- "$0, $1 free": [
-  null,
-  "$0, $1 可用"
- ],
  "$name (from $host)": [
   null,
   "$name (从 $host)"
  ],
  "${size} ${desc}": [
   null,
-  ""
+  "${size} ${desc}"
  ],
  "(default)": [
   null,
@@ -211,10 +207,6 @@ return plural;
   null,
   "<span>分区 $0</span>"
  ],
- "A spare disk needs to be added first before this disk can be removed.": [
-  null,
-  ""
- ],
  "Activate": [
   null,
   "激活"
@@ -226,10 +218,6 @@ return plural;
  "Add": [
   null,
   "添加"
- ],
- "Add Disks": [
-  null,
-  "添加磁盘"
  ],
  "Add iSCSI Portal": [
   null,
@@ -270,10 +258,6 @@ return plural;
  "Block device for filesystems": [
   null,
   "块设备的文件系统"
- ],
- "Blocked": [
-  null,
-  "受阻"
  ],
  "Can't delete while unlocked": [
   null,
@@ -403,6 +387,14 @@ return plural;
   null,
   "自定义 (输入文件系统类型)"
  ],
+ "Custom encryption options": [
+  null,
+  ""
+ ],
+ "Custom mount options": [
+  null,
+  ""
+ ],
  "DISK IS FAILING": [
   null,
   "磁盘错误"
@@ -489,7 +481,7 @@ return plural;
  ],
  "Encrypted $0": [
   null,
-  ""
+  "已加密 $0"
  ],
  "Encrypted EXT4 (LUKS)": [
   null,
@@ -497,11 +489,11 @@ return plural;
  ],
  "Encrypted Logical Volume of $0": [
   null,
-  ""
+  "$0 的已加密逻辑卷"
  ],
  "Encrypted Partition of $0": [
   null,
-  ""
+  "$0 的已加密分区"
  ],
  "Encrypted XFS (LUKS)": [
   null,
@@ -530,10 +522,6 @@ return plural;
  "Extended Partition": [
   null,
   "扩展分区"
- ],
- "FAILED": [
-  null,
-  "失败"
  ],
  "Filesystem": [
   null,
@@ -587,10 +575,6 @@ return plural;
   null,
   "转到现在"
  ],
- "In Sync": [
-  null,
-  "同步中"
- ],
  "Inactive volume": [
   null,
   "暂停卷"
@@ -621,7 +605,7 @@ return plural;
  ],
  "Logical Volume of $0": [
   null,
-  ""
+  "$0 的逻辑卷"
  ],
  "Marking $target as faulty": [
   null,
@@ -654,6 +638,22 @@ return plural;
  "Mount Point": [
   null,
   "挂载点"
+ ],
+ "Mount at boot": [
+  null,
+  ""
+ ],
+ "Mount options": [
+  null,
+  ""
+ ],
+ "Mount point can not be empty": [
+  null,
+  ""
+ ],
+ "Mount read only": [
+  null,
+  ""
  ],
  "Mounted At": [
   null,
@@ -705,7 +705,7 @@ return plural;
  ],
  "No disks are available.": [
   null,
-  ""
+  "没有可用的磁盘。"
  ],
  "No drives attached": [
   null,
@@ -773,7 +773,7 @@ return plural;
  ],
  "Partition of $0": [
   null,
-  ""
+  "$0 的分区"
  ],
  "Partitioning": [
   null,
@@ -796,10 +796,6 @@ return plural;
   "密码"
  ],
  "Physical Volume": [
-  null,
-  "物理卷"
- ],
- "Physical Volumes": [
   null,
   "物理卷"
  ],
@@ -915,10 +911,6 @@ return plural;
   null,
   "重启"
  ],
- "Recovering": [
-  null,
-  "恢复"
- ],
  "Recovering RAID Device $target": [
   null,
   "恢复 RAID 设备 $target"
@@ -1007,10 +999,6 @@ return plural;
   null,
   "大小必须是一个数字"
  ],
- "Spare": [
-  null,
-  "备用"
- ],
  "Start": [
   null,
   "启动"
@@ -1091,22 +1079,6 @@ return plural;
   null,
   "RAID 阵列处于降级状态"
  ],
- "The RAID device must be running in order to add spare disks.": [
-  null,
-  ""
- ],
- "The RAID device must be running in order to remove disks.": [
-  null,
-  ""
- ],
- "The last disk of a RAID device cannot be removed.": [
-  null,
-  ""
- ],
- "The last physical volume of a volume group cannot be removed.": [
-  null,
-  "不能删除一个卷组的最后一个物理卷。"
- ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "用户 <b>$0</b> 不允许管理存储"
@@ -1115,37 +1087,29 @@ return plural;
   null,
   "该系统上有多路径设备，但是多路径服务未运行。"
  ],
- "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
-  null,
-  ""
- ],
  "Thin Logical Volume": [
   null,
   "稀疏逻辑卷"
  ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
-  ""
+  "该设备有正在使用的文件系统。               程序将卸载其上的所有文件系统。"
  ],
  "This device is currently used for RAID devices.": [
   null,
-  ""
+  "该设备正在被 RAID 设备使用。"
  ],
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
   null,
-  ""
+  "该设备正在被 RAID 设备使用。                程序将从其 RAID 设备中移除它。"
  ],
  "This device is currently used for volume groups.": [
   null,
-  ""
+  "该设备正在被卷组使用。"
  ],
  "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
   null,
-  ""
- ],
- "This disk cannot be removed while the device is recovering.": [
-  null,
-  ""
+  "该设备正在被卷组使用。                程序将从其卷组中移除它。"
  ],
  "This logical volume cannot be made smaller.": [
   null,
@@ -1167,10 +1131,6 @@ return plural;
   null,
   "未知"
  ],
- "Unknown ($0)": [
-  null,
-  "未知 ($0)"
- ],
  "Unknown host name": [
   null,
   "未知主机名"
@@ -1178,6 +1138,14 @@ return plural;
  "Unlock": [
   null,
   "未锁定"
+ ],
+ "Unlock at boot": [
+  null,
+  ""
+ ],
+ "Unlock read only": [
+  null,
+  ""
  ],
  "Unlocking $target": [
   null,
@@ -1235,10 +1203,6 @@ return plural;
   null,
   "卷组"
  ],
- "Write-mostly": [
-  null,
-  "Write-mostly"
- ],
  "Writing": [
   null,
   "写入中"
@@ -1273,7 +1237,7 @@ return plural;
  ],
  "unpartitioned space on $0": [
   null,
-  ""
+  "$0 上未分区的空间"
  ],
  "storage-id-desc\u0004$0 File System": [
   null,

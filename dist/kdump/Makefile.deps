@@ -1,40 +1,40 @@
 # Generated Makefile data for kdump
-# Stamp: Wed Oct 18 2017 08:05:39 GMT+0000 (UTC)
+# Stamp: Tue Nov 07 2017 07:34:35 GMT+0000 (UTC)
 
 kdump_INPUTS = \
-	$(srcdir)/node_modules/qunit-tap/GPL-LICENSE.txt \
-	$(srcdir)/node_modules/qunit-tap/MIT-LICENSE.txt \
-	$(srcdir)/node_modules/qunit-tap/lib/qunit-tap.js \
-	$(srcdir)/node_modules/qunit-tap/package.json \
-	$(srcdir)/node_modules/qunitjs/LICENSE.txt \
-	$(srcdir)/node_modules/qunitjs/README.md \
-	$(srcdir)/node_modules/qunitjs/package.json \
-	$(srcdir)/node_modules/qunitjs/qunit/qunit.css \
-	$(srcdir)/node_modules/qunitjs/qunit/qunit.js \
-	$(srcdir)/node_modules/react-lite/LICENSE \
-	$(srcdir)/node_modules/react-lite/README.md \
-	$(srcdir)/node_modules/react-lite/dist/react-lite.js \
-	$(srcdir)/node_modules/react-lite/package.json \
-	$(srcdir)/pkg/kdump/config-client.es6 \
-	$(srcdir)/pkg/kdump/crashkernel.sh \
-	$(srcdir)/pkg/kdump/index.html \
-	$(srcdir)/pkg/kdump/kdump-client.es6 \
-	$(srcdir)/pkg/kdump/kdump-view.jsx \
-	$(srcdir)/pkg/kdump/kdump.css \
-	$(srcdir)/pkg/kdump/kdump.js \
-	$(srcdir)/pkg/kdump/test-config-client.js \
-	$(srcdir)/pkg/kdump/testwritable.sh \
-	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \
-	$(srcdir)/pkg/lib/cockpit-components-onoff.css \
-	$(srcdir)/pkg/lib/cockpit-components-onoff.jsx \
-	$(srcdir)/pkg/lib/cockpit-components-select.jsx \
-	$(srcdir)/pkg/lib/cockpit-components-tooltip.jsx \
-	$(srcdir)/pkg/lib/page.css \
-	$(srcdir)/pkg/lib/qunit-config.js \
-	$(srcdir)/pkg/lib/qunit-template.html \
-	$(srcdir)/pkg/lib/qunit-tests.js \
-	$(srcdir)/pkg/lib/service.js \
-	$(srcdir)/pkg/lib/tooltip.css \
+	node_modules/qunit-tap/GPL-LICENSE.txt \
+	node_modules/qunit-tap/MIT-LICENSE.txt \
+	node_modules/qunit-tap/lib/qunit-tap.js \
+	node_modules/qunit-tap/package.json \
+	node_modules/qunitjs/LICENSE.txt \
+	node_modules/qunitjs/README.md \
+	node_modules/qunitjs/package.json \
+	node_modules/qunitjs/qunit/qunit.css \
+	node_modules/qunitjs/qunit/qunit.js \
+	node_modules/react-lite/LICENSE \
+	node_modules/react-lite/README.md \
+	node_modules/react-lite/dist/react-lite.js \
+	node_modules/react-lite/package.json \
+	pkg/kdump/config-client.es6 \
+	pkg/kdump/crashkernel.sh \
+	pkg/kdump/index.html \
+	pkg/kdump/kdump-client.es6 \
+	pkg/kdump/kdump-view.jsx \
+	pkg/kdump/kdump.css \
+	pkg/kdump/kdump.js \
+	pkg/kdump/test-config-client.js \
+	pkg/kdump/testwritable.sh \
+	pkg/lib/cockpit-components-dialog.jsx \
+	pkg/lib/cockpit-components-onoff.css \
+	pkg/lib/cockpit-components-onoff.jsx \
+	pkg/lib/cockpit-components-select.jsx \
+	pkg/lib/cockpit-components-tooltip.jsx \
+	pkg/lib/page.css \
+	pkg/lib/qunit-config.js \
+	pkg/lib/qunit-template.html \
+	pkg/lib/qunit-tests.js \
+	pkg/lib/service.js \
+	pkg/lib/tooltip.css \
 	$(NULL)
 
 kdump_OUTPUTS = \
@@ -98,71 +98,71 @@ dist/kdump/test-config-client.min.js: dist/kdump/Makefile.deps
 
 dist/kdump/test-config-client.min.js.map: dist/kdump/Makefile.deps
 
-$(srcdir)/node_modules/qunit-tap/GPL-LICENSE.txt:
+node_modules/qunit-tap/GPL-LICENSE.txt:
 
-$(srcdir)/node_modules/qunit-tap/MIT-LICENSE.txt:
+node_modules/qunit-tap/MIT-LICENSE.txt:
 
-$(srcdir)/node_modules/qunit-tap/lib/qunit-tap.js:
+node_modules/qunit-tap/lib/qunit-tap.js:
 
-$(srcdir)/node_modules/qunit-tap/package.json:
+node_modules/qunit-tap/package.json:
 
-$(srcdir)/node_modules/qunitjs/LICENSE.txt:
+node_modules/qunitjs/LICENSE.txt:
 
-$(srcdir)/node_modules/qunitjs/README.md:
+node_modules/qunitjs/README.md:
 
-$(srcdir)/node_modules/qunitjs/package.json:
+node_modules/qunitjs/package.json:
 
-$(srcdir)/node_modules/qunitjs/qunit/qunit.css:
+node_modules/qunitjs/qunit/qunit.css:
 
-$(srcdir)/node_modules/qunitjs/qunit/qunit.js:
+node_modules/qunitjs/qunit/qunit.js:
 
-$(srcdir)/node_modules/react-lite/LICENSE:
+node_modules/react-lite/LICENSE:
 
-$(srcdir)/node_modules/react-lite/README.md:
+node_modules/react-lite/README.md:
 
-$(srcdir)/node_modules/react-lite/dist/react-lite.js:
+node_modules/react-lite/dist/react-lite.js:
 
-$(srcdir)/node_modules/react-lite/package.json:
+node_modules/react-lite/package.json:
 
-$(srcdir)/pkg/kdump/config-client.es6:
+pkg/kdump/config-client.es6:
 
-$(srcdir)/pkg/kdump/crashkernel.sh:
+pkg/kdump/crashkernel.sh:
 
-$(srcdir)/pkg/kdump/index.html:
+pkg/kdump/index.html:
 
-$(srcdir)/pkg/kdump/kdump-client.es6:
+pkg/kdump/kdump-client.es6:
 
-$(srcdir)/pkg/kdump/kdump-view.jsx:
+pkg/kdump/kdump-view.jsx:
 
-$(srcdir)/pkg/kdump/kdump.css:
+pkg/kdump/kdump.css:
 
-$(srcdir)/pkg/kdump/kdump.js:
+pkg/kdump/kdump.js:
 
-$(srcdir)/pkg/kdump/test-config-client.js:
+pkg/kdump/test-config-client.js:
 
-$(srcdir)/pkg/kdump/testwritable.sh:
+pkg/kdump/testwritable.sh:
 
-$(srcdir)/pkg/lib/cockpit-components-dialog.jsx:
+pkg/lib/cockpit-components-dialog.jsx:
 
-$(srcdir)/pkg/lib/cockpit-components-onoff.css:
+pkg/lib/cockpit-components-onoff.css:
 
-$(srcdir)/pkg/lib/cockpit-components-onoff.jsx:
+pkg/lib/cockpit-components-onoff.jsx:
 
-$(srcdir)/pkg/lib/cockpit-components-select.jsx:
+pkg/lib/cockpit-components-select.jsx:
 
-$(srcdir)/pkg/lib/cockpit-components-tooltip.jsx:
+pkg/lib/cockpit-components-tooltip.jsx:
 
-$(srcdir)/pkg/lib/page.css:
+pkg/lib/page.css:
 
-$(srcdir)/pkg/lib/qunit-config.js:
+pkg/lib/qunit-config.js:
 
-$(srcdir)/pkg/lib/qunit-template.html:
+pkg/lib/qunit-template.html:
 
-$(srcdir)/pkg/lib/qunit-tests.js:
+pkg/lib/qunit-tests.js:
 
-$(srcdir)/pkg/lib/service.js:
+pkg/lib/service.js:
 
-$(srcdir)/pkg/lib/tooltip.css:
+pkg/lib/tooltip.css:
 
 WEBPACK_INPUTS += $(kdump_INPUTS)
 WEBPACK_OUTPUTS += $(kdump_OUTPUTS)

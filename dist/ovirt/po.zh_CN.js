@@ -69,11 +69,23 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  ""
+  "$0 对大多数操作系统可用。为了安装它，在 GNOME 软件中心搜索它或运行以下命令： "
+ ],
+ "Action": [
+  null,
+  "动作"
  ],
  "Address:": [
   null,
+  "地址："
+ ],
+ "All running virtual machines will be turned off.": [
+  null,
   ""
+ ],
+ "Automatically selected host": [
+  null,
+  "自动选择的主机"
  ],
  "Autostart:": [
   null,
@@ -83,17 +95,33 @@ return plural;
   null,
   "可用的"
  ],
+ "Base Template": [
+  null,
+  "基础模板"
+ ],
+ "Base template": [
+  null,
+  "基础模板"
+ ],
+ "Base template:": [
+  null,
+  "基础模板："
+ ],
  "Boot Order:": [
   null,
-  ""
+  "启动顺序："
  ],
  "Bus": [
   null,
-  ""
+  "总线"
  ],
  "CPU Type:": [
   null,
-  ""
+  "处理器类型："
+ ],
+ "CREATE VM action failed": [
+  null,
+  "创建虚拟机操作失败"
  ],
  "Cancel": [
   null,
@@ -105,23 +133,51 @@ return plural;
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  ""
+  "点击 \"加载远程查看其\" 将下载一个  .vv 文件并加载 $0。"
+ ],
+ "Cluster": [
+  null,
+  "集群"
+ ],
+ "Cluster Templates": [
+  null,
+  "集群模板"
+ ],
+ "Cluster Virtual Machines": [
+  null,
+  "集群虚拟机"
  ],
  "Confirm deletion of $0": [
   null,
-  ""
+  "确认删除 $0"
+ ],
+ "Confirm migration": [
+  null,
+  "确认迁移"
+ ],
+ "Confirm reload:": [
+  null,
+  "确认重新加载："
+ ],
+ "Confirm save:": [
+  null,
+  "确认保存："
+ ],
+ "Connect to oVirt Engine": [
+  null,
+  "连接至 oVirt 引擎"
  ],
  "Connect with Remote Viewer": [
   null,
-  ""
+  "使用远程查看器连接"
  ],
  "Connect with any $0 viewer application.": [
   null,
-  ""
+  "使用任何 $0 查看器应用来连接。"
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  ""
+  "使用任何  SPICE 或 VNC 查看器应用来连接。"
  ],
  "Connection": [
   null,
@@ -129,11 +185,19 @@ return plural;
  ],
  "Console": [
   null,
-  ""
+  "控制台"
  ],
  "Count:": [
   null,
-  ""
+  "计数："
+ ],
+ "Create": [
+  null,
+  "创建"
+ ],
+ "Create VM": [
+  null,
+  "创建虚拟机"
  ],
  "Delete": [
   null,
@@ -141,11 +205,19 @@ return plural;
  ],
  "Delete associated storage files:": [
   null,
-  ""
+  "删除关联的存储文件："
+ ],
+ "Description": [
+  null,
+  "描述"
+ ],
+ "Description:": [
+  null,
+  "描述："
  ],
  "Device": [
   null,
-  ""
+  "设备"
  ],
  "Disks": [
   null,
@@ -153,15 +225,27 @@ return plural;
  ],
  "Download the MSI from $0": [
   null,
-  ""
+  "从 $0 下载MSI"
+ ],
+ "Edit the vdsm.conf": [
+  null,
+  "编辑 vdsm.conf"
  ],
  "Emulated Machine:": [
   null,
-  ""
+  "模拟的机器："
+ ],
+ "Enter New VM name": [
+  null,
+  "输入新的虚拟机名称"
+ ],
+ "FQDN": [
+  null,
+  "FQDN"
  ],
  "File": [
   null,
-  ""
+  "文件"
  ],
  "Force Restart": [
   null,
@@ -173,31 +257,63 @@ return plural;
  ],
  "GB": [
   null,
-  ""
+  "GB"
+ ],
+ "HA": [
+  null,
+  "高可用"
+ ],
+ "HA:": [
+  null,
+  "高可用："
  ],
  "Host": [
   null,
   "主机"
  ],
- "Launch Remote Viewer": [
+ "Host to Maintenance": [
   null,
   ""
  ],
+ "Launch Remote Viewer": [
+  null,
+  "加载 Remote Viewer"
+ ],
+ "Loading data ...": [
+  null,
+  "正在加载数据 ..."
+ ],
+ "MIGRATE action failed": [
+  null,
+  "迁移操作失败"
+ ],
  "Manual Connection": [
   null,
-  ""
+  "手动连接"
+ ],
+ "Memory": [
+  null,
+  "内存"
  ],
  "Memory:": [
   null,
   "内存："
  ],
+ "Migrate To:": [
+  null,
+  "迁移到："
+ ],
  "More Information": [
   null,
-  ""
+  "更多信息"
  ],
  "Name": [
   null,
   "名称"
+ ],
+ "No VM found in oVirt.": [
+  null,
+  "oVirt 中没有找到虚拟机。"
  ],
  "No VM is running or defined on this host": [
   null,
@@ -205,27 +321,67 @@ return plural;
  ],
  "No boot device found": [
   null,
-  ""
+  "没有找到启动设备"
  ],
  "No disks defined for this VM": [
   null,
-  ""
+  "没有为该虚拟机定义磁盘"
  ],
  "No graphics console is defined for this virtual machine.": [
   null,
-  ""
+  "没有为该虚拟机定义图形控制台。"
+ ],
+ "OK": [
+  null,
+  "确认"
+ ],
+ "OS": [
+  null,
+  "操作系统"
+ ],
+ "OS Type:": [
+  null,
+  "操作系统类型："
  ],
  "Ok": [
   null,
   "确认"
  ],
+ "Optimized for:": [
+  null,
+  "优化来："
+ ],
  "Overview": [
   null,
   "概览"
  ],
- "Please start the virtual machine to access its graphics console.": [
+ "Please confirm, the host shall be switched to maintenance mode.": [
   null,
   ""
+ ],
+ "Please provide fully qualified domain name and port of the oVirt engine.": [
+  null,
+  "请提供 oVirt 引擎的完整的合法域名和端口。"
+ ],
+ "Please provide valid oVirt engine fully qualified domain name (FQDN) and port (443 by default)": [
+  null,
+  "请提供有效的 oVirt 引擎完整的合法域名（FQDN）和端口（默认为443 ）"
+ ],
+ "Please refer to oVirt's $0 for more information about Remote Viewer setup.": [
+  null,
+  "请参考 oVirt 的 $0 来获取更新关于远程查看器设置。"
+ ],
+ "Please start the virtual machine to access its graphics console.": [
+  null,
+  "请启动虚拟机来访问其图形控制台。"
+ ],
+ "Please wait till VMs list is loaded from the server.": [
+  null,
+  "请等待直到虚拟机列表从服务器加载。"
+ ],
+ "Please wait till list of templates is loaded from the server.": [
+  null,
+  "请等待直达模板列表从服务器加载。"
  ],
  "Pool": [
   null,
@@ -235,13 +391,33 @@ return plural;
   null,
   "端口"
  ],
+ "Preparing for Maintenance": [
+  null,
+  "正在准备维护"
+ ],
  "Protocol": [
   null,
-  ""
+  "协议"
+ ],
+ "REBOOT action failed": [
+  null,
+  "重启操作失败"
  ],
  "Readonly": [
   null,
-  ""
+  "只读"
+ ],
+ "Register oVirt": [
+  null,
+  "注册 oVirt"
+ ],
+ "Registering oVirt to Cockpit": [
+  null,
+  "注册 oVirt 到 Cockpit"
+ ],
+ "Reload": [
+  null,
+  "重载"
  ],
  "Restart": [
   null,
@@ -251,29 +427,49 @@ return plural;
   null,
   "运行"
  ],
+ "Run Here": [
+  null,
+  "运行到此"
+ ],
+ "SHUTDOWN action failed": [
+  null,
+  "关机操作失败"
+ ],
  "SPICE": [
   null,
-  ""
+  "SPICE"
  ],
  "SPICE Address:": [
   null,
-  ""
+  "SPICE 地址："
  ],
  "SPICE Port:": [
   null,
-  ""
+  "SPICE 端口："
  ],
  "SPICE TLS Port:": [
   null,
-  ""
+  "SPICE TLS 端口："
+ ],
+ "START action failed": [
+  null,
+  "启动操作失败"
+ ],
+ "SUSPEND action failed": [
+  null,
+  "挂起操作失败"
+ ],
+ "Save": [
+  null,
+  "保存"
  ],
  "Send Non-Maskable Interrupt": [
   null,
-  ""
+  "发送非屏蔽中断"
  ],
  "Session": [
   null,
-  "版本"
+  "会话"
  ],
  "Shut Down": [
   null,
@@ -281,17 +477,41 @@ return plural;
  ],
  "Source": [
   null,
-  ""
+  "源"
  ],
  "State": [
   null,
   "状态"
  ],
- "Switch to Desktop Viewer": [
+ "Stateless": [
+  null,
+  "无状态"
+ ],
+ "Stateless:": [
+  null,
+  "无状态："
+ ],
+ "Suspend": [
+  null,
+  "挂起"
+ ],
+ "Switch Host to Maintenance": [
   null,
   ""
  ],
+ "Switch to Desktop Viewer": [
+  null,
+  "切换到桌面查看器"
+ ],
  "Switch to In-Browser Viewer": [
+  null,
+  "切换到浏览器查看器"
+ ],
+ "Switching host to maintenance mode failed. Received error: ": [
+  null,
+  ""
+ ],
+ "Switching host to maintenance mode in progress ...": [
   null,
   ""
  ],
@@ -302,6 +522,18 @@ return plural;
  "Target": [
   null,
   "目标"
+ ],
+ "Template": [
+  null,
+  "模板"
+ ],
+ "Templates": [
+  null,
+  "模板"
+ ],
+ "Templates of $0 cluster": [
+  null,
+  ""
  ],
  "The VM crashed.": [
   null,
@@ -329,7 +561,7 @@ return plural;
  ],
  "The VM is running and will be forced off before deletion.": [
   null,
-  ""
+  "虚拟机正在运行并将在被删除前强制关闭。"
  ],
  "The VM is running.": [
   null,
@@ -339,9 +571,13 @@ return plural;
   null,
   "虚拟机已被客户机电源管理暂停。"
  ],
+ "This virtual machine is not managed by oVirt": [
+  null,
+  "该虚拟机没有被 oVirt 管理"
+ ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
-  ""
+  "升级到一个更新版本的 libvirt 来查看磁盘统计数据"
  ],
  "Usage": [
   null,
@@ -351,49 +587,73 @@ return plural;
   null,
   "已使用"
  ],
+ "VDSM": [
+  null,
+  "VDSM"
+ ],
+ "VDSM Service Management": [
+  null,
+  "VDSM 服务管理"
+ ],
  "VM FORCE OFF action failed": [
   null,
-  ""
+  "虚拟机强制关闭操作失败"
  ],
  "VM FORCE REBOOT action failed": [
   null,
-  ""
+  "虚拟机强制重启操作失败"
  ],
  "VM REBOOT action failed": [
   null,
-  ""
+  "虚拟机重启操作失败"
  ],
  "VM SEND Non-Maskable Interrrupt action failed": [
   null,
-  ""
+  "虚拟机发送非屏蔽中断操作失败"
  ],
  "VM SHUT DOWN action failed": [
   null,
-  ""
+  "虚拟机关机操作失败"
  ],
  "VM START action failed": [
   null,
-  ""
+  "虚拟机启动操作失败"
+ ],
+ "VM icon": [
+  null,
+  "虚拟机图标"
  ],
  "VNC": [
   null,
-  ""
+  "VNC"
  ],
  "VNC Address:": [
   null,
-  ""
+  "VNC 地址："
  ],
  "VNC Port:": [
   null,
-  ""
+  "VNC 端口："
  ],
  "VNC TLS Port:": [
   null,
-  ""
+  "VNC TLS 端口："
+ ],
+ "Version": [
+  null,
+  "版本"
+ ],
+ "Version num": [
+  null,
+  "版本号"
  ],
  "Virtual Machines": [
   null,
   "虚拟机"
+ ],
+ "Virtual Machines of $0 cluster": [
+  null,
+  ""
  ],
  "Volume": [
   null,
@@ -401,59 +661,135 @@ return plural;
  ],
  "Your browser does not support iframes.": [
   null,
-  ""
+  "你的浏览器不支持 iframes。"
  ],
  "cdrom": [
   null,
-  ""
+  "光驱"
+ ],
+ "connecting": [
+  null,
+  "正在连接"
+ ],
+ "cores": [
+  null,
+  "核"
  ],
  "crashed": [
   null,
-  "虚拟机已崩溃。"
+  "已崩溃"
  ],
  "custom": [
   null,
-  ""
+  "自定义"
  ],
  "disabled": [
   null,
-  "禁用"
+  "已禁用"
  ],
  "disk": [
   null,
-  ""
+  "磁盘"
+ ],
+ "down": [
+  null,
+  "已关闭"
  ],
  "dying": [
   null,
-  ""
+  "失活的"
  ],
  "enabled": [
   null,
-  "启用"
+  "已启用"
+ ],
+ "error": [
+  null,
+  "错误"
  ],
  "host": [
   null,
-  ""
+  "主机"
  ],
  "idle": [
   null,
-  ""
+  "休眠的"
+ ],
+ "initializing": [
+  null,
+  "正在初始化"
+ ],
+ "installation failed": [
+  null,
+  "安装失败"
+ ],
+ "installing OS": [
+  null,
+  "正在安装操作系统"
+ ],
+ "kdumping": [
+  null,
+  "正在执行内核转储"
+ ],
+ "maintenance": [
+  null,
+  "维护"
  ],
  "network": [
   null,
-  ""
+  "网络"
  ],
  "no": [
   null,
   "否"
  ],
- "other": [
+ "non operational": [
+  null,
+  "不可操作"
+ ],
+ "non responsive": [
+  null,
+  "未响应"
+ ],
+ "oVirt": [
+  null,
+  "oVirt"
+ ],
+ "oVirt Host State:": [
   null,
   ""
  ],
+ "oVirt Provider installation script failed due to missing arguments.": [
+  null,
+  "oVirt 供应商安装脚本因缺少参数失败。"
+ ],
+ "oVirt Provider installation script failed: Can't write to /etc/cockpit/machines-ovirt.config, try as root.": [
+  null,
+  "oVirt 供应商安装脚本失败：无法写入 /etc/cockpit/machines-ovirt.config，尝试重启。"
+ ],
+ "oVirt installation script failed with following output: ": [
+  null,
+  "oVirt 供应商安装脚本失败，携带以下输出信息："
+ ],
+ "oVirt login in progress": [
+  null,
+  "正在登录oVirt"
+ ],
+ "other": [
+  null,
+  "其他"
+ ],
  "paused": [
   null,
-  ""
+  "已暂停"
+ ],
+ "pending approval": [
+  null,
+  "等待审批"
+ ],
+ "reboot": [
+  null,
+  "重启"
  ],
  "running": [
   null,
@@ -461,15 +797,35 @@ return plural;
  ],
  "shut off": [
   null,
-  ""
+  "关闭"
  ],
  "shutdown": [
   null,
-  ""
+  "关机"
+ ],
+ "sockets": [
+  null,
+  "套接字"
  ],
  "suspended (PM)": [
   null,
-  ""
+  "已挂起 （电源管理）"
+ ],
+ "threads": [
+  null,
+  "线程"
+ ],
+ "unassigned": [
+  null,
+  "未指定"
+ ],
+ "up": [
+  null,
+  "运行中"
+ ],
+ "vCPUs": [
+  null,
+  "虚拟处理器"
  ],
  "vCPUs:": [
   null,

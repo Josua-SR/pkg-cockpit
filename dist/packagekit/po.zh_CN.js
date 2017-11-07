@@ -69,43 +69,43 @@ return plural;
  },
  "$0 more…": [
   null,
-  ""
+  "$0 更多…"
  ],
  "$0 update": [
   "$0 updates",
-  ""
+  "$0 可更新"
  ],
  ", including $1 security fix": [
   ", including $1 security fixes",
-  ""
+  "， 包括 $1 安全性修复"
  ],
  "Apply all updates": [
   null,
-  ""
+  "应用所有更新"
  ],
  "Apply security updates": [
   null,
-  ""
+  "应用安全更新"
  ],
  "Applying updates": [
   null,
-  ""
+  "正在应用更新"
  ],
  "Applying updates failed": [
   null,
-  ""
+  "应用更新失败"
  ],
  "Automatic Updates": [
   null,
-  ""
+  "自动更新"
  ],
  "Available Updates": [
   null,
-  ""
+  "可用的更新"
  ],
  "Bugs": [
   null,
-  ""
+  "漏洞"
  ],
  "Cancel": [
   null,
@@ -117,7 +117,7 @@ return plural;
  ],
  "Cockpit itself will be updated.": [
   null,
-  ""
+  "Cockpit 将被更新。"
  ],
  "Details": [
   null,
@@ -125,11 +125,11 @@ return plural;
  ],
  "Downloaded": [
   null,
-  ""
+  "已下载"
  ],
  "Downloading": [
   null,
-  ""
+  "正在下载"
  ],
  "Ignore": [
   null,
@@ -137,39 +137,39 @@ return plural;
  ],
  "Initializing...": [
   null,
-  ""
+  "正在初始化中..."
  ],
  "Install All Updates": [
   null,
-  ""
+  "安装所有更新"
  ],
  "Install Security Updates": [
   null,
-  ""
+  "安装安全更新"
  ],
  "Installed": [
   null,
-  ""
+  "已安装"
  ],
  "Installing": [
   null,
-  ""
+  "正在安装"
  ],
  "Last checked: $0 ago": [
   null,
-  ""
+  "最后检查于： $0 前"
  ],
  "Loading available updates failed": [
   null,
-  ""
+  "加载可用的更新失败"
  ],
  "Loading available updates, please wait...": [
   null,
-  ""
+  "正在加载可用的更新，请等待..."
  ],
  "More information…": [
   null,
-  ""
+  "更多信息..."
  ],
  "Name": [
   null,
@@ -177,7 +177,7 @@ return plural;
  ],
  "No updates pending": [
   null,
-  ""
+  "没有挂起的更新"
  ],
  "Off": [
   null,
@@ -189,51 +189,51 @@ return plural;
  ],
  "Package information": [
   null,
-  ""
+  "软件包信息"
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "PackageKit 已崩溃"
  ],
  "PackageKit is not installed": [
   null,
-  ""
+  "PackageKit 未安装"
  ],
  "PackageKit reported error code $0": [
   null,
-  ""
+  "PackageKit 已报告错误码 $0"
  ],
  "Refreshing package information": [
   null,
-  ""
+  "刷新软件包信息"
  ],
  "Register…": [
   null,
-  ""
+  "注册…"
  ],
  "Restart Now": [
   null,
-  ""
+  "立刻重启"
  ],
  "Restart Recommended": [
   null,
-  ""
+  "建议重启"
  ],
  "Restarting": [
   null,
-  ""
+  "正在重启"
  ],
  "Security Update": [
   null,
-  ""
+  "安全性更新"
  ],
  "Set up": [
   null,
-  ""
+  "设置"
  ],
  "Setting up": [
   null,
-  ""
+  "设置"
  ],
  "Software Updates": [
   null,
@@ -241,51 +241,51 @@ return plural;
  ],
  "Some other program is currently using the package manager, please wait...": [
   null,
-  ""
+  "某些其他程序正在使用软件包管理器，请等待..."
  ],
  "System is up to date": [
   null,
-  ""
+  "系统已更新到最新"
  ],
  "The following packages were recently updated:": [
   null,
-  ""
+  "最近更新的软件包如下："
  ],
  "The following packages were updated $0:": [
   null,
-  ""
+  "以下软件包被更新 $0："
  ],
  "This system is not registered": [
   null,
-  ""
+  "该系统未注册"
  ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
-  ""
+  "为了获取软件更新，该系统需要注册到红帽，使用红帽消费者门户或一个本地的订阅服务器。"
  ],
  "Unregistered System": [
   null,
-  ""
+  "未注册的系统"
  ],
  "Update History": [
   null,
-  ""
+  "更新历史"
  ],
  "Update Log": [
   null,
-  ""
+  "更新日志"
  ],
  "Updated": [
   null,
-  ""
+  "已更新"
  ],
  "Updated packages may require a restart to take effect.": [
   null,
-  ""
+  "已更新的软件包可能需要重启生效。"
  ],
  "Updates are disabled.": [
   null,
-  ""
+  "更新不可用。"
  ],
  "Updating": [
   null,
@@ -293,11 +293,11 @@ return plural;
  ],
  "Verified": [
   null,
-  ""
+  "已验证"
  ],
  "Verifying": [
   null,
-  ""
+  "正在验证"
  ],
  "Version": [
   null,
@@ -305,59 +305,59 @@ return plural;
  ],
  "View Registration Details": [
   null,
-  ""
+  "查看注册详情"
  ],
  "When you get disconnected, the updates will continue in the background. You can reconnect and resume watching the update progress.": [
   null,
-  ""
+  "当你遇到连接断开，更新将在后台继续。你可以重新连接并恢复观察更新过程。"
  ],
  "You need to re-subscribe this system.": [
   null,
-  ""
+  "你需要重新注册该系统。"
  ],
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,
-  ""
+  "你的服务器将要关闭连接。你可以在其重启后，重新连接。"
  ],
  "and restart the machine automatically.": [
   null,
-  ""
+  "并自动重启机器。"
  ],
  "at": [
   null,
-  "路径"
+  "在"
  ],
  "every day": [
   null,
-  ""
+  "每天"
  ],
  "on Fridays": [
   null,
-  ""
+  "在每周五"
  ],
  "on Mondays": [
   null,
-  ""
+  "在每周一"
  ],
  "on Saturdays": [
   null,
-  ""
+  "在每周六"
  ],
  "on Sundays": [
   null,
-  ""
+  "在每周日"
  ],
  "on Thursdays": [
   null,
-  ""
+  "在每周四"
  ],
  "on Tuesdays": [
   null,
-  ""
+  "在每周二"
  ],
  "on Wednesdays": [
   null,
-  ""
+  "在每周三"
  ],
  "undefined": [
   null,

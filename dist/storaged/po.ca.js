@@ -122,10 +122,6 @@ return plural;
   "$0 any",
   "$0 anys"
  ],
- "$0, $1 free": [
-  null,
-  "$0 amb $1 lliures"
- ],
  "$name (from $host)": [
   null,
   "$name (de $host)"
@@ -218,10 +214,6 @@ return plural;
   null,
   "<span>Partició de $0</span>"
  ],
- "A spare disk needs to be added first before this disk can be removed.": [
-  null,
-  ""
- ],
  "Activate": [
   null,
   "Activa"
@@ -233,10 +225,6 @@ return plural;
  "Add": [
   null,
   "Afegeix"
- ],
- "Add Disks": [
-  null,
-  "Afegeix discs"
  ],
  "Add iSCSI Portal": [
   null,
@@ -277,10 +265,6 @@ return plural;
  "Block device for filesystems": [
   null,
   "Dispositiu de blocs per al sistema de fitxers"
- ],
- "Blocked": [
-  null,
-  "Bloquejat"
  ],
  "Can't delete while unlocked": [
   null,
@@ -410,6 +394,14 @@ return plural;
   null,
   "Personalitzat (introduïu el tipus del sistema de fitxers)"
  ],
+ "Custom encryption options": [
+  null,
+  ""
+ ],
+ "Custom mount options": [
+  null,
+  ""
+ ],
  "DISK IS FAILING": [
   null,
   "EL DISC ESTÀ FALLANT"
@@ -538,10 +530,6 @@ return plural;
   null,
   "Partició estesa"
  ],
- "FAILED": [
-  null,
-  "FALLAT"
- ],
  "Filesystem": [
   null,
   "Sistema de fitxers"
@@ -593,10 +581,6 @@ return plural;
  "Go to now": [
   null,
   "Vés a ara"
- ],
- "In Sync": [
-  null,
-  "En sincronització"
  ],
  "Inactive volume": [
   null,
@@ -662,6 +646,22 @@ return plural;
   null,
   "Punt de muntatge"
  ],
+ "Mount at boot": [
+  null,
+  ""
+ ],
+ "Mount options": [
+  null,
+  ""
+ ],
+ "Mount point can not be empty": [
+  null,
+  ""
+ ],
+ "Mount read only": [
+  null,
+  ""
+ ],
  "Mounted At": [
   null,
   "Muntat a"
@@ -684,15 +684,15 @@ return plural;
  ],
  "Name cannot be empty.": [
   null,
-  ""
+  "El nom no pot estar en blanc."
  ],
  "Name cannot be longer than 127 characters.": [
   null,
-  ""
+  "El nom no pot ser superior als 127 caràcters."
  ],
  "Name cannot contain the character '$0'.": [
   null,
-  ""
+  "El nom no pot contenir el caràcter «$0»."
  ],
  "Name cannot contain whitespace.": [
   null,
@@ -806,10 +806,6 @@ return plural;
   null,
   "Volum físic"
  ],
- "Physical Volumes": [
-  null,
-  "Volums físics"
- ],
  "Physical volume of $0": [
   null,
   "Volum físic de $0"
@@ -922,10 +918,6 @@ return plural;
   null,
   "Rearrencada"
  ],
- "Recovering": [
-  null,
-  "Recuperació"
- ],
  "Recovering RAID Device $target": [
   null,
   ""
@@ -1014,10 +1006,6 @@ return plural;
   null,
   "La mida ha de ser un número"
  ],
- "Spare": [
-  null,
-  "Recanvi"
- ],
  "Start": [
   null,
   "Inicia"
@@ -1098,22 +1086,6 @@ return plural;
   null,
   ""
  ],
- "The RAID device must be running in order to add spare disks.": [
-  null,
-  ""
- ],
- "The RAID device must be running in order to remove disks.": [
-  null,
-  ""
- ],
- "The last disk of a RAID device cannot be removed.": [
-  null,
-  ""
- ],
- "The last physical volume of a volume group cannot be removed.": [
-  null,
-  ""
- ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "A l'usuari <b>$0</b> no se li permet gestionar l'emmagatzematge"
@@ -1121,10 +1093,6 @@ return plural;
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
   null,
   "Hi ha dispositius amb diversos camins al sistema, però no s'està executant el servei multipath."
- ],
- "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
-  null,
-  "No hi ha prou espai lliure als altres llocs per suprimir aquest volum físic. Es necessiten almenys $0 més d'espai lliure."
  ],
  "Thin Logical Volume": [
   null,
@@ -1150,10 +1118,6 @@ return plural;
   null,
   "Aquest dispositiu s'utilitza actualment amb grups de volums.                Si continueu, s'eliminarà dels grups de volums."
  ],
- "This disk cannot be removed while the device is recovering.": [
-  null,
-  "Aquest disc no es pot treure quan s'està recuperant el dispositiu."
- ],
  "This logical volume cannot be made smaller.": [
   null,
   "Aquest volum lògic no es pot fer més petit."
@@ -1174,10 +1138,6 @@ return plural;
   null,
   "Desconegut"
  ],
- "Unknown ($0)": [
-  null,
-  "Desconegut ($0)"
- ],
  "Unknown host name": [
   null,
   "Nom d'amfitrió desconegut"
@@ -1185,6 +1145,14 @@ return plural;
  "Unlock": [
   null,
   "Desbloqueja"
+ ],
+ "Unlock at boot": [
+  null,
+  ""
+ ],
+ "Unlock read only": [
+  null,
+  ""
  ],
  "Unlocking $target": [
   null,
@@ -1241,10 +1209,6 @@ return plural;
  "Volume Groups": [
   null,
   "Grups de volums"
- ],
- "Write-mostly": [
-  null,
-  "Escriptura-majoritària"
  ],
  "Writing": [
   null,

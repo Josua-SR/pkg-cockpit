@@ -85,11 +85,11 @@ return plural;
  ],
  "Apply all updates": [
   null,
-  ""
+  "Застосувати усі оновлення"
  ],
  "Apply security updates": [
   null,
-  ""
+  "Застосувати оновлення захисту"
  ],
  "Applying updates": [
   null,
@@ -101,7 +101,7 @@ return plural;
  ],
  "Automatic Updates": [
   null,
-  ""
+  "Автоматичні оновлення"
  ],
  "Available Updates": [
   null,
@@ -325,7 +325,7 @@ return plural;
  ],
  "and restart the machine automatically.": [
   null,
-  ""
+  "і перезапуск системи автоматично."
  ],
  "at": [
   null,
@@ -333,35 +333,35 @@ return plural;
  ],
  "every day": [
   null,
-  ""
+  "кожного дня"
  ],
  "on Fridays": [
   null,
-  ""
+  "по п'ятницях"
  ],
  "on Mondays": [
   null,
-  ""
+  "по понеділках"
  ],
  "on Saturdays": [
   null,
-  ""
+  "по суботах"
  ],
  "on Sundays": [
   null,
-  ""
+  "по неділях"
  ],
  "on Thursdays": [
   null,
-  ""
+  "по четвергах"
  ],
  "on Tuesdays": [
   null,
-  ""
+  "по вівторках"
  ],
  "on Wednesdays": [
   null,
-  ""
+  "по середах"
  ],
  "undefined": [
   null,

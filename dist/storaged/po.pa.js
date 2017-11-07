@@ -122,10 +122,6 @@ return plural;
   "$0 ਸਾਲ",
   "$0 ਸਾਲ"
  ],
- "$0, $1 free": [
-  null,
-  "$0, $1 ਖਾਲੀ"
- ],
  "$name (from $host)": [
   null,
   "$name ($host ਤੋਂ)"
@@ -218,10 +214,6 @@ return plural;
   null,
   "<span>$0 ਦਾ ਪਾਰਟੀਸ਼ਨ</span>"
  ],
- "A spare disk needs to be added first before this disk can be removed.": [
-  null,
-  ""
- ],
  "Activate": [
   null,
   "ਸਰਗਰਮ ਕਰੋ"
@@ -233,10 +225,6 @@ return plural;
  "Add": [
   null,
   "ਜੋੜੋ"
- ],
- "Add Disks": [
-  null,
-  ""
  ],
  "Add iSCSI Portal": [
   null,
@@ -275,10 +263,6 @@ return plural;
   ""
  ],
  "Block device for filesystems": [
-  null,
-  ""
- ],
- "Blocked": [
   null,
   ""
  ],
@@ -410,6 +394,14 @@ return plural;
   null,
   ""
  ],
+ "Custom encryption options": [
+  null,
+  ""
+ ],
+ "Custom mount options": [
+  null,
+  ""
+ ],
  "DISK IS FAILING": [
   null,
   ""
@@ -538,10 +530,6 @@ return plural;
   null,
   ""
  ],
- "FAILED": [
-  null,
-  ""
- ],
  "Filesystem": [
   null,
   ""
@@ -591,10 +579,6 @@ return plural;
   ""
  ],
  "Go to now": [
-  null,
-  ""
- ],
- "In Sync": [
   null,
   ""
  ],
@@ -661,6 +645,22 @@ return plural;
  "Mount Point": [
   null,
   "ਮਾਊਸ ਪੁਆਇੰਟ"
+ ],
+ "Mount at boot": [
+  null,
+  ""
+ ],
+ "Mount options": [
+  null,
+  ""
+ ],
+ "Mount point can not be empty": [
+  null,
+  ""
+ ],
+ "Mount read only": [
+  null,
+  ""
  ],
  "Mounted At": [
   null,
@@ -806,10 +806,6 @@ return plural;
   null,
   ""
  ],
- "Physical Volumes": [
-  null,
-  ""
- ],
  "Physical volume of $0": [
   null,
   ""
@@ -922,10 +918,6 @@ return plural;
   null,
   "ਮੁਡ਼ ਚਾਲੂ ਕਰੋ"
  ],
- "Recovering": [
-  null,
-  ""
- ],
  "Recovering RAID Device $target": [
   null,
   ""
@@ -1014,10 +1006,6 @@ return plural;
   null,
   "ਆਕਾਰ ਨੰਬਰ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ"
  ],
- "Spare": [
-  null,
-  "ਸਪੇਅਰ"
- ],
  "Start": [
   null,
   "ਸ਼ੁਰੂ ਕਰੋ"
@@ -1098,31 +1086,11 @@ return plural;
   null,
   ""
  ],
- "The RAID device must be running in order to add spare disks.": [
-  null,
-  ""
- ],
- "The RAID device must be running in order to remove disks.": [
-  null,
-  ""
- ],
- "The last disk of a RAID device cannot be removed.": [
-  null,
-  ""
- ],
- "The last physical volume of a volume group cannot be removed.": [
-  null,
-  ""
- ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   ""
  ],
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
-  null,
-  ""
- ],
- "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
   null,
   ""
  ],
@@ -1150,10 +1118,6 @@ return plural;
   null,
   ""
  ],
- "This disk cannot be removed while the device is recovering.": [
-  null,
-  ""
- ],
  "This logical volume cannot be made smaller.": [
   null,
   ""
@@ -1174,15 +1138,19 @@ return plural;
   null,
   ""
  ],
- "Unknown ($0)": [
-  null,
-  ""
- ],
  "Unknown host name": [
   null,
   ""
  ],
  "Unlock": [
+  null,
+  ""
+ ],
+ "Unlock at boot": [
+  null,
+  ""
+ ],
+ "Unlock read only": [
   null,
   ""
  ],
@@ -1241,10 +1209,6 @@ return plural;
  "Volume Groups": [
   null,
   "ਵਾਲੀਅਮ ਗਰੁੱਪ"
- ],
- "Write-mostly": [
-  null,
-  ""
  ],
  "Writing": [
   null,

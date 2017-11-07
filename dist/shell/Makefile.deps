@@ -1,69 +1,69 @@
 # Generated Makefile data for shell
-# Stamp: Wed Oct 18 2017 08:05:46 GMT+0000 (UTC)
+# Stamp: Tue Nov 07 2017 07:34:44 GMT+0000 (UTC)
 
 shell_INPUTS = \
-	$(srcdir)/node_modules/bootstrap/LICENSE \
-	$(srcdir)/node_modules/bootstrap/README.md \
-	$(srcdir)/node_modules/bootstrap/less/variables.less \
-	$(srcdir)/node_modules/bootstrap/package.json \
-	$(srcdir)/node_modules/mustache/LICENSE \
-	$(srcdir)/node_modules/mustache/README.md \
-	$(srcdir)/node_modules/mustache/mustache.js \
-	$(srcdir)/node_modules/mustache/package.json \
-	$(srcdir)/node_modules/patternfly/LICENSE.txt \
-	$(srcdir)/node_modules/patternfly/README.md \
-	$(srcdir)/node_modules/patternfly/package.json \
-	$(srcdir)/node_modules/patternfly/src/less/color-variables.less \
-	$(srcdir)/node_modules/patternfly/src/less/variables.less \
-	$(srcdir)/node_modules/react-lite/LICENSE \
-	$(srcdir)/node_modules/react-lite/README.md \
-	$(srcdir)/node_modules/react-lite/dist/react-lite.js \
-	$(srcdir)/node_modules/react-lite/package.json \
-	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \
-	$(srcdir)/pkg/lib/cockpit-components-file-autocomplete.css \
-	$(srcdir)/pkg/lib/cockpit-components-file-autocomplete.jsx \
-	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
-	$(srcdir)/pkg/lib/credentials-ssh-private-keys.sh \
-	$(srcdir)/pkg/lib/credentials-ssh-remove-key.sh \
-	$(srcdir)/pkg/lib/credentials.js \
-	$(srcdir)/pkg/lib/listing.less \
-	$(srcdir)/pkg/lib/machine-add.html \
-	$(srcdir)/pkg/lib/machine-auth-failed.html \
-	$(srcdir)/pkg/lib/machine-change-auth.html \
-	$(srcdir)/pkg/lib/machine-change-port.html \
-	$(srcdir)/pkg/lib/machine-color-picker.html \
-	$(srcdir)/pkg/lib/machine-dialogs.js \
-	$(srcdir)/pkg/lib/machine-invalid-hostkey.html \
-	$(srcdir)/pkg/lib/machine-not-supported.html \
-	$(srcdir)/pkg/lib/machine-sync-users.html \
-	$(srcdir)/pkg/lib/machine-unknown-hostkey.html \
-	$(srcdir)/pkg/lib/machines.js \
-	$(srcdir)/pkg/lib/mustache.js \
-	$(srcdir)/pkg/lib/page.css \
-	$(srcdir)/pkg/lib/patterns.js \
-	$(srcdir)/pkg/lib/table.css \
-	$(srcdir)/pkg/lib/variables.less \
-	$(srcdir)/pkg/shell/active-pages-dialog.jsx \
-	$(srcdir)/pkg/shell/active-pages.js \
-	$(srcdir)/pkg/shell/active-pages.less \
-	$(srcdir)/pkg/shell/base_index.js \
-	$(srcdir)/pkg/shell/credentials.js \
-	$(srcdir)/pkg/shell/images/server-error.png \
-	$(srcdir)/pkg/shell/images/server-large.png \
-	$(srcdir)/pkg/shell/images/server-small.png \
-	$(srcdir)/pkg/shell/index-no-machines.js \
-	$(srcdir)/pkg/shell/index-stub.js \
-	$(srcdir)/pkg/shell/index.html \
-	$(srcdir)/pkg/shell/index.js \
-	$(srcdir)/pkg/shell/indexes.js \
-	$(srcdir)/pkg/shell/privileges.js \
-	$(srcdir)/pkg/shell/shell.html \
-	$(srcdir)/pkg/shell/shell.less \
-	$(srcdir)/pkg/shell/simple.html \
-	$(srcdir)/pkg/shell/ssh-file-autocomplete.jsx \
-	$(srcdir)/pkg/shell/stub.html \
-	$(srcdir)/pkg/shell/switcher.less \
-	$(srcdir)/pkg/shell/variables.less \
+	node_modules/bootstrap/LICENSE \
+	node_modules/bootstrap/README.md \
+	node_modules/bootstrap/less/variables.less \
+	node_modules/bootstrap/package.json \
+	node_modules/mustache/LICENSE \
+	node_modules/mustache/README.md \
+	node_modules/mustache/mustache.js \
+	node_modules/mustache/package.json \
+	node_modules/patternfly/LICENSE.txt \
+	node_modules/patternfly/README.md \
+	node_modules/patternfly/package.json \
+	node_modules/patternfly/src/less/color-variables.less \
+	node_modules/patternfly/src/less/variables.less \
+	node_modules/react-lite/LICENSE \
+	node_modules/react-lite/README.md \
+	node_modules/react-lite/dist/react-lite.js \
+	node_modules/react-lite/package.json \
+	pkg/lib/cockpit-components-dialog.jsx \
+	pkg/lib/cockpit-components-file-autocomplete.css \
+	pkg/lib/cockpit-components-file-autocomplete.jsx \
+	pkg/lib/cockpit-components-listing.jsx \
+	pkg/lib/credentials-ssh-private-keys.sh \
+	pkg/lib/credentials-ssh-remove-key.sh \
+	pkg/lib/credentials.js \
+	pkg/lib/listing.less \
+	pkg/lib/machine-add.html \
+	pkg/lib/machine-auth-failed.html \
+	pkg/lib/machine-change-auth.html \
+	pkg/lib/machine-change-port.html \
+	pkg/lib/machine-color-picker.html \
+	pkg/lib/machine-dialogs.js \
+	pkg/lib/machine-invalid-hostkey.html \
+	pkg/lib/machine-not-supported.html \
+	pkg/lib/machine-sync-users.html \
+	pkg/lib/machine-unknown-hostkey.html \
+	pkg/lib/machines.js \
+	pkg/lib/mustache.js \
+	pkg/lib/page.css \
+	pkg/lib/patterns.js \
+	pkg/lib/table.css \
+	pkg/lib/variables.less \
+	pkg/shell/active-pages-dialog.jsx \
+	pkg/shell/active-pages.js \
+	pkg/shell/active-pages.less \
+	pkg/shell/base_index.js \
+	pkg/shell/credentials.js \
+	pkg/shell/images/server-error.png \
+	pkg/shell/images/server-large.png \
+	pkg/shell/images/server-small.png \
+	pkg/shell/index-no-machines.js \
+	pkg/shell/index-stub.js \
+	pkg/shell/index.html \
+	pkg/shell/index.js \
+	pkg/shell/indexes.js \
+	pkg/shell/privileges.js \
+	pkg/shell/shell.html \
+	pkg/shell/shell.less \
+	pkg/shell/simple.html \
+	pkg/shell/ssh-file-autocomplete.jsx \
+	pkg/shell/stub.html \
+	pkg/shell/switcher.less \
+	pkg/shell/variables.less \
 	$(NULL)
 
 shell_OUTPUTS = \
@@ -164,129 +164,129 @@ dist/shell/simple.html: dist/shell/Makefile.deps
 
 dist/shell/stub.html: dist/shell/Makefile.deps
 
-$(srcdir)/node_modules/bootstrap/LICENSE:
+node_modules/bootstrap/LICENSE:
 
-$(srcdir)/node_modules/bootstrap/README.md:
+node_modules/bootstrap/README.md:
 
-$(srcdir)/node_modules/bootstrap/less/variables.less:
+node_modules/bootstrap/less/variables.less:
 
-$(srcdir)/node_modules/bootstrap/package.json:
+node_modules/bootstrap/package.json:
 
-$(srcdir)/node_modules/mustache/LICENSE:
+node_modules/mustache/LICENSE:
 
-$(srcdir)/node_modules/mustache/README.md:
+node_modules/mustache/README.md:
 
-$(srcdir)/node_modules/mustache/mustache.js:
+node_modules/mustache/mustache.js:
 
-$(srcdir)/node_modules/mustache/package.json:
+node_modules/mustache/package.json:
 
-$(srcdir)/node_modules/patternfly/LICENSE.txt:
+node_modules/patternfly/LICENSE.txt:
 
-$(srcdir)/node_modules/patternfly/README.md:
+node_modules/patternfly/README.md:
 
-$(srcdir)/node_modules/patternfly/package.json:
+node_modules/patternfly/package.json:
 
-$(srcdir)/node_modules/patternfly/src/less/color-variables.less:
+node_modules/patternfly/src/less/color-variables.less:
 
-$(srcdir)/node_modules/patternfly/src/less/variables.less:
+node_modules/patternfly/src/less/variables.less:
 
-$(srcdir)/node_modules/react-lite/LICENSE:
+node_modules/react-lite/LICENSE:
 
-$(srcdir)/node_modules/react-lite/README.md:
+node_modules/react-lite/README.md:
 
-$(srcdir)/node_modules/react-lite/dist/react-lite.js:
+node_modules/react-lite/dist/react-lite.js:
 
-$(srcdir)/node_modules/react-lite/package.json:
+node_modules/react-lite/package.json:
 
-$(srcdir)/pkg/lib/cockpit-components-dialog.jsx:
+pkg/lib/cockpit-components-dialog.jsx:
 
-$(srcdir)/pkg/lib/cockpit-components-file-autocomplete.css:
+pkg/lib/cockpit-components-file-autocomplete.css:
 
-$(srcdir)/pkg/lib/cockpit-components-file-autocomplete.jsx:
+pkg/lib/cockpit-components-file-autocomplete.jsx:
 
-$(srcdir)/pkg/lib/cockpit-components-listing.jsx:
+pkg/lib/cockpit-components-listing.jsx:
 
-$(srcdir)/pkg/lib/credentials-ssh-private-keys.sh:
+pkg/lib/credentials-ssh-private-keys.sh:
 
-$(srcdir)/pkg/lib/credentials-ssh-remove-key.sh:
+pkg/lib/credentials-ssh-remove-key.sh:
 
-$(srcdir)/pkg/lib/credentials.js:
+pkg/lib/credentials.js:
 
-$(srcdir)/pkg/lib/listing.less:
+pkg/lib/listing.less:
 
-$(srcdir)/pkg/lib/machine-add.html:
+pkg/lib/machine-add.html:
 
-$(srcdir)/pkg/lib/machine-auth-failed.html:
+pkg/lib/machine-auth-failed.html:
 
-$(srcdir)/pkg/lib/machine-change-auth.html:
+pkg/lib/machine-change-auth.html:
 
-$(srcdir)/pkg/lib/machine-change-port.html:
+pkg/lib/machine-change-port.html:
 
-$(srcdir)/pkg/lib/machine-color-picker.html:
+pkg/lib/machine-color-picker.html:
 
-$(srcdir)/pkg/lib/machine-dialogs.js:
+pkg/lib/machine-dialogs.js:
 
-$(srcdir)/pkg/lib/machine-invalid-hostkey.html:
+pkg/lib/machine-invalid-hostkey.html:
 
-$(srcdir)/pkg/lib/machine-not-supported.html:
+pkg/lib/machine-not-supported.html:
 
-$(srcdir)/pkg/lib/machine-sync-users.html:
+pkg/lib/machine-sync-users.html:
 
-$(srcdir)/pkg/lib/machine-unknown-hostkey.html:
+pkg/lib/machine-unknown-hostkey.html:
 
-$(srcdir)/pkg/lib/machines.js:
+pkg/lib/machines.js:
 
-$(srcdir)/pkg/lib/mustache.js:
+pkg/lib/mustache.js:
 
-$(srcdir)/pkg/lib/page.css:
+pkg/lib/page.css:
 
-$(srcdir)/pkg/lib/patterns.js:
+pkg/lib/patterns.js:
 
-$(srcdir)/pkg/lib/table.css:
+pkg/lib/table.css:
 
-$(srcdir)/pkg/lib/variables.less:
+pkg/lib/variables.less:
 
-$(srcdir)/pkg/shell/active-pages-dialog.jsx:
+pkg/shell/active-pages-dialog.jsx:
 
-$(srcdir)/pkg/shell/active-pages.js:
+pkg/shell/active-pages.js:
 
-$(srcdir)/pkg/shell/active-pages.less:
+pkg/shell/active-pages.less:
 
-$(srcdir)/pkg/shell/base_index.js:
+pkg/shell/base_index.js:
 
-$(srcdir)/pkg/shell/credentials.js:
+pkg/shell/credentials.js:
 
-$(srcdir)/pkg/shell/images/server-error.png:
+pkg/shell/images/server-error.png:
 
-$(srcdir)/pkg/shell/images/server-large.png:
+pkg/shell/images/server-large.png:
 
-$(srcdir)/pkg/shell/images/server-small.png:
+pkg/shell/images/server-small.png:
 
-$(srcdir)/pkg/shell/index-no-machines.js:
+pkg/shell/index-no-machines.js:
 
-$(srcdir)/pkg/shell/index-stub.js:
+pkg/shell/index-stub.js:
 
-$(srcdir)/pkg/shell/index.html:
+pkg/shell/index.html:
 
-$(srcdir)/pkg/shell/index.js:
+pkg/shell/index.js:
 
-$(srcdir)/pkg/shell/indexes.js:
+pkg/shell/indexes.js:
 
-$(srcdir)/pkg/shell/privileges.js:
+pkg/shell/privileges.js:
 
-$(srcdir)/pkg/shell/shell.html:
+pkg/shell/shell.html:
 
-$(srcdir)/pkg/shell/shell.less:
+pkg/shell/shell.less:
 
-$(srcdir)/pkg/shell/simple.html:
+pkg/shell/simple.html:
 
-$(srcdir)/pkg/shell/ssh-file-autocomplete.jsx:
+pkg/shell/ssh-file-autocomplete.jsx:
 
-$(srcdir)/pkg/shell/stub.html:
+pkg/shell/stub.html:
 
-$(srcdir)/pkg/shell/switcher.less:
+pkg/shell/switcher.less:
 
-$(srcdir)/pkg/shell/variables.less:
+pkg/shell/variables.less:
 
 WEBPACK_INPUTS += $(shell_INPUTS)
 WEBPACK_OUTPUTS += $(shell_OUTPUTS)

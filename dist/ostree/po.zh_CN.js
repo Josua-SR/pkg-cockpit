@@ -81,7 +81,7 @@ return plural;
  ],
  "- Add New Repository": [
   null,
-  "存储库"
+  "添加新的源"
  ],
  "Add": [
   null,
@@ -89,7 +89,7 @@ return plural;
  ],
  "Add Another Key": [
   null,
-  ""
+  "添加另一个密钥"
  ],
  "Additions": [
   null,
@@ -105,7 +105,7 @@ return plural;
  ],
  "Begins with '-----BEGIN PGP PUBLIC KEY BLOCK-----'": [
   null,
-  ""
+  "以 '-----BEGIN PGP PUBLIC KEY BLOCK-----' 开始"
  ],
  "Cancel": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "Change Repository": [
   null,
-  "存储库"
+  "变更源"
  ],
  "Check for Updates": [
   null,
@@ -129,11 +129,11 @@ return plural;
  ],
  "Couldn't load settings for '$0': $1": [
   null,
-  "不能载入用户数据"
+  "不能为 '$0': $1 加载设置"
  ],
  "Currently using:": [
   null,
-  ""
+  "当前正在使用："
  ],
  "Default": [
   null,
@@ -149,7 +149,7 @@ return plural;
  ],
  "Error loading remotes: $0": [
   null,
-  "删除警告： $0 时出错"
+  "加载远程： $0 出错"
  ],
  "Expired Signature": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "No configuration data found": [
   null,
-  "错误的配置"
+  "未找到配置数据"
  ],
  "No signature avaliable": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "Origin": [
   null,
-  ""
+  "Origin"
  ],
  "Packages": [
   null,
@@ -217,7 +217,7 @@ return plural;
  ],
  "Please provide a valid URL": [
   null,
-  "请提供有效的名称"
+  "请提供有效的网址"
  ],
  "Please provide a valid name": [
   null,
@@ -225,7 +225,7 @@ return plural;
  ],
  "Rebase and Reboot": [
   null,
-  "更新并重启"
+  "重构并重启"
  ],
  "Receiving delta parts": [
   null,
@@ -309,7 +309,7 @@ return plural;
  ],
  "Use trusted GPG key": [
   null,
-  ""
+  "使用可信的 GPG 密钥"
  ],
  "Version": [
   null,
@@ -325,6 +325,6 @@ return plural;
  ],
  "at": [
   null,
-  "路径"
+  "在"
  ]
 }));

@@ -129,10 +129,6 @@ return plural;
   "$0 роки",
   "$0 років"
  ],
- "$0, $1 free": [
-  null,
-  "$0, вільно $1"
- ],
  "$name (from $host)": [
   null,
   "$name (з $host)"
@@ -225,10 +221,6 @@ return plural;
   null,
   "<span>Розділ $0</span>"
  ],
- "A spare disk needs to be added first before this disk can be removed.": [
-  null,
-  "Перш ніж вилучати цей диск, слід додати резервний диск."
- ],
  "Activate": [
   null,
   "Задіяти"
@@ -240,10 +232,6 @@ return plural;
  "Add": [
   null,
   "Додати"
- ],
- "Add Disks": [
-  null,
-  "Додати диски"
  ],
  "Add iSCSI Portal": [
   null,
@@ -284,10 +272,6 @@ return plural;
  "Block device for filesystems": [
   null,
   "Блоковий пристрій для файлових систем"
- ],
- "Blocked": [
-  null,
-  "Заблоковано"
  ],
  "Can't delete while unlocked": [
   null,
@@ -417,6 +401,14 @@ return plural;
   null,
   "Нетипова (Вкажіть тип файлової системи)"
  ],
+ "Custom encryption options": [
+  null,
+  ""
+ ],
+ "Custom mount options": [
+  null,
+  ""
+ ],
  "DISK IS FAILING": [
   null,
   "ДИСК НЕПРАЦЕЗДАТНИЙ"
@@ -545,10 +537,6 @@ return plural;
   null,
   "Розширений розділ"
  ],
- "FAILED": [
-  null,
-  "ПОМИЛКА"
- ],
  "Filesystem": [
   null,
   "Файлова система"
@@ -600,10 +588,6 @@ return plural;
  "Go to now": [
   null,
   "Перейти зараз"
- ],
- "In Sync": [
-  null,
-  "Синхронізовано"
  ],
  "Inactive volume": [
   null,
@@ -668,6 +652,22 @@ return plural;
  "Mount Point": [
   null,
   "Точка монтування"
+ ],
+ "Mount at boot": [
+  null,
+  ""
+ ],
+ "Mount options": [
+  null,
+  ""
+ ],
+ "Mount point can not be empty": [
+  null,
+  ""
+ ],
+ "Mount read only": [
+  null,
+  ""
  ],
  "Mounted At": [
   null,
@@ -813,10 +813,6 @@ return plural;
   null,
   "Фізичний том"
  ],
- "Physical Volumes": [
-  null,
-  "Фізичні томи"
- ],
  "Physical volume of $0": [
   null,
   "Фізичний том $0"
@@ -929,10 +925,6 @@ return plural;
   null,
   "Перезавантажити"
  ],
- "Recovering": [
-  null,
-  "Відновлюємо"
- ],
  "Recovering RAID Device $target": [
   null,
   "Відновлюємо пристрій RAID $target"
@@ -1021,10 +1013,6 @@ return plural;
   null,
   "Розмір має бути числом"
  ],
- "Spare": [
-  null,
-  "Запас"
- ],
  "Start": [
   null,
   "Почати"
@@ -1105,22 +1093,6 @@ return plural;
   null,
   "Масив RAID перебуває у стані із погіршеними властивостями"
  ],
- "The RAID device must be running in order to add spare disks.": [
-  null,
-  "Для додавання резервних дисків має працювати пристрій RAID."
- ],
- "The RAID device must be running in order to remove disks.": [
-  null,
-  "Для вилучення дисків має працювати пристрій RAID."
- ],
- "The last disk of a RAID device cannot be removed.": [
-  null,
-  "Останній диск пристрою RAID вилучати не можна."
- ],
- "The last physical volume of a volume group cannot be removed.": [
-  null,
-  "Не можна вилучати останній фізичний том із групи томів."
- ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "Користувачу <b>$0</b> не дозволено керувати сховищем даних"
@@ -1128,10 +1100,6 @@ return plural;
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
   null,
   "У системі є пристрої із декількома шляхами доступу, але службу multipath не запущено."
- ],
- "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
-  null,
-  "Для вилучення цього фізичного тому недостатньо вільного місця. Потрібно принаймні $0 вільного місця."
  ],
  "Thin Logical Volume": [
   null,
@@ -1157,10 +1125,6 @@ return plural;
   null,
   "Цей пристрій зараз використовується для груп томів. Якщо дію буде виконано, пристрій буде вилучено із його груп томів."
  ],
- "This disk cannot be removed while the device is recovering.": [
-  null,
-  "Цей диск не можна вилучати, доки пристрій перебуває у стані відновлення."
- ],
  "This logical volume cannot be made smaller.": [
   null,
   "Логічний том не можна зменшувати."
@@ -1181,10 +1145,6 @@ return plural;
   null,
   "Невідомий"
  ],
- "Unknown ($0)": [
-  null,
-  "Невідомий ($0)"
- ],
  "Unknown host name": [
   null,
   "Невідома назва вузла"
@@ -1192,6 +1152,14 @@ return plural;
  "Unlock": [
   null,
   "Розблокувати"
+ ],
+ "Unlock at boot": [
+  null,
+  ""
+ ],
+ "Unlock read only": [
+  null,
+  ""
  ],
  "Unlocking $target": [
   null,
@@ -1248,10 +1216,6 @@ return plural;
  "Volume Groups": [
   null,
   "Групи томів"
- ],
- "Write-mostly": [
-  null,
-  "Здебільшого запис"
  ],
  "Writing": [
   null,

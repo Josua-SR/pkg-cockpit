@@ -341,11 +341,11 @@ return plural;
  ],
  "Condition $0=$1 was not met": [
   null,
-  ""
+  "条件 $0=$1 不满足"
  ],
  "Condition failed": [
   null,
-  ""
+  "条件失败"
  ],
  "Create Timer": [
   null,
@@ -597,7 +597,7 @@ return plural;
  ],
  "Not authorized to upload-report": [
   null,
-  ""
+  "没有授权来上传报告"
  ],
  "Not synchronized": [
   null,
@@ -617,7 +617,7 @@ return plural;
  ],
  "Only Problems": [
   null,
-  ""
+  "仅有问题"
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
@@ -653,15 +653,15 @@ return plural;
  ],
  "Problems, Errors": [
   null,
-  ""
+  "问题，错误"
  ],
  "Problems, Errors, Warnings": [
   null,
-  ""
+  "问题，错误，警告"
  ],
  "Problems, Errors, Warnings, Notices": [
   null,
-  ""
+  "问题，错误，警告，通知"
  ],
  "Real Host Name": [
   null,
@@ -709,11 +709,11 @@ return plural;
  ],
  "Reporter 'reporter-ureport' not found.": [
   null,
-  ""
+  "未发现报告器 'reporter-ureport'。"
  ],
  "Reporting was unsucessful. Try running `reporter-ureport -d ": [
   null,
-  ""
+  "报告未执行成功。尝试运行`reporter-ureport -d "
  ],
  "Reset": [
   null,
@@ -765,7 +765,7 @@ return plural;
  ],
  "Severity": [
   null,
-  ""
+  "严重性"
  ],
  "Show fingerprints": [
   null,
@@ -853,7 +853,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to shutdown or restart this server": [
   null,
-  ""
+  "用户 <b>$0</b> 不被允许来关闭或重启该服务器"
  ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,

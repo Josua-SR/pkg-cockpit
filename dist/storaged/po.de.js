@@ -122,10 +122,6 @@ return plural;
   "$0 Jahr",
   "$0 Jahre"
  ],
- "$0, $1 free": [
-  null,
-  ""
- ],
  "$name (from $host)": [
   null,
   "$name (von $host)"
@@ -218,10 +214,6 @@ return plural;
   null,
   "<span>Partition von $0</span>"
  ],
- "A spare disk needs to be added first before this disk can be removed.": [
-  null,
-  ""
- ],
  "Activate": [
   null,
   "Aktivieren"
@@ -233,10 +225,6 @@ return plural;
  "Add": [
   null,
   "Hinzufügen"
- ],
- "Add Disks": [
-  null,
-  "Datenträger hinzufügen"
  ],
  "Add iSCSI Portal": [
   null,
@@ -277,10 +265,6 @@ return plural;
  "Block device for filesystems": [
   null,
   ""
- ],
- "Blocked": [
-  null,
-  "Gesperrt"
  ],
  "Can't delete while unlocked": [
   null,
@@ -410,6 +394,14 @@ return plural;
   null,
   "Benutzerdefiniert (Geben Sie den Dateisystemtyp an)"
  ],
+ "Custom encryption options": [
+  null,
+  ""
+ ],
+ "Custom mount options": [
+  null,
+  ""
+ ],
  "DISK IS FAILING": [
   null,
   "Datenträger ist FEHLERHAFT"
@@ -538,10 +530,6 @@ return plural;
   null,
   "Erweiterte Partition"
  ],
- "FAILED": [
-  null,
-  "KAPUTT"
- ],
  "Filesystem": [
   null,
   "Dateisystem"
@@ -593,10 +581,6 @@ return plural;
  "Go to now": [
   null,
   "Zu 'Jetzt' gehen"
- ],
- "In Sync": [
-  null,
-  "Synchron"
  ],
  "Inactive volume": [
   null,
@@ -661,6 +645,22 @@ return plural;
  "Mount Point": [
   null,
   "Einhängestelle"
+ ],
+ "Mount at boot": [
+  null,
+  ""
+ ],
+ "Mount options": [
+  null,
+  ""
+ ],
+ "Mount point can not be empty": [
+  null,
+  ""
+ ],
+ "Mount read only": [
+  null,
+  ""
  ],
  "Mounted At": [
   null,
@@ -806,10 +806,6 @@ return plural;
   null,
   ""
  ],
- "Physical Volumes": [
-  null,
-  ""
- ],
  "Physical volume of $0": [
   null,
   ""
@@ -922,10 +918,6 @@ return plural;
   null,
   "Neustart"
  ],
- "Recovering": [
-  null,
-  "Am Erholen"
- ],
  "Recovering RAID Device $target": [
   null,
   "Stoppe RAID-Gerät $target"
@@ -1014,10 +1006,6 @@ return plural;
   null,
   "Größe muss eine Zahl sein"
  ],
- "Spare": [
-  null,
-  "Ersatz"
- ],
  "Start": [
   null,
   "Starten"
@@ -1098,31 +1086,11 @@ return plural;
   null,
   "Das RAID-Array befindet sich in einem degradierten Zustand"
  ],
- "The RAID device must be running in order to add spare disks.": [
-  null,
-  ""
- ],
- "The RAID device must be running in order to remove disks.": [
-  null,
-  ""
- ],
- "The last disk of a RAID device cannot be removed.": [
-  null,
-  ""
- ],
- "The last physical volume of a volume group cannot be removed.": [
-  null,
-  "Der letzte physische Datenträger einer Datenträgergruppe kann nicht entfernt werden."
- ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "Der Benutzer <b>$0</b> hat keine Rechte, Speicher zu verwalten."
  ],
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
-  null,
-  ""
- ],
- "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
   null,
   ""
  ],
@@ -1150,10 +1118,6 @@ return plural;
   null,
   ""
  ],
- "This disk cannot be removed while the device is recovering.": [
-  null,
-  ""
- ],
  "This logical volume cannot be made smaller.": [
   null,
   "Dieser logische Datenträger kann nicht verkleinert werden."
@@ -1174,10 +1138,6 @@ return plural;
   null,
   "Unbekannt"
  ],
- "Unknown ($0)": [
-  null,
-  "Unbekannt ($0)"
- ],
  "Unknown host name": [
   null,
   "Unbekannter Host-Name"
@@ -1185,6 +1145,14 @@ return plural;
  "Unlock": [
   null,
   "Öffnen"
+ ],
+ "Unlock at boot": [
+  null,
+  ""
+ ],
+ "Unlock read only": [
+  null,
+  ""
  ],
  "Unlocking $target": [
   null,
@@ -1241,10 +1209,6 @@ return plural;
  "Volume Groups": [
   null,
   "Datenträgerverbünde"
- ],
- "Write-mostly": [
-  null,
-  "Hauptsächlich Schreiben"
  ],
  "Writing": [
   null,

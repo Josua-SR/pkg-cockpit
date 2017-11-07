@@ -77,19 +77,19 @@ return plural;
  ],
  "Compress crash dumps to save space": [
   null,
-  ""
+  "压缩故障转储到保存空间"
  ],
  "Compression": [
   null,
-  ""
+  "压缩"
  ],
  "Crash dump location": [
   null,
-  ""
+  "故障转储位置"
  ],
  "Crash system": [
   null,
-  ""
+  "故障系统"
  ],
  "Directory": [
   null,
@@ -97,15 +97,15 @@ return plural;
  ],
  "Directory $0 isn't writable or doesn't exist.": [
   null,
-  ""
+  "目录 $0 不可写或不存在。"
  ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
-  ""
+  "Kdump 服务未安装。请保证软件包 kexec-tools 已安装。"
  ],
  "Kernel Dump": [
   null,
-  ""
+  "内核转储"
  ],
  "Loading...": [
   null,
@@ -113,15 +113,15 @@ return plural;
  ],
  "Local Filesystem": [
   null,
-  "无文件系统"
+  "本地文件系统"
  ],
  "Location": [
   null,
-  "挂载位置"
+  "位置"
  ],
  "More details": [
   null,
-  "方案详情"
+  "更多详情"
  ],
  "Mount": [
   null,
@@ -129,11 +129,11 @@ return plural;
  ],
  "No configuration found": [
   null,
-  "错误的配置"
+  "未找到配置"
  ],
  "No memory reserved. Append a crashkernel option to the kernel command line (e.g. in /etc/default/grub) to reserve memory at boot time. Example: crashkernel=512M": [
   null,
-  ""
+  "有内存预留。增加一个 crashkernel 选项到内核命令行（例如在 /etc/default/grub 文件中）在启动时预留内存。例如：crashkernel=512M"
  ],
  "None": [
   null,
@@ -153,27 +153,27 @@ return plural;
  ],
  "On a mounted device": [
   null,
-  ""
+  "在一个已挂载的设备上"
  ],
  "Raw to a device": [
   null,
-  "Rados 块设备"
+  "格式化设备"
  ],
  "Reading...": [
   null,
-  "读取中"
+  "读取中..."
  ],
  "Remote over NFS": [
   null,
-  "移除角色"
+  "通过 NFS 远程"
  ],
  "Remote over SSH": [
   null,
-  "移除角色"
+  "通过 SSH 远程"
  ],
  "Reserved memory": [
   null,
-  ""
+  "保留内存"
  ],
  "Server": [
   null,
@@ -181,67 +181,67 @@ return plural;
  ],
  "Service has an error": [
   null,
-  "服务名称"
+  "服务有一个错误"
  ],
  "Service is running": [
   null,
-  "虚拟机正在运行。"
+  "服务正在运行"
  ],
  "Service is starting": [
   null,
-  "正在重启主机"
+  "服务正在启动"
  ],
  "Service is stopped": [
   null,
-  "服务"
+  "服务已停止"
  ],
  "Service is stopping": [
   null,
-  "服务日志"
+  "服务正在停止"
  ],
  "Test Configuration": [
   null,
-  "配置"
+  "测试配置"
  ],
  "Test is only available while the kdump service is running.": [
   null,
-  ""
+  "测试仅在 kdump 服务已运行时可用。"
  ],
  "Test kdump settings": [
   null,
-  "组设置"
+  "测试内核转储设置"
  ],
  "This will test kdump settings by crashing the kernel and thereby the system. Depending on the settings, the system may not automatically reboot and the process may take a while.": [
   null,
-  ""
+  "这将通过崩溃内核和系统并测试 kdump 设置。依赖于这些设置，系统也许不会自动重启，并且过程将持续一段时间。"
  ],
  "This will test the kdump configuration by crashing the kernel.": [
   null,
-  ""
+  "这将通过崩溃内核来测试 kdump 配置。"
  ],
  "Unable to apply settings: $0": [
   null,
-  "无法获取警告： $0"
+  "无法应用设置： $0"
  ],
  "Use the setting in /etc/kdump.conf": [
   null,
-  ""
+  "使用 /etc/kdump.conf 中的设置"
  ],
  "invalid: multiple targets defined": [
   null,
-  ""
+  "无效：定义了多个目标"
  ],
  "kdump status": [
   null,
-  ""
+  "kdump 状态"
  ],
  "locally in $0": [
   null,
-  ""
+  "位于 $0 本地"
  ],
  "ssh key": [
   null,
-  ""
+  "SSH 密钥"
  ],
  "undefined": [
   null,

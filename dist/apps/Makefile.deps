@@ -1,25 +1,26 @@
 # Generated Makefile data for apps
-# Stamp: Wed Oct 18 2017 08:05:39 GMT+0000 (UTC)
+# Stamp: Tue Nov 07 2017 07:34:35 GMT+0000 (UTC)
 
 apps_INPUTS = \
-	$(srcdir)/node_modules/react-lite/LICENSE \
-	$(srcdir)/node_modules/react-lite/README.md \
-	$(srcdir)/node_modules/react-lite/dist/react-lite.js \
-	$(srcdir)/node_modules/react-lite/package.json \
-	$(srcdir)/pkg/apps/application-list.jsx \
-	$(srcdir)/pkg/apps/application.css \
-	$(srcdir)/pkg/apps/application.jsx \
-	$(srcdir)/pkg/apps/appstream.js \
-	$(srcdir)/pkg/apps/default.png \
-	$(srcdir)/pkg/apps/index.html \
-	$(srcdir)/pkg/apps/index.jsx \
-	$(srcdir)/pkg/apps/packagekit.js \
-	$(srcdir)/pkg/apps/utils.jsx \
-	$(srcdir)/pkg/apps/watch-appstream.py \
-	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \
-	$(srcdir)/pkg/lib/page.css \
-	$(srcdir)/pkg/lib/python.jsx \
-	$(srcdir)/pkg/lib/table.css \
+	node_modules/react-lite/LICENSE \
+	node_modules/react-lite/README.md \
+	node_modules/react-lite/dist/react-lite.js \
+	node_modules/react-lite/package.json \
+	pkg/apps/application-list.jsx \
+	pkg/apps/application.css \
+	pkg/apps/application.jsx \
+	pkg/apps/appstream.js \
+	pkg/apps/default.png \
+	pkg/apps/index.html \
+	pkg/apps/index.jsx \
+	pkg/apps/packagekit.js \
+	pkg/apps/utils.jsx \
+	pkg/apps/watch-appstream.py \
+	pkg/lib/cockpit-components-dialog.jsx \
+	pkg/lib/inotify.py \
+	pkg/lib/page.css \
+	pkg/lib/python.jsx \
+	pkg/lib/table.css \
 	$(NULL)
 
 apps_OUTPUTS = \
@@ -52,7 +53,7 @@ apps_TESTS = \
 
 dist/apps/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/react-lite/dist/react-lite.js -N pkg/apps/application-list.jsx -N pkg/apps/application.css -N pkg/apps/application.jsx -N pkg/apps/appstream.js -N pkg/apps/default.png -N pkg/apps/index.html -N pkg/apps/index.jsx -N pkg/apps/packagekit.js -N pkg/apps/utils.jsx -N pkg/apps/watch-appstream.py -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/page.css -N pkg/lib/python.jsx -N pkg/lib/table.css $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/react-lite/dist/react-lite.js -N pkg/apps/application-list.jsx -N pkg/apps/application.css -N pkg/apps/application.jsx -N pkg/apps/appstream.js -N pkg/apps/default.png -N pkg/apps/index.html -N pkg/apps/index.jsx -N pkg/apps/packagekit.js -N pkg/apps/utils.jsx -N pkg/apps/watch-appstream.py -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/inotify.py -N pkg/lib/page.css -N pkg/lib/python.jsx -N pkg/lib/table.css $< > $@.tmp && mv $@.tmp $@
 
 dist/apps/Makefile.deps: $(WEBPACK_CONFIG) $(apps_INPUTS)
 	$(WEBPACK_RULE) -d dist/apps/Makefile.deps $(WEBPACK_CONFIG)
@@ -69,41 +70,43 @@ dist/apps/default.png: dist/apps/Makefile.deps
 
 dist/apps/index.html: dist/apps/Makefile.deps
 
-$(srcdir)/node_modules/react-lite/LICENSE:
+node_modules/react-lite/LICENSE:
 
-$(srcdir)/node_modules/react-lite/README.md:
+node_modules/react-lite/README.md:
 
-$(srcdir)/node_modules/react-lite/dist/react-lite.js:
+node_modules/react-lite/dist/react-lite.js:
 
-$(srcdir)/node_modules/react-lite/package.json:
+node_modules/react-lite/package.json:
 
-$(srcdir)/pkg/apps/application-list.jsx:
+pkg/apps/application-list.jsx:
 
-$(srcdir)/pkg/apps/application.css:
+pkg/apps/application.css:
 
-$(srcdir)/pkg/apps/application.jsx:
+pkg/apps/application.jsx:
 
-$(srcdir)/pkg/apps/appstream.js:
+pkg/apps/appstream.js:
 
-$(srcdir)/pkg/apps/default.png:
+pkg/apps/default.png:
 
-$(srcdir)/pkg/apps/index.html:
+pkg/apps/index.html:
 
-$(srcdir)/pkg/apps/index.jsx:
+pkg/apps/index.jsx:
 
-$(srcdir)/pkg/apps/packagekit.js:
+pkg/apps/packagekit.js:
 
-$(srcdir)/pkg/apps/utils.jsx:
+pkg/apps/utils.jsx:
 
-$(srcdir)/pkg/apps/watch-appstream.py:
+pkg/apps/watch-appstream.py:
 
-$(srcdir)/pkg/lib/cockpit-components-dialog.jsx:
+pkg/lib/cockpit-components-dialog.jsx:
 
-$(srcdir)/pkg/lib/page.css:
+pkg/lib/inotify.py:
 
-$(srcdir)/pkg/lib/python.jsx:
+pkg/lib/page.css:
 
-$(srcdir)/pkg/lib/table.css:
+pkg/lib/python.jsx:
+
+pkg/lib/table.css:
 
 WEBPACK_INPUTS += $(apps_INPUTS)
 WEBPACK_OUTPUTS += $(apps_OUTPUTS)

@@ -1,14 +1,14 @@
 # Generated Makefile data for sosreport
-# Stamp: Wed Oct 18 2017 08:04:22 GMT+0000 (UTC)
+# Stamp: Tue Nov 07 2017 07:33:12 GMT+0000 (UTC)
 
 sosreport_INPUTS = \
-	$(srcdir)/pkg/lib/page.css \
-	$(srcdir)/pkg/lib/table.css \
-	$(srcdir)/pkg/sosreport/index.html \
-	$(srcdir)/pkg/sosreport/index.js \
-	$(srcdir)/pkg/sosreport/run-sosreport.sh \
-	$(srcdir)/pkg/sosreport/sosreport.css \
-	$(srcdir)/pkg/sosreport/sosreport.png \
+	pkg/lib/page.css \
+	pkg/lib/table.css \
+	pkg/sosreport/index.html \
+	pkg/sosreport/index.js \
+	pkg/sosreport/run-sosreport.sh \
+	pkg/sosreport/sosreport.css \
+	pkg/sosreport/sosreport.png \
 	$(NULL)
 
 sosreport_OUTPUTS = \
@@ -58,19 +58,19 @@ dist/sosreport/sosreport.min.js.map: dist/sosreport/Makefile.deps
 
 dist/sosreport/sosreport.png: dist/sosreport/Makefile.deps
 
-$(srcdir)/pkg/lib/page.css:
+pkg/lib/page.css:
 
-$(srcdir)/pkg/lib/table.css:
+pkg/lib/table.css:
 
-$(srcdir)/pkg/sosreport/index.html:
+pkg/sosreport/index.html:
 
-$(srcdir)/pkg/sosreport/index.js:
+pkg/sosreport/index.js:
 
-$(srcdir)/pkg/sosreport/run-sosreport.sh:
+pkg/sosreport/run-sosreport.sh:
 
-$(srcdir)/pkg/sosreport/sosreport.css:
+pkg/sosreport/sosreport.css:
 
-$(srcdir)/pkg/sosreport/sosreport.png:
+pkg/sosreport/sosreport.png:
 
 WEBPACK_INPUTS += $(sosreport_INPUTS)
 WEBPACK_OUTPUTS += $(sosreport_OUTPUTS)

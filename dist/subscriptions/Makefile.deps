@@ -1,33 +1,33 @@
 # Generated Makefile data for subscriptions
-# Stamp: Wed Oct 18 2017 08:05:46 GMT+0000 (UTC)
+# Stamp: Tue Nov 07 2017 07:34:44 GMT+0000 (UTC)
 
 subscriptions_INPUTS = \
-	$(srcdir)/node_modules/bootstrap/LICENSE \
-	$(srcdir)/node_modules/bootstrap/README.md \
-	$(srcdir)/node_modules/bootstrap/less/variables.less \
-	$(srcdir)/node_modules/bootstrap/package.json \
-	$(srcdir)/node_modules/patternfly/LICENSE.txt \
-	$(srcdir)/node_modules/patternfly/README.md \
-	$(srcdir)/node_modules/patternfly/package.json \
-	$(srcdir)/node_modules/patternfly/src/less/color-variables.less \
-	$(srcdir)/node_modules/patternfly/src/less/variables.less \
-	$(srcdir)/node_modules/react-lite/LICENSE \
-	$(srcdir)/node_modules/react-lite/README.md \
-	$(srcdir)/node_modules/react-lite/dist/react-lite.js \
-	$(srcdir)/node_modules/react-lite/package.json \
-	$(srcdir)/pkg/lib/cockpit-components-dialog.jsx \
-	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
-	$(srcdir)/pkg/lib/cockpit-components-select.jsx \
-	$(srcdir)/pkg/lib/listing.less \
-	$(srcdir)/pkg/lib/page.css \
-	$(srcdir)/pkg/lib/table.css \
-	$(srcdir)/pkg/lib/variables.less \
-	$(srcdir)/pkg/subscriptions/index.html \
-	$(srcdir)/pkg/subscriptions/main.js \
-	$(srcdir)/pkg/subscriptions/subscriptions-client.js \
-	$(srcdir)/pkg/subscriptions/subscriptions-register.jsx \
-	$(srcdir)/pkg/subscriptions/subscriptions-view.jsx \
-	$(srcdir)/pkg/subscriptions/subscriptions.css \
+	node_modules/bootstrap/LICENSE \
+	node_modules/bootstrap/README.md \
+	node_modules/bootstrap/less/variables.less \
+	node_modules/bootstrap/package.json \
+	node_modules/patternfly/LICENSE.txt \
+	node_modules/patternfly/README.md \
+	node_modules/patternfly/package.json \
+	node_modules/patternfly/src/less/color-variables.less \
+	node_modules/patternfly/src/less/variables.less \
+	node_modules/react-lite/LICENSE \
+	node_modules/react-lite/README.md \
+	node_modules/react-lite/dist/react-lite.js \
+	node_modules/react-lite/package.json \
+	pkg/lib/cockpit-components-dialog.jsx \
+	pkg/lib/cockpit-components-listing.jsx \
+	pkg/lib/cockpit-components-select.jsx \
+	pkg/lib/listing.less \
+	pkg/lib/page.css \
+	pkg/lib/table.css \
+	pkg/lib/variables.less \
+	pkg/subscriptions/index.html \
+	pkg/subscriptions/main.js \
+	pkg/subscriptions/subscriptions-client.js \
+	pkg/subscriptions/subscriptions-register.jsx \
+	pkg/subscriptions/subscriptions-view.jsx \
+	pkg/subscriptions/subscriptions.css \
 	$(NULL)
 
 subscriptions_OUTPUTS = \
@@ -73,57 +73,57 @@ dist/subscriptions/subscriptions.min.js: dist/subscriptions/Makefile.deps
 
 dist/subscriptions/subscriptions.min.js.map: dist/subscriptions/Makefile.deps
 
-$(srcdir)/node_modules/bootstrap/LICENSE:
+node_modules/bootstrap/LICENSE:
 
-$(srcdir)/node_modules/bootstrap/README.md:
+node_modules/bootstrap/README.md:
 
-$(srcdir)/node_modules/bootstrap/less/variables.less:
+node_modules/bootstrap/less/variables.less:
 
-$(srcdir)/node_modules/bootstrap/package.json:
+node_modules/bootstrap/package.json:
 
-$(srcdir)/node_modules/patternfly/LICENSE.txt:
+node_modules/patternfly/LICENSE.txt:
 
-$(srcdir)/node_modules/patternfly/README.md:
+node_modules/patternfly/README.md:
 
-$(srcdir)/node_modules/patternfly/package.json:
+node_modules/patternfly/package.json:
 
-$(srcdir)/node_modules/patternfly/src/less/color-variables.less:
+node_modules/patternfly/src/less/color-variables.less:
 
-$(srcdir)/node_modules/patternfly/src/less/variables.less:
+node_modules/patternfly/src/less/variables.less:
 
-$(srcdir)/node_modules/react-lite/LICENSE:
+node_modules/react-lite/LICENSE:
 
-$(srcdir)/node_modules/react-lite/README.md:
+node_modules/react-lite/README.md:
 
-$(srcdir)/node_modules/react-lite/dist/react-lite.js:
+node_modules/react-lite/dist/react-lite.js:
 
-$(srcdir)/node_modules/react-lite/package.json:
+node_modules/react-lite/package.json:
 
-$(srcdir)/pkg/lib/cockpit-components-dialog.jsx:
+pkg/lib/cockpit-components-dialog.jsx:
 
-$(srcdir)/pkg/lib/cockpit-components-listing.jsx:
+pkg/lib/cockpit-components-listing.jsx:
 
-$(srcdir)/pkg/lib/cockpit-components-select.jsx:
+pkg/lib/cockpit-components-select.jsx:
 
-$(srcdir)/pkg/lib/listing.less:
+pkg/lib/listing.less:
 
-$(srcdir)/pkg/lib/page.css:
+pkg/lib/page.css:
 
-$(srcdir)/pkg/lib/table.css:
+pkg/lib/table.css:
 
-$(srcdir)/pkg/lib/variables.less:
+pkg/lib/variables.less:
 
-$(srcdir)/pkg/subscriptions/index.html:
+pkg/subscriptions/index.html:
 
-$(srcdir)/pkg/subscriptions/main.js:
+pkg/subscriptions/main.js:
 
-$(srcdir)/pkg/subscriptions/subscriptions-client.js:
+pkg/subscriptions/subscriptions-client.js:
 
-$(srcdir)/pkg/subscriptions/subscriptions-register.jsx:
+pkg/subscriptions/subscriptions-register.jsx:
 
-$(srcdir)/pkg/subscriptions/subscriptions-view.jsx:
+pkg/subscriptions/subscriptions-view.jsx:
 
-$(srcdir)/pkg/subscriptions/subscriptions.css:
+pkg/subscriptions/subscriptions.css:
 
 WEBPACK_INPUTS += $(subscriptions_INPUTS)
 WEBPACK_OUTPUTS += $(subscriptions_OUTPUTS)

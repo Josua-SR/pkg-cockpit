@@ -125,7 +125,7 @@ return plural;
  ],
  "No matching files found": [
   null,
-  ""
+  "没有找到匹配的文件"
  ],
  "Not Ready": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "Path to file": [
   null,
-  ""
+  "文件路径"
  ],
  "Ready": [
   null,
@@ -153,7 +153,7 @@ return plural;
  ],
  "Too many files found": [
   null,
-  ""
+  "太多文件未找到"
  ],
  "Unavailable": [
   null,

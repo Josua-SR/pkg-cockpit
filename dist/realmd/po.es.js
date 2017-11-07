@@ -77,11 +77,11 @@ return plural;
  ],
  "Are you sure you want to leave the '$0' domain?": [
   null,
-  ""
+  "¿Está seguro que quiere abandonar el dominio '$0'?"
  ],
  "Are you sure you want to leave this domain?": [
   null,
-  ""
+  "¿Está seguro que quiere abandonar el dominio?"
  ],
  "Authentication": [
   null,

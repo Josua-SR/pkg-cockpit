@@ -71,9 +71,21 @@ return plural;
   null,
   ""
  ],
+ "Action": [
+  null,
+  ""
+ ],
  "Address:": [
   null,
   "Adresa:"
+ ],
+ "All running virtual machines will be turned off.": [
+  null,
+  ""
+ ],
+ "Automatically selected host": [
+  null,
+  ""
  ],
  "Autostart:": [
   null,
@@ -82,6 +94,18 @@ return plural;
  "Available": [
   null,
   "Dostupný"
+ ],
+ "Base Template": [
+  null,
+  ""
+ ],
+ "Base template": [
+  null,
+  ""
+ ],
+ "Base template:": [
+  null,
+  ""
  ],
  "Boot Order:": [
   null,
@@ -92,6 +116,10 @@ return plural;
   ""
  ],
  "CPU Type:": [
+  null,
+  ""
+ ],
+ "CREATE VM action failed": [
   null,
   ""
  ],
@@ -107,7 +135,35 @@ return plural;
   null,
   ""
  ],
+ "Cluster": [
+  null,
+  "Cluster"
+ ],
+ "Cluster Templates": [
+  null,
+  ""
+ ],
+ "Cluster Virtual Machines": [
+  null,
+  ""
+ ],
  "Confirm deletion of $0": [
+  null,
+  ""
+ ],
+ "Confirm migration": [
+  null,
+  ""
+ ],
+ "Confirm reload:": [
+  null,
+  ""
+ ],
+ "Confirm save:": [
+  null,
+  ""
+ ],
+ "Connect to oVirt Engine": [
   null,
   ""
  ],
@@ -135,11 +191,27 @@ return plural;
   null,
   ""
  ],
+ "Create": [
+  null,
+  ""
+ ],
+ "Create VM": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "Smazat"
  ],
  "Delete associated storage files:": [
+  null,
+  ""
+ ],
+ "Description": [
+  null,
+  "Popis"
+ ],
+ "Description:": [
   null,
   ""
  ],
@@ -155,7 +227,19 @@ return plural;
   null,
   ""
  ],
+ "Edit the vdsm.conf": [
+  null,
+  ""
+ ],
  "Emulated Machine:": [
+  null,
+  ""
+ ],
+ "Enter New VM name": [
+  null,
+  ""
+ ],
+ "FQDN": [
   null,
   ""
  ],
@@ -175,11 +259,31 @@ return plural;
   null,
   ""
  ],
+ "HA": [
+  null,
+  ""
+ ],
+ "HA:": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "Počítač"
  ],
+ "Host to Maintenance": [
+  null,
+  ""
+ ],
  "Launch Remote Viewer": [
+  null,
+  ""
+ ],
+ "Loading data ...": [
+  null,
+  ""
+ ],
+ "MIGRATE action failed": [
   null,
   ""
  ],
@@ -187,15 +291,27 @@ return plural;
   null,
   ""
  ],
+ "Memory": [
+  null,
+  "Paměť"
+ ],
  "Memory:": [
   null,
   "Paměť:"
+ ],
+ "Migrate To:": [
+  null,
+  ""
  ],
  "More Information": [
   null,
   ""
  ],
  "Name": [
+  null,
+  ""
+ ],
+ "No VM found in oVirt.": [
   null,
   ""
  ],
@@ -215,15 +331,55 @@ return plural;
   null,
   ""
  ],
+ "OK": [
+  null,
+  ""
+ ],
+ "OS": [
+  null,
+  ""
+ ],
+ "OS Type:": [
+  null,
+  ""
+ ],
  "Ok": [
   null,
   "Ok"
+ ],
+ "Optimized for:": [
+  null,
+  ""
  ],
  "Overview": [
   null,
   "Přehled"
  ],
+ "Please confirm, the host shall be switched to maintenance mode.": [
+  null,
+  ""
+ ],
+ "Please provide fully qualified domain name and port of the oVirt engine.": [
+  null,
+  ""
+ ],
+ "Please provide valid oVirt engine fully qualified domain name (FQDN) and port (443 by default)": [
+  null,
+  ""
+ ],
+ "Please refer to oVirt's $0 for more information about Remote Viewer setup.": [
+  null,
+  ""
+ ],
  "Please start the virtual machine to access its graphics console.": [
+  null,
+  ""
+ ],
+ "Please wait till VMs list is loaded from the server.": [
+  null,
+  ""
+ ],
+ "Please wait till list of templates is loaded from the server.": [
   null,
   ""
  ],
@@ -235,13 +391,33 @@ return plural;
   null,
   "Port"
  ],
+ "Preparing for Maintenance": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protokol"
  ],
+ "REBOOT action failed": [
+  null,
+  ""
+ ],
  "Readonly": [
   null,
   ""
+ ],
+ "Register oVirt": [
+  null,
+  ""
+ ],
+ "Registering oVirt to Cockpit": [
+  null,
+  ""
+ ],
+ "Reload": [
+  null,
+  "Obnovit"
  ],
  "Restart": [
   null,
@@ -250,6 +426,14 @@ return plural;
  "Run": [
   null,
   "Spustit"
+ ],
+ "Run Here": [
+  null,
+  ""
+ ],
+ "SHUTDOWN action failed": [
+  null,
+  ""
  ],
  "SPICE": [
   null,
@@ -264,6 +448,18 @@ return plural;
   ""
  ],
  "SPICE TLS Port:": [
+  null,
+  ""
+ ],
+ "START action failed": [
+  null,
+  ""
+ ],
+ "SUSPEND action failed": [
+  null,
+  ""
+ ],
+ "Save": [
   null,
   ""
  ],
@@ -287,11 +483,35 @@ return plural;
   null,
   "Stav"
  ],
+ "Stateless": [
+  null,
+  ""
+ ],
+ "Stateless:": [
+  null,
+  ""
+ ],
+ "Suspend": [
+  null,
+  ""
+ ],
+ "Switch Host to Maintenance": [
+  null,
+  ""
+ ],
  "Switch to Desktop Viewer": [
   null,
   ""
  ],
  "Switch to In-Browser Viewer": [
+  null,
+  ""
+ ],
+ "Switching host to maintenance mode failed. Received error: ": [
+  null,
+  ""
+ ],
+ "Switching host to maintenance mode in progress ...": [
   null,
   ""
  ],
@@ -302,6 +522,18 @@ return plural;
  "Target": [
   null,
   "Cíl"
+ ],
+ "Template": [
+  null,
+  ""
+ ],
+ "Templates": [
+  null,
+  ""
+ ],
+ "Templates of $0 cluster": [
+  null,
+  ""
  ],
  "The VM crashed.": [
   null,
@@ -339,6 +571,10 @@ return plural;
   null,
   ""
  ],
+ "This virtual machine is not managed by oVirt": [
+  null,
+  ""
+ ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   ""
@@ -348,6 +584,14 @@ return plural;
   "Použití"
  ],
  "Used": [
+  null,
+  ""
+ ],
+ "VDSM": [
+  null,
+  ""
+ ],
+ "VDSM Service Management": [
   null,
   ""
  ],
@@ -375,6 +619,10 @@ return plural;
   null,
   ""
  ],
+ "VM icon": [
+  null,
+  ""
+ ],
  "VNC": [
   null,
   "VNC"
@@ -391,7 +639,19 @@ return plural;
   null,
   ""
  ],
+ "Version": [
+  null,
+  "Verze"
+ ],
+ "Version num": [
+  null,
+  ""
+ ],
  "Virtual Machines": [
+  null,
+  ""
+ ],
+ "Virtual Machines of $0 cluster": [
   null,
   ""
  ],
@@ -404,6 +664,14 @@ return plural;
   ""
  ],
  "cdrom": [
+  null,
+  ""
+ ],
+ "connecting": [
+  null,
+  ""
+ ],
+ "cores": [
   null,
   ""
  ],
@@ -423,6 +691,10 @@ return plural;
   null,
   ""
  ],
+ "down": [
+  null,
+  ""
+ ],
  "dying": [
   null,
   ""
@@ -430,6 +702,10 @@ return plural;
  "enabled": [
   null,
   "povoleno"
+ ],
+ "error": [
+  null,
+  ""
  ],
  "host": [
   null,
@@ -439,6 +715,26 @@ return plural;
   null,
   "nečinný"
  ],
+ "initializing": [
+  null,
+  ""
+ ],
+ "installation failed": [
+  null,
+  ""
+ ],
+ "installing OS": [
+  null,
+  ""
+ ],
+ "kdumping": [
+  null,
+  ""
+ ],
+ "maintenance": [
+  null,
+  ""
+ ],
  "network": [
   null,
   ""
@@ -447,11 +743,51 @@ return plural;
   null,
   ""
  ],
+ "non operational": [
+  null,
+  ""
+ ],
+ "non responsive": [
+  null,
+  ""
+ ],
+ "oVirt": [
+  null,
+  ""
+ ],
+ "oVirt Host State:": [
+  null,
+  ""
+ ],
+ "oVirt Provider installation script failed due to missing arguments.": [
+  null,
+  ""
+ ],
+ "oVirt Provider installation script failed: Can't write to /etc/cockpit/machines-ovirt.config, try as root.": [
+  null,
+  ""
+ ],
+ "oVirt installation script failed with following output: ": [
+  null,
+  ""
+ ],
+ "oVirt login in progress": [
+  null,
+  ""
+ ],
  "other": [
   null,
   ""
  ],
  "paused": [
+  null,
+  ""
+ ],
+ "pending approval": [
+  null,
+  ""
+ ],
+ "reboot": [
   null,
   ""
  ],
@@ -467,7 +803,27 @@ return plural;
   null,
   ""
  ],
+ "sockets": [
+  null,
+  ""
+ ],
  "suspended (PM)": [
+  null,
+  ""
+ ],
+ "threads": [
+  null,
+  ""
+ ],
+ "unassigned": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "vCPUs": [
   null,
   ""
  ],

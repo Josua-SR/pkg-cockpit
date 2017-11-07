@@ -1,83 +1,93 @@
 # Generated Makefile data for storaged
-# Stamp: Wed Oct 18 2017 08:05:46 GMT+0000 (UTC)
+# Stamp: Tue Nov 07 2017 07:34:44 GMT+0000 (UTC)
 
 storaged_INPUTS = \
-	$(srcdir)/node_modules/bootstrap/LICENSE \
-	$(srcdir)/node_modules/bootstrap/README.md \
-	$(srcdir)/node_modules/bootstrap/less/variables.less \
-	$(srcdir)/node_modules/bootstrap/package.json \
-	$(srcdir)/node_modules/jquery-flot/LICENSE.txt \
-	$(srcdir)/node_modules/jquery-flot/README.md \
-	$(srcdir)/node_modules/jquery-flot/jquery.flot.js \
-	$(srcdir)/node_modules/jquery-flot/jquery.flot.selection.js \
-	$(srcdir)/node_modules/jquery-flot/jquery.flot.time.js \
-	$(srcdir)/node_modules/jquery-flot/package.json \
-	$(srcdir)/node_modules/mustache/LICENSE \
-	$(srcdir)/node_modules/mustache/README.md \
-	$(srcdir)/node_modules/mustache/mustache.js \
-	$(srcdir)/node_modules/mustache/package.json \
-	$(srcdir)/node_modules/patternfly/LICENSE.txt \
-	$(srcdir)/node_modules/patternfly/README.md \
-	$(srcdir)/node_modules/patternfly/package.json \
-	$(srcdir)/node_modules/patternfly/src/less/color-variables.less \
-	$(srcdir)/node_modules/patternfly/src/less/variables.less \
-	$(srcdir)/node_modules/qunit-tap/GPL-LICENSE.txt \
-	$(srcdir)/node_modules/qunit-tap/MIT-LICENSE.txt \
-	$(srcdir)/node_modules/qunit-tap/lib/qunit-tap.js \
-	$(srcdir)/node_modules/qunit-tap/package.json \
-	$(srcdir)/node_modules/qunitjs/LICENSE.txt \
-	$(srcdir)/node_modules/qunitjs/README.md \
-	$(srcdir)/node_modules/qunitjs/package.json \
-	$(srcdir)/node_modules/qunitjs/qunit/qunit.css \
-	$(srcdir)/node_modules/qunitjs/qunit/qunit.js \
-	$(srcdir)/node_modules/react-lite/LICENSE \
-	$(srcdir)/node_modules/react-lite/README.md \
-	$(srcdir)/node_modules/react-lite/dist/react-lite.js \
-	$(srcdir)/node_modules/react-lite/package.json \
-	$(srcdir)/pkg/lib/cockpit-components-listing.jsx \
-	$(srcdir)/pkg/lib/cockpit-components-tooltip.jsx \
-	$(srcdir)/pkg/lib/journal.css \
-	$(srcdir)/pkg/lib/journal.js \
-	$(srcdir)/pkg/lib/journal_day_header.mustache \
-	$(srcdir)/pkg/lib/journal_line.mustache \
-	$(srcdir)/pkg/lib/journal_reboot.mustache \
-	$(srcdir)/pkg/lib/listing.less \
-	$(srcdir)/pkg/lib/mustache.js \
-	$(srcdir)/pkg/lib/page.css \
-	$(srcdir)/pkg/lib/patterns.js \
-	$(srcdir)/pkg/lib/plot.css \
-	$(srcdir)/pkg/lib/plot.js \
-	$(srcdir)/pkg/lib/qunit-config.js \
-	$(srcdir)/pkg/lib/qunit-template.html \
-	$(srcdir)/pkg/lib/qunit-tests.js \
-	$(srcdir)/pkg/lib/service.js \
-	$(srcdir)/pkg/lib/table.css \
-	$(srcdir)/pkg/lib/tooltip.css \
-	$(srcdir)/pkg/lib/variables.less \
-	$(srcdir)/pkg/storaged/client.js \
-	$(srcdir)/pkg/storaged/content-views.jsx \
-	$(srcdir)/pkg/storaged/crypto-tab.jsx \
-	$(srcdir)/pkg/storaged/details.jsx \
-	$(srcdir)/pkg/storaged/devices.js \
-	$(srcdir)/pkg/storaged/dialog.js \
-	$(srcdir)/pkg/storaged/format-dialog.jsx \
-	$(srcdir)/pkg/storaged/fsys-tab.jsx \
-	$(srcdir)/pkg/storaged/images/storage-array.png \
-	$(srcdir)/pkg/storaged/images/storage-disk.png \
-	$(srcdir)/pkg/storaged/index.html \
-	$(srcdir)/pkg/storaged/jobs.js \
-	$(srcdir)/pkg/storaged/lvol-tabs.jsx \
-	$(srcdir)/pkg/storaged/overview.js \
-	$(srcdir)/pkg/storaged/part-tab.jsx \
-	$(srcdir)/pkg/storaged/permissions.js \
-	$(srcdir)/pkg/storaged/pvol-tabs.jsx \
-	$(srcdir)/pkg/storaged/sidebar-views.jsx \
-	$(srcdir)/pkg/storaged/storage-controls.jsx \
-	$(srcdir)/pkg/storaged/storage.css \
-	$(srcdir)/pkg/storaged/swap-tab.jsx \
-	$(srcdir)/pkg/storaged/test-util.js \
-	$(srcdir)/pkg/storaged/unrecognized-tab.jsx \
-	$(srcdir)/pkg/storaged/utils.js \
+	node_modules/bootstrap/LICENSE \
+	node_modules/bootstrap/README.md \
+	node_modules/bootstrap/less/variables.less \
+	node_modules/bootstrap/package.json \
+	node_modules/jquery-flot/LICENSE.txt \
+	node_modules/jquery-flot/README.md \
+	node_modules/jquery-flot/jquery.flot.js \
+	node_modules/jquery-flot/jquery.flot.selection.js \
+	node_modules/jquery-flot/jquery.flot.time.js \
+	node_modules/jquery-flot/package.json \
+	node_modules/mustache/LICENSE \
+	node_modules/mustache/README.md \
+	node_modules/mustache/mustache.js \
+	node_modules/mustache/package.json \
+	node_modules/patternfly/LICENSE.txt \
+	node_modules/patternfly/README.md \
+	node_modules/patternfly/package.json \
+	node_modules/patternfly/src/less/color-variables.less \
+	node_modules/patternfly/src/less/variables.less \
+	node_modules/qunit-tap/GPL-LICENSE.txt \
+	node_modules/qunit-tap/MIT-LICENSE.txt \
+	node_modules/qunit-tap/lib/qunit-tap.js \
+	node_modules/qunit-tap/package.json \
+	node_modules/qunitjs/LICENSE.txt \
+	node_modules/qunitjs/README.md \
+	node_modules/qunitjs/package.json \
+	node_modules/qunitjs/qunit/qunit.css \
+	node_modules/qunitjs/qunit/qunit.js \
+	node_modules/react-lite/LICENSE \
+	node_modules/react-lite/README.md \
+	node_modules/react-lite/dist/react-lite.js \
+	node_modules/react-lite/package.json \
+	pkg/lib/cockpit-components-file-autocomplete.css \
+	pkg/lib/cockpit-components-listing.jsx \
+	pkg/lib/cockpit-components-onoff.css \
+	pkg/lib/cockpit-components-onoff.jsx \
+	pkg/lib/cockpit-components-tooltip.jsx \
+	pkg/lib/inotify.py \
+	pkg/lib/journal.css \
+	pkg/lib/journal.js \
+	pkg/lib/journal_day_header.mustache \
+	pkg/lib/journal_line.mustache \
+	pkg/lib/journal_reboot.mustache \
+	pkg/lib/listing.less \
+	pkg/lib/mustache.js \
+	pkg/lib/page.css \
+	pkg/lib/patterns.js \
+	pkg/lib/plot.css \
+	pkg/lib/plot.js \
+	pkg/lib/python.jsx \
+	pkg/lib/qunit-config.js \
+	pkg/lib/qunit-template.html \
+	pkg/lib/qunit-tests.js \
+	pkg/lib/service.js \
+	pkg/lib/table.css \
+	pkg/lib/tooltip.css \
+	pkg/lib/variables.less \
+	pkg/storaged/block-details.jsx \
+	pkg/storaged/client.js \
+	pkg/storaged/content-views.jsx \
+	pkg/storaged/crypto-tab.jsx \
+	pkg/storaged/details.jsx \
+	pkg/storaged/devices.js \
+	pkg/storaged/dialog.js \
+	pkg/storaged/drive-details.jsx \
+	pkg/storaged/format-dialog.jsx \
+	pkg/storaged/fsys-tab.jsx \
+	pkg/storaged/images/storage-array.png \
+	pkg/storaged/images/storage-disk.png \
+	pkg/storaged/index.html \
+	pkg/storaged/job-views.jsx \
+	pkg/storaged/jobs.js \
+	pkg/storaged/lvol-tabs.jsx \
+	pkg/storaged/mdraid-details.jsx \
+	pkg/storaged/nfs-mounts.py \
+	pkg/storaged/overview.js \
+	pkg/storaged/part-tab.jsx \
+	pkg/storaged/permissions.js \
+	pkg/storaged/pvol-tabs.jsx \
+	pkg/storaged/storage-controls.jsx \
+	pkg/storaged/storage.css \
+	pkg/storaged/swap-tab.jsx \
+	pkg/storaged/test-util.js \
+	pkg/storaged/unrecognized-tab.jsx \
+	pkg/storaged/utils.js \
+	pkg/storaged/vgroup-details.jsx \
 	$(NULL)
 
 storaged_OUTPUTS = \
@@ -120,7 +130,7 @@ storaged_TESTS = \
 
 dist/storaged/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/jquery-flot/jquery.flot.js -N node_modules/jquery-flot/jquery.flot.selection.js -N node_modules/jquery-flot/jquery.flot.time.js -N node_modules/mustache/mustache.js -N node_modules/patternfly/src/less/color-variables.less -N node_modules/patternfly/src/less/variables.less -N node_modules/qunit-tap/lib/qunit-tap.js -N node_modules/qunitjs/qunit/qunit.css -N node_modules/qunitjs/qunit/qunit.js -N node_modules/react-lite/dist/react-lite.js -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-tooltip.jsx -N pkg/lib/journal.css -N pkg/lib/journal.js -N pkg/lib/journal_day_header.mustache -N pkg/lib/journal_line.mustache -N pkg/lib/journal_reboot.mustache -N pkg/lib/listing.less -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/plot.css -N pkg/lib/plot.js -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/service.js -N pkg/lib/table.css -N pkg/lib/tooltip.css -N pkg/lib/variables.less -N pkg/storaged/client.js -N pkg/storaged/content-views.jsx -N pkg/storaged/crypto-tab.jsx -N pkg/storaged/details.jsx -N pkg/storaged/devices.js -N pkg/storaged/dialog.js -N pkg/storaged/format-dialog.jsx -N pkg/storaged/fsys-tab.jsx -N pkg/storaged/images/storage-array.png -N pkg/storaged/images/storage-disk.png -N pkg/storaged/index.html -N pkg/storaged/jobs.js -N pkg/storaged/lvol-tabs.jsx -N pkg/storaged/overview.js -N pkg/storaged/part-tab.jsx -N pkg/storaged/permissions.js -N pkg/storaged/pvol-tabs.jsx -N pkg/storaged/sidebar-views.jsx -N pkg/storaged/storage-controls.jsx -N pkg/storaged/storage.css -N pkg/storaged/swap-tab.jsx -N pkg/storaged/test-util.js -N pkg/storaged/unrecognized-tab.jsx -N pkg/storaged/utils.js $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/jquery-flot/jquery.flot.js -N node_modules/jquery-flot/jquery.flot.selection.js -N node_modules/jquery-flot/jquery.flot.time.js -N node_modules/mustache/mustache.js -N node_modules/patternfly/src/less/color-variables.less -N node_modules/patternfly/src/less/variables.less -N node_modules/qunit-tap/lib/qunit-tap.js -N node_modules/qunitjs/qunit/qunit.css -N node_modules/qunitjs/qunit/qunit.js -N node_modules/react-lite/dist/react-lite.js -N pkg/lib/cockpit-components-file-autocomplete.css -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-onoff.css -N pkg/lib/cockpit-components-onoff.jsx -N pkg/lib/cockpit-components-tooltip.jsx -N pkg/lib/inotify.py -N pkg/lib/journal.css -N pkg/lib/journal.js -N pkg/lib/journal_day_header.mustache -N pkg/lib/journal_line.mustache -N pkg/lib/journal_reboot.mustache -N pkg/lib/listing.less -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/plot.css -N pkg/lib/plot.js -N pkg/lib/python.jsx -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/service.js -N pkg/lib/table.css -N pkg/lib/tooltip.css -N pkg/lib/variables.less -N pkg/storaged/block-details.jsx -N pkg/storaged/client.js -N pkg/storaged/content-views.jsx -N pkg/storaged/crypto-tab.jsx -N pkg/storaged/details.jsx -N pkg/storaged/devices.js -N pkg/storaged/dialog.js -N pkg/storaged/drive-details.jsx -N pkg/storaged/format-dialog.jsx -N pkg/storaged/fsys-tab.jsx -N pkg/storaged/images/storage-array.png -N pkg/storaged/images/storage-disk.png -N pkg/storaged/index.html -N pkg/storaged/job-views.jsx -N pkg/storaged/jobs.js -N pkg/storaged/lvol-tabs.jsx -N pkg/storaged/mdraid-details.jsx -N pkg/storaged/nfs-mounts.py -N pkg/storaged/overview.js -N pkg/storaged/part-tab.jsx -N pkg/storaged/permissions.js -N pkg/storaged/pvol-tabs.jsx -N pkg/storaged/storage-controls.jsx -N pkg/storaged/storage.css -N pkg/storaged/swap-tab.jsx -N pkg/storaged/test-util.js -N pkg/storaged/unrecognized-tab.jsx -N pkg/storaged/utils.js -N pkg/storaged/vgroup-details.jsx $< > $@.tmp && mv $@.tmp $@
 
 dist/storaged/Makefile.deps: $(WEBPACK_CONFIG) $(storaged_INPUTS)
 	$(WEBPACK_RULE) -d dist/storaged/Makefile.deps $(WEBPACK_CONFIG)
@@ -149,157 +159,177 @@ dist/storaged/test-util.min.js: dist/storaged/Makefile.deps
 
 dist/storaged/test-util.min.js.map: dist/storaged/Makefile.deps
 
-$(srcdir)/node_modules/bootstrap/LICENSE:
+node_modules/bootstrap/LICENSE:
 
-$(srcdir)/node_modules/bootstrap/README.md:
+node_modules/bootstrap/README.md:
 
-$(srcdir)/node_modules/bootstrap/less/variables.less:
+node_modules/bootstrap/less/variables.less:
 
-$(srcdir)/node_modules/bootstrap/package.json:
+node_modules/bootstrap/package.json:
 
-$(srcdir)/node_modules/jquery-flot/LICENSE.txt:
+node_modules/jquery-flot/LICENSE.txt:
 
-$(srcdir)/node_modules/jquery-flot/README.md:
+node_modules/jquery-flot/README.md:
 
-$(srcdir)/node_modules/jquery-flot/jquery.flot.js:
+node_modules/jquery-flot/jquery.flot.js:
 
-$(srcdir)/node_modules/jquery-flot/jquery.flot.selection.js:
+node_modules/jquery-flot/jquery.flot.selection.js:
 
-$(srcdir)/node_modules/jquery-flot/jquery.flot.time.js:
+node_modules/jquery-flot/jquery.flot.time.js:
 
-$(srcdir)/node_modules/jquery-flot/package.json:
+node_modules/jquery-flot/package.json:
 
-$(srcdir)/node_modules/mustache/LICENSE:
+node_modules/mustache/LICENSE:
 
-$(srcdir)/node_modules/mustache/README.md:
+node_modules/mustache/README.md:
 
-$(srcdir)/node_modules/mustache/mustache.js:
+node_modules/mustache/mustache.js:
 
-$(srcdir)/node_modules/mustache/package.json:
+node_modules/mustache/package.json:
 
-$(srcdir)/node_modules/patternfly/LICENSE.txt:
+node_modules/patternfly/LICENSE.txt:
 
-$(srcdir)/node_modules/patternfly/README.md:
+node_modules/patternfly/README.md:
 
-$(srcdir)/node_modules/patternfly/package.json:
+node_modules/patternfly/package.json:
 
-$(srcdir)/node_modules/patternfly/src/less/color-variables.less:
+node_modules/patternfly/src/less/color-variables.less:
 
-$(srcdir)/node_modules/patternfly/src/less/variables.less:
+node_modules/patternfly/src/less/variables.less:
 
-$(srcdir)/node_modules/qunit-tap/GPL-LICENSE.txt:
+node_modules/qunit-tap/GPL-LICENSE.txt:
 
-$(srcdir)/node_modules/qunit-tap/MIT-LICENSE.txt:
+node_modules/qunit-tap/MIT-LICENSE.txt:
 
-$(srcdir)/node_modules/qunit-tap/lib/qunit-tap.js:
+node_modules/qunit-tap/lib/qunit-tap.js:
 
-$(srcdir)/node_modules/qunit-tap/package.json:
+node_modules/qunit-tap/package.json:
 
-$(srcdir)/node_modules/qunitjs/LICENSE.txt:
+node_modules/qunitjs/LICENSE.txt:
 
-$(srcdir)/node_modules/qunitjs/README.md:
+node_modules/qunitjs/README.md:
 
-$(srcdir)/node_modules/qunitjs/package.json:
+node_modules/qunitjs/package.json:
 
-$(srcdir)/node_modules/qunitjs/qunit/qunit.css:
+node_modules/qunitjs/qunit/qunit.css:
 
-$(srcdir)/node_modules/qunitjs/qunit/qunit.js:
+node_modules/qunitjs/qunit/qunit.js:
 
-$(srcdir)/node_modules/react-lite/LICENSE:
+node_modules/react-lite/LICENSE:
 
-$(srcdir)/node_modules/react-lite/README.md:
+node_modules/react-lite/README.md:
 
-$(srcdir)/node_modules/react-lite/dist/react-lite.js:
+node_modules/react-lite/dist/react-lite.js:
 
-$(srcdir)/node_modules/react-lite/package.json:
+node_modules/react-lite/package.json:
 
-$(srcdir)/pkg/lib/cockpit-components-listing.jsx:
+pkg/lib/cockpit-components-file-autocomplete.css:
 
-$(srcdir)/pkg/lib/cockpit-components-tooltip.jsx:
+pkg/lib/cockpit-components-listing.jsx:
 
-$(srcdir)/pkg/lib/journal.css:
+pkg/lib/cockpit-components-onoff.css:
 
-$(srcdir)/pkg/lib/journal.js:
+pkg/lib/cockpit-components-onoff.jsx:
 
-$(srcdir)/pkg/lib/journal_day_header.mustache:
+pkg/lib/cockpit-components-tooltip.jsx:
 
-$(srcdir)/pkg/lib/journal_line.mustache:
+pkg/lib/inotify.py:
 
-$(srcdir)/pkg/lib/journal_reboot.mustache:
+pkg/lib/journal.css:
 
-$(srcdir)/pkg/lib/listing.less:
+pkg/lib/journal.js:
 
-$(srcdir)/pkg/lib/mustache.js:
+pkg/lib/journal_day_header.mustache:
 
-$(srcdir)/pkg/lib/page.css:
+pkg/lib/journal_line.mustache:
 
-$(srcdir)/pkg/lib/patterns.js:
+pkg/lib/journal_reboot.mustache:
 
-$(srcdir)/pkg/lib/plot.css:
+pkg/lib/listing.less:
 
-$(srcdir)/pkg/lib/plot.js:
+pkg/lib/mustache.js:
 
-$(srcdir)/pkg/lib/qunit-config.js:
+pkg/lib/page.css:
 
-$(srcdir)/pkg/lib/qunit-template.html:
+pkg/lib/patterns.js:
 
-$(srcdir)/pkg/lib/qunit-tests.js:
+pkg/lib/plot.css:
 
-$(srcdir)/pkg/lib/service.js:
+pkg/lib/plot.js:
 
-$(srcdir)/pkg/lib/table.css:
+pkg/lib/python.jsx:
 
-$(srcdir)/pkg/lib/tooltip.css:
+pkg/lib/qunit-config.js:
 
-$(srcdir)/pkg/lib/variables.less:
+pkg/lib/qunit-template.html:
 
-$(srcdir)/pkg/storaged/client.js:
+pkg/lib/qunit-tests.js:
 
-$(srcdir)/pkg/storaged/content-views.jsx:
+pkg/lib/service.js:
 
-$(srcdir)/pkg/storaged/crypto-tab.jsx:
+pkg/lib/table.css:
 
-$(srcdir)/pkg/storaged/details.jsx:
+pkg/lib/tooltip.css:
 
-$(srcdir)/pkg/storaged/devices.js:
+pkg/lib/variables.less:
 
-$(srcdir)/pkg/storaged/dialog.js:
+pkg/storaged/block-details.jsx:
 
-$(srcdir)/pkg/storaged/format-dialog.jsx:
+pkg/storaged/client.js:
 
-$(srcdir)/pkg/storaged/fsys-tab.jsx:
+pkg/storaged/content-views.jsx:
 
-$(srcdir)/pkg/storaged/images/storage-array.png:
+pkg/storaged/crypto-tab.jsx:
 
-$(srcdir)/pkg/storaged/images/storage-disk.png:
+pkg/storaged/details.jsx:
 
-$(srcdir)/pkg/storaged/index.html:
+pkg/storaged/devices.js:
 
-$(srcdir)/pkg/storaged/jobs.js:
+pkg/storaged/dialog.js:
 
-$(srcdir)/pkg/storaged/lvol-tabs.jsx:
+pkg/storaged/drive-details.jsx:
 
-$(srcdir)/pkg/storaged/overview.js:
+pkg/storaged/format-dialog.jsx:
 
-$(srcdir)/pkg/storaged/part-tab.jsx:
+pkg/storaged/fsys-tab.jsx:
 
-$(srcdir)/pkg/storaged/permissions.js:
+pkg/storaged/images/storage-array.png:
 
-$(srcdir)/pkg/storaged/pvol-tabs.jsx:
+pkg/storaged/images/storage-disk.png:
 
-$(srcdir)/pkg/storaged/sidebar-views.jsx:
+pkg/storaged/index.html:
 
-$(srcdir)/pkg/storaged/storage-controls.jsx:
+pkg/storaged/job-views.jsx:
 
-$(srcdir)/pkg/storaged/storage.css:
+pkg/storaged/jobs.js:
 
-$(srcdir)/pkg/storaged/swap-tab.jsx:
+pkg/storaged/lvol-tabs.jsx:
 
-$(srcdir)/pkg/storaged/test-util.js:
+pkg/storaged/mdraid-details.jsx:
 
-$(srcdir)/pkg/storaged/unrecognized-tab.jsx:
+pkg/storaged/nfs-mounts.py:
 
-$(srcdir)/pkg/storaged/utils.js:
+pkg/storaged/overview.js:
+
+pkg/storaged/part-tab.jsx:
+
+pkg/storaged/permissions.js:
+
+pkg/storaged/pvol-tabs.jsx:
+
+pkg/storaged/storage-controls.jsx:
+
+pkg/storaged/storage.css:
+
+pkg/storaged/swap-tab.jsx:
+
+pkg/storaged/test-util.js:
+
+pkg/storaged/unrecognized-tab.jsx:
+
+pkg/storaged/utils.js:
+
+pkg/storaged/vgroup-details.jsx:
 
 WEBPACK_INPUTS += $(storaged_INPUTS)
 WEBPACK_OUTPUTS += $(storaged_OUTPUTS)
