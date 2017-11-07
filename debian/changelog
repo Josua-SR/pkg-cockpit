@@ -1,3 +1,12 @@
+cockpit (155-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Add NFS client support to the Storage page
+    - Fix Terminal rendering issues in Chrome
+    - Prevent closing Terminal with Ctrl+W when focused
+
+ -- Martin Pitt <mpitt@debian.org>  Tue, 07 Nov 2017 09:50:18 +0100
+
 cockpit (154-1) unstable; urgency=medium
 
   * New upstream release:
