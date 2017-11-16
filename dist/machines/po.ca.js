@@ -325,7 +325,7 @@ return plural;
  ],
  "The VM is paused.": [
   null,
-  ""
+  "La MV està en pausa."
  ],
  "The VM is running and will be forced off before deletion.": [
   null,

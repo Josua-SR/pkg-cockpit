@@ -81,7 +81,7 @@ return plural;
  ],
  "All running virtual machines will be turned off.": [
   null,
-  ""
+  "Усі запущені віртуальні машини буде вимкнено."
  ],
  "Automatically selected host": [
   null,
@@ -273,7 +273,7 @@ return plural;
  ],
  "Host to Maintenance": [
   null,
-  ""
+  "Вузол для обслуговування"
  ],
  "Launch Remote Viewer": [
   null,
@@ -357,7 +357,7 @@ return plural;
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
-  ""
+  "Будь ласка, підтвердьте, що вузол має бути перемкнуто у режим обслуговування."
  ],
  "Please provide fully qualified domain name and port of the oVirt engine.": [
   null,
@@ -431,6 +431,10 @@ return plural;
   null,
   "Запустити тут"
  ],
+ "Running Since:": [
+  null,
+  ""
+ ],
  "SHUTDOWN action failed": [
   null,
   "Не вдалося виконати дію SHUTDOWN"
@@ -497,7 +501,7 @@ return plural;
  ],
  "Switch Host to Maintenance": [
   null,
-  ""
+  "Перемкнути вузол у режим обслуговування"
  ],
  "Switch to Desktop Viewer": [
   null,
@@ -509,11 +513,11 @@ return plural;
  ],
  "Switching host to maintenance mode failed. Received error: ": [
   null,
-  ""
+  "Не вдалося перемкнути вузол у режим обслуговування. Отримано повідомлення про помилку:"
  ],
  "Switching host to maintenance mode in progress ...": [
   null,
-  ""
+  "Виконуємо перемикання вузла у режим обслуговування…"
  ],
  "System": [
   null,
@@ -533,7 +537,7 @@ return plural;
  ],
  "Templates of $0 cluster": [
   null,
-  ""
+  "Шаблони кластера $0"
  ],
  "The VM crashed.": [
   null,
@@ -653,7 +657,7 @@ return plural;
  ],
  "Virtual Machines of $0 cluster": [
   null,
-  ""
+  "Віртуальні машини кластера $0"
  ],
  "Volume": [
   null,
@@ -757,7 +761,7 @@ return plural;
  ],
  "oVirt Host State:": [
   null,
-  ""
+  "Стан вузла oVirt:"
  ],
  "oVirt Provider installation script failed due to missing arguments.": [
   null,

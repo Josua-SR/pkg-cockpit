@@ -195,7 +195,7 @@ return plural;
  ],
  "All running": [
   null,
-  ""
+  "Tot en execució"
  ],
  "Annotations": [
   null,
@@ -731,7 +731,7 @@ return plural;
  ],
  "Mount Location": [
   null,
-  ""
+  "Ubicació del muntatge"
  ],
  "NFS": [
   null,
@@ -1079,11 +1079,11 @@ return plural;
  ],
  "Qualified Name": [
   null,
-  ""
+  "Nom qualificat"
  ],
  "Rados Block Device": [
   null,
-  ""
+  "Dispositiu de blocs rados"
  ],
  "Read Only": [
   null,
@@ -1091,15 +1091,15 @@ return plural;
  ],
  "Read and write from a single node": [
   null,
-  ""
+  "Lectura i escriptura d'un sol node"
  ],
  "Read and write from multiple nodes": [
   null,
-  ""
+  "Lectura i escriptura de diversos nodes"
  ],
  "Read only from multiple nodes": [
   null,
-  ""
+  "Només lectura de diversos nodes"
  ],
  "Ready": [
   null,

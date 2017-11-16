@@ -122,6 +122,10 @@ return plural;
   "$0 año",
   "$0 años"
  ],
+ "$0, $1 free": [
+  null,
+  "$0, $1 disponible"
+ ],
  "$name (from $host)": [
   null,
   "$name (de $host)"
@@ -214,6 +218,10 @@ return plural;
   null,
   "<span>Partición de $0</span>"
  ],
+ "A spare disk needs to be added first before this disk can be removed.": [
+  null,
+  "Un disco de repuesto debe agregarse primero antes de este disco se puede quitar."
+ ],
  "Activate": [
   null,
   "Activar"
@@ -225,6 +233,10 @@ return plural;
  "Add": [
   null,
   "Añadir"
+ ],
+ "Add Disks": [
+  null,
+  "Añadir discos"
  ],
  "Add iSCSI Portal": [
   null,
@@ -258,13 +270,17 @@ return plural;
   null,
   "Objetivos disponibles en $0"
  ],
- "Block Device": [
+ "Block": [
   null,
-  "Dispositivo de Bloque"
+  ""
  ],
  "Block device for filesystems": [
   null,
   "Dispositivo de bloque para sistemas de archivos"
+ ],
+ "Blocked": [
+  null,
+  "Bloqueado"
  ],
  "Can't delete while unlocked": [
   null,
@@ -530,6 +546,10 @@ return plural;
   null,
   "Partición Extendida"
  ],
+ "FAILED": [
+  null,
+  "Fallido"
+ ],
  "Filesystem": [
   null,
   "Sistema de archivos"
@@ -582,6 +602,10 @@ return plural;
   null,
   "Ir a ahora"
  ],
+ "In Sync": [
+  null,
+  "En Sincronía"
+ ],
  "Inactive volume": [
   null,
   "Volumen inactivo"
@@ -593,6 +617,10 @@ return plural;
  "Jobs": [
   null,
   "Trabajos"
+ ],
+ "Local Mount Point": [
+  null,
+  ""
  ],
  "Lock": [
   null,
@@ -658,6 +686,14 @@ return plural;
   null,
   ""
  ],
+ "Mount point cannot be empty.": [
+  null,
+  ""
+ ],
+ "Mount point must start with \"/\".": [
+  null,
+  ""
+ ],
  "Mount read only": [
   null,
   ""
@@ -673,6 +709,14 @@ return plural;
  "Mounting $target": [
   null,
   "Montando $target"
+ ],
+ "NFS Mount": [
+  null,
+  "Montar NFS"
+ ],
+ "NFS Mounts": [
+  null,
+  ""
  ],
  "NTFS - Compatible with most systems": [
   null,
@@ -698,6 +742,10 @@ return plural;
   null,
   "El nombre no puede contener espacios."
  ],
+ "New NFS Mount": [
+  null,
+  ""
+ ],
  "Next": [
   null,
   "Siguiente"
@@ -709,6 +757,10 @@ return plural;
  "No Logical Volumes": [
   null,
   "No hay ningún volumen lógico"
+ ],
+ "No NFS mounts set up": [
+  null,
+  ""
  ],
  "No disks are available.": [
   null,
@@ -766,6 +818,10 @@ return plural;
   null,
   "Opciones"
  ],
+ "Options cannot be empty.": [
+  null,
+  ""
+ ],
  "Other Devices": [
   null,
   "Otros dispositivos"
@@ -802,9 +858,25 @@ return plural;
   null,
   "Contraseña"
  ],
+ "Path on Server": [
+  null,
+  ""
+ ],
+ "Path on server cannot be empty.": [
+  null,
+  ""
+ ],
+ "Path on server must start with \"/\".": [
+  null,
+  ""
+ ],
  "Physical Volume": [
   null,
   "Volumen físico"
+ ],
+ "Physical Volumes": [
+  null,
+  "Volúmenea Físicos"
  ],
  "Physical volume of $0": [
   null,
@@ -918,6 +990,10 @@ return plural;
   null,
   "Reiniciar"
  ],
+ "Recovering": [
+  null,
+  "Recuperando"
+ ],
  "Recovering RAID Device $target": [
   null,
   ""
@@ -974,6 +1050,10 @@ return plural;
   null,
   "Borrando de forma segura $target"
  ],
+ "Server": [
+  null,
+  ""
+ ],
  "Server Address": [
   null,
   "Dirección del Servidor"
@@ -981,6 +1061,10 @@ return plural;
  "Server address cannot be empty.": [
   null,
   "La dirección del servidor no puede estar vacía."
+ ],
+ "Server cannot be empty.": [
+  null,
+  ""
  ],
  "Setting up loop device $target": [
   null,
@@ -1005,6 +1089,10 @@ return plural;
  "Size must be a number": [
   null,
   "Tamaña debe ser un número"
+ ],
+ "Spare": [
+  null,
+  "Libre"
  ],
  "Start": [
   null,
@@ -1034,6 +1122,14 @@ return plural;
   null,
   "Detener Borrado"
  ],
+ "Stop and remove": [
+  null,
+  ""
+ ],
+ "Stop and unmount": [
+  null,
+  ""
+ ],
  "Stopping RAID Device $target": [
   null,
   "Deteniendo dispositivo RAID $target"
@@ -1045,10 +1141,6 @@ return plural;
  "Storage": [
   null,
   "Almacenamiento"
- ],
- "Storage Log": [
-  null,
-  ""
  ],
  "Storage Logs": [
   null,
@@ -1086,6 +1178,26 @@ return plural;
   null,
   ""
  ],
+ "The RAID device must be running in order to add spare disks.": [
+  null,
+  ""
+ ],
+ "The RAID device must be running in order to remove disks.": [
+  null,
+  ""
+ ],
+ "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
+  null,
+  ""
+ ],
+ "The last disk of a RAID device cannot be removed.": [
+  null,
+  ""
+ ],
+ "The last physical volume of a volume group cannot be removed.": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "Al usuario <b>$0</b> no le es permitido administrar el almacenamiento "
@@ -1094,9 +1206,17 @@ return plural;
   null,
   "Hay dispositivos con múltiples trayectos en el sistema, pero no se está ejecutando el servicio de multitrayecto."
  ],
+ "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
+  null,
+  ""
+ ],
  "Thin Logical Volume": [
   null,
   "Volumen Lógico Delgado"
+ ],
+ "This NFS mount is in use and only its options can be changed.": [
+  null,
+  ""
  ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
@@ -1118,6 +1238,10 @@ return plural;
   null,
   ""
  ],
+ "This disk cannot be removed while the device is recovering.": [
+  null,
+  ""
+ ],
  "This logical volume cannot be made smaller.": [
   null,
   ""
@@ -1134,9 +1258,21 @@ return plural;
   null,
   "Imposible conectar al servidor"
  ],
+ "Unable to remove mount": [
+  null,
+  ""
+ ],
+ "Unable to unmount filesystem": [
+  null,
+  ""
+ ],
  "Unknown": [
   null,
   "Desconocido"
+ ],
+ "Unknown ($0)": [
+  null,
+  "Desconocido ($0)"
  ],
  "Unknown host name": [
   null,
@@ -1210,6 +1346,10 @@ return plural;
   null,
   ""
  ],
+ "Write-mostly": [
+  null,
+  "Escribir casi todo"
+ ],
  "Writing": [
   null,
   "Escribiendo"
@@ -1266,77 +1406,25 @@ return plural;
   null,
   "Dato desnocnocido"
  ],
- "storage\u0004Assessment": [
-  null,
-  "Evaluación"
- ],
- "storage\u0004Bitmap": [
-  null,
-  "Mapa de bits"
- ],
- "storage\u0004Capacity": [
-  null,
-  "Capacidad"
- ],
- "storage\u0004Device": [
-  null,
-  "Dispositivo"
- ],
- "storage\u0004Device File": [
-  null,
-  "Dispositivo de Fichero"
- ],
  "storage\u0004Drive": [
   null,
   "Unidad"
- ],
- "storage\u0004Firmware Version": [
-  null,
-  "Versión de Firmware"
  ],
  "storage\u0004Hard Disk": [
   null,
   "Disco Duro"
  ],
- "storage\u0004Model": [
-  null,
-  "Modelo"
- ],
- "storage\u0004Multipathed Devices": [
-  null,
-  "Dispositivos multitrayecto"
- ],
  "storage\u0004Optical Drive": [
   null,
   "Disco Óptico"
- ],
- "storage\u0004RAID Level": [
-  null,
-  "Nivel de RAID"
  ],
  "storage\u0004Removable Drive": [
   null,
   "Disco Removible"
  ],
- "storage\u0004Serial Number": [
-  null,
-  "Número de serial"
- ],
  "storage\u0004Solid-State Disk": [
   null,
   "Disco en Estado Sólido"
- ],
- "storage\u0004State": [
-  null,
-  "Estado"
- ],
- "storage\u0004UUID": [
-  null,
-  "UUID"
- ],
- "storage\u0004World Wide Name": [
-  null,
-  "World Wide Name"
  ],
  "format-bytes\u0004bytes": [
   null,

@@ -73,7 +73,7 @@ return plural;
  ],
  "Action": [
   null,
-  ""
+  "Acció"
  ],
  "Address:": [
   null,
@@ -81,7 +81,7 @@ return plural;
  ],
  "All running virtual machines will be turned off.": [
   null,
-  ""
+  "S'apagaran totes les màquines virtuals."
  ],
  "Automatically selected host": [
   null,
@@ -97,15 +97,15 @@ return plural;
  ],
  "Base Template": [
   null,
-  ""
+  "Plantilla base"
  ],
  "Base template": [
   null,
-  ""
+  "Plantilla base"
  ],
  "Base template:": [
   null,
-  ""
+  "Plantilla base:"
  ],
  "Boot Order:": [
   null,
@@ -121,7 +121,7 @@ return plural;
  ],
  "CREATE VM action failed": [
   null,
-  ""
+  "Ha fallat l'acció CREATE VM"
  ],
  "Cancel": [
   null,
@@ -141,7 +141,7 @@ return plural;
  ],
  "Cluster Templates": [
   null,
-  ""
+  "Plantilles de clúster"
  ],
  "Cluster Virtual Machines": [
   null,
@@ -153,19 +153,19 @@ return plural;
  ],
  "Confirm migration": [
   null,
-  ""
+  "Confirmació de la migració"
  ],
  "Confirm reload:": [
   null,
-  ""
+  "Confirmació de la recàrrega:"
  ],
  "Confirm save:": [
   null,
-  ""
+  "Confirmació del desament:"
  ],
  "Connect to oVirt Engine": [
   null,
-  ""
+  "Connecta al motor d'oVirt"
  ],
  "Connect with Remote Viewer": [
   null,
@@ -197,7 +197,7 @@ return plural;
  ],
  "Create VM": [
   null,
-  ""
+  "Crea la MV"
  ],
  "Delete": [
   null,
@@ -213,7 +213,7 @@ return plural;
  ],
  "Description:": [
   null,
-  ""
+  "Descripció:"
  ],
  "Device": [
   null,
@@ -229,7 +229,7 @@ return plural;
  ],
  "Edit the vdsm.conf": [
   null,
-  ""
+  "Edita el fitxer vdsm.conf"
  ],
  "Emulated Machine:": [
   null,
@@ -237,11 +237,11 @@ return plural;
  ],
  "Enter New VM name": [
   null,
-  ""
+  "Introduïu el nom de la nova MV"
  ],
  "FQDN": [
   null,
-  ""
+  "FQDN"
  ],
  "File": [
   null,
@@ -261,11 +261,11 @@ return plural;
  ],
  "HA": [
   null,
-  ""
+  "HA"
  ],
  "HA:": [
   null,
-  ""
+  "HA:"
  ],
  "Host": [
   null,
@@ -273,7 +273,7 @@ return plural;
  ],
  "Host to Maintenance": [
   null,
-  ""
+  "Amfitrió a manteniment"
  ],
  "Launch Remote Viewer": [
   null,
@@ -281,11 +281,11 @@ return plural;
  ],
  "Loading data ...": [
   null,
-  ""
+  "S'estàn carregant les dades..."
  ],
  "MIGRATE action failed": [
   null,
-  ""
+  "Ha fallat l'acció MIGRATE"
  ],
  "Manual Connection": [
   null,
@@ -301,7 +301,7 @@ return plural;
  ],
  "Migrate To:": [
   null,
-  ""
+  "Migra a:"
  ],
  "More Information": [
   null,
@@ -313,7 +313,7 @@ return plural;
  ],
  "No VM found in oVirt.": [
   null,
-  ""
+  "No s'ha trobat cap MV a oVirt"
  ],
  "No VM is running or defined on this host": [
   null,
@@ -341,7 +341,7 @@ return plural;
  ],
  "OS Type:": [
   null,
-  ""
+  "Tipus de SO:"
  ],
  "Ok": [
   null,
@@ -349,7 +349,7 @@ return plural;
  ],
  "Optimized for:": [
   null,
-  ""
+  "Optimitzat per:"
  ],
  "Overview": [
   null,
@@ -357,15 +357,15 @@ return plural;
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
-  ""
+  "Confirmeu que l'amfitrió s'ha de canviar al mode de manteniment."
  ],
  "Please provide fully qualified domain name and port of the oVirt engine.": [
   null,
-  ""
+  "Proporcioneu el nom de domini plenament qualificat i el port del motor oVirt."
  ],
  "Please provide valid oVirt engine fully qualified domain name (FQDN) and port (443 by default)": [
   null,
-  ""
+  "Proporcioneu el nom de domini plenament qualificat d'un motor oVirt vàlid i el port (443 per defecte)."
  ],
  "Please refer to oVirt's $0 for more information about Remote Viewer setup.": [
   null,
@@ -377,11 +377,11 @@ return plural;
  ],
  "Please wait till VMs list is loaded from the server.": [
   null,
-  ""
+  "Espereu fins que la llista de MV es carregui del servidor."
  ],
  "Please wait till list of templates is loaded from the server.": [
   null,
-  ""
+  "Espereu fins que la llista de plantilles es carregui del servidor."
  ],
  "Pool": [
   null,
@@ -401,7 +401,7 @@ return plural;
  ],
  "REBOOT action failed": [
   null,
-  ""
+  "Ha fallat l'acció REBOOT"
  ],
  "Readonly": [
   null,
@@ -409,11 +409,11 @@ return plural;
  ],
  "Register oVirt": [
   null,
-  ""
+  "Registra oVirt"
  ],
  "Registering oVirt to Cockpit": [
   null,
-  ""
+  "Registrament d'oVirt a Cockpit"
  ],
  "Reload": [
   null,
@@ -431,9 +431,13 @@ return plural;
   null,
   ""
  ],
- "SHUTDOWN action failed": [
+ "Running Since:": [
   null,
   ""
+ ],
+ "SHUTDOWN action failed": [
+  null,
+  "Ha fallat l'acció SHUTDOWN"
  ],
  "SPICE": [
   null,
@@ -453,11 +457,11 @@ return plural;
  ],
  "START action failed": [
   null,
-  ""
+  "Ha fallat l'acció START"
  ],
  "SUSPEND action failed": [
   null,
-  ""
+  "Ha fallat l'acció SUSPEND"
  ],
  "Save": [
   null,
@@ -497,7 +501,7 @@ return plural;
  ],
  "Switch Host to Maintenance": [
   null,
-  ""
+  "Canvia l'amfitrió a manteniment"
  ],
  "Switch to Desktop Viewer": [
   null,
@@ -509,11 +513,11 @@ return plural;
  ],
  "Switching host to maintenance mode failed. Received error: ": [
   null,
-  ""
+  "Ha fallat el canvi de l'amfitrió a manteniment. Error rebut: "
  ],
  "Switching host to maintenance mode in progress ...": [
   null,
-  ""
+  "Canvi de l'amfitrió a manteniment en progrés..."
  ],
  "System": [
   null,
@@ -529,11 +533,11 @@ return plural;
  ],
  "Templates": [
   null,
-  ""
+  "Plantilles"
  ],
  "Templates of $0 cluster": [
   null,
-  ""
+  "Plantilles de clúster $0"
  ],
  "The VM crashed.": [
   null,
@@ -557,7 +561,7 @@ return plural;
  ],
  "The VM is paused.": [
   null,
-  ""
+  "La MV està en pausa."
  ],
  "The VM is running and will be forced off before deletion.": [
   null,
@@ -573,7 +577,7 @@ return plural;
  ],
  "This virtual machine is not managed by oVirt": [
   null,
-  ""
+  "Aquesta màquina virtual no està gestionada per oVirt"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
@@ -589,11 +593,11 @@ return plural;
  ],
  "VDSM": [
   null,
-  ""
+  "VDSM"
  ],
  "VDSM Service Management": [
   null,
-  ""
+  "Gestió del servei VDSM"
  ],
  "VM FORCE OFF action failed": [
   null,
@@ -621,7 +625,7 @@ return plural;
  ],
  "VM icon": [
   null,
-  ""
+  "Icona de la MV"
  ],
  "VNC": [
   null,
@@ -645,7 +649,7 @@ return plural;
  ],
  "Version num": [
   null,
-  ""
+  "Núm. versió"
  ],
  "Virtual Machines": [
   null,
@@ -653,7 +657,7 @@ return plural;
  ],
  "Virtual Machines of $0 cluster": [
   null,
-  ""
+  "Màquines virtuals del clúster $0"
  ],
  "Volume": [
   null,
@@ -753,11 +757,11 @@ return plural;
  ],
  "oVirt": [
   null,
-  ""
+  "oVirt"
  ],
  "oVirt Host State:": [
   null,
-  ""
+  "Estat de l'amfitrió oVirt:"
  ],
  "oVirt Provider installation script failed due to missing arguments.": [
   null,

@@ -431,6 +431,10 @@ return plural;
   null,
   ""
  ],
+ "Running Since:": [
+  null,
+  ""
+ ],
  "SHUTDOWN action failed": [
   null,
   ""

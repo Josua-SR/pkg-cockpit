@@ -1,5 +1,5 @@
 # Generated Makefile data for apps
-# Stamp: Tue Nov 07 2017 07:34:35 GMT+0000 (UTC)
+# Stamp: Thu Nov 16 2017 07:55:21 GMT+0000 (UTC)
 
 apps_INPUTS = \
 	node_modules/react-lite/LICENSE \

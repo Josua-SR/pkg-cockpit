@@ -401,14 +401,14 @@ am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" \
 	"$(DESTDIR)$(debianbrandingdir)" \
 	"$(DESTDIR)$(defaultbrandingdir)" \
 	"$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" \
-	"$(DESTDIR)$(firewalldir)" \
+	"$(DESTDIR)$(firewalldir)" "$(DESTDIR)$(issuedir)" \
 	"$(DESTDIR)$(kubernetesbrandingdir)" \
 	"$(DESTDIR)$(machinesdir)" "$(DESTDIR)$(appdatadir)" \
 	"$(DESTDIR)$(basedir)" "$(DESTDIR)$(desktopdir)" \
 	"$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" \
-	"$(DESTDIR)$(ovirtdir)" "$(DESTDIR)$(pixmapdir)" \
-	"$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" \
-	"$(DESTDIR)$(registrybrandingdir)" \
+	"$(DESTDIR)$(tempconfdir)" "$(DESTDIR)$(ovirtdir)" \
+	"$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(playgrounddir)" \
+	"$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" \
 	"$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticfontsdir)" \
 	"$(DESTDIR)$(ubuntubrandingdir)"
 @WITH_GOLANG_TRUE@am__EXEEXT_1 = cockpit-kube-auth$(EXEEXT) \
@@ -1061,15 +1061,15 @@ MANS = $(man_MANS)
 DATA = $(base_DATA) $(basedebug_DATA) $(basefonts_DATA) \
 	$(centosbranding_DATA) $(debianbranding_DATA) \
 	$(defaultbranding_DATA) $(dist_systemdunit_DATA) \
-	$(fedorabranding_DATA) $(firewall_DATA) \
+	$(fedorabranding_DATA) $(firewall_DATA) $(issue_DATA) \
 	$(kubernetesbranding_DATA) $(machines_DATA) \
 	$(nodist_appdata_DATA) $(nodist_base_DATA) \
 	$(nodist_desktop_DATA) $(nodist_noinst_DATA) \
 	$(nodist_static_DATA) $(nodist_systemdunit_DATA) \
-	$(noinst_DATA) $(ovirt_DATA) $(pixmap_DATA) $(playground_DATA) \
-	$(pmlogconf_DATA) $(registrybranding_DATA) \
-	$(rhelbranding_DATA) $(staticfonts_DATA) \
-	$(ubuntubranding_DATA)
+	$(nodist_tempconf_DATA) $(noinst_DATA) $(ovirt_DATA) \
+	$(pixmap_DATA) $(playground_DATA) $(pmlogconf_DATA) \
+	$(registrybranding_DATA) $(rhelbranding_DATA) \
+	$(staticfonts_DATA) $(ubuntubranding_DATA)
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) \
 	$(LISP)config.h.in
 # Read a list of newline-separated strings from the standard input,
@@ -1386,6 +1386,7 @@ INTLLIBS = @INTLLIBS@
 INTLTOOL_EXTRACT = @INTLTOOL_EXTRACT@
 INTLTOOL_MERGE = @INTLTOOL_MERGE@
 INTLTOOL_UPDATE = @INTLTOOL_UPDATE@
+INTL_MACOSX_LIBS = @INTL_MACOSX_LIBS@
 JSON_GLIB_CFLAGS = @JSON_GLIB_CFLAGS@
 JSON_GLIB_LIBS = @JSON_GLIB_LIBS@
 KRB5_CONFIG = @KRB5_CONFIG@
@@ -1511,8 +1512,9 @@ nodist_noinst_DATA =
 nodist_noinst_SCRIPTS =  \
 	src/common/mock-locale/de_DE/LC_MESSAGES/test.mo \
 	src/common/mock-locale/zh_CN/LC_MESSAGES/test.mo $(NULL)
-dist_systemdunit_DATA = src/ws/cockpit.socket
-nodist_systemdunit_DATA = src/ws/cockpit.service
+dist_systemdunit_DATA = 
+nodist_systemdunit_DATA = src/ws/cockpit.socket src/ws/cockpit.service \
+	$(NULL)
 CLEANFILES = $(man_MANS) valgrind-suppressions $(NULL) $(WEBPACK_DEPS) \
 	$(WEBPACK_OUTPUTS) $(OPENSANS_FONTS) $(am__append_3) \
 	$(MO_FILES) $(POJS_FILES) $(nodist_po_DATA) po/POTFILES.*.in \
@@ -1543,7 +1545,8 @@ CLEANFILES = $(man_MANS) valgrind-suppressions $(NULL) $(WEBPACK_DEPS) \
 	dist/static/login.html dist/static/login.min.html \
 	dist/static/login.js dist/static/login.min.js \
 	dist/static/login.css dist/static/login.min.css $(NULL) \
-	src/ws/cockpit.service $(NULL) $(nodist_appdata_DATA) \
+	src/ws/cockpit.socket src/ws/cockpit.service \
+	$(nodist_tempconf_DATA) $(NULL) $(nodist_appdata_DATA) \
 	$(nodist_desktop_DATA) $(NULL) mock-pam-conv-mod.so \
 	pam_ssh_add.so $(KUBERNETES_DIR)/rpms $(WS_DIR)/rpms
 DISTCLEANFILES = \
@@ -1602,7 +1605,8 @@ EXTRA_DIST = package.json README.md $(NULL) $(WEBPACK_DEPS) \
 	$(NULL) src/ws/mock_cert src/ws/mock-cat-with-init \
 	src/ws/mock-kdc src/ws/mock-krb5.conf.in \
 	src/ws/mock-kdc.conf.in src/ws/mock-static src/ws/mock-config \
-	$(NULL) src/ws/cockpit.service.in $(firewall_DATA) $(NULL) \
+	$(NULL) src/ws/cockpit.service.in src/ws/cockpit.socket.in \
+	$(firewall_DATA) $(issue_DATA) $(tempconf_in) $(NULL) \
 	$(appdata_in) $(desktop_in) $(pixmap_DATA) $(NULL) \
 	src/ws/fatal.conf $(pam_ssh_add_FILES) $(NULL) \
 	src/pam-ssh-add/mock-ssh-agent src/pam-ssh-add/mock-ssh-add \
@@ -1616,6 +1620,7 @@ SUFFIXES = \
 	.map .map.gz \
 	.mo .po \
 	.service .service.in \
+	.socket .socket.in \
 	.svg .svg.gz \
 	.woff .woff.gz \
 	.1 .8 .5 \
@@ -1663,6 +1668,7 @@ SUBST_RULE = \
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && sed \
 	-e 's,[@]datadir[@],$(datadir),g' \
 	-e 's,[@]libexecdir[@],$(libexecdir),g' \
+	-e 's,[@]sysconfdir[@],$(sysconfdir),g' \
 	-e 's,[@]libdir[@],$(libdir),g' \
 	-e 's,[@]includedir[@],$(includedir),g' \
 	-e 's,[@]bindir[@],$(bindir),g' \
@@ -2693,6 +2699,15 @@ remotectl_LDADD = \
 
 firewalldir = $(prefix)/lib/firewalld/services
 firewall_DATA = src/ws/cockpit.xml
+issuedir = $(datadir)/$(PACKAGE)/issue/
+issue_DATA = \
+	src/ws/inactive.issue \
+	src/ws/active.issue \
+	$(NULL)
+
+tempconfdir = $(prefix)/lib/tmpfiles.d
+nodist_tempconf_DATA = src/ws/cockpit-tempfiles.conf
+tempconf_in = src/ws/cockpit-tempfiles.conf.in
 appdatadir = $(datadir)/metainfo
 nodist_appdata_DATA = src/ws/cockpit.appdata.xml
 appdata_in = src/ws/cockpit.appdata.xml.in
@@ -2868,7 +2883,7 @@ all: $(BUILT_SOURCES) config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
 .SUFFIXES:
-.SUFFIXES: .css .css.gz .html .html.gz .js .js.gz .json .json.in .jsx .map .map.gz .mo .po .service .service.in .svg .svg.gz .woff .woff.gz .1 .8 .5 .c .html$(EXEEXT) .log .o .obj .sh .sh$(EXEEXT) .trs .xml
+.SUFFIXES: .css .css.gz .html .html.gz .js .js.gz .json .json.in .jsx .map .map.gz .mo .po .service .service.in .socket .socket.in .svg .svg.gz .woff .woff.gz .1 .8 .5 .c .html$(EXEEXT) .log .o .obj .sh .sh$(EXEEXT) .trs .xml
 am--refresh: Makefile
 	@:
 $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(srcdir)/doc/Makefile-doc.am $(srcdir)/doc/guide/Makefile-guide.am $(srcdir)/doc/man/Makefile-man.am $(srcdir)/po/Makefile.am $(srcdir)/pkg/Makefile.am $(srcdir)/src/base1/Makefile.am $(srcdir)/src/branding/centos/Makefile.am $(srcdir)/src/branding/debian/Makefile.am $(srcdir)/src/branding/default/Makefile.am $(srcdir)/src/branding/fedora/Makefile.am $(srcdir)/src/branding/kubernetes/Makefile.am $(srcdir)/src/branding/registry/Makefile.am $(srcdir)/src/branding/rhel/Makefile.am $(srcdir)/src/branding/ubuntu/Makefile.am $(srcdir)/src/bridge/Makefile.am $(srcdir)/src/common/Makefile-common.am $(srcdir)/src/websocket/Makefile-websocket.am $(srcdir)/tools/Makefile-tools.am $(srcdir)/src/ssh/Makefile-ssh.am $(srcdir)/src/ws/Makefile-ws.am $(srcdir)/src/retest/Makefile.am $(srcdir)/src/pam-ssh-add/Makefile.am $(srcdir)/containers/Makefile.am $(am__configure_deps)
@@ -7203,6 +7218,27 @@ uninstall-firewallDATA:
 	@list='$(firewall_DATA)'; test -n "$(firewalldir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(firewalldir)'; $(am__uninstall_files_from_dir)
+install-issueDATA: $(issue_DATA)
+	@$(NORMAL_INSTALL)
+	@list='$(issue_DATA)'; test -n "$(issuedir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(issuedir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(issuedir)" || exit 1; \
+	fi; \
+	for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  echo "$$d$$p"; \
+	done | $(am__base_list) | \
+	while read files; do \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(issuedir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(issuedir)" || exit $$?; \
+	done
+
+uninstall-issueDATA:
+	@$(NORMAL_UNINSTALL)
+	@list='$(issue_DATA)'; test -n "$(issuedir)" || list=; \
+	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+	dir='$(DESTDIR)$(issuedir)'; $(am__uninstall_files_from_dir)
 install-kubernetesbrandingDATA: $(kubernetesbranding_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(kubernetesbranding_DATA)'; test -n "$(kubernetesbrandingdir)" || list=; \
@@ -7350,6 +7386,27 @@ uninstall-nodist_systemdunitDATA:
 	@list='$(nodist_systemdunit_DATA)'; test -n "$(systemdunitdir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(systemdunitdir)'; $(am__uninstall_files_from_dir)
+install-nodist_tempconfDATA: $(nodist_tempconf_DATA)
+	@$(NORMAL_INSTALL)
+	@list='$(nodist_tempconf_DATA)'; test -n "$(tempconfdir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(tempconfdir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(tempconfdir)" || exit 1; \
+	fi; \
+	for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  echo "$$d$$p"; \
+	done | $(am__base_list) | \
+	while read files; do \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(tempconfdir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(tempconfdir)" || exit $$?; \
+	done
+
+uninstall-nodist_tempconfDATA:
+	@$(NORMAL_UNINSTALL)
+	@list='$(nodist_tempconf_DATA)'; test -n "$(tempconfdir)" || list=; \
+	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+	dir='$(DESTDIR)$(tempconfdir)'; $(am__uninstall_files_from_dir)
 install-ovirtDATA: $(ovirt_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(ovirt_DATA)'; test -n "$(ovirtdir)" || list=; \
@@ -8274,7 +8331,7 @@ check: $(BUILT_SOURCES)
 all-am: Makefile $(LIBRARIES) $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) \
 		config.h all-local
 installdirs:
-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(basedebugdir)" "$(DESTDIR)$(basefontsdir)" "$(DESTDIR)$(centosbrandingdir)" "$(DESTDIR)$(debianbrandingdir)" "$(DESTDIR)$(defaultbrandingdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" "$(DESTDIR)$(firewalldir)" "$(DESTDIR)$(kubernetesbrandingdir)" "$(DESTDIR)$(machinesdir)" "$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(ovirtdir)" "$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" "$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"; do \
+	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(basedebugdir)" "$(DESTDIR)$(basefontsdir)" "$(DESTDIR)$(centosbrandingdir)" "$(DESTDIR)$(debianbrandingdir)" "$(DESTDIR)$(defaultbrandingdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" "$(DESTDIR)$(firewalldir)" "$(DESTDIR)$(issuedir)" "$(DESTDIR)$(kubernetesbrandingdir)" "$(DESTDIR)$(machinesdir)" "$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(tempconfdir)" "$(DESTDIR)$(ovirtdir)" "$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" "$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: $(BUILT_SOURCES)
@@ -8358,10 +8415,11 @@ install-data-am: install-baseDATA install-basedebugDATA \
 	install-data-local install-debianbrandingDATA \
 	install-defaultbrandingDATA install-dist_systemdunitDATA \
 	install-fedorabrandingDATA install-firewallDATA \
-	install-kubernetesbrandingDATA install-machinesDATA \
-	install-man install-nodist_appdataDATA install-nodist_baseDATA \
-	install-nodist_desktopDATA install-nodist_staticDATA \
-	install-nodist_systemdunitDATA install-ovirtDATA \
+	install-issueDATA install-kubernetesbrandingDATA \
+	install-machinesDATA install-man install-nodist_appdataDATA \
+	install-nodist_baseDATA install-nodist_desktopDATA \
+	install-nodist_staticDATA install-nodist_systemdunitDATA \
+	install-nodist_tempconfDATA install-ovirtDATA \
 	install-pixmapDATA install-playgroundDATA \
 	install-pmlogconfDATA install-registrybrandingDATA \
 	install-rhelbrandingDATA install-staticfontsDATA \
@@ -8420,15 +8478,17 @@ uninstall-am: uninstall-baseDATA uninstall-basedebugDATA \
 	uninstall-centosbrandingDATA uninstall-debianbrandingDATA \
 	uninstall-defaultbrandingDATA uninstall-dist_systemdunitDATA \
 	uninstall-fedorabrandingDATA uninstall-firewallDATA \
-	uninstall-kubernetesbrandingDATA uninstall-libexecPROGRAMS \
-	uninstall-local uninstall-machinesDATA uninstall-man \
+	uninstall-issueDATA uninstall-kubernetesbrandingDATA \
+	uninstall-libexecPROGRAMS uninstall-local \
+	uninstall-machinesDATA uninstall-man \
 	uninstall-nodist_appdataDATA uninstall-nodist_baseDATA \
 	uninstall-nodist_desktopDATA uninstall-nodist_staticDATA \
-	uninstall-nodist_systemdunitDATA uninstall-ovirtDATA \
-	uninstall-pixmapDATA uninstall-playgroundDATA \
-	uninstall-pmlogconfDATA uninstall-registrybrandingDATA \
-	uninstall-rhelbrandingDATA uninstall-sbinPROGRAMS \
-	uninstall-staticfontsDATA uninstall-ubuntubrandingDATA
+	uninstall-nodist_systemdunitDATA uninstall-nodist_tempconfDATA \
+	uninstall-ovirtDATA uninstall-pixmapDATA \
+	uninstall-playgroundDATA uninstall-pmlogconfDATA \
+	uninstall-registrybrandingDATA uninstall-rhelbrandingDATA \
+	uninstall-sbinPROGRAMS uninstall-staticfontsDATA \
+	uninstall-ubuntubrandingDATA
 
 uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 
@@ -8454,12 +8514,13 @@ uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 	install-exec install-exec-am install-exec-hook \
 	install-exec-local install-fedorabrandingDATA \
 	install-firewallDATA install-html install-html-am install-info \
-	install-info-am install-kubernetesbrandingDATA \
-	install-libexecPROGRAMS install-machinesDATA install-man \
-	install-man1 install-man5 install-man8 \
-	install-nodist_appdataDATA install-nodist_baseDATA \
-	install-nodist_desktopDATA install-nodist_staticDATA \
-	install-nodist_systemdunitDATA install-ovirtDATA install-pdf \
+	install-info-am install-issueDATA \
+	install-kubernetesbrandingDATA install-libexecPROGRAMS \
+	install-machinesDATA install-man install-man1 install-man5 \
+	install-man8 install-nodist_appdataDATA \
+	install-nodist_baseDATA install-nodist_desktopDATA \
+	install-nodist_staticDATA install-nodist_systemdunitDATA \
+	install-nodist_tempconfDATA install-ovirtDATA install-pdf \
 	install-pdf-am install-pixmapDATA install-playgroundDATA \
 	install-pmlogconfDATA install-ps install-ps-am \
 	install-registrybrandingDATA install-rhelbrandingDATA \
@@ -8473,12 +8534,13 @@ uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 	uninstall-centosbrandingDATA uninstall-debianbrandingDATA \
 	uninstall-defaultbrandingDATA uninstall-dist_systemdunitDATA \
 	uninstall-fedorabrandingDATA uninstall-firewallDATA \
-	uninstall-kubernetesbrandingDATA uninstall-libexecPROGRAMS \
-	uninstall-local uninstall-machinesDATA uninstall-man \
-	uninstall-man1 uninstall-man5 uninstall-man8 \
-	uninstall-nodist_appdataDATA uninstall-nodist_baseDATA \
-	uninstall-nodist_desktopDATA uninstall-nodist_staticDATA \
-	uninstall-nodist_systemdunitDATA uninstall-ovirtDATA \
+	uninstall-issueDATA uninstall-kubernetesbrandingDATA \
+	uninstall-libexecPROGRAMS uninstall-local \
+	uninstall-machinesDATA uninstall-man uninstall-man1 \
+	uninstall-man5 uninstall-man8 uninstall-nodist_appdataDATA \
+	uninstall-nodist_baseDATA uninstall-nodist_desktopDATA \
+	uninstall-nodist_staticDATA uninstall-nodist_systemdunitDATA \
+	uninstall-nodist_tempconfDATA uninstall-ovirtDATA \
 	uninstall-pixmapDATA uninstall-playgroundDATA \
 	uninstall-pmlogconfDATA uninstall-registrybrandingDATA \
 	uninstall-rhelbrandingDATA uninstall-sbinPROGRAMS \
@@ -8503,6 +8565,8 @@ clean-local::
 .map.map.gz:
 	$(GZ_RULE)
 .service.in.service:
+	$(SUBST_RULE)
+.socket.in.socket:
 	$(SUBST_RULE)
 .svg.svg.gz:
 	$(GZ_RULE)
@@ -8980,6 +9044,9 @@ dist/static/login.po.%.html: src/ws/%.po src/ws/po.empty.html
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
 	$(srcdir)/tools/missing $(srcdir)/po/po2json -m $(srcdir)/src/ws/po.empty.html -o $@.tmp src/ws/$*.po && \
 	$(MV) $@.tmp $@
+
+$(nodist_tempconf_DATA): $(tempconf_in)
+	$(SUBST_RULE)
 
 # If running cockpit-ws as a non-standard user, we also set up
 # cockpit-session to be setuid root, but only runnable by cockpit-session

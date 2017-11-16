@@ -122,6 +122,10 @@ return plural;
   "$0 ਸਾਲ",
   "$0 ਸਾਲ"
  ],
+ "$0, $1 free": [
+  null,
+  "$0, $1 ਖਾਲੀ"
+ ],
  "$name (from $host)": [
   null,
   "$name ($host ਤੋਂ)"
@@ -214,6 +218,10 @@ return plural;
   null,
   "<span>$0 ਦਾ ਪਾਰਟੀਸ਼ਨ</span>"
  ],
+ "A spare disk needs to be added first before this disk can be removed.": [
+  null,
+  ""
+ ],
  "Activate": [
   null,
   "ਸਰਗਰਮ ਕਰੋ"
@@ -225,6 +233,10 @@ return plural;
  "Add": [
   null,
   "ਜੋੜੋ"
+ ],
+ "Add Disks": [
+  null,
+  ""
  ],
  "Add iSCSI Portal": [
   null,
@@ -258,11 +270,15 @@ return plural;
   null,
   ""
  ],
- "Block Device": [
+ "Block": [
   null,
   ""
  ],
  "Block device for filesystems": [
+  null,
+  ""
+ ],
+ "Blocked": [
   null,
   ""
  ],
@@ -530,6 +546,10 @@ return plural;
   null,
   ""
  ],
+ "FAILED": [
+  null,
+  ""
+ ],
  "Filesystem": [
   null,
   ""
@@ -582,6 +602,10 @@ return plural;
   null,
   ""
  ],
+ "In Sync": [
+  null,
+  ""
+ ],
  "Inactive volume": [
   null,
   ""
@@ -591,6 +615,10 @@ return plural;
   ""
  ],
  "Jobs": [
+  null,
+  ""
+ ],
+ "Local Mount Point": [
   null,
   ""
  ],
@@ -658,6 +686,14 @@ return plural;
   null,
   ""
  ],
+ "Mount point cannot be empty.": [
+  null,
+  ""
+ ],
+ "Mount point must start with \"/\".": [
+  null,
+  ""
+ ],
  "Mount read only": [
   null,
   ""
@@ -671,6 +707,14 @@ return plural;
   ""
  ],
  "Mounting $target": [
+  null,
+  ""
+ ],
+ "NFS Mount": [
+  null,
+  ""
+ ],
+ "NFS Mounts": [
   null,
   ""
  ],
@@ -698,6 +742,10 @@ return plural;
   null,
   ""
  ],
+ "New NFS Mount": [
+  null,
+  ""
+ ],
  "Next": [
   null,
   ""
@@ -707,6 +755,10 @@ return plural;
   ""
  ],
  "No Logical Volumes": [
+  null,
+  ""
+ ],
+ "No NFS mounts set up": [
   null,
   ""
  ],
@@ -766,6 +818,10 @@ return plural;
   null,
   ""
  ],
+ "Options cannot be empty.": [
+  null,
+  ""
+ ],
  "Other Devices": [
   null,
   "ਹੋਰ ਡਿਵਾਇਸ"
@@ -802,7 +858,23 @@ return plural;
   null,
   "ਪਾਸਵਰਡ"
  ],
+ "Path on Server": [
+  null,
+  ""
+ ],
+ "Path on server cannot be empty.": [
+  null,
+  ""
+ ],
+ "Path on server must start with \"/\".": [
+  null,
+  ""
+ ],
  "Physical Volume": [
+  null,
+  ""
+ ],
+ "Physical Volumes": [
   null,
   ""
  ],
@@ -918,6 +990,10 @@ return plural;
   null,
   "ਮੁਡ਼ ਚਾਲੂ ਕਰੋ"
  ],
+ "Recovering": [
+  null,
+  ""
+ ],
  "Recovering RAID Device $target": [
   null,
   ""
@@ -974,11 +1050,19 @@ return plural;
   null,
   ""
  ],
+ "Server": [
+  null,
+  ""
+ ],
  "Server Address": [
   null,
   ""
  ],
  "Server address cannot be empty.": [
+  null,
+  ""
+ ],
+ "Server cannot be empty.": [
   null,
   ""
  ],
@@ -1005,6 +1089,10 @@ return plural;
  "Size must be a number": [
   null,
   "ਆਕਾਰ ਨੰਬਰ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ"
+ ],
+ "Spare": [
+  null,
+  "ਸਪੇਅਰ"
  ],
  "Start": [
   null,
@@ -1034,6 +1122,14 @@ return plural;
   null,
   ""
  ],
+ "Stop and remove": [
+  null,
+  ""
+ ],
+ "Stop and unmount": [
+  null,
+  ""
+ ],
  "Stopping RAID Device $target": [
   null,
   ""
@@ -1045,10 +1141,6 @@ return plural;
  "Storage": [
   null,
   "ਸਟੋਰੇਜ਼"
- ],
- "Storage Log": [
-  null,
-  "ਸਟੋਰੇਜ਼ ਲਾਗ"
  ],
  "Storage Logs": [
   null,
@@ -1086,6 +1178,26 @@ return plural;
   null,
   ""
  ],
+ "The RAID device must be running in order to add spare disks.": [
+  null,
+  ""
+ ],
+ "The RAID device must be running in order to remove disks.": [
+  null,
+  ""
+ ],
+ "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
+  null,
+  ""
+ ],
+ "The last disk of a RAID device cannot be removed.": [
+  null,
+  ""
+ ],
+ "The last physical volume of a volume group cannot be removed.": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   ""
@@ -1094,7 +1206,15 @@ return plural;
   null,
   ""
  ],
+ "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
+  null,
+  ""
+ ],
  "Thin Logical Volume": [
+  null,
+  ""
+ ],
+ "This NFS mount is in use and only its options can be changed.": [
   null,
   ""
  ],
@@ -1118,6 +1238,10 @@ return plural;
   null,
   ""
  ],
+ "This disk cannot be removed while the device is recovering.": [
+  null,
+  ""
+ ],
  "This logical volume cannot be made smaller.": [
   null,
   ""
@@ -1134,7 +1258,19 @@ return plural;
   null,
   ""
  ],
+ "Unable to remove mount": [
+  null,
+  ""
+ ],
+ "Unable to unmount filesystem": [
+  null,
+  ""
+ ],
  "Unknown": [
+  null,
+  ""
+ ],
+ "Unknown ($0)": [
   null,
   ""
  ],
@@ -1210,6 +1346,10 @@ return plural;
   null,
   "ਵਾਲੀਅਮ ਗਰੁੱਪ"
  ],
+ "Write-mostly": [
+  null,
+  ""
+ ],
  "Writing": [
   null,
   ""
@@ -1266,43 +1406,11 @@ return plural;
   null,
   ""
  ],
- "storage\u0004Assessment": [
-  null,
-  ""
- ],
- "storage\u0004Bitmap": [
-  null,
-  ""
- ],
- "storage\u0004Capacity": [
-  null,
-  "ਸਮਰੱਥਾ"
- ],
- "storage\u0004Device": [
-  null,
-  "ਡਿਵਾਇਸ"
- ],
- "storage\u0004Device File": [
-  null,
-  "ਡਿਵਾਇਸ ਫਾਇਲ"
- ],
  "storage\u0004Drive": [
   null,
   ""
  ],
- "storage\u0004Firmware Version": [
-  null,
-  "ਫਿਰਮਵੇਅਰ ਵਰਜ਼ਨ"
- ],
  "storage\u0004Hard Disk": [
-  null,
-  ""
- ],
- "storage\u0004Model": [
-  null,
-  "ਮਾਡਲ"
- ],
- "storage\u0004Multipathed Devices": [
   null,
   ""
  ],
@@ -1310,33 +1418,13 @@ return plural;
   null,
   ""
  ],
- "storage\u0004RAID Level": [
-  null,
-  ""
- ],
  "storage\u0004Removable Drive": [
   null,
   ""
  ],
- "storage\u0004Serial Number": [
-  null,
-  "ਲੜੀ ਨੰਬਰ"
- ],
  "storage\u0004Solid-State Disk": [
   null,
   "ਸਾਲਡ-ਸਟੇਟ ਡਿਸਕ"
- ],
- "storage\u0004State": [
-  null,
-  "ਹਾਲਤ"
- ],
- "storage\u0004UUID": [
-  null,
-  "UUID"
- ],
- "storage\u0004World Wide Name": [
-  null,
-  ""
  ],
  "format-bytes\u0004bytes": [
   null,

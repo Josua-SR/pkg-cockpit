@@ -129,6 +129,10 @@ return plural;
   "$0 роки",
   "$0 років"
  ],
+ "$0, $1 free": [
+  null,
+  "$0, вільно $1"
+ ],
  "$name (from $host)": [
   null,
   "$name (з $host)"
@@ -221,6 +225,10 @@ return plural;
   null,
   "<span>Розділ $0</span>"
  ],
+ "A spare disk needs to be added first before this disk can be removed.": [
+  null,
+  "Перш ніж вилучати цей диск, слід додати резервний диск."
+ ],
  "Activate": [
   null,
   "Задіяти"
@@ -232,6 +240,10 @@ return plural;
  "Add": [
   null,
   "Додати"
+ ],
+ "Add Disks": [
+  null,
+  "Додати диски"
  ],
  "Add iSCSI Portal": [
   null,
@@ -265,13 +277,17 @@ return plural;
   null,
   "Доступні призначення на $0"
  ],
- "Block Device": [
+ "Block": [
   null,
-  "Блоковий пристрій"
+  ""
  ],
  "Block device for filesystems": [
   null,
   "Блоковий пристрій для файлових систем"
+ ],
+ "Blocked": [
+  null,
+  "Заблоковано"
  ],
  "Can't delete while unlocked": [
   null,
@@ -403,11 +419,11 @@ return plural;
  ],
  "Custom encryption options": [
   null,
-  ""
+  "Нетипові параметри шифрування"
  ],
  "Custom mount options": [
   null,
-  ""
+  "Нетипові параметри монтування"
  ],
  "DISK IS FAILING": [
   null,
@@ -537,6 +553,10 @@ return plural;
   null,
   "Розширений розділ"
  ],
+ "FAILED": [
+  null,
+  "ПОМИЛКА"
+ ],
  "Filesystem": [
   null,
   "Файлова система"
@@ -589,6 +609,10 @@ return plural;
   null,
   "Перейти зараз"
  ],
+ "In Sync": [
+  null,
+  "Синхронізовано"
+ ],
  "Inactive volume": [
   null,
   "Неактивний том"
@@ -600,6 +624,10 @@ return plural;
  "Jobs": [
   null,
   "Завдання"
+ ],
+ "Local Mount Point": [
+  null,
+  ""
  ],
  "Lock": [
   null,
@@ -655,19 +683,27 @@ return plural;
  ],
  "Mount at boot": [
   null,
-  ""
+  "Змонтувати при завантаженні"
  ],
  "Mount options": [
   null,
-  ""
+  "Параметри монтування"
  ],
  "Mount point can not be empty": [
+  null,
+  "Точка монтування не може бути порожньою"
+ ],
+ "Mount point cannot be empty.": [
+  null,
+  ""
+ ],
+ "Mount point must start with \"/\".": [
   null,
   ""
  ],
  "Mount read only": [
   null,
-  ""
+  "Змонтувати лише для читання"
  ],
  "Mounted At": [
   null,
@@ -680,6 +716,14 @@ return plural;
  "Mounting $target": [
   null,
   "Монтуємо $target"
+ ],
+ "NFS Mount": [
+  null,
+  "Змонтована NFS"
+ ],
+ "NFS Mounts": [
+  null,
+  ""
  ],
  "NTFS - Compatible with most systems": [
   null,
@@ -705,6 +749,10 @@ return plural;
   null,
   "У назві не повинно бути пробілів"
  ],
+ "New NFS Mount": [
+  null,
+  ""
+ ],
  "Next": [
   null,
   "Далі"
@@ -716,6 +764,10 @@ return plural;
  "No Logical Volumes": [
   null,
   "Немає логічних томів"
+ ],
+ "No NFS mounts set up": [
+  null,
+  ""
  ],
  "No disks are available.": [
   null,
@@ -773,6 +825,10 @@ return plural;
   null,
   "Параметри"
  ],
+ "Options cannot be empty.": [
+  null,
+  ""
+ ],
  "Other Devices": [
   null,
   "Інші пристрої"
@@ -809,9 +865,25 @@ return plural;
   null,
   "Пароль"
  ],
+ "Path on Server": [
+  null,
+  ""
+ ],
+ "Path on server cannot be empty.": [
+  null,
+  ""
+ ],
+ "Path on server must start with \"/\".": [
+  null,
+  ""
+ ],
  "Physical Volume": [
   null,
   "Фізичний том"
+ ],
+ "Physical Volumes": [
+  null,
+  "Фізичні томи"
  ],
  "Physical volume of $0": [
   null,
@@ -925,6 +997,10 @@ return plural;
   null,
   "Перезавантажити"
  ],
+ "Recovering": [
+  null,
+  "Відновлюємо"
+ ],
  "Recovering RAID Device $target": [
   null,
   "Відновлюємо пристрій RAID $target"
@@ -981,6 +1057,10 @@ return plural;
   null,
   "Безпечно витираємо $target"
  ],
+ "Server": [
+  null,
+  "Сервер"
+ ],
  "Server Address": [
   null,
   "Адреса сервера"
@@ -988,6 +1068,10 @@ return plural;
  "Server address cannot be empty.": [
   null,
   "Адреса сервера не може бути порожньою."
+ ],
+ "Server cannot be empty.": [
+  null,
+  ""
  ],
  "Setting up loop device $target": [
   null,
@@ -1012,6 +1096,10 @@ return plural;
  "Size must be a number": [
   null,
   "Розмір має бути числом"
+ ],
+ "Spare": [
+  null,
+  "Запас"
  ],
  "Start": [
   null,
@@ -1041,6 +1129,14 @@ return plural;
   null,
   "Зупинити витирання"
  ],
+ "Stop and remove": [
+  null,
+  ""
+ ],
+ "Stop and unmount": [
+  null,
+  ""
+ ],
  "Stopping RAID Device $target": [
   null,
   "Зупиняємо пристрій RAID $target"
@@ -1052,10 +1148,6 @@ return plural;
  "Storage": [
   null,
   "Сховище даних"
- ],
- "Storage Log": [
-  null,
-  "Журнал сховища даних"
  ],
  "Storage Logs": [
   null,
@@ -1093,6 +1185,26 @@ return plural;
   null,
   "Масив RAID перебуває у стані із погіршеними властивостями"
  ],
+ "The RAID device must be running in order to add spare disks.": [
+  null,
+  "Для додавання резервних дисків має працювати пристрій RAID."
+ ],
+ "The RAID device must be running in order to remove disks.": [
+  null,
+  "Для вилучення дисків має працювати пристрій RAID."
+ ],
+ "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
+  null,
+  ""
+ ],
+ "The last disk of a RAID device cannot be removed.": [
+  null,
+  "Останній диск пристрою RAID вилучати не можна."
+ ],
+ "The last physical volume of a volume group cannot be removed.": [
+  null,
+  "Не можна вилучати останній фізичний том із групи томів."
+ ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "Користувачу <b>$0</b> не дозволено керувати сховищем даних"
@@ -1101,9 +1213,17 @@ return plural;
   null,
   "У системі є пристрої із декількома шляхами доступу, але службу multipath не запущено."
  ],
+ "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
+  null,
+  "Для вилучення цього фізичного тому недостатньо вільного місця. Потрібно принаймні $0 вільного місця."
+ ],
  "Thin Logical Volume": [
   null,
   "Тонкий логічний том"
+ ],
+ "This NFS mount is in use and only its options can be changed.": [
+  null,
+  ""
  ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
@@ -1125,6 +1245,10 @@ return plural;
   null,
   "Цей пристрій зараз використовується для груп томів. Якщо дію буде виконано, пристрій буде вилучено із його груп томів."
  ],
+ "This disk cannot be removed while the device is recovering.": [
+  null,
+  "Цей диск не можна вилучати, доки пристрій перебуває у стані відновлення."
+ ],
  "This logical volume cannot be made smaller.": [
   null,
   "Логічний том не можна зменшувати."
@@ -1141,9 +1265,21 @@ return plural;
   null,
   "Не вдалося досягти сервера"
  ],
+ "Unable to remove mount": [
+  null,
+  ""
+ ],
+ "Unable to unmount filesystem": [
+  null,
+  ""
+ ],
  "Unknown": [
   null,
   "Невідомий"
+ ],
+ "Unknown ($0)": [
+  null,
+  "Невідомий ($0)"
  ],
  "Unknown host name": [
   null,
@@ -1155,11 +1291,11 @@ return plural;
  ],
  "Unlock at boot": [
   null,
-  ""
+  "Розблокувати при завантаженні"
  ],
  "Unlock read only": [
   null,
-  ""
+  "Розблокувати лише для читання"
  ],
  "Unlocking $target": [
   null,
@@ -1217,6 +1353,10 @@ return plural;
   null,
   "Групи томів"
  ],
+ "Write-mostly": [
+  null,
+  "Здебільшого запис"
+ ],
  "Writing": [
   null,
   "Запис"
@@ -1273,77 +1413,25 @@ return plural;
   null,
   "Нерозпізнані дані"
  ],
- "storage\u0004Assessment": [
-  null,
-  "Оцінка"
- ],
- "storage\u0004Bitmap": [
-  null,
-  "Растр"
- ],
- "storage\u0004Capacity": [
-  null,
-  "Місткість"
- ],
- "storage\u0004Device": [
-  null,
-  "Пристрій"
- ],
- "storage\u0004Device File": [
-  null,
-  "Файл пристрою"
- ],
  "storage\u0004Drive": [
   null,
   "Диск"
- ],
- "storage\u0004Firmware Version": [
-  null,
-  "Версія мікропрограми"
  ],
  "storage\u0004Hard Disk": [
   null,
   "Жорсткий диск"
  ],
- "storage\u0004Model": [
-  null,
-  "Модель"
- ],
- "storage\u0004Multipathed Devices": [
-  null,
-  "Пристрої із багатьма шляхами"
- ],
  "storage\u0004Optical Drive": [
   null,
   "Пристрій читання оптичних дисків"
- ],
- "storage\u0004RAID Level": [
-  null,
-  "Рівень RAID:"
  ],
  "storage\u0004Removable Drive": [
   null,
   "Портативний диск"
  ],
- "storage\u0004Serial Number": [
-  null,
-  "Серійний номер"
- ],
  "storage\u0004Solid-State Disk": [
   null,
   "Твердотільний диск"
- ],
- "storage\u0004State": [
-  null,
-  "Стан"
- ],
- "storage\u0004UUID": [
-  null,
-  "UUID"
- ],
- "storage\u0004World Wide Name": [
-  null,
-  "Глобальна назва (WWN)"
  ],
  "format-bytes\u0004bytes": [
   null,

@@ -115,6 +115,10 @@ return plural;
   "$0 years",
   "$0 年"
  ],
+ "$0, $1 free": [
+  null,
+  "$0, $1 可用"
+ ],
  "$name (from $host)": [
   null,
   "$name (从 $host)"
@@ -207,6 +211,10 @@ return plural;
   null,
   "<span>分区 $0</span>"
  ],
+ "A spare disk needs to be added first before this disk can be removed.": [
+  null,
+  "该磁盘可以被移除前，需要添加一个备用的磁盘。"
+ ],
  "Activate": [
   null,
   "激活"
@@ -218,6 +226,10 @@ return plural;
  "Add": [
   null,
   "添加"
+ ],
+ "Add Disks": [
+  null,
+  "添加磁盘"
  ],
  "Add iSCSI Portal": [
   null,
@@ -251,13 +263,17 @@ return plural;
   null,
   "$0 上可用的目标"
  ],
- "Block Device": [
+ "Block": [
   null,
-  "块设备"
+  ""
  ],
  "Block device for filesystems": [
   null,
   "块设备的文件系统"
+ ],
+ "Blocked": [
+  null,
+  "受阻"
  ],
  "Can't delete while unlocked": [
   null,
@@ -523,6 +539,10 @@ return plural;
   null,
   "扩展分区"
  ],
+ "FAILED": [
+  null,
+  "失败"
+ ],
  "Filesystem": [
   null,
   "文件系统"
@@ -575,6 +595,10 @@ return plural;
   null,
   "转到现在"
  ],
+ "In Sync": [
+  null,
+  "同步中"
+ ],
  "Inactive volume": [
   null,
   "暂停卷"
@@ -586,6 +610,10 @@ return plural;
  "Jobs": [
   null,
   "任务"
+ ],
+ "Local Mount Point": [
+  null,
+  ""
  ],
  "Lock": [
   null,
@@ -651,6 +679,14 @@ return plural;
   null,
   ""
  ],
+ "Mount point cannot be empty.": [
+  null,
+  ""
+ ],
+ "Mount point must start with \"/\".": [
+  null,
+  ""
+ ],
  "Mount read only": [
   null,
   ""
@@ -666,6 +702,14 @@ return plural;
  "Mounting $target": [
   null,
   "挂载 $target"
+ ],
+ "NFS Mount": [
+  null,
+  "NFS 挂载"
+ ],
+ "NFS Mounts": [
+  null,
+  ""
  ],
  "NTFS - Compatible with most systems": [
   null,
@@ -691,6 +735,10 @@ return plural;
   null,
   "名称不能包含空格。"
  ],
+ "New NFS Mount": [
+  null,
+  ""
+ ],
  "Next": [
   null,
   "下一步"
@@ -702,6 +750,10 @@ return plural;
  "No Logical Volumes": [
   null,
   "没有逻辑卷"
+ ],
+ "No NFS mounts set up": [
+  null,
+  ""
  ],
  "No disks are available.": [
   null,
@@ -759,6 +811,10 @@ return plural;
   null,
   "选项"
  ],
+ "Options cannot be empty.": [
+  null,
+  ""
+ ],
  "Other Devices": [
   null,
   "其他设备"
@@ -795,7 +851,23 @@ return plural;
   null,
   "密码"
  ],
+ "Path on Server": [
+  null,
+  ""
+ ],
+ "Path on server cannot be empty.": [
+  null,
+  ""
+ ],
+ "Path on server must start with \"/\".": [
+  null,
+  ""
+ ],
  "Physical Volume": [
+  null,
+  "物理卷"
+ ],
+ "Physical Volumes": [
   null,
   "物理卷"
  ],
@@ -911,6 +983,10 @@ return plural;
   null,
   "重启"
  ],
+ "Recovering": [
+  null,
+  "恢复"
+ ],
  "Recovering RAID Device $target": [
   null,
   "恢复 RAID 设备 $target"
@@ -967,6 +1043,10 @@ return plural;
   null,
   "安全擦除 $target"
  ],
+ "Server": [
+  null,
+  "服务器"
+ ],
  "Server Address": [
   null,
   "服务器地址"
@@ -974,6 +1054,10 @@ return plural;
  "Server address cannot be empty.": [
   null,
   "服务器地址不能为空。"
+ ],
+ "Server cannot be empty.": [
+  null,
+  ""
  ],
  "Setting up loop device $target": [
   null,
@@ -998,6 +1082,10 @@ return plural;
  "Size must be a number": [
   null,
   "大小必须是一个数字"
+ ],
+ "Spare": [
+  null,
+  "备用"
  ],
  "Start": [
   null,
@@ -1027,6 +1115,14 @@ return plural;
   null,
   "停止擦除"
  ],
+ "Stop and remove": [
+  null,
+  ""
+ ],
+ "Stop and unmount": [
+  null,
+  ""
+ ],
  "Stopping RAID Device $target": [
   null,
   "停止 RAID 设备 $target"
@@ -1038,10 +1134,6 @@ return plural;
  "Storage": [
   null,
   "存储"
- ],
- "Storage Log": [
-  null,
-  "存储日志"
  ],
  "Storage Logs": [
   null,
@@ -1079,6 +1171,26 @@ return plural;
   null,
   "RAID 阵列处于降级状态"
  ],
+ "The RAID device must be running in order to add spare disks.": [
+  null,
+  "为了添加备用的磁盘，RAID 设备必须在运行状态。"
+ ],
+ "The RAID device must be running in order to remove disks.": [
+  null,
+  "为了移除磁盘，RAID 设备必须在运行状态。"
+ ],
+ "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
+  null,
+  ""
+ ],
+ "The last disk of a RAID device cannot be removed.": [
+  null,
+  " RAID 设备中的最后一个磁盘不能被移除。"
+ ],
+ "The last physical volume of a volume group cannot be removed.": [
+  null,
+  "不能删除一个卷组的最后一个物理卷。"
+ ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "用户 <b>$0</b> 不允许管理存储"
@@ -1087,9 +1199,17 @@ return plural;
   null,
   "该系统上有多路径设备，但是多路径服务未运行。"
  ],
+ "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
+  null,
+  "没有其他足够的空闲空间来移除改物理卷。至少需要 $0 或更多空闲空间。"
+ ],
  "Thin Logical Volume": [
   null,
   "稀疏逻辑卷"
+ ],
+ "This NFS mount is in use and only its options can be changed.": [
+  null,
+  ""
  ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
@@ -1111,6 +1231,10 @@ return plural;
   null,
   "该设备正在被卷组使用。                程序将从其卷组中移除它。"
  ],
+ "This disk cannot be removed while the device is recovering.": [
+  null,
+  "当磁盘正在恢复时，该磁盘不能被移除。"
+ ],
  "This logical volume cannot be made smaller.": [
   null,
   "该逻辑卷不能变小。"
@@ -1127,9 +1251,21 @@ return plural;
   null,
   "无法到达服务器"
  ],
+ "Unable to remove mount": [
+  null,
+  ""
+ ],
+ "Unable to unmount filesystem": [
+  null,
+  ""
+ ],
  "Unknown": [
   null,
   "未知"
+ ],
+ "Unknown ($0)": [
+  null,
+  "未知 ($0)"
  ],
  "Unknown host name": [
   null,
@@ -1203,6 +1339,10 @@ return plural;
   null,
   "卷组"
  ],
+ "Write-mostly": [
+  null,
+  "Write-mostly"
+ ],
  "Writing": [
   null,
   "写入中"
@@ -1259,77 +1399,25 @@ return plural;
   null,
   "无法识别的数据"
  ],
- "storage\u0004Assessment": [
-  null,
-  "评估"
- ],
- "storage\u0004Bitmap": [
-  null,
-  "位图"
- ],
- "storage\u0004Capacity": [
-  null,
-  "容量"
- ],
- "storage\u0004Device": [
-  null,
-  "设备"
- ],
- "storage\u0004Device File": [
-  null,
-  "设备文件"
- ],
  "storage\u0004Drive": [
   null,
   "驱动器"
- ],
- "storage\u0004Firmware Version": [
-  null,
-  "固件版本"
  ],
  "storage\u0004Hard Disk": [
   null,
   "机械硬盘"
  ],
- "storage\u0004Model": [
-  null,
-  "模型"
- ],
- "storage\u0004Multipathed Devices": [
-  null,
-  "多路径设备"
- ],
  "storage\u0004Optical Drive": [
   null,
   "光盘驱动器"
- ],
- "storage\u0004RAID Level": [
-  null,
-  "RAID 级别"
  ],
  "storage\u0004Removable Drive": [
   null,
   "可移动驱动器"
  ],
- "storage\u0004Serial Number": [
-  null,
-  "串口号"
- ],
  "storage\u0004Solid-State Disk": [
   null,
   "固态硬盘"
- ],
- "storage\u0004State": [
-  null,
-  "状态"
- ],
- "storage\u0004UUID": [
-  null,
-  "UUID"
- ],
- "storage\u0004World Wide Name": [
-  null,
-  "全局名称"
  ],
  "format-bytes\u0004bytes": [
   null,
