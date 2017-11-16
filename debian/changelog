@@ -1,4 +1,4 @@
-cockpit (156-1) UNRELEASED; urgency=medium
+cockpit (156-1) unstable; urgency=medium
 
   * New upstream release:
     - Redesign navigation and support mobile browsing
@@ -6,7 +6,7 @@ cockpit (156-1) UNRELEASED; urgency=medium
     - Add project homepage link to Apps page
     - Maintain issue(5) file with current Cockpit status
 
- -- Martin Pitt <mpitt@debian.org>  Thu, 16 Nov 2017 09:57:25 +0100
+ -- Martin Pitt <mpitt@debian.org>  Thu, 16 Nov 2017 10:08:35 +0100
 
 cockpit (155-1) unstable; urgency=medium
 
