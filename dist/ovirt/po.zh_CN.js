@@ -431,6 +431,10 @@ return plural;
   null,
   "运行到此"
  ],
+ "Running Since:": [
+  null,
+  ""
+ ],
  "SHUTDOWN action failed": [
   null,
   "关机操作失败"

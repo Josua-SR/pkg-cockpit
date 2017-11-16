@@ -122,6 +122,10 @@ return plural;
   "$0 an",
   "$0 ans"
  ],
+ "$0, $1 free": [
+  null,
+  ""
+ ],
  "$name (from $host)": [
   null,
   "$name (de $host)"
@@ -214,6 +218,10 @@ return plural;
   null,
   "<span>Partition de $0</span>"
  ],
+ "A spare disk needs to be added first before this disk can be removed.": [
+  null,
+  ""
+ ],
  "Activate": [
   null,
   "Activer"
@@ -225,6 +233,10 @@ return plural;
  "Add": [
   null,
   "Ajouter"
+ ],
+ "Add Disks": [
+  null,
+  "Ajouter des disques"
  ],
  "Add iSCSI Portal": [
   null,
@@ -258,13 +270,17 @@ return plural;
   null,
   ""
  ],
- "Block Device": [
+ "Block": [
   null,
   ""
  ],
  "Block device for filesystems": [
   null,
   ""
+ ],
+ "Blocked": [
+  null,
+  "Bloqué"
  ],
  "Can't delete while unlocked": [
   null,
@@ -530,6 +546,10 @@ return plural;
   null,
   "Partition étendue"
  ],
+ "FAILED": [
+  null,
+  "EN ÉCHEC"
+ ],
  "Filesystem": [
   null,
   ""
@@ -582,6 +602,10 @@ return plural;
   null,
   "Aller à maintenant"
  ],
+ "In Sync": [
+  null,
+  "En cours de synchronisation"
+ ],
  "Inactive volume": [
   null,
   ""
@@ -593,6 +617,10 @@ return plural;
  "Jobs": [
   null,
   "Tâches"
+ ],
+ "Local Mount Point": [
+  null,
+  ""
  ],
  "Lock": [
   null,
@@ -658,6 +686,14 @@ return plural;
   null,
   ""
  ],
+ "Mount point cannot be empty.": [
+  null,
+  ""
+ ],
+ "Mount point must start with \"/\".": [
+  null,
+  ""
+ ],
  "Mount read only": [
   null,
   ""
@@ -673,6 +709,14 @@ return plural;
  "Mounting $target": [
   null,
   "Montage de $target"
+ ],
+ "NFS Mount": [
+  null,
+  ""
+ ],
+ "NFS Mounts": [
+  null,
+  ""
  ],
  "NTFS - Compatible with most systems": [
   null,
@@ -698,6 +742,10 @@ return plural;
   null,
   ""
  ],
+ "New NFS Mount": [
+  null,
+  ""
+ ],
  "Next": [
   null,
   "Suivant"
@@ -707,6 +755,10 @@ return plural;
   "Aucun système de fichiers"
  ],
  "No Logical Volumes": [
+  null,
+  ""
+ ],
+ "No NFS mounts set up": [
   null,
   ""
  ],
@@ -766,6 +818,10 @@ return plural;
   null,
   "Options"
  ],
+ "Options cannot be empty.": [
+  null,
+  ""
+ ],
  "Other Devices": [
   null,
   "Autres Périphériques"
@@ -802,7 +858,23 @@ return plural;
   null,
   "Mot de passe"
  ],
+ "Path on Server": [
+  null,
+  ""
+ ],
+ "Path on server cannot be empty.": [
+  null,
+  ""
+ ],
+ "Path on server must start with \"/\".": [
+  null,
+  ""
+ ],
  "Physical Volume": [
+  null,
+  ""
+ ],
+ "Physical Volumes": [
   null,
   ""
  ],
@@ -918,6 +990,10 @@ return plural;
   null,
   "Redémarrer"
  ],
+ "Recovering": [
+  null,
+  "Récupération en cours"
+ ],
  "Recovering RAID Device $target": [
   null,
   ""
@@ -974,11 +1050,19 @@ return plural;
   null,
   ""
  ],
+ "Server": [
+  null,
+  ""
+ ],
  "Server Address": [
   null,
   ""
  ],
  "Server address cannot be empty.": [
+  null,
+  ""
+ ],
+ "Server cannot be empty.": [
   null,
   ""
  ],
@@ -1005,6 +1089,10 @@ return plural;
  "Size must be a number": [
   null,
   ""
+ ],
+ "Spare": [
+  null,
+  "Rechange"
  ],
  "Start": [
   null,
@@ -1034,6 +1122,14 @@ return plural;
   null,
   "Arrêter la scrutation"
  ],
+ "Stop and remove": [
+  null,
+  ""
+ ],
+ "Stop and unmount": [
+  null,
+  ""
+ ],
  "Stopping RAID Device $target": [
   null,
   ""
@@ -1043,10 +1139,6 @@ return plural;
   ""
  ],
  "Storage": [
-  null,
-  ""
- ],
- "Storage Log": [
   null,
   ""
  ],
@@ -1086,6 +1178,26 @@ return plural;
   null,
   ""
  ],
+ "The RAID device must be running in order to add spare disks.": [
+  null,
+  ""
+ ],
+ "The RAID device must be running in order to remove disks.": [
+  null,
+  ""
+ ],
+ "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
+  null,
+  ""
+ ],
+ "The last disk of a RAID device cannot be removed.": [
+  null,
+  ""
+ ],
+ "The last physical volume of a volume group cannot be removed.": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   ""
@@ -1094,7 +1206,15 @@ return plural;
   null,
   ""
  ],
+ "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
+  null,
+  ""
+ ],
  "Thin Logical Volume": [
+  null,
+  ""
+ ],
+ "This NFS mount is in use and only its options can be changed.": [
   null,
   ""
  ],
@@ -1118,6 +1238,10 @@ return plural;
   null,
   ""
  ],
+ "This disk cannot be removed while the device is recovering.": [
+  null,
+  ""
+ ],
  "This logical volume cannot be made smaller.": [
   null,
   ""
@@ -1134,9 +1258,21 @@ return plural;
   null,
   ""
  ],
+ "Unable to remove mount": [
+  null,
+  ""
+ ],
+ "Unable to unmount filesystem": [
+  null,
+  ""
+ ],
  "Unknown": [
   null,
   "Inconnu"
+ ],
+ "Unknown ($0)": [
+  null,
+  "Inconnu ($0)"
  ],
  "Unknown host name": [
   null,
@@ -1210,6 +1346,10 @@ return plural;
   null,
   "Groupes de volumes"
  ],
+ "Write-mostly": [
+  null,
+  "Écriture favorisée"
+ ],
  "Writing": [
   null,
   "Ecriture"
@@ -1266,31 +1406,7 @@ return plural;
   null,
   "Données non reconnues"
  ],
- "storage\u0004Assessment": [
-  null,
-  ""
- ],
- "storage\u0004Bitmap": [
-  null,
-  ""
- ],
- "storage\u0004Capacity": [
-  null,
-  "Capacité"
- ],
- "storage\u0004Device": [
-  null,
-  "Périphérique"
- ],
- "storage\u0004Device File": [
-  null,
-  ""
- ],
  "storage\u0004Drive": [
-  null,
-  ""
- ],
- "storage\u0004Firmware Version": [
   null,
   ""
  ],
@@ -1298,45 +1414,17 @@ return plural;
   null,
   "Disque dur"
  ],
- "storage\u0004Model": [
-  null,
-  ""
- ],
- "storage\u0004Multipathed Devices": [
-  null,
-  ""
- ],
  "storage\u0004Optical Drive": [
   null,
   "Lecteur optique"
- ],
- "storage\u0004RAID Level": [
-  null,
-  ""
  ],
  "storage\u0004Removable Drive": [
   null,
   "Périphérique amovible"
  ],
- "storage\u0004Serial Number": [
-  null,
-  "Numéro de série"
- ],
  "storage\u0004Solid-State Disk": [
   null,
   "Disque SSD"
- ],
- "storage\u0004State": [
-  null,
-  ""
- ],
- "storage\u0004UUID": [
-  null,
-  ""
- ],
- "storage\u0004World Wide Name": [
-  null,
-  ""
  ],
  "format-bytes\u0004bytes": [
   null,

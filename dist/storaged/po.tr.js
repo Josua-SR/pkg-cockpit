@@ -122,6 +122,10 @@ return plural;
   "",
   ""
  ],
+ "$0, $1 free": [
+  null,
+  ""
+ ],
  "$name (from $host)": [
   null,
   ""
@@ -214,6 +218,10 @@ return plural;
   null,
   ""
  ],
+ "A spare disk needs to be added first before this disk can be removed.": [
+  null,
+  ""
+ ],
  "Activate": [
   null,
   "Aktifleştir"
@@ -225,6 +233,10 @@ return plural;
  "Add": [
   null,
   "Ekle"
+ ],
+ "Add Disks": [
+  null,
+  "Disk Ekle"
  ],
  "Add iSCSI Portal": [
   null,
@@ -258,13 +270,17 @@ return plural;
   null,
   ""
  ],
- "Block Device": [
+ "Block": [
   null,
-  "Blok Aygıtı"
+  ""
  ],
  "Block device for filesystems": [
   null,
   ""
+ ],
+ "Blocked": [
+  null,
+  "Bloklanmış"
  ],
  "Can't delete while unlocked": [
   null,
@@ -530,6 +546,10 @@ return plural;
   null,
   ""
  ],
+ "FAILED": [
+  null,
+  "OLMADI"
+ ],
  "Filesystem": [
   null,
   ""
@@ -582,6 +602,10 @@ return plural;
   null,
   "Şimdiye git"
  ],
+ "In Sync": [
+  null,
+  "Eş zamanlanıyor"
+ ],
  "Inactive volume": [
   null,
   ""
@@ -593,6 +617,10 @@ return plural;
  "Jobs": [
   null,
   "İşler"
+ ],
+ "Local Mount Point": [
+  null,
+  ""
  ],
  "Lock": [
   null,
@@ -658,6 +686,14 @@ return plural;
   null,
   ""
  ],
+ "Mount point cannot be empty.": [
+  null,
+  ""
+ ],
+ "Mount point must start with \"/\".": [
+  null,
+  ""
+ ],
  "Mount read only": [
   null,
   ""
@@ -671,6 +707,14 @@ return plural;
   ""
  ],
  "Mounting $target": [
+  null,
+  ""
+ ],
+ "NFS Mount": [
+  null,
+  "Bağla"
+ ],
+ "NFS Mounts": [
   null,
   ""
  ],
@@ -698,6 +742,10 @@ return plural;
   null,
   ""
  ],
+ "New NFS Mount": [
+  null,
+  ""
+ ],
  "Next": [
   null,
   "Sonraki"
@@ -707,6 +755,10 @@ return plural;
   "Dosya sistemi yok"
  ],
  "No Logical Volumes": [
+  null,
+  ""
+ ],
+ "No NFS mounts set up": [
   null,
   ""
  ],
@@ -766,6 +818,10 @@ return plural;
   null,
   "Seçenekler"
  ],
+ "Options cannot be empty.": [
+  null,
+  ""
+ ],
  "Other Devices": [
   null,
   "Diğer Aygıtlar"
@@ -802,7 +858,23 @@ return plural;
   null,
   "Parola"
  ],
+ "Path on Server": [
+  null,
+  ""
+ ],
+ "Path on server cannot be empty.": [
+  null,
+  ""
+ ],
+ "Path on server must start with \"/\".": [
+  null,
+  ""
+ ],
  "Physical Volume": [
+  null,
+  ""
+ ],
+ "Physical Volumes": [
   null,
   ""
  ],
@@ -918,6 +990,10 @@ return plural;
   null,
   ""
  ],
+ "Recovering": [
+  null,
+  ""
+ ],
  "Recovering RAID Device $target": [
   null,
   ""
@@ -974,11 +1050,19 @@ return plural;
   null,
   ""
  ],
+ "Server": [
+  null,
+  "Servis"
+ ],
  "Server Address": [
   null,
   ""
  ],
  "Server address cannot be empty.": [
+  null,
+  ""
+ ],
+ "Server cannot be empty.": [
   null,
   ""
  ],
@@ -1005,6 +1089,10 @@ return plural;
  "Size must be a number": [
   null,
   "Boyut belirtilmeli"
+ ],
+ "Spare": [
+  null,
+  "Yedek"
  ],
  "Start": [
   null,
@@ -1034,6 +1122,14 @@ return plural;
   null,
   ""
  ],
+ "Stop and remove": [
+  null,
+  ""
+ ],
+ "Stop and unmount": [
+  null,
+  ""
+ ],
  "Stopping RAID Device $target": [
   null,
   ""
@@ -1045,10 +1141,6 @@ return plural;
  "Storage": [
   null,
   "Depolama"
- ],
- "Storage Log": [
-  null,
-  ""
  ],
  "Storage Logs": [
   null,
@@ -1086,6 +1178,26 @@ return plural;
   null,
   ""
  ],
+ "The RAID device must be running in order to add spare disks.": [
+  null,
+  ""
+ ],
+ "The RAID device must be running in order to remove disks.": [
+  null,
+  ""
+ ],
+ "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
+  null,
+  ""
+ ],
+ "The last disk of a RAID device cannot be removed.": [
+  null,
+  ""
+ ],
+ "The last physical volume of a volume group cannot be removed.": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   ""
@@ -1094,7 +1206,15 @@ return plural;
   null,
   ""
  ],
+ "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
+  null,
+  ""
+ ],
  "Thin Logical Volume": [
+  null,
+  ""
+ ],
+ "This NFS mount is in use and only its options can be changed.": [
   null,
   ""
  ],
@@ -1118,6 +1238,10 @@ return plural;
   null,
   ""
  ],
+ "This disk cannot be removed while the device is recovering.": [
+  null,
+  ""
+ ],
  "This logical volume cannot be made smaller.": [
   null,
   ""
@@ -1134,9 +1258,21 @@ return plural;
   null,
   ""
  ],
+ "Unable to remove mount": [
+  null,
+  ""
+ ],
+ "Unable to unmount filesystem": [
+  null,
+  ""
+ ],
  "Unknown": [
   null,
   "Bilinmiyor"
+ ],
+ "Unknown ($0)": [
+  null,
+  "Bilinmiyor ($)"
  ],
  "Unknown host name": [
   null,
@@ -1210,6 +1346,10 @@ return plural;
   null,
   ""
  ],
+ "Write-mostly": [
+  null,
+  ""
+ ],
  "Writing": [
   null,
   "Yazılıyor"
@@ -1266,77 +1406,25 @@ return plural;
   null,
   "Tanımlanamayan Veri"
  ],
- "storage\u0004Assessment": [
-  null,
-  ""
- ],
- "storage\u0004Bitmap": [
-  null,
-  "Bitmap"
- ],
- "storage\u0004Capacity": [
-  null,
-  "Kapasite"
- ],
- "storage\u0004Device": [
-  null,
-  "Aygıt"
- ],
- "storage\u0004Device File": [
-  null,
-  "Aygıt dosyası"
- ],
  "storage\u0004Drive": [
   null,
   "Sürücü"
- ],
- "storage\u0004Firmware Version": [
-  null,
-  "Firmware Sürümü"
  ],
  "storage\u0004Hard Disk": [
   null,
   "Sabit Disk"
  ],
- "storage\u0004Model": [
-  null,
-  "Model"
- ],
- "storage\u0004Multipathed Devices": [
-  null,
-  ""
- ],
  "storage\u0004Optical Drive": [
   null,
   "Optik Sürücü"
- ],
- "storage\u0004RAID Level": [
-  null,
-  "RAID Seviyesi"
  ],
  "storage\u0004Removable Drive": [
   null,
   "Çıkarılabilir Disk"
  ],
- "storage\u0004Serial Number": [
-  null,
-  "Seri Numarası"
- ],
  "storage\u0004Solid-State Disk": [
   null,
   "SSD Disk"
- ],
- "storage\u0004State": [
-  null,
-  "Durum"
- ],
- "storage\u0004UUID": [
-  null,
-  "UUID"
- ],
- "storage\u0004World Wide Name": [
-  null,
-  ""
  ],
  "format-bytes\u0004bytes": [
   null,

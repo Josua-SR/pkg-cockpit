@@ -122,6 +122,10 @@ return plural;
   "",
   ""
  ],
+ "$0, $1 free": [
+  null,
+  ""
+ ],
  "$name (from $host)": [
   null,
   ""
@@ -214,6 +218,10 @@ return plural;
   null,
   ""
  ],
+ "A spare disk needs to be added first before this disk can be removed.": [
+  null,
+  "Een extra schijf dient toegevoegd te worden voordat deze schijf kan worden verwijderd."
+ ],
  "Activate": [
   null,
   ""
@@ -225,6 +233,10 @@ return plural;
  "Add": [
   null,
   ""
+ ],
+ "Add Disks": [
+  null,
+  "Schijven toevoegen"
  ],
  "Add iSCSI Portal": [
   null,
@@ -258,13 +270,17 @@ return plural;
   null,
   ""
  ],
- "Block Device": [
+ "Block": [
   null,
-  "Blok apparaat"
+  ""
  ],
  "Block device for filesystems": [
   null,
   "Blok apparaat voor bestandsystemen"
+ ],
+ "Blocked": [
+  null,
+  "Geblokkeerd"
  ],
  "Can't delete while unlocked": [
   null,
@@ -530,6 +546,10 @@ return plural;
   null,
   ""
  ],
+ "FAILED": [
+  null,
+  ""
+ ],
  "Filesystem": [
   null,
   ""
@@ -582,6 +602,10 @@ return plural;
   null,
   ""
  ],
+ "In Sync": [
+  null,
+  ""
+ ],
  "Inactive volume": [
   null,
   ""
@@ -591,6 +615,10 @@ return plural;
   ""
  ],
  "Jobs": [
+  null,
+  ""
+ ],
+ "Local Mount Point": [
   null,
   ""
  ],
@@ -658,6 +686,14 @@ return plural;
   null,
   ""
  ],
+ "Mount point cannot be empty.": [
+  null,
+  ""
+ ],
+ "Mount point must start with \"/\".": [
+  null,
+  ""
+ ],
  "Mount read only": [
   null,
   ""
@@ -671,6 +707,14 @@ return plural;
   ""
  ],
  "Mounting $target": [
+  null,
+  ""
+ ],
+ "NFS Mount": [
+  null,
+  ""
+ ],
+ "NFS Mounts": [
   null,
   ""
  ],
@@ -698,6 +742,10 @@ return plural;
   null,
   ""
  ],
+ "New NFS Mount": [
+  null,
+  ""
+ ],
  "Next": [
   null,
   ""
@@ -707,6 +755,10 @@ return plural;
   ""
  ],
  "No Logical Volumes": [
+  null,
+  ""
+ ],
+ "No NFS mounts set up": [
   null,
   ""
  ],
@@ -766,6 +818,10 @@ return plural;
   null,
   ""
  ],
+ "Options cannot be empty.": [
+  null,
+  ""
+ ],
  "Other Devices": [
   null,
   ""
@@ -802,7 +858,23 @@ return plural;
   null,
   ""
  ],
+ "Path on Server": [
+  null,
+  ""
+ ],
+ "Path on server cannot be empty.": [
+  null,
+  ""
+ ],
+ "Path on server must start with \"/\".": [
+  null,
+  ""
+ ],
  "Physical Volume": [
+  null,
+  ""
+ ],
+ "Physical Volumes": [
   null,
   ""
  ],
@@ -918,6 +990,10 @@ return plural;
   null,
   ""
  ],
+ "Recovering": [
+  null,
+  ""
+ ],
  "Recovering RAID Device $target": [
   null,
   ""
@@ -974,11 +1050,19 @@ return plural;
   null,
   ""
  ],
+ "Server": [
+  null,
+  ""
+ ],
  "Server Address": [
   null,
   ""
  ],
  "Server address cannot be empty.": [
+  null,
+  ""
+ ],
+ "Server cannot be empty.": [
   null,
   ""
  ],
@@ -1003,6 +1087,10 @@ return plural;
   ""
  ],
  "Size must be a number": [
+  null,
+  ""
+ ],
+ "Spare": [
   null,
   ""
  ],
@@ -1034,6 +1122,14 @@ return plural;
   null,
   ""
  ],
+ "Stop and remove": [
+  null,
+  ""
+ ],
+ "Stop and unmount": [
+  null,
+  ""
+ ],
  "Stopping RAID Device $target": [
   null,
   ""
@@ -1043,10 +1139,6 @@ return plural;
   ""
  ],
  "Storage": [
-  null,
-  ""
- ],
- "Storage Log": [
   null,
   ""
  ],
@@ -1086,6 +1178,26 @@ return plural;
   null,
   ""
  ],
+ "The RAID device must be running in order to add spare disks.": [
+  null,
+  "Het RAID apparaat dient te draaien om een extra schijf toe te kunnen voegen."
+ ],
+ "The RAID device must be running in order to remove disks.": [
+  null,
+  "Het RAID apparaat dient te draaien om een extra schijf toe te kunnen verwijderen."
+ ],
+ "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
+  null,
+  ""
+ ],
+ "The last disk of a RAID device cannot be removed.": [
+  null,
+  "De laatste schijf van een RAID apparaat kan niet worden verwijderd."
+ ],
+ "The last physical volume of a volume group cannot be removed.": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   ""
@@ -1094,7 +1206,15 @@ return plural;
   null,
   ""
  ],
+ "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
+  null,
+  ""
+ ],
  "Thin Logical Volume": [
+  null,
+  ""
+ ],
+ "This NFS mount is in use and only its options can be changed.": [
   null,
   ""
  ],
@@ -1118,6 +1238,10 @@ return plural;
   null,
   ""
  ],
+ "This disk cannot be removed while the device is recovering.": [
+  null,
+  "Deze schijf kan niet worden verwijderd gedurende de herstel periode."
+ ],
  "This logical volume cannot be made smaller.": [
   null,
   ""
@@ -1134,7 +1258,19 @@ return plural;
   null,
   ""
  ],
+ "Unable to remove mount": [
+  null,
+  ""
+ ],
+ "Unable to unmount filesystem": [
+  null,
+  ""
+ ],
  "Unknown": [
+  null,
+  ""
+ ],
+ "Unknown ($0)": [
   null,
   ""
  ],
@@ -1210,6 +1346,10 @@ return plural;
   null,
   ""
  ],
+ "Write-mostly": [
+  null,
+  ""
+ ],
  "Writing": [
   null,
   ""
@@ -1266,31 +1406,7 @@ return plural;
   null,
   ""
  ],
- "storage\u0004Assessment": [
-  null,
-  ""
- ],
- "storage\u0004Bitmap": [
-  null,
-  ""
- ],
- "storage\u0004Capacity": [
-  null,
-  ""
- ],
- "storage\u0004Device": [
-  null,
-  ""
- ],
- "storage\u0004Device File": [
-  null,
-  ""
- ],
  "storage\u0004Drive": [
-  null,
-  ""
- ],
- "storage\u0004Firmware Version": [
   null,
   ""
  ],
@@ -1298,19 +1414,7 @@ return plural;
   null,
   "Harde schijf"
  ],
- "storage\u0004Model": [
-  null,
-  ""
- ],
- "storage\u0004Multipathed Devices": [
-  null,
-  ""
- ],
  "storage\u0004Optical Drive": [
-  null,
-  ""
- ],
- "storage\u0004RAID Level": [
   null,
   ""
  ],
@@ -1318,25 +1422,9 @@ return plural;
   null,
   ""
  ],
- "storage\u0004Serial Number": [
-  null,
-  ""
- ],
  "storage\u0004Solid-State Disk": [
   null,
   "Solid-State schijf"
- ],
- "storage\u0004State": [
-  null,
-  ""
- ],
- "storage\u0004UUID": [
-  null,
-  ""
- ],
- "storage\u0004World Wide Name": [
-  null,
-  ""
  ],
  "format-bytes\u0004bytes": [
   null,

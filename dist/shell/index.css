@@ -1009,122 +1009,573 @@ input[type=number] {
     width: 100%;
   }
 }
-.nav-sidebar {
-  float: left;
-  width: 120px;
-  background-color: #1d1d1d;
-  z-index: 1;
+/* Navigation base, used for both desktop & mobile navigation */
+.nav-sidebar .dashboard-link:not(.active) a:hover {
+  background: rgba(57, 63, 68, 0.5) !important;
+}
+.nav-item-pf-header {
+  color: #fff;
+  font-size: 16px;
+  margin: 18px 20px 10px 20px;
+}
+.area-ct-subnav {
+  background: #393f44;
+  border-right: 1px solid #292e34;
+  -webkit-flex: none;
+  flex: none;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
   position: relative;
-  top: 0px;
+  z-index: 2;
+  opacity: 1;
+  /* Fade start and end of the host menu to indicate more content is available */
+}
+.area-ct-subnav .list-group {
+  border: none;
+  margin: 10px 0;
+}
+.area-ct-subnav .list-group-item {
+  padding: 0;
+  background: inherit;
+  border: none;
+  z-index: 1;
+}
+.area-ct-subnav .list-group-item,
+.area-ct-subnav .list-group-item > a {
+  transition: all 300ms;
+}
+.area-ct-subnav .list-group-item:hover,
+.area-ct-subnav .list-group-item:hover > a {
+  transition: all 150ms;
+}
+.area-ct-subnav .list-group-item:hover,
+.area-ct-subnav .list-group-item.active {
+  /* Move hover & selected above overflow fade */
+  z-index: 3;
+}
+.area-ct-subnav .list-group-item:hover a,
+.area-ct-subnav .list-group-item.active a {
+  color: #fff;
+}
+.area-ct-subnav .list-group-item:hover {
+  background: rgba(77, 82, 88, 0.5);
+}
+.area-ct-subnav .list-group-item.active {
+  background: #4d5258;
+}
+.area-ct-subnav .list-group-item.active a {
+  font-weight: 600;
+}
+.area-ct-subnav .list-group-item a {
+  padding: 10px 15px;
+  display: block;
+  color: #d1d1d1;
+  text-decoration: none;
+  transition: all 300ms;
+}
+.area-ct-subnav .dropdown-toggle {
+  position: relative;
+  overflow: visible !important;
+}
+.area-ct-subnav .dropdown-toggle:after,
+.area-ct-subnav:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2rem;
+  pointer-events: none;
+  z-index: 2;
+  /* Accomodate scrollbars with margin (IE11 needs 18px; rest are less) */
+  margin-right: 18px;
+}
+.area-ct-subnav .dropdown-toggle:after {
+  background: linear-gradient(to bottom, #393f44, rgba(57, 63, 68, 0));
+  margin-top: 1px;
+  bottom: -2rem;
+}
+.area-ct-subnav:after {
+  background: linear-gradient(to top, #393f44, rgba(57, 63, 68, 0));
+  bottom: 0;
+  height: 4rem;
+}
+.nav-sidebar > .list-group .dashboard-link {
+  display: block;
+}
+.nav-sidebar > .list-group .dashboard-link:not(.active) .fa {
+  color: #72767b !important;
+}
+.machine-dropdown {
+  position: relative;
+  -webkit-flex: none;
+  flex: none;
+}
+.machine-dropdown .dropdown-toggle span {
+  font-size: 14px;
+}
+.machine-dropdown:after {
+  content: "";
+  position: absolute;
+  margin: 0 10px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #4d5258;
+}
+.machine-dropdown > .dropdown-toggle span,
+.host-apps a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.host-apps {
+  -webkit-flex: 1 1 0;
+  flex: 1 1 0;
   overflow-x: hidden;
   overflow-y: auto;
-}
-.nav-sidebar a {
-  padding: 4px 8px !important;
-  height: 30px !important;
-  width: 120px !important;
-}
-.nav-sidebar span {
-  display: block;
-  font-size: 12px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-left: 7px;
-}
-.nav-sidebar .list-group {
-  background-color: #292e34;
-}
-.nav-sidebar .list-group .list-group-item {
-  border-color: transparent;
-}
-.nav-sidebar .list-group .list-group-item.active a::before {
-  display: none;
-}
-.nav-sidebar .list-group + .list-group {
-  padding-top: 15px !important;
-}
-.nav-sidebar .list-group-item-value {
-  max-width: 100px !important;
-}
-.navbar-default .navbar-form {
-  border-color: transparent;
-}
-#content {
   position: relative;
 }
-.machine-color {
-  /* Width overridden elsewhere */
-  border-left: 0px solid #BABABA;
-  border-top: none !important;
-  border-bottom: none !important;
-  padding: 0px !important;
+.area-ct-content > iframe {
+  height: 100%;
 }
-#machine-dropdown .machine-color {
-  float: left;
+.area-ct-content > .curtains-ct {
+  position: static !important;
 }
-#machine-dropdown a {
-  font-size: 13px;
-}
-#machine-dropdown .dropdown-menu {
-  width: 100%;
-  border-left: none;
-}
-#machine-dropdown .dropdown-menu a {
-  padding: 10px;
-}
-#machine-dropdown .dropdown-menu li {
-  border-left: 7px solid #BABABA;
-}
-#machine-dropdown .dropdown-menu li a {
-  max-width: 201px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-#machine-link {
-  padding: 9px;
-  padding-left: 12px;
-  padding-right: 15px;
-  position: static;
-  min-width: 179px;
-}
-#machine-link span {
-  display: inline-block;
-  width: 100px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  vertical-align: middle;
-}
-.machine-avatar {
-  width: 24px;
-  height: 24px;
-  margin-right: 5px;
-  display: none;
-}
-#machine-spinner {
-  float: right;
-  margin: 8px;
-}
-@media (min-width: 768px) {
-  #machine-dropdown .machine-color {
-    height: 44px !important;
+/* Desktop navigation */
+@media screen and (min-width: 768px) {
+  .area-ct-navbar {
+    -webkit-flex: none;
+    flex: none;
+    min-width: 100%;
+  }
+  .area-ct-content {
+    -webkit-flex: auto;
+    flex: auto;
+    position: relative;
+    width: 100%;
+    /* Position as absolute to make things work on old Chrome versions,
+           mainly to make tests pass */
+  }
+  .area-ct-content > iframe {
+    position: absolute;
+  }
+  .area-ct-content > .curtains-ct {
+    position: absolute !important;
+  }
+  .area-ct-content > iframe,
+  .area-ct-content > .curtains-ct {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .area-ct-body {
+    position: relative;
+    -webkit-flex: auto;
+    flex: auto;
+    z-index: 3;
+    display: -webkit-flex;
+    display: flex;
+    /* IE11 needs to have the flex-basis set to page max,
+           else it stretches too tall */
+    -webkit-flex-basis: 100%;
+    flex-basis: 100%;
+  }
+  .nav-pf-vertical {
+    position: static !important;
+    height: 100%;
+    border-right-width: 0;
+    top: 0;
+  }
+  .nav-sidebar-wrap {
+    -webkit-flex: none;
+    flex: none;
+    z-index: 3;
+  }
+  .nav-sidebar-wrap:not(.expanded) {
+    width: 68px;
+  }
+  .nav-sidebar-wrap:not(.expanded) .nav-sidebar {
+    width: 68px;
+  }
+  .nav-sidebar-wrap:not(.expanded) .list-group-item-value {
+    opacity: 0;
+    transition: opacity 150ms ease-out;
   }
   .nav-sidebar {
+    /* Use absolute position to make old Chrome (2015 Dec) tests pass */
+    position: absolute !important;
+    height: 100%;
+    transition: all 150ms ease-out;
+    box-shadow: 0 0;
+    background: linear-gradient(to left, #030303, #292e34 1px);
+  }
+  .nav-sidebar span.first-letter {
+    font-size: 0px !important;
+    color: #d1d1d1;
+  }
+  .nav-sidebar span.first-letter:first-letter {
+    font-size: 22px !important;
+  }
+  .nav-sidebar .fa {
+    margin-left: -4px;
+    margin-top: -1px;
+  }
+  .nav-sidebar .fa:not(.first-letter) {
+    font-size: 22px !important;
+  }
+  .nav-sidebar .list-group-item {
+    border-right-width: 0;
+    overflow: hidden;
+  }
+  .nav-sidebar .list-group-item > a {
+    padding-right: 20px;
+  }
+  .nav-sidebar .list-group-item:focus {
+    background: active;
+  }
+  .nav-sidebar-wrap:not(.expanded) .nav-sidebar:not(.clicked):hover {
     width: 180px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5), 0 0 32px rgba(0, 0, 0, 0.75);
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0, 1.2, 0.8, 1);
   }
-  .nav-sidebar a {
-    padding: 4px 8px !important;
-    height: 30px !important;
-    width: 180px !important;
+  .nav-sidebar-wrap:not(.expanded) .nav-sidebar:not(.clicked):hover .list-group-item-value {
+    transition-duration: 300ms;
+    opacity: 1;
   }
-  .nav-sidebar span {
-    margin-left: 26px;
+  .nav-sidebar-wrap:not(.expanded) .nav-sidebar:not(.clicked):hover .first-letter {
+    opacity: 0;
   }
-  .machine-color {
-    border-left-width: 7px;
+  .single-nav .nav-sidebar {
+    display: none;
   }
-  .machine-avatar {
-    display: inline;
+  .single-nav .nav-sidebar-wrap {
+    width: 0px;
+  }
+  .single-nav .area-ct-subnav {
+    left: 0px;
+  }
+  .area-ct-layout {
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    -webkit-flex-flow: column;
+    flex-flow: column;
+    align-content: stretch;
+  }
+  .area-ct-subnav {
+    visibility: visible !important;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 15em;
+  }
+}
+/* Mobile navigation */
+@media screen and (max-width: 767px) {
+  /* Use native mobile fonts (when available) for nav & menu text */
+  .area-ct-navbar,
+  .area-ct-body {
+    font-family: roboto, san francisco, helvetica light, noto, helvetica, sans-serif;
+    font-size: 14px;
+    align-content: stretch;
+    align-items: stretch;
+  }
+  .area-ct-navbar a,
+  .area-ct-body a {
+    font-size: 14px !important;
+    padding: 12px 15px;
+  }
+  /* Layout UI in CSS grids
+    (all mobile browsers support this new layout type)
+
+    How this works:
+
+    CSS grids version 1 is now implemented in all mobile browsers; we can use it.
+    However, display: container and subgrids are not implemented in Chrome yet.
+    To work around this, we do a little more complex gridding by overlapping
+    child grids on top of the parent grid. We basically set up the main grid
+    as with a gutter of @mobile-button-size ("56px") on the top, right side,
+    and bottom. We then stretch the child grids to this.
+
+    The elements are then assigned grid names with 'grid-area' and placed in the
+    grid using 'grid-template-areas', based on their immediate parent (which is
+    set as a grid display type).
+
+    Some grid-areas override their template placement with grid-columns and
+    grid-rows. The most notible being the navmenu, so that it can overlap
+    content. The value for grid-colums is either a single number or first/last+1
+    (which basically means go from first and stop when it hits the grid
+    column/row _after_ the one you want to last fill).
+
+    Note: Due to less, we have to wrap some of the values in ~"" so that they
+    will be passed directly to the resulting CSS... else less will want to try
+    to do math, which isn't want we want.
+
+    Tip: Firefox dev tools let you visualize grids in the "layout" subtab of the
+    "inspector" tab.
+    */
+  .area-ct-layout,
+  .area-ct-body,
+  .area-ct-navbar {
+    display: grid;
+    grid-template-columns: auto 56px;
+    grid-template-rows: 56px 1fr 56px;
+    align-content: end;
+  }
+  .area-ct-layout {
+    grid-template-areas: "content content" "content content" "nav topbar";
+    height: 100%;
+    width: 100%;
+  }
+  .area-ct-body {
+    /* Stretch the nav wrapper to the same area on the parent grid */
+    grid-column: 1/3;
+    grid-row: 1/4;
+    grid-template-rows: 56px calc(100% - 56px * 2) 56px;
+    z-index: 2;
+    /* Pass through mouse events */
+    pointer-events: none;
+    grid-template-areas: "content content" "content content" "nav empty";
+  }
+  .area-ct-body > * {
+    /* Allow mouse events for children */
+    pointer-events: auto;
+  }
+  .area-ct-navbar {
+    /* Create another child grid and stretch it to the parent grid */
+    pointer-events: none;
+    display: grid;
+    background: transparent;
+    border: none;
+    grid-template: "notmenu menu menu" "notheader notheader header";
+    grid-area: topbar;
+    grid-column: 1/3;
+    /* Expand to the whole column */
+    grid-row: 2/4;
+    grid-template-rows: auto 56px;
+    grid-template-columns: minmax(56px, auto) auto 56px;
+    z-index: 3;
+  }
+  .area-ct-navbar > * {
+    pointer-events: auto;
+  }
+  .area-ct-navbar:before,
+  .area-ct-navbar:after {
+    display: none;
+  }
+  .navbar-header {
+    grid-area: header;
+    background: #292e34;
+  }
+  .navbar-collapse {
+    grid-area: menu;
+    align-self: end;
+    background: #292e34;
+  }
+  .navbar-brand {
+    display: none;
+  }
+  .navbar-toggle {
+    float: right !important;
+    margin: 0 !important;
+    width: 100%;
+    height: 100%;
+  }
+  .area-ct-content {
+    display: block;
+    grid-area: content;
+    z-index: 1;
+  }
+  .area-ct-content > iframe {
+    animation: navFadeIn 300ms;
+  }
+  .nav-sidebar-wrap {
+    grid-area: nav;
+    z-index: 3;
+    max-width: calc(100vw - 56px);
+    overflow: auto;
+    overflow-y: hidden;
+    position: relative;
+  }
+  .nav-sidebar {
+    position: static !important;
+    width: auto;
+    max-width: 100%;
+    overflow: hidden;
+    overflow-x: auto;
+    background: linear-gradient(to bottom, #030303, #292e34 1px);
+  }
+  .nav-sidebar ul,
+  .nav-sidebar li {
+    padding: 0;
+    margin: 0;
+  }
+  .nav-sidebar > .list-group {
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+  }
+  .nav-sidebar > .list-group li {
+    -webkit-flex: auto;
+    flex: auto;
+  }
+  .nav-sidebar .list-group-item {
+    width: auto !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: static;
+    max-width: 33vw;
+  }
+  .nav-sidebar .list-group-item a {
+    display: inline-block !important;
+    padding: 6px 12px !important;
+    padding: 0;
+    text-align: center;
+    width: auto !important;
+    min-width: 80px;
+    width: 100% !important;
+    height: 56px !important;
+    margin-bottom: 12px;
+  }
+  .nav-sidebar .list-group-item.active {
+    z-index: 2;
+  }
+  .nav-sidebar .list-group-item.active a {
+    background: #393f44 !important;
+  }
+  .nav-sidebar .list-group-item.active a:before {
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: auto !important;
+    height: 3px !important;
+    width: auto !important;
+    z-index: 3;
+  }
+  .nav-sidebar .list-group-item.active a:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1px solid black;
+    border-width: 0 1px;
+    pointer-events: none;
+    opacity: 0.5;
+    z-index: 4;
+  }
+  .nav-sidebar .list-group-item.active:first-child a:after {
+    border-left: none;
+  }
+  .nav-sidebar .fa,
+  .nav-sidebar .pficon-container-node,
+  .nav-sidebar .list-group-item-value {
+    display: inline-block;
+    line-height: 1 !important;
+    font-weight: 400;
+  }
+  .nav-sidebar .fa,
+  .nav-sidebar .pficon-container-node {
+    margin: 0 auto !important;
+    float: none !important;
+    font-size: 24px !important;
+  }
+  .nav-sidebar .list-group-item-value {
+    font-size: 12px !important;
+    line-height: 2 !important;
+    margin: -6px auto 0;
+    padding: 0 !important;
+  }
+  /* Restrict width of hostname nav label in mobile */
+  #host-nav-item .list-group-item-value {
+    max-width: calc(20vw - 24px);
+  }
+  .area-ct-subnav {
+    display: -webkit-flex !important;
+    display: flex !important;
+    align-self: end;
+    grid-area: navmenu;
+    max-height: 100%;
+    min-height: 50%;
+    grid-column: 1;
+    grid-row: 2;
+    z-index: 2;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translate(0, 100%) scaleY(0);
+    transition: opacity 200ms ease-in 100ms, transform 100ms ease-in 300ms;
+  }
+  .area-ct-subnav.interact {
+    transform: none;
+    opacity: 1;
+    overflow: visible;
+    transition: bottom 300ms ease-out, box-shadow 300ms ease-out, transform 300ms ease-out;
+  }
+  .area-ct-subnav .dropdown-menu {
+    width: auto !important;
+    left: 28px !important;
+    right: -28px !important;
+    animation: navFadeInSlideDown 600ms;
+  }
+  .host-apps {
+    -webkit-flex: auto;
+    flex: auto;
+    max-height: 100%;
+  }
+  .navbar-collapse > ul,
+  .area-ct-subnav {
+    box-shadow: 0 0 9px rgba(0, 0, 0, 0.4) !important;
+  }
+  /* Add an indicator for the host menu in mobile nav */
+  .has-menu .pficon-container-node {
+    position: relative;
+  }
+  .has-menu .pficon-container-node:after {
+    font-family: FontAwesome;
+    content: "\F106";
+    font-size: 1.75rem;
+    position: absolute;
+    bottom: 0.25rem;
+    right: -1.5rem;
+    color: #fff;
+    opacity: 0.5;
+    transition: all 300ms;
+  }
+  .has-menu.menu-visible .pficon-container-node:after {
+    transform: scale(1, -1);
+    bottom: 0.25ex;
+    opacity: 0.75;
+  }
+  .has-menu:not(.active) .pficon-container-node:after {
+    opacity: 0;
+  }
+}
+/* Navigation animation */
+@keyframes navFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes navFadeInSlideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: auto;
   }
 }
 #active-pages-dialog .modal-body {
@@ -1356,14 +1807,128 @@ html.index-page body {
   margin: 7px;
   box-shadow: none;
 }
-@media (min-width: 320px) and (max-width: 767px) {
-  .navbar-primary .navbar-form {
-    margin: 0;
-    padding: 0;
+.navbar-header .navbar-toggle {
+  display: none;
+}
+.navbar-header .navbar-brand {
+  padding: 13px 0 13px 10px;
+}
+@media (max-width: 767px) {
+  .navbar-pf-vertical .navbar-toggle {
+    display: block;
+  }
+  .navbar-header .navbar-brand {
+    padding: 13px 0 0;
   }
 }
 .navbar-default .navbar-form {
   border-color: transparent;
+}
+#machine-dropdown {
+  padding: 0;
+  margin: 0;
+}
+#machine-dropdown .dropdown-menu {
+  width: 180px;
+  top: 6rem;
+  /* Align to arrow: 50% width + button padding + arrow width */
+  right: calc(-50% + 15px + 10px);
+  left: auto;
+  overflow: visible;
+  padding: 0;
+}
+#machine-dropdown .dropdown-menu > .form-group {
+  padding: 10px;
+  margin: 0;
+  position: relative;
+}
+#machine-dropdown .dropdown-menu > .form-group > .form-control-feedback {
+  color: #aaa;
+  margin: 11px;
+  padding: 0.5em 0 0;
+  left: 0;
+}
+#machine-dropdown .dropdown-menu > ul[role="menu"] {
+  max-height: 75vh;
+  overflow: auto;
+  overflow-x: hidden;
+  padding: 0;
+  position: relative;
+}
+#machine-dropdown .dropdown-menu > ul[role="menu"] > li {
+  position: relative;
+  padding: 0;
+}
+#machine-dropdown .dropdown-menu > ul[role="menu"] > li a {
+  padding: 1ex 2ex;
+  display: block;
+}
+#machine-dropdown .dropdown-menu > ul[role="menu"] > li a > span {
+  display: block;
+  text-indent: calc(1ex - 18px);
+  padding-left: calc(1ex + 18px);
+}
+#machine-dropdown .dropdown-menu > ul[role="menu"] > li.active a {
+  background-color: lightblue;
+  border: 1px solid #bee1f4;
+  border-width: 1px 0;
+  background-color: #def3ff;
+}
+#machine-dropdown .dropdown-menu > ul[role="menu"] .fa-li {
+  position: static;
+  width: auto;
+  padding: 0 1ex 0 0;
+  font-size: 16px;
+  vertical-align: baseline;
+}
+#machine-dropdown #machine-link {
+  padding: 0 15px;
+  margin: 0;
+  line-height: 64px;
+  color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-flex;
+  /* Fallback for PhantomJS */
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+#machine-dropdown #machine-link img,
+#machine-dropdown #machine-link b {
+  flex: none;
+}
+#machine-dropdown #machine-link img {
+  width: 24px;
+  height: auto;
+}
+#machine-dropdown #machine-link span {
+  flex: auto;
+  padding: 0 0 0 1ex;
+}
+#machine-dropdown #machine-link:hover {
+  background: rgba(77, 82, 88, 0.5);
+}
+#machine-dropdown .dropdown-menu:after {
+  border: 10px solid transparent;
+  border-top-width: 0;
+  border-bottom-color: #fff;
+  top: -10px;
+  content: '';
+  height: 0;
+  left: 50%;
+  margin: 0 0 0 -5px;
+  position: absolute;
+  width: 0;
+}
+#machine-dropdown input {
+  padding-left: 25px;
+  padding-right: 5px;
+}
+#machine-dropdown i.fa-search {
+  top: 6px;
+  left: 0;
 }
 .nav > li[hidden] {
   display: none;
@@ -1657,6 +2222,9 @@ iframe.container-frame {
   top: 3px;
   padding-right: 5px;
 }
+#machine-spinner {
+  margin: 10px;
+}
 .spinner-white {
   border-bottom: 4px solid rgba(255, 255, 255, 0.25);
   border-left: 4px solid rgba(255, 255, 255, 0.25);
@@ -1675,11 +2243,16 @@ iframe.container-frame {
 .navbar-pf .navbar-brand {
   text-transform: uppercase;
   margin: 0 8px;
-  height: 25px;
-  padding: 2px 0;
 }
 .navbar-pf .navbar-brand:hover {
   color: #F1F1F1;
+}
+.navbar-pf .navbar-utility {
+  font-size: 13px;
+}
+.navbar-pf .pficon,
+.navbar-pf .navbar-nav > li > a {
+  line-height: 34px;
 }
 
 /*# sourceMappingURL=index.css.map*/

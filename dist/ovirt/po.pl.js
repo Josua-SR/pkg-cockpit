@@ -81,7 +81,7 @@ return plural;
  ],
  "All running virtual machines will be turned off.": [
   null,
-  ""
+  "Wszystkie uruchomione maszyny wirtualne zostaną wyłączone."
  ],
  "Automatically selected host": [
   null,
@@ -273,7 +273,7 @@ return plural;
  ],
  "Host to Maintenance": [
   null,
-  ""
+  "Gospodarz do konserwacji"
  ],
  "Launch Remote Viewer": [
   null,
@@ -357,7 +357,7 @@ return plural;
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
-  ""
+  "Proszę potwierdzić, gospodarz zostanie przełączony do trybu konserwacji."
  ],
  "Please provide fully qualified domain name and port of the oVirt engine.": [
   null,
@@ -431,6 +431,10 @@ return plural;
   null,
   "Uruchom tutaj"
  ],
+ "Running Since:": [
+  null,
+  ""
+ ],
  "SHUTDOWN action failed": [
   null,
   "Działanie SHUTDOWN się nie powiodło"
@@ -497,7 +501,7 @@ return plural;
  ],
  "Switch Host to Maintenance": [
   null,
-  ""
+  "Przełącz gospodarza do konserwacji"
  ],
  "Switch to Desktop Viewer": [
   null,
@@ -509,11 +513,11 @@ return plural;
  ],
  "Switching host to maintenance mode failed. Received error: ": [
   null,
-  ""
+  "Przełączenie gospodarza do trybu konserwacji się nie powiodło. Otrzymany błąd:"
  ],
  "Switching host to maintenance mode in progress ...": [
   null,
-  ""
+  "Trwa przełączanie gospodarza do trybu konserwacji…"
  ],
  "System": [
   null,
@@ -533,7 +537,7 @@ return plural;
  ],
  "Templates of $0 cluster": [
   null,
-  ""
+  "Szablony klastra $0"
  ],
  "The VM crashed.": [
   null,
@@ -653,7 +657,7 @@ return plural;
  ],
  "Virtual Machines of $0 cluster": [
   null,
-  ""
+  "Maszyny wirtualne klastra $0"
  ],
  "Volume": [
   null,
@@ -757,7 +761,7 @@ return plural;
  ],
  "oVirt Host State:": [
   null,
-  ""
+  "Stan gospodarza oVirt:"
  ],
  "oVirt Provider installation script failed due to missing arguments.": [
   null,

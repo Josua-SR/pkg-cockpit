@@ -115,6 +115,10 @@ return plural;
   "$0 years",
   "$0 年"
  ],
+ "$0, $1 free": [
+  null,
+  "$0, $1 空き"
+ ],
  "$name (from $host)": [
   null,
   "$name ($host)"
@@ -207,6 +211,10 @@ return plural;
   null,
   "<span>$0 のパーティション</span>"
  ],
+ "A spare disk needs to be added first before this disk can be removed.": [
+  null,
+  "このディスクを削除する前に、スペアディスクを追加する必要があります。"
+ ],
  "Activate": [
   null,
   "有効化"
@@ -218,6 +226,10 @@ return plural;
  "Add": [
   null,
   "追加する"
+ ],
+ "Add Disks": [
+  null,
+  "ディスクの追加"
  ],
  "Add iSCSI Portal": [
   null,
@@ -251,13 +263,17 @@ return plural;
   null,
   "$0 で利用可能なターゲット"
  ],
- "Block Device": [
+ "Block": [
   null,
-  "ブロックデバイス"
+  ""
  ],
  "Block device for filesystems": [
   null,
   "ファイルシステム用ブロックデバイス"
+ ],
+ "Blocked": [
+  null,
+  "ブロック済み"
  ],
  "Can't delete while unlocked": [
   null,
@@ -523,6 +539,10 @@ return plural;
   null,
   "拡張パーティション"
  ],
+ "FAILED": [
+  null,
+  "失敗"
+ ],
  "Filesystem": [
   null,
   "ファイルシステム"
@@ -575,6 +595,10 @@ return plural;
   null,
   "今すぐ移動"
  ],
+ "In Sync": [
+  null,
+  "同期"
+ ],
  "Inactive volume": [
   null,
   "非アクティブなボリューム"
@@ -586,6 +610,10 @@ return plural;
  "Jobs": [
   null,
   "ジョブ"
+ ],
+ "Local Mount Point": [
+  null,
+  ""
  ],
  "Lock": [
   null,
@@ -651,6 +679,14 @@ return plural;
   null,
   ""
  ],
+ "Mount point cannot be empty.": [
+  null,
+  ""
+ ],
+ "Mount point must start with \"/\".": [
+  null,
+  ""
+ ],
  "Mount read only": [
   null,
   ""
@@ -666,6 +702,14 @@ return plural;
  "Mounting $target": [
   null,
   "$target のマウント"
+ ],
+ "NFS Mount": [
+  null,
+  "NFS マウント"
+ ],
+ "NFS Mounts": [
+  null,
+  ""
  ],
  "NTFS - Compatible with most systems": [
   null,
@@ -691,6 +735,10 @@ return plural;
   null,
   "名前にはスペースを含めることができません。"
  ],
+ "New NFS Mount": [
+  null,
+  ""
+ ],
  "Next": [
   null,
   "次へ"
@@ -702,6 +750,10 @@ return plural;
  "No Logical Volumes": [
   null,
   "論理ボリュームなし"
+ ],
+ "No NFS mounts set up": [
+  null,
+  ""
  ],
  "No disks are available.": [
   null,
@@ -759,6 +811,10 @@ return plural;
   null,
   "オプション"
  ],
+ "Options cannot be empty.": [
+  null,
+  ""
+ ],
  "Other Devices": [
   null,
   "他のデバイス"
@@ -795,7 +851,23 @@ return plural;
   null,
   "パスワード"
  ],
+ "Path on Server": [
+  null,
+  ""
+ ],
+ "Path on server cannot be empty.": [
+  null,
+  ""
+ ],
+ "Path on server must start with \"/\".": [
+  null,
+  ""
+ ],
  "Physical Volume": [
+  null,
+  "物理ボリューム"
+ ],
+ "Physical Volumes": [
   null,
   "物理ボリューム"
  ],
@@ -911,6 +983,10 @@ return plural;
   null,
   "再起動"
  ],
+ "Recovering": [
+  null,
+  "復旧"
+ ],
  "Recovering RAID Device $target": [
   null,
   "RAID デバイス $target の復旧"
@@ -967,6 +1043,10 @@ return plural;
   null,
   "$target を安全に削除"
  ],
+ "Server": [
+  null,
+  "サーバー"
+ ],
  "Server Address": [
   null,
   "サーバーアドレス"
@@ -974,6 +1054,10 @@ return plural;
  "Server address cannot be empty.": [
   null,
   "サーバーアドレスは空にできません。"
+ ],
+ "Server cannot be empty.": [
+  null,
+  ""
  ],
  "Setting up loop device $target": [
   null,
@@ -998,6 +1082,10 @@ return plural;
  "Size must be a number": [
   null,
   "サイズは数値である必要があります"
+ ],
+ "Spare": [
+  null,
+  "スペア"
  ],
  "Start": [
   null,
@@ -1027,6 +1115,14 @@ return plural;
   null,
   "Scrubbing の停止"
  ],
+ "Stop and remove": [
+  null,
+  ""
+ ],
+ "Stop and unmount": [
+  null,
+  ""
+ ],
  "Stopping RAID Device $target": [
   null,
   "RAID デバイス $target の停止"
@@ -1038,10 +1134,6 @@ return plural;
  "Storage": [
   null,
   "ストレージ"
- ],
- "Storage Log": [
-  null,
-  "ストレージログ"
  ],
  "Storage Logs": [
   null,
@@ -1079,6 +1171,26 @@ return plural;
   null,
   "RAID アレイは劣化状態にあります"
  ],
+ "The RAID device must be running in order to add spare disks.": [
+  null,
+  "スペアディスクを追加する場合は、MDRAID デバイスが実行中である必要があります。"
+ ],
+ "The RAID device must be running in order to remove disks.": [
+  null,
+  "ディスクを取り外す場合は、RAID デバイスが実行中である必要があります。"
+ ],
+ "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
+  null,
+  ""
+ ],
+ "The last disk of a RAID device cannot be removed.": [
+  null,
+  "RAID デバイスの最後のディスクは取り外すことができません。"
+ ],
+ "The last physical volume of a volume group cannot be removed.": [
+  null,
+  "ボリュームグループの最後の物理ボリュームは削除できません。"
+ ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "ユーザー <b>$0</b> はストレージを管理することを許可されていません"
@@ -1087,9 +1199,17 @@ return plural;
   null,
   "システムに複数のパスを持つデバイスがありますが、マルチパスサービスが実行されていません。"
  ],
+ "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
+  null,
+  "この物理ボリュームを削除するのに十分な空き領域がありません。少なくとも $0 の空き領域が必要です。"
+ ],
  "Thin Logical Volume": [
   null,
   "シン論理ボリューム"
+ ],
+ "This NFS mount is in use and only its options can be changed.": [
+  null,
+  ""
  ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
@@ -1111,6 +1231,10 @@ return plural;
   null,
   ""
  ],
+ "This disk cannot be removed while the device is recovering.": [
+  null,
+  "このディスクは、デバイスが復旧中に取り外すことができません。"
+ ],
  "This logical volume cannot be made smaller.": [
   null,
   "この論理ボリュームは小さくすることができません。"
@@ -1127,9 +1251,21 @@ return plural;
   null,
   "サーバーに到達できません"
  ],
+ "Unable to remove mount": [
+  null,
+  ""
+ ],
+ "Unable to unmount filesystem": [
+  null,
+  ""
+ ],
  "Unknown": [
   null,
   "不明"
+ ],
+ "Unknown ($0)": [
+  null,
+  "不明な ($0)"
  ],
  "Unknown host name": [
   null,
@@ -1203,6 +1339,10 @@ return plural;
   null,
   "ボリュームグループ"
  ],
+ "Write-mostly": [
+  null,
+  "Write-mostly"
+ ],
  "Writing": [
   null,
   "書き込み"
@@ -1259,77 +1399,25 @@ return plural;
   null,
   "認識されないデータ"
  ],
- "storage\u0004Assessment": [
-  null,
-  "評価"
- ],
- "storage\u0004Bitmap": [
-  null,
-  "ビットマップ"
- ],
- "storage\u0004Capacity": [
-  null,
-  "容量"
- ],
- "storage\u0004Device": [
-  null,
-  "デバイス"
- ],
- "storage\u0004Device File": [
-  null,
-  "デバイスファイル"
- ],
  "storage\u0004Drive": [
   null,
   "ドライブ"
- ],
- "storage\u0004Firmware Version": [
-  null,
-  "ファームウェアバージョン"
  ],
  "storage\u0004Hard Disk": [
   null,
   "ハードディスク"
  ],
- "storage\u0004Model": [
-  null,
-  "モデル"
- ],
- "storage\u0004Multipathed Devices": [
-  null,
-  "マルチパスデバイス"
- ],
  "storage\u0004Optical Drive": [
   null,
   "光学ドライブ"
- ],
- "storage\u0004RAID Level": [
-  null,
-  "RAID レベル"
  ],
  "storage\u0004Removable Drive": [
   null,
   "リムーバブルドライブ"
  ],
- "storage\u0004Serial Number": [
-  null,
-  "シリアルナンバー"
- ],
  "storage\u0004Solid-State Disk": [
   null,
   "ソリッドステートディスク"
- ],
- "storage\u0004State": [
-  null,
-  "状態"
- ],
- "storage\u0004UUID": [
-  null,
-  "UUID"
- ],
- "storage\u0004World Wide Name": [
-  null,
-  "ワールドワイド名"
  ],
  "format-bytes\u0004bytes": [
   null,

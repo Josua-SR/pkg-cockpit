@@ -122,6 +122,10 @@ return plural;
   "$0 any",
   "$0 anys"
  ],
+ "$0, $1 free": [
+  null,
+  "$0 amb $1 lliures"
+ ],
  "$name (from $host)": [
   null,
   "$name (de $host)"
@@ -214,6 +218,10 @@ return plural;
   null,
   "<span>Partició de $0</span>"
  ],
+ "A spare disk needs to be added first before this disk can be removed.": [
+  null,
+  ""
+ ],
  "Activate": [
   null,
   "Activa"
@@ -225,6 +233,10 @@ return plural;
  "Add": [
   null,
   "Afegeix"
+ ],
+ "Add Disks": [
+  null,
+  "Afegeix discs"
  ],
  "Add iSCSI Portal": [
   null,
@@ -258,13 +270,17 @@ return plural;
   null,
   "Objectius disponibles en $0"
  ],
- "Block Device": [
+ "Block": [
   null,
-  "Dispositiu de blocs"
+  ""
  ],
  "Block device for filesystems": [
   null,
   "Dispositiu de blocs per al sistema de fitxers"
+ ],
+ "Blocked": [
+  null,
+  "Bloquejat"
  ],
  "Can't delete while unlocked": [
   null,
@@ -396,11 +412,11 @@ return plural;
  ],
  "Custom encryption options": [
   null,
-  ""
+  "Opcions personalitzades de xifrat"
  ],
  "Custom mount options": [
   null,
-  ""
+  "Opcions personalitzades de muntatge"
  ],
  "DISK IS FAILING": [
   null,
@@ -530,6 +546,10 @@ return plural;
   null,
   "Partició estesa"
  ],
+ "FAILED": [
+  null,
+  "FALLAT"
+ ],
  "Filesystem": [
   null,
   "Sistema de fitxers"
@@ -582,6 +602,10 @@ return plural;
   null,
   "Vés a ara"
  ],
+ "In Sync": [
+  null,
+  "En sincronització"
+ ],
  "Inactive volume": [
   null,
   "Volum inactiu"
@@ -593,6 +617,10 @@ return plural;
  "Jobs": [
   null,
   "Treballs"
+ ],
+ "Local Mount Point": [
+  null,
+  ""
  ],
  "Lock": [
   null,
@@ -648,19 +676,27 @@ return plural;
  ],
  "Mount at boot": [
   null,
-  ""
+  "Munta a l'arrencada"
  ],
  "Mount options": [
   null,
-  ""
+  "Opcions de muntatge"
  ],
  "Mount point can not be empty": [
+  null,
+  "El punt de muntatge no pot estar en blanc"
+ ],
+ "Mount point cannot be empty.": [
+  null,
+  ""
+ ],
+ "Mount point must start with \"/\".": [
   null,
   ""
  ],
  "Mount read only": [
   null,
-  ""
+  "Munta només de lectura"
  ],
  "Mounted At": [
   null,
@@ -673,6 +709,14 @@ return plural;
  "Mounting $target": [
   null,
   "S'està muntat $target"
+ ],
+ "NFS Mount": [
+  null,
+  "Muntatge NFS"
+ ],
+ "NFS Mounts": [
+  null,
+  ""
  ],
  "NTFS - Compatible with most systems": [
   null,
@@ -698,6 +742,10 @@ return plural;
   null,
   "El nom no pot contenir l'espai en blanc."
  ],
+ "New NFS Mount": [
+  null,
+  ""
+ ],
  "Next": [
   null,
   "Següent"
@@ -709,6 +757,10 @@ return plural;
  "No Logical Volumes": [
   null,
   "Sense volums lògics"
+ ],
+ "No NFS mounts set up": [
+  null,
+  ""
  ],
  "No disks are available.": [
   null,
@@ -766,6 +818,10 @@ return plural;
   null,
   "Opcions"
  ],
+ "Options cannot be empty.": [
+  null,
+  ""
+ ],
  "Other Devices": [
   null,
   "Altres dispositius"
@@ -802,9 +858,25 @@ return plural;
   null,
   "Contrasenya"
  ],
+ "Path on Server": [
+  null,
+  ""
+ ],
+ "Path on server cannot be empty.": [
+  null,
+  ""
+ ],
+ "Path on server must start with \"/\".": [
+  null,
+  ""
+ ],
  "Physical Volume": [
   null,
   "Volum físic"
+ ],
+ "Physical Volumes": [
+  null,
+  "Volums físics"
  ],
  "Physical volume of $0": [
   null,
@@ -918,6 +990,10 @@ return plural;
   null,
   "Rearrencada"
  ],
+ "Recovering": [
+  null,
+  "Recuperació"
+ ],
  "Recovering RAID Device $target": [
   null,
   ""
@@ -974,6 +1050,10 @@ return plural;
   null,
   "S'està eliminant de forma segura $target"
  ],
+ "Server": [
+  null,
+  "Servidor"
+ ],
  "Server Address": [
   null,
   "Adreça del servidor"
@@ -981,6 +1061,10 @@ return plural;
  "Server address cannot be empty.": [
   null,
   "L'adreça del servidor no pot estar en blanc."
+ ],
+ "Server cannot be empty.": [
+  null,
+  ""
  ],
  "Setting up loop device $target": [
   null,
@@ -1005,6 +1089,10 @@ return plural;
  "Size must be a number": [
   null,
   "La mida ha de ser un número"
+ ],
+ "Spare": [
+  null,
+  "Recanvi"
  ],
  "Start": [
   null,
@@ -1034,6 +1122,14 @@ return plural;
   null,
   "Atura el tractament de neteja"
  ],
+ "Stop and remove": [
+  null,
+  ""
+ ],
+ "Stop and unmount": [
+  null,
+  ""
+ ],
  "Stopping RAID Device $target": [
   null,
   "S'està aturant el dispositiu RAID $target"
@@ -1045,10 +1141,6 @@ return plural;
  "Storage": [
   null,
   "Emmagatzematge"
- ],
- "Storage Log": [
-  null,
-  "Registre de l'emmagatzematge"
  ],
  "Storage Logs": [
   null,
@@ -1086,6 +1178,26 @@ return plural;
   null,
   ""
  ],
+ "The RAID device must be running in order to add spare disks.": [
+  null,
+  ""
+ ],
+ "The RAID device must be running in order to remove disks.": [
+  null,
+  ""
+ ],
+ "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
+  null,
+  ""
+ ],
+ "The last disk of a RAID device cannot be removed.": [
+  null,
+  ""
+ ],
+ "The last physical volume of a volume group cannot be removed.": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "A l'usuari <b>$0</b> no se li permet gestionar l'emmagatzematge"
@@ -1094,9 +1206,17 @@ return plural;
   null,
   "Hi ha dispositius amb diversos camins al sistema, però no s'està executant el servei multipath."
  ],
+ "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
+  null,
+  "No hi ha prou espai lliure als altres llocs per suprimir aquest volum físic. Es necessiten almenys $0 més d'espai lliure."
+ ],
  "Thin Logical Volume": [
   null,
   "Volums lògics disgregats"
+ ],
+ "This NFS mount is in use and only its options can be changed.": [
+  null,
+  ""
  ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
@@ -1118,6 +1238,10 @@ return plural;
   null,
   "Aquest dispositiu s'utilitza actualment amb grups de volums.                Si continueu, s'eliminarà dels grups de volums."
  ],
+ "This disk cannot be removed while the device is recovering.": [
+  null,
+  "Aquest disc no es pot treure quan s'està recuperant el dispositiu."
+ ],
  "This logical volume cannot be made smaller.": [
   null,
   "Aquest volum lògic no es pot fer més petit."
@@ -1134,9 +1258,21 @@ return plural;
   null,
   "No es pot arribar al servidor"
  ],
+ "Unable to remove mount": [
+  null,
+  ""
+ ],
+ "Unable to unmount filesystem": [
+  null,
+  ""
+ ],
  "Unknown": [
   null,
   "Desconegut"
+ ],
+ "Unknown ($0)": [
+  null,
+  "Desconegut ($0)"
  ],
  "Unknown host name": [
   null,
@@ -1148,11 +1284,11 @@ return plural;
  ],
  "Unlock at boot": [
   null,
-  ""
+  "Desbloqueja a l'arrencada"
  ],
  "Unlock read only": [
   null,
-  ""
+  "Desbloqueja només lectura"
  ],
  "Unlocking $target": [
   null,
@@ -1210,6 +1346,10 @@ return plural;
   null,
   "Grups de volums"
  ],
+ "Write-mostly": [
+  null,
+  "Escriptura-majoritària"
+ ],
  "Writing": [
   null,
   "Escriptura"
@@ -1266,77 +1406,25 @@ return plural;
   null,
   "Dades no reconegudes"
  ],
- "storage\u0004Assessment": [
-  null,
-  "Avaluació"
- ],
- "storage\u0004Bitmap": [
-  null,
-  "Mapa de bits"
- ],
- "storage\u0004Capacity": [
-  null,
-  "Capacitat"
- ],
- "storage\u0004Device": [
-  null,
-  "Dispositiu"
- ],
- "storage\u0004Device File": [
-  null,
-  "Fitxer de dispositiu"
- ],
  "storage\u0004Drive": [
   null,
   "Unitat"
- ],
- "storage\u0004Firmware Version": [
-  null,
-  "Versió de microprogramari"
  ],
  "storage\u0004Hard Disk": [
   null,
   "Disc dur"
  ],
- "storage\u0004Model": [
-  null,
-  "Model"
- ],
- "storage\u0004Multipathed Devices": [
-  null,
-  "Dispositius amb multicamí"
- ],
  "storage\u0004Optical Drive": [
   null,
   "Unitat òptica"
- ],
- "storage\u0004RAID Level": [
-  null,
-  "Nivell RAID"
  ],
  "storage\u0004Removable Drive": [
   null,
   "Disc extraïble"
  ],
- "storage\u0004Serial Number": [
-  null,
-  "Número de sèrie"
- ],
  "storage\u0004Solid-State Disk": [
   null,
   "Disc d'estat sòlid"
- ],
- "storage\u0004State": [
-  null,
-  "Estat"
- ],
- "storage\u0004UUID": [
-  null,
-  "UUID"
- ],
- "storage\u0004World Wide Name": [
-  null,
-  "WWN (World Wide Name)"
  ],
  "format-bytes\u0004bytes": [
   null,
