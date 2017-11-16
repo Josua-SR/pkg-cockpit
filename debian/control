@@ -45,7 +45,6 @@ Depends: ${misc:Depends},
 Recommends: cockpit-storaged (= ${binary:Version}),
             cockpit-networkmanager (= ${binary:Version})
 Suggests: cockpit-doc (= ${binary:Version}),
-          cockpit-pcp (>= ${source:Version}),
           cockpit-docker (= ${binary:Version}),
           cockpit-packagekit (>= ${source:Version}),
           xdg-utils,
@@ -105,15 +104,6 @@ Depends: ${misc:Depends},
          network-manager
 Description: Cockpit user interface for networking
  The Cockpit components for interacting with networking configuration.
-
-Package: cockpit-pcp
-Architecture: any
-Depends: ${misc:Depends},
-         ${shlibs:Depends},
-         cockpit-bridge (>= ${bridge:minversion}),
-         pcp
-Description: Cockpit PCP integration
- Cockpit support for reading PCP metrics and loading PCP archives.
 
 Package: cockpit-packagekit
 Architecture: all

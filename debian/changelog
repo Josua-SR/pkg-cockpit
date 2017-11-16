@@ -1,3 +1,13 @@
+cockpit (156-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Redesign navigation and support mobile browsing
+    - Use /etc/cockpit/krb5.keytab if present to support alternate keytabs
+    - Add project homepage link to Apps page
+    - Maintain issue(5) file with current Cockpit status
+
+ -- Martin Pitt <mpitt@debian.org>  Thu, 16 Nov 2017 09:57:25 +0100
+
 cockpit (155-1) unstable; urgency=medium
 
   * New upstream release:

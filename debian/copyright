@@ -188,7 +188,8 @@ Files: node_modules/term.js-cockpit/*
 Copyright: Copyright (c) 2011 Fabrice Bellard
  Copyright (c) 2012-2013, Christopher Jeffrey (MIT License)
  Copyright (c) 2012-2013, Christopher Jeffrey (https://github.com/chjj/)
-License: MIT 
+License: MIT
+
 
 License: LGPL-2.1
  This package is free software; you can redistribute it and/or
