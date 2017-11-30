@@ -1,3 +1,11 @@
+cockpit (157-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Add Networks tab to overview on Machines page
+    - The Apps page now displays SVG app icons
+
+ -- Martin Pitt <mpitt@debian.org>  Thu, 30 Nov 2017 15:07:02 +0100
+
 cockpit (156-1) unstable; urgency=medium
 
   * New upstream release:
