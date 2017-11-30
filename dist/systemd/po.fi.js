@@ -425,6 +425,10 @@ return plural;
   null,
   "Perjantai"
  ],
+ "General": [
+  null,
+  "Yleiset"
+ ],
  "Go to": [
   null,
   "Mene"
@@ -657,6 +661,14 @@ return plural;
   null,
   ""
  ],
+ "Problem details": [
+  null,
+  ""
+ ],
+ "Problem info": [
+  null,
+  ""
+ ],
  "Problems, Errors": [
   null,
   ""
@@ -710,6 +722,14 @@ return plural;
   ""
  ],
  "Repeat Yearly": [
+  null,
+  ""
+ ],
+ "Report": [
+  null,
+  ""
+ ],
+ "Reported": [
   null,
   ""
  ],

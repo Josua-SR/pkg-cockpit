@@ -71,6 +71,14 @@ return plural;
   null,
   ""
  ],
+ "Additional": [
+  null,
+  ""
+ ],
+ "Address": [
+  null,
+  "Osoite"
+ ],
  "Address:": [
   null,
   ""
@@ -88,6 +96,10 @@ return plural;
   ""
  ],
  "Bus": [
+  null,
+  ""
+ ],
+ "CHANGE NETWORK STATE action failed": [
   null,
   ""
  ],
@@ -183,6 +195,18 @@ return plural;
   null,
   ""
  ],
+ "MAC Address": [
+  null,
+  ""
+ ],
+ "MTU": [
+  null,
+  ""
+ ],
+ "Managed": [
+  null,
+  ""
+ ],
  "Manual Connection": [
   null,
   ""
@@ -191,11 +215,19 @@ return plural;
   null,
   ""
  ],
+ "Model type": [
+  null,
+  ""
+ ],
  "More Information": [
   null,
   ""
  ],
  "Name": [
+  null,
+  ""
+ ],
+ "Networks": [
   null,
   ""
  ],
@@ -215,6 +247,10 @@ return plural;
   null,
   ""
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  ""
+ ],
  "Ok": [
   null,
   ""
@@ -227,11 +263,19 @@ return plural;
   null,
   ""
  ],
+ "Plug": [
+  null,
+  ""
+ ],
  "Pool": [
   null,
   ""
  ],
  "Port": [
+  null,
+  ""
+ ],
+ "Portgroup": [
   null,
   ""
  ],
@@ -339,6 +383,14 @@ return plural;
   null,
   ""
  ],
+ "Type": [
+  null,
+  "Tyyppi"
+ ],
+ "Unplug": [
+  null,
+  ""
+ ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   ""
@@ -395,11 +447,19 @@ return plural;
   null,
   "Virtuaalikoneet"
  ],
+ "Virtualport": [
+  null,
+  ""
+ ],
  "Volume": [
   null,
   "Taltio"
  ],
  "Your browser does not support iframes.": [
+  null,
+  ""
+ ],
+ "bridge": [
   null,
   ""
  ],
@@ -415,11 +475,19 @@ return plural;
   null,
   ""
  ],
+ "direct": [
+  null,
+  ""
+ ],
  "disabled": [
   null,
   "pois käytöstä"
  ],
  "disk": [
+  null,
+  ""
+ ],
+ "down": [
   null,
   ""
  ],
@@ -431,13 +499,25 @@ return plural;
   null,
   "käytössä"
  ],
+ "ethernet": [
+  null,
+  ""
+ ],
  "host": [
+  null,
+  ""
+ ],
+ "hostdev": [
   null,
   ""
  ],
  "idle": [
   null,
   "jouten"
+ ],
+ "mcast": [
+  null,
+  ""
  ],
  "network": [
   null,
@@ -459,6 +539,10 @@ return plural;
   null,
   "suoritetaan"
  ],
+ "server": [
+  null,
+  ""
+ ],
  "shut off": [
   null,
   "sammutettu"
@@ -471,9 +555,25 @@ return plural;
   null,
   "pysäytetty (PM)"
  ],
+ "udp": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
+  null,
+  ""
+ ],
  "vCPUs:": [
   null,
   "vCPUt:"
+ ],
+ "vhostuser": [
+  null,
+  ""
  ],
  "yes": [
   null,

@@ -71,6 +71,14 @@ return plural;
   null,
   "$0 对大多数操作系统可用。为了安装它，在 GNOME 软件中心搜索它或运行以下命令： "
  ],
+ "Additional": [
+  null,
+  ""
+ ],
+ "Address": [
+  null,
+  "地址"
+ ],
  "Address:": [
   null,
   "地址："
@@ -90,6 +98,10 @@ return plural;
  "Bus": [
   null,
   "总线"
+ ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  ""
  ],
  "CPU Type:": [
   null,
@@ -183,6 +195,18 @@ return plural;
   null,
   "加载 Remote Viewer"
  ],
+ "MAC Address": [
+  null,
+  ""
+ ],
+ "MTU": [
+  null,
+  "MTU"
+ ],
+ "Managed": [
+  null,
+  ""
+ ],
  "Manual Connection": [
   null,
   "手动连接"
@@ -191,6 +215,10 @@ return plural;
   null,
   "内存："
  ],
+ "Model type": [
+  null,
+  ""
+ ],
  "More Information": [
   null,
   "更多信息"
@@ -198,6 +226,10 @@ return plural;
  "Name": [
   null,
   "名称"
+ ],
+ "Networks": [
+  null,
+  ""
  ],
  "No VM is running or defined on this host": [
   null,
@@ -215,6 +247,10 @@ return plural;
   null,
   "没有为该虚拟机定义图形控制台。"
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  ""
+ ],
  "Ok": [
   null,
   "确认"
@@ -227,6 +263,10 @@ return plural;
   null,
   "请启动虚拟机来访问其图形控制台。"
  ],
+ "Plug": [
+  null,
+  ""
+ ],
  "Pool": [
   null,
   "池"
@@ -234,6 +274,10 @@ return plural;
  "Port": [
   null,
   "端口"
+ ],
+ "Portgroup": [
+  null,
+  ""
  ],
  "Protocol": [
   null,
@@ -339,6 +383,14 @@ return plural;
   null,
   "虚拟机已被客户机电源管理暂停。"
  ],
+ "Type": [
+  null,
+  "类型"
+ ],
+ "Unplug": [
+  null,
+  ""
+ ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "升级到一个更新版本的 libvirt 来查看磁盘统计数据"
@@ -395,6 +447,10 @@ return plural;
   null,
   "虚拟机"
  ],
+ "Virtualport": [
+  null,
+  ""
+ ],
  "Volume": [
   null,
   "卷"
@@ -402,6 +458,10 @@ return plural;
  "Your browser does not support iframes.": [
   null,
   "你的浏览器不支持 iframes。"
+ ],
+ "bridge": [
+  null,
+  ""
  ],
  "cdrom": [
   null,
@@ -415,6 +475,10 @@ return plural;
   null,
   "自定义"
  ],
+ "direct": [
+  null,
+  ""
+ ],
  "disabled": [
   null,
   "已禁用"
@@ -422,6 +486,10 @@ return plural;
  "disk": [
   null,
   "磁盘"
+ ],
+ "down": [
+  null,
+  "已关闭"
  ],
  "dying": [
   null,
@@ -431,13 +499,25 @@ return plural;
   null,
   "已启用"
  ],
+ "ethernet": [
+  null,
+  ""
+ ],
  "host": [
   null,
   "主机"
  ],
+ "hostdev": [
+  null,
+  ""
+ ],
  "idle": [
   null,
   "休眠的"
+ ],
+ "mcast": [
+  null,
+  ""
  ],
  "network": [
   null,
@@ -459,6 +539,10 @@ return plural;
   null,
   "运行中"
  ],
+ "server": [
+  null,
+  ""
+ ],
  "shut off": [
   null,
   "关闭"
@@ -471,9 +555,25 @@ return plural;
   null,
   "已挂起 （电源管理）"
  ],
+ "udp": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  "运行中"
+ ],
+ "user": [
+  null,
+  ""
+ ],
  "vCPUs:": [
   null,
   "虚拟 CPU："
+ ],
+ "vhostuser": [
+  null,
+  ""
  ],
  "yes": [
   null,

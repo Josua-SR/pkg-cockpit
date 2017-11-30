@@ -71,6 +71,14 @@ return plural;
   null,
   "$0 esta disponible para muchos sistemas operativos. Para instalarlo, búscalo en \"GNOME Software\" o ejecuta el siguiente comando:"
  ],
+ "Additional": [
+  null,
+  ""
+ ],
+ "Address": [
+  null,
+  "Dirección"
+ ],
  "Address:": [
   null,
   "Dirección:"
@@ -90,6 +98,10 @@ return plural;
  "Bus": [
   null,
   "Bus"
+ ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  ""
  ],
  "CPU Type:": [
   null,
@@ -183,6 +195,18 @@ return plural;
   null,
   "Lanzar Visualizador remoto"
  ],
+ "MAC Address": [
+  null,
+  ""
+ ],
+ "MTU": [
+  null,
+  "MTU"
+ ],
+ "Managed": [
+  null,
+  ""
+ ],
  "Manual Connection": [
   null,
   ""
@@ -191,6 +215,10 @@ return plural;
   null,
   "Memoria:"
  ],
+ "Model type": [
+  null,
+  ""
+ ],
  "More Information": [
   null,
   "Mas información"
@@ -198,6 +226,10 @@ return plural;
  "Name": [
   null,
   "Nombre"
+ ],
+ "Networks": [
+  null,
+  ""
  ],
  "No VM is running or defined on this host": [
   null,
@@ -215,6 +247,10 @@ return plural;
   null,
   ""
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  ""
+ ],
  "Ok": [
   null,
   "Aceptar"
@@ -227,6 +263,10 @@ return plural;
   null,
   ""
  ],
+ "Plug": [
+  null,
+  ""
+ ],
  "Pool": [
   null,
   "Grupo"
@@ -234,6 +274,10 @@ return plural;
  "Port": [
   null,
   "Puerto"
+ ],
+ "Portgroup": [
+  null,
+  ""
  ],
  "Protocol": [
   null,
@@ -339,6 +383,14 @@ return plural;
   null,
   ""
  ],
+ "Type": [
+  null,
+  "Tipo"
+ ],
+ "Unplug": [
+  null,
+  ""
+ ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   ""
@@ -395,11 +447,19 @@ return plural;
   null,
   ""
  ],
+ "Virtualport": [
+  null,
+  ""
+ ],
  "Volume": [
   null,
   ""
  ],
  "Your browser does not support iframes.": [
+  null,
+  ""
+ ],
+ "bridge": [
   null,
   ""
  ],
@@ -415,11 +475,19 @@ return plural;
   null,
   ""
  ],
+ "direct": [
+  null,
+  ""
+ ],
  "disabled": [
   null,
   "desactivado"
  ],
  "disk": [
+  null,
+  ""
+ ],
+ "down": [
   null,
   ""
  ],
@@ -431,13 +499,25 @@ return plural;
   null,
   "activado"
  ],
+ "ethernet": [
+  null,
+  ""
+ ],
  "host": [
+  null,
+  ""
+ ],
+ "hostdev": [
   null,
   ""
  ],
  "idle": [
   null,
   "inactivo"
+ ],
+ "mcast": [
+  null,
+  ""
  ],
  "network": [
   null,
@@ -459,6 +539,10 @@ return plural;
   null,
   "en ejecución"
  ],
+ "server": [
+  null,
+  ""
+ ],
  "shut off": [
   null,
   ""
@@ -471,7 +555,23 @@ return plural;
   null,
   ""
  ],
+ "udp": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
+  null,
+  ""
+ ],
  "vCPUs:": [
+  null,
+  ""
+ ],
+ "vhostuser": [
   null,
   ""
  ],

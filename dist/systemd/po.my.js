@@ -419,6 +419,10 @@ return plural;
   null,
   ""
  ],
+ "General": [
+  null,
+  ""
+ ],
  "Go to": [
   null,
   ""
@@ -651,6 +655,14 @@ return plural;
   null,
   ""
  ],
+ "Problem details": [
+  null,
+  ""
+ ],
+ "Problem info": [
+  null,
+  ""
+ ],
  "Problems, Errors": [
   null,
   ""
@@ -704,6 +716,14 @@ return plural;
   ""
  ],
  "Repeat Yearly": [
+  null,
+  ""
+ ],
+ "Report": [
+  null,
+  ""
+ ],
+ "Reported": [
   null,
   ""
  ],

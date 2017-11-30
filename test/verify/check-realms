@@ -100,7 +100,7 @@ class TestRealms(MachineCase):
         b.click("#system-info-domain a")
         b.wait_popup("realms-op")
         b.set_val(".realms-op-address", "NOPE")
-        b.wait_js_cond("$('.realms-op-address-error').attr('title') != ''")
+        b.wait_js_cond("ph_find('.realms-op-address-error').title != ''")
         b.click(".realms-op-cancel")
         b.wait_popdown("realms-op")
 
@@ -145,7 +145,7 @@ class TestRealms(MachineCase):
         b.click("#system-info-domain a")
         b.wait_popup("realms-op")
         b.set_val(".realms-op-address", "cockpit.lan")
-        b.wait_js_cond("$('.realms-op-address-error').attr('title') != ''")
+        b.wait_js_cond("ph_find('.realms-op-address-error').title != ''")
         b.set_val(".realms-op-admin", "admin")
         b.set_val(".realms-op-admin-password", "foobarfoo")
         b.click(".realms-op-apply")
@@ -161,15 +161,14 @@ for x in $(seq 1 20); do
     if nslookup -type=SRV _ldap._tcp.cockpit.lan; then
         break
     else
-        if systemctl --quiet is-failed sssd.service; then
-            systemctl status --lines=100 sssd.service >&2
-            exit 1
-        fi
         sleep $x
     fi
 done
 
 if ! echo '%(password)s' | realm join -U admin cockpit.lan; then
+    if systemctl --quiet is-failed sssd.service; then
+        systemctl status --lines=100 sssd.service >&2
+    fi
     journalctl -u realmd.service
     exit 1
 fi

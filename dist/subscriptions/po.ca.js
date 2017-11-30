@@ -169,7 +169,7 @@ return plural;
  ],
  "Retrieving subscription status...": [
   null,
-  ""
+  "S'està recuperant l'estat de la subscripció..."
  ],
  "Server": [
   null,

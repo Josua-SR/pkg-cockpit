@@ -75,6 +75,14 @@ return plural;
   null,
   "Дія"
  ],
+ "Additional": [
+  null,
+  ""
+ ],
+ "Address": [
+  null,
+  "Адреса"
+ ],
  "Address:": [
   null,
   "Адреса:"
@@ -114,6 +122,10 @@ return plural;
  "Bus": [
   null,
   "Канал"
+ ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  ""
  ],
  "CPU Type:": [
   null,
@@ -283,9 +295,21 @@ return plural;
   null,
   "Завантажуємо дані…"
  ],
+ "MAC Address": [
+  null,
+  ""
+ ],
  "MIGRATE action failed": [
   null,
   "Не вдалося виконати дію MIGRATE"
+ ],
+ "MTU": [
+  null,
+  "MTU"
+ ],
+ "Managed": [
+  null,
+  ""
  ],
  "Manual Connection": [
   null,
@@ -303,6 +327,10 @@ return plural;
   null,
   "Перенести до:"
  ],
+ "Model type": [
+  null,
+  ""
+ ],
  "More Information": [
   null,
   "Докладніше"
@@ -310,6 +338,10 @@ return plural;
  "Name": [
   null,
   "Назва"
+ ],
+ "Networks": [
+  null,
+  ""
  ],
  "No VM found in oVirt.": [
   null,
@@ -330,6 +362,10 @@ return plural;
  "No graphics console is defined for this virtual machine.": [
   null,
   "Для цієї віртуальної машини не визначено графічної консолі."
+ ],
+ "No network interfaces defined for this VM": [
+  null,
+  ""
  ],
  "OK": [
   null,
@@ -383,6 +419,10 @@ return plural;
   null,
   "Будь ласка, зачекайте, доки з сервера буде завантажено список шаблонів."
  ],
+ "Plug": [
+  null,
+  ""
+ ],
  "Pool": [
   null,
   "Буфер"
@@ -390,6 +430,10 @@ return plural;
  "Port": [
   null,
   "Порт"
+ ],
+ "Portgroup": [
+  null,
+  ""
  ],
  "Preparing for Maintenance": [
   null,
@@ -433,7 +477,7 @@ return plural;
  ],
  "Running Since:": [
   null,
-  ""
+  "Працює з:"
  ],
  "SHUTDOWN action failed": [
   null,
@@ -579,6 +623,14 @@ return plural;
   null,
   "Ця віртуальна машина не керується з боку oVirt"
  ],
+ "Type": [
+  null,
+  "Тип"
+ ],
+ "Unplug": [
+  null,
+  ""
+ ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "Щоб мати змогу переглядати статистику дисків, оновіться до новішої версії libvirt"
@@ -659,6 +711,10 @@ return plural;
   null,
   "Віртуальні машини кластера $0"
  ],
+ "Virtualport": [
+  null,
+  ""
+ ],
  "Volume": [
   null,
   "Том"
@@ -666,6 +722,10 @@ return plural;
  "Your browser does not support iframes.": [
   null,
   "У браузері не передбачено підтримки iframe."
+ ],
+ "bridge": [
+  null,
+  ""
  ],
  "cdrom": [
   null,
@@ -686,6 +746,10 @@ return plural;
  "custom": [
   null,
   "нетиповий"
+ ],
+ "direct": [
+  null,
+  ""
  ],
  "disabled": [
   null,
@@ -711,9 +775,17 @@ return plural;
   null,
   "помилка"
  ],
+ "ethernet": [
+  null,
+  ""
+ ],
  "host": [
   null,
   "вузол"
+ ],
+ "hostdev": [
+  null,
+  ""
  ],
  "idle": [
   null,
@@ -738,6 +810,10 @@ return plural;
  "maintenance": [
   null,
   "супровід"
+ ],
+ "mcast": [
+  null,
+  ""
  ],
  "network": [
   null,
@@ -799,6 +875,10 @@ return plural;
   null,
   "працює"
  ],
+ "server": [
+  null,
+  ""
+ ],
  "shut off": [
   null,
   "вимкнути"
@@ -819,6 +899,10 @@ return plural;
   null,
   "потоки"
  ],
+ "udp": [
+  null,
+  ""
+ ],
  "unassigned": [
   null,
   "не прив'язано"
@@ -827,6 +911,10 @@ return plural;
   null,
   "вище"
  ],
+ "user": [
+  null,
+  ""
+ ],
  "vCPUs": [
   null,
   "Вірт. проц."
@@ -834,6 +922,10 @@ return plural;
  "vCPUs:": [
   null,
   "vCPU:"
+ ],
+ "vhostuser": [
+  null,
+  ""
  ],
  "yes": [
   null,

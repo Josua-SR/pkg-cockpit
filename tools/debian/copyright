@@ -55,9 +55,7 @@ License: LGPL-2.1
 Files: src/bridge/mock-pmda.c
  test/avocado/selenium_start.sh
  bots/images/scripts/candlepin.bootstrap
- bots/images/scripts/fedora-23-stock.bootstrap
- bots/images/scripts/fedora-24.bootstrap
- bots/images/scripts/fedora-25.bootstrap
+ bots/images/scripts/fedora-*.bootstrap
  bots/images/scripts/selenium.bootstrap
  bots/images/scripts/selenium.setup
  bots/images/scripts/virt-builder-fedora
@@ -127,12 +125,13 @@ Copyright: Copyright (C) 1991, 1999 Free Software Foundation, Inc.
 License: LGPL-2.1
 
 Files: node_modules/moment/*
-Copyright: Copyright (c) 2011-2015 Tim Wood, Iskren Chernev, Moment.js contributors
+Copyright: Iskren Ivov Chernev
 License: MIT
 
 Files: node_modules/mustache/*
 Copyright: Copyright (c) 2009 Chris Wanstrath (Ruby)
  Copyright (c) 2010-2014 Jan Lehnardt (JavaScript)
+ Copyright (c) 2010-2015 The mustache.js community
 License: MIT
 
 Files: node_modules/noVNC/*

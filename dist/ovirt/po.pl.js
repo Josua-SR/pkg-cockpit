@@ -75,6 +75,14 @@ return plural;
   null,
   "Działanie"
  ],
+ "Additional": [
+  null,
+  ""
+ ],
+ "Address": [
+  null,
+  "Adres"
+ ],
  "Address:": [
   null,
   "Adres:"
@@ -114,6 +122,10 @@ return plural;
  "Bus": [
   null,
   "Magistrala"
+ ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  ""
  ],
  "CPU Type:": [
   null,
@@ -283,9 +295,21 @@ return plural;
   null,
   "Wczytywanie danych…"
  ],
+ "MAC Address": [
+  null,
+  ""
+ ],
  "MIGRATE action failed": [
   null,
   "Działanie MIGRATE się nie powiodło"
+ ],
+ "MTU": [
+  null,
+  "MTU"
+ ],
+ "Managed": [
+  null,
+  ""
  ],
  "Manual Connection": [
   null,
@@ -303,6 +327,10 @@ return plural;
   null,
   "Migracja do:"
  ],
+ "Model type": [
+  null,
+  ""
+ ],
  "More Information": [
   null,
   "Więcej informacji"
@@ -310,6 +338,10 @@ return plural;
  "Name": [
   null,
   "Nazwa"
+ ],
+ "Networks": [
+  null,
+  ""
  ],
  "No VM found in oVirt.": [
   null,
@@ -330,6 +362,10 @@ return plural;
  "No graphics console is defined for this virtual machine.": [
   null,
   "Dla tej maszyny wirtualnej nie określono żadnej konsoli graficznej."
+ ],
+ "No network interfaces defined for this VM": [
+  null,
+  ""
  ],
  "OK": [
   null,
@@ -383,6 +419,10 @@ return plural;
   null,
   "Proszę poczekać na wczytanie listy szablonów z serwera."
  ],
+ "Plug": [
+  null,
+  ""
+ ],
  "Pool": [
   null,
   "Pula"
@@ -390,6 +430,10 @@ return plural;
  "Port": [
   null,
   "Port"
+ ],
+ "Portgroup": [
+  null,
+  ""
  ],
  "Preparing for Maintenance": [
   null,
@@ -433,7 +477,7 @@ return plural;
  ],
  "Running Since:": [
   null,
-  ""
+  "Działa od:"
  ],
  "SHUTDOWN action failed": [
   null,
@@ -579,6 +623,14 @@ return plural;
   null,
   "Ta maszyna wirtualna nie jest zarządzana przez oprogramowanie oVirt"
  ],
+ "Type": [
+  null,
+  "Typ"
+ ],
+ "Unplug": [
+  null,
+  ""
+ ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "Należy zaktualizować do nowszej wersji biblioteki libvirt, aby przeglądać statystyki dysku"
@@ -659,6 +711,10 @@ return plural;
   null,
   "Maszyny wirtualne klastra $0"
  ],
+ "Virtualport": [
+  null,
+  ""
+ ],
  "Volume": [
   null,
   "Wolumin"
@@ -666,6 +722,10 @@ return plural;
  "Your browser does not support iframes.": [
   null,
   "Przeglądarka nie obsługuje „iframe”."
+ ],
+ "bridge": [
+  null,
+  ""
  ],
  "cdrom": [
   null,
@@ -686,6 +746,10 @@ return plural;
  "custom": [
   null,
   "niestandardowe"
+ ],
+ "direct": [
+  null,
+  ""
  ],
  "disabled": [
   null,
@@ -711,9 +775,17 @@ return plural;
   null,
   "błąd"
  ],
+ "ethernet": [
+  null,
+  ""
+ ],
  "host": [
   null,
   "gospodarz"
+ ],
+ "hostdev": [
+  null,
+  ""
  ],
  "idle": [
   null,
@@ -738,6 +810,10 @@ return plural;
  "maintenance": [
   null,
   "konserwacja"
+ ],
+ "mcast": [
+  null,
+  ""
  ],
  "network": [
   null,
@@ -799,6 +875,10 @@ return plural;
   null,
   "działanie"
  ],
+ "server": [
+  null,
+  ""
+ ],
  "shut off": [
   null,
   "wyłącz"
@@ -819,6 +899,10 @@ return plural;
   null,
   "wątki"
  ],
+ "udp": [
+  null,
+  ""
+ ],
  "unassigned": [
   null,
   "nieprzydzielone"
@@ -827,6 +911,10 @@ return plural;
   null,
   "w górę"
  ],
+ "user": [
+  null,
+  ""
+ ],
  "vCPUs": [
   null,
   "Wirtualne procesory"
@@ -834,6 +922,10 @@ return plural;
  "vCPUs:": [
   null,
   "Wirtualne procesory:"
+ ],
+ "vhostuser": [
+  null,
+  ""
  ],
  "yes": [
   null,

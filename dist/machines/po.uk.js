@@ -71,6 +71,14 @@ return plural;
   null,
   "$0 можна користуватися у більшості операційних систем. Щоб встановити пакунок із програмою, знайдіть відповідний запис у Програмних засобах GNOME або віддайте таку команду:"
  ],
+ "Additional": [
+  null,
+  ""
+ ],
+ "Address": [
+  null,
+  "Адреса"
+ ],
  "Address:": [
   null,
   "Адреса:"
@@ -90,6 +98,10 @@ return plural;
  "Bus": [
   null,
   "Канал"
+ ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  ""
  ],
  "CPU Type:": [
   null,
@@ -183,6 +195,18 @@ return plural;
   null,
   "Запустити віддалений переглядач"
  ],
+ "MAC Address": [
+  null,
+  ""
+ ],
+ "MTU": [
+  null,
+  "MTU"
+ ],
+ "Managed": [
+  null,
+  ""
+ ],
  "Manual Connection": [
   null,
   "З’єднання вручну"
@@ -191,6 +215,10 @@ return plural;
   null,
   "Пам’ять:"
  ],
+ "Model type": [
+  null,
+  ""
+ ],
  "More Information": [
   null,
   "Докладніше"
@@ -198,6 +226,10 @@ return plural;
  "Name": [
   null,
   "Назва"
+ ],
+ "Networks": [
+  null,
+  ""
  ],
  "No VM is running or defined on this host": [
   null,
@@ -215,6 +247,10 @@ return plural;
   null,
   "Для цієї віртуальної машини не визначено графічної консолі."
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  ""
+ ],
  "Ok": [
   null,
   "Гаразд"
@@ -227,6 +263,10 @@ return plural;
   null,
   "Будь ласка, запустіть віртуальну машину, щоб отримати доступ до її графічної консолі."
  ],
+ "Plug": [
+  null,
+  ""
+ ],
  "Pool": [
   null,
   "Буфер"
@@ -234,6 +274,10 @@ return plural;
  "Port": [
   null,
   "Порт"
+ ],
+ "Portgroup": [
+  null,
+  ""
  ],
  "Protocol": [
   null,
@@ -339,6 +383,14 @@ return plural;
   null,
   "Роботу віртуальної машини призупинено засобами керування живленням гостьової системи."
  ],
+ "Type": [
+  null,
+  "Тип"
+ ],
+ "Unplug": [
+  null,
+  ""
+ ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "Щоб мати змогу переглядати статистику дисків, оновіться до новішої версії libvirt"
@@ -395,6 +447,10 @@ return plural;
   null,
   "Віртуальні машини"
  ],
+ "Virtualport": [
+  null,
+  ""
+ ],
  "Volume": [
   null,
   "Том"
@@ -402,6 +458,10 @@ return plural;
  "Your browser does not support iframes.": [
   null,
   "У браузері не передбачено підтримки iframe."
+ ],
+ "bridge": [
+  null,
+  ""
  ],
  "cdrom": [
   null,
@@ -415,6 +475,10 @@ return plural;
   null,
   "нетиповий"
  ],
+ "direct": [
+  null,
+  ""
+ ],
  "disabled": [
   null,
   "вимкнено"
@@ -422,6 +486,10 @@ return plural;
  "disk": [
   null,
   "диск"
+ ],
+ "down": [
+  null,
+  "нижче"
  ],
  "dying": [
   null,
@@ -431,13 +499,25 @@ return plural;
   null,
   "увімкнено"
  ],
+ "ethernet": [
+  null,
+  ""
+ ],
  "host": [
   null,
   "вузол"
  ],
+ "hostdev": [
+  null,
+  ""
+ ],
  "idle": [
   null,
   "бездіяльний"
+ ],
+ "mcast": [
+  null,
+  ""
  ],
  "network": [
   null,
@@ -459,6 +539,10 @@ return plural;
   null,
   "працює"
  ],
+ "server": [
+  null,
+  ""
+ ],
  "shut off": [
   null,
   "вимкнути"
@@ -471,9 +555,25 @@ return plural;
   null,
   "призупинено (PM)"
  ],
+ "udp": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  "вище"
+ ],
+ "user": [
+  null,
+  ""
+ ],
  "vCPUs:": [
   null,
   "vCPU:"
+ ],
+ "vhostuser": [
+  null,
+  ""
  ],
  "yes": [
   null,

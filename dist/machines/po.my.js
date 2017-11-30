@@ -71,6 +71,14 @@ return plural;
   null,
   ""
  ],
+ "Additional": [
+  null,
+  ""
+ ],
+ "Address": [
+  null,
+  ""
+ ],
  "Address:": [
   null,
   ""
@@ -88,6 +96,10 @@ return plural;
   ""
  ],
  "Bus": [
+  null,
+  ""
+ ],
+ "CHANGE NETWORK STATE action failed": [
   null,
   ""
  ],
@@ -183,11 +195,27 @@ return plural;
   null,
   ""
  ],
+ "MAC Address": [
+  null,
+  ""
+ ],
+ "MTU": [
+  null,
+  ""
+ ],
+ "Managed": [
+  null,
+  ""
+ ],
  "Manual Connection": [
   null,
   ""
  ],
  "Memory:": [
+  null,
+  ""
+ ],
+ "Model type": [
   null,
   ""
  ],
@@ -198,6 +226,10 @@ return plural;
  "Name": [
   null,
   "အမည်"
+ ],
+ "Networks": [
+  null,
+  ""
  ],
  "No VM is running or defined on this host": [
   null,
@@ -215,6 +247,10 @@ return plural;
   null,
   ""
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  ""
+ ],
  "Ok": [
   null,
   ""
@@ -227,11 +263,19 @@ return plural;
   null,
   ""
  ],
+ "Plug": [
+  null,
+  ""
+ ],
  "Pool": [
   null,
   ""
  ],
  "Port": [
+  null,
+  ""
+ ],
+ "Portgroup": [
   null,
   ""
  ],
@@ -339,6 +383,14 @@ return plural;
   null,
   ""
  ],
+ "Type": [
+  null,
+  ""
+ ],
+ "Unplug": [
+  null,
+  ""
+ ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   ""
@@ -395,11 +447,19 @@ return plural;
   null,
   ""
  ],
+ "Virtualport": [
+  null,
+  ""
+ ],
  "Volume": [
   null,
   ""
  ],
  "Your browser does not support iframes.": [
+  null,
+  ""
+ ],
+ "bridge": [
   null,
   ""
  ],
@@ -415,11 +475,19 @@ return plural;
   null,
   ""
  ],
+ "direct": [
+  null,
+  ""
+ ],
  "disabled": [
   null,
   ""
  ],
  "disk": [
+  null,
+  ""
+ ],
+ "down": [
   null,
   ""
  ],
@@ -431,11 +499,23 @@ return plural;
   null,
   ""
  ],
+ "ethernet": [
+  null,
+  ""
+ ],
  "host": [
   null,
   ""
  ],
+ "hostdev": [
+  null,
+  ""
+ ],
  "idle": [
+  null,
+  ""
+ ],
+ "mcast": [
   null,
   ""
  ],
@@ -459,6 +539,10 @@ return plural;
   null,
   ""
  ],
+ "server": [
+  null,
+  ""
+ ],
  "shut off": [
   null,
   ""
@@ -471,7 +555,23 @@ return plural;
   null,
   ""
  ],
+ "udp": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
+  null,
+  ""
+ ],
  "vCPUs:": [
+  null,
+  ""
+ ],
+ "vhostuser": [
   null,
   ""
  ],

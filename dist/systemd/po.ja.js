@@ -419,6 +419,10 @@ return plural;
   null,
   "金曜日"
  ],
+ "General": [
+  null,
+  "全般"
+ ],
  "Go to": [
   null,
   "移動"
@@ -651,6 +655,14 @@ return plural;
   null,
   "プリティホスト名"
  ],
+ "Problem details": [
+  null,
+  ""
+ ],
+ "Problem info": [
+  null,
+  ""
+ ],
  "Problems, Errors": [
   null,
   ""
@@ -706,6 +718,14 @@ return plural;
  "Repeat Yearly": [
   null,
   "毎年繰り返す"
+ ],
+ "Report": [
+  null,
+  ""
+ ],
+ "Reported": [
+  null,
+  ""
  ],
  "Reporter 'reporter-ureport' not found.": [
   null,

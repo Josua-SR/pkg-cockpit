@@ -425,6 +425,10 @@ return plural;
   null,
   "Sexta-feira"
  ],
+ "General": [
+  null,
+  "Geral"
+ ],
  "Go to": [
   null,
   "Ir para"
@@ -657,6 +661,14 @@ return plural;
   null,
   "Nome de Host Bonito"
  ],
+ "Problem details": [
+  null,
+  ""
+ ],
+ "Problem info": [
+  null,
+  ""
+ ],
  "Problems, Errors": [
   null,
   ""
@@ -712,6 +724,14 @@ return plural;
  "Repeat Yearly": [
   null,
   "Repita Anualmente"
+ ],
+ "Report": [
+  null,
+  ""
+ ],
+ "Reported": [
+  null,
+  ""
  ],
  "Reporter 'reporter-ureport' not found.": [
   null,

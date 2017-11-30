@@ -153,6 +153,10 @@ return plural;
   null,
   "Prosessori"
  ],
+ "Can't load image": [
+  null,
+  ""
+ ],
  "Cancel": [
   null,
   "Peru"

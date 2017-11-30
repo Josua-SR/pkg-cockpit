@@ -151,10 +151,6 @@ return plural;
   null,
   "Cockpit és una interfície interactiva d'administració del servidor Linux."
  ],
- "Cockpit is an interactive Linux server admin interface. ": [
-  null,
-  "Cockpit és una interfície interactiva d'administració del servidor Linux."
- ],
  "Cockpit is not installed": [
   null,
   "Cockpit no està instal·lat"

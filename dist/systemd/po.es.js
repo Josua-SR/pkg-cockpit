@@ -425,6 +425,10 @@ return plural;
   null,
   "Viernes"
  ],
+ "General": [
+  null,
+  "General"
+ ],
  "Go to": [
   null,
   "Ir a"
@@ -657,6 +661,14 @@ return plural;
   null,
   ""
  ],
+ "Problem details": [
+  null,
+  ""
+ ],
+ "Problem info": [
+  null,
+  ""
+ ],
  "Problems, Errors": [
   null,
   ""
@@ -712,6 +724,14 @@ return plural;
  "Repeat Yearly": [
   null,
   "Repetir cada año"
+ ],
+ "Report": [
+  null,
+  ""
+ ],
+ "Reported": [
+  null,
+  ""
  ],
  "Reporter 'reporter-ureport' not found.": [
   null,

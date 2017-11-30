@@ -75,6 +75,14 @@ return plural;
   null,
   "Acció"
  ],
+ "Additional": [
+  null,
+  ""
+ ],
+ "Address": [
+  null,
+  "Adreça"
+ ],
  "Address:": [
   null,
   "Adreça:"
@@ -114,6 +122,10 @@ return plural;
  "Bus": [
   null,
   "Bus"
+ ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  ""
  ],
  "CPU Type:": [
   null,
@@ -283,9 +295,21 @@ return plural;
   null,
   "S'estàn carregant les dades..."
  ],
+ "MAC Address": [
+  null,
+  ""
+ ],
  "MIGRATE action failed": [
   null,
   "Ha fallat l'acció MIGRATE"
+ ],
+ "MTU": [
+  null,
+  "MTU"
+ ],
+ "Managed": [
+  null,
+  ""
  ],
  "Manual Connection": [
   null,
@@ -303,6 +327,10 @@ return plural;
   null,
   "Migra a:"
  ],
+ "Model type": [
+  null,
+  ""
+ ],
  "More Information": [
   null,
   "Més informació"
@@ -311,9 +339,13 @@ return plural;
   null,
   "Nom"
  ],
+ "Networks": [
+  null,
+  ""
+ ],
  "No VM found in oVirt.": [
   null,
-  "No s'ha trobat cap MV a oVirt"
+  "No s'ha trobat cap MV a oVirt."
  ],
  "No VM is running or defined on this host": [
   null,
@@ -328,6 +360,10 @@ return plural;
   "No hi ha definit cap disc per a aquesta MV"
  ],
  "No graphics console is defined for this virtual machine.": [
+  null,
+  ""
+ ],
+ "No network interfaces defined for this VM": [
   null,
   ""
  ],
@@ -383,6 +419,10 @@ return plural;
   null,
   "Espereu fins que la llista de plantilles es carregui del servidor."
  ],
+ "Plug": [
+  null,
+  ""
+ ],
  "Pool": [
   null,
   "Agrupació"
@@ -390,6 +430,10 @@ return plural;
  "Port": [
   null,
   "Port"
+ ],
+ "Portgroup": [
+  null,
+  ""
  ],
  "Preparing for Maintenance": [
   null,
@@ -429,11 +473,11 @@ return plural;
  ],
  "Run Here": [
   null,
-  ""
+  "Executa-ho aquí"
  ],
  "Running Since:": [
   null,
-  ""
+  "En execució des de:"
  ],
  "SHUTDOWN action failed": [
   null,
@@ -579,6 +623,14 @@ return plural;
   null,
   "Aquesta màquina virtual no està gestionada per oVirt"
  ],
+ "Type": [
+  null,
+  "Tipus"
+ ],
+ "Unplug": [
+  null,
+  ""
+ ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "Actualitzeu a una versió més recent de libvirt per visualitzar les estadístiques dels discs"
@@ -659,6 +711,10 @@ return plural;
   null,
   "Màquines virtuals del clúster $0"
  ],
+ "Virtualport": [
+  null,
+  ""
+ ],
  "Volume": [
   null,
   "Volum"
@@ -666,6 +722,10 @@ return plural;
  "Your browser does not support iframes.": [
   null,
   "El vostre navegador no admet iframes."
+ ],
+ "bridge": [
+  null,
+  ""
  ],
  "cdrom": [
   null,
@@ -686,6 +746,10 @@ return plural;
  "custom": [
   null,
   "personalitzat"
+ ],
+ "direct": [
+  null,
+  ""
  ],
  "disabled": [
   null,
@@ -711,9 +775,17 @@ return plural;
   null,
   "error"
  ],
+ "ethernet": [
+  null,
+  ""
+ ],
  "host": [
   null,
   "amfitrió"
+ ],
+ "hostdev": [
+  null,
+  ""
  ],
  "idle": [
   null,
@@ -736,6 +808,10 @@ return plural;
   ""
  ],
  "maintenance": [
+  null,
+  ""
+ ],
+ "mcast": [
   null,
   ""
  ],
@@ -799,6 +875,10 @@ return plural;
   null,
   "en execució"
  ],
+ "server": [
+  null,
+  ""
+ ],
  "shut off": [
   null,
   "apagat"
@@ -819,11 +899,19 @@ return plural;
   null,
   ""
  ],
+ "udp": [
+  null,
+  ""
+ ],
  "unassigned": [
   null,
   ""
  ],
  "up": [
+  null,
+  ""
+ ],
+ "user": [
   null,
   ""
  ],
@@ -834,6 +922,10 @@ return plural;
  "vCPUs:": [
   null,
   "vCPUs:"
+ ],
+ "vhostuser": [
+  null,
+  ""
  ],
  "yes": [
   null,

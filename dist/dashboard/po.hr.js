@@ -159,6 +159,10 @@ return plural;
   null,
   "CPU"
  ],
+ "Can't load image": [
+  null,
+  ""
+ ],
  "Cancel": [
   null,
   "Odustani"

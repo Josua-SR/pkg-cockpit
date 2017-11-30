@@ -425,6 +425,10 @@ return plural;
   null,
   "Divendres"
  ],
+ "General": [
+  null,
+  "General"
+ ],
  "Go to": [
   null,
   "Vés a"
@@ -657,6 +661,14 @@ return plural;
   null,
   "Nom d'amfitrió bonic"
  ],
+ "Problem details": [
+  null,
+  ""
+ ],
+ "Problem info": [
+  null,
+  ""
+ ],
  "Problems, Errors": [
   null,
   "Problemes i errors"
@@ -712,6 +724,14 @@ return plural;
  "Repeat Yearly": [
   null,
   "Repeteix cada any"
+ ],
+ "Report": [
+  null,
+  ""
+ ],
+ "Reported": [
+  null,
+  ""
  ],
  "Reporter 'reporter-ureport' not found.": [
   null,
