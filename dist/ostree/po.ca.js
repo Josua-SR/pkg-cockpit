@@ -149,7 +149,7 @@ return plural;
  ],
  "Error loading remotes: $0": [
   null,
-  "S'ha produït un error en desar les claus autoritzades:"
+  "S'ha produït un error en carregar els remots: $0"
  ],
  "Expired Signature": [
   null,

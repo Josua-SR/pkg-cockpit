@@ -103,6 +103,10 @@ return plural;
   null,
   "Немає встановлених або доступних програм"
  ],
+ "No description provided.": [
+  null,
+  ""
+ ],
  "No installation package found for this application.": [
   null,
   "Для цієї програми не знайдено пакунка для встановлення."

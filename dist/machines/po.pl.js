@@ -71,6 +71,14 @@ return plural;
   null,
   "$0 jest dostępne dla większości systemów operacyjnych. Aby zainstalować, należy wyszukać w Menedżerze oprogramowania GNOME lub wykonać polecenie:"
  ],
+ "Additional": [
+  null,
+  ""
+ ],
+ "Address": [
+  null,
+  "Adres"
+ ],
  "Address:": [
   null,
   "Adres:"
@@ -90,6 +98,10 @@ return plural;
  "Bus": [
   null,
   "Magistrala"
+ ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  ""
  ],
  "CPU Type:": [
   null,
@@ -183,6 +195,18 @@ return plural;
   null,
   "Uruchom zdalną przeglądarkę"
  ],
+ "MAC Address": [
+  null,
+  ""
+ ],
+ "MTU": [
+  null,
+  "MTU"
+ ],
+ "Managed": [
+  null,
+  ""
+ ],
  "Manual Connection": [
   null,
   "Ręczne połączenie"
@@ -191,6 +215,10 @@ return plural;
   null,
   "Pamięć:"
  ],
+ "Model type": [
+  null,
+  ""
+ ],
  "More Information": [
   null,
   "Więcej informacji"
@@ -198,6 +226,10 @@ return plural;
  "Name": [
   null,
   "Nazwa"
+ ],
+ "Networks": [
+  null,
+  ""
  ],
  "No VM is running or defined on this host": [
   null,
@@ -215,6 +247,10 @@ return plural;
   null,
   "Dla tej maszyny wirtualnej nie określono żadnej konsoli graficznej."
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  ""
+ ],
  "Ok": [
   null,
   "OK"
@@ -227,6 +263,10 @@ return plural;
   null,
   "Proszę uruchomić maszynę wirtualną, aby uzyskać dostęp do jej konsoli graficznej."
  ],
+ "Plug": [
+  null,
+  ""
+ ],
  "Pool": [
   null,
   "Pula"
@@ -234,6 +274,10 @@ return plural;
  "Port": [
   null,
   "Port"
+ ],
+ "Portgroup": [
+  null,
+  ""
  ],
  "Protocol": [
   null,
@@ -339,6 +383,14 @@ return plural;
   null,
   "Maszyna wirtualna jest uśpiona przez zarządzanie zasilaniem."
  ],
+ "Type": [
+  null,
+  "Typ"
+ ],
+ "Unplug": [
+  null,
+  ""
+ ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "Należy zaktualizować do nowszej wersji biblioteki libvirt, aby przeglądać statystyki dysku"
@@ -395,6 +447,10 @@ return plural;
   null,
   "Maszyny wirtualne"
  ],
+ "Virtualport": [
+  null,
+  ""
+ ],
  "Volume": [
   null,
   "Wolumin"
@@ -402,6 +458,10 @@ return plural;
  "Your browser does not support iframes.": [
   null,
   "Przeglądarka nie obsługuje „iframe”."
+ ],
+ "bridge": [
+  null,
+  ""
  ],
  "cdrom": [
   null,
@@ -415,6 +475,10 @@ return plural;
   null,
   "niestandardowe"
  ],
+ "direct": [
+  null,
+  ""
+ ],
  "disabled": [
   null,
   "wyłączone"
@@ -422,6 +486,10 @@ return plural;
  "disk": [
   null,
   "dysk"
+ ],
+ "down": [
+  null,
+  "w dół"
  ],
  "dying": [
   null,
@@ -431,13 +499,25 @@ return plural;
   null,
   "włączone"
  ],
+ "ethernet": [
+  null,
+  ""
+ ],
  "host": [
   null,
   "gospodarz"
  ],
+ "hostdev": [
+  null,
+  ""
+ ],
  "idle": [
   null,
   "bezczynne"
+ ],
+ "mcast": [
+  null,
+  ""
  ],
  "network": [
   null,
@@ -459,6 +539,10 @@ return plural;
   null,
   "działanie"
  ],
+ "server": [
+  null,
+  ""
+ ],
  "shut off": [
   null,
   "wyłącz"
@@ -471,9 +555,25 @@ return plural;
   null,
   "uśpione (PM)"
  ],
+ "udp": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  "w górę"
+ ],
+ "user": [
+  null,
+  ""
+ ],
  "vCPUs:": [
   null,
   "Wirtualne procesory:"
+ ],
+ "vhostuser": [
+  null,
+  ""
  ],
  "yes": [
   null,

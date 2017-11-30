@@ -279,7 +279,7 @@ return plural;
  ],
  "Block": [
   null,
-  ""
+  "Zablokuj"
  ],
  "Block device for filesystems": [
   null,
@@ -627,7 +627,7 @@ return plural;
  ],
  "Local Mount Point": [
   null,
-  ""
+  "Lokalny punkt montowania"
  ],
  "Lock": [
   null,
@@ -695,11 +695,11 @@ return plural;
  ],
  "Mount point cannot be empty.": [
   null,
-  ""
+  "Punkt montowania nie może być pusty."
  ],
  "Mount point must start with \"/\".": [
   null,
-  ""
+  "Punkt montowania musi zaczynać się od „/”."
  ],
  "Mount read only": [
   null,
@@ -723,7 +723,7 @@ return plural;
  ],
  "NFS Mounts": [
   null,
-  ""
+  "Punkty montowania NFS"
  ],
  "NTFS - Compatible with most systems": [
   null,
@@ -751,7 +751,7 @@ return plural;
  ],
  "New NFS Mount": [
   null,
-  ""
+  "Nowy punkt montowania NFS"
  ],
  "Next": [
   null,
@@ -767,7 +767,7 @@ return plural;
  ],
  "No NFS mounts set up": [
   null,
-  ""
+  "Nie ustawiono żadnych punktów montowania NFS"
  ],
  "No disks are available.": [
   null,
@@ -827,7 +827,7 @@ return plural;
  ],
  "Options cannot be empty.": [
   null,
-  ""
+  "Opcje nie mogą być puste."
  ],
  "Other Devices": [
   null,
@@ -867,15 +867,15 @@ return plural;
  ],
  "Path on Server": [
   null,
-  ""
+  "Ścieżka na serwerze"
  ],
  "Path on server cannot be empty.": [
   null,
-  ""
+  "Ścieżka na serwerze nie może być pusta."
  ],
  "Path on server must start with \"/\".": [
   null,
-  ""
+  "Ścieżka na serwerze musi zaczynać się od „/”."
  ],
  "Physical Volume": [
   null,
@@ -1071,7 +1071,7 @@ return plural;
  ],
  "Server cannot be empty.": [
   null,
-  ""
+  "Serwer nie może być pusty."
  ],
  "Setting up loop device $target": [
   null,
@@ -1131,11 +1131,11 @@ return plural;
  ],
  "Stop and remove": [
   null,
-  ""
+  "Zatrzymaj i usuń"
  ],
  "Stop and unmount": [
   null,
-  ""
+  "Zatrzymaj i odmontuj"
  ],
  "Stopping RAID Device $target": [
   null,
@@ -1195,7 +1195,7 @@ return plural;
  ],
  "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
   null,
-  ""
+  "System plików jest używany przez usługi systemu lub sesje logowania.                Kontynuacja zatrzyma te usługi i sesje."
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
@@ -1223,7 +1223,7 @@ return plural;
  ],
  "This NFS mount is in use and only its options can be changed.": [
   null,
-  ""
+  "Ten punkt montowania NFS jest używany. Można zmieniać tylko jego opcje."
  ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
@@ -1267,11 +1267,11 @@ return plural;
  ],
  "Unable to remove mount": [
   null,
-  ""
+  "Nie można usunąć punktu montowania"
  ],
  "Unable to unmount filesystem": [
   null,
-  ""
+  "Nie można odmontować systemu plików"
  ],
  "Unknown": [
   null,

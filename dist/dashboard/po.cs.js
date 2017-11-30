@@ -159,6 +159,10 @@ return plural;
   null,
   ""
  ],
+ "Can't load image": [
+  null,
+  ""
+ ],
  "Cancel": [
   null,
   "Zrušit"

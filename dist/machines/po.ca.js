@@ -71,6 +71,14 @@ return plural;
   null,
   "$0 està disponible per a la majoria de sistemes operatius. Per instal·lar-ho, cerqueu-ho a GNOME Software o executeu el següent:"
  ],
+ "Additional": [
+  null,
+  ""
+ ],
+ "Address": [
+  null,
+  "Adreça"
+ ],
  "Address:": [
   null,
   "Adreça:"
@@ -90,6 +98,10 @@ return plural;
  "Bus": [
   null,
   "Bus"
+ ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  ""
  ],
  "CPU Type:": [
   null,
@@ -183,6 +195,18 @@ return plural;
   null,
   "Llança el visualitzador remot"
  ],
+ "MAC Address": [
+  null,
+  ""
+ ],
+ "MTU": [
+  null,
+  "MTU"
+ ],
+ "Managed": [
+  null,
+  ""
+ ],
  "Manual Connection": [
   null,
   "Connexió manual"
@@ -191,6 +215,10 @@ return plural;
   null,
   "Memòria:"
  ],
+ "Model type": [
+  null,
+  ""
+ ],
  "More Information": [
   null,
   "Més informació"
@@ -198,6 +226,10 @@ return plural;
  "Name": [
   null,
   "Nom"
+ ],
+ "Networks": [
+  null,
+  ""
  ],
  "No VM is running or defined on this host": [
   null,
@@ -215,6 +247,10 @@ return plural;
   null,
   ""
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  ""
+ ],
  "Ok": [
   null,
   "D'acord"
@@ -227,6 +263,10 @@ return plural;
   null,
   "Si us plau, inicieu la màquina virtual per accedir a la consola gràfica."
  ],
+ "Plug": [
+  null,
+  ""
+ ],
  "Pool": [
   null,
   "Agrupació"
@@ -234,6 +274,10 @@ return plural;
  "Port": [
   null,
   "Port"
+ ],
+ "Portgroup": [
+  null,
+  ""
  ],
  "Protocol": [
   null,
@@ -339,6 +383,14 @@ return plural;
   null,
   ""
  ],
+ "Type": [
+  null,
+  "Tipus"
+ ],
+ "Unplug": [
+  null,
+  ""
+ ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "Actualitzeu a una versió més recent de libvirt per visualitzar les estadístiques dels discs"
@@ -395,6 +447,10 @@ return plural;
   null,
   "Màquines virtuals"
  ],
+ "Virtualport": [
+  null,
+  ""
+ ],
  "Volume": [
   null,
   "Volum"
@@ -402,6 +458,10 @@ return plural;
  "Your browser does not support iframes.": [
   null,
   "El vostre navegador no admet iframes."
+ ],
+ "bridge": [
+  null,
+  ""
  ],
  "cdrom": [
   null,
@@ -415,6 +475,10 @@ return plural;
   null,
   "personalitzat"
  ],
+ "direct": [
+  null,
+  ""
+ ],
  "disabled": [
   null,
   "inhabilitat"
@@ -422,6 +486,10 @@ return plural;
  "disk": [
   null,
   "disc"
+ ],
+ "down": [
+  null,
+  ""
  ],
  "dying": [
   null,
@@ -431,13 +499,25 @@ return plural;
   null,
   "habilitat"
  ],
+ "ethernet": [
+  null,
+  ""
+ ],
  "host": [
   null,
   "amfitrió"
  ],
+ "hostdev": [
+  null,
+  ""
+ ],
  "idle": [
   null,
   "ociós"
+ ],
+ "mcast": [
+  null,
+  ""
  ],
  "network": [
   null,
@@ -459,6 +539,10 @@ return plural;
   null,
   "en execució"
  ],
+ "server": [
+  null,
+  ""
+ ],
  "shut off": [
   null,
   "apagat"
@@ -471,9 +555,25 @@ return plural;
   null,
   "suspès (PM)"
  ],
+ "udp": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
+  null,
+  ""
+ ],
  "vCPUs:": [
   null,
   "vCPUs:"
+ ],
+ "vhostuser": [
+  null,
+  ""
  ],
  "yes": [
   null,

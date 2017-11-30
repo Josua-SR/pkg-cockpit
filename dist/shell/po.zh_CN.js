@@ -151,10 +151,6 @@ return plural;
   null,
   "Cockpit 是一个交互式 Linux 服务器管理接口。"
  ],
- "Cockpit is an interactive Linux server admin interface. ": [
-  null,
-  "Cockpit 是一个交互式 Linux 服务器管理接口。"
- ],
  "Cockpit is not installed": [
   null,
   "Cockpit 未安装"

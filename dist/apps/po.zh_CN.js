@@ -103,6 +103,10 @@ return plural;
   null,
   "没有应用被安装或不可用"
  ],
+ "No description provided.": [
+  null,
+  ""
+ ],
  "No installation package found for this application.": [
   null,
   "没有找到为该应用的安装包"

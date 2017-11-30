@@ -103,6 +103,10 @@ return plural;
   null,
   ""
  ],
+ "No description provided.": [
+  null,
+  ""
+ ],
  "No installation package found for this application.": [
   null,
   ""

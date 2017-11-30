@@ -79,13 +79,15 @@ var phantom_checkpoint = phantom_checkpoint || function() {};
     }
     function y(e, t) {
         var n, o = m(e);
-        if (o) n = window.getComputedStyle(o);
+        if (o) n = window.getComputedStyle(o, ":before");
         if (!n) return;
         var i, r = n.content;
         if (r && r != "none" && r != "normal") {
             i = r.length;
             if ((r[0] === '"' || r[0] === "'") && i > 2 && r[i - 1] === r[0]) r = r.substr(1, i - 2);
             o.innerHTML = r || t;
+        } else {
+            o.removeAttribute("class");
         }
     }
     function b() {
@@ -679,7 +681,7 @@ to{transform:rotate(359deg)}
 #login-button .spinner{display:none}
 #login-button[disabled]{padding:0;background-color:#333;background-image:none;border-color:#555}
 #login-button[disabled] .spinner{display:inline-block}
-#login-button[disabled] #login-button-text{display:none}
+#login-button[disabled] #login-button-text,.hide-before:before{display:none}
 @media (max-width:480px){.login-pf{display:flex;flex-direction:column-reverse;height:auto;position:relative}
 .row{display:flex;flex-direction:column}
 .login-pf .container{width:100%}
@@ -697,7 +699,7 @@ to{transform:rotate(359deg)}
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <div id="brand">
+          <div id="brand" class="hide-before">
           </div><!--/#brand-->
         </div><!--/.col-*-->
 

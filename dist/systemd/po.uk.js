@@ -431,6 +431,10 @@ return plural;
   null,
   "п'ятниця"
  ],
+ "General": [
+  null,
+  "Загальний"
+ ],
  "Go to": [
   null,
   "Перейти до"
@@ -663,6 +667,14 @@ return plural;
   null,
   "Зручна назва вузла"
  ],
+ "Problem details": [
+  null,
+  ""
+ ],
+ "Problem info": [
+  null,
+  ""
+ ],
  "Problems, Errors": [
   null,
   "Проблеми, помилки"
@@ -718,6 +730,14 @@ return plural;
  "Repeat Yearly": [
   null,
   "Повторювати щороку"
+ ],
+ "Report": [
+  null,
+  ""
+ ],
+ "Reported": [
+  null,
+  ""
  ],
  "Reporter 'reporter-ureport' not found.": [
   null,

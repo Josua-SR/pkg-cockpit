@@ -279,7 +279,7 @@ return plural;
  ],
  "Block": [
   null,
-  ""
+  "Блок"
  ],
  "Block device for filesystems": [
   null,
@@ -627,7 +627,7 @@ return plural;
  ],
  "Local Mount Point": [
   null,
-  ""
+  "Локальна точка монтування"
  ],
  "Lock": [
   null,
@@ -695,11 +695,11 @@ return plural;
  ],
  "Mount point cannot be empty.": [
   null,
-  ""
+  "Точка монтування не може бути порожньою."
  ],
  "Mount point must start with \"/\".": [
   null,
-  ""
+  "Запис точки монтування має починатися з «/»."
  ],
  "Mount read only": [
   null,
@@ -723,7 +723,7 @@ return plural;
  ],
  "NFS Mounts": [
   null,
-  ""
+  "Монтування NFS"
  ],
  "NTFS - Compatible with most systems": [
   null,
@@ -751,7 +751,7 @@ return plural;
  ],
  "New NFS Mount": [
   null,
-  ""
+  "Нове монтування NFS"
  ],
  "Next": [
   null,
@@ -767,7 +767,7 @@ return plural;
  ],
  "No NFS mounts set up": [
   null,
-  ""
+  "Монтувань NFS не налаштовано"
  ],
  "No disks are available.": [
   null,
@@ -827,7 +827,7 @@ return plural;
  ],
  "Options cannot be empty.": [
   null,
-  ""
+  "Параметри не можуть бути порожніми."
  ],
  "Other Devices": [
   null,
@@ -867,15 +867,15 @@ return plural;
  ],
  "Path on Server": [
   null,
-  ""
+  "Шлях на сервері"
  ],
  "Path on server cannot be empty.": [
   null,
-  ""
+  "Шлях на сервері не може бути порожнім."
  ],
  "Path on server must start with \"/\".": [
   null,
-  ""
+  "Шлях на сервері має починатися з «/»."
  ],
  "Physical Volume": [
   null,
@@ -1071,7 +1071,7 @@ return plural;
  ],
  "Server cannot be empty.": [
   null,
-  ""
+  "Запис сервера не може бути порожнім."
  ],
  "Setting up loop device $target": [
   null,
@@ -1131,11 +1131,11 @@ return plural;
  ],
  "Stop and remove": [
   null,
-  ""
+  "Зупинити і вилучити"
  ],
  "Stop and unmount": [
   null,
-  ""
+  "Зупинити і демонтувати"
  ],
  "Stopping RAID Device $target": [
   null,
@@ -1195,7 +1195,7 @@ return plural;
  ],
  "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
   null,
-  ""
+  "Файлова система використовується службами системи або сеансами користувачів. Виконання цієї дії призведе до припинення роботи цих служб та сеансів."
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
@@ -1223,7 +1223,7 @@ return plural;
  ],
  "This NFS mount is in use and only its options can be changed.": [
   null,
-  ""
+  "Це монтування NFS використовується; можна лише змінювати його параметри."
  ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
@@ -1267,11 +1267,11 @@ return plural;
  ],
  "Unable to remove mount": [
   null,
-  ""
+  "Не вдалося вилучити монтування"
  ],
  "Unable to unmount filesystem": [
   null,
-  ""
+  "Не вдалося демонтувати файлову систему"
  ],
  "Unknown": [
   null,

@@ -147,6 +147,10 @@ return plural;
   null,
   "CPU"
  ],
+ "Can't load image": [
+  null,
+  ""
+ ],
  "Cancel": [
   null,
   "取り消し"

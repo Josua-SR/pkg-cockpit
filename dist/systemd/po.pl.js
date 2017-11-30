@@ -431,6 +431,10 @@ return plural;
   null,
   "piątek"
  ],
+ "General": [
+  null,
+  "Ogólne"
+ ],
  "Go to": [
   null,
   "Przejdź do"
@@ -663,6 +667,14 @@ return plural;
   null,
   "Czytelna nazwa komputera"
  ],
+ "Problem details": [
+  null,
+  ""
+ ],
+ "Problem info": [
+  null,
+  ""
+ ],
  "Problems, Errors": [
   null,
   "Problemy, błędy"
@@ -718,6 +730,14 @@ return plural;
  "Repeat Yearly": [
   null,
   "Powtarzanie co roku"
+ ],
+ "Report": [
+  null,
+  ""
+ ],
+ "Reported": [
+  null,
+  ""
  ],
  "Reporter 'reporter-ureport' not found.": [
   null,

@@ -620,7 +620,7 @@ return plural;
  ],
  "Local Mount Point": [
   null,
-  ""
+  "Punt de muntatge local"
  ],
  "Lock": [
   null,
@@ -716,7 +716,7 @@ return plural;
  ],
  "NFS Mounts": [
   null,
-  ""
+  "Muntatges NFS"
  ],
  "NTFS - Compatible with most systems": [
   null,
@@ -744,7 +744,7 @@ return plural;
  ],
  "New NFS Mount": [
   null,
-  ""
+  "Muntatge NFS nou"
  ],
  "Next": [
   null,
@@ -760,7 +760,7 @@ return plural;
  ],
  "No NFS mounts set up": [
   null,
-  ""
+  "Cap emmagatzematge NFS preparat"
  ],
  "No disks are available.": [
   null,
@@ -860,15 +860,15 @@ return plural;
  ],
  "Path on Server": [
   null,
-  ""
+  "Camí al servidor"
  ],
  "Path on server cannot be empty.": [
   null,
-  ""
+  "El camí al servidor no pot estar en blanc."
  ],
  "Path on server must start with \"/\".": [
   null,
-  ""
+  "El camí al servidor ha de començar amb «/»."
  ],
  "Physical Volume": [
   null,

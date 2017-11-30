@@ -75,6 +75,14 @@ return plural;
   null,
   ""
  ],
+ "Additional": [
+  null,
+  ""
+ ],
+ "Address": [
+  null,
+  "アドレス:"
+ ],
  "Address:": [
   null,
   "アドレス:"
@@ -114,6 +122,10 @@ return plural;
  "Bus": [
   null,
   "バス"
+ ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  ""
  ],
  "CPU Type:": [
   null,
@@ -283,7 +295,19 @@ return plural;
   null,
   ""
  ],
+ "MAC Address": [
+  null,
+  ""
+ ],
  "MIGRATE action failed": [
+  null,
+  ""
+ ],
+ "MTU": [
+  null,
+  "MTU"
+ ],
+ "Managed": [
   null,
   ""
  ],
@@ -303,6 +327,10 @@ return plural;
   null,
   ""
  ],
+ "Model type": [
+  null,
+  ""
+ ],
  "More Information": [
   null,
   "設定"
@@ -310,6 +338,10 @@ return plural;
  "Name": [
   null,
   "名前"
+ ],
+ "Networks": [
+  null,
+  ""
  ],
  "No VM found in oVirt.": [
   null,
@@ -328,6 +360,10 @@ return plural;
   "この VM に対してディスクが定義されていません"
  ],
  "No graphics console is defined for this virtual machine.": [
+  null,
+  ""
+ ],
+ "No network interfaces defined for this VM": [
   null,
   ""
  ],
@@ -383,6 +419,10 @@ return plural;
   null,
   ""
  ],
+ "Plug": [
+  null,
+  ""
+ ],
  "Pool": [
   null,
   "プール"
@@ -390,6 +430,10 @@ return plural;
  "Port": [
   null,
   "ポート"
+ ],
+ "Portgroup": [
+  null,
+  ""
  ],
  "Preparing for Maintenance": [
   null,
@@ -579,6 +623,14 @@ return plural;
   null,
   ""
  ],
+ "Type": [
+  null,
+  "タイプ"
+ ],
+ "Unplug": [
+  null,
+  ""
+ ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "ディスクの統計情報を表示するには libvirt の新しいバージョンにアップグレードしてください"
@@ -659,11 +711,19 @@ return plural;
   null,
   ""
  ],
+ "Virtualport": [
+  null,
+  ""
+ ],
  "Volume": [
   null,
   "音量"
  ],
  "Your browser does not support iframes.": [
+  null,
+  ""
+ ],
+ "bridge": [
   null,
   ""
  ],
@@ -686,6 +746,10 @@ return plural;
  "custom": [
   null,
   "Custom"
+ ],
+ "direct": [
+  null,
+  ""
  ],
  "disabled": [
   null,
@@ -711,7 +775,15 @@ return plural;
   null,
   ""
  ],
+ "ethernet": [
+  null,
+  ""
+ ],
  "host": [
+  null,
+  ""
+ ],
+ "hostdev": [
   null,
   ""
  ],
@@ -736,6 +808,10 @@ return plural;
   ""
  ],
  "maintenance": [
+  null,
+  ""
+ ],
+ "mcast": [
   null,
   ""
  ],
@@ -799,6 +875,10 @@ return plural;
   null,
   "実行中"
  ],
+ "server": [
+  null,
+  ""
+ ],
  "shut off": [
   null,
   "シャットオフ"
@@ -819,11 +899,19 @@ return plural;
   null,
   ""
  ],
+ "udp": [
+  null,
+  ""
+ ],
  "unassigned": [
   null,
   ""
  ],
  "up": [
+  null,
+  ""
+ ],
+ "user": [
   null,
   ""
  ],
@@ -834,6 +922,10 @@ return plural;
  "vCPUs:": [
   null,
   "vCPU:"
+ ],
+ "vhostuser": [
+  null,
+  ""
  ],
  "yes": [
   null,

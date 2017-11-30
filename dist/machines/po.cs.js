@@ -71,6 +71,14 @@ return plural;
   null,
   ""
  ],
+ "Additional": [
+  null,
+  ""
+ ],
+ "Address": [
+  null,
+  "Adresa"
+ ],
  "Address:": [
   null,
   "Adresa:"
@@ -88,6 +96,10 @@ return plural;
   ""
  ],
  "Bus": [
+  null,
+  ""
+ ],
+ "CHANGE NETWORK STATE action failed": [
   null,
   ""
  ],
@@ -183,6 +195,18 @@ return plural;
   null,
   ""
  ],
+ "MAC Address": [
+  null,
+  ""
+ ],
+ "MTU": [
+  null,
+  ""
+ ],
+ "Managed": [
+  null,
+  ""
+ ],
  "Manual Connection": [
   null,
   ""
@@ -191,11 +215,19 @@ return plural;
   null,
   "Paměť:"
  ],
+ "Model type": [
+  null,
+  ""
+ ],
  "More Information": [
   null,
   ""
  ],
  "Name": [
+  null,
+  ""
+ ],
+ "Networks": [
   null,
   ""
  ],
@@ -215,6 +247,10 @@ return plural;
   null,
   ""
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  ""
+ ],
  "Ok": [
   null,
   "Ok"
@@ -227,6 +263,10 @@ return plural;
   null,
   ""
  ],
+ "Plug": [
+  null,
+  ""
+ ],
  "Pool": [
   null,
   "Úložiště"
@@ -234,6 +274,10 @@ return plural;
  "Port": [
   null,
   "Port"
+ ],
+ "Portgroup": [
+  null,
+  ""
  ],
  "Protocol": [
   null,
@@ -339,6 +383,14 @@ return plural;
   null,
   ""
  ],
+ "Type": [
+  null,
+  "Typ"
+ ],
+ "Unplug": [
+  null,
+  ""
+ ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   ""
@@ -395,11 +447,19 @@ return plural;
   null,
   ""
  ],
+ "Virtualport": [
+  null,
+  ""
+ ],
  "Volume": [
   null,
   "Svazek"
  ],
  "Your browser does not support iframes.": [
+  null,
+  ""
+ ],
+ "bridge": [
   null,
   ""
  ],
@@ -415,11 +475,19 @@ return plural;
   null,
   ""
  ],
+ "direct": [
+  null,
+  ""
+ ],
  "disabled": [
   null,
   "zakázáno"
  ],
  "disk": [
+  null,
+  ""
+ ],
+ "down": [
   null,
   ""
  ],
@@ -431,13 +499,25 @@ return plural;
   null,
   "povoleno"
  ],
+ "ethernet": [
+  null,
+  ""
+ ],
  "host": [
+  null,
+  ""
+ ],
+ "hostdev": [
   null,
   ""
  ],
  "idle": [
   null,
   "nečinný"
+ ],
+ "mcast": [
+  null,
+  ""
  ],
  "network": [
   null,
@@ -459,6 +539,10 @@ return plural;
   null,
   ""
  ],
+ "server": [
+  null,
+  ""
+ ],
  "shut off": [
   null,
   ""
@@ -471,7 +555,23 @@ return plural;
   null,
   ""
  ],
+ "udp": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
+  null,
+  ""
+ ],
  "vCPUs:": [
+  null,
+  ""
+ ],
+ "vhostuser": [
   null,
   ""
  ],

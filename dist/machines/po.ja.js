@@ -71,6 +71,14 @@ return plural;
   null,
   ""
  ],
+ "Additional": [
+  null,
+  ""
+ ],
+ "Address": [
+  null,
+  "アドレス:"
+ ],
  "Address:": [
   null,
   "アドレス:"
@@ -90,6 +98,10 @@ return plural;
  "Bus": [
   null,
   "バス"
+ ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  ""
  ],
  "CPU Type:": [
   null,
@@ -183,6 +195,18 @@ return plural;
   null,
   ""
  ],
+ "MAC Address": [
+  null,
+  ""
+ ],
+ "MTU": [
+  null,
+  "MTU"
+ ],
+ "Managed": [
+  null,
+  ""
+ ],
  "Manual Connection": [
   null,
   "接続"
@@ -191,6 +215,10 @@ return plural;
   null,
   "メモリー:"
  ],
+ "Model type": [
+  null,
+  ""
+ ],
  "More Information": [
   null,
   "設定"
@@ -198,6 +226,10 @@ return plural;
  "Name": [
   null,
   "名前"
+ ],
+ "Networks": [
+  null,
+  ""
  ],
  "No VM is running or defined on this host": [
   null,
@@ -215,6 +247,10 @@ return plural;
   null,
   ""
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  ""
+ ],
  "Ok": [
   null,
   "OK"
@@ -227,6 +263,10 @@ return plural;
   null,
   ""
  ],
+ "Plug": [
+  null,
+  ""
+ ],
  "Pool": [
   null,
   "プール"
@@ -234,6 +274,10 @@ return plural;
  "Port": [
   null,
   "ポート"
+ ],
+ "Portgroup": [
+  null,
+  ""
  ],
  "Protocol": [
   null,
@@ -339,6 +383,14 @@ return plural;
   null,
   "VM はゲストの電源管理によって一時停止されています。"
  ],
+ "Type": [
+  null,
+  "タイプ"
+ ],
+ "Unplug": [
+  null,
+  ""
+ ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "ディスクの統計情報を表示するには libvirt の新しいバージョンにアップグレードしてください"
@@ -395,11 +447,19 @@ return plural;
   null,
   "仮想マシン"
  ],
+ "Virtualport": [
+  null,
+  ""
+ ],
  "Volume": [
   null,
   "音量"
  ],
  "Your browser does not support iframes.": [
+  null,
+  ""
+ ],
+ "bridge": [
   null,
   ""
  ],
@@ -415,11 +475,19 @@ return plural;
   null,
   "Custom"
  ],
+ "direct": [
+  null,
+  ""
+ ],
  "disabled": [
   null,
   "無効"
  ],
  "disk": [
+  null,
+  ""
+ ],
+ "down": [
   null,
   ""
  ],
@@ -431,13 +499,25 @@ return plural;
   null,
   "有効"
  ],
+ "ethernet": [
+  null,
+  ""
+ ],
  "host": [
+  null,
+  ""
+ ],
+ "hostdev": [
   null,
   ""
  ],
  "idle": [
   null,
   "アイドル"
+ ],
+ "mcast": [
+  null,
+  ""
  ],
  "network": [
   null,
@@ -459,6 +539,10 @@ return plural;
   null,
   "実行中"
  ],
+ "server": [
+  null,
+  ""
+ ],
  "shut off": [
   null,
   "シャットオフ"
@@ -471,9 +555,25 @@ return plural;
   null,
   "一時停止中 (PM)"
  ],
+ "udp": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
+  null,
+  ""
+ ],
  "vCPUs:": [
   null,
   "vCPU:"
+ ],
+ "vhostuser": [
+  null,
+  ""
  ],
  "yes": [
   null,

@@ -75,6 +75,14 @@ return plural;
   null,
   ""
  ],
+ "Additional": [
+  null,
+  ""
+ ],
+ "Address": [
+  null,
+  "Endereço"
+ ],
  "Address:": [
   null,
   ""
@@ -114,6 +122,10 @@ return plural;
  "Bus": [
   null,
   "Bus"
+ ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  ""
  ],
  "CPU Type:": [
   null,
@@ -283,7 +295,19 @@ return plural;
   null,
   ""
  ],
+ "MAC Address": [
+  null,
+  ""
+ ],
  "MIGRATE action failed": [
+  null,
+  ""
+ ],
+ "MTU": [
+  null,
+  "MTU"
+ ],
+ "Managed": [
   null,
   ""
  ],
@@ -303,6 +327,10 @@ return plural;
   null,
   ""
  ],
+ "Model type": [
+  null,
+  ""
+ ],
  "More Information": [
   null,
   ""
@@ -310,6 +338,10 @@ return plural;
  "Name": [
   null,
   "Nome"
+ ],
+ "Networks": [
+  null,
+  ""
  ],
  "No VM found in oVirt.": [
   null,
@@ -328,6 +360,10 @@ return plural;
   "Nenhum disco definido para esta VM"
  ],
  "No graphics console is defined for this virtual machine.": [
+  null,
+  ""
+ ],
+ "No network interfaces defined for this VM": [
   null,
   ""
  ],
@@ -383,6 +419,10 @@ return plural;
   null,
   ""
  ],
+ "Plug": [
+  null,
+  ""
+ ],
  "Pool": [
   null,
   "Pool"
@@ -390,6 +430,10 @@ return plural;
  "Port": [
   null,
   "Porta"
+ ],
+ "Portgroup": [
+  null,
+  ""
  ],
  "Preparing for Maintenance": [
   null,
@@ -579,6 +623,14 @@ return plural;
   null,
   ""
  ],
+ "Type": [
+  null,
+  "Tipo"
+ ],
+ "Unplug": [
+  null,
+  ""
+ ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "Atualize para uma versão mais recente do libvirt para exibir estatísticas de disco"
@@ -659,11 +711,19 @@ return plural;
   null,
   ""
  ],
+ "Virtualport": [
+  null,
+  ""
+ ],
  "Volume": [
   null,
   "Volume"
  ],
  "Your browser does not support iframes.": [
+  null,
+  ""
+ ],
+ "bridge": [
   null,
   ""
  ],
@@ -686,6 +746,10 @@ return plural;
  "custom": [
   null,
   "personalizado"
+ ],
+ "direct": [
+  null,
+  ""
  ],
  "disabled": [
   null,
@@ -711,9 +775,17 @@ return plural;
   null,
   "erro"
  ],
+ "ethernet": [
+  null,
+  ""
+ ],
  "host": [
   null,
   "host"
+ ],
+ "hostdev": [
+  null,
+  ""
  ],
  "idle": [
   null,
@@ -736,6 +808,10 @@ return plural;
   ""
  ],
  "maintenance": [
+  null,
+  ""
+ ],
+ "mcast": [
   null,
   ""
  ],
@@ -799,6 +875,10 @@ return plural;
   null,
   "executando"
  ],
+ "server": [
+  null,
+  ""
+ ],
  "shut off": [
   null,
   "desligar"
@@ -819,11 +899,19 @@ return plural;
   null,
   ""
  ],
+ "udp": [
+  null,
+  ""
+ ],
  "unassigned": [
   null,
   ""
  ],
  "up": [
+  null,
+  ""
+ ],
+ "user": [
   null,
   ""
  ],
@@ -834,6 +922,10 @@ return plural;
  "vCPUs:": [
   null,
   "vCPUs:"
+ ],
+ "vhostuser": [
+  null,
+  ""
  ],
  "yes": [
   null,

@@ -103,6 +103,10 @@ return plural;
   null,
   "Brak zainstalowanych lub dostępnych aplikacji"
  ],
+ "No description provided.": [
+  null,
+  ""
+ ],
  "No installation package found for this application.": [
   null,
   "Nie odnaleziono pakietu instalacji dla tego programu."

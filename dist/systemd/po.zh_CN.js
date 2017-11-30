@@ -419,6 +419,10 @@ return plural;
   null,
   "星期五"
  ],
+ "General": [
+  null,
+  "通用"
+ ],
  "Go to": [
   null,
   "到"
@@ -651,6 +655,14 @@ return plural;
   null,
   "短主机名"
  ],
+ "Problem details": [
+  null,
+  ""
+ ],
+ "Problem info": [
+  null,
+  ""
+ ],
  "Problems, Errors": [
   null,
   "问题，错误"
@@ -706,6 +718,14 @@ return plural;
  "Repeat Yearly": [
   null,
   "每年重复"
+ ],
+ "Report": [
+  null,
+  ""
+ ],
+ "Reported": [
+  null,
+  ""
  ],
  "Reporter 'reporter-ureport' not found.": [
   null,

@@ -4698,7 +4698,7 @@ QUnit.moduleStart(function() {
 });
 
 QUnit.done(function() {
-    console.log("phantom-tap-done");
+    console.log("cockpittest-tap-done");
     window.onerror = null;
 });
 /*
@@ -4728,7 +4728,7 @@ qunitTap(QUnit, function() {
 window.setTimeout(function() {
     if (!qunit_started) {
         console.log("QUnit not started by test");
-        console.log("phantom-tap-error");
+        console.log("cockpittest-tap-error");
     }
 }, 20000);
 

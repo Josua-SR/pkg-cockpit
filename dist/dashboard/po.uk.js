@@ -159,6 +159,10 @@ return plural;
   null,
   "Процесор"
  ],
+ "Can't load image": [
+  null,
+  ""
+ ],
  "Cancel": [
   null,
   "Скасувати"

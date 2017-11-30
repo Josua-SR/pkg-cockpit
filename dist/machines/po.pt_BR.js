@@ -71,6 +71,14 @@ return plural;
   null,
   ""
  ],
+ "Additional": [
+  null,
+  ""
+ ],
+ "Address": [
+  null,
+  "Endereço"
+ ],
  "Address:": [
   null,
   ""
@@ -90,6 +98,10 @@ return plural;
  "Bus": [
   null,
   "Bus"
+ ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  ""
  ],
  "CPU Type:": [
   null,
@@ -183,6 +195,18 @@ return plural;
   null,
   ""
  ],
+ "MAC Address": [
+  null,
+  ""
+ ],
+ "MTU": [
+  null,
+  "MTU"
+ ],
+ "Managed": [
+  null,
+  ""
+ ],
  "Manual Connection": [
   null,
   ""
@@ -191,6 +215,10 @@ return plural;
   null,
   "Memória:"
  ],
+ "Model type": [
+  null,
+  ""
+ ],
  "More Information": [
   null,
   ""
@@ -198,6 +226,10 @@ return plural;
  "Name": [
   null,
   "Nome"
+ ],
+ "Networks": [
+  null,
+  ""
  ],
  "No VM is running or defined on this host": [
   null,
@@ -215,6 +247,10 @@ return plural;
   null,
   ""
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  ""
+ ],
  "Ok": [
   null,
   "Ok"
@@ -227,6 +263,10 @@ return plural;
   null,
   ""
  ],
+ "Plug": [
+  null,
+  ""
+ ],
  "Pool": [
   null,
   "Pool"
@@ -234,6 +274,10 @@ return plural;
  "Port": [
   null,
   "Porta"
+ ],
+ "Portgroup": [
+  null,
+  ""
  ],
  "Protocol": [
   null,
@@ -339,6 +383,14 @@ return plural;
   null,
   "A VM é suspensa pela gerência de poder do convidado."
  ],
+ "Type": [
+  null,
+  "Tipo"
+ ],
+ "Unplug": [
+  null,
+  ""
+ ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "Atualize para uma versão mais recente do libvirt para exibir estatísticas de disco"
@@ -395,11 +447,19 @@ return plural;
   null,
   "Máquinas Virtuais"
  ],
+ "Virtualport": [
+  null,
+  ""
+ ],
  "Volume": [
   null,
   "Volume"
  ],
  "Your browser does not support iframes.": [
+  null,
+  ""
+ ],
+ "bridge": [
   null,
   ""
  ],
@@ -415,6 +475,10 @@ return plural;
   null,
   "personalizado"
  ],
+ "direct": [
+  null,
+  ""
+ ],
  "disabled": [
   null,
   "desabilitado"
@@ -422,6 +486,10 @@ return plural;
  "disk": [
   null,
   "disco"
+ ],
+ "down": [
+  null,
+  ""
  ],
  "dying": [
   null,
@@ -431,13 +499,25 @@ return plural;
   null,
   "habilitado"
  ],
+ "ethernet": [
+  null,
+  ""
+ ],
  "host": [
   null,
   "host"
  ],
+ "hostdev": [
+  null,
+  ""
+ ],
  "idle": [
   null,
   "ocioso"
+ ],
+ "mcast": [
+  null,
+  ""
  ],
  "network": [
   null,
@@ -459,6 +539,10 @@ return plural;
   null,
   "executando"
  ],
+ "server": [
+  null,
+  ""
+ ],
  "shut off": [
   null,
   "desligar"
@@ -471,9 +555,25 @@ return plural;
   null,
   "suspenso (PM)"
  ],
+ "udp": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
+  null,
+  ""
+ ],
  "vCPUs:": [
   null,
   "vCPUs:"
+ ],
+ "vhostuser": [
+  null,
+  ""
  ],
  "yes": [
   null,

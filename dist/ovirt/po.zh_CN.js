@@ -75,6 +75,14 @@ return plural;
   null,
   "动作"
  ],
+ "Additional": [
+  null,
+  ""
+ ],
+ "Address": [
+  null,
+  "地址"
+ ],
  "Address:": [
   null,
   "地址："
@@ -114,6 +122,10 @@ return plural;
  "Bus": [
   null,
   "总线"
+ ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  ""
  ],
  "CPU Type:": [
   null,
@@ -283,9 +295,21 @@ return plural;
   null,
   "正在加载数据 ..."
  ],
+ "MAC Address": [
+  null,
+  ""
+ ],
  "MIGRATE action failed": [
   null,
   "迁移操作失败"
+ ],
+ "MTU": [
+  null,
+  "MTU"
+ ],
+ "Managed": [
+  null,
+  ""
  ],
  "Manual Connection": [
   null,
@@ -303,6 +327,10 @@ return plural;
   null,
   "迁移到："
  ],
+ "Model type": [
+  null,
+  ""
+ ],
  "More Information": [
   null,
   "更多信息"
@@ -310,6 +338,10 @@ return plural;
  "Name": [
   null,
   "名称"
+ ],
+ "Networks": [
+  null,
+  ""
  ],
  "No VM found in oVirt.": [
   null,
@@ -330,6 +362,10 @@ return plural;
  "No graphics console is defined for this virtual machine.": [
   null,
   "没有为该虚拟机定义图形控制台。"
+ ],
+ "No network interfaces defined for this VM": [
+  null,
+  ""
  ],
  "OK": [
   null,
@@ -383,6 +419,10 @@ return plural;
   null,
   "请等待直达模板列表从服务器加载。"
  ],
+ "Plug": [
+  null,
+  ""
+ ],
  "Pool": [
   null,
   "池"
@@ -390,6 +430,10 @@ return plural;
  "Port": [
   null,
   "端口"
+ ],
+ "Portgroup": [
+  null,
+  ""
  ],
  "Preparing for Maintenance": [
   null,
@@ -579,6 +623,14 @@ return plural;
   null,
   "该虚拟机没有被 oVirt 管理"
  ],
+ "Type": [
+  null,
+  "类型"
+ ],
+ "Unplug": [
+  null,
+  ""
+ ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "升级到一个更新版本的 libvirt 来查看磁盘统计数据"
@@ -659,6 +711,10 @@ return plural;
   null,
   ""
  ],
+ "Virtualport": [
+  null,
+  ""
+ ],
  "Volume": [
   null,
   "卷"
@@ -666,6 +722,10 @@ return plural;
  "Your browser does not support iframes.": [
   null,
   "你的浏览器不支持 iframes。"
+ ],
+ "bridge": [
+  null,
+  ""
  ],
  "cdrom": [
   null,
@@ -686,6 +746,10 @@ return plural;
  "custom": [
   null,
   "自定义"
+ ],
+ "direct": [
+  null,
+  ""
  ],
  "disabled": [
   null,
@@ -711,9 +775,17 @@ return plural;
   null,
   "错误"
  ],
+ "ethernet": [
+  null,
+  ""
+ ],
  "host": [
   null,
   "主机"
+ ],
+ "hostdev": [
+  null,
+  ""
  ],
  "idle": [
   null,
@@ -738,6 +810,10 @@ return plural;
  "maintenance": [
   null,
   "维护"
+ ],
+ "mcast": [
+  null,
+  ""
  ],
  "network": [
   null,
@@ -799,6 +875,10 @@ return plural;
   null,
   "运行中"
  ],
+ "server": [
+  null,
+  ""
+ ],
  "shut off": [
   null,
   "关闭"
@@ -819,6 +899,10 @@ return plural;
   null,
   "线程"
  ],
+ "udp": [
+  null,
+  ""
+ ],
  "unassigned": [
   null,
   "未指定"
@@ -827,6 +911,10 @@ return plural;
   null,
   "运行中"
  ],
+ "user": [
+  null,
+  ""
+ ],
  "vCPUs": [
   null,
   "虚拟处理器"
@@ -834,6 +922,10 @@ return plural;
  "vCPUs:": [
   null,
   "虚拟 CPU："
+ ],
+ "vhostuser": [
+  null,
+  ""
  ],
  "yes": [
   null,

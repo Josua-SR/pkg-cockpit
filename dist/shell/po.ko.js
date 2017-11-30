@@ -151,10 +151,6 @@ return plural;
   null,
   ""
  ],
- "Cockpit is an interactive Linux server admin interface. ": [
-  null,
-  ""
- ],
  "Cockpit is not installed": [
   null,
   ""

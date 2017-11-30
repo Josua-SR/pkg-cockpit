@@ -103,6 +103,10 @@ return plural;
   null,
   "No hi ha cap aplicació instal·lada o disponible"
  ],
+ "No description provided.": [
+  null,
+  ""
+ ],
  "No installation package found for this application.": [
   null,
   "No s'ha trobat cap paquet d'instal·lació per a aquesta aplicació."

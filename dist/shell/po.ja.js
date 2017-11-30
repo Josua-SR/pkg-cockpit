@@ -151,10 +151,6 @@ return plural;
   null,
   "Cockpit は対話型 Linux サーバー管理インターフェースです。"
  ],
- "Cockpit is an interactive Linux server admin interface. ": [
-  null,
-  "Cockpit は対話型 Linux サーバー管理インターフェースです。"
- ],
  "Cockpit is not installed": [
   null,
   "Cockpit はインストールされていません"
