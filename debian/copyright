@@ -95,7 +95,7 @@ Copyright: Copyright (c) 2011-2016 Twitter, Inc.
 License: MIT
 
 Files: node_modules/bootstrap-datepicker/*
-Copyright: Copyright 2012 Stefan Petre
+Copyright: Andrew Rowls
 License: Apache-2.0
 
 Files: node_modules/c3/*
