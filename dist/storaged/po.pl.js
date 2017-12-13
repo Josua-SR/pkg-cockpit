@@ -205,26 +205,6 @@ return plural;
   null,
   "8 KiB"
  ],
- "<span>Encrypted $0</span>": [
-  null,
-  "<span>Zaszyfrowane $0</span>"
- ],
- "<span>Encrypted Logical Volume of $0</span>": [
-  null,
-  "<span>Zaszyfrowany wolumin logiczny $0</span>"
- ],
- "<span>Encrypted Partition of $0</span>": [
-  null,
-  "<span>Zaszyfrowana partycja $0</span>"
- ],
- "<span>Logical Volume of $0</span>": [
-  null,
-  "<span>Wolumin logiczny $0</span>"
- ],
- "<span>Partition of $0</span>": [
-  null,
-  "<span>Partycja $0</span>"
- ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
   "Przed usunięciem tego dysku należy najpierw dodać dysk zapasowy."
@@ -420,6 +400,10 @@ return plural;
  "Custom encryption options": [
   null,
   "Niestandardowe opcje szyfrowania"
+ ],
+ "Custom mount option": [
+  null,
+  ""
  ],
  "Custom mount options": [
   null,
@@ -805,6 +789,10 @@ return plural;
   null,
   "Nie odnaleziono"
  ],
+ "Not mounted": [
+  null,
+  ""
+ ],
  "Not running": [
   null,
   "Niedziałające"
@@ -824,10 +812,6 @@ return plural;
  "Options": [
   null,
   "Opcje"
- ],
- "Options cannot be empty.": [
-  null,
-  "Opcje nie mogą być puste."
  ],
  "Other Devices": [
   null,

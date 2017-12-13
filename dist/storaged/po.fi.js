@@ -110,7 +110,7 @@ return plural;
  ],
  "$0 of $1": [
   null,
-  ""
+  "$0/$1"
  ],
  "$0 week": [
   "$0 weeks",
@@ -132,7 +132,7 @@ return plural;
  ],
  "${size} ${desc}": [
   null,
-  ""
+  "${size} ${desc}"
  ],
  "(default)": [
   null,
@@ -197,26 +197,6 @@ return plural;
  "8 KiB": [
   null,
   "8 KiB"
- ],
- "<span>Encrypted $0</span>": [
-  null,
-  "<span>Salattu $0</span>"
- ],
- "<span>Encrypted Logical Volume of $0</span>": [
-  null,
-  "<span>Salattu Looginen Taltio $0</span>"
- ],
- "<span>Encrypted Partition of $0</span>": [
-  null,
-  "<span>$0 :n salattu osio</span>"
- ],
- "<span>Logical Volume of $0</span>": [
-  null,
-  "<span>Looginen Taltio $0</span>"
- ],
- "<span>Partition of $0</span>": [
-  null,
-  "<span>$0:n osio</span>"
  ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
@@ -412,11 +392,15 @@ return plural;
  ],
  "Custom encryption options": [
   null,
+  "Mukautetut salausvalinnat"
+ ],
+ "Custom mount option": [
+  null,
   ""
  ],
  "Custom mount options": [
   null,
-  ""
+  "Mukautetut liitosvalinnat"
  ],
  "DISK IS FAILING": [
   null,
@@ -504,7 +488,7 @@ return plural;
  ],
  "Encrypted $0": [
   null,
-  ""
+  "Salattu $0"
  ],
  "Encrypted EXT4 (LUKS)": [
   null,
@@ -620,19 +604,19 @@ return plural;
  ],
  "Local Mount Point": [
   null,
-  ""
+  "Paikallinen liitospiste"
  ],
  "Lock": [
   null,
-  ""
+  "Lukitse"
  ],
  "Locking $target": [
   null,
-  ""
+  "Lukitaan $target"
  ],
  "Logical Volume": [
   null,
-  ""
+  "Looginen taltio"
  ],
  "Logical Volume (Snapshot)": [
   null,
@@ -660,7 +644,7 @@ return plural;
  ],
  "Modifying $target": [
   null,
-  ""
+  "Muokataan $target"
  ],
  "Mount": [
   null,
@@ -668,27 +652,27 @@ return plural;
  ],
  "Mount Options": [
   null,
-  ""
+  "Liitosvalinnat"
  ],
  "Mount Point": [
   null,
-  ""
+  "Liitospiste"
  ],
  "Mount at boot": [
   null,
-  ""
+  "Liitä käynnistyksen yhteydessä"
  ],
  "Mount options": [
   null,
-  ""
+  "Liitosvalinnat"
  ],
  "Mount point can not be empty": [
   null,
-  ""
+  "Liitospiste ei voi olla tyhjä"
  ],
  "Mount point cannot be empty.": [
   null,
-  ""
+  "Liitospiste ei voi olla tyhjä."
  ],
  "Mount point must start with \"/\".": [
   null,
@@ -708,35 +692,35 @@ return plural;
  ],
  "Mounting $target": [
   null,
-  ""
+  "Liitetään $target"
  ],
  "NFS Mount": [
   null,
-  ""
+  "NFS-liitos"
  ],
  "NFS Mounts": [
   null,
-  ""
+  "NFS-liitokset"
  ],
  "NTFS - Compatible with most systems": [
   null,
-  ""
+  "NTFS - Yhteensopiva useimpien järjestelmien kanssa"
  ],
  "Name": [
   null,
-  ""
+  "Nimi"
  ],
  "Name cannot be empty.": [
   null,
-  ""
+  "Nimi ei voi olla tyhjä."
  ],
  "Name cannot be longer than 127 characters.": [
   null,
-  ""
+  "Nimi voi sisältää enintään 127 merkkiä."
  ],
  "Name cannot contain the character '$0'.": [
   null,
-  ""
+  "Nimi ei voi sisältää merkkiä '$0'."
  ],
  "Name cannot contain whitespace.": [
   null,
@@ -744,15 +728,15 @@ return plural;
  ],
  "New NFS Mount": [
   null,
-  ""
+  "Uusi NFS-liitos"
  ],
  "Next": [
   null,
-  ""
+  "Seuraava"
  ],
  "No Filesystem": [
   null,
-  ""
+  "Ei tiedostojärjestelmää"
  ],
  "No Logical Volumes": [
   null,
@@ -772,7 +756,7 @@ return plural;
  ],
  "No free space": [
   null,
-  ""
+  "Ei vapaata tilaa"
  ],
  "No iSCSI targets set up": [
   null,
@@ -784,7 +768,7 @@ return plural;
  ],
  "No partitioning": [
   null,
-  ""
+  "Ei osiointia"
  ],
  "No storage set up as RAID": [
   null,
@@ -795,6 +779,10 @@ return plural;
   ""
  ],
  "Not found": [
+  null,
+  "Ei löytynyt"
+ ],
+ "Not mounted": [
   null,
   ""
  ],
@@ -816,15 +804,11 @@ return plural;
  ],
  "Options": [
   null,
-  ""
- ],
- "Options cannot be empty.": [
-  null,
-  ""
+  "Valinnat"
  ],
  "Other Devices": [
   null,
-  ""
+  "Muut laitteet"
  ],
  "Overwrite existing data with zeros": [
   null,
@@ -840,7 +824,7 @@ return plural;
  ],
  "Partitioning": [
   null,
-  ""
+  "Osiointi"
  ],
  "Passphrase": [
   null,
@@ -856,7 +840,7 @@ return plural;
  ],
  "Password": [
   null,
-  ""
+  "Salasana"
  ],
  "Path on Server": [
   null,
@@ -904,7 +888,7 @@ return plural;
  ],
  "Port": [
   null,
-  ""
+  "Portti"
  ],
  "Purpose": [
   null,
@@ -912,11 +896,11 @@ return plural;
  ],
  "RAID ($0)": [
   null,
-  ""
+  "RAID ($0)"
  ],
  "RAID 0": [
   null,
-  ""
+  "RAID 0"
  ],
  "RAID 0 (Stripe)": [
   null,
@@ -924,7 +908,7 @@ return plural;
  ],
  "RAID 1": [
   null,
-  ""
+  "RAID 1"
  ],
  "RAID 1 (Mirror)": [
   null,
@@ -932,7 +916,7 @@ return plural;
  ],
  "RAID 10": [
   null,
-  ""
+  "RAID 10"
  ],
  "RAID 10 (Stripe of Mirrors)": [
   null,
@@ -940,7 +924,7 @@ return plural;
  ],
  "RAID 4": [
   null,
-  ""
+  "RAID 4"
  ],
  "RAID 4 (Dedicated Parity)": [
   null,
@@ -948,7 +932,7 @@ return plural;
  ],
  "RAID 5": [
   null,
-  ""
+  "RAID 5"
  ],
  "RAID 5 (Distributed Parity)": [
   null,
@@ -956,7 +940,7 @@ return plural;
  ],
  "RAID 6": [
   null,
-  ""
+  "RAID 6"
  ],
  "RAID 6 (Double Distributed Parity)": [
   null,
@@ -964,23 +948,23 @@ return plural;
  ],
  "RAID Device": [
   null,
-  ""
+  "RAID-laite"
  ],
  "RAID Device $0": [
   null,
-  ""
+  "RAID-laite $0"
  ],
  "RAID Devices": [
   null,
-  ""
+  "RAID-laitteet"
  ],
  "RAID Level": [
   null,
-  ""
+  "RAID-taso"
  ],
  "RAID Member": [
   null,
-  ""
+  "RAID-jäsen"
  ],
  "Reading": [
   null,
@@ -1008,7 +992,7 @@ return plural;
  ],
  "Rename": [
   null,
-  ""
+  "Nimeä uudelleen"
  ],
  "Rename Logical Volume": [
   null,
@@ -1016,19 +1000,19 @@ return plural;
  ],
  "Rename Volume Group": [
   null,
-  ""
+  "Nimeä uudelleen taltioryhmä"
  ],
  "Renaming $target": [
   null,
-  ""
+  "Nimetään uudelleen $target"
  ],
  "Resize": [
   null,
-  ""
+  "Muuta kokoa"
  ],
  "Resize Filesystem": [
   null,
-  ""
+  "Muuta tiedostojärjestelmän koko"
  ],
  "Resize Logical Volume": [
   null,
@@ -1052,19 +1036,19 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "Palvelin"
  ],
  "Server Address": [
   null,
-  ""
+  "Palvelimen  osoite"
  ],
  "Server address cannot be empty.": [
   null,
-  ""
+  "Palvelimen osoite ei voi olla tyhjä."
  ],
  "Server cannot be empty.": [
   null,
-  ""
+  "Palvelin ei voi olla tyhjä."
  ],
  "Setting up loop device $target": [
   null,
@@ -1072,23 +1056,23 @@ return plural;
  ],
  "Size": [
   null,
-  ""
+  "Koko"
  ],
  "Size cannot be negative": [
   null,
-  ""
+  "Koko ei  voi olla negatiivinen"
  ],
  "Size cannot be zero": [
   null,
-  ""
+  "Koko ei voi olla nolla"
  ],
  "Size is too large": [
   null,
-  ""
+  "Koko on liian suuri"
  ],
  "Size must be a number": [
   null,
-  ""
+  "Koon tulee olla numero"
  ],
  "Spare": [
   null,
@@ -1096,11 +1080,11 @@ return plural;
  ],
  "Start": [
   null,
-  ""
+  "Käynnistä"
  ],
  "Start Multipath": [
   null,
-  ""
+  "Käynnistä Multipath"
  ],
  "Start Scrubbing": [
   null,
@@ -1108,7 +1092,7 @@ return plural;
  ],
  "Starting RAID Device $target": [
   null,
-  ""
+  "Käynnistetään RAID-laite $target"
  ],
  "Starting swapspace $target": [
   null,
@@ -1116,7 +1100,7 @@ return plural;
  ],
  "Stop": [
   null,
-  ""
+  "Pysäytä"
  ],
  "Stop Scrubbing": [
   null,
@@ -1124,7 +1108,7 @@ return plural;
  ],
  "Stop and remove": [
   null,
-  ""
+  "Pysäytä ja poista"
  ],
  "Stop and unmount": [
   null,
@@ -1132,7 +1116,7 @@ return plural;
  ],
  "Stopping RAID Device $target": [
   null,
-  ""
+  "Pysäytetään RAID-laite $target"
  ],
  "Stopping swapspace $target": [
   null,
@@ -1140,7 +1124,7 @@ return plural;
  ],
  "Storage": [
   null,
-  ""
+  "Tallennustila"
  ],
  "Storage Logs": [
   null,
@@ -1164,7 +1148,7 @@ return plural;
  ],
  "Synchronizing RAID Device $target": [
   null,
-  ""
+  "Synkronoidaan RAID-laitetta $target"
  ],
  "Targets": [
   null,
@@ -1416,7 +1400,7 @@ return plural;
  ],
  "storage\u0004Optical Drive": [
   null,
-  ""
+  "Optinen asema"
  ],
  "storage\u0004Removable Drive": [
   null,

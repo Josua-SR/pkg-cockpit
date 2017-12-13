@@ -157,7 +157,7 @@ return plural;
  ],
  "Proxy": [
   null,
-  "プロキシ"
+  "プロキシー"
  ],
  "Register": [
   null,
@@ -197,7 +197,7 @@ return plural;
  ],
  "The current user isn't allowed to access system subscription status.": [
   null,
-  "現在のユーザーにはシステムサブスクリプションステータスへのアクセスが許可されていません。"
+  "現在のユーザーには、システムサブスクリプションステータスへのアクセスが許可されていません。"
  ],
  "URL": [
   null,

@@ -285,19 +285,19 @@ return plural;
  ],
  "Locked": [
   null,
-  ""
+  "Lukitse"
  ],
  "Log In": [
   null,
-  ""
+  "Kirjaudu sisään"
  ],
  "Log Out": [
   null,
-  ""
+  "Kirjaudu ulos"
  ],
  "Log in again": [
   null,
-  ""
+  "Kirjaudu sisään uudelleen"
  ],
  "Log in to {{host}}": [
   null,
@@ -309,15 +309,15 @@ return plural;
  ],
  "Machines": [
   null,
-  ""
+  "Koneet"
  ],
  "New Password": [
   null,
-  ""
+  "Uusi salasana"
  ],
  "New password was not accepted": [
   null,
-  ""
+  "Uutta salasanaa ei hyväksytty"
  ],
  "No matching files found": [
   null,
@@ -329,7 +329,7 @@ return plural;
  ],
  "Not a valid private key": [
   null,
-  ""
+  "Ei kelvollinen yksityinen avain"
  ],
  "Off": [
   null,
@@ -337,15 +337,15 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "OK"
  ],
  "Old Password": [
   null,
-  ""
+  "Vanha salasana"
  ],
  "Old password not accepted": [
   null,
-  ""
+  "Vanhaa salasanaa ei hyväksytty"
  ],
  "On": [
   null,
@@ -357,11 +357,11 @@ return plural;
  ],
  "Password": [
   null,
-  ""
+  "Salasana"
  ],
  "Password not accepted": [
   null,
-  ""
+  "Salasanaa ei hyväksytty"
  ],
  "Password not usable for privileged tasks or to connect to other machines": [
   null,
@@ -373,7 +373,7 @@ return plural;
  ],
  "Port": [
   null,
-  ""
+  "Portti"
  ],
  "Privileged tasks not available": [
   null,
@@ -381,7 +381,7 @@ return plural;
  ],
  "Project website": [
   null,
-  ""
+  "Projektin verkkosivusto"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -393,7 +393,7 @@ return plural;
  ],
  "Public Key": [
   null,
-  ""
+  "Julkinen avain"
  ],
  "Reconnect": [
   null,
@@ -405,7 +405,7 @@ return plural;
  ],
  "Select": [
   null,
-  ""
+  "Valitse"
  ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
@@ -413,11 +413,11 @@ return plural;
  ],
  "Synchronize": [
   null,
-  ""
+  "Synkronoi"
  ],
  "Synchronize users": [
   null,
-  ""
+  "Synkronoi käyttäjät"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -433,11 +433,11 @@ return plural;
  ],
  "The machine is restarting": [
   null,
-  ""
+  "Kone käynnistyy uudelleen"
  ],
  "The passwords do not match.": [
   null,
-  ""
+  "Salasanat eivät täsmää."
  ],
  "There are currently no active pages": [
   null,
@@ -461,7 +461,7 @@ return plural;
  ],
  "Too many files found": [
   null,
-  ""
+  "Löytyi liian monta tiedostoa"
  ],
  "Troubleshoot": [
   null,

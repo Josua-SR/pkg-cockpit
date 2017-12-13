@@ -198,26 +198,6 @@ return plural;
   null,
   "8 KiB"
  ],
- "<span>Encrypted $0</span>": [
-  null,
-  "<span>ਇੰਕ੍ਰਿਪਟ ਹੈ $0</span>"
- ],
- "<span>Encrypted Logical Volume of $0</span>": [
-  null,
-  "<span>$0 ਦਾ ਇੰਕ੍ਰਿਪਟ ਕੀਤਾ ਲਾਜ਼ੀਕਲ ਵਾਲੀਅਮ</span>"
- ],
- "<span>Encrypted Partition of $0</span>": [
-  null,
-  "<span>$0 ਦਾ ਇੰਕ੍ਰਿਪਟ ਕੀਤਾ ਪਾਰਟੀਸ਼ਨ</span>"
- ],
- "<span>Logical Volume of $0</span>": [
-  null,
-  "<span>$0 ਦਾ ਲਾਜ਼ੀਕਲ ਵਾਲੀਅਮ</span>"
- ],
- "<span>Partition of $0</span>": [
-  null,
-  "<span>$0 ਦਾ ਪਾਰਟੀਸ਼ਨ</span>"
- ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
   ""
@@ -411,6 +391,10 @@ return plural;
   ""
  ],
  "Custom encryption options": [
+  null,
+  ""
+ ],
+ "Custom mount option": [
   null,
   ""
  ],
@@ -798,6 +782,10 @@ return plural;
   null,
   ""
  ],
+ "Not mounted": [
+  null,
+  ""
+ ],
  "Not running": [
   null,
   ""
@@ -815,10 +803,6 @@ return plural;
   ""
  ],
  "Options": [
-  null,
-  ""
- ],
- "Options cannot be empty.": [
   null,
   ""
  ],

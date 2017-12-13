@@ -67,10 +67,6 @@ return plural;
   "language": "da",
   "x-generator": "Zanata 3.8.4"
  },
- "$0 Block Device": [
-  null,
-  ""
- ],
  "$0 day": [
   "$0 days",
   "",
@@ -117,10 +113,6 @@ return plural;
   null,
   ""
  ],
- "1 MiB": [
-  null,
-  ""
- ],
  "1 day": [
   null,
   ""
@@ -133,43 +125,11 @@ return plural;
   null,
   ""
  ],
- "128 KiB": [
-  null,
-  ""
- ],
- "16 KiB": [
-  null,
-  ""
- ],
- "2 MiB": [
-  null,
-  ""
- ],
- "32 KiB": [
-  null,
-  ""
- ],
- "4 KiB": [
-  null,
-  ""
- ],
  "5 minutes": [
   null,
   ""
  ],
- "512 KiB": [
-  null,
-  ""
- ],
  "6 hours": [
-  null,
-  ""
- ],
- "64 KiB": [
-  null,
-  ""
- ],
- "8 KiB": [
   null,
   ""
  ],
@@ -197,43 +157,7 @@ return plural;
   null,
   ""
  ],
- "Activating $target": [
-  null,
-  ""
- ],
- "Add": [
-  null,
-  ""
- ],
- "Add iSCSI Portal": [
-  null,
-  ""
- ],
- "Adding physical volume to $target": [
-  null,
-  ""
- ],
- "Address": [
-  null,
-  ""
- ],
  "Apply": [
-  null,
-  ""
- ],
- "At least $0 disks are needed.": [
-  null,
-  ""
- ],
- "At least one disk is needed.": [
-  null,
-  ""
- ],
- "Authentication required": [
-  null,
-  ""
- ],
- "Available targets on $0": [
   null,
   ""
  ],
@@ -252,30 +176,6 @@ return plural;
  "Cancel": [
   null,
   "Annullér"
- ],
- "Change": [
-  null,
-  ""
- ],
- "Change iSCSI Initiator Name": [
-  null,
-  ""
- ],
- "Checking RAID Device $target": [
-  null,
-  ""
- ],
- "Checking and Repairing RAID Device $target": [
-  null,
-  ""
- ],
- "Chunk Size": [
-  null,
-  ""
- ],
- "Cleaning up for $target": [
-  null,
-  ""
  ],
  "Close": [
   null,
@@ -309,19 +209,11 @@ return plural;
   null,
   ""
  ],
- "Create RAID Device": [
-  null,
-  ""
- ],
  "Create Snapshot": [
   null,
   ""
  ],
  "Create Thin Volume": [
-  null,
-  ""
- ],
- "Create Volume Group": [
   null,
   ""
  ],
@@ -338,30 +230,6 @@ return plural;
   ""
  ],
  "Create partition table": [
-  null,
-  ""
- ],
- "Creating RAID Device $target": [
-  null,
-  ""
- ],
- "Creating filesystem on $target": [
-  null,
-  ""
- ],
- "Creating logical volume $target": [
-  null,
-  ""
- ],
- "Creating partition $target": [
-  null,
-  ""
- ],
- "Creating snapshot of $target": [
-  null,
-  ""
- ],
- "Creating volume group $target": [
   null,
   ""
  ],
@@ -385,10 +253,6 @@ return plural;
   null,
   ""
  ],
- "Deactivating $target": [
-  null,
-  ""
- ],
  "Default": [
   null,
   ""
@@ -397,19 +261,11 @@ return plural;
   null,
   ""
  ],
- "Deleting $target": [
-  null,
-  ""
- ],
  "Deleting a logical volume will delete all data in it.": [
   null,
   ""
  ],
  "Deleting a partition will delete all data in it.": [
-  null,
-  ""
- ],
- "Deleting volume group $target": [
   null,
   ""
  ],
@@ -453,14 +309,6 @@ return plural;
   null,
   ""
  ],
- "Ejecting $target": [
-  null,
-  ""
- ],
- "Emptying $target": [
-  null,
-  ""
- ],
  "Encrypted EXT4 (LUKS)": [
   null,
   ""
@@ -478,10 +326,6 @@ return plural;
   ""
  ],
  "Erase": [
-  null,
-  ""
- ],
- "Erasing $target": [
   null,
   ""
  ],
@@ -549,10 +393,6 @@ return plural;
   null,
   ""
  ],
- "Invalid username or password": [
-  null,
-  ""
- ],
  "Jobs": [
   null,
   ""
@@ -561,19 +401,11 @@ return plural;
   null,
   ""
  ],
- "Locking $target": [
-  null,
-  ""
- ],
  "Logical Volume": [
   null,
   ""
  ],
  "Logical Volume (Snapshot)": [
-  null,
-  ""
- ],
- "Marking $target as faulty": [
   null,
   ""
  ],
@@ -586,10 +418,6 @@ return plural;
   ""
  ],
  "Metadata Used": [
-  null,
-  ""
- ],
- "Modifying $target": [
   null,
   ""
  ],
@@ -610,10 +438,6 @@ return plural;
   "Indstillinger"
  ],
  "Mounting": [
-  null,
-  ""
- ],
- "Mounting $target": [
   null,
   ""
  ],
@@ -638,10 +462,6 @@ return plural;
   ""
  ],
  "Name cannot contain whitespace.": [
-  null,
-  ""
- ],
- "Next": [
   null,
   ""
  ],
@@ -689,10 +509,6 @@ return plural;
   null,
   ""
  ],
- "Operation '$operation' on $target": [
-  null,
-  ""
- ],
  "Options": [
   null,
   "Indstillinger"
@@ -722,10 +538,6 @@ return plural;
   ""
  ],
  "Passphrases do not match": [
-  null,
-  ""
- ],
- "Password": [
   null,
   ""
  ],
@@ -761,35 +573,7 @@ return plural;
   null,
   ""
  ],
- "Port": [
-  null,
-  ""
- ],
  "Purpose": [
-  null,
-  ""
- ],
- "RAID 0 (Stripe)": [
-  null,
-  ""
- ],
- "RAID 1 (Mirror)": [
-  null,
-  ""
- ],
- "RAID 10 (Stripe of Mirrors)": [
-  null,
-  ""
- ],
- "RAID 4 (Dedicated Parity)": [
-  null,
-  ""
- ],
- "RAID 5 (Distributed Parity)": [
-  null,
-  ""
- ],
- "RAID 6 (Double Distributed Parity)": [
   null,
   ""
  ],
@@ -805,10 +589,6 @@ return plural;
   null,
   ""
  ],
- "RAID Level": [
-  null,
-  ""
- ],
  "RAID Member": [
   null,
   ""
@@ -821,27 +601,11 @@ return plural;
   null,
   ""
  ],
- "Recovering RAID Device $target": [
-  null,
-  ""
- ],
- "Removing $target from RAID Device": [
-  null,
-  ""
- ],
- "Removing physical volume from $target": [
-  null,
-  ""
- ],
  "Rename": [
   null,
   ""
  ],
  "Rename Logical Volume": [
-  null,
-  ""
- ],
- "Renaming $target": [
   null,
   ""
  ],
@@ -854,30 +618,6 @@ return plural;
   ""
  ],
  "Resize Logical Volume": [
-  null,
-  ""
- ],
- "Resizing $target": [
-  null,
-  ""
- ],
- "SMART self-test of $target": [
-  null,
-  ""
- ],
- "Securely erasing $target": [
-  null,
-  ""
- ],
- "Server Address": [
-  null,
-  ""
- ],
- "Server address cannot be empty.": [
-  null,
-  ""
- ],
- "Setting up loop device $target": [
   null,
   ""
  ],
@@ -909,23 +649,7 @@ return plural;
   null,
   ""
  ],
- "Starting RAID Device $target": [
-  null,
-  ""
- ],
- "Starting swapspace $target": [
-  null,
-  ""
- ],
  "Stop": [
-  null,
-  ""
- ],
- "Stopping RAID Device $target": [
-  null,
-  ""
- ],
- "Stopping swapspace $target": [
   null,
   ""
  ],
@@ -954,14 +678,6 @@ return plural;
   ""
  ],
  "Swap": [
-  null,
-  ""
- ],
- "Synchronizing RAID Device $target": [
-  null,
-  ""
- ],
- "Targets": [
   null,
   ""
  ],
@@ -997,15 +713,7 @@ return plural;
   null,
   ""
  ],
- "Unable to reach server": [
-  null,
-  ""
- ],
  "Unknown": [
-  null,
-  ""
- ],
- "Unknown host name": [
   null,
   ""
  ],
@@ -1013,15 +721,7 @@ return plural;
   null,
   ""
  ],
- "Unlocking $target": [
-  null,
-  ""
- ],
  "Unmount": [
-  null,
-  ""
- ],
- "Unmounting $target": [
   null,
   ""
  ],
@@ -1041,15 +741,7 @@ return plural;
   null,
   ""
  ],
- "Username": [
-  null,
-  "Værtsnavn"
- ],
  "VFAT - Compatible with all systems and devices": [
-  null,
-  ""
- ],
- "Very securely erasing $target": [
   null,
   ""
  ],
@@ -1097,10 +789,6 @@ return plural;
   null,
   ""
  ],
- "unknown target": [
-  null,
-  ""
- ],
  "storage-id-desc\u0004$0 File System": [
   null,
   ""
@@ -1141,17 +829,9 @@ return plural;
   null,
   "Værtsnavn"
  ],
- "storage\u0004Drive": [
-  null,
-  ""
- ],
  "storage\u0004Firmware Version": [
   null,
   "Version"
- ],
- "storage\u0004Hard Disk": [
-  null,
-  ""
  ],
  "storage\u0004Model": [
   null,
@@ -1161,23 +841,11 @@ return plural;
   null,
   ""
  ],
- "storage\u0004Optical Drive": [
-  null,
-  ""
- ],
  "storage\u0004RAID Level": [
   null,
   ""
  ],
- "storage\u0004Removable Drive": [
-  null,
-  ""
- ],
  "storage\u0004Serial Number": [
-  null,
-  ""
- ],
- "storage\u0004Solid-State Disk": [
   null,
   ""
  ],

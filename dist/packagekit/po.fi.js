@@ -69,10 +69,15 @@ return plural;
  },
  "$0 more…": [
   null,
-  ""
+  "$0 lisää…"
  ],
  "$0 update": [
   "$0 updates",
+  "$0 päivitys",
+  "$0 päivitystä"
+ ],
+ "$1 security fix": [
+  "$1 security fixes",
   "",
   ""
  ],
@@ -83,27 +88,27 @@ return plural;
  ],
  "Apply all updates": [
   null,
-  ""
+  "Toteuta kaikki päivitykset"
  ],
  "Apply security updates": [
   null,
-  ""
+  "Toteuta tietoturvapäivitykset"
  ],
  "Applying updates": [
   null,
-  ""
+  "Toteutetaan päivityksiä"
  ],
  "Applying updates failed": [
   null,
-  ""
+  "Päivitystan toteuttaminen epäonnistui"
  ],
  "Automatic Updates": [
   null,
-  ""
+  "Automaattiset päivitykset"
  ],
  "Available Updates": [
   null,
-  ""
+  "Saatavilla olevat päivitykset"
  ],
  "Bugs": [
   null,
@@ -127,11 +132,11 @@ return plural;
  ],
  "Downloaded": [
   null,
-  ""
+  "Ladattu"
  ],
  "Downloading": [
   null,
-  ""
+  "Ladataan"
  ],
  "Ignore": [
   null,
@@ -143,19 +148,19 @@ return plural;
  ],
  "Install All Updates": [
   null,
-  ""
+  "Asenna kaikki päivitykset"
  ],
  "Install Security Updates": [
   null,
-  ""
+  "Asenna tietoturvapäivitykset"
  ],
  "Installed": [
   null,
-  ""
+  "Asennettu"
  ],
  "Installing": [
   null,
-  ""
+  "Asennetaan"
  ],
  "Last checked: $0 ago": [
   null,
@@ -175,7 +180,7 @@ return plural;
  ],
  "Name": [
   null,
-  ""
+  "Nimi"
  ],
  "No updates pending": [
   null,
@@ -191,19 +196,19 @@ return plural;
  ],
  "Package information": [
   null,
-  ""
+  "Paketin tiedot"
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "PackageKit kaatui"
  ],
  "PackageKit is not installed": [
   null,
-  ""
+  "PackageKit ei ole asennettu"
  ],
  "PackageKit reported error code $0": [
   null,
-  ""
+  "PackageKit raportoi virhekoodin $0"
  ],
  "Refreshing package information": [
   null,
@@ -215,7 +220,7 @@ return plural;
  ],
  "Restart Now": [
   null,
-  ""
+  "Käynnistä uudelleen nyt"
  ],
  "Restart Recommended": [
   null,
@@ -227,7 +232,7 @@ return plural;
  ],
  "Security Update": [
   null,
-  ""
+  "Tietoturvapäivitys"
  ],
  "Set up": [
   null,
@@ -239,7 +244,7 @@ return plural;
  ],
  "Software Updates": [
   null,
-  ""
+  "Ohjelmistopäivitykset"
  ],
  "Some other program is currently using the package manager, please wait...": [
   null,
@@ -247,19 +252,19 @@ return plural;
  ],
  "System is up to date": [
   null,
-  ""
+  "Järjestelmä on ajan tasalla"
  ],
  "The following packages were recently updated:": [
   null,
-  ""
+  "Seuraavat paketit päivitettiin äskettäin:"
  ],
  "The following packages were updated $0:": [
   null,
-  ""
+  "Seuraavat paketit päivitettiin $0:"
  ],
  "This system is not registered": [
   null,
-  ""
+  "Tätä järjestelmää ei ole rekisteröity"
  ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
@@ -271,15 +276,15 @@ return plural;
  ],
  "Update History": [
   null,
-  ""
+  "Päivityshistoria"
  ],
  "Update Log": [
   null,
-  ""
+  "Päivitysloki"
  ],
  "Updated": [
   null,
-  ""
+  "Päivitetty"
  ],
  "Updated packages may require a restart to take effect.": [
   null,
@@ -287,7 +292,7 @@ return plural;
  ],
  "Updates are disabled.": [
   null,
-  ""
+  "Päivitykset on poistettu käytöstä."
  ],
  "Updating": [
   null,
@@ -295,11 +300,11 @@ return plural;
  ],
  "Verified": [
   null,
-  ""
+  "Vahvistettu"
  ],
  "Verifying": [
   null,
-  ""
+  "Vahvistetaan"
  ],
  "Version": [
   null,
@@ -331,35 +336,35 @@ return plural;
  ],
  "every day": [
   null,
-  ""
+  "päivittäin"
  ],
  "on Fridays": [
   null,
-  ""
+  "perjantaisin"
  ],
  "on Mondays": [
   null,
-  ""
+  "maanantaisin"
  ],
  "on Saturdays": [
   null,
-  ""
+  "lauantaisin"
  ],
  "on Sundays": [
   null,
-  ""
+  "sunnuntaisin"
  ],
  "on Thursdays": [
   null,
-  ""
+  "torstaisin"
  ],
  "on Tuesdays": [
   null,
-  ""
+  "tiistaisin"
  ],
  "on Wednesdays": [
   null,
-  ""
+  "keskiviikkoisin"
  ],
  "undefined": [
   null,

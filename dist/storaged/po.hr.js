@@ -205,26 +205,6 @@ return plural;
   null,
   ""
  ],
- "<span>Encrypted $0</span>": [
-  null,
-  ""
- ],
- "<span>Encrypted Logical Volume of $0</span>": [
-  null,
-  ""
- ],
- "<span>Encrypted Partition of $0</span>": [
-  null,
-  ""
- ],
- "<span>Logical Volume of $0</span>": [
-  null,
-  ""
- ],
- "<span>Partition of $0</span>": [
-  null,
-  ""
- ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
   ""
@@ -418,6 +398,10 @@ return plural;
   ""
  ],
  "Custom encryption options": [
+  null,
+  ""
+ ],
+ "Custom mount option": [
   null,
   ""
  ],
@@ -805,6 +789,10 @@ return plural;
   null,
   "Nije pronađeno"
  ],
+ "Not mounted": [
+  null,
+  ""
+ ],
  "Not running": [
   null,
   ""
@@ -822,10 +810,6 @@ return plural;
   ""
  ],
  "Options": [
-  null,
-  ""
- ],
- "Options cannot be empty.": [
   null,
   ""
  ],

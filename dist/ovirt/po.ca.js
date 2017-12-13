@@ -77,7 +77,7 @@ return plural;
  ],
  "Additional": [
   null,
-  ""
+  "Addicional"
  ],
  "Address": [
   null,
@@ -125,7 +125,7 @@ return plural;
  ],
  "CHANGE NETWORK STATE action failed": [
   null,
-  ""
+  "Ha fallat l'acció CHANGE NETWORK STATE"
  ],
  "CPU Type:": [
   null,
@@ -297,7 +297,7 @@ return plural;
  ],
  "MAC Address": [
   null,
-  ""
+  "Adreça MAC"
  ],
  "MIGRATE action failed": [
   null,
@@ -309,7 +309,7 @@ return plural;
  ],
  "Managed": [
   null,
-  ""
+  "Gestionat"
  ],
  "Manual Connection": [
   null,
@@ -329,7 +329,7 @@ return plural;
  ],
  "Model type": [
   null,
-  ""
+  "Tipus de model"
  ],
  "More Information": [
   null,
@@ -341,7 +341,7 @@ return plural;
  ],
  "Networks": [
   null,
-  ""
+  "Xarxes"
  ],
  "No VM found in oVirt.": [
   null,
@@ -365,7 +365,7 @@ return plural;
  ],
  "No network interfaces defined for this VM": [
   null,
-  ""
+  "No s'ha definit cap interfície de xarxa per aquesta MV"
  ],
  "OK": [
   null,
@@ -725,7 +725,7 @@ return plural;
  ],
  "bridge": [
   null,
-  ""
+  "pont"
  ],
  "cdrom": [
   null,
@@ -749,7 +749,7 @@ return plural;
  ],
  "direct": [
   null,
-  ""
+  "directe"
  ],
  "disabled": [
   null,
@@ -777,7 +777,7 @@ return plural;
  ],
  "ethernet": [
   null,
-  ""
+  "ethernet"
  ],
  "host": [
   null,
@@ -877,7 +877,7 @@ return plural;
  ],
  "server": [
   null,
-  ""
+  "servidor"
  ],
  "shut off": [
   null,
@@ -913,7 +913,7 @@ return plural;
  ],
  "user": [
   null,
-  ""
+  "usuari"
  ],
  "vCPUs": [
   null,

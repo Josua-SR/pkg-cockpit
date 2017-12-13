@@ -69,15 +69,15 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  ""
+  "$0 je k dispozici pro většinu operačních systémů. K instalaci je třeba hledat v GNOME Software nebo spustit:"
  ],
  "Action": [
   null,
-  ""
+  "Akce"
  ],
  "Additional": [
   null,
-  ""
+  "Další"
  ],
  "Address": [
   null,
@@ -89,11 +89,11 @@ return plural;
  ],
  "All running virtual machines will be turned off.": [
   null,
-  ""
+  "Všechny spuštěné virtuální stroje budou vypnuty."
  ],
  "Automatically selected host": [
   null,
-  ""
+  "Automaticky vybraný hostitel"
  ],
  "Autostart:": [
   null,
@@ -105,35 +105,35 @@ return plural;
  ],
  "Base Template": [
   null,
-  ""
+  "Základní šablona"
  ],
  "Base template": [
   null,
-  ""
+  "Základní šablona"
  ],
  "Base template:": [
   null,
-  ""
+  "Základní šablona:"
  ],
  "Boot Order:": [
   null,
-  ""
+  "Boot příkaz:"
  ],
  "Bus": [
   null,
-  ""
+  "Bus"
  ],
  "CHANGE NETWORK STATE action failed": [
   null,
-  ""
+  "CHANGE NETWORK STATE akce selhala"
  ],
  "CPU Type:": [
   null,
-  ""
+  "Typ CPU:"
  ],
  "CREATE VM action failed": [
   null,
-  ""
+  "CREATE VM akce selhala"
  ],
  "Cancel": [
   null,

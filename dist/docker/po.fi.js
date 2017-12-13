@@ -415,23 +415,23 @@ return plural;
  ],
  "Local Disks": [
   null,
-  ""
+  "Paikalliset levyt"
  ],
  "MAC Address:": [
   null,
-  ""
+  "MAC-osoite:"
  ],
  "Memory": [
   null,
-  ""
+  "Muisti"
  ],
  "Memory limit": [
   null,
-  ""
+  "Muistiraja"
  ],
  "Memory usage:": [
   null,
-  ""
+  "Muistin käyttö:"
  ],
  "MiB": [
   null,
@@ -443,7 +443,7 @@ return plural;
  ],
  "Name": [
   null,
-  ""
+  "Nimi"
  ],
  "No": [
   null,
@@ -495,7 +495,7 @@ return plural;
  ],
  "Not found": [
   null,
-  ""
+  "Ei löytynyt"
  ],
  "Off": [
   null,
@@ -503,7 +503,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "OK"
  ],
  "On": [
   null,
@@ -536,11 +536,11 @@ return plural;
  ],
  "Ports": [
   null,
-  ""
+  "Portit"
  ],
  "Ports:": [
   null,
-  ""
+  "Portit:"
  ],
  "ReadOnly": [
   null,
@@ -572,15 +572,15 @@ return plural;
  ],
  "Restart": [
   null,
-  ""
+  "Käynnistä uudelleen"
  ],
  "Restart Policy": [
   null,
-  ""
+  "Uudelleenkäynnistyksen käytäntö"
  ],
  "Restart Policy:": [
   null,
-  ""
+  "Uudelleenkäynnistyksen käytäntö:"
  ],
  "Retries:": [
   null,
@@ -612,7 +612,7 @@ return plural;
  ],
  "Size": [
   null,
-  ""
+  "Koko"
  ],
  "Solid-State Disk": [
   null,
@@ -620,31 +620,31 @@ return plural;
  ],
  "Start": [
   null,
-  ""
+  "Käynnistä"
  ],
  "Start Docker": [
   null,
-  ""
+  "Käynnistä Docker"
  ],
  "State": [
   null,
-  ""
+  "Tila"
  ],
  "State:": [
   null,
-  ""
+  "Tila:"
  ],
  "Stop": [
   null,
-  ""
+  "Pysäytä"
  ],
  "Stopped": [
   null,
-  ""
+  "Pysäytetty"
  ],
  "Storage": [
   null,
-  ""
+  "Tallennustila"
  ],
  "Storage pool": [
   null,
@@ -652,7 +652,7 @@ return plural;
  ],
  "TCP": [
   null,
-  ""
+  "TCP"
  ],
  "Tag": [
   null,
@@ -720,7 +720,7 @@ return plural;
  ],
  "Volumes": [
   null,
-  ""
+  "Taltiot"
  ],
  "With terminal": [
   null,
@@ -740,7 +740,7 @@ return plural;
  ],
  "key": [
   null,
-  ""
+  "avain"
  ],
  "none": [
   null,

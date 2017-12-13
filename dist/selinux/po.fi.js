@@ -114,7 +114,7 @@ return plural;
  ],
  "Not connected": [
   null,
-  ""
+  "Ei yhdistetty"
  ],
  "Occurred $0": [
   null,
@@ -138,11 +138,11 @@ return plural;
  ],
  "SELinux Policy": [
   null,
-  ""
+  "SELinux-käytäntö"
  ],
  "SELinux Troubleshoot": [
   null,
-  ""
+  "SELinux-ongelmanratkaisu"
  ],
  "SELinux is disabled on the system": [
   null,

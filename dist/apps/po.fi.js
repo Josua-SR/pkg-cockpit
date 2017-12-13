@@ -69,7 +69,7 @@ return plural;
  },
  "Applications": [
   null,
-  ""
+  "Sovellukset"
  ],
  "Cancel": [
   null,
@@ -89,15 +89,15 @@ return plural;
  ],
  "Go to Application": [
   null,
-  ""
+  "Siirry sovellukseen"
  ],
  "Install": [
   null,
-  ""
+  "Asenna"
  ],
  "Installing": [
   null,
-  ""
+  "Asennetaan"
  ],
  "No applications installed or available": [
   null,
@@ -113,19 +113,19 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "OK"
  ],
  "Remove": [
   null,
-  ""
+  "Poista"
  ],
  "Removing": [
   null,
-  ""
+  "Poistetaan"
  ],
  "Unknown Application": [
   null,
-  ""
+  "Tuntematon sovellus"
  ],
  "Waiting for other programs to finish using the package manager...": [
   null,

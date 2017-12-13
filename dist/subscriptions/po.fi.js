@@ -125,7 +125,7 @@ return plural;
  ],
  "Login": [
   null,
-  ""
+  "Kirjaudu sisään"
  ],
  "Login/password or activation key required to register.": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "OK"
  ],
  "Organization": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "Password": [
   null,
-  ""
+  "Salasana"
  ],
  "Product ID": [
   null,
@@ -153,7 +153,7 @@ return plural;
  ],
  "Product name": [
   null,
-  ""
+  "Tuotteen nimi"
  ],
  "Proxy": [
   null,
@@ -173,7 +173,7 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "Palvelin"
  ],
  "Starts": [
   null,
@@ -181,15 +181,15 @@ return plural;
  ],
  "Status": [
   null,
-  ""
+  "Tila"
  ],
  "Status: $0": [
   null,
-  ""
+  "Tila: $0"
  ],
  "Status: System isn't registered": [
   null,
-  ""
+  "Tila: Järjestelmä ei  ole rekisteröity"
  ],
  "Subscriptions": [
   null,

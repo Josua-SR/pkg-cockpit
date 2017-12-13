@@ -109,15 +109,15 @@ return plural;
  ],
  "Loading...": [
   null,
-  ""
+  "Ladataan..."
  ],
  "Local Filesystem": [
   null,
-  ""
+  "Paikallinen tiedostojärjestelmä"
  ],
  "Location": [
   null,
-  ""
+  "Sijainti"
  ],
  "More details": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "OK"
  ],
  "On": [
   null,
@@ -161,7 +161,7 @@ return plural;
  ],
  "Reading...": [
   null,
-  ""
+  "Luetaan..."
  ],
  "Remote over NFS": [
   null,
@@ -177,27 +177,27 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "Palvelin"
  ],
  "Service has an error": [
   null,
-  ""
+  "Palvelussa on virhe"
  ],
  "Service is running": [
   null,
-  ""
+  "Palvelu on käynnissä"
  ],
  "Service is starting": [
   null,
-  ""
+  "Palvelu käynnistyy"
  ],
  "Service is stopped": [
   null,
-  ""
+  "Palvelu on pysäytetty"
  ],
  "Service is stopping": [
   null,
-  ""
+  "Palvelu pysähtyy"
  ],
  "Test Configuration": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "Test kdump settings": [
   null,
-  ""
+  "Testaa kdump-asetukset"
  ],
  "This will test kdump settings by crashing the kernel and thereby the system. Depending on the settings, the system may not automatically reboot and the process may take a while.": [
   null,

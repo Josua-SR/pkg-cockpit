@@ -185,7 +185,7 @@ return plural;
  ],
  "No signature avaliable": [
   null,
-  ""
+  "No hay firma disponible"
  ],
  "Not authorized to update software on this system": [
   null,

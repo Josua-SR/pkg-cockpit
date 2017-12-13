@@ -155,7 +155,7 @@ return plural;
  ],
  "Can't load image": [
   null,
-  ""
+  "No es pot carregar la imatge"
  ],
  "Cancel": [
   null,

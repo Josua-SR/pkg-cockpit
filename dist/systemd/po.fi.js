@@ -527,7 +527,7 @@ return plural;
  ],
  "Loading...": [
   null,
-  ""
+  "Ladataan..."
  ],
  "Log messages": [
   null,
@@ -535,7 +535,7 @@ return plural;
  ],
  "Logs": [
   null,
-  ""
+  "Lokit"
  ],
  "Machine ID": [
   null,
@@ -559,31 +559,31 @@ return plural;
  ],
  "Memory": [
   null,
-  ""
+  "Muisti"
  ],
  "Message to logged in users": [
   null,
-  ""
+  "Viesti sisäänkirjautuneille käyttäjille"
  ],
  "Minute needs to be a number between 0-59": [
   null,
-  ""
+  "Minuutit tulee olla esitetty numerovälillä 0-59"
  ],
  "Minutes": [
   null,
-  ""
+  "Minuutit"
  ],
  "Monday": [
   null,
-  ""
+  "Maanantai"
  ],
  "NTP Server": [
   null,
-  ""
+  "NTP-palvelin"
  ],
  "Need at least one NTP server": [
   null,
-  ""
+  "Tarvitaan vähintään yksi NTP-palvelin"
  ],
  "Network Traffic": [
   null,
@@ -643,7 +643,7 @@ return plural;
  ],
  "Performance Profile": [
   null,
-  ""
+  "Suorituskykyprofiili"
  ],
  "Power Options": [
   null,
@@ -671,15 +671,15 @@ return plural;
  ],
  "Problems, Errors": [
   null,
-  ""
+  "Ongelmat, virheet"
  ],
  "Problems, Errors, Warnings": [
   null,
-  ""
+  "Ongelmat, virheet, varoitukset"
  ],
  "Problems, Errors, Warnings, Notices": [
   null,
-  ""
+  "Ongelmat, virheet, varoitukset, huomautukset"
  ],
  "Real Host Name": [
   null,
@@ -707,23 +707,23 @@ return plural;
  ],
  "Repeat Daily": [
   null,
-  ""
+  "Toista joka päivä"
  ],
  "Repeat Hourly": [
   null,
-  ""
+  "Toista joka tunti"
  ],
  "Repeat Monthly": [
   null,
-  ""
+  "Toista joka kuukausi"
  ],
  "Repeat Weekly": [
   null,
-  ""
+  "Toista joka viikko"
  ],
  "Repeat Yearly": [
   null,
-  ""
+  "Toista joka vuosi"
  ],
  "Report": [
   null,
@@ -747,7 +747,7 @@ return plural;
  ],
  "Restart": [
   null,
-  ""
+  "Käynnistä uudelleen"
  ],
  "Run": [
   null,
@@ -755,15 +755,15 @@ return plural;
  ],
  "Saturday": [
   null,
-  ""
+  "Lauantai"
  ],
  "Save": [
   null,
-  ""
+  "Tallenna"
  ],
  "Seconds": [
   null,
-  ""
+  "Sekunnit"
  ],
  "Secure Shell Keys": [
   null,
@@ -771,15 +771,15 @@ return plural;
  ],
  "Service Logs": [
   null,
-  ""
+  "Palvelulokit"
  ],
  "Service name": [
   null,
-  ""
+  "Palvelun nimi"
  ],
  "Services": [
   null,
-  ""
+  "Palvelut"
  ],
  "Set Host name": [
   null,
@@ -787,7 +787,7 @@ return plural;
  ],
  "Set Time": [
   null,
-  ""
+  "Aseta aika"
  ],
  "Severity": [
   null,
@@ -795,11 +795,11 @@ return plural;
  ],
  "Show fingerprints": [
   null,
-  ""
+  "Näytä sormenjäljet"
  ],
  "Shut Down": [
   null,
-  ""
+  "Sammuta"
  ],
  "Since $0": [
   null,
@@ -815,11 +815,11 @@ return plural;
  ],
  "Start": [
   null,
-  ""
+  "Käynnistä"
  ],
  "State": [
   null,
-  ""
+  "Tila"
  ],
  "Static": [
   null,
@@ -827,7 +827,7 @@ return plural;
  ],
  "Stop": [
   null,
-  ""
+  "Pysäytä"
  ],
  "Store Performance Data": [
   null,
@@ -835,7 +835,7 @@ return plural;
  ],
  "Sunday": [
   null,
-  ""
+  "Sunnuntai"
  ],
  "Swap Used": [
   null,
@@ -843,23 +843,23 @@ return plural;
  ],
  "Synchronized": [
   null,
-  ""
+  "Synkronoitu"
  ],
  "Synchronized with {{Server}}": [
   null,
-  ""
+  "Synkronoi palvelimen {{Server}} kanssa"
  ],
  "System": [
   null,
-  ""
+  "Järjestelmä"
  ],
  "System Services": [
   null,
-  ""
+  "Järjestelmäpalvelut"
  ],
  "System Time": [
   null,
-  ""
+  "Järjestelmän aika"
  ],
  "Targets": [
   null,
@@ -899,15 +899,15 @@ return plural;
  ],
  "Thursday": [
   null,
-  ""
+  "Torstai"
  ],
  "Time Zone": [
   null,
-  ""
+  "Aikavyöhyke"
  ],
  "Timers": [
   null,
-  ""
+  "Ajastimet"
  ],
  "Trying to synchronize with {{Server}}": [
   null,
@@ -967,6 +967,6 @@ return plural;
  ],
  "page-title\u0004Memory": [
   null,
-  ""
+  "Muisti"
  ]
 }));

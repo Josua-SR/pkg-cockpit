@@ -99,7 +99,7 @@ return plural;
  ],
  "$0 is in active use": [
   null,
-  ""
+  "$0 je právě používán"
  ],
  "$0 minute": [
   "$0 minutes",
@@ -139,7 +139,7 @@ return plural;
  ],
  "${size} ${desc}": [
   null,
-  ""
+  "${size} ${desc}"
  ],
  "(default)": [
   null,
@@ -205,37 +205,17 @@ return plural;
   null,
   "8 KiB"
  ],
- "<span>Encrypted $0</span>": [
-  null,
-  "<span>Šifrované $0</span>"
- ],
- "<span>Encrypted Logical Volume of $0</span>": [
-  null,
-  "<span>Šifrovaný logický svazek $0</span>"
- ],
- "<span>Encrypted Partition of $0</span>": [
-  null,
-  ""
- ],
- "<span>Logical Volume of $0</span>": [
-  null,
-  ""
- ],
- "<span>Partition of $0</span>": [
-  null,
-  ""
- ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
-  ""
+  "Je třeba přidat náhradní disk než bude možné tento disk smazat."
  ],
  "Activate": [
   null,
-  ""
+  "Aktivovat"
  ],
  "Activating $target": [
   null,
-  ""
+  "Aktivuji $target"
  ],
  "Add": [
   null,
@@ -243,15 +223,15 @@ return plural;
  ],
  "Add Disks": [
   null,
-  ""
+  "Přidat disky"
  ],
  "Add iSCSI Portal": [
   null,
-  ""
+  "Přidat portál iSCSI"
  ],
  "Adding physical volume to $target": [
   null,
-  ""
+  "Přidávám fyzický svazek do $target"
  ],
  "Address": [
   null,
@@ -263,35 +243,35 @@ return plural;
  ],
  "At least $0 disks are needed.": [
   null,
-  ""
+  "Je vyžadováno alespoň $0 disků."
  ],
  "At least one disk is needed.": [
   null,
-  ""
+  "Je vyžadován alespoň 1 disk."
  ],
  "Authentication required": [
   null,
-  "Vyžadována autentizace"
+  "Nutné ověření"
  ],
  "Available targets on $0": [
   null,
-  ""
+  "Dostupné cíle na $0"
  ],
  "Block": [
   null,
-  ""
+  "Blok"
  ],
  "Block device for filesystems": [
   null,
-  ""
+  "Blokové zařízení pro souborové systémy"
  ],
  "Blocked": [
   null,
-  ""
+  "Blokované"
  ],
  "Can't delete while unlocked": [
   null,
-  ""
+  "Nelze smazat neuzamčený"
  ],
  "Cancel": [
   null,
@@ -299,23 +279,23 @@ return plural;
  ],
  "Change": [
   null,
-  ""
+  "Změna"
  ],
  "Change iSCSI Initiator Name": [
   null,
-  ""
+  "Změnit název iSCSI iniciátoru"
  ],
  "Checking RAID Device $target": [
   null,
-  ""
+  "Ověřuji zařízení RAID $target"
  ],
  "Checking and Repairing RAID Device $target": [
   null,
-  ""
+  "Ověřuji o opravuji zařízení RAID $target"
  ],
  "Chunk Size": [
   null,
-  ""
+  "Velikost bloku"
  ],
  "Cleaning up for $target": [
   null,
@@ -418,6 +398,10 @@ return plural;
   ""
  ],
  "Custom encryption options": [
+  null,
+  ""
+ ],
+ "Custom mount option": [
   null,
   ""
  ],
@@ -805,6 +789,10 @@ return plural;
   null,
   "Nenalezeno"
  ],
+ "Not mounted": [
+  null,
+  ""
+ ],
  "Not running": [
   null,
   ""
@@ -824,10 +812,6 @@ return plural;
  "Options": [
   null,
   "Přepínače"
- ],
- "Options cannot be empty.": [
-  null,
-  ""
  ],
  "Other Devices": [
   null,

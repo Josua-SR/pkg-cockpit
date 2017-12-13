@@ -73,7 +73,7 @@ return plural;
  ],
  "Additional": [
   null,
-  ""
+  "Adicional"
  ],
  "Address": [
   null,
@@ -101,7 +101,7 @@ return plural;
  ],
  "CHANGE NETWORK STATE action failed": [
   null,
-  ""
+  "Fallo en la acción CHANGE NETWORK STATE"
  ],
  "CPU Type:": [
   null,
@@ -197,7 +197,7 @@ return plural;
  ],
  "MAC Address": [
   null,
-  ""
+  "Dirección MAC"
  ],
  "MTU": [
   null,
@@ -205,11 +205,11 @@ return plural;
  ],
  "Managed": [
   null,
-  ""
+  "Manejado"
  ],
  "Manual Connection": [
   null,
-  ""
+  "Conexión Manual"
  ],
  "Memory:": [
   null,
@@ -217,7 +217,7 @@ return plural;
  ],
  "Model type": [
   null,
-  ""
+  "Modelo tipo"
  ],
  "More Information": [
   null,
@@ -229,7 +229,7 @@ return plural;
  ],
  "Networks": [
   null,
-  ""
+  "Redes"
  ],
  "No VM is running or defined on this host": [
   null,
@@ -237,19 +237,19 @@ return plural;
  ],
  "No boot device found": [
   null,
-  ""
+  "No encontrado dispositivo de arranque"
  ],
  "No disks defined for this VM": [
   null,
-  ""
+  "No se han definido discos para esta VM"
  ],
  "No graphics console is defined for this virtual machine.": [
   null,
-  ""
+  "No se ha definido consola gráfica para esta máquina virtual."
  ],
  "No network interfaces defined for this VM": [
   null,
-  ""
+  "No se han definido interfaces de red para esta VM"
  ],
  "Ok": [
   null,

@@ -197,11 +197,11 @@ return plural;
  ],
  "Local Accounts": [
   null,
-  ""
+  "Paikalliset tilit"
  ],
  "Lock Account": [
   null,
-  ""
+  "Lukitse tili"
  ],
  "Lock account on $0": [
   null,
@@ -209,11 +209,11 @@ return plural;
  ],
  "Logged In": [
   null,
-  ""
+  "Kirjautunut sisään"
  ],
  "Never": [
   null,
-  ""
+  "Ei  koskaan"
  ],
  "Never expire password": [
   null,
@@ -221,15 +221,15 @@ return plural;
  ],
  "Never lock account": [
   null,
-  ""
+  "Älä koskaan lukitse tiliä"
  ],
  "New Password": [
   null,
-  ""
+  "Uusi salasana"
  ],
  "New password was not accepted": [
   null,
-  ""
+  "Uutta salasanaa ei hyväksytty"
  ],
  "No real name specified": [
   null,
@@ -245,11 +245,11 @@ return plural;
  ],
  "Old Password": [
   null,
-  ""
+  "Vanha salasana"
  ],
  "Old password not accepted": [
   null,
-  ""
+  "Vanhaa salasanaa ei hyväksytty"
  ],
  "On": [
   null,
@@ -257,7 +257,7 @@ return plural;
  ],
  "Password": [
   null,
-  ""
+  "Salasana"
  ],
  "Password Expiration": [
   null,
@@ -269,11 +269,11 @@ return plural;
  ],
  "Password is too weak": [
   null,
-  ""
+  "Salasana on liian heikko"
  ],
  "Password must be changed": [
   null,
-  ""
+  "Salasana tulee vaihtaa"
  ],
  "Paste the contents of your public SSH key file here": [
   null,
@@ -301,11 +301,11 @@ return plural;
  ],
  "Roles": [
   null,
-  ""
+  "Roolit"
  ],
  "Server Administrator": [
   null,
-  ""
+  "Palvelimen ylläpitäjä"
  ],
  "Set": [
   null,
@@ -313,7 +313,7 @@ return plural;
  ],
  "Set Password": [
   null,
-  ""
+  "Aseta salasana"
  ],
  "Terminate Session": [
   null,
@@ -325,11 +325,11 @@ return plural;
  ],
  "The key you provided was not valid.": [
   null,
-  ""
+  "Antamasi avain ei ollut kelvollinen."
  ],
  "The passwords do not match": [
   null,
-  ""
+  "Salasanat eivät täsmää"
  ],
  "The user <b>$0</b> is not permitted to modify accounts": [
   null,
@@ -345,7 +345,7 @@ return plural;
  ],
  "This user name already exists": [
   null,
-  ""
+  "Käyttäjätunnus on jo olemassa"
  ],
  "Unable to delete root account": [
   null,
@@ -369,7 +369,7 @@ return plural;
  ],
  "Validating key": [
   null,
-  ""
+  "Vahvistetaan avainta"
  ],
  "You do not have permission to view the authorized public keys for this account.": [
   null,

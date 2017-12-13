@@ -691,7 +691,7 @@ return plural;
  ],
  "Medium": [
   null,
-  ""
+  "Medio"
  ],
  "Member of": [
   null,
@@ -779,7 +779,7 @@ return plural;
  ],
  "No Pods are using this claim": [
   null,
-  ""
+  "Ningún Pods está usando este reclamo"
  ],
  "No Volume Bound": [
   null,
@@ -791,7 +791,7 @@ return plural;
  ],
  "No images pushed": [
   null,
-  ""
+  "Sin imágenes empujadas"
  ],
  "No metadata file was selected. Please select a Kubernetes metadata file.": [
   null,
@@ -799,39 +799,39 @@ return plural;
  ],
  "No nodes in cluster": [
   null,
-  ""
+  "No hay  nodos en el cluster"
  ],
  "No pods deployed": [
   null,
-  ""
+  "No se han desplegado pods"
  ],
  "No pods replicated": [
   null,
-  ""
+  "No se han replicado pods"
  ],
  "No pods scheduled": [
   null,
-  ""
+  "Sin pods planificados"
  ],
  "No pods selected": [
   null,
-  ""
+  "Sin pods seleccionados"
  ],
  "No projects are present.": [
   null,
-  ""
+  "No hay proyectos presentes."
  ],
  "No users are present.": [
   null,
-  ""
+  "No hay usuarios presentes."
  ],
  "No volumes are present.": [
   null,
-  ""
+  "No hay volúmenes presentes."
  ],
  "No volumes in use": [
   null,
-  ""
+  "No hay volúmenes en uso"
  ],
  "Node": [
   null,

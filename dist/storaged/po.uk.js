@@ -205,26 +205,6 @@ return plural;
   null,
   "8 КіБ"
  ],
- "<span>Encrypted $0</span>": [
-  null,
-  "<span>Зашифрований $0</span>"
- ],
- "<span>Encrypted Logical Volume of $0</span>": [
-  null,
-  "<span>Зашифрований логічний том $0</span>"
- ],
- "<span>Encrypted Partition of $0</span>": [
-  null,
-  "<span>Шифрований розділ $0</span>"
- ],
- "<span>Logical Volume of $0</span>": [
-  null,
-  "<span>Логічний том $0</span>"
- ],
- "<span>Partition of $0</span>": [
-  null,
-  "<span>Розділ $0</span>"
- ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
   "Перш ніж вилучати цей диск, слід додати резервний диск."
@@ -420,6 +400,10 @@ return plural;
  "Custom encryption options": [
   null,
   "Нетипові параметри шифрування"
+ ],
+ "Custom mount option": [
+  null,
+  ""
  ],
  "Custom mount options": [
   null,
@@ -805,6 +789,10 @@ return plural;
   null,
   "Не знайдено"
  ],
+ "Not mounted": [
+  null,
+  ""
+ ],
  "Not running": [
   null,
   "Зупинено"
@@ -824,10 +812,6 @@ return plural;
  "Options": [
   null,
   "Параметри"
- ],
- "Options cannot be empty.": [
-  null,
-  "Параметри не можуть бути порожніми."
  ],
  "Other Devices": [
   null,

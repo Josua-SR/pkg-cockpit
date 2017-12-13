@@ -20,7 +20,6 @@
 "use strict";
 
 var cockpit = require("cockpit");
-var permission = require("./permissions.js").permission;
 var utils = require("./utils.js");
 var $ = require("jquery");
 
@@ -43,6 +42,8 @@ var _ = cockpit.gettext;
  * - excuse:  If set, the button/link is disabled and will show the
  *            excuse in a tooltip.
  */
+
+var permission = cockpit.permission({ admin: true });
 
 var StorageControl = React.createClass({
     getInitialState: function () {
@@ -94,11 +95,18 @@ function checked(callback) {
 
 var StorageButton = React.createClass({
     render: function () {
+        var classes = "btn";
+        if (this.props.kind)
+            classes += " btn-" + this.props.kind;
+        else
+            classes += " btn-default";
+
         return (
             <StorageControl excuse={this.props.excuse}
                             content={(excuse) => (
-                                    <button onClick={checked(this.props.onClick)}
-                                            className={"btn btn-default" + (excuse? " disabled" : "")}>
+                                    <button id={this.props.id}
+                                            onClick={checked(this.props.onClick)}
+                                            className={classes + (excuse? " disabled" : "")}>
                                                       {this.props.children}
                                     </button>
                                 )}/>
@@ -138,52 +146,6 @@ var StorageBlockNavLink = React.createClass({
         if (!block)
             return;
 
-        var path = block.path;
-        var is_part, is_crypt, is_lvol;
-
-        for (;;) {
-            if (client.blocks_part[path] && client.blocks_ptable[client.blocks_part[path].Table]) {
-                is_part = true;
-                path = client.blocks_part[path].Table;
-            } else if (client.blocks[path] && client.blocks[client.blocks[path].CryptoBackingDevice]) {
-                is_crypt = true;
-                path = client.blocks[path].CryptoBackingDevice;
-            } else {
-                break;
-            }
-        }
-
-        block = client.blocks[path];
-
-        if (client.blocks_lvm2[path] && client.lvols[client.blocks_lvm2[path].LogicalVolume])
-            is_lvol = true;
-
-        var name, go;
-        if (client.mdraids[block.MDRaid]) {
-            name = cockpit.format(_("RAID Device $0"), utils.mdraid_name(client.mdraids[block.MDRaid]));
-            go = function () {
-                cockpit.location.go([ 'mdraid', client.mdraids[block.MDRaid].UUID ]);
-            };
-        } else if (client.blocks_lvm2[path] &&
-                   client.lvols[client.blocks_lvm2[path].LogicalVolume] &&
-                   client.vgroups[client.lvols[client.blocks_lvm2[path].LogicalVolume].VolumeGroup]) {
-                       var vg = client.vgroups[client.lvols[client.blocks_lvm2[path].LogicalVolume].VolumeGroup].Name;
-                       name = cockpit.format(_("Volume Group $0"), vg);
-                       go = function () {
-                           console.location.go([ 'vg', vg ]);
-                       };
-        } else {
-            if (client.drives[block.Drive])
-                name = utils.drive_name(client.drives[block.Drive]);
-            else
-                name = utils.block_name(block);
-            go = function () {
-                cockpit.location.go([ utils.block_name(block).replace(/^\/dev\//, "") ]);
-            };
-        }
-
-        var link = <a onClick={go}>{name}</a>;
-
         // TODO - generalize this to arbitrary number of arguments (when needed)
         function fmt_to_array(fmt, arg) {
             var index = fmt.indexOf("$0");
@@ -193,18 +155,15 @@ var StorageBlockNavLink = React.createClass({
                 return [ fmt ];
         }
 
-        if (is_lvol && is_crypt)
-            return <span>{fmt_to_array(_("Encrypted Logical Volume of $0"), link)}</span>;
-        else if (is_part && is_crypt)
-            return <span>{fmt_to_array(_("Encrypted Partition of $0"), link)}</span>;
-        else if (is_lvol)
-            return <span>{fmt_to_array(_("Logical Volume of $0"), link)}</span>;
-        else if (is_part)
-            return <span>{fmt_to_array(_("Partition of $0"), link)}</span>;
-        else if (is_crypt)
-            return <span>{fmt_to_array(_("Encrypted $0"), link)}</span>;
-        else
-            return link;
+        var parts = utils.get_block_link_parts(client, block.path);
+
+        var link = (
+            <a onClick={() => { cockpit.location.go(parts.location) }}>
+                {parts.link}
+            </a>
+        );
+
+        return <span>{fmt_to_array(parts.format, link)}</span>;
     }
 });
 
@@ -284,10 +243,34 @@ class StorageMultiAction extends React.Component {
     }
 }
 
+/* Render a usage bar showing props.stats[0] out of props.stats[1]
+ * bytes in use.  If the ratio is above props.critical, the bar will be
+ * in a dangerous color.
+ */
+
+class StorageUsageBar  extends React.Component {
+    render() {
+        var stats = this.props.stats;
+        var fraction = stats? stats[0] / stats[1] : null;
+
+        return (
+            <div className="progress">
+                { stats ?
+                <div className={ "progress-bar" + (fraction > this.props.critical ? " progress-bar-danger" : "") }
+                     style={{ width: fraction*100 + "%" }}>
+                </div>
+                  : null
+                }
+            </div>
+        );
+    }
+}
+
 module.exports = {
     StorageButton: StorageButton,
     StorageLink:   StorageLink,
     StorageBlockNavLink: StorageBlockNavLink,
     StorageOnOff: StorageOnOff,
-    StorageMultiAction: StorageMultiAction
+    StorageMultiAction: StorageMultiAction,
+    StorageUsageBar: StorageUsageBar
 };

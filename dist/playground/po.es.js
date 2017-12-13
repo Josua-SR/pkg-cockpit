@@ -132,7 +132,7 @@ return plural;
  ],
  "No matching files found": [
   null,
-  ""
+  "No se han encontrado ficheros coincidentes"
  ],
  "Not Ready": [
   null,

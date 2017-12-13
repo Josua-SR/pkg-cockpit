@@ -483,11 +483,11 @@ return plural;
  ],
  "No running containers": [
   null,
-  ""
+  "No hay contenedores corriendo"
  ],
  "No running containers that match the current filter": [
   null,
-  ""
+  "No hay contenedores corriendo que coincidan con el filtro actual"
  ],
  "Not authorized to access Docker on this system": [
   null,

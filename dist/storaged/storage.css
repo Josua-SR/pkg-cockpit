@@ -1,3 +1,17 @@
+/* on-off button styling depends on data-toggle in bootstrap */
+.btn-onoff-ct input {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+}
+.tooltip-ct-outer {
+    display:  inline-block;
+    position: relative;
+}
+
+.tooltip-ct-inner {
+    display:  inline-block;
+}
 .combobox-container input {
     padding-right: 24px;
 }
@@ -445,20 +459,6 @@ tbody tr.listing-ct-noexpand {
 .nav-tabs-pf > li.active a:before {
   height: 3px;
   left: 0px;
-}
-/* on-off button styling depends on data-toggle in bootstrap */
-.btn-onoff-ct input {
-    position: absolute;
-    clip: rect(0, 0, 0, 0);
-    pointer-events: none;
-}
-.tooltip-ct-outer {
-    display:  inline-block;
-    position: relative;
-}
-
-.tooltip-ct-inner {
-    display:  inline-block;
 }
 a {
     cursor: pointer;
@@ -1089,7 +1089,7 @@ input[type=number] {
 }
 
 #nfs-mounts tr {
-    height: 42px;
+    height: 43px;
 }
 
 @media (max-width: 1814px) {
@@ -1191,10 +1191,10 @@ input[type=number] {
 }
 
 @media (min-width: 768px) {
-    .storage-reading-graph-container {
+    .storage-graph-container:nth-child(1) {
         padding-right: 5px;
     }
-    .storage-writing-graph-container {
+    .storage-graph-container:nth-child(2) {
         padding-left: 5px;
     }
 }
@@ -1353,7 +1353,6 @@ td.storage-icon {
 }
 
 td.storage-icon .spinner {
-    visibility: hidden;
     margin-top: 5px;
 }
 
@@ -1391,15 +1390,15 @@ td.job-action {
     display: inline-block;
 }
 
-#storage-graph-toolbar button span {
+#storage-graph-toolbar .dropdown button span {
     width: 6em;
     text-align: left;
     padding-left: 5px;
     display: inline-block;
 }
 
-#storage-reading-graph,
-#storage-writing-graph {
+.storage-graph
+{
     height: 120px;
 }
 

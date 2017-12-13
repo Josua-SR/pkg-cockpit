@@ -73,11 +73,11 @@ return plural;
  ],
  "Action": [
   null,
-  ""
+  "Acción"
  ],
  "Additional": [
   null,
-  ""
+  "Adicional"
  ],
  "Address": [
   null,
@@ -89,11 +89,11 @@ return plural;
  ],
  "All running virtual machines will be turned off.": [
   null,
-  ""
+  "Todas las máquinas virtuales corriendo serán apagadas."
  ],
  "Automatically selected host": [
   null,
-  ""
+  "Host seleccionado automáticamente"
  ],
  "Autostart:": [
   null,
@@ -105,15 +105,15 @@ return plural;
  ],
  "Base Template": [
   null,
-  ""
+  "Plantilla Base"
  ],
  "Base template": [
   null,
-  ""
+  "Plantilla base"
  ],
  "Base template:": [
   null,
-  ""
+  "Plantilla base:"
  ],
  "Boot Order:": [
   null,
@@ -125,7 +125,7 @@ return plural;
  ],
  "CHANGE NETWORK STATE action failed": [
   null,
-  ""
+  "Fallo en la acción CHANGE NETWORK STATE"
  ],
  "CPU Type:": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "CREATE VM action failed": [
   null,
-  ""
+  "Fallo en la acción CREATE VM"
  ],
  "Cancel": [
   null,
@@ -153,11 +153,11 @@ return plural;
  ],
  "Cluster Templates": [
   null,
-  ""
+  "Plantilla de Cluster"
  ],
  "Cluster Virtual Machines": [
   null,
-  ""
+  "Cluster de Máquinas Virtuales"
  ],
  "Confirm deletion of $0": [
   null,
@@ -165,19 +165,19 @@ return plural;
  ],
  "Confirm migration": [
   null,
-  ""
+  "Confirme migración"
  ],
  "Confirm reload:": [
   null,
-  ""
+  "Confirme recarga:"
  ],
  "Confirm save:": [
   null,
-  ""
+  "Confirme guardar:"
  ],
  "Connect to oVirt Engine": [
   null,
-  ""
+  "Conectar a oVirt Engine"
  ],
  "Connect with Remote Viewer": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "Create VM": [
   null,
-  ""
+  "Crear VM"
  ],
  "Delete": [
   null,
@@ -225,7 +225,7 @@ return plural;
  ],
  "Description:": [
   null,
-  ""
+  "Descripción:"
  ],
  "Device": [
   null,
@@ -241,7 +241,7 @@ return plural;
  ],
  "Edit the vdsm.conf": [
   null,
-  ""
+  "Editar vdsm.conf"
  ],
  "Emulated Machine:": [
   null,
@@ -249,11 +249,11 @@ return plural;
  ],
  "Enter New VM name": [
   null,
-  ""
+  "Introducir Nuevo nombre de VM"
  ],
  "FQDN": [
   null,
-  ""
+  "FQDN"
  ],
  "File": [
   null,
@@ -273,11 +273,11 @@ return plural;
  ],
  "HA": [
   null,
-  ""
+  "HA"
  ],
  "HA:": [
   null,
-  ""
+  "HA:"
  ],
  "Host": [
   null,
@@ -285,7 +285,7 @@ return plural;
  ],
  "Host to Maintenance": [
   null,
-  ""
+  "Host para Mantenimiento"
  ],
  "Launch Remote Viewer": [
   null,
@@ -293,15 +293,15 @@ return plural;
  ],
  "Loading data ...": [
   null,
-  ""
+  "Cargando datos ..."
  ],
  "MAC Address": [
   null,
-  ""
+  "Dirección MAC"
  ],
  "MIGRATE action failed": [
   null,
-  ""
+  "Fallo en acción MIGRATE"
  ],
  "MTU": [
   null,
@@ -309,11 +309,11 @@ return plural;
  ],
  "Managed": [
   null,
-  ""
+  "Manejado"
  ],
  "Manual Connection": [
   null,
-  ""
+  "Conexión Manual"
  ],
  "Memory": [
   null,
@@ -325,11 +325,11 @@ return plural;
  ],
  "Migrate To:": [
   null,
-  ""
+  "Migrar A:"
  ],
  "Model type": [
   null,
-  ""
+  "Modelo tipo"
  ],
  "More Information": [
   null,
@@ -341,11 +341,11 @@ return plural;
  ],
  "Networks": [
   null,
-  ""
+  "Redes"
  ],
  "No VM found in oVirt.": [
   null,
-  ""
+  "Mo se ha encontrado VM en oVirt."
  ],
  "No VM is running or defined on this host": [
   null,
@@ -353,19 +353,19 @@ return plural;
  ],
  "No boot device found": [
   null,
-  ""
+  "No encontrado dispositivo de arranque"
  ],
  "No disks defined for this VM": [
   null,
-  ""
+  "No se han definido discos para esta VM"
  ],
  "No graphics console is defined for this virtual machine.": [
   null,
-  ""
+  "No se ha definido consola gráfica para esta máquina virtual."
  ],
  "No network interfaces defined for this VM": [
   null,
-  ""
+  "No se han definido interfaces de red para esta VM"
  ],
  "OK": [
   null,
@@ -385,7 +385,7 @@ return plural;
  ],
  "Optimized for:": [
   null,
-  ""
+  "Optimizado para:"
  ],
  "Overview": [
   null,

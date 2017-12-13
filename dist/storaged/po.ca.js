@@ -198,26 +198,6 @@ return plural;
   null,
   "8 KiB"
  ],
- "<span>Encrypted $0</span>": [
-  null,
-  "<span>Xifrat $0</span>"
- ],
- "<span>Encrypted Logical Volume of $0</span>": [
-  null,
-  "<span>Volum lògic xifrat de $0</span>"
- ],
- "<span>Encrypted Partition of $0</span>": [
-  null,
-  "<span>Partició xifrada de $0</span>"
- ],
- "<span>Logical Volume of $0</span>": [
-  null,
-  "<span>Volum lògic de $0</span>"
- ],
- "<span>Partition of $0</span>": [
-  null,
-  "<span>Partició de $0</span>"
- ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
   ""
@@ -413,6 +393,10 @@ return plural;
  "Custom encryption options": [
   null,
   "Opcions personalitzades de xifrat"
+ ],
+ "Custom mount option": [
+  null,
+  ""
  ],
  "Custom mount options": [
   null,
@@ -798,6 +782,10 @@ return plural;
   null,
   "No s'ha trobat"
  ],
+ "Not mounted": [
+  null,
+  ""
+ ],
  "Not running": [
   null,
   "No s'està executant"
@@ -817,10 +805,6 @@ return plural;
  "Options": [
   null,
   "Opcions"
- ],
- "Options cannot be empty.": [
-  null,
-  ""
  ],
  "Other Devices": [
   null,
@@ -1064,7 +1048,7 @@ return plural;
  ],
  "Server cannot be empty.": [
   null,
-  ""
+  "El servidor no pot estar en blanc."
  ],
  "Setting up loop device $target": [
   null,

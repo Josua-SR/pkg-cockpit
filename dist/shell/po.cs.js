@@ -69,7 +69,7 @@ return plural;
  },
  "A compatible version of Cockpit is not installed on {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "Kompatibilní verze Cockpit není nainstalována na {{#strong}}{{host}}{{/strong}}."
  ],
  "About Cockpit": [
   null,
@@ -77,11 +77,11 @@ return plural;
  ],
  "Account Settings": [
   null,
-  ""
+  "Nastavení účtu"
  ],
  "Active Pages": [
   null,
-  ""
+  "Aktivní stránky"
  ],
  "Add": [
   null,
@@ -89,11 +89,11 @@ return plural;
  ],
  "Add Machine to Dashboard": [
   null,
-  ""
+  "Přidat stroj do dashboardu"
  ],
  "Add key": [
   null,
-  ""
+  "Přidat klíč"
  ],
  "Address": [
   null,
@@ -101,11 +101,11 @@ return plural;
  ],
  "Authentication": [
   null,
-  ""
+  "Ověření"
  ],
  "Authentication Failed": [
   null,
-  ""
+  "Ověření selhalo"
  ],
  "Available": [
   null,
@@ -117,19 +117,19 @@ return plural;
  ],
  "Cannot connect to an unknown machine": [
   null,
-  ""
+  "Nelze se připojit k neznámému zařízení"
  ],
  "Change Password": [
   null,
-  ""
+  "Změnit heslo"
  ],
  "Checking for public keys": [
   null,
-  ""
+  "Hledám veřejné klíče"
  ],
  "Choose the language to be used in the application": [
   null,
-  ""
+  "Vyberte jazyk aplikace"
  ],
  "Close": [
   null,
@@ -141,11 +141,11 @@ return plural;
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
-  ""
+  "Cockpit nemohl kontaktovat uvedeného hostitele $0. Ujistěte se, že je ssh spuštěno na portu $1 nebo specifikujte jiný port v adrese."
  ],
  "Cockpit had an unexpected internal error. <br/><br/>You can try restarting Cockpit by pressing refresh in your browser. The javascript console contains details about this error (<b>Ctrl-Shift-J</b> in most browsers).": [
   null,
-  ""
+  "V Cockpit nastala neočekávaná interní chyba. <br/><br/>Můžete zkusit Cockpit restartovat stisknutím tlačítka obnovit ve vašem prohlížeči. Detailnější informace o této chybě jsou popsány v javascript konzoli (<b>Ctrl-Shift-J</b> ve většině prohlížečů)."
  ],
  "Cockpit is an interactive Linux server admin interface.": [
   null,

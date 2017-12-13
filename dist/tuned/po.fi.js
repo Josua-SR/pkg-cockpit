@@ -109,15 +109,15 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "OK"
  ],
  "This system is using a custom profile": [
   null,
-  ""
+  "Tämä järjestelmä käyttää mukautettua profiilia"
  ],
  "This system is using the recommended profile": [
   null,
-  ""
+  "Tämä järjestelmä käyttää suositeltua profiilia"
  ],
  "Tuned has failed to start": [
   null,

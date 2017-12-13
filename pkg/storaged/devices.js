@@ -24,8 +24,7 @@
     var cockpit = require("cockpit");
 
     var client = require("./client");
-    var jobs = require("./jobs");
-    var overview = require("./overview");
+    var overview = require("./overview.jsx");
     var details = require("./details.jsx");
     var utils = require("./utils");
 
@@ -41,23 +40,8 @@
      */
 
     function init() {
-        var jobs_manager;
         var overview_page;
         var details_page;
-
-        $('body').on('click', '[data-goto-block]', function () {
-            cockpit.location.go([ $(this).attr('data-goto-block') ]);
-        });
-
-        $('body').on('click', '[data-goto-mdraid]', function () {
-            cockpit.location.go([ 'mdraid', $(this).attr('data-goto-mdraid') ]);
-        });
-
-        $('body').on('click', '[data-goto-vgroup]', function () {
-            cockpit.location.go([ 'vg', $(this).attr('data-goto-vgroup') ]);
-        });
-
-        utils.init_arming_zones($('body'));
 
         function navigate() {
             var path = cockpit.location.path;
@@ -87,9 +71,8 @@
                 $('#unsupported').show();
                 $("body").show();
             } else {
-                jobs_manager = jobs.init(client);
-                overview_page = overview.init(client, jobs_manager);
-                details_page = details.init(client, jobs_manager);
+                overview_page = overview.init(client);
+                details_page = details.init(client);
                 $(cockpit).on("locationchanged", navigate);
                 navigate();
             }

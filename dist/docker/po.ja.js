@@ -485,7 +485,7 @@ return plural;
  ],
  "Not authorized to access Docker on this system": [
   null,
-  "このシステム上の Docker にアクセスする権限がありません"
+  "このシステムの Docker にアクセスする権限がありません"
  ],
  "Not found": [
   null,
@@ -657,19 +657,19 @@ return plural;
  ],
  "The Docker storage pool cannot be managed on this system.": [
   null,
-  "Docker ストレージプールはこのシステムで管理できません。"
+  "Docker ストレージプールは、このシステムで管理できません。"
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,
-  ""
+  "$time ($type) のスキャンでは、脆弱性は見つかりませんでした。"
  ],
  "The scan from $time ($type) was not successful.": [
   null,
-  ""
+  "$time ($type) のスキャンは成功しませんでした。"
  ],
  "The storage pool will be reset to optimize its layout.  All containers will be erased.": [
   null,
-  "ストレージプールはそのレイアウトを最適化するためにリセットされます。すべてのコンテナーは削除されます。"
+  "ストレージプールは、そのレイアウトを最適化するためにリセットされます。すべてのコンテナーは削除されます。"
  ],
  "This image does not exist.": [
   null,

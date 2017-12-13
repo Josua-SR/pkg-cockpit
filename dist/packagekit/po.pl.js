@@ -77,6 +77,12 @@ return plural;
   "$0 aktualizacje",
   "$0 aktualizacji"
  ],
+ "$1 security fix": [
+  "$1 security fixes",
+  "",
+  "",
+  ""
+ ],
  ", including $1 security fix": [
   ", including $1 security fixes",
   ", w tym $1 poprawka zabezpieczeń",

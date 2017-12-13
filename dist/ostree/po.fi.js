@@ -169,7 +169,7 @@ return plural;
  ],
  "Name": [
   null,
-  ""
+  "Nimi"
  ],
  "No Deployments": [
   null,
@@ -193,7 +193,7 @@ return plural;
  ],
  "OS $0 not found": [
   null,
-  ""
+  "Käyttöjärjestelmää $0 ei löytynyt"
  ],
  "OSTree is not available on this system": [
   null,
@@ -213,7 +213,7 @@ return plural;
  ],
  "Packages": [
   null,
-  ""
+  "Paketit"
  ],
  "Please provide a valid URL": [
   null,
@@ -273,11 +273,11 @@ return plural;
  ],
  "Software Updates": [
   null,
-  ""
+  "Ohjelmistopäivitykset"
  ],
  "Status": [
   null,
-  ""
+  "Tila"
  ],
  "This deployment contains the same packages as your currently booted system": [
   null,

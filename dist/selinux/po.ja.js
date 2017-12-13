@@ -105,7 +105,7 @@ return plural;
  ],
  "Install setroubleshoot-server to troubleshoot SELinux events.": [
   null,
-  "setroubleshoot-server をインストールして SELinux イベントをトラブルシュートします。"
+  "setroubleshoot-server をインストールして、SELinux イベントをトラブルシュートします。"
  ],
  "No SELinux alerts.": [
   null,
@@ -121,7 +121,7 @@ return plural;
  ],
  "Occurred between $0 and $1": [
   null,
-  "$0〜$1 の発生件数"
+  "$0 - $1 の発生件数"
  ],
  "Off": [
   null,

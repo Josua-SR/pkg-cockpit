@@ -198,26 +198,6 @@ return plural;
   null,
   ""
  ],
- "<span>Encrypted $0</span>": [
-  null,
-  "<span>$0 versleuteld</span>"
- ],
- "<span>Encrypted Logical Volume of $0</span>": [
-  null,
-  "<span>Versleutelde logische volume van $0</span>"
- ],
- "<span>Encrypted Partition of $0</span>": [
-  null,
-  "<span>Versleutelde partitie van $0</span>"
- ],
- "<span>Logical Volume of $0</span>": [
-  null,
-  ""
- ],
- "<span>Partition of $0</span>": [
-  null,
-  ""
- ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
   "Een extra schijf dient toegevoegd te worden voordat deze schijf kan worden verwijderd."
@@ -411,6 +391,10 @@ return plural;
   ""
  ],
  "Custom encryption options": [
+  null,
+  ""
+ ],
+ "Custom mount option": [
   null,
   ""
  ],
@@ -798,6 +782,10 @@ return plural;
   null,
   ""
  ],
+ "Not mounted": [
+  null,
+  ""
+ ],
  "Not running": [
   null,
   ""
@@ -815,10 +803,6 @@ return plural;
   ""
  ],
  "Options": [
-  null,
-  ""
- ],
- "Options cannot be empty.": [
   null,
   ""
  ],

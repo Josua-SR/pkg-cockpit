@@ -69,15 +69,7 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  ""
- ],
- "Additional": [
-  null,
-  ""
- ],
- "Address": [
-  null,
-  "アドレス:"
+  "$0 は、多数のオペレーティングシステムで利用できます。インストールするには、GNOME ソフトウェアで検索するか、以下を実行します:"
  ],
  "Address:": [
   null,
@@ -93,19 +85,15 @@ return plural;
  ],
  "Boot Order:": [
   null,
-  ""
+  "ブート順序:"
  ],
  "Bus": [
   null,
   "バス"
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  ""
- ],
  "CPU Type:": [
   null,
-  "種類:"
+  "CPU タイプ:"
  ],
  "Cancel": [
   null,
@@ -117,23 +105,23 @@ return plural;
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  ""
+  "\"リモートビューアーの起動\" をクリックすると、.vv ファイルをダウンロードし、$0 を起動します。"
  ],
  "Confirm deletion of $0": [
   null,
-  "$0 の削除を確定してください"
+  "$0 の削除を確定"
  ],
  "Connect with Remote Viewer": [
   null,
-  ""
+  "リモートビューアーに接続"
  ],
  "Connect with any $0 viewer application.": [
   null,
-  ""
+  "$0 ビューアーアプリケーションに接続します。"
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  ""
+  "SPICE または VNC のビューアーアプリケーションに接続します。"
  ],
  "Connection": [
   null,
@@ -141,7 +129,7 @@ return plural;
  ],
  "Console": [
   null,
-  ""
+  "コンソール"
  ],
  "Count:": [
   null,
@@ -153,7 +141,7 @@ return plural;
  ],
  "Delete associated storage files:": [
   null,
-  ""
+  "関連するストレージファイルの削除:"
  ],
  "Device": [
   null,
@@ -165,11 +153,11 @@ return plural;
  ],
  "Download the MSI from $0": [
   null,
-  ""
+  "MSI を $0 からダウンロードします"
  ],
  "Emulated Machine:": [
   null,
-  "仮想マシン"
+  "エミュレートされたマシン:"
  ],
  "File": [
   null,
@@ -193,43 +181,23 @@ return plural;
  ],
  "Launch Remote Viewer": [
   null,
-  ""
- ],
- "MAC Address": [
-  null,
-  ""
- ],
- "MTU": [
-  null,
-  "MTU"
- ],
- "Managed": [
-  null,
-  ""
+  "リモートビューアーの起動"
  ],
  "Manual Connection": [
   null,
-  "接続"
+  "手動接続"
  ],
  "Memory:": [
   null,
   "メモリー:"
  ],
- "Model type": [
-  null,
-  ""
- ],
  "More Information": [
   null,
-  "設定"
+  "詳細情報"
  ],
  "Name": [
   null,
   "名前"
- ],
- "Networks": [
-  null,
-  ""
  ],
  "No VM is running or defined on this host": [
   null,
@@ -237,19 +205,15 @@ return plural;
  ],
  "No boot device found": [
   null,
-  "ホストキーが見つかりません。"
+  "ブートデバイスが見つかりません"
  ],
  "No disks defined for this VM": [
   null,
-  "この VM に対してディスクが定義されていません"
+  "この仮想マシンにはディスクが定義されていません"
  ],
  "No graphics console is defined for this virtual machine.": [
   null,
-  ""
- ],
- "No network interfaces defined for this VM": [
-  null,
-  ""
+  "この仮想マシンには、グラフィカルコンソールが定義されていません。"
  ],
  "Ok": [
   null,
@@ -261,11 +225,7 @@ return plural;
  ],
  "Please start the virtual machine to access its graphics console.": [
   null,
-  ""
- ],
- "Plug": [
-  null,
-  ""
+  "仮想マシンを起動して、グラフィックコンソールにアクセスしてください。"
  ],
  "Pool": [
   null,
@@ -274,10 +234,6 @@ return plural;
  "Port": [
   null,
   "ポート"
- ],
- "Portgroup": [
-  null,
-  ""
  ],
  "Protocol": [
   null,
@@ -297,23 +253,23 @@ return plural;
  ],
  "SPICE": [
   null,
-  ""
+  "SPICE"
  ],
  "SPICE Address:": [
   null,
-  "IP アドレス:"
+  "SPICE アドレス:"
  ],
  "SPICE Port:": [
   null,
-  ""
+  "SPICE ポート:"
  ],
  "SPICE TLS Port:": [
   null,
-  ""
+  "SPICE TLS ポート:"
  ],
  "Send Non-Maskable Interrupt": [
   null,
-  ""
+  "マスク不可割り込みを送信します"
  ],
  "Session": [
   null,
@@ -333,11 +289,11 @@ return plural;
  ],
  "Switch to Desktop Viewer": [
   null,
-  ""
+  "デスクトップビューアーに切り替える"
  ],
  "Switch to In-Browser Viewer": [
   null,
-  ""
+  "ブラウザー内ビューアーに切り替えます。"
  ],
  "System": [
   null,
@@ -373,7 +329,7 @@ return plural;
  ],
  "The VM is running and will be forced off before deletion.": [
   null,
-  ""
+  "仮想マシンが稼動しているため、削除前に強制的に電源がオフになります。"
  ],
  "The VM is running.": [
   null,
@@ -383,17 +339,9 @@ return plural;
   null,
   "VM はゲストの電源管理によって一時停止されています。"
  ],
- "Type": [
-  null,
-  "タイプ"
- ],
- "Unplug": [
-  null,
-  ""
- ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
-  "ディスクの統計情報を表示するには libvirt の新しいバージョンにアップグレードしてください"
+  "ディスクの統計情報を表示するには、libvirt を新しいバージョンにアップグレードしてください"
  ],
  "Usage": [
   null,
@@ -417,7 +365,7 @@ return plural;
  ],
  "VM SEND Non-Maskable Interrrupt action failed": [
   null,
-  ""
+  "VM SEND マスク不可な割り込みアクションに失敗しました"
  ],
  "VM SHUT DOWN action failed": [
   null,
@@ -429,27 +377,23 @@ return plural;
  ],
  "VNC": [
   null,
-  ""
+  "VNC"
  ],
  "VNC Address:": [
   null,
-  "MAC アドレス:"
+  "VNC アドレス:"
  ],
  "VNC Port:": [
   null,
-  "ポート:"
+  "VNC ポート:"
  ],
  "VNC TLS Port:": [
   null,
-  ""
+  "VNC TLS ポート:"
  ],
  "Virtual Machines": [
   null,
   "仮想マシン"
- ],
- "Virtualport": [
-  null,
-  ""
  ],
  "Volume": [
   null,
@@ -457,15 +401,11 @@ return plural;
  ],
  "Your browser does not support iframes.": [
   null,
-  ""
- ],
- "bridge": [
-  null,
-  ""
+  "ブラウザーが、iframe をサポートしません。"
  ],
  "cdrom": [
   null,
-  ""
+  "cdrom"
  ],
  "crashed": [
   null,
@@ -473,11 +413,7 @@ return plural;
  ],
  "custom": [
   null,
-  "Custom"
- ],
- "direct": [
-  null,
-  ""
+  "カスタム"
  ],
  "disabled": [
   null,
@@ -485,11 +421,7 @@ return plural;
  ],
  "disk": [
   null,
-  ""
- ],
- "down": [
-  null,
-  ""
+  "ディスク"
  ],
  "dying": [
   null,
@@ -499,25 +431,13 @@ return plural;
   null,
   "有効"
  ],
- "ethernet": [
-  null,
-  ""
- ],
  "host": [
   null,
-  ""
- ],
- "hostdev": [
-  null,
-  ""
+  "ホスト"
  ],
  "idle": [
   null,
   "アイドル"
- ],
- "mcast": [
-  null,
-  ""
  ],
  "network": [
   null,
@@ -529,7 +449,7 @@ return plural;
  ],
  "other": [
   null,
-  ""
+  "その他"
  ],
  "paused": [
   null,
@@ -538,10 +458,6 @@ return plural;
  "running": [
   null,
   "実行中"
- ],
- "server": [
-  null,
-  ""
  ],
  "shut off": [
   null,
@@ -555,25 +471,9 @@ return plural;
   null,
   "一時停止中 (PM)"
  ],
- "udp": [
-  null,
-  ""
- ],
- "up": [
-  null,
-  ""
- ],
- "user": [
-  null,
-  ""
- ],
  "vCPUs:": [
   null,
   "vCPU:"
- ],
- "vhostuser": [
-  null,
-  ""
  ],
  "yes": [
   null,

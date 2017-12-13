@@ -617,7 +617,7 @@ return plural;
  ],
  "Primary": [
   null,
-  "プライマリ"
+  "プライマリー"
  ],
  "Priority": [
   null,
@@ -725,7 +725,7 @@ return plural;
  ],
  "Switching off <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "<b>$0</b> をオフにすると、サーバーへの接続が切断され、管理 UI が利用できなくなります。1"
+  "<b>$0</b> をオフにすると、サーバーへの接続が切断され、管理 UI が利用できなくなります。"
  ],
  "Switching on <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -737,7 +737,7 @@ return plural;
  ],
  "Team Port": [
   null,
-  "Team ポート"
+  "チームポート"
  ],
  "Team Port Settings": [
   null,
@@ -753,7 +753,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to modify network settings": [
   null,
-  "ユーザー <b>$0</b> はネットワーク設定を変更することを許可されていません"
+  "ユーザー <b>$0</b> は、ネットワーク設定を変更することを許可されていません"
  ],
  "This device cannot be managed here.": [
   null,

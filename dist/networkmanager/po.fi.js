@@ -487,7 +487,7 @@ return plural;
  ],
  "MAC": [
   null,
-  ""
+  "MAC"
  ],
  "MII (Recommended)": [
   null,
@@ -495,7 +495,7 @@ return plural;
  ],
  "MTU": [
   null,
-  ""
+  "MTU"
  ],
  "MTU must be a positive number": [
   null,
@@ -515,7 +515,7 @@ return plural;
  ],
  "Members": [
   null,
-  ""
+  "Jäsenet"
  ],
  "Mode": [
   null,
@@ -535,7 +535,7 @@ return plural;
  ],
  "Name": [
   null,
-  ""
+  "Nimi"
  ],
  "Networking": [
   null,
@@ -603,7 +603,7 @@ return plural;
  ],
  "Ports": [
   null,
-  ""
+  "Portit"
  ],
  "Prefix length": [
   null,
@@ -623,19 +623,19 @@ return plural;
  ],
  "Primary": [
   null,
-  ""
+  "Ensisijainen"
  ],
  "Priority": [
   null,
-  ""
+  "Prioriteeetti"
  ],
  "Priority $priority": [
   null,
-  ""
+  "Prioriteetti $priority"
  ],
  "Random": [
   null,
-  ""
+  "Satunnainen"
  ],
  "Reboot": [
   null,
@@ -643,11 +643,11 @@ return plural;
  ],
  "Receiving": [
   null,
-  ""
+  "Vastaanotetaan"
  ],
  "Remove $0": [
   null,
-  ""
+  "Poista $0"
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -663,7 +663,7 @@ return plural;
  ],
  "Routes": [
   null,
-  ""
+  "Reitit"
  ],
  "Runner": [
   null,
@@ -687,7 +687,7 @@ return plural;
  ],
  "Sending": [
   null,
-  ""
+  "Lähetetään"
  ],
  "Set to": [
   null,
@@ -695,7 +695,7 @@ return plural;
  ],
  "Shared": [
   null,
-  ""
+  "Jaettu"
  ],
  "Spanning Tree Protocol": [
   null,
@@ -711,7 +711,7 @@ return plural;
  ],
  "Status": [
   null,
-  ""
+  "Tila"
  ],
  "Sticky": [
   null,
@@ -755,7 +755,7 @@ return plural;
  ],
  "Testing connection": [
   null,
-  ""
+  "Testataan yhteyttä"
  ],
  "The user <b>$0</b> is not permitted to modify network settings": [
   null,

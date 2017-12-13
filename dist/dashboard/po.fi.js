@@ -295,7 +295,7 @@ return plural;
  ],
  "Log In": [
   null,
-  ""
+  "Kirjaudu sisään"
  ],
  "Log in to {{host}}": [
   null,
@@ -311,15 +311,15 @@ return plural;
  ],
  "Memory": [
   null,
-  ""
+  "Muisti"
  ],
  "Network": [
   null,
-  ""
+  "Verkko"
  ],
  "New password was not accepted": [
   null,
-  ""
+  "Uutta salasanaa ei hyväksytty"
  ],
  "No such file or directory": [
   null,
@@ -327,7 +327,7 @@ return plural;
  ],
  "Not a valid private key": [
   null,
-  ""
+  "Ei kelvollinen yksityinen avain"
  ],
  "Off": [
   null,
@@ -335,7 +335,7 @@ return plural;
  ],
  "Old password not accepted": [
   null,
-  ""
+  "Vanhaa salasanaa ei hyväksytty"
  ],
  "On": [
   null,
@@ -343,15 +343,15 @@ return plural;
  ],
  "Password": [
   null,
-  ""
+  "Salasana"
  ],
  "Password not accepted": [
   null,
-  ""
+  "Salasanaa ei hyväksytty"
  ],
  "Port": [
   null,
-  ""
+  "Portti"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -363,7 +363,7 @@ return plural;
  ],
  "Public Key": [
   null,
-  ""
+  "Julkinen avain"
  ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
@@ -371,7 +371,7 @@ return plural;
  ],
  "Servers": [
   null,
-  ""
+  "Palvelimet"
  ],
  "Set": [
   null,
@@ -379,11 +379,11 @@ return plural;
  ],
  "Synchronize": [
   null,
-  ""
+  "Synkronoi"
  ],
  "Synchronize users": [
   null,
-  ""
+  "Synkronoi käyttäjät"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -399,7 +399,7 @@ return plural;
  ],
  "The passwords do not match.": [
   null,
-  ""
+  "Salasanat eivät täsmää."
  ],
  "The user <b>$0</b> is not permitted to manage servers": [
   null,

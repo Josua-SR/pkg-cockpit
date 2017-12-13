@@ -75,15 +75,15 @@ return plural;
  ],
  "Apply this solution": [
   null,
-  ""
+  "Aplikovat toto řešení"
  ],
  "Applying solution...": [
   null,
-  ""
+  "Aplikuji řešení..."
  ],
  "Audit log": [
   null,
-  ""
+  "Záznam auditu"
  ],
  "Connecting to SETroubleshoot daemon...": [
   null,

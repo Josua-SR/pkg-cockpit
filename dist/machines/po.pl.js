@@ -73,7 +73,7 @@ return plural;
  ],
  "Additional": [
   null,
-  ""
+  "Dodatkowe"
  ],
  "Address": [
   null,
@@ -101,7 +101,7 @@ return plural;
  ],
  "CHANGE NETWORK STATE action failed": [
   null,
-  ""
+  "Działanie CHANGE NETWORK STATE się nie powiodło"
  ],
  "CPU Type:": [
   null,
@@ -197,7 +197,7 @@ return plural;
  ],
  "MAC Address": [
   null,
-  ""
+  "Adres MAC"
  ],
  "MTU": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Managed": [
   null,
-  ""
+  "Zarządzane"
  ],
  "Manual Connection": [
   null,
@@ -217,7 +217,7 @@ return plural;
  ],
  "Model type": [
   null,
-  ""
+  "Typ modelu"
  ],
  "More Information": [
   null,
@@ -229,7 +229,7 @@ return plural;
  ],
  "Networks": [
   null,
-  ""
+  "Sieci"
  ],
  "No VM is running or defined on this host": [
   null,
@@ -249,7 +249,7 @@ return plural;
  ],
  "No network interfaces defined for this VM": [
   null,
-  ""
+  "Nie określono interfejsów sieciowych dla tej maszyny wirtualnej"
  ],
  "Ok": [
   null,
@@ -265,7 +265,7 @@ return plural;
  ],
  "Plug": [
   null,
-  ""
+  "Podłącz"
  ],
  "Pool": [
   null,
@@ -277,7 +277,7 @@ return plural;
  ],
  "Portgroup": [
   null,
-  ""
+  "Grupa portów"
  ],
  "Protocol": [
   null,
@@ -389,7 +389,7 @@ return plural;
  ],
  "Unplug": [
   null,
-  ""
+  "Odłącz"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
@@ -449,7 +449,7 @@ return plural;
  ],
  "Virtualport": [
   null,
-  ""
+  "Port wirtualny"
  ],
  "Volume": [
   null,
@@ -461,7 +461,7 @@ return plural;
  ],
  "bridge": [
   null,
-  ""
+  "mostek"
  ],
  "cdrom": [
   null,
@@ -477,7 +477,7 @@ return plural;
  ],
  "direct": [
   null,
-  ""
+  "bezpośrednie"
  ],
  "disabled": [
   null,
@@ -501,7 +501,7 @@ return plural;
  ],
  "ethernet": [
   null,
-  ""
+  "Ethernet"
  ],
  "host": [
   null,
@@ -509,7 +509,7 @@ return plural;
  ],
  "hostdev": [
   null,
-  ""
+  "urządzenie gospodarza"
  ],
  "idle": [
   null,
@@ -517,7 +517,7 @@ return plural;
  ],
  "mcast": [
   null,
-  ""
+  "multicast"
  ],
  "network": [
   null,
@@ -541,7 +541,7 @@ return plural;
  ],
  "server": [
   null,
-  ""
+  "serwer"
  ],
  "shut off": [
   null,
@@ -557,7 +557,7 @@ return plural;
  ],
  "udp": [
   null,
-  ""
+  "UDP"
  ],
  "up": [
   null,
@@ -565,7 +565,7 @@ return plural;
  ],
  "user": [
   null,
-  ""
+  "użytkownik"
  ],
  "vCPUs:": [
   null,
@@ -573,7 +573,7 @@ return plural;
  ],
  "vhostuser": [
   null,
-  ""
+  "użytkownik gospodarza wirtualizacji"
  ],
  "yes": [
   null,
