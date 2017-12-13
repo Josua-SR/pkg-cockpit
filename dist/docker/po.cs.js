@@ -117,19 +117,19 @@ return plural;
  ],
  "Add Additional Storage": [
   null,
-  ""
+  "Přidat další místo na disku"
  ],
  "Add Storage": [
   null,
-  ""
+  "Přidat úložiště"
  ],
  "Additional Storage": [
   null,
-  ""
+  "Dodatečné úložiště"
  ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
-  ""
+  "Všechna data na vybraných discích budou vymazána a disky budou přidány do fondu úložišť."
  ],
  "Always": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Are you sure you want to delete this image?": [
   null,
-  ""
+  "Opravdu chcete smazat tento obraz?"
  ],
  "Author": [
   null,
@@ -145,19 +145,19 @@ return plural;
  ],
  "CPU": [
   null,
-  ""
+  "CPU"
  ],
  "CPU priority": [
   null,
-  ""
+  "Priorita CPU"
  ],
  "CPU usage:": [
   null,
-  ""
+  "Využití CPU:"
  ],
  "Can&rsquo;t connect to Docker": [
   null,
-  ""
+  "Nelze se spojit s Docker"
  ],
  "Cancel": [
   null,
@@ -165,15 +165,15 @@ return plural;
  ],
  "Change": [
   null,
-  ""
+  "Změna"
  ],
  "Change resource limits": [
   null,
-  ""
+  "Změnit limity zdroje"
  ],
  "Change resources limits": [
   null,
-  ""
+  "Změnit limity zdrojů"
  ],
  "Close": [
   null,

@@ -147,10 +147,6 @@ return plural;
   null,
   "CPU"
  ],
- "Can't load image": [
-  null,
-  ""
- ],
  "Cancel": [
   null,
   "取り消し"
@@ -181,15 +177,15 @@ return plural;
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}.": [
   null,
-  "Cockpit は {{#strong}}{{host}}{{/strong}} にログインできませんでした。"
+  "Cockpit は、{{#strong}}{{host}}{{/strong}} にログインできませんでした。"
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. To use this machine with cockpit you will need to enable one of the following authentication methods in the sshd config on {{#strong}}{{host}}{{/strong}}:": [
   null,
-  "Cockpit は {{#strong}}{{host}}{{/strong}} にログインできませんでした。このマシンを Cockpit で使用するには、{{#strong}}{{host}}{{/strong}} 上の sshd 設定で次の認証方法のいずれかを有効にする必要があります。"
+  "Cockpit は、{{#strong}}{{host}}{{/strong}} にログインできませんでした。このマシンを Cockpit で使用するには、{{#strong}}{{host}}{{/strong}} 上の sshd 設定で、次のいずれかの認証方法を有効にする必要があります。"
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. You can change your authentication credentials below. {{#can_sync}}You may prefer to {{#sync_link}}synchronize accounts and passwords{{/sync_link}}.{{/can_sync}}": [
   null,
-  "Cockpit は {{#strong}}{{host}}{{/strong}} にログインできませんでした。認証情報は以下で変更できます。{{#can_sync}}{{#sync_link}}アカウントとパスワードの同期{{/sync_link}}を実行できます。{{/can_sync}}"
+  "Cockpit は、{{#strong}}{{host}}{{/strong}} にログインできませんでした。認証情報は以下で変更できます。{{#can_sync}}{{#sync_link}} アカウントとパスワードの同期 {{/sync_link}} を実行できます。{{/can_sync}}"
  ],
  "Color": [
   null,
@@ -281,11 +277,11 @@ return plural;
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
-  "現在ログインしているユーザーとしてこのマシンに接続する場合は空白のままにします。異なるユーザー名を入力した場合は、このマシンへの接続時にそのユーザーが常に使用されます。"
+  "現在ログインしているユーザーとしてこのマシンに接続する場合は空白のままにします。別のユーザー名を入力した場合は、このマシンへの接続時にそのユーザーが常に使用されます。"
  ],
  "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
-  ""
+  "現在ログインしているユーザー {{#default_user}} ({{default_user}}){{/default_user}} としてこのマシンに接続する場合は空白のままにします。別のユーザー名を入力すると、このマシンへの接続時にそのユーザーが常に使用されます。"
  ],
  "Log In": [
   null,
@@ -329,7 +325,7 @@ return plural;
  ],
  "Old password not accepted": [
   null,
-  "古いパスワードは受け入れられません"
+  "古いパスワードは使用できません"
  ],
  "On": [
   null,
@@ -381,7 +377,7 @@ return plural;
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
-  "IP アドレスまたはホスト名にはスペースを含めることができません。"
+  "IP アドレスまたはホスト名には、スペースを含めることができません。"
  ],
  "The authenticity of host {{#strong}}{{host}}{{/strong}} can't be established. Are you sure you want to continue connecting?": [
   null,
@@ -389,7 +385,7 @@ return plural;
  ],
  "The key of {{#strong}}{{host}}{{/strong}} does not match the key previously in use. Unless this machine was recently replaced, it is likely that someone is trying to attack your connection to this machine.": [
   null,
-  "{{#strong}}{{host}}{{/strong}} の鍵が、以前に使用された鍵と一致しません。このマシンが最近置き換えられたものでない限り、誰かがこのマシンへの接続を攻撃しようとしている可能性があります。"
+  "{{#strong}}{{host}}{{/strong}} の鍵が、以前に使用された鍵と一致しません。このマシンを最近取り換えた場合を除いて、誰かがこのマシンへの接続を攻撃しようとしている可能性があります。"
  ],
  "The passwords do not match.": [
   null,
@@ -397,7 +393,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to manage servers": [
   null,
-  "ユーザー <b>$0</b> はサーバーを管理することを許可されていません"
+  "ユーザー <b>$0</b> は、サーバーを管理することを許可されていません"
  ],
  "This machine has already been added.": [
   null,
@@ -441,7 +437,7 @@ return plural;
  ],
  "You are currently connected directly to this server. You cannot delete it.": [
   null,
-  "現在このサーバーに直接接続されています。削除できません。"
+  "現在、このサーバーに直接接続されています。削除できません。"
  ],
  "You can remove the previously stored key by running the following command": [
   null,

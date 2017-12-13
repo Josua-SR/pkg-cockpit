@@ -607,7 +607,7 @@ return plural;
  ],
  "Not authorized to upload-report": [
   null,
-  ""
+  "No autorizado para cargar informe"
  ],
  "Not synchronized": [
   null,
@@ -627,7 +627,7 @@ return plural;
  ],
  "Only Problems": [
   null,
-  ""
+  "Solo Problemas"
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,

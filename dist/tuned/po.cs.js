@@ -77,7 +77,7 @@ return plural;
  ],
  "Change Profile": [
   null,
-  ""
+  "Změnit profil"
  ],
  "Communication with tuned has failed": [
   null,

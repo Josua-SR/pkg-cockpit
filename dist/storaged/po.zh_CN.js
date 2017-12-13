@@ -191,26 +191,6 @@ return plural;
   null,
   "8 KiB"
  ],
- "<span>Encrypted $0</span>": [
-  null,
-  "<span>已加密 $0</span>"
- ],
- "<span>Encrypted Logical Volume of $0</span>": [
-  null,
-  "<span>已加密逻辑卷 $0</span>"
- ],
- "<span>Encrypted Partition of $0</span>": [
-  null,
-  "<span>已加密分区 $0</span>"
- ],
- "<span>Logical Volume of $0</span>": [
-  null,
-  "<span>逻辑卷 $0</span>"
- ],
- "<span>Partition of $0</span>": [
-  null,
-  "<span>分区 $0</span>"
- ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
   "该磁盘可以被移除前，需要添加一个备用的磁盘。"
@@ -404,6 +384,10 @@ return plural;
   "自定义 (输入文件系统类型)"
  ],
  "Custom encryption options": [
+  null,
+  ""
+ ],
+ "Custom mount option": [
   null,
   ""
  ],
@@ -791,6 +775,10 @@ return plural;
   null,
   "未找到"
  ],
+ "Not mounted": [
+  null,
+  ""
+ ],
  "Not running": [
   null,
   "未运行"
@@ -810,10 +798,6 @@ return plural;
  "Options": [
   null,
   "选项"
- ],
- "Options cannot be empty.": [
-  null,
-  ""
  ],
  "Other Devices": [
   null,

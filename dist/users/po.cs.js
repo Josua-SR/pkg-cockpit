@@ -69,27 +69,27 @@ return plural;
  },
  "Access": [
   null,
-  ""
+  "Přístup"
  ],
  "Account Expiration": [
   null,
-  ""
+  "Expirace účtu"
  ],
  "Account not available or cannot be edited.": [
   null,
-  ""
+  "Účet není přístupný nebo není možné jej měnit."
  ],
  "Accounts": [
   null,
-  ""
+  "Účty"
  ],
  "Add key": [
   null,
-  ""
+  "Přidat klíč"
  ],
  "Add public key": [
   null,
-  ""
+  "Přidat veřejný klíč"
  ],
  "Adding key": [
   null,
@@ -97,11 +97,11 @@ return plural;
  ],
  "Authorized Public SSH Keys": [
   null,
-  ""
+  "Autorizované veřejné SSH klíče"
  ],
  "Back to Accounts": [
   null,
-  ""
+  "Zpět k účtům"
  ],
  "Cancel": [
   null,
@@ -109,7 +109,7 @@ return plural;
  ],
  "Change": [
   null,
-  ""
+  "Změna"
  ],
  "Close": [
   null,
@@ -377,6 +377,6 @@ return plural;
  ],
  "page-title\u0004Accounts": [
   null,
-  ""
+  "Účty"
  ]
 }));

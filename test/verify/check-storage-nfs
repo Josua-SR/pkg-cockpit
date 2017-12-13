@@ -39,7 +39,7 @@ class TestStorage(StorageCase):
         b.wait_visible("#nfs-mounts .empty-panel-text")
 
         # Add /home/foo
-        b.click("#nfs-mounts button[data-action=mount-add]")
+        b.click("#nfs-mounts button .fa-plus")
         self.dialog_wait_open()
         self.dialog_set_val("server", "127.0.0.1")
         self.dialog_set_combobox("remote", "/home/foo")
@@ -53,7 +53,7 @@ class TestStorage(StorageCase):
         b.wait_text_not("#nfs-mounts tr:contains(/mnt) .usage-text", "")
 
         # Add /home/bar
-        b.click("#nfs-mounts button[data-action=mount-add]")
+        b.click("#nfs-mounts button .fa-plus")
         self.dialog_wait_open()
         self.dialog_set_val("server", "127.0.0.1")
         self.dialog_set_combobox("remote", "/home/bar")
@@ -68,8 +68,8 @@ class TestStorage(StorageCase):
         m.execute("test -d /mounts/bar")
 
         # Change mount point of /home/bar
-        b.click("#nfs-mounts .nfs-arm-button")
-        b.click("#nfs-mounts button[data-action=mount-edit][data-arg=1]")
+        b.click("#nfs-mounts .fa-check")
+        b.click("#nfs-mounts tr:contains(/home/bar) .pficon-edit")
 
         self.dialog_wait_open()
         self.dialog_set_val("dir", "/mounts/barbar")
@@ -79,20 +79,42 @@ class TestStorage(StorageCase):
         b.wait_present("#nfs-mounts td:contains(/mounts/barbar)")
         m.execute("! test -e /mounts/bar")
         m.execute("test -d /mounts/barbar")
+        self.assertEqual (m.execute("findmnt -s -n -o OPTIONS /mounts/barbar").strip(), "defaults")
+
+        # Set options for /home/bar
+        b.click("#nfs-mounts .fa-check")
+        b.click("#nfs-mounts tr:contains(/home/bar) .pficon-edit")
+
+        def wait_checked(field):
+            b.wait_present(self.dialog_field(field) + ":checked")
+
+        def wait_not_checked(field):
+            b.wait_present(self.dialog_field(field) + ":not(:checked)")
+
+        self.dialog_wait_open()
+        wait_checked("mount_auto")
+        wait_not_checked("mount_ro")
+        self.dialog_set_val("mount_auto", False)
+        self.dialog_set_val("mount_ro", True)
+        self.dialog_set_val("mount_extra_options", CheckBoxText("ac"))
+        self.dialog_apply()
+        self.dialog_wait_close()
+
+        self.assertEqual (m.execute("findmnt -s -n -o OPTIONS /mounts/barbar").strip(), "noauto,ro,ac")
 
         # Unmount and remount /home/foo
-        b.click("#nfs-mounts .nfs-arm-button")
-        b.click("#nfs-mounts button[data-action=mount-unmount][data-arg=0]")
+        b.click("#nfs-mounts .fa-check")
+        b.click("#nfs-mounts tr:contains(/home/foo) button:contains(Unmount)")
         b.wait_in_text("#nfs-mounts tr:contains(/home/foo)", "Not mounted")
 
-        b.click("#nfs-mounts .nfs-arm-button")
-        b.click("#nfs-mounts button[data-action=mount-mount][data-arg=0]")
+        b.click("#nfs-mounts .fa-check")
+        b.click("#nfs-mounts tr:contains(/mnt) button:contains(Mount)")
         b.wait_present("#nfs-mounts tr:contains(/mnt) .usage-text")
         b.wait_text_not("#nfs-mounts tr:contains(/mnt) .usage-text", "")
 
         # Remove /home/foo
-        b.click("#nfs-mounts .nfs-arm-button")
-        b.click("#nfs-mounts button[data-action=mount-remove][data-arg=0]")
+        b.click("#nfs-mounts .fa-check")
+        b.click("#nfs-mounts tr:contains(/mnt) button .pficon-delete")
         b.wait_not_present("#nfs-mounts td:contains(/home/foo)")
         m.execute("! test -e /mnt")
 
@@ -107,7 +129,7 @@ class TestStorage(StorageCase):
         m.write("/etc/exports", "/home/foo 127.0.0.0/24(rw)\n/home/bar 127.0.0.0/24(rw)\n")
         m.execute("systemctl restart nfs-server")
 
-        b.click("#nfs-mounts button[data-action=mount-add]")
+        b.click("#nfs-mounts .fa-plus")
         self.dialog_wait_open()
         self.dialog_set_val("server", "127.0.0.1")
 
@@ -134,7 +156,7 @@ class TestStorage(StorageCase):
         b.wait_visible("#nfs-mounts .empty-panel-text")
 
         # Add /home/foo
-        b.click("#nfs-mounts button[data-action=mount-add]")
+        b.click("#nfs-mounts .fa-plus")
         self.dialog_wait_open()
         self.dialog_set_val("server", "127.0.0.1")
         self.dialog_set_combobox("remote", "/home/foo")
@@ -148,16 +170,16 @@ class TestStorage(StorageCase):
         b.wait_text_not("#nfs-mounts tr:contains(/mounts/foo) .usage-text", "")
 
         m.spawn("cd /mounts/foo; sleep infinity", "busy")
-        b.click("#nfs-mounts .nfs-arm-button")
-        b.click("#nfs-mounts button[data-action=mount-edit][data-arg=0]")
+        b.click("#nfs-mounts .fa-check")
+        b.click("#nfs-mounts tr:contains(/home/foo) .pficon-edit")
 
         self.dialog_wait_open()
         self.dialog_wait_alert("This NFS mount is in use")
         self.dialog_cancel()
         self.dialog_wait_close()
 
-        b.click("#nfs-mounts .nfs-arm-button")
-        b.click("#nfs-mounts button[data-action=mount-unmount][data-arg=0]")
+        b.click("#nfs-mounts .fa-check")
+        b.click("#nfs-mounts tr:contains(/home/foo) button:contains(Unmount)")
         self.dialog_wait_open()
         b.wait_in_text("#dialog", "The filesystem is in use")
         b.wait_in_text("#dialog", "of user root")

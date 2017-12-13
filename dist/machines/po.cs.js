@@ -69,11 +69,11 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  ""
+  "$0 je k dispozici pro většinu operačních systémů. K instalaci je třeba hledat v GNOME Software nebo spustit:"
  ],
  "Additional": [
   null,
-  ""
+  "Další"
  ],
  "Address": [
   null,
@@ -93,19 +93,19 @@ return plural;
  ],
  "Boot Order:": [
   null,
-  ""
+  "Boot příkaz:"
  ],
  "Bus": [
   null,
-  ""
+  "Bus"
  ],
  "CHANGE NETWORK STATE action failed": [
   null,
-  ""
+  "CHANGE NETWORK STATE akce selhala"
  ],
  "CPU Type:": [
   null,
-  ""
+  "Typ CPU:"
  ],
  "Cancel": [
   null,

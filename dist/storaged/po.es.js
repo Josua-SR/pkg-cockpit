@@ -198,26 +198,6 @@ return plural;
   null,
   "8 KiB"
  ],
- "<span>Encrypted $0</span>": [
-  null,
-  "<span>Cifrado $0</span>"
- ],
- "<span>Encrypted Logical Volume of $0</span>": [
-  null,
-  "<span>Volumen lógico cifrado de $0</span>"
- ],
- "<span>Encrypted Partition of $0</span>": [
-  null,
-  "<span>Partición cifrada de $0</span>"
- ],
- "<span>Logical Volume of $0</span>": [
-  null,
-  "<span>Volumen lógico de $0</span>"
- ],
- "<span>Partition of $0</span>": [
-  null,
-  "<span>Partición de $0</span>"
- ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
   "Un disco de repuesto debe agregarse primero antes de este disco se puede quitar."
@@ -272,7 +252,7 @@ return plural;
  ],
  "Block": [
   null,
-  ""
+  "Bloque"
  ],
  "Block device for filesystems": [
   null,
@@ -412,11 +392,15 @@ return plural;
  ],
  "Custom encryption options": [
   null,
+  "Opciones de encriptación personalizadas"
+ ],
+ "Custom mount option": [
+  null,
   ""
  ],
  "Custom mount options": [
   null,
-  ""
+  "Opciones de montaje personalizadas"
  ],
  "DISK IS FAILING": [
   null,
@@ -620,7 +604,7 @@ return plural;
  ],
  "Local Mount Point": [
   null,
-  ""
+  "Punto de Montaje Local"
  ],
  "Lock": [
   null,
@@ -676,27 +660,27 @@ return plural;
  ],
  "Mount at boot": [
   null,
-  ""
+  "Montar en el arranque"
  ],
  "Mount options": [
   null,
-  ""
+  "Opciones de montaje"
  ],
  "Mount point can not be empty": [
   null,
-  ""
+  "El punto de montaje puede no estar vacío"
  ],
  "Mount point cannot be empty.": [
   null,
-  ""
+  "El punto de montaje no puede estar vacío."
  ],
  "Mount point must start with \"/\".": [
   null,
-  ""
+  "El punto de montaje debe empezar con \"/\"."
  ],
  "Mount read only": [
   null,
-  ""
+  "Montar en sólo lectura"
  ],
  "Mounted At": [
   null,
@@ -716,7 +700,7 @@ return plural;
  ],
  "NFS Mounts": [
   null,
-  ""
+  "Montajes NFS"
  ],
  "NTFS - Compatible with most systems": [
   null,
@@ -744,7 +728,7 @@ return plural;
  ],
  "New NFS Mount": [
   null,
-  ""
+  "Nuevo Montaje NFS"
  ],
  "Next": [
   null,
@@ -760,11 +744,11 @@ return plural;
  ],
  "No NFS mounts set up": [
   null,
-  ""
+  "Sin ajustes de montaje NFS"
  ],
  "No disks are available.": [
   null,
-  ""
+  "No hay discos disponibles."
  ],
  "No drives attached": [
   null,
@@ -776,7 +760,7 @@ return plural;
  ],
  "No iSCSI targets set up": [
   null,
-  ""
+  "Sin objetivos iSCSI ajustados"
  ],
  "No media inserted": [
   null,
@@ -788,15 +772,19 @@ return plural;
  ],
  "No storage set up as RAID": [
   null,
-  ""
+  "No se ha fijado almacenamiento como RAID"
  ],
  "No volume groups created": [
   null,
-  ""
+  "No hay grupos de volumen creados"
  ],
  "Not found": [
   null,
   "No encontrado"
+ ],
+ "Not mounted": [
+  null,
+  ""
  ],
  "Not running": [
   null,
@@ -817,10 +805,6 @@ return plural;
  "Options": [
   null,
   "Opciones"
- ],
- "Options cannot be empty.": [
-  null,
-  ""
  ],
  "Other Devices": [
   null,

@@ -105,7 +105,7 @@ return plural;
  ],
  "No description provided.": [
   null,
-  ""
+  "Опису не надано."
  ],
  "No installation package found for this application.": [
   null,

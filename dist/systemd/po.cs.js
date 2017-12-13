@@ -293,31 +293,31 @@ return plural;
  ],
  "After": [
   null,
-  ""
+  "Později"
  ],
  "After system boot": [
   null,
-  ""
+  "Při startu systému"
  ],
  "Asset Tag": [
   null,
-  ""
+  "Tag zařízení"
  ],
  "At specific time": [
   null,
-  ""
+  "V uvedený čas"
  ],
  "Automatically using NTP": [
   null,
-  ""
+  "Automatické použití NTP"
  ],
  "Automatically using specific NTP servers": [
   null,
-  ""
+  "Automatické použití specifických NTP serverů"
  ],
  "CPU": [
   null,
-  ""
+  "CPU"
  ],
  "Cached": [
   null,
@@ -329,11 +329,11 @@ return plural;
  ],
  "Cannot schedule event in the past": [
   null,
-  ""
+  "Nelze naplánovat událost v minulosti"
  ],
  "Change": [
   null,
-  ""
+  "Změna"
  ],
  "Change Host Name": [
   null,
@@ -341,7 +341,7 @@ return plural;
  ],
  "Change System Time": [
   null,
-  ""
+  "Změnit systémový čas"
  ],
  "Close": [
   null,
@@ -969,7 +969,7 @@ return plural;
  ],
  "page-title\u0004CPU Status": [
   null,
-  ""
+  "Stav CPU"
  ],
  "page-title\u0004Memory": [
   null,

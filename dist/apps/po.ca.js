@@ -105,7 +105,7 @@ return plural;
  ],
  "No description provided.": [
   null,
-  ""
+  "No s'ha proporcionat cap descripció."
  ],
  "No installation package found for this application.": [
   null,

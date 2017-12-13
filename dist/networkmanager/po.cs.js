@@ -137,15 +137,15 @@ return plural;
  ],
  "ARP": [
   null,
-  ""
+  "ARP"
  ],
  "ARP Monitoring": [
   null,
-  ""
+  "ARP monitorování"
  ],
  "ARP Ping": [
   null,
-  ""
+  "ARP ping"
  ],
  "Active": [
   null,
@@ -153,43 +153,43 @@ return plural;
  ],
  "Active Backup": [
   null,
-  ""
+  "Aktivní záloha"
  ],
  "Adaptive load balancing": [
   null,
-  ""
+  "Adaptivní rozložení zátěže"
  ],
  "Adaptive transmit load balancing": [
   null,
-  ""
+  "Adaptivní přenos rozložení zátěže"
  ],
  "Add $0": [
   null,
-  ""
+  "Přidat $0"
  ],
  "Add Bond": [
   null,
-  ""
+  "Přidat vazbu"
  ],
  "Add Bridge": [
   null,
-  ""
+  "Přidat most"
  ],
  "Add Team": [
   null,
-  ""
+  "Přidat tým"
  ],
  "Add VLAN": [
   null,
-  ""
+  "Přidat VLAN"
  ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Přidání <b>$0</b> přeruší spojení se serverem a způsobí nedostupnost administračního uživatelského rozhraní."
  ],
  "Additional DNS $val": [
   null,
-  ""
+  "Přídavný DNS $val"
  ],
  "Additional DNS Search Domains $val": [
   null,
@@ -197,11 +197,11 @@ return plural;
  ],
  "Additional address $val": [
   null,
-  ""
+  "Dodatečná adresa $val"
  ],
  "Address $val": [
   null,
-  ""
+  "Adresa $val"
  ],
  "Addresses": [
   null,
@@ -213,7 +213,7 @@ return plural;
  ],
  "Authenticating": [
   null,
-  ""
+  "Ověřuji"
  ],
  "Automatic": [
   null,
@@ -221,11 +221,11 @@ return plural;
  ],
  "Automatic (DHCP only)": [
   null,
-  ""
+  "Automaticky (pouze DHCP)"
  ],
  "Automatic (DHCP)": [
   null,
-  ""
+  "Automaticky (DHCP)"
  ],
  "Balancer": [
   null,
@@ -237,7 +237,7 @@ return plural;
  ],
  "Bond Settings": [
   null,
-  ""
+  "Nastavení vazby"
  ],
  "Bridge": [
   null,
@@ -245,15 +245,15 @@ return plural;
  ],
  "Bridge Port Settings": [
   null,
-  ""
+  "Nastavení portu mostu"
  ],
  "Bridge Settings": [
   null,
-  ""
+  "Nastavení mostu"
  ],
  "Bridge port": [
   null,
-  ""
+  "Port mostu"
  ],
  "Broadcast": [
   null,
@@ -261,7 +261,7 @@ return plural;
  ],
  "Broken configuration": [
   null,
-  ""
+  "Chybné nastavení"
  ],
  "Cancel": [
   null,
@@ -269,11 +269,11 @@ return plural;
  ],
  "Carrier": [
   null,
-  ""
+  "Nosič"
  ],
  "Change the settings": [
   null,
-  ""
+  "Změnit nastavení"
  ],
  "Changing the settings will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "Checking IP": [
   null,
-  ""
+  "Ověřuji IP"
  ],
  "Close": [
   null,

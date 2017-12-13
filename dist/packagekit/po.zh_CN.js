@@ -75,6 +75,10 @@ return plural;
   "$0 updates",
   "$0 可更新"
  ],
+ "$1 security fix": [
+  "$1 security fixes",
+  ""
+ ],
  ", including $1 security fix": [
   ", including $1 security fixes",
   "， 包括 $1 安全性修复"

@@ -663,11 +663,11 @@ return plural;
  ],
  "Problem details": [
   null,
-  ""
+  "Detalls del problema"
  ],
  "Problem info": [
   null,
-  ""
+  "Informació del problema"
  ],
  "Problems, Errors": [
   null,
@@ -731,7 +731,7 @@ return plural;
  ],
  "Reported": [
   null,
-  ""
+  "Informat"
  ],
  "Reporter 'reporter-ureport' not found.": [
   null,

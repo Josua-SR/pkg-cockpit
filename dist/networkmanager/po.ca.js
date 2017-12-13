@@ -359,11 +359,11 @@ return plural;
  ],
  "Ethernet MAC": [
   null,
-  ""
+  "MAC d'ethernet"
  ],
  "Ethernet MTU": [
   null,
-  ""
+  "MTU d'ethernet"
  ],
  "Ethtool": [
   null,

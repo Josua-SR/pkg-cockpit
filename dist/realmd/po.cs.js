@@ -69,23 +69,23 @@ return plural;
  },
  "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  ""
+  "$0 Pouze uživatelé s místními uživatelskými právy mají přístup k tomuto zařízení.  To může mít vliv na ostatní služby jako DNS nastavení and může být rozdílný seznam CA certifikátů."
  ],
  "Administrator Password": [
   null,
-  ""
+  "Heslo správce"
  ],
  "Are you sure you want to leave the '$0' domain?": [
   null,
-  ""
+  "Opravdu chcete opustit doménu '$0'?"
  ],
  "Are you sure you want to leave this domain?": [
   null,
-  ""
+  "Opravdu chcete opustit tuto doménu?"
  ],
  "Authentication": [
   null,
-  ""
+  "Ověření"
  ],
  "Automatic": [
   null,
@@ -97,7 +97,7 @@ return plural;
  ],
  "Cannot join a domain because realmd is not available on this system": [
   null,
-  ""
+  "Nelze se připojit do domény protože realmd není dostupný na tomto systému"
  ],
  "Computer OU": [
   null,

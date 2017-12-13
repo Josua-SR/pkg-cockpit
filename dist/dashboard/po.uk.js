@@ -161,7 +161,7 @@ return plural;
  ],
  "Can't load image": [
   null,
-  ""
+  "Не вдалося завантажити образ"
  ],
  "Cancel": [
   null,

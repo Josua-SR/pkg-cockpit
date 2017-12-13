@@ -76,6 +76,11 @@ return plural;
   "$0 actualización.",
   "$0 actualizaciones."
  ],
+ "$1 security fix": [
+  "$1 security fixes",
+  "",
+  ""
+ ],
  ", including $1 security fix": [
   ", including $1 security fixes",
   ", incluyendo la corrección de seguridad $1 ",
@@ -179,7 +184,7 @@ return plural;
  ],
  "No updates pending": [
   null,
-  ""
+  "No hay actualizaciones pendientes"
  ],
  "Off": [
   null,

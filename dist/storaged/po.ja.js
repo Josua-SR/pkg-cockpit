@@ -67,10 +67,6 @@ return plural;
   "language": "ja",
   "x-generator": "Zanata 3.9.6"
  },
- "$0 Block Device": [
-  null,
-  "$0 ブロックデバイス"
- ],
  "$0 Chunk Size": [
   null,
   "$0 チャンクサイズ"
@@ -93,7 +89,7 @@ return plural;
  ],
  "$0 is in active use": [
   null,
-  ""
+  "$0 は、アクティブに使用されています。"
  ],
  "$0 minute": [
   "$0 minutes",
@@ -115,10 +111,6 @@ return plural;
   "$0 years",
   "$0 年"
  ],
- "$0, $1 free": [
-  null,
-  "$0, $1 空き"
- ],
  "$name (from $host)": [
   null,
   "$name ($host)"
@@ -135,10 +127,6 @@ return plural;
   null,
   "（なし）"
  ],
- "1 MiB": [
-  null,
-  "1 MiB"
- ],
  "1 day": [
   null,
   "1 日"
@@ -151,45 +139,13 @@ return plural;
   null,
   "1 週間"
  ],
- "128 KiB": [
-  null,
-  "128 KiB"
- ],
- "16 KiB": [
-  null,
-  "16 KiB"
- ],
- "2 MiB": [
-  null,
-  "2 MiB"
- ],
- "32 KiB": [
-  null,
-  "32 KiB"
- ],
- "4 KiB": [
-  null,
-  "4 KiB"
- ],
  "5 minutes": [
   null,
   "5 分"
  ],
- "512 KiB": [
-  null,
-  "512 KiB"
- ],
  "6 hours": [
   null,
   "6 時間"
- ],
- "64 KiB": [
-  null,
-  "64 KiB"
- ],
- "8 KiB": [
-  null,
-  "8 KiB"
  ],
  "<span>Encrypted $0</span>": [
   null,
@@ -211,69 +167,21 @@ return plural;
   null,
   "<span>$0 のパーティション</span>"
  ],
- "A spare disk needs to be added first before this disk can be removed.": [
-  null,
-  "このディスクを削除する前に、スペアディスクを追加する必要があります。"
- ],
  "Activate": [
   null,
   "有効化"
- ],
- "Activating $target": [
-  null,
-  "$target のアクティベート"
- ],
- "Add": [
-  null,
-  "追加する"
- ],
- "Add Disks": [
-  null,
-  "ディスクの追加"
- ],
- "Add iSCSI Portal": [
-  null,
-  "iSCSI ポータルの追加"
- ],
- "Adding physical volume to $target": [
-  null,
-  "$target への物理ボリュームの追加"
- ],
- "Address": [
-  null,
-  "アドレス:"
  ],
  "Apply": [
   null,
   "適用"
  ],
- "At least $0 disks are needed.": [
+ "Block Device": [
   null,
-  "少なくとも $0 ディスクが必要です。"
- ],
- "At least one disk is needed.": [
-  null,
-  "少なくとも 1 つのディスクが必要です。"
- ],
- "Authentication required": [
-  null,
-  "認証が必要です"
- ],
- "Available targets on $0": [
-  null,
-  "$0 で利用可能なターゲット"
- ],
- "Block": [
-  null,
-  ""
+  "ブロックデバイス"
  ],
  "Block device for filesystems": [
   null,
   "ファイルシステム用ブロックデバイス"
- ],
- "Blocked": [
-  null,
-  "ブロック済み"
  ],
  "Can't delete while unlocked": [
   null,
@@ -282,30 +190,6 @@ return plural;
  "Cancel": [
   null,
   "取り消し"
- ],
- "Change": [
-  null,
-  "変更"
- ],
- "Change iSCSI Initiator Name": [
-  null,
-  "iSCSI イニシエーター名の変更"
- ],
- "Checking RAID Device $target": [
-  null,
-  "RAID デバイス $target の確認"
- ],
- "Checking and Repairing RAID Device $target": [
-  null,
-  "RAID デバイス $target の確認および修復"
- ],
- "Chunk Size": [
-  null,
-  "チャンクサイズ"
- ],
- "Cleaning up for $target": [
-  null,
-  "$target のクリーンアップ"
  ],
  "Close": [
   null,
@@ -339,10 +223,6 @@ return plural;
   null,
   "パーティションの作成"
  ],
- "Create RAID Device": [
-  null,
-  "RAID デバイスの作成"
- ],
  "Create Snapshot": [
   null,
   "スナップショットの作成"
@@ -350,10 +230,6 @@ return plural;
  "Create Thin Volume": [
   null,
   "シンボリュームの作成"
- ],
- "Create Volume Group": [
-  null,
-  "ボリュームグループの作成"
  ],
  "Create new Logical Volume": [
   null,
@@ -371,30 +247,6 @@ return plural;
   null,
   "パーティションテーブルの作成"
  ],
- "Creating RAID Device $target": [
-  null,
-  "RAID デバイス $target の作成"
- ],
- "Creating filesystem on $target": [
-  null,
-  "$target 上でのファイルシステムの作成"
- ],
- "Creating logical volume $target": [
-  null,
-  "論理ボリューム $target の作成"
- ],
- "Creating partition $target": [
-  null,
-  "パーティション $target の作成"
- ],
- "Creating snapshot of $target": [
-  null,
-  "$target のスナップショットの作成"
- ],
- "Creating volume group $target": [
-  null,
-  "ボリュームグループ $target の作成"
- ],
  "Custom": [
   null,
   "Custom"
@@ -402,14 +254,6 @@ return plural;
  "Custom (Enter filesystem type)": [
   null,
   "カスタム (ファイルシステムタイプの入力)"
- ],
- "Custom encryption options": [
-  null,
-  ""
- ],
- "Custom mount options": [
-  null,
-  ""
  ],
  "DISK IS FAILING": [
   null,
@@ -423,10 +267,6 @@ return plural;
   null,
   "解除"
  ],
- "Deactivating $target": [
-  null,
-  "$target の非アクティブ化"
- ],
  "Default": [
   null,
   "デフォルト"
@@ -434,10 +274,6 @@ return plural;
  "Delete": [
   null,
   "削除"
- ],
- "Deleting $target": [
-  null,
-  "$target の削除中"
  ],
  "Deleting a RAID device will erase all data on it.": [
   null,
@@ -455,10 +291,6 @@ return plural;
   null,
   "ボリュームグループを削除すると、ボリュームグループ上のすべてのデータが削除されます。"
  ],
- "Deleting volume group $target": [
-  null,
-  "ボリュームグループ $target の削除"
- ],
  "Device is read-only": [
   null,
   "デバイスは読み取り専用です"
@@ -466,10 +298,6 @@ return plural;
  "Disk is OK": [
   null,
   "ディスクは OK です"
- ],
- "Disks": [
-  null,
-  "ディスク"
  ],
  "Don't overwrite existing data": [
   null,
@@ -487,17 +315,9 @@ return plural;
   null,
   "編集"
  ],
- "Ejecting $target": [
-  null,
-  "$target の取り出し中"
- ],
- "Emptying $target": [
-  null,
-  "$target を空にしています"
- ],
  "Encrypted $0": [
   null,
-  "暗号化されたデータ"
+  "暗号化された $0"
  ],
  "Encrypted EXT4 (LUKS)": [
   null,
@@ -505,11 +325,11 @@ return plural;
  ],
  "Encrypted Logical Volume of $0": [
   null,
-  "<span>暗号化された $0 の論理ボリューム</span>"
+  "暗号化された $0 の論理ボリューム"
  ],
  "Encrypted Partition of $0": [
   null,
-  "<span>暗号化された $0 のパーティション</span>†"
+  "暗号化された $0 のパーティション"
  ],
  "Encrypted XFS (LUKS)": [
   null,
@@ -527,10 +347,6 @@ return plural;
   null,
   "削除"
  ],
- "Erasing $target": [
-  null,
-  "$target の削除中"
- ],
  "Error": [
   null,
   "エラー"
@@ -538,10 +354,6 @@ return plural;
  "Extended Partition": [
   null,
   "拡張パーティション"
- ],
- "FAILED": [
-  null,
-  "失敗"
  ],
  "Filesystem": [
   null,
@@ -595,33 +407,17 @@ return plural;
   null,
   "今すぐ移動"
  ],
- "In Sync": [
-  null,
-  "同期"
- ],
  "Inactive volume": [
   null,
   "非アクティブなボリューム"
- ],
- "Invalid username or password": [
-  null,
-  "無効なユーザー名またはパスワード"
  ],
  "Jobs": [
   null,
   "ジョブ"
  ],
- "Local Mount Point": [
-  null,
-  ""
- ],
  "Lock": [
   null,
   "ロック"
- ],
- "Locking $target": [
-  null,
-  "$target のロック中"
  ],
  "Logical Volume": [
   null,
@@ -633,11 +429,7 @@ return plural;
  ],
  "Logical Volume of $0": [
   null,
-  "論理ボリューム"
- ],
- "Marking $target as faulty": [
-  null,
-  "$target を問題があるものとしてマークする"
+  "$0 の論理ボリューム"
  ],
  "Member of RAID Device": [
   null,
@@ -651,10 +443,6 @@ return plural;
   null,
   "使用済みメタデータ"
  ],
- "Modifying $target": [
-  null,
-  "$target の変更"
- ],
  "Mount": [
   null,
   "マウント"
@@ -667,30 +455,6 @@ return plural;
   null,
   "マウントポイント"
  ],
- "Mount at boot": [
-  null,
-  ""
- ],
- "Mount options": [
-  null,
-  ""
- ],
- "Mount point can not be empty": [
-  null,
-  ""
- ],
- "Mount point cannot be empty.": [
-  null,
-  ""
- ],
- "Mount point must start with \"/\".": [
-  null,
-  ""
- ],
- "Mount read only": [
-  null,
-  ""
- ],
  "Mounted At": [
   null,
   "マウント場所"
@@ -698,18 +462,6 @@ return plural;
  "Mounting": [
   null,
   "マウント"
- ],
- "Mounting $target": [
-  null,
-  "$target のマウント"
- ],
- "NFS Mount": [
-  null,
-  "NFS マウント"
- ],
- "NFS Mounts": [
-  null,
-  ""
  ],
  "NTFS - Compatible with most systems": [
   null,
@@ -721,27 +473,19 @@ return plural;
  ],
  "Name cannot be empty.": [
   null,
-  "名前は空にすることができません。"
+  "名前は、空にすることができません。"
  ],
  "Name cannot be longer than 127 characters.": [
   null,
-  "名前は 127 文字を超えることができません。"
+  "名前は、127 文字を超えることができません。"
  ],
  "Name cannot contain the character '$0'.": [
   null,
-  "名前には文字 '$0' を含めることができません。"
+  "名前には、文字 '$0' を使用することができません。"
  ],
  "Name cannot contain whitespace.": [
   null,
-  "名前にはスペースを含めることができません。"
- ],
- "New NFS Mount": [
-  null,
-  ""
- ],
- "Next": [
-  null,
-  "次へ"
+  "名前には、スペースを使用することができません。"
  ],
  "No Filesystem": [
   null,
@@ -750,14 +494,6 @@ return plural;
  "No Logical Volumes": [
   null,
   "論理ボリュームなし"
- ],
- "No NFS mounts set up": [
-  null,
-  ""
- ],
- "No disks are available.": [
-  null,
-  "ディスクが利用できません。"
  ],
  "No drives attached": [
   null,
@@ -803,17 +539,9 @@ return plural;
   null,
   "オン"
  ],
- "Operation '$operation' on $target": [
-  null,
-  "$target 上の操作 '$operation'"
- ],
  "Options": [
   null,
   "オプション"
- ],
- "Options cannot be empty.": [
-  null,
-  ""
  ],
  "Other Devices": [
   null,
@@ -829,7 +557,7 @@ return plural;
  ],
  "Partition of $0": [
   null,
-  "パーティション"
+  "$0 のパーティション"
  ],
  "Partitioning": [
   null,
@@ -847,27 +575,7 @@ return plural;
   null,
   "パスフレーズが一致しません"
  ],
- "Password": [
-  null,
-  "パスワード"
- ],
- "Path on Server": [
-  null,
-  ""
- ],
- "Path on server cannot be empty.": [
-  null,
-  ""
- ],
- "Path on server must start with \"/\".": [
-  null,
-  ""
- ],
  "Physical Volume": [
-  null,
-  "物理ボリューム"
- ],
- "Physical Volumes": [
   null,
   "物理ボリューム"
  ],
@@ -895,10 +603,6 @@ return plural;
   null,
   "シンプロビジョニングされたボリューム用プール"
  ],
- "Port": [
-  null,
-  "ポート"
- ],
  "Purpose": [
   null,
   "目的"
@@ -911,49 +615,25 @@ return plural;
   null,
   "RAID 0"
  ],
- "RAID 0 (Stripe)": [
-  null,
-  "RAID 0 (ストライプ)"
- ],
  "RAID 1": [
   null,
   "RAID 1"
- ],
- "RAID 1 (Mirror)": [
-  null,
-  "RAID 1 (ミラー)"
  ],
  "RAID 10": [
   null,
   "RAID 10"
  ],
- "RAID 10 (Stripe of Mirrors)": [
-  null,
-  "RAID 10 (ミラーのストライプ)"
- ],
  "RAID 4": [
   null,
   "RAID 4"
- ],
- "RAID 4 (Dedicated Parity)": [
-  null,
-  "RAID 4 (専用パリティー)"
  ],
  "RAID 5": [
   null,
   "RAID 5"
  ],
- "RAID 5 (Distributed Parity)": [
-  null,
-  "RAID 5 (分散パリティー)"
- ],
  "RAID 6": [
   null,
   "RAID 6"
- ],
- "RAID 6 (Double Distributed Parity)": [
-  null,
-  "RAID 6 (ダブル分散パリティー)"
  ],
  "RAID Device": [
   null,
@@ -967,10 +647,6 @@ return plural;
   null,
   "RAID デバイス"
  ],
- "RAID Level": [
-  null,
-  "RAID レベル"
- ],
  "RAID Member": [
   null,
   "RAID メンバー"
@@ -982,22 +658,6 @@ return plural;
  "Reboot": [
   null,
   "再起動"
- ],
- "Recovering": [
-  null,
-  "復旧"
- ],
- "Recovering RAID Device $target": [
-  null,
-  "RAID デバイス $target の復旧"
- ],
- "Removing $target from RAID Device": [
-  null,
-  "$target を RAID デバイスから削除"
- ],
- "Removing physical volume from $target": [
-  null,
-  "$target  から物理ボリュームを削除"
  ],
  "Rename": [
   null,
@@ -1011,10 +671,6 @@ return plural;
   null,
   "ボリュームグループの名前変更"
  ],
- "Renaming $target": [
-  null,
-  "$target の名前変更"
- ],
  "Resize": [
   null,
   "サイズの変更"
@@ -1027,41 +683,9 @@ return plural;
   null,
   "論理ボリュームのサイズ変更"
  ],
- "Resizing $target": [
-  null,
-  "$target のサイズ変更"
- ],
  "Running": [
   null,
   "実行中"
- ],
- "SMART self-test of $target": [
-  null,
-  "$target の SMART 自己テスト"
- ],
- "Securely erasing $target": [
-  null,
-  "$target を安全に削除"
- ],
- "Server": [
-  null,
-  "サーバー"
- ],
- "Server Address": [
-  null,
-  "サーバーアドレス"
- ],
- "Server address cannot be empty.": [
-  null,
-  "サーバーアドレスは空にできません。"
- ],
- "Server cannot be empty.": [
-  null,
-  ""
- ],
- "Setting up loop device $target": [
-  null,
-  "ループデバイス $target の設定"
  ],
  "Size": [
   null,
@@ -1083,10 +707,6 @@ return plural;
   null,
   "サイズは数値である必要があります"
  ],
- "Spare": [
-  null,
-  "スペア"
- ],
  "Start": [
   null,
   "開始日"
@@ -1099,14 +719,6 @@ return plural;
   null,
   "Scrubbing の起動"
  ],
- "Starting RAID Device $target": [
-  null,
-  "RAID デバイス $target の起動"
- ],
- "Starting swapspace $target": [
-  null,
-  "スワップ領域 $target の起動"
- ],
  "Stop": [
   null,
   "停止"
@@ -1115,25 +727,13 @@ return plural;
   null,
   "Scrubbing の停止"
  ],
- "Stop and remove": [
-  null,
-  ""
- ],
- "Stop and unmount": [
-  null,
-  ""
- ],
- "Stopping RAID Device $target": [
-  null,
-  "RAID デバイス $target の停止"
- ],
- "Stopping swapspace $target": [
-  null,
-  "スワップ領域 $target の停止"
- ],
  "Storage": [
   null,
   "ストレージ"
+ ],
+ "Storage Log": [
+  null,
+  "ストレージログ"
  ],
  "Storage Logs": [
   null,
@@ -1155,89 +755,49 @@ return plural;
   null,
   "スワップ"
  ],
- "Synchronizing RAID Device $target": [
-  null,
-  "RAID デバイス $target の同期"
- ],
- "Targets": [
-  null,
-  "ターゲット"
- ],
  "The \"storaged\" API is not available on this system.": [
   null,
-  "\"storaged\" API はこのシステムでは利用できません。"
+  "\"storaged\" API は、このシステムでは利用できません。"
  ],
  "The RAID Array is in a degraded state": [
   null,
   "RAID アレイは劣化状態にあります"
  ],
- "The RAID device must be running in order to add spare disks.": [
-  null,
-  "スペアディスクを追加する場合は、MDRAID デバイスが実行中である必要があります。"
- ],
- "The RAID device must be running in order to remove disks.": [
-  null,
-  "ディスクを取り外す場合は、RAID デバイスが実行中である必要があります。"
- ],
- "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
-  null,
-  ""
- ],
- "The last disk of a RAID device cannot be removed.": [
-  null,
-  "RAID デバイスの最後のディスクは取り外すことができません。"
- ],
- "The last physical volume of a volume group cannot be removed.": [
-  null,
-  "ボリュームグループの最後の物理ボリュームは削除できません。"
- ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
-  "ユーザー <b>$0</b> はストレージを管理することを許可されていません"
+  "ユーザー <b>$0</b> は、ストレージを管理することを許可されていません"
  ],
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
   null,
   "システムに複数のパスを持つデバイスがありますが、マルチパスサービスが実行されていません。"
  ],
- "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
-  null,
-  "この物理ボリュームを削除するのに十分な空き領域がありません。少なくとも $0 の空き領域が必要です。"
- ],
  "Thin Logical Volume": [
   null,
   "シン論理ボリューム"
  ],
- "This NFS mount is in use and only its options can be changed.": [
-  null,
-  ""
- ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
-  ""
+  "このデバイスには、現在使用中のファイルシステムがあります。                続行すると、このデバイスのファイルシステムをすべてアンマウントします。"
  ],
  "This device is currently used for RAID devices.": [
   null,
-  ""
+  "このデバイスは、現在 RAID デバイスに使用されています。"
  ],
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
   null,
-  ""
+  "このデバイスは、現在 RAID デバイスに使用されています。                続行すると、RAID デバイスからこのデバイスが削除されます。"
  ],
  "This device is currently used for volume groups.": [
   null,
-  ""
+  "このデバイスは、現在ボリュームグループに使用されています。"
  ],
  "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
   null,
-  ""
- ],
- "This disk cannot be removed while the device is recovering.": [
-  null,
-  "このディスクは、デバイスが復旧中に取り外すことができません。"
+  "このデバイスは現在ボリュームグループに使用されています。                続行すると、そのボリュームグループからこのデバイスが削除されます。"
  ],
  "This logical volume cannot be made smaller.": [
   null,
-  "この論理ボリュームは小さくすることができません。"
+  "この論理ボリュームは、小さくすることができません。"
  ],
  "Type": [
   null,
@@ -1247,53 +807,17 @@ return plural;
   null,
   "UUID"
  ],
- "Unable to reach server": [
-  null,
-  "サーバーに到達できません"
- ],
- "Unable to remove mount": [
-  null,
-  ""
- ],
- "Unable to unmount filesystem": [
-  null,
-  ""
- ],
  "Unknown": [
   null,
   "不明"
- ],
- "Unknown ($0)": [
-  null,
-  "不明な ($0)"
- ],
- "Unknown host name": [
-  null,
-  "不明なホスト名"
  ],
  "Unlock": [
   null,
   "ロック解除"
  ],
- "Unlock at boot": [
-  null,
-  ""
- ],
- "Unlock read only": [
-  null,
-  ""
- ],
- "Unlocking $target": [
-  null,
-  "$target をロック解除中"
- ],
  "Unmount": [
   null,
   "アンマウント"
- ],
- "Unmounting $target": [
-  null,
-  "$target のアンマウント中"
  ],
  "Unrecognized Data": [
   null,
@@ -1311,17 +835,9 @@ return plural;
   null,
   "Used"
  ],
- "Username": [
-  null,
-  "ユーザー名"
- ],
  "VFAT - Compatible with all systems and devices": [
   null,
   "VFAT - すべてのシステムおよびデバイスとの互換性あり"
- ],
- "Very securely erasing $target": [
-  null,
-  "$target を非常に安全に削除"
  ],
  "Volume": [
   null,
@@ -1338,10 +854,6 @@ return plural;
  "Volume Groups": [
   null,
   "ボリュームグループ"
- ],
- "Write-mostly": [
-  null,
-  "Write-mostly"
  ],
  "Writing": [
   null,
@@ -1371,10 +883,6 @@ return plural;
   null,
   "iSCSI ターゲット"
  ],
- "unknown target": [
-  null,
-  "不明なターゲット"
- ],
  "unpartitioned space on $0": [
   null,
   "$0 の未パーティション領域"
@@ -1399,25 +907,57 @@ return plural;
   null,
   "認識されないデータ"
  ],
- "storage\u0004Drive": [
+ "storage\u0004Assessment": [
   null,
-  "ドライブ"
+  "評価"
  ],
- "storage\u0004Hard Disk": [
+ "storage\u0004Bitmap": [
   null,
-  "ハードディスク"
+  "ビットマップ"
  ],
- "storage\u0004Optical Drive": [
+ "storage\u0004Capacity": [
   null,
-  "光学ドライブ"
+  "容量"
  ],
- "storage\u0004Removable Drive": [
+ "storage\u0004Device": [
   null,
-  "リムーバブルドライブ"
+  "デバイス"
  ],
- "storage\u0004Solid-State Disk": [
+ "storage\u0004Device File": [
   null,
-  "ソリッドステートディスク"
+  "デバイスファイル"
+ ],
+ "storage\u0004Firmware Version": [
+  null,
+  "ファームウェアバージョン"
+ ],
+ "storage\u0004Model": [
+  null,
+  "モデル"
+ ],
+ "storage\u0004Multipathed Devices": [
+  null,
+  "マルチパスデバイス"
+ ],
+ "storage\u0004RAID Level": [
+  null,
+  "RAID レベル"
+ ],
+ "storage\u0004Serial Number": [
+  null,
+  "シリアル番号"
+ ],
+ "storage\u0004State": [
+  null,
+  "ステート"
+ ],
+ "storage\u0004UUID": [
+  null,
+  "UUID"
+ ],
+ "storage\u0004World Wide Name": [
+  null,
+  "ワールドワイド名"
  ],
  "format-bytes\u0004bytes": [
   null,

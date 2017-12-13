@@ -153,7 +153,7 @@ return plural;
  ],
  "Next": [
   null,
-  ""
+  "Seuraava"
  ],
  "Off": [
   null,

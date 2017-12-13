@@ -105,11 +105,11 @@ return plural;
  ],
  "No description provided.": [
   null,
-  ""
+  "No se ha suministrado descripción."
  ],
  "No installation package found for this application.": [
   null,
-  ""
+  "No se ha encontrado paquete de instalación para esta aplicación."
  ],
  "Ok": [
   null,

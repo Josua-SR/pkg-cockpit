@@ -69,7 +69,7 @@ return plural;
  },
  "Applications": [
   null,
-  ""
+  "Aplikace"
  ],
  "Cancel": [
   null,
@@ -77,7 +77,7 @@ return plural;
  ],
  "Checking for new applications": [
   null,
-  ""
+  "Hledám nové aplikace"
  ],
  "Close": [
   null,

@@ -20,7 +20,6 @@
 (function() {
     "use strict";
 
-    var $ = require("jquery");
     var cockpit = require("cockpit");
 
     var mustache = require("mustache");
@@ -196,7 +195,7 @@
         return name;
     };
 
-    utils.get_block_link_target = function get_block_link_target(client, path) {
+    utils.get_block_link_parts = function get_block_link_parts(client, path) {
         var is_part, is_crypt, is_lvol;
 
         while (true) {
@@ -213,52 +212,53 @@
         if (client.blocks_lvm2[path] && client.lvols[client.blocks_lvm2[path].LogicalVolume])
             is_lvol = true;
 
-        function fmt_part(link) {
-            // Partitions of logical volumes are shown as just logical volumes.
-            if (is_lvol && is_crypt)
-                return cockpit.format(_("<span>Encrypted Logical Volume of $0</span>"), link);
-            else if (is_part && is_crypt)
-                return cockpit.format(_("<span>Encrypted Partition of $0</span>"), link);
-            else if (is_lvol)
-                return cockpit.format(_("<span>Logical Volume of $0</span>"), link);
-            else if (is_part)
-                return cockpit.format(_("<span>Partition of $0</span>"), link);
-            else if (is_crypt)
-                return cockpit.format(_("<span>Encrypted $0</span>"), link);
-            else
-                return link;
-        }
-
         var block = client.blocks[path];
         if (!block)
             return;
 
-        var type, target, name;
+        var location, link;
         if (client.mdraids[block.MDRaid]) {
-            type = "mdraid";
-            target = client.mdraids[block.MDRaid].UUID;
-            name = cockpit.format(_("RAID Device $0"), utils.mdraid_name(client.mdraids[block.MDRaid]));
+            location = [ "mdraid", client.mdraids[block.MDRaid].UUID ];
+            link = cockpit.format(_("RAID Device $0"), utils.mdraid_name(client.mdraids[block.MDRaid]));
         } else if (client.blocks_lvm2[path] &&
                    client.lvols[client.blocks_lvm2[path].LogicalVolume] &&
                    client.vgroups[client.lvols[client.blocks_lvm2[path].LogicalVolume].VolumeGroup]) {
-            type = "vgroup";
-            target = client.vgroups[client.lvols[client.blocks_lvm2[path].LogicalVolume].VolumeGroup].Name;
-            name = cockpit.format(_("Volume Group $0"), target);
+            var target = client.vgroups[client.lvols[client.blocks_lvm2[path].LogicalVolume].VolumeGroup].Name;
+            location = [ "vg", target ];
+            link = cockpit.format(_("Volume Group $0"), target);
         } else {
-            type = "block";
-            target = utils.block_name(block).replace(/^\/dev\//, "");
+            location = [ utils.block_name(block).replace(/^\/dev\//, "") ];
             if (client.drives[block.Drive])
-                name = utils.drive_name(client.drives[block.Drive]);
+                link = utils.drive_name(client.drives[block.Drive]);
             else
-                name = utils.block_name(block);
+                link = utils.block_name(block);
         }
 
+        // Partitions of logical volumes are shown as just logical volumes.
+        var format;
+        if (is_lvol && is_crypt)
+            format = _("Encrypted Logical Volume of $0");
+        else if (is_part && is_crypt)
+            format = _("Encrypted Partition of $0");
+        else if (is_lvol)
+            format = _("Logical Volume of $0");
+        else if (is_part)
+            format = _("Partition of $0");
+        else if (is_crypt)
+            format = _("Encrypted $0");
+        else
+            format = "$0";
+
         return {
-            type: type,
-            target: target,
-            html: fmt_part(mustache.render('<a data-goto-{{type}}="{{target}}">{{name}}</a>',
-                                           { type: type, target: target, name: name }))
+            location: location,
+            format: format,
+            link: link
         };
+    };
+
+    utils.go_to_block = function (client, path) {
+        var parts = utils.get_block_link_parts(client, path);
+        cockpit.location.go(parts.location);
     };
 
     utils.get_partitions = function get_partitions(client, block) {
@@ -376,8 +376,8 @@
 
         function make(path) {
             var block = client.blocks[path];
-            var link = utils.get_block_link_target(client, path);
-            var text = $('<div>').html(link.html).text();
+            var parts = utils.get_block_link_parts(client, path);
+            var text = cockpit.format(parts.format, parts.link);
             return { type: 'block', block: block, size: block.Size, desc: text };
         }
 
@@ -385,12 +385,12 @@
 
         function add_free_spaces(block) {
             var parts = utils.get_partitions(client, block);
-            var i, p, link, text;
+            var i, p, link_parts, text;
             for (i in parts) {
                 p = parts[i];
                 if (p.type == 'free') {
-                    link = utils.get_block_link_target(client, block.path);
-                    text = $('<div>').html(link.html).text();
+                    link_parts = utils.get_block_link_parts(client, block.path);
+                    text = cockpit.format(link_parts.format, link_parts.link);
                     spaces.push({ type: 'free', block: block, start: p.start, size: p.size,
                                   desc: cockpit.format(_("unpartitioned space on $0"), text) });
                 }
@@ -452,22 +452,6 @@
             multipathd_service = service.proxy("multipathd");
         return multipathd_service;
     };
-
-    utils.init_arming_zones = function init_arming_zones($top) {
-        $top.on('click', 'button.arm-button', function () {
-            var was_active = $(this).hasClass('active');
-            $(this).toggleClass('active', !was_active);
-            $(this).parents('.arming-zone').toggleClass('armed', !was_active);
-        });
-    };
-
-    utils.reset_arming_zone = function reset_arming_zone($btn) {
-        var $zone = $btn.parents('.arming-zone');
-        var $arm_btn = $zone.find('.arm-button');
-        $arm_btn.removeClass('active');
-        $zone.removeClass('armed');
-    };
-
 
     utils.get_parent = function(client, path) {
         if (client.blocks_part[path] && client.blocks[client.blocks_part[path].Table])
@@ -668,103 +652,6 @@
                              mdraid_remove(usage.raw.filter(function(use) { return use.usage == "mdraid-member"; })),
                              pvol_remove(usage.raw.filter(function(use) { return use.usage == "pvol"; }))
                            ]);
-    };
-
-    /* jQuery.amend function. This will be removed as we move towards React */
-
-    function sync(output, input, depth) {
-        var na, nb, a, b, i;
-        var attrs, attr, seen;
-
-        if (depth > 0) {
-            if (output.nodeType != input.nodeType ||
-                output.nodeName != input.nodeName ||
-                (output.nodeType != 1 && output.nodeType != 3)) {
-                output.parentNode.replaceChild(input.parentNode.removeChild(input), output);
-                return;
-
-            } else if (output.nodeType == 3) {
-                if (output.nodeValue != input.nodeValue)
-                    output.nodeValue = input.nodeValue;
-                return;
-            }
-        }
-
-        if (output.nodeType == 1) {
-
-            /* Sync attributes */
-            if (depth > 0) {
-                seen = { };
-                attrs = output.attributes;
-                for (i = attrs.length - 1; i >= 0; i--)
-                    seen[attrs[i].name] = attrs[i].value;
-                for (i = input.attributes.length - 1; i >= 0; i--) {
-                    attr = input.attributes[i];
-                    if (seen[attr.name] !== attr.value)
-                        output.setAttribute(attr.name, attr.value);
-                    delete seen[attr.name];
-                }
-                for (i in seen)
-                    output.removeAttribute(i);
-            }
-
-            /* Sync children */
-            na = output.firstChild;
-            nb = input.firstChild;
-            for(;;) {
-                a = na;
-                b = nb;
-                while (a && a.nodeType != 1 && a.nodeType != 3)
-                    a = a.nextSibling;
-                while (b && b.nodeType != 1 && b.nodeType != 3)
-                    b = b.nextSibling;
-                if (!a && !b) {
-                    break;
-                } else if (!a) {
-                    na = null;
-                    nb = b.nextSibling;
-                    output.appendChild(input.removeChild(b));
-                } else if (!b) {
-                    na = a.nextSibling;
-                    nb = null;
-                    output.removeChild(a);
-                } else {
-                    na = a.nextSibling;
-                    nb = b.nextSibling;
-                    sync(a, b, (depth || 0) + 1);
-                }
-            }
-        }
-    }
-
-    $.fn.amend = function amend(data, options) {
-        this.each(function() {
-            var el = $("<div>").html(data);
-            sync(this, el[0], 0);
-        });
-        return this;
-    };
-
-    /* Prevent flicker due to the marriage of jQuery and React here */
-    utils.hide = function hide(selector) {
-        var element = document.querySelector("#storage-detail");
-        element.setAttribute("hidden", "");
-    };
-
-    utils.show_soon = function show_soon(selector, ready) {
-        var element = document.querySelector(selector);
-        if (!element.hasAttribute("hidden"))
-            return;
-        var val = element.getAttribute("hidden");
-        if (ready) {
-            element.removeAttribute("hidden");
-            window.clearTimeout(parseInt(val, 10));
-        } else if (!val) {
-            val = window.setTimeout(function() {
-                show_soon(selector, true);
-            }, 2000);
-            element.setAttribute("hidden", String(val));
-        }
     };
 
     module.exports = utils;

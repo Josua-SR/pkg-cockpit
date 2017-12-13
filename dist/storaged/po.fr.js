@@ -198,26 +198,6 @@ return plural;
   null,
   "8 Kio"
  ],
- "<span>Encrypted $0</span>": [
-  null,
-  "<span>$0 chiffré(e)</span>"
- ],
- "<span>Encrypted Logical Volume of $0</span>": [
-  null,
-  ""
- ],
- "<span>Encrypted Partition of $0</span>": [
-  null,
-  "<span>Partition chiffrée de $0</span>"
- ],
- "<span>Logical Volume of $0</span>": [
-  null,
-  "<span>Volume logique de $0</span>"
- ],
- "<span>Partition of $0</span>": [
-  null,
-  "<span>Partition de $0</span>"
- ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
   ""
@@ -411,6 +391,10 @@ return plural;
   "Personnalisé (indiquer le type de système de fichiers)"
  ],
  "Custom encryption options": [
+  null,
+  ""
+ ],
+ "Custom mount option": [
   null,
   ""
  ],
@@ -798,6 +782,10 @@ return plural;
   null,
   "Non trouvé"
  ],
+ "Not mounted": [
+  null,
+  ""
+ ],
  "Not running": [
   null,
   ""
@@ -817,10 +805,6 @@ return plural;
  "Options": [
   null,
   "Options"
- ],
- "Options cannot be empty.": [
-  null,
-  ""
  ],
  "Other Devices": [
   null,

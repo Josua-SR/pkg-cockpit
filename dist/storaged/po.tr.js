@@ -198,26 +198,6 @@ return plural;
   null,
   ""
  ],
- "<span>Encrypted $0</span>": [
-  null,
-  ""
- ],
- "<span>Encrypted Logical Volume of $0</span>": [
-  null,
-  ""
- ],
- "<span>Encrypted Partition of $0</span>": [
-  null,
-  ""
- ],
- "<span>Logical Volume of $0</span>": [
-  null,
-  ""
- ],
- "<span>Partition of $0</span>": [
-  null,
-  ""
- ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
   ""
@@ -411,6 +391,10 @@ return plural;
   "Özel (Dosya sistemi tipi girin)"
  ],
  "Custom encryption options": [
+  null,
+  ""
+ ],
+ "Custom mount option": [
   null,
   ""
  ],
@@ -798,6 +782,10 @@ return plural;
   null,
   "Bulunamadı"
  ],
+ "Not mounted": [
+  null,
+  ""
+ ],
  "Not running": [
   null,
   "Çalışmıyor"
@@ -817,10 +805,6 @@ return plural;
  "Options": [
   null,
   "Seçenekler"
- ],
- "Options cannot be empty.": [
-  null,
-  ""
  ],
  "Other Devices": [
   null,

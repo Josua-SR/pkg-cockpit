@@ -189,7 +189,7 @@ return plural;
  ],
  "Not authorized to update software on this system": [
   null,
-  "このシステム上のソフトウェアを更新する権限がありません"
+  "このシステムのソフトウェアを更新する権限がありません"
  ],
  "OS $0 not found": [
   null,

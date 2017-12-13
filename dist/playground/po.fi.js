@@ -124,11 +124,11 @@ return plural;
  ],
  "Memory": [
   null,
-  ""
+  "Muisti"
  ],
  "Network": [
   null,
-  ""
+  "Verkko"
  ],
  "No matching files found": [
   null,
@@ -136,7 +136,7 @@ return plural;
  ],
  "Not Ready": [
   null,
-  ""
+  "Ei valmiina"
  ],
  "Off": [
   null,
@@ -144,7 +144,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "OK"
  ],
  "On": [
   null,
@@ -156,11 +156,11 @@ return plural;
  ],
  "Ready": [
   null,
-  ""
+  "Valmis"
  ],
  "Too many files found": [
   null,
-  ""
+  "Löytyi liian monta tiedostoa"
  ],
  "Unavailable": [
   null,
@@ -189,6 +189,6 @@ return plural;
  ],
  "verb\u0004Ready": [
   null,
-  ""
+  "Valmis"
  ]
 }));

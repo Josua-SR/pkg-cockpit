@@ -675,11 +675,11 @@ return plural;
  ],
  "Login commands": [
   null,
-  ""
+  "Kirjautumiskomennot"
  ],
  "Logs": [
   null,
-  ""
+  "Lokit"
  ],
  "Machine ID": [
   null,
@@ -699,23 +699,23 @@ return plural;
  ],
  "Members": [
   null,
-  ""
+  "Jäsenet"
  ],
  "Membership": [
   null,
-  ""
+  "Jäsenyys"
  ],
  "Memory": [
   null,
-  ""
+  "Muisti"
  ],
  "Memory Utilization: $0%": [
   null,
-  ""
+  "Muistin käyttö: $0%"
  ],
  "Message": [
   null,
-  ""
+  "Viesti"
  ],
  "Metadata": [
   null,
@@ -723,7 +723,7 @@ return plural;
  ],
  "Modify": [
   null,
-  ""
+  "Muokkaa"
  ],
  "Monitors": [
   null,
@@ -731,19 +731,19 @@ return plural;
  ],
  "Mount Location": [
   null,
-  ""
+  "Liitossijainti"
  ],
  "NFS": [
   null,
-  ""
+  "NFS"
  ],
  "NFS Mount": [
   null,
-  ""
+  "NFS-liitos"
  ],
  "Name": [
   null,
-  ""
+  "Nimi"
  ],
  "Namespace": [
   null,
@@ -755,15 +755,15 @@ return plural;
  ],
  "Network": [
   null,
-  ""
+  "Verkko"
  ],
  "New Group": [
   null,
-  ""
+  "Uusi ryhmä"
  ],
  "New Project": [
   null,
-  ""
+  "Uusi projekti"
  ],
  "New image stream": [
   null,
@@ -771,7 +771,7 @@ return plural;
  ],
  "New project": [
   null,
-  ""
+  "Uusi projekti"
  ],
  "No": [
   null,
@@ -851,7 +851,7 @@ return plural;
  ],
  "Not Ready": [
   null,
-  ""
+  "Ei valmiina"
  ],
  "Not a valid number of replicas": [
   null,
@@ -867,11 +867,11 @@ return plural;
  ],
  "OS": [
   null,
-  ""
+  "Käyttöjärjestelmä"
  ],
  "OS Versions": [
   null,
-  ""
+  "Käyttöjärjestelmäversiot"
  ],
  "Operating System": [
   null,
@@ -879,7 +879,7 @@ return plural;
  ],
  "Options": [
   null,
-  ""
+  "Valinnat"
  ],
  "Overview": [
   null,
@@ -895,11 +895,11 @@ return plural;
  ],
  "Password": [
   null,
-  ""
+  "Salasana"
  ],
  "Path": [
   null,
-  ""
+  "Polku"
  ],
  "Pending Volume Claims": [
   null,
@@ -1023,7 +1023,7 @@ return plural;
  ],
  "Ports": [
   null,
-  ""
+  "Portit"
  ],
  "Private: Allow only specific users or groups to pull images": [
   null,
@@ -1031,11 +1031,11 @@ return plural;
  ],
  "Project": [
   null,
-  ""
+  "Projekti"
  ],
  "Project Members": [
   null,
-  ""
+  "Projektin jäsenet"
  ],
  "Project access policy allows anonymous users to pull images.": [
   null,
@@ -1051,11 +1051,11 @@ return plural;
  ],
  "Project:": [
   null,
-  ""
+  "Projekti:"
  ],
  "Projects": [
   null,
-  ""
+  "Projektit"
  ],
  "Proxy Version": [
   null,
@@ -1103,11 +1103,11 @@ return plural;
  ],
  "Ready": [
   null,
-  ""
+  "Valmis"
  ],
  "Reason": [
   null,
-  ""
+  "Syy"
  ],
  "Reclaim Policy": [
   null,
@@ -1139,23 +1139,23 @@ return plural;
  ],
  "Remove": [
   null,
-  ""
+  "Poista"
  ],
  "Remove Group": [
   null,
-  ""
+  "Poista ryhmä"
  ],
  "Remove Member": [
   null,
-  ""
+  "Poista jäsen"
  ],
  "Remove Role": [
   null,
-  ""
+  "Poista rooli"
  ],
  "Remove User": [
   null,
-  ""
+  "Poista käyttäjä"
  ],
  "Remove image tag": [
   null,
@@ -1163,7 +1163,7 @@ return plural;
  ],
  "Remove membership": [
   null,
-  ""
+  "Poista jäsenyys"
  ],
  "Replicas": [
   null,
@@ -1195,15 +1195,15 @@ return plural;
  ],
  "Requires Authentication": [
   null,
-  ""
+  "Vaatii tunnistautumisen"
  ],
  "Restart Count": [
   null,
-  ""
+  "Uudelleenkäynnistysten lukumäärä"
  ],
  "Restart Policy": [
   null,
-  ""
+  "Uudelleenkäynnistyksen käytäntö"
  ],
  "Retain": [
   null,
@@ -1215,19 +1215,19 @@ return plural;
  ],
  "Role": [
   null,
-  ""
+  "Rooli"
  ],
  "Roles": [
   null,
-  ""
+  "Roolit"
  ],
  "Route": [
   null,
-  ""
+  "Reitti"
  ],
  "Routes": [
   null,
-  ""
+  "Reitit"
  ],
  "Scheduled Pods": [
   null,
@@ -1263,19 +1263,19 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "Palvelin"
  ],
  "Service": [
   null,
-  ""
+  "Palvelu"
  ],
  "Service Account": [
   null,
-  ""
+  "Palvelutili"
  ],
  "Services": [
   null,
-  ""
+  "Palvelut"
  ],
  "Services group pods and provide a common DNS name and an optional, load-balanced IP address to access them.": [
   null,
@@ -1287,7 +1287,7 @@ return plural;
  ],
  "Share Name": [
   null,
-  ""
+  "Jaon nimi"
  ],
  "Shared: Allow any authenticated user to pull images": [
   null,
@@ -1331,11 +1331,11 @@ return plural;
  ],
  "Show all Routes": [
   null,
-  ""
+  "Näytä kaikki reitit"
  ],
  "Show all Services": [
   null,
-  ""
+  "Näytä kaikki palvelut"
  ],
  "Show all image streams": [
   null,
@@ -1351,11 +1351,11 @@ return plural;
  ],
  "Size": [
   null,
-  ""
+  "Koko"
  ],
  "Skip Certificate Verification": [
   null,
-  ""
+  "Ohita varmenteen vahvistaminen"
  ],
  "Sorry, I don't know how to modify this volume": [
   null,
@@ -1363,11 +1363,11 @@ return plural;
  ],
  "State": [
   null,
-  ""
+  "Tila"
  ],
  "Status": [
   null,
-  ""
+  "Tila"
  ],
  "Strategy": [
   null,
@@ -1403,7 +1403,7 @@ return plural;
  ],
  "The address contains invalid characters": [
   null,
-  ""
+  "Osoite sisltää virheellisiä merkkejä"
  ],
  "The container '{{ target }}' does not exist.": [
   null,
@@ -1415,7 +1415,7 @@ return plural;
  ],
  "The group '{{ groupName }}' does not exist.": [
   null,
-  ""
+  "Ryhmää '{{ groupName }}' ei ole olemassa."
  ],
  "The maximum number of replicas is 128": [
   null,
@@ -1447,7 +1447,7 @@ return plural;
  ],
  "The project '{{ projName }}' does not exist.": [
   null,
-  ""
+  "Projektia '{{ projName }}' ei ole olemassa."
  ],
  "The replication controller '{{ target }}' does not exist.": [
   null,
@@ -1467,11 +1467,11 @@ return plural;
  ],
  "The service '{{ target }}' does not exist.": [
   null,
-  ""
+  "Palvelua '{{ target }}' ei ole olemassa."
  ],
  "The user '{{ userName }}' does not exist.": [
   null,
-  ""
+  "Käyttäjää '{{ userName }}' ei ole olemassa."
  ],
  "This claim is in use. Deleting it may cause issues with the following pod:": [
   null,
@@ -1575,7 +1575,7 @@ return plural;
  ],
  "Volumes": [
   null,
-  ""
+  "Taltiot"
  ],
  "Warning:": [
   null,

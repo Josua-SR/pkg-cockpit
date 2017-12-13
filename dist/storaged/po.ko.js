@@ -191,26 +191,6 @@ return plural;
   null,
   ""
  ],
- "<span>Encrypted $0</span>": [
-  null,
-  "<span>암호화 된 $0</span>"
- ],
- "<span>Encrypted Logical Volume of $0</span>": [
-  null,
-  "<span>$0의 암호화 된 논리 볼륨</span>"
- ],
- "<span>Encrypted Partition of $0</span>": [
-  null,
-  "<span>$0의 암호화 된 파티션</span>"
- ],
- "<span>Logical Volume of $0</span>": [
-  null,
-  "<span>$0의 논리 볼륨</span>"
- ],
- "<span>Partition of $0</span>": [
-  null,
-  "<span>$0의 파티션</span>"
- ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
   ""
@@ -404,6 +384,10 @@ return plural;
   ""
  ],
  "Custom encryption options": [
+  null,
+  ""
+ ],
+ "Custom mount option": [
   null,
   ""
  ],
@@ -791,6 +775,10 @@ return plural;
   null,
   "찾을 수 없습니다."
  ],
+ "Not mounted": [
+  null,
+  ""
+ ],
  "Not running": [
   null,
   ""
@@ -810,10 +798,6 @@ return plural;
  "Options": [
   null,
   "옵션"
- ],
- "Options cannot be empty.": [
-  null,
-  ""
  ],
  "Other Devices": [
   null,

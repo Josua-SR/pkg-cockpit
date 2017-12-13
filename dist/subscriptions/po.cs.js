@@ -81,7 +81,7 @@ return plural;
  ],
  "Activation Key": [
   null,
-  ""
+  "Aktivační klíč"
  ],
  "Architecture": [
   null,

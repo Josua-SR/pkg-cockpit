@@ -85,19 +85,19 @@ return plural;
  ],
  "AWS Elastic Block Store": [
   null,
-  ""
+  "AWS Elastic Block Store"
  ],
  "Access Modes": [
   null,
-  ""
+  "Režimy přístupu"
  ],
  "Access Policy": [
   null,
-  ""
+  "Politika přístupu"
  ],
  "Actual": [
   null,
-  ""
+  "Aktuální"
  ],
  "Add": [
   null,
@@ -105,35 +105,35 @@ return plural;
  ],
  "Add Cluster Node": [
   null,
-  ""
+  "Přidat clusterový uzel"
  ],
  "Add Group": [
   null,
-  ""
+  "Přidat skupinu"
  ],
  "Add Kubernetes Node": [
   null,
-  ""
+  "Přidat uzel Kubernetes"
  ],
  "Add Member": [
   null,
-  ""
+  "Přidat člena"
  ],
  "Add Membership": [
   null,
-  ""
+  "Přidat členství"
  ],
  "Add New Cluster": [
   null,
-  ""
+  "Přidat nový cluster"
  ],
  "Add New User": [
   null,
-  ""
+  "Přidat nového uživatele"
  ],
  "Add Role": [
   null,
-  ""
+  "Přidat roli"
  ],
  "Add User": [
   null,
@@ -141,7 +141,7 @@ return plural;
  ],
  "Add membership": [
   null,
-  ""
+  "Přidat členství"
  ],
  "Address": [
   null,
@@ -153,79 +153,79 @@ return plural;
  ],
  "Adjust": [
   null,
-  ""
+  "Upravit"
  ],
  "Adjust Persistent Volume '{{ item.metadata.name }}'": [
   null,
-  ""
+  "Upravit persistentní  oddíl '{{ item.metadata.name }}'"
  ],
  "Adjust Replication Controller {{ item.metadata.name }}": [
   null,
-  ""
+  "Upravit replikační ovladač {{ item.metadata.name }}"
  ],
  "Adjust Route": [
   null,
-  ""
+  "Upravit cestu"
  ],
  "Adjust Service": [
   null,
-  ""
+  "Upravit službu"
  ],
  "Admin": [
   null,
-  ""
+  "Správce"
  ],
  "All Projects": [
   null,
-  ""
+  "Všechny projekty"
  ],
  "All Types": [
   null,
-  ""
+  "Všechny typy"
  ],
  "All healthy": [
   null,
-  ""
+  "Všechny v pořádku"
  ],
  "All images": [
   null,
-  ""
+  "Všechny obrazy"
  ],
  "All in use": [
   null,
-  ""
+  "Všechny používané"
  ],
  "All running": [
   null,
-  ""
+  "Všechny spuštěné"
  ],
  "Annotations": [
   null,
-  ""
+  "Anotace"
  ],
  "Anonymous: Allow all unauthenticated users to pull images": [
   null,
-  ""
+  "Anonymní: Povolit všem neověřeným uživatelům nahrát obrazy"
  ],
  "Authentication": [
   null,
-  ""
+  "Ověření"
  ],
  "Azure": [
   null,
-  ""
+  "Azure"
  ],
  "Boot ID": [
   null,
-  ""
+  "Boot ID"
  ],
  "CPU": [
   null,
-  ""
+  "CPU"
  ],
  "CPU Utilization: $0%": [
   null,
-  ""
+  "Využití CPU: $0%"
  ],
  "Cancel": [
   null,
@@ -237,7 +237,7 @@ return plural;
  ],
  "Ceph Filesystem Mount": [
   null,
-  ""
+  "Připojení souborového systému Ceph"
  ],
  "Ceph Monitors": [
   null,
@@ -245,19 +245,19 @@ return plural;
  ],
  "Change": [
   null,
-  ""
+  "Změna"
  ],
  "Change User": [
   null,
-  ""
+  "Změnit uživatele"
  ],
  "Change image stream": [
   null,
-  ""
+  "Změnit stream obrazu"
  ],
  "Change project": [
   null,
-  ""
+  "Změnit projekt"
  ],
  "Cinder": [
   null,

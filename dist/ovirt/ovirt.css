@@ -252,6 +252,9 @@ input[type=number] {
     max-width: 100%;
     max-height: 100%;
 }
+.ovirt-provider-migrateto-combo {
+    max-width: 25em;
+}
 /* Listing pattern */
 table.listing-ct {
   margin-top: 15px;
@@ -672,9 +675,6 @@ table.delete-dialog-disks.table tbody tr td:nth-child(1) {
 
 table.delete-dialog-disks.table tbody tr td:nth-child(3) {
     text-align: right;
-}
-.ovirt-provider-migrateto-combo {
-    max-width: 25em;
 }
 .ovirt-provider-vdsm {
     padding: 1em;

@@ -125,7 +125,7 @@ return plural;
  ],
  "A compatible version of Cockpit is not installed on {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "Kompatibilní verze Cockpit není nainstalována na {{#strong}}{{host}}{{/strong}}."
  ],
  "Add": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "Add Machine to Dashboard": [
   null,
-  ""
+  "Přidat stroj do dashboardu"
  ],
  "Address": [
   null,
@@ -141,11 +141,11 @@ return plural;
  ],
  "Authentication": [
   null,
-  ""
+  "Ověření"
  ],
  "Authentication Failed": [
   null,
-  ""
+  "Ověření selhalo"
  ],
  "Available": [
   null,
@@ -153,15 +153,15 @@ return plural;
  ],
  "Avatar": [
   null,
-  ""
+  "Avatar"
  ],
  "CPU": [
   null,
-  ""
+  "CPU"
  ],
  "Can't load image": [
   null,
-  ""
+  "Nelze načíst obraz"
  ],
  "Cancel": [
   null,
@@ -169,7 +169,7 @@ return plural;
  ],
  "Checking for public keys": [
   null,
-  ""
+  "Hledám veřejné klíče"
  ],
  "Close": [
   null,
@@ -177,7 +177,7 @@ return plural;
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
-  ""
+  "Cockpit nemohl kontaktovat uvedeného hostitele $0. Ujistěte se, že je ssh spuštěno na portu $1 nebo specifikujte jiný port v adrese."
  ],
  "Cockpit is not installed": [
   null,

@@ -73,7 +73,7 @@ return plural;
  ],
  "Additional": [
   null,
-  ""
+  "Додаткові"
  ],
  "Address": [
   null,
@@ -101,7 +101,7 @@ return plural;
  ],
  "CHANGE NETWORK STATE action failed": [
   null,
-  ""
+  "Не вдалося виконати дію зі зміни стану мережі"
  ],
  "CPU Type:": [
   null,
@@ -197,7 +197,7 @@ return plural;
  ],
  "MAC Address": [
   null,
-  ""
+  "MAC-адреса"
  ],
  "MTU": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Managed": [
   null,
-  ""
+  "Керована"
  ],
  "Manual Connection": [
   null,
@@ -217,7 +217,7 @@ return plural;
  ],
  "Model type": [
   null,
-  ""
+  "Тип моделі"
  ],
  "More Information": [
   null,
@@ -229,7 +229,7 @@ return plural;
  ],
  "Networks": [
   null,
-  ""
+  "Мережі"
  ],
  "No VM is running or defined on this host": [
   null,
@@ -249,7 +249,7 @@ return plural;
  ],
  "No network interfaces defined for this VM": [
   null,
-  ""
+  "Немає інтерфейсів мережі, які визначено для цієї ВМ"
  ],
  "Ok": [
   null,
@@ -265,7 +265,7 @@ return plural;
  ],
  "Plug": [
   null,
-  ""
+  "З'єднати"
  ],
  "Pool": [
   null,
@@ -277,7 +277,7 @@ return plural;
  ],
  "Portgroup": [
   null,
-  ""
+  "Група портів"
  ],
  "Protocol": [
   null,
@@ -389,7 +389,7 @@ return plural;
  ],
  "Unplug": [
   null,
-  ""
+  "Від'єднати"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
@@ -449,7 +449,7 @@ return plural;
  ],
  "Virtualport": [
   null,
-  ""
+  "Віртуальний порт"
  ],
  "Volume": [
   null,
@@ -461,7 +461,7 @@ return plural;
  ],
  "bridge": [
   null,
-  ""
+  "місток"
  ],
  "cdrom": [
   null,
@@ -477,7 +477,7 @@ return plural;
  ],
  "direct": [
   null,
-  ""
+  "безпосередньо"
  ],
  "disabled": [
   null,
@@ -501,7 +501,7 @@ return plural;
  ],
  "ethernet": [
   null,
-  ""
+  "ethernet"
  ],
  "host": [
   null,
@@ -509,7 +509,7 @@ return plural;
  ],
  "hostdev": [
   null,
-  ""
+  "пристрій осн. системи"
  ],
  "idle": [
   null,
@@ -517,7 +517,7 @@ return plural;
  ],
  "mcast": [
   null,
-  ""
+  "mcast"
  ],
  "network": [
   null,
@@ -541,7 +541,7 @@ return plural;
  ],
  "server": [
   null,
-  ""
+  "сервер"
  ],
  "shut off": [
   null,
@@ -557,7 +557,7 @@ return plural;
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "up": [
   null,
@@ -565,7 +565,7 @@ return plural;
  ],
  "user": [
   null,
-  ""
+  "користувач"
  ],
  "vCPUs:": [
   null,
@@ -573,7 +573,7 @@ return plural;
  ],
  "vhostuser": [
   null,
-  ""
+  "vhostuser"
  ],
  "yes": [
   null,

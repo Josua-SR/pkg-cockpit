@@ -73,7 +73,7 @@ return plural;
  ],
  "Action": [
   null,
-  ""
+  "Toiminto"
  ],
  "Additional": [
   null,
@@ -85,7 +85,7 @@ return plural;
  ],
  "Address:": [
   null,
-  ""
+  "Osoite:"
  ],
  "All running virtual machines will be turned off.": [
   null,
@@ -173,7 +173,7 @@ return plural;
  ],
  "Confirm save:": [
   null,
-  ""
+  "Vahvista tallennus:"
  ],
  "Connect to oVirt Engine": [
   null,
@@ -197,7 +197,7 @@ return plural;
  ],
  "Console": [
   null,
-  ""
+  "Konsoli"
  ],
  "Count:": [
   null,
@@ -225,11 +225,11 @@ return plural;
  ],
  "Description:": [
   null,
-  ""
+  "Kuvaus:"
  ],
  "Device": [
   null,
-  ""
+  "Laite"
  ],
  "Disks": [
   null,
@@ -241,7 +241,7 @@ return plural;
  ],
  "Edit the vdsm.conf": [
   null,
-  ""
+  "Muokkaa vdsm.conf-tiedostoa"
  ],
  "Emulated Machine:": [
   null,
@@ -253,11 +253,11 @@ return plural;
  ],
  "FQDN": [
   null,
-  ""
+  "FQDN"
  ],
  "File": [
   null,
-  ""
+  "Tiedosto"
  ],
  "Force Restart": [
   null,
@@ -269,15 +269,15 @@ return plural;
  ],
  "GB": [
   null,
-  ""
+  "Gt"
  ],
  "HA": [
   null,
-  ""
+  "HA"
  ],
  "HA:": [
   null,
-  ""
+  "HA:"
  ],
  "Host": [
   null,
@@ -293,11 +293,11 @@ return plural;
  ],
  "Loading data ...": [
   null,
-  ""
+  "Ladataan tietoja..."
  ],
  "MAC Address": [
   null,
-  ""
+  "MAC-osoite"
  ],
  "MIGRATE action failed": [
   null,
@@ -305,7 +305,7 @@ return plural;
  ],
  "MTU": [
   null,
-  ""
+  "MTU"
  ],
  "Managed": [
   null,
@@ -317,11 +317,11 @@ return plural;
  ],
  "Memory": [
   null,
-  ""
+  "Muisti"
  ],
  "Memory:": [
   null,
-  ""
+  "Muisti:"
  ],
  "Migrate To:": [
   null,
@@ -337,11 +337,11 @@ return plural;
  ],
  "Name": [
   null,
-  ""
+  "Nimi"
  ],
  "Networks": [
   null,
-  ""
+  "Verkot"
  ],
  "No VM found in oVirt.": [
   null,
@@ -353,7 +353,7 @@ return plural;
  ],
  "No boot device found": [
   null,
-  ""
+  "Käynnistyslaitetta ei löytynyt"
  ],
  "No disks defined for this VM": [
   null,
@@ -369,19 +369,19 @@ return plural;
  ],
  "OK": [
   null,
-  ""
+  "OK"
  ],
  "OS": [
   null,
-  ""
+  "Käyttöjärjestelmä"
  ],
  "OS Type:": [
   null,
-  ""
+  "Käyttöjärjestelmän tyyppi:"
  ],
  "Ok": [
   null,
-  ""
+  "OK"
  ],
  "Optimized for:": [
   null,
@@ -429,7 +429,7 @@ return plural;
  ],
  "Port": [
   null,
-  ""
+  "Portti"
  ],
  "Portgroup": [
   null,
@@ -465,7 +465,7 @@ return plural;
  ],
  "Restart": [
   null,
-  ""
+  "Käynnistä uudelleen"
  ],
  "Run": [
   null,
@@ -485,19 +485,19 @@ return plural;
  ],
  "SPICE": [
   null,
-  ""
+  "SPICE"
  ],
  "SPICE Address:": [
   null,
-  ""
+  "SPICE-osoite:"
  ],
  "SPICE Port:": [
   null,
-  ""
+  "SPICE-portti:"
  ],
  "SPICE TLS Port:": [
   null,
-  ""
+  "SPICE-TLS-portti:"
  ],
  "START action failed": [
   null,
@@ -509,7 +509,7 @@ return plural;
  ],
  "Save": [
   null,
-  ""
+  "Tallenna"
  ],
  "Send Non-Maskable Interrupt": [
   null,
@@ -517,27 +517,27 @@ return plural;
  ],
  "Session": [
   null,
-  ""
+  "Istunto"
  ],
  "Shut Down": [
   null,
-  ""
+  "Sammuta"
  ],
  "Source": [
   null,
-  ""
+  "Lähde"
  ],
  "State": [
   null,
-  ""
+  "Tila"
  ],
  "Stateless": [
   null,
-  ""
+  "Tilaton"
  ],
  "Stateless:": [
   null,
-  ""
+  "Tilaton:"
  ],
  "Suspend": [
   null,
@@ -565,7 +565,7 @@ return plural;
  ],
  "System": [
   null,
-  ""
+  "Järjestelmä"
  ],
  "Target": [
   null,
@@ -645,11 +645,11 @@ return plural;
  ],
  "VDSM": [
   null,
-  ""
+  "VDSM"
  ],
  "VDSM Service Management": [
   null,
-  ""
+  "VDSM-palveluhallinta"
  ],
  "VM FORCE OFF action failed": [
   null,
@@ -681,19 +681,19 @@ return plural;
  ],
  "VNC": [
   null,
-  ""
+  "VNC"
  ],
  "VNC Address:": [
   null,
-  ""
+  "VNC-osoite:"
  ],
  "VNC Port:": [
   null,
-  ""
+  "VNC-portti:"
  ],
  "VNC TLS Port:": [
   null,
-  ""
+  "VNC-TLS-portti:"
  ],
  "Version": [
   null,
@@ -721,7 +721,7 @@ return plural;
  ],
  "Your browser does not support iframes.": [
   null,
-  ""
+  "Selaimesi ei tue iframeja."
  ],
  "bridge": [
   null,
@@ -773,11 +773,11 @@ return plural;
  ],
  "error": [
   null,
-  ""
+  "virhe"
  ],
  "ethernet": [
   null,
-  ""
+  "ethernet"
  ],
  "host": [
   null,
@@ -797,7 +797,7 @@ return plural;
  ],
  "installation failed": [
   null,
-  ""
+  "asennus epäonnistui"
  ],
  "installing OS": [
   null,
@@ -817,7 +817,7 @@ return plural;
  ],
  "network": [
   null,
-  ""
+  "verkko"
  ],
  "no": [
   null,
@@ -833,7 +833,7 @@ return plural;
  ],
  "oVirt": [
   null,
-  ""
+  "oVirt"
  ],
  "oVirt Host State:": [
   null,
@@ -857,7 +857,7 @@ return plural;
  ],
  "other": [
   null,
-  ""
+  "muu"
  ],
  "paused": [
   null,
@@ -877,7 +877,7 @@ return plural;
  ],
  "server": [
   null,
-  ""
+  "palvelin"
  ],
  "shut off": [
   null,
@@ -897,11 +897,11 @@ return plural;
  ],
  "threads": [
   null,
-  ""
+  "säikeet"
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "unassigned": [
   null,
@@ -913,7 +913,7 @@ return plural;
  ],
  "user": [
   null,
-  ""
+  "käyttäjä"
  ],
  "vCPUs": [
   null,

@@ -155,7 +155,7 @@ return plural;
  ],
  "Can't load image": [
   null,
-  ""
+  "No puede cargar imagen"
  ],
  "Cancel": [
   null,
@@ -291,7 +291,7 @@ return plural;
  ],
  "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
-  ""
+  "Déjelo en blanco para conectarse a esta máquina como el usuario actualmente conectado {{#default_user}} ({{default_user}}){{/default_user}}. Si usted introduce un nombre de usuario diferente, se usará siempre ese usuario para conectarse a esta máquina."
  ],
  "Log In": [
   null,

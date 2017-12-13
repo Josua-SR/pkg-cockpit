@@ -77,6 +77,12 @@ return plural;
   "",
   ""
  ],
+ "$1 security fix": [
+  "$1 security fixes",
+  "",
+  "",
+  ""
+ ],
  ", including $1 security fix": [
   ", including $1 security fixes",
   "",

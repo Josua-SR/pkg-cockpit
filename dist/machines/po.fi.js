@@ -81,7 +81,7 @@ return plural;
  ],
  "Address:": [
   null,
-  ""
+  "Osoite:"
  ],
  "Autostart:": [
   null,
@@ -141,7 +141,7 @@ return plural;
  ],
  "Console": [
   null,
-  ""
+  "Konsoli"
  ],
  "Count:": [
   null,
@@ -157,7 +157,7 @@ return plural;
  ],
  "Device": [
   null,
-  ""
+  "Laite"
  ],
  "Disks": [
   null,
@@ -173,7 +173,7 @@ return plural;
  ],
  "File": [
   null,
-  ""
+  "Tiedosto"
  ],
  "Force Restart": [
   null,
@@ -185,7 +185,7 @@ return plural;
  ],
  "GB": [
   null,
-  ""
+  "Gt"
  ],
  "Host": [
   null,
@@ -197,11 +197,11 @@ return plural;
  ],
  "MAC Address": [
   null,
-  ""
+  "MAC-osoite"
  ],
  "MTU": [
   null,
-  ""
+  "MTU"
  ],
  "Managed": [
   null,
@@ -213,7 +213,7 @@ return plural;
  ],
  "Memory:": [
   null,
-  ""
+  "Muisti:"
  ],
  "Model type": [
   null,
@@ -225,11 +225,11 @@ return plural;
  ],
  "Name": [
   null,
-  ""
+  "Nimi"
  ],
  "Networks": [
   null,
-  ""
+  "Verkot"
  ],
  "No VM is running or defined on this host": [
   null,
@@ -237,7 +237,7 @@ return plural;
  ],
  "No boot device found": [
   null,
-  ""
+  "Käynnistyslaitetta ei löytynyt"
  ],
  "No disks defined for this VM": [
   null,
@@ -253,7 +253,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "OK"
  ],
  "Overview": [
   null,
@@ -273,7 +273,7 @@ return plural;
  ],
  "Port": [
   null,
-  ""
+  "Portti"
  ],
  "Portgroup": [
   null,
@@ -289,7 +289,7 @@ return plural;
  ],
  "Restart": [
   null,
-  ""
+  "Käynnistä uudelleen"
  ],
  "Run": [
   null,
@@ -297,19 +297,19 @@ return plural;
  ],
  "SPICE": [
   null,
-  ""
+  "SPICE"
  ],
  "SPICE Address:": [
   null,
-  ""
+  "SPICE-osoite:"
  ],
  "SPICE Port:": [
   null,
-  ""
+  "SPICE-portti:"
  ],
  "SPICE TLS Port:": [
   null,
-  ""
+  "SPICE-TLS-portti:"
  ],
  "Send Non-Maskable Interrupt": [
   null,
@@ -317,19 +317,19 @@ return plural;
  ],
  "Session": [
   null,
-  ""
+  "Istunto"
  ],
  "Shut Down": [
   null,
-  ""
+  "Sammuta"
  ],
  "Source": [
   null,
-  ""
+  "Lähde"
  ],
  "State": [
   null,
-  ""
+  "Tila"
  ],
  "Switch to Desktop Viewer": [
   null,
@@ -341,7 +341,7 @@ return plural;
  ],
  "System": [
   null,
-  ""
+  "Järjestelmä"
  ],
  "Target": [
   null,
@@ -429,19 +429,19 @@ return plural;
  ],
  "VNC": [
   null,
-  ""
+  "VNC"
  ],
  "VNC Address:": [
   null,
-  ""
+  "VNC-osoite:"
  ],
  "VNC Port:": [
   null,
-  ""
+  "VNC-portti:"
  ],
  "VNC TLS Port:": [
   null,
-  ""
+  "VNC-TLS-portti:"
  ],
  "Virtual Machines": [
   null,
@@ -457,7 +457,7 @@ return plural;
  ],
  "Your browser does not support iframes.": [
   null,
-  ""
+  "Selaimesi ei tue iframeja."
  ],
  "bridge": [
   null,
@@ -501,7 +501,7 @@ return plural;
  ],
  "ethernet": [
   null,
-  ""
+  "ethernet"
  ],
  "host": [
   null,
@@ -521,7 +521,7 @@ return plural;
  ],
  "network": [
   null,
-  ""
+  "verkko"
  ],
  "no": [
   null,
@@ -529,7 +529,7 @@ return plural;
  ],
  "other": [
   null,
-  ""
+  "muu"
  ],
  "paused": [
   null,
@@ -541,7 +541,7 @@ return plural;
  ],
  "server": [
   null,
-  ""
+  "palvelin"
  ],
  "shut off": [
   null,
@@ -557,7 +557,7 @@ return plural;
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "up": [
   null,
@@ -565,7 +565,7 @@ return plural;
  ],
  "user": [
   null,
-  ""
+  "käyttäjä"
  ],
  "vCPUs:": [
   null,

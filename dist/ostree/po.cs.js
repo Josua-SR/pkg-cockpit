@@ -89,7 +89,7 @@ return plural;
  ],
  "Add Another Key": [
   null,
-  ""
+  "Přidat další klíč"
  ],
  "Additions": [
   null,
@@ -105,7 +105,7 @@ return plural;
  ],
  "Begins with '-----BEGIN PGP PUBLIC KEY BLOCK-----'": [
   null,
-  ""
+  "Začíná textem '-----BEGIN PGP PUBLIC KEY BLOCK-----'"
  ],
  "Cancel": [
   null,
@@ -113,15 +113,15 @@ return plural;
  ],
  "Change Repository": [
   null,
-  ""
+  "Změnit repozitář"
  ],
  "Check for Updates": [
   null,
-  ""
+  "Zkontrolovat aktualizace"
  ],
  "Checking for updates": [
   null,
-  ""
+  "Hledám aktualizace"
  ],
  "Connecting to OSTree": [
   null,

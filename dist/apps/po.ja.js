@@ -69,7 +69,7 @@ return plural;
  },
  "Applications": [
   null,
-  ""
+  "アプリケーション"
  ],
  "Cancel": [
   null,
@@ -77,7 +77,7 @@ return plural;
  ],
  "Checking for new applications": [
   null,
-  ""
+  "新しいアプリケーションを探す"
  ],
  "Close": [
   null,
@@ -89,27 +89,23 @@ return plural;
  ],
  "Go to Application": [
   null,
-  ""
+  "アプリケーションへ移動"
  ],
  "Install": [
   null,
-  ""
+  "インストール"
  ],
  "Installing": [
   null,
-  ""
+  "インストール中"
  ],
  "No applications installed or available": [
   null,
-  ""
- ],
- "No description provided.": [
-  null,
-  ""
+  "アプリケーションがインストールされていないか、利用できません"
  ],
  "No installation package found for this application.": [
   null,
-  ""
+  "このアプリケーションのインストールパッケージが見つかりませんでした。"
  ],
  "Ok": [
   null,
@@ -121,14 +117,14 @@ return plural;
  ],
  "Removing": [
   null,
-  ""
+  "削除中"
  ],
  "Unknown Application": [
   null,
-  ""
+  "不明なアプリケーション"
  ],
  "Waiting for other programs to finish using the package manager...": [
   null,
-  ""
+  "パッケージマネージャーを使用して、その他のプログラムを終了するのを待機中..."
  ]
 }));

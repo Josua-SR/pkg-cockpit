@@ -69,10 +69,16 @@ return plural;
  },
  "$0 more…": [
   null,
-  ""
+  "$0 více..."
  ],
  "$0 update": [
   "$0 updates",
+  "$0 aktualizace",
+  "$0 aktualizace",
+  "$0 aktualizací"
+ ],
+ "$1 security fix": [
+  "$1 security fixes",
   "",
   "",
   ""
@@ -85,27 +91,27 @@ return plural;
  ],
  "Apply all updates": [
   null,
-  ""
+  "Aplikovat všechny aktualizace"
  ],
  "Apply security updates": [
   null,
-  ""
+  "Aplikovat bezpečnostní aktualizace"
  ],
  "Applying updates": [
   null,
-  ""
+  "Aplikuji aktualizace"
  ],
  "Applying updates failed": [
   null,
-  ""
+  "Aplikuji neúspěšné aktualizace"
  ],
  "Automatic Updates": [
   null,
-  ""
+  "Automatické aktualizace"
  ],
  "Available Updates": [
   null,
-  ""
+  "Dostupné aktualizace"
  ],
  "Bugs": [
   null,
@@ -117,7 +123,7 @@ return plural;
  ],
  "Check for Updates": [
   null,
-  ""
+  "Zkontrolovat aktualizace"
  ],
  "Cockpit itself will be updated.": [
   null,

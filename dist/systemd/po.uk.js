@@ -669,11 +669,11 @@ return plural;
  ],
  "Problem details": [
   null,
-  ""
+  "Подробиці щодо проблеми"
  ],
  "Problem info": [
   null,
-  ""
+  "Дані щодо проблеми"
  ],
  "Problems, Errors": [
   null,
@@ -733,11 +733,11 @@ return plural;
  ],
  "Report": [
   null,
-  ""
+  "Звіт"
  ],
  "Reported": [
   null,
-  ""
+  "Повідомлено"
  ],
  "Reporter 'reporter-ureport' not found.": [
   null,
