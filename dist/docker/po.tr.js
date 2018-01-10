@@ -542,6 +542,10 @@ return plural;
   null,
   ""
  ],
+ "Problems": [
+  null,
+  ""
+ ],
  "ReadOnly": [
   null,
   "Hazır"
@@ -549,6 +553,10 @@ return plural;
  "ReadWrite": [
   null,
   "Okunuyor"
+ ],
+ "Reboot": [
+  null,
+  ""
  ],
  "Reformat and add disks": [
   null,
@@ -727,6 +735,18 @@ return plural;
   "Terminal ile"
  ],
  "You don't have permission to manage the Docker storage pool.": [
+  null,
+  ""
+ ],
+ "[$0 bytes of binary data]": [
+  null,
+  ""
+ ],
+ "[binary data]": [
+  null,
+  ""
+ ],
+ "[no data]": [
   null,
   ""
  ],

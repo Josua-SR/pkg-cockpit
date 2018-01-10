@@ -74,8 +74,8 @@ return plural;
  ],
  "$0 disk is missing": [
   "$0 disks are missing",
-  "",
-  ""
+  "falta $0 disc",
+  "falten $0 discs"
  ],
  "$0 hour": [
   "$0 hours",
@@ -176,8 +176,8 @@ return plural;
  ],
  "disk-non-rotational\u0004$0 disk is missing": [
   "$0 disks are missing",
-  "",
-  ""
+  "falta $0 disc",
+  "falten $0 discs"
  ],
  "key\u0004Control": [
   null,

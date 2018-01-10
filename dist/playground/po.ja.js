@@ -125,7 +125,7 @@ return plural;
  ],
  "No matching files found": [
   null,
-  "一致するファイルが見つかりませんでした。"
+  "ホストキーが見つかりません。"
  ],
  "Not Ready": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "Path to file": [
   null,
-  "ファイルのパス"
+  ""
  ],
  "Ready": [
   null,
@@ -153,7 +153,7 @@ return plural;
  ],
  "Too many files found": [
   null,
-  "見つかったファイルが多すぎます"
+  ""
  ],
  "Unavailable": [
   null,

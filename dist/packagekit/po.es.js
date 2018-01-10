@@ -78,8 +78,8 @@ return plural;
  ],
  "$1 security fix": [
   "$1 security fixes",
-  "",
-  ""
+  "$1 corrección de seguridad",
+  "$1 correcciones de seguridad"
  ],
  ", including $1 security fix": [
   ", including $1 security fixes",
@@ -196,19 +196,19 @@ return plural;
  ],
  "Package information": [
   null,
-  ""
+  "Información del paquete"
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "PackageKit roto"
  ],
  "PackageKit is not installed": [
   null,
-  ""
+  "PackageKit no está instalado"
  ],
  "PackageKit reported error code $0": [
   null,
-  ""
+  "PackageKit reportó error con código $0"
  ],
  "Refreshing package information": [
   null,

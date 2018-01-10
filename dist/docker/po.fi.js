@@ -542,11 +542,19 @@ return plural;
   null,
   "Portit:"
  ],
+ "Problems": [
+  null,
+  ""
+ ],
  "ReadOnly": [
   null,
   ""
  ],
  "ReadWrite": [
+  null,
+  ""
+ ],
+ "Reboot": [
   null,
   ""
  ],
@@ -729,6 +737,18 @@ return plural;
  "You don't have permission to manage the Docker storage pool.": [
   null,
   "Sinulla ei ole oikeutta hallita Dockerin tallennusvarantoa."
+ ],
+ "[$0 bytes of binary data]": [
+  null,
+  "[$0 tavua binääridatasta]"
+ ],
+ "[binary data]": [
+  null,
+  "[binääridata]"
+ ],
+ "[no data]": [
+  null,
+  "[ei dataa]"
  ],
  "alias": [
   null,

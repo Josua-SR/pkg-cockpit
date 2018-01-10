@@ -118,7 +118,7 @@ return plural;
  ],
  "Occurred $0": [
   null,
-  ""
+  "S'ha produït $0"
  ],
  "Occurred between $0 and $1": [
   null,

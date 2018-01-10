@@ -77,7 +77,7 @@ return plural;
  ],
  "Checking for new applications": [
   null,
-  "Comprovació per si hi ha noves aplicacions"
+  "Comprovació per si hi ha aplicacions noves"
  ],
  "Close": [
   null,

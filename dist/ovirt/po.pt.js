@@ -179,10 +179,6 @@ return plural;
   null,
   ""
  ],
- "Connect with Remote Viewer": [
-  null,
-  ""
- ],
  "Connect with any $0 viewer application.": [
   null,
   ""
@@ -195,7 +191,11 @@ return plural;
   null,
   ""
  ],
- "Console": [
+ "Console Type": [
+  null,
+  ""
+ ],
+ "Consoles": [
   null,
   ""
  ],
@@ -228,6 +228,14 @@ return plural;
   ""
  ],
  "Device": [
+  null,
+  ""
+ ],
+ "Disconnect": [
+  null,
+  ""
+ ],
+ "Disconnected from serial console. Click the Reconnect button.": [
   null,
   ""
  ],
@@ -271,6 +279,14 @@ return plural;
   null,
   ""
  ],
+ "Graphics Console (VNC)": [
+  null,
+  ""
+ ],
+ "Graphics Console in Desktop Viewer": [
+  null,
+  ""
+ ],
  "HA": [
   null,
   ""
@@ -288,6 +304,10 @@ return plural;
   ""
  ],
  "Launch Remote Viewer": [
+  null,
+  ""
+ ],
+ "Loading ...": [
   null,
   ""
  ],
@@ -355,11 +375,11 @@ return plural;
   null,
   ""
  ],
- "No disks defined for this VM": [
+ "No console defined for this virtual machine.": [
   null,
   ""
  ],
- "No graphics console is defined for this virtual machine.": [
+ "No disks defined for this VM": [
   null,
   ""
  ],
@@ -407,7 +427,7 @@ return plural;
   null,
   ""
  ],
- "Please start the virtual machine to access its graphics console.": [
+ "Please start the virtual machine to access its console.": [
   null,
   ""
  ],
@@ -448,6 +468,10 @@ return plural;
   ""
  ],
  "Readonly": [
+  null,
+  ""
+ ],
+ "Reconnect": [
   null,
   ""
  ],
@@ -515,6 +539,14 @@ return plural;
   null,
   ""
  ],
+ "Send shortcut": [
+  null,
+  ""
+ ],
+ "Serial Console": [
+  null,
+  ""
+ ],
  "Session": [
   null,
   ""
@@ -544,14 +576,6 @@ return plural;
   ""
  ],
  "Switch Host to Maintenance": [
-  null,
-  ""
- ],
- "Switch to Desktop Viewer": [
-  null,
-  ""
- ],
- "Switch to In-Browser Viewer": [
   null,
   ""
  ],
@@ -906,6 +930,10 @@ return plural;
  "unassigned": [
   null,
   ""
+ ],
+ "undefined": [
+  null,
+  "indefinido"
  ],
  "up": [
   null,

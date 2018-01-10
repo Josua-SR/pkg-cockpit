@@ -542,6 +542,10 @@ return plural;
   null,
   "Portas:"
  ],
+ "Problems": [
+  null,
+  ""
+ ],
  "ReadOnly": [
   null,
   "SomenteLeitura"
@@ -549,6 +553,10 @@ return plural;
  "ReadWrite": [
   null,
   "LeituraEscrita"
+ ],
+ "Reboot": [
+  null,
+  "Reiniciar"
  ],
  "Reformat and add disks": [
   null,
@@ -729,6 +737,18 @@ return plural;
  "You don't have permission to manage the Docker storage pool.": [
   null,
   "Você não tem permissão para gerenciar o Docker e pool de armazenamento."
+ ],
+ "[$0 bytes of binary data]": [
+  null,
+  "[$0 bytes de data bynária]"
+ ],
+ "[binary data]": [
+  null,
+  "[dados binários]"
+ ],
+ "[no data]": [
+  null,
+  "[sem dados]"
  ],
  "alias": [
   null,

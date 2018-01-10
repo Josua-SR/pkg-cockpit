@@ -129,7 +129,7 @@ return plural;
  ],
  "Join Domain": [
   null,
-  "Uneix-te al domini"
+  "Uneix-te a un domini"
  ],
  "Join a Domain": [
   null,

@@ -219,7 +219,7 @@ return plural;
  ],
  "Disk I/O": [
   null,
-  "E/S del disc"
+  "E/S de disc"
  ],
  "Edit Server": [
   null,
@@ -235,7 +235,7 @@ return plural;
  ],
  "Error loading users: {{perm_failed}}": [
   null,
-  "S'ha produït un error en carregar els usuaris: {{perm_failed}}"
+  "Error en carregar els usuaris: {{perm_failed}}"
  ],
  "Failed to add machine: $0": [
   null,
@@ -287,11 +287,11 @@ return plural;
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
-  "Deixeu-ho en blanc per connectar a aquesta màquina amb l'usuari que heu iniciat la sessió. Si introduïu un altre nom d'usuari, sempre s'utilitzarà aquest usuari quan es connecti a aquesta màquina."
+  "Deixeu-ho en blanc per connectar a aquesta màquina amb l'usuari que ha iniciat la sessió actualment. Si introduïu un altre nom d'usuari, sempre s'utilitzarà aquest usuari quan es connecti a aquesta màquina."
  ],
  "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
-  ""
+  "Deixeu-ho en blanc per connectar a aquesta màquina amb l'usuari{{#default_user}} ({{default_user}}){{/default_user}}, que ha iniciat actualment la sessió. Si introduïu un altre nom d'usuari, sempre s'utilitzarà aquest usuari quan es connecti a aquesta màquina."
  ],
  "Log In": [
   null,

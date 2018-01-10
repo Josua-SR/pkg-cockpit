@@ -383,7 +383,7 @@ return plural;
  ],
  "Disk I/O": [
   null,
-  "E/S del disc"
+  "E/S de disc"
  ],
  "Domain": [
   null,
@@ -831,7 +831,7 @@ return plural;
  ],
  "Store Performance Data": [
   null,
-  "Desa dades de rendiment"
+  "Desa les dades de rendiment"
  ],
  "Sunday": [
   null,

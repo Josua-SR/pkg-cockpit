@@ -123,10 +123,6 @@ return plural;
   null,
   "Підтвердження вилучення $0"
  ],
- "Connect with Remote Viewer": [
-  null,
-  "З’єднатися із Віддаленим переглядачем"
- ],
  "Connect with any $0 viewer application.": [
   null,
   "З’єднатися із будь-якою програмою перегляду $0."
@@ -139,9 +135,13 @@ return plural;
   null,
   "З’єднання"
  ],
- "Console": [
+ "Console Type": [
   null,
-  "Консоль"
+  "Тип консолі"
+ ],
+ "Consoles": [
+  null,
+  "Консолі"
  ],
  "Count:": [
   null,
@@ -158,6 +158,14 @@ return plural;
  "Device": [
   null,
   "Пристрій"
+ ],
+ "Disconnect": [
+  null,
+  "Від’єднатися"
+ ],
+ "Disconnected from serial console. Click the Reconnect button.": [
+  null,
+  "Від'єднано від послідовної консолі. Натисніть кнопку «Повторно з'єднатися»."
  ],
  "Disks": [
   null,
@@ -187,6 +195,14 @@ return plural;
   null,
   "ГБ"
  ],
+ "Graphics Console (VNC)": [
+  null,
+  "Графічна консоль (VNC)"
+ ],
+ "Graphics Console in Desktop Viewer": [
+  null,
+  "Графічна консоль у перегляді стільниці"
+ ],
  "Host": [
   null,
   "Вузол"
@@ -194,6 +210,10 @@ return plural;
  "Launch Remote Viewer": [
   null,
   "Запустити віддалений переглядач"
+ ],
+ "Loading ...": [
+  null,
+  "Завантажуємо…"
  ],
  "MAC Address": [
   null,
@@ -239,13 +259,13 @@ return plural;
   null,
   "Не знайдено пристрою для завантаження"
  ],
+ "No console defined for this virtual machine.": [
+  null,
+  "Для цієї віртуальної машини консолей не визначено."
+ ],
  "No disks defined for this VM": [
   null,
   "Для цієї ВМ не визначено дисків"
- ],
- "No graphics console is defined for this virtual machine.": [
-  null,
-  "Для цієї віртуальної машини не визначено графічної консолі."
  ],
  "No network interfaces defined for this VM": [
   null,
@@ -259,9 +279,9 @@ return plural;
   null,
   "Огляд"
  ],
- "Please start the virtual machine to access its graphics console.": [
+ "Please start the virtual machine to access its console.": [
   null,
-  "Будь ласка, запустіть віртуальну машину, щоб отримати доступ до її графічної консолі."
+  "Будь ласка, запустіть віртуальну машину, щоб отримати доступ до її консолі."
  ],
  "Plug": [
   null,
@@ -286,6 +306,10 @@ return plural;
  "Readonly": [
   null,
   "Лише запис"
+ ],
+ "Reconnect": [
+  null,
+  "Повторно з’єднатися"
  ],
  "Restart": [
   null,
@@ -315,6 +339,14 @@ return plural;
   null,
   "Надіслати немасковане переривання"
  ],
+ "Send shortcut": [
+  null,
+  "Надіслати скорочення"
+ ],
+ "Serial Console": [
+  null,
+  "Послідовна консоль"
+ ],
  "Session": [
   null,
   "Сеанс"
@@ -330,14 +362,6 @@ return plural;
  "State": [
   null,
   "Стан"
- ],
- "Switch to Desktop Viewer": [
-  null,
-  "Перемкнутися на перегляд стільниці"
- ],
- "Switch to In-Browser Viewer": [
-  null,
-  "Перемкнутися на перегляд у браузері"
  ],
  "System": [
   null,
@@ -558,6 +582,10 @@ return plural;
  "udp": [
   null,
   "udp"
+ ],
+ "undefined": [
+  null,
+  "не визначено"
  ],
  "up": [
   null,

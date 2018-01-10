@@ -79,6 +79,10 @@ return plural;
   null,
   "$0 levyt"
  ],
+ "$0 data + $1 overhead used of $2 ($3)": [
+  null,
+  ""
+ ],
  "$0 day": [
   "$0 days",
   "$0 päivä",
@@ -111,6 +115,10 @@ return plural;
  "$0 of $1": [
   null,
   "$0/$1"
+ ],
+ "$0 used of $1 ($2 saved)": [
+  null,
+  ""
  ],
  "$0 week": [
   "$0 weeks",
@@ -198,6 +206,10 @@ return plural;
   null,
   "8 KiB"
  ],
+ "A disk is needed.": [
+  null,
+  ""
+ ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
   ""
@@ -249,6 +261,10 @@ return plural;
  "Available targets on $0": [
   null,
   "Käytettävät kohteet $0"
+ ],
+ "Backing Device": [
+  null,
+  ""
  ],
  "Block": [
   null,
@@ -306,6 +322,10 @@ return plural;
   null,
   "Yhteensopiva modernien järjestelmien ja kovalevyjen kanssa > 2TB (GPT)"
  ],
+ "Compression": [
+  null,
+  "Pakkaus"
+ ],
  "Confirm passphrase": [
   null,
   "Vahvista salasana"
@@ -337,6 +357,10 @@ return plural;
  "Create Thin Volume": [
   null,
   "Luo Thin-Taltio"
+ ],
+ "Create VDO Device": [
+  null,
+  ""
  ],
  "Create Volume Group": [
   null,
@@ -418,6 +442,10 @@ return plural;
   null,
   "Deaktivoidaan $target"
  ],
+ "Deduplication": [
+  null,
+  ""
+ ],
  "Default": [
   null,
   "Oletus"
@@ -433,6 +461,10 @@ return plural;
  "Deleting a RAID device will erase all data on it.": [
   null,
   "RAID-laitteen poistaminen tuhoaa kaiken sillä olevan datan."
+ ],
+ "Deleting a VDO device will erase all data on it.": [
+  null,
+  ""
  ],
  "Deleting a logical volume will delete all data in it.": [
   null,
@@ -450,9 +482,17 @@ return plural;
   null,
   "Tuhotaan taltioryhmä $target"
  ],
+ "Device File": [
+  null,
+  ""
+ ],
  "Device is read-only": [
   null,
   "Laite on \"vain luku\"-muotoa"
+ ],
+ "Disk": [
+  null,
+  "Levy"
  ],
  "Disk is OK": [
   null,
@@ -586,6 +626,18 @@ return plural;
   null,
   "Mene nyt"
  ],
+ "Grow": [
+  null,
+  ""
+ ],
+ "Grow logical size of $0": [
+  null,
+  ""
+ ],
+ "Grow to take all space": [
+  null,
+  ""
+ ],
  "In Sync": [
   null,
   "Synkronoitu"
@@ -593,6 +645,10 @@ return plural;
  "Inactive volume": [
   null,
   "Epäaktiivinen taltio"
+ ],
+ "Index Memory": [
+  null,
+  ""
  ],
  "Invalid username or password": [
   null,
@@ -613,6 +669,14 @@ return plural;
  "Locking $target": [
   null,
   "Lukitaan $target"
+ ],
+ "Logical": [
+  null,
+  ""
+ ],
+ "Logical Size": [
+  null,
+  ""
  ],
  "Logical Volume": [
   null,
@@ -710,6 +774,10 @@ return plural;
   null,
   "Nimi"
  ],
+ "Name can not be empty.": [
+  null,
+  ""
+ ],
  "Name cannot be empty.": [
   null,
   "Nimi ei voi olla tyhjä."
@@ -774,6 +842,10 @@ return plural;
   null,
   ""
  ],
+ "No storage set up as VDO": [
+  null,
+  ""
+ ],
  "No volume groups created": [
   null,
   ""
@@ -795,6 +867,10 @@ return plural;
   ""
  ],
  "On": [
+  null,
+  ""
+ ],
+ "Only $0 of $1 are used.": [
   null,
   ""
  ],
@@ -854,6 +930,10 @@ return plural;
   null,
   ""
  ],
+ "Physical": [
+  null,
+  ""
+ ],
  "Physical Volume": [
   null,
   ""
@@ -867,6 +947,10 @@ return plural;
   ""
  ],
  "Please confirm deletion of $0": [
+  null,
+  ""
+ ],
+ "Please confirm stopping of $0": [
   null,
   ""
  ],
@@ -982,6 +1066,10 @@ return plural;
   null,
   ""
  ],
+ "Remove device": [
+  null,
+  ""
+ ],
  "Removing $target from RAID Device": [
   null,
   ""
@@ -1073,6 +1161,10 @@ return plural;
  "Size must be a number": [
   null,
   "Koon tulee olla numero"
+ ],
+ "Size must be at least $0": [
+  null,
+  ""
  ],
  "Spare": [
   null,
@@ -1170,6 +1262,10 @@ return plural;
   null,
   ""
  ],
+ "The creation of this VDO device did not finish and the device can't be used.": [
+  null,
+  ""
+ ],
  "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
   null,
   ""
@@ -1202,6 +1298,10 @@ return plural;
   null,
   ""
  ],
+ "This VDO device does not use all of its backing device.": [
+  null,
+  ""
+ ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
   ""
@@ -1211,6 +1311,10 @@ return plural;
   ""
  ],
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
+  null,
+  ""
+ ],
+ "This device is currently used for VDO devices.": [
   null,
   ""
  ],
@@ -1229,6 +1333,10 @@ return plural;
  "This logical volume cannot be made smaller.": [
   null,
   "Tätä loogista taltiota ei voida pienentää."
+ ],
+ "Transfer data asynchronously": [
+  null,
+  ""
  ],
  "Type": [
   null,
@@ -1298,6 +1406,10 @@ return plural;
   null,
   "Käyttö"
  ],
+ "Use 512 Byte emulation": [
+  null,
+  ""
+ ],
  "Used": [
   null,
   "Käytetty"
@@ -1305,6 +1417,22 @@ return plural;
  "Username": [
   null,
   "Käyttäjätunnus"
+ ],
+ "VDO Backing": [
+  null,
+  ""
+ ],
+ "VDO Device": [
+  null,
+  ""
+ ],
+ "VDO Device $0": [
+  null,
+  ""
+ ],
+ "VDO Devices": [
+  null,
+  ""
  ],
  "VFAT - Compatible with all systems and devices": [
   null,
@@ -1389,6 +1517,10 @@ return plural;
  "storage-id-desc\u0004Unrecognized Data": [
   null,
   "Tunnistamaton Data"
+ ],
+ "storage-id-desc\u0004VDO Backing": [
+  null,
+  ""
  ],
  "storage\u0004Drive": [
   null,

@@ -79,6 +79,10 @@ return plural;
   null,
   "$0 Discos"
  ],
+ "$0 data + $1 overhead used of $2 ($3)": [
+  null,
+  "$0 datos + $1 geneal utilizado de $2 ($3)"
+ ],
  "$0 day": [
   "$0 days",
   "$0 día",
@@ -111,6 +115,10 @@ return plural;
  "$0 of $1": [
   null,
   "$0 de $1"
+ ],
+ "$0 used of $1 ($2 saved)": [
+  null,
+  "$0 usado de $1 ($2 guardado)"
  ],
  "$0 week": [
   "$0 weeks",
@@ -198,6 +206,10 @@ return plural;
   null,
   "8 KiB"
  ],
+ "A disk is needed.": [
+  null,
+  "Es necesario un disco."
+ ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
   "Un disco de repuesto debe agregarse primero antes de este disco se puede quitar."
@@ -249,6 +261,10 @@ return plural;
  "Available targets on $0": [
   null,
   "Objetivos disponibles en $0"
+ ],
+ "Backing Device": [
+  null,
+  "Dispositivo de Respaldo"
  ],
  "Block": [
   null,
@@ -306,6 +322,10 @@ return plural;
   null,
   "Compatible con los sistemas modernos y discos duros > 2TB (GPT)"
  ],
+ "Compression": [
+  null,
+  "Compresión"
+ ],
  "Confirm passphrase": [
   null,
   "Confirmar palabra de paso"
@@ -337,6 +357,10 @@ return plural;
  "Create Thin Volume": [
   null,
   "Crear Volumen Delgado"
+ ],
+ "Create VDO Device": [
+  null,
+  "Crear Dispositivo VDO"
  ],
  "Create Volume Group": [
   null,
@@ -396,7 +420,7 @@ return plural;
  ],
  "Custom mount option": [
   null,
-  ""
+  "Opción de montaje personalizada"
  ],
  "Custom mount options": [
   null,
@@ -418,6 +442,10 @@ return plural;
   null,
   "Desactivando $target"
  ],
+ "Deduplication": [
+  null,
+  "Deduplicación"
+ ],
  "Default": [
   null,
   "Predeterminado"
@@ -433,6 +461,10 @@ return plural;
  "Deleting a RAID device will erase all data on it.": [
   null,
   "Eliminar un dispositivo RAID borrará toda la información en el."
+ ],
+ "Deleting a VDO device will erase all data on it.": [
+  null,
+  "Al borrar un dispositivo VDO borrará todos los datos en él."
  ],
  "Deleting a logical volume will delete all data in it.": [
   null,
@@ -450,9 +482,17 @@ return plural;
   null,
   "Borrando Grupo de Volumen $target"
  ],
+ "Device File": [
+  null,
+  ""
+ ],
  "Device is read-only": [
   null,
   "El dispositivo es de sólo lectura"
+ ],
+ "Disk": [
+  null,
+  "Disco"
  ],
  "Disk is OK": [
   null,
@@ -586,6 +626,18 @@ return plural;
   null,
   "Ir a ahora"
  ],
+ "Grow": [
+  null,
+  ""
+ ],
+ "Grow logical size of $0": [
+  null,
+  ""
+ ],
+ "Grow to take all space": [
+  null,
+  ""
+ ],
  "In Sync": [
   null,
   "En Sincronía"
@@ -593,6 +645,10 @@ return plural;
  "Inactive volume": [
   null,
   "Volumen inactivo"
+ ],
+ "Index Memory": [
+  null,
+  ""
  ],
  "Invalid username or password": [
   null,
@@ -613,6 +669,14 @@ return plural;
  "Locking $target": [
   null,
   "Bloquendo $target"
+ ],
+ "Logical": [
+  null,
+  ""
+ ],
+ "Logical Size": [
+  null,
+  ""
  ],
  "Logical Volume": [
   null,
@@ -710,6 +774,10 @@ return plural;
   null,
   "Nombre"
  ],
+ "Name can not be empty.": [
+  null,
+  "Nombre no puede estar vacío."
+ ],
  "Name cannot be empty.": [
   null,
   "El nombre no puede estar vacío."
@@ -774,6 +842,10 @@ return plural;
   null,
   "No se ha fijado almacenamiento como RAID"
  ],
+ "No storage set up as VDO": [
+  null,
+  ""
+ ],
  "No volume groups created": [
   null,
   "No hay grupos de volumen creados"
@@ -784,7 +856,7 @@ return plural;
  ],
  "Not mounted": [
   null,
-  ""
+  "No montado"
  ],
  "Not running": [
   null,
@@ -797,6 +869,10 @@ return plural;
  "On": [
   null,
   "Encencido"
+ ],
+ "Only $0 of $1 are used.": [
+  null,
+  ""
  ],
  "Operation '$operation' on $target": [
   null,
@@ -820,7 +896,7 @@ return plural;
  ],
  "Partition of $0": [
   null,
-  ""
+  "Partición de $0"
  ],
  "Partitioning": [
   null,
@@ -844,13 +920,17 @@ return plural;
  ],
  "Path on Server": [
   null,
-  ""
+  "Ruta sobre el Servidor"
  ],
  "Path on server cannot be empty.": [
   null,
-  ""
+  "La ruta sobre el servidor no puede estar vacía"
  ],
  "Path on server must start with \"/\".": [
+  null,
+  "La ruta sobre el servidor debe empezar con \"/\"."
+ ],
+ "Physical": [
   null,
   ""
  ],
@@ -869,6 +949,10 @@ return plural;
  "Please confirm deletion of $0": [
   null,
   "Por favor confirmar la eliminación de $0"
+ ],
+ "Please confirm stopping of $0": [
+  null,
+  ""
  ],
  "Pool": [
   null,
@@ -982,6 +1066,10 @@ return plural;
   null,
   ""
  ],
+ "Remove device": [
+  null,
+  ""
+ ],
  "Removing $target from RAID Device": [
   null,
   "Removiendo $target del Dispositivo RAID"
@@ -1073,6 +1161,10 @@ return plural;
  "Size must be a number": [
   null,
   "Tamaña debe ser un número"
+ ],
+ "Size must be at least $0": [
+  null,
+  ""
  ],
  "Spare": [
   null,
@@ -1170,6 +1262,10 @@ return plural;
   null,
   ""
  ],
+ "The creation of this VDO device did not finish and the device can't be used.": [
+  null,
+  ""
+ ],
  "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
   null,
   ""
@@ -1202,6 +1298,10 @@ return plural;
   null,
   ""
  ],
+ "This VDO device does not use all of its backing device.": [
+  null,
+  ""
+ ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
   ""
@@ -1211,6 +1311,10 @@ return plural;
   ""
  ],
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
+  null,
+  ""
+ ],
+ "This device is currently used for VDO devices.": [
   null,
   ""
  ],
@@ -1227,6 +1331,10 @@ return plural;
   ""
  ],
  "This logical volume cannot be made smaller.": [
+  null,
+  ""
+ ],
+ "Transfer data asynchronously": [
   null,
   ""
  ],
@@ -1298,11 +1406,31 @@ return plural;
   null,
   ""
  ],
+ "Use 512 Byte emulation": [
+  null,
+  ""
+ ],
  "Used": [
   null,
   "Usado"
  ],
  "Username": [
+  null,
+  ""
+ ],
+ "VDO Backing": [
+  null,
+  ""
+ ],
+ "VDO Device": [
+  null,
+  ""
+ ],
+ "VDO Device $0": [
+  null,
+  ""
+ ],
+ "VDO Devices": [
   null,
   ""
  ],
@@ -1389,6 +1517,10 @@ return plural;
  "storage-id-desc\u0004Unrecognized Data": [
   null,
   "Dato desnocnocido"
+ ],
+ "storage-id-desc\u0004VDO Backing": [
+  null,
+  ""
  ],
  "storage\u0004Drive": [
   null,

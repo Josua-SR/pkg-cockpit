@@ -135,6 +135,8 @@ function deduplicate(list) {
 // Insert comma strings in between elements of the list. Unlike list.join(",")
 // this does not stringify the elements, which we need to keep as JSX objects.
 function insertCommas(list) {
+    if (list.length <= 1)
+        return list;
     return list.reduce((prev, cur) => [prev, ", ", cur])
 }
 
@@ -240,8 +242,10 @@ class UpdateItem extends React.Component {
         var security_info = null;
 
         if (info.bug_urls && info.bug_urls.length) {
+            // HACK: bug_urls also contains titles, in a not-quite-predictable order; ignore them, only pick out
+            // http[s] URLs (https://bugs.freedesktop.org/show_bug.cgi?id=104552)
             // we assume a bug URL ends with a number; if not, show the complete URL
-            bugs = insertCommas(info.bug_urls.map(url => (
+            bugs = insertCommas(info.bug_urls.filter(url => url.match(/^https?:\/\//)).map(url => (
                 <a rel="noopener" referrerpolicy="no-referrer" target="_blank" href={url}>
                     {url.match(/[0-9]+$/) || url}
                 </a>)

@@ -123,10 +123,6 @@ return plural;
   null,
   ""
  ],
- "Connect with Remote Viewer": [
-  null,
-  ""
- ],
  "Connect with any $0 viewer application.": [
   null,
   ""
@@ -139,7 +135,11 @@ return plural;
   null,
   "Conexão"
  ],
- "Console": [
+ "Console Type": [
+  null,
+  ""
+ ],
+ "Consoles": [
   null,
   ""
  ],
@@ -158,6 +158,14 @@ return plural;
  "Device": [
   null,
   "Dispositivo"
+ ],
+ "Disconnect": [
+  null,
+  ""
+ ],
+ "Disconnected from serial console. Click the Reconnect button.": [
+  null,
+  ""
  ],
  "Disks": [
   null,
@@ -187,11 +195,23 @@ return plural;
   null,
   "GB"
  ],
+ "Graphics Console (VNC)": [
+  null,
+  ""
+ ],
+ "Graphics Console in Desktop Viewer": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "Máquina"
  ],
  "Launch Remote Viewer": [
+  null,
+  ""
+ ],
+ "Loading ...": [
   null,
   ""
  ],
@@ -239,13 +259,13 @@ return plural;
   null,
   "Nenhum dispositivo de inicialização encontrado"
  ],
+ "No console defined for this virtual machine.": [
+  null,
+  ""
+ ],
  "No disks defined for this VM": [
   null,
   "Nenhum disco definido para esta VM"
- ],
- "No graphics console is defined for this virtual machine.": [
-  null,
-  ""
  ],
  "No network interfaces defined for this VM": [
   null,
@@ -259,7 +279,7 @@ return plural;
   null,
   "Visão geral"
  ],
- "Please start the virtual machine to access its graphics console.": [
+ "Please start the virtual machine to access its console.": [
   null,
   ""
  ],
@@ -286,6 +306,10 @@ return plural;
  "Readonly": [
   null,
   "Apenasleitura"
+ ],
+ "Reconnect": [
+  null,
+  "Reconectar"
  ],
  "Restart": [
   null,
@@ -315,6 +339,14 @@ return plural;
   null,
   ""
  ],
+ "Send shortcut": [
+  null,
+  ""
+ ],
+ "Serial Console": [
+  null,
+  ""
+ ],
  "Session": [
   null,
   "Sessão"
@@ -330,14 +362,6 @@ return plural;
  "State": [
   null,
   "Estado"
- ],
- "Switch to Desktop Viewer": [
-  null,
-  ""
- ],
- "Switch to In-Browser Viewer": [
-  null,
-  ""
  ],
  "System": [
   null,
@@ -558,6 +582,10 @@ return plural;
  "udp": [
   null,
   ""
+ ],
+ "undefined": [
+  null,
+  "indefinido"
  ],
  "up": [
   null,

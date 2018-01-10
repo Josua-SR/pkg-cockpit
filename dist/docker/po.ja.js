@@ -485,7 +485,7 @@ return plural;
  ],
  "Not authorized to access Docker on this system": [
   null,
-  "このシステムの Docker にアクセスする権限がありません"
+  "このシステム上の Docker にアクセスする権限がありません"
  ],
  "Not found": [
   null,
@@ -535,6 +535,10 @@ return plural;
   null,
   "ポート:"
  ],
+ "Problems": [
+  null,
+  ""
+ ],
  "ReadOnly": [
   null,
   "読み取り専用"
@@ -542,6 +546,10 @@ return plural;
  "ReadWrite": [
   null,
   "読み書き"
+ ],
+ "Reboot": [
+  null,
+  "再起動"
  ],
  "Reformat and add disks": [
   null,
@@ -657,19 +665,19 @@ return plural;
  ],
  "The Docker storage pool cannot be managed on this system.": [
   null,
-  "Docker ストレージプールは、このシステムで管理できません。"
+  "Docker ストレージプールはこのシステムで管理できません。"
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,
-  "$time ($type) のスキャンでは、脆弱性は見つかりませんでした。"
+  ""
  ],
  "The scan from $time ($type) was not successful.": [
   null,
-  "$time ($type) のスキャンは成功しませんでした。"
+  ""
  ],
  "The storage pool will be reset to optimize its layout.  All containers will be erased.": [
   null,
-  "ストレージプールは、そのレイアウトを最適化するためにリセットされます。すべてのコンテナーは削除されます。"
+  "ストレージプールはそのレイアウトを最適化するためにリセットされます。すべてのコンテナーは削除されます。"
  ],
  "This image does not exist.": [
   null,
@@ -722,6 +730,18 @@ return plural;
  "You don't have permission to manage the Docker storage pool.": [
   null,
   "Docker ストレージプールを管理するパーミッションがありません。"
+ ],
+ "[$0 bytes of binary data]": [
+  null,
+  "[バイナリーデータの $0 バイト]"
+ ],
+ "[binary data]": [
+  null,
+  "[バイナリーデータ]"
+ ],
+ "[no data]": [
+  null,
+  "[データなし]"
  ],
  "alias": [
   null,

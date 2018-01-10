@@ -261,7 +261,7 @@ return plural;
  ],
  "Password Expiration": [
   null,
-  ""
+  "Expiración de Contraseña"
  ],
  "Password is not acceptable": [
   null,
@@ -273,7 +273,7 @@ return plural;
  ],
  "Password must be changed": [
   null,
-  ""
+  "Se debe cambiar la contraseña"
  ],
  "Paste the contents of your public SSH key file here": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "Please specify an expiration date": [
   null,
-  ""
+  "Por favor especifique una fecha de expiración"
  ],
  "Prompting via passwd timed out": [
   null,

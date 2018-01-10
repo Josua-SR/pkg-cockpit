@@ -903,7 +903,7 @@ return plural;
  ],
  "Pending Volume Claims": [
   null,
-  ""
+  "Reclamaciones de Volumen Pendientes"
  ],
  "Persistent Volumes": [
   null,
@@ -975,7 +975,7 @@ return plural;
  ],
  "Please select a valid endpoint": [
   null,
-  ""
+  "Por favor seleccione un punto final válido"
  ],
  "Please select a valid policy option.": [
   null,
@@ -991,19 +991,19 @@ return plural;
  ],
  "Pod Address": [
   null,
-  ""
+  "Dirección del Pod"
  ],
  "Pod Endpoints": [
   null,
-  ""
+  "Puntos Finales del Pod"
  ],
  "Pod Replicated": [
   null,
-  ""
+  "Pod Replicado"
  ],
  "Pod Selector": [
   null,
-  ""
+  "Selector de Pod"
  ],
  "Pods": [
   null,

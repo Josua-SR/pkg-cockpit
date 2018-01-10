@@ -1,5 +1,5 @@
 # Generated Makefile data for realmd
-# Stamp: Wed Dec 13 2017 08:55:58 GMT+0000 (UTC)
+# Stamp: Wed Jan 10 2018 12:05:42 GMT+0000 (UTC)
 
 realmd_INPUTS = \
 	pkg/lib/patterns.js \

@@ -79,6 +79,10 @@ return plural;
   null,
   "$0 磁盘"
  ],
+ "$0 data + $1 overhead used of $2 ($3)": [
+  null,
+  ""
+ ],
  "$0 day": [
   "$0 days",
   "$0 天"
@@ -106,6 +110,10 @@ return plural;
  "$0 of $1": [
   null,
   "$1 的 $0"
+ ],
+ "$0 used of $1 ($2 saved)": [
+  null,
+  ""
  ],
  "$0 week": [
   "$0 weeks",
@@ -191,6 +199,10 @@ return plural;
   null,
   "8 KiB"
  ],
+ "A disk is needed.": [
+  null,
+  ""
+ ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
   "该磁盘可以被移除前，需要添加一个备用的磁盘。"
@@ -242,6 +254,10 @@ return plural;
  "Available targets on $0": [
   null,
   "$0 上可用的目标"
+ ],
+ "Backing Device": [
+  null,
+  ""
  ],
  "Block": [
   null,
@@ -299,6 +315,10 @@ return plural;
   null,
   "兼容现代系统，且支持磁盘 > 2TB (GPT)"
  ],
+ "Compression": [
+  null,
+  "压缩"
+ ],
  "Confirm passphrase": [
   null,
   "确认口令"
@@ -330,6 +350,10 @@ return plural;
  "Create Thin Volume": [
   null,
   "创建稀疏卷"
+ ],
+ "Create VDO Device": [
+  null,
+  ""
  ],
  "Create Volume Group": [
   null,
@@ -411,6 +435,10 @@ return plural;
   null,
   "停用 $target"
  ],
+ "Deduplication": [
+  null,
+  ""
+ ],
  "Default": [
   null,
   "默认"
@@ -426,6 +454,10 @@ return plural;
  "Deleting a RAID device will erase all data on it.": [
   null,
   "删除 RAID 设备将擦除其中的所有数据."
+ ],
+ "Deleting a VDO device will erase all data on it.": [
+  null,
+  ""
  ],
  "Deleting a logical volume will delete all data in it.": [
   null,
@@ -443,9 +475,17 @@ return plural;
   null,
   "删除卷组 $target"
  ],
+ "Device File": [
+  null,
+  ""
+ ],
  "Device is read-only": [
   null,
   "设备只读"
+ ],
+ "Disk": [
+  null,
+  "磁盘"
  ],
  "Disk is OK": [
   null,
@@ -579,6 +619,18 @@ return plural;
   null,
   "转到现在"
  ],
+ "Grow": [
+  null,
+  ""
+ ],
+ "Grow logical size of $0": [
+  null,
+  ""
+ ],
+ "Grow to take all space": [
+  null,
+  ""
+ ],
  "In Sync": [
   null,
   "同步中"
@@ -586,6 +638,10 @@ return plural;
  "Inactive volume": [
   null,
   "暂停卷"
+ ],
+ "Index Memory": [
+  null,
+  ""
  ],
  "Invalid username or password": [
   null,
@@ -606,6 +662,14 @@ return plural;
  "Locking $target": [
   null,
   "锁定 $target"
+ ],
+ "Logical": [
+  null,
+  ""
+ ],
+ "Logical Size": [
+  null,
+  ""
  ],
  "Logical Volume": [
   null,
@@ -703,6 +767,10 @@ return plural;
   null,
   "名称"
  ],
+ "Name can not be empty.": [
+  null,
+  "名称不能为空."
+ ],
  "Name cannot be empty.": [
   null,
   "名称不能为空。"
@@ -767,6 +835,10 @@ return plural;
   null,
   "没有存储设置为 RAID"
  ],
+ "No storage set up as VDO": [
+  null,
+  ""
+ ],
  "No volume groups created": [
   null,
   "没有创建的卷组"
@@ -790,6 +862,10 @@ return plural;
  "On": [
   null,
   "开"
+ ],
+ "Only $0 of $1 are used.": [
+  null,
+  ""
  ],
  "Operation '$operation' on $target": [
   null,
@@ -847,6 +923,10 @@ return plural;
   null,
   ""
  ],
+ "Physical": [
+  null,
+  ""
+ ],
  "Physical Volume": [
   null,
   "物理卷"
@@ -862,6 +942,10 @@ return plural;
  "Please confirm deletion of $0": [
   null,
   "请确认删除 $0"
+ ],
+ "Please confirm stopping of $0": [
+  null,
+  ""
  ],
  "Pool": [
   null,
@@ -975,6 +1059,10 @@ return plural;
   null,
   "恢复 RAID 设备 $target"
  ],
+ "Remove device": [
+  null,
+  ""
+ ],
  "Removing $target from RAID Device": [
   null,
   "从 RAID 设备中删除 $target"
@@ -1066,6 +1154,10 @@ return plural;
  "Size must be a number": [
   null,
   "大小必须是一个数字"
+ ],
+ "Size must be at least $0": [
+  null,
+  ""
  ],
  "Spare": [
   null,
@@ -1163,6 +1255,10 @@ return plural;
   null,
   "为了移除磁盘，RAID 设备必须在运行状态。"
  ],
+ "The creation of this VDO device did not finish and the device can't be used.": [
+  null,
+  ""
+ ],
  "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
   null,
   ""
@@ -1195,6 +1291,10 @@ return plural;
   null,
   ""
  ],
+ "This VDO device does not use all of its backing device.": [
+  null,
+  ""
+ ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
   "该设备有正在使用的文件系统。               程序将卸载其上的所有文件系统。"
@@ -1206,6 +1306,10 @@ return plural;
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
   null,
   "该设备正在被 RAID 设备使用。                程序将从其 RAID 设备中移除它。"
+ ],
+ "This device is currently used for VDO devices.": [
+  null,
+  ""
  ],
  "This device is currently used for volume groups.": [
   null,
@@ -1222,6 +1326,10 @@ return plural;
  "This logical volume cannot be made smaller.": [
   null,
   "该逻辑卷不能变小。"
+ ],
+ "Transfer data asynchronously": [
+  null,
+  ""
  ],
  "Type": [
   null,
@@ -1291,6 +1399,10 @@ return plural;
   null,
   "使用情况"
  ],
+ "Use 512 Byte emulation": [
+  null,
+  ""
+ ],
  "Used": [
   null,
   "已使用"
@@ -1298,6 +1410,22 @@ return plural;
  "Username": [
   null,
   "用户名"
+ ],
+ "VDO Backing": [
+  null,
+  ""
+ ],
+ "VDO Device": [
+  null,
+  ""
+ ],
+ "VDO Device $0": [
+  null,
+  ""
+ ],
+ "VDO Devices": [
+  null,
+  ""
  ],
  "VFAT - Compatible with all systems and devices": [
   null,
@@ -1382,6 +1510,10 @@ return plural;
  "storage-id-desc\u0004Unrecognized Data": [
   null,
   "无法识别的数据"
+ ],
+ "storage-id-desc\u0004VDO Backing": [
+  null,
+  ""
  ],
  "storage\u0004Drive": [
   null,

@@ -92,7 +92,7 @@ Requires: %{name}-system = %{version}-%{release}
 Recommends: %{name}-dashboard = %{version}-%{release}
 Recommends: %{name}-networkmanager = %{version}-%{release}
 Recommends: %{name}-storaged = %{version}-%{release}
-Recommends: sscg >= 2.0.4
+Recommends: sscg >= 2.3
 %ifarch x86_64 %{arm} aarch64 ppc64le i686 s390x
 Recommends: %{name}-docker = %{version}-%{release}
 %endif
@@ -406,11 +406,8 @@ Requires: device-mapper-multipath
 %else
 %if 0%{?rhel} == 7
 Requires: udisks2 >= 2.6
-# FIXME: udisks2 modules not yet available on 7.5
-%if "%{os_version_id}" != "7.5"
 Requires: udisks2-lvm2 >= 2.6
 Requires: udisks2-iscsi >= 2.6
-%endif
 Requires: device-mapper-multipath
 %else
 %if 0%{?fedora} >= 27 || 0%{?rhel} >= 8

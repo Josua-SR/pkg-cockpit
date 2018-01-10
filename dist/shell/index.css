@@ -1155,7 +1155,6 @@ input[type=number] {
     -webkit-flex: auto;
     flex: auto;
     position: relative;
-    width: 100%;
     /* Position as absolute to make things work on old Chrome versions,
            mainly to make tests pass */
   }
@@ -1892,8 +1891,6 @@ html.index-page body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-flex;
-  /* Fallback for PhantomJS */
   display: flex;
   align-items: center;
   text-decoration: none;

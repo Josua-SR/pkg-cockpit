@@ -365,11 +365,11 @@ return plural;
  ],
  "Password not usable for privileged tasks or to connect to other machines": [
   null,
-  ""
+  "Contraseña no utilizable para tareas privilegiadas o para conectar a otras máquinas"
  ],
  "Path to file": [
   null,
-  ""
+  "Ruta al fichero"
  ],
  "Port": [
   null,

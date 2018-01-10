@@ -123,7 +123,7 @@ return plural;
  ],
  "Add New Cluster": [
   null,
-  "Afegeix un dispositiu nou"
+  "Afegeix un clúster nou"
  ],
  "Add New User": [
   null,
@@ -499,11 +499,11 @@ return plural;
  ],
  "Error getting certificate details: $0": [
   null,
-  "S'ha produït un error en obtenir els certificats: $0"
+  "Error en obtenir els detalls del certificat: $0"
  ],
  "Error writing kubectl config": [
   null,
-  "S'ha produït un error en escriure la configuració de kubectl"
+  "Error en escriure la configuració de kubectl"
  ],
  "Fibre Channel": [
   null,
@@ -943,7 +943,7 @@ return plural;
  ],
  "Please provide a valid logical unit number": [
   null,
-  ""
+  "Si us plau, proporcioneu un nombre vàlid d'unitat lògica"
  ],
  "Please provide a valid name": [
   null,
@@ -1107,7 +1107,7 @@ return plural;
  ],
  "Reason": [
   null,
-  "Raó"
+  "Motiu"
  ],
  "Reclaim Policy": [
   null,

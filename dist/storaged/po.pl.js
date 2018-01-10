@@ -79,6 +79,10 @@ return plural;
   null,
   "Dyski: $0"
  ],
+ "$0 data + $1 overhead used of $2 ($3)": [
+  null,
+  "$0 danych + $1 nadwyżki użyto z $2 ($3)"
+ ],
  "$0 day": [
   "$0 days",
   "$0 dzień",
@@ -116,6 +120,10 @@ return plural;
  "$0 of $1": [
   null,
   "$0 z $1"
+ ],
+ "$0 used of $1 ($2 saved)": [
+  null,
+  "$0 używanych z $1 ($2 zapisano)"
  ],
  "$0 week": [
   "$0 weeks",
@@ -205,6 +213,10 @@ return plural;
   null,
   "8 KiB"
  ],
+ "A disk is needed.": [
+  null,
+  "Wymagany jest dysk."
+ ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
   "Przed usunięciem tego dysku należy najpierw dodać dysk zapasowy."
@@ -256,6 +268,10 @@ return plural;
  "Available targets on $0": [
   null,
   "Dostępne cele w $0"
+ ],
+ "Backing Device": [
+  null,
+  "Urządzenie podstawowe"
  ],
  "Block": [
   null,
@@ -313,6 +329,10 @@ return plural;
   null,
   "Zgodne z nowoczesnymi systemami i dyskami twardymi > 2 TB (GPT)"
  ],
+ "Compression": [
+  null,
+  "Kompresja"
+ ],
  "Confirm passphrase": [
   null,
   "Potwierdź hasło"
@@ -344,6 +364,10 @@ return plural;
  "Create Thin Volume": [
   null,
   "Utwórz cienki wolumin"
+ ],
+ "Create VDO Device": [
+  null,
+  "Utwórz urządzenie VDO"
  ],
  "Create Volume Group": [
   null,
@@ -403,7 +427,7 @@ return plural;
  ],
  "Custom mount option": [
   null,
-  ""
+  "Niestandardowa opcja montowania"
  ],
  "Custom mount options": [
   null,
@@ -425,6 +449,10 @@ return plural;
   null,
   "Dezaktywowanie $target"
  ],
+ "Deduplication": [
+  null,
+  "Deduplikacja"
+ ],
  "Default": [
   null,
   "Domyślne"
@@ -440,6 +468,10 @@ return plural;
  "Deleting a RAID device will erase all data on it.": [
   null,
   "Usunięcie urządzenia RAID usunie wszystkie znajdujące się na nim dane."
+ ],
+ "Deleting a VDO device will erase all data on it.": [
+  null,
+  "Usunięcie urządzenia VDO usunie wszystkie znajdujące się na nim dane."
  ],
  "Deleting a logical volume will delete all data in it.": [
   null,
@@ -457,9 +489,17 @@ return plural;
   null,
   "Usuwanie grupy woluminów $target"
  ],
+ "Device File": [
+  null,
+  "Plik urządzenia"
+ ],
  "Device is read-only": [
   null,
   "Urządzenie jest tylko do odczytu"
+ ],
+ "Disk": [
+  null,
+  "Dysk"
  ],
  "Disk is OK": [
   null,
@@ -593,6 +633,18 @@ return plural;
   null,
   "Przejdź teraz"
  ],
+ "Grow": [
+  null,
+  "Powiększ"
+ ],
+ "Grow logical size of $0": [
+  null,
+  "Powiększ rozmiar logiczny $0"
+ ],
+ "Grow to take all space": [
+  null,
+  "Powiększ do użycia całego miejsca"
+ ],
  "In Sync": [
   null,
   "Zsynchronizowane"
@@ -600,6 +652,10 @@ return plural;
  "Inactive volume": [
   null,
   "Nieaktywny wolumin"
+ ],
+ "Index Memory": [
+  null,
+  "Pamięć indeksu"
  ],
  "Invalid username or password": [
   null,
@@ -620,6 +676,14 @@ return plural;
  "Locking $target": [
   null,
   "Blokowanie $target"
+ ],
+ "Logical": [
+  null,
+  "Logiczny"
+ ],
+ "Logical Size": [
+  null,
+  "Rozmiar logiczny"
  ],
  "Logical Volume": [
   null,
@@ -717,6 +781,10 @@ return plural;
   null,
   "Nazwa"
  ],
+ "Name can not be empty.": [
+  null,
+  "Nazwa nie może być pusta."
+ ],
  "Name cannot be empty.": [
   null,
   "Nazwa nie może być pusta."
@@ -781,6 +849,10 @@ return plural;
   null,
   "Nie ustawiono żadnego urządzenia do przechowywania danych jako RAID"
  ],
+ "No storage set up as VDO": [
+  null,
+  "Nie ustawiono żadnego urządzenia do przechowywania danych jako VDO"
+ ],
  "No volume groups created": [
   null,
   "Nie utworzono grup woluminów"
@@ -791,7 +863,7 @@ return plural;
  ],
  "Not mounted": [
   null,
-  ""
+  "Niezamontowane"
  ],
  "Not running": [
   null,
@@ -804,6 +876,10 @@ return plural;
  "On": [
   null,
   "Włączone"
+ ],
+ "Only $0 of $1 are used.": [
+  null,
+  "Tylko $0 z $1 jest używane."
  ],
  "Operation '$operation' on $target": [
   null,
@@ -861,6 +937,10 @@ return plural;
   null,
   "Ścieżka na serwerze musi zaczynać się od „/”."
  ],
+ "Physical": [
+  null,
+  "Fizyczny"
+ ],
  "Physical Volume": [
   null,
   "Wolumin fizyczny"
@@ -876,6 +956,10 @@ return plural;
  "Please confirm deletion of $0": [
   null,
   "Proszę potwierdzić usunięcie $0"
+ ],
+ "Please confirm stopping of $0": [
+  null,
+  "Proszę potwierdzić zatrzymanie $0"
  ],
  "Pool": [
   null,
@@ -989,6 +1073,10 @@ return plural;
   null,
   "Przywracanie urządzenia RAID $target"
  ],
+ "Remove device": [
+  null,
+  "Usuń urządzenie"
+ ],
  "Removing $target from RAID Device": [
   null,
   "Usuwanie $target z urządzenia RAID"
@@ -1080,6 +1168,10 @@ return plural;
  "Size must be a number": [
   null,
   "Rozmiar musi być liczbą"
+ ],
+ "Size must be at least $0": [
+  null,
+  "Rozmiar musi wynosić co najmniej $0"
  ],
  "Spare": [
   null,
@@ -1177,6 +1269,10 @@ return plural;
   null,
   "Urządzenie RAID musi być uruchomione, aby usunąć dyski."
  ],
+ "The creation of this VDO device did not finish and the device can't be used.": [
+  null,
+  "Utworzenie tego urządzenia VDO nie zostało ukończone, więc nie można go używać."
+ ],
  "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
   null,
   "System plików jest używany przez usługi systemu lub sesje logowania.                Kontynuacja zatrzyma te usługi i sesje."
@@ -1209,6 +1305,10 @@ return plural;
   null,
   "Ten punkt montowania NFS jest używany. Można zmieniać tylko jego opcje."
  ],
+ "This VDO device does not use all of its backing device.": [
+  null,
+  "To urządzenie VDO nie używa całości swojego urządzenia podstawowego."
+ ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
   "To urządzenie ma obecnie używane systemy plików.                Kontynuacja odmontuje wszystkie jego systemy plików."
@@ -1220,6 +1320,10 @@ return plural;
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
   null,
   "To urządzenie jest obecnie używane dla urządzeń RAID.                Kontynuacja usunie je z jego urządzeń RAID."
+ ],
+ "This device is currently used for VDO devices.": [
+  null,
+  "To urządzenie jest obecnie używane dla urządzeń VDO."
  ],
  "This device is currently used for volume groups.": [
   null,
@@ -1236,6 +1340,10 @@ return plural;
  "This logical volume cannot be made smaller.": [
   null,
   "Nie można zmniejszyć tego woluminu logicznego."
+ ],
+ "Transfer data asynchronously": [
+  null,
+  "Prześlij dane asynchronicznie"
  ],
  "Type": [
   null,
@@ -1305,6 +1413,10 @@ return plural;
   null,
   "Użycie"
  ],
+ "Use 512 Byte emulation": [
+  null,
+  "Użycie emulacji 512 bajtów"
+ ],
  "Used": [
   null,
   "Używane"
@@ -1312,6 +1424,22 @@ return plural;
  "Username": [
   null,
   "Nazwa użytkownika"
+ ],
+ "VDO Backing": [
+  null,
+  "Podstawa VDO"
+ ],
+ "VDO Device": [
+  null,
+  "Urządzenie VDO"
+ ],
+ "VDO Device $0": [
+  null,
+  "Urządzenie VDO $0"
+ ],
+ "VDO Devices": [
+  null,
+  "Urządzenia VDO"
  ],
  "VFAT - Compatible with all systems and devices": [
   null,
@@ -1396,6 +1524,10 @@ return plural;
  "storage-id-desc\u0004Unrecognized Data": [
   null,
   "Nierozpoznane dane"
+ ],
+ "storage-id-desc\u0004VDO Backing": [
+  null,
+  "Podstawa VDO"
  ],
  "storage\u0004Drive": [
   null,
