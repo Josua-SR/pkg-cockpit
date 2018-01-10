@@ -549,6 +549,10 @@ return plural;
   null,
   "Порти:"
  ],
+ "Problems": [
+  null,
+  "Проблеми"
+ ],
  "ReadOnly": [
   null,
   "Лише запис"
@@ -556,6 +560,10 @@ return plural;
  "ReadWrite": [
   null,
   "Запис-читання"
+ ],
+ "Reboot": [
+  null,
+  "Перезавантажити"
  ],
  "Reformat and add disks": [
   null,
@@ -736,6 +744,18 @@ return plural;
  "You don't have permission to manage the Docker storage pool.": [
   null,
   "У вас немає прав доступу до керування резервним сховищем даних Docker."
+ ],
+ "[$0 bytes of binary data]": [
+  null,
+  "[$0 байтів двійкових даних]"
+ ],
+ "[binary data]": [
+  null,
+  "[двійкові дані]"
+ ],
+ "[no data]": [
+  null,
+  "[немає даних]"
  ],
  "alias": [
   null,

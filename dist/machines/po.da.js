@@ -251,6 +251,10 @@ return plural;
   null,
   ""
  ],
+ "undefined": [
+  null,
+  ""
+ ],
  "vCPUs:": [
   null,
   ""

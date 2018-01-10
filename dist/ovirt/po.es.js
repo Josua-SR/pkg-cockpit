@@ -179,10 +179,6 @@ return plural;
   null,
   "Conectar a oVirt Engine"
  ],
- "Connect with Remote Viewer": [
-  null,
-  "Conectar con Visor Remoto"
- ],
  "Connect with any $0 viewer application.": [
   null,
   "Conectar con alguna Aplicación para ver $0"
@@ -195,9 +191,13 @@ return plural;
   null,
   "Conexión"
  ],
- "Console": [
+ "Console Type": [
   null,
-  "Consola"
+  ""
+ ],
+ "Consoles": [
+  null,
+  ""
  ],
  "Count:": [
   null,
@@ -230,6 +230,14 @@ return plural;
  "Device": [
   null,
   "Dispositivo"
+ ],
+ "Disconnect": [
+  null,
+  ""
+ ],
+ "Disconnected from serial console. Click the Reconnect button.": [
+  null,
+  ""
  ],
  "Disks": [
   null,
@@ -271,6 +279,14 @@ return plural;
   null,
   "GB"
  ],
+ "Graphics Console (VNC)": [
+  null,
+  ""
+ ],
+ "Graphics Console in Desktop Viewer": [
+  null,
+  ""
+ ],
  "HA": [
   null,
   "HA"
@@ -290,6 +306,10 @@ return plural;
  "Launch Remote Viewer": [
   null,
   "Lanzar Visualizador remoto"
+ ],
+ "Loading ...": [
+  null,
+  ""
  ],
  "Loading data ...": [
   null,
@@ -355,13 +375,13 @@ return plural;
   null,
   "No encontrado dispositivo de arranque"
  ],
+ "No console defined for this virtual machine.": [
+  null,
+  ""
+ ],
  "No disks defined for this VM": [
   null,
   "No se han definido discos para esta VM"
- ],
- "No graphics console is defined for this virtual machine.": [
-  null,
-  "No se ha definido consola gráfica para esta máquina virtual."
  ],
  "No network interfaces defined for this VM": [
   null,
@@ -393,35 +413,35 @@ return plural;
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
-  ""
+  "Por favor confirme que el host será conmutado a modo mantenimiento."
  ],
  "Please provide fully qualified domain name and port of the oVirt engine.": [
   null,
-  ""
+  "Por favor suministre el nombre completo de dominio y el puerto de la máquina oVirt."
  ],
  "Please provide valid oVirt engine fully qualified domain name (FQDN) and port (443 by default)": [
   null,
-  ""
+  "Por favor suministre un nombre de dominio totalmente cualificado (FQDN) de la máquina oVirt y puerto (443 por defecto)"
  ],
  "Please refer to oVirt's $0 for more information about Remote Viewer setup.": [
   null,
-  ""
+  "Por favor vea $0 de oVirt para más información sobre el ajuste del Visualizador Remoto."
  ],
- "Please start the virtual machine to access its graphics console.": [
+ "Please start the virtual machine to access its console.": [
   null,
   ""
  ],
  "Please wait till VMs list is loaded from the server.": [
   null,
-  ""
+  "Por favor espere hasta que la lista VMs se cargue desde el servidor."
  ],
  "Please wait till list of templates is loaded from the server.": [
   null,
-  ""
+  "Por favor espere hasta que la lista de plantilla se cargue desde el servidor."
  ],
  "Plug": [
   null,
-  ""
+  "Enchufe"
  ],
  "Pool": [
   null,
@@ -450,6 +470,10 @@ return plural;
  "Readonly": [
   null,
   ""
+ ],
+ "Reconnect": [
+  null,
+  "Reconectarse"
  ],
  "Register oVirt": [
   null,
@@ -515,6 +539,14 @@ return plural;
   null,
   ""
  ],
+ "Send shortcut": [
+  null,
+  ""
+ ],
+ "Serial Console": [
+  null,
+  ""
+ ],
  "Session": [
   null,
   "Sesión"
@@ -544,14 +576,6 @@ return plural;
   ""
  ],
  "Switch Host to Maintenance": [
-  null,
-  ""
- ],
- "Switch to Desktop Viewer": [
-  null,
-  ""
- ],
- "Switch to In-Browser Viewer": [
   null,
   ""
  ],
@@ -906,6 +930,10 @@ return plural;
  "unassigned": [
   null,
   ""
+ ],
+ "undefined": [
+  null,
+  "sin definir"
  ],
  "up": [
   null,

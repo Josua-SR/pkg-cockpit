@@ -123,10 +123,6 @@ return plural;
   null,
   "Confirma la eliminación de $0"
  ],
- "Connect with Remote Viewer": [
-  null,
-  "Conectar con Visor Remoto"
- ],
  "Connect with any $0 viewer application.": [
   null,
   "Conectar con alguna Aplicación para ver $0"
@@ -139,9 +135,13 @@ return plural;
   null,
   "Conexión"
  ],
- "Console": [
+ "Console Type": [
   null,
-  "Consola"
+  ""
+ ],
+ "Consoles": [
+  null,
+  ""
  ],
  "Count:": [
   null,
@@ -158,6 +158,14 @@ return plural;
  "Device": [
   null,
   "Dispositivo"
+ ],
+ "Disconnect": [
+  null,
+  ""
+ ],
+ "Disconnected from serial console. Click the Reconnect button.": [
+  null,
+  ""
  ],
  "Disks": [
   null,
@@ -187,6 +195,14 @@ return plural;
   null,
   "GB"
  ],
+ "Graphics Console (VNC)": [
+  null,
+  ""
+ ],
+ "Graphics Console in Desktop Viewer": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "Anfitrión"
@@ -194,6 +210,10 @@ return plural;
  "Launch Remote Viewer": [
   null,
   "Lanzar Visualizador remoto"
+ ],
+ "Loading ...": [
+  null,
+  ""
  ],
  "MAC Address": [
   null,
@@ -239,13 +259,13 @@ return plural;
   null,
   "No encontrado dispositivo de arranque"
  ],
+ "No console defined for this virtual machine.": [
+  null,
+  ""
+ ],
  "No disks defined for this VM": [
   null,
   "No se han definido discos para esta VM"
- ],
- "No graphics console is defined for this virtual machine.": [
-  null,
-  "No se ha definido consola gráfica para esta máquina virtual."
  ],
  "No network interfaces defined for this VM": [
   null,
@@ -259,13 +279,13 @@ return plural;
   null,
   "Visión conjunta"
  ],
- "Please start the virtual machine to access its graphics console.": [
+ "Please start the virtual machine to access its console.": [
   null,
   ""
  ],
  "Plug": [
   null,
-  ""
+  "Enchufe"
  ],
  "Pool": [
   null,
@@ -286,6 +306,10 @@ return plural;
  "Readonly": [
   null,
   ""
+ ],
+ "Reconnect": [
+  null,
+  "Reconectarse"
  ],
  "Restart": [
   null,
@@ -315,6 +339,14 @@ return plural;
   null,
   ""
  ],
+ "Send shortcut": [
+  null,
+  ""
+ ],
+ "Serial Console": [
+  null,
+  ""
+ ],
  "Session": [
   null,
   "Sesión"
@@ -330,14 +362,6 @@ return plural;
  "State": [
   null,
   "Estado"
- ],
- "Switch to Desktop Viewer": [
-  null,
-  ""
- ],
- "Switch to In-Browser Viewer": [
-  null,
-  ""
  ],
  "System": [
   null,
@@ -558,6 +582,10 @@ return plural;
  "udp": [
   null,
   ""
+ ],
+ "undefined": [
+  null,
+  "sin definir"
  ],
  "up": [
   null,

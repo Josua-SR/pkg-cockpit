@@ -85,7 +85,7 @@ return plural;
  ],
  "Add key": [
   null,
-  "Afegeix la clau"
+  "Afegeix una clau"
  ],
  "Add public key": [
   null,
@@ -121,7 +121,7 @@ return plural;
  ],
  "Confirm New Password": [
   null,
-  "Confirmació de la nova contrasenya"
+  "Confirmació de la contrasenya nova"
  ],
  "Container Administrator": [
   null,
@@ -153,7 +153,7 @@ return plural;
  ],
  "Error saving authorized keys: ": [
   null,
-  "S'ha produït un error en desar les claus autoritzades: "
+  "Error en desar les claus autoritzades: "
  ],
  "Excellent password": [
   null,

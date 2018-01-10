@@ -114,6 +114,14 @@
               {{/MDRaidMembers}}
             </table>
             {{/HasMDRaidMembers}}
+            {{#HasVDOs}}
+            <p translate>This device is currently used for VDO devices.</p>
+            <table class="table table-bordered">
+              {{#VDOs}}
+              <tr><td><span class="pull-right">{{Name}}</span>{{VDO}}</td></tr>
+              {{/VDOs}}
+            </table>
+            {{/HasVDOs}}
             {{/Blocking}}
             {{{Body}}}
             <table class="form-table-ct">
@@ -238,6 +246,31 @@
                   {{/HasOptions}}
                 </td>
                 {{/SelectMany}}
+                {{#SelectOneOfMany}}
+                <td class="top">{{Title}}</td>
+                <td>
+                  {{#HasOptions}}
+                  <ul class="list-group available-disks-group dialog-list-ct" data-field={{.}}>
+                    {{#Options}}
+                    <li class="list-group-item">
+                      <div class="radio">
+                        <label><input type="radio" name={{SelectOneOfMany}}
+                                      {{#checked}}checked{{/checked}} value="{{value}}">
+                          {{#Label}}
+                          <span class="pull-right">{{.}}</span>
+                          {{/Label}}
+                          <span>{{Title}}</span>
+                        </label>
+                      </div>
+                    </li>
+                    {{/Options}}
+                  </ul>
+                  {{/HasOptions}}
+                  {{^HasOptions}}
+                  <span class="text-danger">{{EmptyWarning}}</span>
+                  {{/HasOptions}}
+                </td>
+                {{/SelectOneOfMany}}
                 {{#SelectRow}}
                 <td colspan="2">
                   <table data-field="{{.}}" class="dialog-select-row-table">

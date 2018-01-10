@@ -69,19 +69,31 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  "$0 は、多数のオペレーティングシステムで利用できます。インストールするには、GNOME ソフトウェアで検索するか、以下を実行します:"
+  ""
  ],
  "Action": [
   null,
-  "アクション"
+  ""
+ ],
+ "Additional": [
+  null,
+  ""
+ ],
+ "Address": [
+  null,
+  "アドレス:"
  ],
  "Address:": [
   null,
   "アドレス:"
  ],
+ "All running virtual machines will be turned off.": [
+  null,
+  ""
+ ],
  "Automatically selected host": [
   null,
-  "自動的に選択されたホスト"
+  ""
  ],
  "Autostart:": [
   null,
@@ -93,31 +105,35 @@ return plural;
  ],
  "Base Template": [
   null,
-  "ベーステンプレート"
+  ""
  ],
  "Base template": [
   null,
-  "ベーステンプレート"
+  ""
  ],
  "Base template:": [
   null,
-  "ベーステンプレート:"
+  ""
  ],
  "Boot Order:": [
   null,
-  "ブート順序:"
+  ""
  ],
  "Bus": [
   null,
   "バス"
  ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  ""
+ ],
  "CPU Type:": [
   null,
-  "CPU タイプ:"
+  "種類:"
  ],
  "CREATE VM action failed": [
   null,
-  "CREATE VM アクションに失敗しました"
+  ""
  ],
  "Cancel": [
   null,
@@ -129,7 +145,7 @@ return plural;
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  "\"リモートビューアーの起動\" をクリックすると、.vv ファイルをダウンロードし、$0 を起動します。"
+  ""
  ],
  "Cluster": [
   null,
@@ -137,51 +153,51 @@ return plural;
  ],
  "Cluster Templates": [
   null,
-  "クラスターテンプレート"
+  ""
  ],
  "Cluster Virtual Machines": [
   null,
-  "クラスター仮想マシン"
+  ""
  ],
  "Confirm deletion of $0": [
   null,
-  "$0 の削除を確定"
+  "$0 の削除を確定してください"
  ],
  "Confirm migration": [
   null,
-  "移行の確定"
+  ""
  ],
  "Confirm reload:": [
   null,
-  "リロードの確認:"
+  ""
  ],
  "Confirm save:": [
   null,
-  "保存の確認:"
+  ""
  ],
  "Connect to oVirt Engine": [
   null,
-  "oVirt エンジンに接続"
- ],
- "Connect with Remote Viewer": [
-  null,
-  "リモートビューアーに接続"
+  ""
  ],
  "Connect with any $0 viewer application.": [
   null,
-  "$0 ビューアーアプリケーションに接続します。"
+  ""
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  "SPICE または VNC のビューアーアプリケーションに接続します。"
+  ""
  ],
  "Connection": [
   null,
   "接続"
  ],
- "Console": [
+ "Console Type": [
   null,
-  "コンソール"
+  ""
+ ],
+ "Consoles": [
+  null,
+  ""
  ],
  "Count:": [
   null,
@@ -193,7 +209,7 @@ return plural;
  ],
  "Create VM": [
   null,
-  "仮想マシンの作成"
+  ""
  ],
  "Delete": [
   null,
@@ -201,7 +217,7 @@ return plural;
  ],
  "Delete associated storage files:": [
   null,
-  "関連するストレージファイルの削除:"
+  ""
  ],
  "Description": [
   null,
@@ -209,11 +225,19 @@ return plural;
  ],
  "Description:": [
   null,
-  "詳細:"
+  ""
  ],
  "Device": [
   null,
   "デバイス"
+ ],
+ "Disconnect": [
+  null,
+  ""
+ ],
+ "Disconnected from serial console. Click the Reconnect button.": [
+  null,
+  ""
  ],
  "Disks": [
   null,
@@ -221,23 +245,23 @@ return plural;
  ],
  "Download the MSI from $0": [
   null,
-  "MSI を $0 からダウンロードします"
+  ""
  ],
  "Edit the vdsm.conf": [
   null,
-  "vdsm.conf を編集します"
+  ""
  ],
  "Emulated Machine:": [
   null,
-  "エミュレートされたマシン:"
+  "仮想マシン"
  ],
  "Enter New VM name": [
   null,
-  "新規仮想マシン名を入力します"
+  ""
  ],
  "FQDN": [
   null,
-  "FQDN"
+  ""
  ],
  "File": [
   null,
@@ -255,33 +279,61 @@ return plural;
   null,
   "GB"
  ],
+ "Graphics Console (VNC)": [
+  null,
+  ""
+ ],
+ "Graphics Console in Desktop Viewer": [
+  null,
+  ""
+ ],
  "HA": [
   null,
-  "HA"
+  ""
  ],
  "HA:": [
   null,
-  "HA:"
+  ""
  ],
  "Host": [
   null,
   "ホスト"
  ],
+ "Host to Maintenance": [
+  null,
+  ""
+ ],
  "Launch Remote Viewer": [
   null,
-  "リモートビューアーの起動"
+  ""
+ ],
+ "Loading ...": [
+  null,
+  ""
  ],
  "Loading data ...": [
   null,
-  "データのロード中..."
+  ""
+ ],
+ "MAC Address": [
+  null,
+  ""
  ],
  "MIGRATE action failed": [
   null,
-  "MIGRATE アクションに失敗しました"
+  ""
+ ],
+ "MTU": [
+  null,
+  "MTU"
+ ],
+ "Managed": [
+  null,
+  ""
  ],
  "Manual Connection": [
   null,
-  "手動接続"
+  "接続"
  ],
  "Memory": [
   null,
@@ -293,19 +345,27 @@ return plural;
  ],
  "Migrate To:": [
   null,
-  "移行先:"
+  ""
+ ],
+ "Model type": [
+  null,
+  ""
  ],
  "More Information": [
   null,
-  "詳細情報"
+  "設定"
  ],
  "Name": [
   null,
   "名前"
  ],
+ "Networks": [
+  null,
+  ""
+ ],
  "No VM found in oVirt.": [
   null,
-  "oVirt で仮想マシンが見つかりませんでした。"
+  ""
  ],
  "No VM is running or defined on this host": [
   null,
@@ -313,19 +373,23 @@ return plural;
  ],
  "No boot device found": [
   null,
-  "ブートデバイスが見つかりません"
+  "ホストキーが見つかりません。"
+ ],
+ "No console defined for this virtual machine.": [
+  null,
+  ""
  ],
  "No disks defined for this VM": [
   null,
-  "この仮想マシンにはディスクが定義されていません"
+  "この VM に対してディスクが定義されていません"
  ],
- "No graphics console is defined for this virtual machine.": [
+ "No network interfaces defined for this VM": [
   null,
-  "この仮想マシンには、グラフィカルコンソールが定義されていません。"
+  ""
  ],
  "OK": [
   null,
-  "OK"
+  ""
  ],
  "OS": [
   null,
@@ -333,7 +397,7 @@ return plural;
  ],
  "OS Type:": [
   null,
-  "OS タイプ:"
+  ""
  ],
  "Ok": [
   null,
@@ -341,35 +405,43 @@ return plural;
  ],
  "Optimized for:": [
   null,
-  "次に対して最適化:"
+  ""
  ],
  "Overview": [
   null,
   "概要"
  ],
+ "Please confirm, the host shall be switched to maintenance mode.": [
+  null,
+  ""
+ ],
  "Please provide fully qualified domain name and port of the oVirt engine.": [
   null,
-  "完全修飾ドメイン名と、oVirt エンジンのポートを提供してください。"
+  ""
  ],
  "Please provide valid oVirt engine fully qualified domain name (FQDN) and port (443 by default)": [
   null,
-  "有効な oVirt エンジンの完全修飾ドメイン名 (FQDN) と、ポート (デフォルトでは 443) を提供してください"
+  ""
  ],
  "Please refer to oVirt's $0 for more information about Remote Viewer setup.": [
   null,
-  "リモートビューアーの設定の詳細は、oVirt の $0 を参照してください。"
+  ""
  ],
- "Please start the virtual machine to access its graphics console.": [
+ "Please start the virtual machine to access its console.": [
   null,
-  "仮想マシンを起動して、グラフィックコンソールにアクセスしてください。"
+  ""
  ],
  "Please wait till VMs list is loaded from the server.": [
   null,
-  "サーバーから仮想マシンの一覧がロードされるまでお待ちください。"
+  ""
  ],
  "Please wait till list of templates is loaded from the server.": [
   null,
-  "テンプレートの一覧がサーバーからロードされるのをお待ちください。"
+  ""
+ ],
+ "Plug": [
+  null,
+  ""
  ],
  "Pool": [
   null,
@@ -379,9 +451,13 @@ return plural;
   null,
   "ポート"
  ],
+ "Portgroup": [
+  null,
+  ""
+ ],
  "Preparing for Maintenance": [
   null,
-  "メンテナンスの準備中"
+  ""
  ],
  "Protocol": [
   null,
@@ -389,19 +465,23 @@ return plural;
  ],
  "REBOOT action failed": [
   null,
-  "REBOOT アクションに失敗しました"
+  ""
  ],
  "Readonly": [
   null,
   "読み取り専用"
  ],
+ "Reconnect": [
+  null,
+  "再接続"
+ ],
  "Register oVirt": [
   null,
-  "oVirt の登録"
+  ""
  ],
  "Registering oVirt to Cockpit": [
   null,
-  "oVirt を Cockpit に登録中"
+  ""
  ],
  "Reload": [
   null,
@@ -417,35 +497,39 @@ return plural;
  ],
  "Run Here": [
   null,
-  "ここから実行"
+  ""
+ ],
+ "Running Since:": [
+  null,
+  ""
  ],
  "SHUTDOWN action failed": [
   null,
-  "SHUTDOWN アクションに失敗しました"
+  ""
  ],
  "SPICE": [
   null,
-  "SPICE"
+  ""
  ],
  "SPICE Address:": [
   null,
-  "SPICE アドレス:"
+  "IP アドレス:"
  ],
  "SPICE Port:": [
   null,
-  "SPICE ポート:"
+  ""
  ],
  "SPICE TLS Port:": [
   null,
-  "SPICE TLS ポート:"
+  ""
  ],
  "START action failed": [
   null,
-  "START アクションに失敗しました"
+  ""
  ],
  "SUSPEND action failed": [
   null,
-  "SUSPEND アクションに失敗しました"
+  ""
  ],
  "Save": [
   null,
@@ -453,7 +537,15 @@ return plural;
  ],
  "Send Non-Maskable Interrupt": [
   null,
-  "マスク不可割り込みを送信します"
+  ""
+ ],
+ "Send shortcut": [
+  null,
+  ""
+ ],
+ "Serial Console": [
+  null,
+  ""
  ],
  "Session": [
   null,
@@ -473,23 +565,27 @@ return plural;
  ],
  "Stateless": [
   null,
-  "ステートレス"
+  ""
  ],
  "Stateless:": [
   null,
-  "ステートレス:"
+  ""
  ],
  "Suspend": [
   null,
-  "一時停止"
+  ""
  ],
- "Switch to Desktop Viewer": [
+ "Switch Host to Maintenance": [
   null,
-  "デスクトップビューアーに切り替える"
+  ""
  ],
- "Switch to In-Browser Viewer": [
+ "Switching host to maintenance mode failed. Received error: ": [
   null,
-  "ブラウザー内ビューアーに切り替えます。"
+  ""
+ ],
+ "Switching host to maintenance mode in progress ...": [
+  null,
+  ""
  ],
  "System": [
   null,
@@ -505,7 +601,11 @@ return plural;
  ],
  "Templates": [
   null,
-  "テンプレート"
+  ""
+ ],
+ "Templates of $0 cluster": [
+  null,
+  ""
  ],
  "The VM crashed.": [
   null,
@@ -533,7 +633,7 @@ return plural;
  ],
  "The VM is running and will be forced off before deletion.": [
   null,
-  "仮想マシンが稼動しているため、削除前に強制的に電源がオフになります。"
+  ""
  ],
  "The VM is running.": [
   null,
@@ -545,11 +645,19 @@ return plural;
  ],
  "This virtual machine is not managed by oVirt": [
   null,
-  "この仮想マシンは、oVirt で管理されていません"
+  ""
+ ],
+ "Type": [
+  null,
+  "タイプ"
+ ],
+ "Unplug": [
+  null,
+  ""
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
-  "ディスクの統計情報を表示するには、libvirt を新しいバージョンにアップグレードしてください"
+  "ディスクの統計情報を表示するには libvirt の新しいバージョンにアップグレードしてください"
  ],
  "Usage": [
   null,
@@ -561,11 +669,11 @@ return plural;
  ],
  "VDSM": [
   null,
-  "VDSM"
+  ""
  ],
  "VDSM Service Management": [
   null,
-  "VDSM サービス管理"
+  ""
  ],
  "VM FORCE OFF action failed": [
   null,
@@ -581,7 +689,7 @@ return plural;
  ],
  "VM SEND Non-Maskable Interrrupt action failed": [
   null,
-  "VM SEND マスク不可な割り込みアクションに失敗しました"
+  ""
  ],
  "VM SHUT DOWN action failed": [
   null,
@@ -593,23 +701,23 @@ return plural;
  ],
  "VM icon": [
   null,
-  "VM アイコン"
+  ""
  ],
  "VNC": [
   null,
-  "VNC"
+  ""
  ],
  "VNC Address:": [
   null,
-  "VNC アドレス:"
+  "MAC アドレス:"
  ],
  "VNC Port:": [
   null,
-  "VNC ポート:"
+  "ポート:"
  ],
  "VNC TLS Port:": [
   null,
-  "VNC TLS ポート:"
+  ""
  ],
  "Version": [
   null,
@@ -617,11 +725,19 @@ return plural;
  ],
  "Version num": [
   null,
-  "バージョン番号"
+  ""
  ],
  "Virtual Machines": [
   null,
   "仮想マシン"
+ ],
+ "Virtual Machines of $0 cluster": [
+  null,
+  ""
+ ],
+ "Virtualport": [
+  null,
+  ""
  ],
  "Volume": [
   null,
@@ -629,19 +745,23 @@ return plural;
  ],
  "Your browser does not support iframes.": [
   null,
-  "ブラウザーが、iframe をサポートしません。"
+  ""
+ ],
+ "bridge": [
+  null,
+  ""
  ],
  "cdrom": [
   null,
-  "cdrom"
+  ""
  ],
  "connecting": [
   null,
-  "接続中"
+  ""
  ],
  "cores": [
   null,
-  "コア"
+  ""
  ],
  "crashed": [
   null,
@@ -649,7 +769,11 @@ return plural;
  ],
  "custom": [
   null,
-  "カスタム"
+  "Custom"
+ ],
+ "direct": [
+  null,
+  ""
  ],
  "disabled": [
   null,
@@ -657,11 +781,11 @@ return plural;
  ],
  "disk": [
   null,
-  "ディスク"
+  ""
  ],
  "down": [
   null,
-  "下へ"
+  ""
  ],
  "dying": [
   null,
@@ -673,11 +797,19 @@ return plural;
  ],
  "error": [
   null,
-  "エラー"
+  ""
+ ],
+ "ethernet": [
+  null,
+  ""
  ],
  "host": [
   null,
-  "ホスト"
+  ""
+ ],
+ "hostdev": [
+  null,
+  ""
  ],
  "idle": [
   null,
@@ -685,23 +817,27 @@ return plural;
  ],
  "initializing": [
   null,
-  "初期化中"
+  ""
  ],
  "installation failed": [
   null,
-  "インストールに失敗しました"
+  ""
  ],
  "installing OS": [
   null,
-  "OS のインストール中"
+  ""
  ],
  "kdumping": [
   null,
-  "kdump 中"
+  ""
  ],
  "maintenance": [
   null,
-  "メンテナンス"
+  ""
+ ],
+ "mcast": [
+  null,
+  ""
  ],
  "network": [
   null,
@@ -713,35 +849,39 @@ return plural;
  ],
  "non operational": [
   null,
-  "稼動していません"
+  ""
  ],
  "non responsive": [
   null,
-  "応答しません"
+  ""
  ],
  "oVirt": [
   null,
-  "oVirt"
+  ""
+ ],
+ "oVirt Host State:": [
+  null,
+  ""
  ],
  "oVirt Provider installation script failed due to missing arguments.": [
   null,
-  "引数がないため、oVirt プロバイダーのインストールスクリプトに失敗しました。"
+  ""
  ],
  "oVirt Provider installation script failed: Can't write to /etc/cockpit/machines-ovirt.config, try as root.": [
   null,
-  "oVirt プロバイダーのインストールスクリプトに失敗しました。/etc/cockpit/machines-ovirt.config に書き込めません。root で試行してください。"
+  ""
  ],
  "oVirt installation script failed with following output: ": [
   null,
-  "oVirt インストールスクリプトが失敗し、次が出力されます: "
+  ""
  ],
  "oVirt login in progress": [
   null,
-  "oVirt ログインの処理中"
+  ""
  ],
  "other": [
   null,
-  "その他"
+  ""
  ],
  "paused": [
   null,
@@ -749,15 +889,19 @@ return plural;
  ],
  "pending approval": [
   null,
-  "保留中の承認"
+  ""
  ],
  "reboot": [
   null,
-  "再起動"
+  ""
  ],
  "running": [
   null,
   "実行中"
+ ],
+ "server": [
+  null,
+  ""
  ],
  "shut off": [
   null,
@@ -769,7 +913,7 @@ return plural;
  ],
  "sockets": [
   null,
-  "ソケット"
+  ""
  ],
  "suspended (PM)": [
   null,
@@ -777,23 +921,39 @@ return plural;
  ],
  "threads": [
   null,
-  "スレッド"
+  ""
+ ],
+ "udp": [
+  null,
+  ""
  ],
  "unassigned": [
   null,
-  "未割り当て"
+  ""
+ ],
+ "undefined": [
+  null,
+  "未定義"
  ],
  "up": [
   null,
-  "上へ"
+  ""
+ ],
+ "user": [
+  null,
+  ""
  ],
  "vCPUs": [
   null,
-  "vCPU"
+  ""
  ],
  "vCPUs:": [
   null,
   "vCPU:"
+ ],
+ "vhostuser": [
+  null,
+  ""
  ],
  "yes": [
   null,

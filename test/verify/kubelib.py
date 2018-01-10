@@ -324,7 +324,7 @@ class KubernetesCommonTests(VolumeTests):
         b.wait_visible("tbody.open .listing-ct-panel div.terminal")
         b.wait_in_text("tbody.open .listing-ct-panel div.terminal", "#")
         b.focus('tbody.open .listing-ct-panel .terminal')
-        b.key_press( [ 'w', 'h', 'o', 'a', 'm', 'i', 'Return' ] )
+        b.key_press("whoami\r")
         b.wait_in_text("tbody.open .listing-ct-panel div.terminal", "root")
 
     def testDelete(self):
@@ -773,6 +773,8 @@ class OpenshiftCommonTests(VolumeTests):
         b.click(".nodes-listing tbody[data-id='f1.cockpit.lan'] tr.listing-ct-panel a.machine-jump")
 
         b.switch_to_top()
+        # the troubleshoot button by itself shows/hides multiple times, wait for "Connecting.." to disappear first
+        b.wait_not_visible(".curtains-ct .spinner")
         b.wait_visible("#machine-troubleshoot")
         b.click('#machine-troubleshoot')
         b.wait_popup('troubleshoot-dialog')
@@ -1082,6 +1084,8 @@ class RegistryTests(object):
         b.wait_visible("#add_user_to_group")
         b.click("#add_user_to_group button")
         b.wait_visible("#add_user_to_group .dropdown-menu")
+        b.wait_present(".dropdown-menu a[value='scruffy']")
+        b.wait_visible(".dropdown-menu a[value='scruffy']")
         b.click(".dropdown-menu a[value='scruffy']")
         b.click(".btn-primary")
         b.wait_not_present("modal-dialog")
@@ -1098,6 +1102,8 @@ class RegistryTests(object):
         b.wait_visible("#add_user_to_group")
         b.click("#add_user_to_group button")
         b.wait_visible("#add_user_to_group .dropdown-menu")
+        b.wait_present(".dropdown-menu a[value='scruffy']")
+        b.wait_visible(".dropdown-menu a[value='scruffy']")
         b.click(".dropdown-menu a[value='scruffy']")
         b.click(".btn-primary")
         b.wait_not_present("modal-dialog")
@@ -1174,6 +1180,7 @@ class RegistryTests(object):
         b.wait_not_present("modal-dialog")
 
         #delete project member X
+        b.wait_present("tbody[data-id='testprojectuserproj'] tr td:last-child a i.pficon-close")
         b.click("tbody[data-id='testprojectuserproj'] tr td:last-child a i.pficon-close")
         b.wait_present("modal-dialog")
         b.wait_visible(".modal-body")

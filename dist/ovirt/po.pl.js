@@ -179,10 +179,6 @@ return plural;
   null,
   "Połącz z mechanizmem oVirt"
  ],
- "Connect with Remote Viewer": [
-  null,
-  "Połącz ze zdalną przeglądarką"
- ],
  "Connect with any $0 viewer application.": [
   null,
   "Połącz z dowolną przeglądarką $0."
@@ -195,9 +191,13 @@ return plural;
   null,
   "Połączenie"
  ],
- "Console": [
+ "Console Type": [
   null,
-  "Konsola"
+  "Typ konsoli"
+ ],
+ "Consoles": [
+  null,
+  "Konsole"
  ],
  "Count:": [
   null,
@@ -230,6 +230,14 @@ return plural;
  "Device": [
   null,
   "Urządzenie"
+ ],
+ "Disconnect": [
+  null,
+  "Rozłącz"
+ ],
+ "Disconnected from serial console. Click the Reconnect button.": [
+  null,
+  "Rozłączono z konsoli szeregowej. Proszę kliknąć przycisk „Połącz ponownie”."
  ],
  "Disks": [
   null,
@@ -271,6 +279,14 @@ return plural;
   null,
   "GB"
  ],
+ "Graphics Console (VNC)": [
+  null,
+  "Konsola graficzna (VNC)"
+ ],
+ "Graphics Console in Desktop Viewer": [
+  null,
+  "Konsola graficzna w przeglądarce pulpitu"
+ ],
  "HA": [
   null,
   "HA"
@@ -290,6 +306,10 @@ return plural;
  "Launch Remote Viewer": [
   null,
   "Uruchom zdalną przeglądarkę"
+ ],
+ "Loading ...": [
+  null,
+  "Wczytywanie…"
  ],
  "Loading data ...": [
   null,
@@ -355,13 +375,13 @@ return plural;
   null,
   "Nie odnaleziono żadnego urządzenia startowego"
  ],
+ "No console defined for this virtual machine.": [
+  null,
+  "Dla tej maszyny wirtualnej nie określono żadnej konsoli."
+ ],
  "No disks defined for this VM": [
   null,
   "Nie określono dysków dla tej maszyny wirtualnej"
- ],
- "No graphics console is defined for this virtual machine.": [
-  null,
-  "Dla tej maszyny wirtualnej nie określono żadnej konsoli graficznej."
  ],
  "No network interfaces defined for this VM": [
   null,
@@ -407,9 +427,9 @@ return plural;
   null,
   "$0 oprogramowania oVirt zawiera więcej informacji o ustawianiu zdalnej przeglądarki."
  ],
- "Please start the virtual machine to access its graphics console.": [
+ "Please start the virtual machine to access its console.": [
   null,
-  "Proszę uruchomić maszynę wirtualną, aby uzyskać dostęp do jej konsoli graficznej."
+  "Proszę uruchomić maszynę wirtualną, aby uzyskać dostęp do jej konsoli."
  ],
  "Please wait till VMs list is loaded from the server.": [
   null,
@@ -450,6 +470,10 @@ return plural;
  "Readonly": [
   null,
   "Tylko do odczytu"
+ ],
+ "Reconnect": [
+  null,
+  "Połącz ponownie"
  ],
  "Register oVirt": [
   null,
@@ -515,6 +539,14 @@ return plural;
   null,
   "Wyślij niemaskowalne przerwanie"
  ],
+ "Send shortcut": [
+  null,
+  "Wyślij skrót"
+ ],
+ "Serial Console": [
+  null,
+  "Konsola szeregowa"
+ ],
  "Session": [
   null,
   "Sesja"
@@ -546,14 +578,6 @@ return plural;
  "Switch Host to Maintenance": [
   null,
   "Przełącz gospodarza do konserwacji"
- ],
- "Switch to Desktop Viewer": [
-  null,
-  "Przełącz na przeglądarkę pulpitu"
- ],
- "Switch to In-Browser Viewer": [
-  null,
-  "Przełącz na przeglądarkę w przeglądarce internetowej"
  ],
  "Switching host to maintenance mode failed. Received error: ": [
   null,
@@ -906,6 +930,10 @@ return plural;
  "unassigned": [
   null,
   "nieprzydzielone"
+ ],
+ "undefined": [
+  null,
+  "nieokreślone"
  ],
  "up": [
   null,

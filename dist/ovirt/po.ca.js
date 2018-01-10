@@ -93,7 +93,7 @@ return plural;
  ],
  "Automatically selected host": [
   null,
-  ""
+  "Amfitrió seleccionat automàticament"
  ],
  "Autostart:": [
   null,
@@ -157,7 +157,7 @@ return plural;
  ],
  "Cluster Virtual Machines": [
   null,
-  ""
+  "Màquines virtuals del clúster"
  ],
  "Confirm deletion of $0": [
   null,
@@ -177,11 +177,7 @@ return plural;
  ],
  "Connect to oVirt Engine": [
   null,
-  "Connecta al motor d'oVirt"
- ],
- "Connect with Remote Viewer": [
-  null,
-  "Connecta amb el visualitzador remot"
+  "Connecta't al motor d'oVirt"
  ],
  "Connect with any $0 viewer application.": [
   null,
@@ -195,9 +191,13 @@ return plural;
   null,
   "Connexió"
  ],
- "Console": [
+ "Console Type": [
   null,
-  "Consola"
+  ""
+ ],
+ "Consoles": [
+  null,
+  ""
  ],
  "Count:": [
   null,
@@ -230,6 +230,14 @@ return plural;
  "Device": [
   null,
   "Dispositiu"
+ ],
+ "Disconnect": [
+  null,
+  ""
+ ],
+ "Disconnected from serial console. Click the Reconnect button.": [
+  null,
+  ""
  ],
  "Disks": [
   null,
@@ -271,6 +279,14 @@ return plural;
   null,
   "GB"
  ],
+ "Graphics Console (VNC)": [
+  null,
+  ""
+ ],
+ "Graphics Console in Desktop Viewer": [
+  null,
+  ""
+ ],
  "HA": [
   null,
   "HA"
@@ -291,9 +307,13 @@ return plural;
   null,
   "Llança el visualitzador remot"
  ],
+ "Loading ...": [
+  null,
+  ""
+ ],
  "Loading data ...": [
   null,
-  "S'estàn carregant les dades..."
+  "S'estan carregant les dades..."
  ],
  "MAC Address": [
   null,
@@ -355,13 +375,13 @@ return plural;
   null,
   "No s'ha trobat cap dispositiu d'arrencada"
  ],
+ "No console defined for this virtual machine.": [
+  null,
+  ""
+ ],
  "No disks defined for this VM": [
   null,
   "No hi ha definit cap disc per a aquesta MV"
- ],
- "No graphics console is defined for this virtual machine.": [
-  null,
-  ""
  ],
  "No network interfaces defined for this VM": [
   null,
@@ -407,9 +427,9 @@ return plural;
   null,
   ""
  ],
- "Please start the virtual machine to access its graphics console.": [
+ "Please start the virtual machine to access its console.": [
   null,
-  "Si us plau, inicieu la màquina virtual per accedir a la consola gràfica."
+  ""
  ],
  "Please wait till VMs list is loaded from the server.": [
   null,
@@ -451,9 +471,13 @@ return plural;
   null,
   "NomésLectura"
  ],
+ "Reconnect": [
+  null,
+  "Torna a connectar"
+ ],
  "Register oVirt": [
   null,
-  "Registra oVirt"
+  "Registra l'oVirt"
  ],
  "Registering oVirt to Cockpit": [
   null,
@@ -515,6 +539,14 @@ return plural;
   null,
   ""
  ],
+ "Send shortcut": [
+  null,
+  ""
+ ],
+ "Serial Console": [
+  null,
+  ""
+ ],
  "Session": [
   null,
   "Sessió"
@@ -541,19 +573,11 @@ return plural;
  ],
  "Suspend": [
   null,
-  ""
+  "Suspèn"
  ],
  "Switch Host to Maintenance": [
   null,
   "Canvia l'amfitrió a manteniment"
- ],
- "Switch to Desktop Viewer": [
-  null,
-  "Commuta al visualitzador d'escriptoris"
- ],
- "Switch to In-Browser Viewer": [
-  null,
-  "Commuta al visualitzador integrat del navegador"
  ],
  "Switching host to maintenance mode failed. Received error: ": [
   null,
@@ -617,7 +641,7 @@ return plural;
  ],
  "The VM is suspended by guest power management.": [
   null,
-  ""
+  "La MV està en suspensió per la gestió d'energia del convidat."
  ],
  "This virtual machine is not managed by oVirt": [
   null,
@@ -853,7 +877,7 @@ return plural;
  ],
  "oVirt login in progress": [
   null,
-  ""
+  "Inici de sessió d'oVirt en progrés"
  ],
  "other": [
   null,
@@ -906,6 +930,10 @@ return plural;
  "unassigned": [
   null,
   ""
+ ],
+ "undefined": [
+  null,
+  "indefinit"
  ],
  "up": [
   null,

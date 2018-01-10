@@ -550,6 +550,10 @@ return plural;
   null,
   ""
  ],
+ "Reboot": [
+  null,
+  ""
+ ],
  "Reformat and add disks": [
   null,
   ""
@@ -719,6 +723,18 @@ return plural;
   ""
  ],
  "You don't have permission to manage the Docker storage pool.": [
+  null,
+  ""
+ ],
+ "[$0 bytes of binary data]": [
+  null,
+  ""
+ ],
+ "[binary data]": [
+  null,
+  ""
+ ],
+ "[no data]": [
   null,
   ""
  ],

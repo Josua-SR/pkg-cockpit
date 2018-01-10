@@ -535,6 +535,10 @@ return plural;
   null,
   "端口："
  ],
+ "Problems": [
+  null,
+  ""
+ ],
  "ReadOnly": [
   null,
   "只读"
@@ -542,6 +546,10 @@ return plural;
  "ReadWrite": [
   null,
   "读写"
+ ],
+ "Reboot": [
+  null,
+  "重启"
  ],
  "Reformat and add disks": [
   null,
@@ -722,6 +730,18 @@ return plural;
  "You don't have permission to manage the Docker storage pool.": [
   null,
   "没有权限来管理容器存储池"
+ ],
+ "[$0 bytes of binary data]": [
+  null,
+  "[$0 字节二进制数据]"
+ ],
+ "[binary data]": [
+  null,
+  "[二进制数据]"
+ ],
+ "[no data]": [
+  null,
+  "[没有数据]"
  ],
  "alias": [
   null,

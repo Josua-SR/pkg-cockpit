@@ -145,15 +145,11 @@ return plural;
  ],
  "Cockpit had an unexpected internal error. <br/><br/>You can try restarting Cockpit by pressing refresh in your browser. The javascript console contains details about this error (<b>Ctrl-Shift-J</b> in most browsers).": [
   null,
-  "Cockpit で予期しない内部エラーが発生しました。<br/><br/>ブラウザーで更新を押して Cockpit の再起動を試行できます。javascript コンソールに、このエラーに関する詳細が含まれます (ほとんどのブラウザーでは <b>Ctrl-Shift-J</b>)。"
+  "Cockpit で予期しない内部エラーが発生しました。<br/><br/>ブラウザーで更新を押して Cockpit の再起動を試行できます。javascript コンソールにはこのエラーに関する詳細が含まれます (ほとんどのブラウザーでは <b>Ctrl-Shift-J</b>)。"
  ],
  "Cockpit is an interactive Linux server admin interface.": [
   null,
-  "Cockpit は、対話型 Linux サーバー管理インターフェースです。"
- ],
- "Cockpit is an interactive Linux server admin interface. ": [
-  null,
-  "Cockpit は、対話型 Linux サーバー管理インターフェースです。"
+  "Cockpit は対話型 Linux サーバー管理インターフェースです。"
  ],
  "Cockpit is not installed": [
   null,
@@ -169,15 +165,15 @@ return plural;
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}.": [
   null,
-  "Cockpit は、{{#strong}}{{host}}{{/strong}} にログインできませんでした。"
+  "Cockpit は {{#strong}}{{host}}{{/strong}} にログインできませんでした。"
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. To use this machine with cockpit you will need to enable one of the following authentication methods in the sshd config on {{#strong}}{{host}}{{/strong}}:": [
   null,
-  "Cockpit は、{{#strong}}{{host}}{{/strong}} にログインできませんでした。このマシンを Cockpit で使用するには、{{#strong}}{{host}}{{/strong}} 上の sshd 設定で、次のいずれかの認証方法を有効にする必要があります。"
+  "Cockpit は {{#strong}}{{host}}{{/strong}} にログインできませんでした。このマシンを Cockpit で使用するには、{{#strong}}{{host}}{{/strong}} 上の sshd 設定で次の認証方法のいずれかを有効にする必要があります。"
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. You can change your authentication credentials below. {{#can_sync}}You may prefer to {{#sync_link}}synchronize accounts and passwords{{/sync_link}}.{{/can_sync}}": [
   null,
-  "Cockpit は、{{#strong}}{{host}}{{/strong}} にログインできませんでした。認証情報は以下で変更できます。{{#can_sync}}{{#sync_link}} アカウントとパスワードの同期 {{/sync_link}} を実行できます。{{/can_sync}}"
+  "Cockpit は {{#strong}}{{host}}{{/strong}} にログインできませんでした。認証情報は以下で変更できます。{{#can_sync}}{{#sync_link}}アカウントとパスワードの同期{{/sync_link}}を実行できます。{{/can_sync}}"
  ],
  "Color": [
   null,
@@ -277,7 +273,7 @@ return plural;
  ],
  "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
-  "現在ログインしているユーザー {{#default_user}} ({{default_user}}){{/default_user}} としてこのマシンに接続する場合は空白のままにします。別のユーザー名を入力すると、このマシンへの接続時にそのユーザーが常に使用されます。"
+  ""
  ],
  "Licensed under:": [
   null,
@@ -325,7 +321,7 @@ return plural;
  ],
  "No matching files found": [
   null,
-  "一致するファイルが見つかりませんでした。"
+  "ホストキーが見つかりません。"
  ],
  "No such file or directory": [
   null,
@@ -349,7 +345,7 @@ return plural;
  ],
  "Old password not accepted": [
   null,
-  "古いパスワードは使用できません"
+  "古いパスワードは受け入れられません"
  ],
  "On": [
   null,
@@ -369,11 +365,11 @@ return plural;
  ],
  "Password not usable for privileged tasks or to connect to other machines": [
   null,
-  "特権タスクの実行または他のマシンへの接続に、パスワードを使用できません"
+  "特権タスクの実行または他のマシンへの接続のためにパスワードを使用できません"
  ],
  "Path to file": [
   null,
-  "ファイルのパス"
+  ""
  ],
  "Port": [
   null,
@@ -405,7 +401,7 @@ return plural;
  ],
  "Reuse my password for privileged tasks and to connect to other machines": [
   null,
-  "特権タスクの実行または他のマシンへの接続に、パスワードを再使用します"
+  "特権タスクの実行または他のマシンへの接続のためにパスワードを再使用します"
  ],
  "Select": [
   null,
@@ -425,7 +421,7 @@ return plural;
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
-  "IP アドレスまたはホスト名には、スペースを含めることができません。"
+  "IP アドレスまたはホスト名にはスペースを含めることができません。"
  ],
  "The authenticity of host {{#strong}}{{host}}{{/strong}} can't be established. Are you sure you want to continue connecting?": [
   null,
@@ -433,7 +429,7 @@ return plural;
  ],
  "The key of {{#strong}}{{host}}{{/strong}} does not match the key previously in use. Unless this machine was recently replaced, it is likely that someone is trying to attack your connection to this machine.": [
   null,
-  "{{#strong}}{{host}}{{/strong}} の鍵が、以前に使用された鍵と一致しません。このマシンを最近取り換えた場合を除いて、誰かがこのマシンへの接続を攻撃しようとしている可能性があります。"
+  "{{#strong}}{{host}}{{/strong}} の鍵が、以前に使用された鍵と一致しません。このマシンが最近置き換えられたものでない限り、誰かがこのマシンへの接続を攻撃しようとしている可能性があります。"
  ],
  "The machine is restarting": [
   null,
@@ -457,7 +453,7 @@ return plural;
  ],
  "Tip: Make your key password match your login password to automatically authenticate against other systems.": [
   null,
-  "ヒント: 他のシステムで自動的に認証されるようにするには、鍵のパスワードをログインパスワードに一致させます。"
+  "ヒント: 他のシステムに対して自動的に認証する場合は、鍵のパスワードをログインパスワードに一致させます。"
  ],
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
   null,
@@ -465,7 +461,7 @@ return plural;
  ],
  "Too many files found": [
   null,
-  "見つかったファイルが多すぎます"
+  ""
  ],
  "Troubleshoot": [
   null,
@@ -505,7 +501,7 @@ return plural;
  ],
  "Use the following keys to authenticate against other systems": [
   null,
-  "他のシステムに対して認証する場合は、次の鍵を使用します"
+  "他のシステムに対して認証する場合は次の鍵を使用します"
  ],
  "User name": [
   null,

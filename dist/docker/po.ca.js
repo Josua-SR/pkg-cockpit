@@ -451,7 +451,7 @@ return plural;
  ],
  "No additional local storage found.": [
   null,
-  ""
+  "No s'ha trobat cap emmagatzematge local addicional."
  ],
  "No alias specified": [
   null,
@@ -542,6 +542,10 @@ return plural;
   null,
   "Ports:"
  ],
+ "Problems": [
+  null,
+  "Problemes"
+ ],
  "ReadOnly": [
   null,
   "NomésLectura"
@@ -549,6 +553,10 @@ return plural;
  "ReadWrite": [
   null,
   "LecturaEscriptura"
+ ],
+ "Reboot": [
+  null,
+  "Rearrencada"
  ],
  "Reformat and add disks": [
   null,
@@ -729,6 +737,18 @@ return plural;
  "You don't have permission to manage the Docker storage pool.": [
   null,
   "No teniu els permisos per gestionar l'agrupació d'emmagatzematge de Docker."
+ ],
+ "[$0 bytes of binary data]": [
+  null,
+  "[$0 bytes de dades binàries]"
+ ],
+ "[binary data]": [
+  null,
+  "[dades binàries]"
+ ],
+ "[no data]": [
+  null,
+  "[sense dades]"
  ],
  "alias": [
   null,

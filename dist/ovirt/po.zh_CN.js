@@ -179,10 +179,6 @@ return plural;
   null,
   "连接至 oVirt 引擎"
  ],
- "Connect with Remote Viewer": [
-  null,
-  "使用远程查看器连接"
- ],
  "Connect with any $0 viewer application.": [
   null,
   "使用任何 $0 查看器应用来连接。"
@@ -195,9 +191,13 @@ return plural;
   null,
   "连接"
  ],
- "Console": [
+ "Console Type": [
   null,
-  "控制台"
+  ""
+ ],
+ "Consoles": [
+  null,
+  ""
  ],
  "Count:": [
   null,
@@ -230,6 +230,14 @@ return plural;
  "Device": [
   null,
   "设备"
+ ],
+ "Disconnect": [
+  null,
+  ""
+ ],
+ "Disconnected from serial console. Click the Reconnect button.": [
+  null,
+  ""
  ],
  "Disks": [
   null,
@@ -271,6 +279,14 @@ return plural;
   null,
   "GB"
  ],
+ "Graphics Console (VNC)": [
+  null,
+  ""
+ ],
+ "Graphics Console in Desktop Viewer": [
+  null,
+  ""
+ ],
  "HA": [
   null,
   "高可用"
@@ -290,6 +306,10 @@ return plural;
  "Launch Remote Viewer": [
   null,
   "加载 Remote Viewer"
+ ],
+ "Loading ...": [
+  null,
+  ""
  ],
  "Loading data ...": [
   null,
@@ -355,13 +375,13 @@ return plural;
   null,
   "没有找到启动设备"
  ],
+ "No console defined for this virtual machine.": [
+  null,
+  ""
+ ],
  "No disks defined for this VM": [
   null,
   "没有为该虚拟机定义磁盘"
- ],
- "No graphics console is defined for this virtual machine.": [
-  null,
-  "没有为该虚拟机定义图形控制台。"
  ],
  "No network interfaces defined for this VM": [
   null,
@@ -407,9 +427,9 @@ return plural;
   null,
   "请参考 oVirt 的 $0 来获取更新关于远程查看器设置。"
  ],
- "Please start the virtual machine to access its graphics console.": [
+ "Please start the virtual machine to access its console.": [
   null,
-  "请启动虚拟机来访问其图形控制台。"
+  ""
  ],
  "Please wait till VMs list is loaded from the server.": [
   null,
@@ -450,6 +470,10 @@ return plural;
  "Readonly": [
   null,
   "只读"
+ ],
+ "Reconnect": [
+  null,
+  "重新连接"
  ],
  "Register oVirt": [
   null,
@@ -515,6 +539,14 @@ return plural;
   null,
   "发送非屏蔽中断"
  ],
+ "Send shortcut": [
+  null,
+  ""
+ ],
+ "Serial Console": [
+  null,
+  ""
+ ],
  "Session": [
   null,
   "会话"
@@ -546,14 +578,6 @@ return plural;
  "Switch Host to Maintenance": [
   null,
   ""
- ],
- "Switch to Desktop Viewer": [
-  null,
-  "切换到桌面查看器"
- ],
- "Switch to In-Browser Viewer": [
-  null,
-  "切换到浏览器查看器"
  ],
  "Switching host to maintenance mode failed. Received error: ": [
   null,
@@ -906,6 +930,10 @@ return plural;
  "unassigned": [
   null,
   "未指定"
+ ],
+ "undefined": [
+  null,
+  "未定义"
  ],
  "up": [
   null,

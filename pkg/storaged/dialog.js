@@ -24,6 +24,7 @@
     var cockpit = require("cockpit");
 
     var mustache = require("mustache");
+    var utils = require("./utils.js");
     require("patterns");
     require("cockpit-components-file-autocomplete.css");
 
@@ -52,8 +53,8 @@
             if (f.SizeSlider && !f.Units)
                 f.Units = cockpit.get_byte_units(f.Value || f.Max);
 
-            // Help SelectMany with counting
-            if (f.SelectMany)
+            // Help SelectMany etc with counting
+            if (f.SelectMany || f.SelectOneOfMany)
                 f.HasOptions = (f.Options.length > 0);
 
             // Help CheckBoxText with detecting "false"
@@ -144,6 +145,7 @@
                     append($("<div class='slider-thumb'>")));
             $(slider).slider();
 
+            parent.data('min', field.Min || 0);
             parent.data('max', field.Max);
             parent.data('round', field.Round);
             parent.find('.slider').replaceWith(slider);
@@ -162,18 +164,23 @@
             var parent = $(this).parents('.size-slider');
             var input = parent.find('.size-text');
             var unit = parent.find('.size-unit');
+            var min = parent.data('min');
             var max = parent.data('max');
             var round = parent.data('round');
 
             value *= max;
-            if (round)
-                value = Math.round(value / round) * round;
-
-            if (value < 0)
-                value = 0;
+            if (round) {
+                if (typeof round == "function")
+                    value = round (value);
+                else
+                    value = Math.round(value / round) * round;
+            }
+            if (value < min)
+                value = min;
             if (value > max)
                 value = max;
 
+            $(this).prop("value", value / max);
             input.val(cockpit.format_number(value / +unit.val()));
             parent.val(value);
             $(parent).trigger("change");
@@ -186,21 +193,28 @@
             var unit = parent.find('.size-unit');
             var unit_val = +unit.val();
             var slider = parent.find('.slider');
+            var min = parent.data('min');
             var max = parent.data('max');
             var value = +input.val() * unit_val;
 
             // As a special case, if the user types something that
-            // looks like the maximum when formatted, always use
-            // exactly the maximum.  Otherwise we have the confusing
-            // possibility that with the exact same string in the text
-            // input, the size is sometimes too large and sometimes
-            // not.
+            // looks like the maximum (or minimum) when formatted,
+            // always use exactly the maximum (or minimum).  Otherwise
+            // we have the confusing possibility that with the exact
+            // same string in the text input, the size is sometimes
+            // too large (or too small) and sometimes not.
 
-            var max_fmt = cockpit.format_number(max / unit_val);
-            var max_parse = +max_fmt * unit_val;
+            function sanitize(val, limit) {
+                var fmt = cockpit.format_number(limit / unit_val);
+                var parse = +fmt * unit_val;
 
-            if (value == max_parse)
-                value = max;
+                if (val == parse)
+                    val = limit;
+                return val;
+            }
+
+            value = sanitize(value, max);
+            value = sanitize(value, min);
 
             slider.prop("value", value / max);
             parent.val(value);
@@ -228,6 +242,11 @@
             if (value.Max !== undefined) {
                 field.Max = value.Max;
                 parent.data('max', field.Max);
+            }
+
+            if (value.Min !== undefined) {
+                field.Min = value.Min;
+                parent.data('min', field.Min);
             }
 
             if (value.Round !== undefined) {
@@ -313,6 +332,14 @@
             }, 500);
         }
 
+        /* Radio buttons
+         */
+
+        $dialog.on("change", ".available-disks-group .radio input", function(ev) {
+            var parent = $(this).parents('.available-disks-group');
+            parent.trigger("change");
+        });
+
         /* Main
          */
 
@@ -320,7 +347,8 @@
 
         function get_name(f) {
             return (f.TextInput || f.PassInput || f.SelectOne || f.SelectMany || f.SizeInput ||
-                    f.SizeSlider || f.CheckBox || f.Arrow || f.SelectRow || f.CheckBoxText || f.ComboBox);
+                    f.SizeSlider || f.CheckBox || f.Arrow || f.SelectRow || f.CheckBoxText ||
+                    f.ComboBox || f.SelectOneOfMany);
         }
 
         function get_field_values() {
@@ -346,6 +374,12 @@
                     $f.find('input').each(function (i, e) {
                         if (e.checked)
                             vals[n].push(f.Options[i].value);
+                    });
+                } else if (f.SelectOneOfMany) {
+                    vals[n] = undefined;
+                    $f.find('input').each(function (i, e) {
+                        if (e.checked)
+                            vals[n] = f.Options[i].value;
                     });
                 } else if (f.SelectRow) {
                     $f.find('tbody tr').each(function (i, e) {
@@ -406,6 +440,8 @@
                     msg = _("Size cannot be negative");
                 if (!field.AllowInfinite && val > field.Max)
                     msg = _("Size is too large");
+                if (field.Min !== undefined && val < field.Min)
+                    msg = cockpit.format(_("Size must be at least $0"), utils.fmt_size(field.Min));
             }
 
             if (field.validate)

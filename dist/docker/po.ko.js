@@ -535,11 +535,19 @@ return plural;
   null,
   ""
  ],
+ "Problems": [
+  null,
+  ""
+ ],
  "ReadOnly": [
   null,
   "준비됨"
  ],
  "ReadWrite": [
+  null,
+  ""
+ ],
+ "Reboot": [
   null,
   ""
  ],
@@ -720,6 +728,18 @@ return plural;
   "터미널 실행"
  ],
  "You don't have permission to manage the Docker storage pool.": [
+  null,
+  ""
+ ],
+ "[$0 bytes of binary data]": [
+  null,
+  ""
+ ],
+ "[binary data]": [
+  null,
+  ""
+ ],
+ "[no data]": [
   null,
   ""
  ],

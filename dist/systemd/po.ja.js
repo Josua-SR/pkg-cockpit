@@ -341,11 +341,11 @@ return plural;
  ],
  "Condition $0=$1 was not met": [
   null,
-  "条件 $0=$1 を満たしていませんでした。"
+  ""
  ],
  "Condition failed": [
   null,
-  "条件が満たされませんでした。"
+  ""
  ],
  "Create Timer": [
   null,
@@ -419,6 +419,10 @@ return plural;
   null,
   "金曜日"
  ],
+ "General": [
+  null,
+  "全般"
+ ],
  "Go to": [
   null,
   "移動"
@@ -441,7 +445,7 @@ return plural;
  ],
  "Hour needs to be a number between 0-23": [
   null,
-  "時間は 0 - 23 の数字である必要があります"
+  "時間は 0〜23 の数字である必要があります"
  ],
  "Hours": [
   null,
@@ -557,7 +561,7 @@ return plural;
  ],
  "Minute needs to be a number between 0-59": [
   null,
-  "分は 0 - 59 の数字である必要があります"
+  "分は 0〜59 の数字である必要があります"
  ],
  "Minutes": [
   null,
@@ -585,7 +589,7 @@ return plural;
  ],
  "Nice": [
   null,
-  "Nice 値"
+  "Nice値"
  ],
  "No Delay": [
   null,
@@ -597,7 +601,7 @@ return plural;
  ],
  "Not authorized to upload-report": [
   null,
-  "upload-report の権限がありません"
+  "このシステム上のソフトウェアを更新する権限がありません"
  ],
  "Not synchronized": [
   null,
@@ -617,7 +621,7 @@ return plural;
  ],
  "Only Problems": [
   null,
-  "問題のみ"
+  ""
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
@@ -651,17 +655,25 @@ return plural;
   null,
   "プリティホスト名"
  ],
+ "Problem details": [
+  null,
+  ""
+ ],
+ "Problem info": [
+  null,
+  ""
+ ],
  "Problems, Errors": [
   null,
-  "問題、エラー"
+  ""
  ],
  "Problems, Errors, Warnings": [
   null,
-  "問題、エラー、警告"
+  ""
  ],
  "Problems, Errors, Warnings, Notices": [
   null,
-  "問題、エラー、警告、注記"
+  ""
  ],
  "Real Host Name": [
   null,
@@ -707,13 +719,21 @@ return plural;
   null,
   "毎年繰り返す"
  ],
+ "Report": [
+  null,
+  ""
+ ],
+ "Reported": [
+  null,
+  ""
+ ],
  "Reporter 'reporter-ureport' not found.": [
   null,
-  "レポーターの 'reporter-ureport' が見つかりませんでした。"
+  ""
  ],
  "Reporting was unsucessful. Try running `reporter-ureport -d ": [
   null,
-  "レポートは成功しませんでした。次を試してください: `reporter-ureport -d"
+  ""
  ],
  "Reset": [
   null,
@@ -765,7 +785,7 @@ return plural;
  ],
  "Severity": [
   null,
-  "重大度"
+  "Security"
  ],
  "Show fingerprints": [
   null,
@@ -845,19 +865,19 @@ return plural;
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,
-  "ユーザー <b>$0</b> は、タイマーを作成するパーミッションを持っていません"
+  "ユーザー <b>$0</b> はタイマーを作成するパーミッションを持っていません"
  ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
-  "ユーザー <b>$0</b> は、ホスト名を変更することを許可されていません"
+  "ユーザー <b>$0</b> はホスト名を変更することを許可されていません"
  ],
  "The user <b>$0</b> is not permitted to shutdown or restart this server": [
   null,
-  "ユーザー <b>$0</b> は、このサーバーをシャットダウンまたは再起動することを許可されていません"
+  "ユーザー <b>$0</b> はサーバーを管理することを許可されていません"
  ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
-  "この日は、すべての月に存在するわけではありません。<br>この タイマーは、31 日がある月でのみ実行されます。"
+  "この日はすべての月で存在しません。<br> タイマーは 31 日がある月でのみ実行されます。"
  ],
  "This field cannot be empty.": [
   null,

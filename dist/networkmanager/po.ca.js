@@ -367,7 +367,7 @@ return plural;
  ],
  "Ethtool": [
   null,
-  ""
+  "Ethtool"
  ],
  "Failed": [
   null,
@@ -599,7 +599,7 @@ return plural;
  ],
  "Ping Target": [
   null,
-  ""
+  "Objectiu de ping"
  ],
  "Ports": [
   null,
@@ -667,7 +667,7 @@ return plural;
  ],
  "Runner": [
   null,
-  ""
+  "Runner"
  ],
  "STP Forward delay": [
   null,

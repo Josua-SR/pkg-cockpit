@@ -78,8 +78,8 @@ return plural;
  ],
  "$1 security fix": [
   "$1 security fixes",
-  "",
-  ""
+  "$1 correcció de seguretat",
+  "$1 correccions de seguretat"
  ],
  ", including $1 security fix": [
   ", including $1 security fixes",

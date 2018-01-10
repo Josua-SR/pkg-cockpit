@@ -152,7 +152,7 @@ return plural;
  ],
  "Path to file": [
   null,
-  ""
+  "Ruta al fichero"
  ],
  "Ready": [
   null,

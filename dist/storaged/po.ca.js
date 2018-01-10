@@ -79,6 +79,10 @@ return plural;
   null,
   "$0 discs"
  ],
+ "$0 data + $1 overhead used of $2 ($3)": [
+  null,
+  ""
+ ],
  "$0 day": [
   "$0 days",
   "$0 dia",
@@ -86,8 +90,8 @@ return plural;
  ],
  "$0 disk is missing": [
   "$0 disks are missing",
-  "",
-  ""
+  "falta $0 disc",
+  "falten $0 discs"
  ],
  "$0 hour": [
   "$0 hours",
@@ -111,6 +115,10 @@ return plural;
  "$0 of $1": [
   null,
   "$0 de $1"
+ ],
+ "$0 used of $1 ($2 saved)": [
+  null,
+  ""
  ],
  "$0 week": [
   "$0 weeks",
@@ -198,6 +206,10 @@ return plural;
   null,
   "8 KiB"
  ],
+ "A disk is needed.": [
+  null,
+  "Es necessita un disc."
+ ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
   ""
@@ -250,9 +262,13 @@ return plural;
   null,
   "Objectius disponibles en $0"
  ],
- "Block": [
+ "Backing Device": [
   null,
   ""
+ ],
+ "Block": [
+  null,
+  "Bloc"
  ],
  "Block device for filesystems": [
   null,
@@ -306,6 +322,10 @@ return plural;
   null,
   "Compatible amb els sistemes moderns i els discs durs > 2TB (GPT)"
  ],
+ "Compression": [
+  null,
+  "Compressió"
+ ],
  "Confirm passphrase": [
   null,
   "Confirmació de la contrasenya"
@@ -337,6 +357,10 @@ return plural;
  "Create Thin Volume": [
   null,
   "Crea un volum disgregat"
+ ],
+ "Create VDO Device": [
+  null,
+  "Crea un dispositiu VDO"
  ],
  "Create Volume Group": [
   null,
@@ -396,7 +420,7 @@ return plural;
  ],
  "Custom mount option": [
   null,
-  ""
+  "Opció personalitzada de muntatge"
  ],
  "Custom mount options": [
   null,
@@ -418,6 +442,10 @@ return plural;
   null,
   "S'està desactivant $target"
  ],
+ "Deduplication": [
+  null,
+  "Deduplicació"
+ ],
  "Default": [
   null,
   "Predeterminat"
@@ -433,6 +461,10 @@ return plural;
  "Deleting a RAID device will erase all data on it.": [
   null,
   "La supressió d'un dispositiu RAID n'esborrarà totes les dades."
+ ],
+ "Deleting a VDO device will erase all data on it.": [
+  null,
+  "Si suprimiu un dispositiu VDO, s'esborraran totes les dades."
  ],
  "Deleting a logical volume will delete all data in it.": [
   null,
@@ -450,9 +482,17 @@ return plural;
   null,
   "S'està suprimint el grup de volums $target"
  ],
+ "Device File": [
+  null,
+  "Fitxer de dispositiu"
+ ],
  "Device is read-only": [
   null,
   "El dispositiu és de només lectura"
+ ],
+ "Disk": [
+  null,
+  "Disc"
  ],
  "Disk is OK": [
   null,
@@ -586,6 +626,18 @@ return plural;
   null,
   "Vés a ara"
  ],
+ "Grow": [
+  null,
+  "Fes créixer"
+ ],
+ "Grow logical size of $0": [
+  null,
+  "Fes créixer la mida lògica de $0"
+ ],
+ "Grow to take all space": [
+  null,
+  "Fes créixer per agafar tot l'espai"
+ ],
  "In Sync": [
   null,
   "En sincronització"
@@ -593,6 +645,10 @@ return plural;
  "Inactive volume": [
   null,
   "Volum inactiu"
+ ],
+ "Index Memory": [
+  null,
+  ""
  ],
  "Invalid username or password": [
   null,
@@ -613,6 +669,14 @@ return plural;
  "Locking $target": [
   null,
   "S'està bloquejant $target"
+ ],
+ "Logical": [
+  null,
+  "Lògica"
+ ],
+ "Logical Size": [
+  null,
+  "Mida lògica"
  ],
  "Logical Volume": [
   null,
@@ -672,11 +736,11 @@ return plural;
  ],
  "Mount point cannot be empty.": [
   null,
-  ""
+  "El punt de muntatge no pot estar en blanc."
  ],
  "Mount point must start with \"/\".": [
   null,
-  ""
+  "El punt de muntatge ha de començar amb «/»."
  ],
  "Mount read only": [
   null,
@@ -709,6 +773,10 @@ return plural;
  "Name": [
   null,
   "Nom"
+ ],
+ "Name can not be empty.": [
+  null,
+  "El nom no pot estar en blanc."
  ],
  "Name cannot be empty.": [
   null,
@@ -774,6 +842,10 @@ return plural;
   null,
   "Cap emmagatzematge preparat com a RAID"
  ],
+ "No storage set up as VDO": [
+  null,
+  "Cap emmagatzematge preparat com a VDO"
+ ],
  "No volume groups created": [
   null,
   "Cap grup de volums creat"
@@ -784,7 +856,7 @@ return plural;
  ],
  "Not mounted": [
   null,
-  ""
+  "No muntat"
  ],
  "Not running": [
   null,
@@ -797,6 +869,10 @@ return plural;
  "On": [
   null,
   "On"
+ ],
+ "Only $0 of $1 are used.": [
+  null,
+  ""
  ],
  "Operation '$operation' on $target": [
   null,
@@ -854,6 +930,10 @@ return plural;
   null,
   "El camí al servidor ha de començar amb «/»."
  ],
+ "Physical": [
+  null,
+  ""
+ ],
  "Physical Volume": [
   null,
   "Volum físic"
@@ -869,6 +949,10 @@ return plural;
  "Please confirm deletion of $0": [
   null,
   "Si us plau, confirmeu la supressió de $0"
+ ],
+ "Please confirm stopping of $0": [
+  null,
+  "Confirmeu l'aturada de $0"
  ],
  "Pool": [
   null,
@@ -982,6 +1066,10 @@ return plural;
   null,
   ""
  ],
+ "Remove device": [
+  null,
+  "Treu el dispositiu"
+ ],
  "Removing $target from RAID Device": [
   null,
   "S'està eliminant $target  del dispositiu RAID"
@@ -1074,6 +1162,10 @@ return plural;
   null,
   "La mida ha de ser un número"
  ],
+ "Size must be at least $0": [
+  null,
+  "La mida com a mínim ha de ser $0"
+ ],
  "Spare": [
   null,
   "Recanvi"
@@ -1108,11 +1200,11 @@ return plural;
  ],
  "Stop and remove": [
   null,
-  ""
+  "Atura i treu"
  ],
  "Stop and unmount": [
   null,
-  ""
+  "Atura i desmunta"
  ],
  "Stopping RAID Device $target": [
   null,
@@ -1170,17 +1262,21 @@ return plural;
   null,
   ""
  ],
+ "The creation of this VDO device did not finish and the device can't be used.": [
+  null,
+  ""
+ ],
  "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
   null,
   ""
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
-  ""
+  "No es pot treure l'últim disc d'un dispositiu RAID."
  ],
  "The last physical volume of a volume group cannot be removed.": [
   null,
-  ""
+  "No es pot treure l'últim volum físic d'un grup de volums."
  ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
@@ -1202,6 +1298,10 @@ return plural;
   null,
   ""
  ],
+ "This VDO device does not use all of its backing device.": [
+  null,
+  ""
+ ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
   "Aquest dispositiu té sistemes de fitxers actualment en ús. El procediment desmuntarà tots els sistemes de fitxers que conté."
@@ -1213,6 +1313,10 @@ return plural;
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
   null,
   "Aquest dispositiu s'utilitza actualment amb dispositius RAID.                Si continueu, s'eliminarà dels dispositius\n RAID."
+ ],
+ "This device is currently used for VDO devices.": [
+  null,
+  ""
  ],
  "This device is currently used for volume groups.": [
   null,
@@ -1230,6 +1334,10 @@ return plural;
   null,
   "Aquest volum lògic no es pot fer més petit."
  ],
+ "Transfer data asynchronously": [
+  null,
+  ""
+ ],
  "Type": [
   null,
   "Tipus"
@@ -1244,11 +1352,11 @@ return plural;
  ],
  "Unable to remove mount": [
   null,
-  ""
+  "No es pot treure el punt de muntatge"
  ],
  "Unable to unmount filesystem": [
   null,
-  ""
+  "No es pot desmuntar el sistema de fitxers"
  ],
  "Unknown": [
   null,
@@ -1298,6 +1406,10 @@ return plural;
   null,
   "Ús"
  ],
+ "Use 512 Byte emulation": [
+  null,
+  ""
+ ],
  "Used": [
   null,
   "Utilitzat"
@@ -1305,6 +1417,22 @@ return plural;
  "Username": [
   null,
   "Nom d'usuari"
+ ],
+ "VDO Backing": [
+  null,
+  ""
+ ],
+ "VDO Device": [
+  null,
+  ""
+ ],
+ "VDO Device $0": [
+  null,
+  ""
+ ],
+ "VDO Devices": [
+  null,
+  ""
  ],
  "VFAT - Compatible with all systems and devices": [
   null,
@@ -1389,6 +1517,10 @@ return plural;
  "storage-id-desc\u0004Unrecognized Data": [
   null,
   "Dades no reconegudes"
+ ],
+ "storage-id-desc\u0004VDO Backing": [
+  null,
+  ""
  ],
  "storage\u0004Drive": [
   null,

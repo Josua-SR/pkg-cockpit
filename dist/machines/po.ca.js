@@ -123,10 +123,6 @@ return plural;
   null,
   "Confirma la supressió de $0"
  ],
- "Connect with Remote Viewer": [
-  null,
-  "Connecta amb el visualitzador remot"
- ],
  "Connect with any $0 viewer application.": [
   null,
   "Connecta amb qualsevol aplicació de visualització $0."
@@ -139,9 +135,13 @@ return plural;
   null,
   "Connexió"
  ],
- "Console": [
+ "Console Type": [
   null,
-  "Consola"
+  ""
+ ],
+ "Consoles": [
+  null,
+  ""
  ],
  "Count:": [
   null,
@@ -158,6 +158,14 @@ return plural;
  "Device": [
   null,
   "Dispositiu"
+ ],
+ "Disconnect": [
+  null,
+  ""
+ ],
+ "Disconnected from serial console. Click the Reconnect button.": [
+  null,
+  ""
  ],
  "Disks": [
   null,
@@ -187,6 +195,14 @@ return plural;
   null,
   "GB"
  ],
+ "Graphics Console (VNC)": [
+  null,
+  ""
+ ],
+ "Graphics Console in Desktop Viewer": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "Amfitrió"
@@ -194,6 +210,10 @@ return plural;
  "Launch Remote Viewer": [
   null,
   "Llança el visualitzador remot"
+ ],
+ "Loading ...": [
+  null,
+  ""
  ],
  "MAC Address": [
   null,
@@ -239,13 +259,13 @@ return plural;
   null,
   "No s'ha trobat cap dispositiu d'arrencada"
  ],
+ "No console defined for this virtual machine.": [
+  null,
+  ""
+ ],
  "No disks defined for this VM": [
   null,
   "No hi ha definit cap disc per a aquesta MV"
- ],
- "No graphics console is defined for this virtual machine.": [
-  null,
-  ""
  ],
  "No network interfaces defined for this VM": [
   null,
@@ -259,9 +279,9 @@ return plural;
   null,
   "Visió de conjunt"
  ],
- "Please start the virtual machine to access its graphics console.": [
+ "Please start the virtual machine to access its console.": [
   null,
-  "Si us plau, inicieu la màquina virtual per accedir a la consola gràfica."
+  ""
  ],
  "Plug": [
   null,
@@ -286,6 +306,10 @@ return plural;
  "Readonly": [
   null,
   "NomésLectura"
+ ],
+ "Reconnect": [
+  null,
+  "Torna a connectar"
  ],
  "Restart": [
   null,
@@ -315,6 +339,14 @@ return plural;
   null,
   ""
  ],
+ "Send shortcut": [
+  null,
+  ""
+ ],
+ "Serial Console": [
+  null,
+  ""
+ ],
  "Session": [
   null,
   "Sessió"
@@ -330,14 +362,6 @@ return plural;
  "State": [
   null,
   "Estat"
- ],
- "Switch to Desktop Viewer": [
-  null,
-  "Commuta al visualitzador d'escriptoris"
- ],
- "Switch to In-Browser Viewer": [
-  null,
-  "Commuta al visualitzador integrat del navegador"
  ],
  "System": [
   null,
@@ -381,7 +405,7 @@ return plural;
  ],
  "The VM is suspended by guest power management.": [
   null,
-  ""
+  "La MV està en suspensió per la gestió d'energia del convidat."
  ],
  "Type": [
   null,
@@ -558,6 +582,10 @@ return plural;
  "udp": [
   null,
   ""
+ ],
+ "undefined": [
+  null,
+  "indefinit"
  ],
  "up": [
   null,

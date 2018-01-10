@@ -73,11 +73,11 @@ return plural;
  ],
  "Account Expiration": [
   null,
-  "アカウントの有効期限"
+  ""
  ],
  "Account not available or cannot be edited.": [
   null,
-  "アカウントが利用できないか、アカウントを編集できません。"
+  "アカウントが利用可能でないか、アカウントを編集できません。"
  ],
  "Accounts": [
   null,
@@ -169,11 +169,11 @@ return plural;
  ],
  "Force Change": [
   null,
-  "変更の強制"
+  ""
  ],
  "Force password change": [
   null,
-  "パスワード変更の強制"
+  ""
  ],
  "Full Name": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Invalid expiration date": [
   null,
-  "無効な有効期限"
+  ""
  ],
  "Invalid key": [
   null,
@@ -189,7 +189,7 @@ return plural;
  ],
  "Invalid number of days": [
   null,
-  "無効な日数"
+  ""
  ],
  "Last Login": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Lock account on $0": [
   null,
-  "$0 のアカウントをロック"
+  ""
  ],
  "Logged In": [
   null,
@@ -217,11 +217,11 @@ return plural;
  ],
  "Never expire password": [
   null,
-  "パスワードは失効しない"
+  ""
  ],
  "Never lock account": [
   null,
-  "アカウントをロックしない"
+  ""
  ],
  "New Password": [
   null,
@@ -249,7 +249,7 @@ return plural;
  ],
  "Old password not accepted": [
   null,
-  "古いパスワードは使用できません"
+  "古いパスワードは受け入れられません"
  ],
  "On": [
   null,
@@ -261,7 +261,7 @@ return plural;
  ],
  "Password Expiration": [
   null,
-  "パスワードの有効期限"
+  ""
  ],
  "Password is not acceptable": [
   null,
@@ -273,7 +273,7 @@ return plural;
  ],
  "Password must be changed": [
   null,
-  "パスワードを変更する必要があります"
+  ""
  ],
  "Paste the contents of your public SSH key file here": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "Please specify an expiration date": [
   null,
-  "有効期限を指定してください"
+  ""
  ],
  "Prompting via passwd timed out": [
   null,
@@ -289,11 +289,11 @@ return plural;
  ],
  "Require password change every $0 days": [
   null,
-  "パスワードを $0 日ごとに変更する"
+  ""
  ],
  "Require password change on $0": [
   null,
-  "$0 でパスワードを変更する"
+  ""
  ],
  "Reset": [
   null,
@@ -321,7 +321,7 @@ return plural;
  ],
  "The account '$0' will be forced to change their password on next login": [
   null,
-  "アカウント '$0' が次回ログインする際に、パスワードの変更が求められます"
+  ""
  ],
  "The key you provided was not valid.": [
   null,
@@ -333,7 +333,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to modify accounts": [
   null,
-  "ユーザー <b>$0</b> は、アカウントを変更することを許可されていません"
+  "ユーザー <b>$0</b> はアカウントを変更することを許可されていません"
  ],
  "The user name can only consist of letters from a-z, digits, dots, dashes and underscores.": [
   null,

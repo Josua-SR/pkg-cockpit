@@ -1,5 +1,5 @@
 # Generated Makefile data for machines
-# Stamp: Wed Dec 13 2017 08:58:02 GMT+0000 (UTC)
+# Stamp: Wed Jan 10 2018 12:07:22 GMT+0000 (UTC)
 
 machines_INPUTS = \
 	node_modules/bootstrap/LICENSE \
@@ -52,24 +52,35 @@ machines_INPUTS = \
 	node_modules/redux/README.md \
 	node_modules/redux/dist/redux.min.js \
 	node_modules/redux/package.json \
+	node_modules/term.js-cockpit/LICENSE \
+	node_modules/term.js-cockpit/README.md \
+	node_modules/term.js-cockpit/package.json \
+	node_modules/term.js-cockpit/src/term.js \
 	pkg/lib/cockpit-components-dialog.jsx \
 	pkg/lib/cockpit-components-listing.jsx \
+	pkg/lib/cockpit-components-select.jsx \
+	pkg/lib/cockpit-components-terminal.jsx \
+	pkg/lib/console.css \
 	pkg/lib/listing.less \
 	pkg/lib/page.css \
 	pkg/lib/qunit-config.js \
 	pkg/lib/qunit-template.html \
 	pkg/lib/qunit-tests.js \
 	pkg/lib/table.css \
+	pkg/lib/term.css \
 	pkg/lib/variables.less \
 	pkg/machines/actions.es6 \
 	pkg/machines/app.jsx \
 	pkg/machines/c3charts.jsx \
 	pkg/machines/cat.js \
+	pkg/machines/components/consoles.jsx \
 	pkg/machines/components/deleteDialog.css \
 	pkg/machines/components/deleteDialog.jsx \
 	pkg/machines/components/desktopConsole.jsx \
-	pkg/machines/components/graphicsConsole.jsx \
 	pkg/machines/components/infoRecord.jsx \
+	pkg/machines/components/serialConsole.jsx \
+	pkg/machines/components/vmLastMessage.css \
+	pkg/machines/components/vmLastMessage.jsx \
 	pkg/machines/components/vnc.jsx \
 	pkg/machines/config.es6 \
 	pkg/machines/helpers.es6 \
@@ -137,7 +148,7 @@ machines_TESTS = \
 
 dist/machines/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/c3/c3.css -N node_modules/c3/c3.js -N node_modules/d3/d3.js -N node_modules/noVNC/include/base64.js -N node_modules/noVNC/include/des.js -N node_modules/noVNC/include/display.js -N node_modules/noVNC/include/inflator.js -N node_modules/noVNC/include/input.js -N node_modules/noVNC/include/keyboard.js -N node_modules/noVNC/include/keysym.js -N node_modules/noVNC/include/keysymdef.js -N node_modules/noVNC/include/rfb.js -N node_modules/noVNC/include/util.js -N node_modules/noVNC/include/websock.js -N node_modules/noVNC/include/webutil.js -N node_modules/patternfly/src/less/color-variables.less -N node_modules/patternfly/src/less/variables.less -N node_modules/qunit-tap/lib/qunit-tap.js -N node_modules/qunitjs/qunit/qunit.css -N node_modules/qunitjs/qunit/qunit.js -N node_modules/react-lite/dist/react-lite.js -N node_modules/redux/dist/redux.min.js -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/listing.less -N pkg/lib/page.css -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/table.css -N pkg/lib/variables.less -N pkg/machines/actions.es6 -N pkg/machines/app.jsx -N pkg/machines/c3charts.jsx -N pkg/machines/cat.js -N pkg/machines/components/deleteDialog.css -N pkg/machines/components/deleteDialog.jsx -N pkg/machines/components/desktopConsole.jsx -N pkg/machines/components/graphicsConsole.jsx -N pkg/machines/components/infoRecord.jsx -N pkg/machines/components/vnc.jsx -N pkg/machines/config.es6 -N pkg/machines/helpers.es6 -N pkg/machines/hostvmslist.jsx -N pkg/machines/index.es6 -N pkg/machines/index.html -N pkg/machines/index.js -N pkg/machines/libvirt.es6 -N pkg/machines/machines.less -N pkg/machines/middlewares.es6 -N pkg/machines/provider.es6 -N pkg/machines/reducers.es6 -N pkg/machines/selectors.es6 -N pkg/machines/services.es6 -N pkg/machines/store.es6 -N pkg/machines/test-machines.js -N pkg/machines/vmdiskstab.jsx -N pkg/machines/vmnetworktab.jsx -N pkg/machines/vnc.css -N pkg/machines/vnc.html -N pkg/machines/vnc.js $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/c3/c3.css -N node_modules/c3/c3.js -N node_modules/d3/d3.js -N node_modules/noVNC/include/base64.js -N node_modules/noVNC/include/des.js -N node_modules/noVNC/include/display.js -N node_modules/noVNC/include/inflator.js -N node_modules/noVNC/include/input.js -N node_modules/noVNC/include/keyboard.js -N node_modules/noVNC/include/keysym.js -N node_modules/noVNC/include/keysymdef.js -N node_modules/noVNC/include/rfb.js -N node_modules/noVNC/include/util.js -N node_modules/noVNC/include/websock.js -N node_modules/noVNC/include/webutil.js -N node_modules/patternfly/src/less/color-variables.less -N node_modules/patternfly/src/less/variables.less -N node_modules/qunit-tap/lib/qunit-tap.js -N node_modules/qunitjs/qunit/qunit.css -N node_modules/qunitjs/qunit/qunit.js -N node_modules/react-lite/dist/react-lite.js -N node_modules/redux/dist/redux.min.js -N node_modules/term.js-cockpit/src/term.js -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-select.jsx -N pkg/lib/cockpit-components-terminal.jsx -N pkg/lib/console.css -N pkg/lib/listing.less -N pkg/lib/page.css -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/table.css -N pkg/lib/term.css -N pkg/lib/variables.less -N pkg/machines/actions.es6 -N pkg/machines/app.jsx -N pkg/machines/c3charts.jsx -N pkg/machines/cat.js -N pkg/machines/components/consoles.jsx -N pkg/machines/components/deleteDialog.css -N pkg/machines/components/deleteDialog.jsx -N pkg/machines/components/desktopConsole.jsx -N pkg/machines/components/infoRecord.jsx -N pkg/machines/components/serialConsole.jsx -N pkg/machines/components/vmLastMessage.css -N pkg/machines/components/vmLastMessage.jsx -N pkg/machines/components/vnc.jsx -N pkg/machines/config.es6 -N pkg/machines/helpers.es6 -N pkg/machines/hostvmslist.jsx -N pkg/machines/index.es6 -N pkg/machines/index.html -N pkg/machines/index.js -N pkg/machines/libvirt.es6 -N pkg/machines/machines.less -N pkg/machines/middlewares.es6 -N pkg/machines/provider.es6 -N pkg/machines/reducers.es6 -N pkg/machines/selectors.es6 -N pkg/machines/services.es6 -N pkg/machines/store.es6 -N pkg/machines/test-machines.js -N pkg/machines/vmdiskstab.jsx -N pkg/machines/vmnetworktab.jsx -N pkg/machines/vnc.css -N pkg/machines/vnc.html -N pkg/machines/vnc.js $< > $@.tmp && mv $@.tmp $@
 
 dist/machines/Makefile.deps: $(WEBPACK_CONFIG) $(machines_INPUTS)
 	$(WEBPACK_RULE) -d dist/machines/Makefile.deps $(WEBPACK_CONFIG)
@@ -270,9 +281,23 @@ node_modules/redux/dist/redux.min.js:
 
 node_modules/redux/package.json:
 
+node_modules/term.js-cockpit/LICENSE:
+
+node_modules/term.js-cockpit/README.md:
+
+node_modules/term.js-cockpit/package.json:
+
+node_modules/term.js-cockpit/src/term.js:
+
 pkg/lib/cockpit-components-dialog.jsx:
 
 pkg/lib/cockpit-components-listing.jsx:
+
+pkg/lib/cockpit-components-select.jsx:
+
+pkg/lib/cockpit-components-terminal.jsx:
+
+pkg/lib/console.css:
 
 pkg/lib/listing.less:
 
@@ -286,6 +311,8 @@ pkg/lib/qunit-tests.js:
 
 pkg/lib/table.css:
 
+pkg/lib/term.css:
+
 pkg/lib/variables.less:
 
 pkg/machines/actions.es6:
@@ -296,15 +323,21 @@ pkg/machines/c3charts.jsx:
 
 pkg/machines/cat.js:
 
+pkg/machines/components/consoles.jsx:
+
 pkg/machines/components/deleteDialog.css:
 
 pkg/machines/components/deleteDialog.jsx:
 
 pkg/machines/components/desktopConsole.jsx:
 
-pkg/machines/components/graphicsConsole.jsx:
-
 pkg/machines/components/infoRecord.jsx:
+
+pkg/machines/components/serialConsole.jsx:
+
+pkg/machines/components/vmLastMessage.css:
+
+pkg/machines/components/vmLastMessage.jsx:
 
 pkg/machines/components/vnc.jsx:
 

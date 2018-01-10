@@ -79,6 +79,10 @@ return plural;
   null,
   "Диски $0"
  ],
+ "$0 data + $1 overhead used of $2 ($3)": [
+  null,
+  "$0 даних + $1 додатково використано з $2 ($3)"
+ ],
  "$0 day": [
   "$0 days",
   "$0 день",
@@ -116,6 +120,10 @@ return plural;
  "$0 of $1": [
   null,
   "$0 з $1"
+ ],
+ "$0 used of $1 ($2 saved)": [
+  null,
+  "$0 використано з $1 ($2 заощаджено)"
  ],
  "$0 week": [
   "$0 weeks",
@@ -205,6 +213,10 @@ return plural;
   null,
   "8 КіБ"
  ],
+ "A disk is needed.": [
+  null,
+  "Потрібен диск."
+ ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
   "Перш ніж вилучати цей диск, слід додати резервний диск."
@@ -256,6 +268,10 @@ return plural;
  "Available targets on $0": [
   null,
   "Доступні призначення на $0"
+ ],
+ "Backing Device": [
+  null,
+  "Резервний пристрій"
  ],
  "Block": [
   null,
@@ -313,6 +329,10 @@ return plural;
   null,
   "Сумісний зі сучасними системами та жорсткими дисками > 2 ТБ (GPT)"
  ],
+ "Compression": [
+  null,
+  "Стискання"
+ ],
  "Confirm passphrase": [
   null,
   "Підтвердить пароль"
@@ -344,6 +364,10 @@ return plural;
  "Create Thin Volume": [
   null,
   "Створити тонкий том"
+ ],
+ "Create VDO Device": [
+  null,
+  "Створити пристрій VDO"
  ],
  "Create Volume Group": [
   null,
@@ -403,7 +427,7 @@ return plural;
  ],
  "Custom mount option": [
   null,
-  ""
+  "Нетиповий параметр монтування"
  ],
  "Custom mount options": [
   null,
@@ -425,6 +449,10 @@ return plural;
   null,
   "Деактивуємо $target"
  ],
+ "Deduplication": [
+  null,
+  "Скасування дублювання"
+ ],
  "Default": [
   null,
   "Типовий"
@@ -440,6 +468,10 @@ return plural;
  "Deleting a RAID device will erase all data on it.": [
   null,
   "Вилучення пристрою RAID призведе до витирання з нього усіх даних."
+ ],
+ "Deleting a VDO device will erase all data on it.": [
+  null,
+  "Вилучення пристрою VDO призведе до витирання усіх даних на ньому."
  ],
  "Deleting a logical volume will delete all data in it.": [
   null,
@@ -457,9 +489,17 @@ return plural;
   null,
   "Вилучаємо групу томів $target"
  ],
+ "Device File": [
+  null,
+  "Файл пристрою"
+ ],
  "Device is read-only": [
   null,
   "Пристрій придатний лише для читання"
+ ],
+ "Disk": [
+  null,
+  "Диск"
  ],
  "Disk is OK": [
   null,
@@ -593,6 +633,18 @@ return plural;
   null,
   "Перейти зараз"
  ],
+ "Grow": [
+  null,
+  "Збільшити"
+ ],
+ "Grow logical size of $0": [
+  null,
+  "Збільшити логічний розмір $0"
+ ],
+ "Grow to take all space": [
+  null,
+  "Збільшити так, щоб використати усе місце"
+ ],
  "In Sync": [
   null,
   "Синхронізовано"
@@ -600,6 +652,10 @@ return plural;
  "Inactive volume": [
   null,
   "Неактивний том"
+ ],
+ "Index Memory": [
+  null,
+  "Пам'ять покажчика"
  ],
  "Invalid username or password": [
   null,
@@ -620,6 +676,14 @@ return plural;
  "Locking $target": [
   null,
   "Блокуємо $target"
+ ],
+ "Logical": [
+  null,
+  "Логічний"
+ ],
+ "Logical Size": [
+  null,
+  "Логічний розмір"
  ],
  "Logical Volume": [
   null,
@@ -717,6 +781,10 @@ return plural;
   null,
   "Назва"
  ],
+ "Name can not be empty.": [
+  null,
+  "Назва не повинна бути порожньою."
+ ],
  "Name cannot be empty.": [
   null,
   "Назва не може бути порожньою."
@@ -781,6 +849,10 @@ return plural;
   null,
   "Жодне зі сховищ даних не налаштовано як RAID"
  ],
+ "No storage set up as VDO": [
+  null,
+  "Немає сховища даних налаштованого як VDO"
+ ],
  "No volume groups created": [
   null,
   "Груп томів не створено"
@@ -791,7 +863,7 @@ return plural;
  ],
  "Not mounted": [
   null,
-  ""
+  "Не змонтовано"
  ],
  "Not running": [
   null,
@@ -804,6 +876,10 @@ return plural;
  "On": [
   null,
   "Увімкнено"
+ ],
+ "Only $0 of $1 are used.": [
+  null,
+  "Використано лише $0 з $1."
  ],
  "Operation '$operation' on $target": [
   null,
@@ -861,6 +937,10 @@ return plural;
   null,
   "Шлях на сервері має починатися з «/»."
  ],
+ "Physical": [
+  null,
+  "Фізичний"
+ ],
  "Physical Volume": [
   null,
   "Фізичний том"
@@ -876,6 +956,10 @@ return plural;
  "Please confirm deletion of $0": [
   null,
   "Будь ласка, підтвердьте вилучення $0"
+ ],
+ "Please confirm stopping of $0": [
+  null,
+  "Будь ласка, підтвердьте зупинку $0"
  ],
  "Pool": [
   null,
@@ -989,6 +1073,10 @@ return plural;
   null,
   "Відновлюємо пристрій RAID $target"
  ],
+ "Remove device": [
+  null,
+  "Вилучити пристрій"
+ ],
  "Removing $target from RAID Device": [
   null,
   "Вилучаємо $target з пристрою RAID"
@@ -1080,6 +1168,10 @@ return plural;
  "Size must be a number": [
   null,
   "Розмір має бути числом"
+ ],
+ "Size must be at least $0": [
+  null,
+  "Розмір має бути не меншим за $0"
  ],
  "Spare": [
   null,
@@ -1177,6 +1269,10 @@ return plural;
   null,
   "Для вилучення дисків має працювати пристрій RAID."
  ],
+ "The creation of this VDO device did not finish and the device can't be used.": [
+  null,
+  "Створення цього пристрою VDO не завершено, ним не можна користуватися."
+ ],
  "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
   null,
   "Файлова система використовується службами системи або сеансами користувачів. Виконання цієї дії призведе до припинення роботи цих служб та сеансів."
@@ -1209,6 +1305,10 @@ return plural;
   null,
   "Це монтування NFS використовується; можна лише змінювати його параметри."
  ],
+ "This VDO device does not use all of its backing device.": [
+  null,
+  "Цей пристрій VDO не використовує увесь об'єм резервного пристрою."
+ ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
   "На цьому пристрої міститься файлова система, яка зараз використовується. Виконання дії призведе до демонтування усіх файлових систем на пристрої."
@@ -1220,6 +1320,10 @@ return plural;
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
   null,
   "Цей пристрій зараз використовується для формування пристроїв RAID. Якщо дію буде виконано, пристрій буде вилучено із його пристроїв RAID."
+ ],
+ "This device is currently used for VDO devices.": [
+  null,
+  "Цей пристрій зараз використовується для зберігання даних пристроїв VDO."
  ],
  "This device is currently used for volume groups.": [
   null,
@@ -1236,6 +1340,10 @@ return plural;
  "This logical volume cannot be made smaller.": [
   null,
   "Логічний том не можна зменшувати."
+ ],
+ "Transfer data asynchronously": [
+  null,
+  "Передавати дані асинхронно"
  ],
  "Type": [
   null,
@@ -1305,6 +1413,10 @@ return plural;
   null,
   "Використання"
  ],
+ "Use 512 Byte emulation": [
+  null,
+  "Емуляція 512 байтів"
+ ],
  "Used": [
   null,
   "Використано"
@@ -1312,6 +1424,22 @@ return plural;
  "Username": [
   null,
   "Користувач"
+ ],
+ "VDO Backing": [
+  null,
+  "Резерв VDO"
+ ],
+ "VDO Device": [
+  null,
+  "Пристрій VDO"
+ ],
+ "VDO Device $0": [
+  null,
+  "Пристрій VDO $0"
+ ],
+ "VDO Devices": [
+  null,
+  "Пристрої VDO"
  ],
  "VFAT - Compatible with all systems and devices": [
   null,
@@ -1396,6 +1524,10 @@ return plural;
  "storage-id-desc\u0004Unrecognized Data": [
   null,
   "Нерозпізнані дані"
+ ],
+ "storage-id-desc\u0004VDO Backing": [
+  null,
+  "Резерв VDO"
  ],
  "storage\u0004Drive": [
   null,

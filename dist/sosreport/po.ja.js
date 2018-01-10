@@ -105,14 +105,14 @@ return plural;
  ],
  "The collected information will be stored locally on the system.": [
   null,
-  "収集した情報は、システムのローカルに保存されます。"
+  "収集された情報はシステムにローカルで保存されます。"
  ],
  "The generated archive contains data considered sensitive and its content should be reviewed by the originating organization before being passed to any third party.": [
   null,
-  "生成されたアーカイブには、機密データと見なされるデータが含まれます。サードパーティーに渡す前に、所属先の組織に確認してください。"
+  "生成されたアーカイブには、機密データと見なされるデータが含まれます。その内容はサードパーティーに渡す前に元の組織が確認する必要があります。"
  ],
  "This tool will collect system configuration and diagnostic information from this system for use with diagnosing problems with the system.": [
   null,
-  "このツールは、システムの問題を診断するのに使用する、システム設定と診断情報をシステムから収集します。"
+  "このツールは、システムの問題の診断で使用するためにシステムからシステム設定と診断情報を収集します。"
  ]
 }));

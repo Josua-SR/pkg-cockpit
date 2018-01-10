@@ -1,5 +1,5 @@
 # Generated Makefile data for storaged
-# Stamp: Wed Dec 13 2017 08:58:02 GMT+0000 (UTC)
+# Stamp: Wed Jan 10 2018 12:07:22 GMT+0000 (UTC)
 
 storaged_INPUTS = \
 	node_modules/bootstrap/LICENSE \
@@ -94,6 +94,9 @@ storaged_INPUTS = \
 	pkg/storaged/test-util.js \
 	pkg/storaged/unrecognized-tab.jsx \
 	pkg/storaged/utils.js \
+	pkg/storaged/vdo-details.jsx \
+	pkg/storaged/vdo-monitor.py \
+	pkg/storaged/vdos-panel.jsx \
 	pkg/storaged/vgroup-details.jsx \
 	pkg/storaged/vgroups-panel.jsx \
 	$(NULL)
@@ -138,7 +141,7 @@ storaged_TESTS = \
 
 dist/storaged/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/jquery-flot/jquery.flot.js -N node_modules/jquery-flot/jquery.flot.selection.js -N node_modules/jquery-flot/jquery.flot.time.js -N node_modules/mustache/mustache.js -N node_modules/patternfly/src/less/color-variables.less -N node_modules/patternfly/src/less/variables.less -N node_modules/qunit-tap/lib/qunit-tap.js -N node_modules/qunitjs/qunit/qunit.css -N node_modules/qunitjs/qunit/qunit.js -N node_modules/react-lite/dist/react-lite.js -N pkg/lib/cockpit-components-file-autocomplete.css -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-logs-panel.jsx -N pkg/lib/cockpit-components-onoff.css -N pkg/lib/cockpit-components-onoff.jsx -N pkg/lib/cockpit-components-tooltip.jsx -N pkg/lib/inotify.py -N pkg/lib/journal.css -N pkg/lib/journal.js -N pkg/lib/journal_day_header.mustache -N pkg/lib/journal_line.mustache -N pkg/lib/journal_reboot.mustache -N pkg/lib/listing.less -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/plot.css -N pkg/lib/plot.js -N pkg/lib/python.jsx -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/service.js -N pkg/lib/table.css -N pkg/lib/tooltip.css -N pkg/lib/variables.less -N pkg/storaged/block-details.jsx -N pkg/storaged/client.js -N pkg/storaged/content-views.jsx -N pkg/storaged/crypto-tab.jsx -N pkg/storaged/details.jsx -N pkg/storaged/devices.js -N pkg/storaged/dialog.js -N pkg/storaged/drive-details.jsx -N pkg/storaged/drives-panel.jsx -N pkg/storaged/format-dialog.jsx -N pkg/storaged/fsys-panel.jsx -N pkg/storaged/fsys-tab.jsx -N pkg/storaged/images/storage-array.png -N pkg/storaged/images/storage-disk.png -N pkg/storaged/index.html -N pkg/storaged/iscsi-panel.jsx -N pkg/storaged/jobs-panel.jsx -N pkg/storaged/logs-panel.jsx -N pkg/storaged/lvol-tabs.jsx -N pkg/storaged/mdraid-details.jsx -N pkg/storaged/mdraids-panel.jsx -N pkg/storaged/nfs-mounts.py -N pkg/storaged/nfs-panel.jsx -N pkg/storaged/others-panel.jsx -N pkg/storaged/overview.jsx -N pkg/storaged/part-tab.jsx -N pkg/storaged/plot.jsx -N pkg/storaged/pvol-tabs.jsx -N pkg/storaged/storage-controls.jsx -N pkg/storaged/storage.css -N pkg/storaged/swap-tab.jsx -N pkg/storaged/test-util.js -N pkg/storaged/unrecognized-tab.jsx -N pkg/storaged/utils.js -N pkg/storaged/vgroup-details.jsx -N pkg/storaged/vgroups-panel.jsx $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/jquery-flot/jquery.flot.js -N node_modules/jquery-flot/jquery.flot.selection.js -N node_modules/jquery-flot/jquery.flot.time.js -N node_modules/mustache/mustache.js -N node_modules/patternfly/src/less/color-variables.less -N node_modules/patternfly/src/less/variables.less -N node_modules/qunit-tap/lib/qunit-tap.js -N node_modules/qunitjs/qunit/qunit.css -N node_modules/qunitjs/qunit/qunit.js -N node_modules/react-lite/dist/react-lite.js -N pkg/lib/cockpit-components-file-autocomplete.css -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-logs-panel.jsx -N pkg/lib/cockpit-components-onoff.css -N pkg/lib/cockpit-components-onoff.jsx -N pkg/lib/cockpit-components-tooltip.jsx -N pkg/lib/inotify.py -N pkg/lib/journal.css -N pkg/lib/journal.js -N pkg/lib/journal_day_header.mustache -N pkg/lib/journal_line.mustache -N pkg/lib/journal_reboot.mustache -N pkg/lib/listing.less -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/plot.css -N pkg/lib/plot.js -N pkg/lib/python.jsx -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/service.js -N pkg/lib/table.css -N pkg/lib/tooltip.css -N pkg/lib/variables.less -N pkg/storaged/block-details.jsx -N pkg/storaged/client.js -N pkg/storaged/content-views.jsx -N pkg/storaged/crypto-tab.jsx -N pkg/storaged/details.jsx -N pkg/storaged/devices.js -N pkg/storaged/dialog.js -N pkg/storaged/drive-details.jsx -N pkg/storaged/drives-panel.jsx -N pkg/storaged/format-dialog.jsx -N pkg/storaged/fsys-panel.jsx -N pkg/storaged/fsys-tab.jsx -N pkg/storaged/images/storage-array.png -N pkg/storaged/images/storage-disk.png -N pkg/storaged/index.html -N pkg/storaged/iscsi-panel.jsx -N pkg/storaged/jobs-panel.jsx -N pkg/storaged/logs-panel.jsx -N pkg/storaged/lvol-tabs.jsx -N pkg/storaged/mdraid-details.jsx -N pkg/storaged/mdraids-panel.jsx -N pkg/storaged/nfs-mounts.py -N pkg/storaged/nfs-panel.jsx -N pkg/storaged/others-panel.jsx -N pkg/storaged/overview.jsx -N pkg/storaged/part-tab.jsx -N pkg/storaged/plot.jsx -N pkg/storaged/pvol-tabs.jsx -N pkg/storaged/storage-controls.jsx -N pkg/storaged/storage.css -N pkg/storaged/swap-tab.jsx -N pkg/storaged/test-util.js -N pkg/storaged/unrecognized-tab.jsx -N pkg/storaged/utils.js -N pkg/storaged/vdo-details.jsx -N pkg/storaged/vdo-monitor.py -N pkg/storaged/vdos-panel.jsx -N pkg/storaged/vgroup-details.jsx -N pkg/storaged/vgroups-panel.jsx $< > $@.tmp && mv $@.tmp $@
 
 dist/storaged/Makefile.deps: $(WEBPACK_CONFIG) $(storaged_INPUTS)
 	$(WEBPACK_RULE) -d dist/storaged/Makefile.deps $(WEBPACK_CONFIG)
@@ -350,6 +353,12 @@ pkg/storaged/test-util.js:
 pkg/storaged/unrecognized-tab.jsx:
 
 pkg/storaged/utils.js:
+
+pkg/storaged/vdo-details.jsx:
+
+pkg/storaged/vdo-monitor.py:
+
+pkg/storaged/vdos-panel.jsx:
 
 pkg/storaged/vgroup-details.jsx:
 

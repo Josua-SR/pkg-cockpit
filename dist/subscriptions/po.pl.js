@@ -221,7 +221,7 @@ return plural;
  ],
  "Use proxy server": [
   null,
-  "Użyj serwera pośrednika"
+  "Użycie serwera pośrednika"
  ],
  "User": [
   null,

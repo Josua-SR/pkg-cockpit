@@ -105,7 +105,7 @@ return plural;
  ],
  "Kernel Dump": [
   null,
-  "カーネルダンプ"
+  "カーネル"
  ],
  "Loading...": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Test is only available while the kdump service is running.": [
   null,
-  "テストは、kdump サービスが実行中の間だけ利用できます。"
+  "テストは kdump サービスが実行中の間だけ利用可能です。"
  ],
  "Test kdump settings": [
   null,
@@ -213,11 +213,11 @@ return plural;
  ],
  "This will test kdump settings by crashing the kernel and thereby the system. Depending on the settings, the system may not automatically reboot and the process may take a while.": [
   null,
-  "このため、kdump 設定は、カーネル (つまり、システム) をクラッシュしてテストします。設定に応じて、再起動が自動的に行われず、処理にしばらく時間がかかることがあります。"
+  "このため、kdump 設定は、カーネル (つまり、システム) をクラッシュすることによりテストされます。設定に応じて、再起動が自動的に行われず、処理にしばらく時間がかかることがあります。"
  ],
  "This will test the kdump configuration by crashing the kernel.": [
   null,
-  "このため、kdump 設定は、カーネルをクラッシュしてテストします。"
+  "このため、kdump 設定はカーネルをクラッシュすることによりテストされます。"
  ],
  "Unable to apply settings: $0": [
   null,

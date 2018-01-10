@@ -79,6 +79,10 @@ return plural;
   null,
   "$0 Discos"
  ],
+ "$0 data + $1 overhead used of $2 ($3)": [
+  null,
+  ""
+ ],
  "$0 day": [
   "$0 days",
   "$0 dia",
@@ -111,6 +115,10 @@ return plural;
  "$0 of $1": [
   null,
   "$0 de $1"
+ ],
+ "$0 used of $1 ($2 saved)": [
+  null,
+  ""
  ],
  "$0 week": [
   "$0 weeks",
@@ -198,6 +206,10 @@ return plural;
   null,
   ""
  ],
+ "A disk is needed.": [
+  null,
+  ""
+ ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
   ""
@@ -247,6 +259,10 @@ return plural;
   ""
  ],
  "Available targets on $0": [
+  null,
+  ""
+ ],
+ "Backing Device": [
   null,
   ""
  ],
@@ -306,6 +322,10 @@ return plural;
   null,
   ""
  ],
+ "Compression": [
+  null,
+  ""
+ ],
  "Confirm passphrase": [
   null,
   ""
@@ -335,6 +355,10 @@ return plural;
   ""
  ],
  "Create Thin Volume": [
+  null,
+  ""
+ ],
+ "Create VDO Device": [
   null,
   ""
  ],
@@ -418,6 +442,10 @@ return plural;
   null,
   ""
  ],
+ "Deduplication": [
+  null,
+  ""
+ ],
  "Default": [
   null,
   ""
@@ -431,6 +459,10 @@ return plural;
   ""
  ],
  "Deleting a RAID device will erase all data on it.": [
+  null,
+  ""
+ ],
+ "Deleting a VDO device will erase all data on it.": [
   null,
   ""
  ],
@@ -450,7 +482,15 @@ return plural;
   null,
   ""
  ],
+ "Device File": [
+  null,
+  ""
+ ],
  "Device is read-only": [
+  null,
+  ""
+ ],
+ "Disk": [
   null,
   ""
  ],
@@ -586,11 +626,27 @@ return plural;
   null,
   ""
  ],
+ "Grow": [
+  null,
+  ""
+ ],
+ "Grow logical size of $0": [
+  null,
+  ""
+ ],
+ "Grow to take all space": [
+  null,
+  ""
+ ],
  "In Sync": [
   null,
   ""
  ],
  "Inactive volume": [
+  null,
+  ""
+ ],
+ "Index Memory": [
   null,
   ""
  ],
@@ -611,6 +667,14 @@ return plural;
   ""
  ],
  "Locking $target": [
+  null,
+  ""
+ ],
+ "Logical": [
+  null,
+  ""
+ ],
+ "Logical Size": [
   null,
   ""
  ],
@@ -710,6 +774,10 @@ return plural;
   null,
   ""
  ],
+ "Name can not be empty.": [
+  null,
+  ""
+ ],
  "Name cannot be empty.": [
   null,
   ""
@@ -774,6 +842,10 @@ return plural;
   null,
   ""
  ],
+ "No storage set up as VDO": [
+  null,
+  ""
+ ],
  "No volume groups created": [
   null,
   ""
@@ -795,6 +867,10 @@ return plural;
   ""
  ],
  "On": [
+  null,
+  ""
+ ],
+ "Only $0 of $1 are used.": [
   null,
   ""
  ],
@@ -854,6 +930,10 @@ return plural;
   null,
   ""
  ],
+ "Physical": [
+  null,
+  ""
+ ],
  "Physical Volume": [
   null,
   ""
@@ -867,6 +947,10 @@ return plural;
   ""
  ],
  "Please confirm deletion of $0": [
+  null,
+  ""
+ ],
+ "Please confirm stopping of $0": [
   null,
   ""
  ],
@@ -982,6 +1066,10 @@ return plural;
   null,
   ""
  ],
+ "Remove device": [
+  null,
+  ""
+ ],
  "Removing $target from RAID Device": [
   null,
   ""
@@ -1071,6 +1159,10 @@ return plural;
   ""
  ],
  "Size must be a number": [
+  null,
+  ""
+ ],
+ "Size must be at least $0": [
   null,
   ""
  ],
@@ -1170,6 +1262,10 @@ return plural;
   null,
   ""
  ],
+ "The creation of this VDO device did not finish and the device can't be used.": [
+  null,
+  ""
+ ],
  "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
   null,
   ""
@@ -1202,6 +1298,10 @@ return plural;
   null,
   ""
  ],
+ "This VDO device does not use all of its backing device.": [
+  null,
+  ""
+ ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
   ""
@@ -1211,6 +1311,10 @@ return plural;
   ""
  ],
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
+  null,
+  ""
+ ],
+ "This device is currently used for VDO devices.": [
   null,
   ""
  ],
@@ -1227,6 +1331,10 @@ return plural;
   ""
  ],
  "This logical volume cannot be made smaller.": [
+  null,
+  ""
+ ],
+ "Transfer data asynchronously": [
   null,
   ""
  ],
@@ -1298,11 +1406,31 @@ return plural;
   null,
   ""
  ],
+ "Use 512 Byte emulation": [
+  null,
+  ""
+ ],
  "Used": [
   null,
   ""
  ],
  "Username": [
+  null,
+  ""
+ ],
+ "VDO Backing": [
+  null,
+  ""
+ ],
+ "VDO Device": [
+  null,
+  ""
+ ],
+ "VDO Device $0": [
+  null,
+  ""
+ ],
+ "VDO Devices": [
   null,
   ""
  ],
@@ -1387,6 +1515,10 @@ return plural;
   ""
  ],
  "storage-id-desc\u0004Unrecognized Data": [
+  null,
+  ""
+ ],
+ "storage-id-desc\u0004VDO Backing": [
   null,
   ""
  ],

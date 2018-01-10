@@ -541,7 +541,7 @@ return plural;
  ],
  "Grant additional push or admin access to specific members below.": [
   null,
-  "以下の特定のメンバーに、追加のプッシュまたは管理アクセスを提供します。"
+  "以下の特定のメンバーに追加のプッシュまたは管理アクセスを提供します。"
  ],
  "Group Members": [
   null,
@@ -841,7 +841,7 @@ return plural;
  ],
  "Nodes are the machines that run your containers.": [
   null,
-  "ノードは、コンテナーを実行するマシンです。"
+  "ノードはコンテナーを実行するマシンです。"
  ],
  "None": [
   null,
@@ -1277,7 +1277,7 @@ return plural;
  ],
  "Services group pods and provide a common DNS name and an optional, load-balanced IP address to access them.": [
   null,
-  "サービスはポッドをグループ化し、ポッドにアクセスするための共通の DNS 名と、任意のロードバランス IP アドレスを提供します。"
+  "サービスはポッドをグループ化し、ポッドにアクセスするために共通の DNS 名とオプションのロードバランス IP アドレスを提供します。"
  ],
  "Session Affinity": [
   null,
@@ -1357,7 +1357,7 @@ return plural;
  ],
  "Sorry, I don't know how to modify this volume": [
   null,
-  "このボリュームを変更する方法がわかりません"
+  "申し訳ありませんが、このボリュームを変更する方法がわかりません"
  ],
  "State": [
   null,
@@ -1457,11 +1457,11 @@ return plural;
  ],
  "The selected file is not a valid Kubernetes application manifest.": [
   null,
-  "選択されたファイルは、有効な Kubernetes アプリケーションマニフェストではありません。"
+  "選択されたファイルは有効な Kubernetes アプリケーションマニフェストではありません。"
  ],
  "The server uses a certificate signed by an unknown authority.": [
   null,
-  "サーバーは、不明な認証局が署名した証明書を使用します。"
+  "サーバーは不明な認証局によって署名された証明書を使用します。"
  ],
  "The service '{{ target }}' does not exist.": [
   null,
@@ -1477,11 +1477,11 @@ return plural;
  ],
  "This option is for single node testing only – local storage will not work in a multi-node cluster": [
   null,
-  "このオプションは、単一ノードのテストにのみ使用できます。ローカルストレージは、マルチノードクラスターで動作しません"
+  "このオプションは単一ノードのテストにのみ使用できます – ローカルストレージはマルチノードクラスターで動作しません"
  ],
  "This volume has been claimed by {{ item.item.spec.claimRef.namespace }} / {{ item.item.spec.claimRef.name }}. Deleting it will break that claim and may cause issues with any pods depending on it.": [
   null,
-  "このボリュームは {{ item.item.spec.claimRef.namespace }} / {{ item.item.spec.claimRef.name }} によってクレームされました。このボリュームを削除するとそのクレームが破損し、依存するすべてのポッドで問題が発生することがあります。"
+  "このボリュームは {{ item.item.spec.claimRef.namespace }} / {{ item.item.spec.claimRef.name }} によってクレームされました。このボリュームを削除すると、そのクレームが破損して、依存するすべてのポッドで問題が発生することがあります。"
  ],
  "This volume has not been claimed": [
   null,
@@ -1505,7 +1505,7 @@ return plural;
  ],
  "Trust this certificate for this connection": [
   null,
-  "この接続に対して、この証明書を信頼します"
+  "この接続に対してこの証明書を信頼します"
  ],
  "Type": [
   null,

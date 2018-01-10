@@ -26,8 +26,6 @@ try {
 
 var mock = mock || { };
 
-var phantom_checkpoint = phantom_checkpoint || function () { };
-
 (function() {
 "use strict";
 
@@ -549,7 +547,6 @@ function Transport() {
         else
             process_message(channel, payload);
 
-        phantom_checkpoint();
         return true;
     };
 
@@ -4527,17 +4524,13 @@ function factory() {
             window.parent.postMessage("\n{ \"command\": \"oops\" }", transport_origin);
     };
 
-    var old_onerror;
-
-    if (window.navigator.userAgent.indexOf("PhantomJS") == -1) {
-        old_onerror = window.onerror;
-        window.onerror = function(msg, url, line) {
-            cockpit.oops();
-            if (old_onerror)
-                return old_onerror(msg, url, line);
-            return false;
-        };
-    }
+    var old_onerror = window.onerror;
+    window.onerror = function(msg, url, line) {
+        cockpit.oops();
+        if (old_onerror)
+            return old_onerror(msg, url, line);
+        return false;
+    };
 
     return cockpit;
 } /* scope end */

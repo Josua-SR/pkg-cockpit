@@ -93,7 +93,7 @@ return plural;
  ],
  "Add key": [
   null,
-  "Afegeix la clau"
+  "Afegeix una clau"
  ],
  "Address": [
   null,
@@ -217,7 +217,7 @@ return plural;
  ],
  "Display Language": [
   null,
-  "Idioma de la visualització"
+  "Idioma de visualització"
  ],
  "Enter IP address or host name": [
   null,
@@ -229,7 +229,7 @@ return plural;
  ],
  "Error loading users: {{perm_failed}}": [
   null,
-  "S'ha produït un error en carregar els usuaris: {{perm_failed}}"
+  "Error en carregar els usuaris: {{perm_failed}}"
  ],
  "Failed to add machine: $0": [
   null,
@@ -273,7 +273,7 @@ return plural;
  ],
  "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
-  ""
+  "Deixeu-ho en blanc per connectar a aquesta màquina amb l'usuari{{#default_user}} ({{default_user}}){{/default_user}}, que ha iniciat actualment la sessió. Si introduïu un altre nom d'usuari, sempre s'utilitzarà aquest usuari quan es connecti a aquesta màquina."
  ],
  "Licensed under:": [
   null,
@@ -401,7 +401,7 @@ return plural;
  ],
  "Reuse my password for privileged tasks and to connect to other machines": [
   null,
-  "Torna a utilitzar la meva contrasenya per a les tasques privilegiades i per connectar a altres màquines"
+  "Reutilitza la meva contrasenya per a les tasques privilegiades i per connectar a altres màquines"
  ],
  "Select": [
   null,

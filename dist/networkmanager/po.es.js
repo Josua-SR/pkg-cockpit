@@ -599,7 +599,7 @@ return plural;
  ],
  "Ping Target": [
   null,
-  ""
+  "Hacer Ping al Objetivo"
  ],
  "Ports": [
   null,
