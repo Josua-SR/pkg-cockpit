@@ -1,3 +1,13 @@
+cockpit (159-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Configure data deduplication with VDO devices on Storage page
+    - Add serial console to virtual Machines page and redesign the
+      Consoles tab
+    - Show more error message details for failures on virtual Machines page
+
+ -- Martin Pitt <mpitt@debian.org>  Wed, 10 Jan 2018 14:32:26 +0100
+
 cockpit (158-1) unstable; urgency=medium
 
   * New upstream release:
