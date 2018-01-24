@@ -1,5 +1,5 @@
 # Generated Makefile data for dashboard
-# Stamp: Wed Jan 10 2018 12:07:18 GMT+0000 (UTC)
+# Stamp: Wed Jan 24 2018 08:44:08 GMT+0000 (UTC)
 
 dashboard_INPUTS = \
 	node_modules/jquery-flot/LICENSE.txt \
@@ -24,6 +24,7 @@ dashboard_INPUTS = \
 	pkg/lib/machine-change-port.html \
 	pkg/lib/machine-color-picker.html \
 	pkg/lib/machine-dialogs.js \
+	pkg/lib/machine-info.es6 \
 	pkg/lib/machine-invalid-hostkey.html \
 	pkg/lib/machine-not-supported.html \
 	pkg/lib/machine-sync-users.html \
@@ -45,7 +46,6 @@ dashboard_PO = dist/dashboard/po.js $(patsubst %,dist/dashboard/po.%.js,$(LINGUA
 dashboard_INSTALL = \
 	dist/dashboard/dashboard.min.js.gz \
 	dist/dashboard/index.html.gz \
-	dist/dashboard/manifest.json \
 	$(addsuffix .gz,$(dashboard_PO)) \
 	$(NULL)
 
@@ -58,7 +58,7 @@ dashboard_TESTS = \
 
 dist/dashboard/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/jquery-flot/jquery.flot.js -N node_modules/jquery-flot/jquery.flot.selection.js -N node_modules/jquery-flot/jquery.flot.time.js -N node_modules/mustache/mustache.js -N pkg/dashboard/image-editor.js -N pkg/dashboard/index.html -N pkg/dashboard/list.js -N pkg/lib/credentials-ssh-private-keys.sh -N pkg/lib/credentials-ssh-remove-key.sh -N pkg/lib/credentials.js -N pkg/lib/machine-add.html -N pkg/lib/machine-auth-failed.html -N pkg/lib/machine-change-auth.html -N pkg/lib/machine-change-port.html -N pkg/lib/machine-color-picker.html -N pkg/lib/machine-dialogs.js -N pkg/lib/machine-invalid-hostkey.html -N pkg/lib/machine-not-supported.html -N pkg/lib/machine-sync-users.html -N pkg/lib/machine-unknown-hostkey.html -N pkg/lib/machines.js -N pkg/lib/mustache.js -N pkg/lib/patterns.js -N pkg/lib/plot.js $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/jquery-flot/jquery.flot.js -N node_modules/jquery-flot/jquery.flot.selection.js -N node_modules/jquery-flot/jquery.flot.time.js -N node_modules/mustache/mustache.js -N pkg/dashboard/image-editor.js -N pkg/dashboard/index.html -N pkg/dashboard/list.js -N pkg/lib/credentials-ssh-private-keys.sh -N pkg/lib/credentials-ssh-remove-key.sh -N pkg/lib/credentials.js -N pkg/lib/machine-add.html -N pkg/lib/machine-auth-failed.html -N pkg/lib/machine-change-auth.html -N pkg/lib/machine-change-port.html -N pkg/lib/machine-color-picker.html -N pkg/lib/machine-dialogs.js -N pkg/lib/machine-info.es6 -N pkg/lib/machine-invalid-hostkey.html -N pkg/lib/machine-not-supported.html -N pkg/lib/machine-sync-users.html -N pkg/lib/machine-unknown-hostkey.html -N pkg/lib/machines.js -N pkg/lib/mustache.js -N pkg/lib/patterns.js -N pkg/lib/plot.js $< > $@.tmp && mv $@.tmp $@
 
 dist/dashboard/Makefile.deps: $(WEBPACK_CONFIG) $(dashboard_INPUTS)
 	$(WEBPACK_RULE) -d dist/dashboard/Makefile.deps $(WEBPACK_CONFIG)
@@ -112,6 +112,8 @@ pkg/lib/machine-change-port.html:
 pkg/lib/machine-color-picker.html:
 
 pkg/lib/machine-dialogs.js:
+
+pkg/lib/machine-info.es6:
 
 pkg/lib/machine-invalid-hostkey.html:
 

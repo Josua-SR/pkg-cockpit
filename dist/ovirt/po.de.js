@@ -119,10 +119,6 @@ return plural;
   null,
   ""
  ],
- "Bus": [
-  null,
-  ""
- ],
  "CHANGE NETWORK STATE action failed": [
   null,
   ""
@@ -138,10 +134,6 @@ return plural;
  "Cancel": [
   null,
   "Abbrechen"
- ],
- "Capacity": [
-  null,
-  "Kapazität"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -199,10 +191,6 @@ return plural;
   null,
   ""
  ],
- "Count:": [
-  null,
-  ""
- ],
  "Create": [
   null,
   "Erstellen"
@@ -224,10 +212,6 @@ return plural;
   ""
  ],
  "Description:": [
-  null,
-  ""
- ],
- "Device": [
   null,
   ""
  ],
@@ -263,19 +247,11 @@ return plural;
   null,
   ""
  ],
- "File": [
-  null,
-  ""
- ],
  "Force Restart": [
   null,
   ""
  ],
  "Force Shut Down": [
-  null,
-  ""
- ],
- "GB": [
   null,
   ""
  ],
@@ -379,10 +355,6 @@ return plural;
   null,
   ""
  ],
- "No disks defined for this VM": [
-  null,
-  ""
- ],
  "No network interfaces defined for this VM": [
   null,
   ""
@@ -443,10 +415,6 @@ return plural;
   null,
   ""
  ],
- "Pool": [
-  null,
-  ""
- ],
  "Port": [
   null,
   ""
@@ -459,15 +427,7 @@ return plural;
   null,
   ""
  ],
- "Protocol": [
-  null,
-  ""
- ],
  "REBOOT action failed": [
-  null,
-  ""
- ],
- "Readonly": [
   null,
   ""
  ],
@@ -655,10 +615,6 @@ return plural;
   null,
   ""
  ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  ""
- ],
  "Usage": [
   null,
   ""
@@ -736,10 +692,6 @@ return plural;
   ""
  ],
  "Virtualport": [
-  null,
-  ""
- ],
- "Volume": [
   null,
   ""
  ],
@@ -900,6 +852,14 @@ return plural;
   "Läuft"
  ],
  "server": [
+  null,
+  ""
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
   null,
   ""
  ],

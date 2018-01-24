@@ -24,7 +24,7 @@ import { shutdownVm, forceVmOff, forceRebootVm, rebootVm, startVm,
 import { rephraseUI, logDebug, toGigaBytes, toFixedPrecision, vmId } from "./helpers.es6";
 import DonutChart from "./c3charts.jsx";
 import { Listing, ListingRow } from "cockpit-components-listing.jsx";
-import VmDisksTab from './vmdiskstab.jsx';
+import VmDisksTab from './components/vmdiskstab.jsx';
 import VmNetworkTab from './vmnetworktab.jsx';
 import Consoles from './components/consoles.jsx';
 import { deleteDialog } from "./components/deleteDialog.jsx";
@@ -381,7 +381,7 @@ const Vm = ({ vm, config, hostDevices, onStart, onShutdown, onForceoff, onReboot
     let tabRenderers = [
         {name: _("Overview"), renderer: VmOverviewTab, data: {vm, config, dispatch }},
         {name: usageTabName, renderer: VmUsageTab, data: {vm, onUsageStartPolling, onUsageStopPolling}, presence: 'onlyActive' },
-        {name: disksTabName, renderer: VmDisksTab, data: {vm, provider: config.provider}, presence: 'onlyActive' },
+        {name: disksTabName, renderer: VmDisksTab, data: {vm, provider: config.provider, onUsageStartPolling, onUsageStopPolling}, presence: 'onlyActive' },
         {name: networkTabName, renderer: VmNetworkTab, data: { vm, dispatch, hostDevices }},
         {name: consolesTabName, renderer: Consoles, data: { vm, config, dispatch }},
     ];

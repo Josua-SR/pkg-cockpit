@@ -1,5 +1,5 @@
 # Generated Makefile data for apps
-# Stamp: Wed Jan 10 2018 12:07:16 GMT+0000 (UTC)
+# Stamp: Wed Jan 24 2018 08:44:05 GMT+0000 (UTC)
 
 apps_INPUTS = \
 	node_modules/react-lite/LICENSE \
@@ -39,7 +39,6 @@ apps_INSTALL = \
 	dist/apps/apps.min.js.gz \
 	dist/apps/default.png \
 	dist/apps/index.html.gz \
-	dist/apps/manifest.json \
 	$(addsuffix .gz,$(apps_PO)) \
 	$(NULL)
 

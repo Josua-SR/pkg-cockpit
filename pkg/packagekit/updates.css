@@ -9,25 +9,45 @@ tr.listing-ct-item td:last-child {
     text-align: left;
 }
 
-tr.listing-ct-item th {
-    vertical-align: top;
-}
-
-tr.listing-ct-item td {
-    vertical-align: top;
-}
-
-tr.listing-ct-item td.narrow {
+tr.listing-ct-item td.version {
     max-width: 18ex;
     word-wrap: break-word;
 }
 
+tr.listing-ct-item td.type {
+    white-space: nowrap;
+}
+
+.severity-critical {
+    color: #cc0000;
+}
+
+.severity-important {
+    color: #ec7a08;
+}
+
+.severity-low {
+    color: #8b8d8f;
+}
+
 tr.listing-ct-item td.changelog {
+    max-width: 60vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+p.changelog {
+    max-height: 20em;
+    overflow: auto;
+}
+
+p.changelog div.changelog {
     white-space: pre-wrap;
 }
 
 tr.security.listing-ct-item {
-    background-color: #fbf0f0;
+    background-color: #fbf0f0 !important;  /* keep red background when expanded */
     border-top: 1px solid #e0e0e0;
     border-bottom: 1px solid #e0e0e0;
 }
@@ -61,58 +81,10 @@ tr.security.listing-ct-item {
     }
 }
 
-@media screen and (min-width: 641px) {
-    tr.listing-ct-item td.changelog {
-        width: 80ex;
-        white-space: pre-line;
-     }
-
-     .listing-ct-item td.narrow:nth-child(2) {
-         max-width: 25ex;
-    }
-}
-
 @media screen and (min-width: 641px) and (max-width: 1150px) {
     .listing-ct-item th {
         min-width: 30%;
     }
-
-    /* This really should be .update-bugs or similar */
-    .listing-ct-item td.narrow:nth-child(3) {
-        min-width: 19ex;
-        width: 20ex;
-    }
-    /* Basically children of the above, but break before the odd bug links */
-    .listing-ct-item td.narrow:nth-child(3) a:nth-child(odd):before {
-        display: block;
-        content: '';
-    }
-}
-
-@media screen and (min-width: 1151px) {
-    /* This really should be .update-bugs or similar */
-    .listing-ct-item td.narrow:nth-child(3) {
-        min-width: 36ex;
-        width: 38ex;
-    }
-    /* Basically children of the above, but break before the odd bug links */
-    .listing-ct-item td.narrow:nth-child(3) a:nth-child(4n+5):before {
-        display: block;
-        content: '';
-    }
-}
-
-.info-expander {
-    display: block;
-}
-
-.security-label {
-    color: darkred;
-}
-
-.security-label-text {
-    color: darkred;
-    font-weight: 600;
 }
 
 /* don't let the install progress bar get too wide */

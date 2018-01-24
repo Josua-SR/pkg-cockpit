@@ -1,5 +1,5 @@
 # Generated Makefile data for tuned
-# Stamp: Wed Jan 10 2018 12:07:16 GMT+0000 (UTC)
+# Stamp: Wed Jan 24 2018 08:44:05 GMT+0000 (UTC)
 
 tuned_INPUTS = \
 	node_modules/react-lite/LICENSE \
@@ -24,7 +24,6 @@ tuned_OUTPUTS = \
 tuned_PO = dist/tuned/po.js $(patsubst %,dist/tuned/po.%.js,$(LINGUAS))
 
 tuned_INSTALL = \
-	dist/tuned/manifest.json \
 	dist/tuned/performance.css.gz \
 	dist/tuned/performance.min.js.gz \
 	$(addsuffix .gz,$(tuned_PO)) \

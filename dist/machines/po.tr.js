@@ -95,10 +95,6 @@ return plural;
   null,
   ""
  ],
- "Bus": [
-  null,
-  ""
- ],
  "CHANGE NETWORK STATE action failed": [
   null,
   ""
@@ -110,10 +106,6 @@ return plural;
  "Cancel": [
   null,
   "İptal"
- ],
- "Capacity": [
-  null,
-  "Kapasite"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -143,19 +135,11 @@ return plural;
   null,
   ""
  ],
- "Count:": [
-  null,
-  ""
- ],
  "Delete": [
   null,
   "Sil"
  ],
  "Delete associated storage files:": [
-  null,
-  ""
- ],
- "Device": [
   null,
   ""
  ],
@@ -179,19 +163,11 @@ return plural;
   null,
   ""
  ],
- "File": [
-  null,
-  ""
- ],
  "Force Restart": [
   null,
   ""
  ],
  "Force Shut Down": [
-  null,
-  ""
- ],
- "GB": [
   null,
   ""
  ],
@@ -202,10 +178,6 @@ return plural;
  "Graphics Console in Desktop Viewer": [
   null,
   ""
- ],
- "Host": [
-  null,
-  "Host"
  ],
  "Launch Remote Viewer": [
   null,
@@ -263,10 +235,6 @@ return plural;
   null,
   ""
  ],
- "No disks defined for this VM": [
-  null,
-  ""
- ],
  "No network interfaces defined for this VM": [
   null,
   ""
@@ -287,23 +255,11 @@ return plural;
   null,
   ""
  ],
- "Pool": [
-  null,
-  ""
- ],
  "Port": [
   null,
   ""
  ],
  "Portgroup": [
-  null,
-  ""
- ],
- "Protocol": [
-  null,
-  ""
- ],
- "Readonly": [
   null,
   ""
  ],
@@ -415,10 +371,6 @@ return plural;
   null,
   ""
  ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  ""
- ],
  "Usage": [
   null,
   ""
@@ -474,10 +426,6 @@ return plural;
  "Virtualport": [
   null,
   ""
- ],
- "Volume": [
-  null,
-  "Mantıksal Bölüm"
  ],
  "Your browser does not support iframes.": [
   null,
@@ -564,6 +512,14 @@ return plural;
   "Çalışıyor"
  ],
  "server": [
+  null,
+  ""
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
   null,
   ""
  ],

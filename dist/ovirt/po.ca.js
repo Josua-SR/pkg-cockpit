@@ -119,10 +119,6 @@ return plural;
   null,
   "Ordre d'arrencada:"
  ],
- "Bus": [
-  null,
-  "Bus"
- ],
  "CHANGE NETWORK STATE action failed": [
   null,
   "Ha fallat l'acció CHANGE NETWORK STATE"
@@ -138,10 +134,6 @@ return plural;
  "Cancel": [
   null,
   "Cancel·la"
- ],
- "Capacity": [
-  null,
-  "Capacitat"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -199,10 +191,6 @@ return plural;
   null,
   ""
  ],
- "Count:": [
-  null,
-  "Nombre:"
- ],
  "Create": [
   null,
   "Crea"
@@ -226,10 +214,6 @@ return plural;
  "Description:": [
   null,
   "Descripció:"
- ],
- "Device": [
-  null,
-  "Dispositiu"
  ],
  "Disconnect": [
   null,
@@ -263,10 +247,6 @@ return plural;
   null,
   "FQDN"
  ],
- "File": [
-  null,
-  "Fitxer"
- ],
  "Force Restart": [
   null,
   "Força el reinici"
@@ -274,10 +254,6 @@ return plural;
  "Force Shut Down": [
   null,
   "Força l'apagada"
- ],
- "GB": [
-  null,
-  "GB"
  ],
  "Graphics Console (VNC)": [
   null,
@@ -379,10 +355,6 @@ return plural;
   null,
   ""
  ],
- "No disks defined for this VM": [
-  null,
-  "No hi ha definit cap disc per a aquesta MV"
- ],
  "No network interfaces defined for this VM": [
   null,
   "No s'ha definit cap interfície de xarxa per aquesta MV"
@@ -443,10 +415,6 @@ return plural;
   null,
   ""
  ],
- "Pool": [
-  null,
-  "Agrupació"
- ],
  "Port": [
   null,
   "Port"
@@ -459,17 +427,9 @@ return plural;
   null,
   ""
  ],
- "Protocol": [
-  null,
-  "Protocol"
- ],
  "REBOOT action failed": [
   null,
   "Ha fallat l'acció REBOOT"
- ],
- "Readonly": [
-  null,
-  "NomésLectura"
  ],
  "Reconnect": [
   null,
@@ -655,10 +615,6 @@ return plural;
   null,
   ""
  ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Actualitzeu a una versió més recent de libvirt per visualitzar les estadístiques dels discs"
- ],
  "Usage": [
   null,
   "Ús"
@@ -738,10 +694,6 @@ return plural;
  "Virtualport": [
   null,
   ""
- ],
- "Volume": [
-  null,
-  "Volum"
  ],
  "Your browser does not support iframes.": [
   null,
@@ -902,6 +854,14 @@ return plural;
  "server": [
   null,
   "servidor"
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
+  null,
+  ""
  ],
  "shut off": [
   null,

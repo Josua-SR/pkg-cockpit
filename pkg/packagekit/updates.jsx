@@ -17,13 +17,14 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-var cockpit = require("cockpit");
-var React = require("react");
-var moment = require("moment");
-var Tooltip = require("cockpit-components-tooltip.jsx").Tooltip;
-require("listing.less");
-
+import cockpit from "cockpit";
+import React from "react";
+import moment from "moment";
+import { Tooltip } from "cockpit-components-tooltip.jsx";
+import Markdown from "react-remarkable";
 import AutoUpdates from "./autoupdates.jsx";
+
+require("listing.less");
 
 const _ = cockpit.gettext;
 
@@ -45,6 +46,11 @@ const PK_EXIT_ENUM_FAILED = 2;
 const PK_EXIT_ENUM_CANCELLED = 3;
 const PK_ROLE_ENUM_REFRESH_CACHE = 13;
 const PK_ROLE_ENUM_UPDATE_PACKAGES = 22;
+const PK_INFO_ENUM_LOW = 3;
+//const PK_INFO_ENUM_ENHANCEMENT = 4;
+const PK_INFO_ENUM_NORMAL = 5;
+//const PK_INFO_ENUM_BUGFIX = 6;
+//const PK_INFO_ENUM_IMPORTANT = 7;
 const PK_INFO_ENUM_SECURITY = 8;
 const PK_STATUS_ENUM_WAIT = 1;
 const PK_STATUS_ENUM_UPDATE = 10;
@@ -171,7 +177,7 @@ class Expander extends React.Component {
 function count_security_updates(updates) {
     var num_security = 0;
     for (let u in updates)
-        if (updates[u].security)
+        if (updates[u].severity === PK_INFO_ENUM_SECURITY)
            ++num_security;
     return num_security;
 }
@@ -230,6 +236,25 @@ function HeaderBar(props) {
     );
 }
 
+function getSeverityURL(urls) {
+    // in ascending severity
+    const knownLevels = ["low", "moderate", "important", "critical"];
+    var highestIndex = -1;
+    var highestURL = null;
+
+    // search URLs for highest valid severity; by all means we expect an update to have at most one, but for paranoia..
+    urls.map(value => {
+        if (value.startsWith("https://access.redhat.com/security/updates/classification/#")) {
+            let i = knownLevels.indexOf(value.slice(value.indexOf("#") + 1));
+            if (i > highestIndex) {
+                highestIndex = i;
+                highestURL = value;
+            }
+        }
+    });
+    return highestURL;
+}
+
 class UpdateItem extends React.Component {
     constructor() {
         super();
@@ -238,68 +263,126 @@ class UpdateItem extends React.Component {
 
     render() {
         const info = this.props.info;
-        var bugs = null;
-        var security_info = null;
 
+        var bugs = null;
         if (info.bug_urls && info.bug_urls.length) {
-            // HACK: bug_urls also contains titles, in a not-quite-predictable order; ignore them, only pick out
-            // http[s] URLs (https://bugs.freedesktop.org/show_bug.cgi?id=104552)
             // we assume a bug URL ends with a number; if not, show the complete URL
-            bugs = insertCommas(info.bug_urls.filter(url => url.match(/^https?:\/\//)).map(url => (
+            bugs = insertCommas(info.bug_urls.map(url => (
                 <a rel="noopener" referrerpolicy="no-referrer" target="_blank" href={url}>
                     {url.match(/[0-9]+$/) || url}
                 </a>)
             ));
         }
 
-        if (info.security) {
-            security_info = (
-                <p>
-                    <span className="fa fa-shield security-label">&nbsp;</span>
-                    <span className="security-label-text">{ _("Security Update") + (info.cve_urls.length ? ": " : "") }</span>
-                    { insertCommas(info.cve_urls.map(url => (
-                        <a href={url} rel="noopener" referrerpolicy="no-referrer" target="_blank">
-                            {url.match(/[^/=]+$/)}
-                        </a>)
-                      )) }
-                </p>
+        var cves = null;
+        if (info.cve_urls && info.cve_urls.length) {
+            cves = insertCommas(info.cve_urls.map(url => (
+                <a href={url} rel="noopener" referrerpolicy="no-referrer" target="_blank">
+                    {url.match(/[^/=]+$/)}
+                </a>)
+            ));
+        }
+
+        var errata = null;
+        if (info.vendor_urls) {
+            errata = insertCommas(info.vendor_urls.filter(url => url.indexOf("/errata/") > 0).map(url => (
+                <a href={url} rel="noopener" referrerpolicy="no-referrer" target="_blank">
+                    {url.match(/[^/=]+$/)}
+                </a>)
+            ));
+            if (!errata.length)
+                errata = null; // simpler testing below
+        }
+
+        var type;
+        var secSeverity;
+        if (info.severity === PK_INFO_ENUM_SECURITY) {
+            let classes = "pficon pficon-security";
+
+            // parse Red Hat security update classification from vendor_urls
+            secSeverity = getSeverityURL(info.vendor_urls);
+            if (secSeverity) {
+                let s = secSeverity.slice(secSeverity.indexOf("#") + 1);
+                classes += " severity-" + s;
+                secSeverity = <a rel="noopener" referrerpolicy="no-referrer" target="_blank" href={secSeverity}>{s}</a>;
+            }
+
+            type = (
+                <span>
+                    <span className={classes}>&nbsp;</span>
+                    { (info.cve_urls && info.cve_urls.length > 0) ? info.cve_urls.length : "" }
+                </span>);
+        } else if (info.severity >= PK_INFO_ENUM_NORMAL) {
+            type = (
+                <span>
+                    <span className="fa fa-bug">&nbsp;</span>
+                    { bugs ? info.bug_urls.length : "" }
+                </span>);
+        } else {
+            type = (
+                <span>
+                    <span className="pficon pficon-enhancement">&nbsp;</span>
+                    { bugs ? info.bug_urls.length : "" }
+                </span>);
+        }
+
+        var pkgList = this.props.pkgNames.map(n => (<Tooltip tip={packageSummaries[n]}><span>{n}</span></Tooltip>));
+        var pkgs = insertCommas(pkgList);
+        var pkgsTruncated = pkgs;
+        if (pkgList.length > 4)
+            pkgsTruncated = insertCommas(pkgList.slice(0, 4).concat("…"));
+
+        var descriptionFirstLine = (info.description || "").trim();
+        if (descriptionFirstLine.indexOf("\n") >= 0)
+            descriptionFirstLine = descriptionFirstLine.slice(0, descriptionFirstLine.indexOf("\n"));
+        var description;
+        if (info.markdown) {
+            descriptionFirstLine = <Markdown source={descriptionFirstLine} />;
+            description = <Markdown source={info.description} />;
+        } else {
+            description = <div className="changelog">{info.description}</div>;
+        }
+
+        var details = null;
+        if (this.state.expanded) {
+            details = (
+                <tr className="listing-ct-panel">
+                    <td colSpan="5">
+                        <div className="listing-ct-body">
+                            <dl>
+                                <dt>Packages:</dt>
+                                <dd>{pkgs}</dd>
+                                { cves ? <dt>CVE:</dt> : null }
+                                { cves ? <dd>{cves}</dd> : null }
+                                { secSeverity ? <dt>{_("Severity:")}</dt> : null }
+                                { secSeverity ? <dd className="severity">{secSeverity}</dd> : null }
+                                { errata ? <dt>{_("Errata:")}</dt> : null }
+                                { errata ? <dd>{errata}</dd> : null }
+                                { bugs ? <dt>{_("Bugs:")}</dt> : null }
+                                { bugs ? <dd>{bugs}</dd> : null }
+                            </dl>
+
+                            <p></p>
+                            <p className="changelog">{description}</p>
+                        </div>
+                    </td>
+                </tr>
             );
         }
 
-        /* truncate long package list by default */
-        var pkgList = this.props.pkgNames.map(n => (<Tooltip tip={packageSummaries[n]}><span>{n}</span></Tooltip>));
-        var pkgs;
-        if (!this.state.expanded && pkgList.length > 15) {
-            pkgs = (
-                <div onClick={ () => this.setState({expanded: true}) }>
-                    {insertCommas(pkgList.slice(0, 15))}
-                    <a className="info-expander">{ cockpit.format(_("$0 more…"), pkgList.length - 15) }</a>
-                </div>);
-        } else {
-            pkgs = insertCommas(pkgList);
-        }
-
-        /* truncate long description by default */
-        var descLines = (info.description || "").trim().split("\n");
-        var desc;
-        if (!this.state.expanded && descLines.length > 7) {
-            desc = (
-                <div onClick={ () => this.setState({expanded: true}) }>
-                    {descLines.slice(0, 6).join("\n") + "\n"}
-                    <a>{_("More information…")}</a>
-                </div>);
-        } else {
-            desc = info.description;
-        }
-
         return (
-            <tbody>
-                <tr className={ "listing-ct-item" + (info.security ? " security" : "") }>
-                    <th>{pkgs}</th>
-                    <td className="narrow">{info.version}</td>
-                    <td className="narrow">{bugs}</td>
-                    <td className="changelog">{security_info}{desc}</td>
+            <tbody className={ this.state.expanded ? "open" : null } >
+                <tr className={ "listing-ct-item" + (info.severity === PK_INFO_ENUM_SECURITY ? " security" : "") }
+                    onClick={ () => this.setState({expanded: !this.state.expanded}) }>
+                    <td className="listing-ct-toggle">
+                        <i className="fa fa-fw"></i>
+                    </td>
+                    <th>{pkgsTruncated}</th>
+                    <td className="version">{info.version}</td>
+                    <td className="type">{type}</td>
+                    <td className="changelog">{descriptionFirstLine}</td>
                 </tr>
+                {details}
             </tbody>
         );
     }
@@ -329,9 +412,9 @@ function UpdatesList(props) {
 
     // sort security first
     updates.sort((a, b) => {
-        if (props.updates[a].security && !props.updates[b].security)
+        if (props.updates[a].severity === PK_INFO_ENUM_SECURITY && props.updates[b].severity !== PK_INFO_ENUM_SECURITY)
             return -1;
-        if (!props.updates[a].security && props.updates[b].security)
+        if (props.updates[a].severity !== PK_INFO_ENUM_SECURITY && props.updates[b].severity === PK_INFO_ENUM_SECURITY)
             return 1;
         return a.localeCompare(b);
     });
@@ -340,9 +423,10 @@ function UpdatesList(props) {
         <table className="listing-ct">
             <thead>
                 <tr>
+                    <th></th>
                     <th>{_("Name")}</th>
                     <th>{_("Version")}</th>
-                    <th>{_("Bugs")}</th>
+                    <th>{_("Severity")}</th>
                     <th>{_("Details")}</th>
                 </tr>
             </thead>
@@ -540,7 +624,7 @@ class OsUpdates extends React.Component {
 
         dbus_pk.addEventListener("close", (event, ex) => {
             console.log("close:", event, ex);
-            var err;
+            let err;
             if (ex.problem == "not-found")
                 err = _("PackageKit is not installed")
             else
@@ -561,10 +645,12 @@ class OsUpdates extends React.Component {
         this.setState({state: "loadError"});
     }
 
-    formatDescription(text) {
-        // on Debian they start with "== version ==" which is redundant; we
-        // don"t want Markdown headings in the table
-        return text.trim().replace(/^== .* ==\n/, "").trim();
+    removeHeading(text) {
+        // on Debian the update_text starts with "== version ==" which is
+        // redundant; we don't want Markdown headings in the table
+        if (text)
+            return text.trim().replace(/^== .* ==\n/, "").trim();
+        return text;
     }
 
     loadUpdateDetails(pkg_ids) {
@@ -573,12 +659,22 @@ class OsUpdates extends React.Component {
                                update_text, changelog /* state, issued, updated */) => {
                     let u = this.state.updates[packageId];
                     u.vendor_urls = vendor_urls;
+                    // HACK: bug_urls and cve_urls also contain titles, in a not-quite-predictable order; ignore them,
+                    // only pick out http[s] URLs (https://bugs.freedesktop.org/show_bug.cgi?id=104552)
+                    if (bug_urls)
+                        bug_urls = bug_urls.filter(url => url.match(/^https?:\/\//));
+                    if (cve_urls)
+                        cve_urls = cve_urls.filter(url => url.match(/^https?:\/\//));
+
+                    u.description = this.removeHeading(update_text) || changelog;
+                    if (update_text)
+                        u.markdown = true;
                     u.bug_urls = deduplicate(bug_urls);
-                    u.description = this.formatDescription(update_text || changelog);
-                    // many backends don"t support this; parse CVEs from description as a fallback
+                    // many backends don't support proper severities; parse CVEs from description as a fallback
                     u.cve_urls = deduplicate(cve_urls && cve_urls.length > 0 ? cve_urls : parseCVEs(u.description));
                     if (u.cve_urls && u.cve_urls.length > 0)
-                        u.security = true;
+                        u.severity = PK_INFO_ENUM_SECURITY;
+                    u.vendor_urls = vendor_urls || [];
                     // u.restart = restart; // broken (always "1") at least in Fedora
 
                     this.setState({ updates: this.state.updates });
@@ -608,7 +704,10 @@ class OsUpdates extends React.Component {
                 Package: (info, packageId, _summary) => {
                     let id_fields = packageId.split(";");
                     packageSummaries[id_fields[0]] = _summary;
-                    updates[packageId] = { name: id_fields[0], version: id_fields[1], security: info === PK_INFO_ENUM_SECURITY };
+                    // HACK: dnf backend yields wrong severity (https://bugs.freedesktop.org/show_bug.cgi?id=101070)
+                    if (info < PK_INFO_ENUM_LOW || info > PK_INFO_ENUM_SECURITY)
+                        info = PK_INFO_ENUM_NORMAL;
+                    updates[packageId] = { name: id_fields[0], version: id_fields[1], severity: info };
                     if (id_fields[0] == "cockpit-ws")
                         cockpitUpdate = true;
                 },
@@ -764,7 +863,7 @@ class OsUpdates extends React.Component {
     applyUpdates(securityOnly) {
         var ids = Object.keys(this.state.updates);
         if (securityOnly)
-            ids = ids.filter(id => this.state.updates[id].security);
+            ids = ids.filter(id => this.state.updates[id].severity === PK_INFO_ENUM_SECURITY);
 
         pkTransaction("UpdatePackages", [0, ids], {}, null, ex => {
                 // We get more useful error messages through ErrorCode or "PackageKit has crashed", so only
@@ -814,8 +913,8 @@ class OsUpdates extends React.Component {
                             </div>
                         </div>);
                 } else {
-                    var num_updates = Object.keys(this.state.updates).length;
-                    var num_security_updates = count_security_updates(this.state.updates);
+                    let num_updates = Object.keys(this.state.updates).length;
+                    let num_security_updates = count_security_updates(this.state.updates);
 
                     applyAll = (
                         <button className="btn btn-primary" onClick={ () => this.applyUpdates(false) }>

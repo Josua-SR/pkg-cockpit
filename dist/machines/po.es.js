@@ -95,10 +95,6 @@ return plural;
   null,
   "Orden de Inicio:"
  ],
- "Bus": [
-  null,
-  "Bus"
- ],
  "CHANGE NETWORK STATE action failed": [
   null,
   "Fallo en la acción CHANGE NETWORK STATE"
@@ -110,10 +106,6 @@ return plural;
  "Cancel": [
   null,
   "Cancelar"
- ],
- "Capacity": [
-  null,
-  "Capacidad"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -137,15 +129,11 @@ return plural;
  ],
  "Console Type": [
   null,
-  ""
+  "Tipo de Consola"
  ],
  "Consoles": [
   null,
-  ""
- ],
- "Count:": [
-  null,
-  "Conteo:"
+  "Consolas"
  ],
  "Delete": [
   null,
@@ -155,17 +143,13 @@ return plural;
   null,
   "Eliminar archivos de almacenamiento asociados:"
  ],
- "Device": [
-  null,
-  "Dispositivo"
- ],
  "Disconnect": [
   null,
-  ""
+  "Desconectar"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
-  ""
+  "Desconectado de la consola serie. Pulse el botón Reconectar."
  ],
  "Disks": [
   null,
@@ -179,10 +163,6 @@ return plural;
   null,
   "Maquina Emulada:"
  ],
- "File": [
-  null,
-  "Archivo"
- ],
  "Force Restart": [
   null,
   "Forzar Reinicio"
@@ -191,21 +171,13 @@ return plural;
   null,
   "Forzar Apagado"
  ],
- "GB": [
-  null,
-  "GB"
- ],
  "Graphics Console (VNC)": [
   null,
-  ""
+  "Consola Gráfica (VNC)"
  ],
  "Graphics Console in Desktop Viewer": [
   null,
-  ""
- ],
- "Host": [
-  null,
-  "Anfitrión"
+  "Consola Gráfica en Visualizador de Escritorio"
  ],
  "Launch Remote Viewer": [
   null,
@@ -213,7 +185,7 @@ return plural;
  ],
  "Loading ...": [
   null,
-  ""
+  "Cargando ..."
  ],
  "MAC Address": [
   null,
@@ -261,11 +233,7 @@ return plural;
  ],
  "No console defined for this virtual machine.": [
   null,
-  ""
- ],
- "No disks defined for this VM": [
-  null,
-  "No se han definido discos para esta VM"
+  "No hay consola definida para esta máquina virtual."
  ],
  "No network interfaces defined for this VM": [
   null,
@@ -287,23 +255,11 @@ return plural;
   null,
   "Enchufe"
  ],
- "Pool": [
-  null,
-  "Grupo"
- ],
  "Port": [
   null,
   "Puerto"
  ],
  "Portgroup": [
-  null,
-  ""
- ],
- "Protocol": [
-  null,
-  ""
- ],
- "Readonly": [
   null,
   ""
  ],
@@ -415,10 +371,6 @@ return plural;
   null,
   ""
  ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  ""
- ],
  "Usage": [
   null,
   ""
@@ -472,10 +424,6 @@ return plural;
   ""
  ],
  "Virtualport": [
-  null,
-  ""
- ],
- "Volume": [
   null,
   ""
  ],
@@ -564,6 +512,14 @@ return plural;
   "en ejecución"
  ],
  "server": [
+  null,
+  ""
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
   null,
   ""
  ],

@@ -93,7 +93,9 @@ class Browser:
             self.port = port
         self.default_user = "admin"
         self.label = label
-        self.cdp = cdp.CDP("C.utf8", headless, trace=opts.trace)
+        path = os.path.dirname(__file__)
+        self.cdp = cdp.CDP("C.utf8", headless, verbose=opts.trace, trace=opts.trace,
+                           inject_helpers=[os.path.join(path, "test-functions.js"), os.path.join(path, "sizzle.js")])
         self.password = "foobar"
 
     def title(self):
@@ -255,10 +257,7 @@ class Browser:
                                  expression="ph_wait_cond(() => %s, %i)" % (cond, self.cdp.timeout * 1000),
                                  silent=False, awaitPromise=True, trace="wait: " + cond)
         if "exceptionDetails" in result:
-            logs = self.cdp.command("new Promise((resolve, reject) => resolve(messages))")
-            trailer = ""
-            if logs:
-                trailer = "\n".join(logs)
+            trailer = "\n".join(self.cdp.get_js_log())
             self.raise_cdp_exception("timeout\nwait_js_cond", cond, result["exceptionDetails"], trailer)
 
     def wait_js_func(self, func, *args):
@@ -484,9 +483,8 @@ class Browser:
     def get_js_log(self):
         """Return the current javascript log"""
 
-        if self.cdp and self.cdp.valid:
-            # needs to be wrapped in Promise
-            return self.cdp.command("new Promise((resolve, reject) => resolve(messages))")
+        if self.cdp:
+            return self.cdp.get_js_log()
         return []
 
     def copy_js_log(self, title, label=None):

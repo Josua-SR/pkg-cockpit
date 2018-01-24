@@ -1,5 +1,5 @@
 # Generated Makefile data for sosreport
-# Stamp: Wed Jan 10 2018 12:05:42 GMT+0000 (UTC)
+# Stamp: Wed Jan 24 2018 08:43:00 GMT+0000 (UTC)
 
 sosreport_INPUTS = \
 	pkg/lib/page.css \
@@ -24,7 +24,6 @@ sosreport_PO = dist/sosreport/po.js $(patsubst %,dist/sosreport/po.%.js,$(LINGUA
 
 sosreport_INSTALL = \
 	dist/sosreport/index.html.gz \
-	dist/sosreport/manifest.json \
 	dist/sosreport/sosreport.css.gz \
 	dist/sosreport/sosreport.min.js.gz \
 	dist/sosreport/sosreport.png \

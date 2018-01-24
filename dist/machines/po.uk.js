@@ -95,10 +95,6 @@ return plural;
   null,
   "Порядок завантаження:"
  ],
- "Bus": [
-  null,
-  "Канал"
- ],
  "CHANGE NETWORK STATE action failed": [
   null,
   "Не вдалося виконати дію зі зміни стану мережі"
@@ -110,10 +106,6 @@ return plural;
  "Cancel": [
   null,
   "Скасувати"
- ],
- "Capacity": [
-  null,
-  "Місткість"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -143,10 +135,6 @@ return plural;
   null,
   "Консолі"
  ],
- "Count:": [
-  null,
-  "Кількість:"
- ],
  "Delete": [
   null,
   "Вилучити"
@@ -154,10 +142,6 @@ return plural;
  "Delete associated storage files:": [
   null,
   "Вилучити пов’язані файли у сховищі даних:"
- ],
- "Device": [
-  null,
-  "Пристрій"
  ],
  "Disconnect": [
   null,
@@ -179,10 +163,6 @@ return plural;
   null,
   "Емуляція машини:"
  ],
- "File": [
-  null,
-  "Файл"
- ],
  "Force Restart": [
   null,
   "Примусовий перезапуск"
@@ -191,10 +171,6 @@ return plural;
   null,
   "Примусово вимкнути"
  ],
- "GB": [
-  null,
-  "ГБ"
- ],
  "Graphics Console (VNC)": [
   null,
   "Графічна консоль (VNC)"
@@ -202,10 +178,6 @@ return plural;
  "Graphics Console in Desktop Viewer": [
   null,
   "Графічна консоль у перегляді стільниці"
- ],
- "Host": [
-  null,
-  "Вузол"
  ],
  "Launch Remote Viewer": [
   null,
@@ -263,10 +235,6 @@ return plural;
   null,
   "Для цієї віртуальної машини консолей не визначено."
  ],
- "No disks defined for this VM": [
-  null,
-  "Для цієї ВМ не визначено дисків"
- ],
  "No network interfaces defined for this VM": [
   null,
   "Немає інтерфейсів мережі, які визначено для цієї ВМ"
@@ -287,10 +255,6 @@ return plural;
   null,
   "З'єднати"
  ],
- "Pool": [
-  null,
-  "Буфер"
- ],
  "Port": [
   null,
   "Порт"
@@ -298,14 +262,6 @@ return plural;
  "Portgroup": [
   null,
   "Група портів"
- ],
- "Protocol": [
-  null,
-  "Протокол"
- ],
- "Readonly": [
-  null,
-  "Лише запис"
  ],
  "Reconnect": [
   null,
@@ -415,10 +371,6 @@ return plural;
   null,
   "Від'єднати"
  ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Щоб мати змогу переглядати статистику дисків, оновіться до новішої версії libvirt"
- ],
  "Usage": [
   null,
   "Використання"
@@ -474,10 +426,6 @@ return plural;
  "Virtualport": [
   null,
   "Віртуальний порт"
- ],
- "Volume": [
-  null,
-  "Том"
  ],
  "Your browser does not support iframes.": [
   null,
@@ -566,6 +514,14 @@ return plural;
  "server": [
   null,
   "сервер"
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
+  null,
+  ""
  ],
  "shut off": [
   null,

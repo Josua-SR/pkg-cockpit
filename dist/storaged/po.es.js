@@ -484,7 +484,7 @@ return plural;
  ],
  "Device File": [
   null,
-  ""
+  "Fichero de Dispositivo"
  ],
  "Device is read-only": [
   null,
@@ -628,15 +628,15 @@ return plural;
  ],
  "Grow": [
   null,
-  ""
+  "Crecer"
  ],
  "Grow logical size of $0": [
   null,
-  ""
+  "Crece el tamaño lógico de $0"
  ],
  "Grow to take all space": [
   null,
-  ""
+  "Crecer para tomar todo el espacio"
  ],
  "In Sync": [
   null,
@@ -648,7 +648,7 @@ return plural;
  ],
  "Index Memory": [
   null,
-  ""
+  "Índice de Memoria"
  ],
  "Invalid username or password": [
   null,
@@ -672,11 +672,11 @@ return plural;
  ],
  "Logical": [
   null,
-  ""
+  "Logico"
  ],
  "Logical Size": [
   null,
-  ""
+  "Tamaño Lógico"
  ],
  "Logical Volume": [
   null,
@@ -844,7 +844,7 @@ return plural;
  ],
  "No storage set up as VDO": [
   null,
-  ""
+  "No se ha ajustado almacenamiento como VDO"
  ],
  "No volume groups created": [
   null,

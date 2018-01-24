@@ -119,10 +119,6 @@ return plural;
   null,
   "Порядок завантаження:"
  ],
- "Bus": [
-  null,
-  "Канал"
- ],
  "CHANGE NETWORK STATE action failed": [
   null,
   "Не вдалося виконати дію зі зміни стану мережі"
@@ -138,10 +134,6 @@ return plural;
  "Cancel": [
   null,
   "Скасувати"
- ],
- "Capacity": [
-  null,
-  "Місткість"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -199,10 +191,6 @@ return plural;
   null,
   "Консолі"
  ],
- "Count:": [
-  null,
-  "Кількість:"
- ],
  "Create": [
   null,
   "Створити"
@@ -226,10 +214,6 @@ return plural;
  "Description:": [
   null,
   "Опис:"
- ],
- "Device": [
-  null,
-  "Пристрій"
  ],
  "Disconnect": [
   null,
@@ -263,10 +247,6 @@ return plural;
   null,
   "FQDN"
  ],
- "File": [
-  null,
-  "Файл"
- ],
  "Force Restart": [
   null,
   "Примусовий перезапуск"
@@ -274,10 +254,6 @@ return plural;
  "Force Shut Down": [
   null,
   "Примусово вимкнути"
- ],
- "GB": [
-  null,
-  "ГБ"
  ],
  "Graphics Console (VNC)": [
   null,
@@ -379,10 +355,6 @@ return plural;
   null,
   "Для цієї віртуальної машини консолей не визначено."
  ],
- "No disks defined for this VM": [
-  null,
-  "Для цієї ВМ не визначено дисків"
- ],
  "No network interfaces defined for this VM": [
   null,
   "Немає інтерфейсів мережі, які визначено для цієї ВМ"
@@ -443,10 +415,6 @@ return plural;
   null,
   "З'єднати"
  ],
- "Pool": [
-  null,
-  "Буфер"
- ],
  "Port": [
   null,
   "Порт"
@@ -459,17 +427,9 @@ return plural;
   null,
   "Готуємося до обслуговування"
  ],
- "Protocol": [
-  null,
-  "Протокол"
- ],
  "REBOOT action failed": [
   null,
   "Не вдалося виконати дію REBOOT"
- ],
- "Readonly": [
-  null,
-  "Лише запис"
  ],
  "Reconnect": [
   null,
@@ -655,10 +615,6 @@ return plural;
   null,
   "Від'єднати"
  ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Щоб мати змогу переглядати статистику дисків, оновіться до новішої версії libvirt"
- ],
  "Usage": [
   null,
   "Використання"
@@ -738,10 +694,6 @@ return plural;
  "Virtualport": [
   null,
   "Віртуальний порт"
- ],
- "Volume": [
-  null,
-  "Том"
  ],
  "Your browser does not support iframes.": [
   null,
@@ -902,6 +854,14 @@ return plural;
  "server": [
   null,
   "сервер"
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
+  null,
+  ""
  ],
  "shut off": [
   null,

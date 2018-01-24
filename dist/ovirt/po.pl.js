@@ -119,10 +119,6 @@ return plural;
   null,
   "Kolejność uruchamiania:"
  ],
- "Bus": [
-  null,
-  "Magistrala"
- ],
  "CHANGE NETWORK STATE action failed": [
   null,
   "Działanie CHANGE NETWORK STATE się nie powiodło"
@@ -138,10 +134,6 @@ return plural;
  "Cancel": [
   null,
   "Anuluj"
- ],
- "Capacity": [
-  null,
-  "Pojemność"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -199,10 +191,6 @@ return plural;
   null,
   "Konsole"
  ],
- "Count:": [
-  null,
-  "Liczba:"
- ],
  "Create": [
   null,
   "Utwórz"
@@ -226,10 +214,6 @@ return plural;
  "Description:": [
   null,
   "Opis:"
- ],
- "Device": [
-  null,
-  "Urządzenie"
  ],
  "Disconnect": [
   null,
@@ -263,10 +247,6 @@ return plural;
   null,
   "FQDN"
  ],
- "File": [
-  null,
-  "Plik"
- ],
  "Force Restart": [
   null,
   "Wymuś ponowne uruchomienie"
@@ -274,10 +254,6 @@ return plural;
  "Force Shut Down": [
   null,
   "Wymuś wyłączenie"
- ],
- "GB": [
-  null,
-  "GB"
  ],
  "Graphics Console (VNC)": [
   null,
@@ -379,10 +355,6 @@ return plural;
   null,
   "Dla tej maszyny wirtualnej nie określono żadnej konsoli."
  ],
- "No disks defined for this VM": [
-  null,
-  "Nie określono dysków dla tej maszyny wirtualnej"
- ],
  "No network interfaces defined for this VM": [
   null,
   "Nie określono interfejsów sieciowych dla tej maszyny wirtualnej"
@@ -443,10 +415,6 @@ return plural;
   null,
   "Podłącz"
  ],
- "Pool": [
-  null,
-  "Pula"
- ],
  "Port": [
   null,
   "Port"
@@ -459,17 +427,9 @@ return plural;
   null,
   "Przygotowywanie do konserwacji"
  ],
- "Protocol": [
-  null,
-  "Protokół"
- ],
  "REBOOT action failed": [
   null,
   "Działanie REBOOT się nie powiodło"
- ],
- "Readonly": [
-  null,
-  "Tylko do odczytu"
  ],
  "Reconnect": [
   null,
@@ -655,10 +615,6 @@ return plural;
   null,
   "Odłącz"
  ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Należy zaktualizować do nowszej wersji biblioteki libvirt, aby przeglądać statystyki dysku"
- ],
  "Usage": [
   null,
   "Użycie"
@@ -738,10 +694,6 @@ return plural;
  "Virtualport": [
   null,
   "Port wirtualny"
- ],
- "Volume": [
-  null,
-  "Wolumin"
  ],
  "Your browser does not support iframes.": [
   null,
@@ -902,6 +854,14 @@ return plural;
  "server": [
   null,
   "serwer"
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
+  null,
+  ""
  ],
  "shut off": [
   null,

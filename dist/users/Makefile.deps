@@ -1,5 +1,5 @@
 # Generated Makefile data for users
-# Stamp: Wed Jan 10 2018 12:07:19 GMT+0000 (UTC)
+# Stamp: Wed Jan 24 2018 08:44:09 GMT+0000 (UTC)
 
 users_INPUTS = \
 	node_modules/bootstrap-datepicker/LICENSE \
@@ -38,7 +38,6 @@ users_PO = dist/users/po.js $(patsubst %,dist/users/po.%.js,$(LINGUAS))
 
 users_INSTALL = \
 	dist/users/index.html.gz \
-	dist/users/manifest.json \
 	dist/users/users.css.gz \
 	dist/users/users.min.js.gz \
 	$(addsuffix .gz,$(users_PO)) \

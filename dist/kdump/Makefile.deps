@@ -1,5 +1,5 @@
 # Generated Makefile data for kdump
-# Stamp: Wed Jan 10 2018 12:07:16 GMT+0000 (UTC)
+# Stamp: Wed Jan 24 2018 08:44:05 GMT+0000 (UTC)
 
 kdump_INPUTS = \
 	node_modules/qunit-tap/GPL-LICENSE.txt \
@@ -56,7 +56,6 @@ kdump_INSTALL = \
 	dist/kdump/index.html.gz \
 	dist/kdump/kdump.css.gz \
 	dist/kdump/kdump.min.js.gz \
-	dist/kdump/manifest.json \
 	$(addsuffix .gz,$(kdump_PO)) \
 	$(NULL)
 
