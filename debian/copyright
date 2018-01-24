@@ -174,8 +174,20 @@ Files: node_modules/react-lite/*
 Copyright: Copyright (c) 2015 工业聚
 License: MIT
 
+Files: node_modules/react-redux/*
+Copyright: Copyright (c) 2015-present Dan Abramov
+License: MIT
+
+Files: node_modules/react-remarkable/*
+Copyright: Andrew Clark
+License: MIT
+
 Files: node_modules/redux/*
 Copyright: Copyright (c) 2015-present Dan Abramov
+License: MIT
+
+Files: node_modules/redux-saga/*
+Copyright: Copyright (c) 2015 Yassine Elouafi
 License: MIT
 
 Files: node_modules/registry-image-widgets/*

@@ -1,3 +1,16 @@
+cockpit (160-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Add kubevirt Virtual Machines overview
+    - Redesign package list on Software Updates page and show RHEL Errata
+    - Install AppStream collection metadata packages on demand on Apps page
+    - Add AppStream metadata to cockpit-sosreport for showing up on Apps page
+    - Change CPU graphs to use "100%" for a fully loaded multi-processor system
+    - Show storage, network, and other numbers with 3 digits of precision
+    - Add an example bastion container
+
+ -- Martin Pitt <mpitt@debian.org>  Wed, 24 Jan 2018 10:57:37 +0100
+
 cockpit (159-1) unstable; urgency=medium
 
   * New upstream release:
