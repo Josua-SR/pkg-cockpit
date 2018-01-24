@@ -1,5 +1,5 @@
 # Generated Makefile data for realmd
-# Stamp: Wed Jan 10 2018 12:05:42 GMT+0000 (UTC)
+# Stamp: Wed Jan 24 2018 08:43:00 GMT+0000 (UTC)
 
 realmd_INPUTS = \
 	pkg/lib/patterns.js \
@@ -16,7 +16,6 @@ realmd_PO = dist/realmd/po.js $(patsubst %,dist/realmd/po.%.js,$(LINGUAS))
 
 realmd_INSTALL = \
 	dist/realmd/domain.min.js.gz \
-	dist/realmd/manifest.json \
 	$(addsuffix .gz,$(realmd_PO)) \
 	$(NULL)
 

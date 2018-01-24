@@ -1,5 +1,5 @@
 # Generated Makefile data for playground
-# Stamp: Wed Jan 10 2018 12:07:22 GMT+0000 (UTC)
+# Stamp: Wed Jan 24 2018 08:44:13 GMT+0000 (UTC)
 
 playground_INPUTS = \
 	node_modules/angular-gettext/LICENSE \
@@ -25,9 +25,9 @@ playground_INPUTS = \
 	node_modules/mustache/package.json \
 	node_modules/patternfly/LICENSE.txt \
 	node_modules/patternfly/README.md \
+	node_modules/patternfly/dist/less/color-variables.less \
+	node_modules/patternfly/dist/less/variables.less \
 	node_modules/patternfly/package.json \
-	node_modules/patternfly/src/less/color-variables.less \
-	node_modules/patternfly/src/less/variables.less \
 	node_modules/react-lite/LICENSE \
 	node_modules/react-lite/README.md \
 	node_modules/react-lite/dist/react-lite.js \
@@ -123,7 +123,6 @@ playground_INSTALL = \
 	dist/playground/jquery-patterns.css.gz \
 	dist/playground/jquery-patterns.html.gz \
 	dist/playground/jquery-patterns.min.js.gz \
-	dist/playground/manifest.json \
 	dist/playground/metrics.css.gz \
 	dist/playground/metrics.html.gz \
 	dist/playground/metrics.min.js.gz \
@@ -167,7 +166,7 @@ playground_TESTS = \
 
 dist/playground/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/angular-gettext/dist/angular-gettext.js -N node_modules/angular/angular.js -N node_modules/bootstrap/less/variables.less -N node_modules/jquery-flot/jquery.flot.js -N node_modules/jquery-flot/jquery.flot.selection.js -N node_modules/jquery-flot/jquery.flot.time.js -N node_modules/mustache/mustache.js -N node_modules/patternfly/src/less/color-variables.less -N node_modules/patternfly/src/less/variables.less -N node_modules/react-lite/dist/react-lite.js -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-file-autocomplete.css -N pkg/lib/cockpit-components-file-autocomplete.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-onoff.css -N pkg/lib/cockpit-components-onoff.jsx -N pkg/lib/cockpit-components-select.jsx -N pkg/lib/cockpit-components-tooltip.jsx -N pkg/lib/listing.less -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/plot.css -N pkg/lib/plot.js -N pkg/lib/service.js -N pkg/lib/table.css -N pkg/lib/timeline.css -N pkg/lib/tooltip.css -N pkg/lib/variables.less -N pkg/playground/hammer.gif -N pkg/playground/jquery-patterns.html -N pkg/playground/jquery-patterns.js -N pkg/playground/metrics.html -N pkg/playground/metrics.js -N pkg/playground/pkgs.html -N pkg/playground/pkgs.js -N pkg/playground/plot.html -N pkg/playground/plot.js -N pkg/playground/react-demo-dialog.jsx -N pkg/playground/react-demo-file-autocomplete.jsx -N pkg/playground/react-demo-listing.jsx -N pkg/playground/react-demo-onoff.jsx -N pkg/playground/react-demo-tooltip.jsx -N pkg/playground/react-patterns.html -N pkg/playground/react-patterns.js -N pkg/playground/service.html -N pkg/playground/service.js -N pkg/playground/speed.html -N pkg/playground/speed.js -N pkg/playground/test.html -N pkg/playground/test.js -N pkg/playground/translate.html -N pkg/playground/translate.js $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/angular-gettext/dist/angular-gettext.js -N node_modules/angular/angular.js -N node_modules/bootstrap/less/variables.less -N node_modules/jquery-flot/jquery.flot.js -N node_modules/jquery-flot/jquery.flot.selection.js -N node_modules/jquery-flot/jquery.flot.time.js -N node_modules/mustache/mustache.js -N node_modules/patternfly/dist/less/color-variables.less -N node_modules/patternfly/dist/less/variables.less -N node_modules/react-lite/dist/react-lite.js -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-file-autocomplete.css -N pkg/lib/cockpit-components-file-autocomplete.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-onoff.css -N pkg/lib/cockpit-components-onoff.jsx -N pkg/lib/cockpit-components-select.jsx -N pkg/lib/cockpit-components-tooltip.jsx -N pkg/lib/listing.less -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/plot.css -N pkg/lib/plot.js -N pkg/lib/service.js -N pkg/lib/table.css -N pkg/lib/timeline.css -N pkg/lib/tooltip.css -N pkg/lib/variables.less -N pkg/playground/hammer.gif -N pkg/playground/jquery-patterns.html -N pkg/playground/jquery-patterns.js -N pkg/playground/metrics.html -N pkg/playground/metrics.js -N pkg/playground/pkgs.html -N pkg/playground/pkgs.js -N pkg/playground/plot.html -N pkg/playground/plot.js -N pkg/playground/react-demo-dialog.jsx -N pkg/playground/react-demo-file-autocomplete.jsx -N pkg/playground/react-demo-listing.jsx -N pkg/playground/react-demo-onoff.jsx -N pkg/playground/react-demo-tooltip.jsx -N pkg/playground/react-patterns.html -N pkg/playground/react-patterns.js -N pkg/playground/service.html -N pkg/playground/service.js -N pkg/playground/speed.html -N pkg/playground/speed.js -N pkg/playground/test.html -N pkg/playground/test.js -N pkg/playground/translate.html -N pkg/playground/translate.js $< > $@.tmp && mv $@.tmp $@
 
 dist/playground/Makefile.deps: $(WEBPACK_CONFIG) $(playground_INPUTS)
 	$(WEBPACK_RULE) -d dist/playground/Makefile.deps $(WEBPACK_CONFIG)
@@ -290,11 +289,11 @@ node_modules/patternfly/LICENSE.txt:
 
 node_modules/patternfly/README.md:
 
+node_modules/patternfly/dist/less/color-variables.less:
+
+node_modules/patternfly/dist/less/variables.less:
+
 node_modules/patternfly/package.json:
-
-node_modules/patternfly/src/less/color-variables.less:
-
-node_modules/patternfly/src/less/variables.less:
 
 node_modules/react-lite/LICENSE:
 

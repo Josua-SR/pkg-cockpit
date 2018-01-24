@@ -1,5 +1,5 @@
 # Generated Makefile data for kubernetes
-# Stamp: Wed Jan 10 2018 12:07:22 GMT+0000 (UTC)
+# Stamp: Wed Jan 24 2018 08:44:13 GMT+0000 (UTC)
 
 kubernetes_INPUTS = \
 	node_modules/angular-bootstrap-npm/LICENSE \
@@ -166,9 +166,9 @@ kubernetes_INPUTS = \
 	node_modules/object-describer/package.json \
 	node_modules/patternfly/LICENSE.txt \
 	node_modules/patternfly/README.md \
+	node_modules/patternfly/dist/less/color-variables.less \
+	node_modules/patternfly/dist/less/variables.less \
 	node_modules/patternfly/package.json \
-	node_modules/patternfly/src/less/color-variables.less \
-	node_modules/patternfly/src/less/variables.less \
 	node_modules/qunit-tap/GPL-LICENSE.txt \
 	node_modules/qunit-tap/MIT-LICENSE.txt \
 	node_modules/qunit-tap/lib/qunit-tap.js \
@@ -178,6 +178,57 @@ kubernetes_INPUTS = \
 	node_modules/qunitjs/package.json \
 	node_modules/qunitjs/qunit/qunit.css \
 	node_modules/qunitjs/qunit/qunit.js \
+	node_modules/react-lite/LICENSE \
+	node_modules/react-lite/README.md \
+	node_modules/react-lite/dist/react-lite.js \
+	node_modules/react-lite/package.json \
+	node_modules/react-redux/LICENSE.md \
+	node_modules/react-redux/README.md \
+	node_modules/react-redux/lib/components/Provider.js \
+	node_modules/react-redux/lib/components/connectAdvanced.js \
+	node_modules/react-redux/lib/connect/connect.js \
+	node_modules/react-redux/lib/connect/mapDispatchToProps.js \
+	node_modules/react-redux/lib/connect/mapStateToProps.js \
+	node_modules/react-redux/lib/connect/mergeProps.js \
+	node_modules/react-redux/lib/connect/selectorFactory.js \
+	node_modules/react-redux/lib/connect/verifySubselectors.js \
+	node_modules/react-redux/lib/connect/wrapMapToProps.js \
+	node_modules/react-redux/lib/index.js \
+	node_modules/react-redux/lib/utils/PropTypes.js \
+	node_modules/react-redux/lib/utils/Subscription.js \
+	node_modules/react-redux/lib/utils/shallowEqual.js \
+	node_modules/react-redux/lib/utils/verifyPlainObject.js \
+	node_modules/react-redux/lib/utils/warning.js \
+	node_modules/react-redux/package.json \
+	node_modules/redux-saga/LICENSE \
+	node_modules/redux-saga/README.md \
+	node_modules/redux-saga/lib/effects.js \
+	node_modules/redux-saga/lib/index.js \
+	node_modules/redux-saga/lib/internal/buffers.js \
+	node_modules/redux-saga/lib/internal/channel.js \
+	node_modules/redux-saga/lib/internal/io.js \
+	node_modules/redux-saga/lib/internal/middleware.js \
+	node_modules/redux-saga/lib/internal/proc.js \
+	node_modules/redux-saga/lib/internal/runSaga.js \
+	node_modules/redux-saga/lib/internal/sagaHelpers/fsmIterator.js \
+	node_modules/redux-saga/lib/internal/sagaHelpers/index.js \
+	node_modules/redux-saga/lib/internal/sagaHelpers/takeEvery.js \
+	node_modules/redux-saga/lib/internal/sagaHelpers/takeLatest.js \
+	node_modules/redux-saga/lib/internal/sagaHelpers/throttle.js \
+	node_modules/redux-saga/lib/internal/scheduler.js \
+	node_modules/redux-saga/lib/internal/utils.js \
+	node_modules/redux-saga/lib/utils.js \
+	node_modules/redux-saga/package.json \
+	node_modules/redux/LICENSE.md \
+	node_modules/redux/README.md \
+	node_modules/redux/lib/applyMiddleware.js \
+	node_modules/redux/lib/bindActionCreators.js \
+	node_modules/redux/lib/combineReducers.js \
+	node_modules/redux/lib/compose.js \
+	node_modules/redux/lib/createStore.js \
+	node_modules/redux/lib/index.js \
+	node_modules/redux/lib/utils/warning.js \
+	node_modules/redux/package.json \
 	node_modules/registry-image-widgets/COPYING \
 	node_modules/registry-image-widgets/README.md \
 	node_modules/registry-image-widgets/dist/image-widgets.css \
@@ -221,6 +272,15 @@ kubernetes_INPUTS = \
 	pkg/kubernetes/scripts/test-volumes.js \
 	pkg/kubernetes/scripts/topology.js \
 	pkg/kubernetes/scripts/utils.js \
+	pkg/kubernetes/scripts/virtual-machines.js \
+	pkg/kubernetes/scripts/virtual-machines/action-creators.jsx \
+	pkg/kubernetes/scripts/virtual-machines/action-types.jsx \
+	pkg/kubernetes/scripts/virtual-machines/components/VmsListing.jsx \
+	pkg/kubernetes/scripts/virtual-machines/components/VmsListingRow.jsx \
+	pkg/kubernetes/scripts/virtual-machines/index.jsx \
+	pkg/kubernetes/scripts/virtual-machines/reducers.jsx \
+	pkg/kubernetes/scripts/virtual-machines/sagas.jsx \
+	pkg/kubernetes/scripts/virtual-machines/utils.jsx \
 	pkg/kubernetes/scripts/volumes.js \
 	pkg/kubernetes/styles/app.less \
 	pkg/kubernetes/styles/containers.less \
@@ -326,9 +386,11 @@ kubernetes_INPUTS = \
 	pkg/kubernetes/views/user-page.html \
 	pkg/kubernetes/views/user-panel.html \
 	pkg/kubernetes/views/user-remove-membership.html \
+	pkg/kubernetes/views/virtual-machines-page.html \
 	pkg/kubernetes/views/volume-body.html \
 	pkg/kubernetes/views/volumes-page.html \
 	pkg/lib/angular-dialog.js \
+	pkg/lib/cockpit-components-listing.jsx \
 	pkg/lib/console.css \
 	pkg/lib/listing.less \
 	pkg/lib/page.css \
@@ -400,7 +462,6 @@ kubernetes_INSTALL = \
 	dist/kubernetes/index.html.gz \
 	dist/kubernetes/kubernetes.css.gz \
 	dist/kubernetes/kubernetes.min.js.gz \
-	dist/kubernetes/manifest.json \
 	dist/kubernetes/override.json \
 	dist/kubernetes/registry.css.gz \
 	dist/kubernetes/registry.html.gz \
@@ -444,7 +505,7 @@ kubernetes_TESTS = \
 
 dist/kubernetes/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/angular-bootstrap-npm/dist/angular-bootstrap.js -N node_modules/angular-gettext/dist/angular-gettext.js -N node_modules/angular-route/angular-route.js -N node_modules/angular/angular-csp.css -N node_modules/angular/angular.js -N node_modules/bootstrap/less/variables.less -N node_modules/d3/d3.js -N node_modules/kubernetes-container-terminal/dist/container-terminal.css -N node_modules/kubernetes-container-terminal/dist/container-terminal.js -N node_modules/kubernetes-object-describer/dist/object-describer.js -N node_modules/kubernetes-topology-graph/dist/topology-graph.css -N node_modules/kubernetes-topology-graph/dist/topology-graph.js -N node_modules/moment/locale/af.js -N node_modules/moment/locale/ar-dz.js -N node_modules/moment/locale/ar-kw.js -N node_modules/moment/locale/ar-ly.js -N node_modules/moment/locale/ar-ma.js -N node_modules/moment/locale/ar-sa.js -N node_modules/moment/locale/ar-tn.js -N node_modules/moment/locale/ar.js -N node_modules/moment/locale/az.js -N node_modules/moment/locale/be.js -N node_modules/moment/locale/bg.js -N node_modules/moment/locale/bm.js -N node_modules/moment/locale/bn.js -N node_modules/moment/locale/bo.js -N node_modules/moment/locale/br.js -N node_modules/moment/locale/bs.js -N node_modules/moment/locale/ca.js -N node_modules/moment/locale/cs.js -N node_modules/moment/locale/cv.js -N node_modules/moment/locale/cy.js -N node_modules/moment/locale/da.js -N node_modules/moment/locale/de-at.js -N node_modules/moment/locale/de-ch.js -N node_modules/moment/locale/de.js -N node_modules/moment/locale/dv.js -N node_modules/moment/locale/el.js -N node_modules/moment/locale/en-au.js -N node_modules/moment/locale/en-ca.js -N node_modules/moment/locale/en-gb.js -N node_modules/moment/locale/en-ie.js -N node_modules/moment/locale/en-nz.js -N node_modules/moment/locale/eo.js -N node_modules/moment/locale/es-do.js -N node_modules/moment/locale/es-us.js -N node_modules/moment/locale/es.js -N node_modules/moment/locale/et.js -N node_modules/moment/locale/eu.js -N node_modules/moment/locale/fa.js -N node_modules/moment/locale/fi.js -N node_modules/moment/locale/fo.js -N node_modules/moment/locale/fr-ca.js -N node_modules/moment/locale/fr-ch.js -N node_modules/moment/locale/fr.js -N node_modules/moment/locale/fy.js -N node_modules/moment/locale/gd.js -N node_modules/moment/locale/gl.js -N node_modules/moment/locale/gom-latn.js -N node_modules/moment/locale/gu.js -N node_modules/moment/locale/he.js -N node_modules/moment/locale/hi.js -N node_modules/moment/locale/hr.js -N node_modules/moment/locale/hu.js -N node_modules/moment/locale/hy-am.js -N node_modules/moment/locale/id.js -N node_modules/moment/locale/is.js -N node_modules/moment/locale/it.js -N node_modules/moment/locale/ja.js -N node_modules/moment/locale/jv.js -N node_modules/moment/locale/ka.js -N node_modules/moment/locale/kk.js -N node_modules/moment/locale/km.js -N node_modules/moment/locale/kn.js -N node_modules/moment/locale/ko.js -N node_modules/moment/locale/ky.js -N node_modules/moment/locale/lb.js -N node_modules/moment/locale/lo.js -N node_modules/moment/locale/lt.js -N node_modules/moment/locale/lv.js -N node_modules/moment/locale/me.js -N node_modules/moment/locale/mi.js -N node_modules/moment/locale/mk.js -N node_modules/moment/locale/ml.js -N node_modules/moment/locale/mr.js -N node_modules/moment/locale/ms-my.js -N node_modules/moment/locale/ms.js -N node_modules/moment/locale/mt.js -N node_modules/moment/locale/my.js -N node_modules/moment/locale/nb.js -N node_modules/moment/locale/ne.js -N node_modules/moment/locale/nl-be.js -N node_modules/moment/locale/nl.js -N node_modules/moment/locale/nn.js -N node_modules/moment/locale/pa-in.js -N node_modules/moment/locale/pl.js -N node_modules/moment/locale/pt-br.js -N node_modules/moment/locale/pt.js -N node_modules/moment/locale/ro.js -N node_modules/moment/locale/ru.js -N node_modules/moment/locale/sd.js -N node_modules/moment/locale/se.js -N node_modules/moment/locale/si.js -N node_modules/moment/locale/sk.js -N node_modules/moment/locale/sl.js -N node_modules/moment/locale/sq.js -N node_modules/moment/locale/sr-cyrl.js -N node_modules/moment/locale/sr.js -N node_modules/moment/locale/ss.js -N node_modules/moment/locale/sv.js -N node_modules/moment/locale/sw.js -N node_modules/moment/locale/ta.js -N node_modules/moment/locale/te.js -N node_modules/moment/locale/tet.js -N node_modules/moment/locale/th.js -N node_modules/moment/locale/tl-ph.js -N node_modules/moment/locale/tlh.js -N node_modules/moment/locale/tr.js -N node_modules/moment/locale/tzl.js -N node_modules/moment/locale/tzm-latn.js -N node_modules/moment/locale/tzm.js -N node_modules/moment/locale/uk.js -N node_modules/moment/locale/ur.js -N node_modules/moment/locale/uz-latn.js -N node_modules/moment/locale/uz.js -N node_modules/moment/locale/vi.js -N node_modules/moment/locale/x-pseudo.js -N node_modules/moment/locale/yo.js -N node_modules/moment/locale/zh-cn.js -N node_modules/moment/locale/zh-hk.js -N node_modules/moment/locale/zh-tw.js -N node_modules/moment/moment.js -N node_modules/object-describer/dist/object-describer.js -N node_modules/patternfly/src/less/color-variables.less -N node_modules/patternfly/src/less/variables.less -N node_modules/qunit-tap/lib/qunit-tap.js -N node_modules/qunitjs/qunit/qunit.css -N node_modules/qunitjs/qunit/qunit.js -N node_modules/registry-image-widgets/dist/image-widgets.css -N node_modules/registry-image-widgets/dist/image-widgets.js -N node_modules/term.js-cockpit/src/term.js -N pkg/kubernetes/index.html -N pkg/kubernetes/override.json -N pkg/kubernetes/registry.html -N pkg/kubernetes/scripts/app.js -N pkg/kubernetes/scripts/charts.js -N pkg/kubernetes/scripts/connection.js -N pkg/kubernetes/scripts/containers.js -N pkg/kubernetes/scripts/dashboard.js -N pkg/kubernetes/scripts/date.js -N pkg/kubernetes/scripts/details.js -N pkg/kubernetes/scripts/fixture-basic.js -N pkg/kubernetes/scripts/fixture-large.js -N pkg/kubernetes/scripts/graphs.js -N pkg/kubernetes/scripts/images.js -N pkg/kubernetes/scripts/kube-client-cockpit.js -N pkg/kubernetes/scripts/kube-client-mock.js -N pkg/kubernetes/scripts/kube-client.js -N pkg/kubernetes/scripts/listing.js -N pkg/kubernetes/scripts/main.js -N pkg/kubernetes/scripts/nodes.js -N pkg/kubernetes/scripts/policy.js -N pkg/kubernetes/scripts/projects.js -N pkg/kubernetes/scripts/registry.js -N pkg/kubernetes/scripts/tags.js -N pkg/kubernetes/scripts/test-connection.js -N pkg/kubernetes/scripts/test-images.js -N pkg/kubernetes/scripts/test-kube-client.js -N pkg/kubernetes/scripts/test-nodes.js -N pkg/kubernetes/scripts/test-projects.js -N pkg/kubernetes/scripts/test-tags.js -N pkg/kubernetes/scripts/test-utils.js -N pkg/kubernetes/scripts/test-volumes.js -N pkg/kubernetes/scripts/topology.js -N pkg/kubernetes/scripts/utils.js -N pkg/kubernetes/scripts/volumes.js -N pkg/kubernetes/styles/app.less -N pkg/kubernetes/styles/containers.less -N pkg/kubernetes/styles/dashboard.less -N pkg/kubernetes/styles/details.less -N pkg/kubernetes/styles/dropdown.less -N pkg/kubernetes/styles/filter.less -N pkg/kubernetes/styles/images.less -N pkg/kubernetes/styles/main.less -N pkg/kubernetes/styles/nodes.less -N pkg/kubernetes/styles/projects.less -N pkg/kubernetes/styles/registry.less -N pkg/kubernetes/styles/revealable.less -N pkg/kubernetes/styles/sidebar.less -N pkg/kubernetes/styles/tags.less -N pkg/kubernetes/styles/topology.less -N pkg/kubernetes/styles/variables.less -N pkg/kubernetes/styles/volumes.less -N pkg/kubernetes/views/add-group-dialog.html -N pkg/kubernetes/views/add-member-role-dialog.html -N pkg/kubernetes/views/add-role-dialog.html -N pkg/kubernetes/views/add-user-dialog.html -N pkg/kubernetes/views/auth-dialog.html -N pkg/kubernetes/views/auth-form.html -N pkg/kubernetes/views/auth-rejected-cert.html -N pkg/kubernetes/views/container-body.html -N pkg/kubernetes/views/container-page-inline.html -N pkg/kubernetes/views/container-page.html -N pkg/kubernetes/views/container-panel.html -N pkg/kubernetes/views/containers-listing.html -N pkg/kubernetes/views/containers-page.html -N pkg/kubernetes/views/dashboard-page.html -N pkg/kubernetes/views/default-panel.html -N pkg/kubernetes/views/deploy.html -N pkg/kubernetes/views/deploymentconfig-body.html -N pkg/kubernetes/views/deploymentconfig-page.html -N pkg/kubernetes/views/deploymentconfig-panel.html -N pkg/kubernetes/views/details-page.html -N pkg/kubernetes/views/file-button.html -N pkg/kubernetes/views/filter-bar.html -N pkg/kubernetes/views/filter-project.html -N pkg/kubernetes/views/group-delete.html -N pkg/kubernetes/views/group-page.html -N pkg/kubernetes/views/group-panel.html -N pkg/kubernetes/views/image-delete.html -N pkg/kubernetes/views/image-page.html -N pkg/kubernetes/views/images-page.html -N pkg/kubernetes/views/imagestream-delete.html -N pkg/kubernetes/views/imagestream-modify.html -N pkg/kubernetes/views/imagestream-page.html -N pkg/kubernetes/views/item-delete.html -N pkg/kubernetes/views/node-add.html -N pkg/kubernetes/views/node-alerts.html -N pkg/kubernetes/views/node-body.html -N pkg/kubernetes/views/node-capacity.html -N pkg/kubernetes/views/node-delete.html -N pkg/kubernetes/views/node-page.html -N pkg/kubernetes/views/node-panel.html -N pkg/kubernetes/views/node-stats.html -N pkg/kubernetes/views/nodes-page.html -N pkg/kubernetes/views/pod-body.html -N pkg/kubernetes/views/pod-container.html -N pkg/kubernetes/views/pod-page.html -N pkg/kubernetes/views/pod-panel.html -N pkg/kubernetes/views/project-body.html -N pkg/kubernetes/views/project-delete.html -N pkg/kubernetes/views/project-listing.html -N pkg/kubernetes/views/project-modify.html -N pkg/kubernetes/views/project-page.html -N pkg/kubernetes/views/project-panel.html -N pkg/kubernetes/views/projects-page.html -N pkg/kubernetes/views/pv-body.html -N pkg/kubernetes/views/pv-claim.html -N pkg/kubernetes/views/pv-delete.html -N pkg/kubernetes/views/pv-modify.html -N pkg/kubernetes/views/pv-page.html -N pkg/kubernetes/views/pv-panel.html -N pkg/kubernetes/views/pvc-body.html -N pkg/kubernetes/views/pvc-delete.html -N pkg/kubernetes/views/registry-dashboard-page.html -N pkg/kubernetes/views/remove-role-dialog.html -N pkg/kubernetes/views/replicationcontroller-body.html -N pkg/kubernetes/views/replicationcontroller-modify.html -N pkg/kubernetes/views/replicationcontroller-page.html -N pkg/kubernetes/views/replicationcontroller-panel.html -N pkg/kubernetes/views/replicationcontroller-pods.html -N pkg/kubernetes/views/route-body.html -N pkg/kubernetes/views/route-modify.html -N pkg/kubernetes/views/route-page.html -N pkg/kubernetes/views/route-panel.html -N pkg/kubernetes/views/service-body.html -N pkg/kubernetes/views/service-endpoint.html -N pkg/kubernetes/views/service-modify.html -N pkg/kubernetes/views/service-page.html -N pkg/kubernetes/views/service-panel.html -N pkg/kubernetes/views/topology-page.html -N pkg/kubernetes/views/user-add-membership.html -N pkg/kubernetes/views/user-body.html -N pkg/kubernetes/views/user-delete.html -N pkg/kubernetes/views/user-group-add.html -N pkg/kubernetes/views/user-group-remove.html -N pkg/kubernetes/views/user-modify.html -N pkg/kubernetes/views/user-page.html -N pkg/kubernetes/views/user-panel.html -N pkg/kubernetes/views/user-remove-membership.html -N pkg/kubernetes/views/volume-body.html -N pkg/kubernetes/views/volumes-page.html -N pkg/lib/angular-dialog.js -N pkg/lib/console.css -N pkg/lib/listing.less -N pkg/lib/page.css -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/table.css -N pkg/lib/term.css -N pkg/lib/variables.less $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/angular-bootstrap-npm/dist/angular-bootstrap.js -N node_modules/angular-gettext/dist/angular-gettext.js -N node_modules/angular-route/angular-route.js -N node_modules/angular/angular-csp.css -N node_modules/angular/angular.js -N node_modules/bootstrap/less/variables.less -N node_modules/d3/d3.js -N node_modules/kubernetes-container-terminal/dist/container-terminal.css -N node_modules/kubernetes-container-terminal/dist/container-terminal.js -N node_modules/kubernetes-object-describer/dist/object-describer.js -N node_modules/kubernetes-topology-graph/dist/topology-graph.css -N node_modules/kubernetes-topology-graph/dist/topology-graph.js -N node_modules/moment/locale/af.js -N node_modules/moment/locale/ar-dz.js -N node_modules/moment/locale/ar-kw.js -N node_modules/moment/locale/ar-ly.js -N node_modules/moment/locale/ar-ma.js -N node_modules/moment/locale/ar-sa.js -N node_modules/moment/locale/ar-tn.js -N node_modules/moment/locale/ar.js -N node_modules/moment/locale/az.js -N node_modules/moment/locale/be.js -N node_modules/moment/locale/bg.js -N node_modules/moment/locale/bm.js -N node_modules/moment/locale/bn.js -N node_modules/moment/locale/bo.js -N node_modules/moment/locale/br.js -N node_modules/moment/locale/bs.js -N node_modules/moment/locale/ca.js -N node_modules/moment/locale/cs.js -N node_modules/moment/locale/cv.js -N node_modules/moment/locale/cy.js -N node_modules/moment/locale/da.js -N node_modules/moment/locale/de-at.js -N node_modules/moment/locale/de-ch.js -N node_modules/moment/locale/de.js -N node_modules/moment/locale/dv.js -N node_modules/moment/locale/el.js -N node_modules/moment/locale/en-au.js -N node_modules/moment/locale/en-ca.js -N node_modules/moment/locale/en-gb.js -N node_modules/moment/locale/en-ie.js -N node_modules/moment/locale/en-nz.js -N node_modules/moment/locale/eo.js -N node_modules/moment/locale/es-do.js -N node_modules/moment/locale/es-us.js -N node_modules/moment/locale/es.js -N node_modules/moment/locale/et.js -N node_modules/moment/locale/eu.js -N node_modules/moment/locale/fa.js -N node_modules/moment/locale/fi.js -N node_modules/moment/locale/fo.js -N node_modules/moment/locale/fr-ca.js -N node_modules/moment/locale/fr-ch.js -N node_modules/moment/locale/fr.js -N node_modules/moment/locale/fy.js -N node_modules/moment/locale/gd.js -N node_modules/moment/locale/gl.js -N node_modules/moment/locale/gom-latn.js -N node_modules/moment/locale/gu.js -N node_modules/moment/locale/he.js -N node_modules/moment/locale/hi.js -N node_modules/moment/locale/hr.js -N node_modules/moment/locale/hu.js -N node_modules/moment/locale/hy-am.js -N node_modules/moment/locale/id.js -N node_modules/moment/locale/is.js -N node_modules/moment/locale/it.js -N node_modules/moment/locale/ja.js -N node_modules/moment/locale/jv.js -N node_modules/moment/locale/ka.js -N node_modules/moment/locale/kk.js -N node_modules/moment/locale/km.js -N node_modules/moment/locale/kn.js -N node_modules/moment/locale/ko.js -N node_modules/moment/locale/ky.js -N node_modules/moment/locale/lb.js -N node_modules/moment/locale/lo.js -N node_modules/moment/locale/lt.js -N node_modules/moment/locale/lv.js -N node_modules/moment/locale/me.js -N node_modules/moment/locale/mi.js -N node_modules/moment/locale/mk.js -N node_modules/moment/locale/ml.js -N node_modules/moment/locale/mr.js -N node_modules/moment/locale/ms-my.js -N node_modules/moment/locale/ms.js -N node_modules/moment/locale/mt.js -N node_modules/moment/locale/my.js -N node_modules/moment/locale/nb.js -N node_modules/moment/locale/ne.js -N node_modules/moment/locale/nl-be.js -N node_modules/moment/locale/nl.js -N node_modules/moment/locale/nn.js -N node_modules/moment/locale/pa-in.js -N node_modules/moment/locale/pl.js -N node_modules/moment/locale/pt-br.js -N node_modules/moment/locale/pt.js -N node_modules/moment/locale/ro.js -N node_modules/moment/locale/ru.js -N node_modules/moment/locale/sd.js -N node_modules/moment/locale/se.js -N node_modules/moment/locale/si.js -N node_modules/moment/locale/sk.js -N node_modules/moment/locale/sl.js -N node_modules/moment/locale/sq.js -N node_modules/moment/locale/sr-cyrl.js -N node_modules/moment/locale/sr.js -N node_modules/moment/locale/ss.js -N node_modules/moment/locale/sv.js -N node_modules/moment/locale/sw.js -N node_modules/moment/locale/ta.js -N node_modules/moment/locale/te.js -N node_modules/moment/locale/tet.js -N node_modules/moment/locale/th.js -N node_modules/moment/locale/tl-ph.js -N node_modules/moment/locale/tlh.js -N node_modules/moment/locale/tr.js -N node_modules/moment/locale/tzl.js -N node_modules/moment/locale/tzm-latn.js -N node_modules/moment/locale/tzm.js -N node_modules/moment/locale/uk.js -N node_modules/moment/locale/ur.js -N node_modules/moment/locale/uz-latn.js -N node_modules/moment/locale/uz.js -N node_modules/moment/locale/vi.js -N node_modules/moment/locale/x-pseudo.js -N node_modules/moment/locale/yo.js -N node_modules/moment/locale/zh-cn.js -N node_modules/moment/locale/zh-hk.js -N node_modules/moment/locale/zh-tw.js -N node_modules/moment/moment.js -N node_modules/object-describer/dist/object-describer.js -N node_modules/patternfly/dist/less/color-variables.less -N node_modules/patternfly/dist/less/variables.less -N node_modules/qunit-tap/lib/qunit-tap.js -N node_modules/qunitjs/qunit/qunit.css -N node_modules/qunitjs/qunit/qunit.js -N node_modules/react-lite/dist/react-lite.js -N node_modules/react-redux/lib/components/Provider.js -N node_modules/react-redux/lib/components/connectAdvanced.js -N node_modules/react-redux/lib/connect/connect.js -N node_modules/react-redux/lib/connect/mapDispatchToProps.js -N node_modules/react-redux/lib/connect/mapStateToProps.js -N node_modules/react-redux/lib/connect/mergeProps.js -N node_modules/react-redux/lib/connect/selectorFactory.js -N node_modules/react-redux/lib/connect/verifySubselectors.js -N node_modules/react-redux/lib/connect/wrapMapToProps.js -N node_modules/react-redux/lib/index.js -N node_modules/react-redux/lib/utils/PropTypes.js -N node_modules/react-redux/lib/utils/Subscription.js -N node_modules/react-redux/lib/utils/shallowEqual.js -N node_modules/react-redux/lib/utils/verifyPlainObject.js -N node_modules/react-redux/lib/utils/warning.js -N node_modules/redux-saga/lib/effects.js -N node_modules/redux-saga/lib/index.js -N node_modules/redux-saga/lib/internal/buffers.js -N node_modules/redux-saga/lib/internal/channel.js -N node_modules/redux-saga/lib/internal/io.js -N node_modules/redux-saga/lib/internal/middleware.js -N node_modules/redux-saga/lib/internal/proc.js -N node_modules/redux-saga/lib/internal/runSaga.js -N node_modules/redux-saga/lib/internal/sagaHelpers/fsmIterator.js -N node_modules/redux-saga/lib/internal/sagaHelpers/index.js -N node_modules/redux-saga/lib/internal/sagaHelpers/takeEvery.js -N node_modules/redux-saga/lib/internal/sagaHelpers/takeLatest.js -N node_modules/redux-saga/lib/internal/sagaHelpers/throttle.js -N node_modules/redux-saga/lib/internal/scheduler.js -N node_modules/redux-saga/lib/internal/utils.js -N node_modules/redux-saga/lib/utils.js -N node_modules/redux/lib/applyMiddleware.js -N node_modules/redux/lib/bindActionCreators.js -N node_modules/redux/lib/combineReducers.js -N node_modules/redux/lib/compose.js -N node_modules/redux/lib/createStore.js -N node_modules/redux/lib/index.js -N node_modules/redux/lib/utils/warning.js -N node_modules/registry-image-widgets/dist/image-widgets.css -N node_modules/registry-image-widgets/dist/image-widgets.js -N node_modules/term.js-cockpit/src/term.js -N pkg/kubernetes/index.html -N pkg/kubernetes/override.json -N pkg/kubernetes/registry.html -N pkg/kubernetes/scripts/app.js -N pkg/kubernetes/scripts/charts.js -N pkg/kubernetes/scripts/connection.js -N pkg/kubernetes/scripts/containers.js -N pkg/kubernetes/scripts/dashboard.js -N pkg/kubernetes/scripts/date.js -N pkg/kubernetes/scripts/details.js -N pkg/kubernetes/scripts/fixture-basic.js -N pkg/kubernetes/scripts/fixture-large.js -N pkg/kubernetes/scripts/graphs.js -N pkg/kubernetes/scripts/images.js -N pkg/kubernetes/scripts/kube-client-cockpit.js -N pkg/kubernetes/scripts/kube-client-mock.js -N pkg/kubernetes/scripts/kube-client.js -N pkg/kubernetes/scripts/listing.js -N pkg/kubernetes/scripts/main.js -N pkg/kubernetes/scripts/nodes.js -N pkg/kubernetes/scripts/policy.js -N pkg/kubernetes/scripts/projects.js -N pkg/kubernetes/scripts/registry.js -N pkg/kubernetes/scripts/tags.js -N pkg/kubernetes/scripts/test-connection.js -N pkg/kubernetes/scripts/test-images.js -N pkg/kubernetes/scripts/test-kube-client.js -N pkg/kubernetes/scripts/test-nodes.js -N pkg/kubernetes/scripts/test-projects.js -N pkg/kubernetes/scripts/test-tags.js -N pkg/kubernetes/scripts/test-utils.js -N pkg/kubernetes/scripts/test-volumes.js -N pkg/kubernetes/scripts/topology.js -N pkg/kubernetes/scripts/utils.js -N pkg/kubernetes/scripts/virtual-machines.js -N pkg/kubernetes/scripts/virtual-machines/action-creators.jsx -N pkg/kubernetes/scripts/virtual-machines/action-types.jsx -N pkg/kubernetes/scripts/virtual-machines/components/VmsListing.jsx -N pkg/kubernetes/scripts/virtual-machines/components/VmsListingRow.jsx -N pkg/kubernetes/scripts/virtual-machines/index.jsx -N pkg/kubernetes/scripts/virtual-machines/reducers.jsx -N pkg/kubernetes/scripts/virtual-machines/sagas.jsx -N pkg/kubernetes/scripts/virtual-machines/utils.jsx -N pkg/kubernetes/scripts/volumes.js -N pkg/kubernetes/styles/app.less -N pkg/kubernetes/styles/containers.less -N pkg/kubernetes/styles/dashboard.less -N pkg/kubernetes/styles/details.less -N pkg/kubernetes/styles/dropdown.less -N pkg/kubernetes/styles/filter.less -N pkg/kubernetes/styles/images.less -N pkg/kubernetes/styles/main.less -N pkg/kubernetes/styles/nodes.less -N pkg/kubernetes/styles/projects.less -N pkg/kubernetes/styles/registry.less -N pkg/kubernetes/styles/revealable.less -N pkg/kubernetes/styles/sidebar.less -N pkg/kubernetes/styles/tags.less -N pkg/kubernetes/styles/topology.less -N pkg/kubernetes/styles/variables.less -N pkg/kubernetes/styles/volumes.less -N pkg/kubernetes/views/add-group-dialog.html -N pkg/kubernetes/views/add-member-role-dialog.html -N pkg/kubernetes/views/add-role-dialog.html -N pkg/kubernetes/views/add-user-dialog.html -N pkg/kubernetes/views/auth-dialog.html -N pkg/kubernetes/views/auth-form.html -N pkg/kubernetes/views/auth-rejected-cert.html -N pkg/kubernetes/views/container-body.html -N pkg/kubernetes/views/container-page-inline.html -N pkg/kubernetes/views/container-page.html -N pkg/kubernetes/views/container-panel.html -N pkg/kubernetes/views/containers-listing.html -N pkg/kubernetes/views/containers-page.html -N pkg/kubernetes/views/dashboard-page.html -N pkg/kubernetes/views/default-panel.html -N pkg/kubernetes/views/deploy.html -N pkg/kubernetes/views/deploymentconfig-body.html -N pkg/kubernetes/views/deploymentconfig-page.html -N pkg/kubernetes/views/deploymentconfig-panel.html -N pkg/kubernetes/views/details-page.html -N pkg/kubernetes/views/file-button.html -N pkg/kubernetes/views/filter-bar.html -N pkg/kubernetes/views/filter-project.html -N pkg/kubernetes/views/group-delete.html -N pkg/kubernetes/views/group-page.html -N pkg/kubernetes/views/group-panel.html -N pkg/kubernetes/views/image-delete.html -N pkg/kubernetes/views/image-page.html -N pkg/kubernetes/views/images-page.html -N pkg/kubernetes/views/imagestream-delete.html -N pkg/kubernetes/views/imagestream-modify.html -N pkg/kubernetes/views/imagestream-page.html -N pkg/kubernetes/views/item-delete.html -N pkg/kubernetes/views/node-add.html -N pkg/kubernetes/views/node-alerts.html -N pkg/kubernetes/views/node-body.html -N pkg/kubernetes/views/node-capacity.html -N pkg/kubernetes/views/node-delete.html -N pkg/kubernetes/views/node-page.html -N pkg/kubernetes/views/node-panel.html -N pkg/kubernetes/views/node-stats.html -N pkg/kubernetes/views/nodes-page.html -N pkg/kubernetes/views/pod-body.html -N pkg/kubernetes/views/pod-container.html -N pkg/kubernetes/views/pod-page.html -N pkg/kubernetes/views/pod-panel.html -N pkg/kubernetes/views/project-body.html -N pkg/kubernetes/views/project-delete.html -N pkg/kubernetes/views/project-listing.html -N pkg/kubernetes/views/project-modify.html -N pkg/kubernetes/views/project-page.html -N pkg/kubernetes/views/project-panel.html -N pkg/kubernetes/views/projects-page.html -N pkg/kubernetes/views/pv-body.html -N pkg/kubernetes/views/pv-claim.html -N pkg/kubernetes/views/pv-delete.html -N pkg/kubernetes/views/pv-modify.html -N pkg/kubernetes/views/pv-page.html -N pkg/kubernetes/views/pv-panel.html -N pkg/kubernetes/views/pvc-body.html -N pkg/kubernetes/views/pvc-delete.html -N pkg/kubernetes/views/registry-dashboard-page.html -N pkg/kubernetes/views/remove-role-dialog.html -N pkg/kubernetes/views/replicationcontroller-body.html -N pkg/kubernetes/views/replicationcontroller-modify.html -N pkg/kubernetes/views/replicationcontroller-page.html -N pkg/kubernetes/views/replicationcontroller-panel.html -N pkg/kubernetes/views/replicationcontroller-pods.html -N pkg/kubernetes/views/route-body.html -N pkg/kubernetes/views/route-modify.html -N pkg/kubernetes/views/route-page.html -N pkg/kubernetes/views/route-panel.html -N pkg/kubernetes/views/service-body.html -N pkg/kubernetes/views/service-endpoint.html -N pkg/kubernetes/views/service-modify.html -N pkg/kubernetes/views/service-page.html -N pkg/kubernetes/views/service-panel.html -N pkg/kubernetes/views/topology-page.html -N pkg/kubernetes/views/user-add-membership.html -N pkg/kubernetes/views/user-body.html -N pkg/kubernetes/views/user-delete.html -N pkg/kubernetes/views/user-group-add.html -N pkg/kubernetes/views/user-group-remove.html -N pkg/kubernetes/views/user-modify.html -N pkg/kubernetes/views/user-page.html -N pkg/kubernetes/views/user-panel.html -N pkg/kubernetes/views/user-remove-membership.html -N pkg/kubernetes/views/virtual-machines-page.html -N pkg/kubernetes/views/volume-body.html -N pkg/kubernetes/views/volumes-page.html -N pkg/lib/angular-dialog.js -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/console.css -N pkg/lib/listing.less -N pkg/lib/page.css -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/table.css -N pkg/lib/term.css -N pkg/lib/variables.less $< > $@.tmp && mv $@.tmp $@
 
 dist/kubernetes/Makefile.deps: $(WEBPACK_CONFIG) $(kubernetes_INPUTS)
 	$(WEBPACK_RULE) -d dist/kubernetes/Makefile.deps $(WEBPACK_CONFIG)
@@ -879,11 +940,11 @@ node_modules/patternfly/LICENSE.txt:
 
 node_modules/patternfly/README.md:
 
+node_modules/patternfly/dist/less/color-variables.less:
+
+node_modules/patternfly/dist/less/variables.less:
+
 node_modules/patternfly/package.json:
-
-node_modules/patternfly/src/less/color-variables.less:
-
-node_modules/patternfly/src/less/variables.less:
 
 node_modules/qunit-tap/GPL-LICENSE.txt:
 
@@ -902,6 +963,108 @@ node_modules/qunitjs/package.json:
 node_modules/qunitjs/qunit/qunit.css:
 
 node_modules/qunitjs/qunit/qunit.js:
+
+node_modules/react-lite/LICENSE:
+
+node_modules/react-lite/README.md:
+
+node_modules/react-lite/dist/react-lite.js:
+
+node_modules/react-lite/package.json:
+
+node_modules/react-redux/LICENSE.md:
+
+node_modules/react-redux/README.md:
+
+node_modules/react-redux/lib/components/Provider.js:
+
+node_modules/react-redux/lib/components/connectAdvanced.js:
+
+node_modules/react-redux/lib/connect/connect.js:
+
+node_modules/react-redux/lib/connect/mapDispatchToProps.js:
+
+node_modules/react-redux/lib/connect/mapStateToProps.js:
+
+node_modules/react-redux/lib/connect/mergeProps.js:
+
+node_modules/react-redux/lib/connect/selectorFactory.js:
+
+node_modules/react-redux/lib/connect/verifySubselectors.js:
+
+node_modules/react-redux/lib/connect/wrapMapToProps.js:
+
+node_modules/react-redux/lib/index.js:
+
+node_modules/react-redux/lib/utils/PropTypes.js:
+
+node_modules/react-redux/lib/utils/Subscription.js:
+
+node_modules/react-redux/lib/utils/shallowEqual.js:
+
+node_modules/react-redux/lib/utils/verifyPlainObject.js:
+
+node_modules/react-redux/lib/utils/warning.js:
+
+node_modules/react-redux/package.json:
+
+node_modules/redux-saga/LICENSE:
+
+node_modules/redux-saga/README.md:
+
+node_modules/redux-saga/lib/effects.js:
+
+node_modules/redux-saga/lib/index.js:
+
+node_modules/redux-saga/lib/internal/buffers.js:
+
+node_modules/redux-saga/lib/internal/channel.js:
+
+node_modules/redux-saga/lib/internal/io.js:
+
+node_modules/redux-saga/lib/internal/middleware.js:
+
+node_modules/redux-saga/lib/internal/proc.js:
+
+node_modules/redux-saga/lib/internal/runSaga.js:
+
+node_modules/redux-saga/lib/internal/sagaHelpers/fsmIterator.js:
+
+node_modules/redux-saga/lib/internal/sagaHelpers/index.js:
+
+node_modules/redux-saga/lib/internal/sagaHelpers/takeEvery.js:
+
+node_modules/redux-saga/lib/internal/sagaHelpers/takeLatest.js:
+
+node_modules/redux-saga/lib/internal/sagaHelpers/throttle.js:
+
+node_modules/redux-saga/lib/internal/scheduler.js:
+
+node_modules/redux-saga/lib/internal/utils.js:
+
+node_modules/redux-saga/lib/utils.js:
+
+node_modules/redux-saga/package.json:
+
+node_modules/redux/LICENSE.md:
+
+node_modules/redux/README.md:
+
+node_modules/redux/lib/applyMiddleware.js:
+
+node_modules/redux/lib/bindActionCreators.js:
+
+node_modules/redux/lib/combineReducers.js:
+
+node_modules/redux/lib/compose.js:
+
+node_modules/redux/lib/createStore.js:
+
+node_modules/redux/lib/index.js:
+
+node_modules/redux/lib/utils/warning.js:
+
+node_modules/redux/package.json:
 
 node_modules/registry-image-widgets/COPYING:
 
@@ -988,6 +1151,24 @@ pkg/kubernetes/scripts/test-volumes.js:
 pkg/kubernetes/scripts/topology.js:
 
 pkg/kubernetes/scripts/utils.js:
+
+pkg/kubernetes/scripts/virtual-machines.js:
+
+pkg/kubernetes/scripts/virtual-machines/action-creators.jsx:
+
+pkg/kubernetes/scripts/virtual-machines/action-types.jsx:
+
+pkg/kubernetes/scripts/virtual-machines/components/VmsListing.jsx:
+
+pkg/kubernetes/scripts/virtual-machines/components/VmsListingRow.jsx:
+
+pkg/kubernetes/scripts/virtual-machines/index.jsx:
+
+pkg/kubernetes/scripts/virtual-machines/reducers.jsx:
+
+pkg/kubernetes/scripts/virtual-machines/sagas.jsx:
+
+pkg/kubernetes/scripts/virtual-machines/utils.jsx:
 
 pkg/kubernetes/scripts/volumes.js:
 
@@ -1199,11 +1380,15 @@ pkg/kubernetes/views/user-panel.html:
 
 pkg/kubernetes/views/user-remove-membership.html:
 
+pkg/kubernetes/views/virtual-machines-page.html:
+
 pkg/kubernetes/views/volume-body.html:
 
 pkg/kubernetes/views/volumes-page.html:
 
 pkg/lib/angular-dialog.js:
+
+pkg/lib/cockpit-components-listing.jsx:
 
 pkg/lib/console.css:
 

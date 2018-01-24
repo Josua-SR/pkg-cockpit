@@ -19,25 +19,23 @@ def browser_path(headless=True):
     """Return path to CDP browser.
 
     Support the following locations:
-     - "chromium-browser" in $PATH (distro package)
      - /usr/lib*/chromium-browser/headless_shell (chromium-headless RPM), if
        headless is true
+     - "chromium-browser" in $PATH (distro package)
      - node_modules/chromium/lib/chromium/chrome-linux/chrome (npm install chromium)
 
     Exit with an error if none is found.
     """
+    if headless:
+        g = glob.glob("/usr/lib*/chromium-browser/headless_shell")
+        if g:
+            return g[0]
     try:
         return subprocess.check_output(["which", "chromium-browser"]).strip()
     except subprocess.CalledProcessError:
-        if headless:
-            g = glob.glob("/usr/lib*/chromium-browser/headless_shell")
-            if g:
-                return g[0]
-
         p = os.path.join(os.path.dirname(TEST_DIR), "node_modules/chromium/lib/chromium/chrome-linux/chrome")
         if os.access(p, os.X_OK):
             return p
-
         raise
 
 
@@ -46,12 +44,14 @@ def jsquote(str):
 
 
 class CDP:
-    def __init__(self, lang=None, headless=True, trace=False):
+    def __init__(self, lang=None, headless=True, verbose=False, trace=False, inject_helpers=[]):
         self.lang = lang
         self.timeout = 60
         self.valid = False
         self.headless = headless
+        self.verbose = verbose
         self.trace = trace
+        self.inject_helpers = inject_helpers
         self._driver = None
         self._browser = None
         self._browser_home = None
@@ -136,7 +136,6 @@ class CDP:
         environ = os.environ.copy()
         if self.lang:
             environ["LC_ALL"] = self.lang
-        path = os.path.dirname(__file__)
         self.cur_frame = None
 
         # allow attaching to external browser
@@ -169,9 +168,13 @@ class CDP:
 
             # sandboxing does not work in Docker container
             self._browser = subprocess.Popen(
-                argv + ["--disable-gpu", "--no-sandbox", "--remote-debugging-port=%i" % cdp_port, "about:blank"],
+                argv + ["--disable-gpu", "--no-sandbox", "--disable-setuid-sandbox",
+                    "--disable-namespace-sandbox", "--disable-seccomp-filter-sandbox",
+                    "--disable-sandbox-denial-logging",
+                    "--remote-debugging-port=%i" % cdp_port, "about:blank"],
                 env=environ, close_fds=True)
-            sys.stderr.write("Started %s (pid %i) on port %i\n" % (exe, self._browser.pid, cdp_port))
+            if self.verbose:
+                sys.stderr.write("Started %s (pid %i) on port %i\n" % (exe, self._browser.pid, cdp_port))
 
         # wait for CDP to be up
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -188,14 +191,14 @@ class CDP:
         if self.trace:
             # enable frame/execution context debugging if tracing is on
             environ["TEST_CDP_DEBUG"] = "1"
-        self._driver = subprocess.Popen(["%s/cdp-driver.js" % path, str(cdp_port)],
+        self._driver = subprocess.Popen(["%s/cdp-driver.js" % os.path.dirname(__file__), str(cdp_port)],
                                         env=environ,
                                         stdout=subprocess.PIPE,
                                         stdin=subprocess.PIPE,
                                         close_fds=True)
         self.valid = True
 
-        for inject in [ "%s/test-functions.js" % path, "%s/sizzle.js" % path ]:
+        for inject in self.inject_helpers:
             with open(inject) as f:
                 src = f.read()
             # HACK: injecting sizzle fails on missing `document` in assert()
@@ -211,7 +214,8 @@ class CDP:
             self._driver = None
 
         if self._browser:
-            sys.stderr.write("Killing browser (pid %i)\n" % self._browser.pid)
+            if self.verbose:
+                sys.stderr.write("Killing browser (pid %i)\n" % self._browser.pid)
             try:
                 self._browser.terminate()
             except OSError:
@@ -226,3 +230,26 @@ class CDP:
         self.cur_frame = frame
         if self.trace:
             print("-> switch to frame %s" % frame)
+
+    def get_js_log(self):
+        """Return the current javascript console log"""
+
+        if self.valid:
+            # needs to be wrapped in Promise
+            messages = self.command("new Promise((resolve, reject) => resolve(messages))")
+            return map(lambda m: "%s: %s" % tuple(m), messages)
+        return []
+
+    def read_log(self):
+        """Returns an iterator that produces log messages one by one.
+
+        Blocks if there are no new messages right now."""
+
+        if not self.valid:
+            yield []
+            return
+
+        while True:
+            messages = self.command("waitLog()")
+            for m in messages:
+                yield m

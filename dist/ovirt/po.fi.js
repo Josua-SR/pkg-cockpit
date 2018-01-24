@@ -119,10 +119,6 @@ return plural;
   null,
   ""
  ],
- "Bus": [
-  null,
-  ""
- ],
  "CHANGE NETWORK STATE action failed": [
   null,
   ""
@@ -138,10 +134,6 @@ return plural;
  "Cancel": [
   null,
   "Peru"
- ],
- "Capacity": [
-  null,
-  "Koko"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -199,10 +191,6 @@ return plural;
   null,
   ""
  ],
- "Count:": [
-  null,
-  ""
- ],
  "Create": [
   null,
   "Luo"
@@ -226,10 +214,6 @@ return plural;
  "Description:": [
   null,
   "Kuvaus:"
- ],
- "Device": [
-  null,
-  "Laite"
  ],
  "Disconnect": [
   null,
@@ -263,10 +247,6 @@ return plural;
   null,
   "FQDN"
  ],
- "File": [
-  null,
-  "Tiedosto"
- ],
  "Force Restart": [
   null,
   "Pakota Uudelleenkäynnistys"
@@ -274,10 +254,6 @@ return plural;
  "Force Shut Down": [
   null,
   "Pakota Sammutus"
- ],
- "GB": [
-  null,
-  "Gt"
  ],
  "Graphics Console (VNC)": [
   null,
@@ -379,10 +355,6 @@ return plural;
   null,
   ""
  ],
- "No disks defined for this VM": [
-  null,
-  ""
- ],
  "No network interfaces defined for this VM": [
   null,
   ""
@@ -443,10 +415,6 @@ return plural;
   null,
   ""
  ],
- "Pool": [
-  null,
-  ""
- ],
  "Port": [
   null,
   "Portti"
@@ -459,15 +427,7 @@ return plural;
   null,
   ""
  ],
- "Protocol": [
-  null,
-  ""
- ],
  "REBOOT action failed": [
-  null,
-  ""
- ],
- "Readonly": [
   null,
   ""
  ],
@@ -655,10 +615,6 @@ return plural;
   null,
   ""
  ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  ""
- ],
  "Usage": [
   null,
   "Käyttö"
@@ -738,10 +694,6 @@ return plural;
  "Virtualport": [
   null,
   ""
- ],
- "Volume": [
-  null,
-  "Taltio"
  ],
  "Your browser does not support iframes.": [
   null,
@@ -902,6 +854,14 @@ return plural;
  "server": [
   null,
   "palvelin"
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
+  null,
+  ""
  ],
  "shut off": [
   null,

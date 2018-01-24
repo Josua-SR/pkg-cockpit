@@ -119,10 +119,6 @@ return plural;
   null,
   "启动顺序："
  ],
- "Bus": [
-  null,
-  "总线"
- ],
  "CHANGE NETWORK STATE action failed": [
   null,
   ""
@@ -138,10 +134,6 @@ return plural;
  "Cancel": [
   null,
   "取消"
- ],
- "Capacity": [
-  null,
-  "容量"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -199,10 +191,6 @@ return plural;
   null,
   ""
  ],
- "Count:": [
-  null,
-  "计数："
- ],
  "Create": [
   null,
   "创建"
@@ -226,10 +214,6 @@ return plural;
  "Description:": [
   null,
   "描述："
- ],
- "Device": [
-  null,
-  "设备"
  ],
  "Disconnect": [
   null,
@@ -263,10 +247,6 @@ return plural;
   null,
   "FQDN"
  ],
- "File": [
-  null,
-  "文件"
- ],
  "Force Restart": [
   null,
   "强制重启"
@@ -274,10 +254,6 @@ return plural;
  "Force Shut Down": [
   null,
   "强制关机"
- ],
- "GB": [
-  null,
-  "GB"
  ],
  "Graphics Console (VNC)": [
   null,
@@ -379,10 +355,6 @@ return plural;
   null,
   ""
  ],
- "No disks defined for this VM": [
-  null,
-  "没有为该虚拟机定义磁盘"
- ],
  "No network interfaces defined for this VM": [
   null,
   ""
@@ -443,10 +415,6 @@ return plural;
   null,
   ""
  ],
- "Pool": [
-  null,
-  "池"
- ],
  "Port": [
   null,
   "端口"
@@ -459,17 +427,9 @@ return plural;
   null,
   "正在准备维护"
  ],
- "Protocol": [
-  null,
-  "协议"
- ],
  "REBOOT action failed": [
   null,
   "重启操作失败"
- ],
- "Readonly": [
-  null,
-  "只读"
  ],
  "Reconnect": [
   null,
@@ -655,10 +615,6 @@ return plural;
   null,
   ""
  ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "升级到一个更新版本的 libvirt 来查看磁盘统计数据"
- ],
  "Usage": [
   null,
   "使用情况"
@@ -738,10 +694,6 @@ return plural;
  "Virtualport": [
   null,
   ""
- ],
- "Volume": [
-  null,
-  "卷"
  ],
  "Your browser does not support iframes.": [
   null,
@@ -900,6 +852,14 @@ return plural;
   "运行中"
  ],
  "server": [
+  null,
+  ""
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
   null,
   ""
  ],

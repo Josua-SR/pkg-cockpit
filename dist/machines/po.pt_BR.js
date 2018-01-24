@@ -95,10 +95,6 @@ return plural;
   null,
   "Ordem de Inicialização:"
  ],
- "Bus": [
-  null,
-  "Bus"
- ],
  "CHANGE NETWORK STATE action failed": [
   null,
   ""
@@ -110,10 +106,6 @@ return plural;
  "Cancel": [
   null,
   "Cancelar"
- ],
- "Capacity": [
-  null,
-  "Capacidade"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -143,10 +135,6 @@ return plural;
   null,
   ""
  ],
- "Count:": [
-  null,
-  "Contagem:"
- ],
  "Delete": [
   null,
   "Excluir"
@@ -154,10 +142,6 @@ return plural;
  "Delete associated storage files:": [
   null,
   ""
- ],
- "Device": [
-  null,
-  "Dispositivo"
  ],
  "Disconnect": [
   null,
@@ -179,10 +163,6 @@ return plural;
   null,
   "Máquina Emulada:"
  ],
- "File": [
-  null,
-  "Arquivo"
- ],
  "Force Restart": [
   null,
   "Forçar Reinicialização"
@@ -191,10 +171,6 @@ return plural;
   null,
   "Forçar Desligamento"
  ],
- "GB": [
-  null,
-  "GB"
- ],
  "Graphics Console (VNC)": [
   null,
   ""
@@ -202,10 +178,6 @@ return plural;
  "Graphics Console in Desktop Viewer": [
   null,
   ""
- ],
- "Host": [
-  null,
-  "Máquina"
  ],
  "Launch Remote Viewer": [
   null,
@@ -263,10 +235,6 @@ return plural;
   null,
   ""
  ],
- "No disks defined for this VM": [
-  null,
-  "Nenhum disco definido para esta VM"
- ],
  "No network interfaces defined for this VM": [
   null,
   ""
@@ -287,10 +255,6 @@ return plural;
   null,
   ""
  ],
- "Pool": [
-  null,
-  "Pool"
- ],
  "Port": [
   null,
   "Porta"
@@ -298,14 +262,6 @@ return plural;
  "Portgroup": [
   null,
   ""
- ],
- "Protocol": [
-  null,
-  "Protocolo"
- ],
- "Readonly": [
-  null,
-  "Apenasleitura"
  ],
  "Reconnect": [
   null,
@@ -415,10 +371,6 @@ return plural;
   null,
   ""
  ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Atualize para uma versão mais recente do libvirt para exibir estatísticas de disco"
- ],
  "Usage": [
   null,
   "Uso"
@@ -474,10 +426,6 @@ return plural;
  "Virtualport": [
   null,
   ""
- ],
- "Volume": [
-  null,
-  "Volume"
  ],
  "Your browser does not support iframes.": [
   null,
@@ -564,6 +512,14 @@ return plural;
   "executando"
  ],
  "server": [
+  null,
+  ""
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
   null,
   ""
  ],

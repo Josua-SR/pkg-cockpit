@@ -95,10 +95,6 @@ return plural;
   null,
   ""
  ],
- "Bus": [
-  null,
-  "バス"
- ],
  "CHANGE NETWORK STATE action failed": [
   null,
   ""
@@ -110,10 +106,6 @@ return plural;
  "Cancel": [
   null,
   "取り消し"
- ],
- "Capacity": [
-  null,
-  "容量"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -143,10 +135,6 @@ return plural;
   null,
   ""
  ],
- "Count:": [
-  null,
-  "数量:"
- ],
  "Delete": [
   null,
   "削除"
@@ -154,10 +142,6 @@ return plural;
  "Delete associated storage files:": [
   null,
   ""
- ],
- "Device": [
-  null,
-  "デバイス"
  ],
  "Disconnect": [
   null,
@@ -179,10 +163,6 @@ return plural;
   null,
   "仮想マシン"
  ],
- "File": [
-  null,
-  "File"
- ],
  "Force Restart": [
   null,
   "再起動の強制"
@@ -191,10 +171,6 @@ return plural;
   null,
   "シャットダウンの強制"
  ],
- "GB": [
-  null,
-  "GB"
- ],
  "Graphics Console (VNC)": [
   null,
   ""
@@ -202,10 +178,6 @@ return plural;
  "Graphics Console in Desktop Viewer": [
   null,
   ""
- ],
- "Host": [
-  null,
-  "ホスト"
  ],
  "Launch Remote Viewer": [
   null,
@@ -263,10 +235,6 @@ return plural;
   null,
   ""
  ],
- "No disks defined for this VM": [
-  null,
-  "この VM に対してディスクが定義されていません"
- ],
  "No network interfaces defined for this VM": [
   null,
   ""
@@ -287,10 +255,6 @@ return plural;
   null,
   ""
  ],
- "Pool": [
-  null,
-  "プール"
- ],
  "Port": [
   null,
   "ポート"
@@ -298,14 +262,6 @@ return plural;
  "Portgroup": [
   null,
   ""
- ],
- "Protocol": [
-  null,
-  "プロトコル"
- ],
- "Readonly": [
-  null,
-  "読み取り専用"
  ],
  "Reconnect": [
   null,
@@ -415,10 +371,6 @@ return plural;
   null,
   ""
  ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "ディスクの統計情報を表示するには libvirt の新しいバージョンにアップグレードしてください"
- ],
  "Usage": [
   null,
   "使用法"
@@ -474,10 +426,6 @@ return plural;
  "Virtualport": [
   null,
   ""
- ],
- "Volume": [
-  null,
-  "音量"
  ],
  "Your browser does not support iframes.": [
   null,
@@ -564,6 +512,14 @@ return plural;
   "実行中"
  ],
  "server": [
+  null,
+  ""
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
   null,
   ""
  ],

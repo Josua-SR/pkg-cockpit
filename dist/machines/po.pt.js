@@ -95,10 +95,6 @@ return plural;
   null,
   ""
  ],
- "Bus": [
-  null,
-  ""
- ],
  "CHANGE NETWORK STATE action failed": [
   null,
   ""
@@ -108,10 +104,6 @@ return plural;
   ""
  ],
  "Cancel": [
-  null,
-  ""
- ],
- "Capacity": [
   null,
   ""
  ],
@@ -143,19 +135,11 @@ return plural;
   null,
   ""
  ],
- "Count:": [
-  null,
-  ""
- ],
  "Delete": [
   null,
   ""
  ],
  "Delete associated storage files:": [
-  null,
-  ""
- ],
- "Device": [
   null,
   ""
  ],
@@ -179,10 +163,6 @@ return plural;
   null,
   ""
  ],
- "File": [
-  null,
-  ""
- ],
  "Force Restart": [
   null,
   ""
@@ -191,19 +171,11 @@ return plural;
   null,
   ""
  ],
- "GB": [
-  null,
-  ""
- ],
  "Graphics Console (VNC)": [
   null,
   ""
  ],
  "Graphics Console in Desktop Viewer": [
-  null,
-  ""
- ],
- "Host": [
   null,
   ""
  ],
@@ -263,10 +235,6 @@ return plural;
   null,
   ""
  ],
- "No disks defined for this VM": [
-  null,
-  ""
- ],
  "No network interfaces defined for this VM": [
   null,
   ""
@@ -287,23 +255,11 @@ return plural;
   null,
   ""
  ],
- "Pool": [
-  null,
-  ""
- ],
  "Port": [
   null,
   ""
  ],
  "Portgroup": [
-  null,
-  ""
- ],
- "Protocol": [
-  null,
-  ""
- ],
- "Readonly": [
   null,
   ""
  ],
@@ -415,10 +371,6 @@ return plural;
   null,
   ""
  ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  ""
- ],
  "Usage": [
   null,
   ""
@@ -474,10 +426,6 @@ return plural;
  "Virtualport": [
   null,
   ""
- ],
- "Volume": [
-  null,
-  "Volume"
  ],
  "Your browser does not support iframes.": [
   null,
@@ -564,6 +512,14 @@ return plural;
   ""
  ],
  "server": [
+  null,
+  ""
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
   null,
   ""
  ],

@@ -1,5 +1,5 @@
 # Generated Makefile data for subscriptions
-# Stamp: Wed Jan 10 2018 12:07:22 GMT+0000 (UTC)
+# Stamp: Wed Jan 24 2018 08:44:13 GMT+0000 (UTC)
 
 subscriptions_INPUTS = \
 	node_modules/bootstrap/LICENSE \
@@ -8,9 +8,9 @@ subscriptions_INPUTS = \
 	node_modules/bootstrap/package.json \
 	node_modules/patternfly/LICENSE.txt \
 	node_modules/patternfly/README.md \
+	node_modules/patternfly/dist/less/color-variables.less \
+	node_modules/patternfly/dist/less/variables.less \
 	node_modules/patternfly/package.json \
-	node_modules/patternfly/src/less/color-variables.less \
-	node_modules/patternfly/src/less/variables.less \
 	node_modules/react-lite/LICENSE \
 	node_modules/react-lite/README.md \
 	node_modules/react-lite/dist/react-lite.js \
@@ -42,7 +42,6 @@ subscriptions_PO = dist/subscriptions/po.js $(patsubst %,dist/subscriptions/po.%
 
 subscriptions_INSTALL = \
 	dist/subscriptions/index.html.gz \
-	dist/subscriptions/manifest.json \
 	dist/subscriptions/subscriptions.css.gz \
 	dist/subscriptions/subscriptions.min.js.gz \
 	$(addsuffix .gz,$(subscriptions_PO)) \
@@ -58,7 +57,7 @@ subscriptions_TESTS = \
 
 dist/subscriptions/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/patternfly/src/less/color-variables.less -N node_modules/patternfly/src/less/variables.less -N node_modules/react-lite/dist/react-lite.js -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-select.jsx -N pkg/lib/listing.less -N pkg/lib/page.css -N pkg/lib/table.css -N pkg/lib/variables.less -N pkg/subscriptions/index.html -N pkg/subscriptions/main.js -N pkg/subscriptions/subscriptions-client.js -N pkg/subscriptions/subscriptions-register.jsx -N pkg/subscriptions/subscriptions-view.jsx -N pkg/subscriptions/subscriptions.css $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/patternfly/dist/less/color-variables.less -N node_modules/patternfly/dist/less/variables.less -N node_modules/react-lite/dist/react-lite.js -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-select.jsx -N pkg/lib/listing.less -N pkg/lib/page.css -N pkg/lib/table.css -N pkg/lib/variables.less -N pkg/subscriptions/index.html -N pkg/subscriptions/main.js -N pkg/subscriptions/subscriptions-client.js -N pkg/subscriptions/subscriptions-register.jsx -N pkg/subscriptions/subscriptions-view.jsx -N pkg/subscriptions/subscriptions.css $< > $@.tmp && mv $@.tmp $@
 
 dist/subscriptions/Makefile.deps: $(WEBPACK_CONFIG) $(subscriptions_INPUTS)
 	$(WEBPACK_RULE) -d dist/subscriptions/Makefile.deps $(WEBPACK_CONFIG)
@@ -85,11 +84,11 @@ node_modules/patternfly/LICENSE.txt:
 
 node_modules/patternfly/README.md:
 
+node_modules/patternfly/dist/less/color-variables.less:
+
+node_modules/patternfly/dist/less/variables.less:
+
 node_modules/patternfly/package.json:
-
-node_modules/patternfly/src/less/color-variables.less:
-
-node_modules/patternfly/src/less/variables.less:
 
 node_modules/react-lite/LICENSE:
 
