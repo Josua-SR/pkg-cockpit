@@ -1,4 +1,4 @@
-cockpit (161-1) UNRELEASED; urgency=medium
+cockpit (161-1) unstable; urgency=medium
 
   * New upstream release:
     - New VMs can be created on Machines page
@@ -8,7 +8,7 @@ cockpit (161-1) UNRELEASED; urgency=medium
     - Load Application metadata (Appstream) packages on demand on Debian/Ubuntu
     - Stop advertising and supporting cockpit-bundled jQuery library
 
- -- Martin Pitt <mpitt@debian.org>  Wed, 07 Feb 2018 12:26:46 +0100
+ -- Martin Pitt <mpitt@debian.org>  Wed, 07 Feb 2018 12:50:15 +0100
 
 cockpit (160-1) unstable; urgency=medium
 
