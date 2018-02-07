@@ -113,13 +113,18 @@ class StorageCase(MachineCase):
         self.browser.wait_attr(btn, "disabled", None)
         self.browser.click(btn)
 
+    def wait_content_tab_action_disabled(self, row_index, tab_index, title):
+        tab = self.content_tab_expand(row_index, tab_index)
+        btn = tab + " button.disabled:contains(%s)" % title
+        self.browser.wait_present(btn)
+
     # To check what's in a tab, we need to open the row and select the
     # tab.
     #
     # However, sometimes we open the wrong row or the wrong tab
     # because the right row or right tab still has to be created and
     # take its right place.  If the right row or tab finally appears,
-    # it wont be open at that point and we will miss it if we only
+    # it won't be open at that point and we will miss it if we only
     # open a row/tab once.  So we just run the whole process in a big
     # retry loop.
     #

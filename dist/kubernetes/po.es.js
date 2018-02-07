@@ -529,6 +529,10 @@ return plural;
   null,
   "Disco GCE Persistente"
  ],
+ "General": [
+  null,
+  "General"
+ ],
  "Git Repository": [
   null,
   "Repositorio Git"
@@ -825,6 +829,10 @@ return plural;
   null,
   "No hay usuarios presentes."
  ],
+ "No virtual machines": [
+  null,
+  ""
+ ],
  "No volumes are present.": [
   null,
   "No hay volúmenes presentes."
@@ -1011,7 +1019,7 @@ return plural;
  ],
  "Pods contain one or more containers that run together on a node, containing your application code.": [
   null,
-  ""
+  "Pods contienen uno o mas contenedores que corren juntos sobre un nodo, conteniendo su código de aplicación."
  ],
  "Pool Name": [
   null,
@@ -1027,7 +1035,7 @@ return plural;
  ],
  "Private: Allow only specific users or groups to pull images": [
   null,
-  ""
+  "Privado: Permite sólo a usuarios o grupos específicos tirar imágenes"
  ],
  "Project": [
   null,
@@ -1039,15 +1047,15 @@ return plural;
  ],
  "Project access policy allows anonymous users to pull images.": [
   null,
-  ""
+  "Proyecto de política de acceso que permite a usuarios anónimos quitar imágenes."
  ],
  "Project access policy allows any authenticated user to pull images.": [
   null,
-  ""
+  "Proyecto de política de acceso permite a cualquier usuario autenticado quitar imágenes."
  ],
  "Project access policy only allows specific members to access images.": [
   null,
-  ""
+  "Proyecto de política de acceso permite sólo a miembros específicos acceder a imágenes."
  ],
  "Project:": [
   null,
@@ -1059,7 +1067,7 @@ return plural;
  ],
  "Proxy Version": [
   null,
-  ""
+  "Versión de Proxy"
  ],
  "Pull an image:": [
   null,
@@ -1079,11 +1087,11 @@ return plural;
  ],
  "Qualified Name": [
   null,
-  ""
+  "Nombre Cualificado"
  ],
  "Rados Block Device": [
   null,
-  ""
+  "Dispositivo de Bloque Rados"
  ],
  "Read Only": [
   null,
@@ -1135,7 +1143,7 @@ return plural;
  ],
  "Remote registry is insecure": [
   null,
-  ""
+  "El registro remoto es inseguro"
  ],
  "Remove": [
   null,
@@ -1143,7 +1151,7 @@ return plural;
  ],
  "Remove Group": [
   null,
-  ""
+  "Quitar Grupo"
  ],
  "Remove Member": [
   null,
@@ -1179,7 +1187,7 @@ return plural;
  ],
  "Replication controllers dynamically create instances of pods from templates, and remove pods when necessary.": [
   null,
-  ""
+  "Los controladores de replicación crean dinámicamente instancias de pods a partir de plantillas y eliminan pods cuando es necesario."
  ],
  "Repository URL": [
   null,
@@ -1281,6 +1289,10 @@ return plural;
   null,
   ""
  ],
+ "Session": [
+  null,
+  "Sesión"
+ ],
  "Session Affinity": [
   null,
   ""
@@ -1374,6 +1386,10 @@ return plural;
   ""
  ],
  "Sync all tags from a remote image repository": [
+  null,
+  ""
+ ],
+ "System": [
   null,
   ""
  ],
@@ -1557,6 +1573,14 @@ return plural;
   null,
   ""
  ],
+ "VM DELETE failed.": [
+  null,
+  ""
+ ],
+ "Virtual Machines": [
+  null,
+  ""
+ ],
  "Volume": [
   null,
   ""
@@ -1605,7 +1629,75 @@ return plural;
   null,
   "Sus credenciales de acceso no le conceden acceso para utilizar el registro de Docker a partir de la consola."
  ],
+ "bridge": [
+  null,
+  ""
+ ],
+ "cdrom": [
+  null,
+  ""
+ ],
+ "crashed": [
+  null,
+  ""
+ ],
+ "custom": [
+  null,
+  ""
+ ],
+ "direct": [
+  null,
+  ""
+ ],
+ "disabled": [
+  null,
+  "desactivado"
+ ],
+ "disk": [
+  null,
+  ""
+ ],
+ "down": [
+  null,
+  ""
+ ],
+ "dying": [
+  null,
+  ""
+ ],
  "eg: my-image-stream": [
+  null,
+  ""
+ ],
+ "enabled": [
+  null,
+  "activado"
+ ],
+ "ethernet": [
+  null,
+  ""
+ ],
+ "host": [
+  null,
+  ""
+ ],
+ "hostdev": [
+  null,
+  ""
+ ],
+ "idle": [
+  null,
+  "inactivo"
+ ],
+ "mcast": [
+  null,
+  ""
+ ],
+ "n/a": [
+  null,
+  ""
+ ],
+ "network": [
   null,
   ""
  ],
@@ -1617,7 +1709,55 @@ return plural;
   null,
   "ninguno"
  ],
+ "paused": [
+  null,
+  "en pausa"
+ ],
  "pending volume claims": [
+  null,
+  ""
+ ],
+ "running": [
+  null,
+  "en ejecución"
+ ],
+ "server": [
+  null,
+  ""
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
+  null,
+  ""
+ ],
+ "shut off": [
+  null,
+  ""
+ ],
+ "shutdown": [
+  null,
+  ""
+ ],
+ "suspended (PM)": [
+  null,
+  ""
+ ],
+ "udp": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
+  null,
+  ""
+ ],
+ "vhostuser": [
   null,
   ""
  ],

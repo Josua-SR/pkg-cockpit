@@ -119,6 +119,10 @@ return plural;
   null,
   "Ordem de Inicialização:"
  ],
+ "Bus": [
+  null,
+  "Bus"
+ ],
  "CHANGE NETWORK STATE action failed": [
   null,
   ""
@@ -134,6 +138,10 @@ return plural;
  "Cancel": [
   null,
   "Cancelar"
+ ],
+ "Capacity": [
+  null,
+  "Capacidade"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -191,9 +199,21 @@ return plural;
   null,
   ""
  ],
+ "Count:": [
+  null,
+  "Contagem:"
+ ],
  "Create": [
   null,
   "Criar"
+ ],
+ "Create New VM": [
+  null,
+  ""
+ ],
+ "Create New Virtual Machine": [
+  null,
+  ""
  ],
  "Create VM": [
   null,
@@ -214,6 +234,10 @@ return plural;
  "Description:": [
   null,
   ""
+ ],
+ "Device": [
+  null,
+  "Dispositivo"
  ],
  "Disconnect": [
   null,
@@ -247,6 +271,14 @@ return plural;
   null,
   ""
  ],
+ "File": [
+  null,
+  "Arquivo"
+ ],
+ "Filesystem": [
+  null,
+  "Sistema de arquivos"
+ ],
  "Force Restart": [
   null,
   "Forçar Reinicialização"
@@ -254,6 +286,10 @@ return plural;
  "Force Shut Down": [
   null,
   "Forçar Desligamento"
+ ],
+ "GiB": [
+  null,
+  ""
  ],
  "Graphics Console (VNC)": [
   null,
@@ -276,6 +312,34 @@ return plural;
   "Máquina"
  ],
  "Host to Maintenance": [
+  null,
+  ""
+ ],
+ "INSTALL VM action failed": [
+  null,
+  ""
+ ],
+ "Immediately Start VM": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  ""
+ ],
+ "Installation Source": [
+  null,
+  ""
+ ],
+ "Installation Source Type": [
+  null,
+  ""
+ ],
+ "Installation Source should not be empty": [
+  null,
+  ""
+ ],
+ "Invalid filename": [
   null,
   ""
  ],
@@ -315,9 +379,17 @@ return plural;
   null,
   "Memória"
  ],
+ "Memory should be positive number": [
+  null,
+  ""
+ ],
  "Memory:": [
   null,
   "Memória:"
+ ],
+ "MiB": [
+  null,
+  "MiB"
  ],
  "Migrate To:": [
   null,
@@ -334,6 +406,14 @@ return plural;
  "Name": [
   null,
   "Nome"
+ ],
+ "Name should not be empty": [
+  null,
+  ""
+ ],
+ "Name should not consist of empty characters only": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -355,6 +435,14 @@ return plural;
   null,
   ""
  ],
+ "No disks defined for this VM": [
+  null,
+  "Nenhum disco definido para esta VM"
+ ],
+ "No matching files found": [
+  null,
+  ""
+ ],
  "No network interfaces defined for this VM": [
   null,
   ""
@@ -371,9 +459,17 @@ return plural;
   null,
   ""
  ],
+ "OS Vendor": [
+  null,
+  ""
+ ],
  "Ok": [
   null,
   "Ok"
+ ],
+ "Operating System": [
+  null,
+  "Sistema Operacional"
  ],
  "Optimized for:": [
   null,
@@ -382,6 +478,14 @@ return plural;
  "Overview": [
   null,
   "Visão geral"
+ ],
+ "Path to ISO file on host's file system": [
+  null,
+  ""
+ ],
+ "Path to file": [
+  null,
+  ""
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
@@ -415,6 +519,10 @@ return plural;
   null,
   ""
  ],
+ "Pool": [
+  null,
+  "Pool"
+ ],
  "Port": [
   null,
   "Porta"
@@ -427,9 +535,17 @@ return plural;
   null,
   ""
  ],
+ "Protocol": [
+  null,
+  "Protocolo"
+ ],
  "REBOOT action failed": [
   null,
   ""
+ ],
+ "Readonly": [
+  null,
+  "Apenasleitura"
  ],
  "Reconnect": [
   null,
@@ -446,6 +562,10 @@ return plural;
  "Reload": [
   null,
   "Recarregar"
+ ],
+ "Remote URL": [
+  null,
+  ""
  ],
  "Restart": [
   null,
@@ -519,6 +639,14 @@ return plural;
   null,
   "Fonte"
  ],
+ "Source should start with http, ftp or nfs protocol": [
+  null,
+  ""
+ ],
+ "Start the VM to see disk statistics.": [
+  null,
+  ""
+ ],
  "State": [
   null,
   "Estado"
@@ -528,6 +656,14 @@ return plural;
   ""
  ],
  "Stateless:": [
+  null,
+  ""
+ ],
+ "Storage Size": [
+  null,
+  ""
+ ],
+ "Storage Size should not be negative number": [
   null,
   ""
  ],
@@ -607,13 +743,25 @@ return plural;
   null,
   ""
  ],
+ "Too many files found": [
+  null,
+  ""
+ ],
  "Type": [
   null,
   "Tipo"
  ],
+ "URL": [
+  null,
+  "URL"
+ ],
  "Unplug": [
   null,
   ""
+ ],
+ "Upgrade to a more recent version of libvirt to view disk statistics": [
+  null,
+  "Atualize para uma versão mais recente do libvirt para exibir estatísticas de disco"
  ],
  "Usage": [
   null,
@@ -694,6 +842,10 @@ return plural;
  "Virtualport": [
   null,
   ""
+ ],
+ "Volume": [
+  null,
+  "Volume"
  ],
  "Your browser does not support iframes.": [
   null,

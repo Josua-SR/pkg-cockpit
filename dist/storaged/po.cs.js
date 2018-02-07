@@ -95,6 +95,14 @@ return plural;
   "$0 disky chybí",
   "$0 disků chybí"
  ],
+ "$0 filesystems can not be made larger.": [
+  null,
+  ""
+ ],
+ "$0 filesystems can not be made smaller.": [
+  null,
+  ""
+ ],
  "$0 hour": [
   "$0 hours",
   "$0 hodina",
@@ -300,6 +308,10 @@ return plural;
  "Change iSCSI Initiator Name": [
   null,
   "Změnit název iSCSI iniciátoru"
+ ],
+ "Checking $target": [
+  null,
+  ""
  ],
  "Checking RAID Device $target": [
   null,
@@ -553,6 +565,14 @@ return plural;
   null,
   ""
  ],
+ "Encrypted volumes can not be resized here.": [
+  null,
+  ""
+ ],
+ "Encrypted volumes need to be unlocked before they can be resized.": [
+  null,
+  ""
+ ],
  "Encryption": [
   null,
   "Šifrování"
@@ -634,6 +654,10 @@ return plural;
   ""
  ],
  "Grow": [
+  null,
+  ""
+ ],
+ "Grow Logical Volume": [
   null,
   ""
  ],
@@ -953,6 +977,10 @@ return plural;
   null,
   ""
  ],
+ "Physical volumes can not be resized here.": [
+  null,
+  ""
+ ],
  "Please confirm deletion of $0": [
   null,
   ""
@@ -1101,15 +1129,7 @@ return plural;
   null,
   ""
  ],
- "Resize": [
-  null,
-  "Změnit velikost"
- ],
- "Resize Filesystem": [
-  null,
-  ""
- ],
- "Resize Logical Volume": [
+ "Repairing $target": [
   null,
   ""
  ],
@@ -1146,6 +1166,14 @@ return plural;
   ""
  ],
  "Setting up loop device $target": [
+  null,
+  ""
+ ],
+ "Shrink": [
+  null,
+  ""
+ ],
+ "Shrink Logical Volume": [
   null,
   ""
  ],
@@ -1200,6 +1228,10 @@ return plural;
  "Stop": [
   null,
   "Zastavit"
+ ],
+ "Stop Device": [
+  null,
+  ""
  ],
  "Stop Scrubbing": [
   null,
@@ -1337,7 +1369,7 @@ return plural;
   null,
   ""
  ],
- "This logical volume cannot be made smaller.": [
+ "This volume needs to be activated before it can be resized.": [
   null,
   ""
  ],
@@ -1405,6 +1437,10 @@ return plural;
   null,
   ""
  ],
+ "Unrecognized data can not be made smaller here.": [
+  null,
+  ""
+ ],
  "Unsupported volume": [
   null,
   ""
@@ -1438,6 +1474,10 @@ return plural;
   ""
  ],
  "VDO Devices": [
+  null,
+  ""
+ ],
+ "VDO backing devices can not be made smaller": [
   null,
   ""
  ],

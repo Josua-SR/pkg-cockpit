@@ -527,6 +527,10 @@ return plural;
   null,
   ""
  ],
+ "General": [
+  null,
+  ""
+ ],
  "Git Repository": [
   null,
   ""
@@ -820,6 +824,10 @@ return plural;
   ""
  ],
  "No users are present.": [
+  null,
+  ""
+ ],
+ "No virtual machines": [
   null,
   ""
  ],
@@ -1279,6 +1287,10 @@ return plural;
   null,
   ""
  ],
+ "Session": [
+  null,
+  ""
+ ],
  "Session Affinity": [
   null,
   ""
@@ -1372,6 +1384,10 @@ return plural;
   ""
  ],
  "Sync all tags from a remote image repository": [
+  null,
+  ""
+ ],
+ "System": [
   null,
   ""
  ],
@@ -1555,6 +1571,14 @@ return plural;
   null,
   ""
  ],
+ "VM DELETE failed.": [
+  null,
+  ""
+ ],
+ "Virtual Machines": [
+  null,
+  ""
+ ],
  "Volume": [
   null,
   ""
@@ -1603,7 +1627,75 @@ return plural;
   null,
   ""
  ],
+ "bridge": [
+  null,
+  ""
+ ],
+ "cdrom": [
+  null,
+  ""
+ ],
+ "crashed": [
+  null,
+  ""
+ ],
+ "custom": [
+  null,
+  ""
+ ],
+ "direct": [
+  null,
+  ""
+ ],
+ "disabled": [
+  null,
+  ""
+ ],
+ "disk": [
+  null,
+  ""
+ ],
+ "down": [
+  null,
+  ""
+ ],
+ "dying": [
+  null,
+  ""
+ ],
  "eg: my-image-stream": [
+  null,
+  ""
+ ],
+ "enabled": [
+  null,
+  ""
+ ],
+ "ethernet": [
+  null,
+  ""
+ ],
+ "host": [
+  null,
+  ""
+ ],
+ "hostdev": [
+  null,
+  ""
+ ],
+ "idle": [
+  null,
+  ""
+ ],
+ "mcast": [
+  null,
+  ""
+ ],
+ "n/a": [
+  null,
+  ""
+ ],
+ "network": [
   null,
   ""
  ],
@@ -1615,7 +1707,55 @@ return plural;
   null,
   ""
  ],
+ "paused": [
+  null,
+  ""
+ ],
  "pending volume claims": [
+  null,
+  ""
+ ],
+ "running": [
+  null,
+  ""
+ ],
+ "server": [
+  null,
+  ""
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
+  null,
+  ""
+ ],
+ "shut off": [
+  null,
+  ""
+ ],
+ "shutdown": [
+  null,
+  ""
+ ],
+ "suspended (PM)": [
+  null,
+  ""
+ ],
+ "udp": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
+  null,
+  ""
+ ],
+ "vhostuser": [
   null,
   ""
  ],

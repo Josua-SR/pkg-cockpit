@@ -186,10 +186,6 @@ Files: node_modules/redux/*
 Copyright: Copyright (c) 2015-present Dan Abramov
 License: MIT
 
-Files: node_modules/redux-saga/*
-Copyright: Copyright (c) 2015 Yassine Elouafi
-License: MIT
-
 Files: node_modules/registry-image-widgets/*
 Copyright: Copyright (C) 1991, 1999 Free Software Foundation, Inc.
  Copyright (C) 2016 Red Hat, Inc.

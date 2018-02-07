@@ -531,6 +531,10 @@ return plural;
   null,
   "Сталий диск GCE"
  ],
+ "General": [
+  null,
+  "Загальний"
+ ],
  "Git Repository": [
   null,
   "Сховище Git"
@@ -826,6 +830,10 @@ return plural;
  "No users are present.": [
   null,
   "Немає користувачів."
+ ],
+ "No virtual machines": [
+  null,
+  "Немає віртуальних машин"
  ],
  "No volumes are present.": [
   null,
@@ -1283,6 +1291,10 @@ return plural;
   null,
   "Служби збирають у групи кокони і надають загальну назву DNS та додаткову, збалансовану за навантаженням IP-адресу для доступу до них."
  ],
+ "Session": [
+  null,
+  "Сеанс"
+ ],
  "Session Affinity": [
   null,
   "Спорідненість сеансу"
@@ -1378,6 +1390,10 @@ return plural;
  "Sync all tags from a remote image repository": [
   null,
   "Синхронізувати усі мітки з віддаленого сховища образів"
+ ],
+ "System": [
+  null,
+  "Система"
  ],
  "TLS Termination": [
   null,
@@ -1559,6 +1575,14 @@ return plural;
   null,
   "Користувачі"
  ],
+ "VM DELETE failed.": [
+  null,
+  ""
+ ],
+ "Virtual Machines": [
+  null,
+  "Віртуальні машини"
+ ],
  "Volume": [
   null,
   "Том"
@@ -1607,9 +1631,77 @@ return plural;
   null,
   "Ваші реєстраційні дані не дають вам доступу до реєстру docker з командного рядка."
  ],
+ "bridge": [
+  null,
+  "місток"
+ ],
+ "cdrom": [
+  null,
+  "cdrom"
+ ],
+ "crashed": [
+  null,
+  "аварійне завершення"
+ ],
+ "custom": [
+  null,
+  "нетиповий"
+ ],
+ "direct": [
+  null,
+  "безпосередньо"
+ ],
+ "disabled": [
+  null,
+  "вимкнено"
+ ],
+ "disk": [
+  null,
+  "диск"
+ ],
+ "down": [
+  null,
+  "нижче"
+ ],
+ "dying": [
+  null,
+  "вмирає"
+ ],
  "eg: my-image-stream": [
   null,
   "приклад: my-image-stream"
+ ],
+ "enabled": [
+  null,
+  "увімкнено"
+ ],
+ "ethernet": [
+  null,
+  "ethernet"
+ ],
+ "host": [
+  null,
+  "вузол"
+ ],
+ "hostdev": [
+  null,
+  "пристрій осн. системи"
+ ],
+ "idle": [
+  null,
+  "бездіяльний"
+ ],
+ "mcast": [
+  null,
+  "mcast"
+ ],
+ "n/a": [
+  null,
+  "н/д"
+ ],
+ "network": [
+  null,
+  "мережа"
  ],
  "no": [
   null,
@@ -1619,9 +1711,57 @@ return plural;
   null,
   "немає"
  ],
+ "paused": [
+  null,
+  "призупинено"
+ ],
  "pending volume claims": [
   null,
   "запити тому у черзі"
+ ],
+ "running": [
+  null,
+  "працює"
+ ],
+ "server": [
+  null,
+  "сервер"
+ ],
+ "show less": [
+  null,
+  "показати менше"
+ ],
+ "show more": [
+  null,
+  "показати більше"
+ ],
+ "shut off": [
+  null,
+  "вимкнути"
+ ],
+ "shutdown": [
+  null,
+  "завершити роботу"
+ ],
+ "suspended (PM)": [
+  null,
+  "призупинено (PM)"
+ ],
+ "udp": [
+  null,
+  "udp"
+ ],
+ "up": [
+  null,
+  "вище"
+ ],
+ "user": [
+  null,
+  "користувач"
+ ],
+ "vhostuser": [
+  null,
+  "vhostuser"
  ],
  "yes": [
   null,

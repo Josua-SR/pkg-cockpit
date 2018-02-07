@@ -279,6 +279,10 @@ return plural;
   null,
   "9 日"
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
  "After": [
   null,
   "後"
@@ -286,6 +290,10 @@ return plural;
  "After system boot": [
   null,
   "システムブート後"
+ ],
+ "All In One": [
+  null,
+  ""
  ],
  "Asset Tag": [
   null,
@@ -302,6 +310,30 @@ return plural;
  "Automatically using specific NTP servers": [
   null,
   "特定の NTP サーバーを自動的に使用"
+ ],
+ "BIOS": [
+  null,
+  ""
+ ],
+ "BIOS date": [
+  null,
+  ""
+ ],
+ "BIOS version": [
+  null,
+  ""
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -339,11 +371,19 @@ return plural;
   null,
   "コマンド"
  ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
  "Condition $0=$1 was not met": [
   null,
   ""
  ],
  "Condition failed": [
+  null,
+  ""
+ ],
+ "Convertible": [
   null,
   ""
  ],
@@ -367,6 +407,14 @@ return plural;
   null,
   "説明"
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Disable": [
   null,
   "無効化"
@@ -379,6 +427,10 @@ return plural;
   null,
   "ディスク I/O"
  ],
+ "Docking Station": [
+  null,
+  ""
+ ],
  "Domain": [
   null,
   "Domain"
@@ -386,6 +438,10 @@ return plural;
  "Don't Repeat": [
   null,
   "繰り返さないでください"
+ ],
+ "Embedded PC": [
+  null,
+  ""
  ],
  "Enable": [
   null,
@@ -411,6 +467,10 @@ return plural;
   null,
   "すべて"
  ],
+ "Expansion Chassis": [
+  null,
+  ""
+ ],
  "Free": [
   null,
   "空き"
@@ -431,9 +491,17 @@ return plural;
   null,
   "今すぐ移動"
  ],
+ "Hand Held": [
+  null,
+  ""
+ ],
  "Hardware": [
   null,
   "ハードウェア"
+ ],
+ "Hardware Information": [
+  null,
+  ""
  ],
  "Host Name": [
   null,
@@ -487,6 +555,10 @@ return plural;
   null,
   "無効なタイムゾーン"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
  "Journal": [
   null,
   "ジャーナル"
@@ -502,6 +574,10 @@ return plural;
  "Kernel": [
   null,
   "カーネル"
+ ],
+ "Laptop": [
+  null,
+  ""
  ],
  "Last 24 hours": [
   null,
@@ -531,6 +607,14 @@ return plural;
   null,
   "ログ"
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "Machine ID": [
   null,
   "マシン ID"
@@ -538,6 +622,10 @@ return plural;
  "Machine SSH Key Fingerprints": [
   null,
   "マシンSSH 鍵フィンガープリント"
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
  ],
  "Manually": [
   null,
@@ -559,6 +647,14 @@ return plural;
   null,
   "ログインしているユーザーへのメッセージ"
  ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
  "Minute needs to be a number between 0-59": [
   null,
   "分は 0〜59 の数字である必要があります"
@@ -571,9 +667,17 @@ return plural;
   null,
   "月曜日"
  ],
+ "Multi-system Chassis": [
+  null,
+  ""
+ ],
  "NTP Server": [
   null,
   "NTP サーバー"
+ ],
+ "Name": [
+  null,
+  "名前"
  ],
  "Need at least one NTP server": [
   null,
@@ -611,6 +715,10 @@ return plural;
   null,
   "注記"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "オフ"
@@ -631,6 +739,10 @@ return plural;
   null,
   "オペレーティングシステム"
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Paths": [
   null,
   "パス"
@@ -638,6 +750,18 @@ return plural;
  "Performance Profile": [
   null,
   "パフォーマンスプロファイル"
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
+ "Portable": [
+  null,
+  ""
  ],
  "Power Options": [
   null,
@@ -672,6 +796,14 @@ return plural;
   ""
  ],
  "Problems, Errors, Warnings, Notices": [
+  null,
+  ""
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
   null,
   ""
  ],
@@ -755,6 +887,10 @@ return plural;
   null,
   "保存"
  ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Seconds": [
   null,
   "秒"
@@ -803,6 +939,10 @@ return plural;
   null,
   "ソケット"
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
  "Specific Time": [
   null,
   "特定の時間"
@@ -819,6 +959,10 @@ return plural;
   null,
   "静的"
  ],
+ "Stick PC": [
+  null,
+  ""
+ ],
  "Stop": [
   null,
   "停止"
@@ -826,6 +970,14 @@ return plural;
  "Store Performance Data": [
   null,
   "パフォーマンスデータの保存"
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
  ],
  "Sunday": [
   null,
@@ -847,6 +999,10 @@ return plural;
   null,
   "システム"
  ],
+ "System Information": [
+  null,
+  ""
+ ],
  "System Services": [
   null,
   "システムサービス"
@@ -854,6 +1010,10 @@ return plural;
  "System Time": [
   null,
   "システム時間"
+ ],
+ "Tablet": [
+  null,
+  ""
  ],
  "Targets": [
   null,
@@ -903,6 +1063,10 @@ return plural;
   null,
   "タイマー"
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   "{{Server}} との同期を試行中です"
@@ -911,9 +1075,21 @@ return plural;
   null,
   "火曜日"
  ],
+ "Type": [
+  null,
+  "タイプ"
+ ],
+ "Unknown": [
+  null,
+  "不明"
+ ],
  "Unmask": [
   null,
   "マスク解除"
+ ],
+ "Usage of $0 CPU core": [
+  "Usage of $0 CPU cores",
+  ""
  ],
  "Used": [
   null,
@@ -950,6 +1126,10 @@ return plural;
  "failed to list ssh host keys: $0": [
   null,
   "ssh ホスト鍵の一覧表示に失敗しました: $0"
+ ],
+ "of $0 CPU core": [
+  "of $0 CPU cores",
+  ""
  ],
  "unknown": [
   null,

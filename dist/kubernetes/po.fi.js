@@ -251,7 +251,7 @@ return plural;
  ],
  "Change image stream": [
   null,
-  ""
+  "Vaihda image stream"
  ],
  "Change project": [
   null,
@@ -529,6 +529,10 @@ return plural;
   null,
   "GCE Persistent Disk"
  ],
+ "General": [
+  null,
+  "Yleiset"
+ ],
  "Git Repository": [
   null,
   "Git-Asennuslähde"
@@ -663,15 +667,15 @@ return plural;
  ],
  "Log into OpenShift command line tools:": [
   null,
-  ""
+  "Kirjaudu OpenShiftin komentorivityökaluihin:"
  ],
  "Log into the registry:": [
   null,
-  ""
+  "Kirjaudu rekisteriin:"
  ],
  "Logical Unit Number": [
   null,
-  ""
+  "Looginen Yksikön Numero"
  ],
  "Login commands": [
   null,
@@ -822,6 +826,10 @@ return plural;
   ""
  ],
  "No users are present.": [
+  null,
+  ""
+ ],
+ "No virtual machines": [
   null,
   ""
  ],
@@ -1281,6 +1289,10 @@ return plural;
   null,
   ""
  ],
+ "Session": [
+  null,
+  "Istunto"
+ ],
  "Session Affinity": [
   null,
   ""
@@ -1376,6 +1388,10 @@ return plural;
  "Sync all tags from a remote image repository": [
   null,
   ""
+ ],
+ "System": [
+  null,
+  "Järjestelmä"
  ],
  "TLS Termination": [
   null,
@@ -1557,6 +1573,14 @@ return plural;
   null,
   "Käyttäjät"
  ],
+ "VM DELETE failed.": [
+  null,
+  ""
+ ],
+ "Virtual Machines": [
+  null,
+  "Virtuaalikoneet"
+ ],
  "Volume": [
   null,
   "Taltio"
@@ -1605,9 +1629,77 @@ return plural;
   null,
   ""
  ],
+ "bridge": [
+  null,
+  ""
+ ],
+ "cdrom": [
+  null,
+  ""
+ ],
+ "crashed": [
+  null,
+  "kaatui"
+ ],
+ "custom": [
+  null,
+  ""
+ ],
+ "direct": [
+  null,
+  ""
+ ],
+ "disabled": [
+  null,
+  "pois käytöstä"
+ ],
+ "disk": [
+  null,
+  ""
+ ],
+ "down": [
+  null,
+  ""
+ ],
+ "dying": [
+  null,
+  "kuolemassa"
+ ],
  "eg: my-image-stream": [
   null,
   "esim.: my-image-stream"
+ ],
+ "enabled": [
+  null,
+  "käytössä"
+ ],
+ "ethernet": [
+  null,
+  "ethernet"
+ ],
+ "host": [
+  null,
+  ""
+ ],
+ "hostdev": [
+  null,
+  ""
+ ],
+ "idle": [
+  null,
+  "jouten"
+ ],
+ "mcast": [
+  null,
+  ""
+ ],
+ "n/a": [
+  null,
+  ""
+ ],
+ "network": [
+  null,
+  "verkko"
  ],
  "no": [
   null,
@@ -1617,7 +1709,55 @@ return plural;
   null,
   "Ei mitään"
  ],
+ "paused": [
+  null,
+  "pysäytetty"
+ ],
  "pending volume claims": [
+  null,
+  ""
+ ],
+ "running": [
+  null,
+  "suoritetaan"
+ ],
+ "server": [
+  null,
+  "palvelin"
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
+  null,
+  ""
+ ],
+ "shut off": [
+  null,
+  "sammutettu"
+ ],
+ "shutdown": [
+  null,
+  "sammuta"
+ ],
+ "suspended (PM)": [
+  null,
+  "pysäytetty (PM)"
+ ],
+ "udp": [
+  null,
+  "udp"
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
+  null,
+  "käyttäjä"
+ ],
+ "vhostuser": [
   null,
   ""
  ],

@@ -69,7 +69,7 @@ return plural;
  },
  "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  ""
+  "$0 Vain paikalliset käyttäjät voivat kirjautua tälle koneelle. Tämä voi myös vaikuttaa muihin palveluihin, sillä DNS-määrityksen asetukset ja luotettujen CA:den lista voivat muuttua. "
  ],
  "Administrator Password": [
   null,
@@ -77,11 +77,11 @@ return plural;
  ],
  "Are you sure you want to leave the '$0' domain?": [
   null,
-  ""
+  "Oletko varma, että haluat poistua '$0' -domainista?"
  ],
  "Are you sure you want to leave this domain?": [
   null,
-  ""
+  "Oletko varma, että haluat poistua tästä domainista?"
  ],
  "Authentication": [
   null,

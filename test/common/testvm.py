@@ -93,6 +93,7 @@ class Timeout:
     def __exit__(self, type, value, traceback):
         if self.seconds:
             signal.alarm(0)
+            signal.signal(signal.SIGALRM, signal.SIG_DFL)
 
 class Failure(Exception):
     def __init__(self, msg):
@@ -345,6 +346,7 @@ class Machine:
             self.ssh_process.stdin.close()
             with Timeout(seconds=90, error_message="Timeout while waiting for ssh master to shut down"):
                 self.ssh_process.wait()
+            self.ssh_process.stdout.close()
             self.ssh_process = None
 
     def _check_ssh_master(self):
@@ -458,17 +460,16 @@ class Machine:
                             rset.remove(stdout_fd)
                             proc.stdout.close()
                         else:
-                            data = data.decode('utf-8', 'replace')
                             if self.verbose:
-                                sys.stdout.write(data)
-                            output += data
+                                sys.stdout.write(data.decode('utf-8', 'ignore'))
+                            output += data.decode('utf-8', 'replace')
                     elif fd == stderr_fd:
                         data = os.read(fd, 1024)
                         if not data:
                             rset.remove(stderr_fd)
                             proc.stderr.close()
                         elif not quiet or self.verbose:
-                            sys.stderr.write(data.decode('utf-8', 'replace'))
+                            sys.stderr.write(data.decode('utf-8', 'ignore'))
                 for fd in ret[1]:
                     if fd == stdin_fd:
                         if input:

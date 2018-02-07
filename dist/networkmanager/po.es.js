@@ -647,11 +647,11 @@ return plural;
  ],
  "Remove $0": [
   null,
-  ""
+  "Quitar $0"
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Quitar <b>$0</b> romperá la conexión con el servidor y hará la administración de UI no disponible."
  ],
  "Restoring connection": [
   null,

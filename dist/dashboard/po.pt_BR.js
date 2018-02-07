@@ -133,6 +133,14 @@ return plural;
   null,
   "Endereço"
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
+ "All In One": [
+  null,
+  ""
+ ],
  "Authentication": [
   null,
   "Autenticação"
@@ -148,6 +156,18 @@ return plural;
  "Avatar": [
   null,
   "Avatar"
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -201,6 +221,10 @@ return plural;
   null,
   "Cor"
  ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
  "Connect": [
   null,
   "Conectar"
@@ -208,6 +232,10 @@ return plural;
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
   "Conectando simultaneamente a mais de {{ limit }} as máquinas não são suportadas."
+ ],
+ "Convertible": [
+  null,
+  ""
  ],
  "Could not contact {{host}}": [
   null,
@@ -217,13 +245,29 @@ return plural;
   null,
   "Painel"
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Disk I/O": [
   null,
   "Entrada e Saida de disco"
  ],
+ "Docking Station": [
+  null,
+  ""
+ ],
  "Edit Server": [
   null,
   "Editar Servidor"
+ ],
+ "Embedded PC": [
+  null,
+  ""
  ],
  "Enter IP address or host name": [
   null,
@@ -236,6 +280,10 @@ return plural;
  "Error loading users: {{perm_failed}}": [
   null,
   "Erro ao carregar usuários: {{perm_failed}}"
+ ],
+ "Expansion Chassis": [
+  null,
+  ""
  ],
  "Failed to add machine: $0": [
   null,
@@ -257,6 +305,10 @@ return plural;
   null,
   "Ir para agora"
  ],
+ "Hand Held": [
+  null,
+  ""
+ ],
  "Host Name": [
   null,
   "Nome do host"
@@ -273,6 +325,10 @@ return plural;
   null,
   "Permissão de arquivos inválida"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
  "Is sshd running on a different port?": [
   null,
   "O sshd está sendo executado em uma porta diferente?"
@@ -284,6 +340,10 @@ return plural;
  "Kerberos Ticket": [
   null,
   "Tíquete Kerberos"
+ ],
+ "Laptop": [
+  null,
+  ""
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
@@ -309,9 +369,33 @@ return plural;
   null,
   "Conexão Perdida. Tentando reconectar."
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
+ ],
  "Memory": [
   null,
   "Memória"
+ ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
+ "Multi-system Chassis": [
+  null,
+  ""
  ],
  "Network": [
   null,
@@ -329,6 +413,10 @@ return plural;
   null,
   "Chave privada não válida"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "Desligado"
@@ -341,6 +429,10 @@ return plural;
   null,
   "Ligado"
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Password": [
   null,
   "Senha"
@@ -349,9 +441,21 @@ return plural;
   null,
   "Senha não aceita"
  ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
  "Port": [
   null,
   "Porta"
+ ],
+ "Portable": [
+  null,
+  ""
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -365,6 +469,18 @@ return plural;
   null,
   "Chave Pública"
  ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
+  null,
+  ""
+ ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
   "Selecione os usuários que você gostaria de ser sincronizado com {{#strong}}{{host}}{{/strong}}"
@@ -377,6 +493,22 @@ return plural;
   null,
   "Definir"
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
+ "Stick PC": [
+  null,
+  ""
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "Synchronize": [
   null,
   "Sincronizar"
@@ -384,6 +516,10 @@ return plural;
  "Synchronize users": [
   null,
   "Sincronizar usuários"
+ ],
+ "Tablet": [
+  null,
+  ""
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -417,9 +553,17 @@ return plural;
   null,
   "Para tentar uma porta diferente, você precisará atualizar o cockpit-ws para uma versão mais recente."
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Type a password": [
   null,
   "Digite uma senha"
+ ],
+ "Unknown": [
+  null,
+  "Desconhecido"
  ],
  "Unknown Host Key": [
   null,

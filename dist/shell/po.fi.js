@@ -81,7 +81,7 @@ return plural;
  ],
  "Active Pages": [
   null,
-  ""
+  "Aktiiviset Sivut"
  ],
  "Add": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Close Selected Pages": [
   null,
-  ""
+  "Sulje Valitut Sivut"
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
@@ -277,7 +277,7 @@ return plural;
  ],
  "Licensed under:": [
   null,
-  ""
+  "Lisensioitu:"
  ],
  "Lock to prevent privileged tasks": [
   null,
@@ -301,7 +301,7 @@ return plural;
  ],
  "Log in to {{host}}": [
   null,
-  ""
+  "Kirjaudu kohteeseen {{host}}"
  ],
  "Login Password": [
   null,

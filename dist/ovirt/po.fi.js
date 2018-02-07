@@ -69,7 +69,7 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  ""
+  "$0 on saatavilla useimmille käyttöjärjestelmille. Asentaaksesi sen, hae sitä GNOME Softwaresta, tai aja seuraava komento:"
  ],
  "Action": [
   null,
@@ -89,11 +89,11 @@ return plural;
  ],
  "All running virtual machines will be turned off.": [
   null,
-  ""
+  "Kaikki käynnissä olevat virtuaalikoneet tullaan sammuttamaan."
  ],
  "Automatically selected host": [
   null,
-  ""
+  "Automaattisesti valittu kone"
  ],
  "Autostart:": [
   null,
@@ -119,6 +119,10 @@ return plural;
   null,
   ""
  ],
+ "Bus": [
+  null,
+  ""
+ ],
  "CHANGE NETWORK STATE action failed": [
   null,
   ""
@@ -135,9 +139,13 @@ return plural;
   null,
   "Peru"
  ],
+ "Capacity": [
+  null,
+  "Koko"
+ ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  ""
+  "Painamalla \"Launch Remote Viewer\" lataat .vv-tiedoston ja avaat $0."
  ],
  "Cluster": [
   null,
@@ -145,23 +153,23 @@ return plural;
  ],
  "Cluster Templates": [
   null,
-  ""
+  "Klusteri-mallit"
  ],
  "Cluster Virtual Machines": [
   null,
-  ""
+  "Klusterin Virtuaalikoneet"
  ],
  "Confirm deletion of $0": [
   null,
-  ""
+  "Vahvista $0 poistaminen"
  ],
  "Confirm migration": [
   null,
-  ""
+  "Vahvista migraatio"
  ],
  "Confirm reload:": [
   null,
-  ""
+  "Vahvista uudelleenlataus:"
  ],
  "Confirm save:": [
   null,
@@ -169,15 +177,15 @@ return plural;
  ],
  "Connect to oVirt Engine": [
   null,
-  ""
+  "Yhdistä oVirt Engine"
  ],
  "Connect with any $0 viewer application.": [
   null,
-  ""
+  "Yhdistä mihin tahansa $0 -katseluohjelmaan."
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  ""
+  "Yhdistä mihin tahansa SPICE tai VNC -katseluohjelmaan."
  ],
  "Connection": [
   null,
@@ -191,9 +199,21 @@ return plural;
   null,
   ""
  ],
+ "Count:": [
+  null,
+  ""
+ ],
  "Create": [
   null,
   "Luo"
+ ],
+ "Create New VM": [
+  null,
+  ""
+ ],
+ "Create New Virtual Machine": [
+  null,
+  ""
  ],
  "Create VM": [
   null,
@@ -215,9 +235,13 @@ return plural;
   null,
   "Kuvaus:"
  ],
+ "Device": [
+  null,
+  "Laite"
+ ],
  "Disconnect": [
   null,
-  ""
+  "Katkaise yhteys"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
@@ -229,7 +253,7 @@ return plural;
  ],
  "Download the MSI from $0": [
   null,
-  ""
+  "Lataa MSI kohteesta $0"
  ],
  "Edit the vdsm.conf": [
   null,
@@ -237,15 +261,23 @@ return plural;
  ],
  "Emulated Machine:": [
   null,
-  ""
+  "Emuloitu Kone:"
  ],
  "Enter New VM name": [
   null,
-  ""
+  "Anna Uusi VM nimi"
  ],
  "FQDN": [
   null,
   "FQDN"
+ ],
+ "File": [
+  null,
+  "Tiedosto"
+ ],
+ "Filesystem": [
+  null,
+  "Tiedostojärjestelmä"
  ],
  "Force Restart": [
   null,
@@ -254,6 +286,10 @@ return plural;
  "Force Shut Down": [
   null,
   "Pakota Sammutus"
+ ],
+ "GiB": [
+  null,
+  ""
  ],
  "Graphics Console (VNC)": [
   null,
@@ -279,13 +315,41 @@ return plural;
   null,
   ""
  ],
+ "INSTALL VM action failed": [
+  null,
+  ""
+ ],
+ "Immediately Start VM": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  "Asenna"
+ ],
+ "Installation Source": [
+  null,
+  ""
+ ],
+ "Installation Source Type": [
+  null,
+  ""
+ ],
+ "Installation Source should not be empty": [
+  null,
+  ""
+ ],
+ "Invalid filename": [
+  null,
+  ""
+ ],
  "Launch Remote Viewer": [
   null,
   ""
  ],
  "Loading ...": [
   null,
-  ""
+  "Ladataan ..."
  ],
  "Loading data ...": [
   null,
@@ -309,15 +373,23 @@ return plural;
  ],
  "Manual Connection": [
   null,
-  ""
+  "Manuaalinen Yhteys"
  ],
  "Memory": [
   null,
   "Muisti"
  ],
+ "Memory should be positive number": [
+  null,
+  ""
+ ],
  "Memory:": [
   null,
   "Muisti:"
+ ],
+ "MiB": [
+  null,
+  ""
  ],
  "Migrate To:": [
   null,
@@ -334,6 +406,14 @@ return plural;
  "Name": [
   null,
   "Nimi"
+ ],
+ "Name should not be empty": [
+  null,
+  ""
+ ],
+ "Name should not consist of empty characters only": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -355,6 +435,14 @@ return plural;
   null,
   ""
  ],
+ "No disks defined for this VM": [
+  null,
+  ""
+ ],
+ "No matching files found": [
+  null,
+  ""
+ ],
  "No network interfaces defined for this VM": [
   null,
   ""
@@ -371,15 +459,31 @@ return plural;
   null,
   "Käyttöjärjestelmän tyyppi:"
  ],
+ "OS Vendor": [
+  null,
+  ""
+ ],
  "Ok": [
   null,
   "OK"
+ ],
+ "Operating System": [
+  null,
+  ""
  ],
  "Optimized for:": [
   null,
   ""
  ],
  "Overview": [
+  null,
+  ""
+ ],
+ "Path to ISO file on host's file system": [
+  null,
+  ""
+ ],
+ "Path to file": [
   null,
   ""
  ],
@@ -415,6 +519,10 @@ return plural;
   null,
   ""
  ],
+ "Pool": [
+  null,
+  ""
+ ],
  "Port": [
   null,
   "Portti"
@@ -427,7 +535,15 @@ return plural;
   null,
   ""
  ],
+ "Protocol": [
+  null,
+  ""
+ ],
  "REBOOT action failed": [
+  null,
+  ""
+ ],
+ "Readonly": [
   null,
   ""
  ],
@@ -444,6 +560,10 @@ return plural;
   ""
  ],
  "Reload": [
+  null,
+  ""
+ ],
+ "Remote URL": [
   null,
   ""
  ],
@@ -519,6 +639,14 @@ return plural;
   null,
   "Lähde"
  ],
+ "Source should start with http, ftp or nfs protocol": [
+  null,
+  ""
+ ],
+ "Start the VM to see disk statistics.": [
+  null,
+  ""
+ ],
  "State": [
   null,
   "Tila"
@@ -530,6 +658,14 @@ return plural;
  "Stateless:": [
   null,
   "Tilaton:"
+ ],
+ "Storage Size": [
+  null,
+  ""
+ ],
+ "Storage Size should not be negative number": [
+  null,
+  ""
  ],
  "Suspend": [
   null,
@@ -607,11 +743,23 @@ return plural;
   null,
   ""
  ],
+ "Too many files found": [
+  null,
+  "Löytyi liian monta tiedostoa"
+ ],
  "Type": [
   null,
   "Tyyppi"
  ],
+ "URL": [
+  null,
+  "URL"
+ ],
  "Unplug": [
+  null,
+  ""
+ ],
+ "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   ""
  ],
@@ -694,6 +842,10 @@ return plural;
  "Virtualport": [
   null,
   ""
+ ],
+ "Volume": [
+  null,
+  "Taltio"
  ],
  "Your browser does not support iframes.": [
   null,

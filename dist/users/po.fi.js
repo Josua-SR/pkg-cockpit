@@ -169,11 +169,11 @@ return plural;
  ],
  "Force Change": [
   null,
-  ""
+  "Pakota Muutos"
  ],
  "Force password change": [
   null,
-  ""
+  "Pakota salasanan vaihdos"
  ],
  "Full Name": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Lock account on $0": [
   null,
-  ""
+  "Lukitse tili $0"
  ],
  "Logged In": [
   null,

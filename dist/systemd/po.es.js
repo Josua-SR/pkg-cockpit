@@ -285,6 +285,10 @@ return plural;
   null,
   "9.º"
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
  "After": [
   null,
   "Después"
@@ -292,6 +296,10 @@ return plural;
  "After system boot": [
   null,
   "Después de que el sistema arranque"
+ ],
+ "All In One": [
+  null,
+  ""
  ],
  "Asset Tag": [
   null,
@@ -308,6 +316,30 @@ return plural;
  "Automatically using specific NTP servers": [
   null,
   "Usando automáticamente servidores NTP específicos"
+ ],
+ "BIOS": [
+  null,
+  ""
+ ],
+ "BIOS date": [
+  null,
+  ""
+ ],
+ "BIOS version": [
+  null,
+  ""
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -345,6 +377,10 @@ return plural;
   null,
   "Orden"
  ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
  "Condition $0=$1 was not met": [
   null,
   "La condición $0=$1 no se cumple"
@@ -352,6 +388,10 @@ return plural;
  "Condition failed": [
   null,
   "Condición fallida"
+ ],
+ "Convertible": [
+  null,
+  ""
  ],
  "Create Timer": [
   null,
@@ -373,6 +413,14 @@ return plural;
   null,
   "Descripción "
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Disable": [
   null,
   "Desabilitar"
@@ -385,6 +433,10 @@ return plural;
   null,
   "Disco I/O"
  ],
+ "Docking Station": [
+  null,
+  ""
+ ],
  "Domain": [
   null,
   "Dominio"
@@ -392,6 +444,10 @@ return plural;
  "Don't Repeat": [
   null,
   "No repetir"
+ ],
+ "Embedded PC": [
+  null,
+  ""
  ],
  "Enable": [
   null,
@@ -417,6 +473,10 @@ return plural;
   null,
   "Todo"
  ],
+ "Expansion Chassis": [
+  null,
+  ""
+ ],
  "Free": [
   null,
   "Libre"
@@ -437,9 +497,17 @@ return plural;
   null,
   "Ir a ahora"
  ],
+ "Hand Held": [
+  null,
+  ""
+ ],
  "Hardware": [
   null,
   "Hardware"
+ ],
+ "Hardware Information": [
+  null,
+  ""
  ],
  "Host Name": [
   null,
@@ -493,6 +561,10 @@ return plural;
   null,
   "El huso horario no es válido"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
  "Journal": [
   null,
   "Bitacora"
@@ -508,6 +580,10 @@ return plural;
  "Kernel": [
   null,
   "Kernel"
+ ],
+ "Laptop": [
+  null,
+  ""
  ],
  "Last 24 hours": [
   null,
@@ -537,6 +613,14 @@ return plural;
   null,
   "Registros"
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "Machine ID": [
   null,
   "Id. de máquina"
@@ -544,6 +628,10 @@ return plural;
  "Machine SSH Key Fingerprints": [
   null,
   "Huellas de clave SSH de la máquina"
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
  ],
  "Manually": [
   null,
@@ -565,6 +653,14 @@ return plural;
   null,
   "Mensaje para usuarios activos "
  ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
  "Minute needs to be a number between 0-59": [
   null,
   "El minuto debe ser un número comprendido entre 0 y 59"
@@ -577,9 +673,17 @@ return plural;
   null,
   "Lunes"
  ],
+ "Multi-system Chassis": [
+  null,
+  ""
+ ],
  "NTP Server": [
   null,
   "Servidor NTP"
+ ],
+ "Name": [
+  null,
+  "Nombre"
  ],
  "Need at least one NTP server": [
   null,
@@ -617,6 +721,10 @@ return plural;
   null,
   "Nota"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "Apagado"
@@ -637,6 +745,10 @@ return plural;
   null,
   "Sistema Operativo"
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Paths": [
   null,
   "Trayectos"
@@ -644,6 +756,18 @@ return plural;
  "Performance Profile": [
   null,
   "Perfil de rendimiento"
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
+ "Portable": [
+  null,
+  ""
  ],
  "Power Options": [
   null,
@@ -659,25 +783,33 @@ return plural;
  ],
  "Pretty Host Name": [
   null,
-  ""
+  "Bonito Nombre de Host"
  ],
  "Problem details": [
   null,
-  ""
+  "Detalles del problema"
  ],
  "Problem info": [
   null,
-  ""
+  "Información de problema"
  ],
  "Problems, Errors": [
   null,
-  ""
+  "Problemas, Errores"
  ],
  "Problems, Errors, Warnings": [
   null,
-  ""
+  "Problemas, Errores, Advertencias"
  ],
  "Problems, Errors, Warnings, Notices": [
+  null,
+  "Problemas, Errores, Advertencias, Avisos"
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
   null,
   ""
  ],
@@ -727,19 +859,19 @@ return plural;
  ],
  "Report": [
   null,
-  ""
+  "Informe"
  ],
  "Reported": [
   null,
-  ""
+  "Informado"
  ],
  "Reporter 'reporter-ureport' not found.": [
   null,
-  ""
+  "Informador 'reporter-ureport' no encontrado."
  ],
  "Reporting was unsucessful. Try running `reporter-ureport -d ": [
   null,
-  ""
+  "Informando no tuvo éxito. Intente ejecutar `reporter-ureport -d "
  ],
  "Reset": [
   null,
@@ -760,6 +892,10 @@ return plural;
  "Save": [
   null,
   "Guardar"
+ ],
+ "Sealed-case PC": [
+  null,
+  ""
  ],
  "Seconds": [
   null,
@@ -809,6 +945,10 @@ return plural;
   null,
   "Sockets"
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
  "Specific Time": [
   null,
   ""
@@ -825,11 +965,23 @@ return plural;
   null,
   "Estático"
  ],
+ "Stick PC": [
+  null,
+  ""
+ ],
  "Stop": [
   null,
   "Detener"
  ],
  "Store Performance Data": [
+  null,
+  ""
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
   null,
   ""
  ],
@@ -853,11 +1005,19 @@ return plural;
   null,
   ""
  ],
+ "System Information": [
+  null,
+  ""
+ ],
  "System Services": [
   null,
   "Servicios de Sistema"
  ],
  "System Time": [
+  null,
+  ""
+ ],
+ "Tablet": [
   null,
   ""
  ],
@@ -909,6 +1069,10 @@ return plural;
   null,
   "Temporizadores"
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   ""
@@ -917,9 +1081,22 @@ return plural;
   null,
   ""
  ],
+ "Type": [
+  null,
+  "Tipo"
+ ],
+ "Unknown": [
+  null,
+  "Desconocido"
+ ],
  "Unmask": [
   null,
   "Desenmascarar"
+ ],
+ "Usage of $0 CPU core": [
+  "Usage of $0 CPU cores",
+  "",
+  ""
  ],
  "Used": [
   null,
@@ -956,6 +1133,11 @@ return plural;
  "failed to list ssh host keys: $0": [
   null,
   "incapaz de mostrar llaves de host ssh: $0"
+ ],
+ "of $0 CPU core": [
+  "of $0 CPU cores",
+  "",
+  ""
  ],
  "unknown": [
   null,

@@ -133,6 +133,14 @@ return plural;
   null,
   "Adresse"
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
+ "All In One": [
+  null,
+  ""
+ ],
  "Authentication": [
   null,
   "Authentifizierung"
@@ -148,6 +156,18 @@ return plural;
  "Avatar": [
   null,
   "Avatar"
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -201,6 +221,10 @@ return plural;
   null,
   "Farbe"
  ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
  "Connect": [
   null,
   ""
@@ -208,6 +232,10 @@ return plural;
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
   "Das gleichzeitige Verbinden zu mehr als  {{ limit }} Maschinen wird nicht unterstützt."
+ ],
+ "Convertible": [
+  null,
+  ""
  ],
  "Could not contact {{host}}": [
   null,
@@ -217,11 +245,27 @@ return plural;
   null,
   ""
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Disk I/O": [
   null,
   "Datenträger ist OK"
  ],
+ "Docking Station": [
+  null,
+  ""
+ ],
  "Edit Server": [
+  null,
+  ""
+ ],
+ "Embedded PC": [
   null,
   ""
  ],
@@ -234,6 +278,10 @@ return plural;
   ""
  ],
  "Error loading users: {{perm_failed}}": [
+  null,
+  ""
+ ],
+ "Expansion Chassis": [
   null,
   ""
  ],
@@ -257,6 +305,10 @@ return plural;
   null,
   "Zu 'Jetzt' gehen"
  ],
+ "Hand Held": [
+  null,
+  ""
+ ],
  "Host Name": [
   null,
   ""
@@ -273,6 +325,10 @@ return plural;
   null,
   "Ungültige Dateiberechtigungen"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
  "Is sshd running on a different port?": [
   null,
   ""
@@ -282,6 +338,10 @@ return plural;
   ""
  ],
  "Kerberos Ticket": [
+  null,
+  ""
+ ],
+ "Laptop": [
   null,
   ""
  ],
@@ -309,9 +369,33 @@ return plural;
   null,
   "Verbindung verloren. "
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
+ ],
  "Memory": [
   null,
   "Speicher"
+ ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
+ "Multi-system Chassis": [
+  null,
+  ""
  ],
  "Network": [
   null,
@@ -329,6 +413,10 @@ return plural;
   null,
   "Ungültiger privater Schlüssel"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "Aus"
@@ -341,6 +429,10 @@ return plural;
   null,
   "Ein"
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Password": [
   null,
   "Passwort"
@@ -349,7 +441,19 @@ return plural;
   null,
   "Passwort wurde nicht akzeptiert"
  ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
  "Port": [
+  null,
+  ""
+ ],
+ "Portable": [
   null,
   ""
  ],
@@ -365,6 +469,18 @@ return plural;
   null,
   ""
  ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
+  null,
+  ""
+ ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
   "Wählen Sie die Nutzer aus, die mit {{#strong}}{{host}}{{/strong}} synchronisiert werden sollen"
@@ -377,6 +493,22 @@ return plural;
   null,
   ""
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
+ "Stick PC": [
+  null,
+  ""
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "Synchronize": [
   null,
   "Synchronisieren"
@@ -384,6 +516,10 @@ return plural;
  "Synchronize users": [
   null,
   "Benutzer synchronisieren"
+ ],
+ "Tablet": [
+  null,
+  ""
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -417,9 +553,17 @@ return plural;
   null,
   "Um einen anderen Port zu benutzen müssen Sie cockpit-ws aktualisieren."
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Type a password": [
   null,
   "Geben Sie ein Passwort ein"
+ ],
+ "Unknown": [
+  null,
+  "Unbekannt"
  ],
  "Unknown Host Key": [
   null,

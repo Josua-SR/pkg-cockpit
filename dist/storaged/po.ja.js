@@ -91,6 +91,14 @@ return plural;
   "$0 disks are missing",
   "$0 ディスクがありません"
  ],
+ "$0 filesystems can not be made larger.": [
+  null,
+  ""
+ ],
+ "$0 filesystems can not be made smaller.": [
+  null,
+  ""
+ ],
  "$0 hour": [
   "$0 hours",
   "$0 時間"
@@ -286,6 +294,10 @@ return plural;
  "Change iSCSI Initiator Name": [
   null,
   "iSCSI イニシエーター名の変更"
+ ],
+ "Checking $target": [
+  null,
+  ""
  ],
  "Checking RAID Device $target": [
   null,
@@ -539,6 +551,14 @@ return plural;
   null,
   "暗号化された XFS (LUKS)"
  ],
+ "Encrypted volumes can not be resized here.": [
+  null,
+  ""
+ ],
+ "Encrypted volumes need to be unlocked before they can be resized.": [
+  null,
+  ""
+ ],
  "Encryption": [
   null,
   "暗号化"
@@ -620,6 +640,10 @@ return plural;
   "今すぐ移動"
  ],
  "Grow": [
+  null,
+  ""
+ ],
+ "Grow Logical Volume": [
   null,
   ""
  ],
@@ -939,6 +963,10 @@ return plural;
   null,
   "$0 の物理ボリューム"
  ],
+ "Physical volumes can not be resized here.": [
+  null,
+  ""
+ ],
  "Please confirm deletion of $0": [
   null,
   "$0 の削除を確定してください"
@@ -1087,17 +1115,9 @@ return plural;
   null,
   "$target の名前変更"
  ],
- "Resize": [
+ "Repairing $target": [
   null,
-  "サイズの変更"
- ],
- "Resize Filesystem": [
-  null,
-  "ファイルシステムのサイズ変更"
- ],
- "Resize Logical Volume": [
-  null,
-  "論理ボリュームのサイズ変更"
+  ""
  ],
  "Resizing $target": [
   null,
@@ -1134,6 +1154,14 @@ return plural;
  "Setting up loop device $target": [
   null,
   "ループデバイス $target の設定"
+ ],
+ "Shrink": [
+  null,
+  ""
+ ],
+ "Shrink Logical Volume": [
+  null,
+  ""
  ],
  "Size": [
   null,
@@ -1186,6 +1214,10 @@ return plural;
  "Stop": [
   null,
   "停止"
+ ],
+ "Stop Device": [
+  null,
+  ""
  ],
  "Stop Scrubbing": [
   null,
@@ -1323,9 +1355,9 @@ return plural;
   null,
   "このディスクは、デバイスが復旧中に取り外すことができません。"
  ],
- "This logical volume cannot be made smaller.": [
+ "This volume needs to be activated before it can be resized.": [
   null,
-  "この論理ボリュームは小さくすることができません。"
+  ""
  ],
  "Transfer data asynchronously": [
   null,
@@ -1391,6 +1423,10 @@ return plural;
   null,
   "認識されないデータ"
  ],
+ "Unrecognized data can not be made smaller here.": [
+  null,
+  ""
+ ],
  "Unsupported volume": [
   null,
   "サポートされないボリューム"
@@ -1424,6 +1460,10 @@ return plural;
   ""
  ],
  "VDO Devices": [
+  null,
+  ""
+ ],
+ "VDO backing devices can not be made smaller": [
   null,
   ""
  ],

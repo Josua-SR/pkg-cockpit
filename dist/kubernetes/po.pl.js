@@ -531,6 +531,10 @@ return plural;
   null,
   "Trwały dysk GCE"
  ],
+ "General": [
+  null,
+  "Ogólne"
+ ],
  "Git Repository": [
   null,
   "Repozytorium git"
@@ -826,6 +830,10 @@ return plural;
  "No users are present.": [
   null,
   "Brak użytkowników."
+ ],
+ "No virtual machines": [
+  null,
+  "Brak maszyn wirtualnych"
  ],
  "No volumes are present.": [
   null,
@@ -1283,6 +1291,10 @@ return plural;
   null,
   "Usługi grupują pojemniki i dostarczają wspólną nazwę DNS oraz opcjonalny, zrównoważony adres IP do uzyskiwania do nich dostępu."
  ],
+ "Session": [
+  null,
+  "Sesja"
+ ],
  "Session Affinity": [
   null,
   "Pokrewieństwo procesora"
@@ -1378,6 +1390,10 @@ return plural;
  "Sync all tags from a remote image repository": [
   null,
   "Zsynchronizuj wszystkie etykiety ze zdalnego repozytorium obrazów"
+ ],
+ "System": [
+  null,
+  "System"
  ],
  "TLS Termination": [
   null,
@@ -1559,6 +1575,14 @@ return plural;
   null,
   "Użytkownicy"
  ],
+ "VM DELETE failed.": [
+  null,
+  ""
+ ],
+ "Virtual Machines": [
+  null,
+  "Maszyny wirtualne"
+ ],
  "Volume": [
   null,
   "Wolumin"
@@ -1607,9 +1631,77 @@ return plural;
   null,
   "Dane uwierzytelniające logowania nie daję dostępu do używania rejestru Dockera z wiersza poleceń."
  ],
+ "bridge": [
+  null,
+  "mostek"
+ ],
+ "cdrom": [
+  null,
+  "CD-ROM"
+ ],
+ "crashed": [
+  null,
+  "uległo awarii"
+ ],
+ "custom": [
+  null,
+  "niestandardowe"
+ ],
+ "direct": [
+  null,
+  "bezpośrednie"
+ ],
+ "disabled": [
+  null,
+  "wyłączone"
+ ],
+ "disk": [
+  null,
+  "dysk"
+ ],
+ "down": [
+  null,
+  "w dół"
+ ],
+ "dying": [
+  null,
+  "w trakcie umierania"
+ ],
  "eg: my-image-stream": [
   null,
   "np. strumień-obrazu"
+ ],
+ "enabled": [
+  null,
+  "włączone"
+ ],
+ "ethernet": [
+  null,
+  "Ethernet"
+ ],
+ "host": [
+  null,
+  "gospodarz"
+ ],
+ "hostdev": [
+  null,
+  "urządzenie gospodarza"
+ ],
+ "idle": [
+  null,
+  "bezczynne"
+ ],
+ "mcast": [
+  null,
+  "multicast"
+ ],
+ "n/a": [
+  null,
+  "nie dotyczy"
+ ],
+ "network": [
+  null,
+  "sieć"
  ],
  "no": [
   null,
@@ -1619,9 +1711,57 @@ return plural;
   null,
   "brak"
  ],
+ "paused": [
+  null,
+  "wstrzymane"
+ ],
  "pending volume claims": [
   null,
   "oczekujące deklaracje woluminów"
+ ],
+ "running": [
+  null,
+  "działanie"
+ ],
+ "server": [
+  null,
+  "serwer"
+ ],
+ "show less": [
+  null,
+  "wyświetl mniej"
+ ],
+ "show more": [
+  null,
+  "wyświetl więcej"
+ ],
+ "shut off": [
+  null,
+  "wyłącz"
+ ],
+ "shutdown": [
+  null,
+  "wyłączenie"
+ ],
+ "suspended (PM)": [
+  null,
+  "uśpione (PM)"
+ ],
+ "udp": [
+  null,
+  "UDP"
+ ],
+ "up": [
+  null,
+  "w górę"
+ ],
+ "user": [
+  null,
+  "użytkownik"
+ ],
+ "vhostuser": [
+  null,
+  "użytkownik gospodarza wirtualizacji"
  ],
  "yes": [
   null,

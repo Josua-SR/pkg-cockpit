@@ -42,8 +42,7 @@ function update_accounts_privileged() {
             permission.user ? permission.user.name : '')
     );
     $(".accounts-privileged").find("input")
-        .attr('disabled', permission.allowed === false ||
-                          $('#account-user-name').text() === 'root');
+        .attr('disabled', permission.allowed === false);
 
     // enable fields for current account.
     $(".accounts-current-account").update_privileged(
@@ -57,6 +56,7 @@ function update_accounts_privileged() {
                                       _("Unable to delete root account"));
         $("#account-real-name-wrapper").update_privileged({allowed: false},
                                       _("Unable to rename root account"));
+        $("#account-real-name").prop('disabled', true);
     }
 }
 
@@ -594,7 +594,7 @@ function PageAccountsCreate() {
 
 PageAccount.prototype = {
     _init: function(user) {
-        this.id = "account";
+        this.id = "account-page";
         this.section_id = "accounts";
         this.roles = [];
         this.role_template = $("#role-entry-tmpl").html();
@@ -927,7 +927,7 @@ PageAccount.prototype = {
             else
                 $('#account-last-login').text(this.lastLogin.toLocaleString());
 
-            if (typeof this.locked != 'undefined' && this.account["uid"] !== 0) {
+            if (typeof this.locked != 'undefined') {
                 $('#account-locked').prop('checked', this.locked);
                 $('#account-locked').prop('disabled', false);
             } else {

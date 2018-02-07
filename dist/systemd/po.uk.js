@@ -291,6 +291,10 @@ return plural;
   null,
   "9-е"
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
  "After": [
   null,
   "Після"
@@ -298,6 +302,10 @@ return plural;
  "After system boot": [
   null,
   "Після завантаження системи"
+ ],
+ "All In One": [
+  null,
+  ""
  ],
  "Asset Tag": [
   null,
@@ -314,6 +322,30 @@ return plural;
  "Automatically using specific NTP servers": [
   null,
   "Автоматично за допомогою певних серверів NTP"
+ ],
+ "BIOS": [
+  null,
+  ""
+ ],
+ "BIOS date": [
+  null,
+  ""
+ ],
+ "BIOS version": [
+  null,
+  ""
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -351,6 +383,10 @@ return plural;
   null,
   "Команда"
  ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
  "Condition $0=$1 was not met": [
   null,
   "Умову $0=$1 не виконано"
@@ -358,6 +394,10 @@ return plural;
  "Condition failed": [
   null,
   "Не виконано умову"
+ ],
+ "Convertible": [
+  null,
+  ""
  ],
  "Create Timer": [
   null,
@@ -379,6 +419,14 @@ return plural;
   null,
   "Опис"
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Disable": [
   null,
   "Вимкнути"
@@ -391,6 +439,10 @@ return plural;
   null,
   "Дисковий ввід/вивід"
  ],
+ "Docking Station": [
+  null,
+  ""
+ ],
  "Domain": [
   null,
   "Домен"
@@ -398,6 +450,10 @@ return plural;
  "Don't Repeat": [
   null,
   "Не повторювати"
+ ],
+ "Embedded PC": [
+  null,
+  ""
  ],
  "Enable": [
   null,
@@ -423,6 +479,10 @@ return plural;
   null,
   "Все"
  ],
+ "Expansion Chassis": [
+  null,
+  ""
+ ],
  "Free": [
   null,
   "Вільно"
@@ -443,9 +503,17 @@ return plural;
   null,
   "Перейти зараз"
  ],
+ "Hand Held": [
+  null,
+  ""
+ ],
  "Hardware": [
   null,
   "Обладнання"
+ ],
+ "Hardware Information": [
+  null,
+  ""
  ],
  "Host Name": [
   null,
@@ -499,6 +567,10 @@ return plural;
   null,
   "Некоректний часовий пояс"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
  "Journal": [
   null,
   "Журнал"
@@ -514,6 +586,10 @@ return plural;
  "Kernel": [
   null,
   "Ядро"
+ ],
+ "Laptop": [
+  null,
+  ""
  ],
  "Last 24 hours": [
   null,
@@ -543,6 +619,14 @@ return plural;
   null,
   "Журнали"
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "Machine ID": [
   null,
   "Ід. комп’ютера"
@@ -550,6 +634,10 @@ return plural;
  "Machine SSH Key Fingerprints": [
   null,
   "Відбитки ключів SSH комп’ютерів"
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
  ],
  "Manually": [
   null,
@@ -571,6 +659,14 @@ return plural;
   null,
   "Повідомлення користувачам, які увійшли"
  ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
  "Minute needs to be a number between 0-59": [
   null,
   "Хвилини слід вказувати у форматі числа від 0 до 59"
@@ -583,9 +679,17 @@ return plural;
   null,
   "понеділок"
  ],
+ "Multi-system Chassis": [
+  null,
+  ""
+ ],
  "NTP Server": [
   null,
   "Сервер NTP"
+ ],
+ "Name": [
+  null,
+  "Назва"
  ],
  "Need at least one NTP server": [
   null,
@@ -623,6 +727,10 @@ return plural;
   null,
   "Примітка"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "Вимкнено"
@@ -643,6 +751,10 @@ return plural;
   null,
   "Операційна система"
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Paths": [
   null,
   "Шляхи"
@@ -650,6 +762,18 @@ return plural;
  "Performance Profile": [
   null,
   "Профіль швидкодії"
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
+ "Portable": [
+  null,
+  ""
  ],
  "Power Options": [
   null,
@@ -686,6 +810,14 @@ return plural;
  "Problems, Errors, Warnings, Notices": [
   null,
   "Проблеми, помилки, попередження, зауваження"
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
+  null,
+  ""
  ],
  "Real Host Name": [
   null,
@@ -767,6 +899,10 @@ return plural;
   null,
   "Зберегти"
  ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Seconds": [
   null,
   "Секунди"
@@ -815,6 +951,10 @@ return plural;
   null,
   "Сокети"
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
  "Specific Time": [
   null,
   "У визначений час"
@@ -831,6 +971,10 @@ return plural;
   null,
   "Статичний"
  ],
+ "Stick PC": [
+  null,
+  ""
+ ],
  "Stop": [
   null,
   "Зупинити"
@@ -838,6 +982,14 @@ return plural;
  "Store Performance Data": [
   null,
   "Зберігати дані щодо швидкодії"
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
  ],
  "Sunday": [
   null,
@@ -859,6 +1011,10 @@ return plural;
   null,
   "Система"
  ],
+ "System Information": [
+  null,
+  ""
+ ],
  "System Services": [
   null,
   "Служби системи"
@@ -866,6 +1022,10 @@ return plural;
  "System Time": [
   null,
   "Системний час"
+ ],
+ "Tablet": [
+  null,
+  ""
  ],
  "Targets": [
   null,
@@ -915,6 +1075,10 @@ return plural;
   null,
   "Таймери"
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   "Намагаємося синхронізуватися з {{Server}}"
@@ -923,9 +1087,23 @@ return plural;
   null,
   "вівторок"
  ],
+ "Type": [
+  null,
+  "Тип"
+ ],
+ "Unknown": [
+  null,
+  "Невідомий"
+ ],
  "Unmask": [
   null,
   "Розмаскувати"
+ ],
+ "Usage of $0 CPU core": [
+  "Usage of $0 CPU cores",
+  "Використання $0 ядра процесора",
+  "Використання $0 ядер процесора",
+  "Використання $0 ядер процесора"
  ],
  "Used": [
   null,
@@ -962,6 +1140,12 @@ return plural;
  "failed to list ssh host keys: $0": [
   null,
   "не вдалося побудувати список ключів SSH вузла: $0"
+ ],
+ "of $0 CPU core": [
+  "of $0 CPU cores",
+  "з $0 ядра процесора",
+  "з $0 ядер процесора",
+  "з $0 ядер процесора"
  ],
  "unknown": [
   null,

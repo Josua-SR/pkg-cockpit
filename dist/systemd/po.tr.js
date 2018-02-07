@@ -285,11 +285,19 @@ return plural;
   null,
   ""
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
  "After": [
   null,
   ""
  ],
  "After system boot": [
+  null,
+  ""
+ ],
+ "All In One": [
   null,
   ""
  ],
@@ -306,6 +314,30 @@ return plural;
   ""
  ],
  "Automatically using specific NTP servers": [
+  null,
+  ""
+ ],
+ "BIOS": [
+  null,
+  ""
+ ],
+ "BIOS date": [
+  null,
+  ""
+ ],
+ "BIOS version": [
+  null,
+  ""
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
   null,
   ""
  ],
@@ -345,11 +377,19 @@ return plural;
   null,
   "Komut"
  ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
  "Condition $0=$1 was not met": [
   null,
   ""
  ],
  "Condition failed": [
+  null,
+  ""
+ ],
+ "Convertible": [
   null,
   ""
  ],
@@ -373,6 +413,14 @@ return plural;
   null,
   ""
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Disable": [
   null,
   ""
@@ -385,11 +433,19 @@ return plural;
   null,
   ""
  ],
+ "Docking Station": [
+  null,
+  ""
+ ],
  "Domain": [
   null,
   ""
  ],
  "Don't Repeat": [
+  null,
+  ""
+ ],
+ "Embedded PC": [
   null,
   ""
  ],
@@ -417,6 +473,10 @@ return plural;
   null,
   ""
  ],
+ "Expansion Chassis": [
+  null,
+  ""
+ ],
  "Free": [
   null,
   "Boş"
@@ -437,7 +497,15 @@ return plural;
   null,
   "Şimdiye git"
  ],
+ "Hand Held": [
+  null,
+  ""
+ ],
  "Hardware": [
+  null,
+  ""
+ ],
+ "Hardware Information": [
   null,
   ""
  ],
@@ -493,6 +561,10 @@ return plural;
   null,
   ""
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
  "Journal": [
   null,
   ""
@@ -508,6 +580,10 @@ return plural;
  "Kernel": [
   null,
   "Çekirdek"
+ ],
+ "Laptop": [
+  null,
+  ""
  ],
  "Last 24 hours": [
   null,
@@ -537,11 +613,23 @@ return plural;
   null,
   ""
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "Machine ID": [
   null,
   ""
  ],
  "Machine SSH Key Fingerprints": [
+  null,
+  ""
+ ],
+ "Main Server Chassis": [
   null,
   ""
  ],
@@ -565,6 +653,14 @@ return plural;
   null,
   "Giriş yapmış kullanıcılara mesaj"
  ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
  "Minute needs to be a number between 0-59": [
   null,
   ""
@@ -577,9 +673,17 @@ return plural;
   null,
   ""
  ],
+ "Multi-system Chassis": [
+  null,
+  ""
+ ],
  "NTP Server": [
   null,
   ""
+ ],
+ "Name": [
+  null,
+  "İsim"
  ],
  "Need at least one NTP server": [
   null,
@@ -617,6 +721,10 @@ return plural;
   null,
   ""
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "Kapalı"
@@ -637,11 +745,27 @@ return plural;
   null,
   ""
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Paths": [
   null,
   ""
  ],
  "Performance Profile": [
+  null,
+  ""
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
+ "Portable": [
   null,
   ""
  ],
@@ -678,6 +802,14 @@ return plural;
   ""
  ],
  "Problems, Errors, Warnings, Notices": [
+  null,
+  ""
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
   null,
   ""
  ],
@@ -761,6 +893,10 @@ return plural;
   null,
   ""
  ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Seconds": [
   null,
   ""
@@ -809,6 +945,10 @@ return plural;
   null,
   ""
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
  "Specific Time": [
   null,
   "Özel Bir Zamanda"
@@ -825,11 +965,23 @@ return plural;
   null,
   ""
  ],
+ "Stick PC": [
+  null,
+  ""
+ ],
  "Stop": [
   null,
   "Durdur"
  ],
  "Store Performance Data": [
+  null,
+  ""
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
   null,
   ""
  ],
@@ -853,11 +1005,19 @@ return plural;
   null,
   ""
  ],
+ "System Information": [
+  null,
+  ""
+ ],
  "System Services": [
   null,
   ""
  ],
  "System Time": [
+  null,
+  ""
+ ],
+ "Tablet": [
   null,
   ""
  ],
@@ -909,6 +1069,10 @@ return plural;
   null,
   ""
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   ""
@@ -917,8 +1081,21 @@ return plural;
   null,
   ""
  ],
+ "Type": [
+  null,
+  "Tip"
+ ],
+ "Unknown": [
+  null,
+  "Bilinmiyor"
+ ],
  "Unmask": [
   null,
+  ""
+ ],
+ "Usage of $0 CPU core": [
+  "Usage of $0 CPU cores",
+  "",
   ""
  ],
  "Used": [
@@ -955,6 +1132,11 @@ return plural;
  ],
  "failed to list ssh host keys: $0": [
   null,
+  ""
+ ],
+ "of $0 CPU core": [
+  "of $0 CPU cores",
+  "",
   ""
  ],
  "unknown": [

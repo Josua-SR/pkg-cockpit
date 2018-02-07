@@ -529,6 +529,10 @@ return plural;
   null,
   "Disc persistent GCE"
  ],
+ "General": [
+  null,
+  "General"
+ ],
  "Git Repository": [
   null,
   "Dipòsit git"
@@ -822,6 +826,10 @@ return plural;
   ""
  ],
  "No users are present.": [
+  null,
+  ""
+ ],
+ "No virtual machines": [
   null,
   ""
  ],
@@ -1281,6 +1289,10 @@ return plural;
   null,
   ""
  ],
+ "Session": [
+  null,
+  "Sessió"
+ ],
  "Session Affinity": [
   null,
   ""
@@ -1376,6 +1388,10 @@ return plural;
  "Sync all tags from a remote image repository": [
   null,
   ""
+ ],
+ "System": [
+  null,
+  "Sistema"
  ],
  "TLS Termination": [
   null,
@@ -1557,6 +1573,14 @@ return plural;
   null,
   "Usuaris"
  ],
+ "VM DELETE failed.": [
+  null,
+  ""
+ ],
+ "Virtual Machines": [
+  null,
+  "Màquines virtuals"
+ ],
  "Volume": [
   null,
   "Volum"
@@ -1605,9 +1629,77 @@ return plural;
   null,
   "Les vostres credencials d'inici de sessió no us donen accés a utilitzar el registre de docker des de la línia d'ordres."
  ],
+ "bridge": [
+  null,
+  "pont"
+ ],
+ "cdrom": [
+  null,
+  "cdrom"
+ ],
+ "crashed": [
+  null,
+  "estavellat"
+ ],
+ "custom": [
+  null,
+  "personalitzat"
+ ],
+ "direct": [
+  null,
+  "directe"
+ ],
+ "disabled": [
+  null,
+  "inhabilitat"
+ ],
+ "disk": [
+  null,
+  "disc"
+ ],
+ "down": [
+  null,
+  ""
+ ],
+ "dying": [
+  null,
+  "morint"
+ ],
  "eg: my-image-stream": [
   null,
   ""
+ ],
+ "enabled": [
+  null,
+  "habilitat"
+ ],
+ "ethernet": [
+  null,
+  "ethernet"
+ ],
+ "host": [
+  null,
+  "amfitrió"
+ ],
+ "hostdev": [
+  null,
+  ""
+ ],
+ "idle": [
+  null,
+  "ociós"
+ ],
+ "mcast": [
+  null,
+  ""
+ ],
+ "n/a": [
+  null,
+  ""
+ ],
+ "network": [
+  null,
+  "xarxa"
  ],
  "no": [
   null,
@@ -1617,9 +1709,57 @@ return plural;
   null,
   "cap"
  ],
+ "paused": [
+  null,
+  ""
+ ],
  "pending volume claims": [
   null,
   "reclamacions de volums pendents"
+ ],
+ "running": [
+  null,
+  "en execució"
+ ],
+ "server": [
+  null,
+  "servidor"
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
+  null,
+  ""
+ ],
+ "shut off": [
+  null,
+  "apagat"
+ ],
+ "shutdown": [
+  null,
+  "apaga"
+ ],
+ "suspended (PM)": [
+  null,
+  "suspès (PM)"
+ ],
+ "udp": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
+  null,
+  "usuari"
+ ],
+ "vhostuser": [
+  null,
+  ""
  ],
  "yes": [
   null,

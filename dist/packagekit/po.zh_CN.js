@@ -67,10 +67,6 @@ return plural;
   "language": "zh-CN",
   "x-generator": "Zanata 3.9.6"
  },
- "$0 more…": [
-  null,
-  "$0 更多…"
- ],
  "$0 update": [
   "$0 updates",
   "$0 可更新"
@@ -107,9 +103,9 @@ return plural;
   null,
   "可用的更新"
  ],
- "Bugs": [
+ "Bugs:": [
   null,
-  "漏洞"
+  ""
  ],
  "Cancel": [
   null,
@@ -134,6 +130,10 @@ return plural;
  "Downloading": [
   null,
   "正在下载"
+ ],
+ "Errata:": [
+  null,
+  ""
  ],
  "Ignore": [
   null,
@@ -170,10 +170,6 @@ return plural;
  "Loading available updates, please wait...": [
   null,
   "正在加载可用的更新，请等待..."
- ],
- "More information…": [
-  null,
-  "更多信息..."
  ],
  "Name": [
   null,
@@ -227,10 +223,6 @@ return plural;
   null,
   "正在重启"
  ],
- "Security Update": [
-  null,
-  "安全性更新"
- ],
  "Set up": [
   null,
   "设置"
@@ -238,6 +230,14 @@ return plural;
  "Setting up": [
   null,
   "设置"
+ ],
+ "Severity": [
+  null,
+  "严重性"
+ ],
+ "Severity:": [
+  null,
+  ""
  ],
  "Software Updates": [
   null,

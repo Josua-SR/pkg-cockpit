@@ -67,10 +67,6 @@ return plural;
   "language": "uk",
   "x-generator": "Zanata 3.9.6"
  },
- "$0 more…": [
-  null,
-  "І ще $0…"
- ],
  "$0 update": [
   "$0 updates",
   "$0 оновлення",
@@ -113,9 +109,9 @@ return plural;
   null,
   "Доступні оновлення"
  ],
- "Bugs": [
+ "Bugs:": [
   null,
-  "Вади"
+  "Вади:"
  ],
  "Cancel": [
   null,
@@ -140,6 +136,10 @@ return plural;
  "Downloading": [
   null,
   "Отримуємо"
+ ],
+ "Errata:": [
+  null,
+  "Помилки:"
  ],
  "Ignore": [
   null,
@@ -176,10 +176,6 @@ return plural;
  "Loading available updates, please wait...": [
   null,
   "Завантажуємо доступні оновлення, зачекайте…"
- ],
- "More information…": [
-  null,
-  "Докладніші відомості…"
  ],
  "Name": [
   null,
@@ -233,10 +229,6 @@ return plural;
   null,
   "Перезапускаємо"
  ],
- "Security Update": [
-  null,
-  "Оновлення захисту"
- ],
  "Set up": [
   null,
   "Налаштувати"
@@ -244,6 +236,14 @@ return plural;
  "Setting up": [
   null,
   "Налаштовуємо"
+ ],
+ "Severity": [
+  null,
+  "Важливість"
+ ],
+ "Severity:": [
+  null,
+  "Критичність:"
  ],
  "Software Updates": [
   null,

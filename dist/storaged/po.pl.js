@@ -95,6 +95,14 @@ return plural;
   "Brak $0 dysków",
   "Brak $0 dysków"
  ],
+ "$0 filesystems can not be made larger.": [
+  null,
+  ""
+ ],
+ "$0 filesystems can not be made smaller.": [
+  null,
+  ""
+ ],
  "$0 hour": [
   "$0 hours",
   "$0 godzina",
@@ -300,6 +308,10 @@ return plural;
  "Change iSCSI Initiator Name": [
   null,
   "Zmień nazwę inicjatora iSCSI"
+ ],
+ "Checking $target": [
+  null,
+  ""
  ],
  "Checking RAID Device $target": [
   null,
@@ -553,6 +565,14 @@ return plural;
   null,
   "Szyfrowane XFS (LUKS)"
  ],
+ "Encrypted volumes can not be resized here.": [
+  null,
+  ""
+ ],
+ "Encrypted volumes need to be unlocked before they can be resized.": [
+  null,
+  ""
+ ],
  "Encryption": [
   null,
   "Szyfrowanie"
@@ -636,6 +656,10 @@ return plural;
  "Grow": [
   null,
   "Powiększ"
+ ],
+ "Grow Logical Volume": [
+  null,
+  ""
  ],
  "Grow logical size of $0": [
   null,
@@ -953,6 +977,10 @@ return plural;
   null,
   "Wolumin fizyczny $0"
  ],
+ "Physical volumes can not be resized here.": [
+  null,
+  ""
+ ],
  "Please confirm deletion of $0": [
   null,
   "Proszę potwierdzić usunięcie $0"
@@ -1101,17 +1129,9 @@ return plural;
   null,
   "Zmienianie nazwy $target"
  ],
- "Resize": [
+ "Repairing $target": [
   null,
-  "Zmień rozmiar"
- ],
- "Resize Filesystem": [
-  null,
-  "Zmień rozmiar systemu plików"
- ],
- "Resize Logical Volume": [
-  null,
-  "Zmień rozmiar woluminu logicznego"
+  ""
  ],
  "Resizing $target": [
   null,
@@ -1148,6 +1168,14 @@ return plural;
  "Setting up loop device $target": [
   null,
   "Ustawianie urządzenia zwrotnego $target"
+ ],
+ "Shrink": [
+  null,
+  ""
+ ],
+ "Shrink Logical Volume": [
+  null,
+  ""
  ],
  "Size": [
   null,
@@ -1200,6 +1228,10 @@ return plural;
  "Stop": [
   null,
   "Zatrzymaj"
+ ],
+ "Stop Device": [
+  null,
+  ""
  ],
  "Stop Scrubbing": [
   null,
@@ -1337,9 +1369,9 @@ return plural;
   null,
   "Ten dysk nie może zostać usunięty podczas przywracania urządzenia."
  ],
- "This logical volume cannot be made smaller.": [
+ "This volume needs to be activated before it can be resized.": [
   null,
-  "Nie można zmniejszyć tego woluminu logicznego."
+  ""
  ],
  "Transfer data asynchronously": [
   null,
@@ -1405,6 +1437,10 @@ return plural;
   null,
   "Nierozpoznane dane"
  ],
+ "Unrecognized data can not be made smaller here.": [
+  null,
+  ""
+ ],
  "Unsupported volume": [
   null,
   "Nieobsługiwany wolumin"
@@ -1440,6 +1476,10 @@ return plural;
  "VDO Devices": [
   null,
   "Urządzenia VDO"
+ ],
+ "VDO backing devices can not be made smaller": [
+  null,
+  ""
  ],
  "VFAT - Compatible with all systems and devices": [
   null,

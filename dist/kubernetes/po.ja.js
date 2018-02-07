@@ -527,6 +527,10 @@ return plural;
   null,
   "GCE 永続ディスク"
  ],
+ "General": [
+  null,
+  "全般"
+ ],
  "Git Repository": [
   null,
   "Git リポジトリー"
@@ -822,6 +826,10 @@ return plural;
  "No users are present.": [
   null,
   "ユーザーが存在しません。"
+ ],
+ "No virtual machines": [
+  null,
+  ""
  ],
  "No volumes are present.": [
   null,
@@ -1279,6 +1287,10 @@ return plural;
   null,
   "サービスはポッドをグループ化し、ポッドにアクセスするために共通の DNS 名とオプションのロードバランス IP アドレスを提供します。"
  ],
+ "Session": [
+  null,
+  "セッション"
+ ],
  "Session Affinity": [
   null,
   "セッションアフィニティー"
@@ -1374,6 +1386,10 @@ return plural;
  "Sync all tags from a remote image repository": [
   null,
   "リモートイメージリポジトリーからすべてのタグを同期"
+ ],
+ "System": [
+  null,
+  "システム"
  ],
  "TLS Termination": [
   null,
@@ -1555,6 +1571,14 @@ return plural;
   null,
   "ユーザー"
  ],
+ "VM DELETE failed.": [
+  null,
+  ""
+ ],
+ "Virtual Machines": [
+  null,
+  "仮想マシン"
+ ],
  "Volume": [
   null,
   "音量"
@@ -1603,9 +1627,77 @@ return plural;
   null,
   "ログイン資格情報は、コマンドラインから docker レジストリーを使用するアクセスを提供しません。"
  ],
+ "bridge": [
+  null,
+  ""
+ ],
+ "cdrom": [
+  null,
+  ""
+ ],
+ "crashed": [
+  null,
+  "クラッシュ"
+ ],
+ "custom": [
+  null,
+  "Custom"
+ ],
+ "direct": [
+  null,
+  ""
+ ],
+ "disabled": [
+  null,
+  "無効"
+ ],
+ "disk": [
+  null,
+  ""
+ ],
+ "down": [
+  null,
+  ""
+ ],
+ "dying": [
+  null,
+  "終了中"
+ ],
  "eg: my-image-stream": [
   null,
   "例: my-image-stream"
+ ],
+ "enabled": [
+  null,
+  "有効"
+ ],
+ "ethernet": [
+  null,
+  ""
+ ],
+ "host": [
+  null,
+  ""
+ ],
+ "hostdev": [
+  null,
+  ""
+ ],
+ "idle": [
+  null,
+  "アイドル"
+ ],
+ "mcast": [
+  null,
+  ""
+ ],
+ "n/a": [
+  null,
+  ""
+ ],
+ "network": [
+  null,
+  "ネットワーク"
  ],
  "no": [
   null,
@@ -1615,9 +1707,57 @@ return plural;
   null,
   "なし"
  ],
+ "paused": [
+  null,
+  "一時停止"
+ ],
  "pending volume claims": [
   null,
   "保留中のボリュームクレーム"
+ ],
+ "running": [
+  null,
+  "実行中"
+ ],
+ "server": [
+  null,
+  ""
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
+  null,
+  ""
+ ],
+ "shut off": [
+  null,
+  "シャットオフ"
+ ],
+ "shutdown": [
+  null,
+  "shutdown"
+ ],
+ "suspended (PM)": [
+  null,
+  "一時停止中 (PM)"
+ ],
+ "udp": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
+  null,
+  ""
+ ],
+ "vhostuser": [
+  null,
+  ""
  ],
  "yes": [
   null,

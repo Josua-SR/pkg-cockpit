@@ -529,6 +529,10 @@ return plural;
   null,
   "Disco Persistente GCE"
  ],
+ "General": [
+  null,
+  "Geral"
+ ],
  "Git Repository": [
   null,
   "Repositório Git"
@@ -824,6 +828,10 @@ return plural;
  "No users are present.": [
   null,
   "Não há usuários presentes."
+ ],
+ "No virtual machines": [
+  null,
+  ""
  ],
  "No volumes are present.": [
   null,
@@ -1281,6 +1289,10 @@ return plural;
   null,
   "Pods de grupo de serviços fornecem um nome DNS comum e um endereço IP opcional, balanceado por carga para acessá-los."
  ],
+ "Session": [
+  null,
+  "Sessão"
+ ],
  "Session Affinity": [
   null,
   "Afinidade de Sessão"
@@ -1376,6 +1388,10 @@ return plural;
  "Sync all tags from a remote image repository": [
   null,
   "Sincronizar todas as tags de um repositório de imagens remotas"
+ ],
+ "System": [
+  null,
+  "Sistema"
  ],
  "TLS Termination": [
   null,
@@ -1557,6 +1573,14 @@ return plural;
   null,
   "Usuários"
  ],
+ "VM DELETE failed.": [
+  null,
+  ""
+ ],
+ "Virtual Machines": [
+  null,
+  "Máquinas Virtuais"
+ ],
  "Volume": [
   null,
   "Volume"
@@ -1605,9 +1629,77 @@ return plural;
   null,
   "As credenciais de login não lhe dão acesso para usar o registro de docker na linha de comando."
  ],
+ "bridge": [
+  null,
+  ""
+ ],
+ "cdrom": [
+  null,
+  "cdrom"
+ ],
+ "crashed": [
+  null,
+  "travou"
+ ],
+ "custom": [
+  null,
+  "personalizado"
+ ],
+ "direct": [
+  null,
+  ""
+ ],
+ "disabled": [
+  null,
+  "desabilitado"
+ ],
+ "disk": [
+  null,
+  "disco"
+ ],
+ "down": [
+  null,
+  ""
+ ],
+ "dying": [
+  null,
+  "morrendo"
+ ],
  "eg: my-image-stream": [
   null,
   "eg: meu-stream-de-imagem"
+ ],
+ "enabled": [
+  null,
+  "habilitado"
+ ],
+ "ethernet": [
+  null,
+  ""
+ ],
+ "host": [
+  null,
+  "host"
+ ],
+ "hostdev": [
+  null,
+  ""
+ ],
+ "idle": [
+  null,
+  "ocioso"
+ ],
+ "mcast": [
+  null,
+  ""
+ ],
+ "n/a": [
+  null,
+  ""
+ ],
+ "network": [
+  null,
+  "rede"
  ],
  "no": [
   null,
@@ -1617,9 +1709,57 @@ return plural;
   null,
   "Nenhum"
  ],
+ "paused": [
+  null,
+  "pausado"
+ ],
  "pending volume claims": [
   null,
   "declarações de volume pendentes"
+ ],
+ "running": [
+  null,
+  "executando"
+ ],
+ "server": [
+  null,
+  ""
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
+  null,
+  ""
+ ],
+ "shut off": [
+  null,
+  "desligar"
+ ],
+ "shutdown": [
+  null,
+  "desligar"
+ ],
+ "suspended (PM)": [
+  null,
+  "suspenso (PM)"
+ ],
+ "udp": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
+  null,
+  ""
+ ],
+ "vhostuser": [
+  null,
+  ""
  ],
  "yes": [
   null,

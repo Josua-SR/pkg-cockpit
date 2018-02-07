@@ -119,6 +119,10 @@ return plural;
   null,
   "Orden de Inicio:"
  ],
+ "Bus": [
+  null,
+  "Bus"
+ ],
  "CHANGE NETWORK STATE action failed": [
   null,
   "Fallo en la acción CHANGE NETWORK STATE"
@@ -134,6 +138,10 @@ return plural;
  "Cancel": [
   null,
   "Cancelar"
+ ],
+ "Capacity": [
+  null,
+  "Capacidad"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -191,9 +199,21 @@ return plural;
   null,
   "Consolas"
  ],
+ "Count:": [
+  null,
+  "Conteo:"
+ ],
  "Create": [
   null,
   "Crear"
+ ],
+ "Create New VM": [
+  null,
+  ""
+ ],
+ "Create New Virtual Machine": [
+  null,
+  ""
  ],
  "Create VM": [
   null,
@@ -214,6 +234,10 @@ return plural;
  "Description:": [
   null,
   "Descripción:"
+ ],
+ "Device": [
+  null,
+  "Dispositivo"
  ],
  "Disconnect": [
   null,
@@ -247,6 +271,14 @@ return plural;
   null,
   "FQDN"
  ],
+ "File": [
+  null,
+  "Archivo"
+ ],
+ "Filesystem": [
+  null,
+  "Sistema de archivos"
+ ],
  "Force Restart": [
   null,
   "Forzar Reinicio"
@@ -254,6 +286,10 @@ return plural;
  "Force Shut Down": [
   null,
   "Forzar Apagado"
+ ],
+ "GiB": [
+  null,
+  ""
  ],
  "Graphics Console (VNC)": [
   null,
@@ -278,6 +314,34 @@ return plural;
  "Host to Maintenance": [
   null,
   "Host para Mantenimiento"
+ ],
+ "INSTALL VM action failed": [
+  null,
+  ""
+ ],
+ "Immediately Start VM": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  "Instalar"
+ ],
+ "Installation Source": [
+  null,
+  ""
+ ],
+ "Installation Source Type": [
+  null,
+  ""
+ ],
+ "Installation Source should not be empty": [
+  null,
+  ""
+ ],
+ "Invalid filename": [
+  null,
+  ""
  ],
  "Launch Remote Viewer": [
   null,
@@ -315,9 +379,17 @@ return plural;
   null,
   "Memoria"
  ],
+ "Memory should be positive number": [
+  null,
+  ""
+ ],
  "Memory:": [
   null,
   "Memoria:"
+ ],
+ "MiB": [
+  null,
+  "MiB"
  ],
  "Migrate To:": [
   null,
@@ -334,6 +406,14 @@ return plural;
  "Name": [
   null,
   "Nombre"
+ ],
+ "Name should not be empty": [
+  null,
+  ""
+ ],
+ "Name should not consist of empty characters only": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -355,6 +435,14 @@ return plural;
   null,
   "No hay consola definida para esta máquina virtual."
  ],
+ "No disks defined for this VM": [
+  null,
+  "No se han definido discos para esta VM"
+ ],
+ "No matching files found": [
+  null,
+  "No se han encontrado ficheros coincidentes"
+ ],
  "No network interfaces defined for this VM": [
   null,
   "No se han definido interfaces de red para esta VM"
@@ -371,9 +459,17 @@ return plural;
   null,
   "Tipo de SO:"
  ],
+ "OS Vendor": [
+  null,
+  ""
+ ],
  "Ok": [
   null,
   "Aceptar"
+ ],
+ "Operating System": [
+  null,
+  "Sistema Operativo"
  ],
  "Optimized for:": [
   null,
@@ -382,6 +478,14 @@ return plural;
  "Overview": [
   null,
   "Visión conjunta"
+ ],
+ "Path to ISO file on host's file system": [
+  null,
+  ""
+ ],
+ "Path to file": [
+  null,
+  "Ruta al fichero"
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
@@ -401,7 +505,7 @@ return plural;
  ],
  "Please start the virtual machine to access its console.": [
   null,
-  ""
+  "Por favor arranque la maquina virtual para acceder a su consola."
  ],
  "Please wait till VMs list is loaded from the server.": [
   null,
@@ -415,21 +519,33 @@ return plural;
   null,
   "Enchufe"
  ],
+ "Pool": [
+  null,
+  "Grupo"
+ ],
  "Port": [
   null,
   "Puerto"
  ],
  "Portgroup": [
   null,
-  ""
+  "Grupo de puertos"
  ],
  "Preparing for Maintenance": [
   null,
-  ""
+  "Preparando para Mantenimiento"
+ ],
+ "Protocol": [
+  null,
+  "Protocolo"
  ],
  "REBOOT action failed": [
   null,
-  ""
+  "REBOOT falló acción"
+ ],
+ "Readonly": [
+  null,
+  "Sólo lectura"
  ],
  "Reconnect": [
   null,
@@ -437,15 +553,19 @@ return plural;
  ],
  "Register oVirt": [
   null,
-  ""
+  "Registrar oVirt"
  ],
  "Registering oVirt to Cockpit": [
   null,
-  ""
+  "Registrando oVirt a Cockpit"
  ],
  "Reload": [
   null,
   "Recargar"
+ ],
+ "Remote URL": [
+  null,
+  ""
  ],
  "Restart": [
   null,
@@ -457,19 +577,19 @@ return plural;
  ],
  "Run Here": [
   null,
-  ""
+  "Ejecutar Aquí"
  ],
  "Running Since:": [
   null,
-  ""
+  "Ejecutando Desde:"
  ],
  "SHUTDOWN action failed": [
   null,
-  ""
+  "SHUTDOWN acción fallada"
  ],
  "SPICE": [
   null,
-  ""
+  "SPICE"
  ],
  "SPICE Address:": [
   null,
@@ -519,6 +639,14 @@ return plural;
   null,
   ""
  ],
+ "Source should start with http, ftp or nfs protocol": [
+  null,
+  ""
+ ],
+ "Start the VM to see disk statistics.": [
+  null,
+  ""
+ ],
  "State": [
   null,
   "Estado"
@@ -528,6 +656,14 @@ return plural;
   ""
  ],
  "Stateless:": [
+  null,
+  ""
+ ],
+ "Storage Size": [
+  null,
+  ""
+ ],
+ "Storage Size should not be negative number": [
   null,
   ""
  ],
@@ -607,11 +743,23 @@ return plural;
   null,
   ""
  ],
+ "Too many files found": [
+  null,
+  ""
+ ],
  "Type": [
   null,
   "Tipo"
  ],
+ "URL": [
+  null,
+  ""
+ ],
  "Unplug": [
+  null,
+  ""
+ ],
+ "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   ""
  ],
@@ -692,6 +840,10 @@ return plural;
   ""
  ],
  "Virtualport": [
+  null,
+  ""
+ ],
+ "Volume": [
   null,
   ""
  ],

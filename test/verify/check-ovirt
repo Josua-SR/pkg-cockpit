@@ -72,7 +72,7 @@ class TestOVirtMachines(MachineCase):
 
         # Wait for the web service to be accessible
         args = { "api": "curl -s -k -u admin@internal:engine -H Content-type:application/xml", "addr": OVIRT_ADDR }
-        m.execute(script=WAIT_SCRIPT % args)
+        m.execute(script=WAIT_SCRIPT % args, timeout=1000)
 
         # Run the prepared VM
         vmid = m.execute("%(api)s https://%(addr)s/ovirt-engine/api/vms/ | xmllint --xpath \"string(/vms/vm[name=\'VM\']/@id)\" -" % args)
@@ -82,6 +82,8 @@ class TestOVirtMachines(MachineCase):
         self.enforce_cockpit_ovirt()
         self.hack_for_missing_vdsm()
         self.pass_install_dialog()
+
+        self.allow_journal_messages('.*type=1400.*')
 
     def wait_for_dc(self):
         # wait for DC to get up
@@ -97,7 +99,7 @@ class TestOVirtMachines(MachineCase):
             wait(lambda: "up" in m.execute(cmd), delay=10)
 
     def enforce_cockpit_ovirt(self):
-        # enforce use of cockpit-ovirt instead of cockpit-machines
+        # enforce use of cockpit-machines-ovirt instead of cockpit-machines
         m = self.machine
         m.execute("sed -i 's/\"priority\".*$/\"priority\": 0,/' {0}".format("/usr/share/cockpit/machines/manifest.json"))
         m.execute("sed -i 's/\"priority\".*$/\"priority\": 100,/' {0}".format("/usr/share/cockpit/ovirt/manifest.json"))
@@ -143,6 +145,7 @@ class TestOVirtMachines(MachineCase):
         b.wait_present(".main-app-div")
         b.wait_in_text("body", "Virtual Machines")
 
+        b.wait_present("tbody tr th")
         b.wait_in_text("tbody tr th", "VM")
         b.click("tbody tr th") # click on the row header
         b.wait_present("#vm-VM-state")
@@ -174,7 +177,8 @@ class TestOVirtMachines(MachineCase):
         b.click("#vm-VM-off-caret")
         b.wait_visible("#vm-VM-forceOff")
         b.click("#vm-VM-forceOff")
-        b.wait_in_text("body", "No VM is running or defined on this host")
+        b.wait_present("thead tr td")
+        b.wait_in_text("thead tr td", "No VM is running")
 
         # switch to cluster view and check expected cluster content
         b.click("#ovirt-topnav-clustervms")
@@ -273,6 +277,7 @@ class TestOVirtMachines(MachineCase):
         b.wait_present(".main-app-div")
         b.wait_in_text("body", "Virtual Machines")
 
+        b.wait_present("tbody tr th")
         b.wait_in_text("tbody tr th", "VM") # row with a vitual machine
         b.wait_present("#ovirt-host-to-maintenance")
         b.click("#ovirt-host-to-maintenance")

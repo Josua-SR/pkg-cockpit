@@ -227,7 +227,7 @@ return plural;
  ],
  "Bond": [
   null,
-  ""
+  "Side"
  ],
  "Bond Settings": [
   null,
@@ -375,7 +375,7 @@ return plural;
  ],
  "Forward delay $forward_delay": [
   null,
-  ""
+  "Edelleenohjaa viive $forward_delay"
  ],
  "General": [
   null,
@@ -483,7 +483,7 @@ return plural;
  ],
  "Load Balancing": [
   null,
-  ""
+  "Kuorman Tasapainotus"
  ],
  "MAC": [
   null,
@@ -507,7 +507,7 @@ return plural;
  ],
  "Master": [
   null,
-  ""
+  "Master"
  ],
  "Maximum message age $max_age": [
   null,

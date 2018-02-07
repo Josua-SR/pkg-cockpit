@@ -81,7 +81,7 @@ return plural;
  ],
  "Communication with tuned has failed": [
   null,
-  ""
+  "Yhteydenpito tuned kanssa epäonnistui"
  ],
  "Disable tuned": [
   null,

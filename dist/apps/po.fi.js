@@ -77,7 +77,7 @@ return plural;
  ],
  "Checking for new applications": [
   null,
-  ""
+  "Etsitään uusia ohjelmia"
  ],
  "Close": [
   null,

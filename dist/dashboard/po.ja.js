@@ -127,6 +127,14 @@ return plural;
   null,
   "アドレス:"
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
+ "All In One": [
+  null,
+  ""
+ ],
  "Authentication": [
   null,
   "認証"
@@ -142,6 +150,18 @@ return plural;
  "Avatar": [
   null,
   "アバター"
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -195,6 +215,10 @@ return plural;
   null,
   "色"
  ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
  "Connect": [
   null,
   "接続"
@@ -202,6 +226,10 @@ return plural;
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
   "{{ limit }} 台を超えるマシンへの同時接続はサポートされていません。"
+ ],
+ "Convertible": [
+  null,
+  ""
  ],
  "Could not contact {{host}}": [
   null,
@@ -211,13 +239,29 @@ return plural;
   null,
   "ダッシュボード"
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Disk I/O": [
   null,
   "ディスク I/O"
  ],
+ "Docking Station": [
+  null,
+  ""
+ ],
  "Edit Server": [
   null,
   "サーバーの編集"
+ ],
+ "Embedded PC": [
+  null,
+  ""
  ],
  "Enter IP address or host name": [
   null,
@@ -230,6 +274,10 @@ return plural;
  "Error loading users: {{perm_failed}}": [
   null,
   "ユーザーのロード中にエラーが発生しました: {{perm_failed}}"
+ ],
+ "Expansion Chassis": [
+  null,
+  ""
  ],
  "Failed to add machine: $0": [
   null,
@@ -251,6 +299,10 @@ return plural;
   null,
   "今すぐ移動"
  ],
+ "Hand Held": [
+  null,
+  ""
+ ],
  "Host Name": [
   null,
   "ホスト名"
@@ -267,6 +319,10 @@ return plural;
   null,
   "無効なファイルパーミッション"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
  "Is sshd running on a different port?": [
   null,
   "sshd が別のポートで実行されていますか?"
@@ -278,6 +334,10 @@ return plural;
  "Kerberos Ticket": [
   null,
   "Kerberos チケット"
+ ],
+ "Laptop": [
+  null,
+  ""
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
@@ -303,9 +363,33 @@ return plural;
   null,
   "接続が失われました。再接続の試行中です"
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
+ ],
  "Memory": [
   null,
   "メモリ"
+ ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
+ "Multi-system Chassis": [
+  null,
+  ""
  ],
  "Network": [
   null,
@@ -323,6 +407,10 @@ return plural;
   null,
   "有効な秘密鍵ではありません"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "オフ"
@@ -335,6 +423,10 @@ return plural;
   null,
   "オン"
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Password": [
   null,
   "パスワード"
@@ -343,9 +435,21 @@ return plural;
   null,
   "パスワードは受け入れられません"
  ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
  "Port": [
   null,
   "ポート"
+ ],
+ "Portable": [
+  null,
+  ""
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -359,6 +463,18 @@ return plural;
   null,
   "公開鍵"
  ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
+  null,
+  ""
+ ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
   "{{#strong}}{{host}}{{/strong}} と同期するユーザーを選択します"
@@ -371,6 +487,22 @@ return plural;
   null,
   "セット"
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
+ "Stick PC": [
+  null,
+  ""
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "Synchronize": [
   null,
   "同期"
@@ -378,6 +510,10 @@ return plural;
  "Synchronize users": [
   null,
   "ユーザーの同期"
+ ],
+ "Tablet": [
+  null,
+  ""
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -411,9 +547,17 @@ return plural;
   null,
   "別のポートを試すには、cockpit-ws を新しいバージョンにアップグレードする必要があります。"
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Type a password": [
   null,
   "パスワードを入力します"
+ ],
+ "Unknown": [
+  null,
+  "不明"
  ],
  "Unknown Host Key": [
   null,

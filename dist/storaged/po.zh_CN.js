@@ -91,6 +91,14 @@ return plural;
   "$0 disks are missing",
   "$0 磁盘缺失"
  ],
+ "$0 filesystems can not be made larger.": [
+  null,
+  ""
+ ],
+ "$0 filesystems can not be made smaller.": [
+  null,
+  ""
+ ],
  "$0 hour": [
   "$0 hours",
   "$0 小时"
@@ -286,6 +294,10 @@ return plural;
  "Change iSCSI Initiator Name": [
   null,
   "变更 iSCSI Initiator 名称"
+ ],
+ "Checking $target": [
+  null,
+  ""
  ],
  "Checking RAID Device $target": [
   null,
@@ -539,6 +551,14 @@ return plural;
   null,
   "加密 XFS (LUKS)"
  ],
+ "Encrypted volumes can not be resized here.": [
+  null,
+  ""
+ ],
+ "Encrypted volumes need to be unlocked before they can be resized.": [
+  null,
+  ""
+ ],
  "Encryption": [
   null,
   "加密"
@@ -620,6 +640,10 @@ return plural;
   "转到现在"
  ],
  "Grow": [
+  null,
+  ""
+ ],
+ "Grow Logical Volume": [
   null,
   ""
  ],
@@ -939,6 +963,10 @@ return plural;
   null,
   "$0 的物理卷"
  ],
+ "Physical volumes can not be resized here.": [
+  null,
+  ""
+ ],
  "Please confirm deletion of $0": [
   null,
   "请确认删除 $0"
@@ -1087,17 +1115,9 @@ return plural;
   null,
   "重命名 $target"
  ],
- "Resize": [
+ "Repairing $target": [
   null,
-  "调整大小"
- ],
- "Resize Filesystem": [
-  null,
-  "调整文件系统大小"
- ],
- "Resize Logical Volume": [
-  null,
-  "调整逻辑卷大小"
+  ""
  ],
  "Resizing $target": [
   null,
@@ -1134,6 +1154,14 @@ return plural;
  "Setting up loop device $target": [
   null,
   "创建 loop 设备 $target"
+ ],
+ "Shrink": [
+  null,
+  ""
+ ],
+ "Shrink Logical Volume": [
+  null,
+  ""
  ],
  "Size": [
   null,
@@ -1186,6 +1214,10 @@ return plural;
  "Stop": [
   null,
   "停止"
+ ],
+ "Stop Device": [
+  null,
+  ""
  ],
  "Stop Scrubbing": [
   null,
@@ -1323,9 +1355,9 @@ return plural;
   null,
   "当磁盘正在恢复时，该磁盘不能被移除。"
  ],
- "This logical volume cannot be made smaller.": [
+ "This volume needs to be activated before it can be resized.": [
   null,
-  "该逻辑卷不能变小。"
+  ""
  ],
  "Transfer data asynchronously": [
   null,
@@ -1391,6 +1423,10 @@ return plural;
   null,
   "无法识别的数据"
  ],
+ "Unrecognized data can not be made smaller here.": [
+  null,
+  ""
+ ],
  "Unsupported volume": [
   null,
   "不支持的卷"
@@ -1424,6 +1460,10 @@ return plural;
   ""
  ],
  "VDO Devices": [
+  null,
+  ""
+ ],
+ "VDO backing devices can not be made smaller": [
   null,
   ""
  ],

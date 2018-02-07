@@ -157,7 +157,7 @@ return plural;
  ],
  "Raw to a device": [
   null,
-  ""
+  "Sin procesar a un dispositivo"
  ],
  "Reading...": [
   null,
@@ -169,7 +169,7 @@ return plural;
  ],
  "Remote over SSH": [
   null,
-  ""
+  "Remoto sobre SSH"
  ],
  "Reserved memory": [
   null,

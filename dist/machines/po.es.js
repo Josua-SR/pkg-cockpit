@@ -95,6 +95,10 @@ return plural;
   null,
   "Orden de Inicio:"
  ],
+ "Bus": [
+  null,
+  "Bus"
+ ],
  "CHANGE NETWORK STATE action failed": [
   null,
   "Fallo en la acción CHANGE NETWORK STATE"
@@ -106,6 +110,10 @@ return plural;
  "Cancel": [
   null,
   "Cancelar"
+ ],
+ "Capacity": [
+  null,
+  "Capacidad"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -135,6 +143,22 @@ return plural;
   null,
   "Consolas"
  ],
+ "Count:": [
+  null,
+  "Conteo:"
+ ],
+ "Create": [
+  null,
+  "Crear"
+ ],
+ "Create New VM": [
+  null,
+  ""
+ ],
+ "Create New Virtual Machine": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "Eliminar"
@@ -142,6 +166,10 @@ return plural;
  "Delete associated storage files:": [
   null,
   "Eliminar archivos de almacenamiento asociados:"
+ ],
+ "Device": [
+  null,
+  "Dispositivo"
  ],
  "Disconnect": [
   null,
@@ -163,6 +191,14 @@ return plural;
   null,
   "Maquina Emulada:"
  ],
+ "File": [
+  null,
+  "Archivo"
+ ],
+ "Filesystem": [
+  null,
+  "Sistema de archivos"
+ ],
  "Force Restart": [
   null,
   "Forzar Reinicio"
@@ -171,6 +207,10 @@ return plural;
   null,
   "Forzar Apagado"
  ],
+ "GiB": [
+  null,
+  ""
+ ],
  "Graphics Console (VNC)": [
   null,
   "Consola Gráfica (VNC)"
@@ -178,6 +218,38 @@ return plural;
  "Graphics Console in Desktop Viewer": [
   null,
   "Consola Gráfica en Visualizador de Escritorio"
+ ],
+ "Host": [
+  null,
+  "Anfitrión"
+ ],
+ "INSTALL VM action failed": [
+  null,
+  ""
+ ],
+ "Immediately Start VM": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  "Instalar"
+ ],
+ "Installation Source": [
+  null,
+  ""
+ ],
+ "Installation Source Type": [
+  null,
+  ""
+ ],
+ "Installation Source should not be empty": [
+  null,
+  ""
+ ],
+ "Invalid filename": [
+  null,
+  ""
  ],
  "Launch Remote Viewer": [
   null,
@@ -203,9 +275,21 @@ return plural;
   null,
   "Conexión Manual"
  ],
+ "Memory": [
+  null,
+  "Memoria"
+ ],
+ "Memory should be positive number": [
+  null,
+  ""
+ ],
  "Memory:": [
   null,
   "Memoria:"
+ ],
+ "MiB": [
+  null,
+  "MiB"
  ],
  "Model type": [
   null,
@@ -218,6 +302,14 @@ return plural;
  "Name": [
   null,
   "Nombre"
+ ],
+ "Name should not be empty": [
+  null,
+  ""
+ ],
+ "Name should not consist of empty characters only": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -235,25 +327,53 @@ return plural;
   null,
   "No hay consola definida para esta máquina virtual."
  ],
+ "No disks defined for this VM": [
+  null,
+  "No se han definido discos para esta VM"
+ ],
+ "No matching files found": [
+  null,
+  "No se han encontrado ficheros coincidentes"
+ ],
  "No network interfaces defined for this VM": [
   null,
   "No se han definido interfaces de red para esta VM"
+ ],
+ "OS Vendor": [
+  null,
+  ""
  ],
  "Ok": [
   null,
   "Aceptar"
  ],
+ "Operating System": [
+  null,
+  "Sistema Operativo"
+ ],
  "Overview": [
   null,
   "Visión conjunta"
  ],
- "Please start the virtual machine to access its console.": [
+ "Path to ISO file on host's file system": [
   null,
   ""
+ ],
+ "Path to file": [
+  null,
+  "Ruta al fichero"
+ ],
+ "Please start the virtual machine to access its console.": [
+  null,
+  "Por favor arranque la maquina virtual para acceder a su consola."
  ],
  "Plug": [
   null,
   "Enchufe"
+ ],
+ "Pool": [
+  null,
+  "Grupo"
  ],
  "Port": [
   null,
@@ -261,11 +381,23 @@ return plural;
  ],
  "Portgroup": [
   null,
-  ""
+  "Grupo de puertos"
+ ],
+ "Protocol": [
+  null,
+  "Protocolo"
+ ],
+ "Readonly": [
+  null,
+  "Sólo lectura"
  ],
  "Reconnect": [
   null,
   "Reconectarse"
+ ],
+ "Remote URL": [
+  null,
+  ""
  ],
  "Restart": [
   null,
@@ -277,7 +409,7 @@ return plural;
  ],
  "SPICE": [
   null,
-  ""
+  "SPICE"
  ],
  "SPICE Address:": [
   null,
@@ -315,9 +447,25 @@ return plural;
   null,
   ""
  ],
+ "Source should start with http, ftp or nfs protocol": [
+  null,
+  ""
+ ],
+ "Start the VM to see disk statistics.": [
+  null,
+  ""
+ ],
  "State": [
   null,
   "Estado"
+ ],
+ "Storage Size": [
+  null,
+  ""
+ ],
+ "Storage Size should not be negative number": [
+  null,
+  ""
  ],
  "System": [
   null,
@@ -363,11 +511,23 @@ return plural;
   null,
   ""
  ],
+ "Too many files found": [
+  null,
+  ""
+ ],
  "Type": [
   null,
   "Tipo"
  ],
+ "URL": [
+  null,
+  ""
+ ],
  "Unplug": [
+  null,
+  ""
+ ],
+ "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   ""
  ],
@@ -424,6 +584,10 @@ return plural;
   ""
  ],
  "Virtualport": [
+  null,
+  ""
+ ],
+ "Volume": [
   null,
   ""
  ],

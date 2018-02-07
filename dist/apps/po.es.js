@@ -121,7 +121,7 @@ return plural;
  ],
  "Removing": [
   null,
-  ""
+  "Quitando"
  ],
  "Unknown Application": [
   null,

@@ -67,10 +67,6 @@ return plural;
   "language": "pt",
   "x-generator": "Zanata 3.9.6"
  },
- "$0 more…": [
-  null,
-  ""
- ],
  "$0 update": [
   "$0 updates",
   "",
@@ -110,7 +106,7 @@ return plural;
   null,
   ""
  ],
- "Bugs": [
+ "Bugs:": [
   null,
   ""
  ],
@@ -135,6 +131,10 @@ return plural;
   ""
  ],
  "Downloading": [
+  null,
+  ""
+ ],
+ "Errata:": [
   null,
   ""
  ],
@@ -171,10 +171,6 @@ return plural;
   ""
  ],
  "Loading available updates, please wait...": [
-  null,
-  ""
- ],
- "More information…": [
   null,
   ""
  ],
@@ -230,15 +226,19 @@ return plural;
   null,
   ""
  ],
- "Security Update": [
-  null,
-  ""
- ],
  "Set up": [
   null,
   ""
  ],
  "Setting up": [
+  null,
+  ""
+ ],
+ "Severity": [
+  null,
+  ""
+ ],
+ "Severity:": [
   null,
   ""
  ],

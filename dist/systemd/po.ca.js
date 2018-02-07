@@ -285,6 +285,10 @@ return plural;
   null,
   "9è"
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
  "After": [
   null,
   "Després"
@@ -292,6 +296,10 @@ return plural;
  "After system boot": [
   null,
   "Després de l'arrencada del sistema"
+ ],
+ "All In One": [
+  null,
+  ""
  ],
  "Asset Tag": [
   null,
@@ -308,6 +316,30 @@ return plural;
  "Automatically using specific NTP servers": [
   null,
   "Automàticament mitjançant servidors NTP específics"
+ ],
+ "BIOS": [
+  null,
+  ""
+ ],
+ "BIOS date": [
+  null,
+  ""
+ ],
+ "BIOS version": [
+  null,
+  ""
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -345,6 +377,10 @@ return plural;
   null,
   "Ordre"
  ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
  "Condition $0=$1 was not met": [
   null,
   ""
@@ -352,6 +388,10 @@ return plural;
  "Condition failed": [
   null,
   "Ha fallat la condició"
+ ],
+ "Convertible": [
+  null,
+  ""
  ],
  "Create Timer": [
   null,
@@ -373,6 +413,14 @@ return plural;
   null,
   "Descripció"
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Disable": [
   null,
   "Inhabilita"
@@ -385,6 +433,10 @@ return plural;
   null,
   "E/S de disc"
  ],
+ "Docking Station": [
+  null,
+  ""
+ ],
  "Domain": [
   null,
   "Domini"
@@ -392,6 +444,10 @@ return plural;
  "Don't Repeat": [
   null,
   "No repeteixis"
+ ],
+ "Embedded PC": [
+  null,
+  ""
  ],
  "Enable": [
   null,
@@ -417,6 +473,10 @@ return plural;
   null,
   "Tot"
  ],
+ "Expansion Chassis": [
+  null,
+  ""
+ ],
  "Free": [
   null,
   "Lliure"
@@ -437,9 +497,17 @@ return plural;
   null,
   "Vés a ara"
  ],
+ "Hand Held": [
+  null,
+  ""
+ ],
  "Hardware": [
   null,
   "Maquinari"
+ ],
+ "Hardware Information": [
+  null,
+  ""
  ],
  "Host Name": [
   null,
@@ -493,6 +561,10 @@ return plural;
   null,
   "Zona horària no vàlida"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
  "Journal": [
   null,
   "Publicacions"
@@ -508,6 +580,10 @@ return plural;
  "Kernel": [
   null,
   "Kernel"
+ ],
+ "Laptop": [
+  null,
+  ""
  ],
  "Last 24 hours": [
   null,
@@ -537,6 +613,14 @@ return plural;
   null,
   "Registres"
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "Machine ID": [
   null,
   "Id. de màquina"
@@ -544,6 +628,10 @@ return plural;
  "Machine SSH Key Fingerprints": [
   null,
   "Empremtes de les claus SSH de la màquina"
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
  ],
  "Manually": [
   null,
@@ -565,6 +653,14 @@ return plural;
   null,
   "Missatge per als usuaris que hagin iniciat la sessió"
  ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
  "Minute needs to be a number between 0-59": [
   null,
   "El minut ha de ser un nombre entre 0-59"
@@ -577,9 +673,17 @@ return plural;
   null,
   "Dilluns"
  ],
+ "Multi-system Chassis": [
+  null,
+  ""
+ ],
  "NTP Server": [
   null,
   "Servidor NTP"
+ ],
+ "Name": [
+  null,
+  "Nom"
  ],
  "Need at least one NTP server": [
   null,
@@ -617,6 +721,10 @@ return plural;
   null,
   "Nota"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "Off"
@@ -637,6 +745,10 @@ return plural;
   null,
   "Sistema operatiu"
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Paths": [
   null,
   "Camins"
@@ -644,6 +756,18 @@ return plural;
  "Performance Profile": [
   null,
   "Perfil de rendiment"
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
+ "Portable": [
+  null,
+  ""
  ],
  "Power Options": [
   null,
@@ -680,6 +804,14 @@ return plural;
  "Problems, Errors, Warnings, Notices": [
   null,
   "Problemes, errors, avisos i notificacions"
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
+  null,
+  ""
  ],
  "Real Host Name": [
   null,
@@ -761,6 +893,10 @@ return plural;
   null,
   "Desa"
  ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Seconds": [
   null,
   "segons"
@@ -809,6 +945,10 @@ return plural;
   null,
   "Sockets"
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
  "Specific Time": [
   null,
   "Instant concret"
@@ -825,6 +965,10 @@ return plural;
   null,
   "Estàtic"
  ],
+ "Stick PC": [
+  null,
+  ""
+ ],
  "Stop": [
   null,
   "Atura"
@@ -832,6 +976,14 @@ return plural;
  "Store Performance Data": [
   null,
   "Desa les dades de rendiment"
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
  ],
  "Sunday": [
   null,
@@ -853,6 +1005,10 @@ return plural;
   null,
   "Sistema"
  ],
+ "System Information": [
+  null,
+  ""
+ ],
  "System Services": [
   null,
   "Serveis del sistema"
@@ -860,6 +1016,10 @@ return plural;
  "System Time": [
   null,
   "Hora del sistema"
+ ],
+ "Tablet": [
+  null,
+  ""
  ],
  "Targets": [
   null,
@@ -909,6 +1069,10 @@ return plural;
   null,
   "Temporitzadors"
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   "S'està intentant la sincronització amb {{Server}}"
@@ -917,9 +1081,22 @@ return plural;
   null,
   "Dimarts"
  ],
+ "Type": [
+  null,
+  "Tipus"
+ ],
+ "Unknown": [
+  null,
+  "Desconegut"
+ ],
  "Unmask": [
   null,
   "Desemmascara"
+ ],
+ "Usage of $0 CPU core": [
+  "Usage of $0 CPU cores",
+  "",
+  ""
  ],
  "Used": [
   null,
@@ -956,6 +1133,11 @@ return plural;
  "failed to list ssh host keys: $0": [
   null,
   "no s'han pogut llistar les claus d'amfitrions ssh: $0"
+ ],
+ "of $0 CPU core": [
+  "of $0 CPU cores",
+  "",
+  ""
  ],
  "unknown": [
   null,
