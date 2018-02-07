@@ -119,6 +119,10 @@ return plural;
   null,
   ""
  ],
+ "Bus": [
+  null,
+  ""
+ ],
  "CHANGE NETWORK STATE action failed": [
   null,
   ""
@@ -132,6 +136,10 @@ return plural;
   ""
  ],
  "Cancel": [
+  null,
+  ""
+ ],
+ "Capacity": [
   null,
   ""
  ],
@@ -191,7 +199,19 @@ return plural;
   null,
   ""
  ],
+ "Count:": [
+  null,
+  ""
+ ],
  "Create": [
+  null,
+  ""
+ ],
+ "Create New VM": [
+  null,
+  ""
+ ],
+ "Create New Virtual Machine": [
   null,
   ""
  ],
@@ -212,6 +232,10 @@ return plural;
   ""
  ],
  "Description:": [
+  null,
+  ""
+ ],
+ "Device": [
   null,
   ""
  ],
@@ -247,11 +271,23 @@ return plural;
   null,
   ""
  ],
+ "File": [
+  null,
+  ""
+ ],
+ "Filesystem": [
+  null,
+  ""
+ ],
  "Force Restart": [
   null,
   ""
  ],
  "Force Shut Down": [
+  null,
+  ""
+ ],
+ "GiB": [
   null,
   ""
  ],
@@ -276,6 +312,34 @@ return plural;
   ""
  ],
  "Host to Maintenance": [
+  null,
+  ""
+ ],
+ "INSTALL VM action failed": [
+  null,
+  ""
+ ],
+ "Immediately Start VM": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  ""
+ ],
+ "Installation Source": [
+  null,
+  ""
+ ],
+ "Installation Source Type": [
+  null,
+  ""
+ ],
+ "Installation Source should not be empty": [
+  null,
+  ""
+ ],
+ "Invalid filename": [
   null,
   ""
  ],
@@ -315,7 +379,15 @@ return plural;
   null,
   ""
  ],
+ "Memory should be positive number": [
+  null,
+  ""
+ ],
  "Memory:": [
+  null,
+  ""
+ ],
+ "MiB": [
   null,
   ""
  ],
@@ -334,6 +406,14 @@ return plural;
  "Name": [
   null,
   "ਨਾਂ"
+ ],
+ "Name should not be empty": [
+  null,
+  ""
+ ],
+ "Name should not consist of empty characters only": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -355,6 +435,14 @@ return plural;
   null,
   ""
  ],
+ "No disks defined for this VM": [
+  null,
+  ""
+ ],
+ "No matching files found": [
+  null,
+  ""
+ ],
  "No network interfaces defined for this VM": [
   null,
   ""
@@ -371,7 +459,15 @@ return plural;
   null,
   ""
  ],
+ "OS Vendor": [
+  null,
+  ""
+ ],
  "Ok": [
+  null,
+  ""
+ ],
+ "Operating System": [
   null,
   ""
  ],
@@ -380,6 +476,14 @@ return plural;
   ""
  ],
  "Overview": [
+  null,
+  ""
+ ],
+ "Path to ISO file on host's file system": [
+  null,
+  ""
+ ],
+ "Path to file": [
   null,
   ""
  ],
@@ -415,6 +519,10 @@ return plural;
   null,
   ""
  ],
+ "Pool": [
+  null,
+  ""
+ ],
  "Port": [
   null,
   ""
@@ -427,7 +535,15 @@ return plural;
   null,
   ""
  ],
+ "Protocol": [
+  null,
+  ""
+ ],
  "REBOOT action failed": [
+  null,
+  ""
+ ],
+ "Readonly": [
   null,
   ""
  ],
@@ -444,6 +560,10 @@ return plural;
   ""
  ],
  "Reload": [
+  null,
+  ""
+ ],
+ "Remote URL": [
   null,
   ""
  ],
@@ -519,6 +639,14 @@ return plural;
   null,
   ""
  ],
+ "Source should start with http, ftp or nfs protocol": [
+  null,
+  ""
+ ],
+ "Start the VM to see disk statistics.": [
+  null,
+  ""
+ ],
  "State": [
   null,
   "ਹਾਲਤ"
@@ -528,6 +656,14 @@ return plural;
   ""
  ],
  "Stateless:": [
+  null,
+  ""
+ ],
+ "Storage Size": [
+  null,
+  ""
+ ],
+ "Storage Size should not be negative number": [
   null,
   ""
  ],
@@ -607,11 +743,23 @@ return plural;
   null,
   ""
  ],
+ "Too many files found": [
+  null,
+  ""
+ ],
  "Type": [
   null,
   "ਕਿਸਮ"
  ],
+ "URL": [
+  null,
+  ""
+ ],
  "Unplug": [
+  null,
+  ""
+ ],
+ "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   ""
  ],
@@ -694,6 +842,10 @@ return plural;
  "Virtualport": [
   null,
   ""
+ ],
+ "Volume": [
+  null,
+  "ਵਾਲੀਅਮ"
  ],
  "Your browser does not support iframes.": [
   null,

@@ -67,10 +67,6 @@ return plural;
   "language": "es",
   "x-generator": "Zanata 3.9.6"
  },
- "$0 more…": [
-  null,
-  "$0 mas ..."
- ],
  "$0 update": [
   "$0 updates",
   "$0 actualización.",
@@ -110,9 +106,9 @@ return plural;
   null,
   "Actualizaciones Disponibles"
  ],
- "Bugs": [
+ "Bugs:": [
   null,
-  "Bugs"
+  ""
  ],
  "Cancel": [
   null,
@@ -137,6 +133,10 @@ return plural;
  "Downloading": [
   null,
   "Descargando"
+ ],
+ "Errata:": [
+  null,
+  ""
  ],
  "Ignore": [
   null,
@@ -174,10 +174,6 @@ return plural;
   null,
   "Leyendo actualizaciones disponibles, por favor espere..."
  ],
- "More information…": [
-  null,
-  "Mas información ..."
- ],
  "Name": [
   null,
   "Nombre"
@@ -212,33 +208,37 @@ return plural;
  ],
  "Refreshing package information": [
   null,
-  ""
+  "Refrescando información del paquete"
  ],
  "Register…": [
   null,
-  ""
+  "Registro…"
  ],
  "Restart Now": [
   null,
-  ""
+  "Reiniciar Ahora"
  ],
  "Restart Recommended": [
   null,
-  ""
+  "Reinicio Recomendado"
  ],
  "Restarting": [
   null,
-  ""
- ],
- "Security Update": [
-  null,
-  ""
+  "Reiniciando"
  ],
  "Set up": [
   null,
   ""
  ],
  "Setting up": [
+  null,
+  ""
+ ],
+ "Severity": [
+  null,
+  ""
+ ],
+ "Severity:": [
   null,
   ""
  ],

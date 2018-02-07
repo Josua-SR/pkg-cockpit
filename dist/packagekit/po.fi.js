@@ -67,10 +67,6 @@ return plural;
   "language": "fi",
   "x-generator": "Zanata 3.9.6"
  },
- "$0 more…": [
-  null,
-  "$0 lisää…"
- ],
  "$0 update": [
   "$0 updates",
   "$0 päivitys",
@@ -78,13 +74,13 @@ return plural;
  ],
  "$1 security fix": [
   "$1 security fixes",
-  "",
-  ""
+  "$1 turvallisuuspäivitys",
+  "$1 turvallisuuspäivitykset"
  ],
  ", including $1 security fix": [
   ", including $1 security fixes",
-  "",
-  ""
+  ", mukaan lukien $1 turvallisuuspäivitys",
+  ", mukaan lukien $1 turvallisuuspäivitykset"
  ],
  "Apply all updates": [
   null,
@@ -110,7 +106,7 @@ return plural;
   null,
   "Saatavilla olevat päivitykset"
  ],
- "Bugs": [
+ "Bugs:": [
   null,
   ""
  ],
@@ -124,7 +120,7 @@ return plural;
  ],
  "Cockpit itself will be updated.": [
   null,
-  ""
+  "Cockpit itse tullaan päivittämään."
  ],
  "Details": [
   null,
@@ -137,6 +133,10 @@ return plural;
  "Downloading": [
   null,
   "Ladataan"
+ ],
+ "Errata:": [
+  null,
+  ""
  ],
  "Ignore": [
   null,
@@ -168,15 +168,11 @@ return plural;
  ],
  "Loading available updates failed": [
   null,
-  ""
+  "Saatavilla olevien päivitysten lataus epäonnistui"
  ],
  "Loading available updates, please wait...": [
   null,
-  ""
- ],
- "More information…": [
-  null,
-  ""
+  "Ladataan saatavilla olevat päivitykset, odota hetki..."
  ],
  "Name": [
   null,
@@ -230,15 +226,19 @@ return plural;
   null,
   ""
  ],
- "Security Update": [
-  null,
-  "Tietoturvapäivitys"
- ],
  "Set up": [
   null,
   ""
  ],
  "Setting up": [
+  null,
+  ""
+ ],
+ "Severity": [
+  null,
+  ""
+ ],
+ "Severity:": [
   null,
   ""
  ],

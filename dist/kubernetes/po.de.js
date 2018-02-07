@@ -529,6 +529,10 @@ return plural;
   null,
   ""
  ],
+ "General": [
+  null,
+  "Allgemein"
+ ],
  "Git Repository": [
   null,
   ""
@@ -822,6 +826,10 @@ return plural;
   ""
  ],
  "No users are present.": [
+  null,
+  ""
+ ],
+ "No virtual machines": [
   null,
   ""
  ],
@@ -1281,6 +1289,10 @@ return plural;
   null,
   ""
  ],
+ "Session": [
+  null,
+  "Sitzung"
+ ],
  "Session Affinity": [
   null,
   ""
@@ -1376,6 +1388,10 @@ return plural;
  "Sync all tags from a remote image repository": [
   null,
   ""
+ ],
+ "System": [
+  null,
+  "System"
  ],
  "TLS Termination": [
   null,
@@ -1557,6 +1573,14 @@ return plural;
   null,
   "Benutzer"
  ],
+ "VM DELETE failed.": [
+  null,
+  ""
+ ],
+ "Virtual Machines": [
+  null,
+  "Virtuelle Maschinen"
+ ],
  "Volume": [
   null,
   ""
@@ -1605,7 +1629,75 @@ return plural;
   null,
   "Ihre Zugangsdaten erlauben Ihnen keinen Zugang zur Docker Registry von der Kommandozeile."
  ],
+ "bridge": [
+  null,
+  ""
+ ],
+ "cdrom": [
+  null,
+  ""
+ ],
+ "crashed": [
+  null,
+  "abgestürzt"
+ ],
+ "custom": [
+  null,
+  ""
+ ],
+ "direct": [
+  null,
+  ""
+ ],
+ "disabled": [
+  null,
+  "Aus"
+ ],
+ "disk": [
+  null,
+  ""
+ ],
+ "down": [
+  null,
+  ""
+ ],
+ "dying": [
+  null,
+  ""
+ ],
  "eg: my-image-stream": [
+  null,
+  ""
+ ],
+ "enabled": [
+  null,
+  "An"
+ ],
+ "ethernet": [
+  null,
+  ""
+ ],
+ "host": [
+  null,
+  ""
+ ],
+ "hostdev": [
+  null,
+  ""
+ ],
+ "idle": [
+  null,
+  ""
+ ],
+ "mcast": [
+  null,
+  ""
+ ],
+ "n/a": [
+  null,
+  ""
+ ],
+ "network": [
   null,
   ""
  ],
@@ -1617,7 +1709,55 @@ return plural;
   null,
   "kein"
  ],
+ "paused": [
+  null,
+  "pausiert"
+ ],
  "pending volume claims": [
+  null,
+  ""
+ ],
+ "running": [
+  null,
+  "Läuft"
+ ],
+ "server": [
+  null,
+  ""
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
+  null,
+  ""
+ ],
+ "shut off": [
+  null,
+  ""
+ ],
+ "shutdown": [
+  null,
+  "Herunterfahren"
+ ],
+ "suspended (PM)": [
+  null,
+  "Angehalten (PM)"
+ ],
+ "udp": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
+  null,
+  ""
+ ],
+ "vhostuser": [
   null,
   ""
  ],

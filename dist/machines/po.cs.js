@@ -95,6 +95,10 @@ return plural;
   null,
   "Boot příkaz:"
  ],
+ "Bus": [
+  null,
+  "Bus"
+ ],
  "CHANGE NETWORK STATE action failed": [
   null,
   "CHANGE NETWORK STATE akce selhala"
@@ -106,6 +110,10 @@ return plural;
  "Cancel": [
   null,
   "Zrušit"
+ ],
+ "Capacity": [
+  null,
+  "Kapacita"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -135,6 +143,22 @@ return plural;
   null,
   ""
  ],
+ "Count:": [
+  null,
+  ""
+ ],
+ "Create": [
+  null,
+  ""
+ ],
+ "Create New VM": [
+  null,
+  ""
+ ],
+ "Create New Virtual Machine": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "Smazat"
@@ -142,6 +166,10 @@ return plural;
  "Delete associated storage files:": [
   null,
   ""
+ ],
+ "Device": [
+  null,
+  "Zařízení"
  ],
  "Disconnect": [
   null,
@@ -163,6 +191,14 @@ return plural;
   null,
   ""
  ],
+ "File": [
+  null,
+  "Soubor"
+ ],
+ "Filesystem": [
+  null,
+  "Systém souborů"
+ ],
  "Force Restart": [
   null,
   ""
@@ -171,11 +207,47 @@ return plural;
   null,
   ""
  ],
+ "GiB": [
+  null,
+  ""
+ ],
  "Graphics Console (VNC)": [
   null,
   ""
  ],
  "Graphics Console in Desktop Viewer": [
+  null,
+  ""
+ ],
+ "Host": [
+  null,
+  "Počítač"
+ ],
+ "INSTALL VM action failed": [
+  null,
+  ""
+ ],
+ "Immediately Start VM": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  ""
+ ],
+ "Installation Source": [
+  null,
+  ""
+ ],
+ "Installation Source Type": [
+  null,
+  ""
+ ],
+ "Installation Source should not be empty": [
+  null,
+  ""
+ ],
+ "Invalid filename": [
   null,
   ""
  ],
@@ -203,9 +275,21 @@ return plural;
   null,
   ""
  ],
+ "Memory": [
+  null,
+  "Paměť"
+ ],
+ "Memory should be positive number": [
+  null,
+  ""
+ ],
  "Memory:": [
   null,
   "Paměť:"
+ ],
+ "MiB": [
+  null,
+  "MiB"
  ],
  "Model type": [
   null,
@@ -216,6 +300,14 @@ return plural;
   ""
  ],
  "Name": [
+  null,
+  ""
+ ],
+ "Name should not be empty": [
+  null,
+  ""
+ ],
+ "Name should not consist of empty characters only": [
   null,
   ""
  ],
@@ -235,7 +327,19 @@ return plural;
   null,
   ""
  ],
+ "No disks defined for this VM": [
+  null,
+  ""
+ ],
+ "No matching files found": [
+  null,
+  ""
+ ],
  "No network interfaces defined for this VM": [
+  null,
+  ""
+ ],
+ "OS Vendor": [
   null,
   ""
  ],
@@ -243,9 +347,21 @@ return plural;
   null,
   "Ok"
  ],
+ "Operating System": [
+  null,
+  ""
+ ],
  "Overview": [
   null,
   "Přehled"
+ ],
+ "Path to ISO file on host's file system": [
+  null,
+  ""
+ ],
+ "Path to file": [
+  null,
+  ""
  ],
  "Please start the virtual machine to access its console.": [
   null,
@@ -255,6 +371,10 @@ return plural;
   null,
   ""
  ],
+ "Pool": [
+  null,
+  "Úložiště"
+ ],
  "Port": [
   null,
   "Port"
@@ -263,7 +383,19 @@ return plural;
   null,
   ""
  ],
+ "Protocol": [
+  null,
+  "Protokol"
+ ],
+ "Readonly": [
+  null,
+  ""
+ ],
  "Reconnect": [
+  null,
+  ""
+ ],
+ "Remote URL": [
   null,
   ""
  ],
@@ -315,9 +447,25 @@ return plural;
   null,
   "Zdroj"
  ],
+ "Source should start with http, ftp or nfs protocol": [
+  null,
+  ""
+ ],
+ "Start the VM to see disk statistics.": [
+  null,
+  ""
+ ],
  "State": [
   null,
   "Stav"
+ ],
+ "Storage Size": [
+  null,
+  ""
+ ],
+ "Storage Size should not be negative number": [
+  null,
+  ""
  ],
  "System": [
   null,
@@ -363,11 +511,23 @@ return plural;
   null,
   ""
  ],
+ "Too many files found": [
+  null,
+  ""
+ ],
  "Type": [
   null,
   "Typ"
  ],
+ "URL": [
+  null,
+  "URL"
+ ],
  "Unplug": [
+  null,
+  ""
+ ],
+ "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   ""
  ],
@@ -426,6 +586,10 @@ return plural;
  "Virtualport": [
   null,
   ""
+ ],
+ "Volume": [
+  null,
+  "Svazek"
  ],
  "Your browser does not support iframes.": [
   null,

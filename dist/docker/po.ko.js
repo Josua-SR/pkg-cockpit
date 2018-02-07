@@ -115,6 +115,14 @@ return plural;
   null,
   ""
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
+ "All In One": [
+  null,
+  ""
+ ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
   ""
@@ -130,6 +138,18 @@ return plural;
  "Author": [
   null,
   "작성자"
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -167,12 +187,12 @@ return plural;
   null,
   "닫기"
  ],
- "Combined CPU usage": [
+ "Combined memory usage": [
   null,
   ""
  ],
- "Combined memory usage": [
-  null,
+ "Combined usage of $0 CPU core": [
+  "Combined usage of $0 CPU cores",
   ""
  ],
  "Command": [
@@ -192,6 +212,10 @@ return plural;
   ""
  ],
  "Commit Image": [
+  null,
+  ""
+ ],
+ "Compact PCI": [
   null,
   ""
  ],
@@ -226,6 +250,10 @@ return plural;
  "Containers": [
   null,
   "컨테이너들"
+ ],
+ "Convertible": [
+  null,
+  ""
  ],
  "Could not add all disks": [
   null,
@@ -263,6 +291,14 @@ return plural;
   null,
   "이미지를 삭제하시면 실제 파일이 삭제되지만, 필요할 때 다시 다운로드 하실 수 있습니다. 만일 이미지가 리포지터리에 한번도 푸쉬되지 않았다면, 다시 다운로드 하실 수 없습니다."
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Details": [
   null,
   ""
@@ -270,6 +306,10 @@ return plural;
  "Docker is not installed or activated on the system": [
   null,
   "본 시스템에 Docker가 설치되어 있지 않거나 활성화되어 있지 않습니다."
+ ],
+ "Docking Station": [
+  null,
+  ""
  ],
  "Download": [
   null,
@@ -286,6 +326,10 @@ return plural;
  "Duplicate port": [
   null,
   "포트 복제"
+ ],
+ "Embedded PC": [
+  null,
+  ""
  ],
  "Entrypoint": [
   null,
@@ -315,6 +359,10 @@ return plural;
   null,
   "$ExitCode 로 종료"
  ],
+ "Expansion Chassis": [
+  null,
+  ""
+ ],
  "Expose container ports": [
   null,
   ""
@@ -340,6 +388,10 @@ return plural;
   ""
  ],
  "Get new image": [
+  null,
+  ""
+ ],
+ "Hand Held": [
   null,
   ""
  ],
@@ -395,6 +447,14 @@ return plural;
   null,
   "잘못된 포트"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
+ "Laptop": [
+  null,
+  ""
+ ],
  "Link to another container": [
   null,
   ""
@@ -411,9 +471,21 @@ return plural;
   null,
   ""
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "MAC Address:": [
   null,
   "주소"
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
  ],
  "Memory": [
   null,
@@ -431,7 +503,19 @@ return plural;
   null,
   ""
  ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
  "Mount container volumes": [
+  null,
+  ""
+ ],
+ "Multi-system Chassis": [
   null,
   ""
  ],
@@ -491,6 +575,10 @@ return plural;
   null,
   "찾을 수 없습니다."
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "비활성"
@@ -511,7 +599,19 @@ return plural;
   "On failure, retry $0 times",
   ""
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Overview": [
+  null,
+  ""
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
   null,
   ""
  ],
@@ -527,6 +627,10 @@ return plural;
   null,
   ""
  ],
+ "Portable": [
+  null,
+  ""
+ ],
  "Ports": [
   null,
   "포트"
@@ -536,6 +640,14 @@ return plural;
   ""
  ],
  "Problems": [
+  null,
+  ""
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
   null,
   ""
  ],
@@ -595,6 +707,10 @@ return plural;
   null,
   ""
  ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Security": [
   null,
   ""
@@ -619,6 +735,10 @@ return plural;
   null,
   ""
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
  "Start": [
   null,
   ""
@@ -632,6 +752,10 @@ return plural;
   ""
  ],
  "State:": [
+  null,
+  ""
+ ],
+ "Stick PC": [
   null,
   ""
  ],
@@ -651,9 +775,21 @@ return plural;
   null,
   ""
  ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "TCP": [
   null,
   "TCP"
+ ],
+ "Tablet": [
+  null,
+  ""
  ],
  "Tag": [
   null,
@@ -687,6 +823,10 @@ return plural;
   null,
   ""
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Try again": [
   null,
   "다시 시도"
@@ -702,6 +842,10 @@ return plural;
  "Unexpected error": [
   null,
   "예상치 못한 오류"
+ ],
+ "Unknown": [
+  null,
+  "알 수 없음"
  ],
  "Unless Stopped": [
   null,

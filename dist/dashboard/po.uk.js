@@ -139,6 +139,14 @@ return plural;
   null,
   "Адреса"
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
+ "All In One": [
+  null,
+  ""
+ ],
  "Authentication": [
   null,
   "Розпізнавання"
@@ -154,6 +162,18 @@ return plural;
  "Avatar": [
   null,
   "Аватар"
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -207,6 +227,10 @@ return plural;
   null,
   "Колір"
  ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
  "Connect": [
   null,
   "З'єднатися"
@@ -214,6 +238,10 @@ return plural;
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
   "Підтримки одночасного з’єднання із понад {{ limit }} комп’ютерами не передбачено."
+ ],
+ "Convertible": [
+  null,
+  ""
  ],
  "Could not contact {{host}}": [
   null,
@@ -223,13 +251,29 @@ return plural;
   null,
   "Панель приладів"
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Disk I/O": [
   null,
   "Дисковий ввід/вивід"
  ],
+ "Docking Station": [
+  null,
+  ""
+ ],
  "Edit Server": [
   null,
   "Змінити сервер"
+ ],
+ "Embedded PC": [
+  null,
+  ""
  ],
  "Enter IP address or host name": [
   null,
@@ -242,6 +286,10 @@ return plural;
  "Error loading users: {{perm_failed}}": [
   null,
   "Помилка під час завантаження списку користувачів: {{perm_failed}}"
+ ],
+ "Expansion Chassis": [
+  null,
+  ""
  ],
  "Failed to add machine: $0": [
   null,
@@ -263,6 +311,10 @@ return plural;
   null,
   "Перейти зараз"
  ],
+ "Hand Held": [
+  null,
+  ""
+ ],
  "Host Name": [
   null,
   "Назва вузла"
@@ -279,6 +331,10 @@ return plural;
   null,
   "Некоректні права доступу до файла"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
  "Is sshd running on a different port?": [
   null,
   "sshd працює на іншому порті?"
@@ -290,6 +346,10 @@ return plural;
  "Kerberos Ticket": [
   null,
   "Квиток Kerberos"
+ ],
+ "Laptop": [
+  null,
+  ""
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
@@ -315,9 +375,33 @@ return plural;
   null,
   "З’єднання розірвано. Намагаємося його повторно встановити"
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
+ ],
  "Memory": [
   null,
   "Пам'ять"
+ ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
+ "Multi-system Chassis": [
+  null,
+  ""
  ],
  "Network": [
   null,
@@ -335,6 +419,10 @@ return plural;
   null,
   "Некоректний закритий ключ"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "Вимкнено"
@@ -347,6 +435,10 @@ return plural;
   null,
   "Увімкнено"
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Password": [
   null,
   "Пароль"
@@ -355,9 +447,21 @@ return plural;
   null,
   "Пароль не прийнято"
  ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
  "Port": [
   null,
   "Порт"
+ ],
+ "Portable": [
+  null,
+  ""
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -371,6 +475,18 @@ return plural;
   null,
   "Відкритий ключ"
  ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
+  null,
+  ""
+ ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
   "Виберіть користувачів, записи яких ви б хотіли синхронізувати з {{#strong}}{{host}}{{/strong}}"
@@ -383,6 +499,22 @@ return plural;
   null,
   "Встановити"
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
+ "Stick PC": [
+  null,
+  ""
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "Synchronize": [
   null,
   "Синхронізувати"
@@ -390,6 +522,10 @@ return plural;
  "Synchronize users": [
   null,
   "Синхронізувати користувачів"
+ ],
+ "Tablet": [
+  null,
+  ""
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -423,9 +559,17 @@ return plural;
   null,
   "Щоб спробувати інший порт, вам слід оновити cockpit-ws."
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Type a password": [
   null,
   "Введіть пароль"
+ ],
+ "Unknown": [
+  null,
+  "Невідомий"
  ],
  "Unknown Host Key": [
   null,

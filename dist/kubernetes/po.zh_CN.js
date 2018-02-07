@@ -527,6 +527,10 @@ return plural;
   null,
   "GCE 持久盘"
  ],
+ "General": [
+  null,
+  "通用"
+ ],
  "Git Repository": [
   null,
   "Git 仓库"
@@ -822,6 +826,10 @@ return plural;
  "No users are present.": [
   null,
   "没有用户用于显示。"
+ ],
+ "No virtual machines": [
+  null,
+  ""
  ],
  "No volumes are present.": [
   null,
@@ -1279,6 +1287,10 @@ return plural;
   null,
   "服务组织容器舱并提供一个通用DNS名称和一个可选的负载均衡的IP地址来访问它们。"
  ],
+ "Session": [
+  null,
+  "会话"
+ ],
  "Session Affinity": [
   null,
   "会话关联"
@@ -1374,6 +1386,10 @@ return plural;
  "Sync all tags from a remote image repository": [
   null,
   "从远程镜像仓库同步所有标记"
+ ],
+ "System": [
+  null,
+  "系统"
  ],
  "TLS Termination": [
   null,
@@ -1555,6 +1571,14 @@ return plural;
   null,
   "用户"
  ],
+ "VM DELETE failed.": [
+  null,
+  ""
+ ],
+ "Virtual Machines": [
+  null,
+  "虚拟机"
+ ],
  "Volume": [
   null,
   "卷"
@@ -1603,9 +1627,77 @@ return plural;
   null,
   "登录凭证没有从命令行使用 Docker 注册表的权限"
  ],
+ "bridge": [
+  null,
+  ""
+ ],
+ "cdrom": [
+  null,
+  "光驱"
+ ],
+ "crashed": [
+  null,
+  "已崩溃"
+ ],
+ "custom": [
+  null,
+  "自定义"
+ ],
+ "direct": [
+  null,
+  ""
+ ],
+ "disabled": [
+  null,
+  "已禁用"
+ ],
+ "disk": [
+  null,
+  "磁盘"
+ ],
+ "down": [
+  null,
+  "已关闭"
+ ],
+ "dying": [
+  null,
+  "失活的"
+ ],
  "eg: my-image-stream": [
   null,
   "例如：my-image-stream"
+ ],
+ "enabled": [
+  null,
+  "已启用"
+ ],
+ "ethernet": [
+  null,
+  ""
+ ],
+ "host": [
+  null,
+  "主机"
+ ],
+ "hostdev": [
+  null,
+  ""
+ ],
+ "idle": [
+  null,
+  "休眠的"
+ ],
+ "mcast": [
+  null,
+  ""
+ ],
+ "n/a": [
+  null,
+  ""
+ ],
+ "network": [
+  null,
+  "网络"
  ],
  "no": [
   null,
@@ -1615,9 +1707,57 @@ return plural;
   null,
   "空"
  ],
+ "paused": [
+  null,
+  "已暂停"
+ ],
  "pending volume claims": [
   null,
   "挂起的卷声明"
+ ],
+ "running": [
+  null,
+  "运行中"
+ ],
+ "server": [
+  null,
+  ""
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
+  null,
+  ""
+ ],
+ "shut off": [
+  null,
+  "关闭"
+ ],
+ "shutdown": [
+  null,
+  "关机"
+ ],
+ "suspended (PM)": [
+  null,
+  "已挂起 （电源管理）"
+ ],
+ "udp": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  "运行中"
+ ],
+ "user": [
+  null,
+  ""
+ ],
+ "vhostuser": [
+  null,
+  ""
  ],
  "yes": [
   null,

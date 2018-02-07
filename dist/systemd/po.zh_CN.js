@@ -279,6 +279,10 @@ return plural;
   null,
   "9号"
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
  "After": [
   null,
   "以后"
@@ -286,6 +290,10 @@ return plural;
  "After system boot": [
   null,
   "系统启动后"
+ ],
+ "All In One": [
+  null,
+  ""
  ],
  "Asset Tag": [
   null,
@@ -302,6 +310,30 @@ return plural;
  "Automatically using specific NTP servers": [
   null,
   "自动的（使用指定 NTP 服务器）"
+ ],
+ "BIOS": [
+  null,
+  ""
+ ],
+ "BIOS date": [
+  null,
+  ""
+ ],
+ "BIOS version": [
+  null,
+  ""
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -339,6 +371,10 @@ return plural;
   null,
   "命令"
  ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
  "Condition $0=$1 was not met": [
   null,
   "条件 $0=$1 不满足"
@@ -346,6 +382,10 @@ return plural;
  "Condition failed": [
   null,
   "条件失败"
+ ],
+ "Convertible": [
+  null,
+  ""
  ],
  "Create Timer": [
   null,
@@ -367,6 +407,14 @@ return plural;
   null,
   "描述"
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Disable": [
   null,
   "禁用"
@@ -379,6 +427,10 @@ return plural;
   null,
   "磁盘 读/写"
  ],
+ "Docking Station": [
+  null,
+  ""
+ ],
  "Domain": [
   null,
   "域"
@@ -386,6 +438,10 @@ return plural;
  "Don't Repeat": [
   null,
   "不要重复"
+ ],
+ "Embedded PC": [
+  null,
+  ""
  ],
  "Enable": [
   null,
@@ -411,6 +467,10 @@ return plural;
   null,
   "所有内容"
  ],
+ "Expansion Chassis": [
+  null,
+  ""
+ ],
  "Free": [
   null,
   "可用"
@@ -431,9 +491,17 @@ return plural;
   null,
   "转到现在"
  ],
+ "Hand Held": [
+  null,
+  ""
+ ],
  "Hardware": [
   null,
   "硬件"
+ ],
+ "Hardware Information": [
+  null,
+  ""
  ],
  "Host Name": [
   null,
@@ -487,6 +555,10 @@ return plural;
   null,
   "无效的时区"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
  "Journal": [
   null,
   "日志"
@@ -502,6 +574,10 @@ return plural;
  "Kernel": [
   null,
   "内核"
+ ],
+ "Laptop": [
+  null,
+  ""
  ],
  "Last 24 hours": [
   null,
@@ -531,6 +607,14 @@ return plural;
   null,
   "日志"
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "Machine ID": [
   null,
   "机器编号"
@@ -538,6 +622,10 @@ return plural;
  "Machine SSH Key Fingerprints": [
   null,
   "主机 SSH 密钥指纹"
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
  ],
  "Manually": [
   null,
@@ -559,6 +647,14 @@ return plural;
   null,
   "登录用户信息"
  ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
  "Minute needs to be a number between 0-59": [
   null,
   "分钟需要是 0-59 间的数字"
@@ -571,9 +667,17 @@ return plural;
   null,
   "星期一"
  ],
+ "Multi-system Chassis": [
+  null,
+  ""
+ ],
  "NTP Server": [
   null,
   "NTP 服务器"
+ ],
+ "Name": [
+  null,
+  "名称"
  ],
  "Need at least one NTP server": [
   null,
@@ -611,6 +715,10 @@ return plural;
   null,
   "注意"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "关"
@@ -631,6 +739,10 @@ return plural;
   null,
   "操作系统"
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Paths": [
   null,
   "路径"
@@ -638,6 +750,18 @@ return plural;
  "Performance Profile": [
   null,
   "性能配置集"
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
+ "Portable": [
+  null,
+  ""
  ],
  "Power Options": [
   null,
@@ -674,6 +798,14 @@ return plural;
  "Problems, Errors, Warnings, Notices": [
   null,
   "问题，错误，警告，通知"
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
+  null,
+  ""
  ],
  "Real Host Name": [
   null,
@@ -755,6 +887,10 @@ return plural;
   null,
   "保存"
  ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Seconds": [
   null,
   "秒"
@@ -803,6 +939,10 @@ return plural;
   null,
   "套接字"
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
  "Specific Time": [
   null,
   "指定时间"
@@ -819,6 +959,10 @@ return plural;
   null,
   "静态"
  ],
+ "Stick PC": [
+  null,
+  ""
+ ],
  "Stop": [
   null,
   "停止"
@@ -826,6 +970,14 @@ return plural;
  "Store Performance Data": [
   null,
   "保存性能数据"
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
  ],
  "Sunday": [
   null,
@@ -847,6 +999,10 @@ return plural;
   null,
   "系统"
  ],
+ "System Information": [
+  null,
+  ""
+ ],
  "System Services": [
   null,
   "系统服务"
@@ -854,6 +1010,10 @@ return plural;
  "System Time": [
   null,
   "系统时间"
+ ],
+ "Tablet": [
+  null,
+  ""
  ],
  "Targets": [
   null,
@@ -903,6 +1063,10 @@ return plural;
   null,
   "计时器"
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   "正在尝试与 {{Server}} 同步"
@@ -911,9 +1075,21 @@ return plural;
   null,
   "星期二"
  ],
+ "Type": [
+  null,
+  "类型"
+ ],
+ "Unknown": [
+  null,
+  "未知"
+ ],
  "Unmask": [
   null,
   "Unmask"
+ ],
+ "Usage of $0 CPU core": [
+  "Usage of $0 CPU cores",
+  ""
  ],
  "Used": [
   null,
@@ -950,6 +1126,10 @@ return plural;
  "failed to list ssh host keys: $0": [
   null,
   "罗列 SSH 主机密钥失败: $0"
+ ],
+ "of $0 CPU core": [
+  "of $0 CPU cores",
+  ""
  ],
  "unknown": [
   null,

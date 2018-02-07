@@ -377,7 +377,7 @@ return plural;
  ],
  "Privileged tasks not available": [
   null,
-  ""
+  "Tareas privilegiadas no disponibles"
  ],
  "Project website": [
   null,
@@ -401,7 +401,7 @@ return plural;
  ],
  "Reuse my password for privileged tasks and to connect to other machines": [
   null,
-  ""
+  "Reutilizar mi contraseña para tareas con privilegios y para conectar con otras máquinas"
  ],
  "Select": [
   null,

@@ -38,7 +38,6 @@ import re
 import json
 import tempfile
 import time
-import signal
 import unittest
 
 import tap
@@ -240,17 +239,12 @@ class Browser:
         return r
 
     def wait(self, predicate):
-        def alarm_handler(signum, frame):
-            raise Error('timed out waiting for predicate to become true')
-
-        signal.signal(signal.SIGALRM, alarm_handler)
-        orig_handler = signal.alarm(self.cdp.timeout)
-        while True:
+        for _ in range(self.cdp.timeout * 5):
             val = predicate()
             if val:
-                signal.alarm(0)
-                signal.signal(signal.SIGALRM, orig_handler)
                 return val
+            time.sleep(0.2)
+        raise Error('timed out waiting for predicate to become true')
 
     def wait_js_cond(self, cond):
         result = self.cdp.invoke("Runtime.evaluate",
@@ -731,7 +725,7 @@ class MachineCase(unittest.TestCase):
     ]
 
     def allow_journal_messages(self, *patterns):
-        """Don't fail if the journal containes a entry matching the given regexp"""
+        """Don't fail if the journal contains a entry matching the given regexp"""
         for p in patterns:
             self.allowed_messages.append(p)
 

@@ -119,6 +119,10 @@ return plural;
   null,
   "启动顺序："
  ],
+ "Bus": [
+  null,
+  "总线"
+ ],
  "CHANGE NETWORK STATE action failed": [
   null,
   ""
@@ -134,6 +138,10 @@ return plural;
  "Cancel": [
   null,
   "取消"
+ ],
+ "Capacity": [
+  null,
+  "容量"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -191,9 +199,21 @@ return plural;
   null,
   ""
  ],
+ "Count:": [
+  null,
+  "计数："
+ ],
  "Create": [
   null,
   "创建"
+ ],
+ "Create New VM": [
+  null,
+  ""
+ ],
+ "Create New Virtual Machine": [
+  null,
+  ""
  ],
  "Create VM": [
   null,
@@ -214,6 +234,10 @@ return plural;
  "Description:": [
   null,
   "描述："
+ ],
+ "Device": [
+  null,
+  "设备"
  ],
  "Disconnect": [
   null,
@@ -247,6 +271,14 @@ return plural;
   null,
   "FQDN"
  ],
+ "File": [
+  null,
+  "文件"
+ ],
+ "Filesystem": [
+  null,
+  "文件系统"
+ ],
  "Force Restart": [
   null,
   "强制重启"
@@ -254,6 +286,10 @@ return plural;
  "Force Shut Down": [
   null,
   "强制关机"
+ ],
+ "GiB": [
+  null,
+  ""
  ],
  "Graphics Console (VNC)": [
   null,
@@ -276,6 +312,34 @@ return plural;
   "主机"
  ],
  "Host to Maintenance": [
+  null,
+  ""
+ ],
+ "INSTALL VM action failed": [
+  null,
+  ""
+ ],
+ "Immediately Start VM": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  "安装"
+ ],
+ "Installation Source": [
+  null,
+  ""
+ ],
+ "Installation Source Type": [
+  null,
+  ""
+ ],
+ "Installation Source should not be empty": [
+  null,
+  ""
+ ],
+ "Invalid filename": [
   null,
   ""
  ],
@@ -315,9 +379,17 @@ return plural;
   null,
   "内存"
  ],
+ "Memory should be positive number": [
+  null,
+  ""
+ ],
  "Memory:": [
   null,
   "内存："
+ ],
+ "MiB": [
+  null,
+  "MiB"
  ],
  "Migrate To:": [
   null,
@@ -334,6 +406,14 @@ return plural;
  "Name": [
   null,
   "名称"
+ ],
+ "Name should not be empty": [
+  null,
+  ""
+ ],
+ "Name should not consist of empty characters only": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -355,6 +435,14 @@ return plural;
   null,
   ""
  ],
+ "No disks defined for this VM": [
+  null,
+  "没有为该虚拟机定义磁盘"
+ ],
+ "No matching files found": [
+  null,
+  "没有找到匹配的文件"
+ ],
  "No network interfaces defined for this VM": [
   null,
   ""
@@ -371,9 +459,17 @@ return plural;
   null,
   "操作系统类型："
  ],
+ "OS Vendor": [
+  null,
+  ""
+ ],
  "Ok": [
   null,
   "确认"
+ ],
+ "Operating System": [
+  null,
+  "操作系统"
  ],
  "Optimized for:": [
   null,
@@ -382,6 +478,14 @@ return plural;
  "Overview": [
   null,
   "概览"
+ ],
+ "Path to ISO file on host's file system": [
+  null,
+  ""
+ ],
+ "Path to file": [
+  null,
+  "文件路径"
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
@@ -415,6 +519,10 @@ return plural;
   null,
   ""
  ],
+ "Pool": [
+  null,
+  "池"
+ ],
  "Port": [
   null,
   "端口"
@@ -427,9 +535,17 @@ return plural;
   null,
   "正在准备维护"
  ],
+ "Protocol": [
+  null,
+  "协议"
+ ],
  "REBOOT action failed": [
   null,
   "重启操作失败"
+ ],
+ "Readonly": [
+  null,
+  "只读"
  ],
  "Reconnect": [
   null,
@@ -446,6 +562,10 @@ return plural;
  "Reload": [
   null,
   "重载"
+ ],
+ "Remote URL": [
+  null,
+  ""
  ],
  "Restart": [
   null,
@@ -519,6 +639,14 @@ return plural;
   null,
   "源"
  ],
+ "Source should start with http, ftp or nfs protocol": [
+  null,
+  ""
+ ],
+ "Start the VM to see disk statistics.": [
+  null,
+  ""
+ ],
  "State": [
   null,
   "状态"
@@ -530,6 +658,14 @@ return plural;
  "Stateless:": [
   null,
   "无状态："
+ ],
+ "Storage Size": [
+  null,
+  ""
+ ],
+ "Storage Size should not be negative number": [
+  null,
+  ""
  ],
  "Suspend": [
   null,
@@ -607,13 +743,25 @@ return plural;
   null,
   "该虚拟机没有被 oVirt 管理"
  ],
+ "Too many files found": [
+  null,
+  "太多文件未找到"
+ ],
  "Type": [
   null,
   "类型"
  ],
+ "URL": [
+  null,
+  "网址"
+ ],
  "Unplug": [
   null,
   ""
+ ],
+ "Upgrade to a more recent version of libvirt to view disk statistics": [
+  null,
+  "升级到一个更新版本的 libvirt 来查看磁盘统计数据"
  ],
  "Usage": [
   null,
@@ -694,6 +842,10 @@ return plural;
  "Virtualport": [
   null,
   ""
+ ],
+ "Volume": [
+  null,
+  "卷"
  ],
  "Your browser does not support iframes.": [
   null,

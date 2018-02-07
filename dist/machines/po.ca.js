@@ -95,6 +95,10 @@ return plural;
   null,
   "Ordre d'arrencada:"
  ],
+ "Bus": [
+  null,
+  "Bus"
+ ],
  "CHANGE NETWORK STATE action failed": [
   null,
   "Ha fallat l'acció CHANGE NETWORK STATE"
@@ -106,6 +110,10 @@ return plural;
  "Cancel": [
   null,
   "Cancel·la"
+ ],
+ "Capacity": [
+  null,
+  "Capacitat"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -135,6 +143,22 @@ return plural;
   null,
   ""
  ],
+ "Count:": [
+  null,
+  "Nombre:"
+ ],
+ "Create": [
+  null,
+  "Crea"
+ ],
+ "Create New VM": [
+  null,
+  ""
+ ],
+ "Create New Virtual Machine": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "Suprimeix"
@@ -142,6 +166,10 @@ return plural;
  "Delete associated storage files:": [
   null,
   "Suprimeix els fitxers d'emmagatzematge associats:"
+ ],
+ "Device": [
+  null,
+  "Dispositiu"
  ],
  "Disconnect": [
   null,
@@ -163,6 +191,14 @@ return plural;
   null,
   "Màquina emulada:"
  ],
+ "File": [
+  null,
+  "Fitxer"
+ ],
+ "Filesystem": [
+  null,
+  "Sistema de fitxers"
+ ],
  "Force Restart": [
   null,
   "Força el reinici"
@@ -171,11 +207,47 @@ return plural;
   null,
   "Força l'apagada"
  ],
+ "GiB": [
+  null,
+  ""
+ ],
  "Graphics Console (VNC)": [
   null,
   ""
  ],
  "Graphics Console in Desktop Viewer": [
+  null,
+  ""
+ ],
+ "Host": [
+  null,
+  "Amfitrió"
+ ],
+ "INSTALL VM action failed": [
+  null,
+  ""
+ ],
+ "Immediately Start VM": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  "Instal·la"
+ ],
+ "Installation Source": [
+  null,
+  ""
+ ],
+ "Installation Source Type": [
+  null,
+  ""
+ ],
+ "Installation Source should not be empty": [
+  null,
+  ""
+ ],
+ "Invalid filename": [
   null,
   ""
  ],
@@ -203,9 +275,21 @@ return plural;
   null,
   "Connexió manual"
  ],
+ "Memory": [
+  null,
+  "Memòria"
+ ],
+ "Memory should be positive number": [
+  null,
+  ""
+ ],
  "Memory:": [
   null,
   "Memòria:"
+ ],
+ "MiB": [
+  null,
+  "MiB"
  ],
  "Model type": [
   null,
@@ -218,6 +302,14 @@ return plural;
  "Name": [
   null,
   "Nom"
+ ],
+ "Name should not be empty": [
+  null,
+  ""
+ ],
+ "Name should not consist of empty characters only": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -235,17 +327,41 @@ return plural;
   null,
   ""
  ],
+ "No disks defined for this VM": [
+  null,
+  "No hi ha definit cap disc per a aquesta MV"
+ ],
+ "No matching files found": [
+  null,
+  "No s'ha trobat cap fitxer que coincideixi"
+ ],
  "No network interfaces defined for this VM": [
   null,
   "No s'ha definit cap interfície de xarxa per aquesta MV"
+ ],
+ "OS Vendor": [
+  null,
+  ""
  ],
  "Ok": [
   null,
   "D'acord"
  ],
+ "Operating System": [
+  null,
+  "Sistema operatiu"
+ ],
  "Overview": [
   null,
   "Visió de conjunt"
+ ],
+ "Path to ISO file on host's file system": [
+  null,
+  ""
+ ],
+ "Path to file": [
+  null,
+  "Camí al fitxer"
  ],
  "Please start the virtual machine to access its console.": [
   null,
@@ -255,6 +371,10 @@ return plural;
   null,
   ""
  ],
+ "Pool": [
+  null,
+  "Agrupació"
+ ],
  "Port": [
   null,
   "Port"
@@ -263,9 +383,21 @@ return plural;
   null,
   ""
  ],
+ "Protocol": [
+  null,
+  "Protocol"
+ ],
+ "Readonly": [
+  null,
+  "NomésLectura"
+ ],
  "Reconnect": [
   null,
   "Torna a connectar"
+ ],
+ "Remote URL": [
+  null,
+  ""
  ],
  "Restart": [
   null,
@@ -315,9 +447,25 @@ return plural;
   null,
   "Origen"
  ],
+ "Source should start with http, ftp or nfs protocol": [
+  null,
+  ""
+ ],
+ "Start the VM to see disk statistics.": [
+  null,
+  ""
+ ],
  "State": [
   null,
   "Estat"
+ ],
+ "Storage Size": [
+  null,
+  ""
+ ],
+ "Storage Size should not be negative number": [
+  null,
+  ""
  ],
  "System": [
   null,
@@ -363,13 +511,25 @@ return plural;
   null,
   "La MV està en suspensió per la gestió d'energia del convidat."
  ],
+ "Too many files found": [
+  null,
+  "S'han trobat massa fitxers"
+ ],
  "Type": [
   null,
   "Tipus"
  ],
+ "URL": [
+  null,
+  "URL"
+ ],
  "Unplug": [
   null,
   ""
+ ],
+ "Upgrade to a more recent version of libvirt to view disk statistics": [
+  null,
+  "Actualitzeu a una versió més recent de libvirt per visualitzar les estadístiques dels discs"
  ],
  "Usage": [
   null,
@@ -426,6 +586,10 @@ return plural;
  "Virtualport": [
   null,
   ""
+ ],
+ "Volume": [
+  null,
+  "Volum"
  ],
  "Your browser does not support iframes.": [
   null,

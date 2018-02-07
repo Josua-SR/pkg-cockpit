@@ -127,6 +127,14 @@ return plural;
   null,
   "Dodatečné úložiště"
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
+ "All In One": [
+  null,
+  ""
+ ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
   "Všechna data na vybraných discích budou vymazána a disky budou přidány do fondu úložišť."
@@ -142,6 +150,18 @@ return plural;
  "Author": [
   null,
   "Autor"
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -179,12 +199,14 @@ return plural;
   null,
   "Zavřít"
  ],
- "Combined CPU usage": [
+ "Combined memory usage": [
   null,
   ""
  ],
- "Combined memory usage": [
-  null,
+ "Combined usage of $0 CPU core": [
+  "Combined usage of $0 CPU cores",
+  "",
+  "",
   ""
  ],
  "Command": [
@@ -204,6 +226,10 @@ return plural;
   ""
  ],
  "Commit Image": [
+  null,
+  ""
+ ],
+ "Compact PCI": [
   null,
   ""
  ],
@@ -238,6 +264,10 @@ return plural;
  "Containers": [
   null,
   "Kontejnery"
+ ],
+ "Convertible": [
+  null,
+  ""
  ],
  "Could not add all disks": [
   null,
@@ -275,11 +305,23 @@ return plural;
   null,
   ""
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Details": [
   null,
   "Podrobnosti"
  ],
  "Docker is not installed or activated on the system": [
+  null,
+  ""
+ ],
+ "Docking Station": [
   null,
   ""
  ],
@@ -296,6 +338,10 @@ return plural;
   ""
  ],
  "Duplicate port": [
+  null,
+  ""
+ ],
+ "Embedded PC": [
   null,
   ""
  ],
@@ -327,6 +373,10 @@ return plural;
   null,
   ""
  ],
+ "Expansion Chassis": [
+  null,
+  ""
+ ],
  "Expose container ports": [
   null,
   ""
@@ -352,6 +402,10 @@ return plural;
   ""
  ],
  "Get new image": [
+  null,
+  ""
+ ],
+ "Hand Held": [
   null,
   ""
  ],
@@ -407,6 +461,14 @@ return plural;
   null,
   ""
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
+ "Laptop": [
+  null,
+  ""
+ ],
  "Link to another container": [
   null,
   ""
@@ -423,7 +485,19 @@ return plural;
   null,
   ""
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "MAC Address:": [
+  null,
+  ""
+ ],
+ "Main Server Chassis": [
   null,
   ""
  ],
@@ -443,7 +517,19 @@ return plural;
   null,
   "MiB"
  ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
  "Mount container volumes": [
+  null,
+  ""
+ ],
+ "Multi-system Chassis": [
   null,
   ""
  ],
@@ -503,6 +589,10 @@ return plural;
   null,
   "Nenalezeno"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   ""
@@ -525,9 +615,21 @@ return plural;
   "",
   ""
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Overview": [
   null,
   "Přehled"
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
  ],
  "Please confirm deletion of $0": [
   null,
@@ -541,6 +643,10 @@ return plural;
   null,
   ""
  ],
+ "Portable": [
+  null,
+  ""
+ ],
  "Ports": [
   null,
   "Porty"
@@ -550,6 +656,14 @@ return plural;
   ""
  ],
  "Problems": [
+  null,
+  ""
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
   null,
   ""
  ],
@@ -609,6 +723,10 @@ return plural;
   null,
   ""
  ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Security": [
   null,
   "Bezpečnost"
@@ -633,6 +751,10 @@ return plural;
   null,
   ""
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
  "Start": [
   null,
   "Start"
@@ -648,6 +770,10 @@ return plural;
  "State:": [
   null,
   "Stav:"
+ ],
+ "Stick PC": [
+  null,
+  ""
  ],
  "Stop": [
   null,
@@ -665,7 +791,19 @@ return plural;
   null,
   ""
  ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "TCP": [
+  null,
+  ""
+ ],
+ "Tablet": [
   null,
   ""
  ],
@@ -701,6 +839,10 @@ return plural;
   null,
   "Celkový"
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Try again": [
   null,
   ""
@@ -716,6 +858,10 @@ return plural;
  "Unexpected error": [
   null,
   ""
+ ],
+ "Unknown": [
+  null,
+  "Neznámý"
  ],
  "Unless Stopped": [
   null,

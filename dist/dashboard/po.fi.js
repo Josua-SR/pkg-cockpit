@@ -133,6 +133,14 @@ return plural;
   null,
   "Osoite"
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
+ "All In One": [
+  null,
+  ""
+ ],
  "Authentication": [
   null,
   "Tunnistautuminen"
@@ -148,6 +156,18 @@ return plural;
  "Avatar": [
   null,
   "Avatar"
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -201,6 +221,10 @@ return plural;
   null,
   "Väri"
  ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
  "Connect": [
   null,
   "Yhdistä"
@@ -208,6 +232,10 @@ return plural;
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
   "Samanaikainen yhdistäminen useampaan kuin {{ limit }} koneeseen ei ole tuettu."
+ ],
+ "Convertible": [
+  null,
+  ""
  ],
  "Could not contact {{host}}": [
   null,
@@ -217,13 +245,29 @@ return plural;
   null,
   "Kojelauta"
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Disk I/O": [
   null,
   "Levyn I/O"
  ],
+ "Docking Station": [
+  null,
+  ""
+ ],
  "Edit Server": [
   null,
   "Muokkaa Palvelinta"
+ ],
+ "Embedded PC": [
+  null,
+  ""
  ],
  "Enter IP address or host name": [
   null,
@@ -236,6 +280,10 @@ return plural;
  "Error loading users: {{perm_failed}}": [
   null,
   "Virhe ladattaessa käyttäjiä: {{perm_failed}}"
+ ],
+ "Expansion Chassis": [
+  null,
+  ""
  ],
  "Failed to add machine: $0": [
   null,
@@ -257,6 +305,10 @@ return plural;
   null,
   "Mene nyt"
  ],
+ "Hand Held": [
+  null,
+  ""
+ ],
  "Host Name": [
   null,
   "Koneen Nimi"
@@ -273,6 +325,10 @@ return plural;
   null,
   "Virheelliset tiedosto-oikeudet"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
  "Is sshd running on a different port?": [
   null,
   "Onko sshd käynnissä eri portissa?"
@@ -284,6 +340,10 @@ return plural;
  "Kerberos Ticket": [
   null,
   "Kerberos Ticket"
+ ],
+ "Laptop": [
+  null,
+  ""
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
@@ -299,7 +359,7 @@ return plural;
  ],
  "Log in to {{host}}": [
   null,
-  ""
+  "Kirjaudu kohteeseen {{host}}"
  ],
  "Login Password": [
   null,
@@ -309,9 +369,33 @@ return plural;
   null,
   ""
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
+ ],
  "Memory": [
   null,
   "Muisti"
+ ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
+ "Multi-system Chassis": [
+  null,
+  ""
  ],
  "Network": [
   null,
@@ -329,6 +413,10 @@ return plural;
   null,
   "Ei kelvollinen yksityinen avain"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   ""
@@ -341,6 +429,10 @@ return plural;
   null,
   ""
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Password": [
   null,
   "Salasana"
@@ -349,9 +441,21 @@ return plural;
   null,
   "Salasanaa ei hyväksytty"
  ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
  "Port": [
   null,
   "Portti"
+ ],
+ "Portable": [
+  null,
+  ""
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -365,6 +469,18 @@ return plural;
   null,
   "Julkinen avain"
  ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
+  null,
+  ""
+ ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
   ""
@@ -377,6 +493,22 @@ return plural;
   null,
   ""
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
+ "Stick PC": [
+  null,
+  ""
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "Synchronize": [
   null,
   "Synkronoi"
@@ -384,6 +516,10 @@ return plural;
  "Synchronize users": [
   null,
   "Synkronoi käyttäjät"
+ ],
+ "Tablet": [
+  null,
+  ""
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -417,9 +553,17 @@ return plural;
   null,
   "Kokeillaksesi toista porttia sinun tulee päivittää cockpit-ws uudempaan versioon."
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Type a password": [
   null,
   "Kirjoita salasana"
+ ],
+ "Unknown": [
+  null,
+  "Tuntematon"
  ],
  "Unknown Host Key": [
   null,

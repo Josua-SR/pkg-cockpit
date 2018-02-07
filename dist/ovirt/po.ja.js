@@ -119,6 +119,10 @@ return plural;
   null,
   ""
  ],
+ "Bus": [
+  null,
+  "バス"
+ ],
  "CHANGE NETWORK STATE action failed": [
   null,
   ""
@@ -134,6 +138,10 @@ return plural;
  "Cancel": [
   null,
   "取り消し"
+ ],
+ "Capacity": [
+  null,
+  "容量"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -191,9 +199,21 @@ return plural;
   null,
   ""
  ],
+ "Count:": [
+  null,
+  "数量:"
+ ],
  "Create": [
   null,
   "作成"
+ ],
+ "Create New VM": [
+  null,
+  ""
+ ],
+ "Create New Virtual Machine": [
+  null,
+  ""
  ],
  "Create VM": [
   null,
@@ -214,6 +234,10 @@ return plural;
  "Description:": [
   null,
   ""
+ ],
+ "Device": [
+  null,
+  "デバイス"
  ],
  "Disconnect": [
   null,
@@ -247,6 +271,14 @@ return plural;
   null,
   ""
  ],
+ "File": [
+  null,
+  "File"
+ ],
+ "Filesystem": [
+  null,
+  "ファイルシステム"
+ ],
  "Force Restart": [
   null,
   "再起動の強制"
@@ -254,6 +286,10 @@ return plural;
  "Force Shut Down": [
   null,
   "シャットダウンの強制"
+ ],
+ "GiB": [
+  null,
+  ""
  ],
  "Graphics Console (VNC)": [
   null,
@@ -276,6 +312,34 @@ return plural;
   "ホスト"
  ],
  "Host to Maintenance": [
+  null,
+  ""
+ ],
+ "INSTALL VM action failed": [
+  null,
+  ""
+ ],
+ "Immediately Start VM": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  ""
+ ],
+ "Installation Source": [
+  null,
+  ""
+ ],
+ "Installation Source Type": [
+  null,
+  ""
+ ],
+ "Installation Source should not be empty": [
+  null,
+  ""
+ ],
+ "Invalid filename": [
   null,
   ""
  ],
@@ -315,9 +379,17 @@ return plural;
   null,
   "メモリ"
  ],
+ "Memory should be positive number": [
+  null,
+  ""
+ ],
  "Memory:": [
   null,
   "メモリー:"
+ ],
+ "MiB": [
+  null,
+  "MiB"
  ],
  "Migrate To:": [
   null,
@@ -334,6 +406,14 @@ return plural;
  "Name": [
   null,
   "名前"
+ ],
+ "Name should not be empty": [
+  null,
+  ""
+ ],
+ "Name should not consist of empty characters only": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -355,6 +435,14 @@ return plural;
   null,
   ""
  ],
+ "No disks defined for this VM": [
+  null,
+  "この VM に対してディスクが定義されていません"
+ ],
+ "No matching files found": [
+  null,
+  "ホストキーが見つかりません。"
+ ],
  "No network interfaces defined for this VM": [
   null,
   ""
@@ -371,9 +459,17 @@ return plural;
   null,
   ""
  ],
+ "OS Vendor": [
+  null,
+  ""
+ ],
  "Ok": [
   null,
   "OK"
+ ],
+ "Operating System": [
+  null,
+  "オペレーティングシステム"
  ],
  "Optimized for:": [
   null,
@@ -382,6 +478,14 @@ return plural;
  "Overview": [
   null,
   "概要"
+ ],
+ "Path to ISO file on host's file system": [
+  null,
+  ""
+ ],
+ "Path to file": [
+  null,
+  ""
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
@@ -415,6 +519,10 @@ return plural;
   null,
   ""
  ],
+ "Pool": [
+  null,
+  "プール"
+ ],
  "Port": [
   null,
   "ポート"
@@ -427,9 +535,17 @@ return plural;
   null,
   ""
  ],
+ "Protocol": [
+  null,
+  "プロトコル"
+ ],
  "REBOOT action failed": [
   null,
   ""
+ ],
+ "Readonly": [
+  null,
+  "読み取り専用"
  ],
  "Reconnect": [
   null,
@@ -446,6 +562,10 @@ return plural;
  "Reload": [
   null,
   "再読み込み"
+ ],
+ "Remote URL": [
+  null,
+  ""
  ],
  "Restart": [
   null,
@@ -519,6 +639,14 @@ return plural;
   null,
   "ソース"
  ],
+ "Source should start with http, ftp or nfs protocol": [
+  null,
+  ""
+ ],
+ "Start the VM to see disk statistics.": [
+  null,
+  ""
+ ],
  "State": [
   null,
   "状態"
@@ -528,6 +656,14 @@ return plural;
   ""
  ],
  "Stateless:": [
+  null,
+  ""
+ ],
+ "Storage Size": [
+  null,
+  ""
+ ],
+ "Storage Size should not be negative number": [
   null,
   ""
  ],
@@ -607,13 +743,25 @@ return plural;
   null,
   ""
  ],
+ "Too many files found": [
+  null,
+  ""
+ ],
  "Type": [
   null,
   "タイプ"
  ],
+ "URL": [
+  null,
+  "URL"
+ ],
  "Unplug": [
   null,
   ""
+ ],
+ "Upgrade to a more recent version of libvirt to view disk statistics": [
+  null,
+  "ディスクの統計情報を表示するには libvirt の新しいバージョンにアップグレードしてください"
  ],
  "Usage": [
   null,
@@ -694,6 +842,10 @@ return plural;
  "Virtualport": [
   null,
   ""
+ ],
+ "Volume": [
+  null,
+  "音量"
  ],
  "Your browser does not support iframes.": [
   null,

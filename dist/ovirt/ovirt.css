@@ -233,24 +233,10 @@ input[type=number] {
 .dialog-ct-visible {
     display: block;
 }
-.ovirt-provider-overview-vm-icon {
-    height: 100px;
-}
-.ovirt-provider-columns-container { }
-
-.ovirt-provider-columns-one {
-    float: left;
-    width: 70%;
-}
-
-.ovirt-provider-columns-two {
-    float: left;
-    width: 30%;
-}
-
 .ovirt-provider-overview-icon {
     max-width: 100%;
     max-height: 100%;
+    padding: 5px;
 }
 .ovirt-provider-migrateto-combo {
     max-width: 25em;
@@ -662,6 +648,9 @@ tbody tr.listing-ct-noexpand {
 .nav-tabs-pf > li.active a:before {
   height: 3px;
   left: 0px;
+}
+.machines-more-button {
+    padding-left: 10px;
 }
 .term-bg-color-0 { background-color: #2e3436; }
 .term-fg-color-0 { color: #2e3436; }
@@ -1255,8 +1244,101 @@ table.delete-dialog-disks.table tbody tr td:nth-child(1) {
 table.delete-dialog-disks.table tbody tr td:nth-child(3) {
     text-align: right;
 }
-.machines-more-button {
-    padding-left: 10px;
+.dropdown-buttons-container {
+    display: inline-flex !important;
+}
+
+.btn + .dropdown-menu.dropdown-menu-right  {
+    right: -4px;
+    left: auto;
+}
+.combobox-container input {
+    padding-right: 24px;
+}
+
+.combobox-container ul {
+    max-height: 250px;
+}
+
+.combobox-container .alert {
+    margin: 0;
+    border: none;
+    padding: 0 24px 0 6px;
+}
+
+.combobox-container .error input {
+    border-color: red;
+}
+
+.combobox-container .error input {
+    border-color: red;
+}
+
+.combobox-container .error ul {
+    border-color: red;
+    padding: 0;
+}
+
+.combobox-container span.spinner,
+.combobox-container span.caret {
+    position: absolute;
+    top: 7px;
+    z-index: 9;
+}
+
+.combobox-container span.caret {
+    width: 1.5em;
+    height: 1.5em;
+    cursor: pointer;
+    pointer-events: all;
+}
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+  width: 100%;
+  padding-bottom: 1px;
+}
+.input-group {
+  width: 100%;
+}
+.evenly-spaced-table {
+  display: table;
+  width: 100%;
+}
+.thirty-five-spaced-table {
+  display: table;
+  width: 35%;
+}
+.evenly-spaced-cell {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.thirty-five-spaced-cell {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  width: 35%;
+  max-width: 35%;
+}
+.padding-left {
+  padding-left: 0.5em;
+}
+.td-child {
+  color: #888888;
+}
+.dialog-checkbox {
+  width: 26px;
+  margin: 0;
+}
+#vendor-select .dropdown-header,
+#vendor-select .divider {
+  margin-top: 2ex;
+}
+/* Make the max-height based on the screen hight - offset from the top */
+#vendor-select .dropdown-menu {
+  max-height: calc(90vh - 50px - 8em);
+}
+#system-select .dropdown-menu {
+  max-height: calc(90vh - 50px - 10em);
 }
 .ovirt-provider-vdsm {
     padding: 1em;
@@ -2201,10 +2283,6 @@ tbody tr.listing-ct-noexpand {
 .machines-width-max {
   width: 100%;
 }
-.btn + .dropdown-menu.dropdown-menu-right {
-  right: -4px;
-  left: auto;
-}
 .usage-donut-caption {
   text-align: center;
   width: 200px;
@@ -2304,9 +2382,6 @@ tbody tr.listing-ct-noexpand {
 }
 .machines-desktop-install-instructs-row {
   display: inline-flex;
-}
-.dropdown-buttons-container {
-  display: inline-flex !important;
 }
 .machines-network-source-descr {
   color: #888888;

@@ -291,6 +291,10 @@ return plural;
   null,
   "9."
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
  "After": [
   null,
   "Později"
@@ -298,6 +302,10 @@ return plural;
  "After system boot": [
   null,
   "Při startu systému"
+ ],
+ "All In One": [
+  null,
+  ""
  ],
  "Asset Tag": [
   null,
@@ -314,6 +322,30 @@ return plural;
  "Automatically using specific NTP servers": [
   null,
   "Automatické použití specifických NTP serverů"
+ ],
+ "BIOS": [
+  null,
+  ""
+ ],
+ "BIOS date": [
+  null,
+  ""
+ ],
+ "BIOS version": [
+  null,
+  ""
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -351,11 +383,19 @@ return plural;
   null,
   "Příkaz"
  ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
  "Condition $0=$1 was not met": [
   null,
   ""
  ],
  "Condition failed": [
+  null,
+  ""
+ ],
+ "Convertible": [
   null,
   ""
  ],
@@ -379,6 +419,14 @@ return plural;
   null,
   "Popis"
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Disable": [
   null,
   "Zakázat"
@@ -391,11 +439,19 @@ return plural;
   null,
   "Diskové I/O"
  ],
+ "Docking Station": [
+  null,
+  ""
+ ],
  "Domain": [
   null,
   ""
  ],
  "Don't Repeat": [
+  null,
+  ""
+ ],
+ "Embedded PC": [
   null,
   ""
  ],
@@ -423,6 +479,10 @@ return plural;
   null,
   "Vše"
  ],
+ "Expansion Chassis": [
+  null,
+  ""
+ ],
  "Free": [
   null,
   "Volno"
@@ -443,9 +503,17 @@ return plural;
   null,
   ""
  ],
+ "Hand Held": [
+  null,
+  ""
+ ],
  "Hardware": [
   null,
   "Hardware"
+ ],
+ "Hardware Information": [
+  null,
+  ""
  ],
  "Host Name": [
   null,
@@ -499,6 +567,10 @@ return plural;
   null,
   ""
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
  "Journal": [
   null,
   "Žurnál"
@@ -514,6 +586,10 @@ return plural;
  "Kernel": [
   null,
   "Jádro"
+ ],
+ "Laptop": [
+  null,
+  ""
  ],
  "Last 24 hours": [
   null,
@@ -543,11 +619,23 @@ return plural;
   null,
   ""
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "Machine ID": [
   null,
   ""
  ],
  "Machine SSH Key Fingerprints": [
+  null,
+  ""
+ ],
+ "Main Server Chassis": [
   null,
   ""
  ],
@@ -571,6 +659,14 @@ return plural;
   null,
   ""
  ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
  "Minute needs to be a number between 0-59": [
   null,
   ""
@@ -583,7 +679,15 @@ return plural;
   null,
   "pondělí"
  ],
+ "Multi-system Chassis": [
+  null,
+  ""
+ ],
  "NTP Server": [
+  null,
+  ""
+ ],
+ "Name": [
   null,
   ""
  ],
@@ -623,6 +727,10 @@ return plural;
   null,
   "Poznámka"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   ""
@@ -643,11 +751,27 @@ return plural;
   null,
   ""
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Paths": [
   null,
   "Cesty"
  ],
  "Performance Profile": [
+  null,
+  ""
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
+ "Portable": [
   null,
   ""
  ],
@@ -684,6 +808,14 @@ return plural;
   ""
  ],
  "Problems, Errors, Warnings, Notices": [
+  null,
+  ""
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
   null,
   ""
  ],
@@ -767,6 +899,10 @@ return plural;
   null,
   ""
  ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Seconds": [
   null,
   ""
@@ -815,6 +951,10 @@ return plural;
   null,
   ""
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
  "Specific Time": [
   null,
   ""
@@ -831,11 +971,23 @@ return plural;
   null,
   ""
  ],
+ "Stick PC": [
+  null,
+  ""
+ ],
  "Stop": [
   null,
   "Zastavit"
  ],
  "Store Performance Data": [
+  null,
+  ""
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
   null,
   ""
  ],
@@ -859,11 +1011,19 @@ return plural;
   null,
   "Systém"
  ],
+ "System Information": [
+  null,
+  ""
+ ],
  "System Services": [
   null,
   ""
  ],
  "System Time": [
+  null,
+  ""
+ ],
+ "Tablet": [
   null,
   ""
  ],
@@ -915,6 +1075,10 @@ return plural;
   null,
   ""
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   ""
@@ -923,8 +1087,22 @@ return plural;
   null,
   "úterý"
  ],
+ "Type": [
+  null,
+  "Typ"
+ ],
+ "Unknown": [
+  null,
+  "Neznámý"
+ ],
  "Unmask": [
   null,
+  ""
+ ],
+ "Usage of $0 CPU core": [
+  "Usage of $0 CPU cores",
+  "",
+  "",
   ""
  ],
  "Used": [
@@ -961,6 +1139,12 @@ return plural;
  ],
  "failed to list ssh host keys: $0": [
   null,
+  ""
+ ],
+ "of $0 CPU core": [
+  "of $0 CPU cores",
+  "",
+  "",
   ""
  ],
  "unknown": [

@@ -93,6 +93,14 @@ return plural;
   "",
   ""
  ],
+ "$0 filesystems can not be made larger.": [
+  null,
+  ""
+ ],
+ "$0 filesystems can not be made smaller.": [
+  null,
+  ""
+ ],
  "$0 hour": [
   "$0 hours",
   "",
@@ -291,6 +299,10 @@ return plural;
   ""
  ],
  "Change iSCSI Initiator Name": [
+  null,
+  ""
+ ],
+ "Checking $target": [
   null,
   ""
  ],
@@ -546,6 +558,14 @@ return plural;
   null,
   "Şifreli XFS (LUKS)"
  ],
+ "Encrypted volumes can not be resized here.": [
+  null,
+  ""
+ ],
+ "Encrypted volumes need to be unlocked before they can be resized.": [
+  null,
+  ""
+ ],
  "Encryption": [
   null,
   ""
@@ -627,6 +647,10 @@ return plural;
   "Şimdiye git"
  ],
  "Grow": [
+  null,
+  ""
+ ],
+ "Grow Logical Volume": [
   null,
   ""
  ],
@@ -946,6 +970,10 @@ return plural;
   null,
   ""
  ],
+ "Physical volumes can not be resized here.": [
+  null,
+  ""
+ ],
  "Please confirm deletion of $0": [
   null,
   ""
@@ -1094,17 +1122,9 @@ return plural;
   null,
   ""
  ],
- "Resize": [
+ "Repairing $target": [
   null,
-  "Yeniden Boyutlandır"
- ],
- "Resize Filesystem": [
-  null,
-  "Dosya Sistemini Yeniden Boyutlandır"
- ],
- "Resize Logical Volume": [
-  null,
-  "Mantıksal Bölümü Yeniden Boyurlandır"
+  ""
  ],
  "Resizing $target": [
   null,
@@ -1139,6 +1159,14 @@ return plural;
   ""
  ],
  "Setting up loop device $target": [
+  null,
+  ""
+ ],
+ "Shrink": [
+  null,
+  ""
+ ],
+ "Shrink Logical Volume": [
   null,
   ""
  ],
@@ -1193,6 +1221,10 @@ return plural;
  "Stop": [
   null,
   "Durdur"
+ ],
+ "Stop Device": [
+  null,
+  ""
  ],
  "Stop Scrubbing": [
   null,
@@ -1330,7 +1362,7 @@ return plural;
   null,
   ""
  ],
- "This logical volume cannot be made smaller.": [
+ "This volume needs to be activated before it can be resized.": [
   null,
   ""
  ],
@@ -1398,6 +1430,10 @@ return plural;
   null,
   ""
  ],
+ "Unrecognized data can not be made smaller here.": [
+  null,
+  ""
+ ],
  "Unsupported volume": [
   null,
   ""
@@ -1431,6 +1467,10 @@ return plural;
   ""
  ],
  "VDO Devices": [
+  null,
+  ""
+ ],
+ "VDO backing devices can not be made smaller": [
   null,
   ""
  ],

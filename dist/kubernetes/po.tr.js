@@ -529,6 +529,10 @@ return plural;
   null,
   ""
  ],
+ "General": [
+  null,
+  "Genel"
+ ],
  "Git Repository": [
   null,
   "Depo"
@@ -824,6 +828,10 @@ return plural;
  "No users are present.": [
   null,
   "Kullanıcı adı belirtilmedi"
+ ],
+ "No virtual machines": [
+  null,
+  ""
  ],
  "No volumes are present.": [
   null,
@@ -1281,6 +1289,10 @@ return plural;
   null,
   ""
  ],
+ "Session": [
+  null,
+  "Sürüm"
+ ],
  "Session Affinity": [
   null,
   ""
@@ -1374,6 +1386,10 @@ return plural;
   ""
  ],
  "Sync all tags from a remote image repository": [
+  null,
+  ""
+ ],
+ "System": [
   null,
   ""
  ],
@@ -1557,6 +1573,14 @@ return plural;
   null,
   ""
  ],
+ "VM DELETE failed.": [
+  null,
+  ""
+ ],
+ "Virtual Machines": [
+  null,
+  ""
+ ],
  "Volume": [
   null,
   "Mantıksal Bölüm"
@@ -1605,7 +1629,75 @@ return plural;
   null,
   ""
  ],
+ "bridge": [
+  null,
+  ""
+ ],
+ "cdrom": [
+  null,
+  ""
+ ],
+ "crashed": [
+  null,
+  ""
+ ],
+ "custom": [
+  null,
+  ""
+ ],
+ "direct": [
+  null,
+  ""
+ ],
+ "disabled": [
+  null,
+  "Etkin değil"
+ ],
+ "disk": [
+  null,
+  ""
+ ],
+ "down": [
+  null,
+  ""
+ ],
+ "dying": [
+  null,
+  ""
+ ],
  "eg: my-image-stream": [
+  null,
+  ""
+ ],
+ "enabled": [
+  null,
+  "Etkin değil"
+ ],
+ "ethernet": [
+  null,
+  ""
+ ],
+ "host": [
+  null,
+  ""
+ ],
+ "hostdev": [
+  null,
+  ""
+ ],
+ "idle": [
+  null,
+  ""
+ ],
+ "mcast": [
+  null,
+  ""
+ ],
+ "n/a": [
+  null,
+  ""
+ ],
+ "network": [
   null,
   ""
  ],
@@ -1617,7 +1709,55 @@ return plural;
   null,
   "hiç biri"
  ],
+ "paused": [
+  null,
+  ""
+ ],
  "pending volume claims": [
+  null,
+  ""
+ ],
+ "running": [
+  null,
+  "Çalışıyor"
+ ],
+ "server": [
+  null,
+  ""
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
+  null,
+  ""
+ ],
+ "shut off": [
+  null,
+  ""
+ ],
+ "shutdown": [
+  null,
+  ""
+ ],
+ "suspended (PM)": [
+  null,
+  ""
+ ],
+ "udp": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
+  null,
+  ""
+ ],
+ "vhostuser": [
   null,
   ""
  ],

@@ -115,6 +115,14 @@ return plural;
   null,
   "追加のストレージ"
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
+ "All In One": [
+  null,
+  ""
+ ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
   "選択されたディスク上のすべてのデータが削除され、ストレージプールにディスクが追加されます。"
@@ -130,6 +138,18 @@ return plural;
  "Author": [
   null,
   "作成者"
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -167,13 +187,13 @@ return plural;
   null,
   "閉じる"
  ],
- "Combined CPU usage": [
-  null,
-  "合計 CPU 使用率"
- ],
  "Combined memory usage": [
   null,
   "合計メモリー使用量"
+ ],
+ "Combined usage of $0 CPU core": [
+  "Combined usage of $0 CPU cores",
+  ""
  ],
  "Command": [
   null,
@@ -194,6 +214,10 @@ return plural;
  "Commit Image": [
   null,
   "イメージのコミット"
+ ],
+ "Compact PCI": [
+  null,
+  ""
  ],
  "Configure storage...": [
   null,
@@ -226,6 +250,10 @@ return plural;
  "Containers": [
   null,
   "コンテナー"
+ ],
+ "Convertible": [
+  null,
+  ""
  ],
  "Could not add all disks": [
   null,
@@ -263,6 +291,14 @@ return plural;
   null,
   "イメージは、削除しても、多くの場合、後で必要なときに再びダウンロードできます。このイメージがリポジトリーにプッシュされたことがない場合は、イメージを再びダウンロードできません。"
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Details": [
   null,
   "詳細"
@@ -270,6 +306,10 @@ return plural;
  "Docker is not installed or activated on the system": [
   null,
   "Docker はインストールされていないか、システムでアクティベートされていません"
+ ],
+ "Docking Station": [
+  null,
+  ""
  ],
  "Download": [
   null,
@@ -286,6 +326,10 @@ return plural;
  "Duplicate port": [
   null,
   "重複するポート"
+ ],
+ "Embedded PC": [
+  null,
+  ""
  ],
  "Entrypoint": [
   null,
@@ -315,6 +359,10 @@ return plural;
   null,
   "終了した $ExitCode"
  ],
+ "Expansion Chassis": [
+  null,
+  ""
+ ],
  "Expose container ports": [
   null,
   "コンテナーポートの公開"
@@ -342,6 +390,10 @@ return plural;
  "Get new image": [
   null,
   "新規イメージの取得"
+ ],
+ "Hand Held": [
+  null,
+  ""
  ],
  "Hard Disk": [
   null,
@@ -395,6 +447,14 @@ return plural;
   null,
   "無効なポート"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
+ "Laptop": [
+  null,
+  ""
+ ],
  "Link to another container": [
   null,
   "別のコンテナーへのリンク"
@@ -411,9 +471,21 @@ return plural;
   null,
   "ローカルディスク"
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "MAC Address:": [
   null,
   "MAC アドレス:"
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
  ],
  "Memory": [
   null,
@@ -431,9 +503,21 @@ return plural;
   null,
   "MiB"
  ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
  "Mount container volumes": [
   null,
   "マウントコンテナーボリューム"
+ ],
+ "Multi-system Chassis": [
+  null,
+  ""
  ],
  "Name": [
   null,
@@ -491,6 +575,10 @@ return plural;
   null,
   "見つかりません"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "オフ"
@@ -511,9 +599,21 @@ return plural;
   "On failure, retry $0 times",
   "障害発生時に、$0 回再試行します"
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Overview": [
   null,
   "概要"
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
  ],
  "Please confirm deletion of $0": [
   null,
@@ -527,6 +627,10 @@ return plural;
   null,
   "別の用語を試してください"
  ],
+ "Portable": [
+  null,
+  ""
+ ],
  "Ports": [
   null,
   "ポート"
@@ -536,6 +640,14 @@ return plural;
   "ポート:"
  ],
  "Problems": [
+  null,
+  ""
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
   null,
   ""
  ],
@@ -595,6 +707,10 @@ return plural;
   null,
   "イメージの実行"
  ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Security": [
   null,
   "Security"
@@ -619,6 +735,10 @@ return plural;
   null,
   "ソリッドステートディスク"
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
  "Start": [
   null,
   "開始日"
@@ -634,6 +754,10 @@ return plural;
  "State:": [
   null,
   "状態:"
+ ],
+ "Stick PC": [
+  null,
+  ""
  ],
  "Stop": [
   null,
@@ -651,9 +775,21 @@ return plural;
   null,
   "ストレージプール"
  ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "TCP": [
   null,
   "TCP"
+ ],
+ "Tablet": [
+  null,
+  ""
  ],
  "Tag": [
   null,
@@ -687,6 +823,10 @@ return plural;
   null,
   "合計"
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Try again": [
   null,
   "再試行します"
@@ -702,6 +842,10 @@ return plural;
  "Unexpected error": [
   null,
   "予期しないエラー"
+ ],
+ "Unknown": [
+  null,
+  "不明"
  ],
  "Unless Stopped": [
   null,

@@ -127,6 +127,14 @@ return plural;
   null,
   "地址"
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
+ "All In One": [
+  null,
+  ""
+ ],
  "Authentication": [
   null,
   "认证"
@@ -142,6 +150,18 @@ return plural;
  "Avatar": [
   null,
   "替身"
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -195,6 +215,10 @@ return plural;
   null,
   "颜色"
  ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
  "Connect": [
   null,
   "连接"
@@ -202,6 +226,10 @@ return plural;
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
   "不支持同时连接到超过 {{ limit }} 主机。"
+ ],
+ "Convertible": [
+  null,
+  ""
  ],
  "Could not contact {{host}}": [
   null,
@@ -211,13 +239,29 @@ return plural;
   null,
   "仪表板"
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Disk I/O": [
   null,
   "磁盘 读/写"
  ],
+ "Docking Station": [
+  null,
+  ""
+ ],
  "Edit Server": [
   null,
   "编辑服务器"
+ ],
+ "Embedded PC": [
+  null,
+  ""
  ],
  "Enter IP address or host name": [
   null,
@@ -230,6 +274,10 @@ return plural;
  "Error loading users: {{perm_failed}}": [
   null,
   "加载用户: {{perm_failed}} 出错"
+ ],
+ "Expansion Chassis": [
+  null,
+  ""
  ],
  "Failed to add machine: $0": [
   null,
@@ -251,6 +299,10 @@ return plural;
   null,
   "转到现在"
  ],
+ "Hand Held": [
+  null,
+  ""
+ ],
  "Host Name": [
   null,
   "主机名"
@@ -267,6 +319,10 @@ return plural;
   null,
   "无效的文件权限"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
  "Is sshd running on a different port?": [
   null,
   "sshd 是否在一个不同的端口上运行？"
@@ -278,6 +334,10 @@ return plural;
  "Kerberos Ticket": [
   null,
   "Kerberos 权证"
+ ],
+ "Laptop": [
+  null,
+  ""
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
@@ -303,9 +363,33 @@ return plural;
   null,
   "连接失败。请重新连接"
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
+ ],
  "Memory": [
   null,
   "内存"
+ ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
+ "Multi-system Chassis": [
+  null,
+  ""
  ],
  "Network": [
   null,
@@ -323,6 +407,10 @@ return plural;
   null,
   "无效的私钥"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "关"
@@ -335,6 +423,10 @@ return plural;
   null,
   "开"
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Password": [
   null,
   "密码"
@@ -343,9 +435,21 @@ return plural;
   null,
   "密码未接受"
  ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
  "Port": [
   null,
   "端口"
+ ],
+ "Portable": [
+  null,
+  ""
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -359,6 +463,18 @@ return plural;
   null,
   "公钥"
  ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
+  null,
+  ""
+ ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
   "选择你想要与 {{#strong}}{{host}}{{/strong}} 同步的用户"
@@ -371,6 +487,22 @@ return plural;
   null,
   "设置"
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
+ "Stick PC": [
+  null,
+  ""
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "Synchronize": [
   null,
   "同步"
@@ -378,6 +510,10 @@ return plural;
  "Synchronize users": [
   null,
   "同步用户"
+ ],
+ "Tablet": [
+  null,
+  ""
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -411,9 +547,17 @@ return plural;
   null,
   "需要更新 cockpit-ws 到一个新版本来尝试一个不同的端口。"
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Type a password": [
   null,
   "输入密码"
+ ],
+ "Unknown": [
+  null,
+  "未知"
  ],
  "Unknown Host Key": [
   null,

@@ -67,10 +67,6 @@ return plural;
   "language": "ca",
   "x-generator": "Zanata 3.9.6"
  },
- "$0 more…": [
-  null,
-  "$0 més…"
- ],
  "$0 update": [
   "$0 updates",
   "$0 actualització",
@@ -110,9 +106,9 @@ return plural;
   null,
   "Actualitzacions disponibles"
  ],
- "Bugs": [
+ "Bugs:": [
   null,
-  "Errors de programari"
+  ""
  ],
  "Cancel": [
   null,
@@ -137,6 +133,10 @@ return plural;
  "Downloading": [
   null,
   "S'està baixant"
+ ],
+ "Errata:": [
+  null,
+  ""
  ],
  "Ignore": [
   null,
@@ -173,10 +173,6 @@ return plural;
  "Loading available updates, please wait...": [
   null,
   "S'estan carregant les actualitzacions disponibles, espereu..."
- ],
- "More information…": [
-  null,
-  "Més informació..."
  ],
  "Name": [
   null,
@@ -230,10 +226,6 @@ return plural;
   null,
   "S'està reiniciant"
  ],
- "Security Update": [
-  null,
-  "Actualització de seguretat"
- ],
  "Set up": [
   null,
   "Configurat"
@@ -241,6 +233,14 @@ return plural;
  "Setting up": [
   null,
   "S'està configurant"
+ ],
+ "Severity": [
+  null,
+  "Gravetat"
+ ],
+ "Severity:": [
+  null,
+  ""
  ],
  "Software Updates": [
   null,

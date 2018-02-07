@@ -133,6 +133,14 @@ return plural;
   null,
   "Adreça"
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
+ "All In One": [
+  null,
+  ""
+ ],
  "Authentication": [
   null,
   "Autenticació"
@@ -148,6 +156,18 @@ return plural;
  "Avatar": [
   null,
   "Avatar"
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -201,11 +221,19 @@ return plural;
   null,
   "Color"
  ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
  "Connect": [
   null,
   "Connecta"
  ],
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
+  null,
+  ""
+ ],
+ "Convertible": [
   null,
   ""
  ],
@@ -217,13 +245,29 @@ return plural;
   null,
   "Tauler de control"
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Disk I/O": [
   null,
   "E/S de disc"
  ],
+ "Docking Station": [
+  null,
+  ""
+ ],
  "Edit Server": [
   null,
   "Edit el servidor"
+ ],
+ "Embedded PC": [
+  null,
+  ""
  ],
  "Enter IP address or host name": [
   null,
@@ -236,6 +280,10 @@ return plural;
  "Error loading users: {{perm_failed}}": [
   null,
   "Error en carregar els usuaris: {{perm_failed}}"
+ ],
+ "Expansion Chassis": [
+  null,
+  ""
  ],
  "Failed to add machine: $0": [
   null,
@@ -257,6 +305,10 @@ return plural;
   null,
   "Vés a ara"
  ],
+ "Hand Held": [
+  null,
+  ""
+ ],
  "Host Name": [
   null,
   "Nom d'amfitrió"
@@ -273,6 +325,10 @@ return plural;
   null,
   "Permisos de fitxer no vàlids"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
  "Is sshd running on a different port?": [
   null,
   "S'està executant sshd en un port diferent?"
@@ -284,6 +340,10 @@ return plural;
  "Kerberos Ticket": [
   null,
   "Tiquet de Kerberos"
+ ],
+ "Laptop": [
+  null,
+  ""
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
@@ -309,9 +369,33 @@ return plural;
   null,
   "S'ha perdut la connexió. S'intenta connectar de nou"
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
+ ],
  "Memory": [
   null,
   "Memòria"
+ ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
+ "Multi-system Chassis": [
+  null,
+  ""
  ],
  "Network": [
   null,
@@ -329,6 +413,10 @@ return plural;
   null,
   "No és una clau privada vàlida"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "Off"
@@ -341,6 +429,10 @@ return plural;
   null,
   "On"
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Password": [
   null,
   "Contrasenya"
@@ -349,9 +441,21 @@ return plural;
   null,
   "Contrasenya no acceptada"
  ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
  "Port": [
   null,
   "Port"
+ ],
+ "Portable": [
+  null,
+  ""
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -365,6 +469,18 @@ return plural;
   null,
   "Clau pública"
  ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
+  null,
+  ""
+ ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
   "Seleccioneu els usuaris que vulgueu que estiguin sincronitzats amb {{#strong}}{{host}}{{/strong}}"
@@ -377,6 +493,22 @@ return plural;
   null,
   "Estableix"
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
+ "Stick PC": [
+  null,
+  ""
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "Synchronize": [
   null,
   "Sincronitza"
@@ -384,6 +516,10 @@ return plural;
  "Synchronize users": [
   null,
   "Sincronitza els usuaris"
+ ],
+ "Tablet": [
+  null,
+  ""
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -417,9 +553,17 @@ return plural;
   null,
   "Per provar un port diferent, haureu d'actualitzar cockpit-ws a una versió més recent."
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Type a password": [
   null,
   "Teclegeu una contrasenya"
+ ],
+ "Unknown": [
+  null,
+  "Desconegut"
  ],
  "Unknown Host Key": [
   null,

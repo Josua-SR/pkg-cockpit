@@ -133,6 +133,14 @@ return plural;
   null,
   "Adresse"
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
+ "All In One": [
+  null,
+  ""
+ ],
  "Authentication": [
   null,
   "Authentification"
@@ -146,6 +154,18 @@ return plural;
   ""
  ],
  "Avatar": [
+  null,
+  ""
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
   null,
   ""
  ],
@@ -201,11 +221,19 @@ return plural;
   null,
   ""
  ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
  "Connect": [
   null,
   ""
  ],
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
+  null,
+  ""
+ ],
+ "Convertible": [
   null,
   ""
  ],
@@ -217,11 +245,27 @@ return plural;
   null,
   "Tableau de bord"
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Disk I/O": [
   null,
   ""
  ],
+ "Docking Station": [
+  null,
+  ""
+ ],
  "Edit Server": [
+  null,
+  ""
+ ],
+ "Embedded PC": [
   null,
   ""
  ],
@@ -234,6 +278,10 @@ return plural;
   ""
  ],
  "Error loading users: {{perm_failed}}": [
+  null,
+  ""
+ ],
+ "Expansion Chassis": [
   null,
   ""
  ],
@@ -257,6 +305,10 @@ return plural;
   null,
   "Aller à maintenant"
  ],
+ "Hand Held": [
+  null,
+  ""
+ ],
  "Host Name": [
   null,
   ""
@@ -273,6 +325,10 @@ return plural;
   null,
   "Permissions sur fichier invalide"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
  "Is sshd running on a different port?": [
   null,
   ""
@@ -282,6 +338,10 @@ return plural;
   ""
  ],
  "Kerberos Ticket": [
+  null,
+  ""
+ ],
+ "Laptop": [
   null,
   ""
  ],
@@ -309,9 +369,33 @@ return plural;
   null,
   "Connexion perdue. Tentative de reconnexion."
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
+ ],
  "Memory": [
   null,
   "Mémoire"
+ ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
+ "Multi-system Chassis": [
+  null,
+  ""
  ],
  "Network": [
   null,
@@ -329,6 +413,10 @@ return plural;
   null,
   "Pas une clé privée"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "Éteint"
@@ -341,6 +429,10 @@ return plural;
   null,
   "Allumé"
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Password": [
   null,
   "Mot de passe"
@@ -349,7 +441,19 @@ return plural;
   null,
   "Mot de passe refusé"
  ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
  "Port": [
+  null,
+  ""
+ ],
+ "Portable": [
   null,
   ""
  ],
@@ -365,6 +469,18 @@ return plural;
   null,
   ""
  ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
+  null,
+  ""
+ ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
   ""
@@ -377,11 +493,31 @@ return plural;
   null,
   ""
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
+ "Stick PC": [
+  null,
+  ""
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "Synchronize": [
   null,
   ""
  ],
  "Synchronize users": [
+  null,
+  ""
+ ],
+ "Tablet": [
   null,
   ""
  ],
@@ -417,9 +553,17 @@ return plural;
   null,
   ""
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Type a password": [
   null,
   ""
+ ],
+ "Unknown": [
+  null,
+  "Inconnu"
  ],
  "Unknown Host Key": [
   null,

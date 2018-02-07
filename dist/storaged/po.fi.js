@@ -93,6 +93,14 @@ return plural;
   "$0 levyä ei löydy",
   "$0 levyjä ei löydy"
  ],
+ "$0 filesystems can not be made larger.": [
+  null,
+  ""
+ ],
+ "$0 filesystems can not be made smaller.": [
+  null,
+  ""
+ ],
  "$0 hour": [
   "$0 hours",
   "$0 tunti",
@@ -100,7 +108,7 @@ return plural;
  ],
  "$0 is in active use": [
   null,
-  ""
+  "$0 on aktiivisessa käytössä"
  ],
  "$0 minute": [
   "$0 minutes",
@@ -118,7 +126,7 @@ return plural;
  ],
  "$0 used of $1 ($2 saved)": [
   null,
-  ""
+  "$0 käytetty kohteesta $1 ($2 tallennettu)"
  ],
  "$0 week": [
   "$0 weeks",
@@ -208,11 +216,11 @@ return plural;
  ],
  "A disk is needed.": [
   null,
-  ""
+  "Levy vaaditaan."
  ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
-  ""
+  "Varalevy pitää lisätä ennen kuin tämä levy voidaan poistaa."
  ],
  "Activate": [
   null,
@@ -268,7 +276,7 @@ return plural;
  ],
  "Block": [
   null,
-  ""
+  "Lohko"
  ],
  "Block device for filesystems": [
   null,
@@ -293,6 +301,10 @@ return plural;
  "Change iSCSI Initiator Name": [
   null,
   "Vaihda iSCSI-Asiakaslaitteen Nimi"
+ ],
+ "Checking $target": [
+  null,
+  ""
  ],
  "Checking RAID Device $target": [
   null,
@@ -536,15 +548,23 @@ return plural;
  ],
  "Encrypted Logical Volume of $0": [
   null,
-  ""
+  "Salattu Looginen Taltio $0"
  ],
  "Encrypted Partition of $0": [
   null,
-  ""
+  "Salattu Osio $0"
  ],
  "Encrypted XFS (LUKS)": [
   null,
   "Salattu XFS (LUKS)"
+ ],
+ "Encrypted volumes can not be resized here.": [
+  null,
+  ""
+ ],
+ "Encrypted volumes need to be unlocked before they can be resized.": [
+  null,
+  ""
  ],
  "Encryption": [
   null,
@@ -628,11 +648,15 @@ return plural;
  ],
  "Grow": [
   null,
+  "Kasvata"
+ ],
+ "Grow Logical Volume": [
+  null,
   ""
  ],
  "Grow logical size of $0": [
   null,
-  ""
+  "Kasvata loogista kokoa $0"
  ],
  "Grow to take all space": [
   null,
@@ -672,11 +696,11 @@ return plural;
  ],
  "Logical": [
   null,
-  ""
+  "Looginen"
  ],
  "Logical Size": [
   null,
-  ""
+  "Looginen Koko"
  ],
  "Logical Volume": [
   null,
@@ -692,7 +716,7 @@ return plural;
  ],
  "Marking $target as faulty": [
   null,
-  ""
+  "Merkitään $target virheelliseksi"
  ],
  "Member of RAID Device": [
   null,
@@ -946,6 +970,10 @@ return plural;
   null,
   ""
  ],
+ "Physical volumes can not be resized here.": [
+  null,
+  ""
+ ],
  "Please confirm deletion of $0": [
   null,
   ""
@@ -1094,15 +1122,7 @@ return plural;
   null,
   "Nimetään uudelleen $target"
  ],
- "Resize": [
-  null,
-  "Muuta kokoa"
- ],
- "Resize Filesystem": [
-  null,
-  "Muuta tiedostojärjestelmän koko"
- ],
- "Resize Logical Volume": [
+ "Repairing $target": [
   null,
   ""
  ],
@@ -1139,6 +1159,14 @@ return plural;
   "Palvelin ei voi olla tyhjä."
  ],
  "Setting up loop device $target": [
+  null,
+  ""
+ ],
+ "Shrink": [
+  null,
+  ""
+ ],
+ "Shrink Logical Volume": [
   null,
   ""
  ],
@@ -1193,6 +1221,10 @@ return plural;
  "Stop": [
   null,
   "Pysäytä"
+ ],
+ "Stop Device": [
+  null,
+  ""
  ],
  "Stop Scrubbing": [
   null,
@@ -1330,9 +1362,9 @@ return plural;
   null,
   ""
  ],
- "This logical volume cannot be made smaller.": [
+ "This volume needs to be activated before it can be resized.": [
   null,
-  "Tätä loogista taltiota ei voida pienentää."
+  ""
  ],
  "Transfer data asynchronously": [
   null,
@@ -1398,6 +1430,10 @@ return plural;
   null,
   "Tunnistamaton Data"
  ],
+ "Unrecognized data can not be made smaller here.": [
+  null,
+  ""
+ ],
  "Unsupported volume": [
   null,
   "Tukematon taltio"
@@ -1431,6 +1467,10 @@ return plural;
   ""
  ],
  "VDO Devices": [
+  null,
+  ""
+ ],
+ "VDO backing devices can not be made smaller": [
   null,
   ""
  ],

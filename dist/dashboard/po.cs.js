@@ -139,6 +139,14 @@ return plural;
   null,
   "Adresa"
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
+ "All In One": [
+  null,
+  ""
+ ],
  "Authentication": [
   null,
   "Ověření"
@@ -154,6 +162,18 @@ return plural;
  "Avatar": [
   null,
   "Avatar"
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -207,11 +227,19 @@ return plural;
   null,
   ""
  ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
  "Connect": [
   null,
   "Spojení"
  ],
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
+  null,
+  ""
+ ],
+ "Convertible": [
   null,
   ""
  ],
@@ -223,11 +251,27 @@ return plural;
   null,
   ""
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Disk I/O": [
   null,
   "Diskové I/O"
  ],
+ "Docking Station": [
+  null,
+  ""
+ ],
  "Edit Server": [
+  null,
+  ""
+ ],
+ "Embedded PC": [
   null,
   ""
  ],
@@ -240,6 +284,10 @@ return plural;
   ""
  ],
  "Error loading users: {{perm_failed}}": [
+  null,
+  ""
+ ],
+ "Expansion Chassis": [
   null,
   ""
  ],
@@ -263,6 +311,10 @@ return plural;
   null,
   ""
  ],
+ "Hand Held": [
+  null,
+  ""
+ ],
  "Host Name": [
   null,
   "Název počítače"
@@ -279,6 +331,10 @@ return plural;
   null,
   ""
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
  "Is sshd running on a different port?": [
   null,
   ""
@@ -288,6 +344,10 @@ return plural;
   ""
  ],
  "Kerberos Ticket": [
+  null,
+  ""
+ ],
+ "Laptop": [
   null,
   ""
  ],
@@ -315,9 +375,33 @@ return plural;
   null,
   ""
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
+ ],
  "Memory": [
   null,
   "Paměť"
+ ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
+ "Multi-system Chassis": [
+  null,
+  ""
  ],
  "Network": [
   null,
@@ -335,6 +419,10 @@ return plural;
   null,
   ""
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   ""
@@ -347,6 +435,10 @@ return plural;
   null,
   ""
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Password": [
   null,
   "Heslo"
@@ -355,9 +447,21 @@ return plural;
   null,
   ""
  ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
  "Port": [
   null,
   "Port"
+ ],
+ "Portable": [
+  null,
+  ""
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -368,6 +472,18 @@ return plural;
   ""
  ],
  "Public Key": [
+  null,
+  ""
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
+  null,
+  ""
+ ],
+ "Sealed-case PC": [
   null,
   ""
  ],
@@ -383,11 +499,31 @@ return plural;
   null,
   "Sada"
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
+ "Stick PC": [
+  null,
+  ""
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "Synchronize": [
   null,
   ""
  ],
  "Synchronize users": [
+  null,
+  ""
+ ],
+ "Tablet": [
   null,
   ""
  ],
@@ -423,9 +559,17 @@ return plural;
   null,
   ""
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Type a password": [
   null,
   ""
+ ],
+ "Unknown": [
+  null,
+  "Neznámý"
  ],
  "Unknown Host Key": [
   null,

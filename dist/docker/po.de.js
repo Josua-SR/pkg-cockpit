@@ -121,6 +121,14 @@ return plural;
   null,
   ""
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
+ "All In One": [
+  null,
+  ""
+ ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
   "Die ausgewählten Datenträger werden zum Storage Pool hinzugefügt. Dabei werden sämtliche Daten auf den ausgewählten Datenträgern gelöscht."
@@ -136,6 +144,18 @@ return plural;
  "Author": [
   null,
   "Autor"
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -173,12 +193,13 @@ return plural;
   null,
   "Schließen"
  ],
- "Combined CPU usage": [
+ "Combined memory usage": [
   null,
   ""
  ],
- "Combined memory usage": [
-  null,
+ "Combined usage of $0 CPU core": [
+  "Combined usage of $0 CPU cores",
+  "",
   ""
  ],
  "Command": [
@@ -198,6 +219,10 @@ return plural;
   "Befehl"
  ],
  "Commit Image": [
+  null,
+  ""
+ ],
+ "Compact PCI": [
   null,
   ""
  ],
@@ -232,6 +257,10 @@ return plural;
  "Containers": [
   null,
   "Container"
+ ],
+ "Convertible": [
+  null,
+  ""
  ],
  "Could not add all disks": [
   null,
@@ -269,6 +298,14 @@ return plural;
   null,
   ""
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Details": [
   null,
   ""
@@ -276,6 +313,10 @@ return plural;
  "Docker is not installed or activated on the system": [
   null,
   "Docker ist auf Ihrem System entweder nicht installiert oder nicht aktiviert"
+ ],
+ "Docking Station": [
+  null,
+  ""
  ],
  "Download": [
   null,
@@ -292,6 +333,10 @@ return plural;
  "Duplicate port": [
   null,
   "Port duplizieren"
+ ],
+ "Embedded PC": [
+  null,
+  ""
  ],
  "Entrypoint": [
   null,
@@ -321,6 +366,10 @@ return plural;
   null,
   "Beendet $ExitCode"
  ],
+ "Expansion Chassis": [
+  null,
+  ""
+ ],
  "Expose container ports": [
   null,
   ""
@@ -346,6 +395,10 @@ return plural;
   ""
  ],
  "Get new image": [
+  null,
+  ""
+ ],
+ "Hand Held": [
   null,
   ""
  ],
@@ -401,6 +454,14 @@ return plural;
   null,
   "Ungültiger Port"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
+ "Laptop": [
+  null,
+  ""
+ ],
  "Link to another container": [
   null,
   ""
@@ -417,7 +478,19 @@ return plural;
   null,
   "$0 Datenträger"
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "MAC Address:": [
+  null,
+  ""
+ ],
+ "Main Server Chassis": [
   null,
   ""
  ],
@@ -437,7 +510,19 @@ return plural;
   null,
   ""
  ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
  "Mount container volumes": [
+  null,
+  ""
+ ],
+ "Multi-system Chassis": [
   null,
   ""
  ],
@@ -497,6 +582,10 @@ return plural;
   null,
   "Nicht gefunden"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "Aus"
@@ -518,7 +607,19 @@ return plural;
   "",
   ""
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Overview": [
+  null,
+  ""
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
   null,
   ""
  ],
@@ -534,6 +635,10 @@ return plural;
   null,
   ""
  ],
+ "Portable": [
+  null,
+  ""
+ ],
  "Ports": [
   null,
   "Ports"
@@ -543,6 +648,14 @@ return plural;
   ""
  ],
  "Problems": [
+  null,
+  ""
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
   null,
   ""
  ],
@@ -602,6 +715,10 @@ return plural;
   null,
   ""
  ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Security": [
   null,
   "Sicherheit"
@@ -626,6 +743,10 @@ return plural;
   null,
   "Solid-State Datenträger"
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
  "Start": [
   null,
   "Starten"
@@ -641,6 +762,10 @@ return plural;
  "State:": [
   null,
   "Status:"
+ ],
+ "Stick PC": [
+  null,
+  ""
  ],
  "Stop": [
   null,
@@ -658,9 +783,21 @@ return plural;
   null,
   ""
  ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "TCP": [
   null,
   "TCP"
+ ],
+ "Tablet": [
+  null,
+  ""
  ],
  "Tag": [
   null,
@@ -694,6 +831,10 @@ return plural;
   null,
   "Insgesamt"
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Try again": [
   null,
   "Nochmals versuchen"
@@ -709,6 +850,10 @@ return plural;
  "Unexpected error": [
   null,
   "Unerwarteter Fehler"
+ ],
+ "Unknown": [
+  null,
+  "Unbekannt"
  ],
  "Unless Stopped": [
   null,

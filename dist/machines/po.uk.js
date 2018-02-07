@@ -95,6 +95,10 @@ return plural;
   null,
   "Порядок завантаження:"
  ],
+ "Bus": [
+  null,
+  "Канал"
+ ],
  "CHANGE NETWORK STATE action failed": [
   null,
   "Не вдалося виконати дію зі зміни стану мережі"
@@ -106,6 +110,10 @@ return plural;
  "Cancel": [
   null,
   "Скасувати"
+ ],
+ "Capacity": [
+  null,
+  "Місткість"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -135,6 +143,22 @@ return plural;
   null,
   "Консолі"
  ],
+ "Count:": [
+  null,
+  "Кількість:"
+ ],
+ "Create": [
+  null,
+  "Створити"
+ ],
+ "Create New VM": [
+  null,
+  ""
+ ],
+ "Create New Virtual Machine": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "Вилучити"
@@ -142,6 +166,10 @@ return plural;
  "Delete associated storage files:": [
   null,
   "Вилучити пов’язані файли у сховищі даних:"
+ ],
+ "Device": [
+  null,
+  "Пристрій"
  ],
  "Disconnect": [
   null,
@@ -163,6 +191,14 @@ return plural;
   null,
   "Емуляція машини:"
  ],
+ "File": [
+  null,
+  "Файл"
+ ],
+ "Filesystem": [
+  null,
+  "Файлова система"
+ ],
  "Force Restart": [
   null,
   "Примусовий перезапуск"
@@ -171,6 +207,10 @@ return plural;
   null,
   "Примусово вимкнути"
  ],
+ "GiB": [
+  null,
+  ""
+ ],
  "Graphics Console (VNC)": [
   null,
   "Графічна консоль (VNC)"
@@ -178,6 +218,38 @@ return plural;
  "Graphics Console in Desktop Viewer": [
   null,
   "Графічна консоль у перегляді стільниці"
+ ],
+ "Host": [
+  null,
+  "Вузол"
+ ],
+ "INSTALL VM action failed": [
+  null,
+  ""
+ ],
+ "Immediately Start VM": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  "Встановити"
+ ],
+ "Installation Source": [
+  null,
+  ""
+ ],
+ "Installation Source Type": [
+  null,
+  ""
+ ],
+ "Installation Source should not be empty": [
+  null,
+  ""
+ ],
+ "Invalid filename": [
+  null,
+  ""
  ],
  "Launch Remote Viewer": [
   null,
@@ -203,9 +275,21 @@ return plural;
   null,
   "З’єднання вручну"
  ],
+ "Memory": [
+  null,
+  "Пам'ять"
+ ],
+ "Memory should be positive number": [
+  null,
+  ""
+ ],
  "Memory:": [
   null,
   "Пам’ять:"
+ ],
+ "MiB": [
+  null,
+  "МіБ"
  ],
  "Model type": [
   null,
@@ -218,6 +302,14 @@ return plural;
  "Name": [
   null,
   "Назва"
+ ],
+ "Name should not be empty": [
+  null,
+  ""
+ ],
+ "Name should not consist of empty characters only": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -235,17 +327,41 @@ return plural;
   null,
   "Для цієї віртуальної машини консолей не визначено."
  ],
+ "No disks defined for this VM": [
+  null,
+  "Для цієї ВМ не визначено дисків"
+ ],
+ "No matching files found": [
+  null,
+  "Відповідних файлів не знайдено"
+ ],
  "No network interfaces defined for this VM": [
   null,
   "Немає інтерфейсів мережі, які визначено для цієї ВМ"
+ ],
+ "OS Vendor": [
+  null,
+  ""
  ],
  "Ok": [
   null,
   "Гаразд"
  ],
+ "Operating System": [
+  null,
+  "Операційна система"
+ ],
  "Overview": [
   null,
   "Огляд"
+ ],
+ "Path to ISO file on host's file system": [
+  null,
+  ""
+ ],
+ "Path to file": [
+  null,
+  "Шлях до файла"
  ],
  "Please start the virtual machine to access its console.": [
   null,
@@ -255,6 +371,10 @@ return plural;
   null,
   "З'єднати"
  ],
+ "Pool": [
+  null,
+  "Буфер"
+ ],
  "Port": [
   null,
   "Порт"
@@ -263,9 +383,21 @@ return plural;
   null,
   "Група портів"
  ],
+ "Protocol": [
+  null,
+  "Протокол"
+ ],
+ "Readonly": [
+  null,
+  "Лише запис"
+ ],
  "Reconnect": [
   null,
   "Повторно з’єднатися"
+ ],
+ "Remote URL": [
+  null,
+  ""
  ],
  "Restart": [
   null,
@@ -315,9 +447,25 @@ return plural;
   null,
   "Джерело"
  ],
+ "Source should start with http, ftp or nfs protocol": [
+  null,
+  ""
+ ],
+ "Start the VM to see disk statistics.": [
+  null,
+  "Запустити віртуальну машину для перегляду статистики диска."
+ ],
  "State": [
   null,
   "Стан"
+ ],
+ "Storage Size": [
+  null,
+  ""
+ ],
+ "Storage Size should not be negative number": [
+  null,
+  ""
  ],
  "System": [
   null,
@@ -363,13 +511,25 @@ return plural;
   null,
   "Роботу віртуальної машини призупинено засобами керування живленням гостьової системи."
  ],
+ "Too many files found": [
+  null,
+  "Знайдено забагато файлів"
+ ],
  "Type": [
   null,
   "Тип"
  ],
+ "URL": [
+  null,
+  "Адреса"
+ ],
  "Unplug": [
   null,
   "Від'єднати"
+ ],
+ "Upgrade to a more recent version of libvirt to view disk statistics": [
+  null,
+  "Щоб мати змогу переглядати статистику дисків, оновіться до новішої версії libvirt"
  ],
  "Usage": [
   null,
@@ -426,6 +586,10 @@ return plural;
  "Virtualport": [
   null,
   "Віртуальний порт"
+ ],
+ "Volume": [
+  null,
+  "Том"
  ],
  "Your browser does not support iframes.": [
   null,
@@ -517,11 +681,11 @@ return plural;
  ],
  "show less": [
   null,
-  ""
+  "показати менше"
  ],
  "show more": [
   null,
-  ""
+  "показати більше"
  ],
  "shut off": [
   null,

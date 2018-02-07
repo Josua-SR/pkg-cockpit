@@ -115,6 +115,14 @@ return plural;
   null,
   "额外的存储"
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
+ "All In One": [
+  null,
+  ""
+ ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
   "所选磁盘上所有数据将会被擦除并且磁盘将会被添加到存储池。"
@@ -130,6 +138,18 @@ return plural;
  "Author": [
   null,
   "作者"
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -167,13 +187,13 @@ return plural;
   null,
   "关闭"
  ],
- "Combined CPU usage": [
-  null,
-  "结合 CPU 使用率"
- ],
  "Combined memory usage": [
   null,
   "结合内存使用率"
+ ],
+ "Combined usage of $0 CPU core": [
+  "Combined usage of $0 CPU cores",
+  ""
  ],
  "Command": [
   null,
@@ -194,6 +214,10 @@ return plural;
  "Commit Image": [
   null,
   "提交镜像"
+ ],
+ "Compact PCI": [
+  null,
+  ""
  ],
  "Configure storage...": [
   null,
@@ -226,6 +250,10 @@ return plural;
  "Containers": [
   null,
   "容器"
+ ],
+ "Convertible": [
+  null,
+  ""
  ],
  "Could not add all disks": [
   null,
@@ -263,6 +291,14 @@ return plural;
   null,
   "这将删除镜像, 如果以后需要, 可以重新下载.除非该镜像未推送至镜像库, 镜像库未包含的镜像, 无法再次下载."
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Details": [
   null,
   "详情"
@@ -270,6 +306,10 @@ return plural;
  "Docker is not installed or activated on the system": [
   null,
   "系统中的 Docker 未安装或未启动"
+ ],
+ "Docking Station": [
+  null,
+  ""
  ],
  "Download": [
   null,
@@ -286,6 +326,10 @@ return plural;
  "Duplicate port": [
   null,
   "重复端口"
+ ],
+ "Embedded PC": [
+  null,
+  ""
  ],
  "Entrypoint": [
   null,
@@ -315,6 +359,10 @@ return plural;
   null,
   "已退出 $ExitCode"
  ],
+ "Expansion Chassis": [
+  null,
+  ""
+ ],
  "Expose container ports": [
   null,
   "暴露容器端口"
@@ -342,6 +390,10 @@ return plural;
  "Get new image": [
   null,
   "获取新镜像"
+ ],
+ "Hand Held": [
+  null,
+  ""
  ],
  "Hard Disk": [
   null,
@@ -395,6 +447,14 @@ return plural;
   null,
   "无效端口"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
+ "Laptop": [
+  null,
+  ""
+ ],
  "Link to another container": [
   null,
   "链接到另一个容器"
@@ -411,9 +471,21 @@ return plural;
   null,
   "本地磁盘"
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "MAC Address:": [
   null,
   "MAC 地址:"
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
  ],
  "Memory": [
   null,
@@ -431,9 +503,21 @@ return plural;
   null,
   "MiB"
  ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
  "Mount container volumes": [
   null,
   "挂载容器卷"
+ ],
+ "Multi-system Chassis": [
+  null,
+  ""
  ],
  "Name": [
   null,
@@ -491,6 +575,10 @@ return plural;
   null,
   "未找到"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "关"
@@ -511,9 +599,21 @@ return plural;
   "On failure, retry $0 times",
   "失败时, 重试 $0 次"
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Overview": [
   null,
   "概览"
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
  ],
  "Please confirm deletion of $0": [
   null,
@@ -527,6 +627,10 @@ return plural;
   null,
   "请尝试另一个终端"
  ],
+ "Portable": [
+  null,
+  ""
+ ],
  "Ports": [
   null,
   "端口"
@@ -536,6 +640,14 @@ return plural;
   "端口："
  ],
  "Problems": [
+  null,
+  ""
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
   null,
   ""
  ],
@@ -595,6 +707,10 @@ return plural;
   null,
   "运行镜像"
  ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Security": [
   null,
   "安全性"
@@ -619,6 +735,10 @@ return plural;
   null,
   "固态磁盘"
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
  "Start": [
   null,
   "启动"
@@ -634,6 +754,10 @@ return plural;
  "State:": [
   null,
   "阶段："
+ ],
+ "Stick PC": [
+  null,
+  ""
  ],
  "Stop": [
   null,
@@ -651,9 +775,21 @@ return plural;
   null,
   "存储池"
  ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "TCP": [
   null,
   "TCP"
+ ],
+ "Tablet": [
+  null,
+  ""
  ],
  "Tag": [
   null,
@@ -687,6 +823,10 @@ return plural;
   null,
   "总共"
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Try again": [
   null,
   "重试"
@@ -702,6 +842,10 @@ return plural;
  "Unexpected error": [
   null,
   "意外的错误"
+ ],
+ "Unknown": [
+  null,
+  "未知"
  ],
  "Unless Stopped": [
   null,

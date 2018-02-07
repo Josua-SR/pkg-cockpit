@@ -136,7 +136,13 @@ fi
 
 %build
 exec 2>&1
-%configure --disable-silent-rules --with-cockpit-user=cockpit-ws --with-selinux-config-type=etc_t %{?rhel:--without-storaged-iscsi-sessions} %{!?build_dashboard:--disable-ssh}
+%configure \
+    --disable-silent-rules \
+    --with-cockpit-user=cockpit-ws \
+    --with-selinux-config-type=etc_t \
+    %{?rhel:--without-storaged-iscsi-sessions} \
+    --with-appstream-data-packages='[ "appstream-data" ]' \
+    %{!?build_dashboard:--disable-ssh}
 make -j4 %{?extra_flags} all
 
 %check
@@ -307,6 +313,7 @@ system on behalf of the web based user interface.
 
 %package doc
 Summary: Cockpit deployment and developer guide
+BuildArch: noarch
 
 %description doc
 The Cockpit Deployment and Developer Guide shows sysadmins how to
@@ -320,6 +327,7 @@ embed or extend Cockpit.
 %{_docdir}/%{name}
 
 %package machines
+BuildArch: noarch
 Summary: Cockpit user interface for virtual machines
 Requires: %{name}-bridge >= 122
 Requires: %{name}-system >= 122
@@ -331,17 +339,22 @@ The Cockpit components for managing virtual machines.
 
 %files machines -f machines.list
 
-%package ovirt
+%package machines-ovirt
+BuildArch: noarch
 Summary: Cockpit user interface for oVirt virtual machines
 Requires: %{name}-bridge >= 122
 Requires: %{name}-system >= 122
 Requires: libvirt
 Requires: libvirt-client
+# package of old name "cockpit-ovirt" was shipped on fedora only
+%if 0%{?fedora} >= 25
+Obsoletes: %{name}-ovirt < 161
+%endif
 
-%description ovirt
+%description machines-ovirt
 The Cockpit components for managing oVirt virtual machines.
 
-%files ovirt -f ovirt.list
+%files machines-ovirt -f ovirt.list
 
 %package ostree
 Summary: Cockpit user interface for rpm-ostree
@@ -693,6 +706,7 @@ cluster. Installed on the Kubernetes master. This package is not yet complete.
 
 %package packagekit
 Summary: Cockpit user interface for packages
+BuildArch: noarch
 Requires: %{name}-bridge >= 138
 Requires: PackageKit
 

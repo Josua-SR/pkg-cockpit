@@ -95,6 +95,10 @@ return plural;
   null,
   "Kolejność uruchamiania:"
  ],
+ "Bus": [
+  null,
+  "Magistrala"
+ ],
  "CHANGE NETWORK STATE action failed": [
   null,
   "Działanie CHANGE NETWORK STATE się nie powiodło"
@@ -106,6 +110,10 @@ return plural;
  "Cancel": [
   null,
   "Anuluj"
+ ],
+ "Capacity": [
+  null,
+  "Pojemność"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -135,6 +143,22 @@ return plural;
   null,
   "Konsole"
  ],
+ "Count:": [
+  null,
+  "Liczba:"
+ ],
+ "Create": [
+  null,
+  "Utwórz"
+ ],
+ "Create New VM": [
+  null,
+  ""
+ ],
+ "Create New Virtual Machine": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "Usuń"
@@ -142,6 +166,10 @@ return plural;
  "Delete associated storage files:": [
   null,
   "Usunięcie powiązanych plików urządzeń do przechowywania danych:"
+ ],
+ "Device": [
+  null,
+  "Urządzenie"
  ],
  "Disconnect": [
   null,
@@ -163,6 +191,14 @@ return plural;
   null,
   "Emulowany komputer:"
  ],
+ "File": [
+  null,
+  "Plik"
+ ],
+ "Filesystem": [
+  null,
+  "System plików"
+ ],
  "Force Restart": [
   null,
   "Wymuś ponowne uruchomienie"
@@ -171,6 +207,10 @@ return plural;
   null,
   "Wymuś wyłączenie"
  ],
+ "GiB": [
+  null,
+  ""
+ ],
  "Graphics Console (VNC)": [
   null,
   "Konsola graficzna (VNC)"
@@ -178,6 +218,38 @@ return plural;
  "Graphics Console in Desktop Viewer": [
   null,
   "Konsola graficzna w przeglądarce pulpitu"
+ ],
+ "Host": [
+  null,
+  "Gospodarz"
+ ],
+ "INSTALL VM action failed": [
+  null,
+  ""
+ ],
+ "Immediately Start VM": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  "Zainstaluj"
+ ],
+ "Installation Source": [
+  null,
+  ""
+ ],
+ "Installation Source Type": [
+  null,
+  ""
+ ],
+ "Installation Source should not be empty": [
+  null,
+  ""
+ ],
+ "Invalid filename": [
+  null,
+  ""
  ],
  "Launch Remote Viewer": [
   null,
@@ -203,9 +275,21 @@ return plural;
   null,
   "Ręczne połączenie"
  ],
+ "Memory": [
+  null,
+  "Pamięć"
+ ],
+ "Memory should be positive number": [
+  null,
+  ""
+ ],
  "Memory:": [
   null,
   "Pamięć:"
+ ],
+ "MiB": [
+  null,
+  "MiB"
  ],
  "Model type": [
   null,
@@ -218,6 +302,14 @@ return plural;
  "Name": [
   null,
   "Nazwa"
+ ],
+ "Name should not be empty": [
+  null,
+  ""
+ ],
+ "Name should not consist of empty characters only": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -235,17 +327,41 @@ return plural;
   null,
   "Dla tej maszyny wirtualnej nie określono żadnej konsoli."
  ],
+ "No disks defined for this VM": [
+  null,
+  "Nie określono dysków dla tej maszyny wirtualnej"
+ ],
+ "No matching files found": [
+  null,
+  "Nie odnaleziono pasujących plików"
+ ],
  "No network interfaces defined for this VM": [
   null,
   "Nie określono interfejsów sieciowych dla tej maszyny wirtualnej"
+ ],
+ "OS Vendor": [
+  null,
+  ""
  ],
  "Ok": [
   null,
   "OK"
  ],
+ "Operating System": [
+  null,
+  "System operacyjny"
+ ],
  "Overview": [
   null,
   "Przegląd"
+ ],
+ "Path to ISO file on host's file system": [
+  null,
+  ""
+ ],
+ "Path to file": [
+  null,
+  "Ścieżka do pliku"
  ],
  "Please start the virtual machine to access its console.": [
   null,
@@ -255,6 +371,10 @@ return plural;
   null,
   "Podłącz"
  ],
+ "Pool": [
+  null,
+  "Pula"
+ ],
  "Port": [
   null,
   "Port"
@@ -263,9 +383,21 @@ return plural;
   null,
   "Grupa portów"
  ],
+ "Protocol": [
+  null,
+  "Protokół"
+ ],
+ "Readonly": [
+  null,
+  "Tylko do odczytu"
+ ],
  "Reconnect": [
   null,
   "Połącz ponownie"
+ ],
+ "Remote URL": [
+  null,
+  ""
  ],
  "Restart": [
   null,
@@ -315,9 +447,25 @@ return plural;
   null,
   "Źródło"
  ],
+ "Source should start with http, ftp or nfs protocol": [
+  null,
+  ""
+ ],
+ "Start the VM to see disk statistics.": [
+  null,
+  "Należy uruchomić maszynę wirtualną, aby wyświetlić statystyki dysku."
+ ],
  "State": [
   null,
   "Stan"
+ ],
+ "Storage Size": [
+  null,
+  ""
+ ],
+ "Storage Size should not be negative number": [
+  null,
+  ""
  ],
  "System": [
   null,
@@ -363,13 +511,25 @@ return plural;
   null,
   "Maszyna wirtualna jest uśpiona przez zarządzanie zasilaniem."
  ],
+ "Too many files found": [
+  null,
+  "Odnaleziono za dużo plików"
+ ],
  "Type": [
   null,
   "Typ"
  ],
+ "URL": [
+  null,
+  "Adres URL"
+ ],
  "Unplug": [
   null,
   "Odłącz"
+ ],
+ "Upgrade to a more recent version of libvirt to view disk statistics": [
+  null,
+  "Należy zaktualizować do nowszej wersji biblioteki libvirt, aby przeglądać statystyki dysku"
  ],
  "Usage": [
   null,
@@ -426,6 +586,10 @@ return plural;
  "Virtualport": [
   null,
   "Port wirtualny"
+ ],
+ "Volume": [
+  null,
+  "Wolumin"
  ],
  "Your browser does not support iframes.": [
   null,
@@ -517,11 +681,11 @@ return plural;
  ],
  "show less": [
   null,
-  ""
+  "wyświetl mniej"
  ],
  "show more": [
   null,
-  ""
+  "wyświetl więcej"
  ],
  "shut off": [
   null,

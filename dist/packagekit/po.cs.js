@@ -67,10 +67,6 @@ return plural;
   "language": "cs",
   "x-generator": "Zanata 3.9.6"
  },
- "$0 more…": [
-  null,
-  "$0 více..."
- ],
  "$0 update": [
   "$0 updates",
   "$0 aktualizace",
@@ -113,9 +109,9 @@ return plural;
   null,
   "Dostupné aktualizace"
  ],
- "Bugs": [
+ "Bugs:": [
   null,
-  "Chyby"
+  ""
  ],
  "Cancel": [
   null,
@@ -140,6 +136,10 @@ return plural;
  "Downloading": [
   null,
   "Stažení"
+ ],
+ "Errata:": [
+  null,
+  ""
  ],
  "Ignore": [
   null,
@@ -174,10 +174,6 @@ return plural;
   ""
  ],
  "Loading available updates, please wait...": [
-  null,
-  ""
- ],
- "More information…": [
   null,
   ""
  ],
@@ -233,15 +229,19 @@ return plural;
   null,
   ""
  ],
- "Security Update": [
-  null,
-  ""
- ],
  "Set up": [
   null,
   ""
  ],
  "Setting up": [
+  null,
+  ""
+ ],
+ "Severity": [
+  null,
+  "Závažnost"
+ ],
+ "Severity:": [
   null,
   ""
  ],

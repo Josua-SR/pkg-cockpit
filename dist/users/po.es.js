@@ -289,11 +289,11 @@ return plural;
  ],
  "Require password change every $0 days": [
   null,
-  ""
+  "Se requiere que la contraseña cambie cada $0 días"
  ],
  "Require password change on $0": [
   null,
-  ""
+  "Se requiere que la contraseña se cambie en $0"
  ],
  "Reset": [
   null,

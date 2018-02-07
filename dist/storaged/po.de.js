@@ -93,6 +93,14 @@ return plural;
   "$0 Festplatte fehlt",
   "$0 Festplatten fehlen"
  ],
+ "$0 filesystems can not be made larger.": [
+  null,
+  ""
+ ],
+ "$0 filesystems can not be made smaller.": [
+  null,
+  ""
+ ],
  "$0 hour": [
   "$0 hours",
   "$0 Stunde",
@@ -291,6 +299,10 @@ return plural;
   ""
  ],
  "Change iSCSI Initiator Name": [
+  null,
+  ""
+ ],
+ "Checking $target": [
   null,
   ""
  ],
@@ -546,6 +558,14 @@ return plural;
   null,
   "Verschlüsseltes XFS (LUKS)"
  ],
+ "Encrypted volumes can not be resized here.": [
+  null,
+  ""
+ ],
+ "Encrypted volumes need to be unlocked before they can be resized.": [
+  null,
+  ""
+ ],
  "Encryption": [
   null,
   ""
@@ -627,6 +647,10 @@ return plural;
   "Zu 'Jetzt' gehen"
  ],
  "Grow": [
+  null,
+  ""
+ ],
+ "Grow Logical Volume": [
   null,
   ""
  ],
@@ -946,6 +970,10 @@ return plural;
   null,
   ""
  ],
+ "Physical volumes can not be resized here.": [
+  null,
+  ""
+ ],
  "Please confirm deletion of $0": [
   null,
   "Bitte bestätigen Sie das Löschen von $0"
@@ -1094,17 +1122,9 @@ return plural;
   null,
   "$target wird umbenannt"
  ],
- "Resize": [
+ "Repairing $target": [
   null,
-  "Größe ändern"
- ],
- "Resize Filesystem": [
-  null,
-  "Größe des Dateisystems ändern"
- ],
- "Resize Logical Volume": [
-  null,
-  "Größe eines logischen Datenträgers ändern"
+  ""
  ],
  "Resizing $target": [
   null,
@@ -1141,6 +1161,14 @@ return plural;
  "Setting up loop device $target": [
   null,
   "Richte Loop Device $target ein"
+ ],
+ "Shrink": [
+  null,
+  ""
+ ],
+ "Shrink Logical Volume": [
+  null,
+  ""
  ],
  "Size": [
   null,
@@ -1193,6 +1221,10 @@ return plural;
  "Stop": [
   null,
   "Stoppen"
+ ],
+ "Stop Device": [
+  null,
+  ""
  ],
  "Stop Scrubbing": [
   null,
@@ -1330,9 +1362,9 @@ return plural;
   null,
   ""
  ],
- "This logical volume cannot be made smaller.": [
+ "This volume needs to be activated before it can be resized.": [
   null,
-  "Dieser logische Datenträger kann nicht verkleinert werden."
+  ""
  ],
  "Transfer data asynchronously": [
   null,
@@ -1398,6 +1430,10 @@ return plural;
   null,
   "Unerkannte Daten"
  ],
+ "Unrecognized data can not be made smaller here.": [
+  null,
+  ""
+ ],
  "Unsupported volume": [
   null,
   ""
@@ -1431,6 +1467,10 @@ return plural;
   ""
  ],
  "VDO Devices": [
+  null,
+  ""
+ ],
+ "VDO backing devices can not be made smaller": [
   null,
   ""
  ],

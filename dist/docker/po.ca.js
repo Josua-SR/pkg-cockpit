@@ -121,6 +121,14 @@ return plural;
   null,
   "Emmagatzematge addicional"
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
+ "All In One": [
+  null,
+  ""
+ ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
   ""
@@ -136,6 +144,18 @@ return plural;
  "Author": [
   null,
   "Autor"
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -173,13 +193,14 @@ return plural;
   null,
   "Tanca"
  ],
- "Combined CPU usage": [
-  null,
-  "Ús combinat de CPU"
- ],
  "Combined memory usage": [
   null,
   "Ús combinat de memòria"
+ ],
+ "Combined usage of $0 CPU core": [
+  "Combined usage of $0 CPU cores",
+  "",
+  ""
  ],
  "Command": [
   null,
@@ -200,6 +221,10 @@ return plural;
  "Commit Image": [
   null,
   "Consigna la imatge"
+ ],
+ "Compact PCI": [
+  null,
+  ""
  ],
  "Configure storage...": [
   null,
@@ -232,6 +257,10 @@ return plural;
  "Containers": [
   null,
   "Contenidors"
+ ],
+ "Convertible": [
+  null,
+  ""
  ],
  "Could not add all disks": [
   null,
@@ -269,6 +298,14 @@ return plural;
   null,
   "La supressió d'una imatge ho suprimirà, però probablement es pot baixar de nou si es necessita més endavant. Llevat que aquesta imatge mai hagi estat empesa a un dipòsit, que ho és, en aquest cas probablement no pugueu baixar-ho de nou."
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Details": [
   null,
   "Detalls"
@@ -276,6 +313,10 @@ return plural;
  "Docker is not installed or activated on the system": [
   null,
   "Docker no està activat o instal·lat al sistema"
+ ],
+ "Docking Station": [
+  null,
+  ""
  ],
  "Download": [
   null,
@@ -292,6 +333,10 @@ return plural;
  "Duplicate port": [
   null,
   "Port duplicat"
+ ],
+ "Embedded PC": [
+  null,
+  ""
  ],
  "Entrypoint": [
   null,
@@ -321,6 +366,10 @@ return plural;
   null,
   "Sortida $ExitCode"
  ],
+ "Expansion Chassis": [
+  null,
+  ""
+ ],
  "Expose container ports": [
   null,
   "Exposa els ports del contenidor"
@@ -348,6 +397,10 @@ return plural;
  "Get new image": [
   null,
   "Obtén una imatge nova"
+ ],
+ "Hand Held": [
+  null,
+  ""
  ],
  "Hard Disk": [
   null,
@@ -401,6 +454,14 @@ return plural;
   null,
   "Port no vàlid"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
+ "Laptop": [
+  null,
+  ""
+ ],
  "Link to another container": [
   null,
   "Enllaça a un altre contenidor"
@@ -417,9 +478,21 @@ return plural;
   null,
   "Discs locals"
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "MAC Address:": [
   null,
   "Adreça MAC:"
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
  ],
  "Memory": [
   null,
@@ -437,9 +510,21 @@ return plural;
   null,
   "MiB"
  ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
  "Mount container volumes": [
   null,
   "Munta els volums del contenidor"
+ ],
+ "Multi-system Chassis": [
+  null,
+  ""
  ],
  "Name": [
   null,
@@ -497,6 +582,10 @@ return plural;
   null,
   "No s'ha trobat"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "Off"
@@ -518,9 +607,21 @@ return plural;
   "Amb la fallada, reintenta $0 cop",
   "Amb la fallada, reintenta $0 cops"
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Overview": [
   null,
   "Visió de conjunt"
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
  ],
  "Please confirm deletion of $0": [
   null,
@@ -534,6 +635,10 @@ return plural;
   null,
   "Si us plau, proveu un altre terme"
  ],
+ "Portable": [
+  null,
+  ""
+ ],
  "Ports": [
   null,
   "Ports"
@@ -545,6 +650,14 @@ return plural;
  "Problems": [
   null,
   "Problemes"
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
+  null,
+  ""
  ],
  "ReadOnly": [
   null,
@@ -602,6 +715,10 @@ return plural;
   null,
   "Executa la imatge"
  ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Security": [
   null,
   "Seguretat"
@@ -626,6 +743,10 @@ return plural;
   null,
   "Disc d'estat sòlid"
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
  "Start": [
   null,
   "Inicia"
@@ -641,6 +762,10 @@ return plural;
  "State:": [
   null,
   "Estat:"
+ ],
+ "Stick PC": [
+  null,
+  ""
  ],
  "Stop": [
   null,
@@ -658,9 +783,21 @@ return plural;
   null,
   "Agrupació d'emmagatzematge"
  ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "TCP": [
   null,
   "TCP"
+ ],
+ "Tablet": [
+  null,
+  ""
  ],
  "Tag": [
   null,
@@ -694,6 +831,10 @@ return plural;
   null,
   "Total"
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Try again": [
   null,
   "Torna-ho a intentar"
@@ -709,6 +850,10 @@ return plural;
  "Unexpected error": [
   null,
   "Error inesperat"
+ ],
+ "Unknown": [
+  null,
+  "Desconegut"
  ],
  "Unless Stopped": [
   null,

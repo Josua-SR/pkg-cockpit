@@ -127,6 +127,14 @@ return plural;
   null,
   "Додаткове сховище"
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
+ "All In One": [
+  null,
+  ""
+ ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
   "Всі дані на позначених дисках буде витерто, а диски буде додано до резервного сховища даних."
@@ -142,6 +150,18 @@ return plural;
  "Author": [
   null,
   "Автор"
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -179,13 +199,15 @@ return plural;
   null,
   "Закрити"
  ],
- "Combined CPU usage": [
-  null,
-  "Поєднане використання процесора"
- ],
  "Combined memory usage": [
   null,
   "Поєднане використання пам’яті"
+ ],
+ "Combined usage of $0 CPU core": [
+  "Combined usage of $0 CPU cores",
+  "Комбіноване використання $0 ядра процесора",
+  "Комбіноване використання $0 ядер процесора",
+  "Комбіноване використання $0 ядер процесора"
  ],
  "Command": [
   null,
@@ -206,6 +228,10 @@ return plural;
  "Commit Image": [
   null,
   "Надіслати образ"
+ ],
+ "Compact PCI": [
+  null,
+  ""
  ],
  "Configure storage...": [
   null,
@@ -238,6 +264,10 @@ return plural;
  "Containers": [
   null,
   "Контейнери"
+ ],
+ "Convertible": [
+  null,
+  ""
  ],
  "Could not add all disks": [
   null,
@@ -275,6 +305,14 @@ return plural;
   null,
   "Вилучення образу призведе до його вилучення, але ви, ймовірно, зможете отримати його знову, якщо виникне потреба. Виключенням є випадок, коли образ ніколи не було записано до сховища. У цьому випадку ви, ймовірно, не зможете отримати образ знову."
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Details": [
   null,
   "Подробиці"
@@ -282,6 +320,10 @@ return plural;
  "Docker is not installed or activated on the system": [
   null,
   "Docker не встановлено або не активовано у цій системі"
+ ],
+ "Docking Station": [
+  null,
+  ""
  ],
  "Download": [
   null,
@@ -298,6 +340,10 @@ return plural;
  "Duplicate port": [
   null,
   "Дублювання порту"
+ ],
+ "Embedded PC": [
+  null,
+  ""
  ],
  "Entrypoint": [
   null,
@@ -327,6 +373,10 @@ return plural;
   null,
   "Завершено $ExitCode"
  ],
+ "Expansion Chassis": [
+  null,
+  ""
+ ],
  "Expose container ports": [
   null,
   "Відкрити порти контейнера"
@@ -354,6 +404,10 @@ return plural;
  "Get new image": [
   null,
   "Отримати новий образ"
+ ],
+ "Hand Held": [
+  null,
+  ""
  ],
  "Hard Disk": [
   null,
@@ -407,6 +461,14 @@ return plural;
   null,
   "Некоректний порт"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
+ "Laptop": [
+  null,
+  ""
+ ],
  "Link to another container": [
   null,
   "Посилання на інший контейнер"
@@ -423,9 +485,21 @@ return plural;
   null,
   "Локальні диски"
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "MAC Address:": [
   null,
   "MAC-адреса:"
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
  ],
  "Memory": [
   null,
@@ -443,9 +517,21 @@ return plural;
   null,
   "МіБ"
  ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
  "Mount container volumes": [
   null,
   "Змонтувати томи контейнера"
+ ],
+ "Multi-system Chassis": [
+  null,
+  ""
  ],
  "Name": [
   null,
@@ -503,6 +589,10 @@ return plural;
   null,
   "Не знайдено"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "Вимкнено"
@@ -525,9 +615,21 @@ return plural;
   "Якщо помилка, повторити $0 рази",
   "Якщо помилка, повторити $0 разів"
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Overview": [
   null,
   "Огляд"
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
  ],
  "Please confirm deletion of $0": [
   null,
@@ -541,6 +643,10 @@ return plural;
   null,
   "Будь ласка, спробуйте інший ключ"
  ],
+ "Portable": [
+  null,
+  ""
+ ],
  "Ports": [
   null,
   "Порти"
@@ -552,6 +658,14 @@ return plural;
  "Problems": [
   null,
   "Проблеми"
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
+  null,
+  ""
  ],
  "ReadOnly": [
   null,
@@ -609,6 +723,10 @@ return plural;
   null,
   "Запустити образ"
  ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Security": [
   null,
   "Безпека"
@@ -633,6 +751,10 @@ return plural;
   null,
   "Твердотільний диск"
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
  "Start": [
   null,
   "Почати"
@@ -648,6 +770,10 @@ return plural;
  "State:": [
   null,
   "Стан:"
+ ],
+ "Stick PC": [
+  null,
+  ""
  ],
  "Stop": [
   null,
@@ -665,9 +791,21 @@ return plural;
   null,
   "Буфер сховища"
  ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "TCP": [
   null,
   "TCP"
+ ],
+ "Tablet": [
+  null,
+  ""
  ],
  "Tag": [
   null,
@@ -701,6 +839,10 @@ return plural;
   null,
   "Загалом"
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Try again": [
   null,
   "Повторити спробу"
@@ -716,6 +858,10 @@ return plural;
  "Unexpected error": [
   null,
   "Неочікувана помилка"
+ ],
+ "Unknown": [
+  null,
+  "Невідомий"
  ],
  "Unless Stopped": [
   null,

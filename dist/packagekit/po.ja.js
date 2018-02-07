@@ -67,10 +67,6 @@ return plural;
   "language": "ja",
   "x-generator": "Zanata 3.9.6"
  },
- "$0 more…": [
-  null,
-  ""
- ],
  "$0 update": [
   "$0 updates",
   "更新"
@@ -107,7 +103,7 @@ return plural;
   null,
   "利用可能"
  ],
- "Bugs": [
+ "Bugs:": [
   null,
   ""
  ],
@@ -134,6 +130,10 @@ return plural;
  "Downloading": [
   null,
   "ダウンロード"
+ ],
+ "Errata:": [
+  null,
+  ""
  ],
  "Ignore": [
   null,
@@ -168,10 +168,6 @@ return plural;
   "利用可能な認証情報の使用"
  ],
  "Loading available updates, please wait...": [
-  null,
-  ""
- ],
- "More information…": [
   null,
   ""
  ],
@@ -227,10 +223,6 @@ return plural;
   null,
   "再起動"
  ],
- "Security Update": [
-  null,
-  "Security"
- ],
  "Set up": [
   null,
   "設定値"
@@ -238,6 +230,14 @@ return plural;
  "Setting up": [
   null,
   "IP 設定"
+ ],
+ "Severity": [
+  null,
+  "Security"
+ ],
+ "Severity:": [
+  null,
+  ""
  ],
  "Software Updates": [
   null,

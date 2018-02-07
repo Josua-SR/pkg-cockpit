@@ -67,10 +67,6 @@ return plural;
   "language": "pl",
   "x-generator": "Zanata 3.9.6"
  },
- "$0 more…": [
-  null,
-  "$0 więcej…"
- ],
  "$0 update": [
   "$0 updates",
   "$0 aktualizacja",
@@ -113,9 +109,9 @@ return plural;
   null,
   "Dostępne aktualizacje"
  ],
- "Bugs": [
+ "Bugs:": [
   null,
-  "Błędy"
+  "Błędy:"
  ],
  "Cancel": [
   null,
@@ -140,6 +136,10 @@ return plural;
  "Downloading": [
   null,
   "Pobieranie"
+ ],
+ "Errata:": [
+  null,
+  "Poprawka:"
  ],
  "Ignore": [
   null,
@@ -176,10 +176,6 @@ return plural;
  "Loading available updates, please wait...": [
   null,
   "Wczytywanie dostępnych aktualizacji, proszę czekać…"
- ],
- "More information…": [
-  null,
-  "Więcej informacji…"
  ],
  "Name": [
   null,
@@ -233,10 +229,6 @@ return plural;
   null,
   "Ponowne uruchamianie"
  ],
- "Security Update": [
-  null,
-  "Aktualizacja zabezpieczeń"
- ],
  "Set up": [
   null,
   "Ustaw"
@@ -244,6 +236,14 @@ return plural;
  "Setting up": [
   null,
   "Ustawianie"
+ ],
+ "Severity": [
+  null,
+  "Ważność"
+ ],
+ "Severity:": [
+  null,
+  "Ważność:"
  ],
  "Software Updates": [
   null,

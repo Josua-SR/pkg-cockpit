@@ -95,6 +95,14 @@ return plural;
   "Не вистачає $0 дисків",
   "Не вистачає $0 дисків"
  ],
+ "$0 filesystems can not be made larger.": [
+  null,
+  ""
+ ],
+ "$0 filesystems can not be made smaller.": [
+  null,
+  ""
+ ],
  "$0 hour": [
   "$0 hours",
   "$0 година",
@@ -300,6 +308,10 @@ return plural;
  "Change iSCSI Initiator Name": [
   null,
   "Змінити назву ініціатора iSCSI"
+ ],
+ "Checking $target": [
+  null,
+  ""
  ],
  "Checking RAID Device $target": [
   null,
@@ -553,6 +565,14 @@ return plural;
   null,
   "Шифрована XFS (LUKS)"
  ],
+ "Encrypted volumes can not be resized here.": [
+  null,
+  ""
+ ],
+ "Encrypted volumes need to be unlocked before they can be resized.": [
+  null,
+  ""
+ ],
  "Encryption": [
   null,
   "Шифрування"
@@ -636,6 +656,10 @@ return plural;
  "Grow": [
   null,
   "Збільшити"
+ ],
+ "Grow Logical Volume": [
+  null,
+  ""
  ],
  "Grow logical size of $0": [
   null,
@@ -953,6 +977,10 @@ return plural;
   null,
   "Фізичний том $0"
  ],
+ "Physical volumes can not be resized here.": [
+  null,
+  ""
+ ],
  "Please confirm deletion of $0": [
   null,
   "Будь ласка, підтвердьте вилучення $0"
@@ -1101,17 +1129,9 @@ return plural;
   null,
   "Перейменовуємо $target"
  ],
- "Resize": [
+ "Repairing $target": [
   null,
-  "Змінити розмір"
- ],
- "Resize Filesystem": [
-  null,
-  "Змінити розмір файлової системи"
- ],
- "Resize Logical Volume": [
-  null,
-  "Змінити розмір логічного тому"
+  ""
  ],
  "Resizing $target": [
   null,
@@ -1148,6 +1168,14 @@ return plural;
  "Setting up loop device $target": [
   null,
   "Налаштовуємо петльовий пристрій $target"
+ ],
+ "Shrink": [
+  null,
+  ""
+ ],
+ "Shrink Logical Volume": [
+  null,
+  ""
  ],
  "Size": [
   null,
@@ -1200,6 +1228,10 @@ return plural;
  "Stop": [
   null,
   "Зупинити"
+ ],
+ "Stop Device": [
+  null,
+  ""
  ],
  "Stop Scrubbing": [
   null,
@@ -1337,9 +1369,9 @@ return plural;
   null,
   "Цей диск не можна вилучати, доки пристрій перебуває у стані відновлення."
  ],
- "This logical volume cannot be made smaller.": [
+ "This volume needs to be activated before it can be resized.": [
   null,
-  "Логічний том не можна зменшувати."
+  ""
  ],
  "Transfer data asynchronously": [
   null,
@@ -1405,6 +1437,10 @@ return plural;
   null,
   "Нерозпізнані дані"
  ],
+ "Unrecognized data can not be made smaller here.": [
+  null,
+  ""
+ ],
  "Unsupported volume": [
   null,
   "Непідтримуваний том"
@@ -1440,6 +1476,10 @@ return plural;
  "VDO Devices": [
   null,
   "Пристрої VDO"
+ ],
+ "VDO backing devices can not be made smaller": [
+  null,
+  ""
  ],
  "VFAT - Compatible with all systems and devices": [
   null,

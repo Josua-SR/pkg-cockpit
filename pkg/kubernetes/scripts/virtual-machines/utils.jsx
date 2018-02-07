@@ -17,6 +17,8 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
+export const NODE_LABEL = 'kubevirt.io/nodeName';
+
 /**
  * @return {Array<{key: *, value: *}>} all own enumerable key-value pairs
  */
@@ -25,4 +27,44 @@ export function getPairs(object) {
         key,
         value: object[key]
     }))
+}
+
+export function vmIdPrefx(vm) {
+  return `vm-${vm.metadata.name}`
+}
+
+// TODO: set log level, i.e. reuse window.debug
+export function logDebug(...args) {
+  console.debug('Kubevirt: ', ...args);
+}
+
+export function mouseClick(fun) {
+    return function (event) {
+        if (!event || event.button !== 0)
+            return;
+        event.preventDefault();
+        return fun(event);
+    };
+}
+
+/**
+ * Used to get sub-property value.
+ *
+ * Example:
+ *   getValueOrDefault(() => myObj.foo.bar, defaultValue) returns value of myObj.foo.bar if path exists or default otherwise
+ *
+ */
+export function getValueOrDefault(accessor, defaultValue) {
+    try {
+        let result = accessor();
+        if (typeof result === 'undefined') {
+            result = defaultValue;
+        }
+        return result;
+    } catch (error) {
+        if (!(error instanceof TypeError)) {
+            throw error;
+        }
+    }
+    return defaultValue;
 }

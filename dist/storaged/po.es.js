@@ -93,6 +93,14 @@ return plural;
   "Falta $0 disco",
   "Faltan $0 discos"
  ],
+ "$0 filesystems can not be made larger.": [
+  null,
+  ""
+ ],
+ "$0 filesystems can not be made smaller.": [
+  null,
+  ""
+ ],
  "$0 hour": [
   "$0 hours",
   "$0 horas",
@@ -293,6 +301,10 @@ return plural;
  "Change iSCSI Initiator Name": [
   null,
   "Cambiar Nombre Iniciador de iSCSI "
+ ],
+ "Checking $target": [
+  null,
+  ""
  ],
  "Checking RAID Device $target": [
   null,
@@ -546,6 +558,14 @@ return plural;
   null,
   "Encriptado XFS (LUKS)"
  ],
+ "Encrypted volumes can not be resized here.": [
+  null,
+  ""
+ ],
+ "Encrypted volumes need to be unlocked before they can be resized.": [
+  null,
+  ""
+ ],
  "Encryption": [
   null,
   "Encriptación"
@@ -629,6 +649,10 @@ return plural;
  "Grow": [
   null,
   "Crecer"
+ ],
+ "Grow Logical Volume": [
+  null,
+  ""
  ],
  "Grow logical size of $0": [
   null,
@@ -872,7 +896,7 @@ return plural;
  ],
  "Only $0 of $1 are used.": [
   null,
-  ""
+  "Sólo $0 de $1 fue usado."
  ],
  "Operation '$operation' on $target": [
   null,
@@ -932,7 +956,7 @@ return plural;
  ],
  "Physical": [
   null,
-  ""
+  "Físico"
  ],
  "Physical Volume": [
   null,
@@ -946,13 +970,17 @@ return plural;
   null,
   "Volumen físico de $0"
  ],
+ "Physical volumes can not be resized here.": [
+  null,
+  ""
+ ],
  "Please confirm deletion of $0": [
   null,
   "Por favor confirmar la eliminación de $0"
  ],
  "Please confirm stopping of $0": [
   null,
-  ""
+  "Por favor confirma la parada de $0"
  ],
  "Pool": [
   null,
@@ -964,11 +992,11 @@ return plural;
  ],
  "Pool for Thin Volumes": [
   null,
-  ""
+  "Grupo para Volúmenes Finos"
  ],
  "Pool for thinly provisioned volumes": [
   null,
-  ""
+  "Grupo para volúmenes poco aprovisionados"
  ],
  "Port": [
   null,
@@ -1064,11 +1092,11 @@ return plural;
  ],
  "Recovering RAID Device $target": [
   null,
-  ""
+  "Recuperando Dispositivo RAID $target"
  ],
  "Remove device": [
   null,
-  ""
+  "Quitar dispositivo"
  ],
  "Removing $target from RAID Device": [
   null,
@@ -1094,17 +1122,9 @@ return plural;
   null,
   "Renombrando $target"
  ],
- "Resize": [
+ "Repairing $target": [
   null,
-  "Redimensionar"
- ],
- "Resize Filesystem": [
-  null,
-  "Redimensionar Sistema de Archivos"
- ],
- "Resize Logical Volume": [
-  null,
-  "Redimensionar Volumen Lógico"
+  ""
  ],
  "Resizing $target": [
   null,
@@ -1141,6 +1161,14 @@ return plural;
  "Setting up loop device $target": [
   null,
   "Configurando dispositivo de retorno $target"
+ ],
+ "Shrink": [
+  null,
+  ""
+ ],
+ "Shrink Logical Volume": [
+  null,
+  ""
  ],
  "Size": [
   null,
@@ -1193,6 +1221,10 @@ return plural;
  "Stop": [
   null,
   "Detener"
+ ],
+ "Stop Device": [
+  null,
+  ""
  ],
  "Stop Scrubbing": [
   null,
@@ -1330,7 +1362,7 @@ return plural;
   null,
   ""
  ],
- "This logical volume cannot be made smaller.": [
+ "This volume needs to be activated before it can be resized.": [
   null,
   ""
  ],
@@ -1398,6 +1430,10 @@ return plural;
   null,
   ""
  ],
+ "Unrecognized data can not be made smaller here.": [
+  null,
+  ""
+ ],
  "Unsupported volume": [
   null,
   ""
@@ -1431,6 +1467,10 @@ return plural;
   ""
  ],
  "VDO Devices": [
+  null,
+  ""
+ ],
+ "VDO backing devices can not be made smaller": [
   null,
   ""
  ],

@@ -285,6 +285,10 @@ return plural;
   null,
   "9."
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
  "After": [
   null,
   "Jälkeen"
@@ -292,6 +296,10 @@ return plural;
  "After system boot": [
   null,
   "Järjestelmän käynnistyksen jälkeen"
+ ],
+ "All In One": [
+  null,
+  ""
  ],
  "Asset Tag": [
   null,
@@ -308,6 +316,30 @@ return plural;
  "Automatically using specific NTP servers": [
   null,
   "Käytetään automaattisesti tiettyjä NTP-servereitä"
+ ],
+ "BIOS": [
+  null,
+  ""
+ ],
+ "BIOS date": [
+  null,
+  ""
+ ],
+ "BIOS version": [
+  null,
+  ""
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -345,11 +377,19 @@ return plural;
   null,
   "Komento"
  ],
- "Condition $0=$1 was not met": [
+ "Compact PCI": [
   null,
   ""
  ],
+ "Condition $0=$1 was not met": [
+  null,
+  "Ehto $0=$1 ei toteutunut"
+ ],
  "Condition failed": [
+  null,
+  "Ehto epäonnistui"
+ ],
+ "Convertible": [
   null,
   ""
  ],
@@ -373,6 +413,14 @@ return plural;
   null,
   "Kuvaus"
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Disable": [
   null,
   "Poista käytöstä"
@@ -385,6 +433,10 @@ return plural;
   null,
   "Levyn I/O"
  ],
+ "Docking Station": [
+  null,
+  ""
+ ],
  "Domain": [
   null,
   "Domain"
@@ -392,6 +444,10 @@ return plural;
  "Don't Repeat": [
   null,
   "Älä Toista"
+ ],
+ "Embedded PC": [
+  null,
+  ""
  ],
  "Enable": [
   null,
@@ -417,6 +473,10 @@ return plural;
   null,
   "Kaikki"
  ],
+ "Expansion Chassis": [
+  null,
+  ""
+ ],
  "Free": [
   null,
   "Vapaa"
@@ -437,9 +497,17 @@ return plural;
   null,
   "Mene nyt"
  ],
+ "Hand Held": [
+  null,
+  ""
+ ],
  "Hardware": [
   null,
   "Laitteisto"
+ ],
+ "Hardware Information": [
+  null,
+  ""
  ],
  "Host Name": [
   null,
@@ -493,6 +561,10 @@ return plural;
   null,
   "Virheellinen aikavyöhyke"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
  "Journal": [
   null,
   "Journal"
@@ -509,6 +581,10 @@ return plural;
   null,
   "Kernel"
  ],
+ "Laptop": [
+  null,
+  ""
+ ],
  "Last 24 hours": [
   null,
   "Viimeiset 24 tuntia"
@@ -523,7 +599,7 @@ return plural;
  ],
  "Load earlier entries": [
   null,
-  ""
+  "Lataa aiemmat merkinnät"
  ],
  "Loading...": [
   null,
@@ -531,11 +607,19 @@ return plural;
  ],
  "Log messages": [
   null,
-  ""
+  "Kirjaa viestit"
  ],
  "Logs": [
   null,
   "Lokit"
+ ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
  ],
  "Machine ID": [
   null,
@@ -545,17 +629,21 @@ return plural;
   null,
   ""
  ],
- "Manually": [
+ "Main Server Chassis": [
   null,
   ""
+ ],
+ "Manually": [
+  null,
+  "Manuaalisesti"
  ],
  "Mask": [
   null,
-  ""
+  "Peite"
  ],
  "Mask Forcefully": [
   null,
-  ""
+  "Peitä Väkisin"
  ],
  "Memory": [
   null,
@@ -564,6 +652,14 @@ return plural;
  "Message to logged in users": [
   null,
   "Viesti sisäänkirjautuneille käyttäjille"
+ ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
  ],
  "Minute needs to be a number between 0-59": [
   null,
@@ -577,9 +673,17 @@ return plural;
   null,
   "Maanantai"
  ],
+ "Multi-system Chassis": [
+  null,
+  ""
+ ],
  "NTP Server": [
   null,
   "NTP-palvelin"
+ ],
+ "Name": [
+  null,
+  "Nimi"
  ],
  "Need at least one NTP server": [
   null,
@@ -617,6 +721,10 @@ return plural;
   null,
   ""
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   ""
@@ -637,6 +745,10 @@ return plural;
   null,
   ""
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Paths": [
   null,
   ""
@@ -644,6 +756,18 @@ return plural;
  "Performance Profile": [
   null,
   "Suorituskykyprofiili"
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
+ "Portable": [
+  null,
+  ""
  ],
  "Power Options": [
   null,
@@ -680,6 +804,14 @@ return plural;
  "Problems, Errors, Warnings, Notices": [
   null,
   "Ongelmat, virheet, varoitukset, huomautukset"
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
+  null,
+  ""
  ],
  "Real Host Name": [
   null,
@@ -761,6 +893,10 @@ return plural;
   null,
   "Tallenna"
  ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Seconds": [
   null,
   "Sekunnit"
@@ -809,6 +945,10 @@ return plural;
   null,
   ""
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
  "Specific Time": [
   null,
   ""
@@ -825,11 +965,23 @@ return plural;
   null,
   ""
  ],
+ "Stick PC": [
+  null,
+  ""
+ ],
  "Stop": [
   null,
   "Pysäytä"
  ],
  "Store Performance Data": [
+  null,
+  ""
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
   null,
   ""
  ],
@@ -853,6 +1005,10 @@ return plural;
   null,
   "Järjestelmä"
  ],
+ "System Information": [
+  null,
+  ""
+ ],
  "System Services": [
   null,
   "Järjestelmäpalvelut"
@@ -860,6 +1016,10 @@ return plural;
  "System Time": [
   null,
   "Järjestelmän aika"
+ ],
+ "Tablet": [
+  null,
+  ""
  ],
  "Targets": [
   null,
@@ -909,6 +1069,10 @@ return plural;
   null,
   "Ajastimet"
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   "Yritetään synkronoida {{Server}} kanssa"
@@ -917,8 +1081,21 @@ return plural;
   null,
   "Tiistai"
  ],
+ "Type": [
+  null,
+  "Tyyppi"
+ ],
+ "Unknown": [
+  null,
+  "Tuntematon"
+ ],
  "Unmask": [
   null,
+  ""
+ ],
+ "Usage of $0 CPU core": [
+  "Usage of $0 CPU cores",
+  "",
   ""
  ],
  "Used": [
@@ -955,6 +1132,11 @@ return plural;
  ],
  "failed to list ssh host keys: $0": [
   null,
+  ""
+ ],
+ "of $0 CPU core": [
+  "of $0 CPU cores",
+  "",
   ""
  ],
  "unknown": [
