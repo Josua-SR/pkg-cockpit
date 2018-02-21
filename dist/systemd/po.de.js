@@ -369,6 +369,10 @@ return plural;
   null,
   "Systemzeit ändern"
  ],
+ "Class": [
+  null,
+  ""
+ ],
  "Close": [
   null,
   "Schließen"
@@ -669,6 +673,10 @@ return plural;
   null,
   "5 Minuten"
  ],
+ "Model": [
+  null,
+  ""
+ ],
  "Monday": [
   null,
   ""
@@ -746,6 +754,10 @@ return plural;
   ""
  ],
  "Other": [
+  null,
+  ""
+ ],
+ "PCI": [
   null,
   ""
  ],
@@ -941,6 +953,10 @@ return plural;
   null,
   "Seit $0"
  ],
+ "Slot": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   ""
@@ -1105,6 +1121,10 @@ return plural;
  "User": [
   null,
   "Benutzer"
+ ],
+ "Vendor": [
+  null,
+  ""
  ],
  "Version": [
   null,

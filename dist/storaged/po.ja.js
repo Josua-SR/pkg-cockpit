@@ -81,7 +81,7 @@ return plural;
  ],
  "$0 data + $1 overhead used of $2 ($3)": [
   null,
-  ""
+  "$0 データ + $1 オーバーヘッドが $2 ($3) を使用しています"
  ],
  "$0 day": [
   "$0 days",
@@ -93,9 +93,13 @@ return plural;
  ],
  "$0 filesystems can not be made larger.": [
   null,
-  ""
+  "$0 ファイルシステムは大きくすることができません。"
  ],
  "$0 filesystems can not be made smaller.": [
+  null,
+  "$0 ファイルシステムは小さくすることができません。"
+ ],
+ "$0 filesystems can not be resized here.": [
   null,
   ""
  ],
@@ -105,7 +109,7 @@ return plural;
  ],
  "$0 is in active use": [
   null,
-  ""
+  "$0 は、アクティブに使用されています。"
  ],
  "$0 minute": [
   "$0 minutes",
@@ -121,7 +125,7 @@ return plural;
  ],
  "$0 used of $1 ($2 saved)": [
   null,
-  ""
+  "$0 が $1  ($2 が保存) を使用しています"
  ],
  "$0 week": [
   "$0 weeks",
@@ -209,7 +213,7 @@ return plural;
  ],
  "A disk is needed.": [
   null,
-  ""
+  " 1 つのディスクが必要です。"
  ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
@@ -1223,11 +1227,11 @@ return plural;
   null,
   "Scrubbing の停止"
  ],
- "Stop and remove": [
+ "Stop and Unmount": [
   null,
   ""
  ],
- "Stop and unmount": [
+ "Stop and remove": [
   null,
   ""
  ],

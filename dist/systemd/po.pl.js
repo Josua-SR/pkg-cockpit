@@ -293,7 +293,7 @@ return plural;
  ],
  "Advanced TCA": [
   null,
-  ""
+  "Zaawansowane TCA"
  ],
  "After": [
   null,
@@ -305,7 +305,7 @@ return plural;
  ],
  "All In One": [
   null,
-  ""
+  "Zintegrowane"
  ],
  "Asset Tag": [
   null,
@@ -325,27 +325,27 @@ return plural;
  ],
  "BIOS": [
   null,
-  ""
+  "BIOS"
  ],
  "BIOS date": [
   null,
-  ""
+  "Data BIOS-u"
  ],
  "BIOS version": [
   null,
-  ""
+  "Wersja BIOS-u"
  ],
  "Blade": [
   null,
-  ""
+  "Kasetowy"
  ],
  "Blade enclosure": [
   null,
-  ""
+  "Obudowa kasetowa"
  ],
  "Bus Expansion Chassis": [
   null,
-  ""
+  "Obudowa rozszerzenia magistrali"
  ],
  "CPU": [
   null,
@@ -375,6 +375,10 @@ return plural;
   null,
   "Zmień czas systemu"
  ],
+ "Class": [
+  null,
+  ""
+ ],
  "Close": [
   null,
   "Zamknij"
@@ -385,7 +389,7 @@ return plural;
  ],
  "Compact PCI": [
   null,
-  ""
+  "Kompaktowe PCI"
  ],
  "Condition $0=$1 was not met": [
   null,
@@ -397,7 +401,7 @@ return plural;
  ],
  "Convertible": [
   null,
-  ""
+  "2 w jednym"
  ],
  "Create Timer": [
   null,
@@ -421,11 +425,11 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Komputer stacjonarny"
  ],
  "Detachable": [
   null,
-  ""
+  "Odłączalny"
  ],
  "Disable": [
   null,
@@ -441,7 +445,7 @@ return plural;
  ],
  "Docking Station": [
   null,
-  ""
+  "Stacja dokująca"
  ],
  "Domain": [
   null,
@@ -453,7 +457,7 @@ return plural;
  ],
  "Embedded PC": [
   null,
-  ""
+  "Komputer osadzony"
  ],
  "Enable": [
   null,
@@ -481,7 +485,7 @@ return plural;
  ],
  "Expansion Chassis": [
   null,
-  ""
+  "Obudowa rozszerzenia"
  ],
  "Free": [
   null,
@@ -505,7 +509,7 @@ return plural;
  ],
  "Hand Held": [
   null,
-  ""
+  "Przenośny"
  ],
  "Hardware": [
   null,
@@ -513,7 +517,7 @@ return plural;
  ],
  "Hardware Information": [
   null,
-  ""
+  "Informacje o sprzęcie"
  ],
  "Host Name": [
   null,
@@ -569,7 +573,7 @@ return plural;
  ],
  "IoT Gateway": [
   null,
-  ""
+  "Brama IoT"
  ],
  "Journal": [
   null,
@@ -589,7 +593,7 @@ return plural;
  ],
  "Laptop": [
   null,
-  ""
+  "Laptop"
  ],
  "Last 24 hours": [
   null,
@@ -621,11 +625,11 @@ return plural;
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "Komputer stacjonarny o mniejszym rozmiarze"
  ],
  "Lunch Box": [
   null,
-  ""
+  "Lunch Box"
  ],
  "Machine ID": [
   null,
@@ -637,7 +641,7 @@ return plural;
  ],
  "Main Server Chassis": [
   null,
-  ""
+  "Główna obudowa serwera"
  ],
  "Manually": [
   null,
@@ -661,11 +665,11 @@ return plural;
  ],
  "Mini PC": [
   null,
-  ""
+  "Mini PC"
  ],
  "Mini Tower": [
   null,
-  ""
+  "Mini Tower"
  ],
  "Minute needs to be a number between 0-59": [
   null,
@@ -675,13 +679,17 @@ return plural;
   null,
   "Minuty"
  ],
+ "Model": [
+  null,
+  ""
+ ],
  "Monday": [
   null,
   "poniedziałek"
  ],
  "Multi-system Chassis": [
   null,
-  ""
+  "Obudowa dla wielu komputerów"
  ],
  "NTP Server": [
   null,
@@ -729,7 +737,7 @@ return plural;
  ],
  "Notebook": [
   null,
-  ""
+  "Notebook"
  ],
  "Off": [
   null,
@@ -753,6 +761,10 @@ return plural;
  ],
  "Other": [
   null,
+  "Inne"
+ ],
+ "PCI": [
+  null,
   ""
  ],
  "Paths": [
@@ -765,15 +777,15 @@ return plural;
  ],
  "Peripheral Chassis": [
   null,
-  ""
+  "Obudowa peryferyjna"
  ],
  "Pizza Box": [
   null,
-  ""
+  "Pizza Box"
  ],
  "Portable": [
   null,
-  ""
+  "Przenośne"
  ],
  "Power Options": [
   null,
@@ -813,11 +825,11 @@ return plural;
  ],
  "RAID Chassis": [
   null,
-  ""
+  "Obudowa RAID"
  ],
  "Rack Mount Chassis": [
   null,
-  ""
+  "Obudowa do montowania w szafie"
  ],
  "Real Host Name": [
   null,
@@ -901,7 +913,7 @@ return plural;
  ],
  "Sealed-case PC": [
   null,
-  ""
+  "Sealed-case PC"
  ],
  "Seconds": [
   null,
@@ -947,13 +959,17 @@ return plural;
   null,
   "Od $0"
  ],
+ "Slot": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   "Gniazda"
  ],
  "Space-saving Computer": [
   null,
-  ""
+  "Komputer oszczędzający miejsce"
  ],
  "Specific Time": [
   null,
@@ -973,7 +989,7 @@ return plural;
  ],
  "Stick PC": [
   null,
-  ""
+  "Stick PC"
  ],
  "Stop": [
   null,
@@ -985,11 +1001,11 @@ return plural;
  ],
  "Sub Chassis": [
   null,
-  ""
+  "Obudowa podrzędna"
  ],
  "Sub Notebook": [
   null,
-  ""
+  "Sub Notebook"
  ],
  "Sunday": [
   null,
@@ -1013,7 +1029,7 @@ return plural;
  ],
  "System Information": [
   null,
-  ""
+  "Informacje o systemie"
  ],
  "System Services": [
   null,
@@ -1025,7 +1041,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "Tablet"
  ],
  "Targets": [
   null,
@@ -1077,7 +1093,7 @@ return plural;
  ],
  "Tower": [
   null,
-  ""
+  "Tower"
  ],
  "Trying to synchronize with {{Server}}": [
   null,
@@ -1112,6 +1128,10 @@ return plural;
  "User": [
   null,
   "Użytkownik"
+ ],
+ "Vendor": [
+  null,
+  ""
  ],
  "Version": [
   null,

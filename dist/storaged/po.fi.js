@@ -101,6 +101,10 @@ return plural;
   null,
   ""
  ],
+ "$0 filesystems can not be resized here.": [
+  null,
+  ""
+ ],
  "$0 hour": [
   "$0 hours",
   "$0 tunti",
@@ -1230,13 +1234,13 @@ return plural;
   null,
   ""
  ],
+ "Stop and Unmount": [
+  null,
+  ""
+ ],
  "Stop and remove": [
   null,
   "Pysäytä ja poista"
- ],
- "Stop and unmount": [
-  null,
-  ""
  ],
  "Stopping RAID Device $target": [
   null,

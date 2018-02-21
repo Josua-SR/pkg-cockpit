@@ -219,6 +219,10 @@ return plural;
   null,
   "Ід. завантаження"
  ],
+ "Bus": [
+  null,
+  "Канал"
+ ],
  "CPU": [
   null,
   "Процесор"
@@ -339,6 +343,10 @@ return plural;
   null,
   "Не вдалося знайти запущений сервер API"
  ],
+ "Count:": [
+  null,
+  "Кількість:"
+ ],
  "Create": [
   null,
   "Створити"
@@ -423,6 +431,10 @@ return plural;
   null,
   "Подробиці"
  ],
+ "Device": [
+  null,
+  "Пристрій"
+ ],
  "Directory": [
   null,
   "Каталог"
@@ -434,6 +446,10 @@ return plural;
  "Disk Utilization: $0%": [
   null,
   "Використання диска: $0%"
+ ],
+ "Disks": [
+  null,
+  "Диски"
  ],
  "Display name": [
   null,
@@ -531,9 +547,9 @@ return plural;
   null,
   "Сталий диск GCE"
  ],
- "General": [
+ "GiB": [
   null,
-  "Загальний"
+  "ГіБ"
  ],
  "Git Repository": [
   null,
@@ -655,6 +671,10 @@ return plural;
   null,
   "Мітки"
  ],
+ "Labels:": [
+  null,
+  ""
+ ],
  "Last Heartbeat": [
   null,
   "Останній такт"
@@ -719,6 +739,10 @@ return plural;
   null,
   "Використання пам’яті: $0%"
  ],
+ "Memory:": [
+  null,
+  "Пам’ять:"
+ ],
  "Message": [
   null,
   "Повідомлення"
@@ -738,6 +762,10 @@ return plural;
  "Mount Location": [
   null,
   "Місце монтування"
+ ],
+ "N/A": [
+  null,
+  ""
  ],
  "NFS": [
   null,
@@ -790,6 +818,10 @@ return plural;
  "No Volume Bound": [
   null,
   "Не пов’язано тому"
+ ],
+ "No disks defined for this VM": [
+  null,
+  "Для цієї ВМ не визначено дисків"
  ],
  "No groups are present.": [
   null,
@@ -847,6 +879,10 @@ return plural;
   null,
   "Вузол"
  ],
+ "Node:": [
+  null,
+  ""
+ ],
  "Nodes": [
   null,
   "Вузли"
@@ -858,6 +894,10 @@ return plural;
  "None": [
   null,
   "Немає"
+ ],
+ "Not Available": [
+  null,
+  ""
  ],
  "Not Ready": [
   null,
@@ -1015,6 +1055,10 @@ return plural;
   null,
   "Вибір коконів"
  ],
+ "Pod:": [
+  null,
+  ""
+ ],
  "Pods": [
   null,
   "Кокони"
@@ -1110,6 +1154,10 @@ return plural;
  "Read only from multiple nodes": [
   null,
   "Читання лише з декількох вузлів"
+ ],
+ "Readonly": [
+  null,
+  "Лише запис"
  ],
  "Ready": [
   null,
@@ -1375,6 +1423,10 @@ return plural;
   null,
   "Вибачте, спосіб внесення змін до цього тому невідомий"
  ],
+ "Source": [
+  null,
+  "Джерело"
+ ],
  "State": [
   null,
   "Стан"
@@ -1577,7 +1629,7 @@ return plural;
  ],
  "VM DELETE failed.": [
   null,
-  ""
+  "Не вдалося виконати дію DELETE для ВМ."
  ],
  "Virtual Machines": [
   null,
@@ -1687,6 +1739,10 @@ return plural;
   null,
   "пристрій осн. системи"
  ],
+ "iSCSI": [
+  null,
+  ""
+ ],
  "idle": [
   null,
   "бездіяльний"
@@ -1758,6 +1814,10 @@ return plural;
  "user": [
   null,
   "користувач"
+ ],
+ "vCPUs:": [
+  null,
+  "vCPU:"
  ],
  "vhostuser": [
   null,

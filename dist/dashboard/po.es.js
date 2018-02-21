@@ -135,11 +135,11 @@ return plural;
  ],
  "Advanced TCA": [
   null,
-  ""
+  "TCA avanzado"
  ],
  "All In One": [
   null,
-  ""
+  "Todo En Uno"
  ],
  "Authentication": [
   null,
@@ -159,15 +159,15 @@ return plural;
  ],
  "Blade": [
   null,
-  ""
+  "Espada"
  ],
  "Blade enclosure": [
   null,
-  ""
+  "Recinto de la espada"
  ],
  "Bus Expansion Chassis": [
   null,
-  ""
+  "Chasis de Expansión de Bus"
  ],
  "CPU": [
   null,
@@ -223,7 +223,7 @@ return plural;
  ],
  "Compact PCI": [
   null,
-  ""
+  "PCI Compacto"
  ],
  "Connect": [
   null,
@@ -235,7 +235,7 @@ return plural;
  ],
  "Convertible": [
   null,
-  ""
+  "Convertible"
  ],
  "Could not contact {{host}}": [
   null,
@@ -247,11 +247,11 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Escritorio"
  ],
  "Detachable": [
   null,
-  ""
+  "Desmontable"
  ],
  "Disk I/O": [
   null,
@@ -259,7 +259,7 @@ return plural;
  ],
  "Docking Station": [
   null,
-  ""
+  "Estación de Acoplamiento"
  ],
  "Edit Server": [
   null,

@@ -103,6 +103,10 @@ return plural;
   null,
   ""
  ],
+ "$0 filesystems can not be resized here.": [
+  null,
+  ""
+ ],
  "$0 hour": [
   "$0 hours",
   "",
@@ -1237,11 +1241,11 @@ return plural;
   null,
   ""
  ],
- "Stop and remove": [
+ "Stop and Unmount": [
   null,
   ""
  ],
- "Stop and unmount": [
+ "Stop and remove": [
   null,
   ""
  ],

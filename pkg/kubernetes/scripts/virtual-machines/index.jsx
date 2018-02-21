@@ -17,50 +17,62 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-import 'regenerator-runtime/runtime' // required for library initialization
-import React from 'react'
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
+import 'regenerator-runtime/runtime'; // required for library initialization
+import React from 'react';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
-import { initMiddleware } from './kube-middleware.jsx'
-import reducers from './reducers.jsx'
-import * as actionCreators from './action-creators.jsx'
-import VmsListing from './components/VmsListing.jsx'
+import { initMiddleware } from './kube-middleware.jsx';
+import reducers from './reducers.jsx';
+import * as actionCreators from './action-creators.jsx';
+import VmsListing from './components/VmsListing.jsx';
+import { logDebug } from './utils.jsx';
 
 import '../../../machines/machines.less'; // once per component hierarchy
 
-let reduxStore
-
+let reduxStore;
 function initReduxStore() {
+    if (reduxStore) {
+        logDebug('initReduxStore(): store already initialized, skipping. ', reduxStore);
+        return;
+    }
+    logDebug('initReduxStore(): initializing empty store');
     const initialState = {
         vms: []
-    }
+    };
 
     const storeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
-    reduxStore = createStore(reducers, initialState, storeEnhancers)
+    reduxStore = createStore(reducers, initialState, storeEnhancers);
 }
 
 function addKubeLoaderListener ($scope, kubeLoader, kubeSelect) {
     // register load callback( callback, until )
-    kubeLoader.listen(function() {
+    kubeLoader.listen(() => {
         const vms = kubeSelect().kind('VirtualMachine')
+        const persistentVolumes = kubeSelect().kind('PersistentVolume')
+        const pods = kubeSelect().kind('Pod');
+
         reduxStore.dispatch(actionCreators.setVms(Object.values(vms)))
+        reduxStore.dispatch(actionCreators.setPVs(Object.values(persistentVolumes)))
+        reduxStore.dispatch(actionCreators.setPods(Object.values(pods)))
     }, $scope);
 
     // enable watching( watched-entity-type, until )
     kubeLoader.watch('VirtualMachine', $scope);
+    kubeLoader.watch('PersistentVolume', $scope);
+    kubeLoader.watch('Pod', $scope);
 }
 
 const VmsPlugin = () => (
     <Provider store={reduxStore} >
         <VmsListing />
     </Provider>
-)
+);
 
 function addScopeVarsToStore ($scope) {
     $scope.$watch(
         (scope => scope.settings),
-        (newSettings => reduxStore.dispatch(actionCreators.setSettings(newSettings))))
+        (newSettings => reduxStore.dispatch(actionCreators.setSettings(newSettings))));
 }
 
 /**
@@ -70,12 +82,13 @@ function addScopeVarsToStore ($scope) {
  * @param {kubeSelect} kubeSelect
  */
 function init($scope, kubeLoader, kubeSelect, kubeMethods) {
-    initReduxStore()
-    initMiddleware(kubeMethods)
-    addKubeLoaderListener($scope, kubeLoader, kubeSelect)
-    addScopeVarsToStore($scope)
-    const rootElement = document.querySelector('#kubernetes-virtual-machines-root')
-    React.render(<VmsPlugin />, rootElement)
+    initReduxStore();
+    addKubeLoaderListener($scope, kubeLoader, kubeSelect);
+    initMiddleware(kubeMethods);
+    addScopeVarsToStore($scope);
+
+    const rootElement = document.querySelector('#kubernetes-virtual-machines-root');
+    React.render(<VmsPlugin />, rootElement);
 }
 
 export { init };

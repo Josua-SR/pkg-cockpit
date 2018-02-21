@@ -287,7 +287,7 @@ return plural;
  ],
  "Advanced TCA": [
   null,
-  ""
+  "TCA avanzado"
  ],
  "After": [
   null,
@@ -299,7 +299,7 @@ return plural;
  ],
  "All In One": [
   null,
-  ""
+  "Todo En Uno"
  ],
  "Asset Tag": [
   null,
@@ -319,27 +319,27 @@ return plural;
  ],
  "BIOS": [
   null,
-  ""
+  "BIOS"
  ],
  "BIOS date": [
   null,
-  ""
+  "Fecha de la BIOS"
  ],
  "BIOS version": [
   null,
-  ""
+  "Versión de la BIOS"
  ],
  "Blade": [
   null,
-  ""
+  "Espada"
  ],
  "Blade enclosure": [
   null,
-  ""
+  "Recinto de la espada"
  ],
  "Bus Expansion Chassis": [
   null,
-  ""
+  "Chasis de Expansión de Bus"
  ],
  "CPU": [
   null,
@@ -369,6 +369,10 @@ return plural;
   null,
   "Cambiar la Hora del Sistema"
  ],
+ "Class": [
+  null,
+  ""
+ ],
  "Close": [
   null,
   "Cerrar"
@@ -379,7 +383,7 @@ return plural;
  ],
  "Compact PCI": [
   null,
-  ""
+  "PCI Compacto"
  ],
  "Condition $0=$1 was not met": [
   null,
@@ -391,7 +395,7 @@ return plural;
  ],
  "Convertible": [
   null,
-  ""
+  "Convertible"
  ],
  "Create Timer": [
   null,
@@ -415,11 +419,11 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Escritorio"
  ],
  "Detachable": [
   null,
-  ""
+  "Desmontable"
  ],
  "Disable": [
   null,
@@ -435,7 +439,7 @@ return plural;
  ],
  "Docking Station": [
   null,
-  ""
+  "Estación de Acoplamiento"
  ],
  "Domain": [
   null,
@@ -669,6 +673,10 @@ return plural;
   null,
   "Minutos"
  ],
+ "Model": [
+  null,
+  ""
+ ],
  "Monday": [
   null,
   "Lunes"
@@ -746,6 +754,10 @@ return plural;
   "Sistema Operativo"
  ],
  "Other": [
+  null,
+  ""
+ ],
+ "PCI": [
   null,
   ""
  ],
@@ -941,6 +953,10 @@ return plural;
   null,
   "Desde $0"
  ],
+ "Slot": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   "Sockets"
@@ -1105,6 +1121,10 @@ return plural;
  "User": [
   null,
   "Usuario"
+ ],
+ "Vendor": [
+  null,
+  ""
  ],
  "Version": [
   null,

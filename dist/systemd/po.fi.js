@@ -369,6 +369,10 @@ return plural;
   null,
   "Vaihda Järjestelmän Aika"
  ],
+ "Class": [
+  null,
+  ""
+ ],
  "Close": [
   null,
   "Sulje"
@@ -669,6 +673,10 @@ return plural;
   null,
   "Minuutit"
  ],
+ "Model": [
+  null,
+  ""
+ ],
  "Monday": [
   null,
   "Maanantai"
@@ -746,6 +754,10 @@ return plural;
   ""
  ],
  "Other": [
+  null,
+  ""
+ ],
+ "PCI": [
   null,
   ""
  ],
@@ -941,6 +953,10 @@ return plural;
   null,
   ""
  ],
+ "Slot": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   ""
@@ -1105,6 +1121,10 @@ return plural;
  "User": [
   null,
   "Käyttäjä"
+ ],
+ "Vendor": [
+  null,
+  ""
  ],
  "Version": [
   null,

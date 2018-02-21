@@ -217,6 +217,10 @@ return plural;
   null,
   "Boot ID"
  ],
+ "Bus": [
+  null,
+  ""
+ ],
  "CPU": [
   null,
   "Prosessori"
@@ -337,6 +341,10 @@ return plural;
   null,
   "Ei löydetty käynnissä olevaa API-palvelinta"
  ],
+ "Count:": [
+  null,
+  ""
+ ],
  "Create": [
   null,
   "Luo"
@@ -421,6 +429,10 @@ return plural;
   null,
   "Yksityiskohdat"
  ],
+ "Device": [
+  null,
+  "Laite"
+ ],
  "Directory": [
   null,
   "Hakemisto"
@@ -432,6 +444,10 @@ return plural;
  "Disk Utilization: $0%": [
   null,
   "Levyn Käyttöaste: $0%"
+ ],
+ "Disks": [
+  null,
+  "Levyt"
  ],
  "Display name": [
   null,
@@ -529,9 +545,9 @@ return plural;
   null,
   "GCE Persistent Disk"
  ],
- "General": [
+ "GiB": [
   null,
-  "Yleiset"
+  ""
  ],
  "Git Repository": [
   null,
@@ -653,6 +669,10 @@ return plural;
   null,
   ""
  ],
+ "Labels:": [
+  null,
+  ""
+ ],
  "Last Heartbeat": [
   null,
   "Edellinen Heartbeat"
@@ -717,6 +737,10 @@ return plural;
   null,
   "Muistin käyttö: $0%"
  ],
+ "Memory:": [
+  null,
+  "Muisti:"
+ ],
  "Message": [
   null,
   "Viesti"
@@ -736,6 +760,10 @@ return plural;
  "Mount Location": [
   null,
   "Liitossijainti"
+ ],
+ "N/A": [
+  null,
+  ""
  ],
  "NFS": [
   null,
@@ -786,6 +814,10 @@ return plural;
   ""
  ],
  "No Volume Bound": [
+  null,
+  ""
+ ],
+ "No disks defined for this VM": [
   null,
   ""
  ],
@@ -845,6 +877,10 @@ return plural;
   null,
   ""
  ],
+ "Node:": [
+  null,
+  ""
+ ],
  "Nodes": [
   null,
   ""
@@ -854,6 +890,10 @@ return plural;
   ""
  ],
  "None": [
+  null,
+  ""
+ ],
+ "Not Available": [
   null,
   ""
  ],
@@ -1013,6 +1053,10 @@ return plural;
   null,
   ""
  ],
+ "Pod:": [
+  null,
+  ""
+ ],
  "Pods": [
   null,
   ""
@@ -1106,6 +1150,10 @@ return plural;
   ""
  ],
  "Read only from multiple nodes": [
+  null,
+  ""
+ ],
+ "Readonly": [
   null,
   ""
  ],
@@ -1372,6 +1420,10 @@ return plural;
  "Sorry, I don't know how to modify this volume": [
   null,
   ""
+ ],
+ "Source": [
+  null,
+  "Lähde"
  ],
  "State": [
   null,
@@ -1685,6 +1737,10 @@ return plural;
   null,
   ""
  ],
+ "iSCSI": [
+  null,
+  ""
+ ],
  "idle": [
   null,
   "jouten"
@@ -1756,6 +1812,10 @@ return plural;
  "user": [
   null,
   "käyttäjä"
+ ],
+ "vCPUs:": [
+  null,
+  "vCPUt:"
  ],
  "vhostuser": [
   null,

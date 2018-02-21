@@ -217,6 +217,10 @@ return plural;
   null,
   ""
  ],
+ "Bus": [
+  null,
+  ""
+ ],
  "CPU": [
   null,
   "CPU"
@@ -337,6 +341,10 @@ return plural;
   null,
   ""
  ],
+ "Count:": [
+  null,
+  ""
+ ],
  "Create": [
   null,
   "Erstellen"
@@ -421,6 +429,10 @@ return plural;
   null,
   ""
  ],
+ "Device": [
+  null,
+  ""
+ ],
  "Directory": [
   null,
   ""
@@ -432,6 +444,10 @@ return plural;
  "Disk Utilization: $0%": [
   null,
   ""
+ ],
+ "Disks": [
+  null,
+  "Datenträger"
  ],
  "Display name": [
   null,
@@ -529,9 +545,9 @@ return plural;
   null,
   ""
  ],
- "General": [
+ "GiB": [
   null,
-  "Allgemein"
+  ""
  ],
  "Git Repository": [
   null,
@@ -653,6 +669,10 @@ return plural;
   null,
   ""
  ],
+ "Labels:": [
+  null,
+  ""
+ ],
  "Last Heartbeat": [
   null,
   ""
@@ -717,6 +737,10 @@ return plural;
   null,
   ""
  ],
+ "Memory:": [
+  null,
+  ""
+ ],
  "Message": [
   null,
   ""
@@ -734,6 +758,10 @@ return plural;
   ""
  ],
  "Mount Location": [
+  null,
+  ""
+ ],
+ "N/A": [
   null,
   ""
  ],
@@ -786,6 +814,10 @@ return plural;
   ""
  ],
  "No Volume Bound": [
+  null,
+  ""
+ ],
+ "No disks defined for this VM": [
   null,
   ""
  ],
@@ -845,6 +877,10 @@ return plural;
   null,
   ""
  ],
+ "Node:": [
+  null,
+  ""
+ ],
  "Nodes": [
   null,
   ""
@@ -856,6 +892,10 @@ return plural;
  "None": [
   null,
   "Kein"
+ ],
+ "Not Available": [
+  null,
+  ""
  ],
  "Not Ready": [
   null,
@@ -1013,6 +1053,10 @@ return plural;
   null,
   ""
  ],
+ "Pod:": [
+  null,
+  ""
+ ],
  "Pods": [
   null,
   ""
@@ -1106,6 +1150,10 @@ return plural;
   ""
  ],
  "Read only from multiple nodes": [
+  null,
+  ""
+ ],
+ "Readonly": [
   null,
   ""
  ],
@@ -1372,6 +1420,10 @@ return plural;
  "Sorry, I don't know how to modify this volume": [
   null,
   "Entschuldigung, ich weiß nicht, wie ich diesen Datenträger modifizieren soll"
+ ],
+ "Source": [
+  null,
+  ""
  ],
  "State": [
   null,
@@ -1685,6 +1737,10 @@ return plural;
   null,
   ""
  ],
+ "iSCSI": [
+  null,
+  ""
+ ],
  "idle": [
   null,
   ""
@@ -1756,6 +1812,10 @@ return plural;
  "user": [
   null,
   ""
+ ],
+ "vCPUs:": [
+  null,
+  "vCPUs:"
  ],
  "vhostuser": [
   null,

@@ -217,6 +217,10 @@ return plural;
   null,
   "Id. d'arrencada"
  ],
+ "Bus": [
+  null,
+  "Bus"
+ ],
  "CPU": [
   null,
   "CPU"
@@ -337,6 +341,10 @@ return plural;
   null,
   "No s'ha pogut trobar el servidor de l'API en execució"
  ],
+ "Count:": [
+  null,
+  "Nombre:"
+ ],
  "Create": [
   null,
   "Crea"
@@ -421,6 +429,10 @@ return plural;
   null,
   "Detalls"
  ],
+ "Device": [
+  null,
+  "Dispositiu"
+ ],
  "Directory": [
   null,
   "Directori"
@@ -432,6 +444,10 @@ return plural;
  "Disk Utilization: $0%": [
   null,
   "Utilització del disc: $0%"
+ ],
+ "Disks": [
+  null,
+  "Discs"
  ],
  "Display name": [
   null,
@@ -529,9 +545,9 @@ return plural;
   null,
   "Disc persistent GCE"
  ],
- "General": [
+ "GiB": [
   null,
-  "General"
+  ""
  ],
  "Git Repository": [
   null,
@@ -653,6 +669,10 @@ return plural;
   null,
   "Etiquetes"
  ],
+ "Labels:": [
+  null,
+  ""
+ ],
  "Last Heartbeat": [
   null,
   "Últim batec"
@@ -717,6 +737,10 @@ return plural;
   null,
   "Utilització de la memòria:  $0%"
  ],
+ "Memory:": [
+  null,
+  "Memòria:"
+ ],
  "Message": [
   null,
   "Missatge"
@@ -736,6 +760,10 @@ return plural;
  "Mount Location": [
   null,
   "Ubicació del muntatge"
+ ],
+ "N/A": [
+  null,
+  ""
  ],
  "NFS": [
   null,
@@ -788,6 +816,10 @@ return plural;
  "No Volume Bound": [
   null,
   ""
+ ],
+ "No disks defined for this VM": [
+  null,
+  "No hi ha definit cap disc per a aquesta MV"
  ],
  "No groups are present.": [
   null,
@@ -845,6 +877,10 @@ return plural;
   null,
   "Node"
  ],
+ "Node:": [
+  null,
+  ""
+ ],
  "Nodes": [
   null,
   "Nodes"
@@ -856,6 +892,10 @@ return plural;
  "None": [
   null,
   "Cap"
+ ],
+ "Not Available": [
+  null,
+  ""
  ],
  "Not Ready": [
   null,
@@ -1013,6 +1053,10 @@ return plural;
   null,
   ""
  ],
+ "Pod:": [
+  null,
+  ""
+ ],
  "Pods": [
   null,
   "Pods"
@@ -1108,6 +1152,10 @@ return plural;
  "Read only from multiple nodes": [
   null,
   "Només lectura de diversos nodes"
+ ],
+ "Readonly": [
+  null,
+  "NomésLectura"
  ],
  "Ready": [
   null,
@@ -1372,6 +1420,10 @@ return plural;
  "Sorry, I don't know how to modify this volume": [
   null,
   ""
+ ],
+ "Source": [
+  null,
+  "Origen"
  ],
  "State": [
   null,
@@ -1685,6 +1737,10 @@ return plural;
   null,
   ""
  ],
+ "iSCSI": [
+  null,
+  ""
+ ],
  "idle": [
   null,
   "ociós"
@@ -1756,6 +1812,10 @@ return plural;
  "user": [
   null,
   "usuari"
+ ],
+ "vCPUs:": [
+  null,
+  "vCPUs:"
  ],
  "vhostuser": [
   null,

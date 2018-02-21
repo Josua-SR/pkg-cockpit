@@ -69,11 +69,11 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  ""
+  "$0 は、多数のオペレーティングシステムで利用できます。インストールするには、GNOME ソフトウェアで検索するか、以下を実行します:"
  ],
  "Additional": [
   null,
-  ""
+  "追加"
  ],
  "Address": [
   null,
@@ -81,7 +81,7 @@ return plural;
  ],
  "Address:": [
   null,
-  "アドレス:"
+  "アドレス: "
  ],
  "Autostart:": [
   null,

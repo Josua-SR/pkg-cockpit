@@ -26,6 +26,13 @@ export function setVms(vms) {
     }
 }
 
+export function setPVs(pvs) {
+    return {
+        type: actionConstants.SET_PVS,
+        payload: pvs
+    }
+}
+
 export function setSettings(settings) {
     return {
         type: actionConstants.SET_SETTINGS,
@@ -50,5 +57,22 @@ export function removeVmMessage({ vm }) {
       payload: {
         vm,
       }
+    };
+}
+
+export function setPods(pods) {
+    return {
+        type: actionConstants.SET_PODS,
+        payload: pods
+    };
+}
+
+export function vmExpanded({ vm, isExpanded }) {
+    return {
+        type: actionConstants.VM_EXPANDED,
+        payload: {
+            vm,
+            isExpanded
+        }
     };
 }

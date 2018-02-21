@@ -217,6 +217,10 @@ return plural;
   null,
   "ID de Arranque"
  ],
+ "Bus": [
+  null,
+  "Bus"
+ ],
  "CPU": [
   null,
   "CPU"
@@ -337,6 +341,10 @@ return plural;
   null,
   "No se puede encontrar un servidor API ejecutandose"
  ],
+ "Count:": [
+  null,
+  "Conteo:"
+ ],
  "Create": [
   null,
   "Crear"
@@ -421,6 +429,10 @@ return plural;
   null,
   "Detalles"
  ],
+ "Device": [
+  null,
+  "Dispositivo"
+ ],
  "Directory": [
   null,
   "Directorio"
@@ -432,6 +444,10 @@ return plural;
  "Disk Utilization: $0%": [
   null,
   "Uso de disco: $0%"
+ ],
+ "Disks": [
+  null,
+  "Discos"
  ],
  "Display name": [
   null,
@@ -529,9 +545,9 @@ return plural;
   null,
   "Disco GCE Persistente"
  ],
- "General": [
+ "GiB": [
   null,
-  "General"
+  ""
  ],
  "Git Repository": [
   null,
@@ -653,6 +669,10 @@ return plural;
   null,
   "Viñetas"
  ],
+ "Labels:": [
+  null,
+  ""
+ ],
  "Last Heartbeat": [
   null,
   "Último Heartbeat"
@@ -717,6 +737,10 @@ return plural;
   null,
   "Uso de memoria: $0%"
  ],
+ "Memory:": [
+  null,
+  "Memoria:"
+ ],
  "Message": [
   null,
   "Mensaje"
@@ -736,6 +760,10 @@ return plural;
  "Mount Location": [
   null,
   "Ubicación de montaje"
+ ],
+ "N/A": [
+  null,
+  ""
  ],
  "NFS": [
   null,
@@ -788,6 +816,10 @@ return plural;
  "No Volume Bound": [
   null,
   "No hay ningún vínculo de volumen"
+ ],
+ "No disks defined for this VM": [
+  null,
+  "No se han definido discos para esta VM"
  ],
  "No groups are present.": [
   null,
@@ -845,6 +877,10 @@ return plural;
   null,
   "Nodo"
  ],
+ "Node:": [
+  null,
+  ""
+ ],
  "Nodes": [
   null,
   "Nodos"
@@ -856,6 +892,10 @@ return plural;
  "None": [
   null,
   "Ninguno"
+ ],
+ "Not Available": [
+  null,
+  ""
  ],
  "Not Ready": [
   null,
@@ -1013,6 +1053,10 @@ return plural;
   null,
   "Selector de Pod"
  ],
+ "Pod:": [
+  null,
+  ""
+ ],
  "Pods": [
   null,
   "Ranuras"
@@ -1108,6 +1152,10 @@ return plural;
  "Read only from multiple nodes": [
   null,
   "Sólo lectura para nodos múltiples"
+ ],
+ "Readonly": [
+  null,
+  "Sólo lectura"
  ],
  "Ready": [
   null,
@@ -1372,6 +1420,10 @@ return plural;
  "Sorry, I don't know how to modify this volume": [
   null,
   "Lo siento, no se como modificar este volumen"
+ ],
+ "Source": [
+  null,
+  ""
  ],
  "State": [
   null,
@@ -1685,6 +1737,10 @@ return plural;
   null,
   ""
  ],
+ "iSCSI": [
+  null,
+  ""
+ ],
  "idle": [
   null,
   "inactivo"
@@ -1754,6 +1810,10 @@ return plural;
   ""
  ],
  "user": [
+  null,
+  ""
+ ],
+ "vCPUs:": [
   null,
   ""
  ],

@@ -2077,8 +2077,25 @@ li.credential-lock > a:first-child {
     max-width: 100%;
   }
 }
+@media (max-width: 991px) {
+  #server .info-table-ct-container {
+    padding: 0 0 20px;
+    overflow: hidden;
+  }
+  #server .info-table-ct-container th,
+  #server .info-table-ct-container td:first-child {
+    padding-left: 0;
+  }
+  #server .info-table-ct-container td:last-child {
+    max-width: 50vw;
+  }
+}
 @media (max-width: 480px) {
-  /* server overview dashboard */
+  #server .info-table-ct-container td {
+    overflow: auto;
+    word-wrap: break-word;
+    /* server overview dashboard */
+  }
   #server .info-table-ct-container td button {
     max-width: 200px;
   }

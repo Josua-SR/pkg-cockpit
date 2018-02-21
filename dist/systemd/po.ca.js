@@ -369,6 +369,10 @@ return plural;
   null,
   "Canvia l'hora del sistema"
  ],
+ "Class": [
+  null,
+  ""
+ ],
  "Close": [
   null,
   "Tanca"
@@ -669,6 +673,10 @@ return plural;
   null,
   "Minuts"
  ],
+ "Model": [
+  null,
+  ""
+ ],
  "Monday": [
   null,
   "Dilluns"
@@ -746,6 +754,10 @@ return plural;
   "Sistema operatiu"
  ],
  "Other": [
+  null,
+  ""
+ ],
+ "PCI": [
   null,
   ""
  ],
@@ -941,6 +953,10 @@ return plural;
   null,
   "Des de $0"
  ],
+ "Slot": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   "Sockets"
@@ -1105,6 +1121,10 @@ return plural;
  "User": [
   null,
   "Usuari"
+ ],
+ "Vendor": [
+  null,
+  ""
  ],
  "Version": [
   null,

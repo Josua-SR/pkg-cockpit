@@ -293,7 +293,7 @@ return plural;
  ],
  "Advanced TCA": [
   null,
-  ""
+  "Розширене TCA"
  ],
  "After": [
   null,
@@ -305,7 +305,7 @@ return plural;
  ],
  "All In One": [
   null,
-  ""
+  "Усе-в-одному"
  ],
  "Asset Tag": [
   null,
@@ -325,27 +325,27 @@ return plural;
  ],
  "BIOS": [
   null,
-  ""
+  "BIOS"
  ],
  "BIOS date": [
   null,
-  ""
+  "Дата BIOS"
  ],
  "BIOS version": [
   null,
-  ""
+  "Версія BIOS"
  ],
  "Blade": [
   null,
-  ""
+  "Blade"
  ],
  "Blade enclosure": [
   null,
-  ""
+  "Обгортка Blade"
  ],
  "Bus Expansion Chassis": [
   null,
-  ""
+  "Апаратний блок розширення каналу"
  ],
  "CPU": [
   null,
@@ -375,6 +375,10 @@ return plural;
   null,
   "Змінити системний час"
  ],
+ "Class": [
+  null,
+  ""
+ ],
  "Close": [
   null,
   "Закрити"
@@ -385,7 +389,7 @@ return plural;
  ],
  "Compact PCI": [
   null,
-  ""
+  "Компактний PCI"
  ],
  "Condition $0=$1 was not met": [
   null,
@@ -397,7 +401,7 @@ return plural;
  ],
  "Convertible": [
   null,
-  ""
+  "Змінюваний"
  ],
  "Create Timer": [
   null,
@@ -421,11 +425,11 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Робоча станція"
  ],
  "Detachable": [
   null,
-  ""
+  "Змінний"
  ],
  "Disable": [
   null,
@@ -441,7 +445,7 @@ return plural;
  ],
  "Docking Station": [
   null,
-  ""
+  "Станція заряджання"
  ],
  "Domain": [
   null,
@@ -453,7 +457,7 @@ return plural;
  ],
  "Embedded PC": [
   null,
-  ""
+  "Вбудований ПК"
  ],
  "Enable": [
   null,
@@ -481,7 +485,7 @@ return plural;
  ],
  "Expansion Chassis": [
   null,
-  ""
+  "Апаратний блок розширення"
  ],
  "Free": [
   null,
@@ -505,7 +509,7 @@ return plural;
  ],
  "Hand Held": [
   null,
-  ""
+  "Портативний"
  ],
  "Hardware": [
   null,
@@ -513,7 +517,7 @@ return plural;
  ],
  "Hardware Information": [
   null,
-  ""
+  "Дані щодо обладнання"
  ],
  "Host Name": [
   null,
@@ -569,7 +573,7 @@ return plural;
  ],
  "IoT Gateway": [
   null,
-  ""
+  "Шлюз IoT"
  ],
  "Journal": [
   null,
@@ -589,7 +593,7 @@ return plural;
  ],
  "Laptop": [
   null,
-  ""
+  "Переносний ПК"
  ],
  "Last 24 hours": [
   null,
@@ -621,11 +625,11 @@ return plural;
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "Низькопрофільна робоча станція"
  ],
  "Lunch Box": [
   null,
-  ""
+  "Пусковий комп'ютер"
  ],
  "Machine ID": [
   null,
@@ -637,7 +641,7 @@ return plural;
  ],
  "Main Server Chassis": [
   null,
-  ""
+  "Апаратний блок основного сервера"
  ],
  "Manually": [
   null,
@@ -661,11 +665,11 @@ return plural;
  ],
  "Mini PC": [
   null,
-  ""
+  "Міні-ПК"
  ],
  "Mini Tower": [
   null,
-  ""
+  "Міні-башточка"
  ],
  "Minute needs to be a number between 0-59": [
   null,
@@ -675,13 +679,17 @@ return plural;
   null,
   "Хвилини"
  ],
+ "Model": [
+  null,
+  ""
+ ],
  "Monday": [
   null,
   "понеділок"
  ],
  "Multi-system Chassis": [
   null,
-  ""
+  "Багатосистемний апаратний блок"
  ],
  "NTP Server": [
   null,
@@ -729,7 +737,7 @@ return plural;
  ],
  "Notebook": [
   null,
-  ""
+  "Ноутбук"
  ],
  "Off": [
   null,
@@ -753,6 +761,10 @@ return plural;
  ],
  "Other": [
   null,
+  "Інше"
+ ],
+ "PCI": [
+  null,
   ""
  ],
  "Paths": [
@@ -765,15 +777,15 @@ return plural;
  ],
  "Peripheral Chassis": [
   null,
-  ""
+  "Периферійний апаратний блок"
  ],
  "Pizza Box": [
   null,
-  ""
+  "З коробку для піци"
  ],
  "Portable": [
   null,
-  ""
+  "Портативний"
  ],
  "Power Options": [
   null,
@@ -813,11 +825,11 @@ return plural;
  ],
  "RAID Chassis": [
   null,
-  ""
+  "Апаратний блок RAID"
  ],
  "Rack Mount Chassis": [
   null,
-  ""
+  "Апаратний блок монтування стійок"
  ],
  "Real Host Name": [
   null,
@@ -901,7 +913,7 @@ return plural;
  ],
  "Sealed-case PC": [
   null,
-  ""
+  "ПК з опломбованим корпусом"
  ],
  "Seconds": [
   null,
@@ -947,13 +959,17 @@ return plural;
   null,
   "З $0"
  ],
+ "Slot": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   "Сокети"
  ],
  "Space-saving Computer": [
   null,
-  ""
+  "Компактний комп'ютер"
  ],
  "Specific Time": [
   null,
@@ -973,7 +989,7 @@ return plural;
  ],
  "Stick PC": [
   null,
-  ""
+  "Паличковий ПК"
  ],
  "Stop": [
   null,
@@ -985,11 +1001,11 @@ return plural;
  ],
  "Sub Chassis": [
   null,
-  ""
+  "Підблок"
  ],
  "Sub Notebook": [
   null,
-  ""
+  "Підноутбук"
  ],
  "Sunday": [
   null,
@@ -1013,7 +1029,7 @@ return plural;
  ],
  "System Information": [
   null,
-  ""
+  "Дані щодо системи"
  ],
  "System Services": [
   null,
@@ -1025,7 +1041,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "Планшет"
  ],
  "Targets": [
   null,
@@ -1077,7 +1093,7 @@ return plural;
  ],
  "Tower": [
   null,
-  ""
+  "Башточка"
  ],
  "Trying to synchronize with {{Server}}": [
   null,
@@ -1112,6 +1128,10 @@ return plural;
  "User": [
   null,
   "Користувач"
+ ],
+ "Vendor": [
+  null,
+  ""
  ],
  "Version": [
   null,

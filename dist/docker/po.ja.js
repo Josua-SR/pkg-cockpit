@@ -117,11 +117,11 @@ return plural;
  ],
  "Advanced TCA": [
   null,
-  ""
+  "高度な TCA"
  ],
  "All In One": [
   null,
-  ""
+  "一体型"
  ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
