@@ -1,3 +1,11 @@
+cockpit (162-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Show pod name and disks of VMs running in Kubernetes
+    - Tighten up the default Content-Security-Policy
+
+ -- Martin Pitt <mpitt@debian.org>  Wed, 21 Feb 2018 16:58:32 +0100
+
 cockpit (161-1) unstable; urgency=medium
 
   * New upstream release:
