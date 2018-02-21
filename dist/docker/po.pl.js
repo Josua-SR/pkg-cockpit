@@ -129,11 +129,11 @@ return plural;
  ],
  "Advanced TCA": [
   null,
-  ""
+  "Zaawansowane TCA"
  ],
  "All In One": [
   null,
-  ""
+  "Zintegrowane"
  ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
@@ -153,15 +153,15 @@ return plural;
  ],
  "Blade": [
   null,
-  ""
+  "Kasetowy"
  ],
  "Blade enclosure": [
   null,
-  ""
+  "Obudowa kasetowa"
  ],
  "Bus Expansion Chassis": [
   null,
-  ""
+  "Obudowa rozszerzenia magistrali"
  ],
  "CPU": [
   null,
@@ -231,7 +231,7 @@ return plural;
  ],
  "Compact PCI": [
   null,
-  ""
+  "Kompaktowe PCI"
  ],
  "Configure storage...": [
   null,
@@ -267,7 +267,7 @@ return plural;
  ],
  "Convertible": [
   null,
-  ""
+  "2 w jednym"
  ],
  "Could not add all disks": [
   null,
@@ -307,11 +307,11 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Komputer stacjonarny"
  ],
  "Detachable": [
   null,
-  ""
+  "Odłączalny"
  ],
  "Details": [
   null,
@@ -323,7 +323,7 @@ return plural;
  ],
  "Docking Station": [
   null,
-  ""
+  "Stacja dokująca"
  ],
  "Download": [
   null,
@@ -343,7 +343,7 @@ return plural;
  ],
  "Embedded PC": [
   null,
-  ""
+  "Komputer osadzony"
  ],
  "Entrypoint": [
   null,
@@ -375,7 +375,7 @@ return plural;
  ],
  "Expansion Chassis": [
   null,
-  ""
+  "Obudowa rozszerzenia"
  ],
  "Expose container ports": [
   null,
@@ -407,7 +407,7 @@ return plural;
  ],
  "Hand Held": [
   null,
-  ""
+  "Przenośny"
  ],
  "Hard Disk": [
   null,
@@ -463,11 +463,11 @@ return plural;
  ],
  "IoT Gateway": [
   null,
-  ""
+  "Brama IoT"
  ],
  "Laptop": [
   null,
-  ""
+  "Laptop"
  ],
  "Link to another container": [
   null,
@@ -487,11 +487,11 @@ return plural;
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "Komputer stacjonarny o mniejszym rozmiarze"
  ],
  "Lunch Box": [
   null,
-  ""
+  "Lunch Box"
  ],
  "MAC Address:": [
   null,
@@ -499,7 +499,7 @@ return plural;
  ],
  "Main Server Chassis": [
   null,
-  ""
+  "Główna obudowa serwera"
  ],
  "Memory": [
   null,
@@ -519,11 +519,11 @@ return plural;
  ],
  "Mini PC": [
   null,
-  ""
+  "Mini PC"
  ],
  "Mini Tower": [
   null,
-  ""
+  "Mini Tower"
  ],
  "Mount container volumes": [
   null,
@@ -531,7 +531,7 @@ return plural;
  ],
  "Multi-system Chassis": [
   null,
-  ""
+  "Obudowa dla wielu komputerów"
  ],
  "Name": [
   null,
@@ -591,7 +591,7 @@ return plural;
  ],
  "Notebook": [
   null,
-  ""
+  "Notebook"
  ],
  "Off": [
   null,
@@ -617,7 +617,7 @@ return plural;
  ],
  "Other": [
   null,
-  ""
+  "Inne"
  ],
  "Overview": [
   null,
@@ -625,11 +625,11 @@ return plural;
  ],
  "Peripheral Chassis": [
   null,
-  ""
+  "Obudowa peryferyjna"
  ],
  "Pizza Box": [
   null,
-  ""
+  "Pizza Box"
  ],
  "Please confirm deletion of $0": [
   null,
@@ -645,7 +645,7 @@ return plural;
  ],
  "Portable": [
   null,
-  ""
+  "Przenośne"
  ],
  "Ports": [
   null,
@@ -661,11 +661,11 @@ return plural;
  ],
  "RAID Chassis": [
   null,
-  ""
+  "Obudowa RAID"
  ],
  "Rack Mount Chassis": [
   null,
-  ""
+  "Obudowa do montowania w szafie"
  ],
  "ReadOnly": [
   null,
@@ -725,7 +725,7 @@ return plural;
  ],
  "Sealed-case PC": [
   null,
-  ""
+  "Sealed-case PC"
  ],
  "Security": [
   null,
@@ -753,7 +753,7 @@ return plural;
  ],
  "Space-saving Computer": [
   null,
-  ""
+  "Komputer oszczędzający miejsce"
  ],
  "Start": [
   null,
@@ -773,7 +773,7 @@ return plural;
  ],
  "Stick PC": [
   null,
-  ""
+  "Stick PC"
  ],
  "Stop": [
   null,
@@ -793,11 +793,11 @@ return plural;
  ],
  "Sub Chassis": [
   null,
-  ""
+  "Obudowa podrzędna"
  ],
  "Sub Notebook": [
   null,
-  ""
+  "Sub Notebook"
  ],
  "TCP": [
   null,
@@ -805,7 +805,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "Tablet"
  ],
  "Tag": [
   null,
@@ -841,7 +841,7 @@ return plural;
  ],
  "Tower": [
   null,
-  ""
+  "Tower"
  ],
  "Try again": [
   null,

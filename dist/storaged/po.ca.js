@@ -101,6 +101,10 @@ return plural;
   null,
   ""
  ],
+ "$0 filesystems can not be resized here.": [
+  null,
+  ""
+ ],
  "$0 hour": [
   "$0 hours",
   "$0 hora",
@@ -1230,13 +1234,13 @@ return plural;
   null,
   "Atura el tractament de neteja"
  ],
+ "Stop and Unmount": [
+  null,
+  ""
+ ],
  "Stop and remove": [
   null,
   "Atura i treu"
- ],
- "Stop and unmount": [
-  null,
-  "Atura i desmunta"
  ],
  "Stopping RAID Device $target": [
   null,

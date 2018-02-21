@@ -375,6 +375,10 @@ return plural;
   null,
   "Změnit systémový čas"
  ],
+ "Class": [
+  null,
+  ""
+ ],
  "Close": [
   null,
   "Zavřít"
@@ -675,6 +679,10 @@ return plural;
   null,
   "Minut"
  ],
+ "Model": [
+  null,
+  ""
+ ],
  "Monday": [
   null,
   "pondělí"
@@ -752,6 +760,10 @@ return plural;
   ""
  ],
  "Other": [
+  null,
+  ""
+ ],
+ "PCI": [
   null,
   ""
  ],
@@ -947,6 +959,10 @@ return plural;
   null,
   ""
  ],
+ "Slot": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   ""
@@ -1112,6 +1128,10 @@ return plural;
  "User": [
   null,
   "Uživatel"
+ ],
+ "Vendor": [
+  null,
+  ""
  ],
  "Version": [
   null,

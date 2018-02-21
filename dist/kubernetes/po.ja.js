@@ -215,6 +215,10 @@ return plural;
   null,
   "ブート ID"
  ],
+ "Bus": [
+  null,
+  "バス"
+ ],
  "CPU": [
   null,
   "CPU"
@@ -335,6 +339,10 @@ return plural;
   null,
   "実行中の API サーバーを見つけることができませんでした"
  ],
+ "Count:": [
+  null,
+  "数量:"
+ ],
  "Create": [
   null,
   "作成"
@@ -419,6 +427,10 @@ return plural;
   null,
   "詳細"
  ],
+ "Device": [
+  null,
+  "デバイス"
+ ],
  "Directory": [
   null,
   "フォルダー"
@@ -430,6 +442,10 @@ return plural;
  "Disk Utilization: $0%": [
   null,
   "ディスク使用率: $0%˙"
+ ],
+ "Disks": [
+  null,
+  "ディスク"
  ],
  "Display name": [
   null,
@@ -527,9 +543,9 @@ return plural;
   null,
   "GCE 永続ディスク"
  ],
- "General": [
+ "GiB": [
   null,
-  "全般"
+  ""
  ],
  "Git Repository": [
   null,
@@ -651,6 +667,10 @@ return plural;
   null,
   "ラベル"
  ],
+ "Labels:": [
+  null,
+  ""
+ ],
  "Last Heartbeat": [
   null,
   "最後のハートビート"
@@ -715,6 +735,10 @@ return plural;
   null,
   "メモリー使用率: $0%"
  ],
+ "Memory:": [
+  null,
+  "メモリー:"
+ ],
  "Message": [
   null,
   "メッセージ"
@@ -734,6 +758,10 @@ return plural;
  "Mount Location": [
   null,
   "マウント場所"
+ ],
+ "N/A": [
+  null,
+  ""
  ],
  "NFS": [
   null,
@@ -786,6 +814,10 @@ return plural;
  "No Volume Bound": [
   null,
   "ボリュームがバインドされていません"
+ ],
+ "No disks defined for this VM": [
+  null,
+  "この VM に対してディスクが定義されていません"
  ],
  "No groups are present.": [
   null,
@@ -843,6 +875,10 @@ return plural;
   null,
   "ノード"
  ],
+ "Node:": [
+  null,
+  ""
+ ],
  "Nodes": [
   null,
   "ノード"
@@ -854,6 +890,10 @@ return plural;
  "None": [
   null,
   "なし"
+ ],
+ "Not Available": [
+  null,
+  ""
  ],
  "Not Ready": [
   null,
@@ -1011,6 +1051,10 @@ return plural;
   null,
   "ポッドセレクター"
  ],
+ "Pod:": [
+  null,
+  ""
+ ],
  "Pods": [
   null,
   "ポッド"
@@ -1106,6 +1150,10 @@ return plural;
  "Read only from multiple nodes": [
   null,
   "複数のノードからの読み取り専用"
+ ],
+ "Readonly": [
+  null,
+  "読み取り専用"
  ],
  "Ready": [
   null,
@@ -1370,6 +1418,10 @@ return plural;
  "Sorry, I don't know how to modify this volume": [
   null,
   "申し訳ありませんが、このボリュームを変更する方法がわかりません"
+ ],
+ "Source": [
+  null,
+  "ソース"
  ],
  "State": [
   null,
@@ -1683,6 +1735,10 @@ return plural;
   null,
   ""
  ],
+ "iSCSI": [
+  null,
+  ""
+ ],
  "idle": [
   null,
   "アイドル"
@@ -1754,6 +1810,10 @@ return plural;
  "user": [
   null,
   ""
+ ],
+ "vCPUs:": [
+  null,
+  "vCPU:"
  ],
  "vhostuser": [
   null,

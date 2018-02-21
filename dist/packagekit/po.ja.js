@@ -69,31 +69,31 @@ return plural;
  },
  "$0 update": [
   "$0 updates",
-  "更新"
+  "$0 更新"
  ],
  "$1 security fix": [
   "$1 security fixes",
-  ""
+  "$1 セキュリティー修正"
  ],
  ", including $1 security fix": [
   ", including $1 security fixes",
-  ""
+  "セキュリティー修正を $1 個含む"
  ],
  "Apply all updates": [
   null,
-  ""
+  "すべてのアップデートを適用します"
  ],
  "Apply security updates": [
   null,
-  ""
+  "セキュリティーアップデートを適用します"
  ],
  "Applying updates": [
   null,
-  "ソリューションの適用中 ..."
+  "アップデートの適用中 ..."
  ],
  "Applying updates failed": [
   null,
-  ""
+  "アップデートの適用に失敗しました"
  ],
  "Automatic Updates": [
   null,

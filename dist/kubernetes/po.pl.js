@@ -219,6 +219,10 @@ return plural;
   null,
   "Identyfikator uruchomienia"
  ],
+ "Bus": [
+  null,
+  "Magistrala"
+ ],
  "CPU": [
   null,
   "Procesor"
@@ -339,6 +343,10 @@ return plural;
   null,
   "Nie można odnaleźć uruchomionego serwera API"
  ],
+ "Count:": [
+  null,
+  "Liczba:"
+ ],
  "Create": [
   null,
   "Utwórz"
@@ -423,6 +431,10 @@ return plural;
   null,
   "Szczegóły"
  ],
+ "Device": [
+  null,
+  "Urządzenie"
+ ],
  "Directory": [
   null,
   "Katalog"
@@ -434,6 +446,10 @@ return plural;
  "Disk Utilization: $0%": [
   null,
   "Użycie dysku: $0%"
+ ],
+ "Disks": [
+  null,
+  "Dyski"
  ],
  "Display name": [
   null,
@@ -531,9 +547,9 @@ return plural;
   null,
   "Trwały dysk GCE"
  ],
- "General": [
+ "GiB": [
   null,
-  "Ogólne"
+  "GiB"
  ],
  "Git Repository": [
   null,
@@ -655,6 +671,10 @@ return plural;
   null,
   "Etykiety"
  ],
+ "Labels:": [
+  null,
+  ""
+ ],
  "Last Heartbeat": [
   null,
   "Ostatnie bicie serca"
@@ -719,6 +739,10 @@ return plural;
   null,
   "Użycie pamięci: $0%"
  ],
+ "Memory:": [
+  null,
+  "Pamięć:"
+ ],
  "Message": [
   null,
   "Komunikat"
@@ -738,6 +762,10 @@ return plural;
  "Mount Location": [
   null,
   "Położenie punktu montowania"
+ ],
+ "N/A": [
+  null,
+  ""
  ],
  "NFS": [
   null,
@@ -790,6 +818,10 @@ return plural;
  "No Volume Bound": [
   null,
   "Żaden wolumin nie został przypisany"
+ ],
+ "No disks defined for this VM": [
+  null,
+  "Nie określono dysków dla tej maszyny wirtualnej"
  ],
  "No groups are present.": [
   null,
@@ -847,6 +879,10 @@ return plural;
   null,
   "Węzeł"
  ],
+ "Node:": [
+  null,
+  ""
+ ],
  "Nodes": [
   null,
   "Węzły"
@@ -858,6 +894,10 @@ return plural;
  "None": [
   null,
   "Brak"
+ ],
+ "Not Available": [
+  null,
+  ""
  ],
  "Not Ready": [
   null,
@@ -1015,6 +1055,10 @@ return plural;
   null,
   "Wybór pojemnika"
  ],
+ "Pod:": [
+  null,
+  ""
+ ],
  "Pods": [
   null,
   "Pojemniki"
@@ -1110,6 +1154,10 @@ return plural;
  "Read only from multiple nodes": [
   null,
   "Tylko odczyt z wielu węzłów"
+ ],
+ "Readonly": [
+  null,
+  "Tylko do odczytu"
  ],
  "Ready": [
   null,
@@ -1375,6 +1423,10 @@ return plural;
   null,
   "Nie wiadomo, jak zmodyfikować ten wolumin"
  ],
+ "Source": [
+  null,
+  "Źródło"
+ ],
  "State": [
   null,
   "Stan"
@@ -1577,7 +1629,7 @@ return plural;
  ],
  "VM DELETE failed.": [
   null,
-  ""
+  "VM DELETE się nie powiodło."
  ],
  "Virtual Machines": [
   null,
@@ -1687,6 +1739,10 @@ return plural;
   null,
   "urządzenie gospodarza"
  ],
+ "iSCSI": [
+  null,
+  ""
+ ],
  "idle": [
   null,
   "bezczynne"
@@ -1758,6 +1814,10 @@ return plural;
  "user": [
   null,
   "użytkownik"
+ ],
+ "vCPUs:": [
+  null,
+  "Wirtualne procesory:"
  ],
  "vhostuser": [
   null,

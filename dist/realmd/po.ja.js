@@ -69,7 +69,7 @@ return plural;
  },
  "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  ""
+  "$0 ローカル認証情報を持つユーザーだけが、このマシンにログインできます。DNS 解決設定と、信頼される CA の一覧が変更する場合があるため、他のサービスにもこれが当てはまることもあります。"
  ],
  "Administrator Password": [
   null,
@@ -77,11 +77,11 @@ return plural;
  ],
  "Are you sure you want to leave the '$0' domain?": [
   null,
-  "このイメージを削除してもよろしいですか?"
+  "'$0' ドメインを解除してもよろしいですか?"
  ],
  "Are you sure you want to leave this domain?": [
   null,
-  "このイメージを削除してもよろしいですか?"
+  "このドメインを解除してもよろしいですか?"
  ],
  "Authentication": [
   null,

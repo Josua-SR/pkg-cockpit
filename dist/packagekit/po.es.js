@@ -108,7 +108,7 @@ return plural;
  ],
  "Bugs:": [
   null,
-  ""
+  "Errores:"
  ],
  "Cancel": [
   null,

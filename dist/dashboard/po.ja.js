@@ -129,11 +129,11 @@ return plural;
  ],
  "Advanced TCA": [
   null,
-  ""
+  "高度な TCA"
  ],
  "All In One": [
   null,
-  ""
+  "一体型"
  ],
  "Authentication": [
   null,

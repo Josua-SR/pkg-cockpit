@@ -209,11 +209,11 @@ return plural;
  ],
  "Create New VM": [
   null,
-  ""
+  "Crear Nueva VM"
  ],
  "Create New Virtual Machine": [
   null,
-  ""
+  "Crear una Nueva Máquina Virtual"
  ],
  "Create VM": [
   null,

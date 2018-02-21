@@ -141,11 +141,11 @@ return plural;
  ],
  "Advanced TCA": [
   null,
-  ""
+  "Zaawansowane TCA"
  ],
  "All In One": [
   null,
-  ""
+  "Zintegrowane"
  ],
  "Authentication": [
   null,
@@ -165,15 +165,15 @@ return plural;
  ],
  "Blade": [
   null,
-  ""
+  "Kasetowy"
  ],
  "Blade enclosure": [
   null,
-  ""
+  "Obudowa kasetowa"
  ],
  "Bus Expansion Chassis": [
   null,
-  ""
+  "Obudowa rozszerzenia magistrali"
  ],
  "CPU": [
   null,
@@ -229,7 +229,7 @@ return plural;
  ],
  "Compact PCI": [
   null,
-  ""
+  "Kompaktowe PCI"
  ],
  "Connect": [
   null,
@@ -241,7 +241,7 @@ return plural;
  ],
  "Convertible": [
   null,
-  ""
+  "2 w jednym"
  ],
  "Could not contact {{host}}": [
   null,
@@ -253,11 +253,11 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Komputer stacjonarny"
  ],
  "Detachable": [
   null,
-  ""
+  "Odłączalny"
  ],
  "Disk I/O": [
   null,
@@ -265,7 +265,7 @@ return plural;
  ],
  "Docking Station": [
   null,
-  ""
+  "Stacja dokująca"
  ],
  "Edit Server": [
   null,
@@ -273,7 +273,7 @@ return plural;
  ],
  "Embedded PC": [
   null,
-  ""
+  "Komputer osadzony"
  ],
  "Enter IP address or host name": [
   null,
@@ -289,7 +289,7 @@ return plural;
  ],
  "Expansion Chassis": [
   null,
-  ""
+  "Obudowa rozszerzenia"
  ],
  "Failed to add machine: $0": [
   null,
@@ -313,7 +313,7 @@ return plural;
  ],
  "Hand Held": [
   null,
-  ""
+  "Przenośny"
  ],
  "Host Name": [
   null,
@@ -333,7 +333,7 @@ return plural;
  ],
  "IoT Gateway": [
   null,
-  ""
+  "Brama IoT"
  ],
  "Is sshd running on a different port?": [
   null,
@@ -349,7 +349,7 @@ return plural;
  ],
  "Laptop": [
   null,
-  ""
+  "Laptop"
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
@@ -377,15 +377,15 @@ return plural;
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "Komputer stacjonarny o mniejszym rozmiarze"
  ],
  "Lunch Box": [
   null,
-  ""
+  "Lunch Box"
  ],
  "Main Server Chassis": [
   null,
-  ""
+  "Główna obudowa serwera"
  ],
  "Memory": [
   null,
@@ -393,15 +393,15 @@ return plural;
  ],
  "Mini PC": [
   null,
-  ""
+  "Mini PC"
  ],
  "Mini Tower": [
   null,
-  ""
+  "Mini Tower"
  ],
  "Multi-system Chassis": [
   null,
-  ""
+  "Obudowa dla wielu komputerów"
  ],
  "Network": [
   null,
@@ -421,7 +421,7 @@ return plural;
  ],
  "Notebook": [
   null,
-  ""
+  "Notebook"
  ],
  "Off": [
   null,
@@ -437,7 +437,7 @@ return plural;
  ],
  "Other": [
   null,
-  ""
+  "Inne"
  ],
  "Password": [
   null,
@@ -449,11 +449,11 @@ return plural;
  ],
  "Peripheral Chassis": [
   null,
-  ""
+  "Obudowa peryferyjna"
  ],
  "Pizza Box": [
   null,
-  ""
+  "Pizza Box"
  ],
  "Port": [
   null,
@@ -461,7 +461,7 @@ return plural;
  ],
  "Portable": [
   null,
-  ""
+  "Przenośne"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -477,15 +477,15 @@ return plural;
  ],
  "RAID Chassis": [
   null,
-  ""
+  "Obudowa RAID"
  ],
  "Rack Mount Chassis": [
   null,
-  ""
+  "Obudowa do montowania w szafie"
  ],
  "Sealed-case PC": [
   null,
-  ""
+  "Sealed-case PC"
  ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
@@ -501,19 +501,19 @@ return plural;
  ],
  "Space-saving Computer": [
   null,
-  ""
+  "Komputer oszczędzający miejsce"
  ],
  "Stick PC": [
   null,
-  ""
+  "Stick PC"
  ],
  "Sub Chassis": [
   null,
-  ""
+  "Obudowa podrzędna"
  ],
  "Sub Notebook": [
   null,
-  ""
+  "Sub Notebook"
  ],
  "Synchronize": [
   null,
@@ -525,7 +525,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "Tablet"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -561,7 +561,7 @@ return plural;
  ],
  "Tower": [
   null,
-  ""
+  "Tower"
  ],
  "Type a password": [
   null,

@@ -215,6 +215,10 @@ return plural;
   null,
   "启动编号"
  ],
+ "Bus": [
+  null,
+  "总线"
+ ],
  "CPU": [
   null,
   "CPU"
@@ -335,6 +339,10 @@ return plural;
   null,
   "无法找到运行的 API 服务器"
  ],
+ "Count:": [
+  null,
+  "计数："
+ ],
  "Create": [
   null,
   "创建"
@@ -419,6 +427,10 @@ return plural;
   null,
   "详情"
  ],
+ "Device": [
+  null,
+  "设备"
+ ],
  "Directory": [
   null,
   "目录"
@@ -430,6 +442,10 @@ return plural;
  "Disk Utilization: $0%": [
   null,
   "磁盘使用率: $0%"
+ ],
+ "Disks": [
+  null,
+  "磁盘"
  ],
  "Display name": [
   null,
@@ -527,9 +543,9 @@ return plural;
   null,
   "GCE 持久盘"
  ],
- "General": [
+ "GiB": [
   null,
-  "通用"
+  ""
  ],
  "Git Repository": [
   null,
@@ -651,6 +667,10 @@ return plural;
   null,
   "标签"
  ],
+ "Labels:": [
+  null,
+  ""
+ ],
  "Last Heartbeat": [
   null,
   "最近的保活心跳"
@@ -715,6 +735,10 @@ return plural;
   null,
   "Memory 使用率: $0%"
  ],
+ "Memory:": [
+  null,
+  "内存："
+ ],
  "Message": [
   null,
   "消息"
@@ -734,6 +758,10 @@ return plural;
  "Mount Location": [
   null,
   "挂载位置"
+ ],
+ "N/A": [
+  null,
+  ""
  ],
  "NFS": [
   null,
@@ -786,6 +814,10 @@ return plural;
  "No Volume Bound": [
   null,
   "未绑定卷"
+ ],
+ "No disks defined for this VM": [
+  null,
+  "没有为该虚拟机定义磁盘"
  ],
  "No groups are present.": [
   null,
@@ -843,6 +875,10 @@ return plural;
   null,
   "节点"
  ],
+ "Node:": [
+  null,
+  ""
+ ],
  "Nodes": [
   null,
   "节点"
@@ -854,6 +890,10 @@ return plural;
  "None": [
   null,
   "无"
+ ],
+ "Not Available": [
+  null,
+  ""
  ],
  "Not Ready": [
   null,
@@ -1011,6 +1051,10 @@ return plural;
   null,
   "容器舱选择器"
  ],
+ "Pod:": [
+  null,
+  ""
+ ],
  "Pods": [
   null,
   "容器舱"
@@ -1106,6 +1150,10 @@ return plural;
  "Read only from multiple nodes": [
   null,
   "仅从多节点读"
+ ],
+ "Readonly": [
+  null,
+  "只读"
  ],
  "Ready": [
   null,
@@ -1370,6 +1418,10 @@ return plural;
  "Sorry, I don't know how to modify this volume": [
   null,
   "抱歉，不知道如何修改该卷"
+ ],
+ "Source": [
+  null,
+  "源"
  ],
  "State": [
   null,
@@ -1683,6 +1735,10 @@ return plural;
   null,
   ""
  ],
+ "iSCSI": [
+  null,
+  ""
+ ],
  "idle": [
   null,
   "休眠的"
@@ -1754,6 +1810,10 @@ return plural;
  "user": [
   null,
   ""
+ ],
+ "vCPUs:": [
+  null,
+  "虚拟 CPU："
  ],
  "vhostuser": [
   null,

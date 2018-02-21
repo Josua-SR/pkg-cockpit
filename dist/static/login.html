@@ -457,7 +457,7 @@
         id("user-group").style.display = in_conversation ? "none" : "block";
         id("password-group").style.display = in_conversation ? "none" : "block";
         id("conversation-group").style.display = in_conversation ? "block" : "none";
-        id("login-button-text").textContent = "Log In";
+        id("login-button-text").textContent = _("Log In");
         id("login-password-input").value = '';
 
         if (need_host()) {
@@ -483,7 +483,7 @@
     function show_login() {
         /* Show the login screen */
         id("server-name").textContent = document.title;
-        login_note("Log in with your server user account.");
+        login_note(_("Log in with your server user account."));
         id("login-user-input").addEventListener("keydown", function(e) {
             login_failure(null);
             if (e.which == 13)
@@ -1397,9 +1397,10 @@ body {
 
     .login-pf #badge {
         max-width: 33vw;
-        margin: 3rem auto 0;
+        margin: 3rem auto;
         height: 8rem;
         padding: 0;
+        background-position: 50% 100%;
     }
 
     /* Brand container */
@@ -1415,6 +1416,7 @@ body {
     .login-pf #brand {
         position: static;
         font-size: inherit;
+        background-position: 50% 50%;
     }
 
     .details {
@@ -1469,8 +1471,8 @@ body {
               </div>
               <div class="col-sm-2 col-md-2"></div>
               <div class="col-sm-10 col-md-10">
-                <label class="control-label">
-                    <input type="checkbox" class="form-control" id="authorized-input" translate>Reuse my password for privileged tasks</label>
+                <input type="checkbox" class="form-control" id="authorized-input">
+                <label for="authorized-input" class="control-label" translate>Reuse my password for privileged tasks</label>
               </div>
             </div>
 

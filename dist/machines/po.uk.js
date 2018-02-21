@@ -153,11 +153,11 @@ return plural;
  ],
  "Create New VM": [
   null,
-  ""
+  "Створити віртуальну машину"
  ],
  "Create New Virtual Machine": [
   null,
-  ""
+  "Створити віртуальну машину"
  ],
  "Delete": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "GiB": [
   null,
-  ""
+  "ГіБ"
  ],
  "Graphics Console (VNC)": [
   null,
@@ -225,11 +225,11 @@ return plural;
  ],
  "INSTALL VM action failed": [
   null,
-  ""
+  "Помилка під час дії зі встановлення ВМ"
  ],
  "Immediately Start VM": [
   null,
-  ""
+  "Негайно запустити ВМ"
  ],
  "Install": [
   null,
@@ -237,19 +237,19 @@ return plural;
  ],
  "Installation Source": [
   null,
-  ""
+  "Джерело для встановлення"
  ],
  "Installation Source Type": [
   null,
-  ""
+  "Тип джерела для встановлення"
  ],
  "Installation Source should not be empty": [
   null,
-  ""
+  "Запис джерела для встановлення має бути непорожнім"
  ],
  "Invalid filename": [
   null,
-  ""
+  "Некоректна назва файла"
  ],
  "Launch Remote Viewer": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "Memory should be positive number": [
   null,
-  ""
+  "Об'єм пам'яті має бути додатним числом"
  ],
  "Memory:": [
   null,
@@ -305,11 +305,11 @@ return plural;
  ],
  "Name should not be empty": [
   null,
-  ""
+  "Назва має бути непорожньою"
  ],
  "Name should not consist of empty characters only": [
   null,
-  ""
+  "Назва не може складатися лише із порожніх символів"
  ],
  "Networks": [
   null,
@@ -341,7 +341,7 @@ return plural;
  ],
  "OS Vendor": [
   null,
-  ""
+  "Виробник ОС"
  ],
  "Ok": [
   null,
@@ -357,7 +357,7 @@ return plural;
  ],
  "Path to ISO file on host's file system": [
   null,
-  ""
+  "Шлях до ISO у файловій системі основної системи"
  ],
  "Path to file": [
   null,
@@ -397,7 +397,7 @@ return plural;
  ],
  "Remote URL": [
   null,
-  ""
+  "Віддалена адреса"
  ],
  "Restart": [
   null,
@@ -449,7 +449,7 @@ return plural;
  ],
  "Source should start with http, ftp or nfs protocol": [
   null,
-  ""
+  "Адреса джерела має починатися із назви протоколу — http, ftp або nfs"
  ],
  "Start the VM to see disk statistics.": [
   null,
@@ -461,11 +461,11 @@ return plural;
  ],
  "Storage Size": [
   null,
-  ""
+  "Розмір зберігання"
  ],
  "Storage Size should not be negative number": [
   null,
-  ""
+  "Розмір зберігання має бути невід'ємним числом"
  ],
  "System": [
   null,

@@ -73,7 +73,7 @@ return plural;
  ],
  "Account Expiration": [
   null,
-  ""
+  "アカウントの有効期限"
  ],
  "Account not available or cannot be edited.": [
   null,

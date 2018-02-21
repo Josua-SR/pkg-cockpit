@@ -363,6 +363,10 @@ return plural;
   null,
   "修改系统时间"
  ],
+ "Class": [
+  null,
+  ""
+ ],
  "Close": [
   null,
   "关闭"
@@ -663,6 +667,10 @@ return plural;
   null,
   "分钟"
  ],
+ "Model": [
+  null,
+  ""
+ ],
  "Monday": [
   null,
   "星期一"
@@ -740,6 +748,10 @@ return plural;
   "操作系统"
  ],
  "Other": [
+  null,
+  ""
+ ],
+ "PCI": [
   null,
   ""
  ],
@@ -935,6 +947,10 @@ return plural;
   null,
   "由于 $0"
  ],
+ "Slot": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   "套接字"
@@ -1098,6 +1114,10 @@ return plural;
  "User": [
   null,
   "用户"
+ ],
+ "Vendor": [
+  null,
+  ""
  ],
  "Version": [
   null,

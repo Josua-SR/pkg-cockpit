@@ -123,11 +123,11 @@ return plural;
  ],
  "Advanced TCA": [
   null,
-  ""
+  "TCA avanzado"
  ],
  "All In One": [
   null,
-  ""
+  "Todo En Uno"
  ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
@@ -147,15 +147,15 @@ return plural;
  ],
  "Blade": [
   null,
-  ""
+  "Espada"
  ],
  "Blade enclosure": [
   null,
-  ""
+  "Recinto de la espada"
  ],
  "Bus Expansion Chassis": [
   null,
-  ""
+  "Chasis de Expansión de Bus"
  ],
  "CPU": [
   null,
@@ -199,8 +199,8 @@ return plural;
  ],
  "Combined usage of $0 CPU core": [
   "Combined usage of $0 CPU cores",
-  "",
-  ""
+  "Uso combinado de núcleo de CPU $0",
+  "Uo combinado de núcleos de CPU $0"
  ],
  "Command": [
   null,
@@ -224,7 +224,7 @@ return plural;
  ],
  "Compact PCI": [
   null,
-  ""
+  "PCI Compacto"
  ],
  "Configure storage...": [
   null,
@@ -260,7 +260,7 @@ return plural;
  ],
  "Convertible": [
   null,
-  ""
+  "Convertible"
  ],
  "Could not add all disks": [
   null,
@@ -300,11 +300,11 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Escritorio"
  ],
  "Detachable": [
   null,
-  ""
+  "Desmontable"
  ],
  "Details": [
   null,
@@ -316,7 +316,7 @@ return plural;
  ],
  "Docking Station": [
   null,
-  ""
+  "Estación de Acoplamiento"
  ],
  "Download": [
   null,

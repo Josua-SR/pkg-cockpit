@@ -97,9 +97,13 @@ return plural;
  ],
  "$0 filesystems can not be made larger.": [
   null,
-  ""
+  "Файлові системи $0 не можна розширювати."
  ],
  "$0 filesystems can not be made smaller.": [
+  null,
+  "Файлові системи $0 не можна звужувати."
+ ],
+ "$0 filesystems can not be resized here.": [
   null,
   ""
  ],
@@ -311,7 +315,7 @@ return plural;
  ],
  "Checking $target": [
   null,
-  ""
+  "Перевіряємо $target"
  ],
  "Checking RAID Device $target": [
   null,
@@ -567,11 +571,11 @@ return plural;
  ],
  "Encrypted volumes can not be resized here.": [
   null,
-  ""
+  "Тут не можна змінювати розмір шифрованих томів."
  ],
  "Encrypted volumes need to be unlocked before they can be resized.": [
   null,
-  ""
+  "Перш ніж можна буде змінювати розмір зашифрованих томів, такі томи слід розблокувати."
  ],
  "Encryption": [
   null,
@@ -659,7 +663,7 @@ return plural;
  ],
  "Grow Logical Volume": [
   null,
-  ""
+  "Збільшити логічний том"
  ],
  "Grow logical size of $0": [
   null,
@@ -979,7 +983,7 @@ return plural;
  ],
  "Physical volumes can not be resized here.": [
   null,
-  ""
+  "Тут не можна змінювати розміри фізичних томів."
  ],
  "Please confirm deletion of $0": [
   null,
@@ -1131,7 +1135,7 @@ return plural;
  ],
  "Repairing $target": [
   null,
-  ""
+  "Відновлюємо $target"
  ],
  "Resizing $target": [
   null,
@@ -1171,11 +1175,11 @@ return plural;
  ],
  "Shrink": [
   null,
-  ""
+  "Стиснути"
  ],
  "Shrink Logical Volume": [
   null,
-  ""
+  "Стиснути логічний том"
  ],
  "Size": [
   null,
@@ -1231,19 +1235,19 @@ return plural;
  ],
  "Stop Device": [
   null,
-  ""
+  "Зупинити пристрій"
  ],
  "Stop Scrubbing": [
   null,
   "Зупинити витирання"
  ],
+ "Stop and Unmount": [
+  null,
+  ""
+ ],
  "Stop and remove": [
   null,
   "Зупинити і вилучити"
- ],
- "Stop and unmount": [
-  null,
-  "Зупинити і демонтувати"
  ],
  "Stopping RAID Device $target": [
   null,
@@ -1371,7 +1375,7 @@ return plural;
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
-  ""
+  "Перш ніж розмір цього тому можна буде змінювати, його слід активувати."
  ],
  "Transfer data asynchronously": [
   null,
@@ -1439,7 +1443,7 @@ return plural;
  ],
  "Unrecognized data can not be made smaller here.": [
   null,
-  ""
+  "Тут не можна зменшити об'єм нерозпізнаних даних."
  ],
  "Unsupported volume": [
   null,
@@ -1479,7 +1483,7 @@ return plural;
  ],
  "VDO backing devices can not be made smaller": [
   null,
-  ""
+  "Пристрої резервного копіювання VDO не можна звужувати"
  ],
  "VFAT - Compatible with all systems and devices": [
   null,

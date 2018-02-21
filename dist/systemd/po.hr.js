@@ -375,6 +375,10 @@ return plural;
   null,
   ""
  ],
+ "Class": [
+  null,
+  ""
+ ],
  "Close": [
   null,
   "Zatvori"
@@ -675,6 +679,10 @@ return plural;
   null,
   ""
  ],
+ "Model": [
+  null,
+  ""
+ ],
  "Monday": [
   null,
   ""
@@ -752,6 +760,10 @@ return plural;
   ""
  ],
  "Other": [
+  null,
+  ""
+ ],
+ "PCI": [
   null,
   ""
  ],
@@ -947,6 +959,10 @@ return plural;
   null,
   ""
  ],
+ "Slot": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   ""
@@ -1110,6 +1126,10 @@ return plural;
   ""
  ],
  "User": [
+  null,
+  ""
+ ],
+ "Vendor": [
   null,
   ""
  ],

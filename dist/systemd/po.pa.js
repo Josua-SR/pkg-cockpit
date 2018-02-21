@@ -369,6 +369,10 @@ return plural;
   null,
   ""
  ],
+ "Class": [
+  null,
+  ""
+ ],
  "Close": [
   null,
   ""
@@ -669,6 +673,10 @@ return plural;
   null,
   ""
  ],
+ "Model": [
+  null,
+  ""
+ ],
  "Monday": [
   null,
   ""
@@ -746,6 +754,10 @@ return plural;
   ""
  ],
  "Other": [
+  null,
+  ""
+ ],
+ "PCI": [
   null,
   ""
  ],
@@ -941,6 +953,10 @@ return plural;
   null,
   "$0 ਤੋਂ"
  ],
+ "Slot": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   "ਸਾਕਟ"
@@ -1105,6 +1121,10 @@ return plural;
  "User": [
   null,
   "ਵਰਤੋਂਕਾਰ"
+ ],
+ "Vendor": [
+  null,
+  ""
  ],
  "Version": [
   null,

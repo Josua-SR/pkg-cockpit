@@ -118,8 +118,13 @@ class Browser:
         if cookie:
             self.cdp.invoke("Network.setCookie", **cookie)
         self.switch_to_top()
-        self.cdp.invoke("Page.navigate", url=href)
-        self.expect_load()
+        if opts.trace:
+            print("-> open " + href)
+        # Page.navigate() already waits for the page to load, but not for loadEventFired; set up waiting for that
+        # first to avoid a race: calling expect_load() after Page.navigate() might miss the event
+        self.cdp.command("pr = expectLoad(%i); client.Page.navigate({ url: '%s' }).then(() => pr)" % (self.cdp.timeout * 1000, href))
+        if opts.trace:
+            print("<- open " + href + " done")
 
     def reload(self, ignore_cache=False):
         self.switch_to_top()
@@ -130,10 +135,7 @@ class Browser:
     def expect_load(self):
         if opts.trace:
             print("-> expect_load")
-        self.cdp.command('new Promise((resolve, reject) => { \
-            let tm = setTimeout( () => reject("timed out waiting for page load"), %i ); \
-            client.Page.loadEventFired( () => { clearTimeout(tm); resolve() }); \
-        })' % (self.cdp.timeout * 1000))
+        self.cdp.command('expectLoad(%i)' % (self.cdp.timeout * 1000))
         if opts.trace:
             print("<- expect_load done")
 
@@ -166,7 +168,7 @@ class Browser:
         raise Error("%s(%s): %s" % (func, arg, msg))
 
     def eval_js(self, code, no_trace=False):
-        result = self.cdp.invoke("Runtime.evaluate", expression="ph_wrap_promise(%s)" % code, trace=code,
+        result = self.cdp.invoke("Runtime.evaluate", expression=code, trace=code,
                                  silent=False, awaitPromise=True, returnByValue=True, no_trace=no_trace)
         if "exceptionDetails" in result:
             self.raise_cdp_exception("eval_js", code, result["exceptionDetails"])
@@ -702,6 +704,8 @@ class MachineCase(unittest.TestCase):
         "(audit: )?type=1404 audit.*",
         # happens on Atomic (https://bugzilla.redhat.com/show_bug.cgi?id=1298157)
         "(audit: )?type=1400 audit.*: avc:  granted .*",
+        # HACK: affects *all* tests, impractical for a naughty (https://bugzilla.redhat.com/show_bug.cgi?id=1461893)
+        "type=1401 audit(.*): op=security_compute_av reason=bounds .* tclass=process.*",
 
         # https://bugzilla.redhat.com/show_bug.cgi?id=1242656
         "(audit: )?type=1400 .*denied.*comm=\"cockpit-ws\".*name=\"unix\".*dev=\"proc\".*",
@@ -774,7 +778,8 @@ class MachineCase(unittest.TestCase):
         machine = machine or self.machine
         syslog_ids = [ "cockpit-ws", "cockpit-bridge" ]
         messages = machine.journal_messages(syslog_ids, 5)
-        messages += machine.audit_messages("14") # 14xx is selinux
+        if "TEST_AUDIT_NO_SELINUX" not in os.environ:
+            messages += machine.audit_messages("14") # 14xx is selinux
         all_found = True
         first = None
         for m in messages:
@@ -1050,7 +1055,7 @@ class TapRunner(object):
         # Write the output
         sys.stdout.write(output)
 
-        if "# SKIP " in output:
+        if "# SKIP " in output or "# RETRY" in output:
             failed = 0
 
         # Whether we should retry the test or not

@@ -369,6 +369,10 @@ return plural;
   null,
   ""
  ],
+ "Class": [
+  null,
+  ""
+ ],
  "Close": [
   null,
   "Fermer"
@@ -669,6 +673,10 @@ return plural;
   null,
   ""
  ],
+ "Model": [
+  null,
+  ""
+ ],
  "Monday": [
   null,
   ""
@@ -746,6 +754,10 @@ return plural;
   ""
  ],
  "Other": [
+  null,
+  ""
+ ],
+ "PCI": [
   null,
   ""
  ],
@@ -941,6 +953,10 @@ return plural;
   null,
   "Depuis $0"
  ],
+ "Slot": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   ""
@@ -1105,6 +1121,10 @@ return plural;
  "User": [
   null,
   "Utilisateur"
+ ],
+ "Vendor": [
+  null,
+  ""
  ],
  "Version": [
   null,

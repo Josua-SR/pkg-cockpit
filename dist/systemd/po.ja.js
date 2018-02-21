@@ -281,7 +281,7 @@ return plural;
  ],
  "Advanced TCA": [
   null,
-  ""
+  "高度な TCA"
  ],
  "After": [
   null,
@@ -293,7 +293,7 @@ return plural;
  ],
  "All In One": [
   null,
-  ""
+  "一体型"
  ],
  "Asset Tag": [
   null,
@@ -362,6 +362,10 @@ return plural;
  "Change System Time": [
   null,
   "システム時間の変更"
+ ],
+ "Class": [
+  null,
+  ""
  ],
  "Close": [
   null,
@@ -663,6 +667,10 @@ return plural;
   null,
   "分"
  ],
+ "Model": [
+  null,
+  ""
+ ],
  "Monday": [
   null,
   "月曜日"
@@ -740,6 +748,10 @@ return plural;
   "オペレーティングシステム"
  ],
  "Other": [
+  null,
+  ""
+ ],
+ "PCI": [
   null,
   ""
  ],
@@ -935,6 +947,10 @@ return plural;
   null,
   "$0 以降"
  ],
+ "Slot": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   "ソケット"
@@ -1098,6 +1114,10 @@ return plural;
  "User": [
   null,
   "ユーザー"
+ ],
+ "Vendor": [
+  null,
+  ""
  ],
  "Version": [
   null,

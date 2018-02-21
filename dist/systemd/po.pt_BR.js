@@ -369,6 +369,10 @@ return plural;
   null,
   "Alterar Horário do Sistema"
  ],
+ "Class": [
+  null,
+  ""
+ ],
  "Close": [
   null,
   "Fechar"
@@ -669,6 +673,10 @@ return plural;
   null,
   "Minutos"
  ],
+ "Model": [
+  null,
+  ""
+ ],
  "Monday": [
   null,
   "Segunda-feira"
@@ -746,6 +754,10 @@ return plural;
   "Sistema Operacional"
  ],
  "Other": [
+  null,
+  ""
+ ],
+ "PCI": [
   null,
   ""
  ],
@@ -941,6 +953,10 @@ return plural;
   null,
   "Desde $0"
  ],
+ "Slot": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   "Sockets"
@@ -1105,6 +1121,10 @@ return plural;
  "User": [
   null,
   "Usuário"
+ ],
+ "Vendor": [
+  null,
+  ""
  ],
  "Version": [
   null,

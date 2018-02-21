@@ -99,6 +99,10 @@ return plural;
   null,
   ""
  ],
+ "$0 filesystems can not be resized here.": [
+  null,
+  ""
+ ],
  "$0 hour": [
   "$0 hours",
   "$0 小时"
@@ -1223,11 +1227,11 @@ return plural;
   null,
   "停止擦除"
  ],
- "Stop and remove": [
+ "Stop and Unmount": [
   null,
   ""
  ],
- "Stop and unmount": [
+ "Stop and remove": [
   null,
   ""
  ],

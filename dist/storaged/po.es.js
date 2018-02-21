@@ -95,9 +95,13 @@ return plural;
  ],
  "$0 filesystems can not be made larger.": [
   null,
-  ""
+  "$0 los sistemas de archivos no se pueden hacer más grandes."
  ],
  "$0 filesystems can not be made smaller.": [
+  null,
+  "$0 los sistemas de archivos no se pueden hacer más pequeños."
+ ],
+ "$0 filesystems can not be resized here.": [
   null,
   ""
  ],
@@ -304,7 +308,7 @@ return plural;
  ],
  "Checking $target": [
   null,
-  ""
+  "Comprobando $target"
  ],
  "Checking RAID Device $target": [
   null,
@@ -1230,11 +1234,11 @@ return plural;
   null,
   "Detener Borrado"
  ],
- "Stop and remove": [
+ "Stop and Unmount": [
   null,
   ""
  ],
- "Stop and unmount": [
+ "Stop and remove": [
   null,
   ""
  ],

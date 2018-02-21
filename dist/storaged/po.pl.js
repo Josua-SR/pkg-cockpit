@@ -97,9 +97,13 @@ return plural;
  ],
  "$0 filesystems can not be made larger.": [
   null,
-  ""
+  "Systemy plików $0 nie mogą być powiększane."
  ],
  "$0 filesystems can not be made smaller.": [
+  null,
+  "Systemy plików $0 nie mogą być zmniejszane."
+ ],
+ "$0 filesystems can not be resized here.": [
   null,
   ""
  ],
@@ -311,7 +315,7 @@ return plural;
  ],
  "Checking $target": [
   null,
-  ""
+  "Sprawdzanie $target"
  ],
  "Checking RAID Device $target": [
   null,
@@ -567,11 +571,11 @@ return plural;
  ],
  "Encrypted volumes can not be resized here.": [
   null,
-  ""
+  "Nie można tutaj zmieniać rozmiaru zaszyfrowanych woluminów."
  ],
  "Encrypted volumes need to be unlocked before they can be resized.": [
   null,
-  ""
+  "Zaszyfrowane woluminy muszą zostać odblokowane przed zmianą rozmiaru."
  ],
  "Encryption": [
   null,
@@ -659,7 +663,7 @@ return plural;
  ],
  "Grow Logical Volume": [
   null,
-  ""
+  "Powiększ wolumin logiczny"
  ],
  "Grow logical size of $0": [
   null,
@@ -979,7 +983,7 @@ return plural;
  ],
  "Physical volumes can not be resized here.": [
   null,
-  ""
+  "Nie można tutaj zmieniać rozmiaru woluminów fizycznych."
  ],
  "Please confirm deletion of $0": [
   null,
@@ -1131,7 +1135,7 @@ return plural;
  ],
  "Repairing $target": [
   null,
-  ""
+  "Naprawianie $target"
  ],
  "Resizing $target": [
   null,
@@ -1171,11 +1175,11 @@ return plural;
  ],
  "Shrink": [
   null,
-  ""
+  "Zmniejsz"
  ],
  "Shrink Logical Volume": [
   null,
-  ""
+  "Zmniejsz wolumin logiczny"
  ],
  "Size": [
   null,
@@ -1231,19 +1235,19 @@ return plural;
  ],
  "Stop Device": [
   null,
-  ""
+  "Zatrzymaj urządzenie"
  ],
  "Stop Scrubbing": [
   null,
   "Zatrzymaj kontrolę"
  ],
+ "Stop and Unmount": [
+  null,
+  ""
+ ],
  "Stop and remove": [
   null,
   "Zatrzymaj i usuń"
- ],
- "Stop and unmount": [
-  null,
-  "Zatrzymaj i odmontuj"
  ],
  "Stopping RAID Device $target": [
   null,
@@ -1371,7 +1375,7 @@ return plural;
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
-  ""
+  "Ten wolumin musi zostać aktywowany przed zmianą rozmiaru."
  ],
  "Transfer data asynchronously": [
   null,
@@ -1439,7 +1443,7 @@ return plural;
  ],
  "Unrecognized data can not be made smaller here.": [
   null,
-  ""
+  "Nie można tutaj zmniejszać nieznanych danych."
  ],
  "Unsupported volume": [
   null,
@@ -1479,7 +1483,7 @@ return plural;
  ],
  "VDO backing devices can not be made smaller": [
   null,
-  ""
+  "Urządzenia mechanizmu VDO nie mogą być zmniejszane"
  ],
  "VFAT - Compatible with all systems and devices": [
   null,

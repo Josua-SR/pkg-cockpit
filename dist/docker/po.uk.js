@@ -129,11 +129,11 @@ return plural;
  ],
  "Advanced TCA": [
   null,
-  ""
+  "Розширене TCA"
  ],
  "All In One": [
   null,
-  ""
+  "Усе-в-одному"
  ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
@@ -153,15 +153,15 @@ return plural;
  ],
  "Blade": [
   null,
-  ""
+  "Blade"
  ],
  "Blade enclosure": [
   null,
-  ""
+  "Обгортка Blade"
  ],
  "Bus Expansion Chassis": [
   null,
-  ""
+  "Апаратний блок розширення каналу"
  ],
  "CPU": [
   null,
@@ -231,7 +231,7 @@ return plural;
  ],
  "Compact PCI": [
   null,
-  ""
+  "Компактний PCI"
  ],
  "Configure storage...": [
   null,
@@ -267,7 +267,7 @@ return plural;
  ],
  "Convertible": [
   null,
-  ""
+  "Змінюваний"
  ],
  "Could not add all disks": [
   null,
@@ -307,11 +307,11 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Робоча станція"
  ],
  "Detachable": [
   null,
-  ""
+  "Змінний"
  ],
  "Details": [
   null,
@@ -323,7 +323,7 @@ return plural;
  ],
  "Docking Station": [
   null,
-  ""
+  "Станція заряджання"
  ],
  "Download": [
   null,
@@ -343,7 +343,7 @@ return plural;
  ],
  "Embedded PC": [
   null,
-  ""
+  "Вбудований ПК"
  ],
  "Entrypoint": [
   null,
@@ -375,7 +375,7 @@ return plural;
  ],
  "Expansion Chassis": [
   null,
-  ""
+  "Апаратний блок розширення"
  ],
  "Expose container ports": [
   null,
@@ -407,7 +407,7 @@ return plural;
  ],
  "Hand Held": [
   null,
-  ""
+  "Портативний"
  ],
  "Hard Disk": [
   null,
@@ -463,11 +463,11 @@ return plural;
  ],
  "IoT Gateway": [
   null,
-  ""
+  "Шлюз IoT"
  ],
  "Laptop": [
   null,
-  ""
+  "Переносний ПК"
  ],
  "Link to another container": [
   null,
@@ -487,11 +487,11 @@ return plural;
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "Низькопрофільна робоча станція"
  ],
  "Lunch Box": [
   null,
-  ""
+  "Пусковий комп'ютер"
  ],
  "MAC Address:": [
   null,
@@ -499,7 +499,7 @@ return plural;
  ],
  "Main Server Chassis": [
   null,
-  ""
+  "Апаратний блок основного сервера"
  ],
  "Memory": [
   null,
@@ -519,11 +519,11 @@ return plural;
  ],
  "Mini PC": [
   null,
-  ""
+  "Міні-ПК"
  ],
  "Mini Tower": [
   null,
-  ""
+  "Міні-башточка"
  ],
  "Mount container volumes": [
   null,
@@ -531,7 +531,7 @@ return plural;
  ],
  "Multi-system Chassis": [
   null,
-  ""
+  "Багатосистемний апаратний блок"
  ],
  "Name": [
   null,
@@ -591,7 +591,7 @@ return plural;
  ],
  "Notebook": [
   null,
-  ""
+  "Ноутбук"
  ],
  "Off": [
   null,
@@ -617,7 +617,7 @@ return plural;
  ],
  "Other": [
   null,
-  ""
+  "Інше"
  ],
  "Overview": [
   null,
@@ -625,11 +625,11 @@ return plural;
  ],
  "Peripheral Chassis": [
   null,
-  ""
+  "Периферійний апаратний блок"
  ],
  "Pizza Box": [
   null,
-  ""
+  "З коробку для піци"
  ],
  "Please confirm deletion of $0": [
   null,
@@ -645,7 +645,7 @@ return plural;
  ],
  "Portable": [
   null,
-  ""
+  "Портативний"
  ],
  "Ports": [
   null,
@@ -661,11 +661,11 @@ return plural;
  ],
  "RAID Chassis": [
   null,
-  ""
+  "Апаратний блок RAID"
  ],
  "Rack Mount Chassis": [
   null,
-  ""
+  "Апаратний блок монтування стійок"
  ],
  "ReadOnly": [
   null,
@@ -725,7 +725,7 @@ return plural;
  ],
  "Sealed-case PC": [
   null,
-  ""
+  "ПК з опломбованим корпусом"
  ],
  "Security": [
   null,
@@ -753,7 +753,7 @@ return plural;
  ],
  "Space-saving Computer": [
   null,
-  ""
+  "Компактний комп'ютер"
  ],
  "Start": [
   null,
@@ -773,7 +773,7 @@ return plural;
  ],
  "Stick PC": [
   null,
-  ""
+  "Паличковий ПК"
  ],
  "Stop": [
   null,
@@ -793,11 +793,11 @@ return plural;
  ],
  "Sub Chassis": [
   null,
-  ""
+  "Підблок"
  ],
  "Sub Notebook": [
   null,
-  ""
+  "Підноутбук"
  ],
  "TCP": [
   null,
@@ -805,7 +805,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "Планшет"
  ],
  "Tag": [
   null,
@@ -841,7 +841,7 @@ return plural;
  ],
  "Tower": [
   null,
-  ""
+  "Башточка"
  ],
  "Try again": [
   null,

@@ -209,11 +209,11 @@ return plural;
  ],
  "Create New VM": [
   null,
-  ""
+  "Utwórz nową maszynę wirtualną"
  ],
  "Create New Virtual Machine": [
   null,
-  ""
+  "Utwórz nową maszynę wirtualną"
  ],
  "Create VM": [
   null,
@@ -289,7 +289,7 @@ return plural;
  ],
  "GiB": [
   null,
-  ""
+  "GiB"
  ],
  "Graphics Console (VNC)": [
   null,
@@ -317,11 +317,11 @@ return plural;
  ],
  "INSTALL VM action failed": [
   null,
-  ""
+  "Działanie INSTALL VM się nie powiodło"
  ],
  "Immediately Start VM": [
   null,
-  ""
+  "Od razu uruchom maszynę wirtualną"
  ],
  "Install": [
   null,
@@ -329,19 +329,19 @@ return plural;
  ],
  "Installation Source": [
   null,
-  ""
+  "Źródło instalacji"
  ],
  "Installation Source Type": [
   null,
-  ""
+  "Typ źródła instalacji"
  ],
  "Installation Source should not be empty": [
   null,
-  ""
+  "Źródło instalacji nie może być puste"
  ],
  "Invalid filename": [
   null,
-  ""
+  "Nieprawidłowa nazwa pliku"
  ],
  "Launch Remote Viewer": [
   null,
@@ -381,7 +381,7 @@ return plural;
  ],
  "Memory should be positive number": [
   null,
-  ""
+  "Pamięć musi być liczbą dodatnią"
  ],
  "Memory:": [
   null,
@@ -409,11 +409,11 @@ return plural;
  ],
  "Name should not be empty": [
   null,
-  ""
+  "Nazwa nie może być pusta"
  ],
  "Name should not consist of empty characters only": [
   null,
-  ""
+  "Nazwa nie może składać się tylko z pustych znaków"
  ],
  "Networks": [
   null,
@@ -461,7 +461,7 @@ return plural;
  ],
  "OS Vendor": [
   null,
-  ""
+  "Producent systemu operacyjnego"
  ],
  "Ok": [
   null,
@@ -481,7 +481,7 @@ return plural;
  ],
  "Path to ISO file on host's file system": [
   null,
-  ""
+  "Ścieżka do pliku ISO w systemie plików gospodarza"
  ],
  "Path to file": [
   null,
@@ -565,7 +565,7 @@ return plural;
  ],
  "Remote URL": [
   null,
-  ""
+  "Zdalny adres URL"
  ],
  "Restart": [
   null,
@@ -641,7 +641,7 @@ return plural;
  ],
  "Source should start with http, ftp or nfs protocol": [
   null,
-  ""
+  "Źródło musi zaczynać się od protokołu http, ftp lub nfs"
  ],
  "Start the VM to see disk statistics.": [
   null,
@@ -661,11 +661,11 @@ return plural;
  ],
  "Storage Size": [
   null,
-  ""
+  "Rozmiar urządzenia do przechowywania danych"
  ],
  "Storage Size should not be negative number": [
   null,
-  ""
+  "Rozmiar urządzenia do przechowywania danych nie może być liczbą ujemną"
  ],
  "Suspend": [
   null,
