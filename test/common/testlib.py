@@ -56,6 +56,7 @@ __all__ = (
     'Browser',
     'MachineCase',
     'skipImage',
+    'skipPackage',
     'Error',
 
     'sit',
@@ -118,13 +119,8 @@ class Browser:
         if cookie:
             self.cdp.invoke("Network.setCookie", **cookie)
         self.switch_to_top()
-        if opts.trace:
-            print("-> open " + href)
-        # Page.navigate() already waits for the page to load, but not for loadEventFired; set up waiting for that
-        # first to avoid a race: calling expect_load() after Page.navigate() might miss the event
-        self.cdp.command("pr = expectLoad(%i); client.Page.navigate({ url: '%s' }).then(() => pr)" % (self.cdp.timeout * 1000, href))
-        if opts.trace:
-            print("<- open " + href + " done")
+        self.cdp.invoke("Page.navigate", url=href)
+        self.expect_load()
 
     def reload(self, ignore_cache=False):
         self.switch_to_top()
@@ -225,7 +221,10 @@ class Browser:
 
     def key_press(self, keys):
         for k in keys:
-            self.cdp.invoke("Input.dispatchKeyEvent", type="char", text=k)
+            if k.isalnum():
+                self.cdp.invoke("Input.dispatchKeyEvent", type="char", text=k, key=k)
+            else:
+                self.cdp.invoke("Input.dispatchKeyEvent", type="char", text=k)
 
     def wait_timeout(self, timeout):
         browser = self
@@ -853,6 +852,14 @@ def skipImage(reason, *args):
     if testvm.DEFAULT_IMAGE in args:
         return unittest.skip("{0}: {1}".format(testvm.DEFAULT_IMAGE, reason))
     return lambda func: func
+
+def skipPackage(*args):
+    packages_env = os.environ.get("TEST_SKIP_PACKAGES","").split()
+    for package in args:
+        if package in packages_env:
+            return unittest.skip("{0} is excluded in $TEST_SKIP_PACKAGES".format(package))
+    return lambda func: func
+
 
 class TestResult(tap.TapResult):
     def __init__(self, stream, descriptions, verbosity):

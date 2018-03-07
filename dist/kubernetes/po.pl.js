@@ -673,7 +673,7 @@ return plural;
  ],
  "Labels:": [
   null,
-  ""
+  "Etykiety:"
  ],
  "Last Heartbeat": [
   null,
@@ -765,7 +765,7 @@ return plural;
  ],
  "N/A": [
   null,
-  ""
+  "Nie dotyczy"
  ],
  "NFS": [
   null,
@@ -881,7 +881,7 @@ return plural;
  ],
  "Node:": [
   null,
-  ""
+  "Węzeł:"
  ],
  "Nodes": [
   null,
@@ -897,7 +897,7 @@ return plural;
  ],
  "Not Available": [
   null,
-  ""
+  "Niedostępne"
  ],
  "Not Ready": [
   null,
@@ -1057,7 +1057,7 @@ return plural;
  ],
  "Pod:": [
   null,
-  ""
+  "Pojemnik:"
  ],
  "Pods": [
   null,
@@ -1741,7 +1741,7 @@ return plural;
  ],
  "iSCSI": [
   null,
-  ""
+  "iSCSI"
  ],
  "idle": [
   null,

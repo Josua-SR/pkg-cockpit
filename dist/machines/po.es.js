@@ -209,7 +209,7 @@ return plural;
  ],
  "GiB": [
   null,
-  ""
+  "GiB"
  ],
  "Graphics Console (VNC)": [
   null,
@@ -225,11 +225,11 @@ return plural;
  ],
  "INSTALL VM action failed": [
   null,
-  ""
+  "INSTALL VM acción fallada"
  ],
  "Immediately Start VM": [
   null,
-  ""
+  "Iniciar Inmediatamente VM"
  ],
  "Install": [
   null,
@@ -237,19 +237,19 @@ return plural;
  ],
  "Installation Source": [
   null,
-  ""
+  "Fuente de la Instalación"
  ],
  "Installation Source Type": [
   null,
-  ""
+  "Tipo de Fuente de Instalación"
  ],
  "Installation Source should not be empty": [
   null,
-  ""
+  "La Fuente de Instalación no debería estar vacía"
  ],
  "Invalid filename": [
   null,
-  ""
+  "Nobre de fichero no válido"
  ],
  "Launch Remote Viewer": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "Memory should be positive number": [
   null,
-  ""
+  "La memoria debería ser un número positivo"
  ],
  "Memory:": [
   null,
@@ -305,11 +305,11 @@ return plural;
  ],
  "Name should not be empty": [
   null,
-  ""
+  "El nombre no debería estar vacío"
  ],
  "Name should not consist of empty characters only": [
   null,
-  ""
+  "El nombre no debería constar solo de caracteres vacíos"
  ],
  "Networks": [
   null,

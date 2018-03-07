@@ -313,27 +313,27 @@ return plural;
  ],
  "BIOS": [
   null,
-  ""
+  "BIOS"
  ],
  "BIOS date": [
   null,
-  ""
+  "BIOS の日付"
  ],
  "BIOS version": [
   null,
-  ""
+  "BIOS のバージョン"
  ],
  "Blade": [
   null,
-  ""
+  "ブレード"
  ],
  "Blade enclosure": [
   null,
-  ""
+  "ブレードエンクロージャー"
  ],
  "Bus Expansion Chassis": [
   null,
-  ""
+  "バス拡張シャーシ"
  ],
  "CPU": [
   null,
@@ -365,7 +365,7 @@ return plural;
  ],
  "Class": [
   null,
-  ""
+  "クラス"
  ],
  "Close": [
   null,
@@ -377,19 +377,19 @@ return plural;
  ],
  "Compact PCI": [
   null,
-  ""
+  "PCI の圧縮"
  ],
  "Condition $0=$1 was not met": [
   null,
-  ""
+  "条件 $0=$1 を満たしていませんでした。"
  ],
  "Condition failed": [
   null,
-  ""
+  "条件が満たされませんでした。"
  ],
  "Convertible": [
   null,
-  ""
+  "変換可能"
  ],
  "Create Timer": [
   null,
@@ -413,11 +413,11 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "デスクトップ"
  ],
  "Detachable": [
   null,
-  ""
+  "割り当て解除可能"
  ],
  "Disable": [
   null,
@@ -433,7 +433,7 @@ return plural;
  ],
  "Docking Station": [
   null,
-  ""
+  "ドッキングステーション"
  ],
  "Domain": [
   null,
@@ -445,7 +445,7 @@ return plural;
  ],
  "Embedded PC": [
   null,
-  ""
+  "組み込み PC"
  ],
  "Enable": [
   null,
@@ -473,7 +473,7 @@ return plural;
  ],
  "Expansion Chassis": [
   null,
-  ""
+  "拡張シャーシ"
  ],
  "Free": [
   null,
@@ -497,7 +497,7 @@ return plural;
  ],
  "Hand Held": [
   null,
-  ""
+  "ハンドヘルド"
  ],
  "Hardware": [
   null,
@@ -505,7 +505,7 @@ return plural;
  ],
  "Hardware Information": [
   null,
-  ""
+  "ハードウェア情報"
  ],
  "Host Name": [
   null,
@@ -561,7 +561,7 @@ return plural;
  ],
  "IoT Gateway": [
   null,
-  ""
+  "IoT ゲートウェイ"
  ],
  "Journal": [
   null,
@@ -581,7 +581,7 @@ return plural;
  ],
  "Laptop": [
   null,
-  ""
+  "ラップトップ"
  ],
  "Last 24 hours": [
   null,
@@ -613,11 +613,11 @@ return plural;
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "低プロファイルデスクトップ"
  ],
  "Lunch Box": [
   null,
-  ""
+  "Lunch Box"
  ],
  "Machine ID": [
   null,
@@ -629,7 +629,7 @@ return plural;
  ],
  "Main Server Chassis": [
   null,
-  ""
+  "メインサーバーシャーシ"
  ],
  "Manually": [
   null,
@@ -653,11 +653,11 @@ return plural;
  ],
  "Mini PC": [
   null,
-  ""
+  "ミニ PC"
  ],
  "Mini Tower": [
   null,
-  ""
+  "ミニタワー"
  ],
  "Minute needs to be a number between 0-59": [
   null,
@@ -669,7 +669,7 @@ return plural;
  ],
  "Model": [
   null,
-  ""
+  "モデル"
  ],
  "Monday": [
   null,
@@ -677,7 +677,7 @@ return plural;
  ],
  "Multi-system Chassis": [
   null,
-  ""
+  "マルチシステムシャーシ"
  ],
  "NTP Server": [
   null,
@@ -713,7 +713,7 @@ return plural;
  ],
  "Not authorized to upload-report": [
   null,
-  "このシステム上のソフトウェアを更新する権限がありません"
+  "upload-report の権限がありません"
  ],
  "Not synchronized": [
   null,
@@ -725,7 +725,7 @@ return plural;
  ],
  "Notebook": [
   null,
-  ""
+  "ノートブック"
  ],
  "Off": [
   null,
@@ -737,7 +737,7 @@ return plural;
  ],
  "Only Problems": [
   null,
-  ""
+  "問題のみ"
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
@@ -749,11 +749,11 @@ return plural;
  ],
  "Other": [
   null,
-  ""
+  "その他"
  ],
  "PCI": [
   null,
-  ""
+  "PCI"
  ],
  "Paths": [
   null,
@@ -765,15 +765,15 @@ return plural;
  ],
  "Peripheral Chassis": [
   null,
-  ""
+  "周辺機器シャーシ"
  ],
  "Pizza Box": [
   null,
-  ""
+  "Pizza Box"
  ],
  "Portable": [
   null,
-  ""
+  "ポータブル"
  ],
  "Power Options": [
   null,
@@ -793,31 +793,31 @@ return plural;
  ],
  "Problem details": [
   null,
-  ""
+  "問題の詳細"
  ],
  "Problem info": [
   null,
-  ""
+  "問題の情報"
  ],
  "Problems, Errors": [
   null,
-  ""
+  "問題、エラー"
  ],
  "Problems, Errors, Warnings": [
   null,
-  ""
+  "問題、エラー、警告"
  ],
  "Problems, Errors, Warnings, Notices": [
   null,
-  ""
+  "問題、エラー、警告、注記"
  ],
  "RAID Chassis": [
   null,
-  ""
+  "RAID シャーシ"
  ],
  "Rack Mount Chassis": [
   null,
-  ""
+  "ラックマウントシャーシ"
  ],
  "Real Host Name": [
   null,
@@ -825,7 +825,7 @@ return plural;
  ],
  "Real host name can only contain lower-case characters, digits, dashes, and periods (with populated subdomains)": [
   null,
-  "実際のホスト名には小文字、数字、ダッシュ、およびピリオドのみを含めることができます (入力されたサブドメインを含む)。"
+  "実際のホスト名には小文字、数字、ダッシュ、およびピリオドのみを使用できます (入力されたサブドメインを含む)。"
  ],
  "Real host name must be 64 characters or less": [
   null,
@@ -865,19 +865,19 @@ return plural;
  ],
  "Report": [
   null,
-  ""
+  "レポート"
  ],
  "Reported": [
   null,
-  ""
+  "報告済み"
  ],
  "Reporter 'reporter-ureport' not found.": [
   null,
-  ""
+  "レポーターの 'reporter-ureport' が見つかりませんでした。"
  ],
  "Reporting was unsucessful. Try running `reporter-ureport -d ": [
   null,
-  ""
+  "レポートは成功しませんでした。次を試してください: `reporter-ureport -d"
  ],
  "Reset": [
   null,
@@ -901,7 +901,7 @@ return plural;
  ],
  "Sealed-case PC": [
   null,
-  ""
+  "シールドケース PC"
  ],
  "Seconds": [
   null,
@@ -933,7 +933,7 @@ return plural;
  ],
  "Severity": [
   null,
-  "Security"
+  "重大度"
  ],
  "Show fingerprints": [
   null,
@@ -949,7 +949,7 @@ return plural;
  ],
  "Slot": [
   null,
-  ""
+  "スロット"
  ],
  "Sockets": [
   null,
@@ -957,7 +957,7 @@ return plural;
  ],
  "Space-saving Computer": [
   null,
-  ""
+  "省スペースコンピューター"
  ],
  "Specific Time": [
   null,
@@ -977,7 +977,7 @@ return plural;
  ],
  "Stick PC": [
   null,
-  ""
+  "スティッキー PC"
  ],
  "Stop": [
   null,
@@ -989,11 +989,11 @@ return plural;
  ],
  "Sub Chassis": [
   null,
-  ""
+  "サブシャーシ"
  ],
  "Sub Notebook": [
   null,
-  ""
+  "サブノートブック"
  ],
  "Sunday": [
   null,
@@ -1017,7 +1017,7 @@ return plural;
  ],
  "System Information": [
   null,
-  ""
+  "システム情報"
  ],
  "System Services": [
   null,
@@ -1029,7 +1029,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "タブレット"
  ],
  "Targets": [
   null,
@@ -1049,7 +1049,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to shutdown or restart this server": [
   null,
-  "ユーザー <b>$0</b> はサーバーを管理することを許可されていません"
+  "ユーザー <b>$0</b> は、このサーバーをシャットダウンまたは再起動することを許可されていません"
  ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
@@ -1081,7 +1081,7 @@ return plural;
  ],
  "Tower": [
   null,
-  ""
+  "タワー"
  ],
  "Trying to synchronize with {{Server}}": [
   null,
@@ -1105,7 +1105,7 @@ return plural;
  ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",
-  ""
+  "$0 CPU コアの使用率"
  ],
  "Used": [
   null,
@@ -1117,7 +1117,7 @@ return plural;
  ],
  "Vendor": [
   null,
-  ""
+  "ベンダー"
  ],
  "Version": [
   null,
@@ -1149,7 +1149,7 @@ return plural;
  ],
  "of $0 CPU core": [
   "of $0 CPU cores",
-  ""
+  "$0 CPU コアの"
  ],
  "unknown": [
   null,

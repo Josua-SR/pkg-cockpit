@@ -547,7 +547,7 @@ return plural;
  ],
  "GiB": [
   null,
-  ""
+  "GiB"
  ],
  "Git Repository": [
   null,
@@ -671,7 +671,7 @@ return plural;
  ],
  "Labels:": [
   null,
-  ""
+  "Etiquetas:"
  ],
  "Last Heartbeat": [
   null,
@@ -763,7 +763,7 @@ return plural;
  ],
  "N/A": [
   null,
-  ""
+  "N/A"
  ],
  "NFS": [
   null,
@@ -863,7 +863,7 @@ return plural;
  ],
  "No virtual machines": [
   null,
-  ""
+  "Sin máquinas virtuales"
  ],
  "No volumes are present.": [
   null,
@@ -879,7 +879,7 @@ return plural;
  ],
  "Node:": [
   null,
-  ""
+  "Nodo:"
  ],
  "Nodes": [
   null,

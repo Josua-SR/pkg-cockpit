@@ -245,7 +245,7 @@ return plural;
  ],
  "Ceph Monitors": [
   null,
-  ""
+  "Ceph monitory"
  ],
  "Change": [
   null,
@@ -257,7 +257,7 @@ return plural;
  ],
  "Change image stream": [
   null,
-  "Změnit stream obrazu"
+  "Změnit tok obrazu"
  ],
  "Change project": [
   null,
@@ -269,15 +269,15 @@ return plural;
  ],
  "Claim": [
   null,
-  ""
+  "Nárok"
  ],
  "Claim Name": [
   null,
-  ""
+  "Název nároku"
  ],
  "Client Certificate": [
   null,
-  ""
+  "Klientský certifikát"
  ],
  "Cluster": [
   null,
@@ -289,11 +289,11 @@ return plural;
  ],
  "Configure Flannel networking": [
   null,
-  ""
+  "Konfigurace sítě Flanel"
  ],
  "Configure Kubelet and Proxy": [
   null,
-  ""
+  "Konfigurace Kubelet a Proxy"
  ],
  "Connect": [
   null,
@@ -333,15 +333,15 @@ return plural;
  ],
  "Could not list services": [
   null,
-  ""
+  "Služby nelze zobrazit"
  ],
  "Couldn't connect to server": [
   null,
-  ""
+  "Nelze se připojit k serveru"
  ],
  "Couldn't find running API server": [
   null,
-  ""
+  "Nelze najít běžící server API"
  ],
  "Count:": [
   null,
@@ -549,7 +549,7 @@ return plural;
  ],
  "GiB": [
   null,
-  ""
+  "GiB"
  ],
  "Git Repository": [
   null,
@@ -669,7 +669,7 @@ return plural;
  ],
  "Labels": [
   null,
-  ""
+  "Štítky"
  ],
  "Labels:": [
   null,
@@ -765,11 +765,11 @@ return plural;
  ],
  "N/A": [
   null,
-  ""
+  "N/A"
  ],
  "NFS": [
   null,
-  ""
+  "NFS"
  ],
  "NFS Mount": [
   null,
@@ -777,7 +777,7 @@ return plural;
  ],
  "Name": [
   null,
-  ""
+  "Název"
  ],
  "Namespace": [
   null,
@@ -789,7 +789,7 @@ return plural;
  ],
  "Network": [
   null,
-  ""
+  "Síť"
  ],
  "New Group": [
   null,
@@ -865,7 +865,7 @@ return plural;
  ],
  "No virtual machines": [
   null,
-  ""
+  "Žádné virtuálního stroje"
  ],
  "No volumes are present.": [
   null,
@@ -1453,7 +1453,7 @@ return plural;
  ],
  "Tags": [
   null,
-  ""
+  "Tagy"
  ],
  "Target": [
   null,
@@ -1685,7 +1685,7 @@ return plural;
  ],
  "bridge": [
   null,
-  ""
+  "most"
  ],
  "cdrom": [
   null,
@@ -1753,7 +1753,7 @@ return plural;
  ],
  "n/a": [
   null,
-  ""
+  "nic"
  ],
  "network": [
   null,
@@ -1765,7 +1765,7 @@ return plural;
  ],
  "none": [
   null,
-  ""
+  "nic"
  ],
  "paused": [
   null,
@@ -1777,7 +1777,7 @@ return plural;
  ],
  "running": [
   null,
-  ""
+  "běžící"
  ],
  "server": [
   null,
@@ -1793,7 +1793,7 @@ return plural;
  ],
  "shut off": [
   null,
-  ""
+  "vypnuto"
  ],
  "shutdown": [
   null,
@@ -1805,7 +1805,7 @@ return plural;
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "up": [
   null,
@@ -1813,7 +1813,7 @@ return plural;
  ],
  "user": [
   null,
-  ""
+  "uživatel"
  ],
  "vCPUs:": [
   null,

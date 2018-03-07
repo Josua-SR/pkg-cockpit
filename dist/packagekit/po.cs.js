@@ -111,7 +111,7 @@ return plural;
  ],
  "Bugs:": [
   null,
-  ""
+  "Chyby:"
  ],
  "Cancel": [
   null,
@@ -123,7 +123,7 @@ return plural;
  ],
  "Cockpit itself will be updated.": [
   null,
-  ""
+  "Cockpit samotný bude aktualizován."
  ],
  "Details": [
   null,
@@ -179,7 +179,7 @@ return plural;
  ],
  "Name": [
   null,
-  ""
+  "Název"
  ],
  "No updates pending": [
   null,

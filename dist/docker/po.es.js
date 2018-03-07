@@ -336,7 +336,7 @@ return plural;
  ],
  "Embedded PC": [
   null,
-  ""
+  "PC Embebido"
  ],
  "Entrypoint": [
   null,
@@ -368,7 +368,7 @@ return plural;
  ],
  "Expansion Chassis": [
   null,
-  ""
+  "Chasis de Expansión"
  ],
  "Expose container ports": [
   null,
@@ -400,7 +400,7 @@ return plural;
  ],
  "Hand Held": [
   null,
-  ""
+  "Portátil"
  ],
  "Hard Disk": [
   null,
@@ -456,11 +456,11 @@ return plural;
  ],
  "IoT Gateway": [
   null,
-  ""
+  "Pasarela IoT"
  ],
  "Laptop": [
   null,
-  ""
+  "Sobremesa"
  ],
  "Link to another container": [
   null,
@@ -480,11 +480,11 @@ return plural;
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "Escritorio de Perfil Bajo"
  ],
  "Lunch Box": [
   null,
-  ""
+  "Loncheras"
  ],
  "MAC Address:": [
   null,
@@ -492,7 +492,7 @@ return plural;
  ],
  "Main Server Chassis": [
   null,
-  ""
+  "Chasis del Servidor Principal"
  ],
  "Memory": [
   null,
@@ -512,11 +512,11 @@ return plural;
  ],
  "Mini PC": [
   null,
-  ""
+  "Mini PC"
  ],
  "Mini Tower": [
   null,
-  ""
+  "Mini Torre"
  ],
  "Mount container volumes": [
   null,
@@ -524,7 +524,7 @@ return plural;
  ],
  "Multi-system Chassis": [
   null,
-  ""
+  "Chasis Multisistema"
  ],
  "Name": [
   null,

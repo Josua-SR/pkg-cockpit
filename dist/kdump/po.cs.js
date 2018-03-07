@@ -77,11 +77,11 @@ return plural;
  ],
  "Compress crash dumps to save space": [
   null,
-  ""
+  "Komprimovat výpisy paměti z havárií pro úsporu místa"
  ],
  "Compression": [
   null,
-  ""
+  "Komprese"
  ],
  "Crash dump location": [
   null,

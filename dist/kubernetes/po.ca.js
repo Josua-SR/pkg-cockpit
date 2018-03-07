@@ -547,7 +547,7 @@ return plural;
  ],
  "GiB": [
   null,
-  ""
+  "GiB"
  ],
  "Git Repository": [
   null,
@@ -651,7 +651,7 @@ return plural;
  ],
  "Kernel Version": [
   null,
-  "Versió del Kernel"
+  "Versió del kernel"
  ],
  "Key Ring Path": [
   null,
@@ -671,7 +671,7 @@ return plural;
  ],
  "Labels:": [
   null,
-  ""
+  "Etiquetes:"
  ],
  "Last Heartbeat": [
   null,
@@ -763,7 +763,7 @@ return plural;
  ],
  "N/A": [
   null,
-  ""
+  "N/D"
  ],
  "NFS": [
   null,
@@ -879,7 +879,7 @@ return plural;
  ],
  "Node:": [
   null,
-  ""
+  "Node:"
  ],
  "Nodes": [
   null,
@@ -895,7 +895,7 @@ return plural;
  ],
  "Not Available": [
   null,
-  ""
+  "No disponible"
  ],
  "Not Ready": [
   null,
@@ -1739,7 +1739,7 @@ return plural;
  ],
  "iSCSI": [
   null,
-  ""
+  "iSCSI"
  ],
  "idle": [
   null,
@@ -1751,7 +1751,7 @@ return plural;
  ],
  "n/a": [
   null,
-  ""
+  "n/d"
  ],
  "network": [
   null,
@@ -1783,11 +1783,11 @@ return plural;
  ],
  "show less": [
   null,
-  ""
+  "mostra menys"
  ],
  "show more": [
   null,
-  ""
+  "mostra més"
  ],
  "shut off": [
   null,
@@ -1803,7 +1803,7 @@ return plural;
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "up": [
   null,

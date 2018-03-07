@@ -127,7 +127,7 @@ return plural;
  ],
  "All In One": [
   null,
-  ""
+  "Tot en un"
  ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
@@ -199,8 +199,8 @@ return plural;
  ],
  "Combined usage of $0 CPU core": [
   "Combined usage of $0 CPU cores",
-  "",
-  ""
+  "Ús combinat de $0 nucli de CPU",
+  "Ús combinat de $0 nuclis de CPU"
  ],
  "Command": [
   null,
@@ -224,7 +224,7 @@ return plural;
  ],
  "Compact PCI": [
   null,
-  ""
+  "PCI compacte"
  ],
  "Configure storage...": [
   null,
@@ -260,7 +260,7 @@ return plural;
  ],
  "Convertible": [
   null,
-  ""
+  "Convertible"
  ],
  "Could not add all disks": [
   null,
@@ -300,7 +300,7 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Escriptori"
  ],
  "Detachable": [
   null,
@@ -609,7 +609,7 @@ return plural;
  ],
  "Other": [
   null,
-  ""
+  "Altres"
  ],
  "Overview": [
   null,
@@ -797,7 +797,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "Tauleta"
  ],
  "Tag": [
   null,

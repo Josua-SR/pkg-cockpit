@@ -136,7 +136,7 @@ return plural;
  ],
  "Errata:": [
   null,
-  ""
+  "Errata:"
  ],
  "Ignore": [
   null,

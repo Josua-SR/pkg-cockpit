@@ -108,7 +108,7 @@ return plural;
  ],
  "Bugs:": [
   null,
-  ""
+  "Errors de programari:"
  ],
  "Cancel": [
   null,
@@ -136,7 +136,7 @@ return plural;
  ],
  "Errata:": [
   null,
-  ""
+  "Fe d'errates:"
  ],
  "Ignore": [
   null,
@@ -240,7 +240,7 @@ return plural;
  ],
  "Severity:": [
   null,
-  ""
+  "Gravetat:"
  ],
  "Software Updates": [
   null,

@@ -153,15 +153,15 @@ return plural;
  ],
  "Blade": [
   null,
-  ""
+  "ブレード"
  ],
  "Blade enclosure": [
   null,
-  ""
+  "ブレードエンクロージャー"
  ],
  "Bus Expansion Chassis": [
   null,
-  ""
+  "バス拡張シャーシ"
  ],
  "CPU": [
   null,
@@ -169,7 +169,7 @@ return plural;
  ],
  "Can't load image": [
   null,
-  ""
+  "画像を読み込めません。"
  ],
  "Cancel": [
   null,
@@ -217,7 +217,7 @@ return plural;
  ],
  "Compact PCI": [
   null,
-  ""
+  "PCI の圧縮"
  ],
  "Connect": [
   null,
@@ -229,7 +229,7 @@ return plural;
  ],
  "Convertible": [
   null,
-  ""
+  "変換可能"
  ],
  "Could not contact {{host}}": [
   null,
@@ -241,11 +241,11 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "デスクトップ"
  ],
  "Detachable": [
   null,
-  ""
+  "割り当て解除可能"
  ],
  "Disk I/O": [
   null,
@@ -253,7 +253,7 @@ return plural;
  ],
  "Docking Station": [
   null,
-  ""
+  "ドッキングステーション"
  ],
  "Edit Server": [
   null,
@@ -261,7 +261,7 @@ return plural;
  ],
  "Embedded PC": [
   null,
-  ""
+  "組み込み PC"
  ],
  "Enter IP address or host name": [
   null,
@@ -277,7 +277,7 @@ return plural;
  ],
  "Expansion Chassis": [
   null,
-  ""
+  "拡張シャーシ"
  ],
  "Failed to add machine: $0": [
   null,
@@ -301,7 +301,7 @@ return plural;
  ],
  "Hand Held": [
   null,
-  ""
+  "ハンドヘルド"
  ],
  "Host Name": [
   null,
@@ -321,7 +321,7 @@ return plural;
  ],
  "IoT Gateway": [
   null,
-  ""
+  "IoT ゲートウェイ"
  ],
  "Is sshd running on a different port?": [
   null,
@@ -337,7 +337,7 @@ return plural;
  ],
  "Laptop": [
   null,
-  ""
+  "ラップトップ"
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
@@ -345,7 +345,7 @@ return plural;
  ],
  "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
-  ""
+  "現在ログインしているユーザー {{#default_user}} ({{default_user}}){{/default_user}} としてこのマシンに接続する場合は空白のままにします。別のユーザー名を入力すると、このマシンへの接続時にそのユーザーが常に使用されます。"
  ],
  "Log In": [
   null,
@@ -365,15 +365,15 @@ return plural;
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "低プロファイルデスクトップ"
  ],
  "Lunch Box": [
   null,
-  ""
+  "Lunch Box"
  ],
  "Main Server Chassis": [
   null,
-  ""
+  "メインサーバーシャーシ"
  ],
  "Memory": [
   null,
@@ -381,15 +381,15 @@ return plural;
  ],
  "Mini PC": [
   null,
-  ""
+  "ミニ PC"
  ],
  "Mini Tower": [
   null,
-  ""
+  "ミニタワー"
  ],
  "Multi-system Chassis": [
   null,
-  ""
+  "マルチシステムシャーシ"
  ],
  "Network": [
   null,
@@ -409,7 +409,7 @@ return plural;
  ],
  "Notebook": [
   null,
-  ""
+  "ノートブック"
  ],
  "Off": [
   null,
@@ -425,7 +425,7 @@ return plural;
  ],
  "Other": [
   null,
-  ""
+  "その他"
  ],
  "Password": [
   null,
@@ -437,11 +437,11 @@ return plural;
  ],
  "Peripheral Chassis": [
   null,
-  ""
+  "周辺機器シャーシ"
  ],
  "Pizza Box": [
   null,
-  ""
+  "Pizza Box"
  ],
  "Port": [
   null,
@@ -449,7 +449,7 @@ return plural;
  ],
  "Portable": [
   null,
-  ""
+  "ポータブル"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -465,15 +465,15 @@ return plural;
  ],
  "RAID Chassis": [
   null,
-  ""
+  "RAID シャーシ"
  ],
  "Rack Mount Chassis": [
   null,
-  ""
+  "ラックマウントシャーシ"
  ],
  "Sealed-case PC": [
   null,
-  ""
+  "シールドケース PC"
  ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
@@ -489,19 +489,19 @@ return plural;
  ],
  "Space-saving Computer": [
   null,
-  ""
+  "省スペースコンピューター"
  ],
  "Stick PC": [
   null,
-  ""
+  "スティッキー PC"
  ],
  "Sub Chassis": [
   null,
-  ""
+  "サブシャーシ"
  ],
  "Sub Notebook": [
   null,
-  ""
+  "サブノートブック"
  ],
  "Synchronize": [
   null,
@@ -513,7 +513,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "タブレット"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -549,7 +549,7 @@ return plural;
  ],
  "Tower": [
   null,
-  ""
+  "タワー"
  ],
  "Type a password": [
   null,

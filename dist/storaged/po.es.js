@@ -103,7 +103,7 @@ return plural;
  ],
  "$0 filesystems can not be resized here.": [
   null,
-  ""
+  "$0 a los sistemas de archivos no se les puede cambiar el tamaño aquí."
  ],
  "$0 hour": [
   "$0 hours",
@@ -564,11 +564,11 @@ return plural;
  ],
  "Encrypted volumes can not be resized here.": [
   null,
-  ""
+  "A los volúmenes encriptados no se les puede cambiar el tamaño aquí."
  ],
  "Encrypted volumes need to be unlocked before they can be resized.": [
   null,
-  ""
+  "Es necesario que los volúmenes encriptados estén desbloqueados antes de cambiar el tamaño."
  ],
  "Encryption": [
   null,
@@ -656,7 +656,7 @@ return plural;
  ],
  "Grow Logical Volume": [
   null,
-  ""
+  "Crecer Volumen Lógico"
  ],
  "Grow logical size of $0": [
   null,
@@ -1367,10 +1367,6 @@ return plural;
   ""
  ],
  "This volume needs to be activated before it can be resized.": [
-  null,
-  ""
- ],
- "Transfer data asynchronously": [
   null,
   ""
  ],

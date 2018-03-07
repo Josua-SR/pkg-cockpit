@@ -267,7 +267,7 @@ return plural;
  ],
  "Embedded PC": [
   null,
-  ""
+  "PC Embebido"
  ],
  "Enter IP address or host name": [
   null,
@@ -283,7 +283,7 @@ return plural;
  ],
  "Expansion Chassis": [
   null,
-  ""
+  "Chasis de Expansión"
  ],
  "Failed to add machine: $0": [
   null,
@@ -307,7 +307,7 @@ return plural;
  ],
  "Hand Held": [
   null,
-  ""
+  "Portátil"
  ],
  "Host Name": [
   null,
@@ -327,7 +327,7 @@ return plural;
  ],
  "IoT Gateway": [
   null,
-  ""
+  "Pasarela IoT"
  ],
  "Is sshd running on a different port?": [
   null,
@@ -343,7 +343,7 @@ return plural;
  ],
  "Laptop": [
   null,
-  ""
+  "Sobremesa"
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
@@ -371,15 +371,15 @@ return plural;
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "Escritorio de Perfil Bajo"
  ],
  "Lunch Box": [
   null,
-  ""
+  "Loncheras"
  ],
  "Main Server Chassis": [
   null,
-  ""
+  "Chasis del Servidor Principal"
  ],
  "Memory": [
   null,
@@ -387,15 +387,15 @@ return plural;
  ],
  "Mini PC": [
   null,
-  ""
+  "Mini PC"
  ],
  "Mini Tower": [
   null,
-  ""
+  "Mini Torre"
  ],
  "Multi-system Chassis": [
   null,
-  ""
+  "Chasis Multisistema"
  ],
  "Network": [
   null,

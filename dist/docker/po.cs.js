@@ -117,7 +117,7 @@ return plural;
  ],
  "Add Additional Storage": [
   null,
-  "Přidat další místo na disku"
+  "Přidat další úložiště"
  ],
  "Add Storage": [
   null,
@@ -129,11 +129,11 @@ return plural;
  ],
  "Advanced TCA": [
   null,
-  ""
+  "Pokročilé TCA"
  ],
  "All In One": [
   null,
-  ""
+  "Vše v jednom"
  ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
@@ -201,7 +201,7 @@ return plural;
  ],
  "Combined memory usage": [
   null,
-  ""
+  "Kombinované využití paměti"
  ],
  "Combined usage of $0 CPU core": [
   "Combined usage of $0 CPU cores",
@@ -215,11 +215,11 @@ return plural;
  ],
  "Command can't be empty": [
   null,
-  ""
+  "Příkaz nesmí být prázdný"
  ],
  "Command:": [
   null,
-  ""
+  "Příkaz:"
  ],
  "Commit": [
   null,
@@ -235,7 +235,7 @@ return plural;
  ],
  "Configure storage...": [
   null,
-  ""
+  "Konfigurace úložiště..."
  ],
  "Connecting to Docker": [
   null,
@@ -267,15 +267,15 @@ return plural;
  ],
  "Convertible": [
   null,
-  ""
+  "Konvertibilní"
  ],
  "Could not add all disks": [
   null,
-  ""
+  "Nelze přidat všechny disky"
  ],
  "Could not reset the storage pool": [
   null,
-  ""
+  "Nelze obnovit úložný prostor"
  ],
  "Created": [
   null,
@@ -307,7 +307,7 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Desktop"
  ],
  "Detachable": [
   null,
@@ -399,7 +399,7 @@ return plural;
  ],
  "Gateway:": [
   null,
-  ""
+  "Brána:"
  ],
  "Get new image": [
   null,
@@ -535,7 +535,7 @@ return plural;
  ],
  "Name": [
   null,
-  ""
+  "Název"
  ],
  "No": [
   null,
@@ -645,7 +645,7 @@ return plural;
  ],
  "Portable": [
   null,
-  ""
+  "Přenosný"
  ],
  "Ports": [
   null,
@@ -677,7 +677,7 @@ return plural;
  ],
  "Reboot": [
   null,
-  ""
+  "Restartovat"
  ],
  "Reformat and add disks": [
   null,
@@ -805,7 +805,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "Tablet"
  ],
  "Tag": [
   null,
@@ -813,7 +813,7 @@ return plural;
  ],
  "Tags": [
   null,
-  ""
+  "Tagy"
  ],
  "The Docker storage pool cannot be managed on this system.": [
   null,
@@ -917,7 +917,7 @@ return plural;
  ],
  "none": [
   null,
-  ""
+  "nic"
  ],
  "search by name, namespace or description": [
   null,

@@ -189,11 +189,11 @@ return plural;
  ],
  "Additional DNS $val": [
   null,
-  "Přídavný DNS $val"
+  "Další DNS $val"
  ],
  "Additional DNS Search Domains $val": [
   null,
-  ""
+  "Další domény vyhledávání DNS $val"
  ],
  "Additional address $val": [
   null,
@@ -277,7 +277,7 @@ return plural;
  ],
  "Changing the settings will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Změna nastavení přeruší připojení k serveru a znepřístupní uživatelské rozhraní pro správu."
  ],
  "Checking IP": [
   null,
@@ -293,15 +293,15 @@ return plural;
  ],
  "Configuring": [
   null,
-  ""
+  "Konfigurace"
  ],
  "Configuring IP": [
   null,
-  ""
+  "Konfigurace IP"
  ],
  "Connect automatically": [
   null,
-  ""
+  "Připojit se automaticky"
  ],
  "Connection will be lost": [
   null,
@@ -385,7 +385,7 @@ return plural;
  ],
  "General": [
   null,
-  ""
+  "Obecné"
  ],
  "Go to now": [
   null,
@@ -437,7 +437,7 @@ return plural;
  ],
  "Inactive": [
   null,
-  ""
+  "Neaktivní"
  ],
  "Interfaces": [
   null,
@@ -541,7 +541,7 @@ return plural;
  ],
  "Name": [
   null,
-  ""
+  "Název"
  ],
  "Networking": [
   null,
@@ -645,7 +645,7 @@ return plural;
  ],
  "Reboot": [
   null,
-  ""
+  "Restartovat"
  ],
  "Receiving": [
   null,

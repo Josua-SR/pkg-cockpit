@@ -105,7 +105,7 @@ return plural;
  ],
  "Kernel Dump": [
   null,
-  "Bolcat del Kernel"
+  "Bolcat del kernel"
  ],
  "Loading...": [
   null,

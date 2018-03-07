@@ -97,15 +97,15 @@ return plural;
  ],
  "$0 filesystems can not be made larger.": [
   null,
-  ""
+  "$0 souborové systémy nelze zvětšit."
  ],
  "$0 filesystems can not be made smaller.": [
   null,
-  ""
+  "$0 souborové systémy nelze zmenšit."
  ],
  "$0 filesystems can not be resized here.": [
   null,
-  ""
+  "$0 souborové systémy zde nelze změnit."
  ],
  "$0 hour": [
   "$0 hours",
@@ -227,7 +227,7 @@ return plural;
  ],
  "A disk is needed.": [
   null,
-  ""
+  "Je zapotřebí disk."
  ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
@@ -283,7 +283,7 @@ return plural;
  ],
  "Backing Device": [
   null,
-  ""
+  "Zálohovací zařízení"
  ],
  "Block": [
   null,
@@ -315,7 +315,7 @@ return plural;
  ],
  "Checking $target": [
   null,
-  ""
+  "Ověřuji $target"
  ],
  "Checking RAID Device $target": [
   null,
@@ -331,7 +331,7 @@ return plural;
  ],
  "Cleaning up for $target": [
   null,
-  ""
+  "Čištění pro $target"
  ],
  "Close": [
   null,
@@ -339,19 +339,19 @@ return plural;
  ],
  "Compatible with all systems and devices (MBR)": [
   null,
-  ""
+  "Kompatibilní se všemi systémy a zařízeními (MBR)"
  ],
  "Compatible with modern system and hard disks > 2TB (GPT)": [
   null,
-  ""
+  "Kompatibilní s moderním systémem a pevnými disky > 2TB (GPT)"
  ],
  "Compression": [
   null,
-  ""
+  "Komprese"
  ],
  "Confirm passphrase": [
   null,
-  ""
+  "Potvrdit přístupové heslo"
  ],
  "Content": [
   null,
@@ -707,7 +707,7 @@ return plural;
  ],
  "Logical": [
   null,
-  ""
+  "logický"
  ],
  "Logical Size": [
   null,
@@ -807,7 +807,7 @@ return plural;
  ],
  "Name": [
   null,
-  ""
+  "Název"
  ],
  "Name can not be empty.": [
   null,
@@ -1095,7 +1095,7 @@ return plural;
  ],
  "Reboot": [
   null,
-  ""
+  "Restartovat"
  ],
  "Recovering": [
   null,
@@ -1175,7 +1175,7 @@ return plural;
  ],
  "Shrink": [
   null,
-  ""
+  "Zmenšit"
  ],
  "Shrink Logical Volume": [
   null,
@@ -1374,10 +1374,6 @@ return plural;
   ""
  ],
  "This volume needs to be activated before it can be resized.": [
-  null,
-  ""
- ],
- "Transfer data asynchronously": [
   null,
   ""
  ],

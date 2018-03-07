@@ -93,7 +93,7 @@ return plural;
  ],
  "Couldn't get system subscription status. Please ensure subscription-manager is installed.": [
   null,
-  ""
+  "Nelze získat status odběru systému. Ujistěte se prosím, že je nainstalován manager odběru."
  ],
  "Custom URL": [
   null,
@@ -149,7 +149,7 @@ return plural;
  ],
  "Product ID": [
   null,
-  ""
+  "ID produktu"
  ],
  "Product name": [
   null,

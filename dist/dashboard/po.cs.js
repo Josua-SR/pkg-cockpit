@@ -133,7 +133,7 @@ return plural;
  ],
  "Add Machine to Dashboard": [
   null,
-  "Přidat stroj do dashboardu"
+  "Přidat stroj na panel"
  ],
  "Address": [
   null,
@@ -141,11 +141,11 @@ return plural;
  ],
  "Advanced TCA": [
   null,
-  ""
+  "Pokročilé TCA"
  ],
  "All In One": [
   null,
-  ""
+  "Vše v jednom"
  ],
  "Authentication": [
   null,
@@ -201,11 +201,11 @@ return plural;
  ],
  "Cockpit is not installed": [
   null,
-  ""
+  "Cockpit není nainstalován"
  ],
  "Cockpit was unable to contact {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "Cockpit se nemohl spojit s {{#strong}}{{host}}{{/strong}}."
  ],
  "Cockpit was unable to log in to {{#strong}}{{host}}{{/strong}}. {{#can_sync}}You may want to try to {{#sync_link}}synchronize users{{/sync_link}}.{{/can_sync}} For more authentication options and troubleshooting support please upgrade cockpit-ws to a newer version.": [
   null,
@@ -213,7 +213,7 @@ return plural;
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "Cockpit se nemohl přihlásit na {{#strong}}{{host}}{{/strong}}."
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. To use this machine with cockpit you will need to enable one of the following authentication methods in the sshd config on {{#strong}}{{host}}{{/strong}}:": [
   null,
@@ -225,7 +225,7 @@ return plural;
  ],
  "Color": [
   null,
-  ""
+  "Barva"
  ],
  "Compact PCI": [
   null,
@@ -241,11 +241,11 @@ return plural;
  ],
  "Convertible": [
   null,
-  ""
+  "Konvertibilní"
  ],
  "Could not contact {{host}}": [
   null,
-  ""
+  "Nelze kontaktovat {{host}}"
  ],
  "Dashboard": [
   null,
@@ -253,7 +253,7 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Desktop"
  ],
  "Detachable": [
   null,
@@ -405,7 +405,7 @@ return plural;
  ],
  "Network": [
   null,
-  ""
+  "Síť"
  ],
  "New password was not accepted": [
   null,
@@ -461,7 +461,7 @@ return plural;
  ],
  "Portable": [
   null,
-  ""
+  "Přenosný"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -525,7 +525,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "Tablet"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -577,7 +577,7 @@ return plural;
  ],
  "Update": [
   null,
-  ""
+  "Aktualizovat"
  ],
  "User": [
   null,

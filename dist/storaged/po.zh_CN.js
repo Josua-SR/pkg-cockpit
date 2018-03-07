@@ -1363,10 +1363,6 @@ return plural;
   null,
   ""
  ],
- "Transfer data asynchronously": [
-  null,
-  ""
- ],
  "Type": [
   null,
   "类型"

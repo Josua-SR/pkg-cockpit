@@ -93,7 +93,7 @@ return plural;
  ],
  "Install": [
   null,
-  ""
+  "Instalovat"
  ],
  "Installing": [
   null,
@@ -121,7 +121,7 @@ return plural;
  ],
  "Removing": [
   null,
-  ""
+  "K odstranění"
  ],
  "Unknown Application": [
   null,

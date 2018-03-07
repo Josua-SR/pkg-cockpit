@@ -1377,10 +1377,6 @@ return plural;
   null,
   ""
  ],
- "Transfer data asynchronously": [
-  null,
-  ""
- ],
  "Type": [
   null,
   "Tip"
