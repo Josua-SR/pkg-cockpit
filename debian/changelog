@@ -1,11 +1,11 @@
-cockpit (163-1) UNRELEASED; urgency=medium
+cockpit (163-1) unstable; urgency=medium
 
   * New upstream release:
     - Drop "Transfer data asynchronously" VDO option on Storage page
     - Hide Docker storage pool reset button when it cannot work properly
     - Update jQuery to version 3.3.1 (deprecated cockpit API!)
 
- -- Martin Pitt <mpitt@debian.org>  Wed, 07 Mar 2018 14:00:23 +0100
+ -- Martin Pitt <mpitt@debian.org>  Wed, 07 Mar 2018 14:01:26 +0100
 
 cockpit (162-1) unstable; urgency=medium
 
