@@ -89,7 +89,7 @@ return plural;
  ],
  "Add Machine to Dashboard": [
   null,
-  "Přidat stroj do dashboardu"
+  "Přidat stroj na panel"
  ],
  "Add key": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Close Selected Pages": [
   null,
-  ""
+  "Zavřít vybrané stránky"
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
@@ -153,11 +153,11 @@ return plural;
  ],
  "Cockpit is not installed": [
   null,
-  ""
+  "Cockpit není nainstalován"
  ],
  "Cockpit was unable to contact {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "Cockpit se nemohl spojit s {{#strong}}{{host}}{{/strong}}."
  ],
  "Cockpit was unable to log in to {{#strong}}{{host}}{{/strong}}. {{#can_sync}}You may want to try to {{#sync_link}}synchronize users{{/sync_link}}.{{/can_sync}} For more authentication options and troubleshooting support please upgrade cockpit-ws to a newer version.": [
   null,
@@ -165,7 +165,7 @@ return plural;
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "Cockpit se nemohl přihlásit na {{#strong}}{{host}}{{/strong}}."
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. To use this machine with cockpit you will need to enable one of the following authentication methods in the sshd config on {{#strong}}{{host}}{{/strong}}:": [
   null,
@@ -177,7 +177,7 @@ return plural;
  ],
  "Color": [
   null,
-  ""
+  "Barva"
  ],
  "Comment": [
   null,
@@ -201,11 +201,11 @@ return plural;
  ],
  "Could not contact {{host}}": [
   null,
-  ""
+  "Nelze kontaktovat {{host}}"
  ],
  "Couldn't connect to the machine": [
   null,
-  ""
+  "Nelze se připojit k zařízení"
  ],
  "Details": [
   null,
@@ -497,7 +497,7 @@ return plural;
  ],
  "Update": [
   null,
-  ""
+  "Aktualizovat"
  ],
  "Use the following keys to authenticate against other systems": [
   null,

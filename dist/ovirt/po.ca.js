@@ -193,11 +193,11 @@ return plural;
  ],
  "Console Type": [
   null,
-  ""
+  "Tipus de consola"
  ],
  "Consoles": [
   null,
-  ""
+  "Consoles"
  ],
  "Count:": [
   null,
@@ -209,11 +209,11 @@ return plural;
  ],
  "Create New VM": [
   null,
-  ""
+  "Crea una MV nova"
  ],
  "Create New Virtual Machine": [
   null,
-  ""
+  "Crea una màquina virtual nova"
  ],
  "Create VM": [
   null,
@@ -241,7 +241,7 @@ return plural;
  ],
  "Disconnect": [
   null,
-  ""
+  "Desconnecta"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
@@ -289,7 +289,7 @@ return plural;
  ],
  "GiB": [
   null,
-  ""
+  "GiB"
  ],
  "Graphics Console (VNC)": [
   null,
@@ -329,15 +329,15 @@ return plural;
  ],
  "Installation Source": [
   null,
-  ""
+  "Origen d'instal·lació"
  ],
  "Installation Source Type": [
   null,
-  ""
+  "Tipus d'origen d'instal·lació"
  ],
  "Installation Source should not be empty": [
   null,
-  ""
+  "L'origen d'instal·lació no pot estar en blanc"
  ],
  "Invalid filename": [
   null,
@@ -409,7 +409,7 @@ return plural;
  ],
  "Name should not be empty": [
   null,
-  ""
+  "El nom no pot estar en blanc"
  ],
  "Name should not consist of empty characters only": [
   null,
@@ -481,7 +481,7 @@ return plural;
  ],
  "Path to ISO file on host's file system": [
   null,
-  ""
+  "Camí al fitxer ISO al sistema de fitxers de l'amfitrió"
  ],
  "Path to file": [
   null,
@@ -625,7 +625,7 @@ return plural;
  ],
  "Serial Console": [
   null,
-  ""
+  "Consola sèrie"
  ],
  "Session": [
   null,
@@ -661,11 +661,11 @@ return plural;
  ],
  "Storage Size": [
   null,
-  ""
+  "Mida de l'emmagatzematge"
  ],
  "Storage Size should not be negative number": [
   null,
-  ""
+  "La mida de l'emmagatzematge no pot ser un número negatiu"
  ],
  "Suspend": [
   null,
@@ -865,7 +865,7 @@ return plural;
  ],
  "cores": [
   null,
-  ""
+  "nuclis"
  ],
  "crashed": [
   null,
@@ -993,7 +993,7 @@ return plural;
  ],
  "pending approval": [
   null,
-  ""
+  "pendent d'aprovació"
  ],
  "reboot": [
   null,
@@ -1009,11 +1009,11 @@ return plural;
  ],
  "show less": [
   null,
-  ""
+  "mostra menys"
  ],
  "show more": [
   null,
-  ""
+  "mostra més"
  ],
  "shut off": [
   null,
@@ -1037,7 +1037,7 @@ return plural;
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "unassigned": [
   null,

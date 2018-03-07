@@ -371,7 +371,7 @@ return plural;
  ],
  "Class": [
   null,
-  ""
+  "Clase"
  ],
  "Close": [
   null,
@@ -451,7 +451,7 @@ return plural;
  ],
  "Embedded PC": [
   null,
-  ""
+  "PC Embebido"
  ],
  "Enable": [
   null,
@@ -479,7 +479,7 @@ return plural;
  ],
  "Expansion Chassis": [
   null,
-  ""
+  "Chasis de Expansión"
  ],
  "Free": [
   null,
@@ -503,7 +503,7 @@ return plural;
  ],
  "Hand Held": [
   null,
-  ""
+  "Portátil"
  ],
  "Hardware": [
   null,
@@ -511,7 +511,7 @@ return plural;
  ],
  "Hardware Information": [
   null,
-  ""
+  "Información de Hardware"
  ],
  "Host Name": [
   null,
@@ -567,7 +567,7 @@ return plural;
  ],
  "IoT Gateway": [
   null,
-  ""
+  "Pasarela IoT"
  ],
  "Journal": [
   null,
@@ -587,7 +587,7 @@ return plural;
  ],
  "Laptop": [
   null,
-  ""
+  "Sobremesa"
  ],
  "Last 24 hours": [
   null,
@@ -619,11 +619,11 @@ return plural;
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "Escritorio de Perfil Bajo"
  ],
  "Lunch Box": [
   null,
-  ""
+  "Loncheras"
  ],
  "Machine ID": [
   null,
@@ -635,7 +635,7 @@ return plural;
  ],
  "Main Server Chassis": [
   null,
-  ""
+  "Chasis del Servidor Principal"
  ],
  "Manually": [
   null,
@@ -659,11 +659,11 @@ return plural;
  ],
  "Mini PC": [
   null,
-  ""
+  "Mini PC"
  ],
  "Mini Tower": [
   null,
-  ""
+  "Mini Torre"
  ],
  "Minute needs to be a number between 0-59": [
   null,
@@ -675,7 +675,7 @@ return plural;
  ],
  "Model": [
   null,
-  ""
+  "Modelo"
  ],
  "Monday": [
   null,
@@ -683,7 +683,7 @@ return plural;
  ],
  "Multi-system Chassis": [
   null,
-  ""
+  "Chasis Multisistema"
  ],
  "NTP Server": [
   null,

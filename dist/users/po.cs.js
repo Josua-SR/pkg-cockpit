@@ -121,7 +121,7 @@ return plural;
  ],
  "Confirm New Password": [
   null,
-  ""
+  "Potvrdit nové heslo"
  ],
  "Container Administrator": [
   null,

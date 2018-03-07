@@ -3032,7 +3032,7 @@ ul.registry-image-layers p {
   white-space: nowrap;
   font-size: 12px;
 }
-/*# sourceMappingURL=image-widgets.css.map*/
+
 table.images-listing {
   max-width: 2000px;
   min-width: 85%;
@@ -4743,7 +4743,7 @@ tbody tr.listing-ct-noexpand {
   padding-bottom: 15px;
 }
 .machines-terminal {
-  width: calc(94vw);
+  width: calc(100vw - 6em);
   height: calc(40vh);
   padding-right: 0px;
   padding-left: 0px;

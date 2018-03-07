@@ -133,7 +133,7 @@ return plural;
  ],
  "Join a Domain": [
   null,
-  ""
+  "Připojit se k doméně"
  ],
  "Joining this domain is not supported": [
   null,

@@ -105,7 +105,7 @@ return plural;
  ],
  "$0 filesystems can not be resized here.": [
   null,
-  ""
+  "Nie można tutaj zmieniać rozmiaru systemów plików $0."
  ],
  "$0 hour": [
   "$0 hours",
@@ -1243,7 +1243,7 @@ return plural;
  ],
  "Stop and Unmount": [
   null,
-  ""
+  "Zatrzymaj i odmontuj"
  ],
  "Stop and remove": [
   null,
@@ -1376,10 +1376,6 @@ return plural;
  "This volume needs to be activated before it can be resized.": [
   null,
   "Ten wolumin musi zostać aktywowany przed zmianą rozmiaru."
- ],
- "Transfer data asynchronously": [
-  null,
-  "Prześlij dane asynchronicznie"
  ],
  "Type": [
   null,

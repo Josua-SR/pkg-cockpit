@@ -377,7 +377,7 @@ return plural;
  ],
  "Class": [
   null,
-  ""
+  "Клас"
  ],
  "Close": [
   null,
@@ -681,7 +681,7 @@ return plural;
  ],
  "Model": [
   null,
-  ""
+  "Модель"
  ],
  "Monday": [
   null,
@@ -765,7 +765,7 @@ return plural;
  ],
  "PCI": [
   null,
-  ""
+  "PCI"
  ],
  "Paths": [
   null,
@@ -961,7 +961,7 @@ return plural;
  ],
  "Slot": [
   null,
-  ""
+  "Слот"
  ],
  "Sockets": [
   null,
@@ -1131,7 +1131,7 @@ return plural;
  ],
  "Vendor": [
   null,
-  ""
+  "Постачальник"
  ],
  "Version": [
   null,

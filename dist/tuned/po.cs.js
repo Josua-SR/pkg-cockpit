@@ -73,7 +73,7 @@ return plural;
  ],
  "Change Performance Profile": [
   null,
-  ""
+  "Změnit profil výkonu"
  ],
  "Change Profile": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "none": [
   null,
-  ""
+  "nic"
  ],
  "recommended": [
   null,

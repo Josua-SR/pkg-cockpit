@@ -101,7 +101,7 @@ return plural;
  ],
  "$0 filesystems can not be resized here.": [
   null,
-  ""
+  "ここでは、$0 ファイルシステムのサイズを変更できません。"
  ],
  "$0 hour": [
   "$0 hours",
@@ -269,11 +269,11 @@ return plural;
  ],
  "Backing Device": [
   null,
-  ""
+  "バッキングデバイス"
  ],
  "Block": [
   null,
-  ""
+  "ブロック"
  ],
  "Block device for filesystems": [
   null,
@@ -301,7 +301,7 @@ return plural;
  ],
  "Checking $target": [
   null,
-  ""
+  "$target の確認"
  ],
  "Checking RAID Device $target": [
   null,
@@ -369,7 +369,7 @@ return plural;
  ],
  "Create VDO Device": [
   null,
-  ""
+  "VDO デバイスの作成"
  ],
  "Create Volume Group": [
   null,
@@ -425,15 +425,15 @@ return plural;
  ],
  "Custom encryption options": [
   null,
-  ""
+  "カスタムの暗号化オプション"
  ],
  "Custom mount option": [
   null,
-  ""
+  "カスタムのマウントオプション"
  ],
  "Custom mount options": [
   null,
-  ""
+  "カスタムのマウントオプション"
  ],
  "DISK IS FAILING": [
   null,
@@ -453,7 +453,7 @@ return plural;
  ],
  "Deduplication": [
   null,
-  ""
+  "重複"
  ],
  "Default": [
   null,
@@ -473,7 +473,7 @@ return plural;
  ],
  "Deleting a VDO device will erase all data on it.": [
   null,
-  ""
+  "VDO デバイスを削除すると、そのデバイスのデータはすべて削除されます。"
  ],
  "Deleting a logical volume will delete all data in it.": [
   null,
@@ -493,7 +493,7 @@ return plural;
  ],
  "Device File": [
   null,
-  ""
+  "デバイスファイル"
  ],
  "Device is read-only": [
   null,
@@ -537,7 +537,7 @@ return plural;
  ],
  "Encrypted $0": [
   null,
-  "暗号化されたデータ"
+  "暗号化された $0"
  ],
  "Encrypted EXT4 (LUKS)": [
   null,
@@ -545,11 +545,11 @@ return plural;
  ],
  "Encrypted Logical Volume of $0": [
   null,
-  "<span>暗号化された $0 の論理ボリューム</span>"
+  "暗号化された $0 の論理ボリューム"
  ],
  "Encrypted Partition of $0": [
   null,
-  "<span>暗号化された $0 のパーティション</span>†"
+  "暗号化された $0 のパーティション"
  ],
  "Encrypted XFS (LUKS)": [
   null,
@@ -557,11 +557,11 @@ return plural;
  ],
  "Encrypted volumes can not be resized here.": [
   null,
-  ""
+  "ここでは、暗号化したボリュームのサイズを変更することができません。"
  ],
  "Encrypted volumes need to be unlocked before they can be resized.": [
   null,
-  ""
+  "暗号化したボリュームは、サイズを変更する前にロックを解除する必要があります。"
  ],
  "Encryption": [
   null,
@@ -645,19 +645,19 @@ return plural;
  ],
  "Grow": [
   null,
-  ""
+  "増加"
  ],
  "Grow Logical Volume": [
   null,
-  ""
+  "論理ボリュームの増加"
  ],
  "Grow logical size of $0": [
   null,
-  ""
+  "$0 の論理サイズを増加"
  ],
  "Grow to take all space": [
   null,
-  ""
+  "すべての領域を使用して増加"
  ],
  "In Sync": [
   null,
@@ -669,7 +669,7 @@ return plural;
  ],
  "Index Memory": [
   null,
-  ""
+  "インデックスメモリー"
  ],
  "Invalid username or password": [
   null,
@@ -681,7 +681,7 @@ return plural;
  ],
  "Local Mount Point": [
   null,
-  ""
+  "ローカルマウントポイント"
  ],
  "Lock": [
   null,
@@ -693,11 +693,11 @@ return plural;
  ],
  "Logical": [
   null,
-  ""
+  "論理"
  ],
  "Logical Size": [
   null,
-  ""
+  "論理サイズ"
  ],
  "Logical Volume": [
   null,
@@ -709,7 +709,7 @@ return plural;
  ],
  "Logical Volume of $0": [
   null,
-  "論理ボリューム"
+  "$0 の論理ボリューム"
  ],
  "Marking $target as faulty": [
   null,
@@ -745,27 +745,27 @@ return plural;
  ],
  "Mount at boot": [
   null,
-  ""
+  "起動時にマウント"
  ],
  "Mount options": [
   null,
-  ""
+  "マウントオプション"
  ],
  "Mount point can not be empty": [
   null,
-  ""
+  "マウントポイントは空欄にできません"
  ],
  "Mount point cannot be empty.": [
   null,
-  ""
+  "マウントポイントは空欄にできません。"
  ],
  "Mount point must start with \"/\".": [
   null,
-  ""
+  "マウントポイントは \"/\" で開始してください。"
  ],
  "Mount read only": [
   null,
-  ""
+  "読み取り専用でマウント"
  ],
  "Mounted At": [
   null,
@@ -785,7 +785,7 @@ return plural;
  ],
  "NFS Mounts": [
   null,
-  ""
+  "NFS マウント"
  ],
  "NTFS - Compatible with most systems": [
   null,
@@ -797,11 +797,11 @@ return plural;
  ],
  "Name can not be empty.": [
   null,
-  ""
+  "名前は空欄にできません"
  ],
  "Name cannot be empty.": [
   null,
-  "名前は空にすることができません。"
+  "名前は空欄にすることができません。"
  ],
  "Name cannot be longer than 127 characters.": [
   null,
@@ -817,7 +817,7 @@ return plural;
  ],
  "New NFS Mount": [
   null,
-  ""
+  "NFS の新規マウント"
  ],
  "Next": [
   null,
@@ -833,7 +833,7 @@ return plural;
  ],
  "No NFS mounts set up": [
   null,
-  ""
+  "NFS マウントが設定されていません"
  ],
  "No disks are available.": [
   null,
@@ -865,7 +865,7 @@ return plural;
  ],
  "No storage set up as VDO": [
   null,
-  ""
+  "VDO として設定されたストレージがありません"
  ],
  "No volume groups created": [
   null,
@@ -877,7 +877,7 @@ return plural;
  ],
  "Not mounted": [
   null,
-  ""
+  "マウントされていません"
  ],
  "Not running": [
   null,
@@ -893,7 +893,7 @@ return plural;
  ],
  "Only $0 of $1 are used.": [
   null,
-  ""
+  "$1 のうち $0 だけが使用されています。"
  ],
  "Operation '$operation' on $target": [
   null,
@@ -917,7 +917,7 @@ return plural;
  ],
  "Partition of $0": [
   null,
-  "パーティション"
+  "$0 のパーティション"
  ],
  "Partitioning": [
   null,
@@ -929,7 +929,7 @@ return plural;
  ],
  "Passphrase cannot be empty": [
   null,
-  "パスフレーズは空にすることができません"
+  "パスフレーズは空欄にすることができません"
  ],
  "Passphrases do not match": [
   null,
@@ -941,19 +941,19 @@ return plural;
  ],
  "Path on Server": [
   null,
-  ""
+  "サーバーのパス"
  ],
  "Path on server cannot be empty.": [
   null,
-  ""
+  "サーバーのパスは空欄にはできません。"
  ],
  "Path on server must start with \"/\".": [
   null,
-  ""
+  "サーバーのパスは \"/\" で開始してください。"
  ],
  "Physical": [
   null,
-  ""
+  "物理"
  ],
  "Physical Volume": [
   null,
@@ -969,7 +969,7 @@ return plural;
  ],
  "Physical volumes can not be resized here.": [
   null,
-  ""
+  "ここでは、物理ボリュームのサイズを変更することができません。"
  ],
  "Please confirm deletion of $0": [
   null,
@@ -977,7 +977,7 @@ return plural;
  ],
  "Please confirm stopping of $0": [
   null,
-  ""
+  "$0 の停止を確認してください"
  ],
  "Pool": [
   null,
@@ -1093,7 +1093,7 @@ return plural;
  ],
  "Remove device": [
   null,
-  ""
+  "リモートデバイス"
  ],
  "Removing $target from RAID Device": [
   null,
@@ -1121,7 +1121,7 @@ return plural;
  ],
  "Repairing $target": [
   null,
-  ""
+  "$target の修復"
  ],
  "Resizing $target": [
   null,
@@ -1149,11 +1149,11 @@ return plural;
  ],
  "Server address cannot be empty.": [
   null,
-  "サーバーアドレスは空にできません。"
+  "サーバーアドレスは空欄にできません。"
  ],
  "Server cannot be empty.": [
   null,
-  ""
+  "サーバーは空欄にできません。"
  ],
  "Setting up loop device $target": [
   null,
@@ -1161,11 +1161,11 @@ return plural;
  ],
  "Shrink": [
   null,
-  ""
+  "縮小"
  ],
  "Shrink Logical Volume": [
   null,
-  ""
+  "論理ボリュームの縮小"
  ],
  "Size": [
   null,
@@ -1189,7 +1189,7 @@ return plural;
  ],
  "Size must be at least $0": [
   null,
-  ""
+  "サイズは $0 以上にする必要があります"
  ],
  "Spare": [
   null,
@@ -1221,7 +1221,7 @@ return plural;
  ],
  "Stop Device": [
   null,
-  ""
+  "デバイスの停止"
  ],
  "Stop Scrubbing": [
   null,
@@ -1229,11 +1229,11 @@ return plural;
  ],
  "Stop and Unmount": [
   null,
-  ""
+  "停止してアンマウント"
  ],
  "Stop and remove": [
   null,
-  ""
+  "停止して削除"
  ],
  "Stopping RAID Device $target": [
   null,
@@ -1285,7 +1285,7 @@ return plural;
  ],
  "The RAID device must be running in order to add spare disks.": [
   null,
-  "スペアディスクを追加する場合は、MDRAID デバイスが実行中である必要があります。"
+  "スペアディスクを追加する場合は、RAID デバイスが実行中である必要があります。"
  ],
  "The RAID device must be running in order to remove disks.": [
   null,
@@ -1293,11 +1293,11 @@ return plural;
  ],
  "The creation of this VDO device did not finish and the device can't be used.": [
   null,
-  ""
+  "この VDO デバイスの作成は終了していないため、使用できません。"
  ],
  "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
   null,
-  ""
+  "このファイルシステムはシステムのサービスまたはログインセッションで使用中です。                続行するとこのサービスとセッションを停止します。"
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
@@ -1325,35 +1325,35 @@ return plural;
  ],
  "This NFS mount is in use and only its options can be changed.": [
   null,
-  ""
+  "この NFS マウントは使用中で、そのオプションだけを変更できます。"
  ],
  "This VDO device does not use all of its backing device.": [
   null,
-  ""
+  "この VDO デバイスは、そのバッキングデバイスをすべて使用していません。"
  ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
-  ""
+  "このデバイスには、現在使用中のファイルシステムがあります。                続行すると、このデバイスのファイルシステムをすべてアンマウントします。"
  ],
  "This device is currently used for RAID devices.": [
   null,
-  ""
+  "このデバイスは、現在 RAID デバイスに使用されています。"
  ],
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
   null,
-  ""
+  "このデバイスは、現在 RAID デバイスに使用されています。                続行すると、RAID デバイスからこのデバイスが削除されます。"
  ],
  "This device is currently used for VDO devices.": [
   null,
-  ""
+  "このデバイスは、現在 VDO デバイスに使用されています。"
  ],
  "This device is currently used for volume groups.": [
   null,
-  ""
+  "このデバイスは、現在ボリュームグループに使用されています。"
  ],
  "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
   null,
-  ""
+  "このデバイスは現在ボリュームグループに使用されています。                続行すると、そのボリュームグループからこのデバイスが削除されます。"
  ],
  "This disk cannot be removed while the device is recovering.": [
   null,
@@ -1361,11 +1361,7 @@ return plural;
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
-  ""
- ],
- "Transfer data asynchronously": [
-  null,
-  ""
+  "このボリュームは、サイズを変更する前にアクティベートする必要があります。"
  ],
  "Type": [
   null,
@@ -1381,11 +1377,11 @@ return plural;
  ],
  "Unable to remove mount": [
   null,
-  ""
+  "マウントを削除できません"
  ],
  "Unable to unmount filesystem": [
   null,
-  ""
+  "ファイルシステムをアンマウントできません"
  ],
  "Unknown": [
   null,
@@ -1405,11 +1401,11 @@ return plural;
  ],
  "Unlock at boot": [
   null,
-  ""
+  "起動時にロック解除"
  ],
  "Unlock read only": [
   null,
-  ""
+  "読み取り専用のロックを解除"
  ],
  "Unlocking $target": [
   null,
@@ -1429,7 +1425,7 @@ return plural;
  ],
  "Unrecognized data can not be made smaller here.": [
   null,
-  ""
+  "ここでは、認識されないデータを小さくすることはできません。"
  ],
  "Unsupported volume": [
   null,
@@ -1441,7 +1437,7 @@ return plural;
  ],
  "Use 512 Byte emulation": [
   null,
-  ""
+  "512 バイトのエミュレーションを使用します。"
  ],
  "Used": [
   null,
@@ -1453,23 +1449,23 @@ return plural;
  ],
  "VDO Backing": [
   null,
-  ""
+  "VDO バッキング"
  ],
  "VDO Device": [
   null,
-  ""
+  "VDO デバイス"
  ],
  "VDO Device $0": [
   null,
-  ""
+  "VDO デバイス $0"
  ],
  "VDO Devices": [
   null,
-  ""
+  "VDO デバイス"
  ],
  "VDO backing devices can not be made smaller": [
   null,
-  ""
+  "VDO バッキングデバイスを小さくすることはできません"
  ],
  "VFAT - Compatible with all systems and devices": [
   null,
@@ -1557,7 +1553,7 @@ return plural;
  ],
  "storage-id-desc\u0004VDO Backing": [
   null,
-  ""
+  "VDO バッキング"
  ],
  "storage\u0004Drive": [
   null,

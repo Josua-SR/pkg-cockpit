@@ -93,7 +93,7 @@ return plural;
  ],
  "Boot Order:": [
   null,
-  ""
+  "ブート順序:"
  ],
  "Bus": [
   null,
@@ -101,11 +101,11 @@ return plural;
  ],
  "CHANGE NETWORK STATE action failed": [
   null,
-  ""
+  "CHANGE NETWORK STATE アクションに失敗しました"
  ],
  "CPU Type:": [
   null,
-  "種類:"
+  "CPU タイプ:"
  ],
  "Cancel": [
   null,
@@ -117,19 +117,19 @@ return plural;
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  ""
+  "\"リモートビューアーの起動\" をクリックすると、.vv ファイルをダウンロードし、$0 を起動します。"
  ],
  "Confirm deletion of $0": [
   null,
-  "$0 の削除を確定してください"
+  "$0 の削除を確定"
  ],
  "Connect with any $0 viewer application.": [
   null,
-  ""
+  "$0 ビューアーアプリケーションに接続します。"
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  ""
+  "SPICE または VNC のビューアーアプリケーションに接続します。"
  ],
  "Connection": [
   null,
@@ -137,11 +137,11 @@ return plural;
  ],
  "Console Type": [
   null,
-  ""
+  "コンソールタイプ"
  ],
  "Consoles": [
   null,
-  ""
+  "コンソール"
  ],
  "Count:": [
   null,
@@ -153,11 +153,11 @@ return plural;
  ],
  "Create New VM": [
   null,
-  ""
+  "仮想マシンの新規作成"
  ],
  "Create New Virtual Machine": [
   null,
-  ""
+  "仮想マシンの新規作成"
  ],
  "Delete": [
   null,
@@ -165,7 +165,7 @@ return plural;
  ],
  "Delete associated storage files:": [
   null,
-  ""
+  "関連するストレージファイルの削除:"
  ],
  "Device": [
   null,
@@ -173,11 +173,11 @@ return plural;
  ],
  "Disconnect": [
   null,
-  ""
+  "切断"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
-  ""
+  "シリアルコンソールから切断されました。「再接続」ボタンをクリックします。"
  ],
  "Disks": [
   null,
@@ -185,11 +185,11 @@ return plural;
  ],
  "Download the MSI from $0": [
   null,
-  ""
+  "MSI を $0 からダウンロードします"
  ],
  "Emulated Machine:": [
   null,
-  "仮想マシン"
+  "エミュレートされたマシン:"
  ],
  "File": [
   null,
@@ -209,15 +209,15 @@ return plural;
  ],
  "GiB": [
   null,
-  ""
+  "GiB"
  ],
  "Graphics Console (VNC)": [
   null,
-  ""
+  "グラフィックコンソール (VNC)"
  ],
  "Graphics Console in Desktop Viewer": [
   null,
-  ""
+  "デスクトップビューアーのグラフィックコンソール"
  ],
  "Host": [
   null,
@@ -225,43 +225,43 @@ return plural;
  ],
  "INSTALL VM action failed": [
   null,
-  ""
+  "INSTALL VM アクションに失敗しました"
  ],
  "Immediately Start VM": [
   null,
-  ""
+  "VM をすぐに起動"
  ],
  "Install": [
   null,
-  ""
+  "インストール"
  ],
  "Installation Source": [
   null,
-  ""
+  "インストールソース"
  ],
  "Installation Source Type": [
   null,
-  ""
+  "インストールソースのタイプ"
  ],
  "Installation Source should not be empty": [
   null,
-  ""
+  "インストールソースは空欄にできません"
  ],
  "Invalid filename": [
   null,
-  ""
+  "無効なファイル名"
  ],
  "Launch Remote Viewer": [
   null,
-  ""
+  "リモートビューアーの起動"
  ],
  "Loading ...": [
   null,
-  ""
+  "ロード中..."
  ],
  "MAC Address": [
   null,
-  ""
+  "MAC アドレス"
  ],
  "MTU": [
   null,
@@ -269,11 +269,11 @@ return plural;
  ],
  "Managed": [
   null,
-  ""
+  "管理"
  ],
  "Manual Connection": [
   null,
-  "接続"
+  "手動接続"
  ],
  "Memory": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "Memory should be positive number": [
   null,
-  ""
+  "メモリーは正の数値である必要があります"
  ],
  "Memory:": [
   null,
@@ -293,11 +293,11 @@ return plural;
  ],
  "Model type": [
   null,
-  ""
+  "モデルタイプ"
  ],
  "More Information": [
   null,
-  "設定"
+  "詳細情報"
  ],
  "Name": [
   null,
@@ -305,15 +305,15 @@ return plural;
  ],
  "Name should not be empty": [
   null,
-  ""
+  "名前は空欄にできません"
  ],
  "Name should not consist of empty characters only": [
   null,
-  ""
+  "名前は空欄にできません"
  ],
  "Networks": [
   null,
-  ""
+  "ネットワーク"
  ],
  "No VM is running or defined on this host": [
   null,
@@ -321,11 +321,11 @@ return plural;
  ],
  "No boot device found": [
   null,
-  "ホストキーが見つかりません。"
+  "ブートデバイスが見つかりません"
  ],
  "No console defined for this virtual machine.": [
   null,
-  ""
+  "この仮想マシンにはコンソールが定義されていません"
  ],
  "No disks defined for this VM": [
   null,
@@ -333,15 +333,15 @@ return plural;
  ],
  "No matching files found": [
   null,
-  "ホストキーが見つかりません。"
+  "一致するファイルが見つかりませんでした。"
  ],
  "No network interfaces defined for this VM": [
   null,
-  ""
+  "この仮想マシンにはネットワークインターフェースが定義されていません"
  ],
  "OS Vendor": [
   null,
-  ""
+  "OS ベンダー"
  ],
  "Ok": [
   null,
@@ -357,19 +357,19 @@ return plural;
  ],
  "Path to ISO file on host's file system": [
   null,
-  ""
+  "ホストファイルシステムの ISO ファイルのパス"
  ],
  "Path to file": [
   null,
-  ""
+  "ファイルのパス"
  ],
  "Please start the virtual machine to access its console.": [
   null,
-  ""
+  "仮想マシンを起動して、コンソールにアクセスしてください。"
  ],
  "Plug": [
   null,
-  ""
+  "プラグ"
  ],
  "Pool": [
   null,
@@ -381,7 +381,7 @@ return plural;
  ],
  "Portgroup": [
   null,
-  ""
+  "ポートグループ"
  ],
  "Protocol": [
   null,
@@ -397,7 +397,7 @@ return plural;
  ],
  "Remote URL": [
   null,
-  ""
+  "リモート URL"
  ],
  "Restart": [
   null,
@@ -409,31 +409,31 @@ return plural;
  ],
  "SPICE": [
   null,
-  ""
+  "SPICE"
  ],
  "SPICE Address:": [
   null,
-  "IP アドレス:"
+  "SPICE アドレス:"
  ],
  "SPICE Port:": [
   null,
-  ""
+  "SPICE ポート:"
  ],
  "SPICE TLS Port:": [
   null,
-  ""
+  "SPICE TLS ポート:"
  ],
  "Send Non-Maskable Interrupt": [
   null,
-  ""
+  "マスク不可割り込みを送信します"
  ],
  "Send shortcut": [
   null,
-  ""
+  "ショートカットの送信"
  ],
  "Serial Console": [
   null,
-  ""
+  "シリアルコンソール"
  ],
  "Session": [
   null,
@@ -449,11 +449,11 @@ return plural;
  ],
  "Source should start with http, ftp or nfs protocol": [
   null,
-  ""
+  "ソースは、http、ftp、または nfs プロトコルで開始する必要があります"
  ],
  "Start the VM to see disk statistics.": [
   null,
-  ""
+  "仮想マシンを起動して、ディスク統計を確認します"
  ],
  "State": [
   null,
@@ -461,11 +461,11 @@ return plural;
  ],
  "Storage Size": [
   null,
-  ""
+  "ストレージのサイズ"
  ],
  "Storage Size should not be negative number": [
   null,
-  ""
+  "ストレージのサイズは負の値にすることができません"
  ],
  "System": [
   null,
@@ -501,7 +501,7 @@ return plural;
  ],
  "The VM is running and will be forced off before deletion.": [
   null,
-  ""
+  "仮想マシンが稼動しているため、削除前に強制的に電源がオフになります。"
  ],
  "The VM is running.": [
   null,
@@ -513,7 +513,7 @@ return plural;
  ],
  "Too many files found": [
   null,
-  ""
+  "見つかったファイルが多すぎます"
  ],
  "Type": [
   null,
@@ -525,11 +525,11 @@ return plural;
  ],
  "Unplug": [
   null,
-  ""
+  "アンプラグ"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
-  "ディスクの統計情報を表示するには libvirt の新しいバージョンにアップグレードしてください"
+  "ディスクの統計情報を表示するには、libvirt を新しいバージョンにアップグレードしてください"
  ],
  "Usage": [
   null,
@@ -553,7 +553,7 @@ return plural;
  ],
  "VM SEND Non-Maskable Interrrupt action failed": [
   null,
-  ""
+  "VM SEND マスク不可な割り込みアクションに失敗しました"
  ],
  "VM SHUT DOWN action failed": [
   null,
@@ -565,19 +565,19 @@ return plural;
  ],
  "VNC": [
   null,
-  ""
+  "VNC"
  ],
  "VNC Address:": [
   null,
-  "MAC アドレス:"
+  "VNC アドレス:"
  ],
  "VNC Port:": [
   null,
-  "ポート:"
+  "VNC ポート:"
  ],
  "VNC TLS Port:": [
   null,
-  ""
+  "VNC TLS ポート:"
  ],
  "Virtual Machines": [
   null,
@@ -585,7 +585,7 @@ return plural;
  ],
  "Virtualport": [
   null,
-  ""
+  "Virtualport"
  ],
  "Volume": [
   null,
@@ -593,15 +593,15 @@ return plural;
  ],
  "Your browser does not support iframes.": [
   null,
-  ""
+  "ブラウザーが、iframe をサポートしません。"
  ],
  "bridge": [
   null,
-  ""
+  "ブリッジ"
  ],
  "cdrom": [
   null,
-  ""
+  "cdrom"
  ],
  "crashed": [
   null,
@@ -609,11 +609,11 @@ return plural;
  ],
  "custom": [
   null,
-  "Custom"
+  "カスタム"
  ],
  "direct": [
   null,
-  ""
+  "ダイレクト"
  ],
  "disabled": [
   null,
@@ -621,11 +621,11 @@ return plural;
  ],
  "disk": [
   null,
-  ""
+  "ディスク"
  ],
  "down": [
   null,
-  ""
+  "下へ"
  ],
  "dying": [
   null,
@@ -637,15 +637,15 @@ return plural;
  ],
  "ethernet": [
   null,
-  ""
+  "Ethernet"
  ],
  "host": [
   null,
-  ""
+  "ホスト"
  ],
  "hostdev": [
   null,
-  ""
+  "hostdev"
  ],
  "idle": [
   null,
@@ -653,7 +653,7 @@ return plural;
  ],
  "mcast": [
   null,
-  ""
+  "mcast"
  ],
  "network": [
   null,
@@ -665,7 +665,7 @@ return plural;
  ],
  "other": [
   null,
-  ""
+  "その他"
  ],
  "paused": [
   null,
@@ -677,15 +677,15 @@ return plural;
  ],
  "server": [
   null,
-  ""
+  "サーバー"
  ],
  "show less": [
   null,
-  ""
+  "表示を減らす"
  ],
  "show more": [
   null,
-  ""
+  "表示を増やす"
  ],
  "shut off": [
   null,
@@ -701,7 +701,7 @@ return plural;
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "undefined": [
   null,
@@ -709,11 +709,11 @@ return plural;
  ],
  "up": [
   null,
-  ""
+  "上へ"
  ],
  "user": [
   null,
-  ""
+  "ユーザー"
  ],
  "vCPUs:": [
   null,
@@ -721,7 +721,7 @@ return plural;
  ],
  "vhostuser": [
   null,
-  ""
+  "vhostuser"
  ],
  "yes": [
   null,

@@ -23,6 +23,7 @@ from testlib import *
 import json
 import os
 
+@skipPackage("cockpit-docker")
 class TestDocker(MachineCase):
     def setUp(self):
         MachineCase.setUp(self)
@@ -531,7 +532,7 @@ CMD ["/bin/sh"]
         # This should be updated
         b.wait_in_text("#container-details-cpu-row", "1024 shares")
 
-    @skipImage("Newer version of ABRT required", "centos-7", "rhel-7", "fedora-25", "fedora-26", "fedora-i386", "fedora-testing", "rhel-7-4", "rhel-7-5")
+    @skipImage("Newer version of ABRT required", "centos-7", "rhel-7", "fedora-25", "fedora-26", "fedora-i386", "rhel-7-4", "rhel-7-5")
     @skipImage("ABRT not available", "debian-stable", "debian-testing", "ubuntu-stable", "ubuntu-1604", "rhel-atomic", "fedora-atomic", "continuous-atomic")
     def testContainerProblems(self):
         b = self.browser
@@ -579,6 +580,7 @@ CMD ["/bin/sh"]
         b.wait_in_text("#journal-entry-fields","abrtd.service")
 
 @skipImage("Skip on systems without atomic and ones with missing deps", "centos-7", "debian-stable", "debian-testing", "ubuntu-1604", "ubuntu-stable", "rhel-atomic", "fedora-atomic", "fedora-i386")
+@skipPackage("cockpit-docker")
 class TestAtomicScan(MachineCase):
     def setUp(self):
         MachineCase.setUp(self)

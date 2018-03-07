@@ -141,15 +141,15 @@ return plural;
  ],
  "Blade": [
   null,
-  ""
+  "ブレード"
  ],
  "Blade enclosure": [
   null,
-  ""
+  "ブレードエンクロージャー"
  ],
  "Bus Expansion Chassis": [
   null,
-  ""
+  "バス拡張シャーシ"
  ],
  "CPU": [
   null,
@@ -193,7 +193,7 @@ return plural;
  ],
  "Combined usage of $0 CPU core": [
   "Combined usage of $0 CPU cores",
-  ""
+  "$0 CPU コアの合計使用率"
  ],
  "Command": [
   null,
@@ -217,7 +217,7 @@ return plural;
  ],
  "Compact PCI": [
   null,
-  ""
+  "PCI の圧縮"
  ],
  "Configure storage...": [
   null,
@@ -253,7 +253,7 @@ return plural;
  ],
  "Convertible": [
   null,
-  ""
+  "変換可能"
  ],
  "Could not add all disks": [
   null,
@@ -293,11 +293,11 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "デスクトップ"
  ],
  "Detachable": [
   null,
-  ""
+  "割り当て解除可能"
  ],
  "Details": [
   null,
@@ -309,7 +309,7 @@ return plural;
  ],
  "Docking Station": [
   null,
-  ""
+  "ドッキングステーション"
  ],
  "Download": [
   null,
@@ -329,7 +329,7 @@ return plural;
  ],
  "Embedded PC": [
   null,
-  ""
+  "組み込み PC"
  ],
  "Entrypoint": [
   null,
@@ -361,7 +361,7 @@ return plural;
  ],
  "Expansion Chassis": [
   null,
-  ""
+  "拡張シャーシ"
  ],
  "Expose container ports": [
   null,
@@ -393,7 +393,7 @@ return plural;
  ],
  "Hand Held": [
   null,
-  ""
+  "ハンドヘルド"
  ],
  "Hard Disk": [
   null,
@@ -449,11 +449,11 @@ return plural;
  ],
  "IoT Gateway": [
   null,
-  ""
+  "IoT ゲートウェイ"
  ],
  "Laptop": [
   null,
-  ""
+  "ラップトップ"
  ],
  "Link to another container": [
   null,
@@ -473,11 +473,11 @@ return plural;
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "低プロファイルデスクトップ"
  ],
  "Lunch Box": [
   null,
-  ""
+  "Lunch Box"
  ],
  "MAC Address:": [
   null,
@@ -485,7 +485,7 @@ return plural;
  ],
  "Main Server Chassis": [
   null,
-  ""
+  "メインサーバーシャーシ"
  ],
  "Memory": [
   null,
@@ -505,11 +505,11 @@ return plural;
  ],
  "Mini PC": [
   null,
-  ""
+  "ミニ PC"
  ],
  "Mini Tower": [
   null,
-  ""
+  "ミニタワー"
  ],
  "Mount container volumes": [
   null,
@@ -517,7 +517,7 @@ return plural;
  ],
  "Multi-system Chassis": [
   null,
-  ""
+  "マルチシステムシャーシ"
  ],
  "Name": [
   null,
@@ -577,7 +577,7 @@ return plural;
  ],
  "Notebook": [
   null,
-  ""
+  "ノートブック"
  ],
  "Off": [
   null,
@@ -601,7 +601,7 @@ return plural;
  ],
  "Other": [
   null,
-  ""
+  "その他"
  ],
  "Overview": [
   null,
@@ -609,11 +609,11 @@ return plural;
  ],
  "Peripheral Chassis": [
   null,
-  ""
+  "周辺機器シャーシ"
  ],
  "Pizza Box": [
   null,
-  ""
+  "Pizza Box"
  ],
  "Please confirm deletion of $0": [
   null,
@@ -629,7 +629,7 @@ return plural;
  ],
  "Portable": [
   null,
-  ""
+  "ポータブル"
  ],
  "Ports": [
   null,
@@ -641,15 +641,15 @@ return plural;
  ],
  "Problems": [
   null,
-  ""
+  "問題"
  ],
  "RAID Chassis": [
   null,
-  ""
+  "RAID シャーシ"
  ],
  "Rack Mount Chassis": [
   null,
-  ""
+  "ラックマウントシャーシ"
  ],
  "ReadOnly": [
   null,
@@ -709,7 +709,7 @@ return plural;
  ],
  "Sealed-case PC": [
   null,
-  ""
+  "シールドケース PC"
  ],
  "Security": [
   null,
@@ -737,7 +737,7 @@ return plural;
  ],
  "Space-saving Computer": [
   null,
-  ""
+  "省スペースコンピューター"
  ],
  "Start": [
   null,
@@ -757,7 +757,7 @@ return plural;
  ],
  "Stick PC": [
   null,
-  ""
+  "スティッキー PC"
  ],
  "Stop": [
   null,
@@ -777,11 +777,11 @@ return plural;
  ],
  "Sub Chassis": [
   null,
-  ""
+  "サブシャーシ"
  ],
  "Sub Notebook": [
   null,
-  ""
+  "サブノートブック"
  ],
  "TCP": [
   null,
@@ -789,7 +789,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "タブレット"
  ],
  "Tag": [
   null,
@@ -805,11 +805,11 @@ return plural;
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,
-  ""
+  "$time ($type) のスキャンでは、脆弱性は見つかりませんでした。"
  ],
  "The scan from $time ($type) was not successful.": [
   null,
-  ""
+  "$time ($type) のスキャンは成功しませんでした。"
  ],
  "The storage pool will be reset to optimize its layout.  All containers will be erased.": [
   null,
@@ -825,7 +825,7 @@ return plural;
  ],
  "Tower": [
   null,
-  ""
+  "タワー"
  ],
  "Try again": [
   null,

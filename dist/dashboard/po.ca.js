@@ -139,7 +139,7 @@ return plural;
  ],
  "All In One": [
   null,
-  ""
+  "Tot en un"
  ],
  "Authentication": [
   null,
@@ -223,7 +223,7 @@ return plural;
  ],
  "Compact PCI": [
   null,
-  ""
+  "PCI compacte"
  ],
  "Connect": [
   null,
@@ -235,7 +235,7 @@ return plural;
  ],
  "Convertible": [
   null,
-  ""
+  "Convertible"
  ],
  "Could not contact {{host}}": [
   null,
@@ -247,7 +247,7 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Escriptori"
  ],
  "Detachable": [
   null,
@@ -431,7 +431,7 @@ return plural;
  ],
  "Other": [
   null,
-  ""
+  "Altres"
  ],
  "Password": [
   null,
@@ -519,7 +519,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "Tauleta"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,

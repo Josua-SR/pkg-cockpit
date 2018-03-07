@@ -46,6 +46,16 @@ def can_manage(machine):
                               "fedora-atomic",
                               "continuous-atomic" ]
 
+# Returns whether Cockpit offers to reset the pool
+#
+def can_reset(machine):
+    # Adding a disk will grow the xfs root filesystem to cover it, and
+    # there is no way back.
+    if machine.image in [ "fedora-atomic", "rhel-7-5" ]:
+        return False
+
+    return True
+
 # Returns whether Docker uses devmapper with loopback by default.
 # Cockpit will force the user away from this.
 #
@@ -78,7 +88,7 @@ def initially_without_vgroup(machine):
 def get_build_image(test_os):
     build_os = test_os
     if test_os == "fedora-atomic":
-        build_os = "fedora-26"
+        build_os = "fedora-27"
     elif test_os == "rhel-atomic":
         build_os = "rhel-7"
     elif test_os == "continuous-atomic":
@@ -86,6 +96,7 @@ def get_build_image(test_os):
     return build_os
 
 @skipImage("No cockpit-docker on i386", "fedora-i386")
+@skipPackage("cockpit-docker")
 class TestDockerStorage(MachineCase):
 
     def testOverview(self):
@@ -102,6 +113,7 @@ class TestDockerStorage(MachineCase):
             b.wait_present("#containers-storage-details a")
 
 @skipImage("No cockpit-docker on i386", "fedora-i386")
+@skipPackage("cockpit-docker")
 class TestDockerStorageMapper(MachineCase):
     provision = { "machine1" : { "address": "10.111.113.1/20" } }
 
@@ -194,6 +206,9 @@ class TestDockerStorageMapper(MachineCase):
             b.wait_visible("#storage-unsupported")
             return
 
+        # should have some images
+        self.assertNotEqual(m.execute("docker images -q"), "")
+
         # Add a disk
 
         m.add_disk("100M", serial="DISK1")
@@ -228,6 +243,13 @@ class TestDockerStorageMapper(MachineCase):
         b.wait_not_present(".modal-dialog:contains(Add Additional Storage)")
         b.wait_not_in_text("#storage-drives", "DISK2")
 
+        # adding disks should keep images, unless the above created the VG and thus reset the pool
+        if not (initially_loopbacked(m) or initially_without_vgroup(m)):
+            self.assertNotEqual(m.execute("docker images -q"), "")
+
+        if not can_reset(m):
+            return
+
         # Reset
 
         b.click("#storage-reset")
@@ -237,6 +259,9 @@ class TestDockerStorageMapper(MachineCase):
 
         check_loopback(initially_loopbacked(m))
         check_atomic_vgroup(False)
+
+        # resetting pool should wipe all images
+        self.assertEqual(m.execute("docker images -q"), "")
 
         b.wait_in_text("#storage-drives", "DISK1")
         b.wait_in_text("#storage-drives", "DISK2")

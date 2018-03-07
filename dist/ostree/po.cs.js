@@ -169,7 +169,7 @@ return plural;
  ],
  "Name": [
   null,
-  ""
+  "Název"
  ],
  "No Deployments": [
   null,

@@ -299,7 +299,7 @@ return plural;
  ],
  "All In One": [
   null,
-  ""
+  "Tot en un"
  ],
  "Asset Tag": [
   null,
@@ -319,15 +319,15 @@ return plural;
  ],
  "BIOS": [
   null,
-  ""
+  "BIOS"
  ],
  "BIOS date": [
   null,
-  ""
+  "Data del BIOS"
  ],
  "BIOS version": [
   null,
-  ""
+  "Versió del BIOS"
  ],
  "Blade": [
   null,
@@ -371,7 +371,7 @@ return plural;
  ],
  "Class": [
   null,
-  ""
+  "Classe"
  ],
  "Close": [
   null,
@@ -383,7 +383,7 @@ return plural;
  ],
  "Compact PCI": [
   null,
-  ""
+  "PCI compacte"
  ],
  "Condition $0=$1 was not met": [
   null,
@@ -395,7 +395,7 @@ return plural;
  ],
  "Convertible": [
   null,
-  ""
+  "Convertible"
  ],
  "Create Timer": [
   null,
@@ -419,7 +419,7 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Escriptori"
  ],
  "Detachable": [
   null,
@@ -511,7 +511,7 @@ return plural;
  ],
  "Hardware Information": [
   null,
-  ""
+  "Informació del maquinari"
  ],
  "Host Name": [
   null,
@@ -675,7 +675,7 @@ return plural;
  ],
  "Model": [
   null,
-  ""
+  "Model"
  ],
  "Monday": [
   null,
@@ -755,11 +755,11 @@ return plural;
  ],
  "Other": [
   null,
-  ""
+  "Altres"
  ],
  "PCI": [
   null,
-  ""
+  "PCI"
  ],
  "Paths": [
   null,
@@ -1035,7 +1035,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "Tauleta"
  ],
  "Targets": [
   null,
@@ -1111,8 +1111,8 @@ return plural;
  ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",
-  "",
-  ""
+  "Ús de $0 nucli de CPU",
+  "Ús de $0 nuclis de CPU"
  ],
  "Used": [
   null,
@@ -1124,7 +1124,7 @@ return plural;
  ],
  "Vendor": [
   null,
-  ""
+  "Fabricant"
  ],
  "Version": [
   null,
@@ -1156,8 +1156,8 @@ return plural;
  ],
  "of $0 CPU core": [
   "of $0 CPU cores",
-  "",
-  ""
+  "de $0 nucli de CPU",
+  "de $0 nuclis de CPU"
  ],
  "unknown": [
   null,

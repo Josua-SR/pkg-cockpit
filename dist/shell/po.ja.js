@@ -273,7 +273,7 @@ return plural;
  ],
  "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
-  ""
+  "現在ログインしているユーザー {{#default_user}} ({{default_user}}){{/default_user}} としてこのマシンに接続する場合は空白のままにします。別のユーザー名を入力すると、このマシンへの接続時にそのユーザーが常に使用されます。"
  ],
  "Licensed under:": [
   null,
@@ -321,7 +321,7 @@ return plural;
  ],
  "No matching files found": [
   null,
-  "ホストキーが見つかりません。"
+  "一致するファイルが見つかりませんでした。"
  ],
  "No such file or directory": [
   null,
@@ -369,7 +369,7 @@ return plural;
  ],
  "Path to file": [
   null,
-  ""
+  "ファイルのパス"
  ],
  "Port": [
   null,
@@ -461,7 +461,7 @@ return plural;
  ],
  "Too many files found": [
   null,
-  ""
+  "見つかったファイルが多すぎます"
  ],
  "Troubleshoot": [
   null,

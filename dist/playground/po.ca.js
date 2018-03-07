@@ -108,7 +108,7 @@ return plural;
  ],
  "Control": [
   null,
-  ""
+  "Control"
  ],
  "Delete '{{ name }}'": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "key\u0004Control": [
   null,
-  ""
+  "Control"
  ],
  "verb\u0004Empty": [
   null,

@@ -135,7 +135,7 @@ return plural;
  ],
  "Network": [
   null,
-  ""
+  "Síť"
  ],
  "No matching files found": [
   null,

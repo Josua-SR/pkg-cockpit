@@ -117,11 +117,11 @@ return plural;
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  ""
+  "Kliknutím na tlačítko \"Spustit vzdálený prohlížeč\" se stáhne soubor ve formátu .vv a spustí se $0."
  ],
  "Confirm deletion of $0": [
   null,
-  ""
+  "Potvrdit smazání $0"
  ],
  "Connect with any $0 viewer application.": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "GiB": [
   null,
-  ""
+  "GiB"
  ],
  "Graphics Console (VNC)": [
   null,
@@ -233,11 +233,11 @@ return plural;
  ],
  "Install": [
   null,
-  ""
+  "Instalovat"
  ],
  "Installation Source": [
   null,
-  ""
+  "Zdroj instalace"
  ],
  "Installation Source Type": [
   null,
@@ -253,7 +253,7 @@ return plural;
  ],
  "Launch Remote Viewer": [
   null,
-  ""
+  "Spustit vzdálený prohlížeč"
  ],
  "Loading ...": [
   null,
@@ -261,7 +261,7 @@ return plural;
  ],
  "MAC Address": [
   null,
-  ""
+  "MAC Adresa"
  ],
  "MTU": [
   null,
@@ -301,7 +301,7 @@ return plural;
  ],
  "Name": [
   null,
-  ""
+  "Název"
  ],
  "Name should not be empty": [
   null,
@@ -597,7 +597,7 @@ return plural;
  ],
  "bridge": [
   null,
-  ""
+  "most"
  ],
  "cdrom": [
   null,
@@ -673,7 +673,7 @@ return plural;
  ],
  "running": [
   null,
-  ""
+  "běžící"
  ],
  "server": [
   null,
@@ -689,7 +689,7 @@ return plural;
  ],
  "shut off": [
   null,
-  ""
+  "vypnuto"
  ],
  "shutdown": [
   null,
@@ -701,7 +701,7 @@ return plural;
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "undefined": [
   null,
@@ -713,7 +713,7 @@ return plural;
  ],
  "user": [
   null,
-  ""
+  "uživatel"
  ],
  "vCPUs:": [
   null,

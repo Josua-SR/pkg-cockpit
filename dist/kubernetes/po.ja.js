@@ -545,7 +545,7 @@ return plural;
  ],
  "GiB": [
   null,
-  ""
+  "GiB"
  ],
  "Git Repository": [
   null,
@@ -669,7 +669,7 @@ return plural;
  ],
  "Labels:": [
   null,
-  ""
+  "ラベル"
  ],
  "Last Heartbeat": [
   null,
@@ -761,7 +761,7 @@ return plural;
  ],
  "N/A": [
   null,
-  ""
+  "該当なし"
  ],
  "NFS": [
   null,
@@ -781,7 +781,7 @@ return plural;
  ],
  "Namespace cannot be empty.": [
   null,
-  "名前空間は空にすることができません。"
+  "名前空間は空欄にできません。"
  ],
  "Network": [
   null,
@@ -861,7 +861,7 @@ return plural;
  ],
  "No virtual machines": [
   null,
-  ""
+  "仮想マシンがありません"
  ],
  "No volumes are present.": [
   null,
@@ -877,7 +877,7 @@ return plural;
  ],
  "Node:": [
   null,
-  ""
+  "ノード:"
  ],
  "Nodes": [
   null,
@@ -893,7 +893,7 @@ return plural;
  ],
  "Not Available": [
   null,
-  ""
+  "使用できません"
  ],
  "Not Ready": [
   null,
@@ -1053,7 +1053,7 @@ return plural;
  ],
  "Pod:": [
   null,
-  ""
+  "ポッド:"
  ],
  "Pods": [
   null,
@@ -1625,7 +1625,7 @@ return plural;
  ],
  "VM DELETE failed.": [
   null,
-  ""
+  "VM DELETE に失敗しました。"
  ],
  "Virtual Machines": [
   null,
@@ -1681,11 +1681,11 @@ return plural;
  ],
  "bridge": [
   null,
-  ""
+  "ブリッジ"
  ],
  "cdrom": [
   null,
-  ""
+  "cdrom"
  ],
  "crashed": [
   null,
@@ -1693,11 +1693,11 @@ return plural;
  ],
  "custom": [
   null,
-  "Custom"
+  "カスタム"
  ],
  "direct": [
   null,
-  ""
+  "ダイレクト"
  ],
  "disabled": [
   null,
@@ -1705,11 +1705,11 @@ return plural;
  ],
  "disk": [
   null,
-  ""
+  "ディスク"
  ],
  "down": [
   null,
-  ""
+  "下へ"
  ],
  "dying": [
   null,
@@ -1725,19 +1725,19 @@ return plural;
  ],
  "ethernet": [
   null,
-  ""
+  "Ethernet"
  ],
  "host": [
   null,
-  ""
+  "ホスト"
  ],
  "hostdev": [
   null,
-  ""
+  "hostdev"
  ],
  "iSCSI": [
   null,
-  ""
+  "iSCSI"
  ],
  "idle": [
   null,
@@ -1745,11 +1745,11 @@ return plural;
  ],
  "mcast": [
   null,
-  ""
+  "mcast"
  ],
  "n/a": [
   null,
-  ""
+  "該当なし"
  ],
  "network": [
   null,
@@ -1777,15 +1777,15 @@ return plural;
  ],
  "server": [
   null,
-  ""
+  "サーバー"
  ],
  "show less": [
   null,
-  ""
+  "表示を減らす"
  ],
  "show more": [
   null,
-  ""
+  "表示を増やす"
  ],
  "shut off": [
   null,
@@ -1801,15 +1801,15 @@ return plural;
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "up": [
   null,
-  ""
+  "上へ"
  ],
  "user": [
   null,
-  ""
+  "ユーザー"
  ],
  "vCPUs:": [
   null,
@@ -1817,7 +1817,7 @@ return plural;
  ],
  "vhostuser": [
   null,
-  ""
+  "vhostuser"
  ],
  "yes": [
   null,

@@ -293,7 +293,7 @@ return plural;
  ],
  "Advanced TCA": [
   null,
-  ""
+  "Pokročilé TCA"
  ],
  "After": [
   null,
@@ -305,7 +305,7 @@ return plural;
  ],
  "All In One": [
   null,
-  ""
+  "Vše v jednom"
  ],
  "Asset Tag": [
   null,
@@ -325,15 +325,15 @@ return plural;
  ],
  "BIOS": [
   null,
-  ""
+  "BIOS"
  ],
  "BIOS date": [
   null,
-  ""
+  "Datum BIOSu"
  ],
  "BIOS version": [
   null,
-  ""
+  "Verze BIOSu"
  ],
  "Blade": [
   null,
@@ -369,7 +369,7 @@ return plural;
  ],
  "Change Host Name": [
   null,
-  ""
+  "Změnit název počítače"
  ],
  "Change System Time": [
   null,
@@ -377,7 +377,7 @@ return plural;
  ],
  "Class": [
   null,
-  ""
+  "Třída"
  ],
  "Close": [
   null,
@@ -393,15 +393,15 @@ return plural;
  ],
  "Condition $0=$1 was not met": [
   null,
-  ""
+  "Podmínka $0=$1 nebyla splněna"
  ],
  "Condition failed": [
   null,
-  ""
+  "Podmínka selhala"
  ],
  "Convertible": [
   null,
-  ""
+  "Konvertibilní"
  ],
  "Create Timer": [
   null,
@@ -425,7 +425,7 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Desktop"
  ],
  "Detachable": [
   null,
@@ -497,7 +497,7 @@ return plural;
  ],
  "General": [
   null,
-  ""
+  "Obecné"
  ],
  "Go to": [
   null,
@@ -681,7 +681,7 @@ return plural;
  ],
  "Model": [
   null,
-  ""
+  "Model"
  ],
  "Monday": [
   null,
@@ -697,7 +697,7 @@ return plural;
  ],
  "Name": [
   null,
-  ""
+  "Název"
  ],
  "Need at least one NTP server": [
   null,
@@ -785,7 +785,7 @@ return plural;
  ],
  "Portable": [
   null,
-  ""
+  "Přenosný"
  ],
  "Power Options": [
   null,
@@ -805,7 +805,7 @@ return plural;
  ],
  "Problem details": [
   null,
-  ""
+  "Detaily problému"
  ],
  "Problem info": [
   null,
@@ -845,7 +845,7 @@ return plural;
  ],
  "Reboot": [
   null,
-  ""
+  "Restartovat"
  ],
  "Recent": [
   null,
@@ -877,11 +877,11 @@ return plural;
  ],
  "Report": [
   null,
-  ""
+  "Nahlásit"
  ],
  "Reported": [
   null,
-  ""
+  "Reportováno"
  ],
  "Reporter 'reporter-ureport' not found.": [
   null,
@@ -905,11 +905,11 @@ return plural;
  ],
  "Saturday": [
   null,
-  ""
+  "sobota"
  ],
  "Save": [
   null,
-  ""
+  "Uložit"
  ],
  "Sealed-case PC": [
   null,
@@ -1041,7 +1041,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "Tablet"
  ],
  "Targets": [
   null,
@@ -1131,7 +1131,7 @@ return plural;
  ],
  "Vendor": [
   null,
-  ""
+  "Výrobce"
  ],
  "Version": [
   null,
@@ -1139,7 +1139,7 @@ return plural;
  ],
  "Wednesday": [
   null,
-  ""
+  "středa"
  ],
  "Weeks": [
   null,
@@ -1177,6 +1177,6 @@ return plural;
  ],
  "page-title\u0004Memory": [
   null,
-  ""
+  "Paměť"
  ]
 }));

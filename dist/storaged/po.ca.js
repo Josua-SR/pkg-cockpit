@@ -900,7 +900,7 @@ return plural;
  ],
  "Only $0 of $1 are used.": [
   null,
-  ""
+  "Només s'utilitzen $0 de $1."
  ],
  "Operation '$operation' on $target": [
   null,
@@ -1228,7 +1228,7 @@ return plural;
  ],
  "Stop Device": [
   null,
-  ""
+  "Atura el dispositiu"
  ],
  "Stop Scrubbing": [
   null,
@@ -1236,7 +1236,7 @@ return plural;
  ],
  "Stop and Unmount": [
   null,
-  ""
+  "Atura i desmunta"
  ],
  "Stop and remove": [
   null,
@@ -1367,10 +1367,6 @@ return plural;
   "Aquest disc no es pot treure quan s'està recuperant el dispositiu."
  ],
  "This volume needs to be activated before it can be resized.": [
-  null,
-  ""
- ],
- "Transfer data asynchronously": [
   null,
   ""
  ],

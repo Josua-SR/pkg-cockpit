@@ -673,7 +673,7 @@ return plural;
  ],
  "Labels:": [
   null,
-  ""
+  "Мітки:"
  ],
  "Last Heartbeat": [
   null,
@@ -765,7 +765,7 @@ return plural;
  ],
  "N/A": [
   null,
-  ""
+  "н/д"
  ],
  "NFS": [
   null,
@@ -881,7 +881,7 @@ return plural;
  ],
  "Node:": [
   null,
-  ""
+  "Вузол:"
  ],
  "Nodes": [
   null,
@@ -897,7 +897,7 @@ return plural;
  ],
  "Not Available": [
   null,
-  ""
+  "Немає доступу"
  ],
  "Not Ready": [
   null,
@@ -1057,7 +1057,7 @@ return plural;
  ],
  "Pod:": [
   null,
-  ""
+  "Кокон:"
  ],
  "Pods": [
   null,
@@ -1741,7 +1741,7 @@ return plural;
  ],
  "iSCSI": [
   null,
-  ""
+  "iSCSI"
  ],
  "idle": [
   null,

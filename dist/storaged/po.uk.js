@@ -105,7 +105,7 @@ return plural;
  ],
  "$0 filesystems can not be resized here.": [
   null,
-  ""
+  "Тут не можна змінювати розмір файлових систем $0."
  ],
  "$0 hour": [
   "$0 hours",
@@ -1243,7 +1243,7 @@ return plural;
  ],
  "Stop and Unmount": [
   null,
-  ""
+  "Зупинити і демонтувати"
  ],
  "Stop and remove": [
   null,
@@ -1376,10 +1376,6 @@ return plural;
  "This volume needs to be activated before it can be resized.": [
   null,
   "Перш ніж розмір цього тому можна буде змінювати, його слід активувати."
- ],
- "Transfer data asynchronously": [
-  null,
-  "Передавати дані асинхронно"
  ],
  "Type": [
   null,

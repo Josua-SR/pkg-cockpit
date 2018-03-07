@@ -146,6 +146,21 @@ function insertCommas(list) {
     return list.reduce((prev, cur) => [prev, ", ", cur])
 }
 
+// Fedora changelogs are a wild mix of enumerations or not, headings, etc.
+// Remove that formatting to avoid an untidy updates overview list
+function cleanupChangelogLine(text) {
+    if (!text)
+        return text;
+
+    // enumerations
+    text = text.replace(/^[-* ]*/, "");
+
+    // headings
+    text = text.replace(/^=+\s+/, "").replace(/=+\s*$/, "");
+
+    return text.trim();
+}
+
 class Expander extends React.Component {
     constructor() {
         super();
@@ -335,6 +350,7 @@ class UpdateItem extends React.Component {
         var descriptionFirstLine = (info.description || "").trim();
         if (descriptionFirstLine.indexOf("\n") >= 0)
             descriptionFirstLine = descriptionFirstLine.slice(0, descriptionFirstLine.indexOf("\n"));
+        descriptionFirstLine = cleanupChangelogLine(descriptionFirstLine);
         var description;
         if (info.markdown) {
             descriptionFirstLine = <Markdown source={descriptionFirstLine} />;
@@ -948,9 +964,9 @@ class OsUpdates extends React.Component {
                           ? <div className="alert alert-warning">
                                 <span className="pficon pficon-warning-triangle-o"></span>
                                 <span>
-                                    <strong>{_("Cockpit itself will be updated.")}</strong>
+                                    <strong>{_("This web console will be updated.")}</strong>
                                     &nbsp;
-                                    {_("When you get disconnected, the updates will continue in the background. You can reconnect and resume watching the update progress.")}
+                                    {_("Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.")}
                                 </span>
                             </div>
                           : null

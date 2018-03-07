@@ -145,7 +145,7 @@ return plural;
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  ""
+  "Kliknutím na tlačítko \"Spustit vzdálený prohlížeč\" se stáhne soubor ve formátu .vv a spustí se $0."
  ],
  "Cluster": [
   null,
@@ -153,27 +153,27 @@ return plural;
  ],
  "Cluster Templates": [
   null,
-  ""
+  "Šablony clusterů"
  ],
  "Cluster Virtual Machines": [
   null,
-  ""
+  "Cluster virtuálních strojů"
  ],
  "Confirm deletion of $0": [
   null,
-  ""
+  "Potvrdit smazání $0"
  ],
  "Confirm migration": [
   null,
-  ""
+  "Potvrdit migraci"
  ],
  "Confirm reload:": [
   null,
-  ""
+  "Potvrdit opětovné načtení:"
  ],
  "Confirm save:": [
   null,
-  ""
+  "Potvrdit uložení:"
  ],
  "Connect to oVirt Engine": [
   null,
@@ -233,7 +233,7 @@ return plural;
  ],
  "Description:": [
   null,
-  ""
+  "Popis:"
  ],
  "Device": [
   null,
@@ -289,7 +289,7 @@ return plural;
  ],
  "GiB": [
   null,
-  ""
+  "GiB"
  ],
  "Graphics Console (VNC)": [
   null,
@@ -325,11 +325,11 @@ return plural;
  ],
  "Install": [
   null,
-  ""
+  "Instalovat"
  ],
  "Installation Source": [
   null,
-  ""
+  "Zdroj instalace"
  ],
  "Installation Source Type": [
   null,
@@ -345,7 +345,7 @@ return plural;
  ],
  "Launch Remote Viewer": [
   null,
-  ""
+  "Spustit vzdálený prohlížeč"
  ],
  "Loading ...": [
   null,
@@ -357,7 +357,7 @@ return plural;
  ],
  "MAC Address": [
   null,
-  ""
+  "MAC Adresa"
  ],
  "MIGRATE action failed": [
   null,
@@ -405,7 +405,7 @@ return plural;
  ],
  "Name": [
   null,
-  ""
+  "Název"
  ],
  "Name should not be empty": [
   null,
@@ -449,7 +449,7 @@ return plural;
  ],
  "OK": [
   null,
-  ""
+  "Budiž"
  ],
  "OS": [
   null,
@@ -457,7 +457,7 @@ return plural;
  ],
  "OS Type:": [
   null,
-  ""
+  "Druh OS:"
  ],
  "OS Vendor": [
   null,
@@ -613,7 +613,7 @@ return plural;
  ],
  "Save": [
   null,
-  ""
+  "Uložit"
  ],
  "Send Non-Maskable Interrupt": [
   null,
@@ -853,7 +853,7 @@ return plural;
  ],
  "bridge": [
   null,
-  ""
+  "most"
  ],
  "cdrom": [
   null,
@@ -901,7 +901,7 @@ return plural;
  ],
  "error": [
   null,
-  ""
+  "chyba"
  ],
  "ethernet": [
   null,
@@ -1001,7 +1001,7 @@ return plural;
  ],
  "running": [
   null,
-  ""
+  "běžící"
  ],
  "server": [
   null,
@@ -1017,7 +1017,7 @@ return plural;
  ],
  "shut off": [
   null,
-  ""
+  "vypnuto"
  ],
  "shutdown": [
   null,
@@ -1037,7 +1037,7 @@ return plural;
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "unassigned": [
   null,
@@ -1053,7 +1053,7 @@ return plural;
  ],
  "user": [
   null,
-  ""
+  "uživatel"
  ],
  "vCPUs": [
   null,
