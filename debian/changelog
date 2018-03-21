@@ -1,4 +1,4 @@
-cockpit (164-1) UNRELEASED; urgency=medium
+cockpit (164-1) unstable; urgency=medium
 
   * New upstream release:
     - Storage: Move NFS management into new details page
@@ -9,7 +9,7 @@ cockpit (164-1) UNRELEASED; urgency=medium
     - Accessibility improvements
     - Reloading the page in the browser now reloads Cockpit package manifests
 
- -- Martin Pitt <mpitt@debian.org>  Wed, 21 Mar 2018 16:31:31 +0100
+ -- Martin Pitt <mpitt@debian.org>  Wed, 21 Mar 2018 16:33:50 +0100
 
 cockpit (163-1) unstable; urgency=medium
 
