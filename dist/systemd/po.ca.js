@@ -355,7 +355,7 @@ return plural;
  ],
  "Cannot schedule event in the past": [
   null,
-  ""
+  "No es pot planificar un esdeveniment del passat"
  ],
  "Change": [
   null,
@@ -372,6 +372,10 @@ return plural;
  "Class": [
   null,
   "Classe"
+ ],
+ "Click to see system hardware information": [
+  null,
+  ""
  ],
  "Close": [
   null,
@@ -659,11 +663,11 @@ return plural;
  ],
  "Mini PC": [
   null,
-  ""
+  "Mini PC"
  ],
  "Mini Tower": [
   null,
-  ""
+  "Mini torre"
  ],
  "Minute needs to be a number between 0-59": [
   null,
@@ -747,7 +751,7 @@ return plural;
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
-  ""
+  "Només es permeten lletres, números, : , _ , . , @ , -."
  ],
  "Operating System": [
   null,
@@ -779,7 +783,7 @@ return plural;
  ],
  "Portable": [
   null,
-  ""
+  "Portable"
  ],
  "Power Options": [
   null,
@@ -955,7 +959,7 @@ return plural;
  ],
  "Slot": [
   null,
-  ""
+  "Ranura"
  ],
  "Sockets": [
   null,
@@ -1023,7 +1027,7 @@ return plural;
  ],
  "System Information": [
   null,
-  ""
+  "Informació del sistema"
  ],
  "System Services": [
   null,
@@ -1087,7 +1091,7 @@ return plural;
  ],
  "Tower": [
   null,
-  ""
+  "Torre"
  ],
  "Trying to synchronize with {{Server}}": [
   null,

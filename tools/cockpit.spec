@@ -346,9 +346,15 @@ Requires: %{name}-bridge >= 122
 Requires: %{name}-system >= 122
 Requires: libvirt
 Requires: libvirt-client
+# Optional components (for f24 we use soft deps)
+%if 0%{?fedora} >= 24 || 0%{?rhel} >= 8
+Recommends: virt-install
+%endif
 
 %description machines
 The Cockpit components for managing virtual machines.
+
+If "virt-install" is installed, you can also create new virtual machines.
 
 %files machines -f machines.list
 
@@ -488,6 +494,9 @@ Requires: NetworkManager
 Provides: %{name}-kdump = %{version}-%{release}
 Requires: kexec-tools
 # Optional components (only when soft deps are supported)
+%if 0%{?fedora} >= 24 || 0%{?rhel} >= 8
+Recommends: polkit
+%endif
 %if 0%{?rhel} >= 8
 Recommends: NetworkManager-team
 Recommends: setroubleshoot-server >= 3.3.3
@@ -647,6 +656,7 @@ Summary: Cockpit user interface for Docker containers
 Requires: %{name}-bridge >= 122
 Requires: %{name}-shell >= 122
 Requires: /usr/bin/docker
+Requires: /usr/lib/systemd/system/docker.service
 Requires: python2
 
 %description docker

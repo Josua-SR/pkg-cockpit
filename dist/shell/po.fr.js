@@ -247,6 +247,10 @@ return plural;
   null,
   ""
  ],
+ "Host": [
+  null,
+  "Hôte"
+ ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
   ""

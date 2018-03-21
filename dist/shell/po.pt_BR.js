@@ -247,6 +247,10 @@ return plural;
   null,
   "Digital"
  ],
+ "Host": [
+  null,
+  "Máquina"
+ ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
   "Para sincronizar os usuários, você precisa fazer login em {{#strong}}{{host}}{{/strong}}."

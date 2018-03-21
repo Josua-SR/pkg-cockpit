@@ -121,10 +121,6 @@ return plural;
   null,
   "Zkontrolovat aktualizace"
  ],
- "Cockpit itself will be updated.": [
-  null,
-  "Cockpit samotný bude aktualizován."
- ],
  "Details": [
   null,
   "Podrobnosti"
@@ -269,6 +265,10 @@ return plural;
   null,
   ""
  ],
+ "This web console will be updated.": [
+  null,
+  ""
+ ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
   ""
@@ -317,11 +317,11 @@ return plural;
   null,
   ""
  ],
- "When you get disconnected, the updates will continue in the background. You can reconnect and resume watching the update progress.": [
+ "You need to re-subscribe this system.": [
   null,
   ""
  ],
- "You need to re-subscribe this system.": [
+ "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
   ""
  ],

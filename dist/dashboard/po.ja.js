@@ -227,6 +227,10 @@ return plural;
   null,
   "{{ limit }} 台を超えるマシンへの同時接続はサポートされていません。"
  ],
+ "Connection Error": [
+  null,
+  "接続エラー"
+ ],
  "Convertible": [
   null,
   "変換可能"

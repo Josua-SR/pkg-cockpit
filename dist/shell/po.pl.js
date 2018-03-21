@@ -247,6 +247,10 @@ return plural;
   null,
   "Odcisk"
  ],
+ "Host": [
+  null,
+  "Gospodarz"
+ ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
   "Aby synchronizować użytkowników, należy się zalogować w {{#strong}}{{host}}{{/strong}}."

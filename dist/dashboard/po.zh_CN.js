@@ -227,6 +227,10 @@ return plural;
   null,
   "不支持同时连接到超过 {{ limit }} 主机。"
  ],
+ "Connection Error": [
+  null,
+  "连接错误"
+ ],
  "Convertible": [
   null,
   ""

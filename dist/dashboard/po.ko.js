@@ -227,6 +227,10 @@ return plural;
   null,
   ""
  ],
+ "Connection Error": [
+  null,
+  "Docker에 연결중입니다."
+ ],
  "Convertible": [
   null,
   ""

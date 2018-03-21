@@ -130,7 +130,7 @@ return plural;
  ],
  "$0 used of $1 ($2 saved)": [
   null,
-  ""
+  "$0 utilitzats de $1 ($2 estalviat)"
  ],
  "$0 week": [
   "$0 weeks",
@@ -1276,7 +1276,7 @@ return plural;
  ],
  "Synchronizing RAID Device $target": [
   null,
-  ""
+  "Sincronització del dispositiu RAID $target"
  ],
  "Targets": [
   null,
@@ -1300,7 +1300,7 @@ return plural;
  ],
  "The creation of this VDO device did not finish and the device can't be used.": [
   null,
-  ""
+  "No s'ha finalitzat la creació d'aquest dispositiu VDO i no es pot utilitzar aquest dispositiu."
  ],
  "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
   null,
@@ -1352,7 +1352,7 @@ return plural;
  ],
  "This device is currently used for VDO devices.": [
   null,
-  ""
+  "Aquest dispositiu s'utilitza actualment per als dispositiu VDO."
  ],
  "This device is currently used for volume groups.": [
   null,
@@ -1460,15 +1460,15 @@ return plural;
  ],
  "VDO Device": [
   null,
-  ""
+  "Dispositiu VDO"
  ],
  "VDO Device $0": [
   null,
-  ""
+  "Dispositiu VDO $0"
  ],
  "VDO Devices": [
   null,
-  ""
+  "Dispositius VDO"
  ],
  "VDO backing devices can not be made smaller": [
   null,

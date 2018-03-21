@@ -367,6 +367,10 @@ return plural;
   null,
   ""
  ],
+ "Click to see system hardware information": [
+  null,
+  ""
+ ],
  "Close": [
   null,
   "ပိတ္ပါ။"

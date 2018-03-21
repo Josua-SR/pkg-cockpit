@@ -367,6 +367,10 @@ return plural;
   null,
   "クラス"
  ],
+ "Click to see system hardware information": [
+  null,
+  ""
+ ],
  "Close": [
   null,
   "閉じる"

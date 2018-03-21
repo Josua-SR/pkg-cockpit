@@ -379,6 +379,10 @@ return plural;
   null,
   "Клас"
  ],
+ "Click to see system hardware information": [
+  null,
+  ""
+ ],
  "Close": [
   null,
   "Закрити"

@@ -118,10 +118,6 @@ return plural;
   null,
   "Comprova si hi ha actualitzacions"
  ],
- "Cockpit itself will be updated.": [
-  null,
-  "S'actualitzarà el mateix Cockpit."
- ],
  "Details": [
   null,
   "Detalls"
@@ -266,6 +262,10 @@ return plural;
   null,
   "Aquest sistema no està registrat"
  ],
+ "This web console will be updated.": [
+  null,
+  ""
+ ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
   "Per obtenir actualitzacions de programari, aquest sistema ha d'estar registrat a Red Hat, ja sigui utilitzant Red Hat Customer Portal o un servidor de subscripció local."
@@ -314,13 +314,13 @@ return plural;
   null,
   "Mostra els detalls del registrament"
  ],
- "When you get disconnected, the updates will continue in the background. You can reconnect and resume watching the update progress.": [
-  null,
-  "Quan us desconnecteu, les actualitzacions continuaran en segon pla. Podeu tornar a connectar i continuar veient el progrés de l'actualització."
- ],
  "You need to re-subscribe this system.": [
   null,
   "Heu de tornar a subscriure aquest sistema."
+ ],
+ "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
+  null,
+  ""
  ],
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,
@@ -328,7 +328,7 @@ return plural;
  ],
  "and restart the machine automatically.": [
   null,
-  ""
+  "i reinicia automàticament la màquina."
  ],
  "at": [
   null,

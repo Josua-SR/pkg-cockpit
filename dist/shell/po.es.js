@@ -247,6 +247,10 @@ return plural;
   null,
   "Fingerprint"
  ],
+ "Host": [
+  null,
+  "Anfitrión"
+ ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
   "Con el objetivo de sincronizar usuarios, necesita acceder a {{#strong}}{{host}}{{/strong}}."

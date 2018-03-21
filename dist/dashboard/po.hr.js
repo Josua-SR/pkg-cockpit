@@ -239,6 +239,10 @@ return plural;
   null,
   ""
  ],
+ "Connection Error": [
+  null,
+  "Povezujem se na Docker"
+ ],
  "Convertible": [
   null,
   ""

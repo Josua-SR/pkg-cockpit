@@ -115,10 +115,6 @@ return plural;
   null,
   "检查更新"
  ],
- "Cockpit itself will be updated.": [
-  null,
-  "Cockpit 将被更新。"
- ],
  "Details": [
   null,
   "详情"
@@ -263,6 +259,10 @@ return plural;
   null,
   "该系统未注册"
  ],
+ "This web console will be updated.": [
+  null,
+  ""
+ ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
   "为了获取软件更新，该系统需要注册到红帽，使用红帽消费者门户或一个本地的订阅服务器。"
@@ -311,13 +311,13 @@ return plural;
   null,
   "查看注册详情"
  ],
- "When you get disconnected, the updates will continue in the background. You can reconnect and resume watching the update progress.": [
-  null,
-  "当你遇到连接断开，更新将在后台继续。你可以重新连接并恢复观察更新过程。"
- ],
  "You need to re-subscribe this system.": [
   null,
   "你需要重新注册该系统。"
+ ],
+ "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
+  null,
+  ""
  ],
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,

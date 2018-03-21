@@ -233,6 +233,10 @@ return plural;
   null,
   ""
  ],
+ "Connection Error": [
+  null,
+  "Error de connexió"
+ ],
  "Convertible": [
   null,
   "Convertible"
@@ -387,11 +391,11 @@ return plural;
  ],
  "Mini PC": [
   null,
-  ""
+  "Mini PC"
  ],
  "Mini Tower": [
   null,
-  ""
+  "Mini torre"
  ],
  "Multi-system Chassis": [
   null,
@@ -455,7 +459,7 @@ return plural;
  ],
  "Portable": [
   null,
-  ""
+  "Portable"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -555,7 +559,7 @@ return plural;
  ],
  "Tower": [
   null,
-  ""
+  "Torre"
  ],
  "Type a password": [
   null,

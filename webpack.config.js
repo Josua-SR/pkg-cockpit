@@ -148,7 +148,7 @@ var info = {
 
         "packagekit/updates": [
             "packagekit/updates.jsx",
-            "packagekit/updates.css",
+            "packagekit/updates.less",
         ],
 
         "users/users": [
@@ -272,10 +272,6 @@ var extract = require("extract-text-webpack-plugin");
 var extend = require("extend");
 var path = require("path");
 var fs = require("fs");
-
-/* For node 0.10.x we need this defined */
-if (typeof(global.Promise) == "undefined")
-    global.Promise = require('promise');
 
 /* These can be overridden, typically from the Makefile.am */
 var srcdir = process.env.SRCDIR || __dirname;

@@ -775,7 +775,7 @@ return plural;
  ],
  "Unknown \"$0\"": [
   null,
-  ""
+  "\"$0\" desconegut"
  ],
  "Unknown configuration": [
   null,

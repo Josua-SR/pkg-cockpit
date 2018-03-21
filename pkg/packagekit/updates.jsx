@@ -18,11 +18,14 @@
  */
 
 import cockpit from "cockpit";
+import '../lib/polyfills.js'; // once per application
 import React from "react";
 import moment from "moment";
 import { Tooltip } from "cockpit-components-tooltip.jsx";
 import Markdown from "react-remarkable";
 import AutoUpdates from "./autoupdates.jsx";
+
+import * as PK from "packagekit.es6";
 
 require("listing.less");
 
@@ -40,84 +43,23 @@ const STATE_HEADINGS = {
     "loadError": _("Loading available updates failed"),
 }
 
-// see https://github.com/hughsie/PackageKit/blob/master/lib/packagekit-glib2/pk-enum.h
-const PK_EXIT_ENUM_SUCCESS = 1;
-const PK_EXIT_ENUM_FAILED = 2;
-const PK_EXIT_ENUM_CANCELLED = 3;
-const PK_ROLE_ENUM_REFRESH_CACHE = 13;
-const PK_ROLE_ENUM_UPDATE_PACKAGES = 22;
-const PK_INFO_ENUM_LOW = 3;
-//const PK_INFO_ENUM_ENHANCEMENT = 4;
-const PK_INFO_ENUM_NORMAL = 5;
-//const PK_INFO_ENUM_BUGFIX = 6;
-//const PK_INFO_ENUM_IMPORTANT = 7;
-const PK_INFO_ENUM_SECURITY = 8;
-const PK_STATUS_ENUM_WAIT = 1;
-const PK_STATUS_ENUM_UPDATE = 10;
-const PK_STATUS_ENUM_WAITING_FOR_LOCK = 30;
-
 const PK_STATUS_STRINGS = {
-    8: _("Downloading"),
-    9: _("Installing"),
-    10: _("Updating"),
-    11: _("Setting up"),
-    14: _("Verifying"),
+    [PK.Enum.STATUS_DOWNLOAD]: _("Downloading"),
+    [PK.Enum.STATUS_INSTALL]: _("Installing"),
+    [PK.Enum.STATUS_UPDATE]: _("Updating"),
+    [PK.Enum.STATUS_CLEANUP]: _("Setting up"),
+    [PK.Enum.STATUS_SIGCHECK]: _("Verifying"),
 }
 
 const PK_STATUS_LOG_STRINGS = {
-    8: _("Downloaded"),
-    9: _("Installed"),
-    10: _("Updated"),
-    11: _("Set up"),
-    14: _("Verified"),
+    [PK.Enum.STATUS_DOWNLOAD]: _("Downloaded"),
+    [PK.Enum.STATUS_INSTALL]: _("Installed"),
+    [PK.Enum.STATUS_UPDATE]: _("Updated"),
+    [PK.Enum.STATUS_CLEANUP]: _("Set up"),
+    [PK.Enum.STATUS_SIGCHECK]: _("Verified"),
 }
 
-const transactionInterface = "org.freedesktop.PackageKit.Transaction";
-
-// possible Red Hat subscription manager status values:
-// https://github.com/candlepin/subscription-manager/blob/30c3b52320c3e73ebd7435b4fc8b0b6319985d19/src/rhsm_icon/rhsm_icon.c#L98
-// we accept RHSM_VALID(0), RHN_CLASSIC(3), and RHSM_PARTIALLY_VALID(4)
-const validSubscriptionStates = [0, 3, 4];
-
-var dbus_pk = cockpit.dbus("org.freedesktop.PackageKit", { superuser: "try", "track": true });
 var packageSummaries = {};
-
-function pkWatchTransaction(transactionPath, signalHandlers, notifyHandler) {
-    var subscriptions = [];
-
-    for (let handler in signalHandlers) {
-        subscriptions.push(dbus_pk.subscribe({ interface: transactionInterface, path: transactionPath, member: handler },
-                           (path, iface, signal, args) => signalHandlers[handler](...args)));
-    }
-
-    if (notifyHandler) {
-        subscriptions.push(dbus_pk.watch(transactionPath));
-        dbus_pk.addEventListener("notify", reply => {
-            if (transactionPath in reply.detail && transactionInterface in reply.detail[transactionPath])
-                notifyHandler(reply.detail[transactionPath][transactionInterface]);
-        });
-    }
-
-    // unsubscribe when transaction finished
-    subscriptions.push(dbus_pk.subscribe({ interface: transactionInterface, path: transactionPath, member: "Finished" },
-        () => subscriptions.map(s => s.remove())));
-}
-
-function pkTransaction(method, arglist, signalHandlers, notifyHandler, failHandler) {
-    var dfd = cockpit.defer();
-
-    dbus_pk.call("/org/freedesktop/PackageKit", "org.freedesktop.PackageKit", "CreateTransaction", [], {timeout: 5000})
-        .done(result => {
-            let transactionPath = result[0];
-            dfd.resolve(transactionPath);
-            pkWatchTransaction(transactionPath, signalHandlers, notifyHandler);
-            dbus_pk.call(transactionPath, transactionInterface, method, arglist)
-                .fail(ex => failHandler(ex));
-        })
-        .fail(ex => failHandler(ex));
-
-    return dfd.promise();
-}
 
 // parse CVEs from an arbitrary text (changelog) and return URL array
 function parseCVEs(text) {
@@ -192,7 +134,7 @@ class Expander extends React.Component {
 function count_security_updates(updates) {
     var num_security = 0;
     for (let u in updates)
-        if (updates[u].severity === PK_INFO_ENUM_SECURITY)
+        if (updates[u].severity === PK.Enum.INFO_SECURITY)
            ++num_security;
     return num_security;
 }
@@ -252,6 +194,9 @@ function HeaderBar(props) {
 }
 
 function getSeverityURL(urls) {
+    if (!urls)
+        return null;
+
     // in ascending severity
     const knownLevels = ["low", "moderate", "important", "critical"];
     var highestIndex = -1;
@@ -309,34 +254,22 @@ class UpdateItem extends React.Component {
                 errata = null; // simpler testing below
         }
 
+        var secSeverityURL = getSeverityURL(info.vendor_urls);
+        var secSeverity = secSeverityURL ? secSeverityURL.slice(secSeverityURL.indexOf("#") + 1) : null;
+        var iconClasses = PK.getSeverityIcon(info.severity, secSeverity);
         var type;
-        var secSeverity;
-        if (info.severity === PK_INFO_ENUM_SECURITY) {
-            let classes = "pficon pficon-security";
-
-            // parse Red Hat security update classification from vendor_urls
-            secSeverity = getSeverityURL(info.vendor_urls);
-            if (secSeverity) {
-                let s = secSeverity.slice(secSeverity.indexOf("#") + 1);
-                classes += " severity-" + s;
-                secSeverity = <a rel="noopener" referrerpolicy="no-referrer" target="_blank" href={secSeverity}>{s}</a>;
-            }
-
+        if (info.severity === PK.Enum.INFO_SECURITY) {
+            if (secSeverityURL)
+                secSeverityURL = <a rel="noopener" referrerpolicy="no-referrer" target="_blank" href={secSeverityURL}>{secSeverity}</a>;
             type = (
                 <span>
-                    <span className={classes}>&nbsp;</span>
+                    <span className={iconClasses}>&nbsp;</span>
                     { (info.cve_urls && info.cve_urls.length > 0) ? info.cve_urls.length : "" }
-                </span>);
-        } else if (info.severity >= PK_INFO_ENUM_NORMAL) {
-            type = (
-                <span>
-                    <span className="fa fa-bug">&nbsp;</span>
-                    { bugs ? info.bug_urls.length : "" }
                 </span>);
         } else {
             type = (
                 <span>
-                    <span className="pficon pficon-enhancement">&nbsp;</span>
+                    <span className={iconClasses}>&nbsp;</span>
                     { bugs ? info.bug_urls.length : "" }
                 </span>);
         }
@@ -370,8 +303,8 @@ class UpdateItem extends React.Component {
                                 <dd>{pkgs}</dd>
                                 { cves ? <dt>CVE:</dt> : null }
                                 { cves ? <dd>{cves}</dd> : null }
-                                { secSeverity ? <dt>{_("Severity:")}</dt> : null }
-                                { secSeverity ? <dd className="severity">{secSeverity}</dd> : null }
+                                { secSeverityURL ? <dt>{_("Severity:")}</dt> : null }
+                                { secSeverityURL ? <dd className="severity">{secSeverityURL}</dd> : null }
                                 { errata ? <dt>{_("Errata:")}</dt> : null }
                                 { errata ? <dd>{errata}</dd> : null }
                                 { bugs ? <dt>{_("Bugs:")}</dt> : null }
@@ -388,7 +321,7 @@ class UpdateItem extends React.Component {
 
         return (
             <tbody className={ this.state.expanded ? "open" : null } >
-                <tr className={ "listing-ct-item" + (info.severity === PK_INFO_ENUM_SECURITY ? " security" : "") }
+                <tr className={ "listing-ct-item" + (info.severity === PK.Enum.INFO_SECURITY ? " security" : "") }
                     onClick={ () => this.setState({expanded: !this.state.expanded}) }>
                     <td className="listing-ct-toggle">
                         <i className="fa fa-fw"></i>
@@ -428,9 +361,9 @@ function UpdatesList(props) {
 
     // sort security first
     updates.sort((a, b) => {
-        if (props.updates[a].severity === PK_INFO_ENUM_SECURITY && props.updates[b].severity !== PK_INFO_ENUM_SECURITY)
+        if (props.updates[a].severity === PK.Enum.INFO_SECURITY && props.updates[b].severity !== PK.Enum.INFO_SECURITY)
             return -1;
-        if (props.updates[a].severity !== PK_INFO_ENUM_SECURITY && props.updates[b].severity === PK_INFO_ENUM_SECURITY)
+        if (props.updates[a].severity !== PK.Enum.INFO_SECURITY && props.updates[b].severity === PK.Enum.INFO_SECURITY)
             return 1;
         return a.localeCompare(b);
     });
@@ -492,12 +425,12 @@ class ApplyUpdates extends React.Component {
     componentDidMount() {
         var transactionPath = this.props.transaction;
 
-        pkWatchTransaction(transactionPath, {
+        PK.watchTransaction(transactionPath, {
             Package: (info, packageId) => {
                 let pfields = packageId.split(";");
 
                 // small timeout to avoid excessive overlaps from the next PackageKit progress signal
-                dbus_pk.call(transactionPath, "org.freedesktop.DBus.Properties", "GetAll", [transactionInterface], {timeout: 500})
+                PK.dbus_client.call(transactionPath, "org.freedesktop.DBus.Properties", "GetAll", [PK.transactionInterface], {timeout: 500})
                     .done(reply => {
                         let percent = reply[0].Percentage.v;
                         let remain = -1;
@@ -534,12 +467,12 @@ class ApplyUpdates extends React.Component {
             let lastAction = this.state.actions[this.state.actions.length - 1];
             actionHTML = (
                 <span>
-                    <strong>{ PK_STATUS_STRINGS[lastAction.status] || PK_STATUS_STRINGS[PK_STATUS_ENUM_UPDATE] }</strong>
+                    <strong>{ PK_STATUS_STRINGS[lastAction.status] || PK_STATUS_STRINGS[PK.Enum.STATUS_UPDATE] }</strong>
                     &nbsp;{lastAction.package}
                 </span>);
             logRows = this.state.actions.slice(0, -1).map(action => (
                 <tr>
-                    <th>{PK_STATUS_LOG_STRINGS[action.status] || PK_STATUS_LOG_STRINGS[PK_STATUS_ENUM_UPDATE]}</th>
+                    <th>{PK_STATUS_LOG_STRINGS[action.status] || PK_STATUS_LOG_STRINGS[PK.Enum.STATUS_UPDATE]}</th>
                     <td>{action.package}</td>
                 </tr>));
         } else {
@@ -601,7 +534,7 @@ class OsUpdates extends React.Component {
     constructor() {
         super();
         this.state = { state: "loading", errorMessages: [], updates: {}, timeSinceRefresh: null,
-                       loadPercent: null, waiting: false, cockpitUpdate: false, allowCancel: null,
+                       loadPercent: null, cockpitUpdate: false, allowCancel: null,
                        history: null, unregistered: false, autoUpdatesEnabled: null };
         this.handleLoadError = this.handleLoadError.bind(this);
         this.handleRefresh = this.handleRefresh.bind(this);
@@ -611,17 +544,17 @@ class OsUpdates extends React.Component {
 
     componentDidMount() {
         // check if there is an upgrade in progress already; if so, switch to "applying" state right away
-        dbus_pk.call("/org/freedesktop/PackageKit", "org.freedesktop.PackageKit", "GetTransactionList", [], {timeout: 5000})
+        PK.dbus_client.call("/org/freedesktop/PackageKit", "org.freedesktop.PackageKit", "GetTransactionList", [], {timeout: 5000})
             .done(result => {
                 let transactions = result[0];
-                let promises = transactions.map(transactionPath => dbus_pk.call(
-                    transactionPath, "org.freedesktop.DBus.Properties", "Get", [transactionInterface, "Role"], {timeout: 5000}));
+                let promises = transactions.map(transactionPath => PK.dbus_client.call(
+                    transactionPath, "org.freedesktop.DBus.Properties", "Get", [PK.transactionInterface, "Role"], {timeout: 5000}));
 
                 cockpit.all(promises)
                     .done(roles => {
                         // any transaction with UPDATE_PACKAGES role?
                         for (let idx = 0; idx < roles.length; ++idx) {
-                            if (roles[idx].v === PK_ROLE_ENUM_UPDATE_PACKAGES) {
+                            if (roles[idx].v === PK.Enum.ROLE_UPDATE_PACKAGES) {
                                 this.watchUpdates(transactions[idx]);
                                 return;
                             }
@@ -638,7 +571,7 @@ class OsUpdates extends React.Component {
 
             });
 
-        dbus_pk.addEventListener("close", (event, ex) => {
+        PK.dbus_client.addEventListener("close", (event, ex) => {
             console.log("close:", event, ex);
             let err;
             if (ex.problem == "not-found")
@@ -657,7 +590,8 @@ class OsUpdates extends React.Component {
     }
 
     handleLoadError(ex) {
-        this.state.errorMessages.push(ex.message || ex);
+        console.error("loading available updates failed:", JSON.stringify(ex));
+        this.state.errorMessages.push(ex.detail || ex.message || ex);
         this.setState({state: "loadError"});
     }
 
@@ -670,7 +604,7 @@ class OsUpdates extends React.Component {
     }
 
     loadUpdateDetails(pkg_ids) {
-        pkTransaction("GetUpdateDetail", [pkg_ids], {
+        PK.cancellableTransaction("GetUpdateDetail", [pkg_ids], null, {
                 UpdateDetail: (packageId, updates, obsoletes, vendor_urls, bug_urls, cve_urls, restart,
                                update_text, changelog /* state, issued, updated */) => {
                     let u = this.state.updates[packageId];
@@ -689,24 +623,16 @@ class OsUpdates extends React.Component {
                     // many backends don't support proper severities; parse CVEs from description as a fallback
                     u.cve_urls = deduplicate(cve_urls && cve_urls.length > 0 ? cve_urls : parseCVEs(u.description));
                     if (u.cve_urls && u.cve_urls.length > 0)
-                        u.severity = PK_INFO_ENUM_SECURITY;
+                        u.severity = PK.Enum.INFO_SECURITY;
                     u.vendor_urls = vendor_urls || [];
                     // u.restart = restart; // broken (always "1") at least in Fedora
 
                     this.setState({ updates: this.state.updates });
                 },
-
-                Finished: () => this.setState({state: "available"}),
-
-                ErrorCode: (code, details) => {
-                    console.warn("UpdateDetail error:", code, details);
-                    // still show available updates, with reduced detail
-                    this.setState({state: "available"});
-                }
-            },
-            null,
-            ex => {
-                console.warn("GetUpdateDetail failed:", ex);
+        })
+            .then(() => this.setState({state: "available"}))
+            .catch(ex => {
+                console.warn("GetUpdateDetail failed:", JSON.stringify(ex));
                 // still show available updates, with reduced detail
                 this.setState({state: "available"});
             });
@@ -716,63 +642,41 @@ class OsUpdates extends React.Component {
         var updates = {};
         var cockpitUpdate = false;
 
-        pkTransaction("GetUpdates", [0], {
+        PK.cancellableTransaction("GetUpdates", [0],
+            data => this.setState({ state: data.waiting && "locked" || "loading" }),
+            {
                 Package: (info, packageId, _summary) => {
                     let id_fields = packageId.split(";");
                     packageSummaries[id_fields[0]] = _summary;
                     // HACK: dnf backend yields wrong severity (https://bugs.freedesktop.org/show_bug.cgi?id=101070)
-                    if (info < PK_INFO_ENUM_LOW || info > PK_INFO_ENUM_SECURITY)
-                        info = PK_INFO_ENUM_NORMAL;
+                    if (info < PK.Enum.INFO_LOW || info > PK.Enum.INFO_SECURITY)
+                        info = PK.Enum.INFO_NORMAL;
                     updates[packageId] = { name: id_fields[0], version: id_fields[1], severity: info };
                     if (id_fields[0] == "cockpit-ws")
                         cockpitUpdate = true;
                 },
-
-                ErrorCode: (code, details) => {
-                    this.state.errorMessages.push(details);
-                    this.setState({state: "loadError"});
-                },
-
-                // when GetUpdates() finished, get the details for all packages
-                Finished: () => {
-                    let pkg_ids = Object.keys(updates);
-                    if (pkg_ids.length) {
-                        this.setState({ updates: updates, cockpitUpdate: cockpitUpdate });
-                        this.loadUpdateDetails(pkg_ids);
-                    } else {
-                        this.setState({state: "uptodate"});
-                    }
-                    this.loadHistory();
-                },
-
-            },  // end pkTransaction signalHandlers
-
-            notify => {
-                if ("Status" in notify) {
-                    let waiting = (notify.Status === PK_STATUS_ENUM_WAIT || notify.Status === PK_STATUS_ENUM_WAITING_FOR_LOCK);
-                    if (waiting != this.state.waiting) {
-                        // to avoid flicker, we only switch to "locked" after 1s, as we will get a WAIT state
-                        // even if the package db is unlocked
-                        if (waiting) {
-                            this.setState({waiting: true});
-                            window.setTimeout(() => { !this.state.waiting || this.setState({state: "locked"}) }, 1000);
-                        } else {
-                            this.setState({ state: "loading", waiting: false });
-                        }
-                    }
+            })
+            .then(() => {
+                // get the details for all packages
+                let pkg_ids = Object.keys(updates);
+                if (pkg_ids.length) {
+                    this.setState({ updates: updates, cockpitUpdate: cockpitUpdate });
+                    this.loadUpdateDetails(pkg_ids);
+                } else {
+                    this.setState({state: "uptodate"});
                 }
-            },
-
-            ex => this.handleLoadError((ex.problem == "not-found") ? _("PackageKit is not installed") : ex));
+                this.loadHistory();
+            })
+            .catch(ex => this.handleLoadError((ex.problem == "not-found") ? _("PackageKit is not installed") : ex));
     }
 
     loadHistory() {
         let history = [];
 
         // would be nice to filter only for "update-packages" role, but can't here
-        pkTransaction("GetOldTransactions", [0], {
+        PK.transaction("GetOldTransactions", [0], {
                 Transaction: (objPath, timeSpec, succeeded, role, duration, data) => {
-                    if (role !== PK_ROLE_ENUM_UPDATE_PACKAGES)
+                    if (role !== PK.Enum.ROLE_UPDATE_PACKAGES)
                         return;
                     // data looks like:
                     // downloading	bash-completion;1:2.6-1.fc26;noarch;updates-testing
@@ -796,37 +700,15 @@ class OsUpdates extends React.Component {
                     if (history.length > 0)
                         this.setState({history: history})
                 }
-            },
-            null,
-            ex => console.warn("Failed to load old transactions:", ex)
-        );
-    }
-
-    watchRedHatSubscription() {
-        // check if this is an unregistered RHEL system; if subscription-manager is not installed, ignore
-        var sm = cockpit.dbus("com.redhat.SubscriptionManager");
-        sm.subscribe(
-            { path: "/EntitlementStatus",
-              interface: "com.redhat.SubscriptionManager.EntitlementStatus",
-              member: "entitlement_status_changed"
-            },
-            (path, iface, signal, args) => this.setState({ unregistered: validSubscriptionStates.indexOf(args[0]) < 0 })
-        );
-        sm.call(
-            "/EntitlementStatus", "com.redhat.SubscriptionManager.EntitlementStatus", "check_status")
-            .done(result => this.setState({ unregistered: validSubscriptionStates.indexOf(result[0]) < 0 }) )
-            .fail(ex => {
-                if (ex.problem != "not-found")
-                    console.warn("Failed to query RHEL subscription status:", ex);
-            }
-        );
+            })
+            .catch(ex => console.warn("Failed to load old transactions:", ex));
     }
 
     initialLoadOrRefresh() {
-        this.watchRedHatSubscription();
+        PK.watchRedHatSubscription(registered => this.setState({ unregistered: !registered }));
 
-        dbus_pk.call("/org/freedesktop/PackageKit", "org.freedesktop.PackageKit", "GetTimeSinceAction",
-                     [PK_ROLE_ENUM_REFRESH_CACHE], {timeout: 5000})
+        PK.dbus_client.call("/org/freedesktop/PackageKit", "org.freedesktop.PackageKit", "GetTimeSinceAction",
+                     [PK.Enum.ROLE_REFRESH_CACHE], {timeout: 5000})
             .done(seconds => {
                 this.setState({timeSinceRefresh: seconds});
 
@@ -843,24 +725,24 @@ class OsUpdates extends React.Component {
     watchUpdates(transactionPath) {
         this.setState({ state: "applying", applyTransaction: transactionPath, allowCancel: false });
 
-        dbus_pk.call(transactionPath, "DBus.Properties", "Get", [transactionInterface, "AllowCancel"])
+        PK.dbus_client.call(transactionPath, "DBus.Properties", "Get", [PK.transactionInterface, "AllowCancel"])
             .done(reply => this.setState({ allowCancel: reply[0].v }));
 
-        pkWatchTransaction(transactionPath,
+        return PK.watchTransaction(transactionPath,
             {
                 ErrorCode: (code, details) => this.state.errorMessages.push(details),
 
                 Finished: exit => {
                     this.setState({ applyTransaction: null, allowCancel: null });
 
-                    if (exit === PK_EXIT_ENUM_SUCCESS) {
+                    if (exit === PK.Enum.EXIT_SUCCESS) {
                         this.setState({ state: "updateSuccess", loadPercent: null });
-                    } else if (exit === PK_EXIT_ENUM_CANCELLED) {
+                    } else if (exit === PK.Enum.EXIT_CANCELLED) {
                         this.setState({ state: "loading", loadPercent: null });
                         this.loadUpdates();
                     } else {
                         // normally we get FAILED here with ErrorCodes; handle unexpected errors to allow for some debugging
-                        if (exit !== PK_EXIT_ENUM_FAILED)
+                        if (exit !== PK.Enum.EXIT_FAILED)
                             this.state.errorMessages.push(cockpit.format(_("PackageKit reported error code $0"), exit));
                         this.setState({state: "updateError"});
                     }
@@ -879,16 +761,27 @@ class OsUpdates extends React.Component {
     applyUpdates(securityOnly) {
         var ids = Object.keys(this.state.updates);
         if (securityOnly)
-            ids = ids.filter(id => this.state.updates[id].severity === PK_INFO_ENUM_SECURITY);
+            ids = ids.filter(id => this.state.updates[id].severity === PK.Enum.INFO_SECURITY);
 
-        pkTransaction("UpdatePackages", [0, ids], {}, null, ex => {
-                // We get more useful error messages through ErrorCode or "PackageKit has crashed", so only
-                // show this if we don't have anything else
-                if (this.state.errorMessages.length === 0)
-                    this.state.errorMessages.push(ex.message);
-                this.setState({state: "updateError"});
+        PK.transaction()
+            .then(transactionPath => {
+                this.watchUpdates(transactionPath)
+                .then(() => {
+                    PK.dbus_client.call(transactionPath, PK.transactionInterface, "UpdatePackages", [0, ids])
+                    .fail(ex => {
+                        // We get more useful error messages through ErrorCode or "PackageKit has crashed", so only
+                        // show this if we don't have anything else
+                        if (this.state.errorMessages.length === 0)
+                            this.state.errorMessages.push(ex.message);
+                        this.setState({state: "updateError"});
+                    });
+
+                });
             })
-            .done(transactionPath => this.watchUpdates(transactionPath));
+            .catch(ex => {
+                this.state.errorMessages.push(ex.message);
+                this.setState({state: "updateError"});
+            });
     }
 
     renderContent() {
@@ -1045,25 +938,12 @@ class OsUpdates extends React.Component {
 
     handleRefresh() {
         this.setState({ state: "refreshing", loadPercent: null });
-        pkTransaction("RefreshCache", [true], {
-                ErrorCode: (code, details) => this.handleLoadError(details),
-
-                Finished: exit => {
-                    if (exit === PK_EXIT_ENUM_SUCCESS) {
-                        this.setState({timeSinceRefresh: 0});
-                        this.loadUpdates();
-                    } else {
-                        this.setState({state: "loadError"});
-                    }
-                },
-            },
-
-            notify => {
-                if ("Percentage" in notify && notify.Percentage <= 100)
-                    this.setState({loadPercent: notify.Percentage});
-            },
-
-            this.handleLoadError);
+        PK.cancellableTransaction("RefreshCache", [true], data => this.setState({loadPercent: data.percentage}))
+            .then(() => {
+                this.setState({timeSinceRefresh: 0});
+                this.loadUpdates();
+            })
+            .catch(this.handleLoadError);
     }
 
     handleRestart() {
@@ -1085,7 +965,7 @@ class OsUpdates extends React.Component {
                            timeSinceRefresh={this.state.timeSinceRefresh} onRefresh={this.handleRefresh}
                            unregistered={this.state.unregistered}
                            allowCancel={this.state.allowCancel}
-                           onCancel={ () => dbus_pk.call(this.state.applyTransaction, transactionInterface, "Cancel", []) } />
+                           onCancel={ () => PK.dbus_client.call(this.state.applyTransaction, PK.transactionInterface, "Cancel", []) } />
                 <div className="container-fluid">
                     {this.renderContent()}
                 </div>
