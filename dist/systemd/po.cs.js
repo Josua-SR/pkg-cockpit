@@ -379,6 +379,10 @@ return plural;
   null,
   "Třída"
  ],
+ "Click to see system hardware information": [
+  null,
+  ""
+ ],
  "Close": [
   null,
   "Zavřít"

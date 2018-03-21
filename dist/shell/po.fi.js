@@ -247,6 +247,10 @@ return plural;
   null,
   "Sormenjälki"
  ],
+ "Host": [
+  null,
+  "Kone"
+ ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
   "Synkronoidaksesi käyttäjät, sinun tulee olla kirjautuneena kohteeseen {{#strong}}{{host}}{{/strong}}."

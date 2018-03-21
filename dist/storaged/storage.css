@@ -12,41 +12,59 @@
 .tooltip-ct-inner {
     display:  inline-block;
 }
-.combobox-container input {
+
+/* Layout fix for tooltip arrows.
+ *
+ * Sometimes when there are non-integer coordinates involved
+ * somewhere, rounding seems to make it so that there is a visible one
+ * pixel gap between tooltip-inner and tooltip-arrow.  We avoid that
+ * gap by letting the arrow and inner parts overlap by one pixel.
+ *
+ * This happens within the caption of the content listing.
+ */
+
+.tooltip.top .tooltip-arrow {
+    bottom: 1px;
+}
+
+.tooltip.bottom .tooltip-arrow {
+    top: 1px;
+}
+.file-autocomplete-ct input {
     padding-right: 24px;
 }
 
-.combobox-container ul {
+.file-autocomplete-ct ul {
     max-height: 250px;
 }
 
-.combobox-container .alert {
+.file-autocomplete-ct .alert {
     margin: 0;
     border: none;
     padding: 0 24px 0 6px;
 }
 
-.combobox-container .error input {
+.file-autocomplete-ct .error input {
     border-color: red;
 }
 
-.combobox-container .error input {
+.file-autocomplete-ct .error input {
     border-color: red;
 }
 
-.combobox-container .error ul {
+.file-autocomplete-ct .error ul {
     border-color: red;
     padding: 0;
 }
 
-.combobox-container span.spinner,
-.combobox-container span.caret {
+.file-autocomplete-ct span.spinner,
+.file-autocomplete-ct span.caret {
     position: absolute;
     top: 7px;
     z-index: 9;
 }
 
-.combobox-container span.caret {
+.file-autocomplete-ct span.caret {
     width: 1.5em;
     height: 1.5em;
     cursor: pointer;
@@ -1371,6 +1389,10 @@ div.progress {
     width: 100%;
 }
 
+#detail-header div.progress {
+    min-width: 250px;
+}
+
 td.usage-text {
     text-align: right;
 }
@@ -1606,24 +1628,6 @@ td.storage-action {
 .nfs-users-table td:nth-child(2) {
     padding-left: 0.75em;
     width: 80%;
-}
-
-/* Layout fix for tooltip arrows.
- *
- * Sometimes when there are non-integer coordinates involved
- * somewhere, rounding seems to make it so that there is a visible one
- * pixel gap between tooltip-inner and tooltip-arrow.  We avoid that
- * gap by letting the arrow and inner parts overlap by one pixel.
- *
- * This happens within the caption of the content listing.
- */
-
-.tooltip.top .tooltip-arrow {
-    bottom: 1px;
-}
-
-.tooltip.bottom .tooltip-arrow {
-    top: 1px;
 }
 
 .form-table-ct .combobox-container .input-group {

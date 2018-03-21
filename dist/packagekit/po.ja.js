@@ -115,10 +115,6 @@ return plural;
   null,
   "更新の確認"
  ],
- "Cockpit itself will be updated.": [
-  null,
-  "Cockpit 自体がアップデートされます。"
- ],
  "Details": [
   null,
   "詳細"
@@ -263,6 +259,10 @@ return plural;
   null,
   "このシステムは登録されていません"
  ],
+ "This web console will be updated.": [
+  null,
+  ""
+ ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
   "ソフトウェアアップデートを取得するには、このシステムを Red Hat に登録する必要があります。登録には、Red Hat カスタマーポータルまたはローカルのサブスクリプションサーバーを使用します。"
@@ -311,13 +311,13 @@ return plural;
   null,
   "登録の詳細を表示"
  ],
- "When you get disconnected, the updates will continue in the background. You can reconnect and resume watching the update progress.": [
-  null,
-  "切断すると、更新は背景で継続します。再接続すると、更新の進捗確認を再開できます。"
- ],
  "You need to re-subscribe this system.": [
   null,
   "再度、このシステムをサブスクライブする必要があります。"
+ ],
+ "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
+  null,
+  ""
  ],
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,

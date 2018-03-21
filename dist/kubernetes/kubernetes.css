@@ -3695,6 +3695,9 @@ tbody tr.listing-ct-noexpand {
   height: 3px;
   left: 0px;
 }
+.notification-message {
+    white-space: pre-wrap;
+}
 .machines-more-button {
     padding-left: 10px;
 }

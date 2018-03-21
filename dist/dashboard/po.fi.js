@@ -233,6 +233,10 @@ return plural;
   null,
   "Samanaikainen yhdistäminen useampaan kuin {{ limit }} koneeseen ei ole tuettu."
  ],
+ "Connection Error": [
+  null,
+  "Yhteys virhe"
+ ],
  "Convertible": [
   null,
   ""

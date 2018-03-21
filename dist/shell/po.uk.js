@@ -247,6 +247,10 @@ return plural;
   null,
   "Відбиток"
  ],
+ "Host": [
+  null,
+  "Вузол"
+ ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
   "Для синхронізації параметрів користувачів, слід увійти до {{#strong}}{{host}}{{/strong}}. "

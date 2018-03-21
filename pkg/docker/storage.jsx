@@ -174,7 +174,7 @@
                         <td><input type="checkbox"
                                    checked={self.driveChecked(drive)}/>
                         </td>
-                        <td><img src="images/drive-harddisk-symbolic.svg"/></td>
+                        <td><img role="presentation" src="images/drive-harddisk-symbolic.svg"/></td>
                         <td>
                             <div>{drive.name}</div>
                             <div>{cockpit.format_bytes(drive.size)} {drive_class_desc(drive.class)}</div>
@@ -240,7 +240,7 @@
                     return (
                         <tr>
                             <td>{cockpit.format_bytes(drive.size)}</td>
-                            <td><img src="images/drive-harddisk-symbolic.svg"/></td>
+                            <td><img role="presentation" src="images/drive-harddisk-symbolic.svg"/></td>
                             <td>{drive.name}{drive.shared? _(" (shared with the OS)"):""}</td>
                         </tr>);
                 });
@@ -338,7 +338,7 @@
                 return (
                     <tr>
                         <td>{cockpit.format_bytes(drive.size)}</td>
-                        <td><img src="images/drive-harddisk-symbolic.svg"/></td>
+                        <td><img role="presentation" src="images/drive-harddisk-symbolic.svg"/></td>
                         <td>{drive.name}</td>
                     </tr>);
             });
@@ -389,7 +389,7 @@
                                       });
 
         function add_drives() {
-            var dfd = $.Deferred();
+            var dfd = cockpit.defer();
             var devs = drives.map(function (d) { return d.path; });
             if (docker_will_be_stopped)
                 client.close();
@@ -438,7 +438,7 @@
                                                        'style': "danger" } ]
                                       });
         function reset() {
-            var dfd = $.Deferred();
+            var dfd = cockpit.defer();
             client.close();
             var process = python.spawn(cockpit_atomic_storage, ["reset-and-reduce"],
                                        { 'err': 'out',

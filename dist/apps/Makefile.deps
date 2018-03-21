@@ -1,5 +1,5 @@
 # Generated Makefile data for apps
-# Stamp: Wed Mar 07 2018 11:02:11 GMT+0000 (UTC)
+# Stamp: Wed Mar 21 2018 13:42:33 GMT+0000 (UTC)
 
 apps_INPUTS = \
 	node_modules/react-lite/LICENSE \
@@ -13,11 +13,12 @@ apps_INPUTS = \
 	pkg/apps/default.png \
 	pkg/apps/index.html \
 	pkg/apps/index.jsx \
-	pkg/apps/packagekit.js \
+	pkg/apps/packagekit.es6 \
 	pkg/apps/utils.jsx \
 	pkg/apps/watch-appstream.py \
 	pkg/lib/cockpit-components-dialog.jsx \
 	pkg/lib/inotify.py \
+	pkg/lib/packagekit.es6 \
 	pkg/lib/page.css \
 	pkg/lib/python.jsx \
 	pkg/lib/table.css \
@@ -52,7 +53,7 @@ apps_TESTS = \
 
 dist/apps/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/react-lite/dist/react-lite.js -N pkg/apps/application-list.jsx -N pkg/apps/application.css -N pkg/apps/application.jsx -N pkg/apps/appstream.js -N pkg/apps/default.png -N pkg/apps/index.html -N pkg/apps/index.jsx -N pkg/apps/packagekit.js -N pkg/apps/utils.jsx -N pkg/apps/watch-appstream.py -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/inotify.py -N pkg/lib/page.css -N pkg/lib/python.jsx -N pkg/lib/table.css $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/react-lite/dist/react-lite.js -N pkg/apps/application-list.jsx -N pkg/apps/application.css -N pkg/apps/application.jsx -N pkg/apps/appstream.js -N pkg/apps/default.png -N pkg/apps/index.html -N pkg/apps/index.jsx -N pkg/apps/packagekit.es6 -N pkg/apps/utils.jsx -N pkg/apps/watch-appstream.py -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/inotify.py -N pkg/lib/packagekit.es6 -N pkg/lib/page.css -N pkg/lib/python.jsx -N pkg/lib/table.css $< > $@.tmp && mv $@.tmp $@
 
 dist/apps/Makefile.deps: $(WEBPACK_CONFIG) $(apps_INPUTS)
 	$(WEBPACK_RULE) -d dist/apps/Makefile.deps $(WEBPACK_CONFIG)
@@ -91,7 +92,7 @@ pkg/apps/index.html:
 
 pkg/apps/index.jsx:
 
-pkg/apps/packagekit.js:
+pkg/apps/packagekit.es6:
 
 pkg/apps/utils.jsx:
 
@@ -100,6 +101,8 @@ pkg/apps/watch-appstream.py:
 pkg/lib/cockpit-components-dialog.jsx:
 
 pkg/lib/inotify.py:
+
+pkg/lib/packagekit.es6:
 
 pkg/lib/page.css:
 

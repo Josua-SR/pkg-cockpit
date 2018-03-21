@@ -293,11 +293,11 @@ return plural;
  ],
  "Graphics Console (VNC)": [
   null,
-  ""
+  "Consola gràfica (VNC)"
  ],
  "Graphics Console in Desktop Viewer": [
   null,
-  ""
+  "Consola gràfica al visualitzador d'escriptoris"
  ],
  "HA": [
   null,
@@ -317,7 +317,7 @@ return plural;
  ],
  "INSTALL VM action failed": [
   null,
-  ""
+  "Ha fallat l'acció INSTALL VM"
  ],
  "Immediately Start VM": [
   null,
@@ -349,7 +349,7 @@ return plural;
  ],
  "Loading ...": [
   null,
-  ""
+  "S'està carregant..."
  ],
  "Loading data ...": [
   null,
@@ -565,7 +565,7 @@ return plural;
  ],
  "Remote URL": [
   null,
-  ""
+  "URL remot"
  ],
  "Restart": [
   null,
@@ -621,7 +621,7 @@ return plural;
  ],
  "Send shortcut": [
   null,
-  ""
+  "Envia la drecera"
  ],
  "Serial Console": [
   null,
@@ -861,7 +861,7 @@ return plural;
  ],
  "connecting": [
   null,
-  ""
+  "connectant"
  ],
  "cores": [
   null,
@@ -921,15 +921,15 @@ return plural;
  ],
  "initializing": [
   null,
-  ""
+  "inicialitzant"
  ],
  "installation failed": [
   null,
-  ""
+  "ha fallat la instal·lació"
  ],
  "installing OS": [
   null,
-  ""
+  "instal·lant el SO"
  ],
  "kdumping": [
   null,
@@ -937,11 +937,11 @@ return plural;
  ],
  "maintenance": [
   null,
-  ""
+  "manteniment"
  ],
  "mcast": [
   null,
-  ""
+  "mcast"
  ],
  "network": [
   null,
@@ -989,7 +989,7 @@ return plural;
  ],
  "paused": [
   null,
-  ""
+  "pausa"
  ],
  "pending approval": [
   null,
@@ -997,7 +997,7 @@ return plural;
  ],
  "reboot": [
   null,
-  ""
+  "reinicia"
  ],
  "running": [
   null,
@@ -1006,14 +1006,6 @@ return plural;
  "server": [
   null,
   "servidor"
- ],
- "show less": [
-  null,
-  "mostra menys"
- ],
- "show more": [
-  null,
-  "mostra més"
  ],
  "shut off": [
   null,
@@ -1033,7 +1025,7 @@ return plural;
  ],
  "threads": [
   null,
-  ""
+  "fils"
  ],
  "udp": [
   null,
@@ -1041,7 +1033,7 @@ return plural;
  ],
  "unassigned": [
   null,
-  ""
+  "sense assignar"
  ],
  "undefined": [
   null,
@@ -1057,7 +1049,7 @@ return plural;
  ],
  "vCPUs": [
   null,
-  ""
+  "vCPU"
  ],
  "vCPUs:": [
   null,

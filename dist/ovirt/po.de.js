@@ -1007,14 +1007,6 @@ return plural;
   null,
   ""
  ],
- "show less": [
-  null,
-  ""
- ],
- "show more": [
-  null,
-  ""
- ],
  "shut off": [
   null,
   ""

@@ -247,6 +247,10 @@ return plural;
   null,
   "Otisk"
  ],
+ "Host": [
+  null,
+  "Počítač"
+ ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
   ""

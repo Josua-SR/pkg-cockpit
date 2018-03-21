@@ -17,9 +17,11 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
+require("polyfills.js");
 var $ = require("jquery");
 var cockpit = require("cockpit");
 var machine_info = require("machine-info.es6");
+var packagekit = require("packagekit.es6");
 
 var Mustache = require("mustache");
 var plot = require("plot");
@@ -196,6 +198,9 @@ PageServer.prototype = {
         this.server_time = null;
         this.client = null;
         this.hostname_proxy = null;
+        this.os_updates = null; // packagekit.Enum.INFO_* → #count
+        this.os_updates_icon = document.getElementById("system_information_updates_icon");
+        this.unregistered = false;
     },
 
     getTitle: function() {
@@ -263,16 +268,17 @@ PageServer.prototype = {
             self.host_keys_hide();
         });
 
+        var $ntp_status = $('#system_information_systime_ntp_status');
+
         function update_ntp_status() {
-            var $elt = $('#system_information_systime_ntp_status');
 
             if (!self.server_time.timedate.NTP) {
-                $elt.hide();
-                $elt.popover('hide');
+                $ntp_status.hide();
+                $ntp_status.attr("data-original-title", null);
                 return;
             }
 
-            $elt.show();
+            $ntp_status.show();
 
             var model = {
                 Synched: self.server_time.timedate.NTPSynchronized,
@@ -296,19 +302,15 @@ PageServer.prototype = {
                     model.SubStatus = timesyncd_status;
             }
 
-            var popover_html = Mustache.render(self.ntp_status_tmpl, model);
-            if (popover_html != $elt.attr('data-content')) {
-                $elt.attr("data-content", popover_html);
-                // Refresh the popover if it is open
-                if ($elt.data('bs.popover').tip().hasClass('in'))
-                    $elt.popover('show');
-            }
+            var tooltip_html = Mustache.render(self.ntp_status_tmpl, model);
+            if (tooltip_html != $ntp_status.attr("data-original-title"))
+                $ntp_status.attr("data-original-title", tooltip_html);
 
             var icon_html = Mustache.render(self.ntp_status_icon_tmpl, model);
-            $elt.html(icon_html);
+            $ntp_status.html(icon_html);
         }
 
-        $('#system_information_systime_ntp_status').popover();
+        $ntp_status.tooltip();
 
         $(self.server_time.timesyncd_service).on("changed", update_ntp_status);
         $(self.server_time.timedate).on("changed", update_ntp_status);
@@ -369,6 +371,87 @@ PageServer.prototype = {
 
         $(pmlogger_service).on('changed', refresh_pmlogger_state);
         refresh_pmlogger_state();
+
+        // if cockpit component "page" is available, set element content to a link to it, otherwise just text
+        function set_page_link(element_sel, page, text) {
+            if (cockpit.manifests[page]) {
+                var link = document.createElement("a");
+                link.innerHTML = text;
+                link.addEventListener("click", function() { cockpit.jump("/" + page); });
+                $(element_sel).html(link);
+            } else {
+                $(element_sel).text(text);
+            }
+        }
+
+        function refresh_os_updates_state() {
+            self.os_updates_icon.className = ""; // hide spinner
+
+            // if system is unregistered, always show that
+            if (self.unregistered) {
+                self.os_updates_icon.className = "pficon pficon-warning-triangle-o";
+                set_page_link("#system_information_updates_text", "subscriptions", _("System Not Registered"));
+                return;
+            }
+
+            var infos = Object.keys(self.os_updates || {}).sort();
+            if (infos.length === 0) {
+                $("#system_information_updates_text").text(_("System Up To Date"));
+                return;
+            }
+
+            // show highest severity level
+            var severity = infos[infos.length - 1];
+            var text;
+            self.os_updates_icon.className = packagekit.getSeverityIcon(severity);
+            if (severity == packagekit.Enum.INFO_SECURITY)
+                text = _("Security Updates Available");
+            else if (severity >= packagekit.Enum.INFO_NORMAL)
+                text = _("Bug Fix Updates Available");
+            else
+                text = _("Enhancement Updates Available");
+
+            set_page_link("#system_information_updates_text", "updates", text);
+        }
+
+        function check_for_updates() {
+            self.os_updates = null;
+
+            packagekit.cancellableTransaction("GetUpdates", [0],
+                function (data) {
+                    // we are getting progress, so PackageKit works; show spinner
+                    if (self.os_updates === null) {
+                        self.os_updates = {};
+                        $("#system_information_updates_text").text(_("Checking for updates…"));
+                        self.os_updates_icon.className = "spinner spinner-xs spinner-inline";
+                    }
+                },
+                {
+                    Package: function (info) {
+                        // HACK: dnf backend yields wrong severity (https://bugs.freedesktop.org/show_bug.cgi?id=101070)
+                        if (info < packagekit.Enum.INFO_LOW || info > packagekit.Enum.INFO_SECURITY)
+                            info = packagekit.Enum.INFO_NORMAL;
+                        self.os_updates[info] = (self.os_updates[info] || 0) + 1;
+                    }
+                })
+                .then(refresh_os_updates_state)
+                .catch(function (ex) {
+                    // if PackageKit is not available, hide the table line
+                    console.warn("Checking for available updates failed:", ex.toString());
+                    self.os_updates_icon.className = "";
+                    $("#system_information_updates_text").toggle(false);
+                });
+        }
+
+        // check for updates now and on page switches, in case they get applied on /updates or terminal
+        $(cockpit).on("visibilitychange", check_for_updates);
+        check_for_updates();
+
+        // check for unregistered system
+        packagekit.watchRedHatSubscription(function (subscribed) {
+            self.unregistered = !subscribed;
+            refresh_os_updates_state();
+        });
     },
 
     enter: function() {
@@ -376,8 +459,9 @@ PageServer.prototype = {
 
         var machine_id = cockpit.file("/etc/machine-id");
         machine_id.read().done(function (content) {
-            $("#system_machine_id").text(content);
-            $("#system_machine_id").attr("title", content);
+            $("#system_machine_id")
+                .text(content)
+                .tooltip({ title: content, placement: "bottom" });
         }).fail(function (ex) {
             console.error("Error reading machine id", ex);
         }).always(function () {
@@ -521,11 +605,12 @@ PageServer.prototype = {
 
         machine_info.dmi_info()
             .done(function(fields) {
-                $("#system_information_hardware_text").text(fields.sys_vendor + " " +
-                                                            fields.product_name);
+                $("#system_information_hardware_text")
+                    .tooltip({ title: _("Click to see system hardware information"), placement: "bottom" })
+                    .text(fields.sys_vendor + " " + fields.product_name);
                 var present = !!(fields.product_serial || fields.chassis_serial);
-                $("#system_information_asset_tag_text").text(fields.product_serial ||
-                                                             fields.chassis_serial);
+                $("#system_information_asset_tag_text")
+                    .text(fields.product_serial || fields.chassis_serial);
                 $("#system-info-asset-row").toggle(present);
             })
             .fail(function(ex) {
@@ -1475,6 +1560,7 @@ $("#link-disk").on("click", function() {
 });
 
 $("#system_information_hardware_text").on("click", function() {
+    $("#system_information_hardware_text").tooltip("hide");
     cockpit.jump("/system/hwinfo", cockpit.transport.host);
     return false;
 });

@@ -29,7 +29,7 @@ Build-Depends: debhelper (>= 9.20141010),
                glib-networking,
                openssh-client <!nocheck>,
                python,
-Standards-Version: 4.1.1
+Standards-Version: 4.1.3
 Homepage: http://cockpit-project.org/
 Vcs-Git: git://anonscm.debian.org/collab-maint/cockpit.git
 Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/cockpit.git
@@ -97,8 +97,12 @@ Architecture: all
 Depends: ${misc:Depends},
          libvirt-daemon-system,
          libosinfo-bin
+Recommends: virtinst
 Description: Cockpit user interface for virtual machines
  The Cockpit components for managing virtual machines.
+ .
+ If the "virtinst" package is installed, you can also create new virtual
+ machines.
 
 Package: cockpit-networkmanager
 Architecture: all
@@ -142,6 +146,7 @@ Depends: ${misc:Depends},
          cockpit-bridge (>= ${bridge:minversion}),
          libpwquality-tools,
          openssl,
+Recommends: policykit-1
 Provides: cockpit-realmd,
           cockpit-shell,
           cockpit-systemd,

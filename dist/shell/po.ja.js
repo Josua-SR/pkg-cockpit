@@ -247,6 +247,10 @@ return plural;
   null,
   "フィンガープリント"
  ],
+ "Host": [
+  null,
+  "ホスト"
+ ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
   "ユーザーを同期するには、{{#strong}}{{host}}{{/strong}} にログインする必要があります。"

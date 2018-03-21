@@ -1007,14 +1007,6 @@ return plural;
   null,
   "сервер"
  ],
- "show less": [
-  null,
-  "показати менше"
- ],
- "show more": [
-  null,
-  "показати більше"
- ],
  "shut off": [
   null,
   "вимкнути"

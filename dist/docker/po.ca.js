@@ -512,11 +512,11 @@ return plural;
  ],
  "Mini PC": [
   null,
-  ""
+  "Mini PC"
  ],
  "Mini Tower": [
   null,
-  ""
+  "Mini torre"
  ],
  "Mount container volumes": [
   null,
@@ -637,7 +637,7 @@ return plural;
  ],
  "Portable": [
   null,
-  ""
+  "Portable"
  ],
  "Ports": [
   null,
@@ -833,7 +833,7 @@ return plural;
  ],
  "Tower": [
   null,
-  ""
+  "Torre"
  ],
  "Try again": [
   null,

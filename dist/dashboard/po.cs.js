@@ -239,6 +239,10 @@ return plural;
   null,
   ""
  ],
+ "Connection Error": [
+  null,
+  ""
+ ],
  "Convertible": [
   null,
   "Konvertibilní"

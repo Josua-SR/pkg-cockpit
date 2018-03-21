@@ -233,6 +233,10 @@ return plural;
   null,
   "Conectarse simultáneamente a más de {{ limit }} máquinas no está soportado."
  ],
+ "Connection Error": [
+  null,
+  "Error de Conexión"
+ ],
  "Convertible": [
   null,
   "Convertible"

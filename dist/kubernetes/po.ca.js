@@ -1627,7 +1627,7 @@ return plural;
  ],
  "VM DELETE failed.": [
   null,
-  ""
+  "Ha fallat VM DELETE"
  ],
  "Virtual Machines": [
   null,
@@ -1747,7 +1747,7 @@ return plural;
  ],
  "mcast": [
   null,
-  ""
+  "mcast"
  ],
  "n/a": [
   null,
@@ -1767,7 +1767,7 @@ return plural;
  ],
  "paused": [
   null,
-  ""
+  "pausa"
  ],
  "pending volume claims": [
   null,
@@ -1780,14 +1780,6 @@ return plural;
  "server": [
   null,
   "servidor"
- ],
- "show less": [
-  null,
-  "mostra menys"
- ],
- "show more": [
-  null,
-  "mostra més"
  ],
  "shut off": [
   null,

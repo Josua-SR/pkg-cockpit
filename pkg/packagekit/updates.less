@@ -1,0 +1,221 @@
+/* override default cockpit CSS, as this doesn't fit our table */
+table.listing-ct thead th:last-child {
+    text-align: left;
+}
+
+tr.listing-ct-item {
+    td:last-child {
+        text-align: left;
+    }
+    td.version {
+        max-width: 18ex;
+        word-wrap: break-word;
+    }
+    td.type {
+        white-space: nowrap;
+    }
+    td.changelog {
+        max-width: 60vw;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.severity-critical {
+    color: #a30000;
+}
+
+.severity-important {
+    color: #ec7a08;
+}
+
+.severity-low {
+    color: #72767b;
+}
+
+
+p.changelog {
+    max-height: 20em;
+    overflow: auto;
+    div.changelog {
+        white-space: pre-wrap;
+    }
+}
+
+tr.security.listing-ct-item {
+    background-color: #fbf0f0 !important;  /* keep red background when expanded */
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+
+/* Reformat table for narrow widths */
+@media screen and (max-width: 640px) {
+    .listing-ct {
+        /* counteract .container-fluid */
+        margin: 0 0 0 -20px;
+        width: 100vw;
+        overflow: hidden;
+        thead {
+            display: none;
+        }
+    }
+    .listing-ct-item {
+        display: block;
+        width: 100vw;
+        th, td {
+            display: block;
+            width: 100%;
+            max-width: 100% !important;
+            padding: 10px 15px !important;
+        }
+        th + td, td + td {
+            padding-top: 0 !important;
+        }
+    }
+}
+
+@media screen and (min-width: 641px) and (max-width: 1150px) {
+    .listing-ct-item th {
+        min-width: 30%;
+    }
+}
+
+/* don't let the install progress bar get too wide */
+.progress-main-view {
+    max-width: 60rem;
+    margin: 10ex auto 0;
+}
+
+/* stolen from pkg/systemd/host.css */
+.content-header-extra {
+    background: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px;
+    width: 100%;
+    position: fixed;
+    z-index: 900;
+    top: 0;
+}
+
+.container-fluid {
+    margin-top: 5em;
+}
+
+/* fixed width to avoid jumpy text between expanded/collapsed */
+.expander-caret {
+    width: 2ex;
+}
+
+.expander-title {
+    margin-bottom: 2em;
+    display: flex;
+    align-items: center;
+    hr {
+        flex: auto;
+    }
+    span {
+        padding: 1ex;
+        flex: none;
+    }
+}
+
+/* http://www.patternfly.org/pattern-library/communication/empty-state/ has a
+ * gray background which we don't want here */
+
+.blank-slate-pf {
+    background: inherit;
+    border: none;
+
+    /* standard blank-slate-pf does not limit width of paragraph, which looks ugly */
+    p {
+        max-width: 50rem;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+
+.flow-list-blank-slate {
+    padding-top: 8em;
+    margin: 0 auto;
+    max-width: 69rem;
+    text-align: center;
+}
+
+.flow-list {
+    margin: 1em 1em 3em;
+    padding: 0;
+    max-width: 110rem;
+    text-align: left;
+    box-sizing: border-box;
+
+    li {
+        text-align: left;
+        box-sizing: border-box;
+        width: 22rem;
+        padding: 0 1ex;
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-weight: 600;
+    }
+}
+
+.update-log {
+    padding-top: 8em;
+    margin: 0 auto;
+    max-width: 69rem;
+    text-align: center;
+    th {
+        text-align: left;
+        padding-right: 3ex;
+    }
+    td {
+        text-align: left;
+    }
+}
+
+.update-log-content {
+    margin: 0 10ex;
+    height: 13em;
+    overflow-y: auto;
+}
+
+table.header-buttons {
+    margin-bottom: 20px; /* replacement for h2's margin-bottom */
+    td {
+        vertical-align: middle;
+    }
+    h2 {
+        margin: 0 4rem 0 0; /* vertical default ones break vertical alignment */
+    }
+}
+
+table.auto-conf {
+    margin-bottom: 2em;
+    td {
+        padding-right: 1ex !important;
+    }
+    /* bootstrap sets widths to 100%, way too wide for Select widgets */
+    .dropdown-toggle {
+        width: auto;
+    }
+    .dropdown {
+        width: auto !important;
+    }
+}
+
+/* three columns for auto update hour picker */
+#auto-update-time {
+    ul {
+        width: 25ex;
+    }
+    li {
+        width: 8ex;
+        display: inline-block;
+        text-align: right;
+    }
+}

@@ -239,6 +239,10 @@ return plural;
   null,
   "Jednoczesne łączenie z więcej niż {{ limit }} komputerami jest nieobsługiwane."
  ],
+ "Connection Error": [
+  null,
+  "Błąd połączenia"
+ ],
  "Convertible": [
   null,
   "2 w jednym"

@@ -9,6 +9,7 @@
     <link href="system.css" rel="stylesheet">
     <script src="../base1/jquery.js"></script>
     <script src="../base1/cockpit.js"></script>
+    <script src="../manifests.js"></script>
     <script src="../*/po.js"></script>
 </head>
 <body hidden>
@@ -91,13 +92,19 @@
                     <td translatable="yes">Asset Tag</td>
                     <td id="system_information_asset_tag_text"></td>
                 </tr>
-                <tr>
+                <tr id="system_information_machine_id_row">
                     <td translatable="yes">Machine ID</td>
-                    <td id="system_machine_id"></td>
+                    <td><span id="system_machine_id"></span></td>
                 </tr>
                 <tr id="system_information_os">
                     <td translatable="yes">Operating System</td>
                     <td id="system_information_os_text"></td>
+                </tr>
+                <tr id="system_information_updates">
+                    <td>
+                        <span id="system_information_updates_icon" hidden></span>
+                    </td>
+                    <td id="system_information_updates_text"></td>
                 </tr>
                 <tr id="system-ssh-keys">
                     <td translatable="yes">Secure Shell Keys</td>
@@ -123,19 +130,21 @@
                     <td><a class="systime-privileged"
                                 id="system_information_systime_button"></a>
                       <a hidden id="system_information_systime_ntp_status"
-                         tabindex="0" role="button" data-toggle="popover"
-                         data-trigger="focus" data-placement="top"
-                         data-html="true" data-content="">
+                         tabindex="0" role="button" data-toggle="tooltip"
+                         data-placement="bottom" data-html="true" >
                       </a>
                     </td>
                 </tr>
                 <tr>
-                    <td translatable="yes">Power Options</td>
+                    <td translatable="yes" id="system_information_power_options_label">Power Options</td>
                     <td id="shutdown-group">
                         <div class="btn-group">
                             <button class="btn btn-default btn-danger shutdown-privileged" data-action="restart"
                                 data-container="body" translatable="yes">Restart</button>
-                            <button data-toggle="dropdown" class="btn btn-default dropdown-toggle shutdown-privileged">
+                            <button data-toggle="dropdown" class="btn
+                                btn-default dropdown-toggle
+                                shutdown-privileged"
+                                aria-labelledby="system_information_power_options_label">
                                 <span class="caret"></span>
                             </button>
                             <ul role="menu" class="dropdown-menu">
@@ -171,7 +180,7 @@
                 </tr>
             </table>
         </div>
-        <div id="server-graph-columns" class="col-md-8 col-lg-9">
+        <div id="server-graph-columns" class="col-md-8 col-lg-9" role="presentation">
             <div id="server-graph-toolbar" class="zoom-controls standard-zoom-controls">
                 <div class="dropdown">
                     <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -179,18 +188,18 @@
                         <div class="caret"></div>
                     </button>
                     <ul class="dropdown-menu" role="menu">
-                        <li role="presentation"><a role="menuitem" tabindex="-1"
+                        <li role="presentation"><a role="menuitem"
                             data-action="goto-now" translate>Go to now</a></li>
                         <li role="presentation" class="divider"></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1"
+                        <li role="presentation"><a role="menuitem"
                             data-range="300" translate>5 minutes</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1"
+                        <li role="presentation"><a role="menuitem"
                             data-range="3600" translate>1 hour</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1"
+                        <li role="presentation"><a role="menuitem"
                             data-range="21600" translate>6 hours</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1"
+                        <li role="presentation"><a role="menuitem"
                             data-range="86400" translate>1 day</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1"
+                        <li role="presentation"><a role="menuitem"
                             data-range="604800" translate>1 week</a></li>
                     </ul>
                 </div>

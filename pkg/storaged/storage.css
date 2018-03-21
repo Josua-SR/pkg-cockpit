@@ -358,6 +358,10 @@ div.progress {
     width: 100%;
 }
 
+#detail-header div.progress {
+    min-width: 250px;
+}
+
 td.usage-text {
     text-align: right;
 }
@@ -593,24 +597,6 @@ td.storage-action {
 .nfs-users-table td:nth-child(2) {
     padding-left: 0.75em;
     width: 80%;
-}
-
-/* Layout fix for tooltip arrows.
- *
- * Sometimes when there are non-integer coordinates involved
- * somewhere, rounding seems to make it so that there is a visible one
- * pixel gap between tooltip-inner and tooltip-arrow.  We avoid that
- * gap by letting the arrow and inner parts overlap by one pixel.
- *
- * This happens within the caption of the content listing.
- */
-
-.tooltip.top .tooltip-arrow {
-    bottom: 1px;
-}
-
-.tooltip.bottom .tooltip-arrow {
-    top: 1px;
 }
 
 .form-table-ct .combobox-container .input-group {

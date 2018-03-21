@@ -121,10 +121,6 @@ return plural;
   null,
   "Wyszukaj aktualizacje"
  ],
- "Cockpit itself will be updated.": [
-  null,
-  "Cockpit zostanie zaktualizowany."
- ],
  "Details": [
   null,
   "Szczegóły"
@@ -269,6 +265,10 @@ return plural;
   null,
   "Ten system nie jest zarejestrowany"
  ],
+ "This web console will be updated.": [
+  null,
+  ""
+ ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
   "Aby otrzymywać aktualizacje oprogramowania, ten system musi zostać zarejestrowany w firmie Red Hat za pomocą serwisu Red Hat Customer Portal lub lokalnego serwera subskrypcji."
@@ -317,13 +317,13 @@ return plural;
   null,
   "Wyświetl informacje o rejestracji"
  ],
- "When you get disconnected, the updates will continue in the background. You can reconnect and resume watching the update progress.": [
-  null,
-  "Po rozłączeniu aktualizacje będą kontynuowane w tle. Można połączyć ponownie i wznowić obserwowanie postępu aktualizacji."
- ],
  "You need to re-subscribe this system.": [
   null,
   "Należy ponownie subskrybować ten system."
+ ],
+ "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
+  null,
+  ""
  ],
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,

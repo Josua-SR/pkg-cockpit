@@ -247,6 +247,10 @@ return plural;
   null,
   "Empremta"
  ],
+ "Host": [
+  null,
+  "Amfitrió"
+ ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
   "Per sincronitzar els usuaris, cal que inicieu la sessió a {{#strong}}{{host}}{{/strong}}."

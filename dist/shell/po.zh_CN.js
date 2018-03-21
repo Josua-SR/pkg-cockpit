@@ -247,6 +247,10 @@ return plural;
   null,
   "指印"
  ],
+ "Host": [
+  null,
+  "主机"
+ ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
   "为了同步用户，需要登录到 {{#strong}}{{host}}{{/strong}}。"
