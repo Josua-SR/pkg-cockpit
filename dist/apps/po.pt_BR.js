@@ -115,6 +115,10 @@ return plural;
   null,
   "Ok"
  ],
+ "PackageKit crashed": [
+  null,
+  ""
+ ],
  "Remove": [
   null,
   "Remover"

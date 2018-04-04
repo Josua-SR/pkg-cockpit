@@ -459,7 +459,7 @@ Recommends: device-mapper-multipath
 %endif
 %endif
 %endif
-%if 0%{?fedora}
+%if 0%{?fedora} || 0%{?rhel} >= 8
 Requires: python3
 Requires: python3-dbus
 %else
@@ -657,7 +657,11 @@ Requires: %{name}-bridge >= 122
 Requires: %{name}-shell >= 122
 Requires: /usr/bin/docker
 Requires: /usr/lib/systemd/system/docker.service
+%if 0%{?fedora} || 0%{?rhel} >= 8
+Requires: python3
+%else
 Requires: python2
+%endif
 
 %description docker
 The Cockpit components for interacting with Docker and user interface.

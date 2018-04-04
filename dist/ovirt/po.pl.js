@@ -211,10 +211,6 @@ return plural;
   null,
   "Utwórz nową maszynę wirtualną"
  ],
- "Create New Virtual Machine": [
-  null,
-  "Utwórz nową maszynę wirtualną"
- ],
  "Create VM": [
   null,
   "Utwórz maszynę wirtualną"
@@ -275,10 +271,6 @@ return plural;
   null,
   "Plik"
  ],
- "Filesystem": [
-  null,
-  "System plików"
- ],
  "Force Restart": [
   null,
   "Wymuś ponowne uruchomienie"
@@ -319,29 +311,9 @@ return plural;
   null,
   "Działanie INSTALL VM się nie powiodło"
  ],
- "Immediately Start VM": [
-  null,
-  "Od razu uruchom maszynę wirtualną"
- ],
  "Install": [
   null,
   "Zainstaluj"
- ],
- "Installation Source": [
-  null,
-  "Źródło instalacji"
- ],
- "Installation Source Type": [
-  null,
-  "Typ źródła instalacji"
- ],
- "Installation Source should not be empty": [
-  null,
-  "Źródło instalacji nie może być puste"
- ],
- "Invalid filename": [
-  null,
-  "Nieprawidłowa nazwa pliku"
  ],
  "Launch Remote Viewer": [
   null,
@@ -379,17 +351,9 @@ return plural;
   null,
   "Pamięć"
  ],
- "Memory should be positive number": [
-  null,
-  "Pamięć musi być liczbą dodatnią"
- ],
  "Memory:": [
   null,
   "Pamięć:"
- ],
- "MiB": [
-  null,
-  "MiB"
  ],
  "Migrate To:": [
   null,
@@ -406,14 +370,6 @@ return plural;
  "Name": [
   null,
   "Nazwa"
- ],
- "Name should not be empty": [
-  null,
-  "Nazwa nie może być pusta"
- ],
- "Name should not consist of empty characters only": [
-  null,
-  "Nazwa nie może składać się tylko z pustych znaków"
  ],
  "Networks": [
   null,
@@ -459,17 +415,9 @@ return plural;
   null,
   "Typ systemu operacyjnego:"
  ],
- "OS Vendor": [
-  null,
-  "Producent systemu operacyjnego"
- ],
  "Ok": [
   null,
   "OK"
- ],
- "Operating System": [
-  null,
-  "System operacyjny"
  ],
  "Optimized for:": [
   null,
@@ -478,10 +426,6 @@ return plural;
  "Overview": [
   null,
   "Przegląd"
- ],
- "Path to ISO file on host's file system": [
-  null,
-  "Ścieżka do pliku ISO w systemie plików gospodarza"
  ],
  "Path to file": [
   null,
@@ -563,10 +507,6 @@ return plural;
   null,
   "Wczytaj ponownie"
  ],
- "Remote URL": [
-  null,
-  "Zdalny adres URL"
- ],
  "Restart": [
   null,
   "Uruchom ponownie"
@@ -639,10 +579,6 @@ return plural;
   null,
   "Źródło"
  ],
- "Source should start with http, ftp or nfs protocol": [
-  null,
-  "Źródło musi zaczynać się od protokołu http, ftp lub nfs"
- ],
  "Start the VM to see disk statistics.": [
   null,
   "Należy uruchomić maszynę wirtualną, aby wyświetlić statystyki dysku."
@@ -658,14 +594,6 @@ return plural;
  "Stateless:": [
   null,
   "Bez stanu:"
- ],
- "Storage Size": [
-  null,
-  "Rozmiar urządzenia do przechowywania danych"
- ],
- "Storage Size should not be negative number": [
-  null,
-  "Rozmiar urządzenia do przechowywania danych nie może być liczbą ujemną"
  ],
  "Suspend": [
   null,
@@ -750,10 +678,6 @@ return plural;
  "Type": [
   null,
   "Typ"
- ],
- "URL": [
-  null,
-  "Adres URL"
  ],
  "Unplug": [
   null,
@@ -1006,6 +930,14 @@ return plural;
  "server": [
   null,
   "serwer"
+ ],
+ "show less": [
+  null,
+  "wyświetl mniej"
+ ],
+ "show more": [
+  null,
+  "wyświetl więcej"
  ],
  "shut off": [
   null,

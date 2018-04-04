@@ -21,6 +21,8 @@
 
 import cockpit from "cockpit";
 
+const _ = cockpit.gettext;
+
 // see https://github.com/hughsie/PackageKit/blob/master/lib/packagekit-glib2/pk-enum.h
 export const Enum = {
     EXIT_SUCCESS: 1,
@@ -28,6 +30,7 @@ export const Enum = {
     EXIT_CANCELLED: 3,
     ROLE_REFRESH_CACHE: 13,
     ROLE_UPDATE_PACKAGES: 22,
+    INFO_UNKNOWN: -1,
     INFO_LOW: 3,
     INFO_ENHANCEMENT: 4,
     INFO_NORMAL: 5,
@@ -51,7 +54,32 @@ export const Enum = {
 
 export const transactionInterface = "org.freedesktop.PackageKit.Transaction";
 
-export const dbus_client = cockpit.dbus("org.freedesktop.PackageKit", { superuser: "try", "track": true });
+var _dbus_client = null;
+
+/**
+ * Get PackageKit D-Bus client
+ *
+ * This will get lazily initialized and re-initialized after PackageKit
+ * disconnects (due to a crash or idle timeout).
+ */
+function dbus_client() {
+    if (_dbus_client === null) {
+        _dbus_client = cockpit.dbus("org.freedesktop.PackageKit", { superuser: "try", "track": true });
+        _dbus_client.addEventListener("close", () => {
+            console.log("PackageKit went away from D-Bus");
+            _dbus_client = null;
+        });
+    }
+
+    return _dbus_client;
+}
+
+/**
+ * Call a PackageKit method
+ */
+export function call(objectPath, iface, method, args, opts) {
+    return dbus_client().call(objectPath, iface, method, args, opts);
+}
 
 /**
  * Watch a running PackageKit transaction
@@ -63,27 +91,41 @@ export const dbus_client = cockpit.dbus("org.freedesktop.PackageKit", { superuse
 export function watchTransaction(transactionPath, signalHandlers, notifyHandler) {
     var subscriptions = [];
     var notifyReturn;
+    var client = dbus_client();
+
+    // Listen for PackageKit crashes while the transaction runs
+    function onClose(event, ex) {
+        console.warn("PackageKit went away during transaction", transactionPath, ":", JSON.stringify(ex));
+        if (signalHandlers.ErrorCode)
+            signalHandlers.ErrorCode("close", _("PackageKit crashed"));
+        if (signalHandlers.Finished)
+            signalHandlers.Finished(Enum.EXIT_FAILED);
+    }
+    client.addEventListener("close", onClose);
 
     if (signalHandlers) {
         Object.keys(signalHandlers).forEach(handler => subscriptions.push(
-            dbus_client.subscribe({ interface: transactionInterface, path: transactionPath, member: handler },
-                                  (path, iface, signal, args) => signalHandlers[handler](...args)))
+            client.subscribe({ interface: transactionInterface, path: transactionPath, member: handler },
+                             (path, iface, signal, args) => signalHandlers[handler](...args)))
         );
     }
 
     if (notifyHandler) {
-        notifyReturn = dbus_client.watch(transactionPath);
+        notifyReturn = client.watch(transactionPath);
         subscriptions.push(notifyReturn);
-        dbus_client.addEventListener("notify", reply => {
+        client.addEventListener("notify", reply => {
             if (transactionPath in reply.detail && transactionInterface in reply.detail[transactionPath])
                 notifyHandler(reply.detail[transactionPath][transactionInterface], transactionPath);
         });
     }
 
     // unsubscribe when transaction finished
-    subscriptions.push(dbus_client.subscribe(
+    subscriptions.push(client.subscribe(
         { interface: transactionInterface, path: transactionPath, member: "Finished" },
-        () => subscriptions.map(s => s.remove()))
+        () => {
+            subscriptions.map(s => s.remove());
+            client.removeEventListener("close", onClose);
+        })
     );
 
     return notifyReturn;
@@ -115,7 +157,7 @@ export function watchTransaction(transactionPath, signalHandlers, notifyHandler)
  */
 export function transaction(method, arglist, signalHandlers, notifyHandler) {
     return new Promise((resolve, reject) => {
-        dbus_client.call("/org/freedesktop/PackageKit", "org.freedesktop.PackageKit", "CreateTransaction", [], {timeout: 5000})
+        call("/org/freedesktop/PackageKit", "org.freedesktop.PackageKit", "CreateTransaction", [], {timeout: 5000})
             .done(result => {
                 let transactionPath = result[0];
                 let watchPromise;
@@ -127,7 +169,7 @@ export function transaction(method, arglist, signalHandlers, notifyHandler) {
                 watchPromise
                 .done(() => {
                     if (method) {
-                        dbus_client.call(transactionPath, transactionInterface, method, arglist)
+                        call(transactionPath, transactionInterface, method, arglist)
                             .done(() => resolve(transactionPath))
                             .fail(reject);
                     } else {
@@ -168,7 +210,7 @@ export function cancellableTransaction(method, arglist, progress_cb, signalHandl
 
         function changed(props, transaction_path) {
             function cancel() {
-                dbus_client.call(transaction_path, transactionInterface, "Cancel", []);
+                call(transaction_path, transactionInterface, "Cancel", []);
                 cancelled = true;
             }
 

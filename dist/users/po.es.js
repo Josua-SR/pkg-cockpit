@@ -321,7 +321,7 @@ return plural;
  ],
  "The account '$0' will be forced to change their password on next login": [
   null,
-  ""
+  "Se forzará a la cuenta '$0' a cambiar su contraseña en el próximo acceso"
  ],
  "The key you provided was not valid.": [
   null,

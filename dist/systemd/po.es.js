@@ -297,6 +297,10 @@ return plural;
   null,
   "Después de que el sistema arranque"
  ],
+ "Alert and above": [
+  null,
+  "Alerta y arriba"
+ ],
  "All In One": [
   null,
   "Todo En Uno"
@@ -337,6 +341,10 @@ return plural;
   null,
   "Recinto de la espada"
  ],
+ "Bug Fix Updates Available": [
+  null,
+  "Disponibles Actualizaciones que Corrigen Problemas"
+ ],
  "Bus Expansion Chassis": [
   null,
   "Chasis de Expansión de Bus"
@@ -369,13 +377,17 @@ return plural;
   null,
   "Cambiar la Hora del Sistema"
  ],
+ "Checking for updates…": [
+  null,
+  "Buscando actualizaciones..."
+ ],
  "Class": [
   null,
   "Clase"
  ],
  "Click to see system hardware information": [
   null,
-  ""
+  "Pulse para ver información del hardware del sistema"
  ],
  "Close": [
   null,
@@ -409,9 +421,17 @@ return plural;
   null,
   "Crear Temporizadores"
  ],
+ "Critical and above": [
+  null,
+  "Crítico y arriba"
+ ],
  "Current boot": [
   null,
   "Arranque actual"
+ ],
+ "Debug and above": [
+  null,
+  "Depurar y arriba"
  ],
  "Delay": [
   null,
@@ -469,6 +489,10 @@ return plural;
   null,
   "Habilitado"
  ],
+ "Enhancement Updates Available": [
+  null,
+  "Actualizaciones de Mejora Disponibles"
+ ],
  "Entry": [
   null,
   "Entrada"
@@ -476,6 +500,10 @@ return plural;
  "Error": [
   null,
   "Error"
+ ],
+ "Error and above": [
+  null,
+  "Error y arriba"
  ],
  "Everything": [
   null,
@@ -540,6 +568,10 @@ return plural;
  "Id": [
   null,
   "Id"
+ ],
+ "Info and above": [
+  null,
+  "Información y arriba"
  ],
  "Instantiate": [
   null,
@@ -735,6 +767,10 @@ return plural;
  ],
  "Notebook": [
   null,
+  "Portátil"
+ ],
+ "Notice and above": [
+  null,
   ""
  ],
  "Off": [
@@ -745,9 +781,9 @@ return plural;
   null,
   "Encencido"
  ],
- "Only Problems": [
+ "Only Emergency": [
   null,
-  "Solo Problemas"
+  ""
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
@@ -759,11 +795,15 @@ return plural;
  ],
  "Other": [
   null,
-  ""
+  "Otro"
  ],
  "PCI": [
   null,
-  ""
+  "PCI"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit roto"
  ],
  "Paths": [
   null,
@@ -775,15 +815,15 @@ return plural;
  ],
  "Peripheral Chassis": [
   null,
-  ""
+  "Chasis Periférico"
  ],
  "Pizza Box": [
   null,
-  ""
+  "Pizza Box"
  ],
  "Portable": [
   null,
-  ""
+  "Portable"
  ],
  "Power Options": [
   null,
@@ -809,25 +849,13 @@ return plural;
   null,
   "Información de problema"
  ],
- "Problems, Errors": [
-  null,
-  "Problemas, Errores"
- ],
- "Problems, Errors, Warnings": [
-  null,
-  "Problemas, Errores, Advertencias"
- ],
- "Problems, Errors, Warnings, Notices": [
-  null,
-  "Problemas, Errores, Advertencias, Avisos"
- ],
  "RAID Chassis": [
   null,
-  ""
+  "Chasis RAID"
  ],
  "Rack Mount Chassis": [
   null,
-  ""
+  "Chasis Montado en Rack"
  ],
  "Real Host Name": [
   null,
@@ -911,13 +939,17 @@ return plural;
  ],
  "Sealed-case PC": [
   null,
-  ""
+  "PC de Caja Sellada"
  ],
  "Seconds": [
   null,
   "Segundos"
  ],
  "Secure Shell Keys": [
+  null,
+  "Claves de Shell Seguras"
+ ],
+ "Security Updates Available": [
   null,
   ""
  ],
@@ -939,19 +971,19 @@ return plural;
  ],
  "Set Time": [
   null,
-  ""
+  "Ajustar Hora"
  ],
  "Severity": [
   null,
-  ""
+  "Severidad"
  ],
  "Show fingerprints": [
   null,
-  ""
+  "Mostrar huellas dactilares"
  ],
  "Shut Down": [
   null,
-  ""
+  "Apagar"
  ],
  "Since $0": [
   null,
@@ -959,7 +991,7 @@ return plural;
  ],
  "Slot": [
   null,
-  ""
+  "Espacio"
  ],
  "Sockets": [
   null,
@@ -967,11 +999,11 @@ return plural;
  ],
  "Space-saving Computer": [
   null,
-  ""
+  "Ordenador que Ahorra Espacio"
  ],
  "Specific Time": [
   null,
-  ""
+  "Hora Específica"
  ],
  "Start": [
   null,
@@ -987,7 +1019,7 @@ return plural;
  ],
  "Stick PC": [
   null,
-  ""
+  "Stick PC"
  ],
  "Stop": [
   null,
@@ -995,19 +1027,19 @@ return plural;
  ],
  "Store Performance Data": [
   null,
-  ""
+  "Almacenar Datos de Rendimiento"
  ],
  "Sub Chassis": [
   null,
-  ""
+  "Sub Chasis"
  ],
  "Sub Notebook": [
   null,
-  ""
+  "Sub Portátil"
  ],
  "Sunday": [
   null,
-  ""
+  "Domingo"
  ],
  "Swap Used": [
   null,
@@ -1015,7 +1047,7 @@ return plural;
  ],
  "Synchronized": [
   null,
-  ""
+  "Sincronizado"
  ],
  "Synchronized with {{Server}}": [
   null,
@@ -1023,9 +1055,13 @@ return plural;
  ],
  "System": [
   null,
-  ""
+  "Sistema"
  ],
  "System Information": [
+  null,
+  "Información del Sistema"
+ ],
+ "System Not Registered": [
   null,
   ""
  ],
@@ -1035,11 +1071,15 @@ return plural;
  ],
  "System Time": [
   null,
+  "Hora del Sistema"
+ ],
+ "System Up To Date": [
+  null,
   ""
  ],
  "Tablet": [
   null,
-  ""
+  "Tableta"
  ],
  "Targets": [
   null,
@@ -1051,7 +1091,7 @@ return plural;
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,
-  ""
+  "El usuario <b>$0</b> no tiene permisos para crear temporizadores"
  ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
@@ -1059,15 +1099,15 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to shutdown or restart this server": [
   null,
-  ""
+  "El usuario <b>$0</b> no tiene permitido apagar o reiniciar este servidor"
  ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
-  ""
+  "Este día no existe todos los meses.<br> El temporizador solo será ejecutado en los meses que tengan 31."
  ],
  "This field cannot be empty.": [
   null,
-  ""
+  "Este campo no puede estar vacío."
  ],
  "This unit is an instance of the $0 template.": [
   null,
@@ -1113,6 +1153,10 @@ return plural;
   null,
   "Desenmascarar"
  ],
+ "Updates Available": [
+  null,
+  ""
+ ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",
   "",
@@ -1133,6 +1177,10 @@ return plural;
  "Version": [
   null,
   "Versión"
+ ],
+ "Warning and above": [
+  null,
+  ""
  ],
  "Wednesday": [
   null,

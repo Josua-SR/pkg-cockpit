@@ -267,7 +267,7 @@ return plural;
  ],
  "This web console will be updated.": [
   null,
-  ""
+  "Ta konsola internetowa zostanie zaktualizowana."
  ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
@@ -323,7 +323,7 @@ return plural;
  ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
-  ""
+  "Przeglądarka się rozłączy, ale nie wpłynie to na proces aktualizacji. Można połączyć się ponownie za kilka chwil, aby kontynuować obserwację procesu."
  ],
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,

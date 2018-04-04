@@ -1,5 +1,5 @@
 # Generated Makefile data for ovirt
-# Stamp: Wed Mar 21 2018 13:42:36 GMT+0000 (UTC)
+# Stamp: Wed Apr 04 2018 10:04:58 GMT+0000 (UTC)
 
 ovirt_INPUTS = \
 	node_modules/bootstrap/LICENSE \
@@ -63,6 +63,7 @@ ovirt_INPUTS = \
 	pkg/lib/listing.less \
 	pkg/lib/page.css \
 	pkg/lib/polyfills.js \
+	pkg/lib/service.js \
 	pkg/lib/table.css \
 	pkg/lib/term.css \
 	pkg/lib/variables.less \
@@ -70,9 +71,10 @@ ovirt_INPUTS = \
 	pkg/machines/c3charts.jsx \
 	pkg/machines/cat.js \
 	pkg/machines/components/consoles.jsx \
-	pkg/machines/components/createVmDialog.jsx \
-	pkg/machines/components/createVmDialog.less \
-	pkg/machines/components/createVmDialogUtils.es6 \
+	pkg/machines/components/create-vm-dialog/createVmDialog.jsx \
+	pkg/machines/components/create-vm-dialog/createVmDialog.less \
+	pkg/machines/components/create-vm-dialog/createVmDialogUtils.es6 \
+	pkg/machines/components/create-vm-dialog/uiState.es6 \
 	pkg/machines/components/deleteDialog.css \
 	pkg/machines/components/deleteDialog.jsx \
 	pkg/machines/components/desktopConsole.jsx \
@@ -85,6 +87,11 @@ ovirt_INPUTS = \
 	pkg/machines/components/notification/notification.jsx \
 	pkg/machines/components/notification/notificationArea.jsx \
 	pkg/machines/components/serialConsole.jsx \
+	pkg/machines/components/vm/dummyVm.jsx \
+	pkg/machines/components/vm/stateIcon.jsx \
+	pkg/machines/components/vm/vm.jsx \
+	pkg/machines/components/vm/vmActions.jsx \
+	pkg/machines/components/vm/vmUsageTab.jsx \
 	pkg/machines/components/vmDiskSourceCell.jsx \
 	pkg/machines/components/vmDisksTab.jsx \
 	pkg/machines/components/vmDisksTabLibvirt.jsx \
@@ -102,6 +109,7 @@ ovirt_INPUTS = \
 	pkg/machines/provider.es6 \
 	pkg/machines/reducers.es6 \
 	pkg/machines/scripts/create_machine.sh \
+	pkg/machines/scripts/get_libvirt_service_name.sh \
 	pkg/machines/scripts/get_os_list.sh \
 	pkg/machines/scripts/install_machine.sh \
 	pkg/machines/selectors.es6 \
@@ -182,7 +190,7 @@ ovirt_TESTS = \
 
 dist/ovirt/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/c3/c3.css -N node_modules/c3/c3.js -N node_modules/d3/d3.js -N node_modules/noVNC/include/base64.js -N node_modules/noVNC/include/des.js -N node_modules/noVNC/include/display.js -N node_modules/noVNC/include/inflator.js -N node_modules/noVNC/include/input.js -N node_modules/noVNC/include/keyboard.js -N node_modules/noVNC/include/keysym.js -N node_modules/noVNC/include/keysymdef.js -N node_modules/noVNC/include/rfb.js -N node_modules/noVNC/include/util.js -N node_modules/noVNC/include/websock.js -N node_modules/noVNC/include/webutil.js -N node_modules/patternfly/dist/less/color-variables.less -N node_modules/patternfly/dist/less/variables.less -N node_modules/promise/lib/core.js -N node_modules/promise/lib/es6-extensions.js -N node_modules/promise/polyfill-done.js -N node_modules/promise/polyfill.js -N node_modules/react-lite/dist/react-lite.js -N node_modules/redux/dist/redux.min.js -N node_modules/term.js-cockpit/src/term.js -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-file-autocomplete.css -N pkg/lib/cockpit-components-file-autocomplete.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-select.jsx -N pkg/lib/cockpit-components-terminal.jsx -N pkg/lib/console.css -N pkg/lib/listing.less -N pkg/lib/page.css -N pkg/lib/polyfills.js -N pkg/lib/table.css -N pkg/lib/term.css -N pkg/lib/variables.less -N pkg/machines/actions.es6 -N pkg/machines/c3charts.jsx -N pkg/machines/cat.js -N pkg/machines/components/consoles.jsx -N pkg/machines/components/createVmDialog.jsx -N pkg/machines/components/createVmDialog.less -N pkg/machines/components/createVmDialogUtils.es6 -N pkg/machines/components/deleteDialog.css -N pkg/machines/components/deleteDialog.jsx -N pkg/machines/components/desktopConsole.jsx -N pkg/machines/components/dropdownButtons.css -N pkg/machines/components/dropdownButtons.jsx -N pkg/machines/components/infoRecord.jsx -N pkg/machines/components/notification/inlineNotification.css -N pkg/machines/components/notification/inlineNotification.jsx -N pkg/machines/components/notification/notification.css -N pkg/machines/components/notification/notification.jsx -N pkg/machines/components/notification/notificationArea.jsx -N pkg/machines/components/serialConsole.jsx -N pkg/machines/components/vmDiskSourceCell.jsx -N pkg/machines/components/vmDisksTab.jsx -N pkg/machines/components/vmDisksTabLibvirt.jsx -N pkg/machines/components/vmLastMessage.jsx -N pkg/machines/components/vmOverviewTab.jsx -N pkg/machines/components/vmOverviewTabLibvirt.jsx -N pkg/machines/components/vnc.jsx -N pkg/machines/config.es6 -N pkg/machines/helpers.es6 -N pkg/machines/hostvmslist.jsx -N pkg/machines/libvirt.es6 -N pkg/machines/libvirtUtils.es6 -N pkg/machines/machines.less -N pkg/machines/middlewares.es6 -N pkg/machines/provider.es6 -N pkg/machines/reducers.es6 -N pkg/machines/scripts/create_machine.sh -N pkg/machines/scripts/get_os_list.sh -N pkg/machines/scripts/install_machine.sh -N pkg/machines/selectors.es6 -N pkg/machines/services.es6 -N pkg/machines/store.es6 -N pkg/machines/vmnetworktab.jsx -N pkg/machines/vnc.js -N pkg/ovirt/actions.es6 -N pkg/ovirt/components/App.jsx -N pkg/ovirt/components/ClusterTemplates.jsx -N pkg/ovirt/components/ClusterVms.jsx -N pkg/ovirt/components/ConfirmButtons.jsx -N pkg/ovirt/components/ConsoleClientResources.jsx -N pkg/ovirt/components/HostStatus.css -N pkg/ovirt/components/HostStatus.jsx -N pkg/ovirt/components/HostToMaintenance.css -N pkg/ovirt/components/HostToMaintenance.jsx -N pkg/ovirt/components/InstallationDialog.css -N pkg/ovirt/components/InstallationDialog.jsx -N pkg/ovirt/components/OVirtTab.css -N pkg/ovirt/components/OVirtTab.jsx -N pkg/ovirt/components/VdsmView.css -N pkg/ovirt/components/VdsmView.jsx -N pkg/ovirt/components/VmActions.jsx -N pkg/ovirt/components/VmOverviewColumn.css -N pkg/ovirt/components/VmOverviewColumn.jsx -N pkg/ovirt/config.es6 -N pkg/ovirt/configFuncs.es6 -N pkg/ovirt/helpers.es6 -N pkg/ovirt/index.es6 -N pkg/ovirt/index.html -N pkg/ovirt/index.js -N pkg/ovirt/ovirt.es6 -N pkg/ovirt/ovirt.less -N pkg/ovirt/ovirtApiAccess.es6 -N pkg/ovirt/ovirtConverters.es6 -N pkg/ovirt/provider.es6 -N pkg/ovirt/reducers.es6 -N pkg/ovirt/rephraseUI.es6 -N pkg/ovirt/selectors.es6 -N pkg/ovirt/store.es6 -N pkg/ovirt/vnc.css -N pkg/ovirt/vnc.html $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/c3/c3.css -N node_modules/c3/c3.js -N node_modules/d3/d3.js -N node_modules/noVNC/include/base64.js -N node_modules/noVNC/include/des.js -N node_modules/noVNC/include/display.js -N node_modules/noVNC/include/inflator.js -N node_modules/noVNC/include/input.js -N node_modules/noVNC/include/keyboard.js -N node_modules/noVNC/include/keysym.js -N node_modules/noVNC/include/keysymdef.js -N node_modules/noVNC/include/rfb.js -N node_modules/noVNC/include/util.js -N node_modules/noVNC/include/websock.js -N node_modules/noVNC/include/webutil.js -N node_modules/patternfly/dist/less/color-variables.less -N node_modules/patternfly/dist/less/variables.less -N node_modules/promise/lib/core.js -N node_modules/promise/lib/es6-extensions.js -N node_modules/promise/polyfill-done.js -N node_modules/promise/polyfill.js -N node_modules/react-lite/dist/react-lite.js -N node_modules/redux/dist/redux.min.js -N node_modules/term.js-cockpit/src/term.js -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-file-autocomplete.css -N pkg/lib/cockpit-components-file-autocomplete.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-select.jsx -N pkg/lib/cockpit-components-terminal.jsx -N pkg/lib/console.css -N pkg/lib/listing.less -N pkg/lib/page.css -N pkg/lib/polyfills.js -N pkg/lib/service.js -N pkg/lib/table.css -N pkg/lib/term.css -N pkg/lib/variables.less -N pkg/machines/actions.es6 -N pkg/machines/c3charts.jsx -N pkg/machines/cat.js -N pkg/machines/components/consoles.jsx -N pkg/machines/components/create-vm-dialog/createVmDialog.jsx -N pkg/machines/components/create-vm-dialog/createVmDialog.less -N pkg/machines/components/create-vm-dialog/createVmDialogUtils.es6 -N pkg/machines/components/create-vm-dialog/uiState.es6 -N pkg/machines/components/deleteDialog.css -N pkg/machines/components/deleteDialog.jsx -N pkg/machines/components/desktopConsole.jsx -N pkg/machines/components/dropdownButtons.css -N pkg/machines/components/dropdownButtons.jsx -N pkg/machines/components/infoRecord.jsx -N pkg/machines/components/notification/inlineNotification.css -N pkg/machines/components/notification/inlineNotification.jsx -N pkg/machines/components/notification/notification.css -N pkg/machines/components/notification/notification.jsx -N pkg/machines/components/notification/notificationArea.jsx -N pkg/machines/components/serialConsole.jsx -N pkg/machines/components/vm/dummyVm.jsx -N pkg/machines/components/vm/stateIcon.jsx -N pkg/machines/components/vm/vm.jsx -N pkg/machines/components/vm/vmActions.jsx -N pkg/machines/components/vm/vmUsageTab.jsx -N pkg/machines/components/vmDiskSourceCell.jsx -N pkg/machines/components/vmDisksTab.jsx -N pkg/machines/components/vmDisksTabLibvirt.jsx -N pkg/machines/components/vmLastMessage.jsx -N pkg/machines/components/vmOverviewTab.jsx -N pkg/machines/components/vmOverviewTabLibvirt.jsx -N pkg/machines/components/vnc.jsx -N pkg/machines/config.es6 -N pkg/machines/helpers.es6 -N pkg/machines/hostvmslist.jsx -N pkg/machines/libvirt.es6 -N pkg/machines/libvirtUtils.es6 -N pkg/machines/machines.less -N pkg/machines/middlewares.es6 -N pkg/machines/provider.es6 -N pkg/machines/reducers.es6 -N pkg/machines/scripts/create_machine.sh -N pkg/machines/scripts/get_libvirt_service_name.sh -N pkg/machines/scripts/get_os_list.sh -N pkg/machines/scripts/install_machine.sh -N pkg/machines/selectors.es6 -N pkg/machines/services.es6 -N pkg/machines/store.es6 -N pkg/machines/vmnetworktab.jsx -N pkg/machines/vnc.js -N pkg/ovirt/actions.es6 -N pkg/ovirt/components/App.jsx -N pkg/ovirt/components/ClusterTemplates.jsx -N pkg/ovirt/components/ClusterVms.jsx -N pkg/ovirt/components/ConfirmButtons.jsx -N pkg/ovirt/components/ConsoleClientResources.jsx -N pkg/ovirt/components/HostStatus.css -N pkg/ovirt/components/HostStatus.jsx -N pkg/ovirt/components/HostToMaintenance.css -N pkg/ovirt/components/HostToMaintenance.jsx -N pkg/ovirt/components/InstallationDialog.css -N pkg/ovirt/components/InstallationDialog.jsx -N pkg/ovirt/components/OVirtTab.css -N pkg/ovirt/components/OVirtTab.jsx -N pkg/ovirt/components/VdsmView.css -N pkg/ovirt/components/VdsmView.jsx -N pkg/ovirt/components/VmActions.jsx -N pkg/ovirt/components/VmOverviewColumn.css -N pkg/ovirt/components/VmOverviewColumn.jsx -N pkg/ovirt/config.es6 -N pkg/ovirt/configFuncs.es6 -N pkg/ovirt/helpers.es6 -N pkg/ovirt/index.es6 -N pkg/ovirt/index.html -N pkg/ovirt/index.js -N pkg/ovirt/ovirt.es6 -N pkg/ovirt/ovirt.less -N pkg/ovirt/ovirtApiAccess.es6 -N pkg/ovirt/ovirtConverters.es6 -N pkg/ovirt/provider.es6 -N pkg/ovirt/reducers.es6 -N pkg/ovirt/rephraseUI.es6 -N pkg/ovirt/selectors.es6 -N pkg/ovirt/store.es6 -N pkg/ovirt/vnc.css -N pkg/ovirt/vnc.html $< > $@.tmp && mv $@.tmp $@
 
 dist/ovirt/Makefile.deps: $(WEBPACK_CONFIG) $(ovirt_INPUTS)
 	$(WEBPACK_RULE) -d dist/ovirt/Makefile.deps $(WEBPACK_CONFIG)
@@ -327,6 +335,8 @@ pkg/lib/page.css:
 
 pkg/lib/polyfills.js:
 
+pkg/lib/service.js:
+
 pkg/lib/table.css:
 
 pkg/lib/term.css:
@@ -341,11 +351,13 @@ pkg/machines/cat.js:
 
 pkg/machines/components/consoles.jsx:
 
-pkg/machines/components/createVmDialog.jsx:
+pkg/machines/components/create-vm-dialog/createVmDialog.jsx:
 
-pkg/machines/components/createVmDialog.less:
+pkg/machines/components/create-vm-dialog/createVmDialog.less:
 
-pkg/machines/components/createVmDialogUtils.es6:
+pkg/machines/components/create-vm-dialog/createVmDialogUtils.es6:
+
+pkg/machines/components/create-vm-dialog/uiState.es6:
 
 pkg/machines/components/deleteDialog.css:
 
@@ -370,6 +382,16 @@ pkg/machines/components/notification/notification.jsx:
 pkg/machines/components/notification/notificationArea.jsx:
 
 pkg/machines/components/serialConsole.jsx:
+
+pkg/machines/components/vm/dummyVm.jsx:
+
+pkg/machines/components/vm/stateIcon.jsx:
+
+pkg/machines/components/vm/vm.jsx:
+
+pkg/machines/components/vm/vmActions.jsx:
+
+pkg/machines/components/vm/vmUsageTab.jsx:
 
 pkg/machines/components/vmDiskSourceCell.jsx:
 
@@ -404,6 +426,8 @@ pkg/machines/provider.es6:
 pkg/machines/reducers.es6:
 
 pkg/machines/scripts/create_machine.sh:
+
+pkg/machines/scripts/get_libvirt_service_name.sh:
 
 pkg/machines/scripts/get_os_list.sh:
 

@@ -22,10 +22,13 @@
  * Provider for Libvirt
  */
 import cockpit from 'cockpit';
+import service from '../lib/service.js';
 import $ from 'jquery';
 import createVmScript from 'raw!./scripts/create_machine.sh';
 import installVmScript from 'raw!./scripts/install_machine.sh';
 import getOSListScript from 'raw!./scripts/get_os_list.sh';
+import getLibvirtServiceNameScript from 'raw!./scripts/get_libvirt_service_name.sh';
+import store from './store.es6';
 
 import {
     updateOrAddVm,
@@ -38,10 +41,8 @@ import {
     vmActionFailed,
     getOsInfoList,
     updateOsInfoList,
-    vmCreateInProgress,
-    vmCreateCompleted,
-    vmInstallInProgress,
-    vmInstallCompleted,
+    checkLibvirtStatus,
+    updateLibvirtState,
 } from './actions.es6';
 
 import { usagePollingEnabled } from './selectors.es6';
@@ -60,15 +61,21 @@ import {
     prepareDisplaysParam,
 } from './libvirtUtils.es6';
 
+import {
+    setVmCreateInProgress,
+    setVmInstallInProgress,
+    finishVmCreateInProgress,
+    finishVmInstallInProgress,
+    removeVmCreateInProgress,
+    clearVmUiState,
+} from './components/create-vm-dialog/uiState.es6';
+
+
 import VMS_CONFIG from './config.es6';
 
 const _ = cockpit.gettext;
 
 const METADATA_NAMESPACE="https://github.com/cockpit-project/cockpit/tree/master/pkg/machines";
-
-const CREATE_IN_PROGRESS_UI_TIMEOUT = 10000;
-const INSTALL_IN_PROGRESS_UI_TIMEOUT = 4000;
-const VM_RECOVER_IN_UI_TIMEOUT = 3000;
 
 /**
  * Parse non-XML stdout of virsh.
@@ -143,7 +150,7 @@ LIBVIRT_PROVIDER = {
     canDelete: (vmState, vmId, providerState) => true,
     isRunning: (vmState) => LIBVIRT_PROVIDER.canReset(vmState),
     canRun: (vmState, hasInstallPhase) => !hasInstallPhase && vmState == 'shut off',
-    canInstall: (vmState, hasInstallPhase, installInProgress) => vmState != 'running' && hasInstallPhase && !installInProgress,
+    canInstall: (vmState, hasInstallPhase) => vmState != 'running' && hasInstallPhase,
     canConsole: (vmState) => vmState == 'running',
     canSendNMI: (vmState) => LIBVIRT_PROVIDER.canReset(vmState),
 
@@ -170,29 +177,52 @@ LIBVIRT_PROVIDER = {
         };
     },
 
+    INIT_DATA_RETRIEVAL () {
+        logDebug(`${this.name}.INIT_DATA_RETRIEVAL():`);
+        return dispatch => {
+            dispatch(getOsInfoList());
+            return cockpit.script(getLibvirtServiceNameScript, null, { err: "message", environ: ['LC_ALL=en_US.UTF-8'] })
+                .then(serviceName => {
+                    const match = serviceName.match(/([^\s]+)/);
+                    const name = match ? match[0] : null;
+                    dispatch(updateLibvirtState({ name }));
+                    if (name) {
+                        dispatch(getAllVms(null, name));
+                    } else {
+                        console.error("initialize failed: getting libvirt service name failed");
+                    }
+                })
+                .fail((exception, data) => {
+                    dispatch(updateLibvirtState({ name: null }));
+                    console.error(`initialize failed: getting libvirt service name returned error: "${JSON.stringify(exception)}", data: "${JSON.stringify(data)}"`);
+                });
+        };
+    },
+
     /**
      * Initiate read of all VMs
      *
      * @returns {Function}
      */
-    GET_ALL_VMS ({ connectionName }) {
+    GET_ALL_VMS ({ connectionName, libvirtServiceName }) {
         logDebug(`${this.name}.GET_ALL_VMS(connectionName='${connectionName}'):`);
         if (connectionName) {
             return dispatch => {
-                startEventMonitor(dispatch, connectionName);
+                dispatch(checkLibvirtStatus(libvirtServiceName));
+                startEventMonitor(dispatch, connectionName, libvirtServiceName);
                 doGetAllVms(dispatch, connectionName);
-                dispatch(getOsInfoList());
             };
         }
 
         return dispatch => { // for all connections
+            dispatch(checkLibvirtStatus(libvirtServiceName));
             return cockpit.user().done( loggedUser => {
                 const promises = Object.getOwnPropertyNames(VMS_CONFIG.Virsh.connections)
                     .filter(
                         // The 'root' user does not have its own qemu:///session just qemu:///system
                         // https://bugzilla.redhat.com/show_bug.cgi?id=1045069
                         connectionName => canLoggedUserConnectSession(connectionName, loggedUser))
-                    .map(connectionName => dispatch(getAllVms(connectionName)));
+                    .map(connectionName => dispatch(getAllVms(connectionName, libvirtServiceName)));
 
                 return cockpit.all(promises);
             });
@@ -256,34 +286,14 @@ LIBVIRT_PROVIDER = {
         });
     },
 
-    CREATE_VM({ vmName, source, os, memorySize, storageSize, startVm}) {
+    CREATE_VM({ vmName, source, os, memorySize, storageSize, startVm }) {
         logDebug(`${this.name}.CREATE_VM(${vmName}):`);
         return dispatch => {
-            // presume that vm gets created, because we can get response from virsh before createVmScript finishes
-            dispatch(vmCreateInProgress({
-                name: vmName,
-                openConsoleTab: true,
-            }));
+            // shows dummy vm  until we get vm from virsh (cleans up inProgress)
+            setVmCreateInProgress(dispatch, vmName, { openConsoleTab: startVm });
 
             if (startVm) {
-                dispatch(vmInstallInProgress({
-                    name: vmName,
-                }));
-            }
-
-            // wait few secs for ui to get the new vm and to see that this ui created the vm
-            window.setTimeout(() => {
-                dispatch(vmCreateCompleted({
-                    name: vmName,
-                }));
-            }, CREATE_IN_PROGRESS_UI_TIMEOUT);
-
-            if (startVm) {
-                window.setTimeout(() => {
-                    dispatch(vmInstallCompleted({
-                        name: vmName,
-                    }));
-                }, INSTALL_IN_PROGRESS_UI_TIMEOUT);
+                setVmInstallInProgress(dispatch, vmName);
             }
 
             return cockpit.script(createVmScript, [
@@ -293,22 +303,26 @@ LIBVIRT_PROVIDER = {
                 memorySize,
                 storageSize,
                 startVm,
-            ], { err: "message", environ: ['LC_ALL=C'] });
+            ], { err: "message", environ: ['LC_ALL=C'] })
+                .done(() => {
+                    finishVmCreateInProgress(dispatch, vmName);
+                    if (startVm) {
+                        finishVmInstallInProgress(dispatch, vmName);
+                    }
+                })
+                .fail((exception, data) => {
+                    clearVmUiState(dispatch, vmName); // inProgress cleanup
+                    console.info(`spawn 'vm creation' returned error: "${JSON.stringify(exception)}", data: "${JSON.stringify(data)}"`);
+                });
         };
     },
 
     INSTALL_VM({ name, vcpus, currentMemory, metadata, disks, displays, connectionName }) {
         logDebug(`${this.name}.INSTALL_VM(${name}):`);
         return dispatch => {
-            dispatch(vmInstallInProgress({
-                name,
-            }));
-
-            window.setTimeout(() => {
-                dispatch(vmInstallCompleted({
-                    name,
-                }));
-            }, INSTALL_IN_PROGRESS_UI_TIMEOUT);
+            // shows dummy vm until we get vm from virsh (cleans up inProgress)
+            // vm should be returned even if script fails
+            setVmInstallInProgress(dispatch, name);
 
             return cockpit.script(installVmScript, [
                 name,
@@ -319,13 +333,17 @@ LIBVIRT_PROVIDER = {
                 prepareDisksParam(disks),
                 prepareDisplaysParam(displays),
             ], { err: "message", environ: ['LC_ALL=C'] })
-                .fail(buildScriptTimeoutFailHandler({
+                .done(() => finishVmInstallInProgress(dispatch, name))
+                .fail(({ message, exception }) => {
+                    finishVmInstallInProgress(dispatch, name, { openConsoleTab: false });
+                    const handler = buildScriptTimeoutFailHandler({
                         dispatch,
                         name,
                         connectionName,
                         message: _("INSTALL VM action failed"),
-                    },
-                    VM_RECOVER_IN_UI_TIMEOUT));
+                    }, VMS_CONFIG.WaitForRetryInstallVm);
+                    handler({ message, exception });
+                });
         };
     },
 
@@ -411,7 +429,53 @@ LIBVIRT_PROVIDER = {
             failHandler: buildFailHandler({ dispatch, name, connectionName, message: _("VM SEND Non-Maskable Interrrupt action failed")}),
             args: ['inject-nmi', name]
         });
-    }
+    },
+
+    CHECK_LIBVIRT_STATUS({ serviceName }) {
+        logDebug(`${this.name}.CHECK_LIBVIRT_STATUS`);
+        return dispatch => {
+            const libvirtService = service.proxy(serviceName);
+            const dfd = cockpit.defer();
+
+            libvirtService.wait(() => {
+                let activeState = libvirtService.exists ? libvirtService.state : 'stopped';
+                let unitState = libvirtService.exists && libvirtService.enabled ? 'enabled' : 'disabled';
+
+                dispatch(updateLibvirtState({
+                    activeState,
+                    unitState,
+                }));
+                dfd.resolve();
+            });
+
+            return dfd.promise();
+        };
+    },
+
+    START_LIBVIRT({ serviceName }) {
+        logDebug(`${this.name}.START_LIBVIRT`);
+        return dispatch => {
+            return service.proxy(serviceName).start()
+                .done(() => {
+                    dispatch(checkLibvirtStatus(serviceName));
+                })
+                .fail(exception => {
+                    console.info(`starting libvirt failed: "${JSON.stringify(exception)}"`);
+                });
+        };
+    },
+
+    ENABLE_LIBVIRT({ enable, serviceName}) {
+        logDebug(`${this.name}.ENABLE_LIBVIRT`);
+        return dispatch => {
+            const libvirtService = service.proxy(serviceName);
+            const promise = enable ? libvirtService.enable() : libvirtService.disable();
+
+            return promise.fail(exception => {
+                console.info(`enabling libvirt failed: "${JSON.stringify(exception)}"`);
+            });
+        };
+    },
 };
 
 function canLoggedUserConnectSession (connectionName, loggedUser) {
@@ -503,6 +567,8 @@ function parseDumpxml(dispatch, connectionName, domXml) {
         osVariant,
     };
 
+    const ui = resolveUiState(dispatch, name);
+
     dispatch(updateOrAddVm({
         connectionName, name, id,
         osType,
@@ -515,8 +581,33 @@ function parseDumpxml(dispatch, connectionName, domXml) {
         displays,
         interfaces,
         metadata,
+        ui,
     }));
 }
+
+function resolveUiState(dispatch, name) {
+    const result = {
+        // used just the first time vm is shown
+        initiallyExpanded: false,
+        initiallyOpenedConsoleTab: false,
+    };
+
+    const uiState = store.getState().ui.vms[name];
+
+    if (uiState) {
+        result.initiallyExpanded = uiState.expanded;
+        result.initiallyOpenedConsoleTab = uiState.openConsoleTab;
+
+        if (uiState.installInProgress) {
+            removeVmCreateInProgress(dispatch, name);
+        } else {
+            clearVmUiState(dispatch, name);
+        }
+    }
+
+    return result;
+}
+
 
 function getSingleOptionalElem(parent, name) {
     const subElems = parent.getElementsByTagName(name);
@@ -904,7 +995,13 @@ function handleEvent(dispatch, connectionName, line) {
 
     var match = eventRe.exec(line);
     if (!match) {
-        console.warn("Unable to parse event, ignoring:", line);
+        const error = "Unable to parse event, ignoring:";
+        if (line.toLowerCase().includes("failed to connect")) {
+            // known error: virsh process fails anyway
+            logDebug(error, line);
+        } else {
+            console.warn(error, line);
+        }
         return;
     }
     var [event_, name, info] = match.slice(1);
@@ -959,13 +1056,19 @@ function handleEvent(dispatch, connectionName, line) {
     }
 }
 
-function startEventMonitor(dispatch, connectionName) {
-    var output_buf = '';
+function startEventMonitor(dispatch, connectionName, libvirtServiceName) {
+    let output_buf = '';
 
     // set up event monitor for that connection; force PTY as otherwise the buffering
     // will not show every line immediately
     cockpit.spawn(['virsh'].concat(VMS_CONFIG.Virsh.connections[connectionName].params).concat(['-r', 'event', '--all', '--loop']), {'err': 'message', 'pty': true})
         .stream(data => {
+            if (data.startsWith("error: Disconnected from") || data.startsWith("error: internal error: client socket is closed")) {
+                // libvirt failed
+                logDebug(data);
+                return;
+            }
+
             // buffer and line-split the output, there is no guarantee that we always get whole lines
             output_buf += data;
             let lines = output_buf.split('\n');
@@ -975,9 +1078,10 @@ function startEventMonitor(dispatch, connectionName) {
         })
         .fail(ex => {
             // this usually happens if libvirtd gets stopped or isn't running; retry connecting every 10s
-            console.log("virsh event failed:", ex);
+            logDebug("virsh event failed:", ex);
+            dispatch(checkLibvirtStatus(libvirtServiceName));
             dispatch(deleteUnlistedVMs(connectionName, []));
-            dispatch(delayPolling(getAllVms(connectionName)));
+            dispatch(delayPolling(getAllVms(connectionName, libvirtServiceName)));
         });
 }
 

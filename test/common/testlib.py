@@ -39,6 +39,7 @@ import json
 import tempfile
 import time
 import unittest
+import gzip
 
 import tap
 import testvm
@@ -57,6 +58,7 @@ __all__ = (
     'MachineCase',
     'skipImage',
     'skipPackage',
+    'enableAxe',
     'Error',
 
     'sit',
@@ -782,6 +784,18 @@ class MachineCase(unittest.TestCase):
         messages = machine.journal_messages(syslog_ids, 5)
         if "TEST_AUDIT_NO_SELINUX" not in os.environ:
             messages += machine.audit_messages("14") # 14xx is selinux
+
+        # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1557913
+        # this fails tons of tests due to the SELinux violations (so naughty override causes too much spamming)
+        if self.image == 'fedora-28':
+            self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { dac_override }.*')
+            self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { module_request }.*')
+
+        # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1559820
+        # this affects every boot (so naughty override causes too much spamming)
+        if self.image == 'rhel-8':
+            self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { create } for  pid=1 comm="systemd" name="bpf".*')
+
         all_found = True
         first = None
         for m in messages:
@@ -810,6 +824,61 @@ class MachineCase(unittest.TestCase):
         for log in self.browser.get_js_log():
             if log.startswith("error: uncaught"):
                 raise Error(log)
+
+    def check_axe(self, label=None, suffix=""):
+        """Run aXe check on the currently active frame
+
+        The report gets written into an attachment
+        "<label>-axe-{violations,incomplete}.json". If you specify a suffix, it
+        will be appended to the file name, which is useful if you call this
+        more than once within one test.
+        """
+        # only run this on the default OS test, that's enough
+        if os.getenv("TEST_OS") not in [None, testvm.TEST_OS_DEFAULT]:
+            return
+
+        report = self.browser.eval_js("axe.run()", no_trace=True)
+
+        # trim the report
+        def delkeys(dict, *keys):
+            for key in keys:
+                try:
+                    del dict[key]
+                except KeyError:
+                    pass
+        delkeys(report, "passes", "inapplicable", "timestamp")
+
+        for outcome in ["violations", "incomplete"]:
+            for test in report[outcome]:
+                delkeys(test, "tags", "help", "impact")
+
+                # failureSummary in nodes is highly repetitive and long, so summarize it on violation level
+                summaries = set()
+                for result in test["nodes"]:
+                    if "failureSummary" in result:
+                        summaries.add(result["failureSummary"])
+                    delkeys(result, "all", "any", "none", "impact", "failureSummary")
+
+                    # trim containing iframes from targets
+                    if result.get("target", []):
+                        result["target"] = result["target"][-1]
+
+                if summaries:
+                    test["failureSummaries"] = list(summaries)
+
+
+        # write the report
+        if suffix:
+            suffix = "-" + suffix
+        filename = "{0}{1}-axe.json.gz".format(label or self.label(), suffix)
+        with gzip.open(filename, "wb") as f:
+            f.write(json.dumps(report))
+        print("Wrote accessibility report to " + filename)
+        attach(filename)
+
+        # aXe triggers that *shrug*
+        self.allow_journal_messages("received invalid message without channel prefix")
+
 
     def snapshot(self, title, label=None):
         """Take a snapshot of the current screen and save it as a PNG.
@@ -862,6 +931,22 @@ def skipPackage(*args):
         if package in packages_env:
             return unittest.skip("{0} is excluded in $TEST_SKIP_PACKAGES".format(package))
     return lambda func: func
+
+def enableAxe(method):
+    """Enable aXe accessibility test code injection for this test case"""
+
+    # only run this on the default OS test, that's enough
+    if os.getenv("TEST_OS") not in [None, testvm.TEST_OS_DEFAULT]:
+        return method
+
+    def wrapper(*args):
+        with open(os.path.join(TEST_DIR, "common/axe.js")) as f:
+            script = f.read()
+        # first method argument is "self", a MachineCase instance
+        args[0].browser.cdp.invoke("Page.addScriptToEvaluateOnLoad", scriptSource=script, no_trace=True)
+        return method(*args)
+
+    return wrapper
 
 
 class TestResult(tap.TapResult):

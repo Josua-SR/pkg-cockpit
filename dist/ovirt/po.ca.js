@@ -211,10 +211,6 @@ return plural;
   null,
   "Crea una MV nova"
  ],
- "Create New Virtual Machine": [
-  null,
-  "Crea una màquina virtual nova"
- ],
  "Create VM": [
   null,
   "Crea la MV"
@@ -275,10 +271,6 @@ return plural;
   null,
   "Fitxer"
  ],
- "Filesystem": [
-  null,
-  "Sistema de fitxers"
- ],
  "Force Restart": [
   null,
   "Força el reinici"
@@ -319,29 +311,9 @@ return plural;
   null,
   "Ha fallat l'acció INSTALL VM"
  ],
- "Immediately Start VM": [
-  null,
-  ""
- ],
  "Install": [
   null,
   "Instal·la"
- ],
- "Installation Source": [
-  null,
-  "Origen d'instal·lació"
- ],
- "Installation Source Type": [
-  null,
-  "Tipus d'origen d'instal·lació"
- ],
- "Installation Source should not be empty": [
-  null,
-  "L'origen d'instal·lació no pot estar en blanc"
- ],
- "Invalid filename": [
-  null,
-  ""
  ],
  "Launch Remote Viewer": [
   null,
@@ -379,17 +351,9 @@ return plural;
   null,
   "Memòria"
  ],
- "Memory should be positive number": [
-  null,
-  ""
- ],
  "Memory:": [
   null,
   "Memòria:"
- ],
- "MiB": [
-  null,
-  "MiB"
  ],
  "Migrate To:": [
   null,
@@ -406,14 +370,6 @@ return plural;
  "Name": [
   null,
   "Nom"
- ],
- "Name should not be empty": [
-  null,
-  "El nom no pot estar en blanc"
- ],
- "Name should not consist of empty characters only": [
-  null,
-  ""
  ],
  "Networks": [
   null,
@@ -459,17 +415,9 @@ return plural;
   null,
   "Tipus de SO:"
  ],
- "OS Vendor": [
-  null,
-  ""
- ],
  "Ok": [
   null,
   "D'acord"
- ],
- "Operating System": [
-  null,
-  "Sistema operatiu"
  ],
  "Optimized for:": [
   null,
@@ -478,10 +426,6 @@ return plural;
  "Overview": [
   null,
   "Visió de conjunt"
- ],
- "Path to ISO file on host's file system": [
-  null,
-  "Camí al fitxer ISO al sistema de fitxers de l'amfitrió"
  ],
  "Path to file": [
   null,
@@ -563,10 +507,6 @@ return plural;
   null,
   "Recarrega"
  ],
- "Remote URL": [
-  null,
-  "URL remot"
- ],
  "Restart": [
   null,
   "Reinicia"
@@ -639,10 +579,6 @@ return plural;
   null,
   "Origen"
  ],
- "Source should start with http, ftp or nfs protocol": [
-  null,
-  ""
- ],
  "Start the VM to see disk statistics.": [
   null,
   ""
@@ -658,14 +594,6 @@ return plural;
  "Stateless:": [
   null,
   ""
- ],
- "Storage Size": [
-  null,
-  "Mida de l'emmagatzematge"
- ],
- "Storage Size should not be negative number": [
-  null,
-  "La mida de l'emmagatzematge no pot ser un número negatiu"
  ],
  "Suspend": [
   null,
@@ -750,10 +678,6 @@ return plural;
  "Type": [
   null,
   "Tipus"
- ],
- "URL": [
-  null,
-  "URL"
  ],
  "Unplug": [
   null,
@@ -1006,6 +930,14 @@ return plural;
  "server": [
   null,
   "servidor"
+ ],
+ "show less": [
+  null,
+  "mostra menys"
+ ],
+ "show more": [
+  null,
+  "mostra més"
  ],
  "shut off": [
   null,

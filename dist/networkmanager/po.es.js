@@ -691,7 +691,7 @@ return plural;
  ],
  "Set to": [
   null,
-  ""
+  "Ajustar a"
  ],
  "Shared": [
   null,
@@ -715,47 +715,47 @@ return plural;
  ],
  "Sticky": [
   null,
-  ""
+  "Pegajoso"
  ],
  "Switch off $0": [
   null,
-  ""
+  "Apagar $0"
  ],
  "Switch on $0": [
   null,
-  ""
+  "Encender $0"
  ],
  "Switching off <b>$0</b>  will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Apagando <b>$0</b>  romperá la conexión al servidor y hará la administración de UI no disponible."
  ],
  "Switching off <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Apagando <b>$0</b>  romperá la conexión al servidor y hará la administración de UI no disponible."
  ],
  "Switching on <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Apagando <b>$0</b>  romperá la conexión al servidor y hará la administración de UI no disponible."
  ],
  "Team": [
   null,
-  ""
+  "Equipo"
  ],
  "Team Port": [
   null,
-  ""
+  "Puerto de Equipo"
  ],
  "Team Port Settings": [
   null,
-  ""
+  "Ajustes de Puerto de Equipo"
  ],
  "Team Settings": [
   null,
-  ""
+  "Ajustes de Equipo"
  ],
  "Testing connection": [
   null,
-  ""
+  "Probando conexión"
  ],
  "The user <b>$0</b> is not permitted to modify network settings": [
   null,
@@ -763,7 +763,7 @@ return plural;
  ],
  "This device cannot be managed here.": [
   null,
-  ""
+  "Este dispositivo no se puede manejar aquí."
  ],
  "Unexpected error": [
   null,

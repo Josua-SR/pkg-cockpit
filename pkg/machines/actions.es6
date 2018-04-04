@@ -28,12 +28,17 @@ import { virt } from './provider.es6';
  */
 
 // --- Provider actions -----------------------------------------
+export function initDataRetrieval() {
+    return virt('INIT_DATA_RETRIEVAL');
+}
+
 /**
  *
  * @param connectionName optional - if `undefined` then for all connections
+ * @param libvirtServiceName
  */
-export function getAllVms(connectionName) {
-    return virt('GET_ALL_VMS', { connectionName });
+export function getAllVms(connectionName, libvirtServiceName) {
+    return virt('GET_ALL_VMS', { connectionName, libvirtServiceName });
 }
 
 export function getVm(connectionName, lookupId) {
@@ -97,6 +102,18 @@ export function sendNMI(vm) {
 
 export function changeNetworkState(vm, networkMac, state) {
     return virt('CHANGE_NETWORK_STATE', { name: vm.name, networkMac, state, connectionName: vm.connectionName });
+}
+
+export function checkLibvirtStatus(serviceName) {
+    return virt('CHECK_LIBVIRT_STATUS', { serviceName });
+}
+
+export function startLibvirt(serviceName) {
+    return virt('START_LIBVIRT', { serviceName });
+}
+
+export function enableLibvirt(enable, serviceName) {
+    return virt('ENABLE_LIBVIRT', { enable, serviceName });
 }
 
 /**
@@ -166,36 +183,26 @@ export function updateOsInfoList(osInfoList) {
     };
 }
 
-export function vmCreateInProgress(vm) {
+export function addUiVm(vm) {
     return {
-        type: 'VM_CREATE_IN_PROGRESS',
+        type: 'ADD_UI_VM',
         vm,
     };
 }
 
-export function vmCreateCompleted(vm) {
+export function updateUiVm(vm) {
     return {
-        type: 'VM_CREATE_COMPLETED',
+        type: 'UPDATE_UI_VM',
         vm,
     };
 }
 
-
-
-export function vmInstallInProgress(vm) {
+export function deleteUiVm(vm) {
     return {
-        type: 'VM_INSTALL_IN_PROGRESS',
+        type: 'DELETE_UI_VM',
         vm,
     };
 }
-
-export function vmInstallCompleted(vm) {
-    return {
-        type: 'VM_INSTALL_COMPLETED',
-        vm,
-    };
-}
-
 
 export function addErrorNotification(notification) {
     if (typeof notification === 'string') {
@@ -230,6 +237,12 @@ export function clearNotifications() {
     };
 }
 
+export function updateLibvirtState(state) {
+    return {
+        type: 'UPDATE_LIBVIRT_STATE',
+        state,
+    };
+}
 
 export function vmActionFailed({ name, connectionName, message, detail, extraPayload }) {
     return {

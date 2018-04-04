@@ -409,7 +409,7 @@ return plural;
  ],
  "Select": [
   null,
-  ""
+  "Seleccionar"
  ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
@@ -445,7 +445,7 @@ return plural;
  ],
  "There are currently no active pages": [
   null,
-  ""
+  "No hay actualmente páginas activas"
  ],
  "This machine has already been added.": [
   null,

@@ -297,6 +297,10 @@ return plural;
   null,
   "Järjestelmän käynnistyksen jälkeen"
  ],
+ "Alert and above": [
+  null,
+  ""
+ ],
  "All In One": [
   null,
   ""
@@ -337,6 +341,10 @@ return plural;
   null,
   ""
  ],
+ "Bug Fix Updates Available": [
+  null,
+  ""
+ ],
  "Bus Expansion Chassis": [
   null,
   ""
@@ -368,6 +376,10 @@ return plural;
  "Change System Time": [
   null,
   "Vaihda Järjestelmän Aika"
+ ],
+ "Checking for updates…": [
+  null,
+  ""
  ],
  "Class": [
   null,
@@ -409,9 +421,17 @@ return plural;
   null,
   "Luo Ajastimet"
  ],
+ "Critical and above": [
+  null,
+  ""
+ ],
  "Current boot": [
   null,
   "Tämänhetkinen käynnistys"
+ ],
+ "Debug and above": [
+  null,
+  ""
  ],
  "Delay": [
   null,
@@ -469,6 +489,10 @@ return plural;
   null,
   "Käytössä"
  ],
+ "Enhancement Updates Available": [
+  null,
+  ""
+ ],
  "Entry": [
   null,
   ""
@@ -476,6 +500,10 @@ return plural;
  "Error": [
   null,
   "Virhe"
+ ],
+ "Error and above": [
+  null,
+  ""
  ],
  "Everything": [
   null,
@@ -540,6 +568,10 @@ return plural;
  "Id": [
   null,
   "Id"
+ ],
+ "Info and above": [
+  null,
+  ""
  ],
  "Instantiate": [
   null,
@@ -737,6 +769,10 @@ return plural;
   null,
   ""
  ],
+ "Notice and above": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   ""
@@ -745,7 +781,7 @@ return plural;
   null,
   ""
  ],
- "Only Problems": [
+ "Only Emergency": [
   null,
   ""
  ],
@@ -764,6 +800,10 @@ return plural;
  "PCI": [
   null,
   ""
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit kaatui"
  ],
  "Paths": [
   null,
@@ -808,18 +848,6 @@ return plural;
  "Problem info": [
   null,
   ""
- ],
- "Problems, Errors": [
-  null,
-  "Ongelmat, virheet"
- ],
- "Problems, Errors, Warnings": [
-  null,
-  "Ongelmat, virheet, varoitukset"
- ],
- "Problems, Errors, Warnings, Notices": [
-  null,
-  "Ongelmat, virheet, varoitukset, huomautukset"
  ],
  "RAID Chassis": [
   null,
@@ -918,6 +946,10 @@ return plural;
   "Sekunnit"
  ],
  "Secure Shell Keys": [
+  null,
+  ""
+ ],
+ "Security Updates Available": [
   null,
   ""
  ],
@@ -1029,6 +1061,10 @@ return plural;
   null,
   ""
  ],
+ "System Not Registered": [
+  null,
+  ""
+ ],
  "System Services": [
   null,
   "Järjestelmäpalvelut"
@@ -1036,6 +1072,10 @@ return plural;
  "System Time": [
   null,
   "Järjestelmän aika"
+ ],
+ "System Up To Date": [
+  null,
+  ""
  ],
  "Tablet": [
   null,
@@ -1113,6 +1153,10 @@ return plural;
   null,
   ""
  ],
+ "Updates Available": [
+  null,
+  ""
+ ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",
   "",
@@ -1133,6 +1177,10 @@ return plural;
  "Version": [
   null,
   "Versio"
+ ],
+ "Warning and above": [
+  null,
+  ""
  ],
  "Wednesday": [
   null,

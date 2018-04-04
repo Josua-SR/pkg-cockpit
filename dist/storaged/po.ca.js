@@ -162,6 +162,10 @@ return plural;
   null,
   "(sense)"
  ],
+ "--": [
+  null,
+  ""
+ ],
  "1 MiB": [
   null,
   "1 MiB"
@@ -233,6 +237,10 @@ return plural;
  "Activating $target": [
   null,
   "S'està activant $target"
+ ],
+ "Active since": [
+  null,
+  ""
  ],
  "Add": [
   null,
@@ -1006,6 +1014,10 @@ return plural;
   null,
   "Port"
  ],
+ "Process": [
+  null,
+  ""
+ ],
  "Purpose": [
   null,
   "Propòsit"
@@ -1098,6 +1110,10 @@ return plural;
   null,
   ""
  ],
+ "Remove": [
+  null,
+  "Suprimeix"
+ ],
  "Remove device": [
   null,
   "Treu el dispositiu"
@@ -1162,6 +1178,14 @@ return plural;
   null,
   "El servidor no pot estar en blanc."
  ],
+ "Service": [
+  null,
+  "Servei"
+ ],
+ "Session": [
+  null,
+  "Sessió"
+ ],
  "Setting up loop device $target": [
   null,
   "S'està preparant el dispositiu de bucles $target"
@@ -1210,10 +1234,6 @@ return plural;
   null,
   "Inicia el multicamí"
  ],
- "Start Scrubbing": [
-  null,
-  "Inicia el tractament de neteja"
- ],
  "Starting RAID Device $target": [
   null,
   "S'està iniciant el dispositiu RAID $target"
@@ -1229,10 +1249,6 @@ return plural;
  "Stop Device": [
   null,
   "Atura el dispositiu"
- ],
- "Stop Scrubbing": [
-  null,
-  "Atura el tractament de neteja"
  ],
  "Stop and Unmount": [
   null,
@@ -1302,7 +1318,15 @@ return plural;
   null,
   "No s'ha finalitzat la creació d'aquest dispositiu VDO i no es pot utilitzar aquest dispositiu."
  ],
- "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
+ "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
+  null,
+  ""
+ ],
+ "The filesystem is in use by login sessions.                Proceeding will stop these.": [
+  null,
+  ""
+ ],
+ "The filesystem is in use by system services.                Proceeding will stop these.": [
   null,
   ""
  ],
@@ -1389,6 +1413,10 @@ return plural;
  "Unable to unmount filesystem": [
   null,
   "No es pot desmuntar el sistema de fitxers"
+ ],
+ "Unit": [
+  null,
+  ""
  ],
  "Unknown": [
   null,

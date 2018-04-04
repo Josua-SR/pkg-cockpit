@@ -291,6 +291,10 @@ return plural;
   null,
   "系统启动后"
  ],
+ "Alert and above": [
+  null,
+  ""
+ ],
  "All In One": [
   null,
   ""
@@ -331,6 +335,10 @@ return plural;
   null,
   ""
  ],
+ "Bug Fix Updates Available": [
+  null,
+  ""
+ ],
  "Bus Expansion Chassis": [
   null,
   ""
@@ -362,6 +370,10 @@ return plural;
  "Change System Time": [
   null,
   "修改系统时间"
+ ],
+ "Checking for updates…": [
+  null,
+  ""
  ],
  "Class": [
   null,
@@ -403,9 +415,17 @@ return plural;
   null,
   "创建定时器"
  ],
+ "Critical and above": [
+  null,
+  ""
+ ],
  "Current boot": [
   null,
   "当前启动"
+ ],
+ "Debug and above": [
+  null,
+  ""
  ],
  "Delay": [
   null,
@@ -463,6 +483,10 @@ return plural;
   null,
   "启用"
  ],
+ "Enhancement Updates Available": [
+  null,
+  ""
+ ],
  "Entry": [
   null,
   "条目"
@@ -470,6 +494,10 @@ return plural;
  "Error": [
   null,
   "错误"
+ ],
+ "Error and above": [
+  null,
+  ""
  ],
  "Everything": [
   null,
@@ -534,6 +562,10 @@ return plural;
  "Id": [
   null,
   "ID"
+ ],
+ "Info and above": [
+  null,
+  ""
  ],
  "Instantiate": [
   null,
@@ -731,6 +763,10 @@ return plural;
   null,
   ""
  ],
+ "Notice and above": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "关"
@@ -739,9 +775,9 @@ return plural;
   null,
   "开"
  ],
- "Only Problems": [
+ "Only Emergency": [
   null,
-  "仅有问题"
+  ""
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
@@ -758,6 +794,10 @@ return plural;
  "PCI": [
   null,
   ""
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit 已崩溃"
  ],
  "Paths": [
   null,
@@ -802,18 +842,6 @@ return plural;
  "Problem info": [
   null,
   ""
- ],
- "Problems, Errors": [
-  null,
-  "问题，错误"
- ],
- "Problems, Errors, Warnings": [
-  null,
-  "问题，错误，警告"
- ],
- "Problems, Errors, Warnings, Notices": [
-  null,
-  "问题，错误，警告，通知"
  ],
  "RAID Chassis": [
   null,
@@ -914,6 +942,10 @@ return plural;
  "Secure Shell Keys": [
   null,
   "安全 Shell  密钥"
+ ],
+ "Security Updates Available": [
+  null,
+  ""
  ],
  "Service Logs": [
   null,
@@ -1023,6 +1055,10 @@ return plural;
   null,
   ""
  ],
+ "System Not Registered": [
+  null,
+  ""
+ ],
  "System Services": [
   null,
   "系统服务"
@@ -1030,6 +1066,10 @@ return plural;
  "System Time": [
   null,
   "系统时间"
+ ],
+ "System Up To Date": [
+  null,
+  ""
  ],
  "Tablet": [
   null,
@@ -1107,6 +1147,10 @@ return plural;
   null,
   "Unmask"
  ],
+ "Updates Available": [
+  null,
+  ""
+ ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",
   ""
@@ -1126,6 +1170,10 @@ return plural;
  "Version": [
   null,
   "版本"
+ ],
+ "Warning and above": [
+  null,
+  ""
  ],
  "Wednesday": [
   null,

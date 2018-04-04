@@ -303,6 +303,10 @@ return plural;
   null,
   ""
  ],
+ "Alert and above": [
+  null,
+  ""
+ ],
  "All In One": [
   null,
   ""
@@ -343,6 +347,10 @@ return plural;
   null,
   ""
  ],
+ "Bug Fix Updates Available": [
+  null,
+  ""
+ ],
  "Bus Expansion Chassis": [
   null,
   ""
@@ -372,6 +380,10 @@ return plural;
   ""
  ],
  "Change System Time": [
+  null,
+  ""
+ ],
+ "Checking for updates…": [
   null,
   ""
  ],
@@ -415,7 +427,15 @@ return plural;
   null,
   ""
  ],
+ "Critical and above": [
+  null,
+  ""
+ ],
  "Current boot": [
+  null,
+  ""
+ ],
+ "Debug and above": [
   null,
   ""
  ],
@@ -475,11 +495,19 @@ return plural;
   null,
   ""
  ],
+ "Enhancement Updates Available": [
+  null,
+  ""
+ ],
  "Entry": [
   null,
   ""
  ],
  "Error": [
+  null,
+  ""
+ ],
+ "Error and above": [
   null,
   ""
  ],
@@ -544,6 +572,10 @@ return plural;
   ""
  ],
  "Id": [
+  null,
+  ""
+ ],
+ "Info and above": [
   null,
   ""
  ],
@@ -743,6 +775,10 @@ return plural;
   null,
   ""
  ],
+ "Notice and above": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "Isključi"
@@ -751,7 +787,7 @@ return plural;
   null,
   "Uključi"
  ],
- "Only Problems": [
+ "Only Emergency": [
   null,
   ""
  ],
@@ -768,6 +804,10 @@ return plural;
   ""
  ],
  "PCI": [
+  null,
+  ""
+ ],
+ "PackageKit crashed": [
   null,
   ""
  ],
@@ -812,18 +852,6 @@ return plural;
   ""
  ],
  "Problem info": [
-  null,
-  ""
- ],
- "Problems, Errors": [
-  null,
-  ""
- ],
- "Problems, Errors, Warnings": [
-  null,
-  ""
- ],
- "Problems, Errors, Warnings, Notices": [
   null,
   ""
  ],
@@ -924,6 +952,10 @@ return plural;
   ""
  ],
  "Secure Shell Keys": [
+  null,
+  ""
+ ],
+ "Security Updates Available": [
   null,
   ""
  ],
@@ -1035,11 +1067,19 @@ return plural;
   null,
   ""
  ],
+ "System Not Registered": [
+  null,
+  ""
+ ],
  "System Services": [
   null,
   ""
  ],
  "System Time": [
+  null,
+  ""
+ ],
+ "System Up To Date": [
   null,
   ""
  ],
@@ -1119,6 +1159,10 @@ return plural;
   null,
   ""
  ],
+ "Updates Available": [
+  null,
+  ""
+ ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",
   "",
@@ -1140,6 +1184,10 @@ return plural;
  "Version": [
   null,
   "Inačica"
+ ],
+ "Warning and above": [
+  null,
+  ""
  ],
  "Wednesday": [
   null,

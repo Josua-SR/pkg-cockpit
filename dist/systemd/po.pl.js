@@ -303,6 +303,10 @@ return plural;
   null,
   "Po uruchomieniu systemu"
  ],
+ "Alert and above": [
+  null,
+  "Alarmy i powyżej"
+ ],
  "All In One": [
   null,
   "Zintegrowane"
@@ -343,6 +347,10 @@ return plural;
   null,
   "Obudowa kasetowa"
  ],
+ "Bug Fix Updates Available": [
+  null,
+  "Dostępne są aktualizacje naprawiające błędy"
+ ],
  "Bus Expansion Chassis": [
   null,
   "Obudowa rozszerzenia magistrali"
@@ -375,13 +383,17 @@ return plural;
   null,
   "Zmień czas systemu"
  ],
+ "Checking for updates…": [
+  null,
+  "Wyszukiwanie aktualizacji…"
+ ],
  "Class": [
   null,
   "Klasa"
  ],
  "Click to see system hardware information": [
   null,
-  ""
+  "Kliknięcie wyświetli informacje o sprzęcie komputera"
  ],
  "Close": [
   null,
@@ -415,9 +427,17 @@ return plural;
   null,
   "Utwórz liczniki"
  ],
+ "Critical and above": [
+  null,
+  "Krytyczne i powyżej"
+ ],
  "Current boot": [
   null,
   "Obecne uruchomienie"
+ ],
+ "Debug and above": [
+  null,
+  "Debugowania i powyżej"
  ],
  "Delay": [
   null,
@@ -475,6 +495,10 @@ return plural;
   null,
   "Włączone"
  ],
+ "Enhancement Updates Available": [
+  null,
+  "Dostępne są aktualizacje z ulepszeniami"
+ ],
  "Entry": [
   null,
   "Wpis"
@@ -482,6 +506,10 @@ return plural;
  "Error": [
   null,
   "Błąd"
+ ],
+ "Error and above": [
+  null,
+  "Błędy i powyżej"
  ],
  "Everything": [
   null,
@@ -546,6 +574,10 @@ return plural;
  "Id": [
   null,
   "Identyfikator"
+ ],
+ "Info and above": [
+  null,
+  "Informacje i powyżej"
  ],
  "Instantiate": [
   null,
@@ -743,6 +775,10 @@ return plural;
   null,
   "Notebook"
  ],
+ "Notice and above": [
+  null,
+  "Uwagi i powyżej"
+ ],
  "Off": [
   null,
   "Wyłączone"
@@ -751,9 +787,9 @@ return plural;
   null,
   "Włączone"
  ],
- "Only Problems": [
+ "Only Emergency": [
   null,
-  "Tylko problemy"
+  "Tylko awaryjne"
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
@@ -770,6 +806,10 @@ return plural;
  "PCI": [
   null,
   "PCI"
+ ],
+ "PackageKit crashed": [
+  null,
+  "Usługa PackageKit uległa awarii"
  ],
  "Paths": [
   null,
@@ -814,18 +854,6 @@ return plural;
  "Problem info": [
   null,
   "Informacje o problemie"
- ],
- "Problems, Errors": [
-  null,
-  "Problemy, błędy"
- ],
- "Problems, Errors, Warnings": [
-  null,
-  "Problemy, błędy, ostrzeżenia"
- ],
- "Problems, Errors, Warnings, Notices": [
-  null,
-  "Problemy, błędy, ostrzeżenia, uwagi"
  ],
  "RAID Chassis": [
   null,
@@ -926,6 +954,10 @@ return plural;
  "Secure Shell Keys": [
   null,
   "Klucze SSH"
+ ],
+ "Security Updates Available": [
+  null,
+  "Dostępne są aktualizacje bezpieczeństwa"
  ],
  "Service Logs": [
   null,
@@ -1035,6 +1067,10 @@ return plural;
   null,
   "Informacje o systemie"
  ],
+ "System Not Registered": [
+  null,
+  "System nie jest zarejestrowany"
+ ],
  "System Services": [
   null,
   "Usługi systemowe"
@@ -1042,6 +1078,10 @@ return plural;
  "System Time": [
   null,
   "Czas systemowy"
+ ],
+ "System Up To Date": [
+  null,
+  "System jest aktualny"
  ],
  "Tablet": [
   null,
@@ -1119,6 +1159,10 @@ return plural;
   null,
   "Anuluj maskowanie"
  ],
+ "Updates Available": [
+  null,
+  ""
+ ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",
   "Użycie $0 rdzenia procesora",
@@ -1140,6 +1184,10 @@ return plural;
  "Version": [
   null,
   "Wersja"
+ ],
+ "Warning and above": [
+  null,
+  "Ostrzeżenia i powyżej"
  ],
  "Wednesday": [
   null,

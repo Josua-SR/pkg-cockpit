@@ -211,10 +211,6 @@ return plural;
   null,
   ""
  ],
- "Create New Virtual Machine": [
-  null,
-  ""
- ],
  "Create VM": [
   null,
   ""
@@ -275,10 +271,6 @@ return plural;
   null,
   "Soubor"
  ],
- "Filesystem": [
-  null,
-  "Systém souborů"
- ],
  "Force Restart": [
   null,
   ""
@@ -319,29 +311,9 @@ return plural;
   null,
   ""
  ],
- "Immediately Start VM": [
-  null,
-  ""
- ],
  "Install": [
   null,
   "Instalovat"
- ],
- "Installation Source": [
-  null,
-  "Zdroj instalace"
- ],
- "Installation Source Type": [
-  null,
-  ""
- ],
- "Installation Source should not be empty": [
-  null,
-  ""
- ],
- "Invalid filename": [
-  null,
-  ""
  ],
  "Launch Remote Viewer": [
   null,
@@ -379,17 +351,9 @@ return plural;
   null,
   "Paměť"
  ],
- "Memory should be positive number": [
-  null,
-  ""
- ],
  "Memory:": [
   null,
   "Paměť:"
- ],
- "MiB": [
-  null,
-  "MiB"
  ],
  "Migrate To:": [
   null,
@@ -406,14 +370,6 @@ return plural;
  "Name": [
   null,
   "Název"
- ],
- "Name should not be empty": [
-  null,
-  ""
- ],
- "Name should not consist of empty characters only": [
-  null,
-  ""
  ],
  "Networks": [
   null,
@@ -459,17 +415,9 @@ return plural;
   null,
   "Druh OS:"
  ],
- "OS Vendor": [
-  null,
-  ""
- ],
  "Ok": [
   null,
   "Ok"
- ],
- "Operating System": [
-  null,
-  ""
  ],
  "Optimized for:": [
   null,
@@ -478,10 +426,6 @@ return plural;
  "Overview": [
   null,
   "Přehled"
- ],
- "Path to ISO file on host's file system": [
-  null,
-  ""
  ],
  "Path to file": [
   null,
@@ -563,10 +507,6 @@ return plural;
   null,
   "Obnovit"
  ],
- "Remote URL": [
-  null,
-  ""
- ],
  "Restart": [
   null,
   "Restartovat"
@@ -639,10 +579,6 @@ return plural;
   null,
   "Zdroj"
  ],
- "Source should start with http, ftp or nfs protocol": [
-  null,
-  ""
- ],
  "Start the VM to see disk statistics.": [
   null,
   ""
@@ -656,14 +592,6 @@ return plural;
   ""
  ],
  "Stateless:": [
-  null,
-  ""
- ],
- "Storage Size": [
-  null,
-  ""
- ],
- "Storage Size should not be negative number": [
   null,
   ""
  ],
@@ -750,10 +678,6 @@ return plural;
  "Type": [
   null,
   "Typ"
- ],
- "URL": [
-  null,
-  "URL"
  ],
  "Unplug": [
   null,
@@ -1004,6 +928,14 @@ return plural;
   "běžící"
  ],
  "server": [
+  null,
+  ""
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
   null,
   ""
  ],

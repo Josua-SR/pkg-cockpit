@@ -177,7 +177,7 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "Servidor"
  ],
  "Service has an error": [
   null,
@@ -205,11 +205,11 @@ return plural;
  ],
  "Test is only available while the kdump service is running.": [
   null,
-  ""
+  "Las pruebas solo están disponibles cuando el servicio kdump está corriendo."
  ],
  "Test kdump settings": [
   null,
-  ""
+  "Ajustes de prueba kdump"
  ],
  "This will test kdump settings by crashing the kernel and thereby the system. Depending on the settings, the system may not automatically reboot and the process may take a while.": [
   null,

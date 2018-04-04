@@ -20,6 +20,7 @@
 
 import parent
 from testlib import *
+import subprocess
 
 import os
 import functools
@@ -136,6 +137,7 @@ VOLUME_XML="""
 # rmmod kvm-intel && modprobe kvm-intel || true
 
 @skipImage("Atomic cannot run virtual machines", "fedora-atomic", "rhel-atomic", "continuous-atomic")
+@skipImage("missing libvirt dependencies", "rhel-8")
 class TestMachines(MachineCase):
     created_pool = False
 
@@ -148,11 +150,13 @@ class TestMachines(MachineCase):
         m.execute("sed -i 's/\"priority\".*$/\"priority\": 100,/' {0}".format("/usr/share/cockpit/machines/manifest.json"))
         m.execute("[ ! -e {0} ] || sed -i 's/\"priority\".*$/\"priority\": 0,/' {0}".format("/usr/share/cockpit/ovirt/manifest.json"))
 
+    def getLibvirtName(self):
+        return "libvirt-bin.service" if self.machine.image == "ubuntu-1604" else "libvirtd.service"
+
     def startLibvirt(self):
         m = self.machine
         # Ensure everything has started correctly
-        m.execute("systemctl start libvirtd")
-        print(m.execute("date"))
+        m.execute("systemctl start {0}".format(self.getLibvirtName()))
         # Wait until we can get a list of domains
         wait(lambda: m.execute("virsh list"))
         # Wait for the network 'default' to become active
@@ -314,10 +318,12 @@ class TestMachines(MachineCase):
         b.wait_in_text("#vm-subVmTest2-bootorder", "disk,network")
 
         # restart libvirtd
-        m.execute("systemctl stop libvirtd")
-        b.wait_present("thead tr td")
-        b.wait_in_text("thead tr td", "No VM is running")
-        m.execute("systemctl start libvirtd")
+        m.execute("systemctl stop {0}".format(self.getLibvirtName()))
+        b.wait_present("#slate-header")
+        b.wait_in_text("#slate-header", "Virtualization Service (libvirt) is Not Active")
+        m.execute("systemctl start {0}".format(self.getLibvirtName()))
+        b.wait_in_text("body", "Virtual Machines")
+        b.wait_present("tbody tr th")
         b.wait_present("#app .listing-ct tbody:nth-of-type(1) th")
         b.wait_in_text("#app .listing-ct tbody:nth-of-type(1) th", "subVmTest1")
         b.wait_present("#app .listing-ct tbody:nth-of-type(2) th")
@@ -355,9 +361,6 @@ class TestMachines(MachineCase):
         b.wait_not_present("tr.listing-ct-panel div.listing-ct-body div.alert.alert-warning") # inline notification is gone
         b.wait_not_present("tr.listing-ct-item.listing-ct-nonavigate span span.pficon-warning-triangle-o.machines-status-alert") # triangle by status is gone
 
-        # HACK: restarting libvirtd causes this completely unrelated SELinux issue
-        self.allow_journal_messages('.*denied.*search.*"systemd-machine".*dev="proc".*')
-
     def wait_for_disk_stats(self, name, target):
         b = self.browser
         try:
@@ -369,6 +372,63 @@ class TestMachines(MachineCase):
             # stats did not show up, check if user message showed up
             print("Libvirt version does not support disk statistics")
             b.wait_present("#vm-{0}-disksstats-unsupported".format(name))
+
+    def testLibvirt(self):
+        b = self.browser
+        m = self.machine
+
+        libvirtServiceName = self.getLibvirtName()
+
+        def checkLibvirtEnabled():
+            try:
+                m.execute("systemctl -q is-enabled {0}".format(libvirtServiceName))
+                return True
+            except subprocess.CalledProcessError:  # return code != 0
+                return False
+
+        self.startVm("subVmTest1")
+        self.login_and_go("/machines")
+
+        b.wait_in_text("body", "Virtual Machines")
+        b.wait_present("tbody tr th")
+        b.wait_in_text("tbody tr th", "subVmTest1")
+
+        m.execute("systemctl disable {0}".format(libvirtServiceName))
+        m.execute("systemctl stop {0}".format(libvirtServiceName))
+
+        b.wait_present("#slate-header")
+        b.wait_in_text("#slate-header", "Virtualization Service (libvirt) is Not Active")
+        b.wait_present("#enable-libvirt:not(:checked)")
+        b.set_checked("#enable-libvirt", True)
+        b.click("#start-libvirt")
+
+        b.wait_in_text("body", "Virtual Machines")
+        b.wait(lambda: checkLibvirtEnabled())
+        b.wait_present("tbody tr th")
+        b.wait_in_text("tbody tr th", "subVmTest1")
+
+        m.execute("systemctl stop {0}".format(libvirtServiceName))
+        b.wait_present("#slate-header")
+        b.wait_in_text("#slate-header", "Virtualization Service (libvirt) is Not Active")
+        b.wait_present("#enable-libvirt:checked")
+        b.set_checked("#enable-libvirt", False)
+        b.click("#start-libvirt")
+        b.wait_in_text("body", "Virtual Machines")
+        b.wait(lambda: not checkLibvirtEnabled())
+        b.wait_present("tbody tr th")
+        b.wait_in_text("tbody tr th", "subVmTest1")
+
+        m.execute("systemctl enable {0}".format(libvirtServiceName))
+        m.execute("systemctl stop {0}".format(libvirtServiceName))
+
+        b.wait_present("#slate-header")
+        b.wait_in_text("#slate-header", "Virtualization Service (libvirt) is Not Active")
+        b.wait_present("#enable-libvirt:checked")
+
+        b.click("#troubleshoot")
+        b.leave_page()
+        url_location = "/system/services#/{0}".format(libvirtServiceName)
+        b.wait(lambda: url_location in b.eval_js("window.location.href"))
 
     def testDisks(self):
         b = self.browser
@@ -818,7 +878,7 @@ class TestMachines(MachineCase):
         MAGEIA_3_FILTERED_OS = 'Mageia 3'
 
     class VmDialog:
-        def __init__(self, env, name, is_filesystem_location=True, location='',
+        def __init__(self, test_obj, name, is_filesystem_location=True, location='',
                      memory_size=1, memory_size_unit='GiB',
                      storage_size=1, storage_size_unit='GiB',
                      os_vendor=None,
@@ -828,8 +888,9 @@ class TestMachines(MachineCase):
             if not is_filesystem_location and start_vm:
                 raise Exception("cannot start vm because url specified (no connection available in this test)")
 
-            self.browser = env.browser
-            self.machine = env.machine
+            self.browser = test_obj.browser
+            self.machine = test_obj.machine
+            self.assertTrue = test_obj.assertTrue
 
             self.name = name
             self.is_filesystem_location = is_filesystem_location
@@ -958,6 +1019,10 @@ class TestMachines(MachineCase):
         def create(self):
             b = self.browser
             b.click(".modal-footer button:contains(Create)")
+            init_state = "creating VM installation" if self.start_vm else "creating VM"
+            second_state = "running" if self.start_vm else "shut off"
+
+            TestMachines.CreateVmRunner.assertVmStates(self, self.name, None, init_state, second_state)
             b.wait_not_present("#cockpit_modal_dialog")
             return self
 
@@ -1051,14 +1116,40 @@ class TestMachines(MachineCase):
             b.wait_val(selector, value)
 
     class CreateVmRunner:
-        def __init__(self, env):
-            self.browser = env.browser
-            self.machine = env.machine
+        def __init__(self, test_obj):
+            self.browser = test_obj.browser
+            self.machine = test_obj.machine
+            self.assertTrue = test_obj.assertTrue
 
             self.machine.execute("touch {0}".format(TestMachines.TestCreateConfig.NOVELL_MOCKUP_ISO_PATH))
 
         def destroy(self):
             self.machine.execute("rm -f {0}".format(TestMachines.TestCreateConfig.NOVELL_MOCKUP_ISO_PATH))
+
+        @staticmethod
+        def assertVmStates(test_obj, name, before, wanted, after):
+            b = test_obj.browser
+            selector = "#vm-{0}-state".format(name)
+
+            def waitForWanted(accepted, wanted):
+                b.wait_present(selector)
+                try:
+                    text = b.text(selector)
+                except:  # if selector disappears
+                    return False
+
+                if (accepted and accepted in text) or text == 'in transition':
+                    return False
+                elif wanted in text:
+                    return True
+                else:
+                    raise Exception("invalid vm state")
+
+            with b.wait_timeout(4):
+                b.wait_present(selector)
+                b.wait(lambda: waitForWanted(before, wanted))
+
+            b.wait(lambda: waitForWanted(wanted, after))
 
         def tryCreate(self, dialog):
             b = self.browser
@@ -1071,15 +1162,14 @@ class TestMachines(MachineCase):
             # successfully created
             b.wait_present("#vm-{0}-row".format(name))
             b.wait_in_text("#vm-{0}-row".format(name), name)
-            b.wait_present("#vm-{0}-state".format(name))
-            b.wait_in_text("#vm-{0}-state".format(name), "running" if dialog.start_vm else "shut off")
 
-            # wait for vm with console tab to open
             if dialog.start_vm:
+                # wait for console tab to open
                 b.expect_load_frame("vm-{0}-novnc-frame-container".format(name))
             else:
-                b.wait_present(
-                    ".listing-ct-body div:contains(Please start the virtual machine to access its console.)")
+                # wait for Overview tab to open
+                b.wait_present("#vm-{0}-memory".format(name))
+                b.wait_present("#vm-{0}-vcpus".format(name))
 
             # check memory
             b.wait_present("#vm-{0}-usage".format(name))
@@ -1119,18 +1209,14 @@ class TestMachines(MachineCase):
             # should fail because of memory error
             b.click("#vm-{0}-install".format(name))
             # install script redefines vm
-            b.wait_not_present("#app .listing-ct tbody:nth-of-type(1) th")
+            self.assertVmStates(self, name, "shut off", "creating VM installation", "shut off")
             # install
             b.wait_present("#app .listing-ct tbody:nth-of-type(1) th")
             b.wait_in_text("#app .listing-ct tbody:nth-of-type(1) th", name)
             b.wait_present("#app .listing-ct tbody:nth-of-type(1) tr td span span.pficon-warning-triangle-o")
-            # depends on timeout
-            if not b.is_present(".listing-ct-panel .listing-ct-head"):
-                # automatic selection of console timed out and listing is closed
-                b.click("#app .listing-ct tbody:nth-of-type(1) th")
 
             b.wait_present("#vm-{0}-install".format(name))
-            b.click("#app .listing-ct tbody:nth-of-type(1) .listing-ct-panel .listing-ct-head a:contains(Overview)")
+            # Overview should be opened
             b.wait_present("#vm-{0}-last-message".format(name))
             b.wait_in_text("#vm-{0}-last-message".format(name), "INSTALL VM action failed")
             b.click("#app .listing-ct tbody:nth-of-type(1) a:contains(show more)")

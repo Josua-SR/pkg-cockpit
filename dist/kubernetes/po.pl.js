@@ -1783,6 +1783,14 @@ return plural;
   null,
   "serwer"
  ],
+ "show less": [
+  null,
+  "wyświetl mniej"
+ ],
+ "show more": [
+  null,
+  "wyświetl więcej"
+ ],
  "shut off": [
   null,
   "wyłącz"

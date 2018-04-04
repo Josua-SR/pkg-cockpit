@@ -419,7 +419,7 @@ return plural;
  ],
  "Notebook": [
   null,
-  ""
+  "Portátil"
  ],
  "Off": [
   null,
@@ -435,7 +435,7 @@ return plural;
  ],
  "Other": [
   null,
-  ""
+  "Otro"
  ],
  "Password": [
   null,
@@ -447,11 +447,11 @@ return plural;
  ],
  "Peripheral Chassis": [
   null,
-  ""
+  "Chasis Periférico"
  ],
  "Pizza Box": [
   null,
-  ""
+  "Pizza Box"
  ],
  "Port": [
   null,
@@ -459,7 +459,7 @@ return plural;
  ],
  "Portable": [
   null,
-  ""
+  "Portable"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -475,15 +475,15 @@ return plural;
  ],
  "RAID Chassis": [
   null,
-  ""
+  "Chasis RAID"
  ],
  "Rack Mount Chassis": [
   null,
-  ""
+  "Chasis Montado en Rack"
  ],
  "Sealed-case PC": [
   null,
-  ""
+  "PC de Caja Sellada"
  ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
@@ -499,19 +499,19 @@ return plural;
  ],
  "Space-saving Computer": [
   null,
-  ""
+  "Ordenador que Ahorra Espacio"
  ],
  "Stick PC": [
   null,
-  ""
+  "Stick PC"
  ],
  "Sub Chassis": [
   null,
-  ""
+  "Sub Chasis"
  ],
  "Sub Notebook": [
   null,
-  ""
+  "Sub Portátil"
  ],
  "Synchronize": [
   null,
@@ -523,7 +523,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "Tableta"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,

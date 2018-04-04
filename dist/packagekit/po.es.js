@@ -224,19 +224,19 @@ return plural;
  ],
  "Set up": [
   null,
-  ""
+  "Preparar"
  ],
  "Setting up": [
   null,
-  ""
+  "Configurar"
  ],
  "Severity": [
   null,
-  ""
+  "Severidad"
  ],
  "Severity:": [
   null,
-  ""
+  "Severidad:"
  ],
  "Software Updates": [
   null,
@@ -244,23 +244,23 @@ return plural;
  ],
  "Some other program is currently using the package manager, please wait...": [
   null,
-  ""
+  "Algún otro programa está usando actualmente el gestor de paquetes, por favor espere..."
  ],
  "System is up to date": [
   null,
-  ""
+  "El sistema está actualizado"
  ],
  "The following packages were recently updated:": [
   null,
-  ""
+  "Los siguientes paquetes fueron actualizados recientemente:"
  ],
  "The following packages were updated $0:": [
   null,
-  ""
+  "Los siguientes paquetes fueron actualizados $0:"
  ],
  "This system is not registered": [
   null,
-  ""
+  "Este sistema no está registrado"
  ],
  "This web console will be updated.": [
   null,

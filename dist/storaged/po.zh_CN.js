@@ -155,6 +155,10 @@ return plural;
   null,
   "（无）"
  ],
+ "--": [
+  null,
+  ""
+ ],
  "1 MiB": [
   null,
   "1 MiB"
@@ -226,6 +230,10 @@ return plural;
  "Activating $target": [
   null,
   "激活 $target"
+ ],
+ "Active since": [
+  null,
+  ""
  ],
  "Add": [
   null,
@@ -999,6 +1007,10 @@ return plural;
   null,
   "端口"
  ],
+ "Process": [
+  null,
+  ""
+ ],
  "Purpose": [
   null,
   "目的"
@@ -1091,6 +1103,10 @@ return plural;
   null,
   "恢复 RAID 设备 $target"
  ],
+ "Remove": [
+  null,
+  "删除"
+ ],
  "Remove device": [
   null,
   ""
@@ -1155,6 +1171,14 @@ return plural;
   null,
   ""
  ],
+ "Service": [
+  null,
+  "服务"
+ ],
+ "Session": [
+  null,
+  "会话"
+ ],
  "Setting up loop device $target": [
   null,
   "创建 loop 设备 $target"
@@ -1203,10 +1227,6 @@ return plural;
   null,
   "启用多路径"
  ],
- "Start Scrubbing": [
-  null,
-  "开始擦除"
- ],
  "Starting RAID Device $target": [
   null,
   "启动 RAID 设备 $target"
@@ -1222,10 +1242,6 @@ return plural;
  "Stop Device": [
   null,
   ""
- ],
- "Stop Scrubbing": [
-  null,
-  "停止擦除"
  ],
  "Stop and Unmount": [
   null,
@@ -1295,7 +1311,15 @@ return plural;
   null,
   ""
  ],
- "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
+ "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
+  null,
+  ""
+ ],
+ "The filesystem is in use by login sessions.                Proceeding will stop these.": [
+  null,
+  ""
+ ],
+ "The filesystem is in use by system services.                Proceeding will stop these.": [
   null,
   ""
  ],
@@ -1380,6 +1404,10 @@ return plural;
   ""
  ],
  "Unable to unmount filesystem": [
+  null,
+  ""
+ ],
+ "Unit": [
   null,
   ""
  ],

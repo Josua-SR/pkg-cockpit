@@ -83,6 +83,10 @@ return plural;
   null,
   "アドレス: "
  ],
+ "Automatically start libvirt on boot": [
+  null,
+  ""
+ ],
  "Autostart:": [
   null,
   "自動起動:"
@@ -131,6 +135,10 @@ return plural;
   null,
   "SPICE または VNC のビューアーアプリケーションに接続します。"
  ],
+ "Connecting to Virtualization Service": [
+  null,
+  ""
+ ],
  "Connection": [
   null,
   "接続"
@@ -147,15 +155,7 @@ return plural;
   null,
   "数量:"
  ],
- "Create": [
-  null,
-  "作成"
- ],
  "Create New VM": [
-  null,
-  "仮想マシンの新規作成"
- ],
- "Create New Virtual Machine": [
   null,
   "仮想マシンの新規作成"
  ],
@@ -195,10 +195,6 @@ return plural;
   null,
   "File"
  ],
- "Filesystem": [
-  null,
-  "ファイルシステム"
- ],
  "Force Restart": [
   null,
   "再起動の強制"
@@ -227,29 +223,9 @@ return plural;
   null,
   "INSTALL VM アクションに失敗しました"
  ],
- "Immediately Start VM": [
-  null,
-  "VM をすぐに起動"
- ],
  "Install": [
   null,
   "インストール"
- ],
- "Installation Source": [
-  null,
-  "インストールソース"
- ],
- "Installation Source Type": [
-  null,
-  "インストールソースのタイプ"
- ],
- "Installation Source should not be empty": [
-  null,
-  "インストールソースは空欄にできません"
- ],
- "Invalid filename": [
-  null,
-  "無効なファイル名"
  ],
  "Launch Remote Viewer": [
   null,
@@ -275,21 +251,9 @@ return plural;
   null,
   "手動接続"
  ],
- "Memory": [
-  null,
-  "メモリ"
- ],
- "Memory should be positive number": [
-  null,
-  "メモリーは正の数値である必要があります"
- ],
  "Memory:": [
   null,
   "メモリー:"
- ],
- "MiB": [
-  null,
-  "MiB"
  ],
  "Model type": [
   null,
@@ -302,14 +266,6 @@ return plural;
  "Name": [
   null,
   "名前"
- ],
- "Name should not be empty": [
-  null,
-  "名前は空欄にできません"
- ],
- "Name should not consist of empty characters only": [
-  null,
-  "名前は空欄にできません"
  ],
  "Networks": [
   null,
@@ -339,25 +295,13 @@ return plural;
   null,
   "この仮想マシンにはネットワークインターフェースが定義されていません"
  ],
- "OS Vendor": [
-  null,
-  "OS ベンダー"
- ],
  "Ok": [
   null,
   "OK"
  ],
- "Operating System": [
-  null,
-  "オペレーティングシステム"
- ],
  "Overview": [
   null,
   "概要"
- ],
- "Path to ISO file on host's file system": [
-  null,
-  "ホストファイルシステムの ISO ファイルのパス"
  ],
  "Path to file": [
   null,
@@ -394,10 +338,6 @@ return plural;
  "Reconnect": [
   null,
   "再接続"
- ],
- "Remote URL": [
-  null,
-  "リモート URL"
  ],
  "Restart": [
   null,
@@ -447,9 +387,9 @@ return plural;
   null,
   "ソース"
  ],
- "Source should start with http, ftp or nfs protocol": [
+ "Start libvirt": [
   null,
-  "ソースは、http、ftp、または nfs プロトコルで開始する必要があります"
+  ""
  ],
  "Start the VM to see disk statistics.": [
   null,
@@ -458,14 +398,6 @@ return plural;
  "State": [
   null,
   "状態"
- ],
- "Storage Size": [
-  null,
-  "ストレージのサイズ"
- ],
- "Storage Size should not be negative number": [
-  null,
-  "ストレージのサイズは負の値にすることができません"
  ],
  "System": [
   null,
@@ -515,13 +447,13 @@ return plural;
   null,
   "見つかったファイルが多すぎます"
  ],
+ "Troubleshoot": [
+  null,
+  "トラブルシュート"
+ ],
  "Type": [
   null,
   "タイプ"
- ],
- "URL": [
-  null,
-  "URL"
  ],
  "Unplug": [
   null,
@@ -582,6 +514,14 @@ return plural;
  "Virtual Machines": [
   null,
   "仮想マシン"
+ ],
+ "Virtualization Service (libvirt) is Not Active": [
+  null,
+  ""
+ ],
+ "Virtualization Service is Available": [
+  null,
+  ""
  ],
  "Virtualport": [
   null,
@@ -678,6 +618,14 @@ return plural;
  "server": [
   null,
   "サーバー"
+ ],
+ "show less": [
+  null,
+  "表示を減らす"
+ ],
+ "show more": [
+  null,
+  "表示を増やす"
  ],
  "shut off": [
   null,

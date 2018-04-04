@@ -83,6 +83,10 @@ return plural;
   null,
   "Osoite:"
  ],
+ "Automatically start libvirt on boot": [
+  null,
+  ""
+ ],
  "Autostart:": [
   null,
   "Autostart:"
@@ -131,6 +135,10 @@ return plural;
   null,
   "Yhdistä mihin tahansa SPICE tai VNC -katseluohjelmaan."
  ],
+ "Connecting to Virtualization Service": [
+  null,
+  ""
+ ],
  "Connection": [
   null,
   "Yhteys"
@@ -147,15 +155,7 @@ return plural;
   null,
   ""
  ],
- "Create": [
-  null,
-  "Luo"
- ],
  "Create New VM": [
-  null,
-  ""
- ],
- "Create New Virtual Machine": [
   null,
   ""
  ],
@@ -195,10 +195,6 @@ return plural;
   null,
   "Tiedosto"
  ],
- "Filesystem": [
-  null,
-  "Tiedostojärjestelmä"
- ],
  "Force Restart": [
   null,
   "Pakota Uudelleenkäynnistys"
@@ -227,29 +223,9 @@ return plural;
   null,
   ""
  ],
- "Immediately Start VM": [
-  null,
-  ""
- ],
  "Install": [
   null,
   "Asenna"
- ],
- "Installation Source": [
-  null,
-  ""
- ],
- "Installation Source Type": [
-  null,
-  ""
- ],
- "Installation Source should not be empty": [
-  null,
-  ""
- ],
- "Invalid filename": [
-  null,
-  ""
  ],
  "Launch Remote Viewer": [
   null,
@@ -275,21 +251,9 @@ return plural;
   null,
   "Manuaalinen Yhteys"
  ],
- "Memory": [
-  null,
-  "Muisti"
- ],
- "Memory should be positive number": [
-  null,
-  ""
- ],
  "Memory:": [
   null,
   "Muisti:"
- ],
- "MiB": [
-  null,
-  ""
  ],
  "Model type": [
   null,
@@ -302,14 +266,6 @@ return plural;
  "Name": [
   null,
   "Nimi"
- ],
- "Name should not be empty": [
-  null,
-  ""
- ],
- "Name should not consist of empty characters only": [
-  null,
-  ""
  ],
  "Networks": [
   null,
@@ -339,23 +295,11 @@ return plural;
   null,
   ""
  ],
- "OS Vendor": [
-  null,
-  ""
- ],
  "Ok": [
   null,
   "OK"
  ],
- "Operating System": [
-  null,
-  ""
- ],
  "Overview": [
-  null,
-  ""
- ],
- "Path to ISO file on host's file system": [
   null,
   ""
  ],
@@ -392,10 +336,6 @@ return plural;
   ""
  ],
  "Reconnect": [
-  null,
-  ""
- ],
- "Remote URL": [
   null,
   ""
  ],
@@ -447,7 +387,7 @@ return plural;
   null,
   "Lähde"
  ],
- "Source should start with http, ftp or nfs protocol": [
+ "Start libvirt": [
   null,
   ""
  ],
@@ -458,14 +398,6 @@ return plural;
  "State": [
   null,
   "Tila"
- ],
- "Storage Size": [
-  null,
-  ""
- ],
- "Storage Size should not be negative number": [
-  null,
-  ""
  ],
  "System": [
   null,
@@ -515,13 +447,13 @@ return plural;
   null,
   "Löytyi liian monta tiedostoa"
  ],
+ "Troubleshoot": [
+  null,
+  "Vianetsintä"
+ ],
  "Type": [
   null,
   "Tyyppi"
- ],
- "URL": [
-  null,
-  "URL"
  ],
  "Unplug": [
   null,
@@ -582,6 +514,14 @@ return plural;
  "Virtual Machines": [
   null,
   "Virtuaalikoneet"
+ ],
+ "Virtualization Service (libvirt) is Not Active": [
+  null,
+  ""
+ ],
+ "Virtualization Service is Available": [
+  null,
+  ""
  ],
  "Virtualport": [
   null,
@@ -678,6 +618,14 @@ return plural;
  "server": [
   null,
   "palvelin"
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
+  null,
+  ""
  ],
  "shut off": [
   null,
