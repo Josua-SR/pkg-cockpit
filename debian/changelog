@@ -1,3 +1,12 @@
+cockpit (165-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Storage: Show more details of sessions and services that keep NFS busy
+    - Machines: Detect if libvirtd is not running
+    - Machines: Show virtual machines that are being created
+
+ -- Martin Pitt <mpitt@debian.org> Wed, 04 Apr 2018 13:16:17 +0200
+
 cockpit (164-1) unstable; urgency=medium
 
   * New upstream release:
