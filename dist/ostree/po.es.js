@@ -265,11 +265,11 @@ return plural;
  ],
  "Signature": [
   null,
-  ""
+  "Firma"
  ],
  "Signed by": [
   null,
-  ""
+  "Firmado por"
  ],
  "Software Updates": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "This deployment contains the same packages as your currently booted system": [
   null,
-  ""
+  "Este despliegue contiene los mismos paquetes que su sistema actualmente arrancado"
  ],
  "Tree": [
   null,

@@ -162,6 +162,10 @@ return plural;
   null,
   "(ninguno)"
  ],
+ "--": [
+  null,
+  "--"
+ ],
  "1 MiB": [
   null,
   "1 MiB"
@@ -233,6 +237,10 @@ return plural;
  "Activating $target": [
   null,
   "Activando $target"
+ ],
+ "Active since": [
+  null,
+  ""
  ],
  "Add": [
   null,
@@ -976,7 +984,7 @@ return plural;
  ],
  "Physical volumes can not be resized here.": [
   null,
-  ""
+  "No se puede modificar el tamaño de los volúmenes físicos aquí."
  ],
  "Please confirm deletion of $0": [
   null,
@@ -1005,6 +1013,10 @@ return plural;
  "Port": [
   null,
   "Puerto"
+ ],
+ "Process": [
+  null,
+  ""
  ],
  "Purpose": [
   null,
@@ -1098,6 +1110,10 @@ return plural;
   null,
   "Recuperando Dispositivo RAID $target"
  ],
+ "Remove": [
+  null,
+  "Eliminar"
+ ],
  "Remove device": [
   null,
   "Quitar dispositivo"
@@ -1128,7 +1144,7 @@ return plural;
  ],
  "Repairing $target": [
   null,
-  ""
+  "Reparando $target"
  ],
  "Resizing $target": [
   null,
@@ -1148,7 +1164,7 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "Servidor"
  ],
  "Server Address": [
   null,
@@ -1160,7 +1176,15 @@ return plural;
  ],
  "Server cannot be empty.": [
   null,
-  ""
+  "Servidor no puede estar vacío."
+ ],
+ "Service": [
+  null,
+  "Servicio"
+ ],
+ "Session": [
+  null,
+  "Sesión"
  ],
  "Setting up loop device $target": [
   null,
@@ -1168,11 +1192,11 @@ return plural;
  ],
  "Shrink": [
   null,
-  ""
+  "Encogimiento"
  ],
  "Shrink Logical Volume": [
   null,
-  ""
+  "Encoger Volumen Lógico"
  ],
  "Size": [
   null,
@@ -1180,11 +1204,11 @@ return plural;
  ],
  "Size cannot be negative": [
   null,
-  ""
+  "El tamaño no puede ser negativo"
  ],
  "Size cannot be zero": [
   null,
-  ""
+  "El tamaño no puede ser cero"
  ],
  "Size is too large": [
   null,
@@ -1196,7 +1220,7 @@ return plural;
  ],
  "Size must be at least $0": [
   null,
-  ""
+  "El tamaño debe ser al menos $0"
  ],
  "Spare": [
   null,
@@ -1209,10 +1233,6 @@ return plural;
  "Start Multipath": [
   null,
   "Inicio multitrayecto"
- ],
- "Start Scrubbing": [
-  null,
-  "Iniciar Borrado"
  ],
  "Starting RAID Device $target": [
   null,
@@ -1228,19 +1248,15 @@ return plural;
  ],
  "Stop Device": [
   null,
-  ""
- ],
- "Stop Scrubbing": [
-  null,
-  "Detener Borrado"
+  "Para Dispositivo"
  ],
  "Stop and Unmount": [
   null,
-  ""
+  "Parar y Desmontar"
  ],
  "Stop and remove": [
   null,
-  ""
+  "Parar y quitar"
  ],
  "Stopping RAID Device $target": [
   null,
@@ -1268,15 +1284,15 @@ return plural;
  ],
  "Stored passphrase": [
   null,
-  ""
+  "Frase de paso almacenada"
  ],
  "Swap": [
   null,
-  ""
+  "Intercambio"
  ],
  "Synchronizing RAID Device $target": [
   null,
-  ""
+  "Sincronizando el Dispositivo RAID $target"
  ],
  "Targets": [
   null,
@@ -1284,35 +1300,43 @@ return plural;
  ],
  "The \"storaged\" API is not available on this system.": [
   null,
-  ""
+  "La Api \"almacenada\" no está disponible en este sistema."
  ],
  "The RAID Array is in a degraded state": [
   null,
-  ""
+  "El Array RAID está en estado degradado"
  ],
  "The RAID device must be running in order to add spare disks.": [
   null,
-  ""
+  "El dispositivo RAID debe estar corriendo con el objetivo de añadir discos de repuesto."
  ],
  "The RAID device must be running in order to remove disks.": [
   null,
-  ""
+  "El dispositivo RAID debe estar corriendo con el objetivo de quitar discos."
  ],
  "The creation of this VDO device did not finish and the device can't be used.": [
   null,
+  "La creación de este dispositivo VDO no ha finalizado y el dispositivo no podrá ser usado."
+ ],
+ "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
+  null,
   ""
  ],
- "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
+ "The filesystem is in use by login sessions.                Proceeding will stop these.": [
+  null,
+  ""
+ ],
+ "The filesystem is in use by system services.                Proceeding will stop these.": [
   null,
   ""
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
-  ""
+  "El último disco del dispositivo RAID no puede ser quitado."
  ],
  "The last physical volume of a volume group cannot be removed.": [
   null,
-  ""
+  "El último volumen físico de un grupo de volumen no puede ser quitado."
  ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
@@ -1324,7 +1348,7 @@ return plural;
  ],
  "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
   null,
-  ""
+  "No hay suficiente espacio físico en otro lugar para borrar este volumen físico. Es necesario al menos $0 más de espacio libre."
  ],
  "Thin Logical Volume": [
   null,
@@ -1332,39 +1356,39 @@ return plural;
  ],
  "This NFS mount is in use and only its options can be changed.": [
   null,
-  ""
+  "Este montaje NFS está en uso y solo pueden ser cambiadas sus opciones."
  ],
  "This VDO device does not use all of its backing device.": [
   null,
-  ""
+  "Este dispositivo VDO no usa todos sus dispositivos de respaldo."
  ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
-  ""
+  "Este dispositivo tiene sistemas de archivos que están actualmente en uso.                Procede desmontar todos los sistemas de archivos en él."
  ],
  "This device is currently used for RAID devices.": [
   null,
-  ""
+  "Este dispositivo está usado actualmente por dispositivos RAID."
  ],
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
   null,
-  ""
+  "Este dispositivo está usado actualmente por dispositivos RAID.                Procediendo lo quitará de sus dispositivos RAID."
  ],
  "This device is currently used for VDO devices.": [
   null,
-  ""
+  "Este dispositivo está actualmente usado por dispositivos VDO."
  ],
  "This device is currently used for volume groups.": [
   null,
-  ""
+  "Este dispositivo está siendo utilizado actualmente por grupos de volumen."
  ],
  "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
   null,
-  ""
+  "Este dispositivo está usado actualmente por grupos de volumen.                Procediendo lo quitará de sus grupos de volumen."
  ],
  "This disk cannot be removed while the device is recovering.": [
   null,
-  ""
+  "El disco no se puede quitar mientras el dispositivo se está recuperando."
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
@@ -1387,6 +1411,10 @@ return plural;
   ""
  ],
  "Unable to unmount filesystem": [
+  null,
+  ""
+ ],
+ "Unit": [
   null,
   ""
  ],

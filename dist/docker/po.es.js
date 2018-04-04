@@ -584,7 +584,7 @@ return plural;
  ],
  "Notebook": [
   null,
-  ""
+  "Portátil"
  ],
  "Off": [
   null,
@@ -609,7 +609,7 @@ return plural;
  ],
  "Other": [
   null,
-  ""
+  "Otro"
  ],
  "Overview": [
   null,
@@ -617,11 +617,11 @@ return plural;
  ],
  "Peripheral Chassis": [
   null,
-  ""
+  "Chasis Periférico"
  ],
  "Pizza Box": [
   null,
-  ""
+  "Pizza Box"
  ],
  "Please confirm deletion of $0": [
   null,
@@ -637,7 +637,7 @@ return plural;
  ],
  "Portable": [
   null,
-  ""
+  "Portable"
  ],
  "Ports": [
   null,
@@ -653,11 +653,11 @@ return plural;
  ],
  "RAID Chassis": [
   null,
-  ""
+  "Chasis RAID"
  ],
  "Rack Mount Chassis": [
   null,
-  ""
+  "Chasis Montado en Rack"
  ],
  "ReadOnly": [
   null,
@@ -717,19 +717,19 @@ return plural;
  ],
  "Sealed-case PC": [
   null,
-  ""
+  "PC de Caja Sellada"
  ],
  "Security": [
   null,
-  ""
+  "Seguridad"
  ],
  "Set container environment variables": [
   null,
-  ""
+  "Ajustar variables de entorno del contenedor"
  ],
  "Show all containers": [
   null,
-  ""
+  "Mostrar todos los contenedores"
  ],
  "Show all images": [
   null,
@@ -741,11 +741,11 @@ return plural;
  ],
  "Solid-State Disk": [
   null,
-  ""
+  "Disco de Estado Sólido"
  ],
  "Space-saving Computer": [
   null,
-  ""
+  "Ordenador que Ahorra Espacio"
  ],
  "Start": [
   null,
@@ -761,11 +761,11 @@ return plural;
  ],
  "State:": [
   null,
-  ""
+  "Estado:"
  ],
  "Stick PC": [
   null,
-  ""
+  "Stick PC"
  ],
  "Stop": [
   null,
@@ -781,15 +781,15 @@ return plural;
  ],
  "Storage pool": [
   null,
-  ""
+  "Grupo de almacenamiento"
  ],
  "Sub Chassis": [
   null,
-  ""
+  "Sub Chasis"
  ],
  "Sub Notebook": [
   null,
-  ""
+  "Sub Portátil"
  ],
  "TCP": [
   null,
@@ -797,7 +797,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "Tableta"
  ],
  "Tag": [
   null,
@@ -809,23 +809,23 @@ return plural;
  ],
  "The Docker storage pool cannot be managed on this system.": [
   null,
-  ""
+  "El grupo del almacenamiento Docker no se puede administrar en este sistema."
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,
-  ""
+  "El escaneo desde $time ($type) no encontró vulnerabilidades."
  ],
  "The scan from $time ($type) was not successful.": [
   null,
-  ""
+  "El escaneo desde $time ($type) no tuvo éxito."
  ],
  "The storage pool will be reset to optimize its layout.  All containers will be erased.": [
   null,
-  ""
+  "El grupo de almacenamiento se restablecerá para optimizar su diseño. Se borrarán todos los contenedores."
  ],
  "This image does not exist.": [
   null,
-  ""
+  "Esta imagen no existe."
  ],
  "Total": [
   null,

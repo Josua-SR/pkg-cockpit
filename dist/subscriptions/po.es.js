@@ -173,11 +173,11 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "Servidor"
  ],
  "Starts": [
   null,
-  ""
+  "Inicios"
  ],
  "Status": [
   null,
@@ -185,11 +185,11 @@ return plural;
  ],
  "Status: $0": [
   null,
-  ""
+  "Estado: $0"
  ],
  "Status: System isn't registered": [
   null,
-  ""
+  "Estado: El sistema no está registrado"
  ],
  "Subscriptions": [
   null,
@@ -197,7 +197,7 @@ return plural;
  ],
  "The current user isn't allowed to access system subscription status.": [
   null,
-  ""
+  "El usuario actual no tiene permitido acceder al estado de suscripción al sistema."
  ],
  "URL": [
   null,

@@ -162,6 +162,10 @@ return plural;
   null,
   "(aucun)"
  ],
+ "--": [
+  null,
+  ""
+ ],
  "1 MiB": [
   null,
   "1 Mio"
@@ -233,6 +237,10 @@ return plural;
  "Activating $target": [
   null,
   "Activation de $target"
+ ],
+ "Active since": [
+  null,
+  ""
  ],
  "Add": [
   null,
@@ -1006,6 +1014,10 @@ return plural;
   null,
   ""
  ],
+ "Process": [
+  null,
+  ""
+ ],
  "Purpose": [
   null,
   ""
@@ -1098,6 +1110,10 @@ return plural;
   null,
   ""
  ],
+ "Remove": [
+  null,
+  ""
+ ],
  "Remove device": [
   null,
   ""
@@ -1162,6 +1178,14 @@ return plural;
   null,
   ""
  ],
+ "Service": [
+  null,
+  ""
+ ],
+ "Session": [
+  null,
+  "Version"
+ ],
  "Setting up loop device $target": [
   null,
   ""
@@ -1210,10 +1234,6 @@ return plural;
   null,
   ""
  ],
- "Start Scrubbing": [
-  null,
-  "Démarrer la scrutation"
- ],
  "Starting RAID Device $target": [
   null,
   ""
@@ -1229,10 +1249,6 @@ return plural;
  "Stop Device": [
   null,
   ""
- ],
- "Stop Scrubbing": [
-  null,
-  "Arrêter la scrutation"
  ],
  "Stop and Unmount": [
   null,
@@ -1302,7 +1318,15 @@ return plural;
   null,
   ""
  ],
- "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
+ "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
+  null,
+  ""
+ ],
+ "The filesystem is in use by login sessions.                Proceeding will stop these.": [
+  null,
+  ""
+ ],
+ "The filesystem is in use by system services.                Proceeding will stop these.": [
   null,
   ""
  ],
@@ -1387,6 +1411,10 @@ return plural;
   ""
  ],
  "Unable to unmount filesystem": [
+  null,
+  ""
+ ],
+ "Unit": [
   null,
   ""
  ],

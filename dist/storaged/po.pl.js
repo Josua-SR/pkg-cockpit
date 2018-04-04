@@ -169,6 +169,10 @@ return plural;
   null,
   "(brak)"
  ],
+ "--": [
+  null,
+  "—"
+ ],
  "1 MiB": [
   null,
   "1 MiB"
@@ -240,6 +244,10 @@ return plural;
  "Activating $target": [
   null,
   "Aktywowanie $target"
+ ],
+ "Active since": [
+  null,
+  ""
  ],
  "Add": [
   null,
@@ -1013,6 +1021,10 @@ return plural;
   null,
   "Port"
  ],
+ "Process": [
+  null,
+  ""
+ ],
  "Purpose": [
   null,
   "Zastosowanie"
@@ -1105,6 +1117,10 @@ return plural;
   null,
   "Przywracanie urządzenia RAID $target"
  ],
+ "Remove": [
+  null,
+  "Usuń"
+ ],
  "Remove device": [
   null,
   "Usuń urządzenie"
@@ -1169,6 +1185,14 @@ return plural;
   null,
   "Serwer nie może być pusty."
  ],
+ "Service": [
+  null,
+  "Usługa"
+ ],
+ "Session": [
+  null,
+  "Sesja"
+ ],
  "Setting up loop device $target": [
   null,
   "Ustawianie urządzenia zwrotnego $target"
@@ -1217,10 +1241,6 @@ return plural;
   null,
   "Uruchom urządzenie wielościeżkowe"
  ],
- "Start Scrubbing": [
-  null,
-  "Rozpocznij kontrolę"
- ],
  "Starting RAID Device $target": [
   null,
   "Uruchamianie urządzenia RAID $target"
@@ -1236,10 +1256,6 @@ return plural;
  "Stop Device": [
   null,
   "Zatrzymaj urządzenie"
- ],
- "Stop Scrubbing": [
-  null,
-  "Zatrzymaj kontrolę"
  ],
  "Stop and Unmount": [
   null,
@@ -1309,9 +1325,17 @@ return plural;
   null,
   "Utworzenie tego urządzenia VDO nie zostało ukończone, więc nie można go używać."
  ],
- "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
+ "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
   null,
-  "System plików jest używany przez usługi systemu lub sesje logowania.                Kontynuacja zatrzyma te usługi i sesje."
+  ""
+ ],
+ "The filesystem is in use by login sessions.                Proceeding will stop these.": [
+  null,
+  ""
+ ],
+ "The filesystem is in use by system services.                Proceeding will stop these.": [
+  null,
+  ""
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
@@ -1396,6 +1420,10 @@ return plural;
  "Unable to unmount filesystem": [
   null,
   "Nie można odmontować systemu plików"
+ ],
+ "Unit": [
+  null,
+  ""
  ],
  "Unknown": [
   null,

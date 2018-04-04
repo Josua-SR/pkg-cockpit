@@ -158,23 +158,23 @@ return plural;
  ],
  "Setting deviates from the configured state and will revert on the next boot.": [
   null,
-  ""
+  "Los ajustes se desvían del estado configurado y serán revertidos en el próximo arranque."
  ],
  "Solution applied successfully": [
   null,
-  ""
+  "Solución aplicada con éxito"
  ],
  "Solution failed": [
   null,
-  ""
+  "Fallo en la solución"
  ],
  "Solutions": [
   null,
-  ""
+  "Soluciones"
  ],
  "The configured state is unknown, it might change on the next boot.": [
   null,
-  ""
+  "El estado configurado es desconocido, podría cambiar en el próximo arranque."
  ],
  "Unable to apply this solution automatically": [
   null,

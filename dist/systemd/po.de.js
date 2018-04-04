@@ -297,6 +297,10 @@ return plural;
   null,
   ""
  ],
+ "Alert and above": [
+  null,
+  ""
+ ],
  "All In One": [
   null,
   ""
@@ -337,6 +341,10 @@ return plural;
   null,
   ""
  ],
+ "Bug Fix Updates Available": [
+  null,
+  ""
+ ],
  "Bus Expansion Chassis": [
   null,
   ""
@@ -368,6 +376,10 @@ return plural;
  "Change System Time": [
   null,
   "Systemzeit ändern"
+ ],
+ "Checking for updates…": [
+  null,
+  ""
  ],
  "Class": [
   null,
@@ -409,7 +421,15 @@ return plural;
   null,
   "Erstellen"
  ],
+ "Critical and above": [
+  null,
+  ""
+ ],
  "Current boot": [
+  null,
+  ""
+ ],
+ "Debug and above": [
   null,
   ""
  ],
@@ -469,6 +489,10 @@ return plural;
   null,
   "Aktiviert"
  ],
+ "Enhancement Updates Available": [
+  null,
+  ""
+ ],
  "Entry": [
   null,
   ""
@@ -476,6 +500,10 @@ return plural;
  "Error": [
   null,
   "Fehler"
+ ],
+ "Error and above": [
+  null,
+  ""
  ],
  "Everything": [
   null,
@@ -538,6 +566,10 @@ return plural;
   ""
  ],
  "Id": [
+  null,
+  ""
+ ],
+ "Info and above": [
   null,
   ""
  ],
@@ -737,6 +769,10 @@ return plural;
   null,
   ""
  ],
+ "Notice and above": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "Aus"
@@ -745,7 +781,7 @@ return plural;
   null,
   "Ein"
  ],
- "Only Problems": [
+ "Only Emergency": [
   null,
   ""
  ],
@@ -762,6 +798,10 @@ return plural;
   ""
  ],
  "PCI": [
+  null,
+  ""
+ ],
+ "PackageKit crashed": [
   null,
   ""
  ],
@@ -806,18 +846,6 @@ return plural;
   ""
  ],
  "Problem info": [
-  null,
-  ""
- ],
- "Problems, Errors": [
-  null,
-  ""
- ],
- "Problems, Errors, Warnings": [
-  null,
-  ""
- ],
- "Problems, Errors, Warnings, Notices": [
   null,
   ""
  ],
@@ -918,6 +946,10 @@ return plural;
   "Sekunden"
  ],
  "Secure Shell Keys": [
+  null,
+  ""
+ ],
+ "Security Updates Available": [
   null,
   ""
  ],
@@ -1029,6 +1061,10 @@ return plural;
   null,
   ""
  ],
+ "System Not Registered": [
+  null,
+  ""
+ ],
  "System Services": [
   null,
   "System Dienste"
@@ -1036,6 +1072,10 @@ return plural;
  "System Time": [
   null,
   "Systemzeit"
+ ],
+ "System Up To Date": [
+  null,
+  ""
  ],
  "Tablet": [
   null,
@@ -1113,6 +1153,10 @@ return plural;
   null,
   "Freigeben"
  ],
+ "Updates Available": [
+  null,
+  ""
+ ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",
   "",
@@ -1133,6 +1177,10 @@ return plural;
  "Version": [
   null,
   "Version"
+ ],
+ "Warning and above": [
+  null,
+  ""
  ],
  "Wednesday": [
   null,

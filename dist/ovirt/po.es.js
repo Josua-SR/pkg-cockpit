@@ -211,10 +211,6 @@ return plural;
   null,
   "Crear Nueva VM"
  ],
- "Create New Virtual Machine": [
-  null,
-  "Crear una Nueva Máquina Virtual"
- ],
  "Create VM": [
   null,
   "Crear VM"
@@ -275,10 +271,6 @@ return plural;
   null,
   "Archivo"
  ],
- "Filesystem": [
-  null,
-  "Sistema de archivos"
- ],
  "Force Restart": [
   null,
   "Forzar Reinicio"
@@ -319,29 +311,9 @@ return plural;
   null,
   "INSTALL VM acción fallada"
  ],
- "Immediately Start VM": [
-  null,
-  "Iniciar Inmediatamente VM"
- ],
  "Install": [
   null,
   "Instalar"
- ],
- "Installation Source": [
-  null,
-  "Fuente de la Instalación"
- ],
- "Installation Source Type": [
-  null,
-  "Tipo de Fuente de Instalación"
- ],
- "Installation Source should not be empty": [
-  null,
-  "La Fuente de Instalación no debería estar vacía"
- ],
- "Invalid filename": [
-  null,
-  "Nobre de fichero no válido"
  ],
  "Launch Remote Viewer": [
   null,
@@ -379,17 +351,9 @@ return plural;
   null,
   "Memoria"
  ],
- "Memory should be positive number": [
-  null,
-  "La memoria debería ser un número positivo"
- ],
  "Memory:": [
   null,
   "Memoria:"
- ],
- "MiB": [
-  null,
-  "MiB"
  ],
  "Migrate To:": [
   null,
@@ -406,14 +370,6 @@ return plural;
  "Name": [
   null,
   "Nombre"
- ],
- "Name should not be empty": [
-  null,
-  "El nombre no debería estar vacío"
- ],
- "Name should not consist of empty characters only": [
-  null,
-  "El nombre no debería constar solo de caracteres vacíos"
  ],
  "Networks": [
   null,
@@ -459,17 +415,9 @@ return plural;
   null,
   "Tipo de SO:"
  ],
- "OS Vendor": [
-  null,
-  ""
- ],
  "Ok": [
   null,
   "Aceptar"
- ],
- "Operating System": [
-  null,
-  "Sistema Operativo"
  ],
  "Optimized for:": [
   null,
@@ -478,10 +426,6 @@ return plural;
  "Overview": [
   null,
   "Visión conjunta"
- ],
- "Path to ISO file on host's file system": [
-  null,
-  ""
  ],
  "Path to file": [
   null,
@@ -563,10 +507,6 @@ return plural;
   null,
   "Recargar"
  ],
- "Remote URL": [
-  null,
-  ""
- ],
  "Restart": [
   null,
   "Reiniciar"
@@ -593,23 +533,23 @@ return plural;
  ],
  "SPICE Address:": [
   null,
-  ""
+  "Dirección SPICE:"
  ],
  "SPICE Port:": [
   null,
-  ""
+  "Puerto SPICE:"
  ],
  "SPICE TLS Port:": [
   null,
-  ""
+  "Puerto SPICE TLS:"
  ],
  "START action failed": [
   null,
-  ""
+  "START acción fallada"
  ],
  "SUSPEND action failed": [
   null,
-  ""
+  "SUSPEND acción fallada"
  ],
  "Save": [
   null,
@@ -617,15 +557,15 @@ return plural;
  ],
  "Send Non-Maskable Interrupt": [
   null,
-  ""
+  "Enviar Interrupción no Enmascarable"
  ],
  "Send shortcut": [
   null,
-  ""
+  "Enviar atajo"
  ],
  "Serial Console": [
   null,
-  ""
+  "Consola Serie"
  ],
  "Session": [
   null,
@@ -633,19 +573,15 @@ return plural;
  ],
  "Shut Down": [
   null,
-  ""
+  "Apagar"
  ],
  "Source": [
   null,
-  ""
- ],
- "Source should start with http, ftp or nfs protocol": [
-  null,
-  ""
+  "Fuente"
  ],
  "Start the VM to see disk statistics.": [
   null,
-  ""
+  "Arranque el VM para ver las estadísticas de disco."
  ],
  "State": [
   null,
@@ -653,43 +589,35 @@ return plural;
  ],
  "Stateless": [
   null,
-  ""
+  "Sin estado"
  ],
  "Stateless:": [
   null,
-  ""
- ],
- "Storage Size": [
-  null,
-  ""
- ],
- "Storage Size should not be negative number": [
-  null,
-  ""
+  "Sin estado:"
  ],
  "Suspend": [
   null,
-  ""
+  "Suspendido"
  ],
  "Switch Host to Maintenance": [
   null,
-  ""
+  "Conmutar el Host para Mantenimiento"
  ],
  "Switching host to maintenance mode failed. Received error: ": [
   null,
-  ""
+  "La conmutación del host para modo de mantenimiento fallo. Error recibido:"
  ],
  "Switching host to maintenance mode in progress ...": [
   null,
-  ""
+  "La conmutación del host a modo mantenimiento progresando..."
  ],
  "System": [
   null,
-  ""
+  "Sistema"
  ],
  "Target": [
   null,
-  ""
+  "Objetivo"
  ],
  "Template": [
   null,
@@ -697,47 +625,47 @@ return plural;
  ],
  "Templates": [
   null,
-  ""
+  "Plantillas"
  ],
  "Templates of $0 cluster": [
   null,
-  ""
+  "Plantilla de cluster $0"
  ],
  "The VM crashed.": [
   null,
-  ""
+  "El VM se ha roto."
  ],
  "The VM is down.": [
   null,
-  ""
+  "El VM está abajo."
  ],
  "The VM is going down.": [
   null,
-  ""
+  "El VM está cayendo."
  ],
  "The VM is idle.": [
   null,
-  ""
+  "La VM está ocioso."
  ],
  "The VM is in process of dying (shut down or crash is not completed).": [
   null,
-  ""
+  "La VM está moribundo (el apagado o la caída no se ha completado)."
  ],
  "The VM is paused.": [
   null,
-  ""
+  "La VM está pausado."
  ],
  "The VM is running and will be forced off before deletion.": [
   null,
-  ""
+  "La VM está corriendo y se forzará antes de la eliminación."
  ],
  "The VM is running.": [
   null,
-  ""
+  "La VM está corriendo."
  ],
  "The VM is suspended by guest power management.": [
   null,
-  ""
+  "La VM está suspendida por la administración de energía de los invitados."
  ],
  "This virtual machine is not managed by oVirt": [
   null,
@@ -750,10 +678,6 @@ return plural;
  "Type": [
   null,
   "Tipo"
- ],
- "URL": [
-  null,
-  ""
  ],
  "Unplug": [
   null,
@@ -1004,6 +928,14 @@ return plural;
   "en ejecución"
  ],
  "server": [
+  null,
+  ""
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
   null,
   ""
  ],

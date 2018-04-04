@@ -1779,6 +1779,14 @@ return plural;
   null,
   "サーバー"
  ],
+ "show less": [
+  null,
+  "表示を減らす"
+ ],
+ "show more": [
+  null,
+  "表示を増やす"
+ ],
  "shut off": [
   null,
   "シャットオフ"

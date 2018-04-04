@@ -773,7 +773,8 @@ input[type=number] {
     padding-right: 15px;
 }
 
-.info-table-ct td {
+.info-table-ct > tr > td,
+.info-table-ct > tbody > tr > td {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -783,16 +784,19 @@ input[type=number] {
     line-height: 26px;
 }
 
-.info-table-ct td:first-child {
+.info-table-ct > tr > td:first-child,
+.info-table-ct > tbody > tr > td:first-child {
     text-align: right;
     color: #888888;
 }
 
-.info-table-ct td:not(:first-child) {
+.info-table-ct > tr > td:not(:first-child),
+.info-table-ct > tbody > tr > td:not(:first-child) {
     color: black;
 }
 
-.info-table-ct td button {
+.info-table-ct > tr > td button,
+.info-table-ct > tbody > tr > td button {
     max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1616,18 +1620,35 @@ td.storage-action {
     overflow: visible !important;
 }
 
-.nfs-users-table {
-    max-height: 200px;
-    overflow-y: auto;
+.units-table .cmd {
+    font-family: monospace;
 }
 
-.nfs-users-table table {
-    width: 100%;
+.units-table > tbody > tr > td:nth-child(1),
+.units-table > thead > tr > th:nth-child(1) {
+    border-right: none;
+    white-space: nowrap;
+    width: 1%;
 }
 
-.nfs-users-table td:nth-child(2) {
-    padding-left: 0.75em;
-    width: 80%;
+.units-table > tbody > tr > td:nth-child(2),
+.units-table > thead > tr > th:nth-child(2) {
+    border-left: none;
+    border-right: none;
+    word-break: break-all;
+}
+
+.units-table > tbody > tr > td:nth-child(3),
+.units-table > thead > tr > th:nth-child(3) {
+    text-align: right;
+    border-left: none;
+    white-space: nowrap;
+    width: 1%;
+}
+
+.network-keys-table td {
+    vertical-align: baseline;
+    padding-right: 10px;
 }
 
 .form-table-ct .combobox-container .input-group {

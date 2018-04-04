@@ -83,6 +83,10 @@ return plural;
   null,
   ""
  ],
+ "Automatically start libvirt on boot": [
+  null,
+  ""
+ ],
  "Autostart:": [
   null,
   ""
@@ -131,6 +135,10 @@ return plural;
   null,
   ""
  ],
+ "Connecting to Virtualization Service": [
+  null,
+  ""
+ ],
  "Connection": [
   null,
   "Verbindung"
@@ -147,15 +155,7 @@ return plural;
   null,
   ""
  ],
- "Create": [
-  null,
-  "Erstellen"
- ],
  "Create New VM": [
-  null,
-  ""
- ],
- "Create New Virtual Machine": [
   null,
   ""
  ],
@@ -195,10 +195,6 @@ return plural;
   null,
   ""
  ],
- "Filesystem": [
-  null,
-  "Dateisystem"
- ],
  "Force Restart": [
   null,
   ""
@@ -227,27 +223,7 @@ return plural;
   null,
   ""
  ],
- "Immediately Start VM": [
-  null,
-  ""
- ],
  "Install": [
-  null,
-  ""
- ],
- "Installation Source": [
-  null,
-  ""
- ],
- "Installation Source Type": [
-  null,
-  ""
- ],
- "Installation Source should not be empty": [
-  null,
-  ""
- ],
- "Invalid filename": [
   null,
   ""
  ],
@@ -275,19 +251,7 @@ return plural;
   null,
   ""
  ],
- "Memory": [
-  null,
-  "Speicher"
- ],
- "Memory should be positive number": [
-  null,
-  ""
- ],
  "Memory:": [
-  null,
-  ""
- ],
- "MiB": [
   null,
   ""
  ],
@@ -302,14 +266,6 @@ return plural;
  "Name": [
   null,
   "Name"
- ],
- "Name should not be empty": [
-  null,
-  ""
- ],
- "Name should not consist of empty characters only": [
-  null,
-  ""
  ],
  "Networks": [
   null,
@@ -339,23 +295,11 @@ return plural;
   null,
   ""
  ],
- "OS Vendor": [
-  null,
-  ""
- ],
  "Ok": [
   null,
   ""
  ],
- "Operating System": [
-  null,
-  ""
- ],
  "Overview": [
-  null,
-  ""
- ],
- "Path to ISO file on host's file system": [
   null,
   ""
  ],
@@ -394,10 +338,6 @@ return plural;
  "Reconnect": [
   null,
   "Erneut verbinden"
- ],
- "Remote URL": [
-  null,
-  ""
  ],
  "Restart": [
   null,
@@ -447,7 +387,7 @@ return plural;
   null,
   ""
  ],
- "Source should start with http, ftp or nfs protocol": [
+ "Start libvirt": [
   null,
   ""
  ],
@@ -458,14 +398,6 @@ return plural;
  "State": [
   null,
   "Status"
- ],
- "Storage Size": [
-  null,
-  ""
- ],
- "Storage Size should not be negative number": [
-  null,
-  ""
  ],
  "System": [
   null,
@@ -515,13 +447,13 @@ return plural;
   null,
   ""
  ],
+ "Troubleshoot": [
+  null,
+  "Fehlersuche"
+ ],
  "Type": [
   null,
   "Typ"
- ],
- "URL": [
-  null,
-  "URL"
  ],
  "Unplug": [
   null,
@@ -582,6 +514,14 @@ return plural;
  "Virtual Machines": [
   null,
   "Virtuelle Maschinen"
+ ],
+ "Virtualization Service (libvirt) is Not Active": [
+  null,
+  ""
+ ],
+ "Virtualization Service is Available": [
+  null,
+  ""
  ],
  "Virtualport": [
   null,
@@ -676,6 +616,14 @@ return plural;
   "Läuft"
  ],
  "server": [
+  null,
+  ""
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
   null,
   ""
  ],

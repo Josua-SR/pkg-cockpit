@@ -1234,7 +1234,8 @@ tbody tr.listing-ct-noexpand {
 .table thead tr th:last-child {
   padding-right: 15px;
 }
-.info-table-ct td {
+.info-table-ct > tr > td,
+.info-table-ct > tbody > tr > td {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1243,14 +1244,17 @@ tbody tr.listing-ct-noexpand {
   vertical-align: top;
   line-height: 26px;
 }
-.info-table-ct td:first-child {
+.info-table-ct > tr > td:first-child,
+.info-table-ct > tbody > tr > td:first-child {
   text-align: right;
   color: #888888;
 }
-.info-table-ct td:not(:first-child) {
+.info-table-ct > tr > td:not(:first-child),
+.info-table-ct > tbody > tr > td:not(:first-child) {
   color: black;
 }
-.info-table-ct td button {
+.info-table-ct > tr > td button,
+.info-table-ct > tbody > tr > td button {
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -4350,7 +4354,8 @@ tbody tr.listing-ct-noexpand {
 .table thead tr th:last-child {
   padding-right: 15px;
 }
-.info-table-ct td {
+.info-table-ct > tr > td,
+.info-table-ct > tbody > tr > td {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -4359,14 +4364,17 @@ tbody tr.listing-ct-noexpand {
   vertical-align: top;
   line-height: 26px;
 }
-.info-table-ct td:first-child {
+.info-table-ct > tr > td:first-child,
+.info-table-ct > tbody > tr > td:first-child {
   text-align: right;
   color: #888888;
 }
-.info-table-ct td:not(:first-child) {
+.info-table-ct > tr > td:not(:first-child),
+.info-table-ct > tbody > tr > td:not(:first-child) {
   color: black;
 }
-.info-table-ct td button {
+.info-table-ct > tr > td button,
+.info-table-ct > tbody > tr > td button {
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;

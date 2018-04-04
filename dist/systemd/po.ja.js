@@ -291,6 +291,10 @@ return plural;
   null,
   "システムブート後"
  ],
+ "Alert and above": [
+  null,
+  ""
+ ],
  "All In One": [
   null,
   "一体型"
@@ -331,6 +335,10 @@ return plural;
   null,
   "ブレードエンクロージャー"
  ],
+ "Bug Fix Updates Available": [
+  null,
+  ""
+ ],
  "Bus Expansion Chassis": [
   null,
   "バス拡張シャーシ"
@@ -362,6 +370,10 @@ return plural;
  "Change System Time": [
   null,
   "システム時間の変更"
+ ],
+ "Checking for updates…": [
+  null,
+  ""
  ],
  "Class": [
   null,
@@ -403,9 +415,17 @@ return plural;
   null,
   "タイマーの作成"
  ],
+ "Critical and above": [
+  null,
+  ""
+ ],
  "Current boot": [
   null,
   "現在の起動"
+ ],
+ "Debug and above": [
+  null,
+  ""
  ],
  "Delay": [
   null,
@@ -463,6 +483,10 @@ return plural;
   null,
   "有効"
  ],
+ "Enhancement Updates Available": [
+  null,
+  ""
+ ],
  "Entry": [
   null,
   "エントリー"
@@ -470,6 +494,10 @@ return plural;
  "Error": [
   null,
   "エラー"
+ ],
+ "Error and above": [
+  null,
+  ""
  ],
  "Everything": [
   null,
@@ -534,6 +562,10 @@ return plural;
  "Id": [
   null,
   "ID"
+ ],
+ "Info and above": [
+  null,
+  ""
  ],
  "Instantiate": [
   null,
@@ -731,6 +763,10 @@ return plural;
   null,
   "ノートブック"
  ],
+ "Notice and above": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "オフ"
@@ -739,9 +775,9 @@ return plural;
   null,
   "オン"
  ],
- "Only Problems": [
+ "Only Emergency": [
   null,
-  "問題のみ"
+  ""
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
@@ -758,6 +794,10 @@ return plural;
  "PCI": [
   null,
   "PCI"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit がクラッシュしました"
  ],
  "Paths": [
   null,
@@ -802,18 +842,6 @@ return plural;
  "Problem info": [
   null,
   "問題の情報"
- ],
- "Problems, Errors": [
-  null,
-  "問題、エラー"
- ],
- "Problems, Errors, Warnings": [
-  null,
-  "問題、エラー、警告"
- ],
- "Problems, Errors, Warnings, Notices": [
-  null,
-  "問題、エラー、警告、注記"
  ],
  "RAID Chassis": [
   null,
@@ -914,6 +942,10 @@ return plural;
  "Secure Shell Keys": [
   null,
   "セキュアシェルキー"
+ ],
+ "Security Updates Available": [
+  null,
+  ""
  ],
  "Service Logs": [
   null,
@@ -1023,6 +1055,10 @@ return plural;
   null,
   "システム情報"
  ],
+ "System Not Registered": [
+  null,
+  ""
+ ],
  "System Services": [
   null,
   "システムサービス"
@@ -1030,6 +1066,10 @@ return plural;
  "System Time": [
   null,
   "システム時間"
+ ],
+ "System Up To Date": [
+  null,
+  ""
  ],
  "Tablet": [
   null,
@@ -1107,6 +1147,10 @@ return plural;
   null,
   "マスク解除"
  ],
+ "Updates Available": [
+  null,
+  ""
+ ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",
   "$0 CPU コアの使用率"
@@ -1126,6 +1170,10 @@ return plural;
  "Version": [
   null,
   "バージョン"
+ ],
+ "Warning and above": [
+  null,
+  ""
  ],
  "Wednesday": [
   null,

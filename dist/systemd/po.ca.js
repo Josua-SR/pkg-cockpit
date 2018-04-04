@@ -297,6 +297,10 @@ return plural;
   null,
   "Després de l'arrencada del sistema"
  ],
+ "Alert and above": [
+  null,
+  ""
+ ],
  "All In One": [
   null,
   "Tot en un"
@@ -337,6 +341,10 @@ return plural;
   null,
   ""
  ],
+ "Bug Fix Updates Available": [
+  null,
+  ""
+ ],
  "Bus Expansion Chassis": [
   null,
   ""
@@ -368,6 +376,10 @@ return plural;
  "Change System Time": [
   null,
   "Canvia l'hora del sistema"
+ ],
+ "Checking for updates…": [
+  null,
+  ""
  ],
  "Class": [
   null,
@@ -409,9 +421,17 @@ return plural;
   null,
   "Crea temporitzadors"
  ],
+ "Critical and above": [
+  null,
+  ""
+ ],
  "Current boot": [
   null,
   "Arrencada actual"
+ ],
+ "Debug and above": [
+  null,
+  ""
  ],
  "Delay": [
   null,
@@ -469,6 +489,10 @@ return plural;
   null,
   "Habilitat"
  ],
+ "Enhancement Updates Available": [
+  null,
+  ""
+ ],
  "Entry": [
   null,
   "Entrada"
@@ -476,6 +500,10 @@ return plural;
  "Error": [
   null,
   "Error"
+ ],
+ "Error and above": [
+  null,
+  ""
  ],
  "Everything": [
   null,
@@ -540,6 +568,10 @@ return plural;
  "Id": [
   null,
   "Id"
+ ],
+ "Info and above": [
+  null,
+  ""
  ],
  "Instantiate": [
   null,
@@ -737,6 +769,10 @@ return plural;
   null,
   ""
  ],
+ "Notice and above": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "Off"
@@ -745,9 +781,9 @@ return plural;
   null,
   "On"
  ],
- "Only Problems": [
+ "Only Emergency": [
   null,
-  "Només els problemes"
+  ""
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
@@ -764,6 +800,10 @@ return plural;
  "PCI": [
   null,
   "PCI"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit s'ha estavellat."
  ],
  "Paths": [
   null,
@@ -808,18 +848,6 @@ return plural;
  "Problem info": [
   null,
   "Informació del problema"
- ],
- "Problems, Errors": [
-  null,
-  "Problemes i errors"
- ],
- "Problems, Errors, Warnings": [
-  null,
-  "Problemes, errors i avisos"
- ],
- "Problems, Errors, Warnings, Notices": [
-  null,
-  "Problemes, errors, avisos i notificacions"
  ],
  "RAID Chassis": [
   null,
@@ -920,6 +948,10 @@ return plural;
  "Secure Shell Keys": [
   null,
   "Claus de shell segures"
+ ],
+ "Security Updates Available": [
+  null,
+  ""
  ],
  "Service Logs": [
   null,
@@ -1029,6 +1061,10 @@ return plural;
   null,
   "Informació del sistema"
  ],
+ "System Not Registered": [
+  null,
+  ""
+ ],
  "System Services": [
   null,
   "Serveis del sistema"
@@ -1036,6 +1072,10 @@ return plural;
  "System Time": [
   null,
   "Hora del sistema"
+ ],
+ "System Up To Date": [
+  null,
+  ""
  ],
  "Tablet": [
   null,
@@ -1113,6 +1153,10 @@ return plural;
   null,
   "Desemmascara"
  ],
+ "Updates Available": [
+  null,
+  ""
+ ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",
   "Ús de $0 nucli de CPU",
@@ -1133,6 +1177,10 @@ return plural;
  "Version": [
   null,
   "Versió"
+ ],
+ "Warning and above": [
+  null,
+  ""
  ],
  "Wednesday": [
   null,

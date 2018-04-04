@@ -83,6 +83,10 @@ return plural;
   null,
   "Dirección:"
  ],
+ "Automatically start libvirt on boot": [
+  null,
+  ""
+ ],
  "Autostart:": [
   null,
   "Auto inicio:"
@@ -131,6 +135,10 @@ return plural;
   null,
   "Conectar con alguna aplicación para ver SPICE o VNC"
  ],
+ "Connecting to Virtualization Service": [
+  null,
+  ""
+ ],
  "Connection": [
   null,
   "Conexión"
@@ -147,17 +155,9 @@ return plural;
   null,
   "Conteo:"
  ],
- "Create": [
-  null,
-  "Crear"
- ],
  "Create New VM": [
   null,
   "Crear Nueva VM"
- ],
- "Create New Virtual Machine": [
-  null,
-  "Crear una Nueva Máquina Virtual"
  ],
  "Delete": [
   null,
@@ -195,10 +195,6 @@ return plural;
   null,
   "Archivo"
  ],
- "Filesystem": [
-  null,
-  "Sistema de archivos"
- ],
  "Force Restart": [
   null,
   "Forzar Reinicio"
@@ -227,29 +223,9 @@ return plural;
   null,
   "INSTALL VM acción fallada"
  ],
- "Immediately Start VM": [
-  null,
-  "Iniciar Inmediatamente VM"
- ],
  "Install": [
   null,
   "Instalar"
- ],
- "Installation Source": [
-  null,
-  "Fuente de la Instalación"
- ],
- "Installation Source Type": [
-  null,
-  "Tipo de Fuente de Instalación"
- ],
- "Installation Source should not be empty": [
-  null,
-  "La Fuente de Instalación no debería estar vacía"
- ],
- "Invalid filename": [
-  null,
-  "Nobre de fichero no válido"
  ],
  "Launch Remote Viewer": [
   null,
@@ -275,21 +251,9 @@ return plural;
   null,
   "Conexión Manual"
  ],
- "Memory": [
-  null,
-  "Memoria"
- ],
- "Memory should be positive number": [
-  null,
-  "La memoria debería ser un número positivo"
- ],
  "Memory:": [
   null,
   "Memoria:"
- ],
- "MiB": [
-  null,
-  "MiB"
  ],
  "Model type": [
   null,
@@ -302,14 +266,6 @@ return plural;
  "Name": [
   null,
   "Nombre"
- ],
- "Name should not be empty": [
-  null,
-  "El nombre no debería estar vacío"
- ],
- "Name should not consist of empty characters only": [
-  null,
-  "El nombre no debería constar solo de caracteres vacíos"
  ],
  "Networks": [
   null,
@@ -339,25 +295,13 @@ return plural;
   null,
   "No se han definido interfaces de red para esta VM"
  ],
- "OS Vendor": [
-  null,
-  ""
- ],
  "Ok": [
   null,
   "Aceptar"
  ],
- "Operating System": [
-  null,
-  "Sistema Operativo"
- ],
  "Overview": [
   null,
   "Visión conjunta"
- ],
- "Path to ISO file on host's file system": [
-  null,
-  ""
  ],
  "Path to file": [
   null,
@@ -395,10 +339,6 @@ return plural;
   null,
   "Reconectarse"
  ],
- "Remote URL": [
-  null,
-  ""
- ],
  "Restart": [
   null,
   "Reiniciar"
@@ -413,27 +353,27 @@ return plural;
  ],
  "SPICE Address:": [
   null,
-  ""
+  "Dirección SPICE:"
  ],
  "SPICE Port:": [
   null,
-  ""
+  "Puerto SPICE:"
  ],
  "SPICE TLS Port:": [
   null,
-  ""
+  "Puerto SPICE TLS:"
  ],
  "Send Non-Maskable Interrupt": [
   null,
-  ""
+  "Enviar Interrupción no Enmascarable"
  ],
  "Send shortcut": [
   null,
-  ""
+  "Enviar atajo"
  ],
  "Serial Console": [
   null,
-  ""
+  "Consola Serie"
  ],
  "Session": [
   null,
@@ -441,87 +381,79 @@ return plural;
  ],
  "Shut Down": [
   null,
-  ""
+  "Apagar"
  ],
  "Source": [
   null,
-  ""
+  "Fuente"
  ],
- "Source should start with http, ftp or nfs protocol": [
+ "Start libvirt": [
   null,
   ""
  ],
  "Start the VM to see disk statistics.": [
   null,
-  ""
+  "Arranque el VM para ver las estadísticas de disco."
  ],
  "State": [
   null,
   "Estado"
  ],
- "Storage Size": [
-  null,
-  ""
- ],
- "Storage Size should not be negative number": [
-  null,
-  ""
- ],
  "System": [
   null,
-  ""
+  "Sistema"
  ],
  "Target": [
   null,
-  ""
+  "Objetivo"
  ],
  "The VM crashed.": [
   null,
-  ""
+  "El VM se ha roto."
  ],
  "The VM is down.": [
   null,
-  ""
+  "El VM está abajo."
  ],
  "The VM is going down.": [
   null,
-  ""
+  "El VM está cayendo."
  ],
  "The VM is idle.": [
   null,
-  ""
+  "La VM está ocioso."
  ],
  "The VM is in process of dying (shut down or crash is not completed).": [
   null,
-  ""
+  "La VM está moribundo (el apagado o la caída no se ha completado)."
  ],
  "The VM is paused.": [
   null,
-  ""
+  "La VM está pausado."
  ],
  "The VM is running and will be forced off before deletion.": [
   null,
-  ""
+  "La VM está corriendo y se forzará antes de la eliminación."
  ],
  "The VM is running.": [
   null,
-  ""
+  "La VM está corriendo."
  ],
  "The VM is suspended by guest power management.": [
   null,
-  ""
+  "La VM está suspendida por la administración de energía de los invitados."
  ],
  "Too many files found": [
   null,
   ""
  ],
+ "Troubleshoot": [
+  null,
+  "Soporte"
+ ],
  "Type": [
   null,
   "Tipo"
- ],
- "URL": [
-  null,
-  ""
  ],
  "Unplug": [
   null,
@@ -580,6 +512,14 @@ return plural;
   ""
  ],
  "Virtual Machines": [
+  null,
+  ""
+ ],
+ "Virtualization Service (libvirt) is Not Active": [
+  null,
+  ""
+ ],
+ "Virtualization Service is Available": [
   null,
   ""
  ],
@@ -676,6 +616,14 @@ return plural;
   "en ejecución"
  ],
  "server": [
+  null,
+  ""
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
   null,
   ""
  ],

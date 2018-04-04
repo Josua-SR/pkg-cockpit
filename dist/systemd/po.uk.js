@@ -303,6 +303,10 @@ return plural;
   null,
   "Після завантаження системи"
  ],
+ "Alert and above": [
+  null,
+  "Тривога і вище"
+ ],
  "All In One": [
   null,
   "Усе-в-одному"
@@ -343,6 +347,10 @@ return plural;
   null,
   "Обгортка Blade"
  ],
+ "Bug Fix Updates Available": [
+  null,
+  "Доступні оновлення із виправленнями вад"
+ ],
  "Bus Expansion Chassis": [
   null,
   "Апаратний блок розширення каналу"
@@ -375,13 +383,17 @@ return plural;
   null,
   "Змінити системний час"
  ],
+ "Checking for updates…": [
+  null,
+  "Шукаємо оновлення…"
+ ],
  "Class": [
   null,
   "Клас"
  ],
  "Click to see system hardware information": [
   null,
-  ""
+  "Натисніть, щоб побачити дані щодо обладнання системи"
  ],
  "Close": [
   null,
@@ -415,9 +427,17 @@ return plural;
   null,
   "Створити таймери"
  ],
+ "Critical and above": [
+  null,
+  "Критичні і вище"
+ ],
  "Current boot": [
   null,
   "Поточне завантаження"
+ ],
+ "Debug and above": [
+  null,
+  "Діагностика і вище"
  ],
  "Delay": [
   null,
@@ -475,6 +495,10 @@ return plural;
   null,
   "Увімкнено"
  ],
+ "Enhancement Updates Available": [
+  null,
+  "Доступні оновлення із поліпшеннями"
+ ],
  "Entry": [
   null,
   "Запис"
@@ -482,6 +506,10 @@ return plural;
  "Error": [
   null,
   "Помилка"
+ ],
+ "Error and above": [
+  null,
+  "Помилка і вище"
  ],
  "Everything": [
   null,
@@ -546,6 +574,10 @@ return plural;
  "Id": [
   null,
   "Ід."
+ ],
+ "Info and above": [
+  null,
+  "Інформація і вище"
  ],
  "Instantiate": [
   null,
@@ -743,6 +775,10 @@ return plural;
   null,
   "Ноутбук"
  ],
+ "Notice and above": [
+  null,
+  "Зауваження і вище"
+ ],
  "Off": [
   null,
   "Вимкнено"
@@ -751,9 +787,9 @@ return plural;
   null,
   "Увімкнено"
  ],
- "Only Problems": [
+ "Only Emergency": [
   null,
-  "Лише проблеми"
+  "Лише критичне"
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
@@ -770,6 +806,10 @@ return plural;
  "PCI": [
   null,
   "PCI"
+ ],
+ "PackageKit crashed": [
+  null,
+  "Аварійне завершення роботи PackageKit"
  ],
  "Paths": [
   null,
@@ -814,18 +854,6 @@ return plural;
  "Problem info": [
   null,
   "Дані щодо проблеми"
- ],
- "Problems, Errors": [
-  null,
-  "Проблеми, помилки"
- ],
- "Problems, Errors, Warnings": [
-  null,
-  "Проблеми, помилки, попередження"
- ],
- "Problems, Errors, Warnings, Notices": [
-  null,
-  "Проблеми, помилки, попередження, зауваження"
  ],
  "RAID Chassis": [
   null,
@@ -926,6 +954,10 @@ return plural;
  "Secure Shell Keys": [
   null,
   "Ключі захищеної оболонки (SSH)"
+ ],
+ "Security Updates Available": [
+  null,
+  "Доступні оновлення захисту"
  ],
  "Service Logs": [
   null,
@@ -1035,6 +1067,10 @@ return plural;
   null,
   "Дані щодо системи"
  ],
+ "System Not Registered": [
+  null,
+  "Систему не зареєстровано"
+ ],
  "System Services": [
   null,
   "Служби системи"
@@ -1042,6 +1078,10 @@ return plural;
  "System Time": [
   null,
   "Системний час"
+ ],
+ "System Up To Date": [
+  null,
+  "Система не потребує оновлення"
  ],
  "Tablet": [
   null,
@@ -1119,6 +1159,10 @@ return plural;
   null,
   "Розмаскувати"
  ],
+ "Updates Available": [
+  null,
+  ""
+ ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",
   "Використання $0 ядра процесора",
@@ -1140,6 +1184,10 @@ return plural;
  "Version": [
   null,
   "Версія"
+ ],
+ "Warning and above": [
+  null,
+  "Попередження і вище"
  ],
  "Wednesday": [
   null,

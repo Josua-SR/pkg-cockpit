@@ -155,6 +155,10 @@ return plural;
   null,
   "（なし）"
  ],
+ "--": [
+  null,
+  ""
+ ],
  "1 MiB": [
   null,
   "1 MiB"
@@ -226,6 +230,10 @@ return plural;
  "Activating $target": [
   null,
   "$target のアクティベート"
+ ],
+ "Active since": [
+  null,
+  ""
  ],
  "Add": [
   null,
@@ -999,6 +1007,10 @@ return plural;
   null,
   "ポート"
  ],
+ "Process": [
+  null,
+  ""
+ ],
  "Purpose": [
   null,
   "目的"
@@ -1091,6 +1103,10 @@ return plural;
   null,
   "RAID デバイス $target の復旧"
  ],
+ "Remove": [
+  null,
+  "削除"
+ ],
  "Remove device": [
   null,
   "リモートデバイス"
@@ -1155,6 +1171,14 @@ return plural;
   null,
   "サーバーは空欄にできません。"
  ],
+ "Service": [
+  null,
+  "サービス"
+ ],
+ "Session": [
+  null,
+  "セッション"
+ ],
  "Setting up loop device $target": [
   null,
   "ループデバイス $target の設定"
@@ -1203,10 +1227,6 @@ return plural;
   null,
   "マルチパスの開始"
  ],
- "Start Scrubbing": [
-  null,
-  "Scrubbing の起動"
- ],
  "Starting RAID Device $target": [
   null,
   "RAID デバイス $target の起動"
@@ -1222,10 +1242,6 @@ return plural;
  "Stop Device": [
   null,
   "デバイスの停止"
- ],
- "Stop Scrubbing": [
-  null,
-  "Scrubbing の停止"
  ],
  "Stop and Unmount": [
   null,
@@ -1295,9 +1311,17 @@ return plural;
   null,
   "この VDO デバイスの作成は終了していないため、使用できません。"
  ],
- "The filesystem is in use by system services or login sessions.                Proceeding will stop these services and sessions.": [
+ "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
   null,
-  "このファイルシステムはシステムのサービスまたはログインセッションで使用中です。                続行するとこのサービスとセッションを停止します。"
+  ""
+ ],
+ "The filesystem is in use by login sessions.                Proceeding will stop these.": [
+  null,
+  ""
+ ],
+ "The filesystem is in use by system services.                Proceeding will stop these.": [
+  null,
+  ""
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
@@ -1382,6 +1406,10 @@ return plural;
  "Unable to unmount filesystem": [
   null,
   "ファイルシステムをアンマウントできません"
+ ],
+ "Unit": [
+  null,
+  ""
  ],
  "Unknown": [
   null,

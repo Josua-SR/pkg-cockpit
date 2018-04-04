@@ -895,7 +895,7 @@ return plural;
  ],
  "Not Available": [
   null,
-  ""
+  "No Disponible"
  ],
  "Not Ready": [
   null,
@@ -1055,7 +1055,7 @@ return plural;
  ],
  "Pod:": [
   null,
-  ""
+  "Pod:"
  ],
  "Pods": [
   null,
@@ -1287,7 +1287,7 @@ return plural;
  ],
  "Scheduled Pods": [
   null,
-  ""
+  "Pods Programados"
  ],
  "Scheduling Disabled": [
   null,
@@ -1299,15 +1299,15 @@ return plural;
  ],
  "Secret File": [
   null,
-  ""
+  "Fichero Secreto"
  ],
  "Secret Name": [
   null,
-  ""
+  "Nombre Secreto"
  ],
  "Secret Volume": [
   null,
-  ""
+  "Volumen Secreto"
  ],
  "Select Manifest File...": [
   null,
@@ -1319,7 +1319,7 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "Servidor"
  ],
  "Service": [
   null,
@@ -1335,7 +1335,7 @@ return plural;
  ],
  "Services group pods and provide a common DNS name and an optional, load-balanced IP address to access them.": [
   null,
-  ""
+  "Agrupan pods de servicios y suministran un nombre DNS común y una dirección IP opcional con balance de carga para acceder a ellos"
  ],
  "Session": [
   null,
@@ -1343,11 +1343,11 @@ return plural;
  ],
  "Session Affinity": [
   null,
-  ""
+  "Afinidad de Sesión"
  ],
  "Share Name": [
   null,
-  ""
+  "Nombre Compartido"
  ],
  "Shared: Allow any authenticated user to pull images": [
   null,
@@ -1375,11 +1375,11 @@ return plural;
  ],
  "Show all Pod Containers": [
   null,
-  ""
+  "Mostrar todos los Pod Contenedores"
  ],
  "Show all Pods": [
   null,
-  ""
+  "Mostrar todos los Pods"
  ],
  "Show all Projects": [
   null,
@@ -1387,7 +1387,7 @@ return plural;
  ],
  "Show all Replication Controllers": [
   null,
-  ""
+  "Mostrar todos los Controladores Replicantes"
  ],
  "Show all Routes": [
   null,
@@ -1399,7 +1399,7 @@ return plural;
  ],
  "Show all image streams": [
   null,
-  ""
+  "Mostrar toda la secuencia de imagen"
  ],
  "Show all images": [
   null,
@@ -1415,7 +1415,7 @@ return plural;
  ],
  "Skip Certificate Verification": [
   null,
-  ""
+  "Saltar la Verificación de Certificado"
  ],
  "Sorry, I don't know how to modify this volume": [
   null,
@@ -1423,7 +1423,7 @@ return plural;
  ],
  "Source": [
   null,
-  ""
+  "Fuente"
  ],
  "State": [
   null,
@@ -1435,15 +1435,15 @@ return plural;
  ],
  "Strategy": [
   null,
-  ""
+  "Estrategia"
  ],
  "Sync all tags from a remote image repository": [
   null,
-  ""
+  "Sincronizar todas las etiquetas desde un repositorio de imagen remoto"
  ],
  "System": [
   null,
-  ""
+  "Sistema"
  ],
  "TLS Termination": [
   null,
@@ -1455,15 +1455,15 @@ return plural;
  ],
  "Target": [
   null,
-  ""
+  "Objetivo"
  ],
  "Target Portal": [
   null,
-  ""
+  "Portal Objetivo"
  ],
  "Target World Wide Names": [
   null,
-  ""
+  "Nombres Objetivo en todo el Mundo"
  ],
  "Template": [
   null,
@@ -1475,15 +1475,15 @@ return plural;
  ],
  "The container '{{ target }}' does not exist.": [
   null,
-  ""
+  "El contenedor '{{ target }}' no existe."
  ],
  "The deployment config '{{ target }}' does not exist.": [
   null,
-  ""
+  "La configuración de despliegue '{{ target }}' no existe."
  ],
  "The group '{{ groupName }}' does not exist.": [
   null,
-  ""
+  "El grupo '{{ groupName }}' no existe."
  ],
  "The maximum number of replicas is 128": [
   null,
@@ -1495,35 +1495,35 @@ return plural;
  ],
  "The node '{{ target }}' does not exist.": [
   null,
-  ""
+  "El nodo '{{ target }}' no existe."
  ],
  "The node doesn't have enough disk space": [
   null,
-  ""
+  "El nodo no tiene bastante espacio de disco"
  ],
  "The node doesn't have enough free memory": [
   null,
-  ""
+  "El nodo no tiene bastante memoria libre"
  ],
  "The persistent volume '{{ target }}' does not exist.": [
   null,
-  ""
+  "El volumen presistente '{{ target }}' no existe."
  ],
  "The pod '{{ target }}' does not exist.": [
   null,
-  ""
+  "El pod '{{ target }}' no existe."
  ],
  "The project '{{ projName }}' does not exist.": [
   null,
-  ""
+  "El proyecto '{{ projName }}' no existe."
  ],
  "The replication controller '{{ target }}' does not exist.": [
   null,
-  ""
+  "El controlador de replica '{{ target }}' no existe."
  ],
  "The route '{{ target }}' does not exist.": [
   null,
-  ""
+  "La ruta '{{ target }}' no existe."
  ],
  "The selected file is not a valid Kubernetes application manifest.": [
   null,
@@ -1531,23 +1531,23 @@ return plural;
  ],
  "The server uses a certificate signed by an unknown authority.": [
   null,
-  ""
+  "El servidor usa un certificado firmado por una autoridad desconocida."
  ],
  "The service '{{ target }}' does not exist.": [
   null,
-  ""
+  "El servicio '{{ target }}' no existe."
  ],
  "The user '{{ userName }}' does not exist.": [
   null,
-  ""
+  "El usuario '{{ userName }}' no existe."
  ],
  "This claim is in use. Deleting it may cause issues with the following pod:": [
   null,
-  ""
+  "Esta reclamo está en uso. Borrarlo puede causar problemas con los siguientes pod:"
  ],
  "This option is for single node testing only – local storage will not work in a multi-node cluster": [
   null,
-  ""
+  "Esta opción es para probar un único nodo solo – el almacenamiento local no trabajará en un clúster multi nodo"
  ],
  "This volume has been claimed by {{ item.item.spec.claimRef.namespace }} / {{ item.item.spec.claimRef.name }}. Deleting it will break that claim and may cause issues with any pods depending on it.": [
   null,
@@ -1778,6 +1778,14 @@ return plural;
   "en ejecución"
  ],
  "server": [
+  null,
+  ""
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
   null,
   ""
  ],

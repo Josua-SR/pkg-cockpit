@@ -37,6 +37,7 @@ done
 """
 
 @skipImage("Image uses OSTree", "continuous-atomic", "fedora-atomic", "rhel-atomic")
+@skipImage("https://bugzilla.redhat.com/show_bug.cgi?id=1559414", "rhel-8")
 class TestUpdates(PackageCase):
     def setUp(self):
         PackageCase.setUp(self)
@@ -157,7 +158,11 @@ class TestUpdates(PackageCase):
             b.go("/system")
             b.enter_page("/system")
             self.wait_checking_updates()
-            b.wait_text("#system_information_updates_text", "Bug Fix Updates Available")
+            # PackageKit's dnf backend misparses severities (https://bugs.freedesktop.org/show_bug.cgi?id=101070)
+            if self.backend == "dnf":
+                b.wait_text("#system_information_updates_text", "Updates Available")
+            else:
+                b.wait_text("#system_information_updates_text", "Bug Fix Updates Available")
             self.assertIn("fa-bug", b.attr("#system_information_updates_icon", "class"))
             # should be a link, click on it to go to /updates
             b.click("#system_information_updates_text a")
@@ -312,11 +317,18 @@ class TestUpdates(PackageCase):
             b.go("/system")
             b.enter_page("/system")
             self.wait_checking_updates()
-            # PackageKit's dnf backend mis-parses severity (https://bugs.freedesktop.org/show_bug.cgi?id=101070)
-            # and PackageKit's deb backend does not know about severity at all, so only test this on RPM
-            if self.backend == 'yum':
+            if self.backend == 'dnf':
+                # PackageKit's dnf backend mis-parses severity (https://bugs.freedesktop.org/show_bug.cgi?id=101070)
+                b.wait_text("#system_information_updates_text", "Updates Available")
+                self.assertIn("bug", b.attr("#system_information_updates_icon", "class"))
+            elif self.backend == 'apt':
+                # PackageKit's deb backend always reports "normal"
+                b.wait_text("#system_information_updates_text", "Bug Fix Updates Available")
+                self.assertIn("bug", b.attr("#system_information_updates_icon", "class"))
+            else:
                 b.wait_text("#system_information_updates_text", "Security Updates Available")
                 self.assertIn("security", b.attr("#system_information_updates_icon", "class"))
+
             # should be a link, click on it to go to back to /updates
             b.click("#system_information_updates_text a")
             b.enter_page("/updates")
@@ -363,6 +375,9 @@ class TestUpdates(PackageCase):
         # history should show the security updates
         b.wait_present(".container-fluid #history h2")
         assertHistory("#history ul", ["secdeclare", "secparse", "sevcritical"])
+
+        # stop PackageKit (e. g. idle timeout) to make sure the page survives that
+        m.execute("systemctl kill --signal=KILL packagekit.service")
 
         # new security versions are now installed
         m.execute("test -f /stamp-secdeclare-3-4.b1 && test -f /stamp-secparse-4-2 && test -f /stamp-sevcritical-5-2")
@@ -656,7 +671,8 @@ class TestUpdates(PackageCase):
 
 
 @skipImage("Image uses OSTree", "continuous-atomic", "fedora-atomic", "rhel-atomic")
-@skipImage("No subscriptions", "centos-7", "debian-stable", "debian-testing", "fedora-26", "fedora-27", "fedora-i386", "fedora-testing", "ubuntu-1604", "ubuntu-stable")
+@skipImage("No subscriptions", "centos-7", "debian-stable", "debian-testing", "fedora-26", "fedora-27", "fedora-28", "fedora-i386", "fedora-testing", "ubuntu-1604", "ubuntu-stable")
+@skipImage("https://bugzilla.redhat.com/show_bug.cgi?id=1559414", "rhel-8")
 class TestUpdatesSubscriptions(PackageCase):
     provision = {
         "0": { "address": "10.111.113.2/20", "dns": "10.111.113.2" },
@@ -805,6 +821,7 @@ class TestUpdatesSubscriptions(PackageCase):
 
 
 @skipImage("Image uses OSTree", "continuous-atomic", "fedora-atomic", "rhel-atomic")
+@skipImage("https://bugzilla.redhat.com/show_bug.cgi?id=1559414", "rhel-8")
 class TestAutoUpdates(PackageCase):
     def setUp(self):
         PackageCase.setUp(self)

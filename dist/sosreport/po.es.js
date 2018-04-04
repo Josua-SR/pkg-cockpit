@@ -105,11 +105,11 @@ return plural;
  ],
  "The collected information will be stored locally on the system.": [
   null,
-  ""
+  "La información recolectada será almacenada localmente en el sistema."
  ],
  "The generated archive contains data considered sensitive and its content should be reviewed by the originating organization before being passed to any third party.": [
   null,
-  ""
+  "El archivo generado contiene datos considerados sensibles y su contenido debería ser revisados por el organización originaria antes de ser pasado a cualquier tercero."
  ],
  "This tool will collect system configuration and diagnostic information from this system for use with diagnosing problems with the system.": [
   null,
