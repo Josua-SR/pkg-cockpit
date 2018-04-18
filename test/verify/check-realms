@@ -21,8 +21,35 @@
 import parent
 from testlib import *
 
-import os
 import re
+import subprocess
+
+WAIT_KRB_SCRIPT = """
+# HACK: This needs to work, but may take a minute
+for x in $(seq 1 60); do
+    if getent passwd admin@cockpit.lan; then
+        break
+    fi
+    if systemctl --quiet is-failed sssd.service; then
+        systemctl status --lines=100 sssd.service >&2
+        exit 1
+    fi
+    sleep $x
+done
+
+# This directory should be owned by the domain user
+getent passwd admin@cockpit.lan
+chown -R admin@cockpit.lan /home/admin
+
+# HACK: This needs to work but may take a minute
+for x in $(seq 1 60); do
+    if ssh -oStrictHostKeyChecking=no -oBatchMode=yes -l admin@cockpit.lan x0.cockpit.lan true; then
+        break
+    fi
+    sleep $x
+done
+"""
+
 
 @skipImage("No realmd available", "continuous-atomic", "fedora-atomic", "rhel-atomic")
 @skipImage("No freeipa available", "debian-stable", "debian-testing")
@@ -61,23 +88,49 @@ class TestRealms(MachineCase):
             b.wait_attr(".realms-op-admin", "placeholder", 'e.g. "admin"')
             b.set_val(".realms-op-admin", "admin")
             b.set_val(".realms-op-admin-password", "foobarfoo")
-            if m.image not in ["rhel-7-4"]:
-                b.wait_not_visible(".realms-op-leave-only-row")
+            b.wait_not_visible(".realms-op-leave-only-row")
             b.click(".realms-op-apply")
             b.wait_popdown("realms-op")
 
             # Check that this has worked
             wait_number_domains(1)
 
+        # should not have any leftover tickets from the joining
+        m.execute("! klist")
+        m.execute("! su -c klist admin")
+
+        # validate Kerberos setup for ws; requires FreeIPA with the "ipa" tool
+        if m.image not in ["rhel-7-5", "ubuntu-1604", "ubuntu-stable"]:
+            m.execute("echo foobarfoo | kinit -f admin@COCKPIT.LAN")
+            m.execute(script=WAIT_KRB_SCRIPT, timeout=300)
+
+            # should have added SPN to ws keytab
+            output = m.execute(['klist', '-k', '/etc/cockpit/krb5.keytab'])
+            self.assertIn('HTTP/x0.cockpit.lan@COCKPIT.LAN', output)
+
+            # kerberos login should work
+            output = m.execute(['curl', '-s', '--negotiate', '--delegation', 'always', '-u', ':', "-D", "-",
+                                'http://x0.cockpit.lan:9090/cockpit/login'])
+            self.assertIn("HTTP/1.1 200 OK", output)
+            self.assertIn('"csrf-token"', output)
+        elif m.image != "rhel-7-5":  # on 7.5 with older ws curl succeeds
+            # curl negotiation should fail without a proper ws keytab; this provides a hint
+            # when FreeIPA becomes new enough on the images above to start working
+            self.assertRaisesRegexp(subprocess.CalledProcessError, "returned non-zero exit status 6", m.execute,
+                    ['curl', '-s', '--negotiate', '--delegation', 'always', '-u:', '-D-',
+                     'http://x0.cockpit.lan:9090/cockpit/login'])
+
         # Leave the domain
         b.click("#system-info-domain a")
         b.wait_popup("realms-op")
-        if m.image not in ["rhel-7-4"]:
-            b.wait_visible(".realms-op-leave-only-row")
-            b.wait_in_text(".realms-op-leave-only-row", "cockpit.lan")
+        b.wait_visible(".realms-op-leave-only-row")
+        b.wait_in_text(".realms-op-leave-only-row", "cockpit.lan")
         b.click(".realms-op-apply")
         b.wait_popdown("realms-op")
         wait_number_domains(0)
+
+        # should have cleaned up ws keytab
+        m.execute("! klist -k /etc/cockpit/krb5.keytab | grep COCKPIT.LAN")
 
         # Send a wrong password
         b.click("#system-info-domain a")
@@ -87,12 +140,8 @@ class TestRealms(MachineCase):
         b.set_val(".realms-op-admin", "admin")
         b.set_val(".realms-op-admin-password", "foo")
         b.click(".realms-op-apply")
-        if m.image in ["rhel-7-4"]:
-            b.wait_text_not(".realms-op-error", "")
-        else:
-            b.wait_text_not(".realms-op-message", "")
-        if m.image not in ["rhel-7-4"]:
-            b.wait_not_visible(".realms-op-leave-only-row")
+        b.wait_text_not(".realms-op-message", "")
+        b.wait_not_visible(".realms-op-leave-only-row")
         b.click(".realms-op-cancel")
         b.wait_popdown("realms-op")
 
@@ -115,11 +164,6 @@ class TestRealms(MachineCase):
         b.wait_visible(".realms-op-spinner")
         b.click(".realms-op-cancel")
         b.wait_popdown("realms-op")
-
-        # HACK sssd regression
-        # https://github.com/cockpit-project/cockpit/issues/5142
-        # https://bugzilla.redhat.com/show_bug.cgi?id=1380953
-        self.allow_journal_messages('.*denied.*{ getattr } for.*comm="sssd" name="/".*')
 
     def testNotSupported(self):
         m = self.machine
@@ -149,14 +193,11 @@ class TestRealms(MachineCase):
         b.set_val(".realms-op-admin", "admin")
         b.set_val(".realms-op-admin-password", "foobarfoo")
         b.click(".realms-op-apply")
-        if m.image in ["rhel-7-4"]:
-            b.wait_text(".realms-op-error", "Joining this domain is not supported")
-        else:
-            b.wait_text(".realms-op-message", "Joining this domain is not supported")
+        b.wait_text(".realms-op-message", "Joining this domain is not supported")
 
 JOIN_SCRIPT = """
 set -ex
-# HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1071356#c11
+# Wait until zones from LDAP get loaded
 for x in $(seq 1 20); do
     if nslookup -type=SRV _ldap._tcp.cockpit.lan; then
         break
@@ -175,38 +216,13 @@ fi
 
 echo '%(password)s' | KRB5_TRACE=/dev/stderr kinit -f admin@COCKPIT.LAN
 
-# HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1144292
-curl --insecure -s --negotiate -u : https://f0.cockpit.lan/ipa/json --header 'Referer: https://f0.cockpit.lan/ipa' --header "Content-Type: application/json" --header "Accept: application/json" --data '{"params": [["HTTP/x0.cockpit.lan@COCKPIT.LAN"], {"raw": false, "all": false, "version": "2.101", "force": true, "no_members": false, "ipakrbokasdelegate": true}], "method": "service_add", "id": 0}'
-
-# HACK: https://bugs.freedesktop.org/show_bug.cgi?id=98479
-if ! grep -q 'services.*nss' /etc/sssd/sssd.conf; then
-    sed -i 's/^services = sudo, ssh$/services = sudo, ssh, nss, pam/' /etc/sssd/sssd.conf
-    systemctl restart sssd
+# create SPN and keytab for ws
+if type ipa >/dev/null 2>&1; then
+    LC_ALL=C.UTF-8 ipa service-add --ok-as-delegate=true --force HTTP/x0.cockpit.lan@COCKPIT.LAN
+else
+    curl --insecure -s --negotiate -u : https://f0.cockpit.lan/ipa/json --header 'Referer: https://f0.cockpit.lan/ipa' --header "Content-Type: application/json" --header "Accept: application/json" --data '{"params": [["HTTP/x0.cockpit.lan@COCKPIT.LAN"], {"raw": false, "all": false, "version": "2.101", "force": true, "no_members": false, "ipakrbokasdelegate": true}], "method": "service_add", "id": 0}'
 fi
-
-# HACK: This needs to work, but may take a minute
-for x in $(seq 1 60); do
-    if getent passwd admin@cockpit.lan; then
-        break
-    fi
-    if systemctl --quiet is-failed sssd.service; then
-        systemctl status --lines=100 sssd.service >&2
-        exit 1
-    fi
-    sleep $x
-done
-
-# This directory should be owned by the domain user
-getent passwd admin@cockpit.lan
-chown -R admin@cockpit.lan /home/admin
-
-# HACK: This needs to work but may take a minute
-for x in $(seq 1 60); do
-    if ssh -oStrictHostKeyChecking=no -oBatchMode=yes -l admin@cockpit.lan x0.cockpit.lan true; then
-        break
-    fi
-    sleep $x
-done
+ipa-getkeytab -p HTTP/x0.cockpit.lan -k %(keytab)s
 """
 
 # This is here because our test framework can't run ipa VM's twice
@@ -218,22 +234,15 @@ class TestKerberos(MachineCase):
         "ipa": { "image": "ipa", "memory_mb": 2048 }
     }
 
-    def configure_kerberos(self):
+    def configure_kerberos(self, keytab):
         # Setup a place for kerberos caches
-        args = { "addr": "10.111.112.100", "password": "foobarfoo" }
+        args = { "addr": "10.111.112.100", "password": "foobarfoo", "keytab": keytab }
         self.machine.execute("hostnamectl set-hostname x0.cockpit.lan")
         if "ubuntu" in self.machine.image:
             # no nss-myhostname there
             self.machine.execute("echo '10.111.113.1 x0.cockpit.lan' >> /etc/hosts")
         self.machine.execute(script=JOIN_SCRIPT % args, timeout=1800)
-
-    def tearDown(self):
-        if 'KRB5CCNAME' in os.environ:
-            del os.environ['KRB5CCNAME']
-        if 'KRB_CONFIG' in os.environ:
-            del os.environ['KRB5_CONFIG']
-
-        MachineCase.tearDown(self)
+        self.machine.execute(script=WAIT_KRB_SCRIPT, timeout=300)
 
     def testNegotiate(self):
         self.allow_authorize_journal_messages()
@@ -254,22 +263,13 @@ class TestKerberos(MachineCase):
         self.assertIn("HTTP/1.1 401", output)
         self.assertNotIn("WWW-Authenticate: Negotiate", output)
 
-        self.configure_kerberos()
-        self.machine.restart_cockpit()
-
-        self.machine.execute("mkdir -p /etc/cockpit")
         keytab = "/etc/cockpit/krb5.keytab"
-        # These only support the default keytab location
-        if self.machine.image in ["rhel-7-4", "rhel-7-5"]:
+        # This only supports the default keytab location
+        if self.machine.image == "rhel-7-5":
             keytab = "/etc/krb5.keytab"
 
-        # Pull keytab
-        self.machine.execute(["ipa-getkeytab","-q","-s","f0.cockpit.lan",
-                              "-p","HTTP/x0.cockpit.lan","-k",keytab])
-
-        if self.machine.image not in ["rhel-7-4", "rhel-7-5"]:
-            self.machine.execute("chmod 600 /etc/cockpit/krb5.keytab")
-
+        self.configure_kerberos(keytab)
+        self.machine.restart_cockpit()
 
         output = self.machine.execute(['/usr/bin/curl', '-s', '--negotiate', '--delegation', 'always', '-u', ':', "-D", "-",
                                        '--resolve', 'x0.cockpit.lan:9090:10.111.113.1',

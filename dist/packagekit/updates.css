@@ -687,8 +687,10 @@ tr.listing-ct-item td.version {
 tr.listing-ct-item td.type {
   white-space: nowrap;
 }
-tr.listing-ct-item td.changelog {
+tr.listing-ct-item td.changelog,
+tr.listing-ct-item td.changelog p {
   max-width: 60vw;
+  margin-bottom: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

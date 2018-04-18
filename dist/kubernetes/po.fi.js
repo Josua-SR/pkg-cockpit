@@ -921,6 +921,10 @@ return plural;
   null,
   "Käyttöjärjestelmäversiot"
  ],
+ "Ok": [
+  null,
+  "OK"
+ ],
  "Operating System": [
   null,
   ""

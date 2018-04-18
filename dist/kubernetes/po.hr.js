@@ -923,6 +923,10 @@ return plural;
   null,
   "Inačica"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "Operating System": [
   null,
   ""

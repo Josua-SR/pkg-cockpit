@@ -155,7 +155,19 @@ return plural;
   null,
   "计数："
  ],
+ "Create": [
+  null,
+  "创建"
+ ],
  "Create New VM": [
+  null,
+  ""
+ ],
+ "Create New Virtual Machine": [
+  null,
+  ""
+ ],
+ "Creation of vm $0 failed": [
   null,
   ""
  ],
@@ -195,6 +207,10 @@ return plural;
   null,
   "文件"
  ],
+ "Filesystem": [
+  null,
+  "文件系统"
+ ],
  "Force Restart": [
   null,
   "强制重启"
@@ -223,9 +239,29 @@ return plural;
   null,
   ""
  ],
+ "Immediately Start VM": [
+  null,
+  ""
+ ],
  "Install": [
   null,
   "安装"
+ ],
+ "Installation Source": [
+  null,
+  ""
+ ],
+ "Installation Source Type": [
+  null,
+  ""
+ ],
+ "Installation Source should not be empty": [
+  null,
+  ""
+ ],
+ "Invalid filename": [
+  null,
+  ""
  ],
  "Launch Remote Viewer": [
   null,
@@ -251,9 +287,21 @@ return plural;
   null,
   "手动连接"
  ],
+ "Memory": [
+  null,
+  "内存"
+ ],
+ "Memory should be positive number": [
+  null,
+  ""
+ ],
  "Memory:": [
   null,
   "内存："
+ ],
+ "MiB": [
+  null,
+  "MiB"
  ],
  "Model type": [
   null,
@@ -266,6 +314,14 @@ return plural;
  "Name": [
   null,
   "名称"
+ ],
+ "Name should not be empty": [
+  null,
+  ""
+ ],
+ "Name should not consist of empty characters only": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -295,13 +351,25 @@ return plural;
   null,
   ""
  ],
+ "OS Vendor": [
+  null,
+  ""
+ ],
  "Ok": [
   null,
   "确认"
  ],
+ "Operating System": [
+  null,
+  "操作系统"
+ ],
  "Overview": [
   null,
   "概览"
+ ],
+ "Path to ISO file on host's file system": [
+  null,
+  ""
  ],
  "Path to file": [
   null,
@@ -338,6 +406,10 @@ return plural;
  "Reconnect": [
   null,
   "重新连接"
+ ],
+ "Remote URL": [
+  null,
+  ""
  ],
  "Restart": [
   null,
@@ -387,6 +459,10 @@ return plural;
   null,
   "源"
  ],
+ "Source should start with http, ftp or nfs protocol": [
+  null,
+  ""
+ ],
  "Start libvirt": [
   null,
   ""
@@ -398,6 +474,14 @@ return plural;
  "State": [
   null,
   "状态"
+ ],
+ "Storage Size": [
+  null,
+  ""
+ ],
+ "Storage Size should not be negative number": [
+  null,
+  ""
  ],
  "System": [
   null,
@@ -454,6 +538,10 @@ return plural;
  "Type": [
   null,
   "类型"
+ ],
+ "URL": [
+  null,
+  "网址"
  ],
  "Unplug": [
   null,

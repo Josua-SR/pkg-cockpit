@@ -247,6 +247,10 @@ return plural;
   null,
   "iSCSI ポータルの追加"
  ],
+ "Add network key": [
+  null,
+  ""
+ ],
  "Adding physical volume to $target": [
   null,
   "$target への物理ボリュームの追加"
@@ -591,6 +595,10 @@ return plural;
   null,
   "エラー"
  ],
+ "Existing passphrase": [
+  null,
+  ""
+ ],
  "Extended Partition": [
   null,
   "拡張パーティション"
@@ -687,6 +695,22 @@ return plural;
   null,
   "ジョブ"
  ],
+ "Key does not work": [
+  null,
+  ""
+ ],
+ "Key is obsolete": [
+  null,
+  ""
+ ],
+ "Key is okay": [
+  null,
+  ""
+ ],
+ "Key server address": [
+  null,
+  ""
+ ],
  "Local Mount Point": [
   null,
   "ローカルマウントポイント"
@@ -718,6 +742,10 @@ return plural;
  "Logical Volume of $0": [
   null,
   "$0 の論理ボリューム"
+ ],
+ "Manually verify the key on the server: ": [
+  null,
+  ""
  ],
  "Marking $target as faulty": [
   null,
@@ -822,6 +850,10 @@ return plural;
  "Name cannot contain whitespace.": [
   null,
   "名前にはスペースを含めることができません。"
+ ],
+ "Network keys": [
+  null,
+  ""
  ],
  "New NFS Mount": [
   null,
@@ -983,6 +1015,10 @@ return plural;
   null,
   "$0 の削除を確定してください"
  ],
+ "Please confirm network key removal": [
+  null,
+  ""
+ ],
  "Please confirm stopping of $0": [
   null,
   "$0 の停止を確認してください"
@@ -1111,9 +1147,17 @@ return plural;
   null,
   "リモートデバイス"
  ],
+ "Remove key": [
+  null,
+  ""
+ ],
  "Removing $target from RAID Device": [
   null,
   "$target を RAID デバイスから削除"
+ ],
+ "Removing network keys might prevent unattended booting.": [
+  null,
+  ""
  ],
  "Removing physical volume from $target": [
   null,
@@ -1166,6 +1210,10 @@ return plural;
  "Server address cannot be empty.": [
   null,
   "サーバーアドレスは空欄にできません。"
+ ],
+ "Server can't be reached": [
+  null,
+  ""
  ],
  "Server cannot be empty.": [
   null,
@@ -1323,6 +1371,14 @@ return plural;
   null,
   ""
  ],
+ "The key of $0 will be removed.": [
+  null,
+  ""
+ ],
+ "The key server at $0 can not be reached.  This network key can not unlock the encrypted data right now, but it might be able to when the server becomes reachable again.": [
+  null,
+  ""
+ ],
  "The last disk of a RAID device cannot be removed.": [
   null,
   "RAID デバイスの最後のディスクは取り外すことができません。"
@@ -1330,6 +1386,10 @@ return plural;
  "The last physical volume of a volume group cannot be removed.": [
   null,
   "ボリュームグループの最後の物理ボリュームは削除できません。"
+ ],
+ "The output should match this text: ": [
+  null,
+  ""
  ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
@@ -1383,9 +1443,33 @@ return plural;
   null,
   "このディスクは、デバイスが復旧中に取り外すことができません。"
  ],
+ "This network key is not recognized anymore by the server. You might want to remove it.": [
+  null,
+  ""
+ ],
+ "This network key is obsolete. It is still functional but it should be replaced. A new key has been retrieved from the server.": [
+  null,
+  ""
+ ],
+ "This network key is obsolete. It is still functional but it should be replaced. A new key has been securely retrieved from the server.": [
+  null,
+  ""
+ ],
+ "This network key works fine right now and the encrypted data can be unlocked with it.": [
+  null,
+  ""
+ ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "このボリュームは、サイズを変更する前にアクティベートする必要があります。"
+ ],
+ "Trust Key": [
+  null,
+  ""
+ ],
+ "Trust new key": [
+  null,
+  ""
  ],
  "Type": [
   null,
@@ -1467,6 +1551,10 @@ return plural;
   null,
   "512 バイトのエミュレーションを使用します。"
  ],
+ "Use new key": [
+  null,
+  ""
+ ],
  "Used": [
   null,
   "Used"
@@ -1498,6 +1586,10 @@ return plural;
  "VFAT - Compatible with all systems and devices": [
   null,
   "VFAT - すべてのシステムおよびデバイスとの互換性あり"
+ ],
+ "Verify Key": [
+  null,
+  ""
  ],
  "Very securely erasing $target": [
   null,

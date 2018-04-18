@@ -211,7 +211,15 @@ return plural;
   null,
   ""
  ],
+ "Create New Virtual Machine": [
+  null,
+  ""
+ ],
  "Create VM": [
+  null,
+  ""
+ ],
+ "Creation of vm $0 failed": [
   null,
   ""
  ],
@@ -271,6 +279,10 @@ return plural;
   null,
   "Tiedosto"
  ],
+ "Filesystem": [
+  null,
+  "Tiedostojärjestelmä"
+ ],
  "Force Restart": [
   null,
   "Pakota Uudelleenkäynnistys"
@@ -311,9 +323,29 @@ return plural;
   null,
   ""
  ],
+ "Immediately Start VM": [
+  null,
+  ""
+ ],
  "Install": [
   null,
   "Asenna"
+ ],
+ "Installation Source": [
+  null,
+  ""
+ ],
+ "Installation Source Type": [
+  null,
+  ""
+ ],
+ "Installation Source should not be empty": [
+  null,
+  ""
+ ],
+ "Invalid filename": [
+  null,
+  ""
  ],
  "Launch Remote Viewer": [
   null,
@@ -351,9 +383,17 @@ return plural;
   null,
   "Muisti"
  ],
+ "Memory should be positive number": [
+  null,
+  ""
+ ],
  "Memory:": [
   null,
   "Muisti:"
+ ],
+ "MiB": [
+  null,
+  ""
  ],
  "Migrate To:": [
   null,
@@ -370,6 +410,14 @@ return plural;
  "Name": [
   null,
   "Nimi"
+ ],
+ "Name should not be empty": [
+  null,
+  ""
+ ],
+ "Name should not consist of empty characters only": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -415,15 +463,27 @@ return plural;
   null,
   "Käyttöjärjestelmän tyyppi:"
  ],
+ "OS Vendor": [
+  null,
+  ""
+ ],
  "Ok": [
   null,
   "OK"
+ ],
+ "Operating System": [
+  null,
+  ""
  ],
  "Optimized for:": [
   null,
   ""
  ],
  "Overview": [
+  null,
+  ""
+ ],
+ "Path to ISO file on host's file system": [
   null,
   ""
  ],
@@ -507,6 +567,10 @@ return plural;
   null,
   ""
  ],
+ "Remote URL": [
+  null,
+  ""
+ ],
  "Restart": [
   null,
   "Käynnistä uudelleen"
@@ -579,6 +643,10 @@ return plural;
   null,
   "Lähde"
  ],
+ "Source should start with http, ftp or nfs protocol": [
+  null,
+  ""
+ ],
  "Start the VM to see disk statistics.": [
   null,
   ""
@@ -594,6 +662,14 @@ return plural;
  "Stateless:": [
   null,
   "Tilaton:"
+ ],
+ "Storage Size": [
+  null,
+  ""
+ ],
+ "Storage Size should not be negative number": [
+  null,
+  ""
  ],
  "Suspend": [
   null,
@@ -678,6 +754,10 @@ return plural;
  "Type": [
   null,
   "Tyyppi"
+ ],
+ "URL": [
+  null,
+  "URL"
  ],
  "Unplug": [
   null,

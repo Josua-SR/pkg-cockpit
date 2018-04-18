@@ -921,6 +921,10 @@ return plural;
   null,
   "Sürüm"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "Operating System": [
   null,
   ""

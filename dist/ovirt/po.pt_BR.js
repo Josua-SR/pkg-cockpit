@@ -211,7 +211,15 @@ return plural;
   null,
   ""
  ],
+ "Create New Virtual Machine": [
+  null,
+  ""
+ ],
  "Create VM": [
+  null,
+  ""
+ ],
+ "Creation of vm $0 failed": [
   null,
   ""
  ],
@@ -271,6 +279,10 @@ return plural;
   null,
   "Arquivo"
  ],
+ "Filesystem": [
+  null,
+  "Sistema de arquivos"
+ ],
  "Force Restart": [
   null,
   "Forçar Reinicialização"
@@ -311,7 +323,27 @@ return plural;
   null,
   ""
  ],
+ "Immediately Start VM": [
+  null,
+  ""
+ ],
  "Install": [
+  null,
+  ""
+ ],
+ "Installation Source": [
+  null,
+  ""
+ ],
+ "Installation Source Type": [
+  null,
+  ""
+ ],
+ "Installation Source should not be empty": [
+  null,
+  ""
+ ],
+ "Invalid filename": [
   null,
   ""
  ],
@@ -351,9 +383,17 @@ return plural;
   null,
   "Memória"
  ],
+ "Memory should be positive number": [
+  null,
+  ""
+ ],
  "Memory:": [
   null,
   "Memória:"
+ ],
+ "MiB": [
+  null,
+  "MiB"
  ],
  "Migrate To:": [
   null,
@@ -370,6 +410,14 @@ return plural;
  "Name": [
   null,
   "Nome"
+ ],
+ "Name should not be empty": [
+  null,
+  ""
+ ],
+ "Name should not consist of empty characters only": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -415,9 +463,17 @@ return plural;
   null,
   ""
  ],
+ "OS Vendor": [
+  null,
+  ""
+ ],
  "Ok": [
   null,
   "Ok"
+ ],
+ "Operating System": [
+  null,
+  "Sistema Operacional"
  ],
  "Optimized for:": [
   null,
@@ -426,6 +482,10 @@ return plural;
  "Overview": [
   null,
   "Visão geral"
+ ],
+ "Path to ISO file on host's file system": [
+  null,
+  ""
  ],
  "Path to file": [
   null,
@@ -507,6 +567,10 @@ return plural;
   null,
   "Recarregar"
  ],
+ "Remote URL": [
+  null,
+  ""
+ ],
  "Restart": [
   null,
   "Reiniciar"
@@ -579,6 +643,10 @@ return plural;
   null,
   "Fonte"
  ],
+ "Source should start with http, ftp or nfs protocol": [
+  null,
+  ""
+ ],
  "Start the VM to see disk statistics.": [
   null,
   ""
@@ -592,6 +660,14 @@ return plural;
   ""
  ],
  "Stateless:": [
+  null,
+  ""
+ ],
+ "Storage Size": [
+  null,
+  ""
+ ],
+ "Storage Size should not be negative number": [
   null,
   ""
  ],
@@ -678,6 +754,10 @@ return plural;
  "Type": [
   null,
   "Tipo"
+ ],
+ "URL": [
+  null,
+  "URL"
  ],
  "Unplug": [
   null,

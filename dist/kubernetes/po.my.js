@@ -919,6 +919,10 @@ return plural;
   null,
   ""
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "Operating System": [
   null,
   ""

@@ -1,6 +1,6 @@
 #!/bin/sh
+set -eu -o noglob
 
-set -u -o noglob
 VM_NAME="$1"
 SOURCE="$2"
 OS="$3"
@@ -12,11 +12,22 @@ vmExists(){
    virsh list --all | awk  '{print $2}' | grep -q --line-regexp --fixed-strings "$1"
 }
 
-endIfFailed(){
-	if [ $1 -ne 0 ]; then
-	    rm -f "$XMLS_FILE"
-        exit $1
-    fi
+handleFailure(){
+    rm -f "$XMLS_FILE"
+    exit $1
+}
+
+spiceSupported(){
+    # map system architecture to qemu-system-* command
+    ARCH=$(uname -m)
+    case "$ARCH" in
+        i?86) QEMU=qemu-system-i386 ;;
+        ppc64*) QEMU=qemu-system-ppc64 ;;
+        *) QEMU=qemu-system-$ARCH;
+    esac
+
+    printf '{"execute":"qmp_capabilities"}\n{"execute":"query-spice"}\n{"execute":"quit"}' | \
+        $QEMU --qmp stdio --nographic -nodefaults  | grep -q '"enabled":'
 }
 
 # prepare virt-install parameters
@@ -28,7 +39,10 @@ else
     DISK_OPTIONS="size=$STORAGE_SIZE,format=qcow2"
 fi
 
-GRAPHICS_PARAM="--graphics spice,listen=127.0.0.1 --graphics vnc,listen=127.0.0.1"
+GRAPHICS_PARAM="--graphics vnc,listen=127.0.0.1"
+if spiceSupported; then
+    GRAPHICS_PARAM="--graphics spice,listen=127.0.0.1 $GRAPHICS_PARAM"
+fi
 
 if [ "$OS" = "other-os" -o  -z "$OS" ]; then
     OS="auto"
@@ -72,15 +86,12 @@ virt-install \
     $STARTUP_PARAMS \
     $LOCATION_PARAM \
     $GRAPHICS_PARAM \
-> "$XMLS_FILE"
-
-endIfFailed $?
+> "$XMLS_FILE" || handleFailure $?
 
 # add metadata to domain
 
 if [ "$START_VM" = "true" ]; then
-    vmExists "$VM_NAME"
-    endIfFailed $?
+    vmExists "$VM_NAME" || handleFailure $?
     virsh -q dumpxml "$VM_NAME" > "$XMLS_FILE"
 fi
 
@@ -112,8 +123,7 @@ echo "$DOMAIN_MATCHES"  |  sed 's/[^0-9]//g' | while read -r FINISH_LINE ; do
             fi
 
             #inject metadata, and define
-            sed "$METADATA_LINE""i $METADATA" "$XMLS_FILE" | virsh -q define /dev/stdin
-            endIfFailed $?
+            sed "$METADATA_LINE""i $METADATA" "$XMLS_FILE" | virsh -q define /dev/stdin || handleFailure $?
         else
             START_LINE="$QUIT_LINE"
             CURRENT_STEP="`expr $CURRENT_STEP + 1`"

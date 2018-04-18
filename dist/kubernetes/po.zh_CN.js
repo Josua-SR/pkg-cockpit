@@ -919,6 +919,10 @@ return plural;
   null,
   "操作系统版本"
  ],
+ "Ok": [
+  null,
+  "确认"
+ ],
  "Operating System": [
   null,
   "操作系统"
