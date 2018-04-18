@@ -1161,7 +1161,7 @@ return plural;
  ],
  "Updates Available": [
   null,
-  ""
+  "Доступні оновлення"
  ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",

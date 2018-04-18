@@ -247,7 +247,7 @@ return plural;
  ],
  "Active since": [
   null,
-  ""
+  "Aktywne od"
  ],
  "Add": [
   null,
@@ -260,6 +260,10 @@ return plural;
  "Add iSCSI Portal": [
   null,
   "Dodaj portal iSCSI"
+ ],
+ "Add network key": [
+  null,
+  ""
  ],
  "Adding physical volume to $target": [
   null,
@@ -605,6 +609,10 @@ return plural;
   null,
   "Błąd"
  ],
+ "Existing passphrase": [
+  null,
+  ""
+ ],
  "Extended Partition": [
   null,
   "Rozszerzona partycja"
@@ -701,6 +709,22 @@ return plural;
   null,
   "Zadania"
  ],
+ "Key does not work": [
+  null,
+  ""
+ ],
+ "Key is obsolete": [
+  null,
+  ""
+ ],
+ "Key is okay": [
+  null,
+  ""
+ ],
+ "Key server address": [
+  null,
+  ""
+ ],
  "Local Mount Point": [
   null,
   "Lokalny punkt montowania"
@@ -732,6 +756,10 @@ return plural;
  "Logical Volume of $0": [
   null,
   "Wolumin logiczny $0"
+ ],
+ "Manually verify the key on the server: ": [
+  null,
+  ""
  ],
  "Marking $target as faulty": [
   null,
@@ -836,6 +864,10 @@ return plural;
  "Name cannot contain whitespace.": [
   null,
   "Nazwa nie może zawierać spacji."
+ ],
+ "Network keys": [
+  null,
+  ""
  ],
  "New NFS Mount": [
   null,
@@ -997,6 +1029,10 @@ return plural;
   null,
   "Proszę potwierdzić usunięcie $0"
  ],
+ "Please confirm network key removal": [
+  null,
+  ""
+ ],
  "Please confirm stopping of $0": [
   null,
   "Proszę potwierdzić zatrzymanie $0"
@@ -1023,7 +1059,7 @@ return plural;
  ],
  "Process": [
   null,
-  ""
+  "Proces"
  ],
  "Purpose": [
   null,
@@ -1125,9 +1161,17 @@ return plural;
   null,
   "Usuń urządzenie"
  ],
+ "Remove key": [
+  null,
+  ""
+ ],
  "Removing $target from RAID Device": [
   null,
   "Usuwanie $target z urządzenia RAID"
+ ],
+ "Removing network keys might prevent unattended booting.": [
+  null,
+  ""
  ],
  "Removing physical volume from $target": [
   null,
@@ -1180,6 +1224,10 @@ return plural;
  "Server address cannot be empty.": [
   null,
   "Adres serwera nie może być pusty."
+ ],
+ "Server can't be reached": [
+  null,
+  ""
  ],
  "Server cannot be empty.": [
   null,
@@ -1327,13 +1375,21 @@ return plural;
  ],
  "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
   null,
-  ""
+  "System plików jest używany przez sesje logowania i usługi systemowe.                Kontynuacja je zatrzyma."
  ],
  "The filesystem is in use by login sessions.                Proceeding will stop these.": [
   null,
-  ""
+  "System plików jest używany przez sesje logowania.                Kontynuacja je zatrzyma."
  ],
  "The filesystem is in use by system services.                Proceeding will stop these.": [
+  null,
+  "System plików jest używany przez usługi systemowe.                Kontynuacja je zatrzyma."
+ ],
+ "The key of $0 will be removed.": [
+  null,
+  ""
+ ],
+ "The key server at $0 can not be reached.  This network key can not unlock the encrypted data right now, but it might be able to when the server becomes reachable again.": [
   null,
   ""
  ],
@@ -1344,6 +1400,10 @@ return plural;
  "The last physical volume of a volume group cannot be removed.": [
   null,
   "Nie można usunąć ostatniego woluminu fizycznego grupy woluminów."
+ ],
+ "The output should match this text: ": [
+  null,
+  ""
  ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
@@ -1397,9 +1457,33 @@ return plural;
   null,
   "Ten dysk nie może zostać usunięty podczas przywracania urządzenia."
  ],
+ "This network key is not recognized anymore by the server. You might want to remove it.": [
+  null,
+  ""
+ ],
+ "This network key is obsolete. It is still functional but it should be replaced. A new key has been retrieved from the server.": [
+  null,
+  ""
+ ],
+ "This network key is obsolete. It is still functional but it should be replaced. A new key has been securely retrieved from the server.": [
+  null,
+  ""
+ ],
+ "This network key works fine right now and the encrypted data can be unlocked with it.": [
+  null,
+  ""
+ ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "Ten wolumin musi zostać aktywowany przed zmianą rozmiaru."
+ ],
+ "Trust Key": [
+  null,
+  ""
+ ],
+ "Trust new key": [
+  null,
+  ""
  ],
  "Type": [
   null,
@@ -1423,7 +1507,7 @@ return plural;
  ],
  "Unit": [
   null,
-  ""
+  "Jednostka"
  ],
  "Unknown": [
   null,
@@ -1481,6 +1565,10 @@ return plural;
   null,
   "Użycie emulacji 512 bajtów"
  ],
+ "Use new key": [
+  null,
+  ""
+ ],
  "Used": [
   null,
   "Używane"
@@ -1512,6 +1600,10 @@ return plural;
  "VFAT - Compatible with all systems and devices": [
   null,
   "VFAT — zgodne ze wszystkimi systemami i urządzeniami"
+ ],
+ "Verify Key": [
+  null,
+  ""
  ],
  "Very securely erasing $target": [
   null,

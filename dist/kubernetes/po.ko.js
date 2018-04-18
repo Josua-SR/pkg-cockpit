@@ -919,6 +919,10 @@ return plural;
   null,
   "버전"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "Operating System": [
   null,
   ""

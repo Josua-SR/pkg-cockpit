@@ -923,6 +923,10 @@ return plural;
   null,
   ""
  ],
+ "Ok": [
+  null,
+  "Ok"
+ ],
  "Operating System": [
   null,
   ""

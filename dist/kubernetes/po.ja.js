@@ -919,6 +919,10 @@ return plural;
   null,
   "OS バージョン"
  ],
+ "Ok": [
+  null,
+  "OK"
+ ],
  "Operating System": [
   null,
   "オペレーティングシステム"

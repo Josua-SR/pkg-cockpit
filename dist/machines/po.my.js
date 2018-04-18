@@ -155,7 +155,19 @@ return plural;
   null,
   ""
  ],
+ "Create": [
+  null,
+  ""
+ ],
  "Create New VM": [
+  null,
+  ""
+ ],
+ "Create New Virtual Machine": [
+  null,
+  ""
+ ],
+ "Creation of vm $0 failed": [
   null,
   ""
  ],
@@ -195,6 +207,10 @@ return plural;
   null,
   ""
  ],
+ "Filesystem": [
+  null,
+  ""
+ ],
  "Force Restart": [
   null,
   ""
@@ -223,7 +239,27 @@ return plural;
   null,
   ""
  ],
+ "Immediately Start VM": [
+  null,
+  ""
+ ],
  "Install": [
+  null,
+  ""
+ ],
+ "Installation Source": [
+  null,
+  ""
+ ],
+ "Installation Source Type": [
+  null,
+  ""
+ ],
+ "Installation Source should not be empty": [
+  null,
+  ""
+ ],
+ "Invalid filename": [
   null,
   ""
  ],
@@ -251,7 +287,19 @@ return plural;
   null,
   ""
  ],
+ "Memory": [
+  null,
+  "Memory"
+ ],
+ "Memory should be positive number": [
+  null,
+  ""
+ ],
  "Memory:": [
+  null,
+  ""
+ ],
+ "MiB": [
   null,
   ""
  ],
@@ -266,6 +314,14 @@ return plural;
  "Name": [
   null,
   "အမည်"
+ ],
+ "Name should not be empty": [
+  null,
+  ""
+ ],
+ "Name should not consist of empty characters only": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -295,11 +351,23 @@ return plural;
   null,
   ""
  ],
+ "OS Vendor": [
+  null,
+  ""
+ ],
  "Ok": [
   null,
   ""
  ],
+ "Operating System": [
+  null,
+  ""
+ ],
  "Overview": [
+  null,
+  ""
+ ],
+ "Path to ISO file on host's file system": [
   null,
   ""
  ],
@@ -336,6 +404,10 @@ return plural;
   ""
  ],
  "Reconnect": [
+  null,
+  ""
+ ],
+ "Remote URL": [
   null,
   ""
  ],
@@ -387,6 +459,10 @@ return plural;
   null,
   ""
  ],
+ "Source should start with http, ftp or nfs protocol": [
+  null,
+  ""
+ ],
  "Start libvirt": [
   null,
   ""
@@ -396,6 +472,14 @@ return plural;
   ""
  ],
  "State": [
+  null,
+  ""
+ ],
+ "Storage Size": [
+  null,
+  ""
+ ],
+ "Storage Size should not be negative number": [
   null,
   ""
  ],
@@ -452,6 +536,10 @@ return plural;
   ""
  ],
  "Type": [
+  null,
+  ""
+ ],
+ "URL": [
   null,
   ""
  ],

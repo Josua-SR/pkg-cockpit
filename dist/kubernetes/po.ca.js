@@ -921,6 +921,10 @@ return plural;
   null,
   "Versions del SO"
  ],
+ "Ok": [
+  null,
+  "D'acord"
+ ],
  "Operating System": [
   null,
   "Sistema operatiu"

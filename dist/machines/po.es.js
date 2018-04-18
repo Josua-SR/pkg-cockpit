@@ -85,7 +85,7 @@ return plural;
  ],
  "Automatically start libvirt on boot": [
   null,
-  ""
+  "Iniciar automáticamente libvirt en el arranque"
  ],
  "Autostart:": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Connecting to Virtualization Service": [
   null,
-  ""
+  "Conectando al Servicio de Virtualización"
  ],
  "Connection": [
   null,
@@ -155,9 +155,21 @@ return plural;
   null,
   "Conteo:"
  ],
+ "Create": [
+  null,
+  "Crear"
+ ],
  "Create New VM": [
   null,
   "Crear Nueva VM"
+ ],
+ "Create New Virtual Machine": [
+  null,
+  "Crear una Nueva Máquina Virtual"
+ ],
+ "Creation of vm $0 failed": [
+  null,
+  "Creación de máquina virtual $0 falló"
  ],
  "Delete": [
   null,
@@ -195,6 +207,10 @@ return plural;
   null,
   "Archivo"
  ],
+ "Filesystem": [
+  null,
+  "Sistema de archivos"
+ ],
  "Force Restart": [
   null,
   "Forzar Reinicio"
@@ -223,9 +239,29 @@ return plural;
   null,
   "INSTALL VM acción fallada"
  ],
+ "Immediately Start VM": [
+  null,
+  "Iniciar Inmediatamente VM"
+ ],
  "Install": [
   null,
   "Instalar"
+ ],
+ "Installation Source": [
+  null,
+  "Fuente de la Instalación"
+ ],
+ "Installation Source Type": [
+  null,
+  "Tipo de Fuente de Instalación"
+ ],
+ "Installation Source should not be empty": [
+  null,
+  "La Fuente de Instalación no debería estar vacía"
+ ],
+ "Invalid filename": [
+  null,
+  "Nobre de fichero no válido"
  ],
  "Launch Remote Viewer": [
   null,
@@ -251,9 +287,21 @@ return plural;
   null,
   "Conexión Manual"
  ],
+ "Memory": [
+  null,
+  "Memoria"
+ ],
+ "Memory should be positive number": [
+  null,
+  "La memoria debería ser un número positivo"
+ ],
  "Memory:": [
   null,
   "Memoria:"
+ ],
+ "MiB": [
+  null,
+  "MiB"
  ],
  "Model type": [
   null,
@@ -266,6 +314,14 @@ return plural;
  "Name": [
   null,
   "Nombre"
+ ],
+ "Name should not be empty": [
+  null,
+  "El nombre no debería estar vacío"
+ ],
+ "Name should not consist of empty characters only": [
+  null,
+  "El nombre no debería constar solo de caracteres vacíos"
  ],
  "Networks": [
   null,
@@ -295,13 +351,25 @@ return plural;
   null,
   "No se han definido interfaces de red para esta VM"
  ],
+ "OS Vendor": [
+  null,
+  "Proveedor de SO"
+ ],
  "Ok": [
   null,
   "Aceptar"
  ],
+ "Operating System": [
+  null,
+  "Sistema Operativo"
+ ],
  "Overview": [
   null,
   "Visión conjunta"
+ ],
+ "Path to ISO file on host's file system": [
+  null,
+  "Ruta al fichero ISO en el sistema de archivos del host"
  ],
  "Path to file": [
   null,
@@ -338,6 +406,10 @@ return plural;
  "Reconnect": [
   null,
   "Reconectarse"
+ ],
+ "Remote URL": [
+  null,
+  "URL Remota"
  ],
  "Restart": [
   null,
@@ -387,6 +459,10 @@ return plural;
   null,
   "Fuente"
  ],
+ "Source should start with http, ftp or nfs protocol": [
+  null,
+  "La fuente debería empezar con http, ftp o protocolo nfs"
+ ],
  "Start libvirt": [
   null,
   ""
@@ -398,6 +474,14 @@ return plural;
  "State": [
   null,
   "Estado"
+ ],
+ "Storage Size": [
+  null,
+  "Tamaño de Almacenamiento"
+ ],
+ "Storage Size should not be negative number": [
+  null,
+  "El Tamaño de Almacenamiento no puede ser un número negativo"
  ],
  "System": [
   null,
@@ -454,6 +538,10 @@ return plural;
  "Type": [
   null,
   "Tipo"
+ ],
+ "URL": [
+  null,
+  ""
  ],
  "Unplug": [
   null,

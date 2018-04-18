@@ -923,6 +923,10 @@ return plural;
   null,
   "Wersje systemu operacyjnego"
  ],
+ "Ok": [
+  null,
+  "OK"
+ ],
  "Operating System": [
   null,
   "System operacyjny"

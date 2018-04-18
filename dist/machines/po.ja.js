@@ -155,9 +155,21 @@ return plural;
   null,
   "数量:"
  ],
+ "Create": [
+  null,
+  "作成"
+ ],
  "Create New VM": [
   null,
   "仮想マシンの新規作成"
+ ],
+ "Create New Virtual Machine": [
+  null,
+  "仮想マシンの新規作成"
+ ],
+ "Creation of vm $0 failed": [
+  null,
+  ""
  ],
  "Delete": [
   null,
@@ -195,6 +207,10 @@ return plural;
   null,
   "File"
  ],
+ "Filesystem": [
+  null,
+  "ファイルシステム"
+ ],
  "Force Restart": [
   null,
   "再起動の強制"
@@ -223,9 +239,29 @@ return plural;
   null,
   "INSTALL VM アクションに失敗しました"
  ],
+ "Immediately Start VM": [
+  null,
+  "VM をすぐに起動"
+ ],
  "Install": [
   null,
   "インストール"
+ ],
+ "Installation Source": [
+  null,
+  "インストールソース"
+ ],
+ "Installation Source Type": [
+  null,
+  "インストールソースのタイプ"
+ ],
+ "Installation Source should not be empty": [
+  null,
+  "インストールソースは空欄にできません"
+ ],
+ "Invalid filename": [
+  null,
+  "無効なファイル名"
  ],
  "Launch Remote Viewer": [
   null,
@@ -251,9 +287,21 @@ return plural;
   null,
   "手動接続"
  ],
+ "Memory": [
+  null,
+  "メモリ"
+ ],
+ "Memory should be positive number": [
+  null,
+  "メモリーは正の数値である必要があります"
+ ],
  "Memory:": [
   null,
   "メモリー:"
+ ],
+ "MiB": [
+  null,
+  "MiB"
  ],
  "Model type": [
   null,
@@ -266,6 +314,14 @@ return plural;
  "Name": [
   null,
   "名前"
+ ],
+ "Name should not be empty": [
+  null,
+  "名前は空欄にできません"
+ ],
+ "Name should not consist of empty characters only": [
+  null,
+  "名前は空欄にできません"
  ],
  "Networks": [
   null,
@@ -295,13 +351,25 @@ return plural;
   null,
   "この仮想マシンにはネットワークインターフェースが定義されていません"
  ],
+ "OS Vendor": [
+  null,
+  "OS ベンダー"
+ ],
  "Ok": [
   null,
   "OK"
  ],
+ "Operating System": [
+  null,
+  "オペレーティングシステム"
+ ],
  "Overview": [
   null,
   "概要"
+ ],
+ "Path to ISO file on host's file system": [
+  null,
+  "ホストファイルシステムの ISO ファイルのパス"
  ],
  "Path to file": [
   null,
@@ -338,6 +406,10 @@ return plural;
  "Reconnect": [
   null,
   "再接続"
+ ],
+ "Remote URL": [
+  null,
+  "リモート URL"
  ],
  "Restart": [
   null,
@@ -387,6 +459,10 @@ return plural;
   null,
   "ソース"
  ],
+ "Source should start with http, ftp or nfs protocol": [
+  null,
+  "ソースは、http、ftp、または nfs プロトコルで開始する必要があります"
+ ],
  "Start libvirt": [
   null,
   ""
@@ -398,6 +474,14 @@ return plural;
  "State": [
   null,
   "状態"
+ ],
+ "Storage Size": [
+  null,
+  "ストレージのサイズ"
+ ],
+ "Storage Size should not be negative number": [
+  null,
+  "ストレージのサイズは負の値にすることができません"
  ],
  "System": [
   null,
@@ -454,6 +538,10 @@ return plural;
  "Type": [
   null,
   "タイプ"
+ ],
+ "URL": [
+  null,
+  "URL"
  ],
  "Unplug": [
   null,

@@ -923,6 +923,10 @@ return plural;
   null,
   "Версії ОС"
  ],
+ "Ok": [
+  null,
+  "Гаразд"
+ ],
  "Operating System": [
   null,
   "Операційна система"

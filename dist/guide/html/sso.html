@@ -33,7 +33,6 @@
 <p>To authenticate users, the server that Cockpit is running on must be
       joined to a domain. This can usually be accomplished using the
       <a class="ulink" href="http://freedesktop.org/software/realmd/docs/realm.html" target="_top"><code class="code">realm join example.com</code></a>
-      
       command.</p>
 <p>The domain must be resolvable by DNS. For instance, the SRV records of the
       kerberos server should be resolvable:</p>
@@ -64,9 +63,18 @@ _kerberos._udp.example.com has SRV record 0 100 88 dc.example.com
 </tr>
 </tbody>
 </table></div>
-<p>The following command can be used to list the <code class="code">/etc/krb5.keytab</code>:</p>
+<p>When joining an IPA domain with Cockpit and the <code class="code">ipa</code> command line tool is
+      available, both the service principal name and a <code class="code">/etc/cockpit/krb5.keytab</code> get
+      created automatically, so that Kerberos based single sign on into Cockpit works out of the
+      box. If you want/need to do this by hand or in a script, the
+      corresponding commands with IPA are:</p>
 <pre class="programlisting">
-$ sudo klist -k
+$ sudo ipa service-add --ok-as-delegate=true --force HTTP/server.example.com@EXAMPLE.COM
+$ sudo ipa-getkeytab -p HTTP/server.example.com@EXAMPLE.COM -k /etc/cockpit/krb5.keytab
+</pre>
+<p>The following command can be used to list the <code class="code">/etc/cockpit/krb5.keytab</code>:</p>
+<pre class="programlisting">
+$ sudo klist -k /etc/cockpit/krb5.keytab
 </pre>
 <p>Lastly accounts from the domain must be resolvable to unix accounts on the server
       running Cockpit. For example:</p>
@@ -76,7 +84,8 @@ user@example.com:*:381001109:381000513:User Name:/home/user:/bin/sh
 </pre>
 <p>If you wish to delegate your kerberos credentials to Cockpit, and allow Cockpit
       to then connect to other machines using those credentials, you should enable delegation
-      for the hosts running Cockpit, and in some cases the <code class="code">HTTP</code> service as well.</p>
+      for the hosts running Cockpit, and in some cases the <code class="code">HTTP</code> service as well.
+      When joining an IPA domain, this is enabled by default.</p>
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h2 class="title" style="clear: both">

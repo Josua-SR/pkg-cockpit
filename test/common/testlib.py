@@ -425,10 +425,6 @@ class Browser:
             self.click('#go-logout')
         self.expect_load()
 
-        # HACK: this got fixed in 6c1f4ffcab24d, not in RHEL 7.4 base yet
-        if os.getenv("TEST_OS") == "rhel-7-4":
-            self.cdp.invoke("Network.clearBrowserCookies")
-
     def relogin(self, path=None, user=None, authorized=None):
         if user is None:
             user = self.default_user
@@ -786,10 +782,12 @@ class MachineCase(unittest.TestCase):
             messages += machine.audit_messages("14") # 14xx is selinux
 
         # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1557913
-        # this fails tons of tests due to the SELinux violations (so naughty override causes too much spamming)
+        # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1563143
+        # these fail tons of tests due to the SELinux violations (so naughty override causes too much spamming)
         if self.image == 'fedora-28':
             self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { dac_override }.*')
             self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { module_request }.*')
+            self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { getattr } for .* comm="which" path="/usr/sbin/setfiles".*')
 
         # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1559820
         # this affects every boot (so naughty override causes too much spamming)

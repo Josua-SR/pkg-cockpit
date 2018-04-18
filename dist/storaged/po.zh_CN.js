@@ -247,6 +247,10 @@ return plural;
   null,
   "添加 iSCSI 门户"
  ],
+ "Add network key": [
+  null,
+  ""
+ ],
  "Adding physical volume to $target": [
   null,
   "添加物理卷至 $target"
@@ -591,6 +595,10 @@ return plural;
   null,
   "错误"
  ],
+ "Existing passphrase": [
+  null,
+  ""
+ ],
  "Extended Partition": [
   null,
   "扩展分区"
@@ -687,6 +695,22 @@ return plural;
   null,
   "任务"
  ],
+ "Key does not work": [
+  null,
+  ""
+ ],
+ "Key is obsolete": [
+  null,
+  ""
+ ],
+ "Key is okay": [
+  null,
+  ""
+ ],
+ "Key server address": [
+  null,
+  ""
+ ],
  "Local Mount Point": [
   null,
   ""
@@ -718,6 +742,10 @@ return plural;
  "Logical Volume of $0": [
   null,
   "$0 的逻辑卷"
+ ],
+ "Manually verify the key on the server: ": [
+  null,
+  ""
  ],
  "Marking $target as faulty": [
   null,
@@ -822,6 +850,10 @@ return plural;
  "Name cannot contain whitespace.": [
   null,
   "名称不能包含空格。"
+ ],
+ "Network keys": [
+  null,
+  ""
  ],
  "New NFS Mount": [
   null,
@@ -983,6 +1015,10 @@ return plural;
   null,
   "请确认删除 $0"
  ],
+ "Please confirm network key removal": [
+  null,
+  ""
+ ],
  "Please confirm stopping of $0": [
   null,
   ""
@@ -1111,9 +1147,17 @@ return plural;
   null,
   ""
  ],
+ "Remove key": [
+  null,
+  ""
+ ],
  "Removing $target from RAID Device": [
   null,
   "从 RAID 设备中删除 $target"
+ ],
+ "Removing network keys might prevent unattended booting.": [
+  null,
+  ""
  ],
  "Removing physical volume from $target": [
   null,
@@ -1166,6 +1210,10 @@ return plural;
  "Server address cannot be empty.": [
   null,
   "服务器地址不能为空。"
+ ],
+ "Server can't be reached": [
+  null,
+  ""
  ],
  "Server cannot be empty.": [
   null,
@@ -1323,6 +1371,14 @@ return plural;
   null,
   ""
  ],
+ "The key of $0 will be removed.": [
+  null,
+  ""
+ ],
+ "The key server at $0 can not be reached.  This network key can not unlock the encrypted data right now, but it might be able to when the server becomes reachable again.": [
+  null,
+  ""
+ ],
  "The last disk of a RAID device cannot be removed.": [
   null,
   " RAID 设备中的最后一个磁盘不能被移除。"
@@ -1330,6 +1386,10 @@ return plural;
  "The last physical volume of a volume group cannot be removed.": [
   null,
   "不能删除一个卷组的最后一个物理卷。"
+ ],
+ "The output should match this text: ": [
+  null,
+  ""
  ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
@@ -1383,7 +1443,31 @@ return plural;
   null,
   "当磁盘正在恢复时，该磁盘不能被移除。"
  ],
+ "This network key is not recognized anymore by the server. You might want to remove it.": [
+  null,
+  ""
+ ],
+ "This network key is obsolete. It is still functional but it should be replaced. A new key has been retrieved from the server.": [
+  null,
+  ""
+ ],
+ "This network key is obsolete. It is still functional but it should be replaced. A new key has been securely retrieved from the server.": [
+  null,
+  ""
+ ],
+ "This network key works fine right now and the encrypted data can be unlocked with it.": [
+  null,
+  ""
+ ],
  "This volume needs to be activated before it can be resized.": [
+  null,
+  ""
+ ],
+ "Trust Key": [
+  null,
+  ""
+ ],
+ "Trust new key": [
   null,
   ""
  ],
@@ -1467,6 +1551,10 @@ return plural;
   null,
   ""
  ],
+ "Use new key": [
+  null,
+  ""
+ ],
  "Used": [
   null,
   "已使用"
@@ -1498,6 +1586,10 @@ return plural;
  "VFAT - Compatible with all systems and devices": [
   null,
   "VFAT - 兼容所有系统和设备"
+ ],
+ "Verify Key": [
+  null,
+  ""
  ],
  "Very securely erasing $target": [
   null,

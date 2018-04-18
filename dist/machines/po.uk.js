@@ -85,7 +85,7 @@ return plural;
  ],
  "Automatically start libvirt on boot": [
   null,
-  ""
+  "Автоматично запускати libvirt при завантаженні"
  ],
  "Autostart:": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Connecting to Virtualization Service": [
   null,
-  ""
+  "Встановлюємо зв'язок із службою віртуалізації"
  ],
  "Connection": [
   null,
@@ -155,9 +155,21 @@ return plural;
   null,
   "Кількість:"
  ],
+ "Create": [
+  null,
+  "Створити"
+ ],
  "Create New VM": [
   null,
   "Створити віртуальну машину"
+ ],
+ "Create New Virtual Machine": [
+  null,
+  "Створити віртуальну машину"
+ ],
+ "Creation of vm $0 failed": [
+  null,
+  "Не вдалося створити віртуальну машину $0"
  ],
  "Delete": [
   null,
@@ -195,6 +207,10 @@ return plural;
   null,
   "Файл"
  ],
+ "Filesystem": [
+  null,
+  "Файлова система"
+ ],
  "Force Restart": [
   null,
   "Примусовий перезапуск"
@@ -223,9 +239,29 @@ return plural;
   null,
   "Помилка під час дії зі встановлення ВМ"
  ],
+ "Immediately Start VM": [
+  null,
+  "Негайно запустити ВМ"
+ ],
  "Install": [
   null,
   "Встановити"
+ ],
+ "Installation Source": [
+  null,
+  "Джерело для встановлення"
+ ],
+ "Installation Source Type": [
+  null,
+  "Тип джерела для встановлення"
+ ],
+ "Installation Source should not be empty": [
+  null,
+  "Запис джерела для встановлення має бути непорожнім"
+ ],
+ "Invalid filename": [
+  null,
+  "Некоректна назва файла"
  ],
  "Launch Remote Viewer": [
   null,
@@ -251,9 +287,21 @@ return plural;
   null,
   "З’єднання вручну"
  ],
+ "Memory": [
+  null,
+  "Пам'ять"
+ ],
+ "Memory should be positive number": [
+  null,
+  "Об'єм пам'яті має бути додатним числом"
+ ],
  "Memory:": [
   null,
   "Пам’ять:"
+ ],
+ "MiB": [
+  null,
+  "МіБ"
  ],
  "Model type": [
   null,
@@ -266,6 +314,14 @@ return plural;
  "Name": [
   null,
   "Назва"
+ ],
+ "Name should not be empty": [
+  null,
+  "Назва має бути непорожньою"
+ ],
+ "Name should not consist of empty characters only": [
+  null,
+  "Назва не може складатися лише із порожніх символів"
  ],
  "Networks": [
   null,
@@ -295,13 +351,25 @@ return plural;
   null,
   "Немає інтерфейсів мережі, які визначено для цієї ВМ"
  ],
+ "OS Vendor": [
+  null,
+  "Виробник ОС"
+ ],
  "Ok": [
   null,
   "Гаразд"
  ],
+ "Operating System": [
+  null,
+  "Операційна система"
+ ],
  "Overview": [
   null,
   "Огляд"
+ ],
+ "Path to ISO file on host's file system": [
+  null,
+  "Шлях до ISO у файловій системі основної системи"
  ],
  "Path to file": [
   null,
@@ -338,6 +406,10 @@ return plural;
  "Reconnect": [
   null,
   "Повторно з’єднатися"
+ ],
+ "Remote URL": [
+  null,
+  "Віддалена адреса"
  ],
  "Restart": [
   null,
@@ -387,9 +459,13 @@ return plural;
   null,
   "Джерело"
  ],
+ "Source should start with http, ftp or nfs protocol": [
+  null,
+  "Адреса джерела має починатися із назви протоколу — http, ftp або nfs"
+ ],
  "Start libvirt": [
   null,
-  ""
+  "Запустити libvirt"
  ],
  "Start the VM to see disk statistics.": [
   null,
@@ -398,6 +474,14 @@ return plural;
  "State": [
   null,
   "Стан"
+ ],
+ "Storage Size": [
+  null,
+  "Розмір зберігання"
+ ],
+ "Storage Size should not be negative number": [
+  null,
+  "Розмір зберігання має бути невід'ємним числом"
  ],
  "System": [
   null,
@@ -454,6 +538,10 @@ return plural;
  "Type": [
   null,
   "Тип"
+ ],
+ "URL": [
+  null,
+  "Адреса"
  ],
  "Unplug": [
   null,
@@ -517,11 +605,11 @@ return plural;
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
-  ""
+  "Служба віртуалізації (libvirt) не є активною"
  ],
  "Virtualization Service is Available": [
   null,
-  ""
+  "Доступна служба віртуалізації"
  ],
  "Virtualport": [
   null,

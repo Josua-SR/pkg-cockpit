@@ -921,6 +921,10 @@ return plural;
   null,
   "Versões de OS"
  ],
+ "Ok": [
+  null,
+  "Ok"
+ ],
  "Operating System": [
   null,
   "Sistema Operacional"
