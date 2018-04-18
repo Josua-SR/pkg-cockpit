@@ -1,11 +1,11 @@
-cockpit (166-1) UNRELEASED; urgency=medium
+cockpit (166-1) unstable; urgency=medium
 
   * New upstream release:
     - Kubernetes: Add creation of Virtual Machines
     - Realms: Automatically set up Kerberos keytab for Cockpit web server
     - Numbers now get formatted correctly for the selected language
 
- -- Martin Pitt <mpitt@debian.org>  Wed, 18 Apr 2018 15:00:13 +0200
+ -- Martin Pitt <mpitt@debian.org>  Wed, 18 Apr 2018 15:02:24 +0200
 
 cockpit (165-1) unstable; urgency=medium
 
