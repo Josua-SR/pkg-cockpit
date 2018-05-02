@@ -277,7 +277,7 @@ return plural;
  ],
  "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
-  ""
+  "Deixe em branco para se conectar a esta máquina como a conexão atualmente efetuada como user{{#default_user}} ({{default_user}}){{/default_user}}. Se você inserir um nome de usuário diferente, esse usuário sempre será usado para conectar-se a esta máquina."
  ],
  "Licensed under:": [
   null,
@@ -297,7 +297,7 @@ return plural;
  ],
  "Log Out": [
   null,
-  ""
+  "Log Out"
  ],
  "Log in again": [
   null,
@@ -325,7 +325,7 @@ return plural;
  ],
  "No matching files found": [
   null,
-  ""
+  "Nenhum arquivo correspondente encontrado"
  ],
  "No such file or directory": [
   null,
@@ -373,7 +373,7 @@ return plural;
  ],
  "Path to file": [
   null,
-  ""
+  "Caminho para o arquivo"
  ],
  "Port": [
   null,

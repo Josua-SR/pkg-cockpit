@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 /*
  * This file is part of Cockpit.
  *
@@ -24,7 +23,6 @@ import { vmId } from '../helpers.es6';
 import VmDisksTab from './vmDisksTab.jsx';
 import DiskSourceCell from './vmDiskSourceCell.jsx';
 
-React;
 const _ = cockpit.gettext;
 
 class VmDisksTabLibvirt extends React.Component {
@@ -49,12 +47,12 @@ class VmDisksTabLibvirt extends React.Component {
         if (vm.disksStats) {
             // stats are read/supported if there is a non-NaN stat value
             areDiskStatsSupported = !!Object.getOwnPropertyNames(vm.disksStats)
-                .some(target => {
-                    if (!vm.disksStats[target]) {
-                        return false; // not yet retrieved, can't decide about disk stats support
-                    }
-                    return !isNaN(vm.disksStats[target].capacity) || !isNaN(vm.disksStats[target].allocation);
-                });
+                    .some(target => {
+                        if (!vm.disksStats[target]) {
+                            return false; // not yet retrieved, can't decide about disk stats support
+                        }
+                        return !isNaN(vm.disksStats[target].capacity) || !isNaN(vm.disksStats[target].allocation);
+                    });
         }
 
         return areDiskStatsSupported;
@@ -95,16 +93,16 @@ class VmDisksTabLibvirt extends React.Component {
         const areDiskStatsSupported = this.getDiskStatsSupport(vm);
 
         const disks = Object.getOwnPropertyNames(vm.disks)
-            .sort() // by 'target'
-            .map(target => this.prepareDiskData(vm.disks[target],
-                vm.disksStats && vm.disksStats[target],
-                `${idPrefix}-${target}`));
+                .sort() // by 'target'
+                .map(target => this.prepareDiskData(vm.disks[target],
+                                                    vm.disksStats && vm.disksStats[target],
+                                                    `${idPrefix}-${target}`));
 
         return (
             <VmDisksTab idPrefix={idPrefix}
-                        disks={disks}
-                        renderCapacity={areDiskStatsSupported}
-                        notificationText={this.getNotification(vm, areDiskStatsSupported)}/>
+                disks={disks}
+                renderCapacity={areDiskStatsSupported}
+                notificationText={this.getNotification(vm, areDiskStatsSupported)}/>
         );
     }
 }

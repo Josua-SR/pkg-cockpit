@@ -357,10 +357,6 @@ return plural;
   null,
   ""
  ],
- "Erase containers, reformat disks, and add them": [
-  null,
-  ""
- ],
  "Error message from Docker:": [
   null,
   "Poruka greške od Docker-a:"
@@ -824,10 +820,6 @@ return plural;
   ""
  ],
  "The scan from $time ($type) was not successful.": [
-  null,
-  ""
- ],
- "The storage pool will be reset to optimize its layout.  All containers will be erased.": [
   null,
   ""
  ],

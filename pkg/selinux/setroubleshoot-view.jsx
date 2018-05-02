@@ -33,7 +33,7 @@ var SELinuxEventDetails = React.createClass({
         var expanded;
         // all details are collapsed by default
         if (this.props.details)
-            expanded = this.props.details.pluginAnalysis.map(function() { return false; } );
+            expanded = this.props.details.pluginAnalysis.map(function() { return false; });
 
         return {
             solutionExpanded: expanded, // show details for solution
@@ -42,7 +42,7 @@ var SELinuxEventDetails = React.createClass({
     handleSolutionDetailsClick: function(itmIdx, e) {
         var solutionExpanded = this.state.solutionExpanded;
         solutionExpanded[itmIdx] = !solutionExpanded[itmIdx];
-        this.setState( { solutionExpanded: solutionExpanded } );
+        this.setState({ solutionExpanded: solutionExpanded });
         e.stopPropagation();
         e.preventDefault();
     },
@@ -51,7 +51,7 @@ var SELinuxEventDetails = React.createClass({
         var solutionExpanded = this.state.solutionExpanded;
         if (solutionExpanded[itmIdx]) {
             solutionExpanded[itmIdx] = false;
-            this.setState( { solutionExpanded: solutionExpanded } );
+            this.setState({ solutionExpanded: solutionExpanded });
         }
         var localId = this.props.details.localId;
         var analysisId = this.props.details.pluginAnalysis[itmIdx].analysisId;
@@ -87,7 +87,7 @@ var SELinuxEventDetails = React.createClass({
                             msg = (
                                 <div className="alert alert-success">
                                     <span className="pficon pficon-ok"></span>
-                              <span> { _("Solution applied successfully") }: {self.props.fix.result}</span>
+                                    <span> { _("Solution applied successfully") }: {self.props.fix.result}</span>
                                 </div>
                             );
                         } else {
@@ -104,7 +104,7 @@ var SELinuxEventDetails = React.createClass({
                     <div className="setroubleshoot-listing-action">
                         <button className="btn btn-default"
                                 onClick={ self.runFix.bind(self, itmIdx) }
-                                >{ _("Apply this solution") }
+                        >{ _("Apply this solution") }
                         </button>
                     </div>
                 );
@@ -113,7 +113,7 @@ var SELinuxEventDetails = React.createClass({
                     <div className="setroubleshoot-listing-action">
                         <span>{ _("Unable to apply this solution automatically") }</span>
                     </div>
-                  );
+                );
             }
             var detailsLink = <a href="#" tabIndex="0" onClick={ self.handleSolutionDetailsClick.bind(self, itmIdx) }>{ _("solution details") }</a>;
             var doState;
@@ -122,7 +122,7 @@ var SELinuxEventDetails = React.createClass({
             if (self.state.solutionExpanded[itmIdx]) {
                 caret = <i className="fa fa-angle-down" />;
                 doState = <div>{caret} {detailsLink}</div>;
-                doElem =  <div>{itm.doText}</div>;
+                doElem = <div>{itm.doText}</div>;
             } else {
                 caret = <i className="fa fa-angle-right" />;
                 doState = <div>{caret} {detailsLink}</div>;
@@ -286,7 +286,7 @@ var SELinuxStatus = React.createClass({
                 <h2>{_("SELinux Policy")}</h2>
                 {errorMessage}
                 <label>{_("Enforce policy:")}
-                <OnOffSwitch state={this.props.selinuxStatus.enforcing} onChange={this.props.changeSelinuxMode} />
+                    <OnOffSwitch state={this.props.selinuxStatus.enforcing} onChange={this.props.changeSelinuxMode} />
                 </label>
                 {note}
             </div>
@@ -370,7 +370,7 @@ var SETroubleshootPage = React.createClass({
                         listingDetail = cockpit.format(_("Occurred between $0 and $1"),
                                                        itm.details.firstSeen.calendar(),
                                                        itm.details.lastSeen.calendar()
-                                                      );
+                        );
                     } else {
                         listingDetail = cockpit.format(_("Occurred $0"), itm.details.firstSeen.calendar());
                     }
@@ -408,7 +408,7 @@ var SETroubleshootPage = React.createClass({
                 var title;
                 if (itm.count > 1) {
                     title = cockpit.format(cockpit.ngettext("$0 occurrence", "$1 occurrences", itm.count),
-                            itm.count);
+                                           itm.count);
                     columns.push(<span className="badge" title={title}>{itm.count}</span>);
                 } else {
                     columns.push(<span></span>);
@@ -427,7 +427,7 @@ var SETroubleshootPage = React.createClass({
             <cockpitListing.Listing
                     title={ title }
                     emptyCaption={ emptyCaption }
-                    >
+            >
                 {entries}
             </cockpitListing.Listing>
         );

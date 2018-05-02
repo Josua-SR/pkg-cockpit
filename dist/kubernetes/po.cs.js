@@ -71,6 +71,10 @@ return plural;
   null,
   "1\"Chcete smazat následující nody?"
  ],
+ " or drag & drop.": [
+  null,
+  ""
+ ],
  "$0% Free": [
   "$0% Free",
   "$0% volný",
@@ -351,6 +355,10 @@ return plural;
   null,
   ""
  ],
+ "Create Virtual Machine": [
+  null,
+  ""
+ ],
  "Create empty image stream": [
   null,
   ""
@@ -494,6 +502,10 @@ return plural;
  "Driver": [
   null,
   "Driver"
+ ],
+ "Drop file here to upload.": [
+  null,
+  ""
  ],
  "Empty Directory": [
   null,
@@ -927,6 +939,10 @@ return plural;
   null,
   "Ok"
  ],
+ "Only files of size $0 MiB and less are supported": [
+  null,
+  ""
+ ],
  "Operating System": [
   null,
   ""
@@ -950,6 +966,10 @@ return plural;
  "Password": [
   null,
   "Heslo"
+ ],
+ "Paste JSON below, ": [
+  null,
+  ""
  ],
  "Path": [
   null,
@@ -1256,6 +1276,10 @@ return plural;
   ""
  ],
  "Requires Authentication": [
+  null,
+  ""
+ ],
+ "Resolve above errors to continue": [
   null,
   ""
  ],
@@ -1635,6 +1659,18 @@ return plural;
   null,
   ""
  ],
+ "VM definition is not a valid JSON.": [
+  null,
+  ""
+ ],
+ "VM definition is required.": [
+  null,
+  ""
+ ],
+ "VM definition must be an object.": [
+  null,
+  ""
+ ],
  "Virtual Machines": [
   null,
   ""
@@ -1812,6 +1848,10 @@ return plural;
   "udp"
  ],
  "up": [
+  null,
+  ""
+ ],
+ "upload a JSON file": [
   null,
   ""
  ],

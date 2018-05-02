@@ -69,46 +69,46 @@ return plural;
  },
  "$0 update": [
   "$0 updates",
-  "",
-  ""
+  "$0 atualizar",
+  "$0 atualizações"
  ],
  "$1 security fix": [
   "$1 security fixes",
-  "",
-  ""
+  "$1 correção de segurança",
+  "$1 correções de segurança"
  ],
  ", including $1 security fix": [
   ", including $1 security fixes",
-  "",
-  ""
+  ", incluindo $1 correção de segurança",
+  ", incluindo $1 correções de segurança"
  ],
  "Apply all updates": [
   null,
-  ""
+  "Aplicar todas as atualizações"
  ],
  "Apply security updates": [
   null,
-  ""
+  "Aplicar atualizações de segurança"
  ],
  "Applying updates": [
   null,
-  ""
+  "Aplicando atualizações"
  ],
  "Applying updates failed": [
   null,
-  ""
+  "A aplicação de atualizações falhou"
  ],
  "Automatic Updates": [
   null,
-  ""
+  "Atualizações automáticas"
  ],
  "Available Updates": [
   null,
-  ""
+  "Atualizações Disponíveis"
  ],
  "Bugs:": [
   null,
-  ""
+  "Bugs:"
  ],
  "Cancel": [
   null,
@@ -124,15 +124,15 @@ return plural;
  ],
  "Downloaded": [
   null,
-  ""
+  "Baixado"
  ],
  "Downloading": [
   null,
-  ""
+  "Baixando"
  ],
  "Errata:": [
   null,
-  ""
+  "Errata:"
  ],
  "Ignore": [
   null,
@@ -140,35 +140,35 @@ return plural;
  ],
  "Initializing...": [
   null,
-  ""
+  "Inicializando ..."
  ],
  "Install All Updates": [
   null,
-  ""
+  "Instalar todas as atualizações"
  ],
  "Install Security Updates": [
   null,
-  ""
+  "Instalar atualizações de segurança"
  ],
  "Installed": [
   null,
-  ""
+  "Instalado"
  ],
  "Installing": [
   null,
-  ""
+  "Instalando"
  ],
  "Last checked: $0 ago": [
   null,
-  ""
+  "Última verificação: $0 atrás"
  ],
  "Loading available updates failed": [
   null,
-  ""
+  "Falhou ao carregar as atualizações disponíveis "
  ],
  "Loading available updates, please wait...": [
   null,
-  ""
+  "Carregando as atualizações disponíveis, por favor aguarde ..."
  ],
  "Name": [
   null,
@@ -176,7 +176,7 @@ return plural;
  ],
  "No updates pending": [
   null,
-  ""
+  "Nenhuma atualização pendente"
  ],
  "Off": [
   null,
@@ -188,55 +188,55 @@ return plural;
  ],
  "Package information": [
   null,
-  ""
+  "Informações do pacote"
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "PackageKit caiu"
  ],
  "PackageKit is not installed": [
   null,
-  ""
+  "PackageKit não está instalado"
  ],
  "PackageKit reported error code $0": [
   null,
-  ""
+  "PackageKit reportou código de erro $0"
  ],
  "Refreshing package information": [
   null,
-  ""
+  "Atualizando informações do pacote"
  ],
  "Register…": [
   null,
-  ""
+  "Registro…"
  ],
  "Restart Now": [
   null,
-  ""
+  "Reinicie agora"
  ],
  "Restart Recommended": [
   null,
-  ""
+  "Reiniciar Recomendado"
  ],
  "Restarting": [
   null,
-  ""
+  "Reiniciando"
  ],
  "Set up": [
   null,
-  ""
+  "Configuração"
  ],
  "Setting up": [
   null,
-  ""
+  "Configurando"
  ],
  "Severity": [
   null,
-  ""
+  "Gravidade"
  ],
  "Severity:": [
   null,
-  ""
+  "Gravidade:"
  ],
  "Software Updates": [
   null,
@@ -244,23 +244,23 @@ return plural;
  ],
  "Some other program is currently using the package manager, please wait...": [
   null,
-  ""
+  "Algum outro programa está atualmente usando o gerenciador de pacotes, por favor aguarde ..."
  ],
  "System is up to date": [
   null,
-  ""
+  "O sistema está atualizado"
  ],
  "The following packages were recently updated:": [
   null,
-  ""
+  "Os seguintes pacotes foram atualizados recentemente:"
  ],
  "The following packages were updated $0:": [
   null,
-  ""
+  "Os seguintes pacotes foram atualizados $0:"
  ],
  "This system is not registered": [
   null,
-  ""
+  "Este sistema não está registrado"
  ],
  "This web console will be updated.": [
   null,

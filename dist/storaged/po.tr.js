@@ -934,6 +934,10 @@ return plural;
   null,
   "Kapalı"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "On": [
   null,
   "Açık"
@@ -1647,6 +1651,10 @@ return plural;
   "ext4 - Red Hat Enterprise Linux 6 ön tanımlı"
  ],
  "iSCSI Targets": [
+  null,
+  ""
+ ],
+ "undefined": [
   null,
   ""
  ],

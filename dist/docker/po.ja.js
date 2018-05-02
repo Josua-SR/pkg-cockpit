@@ -343,10 +343,6 @@ return plural;
   null,
   "コンテナーの削除とストレージプールのリセット"
  ],
- "Erase containers, reformat disks, and add them": [
-  null,
-  "コンテナーの削除、ディスクの再フォーマット、およびそれらの追加"
- ],
  "Error message from Docker:": [
   null,
   "Docker からのエラーメッセージ:"
@@ -810,10 +806,6 @@ return plural;
  "The scan from $time ($type) was not successful.": [
   null,
   "$time ($type) のスキャンは成功しませんでした。"
- ],
- "The storage pool will be reset to optimize its layout.  All containers will be erased.": [
-  null,
-  "ストレージプールはそのレイアウトを最適化するためにリセットされます。すべてのコンテナーは削除されます。"
  ],
  "This image does not exist.": [
   null,

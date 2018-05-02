@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 /*
  * This file is part of Cockpit.
  *
@@ -21,8 +20,6 @@ import React, { PropTypes } from "react";
 import { mouseClick } from '../helpers.es6';
 import './dropdownButtons.css';
 
-React;
-
 /**
  * Render group of buttons as a dropdown
  *
@@ -34,14 +31,14 @@ React;
 const DropdownButtons = ({ buttons }) => {
     if (buttons.length > 1) { // do not display caret for single option
         const buttonsHtml = buttons
-            .filter(button => buttons[0].id === undefined || buttons[0].id !== button.id)
-            .map(button => {
-                return (<li className='presentation'>
-                    <a role='menuitem' tabIndex="0" onClick={mouseClick(button.action)} id={button.id}>
-                        {button.title}
-                    </a>
-                </li>)
-            });
+                .filter(button => buttons[0].id === undefined || buttons[0].id !== button.id)
+                .map(button => {
+                    return (<li className='presentation'>
+                        <a role='menuitem' tabIndex="0" onClick={mouseClick(button.action)} id={button.id}>
+                            {button.title}
+                        </a>
+                    </li>)
+                });
 
         const caretId = buttons[0]['id'] ? `${buttons[0]['id']}-caret` : undefined;
         return (<div className='btn-group dropdown-buttons-container'>

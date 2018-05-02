@@ -783,7 +783,7 @@ return plural;
  ],
  "Only Emergency": [
   null,
-  ""
+  "Solo Emergencia"
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,

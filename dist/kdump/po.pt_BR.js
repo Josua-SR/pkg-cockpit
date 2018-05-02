@@ -105,7 +105,7 @@ return plural;
  ],
  "Kernel Dump": [
   null,
-  ""
+  "Kernel Dump"
  ],
  "Loading...": [
   null,

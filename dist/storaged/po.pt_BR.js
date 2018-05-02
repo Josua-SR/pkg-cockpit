@@ -81,7 +81,7 @@ return plural;
  ],
  "$0 data + $1 overhead used of $2 ($3)": [
   null,
-  ""
+  "$0 dados + $1 sobrecarga usada de $2 ($3)"
  ],
  "$0 day": [
   "$0 days",
@@ -95,15 +95,15 @@ return plural;
  ],
  "$0 filesystems can not be made larger.": [
   null,
-  ""
+  "$0 sistemas de arquivos não podem ser maiores."
  ],
  "$0 filesystems can not be made smaller.": [
   null,
-  ""
+  "$0 sistemas de arquivos não podem ser menores."
  ],
  "$0 filesystems can not be resized here.": [
   null,
-  ""
+  "$0 sistemas de arquivos não podem ser redimensionados aqui."
  ],
  "$0 hour": [
   "$0 hours",
@@ -130,7 +130,7 @@ return plural;
  ],
  "$0 used of $1 ($2 saved)": [
   null,
-  ""
+  "$0 usados of $1 ($2 salvos)"
  ],
  "$0 week": [
   "$0 weeks",
@@ -164,7 +164,7 @@ return plural;
  ],
  "--": [
   null,
-  ""
+  "--"
  ],
  "1 MiB": [
   null,
@@ -224,7 +224,7 @@ return plural;
  ],
  "A disk is needed.": [
   null,
-  ""
+  "Um disco é necessário."
  ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
@@ -240,7 +240,7 @@ return plural;
  ],
  "Active since": [
   null,
-  ""
+  "Ativo desde"
  ],
  "Add": [
   null,
@@ -256,7 +256,7 @@ return plural;
  ],
  "Add network key": [
   null,
-  ""
+  "Adicione a senha da rede"
  ],
  "Adding physical volume to $target": [
   null,
@@ -288,11 +288,11 @@ return plural;
  ],
  "Backing Device": [
   null,
-  ""
+  "Dispositivo de apoio"
  ],
  "Block": [
   null,
-  ""
+  "Bloco"
  ],
  "Block device for filesystems": [
   null,
@@ -320,7 +320,7 @@ return plural;
  ],
  "Checking $target": [
   null,
-  ""
+  "Vericando $target"
  ],
  "Checking RAID Device $target": [
   null,
@@ -388,7 +388,7 @@ return plural;
  ],
  "Create VDO Device": [
   null,
-  ""
+  "Criar dispositivo VDO"
  ],
  "Create Volume Group": [
   null,
@@ -444,15 +444,15 @@ return plural;
  ],
  "Custom encryption options": [
   null,
-  ""
+  "Opções de criptografia personalizadas"
  ],
  "Custom mount option": [
   null,
-  ""
+  "Opção de montagem personalizada"
  ],
  "Custom mount options": [
   null,
-  ""
+  "Opções de montagem personalizadas"
  ],
  "DISK IS FAILING": [
   null,
@@ -472,7 +472,7 @@ return plural;
  ],
  "Deduplication": [
   null,
-  ""
+  "Desduplicação"
  ],
  "Default": [
   null,
@@ -492,7 +492,7 @@ return plural;
  ],
  "Deleting a VDO device will erase all data on it.": [
   null,
-  ""
+  "A exclusão de um dispositivo VDO apagará todos os dados nele."
  ],
  "Deleting a logical volume will delete all data in it.": [
   null,
@@ -512,7 +512,7 @@ return plural;
  ],
  "Device File": [
   null,
-  ""
+  "Arquivo do dispositivo"
  ],
  "Device is read-only": [
   null,
@@ -576,11 +576,11 @@ return plural;
  ],
  "Encrypted volumes can not be resized here.": [
   null,
-  ""
+  "Volumes criptografados não podem ser redimensionados aqui."
  ],
  "Encrypted volumes need to be unlocked before they can be resized.": [
   null,
-  ""
+  "Volumes criptografados precisam ser desbloqueados antes de serem redimensionados."
  ],
  "Encryption": [
   null,
@@ -604,7 +604,7 @@ return plural;
  ],
  "Existing passphrase": [
   null,
-  ""
+  "Frase-chave existente"
  ],
  "Extended Partition": [
   null,
@@ -668,19 +668,19 @@ return plural;
  ],
  "Grow": [
   null,
-  ""
+  "Crescer"
  ],
  "Grow Logical Volume": [
   null,
-  ""
+  "Aumentar o Volume Lógico"
  ],
  "Grow logical size of $0": [
   null,
-  ""
+  "Crescer tamanho lógico de $0"
  ],
  "Grow to take all space": [
   null,
-  ""
+  "Crescer para tomar todo o espaço"
  ],
  "In Sync": [
   null,
@@ -692,7 +692,7 @@ return plural;
  ],
  "Index Memory": [
   null,
-  ""
+  "Memória de índice"
  ],
  "Invalid username or password": [
   null,
@@ -704,23 +704,23 @@ return plural;
  ],
  "Key does not work": [
   null,
-  ""
+  "Chave não funciona"
  ],
  "Key is obsolete": [
   null,
-  ""
+  "A chave está obsoleta"
  ],
  "Key is okay": [
   null,
-  ""
+  "A chave está ok"
  ],
  "Key server address": [
   null,
-  ""
+  "Endereço do servidor de chaves"
  ],
  "Local Mount Point": [
   null,
-  ""
+  "Ponto de montagem local"
  ],
  "Lock": [
   null,
@@ -732,11 +732,11 @@ return plural;
  ],
  "Logical": [
   null,
-  ""
+  "Logical"
  ],
  "Logical Size": [
   null,
-  ""
+  "Tamanho Lógico"
  ],
  "Logical Volume": [
   null,
@@ -752,7 +752,7 @@ return plural;
  ],
  "Manually verify the key on the server: ": [
   null,
-  ""
+  "Verificar manualmente a chave no servidor:"
  ],
  "Marking $target as faulty": [
   null,
@@ -788,27 +788,27 @@ return plural;
  ],
  "Mount at boot": [
   null,
-  ""
+  "Monte na Inicialização"
  ],
  "Mount options": [
   null,
-  ""
+  "Opções de montagem"
  ],
  "Mount point can not be empty": [
   null,
-  ""
+  "O ponto de montagem não pode estar vazio"
  ],
  "Mount point cannot be empty.": [
   null,
-  ""
+  "O ponto de montagem não pode estar vazio"
  ],
  "Mount point must start with \"/\".": [
   null,
-  ""
+  "O ponto de montagem deve começar com \"/\"."
  ],
  "Mount read only": [
   null,
-  ""
+  "Monte só de leitura"
  ],
  "Mounted At": [
   null,
@@ -828,7 +828,7 @@ return plural;
  ],
  "NFS Mounts": [
   null,
-  ""
+  "NFS Mounts"
  ],
  "NTFS - Compatible with most systems": [
   null,
@@ -840,7 +840,7 @@ return plural;
  ],
  "Name can not be empty.": [
   null,
-  ""
+  "O nome não pode estar vazio."
  ],
  "Name cannot be empty.": [
   null,
@@ -860,11 +860,11 @@ return plural;
  ],
  "Network keys": [
   null,
-  ""
+  "Chaves de rede"
  ],
  "New NFS Mount": [
   null,
-  ""
+  "Nova montagem de volume NFS"
  ],
  "Next": [
   null,
@@ -880,7 +880,7 @@ return plural;
  ],
  "No NFS mounts set up": [
   null,
-  ""
+  "Nenhum volume NFS montado"
  ],
  "No disks are available.": [
   null,
@@ -912,7 +912,7 @@ return plural;
  ],
  "No storage set up as VDO": [
   null,
-  ""
+  "Nenhum armazenamento configurado como VDO"
  ],
  "No volume groups created": [
   null,
@@ -924,7 +924,7 @@ return plural;
  ],
  "Not mounted": [
   null,
-  ""
+  "Não montado"
  ],
  "Not running": [
   null,
@@ -934,13 +934,17 @@ return plural;
   null,
   "Desligado"
  ],
+ "Ok": [
+  null,
+  "Ok"
+ ],
  "On": [
   null,
   "Ligado"
  ],
  "Only $0 of $1 are used.": [
   null,
-  ""
+  "Somente $0 de $1 está em uso."
  ],
  "Operation '$operation' on $target": [
   null,
@@ -988,19 +992,19 @@ return plural;
  ],
  "Path on Server": [
   null,
-  ""
+  "Caminho no servidor"
  ],
  "Path on server cannot be empty.": [
   null,
-  ""
+  "Caminho no servidor não pode estar vazio."
  ],
  "Path on server must start with \"/\".": [
   null,
-  ""
+  "Caminho no servidor deve começar com \"/\"."
  ],
  "Physical": [
   null,
-  ""
+  "Fisica"
  ],
  "Physical Volume": [
   null,
@@ -1016,7 +1020,7 @@ return plural;
  ],
  "Physical volumes can not be resized here.": [
   null,
-  ""
+  "Volumes físicos não podem ser redimensionados aqui."
  ],
  "Please confirm deletion of $0": [
   null,
@@ -1024,11 +1028,11 @@ return plural;
  ],
  "Please confirm network key removal": [
   null,
-  ""
+  "Por favor, confirme a remoção da chave de rede"
  ],
  "Please confirm stopping of $0": [
   null,
-  ""
+  "Por favor confirme a parada de $0"
  ],
  "Pool": [
   null,
@@ -1052,7 +1056,7 @@ return plural;
  ],
  "Process": [
   null,
-  ""
+  "Processo"
  ],
  "Purpose": [
   null,
@@ -1152,11 +1156,11 @@ return plural;
  ],
  "Remove device": [
   null,
-  ""
+  "Remover dispositivo"
  ],
  "Remove key": [
   null,
-  ""
+  "Remover chave"
  ],
  "Removing $target from RAID Device": [
   null,
@@ -1164,7 +1168,7 @@ return plural;
  ],
  "Removing network keys might prevent unattended booting.": [
   null,
-  ""
+  "Remover chaves de rede pode impedir a inicialização automática."
  ],
  "Removing physical volume from $target": [
   null,
@@ -1188,7 +1192,7 @@ return plural;
  ],
  "Repairing $target": [
   null,
-  ""
+  "Reparando $target"
  ],
  "Resizing $target": [
   null,
@@ -1220,11 +1224,11 @@ return plural;
  ],
  "Server can't be reached": [
   null,
-  ""
+  "Servidor não pode ser encontrado"
  ],
  "Server cannot be empty.": [
   null,
-  ""
+  "O servidor não pode estar vazio."
  ],
  "Service": [
   null,
@@ -1240,11 +1244,11 @@ return plural;
  ],
  "Shrink": [
   null,
-  ""
+  "Compactar"
  ],
  "Shrink Logical Volume": [
   null,
-  ""
+  "Compactar Logical Volume"
  ],
  "Size": [
   null,
@@ -1268,7 +1272,7 @@ return plural;
  ],
  "Size must be at least $0": [
   null,
-  ""
+  "O tamanho deve ser pelo menos $0"
  ],
  "Spare": [
   null,
@@ -1296,15 +1300,15 @@ return plural;
  ],
  "Stop Device": [
   null,
-  ""
+  "Parar dispositivo"
  ],
  "Stop and Unmount": [
   null,
-  ""
+  "Parar e desmontar"
  ],
  "Stop and remove": [
   null,
-  ""
+  "Pare e remova"
  ],
  "Stopping RAID Device $target": [
   null,
@@ -1364,27 +1368,27 @@ return plural;
  ],
  "The creation of this VDO device did not finish and the device can't be used.": [
   null,
-  ""
+  "A criação deste dispositivo VDO não foi concluída e o dispositivo não pode ser usado."
  ],
  "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
   null,
-  ""
+  "O sistema de arquivos está em uso por sessões de login e serviços do sistema.                 Prosseguir interromperá isso."
  ],
  "The filesystem is in use by login sessions.                Proceeding will stop these.": [
   null,
-  ""
+  "O sistema de arquivos está em uso por sessões de login.                Prosseguir interromperá isso."
  ],
  "The filesystem is in use by system services.                Proceeding will stop these.": [
   null,
-  ""
+  "O sistema de arquivos está sendo usado pelos serviços do sistema.                Proseguir interromperá isso."
  ],
  "The key of $0 will be removed.": [
   null,
-  ""
+  "A chave de $0 será removida."
  ],
  "The key server at $0 can not be reached.  This network key can not unlock the encrypted data right now, but it might be able to when the server becomes reachable again.": [
   null,
-  ""
+  "A chave do servidor $0 não pode ser alcançada. Essa chave de rede não pode desbloquear os dados criptografados agora, mas isso pode ser possível quando o servidor tornar-se acessível novamente."
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
@@ -1396,7 +1400,7 @@ return plural;
  ],
  "The output should match this text: ": [
   null,
-  ""
+  "A saída deve corresponder a este texto:"
  ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
@@ -1416,11 +1420,11 @@ return plural;
  ],
  "This NFS mount is in use and only its options can be changed.": [
   null,
-  ""
+  "Esta montagem NFS está em uso e somente suas opções podem ser alteradas."
  ],
  "This VDO device does not use all of its backing device.": [
   null,
-  ""
+  "Este dispositivo VDO não usa todo o seu dispositivo de apoio."
  ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
@@ -1436,7 +1440,7 @@ return plural;
  ],
  "This device is currently used for VDO devices.": [
   null,
-  ""
+  "Este dispositivo é usado atualmente para dispositivos VDO."
  ],
  "This device is currently used for volume groups.": [
   null,
@@ -1452,19 +1456,19 @@ return plural;
  ],
  "This network key is not recognized anymore by the server. You might want to remove it.": [
   null,
-  ""
+  "Esta chave de rede não é mais reconhecida pelo servidor. Seria bom removê-la."
  ],
  "This network key is obsolete. It is still functional but it should be replaced. A new key has been retrieved from the server.": [
   null,
-  ""
+  "Esta chave de rede está obsoleta. Ainda é funcional, mas deve ser substituída. Uma nova chave foi recuperada do servidor."
  ],
  "This network key is obsolete. It is still functional but it should be replaced. A new key has been securely retrieved from the server.": [
   null,
-  ""
+  "Esta chave de rede está obsoleta. Ainda é funcional, mas deve ser substituída. Uma nova chave foi recuperada com segurança do servidor."
  ],
  "This network key works fine right now and the encrypted data can be unlocked with it.": [
   null,
-  ""
+  "Esta chave de rede funciona bem agora e os dados criptografados podem ser desbloqueados com ela."
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
@@ -1649,6 +1653,10 @@ return plural;
  "iSCSI Targets": [
   null,
   "Alvos iSCSI"
+ ],
+ "undefined": [
+  null,
+  "indefinido"
  ],
  "unknown target": [
   null,

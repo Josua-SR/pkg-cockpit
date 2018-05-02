@@ -561,6 +561,10 @@ return plural;
   null,
   "Kikapcsolva"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "On": [
   null,
   "Bekapcsolva"

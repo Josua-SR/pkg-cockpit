@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 /*
  * This file is part of Cockpit.
  *
@@ -26,9 +25,6 @@ import {
 import StateIcon from './stateIcon.jsx';
 import { ListingRow } from "cockpit-components-listing.jsx";
 
-React;
-
-
 /** One Ui Dummy VM in the list (a row)
  */
 const DummyVm = ({ vm }) => {
@@ -39,11 +35,10 @@ const DummyVm = ({ vm }) => {
     } else if (vm.createInProgress) {
         state = 'creating VM';
     } else {
-        state = 'in transition';  // install script finished and new vm is expected to appear any moment
+        state = 'in transition'; // install script finished and new vm is expected to appear any moment
     }
 
     const stateIcon = (<StateIcon state={state} valueId={`${vmId(vm.name)}-state`}/>);
-
 
     const name = (<span id={`${vmId(vm.name)}-row`}>{vm.name}</span>);
 

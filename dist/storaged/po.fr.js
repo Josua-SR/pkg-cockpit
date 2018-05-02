@@ -934,6 +934,10 @@ return plural;
   null,
   "Éteint"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "On": [
   null,
   "Allumé"
@@ -1647,6 +1651,10 @@ return plural;
   "ext4 - Système de fichier par défaut de Red Hat Enterprise Linux 6"
  ],
  "iSCSI Targets": [
+  null,
+  ""
+ ],
+ "undefined": [
   null,
   ""
  ],

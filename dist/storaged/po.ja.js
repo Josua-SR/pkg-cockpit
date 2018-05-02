@@ -927,6 +927,10 @@ return plural;
   null,
   "オフ"
  ],
+ "Ok": [
+  null,
+  "OK"
+ ],
  "On": [
   null,
   "オン"
@@ -1642,6 +1646,10 @@ return plural;
  "iSCSI Targets": [
   null,
   "iSCSI ターゲット"
+ ],
+ "undefined": [
+  null,
+  "未定義"
  ],
  "unknown target": [
   null,

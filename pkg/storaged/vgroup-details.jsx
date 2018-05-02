@@ -51,8 +51,8 @@ class VGroupSidebar extends React.Component {
                                 Title: _("Disks"),
                                 Options: (
                                     utils.get_available_spaces(client)
-                                         .filter(filter_inside_vgroup)
-                                         .map(utils.available_space_to_option)
+                                            .filter(filter_inside_vgroup)
+                                            .map(utils.available_space_to_option)
                                 ),
                                 EmptyWarning: _("No disks are available."),
                                 validate: function(disks) {
@@ -85,9 +85,9 @@ class VGroupSidebar extends React.Component {
 
             function pvol_empty_and_remove() {
                 return (vgroup.EmptyDevice(pvol.path, {})
-                              .then(function() {
-                                  vgroup.RemoveDevice(pvol.path, true, {});
-                              }));
+                        .then(function() {
+                            vgroup.RemoveDevice(pvol.path, true, {});
+                        }));
             }
 
             if (pvols.length === 1) {
@@ -157,7 +157,7 @@ export class VGroupDetails extends React.Component {
             this.poll_timer = window.setInterval(() => { this.props.vgroup.Poll(); }, 2000);
         } else if (!needs_polling && this.poll_timer !== null) {
             window.clearInterval(this.poll_timer);
-            this.poll_timer =  null;
+            this.poll_timer = null;
         }
     }
 
@@ -185,10 +185,10 @@ export class VGroupDetails extends React.Component {
                           Action: {
                               Title: _("Rename"),
                               action: function (vals) {
-                                  return vgroup.Rename(vals.name, { }).
-                                                done(function () {
-                                                    location.go([ 'vg', vals.name ]);
-                                                });
+                                  return vgroup.Rename(vals.name, { })
+                                          .done(function () {
+                                              location.go([ 'vg', vals.name ]);
+                                          });
                               }
                           }
             });
@@ -214,15 +214,15 @@ export class VGroupDetails extends React.Component {
                               Danger: _("Deleting a volume group will erase all data on it."),
                               Title: _("Delete"),
                               action: function () {
-                                  return utils.teardown_active_usage(client, usage).
-                                               then(function () {
-                                                   return vgroup.Delete(true,
-                                                                        { 'tear-down': { t: 'b', v: true }
-                                                                        }).
-                                                                 done(function () {
-                                                                     location.go('/');
-                                                                 });
-                                               });
+                                  return utils.teardown_active_usage(client, usage)
+                                          .then(function () {
+                                              return vgroup.Delete(true,
+                                                                   { 'tear-down': { t: 'b', v: true }
+                                                                   })
+                                                      .done(function () {
+                                                          location.go('/');
+                                                      });
+                                          });
                               }
                           }
             });

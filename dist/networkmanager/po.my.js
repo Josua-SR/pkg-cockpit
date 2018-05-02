@@ -555,6 +555,10 @@ return plural;
   null,
   "ဖွင့်"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "On": [
   null,
   "ပိတ်"

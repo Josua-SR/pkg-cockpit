@@ -406,6 +406,12 @@ tbody tr.listing-ct-noexpand {
   height: 3px;
   left: 0px;
 }
+.notification-message {
+    white-space: pre-wrap;
+}
+.machines-more-button {
+    padding-left: 10px;
+}
 a {
     cursor: pointer;
 }
@@ -640,100 +646,6 @@ input[type=number] {
 /* Make a dialog visible */
 .dialog-ct-visible {
     display: block;
-}
-.file-autocomplete-ct input {
-    padding-right: 24px;
-}
-
-.file-autocomplete-ct ul {
-    max-height: 250px;
-}
-
-.file-autocomplete-ct .alert {
-    margin: 0;
-    border: none;
-    padding: 0 24px 0 6px;
-}
-
-.file-autocomplete-ct .error input {
-    border-color: red;
-}
-
-.file-autocomplete-ct .error input {
-    border-color: red;
-}
-
-.file-autocomplete-ct .error ul {
-    border-color: red;
-    padding: 0;
-}
-
-.file-autocomplete-ct span.spinner,
-.file-autocomplete-ct span.caret {
-    position: absolute;
-    top: 7px;
-    z-index: 9;
-}
-
-.file-autocomplete-ct span.caret {
-    width: 1.5em;
-    height: 1.5em;
-    cursor: pointer;
-    pointer-events: all;
-}
-.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
-  width: 100%;
-  padding-bottom: 1px;
-}
-.input-group {
-  width: 100%;
-}
-.evenly-spaced-table {
-  display: table;
-  width: 100%;
-}
-.thirty-five-spaced-table {
-  display: table;
-  width: 35%;
-}
-.evenly-spaced-cell {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-}
-.thirty-five-spaced-cell {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  width: 35%;
-  max-width: 35%;
-}
-.padding-left {
-  padding-left: 0.5em;
-}
-.td-child {
-  color: #888888;
-}
-.dialog-checkbox {
-  width: 26px;
-  margin: 0;
-}
-#vendor-select .dropdown-header,
-#vendor-select .divider {
-  margin-top: 2ex;
-}
-/* Make the max-height based on the screen hight - offset from the top */
-#vendor-select .dropdown-menu {
-  max-height: calc(90vh - 50px - 8em);
-}
-#system-select .dropdown-menu {
-  max-height: calc(90vh - 50px - 10em);
-}
-.notification-message {
-    white-space: pre-wrap;
-}
-.machines-more-button {
-    padding-left: 10px;
 }
 .term-bg-color-0 { background-color: #2e3436; }
 .term-fg-color-0 { color: #2e3436; }
@@ -1337,6 +1249,94 @@ table.delete-dialog-disks.table tbody tr td:nth-child(3) {
 }
 .header {
     padding-bottom: 10px;
+}
+.file-autocomplete-ct input {
+    padding-right: 24px;
+}
+
+.file-autocomplete-ct ul {
+    max-height: 250px;
+}
+
+.file-autocomplete-ct .alert {
+    margin: 0;
+    border: none;
+    padding: 0 24px 0 6px;
+}
+
+.file-autocomplete-ct .error input {
+    border-color: red;
+}
+
+.file-autocomplete-ct .error input {
+    border-color: red;
+}
+
+.file-autocomplete-ct .error ul {
+    border-color: red;
+    padding: 0;
+}
+
+.file-autocomplete-ct span.spinner,
+.file-autocomplete-ct span.caret {
+    position: absolute;
+    top: 7px;
+    z-index: 9;
+}
+
+.file-autocomplete-ct span.caret {
+    width: 1.5em;
+    height: 1.5em;
+    cursor: pointer;
+    pointer-events: all;
+}
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+  width: 100%;
+  padding-bottom: 1px;
+}
+.input-group {
+  width: 100%;
+}
+.evenly-spaced-table {
+  display: table;
+  width: 100%;
+}
+.thirty-five-spaced-table {
+  display: table;
+  width: 35%;
+}
+.evenly-spaced-cell {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.thirty-five-spaced-cell {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  width: 35%;
+  max-width: 35%;
+}
+.padding-left {
+  padding-left: 0.5em;
+}
+.td-child {
+  color: #888888;
+}
+.dialog-checkbox {
+  width: 26px;
+  margin: 0;
+}
+#vendor-select .dropdown-header,
+#vendor-select .divider {
+  margin-top: 2ex;
+}
+/* Make the max-height based on the screen hight - offset from the top */
+#vendor-select .dropdown-menu {
+  max-height: calc(90vh - 50px - 8em);
+}
+#system-select .dropdown-menu {
+  max-height: calc(90vh - 50px - 10em);
 }
 a {
   cursor: pointer;

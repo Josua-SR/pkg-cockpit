@@ -211,17 +211,9 @@ return plural;
   null,
   ""
  ],
- "Create New Virtual Machine": [
-  null,
-  ""
- ],
  "Create VM": [
   null,
   "创建虚拟机"
- ],
- "Creation of vm $0 failed": [
-  null,
-  ""
  ],
  "Delete": [
   null,
@@ -279,10 +271,6 @@ return plural;
   null,
   "文件"
  ],
- "Filesystem": [
-  null,
-  "文件系统"
- ],
  "Force Restart": [
   null,
   "强制重启"
@@ -323,29 +311,9 @@ return plural;
   null,
   ""
  ],
- "Immediately Start VM": [
-  null,
-  ""
- ],
  "Install": [
   null,
   "安装"
- ],
- "Installation Source": [
-  null,
-  ""
- ],
- "Installation Source Type": [
-  null,
-  ""
- ],
- "Installation Source should not be empty": [
-  null,
-  ""
- ],
- "Invalid filename": [
-  null,
-  ""
  ],
  "Launch Remote Viewer": [
   null,
@@ -383,17 +351,9 @@ return plural;
   null,
   "内存"
  ],
- "Memory should be positive number": [
-  null,
-  ""
- ],
  "Memory:": [
   null,
   "内存："
- ],
- "MiB": [
-  null,
-  "MiB"
  ],
  "Migrate To:": [
   null,
@@ -410,14 +370,6 @@ return plural;
  "Name": [
   null,
   "名称"
- ],
- "Name should not be empty": [
-  null,
-  ""
- ],
- "Name should not consist of empty characters only": [
-  null,
-  ""
  ],
  "Networks": [
   null,
@@ -443,10 +395,6 @@ return plural;
   null,
   "没有为该虚拟机定义磁盘"
  ],
- "No matching files found": [
-  null,
-  "没有找到匹配的文件"
- ],
  "No network interfaces defined for this VM": [
   null,
   ""
@@ -463,17 +411,9 @@ return plural;
   null,
   "操作系统类型："
  ],
- "OS Vendor": [
-  null,
-  ""
- ],
  "Ok": [
   null,
   "确认"
- ],
- "Operating System": [
-  null,
-  "操作系统"
  ],
  "Optimized for:": [
   null,
@@ -482,14 +422,6 @@ return plural;
  "Overview": [
   null,
   "概览"
- ],
- "Path to ISO file on host's file system": [
-  null,
-  ""
- ],
- "Path to file": [
-  null,
-  "文件路径"
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
@@ -567,10 +499,6 @@ return plural;
   null,
   "重载"
  ],
- "Remote URL": [
-  null,
-  ""
- ],
  "Restart": [
   null,
   "重启"
@@ -643,10 +571,6 @@ return plural;
   null,
   "源"
  ],
- "Source should start with http, ftp or nfs protocol": [
-  null,
-  ""
- ],
  "Start the VM to see disk statistics.": [
   null,
   ""
@@ -662,14 +586,6 @@ return plural;
  "Stateless:": [
   null,
   "无状态："
- ],
- "Storage Size": [
-  null,
-  ""
- ],
- "Storage Size should not be negative number": [
-  null,
-  ""
  ],
  "Suspend": [
   null,
@@ -747,17 +663,9 @@ return plural;
   null,
   "该虚拟机没有被 oVirt 管理"
  ],
- "Too many files found": [
-  null,
-  "太多文件未找到"
- ],
  "Type": [
   null,
   "类型"
- ],
- "URL": [
-  null,
-  "网址"
  ],
  "Unplug": [
   null,

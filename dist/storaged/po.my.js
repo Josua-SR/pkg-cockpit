@@ -927,6 +927,10 @@ return plural;
   null,
   "ဖွင့်"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "On": [
   null,
   "ပိတ်"
@@ -1640,6 +1644,10 @@ return plural;
   ""
  ],
  "iSCSI Targets": [
+  null,
+  ""
+ ],
+ "undefined": [
   null,
   ""
  ],

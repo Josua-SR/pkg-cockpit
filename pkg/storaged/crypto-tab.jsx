@@ -29,8 +29,8 @@ var StorageControls = require("./storage-controls.jsx");
 var FormatDialog = require("./format-dialog.jsx");
 
 var StorageButton = StorageControls.StorageButton;
-var StorageLink =   StorageControls.StorageLink;
-var FormatButton =  FormatDialog.FormatButton;
+var StorageLink = StorageControls.StorageLink;
+var FormatButton = FormatDialog.FormatButton;
 
 var ClevisDialogs = require("./clevis-dialogs.jsx");
 
@@ -56,7 +56,7 @@ var CryptoTab = React.createClass({
             block.GetSecretConfiguration({}).done(
                 function (items) {
                     old_config = utils.array_find(items, function (c) { return c[0] == "crypttab"; });
-                    new_config = [ "crypttab", old_config? $.extend({ }, old_config[1]) : { } ];
+                    new_config = [ "crypttab", old_config ? $.extend({ }, old_config[1]) : { } ];
 
                     // UDisks insists on always having a "passphrase-contents" field when
                     // adding a crypttab entry, but doesn't include one itself when returning
@@ -65,7 +65,7 @@ var CryptoTab = React.createClass({
                     if (!new_config[1]['passphrase-contents'])
                         new_config[1]['passphrase-contents'] = { t: 'ay', v: utils.encode_filename("") };
 
-                    modify (new_config[1], commit);
+                    modify(new_config[1], commit);
                 });
         }
 
@@ -75,9 +75,9 @@ var CryptoTab = React.createClass({
                               Fields: [
                                   { PassInput: "passphrase",
                                     Title: _("Stored Passphrase"),
-                                    Value: (config && config['passphrase-contents'] ?
-                                            utils.decode_filename(config['passphrase-contents'].v) :
-                                            "")
+                                    Value: (config && config['passphrase-contents']
+                                        ? utils.decode_filename(config['passphrase-contents'].v)
+                                        : "")
                                   }
                               ],
                               Action: {
@@ -99,10 +99,10 @@ var CryptoTab = React.createClass({
 
         old_config = utils.array_find(block.Configuration, function (c) { return c[0] == "crypttab"; });
         if (old_config) {
-            old_options = (utils.decode_filename(old_config[1].options.v).
-                                 split(",").
-                                 filter(function (s) { return s.indexOf("x-parent") !== 0; }).
-                                 join(","));
+            old_options = (utils.decode_filename(old_config[1].options.v)
+                    .split(",")
+                    .filter(function (s) { return s.indexOf("x-parent") !== 0; })
+                    .join(","));
         }
 
         function edit_options() {
@@ -130,7 +130,7 @@ var CryptoTab = React.createClass({
                         keys.map(function (key) {
                             return (
                                 <tr>
-                                    <td>{key.url}</td>
+                                    <td>{key.type} {key.url}</td>
                                     <td>
                                         <StorageButton onClick={() => ClevisDialogs.remove(client, block, key)}>
                                             Remove
@@ -159,23 +159,23 @@ var CryptoTab = React.createClass({
                     <FormatButton client={this.props.client} block={this.props.block}/>
                 </div>
                 <table className="info-table-ct">
-                    { !self.props.client.is_old_udisks2 ?
-                      <tr>
-                          <td>{_("Stored passphrase")}</td>
-                          <td><StorageButton onClick={edit_stored_passphrase}>{_("Edit")}</StorageButton></td>
-                      </tr> : null
+                    { !self.props.client.is_old_udisks2
+                        ? <tr>
+                            <td>{_("Stored passphrase")}</td>
+                            <td><StorageButton onClick={edit_stored_passphrase}>{_("Edit")}</StorageButton></td>
+                        </tr> : null
                     }
-                    { !self.props.client.is_old_udisks2 ?
-                      <tr>
-                          <td>{_("Options")}</td>
-                          <td><StorageLink onClick={edit_options}>{old_options || _("(none)")}</StorageLink></td>
-                      </tr> : null
+                    { !self.props.client.is_old_udisks2
+                        ? <tr>
+                            <td>{_("Options")}</td>
+                            <td><StorageLink onClick={edit_options}>{old_options || _("(none)")}</StorageLink></td>
+                        </tr> : null
                     }
-                    { self.props.client.features.clevis ?
-                      <tr>
-                        <td>{_("Network keys")}</td>
-                        <td>{ render_clevis_keys(client.clevis_overlay.find_by_block(block) || [ ]) }</td>
-                      </tr> : null
+                    { self.props.client.features.clevis
+                        ? <tr>
+                            <td>{_("Network keys")}</td>
+                            <td>{ render_clevis_keys(client.clevis_overlay.find_by_block(block) || [ ]) }</td>
+                        </tr> : null
                     }
                 </table>
             </div>

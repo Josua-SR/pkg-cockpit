@@ -173,8 +173,8 @@ class StoragePlot extends React.Component {
             $.extend(plot_options.yaxis, { ticks: plot.memory_ticks,
                                            tickFormatter: plot.format_bytes_per_sec_tick_no_unit
             });
-            $.extend(plot_options.grid,  { hoverable: true,
-                                           autoHighlight: false
+            $.extend(plot_options.grid, { hoverable: true,
+                                          autoHighlight: false
             });
             plot_options.setup_hook = setup_hook;
             plot_options.post_hook = post_hook;

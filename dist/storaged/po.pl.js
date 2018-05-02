@@ -263,7 +263,7 @@ return plural;
  ],
  "Add network key": [
   null,
-  ""
+  "Dodaj klucz sieciowy"
  ],
  "Adding physical volume to $target": [
   null,
@@ -611,7 +611,7 @@ return plural;
  ],
  "Existing passphrase": [
   null,
-  ""
+  "Istniejące hasło"
  ],
  "Extended Partition": [
   null,
@@ -711,19 +711,19 @@ return plural;
  ],
  "Key does not work": [
   null,
-  ""
+  "Klucz nie działa"
  ],
  "Key is obsolete": [
   null,
-  ""
+  "Klucz jest przestarzały"
  ],
  "Key is okay": [
   null,
-  ""
+  "Klucz jest w porządku"
  ],
  "Key server address": [
   null,
-  ""
+  "Adres serwera kluczy"
  ],
  "Local Mount Point": [
   null,
@@ -759,7 +759,7 @@ return plural;
  ],
  "Manually verify the key on the server: ": [
   null,
-  ""
+  "Ręczne sprawdzanie poprawności klucza na serwerze:"
  ],
  "Marking $target as faulty": [
   null,
@@ -867,7 +867,7 @@ return plural;
  ],
  "Network keys": [
   null,
-  ""
+  "Klucze sieciowe"
  ],
  "New NFS Mount": [
   null,
@@ -940,6 +940,10 @@ return plural;
  "Off": [
   null,
   "Wyłączone"
+ ],
+ "Ok": [
+  null,
+  "OK"
  ],
  "On": [
   null,
@@ -1031,7 +1035,7 @@ return plural;
  ],
  "Please confirm network key removal": [
   null,
-  ""
+  "Proszę potwierdzić usunięcie klucza sieciowego"
  ],
  "Please confirm stopping of $0": [
   null,
@@ -1163,7 +1167,7 @@ return plural;
  ],
  "Remove key": [
   null,
-  ""
+  "Usuń klucz"
  ],
  "Removing $target from RAID Device": [
   null,
@@ -1171,7 +1175,7 @@ return plural;
  ],
  "Removing network keys might prevent unattended booting.": [
   null,
-  ""
+  "Usunięcie kluczy sieciowych może uniemożliwić uruchamianie bez nadzoru."
  ],
  "Removing physical volume from $target": [
   null,
@@ -1227,7 +1231,7 @@ return plural;
  ],
  "Server can't be reached": [
   null,
-  ""
+  "Nie można połączyć z serwerem"
  ],
  "Server cannot be empty.": [
   null,
@@ -1387,11 +1391,11 @@ return plural;
  ],
  "The key of $0 will be removed.": [
   null,
-  ""
+  "Klucz $0 zostanie usunięty"
  ],
  "The key server at $0 can not be reached.  This network key can not unlock the encrypted data right now, but it might be able to when the server becomes reachable again.": [
   null,
-  ""
+  "Nie można połączyć z serwerem kluczy pod adresem $0. Ten klucz sieciowy nie może teraz odblokować zaszyfrowanych danych, ale może być w stanie to zrobić, kiedy serwer stanie się dostępny."
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
@@ -1403,7 +1407,7 @@ return plural;
  ],
  "The output should match this text: ": [
   null,
-  ""
+  "Wyjście powinno pasować do tego tekstu:"
  ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
@@ -1459,19 +1463,19 @@ return plural;
  ],
  "This network key is not recognized anymore by the server. You might want to remove it.": [
   null,
-  ""
+  "Ten klucz sieciowy nie jest już rozpoznawany przez serwer. Zaleca się go usunąć."
  ],
  "This network key is obsolete. It is still functional but it should be replaced. A new key has been retrieved from the server.": [
   null,
-  ""
+  "Ten klucz sieciowy jest przestarzały. Nadal działa, ale powinien zostać zastąpiony. Nowy klucz został pobrany z serwera."
  ],
  "This network key is obsolete. It is still functional but it should be replaced. A new key has been securely retrieved from the server.": [
   null,
-  ""
+  "Ten klucz sieciowy jest przestarzały. Nadal działa, ale powinien zostać zastąpiony. Nowy klucz został bezpiecznie pobrany z serwera."
  ],
  "This network key works fine right now and the encrypted data can be unlocked with it.": [
   null,
-  ""
+  "Ten klucz sieciowy działa w tej chwili bez problemu i można za jego pomocą odblokować zaszyfrowane dane."
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
@@ -1479,11 +1483,11 @@ return plural;
  ],
  "Trust Key": [
   null,
-  ""
+  "Zaufaj kluczowi"
  ],
  "Trust new key": [
   null,
-  ""
+  "Zaufaj nowemu kluczowi"
  ],
  "Type": [
   null,
@@ -1567,7 +1571,7 @@ return plural;
  ],
  "Use new key": [
   null,
-  ""
+  "Użyj nowego klucza"
  ],
  "Used": [
   null,
@@ -1603,7 +1607,7 @@ return plural;
  ],
  "Verify Key": [
   null,
-  ""
+  "Sprawdź poprawność klucza"
  ],
  "Very securely erasing $target": [
   null,
@@ -1656,6 +1660,10 @@ return plural;
  "iSCSI Targets": [
   null,
   "Cele iSCSI"
+ ],
+ "undefined": [
+  null,
+  "nieokreślone"
  ],
  "unknown target": [
   null,

@@ -287,7 +287,7 @@ return plural;
  ],
  "Advanced TCA": [
   null,
-  ""
+  "TCA Avançado"
  ],
  "After": [
   null,
@@ -299,11 +299,11 @@ return plural;
  ],
  "Alert and above": [
   null,
-  ""
+  "Alerta e acima"
  ],
  "All In One": [
   null,
-  ""
+  "Tudo em um"
  ],
  "Asset Tag": [
   null,
@@ -323,31 +323,31 @@ return plural;
  ],
  "BIOS": [
   null,
-  ""
+  "BIOS"
  ],
  "BIOS date": [
   null,
-  ""
+  "BIOS data"
  ],
  "BIOS version": [
   null,
-  ""
+  "BIOS versão"
  ],
  "Blade": [
   null,
-  ""
+  "Blade"
  ],
  "Blade enclosure": [
   null,
-  ""
+  "Blade enclosure"
  ],
  "Bug Fix Updates Available": [
   null,
-  ""
+  "Atualizações de correção de bug disponíveis"
  ],
  "Bus Expansion Chassis": [
   null,
-  ""
+  "Chassi de Expansão de Barramento"
  ],
  "CPU": [
   null,
@@ -379,15 +379,15 @@ return plural;
  ],
  "Checking for updates…": [
   null,
-  ""
+  "Verificando atualizações ..."
  ],
  "Class": [
   null,
-  ""
+  "Classe"
  ],
  "Click to see system hardware information": [
   null,
-  ""
+  "Clique para ver as informações do hardware do sistema"
  ],
  "Close": [
   null,
@@ -399,19 +399,19 @@ return plural;
  ],
  "Compact PCI": [
   null,
-  ""
+  "Compacto PCI"
  ],
  "Condition $0=$1 was not met": [
   null,
-  ""
+  "Condição $0=$1 não foi cumprida"
  ],
  "Condition failed": [
   null,
-  ""
+  "Condição falhou"
  ],
  "Convertible": [
   null,
-  ""
+  "Conversível"
  ],
  "Create Timer": [
   null,
@@ -423,7 +423,7 @@ return plural;
  ],
  "Critical and above": [
   null,
-  ""
+  "Crítico e acima"
  ],
  "Current boot": [
   null,
@@ -431,7 +431,7 @@ return plural;
  ],
  "Debug and above": [
   null,
-  ""
+  "Depurar e acima"
  ],
  "Delay": [
   null,
@@ -443,11 +443,11 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Desktop"
  ],
  "Detachable": [
   null,
-  ""
+  "Destacável"
  ],
  "Disable": [
   null,
@@ -463,7 +463,7 @@ return plural;
  ],
  "Docking Station": [
   null,
-  ""
+  "Estação de ancoragem."
  ],
  "Domain": [
   null,
@@ -475,7 +475,7 @@ return plural;
  ],
  "Embedded PC": [
   null,
-  ""
+  "Embedded PC"
  ],
  "Enable": [
   null,
@@ -491,7 +491,7 @@ return plural;
  ],
  "Enhancement Updates Available": [
   null,
-  ""
+  "Atualizações de aprimoramento disponíveis"
  ],
  "Entry": [
   null,
@@ -503,7 +503,7 @@ return plural;
  ],
  "Error and above": [
   null,
-  ""
+  "Erro e acima"
  ],
  "Everything": [
   null,
@@ -511,7 +511,7 @@ return plural;
  ],
  "Expansion Chassis": [
   null,
-  ""
+  "Chassi de Expansão"
  ],
  "Free": [
   null,
@@ -535,7 +535,7 @@ return plural;
  ],
  "Hand Held": [
   null,
-  ""
+  "Portátil"
  ],
  "Hardware": [
   null,
@@ -543,7 +543,7 @@ return plural;
  ],
  "Hardware Information": [
   null,
-  ""
+  "Informação de Hardware"
  ],
  "Host Name": [
   null,
@@ -571,7 +571,7 @@ return plural;
  ],
  "Info and above": [
   null,
-  ""
+  "Info e acima"
  ],
  "Instantiate": [
   null,
@@ -603,7 +603,7 @@ return plural;
  ],
  "IoT Gateway": [
   null,
-  ""
+  "Gateway IoT"
  ],
  "Journal": [
   null,
@@ -623,7 +623,7 @@ return plural;
  ],
  "Laptop": [
   null,
-  ""
+  "Laptop"
  ],
  "Last 24 hours": [
   null,
@@ -655,11 +655,11 @@ return plural;
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "Desktop de baixo perfil"
  ],
  "Lunch Box": [
   null,
-  ""
+  "Lunch Box"
  ],
  "Machine ID": [
   null,
@@ -671,7 +671,7 @@ return plural;
  ],
  "Main Server Chassis": [
   null,
-  ""
+  "Chassi do Servidor Principal"
  ],
  "Manually": [
   null,
@@ -695,11 +695,11 @@ return plural;
  ],
  "Mini PC": [
   null,
-  ""
+  "Mini PC"
  ],
  "Mini Tower": [
   null,
-  ""
+  "Mini Torre"
  ],
  "Minute needs to be a number between 0-59": [
   null,
@@ -711,7 +711,7 @@ return plural;
  ],
  "Model": [
   null,
-  ""
+  "Modelo"
  ],
  "Monday": [
   null,
@@ -719,7 +719,7 @@ return plural;
  ],
  "Multi-system Chassis": [
   null,
-  ""
+  "Chassi Multi-sistema"
  ],
  "NTP Server": [
   null,
@@ -755,7 +755,7 @@ return plural;
  ],
  "Not authorized to upload-report": [
   null,
-  ""
+  "Não autorizado a fazer upload de relatório"
  ],
  "Not synchronized": [
   null,
@@ -767,11 +767,11 @@ return plural;
  ],
  "Notebook": [
   null,
-  ""
+  "Notebook"
  ],
  "Notice and above": [
   null,
-  ""
+  "Observe e acima"
  ],
  "Off": [
   null,
@@ -783,7 +783,7 @@ return plural;
  ],
  "Only Emergency": [
   null,
-  ""
+  "Apenas emergência"
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
@@ -795,15 +795,15 @@ return plural;
  ],
  "Other": [
   null,
-  ""
+  "De outros"
  ],
  "PCI": [
   null,
-  ""
+  "PCI"
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "PackageKit caiu"
  ],
  "Paths": [
   null,
@@ -815,15 +815,15 @@ return plural;
  ],
  "Peripheral Chassis": [
   null,
-  ""
+  "Chassi Periférico"
  ],
  "Pizza Box": [
   null,
-  ""
+  "Pizza Box"
  ],
  "Portable": [
   null,
-  ""
+  "Portatil"
  ],
  "Power Options": [
   null,
@@ -843,19 +843,19 @@ return plural;
  ],
  "Problem details": [
   null,
-  ""
+  "Detalhes do problema"
  ],
  "Problem info": [
   null,
-  ""
+  "Informação do Problema"
  ],
  "RAID Chassis": [
   null,
-  ""
+  "RAID Chassis"
  ],
  "Rack Mount Chassis": [
   null,
-  ""
+  "Rack Mount Chassis"
  ],
  "Real Host Name": [
   null,
@@ -903,19 +903,19 @@ return plural;
  ],
  "Report": [
   null,
-  ""
+  "Relatório"
  ],
  "Reported": [
   null,
-  ""
+  "Relatado"
  ],
  "Reporter 'reporter-ureport' not found.": [
   null,
-  ""
+  "Repórter 'reporter-ureport' não encontrado."
  ],
  "Reporting was unsucessful. Try running `reporter-ureport -d ": [
   null,
-  ""
+  "Os relatórios não tiveram sucesso. Tente executar `reporter-ureport -d"
  ],
  "Reset": [
   null,
@@ -939,7 +939,7 @@ return plural;
  ],
  "Sealed-case PC": [
   null,
-  ""
+  "PC com caixa vedada"
  ],
  "Seconds": [
   null,
@@ -951,7 +951,7 @@ return plural;
  ],
  "Security Updates Available": [
   null,
-  ""
+  "Atualizações de segurança disponíveis"
  ],
  "Service Logs": [
   null,
@@ -975,7 +975,7 @@ return plural;
  ],
  "Severity": [
   null,
-  ""
+  "Gravidade"
  ],
  "Show fingerprints": [
   null,
@@ -991,7 +991,7 @@ return plural;
  ],
  "Slot": [
   null,
-  ""
+  "Slot"
  ],
  "Sockets": [
   null,
@@ -999,7 +999,7 @@ return plural;
  ],
  "Space-saving Computer": [
   null,
-  ""
+  "Computador com economia de espaço"
  ],
  "Specific Time": [
   null,
@@ -1019,7 +1019,7 @@ return plural;
  ],
  "Stick PC": [
   null,
-  ""
+  "Stick PC"
  ],
  "Stop": [
   null,
@@ -1031,11 +1031,11 @@ return plural;
  ],
  "Sub Chassis": [
   null,
-  ""
+  "Sub Chassis"
  ],
  "Sub Notebook": [
   null,
-  ""
+  "Sub Notebook"
  ],
  "Sunday": [
   null,
@@ -1059,11 +1059,11 @@ return plural;
  ],
  "System Information": [
   null,
-  ""
+  "Informação do sistema"
  ],
  "System Not Registered": [
   null,
-  ""
+  "Sistema não registrado"
  ],
  "System Services": [
   null,
@@ -1075,11 +1075,11 @@ return plural;
  ],
  "System Up To Date": [
   null,
-  ""
+  "Sistema atualizado"
  ],
  "Tablet": [
   null,
-  ""
+  "Tablet"
  ],
  "Targets": [
   null,

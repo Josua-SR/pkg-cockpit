@@ -567,6 +567,10 @@ return plural;
   null,
   ""
  ],
+ "Ok": [
+  null,
+  "Ok"
+ ],
  "On": [
   null,
   ""

@@ -555,6 +555,10 @@ return plural;
   null,
   "オフ"
  ],
+ "Ok": [
+  null,
+  "OK"
+ ],
  "On": [
   null,
   "オン"

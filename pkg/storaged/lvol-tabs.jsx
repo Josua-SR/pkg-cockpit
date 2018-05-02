@@ -27,7 +27,7 @@ var React = require("react");
 var StorageControls = require("./storage-controls.jsx");
 
 var StorageButton = StorageControls.StorageButton;
-var StorageLink =   StorageControls.StorageLink;
+var StorageLink = StorageControls.StorageLink;
 
 var _ = cockpit.gettext;
 
@@ -111,9 +111,11 @@ function lvol_and_fsys_resize(client, lvol, size, offline) {
         }
     } else {
         if (size < orig_size) {
-            return fsys_resize().then(crypto_resize).then(lvm_resize);
+            return fsys_resize().then(crypto_resize)
+                    .then(lvm_resize);
         } else if (size > orig_size) {
-            return lvm_resize().then(crypto_resize).then(fsys_resize);
+            return lvm_resize().then(crypto_resize)
+                    .then(fsys_resize);
         }
     }
 }
@@ -123,7 +125,7 @@ function lvol_grow(client, lvol, info) {
     var vgroup = client.vgroups[lvol.VolumeGroup];
     var pool = client.lvols[lvol.ThinPool];
 
-    var usage = utils.get_active_usage(client, block && info.grow_needs_unmount? block.path : null);
+    var usage = utils.get_active_usage(client, block && info.grow_needs_unmount ? block.path : null);
 
     if (usage.Blocking) {
         dialog.open({ Title: cockpit.format(_("$0 is in active use"), lvol.Name),
@@ -140,9 +142,9 @@ function lvol_grow(client, lvol, info) {
                         Title: _("Size"),
                         Value: lvol.Size,
                         Min: lvol.Size,
-                        Max: (pool ?
-                              pool.Size * 3 :
-                              lvol.Size + vgroup.FreeSize),
+                        Max: (pool
+                            ? pool.Size * 3
+                            : lvol.Size + vgroup.FreeSize),
                         AllowInfinite: !!pool,
                         Round: vgroup.ExtentSize
                       }
@@ -150,11 +152,11 @@ function lvol_grow(client, lvol, info) {
                   Action: {
                       Title: _("Grow"),
                       action: function (vals) {
-                          return utils.teardown_active_usage(client, usage).
-                                       then(function () {
-                                           return lvol_and_fsys_resize(client, lvol, vals.size,
-                                                                       info.grow_needs_unmount);
-                                       });
+                          return utils.teardown_active_usage(client, usage)
+                                  .then(function () {
+                                      return lvol_and_fsys_resize(client, lvol, vals.size,
+                                                                  info.grow_needs_unmount);
+                                  });
                       }
                   }
     });
@@ -164,7 +166,7 @@ function lvol_shrink(client, lvol, info) {
     var block = client.lvols_block[lvol.path];
     var vgroup = client.vgroups[lvol.VolumeGroup];
 
-    var usage = utils.get_active_usage(client, block && info.shrink_needs_unmount? block.path : null);
+    var usage = utils.get_active_usage(client, block && info.shrink_needs_unmount ? block.path : null);
 
     if (usage.Blocking) {
         dialog.open({ Title: cockpit.format(_("$0 is in active use"), lvol.Name),
@@ -187,11 +189,11 @@ function lvol_shrink(client, lvol, info) {
                   Action: {
                       Title: _("Shrink"),
                       action: function (vals) {
-                          return utils.teardown_active_usage(client, usage).
-                                       then(function () {
-                                           return lvol_and_fsys_resize(client, lvol, vals.size,
-                                                                       info.shrink_needs_unmount);
-                                       });
+                          return utils.teardown_active_usage(client, usage)
+                                  .then(function () {
+                                      return lvol_and_fsys_resize(client, lvol, vals.size,
+                                                                  info.shrink_needs_unmount);
+                                  });
                       }
                   }
     });
@@ -269,7 +271,7 @@ var BlockVolTab = React.createClass({
                 } else if (block.IdUsage == 'raid') {
                     info = { };
                     shrink_excuse = grow_excuse = _("Physical volumes can not be resized here.");
-                } else if (client.vdo_overlay.find_by_backing_block (block)) {
+                } else if (client.vdo_overlay.find_by_backing_block(block)) {
                     info = {
                         can_shrink: false,
                         can_grow: true,
@@ -339,7 +341,7 @@ var PoolVolTab = React.createClass({
         var self = this;
 
         function perc(ratio) {
-            return (ratio*100).toFixed(0) + "%";
+            return (ratio * 100).toFixed(0) + "%";
         }
 
         function rename() {

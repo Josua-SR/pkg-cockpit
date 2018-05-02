@@ -71,6 +71,10 @@ return plural;
   null,
   " 1\" 次のノードを削除しますか?"
  ],
+ " or drag & drop.": [
+  null,
+  ""
+ ],
  "$0% Free": [
   "$0% Free",
   "$0% 空き"
@@ -347,6 +351,10 @@ return plural;
   null,
   "作成"
  ],
+ "Create Virtual Machine": [
+  null,
+  ""
+ ],
  "Create empty image stream": [
   null,
   "空のイメージストリームの作成"
@@ -490,6 +498,10 @@ return plural;
  "Driver": [
   null,
   "ドライバー"
+ ],
+ "Drop file here to upload.": [
+  null,
+  ""
  ],
  "Empty Directory": [
   null,
@@ -923,6 +935,10 @@ return plural;
   null,
   "OK"
  ],
+ "Only files of size $0 MiB and less are supported": [
+  null,
+  ""
+ ],
  "Operating System": [
   null,
   "オペレーティングシステム"
@@ -946,6 +962,10 @@ return plural;
  "Password": [
   null,
   "パスワード"
+ ],
+ "Paste JSON below, ": [
+  null,
+  ""
  ],
  "Path": [
   null,
@@ -1254,6 +1274,10 @@ return plural;
  "Requires Authentication": [
   null,
   "認証が必要"
+ ],
+ "Resolve above errors to continue": [
+  null,
+  ""
  ],
  "Restart Count": [
   null,
@@ -1631,6 +1655,18 @@ return plural;
   null,
   "VM DELETE に失敗しました。"
  ],
+ "VM definition is not a valid JSON.": [
+  null,
+  ""
+ ],
+ "VM definition is required.": [
+  null,
+  ""
+ ],
+ "VM definition must be an object.": [
+  null,
+  ""
+ ],
  "Virtual Machines": [
   null,
   "仮想マシン"
@@ -1810,6 +1846,10 @@ return plural;
  "up": [
   null,
   "上へ"
+ ],
+ "upload a JSON file": [
+  null,
+  ""
  ],
  "user": [
   null,

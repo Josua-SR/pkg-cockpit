@@ -71,6 +71,10 @@ return plural;
   null,
   " 1\"¿Quiere eliminar los nodos siguientes?"
  ],
+ " or drag & drop.": [
+  null,
+  ""
+ ],
  "$0% Free": [
   "$0% Free",
   "$0 % disponible",
@@ -349,6 +353,10 @@ return plural;
   null,
   "Crear"
  ],
+ "Create Virtual Machine": [
+  null,
+  ""
+ ],
  "Create empty image stream": [
   null,
   "Crea un flujo de imágenes vacío"
@@ -492,6 +500,10 @@ return plural;
  "Driver": [
   null,
   "Driver"
+ ],
+ "Drop file here to upload.": [
+  null,
+  ""
  ],
  "Empty Directory": [
   null,
@@ -925,6 +937,10 @@ return plural;
   null,
   "Aceptar"
  ],
+ "Only files of size $0 MiB and less are supported": [
+  null,
+  ""
+ ],
  "Operating System": [
   null,
   "Sistema Operativo"
@@ -948,6 +964,10 @@ return plural;
  "Password": [
   null,
   "Contraseña"
+ ],
+ "Paste JSON below, ": [
+  null,
+  ""
  ],
  "Path": [
   null,
@@ -1256,6 +1276,10 @@ return plural;
  "Requires Authentication": [
   null,
   "Necesita autenticación"
+ ],
+ "Resolve above errors to continue": [
+  null,
+  ""
  ],
  "Restart Count": [
   null,
@@ -1633,6 +1657,18 @@ return plural;
   null,
   ""
  ],
+ "VM definition is not a valid JSON.": [
+  null,
+  ""
+ ],
+ "VM definition is required.": [
+  null,
+  ""
+ ],
+ "VM definition must be an object.": [
+  null,
+  ""
+ ],
  "Virtual Machines": [
   null,
   ""
@@ -1810,6 +1846,10 @@ return plural;
   ""
  ],
  "up": [
+  null,
+  ""
+ ],
+ "upload a JSON file": [
   null,
   ""
  ],

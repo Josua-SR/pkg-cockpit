@@ -69,7 +69,7 @@ return plural;
  },
  "Applications": [
   null,
-  ""
+  "Aplicações"
  ],
  "Cancel": [
   null,
@@ -77,7 +77,7 @@ return plural;
  ],
  "Checking for new applications": [
   null,
-  ""
+  "Verificando novos aplicativos"
  ],
  "Close": [
   null,
@@ -89,27 +89,27 @@ return plural;
  ],
  "Go to Application": [
   null,
-  ""
+  "Vá para o aplicativo"
  ],
  "Install": [
   null,
-  ""
+  "Instale"
  ],
  "Installing": [
   null,
-  ""
+  "Instalando"
  ],
  "No applications installed or available": [
   null,
-  ""
+  "Nenhum aplicativo instalado ou disponível"
  ],
  "No description provided.": [
   null,
-  ""
+  "Nenhuma descrição fornecida."
  ],
  "No installation package found for this application.": [
   null,
-  ""
+  "Nenhum pacote de instalação encontrado para este aplicativo."
  ],
  "Ok": [
   null,
@@ -117,7 +117,7 @@ return plural;
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "PackageKit caiu"
  ],
  "Remove": [
   null,
@@ -125,7 +125,7 @@ return plural;
  ],
  "Removing": [
   null,
-  ""
+  "Removendo"
  ],
  "Unknown Application": [
   null,

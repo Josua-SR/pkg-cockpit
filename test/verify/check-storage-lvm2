@@ -23,7 +23,7 @@ import parent
 from testlib import *
 from storagelib import *
 
-@skipImage("UDisks doesn't have support for LVM", "debian-stable", "debian-testing", "ubuntu-1604", "ubuntu-stable")
+@skipImage("UDisks doesn't have support for LVM", "debian-stable", "ubuntu-1604", "ubuntu-stable")
 class TestStorage(StorageCase):
     def testLvm(self):
         m = self.machine
@@ -47,6 +47,7 @@ class TestStorage(StorageCase):
 
         # Create a volume group out of two disks
         m.execute("vgcreate TEST1 %s %s" % (dev_1, dev_2))
+        b.wait_present("#vgroups")
         b.wait_in_text("#vgroups", "TEST1")
         b.click('tr:contains("TEST1")')
         b.wait_visible("#storage-detail")

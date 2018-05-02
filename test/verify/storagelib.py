@@ -209,7 +209,13 @@ class StorageCase(MachineCase):
                 self.browser.set_checked(sel + " input[type=checkbox]", True)
                 self.browser.set_val(sel + " input[type=text]", val.val)
         else:
-            self.browser.set_val(self.dialog_field(field), val)
+            sel = self.dialog_field(field)
+            ftype = self.browser.attr(sel, "data-field-type")
+            if ftype == "select":
+                self.browser.click(sel + " button.dropdown-toggle")
+                self.browser.click(sel + " li[data-data=%s] a" % val)
+            else:
+                self.browser.set_val(self.dialog_field(field), val)
 
     def dialog_set_expander(self, field, val):
         self.browser.call_js_func(
@@ -253,10 +259,10 @@ class StorageCase(MachineCase):
         self.browser.wait_not_visible(self.dialog_field(field))
 
     def dialog_apply(self):
-        self.browser.click('#dialog [data-action="apply"]')
+        self.browser.click('#dialog button.apply')
 
     def dialog_cancel(self):
-        self.browser.click('#dialog [data-action="cancel"]')
+        self.browser.click('#dialog button.cancel')
 
     def dialog_wait_close(self):
         self.browser.wait_not_present('#dialog')

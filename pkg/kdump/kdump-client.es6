@@ -17,8 +17,6 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
- /* jshint esversion:6 */
-
 import cockpit from 'cockpit';
 var _ = cockpit.gettext;
 import {proxy as serviceProxy} from 'service';
@@ -108,24 +106,24 @@ export class KdumpClient {
             dfd.resolve();
         } else {
             // local path, try to see if we can write
-            cockpit.script(testWritableScript, [path], { superuser: "try" } )
-                .done(dfd.resolve)
-                .fail((error) => {
-                    dfd.reject(cockpit.format(_("Directory $0 isn't writable or doesn't exist."), path));
-                });
+            cockpit.script(testWritableScript, [path], { superuser: "try" })
+                    .done(dfd.resolve)
+                    .fail((error) => {
+                        dfd.reject(cockpit.format(_("Directory $0 isn't writable or doesn't exist."), path));
+                    });
         }
         return dfd.promise();
     }
     writeSettings(settings) {
         var dfd = cockpit.defer();
         this.configClient.write(settings)
-            .done(() => {
+                .done(() => {
                 // after we've written the new config, we may have to restart the service
-                this.kdumpService.tryRestart()
-                    .done(dfd.resolve)
-                    .fail(dfd.reject);
-            })
-            .fail(dfd.reject);
+                    this.kdumpService.tryRestart()
+                            .done(dfd.resolve)
+                            .fail(dfd.reject);
+                })
+                .fail(dfd.reject);
         return dfd.promise();
     }
     targetFromSettings(settings) {

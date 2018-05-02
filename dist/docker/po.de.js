@@ -350,10 +350,6 @@ return plural;
   null,
   ""
  ],
- "Erase containers, reformat disks, and add them": [
-  null,
-  ""
- ],
  "Error message from Docker:": [
   null,
   "Fehlermeldung von Docker:"
@@ -818,10 +814,6 @@ return plural;
  "The scan from $time ($type) was not successful.": [
   null,
   ""
- ],
- "The storage pool will be reset to optimize its layout.  All containers will be erased.": [
-  null,
-  "Der Storage Pool wird zurückgesetzt, um das Layout zu optimieren. Alle Container werden gelöscht."
  ],
  "This image does not exist.": [
   null,

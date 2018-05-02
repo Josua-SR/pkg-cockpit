@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 /*
  * This file is part of Cockpit.
  *
@@ -31,7 +30,6 @@ import {
 import DonutChart from "../../c3charts.jsx";
 
 const _ = cockpit.gettext;
-
 
 class VmUsageTab extends React.Component {
     componentDidMount() {
@@ -88,21 +86,21 @@ class VmUsageTab extends React.Component {
         };
 
         return (<table>
-                <tr>
-                    <td>
-                        <DonutChart data={memChartData} size={chartSize} width='8' tooltipText=' '
-                                    primaryTitle={toReadableNumber(convertToUnit(rssMem, units.KiB, units.GiB))}
-                                    secondaryTitle='GiB'
-                                    caption={`used from ${cockpit.format_bytes(memTotal * 1024)} memory`}/>
-                    </td>
+            <tr>
+                <td>
+                    <DonutChart data={memChartData} size={chartSize} width='8' tooltipText=' '
+                        primaryTitle={toReadableNumber(convertToUnit(rssMem, units.KiB, units.GiB))}
+                        secondaryTitle='GiB'
+                        caption={`used from ${cockpit.format_bytes(memTotal * 1024)} memory`}/>
+                </td>
 
-                    <td>
-                        <DonutChart data={cpuChartData} size={chartSize} width='8' tooltipText=' '
-                                    primaryTitle={cpuUsage} secondaryTitle='%'
-                                    caption={`used from ${totalCpus} vCPUs`}/>
-                    </td>
-                </tr>
-            </table>
+                <td>
+                    <DonutChart data={cpuChartData} size={chartSize} width='8' tooltipText=' '
+                        primaryTitle={cpuUsage} secondaryTitle='%'
+                        caption={`used from ${totalCpus} vCPUs`}/>
+                </td>
+            </tr>
+        </table>
 
         );
     }

@@ -1,5 +1,5 @@
 # Generated Makefile data for tuned
-# Stamp: Wed Apr 18 2018 11:44:00 GMT+0000 (UTC)
+# Stamp: Wed May 02 2018 13:52:34 GMT+0000 (UTC)
 
 tuned_INPUTS = \
 	node_modules/react-lite/LICENSE \

@@ -256,7 +256,7 @@ return plural;
  ],
  "Add network key": [
   null,
-  ""
+  "Añadir clave de red"
  ],
  "Adding physical volume to $target": [
   null,
@@ -604,7 +604,7 @@ return plural;
  ],
  "Existing passphrase": [
   null,
-  ""
+  "Existe frase de paso"
  ],
  "Extended Partition": [
   null,
@@ -704,19 +704,19 @@ return plural;
  ],
  "Key does not work": [
   null,
-  ""
+  "La clave no trabaja"
  ],
  "Key is obsolete": [
   null,
-  ""
+  "La clave es obsoleta"
  ],
  "Key is okay": [
   null,
-  ""
+  "La clave es correcta"
  ],
  "Key server address": [
   null,
-  ""
+  "Clave de dirección de servidor"
  ],
  "Local Mount Point": [
   null,
@@ -752,7 +752,7 @@ return plural;
  ],
  "Manually verify the key on the server: ": [
   null,
-  ""
+  "Verificada manualmente la clave sobre el servidor:"
  ],
  "Marking $target as faulty": [
   null,
@@ -860,7 +860,7 @@ return plural;
  ],
  "Network keys": [
   null,
-  ""
+  "Claves de red"
  ],
  "New NFS Mount": [
   null,
@@ -933,6 +933,10 @@ return plural;
  "Off": [
   null,
   "Apagado"
+ ],
+ "Ok": [
+  null,
+  "Aceptar"
  ],
  "On": [
   null,
@@ -1024,7 +1028,7 @@ return plural;
  ],
  "Please confirm network key removal": [
   null,
-  ""
+  "Por favor confirme el borrado de la clave de red"
  ],
  "Please confirm stopping of $0": [
   null,
@@ -1052,7 +1056,7 @@ return plural;
  ],
  "Process": [
   null,
-  ""
+  "Proceso"
  ],
  "Purpose": [
   null,
@@ -1156,7 +1160,7 @@ return plural;
  ],
  "Remove key": [
   null,
-  ""
+  "Borrar clave"
  ],
  "Removing $target from RAID Device": [
   null,
@@ -1649,6 +1653,10 @@ return plural;
  "iSCSI Targets": [
   null,
   ""
+ ],
+ "undefined": [
+  null,
+  "sin definir"
  ],
  "unknown target": [
   null,

@@ -36,9 +36,6 @@ class TestDocker(MachineCase):
 
         m.execute("systemctl start docker || systemctl start docker-latest")
 
-        # HACK: docker fails to start a container without /etc/resolv.conf
-        m.execute("touch /etc/resolv.conf")
-
     def confirm(self):
         b = self.browser
         b.wait_popup("confirmation-dialog")
@@ -412,7 +409,8 @@ CMD ["/bin/sh"]
         b.wait_visible("#curtain")
         b.wait_text("#curtain h1", "Docker is not installed or activated on the system")
         b.click("#curtain button[data-action='docker-start']")
-        b.wait_visible("#containers-containers")
+        with b.wait_timeout(120):
+            b.wait_visible("#containers-containers")
 
         self.allow_authorize_journal_messages()
         self.allow_journal_messages("cannot reauthorize identity.*:.*unix-user:root.*")
@@ -464,7 +462,8 @@ CMD ["/bin/sh"]
         self.login_and_go("/docker")
 
         # show all containers to interact with stopped ones
-        b.wait_visible("#containers-containers")
+        with b.wait_timeout(120):
+            b.wait_visible("#containers-containers")
         b.click("#containers-containers-filter button")
         b.wait_visible("#containers-containers-filter .dropdown-menu")
         b.click("#containers-containers-filter li[data-data='all'] a")
@@ -582,10 +581,8 @@ CMD ["/bin/sh"]
 class TestAtomicScan(MachineCase):
     def setUp(self):
         MachineCase.setUp(self)
-        self.machine.execute("systemctl start docker")
 
-        # HACK: docker fails to start a container without /etc/resolv.conf
-        self.machine.execute("touch /etc/resolv.conf")
+        self.machine.execute("systemctl start docker")
 
     def testBasic(self):
         b = self.browser

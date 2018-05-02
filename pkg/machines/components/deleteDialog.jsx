@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 /*
  * This file is part of Cockpit.
  *
@@ -27,10 +26,6 @@ import './deleteDialog.css';
 
 const _ = cockpit.gettext;
 
-// Explicitly use React so that jshint doesn't complain.  The conversion to js inserts
-// references to React that jshint doesn't seem to see.
-React;
-
 const DeleteDialogBody = ({ values, onChange }) => {
     function disk_row(disk) {
         return (
@@ -38,9 +33,9 @@ const DeleteDialogBody = ({ values, onChange }) => {
                 <td>
                     <input type="checkbox" checked={disk.checked}
                            onChange={(event) => {
-                                   disk.checked = event.target.checked;
-                                   onChange();
-                               }}/>
+                               disk.checked = event.target.checked;
+                               onChange();
+                           }}/>
                 </td>
                 <td>{disk.file}</td>
                 <td>{disk.target}</td>
@@ -79,11 +74,12 @@ export function deleteDialog(vm, dispatch) {
         disks: [ ]
     };
 
-    Object.keys(vm.disks).sort().forEach(t => {
-        let d = vm.disks[t];
-        if (d.type == 'file' && d.source.file)
-            values.disks.push({ target: d.target, file: d.source.file, checked: !d.readonly });
-    });
+    Object.keys(vm.disks).sort()
+            .forEach(t => {
+                let d = vm.disks[t];
+                if (d.type == 'file' && d.source.file)
+                    values.disks.push({ target: d.target, file: d.source.file, checked: !d.readonly });
+            });
 
     if (vm.state == 'running')
         values.destroy = true;

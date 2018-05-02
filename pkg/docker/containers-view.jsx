@@ -139,14 +139,14 @@ var ContainerProblems = React.createClass({
         var problem_cursors = [];
         for (var i = 0; i < problem.length; i++) {
             problem_cursors.push(<a data-url={problem[i][0]} className='list-group-item' role="link" tabIndex="0" onClick={this.onItemClick}>
-                                   <span className="pficon pficon-warning-triangle-o fa-lg"></span>
-                                   {problem[i][1]}
-                                 </a>)
+                <span className="pficon pficon-warning-triangle-o fa-lg"></span>
+                {problem[i][1]}
+            </a>)
         }
 
         return (
             <div className='list-group dialog-list-ct'>
-              {problem_cursors}
+                {problem_cursors}
             </div>
         );
     }
@@ -191,10 +191,10 @@ var ContainerList = React.createClass({
         util.confirm(cockpit.format(_("Please confirm deletion of $0"), docker.truncate_id(container.Id)),
                      _("Deleting a container will erase all data in it."),
                      _("Delete"))
-                         .done(function () {
-                             util.docker_container_delete(this.props.client, container.Id,
-                                 function() { }, function () { });
-                         }.bind(this));
+                .done(function () {
+                    util.docker_container_delete(this.props.client, container.Id,
+                                                 function() { }, function () { });
+                }.bind(this));
     },
 
     containersChanged: function () {
@@ -234,10 +234,10 @@ var ContainerList = React.createClass({
         this.problems = this.problems_client.proxies('org.freedesktop.Problems2.Entry', '/org/freedesktop/Problems2/Entry');
         this.problems.wait(function() {
             if (typeof self.service.GetSession !== "undefined"){
-                self.service.GetSession().
-                    done(function(session_path) {
-                        self.problems_client.call(session_path, "org.freedesktop.Problems2.Session", "Authorize", [{}]);
-                    });
+                self.service.GetSession()
+                        .done(function(session_path) {
+                            self.problems_client.call(session_path, "org.freedesktop.Problems2.Session", "Authorize", [{}]);
+                        });
             }
         });
 
@@ -333,7 +333,7 @@ var ContainerList = React.createClass({
                     {
                         name: _("Problems"),
                         renderer: ContainerProblems,
-                        data: { problem: c_problems}
+                        data: { problem: c_problems }
                     }
                 );
             }
@@ -345,7 +345,7 @@ var ContainerList = React.createClass({
                                        listingActions={actions}/>;
         }, this);
 
-        var columnTitles =  [ _("Name"), _("Image"), _("Command"), _("CPU"), _("Memory"), _("State")];
+        var columnTitles = [_("Name"), _("Image"), _("Command"), _("CPU"), _("Memory"), _("State")];
 
         var emptyCaption;
         if (this.props.onlyShowRunning) {
@@ -391,7 +391,7 @@ var ImageDetails = React.createClass({
                     <dt>{_("Command")}</dt>    <dd>{ util.quote_cmdline(command) }</dd>
                     <dt>{_("Created")}</dt>    <dd title={ created.toLocaleString() }>{ created.fromNow() }</dd>
                     <dt>{_("Author")}</dt>     <dd>{ image.Author}</dd>
-                    <dt>{_("Ports")}</dt>      <dd>{ ports.join(', ')  }</dd>
+                    <dt>{_("Ports")}</dt>      <dd>{ ports.join(', ') }</dd>
                 </dl>
             </div>
         );
@@ -531,13 +531,13 @@ var ImageList = React.createClass({
             return;
 
         util.confirm(cockpit.format(_("Delete $0"), image.RepoTags[0]),
-                     _("Are you sure you want to delete this image?"), _("Delete")).
-            done(function () {
-                this.props.client.rmi(image.Id).
-                    fail(function(ex) {
-                        util.show_unexpected_error(ex);
-                    });
-            }.bind(this));
+                     _("Are you sure you want to delete this image?"), _("Delete"))
+                .done(function () {
+                    this.props.client.rmi(image.Id)
+                            .fail(function(ex) {
+                                util.show_unexpected_error(ex);
+                            });
+                }.bind(this));
     },
 
     showRunImageDialog: function (event) {
@@ -602,8 +602,8 @@ var ImageList = React.createClass({
             element = <div className="spinner"></div>
         } else {
             element = <button className="btn btn-default btn-control-ct fa fa-play"
-                    onClick={ this.showRunImageDialog.bind(this) }
-                    data-image={image.Id} />
+                onClick={ this.showRunImageDialog.bind(this) }
+                data-image={image.Id} />
         }
 
         var columns = [
@@ -658,8 +658,8 @@ var ImageList = React.createClass({
         var imageRows = filtered.map(this.renderRow, this);
 
         var getNewImageAction = <a role="link" tabIndex="0" onClick={this.handleSearchImageClick} className="card-pf-link-with-icon pull-right">
-                                    <span className="pficon pficon-add-circle-o"></span>{_("Get new image")}
-                                </a>;
+            <span className="pficon pficon-add-circle-o"></span>{_("Get new image")}
+        </a>;
 
         var columnTitles = [ _("Name"), '', _("Created"), _("Size"), '' ];
 
@@ -690,9 +690,9 @@ var ImageList = React.createClass({
         return (
             <div>
                 <Listing.Listing title={_("Images")}
-                                 columnTitles={columnTitles}
-                                 emptyCaption={emptyCaption}
-                                 actions={getNewImageAction}>
+                    columnTitles={columnTitles}
+                    emptyCaption={emptyCaption}
+                    actions={getNewImageAction}>
                     {imageRows}
                 </Listing.Listing>
                 {pendingRows}

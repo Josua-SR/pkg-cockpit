@@ -71,6 +71,10 @@ return plural;
   null,
   "1 \"Deseja excluir os seguintes nós?"
  ],
+ " or drag & drop.": [
+  null,
+  ""
+ ],
  "$0% Free": [
   "$0% Free",
   "$0% Livre",
@@ -349,6 +353,10 @@ return plural;
   null,
   "Criar"
  ],
+ "Create Virtual Machine": [
+  null,
+  ""
+ ],
  "Create empty image stream": [
   null,
   "Criar um stream de imagem vazio"
@@ -493,6 +501,10 @@ return plural;
   null,
   "Driver"
  ],
+ "Drop file here to upload.": [
+  null,
+  ""
+ ],
  "Empty Directory": [
   null,
   "Diretório Vazio"
@@ -547,7 +559,7 @@ return plural;
  ],
  "GiB": [
   null,
-  ""
+  "GiB"
  ],
  "Git Repository": [
   null,
@@ -671,7 +683,7 @@ return plural;
  ],
  "Labels:": [
   null,
-  ""
+  "Rótulos:"
  ],
  "Last Heartbeat": [
   null,
@@ -763,7 +775,7 @@ return plural;
  ],
  "N/A": [
   null,
-  ""
+  "N/A"
  ],
  "NFS": [
   null,
@@ -863,7 +875,7 @@ return plural;
  ],
  "No virtual machines": [
   null,
-  ""
+  "Nenhuma máquina virtual"
  ],
  "No volumes are present.": [
   null,
@@ -879,7 +891,7 @@ return plural;
  ],
  "Node:": [
   null,
-  ""
+  "Node:"
  ],
  "Nodes": [
   null,
@@ -895,7 +907,7 @@ return plural;
  ],
  "Not Available": [
   null,
-  ""
+  "Não disponível"
  ],
  "Not Ready": [
   null,
@@ -925,6 +937,10 @@ return plural;
   null,
   "Ok"
  ],
+ "Only files of size $0 MiB and less are supported": [
+  null,
+  ""
+ ],
  "Operating System": [
   null,
   "Sistema Operacional"
@@ -948,6 +964,10 @@ return plural;
  "Password": [
   null,
   "Senha"
+ ],
+ "Paste JSON below, ": [
+  null,
+  ""
  ],
  "Path": [
   null,
@@ -1059,7 +1079,7 @@ return plural;
  ],
  "Pod:": [
   null,
-  ""
+  "Pod:"
  ],
  "Pods": [
   null,
@@ -1256,6 +1276,10 @@ return plural;
  "Requires Authentication": [
   null,
   "Requer Autenticação"
+ ],
+ "Resolve above errors to continue": [
+  null,
+  ""
  ],
  "Restart Count": [
   null,
@@ -1633,6 +1657,18 @@ return plural;
   null,
   ""
  ],
+ "VM definition is not a valid JSON.": [
+  null,
+  ""
+ ],
+ "VM definition is required.": [
+  null,
+  ""
+ ],
+ "VM definition must be an object.": [
+  null,
+  ""
+ ],
  "Virtual Machines": [
   null,
   "Máquinas Virtuais"
@@ -1810,6 +1846,10 @@ return plural;
   ""
  ],
  "up": [
+  null,
+  ""
+ ],
+ "upload a JSON file": [
   null,
   ""
  ],

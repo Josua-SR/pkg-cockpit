@@ -45,13 +45,13 @@ export class OverviewSidePanel extends React.Component {
                     </span>
                     <span>{this.props.title}</span>
                 </div>
-                { this.props.children.length > 0 ?
-                  <table className={"table" + (this.props.hover !== false ? " table-hover" : "")}>
-                      <tbody>
-                          { this.props.children }
-                      </tbody>
-                  </table>
-                  :  <div className="empty-panel-text">{this.props.empty_text}</div>
+                { this.props.children.length > 0
+                    ? <table className={"table" + (this.props.hover !== false ? " table-hover" : "")}>
+                        <tbody>
+                            { this.props.children }
+                        </tbody>
+                    </table>
+                    : <div className="empty-panel-text">{this.props.empty_text}</div>
                 }
             </div>
         );
@@ -68,37 +68,37 @@ export class OverviewSidePanelRow extends React.Component {
 
         return (
             <tr data-testkey={this.props.testkey}
-                onClick={this.props.go? go : null} className={this.props.highlight? "highlight-ct" : ""}>
+                onClick={this.props.go ? go : null} className={this.props.highlight ? "highlight-ct" : ""}>
                 <td className="storage-icon">
-                    { this.props.kind !== false ?
-                      <div><img  src={"images/storage-" + (this.props.kind || "disk") + ".png"}/></div>
-                      : null
+                    { this.props.kind !== false
+                        ? <div><img src={"images/storage-" + (this.props.kind || "disk") + ".png"}/></div>
+                        : null
                     }
                 </td>
                 <td className="row">
                     <span className="col-md-12 storage-disk-name">{this.props.name}</span>
                     <br/>
                     <span className="col-md-12 col-lg-5 storage-disk-size">{this.props.detail}</span>
-                    { this.props.stats ?
-                      <span className="col-md-12 col-lg-7">
-                          <span>R: {fmt_rate(this.props.stats[0])}</span>
-                          { "\n" }
-                          <span className="rate-gap"/>
-                          { "\n" }
-                          <span>W: {fmt_rate(this.props.stats[1])}</span>
-                      </span>
-                      : null
+                    { this.props.stats
+                        ? <span className="col-md-12 col-lg-7">
+                            <span>R: {fmt_rate(this.props.stats[0])}</span>
+                            { "\n" }
+                            <span className="rate-gap"/>
+                            { "\n" }
+                            <span>W: {fmt_rate(this.props.stats[1])}</span>
+                        </span>
+                        : null
                     }
                 </td>
                 { this.props.actions ? (
-                      <td className="storage-icon">
-                          { this.props.actions }
-                      </td>
-                  ) : this.props.client.path_jobs[this.props.job_path] ? (
-                      <td className="storage-icon">
-                          <div className="spinner spinner-sm"/>
-                      </td>
-                  ) : null
+                    <td className="storage-icon">
+                        { this.props.actions }
+                    </td>
+                ) : this.props.client.path_jobs[this.props.job_path] ? (
+                    <td className="storage-icon">
+                        <div className="spinner spinner-sm"/>
+                    </td>
+                ) : null
                 }
             </tr>
         );
@@ -108,7 +108,7 @@ export class OverviewSidePanelRow extends React.Component {
 class Overview extends React.Component {
     constructor() {
         super();
-        this.state = { highlight: false },
+        this.state = { highlight: false };
         this.on_client_changed = () => { this.setState({}); };
     }
 

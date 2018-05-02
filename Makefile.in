@@ -1825,6 +1825,7 @@ OPENSANS_FONTS = \
 @ENABLE_DOC_TRUE@	doc/guide/authentication.xml \
 @ENABLE_DOC_TRUE@	doc/guide/embedding.xml \
 @ENABLE_DOC_TRUE@	doc/guide/feature-docker.xml \
+@ENABLE_DOC_TRUE@	doc/guide/feature-firewall.xml \
 @ENABLE_DOC_TRUE@	doc/guide/feature-journal.xml \
 @ENABLE_DOC_TRUE@	doc/guide/feature-kubernetes.xml \
 @ENABLE_DOC_TRUE@	doc/guide/feature-machines.xml \

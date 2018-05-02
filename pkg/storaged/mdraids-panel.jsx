@@ -43,11 +43,11 @@ export class MDRaidsPanel extends React.Component {
                               { SelectOne: "level",
                                 Title: _("RAID Level"),
                                 Options: [
-                                    { value: "raid0",  Title: _("RAID 0 (Stripe)") },
-                                    { value: "raid1",  Title: _("RAID 1 (Mirror)") },
-                                    { value: "raid4",  Title: _("RAID 4 (Dedicated Parity)") },
-                                    { value: "raid5",  Title: _("RAID 5 (Distributed Parity)"), selected: true },
-                                    { value: "raid6",  Title: _("RAID 6 (Double Distributed Parity)") },
+                                    { value: "raid0", Title: _("RAID 0 (Stripe)") },
+                                    { value: "raid1", Title: _("RAID 1 (Mirror)") },
+                                    { value: "raid4", Title: _("RAID 4 (Dedicated Parity)") },
+                                    { value: "raid5", Title: _("RAID 5 (Distributed Parity)"), selected: true },
+                                    { value: "raid6", Title: _("RAID 6 (Double Distributed Parity)") },
                                     { value: "raid10", Title: _("RAID 10 (Stripe of Mirrors)") }
                                 ]
                               },
@@ -73,7 +73,7 @@ export class MDRaidsPanel extends React.Component {
                                 Options: get_available_spaces(client).map(available_space_to_option),
                                 EmptyWarning: _("No disks are available."),
                                 validate: function (disks, vals) {
-                                    var disks_needed = vals.level == "raid6"? 4 : 2;
+                                    var disks_needed = vals.level == "raid6" ? 4 : 2;
                                     if (disks.length < disks_needed)
                                         return cockpit.format(_("At least $0 disks are needed."),
                                                               disks_needed);
@@ -112,7 +112,8 @@ export class MDRaidsPanel extends React.Component {
             );
         }
 
-        var mdraids = Object.keys(client.mdraids).sort(cmp_mdraid).map(make_mdraid);
+        var mdraids = Object.keys(client.mdraids).sort(cmp_mdraid)
+                .map(make_mdraid);
 
         var actions = (
             <StorageButton kind="primary" onClick={create_mdraid} id="create-mdraid">

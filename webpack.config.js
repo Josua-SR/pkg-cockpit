@@ -51,6 +51,10 @@ var info = {
             "networkmanager/utils.js"
         ],
 
+        "networkmanager/firewall": [
+            "networkmanager/firewall.jsx"
+        ],
+
         "ostree/ostree": [
             "ostree/app.js",
             "ostree/ostree.less",
@@ -206,6 +210,8 @@ var info = {
         "machines/vnc.css",
 
         "networkmanager/index.html",
+        "networkmanager/firewall.html",
+        "networkmanager/manifest.json",
 
         "ostree/index.html",
 
@@ -425,8 +431,9 @@ module.exports = {
                 loader: "jshint-loader"
             },
             {
-                test: /\.es6$/, // include .js files
-                loader: "jshint-loader?esversion=6"
+                test: /\.es6$/,
+                exclude: /\/node_modules\/.*\//, // exclude external dependencies
+                loader: "eslint-loader"
             },
             {
                 test: /\.jsx$/,
