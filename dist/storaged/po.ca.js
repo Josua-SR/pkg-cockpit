@@ -934,6 +934,10 @@ return plural;
   null,
   "Off"
  ],
+ "Ok": [
+  null,
+  "D'acord"
+ ],
  "On": [
   null,
   "On"
@@ -1649,6 +1653,10 @@ return plural;
  "iSCSI Targets": [
   null,
   "Destinacions iSCSI"
+ ],
+ "undefined": [
+  null,
+  "indefinit"
  ],
  "unknown target": [
   null,

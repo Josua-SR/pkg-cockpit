@@ -1,7 +1,11 @@
 # Generated Makefile data for networkmanager
-# Stamp: Wed Apr 18 2018 11:44:00 GMT+0000 (UTC)
+# Stamp: Wed May 02 2018 13:52:34 GMT+0000 (UTC)
 
 networkmanager_INPUTS = \
+	node_modules/bootstrap/LICENSE \
+	node_modules/bootstrap/README.md \
+	node_modules/bootstrap/less/variables.less \
+	node_modules/bootstrap/package.json \
 	node_modules/jquery-flot/LICENSE.txt \
 	node_modules/jquery-flot/README.md \
 	node_modules/jquery-flot/jquery.flot.js \
@@ -12,6 +16,11 @@ networkmanager_INPUTS = \
 	node_modules/mustache/README.md \
 	node_modules/mustache/mustache.js \
 	node_modules/mustache/package.json \
+	node_modules/patternfly/LICENSE.txt \
+	node_modules/patternfly/README.md \
+	node_modules/patternfly/dist/less/color-variables.less \
+	node_modules/patternfly/dist/less/variables.less \
+	node_modules/patternfly/package.json \
 	node_modules/qunit-tap/GPL-LICENSE.txt \
 	node_modules/qunit-tap/MIT-LICENSE.txt \
 	node_modules/qunit-tap/lib/qunit-tap.js \
@@ -21,11 +30,21 @@ networkmanager_INPUTS = \
 	node_modules/qunitjs/package.json \
 	node_modules/qunitjs/qunit/qunit.css \
 	node_modules/qunitjs/qunit/qunit.js \
+	node_modules/react-lite/LICENSE \
+	node_modules/react-lite/README.md \
+	node_modules/react-lite/dist/react-lite.js \
+	node_modules/react-lite/package.json \
+	pkg/lib/cockpit-components-dialog.jsx \
+	pkg/lib/cockpit-components-listing.jsx \
+	pkg/lib/cockpit-components-onoff.css \
+	pkg/lib/cockpit-components-onoff.jsx \
+	pkg/lib/cockpit-components-tooltip.jsx \
 	pkg/lib/journal.css \
 	pkg/lib/journal.js \
 	pkg/lib/journal_day_header.mustache \
 	pkg/lib/journal_line.mustache \
 	pkg/lib/journal_reboot.mustache \
+	pkg/lib/listing.less \
 	pkg/lib/mustache.js \
 	pkg/lib/page.css \
 	pkg/lib/patterns.js \
@@ -34,7 +53,13 @@ networkmanager_INPUTS = \
 	pkg/lib/qunit-config.js \
 	pkg/lib/qunit-template.html \
 	pkg/lib/qunit-tests.js \
+	pkg/lib/service.js \
 	pkg/lib/table.css \
+	pkg/lib/tooltip.css \
+	pkg/lib/variables.less \
+	pkg/networkmanager/firewall-client.es6 \
+	pkg/networkmanager/firewall.html \
+	pkg/networkmanager/firewall.jsx \
 	pkg/networkmanager/index.html \
 	pkg/networkmanager/interfaces.js \
 	pkg/networkmanager/networking.css \
@@ -43,6 +68,11 @@ networkmanager_INPUTS = \
 	$(NULL)
 
 networkmanager_OUTPUTS = \
+	dist/networkmanager/firewall.css \
+	dist/networkmanager/firewall.css.map \
+	dist/networkmanager/firewall.html \
+	dist/networkmanager/firewall.min.js \
+	dist/networkmanager/firewall.min.js.map \
 	dist/networkmanager/index.html \
 	dist/networkmanager/network.css \
 	dist/networkmanager/network.css.map \
@@ -58,13 +88,19 @@ networkmanager_OUTPUTS = \
 networkmanager_PO = dist/networkmanager/po.js $(patsubst %,dist/networkmanager/po.%.js,$(LINGUAS))
 
 networkmanager_INSTALL = \
+	dist/networkmanager/firewall.css.gz \
+	dist/networkmanager/firewall.html.gz \
+	dist/networkmanager/firewall.min.js.gz \
 	dist/networkmanager/index.html.gz \
+	dist/networkmanager/manifest.json \
 	dist/networkmanager/network.css.gz \
 	dist/networkmanager/network.min.js.gz \
 	$(addsuffix .gz,$(networkmanager_PO)) \
 	$(NULL)
 
 networkmanager_DEBUG = \
+	dist/networkmanager/firewall.css.map \
+	dist/networkmanager/firewall.min.js.map \
 	dist/networkmanager/network.css.map \
 	dist/networkmanager/network.min.js.map \
 	dist/networkmanager/test-utils.css.map \
@@ -77,10 +113,20 @@ networkmanager_TESTS = \
 
 dist/networkmanager/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/jquery-flot/jquery.flot.js -N node_modules/jquery-flot/jquery.flot.selection.js -N node_modules/jquery-flot/jquery.flot.time.js -N node_modules/mustache/mustache.js -N node_modules/qunit-tap/lib/qunit-tap.js -N node_modules/qunitjs/qunit/qunit.css -N node_modules/qunitjs/qunit/qunit.js -N pkg/lib/journal.css -N pkg/lib/journal.js -N pkg/lib/journal_day_header.mustache -N pkg/lib/journal_line.mustache -N pkg/lib/journal_reboot.mustache -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/plot.css -N pkg/lib/plot.js -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/table.css -N pkg/networkmanager/index.html -N pkg/networkmanager/interfaces.js -N pkg/networkmanager/networking.css -N pkg/networkmanager/test-utils.js -N pkg/networkmanager/utils.js $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/jquery-flot/jquery.flot.js -N node_modules/jquery-flot/jquery.flot.selection.js -N node_modules/jquery-flot/jquery.flot.time.js -N node_modules/mustache/mustache.js -N node_modules/patternfly/dist/less/color-variables.less -N node_modules/patternfly/dist/less/variables.less -N node_modules/qunit-tap/lib/qunit-tap.js -N node_modules/qunitjs/qunit/qunit.css -N node_modules/qunitjs/qunit/qunit.js -N node_modules/react-lite/dist/react-lite.js -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-onoff.css -N pkg/lib/cockpit-components-onoff.jsx -N pkg/lib/cockpit-components-tooltip.jsx -N pkg/lib/journal.css -N pkg/lib/journal.js -N pkg/lib/journal_day_header.mustache -N pkg/lib/journal_line.mustache -N pkg/lib/journal_reboot.mustache -N pkg/lib/listing.less -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/plot.css -N pkg/lib/plot.js -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/service.js -N pkg/lib/table.css -N pkg/lib/tooltip.css -N pkg/lib/variables.less -N pkg/networkmanager/firewall-client.es6 -N pkg/networkmanager/firewall.html -N pkg/networkmanager/firewall.jsx -N pkg/networkmanager/index.html -N pkg/networkmanager/interfaces.js -N pkg/networkmanager/networking.css -N pkg/networkmanager/test-utils.js -N pkg/networkmanager/utils.js $< > $@.tmp && mv $@.tmp $@
 
 dist/networkmanager/Makefile.deps: $(WEBPACK_CONFIG) $(networkmanager_INPUTS)
 	$(WEBPACK_RULE) -d dist/networkmanager/Makefile.deps $(WEBPACK_CONFIG)
+
+dist/networkmanager/firewall.css: dist/networkmanager/Makefile.deps
+
+dist/networkmanager/firewall.css.map: dist/networkmanager/Makefile.deps
+
+dist/networkmanager/firewall.html: dist/networkmanager/Makefile.deps
+
+dist/networkmanager/firewall.min.js: dist/networkmanager/Makefile.deps
+
+dist/networkmanager/firewall.min.js.map: dist/networkmanager/Makefile.deps
 
 dist/networkmanager/index.html: dist/networkmanager/Makefile.deps
 
@@ -102,6 +148,14 @@ dist/networkmanager/test-utils.min.js: dist/networkmanager/Makefile.deps
 
 dist/networkmanager/test-utils.min.js.map: dist/networkmanager/Makefile.deps
 
+node_modules/bootstrap/LICENSE:
+
+node_modules/bootstrap/README.md:
+
+node_modules/bootstrap/less/variables.less:
+
+node_modules/bootstrap/package.json:
+
 node_modules/jquery-flot/LICENSE.txt:
 
 node_modules/jquery-flot/README.md:
@@ -122,6 +176,16 @@ node_modules/mustache/mustache.js:
 
 node_modules/mustache/package.json:
 
+node_modules/patternfly/LICENSE.txt:
+
+node_modules/patternfly/README.md:
+
+node_modules/patternfly/dist/less/color-variables.less:
+
+node_modules/patternfly/dist/less/variables.less:
+
+node_modules/patternfly/package.json:
+
 node_modules/qunit-tap/GPL-LICENSE.txt:
 
 node_modules/qunit-tap/MIT-LICENSE.txt:
@@ -140,6 +204,24 @@ node_modules/qunitjs/qunit/qunit.css:
 
 node_modules/qunitjs/qunit/qunit.js:
 
+node_modules/react-lite/LICENSE:
+
+node_modules/react-lite/README.md:
+
+node_modules/react-lite/dist/react-lite.js:
+
+node_modules/react-lite/package.json:
+
+pkg/lib/cockpit-components-dialog.jsx:
+
+pkg/lib/cockpit-components-listing.jsx:
+
+pkg/lib/cockpit-components-onoff.css:
+
+pkg/lib/cockpit-components-onoff.jsx:
+
+pkg/lib/cockpit-components-tooltip.jsx:
+
 pkg/lib/journal.css:
 
 pkg/lib/journal.js:
@@ -149,6 +231,8 @@ pkg/lib/journal_day_header.mustache:
 pkg/lib/journal_line.mustache:
 
 pkg/lib/journal_reboot.mustache:
+
+pkg/lib/listing.less:
 
 pkg/lib/mustache.js:
 
@@ -166,7 +250,19 @@ pkg/lib/qunit-template.html:
 
 pkg/lib/qunit-tests.js:
 
+pkg/lib/service.js:
+
 pkg/lib/table.css:
+
+pkg/lib/tooltip.css:
+
+pkg/lib/variables.less:
+
+pkg/networkmanager/firewall-client.es6:
+
+pkg/networkmanager/firewall.html:
+
+pkg/networkmanager/firewall.jsx:
 
 pkg/networkmanager/index.html:
 

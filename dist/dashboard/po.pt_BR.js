@@ -135,11 +135,11 @@ return plural;
  ],
  "Advanced TCA": [
   null,
-  ""
+  "TCA Avançado"
  ],
  "All In One": [
   null,
-  ""
+  "Tudo em um"
  ],
  "Authentication": [
   null,
@@ -159,15 +159,15 @@ return plural;
  ],
  "Blade": [
   null,
-  ""
+  "Blade"
  ],
  "Blade enclosure": [
   null,
-  ""
+  "Blade enclosure"
  ],
  "Bus Expansion Chassis": [
   null,
-  ""
+  "Chassi de Expansão de Barramento"
  ],
  "CPU": [
   null,
@@ -175,7 +175,7 @@ return plural;
  ],
  "Can't load image": [
   null,
-  ""
+  "Não é possível carregar a imagem"
  ],
  "Cancel": [
   null,
@@ -223,7 +223,7 @@ return plural;
  ],
  "Compact PCI": [
   null,
-  ""
+  "Compacto PCI"
  ],
  "Connect": [
   null,
@@ -239,7 +239,7 @@ return plural;
  ],
  "Convertible": [
   null,
-  ""
+  "Conversível"
  ],
  "Could not contact {{host}}": [
   null,
@@ -251,11 +251,11 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Desktop"
  ],
  "Detachable": [
   null,
-  ""
+  "Destacável"
  ],
  "Disk I/O": [
   null,
@@ -263,7 +263,7 @@ return plural;
  ],
  "Docking Station": [
   null,
-  ""
+  "Estação de ancoragem."
  ],
  "Edit Server": [
   null,
@@ -271,7 +271,7 @@ return plural;
  ],
  "Embedded PC": [
   null,
-  ""
+  "Embedded PC"
  ],
  "Enter IP address or host name": [
   null,
@@ -287,7 +287,7 @@ return plural;
  ],
  "Expansion Chassis": [
   null,
-  ""
+  "Chassi de Expansão"
  ],
  "Failed to add machine: $0": [
   null,
@@ -311,7 +311,7 @@ return plural;
  ],
  "Hand Held": [
   null,
-  ""
+  "Portátil"
  ],
  "Host Name": [
   null,
@@ -331,7 +331,7 @@ return plural;
  ],
  "IoT Gateway": [
   null,
-  ""
+  "Gateway IoT"
  ],
  "Is sshd running on a different port?": [
   null,
@@ -347,7 +347,7 @@ return plural;
  ],
  "Laptop": [
   null,
-  ""
+  "Laptop"
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
@@ -355,7 +355,7 @@ return plural;
  ],
  "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
-  ""
+  "Deixe em branco para se conectar a esta máquina como a conexão atualmente efetuada como user{{#default_user}} ({{default_user}}){{/default_user}}. Se você inserir um nome de usuário diferente, esse usuário sempre será usado para conectar-se a esta máquina."
  ],
  "Log In": [
   null,
@@ -375,15 +375,15 @@ return plural;
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "Desktop de baixo perfil"
  ],
  "Lunch Box": [
   null,
-  ""
+  "Lunch Box"
  ],
  "Main Server Chassis": [
   null,
-  ""
+  "Chassi do Servidor Principal"
  ],
  "Memory": [
   null,
@@ -391,15 +391,15 @@ return plural;
  ],
  "Mini PC": [
   null,
-  ""
+  "Mini PC"
  ],
  "Mini Tower": [
   null,
-  ""
+  "Mini Torre"
  ],
  "Multi-system Chassis": [
   null,
-  ""
+  "Chassi Multi-sistema"
  ],
  "Network": [
   null,
@@ -419,7 +419,7 @@ return plural;
  ],
  "Notebook": [
   null,
-  ""
+  "Notebook"
  ],
  "Off": [
   null,
@@ -435,7 +435,7 @@ return plural;
  ],
  "Other": [
   null,
-  ""
+  "De outros"
  ],
  "Password": [
   null,
@@ -447,11 +447,11 @@ return plural;
  ],
  "Peripheral Chassis": [
   null,
-  ""
+  "Chassi Periférico"
  ],
  "Pizza Box": [
   null,
-  ""
+  "Pizza Box"
  ],
  "Port": [
   null,
@@ -459,7 +459,7 @@ return plural;
  ],
  "Portable": [
   null,
-  ""
+  "Portatil"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -475,15 +475,15 @@ return plural;
  ],
  "RAID Chassis": [
   null,
-  ""
+  "RAID Chassis"
  ],
  "Rack Mount Chassis": [
   null,
-  ""
+  "Rack Mount Chassis"
  ],
  "Sealed-case PC": [
   null,
-  ""
+  "PC com caixa vedada"
  ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
@@ -499,19 +499,19 @@ return plural;
  ],
  "Space-saving Computer": [
   null,
-  ""
+  "Computador com economia de espaço"
  ],
  "Stick PC": [
   null,
-  ""
+  "Stick PC"
  ],
  "Sub Chassis": [
   null,
-  ""
+  "Sub Chassis"
  ],
  "Sub Notebook": [
   null,
-  ""
+  "Sub Notebook"
  ],
  "Synchronize": [
   null,
@@ -523,7 +523,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "Tablet"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,

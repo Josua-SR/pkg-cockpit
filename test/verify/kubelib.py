@@ -60,7 +60,6 @@ class KubernetesCase(testlib.MachineCase):
         # HACK: These are the default container secrets that which conflict
         # with kubernetes secrets and cause the pod to not start
         self.machine.execute("rm -rf /usr/share/rhel/secrets/* || true")
-        self.machine.execute("test -f /etc/resolv.conf || touch /etc/resolv.conf")
         self.machine.execute("systemctl start docker || journalctl -u docker")
 
         # HACK: work around https://github.com/kubernetes/kubernetes/issues/43805 until
@@ -1281,9 +1280,25 @@ class RegistryTests(object):
         testlib.wait(lambda: 'foo@bar.com' in o.execute("oc get rolebinding -n testprojectuserproj"), delay=5)
         self.assertNotIn('foo ^ bar', o.execute("oc get rolebinding -n testprojectuserproj"))
 
-        # it appears on the "All projects" page too
+        # service accounts should be accepted
+        b.wait_present("a i.pficon-add-circle-o")
+        b.click("a i.pficon-add-circle-o")
+        b.wait_present("modal-dialog")
+        b.wait_visible("#add_member_name")
+        b.set_val("#add_member_name", "system:janitor:default")
+        b.wait_visible("#add_role")
+        b.click("#add_role button")
+        b.wait_visible("#add_role .dropdown-menu")
+        b.click("#add_role a[value='Admin']")
+        b.click(".btn-primary")
+        b.wait_not_present("modal-dialog")
+        b.wait_present("tbody[data-id='system:janitor:default']")
+        testlib.wait(lambda: 'system:janitor:default' in o.execute("oc get rolebinding -n testprojectuserproj"), delay=5)
+
+        # they appear on the "All projects" page too
         b.go("#/projects/")
         b.wait_present("tbody[data-id='foo@bar.com']")
+        b.wait_present("tbody[data-id='system:janitor:default']")
 
         # try to add user with invalid name from "All projects" page
         b.click("#add-user")

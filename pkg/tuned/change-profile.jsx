@@ -17,7 +17,6 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-
 var cockpit = require("cockpit");
 var React = require("react");
 
@@ -84,7 +83,7 @@ var TunedDialogBody = React.createClass({
     },
     handleProfileClick: function(profile) {
         if (profile != this.state.selected_profile) {
-            this.setState( { selected_profile: profile } );
+            this.setState({ selected_profile: profile });
             this.props.change_selected(profile);
         }
     },

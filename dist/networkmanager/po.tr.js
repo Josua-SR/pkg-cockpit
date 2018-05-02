@@ -561,6 +561,10 @@ return plural;
   null,
   "Kapalı"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "On": [
   null,
   "Açık"

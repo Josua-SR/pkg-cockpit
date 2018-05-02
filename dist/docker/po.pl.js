@@ -357,10 +357,6 @@ return plural;
   null,
   "Usuń kontenery i przywróć pulę urządzeń do przechowywania danych"
  ],
- "Erase containers, reformat disks, and add them": [
-  null,
-  "Usuń kontenery, ponownie sformatuj dyski i je dodaj"
- ],
  "Error message from Docker:": [
   null,
   "Komunikat o błędzie Dockera:"
@@ -826,10 +822,6 @@ return plural;
  "The scan from $time ($type) was not successful.": [
   null,
   "Wyszukiwanie z $time ($type) się nie powiodło."
- ],
- "The storage pool will be reset to optimize its layout.  All containers will be erased.": [
-  null,
-  "Pula urządzeń do przechowywania danych zostanie przywrócona w celu optymalizacji układu. Wszystkie kontenery zostaną usunięte."
  ],
  "This image does not exist.": [
   null,

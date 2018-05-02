@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 /*
  * This file is part of Cockpit.
  *
@@ -22,7 +21,6 @@ import cockpit from 'cockpit';
 import {Terminal} from 'cockpit-components-terminal.jsx';
 
 const _ = cockpit.gettext;
-
 
 class SerialConsole extends React.Component {
     constructor (props) {
@@ -100,7 +98,7 @@ class SerialConsole extends React.Component {
             terminal = <span>{_("Loading ...")}</span>;
         }
 
-        const disconnectDisabled = (!this.state.channel) && 'disabled' || '';
+        const disconnectDisabled = (!this.state.channel) ? 'disabled' : '';
 
         return (
             <div className="console-ct-container">

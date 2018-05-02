@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 /*
  * This file is part of Cockpit.
  *
@@ -30,27 +29,27 @@ export function cpu_ram_info(address) {
         dfd = cockpit.defer();
         cpu_ram_info_promises[address] = pr = dfd.promise();
 
-        cockpit.spawn(["cat", "/proc/meminfo", "/proc/cpuinfo"], { host: address }).
-            done(function(text) {
-                var info = { };
-                var match = text.match(/MemTotal:[^0-9]*([0-9]+) [kK]B/);
-                var total_kb = match && parseInt(match[1], 10);
-                if (total_kb)
-                    info.memory = total_kb*1024;
+        cockpit.spawn(["cat", "/proc/meminfo", "/proc/cpuinfo"], { host: address })
+                .done(function(text) {
+                    var info = { };
+                    var match = text.match(/MemTotal:[^0-9]*([0-9]+) [kK]B/);
+                    var total_kb = match && parseInt(match[1], 10);
+                    if (total_kb)
+                        info.memory = total_kb * 1024;
 
-                match = text.match(/^model name\s*:\s*(.*)$/m);
-                if (match)
-                    info.cpu_model = match[1];
+                    match = text.match(/^model name\s*:\s*(.*)$/m);
+                    if (match)
+                        info.cpu_model = match[1];
 
-                info.cpus = 0;
-                var re = /^processor/gm;
-                while (re.test(text))
-                    info.cpus += 1;
-                dfd.resolve(info);
-            }).
-            fail(function() {
-                dfd.reject();
-            });
+                    info.cpus = 0;
+                    var re = /^processor/gm;
+                    while (re.test(text))
+                        info.cpus += 1;
+                    dfd.resolve(info);
+                })
+                .fail(function() {
+                    dfd.reject();
+                });
     }
     return pr;
 }
@@ -73,7 +72,7 @@ const chassis_types = [
     _("All In One"),
     _("Sub Notebook"),
     _("Space-saving Computer"),
-    _("Lunch Box"),  /* 0x10 */
+    _("Lunch Box"), /* 0x10 */
     _("Main Server Chassis"),
     _("Expansion Chassis"),
     _("Sub Chassis"),
@@ -123,14 +122,14 @@ export function dmi_info(address) {
 
         cockpit.spawn(["grep", "-r", "."],
                       { directory: "/sys/class/dmi/id", err: "ignore", superuser: "try" })
-            .done(output => dfd.resolve(parseDMIFields(output)))
-            .fail((exception, output) => {
+                .done(output => dfd.resolve(parseDMIFields(output)))
+                .fail((exception, output) => {
                 // the grep often/usually exits with 2, that's okay as long as we find *some* information
-                if (!exception.problem && output)
-                    dfd.resolve(parseDMIFields(output));
-                else
-                    dfd.reject(exception.message);
-            });
+                    if (!exception.problem && output)
+                        dfd.resolve(parseDMIFields(output));
+                    else
+                        dfd.reject(exception.message);
+                });
     }
     return pr;
 }
@@ -186,8 +185,8 @@ export function udev_info(address) {
         udev_info_promises[address] = pr = dfd.promise();
 
         cockpit.spawn(["udevadm", "info", "--export-db"], { err: "message" })
-            .done(output => dfd.resolve(parseUdevDB(output)))
-            .fail(exception => dfd.reject(exception.message));
+                .done(output => dfd.resolve(parseUdevDB(output)))
+                .fail(exception => dfd.reject(exception.message));
     }
     return pr;
 }

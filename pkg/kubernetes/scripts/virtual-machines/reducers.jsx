@@ -34,15 +34,15 @@ const createReducer = (initialState, actionHandlerMap) => (state = initialState,
  * ]
  */
 const vmsReducer = createReducer([], {
-    [actionTypes.SET_VMS]: (state = [], { payload }) => payload ? payload : []
+    [actionTypes.SET_VMS]: (state = [], { payload }) => payload || []
 });
 
 const pvsReducer = createReducer([], {
-    [actionTypes.SET_PVS]: (state = [], { payload }) => payload ? payload : []
+    [actionTypes.SET_PVS]: (state = [], { payload }) => payload || []
 });
 
 const podsReducer = createReducer([], {
-    [actionTypes.SET_PODS]: (state = [], { payload }) => payload ? payload : []
+    [actionTypes.SET_PODS]: (state = [], { payload }) => payload || []
 })
 
 /**
@@ -51,7 +51,7 @@ const podsReducer = createReducer([], {
  * ]
  */
 const settingsReducer = createReducer([], {
-    [actionTypes.SET_SETTINGS]: (state = [], { payload }) => payload ? payload : {}
+    [actionTypes.SET_SETTINGS]: (state = [], { payload }) => payload || {}
 });
 
 /**
@@ -64,22 +64,22 @@ const settingsReducer = createReducer([], {
  */
 const vmsMessagesReducer = createReducer({}, {
     [actionTypes.VM_ACTION_FAILED]: (state = {}, { payload: { vm, message, detail } }) => {
-      const newState = Object.assign({}, state);
-      newState[vm.metadata.uid] = { // So far the last message is kept only
-        message, // textual information
-        detail, // i.e. exception
-      };
-      return newState;
+        const newState = Object.assign({}, state);
+        newState[vm.metadata.uid] = { // So far the last message is kept only
+            message, // textual information
+            detail, // i.e. exception
+        };
+        return newState;
     },
 
     [actionTypes.REMOVE_VM_MESSAGE]: (state = {}, { payload: { vm } }) => {
-      if (!state[vm.metadata.uid]) {
-        return state;
-      }
+        if (!state[vm.metadata.uid]) {
+            return state;
+        }
 
-      const newState = Object.assign({}, state);
-      delete newState[vm.metadata.uid];
-      return newState;
+        const newState = Object.assign({}, state);
+        delete newState[vm.metadata.uid];
+        return newState;
     },
 });
 
@@ -91,7 +91,7 @@ const vmsMessagesReducer = createReducer({}, {
  * }
  */
 const uiReducer = createReducer({}, {
-    [actionTypes.VM_EXPANDED]: (state = {}, { payload: { vm, isExpanded }}) => {
+    [actionTypes.VM_EXPANDED]: (state = {}, { payload: { vm, isExpanded } }) => {
         return Object.assign({}, state, { [vm.metadata.uid]: { isExpanded } });
     }
 });

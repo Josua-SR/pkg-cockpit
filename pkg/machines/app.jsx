@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 /*
  * This file is part of Cockpit.
  *
@@ -20,6 +19,7 @@
 import React from "react";
 import HostVmsList from "./hostvmslist.jsx";
 import LibvirtSlate from "./components/libvirtSlate.jsx"
+import { createVmAction } from "./components/create-vm-dialog/createVmDialog.jsx";
 
 const App = ({ store }) => {
     const { vms, config, systemInfo, ui } = store.getState();
@@ -30,7 +30,11 @@ const App = ({ store }) => {
     }
 
     // pass ui object
-    return (<HostVmsList vms={vms} config={config} systemInfo={systemInfo} ui={ui} dispatch={dispatch}/>);
+    return (<HostVmsList vms={vms}
+        config={config}
+        ui={ui}
+        dispatch={dispatch}
+        actions={createVmAction({ dispatch, systemInfo })}/>);
 };
 App.propTypes = {
     store: React.PropTypes.object.isRequired,

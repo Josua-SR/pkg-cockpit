@@ -561,6 +561,10 @@ return plural;
   null,
   "Éteint"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "On": [
   null,
   "Allumé"

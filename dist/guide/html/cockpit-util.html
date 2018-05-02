@@ -40,6 +40,8 @@ string = cockpit.format(template, [arg, ...])
       <code class="code">args</code> and start at zero.</p>
 <p>In the second form, multiple <code class="code">arg</code> arguments may be passed directly,
       and interpolated as as numeric fields in the <code class="code">template</code>.</p>
+<p>All falsy arguments except the numbers <code class="code">0</code> and <code class="code">0.0</code>are
+      replaced by an empty string.</p>
 </div>
 <div class="refsection">
 <a name="cockpit-format-bytes"></a><h2>cockpit.format_bytes()</h2>

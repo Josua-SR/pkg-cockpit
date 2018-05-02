@@ -217,13 +217,13 @@ var SubscriptionsPage = React.createClass({
 
         return (
             <div className="container-fluid">
-            <SubscriptionStatus {...this.props }/>
-            <cockpitListing.Listing
+                <SubscriptionStatus {...this.props }/>
+                <cockpitListing.Listing
                     title={ _("Installed products") }
                     emptyCaption={ _("No installed products on the system.") }
-                    >
-                {entries}
-            </cockpitListing.Listing>
+                >
+                    {entries}
+                </cockpitListing.Listing>
             </div>
         );
     },

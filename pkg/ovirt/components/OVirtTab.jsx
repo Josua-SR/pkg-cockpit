@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 /*
  * This file is part of Cockpit.
  *
@@ -28,7 +27,6 @@ import ConfirmButtons from './ConfirmButtons.jsx';
 import VmProperty from '../../machines/components/infoRecord.jsx';
 import rephraseUI from '../rephraseUI.es6';
 
-React;
 const _ = cockpit.gettext;
 
 import './OVirtTab.css';
@@ -58,17 +56,17 @@ class MigrateTo extends React.Component {
             dispatch(migrateVm(vm.id, vm.name, this.state.selectedHostId));
         };
 
-        const idPrefix =`${vmId(vm.name)}-ovirt`;
+        const idPrefix = `${vmId(vm.name)}-ovirt`;
 
         return (
             <tr>
                 <td>
-                    {this.state.confirmAction ?
-                        (<ConfirmButtons confirmText={_("Confirm migration")}
+                    {this.state.confirmAction
+                        ? (<ConfirmButtons confirmText={_("Confirm migration")}
                                          dismissText={_("Cancel")}
                                          onYes={onActionConfirmed}
-                                         onNo={onActionCanceled}/>) :
-                        (<button className="btn btn-default btn-danger" onClick={onAction} id={`${idPrefix}-migratetobutton`}>
+                                         onNo={onActionCanceled}/>)
+                        : (<button className="btn btn-default btn-danger" onClick={onAction} id={`${idPrefix}-migratetobutton`}>
                             {_("Migrate To:")}
                         </button>)
                     }
@@ -79,14 +77,14 @@ class MigrateTo extends React.Component {
                             <i>{_("Automatically selected host")}</i>
                         </option>
                         {Object.getOwnPropertyNames(hosts)
-                            .filter( hostId => canVmMigrateToHost({host: hosts[hostId]}))
-                            .map(hostId => (
-                                <option value={hostId}
+                                .filter(hostId => canVmMigrateToHost({host: hosts[hostId]}))
+                                .map(hostId => (
+                                    <option value={hostId}
                                         selected={hostId === this.state.selectedHostId}
                                         disabled={isSameHostAddress(hosts[hostId].address)}>
-                                    {hosts[hostId].name}
-                                </option>
-                            ))}
+                                        {hosts[hostId].name}
+                                    </option>
+                                ))}
                     </select>
                 </td>
             </tr>
@@ -110,8 +108,8 @@ const VmTemplate = ({ clusterVm, templates, id }) => {
     const version = template.version;
     return (
         <VmProperty descr={_("Base template:")}
-                    value={version.name ?
-                          (`${version.name} (${template.name})`)
+                    value={version.name
+                        ? (`${version.name} (${template.name})`)
                         : template.name}
                     id={id}
         />
@@ -133,7 +131,7 @@ const OVirtTab = ({ vm, providerState, dispatch }) => {
         return (<div>{_("This virtual machine is not managed by oVirt")}</div>);
     }
 
-    const idPrefix =`${vmId(vm.name)}-ovirt`;
+    const idPrefix = `${vmId(vm.name)}-ovirt`;
 
     return (
         <table className='machines-width-max'>

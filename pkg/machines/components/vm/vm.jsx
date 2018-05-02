@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 /*
  * This file is part of Cockpit.
  *
@@ -35,13 +34,10 @@ import { ListingRow } from "cockpit-components-listing.jsx";
 
 const _ = cockpit.gettext;
 
-React;
-
-
 /** One VM in the list (a row)
  */
 const Vm = ({ vm, config, hostDevices, onStart, onInstall, onShutdown, onForceoff, onReboot, onForceReboot,
-                onUsageStartPolling, onUsageStopPolling, onSendNMI, dispatch }) => {
+              onUsageStartPolling, onUsageStopPolling, onSendNMI, dispatch }) => {
     const stateAlert = vm.lastMessage && (<span className='pficon-warning-triangle-o machines-status-alert' />);
     const stateIcon = (<StateIcon state={vm.state} config={config} valueId={`${vmId(vm.name)}-state`} extra={stateAlert} />);
 
@@ -52,8 +48,8 @@ const Vm = ({ vm, config, hostDevices, onStart, onInstall, onShutdown, onForceof
 
     let tabRenderers = [
         {name: _("Overview"), renderer: VmOverviewTab, data: { vm, config, dispatch }},
-        {name: usageTabName, renderer: VmUsageTab, data: { vm, onUsageStartPolling, onUsageStopPolling }, presence: 'onlyActive' },
-        {name: disksTabName, renderer: VmDisksTab, data: { vm, onUsageStartPolling, onUsageStopPolling }, presence: 'onlyActive' },
+        {name: usageTabName, renderer: VmUsageTab, data: { vm, onUsageStartPolling, onUsageStopPolling }, presence: 'onlyActive'},
+        {name: disksTabName, renderer: VmDisksTab, data: { vm, onUsageStartPolling, onUsageStopPolling }, presence: 'onlyActive'},
         {name: networkTabName, renderer: VmNetworkTab, data: { vm, dispatch, hostDevices }},
         {name: consolesTabName, renderer: Consoles, data: { vm, config, dispatch }},
     ];
@@ -76,7 +72,7 @@ const Vm = ({ vm, config, hostDevices, onStart, onInstall, onShutdown, onForceof
 
     let initiallyActiveTab = null;
     if (vm.ui.initiallyOpenedConsoleTab) {
-        initiallyActiveTab = tabRenderers.map((o) =>  o.name).indexOf(consolesTabName);
+        initiallyActiveTab = tabRenderers.map((o) => o.name).indexOf(consolesTabName);
     }
 
     const name = (<span id={`${vmId(vm.name)}-row`}>{vm.name}</span>);
@@ -110,7 +106,6 @@ Vm.propTypes = {
     onUsageStopPolling: PropTypes.func.isRequired,
     onSendNMI: PropTypes.func.isRequired,
     dispatch: PropTypes.func.isRequired,
-    initallyExpanded: PropTypes.bool,
 };
 
 export default Vm;

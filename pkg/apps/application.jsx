@@ -46,9 +46,9 @@ class Application extends React.Component {
 
         function action(func, arg, progress_title) {
             self.setState({ progress_title: progress_title });
-            func(arg, data => self.setState({ progress: data })).
-                finally(() => self.setState({ progress: null })).
-                catch(show_error);
+            func(arg, data => self.setState({ progress: data }))
+                    .finally(() => self.setState({ progress: null }))
+                    .catch(show_error);
         }
 
         function install() {
@@ -63,10 +63,10 @@ class Application extends React.Component {
             return urls.map(url => {
                 if (url.type == 'homepage') {
                     return (<div className="app-links">
-                                <a href={url.link} target="_blank" rel="noopener" data-linkedhost={url.link}>
+                        <a href={url.link} target="_blank" rel="noopener" data-linkedhost={url.link}>
                                     View Project Website <i className="fa fa-external-link" aria-hidden="true"></i>
-                                </a>
-                            </div>);
+                        </a>
+                    </div>);
                 }
             });
         }
@@ -141,7 +141,7 @@ class Application extends React.Component {
             <div>
                 <ol className="breadcrumb">
                     <li><a role="link" tabIndex="0" onClick={left_click(navigate_up)}>{_("Applications")}</a></li>
-                    <li className="active">{comp? comp.name : this.props.id}</li>
+                    <li className="active">{comp ? comp.name : this.props.id}</li>
                 </ol>
                 {render_comp()}
             </div>

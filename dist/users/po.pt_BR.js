@@ -73,7 +73,7 @@ return plural;
  ],
  "Account Expiration": [
   null,
-  ""
+  "Conta expirou"
  ],
  "Account not available or cannot be edited.": [
   null,
@@ -169,11 +169,11 @@ return plural;
  ],
  "Force Change": [
   null,
-  ""
+  "Force Mudança"
  ],
  "Force password change": [
   null,
-  ""
+  "Force troca de senha"
  ],
  "Full Name": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Invalid expiration date": [
   null,
-  ""
+  "Data de validade inválida"
  ],
  "Invalid key": [
   null,
@@ -189,7 +189,7 @@ return plural;
  ],
  "Invalid number of days": [
   null,
-  ""
+  "Número inválido de dias"
  ],
  "Last Login": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Lock account on $0": [
   null,
-  ""
+  "Bloquear conta em $0"
  ],
  "Logged In": [
   null,
@@ -217,11 +217,11 @@ return plural;
  ],
  "Never expire password": [
   null,
-  ""
+  "Senha nunca expira"
  ],
  "Never lock account": [
   null,
-  ""
+  "Nunca bloquear conta"
  ],
  "New Password": [
   null,
@@ -261,7 +261,7 @@ return plural;
  ],
  "Password Expiration": [
   null,
-  ""
+  "Expiração de Senha"
  ],
  "Password is not acceptable": [
   null,
@@ -273,7 +273,7 @@ return plural;
  ],
  "Password must be changed": [
   null,
-  ""
+  "A senha deve ser alterada"
  ],
  "Paste the contents of your public SSH key file here": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "Please specify an expiration date": [
   null,
-  ""
+  "Por favor especifique uma data de expiração"
  ],
  "Prompting via passwd timed out": [
   null,
@@ -289,11 +289,11 @@ return plural;
  ],
  "Require password change every $0 days": [
   null,
-  ""
+  "Requer mudança de senha a cada $0 dias"
  ],
  "Require password change on $0": [
   null,
-  ""
+  "Exigir alteração de senha em $0"
  ],
  "Reset": [
   null,
@@ -321,7 +321,7 @@ return plural;
  ],
  "The account '$0' will be forced to change their password on next login": [
   null,
-  ""
+  "A conta '$0' será forçado a mudar sua senha no próximo login"
  ],
  "The key you provided was not valid.": [
   null,

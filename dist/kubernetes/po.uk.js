@@ -71,6 +71,10 @@ return plural;
   null,
   " 1\"Хочете вилучити вказані нижче вузли?"
  ],
+ " or drag & drop.": [
+  null,
+  ""
+ ],
  "$0% Free": [
   "$0% Free",
   "Вільно $0%",
@@ -351,6 +355,10 @@ return plural;
   null,
   "Створити"
  ],
+ "Create Virtual Machine": [
+  null,
+  ""
+ ],
  "Create empty image stream": [
   null,
   "Створити порожній потік образу"
@@ -494,6 +502,10 @@ return plural;
  "Driver": [
   null,
   "Драйвер"
+ ],
+ "Drop file here to upload.": [
+  null,
+  ""
  ],
  "Empty Directory": [
   null,
@@ -927,6 +939,10 @@ return plural;
   null,
   "Гаразд"
  ],
+ "Only files of size $0 MiB and less are supported": [
+  null,
+  ""
+ ],
  "Operating System": [
   null,
   "Операційна система"
@@ -950,6 +966,10 @@ return plural;
  "Password": [
   null,
   "Пароль"
+ ],
+ "Paste JSON below, ": [
+  null,
+  ""
  ],
  "Path": [
   null,
@@ -1258,6 +1278,10 @@ return plural;
  "Requires Authentication": [
   null,
   "Потрібне розпізнавання"
+ ],
+ "Resolve above errors to continue": [
+  null,
+  ""
  ],
  "Restart Count": [
   null,
@@ -1635,6 +1659,18 @@ return plural;
   null,
   "Не вдалося виконати дію DELETE для ВМ."
  ],
+ "VM definition is not a valid JSON.": [
+  null,
+  ""
+ ],
+ "VM definition is required.": [
+  null,
+  ""
+ ],
+ "VM definition must be an object.": [
+  null,
+  ""
+ ],
  "Virtual Machines": [
   null,
   "Віртуальні машини"
@@ -1814,6 +1850,10 @@ return plural;
  "up": [
   null,
   "вище"
+ ],
+ "upload a JSON file": [
+  null,
+  ""
  ],
  "user": [
   null,

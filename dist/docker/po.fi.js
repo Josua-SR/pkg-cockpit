@@ -350,10 +350,6 @@ return plural;
   null,
   "Tyhjennä kontit ja resetoi tallennusvaranto"
  ],
- "Erase containers, reformat disks, and add them": [
-  null,
-  "Tyhjennä kontit, uudelleenformatoi levyt, ja lisää ne"
- ],
  "Error message from Docker:": [
   null,
   "Virheviesti Dockerilta:"
@@ -816,10 +812,6 @@ return plural;
   ""
  ],
  "The scan from $time ($type) was not successful.": [
-  null,
-  ""
- ],
- "The storage pool will be reset to optimize its layout.  All containers will be erased.": [
   null,
   ""
  ],

@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 /*
  * This file is part of Cockpit.
  *
@@ -23,7 +22,6 @@ import { Listing, ListingRow } from 'cockpit-components-listing.jsx';
 import { Info } from './notification/inlineNotification.jsx';
 import { convertToUnit, toReadableNumber, units } from "../helpers.es6";
 
-React;
 const _ = cockpit.gettext;
 
 const DiskTotal = ({ disks, idPrefix }) => {
@@ -98,7 +96,7 @@ const VmDisksTab = ({ idPrefix, disks, renderCapacity, notificationText }) => {
             <DiskTotal disks={disks} idPrefix={idPrefix}/>
             <Listing columnTitles={columnTitles}>
                 {disks.map(disk => {
-                    const idPrefixRow = `${idPrefix}-${disk.target}`;
+                    const idPrefixRow = `${idPrefix}-${disk.target || disk.device}`;
                     const columns = [
                         { name: <VmDiskCell value={disk.device} id={`${idPrefixRow}-device`}/>, 'header': true },
                         <VmDiskCell value={disk.target} id={`${idPrefixRow}-target`}/>

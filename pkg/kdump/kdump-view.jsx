@@ -1,4 +1,4 @@
-  /*
+/*
  * This file is part of Cockpit.
  *
  * Copyright (C) 2016 Red Hat, Inc.
@@ -46,7 +46,7 @@ var Tooltip = require("cockpit-components-tooltip.jsx").Tooltip;
 var KdumpTargetBody = React.createClass({
     getInitialState: function() {
         return {
-            storeDest: this.props.initialTarget.target,  // dialog mode, depends on location
+            storeDest: this.props.initialTarget.target, // dialog mode, depends on location
         };
     },
     changeLocation: function(target) {
@@ -55,7 +55,7 @@ var KdumpTargetBody = React.createClass({
         if (this.state.storeDest != "other")
             this.props.onChange(this.state.storeDest.target, undefined);
         // depending on our chosen target, we should send the default values we show in the ui
-        this.setState( { storeDest: target } );
+        this.setState({ storeDest: target });
     },
     changeValue: function(key, e) {
         if (this.props.onChange) {
@@ -170,7 +170,7 @@ var KdumpTargetBody = React.createClass({
                 <table className="form-table-ct">
                     <tr>
                         <td className="top">
-                            <label className="control-label" for="kdump-settings-location">
+                            <label className="control-label" htmlFor="kdump-settings-location">
                                 {_("Location")}
                             </label>
                         </td>
@@ -220,13 +220,13 @@ var KdumpPage = React.createClass({
     getInitialState: function() {
         return {
             dialogSettings: undefined,
-            dialogObj: undefined,  // this is used if there's an open dialog
+            dialogObj: undefined, // this is used if there's an open dialog
         };
     },
     compressionStatus: function(settings) {
         // compression is enabled if we have a core_collector command with the "-c" parameter
         return (
-              settings &&
+            settings &&
               ("core_collector" in settings) &&
               settings["core_collector"].value &&
               (settings["core_collector"].value.split(" ").indexOf("-c") != -1)
@@ -252,9 +252,9 @@ var KdumpPage = React.createClass({
                     // just remove all "-c" parameters
                     settings["core_collector"].value =
                         settings["core_collector"].value
-                        .split(" ")
-                        .filter((e) => {return (e != "-c");})
-                        .join(" ");
+                                .split(" ")
+                                .filter((e) => { return (e != "-c"); })
+                                .join(" ");
                 } else {
                     // if we don't have anything on this in the original settings,
                     // we can get rid of the entry altogether
@@ -275,7 +275,7 @@ var KdumpPage = React.createClass({
                     settings[key] = { value: value };
             }
         }
-        this.setState( { dialogSettings: settings } );
+        this.setState({ dialogSettings: settings });
         this.state.dialogObj.updateDialogBody();
         this.state.dialogObj.render();
     },
@@ -283,10 +283,10 @@ var KdumpPage = React.createClass({
         // TODO test settings (e.g. path writable, nfs mountable, ssh key works)
         var dfd = cockpit.defer();
         this.props.onApplySettings(this.state.dialogSettings)
-            .done(dfd.resolve)
-            .fail(function(error) {
-                dfd.reject(cockpit.format(_("Unable to apply settings: $0"), String(error)));
-            });
+                .done(dfd.resolve)
+                .fail(function(error) {
+                    dfd.reject(cockpit.format(_("Unable to apply settings: $0"), String(error)));
+                });
         return dfd.promise();
     },
     handleTestSettingsClick: function(e) {
@@ -299,23 +299,23 @@ var KdumpPage = React.createClass({
         var dialogProps = {
             title: _("Test kdump settings"),
             body: (
-                  <div className="modal-body">
-                      <span>{_("This will test kdump settings by crashing the kernel and thereby the system. Depending on the settings, the system may not automatically reboot and the process may take a while.")}</span>
-                  </div>
+                <div className="modal-body">
+                    <span>{_("This will test kdump settings by crashing the kernel and thereby the system. Depending on the settings, the system may not automatically reboot and the process may take a while.")}</span>
+                </div>
             )
         };
         // also test modifying properties in subsequent render calls
         var footerProps = {
             'actions': [
-                  { 'clicked': self.props.onCrashKernel.bind(self),
-                    'caption': _("Crash system"),
-                    'style': 'danger',
-                  }
-              ],
+                { 'clicked': self.props.onCrashKernel.bind(self),
+                  'caption': _("Crash system"),
+                  'style': 'danger',
+                }
+            ],
             'dialog_done': self.dialogClosed,
         };
         var dialogObj = dialogPattern.show_modal_dialog(dialogProps, footerProps);
-        this.setState( { dialogObj: dialogObj } );
+        this.setState({ dialogObj: dialogObj });
     },
     handleServiceDetailsClick: function(e) {
         // only consider primary mouse button
@@ -324,7 +324,7 @@ var KdumpPage = React.createClass({
         cockpit.jump("/system/services#/kdump.service", cockpit.transport.host);
     },
     dialogClosed: function() {
-        this.setState( { dialogSettings: undefined, dialogObj: undefined } );
+        this.setState({ dialogSettings: undefined, dialogObj: undefined });
     },
     handleSettingsClick: function(e) {
         // only consider primary mouse button
@@ -332,7 +332,7 @@ var KdumpPage = React.createClass({
             return;
         var self = this;
         var settings = { };
-        Object.keys(self.props.kdumpStatus.config).forEach( (key) => {
+        Object.keys(self.props.kdumpStatus.config).forEach((key) => {
             settings[key] = cockpit.extend({}, self.props.kdumpStatus.config[key]);
         });
         // open the settings dialog
@@ -352,16 +352,16 @@ var KdumpPage = React.createClass({
         // also test modifying properties in subsequent render calls
         var footerProps = {
             'actions': [
-                  { 'clicked': this.handleApplyClick.bind(this),
-                    'caption': _("Apply"),
-                    'style': 'primary',
-                  },
-              ],
+                { 'clicked': this.handleApplyClick.bind(this),
+                  'caption': _("Apply"),
+                  'style': 'primary',
+                },
+            ],
             'dialog_done': this.dialogClosed.bind(this),
         };
         var dialogObj = dialogPattern.show_modal_dialog(dialogProps, footerProps);
         dialogObj.updateDialogBody = updateDialogBody;
-        this.setState( { dialogSettings: settings, dialogObj: dialogObj } );
+        this.setState({ dialogSettings: settings, dialogObj: dialogObj });
     },
     render: function() {
         var kdumpLocation = (
@@ -487,38 +487,38 @@ var KdumpPage = React.createClass({
         return (
             <div className="container-fluid">
                 <table className="form-table-ct">
-                        <tr>
-                            <td><label className="control-label">{_("kdump status")}</label></td>
-                            <td colspan="2">
-                                <div>
-                                    <OnOffSwitch state={serviceRunning} onChange={this.props.onSetServiceState}
-                                                 enabled={!this.props.stateChanging}/>
-                                    {serviceWaiting}
-                                    {kdumpServiceDetails}
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><label className="control-label">{_("Reserved memory")}</label></td>
-                            <td colspan="2">
-                                {reservedMemory}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><label className="control-label">{_("Crash dump location")}</label></td>
-                            <td colspan="2">{settingsLink}</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>
-                                {testButton}
-                                <a className="popover-ct-kdump">
-                                        <Tooltip tip={_("This will test the kdump configuration by crashing the kernel.")} pos="top">
-                                            <span className="fa fa-lg fa-info-circle"></span>
-                                        </Tooltip>
-                                </a>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td><label className="control-label">{_("kdump status")}</label></td>
+                        <td colSpan="2">
+                            <div>
+                                <OnOffSwitch state={serviceRunning} onChange={this.props.onSetServiceState}
+                                    enabled={!this.props.stateChanging}/>
+                                {serviceWaiting}
+                                {kdumpServiceDetails}
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label className="control-label">{_("Reserved memory")}</label></td>
+                        <td colSpan="2">
+                            {reservedMemory}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label className="control-label">{_("Crash dump location")}</label></td>
+                        <td colSpan="2">{settingsLink}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            {testButton}
+                            <a className="popover-ct-kdump">
+                                <Tooltip tip={_("This will test the kdump configuration by crashing the kernel.")} pos="top">
+                                    <span className="fa fa-lg fa-info-circle"></span>
+                                </Tooltip>
+                            </a>
+                        </td>
+                    </tr>
                 </table>
             </div>
         );

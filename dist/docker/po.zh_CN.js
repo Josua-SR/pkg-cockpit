@@ -343,10 +343,6 @@ return plural;
   null,
   "擦除容器并重置存储池"
  ],
- "Erase containers, reformat disks, and add them": [
-  null,
-  "擦除容器，格式化磁盘，并添加"
- ],
  "Error message from Docker:": [
   null,
   "来自 Docker 的错误消息："
@@ -810,10 +806,6 @@ return plural;
  "The scan from $time ($type) was not successful.": [
   null,
   "从 $time ($type) 开始的扫描未成功。"
- ],
- "The storage pool will be reset to optimize its layout.  All containers will be erased.": [
-  null,
-  "存储池将会重置来优化分区表。所有容器将被擦除。"
  ],
  "This image does not exist.": [
   null,

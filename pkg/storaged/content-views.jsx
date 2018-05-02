@@ -29,17 +29,17 @@ var StorageControls = require("./storage-controls.jsx");
 var FormatDialog = require("./format-dialog.jsx");
 
 var StorageButton = StorageControls.StorageButton;
-var StorageLink =   StorageControls.StorageLink;
+var StorageLink = StorageControls.StorageLink;
 
-var FilesystemTab   = require("./fsys-tab.jsx").FilesystemTab;
-var CryptoTab       = require("./crypto-tab.jsx").CryptoTab;
-var BlockVolTab     = require("./lvol-tabs.jsx").BlockVolTab;
-var PoolVolTab      = require("./lvol-tabs.jsx").PoolVolTab;
-var PVolTab         = require("./pvol-tabs.jsx").PVolTab;
+var FilesystemTab = require("./fsys-tab.jsx").FilesystemTab;
+var CryptoTab = require("./crypto-tab.jsx").CryptoTab;
+var BlockVolTab = require("./lvol-tabs.jsx").BlockVolTab;
+var PoolVolTab = require("./lvol-tabs.jsx").PoolVolTab;
+var PVolTab = require("./pvol-tabs.jsx").PVolTab;
 var MDRaidMemberTab = require("./pvol-tabs.jsx").MDRaidMemberTab;
-var VDOBackingTab   = require("./pvol-tabs.jsx").VDOBackingTab;
-var PartitionTab    = require("./part-tab.jsx").PartitionTab;
-var SwapTab         = require("./swap-tab.jsx").SwapTab;
+var VDOBackingTab = require("./pvol-tabs.jsx").VDOBackingTab;
+var PartitionTab = require("./part-tab.jsx").PartitionTab;
+var SwapTab = require("./swap-tab.jsx").SwapTab;
 var UnrecognizedTab = require("./unrecognized-tab.jsx").UnrecognizedTab;
 
 var _ = cockpit.gettext;
@@ -70,16 +70,16 @@ function create_tabs(client, target, is_partition) {
         return str.indexOf(suffix, str.length - suffix.length) !== -1;
     }
 
-    var block = endsWith(target.iface, ".Block")? target : null;
+    var block = endsWith(target.iface, ".Block") ? target : null;
     var block_lvm2 = block && client.blocks_lvm2[block.path];
     var block_pvol = block && client.blocks_pvol[block.path];
 
-    var lvol = (endsWith(target.iface, ".LogicalVolume")?
-                target :
-                block_lvm2 && client.lvols[block_lvm2.LogicalVolume]);
+    var lvol = (endsWith(target.iface, ".LogicalVolume")
+        ? target
+        : block_lvm2 && client.lvols[block_lvm2.LogicalVolume]);
 
-    var is_filesystem         = (block && block.IdUsage == 'filesystem');
-    var is_crypto             = (block && block.IdUsage == 'crypto');
+    var is_filesystem = (block && block.IdUsage == 'filesystem');
+    var is_crypto = (block && block.IdUsage == 'crypto');
 
     var tabs = [ ];
     var row_action = null;
@@ -175,10 +175,10 @@ function create_tabs(client, target, is_partition) {
             return unlock_with_passphrase();
         else {
             return client.clevis_overlay.unlock(block)
-                         .then(null,
-                               function () {
-                                   return unlock_with_passphrase();
-                               });
+                    .then(null,
+                          function () {
+                              return unlock_with_passphrase();
+                          });
         }
     }
 
@@ -214,7 +214,7 @@ function create_tabs(client, target, is_partition) {
                                   return crypto.Unlock(vals.passphrase, {});
                               }
                           }
-                        });
+            });
         });
     }
 
@@ -280,15 +280,15 @@ function create_tabs(client, target, is_partition) {
                               Danger: danger,
                               Title: _("Delete"),
                               action: function () {
-                                  return utils.teardown_active_usage(client, usage).
-                                               then(function () {
-                                                   if (lvol)
-                                                       return lvol.Delete({ 'tear-down': { t: 'b', v: true }
-                                                       });
-                                                   else if (block_part)
-                                                       return block_part.Delete({ 'tear-down': { t: 'b', v: true }
-                                                       });
-                                               });
+                                  return utils.teardown_active_usage(client, usage)
+                                          .then(function () {
+                                              if (lvol)
+                                                  return lvol.Delete({ 'tear-down': { t: 'b', v: true }
+                                                  });
+                                              else if (block_part)
+                                                  return block_part.Delete({ 'tear-down': { t: 'b', v: true }
+                                                  });
+                                          });
                               }
                           }
             });
@@ -356,7 +356,7 @@ function append_row(client, rows, level, key, name, desc, tabs, job_object) {
     if (job_object)
         last_column = (
             <span className="spinner spinner-sm spinner-inline"
-                  style={{visibility: client.path_jobs[job_object]? "visible" : "hidden"}}>
+                  style={{visibility: client.path_jobs[job_object] ? "visible" : "hidden"}}>
             </span>);
     if (tabs.row_action) {
         if (last_column) {
@@ -394,7 +394,7 @@ function append_non_partitioned_block(client, rows, level, block, is_partition) 
     append_row(client, rows, level, block.path, utils.block_name(block), desc, tabs, block.path);
 
     if (cleartext_block)
-        append_device(client, rows, level+1, cleartext_block);
+        append_device(client, rows, level + 1, cleartext_block);
 }
 
 function append_partitions(client, rows, level, block) {
@@ -514,10 +514,10 @@ function block_content(client, block, allow_partitions) {
                               };
                               if (vals.erase != "no")
                                   options.erase = { t: 's', v: vals.erase };
-                              return utils.teardown_active_usage(client, usage).
-                                           then(function () {
-                                               return block.Format(vals.type, options);
-                                           });
+                              return utils.teardown_active_usage(client, usage)
+                                      .then(function () {
+                                          return block.Format(vals.type, options);
+                                      });
                           }
                       }
         });
@@ -527,7 +527,7 @@ function block_content(client, block, allow_partitions) {
     if (allow_partitions)
         format_disk_btn = (
             <div className="pull-right">
-                <StorageButton onClick={format_disk} excuse={block.ReadOnly? _("Device is read-only") : null}>
+                <StorageButton onClick={format_disk} excuse={block.ReadOnly ? _("Device is read-only") : null}>
                     {_("Create partition table")}
                 </StorageButton>
             </div>);
@@ -555,9 +555,9 @@ function append_logical_volume_block(client, rows, level, block, lvol) {
         };
         tabs = create_tabs(client, block, false);
         append_row(client, rows, level, lvol.Name, utils.block_name(block), desc, tabs, block.path);
-        append_partitions(client, rows, level+1, block);
+        append_partitions(client, rows, level + 1, block);
     } else {
-        append_non_partitioned_block (client, rows, level, block, false);
+        append_non_partitioned_block(client, rows, level, block, false);
     }
 }
 
@@ -569,15 +569,15 @@ function append_logical_volume(client, rows, level, lvol) {
             size: lvol.Size,
             text: _("Pool for Thin Volumes")
         };
-        tabs = create_tabs (client, lvol, false);
+        tabs = create_tabs(client, lvol, false);
         append_row(client, rows, level, lvol.Name, lvol.Name, desc, tabs, false);
         client.lvols_pool_members[lvol.path].forEach(function (member_lvol) {
-            append_logical_volume (client, rows, level+1, member_lvol);
+            append_logical_volume(client, rows, level + 1, member_lvol);
         });
     } else {
         block = client.lvols_block[lvol.path];
         if (block)
-            append_logical_volume_block (client, rows, level, block, lvol);
+            append_logical_volume_block(client, rows, level, block, lvol);
         else {
             // If we can't find the block for a active
             // volume, Storaged or something below is
@@ -586,9 +586,9 @@ function append_logical_volume(client, rows, level, lvol) {
 
             desc = {
                 size: lvol.Size,
-                text: lvol.Active? _("Unsupported volume") : _("Inactive volume")
+                text: lvol.Active ? _("Unsupported volume") : _("Inactive volume")
             }
-            tabs = create_tabs (client, lvol, false);
+            tabs = create_tabs(client, lvol, false);
             append_row(client, rows, level, lvol.Name, lvol.Name, desc, tabs, false);
         }
     }

@@ -350,10 +350,6 @@ return plural;
   null,
   "Esborra els contenidors i restableix l'agrupació d'emmagatzematge"
  ],
- "Erase containers, reformat disks, and add them": [
-  null,
-  "Esborra els contenidors, torna formatar els discs i afegeix-los"
- ],
  "Error message from Docker:": [
   null,
   "Missatge d'error de Docker:"
@@ -816,10 +812,6 @@ return plural;
   ""
  ],
  "The scan from $time ($type) was not successful.": [
-  null,
-  ""
- ],
- "The storage pool will be reset to optimize its layout.  All containers will be erased.": [
   null,
   ""
  ],

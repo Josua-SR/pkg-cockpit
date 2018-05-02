@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 /*
  * This file is part of Cockpit.
  *
@@ -31,7 +30,6 @@ const _ = cockpit.gettext;
 
 const ENABLED = 'enabled';
 
-
 class LibvirtSlate extends React.Component {
     constructor(props) {
         super(props);
@@ -61,7 +59,7 @@ class LibvirtSlate extends React.Component {
     }
 
     onLibvirtEnabledChanged(e) {
-        if (e && e.target && typeof(e.target.checked) === "boolean") {
+        if (e && e.target && typeof e.target.checked === "boolean") {
             this.setState({
                 libvirtEnabled: e.target.checked,
                 userActivityFlag: true,
@@ -95,7 +93,7 @@ class LibvirtSlate extends React.Component {
         if (activeState === 'running') {
             message = _("Virtualization Service is Available");
             icon = (<span className="pficon-ok"/>);
-        } else if (name &&  activeState === 'unknown') { // name === 'unknown' first
+        } else if (name && activeState === 'unknown') { // name === 'unknown' first
             message = _("Connecting to Virtualization Service");
             icon = (<div className="spinner spinner-lg"/>);
         } else {

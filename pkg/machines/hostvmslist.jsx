@@ -1,4 +1,4 @@
-/*jshint esversion: 6 */
+/* jshint esversion: 6 */
 /*
  * This file is part of Cockpit.
  *
@@ -32,19 +32,14 @@ import {
     clearNotification,
 } from "./actions.es6";
 
-import {
-    vmId,
-    mouseClick,
-} from "./helpers.es6";
+import { vmId } from "./helpers.es6";
 
 import { Listing } from "cockpit-components-listing.jsx";
-import { createVmDialog } from './components/create-vm-dialog/createVmDialog.jsx';
 import NotificationArea from './components/notification/notificationArea.jsx';
 import Vm from './components/vm/vm.jsx';
 import DummyVm from './components/vm/dummyVm.jsx';
 
 const _ = cockpit.gettext;
-
 
 /**
  * List of all VMs defined on this host
@@ -77,56 +72,48 @@ class HostVmsList extends React.Component {
     }
 
     render() {
-        const { vms, config, systemInfo, ui, dispatch, actions } = this.props;
+        const { vms, config, ui, dispatch, actions } = this.props;
         const combinedVms = [...vms, ...this.asDummVms(vms, ui.vms)];
 
         const sortFunction = (vmA, vmB) => vmA.name.localeCompare(vmB.name);
 
-        let allActions = [
-            (
-                <a className="card-pf-link-with-icon pull-right" id="create-new-vm"
-                   onClick={mouseClick(() => createVmDialog(dispatch, systemInfo.osInfoList))}>
-                    <span className="pficon pficon-add-circle-o"/>{_("Create New VM")}
-                </a>
-            )
-        ];
-
+        let allActions = [];
         if (actions) {
             allActions = allActions.concat(actions);
         }
 
         return (<div className='container-fluid'>
             <NotificationArea id={"notification-area"}
-                              notifications={ui.notifications}
-                              onDismiss={(id) => dispatch(clearNotification(id))}/>
+                notifications={ui.notifications}
+                onDismiss={(id) => dispatch(clearNotification(id))}/>
             <Listing title={_("Virtual Machines")}
-                     columnTitles={[_("Name"), _("Connection"), _("State")]}
-                     actions={allActions}
-                     emptyCaption={_("No VM is running or defined on this host")}>
+                columnTitles={[_("Name"), _("Connection"), _("State")]}
+                actions={allActions}
+                emptyCaption={_("No VM is running or defined on this host")}>
                 {combinedVms
-                    .sort(sortFunction)
-                    .map(vm => {
-                        if (vm.isUi) {
+                        .sort(sortFunction)
+                        .map(vm => {
+                            if (vm.isUi) {
+                                return (
+                                    <DummyVm vm={vm}/>
+                                );
+                            }
                             return (
-                                <DummyVm vm={vm}/>
-                            );
-                        }
-                        return (
-                            <Vm vm={vm} config={config}
-                                hostDevices={this.deviceProxies}
-                                onStart={() => dispatch(startVm(vm))}
-                                onInstall={() => dispatch(installVm(vm))}
-                                onReboot={() => dispatch(rebootVm(vm))}
-                                onForceReboot={() => dispatch(forceRebootVm(vm))}
-                                onShutdown={() => dispatch(shutdownVm(vm))}
-                                onForceoff={() => dispatch(forceVmOff(vm))}
-                                onUsageStartPolling={() => dispatch(usageStartPolling(vm))}
-                                onUsageStopPolling={() => dispatch(usageStopPolling(vm))}
-                                onSendNMI={() => dispatch(sendNMI(vm))}
-                                dispatch={dispatch}
-                                key={`${vmId(vm.name)}`}
-                            />);
-                    })}
+                                <Vm vm={vm} config={config}
+                                    hostDevices={this.deviceProxies}
+                                    onStart={() => dispatch(startVm(vm))}
+                                    onInstall={() => dispatch(installVm(vm))}
+                                    onReboot={() => dispatch(rebootVm(vm))}
+                                    onForceReboot={() => dispatch(forceRebootVm(vm))}
+                                    onShutdown={() => dispatch(shutdownVm(vm))}
+                                    onForceoff={() => dispatch(forceVmOff(vm))}
+                                    onUsageStartPolling={() => dispatch(usageStartPolling(vm))}
+                                    onUsageStopPolling={() => dispatch(usageStopPolling(vm))}
+                                    onSendNMI={() => dispatch(sendNMI(vm))}
+                                    dispatch={dispatch}
+                                    key={`${vmId(vm.name)}`}
+                                />);
+                        })}
             </Listing>
         </div>);
     }
@@ -135,7 +122,6 @@ class HostVmsList extends React.Component {
 HostVmsList.propTypes = {
     vms: PropTypes.array.isRequired,
     config: PropTypes.object.isRequired,
-    systemInfo: PropTypes.object.isRequired,
     ui: PropTypes.object.isRequired,
     dispatch: PropTypes.func.isRequired,
 };

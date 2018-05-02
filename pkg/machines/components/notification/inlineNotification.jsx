@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 /*
  * This file is part of Cockpit.
  *
@@ -21,7 +20,6 @@ import cockpit from 'cockpit';
 import React, { PropTypes } from "react";
 import { mouseClick } from '../../helpers.es6';
 import { Notification } from "./notification.jsx";
-
 
 const _ = cockpit.gettext;
 
@@ -54,7 +52,7 @@ class InlineNotification extends React.Component {
             }
 
             detailButton = (<a href='#' className='alert-link machines-more-button'
-                                     onClick={mouseClick(this.toggleDetail)}>{detailButtonText}</a>);
+                onClick={mouseClick(this.toggleDetail)}>{detailButtonText}</a>);
         }
 
         return (

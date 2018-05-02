@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 /*
  * This file is part of Cockpit.
  *
@@ -31,6 +30,7 @@ import {
     convertToUnit,
     timeoutedPromise,
     units,
+    mouseClick,
 } from "../../helpers.es6";
 
 import {
@@ -48,7 +48,6 @@ const _ = cockpit.gettext;
 
 const URL_SOURCE = 'url';
 const COCKPIT_FILESYSTEM_SOURCE = 'file';
-
 
 const MemorySelectRow = ({ label, id, value, initialUnit, onValueChange, onUnitChange }) => {
     return (
@@ -84,13 +83,12 @@ const MemorySelectRow = ({ label, id, value, initialUnit, onValueChange, onUnitC
                                 </Select.Select>
                             </span>
                         </div>
-                     </span>
+                    </span>
                 </div>
             </td>
         </tr>
     );
 };
-
 
 /* Create a virtual machine
  * props:
@@ -111,13 +109,13 @@ class CreateVM extends React.Component {
     }
 
     onChangedEventValue(key, e) {
-        if (e && e.target && typeof(e.target.value) !== 'undefined') {
+        if (e && e.target && typeof e.target.value !== 'undefined') {
             this.onChangedValue(key, e.target.value);
         }
     }
 
     onChangedEventChecked(key, e) {
-        if (e && e.target && typeof(e.target.checked) === "boolean") {
+        if (e && e.target && typeof e.target.checked === "boolean") {
             this.onChangedValue(key, e.target.checked);
         }
     }
@@ -130,48 +128,48 @@ class CreateVM extends React.Component {
         };
 
         switch (key) {
-            case 'vendor': {
-                const os = this.props.vendorMap[value][0].shortId;
-                this.setState({
-                    [key]: value,
-                    os,
-                });
-                notifyValuesChanged('os', os);
-                break;
+        case 'vendor': {
+            const os = this.props.vendorMap[value][0].shortId;
+            this.setState({
+                [key]: value,
+                os,
+            });
+            notifyValuesChanged('os', os);
+            break;
+        }
+        case 'os':
+            this.setState({ [key]: value });
+            break;
+        case 'source':
+            if (valueParams) {
+                notifyValuesChanged('error', valueParams.error);
             }
-            case 'os':
-                this.setState({ [key]: value });
-                break;
-            case 'source':
-                if (valueParams) {
-                    notifyValuesChanged('error', valueParams.error);
-                }
-                break;
-            case 'sourceType':
-                this.setState({ [key]: value });
-                notifyValuesChanged('source', null);
-                notifyValuesChanged('error', null);
-                break;
-            case 'memorySize':
-                this.setState({ [key]: value });
-                value = convertToUnit(value, this.state.memorySizeUnit, units.MiB);
-                break;
-            case 'storageSize':
-                this.setState({ [key]: value });
-                value = convertToUnit(value, this.state.storageSizeUnit, units.GiB);
-                break;
-            case 'memorySizeUnit':
-                this.setState({ [key]: value });
-                value = convertToUnit(this.state.memorySize, value, units.MiB);
-                key = 'memorySize';
-                break;
-            case 'storageSizeUnit':
-                this.setState({ [key]: value });
-                value = convertToUnit(this.state.storageSize, value, units.GiB);
-                key = 'storageSize';
-                break;
-            default:
-                break;
+            break;
+        case 'sourceType':
+            this.setState({ [key]: value });
+            notifyValuesChanged('source', null);
+            notifyValuesChanged('error', null);
+            break;
+        case 'memorySize':
+            this.setState({ [key]: value });
+            value = convertToUnit(value, this.state.memorySizeUnit, units.MiB);
+            break;
+        case 'storageSize':
+            this.setState({ [key]: value });
+            value = convertToUnit(value, this.state.storageSizeUnit, units.GiB);
+            break;
+        case 'memorySizeUnit':
+            this.setState({ [key]: value });
+            value = convertToUnit(this.state.memorySize, value, units.MiB);
+            key = 'memorySize';
+            break;
+        case 'storageSizeUnit':
+            this.setState({ [key]: value });
+            value = convertToUnit(this.state.storageSize, value, units.GiB);
+            key = 'storageSize';
+            break;
+        default:
+            break;
         }
 
         notifyValuesChanged(key, value);
@@ -200,35 +198,34 @@ class CreateVM extends React.Component {
 
         const osEntries = (
             this.props.vendorMap[this.state.vendor]
-                .map(os => (<Select.SelectEntry data={os.shortId}
-                                                key={os.shortId}>{getOSStringRepresentation(os)}</Select.SelectEntry>))
+                    .map(os => (<Select.SelectEntry data={os.shortId}
+                        key={os.shortId}>{getOSStringRepresentation(os)}</Select.SelectEntry>))
         );
 
         let installationSource;
         let installationSourceId;
         switch (this.state.sourceType) {
-            case COCKPIT_FILESYSTEM_SOURCE:
-                installationSourceId="source-file";
-                installationSource = (
-                    <FileAutoComplete.FileAutoComplete id={installationSourceId}
-                                                       placeholder={_("Path to ISO file on host's file system")}
-                                                       onChange={this.onChangedValue.bind(this, 'source')}/>
-                );
-                break;
-            case URL_SOURCE:
-            default:
-                installationSourceId="source-url";
-                installationSource = (
-                    <input id={installationSourceId} className="form-control"
-                           type="text"
-                           minLength={1}
-                           placeholder={_("Remote URL")}
-                           value={this.props.vmParams.source}
-                           onChange={this.onChangedEventValue.bind(this, 'source')}/>
-                );
-                break;
+        case COCKPIT_FILESYSTEM_SOURCE:
+            installationSourceId = "source-file";
+            installationSource = (
+                <FileAutoComplete.FileAutoComplete id={installationSourceId}
+                    placeholder={_("Path to ISO file on host's file system")}
+                    onChange={this.onChangedValue.bind(this, 'source')}/>
+            );
+            break;
+        case URL_SOURCE:
+        default:
+            installationSourceId = "source-url";
+            installationSource = (
+                <input id={installationSourceId} className="form-control"
+                    type="text"
+                    minLength={1}
+                    placeholder={_("Remote URL")}
+                    value={this.props.vmParams.source}
+                    onChange={this.onChangedEventValue.bind(this, 'source')}/>
+            );
+            break;
         }
-
 
         return (
             <div className="modal-body modal-dialog-body-table">
@@ -354,19 +351,19 @@ function validateParams(vmParams) {
     vmParams.source = vmParams.source ? vmParams.source.trim() : null;
     if (!isEmpty(vmParams.source)) {
         switch (vmParams.sourceType) {
-            case COCKPIT_FILESYSTEM_SOURCE:
-                if (!vmParams.source.startsWith("/")) {
-                    return _("Invalid filename");
-                }
-                break;
-            case URL_SOURCE:
-            default:
-                if (!vmParams.source.startsWith("http") &&
+        case COCKPIT_FILESYSTEM_SOURCE:
+            if (!vmParams.source.startsWith("/")) {
+                return _("Invalid filename");
+            }
+            break;
+        case URL_SOURCE:
+        default:
+            if (!vmParams.source.startsWith("http") &&
                     !vmParams.source.startsWith("ftp") &&
                     !vmParams.source.startsWith("nfs")) {
-                    return _("Source should start with http, ftp or nfs protocol");
-                }
-                break;
+                return _("Source should start with http, ftp or nfs protocol");
+            }
+            break;
         }
         if (vmParams.source === "/") {
             vmParams.source = null;
@@ -374,7 +371,7 @@ function validateParams(vmParams) {
     }
 
     if (isEmpty(vmParams.source)){
-      return _("Installation Source should not be empty");
+        return _("Installation Source should not be empty");
     }
 
     if (vmParams.memorySize <= 0) {
@@ -450,3 +447,12 @@ export const createVmDialog = (dispatch, osInfoList) => {
 
     DialogPattern.show_modal_dialog(dialogProps, footerProps);
 };
+
+export function createVmAction({ dispatch, systemInfo }) {
+    return (
+        <a className="card-pf-link-with-icon pull-right" id="create-new-vm"
+            onClick={mouseClick(() => createVmDialog(dispatch, systemInfo.osInfoList))}>
+            <span className="pficon pficon-add-circle-o"/>{_("Create New VM")}
+        </a>
+    );
+}

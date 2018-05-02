@@ -555,6 +555,10 @@ return plural;
   null,
   "关"
  ],
+ "Ok": [
+  null,
+  "确认"
+ ],
  "On": [
   null,
   "开"

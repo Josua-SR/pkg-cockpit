@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 /*
  * This file is part of Cockpit.
  *
@@ -44,7 +43,6 @@ const transform = {
         'false': _("no"),
     },
 };
-
 
 function rephraseUI(key, original) {
     if (!(key in transform)) {

@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 /*
  * This file is part of Cockpit.
  *
@@ -31,7 +30,6 @@ export const CONSOLE_TYPE_ID_MAP = {
     'vnc': '766e63',
     'rdp': 'rdp_not_yet_supported',
 };
-
 
 export const REQUIRED_OVIRT_API_VERSION = {
     major: 4,
@@ -84,4 +82,3 @@ export function getOvirtBaseUrl () {
 }
 
 export default CONFIG;
-

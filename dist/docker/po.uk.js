@@ -357,10 +357,6 @@ return plural;
   null,
   "Витерти контейнери і відновити початковий стан резервного сховища"
  ],
- "Erase containers, reformat disks, and add them": [
-  null,
-  "Витерти контейнери, переформатувати диски і додати їх"
- ],
  "Error message from Docker:": [
   null,
   "Повідомлення щодо помилки від Docker:"
@@ -826,10 +822,6 @@ return plural;
  "The scan from $time ($type) was not successful.": [
   null,
   "Сканування $time ($type) виконати не вдалося."
- ],
- "The storage pool will be reset to optimize its layout.  All containers will be erased.": [
-  null,
-  "Для оптимізації компонування буде відновлено початковий стан резервного сховища даних. Усі контейнери буде витерто."
  ],
  "This image does not exist.": [
   null,

@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 /*
  * This file is part of Cockpit.
  *
@@ -82,7 +81,7 @@ function getLogarithmOfBase1024(value) {
 
 export function convertToBestUnit(input, inputUnit) {
     return convertToUnitVerbose(input, inputUnit,
-        logUnitMap[getLogarithmOfBase1024(convertToUnitVerbose(input, inputUnit, units.B).value)]);
+                                logUnitMap[getLogarithmOfBase1024(convertToUnitVerbose(input, inputUnit, units.B).value)]);
 }
 
 export function convertToUnit(input, inputUnit, outputUnit) {
@@ -126,7 +125,7 @@ export function convertToUnitVerbose(input, inputUnit, outputUnit) {
 }
 
 export function isEmpty(str) {
-    return (!str || 0 === str.length);
+    return (!str || str.length === 0);
 }
 
 export function arrayEquals(arr1, arr2) {
@@ -247,7 +246,6 @@ export function toFixedPrecision(value, precision) {
     }
     return result;
 }
-
 
 function isFirefox() {
     return window.navigator.userAgent.toLowerCase().indexOf('firefox') > -1;

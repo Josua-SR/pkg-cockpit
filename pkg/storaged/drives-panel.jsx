@@ -52,11 +52,11 @@ export class DrivesPanel extends React.Component {
             if (drive.MediaRemovable || drive.Media) {
                 for (var i = 0; i < drive.MediaCompatibility.length; i++)
                     if (drive.MediaCompatibility[i].indexOf("optical") === 0)
-                    return "optical";
+                        return "optical";
                 return "removable";
             }
 
-            return (drive.RotationRate === 0)? "ssd" : "hdd";
+            return (drive.RotationRate === 0) ? "ssd" : "hdd";
         }
 
         function make_drive(path) {
@@ -110,7 +110,8 @@ export class DrivesPanel extends React.Component {
             );
         }
 
-        var drives = Object.keys(client.drives).sort(cmp_drive).map(make_drive);
+        var drives = Object.keys(client.drives).sort(cmp_drive)
+                .map(make_drive);
 
         return (
             <OverviewSidePanel id="drives"

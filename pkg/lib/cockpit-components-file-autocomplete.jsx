@@ -146,7 +146,6 @@ var FileAutoComplete = React.createClass({
                 results.push(item);
             }
 
-
             if (results.length > 5000) {
                 error = _("Too many files found");
                 channel.close();
@@ -287,7 +286,7 @@ var FileAutoComplete = React.createClass({
         return (
             <div className="combobox-container file-autocomplete-ct" id={this.props.id}>
                 <div className={classes}>
-                    <input ref="input" autocomplete="false" placeholder={placeholder} className="combobox form-control" type="text" onChange={this.delayedOnChange} value={this.state.value} onBlur={this.onBlur} />
+                    <input ref="input" autoComplete="false" placeholder={placeholder} className="combobox form-control" type="text" onChange={this.delayedOnChange} value={this.state.value} onBlur={this.onBlur} />
                     <span onClick={this.showAllOptions} className={controlClasses}></span>
                     <ul onMouseDown={this.onMouseDown} onClick={this.selectItem} className="typeahead typeahead-long dropdown-menu">
                         {listItems}

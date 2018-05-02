@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 /*
  * This file is part of Cockpit.
  *
@@ -27,8 +26,6 @@ import { switchHostToMaintenance } from '../actions.es6';
 
 const _ = cockpit.gettext;
 
-React;
-
 const hostToMaintenanceDialog = (dispatch, host) => {
     const hostId = host && host.id;
 
@@ -47,8 +44,8 @@ const hostToMaintenanceDialog = (dispatch, host) => {
     let footerProps = {
         'actions': [
             { 'clicked': () => { return dispatch(switchHostToMaintenance({ hostId })); },
-                'caption': _("OK"),
-                'style': 'primary',
+              'caption': _("OK"),
+              'style': 'primary',
             },
         ],
     };

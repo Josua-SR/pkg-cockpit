@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 /*
  * This file is part of Cockpit.
  *
@@ -31,7 +30,6 @@ import { startVm, goToSubpage } from '../actions.es6';
 import rephraseUI from '../rephraseUI.es6';
 import { getCurrentCluster, getHost } from '../selectors.es6';
 
-React;
 const _ = cockpit.gettext;
 
 const NoVm = () => (<div>{_("No VM found in oVirt.")}</div>);
@@ -56,12 +54,12 @@ const VmHost = ({ id, hosts, dispatch }) => {
     if (isSameHostAddress(host.address)) {
         return (<a href='#' tabIndex="0" onClick={() => dispatch(goToSubpage('hostvms'))}>
             {_("Host")}
-            </a>);
+        </a>);
     }
 
     const cockpitUrl = `https://${host.address}:${CONFIG.cockpitPort}/machines`;
     // just the <a href> without the tabIndex="0" onClick handler is not working
-    return (<a href={cockpitUrl} tabIndex="0" onClick={() => {window.top.location=cockpitUrl;}}>
+    return (<a href={cockpitUrl} tabIndex="0" onClick={() => { window.top.location = cockpitUrl; }}>
         {host.name}
     </a>);
 };
@@ -148,7 +146,7 @@ const Vm = ({ vm, hosts, templates, config, dispatch }) => {
             <VmHost id={vm.hostId} hosts={hosts} dispatch={dispatch} />,
             <VmActions vm={vm} dispatch={dispatch} hostName={hostName} />,
             stateIcon
-            ]}
+        ]}
     />);
 };
 
@@ -171,10 +169,10 @@ const ClusterVms = ({ dispatch, config }) => {
 
     return (<div className='container-fluid'>
         <Listing title={title} columnTitles={[
-        _("Name"), _("Description"), _("Template"), _("Memory"), _("vCPUs"), _("OS"),
-        _("HA"), _("Stateless"), _("Host"),
-        (<div className='ovirt-provider-cluster-vms-actions'>{_("Action")}</div>),
-        (<div className='ovirt-provider-cluster-vms-state'>{_("State")}</div>)]}>
+            _("Name"), _("Description"), _("Template"), _("Memory"), _("vCPUs"), _("OS"),
+            _("HA"), _("Stateless"), _("Host"),
+            (<div className='ovirt-provider-cluster-vms-actions'>{_("Action")}</div>),
+            (<div className='ovirt-provider-cluster-vms-state'>{_("State")}</div>)]}>
             {Object.getOwnPropertyNames(vms).map(vmId => {
                 return (
                     <Vm vm={vms[vmId]}

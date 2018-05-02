@@ -123,11 +123,11 @@ return plural;
  ],
  "Advanced TCA": [
   null,
-  ""
+  "TCA Avançado"
  ],
  "All In One": [
   null,
-  ""
+  "Tudo em um"
  ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
@@ -147,15 +147,15 @@ return plural;
  ],
  "Blade": [
   null,
-  ""
+  "Blade"
  ],
  "Blade enclosure": [
   null,
-  ""
+  "Blade enclosure"
  ],
  "Bus Expansion Chassis": [
   null,
-  ""
+  "Chassi de Expansão de Barramento"
  ],
  "CPU": [
   null,
@@ -199,8 +199,8 @@ return plural;
  ],
  "Combined usage of $0 CPU core": [
   "Combined usage of $0 CPU cores",
-  "",
-  ""
+  "Uso combinado de núcleo de CPU de $0",
+  "Uso combinado de núcleos de CPU de $0 CPU"
  ],
  "Command": [
   null,
@@ -224,7 +224,7 @@ return plural;
  ],
  "Compact PCI": [
   null,
-  ""
+  "Compacto PCI"
  ],
  "Configure storage...": [
   null,
@@ -260,7 +260,7 @@ return plural;
  ],
  "Convertible": [
   null,
-  ""
+  "Conversível"
  ],
  "Could not add all disks": [
   null,
@@ -300,11 +300,11 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Desktop"
  ],
  "Detachable": [
   null,
-  ""
+  "Destacável"
  ],
  "Details": [
   null,
@@ -316,7 +316,7 @@ return plural;
  ],
  "Docking Station": [
   null,
-  ""
+  "Estação de ancoragem."
  ],
  "Download": [
   null,
@@ -336,7 +336,7 @@ return plural;
  ],
  "Embedded PC": [
   null,
-  ""
+  "Embedded PC"
  ],
  "Entrypoint": [
   null,
@@ -349,10 +349,6 @@ return plural;
  "Erase containers and reset storage pool": [
   null,
   "Apagar contêineres e redefinir pool de armazenamento"
- ],
- "Erase containers, reformat disks, and add them": [
-  null,
-  "Apagar contêineres, reformatar discos e adicioná-los"
  ],
  "Error message from Docker:": [
   null,
@@ -368,7 +364,7 @@ return plural;
  ],
  "Expansion Chassis": [
   null,
-  ""
+  "Chassi de Expansão"
  ],
  "Expose container ports": [
   null,
@@ -400,7 +396,7 @@ return plural;
  ],
  "Hand Held": [
   null,
-  ""
+  "Portátil"
  ],
  "Hard Disk": [
   null,
@@ -456,11 +452,11 @@ return plural;
  ],
  "IoT Gateway": [
   null,
-  ""
+  "Gateway IoT"
  ],
  "Laptop": [
   null,
-  ""
+  "Laptop"
  ],
  "Link to another container": [
   null,
@@ -480,11 +476,11 @@ return plural;
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "Desktop de baixo perfil"
  ],
  "Lunch Box": [
   null,
-  ""
+  "Lunch Box"
  ],
  "MAC Address:": [
   null,
@@ -492,7 +488,7 @@ return plural;
  ],
  "Main Server Chassis": [
   null,
-  ""
+  "Chassi do Servidor Principal"
  ],
  "Memory": [
   null,
@@ -512,11 +508,11 @@ return plural;
  ],
  "Mini PC": [
   null,
-  ""
+  "Mini PC"
  ],
  "Mini Tower": [
   null,
-  ""
+  "Mini Torre"
  ],
  "Mount container volumes": [
   null,
@@ -524,7 +520,7 @@ return plural;
  ],
  "Multi-system Chassis": [
   null,
-  ""
+  "Chassi Multi-sistema"
  ],
  "Name": [
   null,
@@ -584,7 +580,7 @@ return plural;
  ],
  "Notebook": [
   null,
-  ""
+  "Notebook"
  ],
  "Off": [
   null,
@@ -609,7 +605,7 @@ return plural;
  ],
  "Other": [
   null,
-  ""
+  "De outros"
  ],
  "Overview": [
   null,
@@ -617,11 +613,11 @@ return plural;
  ],
  "Peripheral Chassis": [
   null,
-  ""
+  "Chassi Periférico"
  ],
  "Pizza Box": [
   null,
-  ""
+  "Pizza Box"
  ],
  "Please confirm deletion of $0": [
   null,
@@ -637,7 +633,7 @@ return plural;
  ],
  "Portable": [
   null,
-  ""
+  "Portatil"
  ],
  "Ports": [
   null,
@@ -649,15 +645,15 @@ return plural;
  ],
  "Problems": [
   null,
-  ""
+  "Problemas"
  ],
  "RAID Chassis": [
   null,
-  ""
+  "RAID Chassis"
  ],
  "Rack Mount Chassis": [
   null,
-  ""
+  "Rack Mount Chassis"
  ],
  "ReadOnly": [
   null,
@@ -717,7 +713,7 @@ return plural;
  ],
  "Sealed-case PC": [
   null,
-  ""
+  "PC com caixa vedada"
  ],
  "Security": [
   null,
@@ -745,7 +741,7 @@ return plural;
  ],
  "Space-saving Computer": [
   null,
-  ""
+  "Computador com economia de espaço"
  ],
  "Start": [
   null,
@@ -765,7 +761,7 @@ return plural;
  ],
  "Stick PC": [
   null,
-  ""
+  "Stick PC"
  ],
  "Stop": [
   null,
@@ -785,11 +781,11 @@ return plural;
  ],
  "Sub Chassis": [
   null,
-  ""
+  "Sub Chassis"
  ],
  "Sub Notebook": [
   null,
-  ""
+  "Sub Notebook"
  ],
  "TCP": [
   null,
@@ -797,7 +793,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "Tablet"
  ],
  "Tag": [
   null,
@@ -813,15 +809,11 @@ return plural;
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,
-  ""
+  "O scanner de  $time ($type) não detectou vulnerabilidades."
  ],
  "The scan from $time ($type) was not successful.": [
   null,
-  ""
- ],
- "The storage pool will be reset to optimize its layout.  All containers will be erased.": [
-  null,
-  "O pool de armazenamento será redefinido para otimizar seu layout. Todos os contêineres serão apagados."
+  "O scanner de $time ($type) não funcionou."
  ],
  "This image does not exist.": [
   null,

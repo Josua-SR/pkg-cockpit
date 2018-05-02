@@ -927,6 +927,10 @@ return plural;
   null,
   "关"
  ],
+ "Ok": [
+  null,
+  "确认"
+ ],
  "On": [
   null,
   "开"
@@ -1642,6 +1646,10 @@ return plural;
  "iSCSI Targets": [
   null,
   "iSCSI 目标"
+ ],
+ "undefined": [
+  null,
+  "未定义"
  ],
  "unknown target": [
   null,

@@ -555,6 +555,10 @@ return plural;
   null,
   "비활성"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "On": [
   null,
   "활성"

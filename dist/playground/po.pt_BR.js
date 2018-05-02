@@ -132,7 +132,7 @@ return plural;
  ],
  "No matching files found": [
   null,
-  ""
+  "Nenhum arquivo correspondente encontrado"
  ],
  "Not Ready": [
   null,
@@ -152,7 +152,7 @@ return plural;
  ],
  "Path to file": [
   null,
-  ""
+  "Caminho para o arquivo"
  ],
  "Ready": [
   null,

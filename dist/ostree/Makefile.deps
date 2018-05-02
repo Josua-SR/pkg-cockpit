@@ -1,5 +1,5 @@
 # Generated Makefile data for ostree
-# Stamp: Wed Apr 18 2018 11:44:01 GMT+0000 (UTC)
+# Stamp: Wed May 02 2018 13:52:34 GMT+0000 (UTC)
 
 ostree_INPUTS = \
 	node_modules/angular-bootstrap-npm/LICENSE \

@@ -941,6 +941,10 @@ return plural;
   null,
   "Isključi"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "On": [
   null,
   "Uključi"
@@ -1654,6 +1658,10 @@ return plural;
   ""
  ],
  "iSCSI Targets": [
+  null,
+  ""
+ ],
+ "undefined": [
   null,
   ""
  ],

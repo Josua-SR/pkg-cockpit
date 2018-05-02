@@ -350,10 +350,6 @@ return plural;
   null,
   "Borrar contenedores y reajustar el pool de almacenamiento"
  ],
- "Erase containers, reformat disks, and add them": [
-  null,
-  "Borrar contenedores, reformatear discos y añadirlos"
- ],
  "Error message from Docker:": [
   null,
   "Mensaje de error de Docker:"
@@ -818,10 +814,6 @@ return plural;
  "The scan from $time ($type) was not successful.": [
   null,
   "El escaneo desde $time ($type) no tuvo éxito."
- ],
- "The storage pool will be reset to optimize its layout.  All containers will be erased.": [
-  null,
-  "El grupo de almacenamiento se restablecerá para optimizar su diseño. Se borrarán todos los contenedores."
  ],
  "This image does not exist.": [
   null,

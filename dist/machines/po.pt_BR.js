@@ -69,11 +69,11 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  ""
+  "$0 está disponível para a maioria dos sistemas operacionais. Para instalá-lo, procure-o no GNOME Software ou execute o seguinte:"
  ],
  "Additional": [
   null,
-  ""
+  "Adicional"
  ],
  "Address": [
   null,
@@ -81,11 +81,11 @@ return plural;
  ],
  "Address:": [
   null,
-  ""
+  "Endereço:"
  ],
  "Automatically start libvirt on boot": [
   null,
-  ""
+  "Iniciar automaticamente a libvirt na inicialização"
  ],
  "Autostart:": [
   null,
@@ -105,7 +105,7 @@ return plural;
  ],
  "CHANGE NETWORK STATE action failed": [
   null,
-  ""
+  "A ação MUDAR DE ESTADO DE REDE falhou"
  ],
  "CPU Type:": [
   null,
@@ -121,23 +121,23 @@ return plural;
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  ""
+  "Clicar em \"Iniciar Visualizador Remoto\" fará o download de um arquivo .vv e será iniciado $0."
  ],
  "Confirm deletion of $0": [
   null,
-  ""
+  "Confirme a exclusão de $0"
  ],
  "Connect with any $0 viewer application.": [
   null,
-  ""
+  "Conecte-se com qualquer $0 aplicativo visualizador ."
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  ""
+  "Conecte-se com qualquer aplicativo visualizador SPICE ou VNC."
  ],
  "Connecting to Virtualization Service": [
   null,
-  ""
+  "Conectando-se ao serviço de virtualização"
  ],
  "Connection": [
   null,
@@ -145,11 +145,11 @@ return plural;
  ],
  "Console Type": [
   null,
-  ""
+  "Tipo de console"
  ],
  "Consoles": [
   null,
-  ""
+  "Consoles"
  ],
  "Count:": [
   null,
@@ -161,15 +161,15 @@ return plural;
  ],
  "Create New VM": [
   null,
-  ""
+  "Criar nova VM"
  ],
  "Create New Virtual Machine": [
   null,
-  ""
+  "Criar nova máquina virtual"
  ],
  "Creation of vm $0 failed": [
   null,
-  ""
+  "Criação da vm $0 falhou"
  ],
  "Delete": [
   null,
@@ -177,7 +177,7 @@ return plural;
  ],
  "Delete associated storage files:": [
   null,
-  ""
+  "Excluir arquivos de armazenamento associados:"
  ],
  "Device": [
   null,
@@ -185,11 +185,11 @@ return plural;
  ],
  "Disconnect": [
   null,
-  ""
+  "Desconectar"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
-  ""
+  "Desconectado do console serial. Clique no botão Reconectar."
  ],
  "Disks": [
   null,
@@ -197,7 +197,7 @@ return plural;
  ],
  "Download the MSI from $0": [
   null,
-  ""
+  "Baixe o MSI de $0"
  ],
  "Emulated Machine:": [
   null,
@@ -221,15 +221,15 @@ return plural;
  ],
  "GiB": [
   null,
-  ""
+  "GiB"
  ],
  "Graphics Console (VNC)": [
   null,
-  ""
+  "Console de gráficos (VNC)"
  ],
  "Graphics Console in Desktop Viewer": [
   null,
-  ""
+  "Console gráfico no visualizador da área de trabalho"
  ],
  "Host": [
   null,
@@ -237,43 +237,43 @@ return plural;
  ],
  "INSTALL VM action failed": [
   null,
-  ""
+  "A ação de instalação da VM falhou"
  ],
  "Immediately Start VM": [
   null,
-  ""
+  "Imediatamente Iniciar VM"
  ],
  "Install": [
   null,
-  ""
+  "Instale"
  ],
  "Installation Source": [
   null,
-  ""
+  "Fonte de Instalação"
  ],
  "Installation Source Type": [
   null,
-  ""
+  "Tipo de Fonte de Instalação"
  ],
  "Installation Source should not be empty": [
   null,
-  ""
+  "A fonte de instalação não deve estar vazia"
  ],
  "Invalid filename": [
   null,
-  ""
+  "Nome de arquivo inválido"
  ],
  "Launch Remote Viewer": [
   null,
-  ""
+  "Iniciar o Visualizador Remoto"
  ],
  "Loading ...": [
   null,
-  ""
+  "Carregando ..."
  ],
  "MAC Address": [
   null,
-  ""
+  "MAC Address"
  ],
  "MTU": [
   null,
@@ -281,11 +281,11 @@ return plural;
  ],
  "Managed": [
   null,
-  ""
+  "Gerenciou"
  ],
  "Manual Connection": [
   null,
-  ""
+  "Conexão manual"
  ],
  "Memory": [
   null,
@@ -293,7 +293,7 @@ return plural;
  ],
  "Memory should be positive number": [
   null,
-  ""
+  "Memória deve ser um número positivo"
  ],
  "Memory:": [
   null,
@@ -305,11 +305,11 @@ return plural;
  ],
  "Model type": [
   null,
-  ""
+  "Tipo de modelo"
  ],
  "More Information": [
   null,
-  ""
+  "Mais Informações"
  ],
  "Name": [
   null,
@@ -317,15 +317,15 @@ return plural;
  ],
  "Name should not be empty": [
   null,
-  ""
+  "O nome não deve estar vazio"
  ],
  "Name should not consist of empty characters only": [
   null,
-  ""
+  "O nome não deve conter apenas caracteres vazios"
  ],
  "Networks": [
   null,
-  ""
+  "Networks"
  ],
  "No VM is running or defined on this host": [
   null,
@@ -337,7 +337,7 @@ return plural;
  ],
  "No console defined for this virtual machine.": [
   null,
-  ""
+  "Nenhum console definido para esta máquina virtual."
  ],
  "No disks defined for this VM": [
   null,
@@ -345,15 +345,15 @@ return plural;
  ],
  "No matching files found": [
   null,
-  ""
+  "Nenhum arquivo correspondente encontrado"
  ],
  "No network interfaces defined for this VM": [
   null,
-  ""
+  "Nenhuma interface de rede definida para esta VM"
  ],
  "OS Vendor": [
   null,
-  ""
+  "Fornecedor de SO"
  ],
  "Ok": [
   null,
@@ -369,19 +369,19 @@ return plural;
  ],
  "Path to ISO file on host's file system": [
   null,
-  ""
+  "Caminho para o arquivo ISO no sistema de arquivos do host"
  ],
  "Path to file": [
   null,
-  ""
+  "Caminho para o arquivo"
  ],
  "Please start the virtual machine to access its console.": [
   null,
-  ""
+  "Por favor, inicie a máquina virtual para acessar seu console."
  ],
  "Plug": [
   null,
-  ""
+  "Plug"
  ],
  "Pool": [
   null,
@@ -393,7 +393,7 @@ return plural;
  ],
  "Portgroup": [
   null,
-  ""
+  "Portgroup"
  ],
  "Protocol": [
   null,
@@ -409,7 +409,7 @@ return plural;
  ],
  "Remote URL": [
   null,
-  ""
+  "URL remoto"
  ],
  "Restart": [
   null,
@@ -421,31 +421,31 @@ return plural;
  ],
  "SPICE": [
   null,
-  ""
+  "SPICE"
  ],
  "SPICE Address:": [
   null,
-  ""
+  "SPICE Endereço:"
  ],
  "SPICE Port:": [
   null,
-  ""
+  "SPICE Porta:"
  ],
  "SPICE TLS Port:": [
   null,
-  ""
+  "SPICE TLS Porta:"
  ],
  "Send Non-Maskable Interrupt": [
   null,
-  ""
+  "Enviar interrupção não mascarada"
  ],
  "Send shortcut": [
   null,
-  ""
+  "Enviar atalho"
  ],
  "Serial Console": [
   null,
-  ""
+  "Console Serial"
  ],
  "Session": [
   null,
@@ -461,15 +461,15 @@ return plural;
  ],
  "Source should start with http, ftp or nfs protocol": [
   null,
-  ""
+  "A fonte deve começar com o protocolo http, ftp ou nfs"
  ],
  "Start libvirt": [
   null,
-  ""
+  "Iniciar libvirt"
  ],
  "Start the VM to see disk statistics.": [
   null,
-  ""
+  "Inicie a VM para ver as estatísticas do disco."
  ],
  "State": [
   null,
@@ -477,11 +477,11 @@ return plural;
  ],
  "Storage Size": [
   null,
-  ""
+  "Storage Size"
  ],
  "Storage Size should not be negative number": [
   null,
-  ""
+  "Tamanho de armazenamento não deve ser negativo"
  ],
  "System": [
   null,
@@ -517,7 +517,7 @@ return plural;
  ],
  "The VM is running and will be forced off before deletion.": [
   null,
-  ""
+  "A VM está em execução e será desativada antes da exclusão."
  ],
  "The VM is running.": [
   null,

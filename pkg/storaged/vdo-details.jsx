@@ -67,15 +67,15 @@ export class VDODetails extends React.Component {
 
         if (path)
             this.poll_process = cockpit.spawn([ "python", "--", "-", path ], { superuser: true })
-                                       .input(inotify_py + vdo_monitor_py)
-                                       .stream((data) => {
-                                           buf += data;
-                                           var lines = buf.split("\n");
-                                           buf = lines[lines.length-1];
-                                           if (lines.length >= 2) {
-                                               this.setState({ stats: JSON.parse(lines[lines.length-2]) });
-                                           }
-                                       });
+                    .input(inotify_py + vdo_monitor_py)
+                    .stream((data) => {
+                        buf += data;
+                        var lines = buf.split("\n");
+                        buf = lines[lines.length - 1];
+                        if (lines.length >= 2) {
+                            this.setState({ stats: JSON.parse(lines[lines.length - 2]) });
+                        }
+                    });
         this.poll_path = path;
     }
 
@@ -129,7 +129,7 @@ export class VDODetails extends React.Component {
             );
 
         function stop() {
-            var usage = get_active_usage(client, block? block.path : "/");
+            var usage = get_active_usage(client, block ? block.path : "/");
 
             if (usage.Blocking) {
                 dialog.open({ Title: cockpit.format(_("$0 is in active use"), vdo.name),
@@ -148,9 +148,9 @@ export class VDODetails extends React.Component {
                                   Title: _("Stop"),
                                   action: function () {
                                       return teardown_active_usage(client, usage)
-                                          .then(function () {
-                                              return vdo.stop();
-                                          });
+                                              .then(function () {
+                                                  return vdo.stop();
+                                              });
                                   }
                               }
                 });
@@ -160,7 +160,7 @@ export class VDODetails extends React.Component {
         }
 
         function delete_() {
-            var usage = get_active_usage(client, block? block.path : "/");
+            var usage = get_active_usage(client, block ? block.path : "/");
 
             if (usage.Blocking) {
                 dialog.open({ Title: cockpit.format(_("$0 is in active use"), vdo.name),
@@ -175,12 +175,12 @@ export class VDODetails extends React.Component {
                     return block.Format("empty", { 'tear-down': { t: 'b', v: true } });
                 } else {
                     return vdo.start()
-                              .then(function () {
-                                  wait_for(client, () => client.slashdevs_block[vdo.dev])
-                                    .then(function (block) {
-                                        return block.Format("empty", { 'tear-down': { t: 'b', v: true } });
-                                    });
-                              })
+                            .then(function () {
+                                wait_for(client, () => client.slashdevs_block[vdo.dev])
+                                        .then(function (block) {
+                                            return block.Format("empty", { 'tear-down': { t: 'b', v: true } });
+                                        });
+                            })
                 }
             }
 
@@ -193,15 +193,15 @@ export class VDODetails extends React.Component {
                               Danger: _("Deleting a VDO device will erase all data on it."),
                               action: function () {
                                   return teardown_active_usage(client, usage)
-                                      .then(function () {
-                                          return teardown_configs()
-                                              .then(function () {
-                                                  var location = cockpit.location;
-                                                  return vdo.remove().then(function () {
-                                                      location.go("/");
-                                                  });
-                                              });
-                                      });
+                                          .then(function () {
+                                              return teardown_configs()
+                                                      .then(function () {
+                                                          var location = cockpit.location;
+                                                          return vdo.remove().then(function () {
+                                                              location.go("/");
+                                                          });
+                                                      });
+                                          });
                               }
                           }
             });
@@ -212,7 +212,7 @@ export class VDODetails extends React.Component {
                           Fields: [
                               { SizeSlider: "lsize",
                                 Title: _("Logical Size"),
-                                Max: 5*vdo.logical_size,
+                                Max: 5 * vdo.logical_size,
                                 Min: vdo.logical_size,
                                 Round: 512,
                                 Value: vdo.logical_size,
@@ -226,7 +226,7 @@ export class VDODetails extends React.Component {
                                       return vdo.grow_logical(vals.lsize).then(() => {
                                           if (block && block.IdUsage == "filesystem")
                                               return cockpit.spawn([ "fsadm", "resize",
-                                                                     decode_filename(block.Device) ],
+                                                  decode_filename(block.Device) ],
                                                                    { superuser: true });
                                       });
                               }
@@ -249,8 +249,8 @@ export class VDODetails extends React.Component {
                     {cockpit.format(_("VDO Device $0"), vdo.name)}
                     <span className="pull-right">
                         { block
-                          ? <StorageButton onClick={stop}>{_("Stop")}</StorageButton>
-                          : <StorageButton onClick={vdo.start}>{_("Start")}</StorageButton>
+                            ? <StorageButton onClick={stop}>{_("Stop")}</StorageButton>
+                            : <StorageButton onClick={vdo.start}>{_("Start")}</StorageButton>
                         }
                         { "\n" }
                         <StorageButton kind="danger" onClick={delete_}>{_("Delete")}</StorageButton>
@@ -265,41 +265,41 @@ export class VDODetails extends React.Component {
                         <tr>
                             <td>{_("Backing Device")}</td>
                             <td>
-                                { backing_block ?
-                                  <StorageBlockNavLink client={client} block={backing_block}/>
-                                  : vdo.backing_dev
+                                { backing_block
+                                    ? <StorageBlockNavLink client={client} block={backing_block}/>
+                                    : vdo.backing_dev
                                 }
                             </td>
                         </tr>
                         <tr>
                             <td>{_("Physical")}</td>
                             <td>
-                                { stats ?
-                                  cockpit.format(_("$0 data + $1 overhead used of $2 ($3)"),
-                                                 fmt_size(stats.dataBlocksUsed * stats.blockSize),
-                                                 fmt_size(stats.overheadBlocksUsed * stats.blockSize),
-                                                 fmt_size(vdo.physical_size),
-                                                 fmt_perc(stats.usedPercent))
-                                      : fmt_size(vdo.physical_size)
+                                { stats
+                                    ? cockpit.format(_("$0 data + $1 overhead used of $2 ($3)"),
+                                                     fmt_size(stats.dataBlocksUsed * stats.blockSize),
+                                                     fmt_size(stats.overheadBlocksUsed * stats.blockSize),
+                                                     fmt_size(vdo.physical_size),
+                                                     fmt_perc(stats.usedPercent))
+                                    : fmt_size(vdo.physical_size)
                                 }
                             </td>
                         </tr>
                         <tr>
                             <td>{_("Logical")}</td>
                             <td>
-                                { stats ?
-                                  cockpit.format(_("$0 used of $1 ($2 saved)"),
-                                                 fmt_size(stats.logicalBlocksUsed * stats.blockSize),
-                                                 fmt_size(vdo.logical_size),
-                                                 fmt_perc(stats.savingPercent))
-                                      : fmt_size(vdo.logical_size)
+                                { stats
+                                    ? cockpit.format(_("$0 used of $1 ($2 saved)"),
+                                                     fmt_size(stats.logicalBlocksUsed * stats.blockSize),
+                                                     fmt_size(vdo.logical_size),
+                                                     fmt_perc(stats.savingPercent))
+                                    : fmt_size(vdo.logical_size)
                                 }
                                 &nbsp; <StorageButton onClick={grow_logical}>{_("Grow")}</StorageButton>
                             </td>
                         </tr>
                         <tr>
                             <td>{_("Index Memory")}</td>
-                            <td>{fmt_size(vdo.index_mem * 1024*1024*1024)}</td>
+                            <td>{fmt_size(vdo.index_mem * 1024 * 1024 * 1024)}</td>
                         </tr>
                         <tr>
                             <td>{_("Compression")}</td>

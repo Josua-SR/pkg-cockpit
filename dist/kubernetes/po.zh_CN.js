@@ -71,6 +71,10 @@ return plural;
   null,
   " 1\"是否想要删除以下节点？"
  ],
+ " or drag & drop.": [
+  null,
+  ""
+ ],
  "$0% Free": [
   "$0% Free",
   "$0% 空闲的"
@@ -347,6 +351,10 @@ return plural;
   null,
   "创建"
  ],
+ "Create Virtual Machine": [
+  null,
+  ""
+ ],
  "Create empty image stream": [
   null,
   "创建空镜像流"
@@ -490,6 +498,10 @@ return plural;
  "Driver": [
   null,
   "驱动器"
+ ],
+ "Drop file here to upload.": [
+  null,
+  ""
  ],
  "Empty Directory": [
   null,
@@ -923,6 +935,10 @@ return plural;
   null,
   "确认"
  ],
+ "Only files of size $0 MiB and less are supported": [
+  null,
+  ""
+ ],
  "Operating System": [
   null,
   "操作系统"
@@ -946,6 +962,10 @@ return plural;
  "Password": [
   null,
   "密码"
+ ],
+ "Paste JSON below, ": [
+  null,
+  ""
  ],
  "Path": [
   null,
@@ -1254,6 +1274,10 @@ return plural;
  "Requires Authentication": [
   null,
   "需要认证"
+ ],
+ "Resolve above errors to continue": [
+  null,
+  ""
  ],
  "Restart Count": [
   null,
@@ -1631,6 +1655,18 @@ return plural;
   null,
   ""
  ],
+ "VM definition is not a valid JSON.": [
+  null,
+  ""
+ ],
+ "VM definition is required.": [
+  null,
+  ""
+ ],
+ "VM definition must be an object.": [
+  null,
+  ""
+ ],
  "Virtual Machines": [
   null,
   "虚拟机"
@@ -1810,6 +1846,10 @@ return plural;
  "up": [
   null,
   "运行中"
+ ],
+ "upload a JSON file": [
+  null,
+  ""
  ],
  "user": [
   null,

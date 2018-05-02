@@ -567,6 +567,10 @@ return plural;
   null,
   "Isključi"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "On": [
   null,
   "Uključi"
