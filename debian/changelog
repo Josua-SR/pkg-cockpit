@@ -1,3 +1,11 @@
+cockpit (167-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Networking: Add Firewall Configuration
+    - Kubernetes: Show Kubevirt Registry Disks
+
+ -- Martin Pitt <mpitt@debian.org>  Wed, 02 May 2018 16:35:43 +0000
+
 cockpit (166-1) unstable; urgency=medium
 
   * New upstream release:
