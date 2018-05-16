@@ -169,6 +169,14 @@ return plural;
   null,
   "Afegeix un pont"
  ],
+ "Add Services": [
+  null,
+  "Afegeix serveis"
+ ],
+ "Add Services…": [
+  null,
+  "Afegeix serveis..."
+ ],
  "Add Team": [
   null,
   "Afegeix un equip"
@@ -200,6 +208,10 @@ return plural;
  "Addresses": [
   null,
   "Adreces"
+ ],
+ "Allowed Services": [
+  null,
+  "Serveis permesos"
  ],
  "Apply": [
   null,
@@ -353,6 +365,10 @@ return plural;
   null,
   ""
  ],
+ "Details": [
+  null,
+  "Detalls"
+ ],
  "Disabled": [
   null,
   "Inhabilitat"
@@ -372,6 +388,18 @@ return plural;
  "Failed": [
   null,
   "Ha fallat"
+ ],
+ "Filter Services": [
+  null,
+  "Filtra els serveis"
+ ],
+ "Firewall": [
+  null,
+  "Tallafoc"
+ ],
+ "Firewall is not available": [
+  null,
+  "El tallafoc no està disponible"
  ],
  "Forward delay $forward_delay": [
   null,
@@ -553,6 +581,10 @@ return plural;
   null,
   "Sense portadora"
  ],
+ "No open ports": [
+  null,
+  ""
+ ],
  "Not available": [
   null,
   "No disponible"
@@ -604,6 +636,10 @@ return plural;
  "Ping Target": [
   null,
   "Objectiu de ping"
+ ],
+ "Please install the {0} package": [
+  null,
+  "Si us plau, instal·leu el paquet {0}"
  ],
  "Ports": [
   null,
@@ -693,6 +729,10 @@ return plural;
   null,
   "Enviament"
  ],
+ "Service": [
+  null,
+  "Servei"
+ ],
  "Set to": [
   null,
   "Estableix a"
@@ -741,6 +781,10 @@ return plural;
   null,
   ""
  ],
+ "TCP": [
+  null,
+  "TCP"
+ ],
  "Team": [
   null,
   "Equip"
@@ -768,6 +812,10 @@ return plural;
  "This device cannot be managed here.": [
   null,
   "Aquest dispositiu no es pot gestionar aquí."
+ ],
+ "UDP": [
+  null,
+  "UDP"
  ],
  "Unexpected error": [
   null,
@@ -812,6 +860,10 @@ return plural;
  "Yes": [
   null,
   "Sí"
+ ],
+ "You are not authorized to modify the firewall.": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

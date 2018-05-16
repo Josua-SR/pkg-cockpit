@@ -89,7 +89,7 @@ return plural;
  ],
  "Add Another Key": [
   null,
-  "Lisää Uusi Avain"
+  "Lisää uusi avain"
  ],
  "Additions": [
   null,
@@ -113,11 +113,11 @@ return plural;
  ],
  "Change Repository": [
   null,
-  "Vaihda Asennuslähde"
+  "Vaihda asennuslähde"
  ],
  "Check for Updates": [
   null,
-  "Etsi Päivityksiä"
+  "Etsi päivityksiä"
  ],
  "Checking for updates": [
   null,
@@ -153,7 +153,7 @@ return plural;
  ],
  "Expired Signature": [
   null,
-  "Vanhentunut Allekirjoitus"
+  "Vanhentunut allekirjoitus"
  ],
  "Failed": [
   null,
@@ -161,11 +161,11 @@ return plural;
  ],
  "Good Signature": [
   null,
-  "Hyvä Allekirjoitus"
+  "Hyvä allekirjoitus"
  ],
  "Invalid Signature": [
   null,
-  "Virheellinen Allekirjoitus"
+  "Virheellinen allekirjoitus"
  ],
  "Name": [
   null,
@@ -201,11 +201,11 @@ return plural;
  ],
  "Operating System": [
   null,
-  ""
+  "Käyttöjärjestelmä"
  ],
  "Operating System Updates": [
   null,
-  ""
+  "Käyttöjärjestelmäpäivitykset"
  ],
  "Origin": [
   null,
@@ -217,11 +217,11 @@ return plural;
  ],
  "Please provide a valid URL": [
   null,
-  ""
+  "Anna kelvollinen URL"
  ],
  "Please provide a valid name": [
   null,
-  ""
+  "Anna kelvollinen nimi"
  ],
  "Rebase and Reboot": [
   null,
@@ -229,23 +229,23 @@ return plural;
  ],
  "Receiving delta parts": [
   null,
-  ""
+  "Vastaanotetaan delta-osia"
  ],
  "Receiving metadata objects": [
   null,
-  ""
+  "Vastaanotetaan metadata-objekteja"
  ],
  "Receiving objects: $0%": [
   null,
-  ""
+  "Vastaanotetaan objekteja: $0%"
  ],
  "Reconnect": [
   null,
-  ""
+  "Yhdistä uudelleen"
  ],
  "Released": [
   null,
-  ""
+  "Julkaistu"
  ],
  "Removals": [
   null,
@@ -269,7 +269,7 @@ return plural;
  ],
  "Signed by": [
   null,
-  ""
+  "Allekirjoittanut"
  ],
  "Software Updates": [
   null,
@@ -297,7 +297,7 @@ return plural;
  ],
  "Update and Reboot": [
   null,
-  "Päivitä ja Käynnistä uudelleen"
+  "Päivitä ja käynnistä uudelleen"
  ],
  "Updates": [
   null,

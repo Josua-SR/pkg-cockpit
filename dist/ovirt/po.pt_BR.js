@@ -399,6 +399,10 @@ return plural;
   null,
   "Nenhuma interface de rede definida para esta VM"
  ],
+ "No oVirt connection": [
+  null,
+  ""
+ ],
  "OK": [
   null,
   "OK"
@@ -658,6 +662,10 @@ return plural;
  "The VM is suspended by guest power management.": [
   null,
   "A VM é suspensa pela gerência de poder do convidado."
+ ],
+ "This host is managed by a virtualization manager, so creation of new VMs from the host is not possible.": [
+  null,
+  ""
  ],
  "This virtual machine is not managed by oVirt": [
   null,

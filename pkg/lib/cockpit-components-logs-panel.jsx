@@ -48,11 +48,11 @@ class JournalOutput {
             <div className="cockpit-logline">
                 <div className="cockpit-log-warning">
                     { warning
-                        ? <i className="fa fa-exclamation-triangle"/>
+                        ? <i className="fa fa-exclamation-triangle" />
                         : null
                     }
                     { problem
-                        ? <i className="fa fa-times-circle-o"/>
+                        ? <i className="fa fa-times-circle-o" />
                         : null
                     }
                 </div>
@@ -62,7 +62,7 @@ class JournalOutput {
                     count > 1
                         ? <div className="cockpit-log-service-container">
                             <div className="cockpit-log-service-reduced">{ident}</div>
-                            <span className="badge">{count}&#160;<i className="fa fa-caret-right"></i></span>
+                            <span className="badge">{count}&#160;<i className="fa fa-caret-right" /></span>
                         </div>
                         : <div className="cockpit-log-service">{ident}</div>
                 }
@@ -77,7 +77,7 @@ class JournalOutput {
     render_reboot_separator() {
         return (
             <div className="cockpit-logline">
-                <div className="cockpit-log-warning"></div>
+                <div className="cockpit-log-warning" />
                 <span className="cockpit-log-message cockpit-logmsg-reboot">{_("Reboot")}</span>
             </div>
         );

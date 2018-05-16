@@ -19,14 +19,14 @@
 
 "use strict";
 
+import { OnOffSwitch } from "cockpit-components-onoff.jsx";
+
 var cockpit = require("cockpit");
 var utils = require("./utils.js");
 var $ = require("jquery");
 
 var React = require("react");
 var Tooltip = require("cockpit-components-tooltip.jsx").Tooltip;
-
-import { OnOffSwitch } from "cockpit-components-onoff.jsx";
 
 var _ = cockpit.gettext;
 
@@ -65,7 +65,7 @@ var StorageControl = React.createClass({
                 __html: cockpit.format(_("The user <b>$0</b> is not permitted to manage storage"),
                                        permission.user ? permission.user.name : '')
             }
-            excuse = <span dangerouslySetInnerHTML={markup}></span>;
+            excuse = <span dangerouslySetInnerHTML={markup} />;
         }
 
         return (
@@ -109,7 +109,7 @@ var StorageButton = React.createClass({
                                             className={classes + (excuse ? " disabled" : "")}>
                                     {this.props.children}
                                 </button>
-                            )}/>
+                            )} />
         );
     }
 });
@@ -125,7 +125,7 @@ var StorageLink = React.createClass({
                                        className={excuse ? " disabled" : ""}>
                                     {this.props.children}
                                 </a>
-                            )}/>
+                            )} />
         );
     }
 });
@@ -204,8 +204,8 @@ class StorageOnOff extends React.Component {
                                     ? this.state.promise_goal_state
                                     : this.props.state}
                                                  enabled={!excuse && !this.state.promise}
-                                                 onChange={onChange}/>
-                            )}/>
+                                                 onChange={onChange} />
+                            )} />
         );
     }
 }
@@ -227,7 +227,7 @@ class StorageMultiAction extends React.Component {
                                         </button>
                                         <button className={btn_classes + " dropdown-toggle"}
                                                     data-toggle="dropdown">
-                                            <span className="caret"></span>
+                                            <span className="caret" />
                                         </button>
                                         <ul className="dropdown-menu action-dropdown-menu" role="menu">
                                             { this.props.actions.map((act) => (
@@ -240,7 +240,7 @@ class StorageMultiAction extends React.Component {
                                         </ul>
                                     </div>
                                 );
-                            }}/>
+                            }} />
         );
     }
 }
@@ -259,8 +259,7 @@ class StorageUsageBar extends React.Component {
             <div className="progress">
                 { stats
                     ? <div className={ "progress-bar" + (fraction > this.props.critical ? " progress-bar-danger" : "") }
-                        style={{ width: fraction * 100 + "%" }}>
-                    </div>
+                        style={{ width: fraction * 100 + "%" }} />
                     : null
                 }
             </div>

@@ -74,7 +74,8 @@ class MDRaidSidebar extends React.Component {
         var members = client.mdraids_members[mdraid.path] || [];
         var dynamic_members = (mdraid.Level != "raid0");
 
-        var n_spares = 0, n_recovering = 0;
+        var n_spares = 0;
+        var n_recovering = 0;
         mdraid.ActiveDevices.forEach(function(as) {
             if (as[2].indexOf("spare") >= 0) {
                 if (as[1] < 0)
@@ -126,17 +127,17 @@ class MDRaidSidebar extends React.Component {
             return (
                 <tr>
                     <td className="storage-icon">
-                        <div><img src="images/storage-disk.png"></img></div>
+                        <div><img src="images/storage-disk.png" /></div>
                     </td>
                     <td>
-                        {slot || "-"} <StorageBlockNavLink client={client} block={block}/>
-                        <br/>
+                        {slot || "-"} <StorageBlockNavLink client={client} block={block} />
+                        <br />
                         <span className="state">{states}</span>
                     </td>
                     { dynamic_members
                         ? <td className="storage-action">
                             <StorageButton onClick={remove} excuse={remove_excuse}>
-                                <span className="fa fa-minus"></span>
+                                <span className="fa fa-minus" />
                             </StorageButton>
                         </td>
                         : null }
@@ -154,7 +155,7 @@ class MDRaidSidebar extends React.Component {
                     {dynamic_members
                         ? <span className="pull-right">
                             <StorageButton onClick={add_disk} excuse={add_excuse}>
-                                <span className="fa fa-plus"></span>
+                                <span className="fa fa-plus" />
                             </StorageButton>
                         </span>
                         : null}
@@ -201,7 +202,7 @@ export class MDRaidDetails extends React.Component {
             bitmap = (
                 <tr>
                     <td>{_("storage", "Bitmap")}</td>
-                    <td><StorageOnOff state={value} onChange={toggle_bitmap}/></td>
+                    <td><StorageOnOff state={value} onChange={toggle_bitmap} /></td>
                 </tr>
             );
         }
@@ -214,7 +215,7 @@ export class MDRaidDetails extends React.Component {
             );
             degraded_message = (
                 <div className="alert alert-danger">
-                    <span className="pficon pficon-error-circle-o"></span>
+                    <span className="pficon pficon-error-circle-o" />
                     <span>{_("The RAID Array is in a degraded state")}</span> - {text}
                 </div>
             );
@@ -353,13 +354,13 @@ export class MDRaidDetails extends React.Component {
             </div>
         );
 
-        var sidebar = <MDRaidSidebar client={this.props.client} mdraid={mdraid}/>;
+        var sidebar = <MDRaidSidebar client={this.props.client} mdraid={mdraid} />;
 
-        var content = <Content.Block client={this.props.client} block={block}/>;
+        var content = <Content.Block client={this.props.client} block={block} />;
 
         return <StdDetailsLayout client={this.props.client} alert={degraded_message}
                                  header={ header }
                                  sidebar={ sidebar }
-                                 content={ content }/>;
+                                 content={ content } />;
     }
 }

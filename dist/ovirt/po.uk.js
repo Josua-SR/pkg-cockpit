@@ -399,6 +399,10 @@ return plural;
   null,
   "Немає інтерфейсів мережі, які визначено для цієї ВМ"
  ],
+ "No oVirt connection": [
+  null,
+  "Немає з'єднання oVirt"
+ ],
  "OK": [
   null,
   "Гаразд"
@@ -658,6 +662,10 @@ return plural;
  "The VM is suspended by guest power management.": [
   null,
   "Роботу віртуальної машини призупинено засобами керування живленням гостьової системи."
+ ],
+ "This host is managed by a virtualization manager, so creation of new VMs from the host is not possible.": [
+  null,
+  "Цей вузол керується засобом керування віртуалізацією, тому створення нових віртуальних машин з вузла неможливе."
  ],
  "This virtual machine is not managed by oVirt": [
   null,

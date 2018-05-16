@@ -399,6 +399,10 @@ return plural;
   null,
   "この仮想マシンにはネットワークインターフェースが定義されていません"
  ],
+ "No oVirt connection": [
+  null,
+  ""
+ ],
  "OK": [
   null,
   "OK"
@@ -658,6 +662,10 @@ return plural;
  "The VM is suspended by guest power management.": [
   null,
   "VM はゲストの電源管理によって一時停止されています。"
+ ],
+ "This host is managed by a virtualization manager, so creation of new VMs from the host is not possible.": [
+  null,
+  ""
  ],
  "This virtual machine is not managed by oVirt": [
   null,

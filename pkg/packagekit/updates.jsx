@@ -311,7 +311,7 @@ class UpdateItem extends React.Component {
                                 { bugs ? <dd>{bugs}</dd> : null }
                             </dl>
 
-                            <p></p>
+                            <p />
                             <p className="changelog">{description}</p>
                         </div>
                     </td>
@@ -324,7 +324,7 @@ class UpdateItem extends React.Component {
                 <tr className={ "listing-ct-item" + (info.severity === PK.Enum.INFO_SECURITY ? " security" : "") }
                     onClick={ () => this.setState({expanded: !this.state.expanded}) }>
                     <td className="listing-ct-toggle">
-                        <i className="fa fa-fw"></i>
+                        <i className="fa fa-fw" />
                     </td>
                     <th>{pkgsTruncated}</th>
                     <td className="version">{info.version}</td>
@@ -372,7 +372,7 @@ function UpdatesList(props) {
         <table className="listing-ct">
             <thead>
                 <tr>
-                    <th></th>
+                    <th />
                     <th>{_("Name")}</th>
                     <th>{_("Version")}</th>
                     <th>{_("Severity")}</th>
@@ -483,7 +483,7 @@ class ApplyUpdates extends React.Component {
             <div>
                 <div className="progress-main-view">
                     <div className="progress-description">
-                        <div className="spinner spinner-xs spinner-inline"></div>
+                        <div className="spinner spinner-xs spinner-inline" />
                         {actionHTML}
                     </div>
                     <div className="progress progress-label-top-right">
@@ -533,9 +533,16 @@ function AskRestart(props) {
 class OsUpdates extends React.Component {
     constructor() {
         super();
-        this.state = { state: "loading", errorMessages: [], updates: {}, timeSinceRefresh: null,
-                       loadPercent: null, cockpitUpdate: false, allowCancel: null,
-                       history: null, unregistered: false, autoUpdatesEnabled: null };
+        this.state = { state: "loading",
+                       errorMessages: [],
+                       updates: {},
+                       timeSinceRefresh: null,
+                       loadPercent: null,
+                       cockpitUpdate: false,
+                       allowCancel: null,
+                       history: null,
+                       unregistered: false,
+                       autoUpdatesEnabled: null };
         this.handleLoadError = this.handleLoadError.bind(this);
         this.handleRefresh = this.handleRefresh.bind(this);
         this.handleRestart = this.handleRestart.bind(this);
@@ -568,7 +575,6 @@ class OsUpdates extends React.Component {
                                 // be robust, try to continue with loading updates anyway
                                 this.initialLoadOrRefresh();
                             });
-
                 })
                 .fail(this.handleLoadError);
     }
@@ -704,7 +710,6 @@ class OsUpdates extends React.Component {
                         this.handleRefresh();
                     else
                         this.loadUpdates();
-
                 })
                 .fail(this.handleLoadError);
     }
@@ -724,6 +729,7 @@ class OsUpdates extends React.Component {
 
                                            if (exit === PK.Enum.EXIT_SUCCESS) {
                                                this.setState({ state: "updateSuccess", loadPercent: null });
+                                               this.loadHistory();
                                            } else if (exit === PK.Enum.EXIT_CANCELLED) {
                                                this.setState({ state: "loading", loadPercent: null });
                                                this.loadUpdates();
@@ -766,7 +772,6 @@ class OsUpdates extends React.Component {
                                                 this.state.errorMessages.push(ex.message);
                                             this.setState({state: "updateError"});
                                         });
-
                             });
                 })
                 .catch(ex => {
@@ -786,7 +791,7 @@ class OsUpdates extends React.Component {
                 return (
                     <div className="progress-main-view">
                         <div className="progress">
-                            <div className="progress-bar" role="progressbar" style={ {width: this.state.loadPercent + "%"} }></div>
+                            <div className="progress-bar" role="progressbar" style={ {width: this.state.loadPercent + "%"} } />
                         </div>
                     </div>
                 );
@@ -800,7 +805,7 @@ class OsUpdates extends React.Component {
                     <div>
                         <h2>{ _("Unregistered System") }</h2>
                         <div className="alert alert-warning">
-                            <span className="pficon pficon-warning-triangle-o"></span>
+                            <span className="pficon pficon-warning-triangle-o" />
                             <span>
                                 <strong>{ _("Updates are disabled.") }</strong>
                                     &nbsp;
@@ -846,7 +851,7 @@ class OsUpdates extends React.Component {
                     </table>
                     { this.state.cockpitUpdate
                         ? <div className="alert alert-warning">
-                            <span className="pficon pficon-warning-triangle-o"></span>
+                            <span className="pficon pficon-warning-triangle-o" />
                             <span>
                                 <strong>{_("This web console will be updated.")}</strong>
                                     &nbsp;
@@ -873,17 +878,16 @@ class OsUpdates extends React.Component {
             return this.state.errorMessages.map(m => <pre>{m}</pre>);
 
         case "applying":
-            return <ApplyUpdates transaction={this.state.applyTransaction}/>
+            return <ApplyUpdates transaction={this.state.applyTransaction} />
 
         case "updateSuccess":
-            this.loadHistory();
             return <AskRestart onRestart={this.handleRestart} onIgnore={this.loadUpdates} history={this.state.history} />;
 
         case "restart":
             return (
                 <div className="blank-slate-pf">
                     <div className="blank-slate-pf-icon">
-                        <div className="spinner spinner-lg"></div>
+                        <div className="spinner spinner-lg" />
                     </div>
                     <h1>{_("Restarting")}</h1>
                     <p>{_("Your server will close the connection soon. You can reconnect after it has restarted.")}</p>
@@ -894,7 +898,7 @@ class OsUpdates extends React.Component {
                 return (
                     <div className="blank-slate-pf">
                         <div className="blank-slate-pf-icon">
-                            <span className="fa fa-exclamation-circle"></span>
+                            <span className="fa fa-exclamation-circle" />
                         </div>
                         <h1>{_("This system is not registered")}</h1>
                         <p>{_("To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.")}</p>
@@ -912,7 +916,7 @@ class OsUpdates extends React.Component {
                     <AutoUpdates onInitialized={ enabled => this.setState({ autoUpdatesEnabled: enabled }) } />
                     <div className="blank-slate-pf">
                         <div className="blank-slate-pf-icon">
-                            <span className="fa fa-check"></span>
+                            <span className="fa fa-check" />
                         </div>
                         <p>{_("System is up to date")}</p>
 

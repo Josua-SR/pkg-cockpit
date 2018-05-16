@@ -335,7 +335,7 @@ return plural;
  ],
  "Could not list services": [
   null,
-  "No es van poder llistar els serveis"
+  "No s'han pogut llistar els serveis"
  ],
  "Couldn't connect to server": [
   null,
@@ -355,7 +355,7 @@ return plural;
  ],
  "Create Virtual Machine": [
   null,
-  ""
+  "Crea una màquina virtual"
  ],
  "Create empty image stream": [
   null,
@@ -871,7 +871,7 @@ return plural;
  ],
  "No users are present.": [
   null,
-  ""
+  "No hi ha usuaris presents."
  ],
  "No virtual machines": [
   null,
@@ -1079,7 +1079,7 @@ return plural;
  ],
  "Pod:": [
   null,
-  ""
+  "Pod:"
  ],
  "Pods": [
   null,
@@ -1407,7 +1407,7 @@ return plural;
  ],
  "Show all Pods": [
   null,
-  ""
+  "Mostra tots els pods"
  ],
  "Show all Projects": [
   null,
@@ -1851,7 +1851,7 @@ return plural;
  ],
  "upload a JSON file": [
   null,
-  ""
+  "puja un fitxer JSON"
  ],
  "user": [
   null,

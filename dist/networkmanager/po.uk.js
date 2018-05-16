@@ -175,6 +175,14 @@ return plural;
   null,
   "Додати місток"
  ],
+ "Add Services": [
+  null,
+  "Додавання служб"
+ ],
+ "Add Services…": [
+  null,
+  "Додати служби…"
+ ],
  "Add Team": [
   null,
   "Додати команду"
@@ -206,6 +214,10 @@ return plural;
  "Addresses": [
   null,
   "Адреси"
+ ],
+ "Allowed Services": [
+  null,
+  "Дозволені служби"
  ],
  "Apply": [
   null,
@@ -359,6 +371,10 @@ return plural;
   null,
   "Вилучення <b>$0</b> призведе до розірвання з’єднання із сервером і зробить адміністративний інтерфейс користувача недоступним."
  ],
+ "Details": [
+  null,
+  "Подробиці"
+ ],
  "Disabled": [
   null,
   "Вимкнено"
@@ -378,6 +394,18 @@ return plural;
  "Failed": [
   null,
   "Помилка"
+ ],
+ "Filter Services": [
+  null,
+  "Фільтрувати служби"
+ ],
+ "Firewall": [
+  null,
+  "Брандмауер"
+ ],
+ "Firewall is not available": [
+  null,
+  "Брандмауер недоступний"
  ],
  "Forward delay $forward_delay": [
   null,
@@ -559,6 +587,10 @@ return plural;
   null,
   "Немає сигналу"
  ],
+ "No open ports": [
+  null,
+  "Немає відкрити портів"
+ ],
  "Not available": [
   null,
   "Недоступний"
@@ -610,6 +642,10 @@ return plural;
  "Ping Target": [
   null,
   "Ціль тестування луною"
+ ],
+ "Please install the {0} package": [
+  null,
+  "Будь ласка, встановіть пакунок {0}"
  ],
  "Ports": [
   null,
@@ -699,6 +735,10 @@ return plural;
   null,
   "Надсилання"
  ],
+ "Service": [
+  null,
+  "Служба"
+ ],
  "Set to": [
   null,
   "Встановити значення"
@@ -747,6 +787,10 @@ return plural;
   null,
   "Вмикання <b>$0</b> призведе до розірвання з’єднання із сервером і зробить адміністративний інтерфейс користувача недоступним."
  ],
+ "TCP": [
+  null,
+  "TCP"
+ ],
  "Team": [
   null,
   "Команда"
@@ -774,6 +818,10 @@ return plural;
  "This device cannot be managed here.": [
   null,
   "Тут не можна керувати цим пристроєм."
+ ],
+ "UDP": [
+  null,
+  "UDP"
  ],
  "Unexpected error": [
   null,
@@ -818,6 +866,10 @@ return plural;
  "Yes": [
   null,
   "Так"
+ ],
+ "You are not authorized to modify the firewall.": [
+  null,
+  "Вас не уповноважено на внесення змін до брандмауера."
  ],
  "[$0 bytes of binary data]": [
   null,

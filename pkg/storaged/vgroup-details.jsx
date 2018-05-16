@@ -107,11 +107,11 @@ class VGroupSidebar extends React.Component {
             return (
                 <tr>
                     <td className="storage-icon">
-                        <div><img src="images/storage-disk.png"></img></div>
+                        <div><img src="images/storage-disk.png" /></div>
                     </td>
                     <td>
-                        <StorageBlockNavLink client={client} block={ client.blocks[pvol.path] }/>
-                        <br></br>
+                        <StorageBlockNavLink client={client} block={ client.blocks[pvol.path] } />
+                        <br />
                         <span>
                             {cockpit.format(_("$0, $1 free"),
                                             utils.fmt_size(pvol.Size),
@@ -120,7 +120,7 @@ class VGroupSidebar extends React.Component {
                     </td>
                     <td className="storage-action">
                         <StorageButton onClick={remove_action} excuse={remove_excuse}>
-                            <span className="fa fa-minus"></span>
+                            <span className="fa fa-minus" />
                         </StorageButton>
                     </td>
                 </tr>);
@@ -132,7 +132,7 @@ class VGroupSidebar extends React.Component {
                     <span>{_("Physical Volumes")}</span>
                     <span className="pull-right">
                         <StorageButton onClick={add_disk}>
-                            <span className="fa fa-plus"></span>
+                            <span className="fa fa-plus" />
                         </StorageButton>
                     </span>
                 </div>
@@ -253,13 +253,13 @@ export class VGroupDetails extends React.Component {
             </div>
         );
 
-        var sidebar = <VGroupSidebar client={this.props.client} vgroup={vgroup}/>;
+        var sidebar = <VGroupSidebar client={this.props.client} vgroup={vgroup} />;
 
-        var content = <Content.VGroup client={this.props.client} vgroup={vgroup}/>;
+        var content = <Content.VGroup client={this.props.client} vgroup={vgroup} />;
 
         return <StdDetailsLayout client={this.props.client}
                                  header={ header }
                                  sidebar={ sidebar }
-                                 content={ content }/>;
+                                 content={ content } />;
     }
 }

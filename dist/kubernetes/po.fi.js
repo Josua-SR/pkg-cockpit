@@ -95,7 +95,7 @@ return plural;
  ],
  "Access Policy": [
   null,
-  ""
+  "Pääsykäytäntö"
  ],
  "Actual": [
   null,
@@ -111,7 +111,7 @@ return plural;
  ],
  "Add Group": [
   null,
-  "Lisää Ryhmä"
+  "Lisää ryhmä"
  ],
  "Add Kubernetes Node": [
   null,
@@ -179,11 +179,11 @@ return plural;
  ],
  "All Projects": [
   null,
-  "Kaikki Projektit"
+  "Kaikki projektit"
  ],
  "All Types": [
   null,
-  "Kaikki Tyypit"
+  "Kaikki tyypit"
  ],
  "All healthy": [
   null,
@@ -231,7 +231,7 @@ return plural;
  ],
  "CPU Utilization: $0%": [
   null,
-  "CPU:n Käyttöaste: $0%"
+  "Prosessorin käyttöaste: $0%"
  ],
  "Cancel": [
   null,
@@ -247,7 +247,7 @@ return plural;
  ],
  "Ceph Monitors": [
   null,
-  "Ceph-Monitorit"
+  "Ceph-monitorit"
  ],
  "Change": [
   null,
@@ -255,7 +255,7 @@ return plural;
  ],
  "Change User": [
   null,
-  "Vaihda Käyttäjä"
+  "Vaihda käyttäjä"
  ],
  "Change image stream": [
   null,
@@ -279,7 +279,7 @@ return plural;
  ],
  "Client Certificate": [
   null,
-  "Asiakassertifikaatti"
+  "Asiakasvarmenne"
  ],
  "Cluster": [
   null,
@@ -295,7 +295,7 @@ return plural;
  ],
  "Configure Kubelet and Proxy": [
   null,
-  "Aseta Kubelet ja Välityspalvelin"
+  "Aseta Kubelet ja välityspalvelin"
  ],
  "Connect": [
   null,
@@ -307,15 +307,15 @@ return plural;
  ],
  "Connection Error": [
   null,
-  "Yhteys virhe"
+  "Yhteysvirhe"
  ],
  "Connection Error: $0": [
   null,
-  "Yhteys virhe: $0"
+  "Yhteysvirhe: $0"
  ],
  "Connection Settings": [
   null,
-  "Yhteys asetukset"
+  "Yhteysasetukset"
  ],
  "Container": [
   null,
@@ -323,11 +323,11 @@ return plural;
  ],
  "Container ID": [
   null,
-  "Kontti ID"
+  "Kontti-ID"
  ],
  "Container Runtime Version": [
   null,
-  "Kontti Runtime Versio"
+  "Kontin Runtime-versio"
  ],
  "Containers": [
   null,
@@ -355,7 +355,7 @@ return plural;
  ],
  "Create Virtual Machine": [
   null,
-  ""
+  "Luo virtuaalikone"
  ],
  "Create empty image stream": [
   null,
@@ -371,7 +371,7 @@ return plural;
  ],
  "DNS Policy": [
   null,
-  "DNS Policy"
+  "DNS-käytäntö"
  ],
  "Delete": [
   null,
@@ -391,11 +391,11 @@ return plural;
  ],
  "Delete Project": [
   null,
-  "Poista Projekti"
+  "Poista projekti"
  ],
  "Delete Selected": [
   null,
-  "Poista Valittu"
+  "Poista valittu"
  ],
  "Delete image stream": [
   null,
@@ -451,7 +451,7 @@ return plural;
  ],
  "Disk Utilization: $0%": [
   null,
-  "Levyn Käyttöaste: $0%"
+  "Levyn käyttöaste: $0%"
  ],
  "Disks": [
   null,
@@ -503,11 +503,11 @@ return plural;
  ],
  "Drop file here to upload.": [
   null,
-  ""
+  "Pudosta tiedosto tähän lähettääksesi."
  ],
  "Empty Directory": [
   null,
-  "Tyhjä Hakemisto"
+  "Tyhjä hakemisto"
  ],
  "Endpoint": [
   null,
@@ -527,7 +527,7 @@ return plural;
  ],
  "Error getting certificate details: $0": [
   null,
-  "Virhe haettaessa sertifikaatin yksityiskohtia: $0"
+  "Virhe haettaessa varmenteen yksityiskohtia: $0"
  ],
  "Error writing kubectl config": [
   null,
@@ -535,11 +535,11 @@ return plural;
  ],
  "Fibre Channel": [
   null,
-  "Fibre-Kanava"
+  "Fibre-kanava"
  ],
  "Filesystem Type": [
   null,
-  "Tiedostojärjestelmän Tyyppi"
+  "Tiedostojärjestelmän tyyppi"
  ],
  "Flex": [
   null,
@@ -559,11 +559,11 @@ return plural;
  ],
  "GiB": [
   null,
-  ""
+  "GiB"
  ],
  "Git Repository": [
   null,
-  "Git-Asennuslähde"
+  "Git-tietovarasto"
  ],
  "Gluster FS": [
   null,
@@ -579,11 +579,11 @@ return plural;
  ],
  "Group Members": [
   null,
-  "Ryhmän Jäsenet"
+  "Ryhmän jäsenet"
  ],
  "Group or Project": [
   null,
-  "Ryhmä tai Projekti"
+  "Ryhmä tai projekti"
  ],
  "Groups": [
   null,
@@ -595,7 +595,7 @@ return plural;
  ],
  "Host Path": [
   null,
-  "Koneen Polku"
+  "Koneen polku"
  ],
  "IP": [
   null,
@@ -623,7 +623,7 @@ return plural;
  ],
  "Image Name": [
   null,
-  "Levykuvan Nimi"
+  "Levykuvan nimi"
  ],
  "Image Registry": [
   null,
@@ -651,7 +651,7 @@ return plural;
  ],
  "In order to begin pushing images to the registry, use the commands below.": [
   null,
-  "Aloittaaksesi levykuvien tuomisen rekisteriin, käytä allaolevia komentoja."
+  "Aloittaaksesi levykuvien tuomisen rekisteriin, käytä alla olevia komentoja."
  ],
  "In order to begin pushing images to the registry, you need to create a project.": [
   null,
@@ -663,7 +663,7 @@ return plural;
  ],
  "Kernel Version": [
   null,
-  "Kernel-Versio"
+  "Kernel-versio"
  ],
  "Key Ring Path": [
   null,
@@ -671,11 +671,11 @@ return plural;
  ],
  "Kubelet Version": [
   null,
-  "Kubelet-Versio"
+  "Kubelet-versio"
  ],
  "Kubernetes Cluster": [
   null,
-  "Kubernetes-Klusteri"
+  "Kubernetes-klusteri"
  ],
  "Labels": [
   null,
@@ -691,11 +691,11 @@ return plural;
  ],
  "Last Status Change": [
   null,
-  "Edellinen Tilamuutos"
+  "Edellinen tilamuutos"
  ],
  "Latest Version": [
   null,
-  "Viimeisin Versio"
+  "Viimeisin versio"
  ],
  "Log into OpenShift command line tools:": [
   null,
@@ -707,7 +707,7 @@ return plural;
  ],
  "Logical Unit Number": [
   null,
-  "Looginen Yksikön Numero"
+  "Looginen yksikön numero"
  ],
  "Login commands": [
   null,
@@ -719,7 +719,7 @@ return plural;
  ],
  "Machine ID": [
   null,
-  ""
+  "Koneen ID"
  ],
  "Manifest": [
   null,
@@ -791,7 +791,7 @@ return plural;
  ],
  "Namespace": [
   null,
-  ""
+  "Nimiavaruus"
  ],
  "Namespace cannot be empty.": [
   null,
@@ -831,11 +831,11 @@ return plural;
  ],
  "No disks defined for this VM": [
   null,
-  ""
+  "Tälle virtuaalikoneelle ei ole määritetty levyjä."
  ],
  "No groups are present.": [
   null,
-  ""
+  "Ryhmiä ei ole läsnä."
  ],
  "No images pushed": [
   null,
@@ -847,7 +847,7 @@ return plural;
  ],
  "No nodes in cluster": [
   null,
-  ""
+  "Ei nodeja klusterissa"
  ],
  "No pods deployed": [
   null,
@@ -859,11 +859,11 @@ return plural;
  ],
  "No pods scheduled": [
   null,
-  ""
+  "Podeja ei ole aikataulutettu"
  ],
  "No pods selected": [
   null,
-  ""
+  "Podeja ei ole valittu"
  ],
  "No projects are present.": [
   null,
@@ -875,31 +875,31 @@ return plural;
  ],
  "No virtual machines": [
   null,
-  ""
+  "Ei virtuaalikoneita"
  ],
  "No volumes are present.": [
   null,
-  ""
+  "Taltioita ei ole läsnä."
  ],
  "No volumes in use": [
   null,
-  ""
+  "Taltioita ei ole käytössä"
  ],
  "Node": [
   null,
-  ""
+  "Node"
  ],
  "Node:": [
   null,
-  ""
+  "Node:"
  ],
  "Nodes": [
   null,
-  ""
+  "Noodit"
  ],
  "Nodes are the machines that run your containers.": [
   null,
-  ""
+  "Noodit ovat konttejasi suorittavia koneita."
  ],
  "None": [
   null,
@@ -907,7 +907,7 @@ return plural;
  ],
  "Not Available": [
   null,
-  ""
+  "Ei saatavilla"
  ],
  "Not Ready": [
   null,
@@ -943,7 +943,7 @@ return plural;
  ],
  "Operating System": [
   null,
-  ""
+  "Käyttöjärjestelmä"
  ],
  "Options": [
   null,
@@ -959,7 +959,7 @@ return plural;
  ],
  "Partition": [
   null,
-  ""
+  "Osio"
  ],
  "Password": [
   null,
@@ -991,7 +991,7 @@ return plural;
  ],
  "Please provide a GlusterFS volume name": [
   null,
-  ""
+  "Anna GlusterFS-taltion nimi"
  ],
  "Please provide a username": [
   null,
@@ -999,35 +999,35 @@ return plural;
  ],
  "Please provide a valid NFS server": [
   null,
-  ""
+  "Anna kelvollinen NFS-palvelin"
  ],
  "Please provide a valid address": [
   null,
-  ""
+  "Anna kelvollinen osoite"
  ],
  "Please provide a valid filesystem type": [
   null,
-  ""
+  "Anna kelvollinen tiedostojärjestelmän tyyppi"
  ],
  "Please provide a valid interface": [
   null,
-  ""
+  "Anna kelvollinen liitäntä"
  ],
  "Please provide a valid logical unit number": [
   null,
-  ""
+  "Anna kelvollinen loogisen yksikön numero"
  ],
  "Please provide a valid name": [
   null,
-  ""
+  "Anna kelvollinen nimi"
  ],
  "Please provide a valid namespace.": [
   null,
-  ""
+  "Anna kelvollinen nimiavaruus."
  ],
  "Please provide a valid path": [
   null,
-  ""
+  "Anna kelvollinen polku"
  ],
  "Please provide a valid qualified name": [
   null,
@@ -1051,19 +1051,19 @@ return plural;
  ],
  "Please select a valid policy option.": [
   null,
-  ""
+  "Valitse kelvollinen käytäntövalinta."
  ],
  "Please type an address": [
   null,
-  ""
+  "Anna osoite"
  ],
  "Pod": [
   null,
-  ""
+  "Pod"
  ],
  "Pod Address": [
   null,
-  ""
+  "Podin osoite"
  ],
  "Pod Endpoints": [
   null,
@@ -1079,15 +1079,15 @@ return plural;
  ],
  "Pod:": [
   null,
-  ""
+  "Pod:"
  ],
  "Pods": [
   null,
-  ""
+  "Podit"
  ],
  "Pods contain one or more containers that run together on a node, containing your application code.": [
   null,
-  ""
+  "Podit sisältävät yhden tai useamman nodessa yhdessä toimivan kontin, ja ne sisältävät sovelluksesi koodin."
  ],
  "Pool Name": [
   null,
@@ -1159,11 +1159,11 @@ return plural;
  ],
  "Rados Block Device": [
   null,
-  ""
+  "Rados-lohkolaite"
  ],
  "Read Only": [
   null,
-  ""
+  "Vain luku"
  ],
  "Read and write from a single node": [
   null,
@@ -1195,7 +1195,7 @@ return plural;
  ],
  "Reconnect": [
   null,
-  ""
+  "Yhdistä uudelleen"
  ],
  "Recycle": [
   null,
@@ -1203,11 +1203,11 @@ return plural;
  ],
  "Register": [
   null,
-  ""
+  "Rekisteröi"
  ],
  "Register New Volume": [
   null,
-  ""
+  "Rekisteröi uusi taltio"
  ],
  "Register Persistent Volume": [
   null,
@@ -1215,7 +1215,7 @@ return plural;
  ],
  "Remote registry is insecure": [
   null,
-  ""
+  "Etärekisteri on turvaton"
  ],
  "Remove": [
   null,
@@ -1315,11 +1315,11 @@ return plural;
  ],
  "Scheduled Pods": [
   null,
-  ""
+  "Aikataulutetut podit"
  ],
  "Scheduling Disabled": [
   null,
-  ""
+  "Aikataulus poistettu käytöstä"
  ],
  "Secret": [
   null,
@@ -1387,7 +1387,7 @@ return plural;
  ],
  "Show all Containers": [
   null,
-  ""
+  "Näytä kaikki kontit"
  ],
  "Show all Deployment Configs": [
   null,
@@ -1395,7 +1395,7 @@ return plural;
  ],
  "Show all Nodes": [
   null,
-  ""
+  "Näytä kaikki nodet"
  ],
  "Show all Persistent Volumes": [
   null,
@@ -1407,11 +1407,11 @@ return plural;
  ],
  "Show all Pods": [
   null,
-  ""
+  "Näytä kaikki podit"
  ],
  "Show all Projects": [
   null,
-  ""
+  "Näytä kaikki projektit"
  ],
  "Show all Replication Controllers": [
   null,
@@ -1503,7 +1503,7 @@ return plural;
  ],
  "The container '{{ target }}' does not exist.": [
   null,
-  ""
+  "Konttia '{{ target }}' ei ole olemassa."
  ],
  "The deployment config '{{ target }}' does not exist.": [
   null,
@@ -1519,19 +1519,19 @@ return plural;
  ],
  "The name contains invalid characters": [
   null,
-  ""
+  "Nimi sisältää virheellisiä merkkejä"
  ],
  "The node '{{ target }}' does not exist.": [
   null,
-  ""
+  "Nodea '{{ target }}' ei ole olemassa."
  ],
  "The node doesn't have enough disk space": [
   null,
-  ""
+  "Nodessa ei ole riittävästi vapaata levytilaa"
  ],
  "The node doesn't have enough free memory": [
   null,
-  ""
+  "Nodessa ei ole riittävästi vapaata muistia"
  ],
  "The persistent volume '{{ target }}' does not exist.": [
   null,
@@ -1539,7 +1539,7 @@ return plural;
  ],
  "The pod '{{ target }}' does not exist.": [
   null,
-  ""
+  "Podia '{{ target }}' ei ole olemassa."
  ],
  "The project '{{ projName }}' does not exist.": [
   null,
@@ -1551,7 +1551,7 @@ return plural;
  ],
  "The route '{{ target }}' does not exist.": [
   null,
-  ""
+  "Reittiä '{{ target }}' ei ole olemassa."
  ],
  "The selected file is not a valid Kubernetes application manifest.": [
   null,
@@ -1595,7 +1595,7 @@ return plural;
  ],
  "Triggers": [
   null,
-  ""
+  "Liipaisimet"
  ],
  "Troubleshoot": [
   null,
@@ -1603,7 +1603,7 @@ return plural;
  ],
  "Trust this certificate for this connection": [
   null,
-  "Luota tähän sertifikaattiin tälle yhteydelle"
+  "Luota tähän varmenteeseen tälle yhteydelle"
  ],
  "Type": [
   null,
@@ -1643,7 +1643,7 @@ return plural;
  ],
  "User or Group": [
   null,
-  "Käyttäjä tai Ryhmä"
+  "Käyttäjä tai ryhmä"
  ],
  "Username": [
   null,
@@ -1655,7 +1655,7 @@ return plural;
  ],
  "VM DELETE failed.": [
   null,
-  ""
+  "VM DELETE epäonnistui."
  ],
  "VM definition is not a valid JSON.": [
   null,
@@ -1679,15 +1679,15 @@ return plural;
  ],
  "Volume ID": [
   null,
-  ""
+  "Taltio-ID"
  ],
  "Volume Name": [
   null,
-  ""
+  "Taltion nimi"
  ],
  "Volume Type": [
   null,
-  ""
+  "Taltion tyyppi"
  ],
  "Volumes": [
   null,
@@ -1779,7 +1779,7 @@ return plural;
  ],
  "iSCSI": [
   null,
-  ""
+  "iSCSI"
  ],
  "idle": [
   null,
@@ -1823,11 +1823,11 @@ return plural;
  ],
  "show less": [
   null,
-  ""
+  "näytä vähemmän"
  ],
  "show more": [
   null,
-  ""
+  "näytä enemmän"
  ],
  "shut off": [
   null,
@@ -1851,7 +1851,7 @@ return plural;
  ],
  "upload a JSON file": [
   null,
-  ""
+  "lähetä JSON-tiedosto"
  ],
  "user": [
   null,

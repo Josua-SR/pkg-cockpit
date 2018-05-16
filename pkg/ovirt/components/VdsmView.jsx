@@ -117,7 +117,7 @@ class VdsmConf extends React.Component { // TODO: needs design
 
         let loaded = null;
         if (this.state.loaded) {
-            loaded = (<div id='vdsmview-data-loaded'/>);
+            loaded = (<div id='vdsmview-data-loaded' />);
         }
 
         return (
@@ -129,20 +129,19 @@ class VdsmConf extends React.Component { // TODO: needs design
                 </a>
 
                 <div className='ovirt-provider-vdsm-menu'>
-                    <div className="ovirt-provider-vdsm-inline-block"></div>
+                    <div className="ovirt-provider-vdsm-inline-block" />
                     <div className='btn-group ovirt-provider-vdsm-menu-buttons'>
                         {saveButton}
                         {reloadButton}
                     </div>
                 </div>
 
-                <br/>
-                <textarea className='ovirt-provider-vdsm-editor' value={this.state.fileContent} onChange={this.onEditorChange}/>
+                <br />
+                <textarea className='ovirt-provider-vdsm-editor' value={this.state.fileContent} onChange={this.onEditorChange} />
 
                 {loaded}
             </div>
         );
-
     }
 }
 

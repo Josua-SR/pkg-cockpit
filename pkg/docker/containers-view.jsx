@@ -55,7 +55,7 @@ var Dropdown = React.createClass({
                     <span>{ this.props.actions[0].label }</span>
                 </button>
                 <button className="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <div className="caret"></div>
+                    <div className="caret" />
                 </button>
                 <ul className="dropdown-menu dropdown-menu-right" role="menu">
                     {
@@ -139,7 +139,7 @@ var ContainerProblems = React.createClass({
         var problem_cursors = [];
         for (var i = 0; i < problem.length; i++) {
             problem_cursors.push(<a data-url={problem[i][0]} className='list-group-item' role="link" tabIndex="0" onClick={this.onItemClick}>
-                <span className="pficon pficon-warning-triangle-o fa-lg"></span>
+                <span className="pficon pficon-warning-triangle-o fa-lg" />
                 {problem[i][1]}
             </a>)
         }
@@ -233,7 +233,7 @@ var ContainerList = React.createClass({
         this.service = this.problems_client.proxy('org.freedesktop.Problems2', '/org/freedesktop/Problems2');
         this.problems = this.problems_client.proxies('org.freedesktop.Problems2.Entry', '/org/freedesktop/Problems2/Entry');
         this.problems.wait(function() {
-            if (typeof self.service.GetSession !== "undefined"){
+            if (typeof self.service.GetSession !== "undefined") {
                 self.service.GetSession()
                         .done(function(session_path) {
                             self.problems_client.call(session_path, "org.freedesktop.Problems2.Session", "Authorize", [{}]);
@@ -273,7 +273,7 @@ var ContainerList = React.createClass({
 
             var state;
             if (this.props.client.waiting[container.Id]) {
-                state = { element: <div className="spinner"></div>, tight: true }
+                state = { element: <div className="spinner" />, tight: true }
             } else {
                 state = util.render_container_status(container.State)
             }
@@ -284,7 +284,7 @@ var ContainerList = React.createClass({
 
             if (shortContID in this.state.problems) {
                 hasProblem = true;
-                state = <div><span className="pficon pficon-warning-triangle-o"></span>{state}</div>
+                state = <div><span className="pficon pficon-warning-triangle-o" />{state}</div>
             }
 
             var columns = [
@@ -342,7 +342,7 @@ var ContainerList = React.createClass({
                                        columns={columns}
                                        tabRenderers={tabs}
                                        navigateToItem={ this.navigateToContainer.bind(this, container) }
-                                       listingActions={actions}/>;
+                                       listingActions={actions} />;
         }, this);
 
         var columnTitles = [_("Name"), _("Image"), _("Command"), _("CPU"), _("Memory"), _("State")];
@@ -410,10 +410,8 @@ var ImageSecurity = React.createClass({
 
         if (info.successful === false) {
             text = _("The scan from $time ($type) was not successful.");
-
         } else if (info.vulnerabilities.length === 0) {
             text = _("The scan from $time ($type) found no vulnerabilities.");
-
         } else {
             text = cockpit.ngettext('The scan from $time ($type) found one vulnerability:',
                                     'The scan from $time ($type) found $count vulnerabilities:',
@@ -468,7 +466,7 @@ var ImageInline = React.createClass({
             return (
                 <div className="curtains-ct blank-slate-pf">
                     <div className="blank-slate-pf-icon">
-                        <i className="fa fa-exclamation-circle"></i>
+                        <i className="fa fa-exclamation-circle" />
                     </div>
                     <h1>{_("This image does not exist.")}</h1>
                 </div>
@@ -481,9 +479,9 @@ var ImageInline = React.createClass({
             return (
                 <div className="listing-ct-inline">
                     <h3>{_("Details")}</h3>
-                    <ImageDetails image={image}/>
+                    <ImageDetails image={image} />
                     <h3>{_("Security")}</h3>
-                    <ImageSecurity image={image} info={vulnerableInfo}/>
+                    <ImageSecurity image={image} info={vulnerableInfo} />
                 </div>
             );
         }
@@ -491,7 +489,7 @@ var ImageInline = React.createClass({
         return (
             <div className="listing-ct-inline">
                 <h3>{_("Details")}</h3>
-                <ImageDetails image={image}/>
+                <ImageDetails image={image} />
             </div>
         );
     }
@@ -590,7 +588,7 @@ var ImageList = React.createClass({
             if (count > 0)
                 vulnerabilityColumn = (
                     <div>
-                        <span className="pficon pficon-warning-triangle-o"></span>
+                        <span className="pficon pficon-warning-triangle-o" />
                         &nbsp;
                         { cockpit.format(cockpit.ngettext('1 Vulnerability', '$0 Vulnerabilities', count), count) }
                     </div>
@@ -599,7 +597,7 @@ var ImageList = React.createClass({
 
         var element;
         if (this.props.client.waiting[image.Id]) {
-            element = <div className="spinner"></div>
+            element = <div className="spinner" />
         } else {
             element = <button className="btn btn-default btn-control-ct fa fa-play"
                 onClick={ this.showRunImageDialog.bind(this) }
@@ -646,7 +644,7 @@ var ImageList = React.createClass({
                                    columns={columns}
                                    tabRenderers={tabs}
                                    navigateToItem={ this.navigateToImage.bind(this, image) }
-                                   listingActions={actions}/>;
+                                   listingActions={actions} />;
     },
 
     render: function () {
@@ -658,7 +656,7 @@ var ImageList = React.createClass({
         var imageRows = filtered.map(this.renderRow, this);
 
         var getNewImageAction = <a role="link" tabIndex="0" onClick={this.handleSearchImageClick} className="card-pf-link-with-icon pull-right">
-            <span className="pficon pficon-add-circle-o"></span>{_("Get new image")}
+            <span className="pficon pficon-add-circle-o" />{_("Get new image")}
         </a>;
 
         var columnTitles = [ _("Name"), '', _("Created"), _("Size"), '' ];

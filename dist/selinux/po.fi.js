@@ -82,7 +82,7 @@ return plural;
  ],
  "Audit log": [
   null,
-  "Audit-logi"
+  "Audit-loki"
  ],
  "Connecting to SETroubleshoot daemon...": [
   null,
@@ -110,7 +110,7 @@ return plural;
  ],
  "No SELinux alerts.": [
   null,
-  ""
+  "Ei SELinux-hälytyksiä."
  ],
  "Not connected": [
   null,
@@ -126,11 +126,11 @@ return plural;
  ],
  "Off": [
   null,
-  ""
+  "Pois"
  ],
  "On": [
   null,
-  ""
+  "Päällä"
  ],
  "SELinux Access Control Errors": [
   null,
@@ -146,15 +146,15 @@ return plural;
  ],
  "SELinux is disabled on the system": [
   null,
-  ""
+  "SELinux on poistettu käytöstä järjestelmässä"
  ],
  "SELinux is disabled on the system.": [
   null,
-  ""
+  "SELinux on poistettu käytöstä järjestelmässä."
  ],
  "SELinux system status is unknown.": [
   null,
-  ""
+  "SELinux-järjestelmän tila on tuntematon."
  ],
  "Setting deviates from the configured state and will revert on the next boot.": [
   null,

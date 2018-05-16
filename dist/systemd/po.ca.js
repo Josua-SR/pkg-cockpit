@@ -343,7 +343,7 @@ return plural;
  ],
  "Bug Fix Updates Available": [
   null,
-  ""
+  "Hi ha disponibles actualitzacions de correcció d'errors"
  ],
  "Bus Expansion Chassis": [
   null,
@@ -379,7 +379,7 @@ return plural;
  ],
  "Checking for updates…": [
   null,
-  ""
+  "Comprovació per si hi ha actualitzacions..."
  ],
  "Class": [
   null,
@@ -387,7 +387,7 @@ return plural;
  ],
  "Click to see system hardware information": [
   null,
-  ""
+  "Feu clic per veure la informació del maquinari del sistema"
  ],
  "Close": [
   null,
@@ -783,7 +783,7 @@ return plural;
  ],
  "Only Emergency": [
   null,
-  ""
+  "Només emergències"
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
@@ -1075,7 +1075,7 @@ return plural;
  ],
  "System Up To Date": [
   null,
-  ""
+  "El sistema està actualitzat"
  ],
  "Tablet": [
   null,
@@ -1155,7 +1155,7 @@ return plural;
  ],
  "Updates Available": [
   null,
-  ""
+  "Actualitzacions disponibles"
  ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",

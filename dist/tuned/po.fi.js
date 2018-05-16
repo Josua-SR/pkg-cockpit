@@ -73,11 +73,11 @@ return plural;
  ],
  "Change Performance Profile": [
   null,
-  "Vaihda Suorituskyvyn Profiili"
+  "Vaihda suorituskyvyn profiili"
  ],
  "Change Profile": [
   null,
-  "Vaihda Profiili"
+  "Vaihda profiili"
  ],
  "Communication with tuned has failed": [
   null,
@@ -129,7 +129,7 @@ return plural;
  ],
  "Tuned is not running": [
   null,
-  ""
+  "Tuned ei ole käynnissä"
  ],
  "Tuned is off": [
   null,

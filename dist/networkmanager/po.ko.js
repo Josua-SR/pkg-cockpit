@@ -163,6 +163,14 @@ return plural;
   null,
   "브릿지 추가"
  ],
+ "Add Services": [
+  null,
+  ""
+ ],
+ "Add Services…": [
+  null,
+  ""
+ ],
  "Add Team": [
   null,
   ""
@@ -192,6 +200,10 @@ return plural;
   ""
  ],
  "Addresses": [
+  null,
+  ""
+ ],
+ "Allowed Services": [
   null,
   ""
  ],
@@ -347,6 +359,10 @@ return plural;
   null,
   ""
  ],
+ "Details": [
+  null,
+  ""
+ ],
  "Disabled": [
   null,
   "사용 안함"
@@ -366,6 +382,18 @@ return plural;
  "Failed": [
   null,
   "실패하였습니다"
+ ],
+ "Filter Services": [
+  null,
+  ""
+ ],
+ "Firewall": [
+  null,
+  ""
+ ],
+ "Firewall is not available": [
+  null,
+  ""
  ],
  "Forward delay $forward_delay": [
   null,
@@ -547,6 +575,10 @@ return plural;
   null,
   "캐리어가 없습니다"
  ],
+ "No open ports": [
+  null,
+  ""
+ ],
  "Not available": [
   null,
   "사용할 수 없습니다"
@@ -596,6 +628,10 @@ return plural;
   ""
  ],
  "Ping Target": [
+  null,
+  ""
+ ],
+ "Please install the {0} package": [
   null,
   ""
  ],
@@ -687,6 +723,10 @@ return plural;
   null,
   "전송 중입니다"
  ],
+ "Service": [
+  null,
+  ""
+ ],
  "Set to": [
   null,
   ""
@@ -735,6 +775,10 @@ return plural;
   null,
   ""
  ],
+ "TCP": [
+  null,
+  "TCP"
+ ],
  "Team": [
   null,
   ""
@@ -762,6 +806,10 @@ return plural;
  "This device cannot be managed here.": [
   null,
   ""
+ ],
+ "UDP": [
+  null,
+  "UDP"
  ],
  "Unexpected error": [
   null,
@@ -806,6 +854,10 @@ return plural;
  "Yes": [
   null,
   "네"
+ ],
+ "You are not authorized to modify the firewall.": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

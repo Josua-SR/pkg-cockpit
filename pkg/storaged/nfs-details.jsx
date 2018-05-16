@@ -37,14 +37,14 @@ function nfs_busy_dialog(client,
     dialog_title,
     entry, error,
     action_title, action) {
-
     function show(users) {
         if (users.length === 0) {
             $('#error-popup-title').text(dialog_title);
             $('#error-popup-message').text(error.toString());
             $('#error-popup').modal('show');
         } else {
-            let sessions = [ ], services = [ ];
+            let sessions = [ ];
+            let services = [ ];
             users.forEach((u) => {
                 var since = moment.duration(-u.since * 1000).humanize(true);
                 if (u.unit.endsWith(".scope")) {
@@ -83,7 +83,6 @@ function nfs_busy_dialog(client,
 }
 
 export function nfs_fstab_dialog(client, entry) {
-
     var server_to_check;
 
     function remote_choices(vals, setter) {
@@ -307,7 +306,7 @@ export class NFSDetails extends React.Component {
                             <td>{_("Size")}</td>
                             <td>
                                 { entry.mounted
-                                    ? <StorageUsageBar stats={fsys_size} critical={0.95}/>
+                                    ? <StorageUsageBar stats={fsys_size} critical={0.95} />
                                     : _("--")
                                 }
                             </td>
@@ -323,6 +322,6 @@ export class NFSDetails extends React.Component {
             </div>
         );
 
-        return <StdDetailsLayout client={client} header={header}/>;
+        return <StdDetailsLayout client={client} header={header} />;
     }
 }

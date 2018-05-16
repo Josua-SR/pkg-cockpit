@@ -85,7 +85,7 @@ return plural;
  ],
  "Automatically start libvirt on boot": [
   null,
-  ""
+  "Inicia automàticament libvirt amb l'arrencada"
  ],
  "Autostart:": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Connecting to Virtualization Service": [
   null,
-  ""
+  "Connexió al servei de virtualització"
  ],
  "Connection": [
   null,
@@ -241,7 +241,7 @@ return plural;
  ],
  "Immediately Start VM": [
   null,
-  ""
+  "Inicia automàticament la MV"
  ],
  "Install": [
   null,
@@ -261,7 +261,7 @@ return plural;
  ],
  "Invalid filename": [
   null,
-  ""
+  "nom de fitxer no vàlid"
  ],
  "Launch Remote Viewer": [
   null,
@@ -465,11 +465,11 @@ return plural;
  ],
  "Start libvirt": [
   null,
-  ""
+  "Inicia libvirt"
  ],
  "Start the VM to see disk statistics.": [
   null,
-  ""
+  "Inicieu la MV per veure les estadístiques del disc."
  ],
  "State": [
   null,
@@ -605,11 +605,11 @@ return plural;
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
-  ""
+  "El servei de virtualització  (libvirt) no està actiu"
  ],
  "Virtualization Service is Available": [
   null,
-  ""
+  "El servei de virtualització està disponible"
  ],
  "Virtualport": [
   null,

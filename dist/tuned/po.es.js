@@ -141,6 +141,6 @@ return plural;
  ],
  "recommended": [
   null,
-  ""
+  "recomendado"
  ]
 }));

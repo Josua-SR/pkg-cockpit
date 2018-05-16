@@ -117,7 +117,7 @@ return plural;
  ],
  "Boot Order:": [
   null,
-  ""
+  "Käynnistysjärjestys:"
  ],
  "Bus": [
   null,
@@ -125,15 +125,15 @@ return plural;
  ],
  "CHANGE NETWORK STATE action failed": [
   null,
-  ""
+  "CHANGE NETWORK STATE -toiminto epäonnistui"
  ],
  "CPU Type:": [
   null,
-  ""
+  "Prosessorin tyyppi:"
  ],
  "CREATE VM action failed": [
   null,
-  ""
+  "CREATE VM -toiminto epäonnistui"
  ],
  "Cancel": [
   null,
@@ -157,7 +157,7 @@ return plural;
  ],
  "Cluster Virtual Machines": [
   null,
-  "Klusterin Virtuaalikoneet"
+  "Klusterin virtuaalikoneet"
  ],
  "Confirm deletion of $0": [
   null,
@@ -177,7 +177,7 @@ return plural;
  ],
  "Connect to oVirt Engine": [
   null,
-  "Yhdistä oVirt Engine"
+  "Yhdistä oVirt Engineen"
  ],
  "Connect with any $0 viewer application.": [
   null,
@@ -185,7 +185,7 @@ return plural;
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  "Yhdistä mihin tahansa SPICE tai VNC -katseluohjelmaan."
+  "Yhdistä mihin tahansa SPICE- tai VNC-katseluohjelmaan."
  ],
  "Connection": [
   null,
@@ -197,7 +197,7 @@ return plural;
  ],
  "Consoles": [
   null,
-  ""
+  "Konsolit"
  ],
  "Count:": [
   null,
@@ -209,11 +209,11 @@ return plural;
  ],
  "Create New VM": [
   null,
-  ""
+  "Luo uusi VM"
  ],
  "Create VM": [
   null,
-  ""
+  "Luo VM"
  ],
  "Delete": [
   null,
@@ -257,7 +257,7 @@ return plural;
  ],
  "Emulated Machine:": [
   null,
-  "Emuloitu Kone:"
+  "Emuloitu kone:"
  ],
  "Enter New VM name": [
   null,
@@ -273,15 +273,15 @@ return plural;
  ],
  "Force Restart": [
   null,
-  "Pakota Uudelleenkäynnistys"
+  "Pakota uudelleenkäynnistys"
  ],
  "Force Shut Down": [
   null,
-  "Pakota Sammutus"
+  "Pakota sammutus"
  ],
  "GiB": [
   null,
-  ""
+  "GiB"
  ],
  "Graphics Console (VNC)": [
   null,
@@ -309,7 +309,7 @@ return plural;
  ],
  "INSTALL VM action failed": [
   null,
-  ""
+  "INSTALL VM -toiminto epäonnistui"
  ],
  "Install": [
   null,
@@ -317,11 +317,11 @@ return plural;
  ],
  "Launch Remote Viewer": [
   null,
-  ""
+  "Käynnistä etäkatselin"
  ],
  "Loading ...": [
   null,
-  "Ladataan ..."
+  "Ladataan..."
  ],
  "Loading data ...": [
   null,
@@ -333,7 +333,7 @@ return plural;
  ],
  "MIGRATE action failed": [
   null,
-  ""
+  "MIGRATE-toiminto epäonnistui"
  ],
  "MTU": [
   null,
@@ -341,11 +341,11 @@ return plural;
  ],
  "Managed": [
   null,
-  ""
+  "Hallittu"
  ],
  "Manual Connection": [
   null,
-  "Manuaalinen Yhteys"
+  "Manuaalinen yhteys"
  ],
  "Memory": [
   null,
@@ -361,11 +361,11 @@ return plural;
  ],
  "Model type": [
   null,
-  ""
+  "Mallityyppi"
  ],
  "More Information": [
   null,
-  ""
+  "Lisää tietoja"
  ],
  "Name": [
   null,
@@ -377,7 +377,7 @@ return plural;
  ],
  "No VM found in oVirt.": [
   null,
-  ""
+  "oVirtistä ei löytynyt virtuaalikonetta."
  ],
  "No VM is running or defined on this host": [
   null,
@@ -393,11 +393,15 @@ return plural;
  ],
  "No disks defined for this VM": [
   null,
-  ""
+  "Tälle virtuaalikoneelle ei ole määritetty levyjä."
  ],
  "No network interfaces defined for this VM": [
   null,
-  ""
+  "Tälle virtuaalikoneelle ei ole määritetty verkkoliitäntöjä"
+ ],
+ "No oVirt connection": [
+  null,
+  "Ei oVirt-yhteyttä"
  ],
  "OK": [
   null,
@@ -441,11 +445,11 @@ return plural;
  ],
  "Please start the virtual machine to access its console.": [
   null,
-  ""
+  "Käynnistä virtuaalikone päästäksesi sen konsoliin."
  ],
  "Please wait till VMs list is loaded from the server.": [
   null,
-  ""
+  "Odota että virtuaalikoneiden lista ladataan palvelimelta."
  ],
  "Please wait till list of templates is loaded from the server.": [
   null,
@@ -477,7 +481,7 @@ return plural;
  ],
  "REBOOT action failed": [
   null,
-  ""
+  "REBOOT-toiminto epäonnistui"
  ],
  "Readonly": [
   null,
@@ -485,19 +489,19 @@ return plural;
  ],
  "Reconnect": [
   null,
-  ""
+  "Yhdistä uudelleen"
  ],
  "Register oVirt": [
   null,
-  ""
+  "Rekisteröi oVirt"
  ],
  "Registering oVirt to Cockpit": [
   null,
-  ""
+  "Rekisteröidän oVirt Cockpitiin"
  ],
  "Reload": [
   null,
-  ""
+  "Lataa uudelleen"
  ],
  "Restart": [
   null,
@@ -517,7 +521,7 @@ return plural;
  ],
  "SHUTDOWN action failed": [
   null,
-  ""
+  "SHUTDOWN-toiminto epäonnistui"
  ],
  "SPICE": [
   null,
@@ -537,11 +541,11 @@ return plural;
  ],
  "START action failed": [
   null,
-  ""
+  "START-toiminto epäonnistui"
  ],
  "SUSPEND action failed": [
   null,
-  ""
+  "SUSPEND-toiminto epäonnistui"
  ],
  "Save": [
   null,
@@ -625,19 +629,19 @@ return plural;
  ],
  "The VM crashed.": [
   null,
-  ""
+  "Virtuaalikone kaatui."
  ],
  "The VM is down.": [
   null,
-  ""
+  "Virtuaalikone on alhaalla."
  ],
  "The VM is going down.": [
   null,
-  ""
+  "Virtuaalikone on menossa alas."
  ],
  "The VM is idle.": [
   null,
-  ""
+  "Virtuaalikone on jouten."
  ],
  "The VM is in process of dying (shut down or crash is not completed).": [
   null,
@@ -645,7 +649,7 @@ return plural;
  ],
  "The VM is paused.": [
   null,
-  ""
+  "Virtuaalikone on keskeytetty."
  ],
  "The VM is running and will be forced off before deletion.": [
   null,
@@ -653,15 +657,19 @@ return plural;
  ],
  "The VM is running.": [
   null,
-  ""
+  "Virtuaalikone on käynnissä."
  ],
  "The VM is suspended by guest power management.": [
   null,
   ""
  ],
- "This virtual machine is not managed by oVirt": [
+ "This host is managed by a virtualization manager, so creation of new VMs from the host is not possible.": [
   null,
   ""
+ ],
+ "This virtual machine is not managed by oVirt": [
+  null,
+  "Tämä virtuaalikone ei ole oVirtin hallinnassa"
  ],
  "Type": [
   null,
@@ -673,7 +681,7 @@ return plural;
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
-  ""
+  "Päivitä libvirt uudempaan versioon nähdäksesi levytilastot"
  ],
  "Usage": [
   null,
@@ -693,31 +701,31 @@ return plural;
  ],
  "VM FORCE OFF action failed": [
   null,
-  ""
+  "VM FORCE OFF -toiminto epäonnistui"
  ],
  "VM FORCE REBOOT action failed": [
   null,
-  ""
+  "VM FORCE REBOOT -toiminto epäonnistui"
  ],
  "VM REBOOT action failed": [
   null,
-  ""
+  "VM REBOOT -toiminto epäonnistui"
  ],
  "VM SEND Non-Maskable Interrrupt action failed": [
   null,
-  ""
+  "VM SEND Non-Maskable Interrrupt -toiminto epäonnistui"
  ],
  "VM SHUT DOWN action failed": [
   null,
-  ""
+  "VM SHUT DOWN -toiminto epäonnistui"
  ],
  "VM START action failed": [
   null,
-  ""
+  "VM START -toiminto epäonnistui"
  ],
  "VM icon": [
   null,
-  ""
+  "VM-kuvake"
  ],
  "VNC": [
   null,
@@ -773,7 +781,7 @@ return plural;
  ],
  "connecting": [
   null,
-  ""
+  "yhdistetään"
  ],
  "cores": [
   null,
@@ -841,7 +849,7 @@ return plural;
  ],
  "installing OS": [
   null,
-  ""
+  "asennetaan käyttöjärjestelmä"
  ],
  "kdumping": [
   null,
@@ -905,7 +913,7 @@ return plural;
  ],
  "pending approval": [
   null,
-  ""
+  "odottaa hyväksyntää"
  ],
  "reboot": [
   null,
@@ -921,11 +929,11 @@ return plural;
  ],
  "show less": [
   null,
-  ""
+  "näytä vähemmän"
  ],
  "show more": [
   null,
-  ""
+  "näytä enemmän"
  ],
  "shut off": [
   null,

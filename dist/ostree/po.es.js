@@ -289,15 +289,15 @@ return plural;
  ],
  "URL": [
   null,
-  ""
+  "URL"
  ],
  "Unable to communicate with OSTree": [
   null,
-  ""
+  "Incapaz de comunicar con OSTree"
  ],
  "Update and Reboot": [
   null,
-  ""
+  "Actualizar y Reiniciar"
  ],
  "Updates": [
   null,
@@ -309,7 +309,7 @@ return plural;
  ],
  "Use trusted GPG key": [
   null,
-  ""
+  "Usar las claves GPG de confianza"
  ],
  "Version": [
   null,
@@ -317,7 +317,7 @@ return plural;
  ],
  "When": [
   null,
-  ""
+  "Cuando"
  ],
  "Writing objects": [
   null,
@@ -325,6 +325,6 @@ return plural;
  ],
  "at": [
   null,
-  ""
+  "en"
  ]
 }));

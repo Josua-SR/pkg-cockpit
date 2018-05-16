@@ -356,8 +356,7 @@ function append_row(client, rows, level, key, name, desc, tabs, job_object) {
     if (job_object)
         last_column = (
             <span className="spinner spinner-sm spinner-inline"
-                  style={{visibility: client.path_jobs[job_object] ? "visible" : "hidden"}}>
-            </span>);
+                  style={{visibility: client.path_jobs[job_object] ? "visible" : "hidden"}} />);
     if (tabs.row_action) {
         if (last_column) {
             last_column = <span>{last_column}{tabs.row_action}</span>;
@@ -377,7 +376,7 @@ function append_row(client, rows, level, key, name, desc, tabs, job_object) {
         <CockpitListing.ListingRow key={key}
                                    columns={cols}
                                    tabRenderers={tabs.renderers}
-                                   listingActions={tabs.actions}/>
+                                   listingActions={tabs.actions} />
     );
 }
 
@@ -423,7 +422,7 @@ function append_partitions(client, rows, level, block) {
         ];
 
         rows.push(
-            <CockpitListing.ListingRow columns={cols}/>
+            <CockpitListing.ListingRow columns={cols} />
         );
     }
 
@@ -498,7 +497,8 @@ function block_content(client, block, allow_partitions) {
                             Title: _("Partitioning"),
                             Options: [
                                 { value: "dos", Title: _("Compatible with all systems and devices (MBR)") },
-                                { value: "gpt", Title: _("Compatible with modern system and hard disks > 2TB (GPT)"),
+                                { value: "gpt",
+                                  Title: _("Compatible with modern system and hard disks > 2TB (GPT)"),
                                   selected: true
                                 },
                                 { value: "empty", Title: _("No partitioning") }
@@ -622,7 +622,8 @@ var VGroup = React.createClass({
                               { SelectOne: "purpose",
                                 Title: _("Purpose"),
                                 Options: [
-                                    { value: "block", Title: _("Block device for filesystems"),
+                                    { value: "block",
+                                      Title: _("Block device for filesystems"),
                                       selected: true
                                     },
                                     { value: "pool", Title: _("Pool for thinly provisioned volumes") }
@@ -683,7 +684,7 @@ var VGroup = React.createClass({
             <div className="pull-right">
                 <StorageLink onClick={create_logical_volume}
                              excuse={excuse}>
-                    <span className="pficon pficon-add-circle-o"></span>
+                    <span className="pficon pficon-add-circle-o" />
                     {" "}
                     {_("Create new Logical Volume")}
                 </StorageLink>

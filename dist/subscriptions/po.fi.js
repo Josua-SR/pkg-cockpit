@@ -81,7 +81,7 @@ return plural;
  ],
  "Activation Key": [
   null,
-  "Aktivointi avain"
+  "Aktivointiavain"
  ],
  "Architecture": [
   null,
@@ -141,7 +141,7 @@ return plural;
  ],
  "Organization": [
   null,
-  ""
+  "Organisaatio"
  ],
  "Password": [
   null,
@@ -149,7 +149,7 @@ return plural;
  ],
  "Product ID": [
   null,
-  ""
+  "Tuotteen ID"
  ],
  "Product name": [
   null,
@@ -161,15 +161,15 @@ return plural;
  ],
  "Register": [
   null,
-  ""
+  "Rekisteröi"
  ],
  "Register system": [
   null,
-  ""
+  "Rekisteröi järjestelmä"
  ],
  "Retrieving subscription status...": [
   null,
-  ""
+  "Noudetaan tilauksen tilaa..."
  ],
  "Server": [
   null,
@@ -193,7 +193,7 @@ return plural;
  ],
  "Subscriptions": [
   null,
-  ""
+  "Tilaukset"
  ],
  "The current user isn't allowed to access system subscription status.": [
   null,

@@ -399,6 +399,10 @@ return plural;
   null,
   ""
  ],
+ "No oVirt connection": [
+  null,
+  ""
+ ],
  "OK": [
   null,
   ""
@@ -656,6 +660,10 @@ return plural;
   ""
  ],
  "The VM is suspended by guest power management.": [
+  null,
+  ""
+ ],
+ "This host is managed by a virtualization manager, so creation of new VMs from the host is not possible.": [
   null,
   ""
  ],

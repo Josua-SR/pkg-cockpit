@@ -399,6 +399,10 @@ return plural;
   null,
   "No s'ha definit cap interfície de xarxa per aquesta MV"
  ],
+ "No oVirt connection": [
+  null,
+  ""
+ ],
  "OK": [
   null,
   ""
@@ -573,7 +577,7 @@ return plural;
  ],
  "Start the VM to see disk statistics.": [
   null,
-  ""
+  "Inicieu la MV per veure les estadístiques del disc."
  ],
  "State": [
   null,
@@ -658,6 +662,10 @@ return plural;
  "The VM is suspended by guest power management.": [
   null,
   "La MV està en suspensió per la gestió d'energia del convidat."
+ ],
+ "This host is managed by a virtualization manager, so creation of new VMs from the host is not possible.": [
+  null,
+  ""
  ],
  "This virtual machine is not managed by oVirt": [
   null,

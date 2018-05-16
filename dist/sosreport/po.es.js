@@ -113,6 +113,6 @@ return plural;
  ],
  "This tool will collect system configuration and diagnostic information from this system for use with diagnosing problems with the system.": [
   null,
-  ""
+  "Esta herramienta recogerá la configuración del sistema e información de diagnóstico desde este sistema para su uso en la diagnosis de problemas con el sistema."
  ]
 }));

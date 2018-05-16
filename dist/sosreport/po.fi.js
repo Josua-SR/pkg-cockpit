@@ -105,7 +105,7 @@ return plural;
  ],
  "The collected information will be stored locally on the system.": [
   null,
-  ""
+  "Kerätyt tiedot tallennetaan paikallisesti järjestelmään."
  ],
  "The generated archive contains data considered sensitive and its content should be reviewed by the originating organization before being passed to any third party.": [
   null,

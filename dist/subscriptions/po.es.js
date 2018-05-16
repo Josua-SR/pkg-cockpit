@@ -201,19 +201,19 @@ return plural;
  ],
  "URL": [
   null,
-  ""
+  "URL"
  ],
  "Unable to connect": [
   null,
-  ""
+  "Incapaz de conectar"
  ],
  "Unregister": [
   null,
-  ""
+  "No registrado"
  ],
  "Unregistering system...": [
   null,
-  ""
+  "Des-registrando sistema..."
  ],
  "Updating": [
   null,
@@ -221,7 +221,7 @@ return plural;
  ],
  "Use proxy server": [
   null,
-  ""
+  "Usar servidor proxy"
  ],
  "User": [
   null,

@@ -135,7 +135,7 @@ return plural;
  ],
  "ARP Monitoring": [
   null,
-  "ARP -Monitorointi"
+  "ARP-monitorointi"
  ],
  "ARP Ping": [
   null,
@@ -147,7 +147,7 @@ return plural;
  ],
  "Active Backup": [
   null,
-  "Aktiivinen Varmuuskopio"
+  "Aktiivinen varmuuskopio"
  ],
  "Adaptive load balancing": [
   null,
@@ -167,7 +167,15 @@ return plural;
  ],
  "Add Bridge": [
   null,
-  "Lisää Silta"
+  "Lisää silta"
+ ],
+ "Add Services": [
+  null,
+  "Lisää palveluja"
+ ],
+ "Add Services…": [
+  null,
+  "Lisää palveluja…"
  ],
  "Add Team": [
   null,
@@ -179,7 +187,7 @@ return plural;
  ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "<b>$0</b>  lisääminen katkaisee yhteyden serverille, jolloin hallintakäyttöliittymä ei ole saatavilla."
+  "<b>$0</b>  lisääminen katkaisee yhteyden palvelimeen, jolloin hallintakäyttöliittymä ei ole saatavilla."
  ],
  "Additional DNS $val": [
   null,
@@ -200,6 +208,10 @@ return plural;
  "Addresses": [
   null,
   "Osoitteet"
+ ],
+ "Allowed Services": [
+  null,
+  "Sallitut palvelut"
  ],
  "Apply": [
   null,
@@ -231,7 +243,7 @@ return plural;
  ],
  "Bond Settings": [
   null,
-  ""
+  "Sidosasetukset"
  ],
  "Bridge": [
   null,
@@ -239,11 +251,11 @@ return plural;
  ],
  "Bridge Port Settings": [
   null,
-  "Sillan Porttiasetukset"
+  "Sillan porttiasetukset"
  ],
  "Bridge Settings": [
   null,
-  "Sillan Asetukset"
+  "Sillan asetukset"
  ],
  "Bridge port": [
   null,
@@ -271,7 +283,7 @@ return plural;
  ],
  "Changing the settings will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "Asetuksien vaihtaminen katkaisee yhteyden serverille, jolloin hallintakäyttöliittymä ei ole saatavilla."
+  "Asetuksien vaihtaminen katkaisee yhteyden palvelimeen, jolloin hallintakäyttöliittymä ei ole saatavilla."
  ],
  "Checking IP": [
   null,
@@ -307,7 +319,7 @@ return plural;
  ],
  "Creating this VLAN will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "Tämän VLANin luominen katkaisee yhteyden serverille, jolloin hallintakäyttöliittymä ei ole saatavilla."
+  "Tämän VLANin luominen katkaisee yhteyden palvelimeen, jolloin hallintakäyttöliittymä ei ole saatavilla."
  ],
  "Creating this bond will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -351,7 +363,11 @@ return plural;
  ],
  "Deleting <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "<b>$0</b>  poistaminen katkaisee yhteyden serverille, jolloin hallintakäyttöliittymä ei ole saatavilla."
+  "Kohteen <b>$0</b>  poistaminen katkaisee yhteyden palvelimeen, jolloin hallintakäyttöliittymä ei ole saatavilla."
+ ],
+ "Details": [
+  null,
+  "Yksityiskohdat"
  ],
  "Disabled": [
   null,
@@ -372,6 +388,18 @@ return plural;
  "Failed": [
   null,
   "Epäonnistui"
+ ],
+ "Filter Services": [
+  null,
+  "Suodata palveluja"
+ ],
+ "Firewall": [
+  null,
+  "Palomuuri"
+ ],
+ "Firewall is not available": [
+  null,
+  "Palomuuri ei ole saatavilla"
  ],
  "Forward delay $forward_delay": [
   null,
@@ -403,7 +431,7 @@ return plural;
  ],
  "IP Settings": [
   null,
-  "IP-Asetukset"
+  "IP-asetukset"
  ],
  "IPv4": [
   null,
@@ -411,7 +439,7 @@ return plural;
  ],
  "IPv4 Settings": [
   null,
-  "IPv4-Asetukset"
+  "IPv4-asetukset"
  ],
  "IPv6": [
   null,
@@ -419,7 +447,7 @@ return plural;
  ],
  "IPv6 Settings": [
   null,
-  "IPv6-Asetukset"
+  "IPv6-asetukset"
  ],
  "Id $id": [
   null,
@@ -459,7 +487,7 @@ return plural;
  ],
  "LACP Key": [
   null,
-  "LACP-Avain"
+  "LACP-avain"
  ],
  "Link Monitoring": [
   null,
@@ -483,7 +511,7 @@ return plural;
  ],
  "Load Balancing": [
   null,
-  "Kuorman Tasapainotus"
+  "Kuorman tasapainotus"
  ],
  "MAC": [
   null,
@@ -499,7 +527,7 @@ return plural;
  ],
  "MTU must be a positive number": [
   null,
-  ""
+  "MTU:n tulee olla positiivinen numero"
  ],
  "Manual": [
   null,
@@ -519,11 +547,11 @@ return plural;
  ],
  "Mode": [
   null,
-  ""
+  "Tila"
  ],
  "Monitoring Interval": [
   null,
-  ""
+  "Monitorointiväli"
  ],
  "Monitoring Targets": [
   null,
@@ -539,11 +567,11 @@ return plural;
  ],
  "Networking": [
   null,
-  ""
+  "Verkko"
  ],
  "Networking Logs": [
   null,
-  ""
+  "Verkkolokit"
  ],
  "No": [
   null,
@@ -553,13 +581,17 @@ return plural;
   null,
   ""
  ],
+ "No open ports": [
+  null,
+  "Ei avoimia portteja"
+ ],
  "Not available": [
   null,
   ""
  ],
  "Off": [
   null,
-  ""
+  "Pois"
  ],
  "Ok": [
   null,
@@ -567,7 +599,7 @@ return plural;
  ],
  "On": [
   null,
-  ""
+  "Päällä"
  ],
  "Parent": [
   null,
@@ -599,9 +631,13 @@ return plural;
  ],
  "Ping Interval": [
   null,
-  ""
+  "Ping-väli"
  ],
  "Ping Target": [
+  null,
+  ""
+ ],
+ "Please install the {0} package": [
   null,
   ""
  ],
@@ -643,7 +679,7 @@ return plural;
  ],
  "Reboot": [
   null,
-  ""
+  "Käynnistä uudelleen"
  ],
  "Receiving": [
   null,
@@ -659,7 +695,7 @@ return plural;
  ],
  "Restoring connection": [
   null,
-  ""
+  "Palautetaan yhteys"
  ],
  "Round Robin": [
   null,
@@ -692,6 +728,10 @@ return plural;
  "Sending": [
   null,
   "Lähetetään"
+ ],
+ "Service": [
+  null,
+  "Palvelu"
  ],
  "Set to": [
   null,
@@ -741,6 +781,10 @@ return plural;
   null,
   ""
  ],
+ "TCP": [
+  null,
+  "TCP"
+ ],
  "Team": [
   null,
   ""
@@ -763,11 +807,15 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to modify network settings": [
   null,
-  ""
+  "Käyttäjällä <b>$0</b> ei ole oikeutta muokata verkkoasetuksia"
  ],
  "This device cannot be managed here.": [
   null,
   "Tätä laitetta ei voida hallita täällä."
+ ],
+ "UDP": [
+  null,
+  "UDP"
  ],
  "Unexpected error": [
   null,
@@ -787,7 +835,7 @@ return plural;
  ],
  "Unmanaged Interfaces": [
   null,
-  ""
+  "Hallitsemattomat liitännät"
  ],
  "VLAN": [
   null,
@@ -799,7 +847,7 @@ return plural;
  ],
  "VLAN Settings": [
   null,
-  "VLAN Asetukset"
+  "VLAN-asetukset"
  ],
  "Waiting": [
   null,
@@ -812,6 +860,10 @@ return plural;
  "Yes": [
   null,
   "Kyllä"
+ ],
+ "You are not authorized to modify the firewall.": [
+  null,
+  "Sinulla ei ole valtuuksia muokata palomuuria."
  ],
  "[$0 bytes of binary data]": [
   null,
@@ -827,6 +879,6 @@ return plural;
  ],
  "page-title\u0004Networking": [
   null,
-  ""
+  "Verkko"
  ]
 }));

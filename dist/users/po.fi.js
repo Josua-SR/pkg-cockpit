@@ -73,7 +73,7 @@ return plural;
  ],
  "Account Expiration": [
   null,
-  ""
+  "Tilin vanheneminen"
  ],
  "Account not available or cannot be edited.": [
   null,
@@ -97,11 +97,11 @@ return plural;
  ],
  "Authorized Public SSH Keys": [
   null,
-  "Valtuutetut Julkiset SSH-Avaimet"
+  "Valtuutetut julkiset SSH-avaimet"
  ],
  "Back to Accounts": [
   null,
-  "Takaisin Käyttäjätileihin"
+  "Takaisin käyttäjätileihin"
  ],
  "Cancel": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "Create New Account": [
   null,
-  "Luo Uusi Tili"
+  "Luo uusi tili"
  ],
  "Delete": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "Delete Files": [
   null,
-  "Poista Tiedostot"
+  "Poista tiedostot"
  ],
  "Error": [
   null,
@@ -169,7 +169,7 @@ return plural;
  ],
  "Force Change": [
   null,
-  "Pakota Muutos"
+  "Pakota muutos"
  ],
  "Force password change": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Invalid expiration date": [
   null,
-  ""
+  "Virheellinen vanhenemispäivä."
  ],
  "Invalid key": [
   null,
@@ -193,7 +193,7 @@ return plural;
  ],
  "Last Login": [
   null,
-  "Edellinen Kirjautuminen"
+  "Edellinen kirjautuminen"
  ],
  "Local Accounts": [
   null,
@@ -217,7 +217,7 @@ return plural;
  ],
  "Never expire password": [
   null,
-  ""
+  "Älä koskaan vanhenna salasanaa"
  ],
  "Never lock account": [
   null,
@@ -241,7 +241,7 @@ return plural;
  ],
  "Off": [
   null,
-  ""
+  "Pois"
  ],
  "Old Password": [
   null,
@@ -253,7 +253,7 @@ return plural;
  ],
  "On": [
   null,
-  ""
+  "Päällä"
  ],
  "Password": [
   null,
@@ -261,11 +261,11 @@ return plural;
  ],
  "Password Expiration": [
   null,
-  ""
+  "Salasanan vanheneminen"
  ],
  "Password is not acceptable": [
   null,
-  ""
+  "Salasana ei ole hyväksyttävä"
  ],
  "Password is too weak": [
   null,
@@ -277,11 +277,11 @@ return plural;
  ],
  "Paste the contents of your public SSH key file here": [
   null,
-  ""
+  "Liitä julkisen SSH-avaintiedostosi sisältö tähän"
  ],
  "Please specify an expiration date": [
   null,
-  ""
+  "Määritä vanhenemispäivä"
  ],
  "Prompting via passwd timed out": [
   null,
@@ -289,11 +289,11 @@ return plural;
  ],
  "Require password change every $0 days": [
   null,
-  ""
+  "Vaadi salasanan vaihto $0 päivän välein"
  ],
  "Require password change on $0": [
   null,
-  ""
+  "Vaadi salasanan vaihto $0"
  ],
  "Reset": [
   null,
@@ -321,7 +321,7 @@ return plural;
  ],
  "The account '$0' will be forced to change their password on next login": [
   null,
-  ""
+  "Tili '$0' on pakotettu vaihtamaan salasanan seuraavalla sisäänkirjautumiskerralla"
  ],
  "The key you provided was not valid.": [
   null,
@@ -333,7 +333,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to modify accounts": [
   null,
-  ""
+  "Käyttäjällä <b>$0</b> ei ole oikeutta muokata tilejä"
  ],
  "The user name can only consist of letters from a-z, digits, dots, dashes and underscores.": [
   null,
@@ -341,7 +341,7 @@ return plural;
  ],
  "There are no authorized public keys for this account.": [
   null,
-  ""
+  "Tällä tilillä ei ole valtuutettuja julkisia avaimia."
  ],
  "This user name already exists": [
   null,

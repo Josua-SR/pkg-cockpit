@@ -133,7 +133,7 @@ return plural;
  ],
  "Currently using:": [
   null,
-  ""
+  "En ús actualment:"
  ],
  "Default": [
   null,

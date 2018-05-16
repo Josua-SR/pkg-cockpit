@@ -67,6 +67,14 @@ return plural;
   "language": "zh-CN",
   "x-generator": "Zanata 3.9.6"
  },
+ "\"http\" Key escrow": [
+  null,
+  ""
+ ],
+ "\"tang\" Binding server": [
+  null,
+  ""
+ ],
  "$0 Block Device": [
   null,
   "$0 块设备"
@@ -258,6 +266,10 @@ return plural;
  "Address": [
   null,
   "地址"
+ ],
+ "Allow \"http://\" URL": [
+  null,
+  ""
  ],
  "Apply": [
   null,
@@ -675,6 +687,10 @@ return plural;
   null,
   ""
  ],
+ "HTTP method": [
+  null,
+  ""
+ ],
  "In Sync": [
   null,
   "同步中"
@@ -694,6 +710,10 @@ return plural;
  "Jobs": [
   null,
   "任务"
+ ],
+ "Key can't be retrieved": [
+  null,
+  ""
  ],
  "Key does not work": [
   null,
@@ -762,6 +782,10 @@ return plural;
  "Metadata Used": [
   null,
   "已使用的元数据"
+ ],
+ "Method": [
+  null,
+  ""
  ],
  "Modifying $target": [
   null,
@@ -1191,6 +1215,10 @@ return plural;
   null,
   "调整大小 $target"
  ],
+ "Retrieving the key from $0 has failed: $1.": [
+  null,
+  ""
+ ],
  "Running": [
   null,
   "运行中"
@@ -1210,6 +1238,10 @@ return plural;
  "Server Address": [
   null,
   "服务器地址"
+ ],
+ "Server address cannot be empty": [
+  null,
+  ""
  ],
  "Server address cannot be empty.": [
   null,
@@ -1395,6 +1427,10 @@ return plural;
   null,
   ""
  ],
+ "The server has returned a key that doesn't work.": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "用户 <b>$0</b> 不允许管理存储"
@@ -1416,6 +1452,10 @@ return plural;
   ""
  ],
  "This VDO device does not use all of its backing device.": [
+  null,
+  ""
+ ],
+ "This box must be checked to confirm that the key will be transported without HTTPS": [
   null,
   ""
  ],
@@ -1447,7 +1487,7 @@ return plural;
   null,
   "当磁盘正在恢复时，该磁盘不能被移除。"
  ],
- "This network key is not recognized anymore by the server. You might want to remove it.": [
+ "This network key is not recognized anymore by the server.": [
   null,
   ""
  ],
@@ -1478,6 +1518,18 @@ return plural;
  "Type": [
   null,
   "类型"
+ ],
+ "URL": [
+  null,
+  "网址"
+ ],
+ "URL cannot be empty": [
+  null,
+  ""
+ ],
+ "URL must start with either \"http:\" or \"https:\"": [
+  null,
+  ""
  ],
  "UUID": [
   null,
@@ -1626,6 +1678,10 @@ return plural;
  "XFS - Red Hat Enterprise Linux 7 default": [
   null,
   "XFS - Red Hat Enterprise Linux 7 默认"
+ ],
+ "You might want to remove it.": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

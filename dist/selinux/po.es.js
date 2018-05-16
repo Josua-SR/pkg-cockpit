@@ -178,19 +178,19 @@ return plural;
  ],
  "Unable to apply this solution automatically": [
   null,
-  ""
+  "Incapaz de aplicar esta solución automáticamente"
  ],
  "Unable to get alert details.": [
   null,
-  ""
+  "Incapaz de obtener detalles de la alerta."
  ],
  "Unable to get alert: $0": [
   null,
-  ""
+  "Incapaz de obtener alerta: $0"
  ],
  "Unable to run fix: %0": [
   null,
-  ""
+  "Incapaz de ejecutar correción: %0"
  ],
  "Unable to start setroubleshootd": [
   null,
@@ -198,7 +198,7 @@ return plural;
  ],
  "Waiting for details...": [
   null,
-  ""
+  "Esperando detalles..."
  ],
  "solution details": [
   null,

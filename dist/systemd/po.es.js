@@ -951,7 +951,7 @@ return plural;
  ],
  "Security Updates Available": [
   null,
-  ""
+  "Actualizaciones de Seguridad Disponibles"
  ],
  "Service Logs": [
   null,
@@ -1063,7 +1063,7 @@ return plural;
  ],
  "System Not Registered": [
   null,
-  ""
+  "Sistema No Registrado"
  ],
  "System Services": [
   null,
@@ -1075,7 +1075,7 @@ return plural;
  ],
  "System Up To Date": [
   null,
-  ""
+  "Sistema Actualizado"
  ],
  "Tablet": [
   null,
@@ -1115,15 +1115,15 @@ return plural;
  ],
  "This unit is not designed to be enabled explicitly.": [
   null,
-  ""
+  "Esta unidad no está diseñada para ser habilitada explícitamente."
  ],
  "Thursday": [
   null,
-  ""
+  "Jueves"
  ],
  "Time Zone": [
   null,
-  ""
+  "Zona Horaria"
  ],
  "Timers": [
   null,
@@ -1131,15 +1131,15 @@ return plural;
  ],
  "Tower": [
   null,
-  ""
+  "Torre"
  ],
  "Trying to synchronize with {{Server}}": [
   null,
-  ""
+  "Intentando sincronizar con {{Server}}"
  ],
  "Tuesday": [
   null,
-  ""
+  "Martes"
  ],
  "Type": [
   null,
@@ -1155,12 +1155,12 @@ return plural;
  ],
  "Updates Available": [
   null,
-  ""
+  "Actualizaciones Disponibles"
  ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",
-  "",
-  ""
+  "Utilización de $0 núcleo de CPU",
+  "Utilización de $0 núcleos de CPU"
  ],
  "Used": [
   null,
@@ -1172,7 +1172,7 @@ return plural;
  ],
  "Vendor": [
   null,
-  ""
+  "Proveedor"
  ],
  "Version": [
   null,
@@ -1180,15 +1180,15 @@ return plural;
  ],
  "Warning and above": [
   null,
-  ""
+  "Precaución y arriba"
  ],
  "Wednesday": [
   null,
-  ""
+  "Miércoles"
  ],
  "Weeks": [
   null,
-  ""
+  "Semanas"
  ],
  "[$0 bytes of binary data]": [
   null,
@@ -1208,8 +1208,8 @@ return plural;
  ],
  "of $0 CPU core": [
   "of $0 CPU cores",
-  "",
-  ""
+  "de $0 núcleo de CPU",
+  "de $0 núcleos de CPU"
  ],
  "unknown": [
   null,

@@ -669,7 +669,7 @@ return plural;
  ],
  "Reformat and add disks": [
   null,
-  ""
+  "Torna a formatar i afegeix discs"
  ],
  "Repository": [
   null,

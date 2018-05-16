@@ -73,7 +73,7 @@ return plural;
  ],
  " or drag & drop.": [
   null,
-  ""
+  " lub przeciągnąć."
  ],
  "$0% Free": [
   "$0% Free",
@@ -357,7 +357,7 @@ return plural;
  ],
  "Create Virtual Machine": [
   null,
-  ""
+  "Utwórz maszynę wirtualną"
  ],
  "Create empty image stream": [
   null,
@@ -505,7 +505,7 @@ return plural;
  ],
  "Drop file here to upload.": [
   null,
-  ""
+  "Proszę przeciągnąć tutaj plik, aby go wysłać."
  ],
  "Empty Directory": [
   null,
@@ -941,7 +941,7 @@ return plural;
  ],
  "Only files of size $0 MiB and less are supported": [
   null,
-  ""
+  "Obsługiwane są tylko pliki o rozmiarze $0 MiB lub mniejszym"
  ],
  "Operating System": [
   null,
@@ -969,7 +969,7 @@ return plural;
  ],
  "Paste JSON below, ": [
   null,
-  ""
+  "Proszę wkleić plik JSON poniżej "
  ],
  "Path": [
   null,
@@ -1281,7 +1281,7 @@ return plural;
  ],
  "Resolve above errors to continue": [
   null,
-  ""
+  "Należy rozwiązać powyższe błędy, aby kontynuować"
  ],
  "Restart Count": [
   null,
@@ -1661,15 +1661,15 @@ return plural;
  ],
  "VM definition is not a valid JSON.": [
   null,
-  ""
+  "Definicja maszyny wirtualnej nie jest prawidłowym kodem JSON."
  ],
  "VM definition is required.": [
   null,
-  ""
+  "Wymagana jest definicja maszyny wirtualnej."
  ],
  "VM definition must be an object.": [
   null,
-  ""
+  "Definicja maszyny wirtualnej musi być obiektem."
  ],
  "Virtual Machines": [
   null,
@@ -1853,7 +1853,7 @@ return plural;
  ],
  "upload a JSON file": [
   null,
-  ""
+  "wysłać plik JSON"
  ],
  "user": [
   null,

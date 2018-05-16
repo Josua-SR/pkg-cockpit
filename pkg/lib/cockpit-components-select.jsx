@@ -121,7 +121,7 @@
                 <div className={classes} onClick={this.clickHandler} id={this.props.id}>
                     <button className={buttonClasses} type="button">
                         <span className="pull-left">{currentValue}</span>
-                        <span className="caret"></span>
+                        <span className="caret" />
                     </button>
                     <ul className="dropdown-menu">
                         {this.props.children}
@@ -196,7 +196,7 @@
     /* Divider
      * Example: <SelectDivider/>
      */
-    const SelectDivider = () => <li role="separator" className="divider"/>;
+    const SelectDivider = () => <li role="separator" className="divider" />;
 
     /* Header
      * Example: <SelectHeader>Some header</SelectHeader>

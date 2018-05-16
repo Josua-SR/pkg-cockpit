@@ -132,7 +132,7 @@ return plural;
  ],
  "No matching files found": [
   null,
-  ""
+  "Vastaavia tiedostoja ei löytynyt."
  ],
  "Not Ready": [
   null,
@@ -140,7 +140,7 @@ return plural;
  ],
  "Off": [
   null,
-  ""
+  "Pois"
  ],
  "Ok": [
   null,
@@ -148,7 +148,7 @@ return plural;
  ],
  "On": [
   null,
-  ""
+  "Päällä"
  ],
  "Path to file": [
   null,

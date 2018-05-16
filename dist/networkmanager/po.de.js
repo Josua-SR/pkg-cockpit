@@ -169,6 +169,14 @@ return plural;
   null,
   "Bridge hinzufügen"
  ],
+ "Add Services": [
+  null,
+  ""
+ ],
+ "Add Services…": [
+  null,
+  ""
+ ],
  "Add Team": [
   null,
   "Team hinzufügen"
@@ -200,6 +208,10 @@ return plural;
  "Addresses": [
   null,
   "Adressen"
+ ],
+ "Allowed Services": [
+  null,
+  ""
  ],
  "Apply": [
   null,
@@ -353,6 +365,10 @@ return plural;
   null,
   ""
  ],
+ "Details": [
+  null,
+  ""
+ ],
  "Disabled": [
   null,
   "Deaktiviert"
@@ -372,6 +388,18 @@ return plural;
  "Failed": [
   null,
   "Fehlgeschlagen"
+ ],
+ "Filter Services": [
+  null,
+  ""
+ ],
+ "Firewall": [
+  null,
+  ""
+ ],
+ "Firewall is not available": [
+  null,
+  ""
  ],
  "Forward delay $forward_delay": [
   null,
@@ -553,6 +581,10 @@ return plural;
   null,
   "Kein Träger"
  ],
+ "No open ports": [
+  null,
+  ""
+ ],
  "Not available": [
   null,
   "Nicht verfügbar"
@@ -604,6 +636,10 @@ return plural;
  "Ping Target": [
   null,
   "$target wird gelöscht"
+ ],
+ "Please install the {0} package": [
+  null,
+  ""
  ],
  "Ports": [
   null,
@@ -693,6 +729,10 @@ return plural;
   null,
   "Sende"
  ],
+ "Service": [
+  null,
+  "Dienst"
+ ],
  "Set to": [
   null,
   ""
@@ -741,6 +781,10 @@ return plural;
   null,
   "Das Einschalten von <b>$0</b> wird die Verbindung zum Server unterbrechen und damit den Zugriff auf die Benutzeroberfläche unmöglich machen."
  ],
+ "TCP": [
+  null,
+  "TCP"
+ ],
  "Team": [
   null,
   ""
@@ -768,6 +812,10 @@ return plural;
  "This device cannot be managed here.": [
   null,
   "Dieses Gerät kann hier nicht verwaltet werden."
+ ],
+ "UDP": [
+  null,
+  "UDP"
  ],
  "Unexpected error": [
   null,
@@ -812,6 +860,10 @@ return plural;
  "Yes": [
   null,
   "Ja"
+ ],
+ "You are not authorized to modify the firewall.": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,
