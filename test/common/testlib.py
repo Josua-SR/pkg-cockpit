@@ -743,6 +743,8 @@ class MachineCase(unittest.TestCase):
                                     ".*Broken pipe.*",
                                     "g_dbus_connection_real_closed: Remote peer vanished with error: Underlying GIOStream returned 0 bytes on an async read \\(g-io-error-quark, 0\\). Exiting.",
                                     "connection unexpectedly closed by peer",
+                                    "cockpit-session: .*timed out.*",
+                                    "ignoring failure from session process:.*",
                                     "peer did not close io when expected",
                                     "request timed out, closing",
                                     "PolicyKit daemon disconnected from the bus.",
@@ -758,6 +760,7 @@ class MachineCase(unittest.TestCase):
 
     def allow_authorize_journal_messages(self):
         self.allow_journal_messages("cannot reauthorize identity.*:.*unix-user:admin.*",
+                                    "cannot reauthorize identity\(s\).*:.*unix-user:.*",
                                     ".*: pam_authenticate failed: Authentication failure",
                                     ".*is not in the sudoers file.  This incident will be reported.",
                                     ".*: a password is required",
@@ -789,10 +792,12 @@ class MachineCase(unittest.TestCase):
             self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { module_request }.*')
             self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { getattr } for .* comm="which" path="/usr/sbin/setfiles".*')
 
-        # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1559820
-        # this affects every boot (so naughty override causes too much spamming)
         if self.image == 'rhel-8':
+            # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1559820
+            # this affects every boot (so naughty override causes too much spamming)
             self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { create } for  pid=1 comm="systemd" name="bpf".*')
+            # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1573501
+            self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { create } for .*comm="nft" .*firewalld_t.*')
 
         all_found = True
         first = None

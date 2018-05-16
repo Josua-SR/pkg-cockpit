@@ -169,6 +169,14 @@ return plural;
   null,
   "Añadir puente"
  ],
+ "Add Services": [
+  null,
+  "Añadir Servicios"
+ ],
+ "Add Services…": [
+  null,
+  "Añadir Servicios..."
+ ],
  "Add Team": [
   null,
   "Añadir equipo"
@@ -200,6 +208,10 @@ return plural;
  "Addresses": [
   null,
   "Dirección"
+ ],
+ "Allowed Services": [
+  null,
+  "Servicios Permitidos"
  ],
  "Apply": [
   null,
@@ -353,6 +365,10 @@ return plural;
   null,
   "Eliminando <b>$0</b> romperá la conexión al servidor y hara no disponible la administración UI."
  ],
+ "Details": [
+  null,
+  "Detalles"
+ ],
  "Disabled": [
   null,
   "Deshabilitado"
@@ -372,6 +388,18 @@ return plural;
  "Failed": [
   null,
   "Falló"
+ ],
+ "Filter Services": [
+  null,
+  "Filtrar Servicios"
+ ],
+ "Firewall": [
+  null,
+  "Cortafuegos"
+ ],
+ "Firewall is not available": [
+  null,
+  "El cortafuegos no está disponible"
  ],
  "Forward delay $forward_delay": [
   null,
@@ -553,6 +581,10 @@ return plural;
   null,
   "Ningún portador"
  ],
+ "No open ports": [
+  null,
+  "Sin puertos abiertos"
+ ],
  "Not available": [
   null,
   "No disponible"
@@ -604,6 +636,10 @@ return plural;
  "Ping Target": [
   null,
   "Hacer Ping al Objetivo"
+ ],
+ "Please install the {0} package": [
+  null,
+  "Por favor instale el paquete {0}"
  ],
  "Ports": [
   null,
@@ -693,6 +729,10 @@ return plural;
   null,
   "Enviando"
  ],
+ "Service": [
+  null,
+  "Servicio"
+ ],
  "Set to": [
   null,
   "Ajustar a"
@@ -741,6 +781,10 @@ return plural;
   null,
   "Apagando <b>$0</b>  romperá la conexión al servidor y hará la administración de UI no disponible."
  ],
+ "TCP": [
+  null,
+  "TCP: Protocolo de Control de Transmisión, por sus siglas en ingles (Transmission Control Protocol)"
+ ],
  "Team": [
   null,
   "Equipo"
@@ -769,6 +813,10 @@ return plural;
   null,
   "Este dispositivo no se puede manejar aquí."
  ],
+ "UDP": [
+  null,
+  "UDP:  Protocolo de Datagramas de Usuario, por sus siglas en ingles (User Datagram Protocol)"
+ ],
  "Unexpected error": [
   null,
   "Error inesperado"
@@ -779,7 +827,7 @@ return plural;
  ],
  "Unknown \"$0\"": [
   null,
-  ""
+  "Desconocido \"$0\""
  ],
  "Unknown configuration": [
   null,
@@ -787,7 +835,7 @@ return plural;
  ],
  "Unmanaged Interfaces": [
   null,
-  ""
+  "Interfaces No Manejadas"
  ],
  "VLAN": [
   null,
@@ -812,6 +860,10 @@ return plural;
  "Yes": [
   null,
   "Sí"
+ ],
+ "You are not authorized to modify the firewall.": [
+  null,
+  "Usted no está autorizado a modificar el cortafuegos."
  ],
  "[$0 bytes of binary data]": [
   null,

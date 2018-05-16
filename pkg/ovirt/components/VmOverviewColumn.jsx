@@ -21,9 +21,9 @@ import React from "react";
 
 import { formatDateTime } from '../helpers.es6';
 
-const _ = cockpit.gettext;
-
 import './VmOverviewColumn.css';
+
+const _ = cockpit.gettext;
 
 const VmIcon = ({ icons, iconId }) => {
     if (!iconId || !icons || !icons[iconId] || !icons[iconId].data) {
@@ -34,7 +34,7 @@ const VmIcon = ({ icons, iconId }) => {
     const src = `data:${icon.type};base64,${icon.data}`;
 
     return (
-        <img src={src} className='ovirt-provider-overview-icon' alt={_("VM icon")}/>
+        <img src={src} className='ovirt-provider-overview-icon' alt={_("VM icon")} />
     );
 };
 
@@ -54,7 +54,7 @@ const vmOverviewExtra = (vm, providerState) => {
             { title: _("Running Since:"), value: formatDateTime(clusterVm.startTime), idPostfix: 'ovirt-starttime' },
         ],
         [
-            { title: null, value: (<VmIcon icons={providerState.icons} iconId={clusterVm.icons.largeId}/>), idPostfix: 'ovirt-icon' },
+            { title: null, value: (<VmIcon icons={providerState.icons} iconId={clusterVm.icons.largeId} />), idPostfix: 'ovirt-icon' },
         ],
     ];
 };

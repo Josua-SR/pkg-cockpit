@@ -85,7 +85,7 @@ return plural;
  ],
  "Automatically start libvirt on boot": [
   null,
-  ""
+  "Käynnistä libvirt automaattisesti käynnistyksen yhteydessä"
  ],
  "Autostart:": [
   null,
@@ -97,7 +97,7 @@ return plural;
  ],
  "Boot Order:": [
   null,
-  ""
+  "Käynnistysjärjestys:"
  ],
  "Bus": [
   null,
@@ -105,11 +105,11 @@ return plural;
  ],
  "CHANGE NETWORK STATE action failed": [
   null,
-  ""
+  "CHANGE NETWORK STATE -toiminto epäonnistui"
  ],
  "CPU Type:": [
   null,
-  ""
+  "Prosessorin tyyppi:"
  ],
  "Cancel": [
   null,
@@ -133,11 +133,11 @@ return plural;
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  "Yhdistä mihin tahansa SPICE tai VNC -katseluohjelmaan."
+  "Yhdistä mihin tahansa SPICE- tai VNC-katseluohjelmaan."
  ],
  "Connecting to Virtualization Service": [
   null,
-  ""
+  "Yhdistetään virtualisointipalveluun"
  ],
  "Connection": [
   null,
@@ -149,7 +149,7 @@ return plural;
  ],
  "Consoles": [
   null,
-  ""
+  "Konsolit"
  ],
  "Count:": [
   null,
@@ -161,15 +161,15 @@ return plural;
  ],
  "Create New VM": [
   null,
-  ""
+  "Luo uusi VM"
  ],
  "Create New Virtual Machine": [
   null,
-  ""
+  "Luo uusi virtuaalikone"
  ],
  "Creation of vm $0 failed": [
   null,
-  ""
+  "Virtuaalikoneen $0 luominen epäonnistui"
  ],
  "Delete": [
   null,
@@ -201,7 +201,7 @@ return plural;
  ],
  "Emulated Machine:": [
   null,
-  "Emuloitu Kone:"
+  "Emuloitu kone:"
  ],
  "File": [
   null,
@@ -213,15 +213,15 @@ return plural;
  ],
  "Force Restart": [
   null,
-  "Pakota Uudelleenkäynnistys"
+  "Pakota uudelleenkäynnistys"
  ],
  "Force Shut Down": [
   null,
-  "Pakota Sammutus"
+  "Pakota sammutus"
  ],
  "GiB": [
   null,
-  ""
+  "GiB"
  ],
  "Graphics Console (VNC)": [
   null,
@@ -237,11 +237,11 @@ return plural;
  ],
  "INSTALL VM action failed": [
   null,
-  ""
+  "INSTALL VM -toiminto epäonnistui"
  ],
  "Immediately Start VM": [
   null,
-  ""
+  "Käynnistä VM välittömästi"
  ],
  "Install": [
   null,
@@ -249,27 +249,27 @@ return plural;
  ],
  "Installation Source": [
   null,
-  ""
+  "Asennuslähde"
  ],
  "Installation Source Type": [
   null,
-  ""
+  "Asennuslähteen tyyppi"
  ],
  "Installation Source should not be empty": [
   null,
-  ""
+  "Asennuslähteen ei tulisi olla tyhjä"
  ],
  "Invalid filename": [
   null,
-  ""
+  "Virheellinen tiedostonimi"
  ],
  "Launch Remote Viewer": [
   null,
-  ""
+  "Käynnistä etäkatselin"
  ],
  "Loading ...": [
   null,
-  "Ladataan ..."
+  "Ladataan..."
  ],
  "MAC Address": [
   null,
@@ -281,11 +281,11 @@ return plural;
  ],
  "Managed": [
   null,
-  ""
+  "Hallittu"
  ],
  "Manual Connection": [
   null,
-  "Manuaalinen Yhteys"
+  "Manuaalinen yhteys"
  ],
  "Memory": [
   null,
@@ -293,7 +293,7 @@ return plural;
  ],
  "Memory should be positive number": [
   null,
-  ""
+  "Muistin tulee olla positiivinen numero"
  ],
  "Memory:": [
   null,
@@ -301,15 +301,15 @@ return plural;
  ],
  "MiB": [
   null,
-  ""
+  "MiB"
  ],
  "Model type": [
   null,
-  ""
+  "Mallityyppi"
  ],
  "More Information": [
   null,
-  ""
+  "Lisää tietoja"
  ],
  "Name": [
   null,
@@ -317,7 +317,7 @@ return plural;
  ],
  "Name should not be empty": [
   null,
-  ""
+  "Nimen ei tule olla tyhjä."
  ],
  "Name should not consist of empty characters only": [
   null,
@@ -341,19 +341,19 @@ return plural;
  ],
  "No disks defined for this VM": [
   null,
-  ""
+  "Tälle virtuaalikoneelle ei ole määritetty levyjä."
  ],
  "No matching files found": [
   null,
-  ""
+  "Vastaavia tiedostoja ei löytynyt."
  ],
  "No network interfaces defined for this VM": [
   null,
-  ""
+  "Tälle virtuaalikoneelle ei ole määritetty verkkoliitäntöjä"
  ],
  "OS Vendor": [
   null,
-  ""
+  "Käyttöjärjestelmän toimittaja"
  ],
  "Ok": [
   null,
@@ -361,7 +361,7 @@ return plural;
  ],
  "Operating System": [
   null,
-  ""
+  "Käyttöjärjestelmä"
  ],
  "Overview": [
   null,
@@ -377,7 +377,7 @@ return plural;
  ],
  "Please start the virtual machine to access its console.": [
   null,
-  ""
+  "Käynnistä virtuaalikone päästäksesi sen konsoliin."
  ],
  "Plug": [
   null,
@@ -405,11 +405,11 @@ return plural;
  ],
  "Reconnect": [
   null,
-  ""
+  "Yhdistä uudelleen"
  ],
  "Remote URL": [
   null,
-  ""
+  "Etä-URL"
  ],
  "Restart": [
   null,
@@ -465,7 +465,7 @@ return plural;
  ],
  "Start libvirt": [
   null,
-  ""
+  "Käynnistä libvirt"
  ],
  "Start the VM to see disk statistics.": [
   null,
@@ -477,7 +477,7 @@ return plural;
  ],
  "Storage Size": [
   null,
-  ""
+  "Tallennustilan koko"
  ],
  "Storage Size should not be negative number": [
   null,
@@ -493,19 +493,19 @@ return plural;
  ],
  "The VM crashed.": [
   null,
-  ""
+  "Virtuaalikone kaatui."
  ],
  "The VM is down.": [
   null,
-  ""
+  "Virtuaalikone on alhaalla."
  ],
  "The VM is going down.": [
   null,
-  ""
+  "Virtuaalikone on menossa alas."
  ],
  "The VM is idle.": [
   null,
-  ""
+  "Virtuaalikone on jouten."
  ],
  "The VM is in process of dying (shut down or crash is not completed).": [
   null,
@@ -513,7 +513,7 @@ return plural;
  ],
  "The VM is paused.": [
   null,
-  ""
+  "Virtuaalikone on keskeytetty."
  ],
  "The VM is running and will be forced off before deletion.": [
   null,
@@ -521,7 +521,7 @@ return plural;
  ],
  "The VM is running.": [
   null,
-  ""
+  "Virtuaalikone on käynnissä."
  ],
  "The VM is suspended by guest power management.": [
   null,
@@ -549,7 +549,7 @@ return plural;
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
-  ""
+  "Päivitä libvirt uudempaan versioon nähdäksesi levytilastot"
  ],
  "Usage": [
   null,
@@ -561,27 +561,27 @@ return plural;
  ],
  "VM FORCE OFF action failed": [
   null,
-  ""
+  "VM FORCE OFF -toiminto epäonnistui"
  ],
  "VM FORCE REBOOT action failed": [
   null,
-  ""
+  "VM FORCE REBOOT -toiminto epäonnistui"
  ],
  "VM REBOOT action failed": [
   null,
-  ""
+  "VM REBOOT -toiminto epäonnistui"
  ],
  "VM SEND Non-Maskable Interrrupt action failed": [
   null,
-  ""
+  "VM SEND Non-Maskable Interrrupt -toiminto epäonnistui"
  ],
  "VM SHUT DOWN action failed": [
   null,
-  ""
+  "VM SHUT DOWN -toiminto epäonnistui"
  ],
  "VM START action failed": [
   null,
-  ""
+  "VM START -toiminto epäonnistui"
  ],
  "VNC": [
   null,
@@ -605,11 +605,11 @@ return plural;
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
-  ""
+  "Virtualisointipalvelu (libvirt) ei ole aktiivinen"
  ],
  "Virtualization Service is Available": [
   null,
-  ""
+  "Virtualisointipalvelu ei ole saatavilla"
  ],
  "Virtualport": [
   null,
@@ -709,11 +709,11 @@ return plural;
  ],
  "show less": [
   null,
-  ""
+  "näytä vähemmän"
  ],
  "show more": [
   null,
-  ""
+  "näytä enemmän"
  ],
  "shut off": [
   null,

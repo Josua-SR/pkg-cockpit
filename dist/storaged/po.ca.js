@@ -67,6 +67,14 @@ return plural;
   "language": "ca",
   "x-generator": "Zanata 3.9.6"
  },
+ "\"http\" Key escrow": [
+  null,
+  ""
+ ],
+ "\"tang\" Binding server": [
+  null,
+  ""
+ ],
  "$0 Block Device": [
   null,
   "Dispositiu de blocs $0"
@@ -164,7 +172,7 @@ return plural;
  ],
  "--": [
   null,
-  ""
+  "--"
  ],
  "1 MiB": [
   null,
@@ -256,7 +264,7 @@ return plural;
  ],
  "Add network key": [
   null,
-  ""
+  "Afegeix una clau de xarxa"
  ],
  "Adding physical volume to $target": [
   null,
@@ -265,6 +273,10 @@ return plural;
  "Address": [
   null,
   "Adreça"
+ ],
+ "Allow \"http://\" URL": [
+  null,
+  ""
  ],
  "Apply": [
   null,
@@ -682,6 +694,10 @@ return plural;
   null,
   "Fes créixer per agafar tot l'espai"
  ],
+ "HTTP method": [
+  null,
+  "Mètode HTTP"
+ ],
  "In Sync": [
   null,
   "En sincronització"
@@ -702,21 +718,25 @@ return plural;
   null,
   "Treballs"
  ],
+ "Key can't be retrieved": [
+  null,
+  "No es pot recuperar la clau"
+ ],
  "Key does not work": [
   null,
-  ""
+  "La clau no funciona"
  ],
  "Key is obsolete": [
   null,
-  ""
+  "La clau és obsoleta"
  ],
  "Key is okay": [
   null,
-  ""
+  "La clau és correcta"
  ],
  "Key server address": [
   null,
-  ""
+  "Adreça del servidor de claus"
  ],
  "Local Mount Point": [
   null,
@@ -769,6 +789,10 @@ return plural;
  "Metadata Used": [
   null,
   "Metadades utilitzades"
+ ],
+ "Method": [
+  null,
+  "Mètode"
  ],
  "Modifying $target": [
   null,
@@ -860,7 +884,7 @@ return plural;
  ],
  "Network keys": [
   null,
-  ""
+  "Claus de xarxa"
  ],
  "New NFS Mount": [
   null,
@@ -1028,7 +1052,7 @@ return plural;
  ],
  "Please confirm network key removal": [
   null,
-  ""
+  "Si us plau, confirmeu la supressió de la clau de xarxa"
  ],
  "Please confirm stopping of $0": [
   null,
@@ -1056,7 +1080,7 @@ return plural;
  ],
  "Process": [
   null,
-  ""
+  "Procés"
  ],
  "Purpose": [
   null,
@@ -1160,7 +1184,7 @@ return plural;
  ],
  "Remove key": [
   null,
-  ""
+  "Suprimeix la clau"
  ],
  "Removing $target from RAID Device": [
   null,
@@ -1198,6 +1222,10 @@ return plural;
   null,
   "S'està redimensionant $target"
  ],
+ "Retrieving the key from $0 has failed: $1.": [
+  null,
+  ""
+ ],
  "Running": [
   null,
   "En execució"
@@ -1217,6 +1245,10 @@ return plural;
  "Server Address": [
   null,
   "Adreça del servidor"
+ ],
+ "Server address cannot be empty": [
+  null,
+  ""
  ],
  "Server address cannot be empty.": [
   null,
@@ -1402,6 +1434,10 @@ return plural;
   null,
   ""
  ],
+ "The server has returned a key that doesn't work.": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "A l'usuari <b>$0</b> no se li permet gestionar l'emmagatzematge"
@@ -1423,6 +1459,10 @@ return plural;
   ""
  ],
  "This VDO device does not use all of its backing device.": [
+  null,
+  ""
+ ],
+ "This box must be checked to confirm that the key will be transported without HTTPS": [
   null,
   ""
  ],
@@ -1454,7 +1494,7 @@ return plural;
   null,
   "Aquest disc no es pot treure quan s'està recuperant el dispositiu."
  ],
- "This network key is not recognized anymore by the server. You might want to remove it.": [
+ "This network key is not recognized anymore by the server.": [
   null,
   ""
  ],
@@ -1485,6 +1525,18 @@ return plural;
  "Type": [
   null,
   "Tipus"
+ ],
+ "URL": [
+  null,
+  "URL"
+ ],
+ "URL cannot be empty": [
+  null,
+  "L'URL no pot estar en blanc"
+ ],
+ "URL must start with either \"http:\" or \"https:\"": [
+  null,
+  ""
  ],
  "UUID": [
   null,
@@ -1564,7 +1616,7 @@ return plural;
  ],
  "Use new key": [
   null,
-  ""
+  "Utilitza una clau nova"
  ],
  "Used": [
   null,
@@ -1600,7 +1652,7 @@ return plural;
  ],
  "Verify Key": [
   null,
-  ""
+  "Verifica la clau"
  ],
  "Very securely erasing $target": [
   null,
@@ -1633,6 +1685,10 @@ return plural;
  "XFS - Red Hat Enterprise Linux 7 default": [
   null,
   "XFS - per defecte a Red Hat Enterprise Linux 7"
+ ],
+ "You might want to remove it.": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

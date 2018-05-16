@@ -213,23 +213,23 @@ return plural;
  ],
  "This will test kdump settings by crashing the kernel and thereby the system. Depending on the settings, the system may not automatically reboot and the process may take a while.": [
   null,
-  ""
+  "Esto probará la configuración kdump bloqueando el núcleo y por lo tanto el sistema. Dependiendo de los ajustes, el sistema puede que no se reinicie automáticamente y el proceso tardará un tiempo."
  ],
  "This will test the kdump configuration by crashing the kernel.": [
   null,
-  ""
+  "Esto probará la configuración kdump bloqueando el núcleo."
  ],
  "Unable to apply settings: $0": [
   null,
-  ""
+  "Incapaz de aplicar los ajustes: $0"
  ],
  "Use the setting in /etc/kdump.conf": [
   null,
-  ""
+  "Usar los ajustes de /etc/kdump.conf"
  ],
  "invalid: multiple targets defined": [
   null,
-  ""
+  "no válido: definidos múltiples objetivos"
  ],
  "kdump status": [
   null,
@@ -237,7 +237,7 @@ return plural;
  ],
  "locally in $0": [
   null,
-  ""
+  "localmente en $0"
  ],
  "ssh key": [
   null,

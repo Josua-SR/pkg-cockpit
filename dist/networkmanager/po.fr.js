@@ -169,6 +169,14 @@ return plural;
   null,
   "Ajouter un pont"
  ],
+ "Add Services": [
+  null,
+  ""
+ ],
+ "Add Services…": [
+  null,
+  ""
+ ],
  "Add Team": [
   null,
   ""
@@ -200,6 +208,10 @@ return plural;
  "Addresses": [
   null,
   "Adresses"
+ ],
+ "Allowed Services": [
+  null,
+  ""
  ],
  "Apply": [
   null,
@@ -353,6 +365,10 @@ return plural;
   null,
   ""
  ],
+ "Details": [
+  null,
+  ""
+ ],
  "Disabled": [
   null,
   "Désactivé"
@@ -372,6 +388,18 @@ return plural;
  "Failed": [
   null,
   "Échec"
+ ],
+ "Filter Services": [
+  null,
+  ""
+ ],
+ "Firewall": [
+  null,
+  ""
+ ],
+ "Firewall is not available": [
+  null,
+  ""
  ],
  "Forward delay $forward_delay": [
   null,
@@ -553,6 +581,10 @@ return plural;
   null,
   "Pas de porteuse"
  ],
+ "No open ports": [
+  null,
+  ""
+ ],
  "Not available": [
   null,
   "Indisponible"
@@ -602,6 +634,10 @@ return plural;
   ""
  ],
  "Ping Target": [
+  null,
+  ""
+ ],
+ "Please install the {0} package": [
   null,
   ""
  ],
@@ -693,6 +729,10 @@ return plural;
   null,
   "Envoi"
  ],
+ "Service": [
+  null,
+  ""
+ ],
  "Set to": [
   null,
   ""
@@ -741,6 +781,10 @@ return plural;
   null,
   ""
  ],
+ "TCP": [
+  null,
+  "TCP"
+ ],
  "Team": [
   null,
   ""
@@ -768,6 +812,10 @@ return plural;
  "This device cannot be managed here.": [
   null,
   ""
+ ],
+ "UDP": [
+  null,
+  "UDP"
  ],
  "Unexpected error": [
   null,
@@ -812,6 +860,10 @@ return plural;
  "Yes": [
   null,
   "Oui"
+ ],
+ "You are not authorized to modify the firewall.": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

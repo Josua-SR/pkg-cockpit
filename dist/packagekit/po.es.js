@@ -264,35 +264,35 @@ return plural;
  ],
  "This web console will be updated.": [
   null,
-  ""
+  "Esta consola web será actualizada."
  ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
-  ""
+  "Para obtener actualizaciones de software, este sistema necesita ser registrado en Red Hat, bien usando el Portal de Usuario de Red Hat o un servidor de suscripción local."
  ],
  "Unregistered System": [
   null,
-  ""
+  "Sistema No Registrado"
  ],
  "Update History": [
   null,
-  ""
+  "Histórico de Actualización"
  ],
  "Update Log": [
   null,
-  ""
+  "Actualizar Registro"
  ],
  "Updated": [
   null,
-  ""
+  "Actualizado"
  ],
  "Updated packages may require a restart to take effect.": [
   null,
-  ""
+  "Los paquetes actualizados pueden requerir un reinicio para tener efecto."
  ],
  "Updates are disabled.": [
   null,
-  ""
+  "Las actualizaciones están deshabilitadas."
  ],
  "Updating": [
   null,
@@ -300,11 +300,11 @@ return plural;
  ],
  "Verified": [
   null,
-  ""
+  "Verificado"
  ],
  "Verifying": [
   null,
-  ""
+  "Verificando"
  ],
  "Version": [
   null,
@@ -312,59 +312,59 @@ return plural;
  ],
  "View Registration Details": [
   null,
-  ""
+  "Visualizar Detalles de Registro"
  ],
  "You need to re-subscribe this system.": [
   null,
-  ""
+  "Usted necesita volver a suscribirse a este sistema."
  ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
-  ""
+  "Su navegador se desconectará pero esto no afectará al proceso de actualización. Usted puede volver a conectar en breves momentos para continuar vigilando el progreso."
  ],
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,
-  ""
+  "Se servidor cerrará la conexión pronto. Usted puede volver a conectar después de que se reinicie."
  ],
  "and restart the machine automatically.": [
   null,
-  ""
+  "y reinicia la máquina automáticamente."
  ],
  "at": [
   null,
-  ""
+  "en"
  ],
  "every day": [
   null,
-  ""
+  "cada día"
  ],
  "on Fridays": [
   null,
-  ""
+  "en Viernes"
  ],
  "on Mondays": [
   null,
-  ""
+  "en Lunes"
  ],
  "on Saturdays": [
   null,
-  ""
+  "en Sábados"
  ],
  "on Sundays": [
   null,
-  ""
+  "en Domingos"
  ],
  "on Thursdays": [
   null,
-  ""
+  "en Jueves"
  ],
  "on Tuesdays": [
   null,
-  ""
+  "en Martes"
  ],
  "on Wednesdays": [
   null,
-  ""
+  "en Miércoles"
  ],
  "undefined": [
   null,

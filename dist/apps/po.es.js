@@ -129,10 +129,10 @@ return plural;
  ],
  "Unknown Application": [
   null,
-  ""
+  "Aplicación Desconocida"
  ],
  "Waiting for other programs to finish using the package manager...": [
   null,
-  ""
+  "Esperando que otros programas terminen de usar el gestor de paquetes..."
  ]
 }));

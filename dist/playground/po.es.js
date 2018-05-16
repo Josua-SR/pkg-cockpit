@@ -160,7 +160,7 @@ return plural;
  ],
  "Too many files found": [
   null,
-  ""
+  "Encontrados demasiados archivos"
  ],
  "Unavailable": [
   null,

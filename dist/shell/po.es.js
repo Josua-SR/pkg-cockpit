@@ -465,7 +465,7 @@ return plural;
  ],
  "Too many files found": [
   null,
-  ""
+  "Encontrados demasiados archivos"
  ],
  "Troubleshoot": [
   null,
@@ -473,7 +473,7 @@ return plural;
  ],
  "Try to reconnect": [
   null,
-  ""
+  "Intentar reconectar"
  ],
  "Type": [
   null,
@@ -497,7 +497,7 @@ return plural;
  ],
  "Unlocked": [
   null,
-  ""
+  "Desbloqueado"
  ],
  "Update": [
   null,
@@ -529,6 +529,6 @@ return plural;
  ],
  "active": [
   null,
-  ""
+  "activo"
  ]
 }));

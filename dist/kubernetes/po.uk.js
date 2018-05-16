@@ -73,7 +73,7 @@ return plural;
  ],
  " or drag & drop.": [
   null,
-  ""
+  " або перетягніть і скиньте."
  ],
  "$0% Free": [
   "$0% Free",
@@ -357,7 +357,7 @@ return plural;
  ],
  "Create Virtual Machine": [
   null,
-  ""
+  "Створити віртуальну машину"
  ],
  "Create empty image stream": [
   null,
@@ -505,7 +505,7 @@ return plural;
  ],
  "Drop file here to upload.": [
   null,
-  ""
+  "Скиньте сюди файл для вивантаження."
  ],
  "Empty Directory": [
   null,
@@ -941,7 +941,7 @@ return plural;
  ],
  "Only files of size $0 MiB and less are supported": [
   null,
-  ""
+  "Підтримку передбачено лише для файлів розміру $0 МіБ або меншого"
  ],
  "Operating System": [
   null,
@@ -969,7 +969,7 @@ return plural;
  ],
  "Paste JSON below, ": [
   null,
-  ""
+  "Вставте JSON нижче, "
  ],
  "Path": [
   null,
@@ -1281,7 +1281,7 @@ return plural;
  ],
  "Resolve above errors to continue": [
   null,
-  ""
+  "Усуньте наведені вище помилки, щоб продовжити"
  ],
  "Restart Count": [
   null,
@@ -1661,15 +1661,15 @@ return plural;
  ],
  "VM definition is not a valid JSON.": [
   null,
-  ""
+  "Визначення віртуальної машини не є коректним JSON."
  ],
  "VM definition is required.": [
   null,
-  ""
+  "Потрібне визначення віртуальної машини."
  ],
  "VM definition must be an object.": [
   null,
-  ""
+  "Визначення віртуальної машини має бути об'єктом."
  ],
  "Virtual Machines": [
   null,
@@ -1853,7 +1853,7 @@ return plural;
  ],
  "upload a JSON file": [
   null,
-  ""
+  "вивантажити файл JSON"
  ],
  "user": [
   null,

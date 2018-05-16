@@ -89,7 +89,7 @@ var KdumpTargetBody = React.createClass({
                         <input id="kdump-settings-local-directory" className="form-control" type="text"
                                placeholder="/var/crash" value={directory}
                                data-stored={directory}
-                               onChange={this.changeValue.bind(this, "path")}/>
+                               onChange={this.changeValue.bind(this, "path")} />
                     </td>
                 </tr>
             );
@@ -108,7 +108,7 @@ var KdumpTargetBody = React.createClass({
                         <label>
                             <input id="kdump-settings-nfs-mount" className="form-control" type="text"
                                    placeholder="penguin.example.com:/export/cores" value={nfs}
-                                   onChange={this.changeValue.bind(this, "nfs")}/>
+                                   onChange={this.changeValue.bind(this, "nfs")} />
                         </label>
                     </td>
                 </tr>
@@ -131,7 +131,7 @@ var KdumpTargetBody = React.createClass({
                         <label>
                             <input id="kdump-settings-ssh-server" className="form-control" type="text"
                                    placeholder="user@server.com" value={ssh}
-                                   onChange={this.changeValue.bind(this, "ssh")}/>
+                                   onChange={this.changeValue.bind(this, "ssh")} />
                         </label>
                     </td>
                 </tr>),
@@ -145,7 +145,7 @@ var KdumpTargetBody = React.createClass({
                         <label>
                             <input id="kdump-settings-ssh-server" className="form-control" type="text"
                                    placeholder="/root/.ssh/kdump_id_rsa" value={sshkey}
-                                   onChange={this.changeValue.bind(this, "sshkey")}/>
+                                   onChange={this.changeValue.bind(this, "sshkey")} />
                         </label>
                     </td>
                 </tr>),
@@ -194,7 +194,7 @@ var KdumpTargetBody = React.createClass({
                                 <label>
                                     <input id="kdump-settings-compression" type="checkbox" checked={this.props.compressionEnabled}
                                            onChange={this.handleCompressionClick.bind(this)}
-                                           enabled={compressionPossible}/>
+                                           enabled={compressionPossible} />
                                     {_("Compress crash dumps to save space")}
                                 </label>
                             </div>
@@ -366,7 +366,7 @@ var KdumpPage = React.createClass({
     render: function() {
         var kdumpLocation = (
             <div className="dialog-wait-ct">
-                <div className="spinner spinner-sm"></div>
+                <div className="spinner spinner-sm" />
                 <span>{ _("Loading...") }</span>
             </div>
         );
@@ -408,7 +408,7 @@ var KdumpPage = React.createClass({
             // still waiting for result
             reservedMemory = (
                 <div className="dialog-wait-ct">
-                    <div className="spinner spinner-sm"></div>
+                    <div className="spinner spinner-sm" />
                     <span>{ _("Reading...") }</span>
                 </div>
             );
@@ -449,7 +449,7 @@ var KdumpPage = React.createClass({
                 serviceHint = (
                     <a className="popover-ct-kdump">
                         <Tooltip tip={_("No memory reserved. Append a crashkernel option to the kernel command line (e.g. in /etc/default/grub) to reserve memory at boot time. Example: crashkernel=512M")} pos="top">
-                            <span className="fa fa-lg fa-info-circle"></span>
+                            <span className="fa fa-lg fa-info-circle" />
                         </Tooltip>
                     </a>
                 );
@@ -459,14 +459,14 @@ var KdumpPage = React.createClass({
             kdumpServiceDetails = (
                 <a className="popover-ct-kdump">
                     <Tooltip tip={_("Kdump service not installed. Please ensure package kexec-tools is installed.")} pos="top">
-                        <span className="fa fa-lg fa-info-circle"></span>
+                        <span className="fa fa-lg fa-info-circle" />
                     </Tooltip>
                 </a>
             );
         }
         var serviceWaiting;
         if (this.props.stateChanging)
-            serviceWaiting = <div className="spinner spinner-sm"></div>;
+            serviceWaiting = <div className="spinner spinner-sm" />;
 
         var testButton;
         if (serviceRunning) {
@@ -492,7 +492,7 @@ var KdumpPage = React.createClass({
                         <td colSpan="2">
                             <div>
                                 <OnOffSwitch state={serviceRunning} onChange={this.props.onSetServiceState}
-                                    enabled={!this.props.stateChanging}/>
+                                    enabled={!this.props.stateChanging} />
                                 {serviceWaiting}
                                 {kdumpServiceDetails}
                             </div>
@@ -509,12 +509,12 @@ var KdumpPage = React.createClass({
                         <td colSpan="2">{settingsLink}</td>
                     </tr>
                     <tr>
-                        <td></td>
+                        <td />
                         <td>
                             {testButton}
                             <a className="popover-ct-kdump">
                                 <Tooltip tip={_("This will test the kdump configuration by crashing the kernel.")} pos="top">
-                                    <span className="fa fa-lg fa-info-circle"></span>
+                                    <span className="fa fa-lg fa-info-circle" />
                                 </Tooltip>
                             </a>
                         </td>

@@ -163,6 +163,14 @@ return plural;
   null,
   "ブリッジの追加"
  ],
+ "Add Services": [
+  null,
+  ""
+ ],
+ "Add Services…": [
+  null,
+  ""
+ ],
  "Add Team": [
   null,
   "チームの追加"
@@ -194,6 +202,10 @@ return plural;
  "Addresses": [
   null,
   "アドレス"
+ ],
+ "Allowed Services": [
+  null,
+  ""
  ],
  "Apply": [
   null,
@@ -347,6 +359,10 @@ return plural;
   null,
   "<b>$0</b> を削除すると、サーバーへの接続が切断され、管理 UI が利用できなくなります。"
  ],
+ "Details": [
+  null,
+  "詳細"
+ ],
  "Disabled": [
   null,
   "無効"
@@ -366,6 +382,18 @@ return plural;
  "Failed": [
   null,
   "失敗"
+ ],
+ "Filter Services": [
+  null,
+  ""
+ ],
+ "Firewall": [
+  null,
+  ""
+ ],
+ "Firewall is not available": [
+  null,
+  ""
  ],
  "Forward delay $forward_delay": [
   null,
@@ -547,6 +575,10 @@ return plural;
   null,
   "キャリアなし"
  ],
+ "No open ports": [
+  null,
+  ""
+ ],
  "Not available": [
   null,
   "利用できません"
@@ -598,6 +630,10 @@ return plural;
  "Ping Target": [
   null,
   "Ping ターゲット"
+ ],
+ "Please install the {0} package": [
+  null,
+  ""
  ],
  "Ports": [
   null,
@@ -687,6 +723,10 @@ return plural;
   null,
   "送信:"
  ],
+ "Service": [
+  null,
+  "サービス"
+ ],
  "Set to": [
   null,
   "設定値"
@@ -735,6 +775,10 @@ return plural;
   null,
   "<b>$0</b> をオンにすると、サーバーへの接続が切断され、管理 UI が利用できなくなります。"
  ],
+ "TCP": [
+  null,
+  "TCP"
+ ],
  "Team": [
   null,
   "チーム"
@@ -762,6 +806,10 @@ return plural;
  "This device cannot be managed here.": [
   null,
   "このデバイスはここで管理できません。"
+ ],
+ "UDP": [
+  null,
+  "UDP"
  ],
  "Unexpected error": [
   null,
@@ -806,6 +854,10 @@ return plural;
  "Yes": [
   null,
   "はい"
+ ],
+ "You are not authorized to modify the firewall.": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

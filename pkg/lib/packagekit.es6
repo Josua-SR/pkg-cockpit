@@ -136,7 +136,7 @@ export function watchTransaction(transactionPath, signalHandlers, notifyHandler)
  *                  If undefined, only a transaction will be created without calling a method on it
  * arglist (array): "in" arguments of @method
  * signalHandlers (object): maps PackageKit.Transaction signal names to handlers
- * notifyHandler (function): handler for http://cockpit-project.org/guide/latest/cockpit-dbus.html#cockpit-dbus-onnotify
+ * notifyHandler (function): handler for https://cockpit-project.org/guide/latest/cockpit-dbus.html#cockpit-dbus-onnotify
  *                           signals, called on property changes with (changed_properties, transaction_path)
  * Returns: Promise that resolves with transaction path on success, or rejects on an error
  *
@@ -180,6 +180,14 @@ export function transaction(method, arglist, signalHandlers, notifyHandler) {
     });
 }
 
+export class TransactionError extends Error {
+    constructor(code, detail) {
+        super(detail);
+        this.detail = detail;
+        this.code = code;
+    }
+}
+
 /**
  * Run a long cancellable PackageKit transaction
  *
@@ -189,12 +197,12 @@ export function transaction(method, arglist, signalHandlers, notifyHandler) {
  *              be called to cancel the current transaction. if wait is true, PackageKit is waiting for its lock (i. e.
  *              on another package operation)
  * signalHandlers, notifyHandler: As in method #transaction, but ErrorCode and Finished are handled internally
- * Returns: Promise that resolves when the transaction finished successfully, or rejects with {detail, code}
+ * Returns: Promise that resolves when the transaction finished successfully, or rejects with TransactionError
  *          on failure.
  */
 export function cancellableTransaction(method, arglist, progress_cb, signalHandlers) {
     if (signalHandlers && (signalHandlers.ErrorCode || signalHandlers.Finished))
-        throw "cancellableTransaction handles ErrorCode and Finished signals internally";
+        throw Error("cancellableTransaction handles ErrorCode and Finished signals internally");
 
     return new Promise((resolve, reject) => {
         let cancelled = false;
@@ -237,7 +245,7 @@ export function cancellableTransaction(method, arglist, progress_cb, signalHandl
                         // avoid calling progress_cb after ending the transaction, to avoid flickering cancel buttons
                         ErrorCode: (code, detail) => {
                             progress_cb = null;
-                            reject({ detail, code: cancelled ? "cancelled" : code });
+                            reject(new TransactionError(cancelled ? "cancelled" : code, detail));
                         },
                         Finished: (exit, runtime) => {
                             progress_cb = null;

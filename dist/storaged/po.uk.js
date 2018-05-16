@@ -67,6 +67,14 @@ return plural;
   "language": "uk",
   "x-generator": "Zanata 3.9.6"
  },
+ "\"http\" Key escrow": [
+  null,
+  "Депонування ключів «http»"
+ ],
+ "\"tang\" Binding server": [
+  null,
+  "Сервер прив'язки «tang»"
+ ],
  "$0 Block Device": [
   null,
   "$0, блоковий пристрій"
@@ -272,6 +280,10 @@ return plural;
  "Address": [
   null,
   "Адреса"
+ ],
+ "Allow \"http://\" URL": [
+  null,
+  "Дозволити адреси «http://»"
  ],
  "Apply": [
   null,
@@ -689,6 +701,10 @@ return plural;
   null,
   "Збільшити так, щоб використати усе місце"
  ],
+ "HTTP method": [
+  null,
+  "Метод HTTP"
+ ],
  "In Sync": [
   null,
   "Синхронізовано"
@@ -708,6 +724,10 @@ return plural;
  "Jobs": [
   null,
   "Завдання"
+ ],
+ "Key can't be retrieved": [
+  null,
+  "Не вдалося отримати ключ"
  ],
  "Key does not work": [
   null,
@@ -776,6 +796,10 @@ return plural;
  "Metadata Used": [
   null,
   "Використано метаданих"
+ ],
+ "Method": [
+  null,
+  "Метод"
  ],
  "Modifying $target": [
   null,
@@ -1205,6 +1229,10 @@ return plural;
   null,
   "Зміна розміру $target"
  ],
+ "Retrieving the key from $0 has failed: $1.": [
+  null,
+  "Не вдалося отримати ключ з $0: $1."
+ ],
  "Running": [
   null,
   "Працює"
@@ -1224,6 +1252,10 @@ return plural;
  "Server Address": [
   null,
   "Адреса сервера"
+ ],
+ "Server address cannot be empty": [
+  null,
+  "Адреса сервера не може бути порожньою"
  ],
  "Server address cannot be empty.": [
   null,
@@ -1409,6 +1441,10 @@ return plural;
   null,
   "Виведення має бути таким: "
  ],
+ "The server has returned a key that doesn't work.": [
+  null,
+  "Сервером повернуто ключ, який не працює."
+ ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "Користувачу <b>$0</b> не дозволено керувати сховищем даних"
@@ -1432,6 +1468,10 @@ return plural;
  "This VDO device does not use all of its backing device.": [
   null,
   "Цей пристрій VDO не використовує увесь об'єм резервного пристрою."
+ ],
+ "This box must be checked to confirm that the key will be transported without HTTPS": [
+  null,
+  "Цей пункт має бути позначено для підтведження пересилання ключа без HTTPS"
  ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
@@ -1461,9 +1501,9 @@ return plural;
   null,
   "Цей диск не можна вилучати, доки пристрій перебуває у стані відновлення."
  ],
- "This network key is not recognized anymore by the server. You might want to remove it.": [
+ "This network key is not recognized anymore by the server.": [
   null,
-  "Цей ключ мережі більше не розпізнається на сервері. Вам варто його вилучити."
+  "Цей ключ мережі більше не розпізнається на сервері."
  ],
  "This network key is obsolete. It is still functional but it should be replaced. A new key has been retrieved from the server.": [
   null,
@@ -1492,6 +1532,18 @@ return plural;
  "Type": [
   null,
   "Тип"
+ ],
+ "URL": [
+  null,
+  "Адреса"
+ ],
+ "URL cannot be empty": [
+  null,
+  "Адреса не може бути порожньою"
+ ],
+ "URL must start with either \"http:\" or \"https:\"": [
+  null,
+  "Адреса має починатися з «http:» або «https:»"
  ],
  "UUID": [
   null,
@@ -1640,6 +1692,10 @@ return plural;
  "XFS - Red Hat Enterprise Linux 7 default": [
   null,
   "XFS - Типова для Red Hat Enterprise Linux 7"
+ ],
+ "You might want to remove it.": [
+  null,
+  "Ймовірно, вам варто вилучити його."
  ],
  "[$0 bytes of binary data]": [
   null,

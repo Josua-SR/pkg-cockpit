@@ -96,7 +96,7 @@ return plural;
  ],
  "Applying updates failed": [
   null,
-  "Päivitystan toteuttaminen epäonnistui"
+  "Päivitysten toteuttaminen epäonnistui"
  ],
  "Automatic Updates": [
   null,
@@ -116,7 +116,7 @@ return plural;
  ],
  "Check for Updates": [
   null,
-  "Etsi Päivityksiä"
+  "Etsi päivityksiä"
  ],
  "Details": [
   null,
@@ -160,7 +160,7 @@ return plural;
  ],
  "Last checked: $0 ago": [
   null,
-  ""
+  "Viimeksi tarkistettu: $0 sitten"
  ],
  "Loading available updates failed": [
   null,
@@ -176,15 +176,15 @@ return plural;
  ],
  "No updates pending": [
   null,
-  ""
+  "Ei odottavia päivityksiä"
  ],
  "Off": [
   null,
-  ""
+  "Pois"
  ],
  "On": [
   null,
-  ""
+  "Päällä"
  ],
  "Package information": [
   null,
@@ -204,11 +204,11 @@ return plural;
  ],
  "Refreshing package information": [
   null,
-  ""
+  "Päivitetään pakettitietoja"
  ],
  "Register…": [
   null,
-  ""
+  "Rekisteröi…"
  ],
  "Restart Now": [
   null,
@@ -216,11 +216,11 @@ return plural;
  ],
  "Restart Recommended": [
   null,
-  ""
+  "Uudelleenkäynnistystä suositellaan"
  ],
  "Restarting": [
   null,
-  ""
+  "Käynnistetään uudelleen"
  ],
  "Set up": [
   null,
@@ -288,7 +288,7 @@ return plural;
  ],
  "Updated packages may require a restart to take effect.": [
   null,
-  ""
+  "Päivitetyt paketit saattavat vaatia uudelleenkäynnistyksen, jotta muutokset tulevat voimaan."
  ],
  "Updates are disabled.": [
   null,
@@ -312,7 +312,7 @@ return plural;
  ],
  "View Registration Details": [
   null,
-  ""
+  "Näytä rekisteröinnin tiedot"
  ],
  "You need to re-subscribe this system.": [
   null,

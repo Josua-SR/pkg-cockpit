@@ -67,6 +67,14 @@ return plural;
   "language": "es",
   "x-generator": "Zanata 3.9.6"
  },
+ "\"http\" Key escrow": [
+  null,
+  "\"http\" Depósito de clave"
+ ],
+ "\"tang\" Binding server": [
+  null,
+  "\"tang\" Servidor de enlace"
+ ],
  "$0 Block Device": [
   null,
   "$0 Dispositivo de Bloque"
@@ -265,6 +273,10 @@ return plural;
  "Address": [
   null,
   "Dirección"
+ ],
+ "Allow \"http://\" URL": [
+  null,
+  "Permitir \"http://\" URL"
  ],
  "Apply": [
   null,
@@ -682,6 +694,10 @@ return plural;
   null,
   "Crecer para tomar todo el espacio"
  ],
+ "HTTP method": [
+  null,
+  "Método HTTP"
+ ],
  "In Sync": [
   null,
   "En Sincronía"
@@ -701,6 +717,10 @@ return plural;
  "Jobs": [
   null,
   "Trabajos"
+ ],
+ "Key can't be retrieved": [
+  null,
+  "La clave no puede ser recuperada"
  ],
  "Key does not work": [
   null,
@@ -769,6 +789,10 @@ return plural;
  "Metadata Used": [
   null,
   "Metadatos en uso"
+ ],
+ "Method": [
+  null,
+  "Método"
  ],
  "Modifying $target": [
   null,
@@ -1168,7 +1192,7 @@ return plural;
  ],
  "Removing network keys might prevent unattended booting.": [
   null,
-  ""
+  "Borrar las claves de red podría evitar arranques no atendidos."
  ],
  "Removing physical volume from $target": [
   null,
@@ -1198,6 +1222,10 @@ return plural;
   null,
   "Redimencionando $target"
  ],
+ "Retrieving the key from $0 has failed: $1.": [
+  null,
+  "La recuperación de la clave desde $0 ha fallado: $1."
+ ],
  "Running": [
   null,
   "Corriendo"
@@ -1218,13 +1246,17 @@ return plural;
   null,
   "Dirección del Servidor"
  ],
+ "Server address cannot be empty": [
+  null,
+  "La dirección del servidor no puede estar vacía"
+ ],
  "Server address cannot be empty.": [
   null,
   "La dirección del servidor no puede estar vacía."
  ],
  "Server can't be reached": [
   null,
-  ""
+  "No se puede alcanzar el servidor"
  ],
  "Server cannot be empty.": [
   null,
@@ -1372,23 +1404,23 @@ return plural;
  ],
  "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
   null,
-  ""
+  "El sistema de archivos está en uso por inicios de sesiones y servicios del sistema.                Si se sigue se parará eso."
  ],
  "The filesystem is in use by login sessions.                Proceeding will stop these.": [
   null,
-  ""
+  "El sistema de archivos está en uso por inicio de sesiones.                Si se sigue se pararán."
  ],
  "The filesystem is in use by system services.                Proceeding will stop these.": [
   null,
-  ""
+  "El sistema de archivos está en uso por servicios del sistema.                Si se sigue se pararán."
  ],
  "The key of $0 will be removed.": [
   null,
-  ""
+  "La clave de $0 será borrada."
  ],
  "The key server at $0 can not be reached.  This network key can not unlock the encrypted data right now, but it might be able to when the server becomes reachable again.": [
   null,
-  ""
+  "El servidor clave en $0 no puede ser alcanzado.  Esta clave de red no puede desbloquear los datos encriptados ahora, pero podría ser capaz cuando el servidor sea alcanzable otra vez."
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
@@ -1400,7 +1432,11 @@ return plural;
  ],
  "The output should match this text: ": [
   null,
-  ""
+  "La salida coincidiría con este texto:"
+ ],
+ "The server has returned a key that doesn't work.": [
+  null,
+  "El servidor ha devuelto una clave que no funciona."
  ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
@@ -1425,6 +1461,10 @@ return plural;
  "This VDO device does not use all of its backing device.": [
   null,
   "Este dispositivo VDO no usa todos sus dispositivos de respaldo."
+ ],
+ "This box must be checked to confirm that the key will be transported without HTTPS": [
+  null,
+  "Esta caja debe ser comprobada para confirmar que la clave será transportada sin HTTPS"
  ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
@@ -1454,41 +1494,53 @@ return plural;
   null,
   "El disco no se puede quitar mientras el dispositivo se está recuperando."
  ],
- "This network key is not recognized anymore by the server. You might want to remove it.": [
+ "This network key is not recognized anymore by the server.": [
   null,
-  ""
+  "Esta clave no se reconoce por el servidor."
  ],
  "This network key is obsolete. It is still functional but it should be replaced. A new key has been retrieved from the server.": [
   null,
-  ""
+  "Esta clave de red es obsoleta. Es todavía funcional pero debería ser cambiada. Una nueva clave ha sido recuperada desde el servidor."
  ],
  "This network key is obsolete. It is still functional but it should be replaced. A new key has been securely retrieved from the server.": [
   null,
-  ""
+  "Esta clave de red es obsoleta. Es todavía funcional pero debería ser cambiada. Una nueva clave ha sido recuperada con seguridad desde el servidor"
  ],
  "This network key works fine right now and the encrypted data can be unlocked with it.": [
   null,
-  ""
+  "Esta clave de red funciona correctamente y los datos encriptados pueden ser desbloqueados con ella."
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
-  ""
+  "Este volumen necesita ser activado antes de poder modificar el tamaño."
  ],
  "Trust Key": [
   null,
-  ""
+  "Clave de Confianza"
  ],
  "Trust new key": [
   null,
-  ""
+  "Confía en  nueva clave"
  ],
  "Type": [
   null,
   "Tipo"
  ],
+ "URL": [
+  null,
+  "URL"
+ ],
+ "URL cannot be empty": [
+  null,
+  "La URL no puede estar vacía"
+ ],
+ "URL must start with either \"http:\" or \"https:\"": [
+  null,
+  "La URL debe empezar por \"http:\" o \"https:\""
+ ],
  "UUID": [
   null,
-  ""
+  "UUID"
  ],
  "Unable to reach server": [
   null,
@@ -1496,15 +1548,15 @@ return plural;
  ],
  "Unable to remove mount": [
   null,
-  ""
+  "Incapaz de quitar montaje"
  ],
  "Unable to unmount filesystem": [
   null,
-  ""
+  "Incapaz de desmontar sistema de archivos"
  ],
  "Unit": [
   null,
-  ""
+  "Unidad"
  ],
  "Unknown": [
   null,
@@ -1524,11 +1576,11 @@ return plural;
  ],
  "Unlock at boot": [
   null,
-  ""
+  "Desbloquear al arranque"
  ],
  "Unlock read only": [
   null,
-  ""
+  "Desbloquear solo lectura"
  ],
  "Unlocking $target": [
   null,
@@ -1544,27 +1596,27 @@ return plural;
  ],
  "Unrecognized Data": [
   null,
-  ""
+  "Datos No Reconocidos"
  ],
  "Unrecognized data can not be made smaller here.": [
   null,
-  ""
+  "Los datos no reconocidos no se pueden hacer más pequeños aquí."
  ],
  "Unsupported volume": [
   null,
-  ""
+  "Volumen no soportado"
  ],
  "Usage": [
   null,
-  ""
+  "Utilización"
  ],
  "Use 512 Byte emulation": [
   null,
-  ""
+  "Usar emulación de 512 Byte"
  ],
  "Use new key": [
   null,
-  ""
+  "Usar nueva clave"
  ],
  "Used": [
   null,
@@ -1572,27 +1624,27 @@ return plural;
  ],
  "Username": [
   null,
-  ""
+  "Nombre de Usuario"
  ],
  "VDO Backing": [
   null,
-  ""
+  "Apoyo VDO"
  ],
  "VDO Device": [
   null,
-  ""
+  "Dispositivo VDO"
  ],
  "VDO Device $0": [
   null,
-  ""
+  "Dispositivo VDO $0"
  ],
  "VDO Devices": [
   null,
-  ""
+  "Dispositivos VDO"
  ],
  "VDO backing devices can not be made smaller": [
   null,
-  ""
+  "Los dispositivos de apoyo VDO no se pueden hacer más pequeños"
  ],
  "VFAT - Compatible with all systems and devices": [
   null,
@@ -1600,7 +1652,7 @@ return plural;
  ],
  "Verify Key": [
   null,
-  ""
+  "Verificar Clave"
  ],
  "Very securely erasing $target": [
   null,
@@ -1608,7 +1660,7 @@ return plural;
  ],
  "Volume": [
   null,
-  ""
+  "Volumen"
  ],
  "Volume Group": [
   null,
@@ -1620,7 +1672,7 @@ return plural;
  ],
  "Volume Groups": [
   null,
-  ""
+  "Grupos de Volumen"
  ],
  "Write-mostly": [
   null,
@@ -1633,6 +1685,10 @@ return plural;
  "XFS - Red Hat Enterprise Linux 7 default": [
   null,
   "XFS - Red Hat Enterprise Linux 7 Predeterminado"
+ ],
+ "You might want to remove it.": [
+  null,
+  "Es posible que desee eliminarlo."
  ],
  "[$0 bytes of binary data]": [
   null,
@@ -1652,7 +1708,7 @@ return plural;
  ],
  "iSCSI Targets": [
   null,
-  ""
+  "Objetivos iSCSI"
  ],
  "undefined": [
   null,
@@ -1688,7 +1744,7 @@ return plural;
  ],
  "storage-id-desc\u0004VDO Backing": [
   null,
-  ""
+  "Apoyo VDO"
  ],
  "storage\u0004Drive": [
   null,

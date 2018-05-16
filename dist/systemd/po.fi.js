@@ -171,7 +171,7 @@ return plural;
  ],
  "20 Minutes": [
   null,
-  "20 Minuuttia"
+  "20 minuuttia"
  ],
  "20th": [
   null,
@@ -239,7 +239,7 @@ return plural;
  ],
  "40 Minutes": [
   null,
-  "40 Minuuttia"
+  "40 minuuttia"
  ],
  "4th": [
   null,
@@ -247,7 +247,7 @@ return plural;
  ],
  "5 Minutes": [
   null,
-  "5 Minuuttia"
+  "5 minuuttia"
  ],
  "5 min": [
   null,
@@ -267,7 +267,7 @@ return plural;
  ],
  "60 Minutes": [
   null,
-  "60 Minuuttia"
+  "60 minuuttia"
  ],
  "6th": [
   null,
@@ -319,19 +319,19 @@ return plural;
  ],
  "Automatically using specific NTP servers": [
   null,
-  "Käytetään automaattisesti tiettyjä NTP-servereitä"
+  "Käytetään automaattisesti tiettyjä NTP-palvelimia"
  ],
  "BIOS": [
   null,
-  ""
+  "BIOS"
  ],
  "BIOS date": [
   null,
-  ""
+  "BIOS-päiväys"
  ],
  "BIOS version": [
   null,
-  ""
+  "BIOS-versio"
  ],
  "Blade": [
   null,
@@ -363,7 +363,7 @@ return plural;
  ],
  "Cannot schedule event in the past": [
   null,
-  ""
+  "Tapahtumaa ei voi aikatauluttaa menneisyyteen"
  ],
  "Change": [
   null,
@@ -371,15 +371,15 @@ return plural;
  ],
  "Change Host Name": [
   null,
-  "Vaihda Konenimi (Host)"
+  "Vaihda konenimi (Host)"
  ],
  "Change System Time": [
   null,
-  "Vaihda Järjestelmän Aika"
+  "Vaihda järjestelmän aika"
  ],
  "Checking for updates…": [
   null,
-  ""
+  "Etsitään päivityksiä…"
  ],
  "Class": [
   null,
@@ -387,7 +387,7 @@ return plural;
  ],
  "Click to see system hardware information": [
   null,
-  ""
+  "Napsauta nähdäksesi järjestelmän laitteistotiedot"
  ],
  "Close": [
   null,
@@ -415,11 +415,11 @@ return plural;
  ],
  "Create Timer": [
   null,
-  "Luo Ajastin"
+  "Luo ajastin"
  ],
  "Create Timers": [
   null,
-  "Luo Ajastimet"
+  "Luo ajastimet"
  ],
  "Critical and above": [
   null,
@@ -443,7 +443,7 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Työpöytä"
  ],
  "Detachable": [
   null,
@@ -471,7 +471,7 @@ return plural;
  ],
  "Don't Repeat": [
   null,
-  "Älä Toista"
+  "Älä toista"
  ],
  "Embedded PC": [
   null,
@@ -543,11 +543,11 @@ return plural;
  ],
  "Hardware Information": [
   null,
-  ""
+  "Laitteistotiedot"
  ],
  "Host Name": [
   null,
-  "Koneen Nimi"
+  "Koneen nimi"
  ],
  "Hour : Minute": [
   null,
@@ -583,7 +583,7 @@ return plural;
  ],
  "Invalid date format and invalid time format": [
   null,
-  "Virheellinen päivämuoto tai aikamuoto"
+  "Virheellinen päivämuoto ja aikamuoto"
  ],
  "Invalid date format.": [
   null,
@@ -623,7 +623,7 @@ return plural;
  ],
  "Laptop": [
   null,
-  ""
+  "Kannettava"
  ],
  "Last 24 hours": [
   null,
@@ -635,7 +635,7 @@ return plural;
  ],
  "Last Trigger": [
   null,
-  ""
+  "Edellinen liipaisin"
  ],
  "Load earlier entries": [
   null,
@@ -655,7 +655,7 @@ return plural;
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "Matalan tason työpöytä"
  ],
  "Lunch Box": [
   null,
@@ -663,11 +663,11 @@ return plural;
  ],
  "Machine ID": [
   null,
-  ""
+  "Koneen ID"
  ],
  "Machine SSH Key Fingerprints": [
   null,
-  ""
+  "Koneen SSH-avaimen sormenjäljet"
  ],
  "Main Server Chassis": [
   null,
@@ -683,7 +683,7 @@ return plural;
  ],
  "Mask Forcefully": [
   null,
-  "Peitä Väkisin"
+  "Peitä väkisin"
  ],
  "Memory": [
   null,
@@ -711,7 +711,7 @@ return plural;
  ],
  "Model": [
   null,
-  ""
+  "Malli"
  ],
  "Monday": [
   null,
@@ -735,7 +735,7 @@ return plural;
  ],
  "Network Traffic": [
   null,
-  ""
+  "Verkkoliikenne"
  ],
  "Next Run": [
   null,
@@ -759,7 +759,7 @@ return plural;
  ],
  "Not synchronized": [
   null,
-  ""
+  "Ei synkronisoitu"
  ],
  "Note": [
   null,
@@ -775,11 +775,11 @@ return plural;
  ],
  "Off": [
   null,
-  ""
+  "Pois"
  ],
  "On": [
   null,
-  ""
+  "Päällä"
  ],
  "Only Emergency": [
   null,
@@ -791,7 +791,7 @@ return plural;
  ],
  "Operating System": [
   null,
-  ""
+  "Käyttöjärjestelmä"
  ],
  "Other": [
   null,
@@ -799,7 +799,7 @@ return plural;
  ],
  "PCI": [
   null,
-  ""
+  "PCI"
  ],
  "PackageKit crashed": [
   null,
@@ -807,7 +807,7 @@ return plural;
  ],
  "Paths": [
   null,
-  ""
+  "Polut"
  ],
  "Performance Profile": [
   null,
@@ -871,7 +871,7 @@ return plural;
  ],
  "Reboot": [
   null,
-  ""
+  "Käynnistä uudelleen"
  ],
  "Recent": [
   null,
@@ -879,7 +879,7 @@ return plural;
  ],
  "Reload": [
   null,
-  ""
+  "Lataa uudelleen"
  ],
  "Repeat Daily": [
   null,
@@ -951,7 +951,7 @@ return plural;
  ],
  "Security Updates Available": [
   null,
-  ""
+  "Tietoturvapäivityksiä saatavilla"
  ],
  "Service Logs": [
   null,
@@ -1019,7 +1019,7 @@ return plural;
  ],
  "Stick PC": [
   null,
-  ""
+  "Tikku-PC"
  ],
  "Stop": [
   null,
@@ -1059,11 +1059,11 @@ return plural;
  ],
  "System Information": [
   null,
-  ""
+  "Järjestelmätiedot"
  ],
  "System Not Registered": [
   null,
-  ""
+  "Järjestelmää ei ole rekisteröity"
  ],
  "System Services": [
   null,
@@ -1075,7 +1075,7 @@ return plural;
  ],
  "System Up To Date": [
   null,
-  ""
+  "Järjestelmä ajan tasalla"
  ],
  "Tablet": [
   null,
@@ -1091,7 +1091,7 @@ return plural;
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,
-  ""
+  "Käyttäjällä <b>$0</b> ei ole oikeutta luoda ajastimia"
  ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
@@ -1099,7 +1099,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to shutdown or restart this server": [
   null,
-  ""
+  "Käyttäjällä <b>$0</b> ei ole oikeutta sammuttaa tai käynnistää uudelleen tätä palvelinta"
  ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
@@ -1131,11 +1131,11 @@ return plural;
  ],
  "Tower": [
   null,
-  ""
+  "Torni"
  ],
  "Trying to synchronize with {{Server}}": [
   null,
-  "Yritetään synkronoida {{Server}} kanssa"
+  "Yritetään synkronoida palvelimen {{Server}} kanssa"
  ],
  "Tuesday": [
   null,
@@ -1155,7 +1155,7 @@ return plural;
  ],
  "Updates Available": [
   null,
-  ""
+  "Päivityksiä saatavilla"
  ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",
@@ -1172,7 +1172,7 @@ return plural;
  ],
  "Vendor": [
   null,
-  ""
+  "Toimittaja"
  ],
  "Version": [
   null,
@@ -1217,7 +1217,7 @@ return plural;
  ],
  "page-title\u0004CPU Status": [
   null,
-  "Prosessorin Tila"
+  "Prosessorin tila"
  ],
  "page-title\u0004Memory": [
   null,

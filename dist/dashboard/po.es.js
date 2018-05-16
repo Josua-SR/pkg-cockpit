@@ -559,7 +559,7 @@ return plural;
  ],
  "Tower": [
   null,
-  ""
+  "Torre"
  ],
  "Type a password": [
   null,

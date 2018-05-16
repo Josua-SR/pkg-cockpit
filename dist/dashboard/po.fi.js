@@ -127,7 +127,7 @@ return plural;
  ],
  "Add Machine to Dashboard": [
   null,
-  "Lisää Kone Kojelaudalle"
+  "Lisää kone kojelaudalle"
  ],
  "Address": [
   null,
@@ -235,7 +235,7 @@ return plural;
  ],
  "Connection Error": [
   null,
-  "Yhteys virhe"
+  "Yhteysvirhe"
  ],
  "Convertible": [
   null,
@@ -251,7 +251,7 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Työpöytä"
  ],
  "Detachable": [
   null,
@@ -267,7 +267,7 @@ return plural;
  ],
  "Edit Server": [
   null,
-  "Muokkaa Palvelinta"
+  "Muokkaa palvelinta"
  ],
  "Embedded PC": [
   null,
@@ -315,7 +315,7 @@ return plural;
  ],
  "Host Name": [
   null,
-  "Koneen Nimi"
+  "Koneen nimi"
  ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
@@ -339,15 +339,15 @@ return plural;
  ],
  "Kerberos Based SSO": [
   null,
-  "Kerberos Based SSO"
+  "Kerberos-pohjainen SSO"
  ],
  "Kerberos Ticket": [
   null,
-  "Kerberos Ticket"
+  "Kerberos-tiketti"
  ],
  "Laptop": [
   null,
-  ""
+  "Kannettava"
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
@@ -367,15 +367,15 @@ return plural;
  ],
  "Login Password": [
   null,
-  ""
+  "Kirjautumissalasana"
  ],
  "Lost connection. Trying to reconnect": [
   null,
-  ""
+  "Yhteys menetettiin. Yritetään yhdistää uudelleen"
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "Matalan tason työpöytä"
  ],
  "Lunch Box": [
   null,
@@ -423,7 +423,7 @@ return plural;
  ],
  "Off": [
   null,
-  ""
+  "Pois"
  ],
  "Old password not accepted": [
   null,
@@ -431,7 +431,7 @@ return plural;
  ],
  "On": [
   null,
-  ""
+  "Päällä"
  ],
  "Other": [
   null,
@@ -503,7 +503,7 @@ return plural;
  ],
  "Stick PC": [
   null,
-  ""
+  "Tikku-PC"
  ],
  "Sub Chassis": [
   null,
@@ -543,7 +543,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to manage servers": [
   null,
-  ""
+  "Käyttäjällä <b>$0</b> ei ole oikeutta hallita palvelimia"
  ],
  "This machine has already been added.": [
   null,
@@ -559,7 +559,7 @@ return plural;
  ],
  "Tower": [
   null,
-  ""
+  "Torni"
  ],
  "Type a password": [
   null,
@@ -595,7 +595,7 @@ return plural;
  ],
  "You are currently connected directly to this server. You cannot delete it.": [
   null,
-  "Olet tällä hetkellä suoraan yhteydessä tähän serveriin. Et voi poistaa sitä."
+  "Olet tällä hetkellä suoraan yhteydessä tähän palvelimeen. Et voi poistaa sitä."
  ],
  "You can remove the previously stored key by running the following command": [
   null,

@@ -175,6 +175,14 @@ return plural;
   null,
   "Dodaj mostek"
  ],
+ "Add Services": [
+  null,
+  "Dodaj usługi"
+ ],
+ "Add Services…": [
+  null,
+  "Dodaj usługi…"
+ ],
  "Add Team": [
   null,
   "Dodaj zespół"
@@ -206,6 +214,10 @@ return plural;
  "Addresses": [
   null,
   "Adresy"
+ ],
+ "Allowed Services": [
+  null,
+  "Dozwolone usługi"
  ],
  "Apply": [
   null,
@@ -359,6 +371,10 @@ return plural;
   null,
   "Usunięcie <b>$0</b> zerwie połączenie z serwerem i uniemożliwi korzystanie z interfejsu administracji."
  ],
+ "Details": [
+  null,
+  "Szczegóły"
+ ],
  "Disabled": [
   null,
   "Wyłączone"
@@ -378,6 +394,18 @@ return plural;
  "Failed": [
   null,
   "Niepowodzenie"
+ ],
+ "Filter Services": [
+  null,
+  "Filtrowanie usług"
+ ],
+ "Firewall": [
+  null,
+  "Zapora sieciowa"
+ ],
+ "Firewall is not available": [
+  null,
+  "Zapora sieciowa jest niedostępna"
  ],
  "Forward delay $forward_delay": [
   null,
@@ -559,6 +587,10 @@ return plural;
   null,
   "Brak operatora"
  ],
+ "No open ports": [
+  null,
+  "Brak otwartych portów"
+ ],
  "Not available": [
   null,
   "Niedostępne"
@@ -610,6 +642,10 @@ return plural;
  "Ping Target": [
   null,
   "Cel pingu"
+ ],
+ "Please install the {0} package": [
+  null,
+  "Proszę zainstalować pakiet {0}"
  ],
  "Ports": [
   null,
@@ -699,6 +735,10 @@ return plural;
   null,
   "Wysyłanie"
  ],
+ "Service": [
+  null,
+  "Usługa"
+ ],
  "Set to": [
   null,
   "Ustaw na"
@@ -747,6 +787,10 @@ return plural;
   null,
   "Włączenie <b>$0</b> zerwie połączenie z serwerem i uniemożliwi korzystanie z interfejsu administracji."
  ],
+ "TCP": [
+  null,
+  "TCP"
+ ],
  "Team": [
   null,
   "Zespół"
@@ -774,6 +818,10 @@ return plural;
  "This device cannot be managed here.": [
   null,
   "Tutaj nie można zarządzać tym urządzeniem."
+ ],
+ "UDP": [
+  null,
+  "UDP"
  ],
  "Unexpected error": [
   null,
@@ -818,6 +866,10 @@ return plural;
  "Yes": [
   null,
   "Tak"
+ ],
+ "You are not authorized to modify the firewall.": [
+  null,
+  "Brak upoważnienia do modyfikacji zapory sieciowej."
  ],
  "[$0 bytes of binary data]": [
   null,

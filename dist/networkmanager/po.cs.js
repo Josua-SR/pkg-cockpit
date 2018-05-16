@@ -175,6 +175,14 @@ return plural;
   null,
   "Přidat most"
  ],
+ "Add Services": [
+  null,
+  ""
+ ],
+ "Add Services…": [
+  null,
+  ""
+ ],
  "Add Team": [
   null,
   "Přidat tým"
@@ -206,6 +214,10 @@ return plural;
  "Addresses": [
   null,
   "Adresa"
+ ],
+ "Allowed Services": [
+  null,
+  ""
  ],
  "Apply": [
   null,
@@ -359,6 +371,10 @@ return plural;
   null,
   ""
  ],
+ "Details": [
+  null,
+  "Podrobnosti"
+ ],
  "Disabled": [
   null,
   "Zakázáno"
@@ -378,6 +394,18 @@ return plural;
  "Failed": [
   null,
   "Neúspěšný"
+ ],
+ "Filter Services": [
+  null,
+  ""
+ ],
+ "Firewall": [
+  null,
+  ""
+ ],
+ "Firewall is not available": [
+  null,
+  ""
  ],
  "Forward delay $forward_delay": [
   null,
@@ -559,6 +587,10 @@ return plural;
   null,
   ""
  ],
+ "No open ports": [
+  null,
+  ""
+ ],
  "Not available": [
   null,
   ""
@@ -608,6 +640,10 @@ return plural;
   ""
  ],
  "Ping Target": [
+  null,
+  ""
+ ],
+ "Please install the {0} package": [
   null,
   ""
  ],
@@ -699,6 +735,10 @@ return plural;
   null,
   ""
  ],
+ "Service": [
+  null,
+  "Služba"
+ ],
  "Set to": [
   null,
   ""
@@ -747,6 +787,10 @@ return plural;
   null,
   ""
  ],
+ "TCP": [
+  null,
+  ""
+ ],
  "Team": [
   null,
   "Tým"
@@ -772,6 +816,10 @@ return plural;
   ""
  ],
  "This device cannot be managed here.": [
+  null,
+  ""
+ ],
+ "UDP": [
   null,
   ""
  ],
@@ -818,6 +866,10 @@ return plural;
  "Yes": [
   null,
   "Ano"
+ ],
+ "You are not authorized to modify the firewall.": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

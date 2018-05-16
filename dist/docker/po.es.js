@@ -821,11 +821,11 @@ return plural;
  ],
  "Total": [
   null,
-  ""
+  "Total"
  ],
  "Tower": [
   null,
-  ""
+  "Torre"
  ],
  "Try again": [
   null,
@@ -833,7 +833,7 @@ return plural;
  ],
  "Type to filter…": [
   null,
-  ""
+  "Escribir para filtrar..."
  ],
  "UDP": [
   null,
@@ -873,7 +873,7 @@ return plural;
  ],
  "You don't have permission to manage the Docker storage pool.": [
   null,
-  ""
+  "Usted no tiene permisos para gestionar el grupo de almacenamiento Docker."
  ],
  "[$0 bytes of binary data]": [
   null,

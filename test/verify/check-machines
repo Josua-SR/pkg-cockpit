@@ -183,11 +183,9 @@ class TestMachines(MachineCase):
         if ptyconsole:
             args["console"] = PTYCONSOLE_XML
         else:
-            # These operating systems do not log from qemu properly
-            if m.image not in [ "centos-7" ]:
-                m.execute("chmod 777 /var/log/libvirt")
-                args["logfile"] = "/var/log/libvirt/console-{0}.log".format(name)
-                args["console"] = CONSOLE_XML.format(log=args["logfile"])
+            m.execute("chmod 777 /var/log/libvirt")
+            args["logfile"] = "/var/log/libvirt/console-{0}.log".format(name)
+            args["console"] = CONSOLE_XML.format(log=args["logfile"])
 
         if graphics == 'spice':
             cxml = SPICE_XML
@@ -647,30 +645,20 @@ class TestMachines(MachineCase):
         b.wait_present("#console-type-select li > a:contains(Serial Console)")
         b.click("#console-type-select li > a:contains(Serial Console)")
 
-        b.wait_present("div.terminal")
-        with b.wait_timeout(10):
-            b.wait_present("div.terminal > div:contains(Connected)")
+        b.wait_present("div.terminal canvas.xterm-text-layer") # if connected the xterm canvas is rendered
 
         b.wait_present("#{0}-serialconsole-reconnect".format(name))
         b.click("#{0}-serialconsole-reconnect".format(name))
-
-        b.wait_present("div.terminal")
-        with b.wait_timeout(10):
-            b.wait_present("div.terminal > div:contains(Connected)")
+        b.wait_present("div.terminal canvas.xterm-text-layer")
 
         b.wait_present("#{0}-serialconsole-disconnect".format(name))
         b.click("#{0}-serialconsole-disconnect".format(name))
-
-        with b.wait_timeout(10):
-            b.wait_present("div.machines-terminal span:contains(Disconnected from serial console. Click the Reconnect button.)")
+        b.wait_not_present("div.terminal canvas.xterm-text-layer")
+        b.wait_present("div.blank-slate-pf")
+        b.wait_present("p.blank-slate-pf-info:contains(Disconnected from serial console. Click the Reconnect button.)")
 
         b.click("#{0}-serialconsole-reconnect".format(name))
-
-        b.wait_present("div.terminal")
-        with b.wait_timeout(10):
-            b.wait_present("div.terminal > div:contains(Connected)")
-
-        # sit(self.machines)
+        b.wait_present("div.terminal canvas.xterm-text-layer")
 
     def testCreate(self):
         """

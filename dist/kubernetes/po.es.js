@@ -73,7 +73,7 @@ return plural;
  ],
  " or drag & drop.": [
   null,
-  ""
+  " o arrastre & suelte."
  ],
  "$0% Free": [
   "$0% Free",
@@ -355,7 +355,7 @@ return plural;
  ],
  "Create Virtual Machine": [
   null,
-  ""
+  "Crear Máquina Virtual"
  ],
  "Create empty image stream": [
   null,
@@ -503,7 +503,7 @@ return plural;
  ],
  "Drop file here to upload.": [
   null,
-  ""
+  "Soltar el archivo aquí para subirlo."
  ],
  "Empty Directory": [
   null,
@@ -939,7 +939,7 @@ return plural;
  ],
  "Only files of size $0 MiB and less are supported": [
   null,
-  ""
+  "Solo se soportan archivos de un tamaño de $0 MiB y menos"
  ],
  "Operating System": [
   null,
@@ -967,7 +967,7 @@ return plural;
  ],
  "Paste JSON below, ": [
   null,
-  ""
+  "Pegar JSON abajo,"
  ],
  "Path": [
   null,
@@ -1279,7 +1279,7 @@ return plural;
  ],
  "Resolve above errors to continue": [
   null,
-  ""
+  "Resuelva los errores de arriba para continuar"
  ],
  "Restart Count": [
   null,
@@ -1579,19 +1579,19 @@ return plural;
  ],
  "This volume has been claimed by {{ item.item.spec.claimRef.namespace }} / {{ item.item.spec.claimRef.name }}. Deleting it will break that claim and may cause issues with any pods depending on it.": [
   null,
-  ""
+  "Este volumen ha sido reclamado por {{ item.item.spec.claimRef.namespace }} / {{ item.item.spec.claimRef.name }}. Eliminarlo romperá el reclamo y puede causar problemas en cualquier pod que dependa de él."
  ],
  "This volume has not been claimed": [
   null,
-  ""
+  "Este volumen ni ha sido reclamado"
  ],
  "Token": [
   null,
-  ""
+  "Ficha"
  ],
  "Topology": [
   null,
-  ""
+  "Topología"
  ],
  "Triggers": [
   null,
@@ -1603,7 +1603,7 @@ return plural;
  ],
  "Trust this certificate for this connection": [
   null,
-  ""
+  "Confía en este certificado para esta conexión"
  ],
  "Type": [
   null,
@@ -1611,7 +1611,7 @@ return plural;
  ],
  "Type:": [
   null,
-  ""
+  "Teclear:"
  ],
  "Unable to decode Kubernetes application manifest.": [
   null,
@@ -1643,51 +1643,51 @@ return plural;
  ],
  "User or Group": [
   null,
-  ""
+  "Usuario o Grupo"
  ],
  "Username": [
   null,
-  ""
+  "Nombre de Usuario"
  ],
  "Users": [
   null,
-  ""
+  "Usuarios"
  ],
  "VM DELETE failed.": [
   null,
-  ""
+  "VM DELETE falló."
  ],
  "VM definition is not a valid JSON.": [
   null,
-  ""
+  "La definición VM no es un JSON válido."
  ],
  "VM definition is required.": [
   null,
-  ""
+  "Se requiere definición VM."
  ],
  "VM definition must be an object.": [
   null,
-  ""
+  "La definición VM debe ser un objeto."
  ],
  "Virtual Machines": [
   null,
-  ""
+  "Máquinas Virtuales"
  ],
  "Volume": [
   null,
-  ""
+  "Volumen"
  ],
  "Volume ID": [
   null,
-  ""
+  "ID de Volumen"
  ],
  "Volume Name": [
   null,
-  ""
+  "Nombre de Volumen"
  ],
  "Volume Type": [
   null,
-  ""
+  "Tipo de Volumen"
  ],
  "Volumes": [
   null,
@@ -1695,7 +1695,7 @@ return plural;
  ],
  "Warning:": [
   null,
-  ""
+  "Precaución:"
  ],
  "Welcome to the Image Registry": [
   null,
@@ -1703,7 +1703,7 @@ return plural;
  ],
  "When": [
   null,
-  ""
+  "Cuando"
  ],
  "Yes": [
   null,
@@ -1711,7 +1711,7 @@ return plural;
  ],
  "You can bypass the certificate check, but any data you send to the server could be intercepted by others.": [
   null,
-  ""
+  "Usted puede evitar la comprobación del certificado, pero cualquier datos que envíe al servidor podría ser interceptado por otros."
  ],
  "You can deploy an application to your cluster.": [
   null,
@@ -1723,23 +1723,23 @@ return plural;
  ],
  "bridge": [
   null,
-  ""
+  "puente"
  ],
  "cdrom": [
   null,
-  ""
+  "cdrom"
  ],
  "crashed": [
   null,
-  ""
+  "estrellado"
  ],
  "custom": [
   null,
-  ""
+  "personal"
  ],
  "direct": [
   null,
-  ""
+  "directo"
  ],
  "disabled": [
   null,
@@ -1747,19 +1747,19 @@ return plural;
  ],
  "disk": [
   null,
-  ""
+  "disco"
  ],
  "down": [
   null,
-  ""
+  "abajo"
  ],
  "dying": [
   null,
-  ""
+  "agonizante"
  ],
  "eg: my-image-stream": [
   null,
-  ""
+  "eg: mi secuencia de imagen"
  ],
  "enabled": [
   null,
@@ -1767,19 +1767,19 @@ return plural;
  ],
  "ethernet": [
   null,
-  ""
+  "ethernet"
  ],
  "host": [
   null,
-  ""
+  "huésped"
  ],
  "hostdev": [
   null,
-  ""
+  "hostdev"
  ],
  "iSCSI": [
   null,
-  ""
+  "iSCSI"
  ],
  "idle": [
   null,
@@ -1787,15 +1787,15 @@ return plural;
  ],
  "mcast": [
   null,
-  ""
+  "mcast"
  ],
  "n/a": [
   null,
-  ""
+  "n/a"
  ],
  "network": [
   null,
-  ""
+  "red"
  ],
  "no": [
   null,
@@ -1811,7 +1811,7 @@ return plural;
  ],
  "pending volume claims": [
   null,
-  ""
+  "pendiente de reclamación de volumen"
  ],
  "running": [
   null,
@@ -1819,31 +1819,31 @@ return plural;
  ],
  "server": [
   null,
-  ""
+  "servidor"
  ],
  "show less": [
   null,
-  ""
+  "mostrar menos"
  ],
  "show more": [
   null,
-  ""
+  "mostrar más"
  ],
  "shut off": [
   null,
-  ""
+  "apagar"
  ],
  "shutdown": [
   null,
-  ""
+  "apagar"
  ],
  "suspended (PM)": [
   null,
-  ""
+  "suspendido (PM)"
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "up": [
   null,

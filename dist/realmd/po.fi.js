@@ -101,7 +101,7 @@ return plural;
  ],
  "Computer OU": [
   null,
-  "Tietokone OU"
+  "Tietokone-OU"
  ],
  "Domain $0 could not be contacted": [
   null,
@@ -113,15 +113,15 @@ return plural;
  ],
  "Domain Address": [
   null,
-  "Domain-Osoite"
+  "Domain-osoite"
  ],
  "Domain Administrator Name": [
   null,
-  "Domain-Ylläpitäjän Nimi"
+  "Domain-ylläpitäjän nimi"
  ],
  "Domain Administrator Password": [
   null,
-  "Domain-Ylläpitäjän Salasana"
+  "Domain-ylläpitäjän salasana"
  ],
  "Join": [
   null,
@@ -129,11 +129,11 @@ return plural;
  ],
  "Join Domain": [
   null,
-  "Liity Domainiin"
+  "Liity domainiin"
  ],
  "Join a Domain": [
   null,
-  "Liity Domainiin"
+  "Liity domainiin"
  ],
  "Joining this domain is not supported": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "Leave Domain": [
   null,
-  "Jätä Domain"
+  "Jätä domain"
  ],
  "More": [
   null,
@@ -157,19 +157,19 @@ return plural;
  ],
  "Off": [
   null,
-  ""
+  "Pois"
  ],
  "On": [
   null,
-  ""
+  "Päällä"
  ],
  "One Time Password": [
   null,
-  ""
+  "Kertakäyttöinen salasana"
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
-  ""
+  "Käyttäjällä <b>$0</b> ei ole oikeutta muokata realmeja"
  ],
  "This may take a while": [
   null,

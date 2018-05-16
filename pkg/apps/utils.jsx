@@ -57,7 +57,7 @@ export const ProgressBar = ({ title, data }) => {
     if (data.waiting) {
         return (
             <div>
-                <div className="pull-right spinner spinner-sm"/>
+                <div className="pull-right spinner spinner-sm" />
                 <div className="progress-title">
                     {_("Waiting for other programs to finish using the package manager...")}
                 </div>
@@ -70,8 +70,7 @@ export const ProgressBar = ({ title, data }) => {
                     {title}
                 </div>
                 <div className="progress">
-                    <div className="progress-bar" style={{ "width": data.percentage + "%" }}>
-                    </div>
+                    <div className="progress-bar" style={{ "width": data.percentage + "%" }} />
                 </div>
             </div>
         );

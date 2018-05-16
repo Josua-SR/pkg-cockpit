@@ -169,6 +169,14 @@ return plural;
   null,
   "Adicionar Ponte"
  ],
+ "Add Services": [
+  null,
+  ""
+ ],
+ "Add Services…": [
+  null,
+  ""
+ ],
  "Add Team": [
   null,
   "Adicionar Equipe"
@@ -200,6 +208,10 @@ return plural;
  "Addresses": [
   null,
   "Endereços"
+ ],
+ "Allowed Services": [
+  null,
+  ""
  ],
  "Apply": [
   null,
@@ -353,6 +365,10 @@ return plural;
   null,
   "Excluindo <b>$0</b> a conexão com o servidor será encerrada, e tornará a administração da interface do usuário indisponível."
  ],
+ "Details": [
+  null,
+  "Detalhes"
+ ],
  "Disabled": [
   null,
   "Desabilitado"
@@ -372,6 +388,18 @@ return plural;
  "Failed": [
   null,
   "Falhou"
+ ],
+ "Filter Services": [
+  null,
+  ""
+ ],
+ "Firewall": [
+  null,
+  ""
+ ],
+ "Firewall is not available": [
+  null,
+  ""
  ],
  "Forward delay $forward_delay": [
   null,
@@ -553,6 +581,10 @@ return plural;
   null,
   "Sem sinal"
  ],
+ "No open ports": [
+  null,
+  ""
+ ],
  "Not available": [
   null,
   "Indisponível"
@@ -604,6 +636,10 @@ return plural;
  "Ping Target": [
   null,
   "Alvo do Ping"
+ ],
+ "Please install the {0} package": [
+  null,
+  ""
  ],
  "Ports": [
   null,
@@ -693,6 +729,10 @@ return plural;
   null,
   "Enviando"
  ],
+ "Service": [
+  null,
+  "Serviço"
+ ],
  "Set to": [
   null,
   "Configurado para"
@@ -741,6 +781,10 @@ return plural;
   null,
   "Ligando <b>$0</b> irá encerrar a conexão com o servidor e tornará a administração da interface do usuário indisponível."
  ],
+ "TCP": [
+  null,
+  "TCP"
+ ],
  "Team": [
   null,
   "Equipe"
@@ -768,6 +812,10 @@ return plural;
  "This device cannot be managed here.": [
   null,
   "Este dispositivo não pode ser gerenciado aqui."
+ ],
+ "UDP": [
+  null,
+  "UDP"
  ],
  "Unexpected error": [
   null,
@@ -812,6 +860,10 @@ return plural;
  "Yes": [
   null,
   "Sim"
+ ],
+ "You are not authorized to modify the firewall.": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

@@ -399,6 +399,10 @@ return plural;
   null,
   "No se han definido interfaces de red para esta VM"
  ],
+ "No oVirt connection": [
+  null,
+  "Sin conexión oVirt"
+ ],
  "OK": [
   null,
   "OK"
@@ -659,9 +663,13 @@ return plural;
   null,
   "La VM está suspendida por la administración de energía de los invitados."
  ],
+ "This host is managed by a virtualization manager, so creation of new VMs from the host is not possible.": [
+  null,
+  "Este host está gestionado por un gestor de virtualización de modo que la creación de nuevas VMs desde este host no es posible."
+ ],
  "This virtual machine is not managed by oVirt": [
   null,
-  ""
+  "Esta máquina virtual no está gestionada por oVirt"
  ],
  "Type": [
   null,
@@ -669,15 +677,15 @@ return plural;
  ],
  "Unplug": [
   null,
-  ""
+  "Desenchufar"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
-  ""
+  "Actualizar a una versión más reciente de libvirt para visualizar estadísticas de disco"
  ],
  "Usage": [
   null,
-  ""
+  "Utilización"
  ],
  "Used": [
   null,
@@ -685,55 +693,55 @@ return plural;
  ],
  "VDSM": [
   null,
-  ""
+  "VDSM"
  ],
  "VDSM Service Management": [
   null,
-  ""
+  "Gestión de Servicio VDSM"
  ],
  "VM FORCE OFF action failed": [
   null,
-  ""
+  "VM FORCE OFF falló acción"
  ],
  "VM FORCE REBOOT action failed": [
   null,
-  ""
+  "VM FORCE REBOOT falló acción"
  ],
  "VM REBOOT action failed": [
   null,
-  ""
+  "VM REBOOT falló acción"
  ],
  "VM SEND Non-Maskable Interrrupt action failed": [
   null,
-  ""
+  "VM SEND Non-Maskable Interrrupt falló acción"
  ],
  "VM SHUT DOWN action failed": [
   null,
-  ""
+  "VM SHUT DOWN falló acción"
  ],
  "VM START action failed": [
   null,
-  ""
+  "VM START falló acción"
  ],
  "VM icon": [
   null,
-  ""
+  "Icono VM"
  ],
  "VNC": [
   null,
-  ""
+  "VNC"
  ],
  "VNC Address:": [
   null,
-  ""
+  "Dirección VNC:"
  ],
  "VNC Port:": [
   null,
-  ""
+  "Puerto VNC:"
  ],
  "VNC TLS Port:": [
   null,
-  ""
+  "Puerto VNC TLS:"
  ],
  "Version": [
   null,
@@ -741,55 +749,55 @@ return plural;
  ],
  "Version num": [
   null,
-  ""
+  "Número de Versión"
  ],
  "Virtual Machines": [
   null,
-  ""
+  "Máquinas Virtuales"
  ],
  "Virtual Machines of $0 cluster": [
   null,
-  ""
+  "Máquinas Virtuales de $0 cluster"
  ],
  "Virtualport": [
   null,
-  ""
+  "Puerto Virtual"
  ],
  "Volume": [
   null,
-  ""
+  "Volumen"
  ],
  "Your browser does not support iframes.": [
   null,
-  ""
+  "Du navegador no soporta iframes."
  ],
  "bridge": [
   null,
-  ""
+  "puente"
  ],
  "cdrom": [
   null,
-  ""
+  "cdrom"
  ],
  "connecting": [
   null,
-  ""
+  "conectando"
  ],
  "cores": [
   null,
-  ""
+  "núcleos"
  ],
  "crashed": [
   null,
-  ""
+  "estrellado"
  ],
  "custom": [
   null,
-  ""
+  "personal"
  ],
  "direct": [
   null,
-  ""
+  "directo"
  ],
  "disabled": [
   null,
@@ -797,15 +805,15 @@ return plural;
  ],
  "disk": [
   null,
-  ""
+  "disco"
  ],
  "down": [
   null,
-  ""
+  "abajo"
  ],
  "dying": [
   null,
-  ""
+  "agonizante"
  ],
  "enabled": [
   null,
@@ -813,19 +821,19 @@ return plural;
  ],
  "error": [
   null,
-  ""
+  "error"
  ],
  "ethernet": [
   null,
-  ""
+  "ethernet"
  ],
  "host": [
   null,
-  ""
+  "huésped"
  ],
  "hostdev": [
   null,
-  ""
+  "hostdev"
  ],
  "idle": [
   null,
@@ -833,31 +841,31 @@ return plural;
  ],
  "initializing": [
   null,
-  ""
+  "inicializando"
  ],
  "installation failed": [
   null,
-  ""
+  "instalación fallada"
  ],
  "installing OS": [
   null,
-  ""
+  "instalando SO"
  ],
  "kdumping": [
   null,
-  ""
+  "kdumping"
  ],
  "maintenance": [
   null,
-  ""
+  "mantenimiento"
  ],
  "mcast": [
   null,
-  ""
+  "mcast"
  ],
  "network": [
   null,
-  ""
+  "red"
  ],
  "no": [
   null,
@@ -865,39 +873,39 @@ return plural;
  ],
  "non operational": [
   null,
-  ""
+  "no operativo"
  ],
  "non responsive": [
   null,
-  ""
+  "sin respuesta"
  ],
  "oVirt": [
   null,
-  ""
+  "oVirt"
  ],
  "oVirt Host State:": [
   null,
-  ""
+  "Estado del Huésped oVirt:"
  ],
  "oVirt Provider installation script failed due to missing arguments.": [
   null,
-  ""
+  "oVirt Provider el script de instalación falló debido a argumentos perdidos."
  ],
  "oVirt Provider installation script failed: Can't write to /etc/cockpit/machines-ovirt.config, try as root.": [
   null,
-  ""
+  "oVirt Provider el script de instalación falló: No puede escribir en /etc/cockpit/machines-ovirt.config, inténtelo como root."
  ],
  "oVirt installation script failed with following output: ": [
   null,
-  ""
+  "oVirt script de instalación falló con la siguiente salida: "
  ],
  "oVirt login in progress": [
   null,
-  ""
+  "oVirt acceso progresando"
  ],
  "other": [
   null,
-  ""
+  "otro"
  ],
  "paused": [
   null,
@@ -905,11 +913,11 @@ return plural;
  ],
  "pending approval": [
   null,
-  ""
+  "pendiente de aprobación"
  ],
  "reboot": [
   null,
-  ""
+  "reiniciar"
  ],
  "running": [
   null,
@@ -917,39 +925,39 @@ return plural;
  ],
  "server": [
   null,
-  ""
+  "servidor"
  ],
  "show less": [
   null,
-  ""
+  "mostrar menos"
  ],
  "show more": [
   null,
-  ""
+  "mostrar más"
  ],
  "shut off": [
   null,
-  ""
+  "apagar"
  ],
  "shutdown": [
   null,
-  ""
+  "apagar"
  ],
  "sockets": [
   null,
-  ""
+  "enchufes"
  ],
  "suspended (PM)": [
   null,
-  ""
+  "suspendido (PM)"
  ],
  "threads": [
   null,
-  ""
+  "hilos"
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "unassigned": [
   null,

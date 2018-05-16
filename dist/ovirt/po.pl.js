@@ -399,6 +399,10 @@ return plural;
   null,
   "Nie określono interfejsów sieciowych dla tej maszyny wirtualnej"
  ],
+ "No oVirt connection": [
+  null,
+  "Brak połączenia oVirt"
+ ],
  "OK": [
   null,
   "OK"
@@ -658,6 +662,10 @@ return plural;
  "The VM is suspended by guest power management.": [
   null,
   "Maszyna wirtualna jest uśpiona przez zarządzanie zasilaniem."
+ ],
+ "This host is managed by a virtualization manager, so creation of new VMs from the host is not possible.": [
+  null,
+  "Ten gospodarz jest zarządzany przez menedżera wirtualizacji, więc tworzenie nowych maszyn wirtualnych z gospodarza nie jest możliwe."
  ],
  "This virtual machine is not managed by oVirt": [
   null,

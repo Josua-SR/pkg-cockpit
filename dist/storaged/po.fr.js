@@ -67,6 +67,14 @@ return plural;
   "language": "fr",
   "x-generator": "Zanata 3.9.6"
  },
+ "\"http\" Key escrow": [
+  null,
+  ""
+ ],
+ "\"tang\" Binding server": [
+  null,
+  ""
+ ],
  "$0 Block Device": [
   null,
   "Périphérique de bloc de $0"
@@ -265,6 +273,10 @@ return plural;
  "Address": [
   null,
   "Adresse"
+ ],
+ "Allow \"http://\" URL": [
+  null,
+  ""
  ],
  "Apply": [
   null,
@@ -682,6 +694,10 @@ return plural;
   null,
   ""
  ],
+ "HTTP method": [
+  null,
+  ""
+ ],
  "In Sync": [
   null,
   "En cours de synchronisation"
@@ -701,6 +717,10 @@ return plural;
  "Jobs": [
   null,
   "Tâches"
+ ],
+ "Key can't be retrieved": [
+  null,
+  ""
  ],
  "Key does not work": [
   null,
@@ -767,6 +787,10 @@ return plural;
   ""
  ],
  "Metadata Used": [
+  null,
+  ""
+ ],
+ "Method": [
   null,
   ""
  ],
@@ -1198,6 +1222,10 @@ return plural;
   null,
   ""
  ],
+ "Retrieving the key from $0 has failed: $1.": [
+  null,
+  ""
+ ],
  "Running": [
   null,
   "En fonctionnement"
@@ -1215,6 +1243,10 @@ return plural;
   ""
  ],
  "Server Address": [
+  null,
+  ""
+ ],
+ "Server address cannot be empty": [
   null,
   ""
  ],
@@ -1402,6 +1434,10 @@ return plural;
   null,
   ""
  ],
+ "The server has returned a key that doesn't work.": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   ""
@@ -1423,6 +1459,10 @@ return plural;
   ""
  ],
  "This VDO device does not use all of its backing device.": [
+  null,
+  ""
+ ],
+ "This box must be checked to confirm that the key will be transported without HTTPS": [
   null,
   ""
  ],
@@ -1454,7 +1494,7 @@ return plural;
   null,
   ""
  ],
- "This network key is not recognized anymore by the server. You might want to remove it.": [
+ "This network key is not recognized anymore by the server.": [
   null,
   ""
  ],
@@ -1485,6 +1525,18 @@ return plural;
  "Type": [
   null,
   "Type"
+ ],
+ "URL": [
+  null,
+  ""
+ ],
+ "URL cannot be empty": [
+  null,
+  ""
+ ],
+ "URL must start with either \"http:\" or \"https:\"": [
+  null,
+  ""
  ],
  "UUID": [
   null,
@@ -1633,6 +1685,10 @@ return plural;
  "XFS - Red Hat Enterprise Linux 7 default": [
   null,
   "XFS - Système de fichier par défaut de Red Hat Enterprise Linux 7"
+ ],
+ "You might want to remove it.": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

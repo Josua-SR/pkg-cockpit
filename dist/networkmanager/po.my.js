@@ -163,6 +163,14 @@ return plural;
   null,
   ""
  ],
+ "Add Services": [
+  null,
+  ""
+ ],
+ "Add Services…": [
+  null,
+  ""
+ ],
  "Add Team": [
   null,
   ""
@@ -192,6 +200,10 @@ return plural;
   ""
  ],
  "Addresses": [
+  null,
+  ""
+ ],
+ "Allowed Services": [
   null,
   ""
  ],
@@ -347,6 +359,10 @@ return plural;
   null,
   ""
  ],
+ "Details": [
+  null,
+  ""
+ ],
  "Disabled": [
   null,
   ""
@@ -364,6 +380,18 @@ return plural;
   ""
  ],
  "Failed": [
+  null,
+  ""
+ ],
+ "Filter Services": [
+  null,
+  ""
+ ],
+ "Firewall": [
+  null,
+  ""
+ ],
+ "Firewall is not available": [
   null,
   ""
  ],
@@ -547,6 +575,10 @@ return plural;
   null,
   ""
  ],
+ "No open ports": [
+  null,
+  ""
+ ],
  "Not available": [
   null,
   "မရနိင်"
@@ -596,6 +628,10 @@ return plural;
   ""
  ],
  "Ping Target": [
+  null,
+  ""
+ ],
+ "Please install the {0} package": [
   null,
   ""
  ],
@@ -687,6 +723,10 @@ return plural;
   null,
   "ပို့နေသည်"
  ],
+ "Service": [
+  null,
+  ""
+ ],
  "Set to": [
   null,
   ""
@@ -735,6 +775,10 @@ return plural;
   null,
   ""
  ],
+ "TCP": [
+  null,
+  "TCP"
+ ],
  "Team": [
   null,
   ""
@@ -762,6 +806,10 @@ return plural;
  "This device cannot be managed here.": [
   null,
   ""
+ ],
+ "UDP": [
+  null,
+  "UDP"
  ],
  "Unexpected error": [
   null,
@@ -804,6 +852,10 @@ return plural;
   ""
  ],
  "Yes": [
+  null,
+  ""
+ ],
+ "You are not authorized to modify the firewall.": [
   null,
   ""
  ],

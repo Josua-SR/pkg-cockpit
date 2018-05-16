@@ -154,7 +154,7 @@ LIBVIRT_PROVIDER = {
     canConsole: (vmState) => vmState == 'running',
     canSendNMI: (vmState) => LIBVIRT_PROVIDER.canReset(vmState),
 
-    serialConsoleCommand: ({ vm }) => !!vm.displays['pty'] ? [ 'virsh', ...VMS_CONFIG.Virsh.connections[vm.connectionName].params, 'console', vm.name ] : false,
+    serialConsoleCommand: ({ vm }) => vm.displays['pty'] ? [ 'virsh', ...VMS_CONFIG.Virsh.connections[vm.connectionName].params, 'console', vm.name ] : false,
 
     /**
      * Read VM properties of a single VM (virsh)
@@ -568,7 +568,9 @@ function parseDumpxml(dispatch, connectionName, domXml) {
     const ui = resolveUiState(dispatch, name);
 
     dispatch(updateOrAddVm({
-        connectionName, name, id,
+        connectionName,
+        name,
+        id,
         osType,
         currentMemory,
         vcpus,
@@ -839,7 +841,6 @@ function parseDumpxmlForConsoles(devicesElem) {
                 // So far no additional details needs to be parsed since the console is accessed via 'virsh console'.
                 displays['pty'] = {};
             }
-
         }
     }
 

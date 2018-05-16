@@ -85,7 +85,7 @@ return plural;
  ],
  "Crash dump location": [
   null,
-  "Crash dump sijainti"
+  "Crash dumpin sijainti"
  ],
  "Crash system": [
   null,
@@ -121,7 +121,7 @@ return plural;
  ],
  "More details": [
   null,
-  ""
+  "Lisätietoja"
  ],
  "Mount": [
   null,
@@ -141,7 +141,7 @@ return plural;
  ],
  "Off": [
   null,
-  ""
+  "Pois"
  ],
  "Ok": [
   null,
@@ -149,7 +149,7 @@ return plural;
  ],
  "On": [
   null,
-  ""
+  "Päällä"
  ],
  "On a mounted device": [
   null,
@@ -173,7 +173,7 @@ return plural;
  ],
  "Reserved memory": [
   null,
-  ""
+  "Varattu muisti"
  ],
  "Server": [
   null,
@@ -233,7 +233,7 @@ return plural;
  ],
  "kdump status": [
   null,
-  "kdump tila"
+  "kdump-tila"
  ],
  "locally in $0": [
   null,

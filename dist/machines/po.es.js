@@ -465,7 +465,7 @@ return plural;
  ],
  "Start libvirt": [
   null,
-  ""
+  "Inicar libvirt"
  ],
  "Start the VM to see disk statistics.": [
   null,
@@ -529,7 +529,7 @@ return plural;
  ],
  "Too many files found": [
   null,
-  ""
+  "Encontrados demasiados archivos"
  ],
  "Troubleshoot": [
   null,
@@ -541,19 +541,19 @@ return plural;
  ],
  "URL": [
   null,
-  ""
+  "URL"
  ],
  "Unplug": [
   null,
-  ""
+  "Desenchufar"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
-  ""
+  "Actualizar a una versión más reciente de libvirt para visualizar estadísticas de disco"
  ],
  "Usage": [
   null,
-  ""
+  "Utilización"
  ],
  "Used": [
   null,
@@ -561,87 +561,87 @@ return plural;
  ],
  "VM FORCE OFF action failed": [
   null,
-  ""
+  "VM FORCE OFF falló acción"
  ],
  "VM FORCE REBOOT action failed": [
   null,
-  ""
+  "VM FORCE REBOOT falló acción"
  ],
  "VM REBOOT action failed": [
   null,
-  ""
+  "VM REBOOT falló acción"
  ],
  "VM SEND Non-Maskable Interrrupt action failed": [
   null,
-  ""
+  "VM SEND Non-Maskable Interrrupt falló acción"
  ],
  "VM SHUT DOWN action failed": [
   null,
-  ""
+  "VM SHUT DOWN falló acción"
  ],
  "VM START action failed": [
   null,
-  ""
+  "VM START falló acción"
  ],
  "VNC": [
   null,
-  ""
+  "VNC"
  ],
  "VNC Address:": [
   null,
-  ""
+  "Dirección VNC:"
  ],
  "VNC Port:": [
   null,
-  ""
+  "Puerto VNC:"
  ],
  "VNC TLS Port:": [
   null,
-  ""
+  "Puerto VNC TLS:"
  ],
  "Virtual Machines": [
   null,
-  ""
+  "Máquinas Virtuales"
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
-  ""
+  "Servicio de Virtualización (libvirt) No Está Activo"
  ],
  "Virtualization Service is Available": [
   null,
-  ""
+  "El Servicio de Virtualización Está Disponible"
  ],
  "Virtualport": [
   null,
-  ""
+  "Puerto Virtual"
  ],
  "Volume": [
   null,
-  ""
+  "Volumen"
  ],
  "Your browser does not support iframes.": [
   null,
-  ""
+  "Du navegador no soporta iframes."
  ],
  "bridge": [
   null,
-  ""
+  "puente"
  ],
  "cdrom": [
   null,
-  ""
+  "cdrom"
  ],
  "crashed": [
   null,
-  ""
+  "estrellado"
  ],
  "custom": [
   null,
-  ""
+  "personal"
  ],
  "direct": [
   null,
-  ""
+  "directo"
  ],
  "disabled": [
   null,
@@ -649,15 +649,15 @@ return plural;
  ],
  "disk": [
   null,
-  ""
+  "disco"
  ],
  "down": [
   null,
-  ""
+  "abajo"
  ],
  "dying": [
   null,
-  ""
+  "agonizante"
  ],
  "enabled": [
   null,
@@ -665,15 +665,15 @@ return plural;
  ],
  "ethernet": [
   null,
-  ""
+  "ethernet"
  ],
  "host": [
   null,
-  ""
+  "huésped"
  ],
  "hostdev": [
   null,
-  ""
+  "hostdev"
  ],
  "idle": [
   null,
@@ -681,11 +681,11 @@ return plural;
  ],
  "mcast": [
   null,
-  ""
+  "mcast"
  ],
  "network": [
   null,
-  ""
+  "red"
  ],
  "no": [
   null,
@@ -693,7 +693,7 @@ return plural;
  ],
  "other": [
   null,
-  ""
+  "otro"
  ],
  "paused": [
   null,
@@ -705,31 +705,31 @@ return plural;
  ],
  "server": [
   null,
-  ""
+  "servidor"
  ],
  "show less": [
   null,
-  ""
+  "mostrar menos"
  ],
  "show more": [
   null,
-  ""
+  "mostrar más"
  ],
  "shut off": [
   null,
-  ""
+  "apagar"
  ],
  "shutdown": [
   null,
-  ""
+  "apagar"
  ],
  "suspended (PM)": [
   null,
-  ""
+  "suspendido (PM)"
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "undefined": [
   null,

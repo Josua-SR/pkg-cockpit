@@ -67,6 +67,14 @@ return plural;
   "language": "hr",
   "x-generator": "Zanata 3.9.6"
  },
+ "\"http\" Key escrow": [
+  null,
+  ""
+ ],
+ "\"tang\" Binding server": [
+  null,
+  ""
+ ],
  "$0 Block Device": [
   null,
   "$0 Blok uređaj"
@@ -272,6 +280,10 @@ return plural;
  "Address": [
   null,
   "Adresa"
+ ],
+ "Allow \"http://\" URL": [
+  null,
+  ""
  ],
  "Apply": [
   null,
@@ -689,6 +701,10 @@ return plural;
   null,
   ""
  ],
+ "HTTP method": [
+  null,
+  ""
+ ],
  "In Sync": [
   null,
   ""
@@ -706,6 +722,10 @@ return plural;
   ""
  ],
  "Jobs": [
+  null,
+  ""
+ ],
+ "Key can't be retrieved": [
   null,
   ""
  ],
@@ -774,6 +794,10 @@ return plural;
   ""
  ],
  "Metadata Used": [
+  null,
+  ""
+ ],
+ "Method": [
   null,
   ""
  ],
@@ -1205,6 +1229,10 @@ return plural;
   null,
   ""
  ],
+ "Retrieving the key from $0 has failed: $1.": [
+  null,
+  ""
+ ],
  "Running": [
   null,
   "Pokrenuto"
@@ -1222,6 +1250,10 @@ return plural;
   ""
  ],
  "Server Address": [
+  null,
+  ""
+ ],
+ "Server address cannot be empty": [
   null,
   ""
  ],
@@ -1409,6 +1441,10 @@ return plural;
   null,
   ""
  ],
+ "The server has returned a key that doesn't work.": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   ""
@@ -1430,6 +1466,10 @@ return plural;
   ""
  ],
  "This VDO device does not use all of its backing device.": [
+  null,
+  ""
+ ],
+ "This box must be checked to confirm that the key will be transported without HTTPS": [
   null,
   ""
  ],
@@ -1461,7 +1501,7 @@ return plural;
   null,
   ""
  ],
- "This network key is not recognized anymore by the server. You might want to remove it.": [
+ "This network key is not recognized anymore by the server.": [
   null,
   ""
  ],
@@ -1492,6 +1532,18 @@ return plural;
  "Type": [
   null,
   "Tip"
+ ],
+ "URL": [
+  null,
+  ""
+ ],
+ "URL cannot be empty": [
+  null,
+  ""
+ ],
+ "URL must start with either \"http:\" or \"https:\"": [
+  null,
+  ""
  ],
  "UUID": [
   null,
@@ -1638,6 +1690,10 @@ return plural;
   ""
  ],
  "XFS - Red Hat Enterprise Linux 7 default": [
+  null,
+  ""
+ ],
+ "You might want to remove it.": [
   null,
   ""
  ],

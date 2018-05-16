@@ -163,6 +163,14 @@ return plural;
   null,
   "添加网桥"
  ],
+ "Add Services": [
+  null,
+  ""
+ ],
+ "Add Services…": [
+  null,
+  ""
+ ],
  "Add Team": [
   null,
   "添加组"
@@ -194,6 +202,10 @@ return plural;
  "Addresses": [
   null,
   "地址"
+ ],
+ "Allowed Services": [
+  null,
+  ""
  ],
  "Apply": [
   null,
@@ -347,6 +359,10 @@ return plural;
   null,
   "删除 <b>$0</b> 将会中断与服务器的连接，并且将会导致管理界面不可用。"
  ],
+ "Details": [
+  null,
+  "详情"
+ ],
  "Disabled": [
   null,
   "禁用"
@@ -366,6 +382,18 @@ return plural;
  "Failed": [
   null,
   "已失败"
+ ],
+ "Filter Services": [
+  null,
+  ""
+ ],
+ "Firewall": [
+  null,
+  ""
+ ],
+ "Firewall is not available": [
+  null,
+  ""
  ],
  "Forward delay $forward_delay": [
   null,
@@ -547,6 +575,10 @@ return plural;
   null,
   "无载体"
  ],
+ "No open ports": [
+  null,
+  ""
+ ],
  "Not available": [
   null,
   "不可用"
@@ -598,6 +630,10 @@ return plural;
  "Ping Target": [
   null,
   "Ping 目标"
+ ],
+ "Please install the {0} package": [
+  null,
+  ""
  ],
  "Ports": [
   null,
@@ -687,6 +723,10 @@ return plural;
   null,
   "发送中"
  ],
+ "Service": [
+  null,
+  "服务"
+ ],
  "Set to": [
   null,
   "设置为"
@@ -735,6 +775,10 @@ return plural;
   null,
   "接通 <b>$0</b> 将中断与服务器的连接，并将导致管理界面不可用。"
  ],
+ "TCP": [
+  null,
+  "TCP"
+ ],
  "Team": [
   null,
   "组"
@@ -762,6 +806,10 @@ return plural;
  "This device cannot be managed here.": [
   null,
   "该设备不能在这里被管理。"
+ ],
+ "UDP": [
+  null,
+  "UDP"
  ],
  "Unexpected error": [
   null,
@@ -806,6 +854,10 @@ return plural;
  "Yes": [
   null,
   "是"
+ ],
+ "You are not authorized to modify the firewall.": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

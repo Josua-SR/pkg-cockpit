@@ -77,7 +77,7 @@ return plural;
  ],
  "Checking for new applications": [
   null,
-  "Etsitään uusia ohjelmia"
+  "Etsitään uusia sovelluksia"
  ],
  "Close": [
   null,
@@ -101,11 +101,11 @@ return plural;
  ],
  "No applications installed or available": [
   null,
-  ""
+  "Ei sovelluksia asennettuna tai saatavilla"
  ],
  "No description provided.": [
   null,
-  ""
+  "Kuvausta ei annettu."
  ],
  "No installation package found for this application.": [
   null,

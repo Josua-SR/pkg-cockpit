@@ -77,11 +77,11 @@ return plural;
  ],
  "Account Settings": [
   null,
-  "Tilin Asetukset"
+  "Tilin asetukset"
  ],
  "Active Pages": [
   null,
-  "Aktiiviset Sivut"
+  "Aktiiviset sivut"
  ],
  "Add": [
   null,
@@ -89,7 +89,7 @@ return plural;
  ],
  "Add Machine to Dashboard": [
   null,
-  "Lisää Kone Kojelaudalle"
+  "Lisää kone kojelaudalle"
  ],
  "Add key": [
   null,
@@ -121,7 +121,7 @@ return plural;
  ],
  "Change Password": [
   null,
-  "Vaihda Salasana"
+  "Vaihda salasana"
  ],
  "Checking for public keys": [
   null,
@@ -129,7 +129,7 @@ return plural;
  ],
  "Choose the language to be used in the application": [
   null,
-  "Valitse ohjelmassa käytettävä kieli"
+  "Valitse sovelluksessa käytettävä kieli"
  ],
  "Close": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Close Selected Pages": [
   null,
-  "Sulje Valitut Sivut"
+  "Sulje valitut sivut"
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
@@ -149,7 +149,7 @@ return plural;
  ],
  "Cockpit is an interactive Linux server admin interface.": [
   null,
-  "Cockpit on interaktiivinen Linux-palvelimen ylläpitäjän käyttöliittymä."
+  "Cockpit on vuorovaikutteinen Linux-palvelimen ylläpitäjän käyttöliittymä."
  ],
  "Cockpit is not installed": [
   null,
@@ -217,7 +217,7 @@ return plural;
  ],
  "Display Language": [
   null,
-  "Näytä Kieli"
+  "Näytä kieli"
  ],
  "Enter IP address or host name": [
   null,
@@ -269,11 +269,11 @@ return plural;
  ],
  "Kerberos Based SSO": [
   null,
-  "Kerberos Based SSO"
+  "Kerberos-pohjainen SSO"
  ],
  "Kerberos Ticket": [
   null,
-  "Kerberos Ticket"
+  "Kerberos-tiketti"
  ],
  "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "Licensed under:": [
   null,
-  "Lisensioitu:"
+  "Lisensoitu:"
  ],
  "Lock to prevent privileged tasks": [
   null,
@@ -309,7 +309,7 @@ return plural;
  ],
  "Login Password": [
   null,
-  ""
+  "Kirjautumissalasana"
  ],
  "Machines": [
   null,
@@ -325,7 +325,7 @@ return plural;
  ],
  "No matching files found": [
   null,
-  ""
+  "Vastaavia tiedostoja ei löytynyt."
  ],
  "No such file or directory": [
   null,
@@ -337,7 +337,7 @@ return plural;
  ],
  "Off": [
   null,
-  ""
+  "Pois"
  ],
  "Ok": [
   null,
@@ -353,11 +353,11 @@ return plural;
  ],
  "On": [
   null,
-  ""
+  "Päällä"
  ],
  "Ooops!": [
   null,
-  ""
+  "Hups!"
  ],
  "Password": [
   null,
@@ -401,7 +401,7 @@ return plural;
  ],
  "Reconnect": [
   null,
-  ""
+  "Yhdistä uudelleen"
  ],
  "Reuse my password for privileged tasks and to connect to other machines": [
   null,
@@ -497,7 +497,7 @@ return plural;
  ],
  "Unlocked": [
   null,
-  ""
+  "Avattu"
  ],
  "Update": [
   null,

@@ -111,15 +111,15 @@ return plural;
  ],
  "Add Additional Storage": [
   null,
-  "Lisää Uusi Tallennustila"
+  "Lisää uusi tallennustila"
  ],
  "Add Storage": [
   null,
-  "Lisää Tallennustila"
+  "Lisää tallennustila"
  ],
  "Additional Storage": [
   null,
-  "Uusi Tallennustila"
+  "Uusi tallennustila"
  ],
  "Advanced TCA": [
   null,
@@ -163,11 +163,11 @@ return plural;
  ],
  "CPU priority": [
   null,
-  "CPU Prioriteetti"
+  "Prosessorin prioriteetti"
  ],
  "CPU usage:": [
   null,
-  "CPU:n Käyttö"
+  "Prosessorin käyttö"
  ],
  "Can&rsquo;t connect to Docker": [
   null,
@@ -199,8 +199,8 @@ return plural;
  ],
  "Combined usage of $0 CPU core": [
   "Combined usage of $0 CPU cores",
-  "Yhdistetty $0 CPU -ytimen käyttö",
-  "Yhdistetty $0 CPU -ydinten käyttö"
+  "Yhdistetty $0 CPU-ytimen käyttö",
+  "Yhdistetty $0 CPU-ydinten käyttö"
  ],
  "Command": [
   null,
@@ -240,15 +240,15 @@ return plural;
  ],
  "Container Name": [
   null,
-  "Kontin Nimi"
+  "Kontin nimi"
  ],
  "Container is currently marked as not running, but regular stopping failed.": [
   null,
-  "Kontti on ei ole merkitty käynnissä olevaksi, mutta tavallinen pysäyttäminen epäonnistui."
+  "Kontti on merkitty ei käynnissä olevaksi, mutta tavallinen pysäyttäminen epäonnistui."
  ],
  "Container is currently running.": [
   null,
-  "Kontti on edelleen käynnissä"
+  "Kontti on parhaillaan käynnissä."
  ],
  "Container:": [
   null,
@@ -300,7 +300,7 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Työpöytä"
  ],
  "Detachable": [
   null,
@@ -380,7 +380,7 @@ return plural;
  ],
  "Force Delete": [
   null,
-  "Pakota Poisto"
+  "Pakota poisto"
  ],
  "Free": [
   null,
@@ -400,7 +400,7 @@ return plural;
  ],
  "Hard Disk": [
   null,
-  "Kovalevy"
+  "Kiintolevy"
  ],
  "IP Address:": [
   null,
@@ -428,7 +428,7 @@ return plural;
  ],
  "Image Search": [
   null,
-  "Levykuvan Haku"
+  "Levykuvan haku"
  ],
  "Image:": [
   null,
@@ -456,7 +456,7 @@ return plural;
  ],
  "Laptop": [
   null,
-  ""
+  "Kannettava"
  ],
  "Link to another container": [
   null,
@@ -476,7 +476,7 @@ return plural;
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "Matalan tason työpöytä"
  ],
  "Lunch Box": [
   null,
@@ -504,7 +504,7 @@ return plural;
  ],
  "MiB": [
   null,
-  ""
+  "MiB"
  ],
  "Mini PC": [
   null,
@@ -516,7 +516,7 @@ return plural;
  ],
  "Mount container volumes": [
   null,
-  ""
+  "Liitä konttitaltiot"
  ],
  "Multi-system Chassis": [
   null,
@@ -544,11 +544,11 @@ return plural;
  ],
  "No containers": [
   null,
-  ""
+  "Ei kontteja"
  ],
  "No containers that match the current filter": [
   null,
-  ""
+  "Ei nykyistä suodatusta vastaavia kontteja"
  ],
  "No images": [
   null,
@@ -564,11 +564,11 @@ return plural;
  ],
  "No running containers": [
   null,
-  ""
+  "Ei käynnissä olevia kontteja"
  ],
  "No running containers that match the current filter": [
   null,
-  ""
+  "Ei suodatusta vastaavia käynnissä olevia kontteja"
  ],
  "Not authorized to access Docker on this system": [
   null,
@@ -584,7 +584,7 @@ return plural;
  ],
  "Off": [
   null,
-  ""
+  "Pois"
  ],
  "Ok": [
   null,
@@ -592,7 +592,7 @@ return plural;
  ],
  "On": [
   null,
-  ""
+  "Päällä"
  ],
  "On Failure": [
   null,
@@ -621,11 +621,11 @@ return plural;
  ],
  "Please confirm deletion of $0": [
   null,
-  ""
+  "Vahvista kohteen $0 poistaminen"
  ],
  "Please confirm forced deletion of $0": [
   null,
-  ""
+  "Vahvista kohteen $0 pakotettu poistaminen"
  ],
  "Please try another term": [
   null,
@@ -645,7 +645,7 @@ return plural;
  ],
  "Problems": [
   null,
-  ""
+  "Ongelmat"
  ],
  "RAID Chassis": [
   null,
@@ -665,7 +665,7 @@ return plural;
  ],
  "Reboot": [
   null,
-  ""
+  "Käynnistä uudelleen"
  ],
  "Reformat and add disks": [
   null,
@@ -721,11 +721,11 @@ return plural;
  ],
  "Set container environment variables": [
   null,
-  ""
+  "Aseta kontin ympäristömuuttujat"
  ],
  "Show all containers": [
   null,
-  ""
+  "Näytä kaikki kontit"
  ],
  "Show all images": [
   null,
@@ -761,7 +761,7 @@ return plural;
  ],
  "Stick PC": [
   null,
-  ""
+  "Tikku-PC"
  ],
  "Stop": [
   null,
@@ -825,7 +825,7 @@ return plural;
  ],
  "Tower": [
   null,
-  ""
+  "Torni"
  ],
  "Try again": [
   null,

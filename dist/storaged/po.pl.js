@@ -67,6 +67,14 @@ return plural;
   "language": "pl",
   "x-generator": "Zanata 3.9.6"
  },
+ "\"http\" Key escrow": [
+  null,
+  "Klucz escrow „http”"
+ ],
+ "\"tang\" Binding server": [
+  null,
+  "Serwer dowiązania „tang”"
+ ],
  "$0 Block Device": [
   null,
   "Urządzenie blokowe $0"
@@ -272,6 +280,10 @@ return plural;
  "Address": [
   null,
   "Adres"
+ ],
+ "Allow \"http://\" URL": [
+  null,
+  "Zezwolenie na adresy URL „http://”"
  ],
  "Apply": [
   null,
@@ -689,6 +701,10 @@ return plural;
   null,
   "Powiększ do użycia całego miejsca"
  ],
+ "HTTP method": [
+  null,
+  "Metoda HTTP"
+ ],
  "In Sync": [
   null,
   "Zsynchronizowane"
@@ -708,6 +724,10 @@ return plural;
  "Jobs": [
   null,
   "Zadania"
+ ],
+ "Key can't be retrieved": [
+  null,
+  "Nie można pobrać klucza"
  ],
  "Key does not work": [
   null,
@@ -776,6 +796,10 @@ return plural;
  "Metadata Used": [
   null,
   "Użyte metadane"
+ ],
+ "Method": [
+  null,
+  "Metoda"
  ],
  "Modifying $target": [
   null,
@@ -1205,6 +1229,10 @@ return plural;
   null,
   "Zmienianie rozmiaru $target"
  ],
+ "Retrieving the key from $0 has failed: $1.": [
+  null,
+  "Pobranie klucza z $0 się nie powiodło: $1."
+ ],
  "Running": [
   null,
   "Działające"
@@ -1224,6 +1252,10 @@ return plural;
  "Server Address": [
   null,
   "Adres serwera"
+ ],
+ "Server address cannot be empty": [
+  null,
+  "Adres serwera nie może być pusty"
  ],
  "Server address cannot be empty.": [
   null,
@@ -1409,6 +1441,10 @@ return plural;
   null,
   "Wyjście powinno pasować do tego tekstu:"
  ],
+ "The server has returned a key that doesn't work.": [
+  null,
+  "Serwer zwrócił klucz, który nie działa."
+ ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   "Użytkownik <b>$0</b> nie ma zezwolenia na zarządzanie urządzeniami do przechowywania danych"
@@ -1432,6 +1468,10 @@ return plural;
  "This VDO device does not use all of its backing device.": [
   null,
   "To urządzenie VDO nie używa całości swojego urządzenia podstawowego."
+ ],
+ "This box must be checked to confirm that the key will be transported without HTTPS": [
+  null,
+  "To pole musi być zaznaczone, aby potwierdzić, że klucz będzie przesyłany bez HTTPS"
  ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
@@ -1461,9 +1501,9 @@ return plural;
   null,
   "Ten dysk nie może zostać usunięty podczas przywracania urządzenia."
  ],
- "This network key is not recognized anymore by the server. You might want to remove it.": [
+ "This network key is not recognized anymore by the server.": [
   null,
-  "Ten klucz sieciowy nie jest już rozpoznawany przez serwer. Zaleca się go usunąć."
+  "Ten klucz sieciowy nie jest już rozpoznawany przez serwer."
  ],
  "This network key is obsolete. It is still functional but it should be replaced. A new key has been retrieved from the server.": [
   null,
@@ -1492,6 +1532,18 @@ return plural;
  "Type": [
   null,
   "Typ"
+ ],
+ "URL": [
+  null,
+  "Adres URL"
+ ],
+ "URL cannot be empty": [
+  null,
+  "Adres URL nie może być pusty"
+ ],
+ "URL must start with either \"http:\" or \"https:\"": [
+  null,
+  "Adres URL musi zaczynać się od „http:” lub „https:”"
  ],
  "UUID": [
   null,
@@ -1640,6 +1692,10 @@ return plural;
  "XFS - Red Hat Enterprise Linux 7 default": [
   null,
   "XFS — domyślne w systemie Red Hat Enterprise Linux 7"
+ ],
+ "You might want to remove it.": [
+  null,
+  "Prawdopodobnie lepiej to usunąć."
  ],
  "[$0 bytes of binary data]": [
   null,

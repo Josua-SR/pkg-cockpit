@@ -67,6 +67,14 @@ return plural;
   "language": "fi",
   "x-generator": "Zanata 3.9.6"
  },
+ "\"http\" Key escrow": [
+  null,
+  ""
+ ],
+ "\"tang\" Binding server": [
+  null,
+  ""
+ ],
  "$0 Block Device": [
   null,
   "$0 Lohkolaite"
@@ -164,7 +172,7 @@ return plural;
  ],
  "--": [
   null,
-  ""
+  "--"
  ],
  "1 MiB": [
   null,
@@ -240,7 +248,7 @@ return plural;
  ],
  "Active since": [
   null,
-  ""
+  "Aktiivinen lähtien"
  ],
  "Add": [
   null,
@@ -248,7 +256,7 @@ return plural;
  ],
  "Add Disks": [
   null,
-  "Lisää Levyjä"
+  "Lisää levyjä"
  ],
  "Add iSCSI Portal": [
   null,
@@ -256,7 +264,7 @@ return plural;
  ],
  "Add network key": [
   null,
-  ""
+  "Lisää verkkoavain"
  ],
  "Adding physical volume to $target": [
   null,
@@ -265,6 +273,10 @@ return plural;
  "Address": [
   null,
   "Osoite"
+ ],
+ "Allow \"http://\" URL": [
+  null,
+  "Salli \"http://\"-osoite"
  ],
  "Apply": [
   null,
@@ -316,19 +328,19 @@ return plural;
  ],
  "Change iSCSI Initiator Name": [
   null,
-  "Vaihda iSCSI-Asiakaslaitteen Nimi"
+  "Vaihda iSCSI-asiakaslaitteen nimi"
  ],
  "Checking $target": [
   null,
-  ""
+  "Tarkistetaan $target"
  ],
  "Checking RAID Device $target": [
   null,
-  "Tarkistetaan RAID-Laite $target"
+  "Tarkistetaan RAID-laite $target"
  ],
  "Checking and Repairing RAID Device $target": [
   null,
-  "Tarkistetaan ja Korjataan RAID-Laite $target"
+  "Tarkistetaan ja korjataan RAID-laite $target"
  ],
  "Chunk Size": [
   null,
@@ -368,35 +380,35 @@ return plural;
  ],
  "Create Logical Volume": [
   null,
-  "Luo Looginen Taltio"
+  "Luo looginen taltio"
  ],
  "Create Partition": [
   null,
-  "Luo Osio"
+  "Luo osio"
  ],
  "Create RAID Device": [
   null,
-  "Luo RAID-Laite"
+  "Luo RAID-laite"
  ],
  "Create Snapshot": [
   null,
-  "Luo Tilannevedos"
+  "Luo tilannevedos"
  ],
  "Create Thin Volume": [
   null,
-  "Luo Thin-Taltio"
+  "Luo Thin-taltio"
  ],
  "Create VDO Device": [
   null,
-  ""
+  "Luo VDO-laite"
  ],
  "Create Volume Group": [
   null,
-  "Luo Taltioryhmä"
+  "Luo taltioryhmä"
  ],
  "Create new Logical Volume": [
   null,
-  "Luo uusi Looginen Taltio"
+  "Luo uusi looginen taltio"
  ],
  "Create partition": [
   null,
@@ -412,7 +424,7 @@ return plural;
  ],
  "Creating RAID Device $target": [
   null,
-  "Luodaan RAID-Laite $target"
+  "Luodaan RAID-laite $target"
  ],
  "Creating filesystem on $target": [
   null,
@@ -448,7 +460,7 @@ return plural;
  ],
  "Custom mount option": [
   null,
-  ""
+  "Mukautettu liitosvalinta"
  ],
  "Custom mount options": [
   null,
@@ -460,7 +472,7 @@ return plural;
  ],
  "Data Used": [
   null,
-  "Dataa Käytetty"
+  "Dataa käytetty"
  ],
  "Deactivate": [
   null,
@@ -492,7 +504,7 @@ return plural;
  ],
  "Deleting a VDO device will erase all data on it.": [
   null,
-  ""
+  "VDO-laitteen poistaminen tuhoaa kaiken sillä olevan datan."
  ],
  "Deleting a logical volume will delete all data in it.": [
   null,
@@ -512,7 +524,7 @@ return plural;
  ],
  "Device File": [
   null,
-  ""
+  "Laitetiedosto"
  ],
  "Device is read-only": [
   null,
@@ -532,7 +544,7 @@ return plural;
  ],
  "Don't overwrite existing data": [
   null,
-  "Älä ylikirjoita olemassaolevaa dataa"
+  "Älä ylikirjoita olemassa olevaa dataa"
  ],
  "Drive": [
   null,
@@ -564,11 +576,11 @@ return plural;
  ],
  "Encrypted Logical Volume of $0": [
   null,
-  "Salattu Looginen Taltio $0"
+  "Salattu looginen taltio $0"
  ],
  "Encrypted Partition of $0": [
   null,
-  "Salattu Osio $0"
+  "Salattu osio $0"
  ],
  "Encrypted XFS (LUKS)": [
   null,
@@ -576,11 +588,11 @@ return plural;
  ],
  "Encrypted volumes can not be resized here.": [
   null,
-  ""
+  "Salattujen taltioiden kokoa ei voi muuttaa täällä."
  ],
  "Encrypted volumes need to be unlocked before they can be resized.": [
   null,
-  ""
+  "Salattujen taltioiden salaus tulee olla avattu, ennen kuin niiden kokoa voidaan muuttaa."
  ],
  "Encryption": [
   null,
@@ -588,7 +600,7 @@ return plural;
  ],
  "Encryption Options": [
   null,
-  "Salauksen Valinnat"
+  "Salauksen valinnat"
  ],
  "Erase": [
   null,
@@ -604,11 +616,11 @@ return plural;
  ],
  "Existing passphrase": [
   null,
-  ""
+  "Olemassa oleva tunnuslause"
  ],
  "Extended Partition": [
   null,
-  "Laajennettu Osio"
+  "Laajennettu osio"
  ],
  "FAILED": [
   null,
@@ -620,11 +632,11 @@ return plural;
  ],
  "Filesystem Mounting": [
   null,
-  "Tiedostojärjestelmän Liittäminen"
+  "Tiedostojärjestelmän liittäminen"
  ],
  "Filesystem Name": [
   null,
-  "Tiedostojärjestelmän Nimi"
+  "Tiedostojärjestelmän nimi"
  ],
  "Filesystem type": [
   null,
@@ -644,7 +656,7 @@ return plural;
  ],
  "Format Disk $0": [
   null,
-  "Alusta Levy $0"
+  "Alusta levy $0"
  ],
  "Formatting a disk will erase all data on it.": [
   null,
@@ -660,7 +672,7 @@ return plural;
  ],
  "Free Space": [
   null,
-  "Vapaa Tila"
+  "Vapaa tila"
  ],
  "Go to now": [
   null,
@@ -672,7 +684,7 @@ return plural;
  ],
  "Grow Logical Volume": [
   null,
-  ""
+  "Kasvata loogista taltiota"
  ],
  "Grow logical size of $0": [
   null,
@@ -681,6 +693,10 @@ return plural;
  "Grow to take all space": [
   null,
   ""
+ ],
+ "HTTP method": [
+  null,
+  "HTTP-tapa"
  ],
  "In Sync": [
   null,
@@ -702,9 +718,13 @@ return plural;
   null,
   "Työt"
  ],
- "Key does not work": [
+ "Key can't be retrieved": [
   null,
   ""
+ ],
+ "Key does not work": [
+  null,
+  "Avain ei toimi"
  ],
  "Key is obsolete": [
   null,
@@ -712,11 +732,11 @@ return plural;
  ],
  "Key is okay": [
   null,
-  ""
+  "Avain on OK"
  ],
  "Key server address": [
   null,
-  ""
+  "Avainpalvelimen osoite"
  ],
  "Local Mount Point": [
   null,
@@ -736,7 +756,7 @@ return plural;
  ],
  "Logical Size": [
   null,
-  "Looginen Koko"
+  "Looginen koko"
  ],
  "Logical Volume": [
   null,
@@ -744,7 +764,7 @@ return plural;
  ],
  "Logical Volume (Snapshot)": [
   null,
-  ""
+  "Looginen taltio (tilannevedos)"
  ],
  "Logical Volume of $0": [
   null,
@@ -752,7 +772,7 @@ return plural;
  ],
  "Manually verify the key on the server: ": [
   null,
-  ""
+  "Vahvista palvelimen avain manuaalisesti:"
  ],
  "Marking $target as faulty": [
   null,
@@ -769,6 +789,10 @@ return plural;
  "Metadata Used": [
   null,
   ""
+ ],
+ "Method": [
+  null,
+  "Tapa"
  ],
  "Modifying $target": [
   null,
@@ -816,7 +840,7 @@ return plural;
  ],
  "Mounting": [
   null,
-  ""
+  "Liitetään"
  ],
  "Mounting $target": [
   null,
@@ -840,7 +864,7 @@ return plural;
  ],
  "Name can not be empty.": [
   null,
-  ""
+  "Nimi ei voi olla tyhjä."
  ],
  "Name cannot be empty.": [
   null,
@@ -860,7 +884,7 @@ return plural;
  ],
  "Network keys": [
   null,
-  ""
+  "Verkkoavaimet"
  ],
  "New NFS Mount": [
   null,
@@ -876,7 +900,7 @@ return plural;
  ],
  "No Logical Volumes": [
   null,
-  ""
+  "Ei loogisia taltioita"
  ],
  "No NFS mounts set up": [
   null,
@@ -884,7 +908,7 @@ return plural;
  ],
  "No disks are available.": [
   null,
-  ""
+  "Levyjä ei ole saatavilla."
  ],
  "No drives attached": [
   null,
@@ -916,7 +940,7 @@ return plural;
  ],
  "No volume groups created": [
   null,
-  ""
+  "Taltioryhmiä ei ole luotu"
  ],
  "Not found": [
   null,
@@ -924,15 +948,15 @@ return plural;
  ],
  "Not mounted": [
   null,
-  ""
+  "Ei liitetty"
  ],
  "Not running": [
   null,
-  ""
+  "Ei käynnissä"
  ],
  "Off": [
   null,
-  ""
+  "Pois"
  ],
  "Ok": [
   null,
@@ -940,7 +964,7 @@ return plural;
  ],
  "On": [
   null,
-  ""
+  "Päällä"
  ],
  "Only $0 of $1 are used.": [
   null,
@@ -964,7 +988,7 @@ return plural;
  ],
  "Partition": [
   null,
-  ""
+  "Osio"
  ],
  "Partition of $0": [
   null,
@@ -976,15 +1000,15 @@ return plural;
  ],
  "Passphrase": [
   null,
-  ""
+  "Tunnuslause"
  ],
  "Passphrase cannot be empty": [
   null,
-  ""
+  "Tunnuslause ei voi olla tyhjä"
  ],
  "Passphrases do not match": [
   null,
-  ""
+  "Tunnuslauseet eivät täsmää"
  ],
  "Password": [
   null,
@@ -1004,15 +1028,15 @@ return plural;
  ],
  "Physical": [
   null,
-  ""
+  "Fyysinen"
  ],
  "Physical Volume": [
   null,
-  ""
+  "Fyysinen taltio"
  ],
  "Physical Volumes": [
   null,
-  ""
+  "Fyysiset taltiot"
  ],
  "Physical volume of $0": [
   null,
@@ -1024,15 +1048,15 @@ return plural;
  ],
  "Please confirm deletion of $0": [
   null,
-  ""
+  "Vahvista kohteen $0 poistaminen"
  ],
  "Please confirm network key removal": [
   null,
-  ""
+  "Vahvista verkkoavaimen poistaminen"
  ],
  "Please confirm stopping of $0": [
   null,
-  ""
+  "Vahvista kohteen $0 pysäyttäminen"
  ],
  "Pool": [
   null,
@@ -1140,7 +1164,7 @@ return plural;
  ],
  "Reboot": [
   null,
-  ""
+  "Käynnistä uudelleen"
  ],
  "Recovering": [
   null,
@@ -1156,11 +1180,11 @@ return plural;
  ],
  "Remove device": [
   null,
-  ""
+  "Poista laite"
  ],
  "Remove key": [
   null,
-  ""
+  "Poista avain"
  ],
  "Removing $target from RAID Device": [
   null,
@@ -1180,7 +1204,7 @@ return plural;
  ],
  "Rename Logical Volume": [
   null,
-  ""
+  "Nimeä uudelleen looginen taltio"
  ],
  "Rename Volume Group": [
   null,
@@ -1192,9 +1216,13 @@ return plural;
  ],
  "Repairing $target": [
   null,
-  ""
+  "Korjataan $target"
  ],
  "Resizing $target": [
+  null,
+  ""
+ ],
+ "Retrieving the key from $0 has failed: $1.": [
   null,
   ""
  ],
@@ -1216,7 +1244,11 @@ return plural;
  ],
  "Server Address": [
   null,
-  "Palvelimen  osoite"
+  "Palvelimen osoite"
+ ],
+ "Server address cannot be empty": [
+  null,
+  "Palvelimen osoite ei voi olla tyhjä"
  ],
  "Server address cannot be empty.": [
   null,
@@ -1224,7 +1256,7 @@ return plural;
  ],
  "Server can't be reached": [
   null,
-  ""
+  "Palvelinta ei voi tavoittaa"
  ],
  "Server cannot be empty.": [
   null,
@@ -1272,7 +1304,7 @@ return plural;
  ],
  "Size must be at least $0": [
   null,
-  ""
+  "Koon tulee olla vähintään $0"
  ],
  "Spare": [
   null,
@@ -1300,7 +1332,7 @@ return plural;
  ],
  "Stop Device": [
   null,
-  ""
+  "Pysäytä laite"
  ],
  "Stop and Unmount": [
   null,
@@ -1324,7 +1356,7 @@ return plural;
  ],
  "Storage Logs": [
   null,
-  ""
+  "Tallennustilan lokit"
  ],
  "Store passphrase": [
   null,
@@ -1402,9 +1434,13 @@ return plural;
   null,
   ""
  ],
+ "The server has returned a key that doesn't work.": [
+  null,
+  "Palvelin palautti avaimen, joka ei toimi."
+ ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
-  ""
+  "Käyttäjällä  <b>$0</b> ei ole oikeutta hallita tallennustilaa"
  ],
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
   null,
@@ -1420,9 +1456,13 @@ return plural;
  ],
  "This NFS mount is in use and only its options can be changed.": [
   null,
-  ""
+  "Tämä NFS-liitos on käytössä ja vain sen valintoja on mahdollista muokata."
  ],
  "This VDO device does not use all of its backing device.": [
+  null,
+  ""
+ ],
+ "This box must be checked to confirm that the key will be transported without HTTPS": [
   null,
   ""
  ],
@@ -1432,7 +1472,7 @@ return plural;
  ],
  "This device is currently used for RAID devices.": [
   null,
-  ""
+  "Tätä laitetta käytetään parhaillaan RAID-laitteille."
  ],
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
   null,
@@ -1440,11 +1480,11 @@ return plural;
  ],
  "This device is currently used for VDO devices.": [
   null,
-  ""
+  "Tätä laitetta käytetään parhaillaan VDO-laitteille."
  ],
  "This device is currently used for volume groups.": [
   null,
-  ""
+  "Tätä laitetta käytetään parhaillaan taltioryhmille."
  ],
  "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
   null,
@@ -1454,7 +1494,7 @@ return plural;
   null,
   ""
  ],
- "This network key is not recognized anymore by the server. You might want to remove it.": [
+ "This network key is not recognized anymore by the server.": [
   null,
   ""
  ],
@@ -1472,7 +1512,7 @@ return plural;
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
-  ""
+  "Tämä taltio tulee aktivoida, ennen kuin sen kokoa voi muuttaa."
  ],
  "Trust Key": [
   null,
@@ -1486,13 +1526,25 @@ return plural;
   null,
   "Tyyppi"
  ],
+ "URL": [
+  null,
+  "URL"
+ ],
+ "URL cannot be empty": [
+  null,
+  "URL ei voi olla tyhjä"
+ ],
+ "URL must start with either \"http:\" or \"https:\"": [
+  null,
+  ""
+ ],
  "UUID": [
   null,
   "UUID"
  ],
  "Unable to reach server": [
   null,
-  "Serveriin ei saada yhteyttä"
+  "Palvelimeen ei saada yhteyttä"
  ],
  "Unable to remove mount": [
   null,
@@ -1504,7 +1556,7 @@ return plural;
  ],
  "Unit": [
   null,
-  ""
+  "Yksikkö"
  ],
  "Unknown": [
   null,
@@ -1524,7 +1576,7 @@ return plural;
  ],
  "Unlock at boot": [
   null,
-  ""
+  "Avaa käynnistyksen yhteydessä"
  ],
  "Unlock read only": [
   null,
@@ -1564,7 +1616,7 @@ return plural;
  ],
  "Use new key": [
   null,
-  ""
+  "Käytä uutta avainta"
  ],
  "Used": [
   null,
@@ -1580,15 +1632,15 @@ return plural;
  ],
  "VDO Device": [
   null,
-  ""
+  "VDO-laite"
  ],
  "VDO Device $0": [
   null,
-  ""
+  "VDO-laite $0"
  ],
  "VDO Devices": [
   null,
-  ""
+  "VDO-laitteet"
  ],
  "VDO backing devices can not be made smaller": [
   null,
@@ -1600,7 +1652,7 @@ return plural;
  ],
  "Verify Key": [
   null,
-  ""
+  "Vahvista avain"
  ],
  "Very securely erasing $target": [
   null,
@@ -1620,7 +1672,7 @@ return plural;
  ],
  "Volume Groups": [
   null,
-  ""
+  "Taltioryhmät"
  ],
  "Write-mostly": [
   null,
@@ -1633,6 +1685,10 @@ return plural;
  "XFS - Red Hat Enterprise Linux 7 default": [
   null,
   "XFS - Red Hat Enterprise Linux 7 default"
+ ],
+ "You might want to remove it.": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,
@@ -1652,7 +1708,7 @@ return plural;
  ],
  "iSCSI Targets": [
   null,
-  "iSCSI Kohteet"
+  "iSCSI-kohteet"
  ],
  "undefined": [
   null,
@@ -1696,7 +1752,7 @@ return plural;
  ],
  "storage\u0004Hard Disk": [
   null,
-  "Kovalevy"
+  "Kiintolevy"
  ],
  "storage\u0004Optical Drive": [
   null,

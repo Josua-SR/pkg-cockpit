@@ -175,6 +175,14 @@ return plural;
   null,
   "Dodaj Bridge"
  ],
+ "Add Services": [
+  null,
+  ""
+ ],
+ "Add Services…": [
+  null,
+  ""
+ ],
  "Add Team": [
   null,
   ""
@@ -206,6 +214,10 @@ return plural;
  "Addresses": [
   null,
   "Adresa"
+ ],
+ "Allowed Services": [
+  null,
+  ""
  ],
  "Apply": [
   null,
@@ -359,6 +371,10 @@ return plural;
   null,
   ""
  ],
+ "Details": [
+  null,
+  ""
+ ],
  "Disabled": [
   null,
   "Onemogućen"
@@ -378,6 +394,18 @@ return plural;
  "Failed": [
   null,
   "Neuspjelo"
+ ],
+ "Filter Services": [
+  null,
+  ""
+ ],
+ "Firewall": [
+  null,
+  ""
+ ],
+ "Firewall is not available": [
+  null,
+  ""
  ],
  "Forward delay $forward_delay": [
   null,
@@ -559,6 +587,10 @@ return plural;
   null,
   ""
  ],
+ "No open ports": [
+  null,
+  ""
+ ],
  "Not available": [
   null,
   "Nije dostupno"
@@ -608,6 +640,10 @@ return plural;
   ""
  ],
  "Ping Target": [
+  null,
+  ""
+ ],
+ "Please install the {0} package": [
   null,
   ""
  ],
@@ -699,6 +735,10 @@ return plural;
   null,
   "Slanje"
  ],
+ "Service": [
+  null,
+  ""
+ ],
  "Set to": [
   null,
   ""
@@ -747,6 +787,10 @@ return plural;
   null,
   ""
  ],
+ "TCP": [
+  null,
+  "TCP"
+ ],
  "Team": [
   null,
   ""
@@ -774,6 +818,10 @@ return plural;
  "This device cannot be managed here.": [
   null,
   ""
+ ],
+ "UDP": [
+  null,
+  "UDP"
  ],
  "Unexpected error": [
   null,
@@ -818,6 +866,10 @@ return plural;
  "Yes": [
   null,
   "Da"
+ ],
+ "You are not authorized to modify the firewall.": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

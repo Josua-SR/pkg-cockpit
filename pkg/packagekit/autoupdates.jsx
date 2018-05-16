@@ -59,7 +59,7 @@ class ImplBase {
 
 class DnfImpl extends ImplBase {
     getConfig() {
-        var dfd = new cockpit.defer();
+        let dfd = cockpit.defer();
 
         // - dnf has two ways to enable automatic updates: Either by enabling dnf-automatic-install.timer
         //   or by setting "apply_updates = yes" in the config file and enabling dnf-automatic.timer
@@ -133,7 +133,6 @@ class DnfImpl extends ImplBase {
             // if it's not already present, append it to the file
             script += "sed -i '/\\bupgrade_type\\b[ \\t]*=/ { h; s/^.*$/upgrade_type = " + value + "/ }; " +
                       "$ { x; /^$/ { s//upgrade_type = " + value + "/; H }; x }' /etc/dnf/automatic.conf; ";
-
         }
 
         // if we enable through Cockpit, make sure that starting the timer doesn't start the .service right away,
@@ -179,7 +178,7 @@ class DnfImpl extends ImplBase {
 
         debug(`setConfig(${enabled}, "${type}", "${day}", "${time}"): script "${script}"`);
 
-        let dfd = new cockpit.defer();
+        let dfd = cockpit.defer();
         cockpit.script(script, [], { superuser: "require" })
                 .done(() => {
                     debug("dnf setConfig: configuration updated successfully");
@@ -207,7 +206,7 @@ class DnfImpl extends ImplBase {
 function getBackend() {
     if (!getBackend.promise) {
         debug("getBackend() called first time, initializing promise")
-        let dfd = new cockpit.defer();
+        let dfd = cockpit.defer();
         getBackend.promise = dfd.promise();
 
         // TODO: only check for dnf/yum/apt and install the "automatic" packages dynamically
