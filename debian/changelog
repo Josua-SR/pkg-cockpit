@@ -1,9 +1,9 @@
-cockpit (168-1) UNRELEASED; urgency=medium
+cockpit (168-1) unstable; urgency=medium
 
   * New upstream release:
     - Improve checks for root privilege availability
 
- -- Martin Pitt <mpitt@debian.org>  Wed, 16 May 2018 10:13:28 +0000
+ -- Martin Pitt <mpitt@debian.org>  Wed, 16 May 2018 10:14:12 +0000
 
 cockpit (167-1) unstable; urgency=medium
 
