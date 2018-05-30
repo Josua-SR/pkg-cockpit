@@ -233,6 +233,10 @@ input[type=number] {
 .dialog-ct-visible {
     display: block;
 }
+#cockpit_modal_dialog .modal-body {
+    max-height: calc(75vh - 10rem);
+    overflow: auto;
+}
 .ovirt-provider-overview-icon {
     max-width: 100%;
     max-height: 100%;
@@ -876,13 +880,17 @@ table.delete-dialog-disks.table tbody tr td:nth-child(3) {
     line-height: normal;
 }
 
+.xterm {
+    cursor: text;
+}
+
 .xterm.enable-mouse-events {
     /* When mouse events are enabled (eg. tmux), revert to the standard pointer cursor */
     cursor: default;
 }
 
-.xterm:not(.enable-mouse-events) {
-    cursor: text;
+.xterm.xterm-cursor-pointer {
+    cursor: pointer;
 }
 
 .xterm .xterm-accessibility,
@@ -902,10 +910,6 @@ table.delete-dialog-disks.table tbody tr td:nth-child(3) {
     width: 1px;
     height: 1px;
     overflow: hidden;
-}
-
-.xterm-cursor-pointer {
-    cursor: pointer;
 }
 a {
   cursor: pointer;

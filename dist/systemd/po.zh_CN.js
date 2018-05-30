@@ -64,8 +64,8 @@ var nplurals, plural;
 nplurals=1; plural=0;
 return plural;
 },
-  "language": "zh-CN",
-  "x-generator": "Zanata 3.9.6"
+  "language": "zh_CN",
+  "x-generator": "Zanata 4.4.5"
  },
  "$0 Template": [
   null,
@@ -327,11 +327,23 @@ return plural;
   null,
   ""
  ],
+ "Before": [
+  null,
+  ""
+ ],
+ "Binds To": [
+  null,
+  ""
+ ],
  "Blade": [
   null,
   ""
  ],
  "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bound By": [
   null,
   ""
  ],
@@ -402,6 +414,18 @@ return plural;
  "Condition failed": [
   null,
   "条件失败"
+ ],
+ "Conflicted By": [
+  null,
+  ""
+ ],
+ "Conflicts": [
+  null,
+  ""
+ ],
+ "Consists Of": [
+  null,
+  ""
  ],
  "Convertible": [
   null,
@@ -599,6 +623,10 @@ return plural;
   null,
   ""
  ],
+ "Joins Namespace Of": [
+  null,
+  ""
+ ],
  "Journal": [
   null,
   "日志"
@@ -775,6 +803,10 @@ return plural;
   null,
   "开"
  ],
+ "On Failure": [
+  null,
+  "失败时"
+ ],
  "Only Emergency": [
   null,
   ""
@@ -798,6 +830,10 @@ return plural;
  "PackageKit crashed": [
   null,
   "PackageKit 已崩溃"
+ ],
+ "Part Of": [
+  null,
+  ""
  ],
  "Paths": [
   null,
@@ -843,6 +879,10 @@ return plural;
   null,
   ""
  ],
+ "Propagates Reload To": [
+  null,
+  ""
+ ],
  "RAID Chassis": [
   null,
   ""
@@ -874,6 +914,10 @@ return plural;
  "Reload": [
   null,
   "重载"
+ ],
+ "Reload Propagated From": [
+  null,
+  ""
  ],
  "Repeat Daily": [
   null,
@@ -910,6 +954,22 @@ return plural;
  "Reporting was unsucessful. Try running `reporter-ureport -d ": [
   null,
   "报告未执行成功。尝试运行`reporter-ureport -d "
+ ],
+ "Required By": [
+  null,
+  ""
+ ],
+ "Requires": [
+  null,
+  ""
+ ],
+ "Requisite": [
+  null,
+  ""
+ ],
+ "Requisite Of": [
+  null,
+  ""
  ],
  "Reset": [
   null,
@@ -1127,6 +1187,14 @@ return plural;
   null,
   ""
  ],
+ "Triggered By": [
+  null,
+  ""
+ ],
+ "Triggers": [
+  null,
+  "触发器"
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   "正在尝试与 {{Server}} 同步"
@@ -1170,6 +1238,14 @@ return plural;
  "Version": [
   null,
   "版本"
+ ],
+ "Wanted By": [
+  null,
+  ""
+ ],
+ "Wants": [
+  null,
+  ""
  ],
  "Warning and above": [
   null,

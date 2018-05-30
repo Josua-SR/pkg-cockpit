@@ -61,8 +61,11 @@
       The key may not be encrypted.</p>
 <p>If there is no TLS certificate, a self-signed certificate is
       automatically generated using <span class="command"><strong>openssl</strong></span> and stored in
-      the <code class="filename">0-self-signed.cert</code> file. To check which certificate
-      <span class="command"><strong>cockpit-ws</strong></span> will use run the following command.</p>
+      the <code class="filename">0-self-signed.cert</code> file.</p>
+<p>When enrolling into a FreeIPA domain, an SSL certificate is requested from
+      the IPA server and stored in <code class="filename">10-ipa.cert</code>.</p>
+<p>To check which certificate <span class="command"><strong>cockpit-ws</strong></span> will use,
+      run the following command.</p>
 <pre class="programlisting">
 $ sudo remotectl certificate
 </pre>

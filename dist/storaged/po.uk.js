@@ -65,7 +65,7 @@ nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 |
 return plural;
 },
   "language": "uk",
-  "x-generator": "Zanata 3.9.6"
+  "x-generator": "Zanata 4.4.5"
  },
  "\"http\" Key escrow": [
   null,
@@ -125,6 +125,10 @@ return plural;
   null,
   "$0 активно використовується"
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
  "$0 minute": [
   "$0 minutes",
   "$0 хвилина",
@@ -150,6 +154,10 @@ return plural;
   "$0 тиждень",
   "$0 тижні",
   "$0 тижнів"
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
  ],
  "$0 year": [
   "$0 years",
@@ -277,6 +285,10 @@ return plural;
   null,
   "Додаємо фізичний том до $target"
  ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Address": [
   null,
   "Адреса"
@@ -348,6 +360,10 @@ return plural;
  "Checking and Repairing RAID Device $target": [
   null,
   "Перевіряємо і відновлюємо пристрій RAID $target"
+ ],
+ "Checking installed software": [
+  null,
+  ""
  ],
  "Chunk Size": [
   null,
@@ -553,6 +569,10 @@ return plural;
   null,
   "Не перезаписувати наявні дані"
  ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
  "Drive": [
   null,
   "Диск"
@@ -717,6 +737,22 @@ return plural;
   null,
   "Пам'ять покажчика"
  ],
+ "Install": [
+  null,
+  "Встановити"
+ ],
+ "Install NFS Support": [
+  null,
+  ""
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
+  null,
+  ""
+ ],
  "Invalid username or password": [
   null,
   "Некоректне ім’я користувача чи пароль"
@@ -861,6 +897,10 @@ return plural;
   null,
   "Монтування NFS"
  ],
+ "NFS Support not installed": [
+  null,
+  ""
+ ],
  "NTFS - Compatible with most systems": [
   null,
   "NTFS - Сумісна з більшістю систем"
@@ -992,6 +1032,10 @@ return plural;
  "Overwrite existing data with zeros": [
   null,
   "Перезаписати наявні дані нулями"
+ ],
+ "PackageKit crashed": [
+  null,
+  "Аварійне завершення роботи PackageKit"
  ],
  "Partition": [
   null,
@@ -1181,6 +1225,10 @@ return plural;
   null,
   "Відновлюємо пристрій RAID $target"
  ],
+ "Removals:": [
+  null,
+  ""
+ ],
  "Remove": [
   null,
   "Вилучити"
@@ -1192,6 +1240,10 @@ return plural;
  "Remove key": [
   null,
   "Вилучити ключ"
+ ],
+ "Removing $0": [
+  null,
+  ""
  ],
  "Removing $target from RAID Device": [
   null,
@@ -1377,6 +1429,10 @@ return plural;
   null,
   "Збережений пароль"
  ],
+ "Support is installed.": [
+  null,
+  ""
+ ],
  "Swap": [
   null,
   "Свопінґ"
@@ -1520,6 +1576,10 @@ return plural;
  "This volume needs to be activated before it can be resized.": [
   null,
   "Перш ніж розмір цього тому можна буде змінювати, його слід активувати."
+ ],
+ "Total size: $0": [
+  null,
+  ""
  ],
  "Trust Key": [
   null,
@@ -1680,6 +1740,10 @@ return plural;
  "Volume Groups": [
   null,
   "Групи томів"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "Write-mostly": [
   null,

@@ -65,7 +65,7 @@ nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;
 return plural;
 },
   "language": "cs",
-  "x-generator": "Zanata 3.9.6"
+  "x-generator": "Zanata 4.4.5"
  },
  "\"http\" Key escrow": [
   null,
@@ -125,6 +125,10 @@ return plural;
   null,
   "$0 je právě používán"
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
  "$0 minute": [
   "$0 minutes",
   "$0 minuta",
@@ -150,6 +154,10 @@ return plural;
   "$0 týden",
   "$0 týdny",
   "$0 týdnů"
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
  ],
  "$0 year": [
   "$0 years",
@@ -277,6 +285,10 @@ return plural;
   null,
   "Přidávám fyzický svazek do $target"
  ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Address": [
   null,
   "Adresa"
@@ -348,6 +360,10 @@ return plural;
  "Checking and Repairing RAID Device $target": [
   null,
   "Ověřuji o opravuji zařízení RAID $target"
+ ],
+ "Checking installed software": [
+  null,
+  ""
  ],
  "Chunk Size": [
   null,
@@ -553,6 +569,10 @@ return plural;
   null,
   ""
  ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
  "Drive": [
   null,
   "Mechanika"
@@ -717,6 +737,22 @@ return plural;
   null,
   ""
  ],
+ "Install": [
+  null,
+  "Instalovat"
+ ],
+ "Install NFS Support": [
+  null,
+  ""
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
+  null,
+  ""
+ ],
  "Invalid username or password": [
   null,
   ""
@@ -861,6 +897,10 @@ return plural;
   null,
   ""
  ],
+ "NFS Support not installed": [
+  null,
+  ""
+ ],
  "NTFS - Compatible with most systems": [
   null,
   ""
@@ -990,6 +1030,10 @@ return plural;
   ""
  ],
  "Overwrite existing data with zeros": [
+  null,
+  ""
+ ],
+ "PackageKit crashed": [
   null,
   ""
  ],
@@ -1181,6 +1225,10 @@ return plural;
   null,
   ""
  ],
+ "Removals:": [
+  null,
+  ""
+ ],
  "Remove": [
   null,
   "Odstranit"
@@ -1190,6 +1238,10 @@ return plural;
   ""
  ],
  "Remove key": [
+  null,
+  ""
+ ],
+ "Removing $0": [
   null,
   ""
  ],
@@ -1377,6 +1429,10 @@ return plural;
   null,
   ""
  ],
+ "Support is installed.": [
+  null,
+  ""
+ ],
  "Swap": [
   null,
   "Odkládací oddíl"
@@ -1518,6 +1574,10 @@ return plural;
   ""
  ],
  "This volume needs to be activated before it can be resized.": [
+  null,
+  ""
+ ],
+ "Total size: $0": [
   null,
   ""
  ],
@@ -1678,6 +1738,10 @@ return plural;
   ""
  ],
  "Volume Groups": [
+  null,
+  ""
+ ],
+ "Waiting for other software management operations to finish": [
   null,
   ""
  ],

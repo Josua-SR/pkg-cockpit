@@ -65,7 +65,7 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "ja",
-  "x-generator": "Zanata 3.9.6"
+  "x-generator": "Zanata 4.4.5"
  },
  "$0 Template": [
   null,
@@ -327,6 +327,14 @@ return plural;
   null,
   "BIOS のバージョン"
  ],
+ "Before": [
+  null,
+  ""
+ ],
+ "Binds To": [
+  null,
+  ""
+ ],
  "Blade": [
   null,
   "ブレード"
@@ -334,6 +342,10 @@ return plural;
  "Blade enclosure": [
   null,
   "ブレードエンクロージャー"
+ ],
+ "Bound By": [
+  null,
+  ""
  ],
  "Bug Fix Updates Available": [
   null,
@@ -402,6 +414,18 @@ return plural;
  "Condition failed": [
   null,
   "条件が満たされませんでした。"
+ ],
+ "Conflicted By": [
+  null,
+  ""
+ ],
+ "Conflicts": [
+  null,
+  ""
+ ],
+ "Consists Of": [
+  null,
+  ""
  ],
  "Convertible": [
   null,
@@ -599,6 +623,10 @@ return plural;
   null,
   "IoT ゲートウェイ"
  ],
+ "Joins Namespace Of": [
+  null,
+  ""
+ ],
  "Journal": [
   null,
   "ジャーナル"
@@ -775,6 +803,10 @@ return plural;
   null,
   "オン"
  ],
+ "On Failure": [
+  null,
+  "障害発生時"
+ ],
  "Only Emergency": [
   null,
   ""
@@ -798,6 +830,10 @@ return plural;
  "PackageKit crashed": [
   null,
   "PackageKit がクラッシュしました"
+ ],
+ "Part Of": [
+  null,
+  ""
  ],
  "Paths": [
   null,
@@ -843,6 +879,10 @@ return plural;
   null,
   "問題の情報"
  ],
+ "Propagates Reload To": [
+  null,
+  ""
+ ],
  "RAID Chassis": [
   null,
   "RAID シャーシ"
@@ -874,6 +914,10 @@ return plural;
  "Reload": [
   null,
   "再読み込み"
+ ],
+ "Reload Propagated From": [
+  null,
+  ""
  ],
  "Repeat Daily": [
   null,
@@ -910,6 +954,22 @@ return plural;
  "Reporting was unsucessful. Try running `reporter-ureport -d ": [
   null,
   "レポートは成功しませんでした。次を試してください: `reporter-ureport -d"
+ ],
+ "Required By": [
+  null,
+  ""
+ ],
+ "Requires": [
+  null,
+  ""
+ ],
+ "Requisite": [
+  null,
+  ""
+ ],
+ "Requisite Of": [
+  null,
+  ""
  ],
  "Reset": [
   null,
@@ -1127,6 +1187,14 @@ return plural;
   null,
   "タワー"
  ],
+ "Triggered By": [
+  null,
+  ""
+ ],
+ "Triggers": [
+  null,
+  "トリガー"
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   "{{Server}} との同期を試行中です"
@@ -1170,6 +1238,14 @@ return plural;
  "Version": [
   null,
   "バージョン"
+ ],
+ "Wanted By": [
+  null,
+  ""
+ ],
+ "Wants": [
+  null,
+  ""
  ],
  "Warning and above": [
   null,

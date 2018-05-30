@@ -65,7 +65,7 @@ nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;
 return plural;
 },
   "language": "cs",
-  "x-generator": "Zanata 3.9.6"
+  "x-generator": "Zanata 4.4.5"
  },
  "$0 Template": [
   null,
@@ -339,11 +339,23 @@ return plural;
   null,
   "Verze BIOSu"
  ],
+ "Before": [
+  null,
+  ""
+ ],
+ "Binds To": [
+  null,
+  ""
+ ],
  "Blade": [
   null,
   ""
  ],
  "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bound By": [
   null,
   ""
  ],
@@ -414,6 +426,18 @@ return plural;
  "Condition failed": [
   null,
   "Podmínka selhala"
+ ],
+ "Conflicted By": [
+  null,
+  ""
+ ],
+ "Conflicts": [
+  null,
+  ""
+ ],
+ "Consists Of": [
+  null,
+  ""
  ],
  "Convertible": [
   null,
@@ -611,6 +635,10 @@ return plural;
   null,
   ""
  ],
+ "Joins Namespace Of": [
+  null,
+  ""
+ ],
  "Journal": [
   null,
   "Žurnál"
@@ -787,6 +815,10 @@ return plural;
   null,
   ""
  ],
+ "On Failure": [
+  null,
+  ""
+ ],
  "Only Emergency": [
   null,
   ""
@@ -808,6 +840,10 @@ return plural;
   ""
  ],
  "PackageKit crashed": [
+  null,
+  ""
+ ],
+ "Part Of": [
   null,
   ""
  ],
@@ -855,6 +891,10 @@ return plural;
   null,
   ""
  ],
+ "Propagates Reload To": [
+  null,
+  ""
+ ],
  "RAID Chassis": [
   null,
   ""
@@ -886,6 +926,10 @@ return plural;
  "Reload": [
   null,
   "Obnovit"
+ ],
+ "Reload Propagated From": [
+  null,
+  ""
  ],
  "Repeat Daily": [
   null,
@@ -920,6 +964,22 @@ return plural;
   ""
  ],
  "Reporting was unsucessful. Try running `reporter-ureport -d ": [
+  null,
+  ""
+ ],
+ "Required By": [
+  null,
+  ""
+ ],
+ "Requires": [
+  null,
+  ""
+ ],
+ "Requisite": [
+  null,
+  ""
+ ],
+ "Requisite Of": [
   null,
   ""
  ],
@@ -1139,6 +1199,14 @@ return plural;
   null,
   ""
  ],
+ "Triggered By": [
+  null,
+  ""
+ ],
+ "Triggers": [
+  null,
+  ""
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   ""
@@ -1184,6 +1252,14 @@ return plural;
  "Version": [
   null,
   "Verze"
+ ],
+ "Wanted By": [
+  null,
+  ""
+ ],
+ "Wants": [
+  null,
+  ""
  ],
  "Warning and above": [
   null,

@@ -1,15 +1,19 @@
 # Generated Makefile data for ssh
-# Stamp: Wed May 16 2018 08:57:06 GMT+0000 (UTC)
+# Stamp: Wed May 30 2018 08:46:50 GMT+0000 (UTC)
 
 ssh_INPUTS = \
 	$(NULL)
 
 ssh_OUTPUTS = \
+	dist/base1/cockpit.js \
+	dist/base1/jquery.js \
 	$(NULL)
 
 ssh_PO = dist/ssh/po.js $(patsubst %,dist/ssh/po.%.js,$(LINGUAS))
 
 ssh_INSTALL = \
+	dist/base1/cockpit.js.gz \
+	dist/base1/jquery.js.gz \
 	$(addsuffix .gz,$(ssh_PO)) \
 	$(NULL)
 
@@ -25,6 +29,10 @@ dist/ssh/%.po: po/%.po
 
 dist/ssh/Makefile.deps: $(WEBPACK_CONFIG) $(ssh_INPUTS)
 	$(WEBPACK_RULE) -d dist/ssh/Makefile.deps $(WEBPACK_CONFIG)
+
+dist/base1/cockpit.js: dist/ssh/Makefile.deps
+
+dist/base1/jquery.js: dist/ssh/Makefile.deps
 
 WEBPACK_INPUTS += $(ssh_INPUTS)
 WEBPACK_OUTPUTS += $(ssh_OUTPUTS)

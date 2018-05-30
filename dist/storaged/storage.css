@@ -713,6 +713,48 @@ input[type=number] {
 .dialog-ct-visible {
     display: block;
 }
+#cockpit_modal_dialog .modal-body {
+    max-height: calc(75vh - 10rem);
+    overflow: auto;
+}
+.package-list-ct {
+    margin: 1em 0;
+    padding: 0;
+    max-width: 110rem;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.package-list-ct li {
+    text-align: left;
+    box-sizing: border-box;
+    width: 22rem;
+    padding: 0 1ex;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.scale-up-ct {
+    animation: dialogScaleUpCt 1s;
+}
+
+@keyframes dialogScaleUpCt {
+    0% {
+        opacity: 0;
+        max-height: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+        max-height: 100vh;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 /* Panels don't draw borders between them */
 .panel > .table > tbody:first-child td {
     border-top: 1px solid rgb(221, 221, 221);
@@ -1660,6 +1702,21 @@ td.storage-action {
 
 .modal-title {
     word-break: break-all;
+}
+
+.panel-heading .spinner-inline {
+    vertical-align: middle;
+    margin-left: 0.5ex;
+}
+
+.just-installed {
+    margin-right: 1em;
+}
+
+.faded {
+    transition: opacity 1s, visibility 1s;
+    opacity: 0;
+    visibility: hidden;
 }
 
 /*# sourceMappingURL=storage.css.map*/

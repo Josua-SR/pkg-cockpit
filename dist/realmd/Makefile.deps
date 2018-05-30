@@ -1,5 +1,5 @@
 # Generated Makefile data for realmd
-# Stamp: Wed May 16 2018 08:57:06 GMT+0000 (UTC)
+# Stamp: Wed May 30 2018 08:46:50 GMT+0000 (UTC)
 
 realmd_INPUTS = \
 	pkg/lib/patterns.js \
@@ -8,6 +8,8 @@ realmd_INPUTS = \
 	$(NULL)
 
 realmd_OUTPUTS = \
+	dist/base1/cockpit.js \
+	dist/base1/jquery.js \
 	dist/realmd/domain.min.js \
 	dist/realmd/domain.min.js.map \
 	$(NULL)
@@ -15,6 +17,8 @@ realmd_OUTPUTS = \
 realmd_PO = dist/realmd/po.js $(patsubst %,dist/realmd/po.%.js,$(LINGUAS))
 
 realmd_INSTALL = \
+	dist/base1/cockpit.js.gz \
+	dist/base1/jquery.js.gz \
 	dist/realmd/domain.min.js.gz \
 	$(addsuffix .gz,$(realmd_PO)) \
 	$(NULL)
@@ -32,6 +36,10 @@ dist/realmd/%.po: po/%.po
 
 dist/realmd/Makefile.deps: $(WEBPACK_CONFIG) $(realmd_INPUTS)
 	$(WEBPACK_RULE) -d dist/realmd/Makefile.deps $(WEBPACK_CONFIG)
+
+dist/base1/cockpit.js: dist/realmd/Makefile.deps
+
+dist/base1/jquery.js: dist/realmd/Makefile.deps
 
 dist/realmd/domain.min.js: dist/realmd/Makefile.deps
 

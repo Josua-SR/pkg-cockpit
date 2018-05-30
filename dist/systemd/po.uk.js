@@ -65,7 +65,7 @@ nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 |
 return plural;
 },
   "language": "uk",
-  "x-generator": "Zanata 3.9.6"
+  "x-generator": "Zanata 4.4.5"
  },
  "$0 Template": [
   null,
@@ -339,6 +339,14 @@ return plural;
   null,
   "Версія BIOS"
  ],
+ "Before": [
+  null,
+  ""
+ ],
+ "Binds To": [
+  null,
+  ""
+ ],
  "Blade": [
   null,
   "Blade"
@@ -346,6 +354,10 @@ return plural;
  "Blade enclosure": [
   null,
   "Обгортка Blade"
+ ],
+ "Bound By": [
+  null,
+  ""
  ],
  "Bug Fix Updates Available": [
   null,
@@ -414,6 +426,18 @@ return plural;
  "Condition failed": [
   null,
   "Не виконано умову"
+ ],
+ "Conflicted By": [
+  null,
+  ""
+ ],
+ "Conflicts": [
+  null,
+  ""
+ ],
+ "Consists Of": [
+  null,
+  ""
  ],
  "Convertible": [
   null,
@@ -611,6 +635,10 @@ return plural;
   null,
   "Шлюз IoT"
  ],
+ "Joins Namespace Of": [
+  null,
+  ""
+ ],
  "Journal": [
   null,
   "Журнал"
@@ -787,6 +815,10 @@ return plural;
   null,
   "Увімкнено"
  ],
+ "On Failure": [
+  null,
+  "Якщо помилка"
+ ],
  "Only Emergency": [
   null,
   "Лише критичне"
@@ -810,6 +842,10 @@ return plural;
  "PackageKit crashed": [
   null,
   "Аварійне завершення роботи PackageKit"
+ ],
+ "Part Of": [
+  null,
+  ""
  ],
  "Paths": [
   null,
@@ -855,6 +891,10 @@ return plural;
   null,
   "Дані щодо проблеми"
  ],
+ "Propagates Reload To": [
+  null,
+  ""
+ ],
  "RAID Chassis": [
   null,
   "Апаратний блок RAID"
@@ -886,6 +926,10 @@ return plural;
  "Reload": [
   null,
   "Перезавантажити"
+ ],
+ "Reload Propagated From": [
+  null,
+  ""
  ],
  "Repeat Daily": [
   null,
@@ -922,6 +966,22 @@ return plural;
  "Reporting was unsucessful. Try running `reporter-ureport -d ": [
   null,
   "Не вдалося надіслати звіт. Спробуйте віддати команду «reporter-ureport -d "
+ ],
+ "Required By": [
+  null,
+  ""
+ ],
+ "Requires": [
+  null,
+  ""
+ ],
+ "Requisite": [
+  null,
+  ""
+ ],
+ "Requisite Of": [
+  null,
+  ""
  ],
  "Reset": [
   null,
@@ -1139,6 +1199,14 @@ return plural;
   null,
   "Башточка"
  ],
+ "Triggered By": [
+  null,
+  ""
+ ],
+ "Triggers": [
+  null,
+  "Умовні зміни"
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   "Намагаємося синхронізуватися з {{Server}}"
@@ -1184,6 +1252,14 @@ return plural;
  "Version": [
   null,
   "Версія"
+ ],
+ "Wanted By": [
+  null,
+  ""
+ ],
+ "Wants": [
+  null,
+  ""
  ],
  "Warning and above": [
   null,

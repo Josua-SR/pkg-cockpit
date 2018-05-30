@@ -65,7 +65,7 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "ja",
-  "x-generator": "Zanata 3.9.6"
+  "x-generator": "Zanata 4.4.5"
  },
  "\"http\" Key escrow": [
   null,
@@ -119,6 +119,10 @@ return plural;
   null,
   "$0 は、アクティブに使用されています。"
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
  "$0 minute": [
   "$0 minutes",
   "$0 分"
@@ -138,6 +142,10 @@ return plural;
  "$0 week": [
   "$0 weeks",
   "$0 週"
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
  ],
  "$0 year": [
   "$0 years",
@@ -263,6 +271,10 @@ return plural;
   null,
   "$target への物理ボリュームの追加"
  ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Address": [
   null,
   "アドレス:"
@@ -334,6 +346,10 @@ return plural;
  "Checking and Repairing RAID Device $target": [
   null,
   "RAID デバイス $target の確認および修復"
+ ],
+ "Checking installed software": [
+  null,
+  ""
  ],
  "Chunk Size": [
   null,
@@ -539,6 +555,10 @@ return plural;
   null,
   "既存のデータを上書きしないでください"
  ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
  "Drive": [
   null,
   "ドライブ"
@@ -703,6 +723,22 @@ return plural;
   null,
   "インデックスメモリー"
  ],
+ "Install": [
+  null,
+  "インストール"
+ ],
+ "Install NFS Support": [
+  null,
+  ""
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
+  null,
+  ""
+ ],
  "Invalid username or password": [
   null,
   "無効なユーザー名またはパスワード"
@@ -847,6 +883,10 @@ return plural;
   null,
   "NFS マウント"
  ],
+ "NFS Support not installed": [
+  null,
+  ""
+ ],
  "NTFS - Compatible with most systems": [
   null,
   "NTFS - 最新システムとの互換性あり"
@@ -978,6 +1018,10 @@ return plural;
  "Overwrite existing data with zeros": [
   null,
   "既存のデータをゼロで上書きする"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit がクラッシュしました"
  ],
  "Partition": [
   null,
@@ -1167,6 +1211,10 @@ return plural;
   null,
   "RAID デバイス $target の復旧"
  ],
+ "Removals:": [
+  null,
+  ""
+ ],
  "Remove": [
   null,
   "削除"
@@ -1176,6 +1224,10 @@ return plural;
   "リモートデバイス"
  ],
  "Remove key": [
+  null,
+  ""
+ ],
+ "Removing $0": [
   null,
   ""
  ],
@@ -1363,6 +1415,10 @@ return plural;
   null,
   "保存されたパスフレーズ"
  ],
+ "Support is installed.": [
+  null,
+  ""
+ ],
  "Swap": [
   null,
   "スワップ"
@@ -1506,6 +1562,10 @@ return plural;
  "This volume needs to be activated before it can be resized.": [
   null,
   "このボリュームは、サイズを変更する前にアクティベートする必要があります。"
+ ],
+ "Total size: $0": [
+  null,
+  ""
  ],
  "Trust Key": [
   null,
@@ -1666,6 +1726,10 @@ return plural;
  "Volume Groups": [
   null,
   "ボリュームグループ"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "Write-mostly": [
   null,

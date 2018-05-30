@@ -1,5 +1,5 @@
 # Generated Makefile data for dashboard
-# Stamp: Wed May 16 2018 08:57:41 GMT+0000 (UTC)
+# Stamp: Wed May 30 2018 08:47:28 GMT+0000 (UTC)
 
 dashboard_INPUTS = \
 	node_modules/jquery-flot/LICENSE.txt \
@@ -36,6 +36,8 @@ dashboard_INPUTS = \
 	$(NULL)
 
 dashboard_OUTPUTS = \
+	dist/base1/cockpit.js \
+	dist/base1/jquery.js \
 	dist/dashboard/dashboard.min.js \
 	dist/dashboard/dashboard.min.js.map \
 	dist/dashboard/index.html \
@@ -44,6 +46,8 @@ dashboard_OUTPUTS = \
 dashboard_PO = dist/dashboard/po.js $(patsubst %,dist/dashboard/po.%.js,$(LINGUAS))
 
 dashboard_INSTALL = \
+	dist/base1/cockpit.js.gz \
+	dist/base1/jquery.js.gz \
 	dist/dashboard/dashboard.min.js.gz \
 	dist/dashboard/index.html.gz \
 	$(addsuffix .gz,$(dashboard_PO)) \
@@ -62,6 +66,10 @@ dist/dashboard/%.po: po/%.po
 
 dist/dashboard/Makefile.deps: $(WEBPACK_CONFIG) $(dashboard_INPUTS)
 	$(WEBPACK_RULE) -d dist/dashboard/Makefile.deps $(WEBPACK_CONFIG)
+
+dist/base1/cockpit.js: dist/dashboard/Makefile.deps
+
+dist/base1/jquery.js: dist/dashboard/Makefile.deps
 
 dist/dashboard/dashboard.min.js: dist/dashboard/Makefile.deps
 

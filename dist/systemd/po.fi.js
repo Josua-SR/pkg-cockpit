@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "fi",
-  "x-generator": "Zanata 3.9.6"
+  "x-generator": "Zanata 4.4.5"
  },
  "$0 Template": [
   null,
@@ -333,11 +333,23 @@ return plural;
   null,
   "BIOS-versio"
  ],
+ "Before": [
+  null,
+  ""
+ ],
+ "Binds To": [
+  null,
+  ""
+ ],
  "Blade": [
   null,
   ""
  ],
  "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bound By": [
   null,
   ""
  ],
@@ -408,6 +420,18 @@ return plural;
  "Condition failed": [
   null,
   "Ehto epäonnistui"
+ ],
+ "Conflicted By": [
+  null,
+  ""
+ ],
+ "Conflicts": [
+  null,
+  ""
+ ],
+ "Consists Of": [
+  null,
+  ""
  ],
  "Convertible": [
   null,
@@ -605,6 +629,10 @@ return plural;
   null,
   ""
  ],
+ "Joins Namespace Of": [
+  null,
+  ""
+ ],
  "Journal": [
   null,
   "Journal"
@@ -781,6 +809,10 @@ return plural;
   null,
   "Päällä"
  ],
+ "On Failure": [
+  null,
+  ""
+ ],
  "Only Emergency": [
   null,
   ""
@@ -804,6 +836,10 @@ return plural;
  "PackageKit crashed": [
   null,
   "PackageKit kaatui"
+ ],
+ "Part Of": [
+  null,
+  ""
  ],
  "Paths": [
   null,
@@ -849,6 +885,10 @@ return plural;
   null,
   ""
  ],
+ "Propagates Reload To": [
+  null,
+  ""
+ ],
  "RAID Chassis": [
   null,
   ""
@@ -880,6 +920,10 @@ return plural;
  "Reload": [
   null,
   "Lataa uudelleen"
+ ],
+ "Reload Propagated From": [
+  null,
+  ""
  ],
  "Repeat Daily": [
   null,
@@ -914,6 +958,22 @@ return plural;
   ""
  ],
  "Reporting was unsucessful. Try running `reporter-ureport -d ": [
+  null,
+  ""
+ ],
+ "Required By": [
+  null,
+  ""
+ ],
+ "Requires": [
+  null,
+  ""
+ ],
+ "Requisite": [
+  null,
+  ""
+ ],
+ "Requisite Of": [
   null,
   ""
  ],
@@ -1133,6 +1193,14 @@ return plural;
   null,
   "Torni"
  ],
+ "Triggered By": [
+  null,
+  ""
+ ],
+ "Triggers": [
+  null,
+  "Liipaisimet"
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   "Yritetään synkronoida palvelimen {{Server}} kanssa"
@@ -1177,6 +1245,14 @@ return plural;
  "Version": [
   null,
   "Versio"
+ ],
+ "Wanted By": [
+  null,
+  ""
+ ],
+ "Wants": [
+  null,
+  ""
  ],
  "Warning and above": [
   null,

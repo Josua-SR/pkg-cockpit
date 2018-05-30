@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "es",
-  "x-generator": "Zanata 3.9.6"
+  "x-generator": "Zanata 4.4.5"
  },
  "$0 Template": [
   null,
@@ -333,6 +333,14 @@ return plural;
   null,
   "Versión de la BIOS"
  ],
+ "Before": [
+  null,
+  ""
+ ],
+ "Binds To": [
+  null,
+  ""
+ ],
  "Blade": [
   null,
   "Espada"
@@ -340,6 +348,10 @@ return plural;
  "Blade enclosure": [
   null,
   "Recinto de la espada"
+ ],
+ "Bound By": [
+  null,
+  ""
  ],
  "Bug Fix Updates Available": [
   null,
@@ -408,6 +420,18 @@ return plural;
  "Condition failed": [
   null,
   "Condición fallida"
+ ],
+ "Conflicted By": [
+  null,
+  ""
+ ],
+ "Conflicts": [
+  null,
+  ""
+ ],
+ "Consists Of": [
+  null,
+  ""
  ],
  "Convertible": [
   null,
@@ -605,6 +629,10 @@ return plural;
   null,
   "Pasarela IoT"
  ],
+ "Joins Namespace Of": [
+  null,
+  ""
+ ],
  "Journal": [
   null,
   "Bitacora"
@@ -781,6 +809,10 @@ return plural;
   null,
   "Encencido"
  ],
+ "On Failure": [
+  null,
+  "Al producirse un fallo"
+ ],
  "Only Emergency": [
   null,
   "Solo Emergencia"
@@ -804,6 +836,10 @@ return plural;
  "PackageKit crashed": [
   null,
   "PackageKit roto"
+ ],
+ "Part Of": [
+  null,
+  ""
  ],
  "Paths": [
   null,
@@ -849,6 +885,10 @@ return plural;
   null,
   "Información de problema"
  ],
+ "Propagates Reload To": [
+  null,
+  ""
+ ],
  "RAID Chassis": [
   null,
   "Chasis RAID"
@@ -880,6 +920,10 @@ return plural;
  "Reload": [
   null,
   "Recargar"
+ ],
+ "Reload Propagated From": [
+  null,
+  ""
  ],
  "Repeat Daily": [
   null,
@@ -916,6 +960,22 @@ return plural;
  "Reporting was unsucessful. Try running `reporter-ureport -d ": [
   null,
   "Informando no tuvo éxito. Intente ejecutar `reporter-ureport -d "
+ ],
+ "Required By": [
+  null,
+  ""
+ ],
+ "Requires": [
+  null,
+  ""
+ ],
+ "Requisite": [
+  null,
+  ""
+ ],
+ "Requisite Of": [
+  null,
+  ""
  ],
  "Reset": [
   null,
@@ -1133,6 +1193,14 @@ return plural;
   null,
   "Torre"
  ],
+ "Triggered By": [
+  null,
+  ""
+ ],
+ "Triggers": [
+  null,
+  "Disparadores"
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   "Intentando sincronizar con {{Server}}"
@@ -1177,6 +1245,14 @@ return plural;
  "Version": [
   null,
   "Versión"
+ ],
+ "Wanted By": [
+  null,
+  ""
+ ],
+ "Wants": [
+  null,
+  ""
  ],
  "Warning and above": [
   null,

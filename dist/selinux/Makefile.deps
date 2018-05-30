@@ -1,5 +1,5 @@
 # Generated Makefile data for selinux
-# Stamp: Wed May 16 2018 08:57:42 GMT+0000 (UTC)
+# Stamp: Wed May 30 2018 08:47:28 GMT+0000 (UTC)
 
 selinux_INPUTS = \
 	node_modules/bootstrap/LICENSE \
@@ -157,6 +157,8 @@ selinux_INPUTS = \
 	$(NULL)
 
 selinux_OUTPUTS = \
+	dist/base1/cockpit.js \
+	dist/base1/jquery.js \
 	dist/selinux/selinux.css \
 	dist/selinux/selinux.css.map \
 	dist/selinux/selinux.min.js \
@@ -167,6 +169,8 @@ selinux_OUTPUTS = \
 selinux_PO = dist/selinux/po.js $(patsubst %,dist/selinux/po.%.js,$(LINGUAS))
 
 selinux_INSTALL = \
+	dist/base1/cockpit.js.gz \
+	dist/base1/jquery.js.gz \
 	dist/selinux/selinux.css.gz \
 	dist/selinux/selinux.min.js.gz \
 	dist/selinux/setroubleshoot.html.gz \
@@ -187,6 +191,10 @@ dist/selinux/%.po: po/%.po
 
 dist/selinux/Makefile.deps: $(WEBPACK_CONFIG) $(selinux_INPUTS)
 	$(WEBPACK_RULE) -d dist/selinux/Makefile.deps $(WEBPACK_CONFIG)
+
+dist/base1/cockpit.js: dist/selinux/Makefile.deps
+
+dist/base1/jquery.js: dist/selinux/Makefile.deps
 
 dist/selinux/selinux.css: dist/selinux/Makefile.deps
 

@@ -1,5 +1,5 @@
 # Generated Makefile data for apps
-# Stamp: Wed May 16 2018 08:57:41 GMT+0000 (UTC)
+# Stamp: Wed May 30 2018 08:47:28 GMT+0000 (UTC)
 
 apps_INPUTS = \
 	node_modules/react-lite/LICENSE \
@@ -16,6 +16,7 @@ apps_INPUTS = \
 	pkg/apps/packagekit.es6 \
 	pkg/apps/utils.jsx \
 	pkg/apps/watch-appstream.py \
+	pkg/lib/cockpit-components-dialog.css \
 	pkg/lib/cockpit-components-dialog.jsx \
 	pkg/lib/inotify.py \
 	pkg/lib/packagekit.es6 \
@@ -31,6 +32,8 @@ apps_OUTPUTS = \
 	dist/apps/apps.min.js.map \
 	dist/apps/default.png \
 	dist/apps/index.html \
+	dist/base1/cockpit.js \
+	dist/base1/jquery.js \
 	$(NULL)
 
 apps_PO = dist/apps/po.js $(patsubst %,dist/apps/po.%.js,$(LINGUAS))
@@ -40,6 +43,8 @@ apps_INSTALL = \
 	dist/apps/apps.min.js.gz \
 	dist/apps/default.png \
 	dist/apps/index.html.gz \
+	dist/base1/cockpit.js.gz \
+	dist/base1/jquery.js.gz \
 	$(addsuffix .gz,$(apps_PO)) \
 	$(NULL)
 
@@ -53,7 +58,7 @@ apps_TESTS = \
 
 dist/apps/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/react-lite/dist/react-lite.js -N pkg/apps/application-list.jsx -N pkg/apps/application.css -N pkg/apps/application.jsx -N pkg/apps/appstream.js -N pkg/apps/default.png -N pkg/apps/index.html -N pkg/apps/index.jsx -N pkg/apps/packagekit.es6 -N pkg/apps/utils.jsx -N pkg/apps/watch-appstream.py -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/inotify.py -N pkg/lib/packagekit.es6 -N pkg/lib/page.css -N pkg/lib/python.jsx -N pkg/lib/table.css $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/react-lite/dist/react-lite.js -N pkg/apps/application-list.jsx -N pkg/apps/application.css -N pkg/apps/application.jsx -N pkg/apps/appstream.js -N pkg/apps/default.png -N pkg/apps/index.html -N pkg/apps/index.jsx -N pkg/apps/packagekit.es6 -N pkg/apps/utils.jsx -N pkg/apps/watch-appstream.py -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/inotify.py -N pkg/lib/packagekit.es6 -N pkg/lib/page.css -N pkg/lib/python.jsx -N pkg/lib/table.css $< > $@.tmp && mv $@.tmp $@
 
 dist/apps/Makefile.deps: $(WEBPACK_CONFIG) $(apps_INPUTS)
 	$(WEBPACK_RULE) -d dist/apps/Makefile.deps $(WEBPACK_CONFIG)
@@ -69,6 +74,10 @@ dist/apps/apps.min.js.map: dist/apps/Makefile.deps
 dist/apps/default.png: dist/apps/Makefile.deps
 
 dist/apps/index.html: dist/apps/Makefile.deps
+
+dist/base1/cockpit.js: dist/apps/Makefile.deps
+
+dist/base1/jquery.js: dist/apps/Makefile.deps
 
 node_modules/react-lite/LICENSE:
 
@@ -97,6 +106,8 @@ pkg/apps/packagekit.es6:
 pkg/apps/utils.jsx:
 
 pkg/apps/watch-appstream.py:
+
+pkg/lib/cockpit-components-dialog.css:
 
 pkg/lib/cockpit-components-dialog.jsx:
 
