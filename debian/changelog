@@ -1,4 +1,4 @@
-cockpit (169-1) UNRELEASED; urgency=medium
+cockpit (169-1) unstable; urgency=medium
 
   * New upstream release:
     - Storage: Offer installation of NFS client support
@@ -6,7 +6,7 @@ cockpit (169-1) UNRELEASED; urgency=medium
     - Services: Show unit relationships
     - Provide motd help about how to access cockpit
 
- -- Martin Pitt <mpitt@debian.org>  Wed, 30 May 2018 11:28:43 +0000
+ -- Martin Pitt <mpitt@debian.org>  Wed, 30 May 2018 11:29:40 +0000
 
 cockpit (168-1) unstable; urgency=medium
 
