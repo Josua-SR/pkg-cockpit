@@ -1,5 +1,5 @@
 # Generated Makefile data for ostree
-# Stamp: Wed May 16 2018 08:57:42 GMT+0000 (UTC)
+# Stamp: Wed May 30 2018 08:47:28 GMT+0000 (UTC)
 
 ostree_INPUTS = \
 	node_modules/angular-bootstrap-npm/LICENSE \
@@ -181,6 +181,8 @@ ostree_INPUTS = \
 	$(NULL)
 
 ostree_OUTPUTS = \
+	dist/base1/cockpit.js \
+	dist/base1/jquery.js \
 	dist/ostree/index.html \
 	dist/ostree/ostree.css \
 	dist/ostree/ostree.css.map \
@@ -196,6 +198,8 @@ ostree_OUTPUTS = \
 ostree_PO = dist/ostree/po.js $(patsubst %,dist/ostree/po.%.js,$(LINGUAS))
 
 ostree_INSTALL = \
+	dist/base1/cockpit.js.gz \
+	dist/base1/jquery.js.gz \
 	dist/ostree/index.html.gz \
 	dist/ostree/ostree.css.gz \
 	dist/ostree/ostree.min.js.gz \
@@ -219,6 +223,10 @@ dist/ostree/%.po: po/%.po
 
 dist/ostree/Makefile.deps: $(WEBPACK_CONFIG) $(ostree_INPUTS)
 	$(WEBPACK_RULE) -d dist/ostree/Makefile.deps $(WEBPACK_CONFIG)
+
+dist/base1/cockpit.js: dist/ostree/Makefile.deps
+
+dist/base1/jquery.js: dist/ostree/Makefile.deps
 
 dist/ostree/index.html: dist/ostree/Makefile.deps
 

@@ -57,15 +57,13 @@ class KubernetesCase(testlib.MachineCase):
         self.machine.upload(["verify/files/mock-kube-config-basic.json"], "/etc/kubernetes/kubeconfig")
         self.machine.execute("""sed -i '/KUBELET_ARGS=/ { s%"$% --kubeconfig=/etc/kubernetes/kubeconfig"% }' /etc/kubernetes/kubelet""")
 
+        # disable imagefs eviction to protect our docker images
+        self.machine.execute("""sed -i '/KUBELET_ARGS=/ { s/"$/ --eviction-hard=imagefs.available<0% --eviction-soft=imagefs.available<0%"/ }' /etc/kubernetes/kubelet""")
+
         # HACK: These are the default container secrets that which conflict
         # with kubernetes secrets and cause the pod to not start
         self.machine.execute("rm -rf /usr/share/rhel/secrets/* || true")
         self.machine.execute("systemctl start docker || journalctl -u docker")
-
-        # HACK: work around https://github.com/kubernetes/kubernetes/issues/43805 until
-        # the fix lands in Fedora 26
-        if self.machine.image == "fedora-26":
-            self.machine.execute("""sed -i '/KUBELET_ARGS=/ { s/"$/ --cgroup-driver=systemd"/ }' /etc/kubernetes/kubelet""")
 
         # disable swap, newer kubernetes versions don't like it:
         # failed to run Kubelet: Running with swap on is not supported, please disable swap! or set --fail-swap-on flag to false
@@ -1042,6 +1040,7 @@ class RegistryTests(object):
         self.checkImageName(b, "aaa_", False)
         self.checkImageName(b, "aaa-", False)
         self.checkImageName(b, "aaa.", False)
+        self.checkImageName(b, "a_ a", False)
         self.checkImageName(b, "Aa_Bb_Cc", False)
         self.checkImageName(b, "aa_bb_cc", True)
         self.checkImageName(b, "aa-bb_cc.dd", True)
@@ -1074,14 +1073,14 @@ class RegistryTests(object):
         b.click("#add-group")
         b.wait_present("modal-dialog")
         b.wait_visible(".modal-body")
-        b.set_val("#group_name", "production")
+        b.set_val("#group_name", "Pro-Duction")
         b.click(".btn-primary")
         b.wait_not_present("modal-dialog")
         b.wait_present("tbody[data-id='marmalade']")
 
         #group page
-        b.click("tbody[data-id='production'] tr:first-child td:nth-of-type(2)")
-        b.wait_in_text(".content-filter h3", "production")
+        b.click("tbody[data-id='Pro-Duction'] tr:first-child td:nth-of-type(2)")
+        b.wait_in_text(".content-filter h3", "Pro-Duction")
 
         #add member
         b.click("a i.pficon-add-circle-o")
@@ -1114,12 +1113,12 @@ class RegistryTests(object):
         b.wait_not_present("modal-dialog")
 
         #delete user
-        b.wait_in_text(".content-filter h3", "production")
+        b.wait_in_text(".content-filter h3", "Pro-Duction")
         b.click(".content-filter .pficon-delete")
         b.wait_present("modal-dialog")
         b.click(".btn-primary")
         b.wait_not_present("modal-dialog")
-        b.wait_not_present("tbody[data-id='production']")
+        b.wait_not_present("tbody[data-id='Pro-Duction']")
 
     def testProjectUsers(self):
         o = self.openshift

@@ -1,5 +1,5 @@
 # Generated Makefile data for packagekit
-# Stamp: Wed May 16 2018 08:57:42 GMT+0000 (UTC)
+# Stamp: Wed May 30 2018 08:47:28 GMT+0000 (UTC)
 
 packagekit_INPUTS = \
 	node_modules/bootstrap/LICENSE \
@@ -168,6 +168,8 @@ packagekit_INPUTS = \
 	$(NULL)
 
 packagekit_OUTPUTS = \
+	dist/base1/cockpit.js \
+	dist/base1/jquery.js \
 	dist/packagekit/index.html \
 	dist/packagekit/updates.css \
 	dist/packagekit/updates.css.map \
@@ -178,6 +180,8 @@ packagekit_OUTPUTS = \
 packagekit_PO = dist/packagekit/po.js $(patsubst %,dist/packagekit/po.%.js,$(LINGUAS))
 
 packagekit_INSTALL = \
+	dist/base1/cockpit.js.gz \
+	dist/base1/jquery.js.gz \
 	dist/packagekit/index.html.gz \
 	dist/packagekit/updates.css.gz \
 	dist/packagekit/updates.min.js.gz \
@@ -198,6 +202,10 @@ dist/packagekit/%.po: po/%.po
 
 dist/packagekit/Makefile.deps: $(WEBPACK_CONFIG) $(packagekit_INPUTS)
 	$(WEBPACK_RULE) -d dist/packagekit/Makefile.deps $(WEBPACK_CONFIG)
+
+dist/base1/cockpit.js: dist/packagekit/Makefile.deps
+
+dist/base1/jquery.js: dist/packagekit/Makefile.deps
 
 dist/packagekit/index.html: dist/packagekit/Makefile.deps
 

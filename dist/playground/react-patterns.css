@@ -787,6 +787,10 @@ tbody tr.listing-ct-noexpand {
         width: 100%;
     }
 }
+#cockpit_modal_dialog .modal-body {
+    max-height: calc(75vh - 10rem);
+    overflow: auto;
+}
 .tooltip-ct-outer {
     display:  inline-block;
     position: relative;

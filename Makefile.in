@@ -152,32 +152,28 @@ TESTS = tools/test-bots $(am__EXEEXT_13) $(am__EXEEXT_16) \
 @ENABLE_DOC_TRUE@	doc/man/cockpit.conf.5 doc/man/pam_ssh_add.8 \
 @ENABLE_DOC_TRUE@	doc/man/remotectl.8 $(NULL)
 @WITH_GOLANG_TRUE@am__append_5 = cockpit-kube-auth cockpit-kube-launch
-
-# -----------------------------------------------------------------------------
-# PCP
 @ENABLE_PCP_TRUE@am__append_6 = cockpit-pcp
 @ENABLE_PCP_TRUE@am__append_7 = libcockpit-pcp.a
-@ENABLE_PCP_TRUE@am__append_8 = $(pmlogconf_DATA)
-@ENABLE_PCP_TRUE@am__append_9 = \
+@ENABLE_PCP_TRUE@am__append_8 = \
 @ENABLE_PCP_TRUE@	test-pcp \
 @ENABLE_PCP_TRUE@	test-pcp-archives \
 @ENABLE_PCP_TRUE@	$(NULL)
 
-@ENABLE_PCP_TRUE@am__append_10 = mock-pmda.so
-@ENABLE_PCP_TRUE@am__append_11 = \
+@ENABLE_PCP_TRUE@am__append_9 = mock-pmda.so
+@ENABLE_PCP_TRUE@am__append_10 = \
 @ENABLE_PCP_TRUE@	mock-pmda.so \
 @ENABLE_PCP_TRUE@	mock-archives/* \
 @ENABLE_PCP_TRUE@	$(NULL)
 
-@WITH_COCKPIT_SSH_TRUE@am__append_12 = libcockpit-ssh.a
-@WITH_COCKPIT_SSH_TRUE@am__append_13 = cockpit-ssh
-@WITH_COCKPIT_SSH_TRUE@am__append_14 = mock-sshd $(SSH_CHECKS)
-@WITH_COCKPIT_SSH_TRUE@am__append_15 = test_rsa_key
-@WITH_COCKPIT_SSH_TRUE@am__append_16 = \
+@WITH_COCKPIT_SSH_TRUE@am__append_11 = libcockpit-ssh.a
+@WITH_COCKPIT_SSH_TRUE@am__append_12 = cockpit-ssh
+@WITH_COCKPIT_SSH_TRUE@am__append_13 = mock-sshd $(SSH_CHECKS)
+@WITH_COCKPIT_SSH_TRUE@am__append_14 = test_rsa_key
+@WITH_COCKPIT_SSH_TRUE@am__append_15 = \
 @WITH_COCKPIT_SSH_TRUE@	test_rsa_key \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
-@WITH_COCKPIT_SSH_TRUE@am__append_17 = \
+@WITH_COCKPIT_SSH_TRUE@am__append_16 = \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock_rsa_key \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock_dsa_key \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/test_rsa \
@@ -188,12 +184,12 @@ TESTS = tools/test-bots $(am__EXEEXT_13) $(am__EXEEXT_16) \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/invalid_known_hosts \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
-@WITH_COCKPIT_SSH_TRUE@am__append_18 = \
+@WITH_COCKPIT_SSH_TRUE@am__append_17 = \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock-pid-cat \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
-@WITH_COCKPIT_SSH_TRUE@am__append_19 = $(SSH_CHECKS)
-@WITH_COCKPIT_SSH_TRUE@am__append_20 = \
+@WITH_COCKPIT_SSH_TRUE@am__append_18 = $(SSH_CHECKS)
+@WITH_COCKPIT_SSH_TRUE@am__append_19 = \
 @WITH_COCKPIT_SSH_TRUE@	test-authssh \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
@@ -203,8 +199,8 @@ am__aclocal_m4_deps = $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 DIST_COMMON = $(srcdir)/Makefile.am $(top_srcdir)/configure \
-	$(am__configure_deps) $(dist_systemdunit_DATA) \
-	$(am__DIST_COMMON)
+	$(am__configure_deps) $(dist_motd_SCRIPTS) $(dist_motd_DATA) \
+	$(dist_systemdunit_DATA) $(am__DIST_COMMON)
 am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(install_sh) -d
@@ -394,14 +390,15 @@ am_libwebsocket_a_OBJECTS =  \
 	$(am__objects_1)
 libwebsocket_a_OBJECTS = $(am_libwebsocket_a_OBJECTS)
 am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" \
-	"$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man1dir)" \
-	"$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" \
-	"$(DESTDIR)$(basedir)" "$(DESTDIR)$(basedebugdir)" \
-	"$(DESTDIR)$(basefontsdir)" "$(DESTDIR)$(centosbrandingdir)" \
+	"$(DESTDIR)$(sbindir)" "$(DESTDIR)$(motddir)" \
+	"$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" \
+	"$(DESTDIR)$(man8dir)" "$(DESTDIR)$(basedir)" \
+	"$(DESTDIR)$(basedebugdir)" "$(DESTDIR)$(basefontsdir)" \
+	"$(DESTDIR)$(centosbrandingdir)" \
 	"$(DESTDIR)$(debianbrandingdir)" \
-	"$(DESTDIR)$(defaultbrandingdir)" \
+	"$(DESTDIR)$(defaultbrandingdir)" "$(DESTDIR)$(motddir)" \
 	"$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" \
-	"$(DESTDIR)$(firewalldir)" "$(DESTDIR)$(issuedir)" \
+	"$(DESTDIR)$(firewalldir)" \
 	"$(DESTDIR)$(kubernetesbrandingdir)" \
 	"$(DESTDIR)$(machinesdir)" "$(DESTDIR)$(metainfodir)" \
 	"$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" \
@@ -909,7 +906,35 @@ test_websocketstream_OBJECTS = $(am_test_websocketstream_OBJECTS)
 test_websocketstream_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_websocketstream_LINK = $(CCLD) $(test_websocketstream_CFLAGS) \
 	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
-SCRIPTS = $(nodist_noinst_SCRIPTS) $(noinst_SCRIPTS)
+am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
+am__vpath_adj = case $$p in \
+    $(srcdir)/*) f=`echo "$$p" | sed "s|^$$srcdirstrip/||"`;; \
+    *) f=$$p;; \
+  esac;
+am__strip_dir = f=`echo $$p | sed -e 's|^.*/||'`;
+am__install_max = 40
+am__nobase_strip_setup = \
+  srcdirstrip=`echo "$(srcdir)" | sed 's/[].[^$$\\*|]/\\\\&/g'`
+am__nobase_strip = \
+  for p in $$list; do echo "$$p"; done | sed -e "s|$$srcdirstrip/||"
+am__nobase_list = $(am__nobase_strip_setup); \
+  for p in $$list; do echo "$$p $$p"; done | \
+  sed "s| $$srcdirstrip/| |;"' / .*\//!s/ .*/ ./; s,\( .*\)/[^/]*$$,\1,' | \
+  $(AWK) 'BEGIN { files["."] = "" } { files[$$2] = files[$$2] " " $$1; \
+    if (++n[$$2] == $(am__install_max)) \
+      { print $$2, files[$$2]; n[$$2] = 0; files[$$2] = "" } } \
+    END { for (dir in files) print dir, files[dir] }'
+am__base_list = \
+  sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g' | \
+  sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
+am__uninstall_files_from_dir = { \
+  test -z "$$files" \
+    || { test ! -d "$$dir" && test ! -f "$$dir" && test ! -r "$$dir"; } \
+    || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
+         $(am__cd) "$$dir" && rm -f $$files; }; \
+  }
+SCRIPTS = $(dist_motd_SCRIPTS) $(nodist_noinst_SCRIPTS) \
+	$(noinst_SCRIPTS)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -1027,33 +1052,6 @@ am__can_run_installinfo = \
     n|no|NO) false;; \
     *) (install-info --version) >/dev/null 2>&1;; \
   esac
-am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
-am__vpath_adj = case $$p in \
-    $(srcdir)/*) f=`echo "$$p" | sed "s|^$$srcdirstrip/||"`;; \
-    *) f=$$p;; \
-  esac;
-am__strip_dir = f=`echo $$p | sed -e 's|^.*/||'`;
-am__install_max = 40
-am__nobase_strip_setup = \
-  srcdirstrip=`echo "$(srcdir)" | sed 's/[].[^$$\\*|]/\\\\&/g'`
-am__nobase_strip = \
-  for p in $$list; do echo "$$p"; done | sed -e "s|$$srcdirstrip/||"
-am__nobase_list = $(am__nobase_strip_setup); \
-  for p in $$list; do echo "$$p $$p"; done | \
-  sed "s| $$srcdirstrip/| |;"' / .*\//!s/ .*/ ./; s,\( .*\)/[^/]*$$,\1,' | \
-  $(AWK) 'BEGIN { files["."] = "" } { files[$$2] = files[$$2] " " $$1; \
-    if (++n[$$2] == $(am__install_max)) \
-      { print $$2, files[$$2]; n[$$2] = 0; files[$$2] = "" } } \
-    END { for (dir in files) print dir, files[dir] }'
-am__base_list = \
-  sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g' | \
-  sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
-am__uninstall_files_from_dir = { \
-  test -z "$$files" \
-    || { test ! -d "$$dir" && test ! -f "$$dir" && test ! -r "$$dir"; } \
-    || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
-         $(am__cd) "$$dir" && rm -f $$files; }; \
-  }
 man1dir = $(mandir)/man1
 man5dir = $(mandir)/man5
 man8dir = $(mandir)/man8
@@ -1061,10 +1059,10 @@ NROFF = nroff
 MANS = $(man_MANS)
 DATA = $(base_DATA) $(basedebug_DATA) $(basefonts_DATA) \
 	$(centosbranding_DATA) $(debianbranding_DATA) \
-	$(defaultbranding_DATA) $(dist_systemdunit_DATA) \
-	$(fedorabranding_DATA) $(firewall_DATA) $(issue_DATA) \
-	$(kubernetesbranding_DATA) $(machines_DATA) $(metainfo_DATA) \
-	$(nodist_appdata_DATA) $(nodist_base_DATA) \
+	$(defaultbranding_DATA) $(dist_motd_DATA) \
+	$(dist_systemdunit_DATA) $(fedorabranding_DATA) \
+	$(firewall_DATA) $(kubernetesbranding_DATA) $(machines_DATA) \
+	$(metainfo_DATA) $(nodist_appdata_DATA) $(nodist_base_DATA) \
 	$(nodist_desktop_DATA) $(nodist_noinst_DATA) \
 	$(nodist_static_DATA) $(nodist_systemdunit_DATA) \
 	$(nodist_tempconf_DATA) $(noinst_DATA) $(ovirt_DATA) \
@@ -1496,19 +1494,20 @@ top_srcdir = @top_srcdir@
 with_appstream_config_packages = @with_appstream_config_packages@
 with_appstream_data_packages = @with_appstream_data_packages@
 with_networkmanager_needs_root = @with_networkmanager_needs_root@
+with_nfs_client_package = @with_nfs_client_package@
 with_storaged_iscsi_sessions = @with_storaged_iscsi_sessions@
 NULL = 
 man_MANS = $(am__append_4)
 BUILT_SOURCES = $(COCKPIT_ASSETS)
 check_SCRIPTS = 
 noinst_SCRIPTS = $(WEBPACK_DEPS) $(WEBPACK_INSTALL) $(base_TESTS) \
-	$(am__append_18) src/ws/mock-cat-with-init $(NULL)
+	$(am__append_17) src/ws/mock-cat-with-init $(NULL)
 
 # ----------------------------------------------------------------------------------------------------
 noinst_LIBRARIES = libcockpit-stub.a libcockpit-bridge.a $(NULL) \
 	$(am__append_7) libcockpit-common.a libwebsocket.a \
-	$(am__append_12) libcockpit-ws.a libretest.a libpam_ssh_add.a
-noinst_DATA = $(am__append_2) $(am__append_10) $(am__append_15)
+	$(am__append_11) libcockpit-ws.a libretest.a libpam_ssh_add.a
+noinst_DATA = $(am__append_2) $(am__append_9) $(am__append_14)
 nodist_noinst_DATA = 
 
 # For the test-locale test
@@ -1517,20 +1516,16 @@ nodist_noinst_SCRIPTS =  \
 	src/common/mock-locale/zh_CN/LC_MESSAGES/test.mo $(NULL)
 dist_systemdunit_DATA = 
 nodist_systemdunit_DATA = src/ws/cockpit.socket src/ws/cockpit.service \
-	$(NULL)
+	src/ws/cockpit-motd.service $(NULL)
 CLEANFILES = $(man_MANS) valgrind-suppressions $(NULL) $(WEBPACK_DEPS) \
 	$(WEBPACK_OUTPUTS) $(OPENSANS_FONTS) $(am__append_3) \
 	$(MO_FILES) $(POJS_FILES) $(nodist_po_DATA) po/POTFILES.*.in \
 	dist/shell/*.po src/ws/*.po po/cockpit*.pot po/po.empty.js.gz \
-	$(NULL) dist/base1/cockpit.js dist/base1/cockpit.min.css \
+	$(NULL) dist/base1/cockpit.min.css \
 	dist/base1/cockpit.min.css.gz dist/base1/cockpit.min.css.map \
-	dist/base1/cockpit.min.js dist/base1/cockpit.min.js.gz \
-	dist/base1/cockpit.min.js.map \
 	dist/base1/fonts/fontawesome.woff \
 	dist/base1/fonts/glyphicons.woff \
-	dist/base1/fonts/patternfly.woff dist/base1/jquery.js \
-	dist/base1/jquery.min.js dist/base1/jquery.min.js.gz \
-	dist/base1/jquery.min.js.map dist/base1/manifest.json \
+	dist/base1/fonts/patternfly.woff dist/base1/manifest.json \
 	dist/base1/mustache.js dist/base1/mustache.min.js \
 	dist/base1/mustache.min.js.gz dist/base1/mustache.min.js.map \
 	dist/base1/patternfly-base.css dist/base1/patternfly.min.css \
@@ -1543,15 +1538,16 @@ CLEANFILES = $(man_MANS) valgrind-suppressions $(NULL) $(WEBPACK_DEPS) \
 	dist/base1/require.min.js dist/base1/require.min.js.gz \
 	dist/base1/require.min.js.map dist/base1/simple-tap.js \
 	dist/base1/test-dbus-common.js $(base_TESTS) \
-	$(base_TESTS_JAVASCRIPT) $(NULL) $(am__append_11) \
-	$(COCKPIT_ASSETS) $(test_locale_MO) $(NULL) $(am__append_16) \
+	$(base_TESTS_JAVASCRIPT) $(NULL) $(am__append_10) \
+	$(COCKPIT_ASSETS) $(test_locale_MO) $(NULL) $(am__append_15) \
 	dist/static/login.html dist/static/login.min.html \
 	dist/static/login.js dist/static/login.min.js \
 	dist/static/login.css dist/static/login.min.css $(NULL) \
 	src/ws/cockpit.socket src/ws/cockpit.service \
-	$(nodist_tempconf_DATA) $(NULL) $(nodist_appdata_DATA) \
-	$(nodist_desktop_DATA) $(NULL) mock-pam-conv-mod.so \
-	pam_ssh_add.so $(KUBERNETES_DIR)/rpms $(WS_DIR)/rpms
+	src/ws/cockpit-motd.service $(nodist_tempconf_DATA) $(NULL) \
+	$(nodist_appdata_DATA) $(nodist_desktop_DATA) $(NULL) \
+	mock-pam-conv-mod.so pam_ssh_add.so $(KUBERNETES_DIR)/rpms \
+	$(WS_DIR)/rpms
 DISTCLEANFILES = \
 	$(srcdir)/Makefile \
 	node_modules \
@@ -1566,11 +1562,8 @@ EXTRA_DIST = package.json README.md $(NULL) $(WEBPACK_DEPS) \
 	pkg/lib/qunit-template.html node_modules/noVNC/package.json \
 	node_modules/noVNC/include/base.css pkg/ovirt/install.sh \
 	$(playground_DATA) $(pkg_TESTS) $(ovirt_DATA) $(metainfo_DATA) \
-	$(pixmaps_DATA) $(NULL) dist/base1/cockpit.js \
-	dist/base1/cockpit.min.css dist/base1/cockpit.min.css.map \
-	dist/base1/cockpit.min.js dist/base1/cockpit.min.js.map \
-	dist/base1/jquery.js dist/base1/jquery.min.js \
-	dist/base1/jquery.min.js.map dist/base1/mustache.js \
+	$(pixmaps_DATA) $(NULL) dist/base1/cockpit.min.css \
+	dist/base1/cockpit.min.css.map dist/base1/mustache.js \
 	dist/base1/mustache.min.js dist/base1/mustache.min.js.map \
 	dist/base1/patternfly-base.css dist/base1/patternfly.min.css \
 	dist/base1/patternfly.min.css.map \
@@ -1594,12 +1587,12 @@ EXTRA_DIST = package.json README.md $(NULL) $(WEBPACK_DEPS) \
 	src/bridge/mock-pmda.c src/bridge/mock-pmns \
 	src/bridge/mock-client.crt src/bridge/mock-client.key \
 	src/bridge/mock-server.crt src/bridge/mock-server.key $(NULL) \
-	$(am__append_8) src/common/mock-content \
+	$(pmlogconf_files) src/common/mock-content \
 	src/common/mock_known_hosts src/common/mock-stderr \
 	src/common/com.redhat.Cockpit.DBusTests.xml \
 	src/common/cockpitassets.gresource.xml src/common/fail.html \
 	$(test_locale_PO) $(NULL) \
-	pkg/apps/content-security-policy.override $(am__append_17) \
+	pkg/apps/content-security-policy.override $(am__append_16) \
 	dist/static/login.html dist/static/login.min.html \
 	dist/static/login.js dist/static/login.min.js \
 	dist/static/login.css dist/static/login.min.css \
@@ -1608,12 +1601,13 @@ EXTRA_DIST = package.json README.md $(NULL) $(WEBPACK_DEPS) \
 	$(NULL) src/ws/mock_cert src/ws/mock-cat-with-init \
 	src/ws/mock-kdc src/ws/mock-krb5.conf.in \
 	src/ws/mock-kdc.conf.in src/ws/mock-static src/ws/mock-config \
-	$(NULL) src/ws/cockpit.service.in src/ws/cockpit.socket.in \
-	$(firewall_DATA) $(issue_DATA) $(tempconf_in) $(NULL) \
-	$(appdata_in) $(desktop_in) $(pixmap_DATA) $(NULL) \
-	src/ws/fatal.conf $(pam_ssh_add_FILES) $(NULL) \
-	src/pam-ssh-add/mock-ssh-agent src/pam-ssh-add/mock-ssh-add \
-	src/pam-ssh-add/mock-environment $(NULL)
+	$(NULL) src/ws/cockpit-motd.service.in \
+	src/ws/cockpit.service.in src/ws/cockpit.socket.in \
+	$(firewall_DATA) $(tempconf_in) $(NULL) $(appdata_in) \
+	$(desktop_in) $(pixmap_DATA) $(NULL) src/ws/fatal.conf \
+	$(pam_ssh_add_FILES) $(NULL) src/pam-ssh-add/mock-ssh-agent \
+	src/pam-ssh-add/mock-ssh-add src/pam-ssh-add/mock-environment \
+	$(NULL)
 SUFFIXES = \
 	.css .css.gz \
 	.html .html.gz \
@@ -1690,6 +1684,7 @@ SUBST_RULE = \
 	-e 's,[@]with_storaged_iscsi_sessions[@],$(with_storaged_iscsi_sessions),g' \
 	-e 's,[@]with_appstream_config_packages[@],$(with_appstream_config_packages),g' \
 	-e 's,[@]with_appstream_data_packages[@],$(with_appstream_data_packages),g' \
+	-e 's,[@]with_nfs_client_package[@],$(with_nfs_client_package),g' \
 	$< > $@.tmp && $(MV) $@.tmp $@ \
 	$(NULL)
 
@@ -1960,8 +1955,6 @@ nodist_base_DATA = \
 	dist/base1/patternfly.min.css.gz \
 	dist/base1/require.min.js.gz \
 	dist/base1/mustache.min.js.gz \
-	dist/base1/jquery.min.js.gz \
-	dist/base1/cockpit.min.js.gz \
 	$(NULL)
 
 base_DATA = \
@@ -1974,8 +1967,6 @@ basedebug_DATA = \
 	dist/base1/patternfly.min.css.map \
 	dist/base1/mustache.min.js.map \
 	dist/base1/require.min.js.map \
-	dist/base1/jquery.min.js.map \
-	dist/base1/cockpit.min.js.map \
 	$(NULL)
 
 AM_TESTS_ENVIRONMENT = export G_DEBUG=fatal-criticals,fatal-warnings ; export XDG_CACHE_HOME=$$(mktemp -d) ; export XDG_RUNTIME_DIR=$$XDG_CACHE_HOME ;
@@ -2234,7 +2225,7 @@ BRIDGE_CHECKS = test-paths test-rules test-channel test-pipe-channel \
 	test-packages test-peer test-dbus-meta test-fs test-metrics \
 	test-connect test-stream test-httpstream test-setup \
 	test-websocketstream test-process test-bridge test-router \
-	$(NULL) $(am__append_9)
+	$(NULL) $(am__append_8)
 mock_bridge_SOURCES = src/bridge/mock-bridge.c
 mock_bridge_CFLAGS = \
 	-DG_LOG_DOMAIN=\"mock-bridge\" \
@@ -2320,6 +2311,12 @@ test_websocketstream_SOURCES = \
 
 test_websocketstream_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
 test_websocketstream_LDADD = $(libcockpit_bridge_LIBS) -ldl
+
+# -----------------------------------------------------------------------------
+# PCP
+
+# make sure this ends up in the tarball, even with --disable-pcp
+pmlogconf_files = src/bridge/pmlogconf/cockpit
 @ENABLE_PCP_TRUE@libcockpit_pcp_a_SOURCES = \
 @ENABLE_PCP_TRUE@	src/bridge/cockpitchannel.c \
 @ENABLE_PCP_TRUE@	src/bridge/cockpitchannel.h \
@@ -2354,7 +2351,7 @@ test_websocketstream_LDADD = $(libcockpit_bridge_LIBS) -ldl
 
 @ENABLE_PCP_TRUE@cockpit_pcp_LDADD = $(libcockpit_pcp_LIBS)
 @ENABLE_PCP_TRUE@pmlogconfdir = $(localstatedir)/lib/pcp/config/pmlogconf/tools
-@ENABLE_PCP_TRUE@pmlogconf_DATA = src/bridge/pmlogconf/cockpit
+@ENABLE_PCP_TRUE@pmlogconf_DATA = $(pmlogconf_files)
 @ENABLE_PCP_TRUE@test_pcp_SOURCES = \
 @ENABLE_PCP_TRUE@	src/bridge/test-pcp.c \
 @ENABLE_PCP_TRUE@	src/bridge/mock-transport.c src/bridge/mock-transport.h
@@ -2708,12 +2705,9 @@ remotectl_LDADD = \
 
 firewalldir = $(prefix)/lib/firewalld/services
 firewall_DATA = src/ws/cockpit.xml
-issuedir = $(datadir)/$(PACKAGE)/issue/
-issue_DATA = \
-	src/ws/inactive.issue \
-	src/ws/active.issue \
-	$(NULL)
-
+motddir = $(datadir)/$(PACKAGE)/motd/
+dist_motd_DATA = src/ws/inactive.motd
+dist_motd_SCRIPTS = src/ws/update-motd
 tempconfdir = $(prefix)/lib/tmpfiles.d
 nodist_tempconf_DATA = src/ws/cockpit-tempfiles.conf
 tempconf_in = src/ws/cockpit-tempfiles.conf.in
@@ -2743,7 +2737,7 @@ test_server_LDADD = \
 WS_CHECKS = test-base64 test-creds test-auth test-compat \
 	test-webservice test-channelresponse test-handlers \
 	test-kerberos test-remotectlcertificate $(NULL) \
-	$(am__append_20)
+	$(am__append_19)
 test_auth_CFLAGS = $(cockpit_ws_CFLAGS)
 test_auth_SOURCES = \
 	src/ws/test-auth.c \
@@ -3968,6 +3962,41 @@ src/bridge/test_websocketstream-mock-transport.$(OBJEXT):  \
 test-websocketstream$(EXEEXT): $(test_websocketstream_OBJECTS) $(test_websocketstream_DEPENDENCIES) $(EXTRA_test_websocketstream_DEPENDENCIES) 
 	@rm -f test-websocketstream$(EXEEXT)
 	$(AM_V_CCLD)$(test_websocketstream_LINK) $(test_websocketstream_OBJECTS) $(test_websocketstream_LDADD) $(LIBS)
+install-dist_motdSCRIPTS: $(dist_motd_SCRIPTS)
+	@$(NORMAL_INSTALL)
+	@list='$(dist_motd_SCRIPTS)'; test -n "$(motddir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(motddir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(motddir)" || exit 1; \
+	fi; \
+	for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  if test -f "$$d$$p"; then echo "$$d$$p"; echo "$$p"; else :; fi; \
+	done | \
+	sed -e 'p;s,.*/,,;n' \
+	    -e 'h;s|.*|.|' \
+	    -e 'p;x;s,.*/,,;$(transform)' | sed 'N;N;N;s,\n, ,g' | \
+	$(AWK) 'BEGIN { files["."] = ""; dirs["."] = 1; } \
+	  { d=$$3; if (dirs[d] != 1) { print "d", d; dirs[d] = 1 } \
+	    if ($$2 == $$4) { files[d] = files[d] " " $$1; \
+	      if (++n[d] == $(am__install_max)) { \
+		print "f", d, files[d]; n[d] = 0; files[d] = "" } } \
+	    else { print "f", d "/" $$4, $$1 } } \
+	  END { for (d in files) print "f", d, files[d] }' | \
+	while read type dir files; do \
+	     if test "$$dir" = .; then dir=; else dir=/$$dir; fi; \
+	     test -z "$$files" || { \
+	       echo " $(INSTALL_SCRIPT) $$files '$(DESTDIR)$(motddir)$$dir'"; \
+	       $(INSTALL_SCRIPT) $$files "$(DESTDIR)$(motddir)$$dir" || exit $$?; \
+	     } \
+	; done
+
+uninstall-dist_motdSCRIPTS:
+	@$(NORMAL_UNINSTALL)
+	@list='$(dist_motd_SCRIPTS)'; test -n "$(motddir)" || exit 0; \
+	files=`for p in $$list; do echo "$$p"; done | \
+	       sed -e 's,.*/,,;$(transform)'`; \
+	dir='$(DESTDIR)$(motddir)'; $(am__uninstall_files_from_dir)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -7156,6 +7185,27 @@ uninstall-defaultbrandingDATA:
 	@list='$(defaultbranding_DATA)'; test -n "$(defaultbrandingdir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(defaultbrandingdir)'; $(am__uninstall_files_from_dir)
+install-dist_motdDATA: $(dist_motd_DATA)
+	@$(NORMAL_INSTALL)
+	@list='$(dist_motd_DATA)'; test -n "$(motddir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(motddir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(motddir)" || exit 1; \
+	fi; \
+	for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  echo "$$d$$p"; \
+	done | $(am__base_list) | \
+	while read files; do \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(motddir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(motddir)" || exit $$?; \
+	done
+
+uninstall-dist_motdDATA:
+	@$(NORMAL_UNINSTALL)
+	@list='$(dist_motd_DATA)'; test -n "$(motddir)" || list=; \
+	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+	dir='$(DESTDIR)$(motddir)'; $(am__uninstall_files_from_dir)
 install-dist_systemdunitDATA: $(dist_systemdunit_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(dist_systemdunit_DATA)'; test -n "$(systemdunitdir)" || list=; \
@@ -7219,27 +7269,6 @@ uninstall-firewallDATA:
 	@list='$(firewall_DATA)'; test -n "$(firewalldir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(firewalldir)'; $(am__uninstall_files_from_dir)
-install-issueDATA: $(issue_DATA)
-	@$(NORMAL_INSTALL)
-	@list='$(issue_DATA)'; test -n "$(issuedir)" || list=; \
-	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(issuedir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(issuedir)" || exit 1; \
-	fi; \
-	for p in $$list; do \
-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-	  echo "$$d$$p"; \
-	done | $(am__base_list) | \
-	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(issuedir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(issuedir)" || exit $$?; \
-	done
-
-uninstall-issueDATA:
-	@$(NORMAL_UNINSTALL)
-	@list='$(issue_DATA)'; test -n "$(issuedir)" || list=; \
-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	dir='$(DESTDIR)$(issuedir)'; $(am__uninstall_files_from_dir)
 install-kubernetesbrandingDATA: $(kubernetesbranding_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(kubernetesbranding_DATA)'; test -n "$(kubernetesbrandingdir)" || list=; \
@@ -8374,7 +8403,7 @@ check: $(BUILT_SOURCES)
 all-am: Makefile $(LIBRARIES) $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) \
 		config.h all-local
 installdirs:
-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(basedebugdir)" "$(DESTDIR)$(basefontsdir)" "$(DESTDIR)$(centosbrandingdir)" "$(DESTDIR)$(debianbrandingdir)" "$(DESTDIR)$(defaultbrandingdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" "$(DESTDIR)$(firewalldir)" "$(DESTDIR)$(issuedir)" "$(DESTDIR)$(kubernetesbrandingdir)" "$(DESTDIR)$(machinesdir)" "$(DESTDIR)$(metainfodir)" "$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(tempconfdir)" "$(DESTDIR)$(ovirtdir)" "$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(pixmapsdir)" "$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" "$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"; do \
+	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(motddir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(basedebugdir)" "$(DESTDIR)$(basefontsdir)" "$(DESTDIR)$(centosbrandingdir)" "$(DESTDIR)$(debianbrandingdir)" "$(DESTDIR)$(defaultbrandingdir)" "$(DESTDIR)$(motddir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" "$(DESTDIR)$(firewalldir)" "$(DESTDIR)$(kubernetesbrandingdir)" "$(DESTDIR)$(machinesdir)" "$(DESTDIR)$(metainfodir)" "$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(tempconfdir)" "$(DESTDIR)$(ovirtdir)" "$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(pixmapsdir)" "$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" "$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: $(BUILT_SOURCES)
@@ -8456,17 +8485,18 @@ info-am:
 install-data-am: install-baseDATA install-basedebugDATA \
 	install-basefontsDATA install-centosbrandingDATA \
 	install-data-local install-debianbrandingDATA \
-	install-defaultbrandingDATA install-dist_systemdunitDATA \
+	install-defaultbrandingDATA install-dist_motdDATA \
+	install-dist_motdSCRIPTS install-dist_systemdunitDATA \
 	install-fedorabrandingDATA install-firewallDATA \
-	install-issueDATA install-kubernetesbrandingDATA \
-	install-machinesDATA install-man install-metainfoDATA \
-	install-nodist_appdataDATA install-nodist_baseDATA \
-	install-nodist_desktopDATA install-nodist_staticDATA \
-	install-nodist_systemdunitDATA install-nodist_tempconfDATA \
-	install-ovirtDATA install-pixmapDATA install-pixmapsDATA \
-	install-playgroundDATA install-pmlogconfDATA \
-	install-registrybrandingDATA install-rhelbrandingDATA \
-	install-staticfontsDATA install-ubuntubrandingDATA
+	install-kubernetesbrandingDATA install-machinesDATA \
+	install-man install-metainfoDATA install-nodist_appdataDATA \
+	install-nodist_baseDATA install-nodist_desktopDATA \
+	install-nodist_staticDATA install-nodist_systemdunitDATA \
+	install-nodist_tempconfDATA install-ovirtDATA \
+	install-pixmapDATA install-pixmapsDATA install-playgroundDATA \
+	install-pmlogconfDATA install-registrybrandingDATA \
+	install-rhelbrandingDATA install-staticfontsDATA \
+	install-ubuntubrandingDATA
 	@$(NORMAL_INSTALL)
 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
 install-dvi: install-dvi-am
@@ -8519,15 +8549,16 @@ ps-am:
 uninstall-am: uninstall-baseDATA uninstall-basedebugDATA \
 	uninstall-basefontsDATA uninstall-binPROGRAMS \
 	uninstall-centosbrandingDATA uninstall-debianbrandingDATA \
-	uninstall-defaultbrandingDATA uninstall-dist_systemdunitDATA \
+	uninstall-defaultbrandingDATA uninstall-dist_motdDATA \
+	uninstall-dist_motdSCRIPTS uninstall-dist_systemdunitDATA \
 	uninstall-fedorabrandingDATA uninstall-firewallDATA \
-	uninstall-issueDATA uninstall-kubernetesbrandingDATA \
-	uninstall-libexecPROGRAMS uninstall-local \
-	uninstall-machinesDATA uninstall-man uninstall-metainfoDATA \
-	uninstall-nodist_appdataDATA uninstall-nodist_baseDATA \
-	uninstall-nodist_desktopDATA uninstall-nodist_staticDATA \
-	uninstall-nodist_systemdunitDATA uninstall-nodist_tempconfDATA \
-	uninstall-ovirtDATA uninstall-pixmapDATA uninstall-pixmapsDATA \
+	uninstall-kubernetesbrandingDATA uninstall-libexecPROGRAMS \
+	uninstall-local uninstall-machinesDATA uninstall-man \
+	uninstall-metainfoDATA uninstall-nodist_appdataDATA \
+	uninstall-nodist_baseDATA uninstall-nodist_desktopDATA \
+	uninstall-nodist_staticDATA uninstall-nodist_systemdunitDATA \
+	uninstall-nodist_tempconfDATA uninstall-ovirtDATA \
+	uninstall-pixmapDATA uninstall-pixmapsDATA \
 	uninstall-playgroundDATA uninstall-pmlogconfDATA \
 	uninstall-registrybrandingDATA uninstall-rhelbrandingDATA \
 	uninstall-sbinPROGRAMS uninstall-staticfontsDATA \
@@ -8553,22 +8584,22 @@ uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 	install-centosbrandingDATA install-data install-data-am \
 	install-data-hook install-data-local \
 	install-debianbrandingDATA install-defaultbrandingDATA \
+	install-dist_motdDATA install-dist_motdSCRIPTS \
 	install-dist_systemdunitDATA install-dvi install-dvi-am \
 	install-exec install-exec-am install-exec-hook \
 	install-exec-local install-fedorabrandingDATA \
 	install-firewallDATA install-html install-html-am install-info \
-	install-info-am install-issueDATA \
-	install-kubernetesbrandingDATA install-libexecPROGRAMS \
-	install-machinesDATA install-man install-man1 install-man5 \
-	install-man8 install-metainfoDATA install-nodist_appdataDATA \
-	install-nodist_baseDATA install-nodist_desktopDATA \
-	install-nodist_staticDATA install-nodist_systemdunitDATA \
-	install-nodist_tempconfDATA install-ovirtDATA install-pdf \
-	install-pdf-am install-pixmapDATA install-pixmapsDATA \
-	install-playgroundDATA install-pmlogconfDATA install-ps \
-	install-ps-am install-registrybrandingDATA \
-	install-rhelbrandingDATA install-sbinPROGRAMS \
-	install-staticfontsDATA install-strip \
+	install-info-am install-kubernetesbrandingDATA \
+	install-libexecPROGRAMS install-machinesDATA install-man \
+	install-man1 install-man5 install-man8 install-metainfoDATA \
+	install-nodist_appdataDATA install-nodist_baseDATA \
+	install-nodist_desktopDATA install-nodist_staticDATA \
+	install-nodist_systemdunitDATA install-nodist_tempconfDATA \
+	install-ovirtDATA install-pdf install-pdf-am \
+	install-pixmapDATA install-pixmapsDATA install-playgroundDATA \
+	install-pmlogconfDATA install-ps install-ps-am \
+	install-registrybrandingDATA install-rhelbrandingDATA \
+	install-sbinPROGRAMS install-staticfontsDATA install-strip \
 	install-ubuntubrandingDATA installcheck installcheck-am \
 	installdirs maintainer-clean maintainer-clean-generic \
 	mostlyclean mostlyclean-compile mostlyclean-generic pdf pdf-am \
@@ -8576,16 +8607,17 @@ uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 	uninstall-baseDATA uninstall-basedebugDATA \
 	uninstall-basefontsDATA uninstall-binPROGRAMS \
 	uninstall-centosbrandingDATA uninstall-debianbrandingDATA \
-	uninstall-defaultbrandingDATA uninstall-dist_systemdunitDATA \
+	uninstall-defaultbrandingDATA uninstall-dist_motdDATA \
+	uninstall-dist_motdSCRIPTS uninstall-dist_systemdunitDATA \
 	uninstall-fedorabrandingDATA uninstall-firewallDATA \
-	uninstall-issueDATA uninstall-kubernetesbrandingDATA \
-	uninstall-libexecPROGRAMS uninstall-local \
-	uninstall-machinesDATA uninstall-man uninstall-man1 \
-	uninstall-man5 uninstall-man8 uninstall-metainfoDATA \
-	uninstall-nodist_appdataDATA uninstall-nodist_baseDATA \
-	uninstall-nodist_desktopDATA uninstall-nodist_staticDATA \
-	uninstall-nodist_systemdunitDATA uninstall-nodist_tempconfDATA \
-	uninstall-ovirtDATA uninstall-pixmapDATA uninstall-pixmapsDATA \
+	uninstall-kubernetesbrandingDATA uninstall-libexecPROGRAMS \
+	uninstall-local uninstall-machinesDATA uninstall-man \
+	uninstall-man1 uninstall-man5 uninstall-man8 \
+	uninstall-metainfoDATA uninstall-nodist_appdataDATA \
+	uninstall-nodist_baseDATA uninstall-nodist_desktopDATA \
+	uninstall-nodist_staticDATA uninstall-nodist_systemdunitDATA \
+	uninstall-nodist_tempconfDATA uninstall-ovirtDATA \
+	uninstall-pixmapDATA uninstall-pixmapsDATA \
 	uninstall-playgroundDATA uninstall-pmlogconfDATA \
 	uninstall-registrybrandingDATA uninstall-rhelbrandingDATA \
 	uninstall-sbinPROGRAMS uninstall-staticfontsDATA \
@@ -8883,16 +8915,6 @@ dist/base1/require.js: src/base1/deprecated.js src/base1/require-config.js src/b
 	cat $(srcdir)/src/base1/deprecated.js $(srcdir)/src/base1/require-config.js $(srcdir)/node_modules/requirejs/require.js $(srcdir)/src/base1/require-loaders.js > $@.tmp && $(MV) $@.tmp $@
 dist/base1/require.min.js: dist/base1/require.js
 	$(MIN_JS_RULE)
-dist/base1/jquery.js:
-	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	cat $(srcdir)/node_modules/jquery/dist/jquery.js $(srcdir)/node_modules/bootstrap/dist/js/bootstrap.js $(srcdir)/node_modules/patternfly/dist/js/patternfly.js > $@.tmp && $(MV) $@.tmp $@
-dist/base1/jquery.min.js: dist/base1/jquery.js
-	$(MIN_JS_RULE)
-dist/base1/cockpit.js: src/base1/cockpit.js
-	$(JSHINT_RULE)
-	$(COPY_RULE)
-dist/base1/cockpit.min.js: dist/base1/cockpit.js
-	$(MIN_JS_RULE)
 dist/base1/mustache.js: src/base1/deprecated.js
 	$(V_COPY) $(MKDIR_P) $(dir $@) && \
 	cat $(srcdir)/src/base1/deprecated.js $(srcdir)/node_modules/mustache/mustache.js > $@.tmp && $(MV) $@.tmp $@
@@ -8903,10 +8925,6 @@ dist/base1/manifest.json: src/base1/manifest.json
 
 # All map files are built as side effects of minification
 dist/base1/require.min.js.map: dist/base1/require.min.js
-
-dist/base1/cockpit.min.js.map: dist/base1/cockpit.min.js
-
-dist/base1/jquery.min.js.map: dist/base1/jquery.min.js
 
 dist/base1/mustache.min.js.map: dist/base1/mustache.min.js
 
@@ -9083,6 +9101,11 @@ dist/static/login.po.%.html: src/ws/%.po src/ws/po.empty.html
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
 	$(srcdir)/tools/missing $(srcdir)/po/po2json -m $(srcdir)/src/ws/po.empty.html -o $@.tmp src/ws/$*.po && \
 	$(MV) $@.tmp $@
+
+# Automake: 'Variables using ... ‘sysconf’ ... are installed by install-exec.'
+install-exec-hook::
+	$(MKDIR_P) $(DESTDIR)$(sysconfdir)/motd.d
+	$(LN_S) -nf /run/cockpit/motd $(DESTDIR)$(sysconfdir)/motd.d/cockpit
 
 $(nodist_tempconf_DATA): $(tempconf_in)
 	$(SUBST_RULE)

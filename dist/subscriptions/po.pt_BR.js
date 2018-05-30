@@ -64,8 +64,8 @@ var nplurals, plural;
 nplurals=2; plural=(n != 1);
 return plural;
 },
-  "language": "pt-BR",
-  "x-generator": "Zanata 3.9.6"
+  "language": "pt_BR",
+  "x-generator": "Zanata 4.4.5"
  },
  "'Organization' required to register.": [
   null,

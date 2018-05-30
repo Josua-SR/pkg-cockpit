@@ -65,7 +65,7 @@ nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 
 return plural;
 },
   "language": "pl",
-  "x-generator": "Zanata 3.9.6"
+  "x-generator": "Zanata 4.4.5"
  },
  "$0 Template": [
   null,
@@ -339,6 +339,14 @@ return plural;
   null,
   "Wersja BIOS-u"
  ],
+ "Before": [
+  null,
+  ""
+ ],
+ "Binds To": [
+  null,
+  ""
+ ],
  "Blade": [
   null,
   "Kasetowy"
@@ -346,6 +354,10 @@ return plural;
  "Blade enclosure": [
   null,
   "Obudowa kasetowa"
+ ],
+ "Bound By": [
+  null,
+  ""
  ],
  "Bug Fix Updates Available": [
   null,
@@ -414,6 +426,18 @@ return plural;
  "Condition failed": [
   null,
   "Warunek się nie powiódł"
+ ],
+ "Conflicted By": [
+  null,
+  ""
+ ],
+ "Conflicts": [
+  null,
+  ""
+ ],
+ "Consists Of": [
+  null,
+  ""
  ],
  "Convertible": [
   null,
@@ -611,6 +635,10 @@ return plural;
   null,
   "Brama IoT"
  ],
+ "Joins Namespace Of": [
+  null,
+  ""
+ ],
  "Journal": [
   null,
   "Dziennik"
@@ -787,6 +815,10 @@ return plural;
   null,
   "Włączone"
  ],
+ "On Failure": [
+  null,
+  "Podczas niepowodzenia"
+ ],
  "Only Emergency": [
   null,
   "Tylko awaryjne"
@@ -810,6 +842,10 @@ return plural;
  "PackageKit crashed": [
   null,
   "Usługa PackageKit uległa awarii"
+ ],
+ "Part Of": [
+  null,
+  ""
  ],
  "Paths": [
   null,
@@ -855,6 +891,10 @@ return plural;
   null,
   "Informacje o problemie"
  ],
+ "Propagates Reload To": [
+  null,
+  ""
+ ],
  "RAID Chassis": [
   null,
   "Obudowa RAID"
@@ -886,6 +926,10 @@ return plural;
  "Reload": [
   null,
   "Wczytaj ponownie"
+ ],
+ "Reload Propagated From": [
+  null,
+  ""
  ],
  "Repeat Daily": [
   null,
@@ -922,6 +966,22 @@ return plural;
  "Reporting was unsucessful. Try running `reporter-ureport -d ": [
   null,
   "Zgłoszenie się nie powiodło. Proszę wykonać „reporter-ureport -d "
+ ],
+ "Required By": [
+  null,
+  ""
+ ],
+ "Requires": [
+  null,
+  ""
+ ],
+ "Requisite": [
+  null,
+  ""
+ ],
+ "Requisite Of": [
+  null,
+  ""
  ],
  "Reset": [
   null,
@@ -1139,6 +1199,14 @@ return plural;
   null,
   "Tower"
  ],
+ "Triggered By": [
+  null,
+  ""
+ ],
+ "Triggers": [
+  null,
+  "Wyzwalacze"
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   "Próbowanie synchronizacji z {{Server}}"
@@ -1184,6 +1252,14 @@ return plural;
  "Version": [
   null,
   "Wersja"
+ ],
+ "Wanted By": [
+  null,
+  ""
+ ],
+ "Wants": [
+  null,
+  ""
  ],
  "Warning and above": [
   null,

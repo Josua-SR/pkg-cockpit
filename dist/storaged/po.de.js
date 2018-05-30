@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "de",
-  "x-generator": "Zanata 3.9.6"
+  "x-generator": "Zanata 4.4.5"
  },
  "\"http\" Key escrow": [
   null,
@@ -122,6 +122,10 @@ return plural;
   null,
   ""
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
  "$0 minute": [
   "$0 minutes",
   "$0 Minute",
@@ -144,6 +148,10 @@ return plural;
   "$0 weeks",
   "$0 Woche",
   "$0 Wochen"
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
  ],
  "$0 year": [
   "$0 years",
@@ -270,6 +278,10 @@ return plural;
   null,
   "Füge physikalischen Datenträger zu $target hinzu"
  ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Address": [
   null,
   "Adresse"
@@ -341,6 +353,10 @@ return plural;
  "Checking and Repairing RAID Device $target": [
   null,
   "Überprüfe und repariere RAID-Gerät $target"
+ ],
+ "Checking installed software": [
+  null,
+  ""
  ],
  "Chunk Size": [
   null,
@@ -546,6 +562,10 @@ return plural;
   null,
   "Vorhandene Daten nicht überschreiben"
  ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
  "Drive": [
   null,
   ""
@@ -710,6 +730,22 @@ return plural;
   null,
   ""
  ],
+ "Install": [
+  null,
+  ""
+ ],
+ "Install NFS Support": [
+  null,
+  ""
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
+  null,
+  ""
+ ],
  "Invalid username or password": [
   null,
   ""
@@ -854,6 +890,10 @@ return plural;
   null,
   ""
  ],
+ "NFS Support not installed": [
+  null,
+  ""
+ ],
  "NTFS - Compatible with most systems": [
   null,
   "NTFS - Kompatibel mit den meisten Systemen"
@@ -985,6 +1025,10 @@ return plural;
  "Overwrite existing data with zeros": [
   null,
   "Vorhandene Daten mit Nullen überschreiben"
+ ],
+ "PackageKit crashed": [
+  null,
+  ""
  ],
  "Partition": [
   null,
@@ -1174,6 +1218,10 @@ return plural;
   null,
   "Stoppe RAID-Gerät $target"
  ],
+ "Removals:": [
+  null,
+  ""
+ ],
  "Remove": [
   null,
   "Entfernen"
@@ -1183,6 +1231,10 @@ return plural;
   ""
  ],
  "Remove key": [
+  null,
+  ""
+ ],
+ "Removing $0": [
   null,
   ""
  ],
@@ -1370,6 +1422,10 @@ return plural;
   null,
   "Gespeichertes Passwort"
  ],
+ "Support is installed.": [
+  null,
+  ""
+ ],
  "Swap": [
   null,
   "Auslagerungsspeicher "
@@ -1511,6 +1567,10 @@ return plural;
   ""
  ],
  "This volume needs to be activated before it can be resized.": [
+  null,
+  ""
+ ],
+ "Total size: $0": [
   null,
   ""
  ],
@@ -1673,6 +1733,10 @@ return plural;
  "Volume Groups": [
   null,
   "Datenträgerverbünde"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "Write-mostly": [
   null,

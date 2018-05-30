@@ -1,5 +1,5 @@
 # Generated Makefile data for users
-# Stamp: Wed May 16 2018 08:57:42 GMT+0000 (UTC)
+# Stamp: Wed May 30 2018 08:47:28 GMT+0000 (UTC)
 
 users_INPUTS = \
 	node_modules/bootstrap-datepicker/LICENSE \
@@ -27,6 +27,8 @@ users_INPUTS = \
 	$(NULL)
 
 users_OUTPUTS = \
+	dist/base1/cockpit.js \
+	dist/base1/jquery.js \
 	dist/users/index.html \
 	dist/users/users.css \
 	dist/users/users.css.map \
@@ -37,6 +39,8 @@ users_OUTPUTS = \
 users_PO = dist/users/po.js $(patsubst %,dist/users/po.%.js,$(LINGUAS))
 
 users_INSTALL = \
+	dist/base1/cockpit.js.gz \
+	dist/base1/jquery.js.gz \
 	dist/users/index.html.gz \
 	dist/users/users.css.gz \
 	dist/users/users.min.js.gz \
@@ -57,6 +61,10 @@ dist/users/%.po: po/%.po
 
 dist/users/Makefile.deps: $(WEBPACK_CONFIG) $(users_INPUTS)
 	$(WEBPACK_RULE) -d dist/users/Makefile.deps $(WEBPACK_CONFIG)
+
+dist/base1/cockpit.js: dist/users/Makefile.deps
+
+dist/base1/jquery.js: dist/users/Makefile.deps
 
 dist/users/index.html: dist/users/Makefile.deps
 

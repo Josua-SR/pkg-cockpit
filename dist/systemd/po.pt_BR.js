@@ -64,8 +64,8 @@ var nplurals, plural;
 nplurals=2; plural=(n != 1);
 return plural;
 },
-  "language": "pt-BR",
-  "x-generator": "Zanata 3.9.6"
+  "language": "pt_BR",
+  "x-generator": "Zanata 4.4.5"
  },
  "$0 Template": [
   null,
@@ -333,6 +333,14 @@ return plural;
   null,
   "BIOS versão"
  ],
+ "Before": [
+  null,
+  ""
+ ],
+ "Binds To": [
+  null,
+  ""
+ ],
  "Blade": [
   null,
   "Blade"
@@ -340,6 +348,10 @@ return plural;
  "Blade enclosure": [
   null,
   "Blade enclosure"
+ ],
+ "Bound By": [
+  null,
+  ""
  ],
  "Bug Fix Updates Available": [
   null,
@@ -408,6 +420,18 @@ return plural;
  "Condition failed": [
   null,
   "Condição falhou"
+ ],
+ "Conflicted By": [
+  null,
+  ""
+ ],
+ "Conflicts": [
+  null,
+  ""
+ ],
+ "Consists Of": [
+  null,
+  ""
  ],
  "Convertible": [
   null,
@@ -605,6 +629,10 @@ return plural;
   null,
   "Gateway IoT"
  ],
+ "Joins Namespace Of": [
+  null,
+  ""
+ ],
  "Journal": [
   null,
   "Diário"
@@ -781,6 +809,10 @@ return plural;
   null,
   "Ligado"
  ],
+ "On Failure": [
+  null,
+  "Em Falha"
+ ],
  "Only Emergency": [
   null,
   "Apenas emergência"
@@ -804,6 +836,10 @@ return plural;
  "PackageKit crashed": [
   null,
   "PackageKit caiu"
+ ],
+ "Part Of": [
+  null,
+  ""
  ],
  "Paths": [
   null,
@@ -849,6 +885,10 @@ return plural;
   null,
   "Informação do Problema"
  ],
+ "Propagates Reload To": [
+  null,
+  ""
+ ],
  "RAID Chassis": [
   null,
   "RAID Chassis"
@@ -880,6 +920,10 @@ return plural;
  "Reload": [
   null,
   "Recarregar"
+ ],
+ "Reload Propagated From": [
+  null,
+  ""
  ],
  "Repeat Daily": [
   null,
@@ -916,6 +960,22 @@ return plural;
  "Reporting was unsucessful. Try running `reporter-ureport -d ": [
   null,
   "Os relatórios não tiveram sucesso. Tente executar `reporter-ureport -d"
+ ],
+ "Required By": [
+  null,
+  ""
+ ],
+ "Requires": [
+  null,
+  ""
+ ],
+ "Requisite": [
+  null,
+  ""
+ ],
+ "Requisite Of": [
+  null,
+  ""
  ],
  "Reset": [
   null,
@@ -1133,6 +1193,14 @@ return plural;
   null,
   ""
  ],
+ "Triggered By": [
+  null,
+  ""
+ ],
+ "Triggers": [
+  null,
+  "Triggers"
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   "Tentando sincronizar com {{Server}}"
@@ -1177,6 +1245,14 @@ return plural;
  "Version": [
   null,
   "Versão"
+ ],
+ "Wanted By": [
+  null,
+  ""
+ ],
+ "Wants": [
+  null,
+  ""
  ],
  "Warning and above": [
   null,

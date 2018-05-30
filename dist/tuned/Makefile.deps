@@ -1,11 +1,12 @@
 # Generated Makefile data for tuned
-# Stamp: Wed May 16 2018 08:57:41 GMT+0000 (UTC)
+# Stamp: Wed May 30 2018 08:47:28 GMT+0000 (UTC)
 
 tuned_INPUTS = \
 	node_modules/react-lite/LICENSE \
 	node_modules/react-lite/README.md \
 	node_modules/react-lite/dist/react-lite.js \
 	node_modules/react-lite/package.json \
+	pkg/lib/cockpit-components-dialog.css \
 	pkg/lib/cockpit-components-dialog.jsx \
 	pkg/lib/page.css \
 	pkg/lib/service.js \
@@ -15,6 +16,8 @@ tuned_INPUTS = \
 	$(NULL)
 
 tuned_OUTPUTS = \
+	dist/base1/cockpit.js \
+	dist/base1/jquery.js \
 	dist/tuned/performance.css \
 	dist/tuned/performance.css.map \
 	dist/tuned/performance.min.js \
@@ -24,6 +27,8 @@ tuned_OUTPUTS = \
 tuned_PO = dist/tuned/po.js $(patsubst %,dist/tuned/po.%.js,$(LINGUAS))
 
 tuned_INSTALL = \
+	dist/base1/cockpit.js.gz \
+	dist/base1/jquery.js.gz \
 	dist/tuned/performance.css.gz \
 	dist/tuned/performance.min.js.gz \
 	$(addsuffix .gz,$(tuned_PO)) \
@@ -39,10 +44,14 @@ tuned_TESTS = \
 
 dist/tuned/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/react-lite/dist/react-lite.js -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/page.css -N pkg/lib/service.js -N pkg/tuned/change-profile.jsx -N pkg/tuned/dialog.js -N pkg/tuned/link.html $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/react-lite/dist/react-lite.js -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/page.css -N pkg/lib/service.js -N pkg/tuned/change-profile.jsx -N pkg/tuned/dialog.js -N pkg/tuned/link.html $< > $@.tmp && mv $@.tmp $@
 
 dist/tuned/Makefile.deps: $(WEBPACK_CONFIG) $(tuned_INPUTS)
 	$(WEBPACK_RULE) -d dist/tuned/Makefile.deps $(WEBPACK_CONFIG)
+
+dist/base1/cockpit.js: dist/tuned/Makefile.deps
+
+dist/base1/jquery.js: dist/tuned/Makefile.deps
 
 dist/tuned/performance.css: dist/tuned/Makefile.deps
 
@@ -59,6 +68,8 @@ node_modules/react-lite/README.md:
 node_modules/react-lite/dist/react-lite.js:
 
 node_modules/react-lite/package.json:
+
+pkg/lib/cockpit-components-dialog.css:
 
 pkg/lib/cockpit-components-dialog.jsx:
 

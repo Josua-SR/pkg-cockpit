@@ -1,5 +1,5 @@
 # Generated Makefile data for sosreport
-# Stamp: Wed May 16 2018 08:57:06 GMT+0000 (UTC)
+# Stamp: Wed May 30 2018 08:46:50 GMT+0000 (UTC)
 
 sosreport_INPUTS = \
 	pkg/lib/page.css \
@@ -12,6 +12,8 @@ sosreport_INPUTS = \
 	$(NULL)
 
 sosreport_OUTPUTS = \
+	dist/base1/cockpit.js \
+	dist/base1/jquery.js \
 	dist/sosreport/index.html \
 	dist/sosreport/sosreport.css \
 	dist/sosreport/sosreport.css.map \
@@ -23,6 +25,8 @@ sosreport_OUTPUTS = \
 sosreport_PO = dist/sosreport/po.js $(patsubst %,dist/sosreport/po.%.js,$(LINGUAS))
 
 sosreport_INSTALL = \
+	dist/base1/cockpit.js.gz \
+	dist/base1/jquery.js.gz \
 	dist/sosreport/index.html.gz \
 	dist/sosreport/sosreport.css.gz \
 	dist/sosreport/sosreport.min.js.gz \
@@ -44,6 +48,10 @@ dist/sosreport/%.po: po/%.po
 
 dist/sosreport/Makefile.deps: $(WEBPACK_CONFIG) $(sosreport_INPUTS)
 	$(WEBPACK_RULE) -d dist/sosreport/Makefile.deps $(WEBPACK_CONFIG)
+
+dist/base1/cockpit.js: dist/sosreport/Makefile.deps
+
+dist/base1/jquery.js: dist/sosreport/Makefile.deps
 
 dist/sosreport/index.html: dist/sosreport/Makefile.deps
 

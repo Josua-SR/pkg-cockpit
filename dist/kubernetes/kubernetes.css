@@ -3940,6 +3940,10 @@ input[type=number] {
 .dialog-ct-visible {
     display: block;
 }
+#cockpit_modal_dialog .modal-body {
+    max-height: calc(75vh - 10rem);
+    overflow: auto;
+}
 #resource-text {
   resize: none;
   height: 50vh;
@@ -4117,13 +4121,17 @@ input[type=number] {
     line-height: normal;
 }
 
+.xterm {
+    cursor: text;
+}
+
 .xterm.enable-mouse-events {
     /* When mouse events are enabled (eg. tmux), revert to the standard pointer cursor */
     cursor: default;
 }
 
-.xterm:not(.enable-mouse-events) {
-    cursor: text;
+.xterm.xterm-cursor-pointer {
+    cursor: pointer;
 }
 
 .xterm .xterm-accessibility,
@@ -4143,10 +4151,6 @@ input[type=number] {
     width: 1px;
     height: 1px;
     overflow: hidden;
-}
-
-.xterm-cursor-pointer {
-    cursor: pointer;
 }
 a {
   cursor: pointer;

@@ -65,7 +65,7 @@ nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 
 return plural;
 },
   "language": "pl",
-  "x-generator": "Zanata 3.9.6"
+  "x-generator": "Zanata 4.4.5"
  },
  "\"http\" Key escrow": [
   null,
@@ -125,6 +125,10 @@ return plural;
   null,
   "$0 jest obecnie używane"
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
  "$0 minute": [
   "$0 minutes",
   "$0 minuta",
@@ -150,6 +154,10 @@ return plural;
   "$0 tydzień",
   "$0 tygodnie",
   "$0 tygodni"
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
  ],
  "$0 year": [
   "$0 years",
@@ -277,6 +285,10 @@ return plural;
   null,
   "Dodawanie woluminu fizycznego do $target"
  ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Address": [
   null,
   "Adres"
@@ -348,6 +360,10 @@ return plural;
  "Checking and Repairing RAID Device $target": [
   null,
   "Sprawdzanie i naprawianie urządzenia RAID $target"
+ ],
+ "Checking installed software": [
+  null,
+  ""
  ],
  "Chunk Size": [
   null,
@@ -553,6 +569,10 @@ return plural;
   null,
   "Nie zastępuj istniejących danych"
  ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
  "Drive": [
   null,
   "Napęd"
@@ -717,6 +737,22 @@ return plural;
   null,
   "Pamięć indeksu"
  ],
+ "Install": [
+  null,
+  "Zainstaluj"
+ ],
+ "Install NFS Support": [
+  null,
+  ""
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
+  null,
+  ""
+ ],
  "Invalid username or password": [
   null,
   "Nieprawidłowa nazwa użytkownika lub hasło"
@@ -861,6 +897,10 @@ return plural;
   null,
   "Punkty montowania NFS"
  ],
+ "NFS Support not installed": [
+  null,
+  ""
+ ],
  "NTFS - Compatible with most systems": [
   null,
   "NTFS — zgodne z większością systemów"
@@ -992,6 +1032,10 @@ return plural;
  "Overwrite existing data with zeros": [
   null,
   "Zastąp istniejące dane zerami"
+ ],
+ "PackageKit crashed": [
+  null,
+  "Usługa PackageKit uległa awarii"
  ],
  "Partition": [
   null,
@@ -1181,6 +1225,10 @@ return plural;
   null,
   "Przywracanie urządzenia RAID $target"
  ],
+ "Removals:": [
+  null,
+  ""
+ ],
  "Remove": [
   null,
   "Usuń"
@@ -1192,6 +1240,10 @@ return plural;
  "Remove key": [
   null,
   "Usuń klucz"
+ ],
+ "Removing $0": [
+  null,
+  ""
  ],
  "Removing $target from RAID Device": [
   null,
@@ -1377,6 +1429,10 @@ return plural;
   null,
   "Zachowane hasło"
  ],
+ "Support is installed.": [
+  null,
+  ""
+ ],
  "Swap": [
   null,
   "Partycja wymiany"
@@ -1520,6 +1576,10 @@ return plural;
  "This volume needs to be activated before it can be resized.": [
   null,
   "Ten wolumin musi zostać aktywowany przed zmianą rozmiaru."
+ ],
+ "Total size: $0": [
+  null,
+  ""
  ],
  "Trust Key": [
   null,
@@ -1680,6 +1740,10 @@ return plural;
  "Volume Groups": [
   null,
   "Grupy woluminów"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "Write-mostly": [
   null,

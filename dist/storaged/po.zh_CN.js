@@ -64,8 +64,8 @@ var nplurals, plural;
 nplurals=1; plural=0;
 return plural;
 },
-  "language": "zh-CN",
-  "x-generator": "Zanata 3.9.6"
+  "language": "zh_CN",
+  "x-generator": "Zanata 4.4.5"
  },
  "\"http\" Key escrow": [
   null,
@@ -119,6 +119,10 @@ return plural;
   null,
   "$0 正处于激活使用中"
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
  "$0 minute": [
   "$0 minutes",
   "$0 分钟"
@@ -138,6 +142,10 @@ return plural;
  "$0 week": [
   "$0 weeks",
   "$0 周"
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
  ],
  "$0 year": [
   "$0 years",
@@ -263,6 +271,10 @@ return plural;
   null,
   "添加物理卷至 $target"
  ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Address": [
   null,
   "地址"
@@ -334,6 +346,10 @@ return plural;
  "Checking and Repairing RAID Device $target": [
   null,
   "检查并修复 RAID 设备 $target"
+ ],
+ "Checking installed software": [
+  null,
+  ""
  ],
  "Chunk Size": [
   null,
@@ -539,6 +555,10 @@ return plural;
   null,
   "不覆盖已存在数据"
  ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
  "Drive": [
   null,
   "驱动器"
@@ -703,6 +723,22 @@ return plural;
   null,
   ""
  ],
+ "Install": [
+  null,
+  "安装"
+ ],
+ "Install NFS Support": [
+  null,
+  ""
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
+  null,
+  ""
+ ],
  "Invalid username or password": [
   null,
   "无效的用户名或密码"
@@ -847,6 +883,10 @@ return plural;
   null,
   ""
  ],
+ "NFS Support not installed": [
+  null,
+  ""
+ ],
  "NTFS - Compatible with most systems": [
   null,
   "NTFS - 兼容多数系统"
@@ -978,6 +1018,10 @@ return plural;
  "Overwrite existing data with zeros": [
   null,
   "使用 0 覆盖已存在数据"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit 已崩溃"
  ],
  "Partition": [
   null,
@@ -1167,6 +1211,10 @@ return plural;
   null,
   "恢复 RAID 设备 $target"
  ],
+ "Removals:": [
+  null,
+  ""
+ ],
  "Remove": [
   null,
   "删除"
@@ -1176,6 +1224,10 @@ return plural;
   ""
  ],
  "Remove key": [
+  null,
+  ""
+ ],
+ "Removing $0": [
   null,
   ""
  ],
@@ -1363,6 +1415,10 @@ return plural;
   null,
   "保存的密码"
  ],
+ "Support is installed.": [
+  null,
+  ""
+ ],
  "Swap": [
   null,
   "交换空间"
@@ -1504,6 +1560,10 @@ return plural;
   ""
  ],
  "This volume needs to be activated before it can be resized.": [
+  null,
+  ""
+ ],
+ "Total size: $0": [
   null,
   ""
  ],
@@ -1666,6 +1726,10 @@ return plural;
  "Volume Groups": [
   null,
   "卷组"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "Write-mostly": [
   null,

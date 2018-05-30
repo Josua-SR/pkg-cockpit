@@ -65,7 +65,7 @@ nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 |
 return plural;
 },
   "language": "hr",
-  "x-generator": "Zanata 3.9.6"
+  "x-generator": "Zanata 4.4.5"
  },
  "$0 Template": [
   null,
@@ -339,11 +339,23 @@ return plural;
   null,
   ""
  ],
+ "Before": [
+  null,
+  ""
+ ],
+ "Binds To": [
+  null,
+  ""
+ ],
  "Blade": [
   null,
   ""
  ],
  "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bound By": [
   null,
   ""
  ],
@@ -412,6 +424,18 @@ return plural;
   ""
  ],
  "Condition failed": [
+  null,
+  ""
+ ],
+ "Conflicted By": [
+  null,
+  ""
+ ],
+ "Conflicts": [
+  null,
+  ""
+ ],
+ "Consists Of": [
   null,
   ""
  ],
@@ -611,6 +635,10 @@ return plural;
   null,
   ""
  ],
+ "Joins Namespace Of": [
+  null,
+  ""
+ ],
  "Journal": [
   null,
   ""
@@ -787,6 +815,10 @@ return plural;
   null,
   "Uključi"
  ],
+ "On Failure": [
+  null,
+  "Neuspjelo"
+ ],
  "Only Emergency": [
   null,
   ""
@@ -808,6 +840,10 @@ return plural;
   ""
  ],
  "PackageKit crashed": [
+  null,
+  ""
+ ],
+ "Part Of": [
   null,
   ""
  ],
@@ -855,6 +891,10 @@ return plural;
   null,
   ""
  ],
+ "Propagates Reload To": [
+  null,
+  ""
+ ],
  "RAID Chassis": [
   null,
   ""
@@ -884,6 +924,10 @@ return plural;
   ""
  ],
  "Reload": [
+  null,
+  ""
+ ],
+ "Reload Propagated From": [
   null,
   ""
  ],
@@ -920,6 +964,22 @@ return plural;
   ""
  ],
  "Reporting was unsucessful. Try running `reporter-ureport -d ": [
+  null,
+  ""
+ ],
+ "Required By": [
+  null,
+  ""
+ ],
+ "Requires": [
+  null,
+  ""
+ ],
+ "Requisite": [
+  null,
+  ""
+ ],
+ "Requisite Of": [
   null,
   ""
  ],
@@ -1139,6 +1199,14 @@ return plural;
   null,
   ""
  ],
+ "Triggered By": [
+  null,
+  ""
+ ],
+ "Triggers": [
+  null,
+  ""
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   ""
@@ -1184,6 +1252,14 @@ return plural;
  "Version": [
   null,
   "Inačica"
+ ],
+ "Wanted By": [
+  null,
+  ""
+ ],
+ "Wants": [
+  null,
+  ""
  ],
  "Warning and above": [
   null,

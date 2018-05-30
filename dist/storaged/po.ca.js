@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "ca",
-  "x-generator": "Zanata 3.9.6"
+  "x-generator": "Zanata 4.4.5"
  },
  "\"http\" Key escrow": [
   null,
@@ -122,6 +122,10 @@ return plural;
   null,
   ""
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
  "$0 minute": [
   "$0 minutes",
   "$0 minut",
@@ -144,6 +148,10 @@ return plural;
   "$0 weeks",
   "$0 setmana",
   "$0 setmanes"
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
  ],
  "$0 year": [
   "$0 years",
@@ -270,6 +278,10 @@ return plural;
   null,
   "S'està afegint el volum físic a $target"
  ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Address": [
   null,
   "Adreça"
@@ -339,6 +351,10 @@ return plural;
   ""
  ],
  "Checking and Repairing RAID Device $target": [
+  null,
+  ""
+ ],
+ "Checking installed software": [
   null,
   ""
  ],
@@ -546,6 +562,10 @@ return plural;
   null,
   "No sobreescriguis les dades existents"
  ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
  "Drive": [
   null,
   "Unitat"
@@ -710,6 +730,22 @@ return plural;
   null,
   ""
  ],
+ "Install": [
+  null,
+  "Instal·la"
+ ],
+ "Install NFS Support": [
+  null,
+  ""
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
+  null,
+  ""
+ ],
  "Invalid username or password": [
   null,
   "El nom d'usuari o la contrasenya no són vàlids"
@@ -854,6 +890,10 @@ return plural;
   null,
   "Muntatges NFS"
  ],
+ "NFS Support not installed": [
+  null,
+  ""
+ ],
  "NTFS - Compatible with most systems": [
   null,
   "NTFS - Compatible amb la majoria dels sistemes"
@@ -985,6 +1025,10 @@ return plural;
  "Overwrite existing data with zeros": [
   null,
   "Sobreescriu les dades existents amb zeros"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit s'ha estavellat."
  ],
  "Partition": [
   null,
@@ -1174,6 +1218,10 @@ return plural;
   null,
   ""
  ],
+ "Removals:": [
+  null,
+  ""
+ ],
  "Remove": [
   null,
   "Suprimeix"
@@ -1185,6 +1233,10 @@ return plural;
  "Remove key": [
   null,
   "Suprimeix la clau"
+ ],
+ "Removing $0": [
+  null,
+  ""
  ],
  "Removing $target from RAID Device": [
   null,
@@ -1370,6 +1422,10 @@ return plural;
   null,
   "Contrasenya emmagatzemada"
  ],
+ "Support is installed.": [
+  null,
+  ""
+ ],
  "Swap": [
   null,
   "Intercanvi"
@@ -1511,6 +1567,10 @@ return plural;
   ""
  ],
  "This volume needs to be activated before it can be resized.": [
+  null,
+  ""
+ ],
+ "Total size: $0": [
   null,
   ""
  ],
@@ -1673,6 +1733,10 @@ return plural;
  "Volume Groups": [
   null,
   "Grups de volums"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "Write-mostly": [
   null,

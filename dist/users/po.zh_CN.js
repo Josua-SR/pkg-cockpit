@@ -64,8 +64,8 @@ var nplurals, plural;
 nplurals=1; plural=0;
 return plural;
 },
-  "language": "zh-CN",
-  "x-generator": "Zanata 3.9.6"
+  "language": "zh_CN",
+  "x-generator": "Zanata 4.4.5"
  },
  "Access": [
   null,

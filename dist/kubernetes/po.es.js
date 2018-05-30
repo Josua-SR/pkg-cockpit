@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "es",
-  "x-generator": "Zanata 3.9.6"
+  "x-generator": "Zanata 4.4.5"
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
@@ -1847,23 +1847,23 @@ return plural;
  ],
  "up": [
   null,
-  ""
+  "arriba"
  ],
  "upload a JSON file": [
   null,
-  ""
+  "subir un archivo JSON"
  ],
  "user": [
   null,
-  ""
+  "usuario"
  ],
  "vCPUs:": [
   null,
-  ""
+  "vCPUs:"
  ],
  "vhostuser": [
   null,
-  ""
+  "vhostuser"
  ],
  "yes": [
   null,

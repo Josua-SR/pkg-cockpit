@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "pa",
-  "x-generator": "Zanata 3.9.6"
+  "x-generator": "Zanata 4.4.5"
  },
  "\"http\" Key escrow": [
   null,
@@ -122,6 +122,10 @@ return plural;
   null,
   ""
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
  "$0 minute": [
   "$0 minutes",
   "$0 ਮਿੰਟ",
@@ -144,6 +148,10 @@ return plural;
   "$0 weeks",
   "$0 ਹਫ਼ਤਾ",
   "$0 ਹਫ਼ਤੇ"
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
  ],
  "$0 year": [
   "$0 years",
@@ -270,6 +278,10 @@ return plural;
   null,
   ""
  ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Address": [
   null,
   ""
@@ -339,6 +351,10 @@ return plural;
   ""
  ],
  "Checking and Repairing RAID Device $target": [
+  null,
+  ""
+ ],
+ "Checking installed software": [
   null,
   ""
  ],
@@ -546,6 +562,10 @@ return plural;
   null,
   ""
  ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
  "Drive": [
   null,
   "ਡਰਾਇਵ"
@@ -710,6 +730,22 @@ return plural;
   null,
   ""
  ],
+ "Install": [
+  null,
+  ""
+ ],
+ "Install NFS Support": [
+  null,
+  ""
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
+  null,
+  ""
+ ],
  "Invalid username or password": [
   null,
   ""
@@ -854,6 +890,10 @@ return plural;
   null,
   ""
  ],
+ "NFS Support not installed": [
+  null,
+  ""
+ ],
  "NTFS - Compatible with most systems": [
   null,
   ""
@@ -983,6 +1023,10 @@ return plural;
   "ਹੋਰ ਡਿਵਾਇਸ"
  ],
  "Overwrite existing data with zeros": [
+  null,
+  ""
+ ],
+ "PackageKit crashed": [
   null,
   ""
  ],
@@ -1174,6 +1218,10 @@ return plural;
   null,
   ""
  ],
+ "Removals:": [
+  null,
+  ""
+ ],
  "Remove": [
   null,
   ""
@@ -1183,6 +1231,10 @@ return plural;
   ""
  ],
  "Remove key": [
+  null,
+  ""
+ ],
+ "Removing $0": [
   null,
   ""
  ],
@@ -1370,6 +1422,10 @@ return plural;
   null,
   "ਵਾਕ ਸੰਭਾਲਿਆ"
  ],
+ "Support is installed.": [
+  null,
+  ""
+ ],
  "Swap": [
   null,
   "ਸਵੈਪ"
@@ -1511,6 +1567,10 @@ return plural;
   ""
  ],
  "This volume needs to be activated before it can be resized.": [
+  null,
+  ""
+ ],
+ "Total size: $0": [
   null,
   ""
  ],
@@ -1673,6 +1733,10 @@ return plural;
  "Volume Groups": [
   null,
   "ਵਾਲੀਅਮ ਗਰੁੱਪ"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "Write-mostly": [
   null,

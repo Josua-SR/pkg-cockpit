@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "fi",
-  "x-generator": "Zanata 3.9.6"
+  "x-generator": "Zanata 4.4.5"
  },
  "\"http\" Key escrow": [
   null,
@@ -122,6 +122,10 @@ return plural;
   null,
   "$0 on aktiivisessa käytössä"
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
  "$0 minute": [
   "$0 minutes",
   "$0 minuutti",
@@ -144,6 +148,10 @@ return plural;
   "$0 weeks",
   "$0 viikko",
   "$0 viikkoa"
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
  ],
  "$0 year": [
   "$0 years",
@@ -270,6 +278,10 @@ return plural;
   null,
   "Lisätään fyysinen taltio kohteeseen $target"
  ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Address": [
   null,
   "Osoite"
@@ -341,6 +353,10 @@ return plural;
  "Checking and Repairing RAID Device $target": [
   null,
   "Tarkistetaan ja korjataan RAID-laite $target"
+ ],
+ "Checking installed software": [
+  null,
+  ""
  ],
  "Chunk Size": [
   null,
@@ -546,6 +562,10 @@ return plural;
   null,
   "Älä ylikirjoita olemassa olevaa dataa"
  ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
  "Drive": [
   null,
   "Levy"
@@ -710,6 +730,22 @@ return plural;
   null,
   ""
  ],
+ "Install": [
+  null,
+  "Asenna"
+ ],
+ "Install NFS Support": [
+  null,
+  ""
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
+  null,
+  ""
+ ],
  "Invalid username or password": [
   null,
   "Virheellinen käyttäjätunnus tai salasana"
@@ -854,6 +890,10 @@ return plural;
   null,
   "NFS-liitokset"
  ],
+ "NFS Support not installed": [
+  null,
+  ""
+ ],
  "NTFS - Compatible with most systems": [
   null,
   "NTFS - Yhteensopiva useimpien järjestelmien kanssa"
@@ -985,6 +1025,10 @@ return plural;
  "Overwrite existing data with zeros": [
   null,
   ""
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit kaatui"
  ],
  "Partition": [
   null,
@@ -1174,6 +1218,10 @@ return plural;
   null,
   ""
  ],
+ "Removals:": [
+  null,
+  ""
+ ],
  "Remove": [
   null,
   "Poista"
@@ -1185,6 +1233,10 @@ return plural;
  "Remove key": [
   null,
   "Poista avain"
+ ],
+ "Removing $0": [
+  null,
+  ""
  ],
  "Removing $target from RAID Device": [
   null,
@@ -1370,6 +1422,10 @@ return plural;
   null,
   ""
  ],
+ "Support is installed.": [
+  null,
+  ""
+ ],
  "Swap": [
   null,
   ""
@@ -1513,6 +1569,10 @@ return plural;
  "This volume needs to be activated before it can be resized.": [
   null,
   "Tämä taltio tulee aktivoida, ennen kuin sen kokoa voi muuttaa."
+ ],
+ "Total size: $0": [
+  null,
+  ""
  ],
  "Trust Key": [
   null,
@@ -1673,6 +1733,10 @@ return plural;
  "Volume Groups": [
   null,
   "Taltioryhmät"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "Write-mostly": [
   null,
