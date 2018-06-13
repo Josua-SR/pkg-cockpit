@@ -114,7 +114,7 @@ return plural;
  ],
  "Not connected": [
   null,
-  "Nincs csatlakozva"
+  "Nincs kapcsolódva"
  ],
  "Occurred $0": [
   null,

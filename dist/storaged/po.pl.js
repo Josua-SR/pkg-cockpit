@@ -127,7 +127,7 @@ return plural;
  ],
  "$0 is not available from any repository.": [
   null,
-  ""
+  "$0 nie jest dostępne w żadnym repozytorium."
  ],
  "$0 minute": [
   "$0 minutes",
@@ -157,7 +157,7 @@ return plural;
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "$0 zostanie zainstalowane."
  ],
  "$0 year": [
   "$0 years",
@@ -287,7 +287,7 @@ return plural;
  ],
  "Additional packages:": [
   null,
-  ""
+  "Dodatkowe pakiety:"
  ],
  "Address": [
   null,
@@ -363,7 +363,7 @@ return plural;
  ],
  "Checking installed software": [
   null,
-  ""
+  "Sprawdzanie zainstalowanego oprogramowania"
  ],
  "Chunk Size": [
   null,
@@ -571,7 +571,7 @@ return plural;
  ],
  "Downloading $0": [
   null,
-  ""
+  "Pobieranie $0"
  ],
  "Drive": [
   null,
@@ -743,15 +743,15 @@ return plural;
  ],
  "Install NFS Support": [
   null,
-  ""
+  "Zainstaluj obsługę NFS"
  ],
  "Install Software": [
   null,
-  ""
+  "Zainstaluj oprogramowanie"
  ],
  "Installing $0": [
   null,
-  ""
+  "Instalowanie $0"
  ],
  "Invalid username or password": [
   null,
@@ -899,7 +899,7 @@ return plural;
  ],
  "NFS Support not installed": [
   null,
-  ""
+  "Obsługa NFS nie jest zainstalowana"
  ],
  "NTFS - Compatible with most systems": [
   null,
@@ -1227,7 +1227,7 @@ return plural;
  ],
  "Removals:": [
   null,
-  ""
+  "Usuwane:"
  ],
  "Remove": [
   null,
@@ -1243,7 +1243,7 @@ return plural;
  ],
  "Removing $0": [
   null,
-  ""
+  "Usuwanie $0"
  ],
  "Removing $target from RAID Device": [
   null,
@@ -1431,7 +1431,7 @@ return plural;
  ],
  "Support is installed.": [
   null,
-  ""
+  "Obsługa jest zainstalowana."
  ],
  "Swap": [
   null,
@@ -1579,7 +1579,7 @@ return plural;
  ],
  "Total size: $0": [
   null,
-  ""
+  "Całkowity rozmiar: $0"
  ],
  "Trust Key": [
   null,
@@ -1743,7 +1743,7 @@ return plural;
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "Oczekiwanie na ukończenie pozostałych działań zarządzania oprogramowaniem"
  ],
  "Write-mostly": [
   null,

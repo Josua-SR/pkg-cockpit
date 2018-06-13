@@ -1883,6 +1883,86 @@ tbody tr.listing-ct-noexpand {
   flex: none;
 }
 /**
+  Inline edit tables
+*/
+table.pf-table-inline-edit thead tr.editing th {
+  border-bottom-color: #7dc3e8;
+  border-bottom-width: 3px;
+}
+table.pf-table-inline-edit tbody tr td {
+  padding: 5px 10px 3px;
+}
+table.pf-table-inline-edit tbody tr td.editable {
+  padding: 0;
+}
+table.pf-table-inline-edit tbody tr td.editable.editing {
+  padding: 2px 3px;
+}
+table.pf-table-inline-edit tbody tr.editing td {
+  background: #def3ff;
+  border-top-color: #7dc3e8;
+  border-bottom-color: #7dc3e8;
+}
+table.pf-table-inline-edit tbody tr.editing td:first-child {
+  border-left-color: #7dc3e8;
+}
+table.pf-table-inline-edit tbody tr.editing td:last-child {
+  border-right-color: #7dc3e8;
+}
+table.pf-table-inline-edit tbody .input {
+  border: 1px solid transparent;
+  display: block;
+  margin: 2px 3px 2px;
+  min-height: 26px;
+  padding: 3px 6px 1px;
+}
+table.pf-table-inline-edit tbody .input:hover {
+  background: #fff;
+  border: 1px solid #bbb;
+  cursor: text;
+}
+table.pf-table-inline-edit tbody .input:hover::after {
+  content: "\F040";
+  float: right;
+  font-family: "FontAwesome";
+  margin-left: 15px;
+}
+table.pf-table-inline-edit tbody .static {
+  border: 1px solid transparent;
+  display: block;
+  margin: 2px 3px 2px;
+  padding: 3px 6px 1px;
+}
+.inline-edit-buttons {
+  background: #def3ff;
+  border: 1px solid #7dc3e8;
+  margin: 0;
+  padding: 4px;
+  position: fixed;
+  z-index: 1000;
+}
+.inline-edit-buttons.top {
+  border-bottom: 0;
+}
+.inline-edit-buttons.bottom {
+  border-top: 0;
+}
+.inline-edit-buttons.bold {
+  border-width: 3px;
+}
+.inline-edit-buttons .btn {
+  height: 26px;
+  margin-left: 4px;
+  width: 26px;
+}
+.inline-edit-buttons .btn:first-child {
+  margin-left: 0;
+}
+.popover-pf-info {
+  margin-left: 3px;
+  padding: 0;
+}
+/**
   Styling shared by both VncConsole and SerialConsole.
 */
 /**

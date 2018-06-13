@@ -54,7 +54,7 @@ def wait_project(machine, project):
             time.sleep(2)
 
 @skipImage("Kubernetes not packaged", "debian-stable", "debian-testing", "ubuntu-1604", "ubuntu-stable", "fedora-i386")
-@skipImage("No cockpit-kubernetes packaged", "continuous-atomic", "fedora-atomic", "rhel-atomic", "rhel-8")
+@skipImage("No cockpit-kubernetes packaged", "continuous-atomic", "fedora-atomic", "rhel-atomic", "rhel-x")
 class TestOpenshift(MachineCase, OpenshiftCommonTests):
     provision = {
         "machine1": { "address": "10.111.113.1/20" },
@@ -82,6 +82,10 @@ class TestOpenshift(MachineCase, OpenshiftCommonTests):
         self.openshift.execute("oc patch securitycontextconstraints restricted -p '{ \"runAsUser\": { \"type\": \"MustRunAsRange\" } }'")
 
         self.browser.wait_timeout(120)
+
+        # This happens with docker restarts and during startup polling
+        self.allow_journal_messages('.*received truncated HTTP response.*')
+        self.allow_journal_messages(".*api/.*couldn't connect.*")
 
     def testConnect(self):
         m = self.machine
@@ -650,7 +654,7 @@ LABEL io.projectatomic.nulecule.atomicappversion="0.1.11" \
                 b.wait_present(id)
                 b.upload_file(id, filename)
 
-            def _setVal(self, selector, value, by_key_press=False):
+            def _setVal(self, selector, value):
                 b = self.browser
                 value = str(value)
 
@@ -659,11 +663,8 @@ LABEL io.projectatomic.nulecule.atomicappversion="0.1.11" \
                 b.click(selector)
                 b.focus(selector)
                 b.set_val(selector, '')  # clear value
-                if by_key_press:
-                    b.key_press(value)
-                else:
-                    b.set_val(selector, value)
-                b.wait_val(selector, value)
+                b.key_press(value)
+                # b.wait_val(selector, value) # TODO: find reliable way how to check the key_pres is finished
 
         self.bootstrapKubevirt()
         runner = CreateVmRunner(self)
@@ -779,7 +780,7 @@ class TestOpenshiftPrerelease(TestOpenshift):
 
 
 @skipImage("Kubernetes not packaged", "debian-stable", "debian-testing", "ubuntu-1604", "ubuntu-stable", "fedora-i386")
-@skipImage("No cockpit-kubernetes packaged", "continuous-atomic", "fedora-atomic", "rhel-atomic", "rhel-8")
+@skipImage("No cockpit-kubernetes packaged", "continuous-atomic", "fedora-atomic", "rhel-atomic", "rhel-x")
 class TestRegistry(MachineCase, RegistryTests):
     provision = {
         "machine1": { "address": "10.111.113.1/20" },
@@ -808,6 +809,10 @@ class TestRegistry(MachineCase, RegistryTests):
         self.openshift.execute("oc project default")
 
         self.browser.wait_timeout(120)
+
+        # This happens with docker restarts and during startup polling
+        self.allow_journal_messages('.*received truncated HTTP response.*')
+        self.allow_journal_messages(".*api/.*couldn't connect.*")
 
 
 class TestRegistryPrerelease(TestRegistry):

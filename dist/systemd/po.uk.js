@@ -341,11 +341,11 @@ return plural;
  ],
  "Before": [
   null,
-  ""
+  "До"
  ],
  "Binds To": [
   null,
-  ""
+  "Пов'язано з"
  ],
  "Blade": [
   null,
@@ -357,7 +357,7 @@ return plural;
  ],
  "Bound By": [
   null,
-  ""
+  "Пов'язано"
  ],
  "Bug Fix Updates Available": [
   null,
@@ -429,15 +429,15 @@ return plural;
  ],
  "Conflicted By": [
   null,
-  ""
+  "Конфліктує за"
  ],
  "Conflicts": [
   null,
-  ""
+  "Конфліктує"
  ],
  "Consists Of": [
   null,
-  ""
+  "Складається з"
  ],
  "Convertible": [
   null,
@@ -637,7 +637,7 @@ return plural;
  ],
  "Joins Namespace Of": [
   null,
-  ""
+  "Долучається до простору назв"
  ],
  "Journal": [
   null,
@@ -845,7 +845,7 @@ return plural;
  ],
  "Part Of": [
   null,
-  ""
+  "Частина"
  ],
  "Paths": [
   null,
@@ -893,7 +893,7 @@ return plural;
  ],
  "Propagates Reload To": [
   null,
-  ""
+  "Поширює перезавантаження на"
  ],
  "RAID Chassis": [
   null,
@@ -929,7 +929,7 @@ return plural;
  ],
  "Reload Propagated From": [
   null,
-  ""
+  "Поширене перезавантаження з"
  ],
  "Repeat Daily": [
   null,
@@ -969,19 +969,19 @@ return plural;
  ],
  "Required By": [
   null,
-  ""
+  "Потрібен для"
  ],
  "Requires": [
   null,
-  ""
+  "Потребує"
  ],
  "Requisite": [
   null,
-  ""
+  "Потрібний"
  ],
  "Requisite Of": [
   null,
-  ""
+  "Потрібний для"
  ],
  "Reset": [
   null,
@@ -1201,7 +1201,7 @@ return plural;
  ],
  "Triggered By": [
   null,
-  ""
+  "Причина вмикання"
  ],
  "Triggers": [
   null,
@@ -1255,11 +1255,11 @@ return plural;
  ],
  "Wanted By": [
   null,
-  ""
+  "Бажаний для"
  ],
  "Wants": [
   null,
-  ""
+  "Бажає"
  ],
  "Warning and above": [
   null,
