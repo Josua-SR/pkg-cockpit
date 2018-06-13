@@ -1,10 +1,10 @@
-cockpit (170-1) UNRELEASED; urgency=medium
+cockpit (170-1) unstable; urgency=medium
 
   * New upstream release:
     - Software Updates: Layout rework
     - oVirt: Use authenticated libvirt connection by default
 
- -- Martin Pitt <mpitt@debian.org>  Wed, 13 Jun 2018 11:55:06 +0000
+ -- Martin Pitt <mpitt@debian.org>  Wed, 13 Jun 2018 11:55:54 +0000
 
 cockpit (169-1) unstable; urgency=medium
 
