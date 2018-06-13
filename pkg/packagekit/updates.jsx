@@ -172,7 +172,7 @@ function HeaderBar(props) {
             actionButton = <button className="btn btn-default" onClick={props.onRefresh} >{_("Check for Updates")}</button>;
         if (props.timeSinceRefresh !== null) {
             lastChecked = (
-                <span style={ {paddingRight: "3ex"} }>
+                <span>
                     { cockpit.format(_("Last checked: $0 ago"), moment.duration(props.timeSinceRefresh * 1000).humanize()) }
                 </span>
             );
@@ -183,12 +183,9 @@ function HeaderBar(props) {
 
     return (
         <div className="content-header-extra">
-            <table width="100%">
-                <tr>
-                    <td id="state">{state}</td>
-                    <td className="text-right">{lastChecked} {actionButton}</td>
-                </tr>
-            </table>
+            <div id="state" className="content-header-extra--state">{state}</div>
+            <div className="content-header-extra--updated">{lastChecked}</div>
+            <div className="content-header-extra--action">{actionButton}</div>
         </div>
     );
 }
@@ -327,7 +324,7 @@ class UpdateItem extends React.Component {
                         <i className="fa fa-fw" />
                     </td>
                     <th>{pkgsTruncated}</th>
-                    <td className="version">{info.version}</td>
+                    <td className="version"><span className="truncating">{info.version}</span></td>
                     <td className="type">{type}</td>
                     <td className="changelog">{descriptionFirstLine}</td>
                 </tr>
@@ -551,11 +548,11 @@ class OsUpdates extends React.Component {
 
     componentDidMount() {
         // check if there is an upgrade in progress already; if so, switch to "applying" state right away
-        PK.call("/org/freedesktop/PackageKit", "org.freedesktop.PackageKit", "GetTransactionList", [], {timeout: 5000})
+        PK.call("/org/freedesktop/PackageKit", "org.freedesktop.PackageKit", "GetTransactionList", [])
                 .done(result => {
                     let transactions = result[0];
                     let promises = transactions.map(transactionPath => PK.call(
-                        transactionPath, "org.freedesktop.DBus.Properties", "Get", [PK.transactionInterface, "Role"], {timeout: 5000}));
+                        transactionPath, "org.freedesktop.DBus.Properties", "Get", [PK.transactionInterface, "Role"]));
 
                     cockpit.all(promises)
                             .done(roles => {
@@ -701,7 +698,7 @@ class OsUpdates extends React.Component {
         PK.watchRedHatSubscription(registered => this.setState({ unregistered: !registered }));
 
         PK.call("/org/freedesktop/PackageKit", "org.freedesktop.PackageKit", "GetTimeSinceAction",
-                [PK.Enum.ROLE_REFRESH_CACHE], {timeout: 5000})
+                [PK.Enum.ROLE_REFRESH_CACHE])
                 .done(seconds => {
                     this.setState({timeSinceRefresh: seconds});
 
@@ -822,33 +819,30 @@ class OsUpdates extends React.Component {
                 let num_security_updates = count_security_updates(this.state.updates);
 
                 applyAll = (
-                    <button className="btn btn-primary" onClick={ () => this.applyUpdates(false) }>
+                    <button className="pk-update--all btn btn-primary" onClick={ () => this.applyUpdates(false) }>
                         { num_updates == num_security_updates
                             ? _("Install Security Updates") : _("Install All Updates") }
                     </button>);
 
                 if (num_security_updates > 0 && num_updates > num_security_updates) {
                     applySecurity = (
-                        <button className="btn btn-default" onClick={ () => this.applyUpdates(true) }>
+                        <button className="pk-update--security btn btn-default" onClick={ () => this.applyUpdates(true) }>
                             {_("Install Security Updates")}
                         </button>);
                 }
             }
 
             return (
-                <div>
+                <div className="pk-updates">
                     {unregisteredWarning}
                     <AutoUpdates onInitialized={ enabled => this.setState({ autoUpdatesEnabled: enabled }) } />
-                    <table id="available" width="100%">
-                        <tr>
-                            <td><h2>{_("Available Updates")}</h2></td>
-                            <td className="text-right">
-                                {applySecurity}
-                                    &nbsp; &nbsp;
-                                {applyAll}
-                            </td>
-                        </tr>
-                    </table>
+                    <div id="available" className="pk-updates--header">
+                        <h2 className="pk-updates--header--heading">{_("Available Updates")}</h2>
+                        <div className="pk-updates--header--actions">
+                            {applySecurity}
+                            {applyAll}
+                        </div>
+                    </div>
                     { this.state.cockpitUpdate
                         ? <div className="alert alert-warning">
                             <span className="pficon pficon-warning-triangle-o" />

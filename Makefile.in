@@ -400,13 +400,13 @@ am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" \
 	"$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" \
 	"$(DESTDIR)$(firewalldir)" \
 	"$(DESTDIR)$(kubernetesbrandingdir)" \
-	"$(DESTDIR)$(machinesdir)" "$(DESTDIR)$(metainfodir)" \
-	"$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" \
-	"$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(staticdir)" \
-	"$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(tempconfdir)" \
-	"$(DESTDIR)$(ovirtdir)" "$(DESTDIR)$(pixmapdir)" \
-	"$(DESTDIR)$(pixmapsdir)" "$(DESTDIR)$(playgrounddir)" \
-	"$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" \
+	"$(DESTDIR)$(metainfodir)" "$(DESTDIR)$(appdatadir)" \
+	"$(DESTDIR)$(basedir)" "$(DESTDIR)$(desktopdir)" \
+	"$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" \
+	"$(DESTDIR)$(tempconfdir)" "$(DESTDIR)$(ovirtdir)" \
+	"$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(pixmapsdir)" \
+	"$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" \
+	"$(DESTDIR)$(registrybrandingdir)" \
 	"$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticfontsdir)" \
 	"$(DESTDIR)$(ubuntubrandingdir)"
 @WITH_GOLANG_TRUE@am__EXEEXT_1 = cockpit-kube-auth$(EXEEXT) \
@@ -1061,8 +1061,8 @@ DATA = $(base_DATA) $(basedebug_DATA) $(basefonts_DATA) \
 	$(centosbranding_DATA) $(debianbranding_DATA) \
 	$(defaultbranding_DATA) $(dist_motd_DATA) \
 	$(dist_systemdunit_DATA) $(fedorabranding_DATA) \
-	$(firewall_DATA) $(kubernetesbranding_DATA) $(machines_DATA) \
-	$(metainfo_DATA) $(nodist_appdata_DATA) $(nodist_base_DATA) \
+	$(firewall_DATA) $(kubernetesbranding_DATA) $(metainfo_DATA) \
+	$(nodist_appdata_DATA) $(nodist_base_DATA) \
 	$(nodist_desktop_DATA) $(nodist_noinst_DATA) \
 	$(nodist_static_DATA) $(nodist_systemdunit_DATA) \
 	$(nodist_tempconf_DATA) $(noinst_DATA) $(ovirt_DATA) \
@@ -1910,11 +1910,6 @@ pkg_TESTS = \
 playgrounddir = $(pkgdatadir)/playground
 playground_DATA = \
 	dist/playground/po.extra.de.js \
-	$(NULL)
-
-machinesdir = $(pkgdatadir)/machines
-machines_DATA = \
-	dist/machines/base.css \
 	$(NULL)
 
 ovirtdir = $(pkgdatadir)/ovirt
@@ -7290,27 +7285,6 @@ uninstall-kubernetesbrandingDATA:
 	@list='$(kubernetesbranding_DATA)'; test -n "$(kubernetesbrandingdir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(kubernetesbrandingdir)'; $(am__uninstall_files_from_dir)
-install-machinesDATA: $(machines_DATA)
-	@$(NORMAL_INSTALL)
-	@list='$(machines_DATA)'; test -n "$(machinesdir)" || list=; \
-	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(machinesdir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(machinesdir)" || exit 1; \
-	fi; \
-	for p in $$list; do \
-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-	  echo "$$d$$p"; \
-	done | $(am__base_list) | \
-	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(machinesdir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(machinesdir)" || exit $$?; \
-	done
-
-uninstall-machinesDATA:
-	@$(NORMAL_UNINSTALL)
-	@list='$(machines_DATA)'; test -n "$(machinesdir)" || list=; \
-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	dir='$(DESTDIR)$(machinesdir)'; $(am__uninstall_files_from_dir)
 install-metainfoDATA: $(metainfo_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(metainfo_DATA)'; test -n "$(metainfodir)" || list=; \
@@ -8403,7 +8377,7 @@ check: $(BUILT_SOURCES)
 all-am: Makefile $(LIBRARIES) $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) \
 		config.h all-local
 installdirs:
-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(motddir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(basedebugdir)" "$(DESTDIR)$(basefontsdir)" "$(DESTDIR)$(centosbrandingdir)" "$(DESTDIR)$(debianbrandingdir)" "$(DESTDIR)$(defaultbrandingdir)" "$(DESTDIR)$(motddir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" "$(DESTDIR)$(firewalldir)" "$(DESTDIR)$(kubernetesbrandingdir)" "$(DESTDIR)$(machinesdir)" "$(DESTDIR)$(metainfodir)" "$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(tempconfdir)" "$(DESTDIR)$(ovirtdir)" "$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(pixmapsdir)" "$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" "$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"; do \
+	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(motddir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(basedebugdir)" "$(DESTDIR)$(basefontsdir)" "$(DESTDIR)$(centosbrandingdir)" "$(DESTDIR)$(debianbrandingdir)" "$(DESTDIR)$(defaultbrandingdir)" "$(DESTDIR)$(motddir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" "$(DESTDIR)$(firewalldir)" "$(DESTDIR)$(kubernetesbrandingdir)" "$(DESTDIR)$(metainfodir)" "$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(tempconfdir)" "$(DESTDIR)$(ovirtdir)" "$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(pixmapsdir)" "$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" "$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: $(BUILT_SOURCES)
@@ -8488,8 +8462,8 @@ install-data-am: install-baseDATA install-basedebugDATA \
 	install-defaultbrandingDATA install-dist_motdDATA \
 	install-dist_motdSCRIPTS install-dist_systemdunitDATA \
 	install-fedorabrandingDATA install-firewallDATA \
-	install-kubernetesbrandingDATA install-machinesDATA \
-	install-man install-metainfoDATA install-nodist_appdataDATA \
+	install-kubernetesbrandingDATA install-man \
+	install-metainfoDATA install-nodist_appdataDATA \
 	install-nodist_baseDATA install-nodist_desktopDATA \
 	install-nodist_staticDATA install-nodist_systemdunitDATA \
 	install-nodist_tempconfDATA install-ovirtDATA \
@@ -8553,12 +8527,11 @@ uninstall-am: uninstall-baseDATA uninstall-basedebugDATA \
 	uninstall-dist_motdSCRIPTS uninstall-dist_systemdunitDATA \
 	uninstall-fedorabrandingDATA uninstall-firewallDATA \
 	uninstall-kubernetesbrandingDATA uninstall-libexecPROGRAMS \
-	uninstall-local uninstall-machinesDATA uninstall-man \
-	uninstall-metainfoDATA uninstall-nodist_appdataDATA \
-	uninstall-nodist_baseDATA uninstall-nodist_desktopDATA \
-	uninstall-nodist_staticDATA uninstall-nodist_systemdunitDATA \
-	uninstall-nodist_tempconfDATA uninstall-ovirtDATA \
-	uninstall-pixmapDATA uninstall-pixmapsDATA \
+	uninstall-local uninstall-man uninstall-metainfoDATA \
+	uninstall-nodist_appdataDATA uninstall-nodist_baseDATA \
+	uninstall-nodist_desktopDATA uninstall-nodist_staticDATA \
+	uninstall-nodist_systemdunitDATA uninstall-nodist_tempconfDATA \
+	uninstall-ovirtDATA uninstall-pixmapDATA uninstall-pixmapsDATA \
 	uninstall-playgroundDATA uninstall-pmlogconfDATA \
 	uninstall-registrybrandingDATA uninstall-rhelbrandingDATA \
 	uninstall-sbinPROGRAMS uninstall-staticfontsDATA \
@@ -8590,16 +8563,16 @@ uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 	install-exec-local install-fedorabrandingDATA \
 	install-firewallDATA install-html install-html-am install-info \
 	install-info-am install-kubernetesbrandingDATA \
-	install-libexecPROGRAMS install-machinesDATA install-man \
-	install-man1 install-man5 install-man8 install-metainfoDATA \
-	install-nodist_appdataDATA install-nodist_baseDATA \
-	install-nodist_desktopDATA install-nodist_staticDATA \
-	install-nodist_systemdunitDATA install-nodist_tempconfDATA \
-	install-ovirtDATA install-pdf install-pdf-am \
-	install-pixmapDATA install-pixmapsDATA install-playgroundDATA \
-	install-pmlogconfDATA install-ps install-ps-am \
-	install-registrybrandingDATA install-rhelbrandingDATA \
-	install-sbinPROGRAMS install-staticfontsDATA install-strip \
+	install-libexecPROGRAMS install-man install-man1 install-man5 \
+	install-man8 install-metainfoDATA install-nodist_appdataDATA \
+	install-nodist_baseDATA install-nodist_desktopDATA \
+	install-nodist_staticDATA install-nodist_systemdunitDATA \
+	install-nodist_tempconfDATA install-ovirtDATA install-pdf \
+	install-pdf-am install-pixmapDATA install-pixmapsDATA \
+	install-playgroundDATA install-pmlogconfDATA install-ps \
+	install-ps-am install-registrybrandingDATA \
+	install-rhelbrandingDATA install-sbinPROGRAMS \
+	install-staticfontsDATA install-strip \
 	install-ubuntubrandingDATA installcheck installcheck-am \
 	installdirs maintainer-clean maintainer-clean-generic \
 	mostlyclean mostlyclean-compile mostlyclean-generic pdf pdf-am \
@@ -8611,13 +8584,12 @@ uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 	uninstall-dist_motdSCRIPTS uninstall-dist_systemdunitDATA \
 	uninstall-fedorabrandingDATA uninstall-firewallDATA \
 	uninstall-kubernetesbrandingDATA uninstall-libexecPROGRAMS \
-	uninstall-local uninstall-machinesDATA uninstall-man \
-	uninstall-man1 uninstall-man5 uninstall-man8 \
-	uninstall-metainfoDATA uninstall-nodist_appdataDATA \
-	uninstall-nodist_baseDATA uninstall-nodist_desktopDATA \
-	uninstall-nodist_staticDATA uninstall-nodist_systemdunitDATA \
-	uninstall-nodist_tempconfDATA uninstall-ovirtDATA \
-	uninstall-pixmapDATA uninstall-pixmapsDATA \
+	uninstall-local uninstall-man uninstall-man1 uninstall-man5 \
+	uninstall-man8 uninstall-metainfoDATA \
+	uninstall-nodist_appdataDATA uninstall-nodist_baseDATA \
+	uninstall-nodist_desktopDATA uninstall-nodist_staticDATA \
+	uninstall-nodist_systemdunitDATA uninstall-nodist_tempconfDATA \
+	uninstall-ovirtDATA uninstall-pixmapDATA uninstall-pixmapsDATA \
 	uninstall-playgroundDATA uninstall-pmlogconfDATA \
 	uninstall-registrybrandingDATA uninstall-rhelbrandingDATA \
 	uninstall-sbinPROGRAMS uninstall-staticfontsDATA \
@@ -8670,10 +8642,10 @@ install-data-local:: $(WEBPACK_DEBUG)
 	$(MKDIR_P) $(DESTDIR)$(debugdir)$(pkgdatadir)
 	tar -cf - $^ | tar -C $(DESTDIR)$(debugdir)$(pkgdatadir) --strip-components=1 -xvf -
 uninstall-local::
-	find $(DESTDIR)$(pkgdatadir) -type f -delete
-	find $(DESTDIR)$(pkgdatadir) -type d -empty -delete
-	find $(DESTDIR)$(debugdir)$(pkgdatadir) -type f -delete
-	find $(DESTDIR)$(debugdir)$(pkgdatadir) -type d -empty -delete
+	find $(DESTDIR)$(pkgdatadir) -ignore_readdir_race -type f -exec rm -f {} \;
+	find $(DESTDIR)$(pkgdatadir) -ignore_readdir_race -type d -empty -delete
+	find $(DESTDIR)$(debugdir)$(pkgdatadir) -ignore_readdir_race -type f -delete
+	find $(DESTDIR)$(debugdir)$(pkgdatadir) -ignore_readdir_race -type d -empty -delete
 dist-hook:: $(WEBPACK_INPUTS) $(WEBPACK_OUTPUTS) $(WEBPACK_PO)
 	tar -cf - $^ | tar -C $(distdir) -xf -
 
@@ -9106,6 +9078,8 @@ dist/static/login.po.%.html: src/ws/%.po src/ws/po.empty.html
 install-exec-hook::
 	$(MKDIR_P) $(DESTDIR)$(sysconfdir)/motd.d
 	$(LN_S) -nf /run/cockpit/motd $(DESTDIR)$(sysconfdir)/motd.d/cockpit
+	$(MKDIR_P) $(DESTDIR)$(sysconfdir)/issue.d
+	$(LN_S) -nf /run/cockpit/motd $(DESTDIR)$(sysconfdir)/issue.d/cockpit
 
 $(nodist_tempconf_DATA): $(tempconf_in)
 	$(SUBST_RULE)

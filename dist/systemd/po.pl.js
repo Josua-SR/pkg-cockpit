@@ -341,11 +341,11 @@ return plural;
  ],
  "Before": [
   null,
-  ""
+  "Przed"
  ],
  "Binds To": [
   null,
-  ""
+  "Dowiązuje do"
  ],
  "Blade": [
   null,
@@ -357,7 +357,7 @@ return plural;
  ],
  "Bound By": [
   null,
-  ""
+  "Dowiązane przez"
  ],
  "Bug Fix Updates Available": [
   null,
@@ -429,15 +429,15 @@ return plural;
  ],
  "Conflicted By": [
   null,
-  ""
+  "W konflikcie z"
  ],
  "Conflicts": [
   null,
-  ""
+  "Powoduje konflikt z"
  ],
  "Consists Of": [
   null,
-  ""
+  "Składa się z"
  ],
  "Convertible": [
   null,
@@ -637,7 +637,7 @@ return plural;
  ],
  "Joins Namespace Of": [
   null,
-  ""
+  "Dołącza do przestrzeni nazw"
  ],
  "Journal": [
   null,
@@ -845,7 +845,7 @@ return plural;
  ],
  "Part Of": [
   null,
-  ""
+  "Część"
  ],
  "Paths": [
   null,
@@ -893,7 +893,7 @@ return plural;
  ],
  "Propagates Reload To": [
   null,
-  ""
+  "Wysyła ponowne wczytanie do"
  ],
  "RAID Chassis": [
   null,
@@ -929,7 +929,7 @@ return plural;
  ],
  "Reload Propagated From": [
   null,
-  ""
+  "Odebrano ponowne wczytanie z"
  ],
  "Repeat Daily": [
   null,
@@ -969,19 +969,19 @@ return plural;
  ],
  "Required By": [
   null,
-  ""
+  "Wymagane przez"
  ],
  "Requires": [
   null,
-  ""
+  "Wymaga"
  ],
  "Requisite": [
   null,
-  ""
+  "Potrzebne"
  ],
  "Requisite Of": [
   null,
-  ""
+  "Potrzebne dla"
  ],
  "Reset": [
   null,
@@ -1201,7 +1201,7 @@ return plural;
  ],
  "Triggered By": [
   null,
-  ""
+  "Wyzwalane przez"
  ],
  "Triggers": [
   null,
@@ -1255,11 +1255,11 @@ return plural;
  ],
  "Wanted By": [
   null,
-  ""
+  "Chciane przez"
  ],
  "Wants": [
   null,
-  ""
+  "Chce"
  ],
  "Warning and above": [
   null,

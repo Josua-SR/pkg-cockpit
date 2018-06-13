@@ -127,7 +127,7 @@ return plural;
  ],
  "$0 is not available from any repository.": [
   null,
-  ""
+  "$0 немає у жодному зі сховищ."
  ],
  "$0 minute": [
   "$0 minutes",
@@ -157,7 +157,7 @@ return plural;
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "Буде встановлено $0."
  ],
  "$0 year": [
   "$0 years",
@@ -287,7 +287,7 @@ return plural;
  ],
  "Additional packages:": [
   null,
-  ""
+  "Додаткові пакунки:"
  ],
  "Address": [
   null,
@@ -363,7 +363,7 @@ return plural;
  ],
  "Checking installed software": [
   null,
-  ""
+  "Перевіряємо встановлене програмне забезпечення"
  ],
  "Chunk Size": [
   null,
@@ -571,7 +571,7 @@ return plural;
  ],
  "Downloading $0": [
   null,
-  ""
+  "Отримуємо $0"
  ],
  "Drive": [
   null,
@@ -743,15 +743,15 @@ return plural;
  ],
  "Install NFS Support": [
   null,
-  ""
+  "Встановити підтримку NFS"
  ],
  "Install Software": [
   null,
-  ""
+  "Встановити програмне забезпечення"
  ],
  "Installing $0": [
   null,
-  ""
+  "Встановлюємо $0"
  ],
  "Invalid username or password": [
   null,
@@ -899,7 +899,7 @@ return plural;
  ],
  "NFS Support not installed": [
   null,
-  ""
+  "Не встановлено підтримки NFS"
  ],
  "NTFS - Compatible with most systems": [
   null,
@@ -1227,7 +1227,7 @@ return plural;
  ],
  "Removals:": [
   null,
-  ""
+  "Вилучення:"
  ],
  "Remove": [
   null,
@@ -1243,7 +1243,7 @@ return plural;
  ],
  "Removing $0": [
   null,
-  ""
+  "Вилучаємо $0"
  ],
  "Removing $target from RAID Device": [
   null,
@@ -1431,7 +1431,7 @@ return plural;
  ],
  "Support is installed.": [
   null,
-  ""
+  "Підтримку встановлено."
  ],
  "Swap": [
   null,
@@ -1579,7 +1579,7 @@ return plural;
  ],
  "Total size: $0": [
   null,
-  ""
+  "Загальний розмір: $0"
  ],
  "Trust Key": [
   null,
@@ -1743,7 +1743,7 @@ return plural;
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "Очікуємо на завершення інших дій із програмним забезпеченням"
  ],
  "Write-mostly": [
   null,
