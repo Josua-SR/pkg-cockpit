@@ -159,6 +159,10 @@ Files: node_modules/patternfly-bootstrap-combobox/*
 Copyright: Copyright 2012 Daniel Farrell
 License: Apache-2.0
 
+Files: node_modules/patternfly-react/*
+Copyright: Red Hat
+License: Apache-2.0
+
 Files: node_modules/promise/*
 Copyright: Copyright (c) 2014 Forbes Lindesay
 License: MIT
@@ -187,6 +191,10 @@ Copyright: Andrew Clark
 License: MIT
 
 Files: node_modules/redux/*
+Copyright: Copyright (c) 2015-present Dan Abramov
+License: MIT
+
+Files: node_modules/redux-thunk/*
 Copyright: Copyright (c) 2015-present Dan Abramov
 License: MIT
 

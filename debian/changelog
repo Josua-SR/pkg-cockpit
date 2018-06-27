@@ -1,3 +1,16 @@
+cockpit (171-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Machines: Add virtual CPU configuration
+    - Kubernetes: Add KubeVirt pod metrics
+    - Docker: Show container volumes
+    - Fix broken actions for non-administrators
+    - Networking: Handle non-running NetworkManager
+    - Accounts: User role improvements
+    - Localize times
+
+ -- Martin Pitt <mpitt@debian.org>  Wed, 27 Jun 2018 18:38:06 +0000
+
 cockpit (170-1) unstable; urgency=medium
 
   * New upstream release:
