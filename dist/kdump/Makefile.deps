@@ -1,5 +1,5 @@
 # Generated Makefile data for kdump
-# Stamp: Wed Jun 13 2018 10:14:08 GMT+0000 (UTC)
+# Stamp: Wed Jun 27 2018 17:21:55 GMT+0000 (UTC)
 
 kdump_INPUTS = \
 	node_modules/qunit-tap/GPL-LICENSE.txt \
@@ -39,8 +39,6 @@ kdump_INPUTS = \
 	$(NULL)
 
 kdump_OUTPUTS = \
-	dist/base1/cockpit.js \
-	dist/base1/jquery.js \
 	dist/kdump/index.html \
 	dist/kdump/kdump.css \
 	dist/kdump/kdump.css.map \
@@ -56,8 +54,6 @@ kdump_OUTPUTS = \
 kdump_PO = dist/kdump/po.js $(patsubst %,dist/kdump/po.%.js,$(LINGUAS))
 
 kdump_INSTALL = \
-	dist/base1/cockpit.js.gz \
-	dist/base1/jquery.js.gz \
 	dist/kdump/index.html.gz \
 	dist/kdump/kdump.css.gz \
 	dist/kdump/kdump.min.js.gz \
@@ -79,32 +75,27 @@ dist/kdump/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
 	$(MSGGREP) -N node_modules/qunit-tap/lib/qunit-tap.js -N node_modules/qunitjs/qunit/qunit.css -N node_modules/qunitjs/qunit/qunit.js -N node_modules/react-lite/dist/react-lite.js -N pkg/kdump/config-client.es6 -N pkg/kdump/crashkernel.sh -N pkg/kdump/index.html -N pkg/kdump/kdump-client.es6 -N pkg/kdump/kdump-view.jsx -N pkg/kdump/kdump.css -N pkg/kdump/kdump.js -N pkg/kdump/test-config-client.js -N pkg/kdump/testwritable.sh -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-onoff.css -N pkg/lib/cockpit-components-onoff.jsx -N pkg/lib/cockpit-components-select.jsx -N pkg/lib/cockpit-components-tooltip.jsx -N pkg/lib/page.css -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/service.js -N pkg/lib/tooltip.css $< > $@.tmp && mv $@.tmp $@
 
-dist/kdump/Makefile.deps: $(WEBPACK_CONFIG) $(kdump_INPUTS)
-	$(WEBPACK_RULE) -d dist/kdump/Makefile.deps $(WEBPACK_CONFIG)
+dist/kdump/stamp: $(kdump_INPUTS)
 
-dist/base1/cockpit.js: dist/kdump/Makefile.deps
+dist/kdump/index.html: dist/kdump/stamp
 
-dist/base1/jquery.js: dist/kdump/Makefile.deps
+dist/kdump/kdump.css: dist/kdump/stamp
 
-dist/kdump/index.html: dist/kdump/Makefile.deps
+dist/kdump/kdump.css.map: dist/kdump/stamp
 
-dist/kdump/kdump.css: dist/kdump/Makefile.deps
+dist/kdump/kdump.min.js: dist/kdump/stamp
 
-dist/kdump/kdump.css.map: dist/kdump/Makefile.deps
+dist/kdump/kdump.min.js.map: dist/kdump/stamp
 
-dist/kdump/kdump.min.js: dist/kdump/Makefile.deps
+dist/kdump/test-config-client.css: dist/kdump/stamp
 
-dist/kdump/kdump.min.js.map: dist/kdump/Makefile.deps
+dist/kdump/test-config-client.css.map: dist/kdump/stamp
 
-dist/kdump/test-config-client.css: dist/kdump/Makefile.deps
+dist/kdump/test-config-client.html: dist/kdump/stamp
 
-dist/kdump/test-config-client.css.map: dist/kdump/Makefile.deps
+dist/kdump/test-config-client.min.js: dist/kdump/stamp
 
-dist/kdump/test-config-client.html: dist/kdump/Makefile.deps
-
-dist/kdump/test-config-client.min.js: dist/kdump/Makefile.deps
-
-dist/kdump/test-config-client.min.js.map: dist/kdump/Makefile.deps
+dist/kdump/test-config-client.min.js.map: dist/kdump/stamp
 
 node_modules/qunit-tap/GPL-LICENSE.txt:
 
@@ -181,11 +172,7 @@ WEBPACK_INSTALL += $(kdump_INSTALL)
 WEBPACK_DEBUG += $(kdump_DEBUG)
 TESTS += $(kdump_TESTS)
 
-kdump: dist/kdump/Makefile.deps $(kdump_OUTPUTS) $(kdump_INSTALL)
-	@true
+kdump: dist/kdump/stamp
 clean-kdump: 
-	rm -rf $(kdump_OUTPUTS) $(kdump_INSTALL) dist/kdump/Makefile.deps
-all-local:: kdump
-	@true
+	rm -rf $(kdump_OUTPUTS) $(kdump_INSTALL) dist/kdump/stamp
 clean-local:: clean-kdump
-	@true

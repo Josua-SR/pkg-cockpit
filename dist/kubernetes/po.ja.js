@@ -551,6 +551,10 @@ return plural;
   null,
   "Flocker データセット名"
  ],
+ "Free": [
+  null,
+  "空き"
+ ],
  "GCE Persistent Disk": [
   null,
   "GCE 永続ディスク"
@@ -1630,6 +1634,14 @@ return plural;
  "Updating $0...": [
   null,
   "$0 の更新中 ..."
+ ],
+ "Usage": [
+  null,
+  "使用法"
+ ],
+ "Usage metrics are available after the pod starts": [
+  null,
+  ""
  ],
  "Used": [
   null,

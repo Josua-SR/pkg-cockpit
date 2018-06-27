@@ -1147,6 +1147,10 @@ return plural;
   null,
   "用户 <b>$0</b> 没有权限创建定时器"
  ],
+ "The user <b>$0</b> is not permitted to change the system time": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
   "用户 <b>$0</b> 不允许修改的主机名"

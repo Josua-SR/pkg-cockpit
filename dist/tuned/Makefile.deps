@@ -1,5 +1,5 @@
 # Generated Makefile data for tuned
-# Stamp: Wed Jun 13 2018 10:14:08 GMT+0000 (UTC)
+# Stamp: Wed Jun 27 2018 17:21:55 GMT+0000 (UTC)
 
 tuned_INPUTS = \
 	node_modules/react-lite/LICENSE \
@@ -16,8 +16,6 @@ tuned_INPUTS = \
 	$(NULL)
 
 tuned_OUTPUTS = \
-	dist/base1/cockpit.js \
-	dist/base1/jquery.js \
 	dist/tuned/performance.css \
 	dist/tuned/performance.css.map \
 	dist/tuned/performance.min.js \
@@ -27,8 +25,6 @@ tuned_OUTPUTS = \
 tuned_PO = dist/tuned/po.js $(patsubst %,dist/tuned/po.%.js,$(LINGUAS))
 
 tuned_INSTALL = \
-	dist/base1/cockpit.js.gz \
-	dist/base1/jquery.js.gz \
 	dist/tuned/performance.css.gz \
 	dist/tuned/performance.min.js.gz \
 	$(addsuffix .gz,$(tuned_PO)) \
@@ -46,20 +42,15 @@ dist/tuned/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
 	$(MSGGREP) -N node_modules/react-lite/dist/react-lite.js -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/page.css -N pkg/lib/service.js -N pkg/tuned/change-profile.jsx -N pkg/tuned/dialog.js -N pkg/tuned/link.html $< > $@.tmp && mv $@.tmp $@
 
-dist/tuned/Makefile.deps: $(WEBPACK_CONFIG) $(tuned_INPUTS)
-	$(WEBPACK_RULE) -d dist/tuned/Makefile.deps $(WEBPACK_CONFIG)
+dist/tuned/stamp: $(tuned_INPUTS)
 
-dist/base1/cockpit.js: dist/tuned/Makefile.deps
+dist/tuned/performance.css: dist/tuned/stamp
 
-dist/base1/jquery.js: dist/tuned/Makefile.deps
+dist/tuned/performance.css.map: dist/tuned/stamp
 
-dist/tuned/performance.css: dist/tuned/Makefile.deps
+dist/tuned/performance.min.js: dist/tuned/stamp
 
-dist/tuned/performance.css.map: dist/tuned/Makefile.deps
-
-dist/tuned/performance.min.js: dist/tuned/Makefile.deps
-
-dist/tuned/performance.min.js.map: dist/tuned/Makefile.deps
+dist/tuned/performance.min.js.map: dist/tuned/stamp
 
 node_modules/react-lite/LICENSE:
 
@@ -90,11 +81,7 @@ WEBPACK_INSTALL += $(tuned_INSTALL)
 WEBPACK_DEBUG += $(tuned_DEBUG)
 TESTS += $(tuned_TESTS)
 
-tuned: dist/tuned/Makefile.deps $(tuned_OUTPUTS) $(tuned_INSTALL)
-	@true
+tuned: dist/tuned/stamp
 clean-tuned: 
-	rm -rf $(tuned_OUTPUTS) $(tuned_INSTALL) dist/tuned/Makefile.deps
-all-local:: tuned
-	@true
+	rm -rf $(tuned_OUTPUTS) $(tuned_INSTALL) dist/tuned/stamp
 clean-local:: clean-tuned
-	@true

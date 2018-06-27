@@ -1,5 +1,5 @@
 # Generated Makefile data for sosreport
-# Stamp: Wed Jun 13 2018 10:13:23 GMT+0000 (UTC)
+# Stamp: Wed Jun 27 2018 17:11:20 GMT+0000 (UTC)
 
 sosreport_INPUTS = \
 	pkg/lib/page.css \
@@ -12,8 +12,6 @@ sosreport_INPUTS = \
 	$(NULL)
 
 sosreport_OUTPUTS = \
-	dist/base1/cockpit.js \
-	dist/base1/jquery.js \
 	dist/sosreport/index.html \
 	dist/sosreport/sosreport.css \
 	dist/sosreport/sosreport.css.map \
@@ -25,8 +23,6 @@ sosreport_OUTPUTS = \
 sosreport_PO = dist/sosreport/po.js $(patsubst %,dist/sosreport/po.%.js,$(LINGUAS))
 
 sosreport_INSTALL = \
-	dist/base1/cockpit.js.gz \
-	dist/base1/jquery.js.gz \
 	dist/sosreport/index.html.gz \
 	dist/sosreport/sosreport.css.gz \
 	dist/sosreport/sosreport.min.js.gz \
@@ -46,24 +42,19 @@ dist/sosreport/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
 	$(MSGGREP) -N pkg/lib/page.css -N pkg/lib/table.css -N pkg/sosreport/index.html -N pkg/sosreport/index.js -N pkg/sosreport/run-sosreport.sh -N pkg/sosreport/sosreport.css -N pkg/sosreport/sosreport.png $< > $@.tmp && mv $@.tmp $@
 
-dist/sosreport/Makefile.deps: $(WEBPACK_CONFIG) $(sosreport_INPUTS)
-	$(WEBPACK_RULE) -d dist/sosreport/Makefile.deps $(WEBPACK_CONFIG)
+dist/sosreport/stamp: $(sosreport_INPUTS)
 
-dist/base1/cockpit.js: dist/sosreport/Makefile.deps
+dist/sosreport/index.html: dist/sosreport/stamp
 
-dist/base1/jquery.js: dist/sosreport/Makefile.deps
+dist/sosreport/sosreport.css: dist/sosreport/stamp
 
-dist/sosreport/index.html: dist/sosreport/Makefile.deps
+dist/sosreport/sosreport.css.map: dist/sosreport/stamp
 
-dist/sosreport/sosreport.css: dist/sosreport/Makefile.deps
+dist/sosreport/sosreport.min.js: dist/sosreport/stamp
 
-dist/sosreport/sosreport.css.map: dist/sosreport/Makefile.deps
+dist/sosreport/sosreport.min.js.map: dist/sosreport/stamp
 
-dist/sosreport/sosreport.min.js: dist/sosreport/Makefile.deps
-
-dist/sosreport/sosreport.min.js.map: dist/sosreport/Makefile.deps
-
-dist/sosreport/sosreport.png: dist/sosreport/Makefile.deps
+dist/sosreport/sosreport.png: dist/sosreport/stamp
 
 pkg/lib/page.css:
 
@@ -86,11 +77,7 @@ WEBPACK_INSTALL += $(sosreport_INSTALL)
 WEBPACK_DEBUG += $(sosreport_DEBUG)
 TESTS += $(sosreport_TESTS)
 
-sosreport: dist/sosreport/Makefile.deps $(sosreport_OUTPUTS) $(sosreport_INSTALL)
-	@true
+sosreport: dist/sosreport/stamp
 clean-sosreport: 
-	rm -rf $(sosreport_OUTPUTS) $(sosreport_INSTALL) dist/sosreport/Makefile.deps
-all-local:: sosreport
-	@true
+	rm -rf $(sosreport_OUTPUTS) $(sosreport_INSTALL) dist/sosreport/stamp
 clean-local:: clean-sosreport
-	@true

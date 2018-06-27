@@ -111,6 +111,10 @@ return plural;
   null,
   "确认"
  ],
+ "The user <b>$0</b> is not permitted to change profiles": [
+  null,
+  ""
+ ],
  "This system is using a custom profile": [
   null,
   "该系统正在使用自定义的配置集"

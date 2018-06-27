@@ -553,6 +553,10 @@ return plural;
   null,
   "Nome do Flocker Dataset"
  ],
+ "Free": [
+  null,
+  "Livre"
+ ],
  "GCE Persistent Disk": [
   null,
   "Disco Persistente GCE"
@@ -1632,6 +1636,14 @@ return plural;
  "Updating $0...": [
   null,
   "Atualizando $0..."
+ ],
+ "Usage": [
+  null,
+  "Uso"
+ ],
+ "Usage metrics are available after the pod starts": [
+  null,
+  ""
  ],
  "Used": [
   null,

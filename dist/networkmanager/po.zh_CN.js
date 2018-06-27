@@ -367,6 +367,10 @@ return plural;
   null,
   "禁用"
  ],
+ "Enable Service": [
+  null,
+  ""
+ ],
  "Ethernet MAC": [
   null,
   "以太网 MAC"
@@ -559,6 +563,14 @@ return plural;
   null,
   "名称"
  ],
+ "Network devices and graphs require NetworkManager.": [
+  null,
+  ""
+ ],
+ "NetworkManager is not running.": [
+  null,
+  ""
+ ],
  "Networking": [
   null,
   "网络"
@@ -746,6 +758,10 @@ return plural;
  "Stable": [
   null,
   "稳定的"
+ ],
+ "Start Service": [
+  null,
+  ""
  ],
  "Status": [
   null,

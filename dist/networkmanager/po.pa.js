@@ -373,6 +373,10 @@ return plural;
   null,
   ""
  ],
+ "Enable Service": [
+  null,
+  ""
+ ],
  "Ethernet MAC": [
   null,
   ""
@@ -565,6 +569,14 @@ return plural;
   null,
   "ਨਾਂ"
  ],
+ "Network devices and graphs require NetworkManager.": [
+  null,
+  ""
+ ],
+ "NetworkManager is not running.": [
+  null,
+  ""
+ ],
  "Networking": [
   null,
   ""
@@ -752,6 +764,10 @@ return plural;
  "Stable": [
   null,
   "ਸਥਿਰ"
+ ],
+ "Start Service": [
+  null,
+  ""
  ],
  "Status": [
   null,

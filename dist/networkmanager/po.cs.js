@@ -379,6 +379,10 @@ return plural;
   null,
   "Zakázáno"
  ],
+ "Enable Service": [
+  null,
+  ""
+ ],
  "Ethernet MAC": [
   null,
   ""
@@ -571,6 +575,14 @@ return plural;
   null,
   "Název"
  ],
+ "Network devices and graphs require NetworkManager.": [
+  null,
+  ""
+ ],
+ "NetworkManager is not running.": [
+  null,
+  ""
+ ],
  "Networking": [
   null,
   "Sítě"
@@ -756,6 +768,10 @@ return plural;
   ""
  ],
  "Stable": [
+  null,
+  ""
+ ],
+ "Start Service": [
   null,
   ""
  ],

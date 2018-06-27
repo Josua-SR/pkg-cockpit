@@ -175,15 +175,17 @@ const Body = ({body, fields, values, errors, onChange}) => {
             { body || null }
             { fields.length > 0
                 ? <table className="form-table-ct">
-                    { fields.map(f => {
-                        if (is_visible(f, values))
-                            return (
-                                <Row tag={f.tag} title={f.title} errors={errors}>
-                                    { f.render(values[f.tag], val => { values[f.tag] = val; onChange(); }) }
-                                </Row>
-                            );
-                    })
-                    }
+                    <tbody>
+                        { fields.map(f => {
+                            if (is_visible(f, values))
+                                return (
+                                    <Row key={f.title} tag={f.tag} title={f.title} errors={errors}>
+                                        { f.render(values[f.tag], val => { values[f.tag] = val; onChange(); }) }
+                                    </Row>
+                                );
+                        })
+                        }
+                    </tbody>
                 </table> : null
             }
         </div>
@@ -266,7 +268,7 @@ export const TextInput = (tag, title, options) => {
         initial_value: "",
 
         render: (val, change) =>
-            <input data-field={tag}
+            <input data-field={tag} data-field-type="text-input"
                    className="form-control" type="text" value={val}
                    onChange={event => change(event.target.value)} />
     }
@@ -280,7 +282,7 @@ export const PassInput = (tag, title, options) => {
         initial_value: "",
 
         render: (val, change) =>
-            <input data-field={tag}
+            <input data-field={tag} data-field-type="text-input"
                    className="form-control" type="password" value={val}
                    onChange={event => change(event.target.value)} />
     }
@@ -297,7 +299,7 @@ export const SelectOne = (tag, title, options, choices) => {
             return (
                 <div data-field={tag} data-field-type="select">
                     <StatelessSelect extraClass="form-control" selected={val} onChange={change}>
-                        { choices.map(c => <SelectEntry data={c.value}>{c.title}</SelectEntry>) }
+                        { choices.map(c => <SelectEntry data={c.value} key={c.title}>{c.title}</SelectEntry>) }
                     </StatelessSelect>
                 </div>
             );

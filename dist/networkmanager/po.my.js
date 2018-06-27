@@ -367,6 +367,10 @@ return plural;
   null,
   ""
  ],
+ "Enable Service": [
+  null,
+  ""
+ ],
  "Ethernet MAC": [
   null,
   ""
@@ -559,6 +563,14 @@ return plural;
   null,
   "အမည်"
  ],
+ "Network devices and graphs require NetworkManager.": [
+  null,
+  ""
+ ],
+ "NetworkManager is not running.": [
+  null,
+  ""
+ ],
  "Networking": [
   null,
   ""
@@ -744,6 +756,10 @@ return plural;
   ""
  ],
  "Stable": [
+  null,
+  ""
+ ],
+ "Start Service": [
   null,
   ""
  ],

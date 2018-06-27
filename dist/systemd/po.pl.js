@@ -1159,6 +1159,10 @@ return plural;
   null,
   "Użytkownik <b>$0</b> nie ma uprawnień do tworzenia liczników"
  ],
+ "The user <b>$0</b> is not permitted to change the system time": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
   "Użytkownik <b>$0</b> nie ma zezwolenia na modyfikowanie nazw komputerów"

@@ -367,6 +367,10 @@ return plural;
   null,
   "사용 안함"
  ],
+ "Enable Service": [
+  null,
+  ""
+ ],
  "Ethernet MAC": [
   null,
   ""
@@ -559,6 +563,14 @@ return plural;
   null,
   "이름"
  ],
+ "Network devices and graphs require NetworkManager.": [
+  null,
+  ""
+ ],
+ "NetworkManager is not running.": [
+  null,
+  ""
+ ],
  "Networking": [
   null,
   "네트워킹"
@@ -744,6 +756,10 @@ return plural;
   "Spanning Tree Protocol (STP)"
  ],
  "Stable": [
+  null,
+  ""
+ ],
+ "Start Service": [
   null,
   ""
  ],

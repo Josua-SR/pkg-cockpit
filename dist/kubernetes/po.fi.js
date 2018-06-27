@@ -553,6 +553,10 @@ return plural;
   null,
   "Flocker Datasetin Nimi"
  ],
+ "Free": [
+  null,
+  "Vapaa"
+ ],
  "GCE Persistent Disk": [
   null,
   "GCE Persistent Disk"
@@ -1632,6 +1636,14 @@ return plural;
  "Updating $0...": [
   null,
   "Päivitetään $0..."
+ ],
+ "Usage": [
+  null,
+  "Käyttö"
+ ],
+ "Usage metrics are available after the pod starts": [
+  null,
+  ""
  ],
  "Used": [
   null,

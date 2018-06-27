@@ -1,5 +1,5 @@
 # Generated Makefile data for users
-# Stamp: Wed Jun 13 2018 10:14:08 GMT+0000 (UTC)
+# Stamp: Wed Jun 27 2018 17:21:55 GMT+0000 (UTC)
 
 users_INPUTS = \
 	node_modules/bootstrap-datepicker/LICENSE \
@@ -27,8 +27,6 @@ users_INPUTS = \
 	$(NULL)
 
 users_OUTPUTS = \
-	dist/base1/cockpit.js \
-	dist/base1/jquery.js \
 	dist/users/index.html \
 	dist/users/users.css \
 	dist/users/users.css.map \
@@ -39,8 +37,6 @@ users_OUTPUTS = \
 users_PO = dist/users/po.js $(patsubst %,dist/users/po.%.js,$(LINGUAS))
 
 users_INSTALL = \
-	dist/base1/cockpit.js.gz \
-	dist/base1/jquery.js.gz \
 	dist/users/index.html.gz \
 	dist/users/users.css.gz \
 	dist/users/users.min.js.gz \
@@ -59,22 +55,17 @@ dist/users/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
 	$(MSGGREP) -N node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js -N node_modules/mustache/mustache.js -N node_modules/react-lite/dist/react-lite.js -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/table.css -N pkg/users/authorized-keys.js -N pkg/users/index.html -N pkg/users/local.js -N pkg/users/ssh-add-public-key.sh -N pkg/users/ssh-list-public-keys.sh -N pkg/users/users.css $< > $@.tmp && mv $@.tmp $@
 
-dist/users/Makefile.deps: $(WEBPACK_CONFIG) $(users_INPUTS)
-	$(WEBPACK_RULE) -d dist/users/Makefile.deps $(WEBPACK_CONFIG)
+dist/users/stamp: $(users_INPUTS)
 
-dist/base1/cockpit.js: dist/users/Makefile.deps
+dist/users/index.html: dist/users/stamp
 
-dist/base1/jquery.js: dist/users/Makefile.deps
+dist/users/users.css: dist/users/stamp
 
-dist/users/index.html: dist/users/Makefile.deps
+dist/users/users.css.map: dist/users/stamp
 
-dist/users/users.css: dist/users/Makefile.deps
+dist/users/users.min.js: dist/users/stamp
 
-dist/users/users.css.map: dist/users/Makefile.deps
-
-dist/users/users.min.js: dist/users/Makefile.deps
-
-dist/users/users.min.js.map: dist/users/Makefile.deps
+dist/users/users.min.js.map: dist/users/stamp
 
 node_modules/bootstrap-datepicker/LICENSE:
 
@@ -127,11 +118,7 @@ WEBPACK_INSTALL += $(users_INSTALL)
 WEBPACK_DEBUG += $(users_DEBUG)
 TESTS += $(users_TESTS)
 
-users: dist/users/Makefile.deps $(users_OUTPUTS) $(users_INSTALL)
-	@true
+users: dist/users/stamp
 clean-users: 
-	rm -rf $(users_OUTPUTS) $(users_INSTALL) dist/users/Makefile.deps
-all-local:: users
-	@true
+	rm -rf $(users_OUTPUTS) $(users_INSTALL) dist/users/stamp
 clean-local:: clean-users
-	@true

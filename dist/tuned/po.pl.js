@@ -111,6 +111,10 @@ return plural;
   null,
   "OK"
  ],
+ "The user <b>$0</b> is not permitted to change profiles": [
+  null,
+  "Użytkownik <b>$0</b> nie ma zezwolenia na zmianę profili"
+ ],
  "This system is using a custom profile": [
   null,
   "Ten system używa niestandardowego profilu"

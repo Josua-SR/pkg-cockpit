@@ -1153,6 +1153,10 @@ return plural;
   null,
   "Käyttäjällä <b>$0</b> ei ole oikeutta luoda ajastimia"
  ],
+ "The user <b>$0</b> is not permitted to change the system time": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
   ""

@@ -379,6 +379,10 @@ return plural;
   null,
   "Onemogućen"
  ],
+ "Enable Service": [
+  null,
+  ""
+ ],
  "Ethernet MAC": [
   null,
   ""
@@ -571,6 +575,14 @@ return plural;
   null,
   "Naziv"
  ],
+ "Network devices and graphs require NetworkManager.": [
+  null,
+  ""
+ ],
+ "NetworkManager is not running.": [
+  null,
+  ""
+ ],
  "Networking": [
   null,
   "Mreža"
@@ -756,6 +768,10 @@ return plural;
   "Spanning Tree Protocol (STP)"
  ],
  "Stable": [
+  null,
+  ""
+ ],
+ "Start Service": [
   null,
   ""
  ],

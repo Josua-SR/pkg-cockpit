@@ -553,6 +553,10 @@ return plural;
   null,
   ""
  ],
+ "Free": [
+  null,
+  "Lliure"
+ ],
  "GCE Persistent Disk": [
   null,
   "Disc persistent GCE"
@@ -1632,6 +1636,14 @@ return plural;
  "Updating $0...": [
   null,
   "S'està actualitzant $0..."
+ ],
+ "Usage": [
+  null,
+  "Ús"
+ ],
+ "Usage metrics are available after the pod starts": [
+  null,
+  ""
  ],
  "Used": [
   null,

@@ -111,6 +111,10 @@ return plural;
   null,
   "D'acord"
  ],
+ "The user <b>$0</b> is not permitted to change profiles": [
+  null,
+  ""
+ ],
  "This system is using a custom profile": [
   null,
   "El sistema està utilitzant un perfil personalitzat"

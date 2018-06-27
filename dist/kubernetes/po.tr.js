@@ -553,6 +553,10 @@ return plural;
   null,
   ""
  ],
+ "Free": [
+  null,
+  "Boş"
+ ],
  "GCE Persistent Disk": [
   null,
   ""
@@ -1630,6 +1634,14 @@ return plural;
   "Bilinmiyor"
  ],
  "Updating $0...": [
+  null,
+  ""
+ ],
+ "Usage": [
+  null,
+  ""
+ ],
+ "Usage metrics are available after the pod starts": [
   null,
   ""
  ],

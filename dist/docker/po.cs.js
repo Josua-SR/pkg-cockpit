@@ -875,6 +875,10 @@ return plural;
   null,
   ""
  ],
+ "Volumes:": [
+  null,
+  ""
+ ],
  "With terminal": [
   null,
   ""

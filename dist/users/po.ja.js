@@ -179,6 +179,10 @@ return plural;
   null,
   "フルネーム"
  ],
+ "Image Builder": [
+  null,
+  ""
+ ],
  "Invalid expiration date": [
   null,
   "無効な有効期限"
@@ -374,6 +378,10 @@ return plural;
  "You do not have permission to view the authorized public keys for this account.": [
   null,
   "このアカウントに承認された公開鍵を表示するパーミッションがありません"
+ ],
+ "translatable": [
+  null,
+  ""
  ],
  "page-title\u0004Accounts": [
   null,

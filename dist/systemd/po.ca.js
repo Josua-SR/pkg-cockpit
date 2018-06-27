@@ -1153,6 +1153,10 @@ return plural;
   null,
   "A l'usuari <b>$0</b> no se li permet crear temporitzadors"
  ],
+ "The user <b>$0</b> is not permitted to change the system time": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
   "A l'usuari <b>$0</b> no se li permet modificar els noms d'amfitrions"

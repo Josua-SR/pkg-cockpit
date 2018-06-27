@@ -255,6 +255,15 @@ class TestSystemInfo(MachineCase):
         self.assertIn("Mon Jun  4 06:34:", m.execute("date"))
         self.assertIn("EEST 2018\n", m.execute("date"))
 
+        if m.image != 'rhel-7-5':
+            self.allow_authorize_journal_messages()
+            b.relogin('/system', authorized=False)
+            b.wait_present('.systime-privileged.disabled')
+            b.mouse('#systime-tooltip', 'mouseover')
+            b.wait_text('#systime-tooltip ~ div.tooltip', 'The user admin is not permitted to change the system time')
+            b.mouse('#systime-tooltip', 'mouseout')
+            b.wait_not_present('#systime-tooltip ~ div.tooltip')
+
     @skipImage("No NTP servers config", "centos-7", "continuous-atomic", "rhel-7", "rhel-7-5", "rhel-atomic")
     def testTimeServers(self):
         m = self.machine

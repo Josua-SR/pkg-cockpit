@@ -179,6 +179,10 @@ return plural;
   null,
   "Koko nimi"
  ],
+ "Image Builder": [
+  null,
+  ""
+ ],
  "Invalid expiration date": [
   null,
   "Virheellinen vanhenemispäivä."
@@ -374,6 +378,10 @@ return plural;
  "You do not have permission to view the authorized public keys for this account.": [
   null,
   "Sinulla ei ole oikeutta tarkastella tämän käyttäjätilin julkisia avaimia."
+ ],
+ "translatable": [
+  null,
+  ""
  ],
  "page-title\u0004Accounts": [
   null,

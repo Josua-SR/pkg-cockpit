@@ -867,6 +867,10 @@ return plural;
   null,
   "Taltiot"
  ],
+ "Volumes:": [
+  null,
+  ""
+ ],
  "With terminal": [
   null,
   "Terminaalilla"

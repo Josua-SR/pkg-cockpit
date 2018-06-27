@@ -111,6 +111,10 @@ return plural;
   null,
   "Гаразд"
  ],
+ "The user <b>$0</b> is not permitted to change profiles": [
+  null,
+  "Користувачу <b>$0</b> заборонено змінювати профілі"
+ ],
  "This system is using a custom profile": [
   null,
   "Ця система використовує нетиповий профіль"

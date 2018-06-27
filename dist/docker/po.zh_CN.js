@@ -859,6 +859,10 @@ return plural;
   null,
   "卷"
  ],
+ "Volumes:": [
+  null,
+  ""
+ ],
  "With terminal": [
   null,
   "跟随终端"

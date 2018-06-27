@@ -1,5 +1,5 @@
 # Generated Makefile data for dashboard
-# Stamp: Wed Jun 13 2018 10:14:08 GMT+0000 (UTC)
+# Stamp: Wed Jun 27 2018 17:21:55 GMT+0000 (UTC)
 
 dashboard_INPUTS = \
 	node_modules/jquery-flot/LICENSE.txt \
@@ -36,8 +36,6 @@ dashboard_INPUTS = \
 	$(NULL)
 
 dashboard_OUTPUTS = \
-	dist/base1/cockpit.js \
-	dist/base1/jquery.js \
 	dist/dashboard/dashboard.min.js \
 	dist/dashboard/dashboard.min.js.map \
 	dist/dashboard/index.html \
@@ -46,8 +44,6 @@ dashboard_OUTPUTS = \
 dashboard_PO = dist/dashboard/po.js $(patsubst %,dist/dashboard/po.%.js,$(LINGUAS))
 
 dashboard_INSTALL = \
-	dist/base1/cockpit.js.gz \
-	dist/base1/jquery.js.gz \
 	dist/dashboard/dashboard.min.js.gz \
 	dist/dashboard/index.html.gz \
 	$(addsuffix .gz,$(dashboard_PO)) \
@@ -64,18 +60,13 @@ dist/dashboard/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
 	$(MSGGREP) -N node_modules/jquery-flot/jquery.flot.js -N node_modules/jquery-flot/jquery.flot.selection.js -N node_modules/jquery-flot/jquery.flot.time.js -N node_modules/mustache/mustache.js -N pkg/dashboard/image-editor.js -N pkg/dashboard/index.html -N pkg/dashboard/list.js -N pkg/lib/credentials-ssh-private-keys.sh -N pkg/lib/credentials-ssh-remove-key.sh -N pkg/lib/credentials.js -N pkg/lib/machine-add.html -N pkg/lib/machine-auth-failed.html -N pkg/lib/machine-change-auth.html -N pkg/lib/machine-change-port.html -N pkg/lib/machine-color-picker.html -N pkg/lib/machine-dialogs.js -N pkg/lib/machine-info.es6 -N pkg/lib/machine-invalid-hostkey.html -N pkg/lib/machine-not-supported.html -N pkg/lib/machine-sync-users.html -N pkg/lib/machine-unknown-hostkey.html -N pkg/lib/machines.js -N pkg/lib/mustache.js -N pkg/lib/patterns.js -N pkg/lib/plot.js $< > $@.tmp && mv $@.tmp $@
 
-dist/dashboard/Makefile.deps: $(WEBPACK_CONFIG) $(dashboard_INPUTS)
-	$(WEBPACK_RULE) -d dist/dashboard/Makefile.deps $(WEBPACK_CONFIG)
+dist/dashboard/stamp: $(dashboard_INPUTS)
 
-dist/base1/cockpit.js: dist/dashboard/Makefile.deps
+dist/dashboard/dashboard.min.js: dist/dashboard/stamp
 
-dist/base1/jquery.js: dist/dashboard/Makefile.deps
+dist/dashboard/dashboard.min.js.map: dist/dashboard/stamp
 
-dist/dashboard/dashboard.min.js: dist/dashboard/Makefile.deps
-
-dist/dashboard/dashboard.min.js.map: dist/dashboard/Makefile.deps
-
-dist/dashboard/index.html: dist/dashboard/Makefile.deps
+dist/dashboard/index.html: dist/dashboard/stamp
 
 node_modules/jquery-flot/LICENSE.txt:
 
@@ -146,11 +137,7 @@ WEBPACK_INSTALL += $(dashboard_INSTALL)
 WEBPACK_DEBUG += $(dashboard_DEBUG)
 TESTS += $(dashboard_TESTS)
 
-dashboard: dist/dashboard/Makefile.deps $(dashboard_OUTPUTS) $(dashboard_INSTALL)
-	@true
+dashboard: dist/dashboard/stamp
 clean-dashboard: 
-	rm -rf $(dashboard_OUTPUTS) $(dashboard_INSTALL) dist/dashboard/Makefile.deps
-all-local:: dashboard
-	@true
+	rm -rf $(dashboard_OUTPUTS) $(dashboard_INSTALL) dist/dashboard/stamp
 clean-local:: clean-dashboard
-	@true
