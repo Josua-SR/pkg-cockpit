@@ -44,14 +44,14 @@
     }
     var c = l;
     var d, f, p, w;
-    var v = /[?&]?([^=]+)=([^&]*)/g;
-    var g = null;
+    var g = /[?&]?([^=]+)=([^&]*)/g;
+    var v = null;
     function m(e) {
         e = e.split("+").join(" ");
         var t = {};
         var n;
         for (;;) {
-            n = v.exec(e);
+            n = g.exec(e);
             if (!n) break;
             t[decodeURIComponent(n[1])] = decodeURIComponent(n[2]);
         }
@@ -71,8 +71,8 @@
         if (window.console) e.warn("fatal:", t);
         h("login-again").style.display = "none";
         h("login-wait-validating").style.display = "none";
-        if (g) {
-            h("login-again").href = g;
+        if (v) {
+            h("login-again").href = v;
             h("login-again").style.display = "block";
         }
         h("login").style.display = "none";
@@ -84,7 +84,7 @@
     }
     function x(e, t) {
         var n, o = h(e);
-        if (o) n = window.getComputedStyle(o, ":before");
+        if (o && window.getComputedStyle) n = window.getComputedStyle(o, ":before");
         if (!n) return;
         var i, r = n.content;
         if (r && r != "none" && r != "normal") {
@@ -169,13 +169,13 @@
             x("badge", "");
             x("brand", "Cockpit");
         }
+        if (!k()) return;
         h("option-group").addEventListener("click", O);
         h("server-clear").addEventListener("click", function() {
             var e = h("server-field");
             e.value = "";
             e.focus();
         });
-        if (!k()) return;
         var n = t.getItem("authorized-default") || "";
         if (n.indexOf("password") !== -1) h("authorized-input").checked = true;
         var o = i["os-release"];
@@ -220,9 +220,9 @@
     }
     function E() {
         var e = window.location.href.split("#", 2);
-        g = r.URL;
-        if (r.URL.indexOf("?") > -1) g += "&"; else g += "?";
-        g += "redirect_uri=" + encodeURIComponent(e[0]);
+        v = r.URL;
+        if (r.URL.indexOf("?") > -1) v += "&"; else v += "?";
+        v += "redirect_uri=" + encodeURIComponent(e[0]);
     }
     function L() {
         var e = document.createElement("a");
@@ -256,7 +256,7 @@
             b(t[r.ErrorParam]);
         } else {
             window.sessionStorage.setItem("login-wanted", window.location.href);
-            window.location = g;
+            window.location = v;
         }
     }
     function A() {
@@ -381,7 +381,7 @@
         }
         var i = h("conversation-input");
         i.value = "";
-        if (e.default) i.value = e.default;
+        if (e["default"]) i.value = e["default"];
         i.setAttribute("type", t);
         i.focus();
         R("");

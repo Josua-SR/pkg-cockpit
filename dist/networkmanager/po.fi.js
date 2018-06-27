@@ -373,6 +373,10 @@ return plural;
   null,
   "Ei käytössä"
  ],
+ "Enable Service": [
+  null,
+  ""
+ ],
  "Ethernet MAC": [
   null,
   "Ethernet MAC"
@@ -565,6 +569,14 @@ return plural;
   null,
   "Nimi"
  ],
+ "Network devices and graphs require NetworkManager.": [
+  null,
+  ""
+ ],
+ "NetworkManager is not running.": [
+  null,
+  ""
+ ],
  "Networking": [
   null,
   "Verkko"
@@ -750,6 +762,10 @@ return plural;
   ""
  ],
  "Stable": [
+  null,
+  ""
+ ],
+ "Start Service": [
   null,
   ""
  ],

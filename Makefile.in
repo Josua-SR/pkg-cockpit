@@ -1500,7 +1500,7 @@ NULL =
 man_MANS = $(am__append_4)
 BUILT_SOURCES = $(COCKPIT_ASSETS)
 check_SCRIPTS = 
-noinst_SCRIPTS = $(WEBPACK_DEPS) $(WEBPACK_INSTALL) $(base_TESTS) \
+noinst_SCRIPTS = $(WEBPACK_STAMPS) $(WEBPACK_INSTALL) $(base_TESTS) \
 	$(am__append_17) src/ws/mock-cat-with-init $(NULL)
 
 # ----------------------------------------------------------------------------------------------------
@@ -1517,15 +1517,20 @@ nodist_noinst_SCRIPTS =  \
 dist_systemdunit_DATA = 
 nodist_systemdunit_DATA = src/ws/cockpit.socket src/ws/cockpit.service \
 	src/ws/cockpit-motd.service $(NULL)
-CLEANFILES = $(man_MANS) valgrind-suppressions $(NULL) $(WEBPACK_DEPS) \
-	$(WEBPACK_OUTPUTS) $(OPENSANS_FONTS) $(am__append_3) \
-	$(MO_FILES) $(POJS_FILES) $(nodist_po_DATA) po/POTFILES.*.in \
-	dist/shell/*.po src/ws/*.po po/cockpit*.pot po/po.empty.js.gz \
-	$(NULL) dist/base1/cockpit.min.css \
+CLEANFILES = $(man_MANS) valgrind-suppressions $(NULL) \
+	$(WEBPACK_STAMPS) $(WEBPACK_DEPS) $(WEBPACK_OUTPUTS) \
+	$(OPENSANS_FONTS) $(am__append_3) $(MO_FILES) $(POJS_FILES) \
+	$(nodist_po_DATA) po/POTFILES.*.in dist/shell/*.po src/ws/*.po \
+	po/cockpit*.pot po/po.empty.js.gz $(NULL) \
+	dist/base1/cockpit.js dist/base1/cockpit.min.css \
 	dist/base1/cockpit.min.css.gz dist/base1/cockpit.min.css.map \
+	dist/base1/cockpit.min.js dist/base1/cockpit.min.js.gz \
+	dist/base1/cockpit.min.js.map \
 	dist/base1/fonts/fontawesome.woff \
 	dist/base1/fonts/glyphicons.woff \
-	dist/base1/fonts/patternfly.woff dist/base1/manifest.json \
+	dist/base1/fonts/patternfly.woff dist/base1/jquery.js \
+	dist/base1/jquery.min.js dist/base1/jquery.min.js.gz \
+	dist/base1/jquery.min.js.map dist/base1/manifest.json \
 	dist/base1/mustache.js dist/base1/mustache.min.js \
 	dist/base1/mustache.min.js.gz dist/base1/mustache.min.js.map \
 	dist/base1/patternfly-base.css dist/base1/patternfly.min.css \
@@ -1554,16 +1559,20 @@ DISTCLEANFILES = \
 	cockpit-cache-*.tar.xz \
 	$(NULL)
 
-EXTRA_DIST = package.json README.md $(NULL) $(WEBPACK_DEPS) \
-	$(WEBPACK_MANIFEST_IN) webpack.config.js $(OPENSANS_FONTS) \
-	$(am__append_1) $(PO_INPUTS) po/LINGUAS po/po.empty.js \
-	po/po2json po/zanata.xml $(NULL) dist/playground/extra.de.po \
-	pkg/playground/extra.de.po pkg/users/mock \
-	pkg/lib/qunit-template.html node_modules/noVNC/package.json \
+EXTRA_DIST = package.json README.md $(NULL) $(WEBPACK_STAMPS) \
+	$(WEBPACK_DEPS) $(WEBPACK_MANIFEST_IN) webpack.config.js \
+	$(OPENSANS_FONTS) $(am__append_1) $(PO_INPUTS) po/LINGUAS \
+	po/po.empty.js po/po2json po/zanata.xml $(NULL) \
+	dist/playground/extra.de.po pkg/playground/extra.de.po \
+	pkg/users/mock pkg/lib/qunit-template.html \
+	node_modules/noVNC/package.json \
 	node_modules/noVNC/include/base.css pkg/ovirt/install.sh \
 	$(playground_DATA) $(pkg_TESTS) $(ovirt_DATA) $(metainfo_DATA) \
-	$(pixmaps_DATA) $(NULL) dist/base1/cockpit.min.css \
-	dist/base1/cockpit.min.css.map dist/base1/mustache.js \
+	$(pixmaps_DATA) $(NULL) dist/base1/cockpit.js \
+	dist/base1/cockpit.min.css dist/base1/cockpit.min.css.map \
+	dist/base1/cockpit.min.js dist/base1/cockpit.min.js.map \
+	dist/base1/jquery.js dist/base1/jquery.min.js \
+	dist/base1/jquery.min.js.map dist/base1/mustache.js \
 	dist/base1/mustache.min.js dist/base1/mustache.min.js.map \
 	dist/base1/patternfly-base.css dist/base1/patternfly.min.css \
 	dist/base1/patternfly.min.css.map \
@@ -1717,18 +1726,20 @@ WEBPACK_PACKAGES = \
 
 V_WEBPACK = $(V_WEBPACK_$(V))
 V_WEBPACK_ = $(V_WEBPACK_$(AM_DEFAULT_VERBOSITY))
-V_WEBPACK_0 = @echo "  WEBPACK  $(@:dist/%/Makefile.deps=%)";
+V_WEBPACK_0 = @echo "  WEBPACK  $(@:dist/%/stamp=%)";
 WEBPACK_MAKE = NODE_ENV=$(NODE_ENV) SRCDIR=$(abspath $(srcdir)) BUILDDIR=$(builddir) \
 	       $(srcdir)/tools/missing $(srcdir)/tools/webpack-make
 
-WEBPACK_RULE = $(V_WEBPACK) $(WEBPACK_MAKE)
 WEBPACK_CONFIG = $(srcdir)/webpack.config.js
 WEBPACK_INPUTS = 
 WEBPACK_PO = 
 WEBPACK_OUTPUTS = 
 WEBPACK_INSTALL = $(WEBPACK_PACKAGES:%=dist/%/manifest.json)
 WEBPACK_DEPS = $(WEBPACK_PACKAGES:%=dist/%/Makefile.deps)
+WEBPACK_STAMPS = $(WEBPACK_PACKAGES:%=dist/%/stamp)
 WEBPACK_MANIFEST_IN = $(WEBPACK_PACKAGES:%=pkg/%/manifest.json.in)
+PRINT_COPY_MSG_0 = echo "  COPY    " $@ &&
+PRINT_COPY_MSG_ = $(PRINT_COPY_MSG_$(AM_DEFAULT_VERBOSITY))
 
 #
 ACLOCAL_AMFLAGS = -I tools ${ACLOCAL_FLAGS}
@@ -1950,6 +1961,8 @@ nodist_base_DATA = \
 	dist/base1/patternfly.min.css.gz \
 	dist/base1/require.min.js.gz \
 	dist/base1/mustache.min.js.gz \
+	dist/base1/jquery.min.js.gz \
+	dist/base1/cockpit.min.js.gz \
 	$(NULL)
 
 base_DATA = \
@@ -1962,6 +1975,8 @@ basedebug_DATA = \
 	dist/base1/patternfly.min.css.map \
 	dist/base1/mustache.min.js.map \
 	dist/base1/require.min.js.map \
+	dist/base1/jquery.min.js.map \
+	dist/base1/cockpit.min.js.map \
 	$(NULL)
 
 AM_TESTS_ENVIRONMENT = export G_DEBUG=fatal-criticals,fatal-warnings ; export XDG_CACHE_HOME=$$(mktemp -d) ; export XDG_RUNTIME_DIR=$$XDG_CACHE_HOME ;
@@ -8622,12 +8637,22 @@ clean-local::
 .woff.woff.gz:
 	$(GZ_RULE)
 
-# Run webpack if we don't have the include file or if its out of date
-# If we have distributed a copy in a tarball, copy that into place
-dist/%/Makefile.deps: $(WEBPACK_CONFIG)
-	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && if test $(srcdir)/dist/$*/Makefile.deps -nt $(WEBPACK_CONFIG); \
-	then cp -p $(srcdir)/dist/$*/Makefile.deps $@.tmp && $(MV) $@.tmp $@; \
-	else $(WEBPACK_MAKE) -d $@ $<; fi
+# Copy an original copy of each Makefile.deps from the srcdir, in case
+# of an out-of-tree build from a tarball.  This is needed because the
+# 'include' below won't find the file in srcdir.
+# This rule needs to have a successful exit, or make will become unhappy.
+dist/%/Makefile.deps:
+	$(AM_V_at)test "$(srcdir)" == "$(builddir)" -o ! $(srcdir)/$@ -nt $@ || ( \
+	  $(PRINT_COPY_MSG_$(V))$(MKDIR_P) $(dir $@) && \
+	  cp -p $(srcdir)/$@ $@.tmp && \
+	  mv $@.tmp $@)
+
+# This is the primary rule for running webpack
+dist/%/stamp: $(WEBPACK_CONFIG) $(srcdir)/tools/webpack-make
+	$(V_WEBPACK) $(MKDIR_P) dist/$* && \
+	  $(WEBPACK_MAKE) -d dist/$*/Makefile.deps $(WEBPACK_CONFIG) && \
+	  touch $@
+
 dist/%/manifest.json: pkg/%/manifest.json
 	$(COPY_RULE)
 
@@ -8887,6 +8912,16 @@ dist/base1/require.js: src/base1/deprecated.js src/base1/require-config.js src/b
 	cat $(srcdir)/src/base1/deprecated.js $(srcdir)/src/base1/require-config.js $(srcdir)/node_modules/requirejs/require.js $(srcdir)/src/base1/require-loaders.js > $@.tmp && $(MV) $@.tmp $@
 dist/base1/require.min.js: dist/base1/require.js
 	$(MIN_JS_RULE)
+dist/base1/jquery.js:
+	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
+	cat $(srcdir)/node_modules/jquery/dist/jquery.js $(srcdir)/node_modules/bootstrap/dist/js/bootstrap.js $(srcdir)/node_modules/patternfly/dist/js/patternfly.js > $@.tmp && $(MV) $@.tmp $@
+dist/base1/jquery.min.js: dist/base1/jquery.js
+	$(MIN_JS_RULE)
+dist/base1/cockpit.js: src/base1/cockpit.js
+	$(JSHINT_RULE)
+	$(COPY_RULE)
+dist/base1/cockpit.min.js: dist/base1/cockpit.js
+	$(MIN_JS_RULE)
 dist/base1/mustache.js: src/base1/deprecated.js
 	$(V_COPY) $(MKDIR_P) $(dir $@) && \
 	cat $(srcdir)/src/base1/deprecated.js $(srcdir)/node_modules/mustache/mustache.js > $@.tmp && $(MV) $@.tmp $@
@@ -8897,6 +8932,10 @@ dist/base1/manifest.json: src/base1/manifest.json
 
 # All map files are built as side effects of minification
 dist/base1/require.min.js.map: dist/base1/require.min.js
+
+dist/base1/cockpit.min.js.map: dist/base1/cockpit.min.js
+
+dist/base1/jquery.min.js.map: dist/base1/jquery.min.js
 
 dist/base1/mustache.min.js.map: dist/base1/mustache.min.js
 

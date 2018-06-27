@@ -555,6 +555,10 @@ return plural;
   null,
   "Назва набору даних Flocker"
  ],
+ "Free": [
+  null,
+  "Вільно"
+ ],
  "GCE Persistent Disk": [
   null,
   "Сталий диск GCE"
@@ -1634,6 +1638,14 @@ return plural;
  "Updating $0...": [
   null,
   "Оновлення $0…"
+ ],
+ "Usage": [
+  null,
+  "Використання"
+ ],
+ "Usage metrics are available after the pod starts": [
+  null,
+  "Дані щодо користування стануть доступними після запуску кокона"
  ],
  "Used": [
   null,

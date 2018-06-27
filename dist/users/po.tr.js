@@ -179,6 +179,10 @@ return plural;
   null,
   "Tam İsim"
  ],
+ "Image Builder": [
+  null,
+  ""
+ ],
  "Invalid expiration date": [
   null,
   ""
@@ -374,6 +378,10 @@ return plural;
  "You do not have permission to view the authorized public keys for this account.": [
   null,
   "Bu hesabın yetkilendirilmiş açık anahtarlarını görmeniz için izniniz yok."
+ ],
+ "translatable": [
+  null,
+  ""
  ],
  "page-title\u0004Accounts": [
   null,

@@ -231,6 +231,11 @@ class Browser:
             else:
                 self.cdp.invoke("Input.dispatchKeyEvent", type="char", text=k)
 
+    def set_input_text(self, selector, val):
+        self.set_val(selector, "")
+        self.focus(selector)
+        self.key_press(val)
+
     def wait_timeout(self, timeout):
         browser = self
         class WaitParamsRestorer():
@@ -486,10 +491,10 @@ class Browser:
     def copy_js_log(self, title, label=None):
         """Copy the current javascript log"""
 
-        logs = self.get_js_log()
+        logs = list(self.get_js_log())
         if logs:
             filename = "{0}-{1}.js.log".format(label or self.label, title)
-            with open(filename, 'w') as f:
+            with open(filename, 'wb') as f:
                 f.write('\n'.join(logs).encode('UTF-8'))
             attach(filename)
             print("Wrote JS log to " + filename)
@@ -670,6 +675,8 @@ class MachineCase(unittest.TestCase):
         self.machine.start_cockpit(host)
         self.browser.login_and_go(path, user=user, host=host, authorized=authorized)
 
+    allow_core_dumps = False
+
     allowed_messages = [
         # This is a failed login, which happens every time
         "Returning error-response 401 with reason `Sorry'",
@@ -756,6 +763,7 @@ class MachineCase(unittest.TestCase):
                                     'localhost: dropping message while waiting for child to exit',
                                     '.*: GDBus.Error:org.freedesktop.PolicyKit1.Error.Failed: .*',
                                     '.*g_dbus_connection_call_finish_internal.*G_IS_DBUS_CONNECTION.*',
+                                    '.*Message recipient disconnected from message bus without replying.*',
                                     )
 
     def allow_authorize_journal_messages(self):
@@ -780,6 +788,8 @@ class MachineCase(unittest.TestCase):
         """Check for unexpected journal entries."""
         machine = machine or self.machine
         syslog_ids = [ "cockpit-ws", "cockpit-bridge" ]
+        if not self.allow_core_dumps:
+            syslog_ids += [ "systemd-coredump" ]
         messages = machine.journal_messages(syslog_ids, 5)
         if "TEST_AUDIT_NO_SELINUX" not in os.environ:
             messages += machine.audit_messages("14") # 14xx is selinux
@@ -787,7 +797,7 @@ class MachineCase(unittest.TestCase):
         # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1557913
         # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1563143
         # these fail tons of tests due to the SELinux violations (so naughty override causes too much spamming)
-        if self.image == 'fedora-28':
+        if self.image in ['fedora-28', 'fedora-atomic', 'fedora-testing']:
             self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { dac_override }.*')
             self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { module_request }.*')
             self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { getattr } for .* comm="which" path="/usr/sbin/setfiles".*')
@@ -811,10 +821,11 @@ class MachineCase(unittest.TestCase):
                     found = True
                     break
             if not found:
-                print("Unexpected journal message '%s'" % m)
                 all_found = False
                 if not first:
+                    print("Unexpected journal messages:")
                     first = m
+                print(m)
         if not all_found:
             self.copy_js_log("FAIL")
             self.copy_journal("FAIL")
@@ -875,7 +886,7 @@ class MachineCase(unittest.TestCase):
             suffix = "-" + suffix
         filename = "{0}{1}-axe.json.gz".format(label or self.label(), suffix)
         with gzip.open(filename, "wb") as f:
-            f.write(json.dumps(report))
+            f.write(json.dumps(report).encode('UTF-8'))
         print("Wrote accessibility report to " + filename)
         attach(filename)
 
@@ -897,7 +908,7 @@ class MachineCase(unittest.TestCase):
             self.browser.copy_js_log(title, label)
 
     def copy_journal(self, title, label=None):
-        for name, m in self.machines.iteritems():
+        for name, m in self.machines.items():
             if m.ssh_reachable:
                 log = "%s-%s-%s.log" % (label or self.label(), m.label, title)
                 with open(log, "w") as fp:
@@ -906,7 +917,7 @@ class MachineCase(unittest.TestCase):
                     attach(log)
 
     def copy_cores(self, title, label=None):
-        for name, m in self.machines.iteritems():
+        for name, m in self.machines.items():
             if m.ssh_reachable:
                 directory = "%s-%s-%s.core" % (label or self.label(), m.label, title)
                 dest = os.path.abspath(directory)
@@ -977,7 +988,7 @@ class OutputBuffer(object):
         while self.fds:
             for p in self.poll.poll(1000):
                 data = os.read(p[0], 1024)
-                if data == "":
+                if data == b"":
                     self.poll.unregister(p[0])
                 else:
                     self.buffers[p[0]] += data
@@ -987,7 +998,7 @@ class OutputBuffer(object):
     def push(self, pid, fd):
         self.poll.register(fd, select.POLLIN)
         self.fds[pid] = fd
-        self.buffers[fd] = ""
+        self.buffers[fd] = b""
 
     def pop(self, pid):
         fd = self.fds.pop(pid)
@@ -998,7 +1009,7 @@ class OutputBuffer(object):
             pass
         while True:
             data = os.read(fd, 1024)
-            if data == "":
+            if data == b"":
                 break
             buffer += data
         os.close(fd)
@@ -1072,7 +1083,7 @@ class TapRunner(object):
                     failed = (code >> 8) & 0xff
                 if pid:
                     if buffer:
-                        output = buffer.pop(pid)
+                        output = buffer.pop(pid).decode("UTF-8")
                         test = pids[pid]
                         failed, retry = self.filterOutput(test, failed, output)
                         if retry:
@@ -1142,7 +1153,7 @@ class TapRunner(object):
         # Otherwise pass through this command if it exists
         cmd = [ "tests-policy", testvm.DEFAULT_IMAGE ]
         try:
-            proc = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+            proc = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, universal_newlines=True)
             (changed, unused) = proc.communicate(output)
             if proc.returncode == 0:
                 output = changed
@@ -1192,8 +1203,12 @@ def test_main(options=None, suite=None, attachments=None, **kwargs):
     global opts
 
     # Turn off python stdout buffering
+    buf_arg = 0
+    if sys.version_info[0] >= 3:
+        os.environ['PYTHONUNBUFFERED'] = '1'
+        buf_arg = 1
     sys.stdout.flush()
-    sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', 0)
+    sys.stdout = os.fdopen(sys.stdout.fileno(), 'w', buf_arg)
 
     standalone = options is None
     parser = arg_parser()
@@ -1290,8 +1305,5 @@ def sit(machines={ }):
     """
     for (name, machine) in machines.items():
         sys.stderr.write(machine.diagnose())
-    try:
-        input = raw_input
-    except NameError:
-        pass
-    input ("Press RET to continue... ")
+    print("Press RET to continue...")
+    sys.stdin.readline()

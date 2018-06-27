@@ -373,6 +373,10 @@ return plural;
   null,
   "Deaktiviert"
  ],
+ "Enable Service": [
+  null,
+  ""
+ ],
  "Ethernet MAC": [
   null,
   ""
@@ -565,6 +569,14 @@ return plural;
   null,
   "Name"
  ],
+ "Network devices and graphs require NetworkManager.": [
+  null,
+  ""
+ ],
+ "NetworkManager is not running.": [
+  null,
+  ""
+ ],
  "Networking": [
   null,
   "Netzwerk"
@@ -752,6 +764,10 @@ return plural;
  "Stable": [
   null,
   "Stabil"
+ ],
+ "Start Service": [
+  null,
+  ""
  ],
  "Status": [
   null,

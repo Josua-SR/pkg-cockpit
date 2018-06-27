@@ -237,6 +237,38 @@ input[type=number] {
     max-height: calc(75vh - 10rem);
     overflow: auto;
 }
+.tooltip-ct-outer {
+    display:  inline-block;
+    position: relative;
+}
+
+.tooltip-ct-inner {
+    display:  inline-block;
+}
+
+/* Layout fix for tooltip arrows.
+ *
+ * Sometimes when there are non-integer coordinates involved
+ * somewhere, rounding seems to make it so that there is a visible one
+ * pixel gap between tooltip-inner and tooltip-arrow.  We avoid that
+ * gap by letting the arrow and inner parts overlap by one pixel.
+ *
+ * This happens within the caption of the content listing.
+ */
+
+.tooltip.top .tooltip-arrow {
+    bottom: 1px;
+}
+
+.tooltip.bottom .tooltip-arrow {
+    top: 1px;
+}
+.notification-message {
+    white-space: pre-wrap;
+}
+.machines-more-button {
+    padding-left: 10px;
+}
 .ovirt-provider-overview-icon {
     max-width: 100%;
     max-height: 100%;
@@ -653,12 +685,6 @@ tbody tr.listing-ct-noexpand {
   height: 3px;
   left: 0px;
 }
-.notification-message {
-    white-space: pre-wrap;
-}
-.machines-more-button {
-    padding-left: 10px;
-}
 .console-menu {
     padding-bottom: 1em;
 }
@@ -707,32 +733,6 @@ table.delete-dialog-disks.table tbody tr td:nth-child(3) {
 .ovirt-provider-vdsm-editor {
     width:100%;
     min-height: 300px;
-}
-.tooltip-ct-outer {
-    display:  inline-block;
-    position: relative;
-}
-
-.tooltip-ct-inner {
-    display:  inline-block;
-}
-
-/* Layout fix for tooltip arrows.
- *
- * Sometimes when there are non-integer coordinates involved
- * somewhere, rounding seems to make it so that there is a visible one
- * pixel gap between tooltip-inner and tooltip-arrow.  We avoid that
- * gap by letting the arrow and inner parts overlap by one pixel.
- *
- * This happens within the caption of the content listing.
- */
-
-.tooltip.top .tooltip-arrow {
-    bottom: 1px;
-}
-
-.tooltip.bottom .tooltip-arrow {
-    top: 1px;
 }
 .ovirt-action-padding {
     padding-right: 5px;
@@ -1883,91 +1883,14 @@ tbody tr.listing-ct-noexpand {
   flex: none;
 }
 /**
-  Inline edit tables
-*/
-table.pf-table-inline-edit thead tr.editing th {
-  border-bottom-color: #7dc3e8;
-  border-bottom-width: 3px;
-}
-table.pf-table-inline-edit tbody tr td {
-  padding: 5px 10px 3px;
-}
-table.pf-table-inline-edit tbody tr td.editable {
-  padding: 0;
-}
-table.pf-table-inline-edit tbody tr td.editable.editing {
-  padding: 2px 3px;
-}
-table.pf-table-inline-edit tbody tr.editing td {
-  background: #def3ff;
-  border-top-color: #7dc3e8;
-  border-bottom-color: #7dc3e8;
-}
-table.pf-table-inline-edit tbody tr.editing td:first-child {
-  border-left-color: #7dc3e8;
-}
-table.pf-table-inline-edit tbody tr.editing td:last-child {
-  border-right-color: #7dc3e8;
-}
-table.pf-table-inline-edit tbody .input {
-  border: 1px solid transparent;
-  display: block;
-  margin: 2px 3px 2px;
-  min-height: 26px;
-  padding: 3px 6px 1px;
-}
-table.pf-table-inline-edit tbody .input:hover {
-  background: #fff;
-  border: 1px solid #bbb;
-  cursor: text;
-}
-table.pf-table-inline-edit tbody .input:hover::after {
-  content: "\F040";
-  float: right;
-  font-family: "FontAwesome";
-  margin-left: 15px;
-}
-table.pf-table-inline-edit tbody .static {
-  border: 1px solid transparent;
-  display: block;
-  margin: 2px 3px 2px;
-  padding: 3px 6px 1px;
-}
-.inline-edit-buttons {
-  background: #def3ff;
-  border: 1px solid #7dc3e8;
-  margin: 0;
-  padding: 4px;
-  position: fixed;
-  z-index: 1000;
-}
-.inline-edit-buttons.top {
-  border-bottom: 0;
-}
-.inline-edit-buttons.bottom {
-  border-top: 0;
-}
-.inline-edit-buttons.bold {
-  border-width: 3px;
-}
-.inline-edit-buttons .btn {
-  height: 26px;
-  margin-left: 4px;
-  width: 26px;
-}
-.inline-edit-buttons .btn:first-child {
-  margin-left: 0;
-}
-.popover-pf-info {
-  margin-left: 3px;
-  padding: 0;
-}
-/**
   Styling shared by both VncConsole and SerialConsole.
 */
 /**
   SerialConsole styles
  */
+.serial-console-pf {
+  height: 100%;
+}
 .console-pf > .terminal {
   color: #fff;
   text-align: left;
@@ -1983,6 +1906,7 @@ table.pf-table-inline-edit tbody .static {
   margin-bottom: 0;
   text-align: center;
   line-height: normal;
+  height: 100%;
 }
 .console-pf .terminal .terminal-cursor {
   border: 1px solid #fff;
@@ -2003,6 +1927,7 @@ table.pf-table-inline-edit tbody .static {
 }
 .console-terminal-pf {
   width: 100%;
+  height: 100%;
   padding-right: 0px;
   padding-left: 0px;
 }
@@ -2167,6 +2092,49 @@ table.pf-table-inline-edit tbody .static {
 }
 .panel-heading .btn {
   margin-left: 3px;
+}
+.console-menu {
+  padding-bottom: 1em;
+}
+.console-actions-buttons {
+  margin-left: 5px;
+}
+.console-actions {
+  float: right;
+  position: relative;
+  top: -2em;
+}
+.console-type-select {
+  width: 19em !important;
+}
+.machines-status-alert {
+  padding-right: 5px;
+}
+.vcpu-detail-modal-table {
+  width: 100%;
+}
+.vcpu-detail-modal-table td {
+  width: 50%;
+}
+.vcpu-detail-modal-table tr td:first-child {
+  padding-top: 0.25em;
+  display: inherit;
+}
+table.vcpu-detail-modal-right td {
+  width: 25%;
+}
+table.vcpu-detail-modal-right input {
+  height: 25px;
+}
+table.vcpu-detail-modal-right .btn-group.bootstrap-select.dropdown {
+  width: 110px;
+}
+.vcpu-detail-modal-table tr td.machines-vcpu-caution:first-child {
+  width: 100%;
+  display: table-cell;
+}
+#machines-vcpu-modal-dialog div.modal-body {
+  overflow: visible;
 }
 .ovirt-provider-listing-top-column {
   width: 33%;

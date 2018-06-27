@@ -373,6 +373,10 @@ return plural;
   null,
   "Etkin değil"
  ],
+ "Enable Service": [
+  null,
+  ""
+ ],
  "Ethernet MAC": [
   null,
   ""
@@ -565,6 +569,14 @@ return plural;
   null,
   "İsim"
  ],
+ "Network devices and graphs require NetworkManager.": [
+  null,
+  ""
+ ],
+ "NetworkManager is not running.": [
+  null,
+  ""
+ ],
  "Networking": [
   null,
   ""
@@ -750,6 +762,10 @@ return plural;
   "Spanning Tree Protocol (STP)"
  ],
  "Stable": [
+  null,
+  ""
+ ],
+ "Start Service": [
   null,
   ""
  ],

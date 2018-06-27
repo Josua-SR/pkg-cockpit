@@ -551,6 +551,10 @@ return plural;
   null,
   "Flocker 数据集名称"
  ],
+ "Free": [
+  null,
+  "可用"
+ ],
  "GCE Persistent Disk": [
   null,
   "GCE 持久盘"
@@ -1630,6 +1634,14 @@ return plural;
  "Updating $0...": [
   null,
   "更新 $0..."
+ ],
+ "Usage": [
+  null,
+  "使用情况"
+ ],
+ "Usage metrics are available after the pod starts": [
+  null,
+  ""
  ],
  "Used": [
   null,

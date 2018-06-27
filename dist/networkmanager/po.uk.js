@@ -379,6 +379,10 @@ return plural;
   null,
   "Вимкнено"
  ],
+ "Enable Service": [
+  null,
+  "Увімкнути службу"
+ ],
  "Ethernet MAC": [
   null,
   "MAC Ethernet"
@@ -571,6 +575,14 @@ return plural;
   null,
   "Назва"
  ],
+ "Network devices and graphs require NetworkManager.": [
+  null,
+  "Для отримання списку пристроїв мережі та графіків слід встановити NetworkManager."
+ ],
+ "NetworkManager is not running.": [
+  null,
+  "NetworkManager не запущено."
+ ],
  "Networking": [
   null,
   "Робота у мережі"
@@ -758,6 +770,10 @@ return plural;
  "Stable": [
   null,
   "Стабільний"
+ ],
+ "Start Service": [
+  null,
+  "Запустити службу"
  ],
  "Status": [
   null,

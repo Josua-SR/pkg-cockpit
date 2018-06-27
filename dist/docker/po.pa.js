@@ -867,6 +867,10 @@ return plural;
   null,
   "ਵਾਲੀਅਮ"
  ],
+ "Volumes:": [
+  null,
+  ""
+ ],
  "With terminal": [
   null,
   ""

@@ -99,7 +99,7 @@ return plural;
  "$0 disk is missing": [
   "$0 disks are missing",
   "$0 disco não encontrado",
-  "$0 discos não encontrados "
+  "$0 discos não encontrados"
  ],
  "$0 filesystems can not be made larger.": [
   null,

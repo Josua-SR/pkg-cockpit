@@ -14,6 +14,7 @@ $(function() {
 
     cockpit.translate();
     var _ = cockpit.gettext;
+    moment.locale(cockpit.language);
 
     /* Notes about the systemd D-Bus API
      *
@@ -516,6 +517,9 @@ $(function() {
         { title: _("Reload"),                action: 'ReloadUnit' }
     ];
 
+    var permission = cockpit.permission({ admin: true });
+    $(permission).on('changed', unit_action_update_privilege);
+
     function unit_action() {
         /* jshint validthis:true */
         var parsed_action = $(this).attr("data-action").split(":");
@@ -565,6 +569,17 @@ $(function() {
         }
     }
 
+    function unit_action_update_privilege() {
+        $('#service-unit-action>button').update_privileged(
+            permission, cockpit.format(
+                _("The user <b>$0</b> is not permitted to start or stop services"),
+                permission.user ? permission.user.name : ''));
+        $('#service-file-action>button').update_privileged(
+            permission, cockpit.format(
+                _("The user <b>$0</b> is not permitted to enable or disable services"),
+                permission.user ? permission.user.name : ''));
+    }
+
     function show_unit(unit_id) {
         if (cur_unit) {
             $(cur_unit).off('changed');
@@ -612,7 +627,7 @@ $(function() {
 
             var since = "";
             if (timestamp)
-                since = cockpit.format(_("Since $0"), new Date(timestamp/1000).toLocaleString());
+                since = cockpit.format(_("Since $0"), moment(timestamp/1000).format('LLL'));
 
             var unit_action_btn = mustache.render(action_btn_template,
                                                   {
@@ -678,6 +693,7 @@ $(function() {
             $('#service-unit').html(text);
             $('#service-unit-action').on('click', "[data-action]", unit_action);
             $('#service-file-action').on('click', "[data-action]", unit_file_action);
+            unit_action_update_privilege();
         }
 
         function render_template() {
@@ -850,7 +866,6 @@ $(function() {
     /* Timer Creation
      * timer_unit contains all the user's valid inputs from create-timer modal.
      */
-    var permission = cockpit.permission({ admin: true });
     $(permission).on("changed", function() {
         if (permission.allowed === false) {
             $("#create-timer").addClass("accounts-privileged");
@@ -885,12 +900,12 @@ $(function() {
                 var uptime = parseFloat(contents.split(' ')[0]);
                 clock_monotonic_now = parseInt(uptime * 1000000, 10);
             });
-        cockpit.spawn(["date", "-R"]).
+        cockpit.spawn(["date", "+%s"]).
             fail(function (err) {
                 console.log(err);
             }).
             done(function (time) {
-                clock_realtime_now = moment(time, "ddd, DD MMM YYYY HH:mm:ss ZZ"); // rfc822 date
+                clock_realtime_now = moment.unix(parseInt(time));
             });
     }
     update_time();

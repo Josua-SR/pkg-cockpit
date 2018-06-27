@@ -367,6 +367,10 @@ return plural;
   null,
   "無効"
  ],
+ "Enable Service": [
+  null,
+  ""
+ ],
  "Ethernet MAC": [
   null,
   "Ethernet MAC"
@@ -559,6 +563,14 @@ return plural;
   null,
   "名前"
  ],
+ "Network devices and graphs require NetworkManager.": [
+  null,
+  ""
+ ],
+ "NetworkManager is not running.": [
+  null,
+  ""
+ ],
  "Networking": [
   null,
   "ネットワーキング"
@@ -746,6 +758,10 @@ return plural;
  "Stable": [
   null,
   "安定"
+ ],
+ "Start Service": [
+  null,
+  ""
  ],
  "Status": [
   null,

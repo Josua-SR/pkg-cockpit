@@ -1,5 +1,5 @@
 # Generated Makefile data for apps
-# Stamp: Wed Jun 13 2018 10:14:08 GMT+0000 (UTC)
+# Stamp: Wed Jun 27 2018 17:21:55 GMT+0000 (UTC)
 
 apps_INPUTS = \
 	node_modules/react-lite/LICENSE \
@@ -32,8 +32,6 @@ apps_OUTPUTS = \
 	dist/apps/apps.min.js.map \
 	dist/apps/default.png \
 	dist/apps/index.html \
-	dist/base1/cockpit.js \
-	dist/base1/jquery.js \
 	$(NULL)
 
 apps_PO = dist/apps/po.js $(patsubst %,dist/apps/po.%.js,$(LINGUAS))
@@ -43,8 +41,6 @@ apps_INSTALL = \
 	dist/apps/apps.min.js.gz \
 	dist/apps/default.png \
 	dist/apps/index.html.gz \
-	dist/base1/cockpit.js.gz \
-	dist/base1/jquery.js.gz \
 	$(addsuffix .gz,$(apps_PO)) \
 	$(NULL)
 
@@ -60,24 +56,19 @@ dist/apps/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
 	$(MSGGREP) -N node_modules/react-lite/dist/react-lite.js -N pkg/apps/application-list.jsx -N pkg/apps/application.css -N pkg/apps/application.jsx -N pkg/apps/appstream.js -N pkg/apps/default.png -N pkg/apps/index.html -N pkg/apps/index.jsx -N pkg/apps/packagekit.es6 -N pkg/apps/utils.jsx -N pkg/apps/watch-appstream.py -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/inotify.py -N pkg/lib/packagekit.es6 -N pkg/lib/page.css -N pkg/lib/python.jsx -N pkg/lib/table.css $< > $@.tmp && mv $@.tmp $@
 
-dist/apps/Makefile.deps: $(WEBPACK_CONFIG) $(apps_INPUTS)
-	$(WEBPACK_RULE) -d dist/apps/Makefile.deps $(WEBPACK_CONFIG)
+dist/apps/stamp: $(apps_INPUTS)
 
-dist/apps/apps.css: dist/apps/Makefile.deps
+dist/apps/apps.css: dist/apps/stamp
 
-dist/apps/apps.css.map: dist/apps/Makefile.deps
+dist/apps/apps.css.map: dist/apps/stamp
 
-dist/apps/apps.min.js: dist/apps/Makefile.deps
+dist/apps/apps.min.js: dist/apps/stamp
 
-dist/apps/apps.min.js.map: dist/apps/Makefile.deps
+dist/apps/apps.min.js.map: dist/apps/stamp
 
-dist/apps/default.png: dist/apps/Makefile.deps
+dist/apps/default.png: dist/apps/stamp
 
-dist/apps/index.html: dist/apps/Makefile.deps
-
-dist/base1/cockpit.js: dist/apps/Makefile.deps
-
-dist/base1/jquery.js: dist/apps/Makefile.deps
+dist/apps/index.html: dist/apps/stamp
 
 node_modules/react-lite/LICENSE:
 
@@ -128,11 +119,7 @@ WEBPACK_INSTALL += $(apps_INSTALL)
 WEBPACK_DEBUG += $(apps_DEBUG)
 TESTS += $(apps_TESTS)
 
-apps: dist/apps/Makefile.deps $(apps_OUTPUTS) $(apps_INSTALL)
-	@true
+apps: dist/apps/stamp
 clean-apps: 
-	rm -rf $(apps_OUTPUTS) $(apps_INSTALL) dist/apps/Makefile.deps
-all-local:: apps
-	@true
+	rm -rf $(apps_OUTPUTS) $(apps_INSTALL) dist/apps/stamp
 clean-local:: clean-apps
-	@true

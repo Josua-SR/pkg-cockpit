@@ -1,5 +1,5 @@
 # Generated Makefile data for shell
-# Stamp: Wed Jun 13 2018 10:14:08 GMT+0000 (UTC)
+# Stamp: Wed Jun 27 2018 17:21:55 GMT+0000 (UTC)
 
 shell_INPUTS = \
 	node_modules/bootstrap/LICENSE \
@@ -68,8 +68,6 @@ shell_INPUTS = \
 	$(NULL)
 
 shell_OUTPUTS = \
-	dist/base1/cockpit.js \
-	dist/base1/jquery.js \
 	dist/shell/images/server-error.png \
 	dist/shell/images/server-large.png \
 	dist/shell/images/server-small.png \
@@ -94,8 +92,6 @@ shell_OUTPUTS = \
 shell_PO = dist/shell/po.js $(patsubst %,dist/shell/po.%.js,$(LINGUAS))
 
 shell_INSTALL = \
-	dist/base1/cockpit.js.gz \
-	dist/base1/jquery.js.gz \
 	dist/shell/images/server-error.png \
 	dist/shell/images/server-large.png \
 	dist/shell/images/server-small.png \
@@ -128,50 +124,45 @@ dist/shell/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
 	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/mustache/mustache.js -N node_modules/patternfly/dist/less/color-variables.less -N node_modules/patternfly/dist/less/variables.less -N node_modules/react-lite/dist/react-lite.js -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-file-autocomplete.css -N pkg/lib/cockpit-components-file-autocomplete.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/credentials-ssh-private-keys.sh -N pkg/lib/credentials-ssh-remove-key.sh -N pkg/lib/credentials.js -N pkg/lib/listing.less -N pkg/lib/machine-add.html -N pkg/lib/machine-auth-failed.html -N pkg/lib/machine-change-auth.html -N pkg/lib/machine-change-port.html -N pkg/lib/machine-color-picker.html -N pkg/lib/machine-dialogs.js -N pkg/lib/machine-invalid-hostkey.html -N pkg/lib/machine-not-supported.html -N pkg/lib/machine-sync-users.html -N pkg/lib/machine-unknown-hostkey.html -N pkg/lib/machines.js -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/table.css -N pkg/lib/variables.less -N pkg/shell/active-pages-dialog.jsx -N pkg/shell/active-pages.js -N pkg/shell/active-pages.less -N pkg/shell/base_index.js -N pkg/shell/credentials.js -N pkg/shell/images/server-error.png -N pkg/shell/images/server-large.png -N pkg/shell/images/server-small.png -N pkg/shell/index-no-machines.js -N pkg/shell/index-stub.js -N pkg/shell/index.html -N pkg/shell/index.js -N pkg/shell/indexes.js -N pkg/shell/privileges.js -N pkg/shell/shell.html -N pkg/shell/shell.less -N pkg/shell/simple.html -N pkg/shell/ssh-file-autocomplete.jsx -N pkg/shell/stub.html -N pkg/shell/switcher.less -N pkg/shell/variables.less $(addprefix -N ,$(shell find pkg/ -name manifest.json)) $< > $@.tmp && mv $@.tmp $@
 
-dist/shell/Makefile.deps: $(WEBPACK_CONFIG) $(shell_INPUTS)
-	$(WEBPACK_RULE) -d dist/shell/Makefile.deps $(WEBPACK_CONFIG)
+dist/shell/stamp: $(shell_INPUTS)
 
-dist/base1/cockpit.js: dist/shell/Makefile.deps
+dist/shell/images/server-error.png: dist/shell/stamp
 
-dist/base1/jquery.js: dist/shell/Makefile.deps
+dist/shell/images/server-large.png: dist/shell/stamp
 
-dist/shell/images/server-error.png: dist/shell/Makefile.deps
+dist/shell/images/server-small.png: dist/shell/stamp
 
-dist/shell/images/server-large.png: dist/shell/Makefile.deps
+dist/shell/index-no-machines.css: dist/shell/stamp
 
-dist/shell/images/server-small.png: dist/shell/Makefile.deps
+dist/shell/index-no-machines.css.map: dist/shell/stamp
 
-dist/shell/index-no-machines.css: dist/shell/Makefile.deps
+dist/shell/index-no-machines.min.js: dist/shell/stamp
 
-dist/shell/index-no-machines.css.map: dist/shell/Makefile.deps
+dist/shell/index-no-machines.min.js.map: dist/shell/stamp
 
-dist/shell/index-no-machines.min.js: dist/shell/Makefile.deps
+dist/shell/index-stub.css: dist/shell/stamp
 
-dist/shell/index-no-machines.min.js.map: dist/shell/Makefile.deps
+dist/shell/index-stub.css.map: dist/shell/stamp
 
-dist/shell/index-stub.css: dist/shell/Makefile.deps
+dist/shell/index-stub.min.js: dist/shell/stamp
 
-dist/shell/index-stub.css.map: dist/shell/Makefile.deps
+dist/shell/index-stub.min.js.map: dist/shell/stamp
 
-dist/shell/index-stub.min.js: dist/shell/Makefile.deps
+dist/shell/index.css: dist/shell/stamp
 
-dist/shell/index-stub.min.js.map: dist/shell/Makefile.deps
+dist/shell/index.css.map: dist/shell/stamp
 
-dist/shell/index.css: dist/shell/Makefile.deps
+dist/shell/index.html: dist/shell/stamp
 
-dist/shell/index.css.map: dist/shell/Makefile.deps
+dist/shell/index.min.js: dist/shell/stamp
 
-dist/shell/index.html: dist/shell/Makefile.deps
+dist/shell/index.min.js.map: dist/shell/stamp
 
-dist/shell/index.min.js: dist/shell/Makefile.deps
+dist/shell/shell.html: dist/shell/stamp
 
-dist/shell/index.min.js.map: dist/shell/Makefile.deps
+dist/shell/simple.html: dist/shell/stamp
 
-dist/shell/shell.html: dist/shell/Makefile.deps
-
-dist/shell/simple.html: dist/shell/Makefile.deps
-
-dist/shell/stub.html: dist/shell/Makefile.deps
+dist/shell/stub.html: dist/shell/stamp
 
 node_modules/bootstrap/LICENSE:
 
@@ -306,11 +297,7 @@ WEBPACK_INSTALL += $(shell_INSTALL)
 WEBPACK_DEBUG += $(shell_DEBUG)
 TESTS += $(shell_TESTS)
 
-shell: dist/shell/Makefile.deps $(shell_OUTPUTS) $(shell_INSTALL)
-	@true
+shell: dist/shell/stamp
 clean-shell: 
-	rm -rf $(shell_OUTPUTS) $(shell_INSTALL) dist/shell/Makefile.deps
-all-local:: shell
-	@true
+	rm -rf $(shell_OUTPUTS) $(shell_INSTALL) dist/shell/stamp
 clean-local:: clean-shell
-	@true

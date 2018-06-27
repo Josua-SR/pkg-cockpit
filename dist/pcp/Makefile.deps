@@ -1,19 +1,15 @@
 # Generated Makefile data for pcp
-# Stamp: Wed Jun 13 2018 10:13:23 GMT+0000 (UTC)
+# Stamp: Wed Jun 27 2018 17:11:20 GMT+0000 (UTC)
 
 pcp_INPUTS = \
 	$(NULL)
 
 pcp_OUTPUTS = \
-	dist/base1/cockpit.js \
-	dist/base1/jquery.js \
 	$(NULL)
 
 pcp_PO = dist/pcp/po.js $(patsubst %,dist/pcp/po.%.js,$(LINGUAS))
 
 pcp_INSTALL = \
-	dist/base1/cockpit.js.gz \
-	dist/base1/jquery.js.gz \
 	$(addsuffix .gz,$(pcp_PO)) \
 	$(NULL)
 
@@ -27,12 +23,7 @@ dist/pcp/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
 	$(MSGGREP)  $< > $@.tmp && mv $@.tmp $@
 
-dist/pcp/Makefile.deps: $(WEBPACK_CONFIG) $(pcp_INPUTS)
-	$(WEBPACK_RULE) -d dist/pcp/Makefile.deps $(WEBPACK_CONFIG)
-
-dist/base1/cockpit.js: dist/pcp/Makefile.deps
-
-dist/base1/jquery.js: dist/pcp/Makefile.deps
+dist/pcp/stamp: $(pcp_INPUTS)
 
 WEBPACK_INPUTS += $(pcp_INPUTS)
 WEBPACK_OUTPUTS += $(pcp_OUTPUTS)
@@ -41,11 +32,7 @@ WEBPACK_INSTALL += $(pcp_INSTALL)
 WEBPACK_DEBUG += $(pcp_DEBUG)
 TESTS += $(pcp_TESTS)
 
-pcp: dist/pcp/Makefile.deps $(pcp_OUTPUTS) $(pcp_INSTALL)
-	@true
+pcp: dist/pcp/stamp
 clean-pcp: 
-	rm -rf $(pcp_OUTPUTS) $(pcp_INSTALL) dist/pcp/Makefile.deps
-all-local:: pcp
-	@true
+	rm -rf $(pcp_OUTPUTS) $(pcp_INSTALL) dist/pcp/stamp
 clean-local:: clean-pcp
-	@true

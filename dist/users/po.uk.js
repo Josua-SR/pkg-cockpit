@@ -179,6 +179,10 @@ return plural;
   null,
   "Повне ім'я"
  ],
+ "Image Builder": [
+  null,
+  ""
+ ],
  "Invalid expiration date": [
   null,
   "Некоректна дата строку завершення дії"
@@ -374,6 +378,10 @@ return plural;
  "You do not have permission to view the authorized public keys for this account.": [
   null,
   "У вас немає прав доступу для перегляду уповноважених відкритих ключів для цього облікового запису."
+ ],
+ "translatable": [
+  null,
+  ""
  ],
  "page-title\u0004Accounts": [
   null,

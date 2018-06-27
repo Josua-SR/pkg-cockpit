@@ -555,6 +555,10 @@ return plural;
   null,
   "Nazwa zestawu danych Flocker"
  ],
+ "Free": [
+  null,
+  "Wolne"
+ ],
  "GCE Persistent Disk": [
   null,
   "Trwały dysk GCE"
@@ -1634,6 +1638,14 @@ return plural;
  "Updating $0...": [
   null,
   "Aktualizowanie $0…"
+ ],
+ "Usage": [
+  null,
+  "Użycie"
+ ],
+ "Usage metrics are available after the pod starts": [
+  null,
+  "Statystyki użycia są dostępne po uruchomieniu pojemnika"
  ],
  "Used": [
   null,

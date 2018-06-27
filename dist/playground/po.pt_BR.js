@@ -75,7 +75,7 @@ return plural;
  "$0 disk is missing": [
   "$0 disks are missing",
   "$0 disco não encontrado",
-  "$0 discos não encontrados "
+  "$0 discos não encontrados"
  ],
  "$0 hour": [
   "$0 hours",

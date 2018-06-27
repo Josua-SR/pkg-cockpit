@@ -10362,8 +10362,6 @@ if ( !noGlobal ) {
 
 return jQuery;
 } );
-
-
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -12741,8 +12739,6 @@ if (typeof jQuery === 'undefined') {
   })
 
 }(jQuery);
-
-
 (function (window) {
   'use strict';
 
@@ -14535,5 +14531,3 @@ if (typeof jQuery === 'undefined') {
     return $.fn.setupVerticalNavigation.self;
   };
 }(jQuery));
-
-

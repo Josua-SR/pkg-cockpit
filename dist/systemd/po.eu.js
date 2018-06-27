@@ -1153,6 +1153,10 @@ return plural;
   null,
   ""
  ],
+ "The user <b>$0</b> is not permitted to change the system time": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
   ""

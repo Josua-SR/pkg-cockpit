@@ -1,19 +1,15 @@
 # Generated Makefile data for ssh
-# Stamp: Wed Jun 13 2018 10:13:23 GMT+0000 (UTC)
+# Stamp: Wed Jun 27 2018 17:11:20 GMT+0000 (UTC)
 
 ssh_INPUTS = \
 	$(NULL)
 
 ssh_OUTPUTS = \
-	dist/base1/cockpit.js \
-	dist/base1/jquery.js \
 	$(NULL)
 
 ssh_PO = dist/ssh/po.js $(patsubst %,dist/ssh/po.%.js,$(LINGUAS))
 
 ssh_INSTALL = \
-	dist/base1/cockpit.js.gz \
-	dist/base1/jquery.js.gz \
 	$(addsuffix .gz,$(ssh_PO)) \
 	$(NULL)
 
@@ -27,12 +23,7 @@ dist/ssh/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
 	$(MSGGREP)  $< > $@.tmp && mv $@.tmp $@
 
-dist/ssh/Makefile.deps: $(WEBPACK_CONFIG) $(ssh_INPUTS)
-	$(WEBPACK_RULE) -d dist/ssh/Makefile.deps $(WEBPACK_CONFIG)
-
-dist/base1/cockpit.js: dist/ssh/Makefile.deps
-
-dist/base1/jquery.js: dist/ssh/Makefile.deps
+dist/ssh/stamp: $(ssh_INPUTS)
 
 WEBPACK_INPUTS += $(ssh_INPUTS)
 WEBPACK_OUTPUTS += $(ssh_OUTPUTS)
@@ -41,11 +32,7 @@ WEBPACK_INSTALL += $(ssh_INSTALL)
 WEBPACK_DEBUG += $(ssh_DEBUG)
 TESTS += $(ssh_TESTS)
 
-ssh: dist/ssh/Makefile.deps $(ssh_OUTPUTS) $(ssh_INSTALL)
-	@true
+ssh: dist/ssh/stamp
 clean-ssh: 
-	rm -rf $(ssh_OUTPUTS) $(ssh_INSTALL) dist/ssh/Makefile.deps
-all-local:: ssh
-	@true
+	rm -rf $(ssh_OUTPUTS) $(ssh_INSTALL) dist/ssh/stamp
 clean-local:: clean-ssh
-	@true

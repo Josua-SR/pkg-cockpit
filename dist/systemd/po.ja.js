@@ -1147,6 +1147,10 @@ return plural;
   null,
   "ユーザー <b>$0</b> はタイマーを作成するパーミッションを持っていません"
  ],
+ "The user <b>$0</b> is not permitted to change the system time": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
   "ユーザー <b>$0</b> はホスト名を変更することを許可されていません"

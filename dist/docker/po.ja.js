@@ -859,6 +859,10 @@ return plural;
   null,
   "ボリューム"
  ],
+ "Volumes:": [
+  null,
+  ""
+ ],
  "With terminal": [
   null,
   "端末の使用"

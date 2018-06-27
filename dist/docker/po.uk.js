@@ -875,6 +875,10 @@ return plural;
   null,
   "Томи"
  ],
+ "Volumes:": [
+  null,
+  "Томи:"
+ ],
  "With terminal": [
   null,
   "За допомогою термінала"

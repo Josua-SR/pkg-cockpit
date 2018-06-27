@@ -1,5 +1,5 @@
 # Generated Makefile data for realmd
-# Stamp: Wed Jun 13 2018 10:13:23 GMT+0000 (UTC)
+# Stamp: Wed Jun 27 2018 17:11:20 GMT+0000 (UTC)
 
 realmd_INPUTS = \
 	pkg/lib/patterns.js \
@@ -8,8 +8,6 @@ realmd_INPUTS = \
 	$(NULL)
 
 realmd_OUTPUTS = \
-	dist/base1/cockpit.js \
-	dist/base1/jquery.js \
 	dist/realmd/domain.min.js \
 	dist/realmd/domain.min.js.map \
 	$(NULL)
@@ -17,8 +15,6 @@ realmd_OUTPUTS = \
 realmd_PO = dist/realmd/po.js $(patsubst %,dist/realmd/po.%.js,$(LINGUAS))
 
 realmd_INSTALL = \
-	dist/base1/cockpit.js.gz \
-	dist/base1/jquery.js.gz \
 	dist/realmd/domain.min.js.gz \
 	$(addsuffix .gz,$(realmd_PO)) \
 	$(NULL)
@@ -34,16 +30,11 @@ dist/realmd/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
 	$(MSGGREP) -N pkg/lib/patterns.js -N pkg/realmd/operation.html -N pkg/realmd/operation.js $< > $@.tmp && mv $@.tmp $@
 
-dist/realmd/Makefile.deps: $(WEBPACK_CONFIG) $(realmd_INPUTS)
-	$(WEBPACK_RULE) -d dist/realmd/Makefile.deps $(WEBPACK_CONFIG)
+dist/realmd/stamp: $(realmd_INPUTS)
 
-dist/base1/cockpit.js: dist/realmd/Makefile.deps
+dist/realmd/domain.min.js: dist/realmd/stamp
 
-dist/base1/jquery.js: dist/realmd/Makefile.deps
-
-dist/realmd/domain.min.js: dist/realmd/Makefile.deps
-
-dist/realmd/domain.min.js.map: dist/realmd/Makefile.deps
+dist/realmd/domain.min.js.map: dist/realmd/stamp
 
 pkg/lib/patterns.js:
 
@@ -58,11 +49,7 @@ WEBPACK_INSTALL += $(realmd_INSTALL)
 WEBPACK_DEBUG += $(realmd_DEBUG)
 TESTS += $(realmd_TESTS)
 
-realmd: dist/realmd/Makefile.deps $(realmd_OUTPUTS) $(realmd_INSTALL)
-	@true
+realmd: dist/realmd/stamp
 clean-realmd: 
-	rm -rf $(realmd_OUTPUTS) $(realmd_INSTALL) dist/realmd/Makefile.deps
-all-local:: realmd
-	@true
+	rm -rf $(realmd_OUTPUTS) $(realmd_INSTALL) dist/realmd/stamp
 clean-local:: clean-realmd
-	@true

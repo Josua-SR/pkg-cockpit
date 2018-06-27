@@ -179,6 +179,10 @@ return plural;
   null,
   ""
  ],
+ "Image Builder": [
+  null,
+  ""
+ ],
  "Invalid expiration date": [
   null,
   ""
@@ -372,6 +376,10 @@ return plural;
   "Validation de la clé"
  ],
  "You do not have permission to view the authorized public keys for this account.": [
+  null,
+  ""
+ ],
+ "translatable": [
   null,
   ""
  ],

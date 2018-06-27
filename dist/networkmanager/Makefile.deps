@@ -1,5 +1,5 @@
 # Generated Makefile data for networkmanager
-# Stamp: Wed Jun 13 2018 10:14:08 GMT+0000 (UTC)
+# Stamp: Wed Jun 27 2018 17:21:55 GMT+0000 (UTC)
 
 networkmanager_INPUTS = \
 	node_modules/bootstrap/LICENSE \
@@ -69,8 +69,6 @@ networkmanager_INPUTS = \
 	$(NULL)
 
 networkmanager_OUTPUTS = \
-	dist/base1/cockpit.js \
-	dist/base1/jquery.js \
 	dist/networkmanager/firewall.css \
 	dist/networkmanager/firewall.css.map \
 	dist/networkmanager/firewall.html \
@@ -91,8 +89,6 @@ networkmanager_OUTPUTS = \
 networkmanager_PO = dist/networkmanager/po.js $(patsubst %,dist/networkmanager/po.%.js,$(LINGUAS))
 
 networkmanager_INSTALL = \
-	dist/base1/cockpit.js.gz \
-	dist/base1/jquery.js.gz \
 	dist/networkmanager/firewall.css.gz \
 	dist/networkmanager/firewall.html.gz \
 	dist/networkmanager/firewall.min.js.gz \
@@ -120,42 +116,37 @@ dist/networkmanager/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
 	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/jquery-flot/jquery.flot.js -N node_modules/jquery-flot/jquery.flot.selection.js -N node_modules/jquery-flot/jquery.flot.time.js -N node_modules/mustache/mustache.js -N node_modules/patternfly/dist/less/color-variables.less -N node_modules/patternfly/dist/less/variables.less -N node_modules/qunit-tap/lib/qunit-tap.js -N node_modules/qunitjs/qunit/qunit.css -N node_modules/qunitjs/qunit/qunit.js -N node_modules/react-lite/dist/react-lite.js -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-onoff.css -N pkg/lib/cockpit-components-onoff.jsx -N pkg/lib/cockpit-components-tooltip.jsx -N pkg/lib/journal.css -N pkg/lib/journal.js -N pkg/lib/journal_day_header.mustache -N pkg/lib/journal_line.mustache -N pkg/lib/journal_reboot.mustache -N pkg/lib/listing.less -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/plot.css -N pkg/lib/plot.js -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/service.js -N pkg/lib/table.css -N pkg/lib/tooltip.css -N pkg/lib/variables.less -N pkg/networkmanager/firewall-client.es6 -N pkg/networkmanager/firewall.html -N pkg/networkmanager/firewall.jsx -N pkg/networkmanager/index.html -N pkg/networkmanager/interfaces.js -N pkg/networkmanager/networking.css -N pkg/networkmanager/test-utils.js -N pkg/networkmanager/utils.js $< > $@.tmp && mv $@.tmp $@
 
-dist/networkmanager/Makefile.deps: $(WEBPACK_CONFIG) $(networkmanager_INPUTS)
-	$(WEBPACK_RULE) -d dist/networkmanager/Makefile.deps $(WEBPACK_CONFIG)
+dist/networkmanager/stamp: $(networkmanager_INPUTS)
 
-dist/base1/cockpit.js: dist/networkmanager/Makefile.deps
+dist/networkmanager/firewall.css: dist/networkmanager/stamp
 
-dist/base1/jquery.js: dist/networkmanager/Makefile.deps
+dist/networkmanager/firewall.css.map: dist/networkmanager/stamp
 
-dist/networkmanager/firewall.css: dist/networkmanager/Makefile.deps
+dist/networkmanager/firewall.html: dist/networkmanager/stamp
 
-dist/networkmanager/firewall.css.map: dist/networkmanager/Makefile.deps
+dist/networkmanager/firewall.min.js: dist/networkmanager/stamp
 
-dist/networkmanager/firewall.html: dist/networkmanager/Makefile.deps
+dist/networkmanager/firewall.min.js.map: dist/networkmanager/stamp
 
-dist/networkmanager/firewall.min.js: dist/networkmanager/Makefile.deps
+dist/networkmanager/index.html: dist/networkmanager/stamp
 
-dist/networkmanager/firewall.min.js.map: dist/networkmanager/Makefile.deps
+dist/networkmanager/network.css: dist/networkmanager/stamp
 
-dist/networkmanager/index.html: dist/networkmanager/Makefile.deps
+dist/networkmanager/network.css.map: dist/networkmanager/stamp
 
-dist/networkmanager/network.css: dist/networkmanager/Makefile.deps
+dist/networkmanager/network.min.js: dist/networkmanager/stamp
 
-dist/networkmanager/network.css.map: dist/networkmanager/Makefile.deps
+dist/networkmanager/network.min.js.map: dist/networkmanager/stamp
 
-dist/networkmanager/network.min.js: dist/networkmanager/Makefile.deps
+dist/networkmanager/test-utils.css: dist/networkmanager/stamp
 
-dist/networkmanager/network.min.js.map: dist/networkmanager/Makefile.deps
+dist/networkmanager/test-utils.css.map: dist/networkmanager/stamp
 
-dist/networkmanager/test-utils.css: dist/networkmanager/Makefile.deps
+dist/networkmanager/test-utils.html: dist/networkmanager/stamp
 
-dist/networkmanager/test-utils.css.map: dist/networkmanager/Makefile.deps
+dist/networkmanager/test-utils.min.js: dist/networkmanager/stamp
 
-dist/networkmanager/test-utils.html: dist/networkmanager/Makefile.deps
-
-dist/networkmanager/test-utils.min.js: dist/networkmanager/Makefile.deps
-
-dist/networkmanager/test-utils.min.js.map: dist/networkmanager/Makefile.deps
+dist/networkmanager/test-utils.min.js.map: dist/networkmanager/stamp
 
 node_modules/bootstrap/LICENSE:
 
@@ -292,11 +283,7 @@ WEBPACK_INSTALL += $(networkmanager_INSTALL)
 WEBPACK_DEBUG += $(networkmanager_DEBUG)
 TESTS += $(networkmanager_TESTS)
 
-networkmanager: dist/networkmanager/Makefile.deps $(networkmanager_OUTPUTS) $(networkmanager_INSTALL)
-	@true
+networkmanager: dist/networkmanager/stamp
 clean-networkmanager: 
-	rm -rf $(networkmanager_OUTPUTS) $(networkmanager_INSTALL) dist/networkmanager/Makefile.deps
-all-local:: networkmanager
-	@true
+	rm -rf $(networkmanager_OUTPUTS) $(networkmanager_INSTALL) dist/networkmanager/stamp
 clean-local:: clean-networkmanager
-	@true

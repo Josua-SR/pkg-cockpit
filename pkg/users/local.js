@@ -708,7 +708,8 @@ PageAccount.prototype = {
         var role_groups = {
             "wheel":   _("Server Administrator"),
             "sudo":    _("Server Administrator"),
-            "docker":  _("Container Administrator")
+            "docker":  _("Container Administrator"),
+            "weldr":   _("Image Builder")
         };
 
         function parse_groups(content) {
@@ -953,7 +954,7 @@ PageAccount.prototype = {
 
             if (this.account["uid"] !== 0) {
                 var html = Mustache.render(this.role_template,
-                                           { "roles": this.roles});
+                                           { "roles": this.roles, "changed": this.roles_changed });
                 $('#account-change-roles-roles').html(html);
                 $('#account-roles').parents('tr').show();
                 $("#account-change-roles-roles :input")
@@ -982,20 +983,31 @@ PageAccount.prototype = {
     },
 
     change_role: function(ev) {
+        var self = this;
         var name = $(ev.target).data("name");
         var id = $(ev.target).data("gid");
         if (!name || !id || !this.account["name"])
             return;
 
-        if ($(ev.target).prop('checked')) {
-            cockpit.spawn(["/usr/sbin/usermod", this.account["name"],
-                           "-G", id, "-a"], { "superuser": "require", err: "message" })
-               .fail(show_unexpected_error);
+        var proc;
+        var checked = $(ev.target).prop('checked');
+        if (checked) {
+            proc = cockpit.spawn(["/usr/sbin/usermod", this.account["name"], "-G", id, "-a"],
+                                 { "superuser": "require", err: "message" });
         } else {
-            cockpit.spawn(["/usr/bin/gpasswd", "-d", this.account["name"],
-                           name], { "superuser": "require", err: "message" })
-                   .fail(show_unexpected_error);
+            proc = cockpit.spawn(["/usr/bin/gpasswd", "-d", this.account["name"], name],
+                                 { "superuser": "require", err: "message" });
         }
+
+        proc.then(function(data) {
+            if(!data && checked)
+                data = "Added " + self.account["name"] + " to group " + name;
+            else if (!data && !checked)
+                data = "Removed " + self.account["name"] + " from group " + name;
+            console.log(data);
+            self.roles_changed = true;
+            self.update();
+        }, show_unexpected_error);
     },
 
     real_name_edited: function() {

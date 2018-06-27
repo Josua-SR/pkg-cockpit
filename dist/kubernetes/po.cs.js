@@ -555,6 +555,10 @@ return plural;
   null,
   ""
  ],
+ "Free": [
+  null,
+  "Volno"
+ ],
  "GCE Persistent Disk": [
   null,
   ""
@@ -1632,6 +1636,14 @@ return plural;
   "Neznámý"
  ],
  "Updating $0...": [
+  null,
+  ""
+ ],
+ "Usage": [
+  null,
+  "Použití"
+ ],
+ "Usage metrics are available after the pod starts": [
   null,
   ""
  ],
