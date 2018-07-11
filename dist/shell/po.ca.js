@@ -283,14 +283,6 @@ return plural;
   null,
   "Llicenciat sota:"
  ],
- "Lock to prevent privileged tasks": [
-  null,
-  "Bloqueja per evitar tasques privilegiades"
- ],
- "Locked": [
-  null,
-  "Bloquejat"
- ],
  "Log In": [
   null,
   "Inicia la sessió"
@@ -310,6 +302,10 @@ return plural;
  "Login Password": [
   null,
   "Contrasenya d'inici de sessió"
+ ],
+ "Login has escalated admin privileges": [
+  null,
+  ""
  ],
  "Machines": [
   null,
@@ -379,9 +375,9 @@ return plural;
   null,
   "Port"
  ],
- "Privileged tasks not available": [
+ "Privileged": [
   null,
-  "No hi ha tasques privilegiades disponibles"
+  ""
  ],
  "Project website": [
   null,
@@ -494,10 +490,6 @@ return plural;
  "Unlock Key": [
   null,
   "Clau de desbloqueig"
- ],
- "Unlocked": [
-  null,
-  "Desbloquejat"
  ],
  "Update": [
   null,

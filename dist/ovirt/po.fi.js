@@ -71,6 +71,10 @@ return plural;
   null,
   "$0 on saatavilla useimmille käyttöjärjestelmille. Asentaaksesi sen, hae sitä GNOME Softwaresta, tai aja seuraava komento:"
  ],
+ "$0 vCPU Details": [
+  null,
+  ""
+ ],
  "Action": [
   null,
   "Toiminto"
@@ -87,9 +91,17 @@ return plural;
   null,
   "Osoite:"
  ],
+ "All changes will take effect only after stopping and starting the VM.": [
+  null,
+  ""
+ ],
  "All running virtual machines will be turned off.": [
   null,
   "Kaikki käynnissä olevat virtuaalikoneet tullaan sammuttamaan."
+ ],
+ "Apply": [
+  null,
+  "Toteuta"
  ],
  "Automatically selected host": [
   null,
@@ -199,6 +211,10 @@ return plural;
   null,
   "Konsolit"
  ],
+ "Cores per socket": [
+  null,
+  ""
+ ],
  "Count:": [
   null,
   ""
@@ -267,6 +283,10 @@ return plural;
   null,
   "FQDN"
  ],
+ "Fewer than the maximum number of virtual CPUs should be enabled.": [
+  null,
+  ""
+ ],
  "File": [
   null,
   "Tiedosto"
@@ -278,6 +298,10 @@ return plural;
  "Force Shut Down": [
   null,
   "Pakota sammutus"
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
  ],
  "GiB": [
   null,
@@ -347,6 +371,10 @@ return plural;
   null,
   "Manuaalinen yhteys"
  ],
+ "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
+  null,
+  ""
+ ],
  "Memory": [
   null,
   "Muisti"
@@ -402,6 +430,10 @@ return plural;
  "No oVirt connection": [
   null,
   "Ei oVirt-yhteyttä"
+ ],
+ "Number of virtual CPUs that gonna be used.": [
+  null,
+  ""
  ],
  "OK": [
   null,
@@ -471,6 +503,10 @@ return plural;
   null,
   ""
  ],
+ "Preferred number of sockets to expose to the guest.": [
+  null,
+  ""
+ ],
  "Preparing for Maintenance": [
   null,
   ""
@@ -516,6 +552,10 @@ return plural;
   ""
  ],
  "Running Since:": [
+  null,
+  ""
+ ],
+ "SET VCPU SETTINGS action failed": [
   null,
   ""
  ],
@@ -570,6 +610,10 @@ return plural;
  "Shut Down": [
   null,
   "Sammuta"
+ ],
+ "Sockets": [
+  null,
+  ""
  ],
  "Source": [
   null,
@@ -670,6 +714,10 @@ return plural;
  "This virtual machine is not managed by oVirt": [
   null,
   "Tämä virtuaalikone ei ole oVirtin hallinnassa"
+ ],
+ "Threads per cores": [
+  null,
+  ""
  ],
  "Type": [
   null,
@@ -974,6 +1022,14 @@ return plural;
  "user": [
   null,
   "käyttäjä"
+ ],
+ "vCPU Count": [
+  null,
+  ""
+ ],
+ "vCPU Maximum": [
+  null,
+  ""
  ],
  "vCPUs": [
   null,

@@ -62,6 +62,13 @@ enum {
     PROP_PIPE,
 };
 
+static void      cockpit_transport_read_from_pipe      (CockpitTransport *self,
+                                                        const gchar *logname,
+                                                        CockpitPipe *pipe,
+                                                        gboolean *closed,
+                                                        GByteArray *input,
+                                                        gboolean end_of_data);
+
 G_DEFINE_TYPE (CockpitPipeTransport, cockpit_pipe_transport, COCKPIT_TYPE_TRANSPORT);
 
 static void
@@ -79,6 +86,9 @@ on_pipe_read (CockpitPipe *pipe,
   CockpitPipeTransport *self = COCKPIT_PIPE_TRANSPORT (user_data);
   cockpit_transport_read_from_pipe (COCKPIT_TRANSPORT (self), self->name,
                                     pipe, &self->closed, input, end_of_data);
+
+  if (end_of_data)
+    cockpit_pipe_close (self->pipe, NULL);
 }
 
 static void
@@ -325,7 +335,7 @@ cockpit_pipe_transport_get_pipe (CockpitPipeTransport *self)
  * Closed is pointer to a boolean value that may be updated
  * during the read and parse loop.
  */
-void
+static void
 cockpit_transport_read_from_pipe (CockpitTransport *self,
                                   const gchar *logname,
                                   CockpitPipe *pipe,

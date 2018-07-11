@@ -851,9 +851,9 @@ return plural;
   null,
   "A menys que s'aturi"
  ],
- "Up since $StartedAt": [
+ "Up since $0": [
   null,
-  "Aixecat des de $StartedAt"
+  ""
  ],
  "Used": [
   null,

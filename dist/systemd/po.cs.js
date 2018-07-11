@@ -83,6 +83,10 @@ return plural;
   "$0 hodiny",
   "$0 hodin"
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
  "$0 minute": [
   "$0 minutes",
   "$0 minuta",
@@ -100,6 +104,10 @@ return plural;
   "$0 týden",
   "$0 týdny",
   "$0 týdnů"
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
  ],
  "$0 year": [
   "$0 years",
@@ -291,6 +299,10 @@ return plural;
   null,
   "9."
  ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Advanced TCA": [
   null,
   "Pokročilé TCA"
@@ -399,6 +411,10 @@ return plural;
   null,
   ""
  ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
  "Class": [
   null,
   "Třída"
@@ -503,6 +519,10 @@ return plural;
   null,
   ""
  ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
  "Embedded PC": [
   null,
   ""
@@ -512,6 +532,10 @@ return plural;
   "Povolit"
  ],
  "Enable Forcefully": [
+  null,
+  ""
+ ],
+ "Enable persistent metrics…": [
   null,
   ""
  ],
@@ -600,6 +624,18 @@ return plural;
   "Id"
  ],
  "Info and above": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  "Instalovat"
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
   null,
   ""
  ],
@@ -811,6 +847,10 @@ return plural;
   null,
   ""
  ],
+ "Ok": [
+  null,
+  "Ok"
+ ],
  "On": [
   null,
   ""
@@ -928,6 +968,14 @@ return plural;
   "Obnovit"
  ],
  "Reload Propagated From": [
+  null,
+  ""
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
   null,
   ""
  ],
@@ -1163,11 +1211,19 @@ return plural;
   null,
   ""
  ],
+ "The user <b>$0</b> is not permitted to enable or disable services": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
   ""
  ],
  "The user <b>$0</b> is not permitted to shutdown or restart this server": [
+  null,
+  ""
+ ],
+ "The user <b>$0</b> is not permitted to start or stop services": [
   null,
   ""
  ],
@@ -1196,6 +1252,10 @@ return plural;
   ""
  ],
  "Timers": [
+  null,
+  ""
+ ],
+ "Total size: $0": [
   null,
   ""
  ],
@@ -1256,6 +1316,10 @@ return plural;
  "Version": [
   null,
   "Verze"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "Wanted By": [
   null,

@@ -69,11 +69,11 @@ return plural;
  },
  "\"http\" Key escrow": [
   null,
-  ""
+  "\"http\" Escrow chave"
  ],
  "\"tang\" Binding server": [
   null,
-  ""
+  "Servidor de vinculação \"tang\""
  ],
  "$0 Block Device": [
   null,
@@ -124,7 +124,7 @@ return plural;
  ],
  "$0 is not available from any repository.": [
   null,
-  ""
+  "$0 não está disponível em nenhum repositório."
  ],
  "$0 minute": [
   "$0 minutes",
@@ -151,7 +151,7 @@ return plural;
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "$0 será instalado."
  ],
  "$0 year": [
   "$0 years",
@@ -280,7 +280,7 @@ return plural;
  ],
  "Additional packages:": [
   null,
-  ""
+  "Pacotes adicionais:"
  ],
  "Address": [
   null,
@@ -288,7 +288,7 @@ return plural;
  ],
  "Allow \"http://\" URL": [
   null,
-  ""
+  "Permita \"http://\" URL"
  ],
  "Apply": [
   null,
@@ -356,7 +356,7 @@ return plural;
  ],
  "Checking installed software": [
   null,
-  ""
+  "Verificando o software instalado"
  ],
  "Chunk Size": [
   null,
@@ -564,7 +564,7 @@ return plural;
  ],
  "Downloading $0": [
   null,
-  ""
+  "Baixando $0"
  ],
  "Drive": [
   null,
@@ -716,7 +716,7 @@ return plural;
  ],
  "HTTP method": [
   null,
-  ""
+  "HTTP metodo"
  ],
  "In Sync": [
   null,

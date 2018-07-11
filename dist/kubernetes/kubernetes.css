@@ -4179,6 +4179,11 @@ input[type=number] {
     cursor: pointer;
 }
 
+.xterm.xterm-cursor-crosshair {
+    /* Column selection mode */
+    cursor: crosshair;
+}
+
 .xterm .xterm-accessibility,
 .xterm .xterm-message {
     position: absolute;

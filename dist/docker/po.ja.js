@@ -843,9 +843,9 @@ return plural;
   null,
   "停止されていない場合"
  ],
- "Up since $StartedAt": [
+ "Up since $0": [
   null,
-  "$StartedAt から稼働中"
+  ""
  ],
  "Used": [
   null,

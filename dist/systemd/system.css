@@ -379,6 +379,48 @@ input[type=number] {
 .dialog-ct-visible {
     display: block;
 }
+#cockpit_modal_dialog .modal-body {
+    max-height: calc(75vh - 10rem);
+    overflow: auto;
+}
+.package-list-ct {
+    margin: 1em 0;
+    padding: 0;
+    max-width: 110rem;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.package-list-ct li {
+    text-align: left;
+    box-sizing: border-box;
+    width: 22rem;
+    padding: 0 1ex;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.scale-up-ct {
+    animation: dialogScaleUpCt 1s;
+}
+
+@keyframes dialogScaleUpCt {
+    0% {
+        opacity: 0;
+        max-height: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+        max-height: 100vh;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 .term-bg-color-0 { background-color: #2e3436; }
 .term-fg-color-0 { color: #2e3436; }
 .term-bg-color-1 { background-color: #cc0000; }
@@ -1520,7 +1562,8 @@ a.disabled {
 }
 
 #system_information_hardware_text,
-#system_information_os_text {
+#system_information_os_text,
+#system-information-enable-pcp-link {
     overflow: visible;
     white-space: normal;
     word-wrap: break-word;

@@ -71,6 +71,10 @@ return plural;
   null,
   "$0 està disponible per a la majoria de sistemes operatius. Per instal·lar-ho, cerqueu-ho a GNOME Software o executeu el següent:"
  ],
+ "$0 vCPU Details": [
+  null,
+  ""
+ ],
  "Additional": [
   null,
   "Addicional"
@@ -82,6 +86,14 @@ return plural;
  "Address:": [
   null,
   "Adreça:"
+ ],
+ "All changes will take effect only after stopping and starting the VM.": [
+  null,
+  ""
+ ],
+ "Apply": [
+  null,
+  "Aplica"
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -151,6 +163,10 @@ return plural;
   null,
   "Consoles"
  ],
+ "Cores per socket": [
+  null,
+  ""
+ ],
  "Count:": [
   null,
   "Nombre:"
@@ -203,6 +219,10 @@ return plural;
   null,
   "Màquina emulada:"
  ],
+ "Fewer than the maximum number of virtual CPUs should be enabled.": [
+  null,
+  ""
+ ],
  "File": [
   null,
   "Fitxer"
@@ -218,6 +238,10 @@ return plural;
  "Force Shut Down": [
   null,
   "Força l'apagada"
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
  ],
  "GiB": [
   null,
@@ -286,6 +310,10 @@ return plural;
  "Manual Connection": [
   null,
   "Connexió manual"
+ ],
+ "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
+  null,
+  ""
  ],
  "Memory": [
   null,
@@ -395,6 +423,10 @@ return plural;
   null,
   ""
  ],
+ "Preferred number of sockets to expose to the guest.": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protocol"
@@ -418,6 +450,10 @@ return plural;
  "Run": [
   null,
   "Executa"
+ ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  ""
  ],
  "SPICE": [
   null,
@@ -454,6 +490,10 @@ return plural;
  "Shut Down": [
   null,
   "Apaga"
+ ],
+ "Sockets": [
+  null,
+  "Sockets"
  ],
  "Source": [
   null,
@@ -526,6 +566,10 @@ return plural;
  "The VM is suspended by guest power management.": [
   null,
   "La MV està en suspensió per la gestió d'energia del convidat."
+ ],
+ "Threads per cores": [
+  null,
+  ""
  ],
  "Too many files found": [
   null,
@@ -742,6 +786,14 @@ return plural;
  "user": [
   null,
   "usuari"
+ ],
+ "vCPU Count": [
+  null,
+  ""
+ ],
+ "vCPU Maximum": [
+  null,
+  ""
  ],
  "vCPUs:": [
   null,

@@ -119,9 +119,9 @@ noinst_PROGRAMS = $(am__EXEEXT_6) mock-bridge$(EXEEXT) $(am__EXEEXT_7) \
 	$(am__EXEEXT_11) mock-echo$(EXEEXT) mock-auth-command$(EXEEXT) \
 	$(am__EXEEXT_4) mock-pam-conv-mod.so$(EXEEXT) $(am__EXEEXT_12)
 sbin_PROGRAMS = remotectl$(EXEEXT)
-TESTS = tools/test-bots $(am__EXEEXT_13) $(am__EXEEXT_16) \
+TESTS = $(am__EXEEXT_4) $(am__EXEEXT_13) $(am__EXEEXT_16) \
 	$(am__EXEEXT_6) $(am__EXEEXT_7) test-websocket$(EXEEXT) \
-	$(am__EXEEXT_4) tools/test-static-code tools/test-bots \
+	$(am__EXEEXT_4) tools/test-static-code $(am__EXEEXT_4) \
 	$(am__EXEEXT_17) $(am__EXEEXT_11) $(am__EXEEXT_12)
 @ENABLE_DOC_TRUE@am__append_1 = doc/cockpit-transport.svg \
 @ENABLE_DOC_TRUE@	doc/cockpit-transport.png $(NULL) \
@@ -249,7 +249,9 @@ am__objects_3 =  \
 am_libcockpit_common_a_OBJECTS =  \
 	src/common/libcockpit_common_a-cockpitauthorize.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpitbase64.$(OBJEXT) \
+	src/common/libcockpit_common_a-cockpitchannel.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpiterror.$(OBJEXT) \
+	src/common/libcockpit_common_a-cockpitflow.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpitframe.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpithash.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpithex.$(OBJEXT) \
@@ -281,8 +283,7 @@ am_libcockpit_common_a_OBJECTS =  \
 libcockpit_common_a_OBJECTS = $(am_libcockpit_common_a_OBJECTS)
 libcockpit_pcp_a_AR = $(AR) $(ARFLAGS)
 libcockpit_pcp_a_LIBADD =
-am__libcockpit_pcp_a_SOURCES_DIST = src/bridge/cockpitchannel.c \
-	src/bridge/cockpitchannel.h src/bridge/cockpitconnect.c \
+am__libcockpit_pcp_a_SOURCES_DIST = src/bridge/cockpitconnect.c \
 	src/bridge/cockpitconnect.h src/bridge/cockpitpcpmetrics.c \
 	src/bridge/cockpitpcpmetrics.h src/bridge/cockpitpeer.c \
 	src/bridge/cockpitpeer.h src/bridge/cockpitrouter.c \
@@ -314,8 +315,7 @@ am__objects_4 =  \
 	src/bridge/libcockpit_pcp_a-cockpitnetworksamples.$(OBJEXT) \
 	src/bridge/libcockpit_pcp_a-cockpitsamples.$(OBJEXT) \
 	$(am__objects_1)
-@ENABLE_PCP_TRUE@am_libcockpit_pcp_a_OBJECTS = src/bridge/libcockpit_pcp_a-cockpitchannel.$(OBJEXT) \
-@ENABLE_PCP_TRUE@	src/bridge/libcockpit_pcp_a-cockpitconnect.$(OBJEXT) \
+@ENABLE_PCP_TRUE@am_libcockpit_pcp_a_OBJECTS = src/bridge/libcockpit_pcp_a-cockpitconnect.$(OBJEXT) \
 @ENABLE_PCP_TRUE@	src/bridge/libcockpit_pcp_a-cockpitpcpmetrics.$(OBJEXT) \
 @ENABLE_PCP_TRUE@	src/bridge/libcockpit_pcp_a-cockpitpeer.$(OBJEXT) \
 @ENABLE_PCP_TRUE@	src/bridge/libcockpit_pcp_a-cockpitrouter.$(OBJEXT) \
@@ -335,7 +335,6 @@ libcockpit_ssh_a_OBJECTS = $(am_libcockpit_ssh_a_OBJECTS)
 libcockpit_stub_a_AR = $(AR) $(ARFLAGS)
 libcockpit_stub_a_LIBADD =
 am_libcockpit_stub_a_OBJECTS =  \
-	src/bridge/libcockpit_stub_a-cockpitchannel.$(OBJEXT) \
 	src/bridge/libcockpit_stub_a-cockpitconnect.$(OBJEXT) \
 	src/bridge/libcockpit_stub_a-cockpitdbuscache.$(OBJEXT) \
 	src/bridge/libcockpit_stub_a-cockpitdbusinternal.$(OBJEXT) \
@@ -417,22 +416,22 @@ am__EXEEXT_4 =
 @ENABLE_PCP_TRUE@am__EXEEXT_5 = test-pcp$(EXEEXT) \
 @ENABLE_PCP_TRUE@	test-pcp-archives$(EXEEXT) $(am__EXEEXT_4)
 am__EXEEXT_6 = test-paths$(EXEEXT) test-rules$(EXEEXT) \
-	test-channel$(EXEEXT) test-pipe-channel$(EXEEXT) \
-	test-packages$(EXEEXT) test-peer$(EXEEXT) \
-	test-dbus-meta$(EXEEXT) test-fs$(EXEEXT) test-metrics$(EXEEXT) \
-	test-connect$(EXEEXT) test-stream$(EXEEXT) \
-	test-httpstream$(EXEEXT) test-setup$(EXEEXT) \
-	test-websocketstream$(EXEEXT) test-process$(EXEEXT) \
-	test-bridge$(EXEEXT) test-router$(EXEEXT) $(am__EXEEXT_4) \
-	$(am__EXEEXT_5)
+	test-pipe-channel$(EXEEXT) test-packages$(EXEEXT) \
+	test-peer$(EXEEXT) test-dbus-meta$(EXEEXT) test-fs$(EXEEXT) \
+	test-metrics$(EXEEXT) test-connect$(EXEEXT) \
+	test-stream$(EXEEXT) test-httpstream$(EXEEXT) \
+	test-setup$(EXEEXT) test-websocketstream$(EXEEXT) \
+	test-process$(EXEEXT) test-bridge$(EXEEXT) \
+	test-router$(EXEEXT) $(am__EXEEXT_4) $(am__EXEEXT_5)
 am__EXEEXT_7 = test-hash$(EXEEXT) test-hex$(EXEEXT) test-json$(EXEEXT) \
 	test-locale$(EXEEXT) test-knownhosts$(EXEEXT) \
 	test-pipe$(EXEEXT) test-transport$(EXEEXT) \
-	test-unixsignal$(EXEEXT) test-template$(EXEEXT) \
-	test-webresponse$(EXEEXT) test-webserver$(EXEEXT) \
-	test-config$(EXEEXT) test-unicode$(EXEEXT) \
-	test-version$(EXEEXT) test-system$(EXEEXT) \
-	test-base64$(EXEEXT) test-authorize$(EXEEXT) $(am__EXEEXT_4)
+	test-channel$(EXEEXT) test-unixsignal$(EXEEXT) \
+	test-template$(EXEEXT) test-webresponse$(EXEEXT) \
+	test-webserver$(EXEEXT) test-config$(EXEEXT) \
+	test-unicode$(EXEEXT) test-version$(EXEEXT) \
+	test-system$(EXEEXT) test-base64$(EXEEXT) \
+	test-authorize$(EXEEXT) $(am__EXEEXT_4)
 @WITH_COCKPIT_SSH_TRUE@am__EXEEXT_8 = test-sshoptions$(EXEEXT) \
 @WITH_COCKPIT_SSH_TRUE@	test-sshbridge$(EXEEXT) $(am__EXEEXT_4)
 @WITH_COCKPIT_SSH_TRUE@am__EXEEXT_9 = mock-sshd$(EXEEXT) \
@@ -529,7 +528,9 @@ cockpit_ws_LINK = $(CCLD) $(cockpit_ws_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 am_frob_websocket_OBJECTS =  \
 	src/websocket/frob_websocket-frob-websocket.$(OBJEXT)
 frob_websocket_OBJECTS = $(am_frob_websocket_OBJECTS)
-frob_websocket_DEPENDENCIES = libwebsocket.a $(am__DEPENDENCIES_1)
+am__DEPENDENCIES_7 = libcockpit-common.a $(am__DEPENDENCIES_1) \
+	$(am__DEPENDENCIES_1)
+frob_websocket_DEPENDENCIES = libwebsocket.a $(am__DEPENDENCIES_7)
 am_mock_auth_command_OBJECTS = src/common/cockpitauthorize.$(OBJEXT) \
 	src/common/cockpitbase64.$(OBJEXT) \
 	src/common/cockpitframe.$(OBJEXT) \
@@ -569,9 +570,9 @@ remotectl_LINK = $(CCLD) $(remotectl_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 am_test_auth_OBJECTS = src/ws/test_auth-test-auth.$(OBJEXT) \
 	src/ws/test_auth-mock-auth.$(OBJEXT) $(am__objects_1)
 test_auth_OBJECTS = $(am_test_auth_OBJECTS)
-am__DEPENDENCIES_7 = $(am__DEPENDENCIES_6) $(am__DEPENDENCIES_1) \
+am__DEPENDENCIES_8 = $(am__DEPENDENCIES_6) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-test_auth_DEPENDENCIES = libcockpit-ws.a $(am__DEPENDENCIES_7) \
+test_auth_DEPENDENCIES = libcockpit-ws.a $(am__DEPENDENCIES_8) \
 	$(am__DEPENDENCIES_1)
 test_auth_LINK = $(CCLD) $(test_auth_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 	$(LDFLAGS) -o $@
@@ -592,7 +593,7 @@ am__test_authssh_SOURCES_DIST = src/ws/test-authssh.c \
 @WITH_COCKPIT_SSH_TRUE@	$(am__objects_1)
 test_authssh_OBJECTS = $(am_test_authssh_OBJECTS)
 @WITH_COCKPIT_SSH_TRUE@test_authssh_DEPENDENCIES = libcockpit-ws.a \
-@WITH_COCKPIT_SSH_TRUE@	$(am__DEPENDENCIES_7)
+@WITH_COCKPIT_SSH_TRUE@	$(am__DEPENDENCIES_8)
 test_authssh_LINK = $(CCLD) $(test_authssh_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_base64_OBJECTS = src/common/test_base64-test-base64.$(OBJEXT) \
@@ -608,10 +609,13 @@ test_bridge_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_bridge_LINK = $(CCLD) $(test_bridge_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_channel_OBJECTS =  \
-	src/bridge/test_channel-test-channel.$(OBJEXT) \
-	src/bridge/test_channel-mock-transport.$(OBJEXT)
+	src/common/test_channel-test-channel.$(OBJEXT) \
+	src/common/test_channel-mock-pressure.$(OBJEXT) \
+	src/common/test_channel-mock-transport.$(OBJEXT)
 test_channel_OBJECTS = $(am_test_channel_OBJECTS)
-test_channel_DEPENDENCIES = $(am__DEPENDENCIES_2)
+am__DEPENDENCIES_9 = libcockpit-common.a libwebsocket.a \
+	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+test_channel_DEPENDENCIES = $(am__DEPENDENCIES_9)
 test_channel_LINK = $(CCLD) $(test_channel_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_channelresponse_OBJECTS =  \
@@ -621,30 +625,29 @@ am_test_channelresponse_OBJECTS =  \
 	$(am__objects_1)
 test_channelresponse_OBJECTS = $(am_test_channelresponse_OBJECTS)
 test_channelresponse_DEPENDENCIES = libwebsocket.a libcockpit-ws.a \
-	$(am__DEPENDENCIES_7) $(am__DEPENDENCIES_1)
+	$(am__DEPENDENCIES_8) $(am__DEPENDENCIES_1)
 test_channelresponse_LINK = $(CCLD) $(test_channelresponse_CFLAGS) \
 	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_compat_OBJECTS = src/ws/test_compat-test-compat.$(OBJEXT)
 test_compat_OBJECTS = $(am_test_compat_OBJECTS)
-test_compat_DEPENDENCIES = libcockpit-ws.a $(am__DEPENDENCIES_7)
+test_compat_DEPENDENCIES = libcockpit-ws.a $(am__DEPENDENCIES_8)
 test_compat_LINK = $(CCLD) $(test_compat_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_config_OBJECTS = src/common/test_config-test-config.$(OBJEXT)
 test_config_OBJECTS = $(am_test_config_OBJECTS)
-am__DEPENDENCIES_8 = libcockpit-common.a libwebsocket.a \
-	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
-test_config_DEPENDENCIES = $(am__DEPENDENCIES_8)
+test_config_DEPENDENCIES = $(am__DEPENDENCIES_9)
 test_config_LINK = $(CCLD) $(test_config_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_connect_OBJECTS =  \
-	src/bridge/test_connect-test-connect.$(OBJEXT)
+	src/bridge/test_connect-test-connect.$(OBJEXT) \
+	src/common/test_connect-mock-transport.$(OBJEXT)
 test_connect_OBJECTS = $(am_test_connect_OBJECTS)
 test_connect_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_connect_LINK = $(CCLD) $(test_connect_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_creds_OBJECTS = src/ws/test_creds-test-creds.$(OBJEXT)
 test_creds_OBJECTS = $(am_test_creds_OBJECTS)
-test_creds_DEPENDENCIES = libcockpit-ws.a $(am__DEPENDENCIES_7)
+test_creds_DEPENDENCIES = libcockpit-ws.a $(am__DEPENDENCIES_8)
 test_creds_LINK = $(CCLD) $(test_creds_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 	$(LDFLAGS) -o $@
 am_test_dbus_meta_OBJECTS =  \
@@ -654,7 +657,7 @@ test_dbus_meta_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_dbus_meta_LINK = $(CCLD) $(test_dbus_meta_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_fs_OBJECTS = src/bridge/test_fs-test-fs.$(OBJEXT) \
-	src/bridge/test_fs-mock-transport.$(OBJEXT)
+	src/common/test_fs-mock-transport.$(OBJEXT)
 test_fs_OBJECTS = $(am_test_fs_OBJECTS)
 test_fs_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_fs_LINK = $(CCLD) $(test_fs_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
@@ -665,59 +668,59 @@ am_test_handlers_OBJECTS =  \
 	src/common/test_handlers-mock-io-stream.$(OBJEXT) \
 	$(am__objects_1)
 test_handlers_OBJECTS = $(am_test_handlers_OBJECTS)
-test_handlers_DEPENDENCIES = libcockpit-ws.a $(am__DEPENDENCIES_7) \
+test_handlers_DEPENDENCIES = libcockpit-ws.a $(am__DEPENDENCIES_8) \
 	$(am__DEPENDENCIES_1)
 test_handlers_LINK = $(CCLD) $(test_handlers_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_hash_OBJECTS = src/common/test_hash-test-hash.$(OBJEXT)
 test_hash_OBJECTS = $(am_test_hash_OBJECTS)
-test_hash_DEPENDENCIES = $(am__DEPENDENCIES_8)
+test_hash_DEPENDENCIES = $(am__DEPENDENCIES_9)
 test_hash_LINK = $(CCLD) $(test_hash_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 	$(LDFLAGS) -o $@
 am_test_hex_OBJECTS = src/common/test_hex-test-hex.$(OBJEXT)
 test_hex_OBJECTS = $(am_test_hex_OBJECTS)
-test_hex_DEPENDENCIES = libretest.a $(am__DEPENDENCIES_8)
+test_hex_DEPENDENCIES = libretest.a $(am__DEPENDENCIES_9)
 test_hex_LINK = $(CCLD) $(test_hex_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 	$(LDFLAGS) -o $@
 am_test_httpstream_OBJECTS =  \
 	src/bridge/test_httpstream-test-httpstream.$(OBJEXT) \
-	src/bridge/test_httpstream-mock-transport.$(OBJEXT)
+	src/common/test_httpstream-mock-transport.$(OBJEXT)
 test_httpstream_OBJECTS = $(am_test_httpstream_OBJECTS)
 test_httpstream_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_httpstream_LINK = $(CCLD) $(test_httpstream_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_json_OBJECTS = src/common/test_json-test-json.$(OBJEXT)
 test_json_OBJECTS = $(am_test_json_OBJECTS)
-test_json_DEPENDENCIES = $(am__DEPENDENCIES_8)
+test_json_DEPENDENCIES = $(am__DEPENDENCIES_9)
 test_json_LINK = $(CCLD) $(test_json_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 	$(LDFLAGS) -o $@
 am_test_kerberos_OBJECTS =  \
 	src/ws/test_kerberos-test-kerberos.$(OBJEXT)
 test_kerberos_OBJECTS = $(am_test_kerberos_OBJECTS)
-test_kerberos_DEPENDENCIES = libcockpit-ws.a $(am__DEPENDENCIES_7)
+test_kerberos_DEPENDENCIES = libcockpit-ws.a $(am__DEPENDENCIES_8)
 test_kerberos_LINK = $(CCLD) $(test_kerberos_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_knownhosts_OBJECTS =  \
 	src/common/test_knownhosts-test-knownhosts.$(OBJEXT)
 test_knownhosts_OBJECTS = $(am_test_knownhosts_OBJECTS)
-test_knownhosts_DEPENDENCIES = $(am__DEPENDENCIES_8)
+test_knownhosts_DEPENDENCIES = $(am__DEPENDENCIES_9)
 test_knownhosts_LINK = $(CCLD) $(test_knownhosts_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_locale_OBJECTS = src/common/test_locale-test-locale.$(OBJEXT)
 test_locale_OBJECTS = $(am_test_locale_OBJECTS)
-test_locale_DEPENDENCIES = $(am__DEPENDENCIES_8)
+test_locale_DEPENDENCIES = $(am__DEPENDENCIES_9)
 test_locale_LINK = $(CCLD) $(test_locale_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_metrics_OBJECTS =  \
 	src/bridge/test_metrics-test-metrics.$(OBJEXT) \
-	src/bridge/test_metrics-mock-transport.$(OBJEXT)
+	src/common/test_metrics-mock-transport.$(OBJEXT)
 test_metrics_OBJECTS = $(am_test_metrics_OBJECTS)
 test_metrics_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_metrics_LINK = $(CCLD) $(test_metrics_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_packages_OBJECTS =  \
 	src/bridge/test_packages-test-packages.$(OBJEXT) \
-	src/bridge/test_packages-mock-transport.$(OBJEXT)
+	src/common/test_packages-mock-transport.$(OBJEXT)
 test_packages_OBJECTS = $(am_test_packages_OBJECTS)
 test_packages_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_packages_LINK = $(CCLD) $(test_packages_CFLAGS) $(CFLAGS) \
@@ -728,37 +731,38 @@ test_paths_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_paths_LINK = $(CCLD) $(test_paths_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 	$(LDFLAGS) -o $@
 am__test_pcp_SOURCES_DIST = src/bridge/test-pcp.c \
-	src/bridge/mock-transport.c src/bridge/mock-transport.h
+	src/common/mock-transport.c src/common/mock-transport.h
 @ENABLE_PCP_TRUE@am_test_pcp_OBJECTS =  \
 @ENABLE_PCP_TRUE@	src/bridge/test_pcp-test-pcp.$(OBJEXT) \
-@ENABLE_PCP_TRUE@	src/bridge/test_pcp-mock-transport.$(OBJEXT)
+@ENABLE_PCP_TRUE@	src/common/test_pcp-mock-transport.$(OBJEXT)
 test_pcp_OBJECTS = $(am_test_pcp_OBJECTS)
 @ENABLE_PCP_TRUE@test_pcp_DEPENDENCIES = $(am__DEPENDENCIES_3)
 test_pcp_LINK = $(CCLD) $(test_pcp_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 	$(LDFLAGS) -o $@
 am__test_pcp_archives_SOURCES_DIST = src/bridge/test-pcp-archives.c \
-	src/bridge/mock-transport.c src/bridge/mock-transport.h
+	src/common/mock-transport.c src/common/mock-transport.h
 @ENABLE_PCP_TRUE@am_test_pcp_archives_OBJECTS = src/bridge/test_pcp_archives-test-pcp-archives.$(OBJEXT) \
-@ENABLE_PCP_TRUE@	src/bridge/test_pcp_archives-mock-transport.$(OBJEXT)
+@ENABLE_PCP_TRUE@	src/common/test_pcp_archives-mock-transport.$(OBJEXT)
 test_pcp_archives_OBJECTS = $(am_test_pcp_archives_OBJECTS)
 @ENABLE_PCP_TRUE@test_pcp_archives_DEPENDENCIES =  \
 @ENABLE_PCP_TRUE@	$(am__DEPENDENCIES_3)
 test_pcp_archives_LINK = $(CCLD) $(test_pcp_archives_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_peer_OBJECTS = src/bridge/test_peer-test-peer.$(OBJEXT) \
-	src/bridge/test_peer-mock-transport.$(OBJEXT)
+	src/common/test_peer-mock-transport.$(OBJEXT)
 test_peer_OBJECTS = $(am_test_peer_OBJECTS)
 test_peer_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_peer_LINK = $(CCLD) $(test_peer_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 	$(LDFLAGS) -o $@
-am_test_pipe_OBJECTS = src/common/test_pipe-test-pipe.$(OBJEXT)
+am_test_pipe_OBJECTS = src/common/test_pipe-test-pipe.$(OBJEXT) \
+	src/common/test_pipe-mock-pressure.$(OBJEXT)
 test_pipe_OBJECTS = $(am_test_pipe_OBJECTS)
-test_pipe_DEPENDENCIES = $(am__DEPENDENCIES_8)
+test_pipe_DEPENDENCIES = $(am__DEPENDENCIES_9)
 test_pipe_LINK = $(CCLD) $(test_pipe_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 	$(LDFLAGS) -o $@
 am_test_pipe_channel_OBJECTS =  \
 	src/bridge/test_pipe_channel-test-pipe-channel.$(OBJEXT) \
-	src/bridge/test_pipe_channel-mock-transport.$(OBJEXT)
+	src/common/test_pipe_channel-mock-transport.$(OBJEXT)
 test_pipe_channel_OBJECTS = $(am_test_pipe_channel_OBJECTS)
 test_pipe_channel_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_pipe_channel_LINK = $(CCLD) $(test_pipe_channel_CFLAGS) $(CFLAGS) \
@@ -781,8 +785,8 @@ test_remotectlcertificate_LINK = $(CCLD) \
 	$(test_remotectlcertificate_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 	$(LDFLAGS) -o $@
 am_test_router_OBJECTS = src/bridge/test_router-test-router.$(OBJEXT) \
-	src/bridge/test_router-mock-channel.$(OBJEXT) \
-	src/bridge/test_router-mock-transport.$(OBJEXT)
+	src/common/test_router-mock-channel.$(OBJEXT) \
+	src/common/test_router-mock-transport.$(OBJEXT)
 test_router_OBJECTS = $(am_test_router_OBJECTS)
 test_router_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_router_LINK = $(CCLD) $(test_router_CFLAGS) $(CFLAGS) \
@@ -808,66 +812,68 @@ test_setup_LINK = $(CCLD) $(test_setup_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 am_test_ssh_add_OBJECTS =  \
 	src/pam-ssh-add/test_ssh_add-test-ssh-add.$(OBJEXT)
 test_ssh_add_OBJECTS = $(am_test_ssh_add_OBJECTS)
-am__DEPENDENCIES_9 = libpam_ssh_add.a $(am__DEPENDENCIES_1)
-test_ssh_add_DEPENDENCIES = $(am__DEPENDENCIES_9) libretest.a
+am__DEPENDENCIES_10 = libpam_ssh_add.a $(am__DEPENDENCIES_1)
+test_ssh_add_DEPENDENCIES = $(am__DEPENDENCIES_10) libretest.a
 test_ssh_add_LINK = $(CCLD) $(test_ssh_add_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am__test_sshbridge_SOURCES_DIST = src/ssh/test-sshbridge.c
 @WITH_COCKPIT_SSH_TRUE@am_test_sshbridge_OBJECTS = src/ssh/test_sshbridge-test-sshbridge.$(OBJEXT)
 test_sshbridge_OBJECTS = $(am_test_sshbridge_OBJECTS)
-@WITH_COCKPIT_SSH_TRUE@am__DEPENDENCIES_10 = $(am__DEPENDENCIES_4) \
+@WITH_COCKPIT_SSH_TRUE@am__DEPENDENCIES_11 = $(am__DEPENDENCIES_4) \
 @WITH_COCKPIT_SSH_TRUE@	$(am__DEPENDENCIES_1) \
 @WITH_COCKPIT_SSH_TRUE@	$(am__DEPENDENCIES_1)
 @WITH_COCKPIT_SSH_TRUE@test_sshbridge_DEPENDENCIES = libcockpit-ssh.a \
-@WITH_COCKPIT_SSH_TRUE@	$(am__DEPENDENCIES_10)
+@WITH_COCKPIT_SSH_TRUE@	$(am__DEPENDENCIES_11)
 test_sshbridge_LINK = $(CCLD) $(test_sshbridge_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am__test_sshoptions_SOURCES_DIST = src/ssh/test-sshoptions.c
 @WITH_COCKPIT_SSH_TRUE@am_test_sshoptions_OBJECTS = src/ssh/test_sshoptions-test-sshoptions.$(OBJEXT)
 test_sshoptions_OBJECTS = $(am_test_sshoptions_OBJECTS)
 @WITH_COCKPIT_SSH_TRUE@test_sshoptions_DEPENDENCIES =  \
-@WITH_COCKPIT_SSH_TRUE@	libcockpit-ssh.a $(am__DEPENDENCIES_10)
+@WITH_COCKPIT_SSH_TRUE@	libcockpit-ssh.a $(am__DEPENDENCIES_11)
 test_sshoptions_LINK = $(CCLD) $(test_sshoptions_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_stream_OBJECTS = src/bridge/test_stream-test-stream.$(OBJEXT) \
-	src/common/test_stream-mock-io-stream.$(OBJEXT)
+	src/common/test_stream-mock-io-stream.$(OBJEXT) \
+	src/common/test_stream-mock-pressure.$(OBJEXT)
 test_stream_OBJECTS = $(am_test_stream_OBJECTS)
 test_stream_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_stream_LINK = $(CCLD) $(test_stream_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_system_OBJECTS = src/common/test_system-test-system.$(OBJEXT)
 test_system_OBJECTS = $(am_test_system_OBJECTS)
-test_system_DEPENDENCIES = $(am__DEPENDENCIES_8)
+test_system_DEPENDENCIES = $(am__DEPENDENCIES_9)
 test_system_LINK = $(CCLD) $(test_system_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_template_OBJECTS =  \
 	src/common/test_template-test-template.$(OBJEXT)
 test_template_OBJECTS = $(am_test_template_OBJECTS)
-test_template_DEPENDENCIES = $(am__DEPENDENCIES_8)
+test_template_DEPENDENCIES = $(am__DEPENDENCIES_9)
 test_template_LINK = $(CCLD) $(test_template_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_transport_OBJECTS =  \
-	src/common/test_transport-test-transport.$(OBJEXT)
+	src/common/test_transport-test-transport.$(OBJEXT) \
+	src/common/test_transport-mock-transport.$(OBJEXT)
 test_transport_OBJECTS = $(am_test_transport_OBJECTS)
-test_transport_DEPENDENCIES = $(am__DEPENDENCIES_8)
+test_transport_DEPENDENCIES = $(am__DEPENDENCIES_9)
 test_transport_LINK = $(CCLD) $(test_transport_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_unicode_OBJECTS =  \
 	src/common/test_unicode-test-unicode.$(OBJEXT)
 test_unicode_OBJECTS = $(am_test_unicode_OBJECTS)
-test_unicode_DEPENDENCIES = $(am__DEPENDENCIES_8)
+test_unicode_DEPENDENCIES = $(am__DEPENDENCIES_9)
 test_unicode_LINK = $(CCLD) $(test_unicode_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_unixsignal_OBJECTS =  \
 	src/common/test_unixsignal-test-unixsignal.$(OBJEXT)
 test_unixsignal_OBJECTS = $(am_test_unixsignal_OBJECTS)
-test_unixsignal_DEPENDENCIES = $(am__DEPENDENCIES_8)
+test_unixsignal_DEPENDENCIES = $(am__DEPENDENCIES_9)
 test_unixsignal_LINK = $(CCLD) $(test_unixsignal_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_version_OBJECTS =  \
 	src/common/test_version-test-version.$(OBJEXT)
 test_version_OBJECTS = $(am_test_version_OBJECTS)
-test_version_DEPENDENCIES = $(am__DEPENDENCIES_8)
+test_version_DEPENDENCIES = $(am__DEPENDENCIES_9)
 test_version_LINK = $(CCLD) $(test_version_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am__objects_7 = src/common/test_webresponse-cockpitassets.$(OBJEXT) \
@@ -877,13 +883,13 @@ am_test_webresponse_OBJECTS =  \
 	src/common/test_webresponse-mock-io-stream.$(OBJEXT) \
 	$(am__objects_7) $(am__objects_1)
 test_webresponse_OBJECTS = $(am_test_webresponse_OBJECTS)
-test_webresponse_DEPENDENCIES = $(am__DEPENDENCIES_8)
+test_webresponse_DEPENDENCIES = $(am__DEPENDENCIES_9)
 test_webresponse_LINK = $(CCLD) $(test_webresponse_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_webserver_OBJECTS =  \
 	src/common/test_webserver-test-webserver.$(OBJEXT)
 test_webserver_OBJECTS = $(am_test_webserver_OBJECTS)
-test_webserver_DEPENDENCIES = $(am__DEPENDENCIES_8)
+test_webserver_DEPENDENCIES = $(am__DEPENDENCIES_9)
 test_webserver_LINK = $(CCLD) $(test_webserver_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_webservice_OBJECTS =  \
@@ -893,15 +899,16 @@ am_test_webservice_OBJECTS =  \
 	$(am__objects_1)
 test_webservice_OBJECTS = $(am_test_webservice_OBJECTS)
 test_webservice_DEPENDENCIES = libwebsocket.a libcockpit-ws.a \
-	$(am__DEPENDENCIES_7) $(am__DEPENDENCIES_1)
+	$(am__DEPENDENCIES_8) $(am__DEPENDENCIES_1)
 test_webservice_LINK = $(CCLD) $(test_webservice_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_websocket_OBJECTS =  \
-	src/websocket/test_websocket-test-websocket.$(OBJEXT)
+	src/websocket/test_websocket-test-websocket.$(OBJEXT) \
+	src/common/test_websocket-mock-pressure.$(OBJEXT)
 test_websocket_OBJECTS = $(am_test_websocket_OBJECTS)
-test_websocket_DEPENDENCIES = libwebsocket.a $(am__DEPENDENCIES_1)
+test_websocket_DEPENDENCIES = libwebsocket.a $(am__DEPENDENCIES_7)
 am_test_websocketstream_OBJECTS = src/bridge/test_websocketstream-test-websocketstream.$(OBJEXT) \
-	src/bridge/test_websocketstream-mock-transport.$(OBJEXT)
+	src/common/test_websocketstream-mock-transport.$(OBJEXT)
 test_websocketstream_OBJECTS = $(am_test_websocketstream_OBJECTS)
 test_websocketstream_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_websocketstream_LINK = $(CCLD) $(test_websocketstream_CFLAGS) \
@@ -1430,6 +1437,11 @@ POLKIT_LIBS = @POLKIT_LIBS@
 POSUB = @POSUB@
 PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
 PO_IN_DATADIR_TRUE = @PO_IN_DATADIR_TRUE@
+PYTHON = @PYTHON@
+PYTHON_EXEC_PREFIX = @PYTHON_EXEC_PREFIX@
+PYTHON_PLATFORM = @PYTHON_PLATFORM@
+PYTHON_PREFIX = @PYTHON_PREFIX@
+PYTHON_VERSION = @PYTHON_VERSION@
 RANLIB = @RANLIB@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
@@ -1479,9 +1491,13 @@ mkdir_p = @mkdir_p@
 oldincludedir = @oldincludedir@
 pamdir = @pamdir@
 pdfdir = @pdfdir@
+pkgpyexecdir = @pkgpyexecdir@
+pkgpythondir = @pkgpythondir@
 prefix = @prefix@
 program_transform_name = @program_transform_name@
 psdir = @psdir@
+pyexecdir = @pyexecdir@
+pythondir = @pythondir@
 sbindir = @sbindir@
 sharedstatedir = @sharedstatedir@
 srcdir = @srcdir@
@@ -1767,13 +1783,13 @@ AM_CPPFLAGS = \
 	$(NULL)
 
 AM_LDFLAGS = -Wl,--as-needed
-LOG_DRIVER = $(top_srcdir)/tools/tap-driver
-LOG_COMPILER = $(top_srcdir)/tools/tap-gtester
+LOG_DRIVER = $(PYTHON) $(top_srcdir)/tools/tap-driver
+LOG_COMPILER = $(PYTHON) $(top_srcdir)/tools/tap-gtester
 TEST_EXTENSIONS = .html .sh
-SH_LOG_DRIVER = $(top_srcdir)/tools/tap-driver
-HTML_LOG_DRIVER = $(top_srcdir)/tools/tap-driver
+SH_LOG_DRIVER = $(LOG_DRIVER)
+HTML_LOG_DRIVER = $(LOG_DRIVER)
 HTML_TEST_SERVER = $(builddir)/test-server
-HTML_LOG_COMPILER = $(top_srcdir)/test/common/tap-cdp --strip=$(top_srcdir)/ -- $(HTML_TEST_SERVER)
+HTML_LOG_COMPILER = $(PYTHON) $(top_srcdir)/test/common/tap-cdp --strip=$(top_srcdir)/ -- $(HTML_TEST_SERVER)
 VALGRIND_ARGS = --trace-children=yes --quiet --error-exitcode=33 \
 	--suppressions=valgrind-suppressions --gen-suppressions=all \
 	--num-callers=16 --leak-check=yes --show-leak-kinds=definite \
@@ -2096,8 +2112,6 @@ ubuntubranding_DATA = \
 	$(NULL)
 
 libcockpit_stub_a_SOURCES = \
-	src/bridge/cockpitchannel.c \
-	src/bridge/cockpitchannel.h \
 	src/bridge/cockpitconnect.c \
 	src/bridge/cockpitconnect.h \
 	src/bridge/cockpitdbuscache.c \
@@ -2231,11 +2245,10 @@ cockpit_stub_LDADD = $(libcockpit_stub_LIBS)
 
 # -----------------------------------------------------------------------------
 # TESTS
-BRIDGE_CHECKS = test-paths test-rules test-channel test-pipe-channel \
-	test-packages test-peer test-dbus-meta test-fs test-metrics \
-	test-connect test-stream test-httpstream test-setup \
-	test-websocketstream test-process test-bridge test-router \
-	$(NULL) $(am__append_8)
+BRIDGE_CHECKS = test-paths test-rules test-pipe-channel test-packages \
+	test-peer test-dbus-meta test-fs test-metrics test-connect \
+	test-stream test-httpstream test-setup test-websocketstream \
+	test-process test-bridge test-router $(NULL) $(am__append_8)
 mock_bridge_SOURCES = src/bridge/mock-bridge.c
 mock_bridge_CFLAGS = \
 	-DG_LOG_DOMAIN=\"mock-bridge\" \
@@ -2246,20 +2259,16 @@ mock_bridge_LDADD = $(libcockpit_bridge_LIBS)
 test_bridge_SOURCES = src/bridge/test-bridge.c
 test_bridge_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
 test_bridge_LDADD = $(libcockpit_bridge_LIBS)
-test_channel_SOURCES = \
-	src/bridge/test-channel.c \
-	src/bridge/mock-transport.c src/bridge/mock-transport.h
-
-test_channel_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
-test_channel_LDADD = $(libcockpit_bridge_LIBS)
 test_connect_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
-test_connect_SOURCES = src/bridge/test-connect.c
+test_connect_SOURCES = src/bridge/test-connect.c \
+	src/common/mock-transport.c src/common/mock-transport.h
+
 test_connect_LDADD = $(libcockpit_bridge_LIBS)
 test_dbus_meta_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
 test_dbus_meta_SOURCES = src/bridge/test-dbus-meta.c
 test_dbus_meta_LDADD = $(libcockpit_bridge_LIBS)
 test_packages_SOURCES = src/bridge/test-packages.c \
-	src/bridge/mock-transport.c src/bridge/mock-transport.h
+	src/common/mock-transport.c src/common/mock-transport.h
 
 test_packages_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
 test_packages_LDADD = $(libcockpit_bridge_LIBS)
@@ -2267,13 +2276,13 @@ test_paths_SOURCES = src/bridge/test-paths.c
 test_paths_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
 test_paths_LDADD = $(libcockpit_bridge_LIBS)
 test_peer_SOURCES = src/bridge/test-peer.c \
-	src/bridge/mock-transport.c src/bridge/mock-transport.h
+	src/common/mock-transport.c src/common/mock-transport.h
 
 test_peer_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
 test_peer_LDADD = $(libcockpit_bridge_LIBS)
 test_router_SOURCES = src/bridge/test-router.c \
-	src/bridge/mock-channel.c src/bridge/mock-channel.h \
-	src/bridge/mock-transport.c src/bridge/mock-transport.h
+	src/common/mock-channel.c src/common/mock-channel.h \
+	src/common/mock-transport.c src/common/mock-transport.h
 
 test_router_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
 test_router_LDADD = $(libcockpit_bridge_LIBS)
@@ -2285,7 +2294,8 @@ test_setup_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
 test_setup_LDADD = $(libcockpit_bridge_LIBS)
 test_stream_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
 test_stream_SOURCES = src/bridge/test-stream.c \
-	src/common/mock-io-stream.c src/common/mock-io-stream.h
+	src/common/mock-io-stream.c src/common/mock-io-stream.h \
+	src/common/mock-pressure.c src/common/mock-pressure.h
 
 test_stream_LDADD = $(libcockpit_bridge_LIBS)
 test_process_SOURCES = src/bridge/test-process.c
@@ -2293,31 +2303,31 @@ test_process_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
 test_process_LDADD = $(libcockpit_bridge_LIBS)
 test_pipe_channel_SOURCES = \
 	src/bridge/test-pipe-channel.c \
-	src/bridge/mock-transport.c src/bridge/mock-transport.h
+	src/common/mock-transport.c src/common/mock-transport.h
 
 test_pipe_channel_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
 test_pipe_channel_LDADD = $(libcockpit_bridge_LIBS)
 test_fs_SOURCES = \
 	src/bridge/test-fs.c \
-	src/bridge/mock-transport.c src/bridge/mock-transport.h
+	src/common/mock-transport.c src/common/mock-transport.h
 
 test_fs_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
 test_fs_LDADD = $(libcockpit_bridge_LIBS)
 test_metrics_SOURCES = \
 	src/bridge/test-metrics.c \
-	src/bridge/mock-transport.c src/bridge/mock-transport.h
+	src/common/mock-transport.c src/common/mock-transport.h
 
 test_metrics_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
 test_metrics_LDADD = $(libcockpit_bridge_LIBS) -lm
 test_httpstream_SOURCES = \
 	src/bridge/test-httpstream.c \
-	src/bridge/mock-transport.c src/bridge/mock-transport.h
+	src/common/mock-transport.c src/common/mock-transport.h
 
 test_httpstream_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
 test_httpstream_LDADD = $(libcockpit_bridge_LIBS) -ldl
 test_websocketstream_SOURCES = \
 	src/bridge/test-websocketstream.c \
-	src/bridge/mock-transport.c src/bridge/mock-transport.h
+	src/common/mock-transport.c src/common/mock-transport.h
 
 test_websocketstream_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
 test_websocketstream_LDADD = $(libcockpit_bridge_LIBS) -ldl
@@ -2328,8 +2338,6 @@ test_websocketstream_LDADD = $(libcockpit_bridge_LIBS) -ldl
 # make sure this ends up in the tarball, even with --disable-pcp
 pmlogconf_files = src/bridge/pmlogconf/cockpit
 @ENABLE_PCP_TRUE@libcockpit_pcp_a_SOURCES = \
-@ENABLE_PCP_TRUE@	src/bridge/cockpitchannel.c \
-@ENABLE_PCP_TRUE@	src/bridge/cockpitchannel.h \
 @ENABLE_PCP_TRUE@	src/bridge/cockpitconnect.c \
 @ENABLE_PCP_TRUE@	src/bridge/cockpitconnect.h \
 @ENABLE_PCP_TRUE@	src/bridge/cockpitpcpmetrics.c \
@@ -2364,13 +2372,13 @@ pmlogconf_files = src/bridge/pmlogconf/cockpit
 @ENABLE_PCP_TRUE@pmlogconf_DATA = $(pmlogconf_files)
 @ENABLE_PCP_TRUE@test_pcp_SOURCES = \
 @ENABLE_PCP_TRUE@	src/bridge/test-pcp.c \
-@ENABLE_PCP_TRUE@	src/bridge/mock-transport.c src/bridge/mock-transport.h
+@ENABLE_PCP_TRUE@	src/common/mock-transport.c src/common/mock-transport.h
 
 @ENABLE_PCP_TRUE@test_pcp_CFLAGS = $(libcockpit_pcp_a_CFLAGS)
 @ENABLE_PCP_TRUE@test_pcp_LDADD = $(libcockpit_pcp_LIBS) -ldl
 @ENABLE_PCP_TRUE@test_pcp_archives_SOURCES = \
 @ENABLE_PCP_TRUE@	src/bridge/test-pcp-archives.c \
-@ENABLE_PCP_TRUE@	src/bridge/mock-transport.c src/bridge/mock-transport.h
+@ENABLE_PCP_TRUE@	src/common/mock-transport.c src/common/mock-transport.h
 
 @ENABLE_PCP_TRUE@test_pcp_archives_CFLAGS = $(libcockpit_pcp_a_CFLAGS)
 @ENABLE_PCP_TRUE@test_pcp_archives_LDADD = $(libcockpit_pcp_LIBS) -ldl -lpcp_import
@@ -2384,7 +2392,11 @@ libcockpit_common_a_SOURCES = \
 	src/common/cockpitauthorize.h \
 	src/common/cockpitbase64.c \
 	src/common/cockpitbase64.h \
+	src/common/cockpitchannel.c \
+	src/common/cockpitchannel.h \
 	src/common/cockpiterror.h src/common/cockpiterror.c \
+	src/common/cockpitflow.c \
+	src/common/cockpitflow.h \
 	src/common/cockpitframe.c \
 	src/common/cockpitframe.h \
 	src/common/cockpithash.c \
@@ -2463,6 +2475,7 @@ COCKPIT_CHECKS = \
 	test-knownhosts \
 	test-pipe \
 	test-transport \
+	test-channel \
 	test-unixsignal \
 	test-template \
 	test-webresponse \
@@ -2495,6 +2508,13 @@ test_base64_SOURCES = \
 	$(NULL)
 
 test_base64_LDADD = libretest.a
+test_channel_SOURCES = \
+	src/common/test-channel.c \
+	src/common/mock-pressure.c src/common/mock-pressure.h \
+	src/common/mock-transport.c src/common/mock-transport.h
+
+test_channel_CFLAGS = $(libcockpit_common_a_CFLAGS)
+test_channel_LDADD = $(libcockpit_common_a_LIBS)
 test_hash_CFLAGS = $(libcockpit_common_a_CFLAGS)
 test_hash_SOURCES = src/common/test-hash.c
 test_hash_LDADD = $(libcockpit_common_a_LIBS)
@@ -2517,7 +2537,9 @@ test_knownhosts_CFLAGS = $(libcockpit_common_a_CFLAGS)
 test_knownhosts_SOURCES = src/common/test-knownhosts.c
 test_knownhosts_LDADD = $(libcockpit_common_a_LIBS)
 test_pipe_CFLAGS = $(libcockpit_common_a_CFLAGS)
-test_pipe_SOURCES = src/common/test-pipe.c
+test_pipe_SOURCES = src/common/test-pipe.c \
+	src/common/mock-pressure.c src/common/mock-pressure.h
+
 test_pipe_LDADD = $(libcockpit_common_a_LIBS)
 test_system_CFLAGS = $(libcockpit_common_a_CFLAGS)
 test_system_SOURCES = src/common/test-system.c
@@ -2526,7 +2548,9 @@ test_template_CFLAGS = $(libcockpit_common_a_CFLAGS)
 test_template_SOURCES = src/common/test-template.c
 test_template_LDADD = $(libcockpit_common_a_LIBS)
 test_transport_CFLAGS = $(libcockpit_common_a_CFLAGS)
-test_transport_SOURCES = src/common/test-transport.c
+test_transport_SOURCES = src/common/test-transport.c \
+	src/common/mock-transport.c src/common/mock-transport.h
+
 test_transport_LDADD = $(libcockpit_common_a_LIBS)
 test_unicode_CFLAGS = $(libcockpit_common_a_CFLAGS)
 test_unicode_SOURCES = src/common/test-unicode.c
@@ -2565,15 +2589,23 @@ libwebsocket_a_SOURCES = \
 
 libwebsocket_a_CPPFLAGS = \
 	-DG_LOG_DOMAIN=\"WebSocket\" \
+	-I$(srcdir)/src \
 	$(GIO_CFLAGS) \
+	$(NULL)
+
+libwebsocket_a_LIBS = \
+	libcockpit-common.a \
+	$(GIO_LIBS) \
 	$(NULL)
 
 frob_websocket_SOURCES = src/websocket/frob-websocket.c
 frob_websocket_CPPFLAGS = $(libwebsocket_a_CPPFLAGS)
-frob_websocket_LDADD = libwebsocket.a $(GIO_LIBS)
-test_websocket_SOURCES = src/websocket/test-websocket.c
+frob_websocket_LDADD = libwebsocket.a $(libwebsocket_a_LIBS)
+test_websocket_SOURCES = src/websocket/test-websocket.c \
+	src/common/mock-pressure.c src/common/mock-pressure.h
+
 test_websocket_CPPFLAGS = $(libwebsocket_a_CPPFLAGS)
-test_websocket_LDADD = libwebsocket.a $(GIO_LIBS)
+test_websocket_LDADD = libwebsocket.a $(libwebsocket_a_LIBS)
 @WITH_COCKPIT_SSH_TRUE@libcockpit_ssh_a_SOURCES = \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/cockpitsshoptions.c \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/cockpitsshoptions.h \
@@ -3023,7 +3055,13 @@ src/common/libcockpit_common_a-cockpitauthorize.$(OBJEXT):  \
 src/common/libcockpit_common_a-cockpitbase64.$(OBJEXT):  \
 	src/common/$(am__dirstamp) \
 	src/common/$(DEPDIR)/$(am__dirstamp)
+src/common/libcockpit_common_a-cockpitchannel.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
 src/common/libcockpit_common_a-cockpiterror.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
+src/common/libcockpit_common_a-cockpitflow.$(OBJEXT):  \
 	src/common/$(am__dirstamp) \
 	src/common/$(DEPDIR)/$(am__dirstamp)
 src/common/libcockpit_common_a-cockpitframe.$(OBJEXT):  \
@@ -3115,9 +3153,6 @@ libcockpit-common.a: $(libcockpit_common_a_OBJECTS) $(libcockpit_common_a_DEPEND
 	$(AM_V_at)-rm -f libcockpit-common.a
 	$(AM_V_AR)$(libcockpit_common_a_AR) libcockpit-common.a $(libcockpit_common_a_OBJECTS) $(libcockpit_common_a_LIBADD)
 	$(AM_V_at)$(RANLIB) libcockpit-common.a
-src/bridge/libcockpit_pcp_a-cockpitchannel.$(OBJEXT):  \
-	src/bridge/$(am__dirstamp) \
-	src/bridge/$(DEPDIR)/$(am__dirstamp)
 src/bridge/libcockpit_pcp_a-cockpitconnect.$(OBJEXT):  \
 	src/bridge/$(am__dirstamp) \
 	src/bridge/$(DEPDIR)/$(am__dirstamp)
@@ -3183,9 +3218,6 @@ libcockpit-ssh.a: $(libcockpit_ssh_a_OBJECTS) $(libcockpit_ssh_a_DEPENDENCIES) $
 	$(AM_V_at)-rm -f libcockpit-ssh.a
 	$(AM_V_AR)$(libcockpit_ssh_a_AR) libcockpit-ssh.a $(libcockpit_ssh_a_OBJECTS) $(libcockpit_ssh_a_LIBADD)
 	$(AM_V_at)$(RANLIB) libcockpit-ssh.a
-src/bridge/libcockpit_stub_a-cockpitchannel.$(OBJEXT):  \
-	src/bridge/$(am__dirstamp) \
-	src/bridge/$(DEPDIR)/$(am__dirstamp)
 src/bridge/libcockpit_stub_a-cockpitconnect.$(OBJEXT):  \
 	src/bridge/$(am__dirstamp) \
 	src/bridge/$(DEPDIR)/$(am__dirstamp)
@@ -3610,12 +3642,15 @@ src/bridge/test_bridge-test-bridge.$(OBJEXT):  \
 test-bridge$(EXEEXT): $(test_bridge_OBJECTS) $(test_bridge_DEPENDENCIES) $(EXTRA_test_bridge_DEPENDENCIES) 
 	@rm -f test-bridge$(EXEEXT)
 	$(AM_V_CCLD)$(test_bridge_LINK) $(test_bridge_OBJECTS) $(test_bridge_LDADD) $(LIBS)
-src/bridge/test_channel-test-channel.$(OBJEXT):  \
-	src/bridge/$(am__dirstamp) \
-	src/bridge/$(DEPDIR)/$(am__dirstamp)
-src/bridge/test_channel-mock-transport.$(OBJEXT):  \
-	src/bridge/$(am__dirstamp) \
-	src/bridge/$(DEPDIR)/$(am__dirstamp)
+src/common/test_channel-test-channel.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
+src/common/test_channel-mock-pressure.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
+src/common/test_channel-mock-transport.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
 
 test-channel$(EXEEXT): $(test_channel_OBJECTS) $(test_channel_DEPENDENCIES) $(EXTRA_test_channel_DEPENDENCIES) 
 	@rm -f test-channel$(EXEEXT)
@@ -3647,6 +3682,9 @@ test-config$(EXEEXT): $(test_config_OBJECTS) $(test_config_DEPENDENCIES) $(EXTRA
 src/bridge/test_connect-test-connect.$(OBJEXT):  \
 	src/bridge/$(am__dirstamp) \
 	src/bridge/$(DEPDIR)/$(am__dirstamp)
+src/common/test_connect-mock-transport.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
 
 test-connect$(EXEEXT): $(test_connect_OBJECTS) $(test_connect_DEPENDENCIES) $(EXTRA_test_connect_DEPENDENCIES) 
 	@rm -f test-connect$(EXEEXT)
@@ -3666,9 +3704,9 @@ test-dbus-meta$(EXEEXT): $(test_dbus_meta_OBJECTS) $(test_dbus_meta_DEPENDENCIES
 	$(AM_V_CCLD)$(test_dbus_meta_LINK) $(test_dbus_meta_OBJECTS) $(test_dbus_meta_LDADD) $(LIBS)
 src/bridge/test_fs-test-fs.$(OBJEXT): src/bridge/$(am__dirstamp) \
 	src/bridge/$(DEPDIR)/$(am__dirstamp)
-src/bridge/test_fs-mock-transport.$(OBJEXT):  \
-	src/bridge/$(am__dirstamp) \
-	src/bridge/$(DEPDIR)/$(am__dirstamp)
+src/common/test_fs-mock-transport.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
 
 test-fs$(EXEEXT): $(test_fs_OBJECTS) $(test_fs_DEPENDENCIES) $(EXTRA_test_fs_DEPENDENCIES) 
 	@rm -f test-fs$(EXEEXT)
@@ -3699,9 +3737,9 @@ test-hex$(EXEEXT): $(test_hex_OBJECTS) $(test_hex_DEPENDENCIES) $(EXTRA_test_hex
 src/bridge/test_httpstream-test-httpstream.$(OBJEXT):  \
 	src/bridge/$(am__dirstamp) \
 	src/bridge/$(DEPDIR)/$(am__dirstamp)
-src/bridge/test_httpstream-mock-transport.$(OBJEXT):  \
-	src/bridge/$(am__dirstamp) \
-	src/bridge/$(DEPDIR)/$(am__dirstamp)
+src/common/test_httpstream-mock-transport.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
 
 test-httpstream$(EXEEXT): $(test_httpstream_OBJECTS) $(test_httpstream_DEPENDENCIES) $(EXTRA_test_httpstream_DEPENDENCIES) 
 	@rm -f test-httpstream$(EXEEXT)
@@ -3735,9 +3773,9 @@ test-locale$(EXEEXT): $(test_locale_OBJECTS) $(test_locale_DEPENDENCIES) $(EXTRA
 src/bridge/test_metrics-test-metrics.$(OBJEXT):  \
 	src/bridge/$(am__dirstamp) \
 	src/bridge/$(DEPDIR)/$(am__dirstamp)
-src/bridge/test_metrics-mock-transport.$(OBJEXT):  \
-	src/bridge/$(am__dirstamp) \
-	src/bridge/$(DEPDIR)/$(am__dirstamp)
+src/common/test_metrics-mock-transport.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
 
 test-metrics$(EXEEXT): $(test_metrics_OBJECTS) $(test_metrics_DEPENDENCIES) $(EXTRA_test_metrics_DEPENDENCIES) 
 	@rm -f test-metrics$(EXEEXT)
@@ -3745,9 +3783,9 @@ test-metrics$(EXEEXT): $(test_metrics_OBJECTS) $(test_metrics_DEPENDENCIES) $(EX
 src/bridge/test_packages-test-packages.$(OBJEXT):  \
 	src/bridge/$(am__dirstamp) \
 	src/bridge/$(DEPDIR)/$(am__dirstamp)
-src/bridge/test_packages-mock-transport.$(OBJEXT):  \
-	src/bridge/$(am__dirstamp) \
-	src/bridge/$(DEPDIR)/$(am__dirstamp)
+src/common/test_packages-mock-transport.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
 
 test-packages$(EXEEXT): $(test_packages_OBJECTS) $(test_packages_DEPENDENCIES) $(EXTRA_test_packages_DEPENDENCIES) 
 	@rm -f test-packages$(EXEEXT)
@@ -3761,9 +3799,9 @@ test-paths$(EXEEXT): $(test_paths_OBJECTS) $(test_paths_DEPENDENCIES) $(EXTRA_te
 	$(AM_V_CCLD)$(test_paths_LINK) $(test_paths_OBJECTS) $(test_paths_LDADD) $(LIBS)
 src/bridge/test_pcp-test-pcp.$(OBJEXT): src/bridge/$(am__dirstamp) \
 	src/bridge/$(DEPDIR)/$(am__dirstamp)
-src/bridge/test_pcp-mock-transport.$(OBJEXT):  \
-	src/bridge/$(am__dirstamp) \
-	src/bridge/$(DEPDIR)/$(am__dirstamp)
+src/common/test_pcp-mock-transport.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
 
 test-pcp$(EXEEXT): $(test_pcp_OBJECTS) $(test_pcp_DEPENDENCIES) $(EXTRA_test_pcp_DEPENDENCIES) 
 	@rm -f test-pcp$(EXEEXT)
@@ -3771,23 +3809,26 @@ test-pcp$(EXEEXT): $(test_pcp_OBJECTS) $(test_pcp_DEPENDENCIES) $(EXTRA_test_pcp
 src/bridge/test_pcp_archives-test-pcp-archives.$(OBJEXT):  \
 	src/bridge/$(am__dirstamp) \
 	src/bridge/$(DEPDIR)/$(am__dirstamp)
-src/bridge/test_pcp_archives-mock-transport.$(OBJEXT):  \
-	src/bridge/$(am__dirstamp) \
-	src/bridge/$(DEPDIR)/$(am__dirstamp)
+src/common/test_pcp_archives-mock-transport.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
 
 test-pcp-archives$(EXEEXT): $(test_pcp_archives_OBJECTS) $(test_pcp_archives_DEPENDENCIES) $(EXTRA_test_pcp_archives_DEPENDENCIES) 
 	@rm -f test-pcp-archives$(EXEEXT)
 	$(AM_V_CCLD)$(test_pcp_archives_LINK) $(test_pcp_archives_OBJECTS) $(test_pcp_archives_LDADD) $(LIBS)
 src/bridge/test_peer-test-peer.$(OBJEXT): src/bridge/$(am__dirstamp) \
 	src/bridge/$(DEPDIR)/$(am__dirstamp)
-src/bridge/test_peer-mock-transport.$(OBJEXT):  \
-	src/bridge/$(am__dirstamp) \
-	src/bridge/$(DEPDIR)/$(am__dirstamp)
+src/common/test_peer-mock-transport.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
 
 test-peer$(EXEEXT): $(test_peer_OBJECTS) $(test_peer_DEPENDENCIES) $(EXTRA_test_peer_DEPENDENCIES) 
 	@rm -f test-peer$(EXEEXT)
 	$(AM_V_CCLD)$(test_peer_LINK) $(test_peer_OBJECTS) $(test_peer_LDADD) $(LIBS)
 src/common/test_pipe-test-pipe.$(OBJEXT): src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
+src/common/test_pipe-mock-pressure.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
 	src/common/$(DEPDIR)/$(am__dirstamp)
 
 test-pipe$(EXEEXT): $(test_pipe_OBJECTS) $(test_pipe_DEPENDENCIES) $(EXTRA_test_pipe_DEPENDENCIES) 
@@ -3796,9 +3837,9 @@ test-pipe$(EXEEXT): $(test_pipe_OBJECTS) $(test_pipe_DEPENDENCIES) $(EXTRA_test_
 src/bridge/test_pipe_channel-test-pipe-channel.$(OBJEXT):  \
 	src/bridge/$(am__dirstamp) \
 	src/bridge/$(DEPDIR)/$(am__dirstamp)
-src/bridge/test_pipe_channel-mock-transport.$(OBJEXT):  \
-	src/bridge/$(am__dirstamp) \
-	src/bridge/$(DEPDIR)/$(am__dirstamp)
+src/common/test_pipe_channel-mock-transport.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
 
 test-pipe-channel$(EXEEXT): $(test_pipe_channel_OBJECTS) $(test_pipe_channel_DEPENDENCIES) $(EXTRA_test_pipe_channel_DEPENDENCIES) 
 	@rm -f test-pipe-channel$(EXEEXT)
@@ -3823,12 +3864,12 @@ test-remotectlcertificate$(EXEEXT): $(test_remotectlcertificate_OBJECTS) $(test_
 src/bridge/test_router-test-router.$(OBJEXT):  \
 	src/bridge/$(am__dirstamp) \
 	src/bridge/$(DEPDIR)/$(am__dirstamp)
-src/bridge/test_router-mock-channel.$(OBJEXT):  \
-	src/bridge/$(am__dirstamp) \
-	src/bridge/$(DEPDIR)/$(am__dirstamp)
-src/bridge/test_router-mock-transport.$(OBJEXT):  \
-	src/bridge/$(am__dirstamp) \
-	src/bridge/$(DEPDIR)/$(am__dirstamp)
+src/common/test_router-mock-channel.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
+src/common/test_router-mock-transport.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
 
 test-router$(EXEEXT): $(test_router_OBJECTS) $(test_router_DEPENDENCIES) $(EXTRA_test_router_DEPENDENCIES) 
 	@rm -f test-router$(EXEEXT)
@@ -3878,6 +3919,9 @@ src/bridge/test_stream-test-stream.$(OBJEXT):  \
 src/common/test_stream-mock-io-stream.$(OBJEXT):  \
 	src/common/$(am__dirstamp) \
 	src/common/$(DEPDIR)/$(am__dirstamp)
+src/common/test_stream-mock-pressure.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
 
 test-stream$(EXEEXT): $(test_stream_OBJECTS) $(test_stream_DEPENDENCIES) $(EXTRA_test_stream_DEPENDENCIES) 
 	@rm -f test-stream$(EXEEXT)
@@ -3897,6 +3941,9 @@ test-template$(EXEEXT): $(test_template_OBJECTS) $(test_template_DEPENDENCIES) $
 	@rm -f test-template$(EXEEXT)
 	$(AM_V_CCLD)$(test_template_LINK) $(test_template_OBJECTS) $(test_template_LDADD) $(LIBS)
 src/common/test_transport-test-transport.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
+src/common/test_transport-mock-transport.$(OBJEXT):  \
 	src/common/$(am__dirstamp) \
 	src/common/$(DEPDIR)/$(am__dirstamp)
 
@@ -3958,6 +4005,9 @@ test-webservice$(EXEEXT): $(test_webservice_OBJECTS) $(test_webservice_DEPENDENC
 src/websocket/test_websocket-test-websocket.$(OBJEXT):  \
 	src/websocket/$(am__dirstamp) \
 	src/websocket/$(DEPDIR)/$(am__dirstamp)
+src/common/test_websocket-mock-pressure.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
 
 test-websocket$(EXEEXT): $(test_websocket_OBJECTS) $(test_websocket_DEPENDENCIES) $(EXTRA_test_websocket_DEPENDENCIES) 
 	@rm -f test-websocket$(EXEEXT)
@@ -3965,9 +4015,9 @@ test-websocket$(EXEEXT): $(test_websocket_OBJECTS) $(test_websocket_DEPENDENCIES
 src/bridge/test_websocketstream-test-websocketstream.$(OBJEXT):  \
 	src/bridge/$(am__dirstamp) \
 	src/bridge/$(DEPDIR)/$(am__dirstamp)
-src/bridge/test_websocketstream-mock-transport.$(OBJEXT):  \
-	src/bridge/$(am__dirstamp) \
-	src/bridge/$(DEPDIR)/$(am__dirstamp)
+src/common/test_websocketstream-mock-transport.$(OBJEXT):  \
+	src/common/$(am__dirstamp) \
+	src/common/$(DEPDIR)/$(am__dirstamp)
 
 test-websocketstream$(EXEEXT): $(test_websocketstream_OBJECTS) $(test_websocketstream_DEPENDENCIES) $(EXTRA_test_websocketstream_DEPENDENCIES) 
 	@rm -f test-websocketstream$(EXEEXT)
@@ -4046,7 +4096,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/libcockpit_bridge_a-cockpitsamples.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/libcockpit_pcp_a-cockpitblocksamples.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/libcockpit_pcp_a-cockpitcgroupsamples.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/libcockpit_pcp_a-cockpitchannel.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/libcockpit_pcp_a-cockpitconnect.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/libcockpit_pcp_a-cockpitcpusamples.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/libcockpit_pcp_a-cockpitdisksamples.Po@am__quote@
@@ -4059,7 +4108,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/libcockpit_pcp_a-cockpitpeer.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/libcockpit_pcp_a-cockpitrouter.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/libcockpit_pcp_a-cockpitsamples.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitchannel.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitconnect.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitdbuscache.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitdbusinternal.Po@am__quote@
@@ -4080,35 +4128,22 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitwebsocketstream.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/mock_bridge-mock-bridge.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_bridge-test-bridge.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_channel-mock-transport.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_channel-test-channel.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_connect-test-connect.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_dbus_meta-test-dbus-meta.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_fs-mock-transport.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_fs-test-fs.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_httpstream-mock-transport.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_httpstream-test-httpstream.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_metrics-mock-transport.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_metrics-test-metrics.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_packages-mock-transport.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_packages-test-packages.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_paths-test-paths.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_pcp-mock-transport.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_pcp-test-pcp.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_pcp_archives-mock-transport.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_pcp_archives-test-pcp-archives.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_peer-mock-transport.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_peer-test-peer.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_pipe_channel-mock-transport.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_pipe_channel-test-pipe-channel.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_process-test-process.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_router-mock-channel.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_router-mock-transport.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_router-test-router.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_rules-test-rules.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_setup-test-setup.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_stream-test-stream.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_websocketstream-mock-transport.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/bridge/$(DEPDIR)/test_websocketstream-test-websocketstream.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/cockpitauthorize.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/cockpitbase64.Po@am__quote@
@@ -4117,8 +4152,10 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitassets.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitauthorize.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitbase64.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitchannel.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitconf.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpiterror.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitflow.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitframe.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpithash.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpithex.Po@am__quote@
@@ -4152,18 +4189,35 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_authorize-test-authorize.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_base64-cockpitbase64.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_base64-test-base64.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_channel-mock-pressure.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_channel-mock-transport.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_channel-test-channel.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_channelresponse-mock-io-stream.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_config-test-config.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_connect-mock-transport.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_fs-mock-transport.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_handlers-mock-io-stream.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_hash-test-hash.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_hex-test-hex.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_httpstream-mock-transport.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_json-test-json.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_knownhosts-test-knownhosts.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_locale-test-locale.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_metrics-mock-transport.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_packages-mock-transport.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_pcp-mock-transport.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_pcp_archives-mock-transport.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_peer-mock-transport.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_pipe-mock-pressure.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_pipe-test-pipe.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_pipe_channel-mock-transport.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_router-mock-channel.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_router-mock-transport.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_stream-mock-io-stream.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_stream-mock-pressure.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_system-test-system.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_template-test-template.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_transport-mock-transport.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_transport-test-transport.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_unicode-test-unicode.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_unixsignal-test-unixsignal.Po@am__quote@
@@ -4173,6 +4227,8 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_webresponse-test-webresponse.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_webserver-test-webserver.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_webservice-mock-io-stream.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_websocket-mock-pressure.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_websocketstream-mock-transport.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/pam-ssh-add/$(DEPDIR)/libpam_ssh_add_a-pam-ssh-add.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/pam-ssh-add/$(DEPDIR)/test_ssh_add-test-ssh-add.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/retest/$(DEPDIR)/retest.Po@am__quote@
@@ -4533,6 +4589,20 @@ src/common/libcockpit_common_a-cockpitbase64.obj: src/common/cockpitbase64.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitbase64.obj `if test -f 'src/common/cockpitbase64.c'; then $(CYGPATH_W) 'src/common/cockpitbase64.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitbase64.c'; fi`
 
+src/common/libcockpit_common_a-cockpitchannel.o: src/common/cockpitchannel.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitchannel.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitchannel.Tpo -c -o src/common/libcockpit_common_a-cockpitchannel.o `test -f 'src/common/cockpitchannel.c' || echo '$(srcdir)/'`src/common/cockpitchannel.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_a-cockpitchannel.Tpo src/common/$(DEPDIR)/libcockpit_common_a-cockpitchannel.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitchannel.c' object='src/common/libcockpit_common_a-cockpitchannel.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitchannel.o `test -f 'src/common/cockpitchannel.c' || echo '$(srcdir)/'`src/common/cockpitchannel.c
+
+src/common/libcockpit_common_a-cockpitchannel.obj: src/common/cockpitchannel.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitchannel.obj -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitchannel.Tpo -c -o src/common/libcockpit_common_a-cockpitchannel.obj `if test -f 'src/common/cockpitchannel.c'; then $(CYGPATH_W) 'src/common/cockpitchannel.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitchannel.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_a-cockpitchannel.Tpo src/common/$(DEPDIR)/libcockpit_common_a-cockpitchannel.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitchannel.c' object='src/common/libcockpit_common_a-cockpitchannel.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitchannel.obj `if test -f 'src/common/cockpitchannel.c'; then $(CYGPATH_W) 'src/common/cockpitchannel.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitchannel.c'; fi`
+
 src/common/libcockpit_common_a-cockpiterror.o: src/common/cockpiterror.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpiterror.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpiterror.Tpo -c -o src/common/libcockpit_common_a-cockpiterror.o `test -f 'src/common/cockpiterror.c' || echo '$(srcdir)/'`src/common/cockpiterror.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_a-cockpiterror.Tpo src/common/$(DEPDIR)/libcockpit_common_a-cockpiterror.Po
@@ -4546,6 +4616,20 @@ src/common/libcockpit_common_a-cockpiterror.obj: src/common/cockpiterror.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpiterror.c' object='src/common/libcockpit_common_a-cockpiterror.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpiterror.obj `if test -f 'src/common/cockpiterror.c'; then $(CYGPATH_W) 'src/common/cockpiterror.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpiterror.c'; fi`
+
+src/common/libcockpit_common_a-cockpitflow.o: src/common/cockpitflow.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitflow.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitflow.Tpo -c -o src/common/libcockpit_common_a-cockpitflow.o `test -f 'src/common/cockpitflow.c' || echo '$(srcdir)/'`src/common/cockpitflow.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_a-cockpitflow.Tpo src/common/$(DEPDIR)/libcockpit_common_a-cockpitflow.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitflow.c' object='src/common/libcockpit_common_a-cockpitflow.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitflow.o `test -f 'src/common/cockpitflow.c' || echo '$(srcdir)/'`src/common/cockpitflow.c
+
+src/common/libcockpit_common_a-cockpitflow.obj: src/common/cockpitflow.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitflow.obj -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitflow.Tpo -c -o src/common/libcockpit_common_a-cockpitflow.obj `if test -f 'src/common/cockpitflow.c'; then $(CYGPATH_W) 'src/common/cockpitflow.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitflow.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_a-cockpitflow.Tpo src/common/$(DEPDIR)/libcockpit_common_a-cockpitflow.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitflow.c' object='src/common/libcockpit_common_a-cockpitflow.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitflow.obj `if test -f 'src/common/cockpitflow.c'; then $(CYGPATH_W) 'src/common/cockpitflow.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitflow.c'; fi`
 
 src/common/libcockpit_common_a-cockpitframe.o: src/common/cockpitframe.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitframe.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitframe.Tpo -c -o src/common/libcockpit_common_a-cockpitframe.o `test -f 'src/common/cockpitframe.c' || echo '$(srcdir)/'`src/common/cockpitframe.c
@@ -4939,20 +5023,6 @@ src/common/libcockpit_common_a-cockpitassets.obj: src/common/cockpitassets.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitassets.obj `if test -f 'src/common/cockpitassets.c'; then $(CYGPATH_W) 'src/common/cockpitassets.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitassets.c'; fi`
 
-src/bridge/libcockpit_pcp_a-cockpitchannel.o: src/bridge/cockpitchannel.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_pcp_a_CFLAGS) $(CFLAGS) -MT src/bridge/libcockpit_pcp_a-cockpitchannel.o -MD -MP -MF src/bridge/$(DEPDIR)/libcockpit_pcp_a-cockpitchannel.Tpo -c -o src/bridge/libcockpit_pcp_a-cockpitchannel.o `test -f 'src/bridge/cockpitchannel.c' || echo '$(srcdir)/'`src/bridge/cockpitchannel.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/libcockpit_pcp_a-cockpitchannel.Tpo src/bridge/$(DEPDIR)/libcockpit_pcp_a-cockpitchannel.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/cockpitchannel.c' object='src/bridge/libcockpit_pcp_a-cockpitchannel.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_pcp_a_CFLAGS) $(CFLAGS) -c -o src/bridge/libcockpit_pcp_a-cockpitchannel.o `test -f 'src/bridge/cockpitchannel.c' || echo '$(srcdir)/'`src/bridge/cockpitchannel.c
-
-src/bridge/libcockpit_pcp_a-cockpitchannel.obj: src/bridge/cockpitchannel.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_pcp_a_CFLAGS) $(CFLAGS) -MT src/bridge/libcockpit_pcp_a-cockpitchannel.obj -MD -MP -MF src/bridge/$(DEPDIR)/libcockpit_pcp_a-cockpitchannel.Tpo -c -o src/bridge/libcockpit_pcp_a-cockpitchannel.obj `if test -f 'src/bridge/cockpitchannel.c'; then $(CYGPATH_W) 'src/bridge/cockpitchannel.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/cockpitchannel.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/libcockpit_pcp_a-cockpitchannel.Tpo src/bridge/$(DEPDIR)/libcockpit_pcp_a-cockpitchannel.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/cockpitchannel.c' object='src/bridge/libcockpit_pcp_a-cockpitchannel.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_pcp_a_CFLAGS) $(CFLAGS) -c -o src/bridge/libcockpit_pcp_a-cockpitchannel.obj `if test -f 'src/bridge/cockpitchannel.c'; then $(CYGPATH_W) 'src/bridge/cockpitchannel.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/cockpitchannel.c'; fi`
-
 src/bridge/libcockpit_pcp_a-cockpitconnect.o: src/bridge/cockpitconnect.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_pcp_a_CFLAGS) $(CFLAGS) -MT src/bridge/libcockpit_pcp_a-cockpitconnect.o -MD -MP -MF src/bridge/$(DEPDIR)/libcockpit_pcp_a-cockpitconnect.Tpo -c -o src/bridge/libcockpit_pcp_a-cockpitconnect.o `test -f 'src/bridge/cockpitconnect.c' || echo '$(srcdir)/'`src/bridge/cockpitconnect.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/libcockpit_pcp_a-cockpitconnect.Tpo src/bridge/$(DEPDIR)/libcockpit_pcp_a-cockpitconnect.Po
@@ -5190,20 +5260,6 @@ src/common/libcockpit_ssh_a-cockpitauthorize.obj: src/common/cockpitauthorize.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitauthorize.c' object='src/common/libcockpit_ssh_a-cockpitauthorize.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_ssh_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_ssh_a-cockpitauthorize.obj `if test -f 'src/common/cockpitauthorize.c'; then $(CYGPATH_W) 'src/common/cockpitauthorize.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitauthorize.c'; fi`
-
-src/bridge/libcockpit_stub_a-cockpitchannel.o: src/bridge/cockpitchannel.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_stub_a_CFLAGS) $(CFLAGS) -MT src/bridge/libcockpit_stub_a-cockpitchannel.o -MD -MP -MF src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitchannel.Tpo -c -o src/bridge/libcockpit_stub_a-cockpitchannel.o `test -f 'src/bridge/cockpitchannel.c' || echo '$(srcdir)/'`src/bridge/cockpitchannel.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitchannel.Tpo src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitchannel.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/cockpitchannel.c' object='src/bridge/libcockpit_stub_a-cockpitchannel.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_stub_a_CFLAGS) $(CFLAGS) -c -o src/bridge/libcockpit_stub_a-cockpitchannel.o `test -f 'src/bridge/cockpitchannel.c' || echo '$(srcdir)/'`src/bridge/cockpitchannel.c
-
-src/bridge/libcockpit_stub_a-cockpitchannel.obj: src/bridge/cockpitchannel.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_stub_a_CFLAGS) $(CFLAGS) -MT src/bridge/libcockpit_stub_a-cockpitchannel.obj -MD -MP -MF src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitchannel.Tpo -c -o src/bridge/libcockpit_stub_a-cockpitchannel.obj `if test -f 'src/bridge/cockpitchannel.c'; then $(CYGPATH_W) 'src/bridge/cockpitchannel.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/cockpitchannel.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitchannel.Tpo src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitchannel.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/cockpitchannel.c' object='src/bridge/libcockpit_stub_a-cockpitchannel.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_stub_a_CFLAGS) $(CFLAGS) -c -o src/bridge/libcockpit_stub_a-cockpitchannel.obj `if test -f 'src/bridge/cockpitchannel.c'; then $(CYGPATH_W) 'src/bridge/cockpitchannel.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/cockpitchannel.c'; fi`
 
 src/bridge/libcockpit_stub_a-cockpitconnect.o: src/bridge/cockpitconnect.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_stub_a_CFLAGS) $(CFLAGS) -MT src/bridge/libcockpit_stub_a-cockpitconnect.o -MD -MP -MF src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitconnect.Tpo -c -o src/bridge/libcockpit_stub_a-cockpitconnect.o `test -f 'src/bridge/cockpitconnect.c' || echo '$(srcdir)/'`src/bridge/cockpitconnect.c
@@ -5989,33 +6045,47 @@ src/bridge/test_bridge-test-bridge.obj: src/bridge/test-bridge.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_bridge_CFLAGS) $(CFLAGS) -c -o src/bridge/test_bridge-test-bridge.obj `if test -f 'src/bridge/test-bridge.c'; then $(CYGPATH_W) 'src/bridge/test-bridge.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/test-bridge.c'; fi`
 
-src/bridge/test_channel-test-channel.o: src/bridge/test-channel.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channel_CFLAGS) $(CFLAGS) -MT src/bridge/test_channel-test-channel.o -MD -MP -MF src/bridge/$(DEPDIR)/test_channel-test-channel.Tpo -c -o src/bridge/test_channel-test-channel.o `test -f 'src/bridge/test-channel.c' || echo '$(srcdir)/'`src/bridge/test-channel.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_channel-test-channel.Tpo src/bridge/$(DEPDIR)/test_channel-test-channel.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/test-channel.c' object='src/bridge/test_channel-test-channel.o' libtool=no @AMDEPBACKSLASH@
+src/common/test_channel-test-channel.o: src/common/test-channel.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channel_CFLAGS) $(CFLAGS) -MT src/common/test_channel-test-channel.o -MD -MP -MF src/common/$(DEPDIR)/test_channel-test-channel.Tpo -c -o src/common/test_channel-test-channel.o `test -f 'src/common/test-channel.c' || echo '$(srcdir)/'`src/common/test-channel.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_channel-test-channel.Tpo src/common/$(DEPDIR)/test_channel-test-channel.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/test-channel.c' object='src/common/test_channel-test-channel.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channel_CFLAGS) $(CFLAGS) -c -o src/bridge/test_channel-test-channel.o `test -f 'src/bridge/test-channel.c' || echo '$(srcdir)/'`src/bridge/test-channel.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channel_CFLAGS) $(CFLAGS) -c -o src/common/test_channel-test-channel.o `test -f 'src/common/test-channel.c' || echo '$(srcdir)/'`src/common/test-channel.c
 
-src/bridge/test_channel-test-channel.obj: src/bridge/test-channel.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channel_CFLAGS) $(CFLAGS) -MT src/bridge/test_channel-test-channel.obj -MD -MP -MF src/bridge/$(DEPDIR)/test_channel-test-channel.Tpo -c -o src/bridge/test_channel-test-channel.obj `if test -f 'src/bridge/test-channel.c'; then $(CYGPATH_W) 'src/bridge/test-channel.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/test-channel.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_channel-test-channel.Tpo src/bridge/$(DEPDIR)/test_channel-test-channel.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/test-channel.c' object='src/bridge/test_channel-test-channel.obj' libtool=no @AMDEPBACKSLASH@
+src/common/test_channel-test-channel.obj: src/common/test-channel.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channel_CFLAGS) $(CFLAGS) -MT src/common/test_channel-test-channel.obj -MD -MP -MF src/common/$(DEPDIR)/test_channel-test-channel.Tpo -c -o src/common/test_channel-test-channel.obj `if test -f 'src/common/test-channel.c'; then $(CYGPATH_W) 'src/common/test-channel.c'; else $(CYGPATH_W) '$(srcdir)/src/common/test-channel.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_channel-test-channel.Tpo src/common/$(DEPDIR)/test_channel-test-channel.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/test-channel.c' object='src/common/test_channel-test-channel.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channel_CFLAGS) $(CFLAGS) -c -o src/bridge/test_channel-test-channel.obj `if test -f 'src/bridge/test-channel.c'; then $(CYGPATH_W) 'src/bridge/test-channel.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/test-channel.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channel_CFLAGS) $(CFLAGS) -c -o src/common/test_channel-test-channel.obj `if test -f 'src/common/test-channel.c'; then $(CYGPATH_W) 'src/common/test-channel.c'; else $(CYGPATH_W) '$(srcdir)/src/common/test-channel.c'; fi`
 
-src/bridge/test_channel-mock-transport.o: src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channel_CFLAGS) $(CFLAGS) -MT src/bridge/test_channel-mock-transport.o -MD -MP -MF src/bridge/$(DEPDIR)/test_channel-mock-transport.Tpo -c -o src/bridge/test_channel-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_channel-mock-transport.Tpo src/bridge/$(DEPDIR)/test_channel-mock-transport.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_channel-mock-transport.o' libtool=no @AMDEPBACKSLASH@
+src/common/test_channel-mock-pressure.o: src/common/mock-pressure.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channel_CFLAGS) $(CFLAGS) -MT src/common/test_channel-mock-pressure.o -MD -MP -MF src/common/$(DEPDIR)/test_channel-mock-pressure.Tpo -c -o src/common/test_channel-mock-pressure.o `test -f 'src/common/mock-pressure.c' || echo '$(srcdir)/'`src/common/mock-pressure.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_channel-mock-pressure.Tpo src/common/$(DEPDIR)/test_channel-mock-pressure.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-pressure.c' object='src/common/test_channel-mock-pressure.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channel_CFLAGS) $(CFLAGS) -c -o src/bridge/test_channel-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channel_CFLAGS) $(CFLAGS) -c -o src/common/test_channel-mock-pressure.o `test -f 'src/common/mock-pressure.c' || echo '$(srcdir)/'`src/common/mock-pressure.c
 
-src/bridge/test_channel-mock-transport.obj: src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channel_CFLAGS) $(CFLAGS) -MT src/bridge/test_channel-mock-transport.obj -MD -MP -MF src/bridge/$(DEPDIR)/test_channel-mock-transport.Tpo -c -o src/bridge/test_channel-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_channel-mock-transport.Tpo src/bridge/$(DEPDIR)/test_channel-mock-transport.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_channel-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
+src/common/test_channel-mock-pressure.obj: src/common/mock-pressure.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channel_CFLAGS) $(CFLAGS) -MT src/common/test_channel-mock-pressure.obj -MD -MP -MF src/common/$(DEPDIR)/test_channel-mock-pressure.Tpo -c -o src/common/test_channel-mock-pressure.obj `if test -f 'src/common/mock-pressure.c'; then $(CYGPATH_W) 'src/common/mock-pressure.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-pressure.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_channel-mock-pressure.Tpo src/common/$(DEPDIR)/test_channel-mock-pressure.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-pressure.c' object='src/common/test_channel-mock-pressure.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channel_CFLAGS) $(CFLAGS) -c -o src/bridge/test_channel-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channel_CFLAGS) $(CFLAGS) -c -o src/common/test_channel-mock-pressure.obj `if test -f 'src/common/mock-pressure.c'; then $(CYGPATH_W) 'src/common/mock-pressure.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-pressure.c'; fi`
+
+src/common/test_channel-mock-transport.o: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channel_CFLAGS) $(CFLAGS) -MT src/common/test_channel-mock-transport.o -MD -MP -MF src/common/$(DEPDIR)/test_channel-mock-transport.Tpo -c -o src/common/test_channel-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_channel-mock-transport.Tpo src/common/$(DEPDIR)/test_channel-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_channel-mock-transport.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channel_CFLAGS) $(CFLAGS) -c -o src/common/test_channel-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
+
+src/common/test_channel-mock-transport.obj: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channel_CFLAGS) $(CFLAGS) -MT src/common/test_channel-mock-transport.obj -MD -MP -MF src/common/$(DEPDIR)/test_channel-mock-transport.Tpo -c -o src/common/test_channel-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_channel-mock-transport.Tpo src/common/$(DEPDIR)/test_channel-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_channel-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channel_CFLAGS) $(CFLAGS) -c -o src/common/test_channel-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
 
 src/ws/test_channelresponse-test-channelresponse.o: src/ws/test-channelresponse.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_channelresponse_CFLAGS) $(CFLAGS) -MT src/ws/test_channelresponse-test-channelresponse.o -MD -MP -MF src/ws/$(DEPDIR)/test_channelresponse-test-channelresponse.Tpo -c -o src/ws/test_channelresponse-test-channelresponse.o `test -f 'src/ws/test-channelresponse.c' || echo '$(srcdir)/'`src/ws/test-channelresponse.c
@@ -6101,6 +6171,20 @@ src/bridge/test_connect-test-connect.obj: src/bridge/test-connect.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_connect_CFLAGS) $(CFLAGS) -c -o src/bridge/test_connect-test-connect.obj `if test -f 'src/bridge/test-connect.c'; then $(CYGPATH_W) 'src/bridge/test-connect.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/test-connect.c'; fi`
 
+src/common/test_connect-mock-transport.o: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_connect_CFLAGS) $(CFLAGS) -MT src/common/test_connect-mock-transport.o -MD -MP -MF src/common/$(DEPDIR)/test_connect-mock-transport.Tpo -c -o src/common/test_connect-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_connect-mock-transport.Tpo src/common/$(DEPDIR)/test_connect-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_connect-mock-transport.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_connect_CFLAGS) $(CFLAGS) -c -o src/common/test_connect-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
+
+src/common/test_connect-mock-transport.obj: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_connect_CFLAGS) $(CFLAGS) -MT src/common/test_connect-mock-transport.obj -MD -MP -MF src/common/$(DEPDIR)/test_connect-mock-transport.Tpo -c -o src/common/test_connect-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_connect-mock-transport.Tpo src/common/$(DEPDIR)/test_connect-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_connect-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_connect_CFLAGS) $(CFLAGS) -c -o src/common/test_connect-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
+
 src/ws/test_creds-test-creds.o: src/ws/test-creds.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_creds_CFLAGS) $(CFLAGS) -MT src/ws/test_creds-test-creds.o -MD -MP -MF src/ws/$(DEPDIR)/test_creds-test-creds.Tpo -c -o src/ws/test_creds-test-creds.o `test -f 'src/ws/test-creds.c' || echo '$(srcdir)/'`src/ws/test-creds.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/ws/$(DEPDIR)/test_creds-test-creds.Tpo src/ws/$(DEPDIR)/test_creds-test-creds.Po
@@ -6143,19 +6227,19 @@ src/bridge/test_fs-test-fs.obj: src/bridge/test-fs.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_fs_CFLAGS) $(CFLAGS) -c -o src/bridge/test_fs-test-fs.obj `if test -f 'src/bridge/test-fs.c'; then $(CYGPATH_W) 'src/bridge/test-fs.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/test-fs.c'; fi`
 
-src/bridge/test_fs-mock-transport.o: src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_fs_CFLAGS) $(CFLAGS) -MT src/bridge/test_fs-mock-transport.o -MD -MP -MF src/bridge/$(DEPDIR)/test_fs-mock-transport.Tpo -c -o src/bridge/test_fs-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_fs-mock-transport.Tpo src/bridge/$(DEPDIR)/test_fs-mock-transport.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_fs-mock-transport.o' libtool=no @AMDEPBACKSLASH@
+src/common/test_fs-mock-transport.o: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_fs_CFLAGS) $(CFLAGS) -MT src/common/test_fs-mock-transport.o -MD -MP -MF src/common/$(DEPDIR)/test_fs-mock-transport.Tpo -c -o src/common/test_fs-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_fs-mock-transport.Tpo src/common/$(DEPDIR)/test_fs-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_fs-mock-transport.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_fs_CFLAGS) $(CFLAGS) -c -o src/bridge/test_fs-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_fs_CFLAGS) $(CFLAGS) -c -o src/common/test_fs-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
 
-src/bridge/test_fs-mock-transport.obj: src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_fs_CFLAGS) $(CFLAGS) -MT src/bridge/test_fs-mock-transport.obj -MD -MP -MF src/bridge/$(DEPDIR)/test_fs-mock-transport.Tpo -c -o src/bridge/test_fs-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_fs-mock-transport.Tpo src/bridge/$(DEPDIR)/test_fs-mock-transport.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_fs-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
+src/common/test_fs-mock-transport.obj: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_fs_CFLAGS) $(CFLAGS) -MT src/common/test_fs-mock-transport.obj -MD -MP -MF src/common/$(DEPDIR)/test_fs-mock-transport.Tpo -c -o src/common/test_fs-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_fs-mock-transport.Tpo src/common/$(DEPDIR)/test_fs-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_fs-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_fs_CFLAGS) $(CFLAGS) -c -o src/bridge/test_fs-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_fs_CFLAGS) $(CFLAGS) -c -o src/common/test_fs-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
 
 src/ws/test_handlers-test-handlers.o: src/ws/test-handlers.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_handlers_CFLAGS) $(CFLAGS) -MT src/ws/test_handlers-test-handlers.o -MD -MP -MF src/ws/$(DEPDIR)/test_handlers-test-handlers.Tpo -c -o src/ws/test_handlers-test-handlers.o `test -f 'src/ws/test-handlers.c' || echo '$(srcdir)/'`src/ws/test-handlers.c
@@ -6241,19 +6325,19 @@ src/bridge/test_httpstream-test-httpstream.obj: src/bridge/test-httpstream.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_httpstream_CFLAGS) $(CFLAGS) -c -o src/bridge/test_httpstream-test-httpstream.obj `if test -f 'src/bridge/test-httpstream.c'; then $(CYGPATH_W) 'src/bridge/test-httpstream.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/test-httpstream.c'; fi`
 
-src/bridge/test_httpstream-mock-transport.o: src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_httpstream_CFLAGS) $(CFLAGS) -MT src/bridge/test_httpstream-mock-transport.o -MD -MP -MF src/bridge/$(DEPDIR)/test_httpstream-mock-transport.Tpo -c -o src/bridge/test_httpstream-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_httpstream-mock-transport.Tpo src/bridge/$(DEPDIR)/test_httpstream-mock-transport.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_httpstream-mock-transport.o' libtool=no @AMDEPBACKSLASH@
+src/common/test_httpstream-mock-transport.o: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_httpstream_CFLAGS) $(CFLAGS) -MT src/common/test_httpstream-mock-transport.o -MD -MP -MF src/common/$(DEPDIR)/test_httpstream-mock-transport.Tpo -c -o src/common/test_httpstream-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_httpstream-mock-transport.Tpo src/common/$(DEPDIR)/test_httpstream-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_httpstream-mock-transport.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_httpstream_CFLAGS) $(CFLAGS) -c -o src/bridge/test_httpstream-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_httpstream_CFLAGS) $(CFLAGS) -c -o src/common/test_httpstream-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
 
-src/bridge/test_httpstream-mock-transport.obj: src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_httpstream_CFLAGS) $(CFLAGS) -MT src/bridge/test_httpstream-mock-transport.obj -MD -MP -MF src/bridge/$(DEPDIR)/test_httpstream-mock-transport.Tpo -c -o src/bridge/test_httpstream-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_httpstream-mock-transport.Tpo src/bridge/$(DEPDIR)/test_httpstream-mock-transport.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_httpstream-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
+src/common/test_httpstream-mock-transport.obj: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_httpstream_CFLAGS) $(CFLAGS) -MT src/common/test_httpstream-mock-transport.obj -MD -MP -MF src/common/$(DEPDIR)/test_httpstream-mock-transport.Tpo -c -o src/common/test_httpstream-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_httpstream-mock-transport.Tpo src/common/$(DEPDIR)/test_httpstream-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_httpstream-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_httpstream_CFLAGS) $(CFLAGS) -c -o src/bridge/test_httpstream-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_httpstream_CFLAGS) $(CFLAGS) -c -o src/common/test_httpstream-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
 
 src/common/test_json-test-json.o: src/common/test-json.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_json_CFLAGS) $(CFLAGS) -MT src/common/test_json-test-json.o -MD -MP -MF src/common/$(DEPDIR)/test_json-test-json.Tpo -c -o src/common/test_json-test-json.o `test -f 'src/common/test-json.c' || echo '$(srcdir)/'`src/common/test-json.c
@@ -6325,19 +6409,19 @@ src/bridge/test_metrics-test-metrics.obj: src/bridge/test-metrics.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_metrics_CFLAGS) $(CFLAGS) -c -o src/bridge/test_metrics-test-metrics.obj `if test -f 'src/bridge/test-metrics.c'; then $(CYGPATH_W) 'src/bridge/test-metrics.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/test-metrics.c'; fi`
 
-src/bridge/test_metrics-mock-transport.o: src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_metrics_CFLAGS) $(CFLAGS) -MT src/bridge/test_metrics-mock-transport.o -MD -MP -MF src/bridge/$(DEPDIR)/test_metrics-mock-transport.Tpo -c -o src/bridge/test_metrics-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_metrics-mock-transport.Tpo src/bridge/$(DEPDIR)/test_metrics-mock-transport.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_metrics-mock-transport.o' libtool=no @AMDEPBACKSLASH@
+src/common/test_metrics-mock-transport.o: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_metrics_CFLAGS) $(CFLAGS) -MT src/common/test_metrics-mock-transport.o -MD -MP -MF src/common/$(DEPDIR)/test_metrics-mock-transport.Tpo -c -o src/common/test_metrics-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_metrics-mock-transport.Tpo src/common/$(DEPDIR)/test_metrics-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_metrics-mock-transport.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_metrics_CFLAGS) $(CFLAGS) -c -o src/bridge/test_metrics-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_metrics_CFLAGS) $(CFLAGS) -c -o src/common/test_metrics-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
 
-src/bridge/test_metrics-mock-transport.obj: src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_metrics_CFLAGS) $(CFLAGS) -MT src/bridge/test_metrics-mock-transport.obj -MD -MP -MF src/bridge/$(DEPDIR)/test_metrics-mock-transport.Tpo -c -o src/bridge/test_metrics-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_metrics-mock-transport.Tpo src/bridge/$(DEPDIR)/test_metrics-mock-transport.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_metrics-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
+src/common/test_metrics-mock-transport.obj: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_metrics_CFLAGS) $(CFLAGS) -MT src/common/test_metrics-mock-transport.obj -MD -MP -MF src/common/$(DEPDIR)/test_metrics-mock-transport.Tpo -c -o src/common/test_metrics-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_metrics-mock-transport.Tpo src/common/$(DEPDIR)/test_metrics-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_metrics-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_metrics_CFLAGS) $(CFLAGS) -c -o src/bridge/test_metrics-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_metrics_CFLAGS) $(CFLAGS) -c -o src/common/test_metrics-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
 
 src/bridge/test_packages-test-packages.o: src/bridge/test-packages.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_packages_CFLAGS) $(CFLAGS) -MT src/bridge/test_packages-test-packages.o -MD -MP -MF src/bridge/$(DEPDIR)/test_packages-test-packages.Tpo -c -o src/bridge/test_packages-test-packages.o `test -f 'src/bridge/test-packages.c' || echo '$(srcdir)/'`src/bridge/test-packages.c
@@ -6353,19 +6437,19 @@ src/bridge/test_packages-test-packages.obj: src/bridge/test-packages.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_packages_CFLAGS) $(CFLAGS) -c -o src/bridge/test_packages-test-packages.obj `if test -f 'src/bridge/test-packages.c'; then $(CYGPATH_W) 'src/bridge/test-packages.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/test-packages.c'; fi`
 
-src/bridge/test_packages-mock-transport.o: src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_packages_CFLAGS) $(CFLAGS) -MT src/bridge/test_packages-mock-transport.o -MD -MP -MF src/bridge/$(DEPDIR)/test_packages-mock-transport.Tpo -c -o src/bridge/test_packages-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_packages-mock-transport.Tpo src/bridge/$(DEPDIR)/test_packages-mock-transport.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_packages-mock-transport.o' libtool=no @AMDEPBACKSLASH@
+src/common/test_packages-mock-transport.o: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_packages_CFLAGS) $(CFLAGS) -MT src/common/test_packages-mock-transport.o -MD -MP -MF src/common/$(DEPDIR)/test_packages-mock-transport.Tpo -c -o src/common/test_packages-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_packages-mock-transport.Tpo src/common/$(DEPDIR)/test_packages-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_packages-mock-transport.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_packages_CFLAGS) $(CFLAGS) -c -o src/bridge/test_packages-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_packages_CFLAGS) $(CFLAGS) -c -o src/common/test_packages-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
 
-src/bridge/test_packages-mock-transport.obj: src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_packages_CFLAGS) $(CFLAGS) -MT src/bridge/test_packages-mock-transport.obj -MD -MP -MF src/bridge/$(DEPDIR)/test_packages-mock-transport.Tpo -c -o src/bridge/test_packages-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_packages-mock-transport.Tpo src/bridge/$(DEPDIR)/test_packages-mock-transport.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_packages-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
+src/common/test_packages-mock-transport.obj: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_packages_CFLAGS) $(CFLAGS) -MT src/common/test_packages-mock-transport.obj -MD -MP -MF src/common/$(DEPDIR)/test_packages-mock-transport.Tpo -c -o src/common/test_packages-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_packages-mock-transport.Tpo src/common/$(DEPDIR)/test_packages-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_packages-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_packages_CFLAGS) $(CFLAGS) -c -o src/bridge/test_packages-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_packages_CFLAGS) $(CFLAGS) -c -o src/common/test_packages-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
 
 src/bridge/test_paths-test-paths.o: src/bridge/test-paths.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_paths_CFLAGS) $(CFLAGS) -MT src/bridge/test_paths-test-paths.o -MD -MP -MF src/bridge/$(DEPDIR)/test_paths-test-paths.Tpo -c -o src/bridge/test_paths-test-paths.o `test -f 'src/bridge/test-paths.c' || echo '$(srcdir)/'`src/bridge/test-paths.c
@@ -6395,19 +6479,19 @@ src/bridge/test_pcp-test-pcp.obj: src/bridge/test-pcp.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pcp_CFLAGS) $(CFLAGS) -c -o src/bridge/test_pcp-test-pcp.obj `if test -f 'src/bridge/test-pcp.c'; then $(CYGPATH_W) 'src/bridge/test-pcp.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/test-pcp.c'; fi`
 
-src/bridge/test_pcp-mock-transport.o: src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pcp_CFLAGS) $(CFLAGS) -MT src/bridge/test_pcp-mock-transport.o -MD -MP -MF src/bridge/$(DEPDIR)/test_pcp-mock-transport.Tpo -c -o src/bridge/test_pcp-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_pcp-mock-transport.Tpo src/bridge/$(DEPDIR)/test_pcp-mock-transport.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_pcp-mock-transport.o' libtool=no @AMDEPBACKSLASH@
+src/common/test_pcp-mock-transport.o: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pcp_CFLAGS) $(CFLAGS) -MT src/common/test_pcp-mock-transport.o -MD -MP -MF src/common/$(DEPDIR)/test_pcp-mock-transport.Tpo -c -o src/common/test_pcp-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_pcp-mock-transport.Tpo src/common/$(DEPDIR)/test_pcp-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_pcp-mock-transport.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pcp_CFLAGS) $(CFLAGS) -c -o src/bridge/test_pcp-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pcp_CFLAGS) $(CFLAGS) -c -o src/common/test_pcp-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
 
-src/bridge/test_pcp-mock-transport.obj: src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pcp_CFLAGS) $(CFLAGS) -MT src/bridge/test_pcp-mock-transport.obj -MD -MP -MF src/bridge/$(DEPDIR)/test_pcp-mock-transport.Tpo -c -o src/bridge/test_pcp-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_pcp-mock-transport.Tpo src/bridge/$(DEPDIR)/test_pcp-mock-transport.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_pcp-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
+src/common/test_pcp-mock-transport.obj: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pcp_CFLAGS) $(CFLAGS) -MT src/common/test_pcp-mock-transport.obj -MD -MP -MF src/common/$(DEPDIR)/test_pcp-mock-transport.Tpo -c -o src/common/test_pcp-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_pcp-mock-transport.Tpo src/common/$(DEPDIR)/test_pcp-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_pcp-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pcp_CFLAGS) $(CFLAGS) -c -o src/bridge/test_pcp-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pcp_CFLAGS) $(CFLAGS) -c -o src/common/test_pcp-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
 
 src/bridge/test_pcp_archives-test-pcp-archives.o: src/bridge/test-pcp-archives.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pcp_archives_CFLAGS) $(CFLAGS) -MT src/bridge/test_pcp_archives-test-pcp-archives.o -MD -MP -MF src/bridge/$(DEPDIR)/test_pcp_archives-test-pcp-archives.Tpo -c -o src/bridge/test_pcp_archives-test-pcp-archives.o `test -f 'src/bridge/test-pcp-archives.c' || echo '$(srcdir)/'`src/bridge/test-pcp-archives.c
@@ -6423,19 +6507,19 @@ src/bridge/test_pcp_archives-test-pcp-archives.obj: src/bridge/test-pcp-archives
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pcp_archives_CFLAGS) $(CFLAGS) -c -o src/bridge/test_pcp_archives-test-pcp-archives.obj `if test -f 'src/bridge/test-pcp-archives.c'; then $(CYGPATH_W) 'src/bridge/test-pcp-archives.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/test-pcp-archives.c'; fi`
 
-src/bridge/test_pcp_archives-mock-transport.o: src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pcp_archives_CFLAGS) $(CFLAGS) -MT src/bridge/test_pcp_archives-mock-transport.o -MD -MP -MF src/bridge/$(DEPDIR)/test_pcp_archives-mock-transport.Tpo -c -o src/bridge/test_pcp_archives-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_pcp_archives-mock-transport.Tpo src/bridge/$(DEPDIR)/test_pcp_archives-mock-transport.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_pcp_archives-mock-transport.o' libtool=no @AMDEPBACKSLASH@
+src/common/test_pcp_archives-mock-transport.o: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pcp_archives_CFLAGS) $(CFLAGS) -MT src/common/test_pcp_archives-mock-transport.o -MD -MP -MF src/common/$(DEPDIR)/test_pcp_archives-mock-transport.Tpo -c -o src/common/test_pcp_archives-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_pcp_archives-mock-transport.Tpo src/common/$(DEPDIR)/test_pcp_archives-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_pcp_archives-mock-transport.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pcp_archives_CFLAGS) $(CFLAGS) -c -o src/bridge/test_pcp_archives-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pcp_archives_CFLAGS) $(CFLAGS) -c -o src/common/test_pcp_archives-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
 
-src/bridge/test_pcp_archives-mock-transport.obj: src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pcp_archives_CFLAGS) $(CFLAGS) -MT src/bridge/test_pcp_archives-mock-transport.obj -MD -MP -MF src/bridge/$(DEPDIR)/test_pcp_archives-mock-transport.Tpo -c -o src/bridge/test_pcp_archives-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_pcp_archives-mock-transport.Tpo src/bridge/$(DEPDIR)/test_pcp_archives-mock-transport.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_pcp_archives-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
+src/common/test_pcp_archives-mock-transport.obj: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pcp_archives_CFLAGS) $(CFLAGS) -MT src/common/test_pcp_archives-mock-transport.obj -MD -MP -MF src/common/$(DEPDIR)/test_pcp_archives-mock-transport.Tpo -c -o src/common/test_pcp_archives-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_pcp_archives-mock-transport.Tpo src/common/$(DEPDIR)/test_pcp_archives-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_pcp_archives-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pcp_archives_CFLAGS) $(CFLAGS) -c -o src/bridge/test_pcp_archives-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pcp_archives_CFLAGS) $(CFLAGS) -c -o src/common/test_pcp_archives-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
 
 src/bridge/test_peer-test-peer.o: src/bridge/test-peer.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_peer_CFLAGS) $(CFLAGS) -MT src/bridge/test_peer-test-peer.o -MD -MP -MF src/bridge/$(DEPDIR)/test_peer-test-peer.Tpo -c -o src/bridge/test_peer-test-peer.o `test -f 'src/bridge/test-peer.c' || echo '$(srcdir)/'`src/bridge/test-peer.c
@@ -6451,19 +6535,19 @@ src/bridge/test_peer-test-peer.obj: src/bridge/test-peer.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_peer_CFLAGS) $(CFLAGS) -c -o src/bridge/test_peer-test-peer.obj `if test -f 'src/bridge/test-peer.c'; then $(CYGPATH_W) 'src/bridge/test-peer.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/test-peer.c'; fi`
 
-src/bridge/test_peer-mock-transport.o: src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_peer_CFLAGS) $(CFLAGS) -MT src/bridge/test_peer-mock-transport.o -MD -MP -MF src/bridge/$(DEPDIR)/test_peer-mock-transport.Tpo -c -o src/bridge/test_peer-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_peer-mock-transport.Tpo src/bridge/$(DEPDIR)/test_peer-mock-transport.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_peer-mock-transport.o' libtool=no @AMDEPBACKSLASH@
+src/common/test_peer-mock-transport.o: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_peer_CFLAGS) $(CFLAGS) -MT src/common/test_peer-mock-transport.o -MD -MP -MF src/common/$(DEPDIR)/test_peer-mock-transport.Tpo -c -o src/common/test_peer-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_peer-mock-transport.Tpo src/common/$(DEPDIR)/test_peer-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_peer-mock-transport.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_peer_CFLAGS) $(CFLAGS) -c -o src/bridge/test_peer-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_peer_CFLAGS) $(CFLAGS) -c -o src/common/test_peer-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
 
-src/bridge/test_peer-mock-transport.obj: src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_peer_CFLAGS) $(CFLAGS) -MT src/bridge/test_peer-mock-transport.obj -MD -MP -MF src/bridge/$(DEPDIR)/test_peer-mock-transport.Tpo -c -o src/bridge/test_peer-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_peer-mock-transport.Tpo src/bridge/$(DEPDIR)/test_peer-mock-transport.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_peer-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
+src/common/test_peer-mock-transport.obj: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_peer_CFLAGS) $(CFLAGS) -MT src/common/test_peer-mock-transport.obj -MD -MP -MF src/common/$(DEPDIR)/test_peer-mock-transport.Tpo -c -o src/common/test_peer-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_peer-mock-transport.Tpo src/common/$(DEPDIR)/test_peer-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_peer-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_peer_CFLAGS) $(CFLAGS) -c -o src/bridge/test_peer-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_peer_CFLAGS) $(CFLAGS) -c -o src/common/test_peer-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
 
 src/common/test_pipe-test-pipe.o: src/common/test-pipe.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pipe_CFLAGS) $(CFLAGS) -MT src/common/test_pipe-test-pipe.o -MD -MP -MF src/common/$(DEPDIR)/test_pipe-test-pipe.Tpo -c -o src/common/test_pipe-test-pipe.o `test -f 'src/common/test-pipe.c' || echo '$(srcdir)/'`src/common/test-pipe.c
@@ -6479,6 +6563,20 @@ src/common/test_pipe-test-pipe.obj: src/common/test-pipe.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pipe_CFLAGS) $(CFLAGS) -c -o src/common/test_pipe-test-pipe.obj `if test -f 'src/common/test-pipe.c'; then $(CYGPATH_W) 'src/common/test-pipe.c'; else $(CYGPATH_W) '$(srcdir)/src/common/test-pipe.c'; fi`
 
+src/common/test_pipe-mock-pressure.o: src/common/mock-pressure.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pipe_CFLAGS) $(CFLAGS) -MT src/common/test_pipe-mock-pressure.o -MD -MP -MF src/common/$(DEPDIR)/test_pipe-mock-pressure.Tpo -c -o src/common/test_pipe-mock-pressure.o `test -f 'src/common/mock-pressure.c' || echo '$(srcdir)/'`src/common/mock-pressure.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_pipe-mock-pressure.Tpo src/common/$(DEPDIR)/test_pipe-mock-pressure.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-pressure.c' object='src/common/test_pipe-mock-pressure.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pipe_CFLAGS) $(CFLAGS) -c -o src/common/test_pipe-mock-pressure.o `test -f 'src/common/mock-pressure.c' || echo '$(srcdir)/'`src/common/mock-pressure.c
+
+src/common/test_pipe-mock-pressure.obj: src/common/mock-pressure.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pipe_CFLAGS) $(CFLAGS) -MT src/common/test_pipe-mock-pressure.obj -MD -MP -MF src/common/$(DEPDIR)/test_pipe-mock-pressure.Tpo -c -o src/common/test_pipe-mock-pressure.obj `if test -f 'src/common/mock-pressure.c'; then $(CYGPATH_W) 'src/common/mock-pressure.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-pressure.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_pipe-mock-pressure.Tpo src/common/$(DEPDIR)/test_pipe-mock-pressure.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-pressure.c' object='src/common/test_pipe-mock-pressure.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pipe_CFLAGS) $(CFLAGS) -c -o src/common/test_pipe-mock-pressure.obj `if test -f 'src/common/mock-pressure.c'; then $(CYGPATH_W) 'src/common/mock-pressure.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-pressure.c'; fi`
+
 src/bridge/test_pipe_channel-test-pipe-channel.o: src/bridge/test-pipe-channel.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pipe_channel_CFLAGS) $(CFLAGS) -MT src/bridge/test_pipe_channel-test-pipe-channel.o -MD -MP -MF src/bridge/$(DEPDIR)/test_pipe_channel-test-pipe-channel.Tpo -c -o src/bridge/test_pipe_channel-test-pipe-channel.o `test -f 'src/bridge/test-pipe-channel.c' || echo '$(srcdir)/'`src/bridge/test-pipe-channel.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_pipe_channel-test-pipe-channel.Tpo src/bridge/$(DEPDIR)/test_pipe_channel-test-pipe-channel.Po
@@ -6493,19 +6591,19 @@ src/bridge/test_pipe_channel-test-pipe-channel.obj: src/bridge/test-pipe-channel
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pipe_channel_CFLAGS) $(CFLAGS) -c -o src/bridge/test_pipe_channel-test-pipe-channel.obj `if test -f 'src/bridge/test-pipe-channel.c'; then $(CYGPATH_W) 'src/bridge/test-pipe-channel.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/test-pipe-channel.c'; fi`
 
-src/bridge/test_pipe_channel-mock-transport.o: src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pipe_channel_CFLAGS) $(CFLAGS) -MT src/bridge/test_pipe_channel-mock-transport.o -MD -MP -MF src/bridge/$(DEPDIR)/test_pipe_channel-mock-transport.Tpo -c -o src/bridge/test_pipe_channel-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_pipe_channel-mock-transport.Tpo src/bridge/$(DEPDIR)/test_pipe_channel-mock-transport.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_pipe_channel-mock-transport.o' libtool=no @AMDEPBACKSLASH@
+src/common/test_pipe_channel-mock-transport.o: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pipe_channel_CFLAGS) $(CFLAGS) -MT src/common/test_pipe_channel-mock-transport.o -MD -MP -MF src/common/$(DEPDIR)/test_pipe_channel-mock-transport.Tpo -c -o src/common/test_pipe_channel-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_pipe_channel-mock-transport.Tpo src/common/$(DEPDIR)/test_pipe_channel-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_pipe_channel-mock-transport.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pipe_channel_CFLAGS) $(CFLAGS) -c -o src/bridge/test_pipe_channel-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pipe_channel_CFLAGS) $(CFLAGS) -c -o src/common/test_pipe_channel-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
 
-src/bridge/test_pipe_channel-mock-transport.obj: src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pipe_channel_CFLAGS) $(CFLAGS) -MT src/bridge/test_pipe_channel-mock-transport.obj -MD -MP -MF src/bridge/$(DEPDIR)/test_pipe_channel-mock-transport.Tpo -c -o src/bridge/test_pipe_channel-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_pipe_channel-mock-transport.Tpo src/bridge/$(DEPDIR)/test_pipe_channel-mock-transport.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_pipe_channel-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
+src/common/test_pipe_channel-mock-transport.obj: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pipe_channel_CFLAGS) $(CFLAGS) -MT src/common/test_pipe_channel-mock-transport.obj -MD -MP -MF src/common/$(DEPDIR)/test_pipe_channel-mock-transport.Tpo -c -o src/common/test_pipe_channel-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_pipe_channel-mock-transport.Tpo src/common/$(DEPDIR)/test_pipe_channel-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_pipe_channel-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pipe_channel_CFLAGS) $(CFLAGS) -c -o src/bridge/test_pipe_channel-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_pipe_channel_CFLAGS) $(CFLAGS) -c -o src/common/test_pipe_channel-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
 
 src/bridge/test_process-test-process.o: src/bridge/test-process.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_process_CFLAGS) $(CFLAGS) -MT src/bridge/test_process-test-process.o -MD -MP -MF src/bridge/$(DEPDIR)/test_process-test-process.Tpo -c -o src/bridge/test_process-test-process.o `test -f 'src/bridge/test-process.c' || echo '$(srcdir)/'`src/bridge/test-process.c
@@ -6577,33 +6675,33 @@ src/bridge/test_router-test-router.obj: src/bridge/test-router.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -c -o src/bridge/test_router-test-router.obj `if test -f 'src/bridge/test-router.c'; then $(CYGPATH_W) 'src/bridge/test-router.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/test-router.c'; fi`
 
-src/bridge/test_router-mock-channel.o: src/bridge/mock-channel.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -MT src/bridge/test_router-mock-channel.o -MD -MP -MF src/bridge/$(DEPDIR)/test_router-mock-channel.Tpo -c -o src/bridge/test_router-mock-channel.o `test -f 'src/bridge/mock-channel.c' || echo '$(srcdir)/'`src/bridge/mock-channel.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_router-mock-channel.Tpo src/bridge/$(DEPDIR)/test_router-mock-channel.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-channel.c' object='src/bridge/test_router-mock-channel.o' libtool=no @AMDEPBACKSLASH@
+src/common/test_router-mock-channel.o: src/common/mock-channel.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -MT src/common/test_router-mock-channel.o -MD -MP -MF src/common/$(DEPDIR)/test_router-mock-channel.Tpo -c -o src/common/test_router-mock-channel.o `test -f 'src/common/mock-channel.c' || echo '$(srcdir)/'`src/common/mock-channel.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_router-mock-channel.Tpo src/common/$(DEPDIR)/test_router-mock-channel.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-channel.c' object='src/common/test_router-mock-channel.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -c -o src/bridge/test_router-mock-channel.o `test -f 'src/bridge/mock-channel.c' || echo '$(srcdir)/'`src/bridge/mock-channel.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -c -o src/common/test_router-mock-channel.o `test -f 'src/common/mock-channel.c' || echo '$(srcdir)/'`src/common/mock-channel.c
 
-src/bridge/test_router-mock-channel.obj: src/bridge/mock-channel.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -MT src/bridge/test_router-mock-channel.obj -MD -MP -MF src/bridge/$(DEPDIR)/test_router-mock-channel.Tpo -c -o src/bridge/test_router-mock-channel.obj `if test -f 'src/bridge/mock-channel.c'; then $(CYGPATH_W) 'src/bridge/mock-channel.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-channel.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_router-mock-channel.Tpo src/bridge/$(DEPDIR)/test_router-mock-channel.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-channel.c' object='src/bridge/test_router-mock-channel.obj' libtool=no @AMDEPBACKSLASH@
+src/common/test_router-mock-channel.obj: src/common/mock-channel.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -MT src/common/test_router-mock-channel.obj -MD -MP -MF src/common/$(DEPDIR)/test_router-mock-channel.Tpo -c -o src/common/test_router-mock-channel.obj `if test -f 'src/common/mock-channel.c'; then $(CYGPATH_W) 'src/common/mock-channel.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-channel.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_router-mock-channel.Tpo src/common/$(DEPDIR)/test_router-mock-channel.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-channel.c' object='src/common/test_router-mock-channel.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -c -o src/bridge/test_router-mock-channel.obj `if test -f 'src/bridge/mock-channel.c'; then $(CYGPATH_W) 'src/bridge/mock-channel.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-channel.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -c -o src/common/test_router-mock-channel.obj `if test -f 'src/common/mock-channel.c'; then $(CYGPATH_W) 'src/common/mock-channel.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-channel.c'; fi`
 
-src/bridge/test_router-mock-transport.o: src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -MT src/bridge/test_router-mock-transport.o -MD -MP -MF src/bridge/$(DEPDIR)/test_router-mock-transport.Tpo -c -o src/bridge/test_router-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_router-mock-transport.Tpo src/bridge/$(DEPDIR)/test_router-mock-transport.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_router-mock-transport.o' libtool=no @AMDEPBACKSLASH@
+src/common/test_router-mock-transport.o: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -MT src/common/test_router-mock-transport.o -MD -MP -MF src/common/$(DEPDIR)/test_router-mock-transport.Tpo -c -o src/common/test_router-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_router-mock-transport.Tpo src/common/$(DEPDIR)/test_router-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_router-mock-transport.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -c -o src/bridge/test_router-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -c -o src/common/test_router-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
 
-src/bridge/test_router-mock-transport.obj: src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -MT src/bridge/test_router-mock-transport.obj -MD -MP -MF src/bridge/$(DEPDIR)/test_router-mock-transport.Tpo -c -o src/bridge/test_router-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_router-mock-transport.Tpo src/bridge/$(DEPDIR)/test_router-mock-transport.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_router-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
+src/common/test_router-mock-transport.obj: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -MT src/common/test_router-mock-transport.obj -MD -MP -MF src/common/$(DEPDIR)/test_router-mock-transport.Tpo -c -o src/common/test_router-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_router-mock-transport.Tpo src/common/$(DEPDIR)/test_router-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_router-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -c -o src/bridge/test_router-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_router_CFLAGS) $(CFLAGS) -c -o src/common/test_router-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
 
 src/bridge/test_rules-test-rules.o: src/bridge/test-rules.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_rules_CFLAGS) $(CFLAGS) -MT src/bridge/test_rules-test-rules.o -MD -MP -MF src/bridge/$(DEPDIR)/test_rules-test-rules.Tpo -c -o src/bridge/test_rules-test-rules.o `test -f 'src/bridge/test-rules.c' || echo '$(srcdir)/'`src/bridge/test-rules.c
@@ -6717,6 +6815,20 @@ src/common/test_stream-mock-io-stream.obj: src/common/mock-io-stream.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_stream_CFLAGS) $(CFLAGS) -c -o src/common/test_stream-mock-io-stream.obj `if test -f 'src/common/mock-io-stream.c'; then $(CYGPATH_W) 'src/common/mock-io-stream.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-io-stream.c'; fi`
 
+src/common/test_stream-mock-pressure.o: src/common/mock-pressure.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_stream_CFLAGS) $(CFLAGS) -MT src/common/test_stream-mock-pressure.o -MD -MP -MF src/common/$(DEPDIR)/test_stream-mock-pressure.Tpo -c -o src/common/test_stream-mock-pressure.o `test -f 'src/common/mock-pressure.c' || echo '$(srcdir)/'`src/common/mock-pressure.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_stream-mock-pressure.Tpo src/common/$(DEPDIR)/test_stream-mock-pressure.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-pressure.c' object='src/common/test_stream-mock-pressure.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_stream_CFLAGS) $(CFLAGS) -c -o src/common/test_stream-mock-pressure.o `test -f 'src/common/mock-pressure.c' || echo '$(srcdir)/'`src/common/mock-pressure.c
+
+src/common/test_stream-mock-pressure.obj: src/common/mock-pressure.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_stream_CFLAGS) $(CFLAGS) -MT src/common/test_stream-mock-pressure.obj -MD -MP -MF src/common/$(DEPDIR)/test_stream-mock-pressure.Tpo -c -o src/common/test_stream-mock-pressure.obj `if test -f 'src/common/mock-pressure.c'; then $(CYGPATH_W) 'src/common/mock-pressure.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-pressure.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_stream-mock-pressure.Tpo src/common/$(DEPDIR)/test_stream-mock-pressure.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-pressure.c' object='src/common/test_stream-mock-pressure.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_stream_CFLAGS) $(CFLAGS) -c -o src/common/test_stream-mock-pressure.obj `if test -f 'src/common/mock-pressure.c'; then $(CYGPATH_W) 'src/common/mock-pressure.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-pressure.c'; fi`
+
 src/common/test_system-test-system.o: src/common/test-system.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_system_CFLAGS) $(CFLAGS) -MT src/common/test_system-test-system.o -MD -MP -MF src/common/$(DEPDIR)/test_system-test-system.Tpo -c -o src/common/test_system-test-system.o `test -f 'src/common/test-system.c' || echo '$(srcdir)/'`src/common/test-system.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_system-test-system.Tpo src/common/$(DEPDIR)/test_system-test-system.Po
@@ -6758,6 +6870,20 @@ src/common/test_transport-test-transport.obj: src/common/test-transport.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/test-transport.c' object='src/common/test_transport-test-transport.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_transport_CFLAGS) $(CFLAGS) -c -o src/common/test_transport-test-transport.obj `if test -f 'src/common/test-transport.c'; then $(CYGPATH_W) 'src/common/test-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/test-transport.c'; fi`
+
+src/common/test_transport-mock-transport.o: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_transport_CFLAGS) $(CFLAGS) -MT src/common/test_transport-mock-transport.o -MD -MP -MF src/common/$(DEPDIR)/test_transport-mock-transport.Tpo -c -o src/common/test_transport-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_transport-mock-transport.Tpo src/common/$(DEPDIR)/test_transport-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_transport-mock-transport.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_transport_CFLAGS) $(CFLAGS) -c -o src/common/test_transport-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
+
+src/common/test_transport-mock-transport.obj: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_transport_CFLAGS) $(CFLAGS) -MT src/common/test_transport-mock-transport.obj -MD -MP -MF src/common/$(DEPDIR)/test_transport-mock-transport.Tpo -c -o src/common/test_transport-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_transport-mock-transport.Tpo src/common/$(DEPDIR)/test_transport-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_transport-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_transport_CFLAGS) $(CFLAGS) -c -o src/common/test_transport-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
 
 src/common/test_unicode-test-unicode.o: src/common/test-unicode.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_unicode_CFLAGS) $(CFLAGS) -MT src/common/test_unicode-test-unicode.o -MD -MP -MF src/common/$(DEPDIR)/test_unicode-test-unicode.Tpo -c -o src/common/test_unicode-test-unicode.o `test -f 'src/common/test-unicode.c' || echo '$(srcdir)/'`src/common/test-unicode.c
@@ -6913,6 +7039,20 @@ src/websocket/test_websocket-test-websocket.obj: src/websocket/test-websocket.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_websocket_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/websocket/test_websocket-test-websocket.obj `if test -f 'src/websocket/test-websocket.c'; then $(CYGPATH_W) 'src/websocket/test-websocket.c'; else $(CYGPATH_W) '$(srcdir)/src/websocket/test-websocket.c'; fi`
 
+src/common/test_websocket-mock-pressure.o: src/common/mock-pressure.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_websocket_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/common/test_websocket-mock-pressure.o -MD -MP -MF src/common/$(DEPDIR)/test_websocket-mock-pressure.Tpo -c -o src/common/test_websocket-mock-pressure.o `test -f 'src/common/mock-pressure.c' || echo '$(srcdir)/'`src/common/mock-pressure.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_websocket-mock-pressure.Tpo src/common/$(DEPDIR)/test_websocket-mock-pressure.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-pressure.c' object='src/common/test_websocket-mock-pressure.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_websocket_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/common/test_websocket-mock-pressure.o `test -f 'src/common/mock-pressure.c' || echo '$(srcdir)/'`src/common/mock-pressure.c
+
+src/common/test_websocket-mock-pressure.obj: src/common/mock-pressure.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_websocket_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/common/test_websocket-mock-pressure.obj -MD -MP -MF src/common/$(DEPDIR)/test_websocket-mock-pressure.Tpo -c -o src/common/test_websocket-mock-pressure.obj `if test -f 'src/common/mock-pressure.c'; then $(CYGPATH_W) 'src/common/mock-pressure.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-pressure.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_websocket-mock-pressure.Tpo src/common/$(DEPDIR)/test_websocket-mock-pressure.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-pressure.c' object='src/common/test_websocket-mock-pressure.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_websocket_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/common/test_websocket-mock-pressure.obj `if test -f 'src/common/mock-pressure.c'; then $(CYGPATH_W) 'src/common/mock-pressure.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-pressure.c'; fi`
+
 src/bridge/test_websocketstream-test-websocketstream.o: src/bridge/test-websocketstream.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_websocketstream_CFLAGS) $(CFLAGS) -MT src/bridge/test_websocketstream-test-websocketstream.o -MD -MP -MF src/bridge/$(DEPDIR)/test_websocketstream-test-websocketstream.Tpo -c -o src/bridge/test_websocketstream-test-websocketstream.o `test -f 'src/bridge/test-websocketstream.c' || echo '$(srcdir)/'`src/bridge/test-websocketstream.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_websocketstream-test-websocketstream.Tpo src/bridge/$(DEPDIR)/test_websocketstream-test-websocketstream.Po
@@ -6927,19 +7067,19 @@ src/bridge/test_websocketstream-test-websocketstream.obj: src/bridge/test-websoc
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_websocketstream_CFLAGS) $(CFLAGS) -c -o src/bridge/test_websocketstream-test-websocketstream.obj `if test -f 'src/bridge/test-websocketstream.c'; then $(CYGPATH_W) 'src/bridge/test-websocketstream.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/test-websocketstream.c'; fi`
 
-src/bridge/test_websocketstream-mock-transport.o: src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_websocketstream_CFLAGS) $(CFLAGS) -MT src/bridge/test_websocketstream-mock-transport.o -MD -MP -MF src/bridge/$(DEPDIR)/test_websocketstream-mock-transport.Tpo -c -o src/bridge/test_websocketstream-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_websocketstream-mock-transport.Tpo src/bridge/$(DEPDIR)/test_websocketstream-mock-transport.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_websocketstream-mock-transport.o' libtool=no @AMDEPBACKSLASH@
+src/common/test_websocketstream-mock-transport.o: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_websocketstream_CFLAGS) $(CFLAGS) -MT src/common/test_websocketstream-mock-transport.o -MD -MP -MF src/common/$(DEPDIR)/test_websocketstream-mock-transport.Tpo -c -o src/common/test_websocketstream-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_websocketstream-mock-transport.Tpo src/common/$(DEPDIR)/test_websocketstream-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_websocketstream-mock-transport.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_websocketstream_CFLAGS) $(CFLAGS) -c -o src/bridge/test_websocketstream-mock-transport.o `test -f 'src/bridge/mock-transport.c' || echo '$(srcdir)/'`src/bridge/mock-transport.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_websocketstream_CFLAGS) $(CFLAGS) -c -o src/common/test_websocketstream-mock-transport.o `test -f 'src/common/mock-transport.c' || echo '$(srcdir)/'`src/common/mock-transport.c
 
-src/bridge/test_websocketstream-mock-transport.obj: src/bridge/mock-transport.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_websocketstream_CFLAGS) $(CFLAGS) -MT src/bridge/test_websocketstream-mock-transport.obj -MD -MP -MF src/bridge/$(DEPDIR)/test_websocketstream-mock-transport.Tpo -c -o src/bridge/test_websocketstream-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/bridge/$(DEPDIR)/test_websocketstream-mock-transport.Tpo src/bridge/$(DEPDIR)/test_websocketstream-mock-transport.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/bridge/mock-transport.c' object='src/bridge/test_websocketstream-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
+src/common/test_websocketstream-mock-transport.obj: src/common/mock-transport.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_websocketstream_CFLAGS) $(CFLAGS) -MT src/common/test_websocketstream-mock-transport.obj -MD -MP -MF src/common/$(DEPDIR)/test_websocketstream-mock-transport.Tpo -c -o src/common/test_websocketstream-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_websocketstream-mock-transport.Tpo src/common/$(DEPDIR)/test_websocketstream-mock-transport.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/mock-transport.c' object='src/common/test_websocketstream-mock-transport.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_websocketstream_CFLAGS) $(CFLAGS) -c -o src/bridge/test_websocketstream-mock-transport.obj `if test -f 'src/bridge/mock-transport.c'; then $(CYGPATH_W) 'src/bridge/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/bridge/mock-transport.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_websocketstream_CFLAGS) $(CFLAGS) -c -o src/common/test_websocketstream-mock-transport.obj `if test -f 'src/common/mock-transport.c'; then $(CYGPATH_W) 'src/common/mock-transport.c'; else $(CYGPATH_W) '$(srcdir)/src/common/mock-transport.c'; fi`
 install-man1: $(man_MANS)
 	@$(NORMAL_INSTALL)
 	@list1=''; \
@@ -7837,13 +7977,6 @@ recheck: all $(check_PROGRAMS) $(check_SCRIPTS)
 	        am__force_recheck=am--force-recheck \
 	        TEST_LOGS="$$log_list"; \
 	exit $$?
-tools/test-bots.log: tools/test-bots
-	@p='tools/test-bots'; \
-	b='tools/test-bots'; \
-	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
-	--log-file $$b.log --trs-file $$b.trs \
-	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
-	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-paths.log: test-paths$(EXEEXT)
 	@p='test-paths$(EXEEXT)'; \
 	b='test-paths'; \
@@ -7854,13 +7987,6 @@ test-paths.log: test-paths$(EXEEXT)
 test-rules.log: test-rules$(EXEEXT)
 	@p='test-rules$(EXEEXT)'; \
 	b='test-rules'; \
-	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
-	--log-file $$b.log --trs-file $$b.trs \
-	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
-	"$$tst" $(AM_TESTS_FD_REDIRECT)
-test-channel.log: test-channel$(EXEEXT)
-	@p='test-channel$(EXEEXT)'; \
-	b='test-channel'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -8022,6 +8148,13 @@ test-pipe.log: test-pipe$(EXEEXT)
 test-transport.log: test-transport$(EXEEXT)
 	@p='test-transport$(EXEEXT)'; \
 	b='test-transport'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-channel.log: test-channel$(EXEEXT)
+	@p='test-channel$(EXEEXT)'; \
+	b='test-channel'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -8680,7 +8813,7 @@ valgrind-suppressions: $(VALGRIND_SUPPRESSIONS)
 check-memory: valgrind-suppressions
 	$(MAKE) LOG_FLAGS="-- valgrind $(VALGRIND_ARGS)" \
 	        HTML_LOG_FLAGS="valgrind $(VALGRIND_ARGS)" \
-		$(AM_MAKEFLAGS) check
+		$(AM_MAKEFLAGS) check TESTS="$(filter-out tools/% bots/%,$(TESTS))"
 recheck-memory: valgrind-suppressions
 	$(MAKE) LOG_FLAGS="-- valgrind $(VALGRIND_ARGS)" \
 	        HTML_LOG_FLAGS="valgrind $(VALGRIND_ARGS)" \

@@ -1,5 +1,5 @@
 # Generated Makefile data for subscriptions
-# Stamp: Wed Jun 27 2018 17:21:55 GMT+0000 (UTC)
+# Stamp: Wed Jul 11 2018 14:32:39 GMT+0000 (UTC)
 
 subscriptions_INPUTS = \
 	node_modules/bootstrap/LICENSE \

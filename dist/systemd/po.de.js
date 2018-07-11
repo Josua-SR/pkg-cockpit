@@ -81,6 +81,10 @@ return plural;
   "$0 Stunde",
   "$0 Stunden"
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
  "$0 minute": [
   "$0 minutes",
   "$0 Minute",
@@ -95,6 +99,10 @@ return plural;
   "$0 weeks",
   "$0 Woche",
   "$0 Wochen"
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
  ],
  "$0 year": [
   "$0 years",
@@ -285,6 +293,10 @@ return plural;
   null,
   "9."
  ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Advanced TCA": [
   null,
   ""
@@ -393,6 +405,10 @@ return plural;
   null,
   ""
  ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
  "Class": [
   null,
   ""
@@ -497,6 +513,10 @@ return plural;
   null,
   ""
  ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
  "Embedded PC": [
   null,
   ""
@@ -508,6 +528,10 @@ return plural;
  "Enable Forcefully": [
   null,
   "Gewaltsam Einschalten"
+ ],
+ "Enable persistent metrics…": [
+  null,
+  ""
  ],
  "Enabled": [
   null,
@@ -594,6 +618,18 @@ return plural;
   ""
  ],
  "Info and above": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  ""
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
   null,
   ""
  ],
@@ -805,6 +841,10 @@ return plural;
   null,
   "Aus"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "On": [
   null,
   "Ein"
@@ -922,6 +962,14 @@ return plural;
   "Neu Laden"
  ],
  "Reload Propagated From": [
+  null,
+  ""
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
   null,
   ""
  ],
@@ -1157,11 +1205,19 @@ return plural;
   null,
   ""
  ],
+ "The user <b>$0</b> is not permitted to enable or disable services": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
   "Der Benutzer <b>$0</b> hat keine Rechte, Hostnamen zu verändern"
  ],
  "The user <b>$0</b> is not permitted to shutdown or restart this server": [
+  null,
+  ""
+ ],
+ "The user <b>$0</b> is not permitted to start or stop services": [
   null,
   ""
  ],
@@ -1190,6 +1246,10 @@ return plural;
   "Zeitzone"
  ],
  "Timers": [
+  null,
+  ""
+ ],
+ "Total size: $0": [
   null,
   ""
  ],
@@ -1249,6 +1309,10 @@ return plural;
  "Version": [
   null,
   "Version"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "Wanted By": [
   null,

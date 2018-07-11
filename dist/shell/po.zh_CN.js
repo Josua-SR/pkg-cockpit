@@ -283,14 +283,6 @@ return plural;
   null,
   "授权为："
  ],
- "Lock to prevent privileged tasks": [
-  null,
-  "锁定以阻止特权任务"
- ],
- "Locked": [
-  null,
-  "已锁定"
- ],
  "Log In": [
   null,
   "登录"
@@ -310,6 +302,10 @@ return plural;
  "Login Password": [
   null,
   "登录密码"
+ ],
+ "Login has escalated admin privileges": [
+  null,
+  ""
  ],
  "Machines": [
   null,
@@ -379,9 +375,9 @@ return plural;
   null,
   "端口"
  ],
- "Privileged tasks not available": [
+ "Privileged": [
   null,
-  "特权任务不可用"
+  ""
  ],
  "Project website": [
   null,
@@ -494,10 +490,6 @@ return plural;
  "Unlock Key": [
   null,
   "解锁密钥"
- ],
- "Unlocked": [
-  null,
-  "解锁"
  ],
  "Update": [
   null,

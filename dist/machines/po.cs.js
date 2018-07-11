@@ -71,6 +71,10 @@ return plural;
   null,
   "$0 je k dispozici pro většinu operačních systémů. K instalaci je třeba hledat v GNOME Software nebo spustit:"
  ],
+ "$0 vCPU Details": [
+  null,
+  ""
+ ],
  "Additional": [
   null,
   "Další"
@@ -82,6 +86,14 @@ return plural;
  "Address:": [
   null,
   "Adresa:"
+ ],
+ "All changes will take effect only after stopping and starting the VM.": [
+  null,
+  ""
+ ],
+ "Apply": [
+  null,
+  "Použít"
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -151,6 +163,10 @@ return plural;
   null,
   ""
  ],
+ "Cores per socket": [
+  null,
+  ""
+ ],
  "Count:": [
   null,
   ""
@@ -203,6 +219,10 @@ return plural;
   null,
   ""
  ],
+ "Fewer than the maximum number of virtual CPUs should be enabled.": [
+  null,
+  ""
+ ],
  "File": [
   null,
   "Soubor"
@@ -216,6 +236,10 @@ return plural;
   ""
  ],
  "Force Shut Down": [
+  null,
+  ""
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
   null,
   ""
  ],
@@ -284,6 +308,10 @@ return plural;
   ""
  ],
  "Manual Connection": [
+  null,
+  ""
+ ],
+ "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
   ""
  ],
@@ -395,6 +423,10 @@ return plural;
   null,
   ""
  ],
+ "Preferred number of sockets to expose to the guest.": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protokol"
@@ -418,6 +450,10 @@ return plural;
  "Run": [
   null,
   "Spustit"
+ ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  ""
  ],
  "SPICE": [
   null,
@@ -454,6 +490,10 @@ return plural;
  "Shut Down": [
   null,
   "Ukončit"
+ ],
+ "Sockets": [
+  null,
+  ""
  ],
  "Source": [
   null,
@@ -524,6 +564,10 @@ return plural;
   ""
  ],
  "The VM is suspended by guest power management.": [
+  null,
+  ""
+ ],
+ "Threads per cores": [
   null,
   ""
  ],
@@ -742,6 +786,14 @@ return plural;
  "user": [
   null,
   "uživatel"
+ ],
+ "vCPU Count": [
+  null,
+  ""
+ ],
+ "vCPU Maximum": [
+  null,
+  ""
  ],
  "vCPUs:": [
   null,

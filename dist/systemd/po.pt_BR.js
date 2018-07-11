@@ -81,6 +81,10 @@ return plural;
   "$0 horas",
   "$0 horas"
  ],
+ "$0 is not available from any repository.": [
+  null,
+  "$0 não está disponível em nenhum repositório."
+ ],
  "$0 minute": [
   "$0 minutes",
   "$0 minuto",
@@ -95,6 +99,10 @@ return plural;
   "$0 weeks",
   "$0 semana",
   "$0 semanas"
+ ],
+ "$0 will be installed.": [
+  null,
+  "$0 será instalado."
  ],
  "$0 year": [
   "$0 years",
@@ -285,6 +293,10 @@ return plural;
   null,
   "9º"
  ],
+ "Additional packages:": [
+  null,
+  "Pacotes adicionais:"
+ ],
  "Advanced TCA": [
   null,
   "TCA Avançado"
@@ -335,11 +347,11 @@ return plural;
  ],
  "Before": [
   null,
-  ""
+  "Antes"
  ],
  "Binds To": [
   null,
-  ""
+  "Vincula a"
  ],
  "Blade": [
   null,
@@ -351,7 +363,7 @@ return plural;
  ],
  "Bound By": [
   null,
-  ""
+  "Vinculado pela"
  ],
  "Bug Fix Updates Available": [
   null,
@@ -393,6 +405,10 @@ return plural;
   null,
   "Verificando atualizações ..."
  ],
+ "Checking installed software": [
+  null,
+  "Verificando o software instalado"
+ ],
  "Class": [
   null,
   "Classe"
@@ -423,15 +439,15 @@ return plural;
  ],
  "Conflicted By": [
   null,
-  ""
+  "Conflito por"
  ],
  "Conflicts": [
   null,
-  ""
+  "Conflitos"
  ],
  "Consists Of": [
   null,
-  ""
+  "Consiste em"
  ],
  "Convertible": [
   null,
@@ -497,6 +513,10 @@ return plural;
   null,
   "Não Repita"
  ],
+ "Downloading $0": [
+  null,
+  "Baixando $0"
+ ],
  "Embedded PC": [
   null,
   "Embedded PC"
@@ -508,6 +528,10 @@ return plural;
  "Enable Forcefully": [
   null,
   "Habilite Forçosamente"
+ ],
+ "Enable persistent metrics…": [
+  null,
+  ""
  ],
  "Enabled": [
   null,
@@ -596,6 +620,18 @@ return plural;
  "Info and above": [
   null,
   "Info e acima"
+ ],
+ "Install": [
+  null,
+  "Instale"
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
+  null,
+  ""
  ],
  "Instantiate": [
   null,
@@ -805,6 +841,10 @@ return plural;
   null,
   "Desligado"
  ],
+ "Ok": [
+  null,
+  "Ok"
+ ],
  "On": [
   null,
   "Ligado"
@@ -922,6 +962,14 @@ return plural;
   "Recarregar"
  ],
  "Reload Propagated From": [
+  null,
+  ""
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
   null,
   ""
  ],
@@ -1157,6 +1205,10 @@ return plural;
   null,
   ""
  ],
+ "The user <b>$0</b> is not permitted to enable or disable services": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
   "O usuário <b>$0</b> não tem permissão para modificar os hostnames"
@@ -1164,6 +1216,10 @@ return plural;
  "The user <b>$0</b> is not permitted to shutdown or restart this server": [
   null,
   "Ao usuário <b>$0</b>não é permitido modificar serviços"
+ ],
+ "The user <b>$0</b> is not permitted to start or stop services": [
+  null,
+  ""
  ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
@@ -1192,6 +1248,10 @@ return plural;
  "Timers": [
   null,
   "Temporizadores"
+ ],
+ "Total size: $0": [
+  null,
+  ""
  ],
  "Tower": [
   null,
@@ -1249,6 +1309,10 @@ return plural;
  "Version": [
   null,
   "Versão"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "Wanted By": [
   null,

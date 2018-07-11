@@ -21,28 +21,30 @@
 
 #include "cockpitchannel.h"
 
+#include "common/cockpitflow.h"
 #include "common/cockpitjson.h"
-#include "common/cockpitloopback.h"
 #include "common/cockpitunicode.h"
 
 #include <json-glib/json-glib.h>
 
-#include <gio/gunixsocketaddress.h>
-
-#include <glib/gstdio.h>
-
-#include <errno.h>
 #include <stdlib.h>
 #include <string.h>
-
-const gchar * cockpit_bridge_local_address = NULL;
 
 /**
  * CockpitChannel:
  *
- * A base class for the server (ie: bridge) side of a channel. Derived
- * classes implement the actual payload contents, opening the channel
- * etc...
+ * A base class for channels. Derived classes implement the actual payload
+ * contents, opening the channel etc...
+ *
+ * A CockpitChannel is the base class for C code where messages on
+ * the internal protocol are translated to IO of another type, be
+ * that HTTP, stdio, DBus, WebSocket, file access, or whatever. Another
+ * similar analogue to this code is the javascript cockpit.channel code
+ * in cockpit.js.
+ *
+ * Most uses of this code are in the bridges, but cockpit-ws also (rarely)
+ * uses CockpitChannel to translate the frontend side of channels to HTTP
+ * or WebSocket responses.
  *
  * The channel queues messages received until unfrozen. The caller can
  * start off a channel as frozen, and then the implementation later
@@ -53,7 +55,21 @@ const gchar * cockpit_bridge_local_address = NULL;
  * individually either for failure reasons, or with an orderly shutdown.
  *
  * See doc/protocol.md for information about channels.
+ *
+ * A channel can do flow control in two ways:
+ *
+ *  - It can throttle its peer sending data, by delaying responding to "ping"
+ *    messages. It can listen to a "pressure" signal to control this.
+ *  - It can optionally control another flow, by emitting a "pressure" signal
+ *    when its peer receiving data does not respond to "ping" messages within
+ *    a given window.
  */
+
+/* Every 16K Send a ping */
+#define  CHANNEL_FLOW_PING        (16L * 1024L)
+
+/* Allow up to 1MB of data to be sent without ack */
+#define  CHANNEL_FLOW_WINDOW       (2L * 1024L * 1024L)
 
 struct _CockpitChannelPrivate {
     gulong recv_sig;
@@ -92,6 +108,15 @@ struct _CockpitChannelPrivate {
     /* Buffer for incomplete unicode bytes */
     GBytes *out_buffer;
     gint buffer_timeout;
+
+    /* The number of bytes sent, and current flow control window */
+    gint64 out_sequence;
+    gint64 out_window;
+
+    /* Another object giving back-pressure on received data */
+    CockpitFlow *pressure;
+    gulong pressure_sig;
+    GQueue *throttled;
 };
 
 enum {
@@ -104,7 +129,10 @@ enum {
 
 static guint cockpit_channel_sig_closed;
 
-G_DEFINE_TYPE (CockpitChannel, cockpit_channel, G_TYPE_OBJECT);
+static void    cockpit_channel_flow_iface_init     (CockpitFlowIface *iface);
+
+G_DEFINE_TYPE_WITH_CODE (CockpitChannel, cockpit_channel, G_TYPE_OBJECT,
+                         G_IMPLEMENT_INTERFACE (COCKPIT_TYPE_FLOW, cockpit_channel_flow_iface_init));
 
 static gboolean
 on_idle_prepare (gpointer data)
@@ -122,6 +150,9 @@ cockpit_channel_init (CockpitChannel *self)
 {
   self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self, COCKPIT_TYPE_CHANNEL,
                                             CockpitChannelPrivate);
+
+  self->priv->out_sequence = 0;
+  self->priv->out_window = CHANNEL_FLOW_WINDOW;
 }
 
 static void
@@ -137,8 +168,8 @@ process_recv (CockpitChannel *self,
   else
     {
       klass = COCKPIT_CHANNEL_GET_CLASS (self);
-      g_assert (klass->recv);
-      (klass->recv) (self, payload);
+      if (klass->recv)
+        (klass->recv) (self, payload);
     }
 }
 
@@ -155,6 +186,61 @@ on_transport_recv (CockpitTransport *transport,
 
   process_recv (self, data);
   return TRUE;
+}
+
+static gboolean
+process_ping (CockpitChannel *self,
+              JsonObject *ping)
+{
+  GBytes *payload;
+
+  if (self->priv->throttled)
+    {
+      g_debug ("%s: received ping while throttled", self->priv->id);
+      g_queue_push_tail (self->priv->throttled, json_object_ref (ping));
+      return FALSE;
+    }
+  else
+    {
+      g_debug ("%s: replying to ping with pong", self->priv->id);
+      json_object_set_string_member (ping, "command", "pong");
+      payload = cockpit_json_write_bytes (ping);
+      cockpit_transport_send (self->priv->transport, NULL, payload);
+      g_bytes_unref (payload);
+      return TRUE;
+    }
+}
+
+static gboolean
+process_pong (CockpitChannel *self,
+              JsonObject *pong)
+{
+  gint64 sequence;
+
+  if (!cockpit_json_get_int (pong, "sequence", -1, &sequence))
+    {
+      g_message ("%s: received invalid \"pong\" \"sequence\" field", self->priv->id);
+      sequence = -1;
+    }
+
+  g_debug ("%s: received pong with sequence: %" G_GINT64_FORMAT, self->priv->id, sequence);
+  if (sequence > self->priv->out_window + (CHANNEL_FLOW_WINDOW * 10))
+    {
+      g_message ("%s: received a flow control ack with a suspiciously large sequence: %" G_GINT64_FORMAT,
+                 self->priv->id, sequence);
+    }
+
+  if (sequence > self->priv->out_window)
+    {
+      /* Up to this point has been confirmed received */
+      self->priv->out_window = sequence + CHANNEL_FLOW_WINDOW;
+
+      /* If our sent bytes are within the window, no longer under pressure */
+      if (self->priv->out_sequence <= self->priv->out_window)
+        cockpit_flow_emit_pressure (COCKPIT_FLOW (self), FALSE);
+    }
+
+    return FALSE;
 }
 
 static void
@@ -174,7 +260,17 @@ process_control (CockpitChannel *self,
       return;
     }
 
-  if (g_str_equal (command, "done"))
+  if (g_str_equal (command, "ping"))
+    {
+      process_ping (self, options);
+      return;
+    }
+  else if (g_str_equal (command, "pong"))
+    {
+      process_pong (self, options);
+      return;
+    }
+  else if (g_str_equal (command, "done"))
     {
       if (self->priv->received_done)
         cockpit_channel_fail (self, "protocol-error", "channel received second done");
@@ -224,6 +320,9 @@ cockpit_channel_actual_send (CockpitChannel *self,
                              gboolean trust_is_utf8)
 {
   GBytes *validated = NULL;
+  guint64 out_sequence;
+  JsonObject *ping;
+  gsize size;
 
   g_return_if_fail (self->priv->out_buffer == NULL);
   g_return_if_fail (self->priv->buffer_timeout == 0);
@@ -235,6 +334,35 @@ cockpit_channel_actual_send (CockpitChannel *self,
     }
 
   cockpit_transport_send (self->priv->transport, self->priv->id, payload);
+
+  /* A wraparound of our gint64 size */
+  size = g_bytes_get_size (payload);
+  if (G_MAXINT64 - size < self->priv->out_sequence)
+    {
+      self->priv->out_sequence = 0;
+      self->priv->out_window = CHANNEL_FLOW_WINDOW;
+    }
+
+  /* How many bytes have been sent (queued) */
+  out_sequence = self->priv->out_sequence + size;
+
+  /* Every CHANNEL_FLOW_PING bytes we send a ping */
+  if (out_sequence / CHANNEL_FLOW_PING != self->priv->out_sequence / CHANNEL_FLOW_PING)
+    {
+      ping = json_object_new ();
+      json_object_set_int_member (ping, "sequence", out_sequence);
+      cockpit_channel_control (self, "ping", ping);
+      g_debug ("%s: sending ping with sequence: %" G_GINT64_FORMAT, self->priv->id, out_sequence);
+      json_object_unref (ping);
+    }
+
+  /* If we've sent more than the window, apply back pressure */
+  self->priv->out_sequence = out_sequence;
+  if (self->priv->out_sequence > self->priv->out_window)
+    {
+      g_debug ("%s: sent too much data without acknowledgement, emitting back pressure", self->priv->id);
+      cockpit_flow_emit_pressure (COCKPIT_FLOW (self), TRUE);
+    }
 
   if (validated)
     g_bytes_unref (validated);
@@ -268,6 +396,7 @@ cockpit_channel_constructed (GObject *object)
   G_OBJECT_CLASS (cockpit_channel_parent_class)->constructed (object);
 
   g_return_if_fail (self->priv->id != NULL);
+  g_return_if_fail (self->priv->transport != NULL);
 
   self->priv->capabilities = NULL;
   self->priv->recv_sig = g_signal_connect (self->priv->transport, "recv",
@@ -477,6 +606,12 @@ cockpit_channel_dispose (GObject *object)
     g_bytes_unref (self->priv->out_buffer);
   self->priv->out_buffer = NULL;
 
+  cockpit_flow_throttle (COCKPIT_FLOW (self), NULL);
+  g_assert (self->priv->pressure == NULL);
+  if (self->priv->throttled)
+    g_queue_free_full (self->priv->throttled, (GDestroyNotify)json_object_unref);
+  self->priv->throttled = NULL;
+
   G_OBJECT_CLASS (cockpit_channel_parent_class)->dispose (object);
 }
 
@@ -542,9 +677,6 @@ static void
 cockpit_channel_class_init (CockpitChannelClass *klass)
 {
   GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
-  GSocketAddress *address;
-  GInetAddress *inet;
-  const gchar *port;
 
   gobject_class->constructed = cockpit_channel_constructed;
   gobject_class->get_property = cockpit_channel_get_property;
@@ -610,22 +742,6 @@ cockpit_channel_class_init (CockpitChannelClass *klass)
                                              NULL, NULL, NULL, G_TYPE_NONE, 1, G_TYPE_STRING);
 
   g_type_class_add_private (klass, sizeof (CockpitChannelPrivate));
-
-
-  /*
-   * If we're running under a test server, register that server's HTTP address
-   * as an internal address, available for use in cockpit channels.
-   */
-
-  port = g_getenv ("COCKPIT_TEST_SERVER_PORT");
-  if (port)
-    {
-      inet = g_inet_address_new_loopback (G_SOCKET_FAMILY_IPV4);
-      address = g_inet_socket_address_new (inet, atoi (port));
-      cockpit_channel_internal_address ("/test-server", address);
-      g_object_unref (address);
-      g_object_unref (inet);
-    }
 }
 
 /**
@@ -806,6 +922,21 @@ cockpit_channel_get_options (CockpitChannel *self)
 }
 
 /**
+ * cockpit_channel_get_transport:
+ * @self: a channel
+ *
+ * Called by implementations to get the channel's transtport.
+ *
+ * Returns: (transfer none): the transport, should not be NULL
+ */
+CockpitTransport *
+cockpit_channel_get_transport (CockpitChannel *self)
+{
+  g_return_val_if_fail (COCKPIT_IS_CHANNEL (self), NULL);
+  return self->priv->transport;
+}
+
+/**
  * cockpit_channel_close_options
  * @self: a channel
  *
@@ -942,565 +1073,65 @@ out:
   g_free (problem_copy);
 }
 
-static GHashTable *internal_addresses;
+static void
+on_throttle_pressure (GObject *object,
+                      gboolean throttle,
+                      gpointer user_data)
+{
+  CockpitChannel *self = COCKPIT_CHANNEL (user_data);
+  GQueue *throttled;
+  JsonObject *ping;
+
+  if (throttle)
+    {
+      if (!self->priv->throttled)
+        self->priv->throttled = g_queue_new ();
+    }
+  else
+    {
+      throttled = self->priv->throttled;
+      self->priv->throttled = NULL;
+      while (throttled)
+        {
+          ping = g_queue_pop_head (throttled);
+          if (!ping)
+            {
+              g_queue_free (throttled);
+              throttled = NULL;
+            }
+          else
+            {
+              if (!process_ping (self, ping))
+                g_assert_not_reached (); /* Because throttle is FALSE */
+              json_object_unref (ping);
+            }
+        }
+    }
+}
 
 static void
-safe_unref (gpointer data)
+cockpit_channel_throttle (CockpitFlow *flow,
+                          CockpitFlow *controlling)
 {
-  GObject *object = data;
-  if (object != NULL)
-    g_object_unref (object);
-}
+  CockpitChannel *self = COCKPIT_CHANNEL (flow);
 
-static gboolean
-lookup_internal (const gchar *name,
-                 GSocketConnectable **connectable)
-{
-  const gchar *env;
-  gboolean ret = FALSE;
-  GSocketAddress *address;
-
-  g_assert (name != NULL);
-  g_assert (connectable != NULL);
-
-  if (internal_addresses)
+  if (self->priv->pressure)
     {
-      ret = g_hash_table_lookup_extended (internal_addresses, name, NULL,
-                                          (gpointer *)connectable);
+      g_signal_handler_disconnect (self->priv->pressure, self->priv->pressure_sig);
+      g_object_remove_weak_pointer (G_OBJECT (self->priv->pressure), (gpointer *)&self->priv->pressure);
+      self->priv->pressure = NULL;
     }
 
-  if (!ret && g_str_equal (name, "ssh-agent"))
+  if (controlling)
     {
-      *connectable = NULL;
-      env = g_getenv ("SSH_AUTH_SOCK");
-      if (env != NULL && env[0] != '\0')
-        {
-          address = g_unix_socket_address_new (env);
-          *connectable = G_SOCKET_CONNECTABLE (address);
-          cockpit_channel_internal_address ("ssh-agent", address);
-        }
-      ret = TRUE;
-    }
-
-  return ret;
-}
-
-void
-cockpit_channel_internal_address (const gchar *name,
-                                  GSocketAddress *address)
-{
-  if (!internal_addresses)
-    {
-      internal_addresses = g_hash_table_new_full (g_str_hash, g_str_equal,
-                                                  g_free, safe_unref);
-    }
-
-  if (address)
-    address = g_object_ref (address);
-
-  g_hash_table_replace (internal_addresses, g_strdup (name), address);
-}
-
-gboolean
-cockpit_channel_remove_internal_address (const gchar *name)
-{
-  gboolean ret = FALSE;
-  if (internal_addresses)
-      ret = g_hash_table_remove (internal_addresses, name);
-  return ret;
-}
-
-static GSocketConnectable *
-parse_address (CockpitChannel *self,
-               gchar **possible_name,
-               gboolean *local_address)
-{
-  GSocketConnectable *connectable = NULL;
-  const gchar *unix_path;
-  const gchar *internal;
-  const gchar *address;
-  JsonObject *options;
-  gboolean local = FALSE;
-  GError *error = NULL;
-  const gchar *host;
-  gint64 port;
-  gchar *name = NULL;
-  gboolean open = FALSE;
-
-  options = self->priv->open_options;
-  if (!cockpit_json_get_string (options, "unix", NULL, &unix_path))
-    {
-      cockpit_channel_fail (self, "protocol-error", "invalid \"unix\" option in channel");
-      goto out;
-    }
-  if (!cockpit_json_get_int (options, "port", G_MAXINT64, &port))
-    {
-      cockpit_channel_fail (self, "protocol-error", "invalid \"port\" option in channel");
-      goto out;
-    }
-  if (!cockpit_json_get_string (options, "internal", NULL, &internal))
-    {
-      cockpit_channel_fail (self, "protocol-error", "invalid \"internal\" option in channel");
-      goto out;
-    }
-  if (!cockpit_json_get_string (options, "address", NULL, &address))
-    {
-      cockpit_channel_fail (self, "protocol-error", "invalid \"address\" option in channel");
-      goto out;
-    }
-
-  if (port != G_MAXINT64 && unix_path)
-    {
-      cockpit_channel_fail (self, "protocol-error", "cannot specify both \"port\" and \"unix\" options");
-      goto out;
-    }
-  else if (port != G_MAXINT64)
-    {
-      if (port <= 0 || port > 65535)
-        {
-          cockpit_channel_fail (self, "protocol-error", "received invalid \"port\" option");
-          goto out;
-        }
-
-      if (address)
-        {
-          connectable = g_network_address_new (address, port);
-          host = address;
-
-          /* This isn't perfect, but matches the use case. Specify address => non-local */
-          local = FALSE;
-        }
-      else if (cockpit_bridge_local_address)
-        {
-          connectable = g_network_address_parse (cockpit_bridge_local_address, port, &error);
-          host = cockpit_bridge_local_address;
-          local = TRUE;
-        }
-      else
-        {
-          connectable = cockpit_loopback_new (port);
-          host = "localhost";
-          local = TRUE;
-        }
-
-      if (error != NULL)
-        {
-          cockpit_channel_fail (self, "internal-error",
-                                "couldn't parse local address: %s: %s", host, error->message);
-          goto out;
-        }
-      else
-        {
-          name = g_strdup_printf ("%s:%d", host, (gint)port);
-        }
-    }
-  else if (unix_path)
-    {
-      name = g_strdup (unix_path);
-      connectable = G_SOCKET_CONNECTABLE (g_unix_socket_address_new (unix_path));
-      local = FALSE;
-    }
-  else if (internal)
-    {
-      gboolean reg = lookup_internal (internal, &connectable);
-
-      if (!connectable)
-        {
-          if (reg)
-            cockpit_channel_close (self, "not-found");
-          else
-            cockpit_channel_fail (self, "not-found", "couldn't find internal address: %s", internal);
-          goto out;
-        }
-
-      name = g_strdup (internal);
-      connectable = g_object_ref (connectable);
-      local = FALSE;
-    }
-  else
-    {
-      cockpit_channel_fail (self, "protocol-error",
-                            "no \"port\" or \"unix\" or other address option for channel");
-      goto out;
-    }
-
-  open = TRUE;
-
-out:
-  g_clear_error (&error);
-  if (open)
-    {
-      if (possible_name)
-          *possible_name = g_strdup (name);
-      if (local_address)
-        *local_address = local;
-    }
-  else
-    {
-      if (connectable)
-        g_object_unref (connectable);
-      connectable = NULL;
-    }
-
-  g_free (name);
-  return connectable;
-}
-
-GSocketAddress *
-cockpit_channel_parse_address (CockpitChannel *self,
-                               gchar **possible_name)
-{
-  GSocketConnectable *connectable;
-  GSocketAddressEnumerator *enumerator;
-  GSocketAddress *address;
-  GError *error = NULL;
-  gchar *name = NULL;
-
-  connectable = parse_address (self, &name, NULL);
-  if (!connectable)
-    return NULL;
-
-  /* This is sync, but realistically, it doesn't matter for current use cases */
-  enumerator = g_socket_connectable_enumerate (connectable);
-  g_object_unref (connectable);
-
-  address = g_socket_address_enumerator_next (enumerator, NULL, &error);
-  g_object_unref (enumerator);
-
-  if (error != NULL)
-    {
-      cockpit_channel_fail (self, "not-found", "couldn't find address: %s: %s", name, error->message);
-      g_error_free (error);
-      g_free (name);
-      return NULL;
-    }
-
-  if (possible_name)
-    *possible_name = name;
-  else
-    g_free (name);
-
-  return address;
-}
-
-static gboolean
-parse_option_file_or_data (CockpitChannel *self,
-                           JsonObject *options,
-                           const gchar *option,
-                           const gchar **file,
-                           const gchar **data)
-{
-  JsonObject *object;
-  JsonNode *node;
-
-  g_assert (file != NULL);
-  g_assert (data != NULL);
-
-  node = json_object_get_member (options, option);
-  if (!node)
-    {
-      *file = NULL;
-      *data = NULL;
-      return TRUE;
-    }
-
-  if (!JSON_NODE_HOLDS_OBJECT (node))
-    {
-      cockpit_channel_fail (self, "protocol-error", "invalid \"%s\" tls option for channel", option);
-      return FALSE;
-    }
-
-  object = json_node_get_object (node);
-
-  if (!cockpit_json_get_string (object, "file", NULL, file))
-    {
-      cockpit_channel_fail (self, "protocol-error", "invalid \"file\" %s option for channel", option);
-    }
-  else if (!cockpit_json_get_string (object, "data", NULL, data))
-    {
-      cockpit_channel_fail (self, "protocol-error", "invalid \"data\" %s option for channel", option);
-    }
-  else if (!*file && !*data)
-    {
-      cockpit_channel_fail (self, "not-supported", "missing or unsupported \"%s\" option for channel", option);
-    }
-  else if (*file && *data)
-    {
-      cockpit_channel_fail (self, "protocol-error", "cannot specify both \"file\" and \"data\" in \"%s\" option for channel", option);
-    }
-  else
-    {
-      return TRUE;
-    }
-
-  return FALSE;
-}
-
-static gboolean
-load_pem_contents (CockpitChannel *self,
-                   const gchar *filename,
-                   const gchar *option,
-                   GString *pem)
-{
-  GError *error = NULL;
-  gchar *contents = NULL;
-  gsize len;
-
-  if (!g_file_get_contents (filename, &contents, &len, &error))
-    {
-      cockpit_channel_fail (self, "internal-error",
-                            "couldn't load \"%s\" file: %s: %s", option, filename, error->message);
-      g_clear_error (&error);
-      return FALSE;
-    }
-  else
-    {
-      g_string_append_len (pem, contents, len);
-      g_string_append_c (pem, '\n');
-      g_free (contents);
-      return TRUE;
+      self->priv->pressure = controlling;
+      g_object_add_weak_pointer (G_OBJECT (self->priv->pressure), (gpointer *)&self->priv->pressure);
+      self->priv->pressure_sig = g_signal_connect (controlling, "pressure", G_CALLBACK (on_throttle_pressure), self);
     }
 }
 
-static gchar *
-expand_filename (const gchar *filename)
+static void
+cockpit_channel_flow_iface_init (CockpitFlowIface *iface)
 {
-  if (!g_path_is_absolute (filename))
-    return g_build_filename (g_get_home_dir (), filename, NULL);
-  else
-    return g_strdup (filename);
-}
-
-static gboolean
-parse_cert_option_as_pem (CockpitChannel *self,
-                          JsonObject *options,
-                          const gchar *option,
-                          GString *pem)
-{
-  gboolean ret = TRUE;
-  const gchar *file;
-  const gchar *data;
-  gchar *path;
-
-  if (!parse_option_file_or_data (self, options, option, &file, &data))
-    return FALSE;
-
-  if (file)
-    {
-      path = expand_filename (file);
-
-      /* For now we assume file contents are PEM */
-      ret = load_pem_contents (self, path, option, pem);
-
-      g_free (path);
-    }
-  else if (data)
-    {
-      /* Format this as PEM of the given type */
-      g_string_append (pem, data);
-      g_string_append_c (pem, '\n');
-    }
-
-  return ret;
-}
-
-static gboolean
-parse_cert_option_as_database (CockpitChannel *self,
-                               JsonObject *options,
-                               const gchar *option,
-                               GTlsDatabase **database)
-{
-  gboolean temporary = FALSE;
-  GError *error = NULL;
-  gboolean ret = TRUE;
-  const gchar *file;
-  const gchar *data;
-  gchar *path;
-  gint fd;
-
-  if (!parse_option_file_or_data (self, options, option, &file, &data))
-    return FALSE;
-
-  if (file)
-    {
-      path = expand_filename (file);
-      ret = TRUE;
-    }
-  else if (data)
-    {
-      temporary = TRUE;
-      path = g_build_filename (g_get_user_runtime_dir (), "cockpit-bridge-cert-authority.XXXXXX", NULL);
-      fd = g_mkstemp (path);
-      if (fd < 0)
-        {
-          ret = FALSE;
-          cockpit_channel_fail (self, "internal-error",
-                                "couldn't create temporary directory: %s: %s", path, g_strerror (errno));
-        }
-      else
-        {
-          close (fd);
-          if (!g_file_set_contents (path, data, -1, &error))
-            {
-              cockpit_channel_fail (self, "internal-error",
-                                    "couldn't write temporary data to: %s: %s", path, error->message);
-              g_clear_error (&error);
-              ret = FALSE;
-            }
-        }
-    }
-  else
-    {
-      /* Not specified */
-      *database = NULL;
-      return TRUE;
-    }
-
-  if (ret)
-    {
-      *database = g_tls_file_database_new (path, &error);
-      if (error)
-        {
-          cockpit_channel_fail (self, "internal-error",
-                                "couldn't load certificate data: %s: %s", path, error->message);
-          g_clear_error (&error);
-          ret = FALSE;
-        }
-    }
-
-  /* Leave around when problem, for debugging */
-  if (temporary && ret == TRUE)
-    g_unlink (path);
-
-  g_free (path);
-
-  return ret;
-}
-
-static gboolean
-parse_stream_options (CockpitChannel *self,
-                      CockpitConnectable *connectable)
-{
-  gboolean ret = FALSE;
-  GTlsCertificate *cert = NULL;
-  GTlsDatabase *database = NULL;
-  gboolean use_tls = FALSE;
-  GError *error = NULL;
-  GString *pem = NULL;
-  JsonObject *options;
-  JsonNode *node;
-
-  /* No validation for local servers by default */
-  gboolean validate = !connectable->local;
-
-  node = json_object_get_member (self->priv->open_options, "tls");
-  if (node && !JSON_NODE_HOLDS_OBJECT (node))
-    {
-      cockpit_channel_fail (self, "protocol-error", "invalid \"tls\" option for channel");
-      goto out;
-    }
-  else if (node)
-    {
-      options = json_node_get_object (node);
-      use_tls = TRUE;
-
-      /*
-       * The only function in GLib to parse private keys takes
-       * them in PEM concatenated form. This is a limitation of GLib,
-       * rather than concatenated form being a decent standard for
-       * certificates and keys. So build a combined PEM as expected by
-       * GLib here.
-       */
-
-      pem = g_string_sized_new (8192);
-
-      if (!parse_cert_option_as_pem (self, options, "certificate", pem))
-        goto out;
-
-      if (pem->len)
-        {
-          if (!parse_cert_option_as_pem (self, options, "key", pem))
-            goto out;
-
-          cert = g_tls_certificate_new_from_pem (pem->str, pem->len, &error);
-          if (error != NULL)
-            {
-              cockpit_channel_fail (self, "internal-error",
-                                    "invalid \"certificate\" or \"key\" content: %s", error->message);
-              g_error_free (error);
-              goto out;
-            }
-        }
-
-      if (!parse_cert_option_as_database (self, options, "authority", &database))
-        goto out;
-
-      if (!cockpit_json_get_bool (options, "validate", validate, &validate))
-        {
-          cockpit_channel_fail (self, "protocol-error", "invalid \"validate\" option");
-          goto out;
-        }
-    }
-
-  ret = TRUE;
-
-out:
-  if (ret)
-    {
-      connectable->tls = use_tls;
-      connectable->tls_cert = cert;
-      cert = NULL;
-
-      if (database)
-        {
-          connectable->tls_database = database;
-          connectable->tls_flags = G_TLS_CERTIFICATE_VALIDATE_ALL;
-          if (!validate)
-              connectable->tls_flags &= ~(G_TLS_CERTIFICATE_INSECURE | G_TLS_CERTIFICATE_BAD_IDENTITY);
-          database = NULL;
-        }
-      else
-        {
-          if (validate)
-            connectable->tls_flags = G_TLS_CERTIFICATE_VALIDATE_ALL;
-          else
-            connectable->tls_flags = G_TLS_CERTIFICATE_GENERIC_ERROR;
-        }
-    }
-
-  if (pem)
-    g_string_free (pem, TRUE);
-  if (cert)
-    g_object_unref (cert);
-  if (database)
-    g_object_unref (database);
-
-  return ret;
-}
-
-CockpitConnectable *
-cockpit_channel_parse_stream (CockpitChannel *self)
-{
-  CockpitConnectable *connectable;
-  GSocketConnectable *address;
-  gboolean local = FALSE;
-  gchar *name = NULL;
-
-  address = parse_address (self, &name, &local);
-  if (!address)
-    return NULL;
-
-  connectable = g_new0 (CockpitConnectable, 1);
-  connectable->address = address;
-  connectable->name = name;
-  connectable->refs = 1;
-  connectable->local = local;
-
-  if (!parse_stream_options (self, connectable))
-    {
-      cockpit_connectable_unref (connectable);
-      connectable = NULL;
-    }
-
-  return connectable;
+  iface->throttle = cockpit_channel_throttle;
 }

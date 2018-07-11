@@ -843,9 +843,9 @@ return plural;
   null,
   "直到被停止"
  ],
- "Up since $StartedAt": [
+ "Up since $0": [
   null,
-  "运行自 $StartedAt"
+  ""
  ],
  "Used": [
   null,

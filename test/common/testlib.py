@@ -47,6 +47,7 @@ import cdp
 
 TEST_DIR = os.path.normpath(os.path.dirname(os.path.realpath(os.path.join(__file__, ".."))))
 BOTS_DIR = os.path.normpath(os.path.join(TEST_DIR, "..", "bots"))
+_PY3 = sys.version_info[0] >= 3
 
 os.environ["PATH"] = "{0}:{1}:{2}".format(os.environ.get("PATH"), BOTS_DIR, TEST_DIR)
 
@@ -85,7 +86,7 @@ def attach(filename):
         shutil.move(filename, dest)
 
 class Browser:
-    def __init__(self, address, label, port=None, headless=True):
+    def __init__(self, address, label, port=None):
         if ":" in address:
             (self.address, unused, self.port) = address.rpartition(":")
         else:
@@ -96,7 +97,7 @@ class Browser:
         self.default_user = "admin"
         self.label = label
         path = os.path.dirname(__file__)
-        self.cdp = cdp.CDP("C.utf8", headless, verbose=opts.trace, trace=opts.trace,
+        self.cdp = cdp.CDP("C.utf8", verbose=opts.trace, trace=opts.trace,
                            inject_helpers=[os.path.join(path, "test-functions.js"), os.path.join(path, "sizzle.js")])
         self.password = "foobar"
 
@@ -554,6 +555,11 @@ class MachineCase(unittest.TestCase):
         return browser
 
     def checkSuccess(self):
+        if _PY3 and self._outcome:
+            # errors is a list of (method, exception) calls (usually multiple
+            # per method); None exception means success
+            return not any(e[1] for e in self._outcome.errors)
+
         if not self.currentResult:
             return False
         for error in self.currentResult.errors:
@@ -571,14 +577,15 @@ class MachineCase(unittest.TestCase):
         return True
 
     def run(self, result=None):
-        orig_result = result
+        if not _PY3:
+            orig_result = result
 
-        # We need a result to intercept, so create one here
-        if result is None:
-            result = self.defaultTestResult()
-            startTestRun = getattr(result, 'startTestRun', None)
-            if startTestRun is not None:
-                startTestRun()
+            # We need a result to intercept, so create one here
+            if result is None:
+                result = self.defaultTestResult()
+                startTestRun = getattr(result, 'startTestRun', None)
+                if startTestRun is not None:
+                    startTestRun()
 
         self.currentResult = result
 
@@ -601,11 +608,12 @@ class MachineCase(unittest.TestCase):
 
         self.currentResult = None
 
-        # Standard book keeping that we have to do
-        if orig_result is None:
-            stopTestRun = getattr(result, 'stopTestRun', None)
-            if stopTestRun is not None:
-                stopTestRun()
+        if not _PY3:
+            # Standard book keeping that we have to do
+            if orig_result is None:
+                stopTestRun = getattr(result, 'stopTestRun', None)
+                if stopTestRun is not None:
+                    stopTestRun()
 
     def setUp(self):
         if opts.address and self.provision is not None:
@@ -635,7 +643,10 @@ class MachineCase(unittest.TestCase):
 
         def sitter():
             if opts.sit and not self.checkSuccess():
-                self.currentResult.printErrors()
+                if _PY3 and self._outcome:
+                    [traceback.print_exception(*e[1]) for e in self._outcome.errors if e[1]]
+                else:
+                    self.currentResult.printErrors()
                 sit(self.machines)
         self.addCleanup(sitter)
 
@@ -733,6 +744,9 @@ class MachineCase(unittest.TestCase):
 
         # Various operating systems see this from time to time
         "Journal file.*truncated, ignoring file.",
+
+        # our core dump retrieval is not entirely reliable
+        "Failed to send coredump datagram:.*",
     ]
 
     def allow_journal_messages(self, *patterns):
@@ -1083,7 +1097,7 @@ class TapRunner(object):
                     failed = (code >> 8) & 0xff
                 if pid:
                     if buffer:
-                        output = buffer.pop(pid).decode("UTF-8")
+                        output = buffer.pop(pid)
                         test = pids[pid]
                         failed, retry = self.filterOutput(test, failed, output)
                         if retry:
@@ -1144,16 +1158,18 @@ class TapRunner(object):
         tries = getattr(test, "retryCount", 0)
         tries += 1
         setattr(test, "retryCount", tries)
+        # "output" is bytes, grab corresponding stream
+        out = _PY3 and sys.stdout.buffer or sys.stdout
 
         # Didn't fail, just print output and continue
         if tries >= 3 or not failed:
-            sys.stdout.write(output)
+            out.write(output)
             return failed, False
 
         # Otherwise pass through this command if it exists
         cmd = [ "tests-policy", testvm.DEFAULT_IMAGE ]
         try:
-            proc = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE, universal_newlines=True)
+            proc = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
             (changed, unused) = proc.communicate(output)
             if proc.returncode == 0:
                 output = changed
@@ -1161,14 +1177,14 @@ class TapRunner(object):
             if ex.errno != errno.ENOENT:
                 sys.stderr.write("Couldn't run tests-policy: {0}\n".format(str(ex)))
 
-        # Write the output
-        sys.stdout.write(output)
+        # Write the output bytes
+        out.write(output)
 
-        if "# SKIP " in output or "# RETRY" in output:
+        if b"# SKIP " in output or b"# RETRY" in output:
             failed = 0
 
         # Whether we should retry the test or not
-        return failed, "# RETRY " in output
+        return failed, b"# RETRY " in output
 
 def arg_parser():
     parser = argparse.ArgumentParser(description='Run Cockpit test(s)')
@@ -1191,7 +1207,6 @@ def arg_parser():
     parser.set_defaults(verbosity=1, fetch=True)
     return parser
 
-
 def test_main(options=None, suite=None, attachments=None, **kwargs):
     """
     Run all test cases, as indicated by arguments.
@@ -1204,7 +1219,7 @@ def test_main(options=None, suite=None, attachments=None, **kwargs):
 
     # Turn off python stdout buffering
     buf_arg = 0
-    if sys.version_info[0] >= 3:
+    if _PY3:
         os.environ['PYTHONUNBUFFERED'] = '1'
         buf_arg = 1
     sys.stdout.flush()

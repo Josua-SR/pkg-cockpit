@@ -83,6 +83,10 @@ return plural;
   "$0 godziny",
   "$0 godzin"
  ],
+ "$0 is not available from any repository.": [
+  null,
+  "$0 nie jest dostępne w żadnym repozytorium."
+ ],
  "$0 minute": [
   "$0 minutes",
   "$0 minuta",
@@ -100,6 +104,10 @@ return plural;
   "$0 tydzień",
   "$0 tygodnie",
   "$0 tygodni"
+ ],
+ "$0 will be installed.": [
+  null,
+  "$0 zostanie zainstalowane."
  ],
  "$0 year": [
   "$0 years",
@@ -291,6 +299,10 @@ return plural;
   null,
   "9."
  ],
+ "Additional packages:": [
+  null,
+  "Dodatkowe pakiety:"
+ ],
  "Advanced TCA": [
   null,
   "Zaawansowane TCA"
@@ -399,6 +411,10 @@ return plural;
   null,
   "Wyszukiwanie aktualizacji…"
  ],
+ "Checking installed software": [
+  null,
+  "Sprawdzanie zainstalowanego oprogramowania"
+ ],
  "Class": [
   null,
   "Klasa"
@@ -503,6 +519,10 @@ return plural;
   null,
   "Bez powtarzania"
  ],
+ "Downloading $0": [
+  null,
+  "Pobieranie $0"
+ ],
  "Embedded PC": [
   null,
   "Komputer osadzony"
@@ -514,6 +534,10 @@ return plural;
  "Enable Forcefully": [
   null,
   "Wymuś włączenie"
+ ],
+ "Enable persistent metrics…": [
+  null,
+  "Włącz trwałe statystyki…"
  ],
  "Enabled": [
   null,
@@ -602,6 +626,18 @@ return plural;
  "Info and above": [
   null,
   "Informacje i powyżej"
+ ],
+ "Install": [
+  null,
+  "Zainstaluj"
+ ],
+ "Install Software": [
+  null,
+  "Zainstaluj oprogramowanie"
+ ],
+ "Installing $0": [
+  null,
+  "Instalowanie $0"
  ],
  "Instantiate": [
   null,
@@ -811,6 +847,10 @@ return plural;
   null,
   "Wyłączone"
  ],
+ "Ok": [
+  null,
+  "OK"
+ ],
  "On": [
   null,
   "Włączone"
@@ -930,6 +970,14 @@ return plural;
  "Reload Propagated From": [
   null,
   "Odebrano ponowne wczytanie z"
+ ],
+ "Removals:": [
+  null,
+  "Usuwane:"
+ ],
+ "Removing $0": [
+  null,
+  "Usuwanie $0"
  ],
  "Repeat Daily": [
   null,
@@ -1161,7 +1209,11 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to change the system time": [
   null,
-  ""
+  "Użytkownik <b>$0</b> nie ma zezwolenia na zmianę czasu systemu"
+ ],
+ "The user <b>$0</b> is not permitted to enable or disable services": [
+  null,
+  "Użytkownik <b>$0</b> nie ma zezwolenia na włączanie lub wyłączanie usług"
  ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
@@ -1170,6 +1222,10 @@ return plural;
  "The user <b>$0</b> is not permitted to shutdown or restart this server": [
   null,
   "Użytkownik <b>$0</b> nie może wyłączać ani ponownie uruchamiać tego serwera"
+ ],
+ "The user <b>$0</b> is not permitted to start or stop services": [
+  null,
+  "Użytkownik <b>$0</b> nie ma zezwolenia na uruchamianie lub zatrzymywanie usług"
  ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
@@ -1198,6 +1254,10 @@ return plural;
  "Timers": [
   null,
   "Liczniki"
+ ],
+ "Total size: $0": [
+  null,
+  "Całkowity rozmiar: $0"
  ],
  "Tower": [
   null,
@@ -1256,6 +1316,10 @@ return plural;
  "Version": [
   null,
   "Wersja"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  "Oczekiwanie na ukończenie pozostałych działań zarządzania oprogramowaniem"
  ],
  "Wanted By": [
   null,

@@ -71,6 +71,10 @@ return plural;
   null,
   "$0 对大多数操作系统可用。为了安装它，在 GNOME 软件中心搜索它或运行以下命令： "
  ],
+ "$0 vCPU Details": [
+  null,
+  ""
+ ],
  "Additional": [
   null,
   ""
@@ -82,6 +86,14 @@ return plural;
  "Address:": [
   null,
   "地址："
+ ],
+ "All changes will take effect only after stopping and starting the VM.": [
+  null,
+  ""
+ ],
+ "Apply": [
+  null,
+  "应用"
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -151,6 +163,10 @@ return plural;
   null,
   ""
  ],
+ "Cores per socket": [
+  null,
+  ""
+ ],
  "Count:": [
   null,
   "计数："
@@ -203,6 +219,10 @@ return plural;
   null,
   "模拟的机器："
  ],
+ "Fewer than the maximum number of virtual CPUs should be enabled.": [
+  null,
+  ""
+ ],
  "File": [
   null,
   "文件"
@@ -218,6 +238,10 @@ return plural;
  "Force Shut Down": [
   null,
   "强制关机"
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
  ],
  "GiB": [
   null,
@@ -286,6 +310,10 @@ return plural;
  "Manual Connection": [
   null,
   "手动连接"
+ ],
+ "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
+  null,
+  ""
  ],
  "Memory": [
   null,
@@ -395,6 +423,10 @@ return plural;
   null,
   ""
  ],
+ "Preferred number of sockets to expose to the guest.": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "协议"
@@ -418,6 +450,10 @@ return plural;
  "Run": [
   null,
   "运行"
+ ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  ""
  ],
  "SPICE": [
   null,
@@ -454,6 +490,10 @@ return plural;
  "Shut Down": [
   null,
   "关机"
+ ],
+ "Sockets": [
+  null,
+  "套接字"
  ],
  "Source": [
   null,
@@ -526,6 +566,10 @@ return plural;
  "The VM is suspended by guest power management.": [
   null,
   "虚拟机已被客户机电源管理暂停。"
+ ],
+ "Threads per cores": [
+  null,
+  ""
  ],
  "Too many files found": [
   null,
@@ -740,6 +784,14 @@ return plural;
   "运行中"
  ],
  "user": [
+  null,
+  ""
+ ],
+ "vCPU Count": [
+  null,
+  ""
+ ],
+ "vCPU Maximum": [
   null,
   ""
  ],

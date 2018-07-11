@@ -71,6 +71,10 @@ return plural;
   null,
   "$0 está disponível para a maioria dos sistemas operacionais. Para instalá-lo, procure-o no GNOME Software ou execute o seguinte:"
  ],
+ "$0 vCPU Details": [
+  null,
+  ""
+ ],
  "Additional": [
   null,
   "Adicional"
@@ -82,6 +86,14 @@ return plural;
  "Address:": [
   null,
   "Endereço:"
+ ],
+ "All changes will take effect only after stopping and starting the VM.": [
+  null,
+  ""
+ ],
+ "Apply": [
+  null,
+  "Aplicar"
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -151,6 +163,10 @@ return plural;
   null,
   "Consoles"
  ],
+ "Cores per socket": [
+  null,
+  ""
+ ],
  "Count:": [
   null,
   "Contagem:"
@@ -203,6 +219,10 @@ return plural;
   null,
   "Máquina Emulada:"
  ],
+ "Fewer than the maximum number of virtual CPUs should be enabled.": [
+  null,
+  ""
+ ],
  "File": [
   null,
   "Arquivo"
@@ -218,6 +238,10 @@ return plural;
  "Force Shut Down": [
   null,
   "Forçar Desligamento"
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
  ],
  "GiB": [
   null,
@@ -286,6 +310,10 @@ return plural;
  "Manual Connection": [
   null,
   "Conexão manual"
+ ],
+ "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
+  null,
+  ""
  ],
  "Memory": [
   null,
@@ -395,6 +423,10 @@ return plural;
   null,
   "Portgroup"
  ],
+ "Preferred number of sockets to expose to the guest.": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protocolo"
@@ -418,6 +450,10 @@ return plural;
  "Run": [
   null,
   "Executar"
+ ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  ""
  ],
  "SPICE": [
   null,
@@ -454,6 +490,10 @@ return plural;
  "Shut Down": [
   null,
   "Encerrar"
+ ],
+ "Sockets": [
+  null,
+  "Sockets"
  ],
  "Source": [
   null,
@@ -526,6 +566,10 @@ return plural;
  "The VM is suspended by guest power management.": [
   null,
   "A VM é suspensa pela gerência de poder do convidado."
+ ],
+ "Threads per cores": [
+  null,
+  ""
  ],
  "Too many files found": [
   null,
@@ -740,6 +784,14 @@ return plural;
   ""
  ],
  "user": [
+  null,
+  ""
+ ],
+ "vCPU Count": [
+  null,
+  ""
+ ],
+ "vCPU Maximum": [
   null,
   ""
  ],
