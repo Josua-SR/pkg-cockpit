@@ -1,4 +1,4 @@
-cockpit (172-1) UNRELEASED; urgency=medium
+cockpit (172-1) unstable; urgency=medium
 
   * New upstream release:
     - System: Offer installation of PCP
@@ -7,7 +7,7 @@ cockpit (172-1) UNRELEASED; urgency=medium
     - API: Introduce flow control for all channels
     - Python 3 support
 
- -- Martin Pitt <mpitt@debian.org>  Wed, 11 Jul 2018 15:13:55 +0000
+ -- Martin Pitt <mpitt@debian.org>  Wed, 11 Jul 2018 15:15:07 +0000
 
 cockpit (171-1) unstable; urgency=medium
 
