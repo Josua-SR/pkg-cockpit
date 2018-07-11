@@ -81,6 +81,10 @@ return plural;
   "$0 tunti",
   "$0 tuntia"
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
  "$0 minute": [
   "$0 minutes",
   "$0 minuutti",
@@ -95,6 +99,10 @@ return plural;
   "$0 weeks",
   "$0 viikko",
   "$0 viikkoa"
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
  ],
  "$0 year": [
   "$0 years",
@@ -285,6 +293,10 @@ return plural;
   null,
   "9."
  ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Advanced TCA": [
   null,
   ""
@@ -393,6 +405,10 @@ return plural;
   null,
   "Etsitään päivityksiä…"
  ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
  "Class": [
   null,
   ""
@@ -497,6 +513,10 @@ return plural;
   null,
   "Älä toista"
  ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
  "Embedded PC": [
   null,
   ""
@@ -508,6 +528,10 @@ return plural;
  "Enable Forcefully": [
   null,
   "Ota käyttöön väkisin"
+ ],
+ "Enable persistent metrics…": [
+  null,
+  ""
  ],
  "Enabled": [
   null,
@@ -594,6 +618,18 @@ return plural;
   "Id"
  ],
  "Info and above": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  "Asenna"
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
   null,
   ""
  ],
@@ -805,6 +841,10 @@ return plural;
   null,
   "Pois"
  ],
+ "Ok": [
+  null,
+  "OK"
+ ],
  "On": [
   null,
   "Päällä"
@@ -922,6 +962,14 @@ return plural;
   "Lataa uudelleen"
  ],
  "Reload Propagated From": [
+  null,
+  ""
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
   null,
   ""
  ],
@@ -1157,6 +1205,10 @@ return plural;
   null,
   ""
  ],
+ "The user <b>$0</b> is not permitted to enable or disable services": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
   ""
@@ -1164,6 +1216,10 @@ return plural;
  "The user <b>$0</b> is not permitted to shutdown or restart this server": [
   null,
   "Käyttäjällä <b>$0</b> ei ole oikeutta sammuttaa tai käynnistää uudelleen tätä palvelinta"
+ ],
+ "The user <b>$0</b> is not permitted to start or stop services": [
+  null,
+  ""
  ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
@@ -1192,6 +1248,10 @@ return plural;
  "Timers": [
   null,
   "Ajastimet"
+ ],
+ "Total size: $0": [
+  null,
+  ""
  ],
  "Tower": [
   null,
@@ -1249,6 +1309,10 @@ return plural;
  "Version": [
   null,
   "Versio"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "Wanted By": [
   null,

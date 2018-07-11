@@ -71,6 +71,10 @@ return plural;
   null,
   "$0 对大多数操作系统可用。为了安装它，在 GNOME 软件中心搜索它或运行以下命令： "
  ],
+ "$0 vCPU Details": [
+  null,
+  ""
+ ],
  "Action": [
   null,
   "动作"
@@ -87,9 +91,17 @@ return plural;
   null,
   "地址："
  ],
+ "All changes will take effect only after stopping and starting the VM.": [
+  null,
+  ""
+ ],
  "All running virtual machines will be turned off.": [
   null,
   ""
+ ],
+ "Apply": [
+  null,
+  "应用"
  ],
  "Automatically selected host": [
   null,
@@ -199,6 +211,10 @@ return plural;
   null,
   ""
  ],
+ "Cores per socket": [
+  null,
+  ""
+ ],
  "Count:": [
   null,
   "计数："
@@ -267,6 +283,10 @@ return plural;
   null,
   "FQDN"
  ],
+ "Fewer than the maximum number of virtual CPUs should be enabled.": [
+  null,
+  ""
+ ],
  "File": [
   null,
   "文件"
@@ -278,6 +298,10 @@ return plural;
  "Force Shut Down": [
   null,
   "强制关机"
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
  ],
  "GiB": [
   null,
@@ -347,6 +371,10 @@ return plural;
   null,
   "手动连接"
  ],
+ "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
+  null,
+  ""
+ ],
  "Memory": [
   null,
   "内存"
@@ -400,6 +428,10 @@ return plural;
   ""
  ],
  "No oVirt connection": [
+  null,
+  ""
+ ],
+ "Number of virtual CPUs that gonna be used.": [
   null,
   ""
  ],
@@ -471,6 +503,10 @@ return plural;
   null,
   ""
  ],
+ "Preferred number of sockets to expose to the guest.": [
+  null,
+  ""
+ ],
  "Preparing for Maintenance": [
   null,
   "正在准备维护"
@@ -516,6 +552,10 @@ return plural;
   "运行到此"
  ],
  "Running Since:": [
+  null,
+  ""
+ ],
+ "SET VCPU SETTINGS action failed": [
   null,
   ""
  ],
@@ -570,6 +610,10 @@ return plural;
  "Shut Down": [
   null,
   "关机"
+ ],
+ "Sockets": [
+  null,
+  "套接字"
  ],
  "Source": [
   null,
@@ -670,6 +714,10 @@ return plural;
  "This virtual machine is not managed by oVirt": [
   null,
   "该虚拟机没有被 oVirt 管理"
+ ],
+ "Threads per cores": [
+  null,
+  ""
  ],
  "Type": [
   null,
@@ -972,6 +1020,14 @@ return plural;
   "运行中"
  ],
  "user": [
+  null,
+  ""
+ ],
+ "vCPU Count": [
+  null,
+  ""
+ ],
+ "vCPU Maximum": [
   null,
   ""
  ],

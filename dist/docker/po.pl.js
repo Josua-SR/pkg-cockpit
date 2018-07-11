@@ -375,7 +375,7 @@ return plural;
  ],
  "Expose container ports": [
   null,
-  "Uwidocznij porty kontenera"
+  "Eksponuj porty kontenera"
  ],
  "Failed to start Docker: $0": [
   null,
@@ -859,9 +859,9 @@ return plural;
   null,
   "Do zatrzymania"
  ],
- "Up since $StartedAt": [
+ "Up since $0": [
   null,
-  "Działa od $StartedAt"
+  "Działa od $0"
  ],
  "Used": [
   null,

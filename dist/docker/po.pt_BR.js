@@ -851,9 +851,9 @@ return plural;
   null,
   "Parou-se"
  ],
- "Up since $StartedAt": [
+ "Up since $0": [
   null,
-  "Ativo desde $StartedAt"
+  ""
  ],
  "Used": [
   null,

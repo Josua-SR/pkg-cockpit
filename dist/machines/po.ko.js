@@ -71,6 +71,10 @@ return plural;
   null,
   ""
  ],
+ "$0 vCPU Details": [
+  null,
+  ""
+ ],
  "Additional": [
   null,
   ""
@@ -82,6 +86,14 @@ return plural;
  "Address:": [
   null,
   ""
+ ],
+ "All changes will take effect only after stopping and starting the VM.": [
+  null,
+  ""
+ ],
+ "Apply": [
+  null,
+  "적용"
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -151,6 +163,10 @@ return plural;
   null,
   ""
  ],
+ "Cores per socket": [
+  null,
+  ""
+ ],
  "Count:": [
   null,
   ""
@@ -203,6 +219,10 @@ return plural;
   null,
   ""
  ],
+ "Fewer than the maximum number of virtual CPUs should be enabled.": [
+  null,
+  ""
+ ],
  "File": [
   null,
   ""
@@ -216,6 +236,10 @@ return plural;
   ""
  ],
  "Force Shut Down": [
+  null,
+  ""
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
   null,
   ""
  ],
@@ -284,6 +308,10 @@ return plural;
   ""
  ],
  "Manual Connection": [
+  null,
+  ""
+ ],
+ "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
   ""
  ],
@@ -395,6 +423,10 @@ return plural;
   null,
   ""
  ],
+ "Preferred number of sockets to expose to the guest.": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   ""
@@ -416,6 +448,10 @@ return plural;
   ""
  ],
  "Run": [
+  null,
+  ""
+ ],
+ "SET VCPU SETTINGS action failed": [
   null,
   ""
  ],
@@ -452,6 +488,10 @@ return plural;
   "버전"
  ],
  "Shut Down": [
+  null,
+  ""
+ ],
+ "Sockets": [
   null,
   ""
  ],
@@ -524,6 +564,10 @@ return plural;
   ""
  ],
  "The VM is suspended by guest power management.": [
+  null,
+  ""
+ ],
+ "Threads per cores": [
   null,
   ""
  ],
@@ -740,6 +784,14 @@ return plural;
   ""
  ],
  "user": [
+  null,
+  ""
+ ],
+ "vCPU Count": [
+  null,
+  ""
+ ],
+ "vCPU Maximum": [
   null,
   ""
  ],

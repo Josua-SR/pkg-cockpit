@@ -843,7 +843,7 @@ return plural;
   null,
   ""
  ],
- "Up since $StartedAt": [
+ "Up since $0": [
   null,
   ""
  ],

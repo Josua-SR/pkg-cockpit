@@ -859,9 +859,9 @@ return plural;
   null,
   "Якщо не зупинено"
  ],
- "Up since $StartedAt": [
+ "Up since $0": [
   null,
-  "Працює з $StartedAt"
+  ""
  ],
  "Used": [
   null,

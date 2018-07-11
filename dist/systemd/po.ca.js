@@ -81,6 +81,10 @@ return plural;
   "$0 hora",
   "$0 hores"
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
  "$0 minute": [
   "$0 minutes",
   "$0 minut",
@@ -95,6 +99,10 @@ return plural;
   "$0 weeks",
   "$0 setmana",
   "$0 setmanes"
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
  ],
  "$0 year": [
   "$0 years",
@@ -285,6 +293,10 @@ return plural;
   null,
   "9è"
  ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Advanced TCA": [
   null,
   ""
@@ -393,6 +405,10 @@ return plural;
   null,
   "Comprovació per si hi ha actualitzacions..."
  ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
  "Class": [
   null,
   "Classe"
@@ -497,6 +513,10 @@ return plural;
   null,
   "No repeteixis"
  ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
  "Embedded PC": [
   null,
   ""
@@ -508,6 +528,10 @@ return plural;
  "Enable Forcefully": [
   null,
   "Habilita-ho forçosament"
+ ],
+ "Enable persistent metrics…": [
+  null,
+  ""
  ],
  "Enabled": [
   null,
@@ -594,6 +618,18 @@ return plural;
   "Id"
  ],
  "Info and above": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  "Instal·la"
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
   null,
   ""
  ],
@@ -805,6 +841,10 @@ return plural;
   null,
   "Off"
  ],
+ "Ok": [
+  null,
+  "D'acord"
+ ],
  "On": [
   null,
   "On"
@@ -922,6 +962,14 @@ return plural;
   "Recarrega"
  ],
  "Reload Propagated From": [
+  null,
+  ""
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
   null,
   ""
  ],
@@ -1157,6 +1205,10 @@ return plural;
   null,
   ""
  ],
+ "The user <b>$0</b> is not permitted to enable or disable services": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
   "A l'usuari <b>$0</b> no se li permet modificar els noms d'amfitrions"
@@ -1164,6 +1216,10 @@ return plural;
  "The user <b>$0</b> is not permitted to shutdown or restart this server": [
   null,
   "A l'usuari <b>$0</b> no se li permet apagar o reiniciar aquest servidor."
+ ],
+ "The user <b>$0</b> is not permitted to start or stop services": [
+  null,
+  ""
  ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
@@ -1192,6 +1248,10 @@ return plural;
  "Timers": [
   null,
   "Temporitzadors"
+ ],
+ "Total size: $0": [
+  null,
+  ""
  ],
  "Tower": [
   null,
@@ -1249,6 +1309,10 @@ return plural;
  "Version": [
   null,
   "Versió"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "Wanted By": [
   null,

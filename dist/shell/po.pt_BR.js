@@ -283,14 +283,6 @@ return plural;
   null,
   "Licenciado em:"
  ],
- "Lock to prevent privileged tasks": [
-  null,
-  "Bloquear para evitar tarefas privilegiadas"
- ],
- "Locked": [
-  null,
-  "Bloqueado"
- ],
  "Log In": [
   null,
   "Entrar"
@@ -310,6 +302,10 @@ return plural;
  "Login Password": [
   null,
   "Senha de Login"
+ ],
+ "Login has escalated admin privileges": [
+  null,
+  ""
  ],
  "Machines": [
   null,
@@ -379,9 +375,9 @@ return plural;
   null,
   "Porta"
  ],
- "Privileged tasks not available": [
+ "Privileged": [
   null,
-  "Tarefas privilegiadas não disponíveis"
+  ""
  ],
  "Project website": [
   null,
@@ -494,10 +490,6 @@ return plural;
  "Unlock Key": [
   null,
   "Desbloquear Chave"
- ],
- "Unlocked": [
-  null,
-  "Desbloqueado"
  ],
  "Update": [
   null,

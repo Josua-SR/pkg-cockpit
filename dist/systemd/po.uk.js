@@ -83,6 +83,10 @@ return plural;
   "$0 години",
   "$0 годин"
  ],
+ "$0 is not available from any repository.": [
+  null,
+  "$0 немає у жодному зі сховищ."
+ ],
  "$0 minute": [
   "$0 minutes",
   "$0 хвилина",
@@ -100,6 +104,10 @@ return plural;
   "$0 тиждень",
   "$0 тижні",
   "$0 тижнів"
+ ],
+ "$0 will be installed.": [
+  null,
+  "Буде встановлено $0."
  ],
  "$0 year": [
   "$0 years",
@@ -291,6 +299,10 @@ return plural;
   null,
   "9-е"
  ],
+ "Additional packages:": [
+  null,
+  "Додаткові пакунки:"
+ ],
  "Advanced TCA": [
   null,
   "Розширене TCA"
@@ -399,6 +411,10 @@ return plural;
   null,
   "Шукаємо оновлення…"
  ],
+ "Checking installed software": [
+  null,
+  "Перевіряємо встановлене програмне забезпечення"
+ ],
  "Class": [
   null,
   "Клас"
@@ -503,6 +519,10 @@ return plural;
   null,
   "Не повторювати"
  ],
+ "Downloading $0": [
+  null,
+  "Отримуємо $0"
+ ],
  "Embedded PC": [
   null,
   "Вбудований ПК"
@@ -514,6 +534,10 @@ return plural;
  "Enable Forcefully": [
   null,
   "Примусово увімкнути"
+ ],
+ "Enable persistent metrics…": [
+  null,
+  ""
  ],
  "Enabled": [
   null,
@@ -602,6 +626,18 @@ return plural;
  "Info and above": [
   null,
   "Інформація і вище"
+ ],
+ "Install": [
+  null,
+  "Встановити"
+ ],
+ "Install Software": [
+  null,
+  "Встановити програмне забезпечення"
+ ],
+ "Installing $0": [
+  null,
+  "Встановлюємо $0"
  ],
  "Instantiate": [
   null,
@@ -811,6 +847,10 @@ return plural;
   null,
   "Вимкнено"
  ],
+ "Ok": [
+  null,
+  "Гаразд"
+ ],
  "On": [
   null,
   "Увімкнено"
@@ -930,6 +970,14 @@ return plural;
  "Reload Propagated From": [
   null,
   "Поширене перезавантаження з"
+ ],
+ "Removals:": [
+  null,
+  "Вилучення:"
+ ],
+ "Removing $0": [
+  null,
+  "Вилучаємо $0"
  ],
  "Repeat Daily": [
   null,
@@ -1161,6 +1209,10 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to change the system time": [
   null,
+  "Користувачу <b>$0</b> заборонено змінювати час системи"
+ ],
+ "The user <b>$0</b> is not permitted to enable or disable services": [
+  null,
   ""
  ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
@@ -1170,6 +1222,10 @@ return plural;
  "The user <b>$0</b> is not permitted to shutdown or restart this server": [
   null,
   "Користувачеві <b>$0</b> заборонено вимикати або перезапускати цей сервер"
+ ],
+ "The user <b>$0</b> is not permitted to start or stop services": [
+  null,
+  ""
  ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
@@ -1198,6 +1254,10 @@ return plural;
  "Timers": [
   null,
   "Таймери"
+ ],
+ "Total size: $0": [
+  null,
+  "Загальний розмір: $0"
  ],
  "Tower": [
   null,
@@ -1256,6 +1316,10 @@ return plural;
  "Version": [
   null,
   "Версія"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  "Очікуємо на завершення інших дій із програмним забезпеченням"
  ],
  "Wanted By": [
   null,

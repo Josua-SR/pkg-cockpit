@@ -181,7 +181,7 @@ return plural;
  ],
  "Image Builder": [
   null,
-  ""
+  "Побудова образів"
  ],
  "Invalid expiration date": [
   null,
@@ -381,7 +381,7 @@ return plural;
  ],
  "translatable": [
   null,
-  ""
+  "придатний до перекладу"
  ],
  "page-title\u0004Accounts": [
   null,

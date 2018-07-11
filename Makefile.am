@@ -18,8 +18,7 @@ nodist_noinst_SCRIPTS =
 dist_systemdunit_DATA   =
 nodist_systemdunit_DATA =
 
-TESTS = \
-	tools/test-bots
+TESTS = $(NULL)
 
 CLEANFILES = \
 	$(man_MANS) \
@@ -262,15 +261,15 @@ AM_CPPFLAGS = \
 
 AM_LDFLAGS = -Wl,--as-needed
 
-LOG_DRIVER = $(top_srcdir)/tools/tap-driver
-LOG_COMPILER = $(top_srcdir)/tools/tap-gtester
+LOG_DRIVER = $(PYTHON) $(top_srcdir)/tools/tap-driver
+LOG_COMPILER = $(PYTHON) $(top_srcdir)/tools/tap-gtester
 
 TEST_EXTENSIONS = .html .sh
-SH_LOG_DRIVER = $(top_srcdir)/tools/tap-driver
-HTML_LOG_DRIVER = $(top_srcdir)/tools/tap-driver
+SH_LOG_DRIVER = $(LOG_DRIVER)
+HTML_LOG_DRIVER = $(LOG_DRIVER)
 HTML_TEST_SERVER = $(builddir)/test-server
 
-HTML_LOG_COMPILER = $(top_srcdir)/test/common/tap-cdp --strip=$(top_srcdir)/ -- $(HTML_TEST_SERVER)
+HTML_LOG_COMPILER = $(PYTHON) $(top_srcdir)/test/common/tap-cdp --strip=$(top_srcdir)/ -- $(HTML_TEST_SERVER)
 
 VALGRIND_ARGS = --trace-children=yes --quiet --error-exitcode=33 \
 	--suppressions=valgrind-suppressions --gen-suppressions=all \
@@ -295,7 +294,7 @@ valgrind-suppressions: $(VALGRIND_SUPPRESSIONS)
 check-memory: valgrind-suppressions
 	$(MAKE) LOG_FLAGS="-- valgrind $(VALGRIND_ARGS)" \
 	        HTML_LOG_FLAGS="valgrind $(VALGRIND_ARGS)" \
-		$(AM_MAKEFLAGS) check
+		$(AM_MAKEFLAGS) check TESTS="$(filter-out tools/% bots/%,$(TESTS))"
 recheck-memory: valgrind-suppressions
 	$(MAKE) LOG_FLAGS="-- valgrind $(VALGRIND_ARGS)" \
 	        HTML_LOG_FLAGS="valgrind $(VALGRIND_ARGS)" \

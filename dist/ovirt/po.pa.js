@@ -71,6 +71,10 @@ return plural;
   null,
   ""
  ],
+ "$0 vCPU Details": [
+  null,
+  ""
+ ],
  "Action": [
   null,
   ""
@@ -87,7 +91,15 @@ return plural;
   null,
   ""
  ],
+ "All changes will take effect only after stopping and starting the VM.": [
+  null,
+  ""
+ ],
  "All running virtual machines will be turned off.": [
+  null,
+  ""
+ ],
+ "Apply": [
   null,
   ""
  ],
@@ -199,6 +211,10 @@ return plural;
   null,
   ""
  ],
+ "Cores per socket": [
+  null,
+  ""
+ ],
  "Count:": [
   null,
   ""
@@ -267,6 +283,10 @@ return plural;
   null,
   ""
  ],
+ "Fewer than the maximum number of virtual CPUs should be enabled.": [
+  null,
+  ""
+ ],
  "File": [
   null,
   ""
@@ -276,6 +296,10 @@ return plural;
   ""
  ],
  "Force Shut Down": [
+  null,
+  ""
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
   null,
   ""
  ],
@@ -347,6 +371,10 @@ return plural;
   null,
   ""
  ],
+ "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
+  null,
+  ""
+ ],
  "Memory": [
   null,
   ""
@@ -400,6 +428,10 @@ return plural;
   ""
  ],
  "No oVirt connection": [
+  null,
+  ""
+ ],
+ "Number of virtual CPUs that gonna be used.": [
   null,
   ""
  ],
@@ -471,6 +503,10 @@ return plural;
   null,
   ""
  ],
+ "Preferred number of sockets to expose to the guest.": [
+  null,
+  ""
+ ],
  "Preparing for Maintenance": [
   null,
   ""
@@ -516,6 +552,10 @@ return plural;
   ""
  ],
  "Running Since:": [
+  null,
+  ""
+ ],
+ "SET VCPU SETTINGS action failed": [
   null,
   ""
  ],
@@ -570,6 +610,10 @@ return plural;
  "Shut Down": [
   null,
   "ਬੰਦ ਕਰੋ"
+ ],
+ "Sockets": [
+  null,
+  "ਸਾਕਟ"
  ],
  "Source": [
   null,
@@ -668,6 +712,10 @@ return plural;
   ""
  ],
  "This virtual machine is not managed by oVirt": [
+  null,
+  ""
+ ],
+ "Threads per cores": [
   null,
   ""
  ],
@@ -972,6 +1020,14 @@ return plural;
   ""
  ],
  "user": [
+  null,
+  ""
+ ],
+ "vCPU Count": [
+  null,
+  ""
+ ],
+ "vCPU Maximum": [
   null,
   ""
  ],

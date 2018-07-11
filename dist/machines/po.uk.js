@@ -71,6 +71,10 @@ return plural;
   null,
   "$0 можна користуватися у більшості операційних систем. Щоб встановити пакунок із програмою, знайдіть відповідний запис у Програмних засобах GNOME або віддайте таку команду:"
  ],
+ "$0 vCPU Details": [
+  null,
+  ""
+ ],
  "Additional": [
   null,
   "Додаткові"
@@ -82,6 +86,14 @@ return plural;
  "Address:": [
   null,
   "Адреса:"
+ ],
+ "All changes will take effect only after stopping and starting the VM.": [
+  null,
+  ""
+ ],
+ "Apply": [
+  null,
+  "Застосувати"
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -151,6 +163,10 @@ return plural;
   null,
   "Консолі"
  ],
+ "Cores per socket": [
+  null,
+  ""
+ ],
  "Count:": [
   null,
   "Кількість:"
@@ -203,6 +219,10 @@ return plural;
   null,
   "Емуляція машини:"
  ],
+ "Fewer than the maximum number of virtual CPUs should be enabled.": [
+  null,
+  ""
+ ],
  "File": [
   null,
   "Файл"
@@ -218,6 +238,10 @@ return plural;
  "Force Shut Down": [
   null,
   "Примусово вимкнути"
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
  ],
  "GiB": [
   null,
@@ -286,6 +310,10 @@ return plural;
  "Manual Connection": [
   null,
   "З’єднання вручну"
+ ],
+ "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
+  null,
+  ""
  ],
  "Memory": [
   null,
@@ -395,6 +423,10 @@ return plural;
   null,
   "Група портів"
  ],
+ "Preferred number of sockets to expose to the guest.": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Протокол"
@@ -418,6 +450,10 @@ return plural;
  "Run": [
   null,
   "Запустити"
+ ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  ""
  ],
  "SPICE": [
   null,
@@ -454,6 +490,10 @@ return plural;
  "Shut Down": [
   null,
   "Вимкнути"
+ ],
+ "Sockets": [
+  null,
+  "Сокети"
  ],
  "Source": [
   null,
@@ -526,6 +566,10 @@ return plural;
  "The VM is suspended by guest power management.": [
   null,
   "Роботу віртуальної машини призупинено засобами керування живленням гостьової системи."
+ ],
+ "Threads per cores": [
+  null,
+  ""
  ],
  "Too many files found": [
   null,
@@ -742,6 +786,14 @@ return plural;
  "user": [
   null,
   "користувач"
+ ],
+ "vCPU Count": [
+  null,
+  ""
+ ],
+ "vCPU Maximum": [
+  null,
+  ""
  ],
  "vCPUs:": [
   null,

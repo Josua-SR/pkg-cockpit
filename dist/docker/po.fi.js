@@ -851,9 +851,9 @@ return plural;
   null,
   "Ellei pysäytetty"
  ],
- "Up since $StartedAt": [
+ "Up since $0": [
   null,
-  "Päällä alkaen $StartedAt"
+  ""
  ],
  "Used": [
   null,

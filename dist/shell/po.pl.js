@@ -283,14 +283,6 @@ return plural;
   null,
   "Na warunkach licencji:"
  ],
- "Lock to prevent privileged tasks": [
-  null,
-  "Zablokuj, aby uniemożliwić zdania wymagające uprawnień"
- ],
- "Locked": [
-  null,
-  "Zablokowano"
- ],
  "Log In": [
   null,
   "Zaloguj"
@@ -310,6 +302,10 @@ return plural;
  "Login Password": [
   null,
   "Hasło logowania"
+ ],
+ "Login has escalated admin privileges": [
+  null,
+  "Login uzyskał uprawnienia administratora"
  ],
  "Machines": [
   null,
@@ -379,9 +375,9 @@ return plural;
   null,
   "Port"
  ],
- "Privileged tasks not available": [
+ "Privileged": [
   null,
-  "Zadania wymagające uprawnień są niedostępne"
+  "Uprawnione"
  ],
  "Project website": [
   null,
@@ -494,10 +490,6 @@ return plural;
  "Unlock Key": [
   null,
   "Odblokuj klucz"
- ],
- "Unlocked": [
-  null,
-  "Odblokowano"
  ],
  "Update": [
   null,

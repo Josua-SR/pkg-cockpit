@@ -19,20 +19,22 @@
 
 #include "config.h"
 
-#include "cockpitchannel.h"
-#include "cockpitstream.h"
 #include "mock-transport.h"
 
-#include "common/cockpitjson.h"
-#include "common/cockpittest.h"
+#include "cockpitchannel.h"
+#include "cockpitjson.h"
+#include "cockpitpipe.h"
+#include "cockpitpipetransport.h"
+#include "cockpittest.h"
+#include "mock-pressure.h"
 
 #include <json-glib/json-glib.h>
 
 #include <gio/gio.h>
 
+#include <sys/types.h>
+#include <sys/socket.h>
 #include <string.h>
-
-extern const gchar *cockpit_bridge_local_address;
 
 /* ----------------------------------------------------------------------------
  * Mock
@@ -107,6 +109,25 @@ mock_echo_channel_open (CockpitTransport *transport,
 
   json_object_unref (options);
   return channel;
+}
+
+static GType mock_null_channel_get_type (void) G_GNUC_CONST;
+
+typedef CockpitChannel MockNullChannel;
+typedef CockpitChannelClass MockNullChannelClass;
+
+G_DEFINE_TYPE (MockNullChannel, mock_null_channel, COCKPIT_TYPE_CHANNEL);
+
+static void
+mock_null_channel_init (MockNullChannel *self)
+{
+
+}
+
+static void
+mock_null_channel_class_init (MockNullChannelClass *klass)
+{
+
 }
 
 /* ----------------------------------------------------------------------------
@@ -473,179 +494,258 @@ test_capable (void)
 }
 
 static void
-test_internal_not_registered (void)
+test_ping_channel (void)
 {
-  CockpitConnectable *connectable;
+  JsonObject *reply = NULL;
   JsonObject *options;
-  MockTransport *transport;
+  MockTransport *mock;
+  CockpitTransport *transport;
   CockpitChannel *channel;
-  JsonObject *sent;
+  GBytes *sent;
 
-  cockpit_expect_message ("55: couldn't find internal address: test");
-  cockpit_channel_internal_address ("other", NULL);
+  mock = mock_transport_new ();
+  transport = COCKPIT_TRANSPORT (mock);
 
   options = json_object_new ();
-  json_object_set_string_member (options, "internal", "test");
-  transport = g_object_new (mock_transport_get_type (), NULL);
-
   channel = g_object_new (mock_echo_channel_get_type (),
                           "transport", transport,
                           "id", "55",
                           "options", options,
                           NULL);
+  cockpit_channel_ready (channel, NULL);
   json_object_unref (options);
-  connectable = cockpit_channel_parse_stream (channel);
-  g_assert (connectable == NULL);
-  while (g_main_context_iteration (NULL, FALSE));
 
-  sent = mock_transport_pop_control (transport);
-  g_assert (sent != NULL);
+  sent = cockpit_transport_build_control ("command", "ping", "channel", "55", "other", "marmalade", NULL);
+  cockpit_transport_emit_recv (transport, NULL, sent);
+  g_bytes_unref (sent);
 
-  cockpit_assert_json_eq (sent,
-                  "{ \"command\": \"close\", \"channel\": \"55\", \"problem\": \"not-found\", \"message\":\"couldn't find internal address: test\"}");
+  reply = mock_transport_pop_control (mock);
+  g_assert (reply != NULL);
+  cockpit_assert_json_eq (reply, "{ \"command\": \"ready\", \"channel\": \"55\" }");
+
+  reply = mock_transport_pop_control (mock);
+  g_assert (reply != NULL);
+  cockpit_assert_json_eq (reply, "{ \"command\": \"pong\", \"channel\": \"55\", \"other\": \"marmalade\" }");
+
   g_object_unref (channel);
-  g_object_unref (transport);
-  cockpit_assert_expected ();
-
-  cockpit_channel_remove_internal_address ("other");
+  g_object_unref (mock);
 }
 
 static void
-test_internal_null_registered (void)
+test_ping_no_channel (void)
 {
-  CockpitConnectable *connectable;
+  JsonObject *reply = NULL;
   JsonObject *options;
-  MockTransport *transport;
+  MockTransport *mock;
+  CockpitTransport *transport;
   CockpitChannel *channel;
-  JsonObject *sent;
+  GBytes *sent;
 
-  cockpit_channel_internal_address ("test", NULL);
+  cockpit_expect_message ("received unknown control command: ping");
+
+  mock = mock_transport_new ();
+  transport = COCKPIT_TRANSPORT (mock);
 
   options = json_object_new ();
-  json_object_set_string_member (options, "internal", "test");
-  transport = g_object_new (mock_transport_get_type (), NULL);
-
   channel = g_object_new (mock_echo_channel_get_type (),
                           "transport", transport,
                           "id", "55",
                           "options", options,
                           NULL);
   json_object_unref (options);
-  connectable = cockpit_channel_parse_stream (channel);
-  g_assert (connectable == NULL);
-  while (g_main_context_iteration (NULL, FALSE));
 
-  sent = mock_transport_pop_control (transport);
-  g_assert (sent != NULL);
+  /*
+   * Sending a "ping" on an unknown channel. There should be nothing that
+   * responds to this and returns a "pong" message.
+   */
+  sent = cockpit_transport_build_control ("command", "ping", "channel", "unknown", "other", "marmalade", NULL);
+  cockpit_transport_emit_recv (transport, NULL, sent);
+  g_bytes_unref (sent);
 
-  cockpit_assert_json_eq (sent,
-                  "{ \"command\": \"close\", \"channel\": \"55\", \"problem\": \"not-found\"}");
+  cockpit_channel_ready (channel, NULL);
+
+  /* Should just get a ready message back */
+  reply = mock_transport_pop_control (mock);
+  g_assert (reply != NULL);
+  cockpit_assert_json_eq (reply, "{ \"command\": \"ready\", \"channel\": \"55\" }");
+
+  reply = mock_transport_pop_control (mock);
+  g_assert (reply == NULL);
+
   g_object_unref (channel);
-  g_object_unref (transport);
-  cockpit_assert_expected ();
+  g_object_unref (mock);
+}
 
-  cockpit_channel_remove_internal_address ("test");
+typedef struct {
+  CockpitTransport *transport_a;
+  CockpitChannel *channel_a;
+  CockpitTransport *transport_b;
+  CockpitChannel *channel_b;
+} TestPairCase;
+
+static void
+setup_pair (TestPairCase *tc,
+            gconstpointer data)
+{
+  CockpitPipe *pipe;
+  JsonObject *options;
+  int sv[2];
+
+  if (socketpair (PF_LOCAL, SOCK_STREAM, 0, sv) < 0)
+    g_assert_not_reached ();
+
+  pipe = cockpit_pipe_new ("a", sv[0], sv[0]);
+  tc->transport_a = cockpit_pipe_transport_new (pipe);
+  g_object_unref (pipe);
+
+  options = json_object_new ();
+  json_object_set_string_member (options, "command", "open");
+  json_object_set_string_member (options, "channel", "999");
+  tc->channel_a = g_object_new (mock_null_channel_get_type (),
+                                "id", "999",
+                                "options", options,
+                                "transport", tc->transport_a,
+                                NULL);
+  json_object_unref (options);
+
+  pipe = cockpit_pipe_new ("b", sv[1], sv[1]);
+  tc->transport_b = cockpit_pipe_transport_new (pipe);
+  g_object_unref (pipe);
+
+  options = json_object_new ();
+  json_object_set_string_member (options, "channel", "999");
+  tc->channel_b = g_object_new (mock_null_channel_get_type (),
+                                "id", "999",
+                                "options", options,
+                                "transport", tc->transport_b,
+                                NULL);
+  json_object_unref (options);
 }
 
 static void
-test_parse_port (void)
+teardown_pair (TestPairCase *tc,
+               gconstpointer data)
 {
-  JsonObject *options;
-  MockTransport *transport;
-  CockpitChannel *channel;
-  CockpitConnectable *connectable;
-  GSocketAddress *address;
-  GInetAddress *expected_ip;
-  GInetAddress *got_ip; // owned by address
-  gchar *name = NULL;
+  g_object_add_weak_pointer (G_OBJECT (tc->channel_a), (gpointer *)&tc->channel_a);
+  g_object_add_weak_pointer (G_OBJECT (tc->transport_a), (gpointer *)&tc->transport_a);
+  g_object_add_weak_pointer (G_OBJECT (tc->channel_b), (gpointer *)&tc->channel_b);
+  g_object_add_weak_pointer (G_OBJECT (tc->transport_b), (gpointer *)&tc->transport_b);
+  g_object_unref (tc->channel_a);
+  g_object_unref (tc->channel_b);
+  g_object_unref (tc->transport_a);
+  g_object_unref (tc->transport_b);
+  g_assert (tc->channel_a == NULL);
+  g_assert (tc->transport_a == NULL);
+  g_assert (tc->channel_b == NULL);
+  g_assert (tc->transport_b == NULL);
+}
 
-  expected_ip = g_inet_address_new_from_string (cockpit_bridge_local_address);
-
-  options = json_object_new ();
-  json_object_set_int_member (options, "port", 8090);
-  transport = g_object_new (mock_transport_get_type (), NULL);
-
-  channel = g_object_new (mock_echo_channel_get_type (),
-                          "transport", transport,
-                          "id", "55",
-                          "options", options,
-                          NULL);
-  json_object_unref (options);
-  connectable = cockpit_channel_parse_stream (channel);
-  g_assert (connectable != NULL);
-
-  address = cockpit_channel_parse_address (channel, &name);
-
-  g_assert (g_socket_address_get_family (address) == G_SOCKET_FAMILY_IPV4);
-  g_assert_cmpint (g_inet_socket_address_get_port ((GInetSocketAddress *)address),
-                   ==, 8090);
-  got_ip = g_inet_socket_address_get_address ((GInetSocketAddress *)address);
-  g_assert (g_inet_address_equal (got_ip, expected_ip));
-
-  g_assert_cmpint (connectable->local, ==, TRUE);
-
-  g_object_unref (channel);
-  cockpit_connectable_unref (connectable);
-  g_object_unref (transport);
-  g_object_unref (address);
-  g_object_unref (expected_ip);
-  g_free (name);
-  cockpit_assert_expected ();
+static gboolean
+on_timeout_set_flag (gpointer user_data)
+{
+  gboolean *data = user_data;
+  g_assert (user_data);
+  g_assert (*data == FALSE);
+  *data = TRUE;
+  return FALSE;
 }
 
 static void
-test_parse_address (void)
+on_pressure_set_throttle (CockpitChannel *channel,
+                          gboolean throttle,
+                          gpointer user_data)
 {
-  JsonObject *options;
-  MockTransport *transport;
-  CockpitChannel *channel;
-  CockpitConnectable *connectable;
-  GSocketAddress *address;
-  GInetAddress *expected_ip;
-  GInetAddress *got_ip; // owned by address
-  gchar *name = NULL;
-
-  expected_ip = g_inet_address_new_from_string ("10.1.1.1");
-
-  options = json_object_new ();
-  json_object_set_string_member (options, "address", "10.1.1.1");
-  json_object_set_int_member (options, "port", 8090);
-  transport = g_object_new (mock_transport_get_type (), NULL);
-
-  channel = g_object_new (mock_echo_channel_get_type (),
-                          "transport", transport,
-                          "id", "55",
-                          "options", options,
-                          NULL);
-  json_object_unref (options);
-  connectable = cockpit_channel_parse_stream (channel);
-  g_assert (connectable != NULL);
-
-  address = cockpit_channel_parse_address (channel, &name);
-
-  g_assert (g_socket_address_get_family (address) == G_SOCKET_FAMILY_IPV4);
-  g_assert_cmpint (g_inet_socket_address_get_port ((GInetSocketAddress *)address),
-                   ==, 8090);
-  got_ip = g_inet_socket_address_get_address ((GInetSocketAddress *)address);
-  g_assert (g_inet_address_equal (got_ip, expected_ip));
-
-  g_assert_cmpint (connectable->local, ==, FALSE);
-
-  g_object_unref (channel);
-  cockpit_connectable_unref (connectable);
-  g_object_unref (transport);
-  g_object_unref (address);
-  g_object_unref (expected_ip);
-  g_free (name);
-  cockpit_assert_expected ();
+  gint *data = user_data;
+  g_assert (user_data != NULL);
+  *data = throttle ? 1 : 0;
 }
+
+static void
+test_pressure_window (TestPairCase *tc,
+                      gconstpointer data)
+{
+  gint throttle = -1;
+  GBytes *sent;
+  gint i;
+
+  /* Ready to go */
+  cockpit_channel_ready (tc->channel_a, NULL);
+  cockpit_channel_ready (tc->channel_b, NULL);
+  g_signal_connect (tc->channel_a, "pressure", G_CALLBACK (on_pressure_set_throttle), &throttle);
+
+  /* Sent this a thousand times */
+  sent = g_bytes_new_take (g_strnfill (1000 * 1000, '?'), 1000 * 1000);
+  for (i = 0; i < 10; i++)
+    cockpit_channel_send (tc->channel_a, sent, TRUE);
+  g_bytes_unref (sent);
+
+  /*
+   * This should have put way too much in the queue, and thus
+   * emitted the back-pressure signal. This signal would normally
+   * be used by others to slow down their queueing, but in this
+   * case we just check that it was fired.
+   */
+  g_assert_cmpint (throttle, ==, 1);
+
+  /*
+   * Now the queue is getting drained. At some point, it will be
+   * signaled that back pressure has been turned off
+   */
+  while (throttle != 0)
+    g_main_context_iteration (NULL, TRUE);
+}
+
+static void
+test_pressure_throttle (TestPairCase *tc,
+                        gconstpointer data)
+{
+  CockpitFlow *pressure = mock_pressure_new ();
+  gboolean timeout = FALSE;
+  gboolean throttle = 0;
+  GBytes *sent;
+
+  cockpit_channel_ready (tc->channel_a, NULL);
+  cockpit_channel_ready (tc->channel_b, NULL);
+
+  g_signal_connect (tc->channel_a, "pressure", G_CALLBACK (on_pressure_set_throttle), &throttle);
+
+  /* Send this a thousand times over the echo pipe */
+  sent = g_bytes_new_take (g_strnfill (400 * 1000, '?'), 400 * 1000);
+
+  /* Turn on pressure on the remote side */
+  cockpit_flow_throttle (COCKPIT_FLOW (tc->channel_b), pressure);
+  cockpit_flow_emit_pressure (pressure, TRUE);
+
+  /* In spite of us running the main loop, no we should have pressure */
+  g_timeout_add_seconds (2, on_timeout_set_flag, &timeout);
+  while (timeout == FALSE)
+    {
+      if (throttle != 1)
+        cockpit_channel_send (tc->channel_a, sent, TRUE);
+      g_main_context_iteration (NULL, throttle == 1);
+    }
+
+  g_assert_cmpint (throttle, ==, 1);
+
+  /* Now lets turn off the pressure on the remote side */
+  cockpit_flow_emit_pressure (pressure, FALSE);
+
+  /* And we should see the pressure here go down too */
+  while (throttle == 1)
+    g_main_context_iteration (NULL, TRUE);
+
+  g_assert_cmpint (throttle, ==, 0);
+
+  cockpit_flow_throttle (COCKPIT_FLOW (tc->channel_b), NULL);
+  g_object_unref (pressure);
+  g_bytes_unref (sent);
+}
+
 
 int
 main (int argc,
       char *argv[])
 {
-  cockpit_bridge_local_address = "127.0.0.1";
-
   cockpit_test_init (&argc, &argv);
 
   g_test_add_func ("/channel/get-option", test_get_option);
@@ -654,14 +754,6 @@ main (int argc,
                    test_close_not_capable);
   g_test_add_func ("/channel/test_capable",
                    test_capable);
-  g_test_add_func ("/channel/internal-null-registered",
-                   test_internal_null_registered);
-  g_test_add_func ("/channel/internal-not-registered",
-                   test_internal_not_registered);
-
-  g_test_add_func ("/channel/parse-port", test_parse_port);
-  g_test_add_func ("/channel/parse-address", test_parse_address);
-
   g_test_add ("/channel/recv-send", TestCase, NULL,
               setup, test_recv_and_send, teardown);
   g_test_add ("/channel/recv-queue", TestCase, NULL,
@@ -676,6 +768,14 @@ main (int argc,
               setup, test_close_json_option, teardown);
   g_test_add ("/channel/close-transport", TestCase, NULL,
               setup, test_close_transport, teardown);
+
+  g_test_add ("/channel/pressure/window", TestPairCase, NULL,
+              setup_pair, test_pressure_window, teardown_pair);
+  g_test_add ("/channel/pressure/throttle", TestPairCase, NULL,
+              setup_pair, test_pressure_throttle, teardown_pair);
+
+  g_test_add_func ("/channel/ping/normal", test_ping_channel);
+  g_test_add_func ("/channel/ping/no-channel", test_ping_no_channel);
 
   return g_test_run ();
 }

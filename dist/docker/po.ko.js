@@ -843,9 +843,9 @@ return plural;
   null,
   "정지됨"
  ],
- "Up since $StartedAt": [
+ "Up since $0": [
   null,
-  "$StartedAt 부터 켜져있음"
+  ""
  ],
  "Used": [
   null,

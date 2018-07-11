@@ -71,6 +71,10 @@ return plural;
   null,
   "$0 está disponível para a maioria dos sistemas operacionais. Para instalá-lo, procure-o no GNOME Software ou execute o seguinte:"
  ],
+ "$0 vCPU Details": [
+  null,
+  ""
+ ],
  "Action": [
   null,
   "Ação"
@@ -87,9 +91,17 @@ return plural;
   null,
   "Endereço:"
  ],
+ "All changes will take effect only after stopping and starting the VM.": [
+  null,
+  ""
+ ],
  "All running virtual machines will be turned off.": [
   null,
   "Todas as máquinas virtuais em execução serão desativadas."
+ ],
+ "Apply": [
+  null,
+  "Aplicar"
  ],
  "Automatically selected host": [
   null,
@@ -199,6 +211,10 @@ return plural;
   null,
   "Consoles"
  ],
+ "Cores per socket": [
+  null,
+  ""
+ ],
  "Count:": [
   null,
   "Contagem:"
@@ -267,6 +283,10 @@ return plural;
   null,
   "FQDN"
  ],
+ "Fewer than the maximum number of virtual CPUs should be enabled.": [
+  null,
+  ""
+ ],
  "File": [
   null,
   "Arquivo"
@@ -278,6 +298,10 @@ return plural;
  "Force Shut Down": [
   null,
   "Forçar Desligamento"
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
  ],
  "GiB": [
   null,
@@ -347,6 +371,10 @@ return plural;
   null,
   "Conexão manual"
  ],
+ "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
+  null,
+  ""
+ ],
  "Memory": [
   null,
   "Memória"
@@ -400,6 +428,10 @@ return plural;
   "Nenhuma interface de rede definida para esta VM"
  ],
  "No oVirt connection": [
+  null,
+  ""
+ ],
+ "Number of virtual CPUs that gonna be used.": [
   null,
   ""
  ],
@@ -471,6 +503,10 @@ return plural;
   null,
   "Portgroup"
  ],
+ "Preferred number of sockets to expose to the guest.": [
+  null,
+  ""
+ ],
  "Preparing for Maintenance": [
   null,
   "Preparando-se para manutenção"
@@ -518,6 +554,10 @@ return plural;
  "Running Since:": [
   null,
   "Correndo desde:"
+ ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  ""
  ],
  "SHUTDOWN action failed": [
   null,
@@ -570,6 +610,10 @@ return plural;
  "Shut Down": [
   null,
   "Encerrar"
+ ],
+ "Sockets": [
+  null,
+  "Sockets"
  ],
  "Source": [
   null,
@@ -670,6 +714,10 @@ return plural;
  "This virtual machine is not managed by oVirt": [
   null,
   "Esta máquina virtual não é gerenciada pelo oVirt"
+ ],
+ "Threads per cores": [
+  null,
+  ""
  ],
  "Type": [
   null,
@@ -972,6 +1020,14 @@ return plural;
   ""
  ],
  "user": [
+  null,
+  ""
+ ],
+ "vCPU Count": [
+  null,
+  ""
+ ],
+ "vCPU Maximum": [
   null,
   ""
  ],

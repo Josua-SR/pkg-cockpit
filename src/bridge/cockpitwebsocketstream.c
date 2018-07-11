@@ -21,10 +21,11 @@
 
 #include "cockpitwebsocketstream.h"
 
-#include "cockpitchannel.h"
 #include "cockpitconnect.h"
 #include "cockpitstream.h"
 
+#include "common/cockpitchannel.h"
+#include "common/cockpitflow.h"
 #include "common/cockpitjson.h"
 
 #include "websocket/websocket.h"
@@ -339,6 +340,12 @@ on_socket_connect (GObject *object,
   self->sig_close = g_signal_connect (self->client, "close", G_CALLBACK (on_web_socket_close), self);
   self->sig_error = g_signal_connect (self->client, "error", G_CALLBACK (on_web_socket_error), self);
 
+  /* Let the channel throttle the websocket's input flow*/
+  cockpit_flow_throttle (COCKPIT_FLOW (self->client), COCKPIT_FLOW (self));
+
+  /* Let the websocket throtlte the channel peer's output flow */
+  cockpit_flow_throttle (COCKPIT_FLOW (channel), COCKPIT_FLOW (self->client));
+
   problem = NULL;
 
 out:
@@ -362,7 +369,7 @@ cockpit_web_socket_stream_prepare (CockpitChannel *channel)
   if (self->closed)
     goto out;
 
-  connectable = cockpit_channel_parse_stream (channel);
+  connectable = cockpit_connect_parse_stream (channel);
   if (!connectable)
     goto out;
 

@@ -79,6 +79,10 @@ return plural;
   "$0 hours",
   "$0 小时"
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
  "$0 minute": [
   "$0 minutes",
   "$0 分钟"
@@ -90,6 +94,10 @@ return plural;
  "$0 week": [
   "$0 weeks",
   "$0 周"
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
  ],
  "$0 year": [
   "$0 years",
@@ -279,6 +287,10 @@ return plural;
   null,
   "9号"
  ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Advanced TCA": [
   null,
   ""
@@ -387,6 +399,10 @@ return plural;
   null,
   ""
  ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
  "Class": [
   null,
   ""
@@ -491,6 +507,10 @@ return plural;
   null,
   "不要重复"
  ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
  "Embedded PC": [
   null,
   ""
@@ -502,6 +522,10 @@ return plural;
  "Enable Forcefully": [
   null,
   "强制启用"
+ ],
+ "Enable persistent metrics…": [
+  null,
+  ""
  ],
  "Enabled": [
   null,
@@ -588,6 +612,18 @@ return plural;
   "ID"
  ],
  "Info and above": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  "安装"
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
   null,
   ""
  ],
@@ -799,6 +835,10 @@ return plural;
   null,
   "关"
  ],
+ "Ok": [
+  null,
+  "确认"
+ ],
  "On": [
   null,
   "开"
@@ -916,6 +956,14 @@ return plural;
   "重载"
  ],
  "Reload Propagated From": [
+  null,
+  ""
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
   null,
   ""
  ],
@@ -1151,6 +1199,10 @@ return plural;
   null,
   ""
  ],
+ "The user <b>$0</b> is not permitted to enable or disable services": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
   "用户 <b>$0</b> 不允许修改的主机名"
@@ -1158,6 +1210,10 @@ return plural;
  "The user <b>$0</b> is not permitted to shutdown or restart this server": [
   null,
   "用户 <b>$0</b> 不被允许来关闭或重启该服务器"
+ ],
+ "The user <b>$0</b> is not permitted to start or stop services": [
+  null,
+  ""
  ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
@@ -1186,6 +1242,10 @@ return plural;
  "Timers": [
   null,
   "计时器"
+ ],
+ "Total size: $0": [
+  null,
+  ""
  ],
  "Tower": [
   null,
@@ -1242,6 +1302,10 @@ return plural;
  "Version": [
   null,
   "版本"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "Wanted By": [
   null,

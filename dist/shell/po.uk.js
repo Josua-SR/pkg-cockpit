@@ -283,14 +283,6 @@ return plural;
   null,
   "Умови ліцензування:"
  ],
- "Lock to prevent privileged tasks": [
-  null,
-  "Заблокувати, щоб запобігти виконанню привілейованих завдань"
- ],
- "Locked": [
-  null,
-  "Заблоковано"
- ],
  "Log In": [
   null,
   "Увійти"
@@ -310,6 +302,10 @@ return plural;
  "Login Password": [
   null,
   "Пароль користувача"
+ ],
+ "Login has escalated admin privileges": [
+  null,
+  ""
  ],
  "Machines": [
   null,
@@ -379,9 +375,9 @@ return plural;
   null,
   "Порт"
  ],
- "Privileged tasks not available": [
+ "Privileged": [
   null,
-  "Привілейовані завдання недоступні"
+  ""
  ],
  "Project website": [
   null,
@@ -494,10 +490,6 @@ return plural;
  "Unlock Key": [
   null,
   "Розблокувати ключ"
- ],
- "Unlocked": [
-  null,
-  "Розблоковано"
  ],
  "Update": [
   null,

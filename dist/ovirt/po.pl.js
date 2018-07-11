@@ -71,6 +71,10 @@ return plural;
   null,
   "$0 jest dostępne dla większości systemów operacyjnych. Aby zainstalować, należy wyszukać w Menedżerze oprogramowania GNOME lub wykonać polecenie:"
  ],
+ "$0 vCPU Details": [
+  null,
+  "Informacje o wirtualnym procesorze $0"
+ ],
  "Action": [
   null,
   "Działanie"
@@ -87,9 +91,17 @@ return plural;
   null,
   "Adres:"
  ],
+ "All changes will take effect only after stopping and starting the VM.": [
+  null,
+  "Wszystkie zmiany zostaną uwzględnione tylko po zatrzymaniu i uruchomieniu maszyny wirtualnej."
+ ],
  "All running virtual machines will be turned off.": [
   null,
   "Wszystkie uruchomione maszyny wirtualne zostaną wyłączone."
+ ],
+ "Apply": [
+  null,
+  "Zastosuj"
  ],
  "Automatically selected host": [
   null,
@@ -199,6 +211,10 @@ return plural;
   null,
   "Konsole"
  ],
+ "Cores per socket": [
+  null,
+  "Rdzenie na gniazdo"
+ ],
  "Count:": [
   null,
   "Liczba:"
@@ -267,6 +283,10 @@ return plural;
   null,
   "FQDN"
  ],
+ "Fewer than the maximum number of virtual CPUs should be enabled.": [
+  null,
+  "Mniej niż maksymalna liczba wirtualnych procesorów powinna być włączona."
+ ],
  "File": [
   null,
   "Plik"
@@ -278,6 +298,10 @@ return plural;
  "Force Shut Down": [
   null,
   "Wymuś wyłączenie"
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "Działanie GET HYPERVISOR MAX VCPU się nie powiodło"
  ],
  "GiB": [
   null,
@@ -347,6 +371,10 @@ return plural;
   null,
   "Ręczne połączenie"
  ],
+ "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
+  null,
+  "Maksymalna liczba wirtualnych procesorów przydzielonych do systemu operacyjnego gościa, musi wynosić między 1 a $0"
+ ],
  "Memory": [
   null,
   "Pamięć"
@@ -402,6 +430,10 @@ return plural;
  "No oVirt connection": [
   null,
   "Brak połączenia oVirt"
+ ],
+ "Number of virtual CPUs that gonna be used.": [
+  null,
+  "Liczba wirtualnych procesorów, które będą używane."
  ],
  "OK": [
   null,
@@ -471,6 +503,10 @@ return plural;
   null,
   "Grupa portów"
  ],
+ "Preferred number of sockets to expose to the guest.": [
+  null,
+  "Preferowana liczba gniazd eksponowanych gościowi."
+ ],
  "Preparing for Maintenance": [
   null,
   "Przygotowywanie do konserwacji"
@@ -518,6 +554,10 @@ return plural;
  "Running Since:": [
   null,
   "Działa od:"
+ ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  "Działanie SET VCPU SETTINGS się nie powiodło"
  ],
  "SHUTDOWN action failed": [
   null,
@@ -570,6 +610,10 @@ return plural;
  "Shut Down": [
   null,
   "Wyłącz"
+ ],
+ "Sockets": [
+  null,
+  "Gniazda"
  ],
  "Source": [
   null,
@@ -670,6 +714,10 @@ return plural;
  "This virtual machine is not managed by oVirt": [
   null,
   "Ta maszyna wirtualna nie jest zarządzana przez oprogramowanie oVirt"
+ ],
+ "Threads per cores": [
+  null,
+  "Wątki na rdzenie"
  ],
  "Type": [
   null,
@@ -974,6 +1022,14 @@ return plural;
  "user": [
   null,
   "użytkownik"
+ ],
+ "vCPU Count": [
+  null,
+  "Liczba wirtualnych procesorów"
+ ],
+ "vCPU Maximum": [
+  null,
+  "Maksymalna liczba wirtualnych procesorów"
  ],
  "vCPUs": [
   null,

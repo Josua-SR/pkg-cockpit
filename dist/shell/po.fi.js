@@ -283,14 +283,6 @@ return plural;
   null,
   "Lisensoitu:"
  ],
- "Lock to prevent privileged tasks": [
-  null,
-  ""
- ],
- "Locked": [
-  null,
-  "Lukitse"
- ],
  "Log In": [
   null,
   "Kirjaudu sisään"
@@ -310,6 +302,10 @@ return plural;
  "Login Password": [
   null,
   "Kirjautumissalasana"
+ ],
+ "Login has escalated admin privileges": [
+  null,
+  ""
  ],
  "Machines": [
   null,
@@ -379,7 +375,7 @@ return plural;
   null,
   "Portti"
  ],
- "Privileged tasks not available": [
+ "Privileged": [
   null,
   ""
  ],
@@ -494,10 +490,6 @@ return plural;
  "Unlock Key": [
   null,
   "Avaa avain"
- ],
- "Unlocked": [
-  null,
-  "Avattu"
  ],
  "Update": [
   null,

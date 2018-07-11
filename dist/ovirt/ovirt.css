@@ -893,6 +893,11 @@ table.delete-dialog-disks.table tbody tr td:nth-child(3) {
     cursor: pointer;
 }
 
+.xterm.xterm-cursor-crosshair {
+    /* Column selection mode */
+    cursor: crosshair;
+}
+
 .xterm .xterm-accessibility,
 .xterm .xterm-message {
     position: absolute;

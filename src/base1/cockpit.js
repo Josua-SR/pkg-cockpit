@@ -462,6 +462,8 @@ function Transport() {
         }
 
         check_health_timer = window.setInterval(function () {
+            if (self.ready)
+                ws.send("\n{ \"command\": \"ping\" }");
             if (!got_message) {
                 if (ignore_health_check) {
                     console.log("health check failure ignored");
@@ -621,8 +623,13 @@ function Transport() {
             }
             self.close(data);
 
+        /* Any pings get sent back as pongs */
         } else if (data.command == "ping") {
-            /* 'ping' messages are ignored */
+            data["command"] = "pong";
+            self.send_control(data);
+
+        } else if (data.command == "pong") {
+            /* Any pong commands are ignored */
 
         } else if (data.command == "hint") {
             if (process_hints)

@@ -17,20 +17,17 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MOCK_CHANNEL_H
-#define MOCK_CHANNEL_H
+#ifndef MOCK_PRESSURE_H
+#define MOCK_PRESSURE_H
 
-#include "cockpitchannel.h"
+#include <glib-object.h>
 
-#define MOCK_TYPE_ECHO_CHANNEL         (mock_echo_channel_get_type ())
-#define MOCK_ECHO_CHANNEL(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), MOCK_TYPE_ECHO_CHANNEL, MockEchoChannel))
-#define MOCK_IS_ECHO_CHANNEL(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), MOCK_TYPE_ECHO_CHANNEL))
+#include "cockpitflow.h"
 
-typedef struct {
-  CockpitChannel parent;
-  gboolean close_called;
-} MockEchoChannel;
+#define MOCK_TYPE_PRESSURE         (mock_pressure_get_type ())
 
-GType                mock_echo_channel_get_type      (void);
+GType                mock_pressure_get_type      (void);
 
-#endif /* MOCK_CHANNEL_H */
+CockpitFlow *        mock_pressure_new           (void);
+
+#endif /* MOCK_PRESSURE_H */

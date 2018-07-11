@@ -851,9 +851,9 @@ return plural;
   null,
   "A menos que detenido"
  ],
- "Up since $StartedAt": [
+ "Up since $0": [
   null,
-  "Arriba desde $StartedAt"
+  ""
  ],
  "Used": [
   null,

@@ -283,14 +283,6 @@ return plural;
   null,
   ""
  ],
- "Lock to prevent privileged tasks": [
-  null,
-  ""
- ],
- "Locked": [
-  null,
-  ""
- ],
  "Log In": [
   null,
   ""
@@ -308,6 +300,10 @@ return plural;
   ""
  ],
  "Login Password": [
+  null,
+  ""
+ ],
+ "Login has escalated admin privileges": [
   null,
   ""
  ],
@@ -379,7 +375,7 @@ return plural;
   null,
   ""
  ],
- "Privileged tasks not available": [
+ "Privileged": [
   null,
   ""
  ],
@@ -492,10 +488,6 @@ return plural;
   ""
  ],
  "Unlock Key": [
-  null,
-  ""
- ],
- "Unlocked": [
   null,
   ""
  ],

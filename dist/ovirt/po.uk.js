@@ -71,6 +71,10 @@ return plural;
   null,
   "$0 можна користуватися у більшості операційних систем. Щоб встановити пакунок із програмою, знайдіть відповідний запис у Програмних засобах GNOME або віддайте таку команду:"
  ],
+ "$0 vCPU Details": [
+  null,
+  ""
+ ],
  "Action": [
   null,
   "Дія"
@@ -87,9 +91,17 @@ return plural;
   null,
   "Адреса:"
  ],
+ "All changes will take effect only after stopping and starting the VM.": [
+  null,
+  ""
+ ],
  "All running virtual machines will be turned off.": [
   null,
   "Усі запущені віртуальні машини буде вимкнено."
+ ],
+ "Apply": [
+  null,
+  "Застосувати"
  ],
  "Automatically selected host": [
   null,
@@ -199,6 +211,10 @@ return plural;
   null,
   "Консолі"
  ],
+ "Cores per socket": [
+  null,
+  ""
+ ],
  "Count:": [
   null,
   "Кількість:"
@@ -267,6 +283,10 @@ return plural;
   null,
   "FQDN"
  ],
+ "Fewer than the maximum number of virtual CPUs should be enabled.": [
+  null,
+  ""
+ ],
  "File": [
   null,
   "Файл"
@@ -278,6 +298,10 @@ return plural;
  "Force Shut Down": [
   null,
   "Примусово вимкнути"
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
  ],
  "GiB": [
   null,
@@ -347,6 +371,10 @@ return plural;
   null,
   "З’єднання вручну"
  ],
+ "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
+  null,
+  ""
+ ],
  "Memory": [
   null,
   "Пам'ять"
@@ -402,6 +430,10 @@ return plural;
  "No oVirt connection": [
   null,
   "Немає з'єднання oVirt"
+ ],
+ "Number of virtual CPUs that gonna be used.": [
+  null,
+  ""
  ],
  "OK": [
   null,
@@ -471,6 +503,10 @@ return plural;
   null,
   "Група портів"
  ],
+ "Preferred number of sockets to expose to the guest.": [
+  null,
+  ""
+ ],
  "Preparing for Maintenance": [
   null,
   "Готуємося до обслуговування"
@@ -518,6 +554,10 @@ return plural;
  "Running Since:": [
   null,
   "Працює з:"
+ ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  ""
  ],
  "SHUTDOWN action failed": [
   null,
@@ -570,6 +610,10 @@ return plural;
  "Shut Down": [
   null,
   "Вимкнути"
+ ],
+ "Sockets": [
+  null,
+  "Сокети"
  ],
  "Source": [
   null,
@@ -670,6 +714,10 @@ return plural;
  "This virtual machine is not managed by oVirt": [
   null,
   "Ця віртуальна машина не керується з боку oVirt"
+ ],
+ "Threads per cores": [
+  null,
+  ""
  ],
  "Type": [
   null,
@@ -974,6 +1022,14 @@ return plural;
  "user": [
   null,
   "користувач"
+ ],
+ "vCPU Count": [
+  null,
+  ""
+ ],
+ "vCPU Maximum": [
+  null,
+  ""
  ],
  "vCPUs": [
   null,

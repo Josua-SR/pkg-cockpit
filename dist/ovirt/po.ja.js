@@ -71,6 +71,10 @@ return plural;
   null,
   "$0 は、多数のオペレーティングシステムで利用できます。インストールするには、GNOME ソフトウェアで検索するか、以下を実行します:"
  ],
+ "$0 vCPU Details": [
+  null,
+  ""
+ ],
  "Action": [
   null,
   "アクション"
@@ -87,9 +91,17 @@ return plural;
   null,
   "アドレス: "
  ],
+ "All changes will take effect only after stopping and starting the VM.": [
+  null,
+  ""
+ ],
  "All running virtual machines will be turned off.": [
   null,
   "全ての実行中のマシンはオフされます。"
+ ],
+ "Apply": [
+  null,
+  "適用"
  ],
  "Automatically selected host": [
   null,
@@ -199,6 +211,10 @@ return plural;
   null,
   "コンソール"
  ],
+ "Cores per socket": [
+  null,
+  ""
+ ],
  "Count:": [
   null,
   "数量:"
@@ -267,6 +283,10 @@ return plural;
   null,
   "FQDN"
  ],
+ "Fewer than the maximum number of virtual CPUs should be enabled.": [
+  null,
+  ""
+ ],
  "File": [
   null,
   "File"
@@ -278,6 +298,10 @@ return plural;
  "Force Shut Down": [
   null,
   "シャットダウンの強制"
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
  ],
  "GiB": [
   null,
@@ -347,6 +371,10 @@ return plural;
   null,
   "手動接続"
  ],
+ "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
+  null,
+  ""
+ ],
  "Memory": [
   null,
   "メモリ"
@@ -400,6 +428,10 @@ return plural;
   "この仮想マシンにはネットワークインターフェースが定義されていません"
  ],
  "No oVirt connection": [
+  null,
+  ""
+ ],
+ "Number of virtual CPUs that gonna be used.": [
   null,
   ""
  ],
@@ -471,6 +503,10 @@ return plural;
   null,
   "ポートグループ"
  ],
+ "Preferred number of sockets to expose to the guest.": [
+  null,
+  ""
+ ],
  "Preparing for Maintenance": [
   null,
   "メンテナンスの準備中"
@@ -518,6 +554,10 @@ return plural;
  "Running Since:": [
   null,
   "実行開始:"
+ ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  ""
  ],
  "SHUTDOWN action failed": [
   null,
@@ -570,6 +610,10 @@ return plural;
  "Shut Down": [
   null,
   "シャットダウン"
+ ],
+ "Sockets": [
+  null,
+  "ソケット"
  ],
  "Source": [
   null,
@@ -670,6 +714,10 @@ return plural;
  "This virtual machine is not managed by oVirt": [
   null,
   "この仮想マシンは、oVirt で管理されていません"
+ ],
+ "Threads per cores": [
+  null,
+  ""
  ],
  "Type": [
   null,
@@ -974,6 +1022,14 @@ return plural;
  "user": [
   null,
   "ユーザー"
+ ],
+ "vCPU Count": [
+  null,
+  ""
+ ],
+ "vCPU Maximum": [
+  null,
+  ""
  ],
  "vCPUs": [
   null,

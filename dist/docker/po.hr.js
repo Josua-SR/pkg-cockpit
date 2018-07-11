@@ -859,9 +859,9 @@ return plural;
   null,
   "Zaustavljeno "
  ],
- "Up since $StartedAt": [
+ "Up since $0": [
   null,
-  "Pokrenut od $StartedAt"
+  ""
  ],
  "Used": [
   null,

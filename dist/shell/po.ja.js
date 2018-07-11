@@ -283,14 +283,6 @@ return plural;
   null,
   "ライセンス保持者:"
  ],
- "Lock to prevent privileged tasks": [
-  null,
-  "特権タスクを防ぐためにロック"
- ],
- "Locked": [
-  null,
-  "ロック"
- ],
  "Log In": [
   null,
   "ログイン"
@@ -310,6 +302,10 @@ return plural;
  "Login Password": [
   null,
   "ログインパスワード"
+ ],
+ "Login has escalated admin privileges": [
+  null,
+  ""
  ],
  "Machines": [
   null,
@@ -379,9 +375,9 @@ return plural;
   null,
   "ポート"
  ],
- "Privileged tasks not available": [
+ "Privileged": [
   null,
-  "特権タスクが利用できません"
+  ""
  ],
  "Project website": [
   null,
@@ -494,10 +490,6 @@ return plural;
  "Unlock Key": [
   null,
   "ロック解除キー"
- ],
- "Unlocked": [
-  null,
-  "ロック解除済み"
  ],
  "Update": [
   null,

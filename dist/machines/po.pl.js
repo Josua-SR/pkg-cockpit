@@ -71,6 +71,10 @@ return plural;
   null,
   "$0 jest dostępne dla większości systemów operacyjnych. Aby zainstalować, należy wyszukać w Menedżerze oprogramowania GNOME lub wykonać polecenie:"
  ],
+ "$0 vCPU Details": [
+  null,
+  "Informacje o wirtualnym procesorze $0"
+ ],
  "Additional": [
   null,
   "Dodatkowe"
@@ -82,6 +86,14 @@ return plural;
  "Address:": [
   null,
   "Adres:"
+ ],
+ "All changes will take effect only after stopping and starting the VM.": [
+  null,
+  "Wszystkie zmiany zostaną uwzględnione tylko po zatrzymaniu i uruchomieniu maszyny wirtualnej."
+ ],
+ "Apply": [
+  null,
+  "Zastosuj"
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -151,6 +163,10 @@ return plural;
   null,
   "Konsole"
  ],
+ "Cores per socket": [
+  null,
+  "Rdzenie na gniazdo"
+ ],
  "Count:": [
   null,
   "Liczba:"
@@ -203,6 +219,10 @@ return plural;
   null,
   "Emulowany komputer:"
  ],
+ "Fewer than the maximum number of virtual CPUs should be enabled.": [
+  null,
+  "Mniej niż maksymalna liczba wirtualnych procesorów powinna być włączona."
+ ],
  "File": [
   null,
   "Plik"
@@ -218,6 +238,10 @@ return plural;
  "Force Shut Down": [
   null,
   "Wymuś wyłączenie"
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "Działanie GET HYPERVISOR MAX VCPU się nie powiodło"
  ],
  "GiB": [
   null,
@@ -286,6 +310,10 @@ return plural;
  "Manual Connection": [
   null,
   "Ręczne połączenie"
+ ],
+ "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
+  null,
+  "Maksymalna liczba wirtualnych procesorów przydzielonych do systemu operacyjnego gościa, musi wynosić między 1 a $0"
  ],
  "Memory": [
   null,
@@ -395,6 +423,10 @@ return plural;
   null,
   "Grupa portów"
  ],
+ "Preferred number of sockets to expose to the guest.": [
+  null,
+  "Preferowana liczba gniazd eksponowanych gościowi."
+ ],
  "Protocol": [
   null,
   "Protokół"
@@ -418,6 +450,10 @@ return plural;
  "Run": [
   null,
   "Uruchom"
+ ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  "Działanie SET VCPU SETTINGS się nie powiodło"
  ],
  "SPICE": [
   null,
@@ -454,6 +490,10 @@ return plural;
  "Shut Down": [
   null,
   "Wyłącz"
+ ],
+ "Sockets": [
+  null,
+  "Gniazda"
  ],
  "Source": [
   null,
@@ -526,6 +566,10 @@ return plural;
  "The VM is suspended by guest power management.": [
   null,
   "Maszyna wirtualna jest uśpiona przez zarządzanie zasilaniem."
+ ],
+ "Threads per cores": [
+  null,
+  "Wątki na rdzenie"
  ],
  "Too many files found": [
   null,
@@ -742,6 +786,14 @@ return plural;
  "user": [
   null,
   "użytkownik"
+ ],
+ "vCPU Count": [
+  null,
+  "Liczba wirtualnych procesorów"
+ ],
+ "vCPU Maximum": [
+  null,
+  "Maksymalna liczba wirtualnych procesorów"
  ],
  "vCPUs:": [
   null,

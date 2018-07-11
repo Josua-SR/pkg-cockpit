@@ -171,11 +171,11 @@ return plural;
  ],
  "Add Services": [
   null,
-  ""
+  "Adicionar serviços"
  ],
  "Add Services…": [
   null,
-  ""
+  "Adicionar serviços…"
  ],
  "Add Team": [
   null,
@@ -211,7 +211,7 @@ return plural;
  ],
  "Allowed Services": [
   null,
-  ""
+  "Serviços Permitidos"
  ],
  "Apply": [
   null,
@@ -375,7 +375,7 @@ return plural;
  ],
  "Enable Service": [
   null,
-  ""
+  "Ativar serviço"
  ],
  "Ethernet MAC": [
   null,
@@ -395,15 +395,15 @@ return plural;
  ],
  "Filter Services": [
   null,
-  ""
+  "Serviços de filtro"
  ],
  "Firewall": [
   null,
-  ""
+  "Firewall"
  ],
  "Firewall is not available": [
   null,
-  ""
+  "Firewall não está disponível"
  ],
  "Forward delay $forward_delay": [
   null,

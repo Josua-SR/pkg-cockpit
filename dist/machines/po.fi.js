@@ -71,6 +71,10 @@ return plural;
   null,
   "$0 on saatavilla useimmille käyttöjärjestelmille. Asentaaksesi sen, hae sitä GNOME Softwaresta, tai aja seuraava komento:"
  ],
+ "$0 vCPU Details": [
+  null,
+  ""
+ ],
  "Additional": [
   null,
   ""
@@ -82,6 +86,14 @@ return plural;
  "Address:": [
   null,
   "Osoite:"
+ ],
+ "All changes will take effect only after stopping and starting the VM.": [
+  null,
+  ""
+ ],
+ "Apply": [
+  null,
+  "Toteuta"
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -151,6 +163,10 @@ return plural;
   null,
   "Konsolit"
  ],
+ "Cores per socket": [
+  null,
+  ""
+ ],
  "Count:": [
   null,
   ""
@@ -203,6 +219,10 @@ return plural;
   null,
   "Emuloitu kone:"
  ],
+ "Fewer than the maximum number of virtual CPUs should be enabled.": [
+  null,
+  ""
+ ],
  "File": [
   null,
   "Tiedosto"
@@ -218,6 +238,10 @@ return plural;
  "Force Shut Down": [
   null,
   "Pakota sammutus"
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
  ],
  "GiB": [
   null,
@@ -286,6 +310,10 @@ return plural;
  "Manual Connection": [
   null,
   "Manuaalinen yhteys"
+ ],
+ "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
+  null,
+  ""
  ],
  "Memory": [
   null,
@@ -395,6 +423,10 @@ return plural;
   null,
   ""
  ],
+ "Preferred number of sockets to expose to the guest.": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   ""
@@ -416,6 +448,10 @@ return plural;
   "Käynnistä uudelleen"
  ],
  "Run": [
+  null,
+  ""
+ ],
+ "SET VCPU SETTINGS action failed": [
   null,
   ""
  ],
@@ -454,6 +490,10 @@ return plural;
  "Shut Down": [
   null,
   "Sammuta"
+ ],
+ "Sockets": [
+  null,
+  ""
  ],
  "Source": [
   null,
@@ -524,6 +564,10 @@ return plural;
   "Virtuaalikone on käynnissä."
  ],
  "The VM is suspended by guest power management.": [
+  null,
+  ""
+ ],
+ "Threads per cores": [
   null,
   ""
  ],
@@ -742,6 +786,14 @@ return plural;
  "user": [
   null,
   "käyttäjä"
+ ],
+ "vCPU Count": [
+  null,
+  ""
+ ],
+ "vCPU Maximum": [
+  null,
+  ""
  ],
  "vCPUs:": [
   null,

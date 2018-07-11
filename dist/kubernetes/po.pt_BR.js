@@ -73,7 +73,7 @@ return plural;
  ],
  " or drag & drop.": [
   null,
-  ""
+  " ou arrastar & soltar\n."
  ],
  "$0% Free": [
   "$0% Free",
@@ -355,7 +355,7 @@ return plural;
  ],
  "Create Virtual Machine": [
   null,
-  ""
+  "Crie uma máquina virtual"
  ],
  "Create empty image stream": [
   null,
@@ -503,7 +503,7 @@ return plural;
  ],
  "Drop file here to upload.": [
   null,
-  ""
+  "Solte o arquivo aqui para fazer o upload."
  ],
  "Empty Directory": [
   null,
