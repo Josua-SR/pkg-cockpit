@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "eu",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "A compatible version of Cockpit is not installed on {{#strong}}{{host}}{{/strong}}.": [
   null,
@@ -85,7 +85,7 @@ return plural;
  ],
  "Add": [
   null,
-  ""
+  "Gehitu"
  ],
  "Add Machine to Dashboard": [
   null,
@@ -121,7 +121,7 @@ return plural;
  ],
  "Change Password": [
   null,
-  ""
+  "Aldatu pasahitza"
  ],
  "Checking for public keys": [
   null,
@@ -177,15 +177,15 @@ return plural;
  ],
  "Color": [
   null,
-  ""
+  "Kolorea"
  ],
  "Comment": [
   null,
-  ""
+  "Iruzkina"
  ],
  "Confirm": [
   null,
-  ""
+  "Berretsi"
  ],
  "Connect": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "Details": [
   null,
-  ""
+  "Xehetasunak"
  ],
  "Disconnected": [
   null,
@@ -509,7 +509,7 @@ return plural;
  ],
  "Version": [
   null,
-  ""
+  "Bertsioa"
  ],
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,

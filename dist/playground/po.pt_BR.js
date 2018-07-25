@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "pt_BR",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 day": [
   "$0 days",
@@ -160,7 +160,7 @@ return plural;
  ],
  "Too many files found": [
   null,
-  ""
+  "Muitos arquivos encontrados"
  ],
  "Unavailable": [
   null,

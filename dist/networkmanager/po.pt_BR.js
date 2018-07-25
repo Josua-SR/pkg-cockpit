@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "pt_BR",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 day": [
   "$0 days",
@@ -571,11 +571,11 @@ return plural;
  ],
  "Network devices and graphs require NetworkManager.": [
   null,
-  ""
+  "Dispositivos de rede e gráficos requerem o NetworkManager."
  ],
  "NetworkManager is not running.": [
   null,
-  ""
+  "NetworkManager não está rodando."
  ],
  "Networking": [
   null,
@@ -595,7 +595,7 @@ return plural;
  ],
  "No open ports": [
   null,
-  ""
+  "Sem portas abertas"
  ],
  "Not available": [
   null,
@@ -651,7 +651,7 @@ return plural;
  ],
  "Please install the {0} package": [
   null,
-  ""
+  "Por favor, instale o pacote {0}"
  ],
  "Ports": [
   null,
@@ -767,7 +767,7 @@ return plural;
  ],
  "Start Service": [
   null,
-  ""
+  "Começar serviço"
  ],
  "Status": [
   null,
@@ -879,7 +879,7 @@ return plural;
  ],
  "You are not authorized to modify the firewall.": [
   null,
-  ""
+  "Você não está autorizado a modificar o firewall."
  ],
  "[$0 bytes of binary data]": [
   null,

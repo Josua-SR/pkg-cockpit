@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "eu",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "\"http\" Key escrow": [
   null,
@@ -172,7 +172,7 @@ return plural;
  ],
  "(default)": [
   null,
-  ""
+  "(lehenetsia)"
  ],
  "(none)": [
   null,
@@ -180,11 +180,11 @@ return plural;
  ],
  "--": [
   null,
-  ""
+  "--"
  ],
  "1 MiB": [
   null,
-  ""
+  "1 MiB"
  ],
  "1 day": [
   null,
@@ -240,7 +240,7 @@ return plural;
  ],
  "A disk is needed.": [
   null,
-  ""
+  "Diskoa bat beharrezkoa da."
  ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
@@ -260,7 +260,7 @@ return plural;
  ],
  "Add": [
   null,
-  ""
+  "Gehitu"
  ],
  "Add Disks": [
   null,
@@ -292,7 +292,7 @@ return plural;
  ],
  "Apply": [
   null,
-  ""
+  "Aplikatu"
  ],
  "At least $0 disks are needed.": [
   null,
@@ -336,7 +336,7 @@ return plural;
  ],
  "Change": [
   null,
-  ""
+  "Aldatu"
  ],
  "Change iSCSI Initiator Name": [
   null,
@@ -416,7 +416,7 @@ return plural;
  ],
  "Create VDO Device": [
   null,
-  ""
+  "Sortu VDO gailua"
  ],
  "Create Volume Group": [
   null,
@@ -428,7 +428,7 @@ return plural;
  ],
  "Create partition": [
   null,
-  ""
+  "Sortu partizioa"
  ],
  "Create partition on $0": [
   null,
@@ -508,7 +508,7 @@ return plural;
  ],
  "Delete": [
   null,
-  ""
+  "Ezabatu"
  ],
  "Deleting $target": [
   null,
@@ -540,7 +540,7 @@ return plural;
  ],
  "Device File": [
   null,
-  ""
+  "Gailu fitxategia"
  ],
  "Device is read-only": [
   null,
@@ -548,7 +548,7 @@ return plural;
  ],
  "Disk": [
   null,
-  ""
+  "Diskoa"
  ],
  "Disk is OK": [
   null,
@@ -742,9 +742,13 @@ return plural;
   null,
   ""
  ],
- "Installing $0": [
+ "Install VDO support": [
   null,
   ""
+ ],
+ "Installing $0": [
+  null,
+  "$0 instalatzen"
  ],
  "Invalid username or password": [
   null,
@@ -780,7 +784,7 @@ return plural;
  ],
  "Lock": [
   null,
-  ""
+  "Blokeatu"
  ],
  "Locking $target": [
   null,
@@ -1668,7 +1672,7 @@ return plural;
  ],
  "Usage": [
   null,
-  ""
+  "Erabilera"
  ],
  "Use 512 Byte emulation": [
   null,
@@ -1676,7 +1680,7 @@ return plural;
  ],
  "Use new key": [
   null,
-  ""
+  "Erabili gako berria"
  ],
  "Used": [
   null,
@@ -1706,13 +1710,17 @@ return plural;
   null,
   ""
  ],
+ "VDO support not installed": [
+  null,
+  ""
+ ],
  "VFAT - Compatible with all systems and devices": [
   null,
   ""
  ],
  "Verify Key": [
   null,
-  ""
+  "Gakoa egiaztatu"
  ],
  "Very securely erasing $target": [
   null,
@@ -1744,7 +1752,7 @@ return plural;
  ],
  "Writing": [
   null,
-  ""
+  "Idazten"
  ],
  "XFS - Red Hat Enterprise Linux 7 default": [
   null,
@@ -1832,6 +1840,6 @@ return plural;
  ],
  "format-bytes\u0004bytes": [
   null,
-  ""
+  "byte"
  ]
 }));

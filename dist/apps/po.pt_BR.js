@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "pt_BR",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "Applications": [
   null,
@@ -129,10 +129,10 @@ return plural;
  ],
  "Unknown Application": [
   null,
-  ""
+  "Aplicação Desconhecida"
  ],
  "Waiting for other programs to finish using the package manager...": [
   null,
-  ""
+  "Aguardando outros programas terminarem de usar o gerenciador de pacotes ..."
  ]
 }));

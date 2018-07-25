@@ -65,7 +65,7 @@ nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 |
 return plural;
 },
   "language": "uk",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
@@ -346,10 +346,6 @@ return plural;
  "Couldn't find running API server": [
   null,
   "Не вдалося знайти запущений сервер API"
- ],
- "Count:": [
-  null,
-  "Кількість:"
  ],
  "Create": [
   null,
@@ -1346,6 +1342,14 @@ return plural;
  "Select Manifest File...": [
   null,
   "Вибір файла маніфесту…"
+ ],
+ "Select Member": [
+  null,
+  ""
+ ],
+ "Select Role": [
+  null,
+  ""
  ],
  "Select an object to see more details.": [
   null,

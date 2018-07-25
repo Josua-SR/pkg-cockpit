@@ -65,7 +65,7 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "my",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "\"http\" Key escrow": [
   null,
@@ -732,6 +732,10 @@ return plural;
   ""
  ],
  "Install Software": [
+  null,
+  ""
+ ],
+ "Install VDO support": [
   null,
   ""
  ],
@@ -1696,6 +1700,10 @@ return plural;
   ""
  ],
  "VDO backing devices can not be made smaller": [
+  null,
+  ""
+ ],
+ "VDO support not installed": [
   null,
   ""
  ],

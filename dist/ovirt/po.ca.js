@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "ca",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -78,6 +78,10 @@ return plural;
  "Action": [
   null,
   "Acció"
+ ],
+ "Add Disk": [
+  null,
+  ""
  ],
  "Additional": [
   null,
@@ -102,6 +106,10 @@ return plural;
  "Apply": [
   null,
   "Aplica"
+ ],
+ "Attach permanently": [
+  null,
+  ""
  ],
  "Automatically selected host": [
   null,
@@ -215,13 +223,13 @@ return plural;
   null,
   ""
  ],
- "Count:": [
-  null,
-  "Nombre:"
- ],
  "Create": [
   null,
   "Crea"
+ ],
+ "Create New": [
+  null,
+  ""
  ],
  "Create New VM": [
   null,
@@ -256,6 +264,14 @@ return plural;
   "Desconnecta"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
+  null,
+  ""
+ ],
+ "Disk failed to be attached with following error: ": [
+  null,
+  ""
+ ],
+ "Disk failed to be created with following error: ": [
   null,
   ""
  ],
@@ -298,6 +314,10 @@ return plural;
  "Force Shut Down": [
   null,
   "Força l'apagada"
+ ],
+ "Format: ": [
+  null,
+  ""
  ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
@@ -383,6 +403,10 @@ return plural;
   null,
   "Memòria:"
  ],
+ "MiB": [
+  null,
+  "MiB"
+ ],
  "Migrate To:": [
   null,
   "Migra a:"
@@ -399,9 +423,17 @@ return plural;
   null,
   "Nom"
  ],
+ "Name: ": [
+  null,
+  ""
+ ],
  "Networks": [
   null,
   "Xarxes"
+ ],
+ "New Volume Name": [
+  null,
+  ""
  ],
  "No VM found in oVirt.": [
   null,
@@ -463,6 +495,14 @@ return plural;
   null,
   "Confirmeu que l'amfitrió s'ha de canviar al mode de manteniment."
  ],
+ "Please enter new volume name": [
+  null,
+  ""
+ ],
+ "Please enter new volume size": [
+  null,
+  ""
+ ],
  "Please provide fully qualified domain name and port of the oVirt engine.": [
   null,
   "Proporcioneu el nom de domini plenament qualificat i el port del motor oVirt."
@@ -494,6 +534,10 @@ return plural;
  "Pool": [
   null,
   "Agrupació"
+ ],
+ "Pool: ": [
+  null,
+  ""
  ],
  "Port": [
   null,
@@ -611,6 +655,10 @@ return plural;
   null,
   "Apaga"
  ],
+ "Size: ": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   "Sockets"
@@ -658,6 +706,10 @@ return plural;
  "Target": [
   null,
   "Objectiu"
+ ],
+ "Target: ": [
+  null,
+  ""
  ],
  "Template": [
   null,
@@ -707,6 +759,10 @@ return plural;
   null,
   "La MV està en suspensió per la gestió d'energia del convidat."
  ],
+ "The pool is empty": [
+  null,
+  ""
+ ],
  "This host is managed by a virtualization manager, so creation of new VMs from the host is not possible.": [
   null,
   ""
@@ -734,6 +790,10 @@ return plural;
  "Usage": [
   null,
   "Ús"
+ ],
+ "Use Existing": [
+  null,
+  ""
  ],
  "Used": [
   null,
@@ -814,6 +874,10 @@ return plural;
  "Volume": [
   null,
   "Volum"
+ ],
+ "Volume: ": [
+  null,
+  ""
  ],
  "Your browser does not support iframes.": [
   null,
@@ -962,6 +1026,14 @@ return plural;
  "pending approval": [
   null,
   "pendent d'aprovació"
+ ],
+ "qcow2": [
+  null,
+  ""
+ ],
+ "raw": [
+  null,
+  ""
  ],
  "reboot": [
   null,

@@ -65,7 +65,7 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "ja",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -73,11 +73,15 @@ return plural;
  ],
  "$0 vCPU Details": [
   null,
-  ""
+  "$0 vCPU の詳細"
  ],
  "Action": [
   null,
   "アクション"
+ ],
+ "Add Disk": [
+  null,
+  ""
  ],
  "Additional": [
   null,
@@ -93,7 +97,7 @@ return plural;
  ],
  "All changes will take effect only after stopping and starting the VM.": [
   null,
-  ""
+  "すべての変更は、仮想マシンの停止および開始後にのみ、実施されます。"
  ],
  "All running virtual machines will be turned off.": [
   null,
@@ -102,6 +106,10 @@ return plural;
  "Apply": [
   null,
   "適用"
+ ],
+ "Attach permanently": [
+  null,
+  ""
  ],
  "Automatically selected host": [
   null,
@@ -213,15 +221,15 @@ return plural;
  ],
  "Cores per socket": [
   null,
-  ""
- ],
- "Count:": [
-  null,
-  "数量:"
+  "ソケットごとのコア"
  ],
  "Create": [
   null,
   "作成"
+ ],
+ "Create New": [
+  null,
+  ""
  ],
  "Create New VM": [
   null,
@@ -259,6 +267,14 @@ return plural;
   null,
   "シリアルコンソールから切断されました。「再接続」ボタンをクリックします。"
  ],
+ "Disk failed to be attached with following error: ": [
+  null,
+  ""
+ ],
+ "Disk failed to be created with following error: ": [
+  null,
+  ""
+ ],
  "Disks": [
   null,
   "ディスク"
@@ -285,7 +301,7 @@ return plural;
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
-  ""
+  "仮想 CPU の最大数よりも少ない数を有効にするべきです。"
  ],
  "File": [
   null,
@@ -299,9 +315,13 @@ return plural;
   null,
   "シャットダウンの強制"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
+ "Format: ": [
   null,
   ""
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "GET HYPERVISOR MAX VCPU アクションに失敗しました"
  ],
  "GiB": [
   null,
@@ -373,7 +393,7 @@ return plural;
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
-  ""
+  "ゲスト OS に割り当てられる仮想 CPU の最大数で、これは 1 から $0 の間でなければなりません"
  ],
  "Memory": [
   null,
@@ -382,6 +402,10 @@ return plural;
  "Memory:": [
   null,
   "メモリー:"
+ ],
+ "MiB": [
+  null,
+  "MiB"
  ],
  "Migrate To:": [
   null,
@@ -399,9 +423,17 @@ return plural;
   null,
   "名前"
  ],
+ "Name: ": [
+  null,
+  ""
+ ],
  "Networks": [
   null,
   "ネットワーク"
+ ],
+ "New Volume Name": [
+  null,
+  ""
  ],
  "No VM found in oVirt.": [
   null,
@@ -409,7 +441,7 @@ return plural;
  ],
  "No VM is running or defined on this host": [
   null,
-  "VM がこのホストで実行されていないか、定義されていません。"
+  "仮想マシンがこのホストで実行されていないか、定義されていません。"
  ],
  "No boot device found": [
   null,
@@ -421,7 +453,7 @@ return plural;
  ],
  "No disks defined for this VM": [
   null,
-  "この VM に対してディスクが定義されていません"
+  "この仮想マシンに対してディスクが定義されていません"
  ],
  "No network interfaces defined for this VM": [
   null,
@@ -429,11 +461,11 @@ return plural;
  ],
  "No oVirt connection": [
   null,
-  ""
+  "oVirt 接続がありません"
  ],
  "Number of virtual CPUs that gonna be used.": [
   null,
-  ""
+  "使用予定の仮想 CPU の数。"
  ],
  "OK": [
   null,
@@ -462,6 +494,14 @@ return plural;
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
   "ホストがメンテナンスモードに切り替わっていることを確認してください。"
+ ],
+ "Please enter new volume name": [
+  null,
+  ""
+ ],
+ "Please enter new volume size": [
+  null,
+  ""
  ],
  "Please provide fully qualified domain name and port of the oVirt engine.": [
   null,
@@ -495,6 +535,10 @@ return plural;
   null,
   "プール"
  ],
+ "Pool: ": [
+  null,
+  ""
+ ],
  "Port": [
   null,
   "ポート"
@@ -505,7 +549,7 @@ return plural;
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
-  ""
+  "ゲストへの公開用の推奨されるソケットの数。"
  ],
  "Preparing for Maintenance": [
   null,
@@ -557,7 +601,7 @@ return plural;
  ],
  "SET VCPU SETTINGS action failed": [
   null,
-  ""
+  "SET VCPU SETTINGS アクションに失敗しました"
  ],
  "SHUTDOWN action failed": [
   null,
@@ -611,6 +655,10 @@ return plural;
   null,
   "シャットダウン"
  ],
+ "Size: ": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   "ソケット"
@@ -659,6 +707,10 @@ return plural;
   null,
   "ターゲット"
  ],
+ "Target: ": [
+  null,
+  ""
+ ],
  "Template": [
   null,
   "テンプレート"
@@ -673,27 +725,27 @@ return plural;
  ],
  "The VM crashed.": [
   null,
-  "VM がクラッシュしました。"
+  "仮想マシンがクラッシュしました。"
  ],
  "The VM is down.": [
   null,
-  "VM がダウンしています。"
+  "仮想マシンがダウンしています。"
  ],
  "The VM is going down.": [
   null,
-  "VM がダウンします。"
+  "仮想マシンがダウンします。"
  ],
  "The VM is idle.": [
   null,
-  "VM がアイドル状態です。"
+  "仮想マシンがアイドル状態です。"
  ],
  "The VM is in process of dying (shut down or crash is not completed).": [
   null,
-  "VM が終了中の状態です (シャットダウンまたはクラッシュが完了していません)。"
+  "仮想マシンが終了中の状態です (シャットダウンまたはクラッシュが完了していません)。"
  ],
  "The VM is paused.": [
   null,
-  "VM が一時停止しています。"
+  "仮想マシンが一時停止しています。"
  ],
  "The VM is running and will be forced off before deletion.": [
   null,
@@ -701,15 +753,19 @@ return plural;
  ],
  "The VM is running.": [
   null,
-  "VM が実行中です。"
+  "仮想マシンが実行中です。"
  ],
  "The VM is suspended by guest power management.": [
   null,
-  "VM はゲストの電源管理によって一時停止されています。"
+  "仮想マシンはゲストの電源管理によって一時停止されています。"
+ ],
+ "The pool is empty": [
+  null,
+  ""
  ],
  "This host is managed by a virtualization manager, so creation of new VMs from the host is not possible.": [
   null,
-  ""
+  "このホストは仮想化マネージャーによって管理されているため、ホストからの新規の仮想マシンの作成は不可能です。"
  ],
  "This virtual machine is not managed by oVirt": [
   null,
@@ -717,7 +773,7 @@ return plural;
  ],
  "Threads per cores": [
   null,
-  ""
+  "コアごとのスレッド"
  ],
  "Type": [
   null,
@@ -734,6 +790,10 @@ return plural;
  "Usage": [
   null,
   "使用法"
+ ],
+ "Use Existing": [
+  null,
+  ""
  ],
  "Used": [
   null,
@@ -773,7 +833,7 @@ return plural;
  ],
  "VM icon": [
   null,
-  "VM アイコン"
+  "仮想マシンのアイコン"
  ],
  "VNC": [
   null,
@@ -814,6 +874,10 @@ return plural;
  "Volume": [
   null,
   "音量"
+ ],
+ "Volume: ": [
+  null,
+  ""
  ],
  "Your browser does not support iframes.": [
   null,
@@ -963,6 +1027,14 @@ return plural;
   null,
   "保留中の承認"
  ],
+ "qcow2": [
+  null,
+  ""
+ ],
+ "raw": [
+  null,
+  ""
+ ],
  "reboot": [
   null,
   "再起動"
@@ -1025,11 +1097,11 @@ return plural;
  ],
  "vCPU Count": [
   null,
-  ""
+  "vCPU 数"
  ],
  "vCPU Maximum": [
   null,
-  ""
+  "vCPU 最大値"
  ],
  "vCPUs": [
   null,

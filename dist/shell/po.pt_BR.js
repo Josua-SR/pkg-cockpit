@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "pt_BR",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "A compatible version of Cockpit is not installed on {{#strong}}{{host}}{{/strong}}.": [
   null,
@@ -305,7 +305,7 @@ return plural;
  ],
  "Login has escalated admin privileges": [
   null,
-  ""
+  "O login proveu privilégios de administrador"
  ],
  "Machines": [
   null,
@@ -377,7 +377,7 @@ return plural;
  ],
  "Privileged": [
   null,
-  ""
+  "Privilegiado"
  ],
  "Project website": [
   null,
@@ -461,7 +461,7 @@ return plural;
  ],
  "Too many files found": [
   null,
-  ""
+  "Muitos arquivos encontrados"
  ],
  "Troubleshoot": [
   null,

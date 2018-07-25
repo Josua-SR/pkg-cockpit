@@ -65,13 +65,17 @@ nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;
 return plural;
 },
   "language": "cs",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
   "$0 je k dispozici pro většinu operačních systémů. K instalaci je třeba hledat v GNOME Software nebo spustit:"
  ],
  "$0 vCPU Details": [
+  null,
+  ""
+ ],
+ "Add Disk": [
   null,
   ""
  ],
@@ -94,6 +98,10 @@ return plural;
  "Apply": [
   null,
   "Použít"
+ ],
+ "Attach permanently": [
+  null,
+  ""
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -167,11 +175,11 @@ return plural;
   null,
   ""
  ],
- "Count:": [
+ "Create": [
   null,
   ""
  ],
- "Create": [
+ "Create New": [
   null,
   ""
  ],
@@ -207,6 +215,14 @@ return plural;
   null,
   ""
  ],
+ "Disk failed to be attached with following error: ": [
+  null,
+  ""
+ ],
+ "Disk failed to be created with following error: ": [
+  null,
+  ""
+ ],
  "Disks": [
   null,
   "Disky"
@@ -236,6 +252,10 @@ return plural;
   ""
  ],
  "Force Shut Down": [
+  null,
+  ""
+ ],
+ "Format: ": [
   null,
   ""
  ],
@@ -351,7 +371,15 @@ return plural;
   null,
   ""
  ],
+ "Name: ": [
+  null,
+  ""
+ ],
  "Networks": [
+  null,
+  ""
+ ],
+ "New Volume Name": [
   null,
   ""
  ],
@@ -403,6 +431,14 @@ return plural;
   null,
   ""
  ],
+ "Please enter new volume name": [
+  null,
+  ""
+ ],
+ "Please enter new volume size": [
+  null,
+  ""
+ ],
  "Please start the virtual machine to access its console.": [
   null,
   ""
@@ -414,6 +450,10 @@ return plural;
  "Pool": [
   null,
   "Úložiště"
+ ],
+ "Pool: ": [
+  null,
+  ""
  ],
  "Port": [
   null,
@@ -491,6 +531,10 @@ return plural;
   null,
   "Ukončit"
  ],
+ "Size: ": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   ""
@@ -531,6 +575,10 @@ return plural;
   null,
   "Cíl"
  ],
+ "Target: ": [
+  null,
+  ""
+ ],
  "The VM crashed.": [
   null,
   ""
@@ -567,6 +615,10 @@ return plural;
   null,
   ""
  ],
+ "The pool is empty": [
+  null,
+  ""
+ ],
  "Threads per cores": [
   null,
   ""
@@ -598,6 +650,10 @@ return plural;
  "Usage": [
   null,
   "Použití"
+ ],
+ "Use Existing": [
+  null,
+  ""
  ],
  "Used": [
   null,
@@ -662,6 +718,10 @@ return plural;
  "Volume": [
   null,
   "Svazek"
+ ],
+ "Volume: ": [
+  null,
+  ""
  ],
  "Your browser does not support iframes.": [
   null,
@@ -740,6 +800,14 @@ return plural;
   ""
  ],
  "paused": [
+  null,
+  ""
+ ],
+ "qcow2": [
+  null,
+  ""
+ ],
+ "raw": [
   null,
   ""
  ],

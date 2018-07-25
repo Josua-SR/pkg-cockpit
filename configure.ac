@@ -381,6 +381,13 @@ AC_ARG_WITH(nfs-client-package,
             [with_nfs_client_package='false'])
 AC_SUBST(with_nfs_client_package)
 
+AC_ARG_WITH(vdo-package,
+            AC_HELP_STRING([--with-vdo-package=JSON],
+                           [Package that is necessary to use VDO, or 'false']),
+            [],
+            [with_vdo_package='false'])
+AC_SUBST(with_vdo_package)
+
 # Address sanitizer
 
 AC_MSG_CHECKING([for asan flags])
@@ -520,6 +527,14 @@ fi
 
 AM_CONDITIONAL([WITH_COVERAGE], [test "$enable_coverage" = "yes"])
 AC_MSG_RESULT([$enable_coverage])
+
+# Broken libraries
+
+# HACK: https://gitlab.com/gnutls/gnutls/issues/530; GnuTLS 3.6.3 fails to
+# connect to GnuTLS servers. This is outside of our control. We don't have the
+# devel headers installed, so check the shlib itself
+AM_CONDITIONAL([BROKEN_GNUTLS],
+               [grep -q GNUTLS_3_6_3 $(/sbin/ldconfig -p | grep libgnutls.so | sed 's/^.*=> *//')])
 
 # Strict
 

@@ -65,7 +65,7 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "zh_CN",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -78,6 +78,10 @@ return plural;
  "Action": [
   null,
   "动作"
+ ],
+ "Add Disk": [
+  null,
+  ""
  ],
  "Additional": [
   null,
@@ -102,6 +106,10 @@ return plural;
  "Apply": [
   null,
   "应用"
+ ],
+ "Attach permanently": [
+  null,
+  ""
  ],
  "Automatically selected host": [
   null,
@@ -215,13 +223,13 @@ return plural;
   null,
   ""
  ],
- "Count:": [
-  null,
-  "计数："
- ],
  "Create": [
   null,
   "创建"
+ ],
+ "Create New": [
+  null,
+  ""
  ],
  "Create New VM": [
   null,
@@ -256,6 +264,14 @@ return plural;
   ""
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
+  null,
+  ""
+ ],
+ "Disk failed to be attached with following error: ": [
+  null,
+  ""
+ ],
+ "Disk failed to be created with following error: ": [
   null,
   ""
  ],
@@ -298,6 +314,10 @@ return plural;
  "Force Shut Down": [
   null,
   "强制关机"
+ ],
+ "Format: ": [
+  null,
+  ""
  ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
@@ -383,6 +403,10 @@ return plural;
   null,
   "内存："
  ],
+ "MiB": [
+  null,
+  "MiB"
+ ],
  "Migrate To:": [
   null,
   "迁移到："
@@ -399,7 +423,15 @@ return plural;
   null,
   "名称"
  ],
+ "Name: ": [
+  null,
+  ""
+ ],
  "Networks": [
+  null,
+  ""
+ ],
+ "New Volume Name": [
   null,
   ""
  ],
@@ -463,6 +495,14 @@ return plural;
   null,
   ""
  ],
+ "Please enter new volume name": [
+  null,
+  ""
+ ],
+ "Please enter new volume size": [
+  null,
+  ""
+ ],
  "Please provide fully qualified domain name and port of the oVirt engine.": [
   null,
   "请提供 oVirt 引擎的完整的合法域名和端口。"
@@ -494,6 +534,10 @@ return plural;
  "Pool": [
   null,
   "池"
+ ],
+ "Pool: ": [
+  null,
+  ""
  ],
  "Port": [
   null,
@@ -611,6 +655,10 @@ return plural;
   null,
   "关机"
  ],
+ "Size: ": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   "套接字"
@@ -658,6 +706,10 @@ return plural;
  "Target": [
   null,
   "目标"
+ ],
+ "Target: ": [
+  null,
+  ""
  ],
  "Template": [
   null,
@@ -707,6 +759,10 @@ return plural;
   null,
   "虚拟机已被客户机电源管理暂停。"
  ],
+ "The pool is empty": [
+  null,
+  ""
+ ],
  "This host is managed by a virtualization manager, so creation of new VMs from the host is not possible.": [
   null,
   ""
@@ -734,6 +790,10 @@ return plural;
  "Usage": [
   null,
   "使用情况"
+ ],
+ "Use Existing": [
+  null,
+  ""
  ],
  "Used": [
   null,
@@ -814,6 +874,10 @@ return plural;
  "Volume": [
   null,
   "卷"
+ ],
+ "Volume: ": [
+  null,
+  ""
  ],
  "Your browser does not support iframes.": [
   null,
@@ -962,6 +1026,14 @@ return plural;
  "pending approval": [
   null,
   "等待审批"
+ ],
+ "qcow2": [
+  null,
+  ""
+ ],
+ "raw": [
+  null,
+  ""
  ],
  "reboot": [
   null,

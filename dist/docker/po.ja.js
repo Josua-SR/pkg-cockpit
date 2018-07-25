@@ -65,7 +65,7 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "ja",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  " (shared with the OS)": [
   null,
@@ -845,7 +845,7 @@ return plural;
  ],
  "Up since $0": [
   null,
-  ""
+  "$0 から稼働中"
  ],
  "Used": [
   null,
@@ -861,7 +861,7 @@ return plural;
  ],
  "Volumes:": [
   null,
-  ""
+  "ボリューム:"
  ],
  "With terminal": [
   null,

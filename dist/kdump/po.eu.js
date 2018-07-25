@@ -65,11 +65,11 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "eu",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "Apply": [
   null,
-  ""
+  "Aplikatu"
  ],
  "Cancel": [
   null,
@@ -117,7 +117,7 @@ return plural;
  ],
  "Location": [
   null,
-  ""
+  "Kokapena"
  ],
  "More details": [
   null,
@@ -241,7 +241,7 @@ return plural;
  ],
  "ssh key": [
   null,
-  ""
+  "ssh gakoa"
  ],
  "undefined": [
   null,

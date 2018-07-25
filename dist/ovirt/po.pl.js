@@ -65,7 +65,7 @@ nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 
 return plural;
 },
   "language": "pl",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -78,6 +78,10 @@ return plural;
  "Action": [
   null,
   "Działanie"
+ ],
+ "Add Disk": [
+  null,
+  ""
  ],
  "Additional": [
   null,
@@ -102,6 +106,10 @@ return plural;
  "Apply": [
   null,
   "Zastosuj"
+ ],
+ "Attach permanently": [
+  null,
+  ""
  ],
  "Automatically selected host": [
   null,
@@ -215,13 +223,13 @@ return plural;
   null,
   "Rdzenie na gniazdo"
  ],
- "Count:": [
-  null,
-  "Liczba:"
- ],
  "Create": [
   null,
   "Utwórz"
+ ],
+ "Create New": [
+  null,
+  ""
  ],
  "Create New VM": [
   null,
@@ -258,6 +266,14 @@ return plural;
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
   "Rozłączono z konsoli szeregowej. Proszę kliknąć przycisk „Połącz ponownie”."
+ ],
+ "Disk failed to be attached with following error: ": [
+  null,
+  ""
+ ],
+ "Disk failed to be created with following error: ": [
+  null,
+  ""
  ],
  "Disks": [
   null,
@@ -298,6 +314,10 @@ return plural;
  "Force Shut Down": [
   null,
   "Wymuś wyłączenie"
+ ],
+ "Format: ": [
+  null,
+  ""
  ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
@@ -383,6 +403,10 @@ return plural;
   null,
   "Pamięć:"
  ],
+ "MiB": [
+  null,
+  "MiB"
+ ],
  "Migrate To:": [
   null,
   "Migracja do:"
@@ -399,9 +423,17 @@ return plural;
   null,
   "Nazwa"
  ],
+ "Name: ": [
+  null,
+  ""
+ ],
  "Networks": [
   null,
   "Sieci"
+ ],
+ "New Volume Name": [
+  null,
+  ""
  ],
  "No VM found in oVirt.": [
   null,
@@ -463,6 +495,14 @@ return plural;
   null,
   "Proszę potwierdzić, gospodarz zostanie przełączony do trybu konserwacji."
  ],
+ "Please enter new volume name": [
+  null,
+  ""
+ ],
+ "Please enter new volume size": [
+  null,
+  ""
+ ],
  "Please provide fully qualified domain name and port of the oVirt engine.": [
   null,
   "Proszę podać w pełni kwalifikowaną nazwę domeny i port mechanizmu oVirt."
@@ -494,6 +534,10 @@ return plural;
  "Pool": [
   null,
   "Pula"
+ ],
+ "Pool: ": [
+  null,
+  ""
  ],
  "Port": [
   null,
@@ -611,6 +655,10 @@ return plural;
   null,
   "Wyłącz"
  ],
+ "Size: ": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   "Gniazda"
@@ -658,6 +706,10 @@ return plural;
  "Target": [
   null,
   "Cel"
+ ],
+ "Target: ": [
+  null,
+  ""
  ],
  "Template": [
   null,
@@ -707,6 +759,10 @@ return plural;
   null,
   "Maszyna wirtualna jest uśpiona przez zarządzanie zasilaniem."
  ],
+ "The pool is empty": [
+  null,
+  ""
+ ],
  "This host is managed by a virtualization manager, so creation of new VMs from the host is not possible.": [
   null,
   "Ten gospodarz jest zarządzany przez menedżera wirtualizacji, więc tworzenie nowych maszyn wirtualnych z gospodarza nie jest możliwe."
@@ -734,6 +790,10 @@ return plural;
  "Usage": [
   null,
   "Użycie"
+ ],
+ "Use Existing": [
+  null,
+  ""
  ],
  "Used": [
   null,
@@ -814,6 +874,10 @@ return plural;
  "Volume": [
   null,
   "Wolumin"
+ ],
+ "Volume: ": [
+  null,
+  ""
  ],
  "Your browser does not support iframes.": [
   null,
@@ -962,6 +1026,14 @@ return plural;
  "pending approval": [
   null,
   "oczekuje na akceptację"
+ ],
+ "qcow2": [
+  null,
+  ""
+ ],
+ "raw": [
+  null,
+  ""
  ],
  "reboot": [
   null,

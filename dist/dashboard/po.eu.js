@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "eu",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 day": [
   "$0 days",
@@ -123,7 +123,7 @@ return plural;
  ],
  "Add": [
   null,
-  ""
+  "Gehitu"
  ],
  "Add Machine to Dashboard": [
   null,
@@ -171,7 +171,7 @@ return plural;
  ],
  "CPU": [
   null,
-  ""
+  "CPUa"
  ],
  "Can't load image": [
   null,
@@ -219,7 +219,7 @@ return plural;
  ],
  "Color": [
   null,
-  ""
+  "Kolorea"
  ],
  "Compact PCI": [
   null,
@@ -251,7 +251,7 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Mahaigaina"
  ],
  "Detachable": [
   null,
@@ -347,7 +347,7 @@ return plural;
  ],
  "Laptop": [
   null,
-  ""
+  "Ordenagailu eramangarria"
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,

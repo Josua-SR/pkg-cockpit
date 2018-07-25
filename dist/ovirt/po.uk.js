@@ -65,7 +65,7 @@ nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 |
 return plural;
 },
   "language": "uk",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -73,11 +73,15 @@ return plural;
  ],
  "$0 vCPU Details": [
   null,
-  ""
+  "Параметри віртуального процесора $0"
  ],
  "Action": [
   null,
   "Дія"
+ ],
+ "Add Disk": [
+  null,
+  ""
  ],
  "Additional": [
   null,
@@ -93,7 +97,7 @@ return plural;
  ],
  "All changes will take effect only after stopping and starting the VM.": [
   null,
-  ""
+  "Усі зміни набудуть чинності лише після перезапуску віртуальної машини."
  ],
  "All running virtual machines will be turned off.": [
   null,
@@ -102,6 +106,10 @@ return plural;
  "Apply": [
   null,
   "Застосувати"
+ ],
+ "Attach permanently": [
+  null,
+  ""
  ],
  "Automatically selected host": [
   null,
@@ -213,15 +221,15 @@ return plural;
  ],
  "Cores per socket": [
   null,
-  ""
- ],
- "Count:": [
-  null,
-  "Кількість:"
+  "Кількість ядер на сокет"
  ],
  "Create": [
   null,
   "Створити"
+ ],
+ "Create New": [
+  null,
+  ""
  ],
  "Create New VM": [
   null,
@@ -259,6 +267,14 @@ return plural;
   null,
   "Від'єднано від послідовної консолі. Натисніть кнопку «Повторно з'єднатися»."
  ],
+ "Disk failed to be attached with following error: ": [
+  null,
+  ""
+ ],
+ "Disk failed to be created with following error: ": [
+  null,
+  ""
+ ],
  "Disks": [
   null,
   "Диски"
@@ -285,7 +301,7 @@ return plural;
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
-  ""
+  "Має бути увімкнено менше за максимальну кількість віртуальних процесорів."
  ],
  "File": [
   null,
@@ -299,9 +315,13 @@ return plural;
   null,
   "Примусово вимкнути"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
+ "Format: ": [
   null,
   ""
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "Помилка під час спроби виконати дію GET HYPERVISOR MAX VCPU"
  ],
  "GiB": [
   null,
@@ -373,7 +393,7 @@ return plural;
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
-  ""
+  "Максимальна кількість віртуальних процесорів, наданих для гостьової операційної системи, має бути у межах від 1 до $0"
  ],
  "Memory": [
   null,
@@ -382,6 +402,10 @@ return plural;
  "Memory:": [
   null,
   "Пам’ять:"
+ ],
+ "MiB": [
+  null,
+  "МіБ"
  ],
  "Migrate To:": [
   null,
@@ -399,9 +423,17 @@ return plural;
   null,
   "Назва"
  ],
+ "Name: ": [
+  null,
+  ""
+ ],
  "Networks": [
   null,
   "Мережі"
+ ],
+ "New Volume Name": [
+  null,
+  ""
  ],
  "No VM found in oVirt.": [
   null,
@@ -433,7 +465,7 @@ return plural;
  ],
  "Number of virtual CPUs that gonna be used.": [
   null,
-  ""
+  "Кількість віртуальних процесорів, які слід використовувати."
  ],
  "OK": [
   null,
@@ -462,6 +494,14 @@ return plural;
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
   "Будь ласка, підтвердьте, що вузол має бути перемкнуто у режим обслуговування."
+ ],
+ "Please enter new volume name": [
+  null,
+  ""
+ ],
+ "Please enter new volume size": [
+  null,
+  ""
  ],
  "Please provide fully qualified domain name and port of the oVirt engine.": [
   null,
@@ -495,6 +535,10 @@ return plural;
   null,
   "Буфер"
  ],
+ "Pool: ": [
+  null,
+  ""
+ ],
  "Port": [
   null,
   "Порт"
@@ -505,7 +549,7 @@ return plural;
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
-  ""
+  "Бажана кількість сокетів, які слід надавати гостьовій системі."
  ],
  "Preparing for Maintenance": [
   null,
@@ -557,7 +601,7 @@ return plural;
  ],
  "SET VCPU SETTINGS action failed": [
   null,
-  ""
+  "Помилка під час спроби виконати дію SET VCPU SETTINGS"
  ],
  "SHUTDOWN action failed": [
   null,
@@ -611,6 +655,10 @@ return plural;
   null,
   "Вимкнути"
  ],
+ "Size: ": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   "Сокети"
@@ -658,6 +706,10 @@ return plural;
  "Target": [
   null,
   "Призначення"
+ ],
+ "Target: ": [
+  null,
+  ""
  ],
  "Template": [
   null,
@@ -707,6 +759,10 @@ return plural;
   null,
   "Роботу віртуальної машини призупинено засобами керування живленням гостьової системи."
  ],
+ "The pool is empty": [
+  null,
+  ""
+ ],
  "This host is managed by a virtualization manager, so creation of new VMs from the host is not possible.": [
   null,
   "Цей вузол керується засобом керування віртуалізацією, тому створення нових віртуальних машин з вузла неможливе."
@@ -717,7 +773,7 @@ return plural;
  ],
  "Threads per cores": [
   null,
-  ""
+  "Потоків на ядра"
  ],
  "Type": [
   null,
@@ -734,6 +790,10 @@ return plural;
  "Usage": [
   null,
   "Використання"
+ ],
+ "Use Existing": [
+  null,
+  ""
  ],
  "Used": [
   null,
@@ -814,6 +874,10 @@ return plural;
  "Volume": [
   null,
   "Том"
+ ],
+ "Volume: ": [
+  null,
+  ""
  ],
  "Your browser does not support iframes.": [
   null,
@@ -963,6 +1027,14 @@ return plural;
   null,
   "чекаємо на підтвердження"
  ],
+ "qcow2": [
+  null,
+  ""
+ ],
+ "raw": [
+  null,
+  ""
+ ],
  "reboot": [
   null,
   "перезавантаження"
@@ -1025,11 +1097,11 @@ return plural;
  ],
  "vCPU Count": [
   null,
-  ""
+  "К-ть вірт. процесорів"
  ],
  "vCPU Maximum": [
   null,
-  ""
+  "Макс. вірт. процесорів"
  ],
  "vCPUs": [
   null,

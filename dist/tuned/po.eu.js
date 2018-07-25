@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "eu",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "Cancel": [
   null,
@@ -77,7 +77,7 @@ return plural;
  ],
  "Change Profile": [
   null,
-  ""
+  "Aldatu profila"
  ],
  "Communication with tuned has failed": [
   null,
@@ -145,6 +145,6 @@ return plural;
  ],
  "recommended": [
   null,
-  ""
+  "gomendatua"
  ]
 }));

@@ -59,6 +59,10 @@
    Each field function describes its options and its children.
    However, there are some options that apply to all fields:
 
+   - value
+
+   The initial value of the field.
+
    - visible: vals -> boolean
 
    This function determines whether the field is shown or not.
@@ -265,7 +269,7 @@ export const TextInput = (tag, title, options) => {
         tag: tag,
         title: title,
         options: options,
-        initial_value: "",
+        initial_value: options.value || "",
 
         render: (val, change) =>
             <input data-field={tag} data-field-type="text-input"
@@ -279,7 +283,7 @@ export const PassInput = (tag, title, options) => {
         tag: tag,
         title: title,
         options: options,
-        initial_value: "",
+        initial_value: options.value || "",
 
         render: (val, change) =>
             <input data-field={tag} data-field-type="text-input"
@@ -293,7 +297,7 @@ export const SelectOne = (tag, title, options, choices) => {
         tag: tag,
         title: title,
         options: options,
-        initial_value: choices[0].value,
+        initial_value: options.value || choices[0].value,
 
         render: (val, change) => {
             return (
@@ -310,9 +314,9 @@ export const SelectOne = (tag, title, options, choices) => {
 export const CheckBox = (tag, title, options) => {
     return {
         tag: tag,
-        title: "", // sic
+        title: options.row_title || "",
         options: options,
-        initial_value: false,
+        initial_value: options.value || false,
 
         render: (val, change) => {
             return (
@@ -321,6 +325,36 @@ export const CheckBox = (tag, title, options) => {
                         <input type="checkbox" data-field={tag} checked={val}
                             onChange={event => change(event.target.checked)} />{title}
                     </label>
+                </div>
+            );
+        }
+    }
+}
+
+/* A text input that is guarded by a check box.
+ *
+ * The value is either "false" when the checkbox
+ * is not checked, or the string from the text input.
+ */
+
+export const TextInputChecked = (tag, title, options) => {
+    return {
+        tag: tag,
+        title: options.row_title,
+        options: options,
+        initial_value: (options.value === undefined) ? false : options.value,
+
+        render: (val, change) => {
+            return (
+                <div className="dialog-checkbox-text" data-field={tag} data-field-type="TextInputChecked">
+                    <div className="checkbox">
+                        <label>
+                            <input type="checkbox" checked={val !== false}
+                                   onChange={event => change(event.target.checked ? "" : false)} />{title}
+                        </label>
+                    </div>
+                    <input className="form-control" type="text" hidden={val === false}
+                           value={val} onChange={event => change(event.target.value)} />
                 </div>
             );
         }

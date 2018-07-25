@@ -65,13 +65,17 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "fi",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
   "$0 on saatavilla useimmille käyttöjärjestelmille. Asentaaksesi sen, hae sitä GNOME Softwaresta, tai aja seuraava komento:"
  ],
  "$0 vCPU Details": [
+  null,
+  ""
+ ],
+ "Add Disk": [
   null,
   ""
  ],
@@ -94,6 +98,10 @@ return plural;
  "Apply": [
   null,
   "Toteuta"
+ ],
+ "Attach permanently": [
+  null,
+  ""
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -167,13 +175,13 @@ return plural;
   null,
   ""
  ],
- "Count:": [
-  null,
-  ""
- ],
  "Create": [
   null,
   "Luo"
+ ],
+ "Create New": [
+  null,
+  ""
  ],
  "Create New VM": [
   null,
@@ -204,6 +212,14 @@ return plural;
   "Katkaise yhteys"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
+  null,
+  ""
+ ],
+ "Disk failed to be attached with following error: ": [
+  null,
+  ""
+ ],
+ "Disk failed to be created with following error: ": [
   null,
   ""
  ],
@@ -238,6 +254,10 @@ return plural;
  "Force Shut Down": [
   null,
   "Pakota sammutus"
+ ],
+ "Format: ": [
+  null,
+  ""
  ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
@@ -351,9 +371,17 @@ return plural;
   null,
   ""
  ],
+ "Name: ": [
+  null,
+  ""
+ ],
  "Networks": [
   null,
   "Verkot"
+ ],
+ "New Volume Name": [
+  null,
+  ""
  ],
  "No VM is running or defined on this host": [
   null,
@@ -403,6 +431,14 @@ return plural;
   null,
   ""
  ],
+ "Please enter new volume name": [
+  null,
+  ""
+ ],
+ "Please enter new volume size": [
+  null,
+  ""
+ ],
  "Please start the virtual machine to access its console.": [
   null,
   "Käynnistä virtuaalikone päästäksesi sen konsoliin."
@@ -412,6 +448,10 @@ return plural;
   ""
  ],
  "Pool": [
+  null,
+  ""
+ ],
+ "Pool: ": [
   null,
   ""
  ],
@@ -491,6 +531,10 @@ return plural;
   null,
   "Sammuta"
  ],
+ "Size: ": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   ""
@@ -531,6 +575,10 @@ return plural;
   null,
   ""
  ],
+ "Target: ": [
+  null,
+  ""
+ ],
  "The VM crashed.": [
   null,
   "Virtuaalikone kaatui."
@@ -567,6 +615,10 @@ return plural;
   null,
   ""
  ],
+ "The pool is empty": [
+  null,
+  ""
+ ],
  "Threads per cores": [
   null,
   ""
@@ -598,6 +650,10 @@ return plural;
  "Usage": [
   null,
   "Käyttö"
+ ],
+ "Use Existing": [
+  null,
+  ""
  ],
  "Used": [
   null,
@@ -662,6 +718,10 @@ return plural;
  "Volume": [
   null,
   "Taltio"
+ ],
+ "Volume: ": [
+  null,
+  ""
  ],
  "Your browser does not support iframes.": [
   null,
@@ -742,6 +802,14 @@ return plural;
  "paused": [
   null,
   "pysäytetty"
+ ],
+ "qcow2": [
+  null,
+  ""
+ ],
+ "raw": [
+  null,
+  ""
  ],
  "running": [
   null,

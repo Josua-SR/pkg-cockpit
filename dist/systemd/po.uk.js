@@ -65,7 +65,7 @@ nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 |
 return plural;
 },
   "language": "uk",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 Template": [
   null,
@@ -537,7 +537,7 @@ return plural;
  ],
  "Enable persistent metrics…": [
   null,
-  ""
+  "Увімкнути сталу метрику…"
  ],
  "Enabled": [
   null,
@@ -1213,7 +1213,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to enable or disable services": [
   null,
-  ""
+  "Користувачеві <b>$0</b> заборонено вмикати або вимикати служби"
  ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
@@ -1225,7 +1225,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to start or stop services": [
   null,
-  ""
+  "Користувачеві <b>$0</b> заборонено запускати або зупиняти служби"
  ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,

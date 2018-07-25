@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "eu",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 day": [
   "$0 days",
@@ -127,7 +127,7 @@ return plural;
  ],
  "802.3ad LACP": [
   null,
-  ""
+  "802.3ad LACP"
  ],
  "ARP": [
   null,
@@ -139,7 +139,7 @@ return plural;
  ],
  "ARP Ping": [
   null,
-  ""
+  "ARP Ping"
  ],
  "Active": [
   null,
@@ -159,7 +159,7 @@ return plural;
  ],
  "Add $0": [
   null,
-  ""
+  "Gehitu $0"
  ],
  "Add Bond": [
   null,
@@ -207,7 +207,7 @@ return plural;
  ],
  "Addresses": [
   null,
-  ""
+  "Helbideak"
  ],
  "Allowed Services": [
   null,
@@ -215,7 +215,7 @@ return plural;
  ],
  "Apply": [
   null,
-  ""
+  "Aplikatu"
  ],
  "Authenticating": [
   null,
@@ -223,7 +223,7 @@ return plural;
  ],
  "Automatic": [
   null,
-  ""
+  "Automatikoa"
  ],
  "Automatic (DHCP only)": [
   null,
@@ -315,7 +315,7 @@ return plural;
  ],
  "Create it": [
   null,
-  ""
+  "Sortu"
  ],
  "Creating this VLAN will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -335,11 +335,11 @@ return plural;
  ],
  "DNS": [
   null,
-  ""
+  "DNS"
  ],
  "DNS $val": [
   null,
-  ""
+  "DNS $val"
  ],
  "DNS Search Domains": [
   null,
@@ -355,11 +355,11 @@ return plural;
  ],
  "Delete": [
   null,
-  ""
+  "Ezabatu"
  ],
  "Delete $0": [
   null,
-  ""
+  "Ezabatu $0"
  ],
  "Deleting <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -367,7 +367,7 @@ return plural;
  ],
  "Details": [
   null,
-  ""
+  "Xehetasunak"
  ],
  "Disabled": [
   null,
@@ -519,7 +519,7 @@ return plural;
  ],
  "MAC": [
   null,
-  ""
+  "MAC"
  ],
  "MII (Recommended)": [
   null,
@@ -527,7 +527,7 @@ return plural;
  ],
  "MTU": [
   null,
-  ""
+  "MTU"
  ],
  "MTU must be a positive number": [
   null,
@@ -855,27 +855,27 @@ return plural;
  ],
  "VLAN": [
   null,
-  ""
+  "VLAN"
  ],
  "VLAN Id": [
   null,
-  ""
+  "VLAN id"
  ],
  "VLAN Settings": [
   null,
-  ""
+  "VLAN ezarpenak"
  ],
  "Waiting": [
   null,
-  ""
+  "Itxaroten"
  ],
  "XOR": [
   null,
-  ""
+  "XOR"
  ],
  "Yes": [
   null,
-  ""
+  "Bai"
  ],
  "You are not authorized to modify the firewall.": [
   null,

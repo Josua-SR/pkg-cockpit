@@ -65,7 +65,7 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "zh_CN",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
@@ -342,10 +342,6 @@ return plural;
  "Couldn't find running API server": [
   null,
   "无法找到运行的 API 服务器"
- ],
- "Count:": [
-  null,
-  "计数："
  ],
  "Create": [
   null,
@@ -1342,6 +1338,14 @@ return plural;
  "Select Manifest File...": [
   null,
   "选择 Manifest 文件..."
+ ],
+ "Select Member": [
+  null,
+  ""
+ ],
+ "Select Role": [
+  null,
+  ""
  ],
  "Select an object to see more details.": [
   null,

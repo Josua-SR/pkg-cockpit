@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "pt_BR",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 update": [
   "$0 updates",
@@ -264,35 +264,35 @@ return plural;
  ],
  "This web console will be updated.": [
   null,
-  ""
+  "Este console da web será atualizado."
  ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
-  ""
+  "Para obter atualizações de software, este sistema precisa ser registrado na Red Hat, usando o Portal do Cliente Red Hat ou um servidor de assinatura local."
  ],
  "Unregistered System": [
   null,
-  ""
+  "Sistema não registrado"
  ],
  "Update History": [
   null,
-  ""
+  "Atualizar histórico"
  ],
  "Update Log": [
   null,
-  ""
+  "Atualizar Log"
  ],
  "Updated": [
   null,
-  ""
+  "Atualizado"
  ],
  "Updated packages may require a restart to take effect.": [
   null,
-  ""
+  "Pacotes atualizados podem exigir uma reinicialização para entrar em vigor."
  ],
  "Updates are disabled.": [
   null,
-  ""
+  "Atualizações estão desativadas."
  ],
  "Updating": [
   null,
@@ -300,11 +300,11 @@ return plural;
  ],
  "Verified": [
   null,
-  ""
+  "Verificado"
  ],
  "Verifying": [
   null,
-  ""
+  "Verificando"
  ],
  "Version": [
   null,
@@ -312,23 +312,23 @@ return plural;
  ],
  "View Registration Details": [
   null,
-  ""
+  "Visualizar detalhes do registro"
  ],
  "You need to re-subscribe this system.": [
   null,
-  ""
+  "Você precisa se inscrever novamente neste sistema."
  ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
-  ""
+  "Seu navegador será desconectado, mas isso não afeta o processo de atualização. Você pode se reconectar em alguns instantes para continuar acompanhando o progresso."
  ],
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,
-  ""
+  "Seu servidor fechará a conexão em breve. Você pode reconectar depois de ter reiniciado."
  ],
  "and restart the machine automatically.": [
   null,
-  ""
+  "e reinicie a máquina automaticamente."
  ],
  "at": [
   null,

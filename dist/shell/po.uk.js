@@ -65,7 +65,7 @@ nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 |
 return plural;
 },
   "language": "uk",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "A compatible version of Cockpit is not installed on {{#strong}}{{host}}{{/strong}}.": [
   null,
@@ -305,7 +305,7 @@ return plural;
  ],
  "Login has escalated admin privileges": [
   null,
-  ""
+  "Обліковий запис розширив права доступу до адміністративних"
  ],
  "Machines": [
   null,
@@ -377,7 +377,7 @@ return plural;
  ],
  "Privileged": [
   null,
-  ""
+  "Привілейований"
  ],
  "Project website": [
   null,

@@ -65,13 +65,17 @@ nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 |
 return plural;
 },
   "language": "uk",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
   "$0 можна користуватися у більшості операційних систем. Щоб встановити пакунок із програмою, знайдіть відповідний запис у Програмних засобах GNOME або віддайте таку команду:"
  ],
  "$0 vCPU Details": [
+  null,
+  "Параметри віртуального процесора $0"
+ ],
+ "Add Disk": [
   null,
   ""
  ],
@@ -89,11 +93,15 @@ return plural;
  ],
  "All changes will take effect only after stopping and starting the VM.": [
   null,
-  ""
+  "Усі зміни набудуть чинності лише після перезапуску віртуальної машини."
  ],
  "Apply": [
   null,
   "Застосувати"
+ ],
+ "Attach permanently": [
+  null,
+  ""
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -165,15 +173,15 @@ return plural;
  ],
  "Cores per socket": [
   null,
-  ""
- ],
- "Count:": [
-  null,
-  "Кількість:"
+  "Кількість ядер на сокет"
  ],
  "Create": [
   null,
   "Створити"
+ ],
+ "Create New": [
+  null,
+  ""
  ],
  "Create New VM": [
   null,
@@ -207,6 +215,14 @@ return plural;
   null,
   "Від'єднано від послідовної консолі. Натисніть кнопку «Повторно з'єднатися»."
  ],
+ "Disk failed to be attached with following error: ": [
+  null,
+  ""
+ ],
+ "Disk failed to be created with following error: ": [
+  null,
+  ""
+ ],
  "Disks": [
   null,
   "Диски"
@@ -221,7 +237,7 @@ return plural;
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
-  ""
+  "Має бути увімкнено менше за максимальну кількість віртуальних процесорів."
  ],
  "File": [
   null,
@@ -239,9 +255,13 @@ return plural;
   null,
   "Примусово вимкнути"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
+ "Format: ": [
   null,
   ""
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "Помилка під час спроби виконати дію GET HYPERVISOR MAX VCPU"
  ],
  "GiB": [
   null,
@@ -313,7 +333,7 @@ return plural;
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
-  ""
+  "Максимальна кількість віртуальних процесорів, наданих для гостьової операційної системи, має бути у межах від 1 до $0"
  ],
  "Memory": [
   null,
@@ -351,9 +371,17 @@ return plural;
   null,
   "Назва не може складатися лише із порожніх символів"
  ],
+ "Name: ": [
+  null,
+  ""
+ ],
  "Networks": [
   null,
   "Мережі"
+ ],
+ "New Volume Name": [
+  null,
+  ""
  ],
  "No VM is running or defined on this host": [
   null,
@@ -403,6 +431,14 @@ return plural;
   null,
   "Шлях до файла"
  ],
+ "Please enter new volume name": [
+  null,
+  ""
+ ],
+ "Please enter new volume size": [
+  null,
+  ""
+ ],
  "Please start the virtual machine to access its console.": [
   null,
   "Будь ласка, запустіть віртуальну машину, щоб отримати доступ до її консолі."
@@ -415,6 +451,10 @@ return plural;
   null,
   "Буфер"
  ],
+ "Pool: ": [
+  null,
+  ""
+ ],
  "Port": [
   null,
   "Порт"
@@ -425,7 +465,7 @@ return plural;
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
-  ""
+  "Бажана кількість сокетів, які слід надавати гостьовій системі."
  ],
  "Protocol": [
   null,
@@ -453,7 +493,7 @@ return plural;
  ],
  "SET VCPU SETTINGS action failed": [
   null,
-  ""
+  "Помилка під час спроби виконати дію SET VCPU SETTINGS"
  ],
  "SPICE": [
   null,
@@ -490,6 +530,10 @@ return plural;
  "Shut Down": [
   null,
   "Вимкнути"
+ ],
+ "Size: ": [
+  null,
+  ""
  ],
  "Sockets": [
   null,
@@ -531,6 +575,10 @@ return plural;
   null,
   "Призначення"
  ],
+ "Target: ": [
+  null,
+  ""
+ ],
  "The VM crashed.": [
   null,
   "Віртуальна машина аварійно завершила роботу."
@@ -567,9 +615,13 @@ return plural;
   null,
   "Роботу віртуальної машини призупинено засобами керування живленням гостьової системи."
  ],
- "Threads per cores": [
+ "The pool is empty": [
   null,
   ""
+ ],
+ "Threads per cores": [
+  null,
+  "Потоків на ядра"
  ],
  "Too many files found": [
   null,
@@ -598,6 +650,10 @@ return plural;
  "Usage": [
   null,
   "Використання"
+ ],
+ "Use Existing": [
+  null,
+  ""
  ],
  "Used": [
   null,
@@ -662,6 +718,10 @@ return plural;
  "Volume": [
   null,
   "Том"
+ ],
+ "Volume: ": [
+  null,
+  ""
  ],
  "Your browser does not support iframes.": [
   null,
@@ -743,6 +803,14 @@ return plural;
   null,
   "призупинено"
  ],
+ "qcow2": [
+  null,
+  ""
+ ],
+ "raw": [
+  null,
+  ""
+ ],
  "running": [
   null,
   "працює"
@@ -789,11 +857,11 @@ return plural;
  ],
  "vCPU Count": [
   null,
-  ""
+  "К-ть вірт. процесорів"
  ],
  "vCPU Maximum": [
   null,
-  ""
+  "Макс. вірт. процесорів"
  ],
  "vCPUs:": [
   null,

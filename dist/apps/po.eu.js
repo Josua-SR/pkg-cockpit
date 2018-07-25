@@ -65,11 +65,11 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "eu",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "Applications": [
   null,
-  ""
+  "Aplikazioak"
  ],
  "Cancel": [
   null,
@@ -97,7 +97,7 @@ return plural;
  ],
  "Installing": [
   null,
-  ""
+  "Instalatzen"
  ],
  "No applications installed or available": [
   null,

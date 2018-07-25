@@ -65,13 +65,17 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "eu",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
   ""
  ],
  "$0 vCPU Details": [
+  null,
+  ""
+ ],
+ "Add Disk": [
   null,
   ""
  ],
@@ -85,13 +89,17 @@ return plural;
  ],
  "Address:": [
   null,
-  ""
+  "Helbidea:"
  ],
  "All changes will take effect only after stopping and starting the VM.": [
   null,
   ""
  ],
  "Apply": [
+  null,
+  "Aplikatu"
+ ],
+ "Attach permanently": [
   null,
   ""
  ],
@@ -121,7 +129,7 @@ return plural;
  ],
  "CPU Type:": [
   null,
-  ""
+  "CPU mota"
  ],
  "Cancel": [
   null,
@@ -129,7 +137,7 @@ return plural;
  ],
  "Capacity": [
   null,
-  ""
+  "Edukiera"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -153,7 +161,7 @@ return plural;
  ],
  "Connection": [
   null,
-  ""
+  "Konexioa"
  ],
  "Console Type": [
   null,
@@ -167,11 +175,11 @@ return plural;
   null,
   ""
  ],
- "Count:": [
+ "Create": [
   null,
   ""
  ],
- "Create": [
+ "Create New": [
   null,
   ""
  ],
@@ -189,7 +197,7 @@ return plural;
  ],
  "Delete": [
   null,
-  ""
+  "Ezabatu"
  ],
  "Delete associated storage files:": [
   null,
@@ -197,13 +205,21 @@ return plural;
  ],
  "Device": [
   null,
-  ""
+  "Gailua"
  ],
  "Disconnect": [
   null,
   ""
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
+  null,
+  ""
+ ],
+ "Disk failed to be attached with following error: ": [
+  null,
+  ""
+ ],
+ "Disk failed to be created with following error: ": [
   null,
   ""
  ],
@@ -236,6 +252,10 @@ return plural;
   ""
  ],
  "Force Shut Down": [
+  null,
+  ""
+ ],
+ "Format: ": [
   null,
   ""
  ],
@@ -285,7 +305,7 @@ return plural;
  ],
  "Invalid filename": [
   null,
-  ""
+  "Baliogabeko fitxategi-izena"
  ],
  "Launch Remote Viewer": [
   null,
@@ -297,11 +317,11 @@ return plural;
  ],
  "MAC Address": [
   null,
-  ""
+  "MAC helbidea"
  ],
  "MTU": [
   null,
-  ""
+  "MTU"
  ],
  "Managed": [
   null,
@@ -351,7 +371,15 @@ return plural;
   null,
   ""
  ],
+ "Name: ": [
+  null,
+  ""
+ ],
  "Networks": [
+  null,
+  ""
+ ],
+ "New Volume Name": [
   null,
   ""
  ],
@@ -403,6 +431,14 @@ return plural;
   null,
   ""
  ],
+ "Please enter new volume name": [
+  null,
+  ""
+ ],
+ "Please enter new volume size": [
+  null,
+  ""
+ ],
  "Please start the virtual machine to access its console.": [
   null,
   ""
@@ -412,6 +448,10 @@ return plural;
   ""
  ],
  "Pool": [
+  null,
+  ""
+ ],
+ "Pool: ": [
   null,
   ""
  ],
@@ -491,6 +531,10 @@ return plural;
   null,
   ""
  ],
+ "Size: ": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   ""
@@ -531,6 +575,10 @@ return plural;
   null,
   ""
  ],
+ "Target: ": [
+  null,
+  ""
+ ],
  "The VM crashed.": [
   null,
   ""
@@ -567,6 +615,10 @@ return plural;
   null,
   ""
  ],
+ "The pool is empty": [
+  null,
+  ""
+ ],
  "Threads per cores": [
   null,
   ""
@@ -596,6 +648,10 @@ return plural;
   ""
  ],
  "Usage": [
+  null,
+  "Erabilera"
+ ],
+ "Use Existing": [
   null,
   ""
  ],
@@ -629,7 +685,7 @@ return plural;
  ],
  "VNC": [
   null,
-  ""
+  "VNC"
  ],
  "VNC Address:": [
   null,
@@ -660,6 +716,10 @@ return plural;
   ""
  ],
  "Volume": [
+  null,
+  ""
+ ],
+ "Volume: ": [
   null,
   ""
  ],
@@ -705,11 +765,11 @@ return plural;
  ],
  "enabled": [
   null,
-  ""
+  "gaitua"
  ],
  "ethernet": [
   null,
-  ""
+  "ethernet"
  ],
  "host": [
   null,
@@ -729,17 +789,25 @@ return plural;
  ],
  "network": [
   null,
-  ""
+  "sarea"
  ],
  "no": [
   null,
-  ""
+  "ez"
  ],
  "other": [
   null,
   ""
  ],
  "paused": [
+  null,
+  "pausatua"
+ ],
+ "qcow2": [
+  null,
+  ""
+ ],
+ "raw": [
   null,
   ""
  ],
@@ -749,7 +817,7 @@ return plural;
  ],
  "server": [
   null,
-  ""
+  "zerbitzaria"
  ],
  "show less": [
   null,
@@ -765,7 +833,7 @@ return plural;
  ],
  "shutdown": [
   null,
-  ""
+  "itzali"
  ],
  "suspended (PM)": [
   null,
@@ -773,7 +841,7 @@ return plural;
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "undefined": [
   null,

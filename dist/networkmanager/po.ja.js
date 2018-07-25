@@ -65,7 +65,7 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "ja",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 day": [
   "$0 days",
@@ -165,11 +165,11 @@ return plural;
  ],
  "Add Services": [
   null,
-  ""
+  "サービスの追加"
  ],
  "Add Services…": [
   null,
-  ""
+  "サービスの追加…"
  ],
  "Add Team": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Allowed Services": [
   null,
-  ""
+  "許可されたサービス"
  ],
  "Apply": [
   null,
@@ -369,7 +369,7 @@ return plural;
  ],
  "Enable Service": [
   null,
-  ""
+  "サービスを有効にします"
  ],
  "Ethernet MAC": [
   null,
@@ -389,15 +389,15 @@ return plural;
  ],
  "Filter Services": [
   null,
-  ""
+  "フィルターサービス"
  ],
  "Firewall": [
   null,
-  ""
+  "ファイアウォール"
  ],
  "Firewall is not available": [
   null,
-  ""
+  "ファイアウォールは利用できません"
  ],
  "Forward delay $forward_delay": [
   null,
@@ -565,11 +565,11 @@ return plural;
  ],
  "Network devices and graphs require NetworkManager.": [
   null,
-  ""
+  "ネットワークデバイスおよびグラフには、NetworkManager が必要です。"
  ],
  "NetworkManager is not running.": [
   null,
-  ""
+  "NetworkManager が実行していません。"
  ],
  "Networking": [
   null,
@@ -589,7 +589,7 @@ return plural;
  ],
  "No open ports": [
   null,
-  ""
+  "開いているポートはありません"
  ],
  "Not available": [
   null,
@@ -645,7 +645,7 @@ return plural;
  ],
  "Please install the {0} package": [
   null,
-  ""
+  "{0} パッケージをインストールしてください"
  ],
  "Ports": [
   null,
@@ -761,7 +761,7 @@ return plural;
  ],
  "Start Service": [
   null,
-  ""
+  "サービスの開始"
  ],
  "Status": [
   null,
@@ -873,7 +873,7 @@ return plural;
  ],
  "You are not authorized to modify the firewall.": [
   null,
-  ""
+  "ファイアウォールを修正する権限がありません。"
  ],
  "[$0 bytes of binary data]": [
   null,

@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "eu",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 update": [
   "$0 updates",
@@ -120,7 +120,7 @@ return plural;
  ],
  "Details": [
   null,
-  ""
+  "Xehetasunak"
  ],
  "Downloaded": [
   null,
@@ -152,11 +152,11 @@ return plural;
  ],
  "Installed": [
   null,
-  ""
+  "Instalatua"
  ],
  "Installing": [
   null,
-  ""
+  "Instalatzen"
  ],
  "Last checked: $0 ago": [
   null,
@@ -300,15 +300,15 @@ return plural;
  ],
  "Verified": [
   null,
-  ""
+  "Egiaztatua"
  ],
  "Verifying": [
   null,
-  ""
+  "Egiaztatzen"
  ],
  "Version": [
   null,
-  ""
+  "Bertsioa"
  ],
  "View Registration Details": [
   null,
@@ -336,35 +336,35 @@ return plural;
  ],
  "every day": [
   null,
-  ""
+  "egunero"
  ],
  "on Fridays": [
   null,
-  ""
+  "ostiraletan"
  ],
  "on Mondays": [
   null,
-  ""
+  "astelehenetan"
  ],
  "on Saturdays": [
   null,
-  ""
+  "larunbatetan"
  ],
  "on Sundays": [
   null,
-  ""
+  "igandeetan"
  ],
  "on Thursdays": [
   null,
-  ""
+  "ostegunetan"
  ],
  "on Tuesdays": [
   null,
-  ""
+  "astearteetan"
  ],
  "on Wednesdays": [
   null,
-  ""
+  "asteazkenetan"
  ],
  "undefined": [
   null,

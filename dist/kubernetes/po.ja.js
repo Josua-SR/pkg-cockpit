@@ -65,7 +65,7 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "ja",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
@@ -73,7 +73,7 @@ return plural;
  ],
  " or drag & drop.": [
   null,
-  ""
+  "または、ドラッグアンドドロップ"
  ],
  "$0% Free": [
   "$0% Free",
@@ -343,17 +343,13 @@ return plural;
   null,
   "実行中の API サーバーを見つけることができませんでした"
  ],
- "Count:": [
-  null,
-  "数量:"
- ],
  "Create": [
   null,
   "作成"
  ],
  "Create Virtual Machine": [
   null,
-  ""
+  "仮想マシンの作成"
  ],
  "Create empty image stream": [
   null,
@@ -501,7 +497,7 @@ return plural;
  ],
  "Drop file here to upload.": [
   null,
-  ""
+  "ここにファイルをドロップし、アップロードします。"
  ],
  "Empty Directory": [
   null,
@@ -833,7 +829,7 @@ return plural;
  ],
  "No disks defined for this VM": [
   null,
-  "この VM に対してディスクが定義されていません"
+  "この仮想マシンに対してディスクが定義されていません"
  ],
  "No groups are present.": [
   null,
@@ -941,7 +937,7 @@ return plural;
  ],
  "Only files of size $0 MiB and less are supported": [
   null,
-  ""
+  "サイズが $0 MiB 以下のファイルのみをサポートします"
  ],
  "Operating System": [
   null,
@@ -969,7 +965,7 @@ return plural;
  ],
  "Paste JSON below, ": [
   null,
-  ""
+  "以下に JSON を貼り付けます、"
  ],
  "Path": [
   null,
@@ -1281,7 +1277,7 @@ return plural;
  ],
  "Resolve above errors to continue": [
   null,
-  ""
+  "上記のエラーを解決して続行"
  ],
  "Restart Count": [
   null,
@@ -1342,6 +1338,14 @@ return plural;
  "Select Manifest File...": [
   null,
   "マニフェストファイルの選択 ..."
+ ],
+ "Select Member": [
+  null,
+  ""
+ ],
+ "Select Role": [
+  null,
+  ""
  ],
  "Select an object to see more details.": [
   null,
@@ -1641,7 +1645,7 @@ return plural;
  ],
  "Usage metrics are available after the pod starts": [
   null,
-  ""
+  "利用状況メトリクスは、ポッドの開始後に利用可能です"
  ],
  "Used": [
   null,
@@ -1669,15 +1673,15 @@ return plural;
  ],
  "VM definition is not a valid JSON.": [
   null,
-  ""
+  "仮想マシンの定義は、有効な JSON ではありません。"
  ],
  "VM definition is required.": [
   null,
-  ""
+  "仮想マシンの定義が必要です。"
  ],
  "VM definition must be an object.": [
   null,
-  ""
+  "仮想マシンの定義は、オブジェクトである必要があります。"
  ],
  "Virtual Machines": [
   null,
@@ -1861,7 +1865,7 @@ return plural;
  ],
  "upload a JSON file": [
   null,
-  ""
+  "JSON ファイルのアップロード"
  ],
  "user": [
   null,

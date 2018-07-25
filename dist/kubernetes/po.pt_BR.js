@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "pt_BR",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
@@ -344,10 +344,6 @@ return plural;
  "Couldn't find running API server": [
   null,
   "Não foi possível localizar o servidor API em execução"
- ],
- "Count:": [
-  null,
-  "Contagem:"
  ],
  "Create": [
   null,
@@ -943,7 +939,7 @@ return plural;
  ],
  "Only files of size $0 MiB and less are supported": [
   null,
-  ""
+  "Somente arquivos de tamanho $0 MiB e menos são suportados"
  ],
  "Operating System": [
   null,
@@ -971,7 +967,7 @@ return plural;
  ],
  "Paste JSON below, ": [
   null,
-  ""
+  "Cole JSON abaixo, "
  ],
  "Path": [
   null,
@@ -1283,7 +1279,7 @@ return plural;
  ],
  "Resolve above errors to continue": [
   null,
-  ""
+  "Resolva os erros acima para continuar"
  ],
  "Restart Count": [
   null,
@@ -1344,6 +1340,14 @@ return plural;
  "Select Manifest File...": [
   null,
   "Selecione Arquivo Manifest ..."
+ ],
+ "Select Member": [
+  null,
+  ""
+ ],
+ "Select Role": [
+  null,
+  ""
  ],
  "Select an object to see more details.": [
   null,
@@ -1643,7 +1647,7 @@ return plural;
  ],
  "Usage metrics are available after the pod starts": [
   null,
-  ""
+  "Métricas de uso estão disponíveis após o início do pod"
  ],
  "Used": [
   null,
@@ -1667,19 +1671,19 @@ return plural;
  ],
  "VM DELETE failed.": [
   null,
-  ""
+  "VM DELETE falhou."
  ],
  "VM definition is not a valid JSON.": [
   null,
-  ""
+  "VM definição não e um válido JSON."
  ],
  "VM definition is required.": [
   null,
-  ""
+  "VM definição é necessário."
  ],
  "VM definition must be an object.": [
   null,
-  ""
+  "VM definição deve ser um objeto."
  ],
  "Virtual Machines": [
   null,
@@ -1735,7 +1739,7 @@ return plural;
  ],
  "bridge": [
   null,
-  ""
+  "bridge"
  ],
  "cdrom": [
   null,
@@ -1751,7 +1755,7 @@ return plural;
  ],
  "direct": [
   null,
-  ""
+  "direto"
  ],
  "disabled": [
   null,
@@ -1763,7 +1767,7 @@ return plural;
  ],
  "down": [
   null,
-  ""
+  "down"
  ],
  "dying": [
   null,

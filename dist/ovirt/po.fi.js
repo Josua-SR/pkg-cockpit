@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "fi",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -78,6 +78,10 @@ return plural;
  "Action": [
   null,
   "Toiminto"
+ ],
+ "Add Disk": [
+  null,
+  ""
  ],
  "Additional": [
   null,
@@ -102,6 +106,10 @@ return plural;
  "Apply": [
   null,
   "Toteuta"
+ ],
+ "Attach permanently": [
+  null,
+  ""
  ],
  "Automatically selected host": [
   null,
@@ -215,13 +223,13 @@ return plural;
   null,
   ""
  ],
- "Count:": [
-  null,
-  ""
- ],
  "Create": [
   null,
   "Luo"
+ ],
+ "Create New": [
+  null,
+  ""
  ],
  "Create New VM": [
   null,
@@ -256,6 +264,14 @@ return plural;
   "Katkaise yhteys"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
+  null,
+  ""
+ ],
+ "Disk failed to be attached with following error: ": [
+  null,
+  ""
+ ],
+ "Disk failed to be created with following error: ": [
   null,
   ""
  ],
@@ -298,6 +314,10 @@ return plural;
  "Force Shut Down": [
   null,
   "Pakota sammutus"
+ ],
+ "Format: ": [
+  null,
+  ""
  ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
@@ -383,6 +403,10 @@ return plural;
   null,
   "Muisti:"
  ],
+ "MiB": [
+  null,
+  "MiB"
+ ],
  "Migrate To:": [
   null,
   ""
@@ -399,9 +423,17 @@ return plural;
   null,
   "Nimi"
  ],
+ "Name: ": [
+  null,
+  ""
+ ],
  "Networks": [
   null,
   "Verkot"
+ ],
+ "New Volume Name": [
+  null,
+  ""
  ],
  "No VM found in oVirt.": [
   null,
@@ -463,6 +495,14 @@ return plural;
   null,
   ""
  ],
+ "Please enter new volume name": [
+  null,
+  ""
+ ],
+ "Please enter new volume size": [
+  null,
+  ""
+ ],
  "Please provide fully qualified domain name and port of the oVirt engine.": [
   null,
   ""
@@ -492,6 +532,10 @@ return plural;
   ""
  ],
  "Pool": [
+  null,
+  ""
+ ],
+ "Pool: ": [
   null,
   ""
  ],
@@ -611,6 +655,10 @@ return plural;
   null,
   "Sammuta"
  ],
+ "Size: ": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   ""
@@ -656,6 +704,10 @@ return plural;
   "Järjestelmä"
  ],
  "Target": [
+  null,
+  ""
+ ],
+ "Target: ": [
   null,
   ""
  ],
@@ -707,6 +759,10 @@ return plural;
   null,
   ""
  ],
+ "The pool is empty": [
+  null,
+  ""
+ ],
  "This host is managed by a virtualization manager, so creation of new VMs from the host is not possible.": [
   null,
   ""
@@ -734,6 +790,10 @@ return plural;
  "Usage": [
   null,
   "Käyttö"
+ ],
+ "Use Existing": [
+  null,
+  ""
  ],
  "Used": [
   null,
@@ -814,6 +874,10 @@ return plural;
  "Volume": [
   null,
   "Taltio"
+ ],
+ "Volume: ": [
+  null,
+  ""
  ],
  "Your browser does not support iframes.": [
   null,
@@ -962,6 +1026,14 @@ return plural;
  "pending approval": [
   null,
   "odottaa hyväksyntää"
+ ],
+ "qcow2": [
+  null,
+  ""
+ ],
+ "raw": [
+  null,
+  ""
  ],
  "reboot": [
   null,

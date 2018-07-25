@@ -65,15 +65,15 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "ja",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "\"http\" Key escrow": [
   null,
-  ""
+  "\"http\" キーエスクロー"
  ],
  "\"tang\" Binding server": [
   null,
-  ""
+  "\"tang\" バインディングサーバー"
  ],
  "$0 Block Device": [
   null,
@@ -121,7 +121,7 @@ return plural;
  ],
  "$0 is not available from any repository.": [
   null,
-  ""
+  "$0 は、あらゆるリポジトリーから利用できません。"
  ],
  "$0 minute": [
   "$0 minutes",
@@ -145,7 +145,7 @@ return plural;
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "$0 がインストールされます。"
  ],
  "$0 year": [
   "$0 years",
@@ -173,7 +173,7 @@ return plural;
  ],
  "--": [
   null,
-  ""
+  "--"
  ],
  "1 MiB": [
   null,
@@ -249,7 +249,7 @@ return plural;
  ],
  "Active since": [
   null,
-  ""
+  "以降有効"
  ],
  "Add": [
   null,
@@ -265,7 +265,7 @@ return plural;
  ],
  "Add network key": [
   null,
-  ""
+  "ネットワークキーの追加"
  ],
  "Adding physical volume to $target": [
   null,
@@ -273,7 +273,7 @@ return plural;
  ],
  "Additional packages:": [
   null,
-  ""
+  "追加のパッケージ:"
  ],
  "Address": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "Allow \"http://\" URL": [
   null,
-  ""
+  "\"http://\" URL を許可"
  ],
  "Apply": [
   null,
@@ -349,7 +349,7 @@ return plural;
  ],
  "Checking installed software": [
   null,
-  ""
+  "インストールされたソフトウェアの確認"
  ],
  "Chunk Size": [
   null,
@@ -557,7 +557,7 @@ return plural;
  ],
  "Downloading $0": [
   null,
-  ""
+  "$0 をダウンロード中"
  ],
  "Drive": [
   null,
@@ -629,7 +629,7 @@ return plural;
  ],
  "Existing passphrase": [
   null,
-  ""
+  "既存のパスフレーズ"
  ],
  "Extended Partition": [
   null,
@@ -709,7 +709,7 @@ return plural;
  ],
  "HTTP method": [
   null,
-  ""
+  "HTTP メソッド"
  ],
  "In Sync": [
   null,
@@ -729,15 +729,19 @@ return plural;
  ],
  "Install NFS Support": [
   null,
-  ""
+  "NFS サポートをインストール"
  ],
  "Install Software": [
+  null,
+  "ソフトウェアをインストール"
+ ],
+ "Install VDO support": [
   null,
   ""
  ],
  "Installing $0": [
   null,
-  ""
+  "$0 をインストール中"
  ],
  "Invalid username or password": [
   null,
@@ -749,23 +753,23 @@ return plural;
  ],
  "Key can't be retrieved": [
   null,
-  ""
+  "キーをリトリーブできません"
  ],
  "Key does not work": [
   null,
-  ""
+  "キーは動作しません"
  ],
  "Key is obsolete": [
   null,
-  ""
+  "キーは使われていません"
  ],
  "Key is okay": [
   null,
-  ""
+  "キーは問題ありません"
  ],
  "Key server address": [
   null,
-  ""
+  "キーのサーバーアドレス"
  ],
  "Local Mount Point": [
   null,
@@ -801,7 +805,7 @@ return plural;
  ],
  "Manually verify the key on the server: ": [
   null,
-  ""
+  "サーバー上のキーを手動で検証します。"
  ],
  "Marking $target as faulty": [
   null,
@@ -821,7 +825,7 @@ return plural;
  ],
  "Method": [
   null,
-  ""
+  "メソッド"
  ],
  "Modifying $target": [
   null,
@@ -885,7 +889,7 @@ return plural;
  ],
  "NFS Support not installed": [
   null,
-  ""
+  "NFS サポートはインストールされていません"
  ],
  "NTFS - Compatible with most systems": [
   null,
@@ -917,7 +921,7 @@ return plural;
  ],
  "Network keys": [
   null,
-  ""
+  "ネットワークキー"
  ],
  "New NFS Mount": [
   null,
@@ -1089,7 +1093,7 @@ return plural;
  ],
  "Please confirm network key removal": [
   null,
-  ""
+  "ネットワークキーの削除を確認してください"
  ],
  "Please confirm stopping of $0": [
   null,
@@ -1117,7 +1121,7 @@ return plural;
  ],
  "Process": [
   null,
-  ""
+  "プロセス"
  ],
  "Purpose": [
   null,
@@ -1213,7 +1217,7 @@ return plural;
  ],
  "Removals:": [
   null,
-  ""
+  "削除:"
  ],
  "Remove": [
   null,
@@ -1225,11 +1229,11 @@ return plural;
  ],
  "Remove key": [
   null,
-  ""
+  "キーの削除"
  ],
  "Removing $0": [
   null,
-  ""
+  "$0 を削除中"
  ],
  "Removing $target from RAID Device": [
   null,
@@ -1237,7 +1241,7 @@ return plural;
  ],
  "Removing network keys might prevent unattended booting.": [
   null,
-  ""
+  "ネットワークキーの削除により、自動での起動ができなくなる可能性があります。"
  ],
  "Removing physical volume from $target": [
   null,
@@ -1269,7 +1273,7 @@ return plural;
  ],
  "Retrieving the key from $0 has failed: $1.": [
   null,
-  ""
+  "$0 からのキーのリトリーブに失敗: $1"
  ],
  "Running": [
   null,
@@ -1293,7 +1297,7 @@ return plural;
  ],
  "Server address cannot be empty": [
   null,
-  ""
+  "サーバーアドレスは空欄にできません"
  ],
  "Server address cannot be empty.": [
   null,
@@ -1301,7 +1305,7 @@ return plural;
  ],
  "Server can't be reached": [
   null,
-  ""
+  "サーバーに接続できません"
  ],
  "Server cannot be empty.": [
   null,
@@ -1417,7 +1421,7 @@ return plural;
  ],
  "Support is installed.": [
   null,
-  ""
+  "サポートはインストールされました。"
  ],
  "Swap": [
   null,
@@ -1453,23 +1457,23 @@ return plural;
  ],
  "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
   null,
-  ""
+  "このファイルシステムは、ログインセッションおよびシステムサービスで使用中です。               続行するとこれらを停止します。"
  ],
  "The filesystem is in use by login sessions.                Proceeding will stop these.": [
   null,
-  ""
+  "このファイルシステムは、ログインセッションで使用中です。                続行するとこれらを停止します。"
  ],
  "The filesystem is in use by system services.                Proceeding will stop these.": [
   null,
-  ""
+  "このファイルシステムは、システムサービスで使用中です。                続行するとこれらを停止します。"
  ],
  "The key of $0 will be removed.": [
   null,
-  ""
+  "$0 のキーは削除されます。"
  ],
  "The key server at $0 can not be reached.  This network key can not unlock the encrypted data right now, but it might be able to when the server becomes reachable again.": [
   null,
-  ""
+  "$0 のキーサーバーは接続できません。  このネットワークキーは現在、暗号化データのロック解除ができませんが、サーバーに再接続できたら、ロック解除できる可能性があります。"
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
@@ -1481,11 +1485,11 @@ return plural;
  ],
  "The output should match this text: ": [
   null,
-  ""
+  "出力は、このテキストと一致する必要があります: "
  ],
  "The server has returned a key that doesn't work.": [
   null,
-  ""
+  "サーバーは、動作しないキーを返しました。"
  ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
@@ -1513,7 +1517,7 @@ return plural;
  ],
  "This box must be checked to confirm that the key will be transported without HTTPS": [
   null,
-  ""
+  "HTTPS なしでキーがトランスポートされることを確認するために、このボックスにチェックを入れる必要があります"
  ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
@@ -1545,19 +1549,19 @@ return plural;
  ],
  "This network key is not recognized anymore by the server.": [
   null,
-  ""
+  "このネットワークキーは今後、サーバーに認識されません。"
  ],
  "This network key is obsolete. It is still functional but it should be replaced. A new key has been retrieved from the server.": [
   null,
-  ""
+  "このネットワークキーは使われていません。まだ機能しますが、取り替える必要があります。サーバーから新しいキーがリトリーブされました。"
  ],
  "This network key is obsolete. It is still functional but it should be replaced. A new key has been securely retrieved from the server.": [
   null,
-  ""
+  "このネットワークキーは使われていません。まだ機能しますが、取り替える必要があります。サーバーから新しいキーが安全にリトリーブされました。"
  ],
  "This network key works fine right now and the encrypted data can be unlocked with it.": [
   null,
-  ""
+  "このネットワークキーは現在、問題なく使用できます。暗号化されたデータは、このキーを使用してロック解除できます。"
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
@@ -1565,15 +1569,15 @@ return plural;
  ],
  "Total size: $0": [
   null,
-  ""
+  "合計サイズ: $0"
  ],
  "Trust Key": [
   null,
-  ""
+  "キーを信頼します"
  ],
  "Trust new key": [
   null,
-  ""
+  "新しいキーを信頼します"
  ],
  "Type": [
   null,
@@ -1585,11 +1589,11 @@ return plural;
  ],
  "URL cannot be empty": [
   null,
-  ""
+  "URL は空にはできません"
  ],
  "URL must start with either \"http:\" or \"https:\"": [
   null,
-  ""
+  "URL は、\"http:\" または \"https:\" のいずれかで開始する必要があります"
  ],
  "UUID": [
   null,
@@ -1609,7 +1613,7 @@ return plural;
  ],
  "Unit": [
   null,
-  ""
+  "単位"
  ],
  "Unknown": [
   null,
@@ -1669,7 +1673,7 @@ return plural;
  ],
  "Use new key": [
   null,
-  ""
+  "新しいキーを使用します"
  ],
  "Used": [
   null,
@@ -1699,13 +1703,17 @@ return plural;
   null,
   "VDO バッキングデバイスを小さくすることはできません"
  ],
+ "VDO support not installed": [
+  null,
+  ""
+ ],
  "VFAT - Compatible with all systems and devices": [
   null,
   "VFAT - すべてのシステムおよびデバイスとの互換性あり"
  ],
  "Verify Key": [
   null,
-  ""
+  "キーを検証します"
  ],
  "Very securely erasing $target": [
   null,
@@ -1729,7 +1737,7 @@ return plural;
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "他のソフトウェア管理オペレーションが終了するまで待機中"
  ],
  "Write-mostly": [
   null,
@@ -1745,7 +1753,7 @@ return plural;
  ],
  "You might want to remove it.": [
   null,
-  ""
+  "削除した方がいいかもしれません。"
  ],
  "[$0 bytes of binary data]": [
   null,

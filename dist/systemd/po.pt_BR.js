@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "pt_BR",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 Template": [
   null,
@@ -531,7 +531,7 @@ return plural;
  ],
  "Enable persistent metrics…": [
   null,
-  ""
+  "Ativar métricas persistentes ..."
  ],
  "Enabled": [
   null,
@@ -627,11 +627,11 @@ return plural;
  ],
  "Install Software": [
   null,
-  ""
+  "Instale Software"
  ],
  "Installing $0": [
   null,
-  ""
+  "Instalando $0"
  ],
  "Instantiate": [
   null,
@@ -667,7 +667,7 @@ return plural;
  ],
  "Joins Namespace Of": [
   null,
-  ""
+  "Junte os espaços nos nomes de"
  ],
  "Journal": [
   null,
@@ -879,7 +879,7 @@ return plural;
  ],
  "Part Of": [
   null,
-  ""
+  "Parte de"
  ],
  "Paths": [
   null,
@@ -927,7 +927,7 @@ return plural;
  ],
  "Propagates Reload To": [
   null,
-  ""
+  "Propaga Recarregar para"
  ],
  "RAID Chassis": [
   null,
@@ -963,15 +963,15 @@ return plural;
  ],
  "Reload Propagated From": [
   null,
-  ""
+  "Recarregar propagado de"
  ],
  "Removals:": [
   null,
-  ""
+  "Remoções:"
  ],
  "Removing $0": [
   null,
-  ""
+  "Removendo $0"
  ],
  "Repeat Daily": [
   null,
@@ -1011,19 +1011,19 @@ return plural;
  ],
  "Required By": [
   null,
-  ""
+  "Solicitado por"
  ],
  "Requires": [
   null,
-  ""
+  "Requere"
  ],
  "Requisite": [
   null,
-  ""
+  "Requisita"
  ],
  "Requisite Of": [
   null,
-  ""
+  "Requisitode"
  ],
  "Reset": [
   null,
@@ -1203,11 +1203,11 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to change the system time": [
   null,
-  ""
+  "Ao Usuário <b>$0</b> não é permitido trocar a hora do sistema"
  ],
  "The user <b>$0</b> is not permitted to enable or disable services": [
   null,
-  ""
+  "Ao usuário <b>$0</b> não é permitido desabilitar serviços"
  ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
@@ -1219,7 +1219,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to start or stop services": [
   null,
-  ""
+  "Ao usuário <b>$0</b> não é permitido iniciar ou parar serviços"
  ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
@@ -1251,15 +1251,15 @@ return plural;
  ],
  "Total size: $0": [
   null,
-  ""
+  "Tamanho total: $0"
  ],
  "Tower": [
   null,
-  ""
+  "Torre"
  ],
  "Triggered By": [
   null,
-  ""
+  "Disparado por"
  ],
  "Triggers": [
   null,
@@ -1287,12 +1287,12 @@ return plural;
  ],
  "Updates Available": [
   null,
-  ""
+  "Atualizações disponíveis"
  ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",
-  "",
-  ""
+  "Uso de  $0 da CPU ",
+  "Uso de  $0 da CPU"
  ],
  "Used": [
   null,
@@ -1304,7 +1304,7 @@ return plural;
  ],
  "Vendor": [
   null,
-  ""
+  "Fabricante"
  ],
  "Version": [
   null,
@@ -1312,19 +1312,19 @@ return plural;
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "Aguardando que outras operações de gerenciamento de software terminem"
  ],
  "Wanted By": [
   null,
-  ""
+  "Requerido por"
  ],
  "Wants": [
   null,
-  ""
+  "Requer"
  ],
  "Warning and above": [
   null,
-  ""
+  "Aviso e acima"
  ],
  "Wednesday": [
   null,

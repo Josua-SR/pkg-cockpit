@@ -65,13 +65,17 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "de",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
   ""
  ],
  "$0 vCPU Details": [
+  null,
+  ""
+ ],
+ "Add Disk": [
   null,
   ""
  ],
@@ -94,6 +98,10 @@ return plural;
  "Apply": [
   null,
   "Anwenden"
+ ],
+ "Attach permanently": [
+  null,
+  ""
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -167,13 +175,13 @@ return plural;
   null,
   ""
  ],
- "Count:": [
-  null,
-  ""
- ],
  "Create": [
   null,
   "Erstellen"
+ ],
+ "Create New": [
+  null,
+  ""
  ],
  "Create New VM": [
   null,
@@ -207,6 +215,14 @@ return plural;
   null,
   ""
  ],
+ "Disk failed to be attached with following error: ": [
+  null,
+  ""
+ ],
+ "Disk failed to be created with following error: ": [
+  null,
+  ""
+ ],
  "Disks": [
   null,
   "Datenträger"
@@ -236,6 +252,10 @@ return plural;
   ""
  ],
  "Force Shut Down": [
+  null,
+  ""
+ ],
+ "Format: ": [
   null,
   ""
  ],
@@ -351,7 +371,15 @@ return plural;
   null,
   ""
  ],
+ "Name: ": [
+  null,
+  ""
+ ],
  "Networks": [
+  null,
+  ""
+ ],
+ "New Volume Name": [
   null,
   ""
  ],
@@ -403,6 +431,14 @@ return plural;
   null,
   ""
  ],
+ "Please enter new volume name": [
+  null,
+  ""
+ ],
+ "Please enter new volume size": [
+  null,
+  ""
+ ],
  "Please start the virtual machine to access its console.": [
   null,
   ""
@@ -412,6 +448,10 @@ return plural;
   ""
  ],
  "Pool": [
+  null,
+  ""
+ ],
+ "Pool: ": [
   null,
   ""
  ],
@@ -491,6 +531,10 @@ return plural;
   null,
   "Herunterfahren"
  ],
+ "Size: ": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   ""
@@ -531,6 +575,10 @@ return plural;
   null,
   "Ziel"
  ],
+ "Target: ": [
+  null,
+  ""
+ ],
  "The VM crashed.": [
   null,
   "Die VM ist abgestürzt."
@@ -567,6 +615,10 @@ return plural;
   null,
   "Die VM ist vom Gast Power Management suspendiert."
  ],
+ "The pool is empty": [
+  null,
+  ""
+ ],
  "Threads per cores": [
   null,
   ""
@@ -596,6 +648,10 @@ return plural;
   ""
  ],
  "Usage": [
+  null,
+  ""
+ ],
+ "Use Existing": [
   null,
   ""
  ],
@@ -660,6 +716,10 @@ return plural;
   ""
  ],
  "Volume": [
+  null,
+  ""
+ ],
+ "Volume: ": [
   null,
   ""
  ],
@@ -742,6 +802,14 @@ return plural;
  "paused": [
   null,
   "pausiert"
+ ],
+ "qcow2": [
+  null,
+  ""
+ ],
+ "raw": [
+  null,
+  ""
  ],
  "running": [
   null,

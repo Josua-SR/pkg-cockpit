@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "eu",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  " (shared with the OS)": [
   null,
@@ -135,7 +135,7 @@ return plural;
  ],
  "Always": [
   null,
-  ""
+  "Beti"
  ],
  "Are you sure you want to delete this image?": [
   null,
@@ -143,7 +143,7 @@ return plural;
  ],
  "Author": [
   null,
-  ""
+  "Egilea"
  ],
  "Blade": [
   null,
@@ -159,15 +159,15 @@ return plural;
  ],
  "CPU": [
   null,
-  ""
+  "CPUa"
  ],
  "CPU priority": [
   null,
-  ""
+  "CPU lehentasuna"
  ],
  "CPU usage:": [
   null,
-  ""
+  "CPU erabilera:"
  ],
  "Can&rsquo;t connect to Docker": [
   null,
@@ -179,7 +179,7 @@ return plural;
  ],
  "Change": [
   null,
-  ""
+  "Aldatu"
  ],
  "Change resource limits": [
   null,
@@ -204,7 +204,7 @@ return plural;
  ],
  "Command": [
   null,
-  ""
+  "Komandoa"
  ],
  "Command can't be empty": [
   null,
@@ -212,7 +212,7 @@ return plural;
  ],
  "Command:": [
   null,
-  ""
+  "Komandoa:"
  ],
  "Commit": [
   null,
@@ -272,7 +272,7 @@ return plural;
  ],
  "Created": [
   null,
-  ""
+  "Sortua"
  ],
  "Created:": [
   null,
@@ -284,11 +284,11 @@ return plural;
  ],
  "Delete": [
   null,
-  ""
+  "Ezabatu"
  ],
  "Delete $0": [
   null,
-  ""
+  "Ezabatu $0"
  ],
  "Deleting a container will erase all data in it.": [
   null,
@@ -300,7 +300,7 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Mahaigaina"
  ],
  "Detachable": [
   null,
@@ -308,7 +308,7 @@ return plural;
  ],
  "Details": [
   null,
-  ""
+  "Xehetasunak"
  ],
  "Docker is not installed or activated on the system": [
   null,
@@ -456,7 +456,7 @@ return plural;
  ],
  "Laptop": [
   null,
-  ""
+  "Ordenagailu eramangarria"
  ],
  "Link to another container": [
   null,
@@ -484,7 +484,7 @@ return plural;
  ],
  "MAC Address:": [
   null,
-  ""
+  "MAC helbidea:"
  ],
  "Main Server Chassis": [
   null,
@@ -897,11 +897,11 @@ return plural;
  ],
  "default": [
   null,
-  ""
+  "lehenetsia"
  ],
  "key": [
   null,
-  ""
+  "gakoa"
  ],
  "none": [
   null,

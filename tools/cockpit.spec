@@ -56,6 +56,10 @@
 %global go_scl_prefix %{nil}
 %endif
 
+%if 0%{?rhel} >= 7 || 0%{?centos}
+%define vdo_on_demand 1
+%endif
+
 Name:           cockpit
 Summary:        A user interface for Linux servers
 
@@ -71,6 +75,7 @@ Release:        1%{?dist}
 Source0:        https://github.com/cockpit-project/cockpit/releases/download/%{version}/cockpit-%{version}.tar.xz
 %endif
 
+BuildRequires: gcc
 BuildRequires: pkgconfig(gio-unix-2.0)
 BuildRequires: pkgconfig(json-glib-1.0)
 BuildRequires: pkgconfig(polkit-agent-1) >= 0.105
@@ -107,28 +112,27 @@ BuildRequires: xmlto
 # This is the "cockpit" metapackage. It should only
 # Require, Suggest or Recommend other cockpit-xxx subpackages
 
-Requires: cockpit-bridge = %{version}-%{release}
-Requires: cockpit-ws = %{version}-%{release}
-Requires: cockpit-system = %{version}-%{release}
+Requires: cockpit-bridge
+Requires: cockpit-ws
+Requires: cockpit-system
 
 # Optional components (for f24 we use soft deps)
 %if 0%{?fedora} >= 24 || 0%{?rhel} >= 8
 %if 0%{?rhel} == 0
-Recommends: cockpit-dashboard = %{version}-%{release}
+Recommends: cockpit-dashboard
+%ifarch x86_64 %{arm} aarch64 ppc64le i686 s390x
+Recommends: (cockpit-docker if /usr/bin/docker)
 %endif
-Recommends: (cockpit-networkmanager = %{version}-%{release} if NetworkManager)
-Recommends: (cockpit-storaged = %{version}-%{release} if udisks2)
-Recommends: (cockpit-packagekit = %{version}-%{release} if PackageKit)
+%endif
+Recommends: (cockpit-networkmanager if NetworkManager)
+Recommends: (cockpit-storaged if udisks2)
+Recommends: cockpit-packagekit
 %if 0%{?rhel} >= 8
 Recommends: subscription-manager-cockpit
 %endif
-%ifarch x86_64 %{arm} aarch64 ppc64le i686 s390x
-Recommends: (cockpit-docker = %{version}-%{release} if /usr/bin/docker)
-%endif
-Suggests: cockpit-pcp = %{version}-%{release}
-Suggests: cockpit-kubernetes = %{version}-%{release}
-Suggests: cockpit-selinux = %{version}-%{release}
-Suggests: cockpit-packagekit = %{version}-%{release}
+Suggests: cockpit-pcp
+Suggests: cockpit-kubernetes
+Suggests: cockpit-selinux
 %endif
 
 %prep
@@ -156,7 +160,8 @@ exec 2>&1
     --with-selinux-config-type=etc_t \
     %{?rhel:--without-storaged-iscsi-sessions} \
     --with-appstream-data-packages='[ "appstream-data" ]' \
-    --with-nfs-client-package='"nfs-utils"'
+    --with-nfs-client-package='"nfs-utils"' \
+    %{?vdo_on_demand:--with-vdo-package='"vdo"'}
 make -j4 %{?extra_flags} all
 
 %check
@@ -258,8 +263,13 @@ find %{buildroot}%{_datadir}/cockpit/selinux -type f >> selinux.list
 %endif
 
 %ifarch x86_64 %{arm} aarch64 ppc64le i686 s390x
+%if 0%{?fedora} || 0%{?rhel} < 8
 echo '%dir %{_datadir}/cockpit/docker' > docker.list
 find %{buildroot}%{_datadir}/cockpit/docker -type f >> docker.list
+%else
+rm -rf %{buildroot}/%{_datadir}/cockpit/docker
+touch docker.list
+%endif
 %else
 rm -rf %{buildroot}/%{_datadir}/cockpit/docker
 touch docker.list
@@ -325,8 +335,13 @@ rm -rf %{buildroot}/usr/src/debug
 # On RHEL kdump, networkmanager, selinux, and sosreport are part of the system package
 %if 0%{?rhel}
 cat kdump.list sosreport.list networkmanager.list selinux.list >> system.list
-rm -f %{buildroot}/usr/share/metainfo/org.cockpit-project.cockpit-sosreport.metainfo.xml
-rm -f %{buildroot}/usr/share/pixmaps/cockpit-sosreport.png
+rm -f %{buildroot}%{_datadir}/metainfo/org.cockpit-project.cockpit-sosreport.metainfo.xml
+rm -f %{buildroot}%{_datadir}/metainfo/org.cockpit-project.cockpit-kdump.metainfo.xml
+rm -f %{buildroot}%{_datadir}/pixmaps/cockpit-sosreport.png
+%endif
+
+%if 0%{?rhel}%{?centos}
+rm -f %{buildroot}%{_datadir}/metainfo/org.cockpit-project.cockpit-selinux.metainfo.xml
 %endif
 
 %if 0%{?build_basic}
@@ -516,6 +531,7 @@ BuildArch: noarch
 The Cockpit component for configuring kernel crash dumping.
 
 %files kdump -f kdump.list
+%{_datadir}/metainfo/org.cockpit-project.cockpit-kdump.metainfo.xml
 
 %package sosreport
 Summary: Cockpit user interface for diagnostic reports
@@ -529,8 +545,8 @@ The Cockpit component for creating diagnostic reports with the
 sosreport tool.
 
 %files sosreport -f sosreport.list
-/usr/share/metainfo/org.cockpit-project.cockpit-sosreport.metainfo.xml
-/usr/share/pixmaps/cockpit-sosreport.png
+%{_datadir}/metainfo/org.cockpit-project.cockpit-sosreport.metainfo.xml
+%{_datadir}/pixmaps/cockpit-sosreport.png
 
 %package networkmanager
 Summary: Cockpit user interface for networking, using NetworkManager
@@ -557,7 +573,7 @@ Summary: Cockpit SELinux package
 Requires: cockpit-bridge >= 122
 Requires: cockpit-shell >= 122
 %if 0%{?fedora} >= 24 || 0%{?rhel} >= 8
-Recommends: setroubleshoot-server >= 3.3.3
+Requires: setroubleshoot-server >= 3.3.3
 %endif
 BuildArch: noarch
 
@@ -566,6 +582,7 @@ This package contains the Cockpit user interface integration with the
 utility setroubleshoot to diagnose and resolve SELinux issues.
 
 %files selinux -f selinux.list
+%{_datadir}/metainfo/org.cockpit-project.cockpit-selinux.metainfo.xml
 
 %endif
 
@@ -584,7 +601,7 @@ Dummy package from building optional packages only; never install or publish me.
 
 # storaged on Fedora < 27, udisks on newer ones
 # Recommends: not supported in RHEL <= 7
-%package storaged
+%package -n cockpit-storaged
 Summary: Cockpit user interface for storage, using udisks
 Requires: cockpit-shell >= 122
 %if 0%{?rhel} == 7 || 0%{?centos} == 7
@@ -615,10 +632,10 @@ Requires: python-dbus
 %endif
 BuildArch: noarch
 
-%description storaged
+%description -n cockpit-storaged
 The Cockpit component for managing storage.  This package uses udisks.
 
-%files storaged -f storaged.list
+%files -n cockpit-storaged -f storaged.list
 
 
 %package -n cockpit-tests
@@ -733,13 +750,14 @@ bastion hosts, and a basic dashboard.
 
 %ifarch x86_64 %{arm} aarch64 ppc64le i686 s390x
 
+%if 0%{?fedora} || 0%{?rhel} < 8
 %package -n cockpit-docker
 Summary: Cockpit user interface for Docker containers
 Requires: cockpit-bridge >= 122
 Requires: cockpit-shell >= 122
 Requires: /usr/bin/docker
 Requires: /usr/lib/systemd/system/docker.service
-%if 0%{?fedora} || 0%{?rhel} >= 8
+%if 0%{?fedora}
 Requires: python3
 %else
 Requires: python2
@@ -751,6 +769,7 @@ This package is not yet complete.
 
 %files -n cockpit-docker -f docker.list
 
+%endif
 %endif
 
 %ifarch aarch64 x86_64 ppc64le s390x
