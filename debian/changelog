@@ -1,11 +1,11 @@
-cockpit (173-1) UNRELEASED; urgency=medium
+cockpit (173-1) unstable; urgency=medium
 
   * New upstream release:
     - Storage: Offer installation of VDO
     - Machines: Add disks to a virtual machine
   * Re-enable cockpit-pcp package, pcp has been in testing for a while now.
 
- -- Martin Pitt <mpitt@debian.org>  Wed, 25 Jul 2018 16:00:59 +0000
+ -- Martin Pitt <mpitt@debian.org>  Wed, 25 Jul 2018 16:38:11 +0000
 
 cockpit (172-1) unstable; urgency=medium
 
