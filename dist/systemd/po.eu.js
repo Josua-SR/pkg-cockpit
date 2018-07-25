@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "eu",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 Template": [
   null,
@@ -111,7 +111,7 @@ return plural;
  ],
  "1 Minute": [
   null,
-  ""
+  "Minutu 1"
  ],
  "1 day": [
   null,
@@ -375,11 +375,11 @@ return plural;
  ],
  "CPU": [
   null,
-  ""
+  "CPUa"
  ],
  "Cached": [
   null,
-  ""
+  "Katxeatua"
  ],
  "Cancel": [
   null,
@@ -391,7 +391,7 @@ return plural;
  ],
  "Change": [
   null,
-  ""
+  "Aldatu"
  ],
  "Change Host Name": [
   null,
@@ -423,7 +423,7 @@ return plural;
  ],
  "Command": [
   null,
-  ""
+  "Komandoa"
  ],
  "Compact PCI": [
   null,
@@ -479,11 +479,11 @@ return plural;
  ],
  "Description": [
   null,
-  ""
+  "Deskribapena"
  ],
  "Desktop": [
   null,
-  ""
+  "Mahaigaina"
  ],
  "Detachable": [
   null,
@@ -631,7 +631,7 @@ return plural;
  ],
  "Installing $0": [
   null,
-  ""
+  "$0 instalatzen"
  ],
  "Instantiate": [
   null,
@@ -687,15 +687,15 @@ return plural;
  ],
  "Laptop": [
   null,
-  ""
+  "Ordenagailu eramangarria"
  ],
  "Last 24 hours": [
   null,
-  ""
+  "Azken 24 orduak"
  ],
  "Last 7 days": [
   null,
-  ""
+  "Azken 7 egunak"
  ],
  "Last Trigger": [
   null,
@@ -1308,7 +1308,7 @@ return plural;
  ],
  "Version": [
   null,
-  ""
+  "Bertsioa"
  ],
  "Waiting for other software management operations to finish": [
   null,
@@ -1332,7 +1332,7 @@ return plural;
  ],
  "Weeks": [
   null,
-  ""
+  "Aste"
  ],
  "[$0 bytes of binary data]": [
   null,
@@ -1361,7 +1361,7 @@ return plural;
  ],
  "page-title\u0004CPU Status": [
   null,
-  ""
+  "CPUaren egoera"
  ],
  "page-title\u0004Memory": [
   null,

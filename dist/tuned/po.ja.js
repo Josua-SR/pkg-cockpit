@@ -65,7 +65,7 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "ja",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "Cancel": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to change profiles": [
   null,
-  ""
+  "ユーザー <b>$0</b> は、プロファイルの変更を許可されていません"
  ],
  "This system is using a custom profile": [
   null,

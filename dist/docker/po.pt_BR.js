@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "pt_BR",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  " (shared with the OS)": [
   null,
@@ -825,7 +825,7 @@ return plural;
  ],
  "Tower": [
   null,
-  ""
+  "Torre"
  ],
  "Try again": [
   null,
@@ -853,7 +853,7 @@ return plural;
  ],
  "Up since $0": [
   null,
-  ""
+  "Ativo desde $0"
  ],
  "Used": [
   null,
@@ -869,7 +869,7 @@ return plural;
  ],
  "Volumes:": [
   null,
-  ""
+  "Volumes:"
  ],
  "With terminal": [
   null,

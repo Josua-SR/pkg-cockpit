@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "eu",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "'Organization' required to register.": [
   null,
@@ -85,7 +85,7 @@ return plural;
  ],
  "Architecture": [
   null,
-  ""
+  "Arkitektura"
  ],
  "Cancel": [
   null,
@@ -105,7 +105,7 @@ return plural;
  ],
  "Details": [
   null,
-  ""
+  "Xehetasunak"
  ],
  "Ends": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "Installed products": [
   null,
-  ""
+  "Instalatutako produktuak"
  ],
  "Invalid credentials": [
   null,
@@ -229,7 +229,7 @@ return plural;
  ],
  "Version": [
   null,
-  ""
+  "Bertsioa"
  ],
  "undefined": [
   null,

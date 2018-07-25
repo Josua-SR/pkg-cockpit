@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "pt_BR",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "\"http\" Key escrow": [
   null,
@@ -736,15 +736,19 @@ return plural;
  ],
  "Install NFS Support": [
   null,
-  ""
+  "Instale o suporte ao NFS"
  ],
  "Install Software": [
+  null,
+  "Instale Software"
+ ],
+ "Install VDO support": [
   null,
   ""
  ],
  "Installing $0": [
   null,
-  ""
+  "Instalando $0"
  ],
  "Invalid username or password": [
   null,
@@ -756,7 +760,7 @@ return plural;
  ],
  "Key can't be retrieved": [
   null,
-  ""
+  "A chave não pode ser recuperada"
  ],
  "Key does not work": [
   null,
@@ -828,7 +832,7 @@ return plural;
  ],
  "Method": [
   null,
-  ""
+  "Metodo"
  ],
  "Modifying $target": [
   null,
@@ -892,7 +896,7 @@ return plural;
  ],
  "NFS Support not installed": [
   null,
-  ""
+  "Suporte ao NFS não instalado"
  ],
  "NTFS - Compatible with most systems": [
   null,
@@ -1220,7 +1224,7 @@ return plural;
  ],
  "Removals:": [
   null,
-  ""
+  "Remoções:"
  ],
  "Remove": [
   null,
@@ -1236,7 +1240,7 @@ return plural;
  ],
  "Removing $0": [
   null,
-  ""
+  "Removendo $0"
  ],
  "Removing $target from RAID Device": [
   null,
@@ -1276,7 +1280,7 @@ return plural;
  ],
  "Retrieving the key from $0 has failed: $1.": [
   null,
-  ""
+  "A recuperação da chave de $0 falhou: $1."
  ],
  "Running": [
   null,
@@ -1300,7 +1304,7 @@ return plural;
  ],
  "Server address cannot be empty": [
   null,
-  ""
+  "O endereço do servidor não pode estar vazio"
  ],
  "Server address cannot be empty.": [
   null,
@@ -1424,7 +1428,7 @@ return plural;
  ],
  "Support is installed.": [
   null,
-  ""
+  "O suporte está instalado."
  ],
  "Swap": [
   null,
@@ -1492,7 +1496,7 @@ return plural;
  ],
  "The server has returned a key that doesn't work.": [
   null,
-  ""
+  "O servidor retornou uma chave que não funciona."
  ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
@@ -1520,7 +1524,7 @@ return plural;
  ],
  "This box must be checked to confirm that the key will be transported without HTTPS": [
   null,
-  ""
+  "Esta caixa deve ser marcada para confirmar que a chave será transportada sem HTTPS"
  ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
@@ -1552,7 +1556,7 @@ return plural;
  ],
  "This network key is not recognized anymore by the server.": [
   null,
-  ""
+  "Esta chave de rede não é mais reconhecida pelo servidor."
  ],
  "This network key is obsolete. It is still functional but it should be replaced. A new key has been retrieved from the server.": [
   null,
@@ -1568,19 +1572,19 @@ return plural;
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
-  ""
+  "Este volume precisa ser ativado antes de poder ser redimensionado."
  ],
  "Total size: $0": [
   null,
-  ""
+  "Tamanho total: $0"
  ],
  "Trust Key": [
   null,
-  ""
+  "Chave Confiável"
  ],
  "Trust new key": [
   null,
-  ""
+  "Confiar na nova chave"
  ],
  "Type": [
   null,
@@ -1592,11 +1596,11 @@ return plural;
  ],
  "URL cannot be empty": [
   null,
-  ""
+  "URL não pode estar vazia"
  ],
  "URL must start with either \"http:\" or \"https:\"": [
   null,
-  ""
+  "O URL deve começar com \"http:\" ou \"https:\""
  ],
  "UUID": [
   null,
@@ -1608,15 +1612,15 @@ return plural;
  ],
  "Unable to remove mount": [
   null,
-  ""
+  "Não é possível remover a unidade montade"
  ],
  "Unable to unmount filesystem": [
   null,
-  ""
+  "Não é possível desmontar o sistema de arquivos"
  ],
  "Unit": [
   null,
-  ""
+  "Unidade"
  ],
  "Unknown": [
   null,
@@ -1636,11 +1640,11 @@ return plural;
  ],
  "Unlock at boot": [
   null,
-  ""
+  "Desbloquear na inicialização"
  ],
  "Unlock read only": [
   null,
-  ""
+  "Desbloquear somente leitura"
  ],
  "Unlocking $target": [
   null,
@@ -1660,7 +1664,7 @@ return plural;
  ],
  "Unrecognized data can not be made smaller here.": [
   null,
-  ""
+  "Dados não reconhecidos não podem ser reduzidos aqui."
  ],
  "Unsupported volume": [
   null,
@@ -1672,11 +1676,11 @@ return plural;
  ],
  "Use 512 Byte emulation": [
   null,
-  ""
+  "Use a emulação de 512 bytes"
  ],
  "Use new key": [
   null,
-  ""
+  "Use nova chave"
  ],
  "Used": [
   null,
@@ -1688,21 +1692,25 @@ return plural;
  ],
  "VDO Backing": [
   null,
-  ""
+  "VDO Backing"
  ],
  "VDO Device": [
   null,
-  ""
+  "Dispositivo VDO"
  ],
  "VDO Device $0": [
   null,
-  ""
+  "Dispositivo VDO $0"
  ],
  "VDO Devices": [
   null,
-  ""
+  "VDO Dispositivos"
  ],
  "VDO backing devices can not be made smaller": [
+  null,
+  "Dispositivos de suporte VDO não podem ser  menores"
+ ],
+ "VDO support not installed": [
   null,
   ""
  ],
@@ -1712,7 +1720,7 @@ return plural;
  ],
  "Verify Key": [
   null,
-  ""
+  "Verificar Chave"
  ],
  "Very securely erasing $target": [
   null,
@@ -1736,7 +1744,7 @@ return plural;
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "Aguardando que outras operações de gerenciamento de software terminem"
  ],
  "Write-mostly": [
   null,
@@ -1752,7 +1760,7 @@ return plural;
  ],
  "You might want to remove it.": [
   null,
-  ""
+  "Você pode querer removê-lo."
  ],
  "[$0 bytes of binary data]": [
   null,
@@ -1808,7 +1816,7 @@ return plural;
  ],
  "storage-id-desc\u0004VDO Backing": [
   null,
-  ""
+  "VDO Backing"
  ],
  "storage\u0004Drive": [
   null,

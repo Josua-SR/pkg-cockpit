@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "ca",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
@@ -344,10 +344,6 @@ return plural;
  "Couldn't find running API server": [
   null,
   "No s'ha pogut trobar el servidor de l'API en execució"
- ],
- "Count:": [
-  null,
-  "Nombre:"
  ],
  "Create": [
   null,
@@ -1344,6 +1340,14 @@ return plural;
  "Select Manifest File...": [
   null,
   "Selecciona el fitxer del manifest..."
+ ],
+ "Select Member": [
+  null,
+  ""
+ ],
+ "Select Role": [
+  null,
+  ""
  ],
  "Select an object to see more details.": [
   null,

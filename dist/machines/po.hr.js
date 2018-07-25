@@ -65,13 +65,17 @@ nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 |
 return plural;
 },
   "language": "hr",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
   ""
  ],
  "$0 vCPU Details": [
+  null,
+  ""
+ ],
+ "Add Disk": [
   null,
   ""
  ],
@@ -92,6 +96,10 @@ return plural;
   ""
  ],
  "Apply": [
+  null,
+  ""
+ ],
+ "Attach permanently": [
   null,
   ""
  ],
@@ -167,13 +175,13 @@ return plural;
   null,
   ""
  ],
- "Count:": [
-  null,
-  ""
- ],
  "Create": [
   null,
   "Izradi"
+ ],
+ "Create New": [
+  null,
+  ""
  ],
  "Create New VM": [
   null,
@@ -207,6 +215,14 @@ return plural;
   null,
   ""
  ],
+ "Disk failed to be attached with following error: ": [
+  null,
+  ""
+ ],
+ "Disk failed to be created with following error: ": [
+  null,
+  ""
+ ],
  "Disks": [
   null,
   ""
@@ -236,6 +252,10 @@ return plural;
   ""
  ],
  "Force Shut Down": [
+  null,
+  ""
+ ],
+ "Format: ": [
   null,
   ""
  ],
@@ -351,7 +371,15 @@ return plural;
   null,
   ""
  ],
+ "Name: ": [
+  null,
+  ""
+ ],
  "Networks": [
+  null,
+  ""
+ ],
+ "New Volume Name": [
   null,
   ""
  ],
@@ -403,6 +431,14 @@ return plural;
   null,
   ""
  ],
+ "Please enter new volume name": [
+  null,
+  ""
+ ],
+ "Please enter new volume size": [
+  null,
+  ""
+ ],
  "Please start the virtual machine to access its console.": [
   null,
   ""
@@ -412,6 +448,10 @@ return plural;
   ""
  ],
  "Pool": [
+  null,
+  ""
+ ],
+ "Pool: ": [
   null,
   ""
  ],
@@ -491,6 +531,10 @@ return plural;
   null,
   ""
  ],
+ "Size: ": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   ""
@@ -531,6 +575,10 @@ return plural;
   null,
   ""
  ],
+ "Target: ": [
+  null,
+  ""
+ ],
  "The VM crashed.": [
   null,
   ""
@@ -567,6 +615,10 @@ return plural;
   null,
   ""
  ],
+ "The pool is empty": [
+  null,
+  ""
+ ],
  "Threads per cores": [
   null,
   ""
@@ -596,6 +648,10 @@ return plural;
   ""
  ],
  "Usage": [
+  null,
+  ""
+ ],
+ "Use Existing": [
   null,
   ""
  ],
@@ -660,6 +716,10 @@ return plural;
   ""
  ],
  "Volume": [
+  null,
+  ""
+ ],
+ "Volume: ": [
   null,
   ""
  ],
@@ -740,6 +800,14 @@ return plural;
   ""
  ],
  "paused": [
+  null,
+  ""
+ ],
+ "qcow2": [
+  null,
+  ""
+ ],
+ "raw": [
   null,
   ""
  ],

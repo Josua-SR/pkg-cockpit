@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "eu",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
@@ -103,7 +103,7 @@ return plural;
  ],
  "Add": [
   null,
-  ""
+  "Gehitu"
  ],
  "Add Cluster Node": [
   null,
@@ -151,7 +151,7 @@ return plural;
  ],
  "Addresses": [
   null,
-  ""
+  "Helbideak"
  ],
  "Adjust": [
   null,
@@ -179,7 +179,7 @@ return plural;
  ],
  "All Projects": [
   null,
-  ""
+  "Proiektu guztiak"
  ],
  "All Types": [
   null,
@@ -227,11 +227,11 @@ return plural;
  ],
  "CPU": [
   null,
-  ""
+  "CPUa"
  ],
  "CPU Utilization: $0%": [
   null,
-  ""
+  "CPUaren erabilera: $0%"
  ],
  "Cancel": [
   null,
@@ -239,7 +239,7 @@ return plural;
  ],
  "Capacity": [
   null,
-  ""
+  "Edukiera"
  ],
  "Ceph Filesystem Mount": [
   null,
@@ -251,11 +251,11 @@ return plural;
  ],
  "Change": [
   null,
-  ""
+  "Aldatu"
  ],
  "Change User": [
   null,
-  ""
+  "Aldatu erabiltzailea"
  ],
  "Change image stream": [
   null,
@@ -263,7 +263,7 @@ return plural;
  ],
  "Change project": [
   null,
-  ""
+  "Aldatu proiektua"
  ],
  "Cinder": [
   null,
@@ -287,7 +287,7 @@ return plural;
  ],
  "Configuration": [
   null,
-  ""
+  "Konfigurazioa"
  ],
  "Configure Flannel networking": [
   null,
@@ -303,7 +303,7 @@ return plural;
  ],
  "Connecting...": [
   null,
-  ""
+  "Konektatzen..."
  ],
  "Connection Error": [
   null,
@@ -345,10 +345,6 @@ return plural;
   null,
   ""
  ],
- "Count:": [
-  null,
-  ""
- ],
  "Create": [
   null,
   ""
@@ -367,15 +363,15 @@ return plural;
  ],
  "Created": [
   null,
-  ""
+  "Sortua"
  ],
  "DNS Policy": [
   null,
-  ""
+  "DNS politika"
  ],
  "Delete": [
   null,
-  ""
+  "Ezabatu"
  ],
  "Delete Node": [
   null,
@@ -431,15 +427,15 @@ return plural;
  ],
  "Description": [
   null,
-  ""
+  "Deskribapena"
  ],
  "Details": [
   null,
-  ""
+  "Xehetasunak"
  ],
  "Device": [
   null,
-  ""
+  "Gailua"
  ],
  "Directory": [
   null,
@@ -447,7 +443,7 @@ return plural;
  ],
  "Disk": [
   null,
-  ""
+  "Diskoa"
  ],
  "Disk Utilization: $0%": [
   null,
@@ -683,15 +679,15 @@ return plural;
  ],
  "Labels": [
   null,
-  ""
+  "Etiketak"
  ],
  "Labels:": [
   null,
-  ""
+  "Etiketak:"
  ],
  "Last Heartbeat": [
   null,
-  ""
+  "Azken taupada"
  ],
  "Last Status Change": [
   null,
@@ -1345,6 +1341,14 @@ return plural;
   null,
   ""
  ],
+ "Select Member": [
+  null,
+  ""
+ ],
+ "Select Role": [
+  null,
+  ""
+ ],
  "Select an object to see more details.": [
   null,
   ""
@@ -1639,7 +1643,7 @@ return plural;
  ],
  "Usage": [
   null,
-  ""
+  "Erabilera"
  ],
  "Usage metrics are available after the pod starts": [
   null,
@@ -1719,7 +1723,7 @@ return plural;
  ],
  "Yes": [
   null,
-  ""
+  "Bai"
  ],
  "You can bypass the certificate check, but any data you send to the server could be intercepted by others.": [
   null,
@@ -1775,11 +1779,11 @@ return plural;
  ],
  "enabled": [
   null,
-  ""
+  "gaitua"
  ],
  "ethernet": [
   null,
-  ""
+  "ethernet"
  ],
  "host": [
   null,
@@ -1791,7 +1795,7 @@ return plural;
  ],
  "iSCSI": [
   null,
-  ""
+  "iSCSI"
  ],
  "idle": [
   null,
@@ -1807,11 +1811,11 @@ return plural;
  ],
  "network": [
   null,
-  ""
+  "sarea"
  ],
  "no": [
   null,
-  ""
+  "ez"
  ],
  "none": [
   null,
@@ -1819,7 +1823,7 @@ return plural;
  ],
  "paused": [
   null,
-  ""
+  "pausatua"
  ],
  "pending volume claims": [
   null,
@@ -1831,7 +1835,7 @@ return plural;
  ],
  "server": [
   null,
-  ""
+  "zerbitzaria"
  ],
  "show less": [
   null,
@@ -1847,7 +1851,7 @@ return plural;
  ],
  "shutdown": [
   null,
-  ""
+  "itzali"
  ],
  "suspended (PM)": [
   null,
@@ -1855,7 +1859,7 @@ return plural;
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "up": [
   null,

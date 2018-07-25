@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "eu",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "Access": [
   null,
@@ -109,7 +109,7 @@ return plural;
  ],
  "Change": [
   null,
-  ""
+  "Aldatu"
  ],
  "Close": [
   null,
@@ -117,11 +117,11 @@ return plural;
  ],
  "Confirm": [
   null,
-  ""
+  "Berretsi"
  ],
  "Confirm New Password": [
   null,
-  ""
+  "Berretsi pasahitz berria"
  ],
  "Container Administrator": [
   null,
@@ -137,15 +137,15 @@ return plural;
  ],
  "Delete": [
   null,
-  ""
+  "Ezabatu"
  ],
  "Delete $0": [
   null,
-  ""
+  "Ezabatu $0"
  ],
  "Delete Files": [
   null,
-  ""
+  "Ezabatu fitxategiak"
  ],
  "Error": [
   null,
@@ -189,7 +189,7 @@ return plural;
  ],
  "Invalid key": [
   null,
-  ""
+  "Baliogabeko gakoa"
  ],
  "Invalid number of days": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Lock Account": [
   null,
-  ""
+  "Blokeatu kontua"
  ],
  "Lock account on $0": [
   null,
@@ -381,10 +381,10 @@ return plural;
  ],
  "translatable": [
   null,
-  ""
+  "itzulgarria"
  ],
  "page-title\u0004Accounts": [
   null,
-  ""
+  "Kontuak"
  ]
 }));

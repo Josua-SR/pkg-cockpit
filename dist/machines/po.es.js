@@ -65,13 +65,17 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "es",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
   "$0 esta disponible para muchos sistemas operativos. Para instalarlo, búscalo en \"GNOME Software\" o ejecuta el siguiente comando:"
  ],
  "$0 vCPU Details": [
+  null,
+  ""
+ ],
+ "Add Disk": [
   null,
   ""
  ],
@@ -94,6 +98,10 @@ return plural;
  "Apply": [
   null,
   "Aplicar"
+ ],
+ "Attach permanently": [
+  null,
+  ""
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -167,13 +175,13 @@ return plural;
   null,
   ""
  ],
- "Count:": [
-  null,
-  "Conteo:"
- ],
  "Create": [
   null,
   "Crear"
+ ],
+ "Create New": [
+  null,
+  ""
  ],
  "Create New VM": [
   null,
@@ -207,6 +215,14 @@ return plural;
   null,
   "Desconectado de la consola serie. Pulse el botón Reconectar."
  ],
+ "Disk failed to be attached with following error: ": [
+  null,
+  ""
+ ],
+ "Disk failed to be created with following error: ": [
+  null,
+  ""
+ ],
  "Disks": [
   null,
   "Discos"
@@ -238,6 +254,10 @@ return plural;
  "Force Shut Down": [
   null,
   "Forzar Apagado"
+ ],
+ "Format: ": [
+  null,
+  ""
  ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
@@ -351,9 +371,17 @@ return plural;
   null,
   "El nombre no debería constar solo de caracteres vacíos"
  ],
+ "Name: ": [
+  null,
+  ""
+ ],
  "Networks": [
   null,
   "Redes"
+ ],
+ "New Volume Name": [
+  null,
+  ""
  ],
  "No VM is running or defined on this host": [
   null,
@@ -403,6 +431,14 @@ return plural;
   null,
   "Ruta al fichero"
  ],
+ "Please enter new volume name": [
+  null,
+  ""
+ ],
+ "Please enter new volume size": [
+  null,
+  ""
+ ],
  "Please start the virtual machine to access its console.": [
   null,
   "Por favor arranque la maquina virtual para acceder a su consola."
@@ -414,6 +450,10 @@ return plural;
  "Pool": [
   null,
   "Grupo"
+ ],
+ "Pool: ": [
+  null,
+  ""
  ],
  "Port": [
   null,
@@ -491,6 +531,10 @@ return plural;
   null,
   "Apagar"
  ],
+ "Size: ": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   "Sockets"
@@ -531,6 +575,10 @@ return plural;
   null,
   "Objetivo"
  ],
+ "Target: ": [
+  null,
+  ""
+ ],
  "The VM crashed.": [
   null,
   "El VM se ha roto."
@@ -567,6 +615,10 @@ return plural;
   null,
   "La VM está suspendida por la administración de energía de los invitados."
  ],
+ "The pool is empty": [
+  null,
+  ""
+ ],
  "Threads per cores": [
   null,
   ""
@@ -598,6 +650,10 @@ return plural;
  "Usage": [
   null,
   "Utilización"
+ ],
+ "Use Existing": [
+  null,
+  ""
  ],
  "Used": [
   null,
@@ -662,6 +718,10 @@ return plural;
  "Volume": [
   null,
   "Volumen"
+ ],
+ "Volume: ": [
+  null,
+  ""
  ],
  "Your browser does not support iframes.": [
   null,
@@ -742,6 +802,14 @@ return plural;
  "paused": [
   null,
   "en pausa"
+ ],
+ "qcow2": [
+  null,
+  ""
+ ],
+ "raw": [
+  null,
+  ""
  ],
  "running": [
   null,

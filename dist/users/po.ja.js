@@ -65,7 +65,7 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "ja",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "Access": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Image Builder": [
   null,
-  ""
+  "イメージビルダー"
  ],
  "Invalid expiration date": [
   null,
@@ -293,11 +293,11 @@ return plural;
  ],
  "Require password change every $0 days": [
   null,
-  "パスワードを $0 日ごとに変更する"
+  "$0 日ごとのパスワードの変更が必要"
  ],
  "Require password change on $0": [
   null,
-  "$0 でパスワードを変更する"
+  "$0 でパスワードの変更が必要"
  ],
  "Reset": [
   null,
@@ -381,7 +381,7 @@ return plural;
  ],
  "translatable": [
   null,
-  ""
+  "翻訳可能"
  ],
  "page-title\u0004Accounts": [
   null,

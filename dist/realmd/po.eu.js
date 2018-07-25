@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "eu",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
@@ -89,7 +89,7 @@ return plural;
  ],
  "Automatic": [
   null,
-  ""
+  "Automatikoa"
  ],
  "Cancel": [
   null,
@@ -141,7 +141,7 @@ return plural;
  ],
  "Leave": [
   null,
-  ""
+  "Irten"
  ],
  "Leave Domain": [
   null,

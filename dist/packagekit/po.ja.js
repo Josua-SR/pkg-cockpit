@@ -65,7 +65,7 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "ja",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 update": [
   "$0 updates",
@@ -261,7 +261,7 @@ return plural;
  ],
  "This web console will be updated.": [
   null,
-  ""
+  "この Web コンソールは更新されます。"
  ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
@@ -317,7 +317,7 @@ return plural;
  ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
-  ""
+  "ブラウザーが切断されますが、更新プロセスへの影響はありません。すぐに再接続して進捗確認を継続できます。"
  ],
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,

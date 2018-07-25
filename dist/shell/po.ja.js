@@ -65,7 +65,7 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "ja",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "A compatible version of Cockpit is not installed on {{#strong}}{{host}}{{/strong}}.": [
   null,
@@ -305,7 +305,7 @@ return plural;
  ],
  "Login has escalated admin privileges": [
   null,
-  ""
+  "ログインで、管理者の権限をエスカレートさせました"
  ],
  "Machines": [
   null,
@@ -377,7 +377,7 @@ return plural;
  ],
  "Privileged": [
   null,
-  ""
+  "権限"
  ],
  "Project website": [
   null,

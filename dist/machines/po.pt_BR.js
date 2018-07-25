@@ -65,13 +65,17 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "pt_BR",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
   "$0 está disponível para a maioria dos sistemas operacionais. Para instalá-lo, procure-o no GNOME Software ou execute o seguinte:"
  ],
  "$0 vCPU Details": [
+  null,
+  "$0 vCPU Detalhes"
+ ],
+ "Add Disk": [
   null,
   ""
  ],
@@ -89,11 +93,15 @@ return plural;
  ],
  "All changes will take effect only after stopping and starting the VM.": [
   null,
-  ""
+  "Todas as alterações entrarão em vigor somente após parar e iniciar a VM."
  ],
  "Apply": [
   null,
   "Aplicar"
+ ],
+ "Attach permanently": [
+  null,
+  ""
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -165,15 +173,15 @@ return plural;
  ],
  "Cores per socket": [
   null,
-  ""
- ],
- "Count:": [
-  null,
-  "Contagem:"
+  "Núcleos por soquete"
  ],
  "Create": [
   null,
   "Criar"
+ ],
+ "Create New": [
+  null,
+  ""
  ],
  "Create New VM": [
   null,
@@ -207,6 +215,14 @@ return plural;
   null,
   "Desconectado do console serial. Clique no botão Reconectar."
  ],
+ "Disk failed to be attached with following error: ": [
+  null,
+  ""
+ ],
+ "Disk failed to be created with following error: ": [
+  null,
+  ""
+ ],
  "Disks": [
   null,
   "Discos"
@@ -221,7 +237,7 @@ return plural;
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
-  ""
+  "Menos do que o número máximo de CPUs virtuais deve ser ativado."
  ],
  "File": [
   null,
@@ -239,9 +255,13 @@ return plural;
   null,
   "Forçar Desligamento"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
+ "Format: ": [
   null,
   ""
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "GET HYPERVISOR MAX VCPU falhou"
  ],
  "GiB": [
   null,
@@ -313,7 +333,7 @@ return plural;
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
-  ""
+  "Número máximo de CPUs virtuais alocadas para o sistema operacional virtualizado, que deve estar entre 1 e $0"
  ],
  "Memory": [
   null,
@@ -351,9 +371,17 @@ return plural;
   null,
   "O nome não deve conter apenas caracteres vazios"
  ],
+ "Name: ": [
+  null,
+  ""
+ ],
  "Networks": [
   null,
   "Networks"
+ ],
+ "New Volume Name": [
+  null,
+  ""
  ],
  "No VM is running or defined on this host": [
   null,
@@ -403,6 +431,14 @@ return plural;
   null,
   "Caminho para o arquivo"
  ],
+ "Please enter new volume name": [
+  null,
+  ""
+ ],
+ "Please enter new volume size": [
+  null,
+  ""
+ ],
  "Please start the virtual machine to access its console.": [
   null,
   "Por favor, inicie a máquina virtual para acessar seu console."
@@ -415,6 +451,10 @@ return plural;
   null,
   "Pool"
  ],
+ "Pool: ": [
+  null,
+  ""
+ ],
  "Port": [
   null,
   "Porta"
@@ -425,7 +465,7 @@ return plural;
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
-  ""
+  "Número preferido de soquetes para expor ao convidado."
  ],
  "Protocol": [
   null,
@@ -453,7 +493,7 @@ return plural;
  ],
  "SET VCPU SETTINGS action failed": [
   null,
-  ""
+  "A ação SET SETUP VCPU falhou"
  ],
  "SPICE": [
   null,
@@ -490,6 +530,10 @@ return plural;
  "Shut Down": [
   null,
   "Encerrar"
+ ],
+ "Size: ": [
+  null,
+  ""
  ],
  "Sockets": [
   null,
@@ -531,6 +575,10 @@ return plural;
   null,
   "Alvo"
  ],
+ "Target: ": [
+  null,
+  ""
+ ],
  "The VM crashed.": [
   null,
   "A VM caiu."
@@ -567,13 +615,17 @@ return plural;
   null,
   "A VM é suspensa pela gerência de poder do convidado."
  ],
- "Threads per cores": [
+ "The pool is empty": [
   null,
   ""
  ],
+ "Threads per cores": [
+  null,
+  "Threads por núcleos"
+ ],
  "Too many files found": [
   null,
-  ""
+  "Muitos arquivos encontrados"
  ],
  "Troubleshoot": [
   null,
@@ -589,7 +641,7 @@ return plural;
  ],
  "Unplug": [
   null,
-  ""
+  "Desplugar"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
@@ -598,6 +650,10 @@ return plural;
  "Usage": [
   null,
   "Uso"
+ ],
+ "Use Existing": [
+  null,
+  ""
  ],
  "Used": [
   null,
@@ -617,7 +673,7 @@ return plural;
  ],
  "VM SEND Non-Maskable Interrrupt action failed": [
   null,
-  ""
+  "VM SEND Falha na ação de interrupção não mascarável"
  ],
  "VM SHUT DOWN action failed": [
   null,
@@ -629,19 +685,19 @@ return plural;
  ],
  "VNC": [
   null,
-  ""
+  "VNC"
  ],
  "VNC Address:": [
   null,
-  ""
+  "VNC Endereço:"
  ],
  "VNC Port:": [
   null,
-  ""
+  "VNC Porta:"
  ],
  "VNC TLS Port:": [
   null,
-  ""
+  "VNC TLS Porta:"
  ],
  "Virtual Machines": [
   null,
@@ -649,27 +705,31 @@ return plural;
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
-  ""
+  "Serviço de virtualização (libvirt) não está ativo"
  ],
  "Virtualization Service is Available": [
   null,
-  ""
+  "Serviço de virtualização disponível"
  ],
  "Virtualport": [
   null,
-  ""
+  "Virtualport"
  ],
  "Volume": [
   null,
   "Volume"
  ],
- "Your browser does not support iframes.": [
+ "Volume: ": [
   null,
   ""
  ],
+ "Your browser does not support iframes.": [
+  null,
+  "Seu navegador não suporta iframes."
+ ],
  "bridge": [
   null,
-  ""
+  "bridge"
  ],
  "cdrom": [
   null,
@@ -685,7 +745,7 @@ return plural;
  ],
  "direct": [
   null,
-  ""
+  "direto"
  ],
  "disabled": [
   null,
@@ -697,7 +757,7 @@ return plural;
  ],
  "down": [
   null,
-  ""
+  "down"
  ],
  "dying": [
   null,
@@ -742,6 +802,14 @@ return plural;
  "paused": [
   null,
   "pausado"
+ ],
+ "qcow2": [
+  null,
+  ""
+ ],
+ "raw": [
+  null,
+  ""
  ],
  "running": [
   null,

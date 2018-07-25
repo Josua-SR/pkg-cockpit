@@ -79,7 +79,10 @@ function vms(state, action) {
         const index = id ? getFirstIndexOfVm(state, 'id', id, connectionName)
             : getFirstIndexOfVm(state, 'name', name, connectionName);
         if (index < 0) {
-            logDebug(`vms reducer: vm (name='${name}', connectionName='${connectionName}') not found, skipping`);
+            if (id)
+                logDebug(`vms reducer: vm (id='${id}', connectionName='${connectionName}') not found, skipping`);
+            else
+                logDebug(`vms reducer: vm (name='${name}', connectionName='${connectionName}') not found, skipping`);
             return null;
         }
         return { // return object of {index, copyOfVm}
@@ -177,6 +180,46 @@ function systemInfo(state, action) {
     }
 }
 
+function storagePools(state, action) {
+    state = state || { };
+    /* Example:
+    state = { "connectionNameA": {
+            "poolNameA": [
+                {name, path},
+                {name, path},
+            ],
+            "poolNameB": []
+            },
+            "connectionNameB": {}
+       }
+    */
+    switch (action.type) {
+    case 'UPDATE_STORAGE_POOLS': {
+        const { connectionName, pools } = action.payload;
+
+        const newState = Object.assign({}, state);
+        newState[connectionName] = {};
+
+        // Array of strings (pool names)
+        pools.forEach(poolName => {
+            newState[connectionName][poolName] = []; // will be filled by UPDATE_STORAGE_VOLUMES
+        });
+
+        return newState;
+    }
+    case 'UPDATE_STORAGE_VOLUMES': {
+        const { connectionName, poolName, volumes } = action.payload;
+
+        const newState = Object.assign({}, state);
+        newState[connectionName] = Object.assign({}, newState[connectionName]);
+        newState[connectionName][poolName] = volumes;
+        return newState;
+    }
+    default: // by default all reducers should return initial state on unknown actions
+        return state;
+    }
+}
+
 function ui(state, action) {
     // transient properties
     state = state || {
@@ -267,5 +310,6 @@ export default combineReducers({
     }),
     vms,
     systemInfo,
+    storagePools,
     ui,
 });

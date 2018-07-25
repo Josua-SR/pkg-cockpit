@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "eu",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -79,6 +79,10 @@ return plural;
   null,
   ""
  ],
+ "Add Disk": [
+  null,
+  ""
+ ],
  "Additional": [
   null,
   ""
@@ -89,7 +93,7 @@ return plural;
  ],
  "Address:": [
   null,
-  ""
+  "Helbidea:"
  ],
  "All changes will take effect only after stopping and starting the VM.": [
   null,
@@ -100,6 +104,10 @@ return plural;
   ""
  ],
  "Apply": [
+  null,
+  "Aplikatu"
+ ],
+ "Attach permanently": [
   null,
   ""
  ],
@@ -141,7 +149,7 @@ return plural;
  ],
  "CPU Type:": [
   null,
-  ""
+  "CPU mota"
  ],
  "CREATE VM action failed": [
   null,
@@ -153,7 +161,7 @@ return plural;
  ],
  "Capacity": [
   null,
-  ""
+  "Edukiera"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -177,7 +185,7 @@ return plural;
  ],
  "Confirm migration": [
   null,
-  ""
+  "Berretsi migrazioa"
  ],
  "Confirm reload:": [
   null,
@@ -201,7 +209,7 @@ return plural;
  ],
  "Connection": [
   null,
-  ""
+  "Konexioa"
  ],
  "Console Type": [
   null,
@@ -215,11 +223,11 @@ return plural;
   null,
   ""
  ],
- "Count:": [
+ "Create": [
   null,
   ""
  ],
- "Create": [
+ "Create New": [
   null,
   ""
  ],
@@ -233,7 +241,7 @@ return plural;
  ],
  "Delete": [
   null,
-  ""
+  "Ezabatu"
  ],
  "Delete associated storage files:": [
   null,
@@ -241,21 +249,29 @@ return plural;
  ],
  "Description": [
   null,
-  ""
+  "Deskribapena"
  ],
  "Description:": [
   null,
-  ""
+  "Deskribapena:"
  ],
  "Device": [
   null,
-  ""
+  "Gailua"
  ],
  "Disconnect": [
   null,
   ""
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
+  null,
+  ""
+ ],
+ "Disk failed to be attached with following error: ": [
+  null,
+  ""
+ ],
+ "Disk failed to be created with following error: ": [
   null,
   ""
  ],
@@ -296,6 +312,10 @@ return plural;
   ""
  ],
  "Force Shut Down": [
+  null,
+  ""
+ ],
+ "Format: ": [
   null,
   ""
  ],
@@ -353,7 +373,7 @@ return plural;
  ],
  "MAC Address": [
   null,
-  ""
+  "MAC helbidea"
  ],
  "MIGRATE action failed": [
   null,
@@ -361,7 +381,7 @@ return plural;
  ],
  "MTU": [
   null,
-  ""
+  "MTU"
  ],
  "Managed": [
   null,
@@ -383,6 +403,10 @@ return plural;
   null,
   ""
  ],
+ "MiB": [
+  null,
+  ""
+ ],
  "Migrate To:": [
   null,
   ""
@@ -399,7 +423,15 @@ return plural;
   null,
   ""
  ],
+ "Name: ": [
+  null,
+  ""
+ ],
  "Networks": [
+  null,
+  ""
+ ],
+ "New Volume Name": [
   null,
   ""
  ],
@@ -463,6 +495,14 @@ return plural;
   null,
   ""
  ],
+ "Please enter new volume name": [
+  null,
+  ""
+ ],
+ "Please enter new volume size": [
+  null,
+  ""
+ ],
  "Please provide fully qualified domain name and port of the oVirt engine.": [
   null,
   ""
@@ -492,6 +532,10 @@ return plural;
   ""
  ],
  "Pool": [
+  null,
+  ""
+ ],
+ "Pool: ": [
   null,
   ""
  ],
@@ -611,6 +655,10 @@ return plural;
   null,
   ""
  ],
+ "Size: ": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   ""
@@ -656,6 +704,10 @@ return plural;
   ""
  ],
  "Target": [
+  null,
+  ""
+ ],
+ "Target: ": [
   null,
   ""
  ],
@@ -707,6 +759,10 @@ return plural;
   null,
   ""
  ],
+ "The pool is empty": [
+  null,
+  ""
+ ],
  "This host is managed by a virtualization manager, so creation of new VMs from the host is not possible.": [
   null,
   ""
@@ -732,6 +788,10 @@ return plural;
   ""
  ],
  "Usage": [
+  null,
+  "Erabilera"
+ ],
+ "Use Existing": [
   null,
   ""
  ],
@@ -777,7 +837,7 @@ return plural;
  ],
  "VNC": [
   null,
-  ""
+  "VNC"
  ],
  "VNC Address:": [
   null,
@@ -793,11 +853,11 @@ return plural;
  ],
  "Version": [
   null,
-  ""
+  "Bertsioa"
  ],
  "Version num": [
   null,
-  ""
+  "Bertsio zenbakia"
  ],
  "Virtual Machines": [
   null,
@@ -812,6 +872,10 @@ return plural;
   ""
  ],
  "Volume": [
+  null,
+  ""
+ ],
+ "Volume: ": [
   null,
   ""
  ],
@@ -865,15 +929,15 @@ return plural;
  ],
  "enabled": [
   null,
-  ""
+  "gaitua"
  ],
  "error": [
   null,
-  ""
+  "errorea"
  ],
  "ethernet": [
   null,
-  ""
+  "ethernet"
  ],
  "host": [
   null,
@@ -913,11 +977,11 @@ return plural;
  ],
  "network": [
   null,
-  ""
+  "sarea"
  ],
  "no": [
   null,
-  ""
+  "ez"
  ],
  "non operational": [
   null,
@@ -929,7 +993,7 @@ return plural;
  ],
  "oVirt": [
   null,
-  ""
+  "oVirt"
  ],
  "oVirt Host State:": [
   null,
@@ -957,15 +1021,23 @@ return plural;
  ],
  "paused": [
   null,
-  ""
+  "pausatua"
  ],
  "pending approval": [
   null,
   ""
  ],
- "reboot": [
+ "qcow2": [
   null,
   ""
+ ],
+ "raw": [
+  null,
+  ""
+ ],
+ "reboot": [
+  null,
+  "berrabiarazi"
  ],
  "running": [
   null,
@@ -973,7 +1045,7 @@ return plural;
  ],
  "server": [
   null,
-  ""
+  "zerbitzaria"
  ],
  "show less": [
   null,
@@ -989,7 +1061,7 @@ return plural;
  ],
  "shutdown": [
   null,
-  ""
+  "itzali"
  ],
  "sockets": [
   null,
@@ -1001,11 +1073,11 @@ return plural;
  ],
  "threads": [
   null,
-  ""
+  "hariak"
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "unassigned": [
   null,

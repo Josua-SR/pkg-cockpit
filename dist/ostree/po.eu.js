@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "eu",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 key ID": [
   null,
@@ -85,7 +85,7 @@ return plural;
  ],
  "Add": [
   null,
-  ""
+  "Gehitu"
  ],
  "Add Another Key": [
   null,
@@ -97,7 +97,7 @@ return plural;
  ],
  "Apply": [
   null,
-  ""
+  "Aplikatu"
  ],
  "Available": [
   null,
@@ -141,7 +141,7 @@ return plural;
  ],
  "Delete": [
   null,
-  ""
+  "Ezabatu"
  ],
  "Downgrades": [
   null,
@@ -313,7 +313,7 @@ return plural;
  ],
  "Version": [
   null,
-  ""
+  "Bertsioa"
  ],
  "When": [
   null,
@@ -321,7 +321,7 @@ return plural;
  ],
  "Writing objects": [
   null,
-  ""
+  "Objektuak idazten"
  ],
  "at": [
   null,

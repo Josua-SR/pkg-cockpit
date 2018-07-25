@@ -65,7 +65,7 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "ja",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 Template": [
   null,
@@ -81,7 +81,7 @@ return plural;
  ],
  "$0 is not available from any repository.": [
   null,
-  ""
+  "$0 は、あらゆるリポジトリーから利用できません。"
  ],
  "$0 minute": [
   "$0 minutes",
@@ -97,7 +97,7 @@ return plural;
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "$0 がインストールされます。"
  ],
  "$0 year": [
   "$0 years",
@@ -289,7 +289,7 @@ return plural;
  ],
  "Additional packages:": [
   null,
-  ""
+  "追加のパッケージ:"
  ],
  "Advanced TCA": [
   null,
@@ -305,7 +305,7 @@ return plural;
  ],
  "Alert and above": [
   null,
-  ""
+  "アラート以上のレベル"
  ],
  "All In One": [
   null,
@@ -341,11 +341,11 @@ return plural;
  ],
  "Before": [
   null,
-  ""
+  "前"
  ],
  "Binds To": [
   null,
-  ""
+  "バインドする"
  ],
  "Blade": [
   null,
@@ -357,11 +357,11 @@ return plural;
  ],
  "Bound By": [
   null,
-  ""
+  "バインドされた"
  ],
  "Bug Fix Updates Available": [
   null,
-  ""
+  "バグ修正の更新が利用可能"
  ],
  "Bus Expansion Chassis": [
   null,
@@ -397,11 +397,11 @@ return plural;
  ],
  "Checking for updates…": [
   null,
-  ""
+  "更新の確認…"
  ],
  "Checking installed software": [
   null,
-  ""
+  "インストールされたソフトウェアの確認"
  ],
  "Class": [
   null,
@@ -409,7 +409,7 @@ return plural;
  ],
  "Click to see system hardware information": [
   null,
-  ""
+  "クリックしてシステムハードウェア情報を確認"
  ],
  "Close": [
   null,
@@ -433,15 +433,15 @@ return plural;
  ],
  "Conflicted By": [
   null,
-  ""
+  "競合する"
  ],
  "Conflicts": [
   null,
-  ""
+  "競合"
  ],
  "Consists Of": [
   null,
-  ""
+  "構成するもの"
  ],
  "Convertible": [
   null,
@@ -457,7 +457,7 @@ return plural;
  ],
  "Critical and above": [
   null,
-  ""
+  "重大以上のレベル"
  ],
  "Current boot": [
   null,
@@ -465,7 +465,7 @@ return plural;
  ],
  "Debug and above": [
   null,
-  ""
+  "デバッグ以上のレベル"
  ],
  "Delay": [
   null,
@@ -509,7 +509,7 @@ return plural;
  ],
  "Downloading $0": [
   null,
-  ""
+  "$0 をダウンロード中"
  ],
  "Embedded PC": [
   null,
@@ -521,11 +521,11 @@ return plural;
  ],
  "Enable Forcefully": [
   null,
-  "強制的に有効にする"
+  "強制的に有効にします"
  ],
  "Enable persistent metrics…": [
   null,
-  ""
+  "永続メトリクスを有効にします…"
  ],
  "Enabled": [
   null,
@@ -533,7 +533,7 @@ return plural;
  ],
  "Enhancement Updates Available": [
   null,
-  ""
+  "機能拡張の更新を利用できます"
  ],
  "Entry": [
   null,
@@ -545,7 +545,7 @@ return plural;
  ],
  "Error and above": [
   null,
-  ""
+  "エラー以上のレベル"
  ],
  "Everything": [
   null,
@@ -613,7 +613,7 @@ return plural;
  ],
  "Info and above": [
   null,
-  ""
+  "情報以上のレベル"
  ],
  "Install": [
   null,
@@ -621,11 +621,11 @@ return plural;
  ],
  "Install Software": [
   null,
-  ""
+  "ソフトウェアをインストール"
  ],
  "Installing $0": [
   null,
-  ""
+  "$0 をインストール中"
  ],
  "Instantiate": [
   null,
@@ -661,7 +661,7 @@ return plural;
  ],
  "Joins Namespace Of": [
   null,
-  ""
+  "名前空間に参加"
  ],
  "Journal": [
   null,
@@ -829,7 +829,7 @@ return plural;
  ],
  "Notice and above": [
   null,
-  ""
+  "注意以上のレベル"
  ],
  "Off": [
   null,
@@ -849,7 +849,7 @@ return plural;
  ],
  "Only Emergency": [
   null,
-  ""
+  "緊急時限定"
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
@@ -873,7 +873,7 @@ return plural;
  ],
  "Part Of": [
   null,
-  ""
+  "一部"
  ],
  "Paths": [
   null,
@@ -921,7 +921,7 @@ return plural;
  ],
  "Propagates Reload To": [
   null,
-  ""
+  "再読み込み先を伝搬"
  ],
  "RAID Chassis": [
   null,
@@ -957,15 +957,15 @@ return plural;
  ],
  "Reload Propagated From": [
   null,
-  ""
+  "伝搬元を再読み込み"
  ],
  "Removals:": [
   null,
-  ""
+  "削除:"
  ],
  "Removing $0": [
   null,
-  ""
+  "$0 を削除中"
  ],
  "Repeat Daily": [
   null,
@@ -1005,19 +1005,19 @@ return plural;
  ],
  "Required By": [
   null,
-  ""
+  "必要とされる"
  ],
  "Requires": [
   null,
-  ""
+  "必要"
  ],
  "Requisite": [
   null,
-  ""
+  "必須"
  ],
  "Requisite Of": [
   null,
-  ""
+  "必須の"
  ],
  "Reset": [
   null,
@@ -1053,7 +1053,7 @@ return plural;
  ],
  "Security Updates Available": [
   null,
-  ""
+  "セキュリティーの更新を利用できます"
  ],
  "Service Logs": [
   null,
@@ -1165,7 +1165,7 @@ return plural;
  ],
  "System Not Registered": [
   null,
-  ""
+  "システムは登録されていません"
  ],
  "System Services": [
   null,
@@ -1177,7 +1177,7 @@ return plural;
  ],
  "System Up To Date": [
   null,
-  ""
+  "システムは最新の状態です"
  ],
  "Tablet": [
   null,
@@ -1197,11 +1197,11 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to change the system time": [
   null,
-  ""
+  "ユーザー <b>$0</b> は、システムの時間の変更を許可されていません"
  ],
  "The user <b>$0</b> is not permitted to enable or disable services": [
   null,
-  ""
+  "ユーザー <b>$0</b> は、サービスを有効または無効にすることを許可されていません"
  ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
@@ -1213,7 +1213,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to start or stop services": [
   null,
-  ""
+  "ユーザー <b>$0</b> は、サービスを開始または停止することを許可されていません"
  ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
@@ -1245,7 +1245,7 @@ return plural;
  ],
  "Total size: $0": [
   null,
-  ""
+  "合計サイズ: $0"
  ],
  "Tower": [
   null,
@@ -1253,7 +1253,7 @@ return plural;
  ],
  "Triggered By": [
   null,
-  ""
+  "トリガー元"
  ],
  "Triggers": [
   null,
@@ -1281,7 +1281,7 @@ return plural;
  ],
  "Updates Available": [
   null,
-  ""
+  "更新を利用できます"
  ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",
@@ -1305,19 +1305,19 @@ return plural;
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "他のソフトウェア管理オペレーションが終了するまで待機中"
  ],
  "Wanted By": [
   null,
-  ""
+  "望まれる"
  ],
  "Wants": [
   null,
-  ""
+  "望む"
  ],
  "Warning and above": [
   null,
-  ""
+  "警告以上のレベル"
  ],
  "Wednesday": [
   null,

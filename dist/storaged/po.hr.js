@@ -65,7 +65,7 @@ nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 |
 return plural;
 },
   "language": "hr",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "\"http\" Key escrow": [
   null,
@@ -746,6 +746,10 @@ return plural;
   ""
  ],
  "Install Software": [
+  null,
+  ""
+ ],
+ "Install VDO support": [
   null,
   ""
  ],
@@ -1710,6 +1714,10 @@ return plural;
   ""
  ],
  "VDO backing devices can not be made smaller": [
+  null,
+  ""
+ ],
+ "VDO support not installed": [
   null,
   ""
  ],

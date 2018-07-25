@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "es",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "\"http\" Key escrow": [
   null,
@@ -739,6 +739,10 @@ return plural;
   ""
  ],
  "Install Software": [
+  null,
+  ""
+ ],
+ "Install VDO support": [
   null,
   ""
  ],
@@ -1705,6 +1709,10 @@ return plural;
  "VDO backing devices can not be made smaller": [
   null,
   "Los dispositivos de apoyo VDO no se pueden hacer más pequeños"
+ ],
+ "VDO support not installed": [
+  null,
+  ""
  ],
  "VFAT - Compatible with all systems and devices": [
   null,

@@ -65,13 +65,17 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "ja",
-  "x-generator": "Zanata 4.4.5"
+  "x-generator": "Zanata 4.5.0"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
   "$0 は、多数のオペレーティングシステムで利用できます。インストールするには、GNOME ソフトウェアで検索するか、以下を実行します:"
  ],
  "$0 vCPU Details": [
+  null,
+  "$0 vCPU の詳細"
+ ],
+ "Add Disk": [
   null,
   ""
  ],
@@ -89,15 +93,19 @@ return plural;
  ],
  "All changes will take effect only after stopping and starting the VM.": [
   null,
-  ""
+  "すべての変更は、仮想マシンの停止および開始後にのみ、実施されます。"
  ],
  "Apply": [
   null,
   "適用"
  ],
- "Automatically start libvirt on boot": [
+ "Attach permanently": [
   null,
   ""
+ ],
+ "Automatically start libvirt on boot": [
+  null,
+  "起動時に libvirt を自動開始"
  ],
  "Autostart:": [
   null,
@@ -149,7 +157,7 @@ return plural;
  ],
  "Connecting to Virtualization Service": [
   null,
-  ""
+  "仮想化サービスへの接続"
  ],
  "Connection": [
   null,
@@ -165,15 +173,15 @@ return plural;
  ],
  "Cores per socket": [
   null,
-  ""
- ],
- "Count:": [
-  null,
-  "数量:"
+  "ソケットごとのコア"
  ],
  "Create": [
   null,
   "作成"
+ ],
+ "Create New": [
+  null,
+  ""
  ],
  "Create New VM": [
   null,
@@ -185,7 +193,7 @@ return plural;
  ],
  "Creation of vm $0 failed": [
   null,
-  ""
+  "vm $0 の作成に失敗しました。"
  ],
  "Delete": [
   null,
@@ -207,6 +215,14 @@ return plural;
   null,
   "シリアルコンソールから切断されました。「再接続」ボタンをクリックします。"
  ],
+ "Disk failed to be attached with following error: ": [
+  null,
+  ""
+ ],
+ "Disk failed to be created with following error: ": [
+  null,
+  ""
+ ],
  "Disks": [
   null,
   "ディスク"
@@ -221,7 +237,7 @@ return plural;
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
-  ""
+  "仮想 CPU の最大数よりも少ない数を有効にするべきです。"
  ],
  "File": [
   null,
@@ -239,9 +255,13 @@ return plural;
   null,
   "シャットダウンの強制"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
+ "Format: ": [
   null,
   ""
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "GET HYPERVISOR MAX VCPU アクションに失敗しました"
  ],
  "GiB": [
   null,
@@ -265,7 +285,7 @@ return plural;
  ],
  "Immediately Start VM": [
   null,
-  "VM をすぐに起動"
+  "仮想マシンをすぐに起動"
  ],
  "Install": [
   null,
@@ -313,7 +333,7 @@ return plural;
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
-  ""
+  "ゲスト OS に割り当てられる仮想 CPU の最大数で、これは 1 から $0 の間でなければなりません"
  ],
  "Memory": [
   null,
@@ -351,13 +371,21 @@ return plural;
   null,
   "名前は空欄にできません"
  ],
+ "Name: ": [
+  null,
+  ""
+ ],
  "Networks": [
   null,
   "ネットワーク"
  ],
+ "New Volume Name": [
+  null,
+  ""
+ ],
  "No VM is running or defined on this host": [
   null,
-  "VM がこのホストで実行されていないか、定義されていません。"
+  "仮想マシンがこのホストで実行されていないか、定義されていません。"
  ],
  "No boot device found": [
   null,
@@ -369,7 +397,7 @@ return plural;
  ],
  "No disks defined for this VM": [
   null,
-  "この VM に対してディスクが定義されていません"
+  "この仮想マシンに対してディスクが定義されていません"
  ],
  "No matching files found": [
   null,
@@ -403,6 +431,14 @@ return plural;
   null,
   "ファイルのパス"
  ],
+ "Please enter new volume name": [
+  null,
+  ""
+ ],
+ "Please enter new volume size": [
+  null,
+  ""
+ ],
  "Please start the virtual machine to access its console.": [
   null,
   "仮想マシンを起動して、コンソールにアクセスしてください。"
@@ -415,6 +451,10 @@ return plural;
   null,
   "プール"
  ],
+ "Pool: ": [
+  null,
+  ""
+ ],
  "Port": [
   null,
   "ポート"
@@ -425,7 +465,7 @@ return plural;
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
-  ""
+  "ゲストへの公開用の推奨されるソケットの数。"
  ],
  "Protocol": [
   null,
@@ -453,7 +493,7 @@ return plural;
  ],
  "SET VCPU SETTINGS action failed": [
   null,
-  ""
+  "SET VCPU SETTINGS アクションに失敗しました"
  ],
  "SPICE": [
   null,
@@ -491,6 +531,10 @@ return plural;
   null,
   "シャットダウン"
  ],
+ "Size: ": [
+  null,
+  ""
+ ],
  "Sockets": [
   null,
   "ソケット"
@@ -505,7 +549,7 @@ return plural;
  ],
  "Start libvirt": [
   null,
-  ""
+  "libvirt の開始"
  ],
  "Start the VM to see disk statistics.": [
   null,
@@ -531,29 +575,33 @@ return plural;
   null,
   "ターゲット"
  ],
+ "Target: ": [
+  null,
+  ""
+ ],
  "The VM crashed.": [
   null,
-  "VM がクラッシュしました。"
+  "仮想マシンがクラッシュしました。"
  ],
  "The VM is down.": [
   null,
-  "VM がダウンしています。"
+  "仮想マシンがダウンしています。"
  ],
  "The VM is going down.": [
   null,
-  "VM がダウンします。"
+  "仮想マシンがダウンします。"
  ],
  "The VM is idle.": [
   null,
-  "VM がアイドル状態です。"
+  "仮想マシンがアイドル状態です。"
  ],
  "The VM is in process of dying (shut down or crash is not completed).": [
   null,
-  "VM が終了中の状態です (シャットダウンまたはクラッシュが完了していません)。"
+  "仮想マシンが終了中の状態です (シャットダウンまたはクラッシュが完了していません)。"
  ],
  "The VM is paused.": [
   null,
-  "VM が一時停止しています。"
+  "仮想マシンが一時停止しています。"
  ],
  "The VM is running and will be forced off before deletion.": [
   null,
@@ -561,15 +609,19 @@ return plural;
  ],
  "The VM is running.": [
   null,
-  "VM が実行中です。"
+  "仮想マシンが実行中です。"
  ],
  "The VM is suspended by guest power management.": [
   null,
-  "VM はゲストの電源管理によって一時停止されています。"
+  "仮想マシンはゲストの電源管理によって一時停止されています。"
+ ],
+ "The pool is empty": [
+  null,
+  ""
  ],
  "Threads per cores": [
   null,
-  ""
+  "コアごとのスレッド"
  ],
  "Too many files found": [
   null,
@@ -598,6 +650,10 @@ return plural;
  "Usage": [
   null,
   "使用法"
+ ],
+ "Use Existing": [
+  null,
+  ""
  ],
  "Used": [
   null,
@@ -649,11 +705,11 @@ return plural;
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
-  ""
+  "仮想化サービス (libvirt) は有効ではありません "
  ],
  "Virtualization Service is Available": [
   null,
-  ""
+  "仮想化サービスは利用可能です"
  ],
  "Virtualport": [
   null,
@@ -662,6 +718,10 @@ return plural;
  "Volume": [
   null,
   "音量"
+ ],
+ "Volume: ": [
+  null,
+  ""
  ],
  "Your browser does not support iframes.": [
   null,
@@ -743,6 +803,14 @@ return plural;
   null,
   "一時停止"
  ],
+ "qcow2": [
+  null,
+  ""
+ ],
+ "raw": [
+  null,
+  ""
+ ],
  "running": [
   null,
   "実行中"
@@ -789,11 +857,11 @@ return plural;
  ],
  "vCPU Count": [
   null,
-  ""
+  "vCPU 数"
  ],
  "vCPU Maximum": [
   null,
-  ""
+  "vCPU 最大値"
  ],
  "vCPUs:": [
   null,

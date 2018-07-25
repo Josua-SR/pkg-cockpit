@@ -433,9 +433,9 @@ LABEL io.projectatomic.nulecule.atomicappversion="0.1.11" \
         o.execute("oc delete -f /kubevirt/kubevirt.yaml || true 2> /dev/null")
         o.execute("oc delete --force --grace-period=0 project kubevirt")
 
-        wait(lambda: "virt-api" not in o.execute("oc get pods --all-namespaces"))
-        wait(lambda: "virt-controller" not in o.execute("oc get pods --all-namespaces"))
-        wait(lambda: "virt-handler" not in o.execute("oc get pods --all-namespaces"))
+        wait(lambda: "virt-api" not in o.execute("oc get pods --all-namespaces"), delay=5)
+        wait(lambda: "virt-controller" not in o.execute("oc get pods --all-namespaces"), delay=5)
+        wait(lambda: "virt-handler" not in o.execute("oc get pods --all-namespaces"), delay=5)
 
         self.login_and_go("/kubernetes")
 
@@ -492,8 +492,6 @@ LABEL io.projectatomic.nulecule.atomicappversion="0.1.11" \
         # switch to the Disks subtab
         b.wait_present("#vm-fedoravm-disks-tab")
         b.click("#vm-fedoravm-disks-tab")
-        b.wait_present("#vm-fedoravm-disks-total-value") # wait for the "Count" value
-        b.wait_in_text("#vm-fedoravm-disks-total-value", "2")
         b.wait_present("#vm-fedoravm-disks-disk0-device") # check disk properties
         b.wait_present("#vm-fedoravm-disks-disk1-device")
         b.wait_in_text("#vm-fedoravm-disks-disk0-device", "disk0")
@@ -856,7 +854,7 @@ class TestRegistry(MachineCase, RegistryTests):
 
         # This happens with docker restarts and during startup polling
         self.allow_journal_messages('.*received truncated HTTP response.*')
-        self.allow_journal_messages(".*api/.*couldn't connect.*")
+        self.allow_journal_messages(".*/api.*couldn't connect.*")
 
 
 class TestRegistryPrerelease(TestRegistry):
