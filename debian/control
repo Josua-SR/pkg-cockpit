@@ -19,8 +19,11 @@ Build-Depends: debhelper (>= 9.20141010),
                libglib2.0-dev,
                libsystemd-dev,
                libpolkit-agent-1-dev,
+               libpcp3-dev,
                libjson-glib-dev,
                libpam0g-dev,
+               libpcp-import1-dev,
+               libpcp-pmda3-dev,
                systemd,
                xsltproc,
                xmlto,
@@ -36,17 +39,16 @@ Vcs-Browser: https://salsa.debian.org/utopia-team/cockpit
 Package: cockpit
 Architecture: all
 Depends: ${misc:Depends},
-         cockpit-bridge (>= ${bridge:minversion}),
-         cockpit-dashboard (>= ${source:Version}),
-         cockpit-dashboard (<< ${source:Version}.1~),
-         cockpit-ws (>= ${source:Version}),
-         cockpit-ws (<< ${source:Version}.1~),
-         cockpit-system (= ${binary:Version}),
-Recommends: cockpit-storaged (= ${binary:Version}),
-            cockpit-networkmanager (= ${binary:Version})
-Suggests: cockpit-doc (= ${binary:Version}),
-          cockpit-docker (= ${binary:Version}),
-          cockpit-packagekit (>= ${source:Version}),
+         cockpit-bridge,
+         cockpit-ws,
+         cockpit-system,
+Recommends: cockpit-storaged,
+            cockpit-networkmanager,
+            cockpit-dashboard,
+            cockpit-packagekit,
+Suggests: cockpit-doc,
+          cockpit-pcp,
+          cockpit-docker,
           xdg-utils,
 Description: User interface for Linux servers
  Cockpit runs in a browser and can manage your network of GNU/Linux
@@ -113,6 +115,15 @@ Depends: ${misc:Depends},
          network-manager
 Description: Cockpit user interface for networking
  The Cockpit components for interacting with networking configuration.
+
+Package: cockpit-pcp
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         cockpit-bridge (>= ${bridge:minversion}),
+         pcp
+Description: Cockpit PCP integration
+ Cockpit support for reading PCP metrics and loading PCP archives.
 
 Package: cockpit-packagekit
 Architecture: all
