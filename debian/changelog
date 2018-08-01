@@ -1,10 +1,10 @@
-cockpit (174-1) UNRELEASED; urgency=medium
+cockpit (174-1) unstable; urgency=medium
 
   * New upstream release:
     - Kubernetes: VM detail page
     - Realmd: Install on demand
 
- -- Martin Pitt <mpitt@debian.org>  Wed, 01 Aug 2018 15:29:43 +0000
+ -- Martin Pitt <mpitt@debian.org>  Wed, 01 Aug 2018 15:31:09 +0000
 
 cockpit (173-1) unstable; urgency=medium
 
