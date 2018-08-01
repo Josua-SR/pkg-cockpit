@@ -71,6 +71,18 @@ return plural;
   null,
   "$0 Pouze uživatelé s místními uživatelskými právy mají přístup k tomuto zařízení.  To může mít vliv na ostatní služby jako DNS nastavení and může být rozdílný seznam CA certifikátů."
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
+ ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Administrator Password": [
   null,
   "Heslo správce"
@@ -99,6 +111,10 @@ return plural;
   null,
   "Nelze se připojit do domény protože realmd není dostupný na tomto systému"
  ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
  "Computer OU": [
   null,
   ""
@@ -120,6 +136,22 @@ return plural;
   ""
  ],
  "Domain Administrator Password": [
+  null,
+  ""
+ ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  "Instalovat"
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
   null,
   ""
  ],
@@ -159,11 +191,27 @@ return plural;
   null,
   ""
  ],
+ "Ok": [
+  null,
+  "Ok"
+ ],
  "On": [
   null,
   ""
  ],
  "One Time Password": [
+  null,
+  ""
+ ],
+ "PackageKit crashed": [
+  null,
+  ""
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
   null,
   ""
  ],
@@ -175,11 +223,19 @@ return plural;
   null,
   ""
  ],
+ "Total size: $0": [
+  null,
+  ""
+ ],
  "User Name": [
   null,
   "Uživatelské jméno"
  ],
  "User Password": [
+  null,
+  ""
+ ],
+ "Waiting for other software management operations to finish": [
   null,
   ""
  ],

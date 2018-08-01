@@ -22,7 +22,7 @@ import { mouseClick } from "../helpers.es6";
 import {
     startLibvirt,
     enableLibvirt,
-} from "../actions.es6";
+} from "../actions/provider-actions.es6";
 
 import './libvirtSlate.css';
 
@@ -79,7 +79,7 @@ class LibvirtSlate extends React.Component {
 
     goToServicePage() {
         const name = this.props.libvirtService.name ? this.props.libvirtService.name : 'libvirtd.service'; // fallback
-        cockpit.jump("/system/services#/" + name)
+        cockpit.jump("/system/services#/" + name);
     }
 
     render() {

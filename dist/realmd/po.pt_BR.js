@@ -71,6 +71,18 @@ return plural;
   null,
   "$0 Somente usuários com credenciais locais poderão efetuar login nesta máquina. Isso também pode afetar outros serviços como configurações de resolução de DNS e a lista de CAS confiáveis pode mudar."
  ],
+ "$0 is not available from any repository.": [
+  null,
+  "$0 não está disponível em nenhum repositório."
+ ],
+ "$0 will be installed.": [
+  null,
+  "$0 será instalado."
+ ],
+ "Additional packages:": [
+  null,
+  "Pacotes adicionais:"
+ ],
  "Administrator Password": [
   null,
   "Senha de Administrador"
@@ -99,6 +111,10 @@ return plural;
   null,
   "Não é possível ingressar em um domínio porque o realmd não está disponível neste sistema"
  ],
+ "Checking installed software": [
+  null,
+  "Verificando o software instalado"
+ ],
  "Computer OU": [
   null,
   "Computador OU"
@@ -122,6 +138,22 @@ return plural;
  "Domain Administrator Password": [
   null,
   "Senha do Administrador de Domínio"
+ ],
+ "Downloading $0": [
+  null,
+  "Baixando $0"
+ ],
+ "Install": [
+  null,
+  "Instale"
+ ],
+ "Install Software": [
+  null,
+  "Instale Software"
+ ],
+ "Installing $0": [
+  null,
+  "Instalando $0"
  ],
  "Join": [
   null,
@@ -159,6 +191,10 @@ return plural;
   null,
   "Desligado"
  ],
+ "Ok": [
+  null,
+  "Ok"
+ ],
  "On": [
   null,
   "Ligado"
@@ -166,6 +202,18 @@ return plural;
  "One Time Password": [
   null,
   "Uma senha do tempo"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit caiu"
+ ],
+ "Removals:": [
+  null,
+  "Remoções:"
+ ],
+ "Removing $0": [
+  null,
+  "Removendo $0"
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
@@ -175,6 +223,10 @@ return plural;
   null,
   "Isso pode demorar um pouco"
  ],
+ "Total size: $0": [
+  null,
+  "Tamanho total: $0"
+ ],
  "User Name": [
   null,
   "Nome de Usuário"
@@ -182,6 +234,10 @@ return plural;
  "User Password": [
   null,
   "Senha de Usuário"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  "Aguardando que outras operações de gerenciamento de software terminem"
  ],
  "e.g. \"$0\"": [
   null,

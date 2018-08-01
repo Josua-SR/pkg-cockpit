@@ -24,20 +24,23 @@ import cockpit from 'cockpit';
 
 import {
     updateVm,
-    getVm,
-    getAllVms,
-    delayPolling,
     undefineVm,
     deleteUnlistedVMs,
-    checkLibvirtStatus,
+    updateStoragePools,
+    updateStorageVolumes,
     setHypervisorMaxVCPU,
+} from './actions/store-actions.es6';
+
+import {
+    attachDisk,
+    checkLibvirtStatus,
+    delayPolling,
+    getAllVms,
     getHypervisorMaxVCPU,
     getStoragePools,
     getStorageVolumes,
-    updateStoragePools,
-    updateStorageVolumes,
-    attachDisk,
-} from './actions.es6';
+    getVm,
+} from './actions/provider-actions.es6';
 
 import { usagePollingEnabled } from './selectors.es6';
 import { spawnScript, spawnProcess } from './services.es6';
@@ -195,7 +198,7 @@ LIBVIRT_PROVIDER = {
         // TODO: add support for other pool types then just the "directory"
         return dispatch => cockpit
                 .script(command, null, { err: "message", environ: ['LC_ALL=en_US.UTF-8'] })
-                .stream(output => { poolList += output; })
+                .stream(output => { poolList += output })
                 .then(() => { // so far only pool names are needed, extend here otherwise
                     const promises = parseStoragePoolList(dispatch, connectionName, poolList)
                             .map(poolName => dispatch(getStorageVolumes(connectionName, poolName)));
@@ -215,7 +218,7 @@ LIBVIRT_PROVIDER = {
         let data = '';
         return dispatch => cockpit
                 .script(command, null, {err: "message", environ: ['LC_ALL=en_US.UTF-8']})
-                .stream(output => { data += output; })
+                .stream(output => { data += output })
                 .then(() => parseStorageVolumes(dispatch, connectionName, poolName, data))
                 .fail((exception, data) => {
                     console.error('Failed to get list of Libvirt storage volumes for connection: ', connectionName, ', pool: ', poolName, ': ', data, exception);

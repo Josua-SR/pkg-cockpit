@@ -5427,5 +5427,22 @@ table.vcpu-detail-modal-right .btn-group.bootstrap-select.dropdown {
 #machines-vcpu-modal-dialog div.modal-body {
   overflow: visible;
 }
+/* Listing pattern */
+.listing-ct-inline div > .listing-ct-body {
+  border: none;
+  padding-top: 0px;
+  padding-left: 20px;
+  padding-bottom: 0px;
+}
+.listing-ct-inline .detail-row ~ .detail-row > h3 {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  margin-top: 30px;
+}
+.listing-ct-inline .detail-row > h3 {
+  border-top: none;
+  padding-top: 0px;
+  margin-top: 20px;
+}
 
 /*# sourceMappingURL=kubernetes.css.map*/

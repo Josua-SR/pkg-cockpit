@@ -71,6 +71,18 @@ return plural;
   null,
   "$0 Vain paikalliset käyttäjät voivat kirjautua tälle koneelle. Tämä voi myös vaikuttaa muihin palveluihin, sillä DNS-määrityksen asetukset ja luotettujen CA:den lista voivat muuttua. "
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
+ ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Administrator Password": [
   null,
   "Ylläpidon salasana"
@@ -99,6 +111,10 @@ return plural;
   null,
   ""
  ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
  "Computer OU": [
   null,
   "Tietokone-OU"
@@ -122,6 +138,22 @@ return plural;
  "Domain Administrator Password": [
   null,
   "Domain-ylläpitäjän salasana"
+ ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  "Asenna"
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
+  null,
+  ""
  ],
  "Join": [
   null,
@@ -159,6 +191,10 @@ return plural;
   null,
   "Pois"
  ],
+ "Ok": [
+  null,
+  "OK"
+ ],
  "On": [
   null,
   "Päällä"
@@ -166,6 +202,18 @@ return plural;
  "One Time Password": [
   null,
   "Kertakäyttöinen salasana"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit kaatui"
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
+  null,
+  ""
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
@@ -175,6 +223,10 @@ return plural;
   null,
   "Tässä voi mennä hetki."
  ],
+ "Total size: $0": [
+  null,
+  ""
+ ],
  "User Name": [
   null,
   "Käyttäjätunnus"
@@ -182,6 +234,10 @@ return plural;
  "User Password": [
   null,
   "Salasana"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "e.g. \"$0\"": [
   null,

@@ -71,6 +71,18 @@ return plural;
   null,
   ""
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
+ ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Administrator Password": [
   null,
   "Passwort des Administrators"
@@ -99,6 +111,10 @@ return plural;
   null,
   "Es konnte keiner Domain beigetreten werden, da realmd auf diesem System nicht verfügbar ist."
  ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
  "Computer OU": [
   null,
   "Computer OU"
@@ -122,6 +138,22 @@ return plural;
  "Domain Administrator Password": [
   null,
   "Passwort des Domain-Administrators"
+ ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  ""
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
+  null,
+  ""
  ],
  "Join": [
   null,
@@ -159,6 +191,10 @@ return plural;
   null,
   "Aus"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "On": [
   null,
   "Ein"
@@ -166,6 +202,18 @@ return plural;
  "One Time Password": [
   null,
   "Einmalpasswort"
+ ],
+ "PackageKit crashed": [
+  null,
+  ""
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
+  null,
+  ""
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
@@ -175,6 +223,10 @@ return plural;
   null,
   "Dies kann eine Weile dauern"
  ],
+ "Total size: $0": [
+  null,
+  ""
+ ],
  "User Name": [
   null,
   "Benutzername"
@@ -182,6 +234,10 @@ return plural;
  "User Password": [
   null,
   "Benutzerpasswort"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "e.g. \"$0\"": [
   null,

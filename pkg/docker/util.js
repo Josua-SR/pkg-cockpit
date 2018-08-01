@@ -119,7 +119,7 @@
     };
 
     util.multi_line = function multi_line(strings) {
-        return strings.map(function (str) { return Mustache.render("{{.}}", str); }).join('<br/>');
+        return strings.map(function (str) { return Mustache.render("{{.}}", str) }).join('<br/>');
     };
 
     util.format_cpu_shares = function format_cpu_shares(priority) {
@@ -244,7 +244,7 @@
                     var self = this;
                     $(self).hide().
                         siblings("div.spinner").show();
-                    util.docker_container_delete(client, id, function() { }, function () { $(self).show().siblings("div.spinner").hide(); });
+                    util.docker_container_delete(client, id, function() { }, function () { $(self).show().siblings("div.spinner").hide() });
                     return false;
                 });
             var btn_play = $('<button class="btn btn-default btn-control-ct fa fa-play">').
@@ -592,6 +592,64 @@
         });
 
         $('#confirmation-dialog').modal('show');
+        return deferred.promise();
+    };
+
+    util.delete_image_confirm = function confirm(client, image) {
+        var deferred = $.Deferred();
+        var image_id = image.image_id || image.Id;
+        var image_name = image.name || util.render_container_name(image.RepoTags[0]);
+        var $dialog = $('#delete-image-confirmation-dialog');
+
+        $dialog.find('#delete-image-confirmation-dialog-title').text(
+            cockpit.format(_("Please confirm deletion of $0"), image_name));
+        $dialog.find('#delete-image-confirmation-dialog-containers .listing-ct-body').empty();
+        client.containers_for_image(image_id).then(function(containers) {
+            var running_containers = [];
+
+            $(containers).each(function(index, value) {
+                var container = client.containers[value.Id];
+                var $row = $('<tr />', { 'class': 'listing-ct-item' })
+                    .append($('<td />').text(container.Name.startsWith('/') ?
+                                             container.Name.substring(1) : container.Name))
+                    .append($('<td />').text(util.render_container_status(container.State)));
+                $dialog.find('#delete-image-confirmation-dialog-containers .listing-ct-body')
+                    .append($row);
+                if (container.State.Running)
+                    running_containers.push(container.Id);
+            });
+
+            if (containers.length > 0) {
+                $dialog.find('#delete-image-confirmation-dialog-body').text(
+                    _("The following containers depend on this image and will become unusable."));
+                $dialog.find('#delete-image-confirmation-dialog-containers').show();
+            } else {
+                $dialog.find('#delete-image-confirmation-dialog-body').empty();
+                $dialog.find('#delete-image-confirmation-dialog-containers').hide();
+            }
+
+            if (running_containers.length > 0)
+                $dialog.find('#delete-image-confirmation-dialog-confirm').text(_("Stop and delete"));
+            else
+                $dialog.find('#delete-image-confirmation-dialog-confirm').text(_("Delete"));
+
+            function close() {
+                $dialog.find('button').off('click');
+                $dialog.modal('hide');
+            }
+
+            $dialog.find('#delete-image-confirmation-dialog-confirm').click(function () {
+                close();
+                deferred.resolve(running_containers, containers.length > 0);
+            });
+
+            $dialog.find('#delete-image-confirmation-dialog-cancel').click(function () {
+                close();
+                deferred.reject();
+            });
+
+            $dialog.modal('show');
+        });
         return deferred.promise();
     };
 

@@ -71,6 +71,18 @@ return plural;
   null,
   "$0 仅本地用户可登录到该主机。这可能也会影响其他服务，比如DNS解析配置，并且信任的CA列表可能改变。"
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
+ ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Administrator Password": [
   null,
   "管理员密码"
@@ -99,6 +111,10 @@ return plural;
   null,
   "因为该系统的 realmd 不可用, 因此无法加入域"
  ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
  "Computer OU": [
   null,
   "计算机 OU"
@@ -122,6 +138,22 @@ return plural;
  "Domain Administrator Password": [
   null,
   "域管理员密码"
+ ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  "安装"
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
+  null,
+  ""
  ],
  "Join": [
   null,
@@ -159,6 +191,10 @@ return plural;
   null,
   "关"
  ],
+ "Ok": [
+  null,
+  "确认"
+ ],
  "On": [
   null,
   "开"
@@ -166,6 +202,18 @@ return plural;
  "One Time Password": [
   null,
   "一次性密码"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit 已崩溃"
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
+  null,
+  ""
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
@@ -175,6 +223,10 @@ return plural;
   null,
   "这可能需要一些时间"
  ],
+ "Total size: $0": [
+  null,
+  ""
+ ],
  "User Name": [
   null,
   "用户名"
@@ -182,6 +234,10 @@ return plural;
  "User Password": [
   null,
   "用户密码"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "e.g. \"$0\"": [
   null,

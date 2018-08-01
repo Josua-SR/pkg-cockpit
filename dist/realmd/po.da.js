@@ -147,6 +147,10 @@ return plural;
   null,
   ""
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "On": [
   null,
   ""

@@ -71,6 +71,18 @@ return plural;
   null,
   "$0 Tylko użytkownicy z lokalnymi danymi uwierzytelniania będą mogli zalogować się do tego komputera. Może to mieć wpływ także na inne usługi, ponieważ ustawienia rozwiązywania DNS i listy zaufanych CA mogą ulec zmianie."
  ],
+ "$0 is not available from any repository.": [
+  null,
+  "$0 nie jest dostępne w żadnym repozytorium."
+ ],
+ "$0 will be installed.": [
+  null,
+  "$0 zostanie zainstalowane."
+ ],
+ "Additional packages:": [
+  null,
+  "Dodatkowe pakiety:"
+ ],
  "Administrator Password": [
   null,
   "Hasło administratora"
@@ -99,6 +111,10 @@ return plural;
   null,
   "Nie można dołączyć do domeny, ponieważ usługa realmd nie jest dostępna w systemie"
  ],
+ "Checking installed software": [
+  null,
+  "Sprawdzanie zainstalowanego oprogramowania"
+ ],
  "Computer OU": [
   null,
   "OU komputera"
@@ -122,6 +138,22 @@ return plural;
  "Domain Administrator Password": [
   null,
   "Hasło administratora domeny"
+ ],
+ "Downloading $0": [
+  null,
+  "Pobieranie $0"
+ ],
+ "Install": [
+  null,
+  "Zainstaluj"
+ ],
+ "Install Software": [
+  null,
+  "Zainstaluj oprogramowanie"
+ ],
+ "Installing $0": [
+  null,
+  "Instalowanie $0"
  ],
  "Join": [
   null,
@@ -159,6 +191,10 @@ return plural;
   null,
   "Wyłączone"
  ],
+ "Ok": [
+  null,
+  "OK"
+ ],
  "On": [
   null,
   "Włączone"
@@ -166,6 +202,18 @@ return plural;
  "One Time Password": [
   null,
   "Hasło jednorazowe"
+ ],
+ "PackageKit crashed": [
+  null,
+  "Usługa PackageKit uległa awarii"
+ ],
+ "Removals:": [
+  null,
+  "Usuwane:"
+ ],
+ "Removing $0": [
+  null,
+  "Usuwanie $0"
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
@@ -175,6 +223,10 @@ return plural;
   null,
   "Może to chwilę zająć"
  ],
+ "Total size: $0": [
+  null,
+  "Całkowity rozmiar: $0"
+ ],
  "User Name": [
   null,
   "Nazwa użytkownika"
@@ -182,6 +234,10 @@ return plural;
  "User Password": [
   null,
   "Hasło użytkownika"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  "Oczekiwanie na ukończenie pozostałych działań zarządzania oprogramowaniem"
  ],
  "e.g. \"$0\"": [
   null,

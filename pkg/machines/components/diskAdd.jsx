@@ -23,7 +23,7 @@ import DialogPattern from 'cockpit-components-dialog.jsx';
 import Select from "cockpit-components-select.jsx";
 
 import { mouseClick, units, convertToUnit, digitFilter, toFixedPrecision } from '../helpers.es6';
-import { volumeCreateAndAttach, attachDisk, getVm, getStoragePools } from '../actions.es6';
+import { volumeCreateAndAttach, attachDisk, getVm, getStoragePools } from '../actions/provider-actions.es6';
 
 import './diskAdd.css';
 
@@ -79,7 +79,7 @@ const SelectExistingVolume = ({ idPrefix, dialogValues, onValueChanged, vmStorag
         <div className="row">
             <div className="col-sm-1 dialog-field">
                 <label htmlFor={`${idPrefix}-select-volume`}>
-                    {_("Volume: ")}
+                    {_("Volume")}
                 </label>
             </div>
             <div className="col-sm-11 dialog-field">
@@ -123,7 +123,7 @@ const VolumeName = ({ idPrefix, dialogValues, onValueChanged }) => {
         <div className="row">
             <div className="col-sm-1 dialog-field">
                 <label htmlFor={`${idPrefix}-name`}>
-                    {_("Name: ")}
+                    {_("Name")}
                 </label>
             </div>
             <div className="col-sm-11 dialog-field">
@@ -145,7 +145,7 @@ const VolumeDetails = ({ idPrefix, onValueChanged, dialogValues }) => {
         <div className="row">
             <div className="col-sm-1 dialog-field">
                 <label htmlFor={`${idPrefix}-size`}>
-                    {_("Size: ")}
+                    {_("Size")}
                 </label>
             </div>
             <div className="col-sm-3 dialog-field">
@@ -172,7 +172,7 @@ const VolumeDetails = ({ idPrefix, onValueChanged, dialogValues }) => {
 
             <div className="col-sm-4 dialog-field add-disk-file-format">
                 <label htmlFor={`${idPrefix}-fileformat`}>
-                    {_("Format: ")}
+                    {_("Format")}
                 </label>
                 <Select.Select id={`${idPrefix}-diskfileformat`}
                                onChange={value => onValueChanged('diskFileFormat', value)}
@@ -197,7 +197,7 @@ const PoolAndTargetRow = ({ idPrefix, onValueChanged, dialogValues, vmStoragePoo
         <div className="row">
             <div className="col-sm-1 dialog-field">
                 <label htmlFor={`${idPrefix}-select-pool`}>
-                    {_("Pool: ")}
+                    {_("Pool")}
                 </label>
             </div>
             <div className="col-sm-5 dialog-field">
@@ -219,7 +219,7 @@ const PoolAndTargetRow = ({ idPrefix, onValueChanged, dialogValues, vmStoragePoo
 
             <div className="col-sm-6 dialog-field add-disk-target">
                 <label htmlFor={`${idPrefix}-target`}>
-                    {_("Target: ")}
+                    {_("Target")}
                 </label>
                 <Select.Select id={`${idPrefix}-target`}
                                onChange={value => onValueChanged('target', value)}
@@ -358,7 +358,7 @@ function getDiskFileName(storagePools, vm, poolName, volumeName) {
 const addDiskDialog = (dispatch, provider, idPrefix, vm, storagePools) => {
     let dialogObj;
     let dialogState = {};
-    const onStateChanged = stateDelta => { Object.assign(dialogState, stateDelta); };
+    const onStateChanged = stateDelta => { Object.assign(dialogState, stateDelta) };
 
     const dialogProps = {
         'title': _("Add Disk"),
@@ -416,7 +416,7 @@ const addDiskDialog = (dispatch, provider, idPrefix, vm, storagePools) => {
         'actions': [
             {
                 'clicked': onAddClicked,
-                'caption': _("Add Disk"),
+                'caption': _("Add"),
                 'style': 'primary',
             },
         ],
@@ -427,7 +427,7 @@ const addDiskDialog = (dispatch, provider, idPrefix, vm, storagePools) => {
     // https://bugzilla.redhat.com/show_bug.cgi?id=1578836
     dispatch(getStoragePools(vm.connectionName))
             .then(() => {
-                dialogObj = DialogPattern.show_modal_dialog(dialogProps, footerProps)
+                dialogObj = DialogPattern.show_modal_dialog(dialogProps, footerProps);
             });
 };
 

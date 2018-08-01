@@ -71,6 +71,18 @@ return plural;
   null,
   "$0 ローカル認証情報を持つユーザーだけが、このマシンにログインできます。DNS 解決設定と、信頼される CA の一覧が変更する場合があるため、他のサービスにもこれが当てはまることもあります。"
  ],
+ "$0 is not available from any repository.": [
+  null,
+  "$0 は、あらゆるリポジトリーから利用できません。"
+ ],
+ "$0 will be installed.": [
+  null,
+  "$0 がインストールされます。"
+ ],
+ "Additional packages:": [
+  null,
+  "追加のパッケージ:"
+ ],
  "Administrator Password": [
   null,
   "管理者パスワード"
@@ -99,6 +111,10 @@ return plural;
   null,
   "このシステムでは realmd が利用できないため、ドメインに参加できません"
  ],
+ "Checking installed software": [
+  null,
+  "インストールされたソフトウェアの確認"
+ ],
  "Computer OU": [
   null,
   "コンピューター OU"
@@ -122,6 +138,22 @@ return plural;
  "Domain Administrator Password": [
   null,
   "ドメイン管理者パスワード"
+ ],
+ "Downloading $0": [
+  null,
+  "$0 をダウンロード中"
+ ],
+ "Install": [
+  null,
+  "インストール"
+ ],
+ "Install Software": [
+  null,
+  "ソフトウェアをインストール"
+ ],
+ "Installing $0": [
+  null,
+  "$0 をインストール中"
  ],
  "Join": [
   null,
@@ -159,6 +191,10 @@ return plural;
   null,
   "オフ"
  ],
+ "Ok": [
+  null,
+  "OK"
+ ],
  "On": [
   null,
   "オン"
@@ -166,6 +202,18 @@ return plural;
  "One Time Password": [
   null,
   "ワンタイムパスワード"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit がクラッシュしました"
+ ],
+ "Removals:": [
+  null,
+  "削除:"
+ ],
+ "Removing $0": [
+  null,
+  "$0 を削除中"
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
@@ -175,6 +223,10 @@ return plural;
   null,
   "これにはしばらく時間がかかることがあります"
  ],
+ "Total size: $0": [
+  null,
+  "合計サイズ: $0"
+ ],
  "User Name": [
   null,
   "ユーザー名"
@@ -182,6 +234,10 @@ return plural;
  "User Password": [
   null,
   "ユーザーパスワード"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  "他のソフトウェア管理オペレーションが終了するまで待機中"
  ],
  "e.g. \"$0\"": [
   null,

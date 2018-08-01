@@ -71,6 +71,18 @@ return plural;
   null,
   ""
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
+ ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Administrator Password": [
   null,
   "Mot de passe de l'administrateur"
@@ -99,6 +111,10 @@ return plural;
   null,
   "Impossible de rejoindre un domaine car reamld n'est pas disponible sur ce système"
  ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
  "Computer OU": [
   null,
   "OU Computer"
@@ -122,6 +138,22 @@ return plural;
  "Domain Administrator Password": [
   null,
   "Mot de passe de l'administrateur du domaine"
+ ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  ""
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
+  null,
+  ""
  ],
  "Join": [
   null,
@@ -159,6 +191,10 @@ return plural;
   null,
   "Éteint"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "On": [
   null,
   "Allumé"
@@ -166,6 +202,18 @@ return plural;
  "One Time Password": [
   null,
   "Mot de passe à usage unique"
+ ],
+ "PackageKit crashed": [
+  null,
+  ""
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
+  null,
+  ""
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
@@ -175,6 +223,10 @@ return plural;
   null,
   "Cela peut prendre un certain temps"
  ],
+ "Total size: $0": [
+  null,
+  ""
+ ],
  "User Name": [
   null,
   "Nom d'utilisateur"
@@ -182,6 +234,10 @@ return plural;
  "User Password": [
   null,
   "Mot de passe utilisateur"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "e.g. \"$0\"": [
   null,

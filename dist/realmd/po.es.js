@@ -71,6 +71,18 @@ return plural;
   null,
   "$0 Sólo usuarios con credenciales locales serán capacs de acceder a esta máquina. Esto puede afectar también a otros servicios como los ajustes de la resolución DNS y la lista de CA de confianza puede cambiar."
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
+ ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Administrator Password": [
   null,
   "Contraseña de Administrador"
@@ -99,6 +111,10 @@ return plural;
   null,
   "No es posible unirse al dominio debido a que realmd no está disponible en este sistema"
  ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
  "Computer OU": [
   null,
   "Computadora OU"
@@ -122,6 +138,22 @@ return plural;
  "Domain Administrator Password": [
   null,
   "Contraseña del Administrador de Dominio"
+ ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  "Instalar"
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
+  null,
+  ""
  ],
  "Join": [
   null,
@@ -159,6 +191,10 @@ return plural;
   null,
   "Apagado"
  ],
+ "Ok": [
+  null,
+  "Aceptar"
+ ],
  "On": [
   null,
   "Encencido"
@@ -166,6 +202,18 @@ return plural;
  "One Time Password": [
   null,
   "Contraseña de un solo uso"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit roto"
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
+  null,
+  ""
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
@@ -175,6 +223,10 @@ return plural;
   null,
   "Esto podría tomar un momento"
  ],
+ "Total size: $0": [
+  null,
+  ""
+ ],
  "User Name": [
   null,
   "Nombre de usuario"
@@ -182,6 +234,10 @@ return plural;
  "User Password": [
   null,
   "Contraseña de usuario"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "e.g. \"$0\"": [
   null,
