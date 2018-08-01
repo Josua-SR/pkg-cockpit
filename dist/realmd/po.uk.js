@@ -71,6 +71,18 @@ return plural;
   null,
   "$0 Лише користувачі із локальними реєстраційними даними зможуть входити до системи на цій машині. Це також може вплинути на роботу інших служб, оскільки можуть змінитися параметри визначення адрес DNS та список довірених служб сертифікації."
  ],
+ "$0 is not available from any repository.": [
+  null,
+  "$0 немає у жодному зі сховищ."
+ ],
+ "$0 will be installed.": [
+  null,
+  "Буде встановлено $0."
+ ],
+ "Additional packages:": [
+  null,
+  "Додаткові пакунки:"
+ ],
  "Administrator Password": [
   null,
   "Пароль адміністратора"
@@ -99,6 +111,10 @@ return plural;
   null,
   "Не вдалося долучитися до домену, оскільки у цій системі недоступна служба realmd"
  ],
+ "Checking installed software": [
+  null,
+  "Перевіряємо встановлене програмне забезпечення"
+ ],
  "Computer OU": [
   null,
   "OU комп’ютера"
@@ -122,6 +138,22 @@ return plural;
  "Domain Administrator Password": [
   null,
   "Пароль адміністратора домену"
+ ],
+ "Downloading $0": [
+  null,
+  "Отримуємо $0"
+ ],
+ "Install": [
+  null,
+  "Встановити"
+ ],
+ "Install Software": [
+  null,
+  "Встановити програмне забезпечення"
+ ],
+ "Installing $0": [
+  null,
+  "Встановлюємо $0"
  ],
  "Join": [
   null,
@@ -159,6 +191,10 @@ return plural;
   null,
   "Вимкнено"
  ],
+ "Ok": [
+  null,
+  "Гаразд"
+ ],
  "On": [
   null,
   "Увімкнено"
@@ -166,6 +202,18 @@ return plural;
  "One Time Password": [
   null,
   "Одноразовий пароль"
+ ],
+ "PackageKit crashed": [
+  null,
+  "Аварійне завершення роботи PackageKit"
+ ],
+ "Removals:": [
+  null,
+  "Вилучення:"
+ ],
+ "Removing $0": [
+  null,
+  "Вилучаємо $0"
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
@@ -175,6 +223,10 @@ return plural;
   null,
   "Зачекайте"
  ],
+ "Total size: $0": [
+  null,
+  "Загальний розмір: $0"
+ ],
  "User Name": [
   null,
   "Ім'я користувача"
@@ -182,6 +234,10 @@ return plural;
  "User Password": [
   null,
   "Пароль користувача"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  "Очікуємо на завершення інших дій із програмним забезпеченням"
  ],
  "e.g. \"$0\"": [
   null,

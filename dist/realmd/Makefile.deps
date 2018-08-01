@@ -1,13 +1,25 @@
 # Generated Makefile data for realmd
-# Stamp: Wed Jul 25 2018 14:47:51 GMT+0000 (UTC)
+# Stamp: Wed Aug 01 2018 14:49:40 GMT+0000 (UTC)
 
 realmd_INPUTS = \
+	node_modules/react-lite/LICENSE \
+	node_modules/react-lite/README.md \
+	node_modules/react-lite/dist/react-lite.js \
+	node_modules/react-lite/package.json \
+	pkg/lib/cockpit-components-dialog.css \
+	pkg/lib/cockpit-components-dialog.jsx \
+	pkg/lib/cockpit-components-install-dialog.css \
+	pkg/lib/cockpit-components-install-dialog.jsx \
+	pkg/lib/packagekit.es6 \
+	pkg/lib/page.css \
 	pkg/lib/patterns.js \
 	pkg/realmd/operation.html \
 	pkg/realmd/operation.js \
 	$(NULL)
 
 realmd_OUTPUTS = \
+	dist/realmd/domain.css \
+	dist/realmd/domain.css.map \
 	dist/realmd/domain.min.js \
 	dist/realmd/domain.min.js.map \
 	$(NULL)
@@ -15,11 +27,13 @@ realmd_OUTPUTS = \
 realmd_PO = dist/realmd/po.js $(patsubst %,dist/realmd/po.%.js,$(LINGUAS))
 
 realmd_INSTALL = \
+	dist/realmd/domain.css.gz \
 	dist/realmd/domain.min.js.gz \
 	$(addsuffix .gz,$(realmd_PO)) \
 	$(NULL)
 
 realmd_DEBUG = \
+	dist/realmd/domain.css.map \
 	dist/realmd/domain.min.js.map \
 	$(NULL)
 
@@ -28,13 +42,37 @@ realmd_TESTS = \
 
 dist/realmd/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N pkg/lib/patterns.js -N pkg/realmd/operation.html -N pkg/realmd/operation.js $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/react-lite/dist/react-lite.js -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-install-dialog.css -N pkg/lib/cockpit-components-install-dialog.jsx -N pkg/lib/packagekit.es6 -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/realmd/operation.html -N pkg/realmd/operation.js $< > $@.tmp && mv $@.tmp $@
 
 dist/realmd/stamp: $(realmd_INPUTS)
+
+dist/realmd/domain.css: dist/realmd/stamp
+
+dist/realmd/domain.css.map: dist/realmd/stamp
 
 dist/realmd/domain.min.js: dist/realmd/stamp
 
 dist/realmd/domain.min.js.map: dist/realmd/stamp
+
+node_modules/react-lite/LICENSE:
+
+node_modules/react-lite/README.md:
+
+node_modules/react-lite/dist/react-lite.js:
+
+node_modules/react-lite/package.json:
+
+pkg/lib/cockpit-components-dialog.css:
+
+pkg/lib/cockpit-components-dialog.jsx:
+
+pkg/lib/cockpit-components-install-dialog.css:
+
+pkg/lib/cockpit-components-install-dialog.jsx:
+
+pkg/lib/packagekit.es6:
+
+pkg/lib/page.css:
 
 pkg/lib/patterns.js:
 

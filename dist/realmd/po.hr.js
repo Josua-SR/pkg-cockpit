@@ -71,6 +71,18 @@ return plural;
   null,
   ""
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
+ ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Administrator Password": [
   null,
   "Administrativna Lozinka"
@@ -99,6 +111,10 @@ return plural;
   null,
   "Nije moguće pristupiti domeni jer realmd nije dostupan na ovom sustavu"
  ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
  "Computer OU": [
   null,
   ""
@@ -122,6 +138,22 @@ return plural;
  "Domain Administrator Password": [
   null,
   "Lozinka Domenskog Administratora"
+ ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  ""
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
+  null,
+  ""
  ],
  "Join": [
   null,
@@ -159,6 +191,10 @@ return plural;
   null,
   "Isključi"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "On": [
   null,
   "Uključi"
@@ -166,6 +202,18 @@ return plural;
  "One Time Password": [
   null,
   "Jednokratna Lozinka"
+ ],
+ "PackageKit crashed": [
+  null,
+  ""
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
+  null,
+  ""
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
@@ -175,6 +223,10 @@ return plural;
   null,
   "Ovo bi moglo potrajati"
  ],
+ "Total size: $0": [
+  null,
+  ""
+ ],
  "User Name": [
   null,
   "Korisničko ime"
@@ -182,6 +234,10 @@ return plural;
  "User Password": [
   null,
   "Korisnička Lozinka"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "e.g. \"$0\"": [
   null,

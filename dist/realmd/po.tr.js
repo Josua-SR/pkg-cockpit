@@ -71,6 +71,18 @@ return plural;
   null,
   ""
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
+ ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Administrator Password": [
   null,
   ""
@@ -99,6 +111,10 @@ return plural;
   null,
   ""
  ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
  "Computer OU": [
   null,
   ""
@@ -120,6 +136,22 @@ return plural;
   ""
  ],
  "Domain Administrator Password": [
+  null,
+  ""
+ ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  ""
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
   null,
   ""
  ],
@@ -159,6 +191,10 @@ return plural;
   null,
   "Kapalı"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "On": [
   null,
   "Açık"
@@ -166,6 +202,18 @@ return plural;
  "One Time Password": [
   null,
   "Tek Seferlik Parola"
+ ],
+ "PackageKit crashed": [
+  null,
+  ""
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
+  null,
+  ""
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
@@ -175,6 +223,10 @@ return plural;
   null,
   "Bu biraz zaman alabilir"
  ],
+ "Total size: $0": [
+  null,
+  ""
+ ],
  "User Name": [
   null,
   "Kullanıcı Adı"
@@ -182,6 +234,10 @@ return plural;
  "User Password": [
   null,
   "Kullanıcı Parolası"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "e.g. \"$0\"": [
   null,

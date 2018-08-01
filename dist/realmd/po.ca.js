@@ -71,6 +71,18 @@ return plural;
   null,
   ""
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
+ ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Administrator Password": [
   null,
   "Contrasenya de l'administrador"
@@ -99,6 +111,10 @@ return plural;
   null,
   "No es pot unir a un domini perquè realmd no està disponible en aquest sistema"
  ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
  "Computer OU": [
   null,
   "OU de l'ordinador"
@@ -122,6 +138,22 @@ return plural;
  "Domain Administrator Password": [
   null,
   "Contrasenya de l'administrador del domini"
+ ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  "Instal·la"
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
+  null,
+  ""
  ],
  "Join": [
   null,
@@ -159,6 +191,10 @@ return plural;
   null,
   "Off"
  ],
+ "Ok": [
+  null,
+  "D'acord"
+ ],
  "On": [
   null,
   "On"
@@ -166,6 +202,18 @@ return plural;
  "One Time Password": [
   null,
   "Contrasenya d'un sol cop"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit s'ha estavellat."
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
+  null,
+  ""
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
@@ -175,6 +223,10 @@ return plural;
   null,
   "Això pot trigar una estona"
  ],
+ "Total size: $0": [
+  null,
+  ""
+ ],
  "User Name": [
   null,
   "Nom d'usuari"
@@ -182,6 +234,10 @@ return plural;
  "User Password": [
   null,
   "Contrasenya d'usuari"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "e.g. \"$0\"": [
   null,

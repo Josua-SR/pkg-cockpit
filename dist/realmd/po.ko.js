@@ -71,6 +71,18 @@ return plural;
   null,
   ""
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
+ ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Administrator Password": [
   null,
   ""
@@ -99,6 +111,10 @@ return plural;
   null,
   ""
  ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
  "Computer OU": [
   null,
   ""
@@ -120,6 +136,22 @@ return plural;
   ""
  ],
  "Domain Administrator Password": [
+  null,
+  ""
+ ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  ""
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
   null,
   ""
  ],
@@ -159,11 +191,27 @@ return plural;
   null,
   "비활성"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "On": [
   null,
   "활성"
  ],
  "One Time Password": [
+  null,
+  ""
+ ],
+ "PackageKit crashed": [
+  null,
+  ""
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
   null,
   ""
  ],
@@ -175,11 +223,19 @@ return plural;
   null,
   ""
  ],
+ "Total size: $0": [
+  null,
+  ""
+ ],
  "User Name": [
   null,
   "사용자 이름"
  ],
  "User Password": [
+  null,
+  ""
+ ],
+ "Waiting for other software management operations to finish": [
   null,
   ""
  ],

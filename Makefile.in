@@ -113,16 +113,16 @@ check_PROGRAMS = test-server$(EXEEXT)
 libexec_PROGRAMS = $(am__EXEEXT_1) cockpit-askpass$(EXEEXT) \
 	cockpit-stub$(EXEEXT) $(am__EXEEXT_2) $(am__EXEEXT_3) \
 	cockpit-ws$(EXEEXT) cockpit-session$(EXEEXT)
-noinst_PROGRAMS = $(am__EXEEXT_7) mock-bridge$(EXEEXT) $(am__EXEEXT_8) \
+noinst_PROGRAMS = $(am__EXEEXT_6) mock-bridge$(EXEEXT) $(am__EXEEXT_7) \
 	frob-websocket$(EXEEXT) test-websocket$(EXEEXT) \
-	$(am__EXEEXT_4) $(am__EXEEXT_10) test-server$(EXEEXT) \
-	$(am__EXEEXT_12) mock-echo$(EXEEXT) mock-auth-command$(EXEEXT) \
-	$(am__EXEEXT_4) mock-pam-conv-mod.so$(EXEEXT) $(am__EXEEXT_13)
+	$(am__EXEEXT_4) $(am__EXEEXT_9) test-server$(EXEEXT) \
+	$(am__EXEEXT_11) mock-echo$(EXEEXT) mock-auth-command$(EXEEXT) \
+	$(am__EXEEXT_4) mock-pam-conv-mod.so$(EXEEXT) $(am__EXEEXT_12)
 sbin_PROGRAMS = remotectl$(EXEEXT)
-TESTS = $(am__EXEEXT_4) $(am__EXEEXT_14) $(am__EXEEXT_17) \
-	$(am__EXEEXT_7) $(am__EXEEXT_8) test-websocket$(EXEEXT) \
+TESTS = $(am__EXEEXT_4) $(am__EXEEXT_13) $(am__EXEEXT_16) \
+	$(am__EXEEXT_6) $(am__EXEEXT_7) test-websocket$(EXEEXT) \
 	$(am__EXEEXT_4) tools/test-static-code $(am__EXEEXT_4) \
-	$(am__EXEEXT_18) $(am__EXEEXT_12) $(am__EXEEXT_13)
+	$(am__EXEEXT_17) $(am__EXEEXT_11) $(am__EXEEXT_12)
 @ENABLE_DOC_TRUE@am__append_1 = doc/cockpit-transport.svg \
 @ENABLE_DOC_TRUE@	doc/cockpit-transport.png $(NULL) \
 @ENABLE_DOC_TRUE@	$(GUIDE_DOCBOOK) $(GUIDE_INCLUDES) \
@@ -152,29 +152,28 @@ TESTS = $(am__EXEEXT_4) $(am__EXEEXT_14) $(am__EXEEXT_17) \
 @ENABLE_DOC_TRUE@	doc/man/cockpit.conf.5 doc/man/pam_ssh_add.8 \
 @ENABLE_DOC_TRUE@	doc/man/remotectl.8 $(NULL)
 @WITH_GOLANG_TRUE@am__append_5 = cockpit-kube-auth cockpit-kube-launch
-@BROKEN_GNUTLS_FALSE@am__append_6 = test-httpstream
-@ENABLE_PCP_TRUE@am__append_7 = cockpit-pcp
-@ENABLE_PCP_TRUE@am__append_8 = libcockpit-pcp.a
-@ENABLE_PCP_TRUE@am__append_9 = \
+@ENABLE_PCP_TRUE@am__append_6 = cockpit-pcp
+@ENABLE_PCP_TRUE@am__append_7 = libcockpit-pcp.a
+@ENABLE_PCP_TRUE@am__append_8 = \
 @ENABLE_PCP_TRUE@	test-pcp \
 @ENABLE_PCP_TRUE@	test-pcp-archives \
 @ENABLE_PCP_TRUE@	$(NULL)
 
-@ENABLE_PCP_TRUE@am__append_10 = mock-pmda.so
-@ENABLE_PCP_TRUE@am__append_11 = \
+@ENABLE_PCP_TRUE@am__append_9 = mock-pmda.so
+@ENABLE_PCP_TRUE@am__append_10 = \
 @ENABLE_PCP_TRUE@	mock-pmda.so \
 @ENABLE_PCP_TRUE@	mock-archives/* \
 @ENABLE_PCP_TRUE@	$(NULL)
 
-@WITH_COCKPIT_SSH_TRUE@am__append_12 = libcockpit-ssh.a
-@WITH_COCKPIT_SSH_TRUE@am__append_13 = cockpit-ssh
-@WITH_COCKPIT_SSH_TRUE@am__append_14 = mock-sshd $(SSH_CHECKS)
-@WITH_COCKPIT_SSH_TRUE@am__append_15 = test_rsa_key
-@WITH_COCKPIT_SSH_TRUE@am__append_16 = \
+@WITH_COCKPIT_SSH_TRUE@am__append_11 = libcockpit-ssh.a
+@WITH_COCKPIT_SSH_TRUE@am__append_12 = cockpit-ssh
+@WITH_COCKPIT_SSH_TRUE@am__append_13 = mock-sshd $(SSH_CHECKS)
+@WITH_COCKPIT_SSH_TRUE@am__append_14 = test_rsa_key
+@WITH_COCKPIT_SSH_TRUE@am__append_15 = \
 @WITH_COCKPIT_SSH_TRUE@	test_rsa_key \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
-@WITH_COCKPIT_SSH_TRUE@am__append_17 = \
+@WITH_COCKPIT_SSH_TRUE@am__append_16 = \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock_rsa_key \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock_dsa_key \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/test_rsa \
@@ -185,12 +184,12 @@ TESTS = $(am__EXEEXT_4) $(am__EXEEXT_14) $(am__EXEEXT_17) \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/invalid_known_hosts \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
-@WITH_COCKPIT_SSH_TRUE@am__append_18 = \
+@WITH_COCKPIT_SSH_TRUE@am__append_17 = \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock-pid-cat \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
-@WITH_COCKPIT_SSH_TRUE@am__append_19 = $(SSH_CHECKS)
-@WITH_COCKPIT_SSH_TRUE@am__append_20 = \
+@WITH_COCKPIT_SSH_TRUE@am__append_18 = $(SSH_CHECKS)
+@WITH_COCKPIT_SSH_TRUE@am__append_19 = \
 @WITH_COCKPIT_SSH_TRUE@	test-authssh \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
@@ -414,18 +413,17 @@ am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" \
 @ENABLE_PCP_TRUE@am__EXEEXT_2 = cockpit-pcp$(EXEEXT)
 @WITH_COCKPIT_SSH_TRUE@am__EXEEXT_3 = cockpit-ssh$(EXEEXT)
 am__EXEEXT_4 =
-@BROKEN_GNUTLS_FALSE@am__EXEEXT_5 = test-httpstream$(EXEEXT)
-@ENABLE_PCP_TRUE@am__EXEEXT_6 = test-pcp$(EXEEXT) \
+@ENABLE_PCP_TRUE@am__EXEEXT_5 = test-pcp$(EXEEXT) \
 @ENABLE_PCP_TRUE@	test-pcp-archives$(EXEEXT) $(am__EXEEXT_4)
-am__EXEEXT_7 = test-paths$(EXEEXT) test-rules$(EXEEXT) \
+am__EXEEXT_6 = test-paths$(EXEEXT) test-rules$(EXEEXT) \
 	test-pipe-channel$(EXEEXT) test-packages$(EXEEXT) \
 	test-peer$(EXEEXT) test-dbus-meta$(EXEEXT) test-fs$(EXEEXT) \
 	test-metrics$(EXEEXT) test-connect$(EXEEXT) \
-	test-stream$(EXEEXT) test-setup$(EXEEXT) \
-	test-websocketstream$(EXEEXT) test-process$(EXEEXT) \
-	test-bridge$(EXEEXT) test-router$(EXEEXT) $(am__EXEEXT_4) \
-	$(am__EXEEXT_5) $(am__EXEEXT_6)
-am__EXEEXT_8 = test-hash$(EXEEXT) test-hex$(EXEEXT) test-json$(EXEEXT) \
+	test-stream$(EXEEXT) test-httpstream$(EXEEXT) \
+	test-setup$(EXEEXT) test-websocketstream$(EXEEXT) \
+	test-process$(EXEEXT) test-bridge$(EXEEXT) \
+	test-router$(EXEEXT) $(am__EXEEXT_4) $(am__EXEEXT_5)
+am__EXEEXT_7 = test-hash$(EXEEXT) test-hex$(EXEEXT) test-json$(EXEEXT) \
 	test-locale$(EXEEXT) test-knownhosts$(EXEEXT) \
 	test-pipe$(EXEEXT) test-transport$(EXEEXT) \
 	test-channel$(EXEEXT) test-unixsignal$(EXEEXT) \
@@ -434,19 +432,19 @@ am__EXEEXT_8 = test-hash$(EXEEXT) test-hex$(EXEEXT) test-json$(EXEEXT) \
 	test-unicode$(EXEEXT) test-version$(EXEEXT) \
 	test-system$(EXEEXT) test-base64$(EXEEXT) \
 	test-authorize$(EXEEXT) $(am__EXEEXT_4)
-@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_9 = test-sshoptions$(EXEEXT) \
+@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_8 = test-sshoptions$(EXEEXT) \
 @WITH_COCKPIT_SSH_TRUE@	test-sshbridge$(EXEEXT) $(am__EXEEXT_4)
-@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_10 = mock-sshd$(EXEEXT) \
-@WITH_COCKPIT_SSH_TRUE@	$(am__EXEEXT_9)
-@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_11 = test-authssh$(EXEEXT) \
+@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_9 = mock-sshd$(EXEEXT) \
+@WITH_COCKPIT_SSH_TRUE@	$(am__EXEEXT_8)
+@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_10 = test-authssh$(EXEEXT) \
 @WITH_COCKPIT_SSH_TRUE@	$(am__EXEEXT_4)
-am__EXEEXT_12 = test-base64$(EXEEXT) test-creds$(EXEEXT) \
+am__EXEEXT_11 = test-base64$(EXEEXT) test-creds$(EXEEXT) \
 	test-auth$(EXEEXT) test-compat$(EXEEXT) \
 	test-webservice$(EXEEXT) test-channelresponse$(EXEEXT) \
 	test-handlers$(EXEEXT) test-kerberos$(EXEEXT) \
 	test-remotectlcertificate$(EXEEXT) $(am__EXEEXT_4) \
-	$(am__EXEEXT_11)
-am__EXEEXT_13 = test-ssh-add$(EXEEXT) $(am__EXEEXT_4)
+	$(am__EXEEXT_10)
+am__EXEEXT_12 = test-ssh-add$(EXEEXT) $(am__EXEEXT_4)
 PROGRAMS = $(bin_PROGRAMS) $(libexec_PROGRAMS) $(noinst_PROGRAMS) \
 	$(sbin_PROGRAMS)
 am_cockpit_askpass_OBJECTS =  \
@@ -1257,8 +1255,8 @@ am__set_TESTS_bases = \
   bases=`for i in $$bases; do echo $$i; done | sed 's/\.log$$//'`; \
   bases=`echo $$bases`
 RECHECK_LOGS = $(TEST_LOGS)
-am__EXEEXT_14 = pkg/users/test-list-public-keys.sh $(am__EXEEXT_4)
-am__EXEEXT_15 = dist/base1/test-base64.html dist/base1/test-utf8.html \
+am__EXEEXT_13 = pkg/users/test-list-public-keys.sh $(am__EXEEXT_4)
+am__EXEEXT_14 = dist/base1/test-base64.html dist/base1/test-utf8.html \
 	dist/base1/test-events.html dist/base1/test-chan.html \
 	dist/base1/test-dbus.html dist/base1/test-dbus-address.html \
 	dist/base1/test-echo.html dist/base1/test-spawn.html \
@@ -1271,11 +1269,11 @@ am__EXEEXT_15 = dist/base1/test-base64.html dist/base1/test-utf8.html \
 	dist/base1/test-cache.html dist/base1/test-websocket.html \
 	dist/base1/test-stub.html dist/base1/test-browser-storage.html \
 	$(am__EXEEXT_4)
-am__EXEEXT_16 = dist/base1/test-no-jquery.html \
+am__EXEEXT_15 = dist/base1/test-no-jquery.html \
 	dist/base1/test-framed-cache.html dist/base1/test-framed.html \
 	dist/base1/test-dbus-framed.html $(am__EXEEXT_4)
-am__EXEEXT_17 = $(am__EXEEXT_15) $(am__EXEEXT_16)
-@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_18 = $(am__EXEEXT_9)
+am__EXEEXT_16 = $(am__EXEEXT_14) $(am__EXEEXT_15)
+@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_17 = $(am__EXEEXT_8)
 TEST_SUITE_LOG = test-suite.log
 LOG_COMPILE = $(LOG_COMPILER) $(AM_LOG_FLAGS) $(LOG_FLAGS)
 am__set_b = \
@@ -1520,13 +1518,13 @@ man_MANS = $(am__append_4)
 BUILT_SOURCES = $(COCKPIT_ASSETS)
 check_SCRIPTS = 
 noinst_SCRIPTS = $(WEBPACK_STAMPS) $(WEBPACK_INSTALL) $(base_TESTS) \
-	$(am__append_18) src/ws/mock-cat-with-init $(NULL)
+	$(am__append_17) src/ws/mock-cat-with-init $(NULL)
 
 # ----------------------------------------------------------------------------------------------------
 noinst_LIBRARIES = libcockpit-stub.a libcockpit-bridge.a $(NULL) \
-	$(am__append_8) libcockpit-common.a libwebsocket.a \
-	$(am__append_12) libcockpit-ws.a libretest.a libpam_ssh_add.a
-noinst_DATA = $(am__append_2) $(am__append_10) $(am__append_15)
+	$(am__append_7) libcockpit-common.a libwebsocket.a \
+	$(am__append_11) libcockpit-ws.a libretest.a libpam_ssh_add.a
+noinst_DATA = $(am__append_2) $(am__append_9) $(am__append_14)
 nodist_noinst_DATA = 
 
 # For the test-locale test
@@ -1562,8 +1560,8 @@ CLEANFILES = $(man_MANS) valgrind-suppressions $(NULL) \
 	dist/base1/require.min.js dist/base1/require.min.js.gz \
 	dist/base1/require.min.js.map dist/base1/simple-tap.js \
 	dist/base1/test-dbus-common.js $(base_TESTS) \
-	$(base_TESTS_JAVASCRIPT) $(NULL) $(am__append_11) \
-	$(COCKPIT_ASSETS) $(test_locale_MO) $(NULL) $(am__append_16) \
+	$(base_TESTS_JAVASCRIPT) $(NULL) $(am__append_10) \
+	$(COCKPIT_ASSETS) $(test_locale_MO) $(NULL) $(am__append_15) \
 	dist/static/login.html dist/static/login.min.html \
 	dist/static/login.js dist/static/login.min.js \
 	dist/static/login.css dist/static/login.min.css $(NULL) \
@@ -1620,7 +1618,7 @@ EXTRA_DIST = package.json README.md $(NULL) $(WEBPACK_STAMPS) \
 	src/common/com.redhat.Cockpit.DBusTests.xml \
 	src/common/cockpitassets.gresource.xml src/common/fail.html \
 	$(test_locale_PO) $(NULL) \
-	pkg/apps/content-security-policy.override $(am__append_17) \
+	pkg/apps/content-security-policy.override $(am__append_16) \
 	dist/static/login.html dist/static/login.min.html \
 	dist/static/login.js dist/static/login.min.js \
 	dist/static/login.css dist/static/login.min.css \
@@ -2254,9 +2252,8 @@ cockpit_stub_LDADD = $(libcockpit_stub_LIBS)
 # TESTS
 BRIDGE_CHECKS = test-paths test-rules test-pipe-channel test-packages \
 	test-peer test-dbus-meta test-fs test-metrics test-connect \
-	test-stream test-setup test-websocketstream test-process \
-	test-bridge test-router $(NULL) $(am__append_6) \
-	$(am__append_9)
+	test-stream test-httpstream test-setup test-websocketstream \
+	test-process test-bridge test-router $(NULL) $(am__append_8)
 mock_bridge_SOURCES = src/bridge/mock-bridge.c
 mock_bridge_CFLAGS = \
 	-DG_LOG_DOMAIN=\"mock-bridge\" \
@@ -2787,7 +2784,7 @@ test_server_LDADD = \
 WS_CHECKS = test-base64 test-creds test-auth test-compat \
 	test-webservice test-channelresponse test-handlers \
 	test-kerberos test-remotectlcertificate $(NULL) \
-	$(am__append_20)
+	$(am__append_19)
 test_auth_CFLAGS = $(cockpit_ws_CFLAGS)
 test_auth_SOURCES = \
 	src/ws/test-auth.c \
@@ -8055,6 +8052,13 @@ test-stream.log: test-stream$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-httpstream.log: test-httpstream$(EXEEXT)
+	@p='test-httpstream$(EXEEXT)'; \
+	b='test-httpstream'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-setup.log: test-setup$(EXEEXT)
 	@p='test-setup$(EXEEXT)'; \
 	b='test-setup'; \
@@ -8086,13 +8090,6 @@ test-bridge.log: test-bridge$(EXEEXT)
 test-router.log: test-router$(EXEEXT)
 	@p='test-router$(EXEEXT)'; \
 	b='test-router'; \
-	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
-	--log-file $$b.log --trs-file $$b.trs \
-	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
-	"$$tst" $(AM_TESTS_FD_REDIRECT)
-test-httpstream.log: test-httpstream$(EXEEXT)
-	@p='test-httpstream$(EXEEXT)'; \
-	b='test-httpstream'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \

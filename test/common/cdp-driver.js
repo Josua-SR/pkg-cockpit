@@ -47,11 +47,15 @@ function fatal() {
 }
 
 function fail(err) {
+    if (typeof err === 'undefined')
+        err = null;
     process.stdout.write(JSON.stringify({"error": err}) + '\n');
 }
 
 function success(result) {
-    process.stdout.write(JSON.stringify({"result": result === undefined ? null : result}) + '\n');
+    if (typeof result === 'undefined')
+        result = null;
+    process.stdout.write(JSON.stringify({"result": result}) + '\n');
 }
 
 /**
@@ -61,6 +65,7 @@ function success(result) {
 var messages = [];
 var logPromiseResolver;
 var nReportedLogMessages = 0;
+var unhandledExceptions = [];
 
 function setupLogging(client) {
     client.Runtime.enable();
@@ -70,6 +75,23 @@ function setupLogging(client) {
         messages.push([ info.type, msg ]);
         process.stderr.write("> " + info.type + ": " + msg + "\n")
         resolveLogPromise();
+    });
+
+    client.Runtime.exceptionThrown(info => {
+        let details = info.exceptionDetails;
+        // don't log test timeouts, they already get handled
+        if (details.exception && details.exception.className === "PhWaitCondTimeout")
+            return;
+
+        process.stderr.write(details.description || JSON.stringify(details) + "\n");
+
+        // ignore c3 crashes (https://github.com/c3js/c3/issues/2187)
+        if (details.exception && details.exception.description &&
+            details.exception.description.indexOf("TypeError: Cannot read property 'data_types' of null") >= 0 &&
+            details.exception.description.indexOf("/kubernetes.js") >= 0)
+            return;
+
+        unhandledExceptions.push(details)
     });
 
     client.Log.enable();
@@ -288,7 +310,19 @@ CDP.New(options)
                                 pageLoadPromise = new Promise((resolve, reject) => { pageLoadResolve = resolve; pageLoadReject = reject; });
 
                             // run the command
-                            eval(command).then(success, fail);
+                            eval(command).then(reply => {
+                                if (unhandledExceptions.length === 0) {
+                                    success(reply);
+                                } else {
+                                    let details = unhandledExceptions[0];
+                                    let message = details.exception.message ||
+                                                  details.exception.description ||
+                                                  details.exception.value ||
+                                                  JSON.stringify(details.exception);
+                                    fail(message.split("\n")[0]);
+                                    unhandledExceptions.length = 0;
+                                }
+                            }, fail);
 
                             input_buf = input_buf.slice(i+1);
                         }

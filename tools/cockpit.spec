@@ -36,6 +36,13 @@
 # build optional extensions like cockpit-docker
 %define build_optional 1
 
+# cockpit's firewall service definition moved to firewalld
+%if 0%{?fedora} >= 29 || 0%{?rhel} >= 8
+%define firewalld_service 0
+%else
+%define firewalld_service 1
+%endif
+
 %define __lib lib
 
 # on RHEL 7.x we build subscriptions; superseded later by
@@ -158,7 +165,9 @@ exec 2>&1
     --disable-silent-rules \
     --with-cockpit-user=cockpit-ws \
     --with-selinux-config-type=etc_t \
-    %{?rhel:--without-storaged-iscsi-sessions} \
+%if 0%{?rhel} >= 7 && 0%{?rhel} < 8
+    --without-storaged-iscsi-sessions \
+%endif
     --with-appstream-data-packages='[ "appstream-data" ]' \
     --with-nfs-client-package='"nfs-utils"' \
     %{?vdo_on_demand:--with-vdo-package='"vdo"'}
@@ -174,6 +183,9 @@ make install-tests DESTDIR=%{buildroot}
 mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/pam.d
 install -p -m 644 tools/cockpit.pam $RPM_BUILD_ROOT%{_sysconfdir}/pam.d/cockpit
 rm -f %{buildroot}/%{_libdir}/cockpit/*.so
+%if 0%{?firewalld_service} == 0
+rm -f %{buildroot}/%{_prefix}/%{__lib}/firewalld/services/cockpit.xml
+%endif
 install -p -m 644 AUTHORS COPYING README.md %{buildroot}%{_docdir}/cockpit/
 
 # On RHEL we don't yet show options for changing language
@@ -465,6 +477,11 @@ Summary: Cockpit Web Service
 Requires: glib-networking
 Requires: openssl
 Requires: glib2 >= 2.37.4
+%if 0%{?firewalld_service}
+Conflicts: firewalld >= 0.6.0-1
+%else
+Conflicts: firewalld < 0.6.0-1
+%endif
 %if 0%{?fedora} >= 24 || 0%{?rhel} >= 8
 Recommends: sscg >= 2.3
 %endif
@@ -489,7 +506,9 @@ The Cockpit Web Service listens on the network, and authenticates users.
 %{_unitdir}/cockpit.service
 %{_unitdir}/cockpit-motd.service
 %{_unitdir}/cockpit.socket
+%if 0%{?firewalld_service}
 %{_prefix}/%{__lib}/firewalld/services/cockpit.xml
+%endif
 %{_prefix}/%{__lib}/tmpfiles.d/cockpit-tempfiles.conf
 %{_sbindir}/remotectl
 %{_libdir}/security/pam_ssh_add.so
