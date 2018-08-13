@@ -1725,7 +1725,6 @@ WEBPACK_PACKAGES = \
 	kubernetes \
 	machines \
 	networkmanager \
-	ostree \
 	ovirt \
 	pcp \
 	packagekit \
@@ -1854,7 +1853,6 @@ OPENSANS_FONTS = \
 @ENABLE_DOC_TRUE@	doc/guide/feature-kubernetes.xml \
 @ENABLE_DOC_TRUE@	doc/guide/feature-machines.xml \
 @ENABLE_DOC_TRUE@	doc/guide/feature-networkmanager.xml \
-@ENABLE_DOC_TRUE@	doc/guide/feature-ostree.xml \
 @ENABLE_DOC_TRUE@	doc/guide/feature-packagekit.xml \
 @ENABLE_DOC_TRUE@	doc/guide/feature-pcp.xml \
 @ENABLE_DOC_TRUE@	doc/guide/feature-realmd.xml \

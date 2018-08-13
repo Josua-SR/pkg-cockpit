@@ -205,6 +205,13 @@
     }
 
     function toggle_options(ev, show) {
+        // On keypress, only accept spacebar (enter acts as a click)
+        if (ev && ev.type === 'keypress' && ev.key !== ' ')
+            return;
+        // Stop the <a>'s click handler, otherwise it causes a page reload
+        if (ev && ev.type === 'click')
+            ev.preventDefault();
+
         if (show === undefined)
             show = id("server-group").style.display === "none";
 
@@ -244,7 +251,8 @@
         if (!requisites())
             return;
 
-        id("option-group").addEventListener("click", toggle_options);
+        id("show-other-login-options").addEventListener("click", toggle_options);
+        id("show-other-login-options").addEventListener("keypress", toggle_options);
         id("server-clear").addEventListener("click", function () {
             var el = id("server-field");
             el.value = "";
@@ -1260,6 +1268,9 @@ label {
   margin-left: -20px;
   margin-right: -20px;
 }
+#option-group a {
+  color: inherit;
+}
 
 #server-group:before {
   clear: both;
@@ -1484,7 +1495,7 @@ body {
                         </polygon>
                     </svg>
                 </i>
-                <span translate>Other Options</span>
+                <a href="#" id="show-other-login-options" translate>Other Options</a>
               </div>
             </div>
 
@@ -1499,8 +1510,8 @@ body {
             <div class="form-group">
               <div class="col-md-3 col-sm-3 login-button-container">
                 <button class="btn btn-primary btn-lg col-xs-12" id="login-button">
-                  <div class="spinner"></div>
-                  <div id="login-button-text" translate>Log In</div>
+                  <span class="spinner"></span>
+                  <span id="login-button-text" translate>Log In</span>
                 </button>
               </div>
             </div>

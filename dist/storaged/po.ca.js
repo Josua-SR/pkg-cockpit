@@ -67,14 +67,6 @@ return plural;
   "language": "ca",
   "x-generator": "Zanata 4.5.0"
  },
- "\"http\" Key escrow": [
-  null,
-  ""
- ],
- "\"tang\" Binding server": [
-  null,
-  ""
- ],
  "$0 Block Device": [
   null,
   "Dispositiu de blocs $0"
@@ -270,10 +262,6 @@ return plural;
   null,
   "Afegeix un portal iSCSI"
  ],
- "Add network key": [
-  null,
-  "Afegeix una clau de xarxa"
- ],
  "Adding physical volume to $target": [
   null,
   "S'està afegint el volum físic a $target"
@@ -285,10 +273,6 @@ return plural;
  "Address": [
   null,
   "Adreça"
- ],
- "Allow \"http://\" URL": [
-  null,
-  ""
  ],
  "Apply": [
   null,
@@ -634,10 +618,6 @@ return plural;
   null,
   "Error"
  ],
- "Existing passphrase": [
-  null,
-  ""
- ],
  "Extended Partition": [
   null,
   "Partició estesa"
@@ -714,10 +694,6 @@ return plural;
   null,
   "Fes créixer per agafar tot l'espai"
  ],
- "HTTP method": [
-  null,
-  "Mètode HTTP"
- ],
  "In Sync": [
   null,
   "En sincronització"
@@ -758,26 +734,6 @@ return plural;
   null,
   "Treballs"
  ],
- "Key can't be retrieved": [
-  null,
-  "No es pot recuperar la clau"
- ],
- "Key does not work": [
-  null,
-  "La clau no funciona"
- ],
- "Key is obsolete": [
-  null,
-  "La clau és obsoleta"
- ],
- "Key is okay": [
-  null,
-  "La clau és correcta"
- ],
- "Key server address": [
-  null,
-  "Adreça del servidor de claus"
- ],
  "Local Mount Point": [
   null,
   "Punt de muntatge local"
@@ -810,10 +766,6 @@ return plural;
   null,
   "Volum lògic de $0"
  ],
- "Manually verify the key on the server: ": [
-  null,
-  ""
- ],
  "Marking $target as faulty": [
   null,
   "S'està ficant $target com a defectuós"
@@ -829,10 +781,6 @@ return plural;
  "Metadata Used": [
   null,
   "Metadades utilitzades"
- ],
- "Method": [
-  null,
-  "Mètode"
  ],
  "Modifying $target": [
   null,
@@ -1098,10 +1046,6 @@ return plural;
   null,
   "Si us plau, confirmeu la supressió de $0"
  ],
- "Please confirm network key removal": [
-  null,
-  "Si us plau, confirmeu la supressió de la clau de xarxa"
- ],
  "Please confirm stopping of $0": [
   null,
   "Confirmeu l'aturada de $0"
@@ -1234,10 +1178,6 @@ return plural;
   null,
   "Treu el dispositiu"
  ],
- "Remove key": [
-  null,
-  "Suprimeix la clau"
- ],
  "Removing $0": [
   null,
   ""
@@ -1245,10 +1185,6 @@ return plural;
  "Removing $target from RAID Device": [
   null,
   "S'està eliminant $target  del dispositiu RAID"
- ],
- "Removing network keys might prevent unattended booting.": [
-  null,
-  ""
  ],
  "Removing physical volume from $target": [
   null,
@@ -1278,10 +1214,6 @@ return plural;
   null,
   "S'està redimensionant $target"
  ],
- "Retrieving the key from $0 has failed: $1.": [
-  null,
-  ""
- ],
  "Running": [
   null,
   "En execució"
@@ -1302,17 +1234,9 @@ return plural;
   null,
   "Adreça del servidor"
  ],
- "Server address cannot be empty": [
-  null,
-  ""
- ],
  "Server address cannot be empty.": [
   null,
   "L'adreça del servidor no pot estar en blanc."
- ],
- "Server can't be reached": [
-  null,
-  ""
  ],
  "Server cannot be empty.": [
   null,
@@ -1474,14 +1398,6 @@ return plural;
   null,
   ""
  ],
- "The key of $0 will be removed.": [
-  null,
-  ""
- ],
- "The key server at $0 can not be reached.  This network key can not unlock the encrypted data right now, but it might be able to when the server becomes reachable again.": [
-  null,
-  ""
- ],
  "The last disk of a RAID device cannot be removed.": [
   null,
   "No es pot treure l'últim disc d'un dispositiu RAID."
@@ -1489,14 +1405,6 @@ return plural;
  "The last physical volume of a volume group cannot be removed.": [
   null,
   "No es pot treure l'últim volum físic d'un grup de volums."
- ],
- "The output should match this text: ": [
-  null,
-  ""
- ],
- "The server has returned a key that doesn't work.": [
-  null,
-  ""
  ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
@@ -1519,10 +1427,6 @@ return plural;
   ""
  ],
  "This VDO device does not use all of its backing device.": [
-  null,
-  ""
- ],
- "This box must be checked to confirm that the key will be transported without HTTPS": [
   null,
   ""
  ],
@@ -1554,22 +1458,6 @@ return plural;
   null,
   "Aquest disc no es pot treure quan s'està recuperant el dispositiu."
  ],
- "This network key is not recognized anymore by the server.": [
-  null,
-  ""
- ],
- "This network key is obsolete. It is still functional but it should be replaced. A new key has been retrieved from the server.": [
-  null,
-  ""
- ],
- "This network key is obsolete. It is still functional but it should be replaced. A new key has been securely retrieved from the server.": [
-  null,
-  ""
- ],
- "This network key works fine right now and the encrypted data can be unlocked with it.": [
-  null,
-  ""
- ],
  "This volume needs to be activated before it can be resized.": [
   null,
   ""
@@ -1578,29 +1466,9 @@ return plural;
   null,
   ""
  ],
- "Trust Key": [
-  null,
-  ""
- ],
- "Trust new key": [
-  null,
-  ""
- ],
  "Type": [
   null,
   "Tipus"
- ],
- "URL": [
-  null,
-  "URL"
- ],
- "URL cannot be empty": [
-  null,
-  "L'URL no pot estar en blanc"
- ],
- "URL must start with either \"http:\" or \"https:\"": [
-  null,
-  ""
  ],
  "UUID": [
   null,
@@ -1678,10 +1546,6 @@ return plural;
   null,
   ""
  ],
- "Use new key": [
-  null,
-  "Utilitza una clau nova"
- ],
  "Used": [
   null,
   "Utilitzat"
@@ -1718,10 +1582,6 @@ return plural;
   null,
   "VFAT - Compatible amb tots els sistemes i dispositius"
  ],
- "Verify Key": [
-  null,
-  "Verifica la clau"
- ],
  "Very securely erasing $target": [
   null,
   "S'està eliminant de forma molt segura $target"
@@ -1757,10 +1617,6 @@ return plural;
  "XFS - Red Hat Enterprise Linux 7 default": [
   null,
   "XFS - per defecte a Red Hat Enterprise Linux 7"
- ],
- "You might want to remove it.": [
-  null,
-  ""
  ],
  "[$0 bytes of binary data]": [
   null,

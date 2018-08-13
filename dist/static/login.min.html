@@ -23,10 +23,10 @@
         if (!r.TokenParam) r.TokenParam = "access_token";
         if (!r.ErrorParam) r.ErrorParam = "error_description";
     }
-    var a = /\$\{([^}]+)\}|\$([a-zA-Z0-9_]+)/g;
-    function s(e) {
+    var s = /\$\{([^}]+)\}|\$([a-zA-Z0-9_]+)/g;
+    function a(e) {
         var t = Array.prototype.slice.call(arguments, 1);
-        return e.replace(a, function(e, n, o) {
+        return e.replace(s, function(e, n, o) {
             return t[n || o] || "";
         });
     }
@@ -44,14 +44,14 @@
     }
     var c = l;
     var d, f, p, w;
-    var g = /[?&]?([^=]+)=([^&]*)/g;
-    var v = null;
+    var v = /[?&]?([^=]+)=([^&]*)/g;
+    var g = null;
     function m(e) {
         e = e.split("+").join(" ");
         var t = {};
         var n;
         for (;;) {
-            n = g.exec(e);
+            n = v.exec(e);
             if (!n) break;
             t[decodeURIComponent(n[1])] = decodeURIComponent(n[2]);
         }
@@ -71,8 +71,8 @@
         if (window.console) e.warn("fatal:", t);
         h("login-again").style.display = "none";
         h("login-wait-validating").style.display = "none";
-        if (v) {
-            h("login-again").href = v;
+        if (g) {
+            h("login-again").href = g;
             h("login-again").style.display = "block";
         }
         h("login").style.display = "none";
@@ -82,7 +82,7 @@
         n.textContent = "";
         n.appendChild(document.createTextNode(t));
     }
-    function x(e, t) {
+    function k(e, t) {
         var n, o = h(e);
         if (o && window.getComputedStyle) n = window.getComputedStyle(o, ":before");
         if (!n) return;
@@ -95,17 +95,17 @@
             o.removeAttribute("class");
         }
     }
-    function k() {
+    function x() {
         function e(e, t) {
             var n;
             try {
                 n = t[e];
             } catch (o) {
-                b(s(c("The web browser configuration prevents Cockpit from running (inaccessible $0)"), e));
+                b(a(c("The web browser configuration prevents Cockpit from running (inaccessible $0)"), e));
                 throw o;
             }
             if (n === undefined) {
-                b(s(c("This web browser is too old to run Cockpit (missing $0)"), e));
+                b(a(c("This web browser is too old to run Cockpit (missing $0)"), e));
                 return false;
             }
             return true;
@@ -118,10 +118,10 @@
     function S(e) {
         var n = document.createElement("a");
         var r = document.baseURI;
-        var a;
+        var s;
         if (!r) {
-            a = document.getElementsByTagName("base");
-            if (a.length > 0) r = a[0].href; else r = "/";
+            s = document.getElementsByTagName("base");
+            if (s.length > 0) r = s[0].href; else r = "/";
         }
         e = e || "/";
         n.href = r;
@@ -143,6 +143,8 @@
         p = d;
     }
     function O(e, t) {
+        if (e && e.type === "keypress" && e.key !== " ") return;
+        if (e && e.type === "click") e.preventDefault();
         if (t === undefined) t = h("server-group").style.display === "none";
         h("option-group").setAttribute("data-state", t);
         if (t) {
@@ -166,11 +168,12 @@
             h("brand").style.display = "none";
             h("badge").style.visibility = "hidden";
         } else {
-            x("badge", "");
-            x("brand", "Cockpit");
+            k("badge", "");
+            k("brand", "Cockpit");
         }
-        if (!k()) return;
-        h("option-group").addEventListener("click", O);
+        if (!x()) return;
+        h("show-other-login-options").addEventListener("click", O);
+        h("show-other-login-options").addEventListener("keypress", O);
         h("server-clear").addEventListener("click", function() {
             var e = h("server-field");
             e.value = "";
@@ -180,19 +183,19 @@
         if (n.indexOf("password") !== -1) h("authorized-input").checked = true;
         var o = i["os-release"];
         if (o) t.setItem("os-release", JSON.stringify(o));
-        var a = window.sessionStorage.getItem("logout-intent") == "explicit";
-        if (a) window.sessionStorage.removeItem("logout-intent");
+        var s = window.sessionStorage.getItem("logout-intent") == "explicit";
+        if (s) window.sessionStorage.removeItem("logout-intent");
         if (r) {
             h("login-details").style.display = "none";
             h("login").style.display = "none";
-            if (a) {
+            if (s) {
                 E();
                 h("login-again").textContent = c("Login Again");
                 b(c("Logout Successful"));
             } else {
                 L();
             }
-        } else if (a) {
+        } else if (s) {
             q();
         } else {
             I();
@@ -205,7 +208,7 @@
             if (e.readyState != 4) {
                 return;
             } else if (e.status == 200) {
-                F(JSON.parse(e.responseText));
+                D(JSON.parse(e.responseText));
             } else if (e.status == 401) {
                 q();
             } else if (e.statusText) {
@@ -213,16 +216,16 @@
             } else if (e.status === 0) {
                 q();
             } else {
-                b(s(c("$0 error"), e.status));
+                b(a(c("$0 error"), e.status));
             }
         };
         e.send();
     }
     function E() {
         var e = window.location.href.split("#", 2);
-        v = r.URL;
-        if (r.URL.indexOf("?") > -1) v += "&"; else v += "?";
-        v += "redirect_uri=" + encodeURIComponent(e[0]);
+        g = r.URL;
+        if (r.URL.indexOf("?") > -1) g += "&"; else g += "?";
+        g += "redirect_uri=" + encodeURIComponent(e[0]);
     }
     function L() {
         var e = document.createElement("a");
@@ -245,7 +248,7 @@
                 if (i.readyState != 4) {
                     return;
                 } else if (i.status == 200) {
-                    F(JSON.parse(i.responseText));
+                    D(JSON.parse(i.responseText));
                 } else {
                     o = $(i.getResponseHeader("WWW-Authenticate"), i.responseText);
                     if (o) J(o); else b(i.statusText);
@@ -256,7 +259,7 @@
             b(t[r.ErrorParam]);
         } else {
             window.sessionStorage.setItem("login-wanted", window.location.href);
-            window.location = v;
+            window.location = g;
         }
     }
     function A() {
@@ -320,11 +323,11 @@
             var o = h("authorized-input").checked ? "password" : "";
             var r = h("login-password-input").value;
             t.setItem("authorized-default", o);
-            var a = {
+            var s = {
                 Authorization: "Basic " + window.btoa(W(n + ":" + r)),
                 "X-Authorize": o
             };
-            M("GET", a, false);
+            M("GET", s, false);
         }
     }
     function P(e) {
@@ -386,18 +389,18 @@
         i.focus();
         R("");
         function r() {
-            h("conversation-input").removeEventListener("keydown", a);
+            h("conversation-input").removeEventListener("keydown", s);
             h("login-button").removeEventListener("click", r);
             R(null, true);
             G(e.id, h("conversation-input").value);
         }
-        function a(e) {
+        function s(e) {
             R(null, true);
             if (e.which == 13) {
                 r();
             }
         }
-        h("conversation-input").addEventListener("keydown", a);
+        h("conversation-input").addEventListener("keydown", s);
         h("login-button").addEventListener("click", r);
         P(true);
     }
@@ -408,24 +411,24 @@
         var o;
         var i;
         var r;
-        var a;
+        var s;
         if (!t) return null;
         o = t.split(" ");
         if (o[0].toLowerCase() !== "x-conversation" && o.length != 3) return null;
-        a = o[1];
+        s = o[1];
         try {
             i = window.atob(o[2]);
-        } catch (s) {
-            if (window.console) e.error("Invalid prompt data", s);
+        } catch (a) {
+            if (window.console) e.error("Invalid prompt data", a);
             return null;
         }
         try {
             r = JSON.parse(n);
-        } catch (s) {
-            if (window.console) e.log("Got invalid JSON response for prompt data", s);
+        } catch (a) {
+            if (window.console) e.log("Got invalid JSON response for prompt data", a);
             r = {};
         }
-        r.id = a;
+        r.id = s;
         r.prompt = i;
         return r;
     }
@@ -434,7 +437,7 @@
         var i = new XMLHttpRequest();
         i.open("GET", d, true);
         var r;
-        var a;
+        var s;
         var l;
         for (l in n) i.setRequestHeader(l, n[l]);
         i.onreadystatechange = function() {
@@ -442,17 +445,17 @@
                 return;
             } else if (i.status == 200) {
                 var t = JSON.parse(i.responseText);
-                F(t);
+                D(t);
             } else if (i.status == 401) {
-                a = i.getResponseHeader("WWW-Authenticate");
-                if (a && a.toLowerCase().indexOf("x-conversation") === 0) {
-                    r = $(a, i.responseText);
+                s = i.getResponseHeader("WWW-Authenticate");
+                if (s && s.toLowerCase().indexOf("x-conversation") === 0) {
+                    r = $(s, i.responseText);
                     if (r) J(r); else b(c("Internal Error: Invalid challenge header"));
                 } else {
                     if (window.console) e.log(i.statusText);
                     if (i.statusText.indexOf("authentication-not-supported") > -1) {
                         var n = T(h("login-user-input").value);
-                        b(s(c("The server refused to authenticate '$0' using password authentication, and no other supported authentication methods are available."), n));
+                        b(a(c("The server refused to authenticate '$0' using password authentication, and no other supported authentication methods are available."), n));
                     } else if (i.statusText.indexOf("terminated") > -1) {
                         R(c("Authentication Failed: Server closed connection"));
                     } else if (i.statusText.indexOf("no-host") > -1) {
@@ -474,7 +477,7 @@
             } else if (i.statusText) {
                 b(decodeURIComponent(i.statusText));
             } else {
-                b(s(c("$0 error"), i.status));
+                b(a(c("$0 error"), i.status));
             }
             h("login-button").removeAttribute("disabled");
         };
@@ -537,7 +540,7 @@
         }
         if (o) t.setItem("url-root", o);
     }
-    function F(e) {
+    function D(e) {
         var t = window.sessionStorage.getItem("login-wanted");
         var n = h("server-field").value;
         var i;
@@ -665,6 +668,7 @@ to{transform:rotate(359deg)}
 .alert{padding:7px 11px;margin-bottom:20px;border:2px solid transparent;border-radius:1px}
 .alert-danger{background:0 0;border-color:#c00;font-weight:700}
 #option-group{margin-left:-20px;margin-right:-20px}
+#option-group a{color:inherit}
 #server-group:before{clear:both;margin-top:5px}
 .cross,.inline .container .help-block{color:#000}
 .login-fatal{font-size:130%}
@@ -753,7 +757,7 @@ to{transform:rotate(359deg)}
                         </polygon>
                     </svg>
                 </i>
-                <span translate>Other Options</span>
+                <a href="#" id="show-other-login-options" translate>Other Options</a>
               </div>
             </div>
 
@@ -768,8 +772,8 @@ to{transform:rotate(359deg)}
             <div class="form-group">
               <div class="col-md-3 col-sm-3 login-button-container">
                 <button class="btn btn-primary btn-lg col-xs-12" id="login-button">
-                  <div class="spinner"></div>
-                  <div id="login-button-text" translate>Log In</div>
+                  <span class="spinner"></span>
+                  <span id="login-button-text" translate>Log In</span>
                 </button>
               </div>
             </div>

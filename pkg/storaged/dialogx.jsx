@@ -84,6 +84,22 @@
    The validate function will only be called for currently visible
    fields.
 
+   - widest_title
+
+   This is a hack to force the column of titles to be a certain
+   minimum width, namely the width of the widest_title.  This matters
+   when there are rows that are only sometimes visible and the layout
+   would jump around when they change visibility.
+
+   Technically, the first column of a row shows the "title" but is as
+   wide as its "widest_title".  The idea is that you put the widest
+   title of all fields in the widest_title option of one of the rows
+   that are always visible.
+
+   - explanation
+
+   A test to show below the field, as an explanation.
+
    DEFINING NEW FIELD TYPES
 
    To define a new field type, just define a new function that follows
@@ -142,8 +158,9 @@ import { show_modal_dialog } from "cockpit-components-dialog.jsx";
 import { StatelessSelect, SelectEntry } from "cockpit-components-select.jsx";
 const _ = cockpit.gettext;
 
-const Validated = ({ errors, error_key, children }) => {
+const Validated = ({ errors, error_key, explanation, children }) => {
     var error = errors && errors[error_key];
+    var text = error || explanation;
     // We need to always render the <div> for the has-error
     // class so that the input field keeps the focus when
     // errors are cleared.  Otherwise the DOM changes enough
@@ -151,22 +168,28 @@ const Validated = ({ errors, error_key, children }) => {
     return (
         <div className={error ? "has-error" : ""}>
             { children }
-            { error ? <span className="help-block">{error}</span> : null }
+            { text ? <span className="help-block">{text}</span> : null }
         </div>
     );
 };
 
-const Row = ({ tag, title, errors, children }) => {
-    return (
-        <tr>
-            <td className="top">{title}</td>
-            <td>
-                <Validated errors={errors} error_key={tag}>
-                    { children }
-                </Validated>
-            </td>
-        </tr>
-    );
+const Row = ({ tag, title, errors, options, children }) => {
+    if (tag) {
+        if (options.widest_title)
+            title = [ <div className="widest-title">{options.widest_title}</div>, <div>{title}</div> ];
+        return (
+            <tr>
+                <td className="top">{title}</td>
+                <td>
+                    <Validated errors={errors} error_key={tag} explanation={options.explanation}>
+                        { children }
+                    </Validated>
+                </td>
+            </tr>
+        );
+    } else {
+        return children;
+    }
 };
 
 function is_visible(field, values) {
@@ -183,7 +206,7 @@ const Body = ({body, fields, values, errors, onChange}) => {
                         { fields.map(f => {
                             if (is_visible(f, values))
                                 return (
-                                    <Row key={f.title} tag={f.tag} title={f.title} errors={errors}>
+                                    <Row key={f.tag} tag={f.tag} title={f.title} errors={errors} options={f.options}>
                                         { f.render(values[f.tag], val => { values[f.tag] = val; onChange() }) }
                                     </Row>
                                 );
@@ -223,6 +246,38 @@ export const dialog_open = (def) => {
         };
     };
 
+    const update_footer = (running_title, running_promise) => {
+        dlg.setFooterProps(footer_props(running_title, running_promise));
+    };
+
+    const footer_props = (running_title, running_promise) => {
+        let actions = [ ];
+        if (def.Action) {
+            actions = [
+                { caption: def.Action.Title,
+                  style: def.Action.DangerButton ? "danger" : "primary",
+                  disabled: running_promise != null,
+                  clicked: function () {
+                      return validate().then(errors => {
+                          if (errors) {
+                              update(errors);
+                              return Promise.reject();
+                          } else {
+                              return def.Action.action(values);
+                          }
+                      });
+                  }
+                }
+            ];
+        }
+
+        return {
+            idle_message: running_promise ? [ <div className="spinner spinner-sm" />, <span>{running_title}</span> ] : null,
+            actions: actions,
+            cancel_caption: def.Action ? _("Cancel") : _("Close")
+        };
+    };
+
     const validate = () => {
         return Promise.all(fields.map(f => {
             if (is_visible(f, values) && f.options && f.options.validate)
@@ -236,29 +291,28 @@ export const dialog_open = (def) => {
         });
     };
 
-    let actions = [ ];
-    if (def.Action) {
-        actions = [
-            { caption: def.Action.Title,
-              style: def.Action.DangerButton ? "danger" : "primary",
-              clicked: function () {
-                  return validate().then(errors => {
-                      if (errors) {
-                          update(errors);
-                          return Promise.reject();
-                      } else {
-                          return def.Action.action(values);
-                      }
-                  });
-              }
-            }
-        ];
-    }
+    let dlg = show_modal_dialog(props(null), footer_props(null, null));
 
-    let dlg = show_modal_dialog(props(null),
-                                { actions: actions,
-                                  cancel_caption: def.Action ? _("Cancel") : _("Close")
-                                });
+    return {
+        run: (title, promise) => {
+            update_footer(title, promise);
+            promise.then(
+                () => {
+                    update_footer(null, null);
+                },
+                (errors) => {
+                    if (errors)
+                        update(errors);
+                    update_footer(null, null);
+                });
+        },
+
+        set_values: (new_vals) => {
+            Object.assign(values, new_vals);
+            update(null);
+        }
+
+    };
 };
 
 /* GENERIC FIELD TYPES
@@ -311,6 +365,28 @@ export const SelectOne = (tag, title, options, choices) => {
     };
 };
 
+export const SelectOneRadio = (tag, title, options, choices) => {
+    return {
+        tag: tag,
+        title: title,
+        options: options,
+        initial_value: options.value || choices[0].value,
+
+        render: (val, change) => {
+            return (
+                <span className="radio radio-horizontal" data-field={tag} data-field-type="select-radio" >
+                    { choices.map(c => (
+                        <label>
+                            <input type="radio" checked={val == c.value} data-data={c.value}
+                                     onChange={event => change(c.value)} />{c.title}
+                        </label>))
+                    }
+                </span>
+            );
+        }
+    };
+};
+
 export const CheckBox = (tag, title, options) => {
     return {
         tag: tag,
@@ -357,6 +433,32 @@ export const TextInputChecked = (tag, title, options) => {
                            value={val} onChange={event => change(event.target.value)} />
                 </div>
             );
+        }
+    };
+};
+
+export const Intermission = (children, options) => {
+    return {
+        tag: false,
+        title: "",
+        options: options,
+        initial_value: false,
+
+        render: () => {
+            return <div className="intermission">{ children }</div>;
+        }
+    };
+};
+
+export const Skip = (className, options) => {
+    return {
+        tag: false,
+        title: "",
+        options: options,
+        initial_value: false,
+
+        render: () => {
+            return <tr><td className={className} /></tr>;
         }
     };
 };

@@ -67,14 +67,6 @@ return plural;
   "language": "fi",
   "x-generator": "Zanata 4.5.0"
  },
- "\"http\" Key escrow": [
-  null,
-  ""
- ],
- "\"tang\" Binding server": [
-  null,
-  ""
- ],
  "$0 Block Device": [
   null,
   "$0 Lohkolaite"
@@ -270,10 +262,6 @@ return plural;
   null,
   "Lisää iSCSI Portaali"
  ],
- "Add network key": [
-  null,
-  "Lisää verkkoavain"
- ],
  "Adding physical volume to $target": [
   null,
   "Lisätään fyysinen taltio kohteeseen $target"
@@ -285,10 +273,6 @@ return plural;
  "Address": [
   null,
   "Osoite"
- ],
- "Allow \"http://\" URL": [
-  null,
-  "Salli \"http://\"-osoite"
  ],
  "Apply": [
   null,
@@ -634,10 +618,6 @@ return plural;
   null,
   "Virhe"
  ],
- "Existing passphrase": [
-  null,
-  "Olemassa oleva tunnuslause"
- ],
  "Extended Partition": [
   null,
   "Laajennettu osio"
@@ -714,10 +694,6 @@ return plural;
   null,
   ""
  ],
- "HTTP method": [
-  null,
-  "HTTP-tapa"
- ],
  "In Sync": [
   null,
   "Synkronoitu"
@@ -758,26 +734,6 @@ return plural;
   null,
   "Työt"
  ],
- "Key can't be retrieved": [
-  null,
-  ""
- ],
- "Key does not work": [
-  null,
-  "Avain ei toimi"
- ],
- "Key is obsolete": [
-  null,
-  ""
- ],
- "Key is okay": [
-  null,
-  "Avain on OK"
- ],
- "Key server address": [
-  null,
-  "Avainpalvelimen osoite"
- ],
  "Local Mount Point": [
   null,
   "Paikallinen liitospiste"
@@ -810,10 +766,6 @@ return plural;
   null,
   ""
  ],
- "Manually verify the key on the server: ": [
-  null,
-  "Vahvista palvelimen avain manuaalisesti:"
- ],
  "Marking $target as faulty": [
   null,
   "Merkitään $target virheelliseksi"
@@ -829,10 +781,6 @@ return plural;
  "Metadata Used": [
   null,
   ""
- ],
- "Method": [
-  null,
-  "Tapa"
  ],
  "Modifying $target": [
   null,
@@ -1098,10 +1046,6 @@ return plural;
   null,
   "Vahvista kohteen $0 poistaminen"
  ],
- "Please confirm network key removal": [
-  null,
-  "Vahvista verkkoavaimen poistaminen"
- ],
  "Please confirm stopping of $0": [
   null,
   "Vahvista kohteen $0 pysäyttäminen"
@@ -1234,19 +1178,11 @@ return plural;
   null,
   "Poista laite"
  ],
- "Remove key": [
-  null,
-  "Poista avain"
- ],
  "Removing $0": [
   null,
   ""
  ],
  "Removing $target from RAID Device": [
-  null,
-  ""
- ],
- "Removing network keys might prevent unattended booting.": [
   null,
   ""
  ],
@@ -1278,10 +1214,6 @@ return plural;
   null,
   ""
  ],
- "Retrieving the key from $0 has failed: $1.": [
-  null,
-  ""
- ],
  "Running": [
   null,
   ""
@@ -1302,17 +1234,9 @@ return plural;
   null,
   "Palvelimen osoite"
  ],
- "Server address cannot be empty": [
-  null,
-  "Palvelimen osoite ei voi olla tyhjä"
- ],
  "Server address cannot be empty.": [
   null,
   "Palvelimen osoite ei voi olla tyhjä."
- ],
- "Server can't be reached": [
-  null,
-  "Palvelinta ei voi tavoittaa"
  ],
  "Server cannot be empty.": [
   null,
@@ -1474,14 +1398,6 @@ return plural;
   null,
   ""
  ],
- "The key of $0 will be removed.": [
-  null,
-  ""
- ],
- "The key server at $0 can not be reached.  This network key can not unlock the encrypted data right now, but it might be able to when the server becomes reachable again.": [
-  null,
-  ""
- ],
  "The last disk of a RAID device cannot be removed.": [
   null,
   ""
@@ -1489,14 +1405,6 @@ return plural;
  "The last physical volume of a volume group cannot be removed.": [
   null,
   ""
- ],
- "The output should match this text: ": [
-  null,
-  ""
- ],
- "The server has returned a key that doesn't work.": [
-  null,
-  "Palvelin palautti avaimen, joka ei toimi."
  ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
@@ -1519,10 +1427,6 @@ return plural;
   "Tämä NFS-liitos on käytössä ja vain sen valintoja on mahdollista muokata."
  ],
  "This VDO device does not use all of its backing device.": [
-  null,
-  ""
- ],
- "This box must be checked to confirm that the key will be transported without HTTPS": [
   null,
   ""
  ],
@@ -1554,22 +1458,6 @@ return plural;
   null,
   ""
  ],
- "This network key is not recognized anymore by the server.": [
-  null,
-  ""
- ],
- "This network key is obsolete. It is still functional but it should be replaced. A new key has been retrieved from the server.": [
-  null,
-  ""
- ],
- "This network key is obsolete. It is still functional but it should be replaced. A new key has been securely retrieved from the server.": [
-  null,
-  ""
- ],
- "This network key works fine right now and the encrypted data can be unlocked with it.": [
-  null,
-  ""
- ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "Tämä taltio tulee aktivoida, ennen kuin sen kokoa voi muuttaa."
@@ -1578,29 +1466,9 @@ return plural;
   null,
   ""
  ],
- "Trust Key": [
-  null,
-  ""
- ],
- "Trust new key": [
-  null,
-  ""
- ],
  "Type": [
   null,
   "Tyyppi"
- ],
- "URL": [
-  null,
-  "URL"
- ],
- "URL cannot be empty": [
-  null,
-  "URL ei voi olla tyhjä"
- ],
- "URL must start with either \"http:\" or \"https:\"": [
-  null,
-  ""
  ],
  "UUID": [
   null,
@@ -1678,10 +1546,6 @@ return plural;
   null,
   ""
  ],
- "Use new key": [
-  null,
-  "Käytä uutta avainta"
- ],
  "Used": [
   null,
   "Käytetty"
@@ -1718,10 +1582,6 @@ return plural;
   null,
   "VFAT - Yhteensopiva kaikkien järjestelmien ja laitteiden kanssa"
  ],
- "Verify Key": [
-  null,
-  "Vahvista avain"
- ],
  "Very securely erasing $target": [
   null,
   "Poistetaan hyvin turvallisesti $target"
@@ -1757,10 +1617,6 @@ return plural;
  "XFS - Red Hat Enterprise Linux 7 default": [
   null,
   "XFS - Red Hat Enterprise Linux 7 default"
- ],
- "You might want to remove it.": [
-  null,
-  ""
  ],
  "[$0 bytes of binary data]": [
   null,
