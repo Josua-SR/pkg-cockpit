@@ -110,6 +110,15 @@ Files: node_modules/jquery-flot/*
 Copyright: Copyright (c) 2007-2014 IOLA and Ole Laursen
 License: MIT
 
+Files: node_modules/js-sha1/*
+Copyright: @copyright Chen, Yi-Cyuan 2014-2017
+ Copyright 2014-2017 Chen, Yi-Cyuan
+License: MIT
+
+Files: node_modules/json-stable-stringify/*
+Copyright: James Halliday
+License: MIT
+
 Files: node_modules/kubernetes-container-terminal/*
 Copyright: Copyright (C) 1991, 1999 Free Software Foundation, Inc.
  Copyright (C) 2015 Red Hat, Inc.
