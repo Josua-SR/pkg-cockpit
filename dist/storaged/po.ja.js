@@ -67,14 +67,6 @@ return plural;
   "language": "ja",
   "x-generator": "Zanata 4.5.0"
  },
- "\"http\" Key escrow": [
-  null,
-  "\"http\" キーエスクロー"
- ],
- "\"tang\" Binding server": [
-  null,
-  "\"tang\" バインディングサーバー"
- ],
  "$0 Block Device": [
   null,
   "$0 ブロックデバイス"
@@ -263,10 +255,6 @@ return plural;
   null,
   "iSCSI ポータルの追加"
  ],
- "Add network key": [
-  null,
-  "ネットワークキーの追加"
- ],
  "Adding physical volume to $target": [
   null,
   "$target への物理ボリュームの追加"
@@ -278,10 +266,6 @@ return plural;
  "Address": [
   null,
   "アドレス:"
- ],
- "Allow \"http://\" URL": [
-  null,
-  "\"http://\" URL を許可"
  ],
  "Apply": [
   null,
@@ -627,10 +611,6 @@ return plural;
   null,
   "エラー"
  ],
- "Existing passphrase": [
-  null,
-  "既存のパスフレーズ"
- ],
  "Extended Partition": [
   null,
   "拡張パーティション"
@@ -707,10 +687,6 @@ return plural;
   null,
   "すべての領域を使用して増加"
  ],
- "HTTP method": [
-  null,
-  "HTTP メソッド"
- ],
  "In Sync": [
   null,
   "同期"
@@ -751,26 +727,6 @@ return plural;
   null,
   "ジョブ"
  ],
- "Key can't be retrieved": [
-  null,
-  "キーをリトリーブできません"
- ],
- "Key does not work": [
-  null,
-  "キーは動作しません"
- ],
- "Key is obsolete": [
-  null,
-  "キーは使われていません"
- ],
- "Key is okay": [
-  null,
-  "キーは問題ありません"
- ],
- "Key server address": [
-  null,
-  "キーのサーバーアドレス"
- ],
  "Local Mount Point": [
   null,
   "ローカルマウントポイント"
@@ -803,10 +759,6 @@ return plural;
   null,
   "$0 の論理ボリューム"
  ],
- "Manually verify the key on the server: ": [
-  null,
-  "サーバー上のキーを手動で検証します。"
- ],
  "Marking $target as faulty": [
   null,
   "$target を問題があるものとしてマークする"
@@ -822,10 +774,6 @@ return plural;
  "Metadata Used": [
   null,
   "使用済みメタデータ"
- ],
- "Method": [
-  null,
-  "メソッド"
  ],
  "Modifying $target": [
   null,
@@ -1091,10 +1039,6 @@ return plural;
   null,
   "$0 の削除を確定してください"
  ],
- "Please confirm network key removal": [
-  null,
-  "ネットワークキーの削除を確認してください"
- ],
  "Please confirm stopping of $0": [
   null,
   "$0 の停止を確認してください"
@@ -1227,10 +1171,6 @@ return plural;
   null,
   "リモートデバイス"
  ],
- "Remove key": [
-  null,
-  "キーの削除"
- ],
  "Removing $0": [
   null,
   "$0 を削除中"
@@ -1238,10 +1178,6 @@ return plural;
  "Removing $target from RAID Device": [
   null,
   "$target を RAID デバイスから削除"
- ],
- "Removing network keys might prevent unattended booting.": [
-  null,
-  "ネットワークキーの削除により、自動での起動ができなくなる可能性があります。"
  ],
  "Removing physical volume from $target": [
   null,
@@ -1271,10 +1207,6 @@ return plural;
   null,
   "$target のサイズ変更"
  ],
- "Retrieving the key from $0 has failed: $1.": [
-  null,
-  "$0 からのキーのリトリーブに失敗: $1"
- ],
  "Running": [
   null,
   "実行中"
@@ -1295,17 +1227,9 @@ return plural;
   null,
   "サーバーアドレス"
  ],
- "Server address cannot be empty": [
-  null,
-  "サーバーアドレスは空欄にできません"
- ],
  "Server address cannot be empty.": [
   null,
   "サーバーアドレスは空欄にできません。"
- ],
- "Server can't be reached": [
-  null,
-  "サーバーに接続できません"
  ],
  "Server cannot be empty.": [
   null,
@@ -1467,14 +1391,6 @@ return plural;
   null,
   "このファイルシステムは、システムサービスで使用中です。                続行するとこれらを停止します。"
  ],
- "The key of $0 will be removed.": [
-  null,
-  "$0 のキーは削除されます。"
- ],
- "The key server at $0 can not be reached.  This network key can not unlock the encrypted data right now, but it might be able to when the server becomes reachable again.": [
-  null,
-  "$0 のキーサーバーは接続できません。  このネットワークキーは現在、暗号化データのロック解除ができませんが、サーバーに再接続できたら、ロック解除できる可能性があります。"
- ],
  "The last disk of a RAID device cannot be removed.": [
   null,
   "RAID デバイスの最後のディスクは取り外すことができません。"
@@ -1482,14 +1398,6 @@ return plural;
  "The last physical volume of a volume group cannot be removed.": [
   null,
   "ボリュームグループの最後の物理ボリュームは削除できません。"
- ],
- "The output should match this text: ": [
-  null,
-  "出力は、このテキストと一致する必要があります: "
- ],
- "The server has returned a key that doesn't work.": [
-  null,
-  "サーバーは、動作しないキーを返しました。"
  ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
@@ -1514,10 +1422,6 @@ return plural;
  "This VDO device does not use all of its backing device.": [
   null,
   "この VDO デバイスは、そのバッキングデバイスをすべて使用していません。"
- ],
- "This box must be checked to confirm that the key will be transported without HTTPS": [
-  null,
-  "HTTPS なしでキーがトランスポートされることを確認するために、このボックスにチェックを入れる必要があります"
  ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
@@ -1547,22 +1451,6 @@ return plural;
   null,
   "このディスクは、デバイスが復旧中に取り外すことができません。"
  ],
- "This network key is not recognized anymore by the server.": [
-  null,
-  "このネットワークキーは今後、サーバーに認識されません。"
- ],
- "This network key is obsolete. It is still functional but it should be replaced. A new key has been retrieved from the server.": [
-  null,
-  "このネットワークキーは使われていません。まだ機能しますが、取り替える必要があります。サーバーから新しいキーがリトリーブされました。"
- ],
- "This network key is obsolete. It is still functional but it should be replaced. A new key has been securely retrieved from the server.": [
-  null,
-  "このネットワークキーは使われていません。まだ機能しますが、取り替える必要があります。サーバーから新しいキーが安全にリトリーブされました。"
- ],
- "This network key works fine right now and the encrypted data can be unlocked with it.": [
-  null,
-  "このネットワークキーは現在、問題なく使用できます。暗号化されたデータは、このキーを使用してロック解除できます。"
- ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "このボリュームは、サイズを変更する前にアクティベートする必要があります。"
@@ -1571,29 +1459,9 @@ return plural;
   null,
   "合計サイズ: $0"
  ],
- "Trust Key": [
-  null,
-  "キーを信頼します"
- ],
- "Trust new key": [
-  null,
-  "新しいキーを信頼します"
- ],
  "Type": [
   null,
   "タイプ"
- ],
- "URL": [
-  null,
-  "URL"
- ],
- "URL cannot be empty": [
-  null,
-  "URL は空にはできません"
- ],
- "URL must start with either \"http:\" or \"https:\"": [
-  null,
-  "URL は、\"http:\" または \"https:\" のいずれかで開始する必要があります"
  ],
  "UUID": [
   null,
@@ -1671,10 +1539,6 @@ return plural;
   null,
   "512 バイトのエミュレーションを使用します。"
  ],
- "Use new key": [
-  null,
-  "新しいキーを使用します"
- ],
  "Used": [
   null,
   "Used"
@@ -1711,10 +1575,6 @@ return plural;
   null,
   "VFAT - すべてのシステムおよびデバイスとの互換性あり"
  ],
- "Verify Key": [
-  null,
-  "キーを検証します"
- ],
  "Very securely erasing $target": [
   null,
   "$target を非常に安全に削除"
@@ -1750,10 +1610,6 @@ return plural;
  "XFS - Red Hat Enterprise Linux 7 default": [
   null,
   "XFS - Red Hat Enterprise Linux 7 のデフォルト値"
- ],
- "You might want to remove it.": [
-  null,
-  "削除した方がいいかもしれません。"
  ],
  "[$0 bytes of binary data]": [
   null,

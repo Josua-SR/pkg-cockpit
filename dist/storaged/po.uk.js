@@ -67,14 +67,6 @@ return plural;
   "language": "uk",
   "x-generator": "Zanata 4.5.0"
  },
- "\"http\" Key escrow": [
-  null,
-  "Депонування ключів «http»"
- ],
- "\"tang\" Binding server": [
-  null,
-  "Сервер прив'язки «tang»"
- ],
  "$0 Block Device": [
   null,
   "$0, блоковий пристрій"
@@ -277,10 +269,6 @@ return plural;
   null,
   "Додати портал iSCSI"
  ],
- "Add network key": [
-  null,
-  "Додати ключ мережі"
- ],
  "Adding physical volume to $target": [
   null,
   "Додаємо фізичний том до $target"
@@ -292,10 +280,6 @@ return plural;
  "Address": [
   null,
   "Адреса"
- ],
- "Allow \"http://\" URL": [
-  null,
-  "Дозволити адреси «http://»"
  ],
  "Apply": [
   null,
@@ -641,10 +625,6 @@ return plural;
   null,
   "Помилка"
  ],
- "Existing passphrase": [
-  null,
-  "Наявний пароль"
- ],
  "Extended Partition": [
   null,
   "Розширений розділ"
@@ -721,10 +701,6 @@ return plural;
   null,
   "Збільшити так, щоб використати усе місце"
  ],
- "HTTP method": [
-  null,
-  "Метод HTTP"
- ],
  "In Sync": [
   null,
   "Синхронізовано"
@@ -765,26 +741,6 @@ return plural;
   null,
   "Завдання"
  ],
- "Key can't be retrieved": [
-  null,
-  "Не вдалося отримати ключ"
- ],
- "Key does not work": [
-  null,
-  "Ключ не працює"
- ],
- "Key is obsolete": [
-  null,
-  "Ключ є застарілим"
- ],
- "Key is okay": [
-  null,
-  "Ключ працездатний"
- ],
- "Key server address": [
-  null,
-  "Адреса сервера ключів"
- ],
  "Local Mount Point": [
   null,
   "Локальна точка монтування"
@@ -817,10 +773,6 @@ return plural;
   null,
   "Логічний том $0"
  ],
- "Manually verify the key on the server: ": [
-  null,
-  "Вручну перевірити ключ на сервері: "
- ],
  "Marking $target as faulty": [
   null,
   "Позначаємо $target як помилковий"
@@ -836,10 +788,6 @@ return plural;
  "Metadata Used": [
   null,
   "Використано метаданих"
- ],
- "Method": [
-  null,
-  "Метод"
  ],
  "Modifying $target": [
   null,
@@ -1105,10 +1053,6 @@ return plural;
   null,
   "Будь ласка, підтвердьте вилучення $0"
  ],
- "Please confirm network key removal": [
-  null,
-  "Будь ласка, підтвердьте вилучення ключа мережі"
- ],
  "Please confirm stopping of $0": [
   null,
   "Будь ласка, підтвердьте зупинку $0"
@@ -1241,10 +1185,6 @@ return plural;
   null,
   "Вилучити пристрій"
  ],
- "Remove key": [
-  null,
-  "Вилучити ключ"
- ],
  "Removing $0": [
   null,
   "Вилучаємо $0"
@@ -1252,10 +1192,6 @@ return plural;
  "Removing $target from RAID Device": [
   null,
   "Вилучаємо $target з пристрою RAID"
- ],
- "Removing network keys might prevent unattended booting.": [
-  null,
-  "Вилучення ключів мережі може запобігти небажаному завантаженню."
  ],
  "Removing physical volume from $target": [
   null,
@@ -1285,10 +1221,6 @@ return plural;
   null,
   "Зміна розміру $target"
  ],
- "Retrieving the key from $0 has failed: $1.": [
-  null,
-  "Не вдалося отримати ключ з $0: $1."
- ],
  "Running": [
   null,
   "Працює"
@@ -1309,17 +1241,9 @@ return plural;
   null,
   "Адреса сервера"
  ],
- "Server address cannot be empty": [
-  null,
-  "Адреса сервера не може бути порожньою"
- ],
  "Server address cannot be empty.": [
   null,
   "Адреса сервера не може бути порожньою."
- ],
- "Server can't be reached": [
-  null,
-  "Не вдалося встановити зв'язок із сервером"
  ],
  "Server cannot be empty.": [
   null,
@@ -1481,14 +1405,6 @@ return plural;
   null,
   "Файлова система використовується службами системи. Виконання цієї дії призведе до припинення роботи цих служб."
  ],
- "The key of $0 will be removed.": [
-  null,
-  "Ключ $0 буде вилучено."
- ],
- "The key server at $0 can not be reached.  This network key can not unlock the encrypted data right now, but it might be able to when the server becomes reachable again.": [
-  null,
-  "Не вдалося встановити зв'язок із сервером ключів $0. Цей ключ мережі не може бути використано для доступу до зашифрованих даних зараз, але, можливо, ним можна буде скористатися, коли доступ до сервера ключів буде відновлено."
- ],
  "The last disk of a RAID device cannot be removed.": [
   null,
   "Останній диск пристрою RAID вилучати не можна."
@@ -1496,14 +1412,6 @@ return plural;
  "The last physical volume of a volume group cannot be removed.": [
   null,
   "Не можна вилучати останній фізичний том із групи томів."
- ],
- "The output should match this text: ": [
-  null,
-  "Виведення має бути таким: "
- ],
- "The server has returned a key that doesn't work.": [
-  null,
-  "Сервером повернуто ключ, який не працює."
  ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
@@ -1528,10 +1436,6 @@ return plural;
  "This VDO device does not use all of its backing device.": [
   null,
   "Цей пристрій VDO не використовує увесь об'єм резервного пристрою."
- ],
- "This box must be checked to confirm that the key will be transported without HTTPS": [
-  null,
-  "Цей пункт має бути позначено для підтведження пересилання ключа без HTTPS"
  ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
@@ -1561,22 +1465,6 @@ return plural;
   null,
   "Цей диск не можна вилучати, доки пристрій перебуває у стані відновлення."
  ],
- "This network key is not recognized anymore by the server.": [
-  null,
-  "Цей ключ мережі більше не розпізнається на сервері."
- ],
- "This network key is obsolete. It is still functional but it should be replaced. A new key has been retrieved from the server.": [
-  null,
-  "Цей ключ мережі є застарілим. Він усе ще працездатний, але його має бути замінено. Від сервера отримано новий ключ."
- ],
- "This network key is obsolete. It is still functional but it should be replaced. A new key has been securely retrieved from the server.": [
-  null,
-  "Цей ключ мережі є застарілим. Він усе ще працездатний, але його має бути замінено. Від сервера безпечно отримано новий ключ."
- ],
- "This network key works fine right now and the encrypted data can be unlocked with it.": [
-  null,
-  "Зараз цей ключ мережі є працездатним, за його допомогою можна отримати доступу до зашифрованих даних."
- ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "Перш ніж розмір цього тому можна буде змінювати, його слід активувати."
@@ -1585,29 +1473,9 @@ return plural;
   null,
   "Загальний розмір: $0"
  ],
- "Trust Key": [
-  null,
-  "Довіряти ключу"
- ],
- "Trust new key": [
-  null,
-  "Довіряти новому ключу"
- ],
  "Type": [
   null,
   "Тип"
- ],
- "URL": [
-  null,
-  "Адреса"
- ],
- "URL cannot be empty": [
-  null,
-  "Адреса не може бути порожньою"
- ],
- "URL must start with either \"http:\" or \"https:\"": [
-  null,
-  "Адреса має починатися з «http:» або «https:»"
  ],
  "UUID": [
   null,
@@ -1685,10 +1553,6 @@ return plural;
   null,
   "Емуляція 512 байтів"
  ],
- "Use new key": [
-  null,
-  "Скористатися новим ключем"
- ],
  "Used": [
   null,
   "Використано"
@@ -1725,10 +1589,6 @@ return plural;
   null,
   "VFAT - Сумісна із усіма системами та пристроями"
  ],
- "Verify Key": [
-  null,
-  "Перевірити ключ"
- ],
  "Very securely erasing $target": [
   null,
   "Дуже безпечно витираємо $target"
@@ -1764,10 +1624,6 @@ return plural;
  "XFS - Red Hat Enterprise Linux 7 default": [
   null,
   "XFS - Типова для Red Hat Enterprise Linux 7"
- ],
- "You might want to remove it.": [
-  null,
-  "Ймовірно, вам варто вилучити його."
  ],
  "[$0 bytes of binary data]": [
   null,

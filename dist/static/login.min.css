@@ -106,6 +106,7 @@ to{transform:rotate(359deg)}
 .alert{padding:7px 11px;margin-bottom:20px;border:2px solid transparent;border-radius:1px}
 .alert-danger{background:0 0;border-color:#c00;font-weight:700}
 #option-group{margin-left:-20px;margin-right:-20px}
+#option-group a{color:inherit}
 #server-group:before{clear:both;margin-top:5px}
 .cross,.inline .container .help-block{color:#000}
 .login-fatal{font-size:130%}

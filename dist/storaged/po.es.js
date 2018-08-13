@@ -67,14 +67,6 @@ return plural;
   "language": "es",
   "x-generator": "Zanata 4.5.0"
  },
- "\"http\" Key escrow": [
-  null,
-  "\"http\" Depósito de clave"
- ],
- "\"tang\" Binding server": [
-  null,
-  "\"tang\" Servidor de enlace"
- ],
  "$0 Block Device": [
   null,
   "$0 Dispositivo de Bloque"
@@ -270,10 +262,6 @@ return plural;
   null,
   "Agregar portal iSCSI"
  ],
- "Add network key": [
-  null,
-  "Añadir clave de red"
- ],
  "Adding physical volume to $target": [
   null,
   "Añadiendo volumen físico a $target"
@@ -285,10 +273,6 @@ return plural;
  "Address": [
   null,
   "Dirección"
- ],
- "Allow \"http://\" URL": [
-  null,
-  "Permitir \"http://\" URL"
  ],
  "Apply": [
   null,
@@ -634,10 +618,6 @@ return plural;
   null,
   "Error"
  ],
- "Existing passphrase": [
-  null,
-  "Existe frase de paso"
- ],
  "Extended Partition": [
   null,
   "Partición Extendida"
@@ -714,10 +694,6 @@ return plural;
   null,
   "Crecer para tomar todo el espacio"
  ],
- "HTTP method": [
-  null,
-  "Método HTTP"
- ],
  "In Sync": [
   null,
   "En Sincronía"
@@ -758,26 +734,6 @@ return plural;
   null,
   "Trabajos"
  ],
- "Key can't be retrieved": [
-  null,
-  "La clave no puede ser recuperada"
- ],
- "Key does not work": [
-  null,
-  "La clave no trabaja"
- ],
- "Key is obsolete": [
-  null,
-  "La clave es obsoleta"
- ],
- "Key is okay": [
-  null,
-  "La clave es correcta"
- ],
- "Key server address": [
-  null,
-  "Clave de dirección de servidor"
- ],
  "Local Mount Point": [
   null,
   "Punto de Montaje Local"
@@ -810,10 +766,6 @@ return plural;
   null,
   "Volumen lógico de $0"
  ],
- "Manually verify the key on the server: ": [
-  null,
-  "Verificada manualmente la clave sobre el servidor:"
- ],
  "Marking $target as faulty": [
   null,
   "Marcando $target como fallado"
@@ -829,10 +781,6 @@ return plural;
  "Metadata Used": [
   null,
   "Metadatos en uso"
- ],
- "Method": [
-  null,
-  "Método"
  ],
  "Modifying $target": [
   null,
@@ -1098,10 +1046,6 @@ return plural;
   null,
   "Por favor confirmar la eliminación de $0"
  ],
- "Please confirm network key removal": [
-  null,
-  "Por favor confirme el borrado de la clave de red"
- ],
  "Please confirm stopping of $0": [
   null,
   "Por favor confirma la parada de $0"
@@ -1234,10 +1178,6 @@ return plural;
   null,
   "Quitar dispositivo"
  ],
- "Remove key": [
-  null,
-  "Borrar clave"
- ],
  "Removing $0": [
   null,
   ""
@@ -1245,10 +1185,6 @@ return plural;
  "Removing $target from RAID Device": [
   null,
   "Removiendo $target del Dispositivo RAID"
- ],
- "Removing network keys might prevent unattended booting.": [
-  null,
-  "Borrar las claves de red podría evitar arranques no atendidos."
  ],
  "Removing physical volume from $target": [
   null,
@@ -1278,10 +1214,6 @@ return plural;
   null,
   "Redimencionando $target"
  ],
- "Retrieving the key from $0 has failed: $1.": [
-  null,
-  "La recuperación de la clave desde $0 ha fallado: $1."
- ],
  "Running": [
   null,
   "Corriendo"
@@ -1302,17 +1234,9 @@ return plural;
   null,
   "Dirección del Servidor"
  ],
- "Server address cannot be empty": [
-  null,
-  "La dirección del servidor no puede estar vacía"
- ],
  "Server address cannot be empty.": [
   null,
   "La dirección del servidor no puede estar vacía."
- ],
- "Server can't be reached": [
-  null,
-  "No se puede alcanzar el servidor"
  ],
  "Server cannot be empty.": [
   null,
@@ -1474,14 +1398,6 @@ return plural;
   null,
   "El sistema de archivos está en uso por servicios del sistema.                Si se sigue se pararán."
  ],
- "The key of $0 will be removed.": [
-  null,
-  "La clave de $0 será borrada."
- ],
- "The key server at $0 can not be reached.  This network key can not unlock the encrypted data right now, but it might be able to when the server becomes reachable again.": [
-  null,
-  "El servidor clave en $0 no puede ser alcanzado.  Esta clave de red no puede desbloquear los datos encriptados ahora, pero podría ser capaz cuando el servidor sea alcanzable otra vez."
- ],
  "The last disk of a RAID device cannot be removed.": [
   null,
   "El último disco del dispositivo RAID no puede ser quitado."
@@ -1489,14 +1405,6 @@ return plural;
  "The last physical volume of a volume group cannot be removed.": [
   null,
   "El último volumen físico de un grupo de volumen no puede ser quitado."
- ],
- "The output should match this text: ": [
-  null,
-  "La salida coincidiría con este texto:"
- ],
- "The server has returned a key that doesn't work.": [
-  null,
-  "El servidor ha devuelto una clave que no funciona."
  ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
@@ -1521,10 +1429,6 @@ return plural;
  "This VDO device does not use all of its backing device.": [
   null,
   "Este dispositivo VDO no usa todos sus dispositivos de respaldo."
- ],
- "This box must be checked to confirm that the key will be transported without HTTPS": [
-  null,
-  "Esta caja debe ser comprobada para confirmar que la clave será transportada sin HTTPS"
  ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
@@ -1554,22 +1458,6 @@ return plural;
   null,
   "El disco no se puede quitar mientras el dispositivo se está recuperando."
  ],
- "This network key is not recognized anymore by the server.": [
-  null,
-  "Esta clave no se reconoce por el servidor."
- ],
- "This network key is obsolete. It is still functional but it should be replaced. A new key has been retrieved from the server.": [
-  null,
-  "Esta clave de red es obsoleta. Es todavía funcional pero debería ser cambiada. Una nueva clave ha sido recuperada desde el servidor."
- ],
- "This network key is obsolete. It is still functional but it should be replaced. A new key has been securely retrieved from the server.": [
-  null,
-  "Esta clave de red es obsoleta. Es todavía funcional pero debería ser cambiada. Una nueva clave ha sido recuperada con seguridad desde el servidor"
- ],
- "This network key works fine right now and the encrypted data can be unlocked with it.": [
-  null,
-  "Esta clave de red funciona correctamente y los datos encriptados pueden ser desbloqueados con ella."
- ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "Este volumen necesita ser activado antes de poder modificar el tamaño."
@@ -1578,29 +1466,9 @@ return plural;
   null,
   ""
  ],
- "Trust Key": [
-  null,
-  "Clave de Confianza"
- ],
- "Trust new key": [
-  null,
-  "Confía en  nueva clave"
- ],
  "Type": [
   null,
   "Tipo"
- ],
- "URL": [
-  null,
-  "URL"
- ],
- "URL cannot be empty": [
-  null,
-  "La URL no puede estar vacía"
- ],
- "URL must start with either \"http:\" or \"https:\"": [
-  null,
-  "La URL debe empezar por \"http:\" o \"https:\""
  ],
  "UUID": [
   null,
@@ -1678,10 +1546,6 @@ return plural;
   null,
   "Usar emulación de 512 Byte"
  ],
- "Use new key": [
-  null,
-  "Usar nueva clave"
- ],
  "Used": [
   null,
   "Usado"
@@ -1718,10 +1582,6 @@ return plural;
   null,
   "VFAT - Compatible con todos los sistemas y dispositivos"
  ],
- "Verify Key": [
-  null,
-  "Verificar Clave"
- ],
  "Very securely erasing $target": [
   null,
   "Borrando de forma muy segura $target"
@@ -1757,10 +1617,6 @@ return plural;
  "XFS - Red Hat Enterprise Linux 7 default": [
   null,
   "XFS - Red Hat Enterprise Linux 7 Predeterminado"
- ],
- "You might want to remove it.": [
-  null,
-  "Es posible que desee eliminarlo."
  ],
  "[$0 bytes of binary data]": [
   null,

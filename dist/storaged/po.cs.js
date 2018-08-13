@@ -67,14 +67,6 @@ return plural;
   "language": "cs",
   "x-generator": "Zanata 4.5.0"
  },
- "\"http\" Key escrow": [
-  null,
-  ""
- ],
- "\"tang\" Binding server": [
-  null,
-  ""
- ],
  "$0 Block Device": [
   null,
   "Blokové zařízení"
@@ -277,10 +269,6 @@ return plural;
   null,
   "Přidat portál iSCSI"
  ],
- "Add network key": [
-  null,
-  ""
- ],
  "Adding physical volume to $target": [
   null,
   "Přidávám fyzický svazek do $target"
@@ -292,10 +280,6 @@ return plural;
  "Address": [
   null,
   "Adresa"
- ],
- "Allow \"http://\" URL": [
-  null,
-  ""
  ],
  "Apply": [
   null,
@@ -641,10 +625,6 @@ return plural;
   null,
   "Chyba"
  ],
- "Existing passphrase": [
-  null,
-  ""
- ],
  "Extended Partition": [
   null,
   ""
@@ -721,10 +701,6 @@ return plural;
   null,
   ""
  ],
- "HTTP method": [
-  null,
-  ""
- ],
  "In Sync": [
   null,
   ""
@@ -765,26 +741,6 @@ return plural;
   null,
   ""
  ],
- "Key can't be retrieved": [
-  null,
-  ""
- ],
- "Key does not work": [
-  null,
-  ""
- ],
- "Key is obsolete": [
-  null,
-  ""
- ],
- "Key is okay": [
-  null,
-  ""
- ],
- "Key server address": [
-  null,
-  ""
- ],
  "Local Mount Point": [
   null,
   ""
@@ -817,10 +773,6 @@ return plural;
   null,
   ""
  ],
- "Manually verify the key on the server: ": [
-  null,
-  ""
- ],
  "Marking $target as faulty": [
   null,
   ""
@@ -834,10 +786,6 @@ return plural;
   ""
  ],
  "Metadata Used": [
-  null,
-  ""
- ],
- "Method": [
   null,
   ""
  ],
@@ -1105,10 +1053,6 @@ return plural;
   null,
   ""
  ],
- "Please confirm network key removal": [
-  null,
-  ""
- ],
  "Please confirm stopping of $0": [
   null,
   ""
@@ -1241,19 +1185,11 @@ return plural;
   null,
   ""
  ],
- "Remove key": [
-  null,
-  ""
- ],
  "Removing $0": [
   null,
   ""
  ],
  "Removing $target from RAID Device": [
-  null,
-  ""
- ],
- "Removing network keys might prevent unattended booting.": [
   null,
   ""
  ],
@@ -1285,10 +1221,6 @@ return plural;
   null,
   ""
  ],
- "Retrieving the key from $0 has failed: $1.": [
-  null,
-  ""
- ],
  "Running": [
   null,
   "Běží"
@@ -1309,15 +1241,7 @@ return plural;
   null,
   ""
  ],
- "Server address cannot be empty": [
-  null,
-  ""
- ],
  "Server address cannot be empty.": [
-  null,
-  ""
- ],
- "Server can't be reached": [
   null,
   ""
  ],
@@ -1481,27 +1405,11 @@ return plural;
   null,
   ""
  ],
- "The key of $0 will be removed.": [
-  null,
-  ""
- ],
- "The key server at $0 can not be reached.  This network key can not unlock the encrypted data right now, but it might be able to when the server becomes reachable again.": [
-  null,
-  ""
- ],
  "The last disk of a RAID device cannot be removed.": [
   null,
   ""
  ],
  "The last physical volume of a volume group cannot be removed.": [
-  null,
-  ""
- ],
- "The output should match this text: ": [
-  null,
-  ""
- ],
- "The server has returned a key that doesn't work.": [
   null,
   ""
  ],
@@ -1526,10 +1434,6 @@ return plural;
   ""
  ],
  "This VDO device does not use all of its backing device.": [
-  null,
-  ""
- ],
- "This box must be checked to confirm that the key will be transported without HTTPS": [
   null,
   ""
  ],
@@ -1561,22 +1465,6 @@ return plural;
   null,
   ""
  ],
- "This network key is not recognized anymore by the server.": [
-  null,
-  ""
- ],
- "This network key is obsolete. It is still functional but it should be replaced. A new key has been retrieved from the server.": [
-  null,
-  ""
- ],
- "This network key is obsolete. It is still functional but it should be replaced. A new key has been securely retrieved from the server.": [
-  null,
-  ""
- ],
- "This network key works fine right now and the encrypted data can be unlocked with it.": [
-  null,
-  ""
- ],
  "This volume needs to be activated before it can be resized.": [
   null,
   ""
@@ -1585,29 +1473,9 @@ return plural;
   null,
   ""
  ],
- "Trust Key": [
-  null,
-  ""
- ],
- "Trust new key": [
-  null,
-  ""
- ],
  "Type": [
   null,
   "Typ"
- ],
- "URL": [
-  null,
-  "URL"
- ],
- "URL cannot be empty": [
-  null,
-  ""
- ],
- "URL must start with either \"http:\" or \"https:\"": [
-  null,
-  ""
  ],
  "UUID": [
   null,
@@ -1685,10 +1553,6 @@ return plural;
   null,
   ""
  ],
- "Use new key": [
-  null,
-  ""
- ],
  "Used": [
   null,
   ""
@@ -1725,10 +1589,6 @@ return plural;
   null,
   ""
  ],
- "Verify Key": [
-  null,
-  ""
- ],
  "Very securely erasing $target": [
   null,
   ""
@@ -1762,10 +1622,6 @@ return plural;
   "Psaní"
  ],
  "XFS - Red Hat Enterprise Linux 7 default": [
-  null,
-  ""
- ],
- "You might want to remove it.": [
   null,
   ""
  ],

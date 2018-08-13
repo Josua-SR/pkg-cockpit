@@ -67,14 +67,6 @@ return plural;
   "language": "zh_CN",
   "x-generator": "Zanata 4.5.0"
  },
- "\"http\" Key escrow": [
-  null,
-  ""
- ],
- "\"tang\" Binding server": [
-  null,
-  ""
- ],
  "$0 Block Device": [
   null,
   "$0 块设备"
@@ -263,10 +255,6 @@ return plural;
   null,
   "添加 iSCSI 门户"
  ],
- "Add network key": [
-  null,
-  ""
- ],
  "Adding physical volume to $target": [
   null,
   "添加物理卷至 $target"
@@ -278,10 +266,6 @@ return plural;
  "Address": [
   null,
   "地址"
- ],
- "Allow \"http://\" URL": [
-  null,
-  ""
  ],
  "Apply": [
   null,
@@ -627,10 +611,6 @@ return plural;
   null,
   "错误"
  ],
- "Existing passphrase": [
-  null,
-  ""
- ],
  "Extended Partition": [
   null,
   "扩展分区"
@@ -707,10 +687,6 @@ return plural;
   null,
   ""
  ],
- "HTTP method": [
-  null,
-  ""
- ],
  "In Sync": [
   null,
   "同步中"
@@ -751,26 +727,6 @@ return plural;
   null,
   "任务"
  ],
- "Key can't be retrieved": [
-  null,
-  ""
- ],
- "Key does not work": [
-  null,
-  ""
- ],
- "Key is obsolete": [
-  null,
-  ""
- ],
- "Key is okay": [
-  null,
-  ""
- ],
- "Key server address": [
-  null,
-  ""
- ],
  "Local Mount Point": [
   null,
   ""
@@ -803,10 +759,6 @@ return plural;
   null,
   "$0 的逻辑卷"
  ],
- "Manually verify the key on the server: ": [
-  null,
-  ""
- ],
  "Marking $target as faulty": [
   null,
   "标记 $target 出现故障"
@@ -822,10 +774,6 @@ return plural;
  "Metadata Used": [
   null,
   "已使用的元数据"
- ],
- "Method": [
-  null,
-  ""
  ],
  "Modifying $target": [
   null,
@@ -1091,10 +1039,6 @@ return plural;
   null,
   "请确认删除 $0"
  ],
- "Please confirm network key removal": [
-  null,
-  ""
- ],
  "Please confirm stopping of $0": [
   null,
   ""
@@ -1227,10 +1171,6 @@ return plural;
   null,
   ""
  ],
- "Remove key": [
-  null,
-  ""
- ],
  "Removing $0": [
   null,
   ""
@@ -1238,10 +1178,6 @@ return plural;
  "Removing $target from RAID Device": [
   null,
   "从 RAID 设备中删除 $target"
- ],
- "Removing network keys might prevent unattended booting.": [
-  null,
-  ""
  ],
  "Removing physical volume from $target": [
   null,
@@ -1271,10 +1207,6 @@ return plural;
   null,
   "调整大小 $target"
  ],
- "Retrieving the key from $0 has failed: $1.": [
-  null,
-  ""
- ],
  "Running": [
   null,
   "运行中"
@@ -1295,17 +1227,9 @@ return plural;
   null,
   "服务器地址"
  ],
- "Server address cannot be empty": [
-  null,
-  ""
- ],
  "Server address cannot be empty.": [
   null,
   "服务器地址不能为空。"
- ],
- "Server can't be reached": [
-  null,
-  ""
  ],
  "Server cannot be empty.": [
   null,
@@ -1467,14 +1391,6 @@ return plural;
   null,
   ""
  ],
- "The key of $0 will be removed.": [
-  null,
-  ""
- ],
- "The key server at $0 can not be reached.  This network key can not unlock the encrypted data right now, but it might be able to when the server becomes reachable again.": [
-  null,
-  ""
- ],
  "The last disk of a RAID device cannot be removed.": [
   null,
   " RAID 设备中的最后一个磁盘不能被移除。"
@@ -1482,14 +1398,6 @@ return plural;
  "The last physical volume of a volume group cannot be removed.": [
   null,
   "不能删除一个卷组的最后一个物理卷。"
- ],
- "The output should match this text: ": [
-  null,
-  ""
- ],
- "The server has returned a key that doesn't work.": [
-  null,
-  ""
  ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
@@ -1512,10 +1420,6 @@ return plural;
   ""
  ],
  "This VDO device does not use all of its backing device.": [
-  null,
-  ""
- ],
- "This box must be checked to confirm that the key will be transported without HTTPS": [
   null,
   ""
  ],
@@ -1547,22 +1451,6 @@ return plural;
   null,
   "当磁盘正在恢复时，该磁盘不能被移除。"
  ],
- "This network key is not recognized anymore by the server.": [
-  null,
-  ""
- ],
- "This network key is obsolete. It is still functional but it should be replaced. A new key has been retrieved from the server.": [
-  null,
-  ""
- ],
- "This network key is obsolete. It is still functional but it should be replaced. A new key has been securely retrieved from the server.": [
-  null,
-  ""
- ],
- "This network key works fine right now and the encrypted data can be unlocked with it.": [
-  null,
-  ""
- ],
  "This volume needs to be activated before it can be resized.": [
   null,
   ""
@@ -1571,29 +1459,9 @@ return plural;
   null,
   ""
  ],
- "Trust Key": [
-  null,
-  ""
- ],
- "Trust new key": [
-  null,
-  ""
- ],
  "Type": [
   null,
   "类型"
- ],
- "URL": [
-  null,
-  "网址"
- ],
- "URL cannot be empty": [
-  null,
-  ""
- ],
- "URL must start with either \"http:\" or \"https:\"": [
-  null,
-  ""
  ],
  "UUID": [
   null,
@@ -1671,10 +1539,6 @@ return plural;
   null,
   ""
  ],
- "Use new key": [
-  null,
-  ""
- ],
  "Used": [
   null,
   "已使用"
@@ -1711,10 +1575,6 @@ return plural;
   null,
   "VFAT - 兼容所有系统和设备"
  ],
- "Verify Key": [
-  null,
-  ""
- ],
  "Very securely erasing $target": [
   null,
   "多重安全擦除 $target"
@@ -1750,10 +1610,6 @@ return plural;
  "XFS - Red Hat Enterprise Linux 7 default": [
   null,
   "XFS - Red Hat Enterprise Linux 7 默认"
- ],
- "You might want to remove it.": [
-  null,
-  ""
  ],
  "[$0 bytes of binary data]": [
   null,
