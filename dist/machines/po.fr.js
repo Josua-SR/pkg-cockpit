@@ -75,6 +75,10 @@ return plural;
   null,
   ""
  ],
+ "Add": [
+  null,
+  "Ajouter"
+ ],
  "Add Disk": [
   null,
   ""
@@ -255,9 +259,9 @@ return plural;
   null,
   ""
  ],
- "Format: ": [
+ "Format": [
   null,
-  ""
+  "Formater"
  ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
@@ -371,10 +375,6 @@ return plural;
   null,
   ""
  ],
- "Name: ": [
-  null,
-  ""
- ],
  "Networks": [
   null,
   ""
@@ -448,10 +448,6 @@ return plural;
   ""
  ],
  "Pool": [
-  null,
-  ""
- ],
- "Pool: ": [
   null,
   ""
  ],
@@ -531,9 +527,9 @@ return plural;
   null,
   ""
  ],
- "Size: ": [
+ "Size": [
   null,
-  ""
+  "Taille"
  ],
  "Sockets": [
   null,
@@ -572,10 +568,6 @@ return plural;
   ""
  ],
  "Target": [
-  null,
-  ""
- ],
- "Target: ": [
   null,
   ""
  ],
@@ -716,10 +708,6 @@ return plural;
   ""
  ],
  "Volume": [
-  null,
-  ""
- ],
- "Volume: ": [
   null,
   ""
  ],

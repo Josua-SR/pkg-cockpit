@@ -79,6 +79,10 @@ return plural;
   null,
   "Toiminto"
  ],
+ "Add": [
+  null,
+  "Lisää"
+ ],
  "Add Disk": [
   null,
   ""
@@ -315,9 +319,9 @@ return plural;
   null,
   "Pakota sammutus"
  ],
- "Format: ": [
+ "Format": [
   null,
-  ""
+  "Alusta"
  ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
@@ -422,10 +426,6 @@ return plural;
  "Name": [
   null,
   "Nimi"
- ],
- "Name: ": [
-  null,
-  ""
  ],
  "Networks": [
   null,
@@ -532,10 +532,6 @@ return plural;
   ""
  ],
  "Pool": [
-  null,
-  ""
- ],
- "Pool: ": [
   null,
   ""
  ],
@@ -655,9 +651,9 @@ return plural;
   null,
   "Sammuta"
  ],
- "Size: ": [
+ "Size": [
   null,
-  ""
+  "Koko"
  ],
  "Sockets": [
   null,
@@ -704,10 +700,6 @@ return plural;
   "Järjestelmä"
  ],
  "Target": [
-  null,
-  ""
- ],
- "Target: ": [
   null,
   ""
  ],
@@ -874,10 +866,6 @@ return plural;
  "Volume": [
   null,
   "Taltio"
- ],
- "Volume: ": [
-  null,
-  ""
  ],
  "Your browser does not support iframes.": [
   null,

@@ -79,6 +79,10 @@ return plural;
   null,
   ""
  ],
+ "Add": [
+  null,
+  "Ekle"
+ ],
  "Add Disk": [
   null,
   ""
@@ -315,9 +319,9 @@ return plural;
   null,
   ""
  ],
- "Format: ": [
+ "Format": [
   null,
-  ""
+  "Biçimlendir"
  ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
@@ -422,10 +426,6 @@ return plural;
  "Name": [
   null,
   "İsim"
- ],
- "Name: ": [
-  null,
-  ""
  ],
  "Networks": [
   null,
@@ -532,10 +532,6 @@ return plural;
   ""
  ],
  "Pool": [
-  null,
-  ""
- ],
- "Pool: ": [
   null,
   ""
  ],
@@ -655,9 +651,9 @@ return plural;
   null,
   ""
  ],
- "Size: ": [
+ "Size": [
   null,
-  ""
+  "Boyut"
  ],
  "Sockets": [
   null,
@@ -704,10 +700,6 @@ return plural;
   ""
  ],
  "Target": [
-  null,
-  ""
- ],
- "Target: ": [
   null,
   ""
  ],
@@ -874,10 +866,6 @@ return plural;
  "Volume": [
   null,
   "Mantıksal Bölüm"
- ],
- "Volume: ": [
-  null,
-  ""
  ],
  "Your browser does not support iframes.": [
   null,

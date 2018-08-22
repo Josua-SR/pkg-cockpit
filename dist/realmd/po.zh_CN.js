@@ -107,10 +107,6 @@ return plural;
   null,
   "取消"
  ],
- "Cannot join a domain because realmd is not available on this system": [
-  null,
-  "因为该系统的 realmd 不可用, 因此无法加入域"
- ],
  "Checking installed software": [
   null,
   ""

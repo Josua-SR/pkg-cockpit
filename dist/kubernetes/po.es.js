@@ -1433,6 +1433,10 @@ return plural;
   null,
   "Mostrar todos los servicios"
  ],
+ "Show all VMs": [
+  null,
+  ""
+ ],
  "Show all image streams": [
   null,
   "Mostrar toda la secuencia de imagen"
@@ -1668,6 +1672,14 @@ return plural;
  "Users": [
   null,
   "Usuarios"
+ ],
+ "VM": [
+  null,
+  ""
+ ],
+ "VM $0:$1 does not exist.": [
+  null,
+  ""
  ],
  "VM DELETE failed.": [
   null,

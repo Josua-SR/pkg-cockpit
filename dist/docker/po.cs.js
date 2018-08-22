@@ -143,10 +143,6 @@ return plural;
   null,
   "Vždy"
  ],
- "Are you sure you want to delete this image?": [
-  null,
-  "Opravdu chcete smazat tento obraz?"
- ],
  "Author": [
   null,
   "Autor"
@@ -293,15 +289,7 @@ return plural;
   null,
   "Smazat"
  ],
- "Delete $0": [
-  null,
-  ""
- ],
  "Deleting a container will erase all data in it.": [
-  null,
-  ""
- ],
- "Deleting an image will delete it, but you can probably download it again if you need it later.  Unless this image has never been pushed to a repository, that is, in which case you probably can't download it again.": [
   null,
   ""
  ],
@@ -775,6 +763,10 @@ return plural;
   null,
   "Zastavit"
  ],
+ "Stop and delete": [
+  null,
+  ""
+ ],
  "Stopped": [
   null,
   "Zastaveno"
@@ -812,6 +804,10 @@ return plural;
   "Tagy"
  ],
  "The Docker storage pool cannot be managed on this system.": [
+  null,
+  ""
+ ],
+ "The following containers depend on this image and will become unusable.": [
   null,
   ""
  ],

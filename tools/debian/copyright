@@ -187,6 +187,10 @@ Files: node_modules/qunitjs/*
 Copyright: Copyright 2006 Google Inc.
 License: MIT
 
+Files: node_modules/react-bootstrap/*
+Copyright: Copyright (c) 2014-present Stephen J. Collings, Matthew Honnibal, Pieter Vanderwerff
+License: MIT
+
 Files: node_modules/react-lite/*
 Copyright: Copyright (c) 2015 工业聚
 License: MIT

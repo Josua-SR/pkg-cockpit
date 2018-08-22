@@ -127,7 +127,7 @@ return plural;
  ],
  "Add Machine to Dashboard": [
   null,
-  ""
+  "Maschine zum Dashboard hinzufügen"
  ],
  "Address": [
   null,
@@ -259,7 +259,7 @@ return plural;
  ],
  "Disk I/O": [
   null,
-  "Datenträger ist OK"
+  "Festplatten-E/A"
  ],
  "Docking Station": [
   null,
@@ -315,7 +315,7 @@ return plural;
  ],
  "Host Name": [
   null,
-  ""
+  "Rechnername"
  ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
@@ -359,11 +359,11 @@ return plural;
  ],
  "Log In": [
   null,
-  ""
+  "Anmelden"
  ],
  "Log in to {{host}}": [
   null,
-  ""
+  "Anmelden auf {{host}}"
  ],
  "Login Password": [
   null,

@@ -79,6 +79,10 @@ return plural;
   null,
   ""
  ],
+ "Add": [
+  null,
+  ""
+ ],
  "Add Disk": [
   null,
   ""
@@ -315,7 +319,7 @@ return plural;
   null,
   ""
  ],
- "Format: ": [
+ "Format": [
   null,
   ""
  ],
@@ -420,10 +424,6 @@ return plural;
   ""
  ],
  "Name": [
-  null,
-  ""
- ],
- "Name: ": [
   null,
   ""
  ],
@@ -532,10 +532,6 @@ return plural;
   ""
  ],
  "Pool": [
-  null,
-  ""
- ],
- "Pool: ": [
   null,
   ""
  ],
@@ -655,7 +651,7 @@ return plural;
   null,
   ""
  ],
- "Size: ": [
+ "Size": [
   null,
   ""
  ],
@@ -704,10 +700,6 @@ return plural;
   ""
  ],
  "Target": [
-  null,
-  ""
- ],
- "Target: ": [
   null,
   ""
  ],
@@ -874,10 +866,6 @@ return plural;
  "Volume": [
   null,
   "Volume"
- ],
- "Volume: ": [
-  null,
-  ""
  ],
  "Your browser does not support iframes.": [
   null,

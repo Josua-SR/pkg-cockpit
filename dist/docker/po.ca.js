@@ -137,10 +137,6 @@ return plural;
   null,
   "Sempre"
  ],
- "Are you sure you want to delete this image?": [
-  null,
-  "Esteu segur que voleu suprimir aquesta imatge?"
- ],
  "Author": [
   null,
   "Autor"
@@ -286,17 +282,9 @@ return plural;
   null,
   "Suprimeix"
  ],
- "Delete $0": [
-  null,
-  "Suprimeix $0"
- ],
  "Deleting a container will erase all data in it.": [
   null,
   "La supressió d'un contenidor n'esborrarà totes les dades."
- ],
- "Deleting an image will delete it, but you can probably download it again if you need it later.  Unless this image has never been pushed to a repository, that is, in which case you probably can't download it again.": [
-  null,
-  "La supressió d'una imatge ho suprimirà, però probablement es pot baixar de nou si es necessita més endavant. Llevat que aquesta imatge mai hagi estat empesa a un dipòsit, que ho és, en aquest cas probablement no pugueu baixar-ho de nou."
  ],
  "Desktop": [
   null,
@@ -767,6 +755,10 @@ return plural;
   null,
   "Atura"
  ],
+ "Stop and delete": [
+  null,
+  ""
+ ],
  "Stopped": [
   null,
   "Aturat"
@@ -804,6 +796,10 @@ return plural;
   "Etiquetes"
  ],
  "The Docker storage pool cannot be managed on this system.": [
+  null,
+  ""
+ ],
+ "The following containers depend on this image and will become unusable.": [
   null,
   ""
  ],

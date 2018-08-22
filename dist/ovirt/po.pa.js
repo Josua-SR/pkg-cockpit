@@ -79,6 +79,10 @@ return plural;
   null,
   ""
  ],
+ "Add": [
+  null,
+  "ਜੋੜੋ"
+ ],
  "Add Disk": [
   null,
   ""
@@ -315,7 +319,7 @@ return plural;
   null,
   ""
  ],
- "Format: ": [
+ "Format": [
   null,
   ""
  ],
@@ -423,10 +427,6 @@ return plural;
   null,
   "ਨਾਂ"
  ],
- "Name: ": [
-  null,
-  ""
- ],
  "Networks": [
   null,
   ""
@@ -532,10 +532,6 @@ return plural;
   ""
  ],
  "Pool": [
-  null,
-  ""
- ],
- "Pool: ": [
   null,
   ""
  ],
@@ -655,9 +651,9 @@ return plural;
   null,
   "ਬੰਦ ਕਰੋ"
  ],
- "Size: ": [
+ "Size": [
   null,
-  ""
+  "ਆਕਾਰ"
  ],
  "Sockets": [
   null,
@@ -704,10 +700,6 @@ return plural;
   "ਸਿਸਟਮ"
  ],
  "Target": [
-  null,
-  ""
- ],
- "Target: ": [
   null,
   ""
  ],
@@ -874,10 +866,6 @@ return plural;
  "Volume": [
   null,
   "ਵਾਲੀਅਮ"
- ],
- "Volume: ": [
-  null,
-  ""
  ],
  "Your browser does not support iframes.": [
   null,

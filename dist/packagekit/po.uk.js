@@ -67,11 +67,19 @@ return plural;
   "language": "uk",
   "x-generator": "Zanata 4.5.0"
  },
+ "$0 is not available from any repository.": [
+  null,
+  "$0 немає у жодному зі сховищ."
+ ],
  "$0 update": [
   "$0 updates",
   "$0 оновлення",
   "$0 оновлення",
   "$0 оновлень"
+ ],
+ "$0 will be installed.": [
+  null,
+  "Буде встановлено $0."
  ],
  "$1 security fix": [
   "$1 security fixes",
@@ -84,6 +92,10 @@ return plural;
   ", включно із $1 виправленням захисту",
   ", включно із $1 виправленнями захисту",
   ", включно із $1 виправленнями захисту"
+ ],
+ "Additional packages:": [
+  null,
+  "Додаткові пакунки:"
  ],
  "Apply all updates": [
   null,
@@ -121,6 +133,10 @@ return plural;
   null,
   "Перевірити наявність оновлень"
  ],
+ "Checking installed software": [
+  null,
+  "Перевіряємо встановлене програмне забезпечення"
+ ],
  "Details": [
   null,
   "Подробиці"
@@ -132,6 +148,10 @@ return plural;
  "Downloading": [
   null,
   "Отримуємо"
+ ],
+ "Downloading $0": [
+  null,
+  "Отримуємо $0"
  ],
  "Errata:": [
   null,
@@ -145,6 +165,10 @@ return plural;
   null,
   "Ініціалізація…"
  ],
+ "Install": [
+  null,
+  "Встановити"
+ ],
  "Install All Updates": [
   null,
   "Встановити усі оновлення"
@@ -153,6 +177,10 @@ return plural;
   null,
   "Встановити оновлення захисту"
  ],
+ "Install Software": [
+  null,
+  "Встановити програмне забезпечення"
+ ],
  "Installed": [
   null,
   "Встановлено"
@@ -160,6 +188,10 @@ return plural;
  "Installing": [
   null,
   "Встановлення"
+ ],
+ "Installing $0": [
+  null,
+  "Встановлюємо $0"
  ],
  "Last checked: $0 ago": [
   null,
@@ -184,6 +216,10 @@ return plural;
  "Off": [
   null,
   "Вимкнено"
+ ],
+ "Ok": [
+  null,
+  "Гаразд"
  ],
  "On": [
   null,
@@ -212,6 +248,14 @@ return plural;
  "Register…": [
   null,
   "Зареєструвати…"
+ ],
+ "Removals:": [
+  null,
+  "Вилучення:"
+ ],
+ "Removing $0": [
+  null,
+  "Вилучаємо $0"
  ],
  "Restart Now": [
   null,
@@ -273,6 +317,10 @@ return plural;
   null,
   "Щоб отримувати оновлення програмного забезпечення, цю систему слід зареєструвати у Red Hat або за допомогою порталу клієнтів Red Hat, або за допомогою локального сервера передплати."
  ],
+ "Total size: $0": [
+  null,
+  "Загальний розмір: $0"
+ ],
  "Unregistered System": [
   null,
   "Незареєстрована система"
@@ -316,6 +364,10 @@ return plural;
  "View Registration Details": [
   null,
   "Переглянути параметри реєстрації"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  "Очікуємо на завершення інших дій із програмним забезпеченням"
  ],
  "You need to re-subscribe this system.": [
   null,

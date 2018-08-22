@@ -107,10 +107,6 @@ return plural;
   null,
   "Zrušit"
  ],
- "Cannot join a domain because realmd is not available on this system": [
-  null,
-  "Nelze se připojit do domény protože realmd není dostupný na tomto systému"
- ],
  "Checking installed software": [
   null,
   ""

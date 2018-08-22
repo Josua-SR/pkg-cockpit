@@ -67,10 +67,18 @@ return plural;
   "language": "fi",
   "x-generator": "Zanata 4.5.0"
  },
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
  "$0 update": [
   "$0 updates",
   "$0 päivitys",
   "$0 päivitystä"
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
  ],
  "$1 security fix": [
   "$1 security fixes",
@@ -81,6 +89,10 @@ return plural;
   ", including $1 security fixes",
   ", mukaan lukien $1 turvallisuuspäivitys",
   ", mukaan lukien $1 turvallisuuspäivitykset"
+ ],
+ "Additional packages:": [
+  null,
+  ""
  ],
  "Apply all updates": [
   null,
@@ -118,6 +130,10 @@ return plural;
   null,
   "Etsi päivityksiä"
  ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
  "Details": [
   null,
   "Yksityiskohdat"
@@ -129,6 +145,10 @@ return plural;
  "Downloading": [
   null,
   "Ladataan"
+ ],
+ "Downloading $0": [
+  null,
+  ""
  ],
  "Errata:": [
   null,
@@ -142,6 +162,10 @@ return plural;
   null,
   ""
  ],
+ "Install": [
+  null,
+  "Asenna"
+ ],
  "Install All Updates": [
   null,
   "Asenna kaikki päivitykset"
@@ -150,6 +174,10 @@ return plural;
   null,
   "Asenna tietoturvapäivitykset"
  ],
+ "Install Software": [
+  null,
+  ""
+ ],
  "Installed": [
   null,
   "Asennettu"
@@ -157,6 +185,10 @@ return plural;
  "Installing": [
   null,
   "Asennetaan"
+ ],
+ "Installing $0": [
+  null,
+  ""
  ],
  "Last checked: $0 ago": [
   null,
@@ -181,6 +213,10 @@ return plural;
  "Off": [
   null,
   "Pois"
+ ],
+ "Ok": [
+  null,
+  "OK"
  ],
  "On": [
   null,
@@ -209,6 +245,14 @@ return plural;
  "Register…": [
   null,
   "Rekisteröi…"
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
+  null,
+  ""
  ],
  "Restart Now": [
   null,
@@ -270,6 +314,10 @@ return plural;
   null,
   ""
  ],
+ "Total size: $0": [
+  null,
+  ""
+ ],
  "Unregistered System": [
   null,
   ""
@@ -313,6 +361,10 @@ return plural;
  "View Registration Details": [
   null,
   "Näytä rekisteröinnin tiedot"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "You need to re-subscribe this system.": [
   null,

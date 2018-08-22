@@ -719,7 +719,7 @@ return plural;
  ],
  "Machine ID": [
   null,
-  ""
+  "Maschinen-ID"
  ],
  "Manifest": [
   null,
@@ -943,7 +943,7 @@ return plural;
  ],
  "Operating System": [
   null,
-  ""
+  "Betriebssystem"
  ],
  "Options": [
   null,
@@ -1433,6 +1433,10 @@ return plural;
   null,
   "Zeige alle Dienste an"
  ],
+ "Show all VMs": [
+  null,
+  ""
+ ],
  "Show all image streams": [
   null,
   ""
@@ -1668,6 +1672,14 @@ return plural;
  "Users": [
   null,
   "Benutzer"
+ ],
+ "VM": [
+  null,
+  ""
+ ],
+ "VM $0:$1 does not exist.": [
+  null,
+  ""
  ],
  "VM DELETE failed.": [
   null,

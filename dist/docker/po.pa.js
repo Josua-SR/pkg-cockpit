@@ -137,10 +137,6 @@ return plural;
   null,
   ""
  ],
- "Are you sure you want to delete this image?": [
-  null,
-  ""
- ],
  "Author": [
   null,
   ""
@@ -286,15 +282,7 @@ return plural;
   null,
   ""
  ],
- "Delete $0": [
-  null,
-  ""
- ],
  "Deleting a container will erase all data in it.": [
-  null,
-  ""
- ],
- "Deleting an image will delete it, but you can probably download it again if you need it later.  Unless this image has never been pushed to a repository, that is, in which case you probably can't download it again.": [
   null,
   ""
  ],
@@ -767,6 +755,10 @@ return plural;
   null,
   "ਰੋਕੋ"
  ],
+ "Stop and delete": [
+  null,
+  ""
+ ],
  "Stopped": [
   null,
   "ਰੋਕਿਆ"
@@ -804,6 +796,10 @@ return plural;
   ""
  ],
  "The Docker storage pool cannot be managed on this system.": [
+  null,
+  ""
+ ],
+ "The following containers depend on this image and will become unusable.": [
   null,
   ""
  ],

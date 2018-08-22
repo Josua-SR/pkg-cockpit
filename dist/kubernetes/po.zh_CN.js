@@ -1431,6 +1431,10 @@ return plural;
   null,
   "显示所有服务"
  ],
+ "Show all VMs": [
+  null,
+  ""
+ ],
  "Show all image streams": [
   null,
   "显示所有镜像流"
@@ -1666,6 +1670,14 @@ return plural;
  "Users": [
   null,
   "用户"
+ ],
+ "VM": [
+  null,
+  ""
+ ],
+ "VM $0:$1 does not exist.": [
+  null,
+  ""
  ],
  "VM DELETE failed.": [
   null,

@@ -155,7 +155,7 @@ if [ -n "%{patches}" ]; then
     git config core.autocrlf false && git config core.safecrlf false && git config gc.auto 0
     git add -f . && git commit -a -q -m "Base" && git tag -a initial --message="initial"
     git am --whitespace=nowarn %{patches}
-    touch -r $(git diff --name-only initial..HEAD) .git
+    touch -r $(git diff --name-only initial..HEAD) .git Makefile.in
     rm -rf .git
 fi
 
@@ -496,7 +496,7 @@ The Cockpit Web Service listens on the network, and authenticates users.
 %doc %{_mandir}/man8/pam_ssh_add.8.gz
 %config(noreplace) %{_sysconfdir}/cockpit/ws-certs.d
 %config(noreplace) %{_sysconfdir}/pam.d/cockpit
-%config %{_sysconfdir}/issue.d/cockpit
+%config %{_sysconfdir}/issue.d/cockpit.issue
 %config %{_sysconfdir}/motd.d/cockpit
 %{_datadir}/cockpit/motd/update-motd
 %{_datadir}/cockpit/motd/inactive.motd

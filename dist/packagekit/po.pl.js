@@ -67,11 +67,19 @@ return plural;
   "language": "pl",
   "x-generator": "Zanata 4.5.0"
  },
+ "$0 is not available from any repository.": [
+  null,
+  "$0 nie jest dostępne w żadnym repozytorium."
+ ],
  "$0 update": [
   "$0 updates",
   "$0 aktualizacja",
   "$0 aktualizacje",
   "$0 aktualizacji"
+ ],
+ "$0 will be installed.": [
+  null,
+  "$0 zostanie zainstalowane."
  ],
  "$1 security fix": [
   "$1 security fixes",
@@ -84,6 +92,10 @@ return plural;
   ", w tym $1 poprawka zabezpieczeń",
   ", w tym $1 poprawki zabezpieczeń",
   ", w tym $1 poprawek zabezpieczeń"
+ ],
+ "Additional packages:": [
+  null,
+  "Dodatkowe pakiety:"
  ],
  "Apply all updates": [
   null,
@@ -121,6 +133,10 @@ return plural;
   null,
   "Wyszukaj aktualizacje"
  ],
+ "Checking installed software": [
+  null,
+  "Sprawdzanie zainstalowanego oprogramowania"
+ ],
  "Details": [
   null,
   "Szczegóły"
@@ -132,6 +148,10 @@ return plural;
  "Downloading": [
   null,
   "Pobieranie"
+ ],
+ "Downloading $0": [
+  null,
+  "Pobieranie $0"
  ],
  "Errata:": [
   null,
@@ -145,6 +165,10 @@ return plural;
   null,
   "Inicjowanie…"
  ],
+ "Install": [
+  null,
+  "Zainstaluj"
+ ],
  "Install All Updates": [
   null,
   "Zainstaluj wszystkie aktualizacje"
@@ -153,6 +177,10 @@ return plural;
   null,
   "Zainstaluj aktualizacje zabezpieczeń"
  ],
+ "Install Software": [
+  null,
+  "Zainstaluj oprogramowanie"
+ ],
  "Installed": [
   null,
   "Zainstalowano"
@@ -160,6 +188,10 @@ return plural;
  "Installing": [
   null,
   "Instalowanie"
+ ],
+ "Installing $0": [
+  null,
+  "Instalowanie $0"
  ],
  "Last checked: $0 ago": [
   null,
@@ -184,6 +216,10 @@ return plural;
  "Off": [
   null,
   "Wyłączone"
+ ],
+ "Ok": [
+  null,
+  "OK"
  ],
  "On": [
   null,
@@ -212,6 +248,14 @@ return plural;
  "Register…": [
   null,
   "Zarejestruj…"
+ ],
+ "Removals:": [
+  null,
+  "Usuwane:"
+ ],
+ "Removing $0": [
+  null,
+  "Usuwanie $0"
  ],
  "Restart Now": [
   null,
@@ -273,6 +317,10 @@ return plural;
   null,
   "Aby otrzymywać aktualizacje oprogramowania, ten system musi zostać zarejestrowany w firmie Red Hat za pomocą serwisu Red Hat Customer Portal lub lokalnego serwera subskrypcji."
  ],
+ "Total size: $0": [
+  null,
+  "Całkowity rozmiar: $0"
+ ],
  "Unregistered System": [
   null,
   "Niezarejestrowany system"
@@ -316,6 +364,10 @@ return plural;
  "View Registration Details": [
   null,
   "Wyświetl informacje o rejestracji"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  "Oczekiwanie na ukończenie pozostałych działań zarządzania oprogramowaniem"
  ],
  "You need to re-subscribe this system.": [
   null,

@@ -131,10 +131,6 @@ return plural;
   null,
   ""
  ],
- "Are you sure you want to delete this image?": [
-  null,
-  ""
- ],
  "Author": [
   null,
   "작성자"
@@ -279,17 +275,9 @@ return plural;
   null,
   "삭제"
  ],
- "Delete $0": [
-  null,
-  ""
- ],
  "Deleting a container will erase all data in it.": [
   null,
   "컨테이너를 삭제하시면, 내부의 모든 데이터도 함께 삭제됩니다. "
- ],
- "Deleting an image will delete it, but you can probably download it again if you need it later.  Unless this image has never been pushed to a repository, that is, in which case you probably can't download it again.": [
-  null,
-  "이미지를 삭제하시면 실제 파일이 삭제되지만, 필요할 때 다시 다운로드 하실 수 있습니다. 만일 이미지가 리포지터리에 한번도 푸쉬되지 않았다면, 다시 다운로드 하실 수 없습니다."
  ],
  "Desktop": [
   null,
@@ -759,6 +747,10 @@ return plural;
   null,
   ""
  ],
+ "Stop and delete": [
+  null,
+  ""
+ ],
  "Stopped": [
   null,
   "정지됨"
@@ -796,6 +788,10 @@ return plural;
   ""
  ],
  "The Docker storage pool cannot be managed on this system.": [
+  null,
+  ""
+ ],
+ "The following containers depend on this image and will become unusable.": [
   null,
   ""
  ],

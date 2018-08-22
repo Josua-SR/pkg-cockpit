@@ -75,9 +75,13 @@ return plural;
   null,
   "Параметри віртуального процесора $0"
  ],
+ "Add": [
+  null,
+  "Додати"
+ ],
  "Add Disk": [
   null,
-  ""
+  "Додати диск"
  ],
  "Additional": [
   null,
@@ -101,7 +105,7 @@ return plural;
  ],
  "Attach permanently": [
   null,
-  ""
+  "Долучити назавжди"
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -181,7 +185,7 @@ return plural;
  ],
  "Create New": [
   null,
-  ""
+  "Створити"
  ],
  "Create New VM": [
   null,
@@ -217,11 +221,11 @@ return plural;
  ],
  "Disk failed to be attached with following error: ": [
   null,
-  ""
+  "Не вдалося долучити диск. Повідомлення щодо помилки:"
  ],
  "Disk failed to be created with following error: ": [
   null,
-  ""
+  "Не вдалося створити диск. Повідомлення щодо помилки:"
  ],
  "Disks": [
   null,
@@ -255,9 +259,9 @@ return plural;
   null,
   "Примусово вимкнути"
  ],
- "Format: ": [
+ "Format": [
   null,
-  ""
+  "Формат"
  ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
@@ -371,17 +375,13 @@ return plural;
   null,
   "Назва не може складатися лише із порожніх символів"
  ],
- "Name: ": [
-  null,
-  ""
- ],
  "Networks": [
   null,
   "Мережі"
  ],
  "New Volume Name": [
   null,
-  ""
+  "Назва нового тому"
  ],
  "No VM is running or defined on this host": [
   null,
@@ -433,11 +433,11 @@ return plural;
  ],
  "Please enter new volume name": [
   null,
-  ""
+  "Будь ласка, введіть назву нового тому"
  ],
  "Please enter new volume size": [
   null,
-  ""
+  "Будь ласка, введіть розмір нового тому"
  ],
  "Please start the virtual machine to access its console.": [
   null,
@@ -450,10 +450,6 @@ return plural;
  "Pool": [
   null,
   "Буфер"
- ],
- "Pool: ": [
-  null,
-  ""
  ],
  "Port": [
   null,
@@ -531,9 +527,9 @@ return plural;
   null,
   "Вимкнути"
  ],
- "Size: ": [
+ "Size": [
   null,
-  ""
+  "Розмір"
  ],
  "Sockets": [
   null,
@@ -575,10 +571,6 @@ return plural;
   null,
   "Призначення"
  ],
- "Target: ": [
-  null,
-  ""
- ],
  "The VM crashed.": [
   null,
   "Віртуальна машина аварійно завершила роботу."
@@ -617,7 +609,7 @@ return plural;
  ],
  "The pool is empty": [
   null,
-  ""
+  "Буфер порожній"
  ],
  "Threads per cores": [
   null,
@@ -653,7 +645,7 @@ return plural;
  ],
  "Use Existing": [
   null,
-  ""
+  "Використати наявний"
  ],
  "Used": [
   null,
@@ -718,10 +710,6 @@ return plural;
  "Volume": [
   null,
   "Том"
- ],
- "Volume: ": [
-  null,
-  ""
  ],
  "Your browser does not support iframes.": [
   null,
@@ -805,11 +793,11 @@ return plural;
  ],
  "qcow2": [
   null,
-  ""
+  "qcow2"
  ],
  "raw": [
   null,
-  ""
+  "raw"
  ],
  "running": [
   null,

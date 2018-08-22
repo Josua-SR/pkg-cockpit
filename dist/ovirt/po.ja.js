@@ -79,6 +79,10 @@ return plural;
   null,
   "アクション"
  ],
+ "Add": [
+  null,
+  "追加する"
+ ],
  "Add Disk": [
   null,
   ""
@@ -315,9 +319,9 @@ return plural;
   null,
   "シャットダウンの強制"
  ],
- "Format: ": [
+ "Format": [
   null,
-  ""
+  "フォーマット"
  ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
@@ -422,10 +426,6 @@ return plural;
  "Name": [
   null,
   "名前"
- ],
- "Name: ": [
-  null,
-  ""
  ],
  "Networks": [
   null,
@@ -534,10 +534,6 @@ return plural;
  "Pool": [
   null,
   "プール"
- ],
- "Pool: ": [
-  null,
-  ""
  ],
  "Port": [
   null,
@@ -655,9 +651,9 @@ return plural;
   null,
   "シャットダウン"
  ],
- "Size: ": [
+ "Size": [
   null,
-  ""
+  "Size"
  ],
  "Sockets": [
   null,
@@ -706,10 +702,6 @@ return plural;
  "Target": [
   null,
   "ターゲット"
- ],
- "Target: ": [
-  null,
-  ""
  ],
  "Template": [
   null,
@@ -874,10 +866,6 @@ return plural;
  "Volume": [
   null,
   "音量"
- ],
- "Volume: ": [
-  null,
-  ""
  ],
  "Your browser does not support iframes.": [
   null,

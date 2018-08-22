@@ -67,9 +67,17 @@ return plural;
   "language": "ja",
   "x-generator": "Zanata 4.5.0"
  },
+ "$0 is not available from any repository.": [
+  null,
+  "$0 は、あらゆるリポジトリーから利用できません。"
+ ],
  "$0 update": [
   "$0 updates",
   "$0 更新"
+ ],
+ "$0 will be installed.": [
+  null,
+  "$0 がインストールされます。"
  ],
  "$1 security fix": [
   "$1 security fixes",
@@ -78,6 +86,10 @@ return plural;
  ", including $1 security fix": [
   ", including $1 security fixes",
   "セキュリティー修正を $1 個含む"
+ ],
+ "Additional packages:": [
+  null,
+  "追加のパッケージ:"
  ],
  "Apply all updates": [
   null,
@@ -115,6 +127,10 @@ return plural;
   null,
   "更新の確認"
  ],
+ "Checking installed software": [
+  null,
+  "インストールされたソフトウェアの確認"
+ ],
  "Details": [
   null,
   "詳細"
@@ -126,6 +142,10 @@ return plural;
  "Downloading": [
   null,
   "ダウンロード中"
+ ],
+ "Downloading $0": [
+  null,
+  "$0 をダウンロード中"
  ],
  "Errata:": [
   null,
@@ -139,6 +159,10 @@ return plural;
   null,
   "初期化中..."
  ],
+ "Install": [
+  null,
+  "インストール"
+ ],
  "Install All Updates": [
   null,
   "すべてのアップデートをインストール"
@@ -147,6 +171,10 @@ return plural;
   null,
   "セキュリティーアップデートのインストール"
  ],
+ "Install Software": [
+  null,
+  "ソフトウェアをインストール"
+ ],
  "Installed": [
   null,
   "インストール済み"
@@ -154,6 +182,10 @@ return plural;
  "Installing": [
   null,
   "インストール中"
+ ],
+ "Installing $0": [
+  null,
+  "$0 をインストール中"
  ],
  "Last checked: $0 ago": [
   null,
@@ -178,6 +210,10 @@ return plural;
  "Off": [
   null,
   "オフ"
+ ],
+ "Ok": [
+  null,
+  "OK"
  ],
  "On": [
   null,
@@ -206,6 +242,14 @@ return plural;
  "Register…": [
   null,
   "登録中…"
+ ],
+ "Removals:": [
+  null,
+  "削除:"
+ ],
+ "Removing $0": [
+  null,
+  "$0 を削除中"
  ],
  "Restart Now": [
   null,
@@ -267,6 +311,10 @@ return plural;
   null,
   "ソフトウェアアップデートを取得するには、このシステムを Red Hat に登録する必要があります。登録には、Red Hat カスタマーポータルまたはローカルのサブスクリプションサーバーを使用します。"
  ],
+ "Total size: $0": [
+  null,
+  "合計サイズ: $0"
+ ],
  "Unregistered System": [
   null,
   "未登録のシステム"
@@ -310,6 +358,10 @@ return plural;
  "View Registration Details": [
   null,
   "登録の詳細を表示"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  "他のソフトウェア管理オペレーションが終了するまで待機中"
  ],
  "You need to re-subscribe this system.": [
   null,

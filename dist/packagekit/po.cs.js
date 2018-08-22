@@ -67,11 +67,19 @@ return plural;
   "language": "cs",
   "x-generator": "Zanata 4.5.0"
  },
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
  "$0 update": [
   "$0 updates",
   "$0 aktualizace",
   "$0 aktualizace",
   "$0 aktualizací"
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
  ],
  "$1 security fix": [
   "$1 security fixes",
@@ -83,6 +91,10 @@ return plural;
   ", including $1 security fixes",
   "",
   "",
+  ""
+ ],
+ "Additional packages:": [
+  null,
   ""
  ],
  "Apply all updates": [
@@ -121,6 +133,10 @@ return plural;
   null,
   "Zkontrolovat aktualizace"
  ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
  "Details": [
   null,
   "Podrobnosti"
@@ -132,6 +148,10 @@ return plural;
  "Downloading": [
   null,
   "Stažení"
+ ],
+ "Downloading $0": [
+  null,
+  ""
  ],
  "Errata:": [
   null,
@@ -145,11 +165,19 @@ return plural;
   null,
   ""
  ],
+ "Install": [
+  null,
+  "Instalovat"
+ ],
  "Install All Updates": [
   null,
   ""
  ],
  "Install Security Updates": [
+  null,
+  ""
+ ],
+ "Install Software": [
   null,
   ""
  ],
@@ -160,6 +188,10 @@ return plural;
  "Installing": [
   null,
   "Instalování"
+ ],
+ "Installing $0": [
+  null,
+  ""
  ],
  "Last checked: $0 ago": [
   null,
@@ -184,6 +216,10 @@ return plural;
  "Off": [
   null,
   ""
+ ],
+ "Ok": [
+  null,
+  "Ok"
  ],
  "On": [
   null,
@@ -210,6 +246,14 @@ return plural;
   ""
  ],
  "Register…": [
+  null,
+  ""
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
   null,
   ""
  ],
@@ -273,6 +317,10 @@ return plural;
   null,
   ""
  ],
+ "Total size: $0": [
+  null,
+  ""
+ ],
  "Unregistered System": [
   null,
   ""
@@ -314,6 +362,10 @@ return plural;
   "Verze"
  ],
  "View Registration Details": [
+  null,
+  ""
+ ],
+ "Waiting for other software management operations to finish": [
   null,
   ""
  ],

@@ -146,7 +146,12 @@
                 throw ex;
             }
             if (ret === undefined) {
-                fatal(format(_("This web browser is too old to run Cockpit (missing $0)"), name));
+                if (window.console)
+                    console.warn(format(_("This web browser is too old to run Cockpit (missing $0)"), name));
+                id("login").style.display = 'none';
+                id("login-details").style.display = 'none';
+                id("unsupported-browser").style.display = 'block';
+                document.body.className += " brand-unsupported-browser";
                 return false;
             }
             return true;
@@ -1281,8 +1286,71 @@ label {
 body {
     color: #fff;
 }
+
 .login-fatal {
     font-size: 130%;
+}
+
+.unsupported-browser ul {
+    color: #aaa;
+    display: inline-block;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.unsupported-browser a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.login-browser-recommendations {
+    margin-top: 6rem;
+}
+
+@media screen and (max-width: 480px) {
+
+    .unsupported-browser .container > .row > .col-sm-12 {
+        position: static;
+    }
+
+}
+
+@media screen and (min-width: 481px) {
+
+    .brand-unsupported-browser #brand {
+        margin-left: -40px;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+    }
+
+    .unsupported-browser {
+        font-size: 140%;
+        /*
+        There's 80px on the left and 20px on the side for the login container.
+        We'll center with a workaround to pull the box (80px - 20px) / 2 = 30px left
+        */
+        margin-left: -30px;
+        text-align: center;
+    }
+
+    .unsupported-browser-heading {
+        font-size: 3rem;
+        left: 50%;
+        /* Pull the H2 half the width to the left to center */
+        margin: 0 0 0 -32rem;
+        position: absolute;
+        text-align: center;
+        top: -16rem;
+        width: 64rem;
+    }
+
+    .login-browser-recommendations h3 {
+        font-weight: normal;
+        margin-top: 0;
+    }
+
 }
 
 #login-wait-validating div {
@@ -1538,6 +1606,26 @@ body {
         <div class="col-sm-12" id="login-fatal" hidden>
           <span id="login-fatal-message"></span>
           <a id="login-again" translate hidden>Try Again</a>
+        </div>
+
+        <div class="unsupported-browser col-sm-12" id="unsupported-browser" hidden>
+          <h2 classname="unsupported-browser-heading" translate>A modern browser is required for security, reliability, and performance.</h2>
+          <div class="login-browser-recommendations">
+            <div class="col-sm-6">
+              <h3 translate>Download a new browser for free</h3>
+              <ul>
+                <li><a href="https://firefox.com/">Mozilla Firefox</a> / Linux, Windows, macOS</li>
+                <li><a href="https://google.com/chrome">Google Chrome</a> / Linux, Windows, macOS</li>
+              </ul>
+            </div>
+            <div class="col-sm-6">
+              <h3 translate>Or use a bundled browser</h3>
+              <ul>
+                <li><a href="https://microsoftedge.com/">Microsoft Edge</a> / Windows 10+</li>
+                <li><a href="https://apple.com/safari/">Apple Safari</a> / macOS</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
       </div><!--/.row-->

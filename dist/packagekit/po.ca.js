@@ -67,10 +67,18 @@ return plural;
   "language": "ca",
   "x-generator": "Zanata 4.5.0"
  },
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
  "$0 update": [
   "$0 updates",
   "$0 actualització",
   "$0 actualitzacions"
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
  ],
  "$1 security fix": [
   "$1 security fixes",
@@ -81,6 +89,10 @@ return plural;
   ", including $1 security fixes",
   ", incloent-hi $1 correcció de seguretat",
   ", incloent-hi $1 correccions de seguretat"
+ ],
+ "Additional packages:": [
+  null,
+  ""
  ],
  "Apply all updates": [
   null,
@@ -118,6 +130,10 @@ return plural;
   null,
   "Comprova si hi ha actualitzacions"
  ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
  "Details": [
   null,
   "Detalls"
@@ -129,6 +145,10 @@ return plural;
  "Downloading": [
   null,
   "S'està baixant"
+ ],
+ "Downloading $0": [
+  null,
+  ""
  ],
  "Errata:": [
   null,
@@ -142,6 +162,10 @@ return plural;
   null,
   "S'està inicialitzant..."
  ],
+ "Install": [
+  null,
+  "Instal·la"
+ ],
  "Install All Updates": [
   null,
   "Instal·la totes les actualitzacions"
@@ -150,6 +174,10 @@ return plural;
   null,
   "Instal·la les actualitzacions de seguretat"
  ],
+ "Install Software": [
+  null,
+  ""
+ ],
  "Installed": [
   null,
   "Instal·lat"
@@ -157,6 +185,10 @@ return plural;
  "Installing": [
   null,
   "S'està instal·lant"
+ ],
+ "Installing $0": [
+  null,
+  ""
  ],
  "Last checked: $0 ago": [
   null,
@@ -181,6 +213,10 @@ return plural;
  "Off": [
   null,
   "Off"
+ ],
+ "Ok": [
+  null,
+  "D'acord"
  ],
  "On": [
   null,
@@ -209,6 +245,14 @@ return plural;
  "Register…": [
   null,
   "Registra..."
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
+  null,
+  ""
  ],
  "Restart Now": [
   null,
@@ -270,6 +314,10 @@ return plural;
   null,
   "Per obtenir actualitzacions de programari, aquest sistema ha d'estar registrat a Red Hat, ja sigui utilitzant Red Hat Customer Portal o un servidor de subscripció local."
  ],
+ "Total size: $0": [
+  null,
+  ""
+ ],
  "Unregistered System": [
   null,
   "Sistema sense registrar"
@@ -313,6 +361,10 @@ return plural;
  "View Registration Details": [
   null,
   "Mostra els detalls del registrament"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "You need to re-subscribe this system.": [
   null,

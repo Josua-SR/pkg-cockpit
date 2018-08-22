@@ -87,7 +87,6 @@ label{display:inline-block;margin-bottom:5px}
 @media (min-width:768px){.login-pf #badge{float:right;margin-right:64px;margin-top:50px}
 .login-pf .container{bottom:13%;padding-left:80px;position:absolute;width:100%}
 }
-.caret,.server-box,.spinner{position:relative}
 .login-pf .container .details p:first-child{border-top:1px solid #474747;padding-top:25px;margin-top:25px}
 @media (min-width:768px){.login-pf .container .login-area{border-right:1px solid #474747}
 .login-pf .container .details{padding-left:40px}
@@ -102,14 +101,25 @@ to{-webkit-transform:rotate(359deg)}
 @keyframes rotation{from{transform:rotate(0)}
 to{transform:rotate(359deg)}
 }
-.spinner{-webkit-animation:rotation .6s infinite linear;animation:rotation .6s infinite linear;border-bottom:4px solid rgba(0,0,0,.25);border-left:4px solid rgba(0,0,0,.25);border-right:4px solid rgba(0,0,0,.25);border-radius:100%;border-top:4px solid rgba(0,0,0,.75);height:24px;margin:4px 0 0;width:24px}
+.spinner{-webkit-animation:rotation .6s infinite linear;animation:rotation .6s infinite linear;border-bottom:4px solid rgba(0,0,0,.25);border-left:4px solid rgba(0,0,0,.25);border-right:4px solid rgba(0,0,0,.25);border-radius:100%;border-top:4px solid rgba(0,0,0,.75);height:24px;margin:4px 0 0;position:relative;width:24px}
 .alert{padding:7px 11px;margin-bottom:20px;border:2px solid transparent;border-radius:1px}
 .alert-danger{background:0 0;border-color:#c00;font-weight:700}
 #option-group{margin-left:-20px;margin-right:-20px}
 #option-group a{color:inherit}
 #server-group:before{clear:both;margin-top:5px}
-.cross,.inline .container .help-block{color:#000}
 .login-fatal{font-size:130%}
+.unsupported-browser ul{color:#aaa;display:inline-block;margin:0 auto;text-align:left}
+.unsupported-browser a{color:#fff;font-weight:700;text-decoration:underline}
+.cross,.inline .container .help-block{color:#000}
+.login-browser-recommendations{margin-top:6rem}
+@media screen and (max-width:480px){.unsupported-browser .container>.row>.col-sm-12{position:static}
+}
+@media screen and (min-width:481px){.brand-unsupported-browser #brand{margin-left:-40px;position:absolute;text-align:center;width:100%}
+.unsupported-browser{font-size:140%;margin-left:-30px;text-align:center}
+.unsupported-browser-heading{font-size:3rem;left:50%;margin:0 0 0 -32rem;position:absolute;text-align:center;top:-16rem;width:64rem}
+.login-browser-recommendations h3{font-weight:400;margin-top:0}
+}
+.caret,.server-box{position:relative}
 #login-wait-validating div{float:left}
 .conversation-prompt{white-space:normal;word-wrap:break-word}
 .control-label{white-space:nowrap;font-size:13px}

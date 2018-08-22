@@ -79,6 +79,10 @@ return plural;
   null,
   ""
  ],
+ "Add": [
+  null,
+  "Dodaj"
+ ],
  "Add Disk": [
   null,
   ""
@@ -315,7 +319,7 @@ return plural;
   null,
   ""
  ],
- "Format: ": [
+ "Format": [
   null,
   ""
  ],
@@ -423,10 +427,6 @@ return plural;
   null,
   "Naziv"
  ],
- "Name: ": [
-  null,
-  ""
- ],
  "Networks": [
   null,
   ""
@@ -532,10 +532,6 @@ return plural;
   ""
  ],
  "Pool": [
-  null,
-  ""
- ],
- "Pool: ": [
   null,
   ""
  ],
@@ -655,9 +651,9 @@ return plural;
   null,
   ""
  ],
- "Size: ": [
+ "Size": [
   null,
-  ""
+  "Veličina"
  ],
  "Sockets": [
   null,
@@ -704,10 +700,6 @@ return plural;
   ""
  ],
  "Target": [
-  null,
-  ""
- ],
- "Target: ": [
   null,
   ""
  ],
@@ -872,10 +864,6 @@ return plural;
   ""
  ],
  "Volume": [
-  null,
-  ""
- ],
- "Volume: ": [
   null,
   ""
  ],

@@ -1433,6 +1433,10 @@ return plural;
   null,
   "Servisler"
  ],
+ "Show all VMs": [
+  null,
+  ""
+ ],
  "Show all image streams": [
   null,
   ""
@@ -1666,6 +1670,14 @@ return plural;
   "Kullanıcı Adı"
  ],
  "Users": [
+  null,
+  ""
+ ],
+ "VM": [
+  null,
+  ""
+ ],
+ "VM $0:$1 does not exist.": [
   null,
   ""
  ],

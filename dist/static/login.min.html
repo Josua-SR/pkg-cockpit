@@ -44,20 +44,20 @@
     }
     var c = l;
     var d, f, p, w;
-    var v = /[?&]?([^=]+)=([^&]*)/g;
-    var g = null;
-    function m(e) {
+    var g = /[?&]?([^=]+)=([^&]*)/g;
+    var v = null;
+    function y(e) {
         e = e.split("+").join(" ");
         var t = {};
         var n;
         for (;;) {
-            n = v.exec(e);
+            n = g.exec(e);
             if (!n) break;
             t[decodeURIComponent(n[1])] = decodeURIComponent(n[2]);
         }
         return t;
     }
-    function y(e) {
+    function m(e) {
         e = e.trim();
         if (e[0] == '"') e = e.substr(1, e.length - 2);
         return e;
@@ -71,8 +71,8 @@
         if (window.console) e.warn("fatal:", t);
         h("login-again").style.display = "none";
         h("login-wait-validating").style.display = "none";
-        if (g) {
-            h("login-again").href = g;
+        if (v) {
+            h("login-again").href = v;
             h("login-again").style.display = "block";
         }
         h("login").style.display = "none";
@@ -96,21 +96,25 @@
         }
     }
     function x() {
-        function e(e, t) {
-            var n;
+        function t(t, n) {
+            var o;
             try {
-                n = t[e];
-            } catch (o) {
-                b(a(c("The web browser configuration prevents Cockpit from running (inaccessible $0)"), e));
-                throw o;
+                o = n[t];
+            } catch (i) {
+                b(a(c("The web browser configuration prevents Cockpit from running (inaccessible $0)"), t));
+                throw i;
             }
-            if (n === undefined) {
-                b(a(c("This web browser is too old to run Cockpit (missing $0)"), e));
+            if (o === undefined) {
+                if (window.console) e.warn(a(c("This web browser is too old to run Cockpit (missing $0)"), t));
+                h("login").style.display = "none";
+                h("login-details").style.display = "none";
+                h("unsupported-browser").style.display = "block";
+                document.body.className += " brand-unsupported-browser";
                 return false;
             }
             return true;
         }
-        return ("MozWebSocket" in window || e("WebSocket", window)) && e("XMLHttpRequest", window) && e("sessionStorage", window) && e("JSON", window) && e("defineProperty", Object) && e("console", window) && e("pushState", window.history) && e("textContent", document);
+        return ("MozWebSocket" in window || t("WebSocket", window)) && t("XMLHttpRequest", window) && t("sessionStorage", window) && t("JSON", window) && t("defineProperty", Object) && t("console", window) && t("pushState", window.history) && t("textContent", document);
     }
     function T(e) {
         return e.replace(/^\s+|\s+$/g, "");
@@ -223,15 +227,15 @@
     }
     function E() {
         var e = window.location.href.split("#", 2);
-        g = r.URL;
-        if (r.URL.indexOf("?") > -1) g += "&"; else g += "?";
-        g += "redirect_uri=" + encodeURIComponent(e[0]);
+        v = r.URL;
+        if (r.URL.indexOf("?") > -1) v += "&"; else v += "?";
+        v += "redirect_uri=" + encodeURIComponent(e[0]);
     }
     function L() {
         var e = document.createElement("a");
         if (!r.URL) return b(c("Cockpit authentication is configured incorrectly."));
-        var t = m(window.location.search);
-        if (!window.location.search && window.location.hash) t = m(window.location.hash.slice(1));
+        var t = y(window.location.search);
+        if (!window.location.search && window.location.hash) t = y(window.location.hash.slice(1));
         var n, o, i;
         E();
         if (t[r.TokenParam]) {
@@ -259,7 +263,7 @@
             b(t[r.ErrorParam]);
         } else {
             window.sessionStorage.setItem("login-wanted", window.location.href);
-            window.location = g;
+            window.location = v;
         }
     }
     function A() {
@@ -649,7 +653,6 @@ label{display:inline-block;margin-bottom:5px}
 @media (min-width:768px){.login-pf #badge{float:right;margin-right:64px;margin-top:50px}
 .login-pf .container{bottom:13%;padding-left:80px;position:absolute;width:100%}
 }
-.caret,.server-box,.spinner{position:relative}
 .login-pf .container .details p:first-child{border-top:1px solid #474747;padding-top:25px;margin-top:25px}
 @media (min-width:768px){.login-pf .container .login-area{border-right:1px solid #474747}
 .login-pf .container .details{padding-left:40px}
@@ -664,14 +667,25 @@ to{-webkit-transform:rotate(359deg)}
 @keyframes rotation{from{transform:rotate(0)}
 to{transform:rotate(359deg)}
 }
-.spinner{-webkit-animation:rotation .6s infinite linear;animation:rotation .6s infinite linear;border-bottom:4px solid rgba(0,0,0,.25);border-left:4px solid rgba(0,0,0,.25);border-right:4px solid rgba(0,0,0,.25);border-radius:100%;border-top:4px solid rgba(0,0,0,.75);height:24px;margin:4px 0 0;width:24px}
+.spinner{-webkit-animation:rotation .6s infinite linear;animation:rotation .6s infinite linear;border-bottom:4px solid rgba(0,0,0,.25);border-left:4px solid rgba(0,0,0,.25);border-right:4px solid rgba(0,0,0,.25);border-radius:100%;border-top:4px solid rgba(0,0,0,.75);height:24px;margin:4px 0 0;position:relative;width:24px}
 .alert{padding:7px 11px;margin-bottom:20px;border:2px solid transparent;border-radius:1px}
 .alert-danger{background:0 0;border-color:#c00;font-weight:700}
 #option-group{margin-left:-20px;margin-right:-20px}
 #option-group a{color:inherit}
 #server-group:before{clear:both;margin-top:5px}
-.cross,.inline .container .help-block{color:#000}
 .login-fatal{font-size:130%}
+.unsupported-browser ul{color:#aaa;display:inline-block;margin:0 auto;text-align:left}
+.unsupported-browser a{color:#fff;font-weight:700;text-decoration:underline}
+.cross,.inline .container .help-block{color:#000}
+.login-browser-recommendations{margin-top:6rem}
+@media screen and (max-width:480px){.unsupported-browser .container>.row>.col-sm-12{position:static}
+}
+@media screen and (min-width:481px){.brand-unsupported-browser #brand{margin-left:-40px;position:absolute;text-align:center;width:100%}
+.unsupported-browser{font-size:140%;margin-left:-30px;text-align:center}
+.unsupported-browser-heading{font-size:3rem;left:50%;margin:0 0 0 -32rem;position:absolute;text-align:center;top:-16rem;width:64rem}
+.login-browser-recommendations h3{font-weight:400;margin-top:0}
+}
+.caret,.server-box{position:relative}
 #login-wait-validating div{float:left}
 .conversation-prompt{white-space:normal;word-wrap:break-word}
 .control-label{white-space:nowrap;font-size:13px}
@@ -800,6 +814,26 @@ to{transform:rotate(359deg)}
         <div class="col-sm-12" id="login-fatal" hidden>
           <span id="login-fatal-message"></span>
           <a id="login-again" translate hidden>Try Again</a>
+        </div>
+
+        <div class="unsupported-browser col-sm-12" id="unsupported-browser" hidden>
+          <h2 classname="unsupported-browser-heading" translate>A modern browser is required for security, reliability, and performance.</h2>
+          <div class="login-browser-recommendations">
+            <div class="col-sm-6">
+              <h3 translate>Download a new browser for free</h3>
+              <ul>
+                <li><a href="https://firefox.com/">Mozilla Firefox</a> / Linux, Windows, macOS</li>
+                <li><a href="https://google.com/chrome">Google Chrome</a> / Linux, Windows, macOS</li>
+              </ul>
+            </div>
+            <div class="col-sm-6">
+              <h3 translate>Or use a bundled browser</h3>
+              <ul>
+                <li><a href="https://microsoftedge.com/">Microsoft Edge</a> / Windows 10+</li>
+                <li><a href="https://apple.com/safari/">Apple Safari</a> / macOS</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
       </div><!--/.row-->

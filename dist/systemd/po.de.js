@@ -319,7 +319,7 @@ return plural;
  ],
  "Asset Tag": [
   null,
-  ""
+  "Kennzeichen"
  ],
  "At specific time": [
   null,
@@ -395,7 +395,7 @@ return plural;
  ],
  "Change Host Name": [
   null,
-  "Hostnamen ändern"
+  "Rechnernamen ändern"
  ],
  "Change System Time": [
   null,
@@ -459,7 +459,7 @@ return plural;
  ],
  "Create Timers": [
   null,
-  "Erstellen"
+  "Timer erstellen"
  ],
  "Critical and above": [
   null,
@@ -499,7 +499,7 @@ return plural;
  ],
  "Disk I/O": [
   null,
-  "Datenträger ist OK"
+  "Festplatten-E/A"
  ],
  "Docking Station": [
   null,
@@ -595,11 +595,11 @@ return plural;
  ],
  "Host Name": [
   null,
-  ""
+  "Rechnername"
  ],
  "Hour : Minute": [
   null,
-  "1 Minute"
+  "Stunde : Minute"
  ],
  "Hour needs to be a number between 0-23": [
   null,
@@ -607,7 +607,7 @@ return plural;
  ],
  "Hours": [
   null,
-  "6 Stunden"
+  "Stunde"
  ],
  "I/O Wait": [
   null,
@@ -727,11 +727,11 @@ return plural;
  ],
  "Machine ID": [
   null,
-  ""
+  "Maschinen-ID"
  ],
  "Machine SSH Key Fingerprints": [
   null,
-  ""
+  "SSH-Fingerabdrücke auf diesem Rechner"
  ],
  "Main Server Chassis": [
   null,
@@ -799,7 +799,7 @@ return plural;
  ],
  "Network Traffic": [
   null,
-  ""
+  "Netzwerk-Verkehr"
  ],
  "Next Run": [
   null,
@@ -863,7 +863,7 @@ return plural;
  ],
  "Operating System": [
   null,
-  ""
+  "Betriebssystem"
  ],
  "Other": [
   null,
@@ -887,7 +887,7 @@ return plural;
  ],
  "Performance Profile": [
   null,
-  ""
+  "Leistungsprofil"
  ],
  "Peripheral Chassis": [
   null,
@@ -915,7 +915,7 @@ return plural;
  ],
  "Pretty Host Name": [
   null,
-  ""
+  "Anzeige-Rechnername"
  ],
  "Problem details": [
   null,
@@ -939,7 +939,7 @@ return plural;
  ],
  "Real Host Name": [
   null,
-  ""
+  "Echter Rechnername"
  ],
  "Real host name can only contain lower-case characters, digits, dashes, and periods (with populated subdomains)": [
   null,
@@ -1055,7 +1055,7 @@ return plural;
  ],
  "Secure Shell Keys": [
   null,
-  ""
+  "Secure Shell-Schlüssel"
  ],
  "Security Updates Available": [
   null,
@@ -1075,7 +1075,7 @@ return plural;
  ],
  "Set Host name": [
   null,
-  "Hostname festlegen"
+  "Rechnernamen festlegen"
  ],
  "Set Time": [
   null,
@@ -1087,7 +1087,7 @@ return plural;
  ],
  "Show fingerprints": [
   null,
-  ""
+  "Fingerabdrücke anzeigen"
  ],
  "Shut Down": [
   null,
@@ -1135,7 +1135,7 @@ return plural;
  ],
  "Store Performance Data": [
   null,
-  ""
+  "Leistungs-Daten speichern"
  ],
  "Sub Chassis": [
   null,
@@ -1183,7 +1183,7 @@ return plural;
  ],
  "System Up To Date": [
   null,
-  ""
+  "System ist auf aktuellem Stand"
  ],
  "Tablet": [
   null,
@@ -1291,8 +1291,8 @@ return plural;
  ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",
-  "",
-  ""
+  "Verwendung von $0 CPU-Kern",
+  "Verwendung von $0 CPU-Kernen"
  ],
  "Used": [
   null,
@@ -1352,8 +1352,8 @@ return plural;
  ],
  "of $0 CPU core": [
   "of $0 CPU cores",
-  "",
-  ""
+  "von $0 CPU-Kern",
+  "von $0 CPU-Kernen"
  ],
  "unknown": [
   null,

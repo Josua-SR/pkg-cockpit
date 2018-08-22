@@ -1345,11 +1345,11 @@ return plural;
  ],
  "Select Member": [
   null,
-  ""
+  "Wybierz członka"
  ],
  "Select Role": [
   null,
-  ""
+  "Wybierz rolę"
  ],
  "Select an object to see more details.": [
   null,
@@ -1434,6 +1434,10 @@ return plural;
  "Show all Services": [
   null,
   "Wyświetl wszystkie usługi"
+ ],
+ "Show all VMs": [
+  null,
+  ""
  ],
  "Show all image streams": [
   null,
@@ -1670,6 +1674,14 @@ return plural;
  "Users": [
   null,
   "Użytkownicy"
+ ],
+ "VM": [
+  null,
+  ""
+ ],
+ "VM $0:$1 does not exist.": [
+  null,
+  ""
  ],
  "VM DELETE failed.": [
   null,

@@ -131,10 +131,6 @@ return plural;
   null,
   "通常"
  ],
- "Are you sure you want to delete this image?": [
-  null,
-  "确认想要删除该镜像？"
- ],
  "Author": [
   null,
   "作者"
@@ -279,17 +275,9 @@ return plural;
   null,
   "删除"
  ],
- "Delete $0": [
-  null,
-  "删除 $0"
- ],
  "Deleting a container will erase all data in it.": [
   null,
   "删除容器将清除其中的所有数据。"
- ],
- "Deleting an image will delete it, but you can probably download it again if you need it later.  Unless this image has never been pushed to a repository, that is, in which case you probably can't download it again.": [
-  null,
-  "这将删除镜像, 如果以后需要, 可以重新下载.除非该镜像未推送至镜像库, 镜像库未包含的镜像, 无法再次下载."
  ],
  "Desktop": [
   null,
@@ -759,6 +747,10 @@ return plural;
   null,
   "停止"
  ],
+ "Stop and delete": [
+  null,
+  ""
+ ],
  "Stopped": [
   null,
   "已停止"
@@ -798,6 +790,10 @@ return plural;
  "The Docker storage pool cannot be managed on this system.": [
   null,
   "该系统上容器存储池不能被管理。"
+ ],
+ "The following containers depend on this image and will become unusable.": [
+  null,
+  ""
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,

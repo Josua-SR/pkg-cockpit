@@ -67,7 +67,15 @@ return plural;
   "language": "da",
   "x-generator": "Zanata 3.8.4"
  },
+ "Cancel": [
+  null,
+  "Annullér"
+ ],
  "Off": [
+  null,
+  ""
+ ],
+ "Ok": [
   null,
   ""
  ],

@@ -107,10 +107,6 @@ return plural;
   null,
   "Cancelar"
  ],
- "Cannot join a domain because realmd is not available on this system": [
-  null,
-  "Não é possível ingressar em um domínio porque o realmd não está disponível neste sistema"
- ],
  "Checking installed software": [
   null,
   "Verificando o software instalado"

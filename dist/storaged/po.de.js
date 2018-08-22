@@ -130,7 +130,7 @@ return plural;
  ],
  "$0 of $1": [
   null,
-  "$0 von $01"
+  "$0 von $1"
  ],
  "$0 used of $1 ($2 saved)": [
   null,
@@ -1332,7 +1332,7 @@ return plural;
  ],
  "Storage": [
   null,
-  ""
+  "Speicher"
  ],
  "Storage Logs": [
   null,

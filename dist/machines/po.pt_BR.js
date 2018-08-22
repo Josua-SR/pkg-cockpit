@@ -75,6 +75,10 @@ return plural;
   null,
   "$0 vCPU Detalhes"
  ],
+ "Add": [
+  null,
+  "Adicionar"
+ ],
  "Add Disk": [
   null,
   ""
@@ -255,9 +259,9 @@ return plural;
   null,
   "Forçar Desligamento"
  ],
- "Format: ": [
+ "Format": [
   null,
-  ""
+  "Formate"
  ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
@@ -371,10 +375,6 @@ return plural;
   null,
   "O nome não deve conter apenas caracteres vazios"
  ],
- "Name: ": [
-  null,
-  ""
- ],
  "Networks": [
   null,
   "Networks"
@@ -450,10 +450,6 @@ return plural;
  "Pool": [
   null,
   "Pool"
- ],
- "Pool: ": [
-  null,
-  ""
  ],
  "Port": [
   null,
@@ -531,9 +527,9 @@ return plural;
   null,
   "Encerrar"
  ],
- "Size: ": [
+ "Size": [
   null,
-  ""
+  "Tamanho"
  ],
  "Sockets": [
   null,
@@ -574,10 +570,6 @@ return plural;
  "Target": [
   null,
   "Alvo"
- ],
- "Target: ": [
-  null,
-  ""
  ],
  "The VM crashed.": [
   null,
@@ -718,10 +710,6 @@ return plural;
  "Volume": [
   null,
   "Volume"
- ],
- "Volume: ": [
-  null,
-  ""
  ],
  "Your browser does not support iframes.": [
   null,

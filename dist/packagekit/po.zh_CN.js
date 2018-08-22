@@ -67,9 +67,17 @@ return plural;
   "language": "zh_CN",
   "x-generator": "Zanata 4.5.0"
  },
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
  "$0 update": [
   "$0 updates",
   "$0 可更新"
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
  ],
  "$1 security fix": [
   "$1 security fixes",
@@ -78,6 +86,10 @@ return plural;
  ", including $1 security fix": [
   ", including $1 security fixes",
   "， 包括 $1 安全性修复"
+ ],
+ "Additional packages:": [
+  null,
+  ""
  ],
  "Apply all updates": [
   null,
@@ -115,6 +127,10 @@ return plural;
   null,
   "检查更新"
  ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
  "Details": [
   null,
   "详情"
@@ -126,6 +142,10 @@ return plural;
  "Downloading": [
   null,
   "正在下载"
+ ],
+ "Downloading $0": [
+  null,
+  ""
  ],
  "Errata:": [
   null,
@@ -139,6 +159,10 @@ return plural;
   null,
   "正在初始化中..."
  ],
+ "Install": [
+  null,
+  "安装"
+ ],
  "Install All Updates": [
   null,
   "安装所有更新"
@@ -147,6 +171,10 @@ return plural;
   null,
   "安装安全更新"
  ],
+ "Install Software": [
+  null,
+  ""
+ ],
  "Installed": [
   null,
   "已安装"
@@ -154,6 +182,10 @@ return plural;
  "Installing": [
   null,
   "正在安装"
+ ],
+ "Installing $0": [
+  null,
+  ""
  ],
  "Last checked: $0 ago": [
   null,
@@ -178,6 +210,10 @@ return plural;
  "Off": [
   null,
   "关"
+ ],
+ "Ok": [
+  null,
+  "确认"
  ],
  "On": [
   null,
@@ -206,6 +242,14 @@ return plural;
  "Register…": [
   null,
   "注册…"
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
+  null,
+  ""
  ],
  "Restart Now": [
   null,
@@ -267,6 +311,10 @@ return plural;
   null,
   "为了获取软件更新，该系统需要注册到红帽，使用红帽消费者门户或一个本地的订阅服务器。"
  ],
+ "Total size: $0": [
+  null,
+  ""
+ ],
  "Unregistered System": [
   null,
   "未注册的系统"
@@ -310,6 +358,10 @@ return plural;
  "View Registration Details": [
   null,
   "查看注册详情"
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
  ],
  "You need to re-subscribe this system.": [
   null,

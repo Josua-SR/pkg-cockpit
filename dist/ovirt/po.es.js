@@ -79,6 +79,10 @@ return plural;
   null,
   "Acción"
  ],
+ "Add": [
+  null,
+  "Añadir"
+ ],
  "Add Disk": [
   null,
   ""
@@ -315,9 +319,9 @@ return plural;
   null,
   "Forzar Apagado"
  ],
- "Format: ": [
+ "Format": [
   null,
-  ""
+  "Formato"
  ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
@@ -422,10 +426,6 @@ return plural;
  "Name": [
   null,
   "Nombre"
- ],
- "Name: ": [
-  null,
-  ""
  ],
  "Networks": [
   null,
@@ -534,10 +534,6 @@ return plural;
  "Pool": [
   null,
   "Grupo"
- ],
- "Pool: ": [
-  null,
-  ""
  ],
  "Port": [
   null,
@@ -655,9 +651,9 @@ return plural;
   null,
   "Apagar"
  ],
- "Size: ": [
+ "Size": [
   null,
-  ""
+  "Tamaño"
  ],
  "Sockets": [
   null,
@@ -706,10 +702,6 @@ return plural;
  "Target": [
   null,
   "Objetivo"
- ],
- "Target: ": [
-  null,
-  ""
  ],
  "Template": [
   null,
@@ -874,10 +866,6 @@ return plural;
  "Volume": [
   null,
   "Volumen"
- ],
- "Volume: ": [
-  null,
-  ""
  ],
  "Your browser does not support iframes.": [
   null,

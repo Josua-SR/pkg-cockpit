@@ -727,7 +727,7 @@ return plural;
  ],
  "Install VDO support": [
   null,
-  ""
+  "Встановити підтримку VDO"
  ],
  "Installing $0": [
   null,
@@ -1583,7 +1583,7 @@ return plural;
  ],
  "VDO support not installed": [
   null,
-  ""
+  "Підтримку VDO не встановлено"
  ],
  "VFAT - Compatible with all systems and devices": [
   null,

@@ -75,9 +75,13 @@ return plural;
   null,
   "Informacje o wirtualnym procesorze $0"
  ],
+ "Add": [
+  null,
+  "Dodaj"
+ ],
  "Add Disk": [
   null,
-  ""
+  "Dodaj dysk"
  ],
  "Additional": [
   null,
@@ -101,7 +105,7 @@ return plural;
  ],
  "Attach permanently": [
   null,
-  ""
+  "Podłącz na stałe"
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -181,7 +185,7 @@ return plural;
  ],
  "Create New": [
   null,
-  ""
+  "Utwórz nowy"
  ],
  "Create New VM": [
   null,
@@ -217,11 +221,11 @@ return plural;
  ],
  "Disk failed to be attached with following error: ": [
   null,
-  ""
+  "Podłączenie dysku się nie powiodło: "
  ],
  "Disk failed to be created with following error: ": [
   null,
-  ""
+  "Utworzenie dysku się nie powiodło: "
  ],
  "Disks": [
   null,
@@ -255,9 +259,9 @@ return plural;
   null,
   "Wymuś wyłączenie"
  ],
- "Format: ": [
+ "Format": [
   null,
-  ""
+  "Sformatuj"
  ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
@@ -371,17 +375,13 @@ return plural;
   null,
   "Nazwa nie może składać się tylko z pustych znaków"
  ],
- "Name: ": [
-  null,
-  ""
- ],
  "Networks": [
   null,
   "Sieci"
  ],
  "New Volume Name": [
   null,
-  ""
+  "Nazwa nowego woluminu"
  ],
  "No VM is running or defined on this host": [
   null,
@@ -433,11 +433,11 @@ return plural;
  ],
  "Please enter new volume name": [
   null,
-  ""
+  "Proszę podać nazwę nowego woluminu"
  ],
  "Please enter new volume size": [
   null,
-  ""
+  "Proszę podać rozmiar nowego woluminu"
  ],
  "Please start the virtual machine to access its console.": [
   null,
@@ -450,10 +450,6 @@ return plural;
  "Pool": [
   null,
   "Pula"
- ],
- "Pool: ": [
-  null,
-  ""
  ],
  "Port": [
   null,
@@ -531,9 +527,9 @@ return plural;
   null,
   "Wyłącz"
  ],
- "Size: ": [
+ "Size": [
   null,
-  ""
+  "Rozmiar"
  ],
  "Sockets": [
   null,
@@ -575,10 +571,6 @@ return plural;
   null,
   "Cel"
  ],
- "Target: ": [
-  null,
-  ""
- ],
  "The VM crashed.": [
   null,
   "Maszyna wirtualna uległa awarii."
@@ -617,7 +609,7 @@ return plural;
  ],
  "The pool is empty": [
   null,
-  ""
+  "Pula jest pusta"
  ],
  "Threads per cores": [
   null,
@@ -653,7 +645,7 @@ return plural;
  ],
  "Use Existing": [
   null,
-  ""
+  "Użyj istniejącej"
  ],
  "Used": [
   null,
@@ -718,10 +710,6 @@ return plural;
  "Volume": [
   null,
   "Wolumin"
- ],
- "Volume: ": [
-  null,
-  ""
  ],
  "Your browser does not support iframes.": [
   null,
@@ -805,11 +793,11 @@ return plural;
  ],
  "qcow2": [
   null,
-  ""
+  "qcow2"
  ],
  "raw": [
   null,
-  ""
+  "surowy"
  ],
  "running": [
   null,
