@@ -1431,6 +1431,10 @@ return plural;
   null,
   ""
  ],
+ "Show all VMs": [
+  null,
+  ""
+ ],
  "Show all image streams": [
   null,
   ""
@@ -1664,6 +1668,14 @@ return plural;
   "사용자 이름"
  ],
  "Users": [
+  null,
+  ""
+ ],
+ "VM": [
+  null,
+  ""
+ ],
+ "VM $0:$1 does not exist.": [
   null,
   ""
  ],

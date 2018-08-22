@@ -137,10 +137,6 @@ return plural;
   null,
   ""
  ],
- "Are you sure you want to delete this image?": [
-  null,
-  ""
- ],
  "Author": [
   null,
   "Autor"
@@ -199,8 +195,8 @@ return plural;
  ],
  "Combined usage of $0 CPU core": [
   "Combined usage of $0 CPU cores",
-  "",
-  ""
+  "Kombinierte Verwendung von $0 CPU-Kern",
+  "Kombinierte Verwendung von $0 CPU-Kernen"
  ],
  "Command": [
   null,
@@ -286,17 +282,9 @@ return plural;
   null,
   "Löschen"
  ],
- "Delete $0": [
-  null,
-  "$0 löschen"
- ],
  "Deleting a container will erase all data in it.": [
   null,
   "Das Löschen eines Containers entfernt alle sich darin befindlichen Daten."
- ],
- "Deleting an image will delete it, but you can probably download it again if you need it later.  Unless this image has never been pushed to a repository, that is, in which case you probably can't download it again.": [
-  null,
-  ""
  ],
  "Desktop": [
   null,
@@ -767,13 +755,17 @@ return plural;
   null,
   "Stoppen"
  ],
+ "Stop and delete": [
+  null,
+  ""
+ ],
  "Stopped": [
   null,
   "Angehalten"
  ],
  "Storage": [
   null,
-  ""
+  "Speicher"
  ],
  "Storage pool": [
   null,
@@ -806,6 +798,10 @@ return plural;
  "The Docker storage pool cannot be managed on this system.": [
   null,
   "Der Docker Storage Pool kann auf diesem System nicht verwaltet werden."
+ ],
+ "The following containers depend on this image and will become unusable.": [
+  null,
+  ""
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,

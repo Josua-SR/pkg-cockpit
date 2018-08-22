@@ -67,9 +67,17 @@ return plural;
   "language": "fr",
   "x-generator": "Zanata 4.5.0"
  },
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
  "$0 update": [
   "$0 updates",
   "",
+  ""
+ ],
+ "$0 will be installed.": [
+  null,
   ""
  ],
  "$1 security fix": [
@@ -80,6 +88,10 @@ return plural;
  ", including $1 security fix": [
   ", including $1 security fixes",
   "",
+  ""
+ ],
+ "Additional packages:": [
+  null,
   ""
  ],
  "Apply all updates": [
@@ -118,6 +130,10 @@ return plural;
   null,
   ""
  ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
  "Details": [
   null,
   ""
@@ -127,6 +143,10 @@ return plural;
   ""
  ],
  "Downloading": [
+  null,
+  ""
+ ],
+ "Downloading $0": [
   null,
   ""
  ],
@@ -142,6 +162,10 @@ return plural;
   null,
   ""
  ],
+ "Install": [
+  null,
+  ""
+ ],
  "Install All Updates": [
   null,
   ""
@@ -150,11 +174,19 @@ return plural;
   null,
   ""
  ],
+ "Install Software": [
+  null,
+  ""
+ ],
  "Installed": [
   null,
   ""
  ],
  "Installing": [
+  null,
+  ""
+ ],
+ "Installing $0": [
   null,
   ""
  ],
@@ -182,6 +214,10 @@ return plural;
   null,
   "Éteint"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "On": [
   null,
   "Allumé"
@@ -207,6 +243,14 @@ return plural;
   ""
  ],
  "Register…": [
+  null,
+  ""
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
   null,
   ""
  ],
@@ -270,6 +314,10 @@ return plural;
   null,
   ""
  ],
+ "Total size: $0": [
+  null,
+  ""
+ ],
  "Unregistered System": [
   null,
   ""
@@ -311,6 +359,10 @@ return plural;
   "Version"
  ],
  "View Registration Details": [
+  null,
+  ""
+ ],
+ "Waiting for other software management operations to finish": [
   null,
   ""
  ],

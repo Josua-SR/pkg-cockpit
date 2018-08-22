@@ -143,10 +143,6 @@ return plural;
   null,
   "Zawsze"
  ],
- "Are you sure you want to delete this image?": [
-  null,
-  "Na pewno usunąć ten obraz?"
- ],
  "Author": [
   null,
   "Autor"
@@ -293,17 +289,9 @@ return plural;
   null,
   "Usuń"
  ],
- "Delete $0": [
-  null,
-  "Usuń $0"
- ],
  "Deleting a container will erase all data in it.": [
   null,
   "Usunięcie kontenera usunie wszystkie znajdujące się w nim dane."
- ],
- "Deleting an image will delete it, but you can probably download it again if you need it later.  Unless this image has never been pushed to a repository, that is, in which case you probably can't download it again.": [
-  null,
-  "Usunięcie obrazu spowoduje jego usunięcie, ale prawdopodobnie można go pobrać ponownie w razie potrzeby. Wyjątkiem jest sytuacja, w której tego obrazu nigdy nie wysłano do repozytorium."
  ],
  "Desktop": [
   null,
@@ -775,6 +763,10 @@ return plural;
   null,
   "Zatrzymaj"
  ],
+ "Stop and delete": [
+  null,
+  ""
+ ],
  "Stopped": [
   null,
   "Zatrzymano"
@@ -814,6 +806,10 @@ return plural;
  "The Docker storage pool cannot be managed on this system.": [
   null,
   "Pula urządzeń do przechowywania danych Docker nie może być zarządzana na tym systemie."
+ ],
+ "The following containers depend on this image and will become unusable.": [
+  null,
+  ""
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,

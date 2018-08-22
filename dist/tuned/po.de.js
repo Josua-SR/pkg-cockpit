@@ -73,7 +73,7 @@ return plural;
  ],
  "Change Performance Profile": [
   null,
-  ""
+  "Leistungsprofil ändern"
  ],
  "Change Profile": [
   null,

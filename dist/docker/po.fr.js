@@ -137,10 +137,6 @@ return plural;
   null,
   ""
  ],
- "Are you sure you want to delete this image?": [
-  null,
-  ""
- ],
  "Author": [
   null,
   "Auteur"
@@ -286,17 +282,9 @@ return plural;
   null,
   "Supprimer"
  ],
- "Delete $0": [
-  null,
-  "Supprimer $0"
- ],
  "Deleting a container will erase all data in it.": [
   null,
   "Supprimer un conteneur en supprimera toutes les données"
- ],
- "Deleting an image will delete it, but you can probably download it again if you need it later.  Unless this image has never been pushed to a repository, that is, in which case you probably can't download it again.": [
-  null,
-  "Supprimer une image la supprimera, mais il sera probablement possible de la récupérer à nouveau plus tard. Si cette image n'a jamais été poussée sur un dépôt, il ne sera probablement pas possible de la récupérer."
  ],
  "Desktop": [
   null,
@@ -767,6 +755,10 @@ return plural;
   null,
   "Arrêter"
  ],
+ "Stop and delete": [
+  null,
+  ""
+ ],
  "Stopped": [
   null,
   "Arrêté"
@@ -804,6 +796,10 @@ return plural;
   ""
  ],
  "The Docker storage pool cannot be managed on this system.": [
+  null,
+  ""
+ ],
+ "The following containers depend on this image and will become unusable.": [
   null,
   ""
  ],

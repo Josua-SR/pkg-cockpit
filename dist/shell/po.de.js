@@ -89,7 +89,7 @@ return plural;
  ],
  "Add Machine to Dashboard": [
   null,
-  ""
+  "Maschine zum Dashboard hinzufügen"
  ],
  "Add key": [
   null,
@@ -285,19 +285,19 @@ return plural;
  ],
  "Log In": [
   null,
-  ""
+  "Anmelden"
  ],
  "Log Out": [
   null,
-  ""
+  "Abmelden"
  ],
  "Log in again": [
   null,
-  ""
+  "Erneut anmelden"
  ],
  "Log in to {{host}}": [
   null,
-  ""
+  "Anmelden auf {{host}}"
  ],
  "Login Password": [
   null,
@@ -305,7 +305,7 @@ return plural;
  ],
  "Login has escalated admin privileges": [
   null,
-  ""
+  "Anmeldung hat Administrator-Rechte"
  ],
  "Machines": [
   null,
@@ -377,7 +377,7 @@ return plural;
  ],
  "Privileged": [
   null,
-  ""
+  "Privilegiert"
  ],
  "Project website": [
   null,
@@ -401,7 +401,7 @@ return plural;
  ],
  "Reuse my password for privileged tasks and to connect to other machines": [
   null,
-  ""
+  "Mein Passwort für Administrator-Aufgaben und zum Verbinden zu anderen Maschinen verwenden"
  ],
  "Select": [
   null,

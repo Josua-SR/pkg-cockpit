@@ -75,6 +75,10 @@ return plural;
   null,
   ""
  ],
+ "Add": [
+  null,
+  "Afegeix"
+ ],
  "Add Disk": [
   null,
   ""
@@ -255,9 +259,9 @@ return plural;
   null,
   "Força l'apagada"
  ],
- "Format: ": [
+ "Format": [
   null,
-  ""
+  "Formata"
  ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
@@ -371,10 +375,6 @@ return plural;
   null,
   ""
  ],
- "Name: ": [
-  null,
-  ""
- ],
  "Networks": [
   null,
   "Xarxes"
@@ -450,10 +450,6 @@ return plural;
  "Pool": [
   null,
   "Agrupació"
- ],
- "Pool: ": [
-  null,
-  ""
  ],
  "Port": [
   null,
@@ -531,9 +527,9 @@ return plural;
   null,
   "Apaga"
  ],
- "Size: ": [
+ "Size": [
   null,
-  ""
+  "Mida"
  ],
  "Sockets": [
   null,
@@ -574,10 +570,6 @@ return plural;
  "Target": [
   null,
   "Objectiu"
- ],
- "Target: ": [
-  null,
-  ""
  ],
  "The VM crashed.": [
   null,
@@ -718,10 +710,6 @@ return plural;
  "Volume": [
   null,
   "Volum"
- ],
- "Volume: ": [
-  null,
-  ""
  ],
  "Your browser does not support iframes.": [
   null,

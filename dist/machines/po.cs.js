@@ -75,6 +75,10 @@ return plural;
   null,
   ""
  ],
+ "Add": [
+  null,
+  "Přidat"
+ ],
  "Add Disk": [
   null,
   ""
@@ -255,9 +259,9 @@ return plural;
   null,
   ""
  ],
- "Format: ": [
+ "Format": [
   null,
-  ""
+  "Formát"
  ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
@@ -371,10 +375,6 @@ return plural;
   null,
   ""
  ],
- "Name: ": [
-  null,
-  ""
- ],
  "Networks": [
   null,
   ""
@@ -450,10 +450,6 @@ return plural;
  "Pool": [
   null,
   "Úložiště"
- ],
- "Pool: ": [
-  null,
-  ""
  ],
  "Port": [
   null,
@@ -531,9 +527,9 @@ return plural;
   null,
   "Ukončit"
  ],
- "Size: ": [
+ "Size": [
   null,
-  ""
+  "Velikost"
  ],
  "Sockets": [
   null,
@@ -574,10 +570,6 @@ return plural;
  "Target": [
   null,
   "Cíl"
- ],
- "Target: ": [
-  null,
-  ""
  ],
  "The VM crashed.": [
   null,
@@ -718,10 +710,6 @@ return plural;
  "Volume": [
   null,
   "Svazek"
- ],
- "Volume: ": [
-  null,
-  ""
  ],
  "Your browser does not support iframes.": [
   null,

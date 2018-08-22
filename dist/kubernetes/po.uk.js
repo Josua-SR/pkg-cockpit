@@ -1345,11 +1345,11 @@ return plural;
  ],
  "Select Member": [
   null,
-  ""
+  "Виберіть учасника"
  ],
  "Select Role": [
   null,
-  ""
+  "Виберіть роль"
  ],
  "Select an object to see more details.": [
   null,
@@ -1434,6 +1434,10 @@ return plural;
  "Show all Services": [
   null,
   "Показувати всі служби"
+ ],
+ "Show all VMs": [
+  null,
+  ""
  ],
  "Show all image streams": [
   null,
@@ -1670,6 +1674,14 @@ return plural;
  "Users": [
   null,
   "Користувачі"
+ ],
+ "VM": [
+  null,
+  ""
+ ],
+ "VM $0:$1 does not exist.": [
+  null,
+  ""
  ],
  "VM DELETE failed.": [
   null,

@@ -67,9 +67,17 @@ return plural;
   "language": "de",
   "x-generator": "Zanata 4.5.0"
  },
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
  "$0 update": [
   "$0 updates",
   "",
+  ""
+ ],
+ "$0 will be installed.": [
+  null,
   ""
  ],
  "$1 security fix": [
@@ -80,6 +88,10 @@ return plural;
  ", including $1 security fix": [
   ", including $1 security fixes",
   "",
+  ""
+ ],
+ "Additional packages:": [
+  null,
   ""
  ],
  "Apply all updates": [
@@ -118,6 +130,10 @@ return plural;
   null,
   "Nach Aktualisierungen suchen"
  ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
  "Details": [
   null,
   ""
@@ -127,6 +143,10 @@ return plural;
   ""
  ],
  "Downloading": [
+  null,
+  ""
+ ],
+ "Downloading $0": [
   null,
   ""
  ],
@@ -142,6 +162,10 @@ return plural;
   null,
   ""
  ],
+ "Install": [
+  null,
+  ""
+ ],
  "Install All Updates": [
   null,
   ""
@@ -150,11 +174,19 @@ return plural;
   null,
   ""
  ],
+ "Install Software": [
+  null,
+  ""
+ ],
  "Installed": [
   null,
   ""
  ],
  "Installing": [
+  null,
+  ""
+ ],
+ "Installing $0": [
   null,
   ""
  ],
@@ -182,6 +214,10 @@ return plural;
   null,
   "Aus"
  ],
+ "Ok": [
+  null,
+  ""
+ ],
  "On": [
   null,
   "Ein"
@@ -207,6 +243,14 @@ return plural;
   ""
  ],
  "Register…": [
+  null,
+  ""
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
   null,
   ""
  ],
@@ -240,7 +284,7 @@ return plural;
  ],
  "Software Updates": [
   null,
-  "Software Updates"
+  "Aktualisierungen"
  ],
  "Some other program is currently using the package manager, please wait...": [
   null,
@@ -267,6 +311,10 @@ return plural;
   ""
  ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
+  null,
+  "Um Aktualisierungen zu erhalten, muss dieses System bei Red Hat registriert sein; entweder im Red Hat Customer Portal oder einem lokalen Subscription-Dienst."
+ ],
+ "Total size: $0": [
   null,
   ""
  ],
@@ -311,6 +359,10 @@ return plural;
   "Version"
  ],
  "View Registration Details": [
+  null,
+  ""
+ ],
+ "Waiting for other software management operations to finish": [
   null,
   ""
  ],

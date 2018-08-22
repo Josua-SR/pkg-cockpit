@@ -79,6 +79,10 @@ return plural;
   null,
   "动作"
  ],
+ "Add": [
+  null,
+  "添加"
+ ],
  "Add Disk": [
   null,
   ""
@@ -315,9 +319,9 @@ return plural;
   null,
   "强制关机"
  ],
- "Format: ": [
+ "Format": [
   null,
-  ""
+  "格式化"
  ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
@@ -422,10 +426,6 @@ return plural;
  "Name": [
   null,
   "名称"
- ],
- "Name: ": [
-  null,
-  ""
  ],
  "Networks": [
   null,
@@ -534,10 +534,6 @@ return plural;
  "Pool": [
   null,
   "池"
- ],
- "Pool: ": [
-  null,
-  ""
  ],
  "Port": [
   null,
@@ -655,9 +651,9 @@ return plural;
   null,
   "关机"
  ],
- "Size: ": [
+ "Size": [
   null,
-  ""
+  "大小"
  ],
  "Sockets": [
   null,
@@ -706,10 +702,6 @@ return plural;
  "Target": [
   null,
   "目标"
- ],
- "Target: ": [
-  null,
-  ""
  ],
  "Template": [
   null,
@@ -874,10 +866,6 @@ return plural;
  "Volume": [
   null,
   "卷"
- ],
- "Volume: ": [
-  null,
-  ""
  ],
  "Your browser does not support iframes.": [
   null,

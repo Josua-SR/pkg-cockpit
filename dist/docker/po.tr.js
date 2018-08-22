@@ -137,10 +137,6 @@ return plural;
   null,
   ""
  ],
- "Are you sure you want to delete this image?": [
-  null,
-  ""
- ],
  "Author": [
   null,
   "Yazar"
@@ -286,17 +282,9 @@ return plural;
   null,
   "Sil"
  ],
- "Delete $0": [
-  null,
-  "Sil: $0"
- ],
  "Deleting a container will erase all data in it.": [
   null,
   "Bir konteyneri silmek içindeki veriyi de silecektir."
- ],
- "Deleting an image will delete it, but you can probably download it again if you need it later.  Unless this image has never been pushed to a repository, that is, in which case you probably can't download it again.": [
-  null,
-  ""
  ],
  "Desktop": [
   null,
@@ -767,6 +755,10 @@ return plural;
   null,
   "Durdur"
  ],
+ "Stop and delete": [
+  null,
+  ""
+ ],
  "Stopped": [
   null,
   "Durduruldu"
@@ -804,6 +796,10 @@ return plural;
   ""
  ],
  "The Docker storage pool cannot be managed on this system.": [
+  null,
+  ""
+ ],
+ "The following containers depend on this image and will become unusable.": [
   null,
   ""
  ],

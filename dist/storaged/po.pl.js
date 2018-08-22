@@ -727,7 +727,7 @@ return plural;
  ],
  "Install VDO support": [
   null,
-  ""
+  "Zainstaluj obsługę VDO"
  ],
  "Installing $0": [
   null,
@@ -911,7 +911,7 @@ return plural;
  ],
  "No drives attached": [
   null,
-  "Nie dołączono dysków"
+  "Nie podłączono dysków"
  ],
  "No free space": [
   null,
@@ -1583,7 +1583,7 @@ return plural;
  ],
  "VDO support not installed": [
   null,
-  ""
+  "Obsługa VDO nie jest zainstalowana"
  ],
  "VFAT - Compatible with all systems and devices": [
   null,

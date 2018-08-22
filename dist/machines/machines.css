@@ -644,7 +644,7 @@ input[type=number] {
 .dialog-ct-visible {
     display: block;
 }
-#cockpit_modal_dialog .modal-body {
+#cockpit_modal_dialog .modal-body.scroll {
     max-height: calc(75vh - 10rem);
     overflow: auto;
 }
@@ -670,11 +670,8 @@ input[type=number] {
     padding-bottom: 0px !important;
 }
 
-.add-disk-body {
-    margin-top: 1em;
-}
-
-.add-disk-body .row {
+.add-disk-body .row,
+.add-disk-dialog .row {
     padding-bottom: 0.5em;
 }
 
@@ -714,6 +711,24 @@ input[type=number] {
 }
 
 .add-disk-attach-perm > input[type=checkbox] { }
+
+.add-disk-source {
+    padding-left: 5px;
+}
+
+.add-disk-select-source {
+    padding: 0px;
+    width: auto;
+    padding-right: 20px;
+}
+
+.add-disk-select-source > label {
+    margin-left: 5px;
+    text-align: left;
+    color: #363636;
+}
+
+.add-disk-select-source > input[type=radio] { }
 .machines-more-button {
     padding-left: 10px;
 }

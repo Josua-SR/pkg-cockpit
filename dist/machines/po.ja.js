@@ -75,6 +75,10 @@ return plural;
   null,
   "$0 vCPU の詳細"
  ],
+ "Add": [
+  null,
+  "追加する"
+ ],
  "Add Disk": [
   null,
   ""
@@ -255,9 +259,9 @@ return plural;
   null,
   "シャットダウンの強制"
  ],
- "Format: ": [
+ "Format": [
   null,
-  ""
+  "フォーマット"
  ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
@@ -371,10 +375,6 @@ return plural;
   null,
   "名前は空欄にできません"
  ],
- "Name: ": [
-  null,
-  ""
- ],
  "Networks": [
   null,
   "ネットワーク"
@@ -450,10 +450,6 @@ return plural;
  "Pool": [
   null,
   "プール"
- ],
- "Pool: ": [
-  null,
-  ""
  ],
  "Port": [
   null,
@@ -531,9 +527,9 @@ return plural;
   null,
   "シャットダウン"
  ],
- "Size: ": [
+ "Size": [
   null,
-  ""
+  "Size"
  ],
  "Sockets": [
   null,
@@ -574,10 +570,6 @@ return plural;
  "Target": [
   null,
   "ターゲット"
- ],
- "Target: ": [
-  null,
-  ""
  ],
  "The VM crashed.": [
   null,
@@ -718,10 +710,6 @@ return plural;
  "Volume": [
   null,
   "音量"
- ],
- "Volume: ": [
-  null,
-  ""
  ],
  "Your browser does not support iframes.": [
   null,

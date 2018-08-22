@@ -107,10 +107,6 @@ return plural;
   null,
   "取り消し"
  ],
- "Cannot join a domain because realmd is not available on this system": [
-  null,
-  "このシステムでは realmd が利用できないため、ドメインに参加できません"
- ],
  "Checking installed software": [
   null,
   "インストールされたソフトウェアの確認"

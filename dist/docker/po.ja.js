@@ -131,10 +131,6 @@ return plural;
   null,
   "常時"
  ],
- "Are you sure you want to delete this image?": [
-  null,
-  "このイメージを削除してもよろしいですか?"
- ],
  "Author": [
   null,
   "作成者"
@@ -279,17 +275,9 @@ return plural;
   null,
   "削除"
  ],
- "Delete $0": [
-  null,
-  "$0 の削除"
- ],
  "Deleting a container will erase all data in it.": [
   null,
   "コンテナーを削除すると、コンテナー内のすべてのデータが削除されます。"
- ],
- "Deleting an image will delete it, but you can probably download it again if you need it later.  Unless this image has never been pushed to a repository, that is, in which case you probably can't download it again.": [
-  null,
-  "イメージは、削除しても、多くの場合、後で必要なときに再びダウンロードできます。このイメージがリポジトリーにプッシュされたことがない場合は、イメージを再びダウンロードできません。"
  ],
  "Desktop": [
   null,
@@ -759,6 +747,10 @@ return plural;
   null,
   "停止"
  ],
+ "Stop and delete": [
+  null,
+  ""
+ ],
  "Stopped": [
   null,
   "停止中"
@@ -798,6 +790,10 @@ return plural;
  "The Docker storage pool cannot be managed on this system.": [
   null,
   "Docker ストレージプールはこのシステムで管理できません。"
+ ],
+ "The following containers depend on this image and will become unusable.": [
+  null,
+  ""
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,

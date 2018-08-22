@@ -1431,6 +1431,10 @@ return plural;
   null,
   "すべてのサービスの表示"
  ],
+ "Show all VMs": [
+  null,
+  ""
+ ],
  "Show all image streams": [
   null,
   "すべてのイメージストリームの表示"
@@ -1666,6 +1670,14 @@ return plural;
  "Users": [
   null,
   "ユーザー"
+ ],
+ "VM": [
+  null,
+  ""
+ ],
+ "VM $0:$1 does not exist.": [
+  null,
+  ""
  ],
  "VM DELETE failed.": [
   null,

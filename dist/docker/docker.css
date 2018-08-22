@@ -233,7 +233,7 @@ input[type=number] {
 .dialog-ct-visible {
     display: block;
 }
-#cockpit_modal_dialog .modal-body {
+#cockpit_modal_dialog .modal-body.scroll {
     max-height: calc(75vh - 10rem);
     overflow: auto;
 }
@@ -1578,6 +1578,7 @@ div.spinner {
 }
 
 #containers-search-image-waiting.spinner {
+    display: block;
     margin: auto;
     margin-top: 150px;
 }

@@ -107,10 +107,6 @@ return plural;
   null,
   ""
  ],
- "Cannot join a domain because realmd is not available on this system": [
-  null,
-  ""
- ],
  "Checking installed software": [
   null,
   ""

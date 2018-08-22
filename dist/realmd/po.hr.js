@@ -107,10 +107,6 @@ return plural;
   null,
   "Odustani"
  ],
- "Cannot join a domain because realmd is not available on this system": [
-  null,
-  "Nije moguće pristupiti domeni jer realmd nije dostupan na ovom sustavu"
- ],
  "Checking installed software": [
   null,
   ""

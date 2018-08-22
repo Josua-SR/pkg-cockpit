@@ -247,7 +247,7 @@ return plural;
  ],
  "Bridge": [
   null,
-  "Brücke"
+  "Bridge"
  ],
  "Bridge Port Settings": [
   null,
@@ -279,7 +279,7 @@ return plural;
  ],
  "Change the settings": [
   null,
-  "Bridge Port Einstellungen"
+  "Bridge Port-Einstellungen"
  ],
  "Changing the settings will break the connection to the server, and will make the administration UI unavailable.": [
   null,

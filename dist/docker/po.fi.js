@@ -137,10 +137,6 @@ return plural;
   null,
   "Aina"
  ],
- "Are you sure you want to delete this image?": [
-  null,
-  "Haluatko varmasti poistaa tämän levykuvan?"
- ],
  "Author": [
   null,
   "Tekijä"
@@ -286,17 +282,9 @@ return plural;
   null,
   "Poista"
  ],
- "Delete $0": [
-  null,
-  "Poista $0"
- ],
  "Deleting a container will erase all data in it.": [
   null,
   "Kontin poistaminen tuhoaa kaiken sillä olevan datan."
- ],
- "Deleting an image will delete it, but you can probably download it again if you need it later.  Unless this image has never been pushed to a repository, that is, in which case you probably can't download it again.": [
-  null,
-  "Levykuvan tuhoaminen poistaa sen, mutta voit luultavasti ladata sen uudelleen jos tarvitset sitä myöhemmin.  Mikäli levykuvaa ei ole koskaan puskettu repositorioon, et voi ladata sitä uudestaan."
  ],
  "Desktop": [
   null,
@@ -767,6 +755,10 @@ return plural;
   null,
   "Pysäytä"
  ],
+ "Stop and delete": [
+  null,
+  ""
+ ],
  "Stopped": [
   null,
   "Pysäytetty"
@@ -804,6 +796,10 @@ return plural;
   ""
  ],
  "The Docker storage pool cannot be managed on this system.": [
+  null,
+  ""
+ ],
+ "The following containers depend on this image and will become unusable.": [
   null,
   ""
  ],

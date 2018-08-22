@@ -107,10 +107,6 @@ return plural;
   null,
   "Abbrechen"
  ],
- "Cannot join a domain because realmd is not available on this system": [
-  null,
-  "Es konnte keiner Domain beigetreten werden, da realmd auf diesem System nicht verfügbar ist."
- ],
  "Checking installed software": [
   null,
   ""

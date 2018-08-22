@@ -69,7 +69,7 @@ return plural;
  },
  "Applications": [
   null,
-  ""
+  "Anwendungen"
  ],
  "Cancel": [
   null,

@@ -143,10 +143,6 @@ return plural;
   null,
   "Завжди"
  ],
- "Are you sure you want to delete this image?": [
-  null,
-  "Ви справді хочете вилучити цей образ?"
- ],
  "Author": [
   null,
   "Автор"
@@ -293,17 +289,9 @@ return plural;
   null,
   "Вилучити"
  ],
- "Delete $0": [
-  null,
-  "Вилучити $0"
- ],
  "Deleting a container will erase all data in it.": [
   null,
   "Вилучення контейнера призведе до витирання усіх даних, що на ньому зберігаються."
- ],
- "Deleting an image will delete it, but you can probably download it again if you need it later.  Unless this image has never been pushed to a repository, that is, in which case you probably can't download it again.": [
-  null,
-  "Вилучення образу призведе до його вилучення, але ви, ймовірно, зможете отримати його знову, якщо виникне потреба. Виключенням є випадок, коли образ ніколи не було записано до сховища. У цьому випадку ви, ймовірно, не зможете отримати образ знову."
  ],
  "Desktop": [
   null,
@@ -775,6 +763,10 @@ return plural;
   null,
   "Зупинити"
  ],
+ "Stop and delete": [
+  null,
+  ""
+ ],
  "Stopped": [
   null,
   "Зупинено"
@@ -814,6 +806,10 @@ return plural;
  "The Docker storage pool cannot be managed on this system.": [
   null,
   "У цій системі не можна керувати резервним сховищем даних Docker."
+ ],
+ "The following containers depend on this image and will become unusable.": [
+  null,
+  ""
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,

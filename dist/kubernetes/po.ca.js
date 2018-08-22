@@ -1433,6 +1433,10 @@ return plural;
   null,
   "Mostra tots els serveis"
  ],
+ "Show all VMs": [
+  null,
+  ""
+ ],
  "Show all image streams": [
   null,
   "Mostra tots els fluxos d'imatges"
@@ -1668,6 +1672,14 @@ return plural;
  "Users": [
   null,
   "Usuaris"
+ ],
+ "VM": [
+  null,
+  ""
+ ],
+ "VM $0:$1 does not exist.": [
+  null,
+  ""
  ],
  "VM DELETE failed.": [
   null,

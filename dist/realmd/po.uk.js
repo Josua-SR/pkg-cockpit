@@ -107,10 +107,6 @@ return plural;
   null,
   "Скасувати"
  ],
- "Cannot join a domain because realmd is not available on this system": [
-  null,
-  "Не вдалося долучитися до домену, оскільки у цій системі недоступна служба realmd"
- ],
  "Checking installed software": [
   null,
   "Перевіряємо встановлене програмне забезпечення"

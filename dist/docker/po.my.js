@@ -131,10 +131,6 @@ return plural;
   null,
   ""
  ],
- "Are you sure you want to delete this image?": [
-  null,
-  ""
- ],
  "Author": [
   null,
   "ေရးသူ"
@@ -279,17 +275,9 @@ return plural;
   null,
   "ဖျက်ဆီးပါ။"
  ],
- "Delete $0": [
-  null,
-  ""
- ],
  "Deleting a container will erase all data in it.": [
   null,
   "Container ကို ဖျက်ဆီးခြင်းသည် ၄င်းထဲတွင်ရှိသော အချက်အလက်များအားလုံးကိုပါ ဖျက်ဆီးပစ်လိမ့်မည်။"
- ],
- "Deleting an image will delete it, but you can probably download it again if you need it later.  Unless this image has never been pushed to a repository, that is, in which case you probably can't download it again.": [
-  null,
-  ""
  ],
  "Desktop": [
   null,
@@ -759,6 +747,10 @@ return plural;
   null,
   ""
  ],
+ "Stop and delete": [
+  null,
+  ""
+ ],
  "Stopped": [
   null,
   "ရပ်နေသည်။"
@@ -796,6 +788,10 @@ return plural;
   ""
  ],
  "The Docker storage pool cannot be managed on this system.": [
+  null,
+  ""
+ ],
+ "The following containers depend on this image and will become unusable.": [
   null,
   ""
  ],
