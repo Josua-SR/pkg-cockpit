@@ -1,4 +1,4 @@
-cockpit (176-1) UNRELEASED; urgency=medium
+cockpit (176-1) unstable; urgency=medium
 
   * New upstream release 175:
     - Network bound disk encryption
@@ -8,7 +8,7 @@ cockpit (176-1) UNRELEASED; urgency=medium
     - Stop shipping firewall service file with recent firewalld
       (Closes: #905389)
 
- -- Martin Pitt <mpitt@debian.org>  Mon, 13 Aug 2018 15:12:54 +0000
+ -- Martin Pitt <mpitt@debian.org>  Wed, 22 Aug 2018 14:23:53 +0000
 
 cockpit (174-1) unstable; urgency=medium
 
