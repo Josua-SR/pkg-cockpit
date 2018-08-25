@@ -1,3 +1,12 @@
+cockpit (176-2) unstable; urgency=medium
+
+  * Fix arch-indep build.
+    When building only arch-indep packages, the cockpit-ws package does not
+    get built, and trying to remove the firewalld service failed.
+    (Closes: #907108)
+
+ -- Martin Pitt <mpitt@debian.org>  Sat, 25 Aug 2018 08:35:14 +0000
+
 cockpit (176-1) unstable; urgency=medium
 
   * New upstream release 175:
