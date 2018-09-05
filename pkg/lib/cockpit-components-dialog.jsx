@@ -19,6 +19,7 @@
 
 var cockpit = require("cockpit");
 var React = require("react");
+var ReactDOM = require("react-dom");
 var _ = cockpit.gettext;
 
 require("page.css");
@@ -106,7 +107,7 @@ var DialogFooter = React.createClass({
 
                     /* Always log global dialog errors for easier debugging */
                     if (error)
-                        console.warn(error);
+                        console.warn(error.message || error.toString());
 
                     self.setState({ action_in_progress: false, error_message: error });
                 });
@@ -217,6 +218,7 @@ var DialogFooter = React.createClass({
         return (
             <div className="modal-footer">
                 { error_element }
+                { this.props.extra_element }
                 { wait_element }
                 <button
                     className={ cancel_style }
@@ -295,7 +297,7 @@ var show_modal_dialog = function(props, footerProps) {
     // don't allow nested dialogs, just close whatever is open
     var curElement = document.getElementById(dialogName);
     if (curElement) {
-        React.unmountComponentAtNode(curElement);
+        ReactDOM.unmountComponentAtNode(curElement);
         curElement.remove();
     }
     // create an element to render into
@@ -308,7 +310,7 @@ var show_modal_dialog = function(props, footerProps) {
     var closeCallback = function() {
         if (origCallback)
             origCallback.apply(this, arguments);
-        React.unmountComponentAtNode(rootElement);
+        ReactDOM.unmountComponentAtNode(rootElement);
         rootElement.remove();
     };
 
@@ -317,7 +319,7 @@ var show_modal_dialog = function(props, footerProps) {
     dialogObj.footerProps = null;
     dialogObj.render = function() {
         dialogObj.props.footer = <DialogFooter {...dialogObj.footerProps} />;
-        React.render(<Dialog {...dialogObj.props} />, rootElement);
+        ReactDOM.render(<Dialog {...dialogObj.props} />, rootElement);
     };
     function updateFooterAndRender() {
         if (dialogObj.props === null || dialogObj.props === undefined)

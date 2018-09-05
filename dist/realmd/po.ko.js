@@ -65,7 +65,7 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "ko",
-  "x-generator": "Zanata 4.5.0"
+  "x-generator": "Zanata 4.6.0"
  },
  "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,

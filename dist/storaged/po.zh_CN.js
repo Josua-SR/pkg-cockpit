@@ -65,7 +65,7 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "zh_CN",
-  "x-generator": "Zanata 4.5.0"
+  "x-generator": "Zanata 4.6.0"
  },
  "$0 Block Device": [
   null,
@@ -126,6 +126,10 @@ return plural;
  "$0 of $1": [
   null,
   "$1 的 $0"
+ ],
+ "$0 slots remain": [
+  null,
+  ""
  ],
  "$0 used of $1 ($2 saved)": [
   null,
@@ -251,6 +255,10 @@ return plural;
   null,
   "添加磁盘"
  ],
+ "Add Key": [
+  null,
+  ""
+ ],
  "Add iSCSI Portal": [
   null,
   "添加 iSCSI 门户"
@@ -266,6 +274,10 @@ return plural;
  "Address": [
   null,
   "地址"
+ ],
+ "Address cannot be empty": [
+  null,
+  ""
  ],
  "Apply": [
   null,
@@ -319,6 +331,10 @@ return plural;
   null,
   "变更 iSCSI Initiator 名称"
  ],
+ "Change passphrase": [
+  null,
+  ""
+ ],
  "Checking $target": [
   null,
   ""
@@ -362,6 +378,10 @@ return plural;
  "Confirm passphrase": [
   null,
   "确认口令"
+ ],
+ "Confirm removal with passphrase": [
+  null,
+  ""
  ],
  "Content": [
   null,
@@ -531,6 +551,10 @@ return plural;
   null,
   "磁盘良好"
  ],
+ "Disk passphrase": [
+  null,
+  ""
+ ],
  "Disks": [
   null,
   "磁盘"
@@ -554,6 +578,14 @@ return plural;
  "Edit": [
   null,
   "编辑"
+ ],
+ "Edit Tang keyserver": [
+  null,
+  ""
+ ],
+ "Editing a key requires a free slot": [
+  null,
+  ""
  ],
  "Ejecting $target": [
   null,
@@ -639,6 +671,10 @@ return plural;
   null,
   "文件系统"
  ],
+ "Force remove passphrase in $0": [
+  null,
+  ""
+ ],
  "Format": [
   null,
   "格式化"
@@ -687,6 +723,10 @@ return plural;
   null,
   ""
  ],
+ "If tang-show-keys is not available, run the following:": [
+  null,
+  ""
+ ],
  "In Sync": [
   null,
   "同步中"
@@ -727,6 +767,30 @@ return plural;
   null,
   "任务"
  ],
+ "Key slots with unknown types can not be edited here": [
+  null,
+  ""
+ ],
+ "Key source": [
+  null,
+  ""
+ ],
+ "Keys": [
+  null,
+  ""
+ ],
+ "Keyserver": [
+  null,
+  ""
+ ],
+ "Keyserver address": [
+  null,
+  ""
+ ],
+ "Keyserver removal may prevent unlocking $0.": [
+  null,
+  ""
+ ],
  "Local Mount Point": [
   null,
   ""
@@ -758,6 +822,14 @@ return plural;
  "Logical Volume of $0": [
   null,
   "$0 的逻辑卷"
+ ],
+ "Make sure the key hash from the Tang server matches:": [
+  null,
+  ""
+ ],
+ "Manually check with SSH: ": [
+  null,
+  ""
  ],
  "Marking $target as faulty": [
   null,
@@ -867,11 +939,11 @@ return plural;
   null,
   "名称不能包含空格。"
  ],
- "Network keys": [
+ "New NFS Mount": [
   null,
   ""
  ],
- "New NFS Mount": [
+ "New passphrase": [
   null,
   ""
  ],
@@ -891,6 +963,10 @@ return plural;
   null,
   ""
  ],
+ "No available slots": [
+  null,
+  ""
+ ],
  "No disks are available.": [
   null,
   "没有可用的磁盘。"
@@ -899,6 +975,10 @@ return plural;
   null,
   "没有附件的驱动器"
  ],
+ "No free key slots": [
+  null,
+  ""
+ ],
  "No free space": [
   null,
   "没有剩余空间"
@@ -906,6 +986,10 @@ return plural;
  "No iSCSI targets set up": [
   null,
   "没有设置 iSCSI 目标"
+ ],
+ "No keys added": [
+  null,
+  ""
  ],
  "No media inserted": [
   null,
@@ -946,6 +1030,10 @@ return plural;
  "Ok": [
   null,
   "确认"
+ ],
+ "Old passphrase": [
+  null,
+  ""
  ],
  "On": [
   null,
@@ -994,6 +1082,10 @@ return plural;
  "Passphrase cannot be empty": [
   null,
   "密码不能为空"
+ ],
+ "Passphrase removal may prevent unlocking $0.": [
+  null,
+  ""
  ],
  "Passphrases do not match": [
   null,
@@ -1167,7 +1259,23 @@ return plural;
   null,
   "删除"
  ],
+ "Remove $0?": [
+  null,
+  ""
+ ],
+ "Remove Tang keyserver": [
+  null,
+  ""
+ ],
  "Remove device": [
+  null,
+  ""
+ ],
+ "Remove passphrase": [
+  null,
+  ""
+ ],
+ "Remove passphrase in $0?": [
   null,
   ""
  ],
@@ -1203,6 +1311,10 @@ return plural;
   null,
   ""
  ],
+ "Repeat passphrase": [
+  null,
+  ""
+ ],
  "Resizing $target": [
   null,
   "调整大小 $target"
@@ -1214,6 +1326,14 @@ return plural;
  "SMART self-test of $target": [
   null,
   "$target SMART 自检"
+ ],
+ "Save": [
+  null,
+  "保存"
+ ],
+ "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
+  null,
+  ""
  ],
  "Securely erasing $target": [
   null,
@@ -1276,6 +1396,10 @@ return plural;
   "大小必须是一个数字"
  ],
  "Size must be at least $0": [
+  null,
+  ""
+ ],
+ "Slot $0": [
   null,
   ""
  ],
@@ -1355,6 +1479,10 @@ return plural;
   null,
   "同步 RAID 设备 $target"
  ],
+ "Tang keyserver": [
+  null,
+  ""
+ ],
  "Targets": [
   null,
   "目标"
@@ -1379,6 +1507,10 @@ return plural;
   null,
   ""
  ],
+ "The currently logged in user is not permitted to see information about keys.": [
+  null,
+  ""
+ ],
  "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
   null,
   ""
@@ -1394,6 +1526,10 @@ return plural;
  "The last disk of a RAID device cannot be removed.": [
   null,
   " RAID 设备中的最后一个磁盘不能被移除。"
+ ],
+ "The last key slot can not be removed": [
+  null,
+  ""
  ],
  "The last physical volume of a volume group cannot be removed.": [
   null,
@@ -1459,6 +1595,10 @@ return plural;
   null,
   ""
  ],
+ "Trust key": [
+  null,
+  ""
+ ],
  "Type": [
   null,
   "类型"
@@ -1495,6 +1635,10 @@ return plural;
   null,
   "未知主机名"
  ],
+ "Unknown type": [
+  null,
+  ""
+ ],
  "Unlock": [
   null,
   "未锁定"
@@ -1510,6 +1654,10 @@ return plural;
  "Unlocking $target": [
   null,
   "解锁 $target"
+ ],
+ "Unlocking disk...": [
+  null,
+  ""
  ],
  "Unmount": [
   null,
@@ -1575,6 +1723,10 @@ return plural;
   null,
   "VFAT - 兼容所有系统和设备"
  ],
+ "Verify key": [
+  null,
+  ""
+ ],
  "Very securely erasing $target": [
   null,
   "多重安全擦除 $target"
@@ -1596,6 +1748,10 @@ return plural;
   "卷组"
  ],
  "Waiting for other software management operations to finish": [
+  null,
+  ""
+ ],
+ "What if tang-show-keys is not available?": [
   null,
   ""
  ],
@@ -1630,6 +1786,10 @@ return plural;
  "iSCSI Targets": [
   null,
   "iSCSI 目标"
+ ],
+ "key slot $0": [
+  null,
+  ""
  ],
  "undefined": [
   null,

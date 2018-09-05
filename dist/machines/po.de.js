@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "de",
-  "x-generator": "Zanata 4.5.0"
+  "x-generator": "Zanata 4.6.0"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -73,7 +73,7 @@ return plural;
  ],
  "$0 vCPU Details": [
   null,
-  ""
+  "$0 vCPU-Details"
  ],
  "Add": [
   null,
@@ -173,7 +173,7 @@ return plural;
  ],
  "Consoles": [
   null,
-  ""
+  "Konsolen"
  ],
  "Cores per socket": [
   null,

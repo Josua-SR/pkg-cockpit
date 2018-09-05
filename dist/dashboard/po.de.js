@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "de",
-  "x-generator": "Zanata 4.5.0"
+  "x-generator": "Zanata 4.6.0"
  },
  "$0 day": [
   "$0 days",
@@ -227,7 +227,7 @@ return plural;
  ],
  "Connect": [
   null,
-  ""
+  "Verbinden"
  ],
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
@@ -247,7 +247,7 @@ return plural;
  ],
  "Dashboard": [
   null,
-  ""
+  "Dashboard"
  ],
  "Desktop": [
   null,

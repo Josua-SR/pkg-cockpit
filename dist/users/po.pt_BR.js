@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "pt_BR",
-  "x-generator": "Zanata 4.5.0"
+  "x-generator": "Zanata 4.6.0"
  },
  "Access": [
   null,
@@ -381,7 +381,7 @@ return plural;
  ],
  "translatable": [
   null,
-  ""
+  "traduzível"
  ],
  "page-title\u0004Accounts": [
   null,

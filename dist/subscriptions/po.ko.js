@@ -65,7 +65,7 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "ko",
-  "x-generator": "Zanata 4.5.0"
+  "x-generator": "Zanata 4.6.0"
  },
  "'Organization' required to register.": [
   null,

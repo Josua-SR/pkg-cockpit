@@ -463,6 +463,14 @@ Provides: cockpit-sosreport = %{version}-%{release}
 Provides: cockpit-subscriptions = %{version}-%{release}
 Requires: subscription-manager >= 1.13
 %endif
+# NPM modules which are also available as packages
+Provides: bundled(js-jquery) = 3.3.1
+Provides: bundled(js-moment) = 2.22.2
+Provides: bundled(nodejs-flot) = 0.8.3
+Provides: bundled(nodejs-promise) = 8.0.1
+Provides: bundled(nodejs-requirejs) = 2.1.22
+Provides: bundled(xstatic-bootstrap-datepicker-common) = 1.8.0
+Provides: bundled(xstatic-patternfly-common) = 3.35.1
 
 %description system
 This package contains the Cockpit shell and system configuration interfaces.

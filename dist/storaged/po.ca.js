@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "ca",
-  "x-generator": "Zanata 4.5.0"
+  "x-generator": "Zanata 4.6.0"
  },
  "$0 Block Device": [
   null,
@@ -131,6 +131,10 @@ return plural;
  "$0 of $1": [
   null,
   "$0 de $1"
+ ],
+ "$0 slots remain": [
+  null,
+  ""
  ],
  "$0 used of $1 ($2 saved)": [
   null,
@@ -258,6 +262,10 @@ return plural;
   null,
   "Afegeix discs"
  ],
+ "Add Key": [
+  null,
+  ""
+ ],
  "Add iSCSI Portal": [
   null,
   "Afegeix un portal iSCSI"
@@ -273,6 +281,10 @@ return plural;
  "Address": [
   null,
   "Adreça"
+ ],
+ "Address cannot be empty": [
+  null,
+  ""
  ],
  "Apply": [
   null,
@@ -326,6 +338,10 @@ return plural;
   null,
   "Canvia el nom d'iniciador iSCSI"
  ],
+ "Change passphrase": [
+  null,
+  ""
+ ],
  "Checking $target": [
   null,
   ""
@@ -369,6 +385,10 @@ return plural;
  "Confirm passphrase": [
   null,
   "Confirmació de la contrasenya"
+ ],
+ "Confirm removal with passphrase": [
+  null,
+  ""
  ],
  "Content": [
   null,
@@ -538,6 +558,10 @@ return plural;
   null,
   "El disc està bé"
  ],
+ "Disk passphrase": [
+  null,
+  ""
+ ],
  "Disks": [
   null,
   "Discs"
@@ -561,6 +585,14 @@ return plural;
  "Edit": [
   null,
   "Edita"
+ ],
+ "Edit Tang keyserver": [
+  null,
+  ""
+ ],
+ "Editing a key requires a free slot": [
+  null,
+  ""
  ],
  "Ejecting $target": [
   null,
@@ -646,6 +678,10 @@ return plural;
   null,
   "Sistemes de fitxers"
  ],
+ "Force remove passphrase in $0": [
+  null,
+  ""
+ ],
  "Format": [
   null,
   "Formata"
@@ -694,6 +730,10 @@ return plural;
   null,
   "Fes créixer per agafar tot l'espai"
  ],
+ "If tang-show-keys is not available, run the following:": [
+  null,
+  ""
+ ],
  "In Sync": [
   null,
   "En sincronització"
@@ -734,6 +774,30 @@ return plural;
   null,
   "Treballs"
  ],
+ "Key slots with unknown types can not be edited here": [
+  null,
+  ""
+ ],
+ "Key source": [
+  null,
+  ""
+ ],
+ "Keys": [
+  null,
+  ""
+ ],
+ "Keyserver": [
+  null,
+  ""
+ ],
+ "Keyserver address": [
+  null,
+  ""
+ ],
+ "Keyserver removal may prevent unlocking $0.": [
+  null,
+  ""
+ ],
  "Local Mount Point": [
   null,
   "Punt de muntatge local"
@@ -765,6 +829,14 @@ return plural;
  "Logical Volume of $0": [
   null,
   "Volum lògic de $0"
+ ],
+ "Make sure the key hash from the Tang server matches:": [
+  null,
+  ""
+ ],
+ "Manually check with SSH: ": [
+  null,
+  ""
  ],
  "Marking $target as faulty": [
   null,
@@ -874,13 +946,13 @@ return plural;
   null,
   "El nom no pot contenir l'espai en blanc."
  ],
- "Network keys": [
-  null,
-  "Claus de xarxa"
- ],
  "New NFS Mount": [
   null,
   "Muntatge NFS nou"
+ ],
+ "New passphrase": [
+  null,
+  ""
  ],
  "Next": [
   null,
@@ -898,6 +970,10 @@ return plural;
   null,
   "Cap emmagatzematge NFS preparat"
  ],
+ "No available slots": [
+  null,
+  ""
+ ],
  "No disks are available.": [
   null,
   "No hi ha disponible cap disc."
@@ -906,6 +982,10 @@ return plural;
   null,
   "Sense unitats connectades"
  ],
+ "No free key slots": [
+  null,
+  ""
+ ],
  "No free space": [
   null,
   "Sense espai lliure"
@@ -913,6 +993,10 @@ return plural;
  "No iSCSI targets set up": [
   null,
   "Cap destinació iSCSI preparada"
+ ],
+ "No keys added": [
+  null,
+  ""
  ],
  "No media inserted": [
   null,
@@ -953,6 +1037,10 @@ return plural;
  "Ok": [
   null,
   "D'acord"
+ ],
+ "Old passphrase": [
+  null,
+  ""
  ],
  "On": [
   null,
@@ -1001,6 +1089,10 @@ return plural;
  "Passphrase cannot be empty": [
   null,
   "La contrasenya no pot estar en blanc"
+ ],
+ "Passphrase removal may prevent unlocking $0.": [
+  null,
+  ""
  ],
  "Passphrases do not match": [
   null,
@@ -1174,9 +1266,25 @@ return plural;
   null,
   "Suprimeix"
  ],
+ "Remove $0?": [
+  null,
+  ""
+ ],
+ "Remove Tang keyserver": [
+  null,
+  ""
+ ],
  "Remove device": [
   null,
   "Treu el dispositiu"
+ ],
+ "Remove passphrase": [
+  null,
+  ""
+ ],
+ "Remove passphrase in $0?": [
+  null,
+  ""
  ],
  "Removing $0": [
   null,
@@ -1210,6 +1318,10 @@ return plural;
   null,
   ""
  ],
+ "Repeat passphrase": [
+  null,
+  ""
+ ],
  "Resizing $target": [
   null,
   "S'està redimensionant $target"
@@ -1221,6 +1333,14 @@ return plural;
  "SMART self-test of $target": [
   null,
   "Autotest SMART de $target."
+ ],
+ "Save": [
+  null,
+  "Desa"
+ ],
+ "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
+  null,
+  ""
  ],
  "Securely erasing $target": [
   null,
@@ -1285,6 +1405,10 @@ return plural;
  "Size must be at least $0": [
   null,
   "La mida com a mínim ha de ser $0"
+ ],
+ "Slot $0": [
+  null,
+  ""
  ],
  "Spare": [
   null,
@@ -1362,6 +1486,10 @@ return plural;
   null,
   "Sincronització del dispositiu RAID $target"
  ],
+ "Tang keyserver": [
+  null,
+  ""
+ ],
  "Targets": [
   null,
   "Objectius"
@@ -1386,6 +1514,10 @@ return plural;
   null,
   "No s'ha finalitzat la creació d'aquest dispositiu VDO i no es pot utilitzar aquest dispositiu."
  ],
+ "The currently logged in user is not permitted to see information about keys.": [
+  null,
+  ""
+ ],
  "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
   null,
   ""
@@ -1401,6 +1533,10 @@ return plural;
  "The last disk of a RAID device cannot be removed.": [
   null,
   "No es pot treure l'últim disc d'un dispositiu RAID."
+ ],
+ "The last key slot can not be removed": [
+  null,
+  ""
  ],
  "The last physical volume of a volume group cannot be removed.": [
   null,
@@ -1466,6 +1602,10 @@ return plural;
   null,
   ""
  ],
+ "Trust key": [
+  null,
+  ""
+ ],
  "Type": [
   null,
   "Tipus"
@@ -1502,6 +1642,10 @@ return plural;
   null,
   "Nom d'amfitrió desconegut"
  ],
+ "Unknown type": [
+  null,
+  ""
+ ],
  "Unlock": [
   null,
   "Desbloqueja"
@@ -1517,6 +1661,10 @@ return plural;
  "Unlocking $target": [
   null,
   "S'està desbloquejant $target"
+ ],
+ "Unlocking disk...": [
+  null,
+  ""
  ],
  "Unmount": [
   null,
@@ -1582,6 +1730,10 @@ return plural;
   null,
   "VFAT - Compatible amb tots els sistemes i dispositius"
  ],
+ "Verify key": [
+  null,
+  ""
+ ],
  "Very securely erasing $target": [
   null,
   "S'està eliminant de forma molt segura $target"
@@ -1603,6 +1755,10 @@ return plural;
   "Grups de volums"
  ],
  "Waiting for other software management operations to finish": [
+  null,
+  ""
+ ],
+ "What if tang-show-keys is not available?": [
   null,
   ""
  ],
@@ -1637,6 +1793,10 @@ return plural;
  "iSCSI Targets": [
   null,
   "Destinacions iSCSI"
+ ],
+ "key slot $0": [
+  null,
+  ""
  ],
  "undefined": [
   null,

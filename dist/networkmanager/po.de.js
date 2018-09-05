@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "de",
-  "x-generator": "Zanata 4.5.0"
+  "x-generator": "Zanata 4.6.0"
  },
  "$0 day": [
   "$0 days",
@@ -99,7 +99,7 @@ return plural;
  ],
  "$mtu": [
   null,
-  ""
+  "$mtu"
  ],
  "1 day": [
   null,

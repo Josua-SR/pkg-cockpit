@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "de",
-  "x-generator": "Zanata 4.5.0"
+  "x-generator": "Zanata 4.6.0"
  },
  "Cancel": [
   null,
@@ -77,7 +77,7 @@ return plural;
  ],
  "Create Report": [
   null,
-  ""
+  "Bericht erzeugen"
  ],
  "Create diagnostic report": [
   null,
