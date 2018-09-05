@@ -1,11 +1,11 @@
-cockpit (177-1) UNRELEASED; urgency=medium
+cockpit (177-1) unstable; urgency=medium
 
   * New upstream release:
     - Storage: Support LUKS v2
     - Support centrally-managed SSH known hosts
     - Drop support for Internet Explorer
 
- -- Martin Pitt <mpitt@debian.org>  Wed, 05 Sep 2018 18:50:56 +0000
+ -- Martin Pitt <mpitt@debian.org>  Wed, 05 Sep 2018 18:52:07 +0000
 
 cockpit (176-2) unstable; urgency=medium
 
