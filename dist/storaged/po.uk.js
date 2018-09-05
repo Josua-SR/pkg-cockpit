@@ -65,7 +65,7 @@ nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 |
 return plural;
 },
   "language": "uk",
-  "x-generator": "Zanata 4.5.0"
+  "x-generator": "Zanata 4.6.0"
  },
  "$0 Block Device": [
   null,
@@ -136,6 +136,10 @@ return plural;
  "$0 of $1": [
   null,
   "$0 з $1"
+ ],
+ "$0 slots remain": [
+  null,
+  "Лишилося $0 слотів"
  ],
  "$0 used of $1 ($2 saved)": [
   null,
@@ -265,6 +269,10 @@ return plural;
   null,
   "Додати диски"
  ],
+ "Add Key": [
+  null,
+  "Додати ключ"
+ ],
  "Add iSCSI Portal": [
   null,
   "Додати портал iSCSI"
@@ -280,6 +288,10 @@ return plural;
  "Address": [
   null,
   "Адреса"
+ ],
+ "Address cannot be empty": [
+  null,
+  "Адреса не може бути порожньою"
  ],
  "Apply": [
   null,
@@ -333,6 +345,10 @@ return plural;
   null,
   "Змінити назву ініціатора iSCSI"
  ],
+ "Change passphrase": [
+  null,
+  "Змінити пароль"
+ ],
  "Checking $target": [
   null,
   "Перевіряємо $target"
@@ -376,6 +392,10 @@ return plural;
  "Confirm passphrase": [
   null,
   "Підтвердить пароль"
+ ],
+ "Confirm removal with passphrase": [
+  null,
+  "Підтвердьте вилучення введенням пароля"
  ],
  "Content": [
   null,
@@ -545,6 +565,10 @@ return plural;
   null,
   "З диском усе гаразд"
  ],
+ "Disk passphrase": [
+  null,
+  "Пароль до диска"
+ ],
  "Disks": [
   null,
   "Диски"
@@ -568,6 +592,14 @@ return plural;
  "Edit": [
   null,
   "Змінити"
+ ],
+ "Edit Tang keyserver": [
+  null,
+  "Редагувати сервер ключів Tang"
+ ],
+ "Editing a key requires a free slot": [
+  null,
+  "Редагування ключа потребує вільного слоту"
  ],
  "Ejecting $target": [
   null,
@@ -653,6 +685,10 @@ return plural;
   null,
   "Файлові системи"
  ],
+ "Force remove passphrase in $0": [
+  null,
+  "Примусово вилучити пароль у $0"
+ ],
  "Format": [
   null,
   "Формат"
@@ -701,6 +737,10 @@ return plural;
   null,
   "Збільшити так, щоб використати усе місце"
  ],
+ "If tang-show-keys is not available, run the following:": [
+  null,
+  "Якщо програма tang-show-keys є недоступною, віддайте таку команду:"
+ ],
  "In Sync": [
   null,
   "Синхронізовано"
@@ -741,6 +781,30 @@ return plural;
   null,
   "Завдання"
  ],
+ "Key slots with unknown types can not be edited here": [
+  null,
+  "Тут не можна редагувати слоти ключів із невідомими типами"
+ ],
+ "Key source": [
+  null,
+  "Джерело ключа"
+ ],
+ "Keys": [
+  null,
+  "Ключі"
+ ],
+ "Keyserver": [
+  null,
+  "Сервер ключів"
+ ],
+ "Keyserver address": [
+  null,
+  "Адреса сервера ключів"
+ ],
+ "Keyserver removal may prevent unlocking $0.": [
+  null,
+  "Вилучення сервера ключів може завадити розблокуванню $0."
+ ],
  "Local Mount Point": [
   null,
   "Локальна точка монтування"
@@ -772,6 +836,14 @@ return plural;
  "Logical Volume of $0": [
   null,
   "Логічний том $0"
+ ],
+ "Make sure the key hash from the Tang server matches:": [
+  null,
+  "Переконайтеся, що хеш ключа з сервера Tang є таким:"
+ ],
+ "Manually check with SSH: ": [
+  null,
+  "Перевірка вручну за допомогою SSH: "
  ],
  "Marking $target as faulty": [
   null,
@@ -881,13 +953,13 @@ return plural;
   null,
   "У назві не повинно бути пробілів"
  ],
- "Network keys": [
-  null,
-  "Ключі мережі"
- ],
  "New NFS Mount": [
   null,
   "Нове монтування NFS"
+ ],
+ "New passphrase": [
+  null,
+  "Новий пароль"
  ],
  "Next": [
   null,
@@ -905,6 +977,10 @@ return plural;
   null,
   "Монтувань NFS не налаштовано"
  ],
+ "No available slots": [
+  null,
+  "Немає доступних слотів"
+ ],
  "No disks are available.": [
   null,
   "Немає доступних дисків."
@@ -913,6 +989,10 @@ return plural;
   null,
   "Не долучено жодного диска"
  ],
+ "No free key slots": [
+  null,
+  "Немає вільних слотів ключів"
+ ],
  "No free space": [
   null,
   "Недостатньо вільного простору"
@@ -920,6 +1000,10 @@ return plural;
  "No iSCSI targets set up": [
   null,
   "Призначень iSCSI не налаштовано"
+ ],
+ "No keys added": [
+  null,
+  "Не додано жодного ключа"
  ],
  "No media inserted": [
   null,
@@ -960,6 +1044,10 @@ return plural;
  "Ok": [
   null,
   "Гаразд"
+ ],
+ "Old passphrase": [
+  null,
+  "Старий пароль"
  ],
  "On": [
   null,
@@ -1008,6 +1096,10 @@ return plural;
  "Passphrase cannot be empty": [
   null,
   "Пароль не може бути порожнім"
+ ],
+ "Passphrase removal may prevent unlocking $0.": [
+  null,
+  "Вилучення пароля може завадити розблокуванню $0."
  ],
  "Passphrases do not match": [
   null,
@@ -1181,9 +1273,25 @@ return plural;
   null,
   "Вилучити"
  ],
+ "Remove $0?": [
+  null,
+  "Вилучити $0?"
+ ],
+ "Remove Tang keyserver": [
+  null,
+  "Вилучити сервер ключів Tang"
+ ],
  "Remove device": [
   null,
   "Вилучити пристрій"
+ ],
+ "Remove passphrase": [
+  null,
+  "Вилучити пароль"
+ ],
+ "Remove passphrase in $0?": [
+  null,
+  "Вилучити пароль у $0?"
  ],
  "Removing $0": [
   null,
@@ -1217,6 +1325,10 @@ return plural;
   null,
   "Відновлюємо $target"
  ],
+ "Repeat passphrase": [
+  null,
+  "Повторіть пароль"
+ ],
  "Resizing $target": [
   null,
   "Зміна розміру $target"
@@ -1228,6 +1340,14 @@ return plural;
  "SMART self-test of $target": [
   null,
   "Самоперевірка SMART $target"
+ ],
+ "Save": [
+  null,
+  "Зберегти"
+ ],
+ "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
+  null,
+  "Збереження нового пароля потребує розблокування диска. Будь ласка, вкажіть поточний пароль до диска."
  ],
  "Securely erasing $target": [
   null,
@@ -1292,6 +1412,10 @@ return plural;
  "Size must be at least $0": [
   null,
   "Розмір має бути не меншим за $0"
+ ],
+ "Slot $0": [
+  null,
+  "Слот $0"
  ],
  "Spare": [
   null,
@@ -1369,6 +1493,10 @@ return plural;
   null,
   "Синхронізуємо пристрій RAID $target"
  ],
+ "Tang keyserver": [
+  null,
+  "Сервер ключів Tang"
+ ],
  "Targets": [
   null,
   "Призначення"
@@ -1393,6 +1521,10 @@ return plural;
   null,
   "Створення цього пристрою VDO не завершено, ним не можна користуватися."
  ],
+ "The currently logged in user is not permitted to see information about keys.": [
+  null,
+  "Поточний користувач, від імені якого було здійснено вхід до системи, не має права перегляду даних щодо ключів."
+ ],
  "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
   null,
   "Файлова система використовується службами системи або сеансами користувачів. Виконання цієї дії призведе до припинення роботи цих служб та сеансів."
@@ -1408,6 +1540,10 @@ return plural;
  "The last disk of a RAID device cannot be removed.": [
   null,
   "Останній диск пристрою RAID вилучати не можна."
+ ],
+ "The last key slot can not be removed": [
+  null,
+  "Не можна вилучати останній слот ключів"
  ],
  "The last physical volume of a volume group cannot be removed.": [
   null,
@@ -1473,6 +1609,10 @@ return plural;
   null,
   "Загальний розмір: $0"
  ],
+ "Trust key": [
+  null,
+  "Довіряти ключу"
+ ],
  "Type": [
   null,
   "Тип"
@@ -1509,6 +1649,10 @@ return plural;
   null,
   "Невідома назва вузла"
  ],
+ "Unknown type": [
+  null,
+  "Невідомий тип"
+ ],
  "Unlock": [
   null,
   "Розблокувати"
@@ -1524,6 +1668,10 @@ return plural;
  "Unlocking $target": [
   null,
   "Розблокуємо $target"
+ ],
+ "Unlocking disk...": [
+  null,
+  "Розблоковуємо диск…"
  ],
  "Unmount": [
   null,
@@ -1589,6 +1737,10 @@ return plural;
   null,
   "VFAT - Сумісна із усіма системами та пристроями"
  ],
+ "Verify key": [
+  null,
+  "Перевірити ключ"
+ ],
  "Very securely erasing $target": [
   null,
   "Дуже безпечно витираємо $target"
@@ -1612,6 +1764,10 @@ return plural;
  "Waiting for other software management operations to finish": [
   null,
   "Очікуємо на завершення інших дій із програмним забезпеченням"
+ ],
+ "What if tang-show-keys is not available?": [
+  null,
+  "Що робити, якщо tang-show-keys є недоступною?"
  ],
  "Write-mostly": [
   null,
@@ -1644,6 +1800,10 @@ return plural;
  "iSCSI Targets": [
   null,
   "Призначення iSCSI"
+ ],
+ "key slot $0": [
+  null,
+  "слот ключів $0"
  ],
  "undefined": [
   null,

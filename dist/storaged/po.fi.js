@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "fi",
-  "x-generator": "Zanata 4.5.0"
+  "x-generator": "Zanata 4.6.0"
  },
  "$0 Block Device": [
   null,
@@ -131,6 +131,10 @@ return plural;
  "$0 of $1": [
   null,
   "$0/$1"
+ ],
+ "$0 slots remain": [
+  null,
+  ""
  ],
  "$0 used of $1 ($2 saved)": [
   null,
@@ -258,6 +262,10 @@ return plural;
   null,
   "Lisää levyjä"
  ],
+ "Add Key": [
+  null,
+  ""
+ ],
  "Add iSCSI Portal": [
   null,
   "Lisää iSCSI Portaali"
@@ -273,6 +281,10 @@ return plural;
  "Address": [
   null,
   "Osoite"
+ ],
+ "Address cannot be empty": [
+  null,
+  ""
  ],
  "Apply": [
   null,
@@ -326,6 +338,10 @@ return plural;
   null,
   "Vaihda iSCSI-asiakaslaitteen nimi"
  ],
+ "Change passphrase": [
+  null,
+  ""
+ ],
  "Checking $target": [
   null,
   "Tarkistetaan $target"
@@ -369,6 +385,10 @@ return plural;
  "Confirm passphrase": [
   null,
   "Vahvista salasana"
+ ],
+ "Confirm removal with passphrase": [
+  null,
+  ""
  ],
  "Content": [
   null,
@@ -538,6 +558,10 @@ return plural;
   null,
   "Levy on OK"
  ],
+ "Disk passphrase": [
+  null,
+  ""
+ ],
  "Disks": [
   null,
   "Levyt"
@@ -561,6 +585,14 @@ return plural;
  "Edit": [
   null,
   "Muokkaa"
+ ],
+ "Edit Tang keyserver": [
+  null,
+  ""
+ ],
+ "Editing a key requires a free slot": [
+  null,
+  ""
  ],
  "Ejecting $target": [
   null,
@@ -646,6 +678,10 @@ return plural;
   null,
   "Tiedostojärjestelmät"
  ],
+ "Force remove passphrase in $0": [
+  null,
+  ""
+ ],
  "Format": [
   null,
   "Alusta"
@@ -694,6 +730,10 @@ return plural;
   null,
   ""
  ],
+ "If tang-show-keys is not available, run the following:": [
+  null,
+  ""
+ ],
  "In Sync": [
   null,
   "Synkronoitu"
@@ -734,6 +774,30 @@ return plural;
   null,
   "Työt"
  ],
+ "Key slots with unknown types can not be edited here": [
+  null,
+  ""
+ ],
+ "Key source": [
+  null,
+  ""
+ ],
+ "Keys": [
+  null,
+  ""
+ ],
+ "Keyserver": [
+  null,
+  ""
+ ],
+ "Keyserver address": [
+  null,
+  ""
+ ],
+ "Keyserver removal may prevent unlocking $0.": [
+  null,
+  ""
+ ],
  "Local Mount Point": [
   null,
   "Paikallinen liitospiste"
@@ -763,6 +827,14 @@ return plural;
   "Looginen taltio (tilannevedos)"
  ],
  "Logical Volume of $0": [
+  null,
+  ""
+ ],
+ "Make sure the key hash from the Tang server matches:": [
+  null,
+  ""
+ ],
+ "Manually check with SSH: ": [
   null,
   ""
  ],
@@ -874,13 +946,13 @@ return plural;
   null,
   ""
  ],
- "Network keys": [
-  null,
-  "Verkkoavaimet"
- ],
  "New NFS Mount": [
   null,
   "Uusi NFS-liitos"
+ ],
+ "New passphrase": [
+  null,
+  ""
  ],
  "Next": [
   null,
@@ -898,6 +970,10 @@ return plural;
   null,
   ""
  ],
+ "No available slots": [
+  null,
+  ""
+ ],
  "No disks are available.": [
   null,
   "Levyjä ei ole saatavilla."
@@ -906,11 +982,19 @@ return plural;
   null,
   ""
  ],
+ "No free key slots": [
+  null,
+  ""
+ ],
  "No free space": [
   null,
   "Ei vapaata tilaa"
  ],
  "No iSCSI targets set up": [
+  null,
+  ""
+ ],
+ "No keys added": [
   null,
   ""
  ],
@@ -953,6 +1037,10 @@ return plural;
  "Ok": [
   null,
   "OK"
+ ],
+ "Old passphrase": [
+  null,
+  ""
  ],
  "On": [
   null,
@@ -1001,6 +1089,10 @@ return plural;
  "Passphrase cannot be empty": [
   null,
   "Tunnuslause ei voi olla tyhjä"
+ ],
+ "Passphrase removal may prevent unlocking $0.": [
+  null,
+  ""
  ],
  "Passphrases do not match": [
   null,
@@ -1174,9 +1266,25 @@ return plural;
   null,
   "Poista"
  ],
+ "Remove $0?": [
+  null,
+  ""
+ ],
+ "Remove Tang keyserver": [
+  null,
+  ""
+ ],
  "Remove device": [
   null,
   "Poista laite"
+ ],
+ "Remove passphrase": [
+  null,
+  ""
+ ],
+ "Remove passphrase in $0?": [
+  null,
+  ""
  ],
  "Removing $0": [
   null,
@@ -1210,6 +1318,10 @@ return plural;
   null,
   "Korjataan $target"
  ],
+ "Repeat passphrase": [
+  null,
+  ""
+ ],
  "Resizing $target": [
   null,
   ""
@@ -1219,6 +1331,14 @@ return plural;
   ""
  ],
  "SMART self-test of $target": [
+  null,
+  ""
+ ],
+ "Save": [
+  null,
+  "Tallenna"
+ ],
+ "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
   ""
  ],
@@ -1285,6 +1405,10 @@ return plural;
  "Size must be at least $0": [
   null,
   "Koon tulee olla vähintään $0"
+ ],
+ "Slot $0": [
+  null,
+  ""
  ],
  "Spare": [
   null,
@@ -1362,6 +1486,10 @@ return plural;
   null,
   "Synkronoidaan RAID-laitetta $target"
  ],
+ "Tang keyserver": [
+  null,
+  ""
+ ],
  "Targets": [
   null,
   ""
@@ -1386,6 +1514,10 @@ return plural;
   null,
   ""
  ],
+ "The currently logged in user is not permitted to see information about keys.": [
+  null,
+  ""
+ ],
  "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
   null,
   ""
@@ -1399,6 +1531,10 @@ return plural;
   ""
  ],
  "The last disk of a RAID device cannot be removed.": [
+  null,
+  ""
+ ],
+ "The last key slot can not be removed": [
   null,
   ""
  ],
@@ -1466,6 +1602,10 @@ return plural;
   null,
   ""
  ],
+ "Trust key": [
+  null,
+  ""
+ ],
  "Type": [
   null,
   "Tyyppi"
@@ -1502,6 +1642,10 @@ return plural;
   null,
   ""
  ],
+ "Unknown type": [
+  null,
+  ""
+ ],
  "Unlock": [
   null,
   "Avaa"
@@ -1517,6 +1661,10 @@ return plural;
  "Unlocking $target": [
   null,
   "Avataan $target"
+ ],
+ "Unlocking disk...": [
+  null,
+  ""
  ],
  "Unmount": [
   null,
@@ -1582,6 +1730,10 @@ return plural;
   null,
   "VFAT - Yhteensopiva kaikkien järjestelmien ja laitteiden kanssa"
  ],
+ "Verify key": [
+  null,
+  ""
+ ],
  "Very securely erasing $target": [
   null,
   "Poistetaan hyvin turvallisesti $target"
@@ -1603,6 +1755,10 @@ return plural;
   "Taltioryhmät"
  ],
  "Waiting for other software management operations to finish": [
+  null,
+  ""
+ ],
+ "What if tang-show-keys is not available?": [
   null,
   ""
  ],
@@ -1637,6 +1793,10 @@ return plural;
  "iSCSI Targets": [
   null,
   "iSCSI-kohteet"
+ ],
+ "key slot $0": [
+  null,
+  ""
  ],
  "undefined": [
   null,

@@ -65,7 +65,7 @@ nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 |
 return plural;
 },
   "language": "uk",
-  "x-generator": "Zanata 4.5.0"
+  "x-generator": "Zanata 4.6.0"
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
@@ -1437,7 +1437,7 @@ return plural;
  ],
  "Show all VMs": [
   null,
-  ""
+  "Показати усі ВМ"
  ],
  "Show all image streams": [
   null,
@@ -1677,11 +1677,11 @@ return plural;
  ],
  "VM": [
   null,
-  ""
+  "ВМ"
  ],
  "VM $0:$1 does not exist.": [
   null,
-  ""
+  "ВМ $0:$1 не існує."
  ],
  "VM DELETE failed.": [
   null,

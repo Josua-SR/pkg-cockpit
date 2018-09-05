@@ -180,12 +180,14 @@ TESTS = $(am__EXEEXT_4) $(am__EXEEXT_13) $(am__EXEEXT_16) \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/test_rsa.pub \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock_known_hosts \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock-pid-cat \
+@WITH_COCKPIT_SSH_TRUE@	src/ssh/mock-bin/sss_ssh_knownhostsproxy \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock-config \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/invalid_known_hosts \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
 @WITH_COCKPIT_SSH_TRUE@am__append_17 = \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock-pid-cat \
+@WITH_COCKPIT_SSH_TRUE@	src/ssh/mock-bin/sss_ssh_knownhostsproxy \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
 @WITH_COCKPIT_SSH_TRUE@am__append_18 = $(SSH_CHECKS)

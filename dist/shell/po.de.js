@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "de",
-  "x-generator": "Zanata 4.5.0"
+  "x-generator": "Zanata 4.6.0"
  },
  "A compatible version of Cockpit is not installed on {{#strong}}{{host}}{{/strong}}.": [
   null,
@@ -189,7 +189,7 @@ return plural;
  ],
  "Connect": [
   null,
-  ""
+  "Verbinden"
  ],
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,

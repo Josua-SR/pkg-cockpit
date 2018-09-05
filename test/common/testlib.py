@@ -225,6 +225,9 @@ class Browser:
     def focus(self, selector):
         self.call_js_func('ph_focus', selector)
 
+    def blur(self, selector):
+        self.call_js_func('ph_blur', selector)
+
     def key_press(self, keys):
         for k in keys:
             if k.isalnum():
@@ -236,6 +239,8 @@ class Browser:
         self.set_val(selector, "")
         self.focus(selector)
         self.key_press(val)
+        self.wait_val(selector, val)
+        self.blur(selector)
 
     def wait_timeout(self, timeout):
         browser = self
@@ -822,8 +827,9 @@ class MachineCase(unittest.TestCase):
             self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { create } for  pid=1 comm="systemd" name="bpf".*')
             # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1573501
             self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { create } for .*comm="nft" .*firewalld_t.*')
-            # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1600452
-            self.allowed_messages.append('org.freedesktop.PackageKit:.*Timeout was reached')
+            # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1571377
+            self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { .* } for .* path="/dev/random" .*')
+            self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { read } for .* name="random" .*')
 
         # these images don't have tuned; keep in sync with bots/images/scripts/debian.setup
         if self.image in ["ubuntu-1604", "debian-stable"]:

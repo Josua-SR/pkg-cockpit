@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "de",
-  "x-generator": "Zanata 4.5.0"
+  "x-generator": "Zanata 4.6.0"
  },
  "$0 Template": [
   null,
@@ -102,7 +102,7 @@ return plural;
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "$0 wird installiert."
  ],
  "$0 year": [
   "$0 years",

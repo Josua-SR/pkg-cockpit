@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "pt_BR",
-  "x-generator": "Zanata 4.5.0"
+  "x-generator": "Zanata 4.6.0"
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
@@ -1847,15 +1847,15 @@ return plural;
  ],
  "server": [
   null,
-  ""
+  "servidor"
  ],
  "show less": [
   null,
-  ""
+  "mostrar menos"
  ],
  "show more": [
   null,
-  ""
+  "mostrar mais"
  ],
  "shut off": [
   null,
@@ -1871,7 +1871,7 @@ return plural;
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "up": [
   null,
@@ -1883,7 +1883,7 @@ return plural;
  ],
  "user": [
   null,
-  ""
+  "usuário"
  ],
  "vCPUs:": [
   null,

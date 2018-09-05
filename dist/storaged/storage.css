@@ -1819,4 +1819,25 @@ td.storage-action {
     margin-bottom: 2ex;
 }
 
+.size-sliderx {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.size-sliderx .slider {
+    flex: 1;
+}
+
+.size-sliderx .size-text {
+    display: inline;
+    width: 6em;
+    text-align: right;
+    margin: 2px;
+}
+
+.size-sliderx .size-unit {
+    width: 5em !important;
+}
+
 /*# sourceMappingURL=storage.css.map*/

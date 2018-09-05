@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "pt_BR",
-  "x-generator": "Zanata 4.5.0"
+  "x-generator": "Zanata 4.6.0"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -1033,15 +1033,15 @@ return plural;
  ],
  "server": [
   null,
-  ""
+  "servidor"
  ],
  "show less": [
   null,
-  ""
+  "mostrar menos"
  ],
  "show more": [
   null,
-  ""
+  "mostrar mais"
  ],
  "shut off": [
   null,
@@ -1053,7 +1053,7 @@ return plural;
  ],
  "sockets": [
   null,
-  ""
+  "sockets"
  ],
  "suspended (PM)": [
   null,
@@ -1061,15 +1061,15 @@ return plural;
  ],
  "threads": [
   null,
-  ""
+  "threads"
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "unassigned": [
   null,
-  ""
+  "não assinado"
  ],
  "undefined": [
   null,
@@ -1081,11 +1081,11 @@ return plural;
  ],
  "user": [
   null,
-  ""
+  "usuário"
  ],
  "vCPU Count": [
   null,
-  ""
+  "quantidade de vCPU"
  ],
  "vCPU Maximum": [
   null,
@@ -1093,7 +1093,7 @@ return plural;
  ],
  "vCPUs": [
   null,
-  ""
+  "vCPUs"
  ],
  "vCPUs:": [
   null,

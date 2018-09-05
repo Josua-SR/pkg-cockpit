@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "de",
-  "x-generator": "Zanata 4.5.0"
+  "x-generator": "Zanata 4.6.0"
  },
  "$0 is not available from any repository.": [
   null,
@@ -73,12 +73,12 @@ return plural;
  ],
  "$0 update": [
   "$0 updates",
-  "",
-  ""
+  "$0 Aktualisierung",
+  "$0 Aktualisierungen"
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "$0 wird installiert."
  ],
  "$1 security fix": [
   "$1 security fixes",

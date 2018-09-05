@@ -65,7 +65,7 @@ nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;
 return plural;
 },
   "language": "cs",
-  "x-generator": "Zanata 4.5.0"
+  "x-generator": "Zanata 4.6.0"
  },
  " (shared with the OS)": [
   null,

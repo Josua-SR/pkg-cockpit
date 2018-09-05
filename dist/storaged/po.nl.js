@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "nl",
-  "x-generator": "Zanata 4.5.0"
+  "x-generator": "Zanata 4.6.0"
  },
  "$0 Block Device": [
   null,
@@ -129,6 +129,10 @@ return plural;
   ""
  ],
  "$0 of $1": [
+  null,
+  ""
+ ],
+ "$0 slots remain": [
   null,
   ""
  ],
@@ -258,6 +262,10 @@ return plural;
   null,
   "Schijven toevoegen"
  ],
+ "Add Key": [
+  null,
+  ""
+ ],
  "Add iSCSI Portal": [
   null,
   ""
@@ -271,6 +279,10 @@ return plural;
   ""
  ],
  "Address": [
+  null,
+  ""
+ ],
+ "Address cannot be empty": [
   null,
   ""
  ],
@@ -326,6 +338,10 @@ return plural;
   null,
   ""
  ],
+ "Change passphrase": [
+  null,
+  ""
+ ],
  "Checking $target": [
   null,
   ""
@@ -367,6 +383,10 @@ return plural;
   ""
  ],
  "Confirm passphrase": [
+  null,
+  ""
+ ],
+ "Confirm removal with passphrase": [
   null,
   ""
  ],
@@ -538,6 +558,10 @@ return plural;
   null,
   "Schijf is OK"
  ],
+ "Disk passphrase": [
+  null,
+  ""
+ ],
  "Disks": [
   null,
   "Schijven"
@@ -559,6 +583,14 @@ return plural;
   ""
  ],
  "Edit": [
+  null,
+  ""
+ ],
+ "Edit Tang keyserver": [
+  null,
+  ""
+ ],
+ "Editing a key requires a free slot": [
   null,
   ""
  ],
@@ -646,6 +678,10 @@ return plural;
   null,
   ""
  ],
+ "Force remove passphrase in $0": [
+  null,
+  ""
+ ],
  "Format": [
   null,
   ""
@@ -694,6 +730,10 @@ return plural;
   null,
   ""
  ],
+ "If tang-show-keys is not available, run the following:": [
+  null,
+  ""
+ ],
  "In Sync": [
   null,
   ""
@@ -734,6 +774,30 @@ return plural;
   null,
   ""
  ],
+ "Key slots with unknown types can not be edited here": [
+  null,
+  ""
+ ],
+ "Key source": [
+  null,
+  ""
+ ],
+ "Keys": [
+  null,
+  ""
+ ],
+ "Keyserver": [
+  null,
+  ""
+ ],
+ "Keyserver address": [
+  null,
+  ""
+ ],
+ "Keyserver removal may prevent unlocking $0.": [
+  null,
+  ""
+ ],
  "Local Mount Point": [
   null,
   ""
@@ -763,6 +827,14 @@ return plural;
   ""
  ],
  "Logical Volume of $0": [
+  null,
+  ""
+ ],
+ "Make sure the key hash from the Tang server matches:": [
+  null,
+  ""
+ ],
+ "Manually check with SSH: ": [
   null,
   ""
  ],
@@ -874,11 +946,11 @@ return plural;
   null,
   ""
  ],
- "Network keys": [
+ "New NFS Mount": [
   null,
   ""
  ],
- "New NFS Mount": [
+ "New passphrase": [
   null,
   ""
  ],
@@ -898,6 +970,10 @@ return plural;
   null,
   ""
  ],
+ "No available slots": [
+  null,
+  ""
+ ],
  "No disks are available.": [
   null,
   "Geen schijven beschikbaar."
@@ -906,11 +982,19 @@ return plural;
   null,
   ""
  ],
+ "No free key slots": [
+  null,
+  ""
+ ],
  "No free space": [
   null,
   ""
  ],
  "No iSCSI targets set up": [
+  null,
+  ""
+ ],
+ "No keys added": [
   null,
   ""
  ],
@@ -951,6 +1035,10 @@ return plural;
   ""
  ],
  "Ok": [
+  null,
+  ""
+ ],
+ "Old passphrase": [
   null,
   ""
  ],
@@ -999,6 +1087,10 @@ return plural;
   ""
  ],
  "Passphrase cannot be empty": [
+  null,
+  ""
+ ],
+ "Passphrase removal may prevent unlocking $0.": [
   null,
   ""
  ],
@@ -1174,7 +1266,23 @@ return plural;
   null,
   ""
  ],
+ "Remove $0?": [
+  null,
+  ""
+ ],
+ "Remove Tang keyserver": [
+  null,
+  ""
+ ],
  "Remove device": [
+  null,
+  ""
+ ],
+ "Remove passphrase": [
+  null,
+  ""
+ ],
+ "Remove passphrase in $0?": [
   null,
   ""
  ],
@@ -1210,6 +1318,10 @@ return plural;
   null,
   ""
  ],
+ "Repeat passphrase": [
+  null,
+  ""
+ ],
  "Resizing $target": [
   null,
   ""
@@ -1219,6 +1331,14 @@ return plural;
   ""
  ],
  "SMART self-test of $target": [
+  null,
+  ""
+ ],
+ "Save": [
+  null,
+  ""
+ ],
+ "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
   ""
  ],
@@ -1283,6 +1403,10 @@ return plural;
   ""
  ],
  "Size must be at least $0": [
+  null,
+  ""
+ ],
+ "Slot $0": [
   null,
   ""
  ],
@@ -1362,6 +1486,10 @@ return plural;
   null,
   ""
  ],
+ "Tang keyserver": [
+  null,
+  ""
+ ],
  "Targets": [
   null,
   ""
@@ -1386,6 +1514,10 @@ return plural;
   null,
   ""
  ],
+ "The currently logged in user is not permitted to see information about keys.": [
+  null,
+  ""
+ ],
  "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
   null,
   ""
@@ -1401,6 +1533,10 @@ return plural;
  "The last disk of a RAID device cannot be removed.": [
   null,
   "De laatste schijf van een RAID apparaat kan niet worden verwijderd."
+ ],
+ "The last key slot can not be removed": [
+  null,
+  ""
  ],
  "The last physical volume of a volume group cannot be removed.": [
   null,
@@ -1466,6 +1602,10 @@ return plural;
   null,
   ""
  ],
+ "Trust key": [
+  null,
+  ""
+ ],
  "Type": [
   null,
   ""
@@ -1502,6 +1642,10 @@ return plural;
   null,
   ""
  ],
+ "Unknown type": [
+  null,
+  ""
+ ],
  "Unlock": [
   null,
   ""
@@ -1515,6 +1659,10 @@ return plural;
   ""
  ],
  "Unlocking $target": [
+  null,
+  ""
+ ],
+ "Unlocking disk...": [
   null,
   ""
  ],
@@ -1582,6 +1730,10 @@ return plural;
   null,
   ""
  ],
+ "Verify key": [
+  null,
+  ""
+ ],
  "Very securely erasing $target": [
   null,
   ""
@@ -1603,6 +1755,10 @@ return plural;
   ""
  ],
  "Waiting for other software management operations to finish": [
+  null,
+  ""
+ ],
+ "What if tang-show-keys is not available?": [
   null,
   ""
  ],
@@ -1635,6 +1791,10 @@ return plural;
   ""
  ],
  "iSCSI Targets": [
+  null,
+  ""
+ ],
+ "key slot $0": [
   null,
   ""
  ],

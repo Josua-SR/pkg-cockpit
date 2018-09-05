@@ -571,7 +571,7 @@ console.warn("Deprecated: " +
   };
 
   mustache.name = 'mustache.js';
-  mustache.version = '2.3.0';
+  mustache.version = '2.3.2';
   mustache.tags = [ '{{', '}}' ];
 
   // All high-level mustache.* functions use this writer.

@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "de",
-  "x-generator": "Zanata 4.5.0"
+  "x-generator": "Zanata 4.6.0"
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
@@ -91,11 +91,11 @@ return plural;
  ],
  "Access Modes": [
   null,
-  ""
+  "Zugriffsmodi"
  ],
  "Access Policy": [
   null,
-  ""
+  "Zugriffs-Richtlinie"
  ],
  "Actual": [
   null,
@@ -299,7 +299,7 @@ return plural;
  ],
  "Connect": [
   null,
-  ""
+  "Verbinden"
  ],
  "Connecting...": [
   null,

@@ -65,7 +65,7 @@ nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 |
 return plural;
 },
   "language": "uk",
-  "x-generator": "Zanata 4.5.0"
+  "x-generator": "Zanata 4.6.0"
  },
  " (shared with the OS)": [
   null,
@@ -765,7 +765,7 @@ return plural;
  ],
  "Stop and delete": [
   null,
-  ""
+  "Зупинити і вилучити"
  ],
  "Stopped": [
   null,
@@ -809,7 +809,7 @@ return plural;
  ],
  "The following containers depend on this image and will become unusable.": [
   null,
-  ""
+  "Вказані нижче контейнери залежать від цього образу, отже стануть непридатними до використання."
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,
