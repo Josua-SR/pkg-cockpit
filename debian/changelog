@@ -1,3 +1,10 @@
+cockpit (178-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Lots of crash fixes
+
+ -- Martin Pitt <mpitt@debian.org>  Wed, 19 Sep 2018 12:52:18 +0000
+
 cockpit (177-1) unstable; urgency=medium
 
   * New upstream release:
