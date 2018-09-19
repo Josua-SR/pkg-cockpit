@@ -115,7 +115,7 @@ Copyright: @copyright Chen, Yi-Cyuan 2014-2017
  Copyright 2014-2017 Chen, Yi-Cyuan
 License: MIT
 
-Files: node_modules/json-stable-stringify/*
+Files: node_modules/json-stable-stringify-without-jsonify/*
 Copyright: James Halliday
 License: MIT
 
@@ -193,10 +193,6 @@ License: MIT
 
 Files: node_modules/react-lite/*
 Copyright: Copyright (c) 2015 工业聚
-License: MIT
-
-Files: node_modules/react-redux/*
-Copyright: Copyright (c) 2015-present Dan Abramov
 License: MIT
 
 Files: node_modules/react-remarkable/*

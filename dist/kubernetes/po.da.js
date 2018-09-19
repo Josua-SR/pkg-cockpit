@@ -873,10 +873,6 @@ return plural;
   null,
   ""
  ],
- "Ok": [
-  null,
-  ""
- ],
  "Operating System": [
   null,
   ""
@@ -1261,6 +1257,14 @@ return plural;
   null,
   ""
  ],
+ "Select Member": [
+  null,
+  ""
+ ],
+ "Select Role": [
+  null,
+  ""
+ ],
  "Select an object to see more details.": [
   null,
   ""
@@ -1282,10 +1286,6 @@ return plural;
   ""
  ],
  "Services group pods and provide a common DNS name and an optional, load-balanced IP address to access them.": [
-  null,
-  ""
- ],
- "Session": [
   null,
   ""
  ],
@@ -1382,10 +1382,6 @@ return plural;
   ""
  ],
  "Sync all tags from a remote image repository": [
-  null,
-  ""
- ],
- "System": [
   null,
   ""
  ],
@@ -1569,6 +1565,10 @@ return plural;
   null,
   ""
  ],
+ "Virtual Machines": [
+  null,
+  ""
+ ],
  "Volume": [
   null,
   ""
@@ -1617,27 +1617,7 @@ return plural;
   null,
   ""
  ],
- "crashed": [
-  null,
-  ""
- ],
- "disabled": [
-  null,
-  ""
- ],
- "dying": [
-  null,
-  ""
- ],
  "eg: my-image-stream": [
-  null,
-  ""
- ],
- "enabled": [
-  null,
-  ""
- ],
- "idle": [
   null,
   ""
  ],
@@ -1649,27 +1629,7 @@ return plural;
   null,
   ""
  ],
- "paused": [
-  null,
-  ""
- ],
  "pending volume claims": [
-  null,
-  ""
- ],
- "running": [
-  null,
-  ""
- ],
- "shut off": [
-  null,
-  ""
- ],
- "shutdown": [
-  null,
-  ""
- ],
- "suspended (PM)": [
   null,
   ""
  ],

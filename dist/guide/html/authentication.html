@@ -53,6 +53,11 @@
       </code> will need to be configured to allow password based authentication.
       Alternatively you can setup a <a class="link" href="sso.html" title="Single Sign On">Kerberos based SSO
       solution</a>.</p>
+<p>Like <code class="filename">sshd</code>, cockpit can be configured to limit the number
+      of concurrent login attempts allowed. This is done by adding a <code class="code">MaxStartups</code>
+      option to the <code class="code">WebService</code> section of your <code class="code">cockpit.conf</code>.
+      Additional connections will be dropped until authentication succeeds or
+      the connections are closed.</p>
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h2 class="title" style="clear: both">

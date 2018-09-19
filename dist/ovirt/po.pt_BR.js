@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "pt_BR",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -146,10 +146,6 @@ return plural;
  "Bus": [
   null,
   "Bus"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "A ação MUDAR DE ESTADO DE REDE falhou"
  ],
  "CPU Type:": [
   null,
@@ -322,10 +318,6 @@ return plural;
  "Format": [
   null,
   "Formate"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "GET HYPERVISOR MAX VCPU falhou"
  ],
  "GiB": [
   null,
@@ -798,30 +790,6 @@ return plural;
  "VDSM Service Management": [
   null,
   "VDSM Gerenciamento de Serviços"
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "ação VM FORCE OFF falhou"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "ação VM FORCE REBOOT falhou"
- ],
- "VM REBOOT action failed": [
-  null,
-  "ação VM REBOOT falhou"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  "VM SEND Falha na ação de interrupção não mascarável"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "ação VM SHUT DOWN falhou"
- ],
- "VM START action failed": [
-  null,
-  "ação VM START falhou"
  ],
  "VM icon": [
   null,

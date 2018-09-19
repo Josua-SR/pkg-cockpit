@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "ca",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  "$0 Block Device": [
   null,
@@ -1490,10 +1490,6 @@ return plural;
   null,
   ""
  ],
- "Targets": [
-  null,
-  "Objectius"
- ],
  "The \"storaged\" API is not available on this system.": [
   null,
   "L'API «storaged» no està disponible en aquest sistema."
@@ -1522,11 +1518,23 @@ return plural;
   null,
   ""
  ],
+ "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
+  null,
+  ""
+ ],
  "The filesystem is in use by login sessions.                Proceeding will stop these.": [
   null,
   ""
  ],
+ "The filesystem is in use by login sessions. Proceeding will stop these.": [
+  null,
+  ""
+ ],
  "The filesystem is in use by system services.                Proceeding will stop these.": [
+  null,
+  ""
+ ],
+ "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
   ""
  ],
@@ -1570,6 +1578,10 @@ return plural;
   null,
   "Aquest dispositiu té sistemes de fitxers actualment en ús. El procediment desmuntarà tots els sistemes de fitxers que conté."
  ],
+ "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
+  null,
+  ""
+ ],
  "This device is currently used for RAID devices.": [
   null,
   "Aquest dispositiu s'utilitza actualment amb dispositius RAID."
@@ -1577,6 +1589,10 @@ return plural;
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
   null,
   "Aquest dispositiu s'utilitza actualment amb dispositius RAID.                Si continueu, s'eliminarà dels dispositius\n RAID."
+ ],
+ "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
+  null,
+  ""
  ],
  "This device is currently used for VDO devices.": [
   null,
@@ -1589,6 +1605,10 @@ return plural;
  "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
   null,
   "Aquest dispositiu s'utilitza actualment amb grups de volums.                Si continueu, s'eliminarà dels grups de volums."
+ ],
+ "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
+  null,
+  ""
  ],
  "This disk cannot be removed while the device is recovering.": [
   null,

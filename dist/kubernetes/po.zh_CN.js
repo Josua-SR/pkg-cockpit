@@ -65,15 +65,11 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "zh_CN",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
   " 1\"是否想要删除以下节点？"
- ],
- " or drag & drop.": [
-  null,
-  ""
  ],
  "$0% Free": [
   "$0% Free",
@@ -219,10 +215,6 @@ return plural;
   null,
   "启动编号"
  ],
- "Bus": [
-  null,
-  "总线"
- ],
  "CPU": [
   null,
   "CPU"
@@ -347,10 +339,6 @@ return plural;
   null,
   "创建"
  ],
- "Create Virtual Machine": [
-  null,
-  ""
- ],
  "Create empty image stream": [
   null,
   "创建空镜像流"
@@ -431,10 +419,6 @@ return plural;
   null,
   "详情"
  ],
- "Device": [
-  null,
-  "设备"
- ],
  "Directory": [
   null,
   "目录"
@@ -446,10 +430,6 @@ return plural;
  "Disk Utilization: $0%": [
   null,
   "磁盘使用率: $0%"
- ],
- "Disks": [
-  null,
-  "磁盘"
  ],
  "Display name": [
   null,
@@ -494,10 +474,6 @@ return plural;
  "Driver": [
   null,
   "驱动器"
- ],
- "Drop file here to upload.": [
-  null,
-  ""
  ],
  "Empty Directory": [
   null,
@@ -547,17 +523,9 @@ return plural;
   null,
   "Flocker 数据集名称"
  ],
- "Free": [
-  null,
-  "可用"
- ],
  "GCE Persistent Disk": [
   null,
   "GCE 持久盘"
- ],
- "GiB": [
-  null,
-  ""
  ],
  "Git Repository": [
   null,
@@ -679,10 +647,6 @@ return plural;
   null,
   "标签"
  ],
- "Labels:": [
-  null,
-  ""
- ],
  "Last Heartbeat": [
   null,
   "最近的保活心跳"
@@ -747,10 +711,6 @@ return plural;
   null,
   "Memory 使用率: $0%"
  ],
- "Memory:": [
-  null,
-  "内存："
- ],
  "Message": [
   null,
   "消息"
@@ -770,10 +730,6 @@ return plural;
  "Mount Location": [
   null,
   "挂载位置"
- ],
- "N/A": [
-  null,
-  ""
  ],
  "NFS": [
   null,
@@ -827,10 +783,6 @@ return plural;
   null,
   "未绑定卷"
  ],
- "No disks defined for this VM": [
-  null,
-  "没有为该虚拟机定义磁盘"
- ],
  "No groups are present.": [
   null,
   "没有组用于显示。"
@@ -871,10 +823,6 @@ return plural;
   null,
   "没有用户用于显示。"
  ],
- "No virtual machines": [
-  null,
-  ""
- ],
  "No volumes are present.": [
   null,
   "没有卷用于显示。"
@@ -887,10 +835,6 @@ return plural;
   null,
   "节点"
  ],
- "Node:": [
-  null,
-  ""
- ],
  "Nodes": [
   null,
   "节点"
@@ -902,10 +846,6 @@ return plural;
  "None": [
   null,
   "无"
- ],
- "Not Available": [
-  null,
-  ""
  ],
  "Not Ready": [
   null,
@@ -931,14 +871,6 @@ return plural;
   null,
   "操作系统版本"
  ],
- "Ok": [
-  null,
-  "确认"
- ],
- "Only files of size $0 MiB and less are supported": [
-  null,
-  ""
- ],
  "Operating System": [
   null,
   "操作系统"
@@ -962,10 +894,6 @@ return plural;
  "Password": [
   null,
   "密码"
- ],
- "Paste JSON below, ": [
-  null,
-  ""
  ],
  "Path": [
   null,
@@ -1075,10 +1003,6 @@ return plural;
   null,
   "容器舱选择器"
  ],
- "Pod:": [
-  null,
-  ""
- ],
  "Pods": [
   null,
   "容器舱"
@@ -1174,10 +1098,6 @@ return plural;
  "Read only from multiple nodes": [
   null,
   "仅从多节点读"
- ],
- "Readonly": [
-  null,
-  "只读"
  ],
  "Ready": [
   null,
@@ -1275,10 +1195,6 @@ return plural;
   null,
   "需要认证"
  ],
- "Resolve above errors to continue": [
-  null,
-  ""
- ],
  "Restart Count": [
   null,
   "重启次数"
@@ -1371,10 +1287,6 @@ return plural;
   null,
   "服务组织容器舱并提供一个通用DNS名称和一个可选的负载均衡的IP地址来访问它们。"
  ],
- "Session": [
-  null,
-  "会话"
- ],
  "Session Affinity": [
   null,
   "会话关联"
@@ -1431,10 +1343,6 @@ return plural;
   null,
   "显示所有服务"
  ],
- "Show all VMs": [
-  null,
-  ""
- ],
  "Show all image streams": [
   null,
   "显示所有镜像流"
@@ -1459,10 +1367,6 @@ return plural;
   null,
   "抱歉，不知道如何修改该卷"
  ],
- "Source": [
-  null,
-  "源"
- ],
  "State": [
   null,
   "状态"
@@ -1478,10 +1382,6 @@ return plural;
  "Sync all tags from a remote image repository": [
   null,
   "从远程镜像仓库同步所有标记"
- ],
- "System": [
-  null,
-  "系统"
  ],
  "TLS Termination": [
   null,
@@ -1643,14 +1543,6 @@ return plural;
   null,
   "更新 $0..."
  ],
- "Usage": [
-  null,
-  "使用情况"
- ],
- "Usage metrics are available after the pod starts": [
-  null,
-  ""
- ],
  "Used": [
   null,
   "已使用"
@@ -1670,30 +1562,6 @@ return plural;
  "Users": [
   null,
   "用户"
- ],
- "VM": [
-  null,
-  ""
- ],
- "VM $0:$1 does not exist.": [
-  null,
-  ""
- ],
- "VM DELETE failed.": [
-  null,
-  ""
- ],
- "VM definition is not a valid JSON.": [
-  null,
-  ""
- ],
- "VM definition is required.": [
-  null,
-  ""
- ],
- "VM definition must be an object.": [
-  null,
-  ""
  ],
  "Virtual Machines": [
   null,
@@ -1747,81 +1615,9 @@ return plural;
   null,
   "登录凭证没有从命令行使用 Docker 注册表的权限"
  ],
- "bridge": [
-  null,
-  ""
- ],
- "cdrom": [
-  null,
-  "光驱"
- ],
- "crashed": [
-  null,
-  "已崩溃"
- ],
- "custom": [
-  null,
-  "自定义"
- ],
- "direct": [
-  null,
-  ""
- ],
- "disabled": [
-  null,
-  "已禁用"
- ],
- "disk": [
-  null,
-  "磁盘"
- ],
- "down": [
-  null,
-  "已关闭"
- ],
- "dying": [
-  null,
-  "失活的"
- ],
  "eg: my-image-stream": [
   null,
   "例如：my-image-stream"
- ],
- "enabled": [
-  null,
-  "已启用"
- ],
- "ethernet": [
-  null,
-  ""
- ],
- "host": [
-  null,
-  "主机"
- ],
- "hostdev": [
-  null,
-  ""
- ],
- "iSCSI": [
-  null,
-  ""
- ],
- "idle": [
-  null,
-  "休眠的"
- ],
- "mcast": [
-  null,
-  ""
- ],
- "n/a": [
-  null,
-  ""
- ],
- "network": [
-  null,
-  "网络"
  ],
  "no": [
   null,
@@ -1831,65 +1627,9 @@ return plural;
   null,
   "空"
  ],
- "paused": [
-  null,
-  "已暂停"
- ],
  "pending volume claims": [
   null,
   "挂起的卷声明"
- ],
- "running": [
-  null,
-  "运行中"
- ],
- "server": [
-  null,
-  ""
- ],
- "show less": [
-  null,
-  ""
- ],
- "show more": [
-  null,
-  ""
- ],
- "shut off": [
-  null,
-  "关闭"
- ],
- "shutdown": [
-  null,
-  "关机"
- ],
- "suspended (PM)": [
-  null,
-  "已挂起 （电源管理）"
- ],
- "udp": [
-  null,
-  ""
- ],
- "up": [
-  null,
-  "运行中"
- ],
- "upload a JSON file": [
-  null,
-  ""
- ],
- "user": [
-  null,
-  ""
- ],
- "vCPUs:": [
-  null,
-  "虚拟 CPU："
- ],
- "vhostuser": [
-  null,
-  ""
  ],
  "yes": [
   null,

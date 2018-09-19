@@ -65,7 +65,7 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "zh_CN",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  "$0 Block Device": [
   null,
@@ -1483,10 +1483,6 @@ return plural;
   null,
   ""
  ],
- "Targets": [
-  null,
-  "目标"
- ],
  "The \"storaged\" API is not available on this system.": [
   null,
   "在此系统中, \"storaged\" API 不可用."
@@ -1515,11 +1511,23 @@ return plural;
   null,
   ""
  ],
+ "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
+  null,
+  ""
+ ],
  "The filesystem is in use by login sessions.                Proceeding will stop these.": [
   null,
   ""
  ],
+ "The filesystem is in use by login sessions. Proceeding will stop these.": [
+  null,
+  ""
+ ],
  "The filesystem is in use by system services.                Proceeding will stop these.": [
+  null,
+  ""
+ ],
+ "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
   ""
  ],
@@ -1563,6 +1571,10 @@ return plural;
   null,
   "该设备有正在使用的文件系统。               程序将卸载其上的所有文件系统。"
  ],
+ "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
+  null,
+  ""
+ ],
  "This device is currently used for RAID devices.": [
   null,
   "该设备正在被 RAID 设备使用。"
@@ -1570,6 +1582,10 @@ return plural;
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
   null,
   "该设备正在被 RAID 设备使用。                程序将从其 RAID 设备中移除它。"
+ ],
+ "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
+  null,
+  ""
  ],
  "This device is currently used for VDO devices.": [
   null,
@@ -1582,6 +1598,10 @@ return plural;
  "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
   null,
   "该设备正在被卷组使用。                程序将从其卷组中移除它。"
+ ],
+ "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
+  null,
+  ""
  ],
  "This disk cannot be removed while the device is recovering.": [
   null,

@@ -65,7 +65,7 @@ nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;
 return plural;
 },
   "language": "cs",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -146,10 +146,6 @@ return plural;
  "Bus": [
   null,
   "Bus"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "CHANGE NETWORK STATE akce selhala"
  ],
  "CPU Type:": [
   null,
@@ -322,10 +318,6 @@ return plural;
  "Format": [
   null,
   "Formát"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  ""
  ],
  "GiB": [
   null,
@@ -796,30 +788,6 @@ return plural;
   ""
  ],
  "VDSM Service Management": [
-  null,
-  ""
- ],
- "VM FORCE OFF action failed": [
-  null,
-  ""
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  ""
- ],
- "VM REBOOT action failed": [
-  null,
-  ""
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  ""
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  ""
- ],
- "VM START action failed": [
   null,
   ""
  ],

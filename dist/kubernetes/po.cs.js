@@ -65,15 +65,11 @@ nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;
 return plural;
 },
   "language": "cs",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
   "1\"Chcete smazat následující nody?"
- ],
- " or drag & drop.": [
-  null,
-  ""
  ],
  "$0% Free": [
   "$0% Free",
@@ -223,10 +219,6 @@ return plural;
   null,
   "Boot ID"
  ],
- "Bus": [
-  null,
-  "Bus"
- ],
  "CPU": [
   null,
   "CPU"
@@ -351,10 +343,6 @@ return plural;
   null,
   ""
  ],
- "Create Virtual Machine": [
-  null,
-  ""
- ],
  "Create empty image stream": [
   null,
   ""
@@ -435,10 +423,6 @@ return plural;
   null,
   "Podrobnosti"
  ],
- "Device": [
-  null,
-  "Zařízení"
- ],
  "Directory": [
   null,
   "Adresář"
@@ -450,10 +434,6 @@ return plural;
  "Disk Utilization: $0%": [
   null,
   ""
- ],
- "Disks": [
-  null,
-  "Disky"
  ],
  "Display name": [
   null,
@@ -498,10 +478,6 @@ return plural;
  "Driver": [
   null,
   "Driver"
- ],
- "Drop file here to upload.": [
-  null,
-  ""
  ],
  "Empty Directory": [
   null,
@@ -551,17 +527,9 @@ return plural;
   null,
   ""
  ],
- "Free": [
-  null,
-  "Volno"
- ],
  "GCE Persistent Disk": [
   null,
   ""
- ],
- "GiB": [
-  null,
-  "GiB"
  ],
  "Git Repository": [
   null,
@@ -683,10 +651,6 @@ return plural;
   null,
   "Štítky"
  ],
- "Labels:": [
-  null,
-  ""
- ],
  "Last Heartbeat": [
   null,
   ""
@@ -751,10 +715,6 @@ return plural;
   null,
   ""
  ],
- "Memory:": [
-  null,
-  "Paměť:"
- ],
  "Message": [
   null,
   "Zpráva"
@@ -774,10 +734,6 @@ return plural;
  "Mount Location": [
   null,
   ""
- ],
- "N/A": [
-  null,
-  "N/A"
  ],
  "NFS": [
   null,
@@ -831,10 +787,6 @@ return plural;
   null,
   ""
  ],
- "No disks defined for this VM": [
-  null,
-  ""
- ],
  "No groups are present.": [
   null,
   ""
@@ -875,10 +827,6 @@ return plural;
   null,
   ""
  ],
- "No virtual machines": [
-  null,
-  "Žádné virtuálního stroje"
- ],
  "No volumes are present.": [
   null,
   ""
@@ -888,10 +836,6 @@ return plural;
   ""
  ],
  "Node": [
-  null,
-  ""
- ],
- "Node:": [
   null,
   ""
  ],
@@ -906,10 +850,6 @@ return plural;
  "None": [
   null,
   "Žádný"
- ],
- "Not Available": [
-  null,
-  ""
  ],
  "Not Ready": [
   null,
@@ -932,14 +872,6 @@ return plural;
   ""
  ],
  "OS Versions": [
-  null,
-  ""
- ],
- "Ok": [
-  null,
-  "Ok"
- ],
- "Only files of size $0 MiB and less are supported": [
   null,
   ""
  ],
@@ -966,10 +898,6 @@ return plural;
  "Password": [
   null,
   "Heslo"
- ],
- "Paste JSON below, ": [
-  null,
-  ""
  ],
  "Path": [
   null,
@@ -1079,10 +1007,6 @@ return plural;
   null,
   ""
  ],
- "Pod:": [
-  null,
-  ""
- ],
  "Pods": [
   null,
   ""
@@ -1176,10 +1100,6 @@ return plural;
   ""
  ],
  "Read only from multiple nodes": [
-  null,
-  ""
- ],
- "Readonly": [
   null,
   ""
  ],
@@ -1279,10 +1199,6 @@ return plural;
   null,
   ""
  ],
- "Resolve above errors to continue": [
-  null,
-  ""
- ],
  "Restart Count": [
   null,
   ""
@@ -1375,10 +1291,6 @@ return plural;
   null,
   ""
  ],
- "Session": [
-  null,
-  ""
- ],
  "Session Affinity": [
   null,
   ""
@@ -1435,10 +1347,6 @@ return plural;
   null,
   ""
  ],
- "Show all VMs": [
-  null,
-  ""
- ],
  "Show all image streams": [
   null,
   ""
@@ -1463,10 +1371,6 @@ return plural;
   null,
   ""
  ],
- "Source": [
-  null,
-  "Zdroj"
- ],
  "State": [
   null,
   "Stav"
@@ -1482,10 +1386,6 @@ return plural;
  "Sync all tags from a remote image repository": [
   null,
   ""
- ],
- "System": [
-  null,
-  "Systém"
  ],
  "TLS Termination": [
   null,
@@ -1647,14 +1547,6 @@ return plural;
   null,
   ""
  ],
- "Usage": [
-  null,
-  "Použití"
- ],
- "Usage metrics are available after the pod starts": [
-  null,
-  ""
- ],
  "Used": [
   null,
   ""
@@ -1674,30 +1566,6 @@ return plural;
  "Users": [
   null,
   "Uživatelé"
- ],
- "VM": [
-  null,
-  ""
- ],
- "VM $0:$1 does not exist.": [
-  null,
-  ""
- ],
- "VM DELETE failed.": [
-  null,
-  ""
- ],
- "VM definition is not a valid JSON.": [
-  null,
-  ""
- ],
- "VM definition is required.": [
-  null,
-  ""
- ],
- "VM definition must be an object.": [
-  null,
-  ""
  ],
  "Virtual Machines": [
   null,
@@ -1751,79 +1619,7 @@ return plural;
   null,
   ""
  ],
- "bridge": [
-  null,
-  "most"
- ],
- "cdrom": [
-  null,
-  ""
- ],
- "crashed": [
-  null,
-  "pád"
- ],
- "custom": [
-  null,
-  ""
- ],
- "direct": [
-  null,
-  ""
- ],
- "disabled": [
-  null,
-  "zakázáno"
- ],
- "disk": [
-  null,
-  ""
- ],
- "down": [
-  null,
-  ""
- ],
- "dying": [
-  null,
-  ""
- ],
  "eg: my-image-stream": [
-  null,
-  ""
- ],
- "enabled": [
-  null,
-  "povoleno"
- ],
- "ethernet": [
-  null,
-  ""
- ],
- "host": [
-  null,
-  ""
- ],
- "hostdev": [
-  null,
-  ""
- ],
- "iSCSI": [
-  null,
-  ""
- ],
- "idle": [
-  null,
-  "nečinný"
- ],
- "mcast": [
-  null,
-  ""
- ],
- "n/a": [
-  null,
-  "nic"
- ],
- "network": [
   null,
   ""
  ],
@@ -1835,63 +1631,7 @@ return plural;
   null,
   "nic"
  ],
- "paused": [
-  null,
-  ""
- ],
  "pending volume claims": [
-  null,
-  ""
- ],
- "running": [
-  null,
-  "běžící"
- ],
- "server": [
-  null,
-  ""
- ],
- "show less": [
-  null,
-  ""
- ],
- "show more": [
-  null,
-  ""
- ],
- "shut off": [
-  null,
-  "vypnuto"
- ],
- "shutdown": [
-  null,
-  ""
- ],
- "suspended (PM)": [
-  null,
-  ""
- ],
- "udp": [
-  null,
-  "udp"
- ],
- "up": [
-  null,
-  ""
- ],
- "upload a JSON file": [
-  null,
-  ""
- ],
- "user": [
-  null,
-  "uživatel"
- ],
- "vCPUs:": [
-  null,
-  ""
- ],
- "vhostuser": [
   null,
   ""
  ],

@@ -67,14 +67,55 @@ return plural;
   "language": "da",
   "x-generator": "Zanata 3.8.4"
  },
+ "$0 Block Device": [
+  null,
+  ""
+ ],
+ "$0 Chunk Size": [
+  null,
+  ""
+ ],
+ "$0 Disks": [
+  null,
+  ""
+ ],
+ "$0 data + $1 overhead used of $2 ($3)": [
+  null,
+  ""
+ ],
  "$0 day": [
   "$0 days",
   "",
   ""
  ],
+ "$0 disk is missing": [
+  "$0 disks are missing",
+  "",
+  ""
+ ],
+ "$0 filesystems can not be made larger.": [
+  null,
+  ""
+ ],
+ "$0 filesystems can not be made smaller.": [
+  null,
+  ""
+ ],
+ "$0 filesystems can not be resized here.": [
+  null,
+  ""
+ ],
  "$0 hour": [
   "$0 hours",
   "",
+  ""
+ ],
+ "$0 is in active use": [
+  null,
+  ""
+ ],
+ "$0 is not available from any repository.": [
+  null,
   ""
  ],
  "$0 minute": [
@@ -91,9 +132,21 @@ return plural;
   null,
   ""
  ],
+ "$0 slots remain": [
+  null,
+  ""
+ ],
+ "$0 used of $1 ($2 saved)": [
+  null,
+  ""
+ ],
  "$0 week": [
   "$0 weeks",
   "",
+  ""
+ ],
+ "$0 will be installed.": [
+  null,
   ""
  ],
  "$0 year": [
@@ -101,7 +154,15 @@ return plural;
   "",
   ""
  ],
+ "$0, $1 free": [
+  null,
+  ""
+ ],
  "$name (from $host)": [
+  null,
+  ""
+ ],
+ "${size} ${desc}": [
   null,
   ""
  ],
@@ -110,6 +171,14 @@ return plural;
   ""
  ],
  "(none)": [
+  null,
+  ""
+ ],
+ "--": [
+  null,
+  ""
+ ],
+ "1 MiB": [
   null,
   ""
  ],
@@ -125,7 +194,31 @@ return plural;
   null,
   ""
  ],
+ "128 KiB": [
+  null,
+  ""
+ ],
+ "16 KiB": [
+  null,
+  ""
+ ],
+ "2 MiB": [
+  null,
+  ""
+ ],
+ "32 KiB": [
+  null,
+  ""
+ ],
+ "4 KiB": [
+  null,
+  ""
+ ],
  "5 minutes": [
+  null,
+  ""
+ ],
+ "512 KiB": [
   null,
   ""
  ],
@@ -133,23 +226,19 @@ return plural;
   null,
   ""
  ],
- "<span>Encrypted $0</span>": [
+ "64 KiB": [
   null,
   ""
  ],
- "<span>Encrypted Logical Volume of $0</span>": [
+ "8 KiB": [
   null,
   ""
  ],
- "<span>Encrypted Partition of $0</span>": [
+ "A disk is needed.": [
   null,
   ""
  ],
- "<span>Logical Volume of $0</span>": [
-  null,
-  ""
- ],
- "<span>Partition of $0</span>": [
+ "A spare disk needs to be added first before this disk can be removed.": [
   null,
   ""
  ],
@@ -157,15 +246,79 @@ return plural;
   null,
   ""
  ],
+ "Activating $target": [
+  null,
+  ""
+ ],
+ "Active since": [
+  null,
+  ""
+ ],
+ "Add": [
+  null,
+  ""
+ ],
+ "Add Disks": [
+  null,
+  ""
+ ],
+ "Add Key": [
+  null,
+  ""
+ ],
+ "Add iSCSI Portal": [
+  null,
+  ""
+ ],
+ "Adding physical volume to $target": [
+  null,
+  ""
+ ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
+ "Address": [
+  null,
+  ""
+ ],
+ "Address cannot be empty": [
+  null,
+  ""
+ ],
  "Apply": [
   null,
   ""
  ],
- "Block Device": [
+ "At least $0 disks are needed.": [
+  null,
+  ""
+ ],
+ "At least one disk is needed.": [
+  null,
+  ""
+ ],
+ "Authentication required": [
+  null,
+  ""
+ ],
+ "Available targets on $0": [
+  null,
+  ""
+ ],
+ "Backing Device": [
+  null,
+  ""
+ ],
+ "Block": [
   null,
   ""
  ],
  "Block device for filesystems": [
+  null,
+  ""
+ ],
+ "Blocked": [
   null,
   ""
  ],
@@ -176,6 +329,42 @@ return plural;
  "Cancel": [
   null,
   "Annullér"
+ ],
+ "Change": [
+  null,
+  ""
+ ],
+ "Change iSCSI Initiator Name": [
+  null,
+  ""
+ ],
+ "Change passphrase": [
+  null,
+  "Værtsnavn"
+ ],
+ "Checking $target": [
+  null,
+  ""
+ ],
+ "Checking RAID Device $target": [
+  null,
+  ""
+ ],
+ "Checking and Repairing RAID Device $target": [
+  null,
+  ""
+ ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
+ "Chunk Size": [
+  null,
+  ""
+ ],
+ "Cleaning up for $target": [
+  null,
+  ""
  ],
  "Close": [
   null,
@@ -189,7 +378,15 @@ return plural;
   null,
   ""
  ],
+ "Compression": [
+  null,
+  ""
+ ],
  "Confirm passphrase": [
+  null,
+  ""
+ ],
+ "Confirm removal with passphrase": [
   null,
   ""
  ],
@@ -209,11 +406,23 @@ return plural;
   null,
   ""
  ],
+ "Create RAID Device": [
+  null,
+  ""
+ ],
  "Create Snapshot": [
   null,
   ""
  ],
  "Create Thin Volume": [
+  null,
+  ""
+ ],
+ "Create VDO Device": [
+  null,
+  ""
+ ],
+ "Create Volume Group": [
   null,
   ""
  ],
@@ -233,6 +442,30 @@ return plural;
   null,
   ""
  ],
+ "Creating RAID Device $target": [
+  null,
+  ""
+ ],
+ "Creating filesystem on $target": [
+  null,
+  ""
+ ],
+ "Creating logical volume $target": [
+  null,
+  ""
+ ],
+ "Creating partition $target": [
+  null,
+  ""
+ ],
+ "Creating snapshot of $target": [
+  null,
+  ""
+ ],
+ "Creating volume group $target": [
+  null,
+  ""
+ ],
  "Custom": [
   null,
   ""
@@ -240,6 +473,18 @@ return plural;
  "Custom (Enter filesystem type)": [
   null,
   ""
+ ],
+ "Custom encryption options": [
+  null,
+  ""
+ ],
+ "Custom mount option": [
+  null,
+  "Indstillinger"
+ ],
+ "Custom mount options": [
+  null,
+  "Indstillinger"
  ],
  "DISK IS FAILING": [
   null,
@@ -253,11 +498,31 @@ return plural;
   null,
   ""
  ],
+ "Deactivating $target": [
+  null,
+  ""
+ ],
+ "Deduplication": [
+  null,
+  ""
+ ],
  "Default": [
   null,
   ""
  ],
  "Delete": [
+  null,
+  ""
+ ],
+ "Deleting $target": [
+  null,
+  ""
+ ],
+ "Deleting a RAID device will erase all data on it.": [
+  null,
+  ""
+ ],
+ "Deleting a VDO device will erase all data on it.": [
   null,
   ""
  ],
@@ -269,23 +534,31 @@ return plural;
   null,
   ""
  ],
- "Device $0 is a member of RAID Array $1": [
+ "Deleting a volume group will erase all data on it.": [
   null,
   ""
  ],
- "Device $0 is a physical volume of $1": [
+ "Deleting volume group $target": [
   null,
   ""
  ],
- "Device $0 is mounted on $1": [
+ "Device File": [
   null,
-  ""
+  "Værtsnavn"
  ],
  "Device is read-only": [
   null,
   ""
  ],
+ "Disk": [
+  null,
+  "Disk I/O"
+ ],
  "Disk is OK": [
+  null,
+  ""
+ ],
+ "Disk passphrase": [
   null,
   ""
  ],
@@ -294,6 +567,10 @@ return plural;
   "Disk I/O"
  ],
  "Don't overwrite existing data": [
+  null,
+  ""
+ ],
+ "Downloading $0": [
   null,
   ""
  ],
@@ -309,11 +586,47 @@ return plural;
   null,
   ""
  ],
+ "Edit Tang keyserver": [
+  null,
+  ""
+ ],
+ "Editing a key requires a free slot": [
+  null,
+  ""
+ ],
+ "Ejecting $target": [
+  null,
+  ""
+ ],
+ "Emptying $target": [
+  null,
+  ""
+ ],
+ "Encrypted $0": [
+  null,
+  ""
+ ],
  "Encrypted EXT4 (LUKS)": [
   null,
   ""
  ],
+ "Encrypted Logical Volume of $0": [
+  null,
+  ""
+ ],
+ "Encrypted Partition of $0": [
+  null,
+  ""
+ ],
  "Encrypted XFS (LUKS)": [
+  null,
+  ""
+ ],
+ "Encrypted volumes can not be resized here.": [
+  null,
+  ""
+ ],
+ "Encrypted volumes need to be unlocked before they can be resized.": [
   null,
   ""
  ],
@@ -329,11 +642,19 @@ return plural;
   null,
   ""
  ],
+ "Erasing $target": [
+  null,
+  ""
+ ],
  "Error": [
   null,
   ""
  ],
  "Extended Partition": [
+  null,
+  ""
+ ],
+ "FAILED": [
   null,
   ""
  ],
@@ -354,6 +675,10 @@ return plural;
   ""
  ],
  "Filesystems": [
+  null,
+  ""
+ ],
+ "Force remove passphrase in $0": [
   null,
   ""
  ],
@@ -389,7 +714,59 @@ return plural;
   null,
   ""
  ],
+ "Grow": [
+  null,
+  ""
+ ],
+ "Grow Logical Volume": [
+  null,
+  ""
+ ],
+ "Grow logical size of $0": [
+  null,
+  ""
+ ],
+ "Grow to take all space": [
+  null,
+  ""
+ ],
+ "If tang-show-keys is not available, run the following:": [
+  null,
+  ""
+ ],
+ "In Sync": [
+  null,
+  ""
+ ],
  "Inactive volume": [
+  null,
+  ""
+ ],
+ "Index Memory": [
+  null,
+  "Hukommelse"
+ ],
+ "Install": [
+  null,
+  ""
+ ],
+ "Install NFS Support": [
+  null,
+  ""
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Install VDO support": [
+  null,
+  ""
+ ],
+ "Installing $0": [
+  null,
+  ""
+ ],
+ "Invalid username or password": [
   null,
   ""
  ],
@@ -397,15 +774,71 @@ return plural;
   null,
   ""
  ],
+ "Key slots with unknown types can not be edited here": [
+  null,
+  ""
+ ],
+ "Key source": [
+  null,
+  ""
+ ],
+ "Keys": [
+  null,
+  ""
+ ],
+ "Keyserver": [
+  null,
+  ""
+ ],
+ "Keyserver address": [
+  null,
+  ""
+ ],
+ "Keyserver removal may prevent unlocking $0.": [
+  null,
+  ""
+ ],
+ "Local Mount Point": [
+  null,
+  ""
+ ],
  "Lock": [
   null,
   ""
+ ],
+ "Locking $target": [
+  null,
+  ""
+ ],
+ "Logical": [
+  null,
+  ""
+ ],
+ "Logical Size": [
+  null,
+  "Disk I/O"
  ],
  "Logical Volume": [
   null,
   ""
  ],
  "Logical Volume (Snapshot)": [
+  null,
+  ""
+ ],
+ "Logical Volume of $0": [
+  null,
+  ""
+ ],
+ "Make sure the key hash from the Tang server matches:": [
+  null,
+  ""
+ ],
+ "Manually check with SSH: ": [
+  null,
+  ""
+ ],
+ "Marking $target as faulty": [
   null,
   ""
  ],
@@ -421,6 +854,10 @@ return plural;
   null,
   ""
  ],
+ "Modifying $target": [
+  null,
+  ""
+ ],
  "Mount": [
   null,
   ""
@@ -433,11 +870,51 @@ return plural;
   null,
   ""
  ],
+ "Mount at boot": [
+  null,
+  "Indstillinger"
+ ],
+ "Mount options": [
+  null,
+  "Indstillinger"
+ ],
+ "Mount point can not be empty": [
+  null,
+  ""
+ ],
+ "Mount point cannot be empty.": [
+  null,
+  ""
+ ],
+ "Mount point must start with \"/\".": [
+  null,
+  ""
+ ],
+ "Mount read only": [
+  null,
+  "Indstillinger"
+ ],
  "Mounted At": [
   null,
   "Indstillinger"
  ],
  "Mounting": [
+  null,
+  ""
+ ],
+ "Mounting $target": [
+  null,
+  ""
+ ],
+ "NFS Mount": [
+  null,
+  ""
+ ],
+ "NFS Mounts": [
+  null,
+  ""
+ ],
+ "NFS Support not installed": [
   null,
   ""
  ],
@@ -448,6 +925,10 @@ return plural;
  "Name": [
   null,
   "Værtsnavn"
+ ],
+ "Name can not be empty.": [
+  null,
+  ""
  ],
  "Name cannot be empty.": [
   null,
@@ -465,6 +946,18 @@ return plural;
   null,
   ""
  ],
+ "New NFS Mount": [
+  null,
+  ""
+ ],
+ "New passphrase": [
+  null,
+  "Indtast adgangskode"
+ ],
+ "Next": [
+  null,
+  ""
+ ],
  "No Filesystem": [
   null,
   ""
@@ -473,7 +966,23 @@ return plural;
   null,
   ""
  ],
+ "No NFS mounts set up": [
+  null,
+  ""
+ ],
+ "No available slots": [
+  null,
+  ""
+ ],
+ "No disks are available.": [
+  null,
+  ""
+ ],
  "No drives attached": [
+  null,
+  ""
+ ],
+ "No free key slots": [
   null,
   ""
  ],
@@ -482,6 +991,10 @@ return plural;
   ""
  ],
  "No iSCSI targets set up": [
+  null,
+  ""
+ ],
+ "No keys added": [
   null,
   ""
  ],
@@ -497,7 +1010,23 @@ return plural;
   null,
   ""
  ],
+ "No storage set up as VDO": [
+  null,
+  ""
+ ],
  "No volume groups created": [
+  null,
+  ""
+ ],
+ "Not found": [
+  null,
+  ""
+ ],
+ "Not mounted": [
+  null,
+  ""
+ ],
+ "Not running": [
   null,
   ""
  ],
@@ -509,7 +1038,19 @@ return plural;
   null,
   ""
  ],
+ "Old passphrase": [
+  null,
+  "Indtast adgangskode"
+ ],
  "On": [
+  null,
+  ""
+ ],
+ "Only $0 of $1 are used.": [
+  null,
+  ""
+ ],
+ "Operation '$operation' on $target": [
   null,
   ""
  ],
@@ -525,7 +1066,15 @@ return plural;
   null,
   ""
  ],
+ "PackageKit crashed": [
+  null,
+  ""
+ ],
  "Partition": [
+  null,
+  ""
+ ],
+ "Partition of $0": [
   null,
   ""
  ],
@@ -541,7 +1090,31 @@ return plural;
   null,
   ""
  ],
+ "Passphrase removal may prevent unlocking $0.": [
+  null,
+  ""
+ ],
  "Passphrases do not match": [
+  null,
+  ""
+ ],
+ "Password": [
+  null,
+  ""
+ ],
+ "Path on Server": [
+  null,
+  ""
+ ],
+ "Path on server cannot be empty.": [
+  null,
+  ""
+ ],
+ "Path on server must start with \"/\".": [
+  null,
+  ""
+ ],
+ "Physical": [
   null,
   ""
  ],
@@ -557,7 +1130,15 @@ return plural;
   null,
   ""
  ],
+ "Physical volumes can not be resized here.": [
+  null,
+  ""
+ ],
  "Please confirm deletion of $0": [
+  null,
+  ""
+ ],
+ "Please confirm stopping of $0": [
   null,
   ""
  ],
@@ -577,7 +1158,67 @@ return plural;
   null,
   ""
  ],
+ "Port": [
+  null,
+  ""
+ ],
+ "Process": [
+  null,
+  ""
+ ],
  "Purpose": [
+  null,
+  ""
+ ],
+ "RAID ($0)": [
+  null,
+  ""
+ ],
+ "RAID 0": [
+  null,
+  ""
+ ],
+ "RAID 0 (Stripe)": [
+  null,
+  ""
+ ],
+ "RAID 1": [
+  null,
+  ""
+ ],
+ "RAID 1 (Mirror)": [
+  null,
+  ""
+ ],
+ "RAID 10": [
+  null,
+  ""
+ ],
+ "RAID 10 (Stripe of Mirrors)": [
+  null,
+  ""
+ ],
+ "RAID 4": [
+  null,
+  ""
+ ],
+ "RAID 4 (Dedicated Parity)": [
+  null,
+  ""
+ ],
+ "RAID 5": [
+  null,
+  ""
+ ],
+ "RAID 5 (Distributed Parity)": [
+  null,
+  ""
+ ],
+ "RAID 6": [
+  null,
+  ""
+ ],
+ "RAID 6 (Double Distributed Parity)": [
   null,
   ""
  ],
@@ -593,6 +1234,10 @@ return plural;
   null,
   ""
  ],
+ "RAID Level": [
+  null,
+  ""
+ ],
  "RAID Member": [
   null,
   ""
@@ -605,6 +1250,54 @@ return plural;
   null,
   ""
  ],
+ "Recovering": [
+  null,
+  ""
+ ],
+ "Recovering RAID Device $target": [
+  null,
+  ""
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Remove": [
+  null,
+  ""
+ ],
+ "Remove $0?": [
+  null,
+  ""
+ ],
+ "Remove Tang keyserver": [
+  null,
+  ""
+ ],
+ "Remove device": [
+  null,
+  ""
+ ],
+ "Remove passphrase": [
+  null,
+  ""
+ ],
+ "Remove passphrase in $0?": [
+  null,
+  ""
+ ],
+ "Removing $0": [
+  null,
+  ""
+ ],
+ "Removing $target from RAID Device": [
+  null,
+  ""
+ ],
+ "Removing physical volume from $target": [
+  null,
+  ""
+ ],
  "Rename": [
   null,
   ""
@@ -613,15 +1306,79 @@ return plural;
   null,
   ""
  ],
- "Resize": [
+ "Rename Volume Group": [
   null,
   ""
  ],
- "Resize Filesystem": [
+ "Renaming $target": [
   null,
   ""
  ],
- "Resize Logical Volume": [
+ "Repairing $target": [
+  null,
+  ""
+ ],
+ "Repeat passphrase": [
+  null,
+  ""
+ ],
+ "Resizing $target": [
+  null,
+  ""
+ ],
+ "Running": [
+  null,
+  ""
+ ],
+ "SMART self-test of $target": [
+  null,
+  ""
+ ],
+ "Save": [
+  null,
+  ""
+ ],
+ "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
+  null,
+  ""
+ ],
+ "Securely erasing $target": [
+  null,
+  ""
+ ],
+ "Server": [
+  null,
+  ""
+ ],
+ "Server Address": [
+  null,
+  ""
+ ],
+ "Server address cannot be empty.": [
+  null,
+  ""
+ ],
+ "Server cannot be empty.": [
+  null,
+  ""
+ ],
+ "Service": [
+  null,
+  ""
+ ],
+ "Session": [
+  null,
+  ""
+ ],
+ "Setting up loop device $target": [
+  null,
+  ""
+ ],
+ "Shrink": [
+  null,
+  ""
+ ],
+ "Shrink Logical Volume": [
   null,
   ""
  ],
@@ -645,6 +1402,18 @@ return plural;
   null,
   ""
  ],
+ "Size must be at least $0": [
+  null,
+  ""
+ ],
+ "Slot $0": [
+  null,
+  ""
+ ],
+ "Spare": [
+  null,
+  ""
+ ],
  "Start": [
   null,
   ""
@@ -653,15 +1422,39 @@ return plural;
   null,
   ""
  ],
+ "Starting RAID Device $target": [
+  null,
+  ""
+ ],
+ "Starting swapspace $target": [
+  null,
+  ""
+ ],
  "Stop": [
   null,
   ""
  ],
- "Storage": [
+ "Stop Device": [
   null,
   ""
  ],
- "Storage Log": [
+ "Stop and Unmount": [
+  null,
+  ""
+ ],
+ "Stop and remove": [
+  null,
+  ""
+ ],
+ "Stopping RAID Device $target": [
+  null,
+  ""
+ ],
+ "Stopping swapspace $target": [
+  null,
+  ""
+ ],
+ "Storage": [
   null,
   ""
  ],
@@ -681,7 +1474,19 @@ return plural;
   null,
   ""
  ],
+ "Support is installed.": [
+  null,
+  ""
+ ],
  "Swap": [
+  null,
+  ""
+ ],
+ "Synchronizing RAID Device $target": [
+  null,
+  ""
+ ],
+ "Tang keyserver": [
   null,
   ""
  ],
@@ -693,6 +1498,58 @@ return plural;
   null,
   ""
  ],
+ "The RAID device must be running in order to add spare disks.": [
+  null,
+  ""
+ ],
+ "The RAID device must be running in order to remove disks.": [
+  null,
+  ""
+ ],
+ "The creation of this VDO device did not finish and the device can't be used.": [
+  null,
+  ""
+ ],
+ "The currently logged in user is not permitted to see information about keys.": [
+  null,
+  ""
+ ],
+ "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
+  null,
+  ""
+ ],
+ "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
+  null,
+  ""
+ ],
+ "The filesystem is in use by login sessions.                Proceeding will stop these.": [
+  null,
+  ""
+ ],
+ "The filesystem is in use by login sessions. Proceeding will stop these.": [
+  null,
+  ""
+ ],
+ "The filesystem is in use by system services.                Proceeding will stop these.": [
+  null,
+  ""
+ ],
+ "The filesystem is in use by system services. Proceeding will stop these.": [
+  null,
+  ""
+ ],
+ "The last disk of a RAID device cannot be removed.": [
+  null,
+  ""
+ ],
+ "The last key slot can not be removed": [
+  null,
+  ""
+ ],
+ "The last physical volume of a volume group cannot be removed.": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
   ""
@@ -701,11 +1558,71 @@ return plural;
   null,
   ""
  ],
+ "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
+  null,
+  ""
+ ],
  "Thin Logical Volume": [
   null,
   ""
  ],
- "This logical volume cannot be made smaller.": [
+ "This NFS mount is in use and only its options can be changed.": [
+  null,
+  ""
+ ],
+ "This VDO device does not use all of its backing device.": [
+  null,
+  ""
+ ],
+ "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
+  null,
+  ""
+ ],
+ "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
+  null,
+  ""
+ ],
+ "This device is currently used for RAID devices.": [
+  null,
+  ""
+ ],
+ "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
+  null,
+  ""
+ ],
+ "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
+  null,
+  ""
+ ],
+ "This device is currently used for VDO devices.": [
+  null,
+  ""
+ ],
+ "This device is currently used for volume groups.": [
+  null,
+  ""
+ ],
+ "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
+  null,
+  ""
+ ],
+ "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
+  null,
+  ""
+ ],
+ "This disk cannot be removed while the device is recovering.": [
+  null,
+  ""
+ ],
+ "This volume needs to be activated before it can be resized.": [
+  null,
+  ""
+ ],
+ "Total size: $0": [
+  null,
+  ""
+ ],
+ "Trust key": [
   null,
   ""
  ],
@@ -717,7 +1634,35 @@ return plural;
   null,
   ""
  ],
+ "Unable to reach server": [
+  null,
+  ""
+ ],
+ "Unable to remove mount": [
+  null,
+  ""
+ ],
+ "Unable to unmount filesystem": [
+  null,
+  ""
+ ],
+ "Unit": [
+  null,
+  ""
+ ],
  "Unknown": [
+  null,
+  ""
+ ],
+ "Unknown ($0)": [
+  null,
+  ""
+ ],
+ "Unknown host name": [
+  null,
+  ""
+ ],
+ "Unknown type": [
   null,
   ""
  ],
@@ -725,11 +1670,35 @@ return plural;
   null,
   ""
  ],
+ "Unlock at boot": [
+  null,
+  ""
+ ],
+ "Unlock read only": [
+  null,
+  ""
+ ],
+ "Unlocking $target": [
+  null,
+  ""
+ ],
+ "Unlocking disk...": [
+  null,
+  ""
+ ],
  "Unmount": [
   null,
   ""
  ],
+ "Unmounting $target": [
+  null,
+  ""
+ ],
  "Unrecognized Data": [
+  null,
+  ""
+ ],
+ "Unrecognized data can not be made smaller here.": [
   null,
   ""
  ],
@@ -741,11 +1710,51 @@ return plural;
   null,
   ""
  ],
+ "Use 512 Byte emulation": [
+  null,
+  ""
+ ],
  "Used": [
   null,
   ""
  ],
+ "Username": [
+  null,
+  "Værtsnavn"
+ ],
+ "VDO Backing": [
+  null,
+  ""
+ ],
+ "VDO Device": [
+  null,
+  ""
+ ],
+ "VDO Device $0": [
+  null,
+  ""
+ ],
+ "VDO Devices": [
+  null,
+  ""
+ ],
+ "VDO backing devices can not be made smaller": [
+  null,
+  ""
+ ],
+ "VDO support not installed": [
+  null,
+  ""
+ ],
  "VFAT - Compatible with all systems and devices": [
+  null,
+  ""
+ ],
+ "Verify key": [
+  null,
+  ""
+ ],
+ "Very securely erasing $target": [
   null,
   ""
  ],
@@ -762,6 +1771,18 @@ return plural;
   ""
  ],
  "Volume Groups": [
+  null,
+  ""
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
+ ],
+ "What if tang-show-keys is not available?": [
+  null,
+  ""
+ ],
+ "Write-mostly": [
   null,
   ""
  ],
@@ -793,7 +1814,19 @@ return plural;
   null,
   ""
  ],
+ "key slot $0": [
+  null,
+  ""
+ ],
  "undefined": [
+  null,
+  ""
+ ],
+ "unknown target": [
+  null,
+  ""
+ ],
+ "unpartitioned space on $0": [
   null,
   ""
  ],
@@ -817,57 +1850,29 @@ return plural;
   null,
   ""
  ],
- "storage\u0004Assessment": [
+ "storage-id-desc\u0004VDO Backing": [
   null,
   ""
  ],
- "storage\u0004Bitmap": [
+ "storage\u0004Drive": [
   null,
   ""
  ],
- "storage\u0004Capacity": [
+ "storage\u0004Hard Disk": [
   null,
   ""
  ],
- "storage\u0004Device": [
+ "storage\u0004Optical Drive": [
   null,
   ""
  ],
- "storage\u0004Device File": [
-  null,
-  "Værtsnavn"
- ],
- "storage\u0004Firmware Version": [
-  null,
-  "Version"
- ],
- "storage\u0004Model": [
+ "storage\u0004Removable Drive": [
   null,
   ""
  ],
- "storage\u0004Multipathed Devices": [
+ "storage\u0004Solid-State Disk": [
   null,
   ""
- ],
- "storage\u0004RAID Level": [
-  null,
-  ""
- ],
- "storage\u0004Serial Number": [
-  null,
-  ""
- ],
- "storage\u0004State": [
-  null,
-  "Tilstand"
- ],
- "storage\u0004UUID": [
-  null,
-  ""
- ],
- "storage\u0004World Wide Name": [
-  null,
-  "Værtsnavn"
  ],
  "format-bytes\u0004bytes": [
   null,

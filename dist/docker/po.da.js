@@ -121,6 +121,14 @@ return plural;
   null,
   ""
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
+ "All In One": [
+  null,
+  ""
+ ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
   ""
@@ -129,11 +137,19 @@ return plural;
   null,
   ""
  ],
- "Are you sure you want to delete this image?": [
+ "Author": [
   null,
   ""
  ],
- "Author": [
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
   null,
   ""
  ],
@@ -173,12 +189,13 @@ return plural;
   null,
   ""
  ],
- "Combined CPU usage": [
+ "Combined memory usage": [
   null,
   ""
  ],
- "Combined memory usage": [
-  null,
+ "Combined usage of $0 CPU core": [
+  "Combined usage of $0 CPU cores",
+  "",
   ""
  ],
  "Command": [
@@ -198,6 +215,10 @@ return plural;
   ""
  ],
  "Commit Image": [
+  null,
+  ""
+ ],
+ "Compact PCI": [
   null,
   ""
  ],
@@ -233,6 +254,10 @@ return plural;
   null,
   ""
  ],
+ "Convertible": [
+  null,
+  ""
+ ],
  "Could not add all disks": [
   null,
   ""
@@ -257,15 +282,15 @@ return plural;
   null,
   ""
  ],
- "Delete $0": [
-  null,
-  ""
- ],
  "Deleting a container will erase all data in it.": [
   null,
   ""
  ],
- "Deleting an image will delete it, but you can probably download it again if you need it later.  Unless this image has never been pushed to a repository, that is, in which case you probably can't download it again.": [
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
   null,
   ""
  ],
@@ -276,6 +301,10 @@ return plural;
  "Docker is not installed or activated on the system": [
   null,
   ""
+ ],
+ "Docking Station": [
+  null,
+  "Indstillinger"
  ],
  "Download": [
   null,
@@ -293,6 +322,10 @@ return plural;
   null,
   ""
  ],
+ "Embedded PC": [
+  null,
+  ""
+ ],
  "Entrypoint": [
   null,
   ""
@@ -305,10 +338,6 @@ return plural;
   null,
   ""
  ],
- "Erase containers, reformat disks, and add them": [
-  null,
-  ""
- ],
  "Error message from Docker:": [
   null,
   ""
@@ -318,6 +347,10 @@ return plural;
   ""
  ],
  "Exited $ExitCode": [
+  null,
+  ""
+ ],
+ "Expansion Chassis": [
   null,
   ""
  ],
@@ -346,6 +379,10 @@ return plural;
   ""
  ],
  "Get new image": [
+  null,
+  ""
+ ],
+ "Hand Held": [
   null,
   ""
  ],
@@ -401,6 +438,14 @@ return plural;
   null,
   ""
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
+ "Laptop": [
+  null,
+  ""
+ ],
  "Link to another container": [
   null,
   ""
@@ -417,7 +462,19 @@ return plural;
   null,
   "Disk I/O"
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "MAC Address:": [
+  null,
+  ""
+ ],
+ "Main Server Chassis": [
   null,
   ""
  ],
@@ -437,7 +494,19 @@ return plural;
   null,
   ""
  ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
  "Mount container volumes": [
+  null,
+  ""
+ ],
+ "Multi-system Chassis": [
   null,
   ""
  ],
@@ -497,6 +566,10 @@ return plural;
   null,
   ""
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   ""
@@ -518,7 +591,19 @@ return plural;
   "",
   ""
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Overview": [
+  null,
+  ""
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
   null,
   ""
  ],
@@ -534,11 +619,27 @@ return plural;
   null,
   ""
  ],
+ "Portable": [
+  null,
+  ""
+ ],
  "Ports": [
   null,
   ""
  ],
  "Ports:": [
+  null,
+  ""
+ ],
+ "Problems": [
+  null,
+  ""
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
   null,
   ""
  ],
@@ -598,6 +699,10 @@ return plural;
   null,
   ""
  ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Security": [
   null,
   ""
@@ -622,6 +727,10 @@ return plural;
   null,
   ""
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
  "Start": [
   null,
   ""
@@ -638,7 +747,15 @@ return plural;
   null,
   "Tilstand"
  ],
+ "Stick PC": [
+  null,
+  ""
+ ],
  "Stop": [
+  null,
+  ""
+ ],
+ "Stop and delete": [
   null,
   ""
  ],
@@ -654,7 +771,19 @@ return plural;
   null,
   ""
  ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "TCP": [
+  null,
+  ""
+ ],
+ "Tablet": [
   null,
   ""
  ],
@@ -670,7 +799,15 @@ return plural;
   null,
   ""
  ],
- "The storage pool will be reset to optimize its layout.  All containers will be erased.": [
+ "The following containers depend on this image and will become unusable.": [
+  null,
+  ""
+ ],
+ "The scan from $time ($type) found no vulnerabilities.": [
+  null,
+  ""
+ ],
+ "The scan from $time ($type) was not successful.": [
   null,
   ""
  ],
@@ -679,6 +816,10 @@ return plural;
   ""
  ],
  "Total": [
+  null,
+  ""
+ ],
+ "Tower": [
   null,
   ""
  ],
@@ -698,11 +839,15 @@ return plural;
   null,
   ""
  ],
+ "Unknown": [
+  null,
+  ""
+ ],
  "Unless Stopped": [
   null,
   ""
  ],
- "Up since $StartedAt": [
+ "Up since $0": [
   null,
   ""
  ],
@@ -717,6 +862,10 @@ return plural;
  "Volumes": [
   null,
   ""
+ ],
+ "Volumes:": [
+  null,
+  "Værtsnavn"
  ],
  "With terminal": [
   null,

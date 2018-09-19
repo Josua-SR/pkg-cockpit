@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "fi",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -146,10 +146,6 @@ return plural;
  "Bus": [
   null,
   ""
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "CHANGE NETWORK STATE -toiminto epäonnistui"
  ],
  "CPU Type:": [
   null,
@@ -322,10 +318,6 @@ return plural;
  "Format": [
   null,
   "Alusta"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  ""
  ],
  "GiB": [
   null,
@@ -798,30 +790,6 @@ return plural;
  "VDSM Service Management": [
   null,
   "VDSM-palveluhallinta"
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "VM FORCE OFF -toiminto epäonnistui"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "VM FORCE REBOOT -toiminto epäonnistui"
- ],
- "VM REBOOT action failed": [
-  null,
-  "VM REBOOT -toiminto epäonnistui"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  "VM SEND Non-Maskable Interrrupt -toiminto epäonnistui"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "VM SHUT DOWN -toiminto epäonnistui"
- ],
- "VM START action failed": [
-  null,
-  "VM START -toiminto epäonnistui"
  ],
  "VM icon": [
   null,

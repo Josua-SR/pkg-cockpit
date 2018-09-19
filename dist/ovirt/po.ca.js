@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "ca",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -146,10 +146,6 @@ return plural;
  "Bus": [
   null,
   "Bus"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Ha fallat l'acció CHANGE NETWORK STATE"
  ],
  "CPU Type:": [
   null,
@@ -322,10 +318,6 @@ return plural;
  "Format": [
   null,
   "Formata"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  ""
  ],
  "GiB": [
   null,
@@ -798,30 +790,6 @@ return plural;
  "VDSM Service Management": [
   null,
   "Gestió del servei VDSM"
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "Ha fallat l'acció VM FORCE OFF"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "Ha fallat l'acció VM FORCE REBOOT"
- ],
- "VM REBOOT action failed": [
-  null,
-  "Ha fallat l'acció VM REBOOT"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  ""
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "Ha fallat l'acció VM SHUT DOWN"
- ],
- "VM START action failed": [
-  null,
-  "Ha fallat l'acció VM START"
  ],
  "VM icon": [
   null,

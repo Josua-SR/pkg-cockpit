@@ -65,7 +65,7 @@ nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 
 return plural;
 },
   "language": "pl",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  "$0 Block Device": [
   null,
@@ -1497,10 +1497,6 @@ return plural;
   null,
   "Serwer kluczy Tang"
  ],
- "Targets": [
-  null,
-  "Cele"
- ],
  "The \"storaged\" API is not available on this system.": [
   null,
   "API „storaged” nie jest dostępne w tym systemie."
@@ -1529,13 +1525,25 @@ return plural;
   null,
   "System plików jest używany przez sesje logowania i usługi systemowe.                Kontynuacja je zatrzyma."
  ],
+ "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
+  null,
+  ""
+ ],
  "The filesystem is in use by login sessions.                Proceeding will stop these.": [
   null,
   "System plików jest używany przez sesje logowania.                Kontynuacja je zatrzyma."
  ],
+ "The filesystem is in use by login sessions. Proceeding will stop these.": [
+  null,
+  ""
+ ],
  "The filesystem is in use by system services.                Proceeding will stop these.": [
   null,
   "System plików jest używany przez usługi systemowe.                Kontynuacja je zatrzyma."
+ ],
+ "The filesystem is in use by system services. Proceeding will stop these.": [
+  null,
+  ""
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
@@ -1577,6 +1585,10 @@ return plural;
   null,
   "To urządzenie ma obecnie używane systemy plików.                Kontynuacja odmontuje wszystkie jego systemy plików."
  ],
+ "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
+  null,
+  ""
+ ],
  "This device is currently used for RAID devices.": [
   null,
   "To urządzenie jest obecnie używane dla urządzeń RAID."
@@ -1584,6 +1596,10 @@ return plural;
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
   null,
   "To urządzenie jest obecnie używane dla urządzeń RAID.                Kontynuacja usunie je z jego urządzeń RAID."
+ ],
+ "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
+  null,
+  ""
  ],
  "This device is currently used for VDO devices.": [
   null,
@@ -1596,6 +1612,10 @@ return plural;
  "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
   null,
   "To urządzenie jest obecnie używane dla grup woluminów.                Kontynuacja usunie je z jego grup woluminów."
+ ],
+ "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
+  null,
+  ""
  ],
  "This disk cannot be removed while the device is recovering.": [
   null,

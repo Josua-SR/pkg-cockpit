@@ -67,6 +67,58 @@ return plural;
   "language": "da",
   "x-generator": "Zanata 3.8.4"
  },
+ "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
+  null,
+  ""
+ ],
+ "$0 vCPU Details": [
+  null,
+  ""
+ ],
+ "Action": [
+  null,
+  "Indstillinger"
+ ],
+ "Add": [
+  null,
+  ""
+ ],
+ "Add Disk": [
+  null,
+  "Disk I/O"
+ ],
+ "Additional": [
+  null,
+  ""
+ ],
+ "Address": [
+  null,
+  ""
+ ],
+ "Address:": [
+  null,
+  ""
+ ],
+ "All changes will take effect only after stopping and starting the VM.": [
+  null,
+  ""
+ ],
+ "All running virtual machines will be turned off.": [
+  null,
+  ""
+ ],
+ "Apply": [
+  null,
+  ""
+ ],
+ "Attach permanently": [
+  null,
+  ""
+ ],
+ "Automatically selected host": [
+  null,
+  ""
+ ],
  "Autostart:": [
   null,
   ""
@@ -75,19 +127,183 @@ return plural;
   null,
   ""
  ],
+ "Base Template": [
+  null,
+  ""
+ ],
+ "Base template": [
+  null,
+  ""
+ ],
+ "Base template:": [
+  null,
+  ""
+ ],
+ "Boot Order:": [
+  null,
+  ""
+ ],
+ "Bus": [
+  null,
+  ""
+ ],
+ "CPU Type:": [
+  null,
+  ""
+ ],
+ "CREATE VM action failed": [
+  null,
+  ""
+ ],
  "Cancel": [
   null,
   "Annullér"
+ ],
+ "Capacity": [
+  null,
+  ""
+ ],
+ "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
+  null,
+  ""
+ ],
+ "Cluster": [
+  null,
+  ""
+ ],
+ "Cluster Templates": [
+  null,
+  ""
+ ],
+ "Cluster Virtual Machines": [
+  null,
+  ""
+ ],
+ "Confirm deletion of $0": [
+  null,
+  ""
+ ],
+ "Confirm migration": [
+  null,
+  ""
+ ],
+ "Confirm reload:": [
+  null,
+  ""
+ ],
+ "Confirm save:": [
+  null,
+  ""
+ ],
+ "Connect to oVirt Engine": [
+  null,
+  ""
+ ],
+ "Connect with any $0 viewer application.": [
+  null,
+  ""
+ ],
+ "Connect with any SPICE or VNC viewer application.": [
+  null,
+  ""
  ],
  "Connection": [
   null,
   ""
  ],
- "FORCEOFF_VM action failed": [
+ "Console Type": [
   null,
   ""
  ],
- "FORCEREBOOT_VM action failed": [
+ "Consoles": [
+  null,
+  ""
+ ],
+ "Cores per socket": [
+  null,
+  ""
+ ],
+ "Create": [
+  null,
+  ""
+ ],
+ "Create New": [
+  null,
+  ""
+ ],
+ "Create New VM": [
+  null,
+  ""
+ ],
+ "Create VM": [
+  null,
+  ""
+ ],
+ "Delete": [
+  null,
+  ""
+ ],
+ "Delete associated storage files:": [
+  null,
+  ""
+ ],
+ "Description": [
+  null,
+  ""
+ ],
+ "Description:": [
+  null,
+  ""
+ ],
+ "Device": [
+  null,
+  "Værtsnavn"
+ ],
+ "Disconnect": [
+  null,
+  ""
+ ],
+ "Disconnected from serial console. Click the Reconnect button.": [
+  null,
+  ""
+ ],
+ "Disk failed to be attached with following error: ": [
+  null,
+  ""
+ ],
+ "Disk failed to be created with following error: ": [
+  null,
+  ""
+ ],
+ "Disks": [
+  null,
+  "Disk I/O"
+ ],
+ "Download the MSI from $0": [
+  null,
+  ""
+ ],
+ "Edit the vdsm.conf": [
+  null,
+  ""
+ ],
+ "Emulated Machine:": [
+  null,
+  ""
+ ],
+ "Enter New VM name": [
+  null,
+  ""
+ ],
+ "FQDN": [
+  null,
+  ""
+ ],
+ "Fewer than the maximum number of virtual CPUs should be enabled.": [
+  null,
+  ""
+ ],
+ "File": [
   null,
   ""
  ],
@@ -99,7 +315,83 @@ return plural;
   null,
   ""
  ],
- "ID:": [
+ "Format": [
+  null,
+  ""
+ ],
+ "GiB": [
+  null,
+  ""
+ ],
+ "Graphics Console (VNC)": [
+  null,
+  ""
+ ],
+ "Graphics Console in Desktop Viewer": [
+  null,
+  ""
+ ],
+ "HA": [
+  null,
+  ""
+ ],
+ "HA:": [
+  null,
+  ""
+ ],
+ "Host": [
+  null,
+  ""
+ ],
+ "Host to Maintenance": [
+  null,
+  ""
+ ],
+ "INSTALL VM action failed": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  ""
+ ],
+ "Launch Remote Viewer": [
+  null,
+  ""
+ ],
+ "Loading ...": [
+  null,
+  ""
+ ],
+ "Loading data ...": [
+  null,
+  ""
+ ],
+ "MAC Address": [
+  null,
+  ""
+ ],
+ "MIGRATE action failed": [
+  null,
+  ""
+ ],
+ "MTU": [
+  null,
+  ""
+ ],
+ "Managed": [
+  null,
+  ""
+ ],
+ "Manual Connection": [
+  null,
+  ""
+ ],
+ "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
+  null,
+  ""
+ ],
+ "Memory": [
   null,
   ""
  ],
@@ -107,11 +399,71 @@ return plural;
   null,
   "Hukommelse"
  ],
+ "MiB": [
+  null,
+  ""
+ ],
+ "Migrate To:": [
+  null,
+  ""
+ ],
+ "Model type": [
+  null,
+  ""
+ ],
+ "More Information": [
+  null,
+  "Indstillinger"
+ ],
  "Name": [
   null,
   "Værtsnavn"
  ],
+ "Networks": [
+  null,
+  "Netværks Traffik"
+ ],
+ "New Volume Name": [
+  null,
+  "Værtsnavn"
+ ],
+ "No VM found in oVirt.": [
+  null,
+  ""
+ ],
  "No VM is running or defined on this host": [
+  null,
+  ""
+ ],
+ "No boot device found": [
+  null,
+  ""
+ ],
+ "No console defined for this virtual machine.": [
+  null,
+  ""
+ ],
+ "No disks defined for this VM": [
+  null,
+  ""
+ ],
+ "No network interfaces defined for this VM": [
+  null,
+  ""
+ ],
+ "No oVirt connection": [
+  null,
+  ""
+ ],
+ "Number of virtual CPUs that gonna be used.": [
+  null,
+  ""
+ ],
+ "OK": [
+  null,
+  ""
+ ],
+ "OS": [
   null,
   ""
  ],
@@ -123,11 +475,99 @@ return plural;
   null,
   ""
  ],
+ "Optimized for:": [
+  null,
+  ""
+ ],
  "Overview": [
   null,
   ""
  ],
- "REBOOT_VM action failed": [
+ "Please confirm, the host shall be switched to maintenance mode.": [
+  null,
+  ""
+ ],
+ "Please enter new volume name": [
+  null,
+  ""
+ ],
+ "Please enter new volume size": [
+  null,
+  ""
+ ],
+ "Please provide fully qualified domain name and port of the oVirt engine.": [
+  null,
+  ""
+ ],
+ "Please provide valid oVirt engine fully qualified domain name (FQDN) and port (443 by default)": [
+  null,
+  ""
+ ],
+ "Please refer to oVirt's $0 for more information about Remote Viewer setup.": [
+  null,
+  ""
+ ],
+ "Please start the virtual machine to access its console.": [
+  null,
+  ""
+ ],
+ "Please wait till VMs list is loaded from the server.": [
+  null,
+  ""
+ ],
+ "Please wait till list of templates is loaded from the server.": [
+  null,
+  ""
+ ],
+ "Plug": [
+  null,
+  ""
+ ],
+ "Pool": [
+  null,
+  "Værtsnavn"
+ ],
+ "Port": [
+  null,
+  ""
+ ],
+ "Portgroup": [
+  null,
+  ""
+ ],
+ "Preferred number of sockets to expose to the guest.": [
+  null,
+  ""
+ ],
+ "Preparing for Maintenance": [
+  null,
+  ""
+ ],
+ "Protocol": [
+  null,
+  ""
+ ],
+ "REBOOT action failed": [
+  null,
+  ""
+ ],
+ "Readonly": [
+  null,
+  ""
+ ],
+ "Reconnect": [
+  null,
+  ""
+ ],
+ "Register oVirt": [
+  null,
+  ""
+ ],
+ "Registering oVirt to Cockpit": [
+  null,
+  ""
+ ],
+ "Reload": [
   null,
   ""
  ],
@@ -139,11 +579,59 @@ return plural;
   null,
   ""
  ],
- "SHUTDOWN_VM action failed": [
+ "Run Here": [
   null,
   ""
  ],
- "START_VM action failed": [
+ "Running Since:": [
+  null,
+  ""
+ ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  ""
+ ],
+ "SHUTDOWN action failed": [
+  null,
+  ""
+ ],
+ "SPICE": [
+  null,
+  ""
+ ],
+ "SPICE Address:": [
+  null,
+  ""
+ ],
+ "SPICE Port:": [
+  null,
+  ""
+ ],
+ "SPICE TLS Port:": [
+  null,
+  ""
+ ],
+ "START action failed": [
+  null,
+  ""
+ ],
+ "SUSPEND action failed": [
+  null,
+  ""
+ ],
+ "Save": [
+  null,
+  ""
+ ],
+ "Send Non-Maskable Interrupt": [
+  null,
+  ""
+ ],
+ "Send shortcut": [
+  null,
+  ""
+ ],
+ "Serial Console": [
   null,
   ""
  ],
@@ -155,15 +643,67 @@ return plural;
   null,
   ""
  ],
+ "Size": [
+  null,
+  ""
+ ],
+ "Sockets": [
+  null,
+  ""
+ ],
+ "Source": [
+  null,
+  ""
+ ],
+ "Start the VM to see disk statistics.": [
+  null,
+  ""
+ ],
  "State": [
   null,
   ""
  ],
- "State:": [
+ "Stateless": [
   null,
   "Tilstand"
  ],
+ "Stateless:": [
+  null,
+  "Tilstand"
+ ],
+ "Suspend": [
+  null,
+  ""
+ ],
+ "Switch Host to Maintenance": [
+  null,
+  ""
+ ],
+ "Switching host to maintenance mode failed. Received error: ": [
+  null,
+  ""
+ ],
+ "Switching host to maintenance mode in progress ...": [
+  null,
+  ""
+ ],
  "System": [
+  null,
+  ""
+ ],
+ "Target": [
+  null,
+  ""
+ ],
+ "Template": [
+  null,
+  ""
+ ],
+ "Templates": [
+  null,
+  ""
+ ],
+ "Templates of $0 cluster": [
   null,
   ""
  ],
@@ -191,6 +731,10 @@ return plural;
   null,
   ""
  ],
+ "The VM is running and will be forced off before deletion.": [
+  null,
+  ""
+ ],
  "The VM is running.": [
   null,
   ""
@@ -199,7 +743,39 @@ return plural;
   null,
   ""
  ],
+ "The pool is empty": [
+  null,
+  ""
+ ],
+ "This host is managed by a virtualization manager, so creation of new VMs from the host is not possible.": [
+  null,
+  ""
+ ],
+ "This virtual machine is not managed by oVirt": [
+  null,
+  ""
+ ],
+ "Threads per cores": [
+  null,
+  ""
+ ],
+ "Type": [
+  null,
+  ""
+ ],
+ "Unplug": [
+  null,
+  ""
+ ],
+ "Upgrade to a more recent version of libvirt to view disk statistics": [
+  null,
+  ""
+ ],
  "Usage": [
+  null,
+  ""
+ ],
+ "Use Existing": [
   null,
   ""
  ],
@@ -207,7 +783,75 @@ return plural;
   null,
   ""
  ],
+ "VDSM": [
+  null,
+  ""
+ ],
+ "VDSM Service Management": [
+  null,
+  "Værtsnavn"
+ ],
+ "VM icon": [
+  null,
+  ""
+ ],
+ "VNC": [
+  null,
+  ""
+ ],
+ "VNC Address:": [
+  null,
+  ""
+ ],
+ "VNC Port:": [
+  null,
+  ""
+ ],
+ "VNC TLS Port:": [
+  null,
+  ""
+ ],
+ "Version": [
+  null,
+  ""
+ ],
+ "Version num": [
+  null,
+  ""
+ ],
  "Virtual Machines": [
+  null,
+  ""
+ ],
+ "Virtual Machines of $0 cluster": [
+  null,
+  ""
+ ],
+ "Virtualport": [
+  null,
+  ""
+ ],
+ "Volume": [
+  null,
+  ""
+ ],
+ "Your browser does not support iframes.": [
+  null,
+  ""
+ ],
+ "bridge": [
+  null,
+  ""
+ ],
+ "cdrom": [
+  null,
+  ""
+ ],
+ "connecting": [
+  null,
+  ""
+ ],
+ "cores": [
   null,
   ""
  ],
@@ -215,7 +859,23 @@ return plural;
   null,
   ""
  ],
+ "custom": [
+  null,
+  ""
+ ],
+ "direct": [
+  null,
+  ""
+ ],
  "disabled": [
+  null,
+  ""
+ ],
+ "disk": [
+  null,
+  ""
+ ],
+ "down": [
   null,
   ""
  ],
@@ -227,7 +887,91 @@ return plural;
   null,
   ""
  ],
+ "error": [
+  null,
+  ""
+ ],
+ "ethernet": [
+  null,
+  ""
+ ],
+ "host": [
+  null,
+  ""
+ ],
+ "hostdev": [
+  null,
+  ""
+ ],
  "idle": [
+  null,
+  ""
+ ],
+ "initializing": [
+  null,
+  ""
+ ],
+ "installation failed": [
+  null,
+  ""
+ ],
+ "installing OS": [
+  null,
+  ""
+ ],
+ "kdumping": [
+  null,
+  ""
+ ],
+ "maintenance": [
+  null,
+  ""
+ ],
+ "mcast": [
+  null,
+  ""
+ ],
+ "network": [
+  null,
+  "Netværks Traffik"
+ ],
+ "no": [
+  null,
+  ""
+ ],
+ "non operational": [
+  null,
+  "Indstillinger"
+ ],
+ "non responsive": [
+  null,
+  ""
+ ],
+ "oVirt": [
+  null,
+  ""
+ ],
+ "oVirt Host State:": [
+  null,
+  ""
+ ],
+ "oVirt Provider installation script failed due to missing arguments.": [
+  null,
+  ""
+ ],
+ "oVirt Provider installation script failed: Can't write to /etc/cockpit/machines-ovirt.config, try as root.": [
+  null,
+  ""
+ ],
+ "oVirt installation script failed with following output: ": [
+  null,
+  ""
+ ],
+ "oVirt login in progress": [
+  null,
+  ""
+ ],
+ "other": [
   null,
   ""
  ],
@@ -235,7 +979,35 @@ return plural;
   null,
   ""
  ],
+ "pending approval": [
+  null,
+  ""
+ ],
+ "qcow2": [
+  null,
+  ""
+ ],
+ "raw": [
+  null,
+  ""
+ ],
+ "reboot": [
+  null,
+  ""
+ ],
  "running": [
+  null,
+  ""
+ ],
+ "server": [
+  null,
+  ""
+ ],
+ "show less": [
+  null,
+  ""
+ ],
+ "show more": [
   null,
   ""
  ],
@@ -247,7 +1019,23 @@ return plural;
   null,
   ""
  ],
+ "sockets": [
+  null,
+  ""
+ ],
  "suspended (PM)": [
+  null,
+  ""
+ ],
+ "threads": [
+  null,
+  ""
+ ],
+ "udp": [
+  null,
+  ""
+ ],
+ "unassigned": [
   null,
   ""
  ],
@@ -255,7 +1043,35 @@ return plural;
   null,
   ""
  ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
+  null,
+  ""
+ ],
+ "vCPU Count": [
+  null,
+  ""
+ ],
+ "vCPU Maximum": [
+  null,
+  ""
+ ],
+ "vCPUs": [
+  null,
+  ""
+ ],
  "vCPUs:": [
+  null,
+  ""
+ ],
+ "vhostuser": [
+  null,
+  ""
+ ],
+ "yes": [
   null,
   ""
  ]

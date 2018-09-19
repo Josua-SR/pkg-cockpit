@@ -130,6 +130,10 @@ return plural;
   null,
   ""
  ],
+ "No matching files found": [
+  null,
+  ""
+ ],
  "Not Ready": [
   null,
   ""
@@ -146,7 +150,15 @@ return plural;
   null,
   ""
  ],
+ "Path to file": [
+  null,
+  ""
+ ],
  "Ready": [
+  null,
+  ""
+ ],
+ "Too many files found": [
   null,
   ""
  ],
