@@ -81,6 +81,10 @@ return plural;
   "",
   ""
  ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
  "$0 minute": [
   "$0 minutes",
   "",
@@ -94,6 +98,10 @@ return plural;
  "$0 week": [
   "$0 weeks",
   "",
+  ""
+ ],
+ "$0 will be installed.": [
+  null,
   ""
  ],
  "$0 year": [
@@ -285,6 +293,14 @@ return plural;
   null,
   ""
  ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
  "After": [
   null,
   ""
@@ -293,7 +309,11 @@ return plural;
   null,
   ""
  ],
- "All": [
+ "Alert and above": [
+  null,
+  ""
+ ],
+ "All In One": [
   null,
   ""
  ],
@@ -310,6 +330,46 @@ return plural;
   ""
  ],
  "Automatically using specific NTP servers": [
+  null,
+  ""
+ ],
+ "BIOS": [
+  null,
+  ""
+ ],
+ "BIOS date": [
+  null,
+  ""
+ ],
+ "BIOS version": [
+  null,
+  ""
+ ],
+ "Before": [
+  null,
+  ""
+ ],
+ "Binds To": [
+  null,
+  ""
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bound By": [
+  null,
+  ""
+ ],
+ "Bug Fix Updates Available": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
   null,
   ""
  ],
@@ -341,11 +401,55 @@ return plural;
   null,
   ""
  ],
+ "Checking for updates…": [
+  null,
+  ""
+ ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
+ "Class": [
+  null,
+  ""
+ ],
+ "Click to see system hardware information": [
+  null,
+  ""
+ ],
  "Close": [
   null,
   ""
  ],
  "Command": [
+  null,
+  ""
+ ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
+ "Condition $0=$1 was not met": [
+  null,
+  ""
+ ],
+ "Condition failed": [
+  null,
+  ""
+ ],
+ "Conflicted By": [
+  null,
+  ""
+ ],
+ "Conflicts": [
+  null,
+  ""
+ ],
+ "Consists Of": [
+  null,
+  ""
+ ],
+ "Convertible": [
   null,
   ""
  ],
@@ -357,7 +461,15 @@ return plural;
   null,
   ""
  ],
+ "Critical and above": [
+  null,
+  ""
+ ],
  "Current boot": [
+  null,
+  ""
+ ],
+ "Debug and above": [
   null,
   ""
  ],
@@ -366,6 +478,14 @@ return plural;
   ""
  ],
  "Description": [
+  null,
+  ""
+ ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
   null,
   ""
  ],
@@ -381,11 +501,23 @@ return plural;
   null,
   "Disk I/O"
  ],
+ "Docking Station": [
+  null,
+  "Indstillinger"
+ ],
  "Domain": [
   null,
   ""
  ],
  "Don't Repeat": [
+  null,
+  ""
+ ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
+ "Embedded PC": [
   null,
   ""
  ],
@@ -397,7 +529,15 @@ return plural;
   null,
   ""
  ],
+ "Enable persistent metrics…": [
+  null,
+  ""
+ ],
  "Enabled": [
+  null,
+  ""
+ ],
+ "Enhancement Updates Available": [
   null,
   ""
  ],
@@ -409,7 +549,15 @@ return plural;
   null,
   ""
  ],
- "Errors": [
+ "Error and above": [
+  null,
+  ""
+ ],
+ "Everything": [
+  null,
+  ""
+ ],
+ "Expansion Chassis": [
   null,
   ""
  ],
@@ -421,6 +569,10 @@ return plural;
   null,
   ""
  ],
+ "General": [
+  null,
+  ""
+ ],
  "Go to": [
   null,
   ""
@@ -429,7 +581,15 @@ return plural;
   null,
   ""
  ],
+ "Hand Held": [
+  null,
+  ""
+ ],
  "Hardware": [
+  null,
+  ""
+ ],
+ "Hardware Information": [
   null,
   ""
  ],
@@ -454,6 +614,22 @@ return plural;
   ""
  ],
  "Id": [
+  null,
+  ""
+ ],
+ "Info and above": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  ""
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
   null,
   ""
  ],
@@ -485,7 +661,11 @@ return plural;
   null,
   ""
  ],
- "Isolate": [
+ "IoT Gateway": [
+  null,
+  ""
+ ],
+ "Joins Namespace Of": [
   null,
   ""
  ],
@@ -502,6 +682,10 @@ return plural;
   ""
  ],
  "Kernel": [
+  null,
+  ""
+ ],
+ "Laptop": [
   null,
   ""
  ],
@@ -533,11 +717,23 @@ return plural;
   null,
   ""
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "Machine ID": [
   null,
   ""
  ],
  "Machine SSH Key Fingerprints": [
+  null,
+  ""
+ ],
+ "Main Server Chassis": [
   null,
   ""
  ],
@@ -561,6 +757,14 @@ return plural;
   null,
   ""
  ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
  "Minute needs to be a number between 0-59": [
   null,
   ""
@@ -569,13 +773,25 @@ return plural;
   null,
   ""
  ],
+ "Model": [
+  null,
+  ""
+ ],
  "Monday": [
+  null,
+  ""
+ ],
+ "Multi-system Chassis": [
   null,
   ""
  ],
  "NTP Server": [
   null,
   ""
+ ],
+ "Name": [
+  null,
+  "Værtsnavn"
  ],
  "Need at least one NTP server": [
   null,
@@ -601,6 +817,10 @@ return plural;
   null,
   ""
  ],
+ "Not authorized to upload-report": [
+  null,
+  ""
+ ],
  "Not synchronized": [
   null,
   ""
@@ -609,7 +829,11 @@ return plural;
   null,
   ""
  ],
- "Notices": [
+ "Notebook": [
+  null,
+  ""
+ ],
+ "Notice and above": [
   null,
   ""
  ],
@@ -625,6 +849,14 @@ return plural;
   null,
   ""
  ],
+ "On Failure": [
+  null,
+  ""
+ ],
+ "Only Emergency": [
+  null,
+  ""
+ ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
   ""
@@ -633,11 +865,39 @@ return plural;
   null,
   ""
  ],
+ "Other": [
+  null,
+  ""
+ ],
+ "PCI": [
+  null,
+  ""
+ ],
+ "PackageKit crashed": [
+  null,
+  ""
+ ],
+ "Part Of": [
+  null,
+  ""
+ ],
  "Paths": [
   null,
   ""
  ],
  "Performance Profile": [
+  null,
+  ""
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
+ "Portable": [
   null,
   ""
  ],
@@ -654,6 +914,26 @@ return plural;
   ""
  ],
  "Pretty Host Name": [
+  null,
+  ""
+ ],
+ "Problem details": [
+  null,
+  ""
+ ],
+ "Problem info": [
+  null,
+  ""
+ ],
+ "Propagates Reload To": [
+  null,
+  ""
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
   null,
   ""
  ],
@@ -681,11 +961,15 @@ return plural;
   null,
   ""
  ],
- "Reload or Restart": [
+ "Reload Propagated From": [
   null,
   ""
  ],
- "Reload or Try Restart": [
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
   null,
   ""
  ],
@@ -709,6 +993,38 @@ return plural;
   null,
   ""
  ],
+ "Report": [
+  null,
+  ""
+ ],
+ "Reported": [
+  null,
+  ""
+ ],
+ "Reporter 'reporter-ureport' not found.": [
+  null,
+  ""
+ ],
+ "Reporting was unsucessful. Try running `reporter-ureport -d ": [
+  null,
+  ""
+ ],
+ "Required By": [
+  null,
+  ""
+ ],
+ "Requires": [
+  null,
+  ""
+ ],
+ "Requisite": [
+  null,
+  ""
+ ],
+ "Requisite Of": [
+  null,
+  ""
+ ],
  "Reset": [
   null,
   ""
@@ -729,11 +1045,19 @@ return plural;
   null,
   ""
  ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Seconds": [
   null,
   ""
  ],
  "Secure Shell Keys": [
+  null,
+  ""
+ ],
+ "Security Updates Available": [
   null,
   ""
  ],
@@ -757,6 +1081,10 @@ return plural;
   null,
   ""
  ],
+ "Severity": [
+  null,
+  ""
+ ],
  "Show fingerprints": [
   null,
   ""
@@ -769,7 +1097,15 @@ return plural;
   null,
   ""
  ],
+ "Slot": [
+  null,
+  ""
+ ],
  "Sockets": [
+  null,
+  ""
+ ],
+ "Space-saving Computer": [
   null,
   ""
  ],
@@ -789,11 +1125,23 @@ return plural;
   null,
   ""
  ],
+ "Stick PC": [
+  null,
+  ""
+ ],
  "Stop": [
   null,
   ""
  ],
  "Store Performance Data": [
+  null,
+  ""
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
   null,
   ""
  ],
@@ -817,11 +1165,27 @@ return plural;
   null,
   ""
  ],
+ "System Information": [
+  null,
+  ""
+ ],
+ "System Not Registered": [
+  null,
+  ""
+ ],
  "System Services": [
   null,
   ""
  ],
  "System Time": [
+  null,
+  ""
+ ],
+ "System Up To Date": [
+  null,
+  ""
+ ],
+ "Tablet": [
   null,
   ""
  ],
@@ -837,7 +1201,23 @@ return plural;
   null,
   ""
  ],
+ "The user <b>$0</b> is not permitted to change the system time": [
+  null,
+  ""
+ ],
+ "The user <b>$0</b> is not permitted to enable or disable services": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
+  null,
+  ""
+ ],
+ "The user <b>$0</b> is not permitted to shutdown or restart this server": [
+  null,
+  ""
+ ],
+ "The user <b>$0</b> is not permitted to start or stop services": [
   null,
   ""
  ],
@@ -869,7 +1249,19 @@ return plural;
   null,
   ""
  ],
- "Try Restart": [
+ "Total size: $0": [
+  null,
+  ""
+ ],
+ "Tower": [
+  null,
+  ""
+ ],
+ "Triggered By": [
+  null,
+  ""
+ ],
+ "Triggers": [
   null,
   ""
  ],
@@ -881,8 +1273,25 @@ return plural;
   null,
   ""
  ],
+ "Type": [
+  null,
+  ""
+ ],
+ "Unknown": [
+  null,
+  ""
+ ],
  "Unmask": [
   null,
+  ""
+ ],
+ "Updates Available": [
+  null,
+  ""
+ ],
+ "Usage of $0 CPU core": [
+  "Usage of $0 CPU cores",
+  "",
   ""
  ],
  "Used": [
@@ -893,11 +1302,27 @@ return plural;
   null,
   ""
  ],
+ "Vendor": [
+  null,
+  ""
+ ],
  "Version": [
   null,
   ""
  ],
- "Warnings": [
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
+ ],
+ "Wanted By": [
+  null,
+  ""
+ ],
+ "Wants": [
+  null,
+  ""
+ ],
+ "Warning and above": [
   null,
   ""
  ],
@@ -923,6 +1348,11 @@ return plural;
  ],
  "failed to list ssh host keys: $0": [
   null,
+  ""
+ ],
+ "of $0 CPU core": [
+  "of $0 CPU cores",
+  "",
   ""
  ],
  "unknown": [

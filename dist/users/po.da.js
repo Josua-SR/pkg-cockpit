@@ -71,6 +71,10 @@ return plural;
   null,
   ""
  ],
+ "Account Expiration": [
+  null,
+  "Indstillinger"
+ ],
  "Account not available or cannot be edited.": [
   null,
   ""
@@ -102,6 +106,10 @@ return plural;
  "Cancel": [
   null,
   "Annullér"
+ ],
+ "Change": [
+  null,
+  ""
  ],
  "Close": [
   null,
@@ -159,11 +167,31 @@ return plural;
   null,
   ""
  ],
+ "Force Change": [
+  null,
+  ""
+ ],
+ "Force password change": [
+  null,
+  ""
+ ],
  "Full Name": [
   null,
   ""
  ],
+ "Image Builder": [
+  null,
+  "Værtsnavn"
+ ],
+ "Invalid expiration date": [
+  null,
+  ""
+ ],
  "Invalid key": [
+  null,
+  ""
+ ],
+ "Invalid number of days": [
   null,
   ""
  ],
@@ -179,11 +207,23 @@ return plural;
   null,
   ""
  ],
+ "Lock account on $0": [
+  null,
+  ""
+ ],
  "Logged In": [
   null,
   ""
  ],
  "Never": [
+  null,
+  ""
+ ],
+ "Never expire password": [
+  null,
+  "Indtast adgangskode"
+ ],
+ "Never lock account": [
   null,
   ""
  ],
@@ -223,6 +263,10 @@ return plural;
   null,
   ""
  ],
+ "Password Expiration": [
+  null,
+  ""
+ ],
  "Password is not acceptable": [
   null,
   ""
@@ -231,11 +275,31 @@ return plural;
   null,
   ""
  ],
+ "Password must be changed": [
+  null,
+  ""
+ ],
  "Paste the contents of your public SSH key file here": [
   null,
   ""
  ],
+ "Please specify an expiration date": [
+  null,
+  ""
+ ],
  "Prompting via passwd timed out": [
+  null,
+  ""
+ ],
+ "Require password change every $0 days": [
+  null,
+  ""
+ ],
+ "Require password change on $0": [
+  null,
+  ""
+ ],
+ "Reset": [
   null,
   ""
  ],
@@ -256,6 +320,10 @@ return plural;
   ""
  ],
  "Terminate Session": [
+  null,
+  ""
+ ],
+ "The account '$0' will be forced to change their password on next login": [
   null,
   ""
  ],
@@ -308,6 +376,10 @@ return plural;
   ""
  ],
  "You do not have permission to view the authorized public keys for this account.": [
+  null,
+  ""
+ ],
+ "translatable": [
   null,
   ""
  ],

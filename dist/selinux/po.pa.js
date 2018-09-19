@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "pa",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  "$0 occurrence": [
   "$1 occurrences",

@@ -20,7 +20,7 @@
 import cockpit from "cockpit";
 import React from "react";
 import sha1 from "js-sha1";
-import stable_stringify from "json-stable-stringify";
+import stable_stringify from "json-stable-stringify-without-jsonify";
 
 import {
     dialog_open,
@@ -158,18 +158,42 @@ function existing_passphrase_fields() {
 }
 
 function get_existing_passphrase(dlg, block) {
-    dlg.run(_("Unlocking disk..."),
-            clevis_recover_passphrase(block).then(passphrase => {
-                if (passphrase == "") {
-                    dlg.set_values({ needs_explicit_passphrase: true });
-                } else {
-                    dlg.set_values({ passphrase: passphrase });
-                }
-            })
-    );
+    let prom = clevis_recover_passphrase(block).then(passphrase => {
+        if (passphrase == "") {
+            dlg.set_values({ needs_explicit_passphrase: true });
+            return null;
+        } else {
+            return passphrase;
+        }
+    });
+
+    dlg.run(_("Unlocking disk..."), prom);
+    return prom;
+}
+
+function parse_url(url) {
+    // clevis-encrypt-tang defaults to "http://" (via curl), so we do the same here.
+    if (!RegExp("^[a-zA-Z]+://").test(url))
+        url = "http://" + url;
+    try {
+        return new URL(url);
+    } catch (e) {
+        if (e instanceof TypeError)
+            return null;
+        throw e;
+    }
+}
+
+function validate_url(url) {
+    if (url.length === 0)
+        return _("Address cannot be empty");
+    if (!parse_url(url))
+        return _("Address is not a valid URL");
 }
 
 function add_dialog(client, block) {
+    let recovered_passphrase;
+
     let dlg = dialog_open({ Title: _("Add Key"),
                             Fields: [
                                 SelectOneRadio("type", _("Key source"),
@@ -182,7 +206,7 @@ function add_dialog(client, block) {
                                 Skip("medskip"),
                                 PassInput("new_passphrase", _("New passphrase"),
                                           { visible: vals => vals.type == "luks-passphrase",
-                                            validate: val => !val.length && _("Passphrase cannot be empty")
+                                            validate: val => !val.length && _("Passphrase cannot be empty"),
                                           }),
                                 PassInput("new_passphrase2", _("Repeat passphrase"),
                                           { visible: vals => vals.type == "luks-passphrase",
@@ -194,25 +218,26 @@ function add_dialog(client, block) {
                                           }),
                                 TextInput("tang_url", _("Keyserver address"),
                                           { visible: vals => vals.type == "tang",
-                                            validate: val => !val.length && _("Address cannot be empty")
+                                            validate: validate_url
                                           })
                             ].concat(existing_passphrase_fields()),
                             Action: {
                                 Title: _("Add"),
                                 action: function (vals) {
+                                    let existing_passphrase = vals.passphrase || recovered_passphrase;
                                     if (vals.type == "luks-passphrase") {
-                                        return passphrase_add(block, vals.new_passphrase, vals.passphrase);
+                                        return passphrase_add(block, vals.new_passphrase, existing_passphrase);
                                     } else {
                                         return get_tang_adv(vals.tang_url).then(function (adv) {
                                             edit_tang_adv(client, block, null,
-                                                          vals.tang_url, adv, vals.passphrase);
+                                                          vals.tang_url, adv, existing_passphrase);
                                         });
                                     }
                                 }
                             }
     });
 
-    get_existing_passphrase(dlg, block);
+    get_existing_passphrase(dlg, block).then(pp => { recovered_passphrase = pp });
 }
 
 function edit_passphrase_dialog(block, key) {
@@ -237,24 +262,27 @@ function edit_passphrase_dialog(block, key) {
 }
 
 function edit_clevis_dialog(client, block, key) {
+    let recovered_passphrase;
+
     let dlg = dialog_open({ Title: _("Edit Tang keyserver"),
                             Fields: [
                                 TextInput("tang_url", _("Keyserver address"),
-                                          { validate: val => !val.length && _("Address cannot be empty"),
+                                          { validate: validate_url,
                                             value: key.url
                                           })
                             ].concat(existing_passphrase_fields()),
                             Action: {
                                 Title: _("Save"),
                                 action: function (vals) {
+                                    let existing_passphrase = vals.passphrase || recovered_passphrase;
                                     return get_tang_adv(vals.tang_url).then(adv => {
-                                        edit_tang_adv(client, block, key, vals.tang_url, adv, vals.passphrase);
+                                        edit_tang_adv(client, block, key, vals.tang_url, adv, existing_passphrase);
                                     });
                                 }
                             }
     });
 
-    get_existing_passphrase(dlg, block);
+    get_existing_passphrase(dlg, block).then(pp => { recovered_passphrase = pp });
 }
 
 class Revealer extends React.Component {
@@ -276,11 +304,9 @@ class Revealer extends React.Component {
 }
 
 function edit_tang_adv(client, block, key, url, adv, passphrase) {
-    var port_pos = url.lastIndexOf(":");
-    var host = (port_pos >= 0) ? url.substr(0, port_pos) : url;
-    var port = (port_pos >= 0) ? url.substr(port_pos + 1) : "";
-    var cmd = cockpit.format("ssh $0 tang-show-keys $1", host, port);
-    var cmd_alt = cockpit.format("ssh $0 \"curl -s localhost:$1/adv |\n  jose fmt -j- -g payload -y -o- |\n  jose jwk use -i- -r -u verify -o- |\n  jose jwk thp -i-\"", host, port);
+    var parsed = parse_url(url);
+    var cmd = cockpit.format("ssh $0 tang-show-keys $1", parsed.hostname, parsed.port);
+    var cmd_alt = cockpit.format("ssh $0 \"curl -s localhost:$1/adv |\n  jose fmt -j- -g payload -y -o- |\n  jose jwk use -i- -r -u verify -o- |\n  jose jwk thp -i-\"", parsed.hostname, parsed.port);
 
     var sigkey_thps = compute_sigkey_thps(tang_adv_payload(adv));
 
@@ -440,7 +466,7 @@ export class CryptoKeyslots extends React.Component {
         }
     }
 
-    componentDidUnmount() {
+    componentWillUnmount() {
         this.monitor_slots(null);
     }
 
@@ -497,7 +523,7 @@ export class CryptoKeyslots extends React.Component {
 
             var add_row = (slot, type, desc, edit, edit_excuse, remove) => {
                 rows.push(
-                    <tr>
+                    <tr key={slot}>
                         <td className="shrink key-type">{ type }</td>
                         <td>{ desc }</td>
                         <td className="shrink key-slot">{ cockpit.format(_("Slot $0"), slot) }</td>
@@ -558,7 +584,7 @@ export class CryptoKeyslots extends React.Component {
                     {_("Keys")}
                 </div>
                 <table className="table">
-                    <tbody> { rows } </tbody>
+                    <tbody>{ rows }</tbody>
                 </table>
             </div>
         );

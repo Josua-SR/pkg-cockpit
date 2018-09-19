@@ -65,15 +65,11 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "ja",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
   " 1\" 次のノードを削除しますか?"
- ],
- " or drag & drop.": [
-  null,
-  "または、ドラッグアンドドロップ"
  ],
  "$0% Free": [
   "$0% Free",
@@ -219,10 +215,6 @@ return plural;
   null,
   "ブート ID"
  ],
- "Bus": [
-  null,
-  "バス"
- ],
  "CPU": [
   null,
   "CPU"
@@ -347,10 +339,6 @@ return plural;
   null,
   "作成"
  ],
- "Create Virtual Machine": [
-  null,
-  "仮想マシンの作成"
- ],
  "Create empty image stream": [
   null,
   "空のイメージストリームの作成"
@@ -431,10 +419,6 @@ return plural;
   null,
   "詳細"
  ],
- "Device": [
-  null,
-  "デバイス"
- ],
  "Directory": [
   null,
   "フォルダー"
@@ -446,10 +430,6 @@ return plural;
  "Disk Utilization: $0%": [
   null,
   "ディスク使用率: $0%˙"
- ],
- "Disks": [
-  null,
-  "ディスク"
  ],
  "Display name": [
   null,
@@ -494,10 +474,6 @@ return plural;
  "Driver": [
   null,
   "ドライバー"
- ],
- "Drop file here to upload.": [
-  null,
-  "ここにファイルをドロップし、アップロードします。"
  ],
  "Empty Directory": [
   null,
@@ -547,17 +523,9 @@ return plural;
   null,
   "Flocker データセット名"
  ],
- "Free": [
-  null,
-  "空き"
- ],
  "GCE Persistent Disk": [
   null,
   "GCE 永続ディスク"
- ],
- "GiB": [
-  null,
-  "GiB"
  ],
  "Git Repository": [
   null,
@@ -679,10 +647,6 @@ return plural;
   null,
   "ラベル"
  ],
- "Labels:": [
-  null,
-  "ラベル"
- ],
  "Last Heartbeat": [
   null,
   "最後のハートビート"
@@ -747,10 +711,6 @@ return plural;
   null,
   "メモリー使用率: $0%"
  ],
- "Memory:": [
-  null,
-  "メモリー:"
- ],
  "Message": [
   null,
   "メッセージ"
@@ -770,10 +730,6 @@ return plural;
  "Mount Location": [
   null,
   "マウント場所"
- ],
- "N/A": [
-  null,
-  "該当なし"
  ],
  "NFS": [
   null,
@@ -827,10 +783,6 @@ return plural;
   null,
   "ボリュームがバインドされていません"
  ],
- "No disks defined for this VM": [
-  null,
-  "この仮想マシンに対してディスクが定義されていません"
- ],
  "No groups are present.": [
   null,
   "グループが存在しません。"
@@ -871,10 +823,6 @@ return plural;
   null,
   "ユーザーが存在しません。"
  ],
- "No virtual machines": [
-  null,
-  "仮想マシンがありません"
- ],
  "No volumes are present.": [
   null,
   "ボリュームが存在しません。"
@@ -887,10 +835,6 @@ return plural;
   null,
   "ノード"
  ],
- "Node:": [
-  null,
-  "ノード:"
- ],
  "Nodes": [
   null,
   "ノード"
@@ -902,10 +846,6 @@ return plural;
  "None": [
   null,
   "なし"
- ],
- "Not Available": [
-  null,
-  "使用できません"
  ],
  "Not Ready": [
   null,
@@ -931,14 +871,6 @@ return plural;
   null,
   "OS バージョン"
  ],
- "Ok": [
-  null,
-  "OK"
- ],
- "Only files of size $0 MiB and less are supported": [
-  null,
-  "サイズが $0 MiB 以下のファイルのみをサポートします"
- ],
  "Operating System": [
   null,
   "オペレーティングシステム"
@@ -962,10 +894,6 @@ return plural;
  "Password": [
   null,
   "パスワード"
- ],
- "Paste JSON below, ": [
-  null,
-  "以下に JSON を貼り付けます、"
  ],
  "Path": [
   null,
@@ -1075,10 +1003,6 @@ return plural;
   null,
   "ポッドセレクター"
  ],
- "Pod:": [
-  null,
-  "ポッド:"
- ],
  "Pods": [
   null,
   "ポッド"
@@ -1174,10 +1098,6 @@ return plural;
  "Read only from multiple nodes": [
   null,
   "複数のノードからの読み取り専用"
- ],
- "Readonly": [
-  null,
-  "読み取り専用"
  ],
  "Ready": [
   null,
@@ -1275,10 +1195,6 @@ return plural;
   null,
   "認証が必要"
  ],
- "Resolve above errors to continue": [
-  null,
-  "上記のエラーを解決して続行"
- ],
  "Restart Count": [
   null,
   "再起動回数"
@@ -1371,10 +1287,6 @@ return plural;
   null,
   "サービスはポッドをグループ化し、ポッドにアクセスするために共通の DNS 名とオプションのロードバランス IP アドレスを提供します。"
  ],
- "Session": [
-  null,
-  "セッション"
- ],
  "Session Affinity": [
   null,
   "セッションアフィニティー"
@@ -1431,10 +1343,6 @@ return plural;
   null,
   "すべてのサービスの表示"
  ],
- "Show all VMs": [
-  null,
-  ""
- ],
  "Show all image streams": [
   null,
   "すべてのイメージストリームの表示"
@@ -1459,10 +1367,6 @@ return plural;
   null,
   "申し訳ありませんが、このボリュームを変更する方法がわかりません"
  ],
- "Source": [
-  null,
-  "ソース"
- ],
  "State": [
   null,
   "状態"
@@ -1478,10 +1382,6 @@ return plural;
  "Sync all tags from a remote image repository": [
   null,
   "リモートイメージリポジトリーからすべてのタグを同期"
- ],
- "System": [
-  null,
-  "システム"
  ],
  "TLS Termination": [
   null,
@@ -1643,14 +1543,6 @@ return plural;
   null,
   "$0 の更新中 ..."
  ],
- "Usage": [
-  null,
-  "使用法"
- ],
- "Usage metrics are available after the pod starts": [
-  null,
-  "利用状況メトリクスは、ポッドの開始後に利用可能です"
- ],
  "Used": [
   null,
   "Used"
@@ -1670,30 +1562,6 @@ return plural;
  "Users": [
   null,
   "ユーザー"
- ],
- "VM": [
-  null,
-  ""
- ],
- "VM $0:$1 does not exist.": [
-  null,
-  ""
- ],
- "VM DELETE failed.": [
-  null,
-  "VM DELETE に失敗しました。"
- ],
- "VM definition is not a valid JSON.": [
-  null,
-  "仮想マシンの定義は、有効な JSON ではありません。"
- ],
- "VM definition is required.": [
-  null,
-  "仮想マシンの定義が必要です。"
- ],
- "VM definition must be an object.": [
-  null,
-  "仮想マシンの定義は、オブジェクトである必要があります。"
  ],
  "Virtual Machines": [
   null,
@@ -1747,81 +1615,9 @@ return plural;
   null,
   "ログイン資格情報は、コマンドラインから docker レジストリーを使用するアクセスを提供しません。"
  ],
- "bridge": [
-  null,
-  "ブリッジ"
- ],
- "cdrom": [
-  null,
-  "cdrom"
- ],
- "crashed": [
-  null,
-  "クラッシュ"
- ],
- "custom": [
-  null,
-  "カスタム"
- ],
- "direct": [
-  null,
-  "ダイレクト"
- ],
- "disabled": [
-  null,
-  "無効"
- ],
- "disk": [
-  null,
-  "ディスク"
- ],
- "down": [
-  null,
-  "下へ"
- ],
- "dying": [
-  null,
-  "終了中"
- ],
  "eg: my-image-stream": [
   null,
   "例: my-image-stream"
- ],
- "enabled": [
-  null,
-  "有効"
- ],
- "ethernet": [
-  null,
-  "Ethernet"
- ],
- "host": [
-  null,
-  "ホスト"
- ],
- "hostdev": [
-  null,
-  "hostdev"
- ],
- "iSCSI": [
-  null,
-  "iSCSI"
- ],
- "idle": [
-  null,
-  "アイドル"
- ],
- "mcast": [
-  null,
-  "mcast"
- ],
- "n/a": [
-  null,
-  "該当なし"
- ],
- "network": [
-  null,
-  "ネットワーク"
  ],
  "no": [
   null,
@@ -1831,65 +1627,9 @@ return plural;
   null,
   "なし"
  ],
- "paused": [
-  null,
-  "一時停止"
- ],
  "pending volume claims": [
   null,
   "保留中のボリュームクレーム"
- ],
- "running": [
-  null,
-  "実行中"
- ],
- "server": [
-  null,
-  "サーバー"
- ],
- "show less": [
-  null,
-  "表示を減らす"
- ],
- "show more": [
-  null,
-  "表示を増やす"
- ],
- "shut off": [
-  null,
-  "シャットオフ"
- ],
- "shutdown": [
-  null,
-  "shutdown"
- ],
- "suspended (PM)": [
-  null,
-  "一時停止中 (PM)"
- ],
- "udp": [
-  null,
-  "udp"
- ],
- "up": [
-  null,
-  "上へ"
- ],
- "upload a JSON file": [
-  null,
-  "JSON ファイルのアップロード"
- ],
- "user": [
-  null,
-  "ユーザー"
- ],
- "vCPUs:": [
-  null,
-  "vCPU:"
- ],
- "vhostuser": [
-  null,
-  "vhostuser"
  ],
  "yes": [
   null,

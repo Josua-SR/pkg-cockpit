@@ -65,7 +65,7 @@ nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 |
 return plural;
 },
   "language": "hr",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  "A compatible version of Cockpit is not installed on {{#strong}}{{host}}{{/strong}}.": [
   null,

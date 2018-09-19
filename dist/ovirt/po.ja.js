@@ -65,7 +65,7 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "ja",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -146,10 +146,6 @@ return plural;
  "Bus": [
   null,
   "バス"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "CHANGE NETWORK STATE アクションに失敗しました"
  ],
  "CPU Type:": [
   null,
@@ -322,10 +318,6 @@ return plural;
  "Format": [
   null,
   "フォーマット"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "GET HYPERVISOR MAX VCPU アクションに失敗しました"
  ],
  "GiB": [
   null,
@@ -798,30 +790,6 @@ return plural;
  "VDSM Service Management": [
   null,
   "VDSM サービス管理"
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "VM FORCE OFF アクションに失敗しました"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "VM FORCE REBOOT アクションに失敗しました"
- ],
- "VM REBOOT action failed": [
-  null,
-  "VM REBOOT アクションに失敗しました"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  "VM SEND マスク不可な割り込みアクションに失敗しました"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "VM SHUT DOWN アクションに失敗しました"
- ],
- "VM START action failed": [
-  null,
-  "VM START アクションに失敗しました"
  ],
  "VM icon": [
   null,

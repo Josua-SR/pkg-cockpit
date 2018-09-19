@@ -67,11 +67,71 @@ return plural;
   "language": "da",
   "x-generator": "Zanata 3.8.4"
  },
+ "Applications": [
+  null,
+  "Indstillinger"
+ ],
  "Cancel": [
   null,
   "Annullér"
  ],
+ "Checking for new applications": [
+  null,
+  ""
+ ],
+ "Close": [
+  null,
+  ""
+ ],
+ "Error": [
+  null,
+  ""
+ ],
+ "Go to Application": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  ""
+ ],
+ "Installing": [
+  null,
+  ""
+ ],
+ "No applications installed or available": [
+  null,
+  ""
+ ],
+ "No description provided.": [
+  null,
+  ""
+ ],
+ "No installation package found for this application.": [
+  null,
+  ""
+ ],
  "Ok": [
+  null,
+  ""
+ ],
+ "PackageKit crashed": [
+  null,
+  ""
+ ],
+ "Remove": [
+  null,
+  ""
+ ],
+ "Removing": [
+  null,
+  ""
+ ],
+ "Unknown Application": [
+  null,
+  ""
+ ],
+ "Waiting for other programs to finish using the package manager...": [
   null,
   ""
  ]

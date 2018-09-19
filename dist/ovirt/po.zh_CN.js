@@ -65,7 +65,7 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "zh_CN",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -146,10 +146,6 @@ return plural;
  "Bus": [
   null,
   "总线"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  ""
  ],
  "CPU Type:": [
   null,
@@ -322,10 +318,6 @@ return plural;
  "Format": [
   null,
   "格式化"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  ""
  ],
  "GiB": [
   null,
@@ -798,30 +790,6 @@ return plural;
  "VDSM Service Management": [
   null,
   "VDSM 服务管理"
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "虚拟机强制关闭操作失败"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "虚拟机强制重启操作失败"
- ],
- "VM REBOOT action failed": [
-  null,
-  "虚拟机重启操作失败"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  "虚拟机发送非屏蔽中断操作失败"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "虚拟机关机操作失败"
- ],
- "VM START action failed": [
-  null,
-  "虚拟机启动操作失败"
  ],
  "VM icon": [
   null,

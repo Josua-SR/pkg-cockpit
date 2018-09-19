@@ -65,15 +65,11 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "pa",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
   " 1\"ਕੀ ਤੁਸੀਂ ਅੱਗੇ ਦਿੱਤੇ ਨੋਡ ਹਟਾਉਣੇ ਚਾਹੁੰਦੇ ਹੋ?"
- ],
- " or drag & drop.": [
-  null,
-  ""
  ],
  "$0% Free": [
   "$0% Free",
@@ -221,10 +217,6 @@ return plural;
   null,
   ""
  ],
- "Bus": [
-  null,
-  ""
- ],
  "CPU": [
   null,
   ""
@@ -349,10 +341,6 @@ return plural;
   null,
   ""
  ],
- "Create Virtual Machine": [
-  null,
-  ""
- ],
  "Create empty image stream": [
   null,
   ""
@@ -433,10 +421,6 @@ return plural;
   null,
   ""
  ],
- "Device": [
-  null,
-  ""
- ],
  "Directory": [
   null,
   ""
@@ -446,10 +430,6 @@ return plural;
   ""
  ],
  "Disk Utilization: $0%": [
-  null,
-  ""
- ],
- "Disks": [
   null,
   ""
  ],
@@ -494,10 +474,6 @@ return plural;
   ""
  ],
  "Driver": [
-  null,
-  ""
- ],
- "Drop file here to upload.": [
   null,
   ""
  ],
@@ -549,15 +525,7 @@ return plural;
   null,
   ""
  ],
- "Free": [
-  null,
-  ""
- ],
  "GCE Persistent Disk": [
-  null,
-  ""
- ],
- "GiB": [
   null,
   ""
  ],
@@ -681,10 +649,6 @@ return plural;
   null,
   ""
  ],
- "Labels:": [
-  null,
-  ""
- ],
  "Last Heartbeat": [
   null,
   ""
@@ -749,10 +713,6 @@ return plural;
   null,
   ""
  ],
- "Memory:": [
-  null,
-  ""
- ],
  "Message": [
   null,
   ""
@@ -770,10 +730,6 @@ return plural;
   ""
  ],
  "Mount Location": [
-  null,
-  ""
- ],
- "N/A": [
   null,
   ""
  ],
@@ -829,10 +785,6 @@ return plural;
   null,
   ""
  ],
- "No disks defined for this VM": [
-  null,
-  ""
- ],
  "No groups are present.": [
   null,
   ""
@@ -873,10 +825,6 @@ return plural;
   null,
   ""
  ],
- "No virtual machines": [
-  null,
-  ""
- ],
  "No volumes are present.": [
   null,
   ""
@@ -889,10 +837,6 @@ return plural;
   null,
   ""
  ],
- "Node:": [
-  null,
-  ""
- ],
  "Nodes": [
   null,
   ""
@@ -902,10 +846,6 @@ return plural;
   ""
  ],
  "None": [
-  null,
-  ""
- ],
- "Not Available": [
   null,
   ""
  ],
@@ -933,14 +873,6 @@ return plural;
   null,
   ""
  ],
- "Ok": [
-  null,
-  ""
- ],
- "Only files of size $0 MiB and less are supported": [
-  null,
-  ""
- ],
  "Operating System": [
   null,
   ""
@@ -964,10 +896,6 @@ return plural;
  "Password": [
   null,
   "ਪਾਸਵਰਡ"
- ],
- "Paste JSON below, ": [
-  null,
-  ""
  ],
  "Path": [
   null,
@@ -1077,10 +1005,6 @@ return plural;
   null,
   ""
  ],
- "Pod:": [
-  null,
-  ""
- ],
  "Pods": [
   null,
   ""
@@ -1174,10 +1098,6 @@ return plural;
   ""
  ],
  "Read only from multiple nodes": [
-  null,
-  ""
- ],
- "Readonly": [
   null,
   ""
  ],
@@ -1277,10 +1197,6 @@ return plural;
   null,
   ""
  ],
- "Resolve above errors to continue": [
-  null,
-  ""
- ],
  "Restart Count": [
   null,
   ""
@@ -1373,10 +1289,6 @@ return plural;
   null,
   ""
  ],
- "Session": [
-  null,
-  ""
- ],
  "Session Affinity": [
   null,
   ""
@@ -1433,10 +1345,6 @@ return plural;
   null,
   ""
  ],
- "Show all VMs": [
-  null,
-  ""
- ],
  "Show all image streams": [
   null,
   ""
@@ -1461,10 +1369,6 @@ return plural;
   null,
   "ਅਫਸੋਸ, ਮੈਨੂੰ ਪਤਾ ਨਹੀਂ ਕਿ ਇਹ ਵਾਲੀਅਮ ਨੂੰ ਕਿਵੇਂ ਸੋਧਣਾ ਹੈ"
  ],
- "Source": [
-  null,
-  ""
- ],
  "State": [
   null,
   "ਹਾਲਤ"
@@ -1480,10 +1384,6 @@ return plural;
  "Sync all tags from a remote image repository": [
   null,
   ""
- ],
- "System": [
-  null,
-  "ਸਿਸਟਮ"
  ],
  "TLS Termination": [
   null,
@@ -1645,14 +1545,6 @@ return plural;
   null,
   ""
  ],
- "Usage": [
-  null,
-  "ਵਰਤੋਂ"
- ],
- "Usage metrics are available after the pod starts": [
-  null,
-  ""
- ],
  "Used": [
   null,
   ""
@@ -1672,30 +1564,6 @@ return plural;
  "Users": [
   null,
   "ਵਰਤੋਂਕਾਰ"
- ],
- "VM": [
-  null,
-  ""
- ],
- "VM $0:$1 does not exist.": [
-  null,
-  ""
- ],
- "VM DELETE failed.": [
-  null,
-  ""
- ],
- "VM definition is not a valid JSON.": [
-  null,
-  ""
- ],
- "VM definition is required.": [
-  null,
-  ""
- ],
- "VM definition must be an object.": [
-  null,
-  ""
  ],
  "Virtual Machines": [
   null,
@@ -1749,79 +1617,7 @@ return plural;
   null,
   ""
  ],
- "bridge": [
-  null,
-  ""
- ],
- "cdrom": [
-  null,
-  ""
- ],
- "crashed": [
-  null,
-  ""
- ],
- "custom": [
-  null,
-  ""
- ],
- "direct": [
-  null,
-  ""
- ],
- "disabled": [
-  null,
-  ""
- ],
- "disk": [
-  null,
-  ""
- ],
- "down": [
-  null,
-  ""
- ],
- "dying": [
-  null,
-  ""
- ],
  "eg: my-image-stream": [
-  null,
-  ""
- ],
- "enabled": [
-  null,
-  ""
- ],
- "ethernet": [
-  null,
-  ""
- ],
- "host": [
-  null,
-  ""
- ],
- "hostdev": [
-  null,
-  ""
- ],
- "iSCSI": [
-  null,
-  ""
- ],
- "idle": [
-  null,
-  ""
- ],
- "mcast": [
-  null,
-  ""
- ],
- "n/a": [
-  null,
-  ""
- ],
- "network": [
   null,
   ""
  ],
@@ -1833,63 +1629,7 @@ return plural;
   null,
   ""
  ],
- "paused": [
-  null,
-  ""
- ],
  "pending volume claims": [
-  null,
-  ""
- ],
- "running": [
-  null,
-  "ਚੱਲ ਰਿਹਾ ਹੈ"
- ],
- "server": [
-  null,
-  ""
- ],
- "show less": [
-  null,
-  ""
- ],
- "show more": [
-  null,
-  ""
- ],
- "shut off": [
-  null,
-  ""
- ],
- "shutdown": [
-  null,
-  ""
- ],
- "suspended (PM)": [
-  null,
-  "ਸਸਪੈਂਡ (PM)"
- ],
- "udp": [
-  null,
-  ""
- ],
- "up": [
-  null,
-  ""
- ],
- "upload a JSON file": [
-  null,
-  ""
- ],
- "user": [
-  null,
-  ""
- ],
- "vCPUs:": [
-  null,
-  "vCPUs:"
- ],
- "vhostuser": [
   null,
   ""
  ],

@@ -65,7 +65,7 @@ nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 |
 return plural;
 },
   "language": "uk",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -126,10 +126,6 @@ return plural;
  "Bus": [
   null,
   "Канал"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Не вдалося виконати дію зі зміни стану мережі"
  ],
  "CPU Type:": [
   null,
@@ -262,10 +258,6 @@ return plural;
  "Format": [
   null,
   "Формат"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "Помилка під час спроби виконати дію GET HYPERVISOR MAX VCPU"
  ],
  "GiB": [
   null,
@@ -487,10 +479,6 @@ return plural;
   null,
   "Запустити"
  ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  "Помилка під час спроби виконати дію SET VCPU SETTINGS"
- ],
  "SPICE": [
   null,
   "SPICE"
@@ -631,6 +619,10 @@ return plural;
   null,
   "Адреса"
  ],
+ "Unique name": [
+  null,
+  ""
+ ],
  "Unplug": [
   null,
   "Від'єднати"
@@ -650,30 +642,6 @@ return plural;
  "Used": [
   null,
   "Використано"
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "Не вдалося виконати дію FORCE OFF для ВМ"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "Не вдалося виконати дію FORCE REBOOT для ВМ"
- ],
- "VM REBOOT action failed": [
-  null,
-  "Не вдалося виконати дію REBOOT для ВМ"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  "Спроба виконати дію немаскованого переривання VM SEND завершилася невдало"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "Не вдалося виконати дію SHUT DOWN для ВМ"
- ],
- "VM START action failed": [
-  null,
-  "Не вдалося виконати дію START для ВМ"
  ],
  "VNC": [
   null,

@@ -65,15 +65,11 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "ca",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
   " 1\"Voleu suprimir els següents nodes?"
- ],
- " or drag & drop.": [
-  null,
-  ""
  ],
  "$0% Free": [
   "$0% Free",
@@ -221,10 +217,6 @@ return plural;
   null,
   "Id. d'arrencada"
  ],
- "Bus": [
-  null,
-  "Bus"
- ],
  "CPU": [
   null,
   "CPU"
@@ -349,10 +341,6 @@ return plural;
   null,
   "Crea"
  ],
- "Create Virtual Machine": [
-  null,
-  "Crea una màquina virtual"
- ],
  "Create empty image stream": [
   null,
   "Crea un flux d'imatges buit"
@@ -433,10 +421,6 @@ return plural;
   null,
   "Detalls"
  ],
- "Device": [
-  null,
-  "Dispositiu"
- ],
  "Directory": [
   null,
   "Directori"
@@ -448,10 +432,6 @@ return plural;
  "Disk Utilization: $0%": [
   null,
   "Utilització del disc: $0%"
- ],
- "Disks": [
-  null,
-  "Discs"
  ],
  "Display name": [
   null,
@@ -496,10 +476,6 @@ return plural;
  "Driver": [
   null,
   "Controlador"
- ],
- "Drop file here to upload.": [
-  null,
-  ""
  ],
  "Empty Directory": [
   null,
@@ -549,17 +525,9 @@ return plural;
   null,
   ""
  ],
- "Free": [
-  null,
-  "Lliure"
- ],
  "GCE Persistent Disk": [
   null,
   "Disc persistent GCE"
- ],
- "GiB": [
-  null,
-  "GiB"
  ],
  "Git Repository": [
   null,
@@ -681,10 +649,6 @@ return plural;
   null,
   "Etiquetes"
  ],
- "Labels:": [
-  null,
-  "Etiquetes:"
- ],
  "Last Heartbeat": [
   null,
   "Últim batec"
@@ -749,10 +713,6 @@ return plural;
   null,
   "Utilització de la memòria:  $0%"
  ],
- "Memory:": [
-  null,
-  "Memòria:"
- ],
  "Message": [
   null,
   "Missatge"
@@ -772,10 +732,6 @@ return plural;
  "Mount Location": [
   null,
   "Ubicació del muntatge"
- ],
- "N/A": [
-  null,
-  "N/D"
  ],
  "NFS": [
   null,
@@ -829,10 +785,6 @@ return plural;
   null,
   ""
  ],
- "No disks defined for this VM": [
-  null,
-  "No hi ha definit cap disc per a aquesta MV"
- ],
  "No groups are present.": [
   null,
   ""
@@ -873,10 +825,6 @@ return plural;
   null,
   "No hi ha usuaris presents."
  ],
- "No virtual machines": [
-  null,
-  ""
- ],
  "No volumes are present.": [
   null,
   "No hi ha volums presents."
@@ -889,10 +837,6 @@ return plural;
   null,
   "Node"
  ],
- "Node:": [
-  null,
-  "Node:"
- ],
  "Nodes": [
   null,
   "Nodes"
@@ -904,10 +848,6 @@ return plural;
  "None": [
   null,
   "Cap"
- ],
- "Not Available": [
-  null,
-  "No disponible"
  ],
  "Not Ready": [
   null,
@@ -933,14 +873,6 @@ return plural;
   null,
   "Versions del SO"
  ],
- "Ok": [
-  null,
-  "D'acord"
- ],
- "Only files of size $0 MiB and less are supported": [
-  null,
-  ""
- ],
  "Operating System": [
   null,
   "Sistema operatiu"
@@ -964,10 +896,6 @@ return plural;
  "Password": [
   null,
   "Contrasenya"
- ],
- "Paste JSON below, ": [
-  null,
-  ""
  ],
  "Path": [
   null,
@@ -1077,10 +1005,6 @@ return plural;
   null,
   ""
  ],
- "Pod:": [
-  null,
-  "Pod:"
- ],
  "Pods": [
   null,
   "Pods"
@@ -1176,10 +1100,6 @@ return plural;
  "Read only from multiple nodes": [
   null,
   "Només lectura de diversos nodes"
- ],
- "Readonly": [
-  null,
-  "NomésLectura"
  ],
  "Ready": [
   null,
@@ -1277,10 +1197,6 @@ return plural;
   null,
   "Requereix autenticació"
  ],
- "Resolve above errors to continue": [
-  null,
-  ""
- ],
  "Restart Count": [
   null,
   "Reinicia el compte"
@@ -1373,10 +1289,6 @@ return plural;
   null,
   ""
  ],
- "Session": [
-  null,
-  "Sessió"
- ],
  "Session Affinity": [
   null,
   ""
@@ -1433,10 +1345,6 @@ return plural;
   null,
   "Mostra tots els serveis"
  ],
- "Show all VMs": [
-  null,
-  ""
- ],
  "Show all image streams": [
   null,
   "Mostra tots els fluxos d'imatges"
@@ -1461,10 +1369,6 @@ return plural;
   null,
   ""
  ],
- "Source": [
-  null,
-  "Origen"
- ],
  "State": [
   null,
   "Estat"
@@ -1480,10 +1384,6 @@ return plural;
  "Sync all tags from a remote image repository": [
   null,
   ""
- ],
- "System": [
-  null,
-  "Sistema"
  ],
  "TLS Termination": [
   null,
@@ -1645,14 +1545,6 @@ return plural;
   null,
   "S'està actualitzant $0..."
  ],
- "Usage": [
-  null,
-  "Ús"
- ],
- "Usage metrics are available after the pod starts": [
-  null,
-  ""
- ],
  "Used": [
   null,
   "Utilitzat"
@@ -1672,30 +1564,6 @@ return plural;
  "Users": [
   null,
   "Usuaris"
- ],
- "VM": [
-  null,
-  ""
- ],
- "VM $0:$1 does not exist.": [
-  null,
-  ""
- ],
- "VM DELETE failed.": [
-  null,
-  "Ha fallat VM DELETE"
- ],
- "VM definition is not a valid JSON.": [
-  null,
-  ""
- ],
- "VM definition is required.": [
-  null,
-  ""
- ],
- "VM definition must be an object.": [
-  null,
-  ""
  ],
  "Virtual Machines": [
   null,
@@ -1749,81 +1617,9 @@ return plural;
   null,
   "Les vostres credencials d'inici de sessió no us donen accés a utilitzar el registre de docker des de la línia d'ordres."
  ],
- "bridge": [
-  null,
-  "pont"
- ],
- "cdrom": [
-  null,
-  "cdrom"
- ],
- "crashed": [
-  null,
-  "estavellat"
- ],
- "custom": [
-  null,
-  "personalitzat"
- ],
- "direct": [
-  null,
-  "directe"
- ],
- "disabled": [
-  null,
-  "inhabilitat"
- ],
- "disk": [
-  null,
-  "disc"
- ],
- "down": [
-  null,
-  ""
- ],
- "dying": [
-  null,
-  "morint"
- ],
  "eg: my-image-stream": [
   null,
   ""
- ],
- "enabled": [
-  null,
-  "habilitat"
- ],
- "ethernet": [
-  null,
-  "ethernet"
- ],
- "host": [
-  null,
-  "amfitrió"
- ],
- "hostdev": [
-  null,
-  ""
- ],
- "iSCSI": [
-  null,
-  "iSCSI"
- ],
- "idle": [
-  null,
-  "ociós"
- ],
- "mcast": [
-  null,
-  "mcast"
- ],
- "n/a": [
-  null,
-  "n/d"
- ],
- "network": [
-  null,
-  "xarxa"
  ],
  "no": [
   null,
@@ -1833,65 +1629,9 @@ return plural;
   null,
   "cap"
  ],
- "paused": [
-  null,
-  "pausa"
- ],
  "pending volume claims": [
   null,
   "reclamacions de volums pendents"
- ],
- "running": [
-  null,
-  "en execució"
- ],
- "server": [
-  null,
-  "servidor"
- ],
- "show less": [
-  null,
-  "mostra menys"
- ],
- "show more": [
-  null,
-  "mostra més"
- ],
- "shut off": [
-  null,
-  "apagat"
- ],
- "shutdown": [
-  null,
-  "apaga"
- ],
- "suspended (PM)": [
-  null,
-  "suspès (PM)"
- ],
- "udp": [
-  null,
-  "udp"
- ],
- "up": [
-  null,
-  ""
- ],
- "upload a JSON file": [
-  null,
-  "puja un fitxer JSON"
- ],
- "user": [
-  null,
-  "usuari"
- ],
- "vCPUs:": [
-  null,
-  "vCPUs:"
- ],
- "vhostuser": [
-  null,
-  ""
  ],
  "yes": [
   null,

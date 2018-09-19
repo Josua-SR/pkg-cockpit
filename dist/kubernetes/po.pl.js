@@ -65,15 +65,11 @@ nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 
 return plural;
 },
   "language": "pl",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
   " 1\"Usunąć poniższe węzły?"
- ],
- " or drag & drop.": [
-  null,
-  " lub przeciągnąć."
  ],
  "$0% Free": [
   "$0% Free",
@@ -223,10 +219,6 @@ return plural;
   null,
   "Identyfikator uruchomienia"
  ],
- "Bus": [
-  null,
-  "Magistrala"
- ],
  "CPU": [
   null,
   "Procesor"
@@ -351,10 +343,6 @@ return plural;
   null,
   "Utwórz"
  ],
- "Create Virtual Machine": [
-  null,
-  "Utwórz maszynę wirtualną"
- ],
  "Create empty image stream": [
   null,
   "Utwórz pusty strumień obrazu"
@@ -435,10 +423,6 @@ return plural;
   null,
   "Szczegóły"
  ],
- "Device": [
-  null,
-  "Urządzenie"
- ],
  "Directory": [
   null,
   "Katalog"
@@ -450,10 +434,6 @@ return plural;
  "Disk Utilization: $0%": [
   null,
   "Użycie dysku: $0%"
- ],
- "Disks": [
-  null,
-  "Dyski"
  ],
  "Display name": [
   null,
@@ -498,10 +478,6 @@ return plural;
  "Driver": [
   null,
   "Sterownik"
- ],
- "Drop file here to upload.": [
-  null,
-  "Proszę przeciągnąć tutaj plik, aby go wysłać."
  ],
  "Empty Directory": [
   null,
@@ -551,17 +527,9 @@ return plural;
   null,
   "Nazwa zestawu danych Flocker"
  ],
- "Free": [
-  null,
-  "Wolne"
- ],
  "GCE Persistent Disk": [
   null,
   "Trwały dysk GCE"
- ],
- "GiB": [
-  null,
-  "GiB"
  ],
  "Git Repository": [
   null,
@@ -683,10 +651,6 @@ return plural;
   null,
   "Etykiety"
  ],
- "Labels:": [
-  null,
-  "Etykiety:"
- ],
  "Last Heartbeat": [
   null,
   "Ostatnie bicie serca"
@@ -751,10 +715,6 @@ return plural;
   null,
   "Użycie pamięci: $0%"
  ],
- "Memory:": [
-  null,
-  "Pamięć:"
- ],
  "Message": [
   null,
   "Komunikat"
@@ -774,10 +734,6 @@ return plural;
  "Mount Location": [
   null,
   "Położenie punktu montowania"
- ],
- "N/A": [
-  null,
-  "Nie dotyczy"
  ],
  "NFS": [
   null,
@@ -831,10 +787,6 @@ return plural;
   null,
   "Żaden wolumin nie został przypisany"
  ],
- "No disks defined for this VM": [
-  null,
-  "Nie określono dysków dla tej maszyny wirtualnej"
- ],
  "No groups are present.": [
   null,
   "Brak grup."
@@ -875,10 +827,6 @@ return plural;
   null,
   "Brak użytkowników."
  ],
- "No virtual machines": [
-  null,
-  "Brak maszyn wirtualnych"
- ],
  "No volumes are present.": [
   null,
   "Brak woluminów."
@@ -891,10 +839,6 @@ return plural;
   null,
   "Węzeł"
  ],
- "Node:": [
-  null,
-  "Węzeł:"
- ],
  "Nodes": [
   null,
   "Węzły"
@@ -906,10 +850,6 @@ return plural;
  "None": [
   null,
   "Brak"
- ],
- "Not Available": [
-  null,
-  "Niedostępne"
  ],
  "Not Ready": [
   null,
@@ -935,14 +875,6 @@ return plural;
   null,
   "Wersje systemu operacyjnego"
  ],
- "Ok": [
-  null,
-  "OK"
- ],
- "Only files of size $0 MiB and less are supported": [
-  null,
-  "Obsługiwane są tylko pliki o rozmiarze $0 MiB lub mniejszym"
- ],
  "Operating System": [
   null,
   "System operacyjny"
@@ -966,10 +898,6 @@ return plural;
  "Password": [
   null,
   "Hasło"
- ],
- "Paste JSON below, ": [
-  null,
-  "Proszę wkleić plik JSON poniżej "
  ],
  "Path": [
   null,
@@ -1079,10 +1007,6 @@ return plural;
   null,
   "Wybór pojemnika"
  ],
- "Pod:": [
-  null,
-  "Pojemnik:"
- ],
  "Pods": [
   null,
   "Pojemniki"
@@ -1178,10 +1102,6 @@ return plural;
  "Read only from multiple nodes": [
   null,
   "Tylko odczyt z wielu węzłów"
- ],
- "Readonly": [
-  null,
-  "Tylko do odczytu"
  ],
  "Ready": [
   null,
@@ -1279,10 +1199,6 @@ return plural;
   null,
   "Wymaga uwierzytelnienia"
  ],
- "Resolve above errors to continue": [
-  null,
-  "Należy rozwiązać powyższe błędy, aby kontynuować"
- ],
  "Restart Count": [
   null,
   "Liczba ponownych uruchomień"
@@ -1375,10 +1291,6 @@ return plural;
   null,
   "Usługi grupują pojemniki i dostarczają wspólną nazwę DNS oraz opcjonalny, zrównoważony adres IP do uzyskiwania do nich dostępu."
  ],
- "Session": [
-  null,
-  "Sesja"
- ],
  "Session Affinity": [
   null,
   "Pokrewieństwo procesora"
@@ -1435,10 +1347,6 @@ return plural;
   null,
   "Wyświetl wszystkie usługi"
  ],
- "Show all VMs": [
-  null,
-  "Wyświetl wszystkie maszyny wirtualne"
- ],
  "Show all image streams": [
   null,
   "Wyświetl wszystkie strumienie obrazów"
@@ -1463,10 +1371,6 @@ return plural;
   null,
   "Nie wiadomo, jak zmodyfikować ten wolumin"
  ],
- "Source": [
-  null,
-  "Źródło"
- ],
  "State": [
   null,
   "Stan"
@@ -1482,10 +1386,6 @@ return plural;
  "Sync all tags from a remote image repository": [
   null,
   "Zsynchronizuj wszystkie etykiety ze zdalnego repozytorium obrazów"
- ],
- "System": [
-  null,
-  "System"
  ],
  "TLS Termination": [
   null,
@@ -1647,14 +1547,6 @@ return plural;
   null,
   "Aktualizowanie $0…"
  ],
- "Usage": [
-  null,
-  "Użycie"
- ],
- "Usage metrics are available after the pod starts": [
-  null,
-  "Statystyki użycia są dostępne po uruchomieniu pojemnika"
- ],
  "Used": [
   null,
   "Używane"
@@ -1674,30 +1566,6 @@ return plural;
  "Users": [
   null,
   "Użytkownicy"
- ],
- "VM": [
-  null,
-  "Maszyna wirtualna"
- ],
- "VM $0:$1 does not exist.": [
-  null,
-  "Maszyna wirtualna $0:$1 nie istnieje."
- ],
- "VM DELETE failed.": [
-  null,
-  "VM DELETE się nie powiodło."
- ],
- "VM definition is not a valid JSON.": [
-  null,
-  "Definicja maszyny wirtualnej nie jest prawidłowym kodem JSON."
- ],
- "VM definition is required.": [
-  null,
-  "Wymagana jest definicja maszyny wirtualnej."
- ],
- "VM definition must be an object.": [
-  null,
-  "Definicja maszyny wirtualnej musi być obiektem."
  ],
  "Virtual Machines": [
   null,
@@ -1751,81 +1619,9 @@ return plural;
   null,
   "Dane uwierzytelniające logowania nie daję dostępu do używania rejestru Dockera z wiersza poleceń."
  ],
- "bridge": [
-  null,
-  "mostek"
- ],
- "cdrom": [
-  null,
-  "CD-ROM"
- ],
- "crashed": [
-  null,
-  "uległo awarii"
- ],
- "custom": [
-  null,
-  "niestandardowe"
- ],
- "direct": [
-  null,
-  "bezpośrednie"
- ],
- "disabled": [
-  null,
-  "wyłączone"
- ],
- "disk": [
-  null,
-  "dysk"
- ],
- "down": [
-  null,
-  "w dół"
- ],
- "dying": [
-  null,
-  "w trakcie umierania"
- ],
  "eg: my-image-stream": [
   null,
   "np. strumień-obrazu"
- ],
- "enabled": [
-  null,
-  "włączone"
- ],
- "ethernet": [
-  null,
-  "Ethernet"
- ],
- "host": [
-  null,
-  "gospodarz"
- ],
- "hostdev": [
-  null,
-  "urządzenie gospodarza"
- ],
- "iSCSI": [
-  null,
-  "iSCSI"
- ],
- "idle": [
-  null,
-  "bezczynne"
- ],
- "mcast": [
-  null,
-  "multicast"
- ],
- "n/a": [
-  null,
-  "nie dotyczy"
- ],
- "network": [
-  null,
-  "sieć"
  ],
  "no": [
   null,
@@ -1835,65 +1631,9 @@ return plural;
   null,
   "brak"
  ],
- "paused": [
-  null,
-  "wstrzymane"
- ],
  "pending volume claims": [
   null,
   "oczekujące deklaracje woluminów"
- ],
- "running": [
-  null,
-  "działanie"
- ],
- "server": [
-  null,
-  "serwer"
- ],
- "show less": [
-  null,
-  "wyświetl mniej"
- ],
- "show more": [
-  null,
-  "wyświetl więcej"
- ],
- "shut off": [
-  null,
-  "wyłącz"
- ],
- "shutdown": [
-  null,
-  "wyłączenie"
- ],
- "suspended (PM)": [
-  null,
-  "uśpione (PM)"
- ],
- "udp": [
-  null,
-  "UDP"
- ],
- "up": [
-  null,
-  "w górę"
- ],
- "upload a JSON file": [
-  null,
-  "wysłać plik JSON"
- ],
- "user": [
-  null,
-  "użytkownik"
- ],
- "vCPUs:": [
-  null,
-  "Wirtualne procesory:"
- ],
- "vhostuser": [
-  null,
-  "użytkownik gospodarza wirtualizacji"
  ],
  "yes": [
   null,

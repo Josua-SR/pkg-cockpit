@@ -50,9 +50,43 @@
                      [ child, ... ])
 
    The "tag" is used to uniquely identify this field in the dialog.
-   The action function will receive the values of all field in an
+   The action function will receive the values of all fields in an
    object, and the tag of a field is the key in that object, for
    example.  The tag is also used to interact with a field from tests.
+
+   ACTION FUNCTIONS
+
+   The action funtion is called like this:
+
+      action(values, progress_callback)
+
+   The "values" parameter contains the validated values of the dialog
+   fields and the "progress_callback" can be called by the action function
+   to update the progress information in the dialog while it runs.
+
+   The progress callback should be called like this:
+
+      progress_callback(message, cancel_callback)
+
+   The "message" will be displayed in the dialog and if "cancel_callback" is
+   not null, the Cancel button in the dialog will be enabled and
+   "cancel_callback" will be called when the user clicks it.
+
+   The return value of the action function is normally a promise.  When
+   it is resolved, the dialog is closed.  When it is rejected the value
+   given in the rejection is displayed as an error in the dialog.
+
+   If the error value is a string, it is displayed as a global failure
+   message.  When it is an object, it contains errors for individual
+   fields in this form:
+
+      { tag1: message, tag2: message }
+
+   As a special case, when "message" is "true", the field is rendered
+   as having an error (with a red outline, say), but without any
+   directly associated text.  The idea is that a group of fields is in
+   error, and the error message for all of them is shown below the last
+   one in the group.
 
    COMMON FIELD OPTIONS
 
@@ -156,7 +190,7 @@ import React from "react";
 
 import { show_modal_dialog } from "cockpit-components-dialog.jsx";
 import { StatelessSelect, SelectEntry } from "cockpit-components-select.jsx";
-import { fmt_size } from "./utils.js";
+import { fmt_size, block_name, format_size_and_text } from "./utils.js";
 
 const _ = cockpit.gettext;
 
@@ -170,25 +204,35 @@ const Validated = ({ errors, error_key, explanation, children }) => {
     return (
         <div className={error ? "has-error" : ""}>
             { children }
-            { text ? <span className="help-block">{text}</span> : null }
+            { (text && text !== true) ? <span className="help-block dialog-error">{text}</span> : null }
         </div>
     );
 };
 
 const Row = ({ tag, title, errors, options, children }) => {
     if (tag) {
-        if (options.widest_title)
-            title = [ <div className="widest-title">{options.widest_title}</div>, <div>{title}</div> ];
-        return (
-            <tr>
-                <td className="top">{title}</td>
-                <td>
-                    <Validated errors={errors} error_key={tag} explanation={options.explanation}>
-                        { children }
-                    </Validated>
-                </td>
-            </tr>
+        let validated = (
+            <Validated errors={errors} error_key={tag} explanation={options.explanation}>
+                { children }
+            </Validated>
         );
+
+        if (title || title == "") {
+            if (options.widest_title)
+                title = [ <div className="widest-title">{options.widest_title}</div>, <div>{title}</div> ];
+            return (
+                <tr>
+                    <td className="top">{title}</td>
+                    <td>{validated}</td>
+                </tr>
+            );
+        } else {
+            return (
+                <tr>
+                    <td colSpan="2">{validated}</td>
+                </tr>
+            );
+        }
     } else {
         return children;
     }
@@ -199,7 +243,7 @@ function is_visible(field, values) {
 }
 
 const Body = ({body, fields, values, errors, onChange}) => {
-    function make_row(field) {
+    function make_row(field, index) {
         function change(val) {
             values[field.tag] = val;
             fields.forEach(f => {
@@ -211,7 +255,7 @@ const Body = ({body, fields, values, errors, onChange}) => {
 
         if (is_visible(field, values))
             return (
-                <Row key={field.tag} tag={field.tag} title={field.title} errors={errors} options={field.options}>
+                <Row key={index} tag={field.tag} title={field.title} errors={errors} options={field.options}>
                     { field.render(values[field.tag], change) }
                 </Row>
             );
@@ -269,25 +313,33 @@ export const dialog_open = (def) => {
                 { caption: def.Action.Title,
                   style: (def.Action.Danger || def.Action.DangerButton) ? "danger" : "primary",
                   disabled: running_promise != null,
-                  clicked: function () {
-                      return validate().then(errors => {
-                          if (errors) {
-                              update(errors);
-                              return Promise.reject();
-                          } else {
-                              return def.Action.action(values);
-                          }
-                      });
+                  clicked: function (progress_callback) {
+                      return validate()
+                              .then(() => {
+                                  let visible_values = { };
+                                  fields.forEach(f => {
+                                      if (is_visible(f, values))
+                                          visible_values[f.tag] = values[f.tag];
+                                  });
+                                  return def.Action.action(visible_values, progress_callback);
+                              })
+                              .catch(error => {
+                                  if (error.toString() != "[object Object]") {
+                                      return Promise.reject(error);
+                                  } else {
+                                      update(error);
+                                      return Promise.reject();
+                                  }
+                              });
                   }
                 }
             ];
         }
 
-        let extra = [ ];
-        if (def.Footer)
-            extra.push(def.Footer);
-        if (def.Action && def.Action.Danger)
-            extra.push(<div className="modal-footer-danger">{def.Action.Danger}</div>);
+        let extra = <div>
+            { def.Footer }
+            { def.Action && def.Action.Danger ? <div className="modal-footer-danger">{def.Action.Danger}</div> : null }
+        </div>;
 
         return {
             idle_message: running_promise ? [ <div className="spinner spinner-sm" />, <span>{running_title}</span> ] : null,
@@ -306,7 +358,8 @@ export const dialog_open = (def) => {
         })).then(results => {
             let errors = { };
             fields.forEach((f, i) => { if (results[i]) errors[f.tag] = results[i]; });
-            return (Object.keys(errors).length > 0) ? errors : null;
+            if (Object.keys(errors).length > 0)
+                return Promise.reject(errors);
         });
     };
 
@@ -406,6 +459,119 @@ export const SelectOneRadio = (tag, title, options, choices) => {
     };
 };
 
+export const SelectRow = (tag, headers, options, choices) => {
+    return {
+        tag: tag,
+        title: null,
+        options: options,
+        initial_value: options.value || choices[0].value,
+
+        render: (val, change) => {
+            return (
+                <table data-field={tag} data-field-type=" select-row" className="dialog-select-row-table">
+                    <thead>
+                        <tr>{headers.map(h => <th>{h}</th>)}</tr>
+                    </thead>
+                    <tbody>
+                        { choices.map(row => {
+                            return (
+                                <tr key={row.value}
+                                    onMouseDown={ev => { if (ev && ev.button === 0) change(row.value); }}
+                                    className={row.value == val ? "highlight-ct" : ""}>
+                                    {row.columns.map(c => <td>{c}</td>)}
+                                </tr>
+                            );
+                        })
+                        }
+                    </tbody>
+                </table>
+            );
+        }
+    };
+};
+
+export const SelectSpaces = (tag, title, options, spaces) => {
+    return {
+        tag: tag,
+        title: title,
+        options: options,
+        initial_value: [ ],
+
+        render: (val, change) => {
+            if (spaces.length === 0)
+                return <span className="text-danger">{options.empty_warning}</span>;
+
+            return (
+                <ul className="list-group available-disks-group dialog-list-ct"
+                data-field={tag} data-field-type="select-spaces">
+                    { spaces.map(spc => {
+                        let selected = (val.indexOf(spc) >= 0);
+
+                        const on_change = (event) => {
+                            if (event.target.checked && !selected)
+                                change(val.concat(spc));
+                            else if (!event.target.checked && selected)
+                                change(val.filter(v => (v != spc)));
+                        };
+
+                        return (
+                            <li className="list-group-item">
+                                <div className="checkbox">
+                                    <label>
+                                        <input type="checkbox" checked={selected} onChange={on_change} />
+                                        { spc.block ? <span className="pull-right">{block_name(spc.block)}</span> : null }
+                                        <span>{format_size_and_text(spc.size, spc.desc)}</span>
+                                    </label>
+                                </div>
+                            </li>
+                        );
+                    })
+                    }
+                </ul>
+            );
+        }
+    };
+};
+
+export const SelectSpace = (tag, title, options, spaces) => {
+    return {
+        tag: tag,
+        title: title,
+        options: options,
+        initial_value: null,
+
+        render: (val, change) => {
+            if (spaces.length === 0)
+                return <span className="text-danger">{options.empty_warning}</span>;
+
+            return (
+                <ul className="list-group available-disks-group dialog-list-ct"
+                    data-field={tag} data-field-type="select-spaces">
+                    { spaces.map(spc => {
+                        const on_change = (event) => {
+                            if (event.target.checked)
+                                change(spc);
+                        };
+
+                        return (
+                            <li className="list-group-item">
+                                <div className="radio">
+                                    <label>
+                                        <input type="radio" checked={val == spc} onChange={on_change} />
+                                        { spc.block ? <span className="pull-right">{block_name(spc.block)}</span> : null }
+                                        <span>{format_size_and_text(spc.size, spc.desc)}</span>
+                                    </label>
+                                </div>
+                            </li>
+                        );
+                    })
+                    }
+                </ul>
+            );
+        }
+    };
+};
+
 export const CheckBox = (tag, title, options) => {
     return {
         tag: tag,
@@ -435,7 +601,7 @@ export const CheckBox = (tag, title, options) => {
 export const TextInputChecked = (tag, title, options) => {
     return {
         tag: tag,
-        title: options.row_title,
+        title: options.row_title || "",
         options: options,
         initial_value: (options.value === undefined) ? false : options.value,
 
@@ -456,23 +622,10 @@ export const TextInputChecked = (tag, title, options) => {
     };
 };
 
-export const Intermission = (children, options) => {
-    return {
-        tag: false,
-        title: "",
-        options: options,
-        initial_value: false,
-
-        render: () => {
-            return <div className="intermission">{ children }</div>;
-        }
-    };
-};
-
 export const Skip = (className, options) => {
     return {
         tag: false,
-        title: "",
+        title: null,
         options: options,
         initial_value: false,
 
@@ -530,6 +683,7 @@ class SizeSliderElement extends React.Component {
 
     render() {
         let { val, max, round, onChange } = this.props;
+        let min = this.props.min || 0;
         let { unit } = this.state;
 
         const round_size = (value) => {
@@ -555,12 +709,13 @@ class SizeSliderElement extends React.Component {
                     value = limit;
             }
 
+            sanitize(min);
             sanitize(max);
 
             return Math.round(value);
         };
 
-        const change_slider = (f) => onChange(round_size(f * max));
+        const change_slider = (f) => onChange(round_size(Math.max(min, f * max)));
 
         const change_text = (event) => {
             if (event.type == "change") {
@@ -632,11 +787,11 @@ export const SizeSlider = (tag, title, options) => {
 
 function add_usage_message(parts, list, text, c1, c2) {
     if (list.length > 0) {
-        parts.push(<p>{text}</p>);
+        parts.push(<p key={text}>{text}</p>);
         parts.push(
-            <table className="table table-bordered">
+            <table key={text + " table"} className="table table-bordered">
                 <tbody>
-                    { list.map(elt => <tr><td><span className="pull-right">{elt[c1]}</span>{elt[c2]}</td></tr>) }
+                    { list.map(elt => <tr key={elt[c2]}><td><span className="pull-right">{elt[c1]}</span>{elt[c2]}</td></tr>) }
                 </tbody>
             </table>);
     }
@@ -709,7 +864,7 @@ export const TeardownMessage = (usage) => {
                     </thead>
                     <tbody>
                         { list.map(elt =>
-                            <tr>
+                            <tr key={elt[c3]}>
                                 <td>{elt[c1]}</td>
                                 <td className="cmd">{elt[c2]}</td>
                                 <td>{elt[c3]}</td>

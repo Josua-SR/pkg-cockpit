@@ -65,7 +65,7 @@ nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 
 return plural;
 },
   "language": "pl",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -126,10 +126,6 @@ return plural;
  "Bus": [
   null,
   "Magistrala"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Działanie CHANGE NETWORK STATE się nie powiodło"
  ],
  "CPU Type:": [
   null,
@@ -262,10 +258,6 @@ return plural;
  "Format": [
   null,
   "Sformatuj"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "Działanie GET HYPERVISOR MAX VCPU się nie powiodło"
  ],
  "GiB": [
   null,
@@ -487,10 +479,6 @@ return plural;
   null,
   "Uruchom"
  ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  "Działanie SET VCPU SETTINGS się nie powiodło"
- ],
  "SPICE": [
   null,
   "SPICE"
@@ -631,6 +619,10 @@ return plural;
   null,
   "Adres URL"
  ],
+ "Unique name": [
+  null,
+  ""
+ ],
  "Unplug": [
   null,
   "Odłącz"
@@ -650,30 +642,6 @@ return plural;
  "Used": [
   null,
   "Używane"
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "Działanie VM FORCE OFF się nie powiodło"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "Działanie VM FORCE REBOOT się nie powiodło"
- ],
- "VM REBOOT action failed": [
-  null,
-  "Działanie VM REBOOT się nie powiodło"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  "Działanie VM SEND niemaskowalnego przerwania się nie powiodło"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "Działanie VM SHUT DOWN się nie powiodło"
- ],
- "VM START action failed": [
-  null,
-  "Działanie VM START się nie powiodło"
  ],
  "VNC": [
   null,

@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "es",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -126,10 +126,6 @@ return plural;
  "Bus": [
   null,
   "Bus"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Fallo en la acción CHANGE NETWORK STATE"
  ],
  "CPU Type:": [
   null,
@@ -262,10 +258,6 @@ return plural;
  "Format": [
   null,
   "Formato"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  ""
  ],
  "GiB": [
   null,
@@ -487,10 +479,6 @@ return plural;
   null,
   "Ejecutar"
  ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  ""
- ],
  "SPICE": [
   null,
   "SPICE"
@@ -631,6 +619,10 @@ return plural;
   null,
   "URL"
  ],
+ "Unique name": [
+  null,
+  ""
+ ],
  "Unplug": [
   null,
   "Desenchufar"
@@ -650,30 +642,6 @@ return plural;
  "Used": [
   null,
   "Usado"
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "VM FORCE OFF falló acción"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "VM FORCE REBOOT falló acción"
- ],
- "VM REBOOT action failed": [
-  null,
-  "VM REBOOT falló acción"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  "VM SEND Non-Maskable Interrrupt falló acción"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "VM SHUT DOWN falló acción"
- ],
- "VM START action failed": [
-  null,
-  "VM START falló acción"
  ],
  "VNC": [
   null,

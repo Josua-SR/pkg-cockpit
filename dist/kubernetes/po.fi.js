@@ -65,15 +65,11 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "fi",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
   " 1\"Haluatko varmasti poistaa seuraavat Nodet?"
- ],
- " or drag & drop.": [
-  null,
-  ""
  ],
  "$0% Free": [
   "$0% Free",
@@ -221,10 +217,6 @@ return plural;
   null,
   "Boot ID"
  ],
- "Bus": [
-  null,
-  ""
- ],
  "CPU": [
   null,
   "Prosessori"
@@ -349,10 +341,6 @@ return plural;
   null,
   "Luo"
  ],
- "Create Virtual Machine": [
-  null,
-  "Luo virtuaalikone"
- ],
  "Create empty image stream": [
   null,
   "Luo tyhjä image stream"
@@ -433,10 +421,6 @@ return plural;
   null,
   "Yksityiskohdat"
  ],
- "Device": [
-  null,
-  "Laite"
- ],
  "Directory": [
   null,
   "Hakemisto"
@@ -448,10 +432,6 @@ return plural;
  "Disk Utilization: $0%": [
   null,
   "Levyn käyttöaste: $0%"
- ],
- "Disks": [
-  null,
-  "Levyt"
  ],
  "Display name": [
   null,
@@ -496,10 +476,6 @@ return plural;
  "Driver": [
   null,
   "Ajuri"
- ],
- "Drop file here to upload.": [
-  null,
-  "Pudosta tiedosto tähän lähettääksesi."
  ],
  "Empty Directory": [
   null,
@@ -549,17 +525,9 @@ return plural;
   null,
   "Flocker Datasetin Nimi"
  ],
- "Free": [
-  null,
-  "Vapaa"
- ],
  "GCE Persistent Disk": [
   null,
   "GCE Persistent Disk"
- ],
- "GiB": [
-  null,
-  "GiB"
  ],
  "Git Repository": [
   null,
@@ -681,10 +649,6 @@ return plural;
   null,
   ""
  ],
- "Labels:": [
-  null,
-  ""
- ],
  "Last Heartbeat": [
   null,
   "Edellinen Heartbeat"
@@ -749,10 +713,6 @@ return plural;
   null,
   "Muistin käyttö: $0%"
  ],
- "Memory:": [
-  null,
-  "Muisti:"
- ],
  "Message": [
   null,
   "Viesti"
@@ -772,10 +732,6 @@ return plural;
  "Mount Location": [
   null,
   "Liitossijainti"
- ],
- "N/A": [
-  null,
-  ""
  ],
  "NFS": [
   null,
@@ -829,10 +785,6 @@ return plural;
   null,
   ""
  ],
- "No disks defined for this VM": [
-  null,
-  "Tälle virtuaalikoneelle ei ole määritetty levyjä."
- ],
  "No groups are present.": [
   null,
   "Ryhmiä ei ole läsnä."
@@ -873,10 +825,6 @@ return plural;
   null,
   ""
  ],
- "No virtual machines": [
-  null,
-  "Ei virtuaalikoneita"
- ],
  "No volumes are present.": [
   null,
   "Taltioita ei ole läsnä."
@@ -889,10 +837,6 @@ return plural;
   null,
   "Node"
  ],
- "Node:": [
-  null,
-  "Node:"
- ],
  "Nodes": [
   null,
   "Noodit"
@@ -904,10 +848,6 @@ return plural;
  "None": [
   null,
   ""
- ],
- "Not Available": [
-  null,
-  "Ei saatavilla"
  ],
  "Not Ready": [
   null,
@@ -933,14 +873,6 @@ return plural;
   null,
   "Käyttöjärjestelmäversiot"
  ],
- "Ok": [
-  null,
-  "OK"
- ],
- "Only files of size $0 MiB and less are supported": [
-  null,
-  ""
- ],
  "Operating System": [
   null,
   "Käyttöjärjestelmä"
@@ -964,10 +896,6 @@ return plural;
  "Password": [
   null,
   "Salasana"
- ],
- "Paste JSON below, ": [
-  null,
-  ""
  ],
  "Path": [
   null,
@@ -1077,10 +1005,6 @@ return plural;
   null,
   ""
  ],
- "Pod:": [
-  null,
-  "Pod:"
- ],
  "Pods": [
   null,
   "Podit"
@@ -1174,10 +1098,6 @@ return plural;
   ""
  ],
  "Read only from multiple nodes": [
-  null,
-  ""
- ],
- "Readonly": [
   null,
   ""
  ],
@@ -1277,10 +1197,6 @@ return plural;
   null,
   "Vaatii tunnistautumisen"
  ],
- "Resolve above errors to continue": [
-  null,
-  ""
- ],
  "Restart Count": [
   null,
   "Uudelleenkäynnistysten lukumäärä"
@@ -1373,10 +1289,6 @@ return plural;
   null,
   ""
  ],
- "Session": [
-  null,
-  "Istunto"
- ],
  "Session Affinity": [
   null,
   ""
@@ -1433,10 +1345,6 @@ return plural;
   null,
   "Näytä kaikki palvelut"
  ],
- "Show all VMs": [
-  null,
-  ""
- ],
  "Show all image streams": [
   null,
   ""
@@ -1461,10 +1369,6 @@ return plural;
   null,
   ""
  ],
- "Source": [
-  null,
-  "Lähde"
- ],
  "State": [
   null,
   "Tila"
@@ -1480,10 +1384,6 @@ return plural;
  "Sync all tags from a remote image repository": [
   null,
   ""
- ],
- "System": [
-  null,
-  "Järjestelmä"
  ],
  "TLS Termination": [
   null,
@@ -1645,14 +1545,6 @@ return plural;
   null,
   "Päivitetään $0..."
  ],
- "Usage": [
-  null,
-  "Käyttö"
- ],
- "Usage metrics are available after the pod starts": [
-  null,
-  ""
- ],
  "Used": [
   null,
   "Käytetty"
@@ -1672,30 +1564,6 @@ return plural;
  "Users": [
   null,
   "Käyttäjät"
- ],
- "VM": [
-  null,
-  ""
- ],
- "VM $0:$1 does not exist.": [
-  null,
-  ""
- ],
- "VM DELETE failed.": [
-  null,
-  "VM DELETE epäonnistui."
- ],
- "VM definition is not a valid JSON.": [
-  null,
-  ""
- ],
- "VM definition is required.": [
-  null,
-  ""
- ],
- "VM definition must be an object.": [
-  null,
-  ""
  ],
  "Virtual Machines": [
   null,
@@ -1749,81 +1617,9 @@ return plural;
   null,
   ""
  ],
- "bridge": [
-  null,
-  ""
- ],
- "cdrom": [
-  null,
-  ""
- ],
- "crashed": [
-  null,
-  "kaatui"
- ],
- "custom": [
-  null,
-  ""
- ],
- "direct": [
-  null,
-  ""
- ],
- "disabled": [
-  null,
-  "pois käytöstä"
- ],
- "disk": [
-  null,
-  ""
- ],
- "down": [
-  null,
-  ""
- ],
- "dying": [
-  null,
-  "kuolemassa"
- ],
  "eg: my-image-stream": [
   null,
   "esim.: my-image-stream"
- ],
- "enabled": [
-  null,
-  "käytössä"
- ],
- "ethernet": [
-  null,
-  "ethernet"
- ],
- "host": [
-  null,
-  ""
- ],
- "hostdev": [
-  null,
-  ""
- ],
- "iSCSI": [
-  null,
-  "iSCSI"
- ],
- "idle": [
-  null,
-  "jouten"
- ],
- "mcast": [
-  null,
-  ""
- ],
- "n/a": [
-  null,
-  ""
- ],
- "network": [
-  null,
-  "verkko"
  ],
  "no": [
   null,
@@ -1833,63 +1629,7 @@ return plural;
   null,
   "Ei mitään"
  ],
- "paused": [
-  null,
-  "pysäytetty"
- ],
  "pending volume claims": [
-  null,
-  ""
- ],
- "running": [
-  null,
-  "suoritetaan"
- ],
- "server": [
-  null,
-  "palvelin"
- ],
- "show less": [
-  null,
-  "näytä vähemmän"
- ],
- "show more": [
-  null,
-  "näytä enemmän"
- ],
- "shut off": [
-  null,
-  "sammutettu"
- ],
- "shutdown": [
-  null,
-  "sammuta"
- ],
- "suspended (PM)": [
-  null,
-  "pysäytetty (PM)"
- ],
- "udp": [
-  null,
-  "udp"
- ],
- "up": [
-  null,
-  ""
- ],
- "upload a JSON file": [
-  null,
-  "lähetä JSON-tiedosto"
- ],
- "user": [
-  null,
-  "käyttäjä"
- ],
- "vCPUs:": [
-  null,
-  "vCPUt:"
- ],
- "vhostuser": [
   null,
   ""
  ],

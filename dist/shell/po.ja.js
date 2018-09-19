@@ -65,7 +65,7 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "ja",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  "A compatible version of Cockpit is not installed on {{#strong}}{{host}}{{/strong}}.": [
   null,

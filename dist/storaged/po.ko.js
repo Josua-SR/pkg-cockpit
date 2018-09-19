@@ -65,7 +65,7 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "ko",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  "$0 Block Device": [
   null,
@@ -1483,10 +1483,6 @@ return plural;
   null,
   ""
  ],
- "Targets": [
-  null,
-  ""
- ],
  "The \"storaged\" API is not available on this system.": [
   null,
   ""
@@ -1515,11 +1511,23 @@ return plural;
   null,
   ""
  ],
+ "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
+  null,
+  ""
+ ],
  "The filesystem is in use by login sessions.                Proceeding will stop these.": [
   null,
   ""
  ],
+ "The filesystem is in use by login sessions. Proceeding will stop these.": [
+  null,
+  ""
+ ],
  "The filesystem is in use by system services.                Proceeding will stop these.": [
+  null,
+  ""
+ ],
+ "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
   ""
  ],
@@ -1563,11 +1571,19 @@ return plural;
   null,
   ""
  ],
+ "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
+  null,
+  ""
+ ],
  "This device is currently used for RAID devices.": [
   null,
   ""
  ],
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
+  null,
+  ""
+ ],
+ "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
   null,
   ""
  ],
@@ -1580,6 +1596,10 @@ return plural;
   ""
  ],
  "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
+  null,
+  ""
+ ],
+ "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
   ""
  ],

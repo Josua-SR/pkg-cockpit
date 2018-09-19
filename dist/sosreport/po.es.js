@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "es",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  "Cancel": [
   null,

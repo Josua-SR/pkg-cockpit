@@ -67,7 +67,31 @@ return plural;
   "language": "da",
   "x-generator": "Zanata 3.8.4"
  },
+ "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
+  null,
+  ""
+ ],
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
+ ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
  "Administrator Password": [
+  null,
+  ""
+ ],
+ "Are you sure you want to leave the '$0' domain?": [
+  null,
+  ""
+ ],
+ "Are you sure you want to leave this domain?": [
   null,
   ""
  ],
@@ -83,7 +107,7 @@ return plural;
   null,
   "Annullér"
  ],
- "Cannot join a domain because realmd is not available on this system": [
+ "Checking installed software": [
   null,
   ""
  ],
@@ -108,6 +132,22 @@ return plural;
   ""
  ],
  "Domain Administrator Password": [
+  null,
+  ""
+ ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  ""
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installing $0": [
   null,
   ""
  ],
@@ -159,6 +199,18 @@ return plural;
   null,
   ""
  ],
+ "PackageKit crashed": [
+  null,
+  ""
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
   ""
@@ -167,11 +219,19 @@ return plural;
   null,
   ""
  ],
+ "Total size: $0": [
+  null,
+  ""
+ ],
  "User Name": [
   null,
   "Værtsnavn"
  ],
  "User Password": [
+  null,
+  ""
+ ],
+ "Waiting for other software management operations to finish": [
   null,
   ""
  ],

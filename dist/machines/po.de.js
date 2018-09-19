@@ -65,7 +65,7 @@ nplurals=2; plural=(n != 1);
 return plural;
 },
   "language": "de",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -124,10 +124,6 @@ return plural;
   ""
  ],
  "Bus": [
-  null,
-  ""
- ],
- "CHANGE NETWORK STATE action failed": [
   null,
   ""
  ],
@@ -262,10 +258,6 @@ return plural;
  "Format": [
   null,
   "Formatieren"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  ""
  ],
  "GiB": [
   null,
@@ -487,10 +479,6 @@ return plural;
   null,
   "Läuft"
  ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  ""
- ],
  "SPICE": [
   null,
   ""
@@ -631,6 +619,10 @@ return plural;
   null,
   "URL"
  ],
+ "Unique name": [
+  null,
+  ""
+ ],
  "Unplug": [
   null,
   ""
@@ -650,30 +642,6 @@ return plural;
  "Used": [
   null,
   "Benutzt"
- ],
- "VM FORCE OFF action failed": [
-  null,
-  ""
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  ""
- ],
- "VM REBOOT action failed": [
-  null,
-  ""
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  ""
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  ""
- ],
- "VM START action failed": [
-  null,
-  ""
  ],
  "VNC": [
   null,

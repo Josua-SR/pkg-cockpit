@@ -65,7 +65,7 @@ nplurals=1; plural=0;
 return plural;
 },
   "language": "zh_CN",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -126,10 +126,6 @@ return plural;
  "Bus": [
   null,
   "总线"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  ""
  ],
  "CPU Type:": [
   null,
@@ -262,10 +258,6 @@ return plural;
  "Format": [
   null,
   "格式化"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  ""
  ],
  "GiB": [
   null,
@@ -487,10 +479,6 @@ return plural;
   null,
   "运行"
  ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  ""
- ],
  "SPICE": [
   null,
   "SPICE"
@@ -631,6 +619,10 @@ return plural;
   null,
   "网址"
  ],
+ "Unique name": [
+  null,
+  ""
+ ],
  "Unplug": [
   null,
   ""
@@ -650,30 +642,6 @@ return plural;
  "Used": [
   null,
   "已使用"
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "虚拟机强制关闭操作失败"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "虚拟机强制重启操作失败"
- ],
- "VM REBOOT action failed": [
-  null,
-  "虚拟机重启操作失败"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  "虚拟机发送非屏蔽中断操作失败"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "虚拟机关机操作失败"
- ],
- "VM START action failed": [
-  null,
-  "虚拟机启动操作失败"
  ],
  "VNC": [
   null,

@@ -65,15 +65,11 @@ nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 |
 return plural;
 },
   "language": "uk",
-  "x-generator": "Zanata 4.6.0"
+  "x-generator": "Zanata 4.6.2"
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
   " 1\"Хочете вилучити вказані нижче вузли?"
- ],
- " or drag & drop.": [
-  null,
-  " або перетягніть і скиньте."
  ],
  "$0% Free": [
   "$0% Free",
@@ -223,10 +219,6 @@ return plural;
   null,
   "Ід. завантаження"
  ],
- "Bus": [
-  null,
-  "Канал"
- ],
  "CPU": [
   null,
   "Процесор"
@@ -351,10 +343,6 @@ return plural;
   null,
   "Створити"
  ],
- "Create Virtual Machine": [
-  null,
-  "Створити віртуальну машину"
- ],
  "Create empty image stream": [
   null,
   "Створити порожній потік образу"
@@ -435,10 +423,6 @@ return plural;
   null,
   "Подробиці"
  ],
- "Device": [
-  null,
-  "Пристрій"
- ],
  "Directory": [
   null,
   "Каталог"
@@ -450,10 +434,6 @@ return plural;
  "Disk Utilization: $0%": [
   null,
   "Використання диска: $0%"
- ],
- "Disks": [
-  null,
-  "Диски"
  ],
  "Display name": [
   null,
@@ -498,10 +478,6 @@ return plural;
  "Driver": [
   null,
   "Драйвер"
- ],
- "Drop file here to upload.": [
-  null,
-  "Скиньте сюди файл для вивантаження."
  ],
  "Empty Directory": [
   null,
@@ -551,17 +527,9 @@ return plural;
   null,
   "Назва набору даних Flocker"
  ],
- "Free": [
-  null,
-  "Вільно"
- ],
  "GCE Persistent Disk": [
   null,
   "Сталий диск GCE"
- ],
- "GiB": [
-  null,
-  "ГіБ"
  ],
  "Git Repository": [
   null,
@@ -683,10 +651,6 @@ return plural;
   null,
   "Мітки"
  ],
- "Labels:": [
-  null,
-  "Мітки:"
- ],
  "Last Heartbeat": [
   null,
   "Останній такт"
@@ -751,10 +715,6 @@ return plural;
   null,
   "Використання пам’яті: $0%"
  ],
- "Memory:": [
-  null,
-  "Пам’ять:"
- ],
  "Message": [
   null,
   "Повідомлення"
@@ -774,10 +734,6 @@ return plural;
  "Mount Location": [
   null,
   "Місце монтування"
- ],
- "N/A": [
-  null,
-  "н/д"
  ],
  "NFS": [
   null,
@@ -831,10 +787,6 @@ return plural;
   null,
   "Не пов’язано тому"
  ],
- "No disks defined for this VM": [
-  null,
-  "Для цієї ВМ не визначено дисків"
- ],
  "No groups are present.": [
   null,
   "Немає груп."
@@ -875,10 +827,6 @@ return plural;
   null,
   "Немає користувачів."
  ],
- "No virtual machines": [
-  null,
-  "Немає віртуальних машин"
- ],
  "No volumes are present.": [
   null,
   "Немає томів."
@@ -891,10 +839,6 @@ return plural;
   null,
   "Вузол"
  ],
- "Node:": [
-  null,
-  "Вузол:"
- ],
  "Nodes": [
   null,
   "Вузли"
@@ -906,10 +850,6 @@ return plural;
  "None": [
   null,
   "Немає"
- ],
- "Not Available": [
-  null,
-  "Немає доступу"
  ],
  "Not Ready": [
   null,
@@ -935,14 +875,6 @@ return plural;
   null,
   "Версії ОС"
  ],
- "Ok": [
-  null,
-  "Гаразд"
- ],
- "Only files of size $0 MiB and less are supported": [
-  null,
-  "Підтримку передбачено лише для файлів розміру $0 МіБ або меншого"
- ],
  "Operating System": [
   null,
   "Операційна система"
@@ -966,10 +898,6 @@ return plural;
  "Password": [
   null,
   "Пароль"
- ],
- "Paste JSON below, ": [
-  null,
-  "Вставте JSON нижче, "
  ],
  "Path": [
   null,
@@ -1079,10 +1007,6 @@ return plural;
   null,
   "Вибір коконів"
  ],
- "Pod:": [
-  null,
-  "Кокон:"
- ],
  "Pods": [
   null,
   "Кокони"
@@ -1178,10 +1102,6 @@ return plural;
  "Read only from multiple nodes": [
   null,
   "Читання лише з декількох вузлів"
- ],
- "Readonly": [
-  null,
-  "Лише запис"
  ],
  "Ready": [
   null,
@@ -1279,10 +1199,6 @@ return plural;
   null,
   "Потрібне розпізнавання"
  ],
- "Resolve above errors to continue": [
-  null,
-  "Усуньте наведені вище помилки, щоб продовжити"
- ],
  "Restart Count": [
   null,
   "Кількість перезапусків"
@@ -1375,10 +1291,6 @@ return plural;
   null,
   "Служби збирають у групи кокони і надають загальну назву DNS та додаткову, збалансовану за навантаженням IP-адресу для доступу до них."
  ],
- "Session": [
-  null,
-  "Сеанс"
- ],
  "Session Affinity": [
   null,
   "Спорідненість сеансу"
@@ -1435,10 +1347,6 @@ return plural;
   null,
   "Показувати всі служби"
  ],
- "Show all VMs": [
-  null,
-  "Показати усі ВМ"
- ],
  "Show all image streams": [
   null,
   "Показати усіх потоки образів"
@@ -1463,10 +1371,6 @@ return plural;
   null,
   "Вибачте, спосіб внесення змін до цього тому невідомий"
  ],
- "Source": [
-  null,
-  "Джерело"
- ],
  "State": [
   null,
   "Стан"
@@ -1482,10 +1386,6 @@ return plural;
  "Sync all tags from a remote image repository": [
   null,
   "Синхронізувати усі мітки з віддаленого сховища образів"
- ],
- "System": [
-  null,
-  "Система"
  ],
  "TLS Termination": [
   null,
@@ -1647,14 +1547,6 @@ return plural;
   null,
   "Оновлення $0…"
  ],
- "Usage": [
-  null,
-  "Використання"
- ],
- "Usage metrics are available after the pod starts": [
-  null,
-  "Дані щодо користування стануть доступними після запуску кокона"
- ],
  "Used": [
   null,
   "Використано"
@@ -1674,30 +1566,6 @@ return plural;
  "Users": [
   null,
   "Користувачі"
- ],
- "VM": [
-  null,
-  "ВМ"
- ],
- "VM $0:$1 does not exist.": [
-  null,
-  "ВМ $0:$1 не існує."
- ],
- "VM DELETE failed.": [
-  null,
-  "Не вдалося виконати дію DELETE для ВМ."
- ],
- "VM definition is not a valid JSON.": [
-  null,
-  "Визначення віртуальної машини не є коректним JSON."
- ],
- "VM definition is required.": [
-  null,
-  "Потрібне визначення віртуальної машини."
- ],
- "VM definition must be an object.": [
-  null,
-  "Визначення віртуальної машини має бути об'єктом."
  ],
  "Virtual Machines": [
   null,
@@ -1751,81 +1619,9 @@ return plural;
   null,
   "Ваші реєстраційні дані не дають вам доступу до реєстру docker з командного рядка."
  ],
- "bridge": [
-  null,
-  "місток"
- ],
- "cdrom": [
-  null,
-  "cdrom"
- ],
- "crashed": [
-  null,
-  "аварійне завершення"
- ],
- "custom": [
-  null,
-  "нетиповий"
- ],
- "direct": [
-  null,
-  "безпосередньо"
- ],
- "disabled": [
-  null,
-  "вимкнено"
- ],
- "disk": [
-  null,
-  "диск"
- ],
- "down": [
-  null,
-  "нижче"
- ],
- "dying": [
-  null,
-  "вмирає"
- ],
  "eg: my-image-stream": [
   null,
   "приклад: my-image-stream"
- ],
- "enabled": [
-  null,
-  "увімкнено"
- ],
- "ethernet": [
-  null,
-  "ethernet"
- ],
- "host": [
-  null,
-  "вузол"
- ],
- "hostdev": [
-  null,
-  "пристрій осн. системи"
- ],
- "iSCSI": [
-  null,
-  "iSCSI"
- ],
- "idle": [
-  null,
-  "бездіяльний"
- ],
- "mcast": [
-  null,
-  "mcast"
- ],
- "n/a": [
-  null,
-  "н/д"
- ],
- "network": [
-  null,
-  "мережа"
  ],
  "no": [
   null,
@@ -1835,65 +1631,9 @@ return plural;
   null,
   "немає"
  ],
- "paused": [
-  null,
-  "призупинено"
- ],
  "pending volume claims": [
   null,
   "запити тому у черзі"
- ],
- "running": [
-  null,
-  "працює"
- ],
- "server": [
-  null,
-  "сервер"
- ],
- "show less": [
-  null,
-  "показати менше"
- ],
- "show more": [
-  null,
-  "показати більше"
- ],
- "shut off": [
-  null,
-  "вимкнути"
- ],
- "shutdown": [
-  null,
-  "завершити роботу"
- ],
- "suspended (PM)": [
-  null,
-  "призупинено (PM)"
- ],
- "udp": [
-  null,
-  "udp"
- ],
- "up": [
-  null,
-  "вище"
- ],
- "upload a JSON file": [
-  null,
-  "вивантажити файл JSON"
- ],
- "user": [
-  null,
-  "користувач"
- ],
- "vCPUs:": [
-  null,
-  "vCPU:"
- ],
- "vhostuser": [
-  null,
-  "vhostuser"
  ],
  "yes": [
   null,

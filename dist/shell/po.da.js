@@ -79,11 +79,19 @@ return plural;
   null,
   ""
  ],
+ "Active Pages": [
+  null,
+  ""
+ ],
  "Add": [
   null,
   ""
  ],
  "Add Machine to Dashboard": [
+  null,
+  ""
+ ],
+ "Add key": [
   null,
   ""
  ],
@@ -127,6 +135,10 @@ return plural;
   null,
   ""
  ],
+ "Close Selected Pages": [
+  null,
+  ""
+ ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
   ""
@@ -136,10 +148,6 @@ return plural;
   ""
  ],
  "Cockpit is an interactive Linux server admin interface.": [
-  null,
-  ""
- ],
- "Cockpit is an interactive Linux server admin interface. ": [
   null,
   ""
  ],
@@ -239,6 +247,10 @@ return plural;
   null,
   ""
  ],
+ "Host": [
+  null,
+  ""
+ ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
   ""
@@ -263,7 +275,7 @@ return plural;
   null,
   ""
  ],
- "Leave blank to connect to this machine as the currently logged in user{{#user}} ({{user}}){{/user}}. If you enter a different username, that user will always be used connecting to this machine.": [
+ "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
   ""
  ],
@@ -275,6 +287,10 @@ return plural;
   null,
   ""
  ],
+ "Log Out": [
+  null,
+  ""
+ ],
  "Log in again": [
   null,
   ""
@@ -283,11 +299,11 @@ return plural;
   null,
   ""
  ],
- "Log out": [
+ "Login Password": [
   null,
   ""
  ],
- "Login Password": [
+ "Login has escalated admin privileges": [
   null,
   ""
  ],
@@ -300,6 +316,10 @@ return plural;
   "Indtast adgangskode"
  ],
  "New password was not accepted": [
+  null,
+  ""
+ ],
+ "No matching files found": [
   null,
   ""
  ],
@@ -343,7 +363,19 @@ return plural;
   null,
   ""
  ],
+ "Password not usable for privileged tasks or to connect to other machines": [
+  null,
+  ""
+ ],
+ "Path to file": [
+  null,
+  ""
+ ],
  "Port": [
+  null,
+  ""
+ ],
+ "Privileged": [
   null,
   ""
  ],
@@ -364,6 +396,10 @@ return plural;
   ""
  ],
  "Reconnect": [
+  null,
+  ""
+ ],
+ "Reuse my password for privileged tasks and to connect to other machines": [
   null,
   ""
  ],
@@ -403,6 +439,10 @@ return plural;
   null,
   ""
  ],
+ "There are currently no active pages": [
+  null,
+  ""
+ ],
  "This machine has already been added.": [
   null,
   ""
@@ -419,7 +459,7 @@ return plural;
   null,
   ""
  ],
- "Tools": [
+ "Too many files found": [
   null,
   ""
  ],
@@ -455,10 +495,6 @@ return plural;
   null,
   ""
  ],
- "Use my password for privileged tasks and to connect to other machines": [
-  null,
-  ""
- ],
  "Use the following keys to authenticate against other systems": [
   null,
   ""
@@ -480,6 +516,10 @@ return plural;
   ""
  ],
  "You can remove the previously stored key by running the following command": [
+  null,
+  ""
+ ],
+ "active": [
   null,
   ""
  ]

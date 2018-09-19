@@ -75,11 +75,11 @@ return plural;
   null,
   ""
  ],
- "Create diagnostic report": [
+ "Create Report": [
   null,
-  ""
+  "Værtsnavn"
  ],
- "Create report": [
+ "Create diagnostic report": [
   null,
   ""
  ],
