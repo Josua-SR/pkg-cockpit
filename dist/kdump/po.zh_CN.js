@@ -77,7 +77,7 @@ return plural;
  ],
  "Compress crash dumps to save space": [
   null,
-  "压缩故障转储到保存空间"
+  "对崩溃转储数据进行压缩以节省空间"
  ],
  "Compression": [
   null,
@@ -85,11 +85,11 @@ return plural;
  ],
  "Crash dump location": [
   null,
-  "故障转储位置"
+  "崩溃储位置"
  ],
  "Crash system": [
   null,
-  "故障系统"
+  "导致系统崩溃"
  ],
  "Directory": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "No memory reserved. Append a crashkernel option to the kernel command line (e.g. in /etc/default/grub) to reserve memory at boot time. Example: crashkernel=512M": [
   null,
-  "有内存预留。增加一个 crashkernel 选项到内核命令行（例如在 /etc/default/grub 文件中）在启动时预留内存。例如：crashkernel=512M"
+  "没有内存预留。在内核命令行（例如在 /etc/default/grub 文件）中增加一个 crashkernel 选项以在启动时预留内存。例如：crashkernel=512M"
  ],
  "None": [
   null,
@@ -213,7 +213,7 @@ return plural;
  ],
  "This will test kdump settings by crashing the kernel and thereby the system. Depending on the settings, the system may not automatically reboot and the process may take a while.": [
   null,
-  "这将通过崩溃内核和系统并测试 kdump 设置。依赖于这些设置，系统也许不会自动重启，并且过程将持续一段时间。"
+  "这将通过崩溃内核和系统来测试 kdump 设置。取决于这些设置，系统也许不会自动重启，并且过程将持续一段时间。"
  ],
  "This will test the kdump configuration by crashing the kernel.": [
   null,

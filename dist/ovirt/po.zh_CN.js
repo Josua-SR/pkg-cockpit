@@ -69,15 +69,15 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  "$0 对大多数操作系统可用。为了安装它，在 GNOME 软件中心搜索它或运行以下命令： "
+  "$0 对大多数操作系统可用。为了安装它，在 GNOME 软件中搜索它，或运行以下命令： "
  ],
  "$0 vCPU Details": [
   null,
-  ""
+  "$0 vCPU 详情"
  ],
  "Action": [
   null,
-  "动作"
+  "操作"
  ],
  "Add": [
   null,
@@ -85,11 +85,11 @@ return plural;
  ],
  "Add Disk": [
   null,
-  ""
+  "添加磁盘"
  ],
  "Additional": [
   null,
-  ""
+  "额外"
  ],
  "Address": [
   null,
@@ -101,11 +101,11 @@ return plural;
  ],
  "All changes will take effect only after stopping and starting the VM.": [
   null,
-  ""
+  "只有在停止和启动 VM 后，所有更改才会生效。"
  ],
  "All running virtual machines will be turned off.": [
   null,
-  ""
+  "将关闭所有正在运行的虚拟机。"
  ],
  "Apply": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "Attach permanently": [
   null,
-  ""
+  "永久附加"
  ],
  "Automatically selected host": [
   null,
@@ -141,15 +141,19 @@ return plural;
  ],
  "Boot Order:": [
   null,
-  "启动顺序："
+  "引导顺序："
  ],
  "Bus": [
   null,
   "总线"
  ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "更改网络状态操作失败"
+ ],
  "CPU Type:": [
   null,
-  "处理器类型："
+  "CPU 类型："
  ],
  "CREATE VM action failed": [
   null,
@@ -165,7 +169,7 @@ return plural;
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  "点击 \"加载远程查看其\" 将下载一个  .vv 文件并加载 $0。"
+  "点击 \"启动 Remote Viewer\" 将下载一个  .vv 文件并加载 $0。"
  ],
  "Cluster": [
   null,
@@ -205,7 +209,11 @@ return plural;
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  "使用任何  SPICE 或 VNC 查看器应用来连接。"
+  "使用任何 SPICE 或 VNC 查看器应用来连接。"
+ ],
+ "Connecting": [
+  null,
+  "连接"
  ],
  "Connection": [
   null,
@@ -213,15 +221,15 @@ return plural;
  ],
  "Console Type": [
   null,
-  ""
+  "控制台类型"
  ],
  "Consoles": [
   null,
-  ""
+  "控制台"
  ],
  "Cores per socket": [
   null,
-  ""
+  "每个插槽的内核数"
  ],
  "Create": [
   null,
@@ -229,15 +237,19 @@ return plural;
  ],
  "Create New": [
   null,
-  ""
+  "新建"
  ],
  "Create New VM": [
   null,
-  ""
+  "新建 VM"
  ],
  "Create VM": [
   null,
   "创建虚拟机"
+ ],
+ "Ctrl+Alt+Del": [
+  null,
+  ""
  ],
  "Delete": [
   null,
@@ -261,19 +273,23 @@ return plural;
  ],
  "Disconnect": [
   null,
-  ""
+  "断开"
+ ],
+ "Disconnected": [
+  null,
+  "已断开连接"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
-  ""
+  "从串行控制台断开连接。单击“重新连接”按钮。"
  ],
  "Disk failed to be attached with following error: ": [
   null,
-  ""
+  "因为以下错误磁盘无法被附加： "
  ],
  "Disk failed to be created with following error: ": [
   null,
-  ""
+  "因为以下错误磁盘无法被创建："
  ],
  "Disks": [
   null,
@@ -281,7 +297,7 @@ return plural;
  ],
  "Download the MSI from $0": [
   null,
-  "从 $0 下载MSI"
+  "从 $0 下载 MSI"
  ],
  "Edit the vdsm.conf": [
   null,
@@ -301,7 +317,7 @@ return plural;
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
-  ""
+  "启用的虚拟 CPU 数量应少于最大虚拟 CPU 数量。"
  ],
  "File": [
   null,
@@ -319,17 +335,21 @@ return plural;
   null,
   "格式化"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "获取 HYPERVISOR MAX VCPU 操作失败"
+ ],
  "GiB": [
   null,
-  ""
+  "GiB"
  ],
  "Graphics Console (VNC)": [
   null,
-  ""
+  "图形控制台（VNC）"
  ],
  "Graphics Console in Desktop Viewer": [
   null,
-  ""
+  "Desktop Viewer 中的图形控制台"
  ],
  "HA": [
   null,
@@ -343,13 +363,17 @@ return plural;
   null,
   "主机"
  ],
- "Host to Maintenance": [
+ "Host Interface": [
   null,
   ""
  ],
+ "Host to Maintenance": [
+  null,
+  "主机维护"
+ ],
  "INSTALL VM action failed": [
   null,
-  ""
+  "安装虚拟机操作失败"
  ],
  "Install": [
   null,
@@ -361,7 +385,7 @@ return plural;
  ],
  "Loading ...": [
   null,
-  ""
+  "加载中......"
  ],
  "Loading data ...": [
   null,
@@ -369,7 +393,7 @@ return plural;
  ],
  "MAC Address": [
   null,
-  ""
+  "MAC 地址"
  ],
  "MIGRATE action failed": [
   null,
@@ -381,7 +405,7 @@ return plural;
  ],
  "Managed": [
   null,
-  ""
+  "已管理"
  ],
  "Manual Connection": [
   null,
@@ -389,7 +413,7 @@ return plural;
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
-  ""
+  "为客户机操作系统分配的最大虚拟 CPU 数，必须介于 1 和 $0 之间"
  ],
  "Memory": [
   null,
@@ -409,7 +433,7 @@ return plural;
  ],
  "Model type": [
   null,
-  ""
+  "型号类型"
  ],
  "More Information": [
   null,
@@ -421,11 +445,11 @@ return plural;
  ],
  "Networks": [
   null,
-  ""
+  "网络"
  ],
  "New Volume Name": [
   null,
-  ""
+  "新卷名称"
  ],
  "No VM found in oVirt.": [
   null,
@@ -433,15 +457,15 @@ return plural;
  ],
  "No VM is running or defined on this host": [
   null,
-  "该主机上没有虚拟机运行或定义。"
+  "该主机上没有定义或运行虚拟机。"
  ],
  "No boot device found": [
   null,
-  "没有找到启动设备"
+  "没有找到引导设备"
  ],
  "No console defined for this virtual machine.": [
   null,
-  ""
+  "没有为该虚拟机定义控制台。"
  ],
  "No disks defined for this VM": [
   null,
@@ -449,15 +473,15 @@ return plural;
  ],
  "No network interfaces defined for this VM": [
   null,
-  ""
+  "没有为此 VM 定义网络接口"
  ],
  "No oVirt connection": [
   null,
-  ""
+  "没有 oVirt 连接"
  ],
  "Number of virtual CPUs that gonna be used.": [
   null,
-  ""
+  "要使用的虚拟 CPU 数量。"
  ],
  "OK": [
   null,
@@ -477,7 +501,7 @@ return plural;
  ],
  "Optimized for:": [
   null,
-  "优化来："
+  "优化目标："
  ],
  "Overview": [
   null,
@@ -485,15 +509,15 @@ return plural;
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
-  ""
+  "请确认，主机应切换到维护模式。"
  ],
  "Please enter new volume name": [
   null,
-  ""
+  "请输入新的卷名"
  ],
  "Please enter new volume size": [
   null,
-  ""
+  "请输入新的卷大小"
  ],
  "Please provide fully qualified domain name and port of the oVirt engine.": [
   null,
@@ -505,11 +529,11 @@ return plural;
  ],
  "Please refer to oVirt's $0 for more information about Remote Viewer setup.": [
   null,
-  "请参考 oVirt 的 $0 来获取更新关于远程查看器设置。"
+  "请参考 oVirt 的 $0 来获取更新关于 Remote Viewer 的设置。"
  ],
  "Please start the virtual machine to access its console.": [
   null,
-  ""
+  "请启动虚拟机来访问其控制台。"
  ],
  "Please wait till VMs list is loaded from the server.": [
   null,
@@ -517,11 +541,11 @@ return plural;
  ],
  "Please wait till list of templates is loaded from the server.": [
   null,
-  "请等待直达模板列表从服务器加载。"
+  "请等待直到模板列表从服务器加载。"
  ],
  "Plug": [
   null,
-  ""
+  "插"
  ],
  "Pool": [
   null,
@@ -533,11 +557,11 @@ return plural;
  ],
  "Portgroup": [
   null,
-  ""
+  "端口组"
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
-  ""
+  "向客户机公开的首选插槽数。"
  ],
  "Preparing for Maintenance": [
   null,
@@ -585,11 +609,11 @@ return plural;
  ],
  "Running Since:": [
   null,
-  ""
+  "运行自："
  ],
  "SET VCPU SETTINGS action failed": [
   null,
-  ""
+  "SET VCPU SETTINGS 操作失败"
  ],
  "SHUTDOWN action failed": [
   null,
@@ -625,15 +649,15 @@ return plural;
  ],
  "Send Non-Maskable Interrupt": [
   null,
-  "发送非屏蔽中断"
+  "发送不可屏蔽中断"
  ],
- "Send shortcut": [
+ "Send key": [
   null,
   ""
  ],
  "Serial Console": [
   null,
-  ""
+  "串行控制台"
  ],
  "Session": [
   null,
@@ -657,7 +681,7 @@ return plural;
  ],
  "Start the VM to see disk statistics.": [
   null,
-  ""
+  "启动 VM 查看磁盘统计数据"
  ],
  "State": [
   null,
@@ -677,15 +701,15 @@ return plural;
  ],
  "Switch Host to Maintenance": [
   null,
-  ""
+  "把主机切换到维护模式"
  ],
  "Switching host to maintenance mode failed. Received error: ": [
   null,
-  ""
+  "将主机切换到维护模式失败。收到错误： "
  ],
  "Switching host to maintenance mode in progress ...": [
   null,
-  ""
+  "将主机切换到维护模式正在进行中... "
  ],
  "System": [
   null,
@@ -705,7 +729,7 @@ return plural;
  ],
  "Templates of $0 cluster": [
   null,
-  ""
+  "$0 集群模板"
  ],
  "The VM crashed.": [
   null,
@@ -745,11 +769,11 @@ return plural;
  ],
  "The pool is empty": [
   null,
-  ""
+  "池为空"
  ],
  "This host is managed by a virtualization manager, so creation of new VMs from the host is not possible.": [
   null,
-  ""
+  "该主机由虚拟化管理器管理，因此无法从主机创建新VM。"
  ],
  "This virtual machine is not managed by oVirt": [
   null,
@@ -757,7 +781,7 @@ return plural;
  ],
  "Threads per cores": [
   null,
-  ""
+  "每个内核的线程数"
  ],
  "Type": [
   null,
@@ -765,7 +789,7 @@ return plural;
  ],
  "Unplug": [
   null,
-  ""
+  "拔"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
@@ -773,11 +797,11 @@ return plural;
  ],
  "Usage": [
   null,
-  "使用情况"
+  "使用"
  ],
  "Use Existing": [
   null,
-  ""
+  "使用现有的"
  ],
  "Used": [
   null,
@@ -790,6 +814,38 @@ return plural;
  "VDSM Service Management": [
   null,
   "VDSM 服务管理"
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "虚拟机强制关闭操作失败"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "虚拟机强制重启操作失败"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "虚拟机重启操作失败"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "虚拟机发送非屏蔽中断操作失败"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "虚拟机关机操作失败"
+ ],
+ "VM START action failed": [
+  null,
+  "虚拟机启动操作失败"
  ],
  "VM icon": [
   null,
@@ -825,23 +881,19 @@ return plural;
  ],
  "Virtual Machines of $0 cluster": [
   null,
-  ""
+  "$0 集群地虚拟机"
  ],
  "Virtualport": [
   null,
-  ""
+  "Virtualport"
  ],
  "Volume": [
   null,
   "卷"
  ],
- "Your browser does not support iframes.": [
-  null,
-  "你的浏览器不支持 iframes。"
- ],
  "bridge": [
   null,
-  ""
+  "网桥"
  ],
  "cdrom": [
   null,
@@ -865,7 +917,7 @@ return plural;
  ],
  "direct": [
   null,
-  ""
+  "直接"
  ],
  "disabled": [
   null,
@@ -893,7 +945,7 @@ return plural;
  ],
  "ethernet": [
   null,
-  ""
+  "以太网"
  ],
  "host": [
   null,
@@ -901,11 +953,11 @@ return plural;
  ],
  "hostdev": [
   null,
-  ""
+  "hostdev"
  ],
  "idle": [
   null,
-  "休眠的"
+  "休眠"
  ],
  "initializing": [
   null,
@@ -929,7 +981,7 @@ return plural;
  ],
  "mcast": [
   null,
-  ""
+  "MCAST"
  ],
  "network": [
   null,
@@ -953,7 +1005,7 @@ return plural;
  ],
  "oVirt Host State:": [
   null,
-  ""
+  "oVirt 主机状态："
  ],
  "oVirt Provider installation script failed due to missing arguments.": [
   null,
@@ -965,7 +1017,7 @@ return plural;
  ],
  "oVirt installation script failed with following output: ": [
   null,
-  "oVirt 供应商安装脚本失败，携带以下输出信息："
+  "oVirt 供应商安装脚本失败，输出以下信息："
  ],
  "oVirt login in progress": [
   null,
@@ -981,15 +1033,15 @@ return plural;
  ],
  "pending approval": [
   null,
-  "等待审批"
+  "等待批准"
  ],
  "qcow2": [
   null,
-  ""
+  "qcow2"
  ],
  "raw": [
   null,
-  ""
+  "raw"
  ],
  "reboot": [
   null,
@@ -1001,15 +1053,15 @@ return plural;
  ],
  "server": [
   null,
-  ""
+  "服务器"
  ],
  "show less": [
   null,
-  ""
+  "显示更少"
  ],
  "show more": [
   null,
-  ""
+  "显示更多"
  ],
  "shut off": [
   null,
@@ -1033,7 +1085,7 @@ return plural;
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "unassigned": [
   null,
@@ -1049,27 +1101,27 @@ return plural;
  ],
  "user": [
   null,
-  ""
+  "用户"
  ],
  "vCPU Count": [
   null,
-  ""
+  "vCPU 数"
  ],
  "vCPU Maximum": [
   null,
-  ""
+  "vCPU 的最大值"
  ],
  "vCPUs": [
   null,
-  "虚拟处理器"
+  "vCPU"
  ],
  "vCPUs:": [
   null,
-  "虚拟 CPU："
+  "vCPU："
  ],
  "vhostuser": [
   null,
-  ""
+  "vhostuser"
  ],
  "yes": [
   null,

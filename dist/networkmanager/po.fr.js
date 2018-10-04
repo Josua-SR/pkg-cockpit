@@ -99,11 +99,11 @@ return plural;
  ],
  "$mtu": [
   null,
-  ""
+  "$mtu"
  ],
  "1 day": [
   null,
-  "1 jour"
+  "Un jour"
  ],
  "1 hour": [
   null,
@@ -135,27 +135,27 @@ return plural;
  ],
  "ARP Monitoring": [
   null,
-  "Supervision ARP"
+  "Surveillance ARP"
  ],
  "ARP Ping": [
   null,
-  "Ping ARP"
+  "ARP Ping"
  ],
  "Active": [
   null,
-  "Actif"
+  "actif"
  ],
  "Active Backup": [
   null,
-  "Active Backup"
+  "Sauvegarde active"
  ],
  "Adaptive load balancing": [
   null,
-  "Adaptive load balancing"
+  "Équilibrage de charge adaptatif"
  ],
  "Adaptive transmit load balancing": [
   null,
-  "Adaptive transmit load balancing"
+  "Equilibrage adaptatif de la charge d'émission"
  ],
  "Add $0": [
   null,
@@ -163,7 +163,7 @@ return plural;
  ],
  "Add Bond": [
   null,
-  "Ajouter une liaison d'interfaces réseau"
+  "Ajouter un lien"
  ],
  "Add Bridge": [
   null,
@@ -171,15 +171,15 @@ return plural;
  ],
  "Add Services": [
   null,
-  ""
+  "Ajouter services"
  ],
  "Add Services…": [
   null,
-  ""
+  "Ajouter services..."
  ],
  "Add Team": [
   null,
-  ""
+  "Ajouter une équipe"
  ],
  "Add VLAN": [
   null,
@@ -187,23 +187,23 @@ return plural;
  ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Ajouter <b>$0</b> interrompra la connexion au serveur et rendra l'interface utilisateur d'administration indisponible."
  ],
  "Additional DNS $val": [
   null,
-  ""
+  "DNS supplémentaire $val"
  ],
  "Additional DNS Search Domains $val": [
   null,
-  ""
+  "Domaines de recherche DNS supplémentaires $val"
  ],
  "Additional address $val": [
   null,
-  ""
+  "Adresse supplémentaire $val"
  ],
  "Address $val": [
   null,
-  ""
+  "Adresse $val"
  ],
  "Addresses": [
   null,
@@ -211,7 +211,7 @@ return plural;
  ],
  "Allowed Services": [
   null,
-  ""
+  "Services autorisés"
  ],
  "Apply": [
   null,
@@ -235,15 +235,15 @@ return plural;
  ],
  "Balancer": [
   null,
-  ""
+  "Équilibreur de charge"
  ],
  "Bond": [
   null,
-  "Bond"
+  "Liaison"
  ],
  "Bond Settings": [
   null,
-  "Réglages de la liaison d'interfaces"
+  "Paramètres de liaison"
  ],
  "Bridge": [
   null,
@@ -251,23 +251,23 @@ return plural;
  ],
  "Bridge Port Settings": [
   null,
-  "Réglages de port du pont"
+  "Paramètres du port de Bridge"
  ],
  "Bridge Settings": [
   null,
-  "Réglages du pont"
+  "Paramètres de Bridge"
  ],
  "Bridge port": [
   null,
-  "Port de pont"
+  "Port de Bridge"
  ],
  "Broadcast": [
   null,
-  "Broadcast"
+  "Diffuser"
  ],
  "Broken configuration": [
   null,
-  ""
+  "Configuration endommagée"
  ],
  "Cancel": [
   null,
@@ -275,19 +275,19 @@ return plural;
  ],
  "Carrier": [
   null,
-  "Porteuse"
+  "Opérateur"
  ],
  "Change the settings": [
   null,
-  ""
+  "Changer les paramètres"
  ],
  "Changing the settings will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "La modification des paramètres interrompt la connexion au serveur et rend l'interface utilisateur d'administration indisponible."
  ],
  "Checking IP": [
   null,
-  "Vérification IP"
+  "Vérification de l'adresse IP"
  ],
  "Close": [
   null,
@@ -299,39 +299,39 @@ return plural;
  ],
  "Configuring": [
   null,
-  "Configuration"
+  "Configuration en cours"
  ],
  "Configuring IP": [
   null,
-  "Configuration IP"
+  "Configuration de l'adresse IP"
  ],
  "Connect automatically": [
   null,
-  "Connexion automatique"
+  "Connecter automatiquement"
  ],
  "Connection will be lost": [
   null,
-  ""
+  "La connexion sera perdue"
  ],
  "Create it": [
   null,
-  ""
+  "Créez-le"
  ],
  "Creating this VLAN will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "La création de ce VLAN interrompt la connexion au serveur et rend l'interface utilisateur d'administration indisponible."
  ],
  "Creating this bond will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "La création de cette liaison interrompt la connexion au serveur et rend l'interface utilisateur d'administration indisponible."
  ],
  "Creating this bridge will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "La création de ce pont interrompt la connexion au serveur et rend l'interface utilisateur d'administration indisponible."
  ],
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "La création de cette équipe interrompt la connexion au serveur et rend l'interface utilisateur d'administration indisponible."
  ],
  "DNS": [
   null,
@@ -339,7 +339,7 @@ return plural;
  ],
  "DNS $val": [
   null,
-  ""
+  "DNS $val"
  ],
  "DNS Search Domains": [
   null,
@@ -347,11 +347,11 @@ return plural;
  ],
  "DNS Search Domains $val": [
   null,
-  ""
+  "Domaines de recherche DNS $val"
  ],
  "Deactivating": [
   null,
-  "Désactivation"
+  "Désactivation en cours"
  ],
  "Delete": [
   null,
@@ -363,11 +363,11 @@ return plural;
  ],
  "Deleting <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "La suppression de <b>$0</b> interrompra la connexion au serveur et rendra l'interface utilisateur d'administration indisponible."
  ],
  "Details": [
   null,
-  ""
+  "Détails"
  ],
  "Disabled": [
   null,
@@ -375,39 +375,39 @@ return plural;
  ],
  "Enable Service": [
   null,
-  ""
+  "Activer le service"
  ],
  "Ethernet MAC": [
   null,
-  ""
+  "Ethernet MAC"
  ],
  "Ethernet MTU": [
   null,
-  ""
+  "Ethernet MTU"
  ],
  "Ethtool": [
   null,
-  ""
+  "Ethtool"
  ],
  "Failed": [
   null,
-  "Échec"
+  "Échoué"
  ],
  "Filter Services": [
   null,
-  ""
+  "Services de filtrage"
  ],
  "Firewall": [
   null,
-  ""
+  "Pare-feu"
  ],
  "Firewall is not available": [
   null,
-  ""
+  "Le pare-feu n'est pas disponible"
  ],
  "Forward delay $forward_delay": [
   null,
-  "Forward delay $forward_delay"
+  "Délai d'attente $forward_delay"
  ],
  "General": [
   null,
@@ -419,15 +419,15 @@ return plural;
  ],
  "Hair Pin mode": [
   null,
-  ""
+  "Mode Hair Pin"
  ],
  "Hairpin mode": [
   null,
-  ""
+  "Mode Hair Pin"
  ],
  "Hello time $hello_time": [
   null,
-  "Hello time $hello_time"
+  "Bonjour $hello_time"
  ],
  "IP Address": [
   null,
@@ -435,7 +435,7 @@ return plural;
  ],
  "IP Settings": [
   null,
-  "Paramétrage IP"
+  "Paramètres IP"
  ],
  "IPv4": [
   null,
@@ -451,7 +451,7 @@ return plural;
  ],
  "IPv6 Settings": [
   null,
-  "Réglages IPv6"
+  "Paramètres IPv6"
  ],
  "Id $id": [
   null,
@@ -471,35 +471,35 @@ return plural;
  ],
  "Invalid address $0": [
   null,
-  "Port invalide"
+  "Adresse non valide $0"
  ],
  "Invalid metric $0": [
   null,
-  "Port invalide"
+  "Métrique non valide $0"
  ],
  "Invalid prefix $0": [
   null,
-  "Port invalide"
+  "Préfixe non valide $0"
  ],
  "Invalid prefix or netmask $0": [
   null,
-  "Port invalide"
+  "Préfixe ou masque de réseau non valide $0"
  ],
  "Keep connection": [
   null,
-  ""
+  "Gardez la connexion"
  ],
  "LACP Key": [
   null,
-  ""
+  "Clé LACP"
  ],
  "Link Monitoring": [
   null,
-  "Surveillance du lien"
+  "Link Monitoring"
  ],
  "Link Watch": [
   null,
-  ""
+  "Link Watch"
  ],
  "Link down delay": [
   null,
@@ -511,27 +511,27 @@ return plural;
  ],
  "Link up delay": [
   null,
-  "Délai de montée de lien"
+  "Délai d'activation de lien"
  ],
  "Load Balancing": [
   null,
-  ""
+  "L'équilibrage de charge"
  ],
  "MAC": [
   null,
-  ""
+  "MAC"
  ],
  "MII (Recommended)": [
   null,
-  "MII (Recommandé)"
+  "MII (recommandé)"
  ],
  "MTU": [
   null,
-  ""
+  "MTU"
  ],
  "MTU must be a positive number": [
   null,
-  ""
+  "MTU doit être un nombre positif"
  ],
  "Manual": [
   null,
@@ -539,11 +539,11 @@ return plural;
  ],
  "Master": [
   null,
-  "Maître"
+  "Master"
  ],
  "Maximum message age $max_age": [
   null,
-  "Âge maximal de message $max_age"
+  "Âge maximal du message $max_age"
  ],
  "Members": [
   null,
@@ -559,11 +559,11 @@ return plural;
  ],
  "Monitoring Targets": [
   null,
-  "Cibles à surveiller"
+  "Objectifs de surveillance"
  ],
  "NSNA Ping": [
   null,
-  ""
+  "NSNA Ping"
  ],
  "Name": [
   null,
@@ -571,11 +571,11 @@ return plural;
  ],
  "Network devices and graphs require NetworkManager.": [
   null,
-  ""
+  "Les périphériques réseau et les graphiques nécessitent NetworkManager."
  ],
  "NetworkManager is not running.": [
   null,
-  ""
+  "NetworkManager n'est pas en cours d'exécution."
  ],
  "Networking": [
   null,
@@ -591,11 +591,11 @@ return plural;
  ],
  "No carrier": [
   null,
-  "Pas de porteuse"
+  "Pas de transporteur"
  ],
  "No open ports": [
   null,
-  ""
+  "Pas de ports ouverts"
  ],
  "Not available": [
   null,
@@ -603,15 +603,15 @@ return plural;
  ],
  "Off": [
   null,
-  "Éteint"
+  "De"
  ],
  "Ok": [
   null,
-  ""
+  "Ok"
  ],
  "On": [
   null,
-  "Allumé"
+  "Sur"
  ],
  "Parent": [
   null,
@@ -623,11 +623,11 @@ return plural;
  ],
  "Part of ": [
   null,
-  "Fait partie de "
+  "Partie de"
  ],
  "Passive": [
   null,
-  ""
+  "Passif"
  ],
  "Path cost": [
   null,
@@ -639,19 +639,19 @@ return plural;
  ],
  "Permanent": [
   null,
-  ""
+  "Permanent"
  ],
  "Ping Interval": [
   null,
-  ""
+  "Intervalle de ping"
  ],
  "Ping Target": [
   null,
-  ""
+  "Clible de ping"
  ],
  "Please install the {0} package": [
   null,
-  ""
+  "Veuillez installer le paquet {0}"
  ],
  "Ports": [
   null,
@@ -659,19 +659,19 @@ return plural;
  ],
  "Prefix length": [
   null,
-  "Longueur de préfixe"
+  "Longueur du préfixe"
  ],
  "Prefix length or Netmask": [
   null,
-  "Longueur de préfixe ou masque de réseau"
+  "Longueur du préfixe ou masque de réseau"
  ],
  "Preparing": [
   null,
-  "Préparation"
+  "Préparation en cours"
  ],
  "Preserve": [
   null,
-  "Préconfigurer"
+  "Préserver"
  ],
  "Primary": [
   null,
@@ -687,7 +687,7 @@ return plural;
  ],
  "Random": [
   null,
-  ""
+  "Random"
  ],
  "Reboot": [
   null,
@@ -699,15 +699,15 @@ return plural;
  ],
  "Remove $0": [
   null,
-  ""
+  "Supprimer $0"
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Supprimer <b>$0</b> aura pour effet d'interrompra la connexion au serveur et rendra l'interface utilisateur d'administration indisponible."
  ],
  "Restoring connection": [
   null,
-  "Reconnecter"
+  "Restauration de la connexion"
  ],
  "Round Robin": [
   null,
@@ -719,7 +719,7 @@ return plural;
  ],
  "Runner": [
   null,
-  ""
+  "Runner"
  ],
  "STP Forward delay": [
   null,
@@ -743,59 +743,59 @@ return plural;
  ],
  "Service": [
   null,
-  ""
+  "Service"
  ],
  "Set to": [
   null,
-  ""
+  "Mis à"
  ],
  "Shared": [
   null,
-  "Partagé"
+  "Shared"
  ],
  "Spanning Tree Protocol": [
   null,
-  "Spanning Tree Protocol"
+  "Protocole Spanning Tree"
  ],
  "Spanning Tree Protocol (STP)": [
   null,
-  "Spanning Tree Protocol (STP)"
+  "Protocole Spanning Tree (STP)"
  ],
  "Stable": [
   null,
-  "Activer"
+  "Stable"
  ],
  "Start Service": [
   null,
-  ""
+  "Démarrer le service"
  ],
  "Status": [
   null,
-  "État"
+  "Statut"
  ],
  "Sticky": [
   null,
-  ""
+  "Sticky"
  ],
  "Switch off $0": [
   null,
-  ""
+  "Éteindre $0"
  ],
  "Switch on $0": [
   null,
-  ""
+  "Allumer $0"
  ],
  "Switching off <b>$0</b>  will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Éteindre <b>$0</b> interrompra la connexion au serveur et rendra l'interface utilisateur d'administration indisponible."
  ],
  "Switching off <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Éteindre <b>$0</b> interrompra la connexion au serveur et rendra l'interface utilisateur d'administration indisponible."
  ],
  "Switching on <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Activer <b>$0</b> interrompra la connexion au serveur et rendra l'interface utilisateur d'administration indisponible."
  ],
  "TCP": [
   null,
@@ -803,31 +803,31 @@ return plural;
  ],
  "Team": [
   null,
-  ""
+  "Équipe"
  ],
  "Team Port": [
   null,
-  ""
+  "Port de l'équipe"
  ],
  "Team Port Settings": [
   null,
-  ""
+  "Paramètres du port de l'équipe"
  ],
  "Team Settings": [
   null,
-  ""
+  "Paramètres de l'équipe"
  ],
  "Testing connection": [
   null,
-  ""
+  "Test de connexion"
  ],
  "The user <b>$0</b> is not permitted to modify network settings": [
   null,
-  "L'utilisateur <b>$0</b> n'a pas le droit de modifier les réglages réseau"
+  "L'utilisateur <b>$0</b> n'est pas autorisé à modifier les paramètres réseau"
  ],
  "This device cannot be managed here.": [
   null,
-  ""
+  "Ce périphérique ne peut pas être géré ici."
  ],
  "UDP": [
   null,
@@ -843,7 +843,7 @@ return plural;
  ],
  "Unknown \"$0\"": [
   null,
-  ""
+  "Inconnu \"$0\""
  ],
  "Unknown configuration": [
   null,
@@ -851,7 +851,7 @@ return plural;
  ],
  "Unmanaged Interfaces": [
   null,
-  ""
+  "Interfaces non gérées"
  ],
  "VLAN": [
   null,
@@ -859,11 +859,11 @@ return plural;
  ],
  "VLAN Id": [
   null,
-  "Identifiant de VLAN"
+  "ID VLAN"
  ],
  "VLAN Settings": [
   null,
-  "Réglages VLAN"
+  "Paramètres VLAN"
  ],
  "Waiting": [
   null,
@@ -879,11 +879,11 @@ return plural;
  ],
  "You are not authorized to modify the firewall.": [
   null,
-  ""
+  "Vous n'êtes pas autorisé à modifier le pare-feu."
  ],
  "[$0 bytes of binary data]": [
   null,
-  "[$0 octets de données binaires]"
+  "[ $0 octets de données binaires]"
  ],
  "[binary data]": [
   null,
@@ -891,10 +891,10 @@ return plural;
  ],
  "[no data]": [
   null,
-  "[aucune donnée]"
+  "[pas de données]"
  ],
  "page-title\u0004Networking": [
   null,
-  "Réseau"
+  "La mise en réseau"
  ]
 }));

@@ -293,6 +293,10 @@ return plural;
   null,
   ""
  ],
+ "Address is not a valid URL": [
+  null,
+  ""
+ ],
  "Apply": [
   null,
   "Použít"

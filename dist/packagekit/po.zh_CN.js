@@ -69,7 +69,7 @@ return plural;
  },
  "$0 is not available from any repository.": [
   null,
-  ""
+  "所有仓库都不提供 $0。"
  ],
  "$0 update": [
   "$0 updates",
@@ -77,19 +77,19 @@ return plural;
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "将安装 $0。"
  ],
  "$1 security fix": [
   "$1 security fixes",
-  ""
+  "$1 安全修正"
  ],
  ", including $1 security fix": [
   ", including $1 security fixes",
-  "， 包括 $1 安全性修复"
+  "， 包括 $1 安全修复"
  ],
  "Additional packages:": [
   null,
-  ""
+  "额外的软件包："
  ],
  "Apply all updates": [
   null,
@@ -117,7 +117,7 @@ return plural;
  ],
  "Bugs:": [
   null,
-  ""
+  "Bug："
  ],
  "Cancel": [
   null,
@@ -129,7 +129,7 @@ return plural;
  ],
  "Checking installed software": [
   null,
-  ""
+  "检查安装的软件"
  ],
  "Details": [
   null,
@@ -145,11 +145,11 @@ return plural;
  ],
  "Downloading $0": [
   null,
-  ""
+  "正在下载"
  ],
  "Errata:": [
   null,
-  ""
+  "勘误："
  ],
  "Ignore": [
   null,
@@ -173,7 +173,7 @@ return plural;
  ],
  "Install Software": [
   null,
-  ""
+  "安装软件"
  ],
  "Installed": [
   null,
@@ -185,7 +185,7 @@ return plural;
  ],
  "Installing $0": [
   null,
-  ""
+  "正在安装 $0"
  ],
  "Last checked: $0 ago": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "No updates pending": [
   null,
-  "没有挂起的更新"
+  "没有待完成的更新"
  ],
  "Off": [
   null,
@@ -245,11 +245,11 @@ return plural;
  ],
  "Removals:": [
   null,
-  ""
+  "移除"
  ],
  "Removing $0": [
   null,
-  ""
+  "正在删除 $0"
  ],
  "Restart Now": [
   null,
@@ -277,7 +277,7 @@ return plural;
  ],
  "Severity:": [
   null,
-  ""
+  "严重性"
  ],
  "Software Updates": [
   null,
@@ -305,15 +305,15 @@ return plural;
  ],
  "This web console will be updated.": [
   null,
-  ""
+  "此 Web 控制台将会被更新。"
  ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
-  "为了获取软件更新，该系统需要注册到红帽，使用红帽消费者门户或一个本地的订阅服务器。"
+  "为了获取软件更新，该系统需要通过红帽客户门户网站或本地订阅服务器注册到红帽。"
  ],
  "Total size: $0": [
   null,
-  ""
+  "总大小：$0"
  ],
  "Unregistered System": [
   null,
@@ -361,19 +361,19 @@ return plural;
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "等待其他软件管理操作完成"
  ],
  "You need to re-subscribe this system.": [
   null,
-  "你需要重新注册该系统。"
+  "您需要重新注册该系统。"
  ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
-  ""
+  "您的浏览器将断开连接，但这不会影响更新过程。您可以在几分钟后重新连接以继续观察进度。"
  ],
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,
-  "你的服务器将要关闭连接。你可以在其重启后，重新连接。"
+  "您的服务器将要关闭连接。你可以在其重启后，重新连接。"
  ],
  "and restart the machine automatically.": [
   null,
@@ -389,31 +389,31 @@ return plural;
  ],
  "on Fridays": [
   null,
-  "在每周五"
+  "在周五"
  ],
  "on Mondays": [
   null,
-  "在每周一"
+  "在周一"
  ],
  "on Saturdays": [
   null,
-  "在每周六"
+  "在周六"
  ],
  "on Sundays": [
   null,
-  "在每周日"
+  "在每日"
  ],
  "on Thursdays": [
   null,
-  "在每周四"
+  "在每四"
  ],
  "on Tuesdays": [
   null,
-  "在每周二"
+  "在每二"
  ],
  "on Wednesdays": [
   null,
-  "在每周三"
+  "在周三"
  ],
  "undefined": [
   null,

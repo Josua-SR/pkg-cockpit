@@ -116,7 +116,7 @@ return plural;
  ],
  "$0 is not available from any repository.": [
   null,
-  ""
+  "$0 no está disponible en ningún repositorio"
  ],
  "$0 minute": [
   "$0 minutes",
@@ -147,7 +147,7 @@ return plural;
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "Se instalará $0"
  ],
  "$0 year": [
   "$0 years",
@@ -264,7 +264,7 @@ return plural;
  ],
  "Add Key": [
   null,
-  ""
+  "Añadir clave"
  ],
  "Add iSCSI Portal": [
   null,
@@ -276,13 +276,17 @@ return plural;
  ],
  "Additional packages:": [
   null,
-  ""
+  "Paquetes adicionales:"
  ],
  "Address": [
   null,
   "Dirección"
  ],
  "Address cannot be empty": [
+  null,
+  "La dirección no puede estar vacía"
+ ],
+ "Address is not a valid URL": [
   null,
   ""
  ],
@@ -340,7 +344,7 @@ return plural;
  ],
  "Change passphrase": [
   null,
-  ""
+  "Cambiar frase de acceso"
  ],
  "Checking $target": [
   null,
@@ -356,7 +360,7 @@ return plural;
  ],
  "Checking installed software": [
   null,
-  ""
+  "Comprobando el software instalado"
  ],
  "Chunk Size": [
   null,
@@ -388,7 +392,7 @@ return plural;
  ],
  "Confirm removal with passphrase": [
   null,
-  ""
+  "Confirmar eliminación con frase de acceso"
  ],
  "Content": [
   null,
@@ -560,7 +564,7 @@ return plural;
  ],
  "Disk passphrase": [
   null,
-  ""
+  "Frase de acceso al disco"
  ],
  "Disks": [
   null,
@@ -572,7 +576,7 @@ return plural;
  ],
  "Downloading $0": [
   null,
-  ""
+  "Descargando $0"
  ],
  "Drive": [
   null,
@@ -752,19 +756,19 @@ return plural;
  ],
  "Install NFS Support": [
   null,
-  ""
+  "Instalar soporte para NFS"
  ],
  "Install Software": [
   null,
-  ""
+  "Instalar software"
  ],
  "Install VDO support": [
   null,
-  ""
+  "Instalar soporte VDO"
  ],
  "Installing $0": [
   null,
-  ""
+  "Instalando $0"
  ],
  "Invalid username or password": [
   null,
@@ -784,15 +788,15 @@ return plural;
  ],
  "Keys": [
   null,
-  ""
+  "Claves"
  ],
  "Keyserver": [
   null,
-  ""
+  "Servidor de claves"
  ],
  "Keyserver address": [
   null,
-  ""
+  "Dirección del servidor de claves"
  ],
  "Keyserver removal may prevent unlocking $0.": [
   null,
@@ -916,7 +920,7 @@ return plural;
  ],
  "NFS Support not installed": [
   null,
-  ""
+  "No está instalado el soporte para NFS"
  ],
  "NTFS - Compatible with most systems": [
   null,
@@ -952,7 +956,7 @@ return plural;
  ],
  "New passphrase": [
   null,
-  ""
+  "Nueva frase de acceso"
  ],
  "Next": [
   null,
@@ -1040,7 +1044,7 @@ return plural;
  ],
  "Old passphrase": [
   null,
-  ""
+  "Frase de acceso vieja"
  ],
  "On": [
   null,
@@ -1260,7 +1264,7 @@ return plural;
  ],
  "Removals:": [
   null,
-  ""
+  "Eliminaciones:"
  ],
  "Remove": [
   null,
@@ -1268,7 +1272,7 @@ return plural;
  ],
  "Remove $0?": [
   null,
-  ""
+  "¿Quitar $0?"
  ],
  "Remove Tang keyserver": [
   null,
@@ -1280,15 +1284,15 @@ return plural;
  ],
  "Remove passphrase": [
   null,
-  ""
+  "Eliminar frase de acceso"
  ],
  "Remove passphrase in $0?": [
   null,
-  ""
+  "¿Eliminar frase de acceso en $0?"
  ],
  "Removing $0": [
   null,
-  ""
+  "Quitando $0"
  ],
  "Removing $target from RAID Device": [
   null,
@@ -1320,7 +1324,7 @@ return plural;
  ],
  "Repeat passphrase": [
   null,
-  ""
+  "Repita la frase de acceso"
  ],
  "Resizing $target": [
   null,
@@ -1340,7 +1344,7 @@ return plural;
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
-  ""
+  "Para guardar una nueva frase de acceso hay que desbloquear el disco. Por favor indique una frase de acceso actual."
  ],
  "Securely erasing $target": [
   null,
@@ -1512,7 +1516,7 @@ return plural;
  ],
  "The currently logged in user is not permitted to see information about keys.": [
   null,
-  ""
+  "El usuario actual no tiene permitido ver información de claves."
  ],
  "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
   null,
@@ -1536,7 +1540,7 @@ return plural;
  ],
  "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
-  ""
+  "Hay servicios del sistema usando el sistema de archivos. Si continúa se pararán."
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
@@ -1580,7 +1584,7 @@ return plural;
  ],
  "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
   null,
-  ""
+  "Este dispositivo tiene sistemas de archivos en uso. Continuar desmontará todos los sistemas de archivos en el mismo."
  ],
  "This device is currently used for RAID devices.": [
   null,
@@ -1592,7 +1596,7 @@ return plural;
  ],
  "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
   null,
-  ""
+  "Hay dispositivos RAID que usan este dispositivo. Si continúa se eliminará de ellos."
  ],
  "This device is currently used for VDO devices.": [
   null,
@@ -1608,7 +1612,7 @@ return plural;
  ],
  "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
-  ""
+  "Este dispositivo se usa actualmente en grupo de volúmenes. Si continúa se eliminará de los mismos."
  ],
  "This disk cannot be removed while the device is recovering.": [
   null,
@@ -1620,7 +1624,7 @@ return plural;
  ],
  "Total size: $0": [
   null,
-  ""
+  "Tamaño total: $0"
  ],
  "Trust key": [
   null,
@@ -1664,7 +1668,7 @@ return plural;
  ],
  "Unknown type": [
   null,
-  ""
+  "Tipo desconocido"
  ],
  "Unlock": [
   null,
@@ -1684,7 +1688,7 @@ return plural;
  ],
  "Unlocking disk...": [
   null,
-  ""
+  "Desbloqueando disco..."
  ],
  "Unmount": [
   null,
@@ -1744,7 +1748,7 @@ return plural;
  ],
  "VDO support not installed": [
   null,
-  ""
+  "No está instalado el soporte para VDO"
  ],
  "VFAT - Compatible with all systems and devices": [
   null,
@@ -1752,7 +1756,7 @@ return plural;
  ],
  "Verify key": [
   null,
-  ""
+  "Verificar clave"
  ],
  "Very securely erasing $target": [
   null,
@@ -1776,7 +1780,7 @@ return plural;
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "Esperando a que finalicen otras operaciones de gestión de software"
  ],
  "What if tang-show-keys is not available?": [
   null,

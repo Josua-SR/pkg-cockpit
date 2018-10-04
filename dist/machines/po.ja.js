@@ -127,9 +127,17 @@ return plural;
   null,
   "バス"
  ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "CHANGE NETWORK STATE アクションに失敗しました"
+ ],
  "CPU Type:": [
   null,
   "CPU タイプ:"
+ ],
+ "CREATE_AND_ATTACH_VOLUME action failed": [
+  null,
+  ""
  ],
  "Cancel": [
   null,
@@ -154,6 +162,10 @@ return plural;
  "Connect with any SPICE or VNC viewer application.": [
   null,
   "SPICE または VNC のビューアーアプリケーションに接続します。"
+ ],
+ "Connecting": [
+  null,
+  ""
  ],
  "Connecting to Virtualization Service": [
   null,
@@ -195,6 +207,10 @@ return plural;
   null,
   "vm $0 の作成に失敗しました。"
  ],
+ "Ctrl+Alt+Del": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "削除"
@@ -210,6 +226,10 @@ return plural;
  "Disconnect": [
   null,
   "切断"
+ ],
+ "Disconnected": [
+  null,
+  "切断されています"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
@@ -259,6 +279,10 @@ return plural;
   null,
   "フォーマット"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "GET HYPERVISOR MAX VCPU アクションに失敗しました"
+ ],
  "GiB": [
   null,
   "GiB"
@@ -274,6 +298,10 @@ return plural;
  "Host": [
   null,
   "ホスト"
+ ],
+ "Host Interface": [
+  null,
+  ""
  ],
  "INSTALL VM action failed": [
   null,
@@ -479,6 +507,14 @@ return plural;
   null,
   "実行"
  ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  "SET VCPU SETTINGS アクションに失敗しました"
+ ],
+ "SET_VCPU_SETTINGS action failed": [
+  null,
+  ""
+ ],
  "SPICE": [
   null,
   "SPICE"
@@ -499,9 +535,9 @@ return plural;
   null,
   "マスク不可割り込みを送信します"
  ],
- "Send shortcut": [
+ "Send key": [
   null,
-  "ショートカットの送信"
+  ""
  ],
  "Serial Console": [
   null,
@@ -643,6 +679,62 @@ return plural;
   null,
   "Used"
  ],
+ "VM ATTACH_DISK action failed": [
+  null,
+  ""
+ ],
+ "VM CHANGE_NETWORK_STATE action failed": [
+  null,
+  ""
+ ],
+ "VM CHANGE_NETWORK_STATE action failed: updated device XML couldn't not be generated": [
+  null,
+  ""
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE action failed": [
+  null,
+  ""
+ ],
+ "VM DETACH action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "VM FORCE OFF アクションに失敗しました"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "VM FORCE REBOOT アクションに失敗しました"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "VM REBOOT アクションに失敗しました"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "VM SEND マスク不可な割り込みアクションに失敗しました"
+ ],
+ "VM SENDNMI action failed": [
+  null,
+  ""
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "VM SHUT DOWN アクションに失敗しました"
+ ],
+ "VM START action failed": [
+  null,
+  "VM START アクションに失敗しました"
+ ],
  "VNC": [
   null,
   "VNC"
@@ -678,10 +770,6 @@ return plural;
  "Volume": [
   null,
   "音量"
- ],
- "Your browser does not support iframes.": [
-  null,
-  "ブラウザーが、iframe をサポートしません。"
  ],
  "bridge": [
   null,

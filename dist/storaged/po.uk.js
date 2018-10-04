@@ -293,6 +293,10 @@ return plural;
   null,
   "Адреса не може бути порожньою"
  ],
+ "Address is not a valid URL": [
+  null,
+  "Адреса є некоректною"
+ ],
  "Apply": [
   null,
   "Застосувати"
@@ -1527,7 +1531,7 @@ return plural;
  ],
  "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
   null,
-  ""
+  "Файлова система використовується службами системи або сеансами користувачів. Виконання цієї дії призведе до припинення роботи цих служб та сеансів."
  ],
  "The filesystem is in use by login sessions.                Proceeding will stop these.": [
   null,
@@ -1535,7 +1539,7 @@ return plural;
  ],
  "The filesystem is in use by login sessions. Proceeding will stop these.": [
   null,
-  ""
+  "Файлова система використовується сеансами користувачів. Виконання цієї дії призведе до припинення роботи цих сеансів."
  ],
  "The filesystem is in use by system services.                Proceeding will stop these.": [
   null,
@@ -1543,7 +1547,7 @@ return plural;
  ],
  "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
-  ""
+  "Файлова система використовується службами системи. Виконання цієї дії призведе до припинення роботи цих служб."
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
@@ -1587,7 +1591,7 @@ return plural;
  ],
  "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
   null,
-  ""
+  "На цьому пристрої міститься файлова система, яка зараз використовується. Виконання дії призведе до демонтування усіх файлових систем на пристрої."
  ],
  "This device is currently used for RAID devices.": [
   null,
@@ -1599,7 +1603,7 @@ return plural;
  ],
  "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
   null,
-  ""
+  "Цей пристрій зараз використовується для формування пристроїв RAID. Якщо дію буде виконано, пристрій буде вилучено із його пристроїв RAID."
  ],
  "This device is currently used for VDO devices.": [
   null,
@@ -1615,7 +1619,7 @@ return plural;
  ],
  "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
-  ""
+  "Цей пристрій зараз використовується для груп томів. Якщо дію буде виконано, пристрій буде вилучено із його груп томів."
  ],
  "This disk cannot be removed while the device is recovering.": [
   null,

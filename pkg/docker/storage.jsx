@@ -25,6 +25,8 @@
 
     var React = require("react");
     var ReactDOM = require("react-dom");
+    var createReactClass = require('create-react-class');
+
     var dialog_view = require("cockpit-components-dialog.jsx");
 
     var python = require("python.jsx");
@@ -101,7 +103,7 @@
      *           the "Add" button is clicked.
      *
      */
-    var DriveBox = React.createClass({
+    var DriveBox = createReactClass({
         getInitialState: function () {
             return {
                 drives: this.props.model.extra_devices,
@@ -170,7 +172,7 @@
                 drive_paths[drive.path] = true;
 
                 drive_rows.push(
-                    <tr onClick={self.toggleDrive.bind(self, drive)}>
+                    <tr key={drive.path} onClick={self.toggleDrive.bind(self, drive)}>
                         <td><input type="checkbox"
                                    checked={self.driveChecked(drive)} />
                         </td>
@@ -189,7 +191,9 @@
                     <div>
                         <h4>{_("Local Disks")}</h4>
                         <table>
-                            { drive_rows }
+                            <tbody>
+                                { drive_rows }
+                            </tbody>
                         </table>
                     </div>);
             } else {
@@ -215,7 +219,7 @@
      *
      * model: The model as returned by get_storage_model.
      */
-    var PoolBox = React.createClass({
+    var PoolBox = createReactClass({
         getInitialState: function () {
             return {
                 drives: [ ]
@@ -238,7 +242,7 @@
             function render_drive_rows() {
                 return self.state.drives.map(function (drive) {
                     return (
-                        <tr>
+                        <tr key={drive.name}>
                             <td>{cockpit.format_bytes(drive.size)}</td>
                             <td><img role="presentation" src="images/drive-harddisk-symbolic.svg" /></td>
                             <td>{drive.name}{drive.shared ? _(" (shared with the OS)") : ""}</td>
@@ -248,7 +252,9 @@
 
             return (
                 <table className="drive-list">
-                    {render_drive_rows()}
+                    <tbody>
+                        {render_drive_rows()}
+                    </tbody>
                 </table>);
         }
     });
@@ -260,7 +266,7 @@
      * small: If true, a small version is rendered
      *        with a link to the setup page.
      */
-    var OverviewBox = React.createClass({
+    var OverviewBox = createReactClass({
         getInitialState: function () {
             return { total: 0, used: 0 };
         },
@@ -311,8 +317,10 @@
                         <div>
                             <div className="used-total">
                                 <table>
-                                    <tr><td>{_("Used")}</td><td>{used_fmt[0]} {used_fmt[1]}</td></tr>
-                                    <tr><td>{_("Total")}</td><td>{total_fmt[0]} {total_fmt[1]}</td></tr>
+                                    <tbody>
+                                        <tr><td>{_("Used")}</td><td>{used_fmt[0]} {used_fmt[1]}</td></tr>
+                                        <tr><td>{_("Total")}</td><td>{total_fmt[0]} {total_fmt[1]}</td></tr>
+                                    </tbody>
                                 </table>
                             </div>
                             <div>

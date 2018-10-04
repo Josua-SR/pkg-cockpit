@@ -89,7 +89,7 @@ return plural;
  ],
  "Go to Application": [
   null,
-  "导航到应用"
+  "到应用"
  ],
  "Install": [
   null,
@@ -101,11 +101,11 @@ return plural;
  ],
  "No applications installed or available": [
   null,
-  "没有应用被安装或不可用"
+  "没有可用的安装"
  ],
  "No description provided.": [
   null,
-  ""
+  "没有提供说明。"
  ],
  "No installation package found for this application.": [
   null,

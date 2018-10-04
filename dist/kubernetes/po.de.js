@@ -1565,10 +1565,6 @@ return plural;
   null,
   "Benutzer"
  ],
- "Virtual Machines": [
-  null,
-  "Virtuelle Maschinen"
- ],
  "Volume": [
   null,
   ""

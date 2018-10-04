@@ -102,6 +102,10 @@ Files: node_modules/c3/*
 Copyright: Copyright (c) 2013 Masayuki Tanaka
 License: MIT
 
+Files: node_modules/create-react-class/*
+Copyright: Copyright (c) 2013-present, Facebook, Inc.
+License: MIT
+
 Files: node_modules/d3/*
 Copyright: Copyright (c) 2010-2016, Michael Bostock
 License: BSD-3-Clause
@@ -134,7 +138,7 @@ Copyright: Copyright (C) 1991, 1999 Free Software Foundation, Inc.
 License: LGPL-2.1
 
 Files: node_modules/moment/*
-Copyright: Iskren Ivov Chernev
+Copyright: Copyright (c) JS Foundation and other contributors
 License: MIT
 
 Files: node_modules/mustache/*
@@ -142,19 +146,6 @@ Copyright: Copyright (c) 2009 Chris Wanstrath (Ruby)
  Copyright (c) 2010-2014 Jan Lehnardt (JavaScript)
  Copyright (c) 2010-2015 The mustache.js community
 License: MIT
-
-Files: node_modules/noVNC/*
-Copyright: (Copyright 2009 Matt McInerney)
- Copyright (C) 1996 by Jef Poskanzer <jef@acme.com>.  All rights reserved
- Copyright (C) 1999 AT&T Laboratories Cambridge.  All Rights Reserved
- Copyright (C) 2012 Joel Martin
- Copyright (C) 2013 NTT corp
- Copyright (C) 2013 Samuel Mannehed for Cendio AB
- Copyright (C) 2015 Samuel Mannehed for Cendio AB
- Copyright (C) 2016 Samuel Mannehed for Cendio AB
- Copyright (c) 1996 Widget Workshop, Inc. All Rights Reserved
- noVNC is Copyright (C) 2011 Joel Martin <github@martintribe.org>
-License: MPL-2.0
 
 Files: node_modules/object-describer/*
 Copyright: Jessica Forrester
@@ -176,6 +167,10 @@ Files: node_modules/promise/*
 Copyright: Copyright (c) 2014 Forbes Lindesay
 License: MIT
 
+Files: node_modules/prop-types/*
+Copyright: Copyright (c) 2013-present, Facebook, Inc.
+License: MIT
+
 Files: node_modules/qunit-tap/*
 Copyright: Copyright (C) 1989, 1991 Free Software Foundation, Inc.
  Copyright (c) 2010-2016 Takuto Wada
@@ -187,12 +182,16 @@ Files: node_modules/qunitjs/*
 Copyright: Copyright 2006 Google Inc.
 License: MIT
 
+Files: node_modules/react/*
+Copyright: Copyright (c) Facebook, Inc. and its affiliates
+License: MIT
+
 Files: node_modules/react-bootstrap/*
 Copyright: Copyright (c) 2014-present Stephen J. Collings, Matthew Honnibal, Pieter Vanderwerff
 License: MIT
 
-Files: node_modules/react-lite/*
-Copyright: Copyright (c) 2015 工业聚
+Files: node_modules/react-dom/*
+Copyright: Copyright (c) Facebook, Inc. and its affiliates
 License: MIT
 
 Files: node_modules/react-remarkable/*

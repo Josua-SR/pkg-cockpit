@@ -127,9 +127,17 @@ return plural;
   null,
   ""
  ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "CHANGE NETWORK STATE -toiminto epäonnistui"
+ ],
  "CPU Type:": [
   null,
   "Prosessorin tyyppi:"
+ ],
+ "CREATE_AND_ATTACH_VOLUME action failed": [
+  null,
+  ""
  ],
  "Cancel": [
   null,
@@ -154,6 +162,10 @@ return plural;
  "Connect with any SPICE or VNC viewer application.": [
   null,
   "Yhdistä mihin tahansa SPICE- tai VNC-katseluohjelmaan."
+ ],
+ "Connecting": [
+  null,
+  ""
  ],
  "Connecting to Virtualization Service": [
   null,
@@ -195,6 +207,10 @@ return plural;
   null,
   "Virtuaalikoneen $0 luominen epäonnistui"
  ],
+ "Ctrl+Alt+Del": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "Poista"
@@ -210,6 +226,10 @@ return plural;
  "Disconnect": [
   null,
   "Katkaise yhteys"
+ ],
+ "Disconnected": [
+  null,
+  "Katkaistu"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
@@ -259,6 +279,10 @@ return plural;
   null,
   "Alusta"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
+ ],
  "GiB": [
   null,
   "GiB"
@@ -274,6 +298,10 @@ return plural;
  "Host": [
   null,
   "Kone"
+ ],
+ "Host Interface": [
+  null,
+  ""
  ],
  "INSTALL VM action failed": [
   null,
@@ -479,6 +507,14 @@ return plural;
   null,
   ""
  ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  ""
+ ],
+ "SET_VCPU_SETTINGS action failed": [
+  null,
+  ""
+ ],
  "SPICE": [
   null,
   "SPICE"
@@ -499,7 +535,7 @@ return plural;
   null,
   ""
  ],
- "Send shortcut": [
+ "Send key": [
   null,
   ""
  ],
@@ -643,6 +679,62 @@ return plural;
   null,
   "Käytetty"
  ],
+ "VM ATTACH_DISK action failed": [
+  null,
+  ""
+ ],
+ "VM CHANGE_NETWORK_STATE action failed": [
+  null,
+  ""
+ ],
+ "VM CHANGE_NETWORK_STATE action failed: updated device XML couldn't not be generated": [
+  null,
+  ""
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE action failed": [
+  null,
+  ""
+ ],
+ "VM DETACH action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "VM FORCE OFF -toiminto epäonnistui"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "VM FORCE REBOOT -toiminto epäonnistui"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "VM REBOOT -toiminto epäonnistui"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "VM SEND Non-Maskable Interrrupt -toiminto epäonnistui"
+ ],
+ "VM SENDNMI action failed": [
+  null,
+  ""
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "VM SHUT DOWN -toiminto epäonnistui"
+ ],
+ "VM START action failed": [
+  null,
+  "VM START -toiminto epäonnistui"
+ ],
  "VNC": [
   null,
   "VNC"
@@ -678,10 +770,6 @@ return plural;
  "Volume": [
   null,
   "Taltio"
- ],
- "Your browser does not support iframes.": [
-  null,
-  "Selaimesi ei tue iframeja."
  ],
  "bridge": [
   null,

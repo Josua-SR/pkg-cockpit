@@ -1565,10 +1565,6 @@ return plural;
   null,
   "ਵਰਤੋਂਕਾਰ"
  ],
- "Virtual Machines": [
-  null,
-  "ਵਰਚੁਅਲ ਮਸ਼ੀਨਾਂ"
- ],
  "Volume": [
   null,
   "ਵਾਲੀਅਮ"

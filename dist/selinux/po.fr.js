@@ -74,123 +74,123 @@ return plural;
  ],
  "Apply this solution": [
   null,
-  ""
+  "Appliquez cette solution"
  ],
  "Applying solution...": [
   null,
-  ""
+  "Application de la solution ..."
  ],
  "Audit log": [
   null,
-  ""
+  "Journal d'audit"
  ],
  "Connecting to SETroubleshoot daemon...": [
   null,
-  ""
+  "Connexion au démon SETroubleshoot ..."
  ],
  "Enforce policy:": [
   null,
-  ""
+  "Appliquer la stratégie :"
  ],
  "Error while deleting alert: $0": [
   null,
-  ""
+  "Erreur lors de la suppression de l'alerte: $0"
  ],
  "Error while setting SELinux mode: '$0'": [
   null,
-  "Erreur lors de la configuration du mode SELinux : « $0 »"
+  "Erreur lors du réglage du mode SELinux: ' $0 '"
  ],
  "Failed to delete alert: $0": [
   null,
-  ""
+  "Échec de la suppression de l'alerte: $0"
  ],
  "Install setroubleshoot-server to troubleshoot SELinux events.": [
   null,
-  ""
+  "Installez setroubleshoot-server pour dépanner les événements SELinux."
  ],
  "No SELinux alerts.": [
   null,
-  ""
+  "Pas d'alertes SELinux."
  ],
  "Not connected": [
   null,
-  "Non connecté"
+  "Pas connecté"
  ],
  "Occurred $0": [
   null,
-  ""
+  "S'est produit à $0"
  ],
  "Occurred between $0 and $1": [
   null,
-  ""
+  "S'est produit entre $0 et $1"
  ],
  "Off": [
   null,
-  "Éteint"
+  "De"
  ],
  "On": [
   null,
-  "Allumé"
+  "Sur"
  ],
  "SELinux Access Control Errors": [
   null,
-  ""
+  "Erreurs de contrôle d'accès SELinux"
  ],
  "SELinux Policy": [
   null,
-  ""
+  "Politique de SELinux"
  ],
  "SELinux Troubleshoot": [
   null,
-  ""
+  "SELinux Troubleshoot"
  ],
  "SELinux is disabled on the system": [
   null,
-  ""
+  "SELinux est désactivé sur le système"
  ],
  "SELinux is disabled on the system.": [
   null,
-  ""
+  "SELinux est désactivé sur le système."
  ],
  "SELinux system status is unknown.": [
   null,
-  ""
+  "L'état du système SELinux est inconnu."
  ],
  "Setting deviates from the configured state and will revert on the next boot.": [
   null,
-  ""
+  "La configuration s'écarte de l'état configuré de départ et reviendra à cet état au prochain démarrage."
  ],
  "Solution applied successfully": [
   null,
-  ""
+  "Solution appliquée avec succès"
  ],
  "Solution failed": [
   null,
-  ""
+  "La solution a échoué"
  ],
  "Solutions": [
   null,
-  ""
+  "Solutions"
  ],
  "The configured state is unknown, it might change on the next boot.": [
   null,
-  ""
+  "L'état configuré est inconnu, il peut changer au démarrage suivant."
  ],
  "Unable to apply this solution automatically": [
   null,
-  ""
+  "Impossible d'appliquer cette solution automatiquement"
  ],
  "Unable to get alert details.": [
   null,
-  ""
+  "Impossible d'obtenir les détails de l'alerte."
  ],
  "Unable to get alert: $0": [
   null,
-  ""
+  "Impossible d'être alerte: $0"
  ],
  "Unable to run fix: %0": [
   null,
-  ""
+  "Impossible d'exécuter le correctif : %0"
  ],
  "Unable to start setroubleshootd": [
   null,
@@ -198,10 +198,10 @@ return plural;
  ],
  "Waiting for details...": [
   null,
-  ""
+  "En attente de détails ..."
  ],
  "solution details": [
   null,
-  ""
+  "détails de la solution"
  ]
 }));

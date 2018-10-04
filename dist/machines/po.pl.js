@@ -127,9 +127,17 @@ return plural;
   null,
   "Magistrala"
  ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "Działanie CHANGE NETWORK STATE się nie powiodło"
+ ],
  "CPU Type:": [
   null,
   "Typ procesora:"
+ ],
+ "CREATE_AND_ATTACH_VOLUME action failed": [
+  null,
+  "Działanie CREATE_AND_ATTACH_VOLUME się nie powiodło"
  ],
  "Cancel": [
   null,
@@ -154,6 +162,10 @@ return plural;
  "Connect with any SPICE or VNC viewer application.": [
   null,
   "Połącz z dowolną przeglądarką SPICE lub VNC."
+ ],
+ "Connecting": [
+  null,
+  "Łączenie"
  ],
  "Connecting to Virtualization Service": [
   null,
@@ -195,6 +207,10 @@ return plural;
   null,
   "Utworzenie maszyny wirtualnej $0 się nie powiodło"
  ],
+ "Ctrl+Alt+Del": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "Usuń"
@@ -210,6 +226,10 @@ return plural;
  "Disconnect": [
   null,
   "Rozłącz"
+ ],
+ "Disconnected": [
+  null,
+  "Rozłączono"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
@@ -259,6 +279,10 @@ return plural;
   null,
   "Sformatuj"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "Działanie GET HYPERVISOR MAX VCPU się nie powiodło"
+ ],
  "GiB": [
   null,
   "GiB"
@@ -274,6 +298,10 @@ return plural;
  "Host": [
   null,
   "Gospodarz"
+ ],
+ "Host Interface": [
+  null,
+  ""
  ],
  "INSTALL VM action failed": [
   null,
@@ -479,6 +507,14 @@ return plural;
   null,
   "Uruchom"
  ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  "Działanie SET VCPU SETTINGS się nie powiodło"
+ ],
+ "SET_VCPU_SETTINGS action failed": [
+  null,
+  "Działanie SET_VCPU_SETTINGS się nie powiodło"
+ ],
  "SPICE": [
   null,
   "SPICE"
@@ -499,9 +535,9 @@ return plural;
   null,
   "Wyślij niemaskowalne przerwanie"
  ],
- "Send shortcut": [
+ "Send key": [
   null,
-  "Wyślij skrót"
+  ""
  ],
  "Serial Console": [
   null,
@@ -621,7 +657,7 @@ return plural;
  ],
  "Unique name": [
   null,
-  ""
+  "Unikalna nazwa"
  ],
  "Unplug": [
   null,
@@ -642,6 +678,62 @@ return plural;
  "Used": [
   null,
   "Używane"
+ ],
+ "VM ATTACH_DISK action failed": [
+  null,
+  "Działanie VM ATTACH_DISK się nie powiodło"
+ ],
+ "VM CHANGE_NETWORK_STATE action failed": [
+  null,
+  "Działanie VM CHANGE_NETWORK_STATE się nie powiodło"
+ ],
+ "VM CHANGE_NETWORK_STATE action failed: updated device XML couldn't not be generated": [
+  null,
+  "Działanie VM CHANGE_NETWORK_STATE się nie powiodło: nie można utworzyć zaktualizowanego XML urządzenia"
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE action failed": [
+  null,
+  ""
+ ],
+ "VM DETACH action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "Działanie VM FORCE OFF się nie powiodło"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "Działanie VM FORCE REBOOT się nie powiodło"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "Działanie VM REBOOT się nie powiodło"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "Działanie VM SEND niemaskowalnego przerwania się nie powiodło"
+ ],
+ "VM SENDNMI action failed": [
+  null,
+  "Działanie VM SENDNMI się nie powiodło"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "Działanie VM SHUT DOWN się nie powiodło"
+ ],
+ "VM START action failed": [
+  null,
+  "Działanie VM START się nie powiodło"
  ],
  "VNC": [
   null,
@@ -678,10 +770,6 @@ return plural;
  "Volume": [
   null,
   "Wolumin"
- ],
- "Your browser does not support iframes.": [
-  null,
-  "Przeglądarka nie obsługuje „iframe”."
  ],
  "bridge": [
   null,

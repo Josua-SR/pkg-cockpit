@@ -147,6 +147,10 @@ return plural;
   null,
   "Magistrala"
  ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "Działanie CHANGE NETWORK STATE się nie powiodło"
+ ],
  "CPU Type:": [
   null,
   "Typ procesora:"
@@ -207,6 +211,10 @@ return plural;
   null,
   "Połącz z dowolną przeglądarką SPICE lub VNC."
  ],
+ "Connecting": [
+  null,
+  "Łączenie"
+ ],
  "Connection": [
   null,
   "Połączenie"
@@ -239,6 +247,10 @@ return plural;
   null,
   "Utwórz maszynę wirtualną"
  ],
+ "Ctrl+Alt+Del": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "Usuń"
@@ -262,6 +274,10 @@ return plural;
  "Disconnect": [
   null,
   "Rozłącz"
+ ],
+ "Disconnected": [
+  null,
+  "Rozłączono"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
@@ -319,6 +335,10 @@ return plural;
   null,
   "Sformatuj"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "Działanie GET HYPERVISOR MAX VCPU się nie powiodło"
+ ],
  "GiB": [
   null,
   "GiB"
@@ -342,6 +362,10 @@ return plural;
  "Host": [
   null,
   "Gospodarz"
+ ],
+ "Host Interface": [
+  null,
+  ""
  ],
  "Host to Maintenance": [
   null,
@@ -627,9 +651,9 @@ return plural;
   null,
   "Wyślij niemaskowalne przerwanie"
  ],
- "Send shortcut": [
+ "Send key": [
   null,
-  "Wyślij skrót"
+  ""
  ],
  "Serial Console": [
   null,
@@ -791,6 +815,38 @@ return plural;
   null,
   "Zarządzanie usługami VDSM"
  ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "Działanie VM FORCE OFF się nie powiodło"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "Działanie VM FORCE REBOOT się nie powiodło"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "Działanie VM REBOOT się nie powiodło"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "Działanie VM SEND niemaskowalnego przerwania się nie powiodło"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "Działanie VM SHUT DOWN się nie powiodło"
+ ],
+ "VM START action failed": [
+  null,
+  "Działanie VM START się nie powiodło"
+ ],
  "VM icon": [
   null,
   "Ikona maszyny wirtualnej"
@@ -834,10 +890,6 @@ return plural;
  "Volume": [
   null,
   "Wolumin"
- ],
- "Your browser does not support iframes.": [
-  null,
-  "Przeglądarka nie obsługuje „iframe”."
  ],
  "bridge": [
   null,

@@ -147,6 +147,10 @@ return plural;
   null,
   ""
  ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "CHANGE NETWORK STATE -toiminto epäonnistui"
+ ],
  "CPU Type:": [
   null,
   "Prosessorin tyyppi:"
@@ -207,6 +211,10 @@ return plural;
   null,
   "Yhdistä mihin tahansa SPICE- tai VNC-katseluohjelmaan."
  ],
+ "Connecting": [
+  null,
+  ""
+ ],
  "Connection": [
   null,
   "Yhteys"
@@ -239,6 +247,10 @@ return plural;
   null,
   "Luo VM"
  ],
+ "Ctrl+Alt+Del": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "Poista"
@@ -262,6 +274,10 @@ return plural;
  "Disconnect": [
   null,
   "Katkaise yhteys"
+ ],
+ "Disconnected": [
+  null,
+  "Katkaistu"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
@@ -319,6 +335,10 @@ return plural;
   null,
   "Alusta"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
+ ],
  "GiB": [
   null,
   "GiB"
@@ -342,6 +362,10 @@ return plural;
  "Host": [
   null,
   "Kone"
+ ],
+ "Host Interface": [
+  null,
+  ""
  ],
  "Host to Maintenance": [
   null,
@@ -627,7 +651,7 @@ return plural;
   null,
   ""
  ],
- "Send shortcut": [
+ "Send key": [
   null,
   ""
  ],
@@ -791,6 +815,38 @@ return plural;
   null,
   "VDSM-palveluhallinta"
  ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "VM FORCE OFF -toiminto epäonnistui"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "VM FORCE REBOOT -toiminto epäonnistui"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "VM REBOOT -toiminto epäonnistui"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "VM SEND Non-Maskable Interrrupt -toiminto epäonnistui"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "VM SHUT DOWN -toiminto epäonnistui"
+ ],
+ "VM START action failed": [
+  null,
+  "VM START -toiminto epäonnistui"
+ ],
  "VM icon": [
   null,
   "VM-kuvake"
@@ -834,10 +890,6 @@ return plural;
  "Volume": [
   null,
   "Taltio"
- ],
- "Your browser does not support iframes.": [
-  null,
-  "Selaimesi ei tue iframeja."
  ],
  "bridge": [
   null,

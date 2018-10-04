@@ -69,11 +69,11 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  "$0 对大多数操作系统可用。为了安装它，在 GNOME 软件中心搜索它或运行以下命令： "
+  "$0 对大多数操作系统可用。为了安装它，在 GNOME 软件中搜索它，或运行以下命令： "
  ],
  "$0 vCPU Details": [
   null,
-  ""
+  "$0 vCPU 详情"
  ],
  "Add": [
   null,
@@ -81,11 +81,11 @@ return plural;
  ],
  "Add Disk": [
   null,
-  ""
+  "添加磁盘"
  ],
  "Additional": [
   null,
-  ""
+  "额外"
  ],
  "Address": [
   null,
@@ -97,7 +97,7 @@ return plural;
  ],
  "All changes will take effect only after stopping and starting the VM.": [
   null,
-  ""
+  "只有在停止和启动 VM 后，所有更改才会生效。"
  ],
  "Apply": [
   null,
@@ -105,11 +105,11 @@ return plural;
  ],
  "Attach permanently": [
   null,
-  ""
+  "永久附加"
  ],
  "Automatically start libvirt on boot": [
   null,
-  ""
+  "在引导时自动启动 libvirt"
  ],
  "Autostart:": [
   null,
@@ -121,15 +121,23 @@ return plural;
  ],
  "Boot Order:": [
   null,
-  "启动顺序："
+  "引导顺序："
  ],
  "Bus": [
   null,
   "总线"
  ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "更改网络状态操作失败"
+ ],
  "CPU Type:": [
   null,
-  "处理器类型："
+  "CPU 类型："
+ ],
+ "CREATE_AND_ATTACH_VOLUME action failed": [
+  null,
+  ""
  ],
  "Cancel": [
   null,
@@ -141,7 +149,7 @@ return plural;
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  "点击 \"加载远程查看其\" 将下载一个  .vv 文件并加载 $0。"
+  "点击 \"启动 Remote Viewer\" 将下载一个  .vv 文件并加载 $0。"
  ],
  "Confirm deletion of $0": [
   null,
@@ -153,11 +161,15 @@ return plural;
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  "使用任何  SPICE 或 VNC 查看器应用来连接。"
+  "使用任何 SPICE 或 VNC 查看器应用来连接。"
+ ],
+ "Connecting": [
+  null,
+  "连接"
  ],
  "Connecting to Virtualization Service": [
   null,
-  ""
+  "连接虚拟化服务"
  ],
  "Connection": [
   null,
@@ -165,15 +177,15 @@ return plural;
  ],
  "Console Type": [
   null,
-  ""
+  "控制台类型"
  ],
  "Consoles": [
   null,
-  ""
+  "控制台"
  ],
  "Cores per socket": [
   null,
-  ""
+  "每个插槽的内核数"
  ],
  "Create": [
   null,
@@ -181,17 +193,21 @@ return plural;
  ],
  "Create New": [
   null,
-  ""
+  "新建"
  ],
  "Create New VM": [
   null,
-  ""
+  "新建 VM"
  ],
  "Create New Virtual Machine": [
   null,
-  ""
+  "创建新的虚拟机"
  ],
  "Creation of vm $0 failed": [
+  null,
+  "创建 vm $ 0失败"
+ ],
+ "Ctrl+Alt+Del": [
   null,
   ""
  ],
@@ -209,19 +225,23 @@ return plural;
  ],
  "Disconnect": [
   null,
-  ""
+  "断开"
+ ],
+ "Disconnected": [
+  null,
+  "已断开连接"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
-  ""
+  "从串行控制台断开连接。单击“重新连接”按钮。"
  ],
  "Disk failed to be attached with following error: ": [
   null,
-  ""
+  "因为以下错误磁盘无法被附加： "
  ],
  "Disk failed to be created with following error: ": [
   null,
-  ""
+  "因为以下错误磁盘无法被创建："
  ],
  "Disks": [
   null,
@@ -229,7 +249,7 @@ return plural;
  ],
  "Download the MSI from $0": [
   null,
-  "从 $0 下载MSI"
+  "从 $0 下载 MSI"
  ],
  "Emulated Machine:": [
   null,
@@ -237,7 +257,7 @@ return plural;
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
-  ""
+  "启用的虚拟 CPU 数量应少于最大虚拟 CPU 数量。"
  ],
  "File": [
   null,
@@ -259,29 +279,37 @@ return plural;
   null,
   "格式化"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "获取 HYPERVISOR MAX VCPU 操作失败"
+ ],
  "GiB": [
   null,
-  ""
+  "GiB"
  ],
  "Graphics Console (VNC)": [
   null,
-  ""
+  "图形控制台（VNC）"
  ],
  "Graphics Console in Desktop Viewer": [
   null,
-  ""
+  "Desktop Viewer 中的图形控制台"
  ],
  "Host": [
   null,
   "主机"
  ],
- "INSTALL VM action failed": [
+ "Host Interface": [
   null,
   ""
  ],
+ "INSTALL VM action failed": [
+  null,
+  "安装虚拟机操作失败"
+ ],
  "Immediately Start VM": [
   null,
-  ""
+  "立即启动 VM"
  ],
  "Install": [
   null,
@@ -289,19 +317,19 @@ return plural;
  ],
  "Installation Source": [
   null,
-  ""
+  "安装源"
  ],
  "Installation Source Type": [
   null,
-  ""
+  "安装源类型"
  ],
  "Installation Source should not be empty": [
   null,
-  ""
+  "安装源不应为空"
  ],
  "Invalid filename": [
   null,
-  ""
+  "无效的文件名"
  ],
  "Launch Remote Viewer": [
   null,
@@ -309,11 +337,11 @@ return plural;
  ],
  "Loading ...": [
   null,
-  ""
+  "加载中......"
  ],
  "MAC Address": [
   null,
-  ""
+  "MAC 地址"
  ],
  "MTU": [
   null,
@@ -321,7 +349,7 @@ return plural;
  ],
  "Managed": [
   null,
-  ""
+  "已管理"
  ],
  "Manual Connection": [
   null,
@@ -329,7 +357,7 @@ return plural;
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
-  ""
+  "为客户机操作系统分配的最大虚拟 CPU 数，必须介于 1 和 $0 之间"
  ],
  "Memory": [
   null,
@@ -337,7 +365,7 @@ return plural;
  ],
  "Memory should be positive number": [
   null,
-  ""
+  "内存需要是正数"
  ],
  "Memory:": [
   null,
@@ -349,7 +377,7 @@ return plural;
  ],
  "Model type": [
   null,
-  ""
+  "型号类型"
  ],
  "More Information": [
   null,
@@ -361,31 +389,31 @@ return plural;
  ],
  "Name should not be empty": [
   null,
-  ""
+  "名称不应为空"
  ],
  "Name should not consist of empty characters only": [
   null,
-  ""
+  "名称不应仅包含空字符"
  ],
  "Networks": [
   null,
-  ""
+  "网络"
  ],
  "New Volume Name": [
   null,
-  ""
+  "新卷名称"
  ],
  "No VM is running or defined on this host": [
   null,
-  "该主机上没有虚拟机运行或定义。"
+  "该主机上没有定义或运行虚拟机。"
  ],
  "No boot device found": [
   null,
-  "没有找到启动设备"
+  "没有找到引导设备"
  ],
  "No console defined for this virtual machine.": [
   null,
-  ""
+  "没有为该虚拟机定义控制台。"
  ],
  "No disks defined for this VM": [
   null,
@@ -397,11 +425,11 @@ return plural;
  ],
  "No network interfaces defined for this VM": [
   null,
-  ""
+  "没有为此 VM 定义网络接口"
  ],
  "OS Vendor": [
   null,
-  ""
+  "操作系统厂商"
  ],
  "Ok": [
   null,
@@ -417,7 +445,7 @@ return plural;
  ],
  "Path to ISO file on host's file system": [
   null,
-  ""
+  "主机文件系统中到 ISO 文件的路径"
  ],
  "Path to file": [
   null,
@@ -425,19 +453,19 @@ return plural;
  ],
  "Please enter new volume name": [
   null,
-  ""
+  "请输入新的卷名"
  ],
  "Please enter new volume size": [
   null,
-  ""
+  "请输入新的卷大小"
  ],
  "Please start the virtual machine to access its console.": [
   null,
-  ""
+  "请启动虚拟机来访问其控制台。"
  ],
  "Plug": [
   null,
-  ""
+  "插"
  ],
  "Pool": [
   null,
@@ -449,11 +477,11 @@ return plural;
  ],
  "Portgroup": [
   null,
-  ""
+  "端口组"
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
-  ""
+  "向客户机公开的首选插槽数。"
  ],
  "Protocol": [
   null,
@@ -469,7 +497,7 @@ return plural;
  ],
  "Remote URL": [
   null,
-  ""
+  "远程 URL"
  ],
  "Restart": [
   null,
@@ -478,6 +506,14 @@ return plural;
  "Run": [
   null,
   "运行"
+ ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  "SET VCPU SETTINGS 操作失败"
+ ],
+ "SET_VCPU_SETTINGS action failed": [
+  null,
+  ""
  ],
  "SPICE": [
   null,
@@ -497,15 +533,15 @@ return plural;
  ],
  "Send Non-Maskable Interrupt": [
   null,
-  "发送非屏蔽中断"
+  "发送不可屏蔽中断"
  ],
- "Send shortcut": [
+ "Send key": [
   null,
   ""
  ],
  "Serial Console": [
   null,
-  ""
+  "串行控制台"
  ],
  "Session": [
   null,
@@ -529,15 +565,15 @@ return plural;
  ],
  "Source should start with http, ftp or nfs protocol": [
   null,
-  ""
+  "源应该以 http、ftp 或 nfs 协议开头"
  ],
  "Start libvirt": [
   null,
-  ""
+  "启动 libvirt"
  ],
  "Start the VM to see disk statistics.": [
   null,
-  ""
+  "启动 VM 查看磁盘统计数据"
  ],
  "State": [
   null,
@@ -545,11 +581,11 @@ return plural;
  ],
  "Storage Size": [
   null,
-  ""
+  "存储大小"
  ],
  "Storage Size should not be negative number": [
   null,
-  ""
+  "存储大小不应为负数"
  ],
  "System": [
   null,
@@ -597,15 +633,15 @@ return plural;
  ],
  "The pool is empty": [
   null,
-  ""
+  "池为空"
  ],
  "Threads per cores": [
   null,
-  ""
+  "每个内核的线程数"
  ],
  "Too many files found": [
   null,
-  "太多文件未找到"
+  "找到太多文件"
  ],
  "Troubleshoot": [
   null,
@@ -617,15 +653,15 @@ return plural;
  ],
  "URL": [
   null,
-  "网址"
+  "URL"
  ],
  "Unique name": [
   null,
-  ""
+  "唯一名称"
  ],
  "Unplug": [
   null,
-  ""
+  "拔"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
@@ -633,15 +669,71 @@ return plural;
  ],
  "Usage": [
   null,
-  "使用情况"
+  "使用"
  ],
  "Use Existing": [
   null,
-  ""
+  "使用现有的"
  ],
  "Used": [
   null,
   "已使用"
+ ],
+ "VM ATTACH_DISK action failed": [
+  null,
+  ""
+ ],
+ "VM CHANGE_NETWORK_STATE action failed": [
+  null,
+  ""
+ ],
+ "VM CHANGE_NETWORK_STATE action failed: updated device XML couldn't not be generated": [
+  null,
+  ""
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE action failed": [
+  null,
+  ""
+ ],
+ "VM DETACH action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "虚拟机强制关闭操作失败"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "虚拟机强制重启操作失败"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "虚拟机重启操作失败"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "虚拟机发送非屏蔽中断操作失败"
+ ],
+ "VM SENDNMI action failed": [
+  null,
+  ""
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "虚拟机关机操作失败"
+ ],
+ "VM START action failed": [
+  null,
+  "虚拟机启动操作失败"
  ],
  "VNC": [
   null,
@@ -665,27 +757,23 @@ return plural;
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
-  ""
+  "虚拟化服务（libvirt）未激活"
  ],
  "Virtualization Service is Available": [
   null,
-  ""
+  "虚拟化服务可用"
  ],
  "Virtualport": [
   null,
-  ""
+  "Virtualport"
  ],
  "Volume": [
   null,
   "卷"
  ],
- "Your browser does not support iframes.": [
-  null,
-  "你的浏览器不支持 iframes。"
- ],
  "bridge": [
   null,
-  ""
+  "网桥"
  ],
  "cdrom": [
   null,
@@ -701,7 +789,7 @@ return plural;
  ],
  "direct": [
   null,
-  ""
+  "直接"
  ],
  "disabled": [
   null,
@@ -725,7 +813,7 @@ return plural;
  ],
  "ethernet": [
   null,
-  ""
+  "以太网"
  ],
  "host": [
   null,
@@ -733,15 +821,15 @@ return plural;
  ],
  "hostdev": [
   null,
-  ""
+  "hostdev"
  ],
  "idle": [
   null,
-  "休眠的"
+  "休眠"
  ],
  "mcast": [
   null,
-  ""
+  "MCAST"
  ],
  "network": [
   null,
@@ -761,11 +849,11 @@ return plural;
  ],
  "qcow2": [
   null,
-  ""
+  "qcow2"
  ],
  "raw": [
   null,
-  ""
+  "raw"
  ],
  "running": [
   null,
@@ -773,15 +861,15 @@ return plural;
  ],
  "server": [
   null,
-  ""
+  "服务器"
  ],
  "show less": [
   null,
-  ""
+  "显示更少"
  ],
  "show more": [
   null,
-  ""
+  "显示更多"
  ],
  "shut off": [
   null,
@@ -797,7 +885,7 @@ return plural;
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "undefined": [
   null,
@@ -809,23 +897,23 @@ return plural;
  ],
  "user": [
   null,
-  ""
+  "用户"
  ],
  "vCPU Count": [
   null,
-  ""
+  "vCPU 数"
  ],
  "vCPU Maximum": [
   null,
-  ""
+  "vCPU 的最大值"
  ],
  "vCPUs:": [
   null,
-  "虚拟 CPU："
+  "vCPU："
  ],
  "vhostuser": [
   null,
-  ""
+  "vhostuser"
  ],
  "yes": [
   null,

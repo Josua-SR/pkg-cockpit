@@ -147,6 +147,10 @@ return plural;
   null,
   ""
  ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  ""
+ ],
  "CPU Type:": [
   null,
   ""
@@ -207,6 +211,10 @@ return plural;
   null,
   ""
  ],
+ "Connecting": [
+  null,
+  ""
+ ],
  "Connection": [
   null,
   ""
@@ -239,6 +247,10 @@ return plural;
   null,
   ""
  ],
+ "Ctrl+Alt+Del": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "ဖျက်ဆီးပါ။"
@@ -260,6 +272,10 @@ return plural;
   ""
  ],
  "Disconnect": [
+  null,
+  ""
+ ],
+ "Disconnected": [
   null,
   ""
  ],
@@ -319,6 +335,10 @@ return plural;
   null,
   ""
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
+ ],
  "GiB": [
   null,
   ""
@@ -342,6 +362,10 @@ return plural;
  "Host": [
   null,
   "Host"
+ ],
+ "Host Interface": [
+  null,
+  ""
  ],
  "Host to Maintenance": [
   null,
@@ -627,7 +651,7 @@ return plural;
   null,
   ""
  ],
- "Send shortcut": [
+ "Send key": [
   null,
   ""
  ],
@@ -791,6 +815,38 @@ return plural;
   null,
   ""
  ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  ""
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  ""
+ ],
+ "VM START action failed": [
+  null,
+  ""
+ ],
  "VM icon": [
   null,
   ""
@@ -832,10 +888,6 @@ return plural;
   ""
  ],
  "Volume": [
-  null,
-  ""
- ],
- "Your browser does not support iframes.": [
   null,
   ""
  ],

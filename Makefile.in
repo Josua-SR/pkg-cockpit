@@ -1584,16 +1584,15 @@ EXTRA_DIST = package.json README.md $(NULL) $(WEBPACK_STAMPS) \
 	po/po.empty.js po/po2json po/zanata.xml $(NULL) \
 	dist/playground/extra.de.po pkg/playground/extra.de.po \
 	pkg/users/mock pkg/lib/qunit-template.html \
-	node_modules/noVNC/package.json \
-	node_modules/noVNC/include/base.css pkg/ovirt/install.sh \
-	$(playground_DATA) $(pkg_TESTS) $(ovirt_DATA) $(metainfo_DATA) \
-	$(pixmaps_DATA) $(NULL) dist/base1/cockpit.js \
-	dist/base1/cockpit.min.css dist/base1/cockpit.min.css.map \
-	dist/base1/cockpit.min.js dist/base1/cockpit.min.js.map \
-	dist/base1/jquery.js dist/base1/jquery.min.js \
-	dist/base1/jquery.min.js.map dist/base1/mustache.js \
-	dist/base1/mustache.min.js dist/base1/mustache.min.js.map \
-	dist/base1/patternfly-base.css dist/base1/patternfly.min.css \
+	pkg/ovirt/install.sh $(playground_DATA) $(pkg_TESTS) \
+	$(ovirt_DATA) $(metainfo_DATA) $(pixmaps_DATA) $(NULL) \
+	dist/base1/cockpit.js dist/base1/cockpit.min.css \
+	dist/base1/cockpit.min.css.map dist/base1/cockpit.min.js \
+	dist/base1/cockpit.min.js.map dist/base1/jquery.js \
+	dist/base1/jquery.min.js dist/base1/jquery.min.js.map \
+	dist/base1/mustache.js dist/base1/mustache.min.js \
+	dist/base1/mustache.min.js.map dist/base1/patternfly-base.css \
+	dist/base1/patternfly.min.css \
 	dist/base1/patternfly.min.css.map \
 	dist/base1/patternfly.css.map \
 	dist/base1/patternfly-additions.css \
@@ -1944,13 +1943,14 @@ playground_DATA = \
 ovirtdir = $(pkgdatadir)/ovirt
 ovirt_DATA = \
 	dist/ovirt/install.sh \
-	dist/ovirt/base.css \
 	$(NULL)
 
 metainfodir = ${datarootdir}/metainfo
 metainfo_DATA = pkg/sosreport/org.cockpit-project.cockpit-sosreport.metainfo.xml \
 		pkg/kdump/org.cockpit-project.cockpit-kdump.metainfo.xml \
-		pkg/selinux/org.cockpit-project.cockpit-selinux.metainfo.xml
+		pkg/selinux/org.cockpit-project.cockpit-selinux.metainfo.xml \
+		pkg/machines/org.cockpit-project.cockpit-machines.metainfo.xml \
+		$(NULL)
 
 pixmapsdir = ${datarootdir}/pixmaps
 pixmaps_DATA = pkg/sosreport/cockpit-sosreport.png
@@ -9026,13 +9026,7 @@ download-po:
 dist/playground/extra.de.po: pkg/playground/extra.de.po
 	$(COPY_RULE)
 
-dist/machines/base.css: node_modules/noVNC/include/base.css
-	$(COPY_RULE)
-
 dist/ovirt/install.sh: pkg/ovirt/install.sh
-	$(COPY_RULE)
-
-dist/ovirt/base.css: node_modules/noVNC/include/base.css
 	$(COPY_RULE)
 
 @WITH_GOLANG_TRUE@cockpit-kube-auth$(EXEEXT): $(COCKPIT_KUBE_AUTH)

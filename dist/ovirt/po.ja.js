@@ -147,6 +147,10 @@ return plural;
   null,
   "バス"
  ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "CHANGE NETWORK STATE アクションに失敗しました"
+ ],
  "CPU Type:": [
   null,
   "CPU タイプ:"
@@ -207,6 +211,10 @@ return plural;
   null,
   "SPICE または VNC のビューアーアプリケーションに接続します。"
  ],
+ "Connecting": [
+  null,
+  ""
+ ],
  "Connection": [
   null,
   "接続"
@@ -239,6 +247,10 @@ return plural;
   null,
   "仮想マシンの作成"
  ],
+ "Ctrl+Alt+Del": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "削除"
@@ -262,6 +274,10 @@ return plural;
  "Disconnect": [
   null,
   "切断"
+ ],
+ "Disconnected": [
+  null,
+  "切断されています"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
@@ -319,6 +335,10 @@ return plural;
   null,
   "フォーマット"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "GET HYPERVISOR MAX VCPU アクションに失敗しました"
+ ],
  "GiB": [
   null,
   "GiB"
@@ -342,6 +362,10 @@ return plural;
  "Host": [
   null,
   "ホスト"
+ ],
+ "Host Interface": [
+  null,
+  ""
  ],
  "Host to Maintenance": [
   null,
@@ -627,9 +651,9 @@ return plural;
   null,
   "マスク不可割り込みを送信します"
  ],
- "Send shortcut": [
+ "Send key": [
   null,
-  "ショートカットの送信"
+  ""
  ],
  "Serial Console": [
   null,
@@ -791,6 +815,38 @@ return plural;
   null,
   "VDSM サービス管理"
  ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "VM FORCE OFF アクションに失敗しました"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "VM FORCE REBOOT アクションに失敗しました"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "VM REBOOT アクションに失敗しました"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "VM SEND マスク不可な割り込みアクションに失敗しました"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "VM SHUT DOWN アクションに失敗しました"
+ ],
+ "VM START action failed": [
+  null,
+  "VM START アクションに失敗しました"
+ ],
  "VM icon": [
   null,
   "仮想マシンのアイコン"
@@ -834,10 +890,6 @@ return plural;
  "Volume": [
   null,
   "音量"
- ],
- "Your browser does not support iframes.": [
-  null,
-  "ブラウザーが、iframe をサポートしません。"
  ],
  "bridge": [
   null,

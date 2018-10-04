@@ -1,11 +1,34 @@
 # Generated Makefile data for apps
-# Stamp: Wed Sep 19 2018 10:18:38 GMT+0000 (UTC)
+# Stamp: Thu Oct 04 2018 13:19:42 GMT+0000 (UTC)
 
 apps_INPUTS = \
-	node_modules/react-lite/LICENSE \
-	node_modules/react-lite/README.md \
-	node_modules/react-lite/dist/react-lite.js \
-	node_modules/react-lite/package.json \
+	node_modules/create-react-class/LICENSE.txt \
+	node_modules/create-react-class/README.md \
+	node_modules/create-react-class/factory.js \
+	node_modules/create-react-class/index.js \
+	node_modules/create-react-class/package.json \
+	node_modules/promise/LICENSE \
+	node_modules/promise/lib/core.js \
+	node_modules/promise/lib/es6-extensions.js \
+	node_modules/promise/package.json \
+	node_modules/promise/polyfill-done.js \
+	node_modules/promise/polyfill.js \
+	node_modules/prop-types/LICENSE \
+	node_modules/prop-types/README.md \
+	node_modules/prop-types/factoryWithThrowingShims.js \
+	node_modules/prop-types/index.js \
+	node_modules/prop-types/lib/ReactPropTypesSecret.js \
+	node_modules/prop-types/package.json \
+	node_modules/react-dom/LICENSE \
+	node_modules/react-dom/README.md \
+	node_modules/react-dom/cjs/react-dom.production.min.js \
+	node_modules/react-dom/index.js \
+	node_modules/react-dom/package.json \
+	node_modules/react/LICENSE \
+	node_modules/react/README.md \
+	node_modules/react/cjs/react.production.min.js \
+	node_modules/react/index.js \
+	node_modules/react/package.json \
 	pkg/apps/application-list.jsx \
 	pkg/apps/application.css \
 	pkg/apps/application.jsx \
@@ -21,6 +44,7 @@ apps_INPUTS = \
 	pkg/lib/inotify.py \
 	pkg/lib/packagekit.es6 \
 	pkg/lib/page.css \
+	pkg/lib/polyfills.js \
 	pkg/lib/python.jsx \
 	pkg/lib/table.css \
 	$(NULL)
@@ -54,7 +78,7 @@ apps_TESTS = \
 
 dist/apps/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/react-lite/dist/react-lite.js -N pkg/apps/application-list.jsx -N pkg/apps/application.css -N pkg/apps/application.jsx -N pkg/apps/appstream.js -N pkg/apps/default.png -N pkg/apps/index.html -N pkg/apps/index.jsx -N pkg/apps/packagekit.es6 -N pkg/apps/utils.jsx -N pkg/apps/watch-appstream.py -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/inotify.py -N pkg/lib/packagekit.es6 -N pkg/lib/page.css -N pkg/lib/python.jsx -N pkg/lib/table.css $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/create-react-class/factory.js -N node_modules/create-react-class/index.js -N node_modules/promise/lib/core.js -N node_modules/promise/lib/es6-extensions.js -N node_modules/promise/polyfill-done.js -N node_modules/promise/polyfill.js -N node_modules/prop-types/factoryWithThrowingShims.js -N node_modules/prop-types/index.js -N node_modules/prop-types/lib/ReactPropTypesSecret.js -N node_modules/react-dom/cjs/react-dom.production.min.js -N node_modules/react-dom/index.js -N node_modules/react/cjs/react.production.min.js -N node_modules/react/index.js -N pkg/apps/application-list.jsx -N pkg/apps/application.css -N pkg/apps/application.jsx -N pkg/apps/appstream.js -N pkg/apps/default.png -N pkg/apps/index.html -N pkg/apps/index.jsx -N pkg/apps/packagekit.es6 -N pkg/apps/utils.jsx -N pkg/apps/watch-appstream.py -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/inotify.py -N pkg/lib/packagekit.es6 -N pkg/lib/page.css -N pkg/lib/polyfills.js -N pkg/lib/python.jsx -N pkg/lib/table.css $< > $@.tmp && mv $@.tmp $@
 
 dist/apps/stamp: $(apps_INPUTS)
 
@@ -70,13 +94,59 @@ dist/apps/default.png: dist/apps/stamp
 
 dist/apps/index.html: dist/apps/stamp
 
-node_modules/react-lite/LICENSE:
+node_modules/create-react-class/LICENSE.txt:
 
-node_modules/react-lite/README.md:
+node_modules/create-react-class/README.md:
 
-node_modules/react-lite/dist/react-lite.js:
+node_modules/create-react-class/factory.js:
 
-node_modules/react-lite/package.json:
+node_modules/create-react-class/index.js:
+
+node_modules/create-react-class/package.json:
+
+node_modules/promise/LICENSE:
+
+node_modules/promise/lib/core.js:
+
+node_modules/promise/lib/es6-extensions.js:
+
+node_modules/promise/package.json:
+
+node_modules/promise/polyfill-done.js:
+
+node_modules/promise/polyfill.js:
+
+node_modules/prop-types/LICENSE:
+
+node_modules/prop-types/README.md:
+
+node_modules/prop-types/factoryWithThrowingShims.js:
+
+node_modules/prop-types/index.js:
+
+node_modules/prop-types/lib/ReactPropTypesSecret.js:
+
+node_modules/prop-types/package.json:
+
+node_modules/react-dom/LICENSE:
+
+node_modules/react-dom/README.md:
+
+node_modules/react-dom/cjs/react-dom.production.min.js:
+
+node_modules/react-dom/index.js:
+
+node_modules/react-dom/package.json:
+
+node_modules/react/LICENSE:
+
+node_modules/react/README.md:
+
+node_modules/react/cjs/react.production.min.js:
+
+node_modules/react/index.js:
+
+node_modules/react/package.json:
 
 pkg/apps/application-list.jsx:
 
@@ -107,6 +177,8 @@ pkg/lib/inotify.py:
 pkg/lib/packagekit.es6:
 
 pkg/lib/page.css:
+
+pkg/lib/polyfills.js:
 
 pkg/lib/python.jsx:
 

@@ -141,7 +141,7 @@ return plural;
  ],
  "Active Backup": [
   null,
-  "主备"
+  "激活的备份"
  ],
  "Adaptive load balancing": [
   null,
@@ -165,11 +165,11 @@ return plural;
  ],
  "Add Services": [
   null,
-  ""
+  "添加服务"
  ],
  "Add Services…": [
   null,
-  ""
+  "添加服务…"
  ],
  "Add Team": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Allowed Services": [
   null,
-  ""
+  "允许的服务"
  ],
  "Apply": [
   null,
@@ -213,7 +213,7 @@ return plural;
  ],
  "Authenticating": [
   null,
-  "认证中"
+  "验证中"
  ],
  "Automatic": [
   null,
@@ -309,7 +309,7 @@ return plural;
  ],
  "Create it": [
   null,
-  "创建"
+  "创建它"
  ],
  "Creating this VLAN will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -325,7 +325,7 @@ return plural;
  ],
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "创建该组将断开与服务器的连接，并将使用管理界面不可用。"
+  "创建该组将断开与服务器的连接，并且将会导致管理界面不可用。"
  ],
  "DNS": [
   null,
@@ -345,7 +345,7 @@ return plural;
  ],
  "Deactivating": [
   null,
-  "停用中"
+  "取消激活中"
  ],
  "Delete": [
   null,
@@ -369,7 +369,7 @@ return plural;
  ],
  "Enable Service": [
   null,
-  ""
+  "启用服务"
  ],
  "Ethernet MAC": [
   null,
@@ -389,15 +389,15 @@ return plural;
  ],
  "Filter Services": [
   null,
-  ""
+  "过滤服务"
  ],
  "Firewall": [
   null,
-  ""
+  "防火墙"
  ],
  "Firewall is not available": [
   null,
-  ""
+  "防火墙不可用"
  ],
  "Forward delay $forward_delay": [
   null,
@@ -565,11 +565,11 @@ return plural;
  ],
  "Network devices and graphs require NetworkManager.": [
   null,
-  ""
+  "网络设备和图形需要 NetworkManager。"
  ],
  "NetworkManager is not running.": [
   null,
-  ""
+  "NetworkManager 没有运行。"
  ],
  "Networking": [
   null,
@@ -577,7 +577,7 @@ return plural;
  ],
  "Networking Logs": [
   null,
-  "联网日志"
+  "网络日志"
  ],
  "No": [
   null,
@@ -589,7 +589,7 @@ return plural;
  ],
  "No open ports": [
   null,
-  ""
+  "没有开放的端口"
  ],
  "Not available": [
   null,
@@ -609,11 +609,11 @@ return plural;
  ],
  "Parent": [
   null,
-  "父接口"
+  "父"
  ],
  "Parent $parent": [
   null,
-  "父接口 $parent"
+  "父 $parent"
  ],
  "Part of ": [
   null,
@@ -621,7 +621,7 @@ return plural;
  ],
  "Passive": [
   null,
-  "无源"
+  "被动"
  ],
  "Path cost": [
   null,
@@ -645,7 +645,7 @@ return plural;
  ],
  "Please install the {0} package": [
   null,
-  ""
+  "请安装{0}软件包"
  ],
  "Ports": [
   null,
@@ -665,7 +665,7 @@ return plural;
  ],
  "Preserve": [
   null,
-  "预置"
+  "保留"
  ],
  "Primary": [
   null,
@@ -697,7 +697,7 @@ return plural;
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "移除  <b>$0</b> 将中断与服务器的连接，并将导致管理界面不可用。"
+  "移除  <b>$0</b> 将断开与服务器的连接，并将导致管理界面不可用。"
  ],
  "Restoring connection": [
   null,
@@ -713,7 +713,7 @@ return plural;
  ],
  "Runner": [
   null,
-  "分流道"
+  "运行者"
  ],
  "STP Forward delay": [
   null,
@@ -761,7 +761,7 @@ return plural;
  ],
  "Start Service": [
   null,
-  ""
+  "启动服务"
  ],
  "Status": [
   null,
@@ -769,7 +769,7 @@ return plural;
  ],
  "Sticky": [
   null,
-  "粘性的"
+  "Sticky"
  ],
  "Switch off $0": [
   null,
@@ -777,7 +777,7 @@ return plural;
  ],
  "Switch on $0": [
   null,
-  "接通 $0"
+  "打开 $0"
  ],
  "Switching off <b>$0</b>  will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -789,7 +789,7 @@ return plural;
  ],
  "Switching on <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "接通 <b>$0</b> 将中断与服务器的连接，并将导致管理界面不可用。"
+  "打开 <b>$0</b> 将中断与服务器的连接，并将导致管理界面不可用。"
  ],
  "TCP": [
   null,
@@ -837,7 +837,7 @@ return plural;
  ],
  "Unknown \"$0\"": [
   null,
-  "未知的 \"$0\""
+  "未知 \"$0\""
  ],
  "Unknown configuration": [
   null,
@@ -873,7 +873,7 @@ return plural;
  ],
  "You are not authorized to modify the firewall.": [
   null,
-  ""
+  "您无权修改防火墙。"
  ],
  "[$0 bytes of binary data]": [
   null,
@@ -889,6 +889,6 @@ return plural;
  ],
  "page-title\u0004Networking": [
   null,
-  "联网"
+  "网络"
  ]
 }));

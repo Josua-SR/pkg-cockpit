@@ -83,7 +83,7 @@ return plural;
  ],
  "$0 is not available from any repository.": [
   null,
-  ""
+  "$0 no está disponible en ningún repositorio"
  ],
  "$0 minute": [
   "$0 minutes",
@@ -102,7 +102,7 @@ return plural;
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "Se instalará $0"
  ],
  "$0 year": [
   "$0 years",
@@ -295,7 +295,7 @@ return plural;
  ],
  "Additional packages:": [
   null,
-  ""
+  "Paquetes adicionales:"
  ],
  "Advanced TCA": [
   null,
@@ -323,7 +323,7 @@ return plural;
  ],
  "At specific time": [
   null,
-  "A hora espacífica"
+  "A hora específica"
  ],
  "Automatically using NTP": [
   null,
@@ -347,11 +347,11 @@ return plural;
  ],
  "Before": [
   null,
-  ""
+  "Antes"
  ],
  "Binds To": [
   null,
-  ""
+  "Asociado a"
  ],
  "Blade": [
   null,
@@ -407,7 +407,7 @@ return plural;
  ],
  "Checking installed software": [
   null,
-  ""
+  "Comprobando el software instalado"
  ],
  "Class": [
   null,
@@ -443,11 +443,11 @@ return plural;
  ],
  "Conflicts": [
   null,
-  ""
+  "Conflictos"
  ],
  "Consists Of": [
   null,
-  ""
+  "Consta de"
  ],
  "Convertible": [
   null,
@@ -515,7 +515,7 @@ return plural;
  ],
  "Downloading $0": [
   null,
-  ""
+  "Descargando $0"
  ],
  "Embedded PC": [
   null,
@@ -531,7 +531,7 @@ return plural;
  ],
  "Enable persistent metrics…": [
   null,
-  ""
+  "Activar métricas persistentes..."
  ],
  "Enabled": [
   null,
@@ -627,11 +627,11 @@ return plural;
  ],
  "Install Software": [
   null,
-  ""
+  "Instalar software"
  ],
  "Installing $0": [
   null,
-  ""
+  "Instalando $0"
  ],
  "Instantiate": [
   null,
@@ -879,7 +879,7 @@ return plural;
  ],
  "Part Of": [
   null,
-  ""
+  "Parte de"
  ],
  "Paths": [
   null,
@@ -967,11 +967,11 @@ return plural;
  ],
  "Removals:": [
   null,
-  ""
+  "Eliminaciones:"
  ],
  "Removing $0": [
   null,
-  ""
+  "Quitando $0"
  ],
  "Repeat Daily": [
   null,
@@ -1011,11 +1011,11 @@ return plural;
  ],
  "Required By": [
   null,
-  ""
+  "Necesitado por"
  ],
  "Requires": [
   null,
-  ""
+  "Requiere"
  ],
  "Requisite": [
   null,
@@ -1203,11 +1203,11 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to change the system time": [
   null,
-  ""
+  "El usuario <b>$0</b> no puede cambiar la hora del sistema"
  ],
  "The user <b>$0</b> is not permitted to enable or disable services": [
   null,
-  ""
+  "El usuario <b>$0</b> no puede activar ni desactivar servicios"
  ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
@@ -1219,7 +1219,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to start or stop services": [
   null,
-  ""
+  "El usuario <b>$0</b> no puede iniciar ni parar servicios"
  ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
@@ -1251,7 +1251,7 @@ return plural;
  ],
  "Total size: $0": [
   null,
-  ""
+  "Tamaño total: $0"
  ],
  "Tower": [
   null,
@@ -1312,7 +1312,7 @@ return plural;
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "Esperando a que finalicen otras operaciones de gestión de software"
  ],
  "Wanted By": [
   null,

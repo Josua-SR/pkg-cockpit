@@ -22,15 +22,17 @@
 
     var React = require("react");
     var ReactDOM = require("react-dom");
+    var PropTypes = require("prop-types");
+    var createReactClass = require('create-react-class');
 
     var cockpitListing = require("cockpit-components-listing.jsx");
 
     /* Sample tab renderer for listing pattern
      * Shows a caption and the time it was instantiated
      */
-    var DemoListingTab = React.createClass({
+    var DemoListingTab = createReactClass({
         propTypes: {
-            description: React.PropTypes.string.isRequired,
+            description: PropTypes.string.isRequired,
         },
         getInitialState: function() {
             return {

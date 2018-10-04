@@ -1,11 +1,28 @@
 # Generated Makefile data for realmd
-# Stamp: Wed Sep 19 2018 10:18:38 GMT+0000 (UTC)
+# Stamp: Thu Oct 04 2018 13:19:42 GMT+0000 (UTC)
 
 realmd_INPUTS = \
-	node_modules/react-lite/LICENSE \
-	node_modules/react-lite/README.md \
-	node_modules/react-lite/dist/react-lite.js \
-	node_modules/react-lite/package.json \
+	node_modules/create-react-class/LICENSE.txt \
+	node_modules/create-react-class/README.md \
+	node_modules/create-react-class/factory.js \
+	node_modules/create-react-class/index.js \
+	node_modules/create-react-class/package.json \
+	node_modules/prop-types/LICENSE \
+	node_modules/prop-types/README.md \
+	node_modules/prop-types/factoryWithThrowingShims.js \
+	node_modules/prop-types/index.js \
+	node_modules/prop-types/lib/ReactPropTypesSecret.js \
+	node_modules/prop-types/package.json \
+	node_modules/react-dom/LICENSE \
+	node_modules/react-dom/README.md \
+	node_modules/react-dom/cjs/react-dom.production.min.js \
+	node_modules/react-dom/index.js \
+	node_modules/react-dom/package.json \
+	node_modules/react/LICENSE \
+	node_modules/react/README.md \
+	node_modules/react/cjs/react.production.min.js \
+	node_modules/react/index.js \
+	node_modules/react/package.json \
 	pkg/lib/cockpit-components-dialog.css \
 	pkg/lib/cockpit-components-dialog.jsx \
 	pkg/lib/cockpit-components-install-dialog.css \
@@ -42,7 +59,7 @@ realmd_TESTS = \
 
 dist/realmd/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/react-lite/dist/react-lite.js -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-install-dialog.css -N pkg/lib/cockpit-components-install-dialog.jsx -N pkg/lib/packagekit.es6 -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/realmd/operation.html -N pkg/realmd/operation.js $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/create-react-class/factory.js -N node_modules/create-react-class/index.js -N node_modules/prop-types/factoryWithThrowingShims.js -N node_modules/prop-types/index.js -N node_modules/prop-types/lib/ReactPropTypesSecret.js -N node_modules/react-dom/cjs/react-dom.production.min.js -N node_modules/react-dom/index.js -N node_modules/react/cjs/react.production.min.js -N node_modules/react/index.js -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-install-dialog.css -N pkg/lib/cockpit-components-install-dialog.jsx -N pkg/lib/packagekit.es6 -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/realmd/operation.html -N pkg/realmd/operation.js $< > $@.tmp && mv $@.tmp $@
 
 dist/realmd/stamp: $(realmd_INPUTS)
 
@@ -54,13 +71,47 @@ dist/realmd/domain.min.js: dist/realmd/stamp
 
 dist/realmd/domain.min.js.map: dist/realmd/stamp
 
-node_modules/react-lite/LICENSE:
+node_modules/create-react-class/LICENSE.txt:
 
-node_modules/react-lite/README.md:
+node_modules/create-react-class/README.md:
 
-node_modules/react-lite/dist/react-lite.js:
+node_modules/create-react-class/factory.js:
 
-node_modules/react-lite/package.json:
+node_modules/create-react-class/index.js:
+
+node_modules/create-react-class/package.json:
+
+node_modules/prop-types/LICENSE:
+
+node_modules/prop-types/README.md:
+
+node_modules/prop-types/factoryWithThrowingShims.js:
+
+node_modules/prop-types/index.js:
+
+node_modules/prop-types/lib/ReactPropTypesSecret.js:
+
+node_modules/prop-types/package.json:
+
+node_modules/react-dom/LICENSE:
+
+node_modules/react-dom/README.md:
+
+node_modules/react-dom/cjs/react-dom.production.min.js:
+
+node_modules/react-dom/index.js:
+
+node_modules/react-dom/package.json:
+
+node_modules/react/LICENSE:
+
+node_modules/react/README.md:
+
+node_modules/react/cjs/react.production.min.js:
+
+node_modules/react/index.js:
+
+node_modules/react/package.json:
 
 pkg/lib/cockpit-components-dialog.css:
 

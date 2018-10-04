@@ -60,6 +60,7 @@ import {
 } from './helpers.es6';
 
 import {
+    buildFailHandler,
     canConsole,
     canDelete,
     canInstall,
@@ -67,6 +68,7 @@ import {
     canRun,
     canSendNMI,
     canShutdown,
+    getDiskElemByTarget,
     getSingleOptionalElem,
     isRunning,
     parseDumpxml,
@@ -95,10 +97,11 @@ const Enum = {
     VIR_DOMAIN_AFFECT_CONFIG: 2,
     VIR_DOMAIN_UNDEFINE_MANAGED_SAVE: 1,
     VIR_DOMAIN_UNDEFINE_SNAPSHOTS_METADATA: 2,
-    VIR_DOMAIN_UNDEFINE_NVRAM: 3,
+    VIR_DOMAIN_UNDEFINE_NVRAM: 4,
     VIR_DOMAIN_STATS_BALLOON: 4,
     VIR_DOMAIN_STATS_VCPU: 8,
     VIR_DOMAIN_STATS_BLOCK: 32,
+    VIR_DOMAIN_XML_INACTIVE: 2,
     VIR_CONNECT_LIST_STORAGE_POOLS_ACTIVE: 2,
     VIR_CONNECT_LIST_STORAGE_POOLS_DIR: 64
 };
@@ -265,11 +268,17 @@ LIBVIRT_DBUS_PROVIDER = {
         id: objPath,
         options
     }) {
-        function destroy() {
-            return call(connectionName, objPath, 'org.libvirt.Domain', 'Destroy', [0], TIMEOUT);
+        function destroy(dispatch) {
+            return call(connectionName, objPath, 'org.libvirt.Domain', 'Destroy', [0], TIMEOUT)
+                    .catch(exception => dispatch(vmActionFailed({
+                        name: name,
+                        connectionName,
+                        message: _("VM DELETE action failed"),
+                        detail: {exception}
+                    })));
         }
 
-        function undefine() {
+        function undefine(dispatch) {
             let storageVolPromises = [];
             let storageVolPathsPromises = [];
             let flags = Enum.VIR_DOMAIN_UNDEFINE_MANAGED_SAVE | Enum.VIR_DOMAIN_UNDEFINE_SNAPSHOTS_METADATA | Enum.VIR_DOMAIN_UNDEFINE_NVRAM;
@@ -277,7 +286,6 @@ LIBVIRT_DBUS_PROVIDER = {
             for (let i = 0; i < options.storage.length; i++) {
                 storageVolPathsPromises.push(
                     call(connectionName, '/org/libvirt/QEMU', 'org.libvirt.Connect', 'StorageVolLookupByPath', [options.storage[i]], TIMEOUT)
-                            .fail((ex) => console.error("Failed to LookupByPath", options.storage[i]))
                 );
             }
 
@@ -286,23 +294,60 @@ LIBVIRT_DBUS_PROVIDER = {
                         for (let i = 0; i < storageVolPaths.length; i++) {
                             storageVolPromises.push(
                                 call(connectionName, storageVolPaths[i][0], 'org.libvirt.StorageVol', 'Delete', [0], TIMEOUT)
-                                        .fail((ex) => console.error("Failed to Delete", storageVolPaths[i][0]))
                             );
                         }
                         return Promise.all(storageVolPathsPromises);
                     })
                     .then(() => {
-                        call(connectionName, objPath, 'org.libvirt.Domain', 'Undefine', [flags], TIMEOUT)
-                                .fail(ex => console.error("Failed to Undefine Domain %s:", name, ex));
-                    });
+                        call(connectionName, objPath, 'org.libvirt.Domain', 'Undefine', [flags], TIMEOUT);
+                    })
+                    .catch(exception => dispatch(vmActionFailed({
+                        name: name,
+                        connectionName,
+                        message: _("VM DELETE action failed"),
+                        detail: {exception}
+                    })));
         }
 
         return dispatch => {
             if (options.destroy) {
-                return destroy().then(undefine);
+                return destroy(dispatch).then(undefine(dispatch));
             } else {
-                return undefine();
+                return undefine(dispatch);
             }
+        };
+    },
+
+    DETACH_DISK({
+        name,
+        connectionName,
+        id: vmPath,
+        target,
+        live
+    }) {
+        let detachFlags = Enum.VIR_DOMAIN_AFFECT_CURRENT;
+        if (live)
+            detachFlags |= Enum.VIR_DOMAIN_AFFECT_LIVE;
+
+        return dispatch => {
+            clientLibvirt[connectionName].call(vmPath, 'org.libvirt.Domain', 'GetXMLDesc', [0], TIMEOUT)
+                    .done(domXml => {
+                        let diskXML = getDiskElemByTarget(domXml[0], target);
+                        let getXMLFlags = Enum.VIR_DOMAIN_XML_INACTIVE;
+
+                        clientLibvirt[connectionName].call(vmPath, 'org.libvirt.Domain', 'GetXMLDesc', [getXMLFlags], TIMEOUT)
+                                .done(domInactiveXml => {
+                                    let diskInactiveXML = getDiskElemByTarget(domInactiveXml[0], target);
+                                    if (diskInactiveXML)
+                                        detachFlags |= Enum.VIR_DOMAIN_AFFECT_CONFIG;
+
+                                    clientLibvirt[connectionName].call(vmPath, 'org.libvirt.Domain', 'DetachDevice', [diskXML, detachFlags], TIMEOUT)
+                                            .done(() => { dispatch(getVm({connectionName, id:vmPath})) })
+                                            .fail(buildFailHandler({ dispatch, name, connectionName, message: _("VM DETACH action failed") }));
+                                })
+                                .fail(buildFailHandler({ dispatch, name, connectionName, message: _("VM DETACH action failed") }));
+                    })
+                    .fail(buildFailHandler({ dispatch, name, connectionName, message: _("VM DETACH action failed") }));
         };
     },
 
@@ -382,7 +427,7 @@ LIBVIRT_DBUS_PROVIDER = {
     GET_STORAGE_POOLS({
         connectionName
     }) {
-        let flags = Enum.VIRCONNECT_LIST_STORAGE_POOLS_ACTIVE | Enum.VIRCONNECT_LIST_STORAGE_POOLS_DIR;
+        let flags = Enum.VIR_CONNECT_LIST_STORAGE_POOLS_ACTIVE | Enum.VIR_CONNECT_LIST_STORAGE_POOLS_DIR;
         return dispatch => call(connectionName, '/org/libvirt/QEMU', 'org.libvirt.Connect', 'ListStoragePools', [flags], TIMEOUT)
                 .done(objPaths => {
                     let pools = [];
@@ -620,7 +665,7 @@ function getDomainMaxVCPU(capsXML) {
 
     const domainCapsElem = xmlDoc.getElementsByTagName("domainCapabilities")[0];
     const vcpuElem = domainCapsElem.getElementsByTagName("vcpu")[0];
-    const vcpuMaxAttr = vcpuElem.attributes.getNamedItem('max');
+    const vcpuMaxAttr = vcpuElem.getAttribute('max');
 
     return vcpuMaxAttr;
 }
@@ -851,8 +896,12 @@ function startEventMonitor(dispatch, connectionName, libvirtServiceName) {
  * Get Libvirt D-Bus client
  */
 function dbus_client(connectionName) {
-    if (!(connectionName in clientLibvirt) || clientLibvirt[connectionName] === null)
-        clientLibvirt[connectionName] = cockpit.dbus("org.libvirt", { bus: connectionName });
+    if (!(connectionName in clientLibvirt) || clientLibvirt[connectionName] === null) {
+        let opts = { bus: connectionName };
+        if (connectionName === 'system')
+            opts['superuser'] = 'try';
+        clientLibvirt[connectionName] = cockpit.dbus("org.libvirt", opts);
+    }
 
     return clientLibvirt[connectionName];
 }

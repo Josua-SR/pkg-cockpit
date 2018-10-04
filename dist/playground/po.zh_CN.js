@@ -153,7 +153,7 @@ return plural;
  ],
  "Too many files found": [
   null,
-  "太多文件未找到"
+  "找到太多文件"
  ],
  "Unavailable": [
   null,

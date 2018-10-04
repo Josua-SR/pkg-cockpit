@@ -1567,10 +1567,6 @@ return plural;
   null,
   "Користувачі"
  ],
- "Virtual Machines": [
-  null,
-  "Віртуальні машини"
- ],
  "Volume": [
   null,
   "Том"

@@ -73,7 +73,7 @@ return plural;
  ],
  "$0 vCPU Details": [
   null,
-  ""
+  "$0 Detalles vCPU"
  ],
  "Action": [
   null,
@@ -85,7 +85,7 @@ return plural;
  ],
  "Add Disk": [
   null,
-  ""
+  "Añadir disco"
  ],
  "Additional": [
   null,
@@ -101,7 +101,7 @@ return plural;
  ],
  "All changes will take effect only after stopping and starting the VM.": [
   null,
-  ""
+  "Los cambios sólo tendrán efecto tras el reinicio de la MV."
  ],
  "All running virtual machines will be turned off.": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "Attach permanently": [
   null,
-  ""
+  "Conectar permanentemente"
  ],
  "Automatically selected host": [
   null,
@@ -146,6 +146,10 @@ return plural;
  "Bus": [
   null,
   "Bus"
+ ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "Fallo en la acción CHANGE NETWORK STATE"
  ],
  "CPU Type:": [
   null,
@@ -207,6 +211,10 @@ return plural;
   null,
   "Conectar con alguna aplicación para ver SPICE o VNC"
  ],
+ "Connecting": [
+  null,
+  ""
+ ],
  "Connection": [
   null,
   "Conexión"
@@ -221,7 +229,7 @@ return plural;
  ],
  "Cores per socket": [
   null,
-  ""
+  "Núcleos por socket"
  ],
  "Create": [
   null,
@@ -229,7 +237,7 @@ return plural;
  ],
  "Create New": [
   null,
-  ""
+  "Crear nuevo"
  ],
  "Create New VM": [
   null,
@@ -238,6 +246,10 @@ return plural;
  "Create VM": [
   null,
   "Crear VM"
+ ],
+ "Ctrl+Alt+Del": [
+  null,
+  ""
  ],
  "Delete": [
   null,
@@ -263,17 +275,21 @@ return plural;
   null,
   "Desconectar"
  ],
+ "Disconnected": [
+  null,
+  "Desconectado"
+ ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
   "Desconectado de la consola serie. Pulse el botón Reconectar."
  ],
  "Disk failed to be attached with following error: ": [
   null,
-  ""
+  "No se pudo añadir el disco por el siguiente error: "
  ],
  "Disk failed to be created with following error: ": [
   null,
-  ""
+  "No se pudo crear el disco por el siguiente error: "
  ],
  "Disks": [
   null,
@@ -301,7 +317,7 @@ return plural;
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
-  ""
+  "Deben habilitarse menos CPU virtuales de las máximas."
  ],
  "File": [
   null,
@@ -318,6 +334,10 @@ return plural;
  "Format": [
   null,
   "Formato"
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
  ],
  "GiB": [
   null,
@@ -342,6 +362,10 @@ return plural;
  "Host": [
   null,
   "Anfitrión"
+ ],
+ "Host Interface": [
+  null,
+  ""
  ],
  "Host to Maintenance": [
   null,
@@ -389,7 +413,7 @@ return plural;
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
-  ""
+  "Número máximo de CPU virtuales asignadas al SO invitado, entre 1 y $0"
  ],
  "Memory": [
   null,
@@ -425,7 +449,7 @@ return plural;
  ],
  "New Volume Name": [
   null,
-  ""
+  "Nuevo nombre de volumen"
  ],
  "No VM found in oVirt.": [
   null,
@@ -457,7 +481,7 @@ return plural;
  ],
  "Number of virtual CPUs that gonna be used.": [
   null,
-  ""
+  "Número de CPU virtuales que se usarán."
  ],
  "OK": [
   null,
@@ -489,11 +513,11 @@ return plural;
  ],
  "Please enter new volume name": [
   null,
-  ""
+  "Introduzca el nuevo nombre de volumen"
  ],
  "Please enter new volume size": [
   null,
-  ""
+  "Introduzca el nuevo tamaño de volumen"
  ],
  "Please provide fully qualified domain name and port of the oVirt engine.": [
   null,
@@ -627,9 +651,9 @@ return plural;
   null,
   "Enviar Interrupción no Enmascarable"
  ],
- "Send shortcut": [
+ "Send key": [
   null,
-  "Enviar atajo"
+  ""
  ],
  "Serial Console": [
   null,
@@ -745,7 +769,7 @@ return plural;
  ],
  "The pool is empty": [
   null,
-  ""
+  "El grupo está vacío"
  ],
  "This host is managed by a virtualization manager, so creation of new VMs from the host is not possible.": [
   null,
@@ -757,7 +781,7 @@ return plural;
  ],
  "Threads per cores": [
   null,
-  ""
+  "Hilos por núcleo"
  ],
  "Type": [
   null,
@@ -777,7 +801,7 @@ return plural;
  ],
  "Use Existing": [
   null,
-  ""
+  "Usar existente"
  ],
  "Used": [
   null,
@@ -790,6 +814,38 @@ return plural;
  "VDSM Service Management": [
   null,
   "Gestión de Servicio VDSM"
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "VM FORCE OFF falló acción"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "VM FORCE REBOOT falló acción"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "VM REBOOT falló acción"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "VM SEND Non-Maskable Interrrupt falló acción"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "VM SHUT DOWN falló acción"
+ ],
+ "VM START action failed": [
+  null,
+  "VM START falló acción"
  ],
  "VM icon": [
   null,
@@ -834,10 +890,6 @@ return plural;
  "Volume": [
   null,
   "Volumen"
- ],
- "Your browser does not support iframes.": [
-  null,
-  "Du navegador no soporta iframes."
  ],
  "bridge": [
   null,
@@ -985,11 +1037,11 @@ return plural;
  ],
  "qcow2": [
   null,
-  ""
+  "qcow2"
  ],
  "raw": [
   null,
-  ""
+  "raw"
  ],
  "reboot": [
   null,
@@ -1053,7 +1105,7 @@ return plural;
  ],
  "vCPU Count": [
   null,
-  ""
+  "Conteo de CPU virtuales"
  ],
  "vCPU Maximum": [
   null,

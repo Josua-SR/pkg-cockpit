@@ -757,7 +757,7 @@ return plural;
  ],
  "Stop and delete": [
   null,
-  ""
+  "Parar y borrar"
  ],
  "Stopped": [
   null,
@@ -801,7 +801,7 @@ return plural;
  ],
  "The following containers depend on this image and will become unusable.": [
   null,
-  ""
+  "Los siguientes contenedores dependen de esta imagen y no podrán usarse."
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,
@@ -849,7 +849,7 @@ return plural;
  ],
  "Up since $0": [
   null,
-  ""
+  "En marcha desde $0"
  ],
  "Used": [
   null,
@@ -865,7 +865,7 @@ return plural;
  ],
  "Volumes:": [
   null,
-  ""
+  "Volúmenes:"
  ],
  "With terminal": [
   null,

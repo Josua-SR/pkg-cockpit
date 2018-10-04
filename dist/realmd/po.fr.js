@@ -69,31 +69,31 @@ return plural;
  },
  "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  ""
+  "$0 Seuls les utilisateurs disposant d'informations d'identification locales pourront se connecter à cette machine. Cela peut également affecter d'autres services en tant que paramètres de résolution DNS et la liste des autorités de certification approuvées peut changer."
  ],
  "$0 is not available from any repository.": [
   null,
-  ""
+  "$0 n'est disponible à partir d'aucun référentiel."
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "0 $ sera installé."
  ],
  "Additional packages:": [
   null,
-  ""
+  "Paquets supplémentaires :"
  ],
  "Administrator Password": [
   null,
-  "Mot de passe de l'administrateur"
+  "Mot de passe administrateur"
  ],
  "Are you sure you want to leave the '$0' domain?": [
   null,
-  ""
+  "Êtes-vous certain de vouloir quitter le domaine « $0 » ?"
  ],
  "Are you sure you want to leave this domain?": [
   null,
-  ""
+  "Êtes-vous sûr de vouloir quitter ce domaine?"
  ],
  "Authentication": [
   null,
@@ -109,19 +109,19 @@ return plural;
  ],
  "Checking installed software": [
   null,
-  ""
+  "Vérification des logiciels installés"
  ],
  "Computer OU": [
   null,
-  "OU Computer"
+  "Ordinateur OU"
  ],
  "Domain $0 could not be contacted": [
   null,
-  "Le domaine $0 ne peut être contacté"
+  "Le domaine $0 n'a pas pu être contacté"
  ],
  "Domain $0 is not supported": [
   null,
-  ""
+  "Le domaine $0 n'est pas pris en charge"
  ],
  "Domain Address": [
   null,
@@ -133,39 +133,39 @@ return plural;
  ],
  "Domain Administrator Password": [
   null,
-  "Mot de passe de l'administrateur du domaine"
+  "Mot de passe administrateur du domaine"
  ],
  "Downloading $0": [
   null,
-  ""
+  "Téléchargement $0"
  ],
  "Install": [
   null,
-  ""
+  "Installer"
  ],
  "Install Software": [
   null,
-  ""
+  "Installer le logiciel"
  ],
  "Installing $0": [
   null,
-  ""
+  "Installation de $0"
  ],
  "Join": [
   null,
-  "Rejoindre"
+  "Joindre"
  ],
  "Join Domain": [
   null,
-  "Rejoindre le domaine"
+  "Joindre un domaine"
  ],
  "Join a Domain": [
   null,
-  "Rejoindre le domaine"
+  "Rejoignez un domaine"
  ],
  "Joining this domain is not supported": [
   null,
-  ""
+  "Rejoindre ce domaine n'est pas supporté"
  ],
  "Leave": [
   null,
@@ -173,7 +173,7 @@ return plural;
  ],
  "Leave Domain": [
   null,
-  "Rejoindre le domaine"
+  "Quitter le domaine"
  ],
  "More": [
   null,
@@ -181,19 +181,19 @@ return plural;
  ],
  "Next": [
   null,
-  "Suivant"
+  "Prochain"
  ],
  "Off": [
   null,
-  "Éteint"
+  "De"
  ],
  "Ok": [
   null,
-  ""
+  "Ok"
  ],
  "On": [
   null,
-  "Allumé"
+  "Sur"
  ],
  "One Time Password": [
   null,
@@ -201,27 +201,27 @@ return plural;
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "PackageKit crash"
  ],
  "Removals:": [
   null,
-  ""
+  "Suppressions :"
  ],
  "Removing $0": [
   null,
-  ""
+  "Suppression de $0"
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
-  "L'utilisateur <b>$0</b> n'a pas le droit de modifier les domaines"
+  "L'utilisateur <b>$0</b> n'est pas autorisé à modifier les domaines"
  ],
  "This may take a while": [
   null,
-  "Cela peut prendre un certain temps"
+  "Cela peut prendre un peu de temps"
  ],
  "Total size: $0": [
   null,
-  ""
+  "Taille totale : $0"
  ],
  "User Name": [
   null,
@@ -229,14 +229,14 @@ return plural;
  ],
  "User Password": [
   null,
-  "Mot de passe utilisateur"
+  "Mot de passe de l'utilisateur"
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "Attente de la fin des autres opérations de gestion du logiciel"
  ],
  "e.g. \"$0\"": [
   null,
-  "ie. « $0 »"
+  "par ex. \"$0\""
  ]
 }));

@@ -1567,10 +1567,6 @@ return plural;
   null,
   "Użytkownicy"
  ],
- "Virtual Machines": [
-  null,
-  "Maszyny wirtualne"
- ],
  "Volume": [
   null,
   "Wolumin"

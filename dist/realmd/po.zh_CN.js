@@ -69,19 +69,19 @@ return plural;
  },
  "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  "$0 仅本地用户可登录到该主机。这可能也会影响其他服务，比如DNS解析配置，并且信任的CA列表可能改变。"
+  "$0 仅本地用户可登录到该主机。这可能也会影响其他服务，因为 DNS 解析配置以及信任的 CA 列表可能会改变。"
  ],
  "$0 is not available from any repository.": [
   null,
-  ""
+  "所有仓库都不提供 $0。"
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "将安装 $0。"
  ],
  "Additional packages:": [
   null,
-  ""
+  "额外的软件包："
  ],
  "Administrator Password": [
   null,
@@ -89,15 +89,15 @@ return plural;
  ],
  "Are you sure you want to leave the '$0' domain?": [
   null,
-  "请确认你是否想要离开域 '$0' ？"
+  "您确定要离开域 '$0' 吗？"
  ],
  "Are you sure you want to leave this domain?": [
   null,
-  "请确认你是否想要离开域？"
+  "您确定要离开这个域吗？"
  ],
  "Authentication": [
   null,
-  "认证"
+  "验证"
  ],
  "Automatic": [
   null,
@@ -109,7 +109,7 @@ return plural;
  ],
  "Checking installed software": [
   null,
-  ""
+  "检查安装的软件"
  ],
  "Computer OU": [
   null,
@@ -117,7 +117,7 @@ return plural;
  ],
  "Domain $0 could not be contacted": [
   null,
-  "域名 $0 无法联系"
+  "域 $0 无法联系"
  ],
  "Domain $0 is not supported": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Downloading $0": [
   null,
-  ""
+  "正在下载"
  ],
  "Install": [
   null,
@@ -145,11 +145,11 @@ return plural;
  ],
  "Install Software": [
   null,
-  ""
+  "安装软件"
  ],
  "Installing $0": [
   null,
-  ""
+  "正在安装 $0"
  ],
  "Join": [
   null,
@@ -205,11 +205,11 @@ return plural;
  ],
  "Removals:": [
   null,
-  ""
+  "移除"
  ],
  "Removing $0": [
   null,
-  ""
+  "正在删除 $0"
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
@@ -221,7 +221,7 @@ return plural;
  ],
  "Total size: $0": [
   null,
-  ""
+  "总大小：$0"
  ],
  "User Name": [
   null,
@@ -233,7 +233,7 @@ return plural;
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "等待其他软件管理操作完成"
  ],
  "e.g. \"$0\"": [
   null,

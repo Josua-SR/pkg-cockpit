@@ -77,35 +77,35 @@ return plural;
  ],
  "Compress crash dumps to save space": [
   null,
-  ""
+  "Compresser les vidages sur incident pour économiser de l'espace"
  ],
  "Compression": [
   null,
-  ""
+  "Compression"
  ],
  "Crash dump location": [
   null,
-  ""
+  "Emplacement de vidage"
  ],
  "Crash system": [
   null,
-  ""
+  "Système de crash"
  ],
  "Directory": [
   null,
-  ""
+  "Répertoire"
  ],
  "Directory $0 isn't writable or doesn't exist.": [
   null,
-  ""
+  "Le répertoire $0 n'est pas accessible en écriture ou n'existe pas."
  ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
-  ""
+  "Le service Kdump n'est pas installé. Veuillez vous assurer que le paquetage kexec-tools est installé."
  ],
  "Kernel Dump": [
   null,
-  ""
+  "Kernel Dump"
  ],
  "Loading...": [
   null,
@@ -113,15 +113,15 @@ return plural;
  ],
  "Local Filesystem": [
   null,
-  "Aucun système de fichiers"
+  "Système de fichiers local"
  ],
  "Location": [
   null,
-  ""
+  "Emplacement"
  ],
  "More details": [
   null,
-  ""
+  "Plus de détails"
  ],
  "Mount": [
   null,
@@ -129,11 +129,11 @@ return plural;
  ],
  "No configuration found": [
   null,
-  "Configuration inconnue"
+  "Aucune configuration trouvée"
  ],
  "No memory reserved. Append a crashkernel option to the kernel command line (e.g. in /etc/default/grub) to reserve memory at boot time. Example: crashkernel=512M": [
   null,
-  ""
+  "Pas de mémoire réservée. Ajoutez une option crashkernel à la ligne de commande du noyau (par exemple dans /etc/default/grub) pour réserver de la mémoire au démarrage. Exemple: crashkernel = 512M"
  ],
  "None": [
   null,
@@ -141,110 +141,110 @@ return plural;
  ],
  "Off": [
   null,
-  "Éteint"
+  "De"
  ],
  "Ok": [
   null,
-  ""
+  "Ok"
  ],
  "On": [
   null,
-  "Allumé"
+  "Sur"
  ],
  "On a mounted device": [
   null,
-  ""
+  "Sur un périphérique monté"
  ],
  "Raw to a device": [
   null,
-  ""
+  "Raw à un appareil"
  ],
  "Reading...": [
   null,
-  "Lecture"
+  "Lecture en cours..."
  ],
  "Remote over NFS": [
   null,
-  ""
+  "À distance sur NFS"
  ],
  "Remote over SSH": [
   null,
-  ""
+  "À distance sur SSH"
  ],
  "Reserved memory": [
   null,
-  ""
+  "Mémoire réservée"
  ],
  "Server": [
   null,
-  ""
+  "Serveur"
  ],
  "Service has an error": [
   null,
-  ""
+  "Le service a une erreur"
  ],
  "Service is running": [
   null,
-  "Tuned n'est pas en cours d'exécution"
+  "Le service est en cours d'exécution"
  ],
  "Service is starting": [
   null,
-  "Cette machine redémarre"
+  "Le service s'arrête"
  ],
  "Service is stopped": [
   null,
-  ""
+  "Le service est arrêté"
  ],
  "Service is stopping": [
   null,
-  ""
+  "Le service s'arrête"
  ],
  "Test Configuration": [
   null,
-  "Configuration"
+  "Configuration du test"
  ],
  "Test is only available while the kdump service is running.": [
   null,
-  ""
+  "Le test n'est disponible que lorsque le service kdump est en cours d'exécution."
  ],
  "Test kdump settings": [
   null,
-  ""
+  "Tester les paramètres de kdump"
  ],
  "This will test kdump settings by crashing the kernel and thereby the system. Depending on the settings, the system may not automatically reboot and the process may take a while.": [
   null,
-  ""
+  "Ceci testera les paramètres de kdump en plantant le noyau et ainsi le système. Selon les paramètres, le système peut ne pas redémarrer automatiquement et le processus peut prendre un certain temps."
  ],
  "This will test the kdump configuration by crashing the kernel.": [
   null,
-  ""
+  "Cela testera la configuration de kdump en plantant le noyau."
  ],
  "Unable to apply settings: $0": [
   null,
-  ""
+  "Impossible d'appliquer les paramètres : $0"
  ],
  "Use the setting in /etc/kdump.conf": [
   null,
-  ""
+  "Utilisez le paramètre dans /etc/kdump.conf"
  ],
  "invalid: multiple targets defined": [
   null,
-  ""
+  "invalide: plusieurs cibles définies"
  ],
  "kdump status": [
   null,
-  ""
+  "statut kdump"
  ],
  "locally in $0": [
   null,
-  ""
+  "localement dans $0"
  ],
  "ssh key": [
   null,
-  ""
+  "clé ssh"
  ],
  "undefined": [
   null,
-  ""
+  "indéfini"
  ]
 }));

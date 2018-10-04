@@ -46,8 +46,7 @@
 
    They are all called like this:
 
-       FieldFunction(tag, title, { option: value, ... },
-                     [ child, ... ])
+       FieldFunction(tag, title, { option: value, ... })
 
    The "tag" is used to uniquely identify this field in the dialog.
    The action function will receive the values of all fields in an
@@ -90,8 +89,8 @@
 
    COMMON FIELD OPTIONS
 
-   Each field function describes its options and its children.
-   However, there are some options that apply to all fields:
+   Each field function describes its options.  However, there are some
+   options that apply to all fields:
 
    - value
 
@@ -133,6 +132,34 @@
    - explanation
 
    A test to show below the field, as an explanation.
+
+   RUNNING TASKS AND DYNAMIC UPDATES
+
+   The dialog_show function returns an object that can be used to interact
+   with the dialog in various ways while it is open.
+
+       dlg = dialog_show(...)
+
+   One can run asynchronous tasks:
+
+       dlg.run("title", promise)
+
+   This will disable the footer buttons and wait for promise to be resolved
+   or rejected while showing "title" and a spinner.
+
+   One can set field values and options:
+
+       dlg.set_values({ tag1: value1, tag2: value2, ... })
+       dlg.set_options(tag, { opt1: value1, opt2: value2, ... })
+
+   It is also possible to specify a "update" function when creating the dialog:
+
+       dialog_show({ ...
+                     update: function (dlg, vals, trigger) { }
+                     ... })
+
+   This function is called whenever the values of fields are changed.  The
+   "trigger" argument is the tag of the field that has just been changed.
 
    DEFINING NEW FIELD TYPES
 
@@ -250,7 +277,7 @@ const Body = ({body, fields, values, errors, onChange}) => {
                 if (f.tag && f.options && f.options.update)
                     values[f.tag] = f.options.update(values, field.tag);
             });
-            onChange();
+            onChange(field.tag);
         }
 
         if (is_visible(field, values))
@@ -286,7 +313,9 @@ export const dialog_open = (def) => {
     // Body component maybe, but we also want the values up here so
     // that we can pass them to validate and the action functon.
 
-    const update = (errors) => {
+    const update = (errors, trigger) => {
+        if (def.update)
+            def.update(self, values, trigger);
         dlg.setProps(props(errors));
     };
 
@@ -298,7 +327,7 @@ export const dialog_open = (def) => {
                         fields={fields}
                         values={values}
                         errors={errors}
-                        onChange={() => update(null)} />
+                        onChange={trigger => update(null, trigger)} />
         };
     };
 
@@ -327,7 +356,7 @@ export const dialog_open = (def) => {
                                   if (error.toString() != "[object Object]") {
                                       return Promise.reject(error);
                                   } else {
-                                      update(error);
+                                      update(error, null);
                                       return Promise.reject();
                                   }
                               });
@@ -365,7 +394,7 @@ export const dialog_open = (def) => {
 
     let dlg = show_modal_dialog(props(null), footer_props(null, null));
 
-    return {
+    let self = {
         run: (title, promise) => {
             update_footer(title, promise);
             promise.then(
@@ -374,17 +403,28 @@ export const dialog_open = (def) => {
                 },
                 (errors) => {
                     if (errors)
-                        update(errors);
+                        update(errors, null);
                     update_footer(null, null);
                 });
         },
 
         set_values: (new_vals) => {
             Object.assign(values, new_vals);
-            update(null);
-        }
+            update(null, null);
+        },
+
+        set_options: (tag, new_options) => {
+            fields.forEach(f => {
+                if (f.tag == tag) {
+                    Object.assign(f.options, new_options);
+                    update(null, null);
+                }
+            });
+        },
 
     };
+
+    return self;
 };
 
 /* GENERIC FIELD TYPES
@@ -400,6 +440,7 @@ export const TextInput = (tag, title, options) => {
         render: (val, change) =>
             <input data-field={tag} data-field-type="text-input"
                    className="form-control" type="text" value={val}
+                   disabled={options.disabled}
                    onChange={event => change(event.target.value)} />
     };
 };
@@ -418,18 +459,79 @@ export const PassInput = (tag, title, options) => {
     };
 };
 
-export const SelectOne = (tag, title, options, choices) => {
+class ComboboxElement extends React.Component {
+    constructor(props) {
+        super();
+        this.state = { open: false };
+    }
+
+    render() {
+        let { value, onChange, disabled, choices } = this.props;
+
+        const toggle_open = (event) => {
+            if (event.button === 0)
+                this.setState({ open: !this.state.open });
+        };
+
+        const set_from_menu = (event, text) => {
+            if (event.button === 0) {
+                this.setState({ open: false });
+                onChange(text);
+            }
+        };
+
+        return (
+            <div className="combobox-container">
+                <div className={"input-group" + (this.state.open ? " open" : "")}>
+                    <input className="combobox form-control" type="text"
+                       disabled={disabled} value={value}
+                           onChange={event => onChange(event.target.value)} />
+                    { choices.length > 0 && !disabled
+                        ? <React.Fragment>
+                            <span className="input-group-addon"
+                              onClick={toggle_open}>
+                                <span className="caret" />
+                            </span>
+                            <ul className="typeahead typeahead-long dropdown-menu">
+                                { choices.map(c => <li key={c}><a onClick={ev => set_from_menu(ev, c)}>{c}</a></li>) }
+                            </ul>
+                        </React.Fragment>
+                        : null
+                    }
+                </div>
+            </div>
+        );
+    }
+}
+
+export const ComboBox = (tag, title, options) => {
     return {
         tag: tag,
         title: title,
         options: options,
-        initial_value: options.value || choices[0].value,
+        initial_value: options.value || "",
+
+        render: (val, change) =>
+            <div data-field={tag} data-field-type="combobox">
+                <ComboboxElement value={val} choices={options.choices}
+                                 disabled={options.disabled} onChange={change} />
+            </div>
+    };
+};
+
+export const SelectOne = (tag, title, options) => {
+    return {
+        tag: tag,
+        title: title,
+        options: options,
+        initial_value: options.value || options.choices[0].value,
 
         render: (val, change) => {
             return (
-                <div data-field={tag} data-field-type="select" value={val}>
+                <div data-field={tag} data-field-type="select" data-value={val}>
                     <StatelessSelect extraClass="form-control" selected={val} onChange={change}>
-                        { choices.map(c => <SelectEntry data={c.value} disabled={c.disabled} key={c.title}>{c.title}</SelectEntry>) }
+                        { options.choices.map(c => <SelectEntry data={c.value} disabled={c.disabled}
+                                                                key={c.title}>{c.title}</SelectEntry>) }
                     </StatelessSelect>
                 </div>
             );
@@ -437,17 +539,17 @@ export const SelectOne = (tag, title, options, choices) => {
     };
 };
 
-export const SelectOneRadio = (tag, title, options, choices) => {
+export const SelectOneRadio = (tag, title, options) => {
     return {
         tag: tag,
         title: title,
         options: options,
-        initial_value: options.value || choices[0].value,
+        initial_value: options.value || options.choices[0].value,
 
         render: (val, change) => {
             return (
                 <span className="radio radio-horizontal" data-field={tag} data-field-type="select-radio" >
-                    { choices.map(c => (
+                    { options.choices.map(c => (
                         <label>
                             <input type="radio" checked={val == c.value} data-data={c.value}
                                      onChange={event => change(c.value)} />{c.title}
@@ -459,12 +561,12 @@ export const SelectOneRadio = (tag, title, options, choices) => {
     };
 };
 
-export const SelectRow = (tag, headers, options, choices) => {
+export const SelectRow = (tag, headers, options) => {
     return {
         tag: tag,
         title: null,
         options: options,
-        initial_value: options.value || choices[0].value,
+        initial_value: options.value || options.choices[0].value,
 
         render: (val, change) => {
             return (
@@ -473,7 +575,7 @@ export const SelectRow = (tag, headers, options, choices) => {
                         <tr>{headers.map(h => <th>{h}</th>)}</tr>
                     </thead>
                     <tbody>
-                        { choices.map(row => {
+                        { options.choices.map(row => {
                             return (
                                 <tr key={row.value}
                                     onMouseDown={ev => { if (ev && ev.button === 0) change(row.value); }}
@@ -490,7 +592,7 @@ export const SelectRow = (tag, headers, options, choices) => {
     };
 };
 
-export const SelectSpaces = (tag, title, options, spaces) => {
+export const SelectSpaces = (tag, title, options) => {
     return {
         tag: tag,
         title: title,
@@ -498,13 +600,13 @@ export const SelectSpaces = (tag, title, options, spaces) => {
         initial_value: [ ],
 
         render: (val, change) => {
-            if (spaces.length === 0)
+            if (options.spaces.length === 0)
                 return <span className="text-danger">{options.empty_warning}</span>;
 
             return (
                 <ul className="list-group available-disks-group dialog-list-ct"
                 data-field={tag} data-field-type="select-spaces">
-                    { spaces.map(spc => {
+                    { options.spaces.map(spc => {
                         let selected = (val.indexOf(spc) >= 0);
 
                         const on_change = (event) => {
@@ -515,7 +617,7 @@ export const SelectSpaces = (tag, title, options, spaces) => {
                         };
 
                         return (
-                            <li className="list-group-item">
+                            <li key={spc.desc} className="list-group-item">
                                 <div className="checkbox">
                                     <label>
                                         <input type="checkbox" checked={selected} onChange={on_change} />
@@ -533,7 +635,7 @@ export const SelectSpaces = (tag, title, options, spaces) => {
     };
 };
 
-export const SelectSpace = (tag, title, options, spaces) => {
+export const SelectSpace = (tag, title, options) => {
     return {
         tag: tag,
         title: title,
@@ -541,20 +643,20 @@ export const SelectSpace = (tag, title, options, spaces) => {
         initial_value: null,
 
         render: (val, change) => {
-            if (spaces.length === 0)
+            if (options.spaces.length === 0)
                 return <span className="text-danger">{options.empty_warning}</span>;
 
             return (
                 <ul className="list-group available-disks-group dialog-list-ct"
                     data-field={tag} data-field-type="select-spaces">
-                    { spaces.map(spc => {
+                    { options.spaces.map(spc => {
                         const on_change = (event) => {
                             if (event.target.checked)
                                 change(spc);
                         };
 
                         return (
-                            <li className="list-group-item">
+                            <li key={spc.desc} className="list-group-item">
                                 <div className="radio">
                                     <label>
                                         <input type="radio" checked={val == spc} onChange={on_change} />
@@ -686,7 +788,9 @@ class SizeSliderElement extends React.Component {
         let min = this.props.min || 0;
         let { unit } = this.state;
 
-        const round_size = (value) => {
+        const change_slider = (f) => {
+            let value = f * max;
+
             if (round) {
                 if (typeof round == "function")
                     value = round(value);
@@ -694,28 +798,8 @@ class SizeSliderElement extends React.Component {
                     value = Math.round(value / round) * round;
             }
 
-            // As a special case, if the user types something that
-            // looks like the maximum (or minimum) when formatted,
-            // always use exactly the maximum (or minimum).  Otherwise
-            // we have the confusing possibility that with the exact
-            // same string in the text input, the size is sometimes
-            // too large (or too small) and sometimes not.
-
-            function sanitize(limit) {
-                var fmt = cockpit.format_number(limit / unit);
-                var parse = +fmt * unit;
-
-                if (value == parse)
-                    value = limit;
-            }
-
-            sanitize(min);
-            sanitize(max);
-
-            return Math.round(value);
+            onChange(Math.max(min, value));
         };
-
-        const change_slider = (f) => onChange(round_size(Math.max(min, f * max)));
 
         const change_text = (event) => {
             if (event.type == "change") {
@@ -728,7 +812,25 @@ class SizeSliderElement extends React.Component {
                      */
                     onChange(event.target.value);
                 } else {
-                    onChange(round_size(val));
+                    // As a special case, if the user types something that
+                    // looks like the maximum (or minimum) when formatted,
+                    // always use exactly the maximum (or minimum).  Otherwise
+                    // we have the confusing possibility that with the exact
+                    // same string in the text input, the size is sometimes
+                    // too large (or too small) and sometimes not.
+
+                    const sanitize = (limit) => {
+                        var fmt = cockpit.format_number(limit / unit);
+                        var parse = +fmt * unit;
+
+                        if (val == parse)
+                            val = limit;
+                    };
+
+                    sanitize(min);
+                    sanitize(max);
+
+                    onChange(val);
                 }
             }
         };
@@ -769,25 +871,39 @@ export const SizeSlider = (tag, title, options) => {
         return msg;
     };
 
+    /* This object might be mutated by dialog.set_options(), so we
+       have to use it below for the 'max' option in order to pick up
+       changes to it.
+     */
+    let all_options = Object.assign({ }, options, { validate: validate });
+
     return {
         tag: tag,
         title: title,
-        options: Object.assign({ }, options, { validate: validate }),
+        options: all_options,
         initial_value: options.value || options.max || 0,
 
         render: (val, change) => {
             return (
                 <div data-field={tag} data-field-type="size-slider">
-                    <SizeSliderElement val={val} max={options.max} onChange={change} />
+                    <SizeSliderElement val={val}
+                                       max={all_options.max}
+                                       min={all_options.min}
+                                       round={all_options.round}
+                                       onChange={change} />
                 </div>
             );
         }
     };
 };
 
+function add_para(parts, text) {
+    parts.push(<p key={text}>{text}</p>);
+}
+
 function add_usage_message(parts, list, text, c1, c2) {
-    if (list.length > 0) {
-        parts.push(<p key={text}>{text}</p>);
+    if (list && list.length > 0) {
+        add_para(parts, text);
         parts.push(
             <table key={text + " table"} className="table table-bordered">
                 <tbody>
@@ -845,16 +961,16 @@ export const TeardownMessage = (usage) => {
     let has_services = teardown.Services && teardown.Services.length > 0;
 
     if (has_sessions && has_services)
-        parts.push(_("The filesystem is in use by login sessions and system services. Proceeding will stop these."));
+        add_para(parts, _("The filesystem is in use by login sessions and system services. Proceeding will stop these."));
     else if (has_sessions)
-        parts.push(_("The filesystem is in use by login sessions. Proceeding will stop these."));
+        add_para(parts, _("The filesystem is in use by login sessions. Proceeding will stop these."));
     else if (has_services)
-        parts.push(_("The filesystem is in use by system services. Proceeding will stop these."));
+        add_para(parts, _("The filesystem is in use by system services. Proceeding will stop these."));
 
-    function add_units(list, h1, h2, h3, c1, c2, c3) {
+    function add_units(list, key, h1, h2, h3, c1, c2, c3) {
         if (list && list.length > 0) {
             parts.push(
-                <table className="table table-bordered units-table">
+                <table key={key} className="table table-bordered units-table">
                     <thead>
                         <tr>
                             <th>{h1}</th>
@@ -875,11 +991,11 @@ export const TeardownMessage = (usage) => {
         }
     }
 
-    add_units(teardown.Sessions,
+    add_units(teardown.Sessions, "sessions",
               _("Session"), _("Process"), _("Active since"),
               "Name", "Command", "Since");
 
-    add_units(teardown.Services,
+    add_units(teardown.Services, "services",
               _("Service"), _("Unit"), _("Active since"),
               "Name", "Unit", "Since");
 

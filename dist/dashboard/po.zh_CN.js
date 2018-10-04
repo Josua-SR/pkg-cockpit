@@ -121,7 +121,7 @@ return plural;
  ],
  "Add Machine to Dashboard": [
   null,
-  "添加主机到仪表板"
+  "把机器添加到仪表板"
  ],
  "Address": [
   null,
@@ -129,19 +129,19 @@ return plural;
  ],
  "Advanced TCA": [
   null,
-  ""
+  "高级 TCA"
  ],
  "All In One": [
   null,
-  ""
+  "所有"
  ],
  "Authentication": [
   null,
-  "认证"
+  "验证"
  ],
  "Authentication Failed": [
   null,
-  "认证失败"
+  "验证失败"
  ],
  "Available": [
   null,
@@ -149,19 +149,19 @@ return plural;
  ],
  "Avatar": [
   null,
-  "替身"
+  "头像"
  ],
  "Blade": [
   null,
-  ""
+  "刀片"
  ],
  "Blade enclosure": [
   null,
-  ""
+  "刀片机箱"
  ],
  "Bus Expansion Chassis": [
   null,
-  ""
+  "总线扩展机箱"
  ],
  "CPU": [
   null,
@@ -169,7 +169,7 @@ return plural;
  ],
  "Can't load image": [
   null,
-  ""
+  "无法加载镜像"
  ],
  "Cancel": [
   null,
@@ -185,7 +185,7 @@ return plural;
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
-  "Cockpit 无法与指定主机 $0 联系。请确认已经在端口 $1 上运行 SSH，或者在该地址中指定另一个端口。"
+  "Cockpit 无法与指定主机 $0 联系。请确认已经在端口 $1 上运行 SSH，或者在地址中指定另一个端口。"
  ],
  "Cockpit is not installed": [
   null,
@@ -197,7 +197,7 @@ return plural;
  ],
  "Cockpit was unable to log in to {{#strong}}{{host}}{{/strong}}. {{#can_sync}}You may want to try to {{#sync_link}}synchronize users{{/sync_link}}.{{/can_sync}} For more authentication options and troubleshooting support please upgrade cockpit-ws to a newer version.": [
   null,
-  "Cockpit 无法登录到 {{#strong}}{{host}}{{/strong}}。 {{#can_sync}}也许想要尝试 {{#sync_link}}同步用户{{/sync_link}}。{{/can_sync}} 更多认证选项和排错支持，请更新 cockpit-ws 到一个新版本。"
+  "Cockpit 无法登录到 {{#strong}}{{host}}{{/strong}}。 您可以尝试使用 {{#can_sync}}对用户进行同步{{/sync_link}}。{{/can_sync}} 如需更多验证选项和排错支持，请把 cockpit-ws 更新到一个新版本。"
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}.": [
   null,
@@ -205,11 +205,11 @@ return plural;
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. To use this machine with cockpit you will need to enable one of the following authentication methods in the sshd config on {{#strong}}{{host}}{{/strong}}:": [
   null,
-  "Cockpit 无法登录到 {{#strong}}{{host}}{{/strong}}。 To use this machine with cockpit 需要在 {{#strong}}{{host}}{{/strong}} 上的 sshd 配置中启用以下认证方式其中之一 来使用该主机的 Cockpit:"
+  "Cockpit 无法登录到 {{#strong}}{{host}}{{/strong}}。 为了可以使这个机器可以使用 cockpit， 需要在 {{#strong}}{{host}}{{/strong}} 上的 sshd 配置中启用以下验证方式之一："
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. You can change your authentication credentials below. {{#can_sync}}You may prefer to {{#sync_link}}synchronize accounts and passwords{{/sync_link}}.{{/can_sync}}": [
   null,
-  "Cockpit 无法登录到 {{#strong}}{{host}}{{/strong}}。可以变更以下认证凭证。{{#can_sync}}也许想要 {{#sync_link}}同步账号和密码{{/sync_link}}.{{/can_sync}}"
+  "Cockpit 无法登录到 {{#strong}}{{host}}{{/strong}}。可以变更以下验证凭证。{{#can_sync}}您也可以尝试{{#sync_link}}同步账号和密码{{/sync_link}}。{{/can_sync}}"
  ],
  "Color": [
   null,
@@ -217,7 +217,7 @@ return plural;
  ],
  "Compact PCI": [
   null,
-  ""
+  "紧凑型 PCI"
  ],
  "Connect": [
   null,
@@ -233,7 +233,7 @@ return plural;
  ],
  "Convertible": [
   null,
-  ""
+  "可转换"
  ],
  "Could not contact {{host}}": [
   null,
@@ -245,19 +245,19 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "桌面"
  ],
  "Detachable": [
   null,
-  ""
+  "可拆开"
  ],
  "Disk I/O": [
   null,
-  "磁盘 读/写"
+  "磁盘 I/O"
  ],
  "Docking Station": [
   null,
-  ""
+  "Docking Station"
  ],
  "Edit Server": [
   null,
@@ -265,7 +265,7 @@ return plural;
  ],
  "Embedded PC": [
   null,
-  ""
+  "嵌入式 PC"
  ],
  "Enter IP address or host name": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "Expansion Chassis": [
   null,
-  ""
+  "扩展机箱"
  ],
  "Failed to add machine: $0": [
   null,
@@ -305,7 +305,7 @@ return plural;
  ],
  "Hand Held": [
   null,
-  ""
+  "手持"
  ],
  "Host Name": [
   null,
@@ -325,7 +325,7 @@ return plural;
  ],
  "IoT Gateway": [
   null,
-  ""
+  "IoT 网关"
  ],
  "Is sshd running on a different port?": [
   null,
@@ -341,7 +341,7 @@ return plural;
  ],
  "Laptop": [
   null,
-  ""
+  "笔记本电脑"
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
@@ -369,15 +369,15 @@ return plural;
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "低调桌面"
  ],
  "Lunch Box": [
   null,
-  ""
+  "午餐盒"
  ],
  "Main Server Chassis": [
   null,
-  ""
+  "主服务器机箱"
  ],
  "Memory": [
   null,
@@ -385,15 +385,15 @@ return plural;
  ],
  "Mini PC": [
   null,
-  ""
+  "迷你电脑"
  ],
  "Mini Tower": [
   null,
-  ""
+  "Mini Tower"
  ],
  "Multi-system Chassis": [
   null,
-  ""
+  "多系统机箱"
  ],
  "Network": [
   null,
@@ -413,7 +413,7 @@ return plural;
  ],
  "Notebook": [
   null,
-  ""
+  "笔记本"
  ],
  "Off": [
   null,
@@ -429,7 +429,7 @@ return plural;
  ],
  "Other": [
   null,
-  ""
+  "其他"
  ],
  "Password": [
   null,
@@ -441,11 +441,11 @@ return plural;
  ],
  "Peripheral Chassis": [
   null,
-  ""
+  "外设机箱"
  ],
  "Pizza Box": [
   null,
-  ""
+  "披萨盒"
  ],
  "Port": [
   null,
@@ -453,7 +453,7 @@ return plural;
  ],
  "Portable": [
   null,
-  ""
+  "手提"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -469,19 +469,19 @@ return plural;
  ],
  "RAID Chassis": [
   null,
-  ""
+  "RAID 机箱"
  ],
  "Rack Mount Chassis": [
   null,
-  ""
+  "机架式机箱"
  ],
  "Sealed-case PC": [
   null,
-  ""
+  "密封式 PC"
  ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
-  "选择你想要与 {{#strong}}{{host}}{{/strong}} 同步的用户"
+  "选择您需要与 {{#strong}}{{host}}{{/strong}} 同步的用户"
  ],
  "Servers": [
   null,
@@ -493,19 +493,19 @@ return plural;
  ],
  "Space-saving Computer": [
   null,
-  ""
+  "节省空间的计算机"
  ],
  "Stick PC": [
   null,
-  ""
+  "Stick PC"
  ],
  "Sub Chassis": [
   null,
-  ""
+  "子机箱"
  ],
  "Sub Notebook": [
   null,
-  ""
+  "子笔记本"
  ],
  "Synchronize": [
   null,
@@ -517,7 +517,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "平板"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -549,11 +549,11 @@ return plural;
  ],
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
   null,
-  "需要更新 cockpit-ws 到一个新版本来尝试一个不同的端口。"
+  "为了尝试一个不同的端口，需要把 cockpit-ws 升级到一个新版本。"
  ],
  "Tower": [
   null,
-  ""
+  "Tower"
  ],
  "Type a password": [
   null,

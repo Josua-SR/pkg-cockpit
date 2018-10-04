@@ -73,15 +73,15 @@ return plural;
  ],
  "$0 is not available from any repository.": [
   null,
-  ""
+  "$0 no está disponible en ningún repositorio"
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "Se instalará $0"
  ],
  "Additional packages:": [
   null,
-  ""
+  "Paquetes adicionales:"
  ],
  "Administrator Password": [
   null,
@@ -109,7 +109,7 @@ return plural;
  ],
  "Checking installed software": [
   null,
-  ""
+  "Comprobando el software instalado"
  ],
  "Computer OU": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Downloading $0": [
   null,
-  ""
+  "Descargando $0"
  ],
  "Install": [
   null,
@@ -145,11 +145,11 @@ return plural;
  ],
  "Install Software": [
   null,
-  ""
+  "Instalar software"
  ],
  "Installing $0": [
   null,
-  ""
+  "Instalando $0"
  ],
  "Join": [
   null,
@@ -205,11 +205,11 @@ return plural;
  ],
  "Removals:": [
   null,
-  ""
+  "Eliminaciones:"
  ],
  "Removing $0": [
   null,
-  ""
+  "Quitando $0"
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
@@ -221,7 +221,7 @@ return plural;
  ],
  "Total size: $0": [
   null,
-  ""
+  "Tamaño total: $0"
  ],
  "User Name": [
   null,
@@ -233,7 +233,7 @@ return plural;
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "Esperando a que finalicen otras operaciones de gestión de software"
  ],
  "e.g. \"$0\"": [
   null,

@@ -73,7 +73,7 @@ return plural;
  ],
  "'Organization' required when using activation keys.": [
   null,
-  "当使用激活密钥时需要“组织”。"
+  "当使用激活码时需要“组织”。"
  ],
  "Access denied": [
   null,
@@ -81,7 +81,7 @@ return plural;
  ],
  "Activation Key": [
   null,
-  "激活密钥"
+  "激活码"
  ],
  "Architecture": [
   null,
@@ -129,7 +129,7 @@ return plural;
  ],
  "Login/password or activation key required to register.": [
   null,
-  "注册需要登录/密码或激活密钥。"
+  "注册需要登录/密码或激活码。"
  ],
  "No installed products on the system.": [
   null,
@@ -169,7 +169,7 @@ return plural;
  ],
  "Retrieving subscription status...": [
   null,
-  "正在检索订阅状态..."
+  "正在获取订阅状态..."
  ],
  "Server": [
   null,
@@ -177,7 +177,7 @@ return plural;
  ],
  "Starts": [
   null,
-  "开头"
+  "开始"
  ],
  "Status": [
   null,
@@ -201,7 +201,7 @@ return plural;
  ],
  "URL": [
   null,
-  "网址"
+  "URL"
  ],
  "Unable to connect": [
   null,
