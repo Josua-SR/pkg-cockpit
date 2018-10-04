@@ -93,7 +93,7 @@ return plural;
  ],
  "Adding key": [
   null,
-  "添加 key"
+  "添加密钥"
  ],
  "Authorized Public SSH Keys": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Image Builder": [
   null,
-  ""
+  "图像生成器"
  ],
  "Invalid expiration date": [
   null,
@@ -289,7 +289,7 @@ return plural;
  ],
  "Prompting via passwd timed out": [
   null,
-  "passwd 提示已超时"
+  "通过密码提示已超时"
  ],
  "Require password change every $0 days": [
   null,
@@ -345,7 +345,7 @@ return plural;
  ],
  "There are no authorized public keys for this account.": [
   null,
-  "存在未被该帐户授权的公钥."
+  "没有这个帐户的授权公钥."
  ],
  "This user name already exists": [
   null,
@@ -381,7 +381,7 @@ return plural;
  ],
  "translatable": [
   null,
-  ""
+  "翻译"
  ],
  "page-title\u0004Accounts": [
   null,

@@ -766,12 +766,14 @@ tbody tr.listing-ct-noexpand {
 }
 
 .add-disk-select-source > input[type=radio] { }
-.console-menu {
-    padding-bottom: 1em;
-}
-
 .console-type-select {
     width: 19em !important;
+}
+
+.vnc-console .console-menu {
+    display: inline-block;
+    margin-bottom: -10px;
+    margin-top: -3px;
 }
 .table tbody tr:last-child td {
     border-bottom: 1px solid #d1d1d1;
@@ -2017,12 +2019,6 @@ tbody tr.listing-ct-noexpand {
   padding-right: 0px;
   padding-left: 0px;
 }
-.vnc-console .vnc-console-connecting {
-  background-color: #3f9c35;
-}
-.vnc-console .vnc-console-disconnected {
-  background-color: #cc0000;
-}
 .console-actions-pf {
   float: right;
   position: relative;
@@ -2030,6 +2026,26 @@ tbody tr.listing-ct-noexpand {
 }
 .console-actions-buttons-pf {
   margin-left: 5px;
+}
+.vnc-console {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.vnc-console .vnc-console-connecting {
+  background-color: #3f9c35;
+}
+.vnc-console .vnc-console-disconnected {
+  background-color: #cc0000;
+}
+.vnc-console .toolbar-pf {
+  border-bottom: none;
+}
+.vnc-console .toolbar-pf-results {
+  padding-top: 10px;
+}
+.vnc-console .toolbar-pf-action-right .dropdown-menu {
+  min-width: 102px;
+  /* avoid overflow if DropdownButton is used under Toolbar.RightContent */
 }
 .icon-2x-vms {
   font-size: 2em;

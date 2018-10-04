@@ -1565,10 +1565,6 @@ return plural;
   null,
   "Käyttäjät"
  ],
- "Virtual Machines": [
-  null,
-  "Virtuaalikoneet"
- ],
  "Volume": [
   null,
   "Taltio"

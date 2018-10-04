@@ -73,11 +73,11 @@ return plural;
  ],
  "Account Expiration": [
   null,
-  ""
+  "Expiration du compte"
  ],
  "Account not available or cannot be edited.": [
   null,
-  "Compte non disponible ou ne peut être édité."
+  "Compte non disponible ou ne peut pas être modifié."
  ],
  "Accounts": [
   null,
@@ -85,23 +85,23 @@ return plural;
  ],
  "Add key": [
   null,
-  ""
+  "Ajouter une clé"
  ],
  "Add public key": [
   null,
-  ""
+  "Ajouter une clé publique"
  ],
  "Adding key": [
   null,
-  "Ajout de la clé"
+  "Ajouter une clé"
  ],
  "Authorized Public SSH Keys": [
   null,
-  ""
+  "Clés SSH publiques autorisées"
  ],
  "Back to Accounts": [
   null,
-  ""
+  "Retour aux comptes"
  ],
  "Cancel": [
   null,
@@ -109,7 +109,7 @@ return plural;
  ],
  "Change": [
   null,
-  ""
+  "Changement"
  ],
  "Close": [
   null,
@@ -117,15 +117,15 @@ return plural;
  ],
  "Confirm": [
   null,
-  ""
+  "Confirmer"
  ],
  "Confirm New Password": [
   null,
-  ""
+  "Confirmer le nouveau mot de passe"
  ],
  "Container Administrator": [
   null,
-  "Administrateur de conteneurs"
+  "Administrateur de conteneur"
  ],
  "Create": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "Create New Account": [
   null,
-  ""
+  "Créer un nouveau compte"
  ],
  "Delete": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "Delete Files": [
   null,
-  ""
+  "Supprimer les fichiers"
  ],
  "Error": [
   null,
@@ -153,63 +153,63 @@ return plural;
  ],
  "Error saving authorized keys: ": [
   null,
-  "Erreur pendant l'enregistrement du fichier authorized_keys :"
+  "Erreur lors de l'enregistrement des clés autorisées:"
  ],
  "Excellent password": [
   null,
-  "Mot de passe excellent"
+  "Excellent mot de passe"
  ],
  "Failed to change password": [
   null,
-  "Échec du changement de mot de passe"
+  "Échec de la modification du mot de passe"
  ],
  "Failed to load authorized keys.": [
   null,
-  ""
+  "Impossible de charger les clés autorisées."
  ],
  "Force Change": [
   null,
-  ""
+  "Changement forcé"
  ],
  "Force password change": [
   null,
-  ""
+  "Changement de mot de passe forcé"
  ],
  "Full Name": [
   null,
-  ""
+  "Nom complet"
  ],
  "Image Builder": [
   null,
-  ""
+  "Image Builder"
  ],
  "Invalid expiration date": [
   null,
-  ""
+  "Date d'expiration non valide"
  ],
  "Invalid key": [
   null,
-  ""
+  "Clé non valide"
  ],
  "Invalid number of days": [
   null,
-  ""
+  "Nombre de jours non valide"
  ],
  "Last Login": [
   null,
-  ""
+  "Dernière connexion"
  ],
  "Local Accounts": [
   null,
-  ""
+  "Comptes locaux"
  ],
  "Lock Account": [
   null,
-  ""
+  "Verrouiller le compte"
  ],
  "Lock account on $0": [
   null,
-  ""
+  "Verrouiller le compte sur $0"
  ],
  "Logged In": [
   null,
@@ -221,43 +221,43 @@ return plural;
  ],
  "Never expire password": [
   null,
-  ""
+  "Ne jamais faire expirer le mot de passe"
  ],
  "Never lock account": [
   null,
-  ""
+  "Ne jamais verrouiller le compte"
  ],
  "New Password": [
   null,
-  ""
+  "Nouveau mot de passe"
  ],
  "New password was not accepted": [
   null,
-  "Refus du nouveau mot de passe"
+  "Le nouveau mot de passe n'a pas été accepté"
  ],
  "No real name specified": [
   null,
-  "Aucun nom réel indiqué."
+  "Aucun nom réel spécifié"
  ],
  "No user name specified": [
   null,
-  "Aucun nom d'utilisateur indiqué."
+  "Aucun nom d'utilisateur spécifié"
  ],
  "Off": [
   null,
-  "Éteint"
+  "De"
  ],
  "Old Password": [
   null,
-  ""
+  "Ancien mot de passe"
  ],
  "Old password not accepted": [
   null,
-  "Refus de l'ancien mot de passe "
+  "Ancien mot de passe non accepté"
  ],
  "On": [
   null,
-  "Allumé"
+  "Sur"
  ],
  "Password": [
   null,
@@ -265,7 +265,7 @@ return plural;
  ],
  "Password Expiration": [
   null,
-  ""
+  "Expiration du mot de passe"
  ],
  "Password is not acceptable": [
   null,
@@ -277,79 +277,79 @@ return plural;
  ],
  "Password must be changed": [
   null,
-  ""
+  "Le mot de passe doit être changé"
  ],
  "Paste the contents of your public SSH key file here": [
   null,
-  ""
+  "Collez le contenu de votre clé publique SSH ici"
  ],
  "Please specify an expiration date": [
   null,
-  ""
+  "Veuillez spécifier une date d'expiration"
  ],
  "Prompting via passwd timed out": [
   null,
-  "Temps d'attente dépassé sur saisie avec passwd"
+  "L'invite via passwd a expiré"
  ],
  "Require password change every $0 days": [
   null,
-  ""
+  "Exiger un changement de mot de passe tous les $0 jours"
  ],
  "Require password change on $0": [
   null,
-  ""
+  "Exiger un changement de mot de passe sur $0"
  ],
  "Reset": [
   null,
-  ""
+  "Réinitialiser"
  ],
  "Roles": [
   null,
-  ""
+  "Les rôles"
  ],
  "Server Administrator": [
   null,
-  "Administrateur de serveurs"
+  "Administrateur de serveur"
  ],
  "Set": [
   null,
-  ""
+  "Ensemble"
  ],
  "Set Password": [
   null,
-  ""
+  "Définir le mot"
  ],
  "Terminate Session": [
   null,
-  ""
+  "Terminer la session"
  ],
  "The account '$0' will be forced to change their password on next login": [
   null,
-  ""
+  "Le compte ' $0 'sera forcé de changer de mot de passe lors de la prochaine connexion"
  ],
  "The key you provided was not valid.": [
   null,
-  "La clé fournie est invalide."
+  "La clé que vous avez fournie n'était pas valide."
  ],
  "The passwords do not match": [
   null,
-  "Les mots de passe ne correspondent pas."
+  "Le mot de passe ne correspond pas"
  ],
  "The user <b>$0</b> is not permitted to modify accounts": [
   null,
-  "L'utilisateur <b>$0</b> n'a pas le droit de modifier les comptes"
+  "L'utilisateur <b>$0</b> n'est pas autorisé à modifier les comptes"
  ],
  "The user name can only consist of letters from a-z, digits, dots, dashes and underscores.": [
   null,
-  ""
+  "Le nom d'utilisateur ne peut contenir que des lettres de az, des chiffres, des points, des tirets et des traits de soulignement."
  ],
  "There are no authorized public keys for this account.": [
   null,
-  ""
+  "Il n'y a aucune clé publique autorisée pour ce compte."
  ],
  "This user name already exists": [
   null,
-  ""
+  "Cet identifiant existe déjà"
  ],
  "Unable to delete root account": [
   null,
@@ -365,7 +365,7 @@ return plural;
  ],
  "Unnamed": [
   null,
-  ""
+  "Anonyme"
  ],
  "User Name": [
   null,
@@ -373,15 +373,15 @@ return plural;
  ],
  "Validating key": [
   null,
-  "Validation de la clé"
+  "Clé de validation"
  ],
  "You do not have permission to view the authorized public keys for this account.": [
   null,
-  ""
+  "Vous n'êtes pas autorisé à afficher les clés publiques autorisées pour ce compte."
  ],
  "translatable": [
   null,
-  ""
+  "traduisible"
  ],
  "page-title\u0004Accounts": [
   null,

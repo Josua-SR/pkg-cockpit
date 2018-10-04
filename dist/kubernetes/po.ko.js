@@ -1563,10 +1563,6 @@ return plural;
   null,
   ""
  ],
- "Virtual Machines": [
-  null,
-  ""
- ],
  "Volume": [
   null,
   "논리 볼륨"

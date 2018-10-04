@@ -127,9 +127,17 @@ return plural;
   null,
   "Bus"
  ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "Ha fallat l'acció CHANGE NETWORK STATE"
+ ],
  "CPU Type:": [
   null,
   "Tipus de CPU:"
+ ],
+ "CREATE_AND_ATTACH_VOLUME action failed": [
+  null,
+  ""
  ],
  "Cancel": [
   null,
@@ -154,6 +162,10 @@ return plural;
  "Connect with any SPICE or VNC viewer application.": [
   null,
   "Connecta amb qualsevol aplicació de visualització SPICE o VNC."
+ ],
+ "Connecting": [
+  null,
+  "S'està connectant"
  ],
  "Connecting to Virtualization Service": [
   null,
@@ -195,6 +207,10 @@ return plural;
   null,
   ""
  ],
+ "Ctrl+Alt+Del": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "Suprimeix"
@@ -210,6 +226,10 @@ return plural;
  "Disconnect": [
   null,
   "Desconnecta"
+ ],
+ "Disconnected": [
+  null,
+  "Desconnectat"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
@@ -259,6 +279,10 @@ return plural;
   null,
   "Formata"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
+ ],
  "GiB": [
   null,
   "GiB"
@@ -274,6 +298,10 @@ return plural;
  "Host": [
   null,
   "Amfitrió"
+ ],
+ "Host Interface": [
+  null,
+  ""
  ],
  "INSTALL VM action failed": [
   null,
@@ -479,6 +507,14 @@ return plural;
   null,
   "Executa"
  ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  ""
+ ],
+ "SET_VCPU_SETTINGS action failed": [
+  null,
+  ""
+ ],
  "SPICE": [
   null,
   "SPICE"
@@ -499,9 +535,9 @@ return plural;
   null,
   ""
  ],
- "Send shortcut": [
+ "Send key": [
   null,
-  "Envia la drecera"
+  ""
  ],
  "Serial Console": [
   null,
@@ -643,6 +679,62 @@ return plural;
   null,
   "Utilitzat"
  ],
+ "VM ATTACH_DISK action failed": [
+  null,
+  ""
+ ],
+ "VM CHANGE_NETWORK_STATE action failed": [
+  null,
+  ""
+ ],
+ "VM CHANGE_NETWORK_STATE action failed: updated device XML couldn't not be generated": [
+  null,
+  ""
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE action failed": [
+  null,
+  ""
+ ],
+ "VM DETACH action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "Ha fallat l'acció VM FORCE OFF"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "Ha fallat l'acció VM FORCE REBOOT"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "Ha fallat l'acció VM REBOOT"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  ""
+ ],
+ "VM SENDNMI action failed": [
+  null,
+  ""
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "Ha fallat l'acció VM SHUT DOWN"
+ ],
+ "VM START action failed": [
+  null,
+  "Ha fallat l'acció VM START"
+ ],
  "VNC": [
   null,
   "VNC"
@@ -678,10 +770,6 @@ return plural;
  "Volume": [
   null,
   "Volum"
- ],
- "Your browser does not support iframes.": [
-  null,
-  "El vostre navegador no admet iframes."
  ],
  "bridge": [
   null,

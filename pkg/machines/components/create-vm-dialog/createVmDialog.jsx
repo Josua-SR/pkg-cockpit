@@ -17,8 +17,9 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
+import React from 'react';
+import PropTypes from 'prop-types';
 import cockpit from 'cockpit';
-import React, { PropTypes } from "react";
 import DialogPattern from 'cockpit-components-dialog.jsx';
 import * as Select from "cockpit-components-select.jsx";
 import FileAutoComplete from "cockpit-components-file-autocomplete.jsx";
@@ -66,6 +67,7 @@ class CreateVM extends React.Component {
             storageSize: props.vmParams.storageSize, // tied to Unit
             storageSizeUnit: units.GiB.name,
             sourceType: props.vmParams.sourceType,
+            startVm: props.vmParams.startVm
         };
     }
 
@@ -135,6 +137,10 @@ class CreateVM extends React.Component {
             value = convertToUnit(this.state.storageSize, value, units.GiB);
             key = 'storageSize';
             break;
+        case 'startVm': {
+            this.setState({ [key]: value });
+            break;
+        }
         default:
             break;
         }
@@ -287,7 +293,7 @@ class CreateVM extends React.Component {
                             </td>
                             <td>
                                 <input id="start-vm" type="checkbox"
-                                       checked={this.props.vmParams.startVm}
+                                       checked={this.state.startVm}
                                        onChange={this.onChangedEventChecked.bind(this, 'startVm')} />
                             </td>
                         </tr>

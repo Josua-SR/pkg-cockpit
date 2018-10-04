@@ -377,7 +377,7 @@ return plural;
  ],
  "Privileged": [
   null,
-  ""
+  "Con privilegios"
  ],
  "Project website": [
   null,

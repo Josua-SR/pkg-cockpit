@@ -69,7 +69,7 @@ return plural;
  },
  "Applications": [
   null,
-  ""
+  "Applications"
  ],
  "Cancel": [
   null,
@@ -77,7 +77,7 @@ return plural;
  ],
  "Checking for new applications": [
   null,
-  ""
+  "Vérification de nouvelles applications"
  ],
  "Close": [
   null,
@@ -89,50 +89,50 @@ return plural;
  ],
  "Go to Application": [
   null,
-  ""
+  "Aller à l'application"
  ],
  "Install": [
   null,
-  ""
+  "Installer"
  ],
  "Installing": [
   null,
-  ""
+  "Installation"
  ],
  "No applications installed or available": [
   null,
-  ""
+  "Aucune application installée ou disponible"
  ],
  "No description provided.": [
   null,
-  ""
+  "Aucune description fournie."
  ],
  "No installation package found for this application.": [
   null,
-  ""
+  "Aucun package d'installation trouvé pour cette application."
  ],
  "Ok": [
   null,
-  ""
+  "Ok"
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "PackageKit crash"
  ],
  "Remove": [
   null,
-  ""
+  "Retirer"
  ],
  "Removing": [
   null,
-  ""
+  "Suppression "
  ],
  "Unknown Application": [
   null,
-  ""
+  "Application inconnue"
  ],
  "Waiting for other programs to finish using the package manager...": [
   null,
-  ""
+  "En attente d'autres programmes pour terminer l'utilisation du gestionnaire de paquets ..."
  ]
 }));

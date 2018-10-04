@@ -69,7 +69,7 @@ return plural;
  },
  "$0 is not available from any repository.": [
   null,
-  ""
+  "$0 no está disponible en ningún repositorio"
  ],
  "$0 update": [
   "$0 updates",
@@ -78,7 +78,7 @@ return plural;
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "Se instalará $0"
  ],
  "$1 security fix": [
   "$1 security fixes",
@@ -92,7 +92,7 @@ return plural;
  ],
  "Additional packages:": [
   null,
-  ""
+  "Paquetes adicionales:"
  ],
  "Apply all updates": [
   null,
@@ -132,7 +132,7 @@ return plural;
  ],
  "Checking installed software": [
   null,
-  ""
+  "Comprobando el software instalado"
  ],
  "Details": [
   null,
@@ -148,7 +148,7 @@ return plural;
  ],
  "Downloading $0": [
   null,
-  ""
+  "Descargando $0"
  ],
  "Errata:": [
   null,
@@ -176,7 +176,7 @@ return plural;
  ],
  "Install Software": [
   null,
-  ""
+  "Instalar software"
  ],
  "Installed": [
   null,
@@ -188,7 +188,7 @@ return plural;
  ],
  "Installing $0": [
   null,
-  ""
+  "Instalando $0"
  ],
  "Last checked: $0 ago": [
   null,
@@ -248,11 +248,11 @@ return plural;
  ],
  "Removals:": [
   null,
-  ""
+  "Eliminaciones:"
  ],
  "Removing $0": [
   null,
-  ""
+  "Quitando $0"
  ],
  "Restart Now": [
   null,
@@ -316,7 +316,7 @@ return plural;
  ],
  "Total size: $0": [
   null,
-  ""
+  "Tamaño total: $0"
  ],
  "Unregistered System": [
   null,
@@ -364,7 +364,7 @@ return plural;
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "Esperando a que finalicen otras operaciones de gestión de software"
  ],
  "You need to re-subscribe this system.": [
   null,

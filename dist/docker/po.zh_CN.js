@@ -117,19 +117,19 @@ return plural;
  ],
  "Advanced TCA": [
   null,
-  ""
+  "高级 TCA"
  ],
  "All In One": [
   null,
-  ""
+  "所有"
  ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
-  "所选磁盘上所有数据将会被擦除并且磁盘将会被添加到存储池。"
+  "所选磁盘上的所有数据将会被删除，磁盘将会被添加到存储池。"
  ],
  "Always": [
   null,
-  "通常"
+  "总是"
  ],
  "Author": [
   null,
@@ -137,15 +137,15 @@ return plural;
  ],
  "Blade": [
   null,
-  ""
+  "刀片"
  ],
  "Blade enclosure": [
   null,
-  ""
+  "刀片机箱"
  ],
  "Bus Expansion Chassis": [
   null,
-  ""
+  "总线扩展机箱"
  ],
  "CPU": [
   null,
@@ -189,7 +189,7 @@ return plural;
  ],
  "Combined usage of $0 CPU core": [
   "Combined usage of $0 CPU cores",
-  ""
+  "结合使用 $0 CPU 内核"
  ],
  "Command": [
   null,
@@ -213,7 +213,7 @@ return plural;
  ],
  "Compact PCI": [
   null,
-  ""
+  "紧凑型 PCI"
  ],
  "Configure storage...": [
   null,
@@ -233,7 +233,7 @@ return plural;
  ],
  "Container is currently marked as not running, but regular stopping failed.": [
   null,
-  "容器当前标记为未运行, 但正常停止失败."
+  "容器当前标记为未运行, 但正常停止失败。"
  ],
  "Container is currently running.": [
   null,
@@ -249,7 +249,7 @@ return plural;
  ],
  "Convertible": [
   null,
-  ""
+  "可转换"
  ],
  "Could not add all disks": [
   null,
@@ -265,7 +265,7 @@ return plural;
  ],
  "Created:": [
   null,
-  "创建时间："
+  "创建于："
  ],
  "Default": [
   null,
@@ -281,11 +281,11 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "桌面"
  ],
  "Detachable": [
   null,
-  ""
+  "可拆开"
  ],
  "Details": [
   null,
@@ -293,11 +293,11 @@ return plural;
  ],
  "Docker is not installed or activated on the system": [
   null,
-  "系统中的 Docker 未安装或未启动"
+  "系统中的 Docker 未安装或未激活"
  ],
  "Docking Station": [
   null,
-  ""
+  "Docking Station"
  ],
  "Download": [
   null,
@@ -305,7 +305,7 @@ return plural;
  ],
  "Drive": [
   null,
-  "驱动器"
+  "驱动"
  ],
  "Duplicate alias": [
   null,
@@ -317,7 +317,7 @@ return plural;
  ],
  "Embedded PC": [
   null,
-  ""
+  "嵌入式 PC"
  ],
  "Entrypoint": [
   null,
@@ -325,7 +325,7 @@ return plural;
  ],
  "Environment": [
   null,
-  "环境变量"
+  "环境"
  ],
  "Erase containers and reset storage pool": [
   null,
@@ -337,7 +337,7 @@ return plural;
  ],
  "Everything": [
   null,
-  "所有内容"
+  "所有"
  ],
  "Exited $ExitCode": [
   null,
@@ -345,7 +345,7 @@ return plural;
  ],
  "Expansion Chassis": [
   null,
-  ""
+  "扩展机箱"
  ],
  "Expose container ports": [
   null,
@@ -377,7 +377,7 @@ return plural;
  ],
  "Hand Held": [
   null,
-  ""
+  "手持"
  ],
  "Hard Disk": [
   null,
@@ -433,11 +433,11 @@ return plural;
  ],
  "IoT Gateway": [
   null,
-  ""
+  "IoT 网关"
  ],
  "Laptop": [
   null,
-  ""
+  "笔记本电脑"
  ],
  "Link to another container": [
   null,
@@ -457,11 +457,11 @@ return plural;
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "低调桌面"
  ],
  "Lunch Box": [
   null,
-  ""
+  "午餐盒"
  ],
  "MAC Address:": [
   null,
@@ -469,7 +469,7 @@ return plural;
  ],
  "Main Server Chassis": [
   null,
-  ""
+  "主服务器机箱"
  ],
  "Memory": [
   null,
@@ -481,7 +481,7 @@ return plural;
  ],
  "Memory usage:": [
   null,
-  "内存占用率："
+  "内存使用："
  ],
  "MiB": [
   null,
@@ -489,11 +489,11 @@ return plural;
  ],
  "Mini PC": [
   null,
-  ""
+  "迷你电脑"
  ],
  "Mini Tower": [
   null,
-  ""
+  "Mini Tower"
  ],
  "Mount container volumes": [
   null,
@@ -501,7 +501,7 @@ return plural;
  ],
  "Multi-system Chassis": [
   null,
-  ""
+  "多系统机箱"
  ],
  "Name": [
   null,
@@ -513,7 +513,7 @@ return plural;
  ],
  "No additional local storage found.": [
   null,
-  "没有找到额外的逻辑卷。"
+  "没有找到额外的本地存储。"
  ],
  "No alias specified": [
   null,
@@ -529,7 +529,7 @@ return plural;
  ],
  "No containers that match the current filter": [
   null,
-  "没有容器匹配当前过滤器"
+  "没有容器匹配当前的过滤条件"
  ],
  "No images": [
   null,
@@ -561,7 +561,7 @@ return plural;
  ],
  "Notebook": [
   null,
-  ""
+  "笔记本"
  ],
  "Off": [
   null,
@@ -585,7 +585,7 @@ return plural;
  ],
  "Other": [
   null,
-  ""
+  "其他"
  ],
  "Overview": [
   null,
@@ -593,11 +593,11 @@ return plural;
  ],
  "Peripheral Chassis": [
   null,
-  ""
+  "外设机箱"
  ],
  "Pizza Box": [
   null,
-  ""
+  "披萨盒"
  ],
  "Please confirm deletion of $0": [
   null,
@@ -613,7 +613,7 @@ return plural;
  ],
  "Portable": [
   null,
-  ""
+  "手提"
  ],
  "Ports": [
   null,
@@ -625,15 +625,15 @@ return plural;
  ],
  "Problems": [
   null,
-  ""
+  "问题"
  ],
  "RAID Chassis": [
   null,
-  ""
+  "RAID 机箱"
  ],
  "Rack Mount Chassis": [
   null,
-  ""
+  "机架式机箱"
  ],
  "ReadOnly": [
   null,
@@ -649,11 +649,11 @@ return plural;
  ],
  "Reformat and add disks": [
   null,
-  "格式化并添加磁盘"
+  "重新格式化并添加磁盘"
  ],
  "Repository": [
   null,
-  "存储库"
+  "仓库"
  ],
  "Reset": [
   null,
@@ -693,7 +693,7 @@ return plural;
  ],
  "Sealed-case PC": [
   null,
-  ""
+  "密封式 PC"
  ],
  "Security": [
   null,
@@ -721,7 +721,7 @@ return plural;
  ],
  "Space-saving Computer": [
   null,
-  ""
+  "节省空间的计算机"
  ],
  "Start": [
   null,
@@ -741,7 +741,7 @@ return plural;
  ],
  "Stick PC": [
   null,
-  ""
+  "Stick PC"
  ],
  "Stop": [
   null,
@@ -749,7 +749,7 @@ return plural;
  ],
  "Stop and delete": [
   null,
-  ""
+  "停止并删除"
  ],
  "Stopped": [
   null,
@@ -765,11 +765,11 @@ return plural;
  ],
  "Sub Chassis": [
   null,
-  ""
+  "子机箱"
  ],
  "Sub Notebook": [
   null,
-  ""
+  "子笔记本"
  ],
  "TCP": [
   null,
@@ -777,7 +777,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "平板"
  ],
  "Tag": [
   null,
@@ -789,15 +789,15 @@ return plural;
  ],
  "The Docker storage pool cannot be managed on this system.": [
   null,
-  "该系统上容器存储池不能被管理。"
+  "Docker 存储池不能在这个系统上被管理。"
  ],
  "The following containers depend on this image and will become unusable.": [
   null,
-  ""
+  "以下容器依赖于此镜像，将变得不可用。"
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,
-  "从 $time ($type) 开始的扫描没有找到缺陷。"
+  "从 $time ($type) 开始的扫描没有找到漏洞。"
  ],
  "The scan from $time ($type) was not successful.": [
   null,
@@ -813,7 +813,7 @@ return plural;
  ],
  "Tower": [
   null,
-  ""
+  "Tower"
  ],
  "Try again": [
   null,
@@ -841,7 +841,7 @@ return plural;
  ],
  "Up since $0": [
   null,
-  ""
+  "运行自 $0"
  ],
  "Used": [
   null,
@@ -857,15 +857,15 @@ return plural;
  ],
  "Volumes:": [
   null,
-  ""
+  "卷"
  ],
  "With terminal": [
   null,
-  "跟随终端"
+  "带有终端"
  ],
  "You don't have permission to manage the Docker storage pool.": [
   null,
-  "没有权限来管理容器存储池"
+  "您没有权限管理 Docker 存储池"
  ],
  "[$0 bytes of binary data]": [
   null,

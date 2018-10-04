@@ -127,9 +127,17 @@ return plural;
   null,
   "Канал"
  ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "Не вдалося виконати дію зі зміни стану мережі"
+ ],
  "CPU Type:": [
   null,
   "Тип процесора:"
+ ],
+ "CREATE_AND_ATTACH_VOLUME action failed": [
+  null,
+  "Помилка дії CREATE_AND_ATTACH_VOLUME"
  ],
  "Cancel": [
   null,
@@ -154,6 +162,10 @@ return plural;
  "Connect with any SPICE or VNC viewer application.": [
   null,
   "З’єднатися із будь-якою програмою перегляду SPICE або VNC."
+ ],
+ "Connecting": [
+  null,
+  "Встановлюємо з’єднання"
  ],
  "Connecting to Virtualization Service": [
   null,
@@ -195,6 +207,10 @@ return plural;
   null,
   "Не вдалося створити віртуальну машину $0"
  ],
+ "Ctrl+Alt+Del": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "Вилучити"
@@ -210,6 +226,10 @@ return plural;
  "Disconnect": [
   null,
   "Від’єднатися"
+ ],
+ "Disconnected": [
+  null,
+  "Роз'єднано"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
@@ -259,6 +279,10 @@ return plural;
   null,
   "Формат"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "Помилка під час спроби виконати дію GET HYPERVISOR MAX VCPU"
+ ],
  "GiB": [
   null,
   "ГіБ"
@@ -274,6 +298,10 @@ return plural;
  "Host": [
   null,
   "Вузол"
+ ],
+ "Host Interface": [
+  null,
+  ""
  ],
  "INSTALL VM action failed": [
   null,
@@ -479,6 +507,14 @@ return plural;
   null,
   "Запустити"
  ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  "Помилка під час спроби виконати дію SET VCPU SETTINGS"
+ ],
+ "SET_VCPU_SETTINGS action failed": [
+  null,
+  "Помилка дії SET_VCPU_SETTINGS"
+ ],
  "SPICE": [
   null,
   "SPICE"
@@ -499,9 +535,9 @@ return plural;
   null,
   "Надіслати немасковане переривання"
  ],
- "Send shortcut": [
+ "Send key": [
   null,
-  "Надіслати скорочення"
+  ""
  ],
  "Serial Console": [
   null,
@@ -621,7 +657,7 @@ return plural;
  ],
  "Unique name": [
   null,
-  ""
+  "Унікальна назва"
  ],
  "Unplug": [
   null,
@@ -642,6 +678,62 @@ return plural;
  "Used": [
   null,
   "Використано"
+ ],
+ "VM ATTACH_DISK action failed": [
+  null,
+  "Помилка дії VM ATTACH_DISK"
+ ],
+ "VM CHANGE_NETWORK_STATE action failed": [
+  null,
+  "Помилка дії VM CHANGE_NETWORK_STATE"
+ ],
+ "VM CHANGE_NETWORK_STATE action failed: updated device XML couldn't not be generated": [
+  null,
+  "Помилка дії VM CHANGE_NETWORK_STATE: не вдалося створити оновлений XML пристрою"
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE action failed": [
+  null,
+  ""
+ ],
+ "VM DETACH action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "Не вдалося виконати дію FORCE OFF для ВМ"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "Не вдалося виконати дію FORCE REBOOT для ВМ"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "Не вдалося виконати дію REBOOT для ВМ"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "Спроба виконати дію немаскованого переривання VM SEND завершилася невдало"
+ ],
+ "VM SENDNMI action failed": [
+  null,
+  "Помилка дії VM SENDNMI"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "Не вдалося виконати дію SHUT DOWN для ВМ"
+ ],
+ "VM START action failed": [
+  null,
+  "Не вдалося виконати дію START для ВМ"
  ],
  "VNC": [
   null,
@@ -678,10 +770,6 @@ return plural;
  "Volume": [
   null,
   "Том"
- ],
- "Your browser does not support iframes.": [
-  null,
-  "У браузері не передбачено підтримки iframe."
  ],
  "bridge": [
   null,

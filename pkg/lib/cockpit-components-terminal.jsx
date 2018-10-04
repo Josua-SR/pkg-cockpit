@@ -22,6 +22,9 @@
 
     var React = require("react");
     var ReactDOM = require("react-dom");
+    var PropTypes = require("prop-types");
+    var createReactClass = require('create-react-class');
+
     var Term = require("term");
 
     require("console.css");
@@ -41,12 +44,12 @@
      *
      * Call focus() to set the input focus on the terminal.
      */
-    var Terminal = React.createClass({
+    var Terminal = createReactClass({
         propTypes: {
-            cols: React.PropTypes.number,
-            rows: React.PropTypes.number,
-            channel: React.PropTypes.object.isRequired,
-            onTitleChanged: React.PropTypes.func
+            cols: PropTypes.number,
+            rows: PropTypes.number,
+            channel: PropTypes.object.isRequired,
+            onTitleChanged: PropTypes.func
         },
 
         componentWillMount: function () {
@@ -111,8 +114,8 @@
             return <div ref="terminal"
                         key={this.state.terminal}
                         className="console-ct"
-                        onFocusIn={this.onFocusIn}
-                        onFocusOut={this.onFocusOut} />;
+                        onFocus={this.onFocusIn}
+                        onBlur={this.onFocusOut} />;
         },
 
         componentWillUnmount: function () {

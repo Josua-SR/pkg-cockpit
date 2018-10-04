@@ -113,7 +113,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to change profiles": [
   null,
-  ""
+  "El usuario <b>$0</b> no puede cambiar perfiles"
  ],
  "This system is using a custom profile": [
   null,

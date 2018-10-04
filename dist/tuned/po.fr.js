@@ -73,11 +73,11 @@ return plural;
  ],
  "Change Performance Profile": [
   null,
-  "Modifier le profil de performance"
+  "Changer le profil de performance"
  ],
  "Change Profile": [
   null,
-  "Modifier le profil"
+  "Change de profil"
  ],
  "Communication with tuned has failed": [
   null,
@@ -89,19 +89,19 @@ return plural;
  ],
  "Failed to disable tuned": [
   null,
-  ""
+  "Échec de la désactivation de tuned"
  ],
  "Failed to disable tuned profile": [
   null,
-  ""
+  "Échec de la désactivation du profil tuned"
  ],
  "Failed to enable tuned": [
   null,
-  ""
+  "Échec de l'activation de tuned"
  ],
  "Failed to switch profile": [
   null,
-  "Échec lors du changement de profil"
+  "Échec du changement de profil"
  ],
  "None": [
   null,
@@ -109,11 +109,11 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "Ok"
  ],
  "The user <b>$0</b> is not permitted to change profiles": [
   null,
-  ""
+  "L'utilisateur <b>$0</b> n'a pas le droit de modifier les profils"
  ],
  "This system is using a custom profile": [
   null,
@@ -125,7 +125,7 @@ return plural;
  ],
  "Tuned has failed to start": [
   null,
-  "Échec du démarrage de tuned"
+  "Tuned n'a pas pu démarrer"
  ],
  "Tuned is not available": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "Tuned is not running": [
   null,
-  "Tuned n'est pas en cours d'exécution"
+  "Tuned ne fonctionne pas"
  ],
  "Tuned is off": [
   null,
@@ -145,6 +145,6 @@ return plural;
  ],
  "recommended": [
   null,
-  ""
+  "conseillé"
  ]
 }));

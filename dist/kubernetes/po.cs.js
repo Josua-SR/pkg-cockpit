@@ -1567,10 +1567,6 @@ return plural;
   null,
   "Uživatelé"
  ],
- "Virtual Machines": [
-  null,
-  ""
- ],
  "Volume": [
   null,
   "Svazek"

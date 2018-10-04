@@ -375,7 +375,7 @@ return plural;
  ],
  "Enable Service": [
   null,
-  ""
+  "Habilitar servicio"
  ],
  "Ethernet MAC": [
   null,
@@ -575,7 +575,7 @@ return plural;
  ],
  "NetworkManager is not running.": [
   null,
-  ""
+  "NetworkManager no está funcionando."
  ],
  "Networking": [
   null,
@@ -767,7 +767,7 @@ return plural;
  ],
  "Start Service": [
   null,
-  ""
+  "Iniciar servicio"
  ],
  "Status": [
   null,

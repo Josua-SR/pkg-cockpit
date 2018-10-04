@@ -127,9 +127,17 @@ return plural;
   null,
   "Bus"
  ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "A ação MUDAR DE ESTADO DE REDE falhou"
+ ],
  "CPU Type:": [
   null,
   "Tipo de CPU:"
+ ],
+ "CREATE_AND_ATTACH_VOLUME action failed": [
+  null,
+  ""
  ],
  "Cancel": [
   null,
@@ -154,6 +162,10 @@ return plural;
  "Connect with any SPICE or VNC viewer application.": [
   null,
   "Conecte-se com qualquer aplicativo visualizador SPICE ou VNC."
+ ],
+ "Connecting": [
+  null,
+  ""
  ],
  "Connecting to Virtualization Service": [
   null,
@@ -195,6 +207,10 @@ return plural;
   null,
   "Criação da vm $0 falhou"
  ],
+ "Ctrl+Alt+Del": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "Excluir"
@@ -210,6 +226,10 @@ return plural;
  "Disconnect": [
   null,
   "Desconectar"
+ ],
+ "Disconnected": [
+  null,
+  "Desconectado"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
@@ -259,6 +279,10 @@ return plural;
   null,
   "Formate"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "GET HYPERVISOR MAX VCPU falhou"
+ ],
  "GiB": [
   null,
   "GiB"
@@ -274,6 +298,10 @@ return plural;
  "Host": [
   null,
   "Máquina"
+ ],
+ "Host Interface": [
+  null,
+  ""
  ],
  "INSTALL VM action failed": [
   null,
@@ -479,6 +507,14 @@ return plural;
   null,
   "Executar"
  ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  "A ação SET SETUP VCPU falhou"
+ ],
+ "SET_VCPU_SETTINGS action failed": [
+  null,
+  ""
+ ],
  "SPICE": [
   null,
   "SPICE"
@@ -499,9 +535,9 @@ return plural;
   null,
   "Enviar interrupção não mascarada"
  ],
- "Send shortcut": [
+ "Send key": [
   null,
-  "Enviar atalho"
+  ""
  ],
  "Serial Console": [
   null,
@@ -643,6 +679,62 @@ return plural;
   null,
   "Usado"
  ],
+ "VM ATTACH_DISK action failed": [
+  null,
+  ""
+ ],
+ "VM CHANGE_NETWORK_STATE action failed": [
+  null,
+  ""
+ ],
+ "VM CHANGE_NETWORK_STATE action failed: updated device XML couldn't not be generated": [
+  null,
+  ""
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE action failed": [
+  null,
+  ""
+ ],
+ "VM DETACH action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "ação VM FORCE OFF falhou"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "ação VM FORCE REBOOT falhou"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "ação VM REBOOT falhou"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "VM SEND Falha na ação de interrupção não mascarável"
+ ],
+ "VM SENDNMI action failed": [
+  null,
+  ""
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "ação VM SHUT DOWN falhou"
+ ],
+ "VM START action failed": [
+  null,
+  "ação VM START falhou"
+ ],
  "VNC": [
   null,
   "VNC"
@@ -678,10 +770,6 @@ return plural;
  "Volume": [
   null,
   "Volume"
- ],
- "Your browser does not support iframes.": [
-  null,
-  "Seu navegador não suporta iframes."
  ],
  "bridge": [
   null,

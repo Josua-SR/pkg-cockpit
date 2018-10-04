@@ -17,10 +17,11 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 import React from 'react';
+import PropTypes from 'prop-types';
 import cockpit from 'cockpit';
 import { changeNetworkState } from "./actions/provider-actions.es6";
-import { rephraseUI, vmId } from "./helpers.es6";
 import { Listing, ListingRow } from 'cockpit-components-listing.jsx';
+import { rephraseUI, vmId } from "./helpers.es6";
 
 const _ = cockpit.gettext;
 
@@ -62,11 +63,11 @@ const VmNetworkTab = function ({ vm, dispatch, hostDevices }) {
     </table>);
 
     // Network data mapping to rows
-    const detailMap = [
+    let detailMap = [
         { name: _("Type"), value: (network, networkId) => <div id={`${id}-network-${networkId}-type`}>{rephraseUI('networkType', network.type)}</div>, header: true },
         { name: _("Model type"), value: 'model' },
         { name: _("MAC Address"), value: 'mac' },
-        { name: _("Target"), value: 'target' },
+        { name: _("Host Interface"), value: 'target', hidden: !(vm.state == "running") },
         { name: _("Source"), value: (network, networkId) => {
             const setSourceClass = (source) => checkDeviceAviability(source) ? "machines-network-source-link" : undefined;
             const mapSource = {
@@ -129,6 +130,7 @@ const VmNetworkTab = function ({ vm, dispatch, hostDevices }) {
     ];
 
     let networkId = 1;
+    detailMap = detailMap.filter(target => !target.hidden);
 
     return (
         <div className="machines-network-list">
@@ -156,7 +158,7 @@ const VmNetworkTab = function ({ vm, dispatch, hostDevices }) {
 };
 
 VmNetworkTab.propTypes = {
-    vm: React.PropTypes.object.isRequired,
+    vm: PropTypes.object.isRequired,
 };
 
 export default VmNetworkTab;

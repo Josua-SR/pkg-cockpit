@@ -109,10 +109,10 @@ return plural;
  ],
  "The generated archive contains data considered sensitive and its content should be reviewed by the originating organization before being passed to any third party.": [
   null,
-  "生成的文档包含被认为敏感的数据并且其内容在传递到第三方前应该由发起组织检查通过。"
+  "生成的文档包含敏感数据，其内容在传递到第三方前应该由原始组织检查通过。"
  ],
  "This tool will collect system configuration and diagnostic information from this system for use with diagnosing problems with the system.": [
   null,
-  "该工具将会为诊断系统问题的用户，从该系统搜集系统配置和诊断信息。"
+  "该工具会从该系统搜集系统配置和诊断信息用于诊断系统问题。"
  ]
 }));

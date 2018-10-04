@@ -147,6 +147,10 @@ return plural;
   null,
   "Bus"
  ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "A ação MUDAR DE ESTADO DE REDE falhou"
+ ],
  "CPU Type:": [
   null,
   "Tipo de CPU:"
@@ -207,6 +211,10 @@ return plural;
   null,
   "Conecte-se com qualquer aplicativo visualizador SPICE ou VNC."
  ],
+ "Connecting": [
+  null,
+  ""
+ ],
  "Connection": [
   null,
   "Conexão"
@@ -239,6 +247,10 @@ return plural;
   null,
   "Criar VM"
  ],
+ "Ctrl+Alt+Del": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "Excluir"
@@ -262,6 +274,10 @@ return plural;
  "Disconnect": [
   null,
   "Desconectar"
+ ],
+ "Disconnected": [
+  null,
+  "Desconectado"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
@@ -319,6 +335,10 @@ return plural;
   null,
   "Formate"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "GET HYPERVISOR MAX VCPU falhou"
+ ],
  "GiB": [
   null,
   "GiB"
@@ -342,6 +362,10 @@ return plural;
  "Host": [
   null,
   "Máquina"
+ ],
+ "Host Interface": [
+  null,
+  ""
  ],
  "Host to Maintenance": [
   null,
@@ -627,9 +651,9 @@ return plural;
   null,
   "Enviar interrupção não mascarada"
  ],
- "Send shortcut": [
+ "Send key": [
   null,
-  "Enviar atalho"
+  ""
  ],
  "Serial Console": [
   null,
@@ -791,6 +815,38 @@ return plural;
   null,
   "VDSM Gerenciamento de Serviços"
  ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "ação VM FORCE OFF falhou"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "ação VM FORCE REBOOT falhou"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "ação VM REBOOT falhou"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "VM SEND Falha na ação de interrupção não mascarável"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "ação VM SHUT DOWN falhou"
+ ],
+ "VM START action failed": [
+  null,
+  "ação VM START falhou"
+ ],
  "VM icon": [
   null,
   "VM icone"
@@ -834,10 +890,6 @@ return plural;
  "Volume": [
   null,
   "Volume"
- ],
- "Your browser does not support iframes.": [
-  null,
-  "Seu navegador não suporta iframes."
  ],
  "bridge": [
   null,

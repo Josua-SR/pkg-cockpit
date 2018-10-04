@@ -89,7 +89,7 @@ return plural;
  ],
  "Add Machine to Dashboard": [
   null,
-  "添加主机到仪表板"
+  "把机器添加到仪表板"
  ],
  "Add key": [
   null,
@@ -101,11 +101,11 @@ return plural;
  ],
  "Authentication": [
   null,
-  "认证"
+  "验证"
  ],
  "Authentication Failed": [
   null,
-  "认证失败"
+  "验证失败"
  ],
  "Available": [
   null,
@@ -129,7 +129,7 @@ return plural;
  ],
  "Choose the language to be used in the application": [
   null,
-  "选择用于应用程序的语言"
+  "选择应用程序使用的语言"
  ],
  "Close": [
   null,
@@ -141,11 +141,11 @@ return plural;
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
-  "Cockpit 无法与指定主机 $0 联系。请确认已经在端口 $1 上运行 SSH，或者在该地址中指定另一个端口。"
+  "Cockpit 无法与指定主机 $0 联系。请确认已经在端口 $1 上运行 SSH，或者在地址中指定另一个端口。"
  ],
  "Cockpit had an unexpected internal error. <br/><br/>You can try restarting Cockpit by pressing refresh in your browser. The javascript console contains details about this error (<b>Ctrl-Shift-J</b> in most browsers).": [
   null,
-  "Cockpit 遇到意外的内部错误。 <br/><br/>可以尝试通过刷新浏览器重启 Cockpit。Javascript 控制台包含关于该错误的详情 （大多数浏览器中按<b>Ctrl-Shift-J</b> ）。"
+  "Cockpit 遇到意外的内部错误。 <br/><br/>可以尝试通过刷新浏览器重启 Cockpit。Javascript 控制台包含关于该错误的详情 （在大多数浏览器中按<b>Ctrl-Shift-J</b> ）。"
  ],
  "Cockpit is an interactive Linux server admin interface.": [
   null,
@@ -161,7 +161,7 @@ return plural;
  ],
  "Cockpit was unable to log in to {{#strong}}{{host}}{{/strong}}. {{#can_sync}}You may want to try to {{#sync_link}}synchronize users{{/sync_link}}.{{/can_sync}} For more authentication options and troubleshooting support please upgrade cockpit-ws to a newer version.": [
   null,
-  "Cockpit 无法登录到 {{#strong}}{{host}}{{/strong}}。 {{#can_sync}}也许想要尝试 {{#sync_link}}同步用户{{/sync_link}}。{{/can_sync}} 更多认证选项和排错支持，请更新 cockpit-ws 到一个新版本。"
+  "Cockpit 无法登录到 {{#strong}}{{host}}{{/strong}}。 您可以尝试使用 {{#can_sync}}对用户进行同步{{/sync_link}}。{{/can_sync}} 如需更多验证选项和排错支持，请把 cockpit-ws 更新到一个新版本。"
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}.": [
   null,
@@ -169,11 +169,11 @@ return plural;
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. To use this machine with cockpit you will need to enable one of the following authentication methods in the sshd config on {{#strong}}{{host}}{{/strong}}:": [
   null,
-  "Cockpit 无法登录到 {{#strong}}{{host}}{{/strong}}。 To use this machine with cockpit 需要在 {{#strong}}{{host}}{{/strong}} 上的 sshd 配置中启用以下认证方式其中之一 来使用该主机的 Cockpit:"
+  "Cockpit 无法登录到 {{#strong}}{{host}}{{/strong}}。 为了可以使这个机器可以使用 cockpit， 需要在 {{#strong}}{{host}}{{/strong}} 上的 sshd 配置中启用以下验证方式之一："
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. You can change your authentication credentials below. {{#can_sync}}You may prefer to {{#sync_link}}synchronize accounts and passwords{{/sync_link}}.{{/can_sync}}": [
   null,
-  "Cockpit 无法登录到 {{#strong}}{{host}}{{/strong}}。可以变更以下认证凭证。{{#can_sync}}也许想要 {{#sync_link}}同步账号和密码{{/sync_link}}.{{/can_sync}}"
+  "Cockpit 无法登录到 {{#strong}}{{host}}{{/strong}}。可以变更以下验证凭证。{{#can_sync}}您也可以尝试{{#sync_link}}同步账号和密码{{/sync_link}}。{{/can_sync}}"
  ],
  "Color": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Comment": [
   null,
-  "说明"
+  "注释"
  ],
  "Confirm": [
   null,
@@ -305,7 +305,7 @@ return plural;
  ],
  "Login has escalated admin privileges": [
   null,
-  ""
+  "登录已升级管理员权限"
  ],
  "Machines": [
   null,
@@ -377,7 +377,7 @@ return plural;
  ],
  "Privileged": [
   null,
-  ""
+  "有特权的"
  ],
  "Project website": [
   null,
@@ -409,7 +409,7 @@ return plural;
  ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
-  "选择你想要与 {{#strong}}{{host}}{{/strong}} 同步的用户"
+  "选择您需要与 {{#strong}}{{host}}{{/strong}} 同步的用户"
  ],
  "Synchronize": [
   null,
@@ -453,15 +453,15 @@ return plural;
  ],
  "Tip: Make your key password match your login password to automatically authenticate against other systems.": [
   null,
-  "提示：使关键密码匹配登录密码来自动认证 其他系统。"
+  "提示：确保您的关键密码匹配登录密码来自动验证其他系统。"
  ],
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
   null,
-  "需要更新 cockpit-ws 到一个新版本来尝试一个不同的端口。"
+  "为了尝试一个不同的端口，需要把 cockpit-ws 升级到一个新版本。"
  ],
  "Too many files found": [
   null,
-  "太多文件未找到"
+  "找到太多文件"
  ],
  "Troubleshoot": [
   null,
@@ -497,7 +497,7 @@ return plural;
  ],
  "Use the following keys to authenticate against other systems": [
   null,
-  "使用以下密钥来认证其他系统"
+  "使用以下密钥来验证其他系统"
  ],
  "User name": [
   null,

@@ -21,6 +21,10 @@
 %define rhel %{centos}
 %endif
 
+%if "%{!?__python3:1}"
+%define __python3 /usr/bin/python3
+%endif
+
 # for testing this already gets set in fedora.install, as we want the target
 # VERSION_ID, not the mock chroot's one
 %if "%{!?os_version_id:1}"
@@ -52,8 +56,8 @@
 %define build_subscriptions 1
 %endif
 
-# cockpit-kubernetes is RHEL 7 only, and 64 bit arches only
-%if 0%{?fedora} || (0%{?rhel} >= 7 && 0%{?rhel} < 8)
+# cockpit-kubernetes is RHEL 7 and Fedora < 30 only, and 64 bit arches only
+%if (0%{?fedora} && 0%{?fedora} < 30) || (0%{?rhel} >= 7 && 0%{?rhel} < 8)
 %ifarch aarch64 x86_64 ppc64le s390x
 %define build_kubernetes 1
 %endif
@@ -638,7 +642,7 @@ Recommends: udisks2-lvm2 >= 2.6
 Recommends: udisks2-iscsi >= 2.6
 Recommends: device-mapper-multipath
 Recommends: clevis-luks
-Requires: python3
+Requires: %{__python3}
 Requires: python3-dbus
 %endif
 BuildArch: noarch
@@ -687,6 +691,7 @@ The Cockpit components for managing virtual machines.
 If "virt-install" is installed, you can also create new virtual machines.
 
 %files -n cockpit-machines -f machines.list
+%{_datadir}/metainfo/org.cockpit-project.cockpit-machines.metainfo.xml
 
 %package -n cockpit-machines-ovirt
 BuildArch: noarch
@@ -750,7 +755,7 @@ Requires: cockpit-shell >= 122
 Requires: /usr/bin/docker
 Requires: /usr/lib/systemd/system/docker.service
 %if 0%{?fedora}
-Requires: python3
+Requires: %{__python3}
 %else
 Requires: python2
 %endif

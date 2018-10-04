@@ -69,15 +69,15 @@ return plural;
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
-  " 1\"是否想要删除以下节点？"
+  " 1\"是否要删除以下节点？"
  ],
  "$0% Free": [
   "$0% Free",
-  "$0% 空闲的"
+  "$0% Free"
  ],
  "$0% Used": [
   "$0% Used",
-  "$0% 已使用的"
+  "$0% 已使用"
  ],
  "AWS Elastic Block Store": [
   null,
@@ -201,11 +201,11 @@ return plural;
  ],
  "Anonymous: Allow all unauthenticated users to pull images": [
   null,
-  "匿名的：允许所有未鉴定的用户拉取镜像"
+  "匿名的：允许所有未验证的用户拉取镜像"
  ],
  "Authentication": [
   null,
-  "认证"
+  "验证"
  ],
  "Azure": [
   null,
@@ -213,7 +213,7 @@ return plural;
  ],
  "Boot ID": [
   null,
-  "启动编号"
+  "引导 ID"
  ],
  "CPU": [
   null,
@@ -313,7 +313,7 @@ return plural;
  ],
  "Container ID": [
   null,
-  "容器编号"
+  "容器 ID"
  ],
  "Container Runtime Version": [
   null,
@@ -325,7 +325,7 @@ return plural;
  ],
  "Could not list services": [
   null,
-  "无法罗列服务"
+  "无法列出服务"
  ],
  "Couldn't connect to server": [
   null,
@@ -389,7 +389,7 @@ return plural;
  ],
  "Deleting a Pod will kill all associated containers. Pods may be automatically created again in some cases.": [
   null,
-  "删除容器舱将会杀掉所有相关的容器。容器舱也许会在某些情况下被自动创建。"
+  "删除 Pod 将会终止所有相关的容器。Pod 可能会在某些情况下被自动创建。"
  ],
  "Deploy": [
   null,
@@ -461,11 +461,11 @@ return plural;
  ],
  "Do you want to remove the image tagged as '{{stream.metadata.namespace}}/{{stream.metadata.name}}:{{tag.tag}}'?": [
   null,
-  "是否想要移除镜像标记 '{{stream.metadata.namespace}}/{{stream.metadata.name}}:{{tag.tag}}'？"
+  "是否想要移除标记为 '{{stream.metadata.namespace}}/{{stream.metadata.name}}:{{tag.tag}}' 的镜像？"
  ],
  "Do you want to remove the role '{{ fields.displayRole }}' from member {{ fields.member.metadata.name }}?": [
   null,
-  "是否想要从成员 {{ fields.member.metadata.name }} 移除角色 '{{ fields.displayRole }}'？"
+  "是否想要从成员 {{ fields.member.metadata.name }} 中移除角色 '{{ fields.displayRole }}'？"
  ],
  "Don't pull images automatically": [
   null,
@@ -493,7 +493,7 @@ return plural;
  ],
  "Environment": [
   null,
-  "环境变量"
+  "环境"
  ],
  "Error getting certificate details: $0": [
   null,
@@ -541,7 +541,7 @@ return plural;
  ],
  "Grant additional push or admin access to specific members below.": [
   null,
-  "授权额外的推送或管理员权限来指定以下成员。"
+  "对以下成员授权额外的推送，或赋予管理员权限。"
  ],
  "Group Members": [
   null,
@@ -593,7 +593,7 @@ return plural;
  ],
  "Image Registry": [
   null,
-  "镜像注册表"
+  "镜像 Registry"
  ],
  "Image Stream": [
   null,
@@ -617,11 +617,11 @@ return plural;
  ],
  "In order to begin pushing images to the registry, use the commands below.": [
   null,
-  "为了开始推送镜像到注册表，使用以下命令。"
+  "为了开始推送镜像到 registry，使用以下命令。"
  ],
  "In order to begin pushing images to the registry, you need to create a project.": [
   null,
-  "为了开始推送镜像到注册表，需要创建一个项目。"
+  "为了开始推送镜像到 registry，需要创建一个项目。"
  ],
  "Interface": [
   null,
@@ -665,7 +665,7 @@ return plural;
  ],
  "Log into the registry:": [
   null,
-  "登录到注册表："
+  "登录到 registry："
  ],
  "Logical Unit Number": [
   null,
@@ -709,7 +709,7 @@ return plural;
  ],
  "Memory Utilization: $0%": [
   null,
-  "Memory 使用率: $0%"
+  "内存使用率: $0%"
  ],
  "Message": [
   null,
@@ -745,11 +745,11 @@ return plural;
  ],
  "Namespace": [
   null,
-  "名称空间"
+  "命名空间"
  ],
  "Namespace cannot be empty.": [
   null,
-  "命名空间不能为空."
+  "命名空间不能为空。"
  ],
  "Network": [
   null,
@@ -761,15 +761,15 @@ return plural;
  ],
  "New Project": [
   null,
-  "新建项目"
+  "新项目"
  ],
  "New image stream": [
   null,
-  "新建镜像流"
+  "新镜像流"
  ],
  "New project": [
   null,
-  "新建项目"
+  "新项目"
  ],
  "No": [
   null,
@@ -777,7 +777,7 @@ return plural;
  ],
  "No Pods are using this claim": [
   null,
-  "没有容器舱使用该声明"
+  "没有 pod 使用该声明"
  ],
  "No Volume Bound": [
   null,
@@ -785,7 +785,7 @@ return plural;
  ],
  "No groups are present.": [
   null,
-  "没有组用于显示。"
+  "没有组。"
  ],
  "No images pushed": [
   null,
@@ -793,7 +793,7 @@ return plural;
  ],
  "No metadata file was selected. Please select a Kubernetes metadata file.": [
   null,
-  "未选择元数据文件. 请选择一个 Kubernetes 元数据文件."
+  "未选择元数据文件。请选择一个 Kubernetes 元数据文件."
  ],
  "No nodes in cluster": [
   null,
@@ -801,31 +801,31 @@ return plural;
  ],
  "No pods deployed": [
   null,
-  "没有部署的容器舱"
+  "没有部署的 pod"
  ],
  "No pods replicated": [
   null,
-  "没有复制的容器舱"
+  "没有复制的 pod"
  ],
  "No pods scheduled": [
   null,
-  "没有被调度的容器舱"
+  "没有被调度的 pod"
  ],
  "No pods selected": [
   null,
-  "没有选中的容器舱"
+  "没有选中的 pod"
  ],
  "No projects are present.": [
   null,
-  "没有项目用于显示。"
+  "没有项目。"
  ],
  "No users are present.": [
   null,
-  "没有用户用于显示。"
+  "没有用户。"
  ],
  "No volumes are present.": [
   null,
-  "没有卷用于显示。"
+  "没有卷。"
  ],
  "No volumes in use": [
   null,
@@ -853,7 +853,7 @@ return plural;
  ],
  "Not a valid number of replicas": [
   null,
-  "副本不是一个有效数字"
+  "副本数量无效"
  ],
  "Not a valid value for Host": [
   null,
@@ -885,7 +885,7 @@ return plural;
  ],
  "PD Name": [
   null,
-  "持久盘名称"
+  "PD 名称"
  ],
  "Partition": [
   null,
@@ -901,7 +901,7 @@ return plural;
  ],
  "Pending Volume Claims": [
   null,
-  "挂起的卷声明"
+  "卷声明待定"
  ],
  "Persistent Volumes": [
   null,
@@ -985,31 +985,31 @@ return plural;
  ],
  "Pod": [
   null,
-  "容器舱"
+  "Pod"
  ],
  "Pod Address": [
   null,
-  "容器舱地址"
+  "pod 地址"
  ],
  "Pod Endpoints": [
   null,
-  "容器舱端点"
+  "pod 端点"
  ],
  "Pod Replicated": [
   null,
-  "复制的容器舱"
+  "复制的 pod"
  ],
  "Pod Selector": [
   null,
-  "容器舱选择器"
+  "pod 选择器"
  ],
  "Pods": [
   null,
-  "容器舱"
+  "Pod"
  ],
  "Pods contain one or more containers that run together on a node, containing your application code.": [
   null,
-  "容器舱包含一个或多个运行在同一节点上包含应用代码的容器。"
+  "pod 包含一个或多个运行在同一节点上包含应用代码的容器。"
  ],
  "Pool Name": [
   null,
@@ -1017,7 +1017,7 @@ return plural;
  ],
  "Populate": [
   null,
-  "填入"
+  "产生"
  ],
  "Ports": [
   null,
@@ -1037,7 +1037,7 @@ return plural;
  ],
  "Project access policy allows anonymous users to pull images.": [
   null,
-  "项目访问策略允许任何用户拉取镜像。"
+  "项目访问策略允许匿名用户拉取镜像。"
  ],
  "Project access policy allows any authenticated user to pull images.": [
   null,
@@ -1133,7 +1133,7 @@ return plural;
  ],
  "Remote registry is insecure": [
   null,
-  "远程注册表不安全"
+  "远程 registry 不安全"
  ],
  "Remove": [
   null,
@@ -1165,7 +1165,7 @@ return plural;
  ],
  "Replicas": [
   null,
-  "复用"
+  "复制"
  ],
  "Replication Controller": [
   null,
@@ -1177,11 +1177,11 @@ return plural;
  ],
  "Replication controllers dynamically create instances of pods from templates, and remove pods when necessary.": [
   null,
-  "复制控制器动态地从模板创建容器舱实例，并且在必要的时候移除容器舱。"
+  "复制控制器动态地从模板创建 pod 实例，并且在必要的时候移除 pod。"
  ],
  "Repository URL": [
   null,
-  "仓库网址"
+  "仓库 URL"
  ],
  "Requested": [
   null,
@@ -1193,7 +1193,7 @@ return plural;
  ],
  "Requires Authentication": [
   null,
-  "需要认证"
+  "需要验证"
  ],
  "Restart Count": [
   null,
@@ -1229,7 +1229,7 @@ return plural;
  ],
  "Scheduled Pods": [
   null,
-  "被调度的容器舱"
+  "被调度的 pod"
  ],
  "Scheduling Disabled": [
   null,
@@ -1237,19 +1237,19 @@ return plural;
  ],
  "Secret": [
   null,
-  "口令"
+  "秘密"
  ],
  "Secret File": [
   null,
-  "口令文件"
+  "秘密文件"
  ],
  "Secret Name": [
   null,
-  "口令名称"
+  "秘密名称"
  ],
  "Secret Volume": [
   null,
-  "口令卷"
+  "秘密卷"
  ],
  "Select Manifest File...": [
   null,
@@ -1257,11 +1257,11 @@ return plural;
  ],
  "Select Member": [
   null,
-  ""
+  "选择成员"
  ],
  "Select Role": [
   null,
-  ""
+  "选择角色"
  ],
  "Select an object to see more details.": [
   null,
@@ -1285,7 +1285,7 @@ return plural;
  ],
  "Services group pods and provide a common DNS name and an optional, load-balanced IP address to access them.": [
   null,
-  "服务组织容器舱并提供一个通用DNS名称和一个可选的负载均衡的IP地址来访问它们。"
+  "服务组 pod 并提供一个通用 DNS 名称和一个可选的负载均衡的 IP 地址来访问它们。"
  ],
  "Session Affinity": [
   null,
@@ -1297,7 +1297,7 @@ return plural;
  ],
  "Shared: Allow any authenticated user to pull images": [
   null,
-  "共享的：运行任何已认证的用户拉取镜像"
+  "共享的：运行任何已验证的用户拉取镜像"
  ],
  "Shell": [
   null,
@@ -1321,11 +1321,11 @@ return plural;
  ],
  "Show all Pod Containers": [
   null,
-  "显示所有容器舱容器"
+  "显示所有 pod 容器"
  ],
  "Show all Pods": [
   null,
-  "显示所有容器舱"
+  "显示所有 pod"
  ],
  "Show all Projects": [
   null,
@@ -1385,7 +1385,7 @@ return plural;
  ],
  "TLS Termination": [
   null,
-  "TLS 终止协议"
+  "TLS 终止"
  ],
  "Tags": [
   null,
@@ -1449,7 +1449,7 @@ return plural;
  ],
  "The pod '{{ target }}' does not exist.": [
   null,
-  "容器舱 '{{ target }}' 不存在。"
+  "pod '{{ target }}' 不存在。"
  ],
  "The project '{{ projName }}' does not exist.": [
   null,
@@ -1469,7 +1469,7 @@ return plural;
  ],
  "The server uses a certificate signed by an unknown authority.": [
   null,
-  "服务器使用率一个通过未知机构签名的证书。"
+  "服务器使用由一个未知机构签名的证书。"
  ],
  "The service '{{ target }}' does not exist.": [
   null,
@@ -1481,15 +1481,15 @@ return plural;
  ],
  "This claim is in use. Deleting it may cause issues with the following pod:": [
   null,
-  "该声明正在使用。删除它也许会对以下容器舱产生影响:"
+  "该声明正在使用。删除它会对以下 pod 产生影响:"
  ],
  "This option is for single node testing only – local storage will not work in a multi-node cluster": [
   null,
-  "该选项是仅为单节点测试 – 本地存储，将在多节点集群中不工作"
+  "该选项仅适用于单节点测试 – 本地存储将无法在多节点集群中工作"
  ],
  "This volume has been claimed by {{ item.item.spec.claimRef.namespace }} / {{ item.item.spec.claimRef.name }}. Deleting it will break that claim and may cause issues with any pods depending on it.": [
   null,
-  "该卷已经被 {{ item.item.spec.claimRef.namespace }} / {{ item.item.spec.claimRef.name }} 声明。删除它将会损坏该声明并且也许会对依赖于它的容器舱尝试影响。"
+  "该卷已经被 {{ item.item.spec.claimRef.namespace }} / {{ item.item.spec.claimRef.name }} 声明。删除它将会损坏该声明，并会影响到依赖它的 pod。"
  ],
  "This volume has not been claimed": [
   null,
@@ -1529,7 +1529,7 @@ return plural;
  ],
  "Unable to read the Kubernetes application manifest. Code $0.": [
   null,
-  "无法读取 Kubernetes 应用程序清单. 代码 $0."
+  "无法读取 Kubernetes 应用程序清单。代码 $0."
  ],
  "Unavailable": [
   null,
@@ -1563,17 +1563,13 @@ return plural;
   null,
   "用户"
  ],
- "Virtual Machines": [
-  null,
-  "虚拟机"
- ],
  "Volume": [
   null,
   "卷"
  ],
  "Volume ID": [
   null,
-  "卷编号"
+  "卷 ID"
  ],
  "Volume Name": [
   null,
@@ -1593,7 +1589,7 @@ return plural;
  ],
  "Welcome to the Image Registry": [
   null,
-  "欢迎使用镜像注册表"
+  "欢迎使用 Image Registry"
  ],
  "When": [
   null,
@@ -1613,7 +1609,7 @@ return plural;
  ],
  "Your login credentials do not give you access to use the docker registry from the command line.": [
   null,
-  "登录凭证没有从命令行使用 Docker 注册表的权限"
+  "登录凭证没有从命令行使用 Docker  registry 的权限"
  ],
  "eg: my-image-stream": [
   null,

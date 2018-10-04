@@ -1563,10 +1563,6 @@ return plural;
   null,
   "ユーザー"
  ],
- "Virtual Machines": [
-  null,
-  "仮想マシン"
- ],
  "Volume": [
   null,
   "音量"

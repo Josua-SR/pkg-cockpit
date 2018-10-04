@@ -1263,7 +1263,7 @@ return plural;
  ],
  "Select Role": [
   null,
-  ""
+  "Seleccionar Rol"
  ],
  "Select an object to see more details.": [
   null,
@@ -1564,10 +1564,6 @@ return plural;
  "Users": [
   null,
   "Usuarios"
- ],
- "Virtual Machines": [
-  null,
-  "Máquinas Virtuales"
  ],
  "Volume": [
   null,

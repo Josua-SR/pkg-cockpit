@@ -293,6 +293,10 @@ return plural;
   null,
   "Adres nie może być pusty"
  ],
+ "Address is not a valid URL": [
+  null,
+  "Adres nie jest prawidłowym adresem URL"
+ ],
  "Apply": [
   null,
   "Zastosuj"
@@ -1527,7 +1531,7 @@ return plural;
  ],
  "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
   null,
-  ""
+  "System plików jest używany przez sesje logowania i usługi systemowe. Kontynuacja je zatrzyma."
  ],
  "The filesystem is in use by login sessions.                Proceeding will stop these.": [
   null,
@@ -1535,7 +1539,7 @@ return plural;
  ],
  "The filesystem is in use by login sessions. Proceeding will stop these.": [
   null,
-  ""
+  "System plików jest używany przez sesje logowania. Kontynuacja je zatrzyma."
  ],
  "The filesystem is in use by system services.                Proceeding will stop these.": [
   null,
@@ -1543,7 +1547,7 @@ return plural;
  ],
  "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
-  ""
+  "System plików jest używany przez usługi systemowe. Kontynuacja je zatrzyma."
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
@@ -1587,7 +1591,7 @@ return plural;
  ],
  "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
   null,
-  ""
+  "To urządzenie ma obecnie używane systemy plików. Kontynuacja odmontuje wszystkie jego systemy plików."
  ],
  "This device is currently used for RAID devices.": [
   null,
@@ -1599,7 +1603,7 @@ return plural;
  ],
  "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
   null,
-  ""
+  "To urządzenie jest obecnie używane dla urządzeń RAID. Kontynuacja usunie je z jego urządzeń RAID."
  ],
  "This device is currently used for VDO devices.": [
   null,
@@ -1615,7 +1619,7 @@ return plural;
  ],
  "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
-  ""
+  "To urządzenie jest obecnie używane dla grup woluminów. Kontynuacja usunie je z jego grup woluminów."
  ],
  "This disk cannot be removed while the device is recovering.": [
   null,

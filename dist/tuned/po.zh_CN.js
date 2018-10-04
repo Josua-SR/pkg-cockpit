@@ -81,23 +81,23 @@ return plural;
  ],
  "Communication with tuned has failed": [
   null,
-  "与 Tuned 通信失败"
+  "与 tuned 通信失败"
  ],
  "Disable tuned": [
   null,
-  "禁用 Tuned"
+  "禁用 tuned"
  ],
  "Failed to disable tuned": [
   null,
-  "禁用Tuned失败"
+  "禁用 tuned 失败"
  ],
  "Failed to disable tuned profile": [
   null,
-  "禁用Tuned配置失败"
+  "禁用 tuned 配置集失败"
  ],
  "Failed to enable tuned": [
   null,
-  "启用Tuned失败"
+  "启用 tuned 失败"
  ],
  "Failed to switch profile": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to change profiles": [
   null,
-  ""
+  "用户 <b>$0</b> 不允许修改档案"
  ],
  "This system is using a custom profile": [
   null,

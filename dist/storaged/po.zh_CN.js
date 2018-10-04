@@ -81,7 +81,7 @@ return plural;
  ],
  "$0 data + $1 overhead used of $2 ($3)": [
   null,
-  ""
+  "$0 数据 + $1 开销使用 $ 2（$3）"
  ],
  "$0 day": [
   "$0 days",
@@ -93,15 +93,15 @@ return plural;
  ],
  "$0 filesystems can not be made larger.": [
   null,
-  ""
+  "$ 0文件系统不能变得更大。"
  ],
  "$0 filesystems can not be made smaller.": [
   null,
-  ""
+  "$ 0文件系统不能变得更小。"
  ],
  "$0 filesystems can not be resized here.": [
   null,
-  ""
+  "$ 0文件系统不能在这里改变大小。"
  ],
  "$0 hour": [
   "$0 hours",
@@ -113,7 +113,7 @@ return plural;
  ],
  "$0 is not available from any repository.": [
   null,
-  ""
+  "所有仓库都不提供 $0。"
  ],
  "$0 minute": [
   "$0 minutes",
@@ -129,11 +129,11 @@ return plural;
  ],
  "$0 slots remain": [
   null,
-  ""
+  "剩余 $0 个 slot"
  ],
  "$0 used of $1 ($2 saved)": [
   null,
-  ""
+  "$0 使用 $1（已保存 $2）"
  ],
  "$0 week": [
   "$0 weeks",
@@ -141,7 +141,7 @@ return plural;
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "将安装 $0。"
  ],
  "$0 year": [
   "$0 years",
@@ -153,7 +153,7 @@ return plural;
  ],
  "$name (from $host)": [
   null,
-  "$name (从 $host)"
+  "$name (来自 $host)"
  ],
  "${size} ${desc}": [
   null,
@@ -169,7 +169,7 @@ return plural;
  ],
  "--": [
   null,
-  ""
+  "--"
  ],
  "1 MiB": [
   null,
@@ -229,7 +229,7 @@ return plural;
  ],
  "A disk is needed.": [
   null,
-  ""
+  "需要一个磁盘。"
  ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
@@ -245,7 +245,7 @@ return plural;
  ],
  "Active since": [
   null,
-  ""
+  "活跃自"
  ],
  "Add": [
   null,
@@ -257,7 +257,7 @@ return plural;
  ],
  "Add Key": [
   null,
-  ""
+  "添加密钥"
  ],
  "Add iSCSI Portal": [
   null,
@@ -265,17 +265,21 @@ return plural;
  ],
  "Adding physical volume to $target": [
   null,
-  "添加物理卷至 $target"
+  "为 $target 添加物理卷"
  ],
  "Additional packages:": [
   null,
-  ""
+  "额外的软件包："
  ],
  "Address": [
   null,
   "地址"
  ],
  "Address cannot be empty": [
+  null,
+  "地址不能为空"
+ ],
+ "Address is not a valid URL": [
   null,
   ""
  ],
@@ -293,7 +297,7 @@ return plural;
  ],
  "Authentication required": [
   null,
-  "需要认证"
+  "需要验证"
  ],
  "Available targets on $0": [
   null,
@@ -301,15 +305,15 @@ return plural;
  ],
  "Backing Device": [
   null,
-  ""
+  "后端设备"
  ],
  "Block": [
   null,
-  ""
+  "块"
  ],
  "Block device for filesystems": [
   null,
-  "块设备的文件系统"
+  "文件系统的块设备"
  ],
  "Blocked": [
   null,
@@ -333,11 +337,11 @@ return plural;
  ],
  "Change passphrase": [
   null,
-  ""
+  "修改密码"
  ],
  "Checking $target": [
   null,
-  ""
+  "检查 $target"
  ],
  "Checking RAID Device $target": [
   null,
@@ -349,7 +353,7 @@ return plural;
  ],
  "Checking installed software": [
   null,
-  ""
+  "检查安装的软件"
  ],
  "Chunk Size": [
   null,
@@ -357,7 +361,7 @@ return plural;
  ],
  "Cleaning up for $target": [
   null,
-  "清除 $target"
+  "清理 $target"
  ],
  "Close": [
   null,
@@ -369,7 +373,7 @@ return plural;
  ],
  "Compatible with modern system and hard disks > 2TB (GPT)": [
   null,
-  "兼容现代系统，且支持磁盘 > 2TB (GPT)"
+  "兼容现代系统，且硬盘空间大于 2TB (GPT)"
  ],
  "Compression": [
   null,
@@ -381,7 +385,7 @@ return plural;
  ],
  "Confirm removal with passphrase": [
   null,
-  ""
+  "使用密码确认删除"
  ],
  "Content": [
   null,
@@ -413,7 +417,7 @@ return plural;
  ],
  "Create VDO Device": [
   null,
-  ""
+  "创建 VDO 设备"
  ],
  "Create Volume Group": [
   null,
@@ -441,7 +445,7 @@ return plural;
  ],
  "Creating filesystem on $target": [
   null,
-  "为 $target 创建文件系统"
+  "在 $target 中创建文件系统"
  ],
  "Creating logical volume $target": [
   null,
@@ -469,15 +473,15 @@ return plural;
  ],
  "Custom encryption options": [
   null,
-  ""
+  "自定义加密选项"
  ],
  "Custom mount option": [
   null,
-  ""
+  "自定义挂载选项"
  ],
  "Custom mount options": [
   null,
-  ""
+  "自定义挂载选项"
  ],
  "DISK IS FAILING": [
   null,
@@ -489,15 +493,15 @@ return plural;
  ],
  "Deactivate": [
   null,
-  "未激活"
+  "取消激活"
  ],
  "Deactivating $target": [
   null,
-  "停用 $target"
+  "取消激活 $target"
  ],
  "Deduplication": [
   null,
-  ""
+  "复制"
  ],
  "Default": [
   null,
@@ -517,7 +521,7 @@ return plural;
  ],
  "Deleting a VDO device will erase all data on it.": [
   null,
-  ""
+  "删除 RAID 设备将擦除其中的所有数据."
  ],
  "Deleting a logical volume will delete all data in it.": [
   null,
@@ -537,7 +541,7 @@ return plural;
  ],
  "Device File": [
   null,
-  ""
+  "设备文件"
  ],
  "Device is read-only": [
   null,
@@ -553,7 +557,7 @@ return plural;
  ],
  "Disk passphrase": [
   null,
-  ""
+  "磁盘口令"
  ],
  "Disks": [
   null,
@@ -565,11 +569,11 @@ return plural;
  ],
  "Downloading $0": [
   null,
-  ""
+  "正在下载"
  ],
  "Drive": [
   null,
-  "驱动器"
+  "驱动"
  ],
  "Drives": [
   null,
@@ -581,11 +585,11 @@ return plural;
  ],
  "Edit Tang keyserver": [
   null,
-  ""
+  "编辑Tang keyserver"
  ],
  "Editing a key requires a free slot": [
   null,
-  ""
+  "编辑密钥需要一个空闲插槽"
  ],
  "Ejecting $target": [
   null,
@@ -617,11 +621,11 @@ return plural;
  ],
  "Encrypted volumes can not be resized here.": [
   null,
-  ""
+  "加密卷不能在这里改变大小。"
  ],
  "Encrypted volumes need to be unlocked before they can be resized.": [
   null,
-  ""
+  "加密卷需要先解锁才能调整大小。"
  ],
  "Encryption": [
   null,
@@ -673,7 +677,7 @@ return plural;
  ],
  "Force remove passphrase in $0": [
   null,
-  ""
+  "强制删除 $0 中的密码"
  ],
  "Format": [
   null,
@@ -709,23 +713,23 @@ return plural;
  ],
  "Grow": [
   null,
-  ""
+  "增长"
  ],
  "Grow Logical Volume": [
   null,
-  ""
+  "稀疏逻辑卷增长"
  ],
  "Grow logical size of $0": [
   null,
-  ""
+  "增长 $0 的逻辑大小"
  ],
  "Grow to take all space": [
   null,
-  ""
+  "增长到占据所有空间"
  ],
  "If tang-show-keys is not available, run the following:": [
   null,
-  ""
+  "如果没有 tang-show-keys，请运行以下命令："
  ],
  "In Sync": [
   null,
@@ -737,7 +741,7 @@ return plural;
  ],
  "Index Memory": [
   null,
-  ""
+  "索引内存"
  ],
  "Install": [
   null,
@@ -745,19 +749,19 @@ return plural;
  ],
  "Install NFS Support": [
   null,
-  ""
+  "安装 NFS 支持"
  ],
  "Install Software": [
   null,
-  ""
+  "安装软件"
  ],
  "Install VDO support": [
   null,
-  ""
+  "安装 VDO 支持"
  ],
  "Installing $0": [
   null,
-  ""
+  "正在安装 $0"
  ],
  "Invalid username or password": [
   null,
@@ -769,31 +773,31 @@ return plural;
  ],
  "Key slots with unknown types can not be edited here": [
   null,
-  ""
+  "这里无法编辑未知类型的密钥 slot"
  ],
  "Key source": [
   null,
-  ""
+  "密钥源"
  ],
  "Keys": [
   null,
-  ""
+  "密钥"
  ],
  "Keyserver": [
   null,
-  ""
+  "Keyserver"
  ],
  "Keyserver address": [
   null,
-  ""
+  "Keyserver 地址"
  ],
  "Keyserver removal may prevent unlocking $0.": [
   null,
-  ""
+  "删除 keyserver 可能会阻止解锁 $0。"
  ],
  "Local Mount Point": [
   null,
-  ""
+  "挂载点"
  ],
  "Lock": [
   null,
@@ -805,11 +809,11 @@ return plural;
  ],
  "Logical": [
   null,
-  ""
+  "逻辑"
  ],
  "Logical Size": [
   null,
-  ""
+  "逻辑大小"
  ],
  "Logical Volume": [
   null,
@@ -825,15 +829,15 @@ return plural;
  ],
  "Make sure the key hash from the Tang server matches:": [
   null,
-  ""
+  "确保来自 Tang 服务器的密钥哈希匹配："
  ],
  "Manually check with SSH: ": [
   null,
-  ""
+  "用 SSH 手动检查： "
  ],
  "Marking $target as faulty": [
   null,
-  "标记 $target 出现故障"
+  "标记 $target 为故障"
  ],
  "Member of RAID Device": [
   null,
@@ -865,27 +869,27 @@ return plural;
  ],
  "Mount at boot": [
   null,
-  ""
+  "引导时挂载"
  ],
  "Mount options": [
   null,
-  ""
+  "挂载选项"
  ],
  "Mount point can not be empty": [
   null,
-  ""
+  "挂载点不能为空"
  ],
  "Mount point cannot be empty.": [
   null,
-  ""
+  "挂载点不能为空"
  ],
  "Mount point must start with \"/\".": [
   null,
-  ""
+  "挂载点必须以“/”开头。"
  ],
  "Mount read only": [
   null,
-  ""
+  "只读挂载"
  ],
  "Mounted At": [
   null,
@@ -905,11 +909,11 @@ return plural;
  ],
  "NFS Mounts": [
   null,
-  ""
+  "NFS 挂载"
  ],
  "NFS Support not installed": [
   null,
-  ""
+  "未安装 NFS 的支持"
  ],
  "NTFS - Compatible with most systems": [
   null,
@@ -941,11 +945,11 @@ return plural;
  ],
  "New NFS Mount": [
   null,
-  ""
+  "新的 NFS 挂载"
  ],
  "New passphrase": [
   null,
-  ""
+  "新口令"
  ],
  "Next": [
   null,
@@ -961,11 +965,11 @@ return plural;
  ],
  "No NFS mounts set up": [
   null,
-  ""
+  "没有设置 NFS 挂载"
  ],
  "No available slots": [
   null,
-  ""
+  "没有可用的 slot"
  ],
  "No disks are available.": [
   null,
@@ -977,7 +981,7 @@ return plural;
  ],
  "No free key slots": [
   null,
-  ""
+  "没有空闲的密钥 slot"
  ],
  "No free space": [
   null,
@@ -989,11 +993,11 @@ return plural;
  ],
  "No keys added": [
   null,
-  ""
+  "没有添加密钥"
  ],
  "No media inserted": [
   null,
-  "没有插入媒体"
+  "没有插入介质"
  ],
  "No partitioning": [
   null,
@@ -1005,7 +1009,7 @@ return plural;
  ],
  "No storage set up as VDO": [
   null,
-  ""
+  "没有存储设置为 VDO"
  ],
  "No volume groups created": [
   null,
@@ -1017,7 +1021,7 @@ return plural;
  ],
  "Not mounted": [
   null,
-  ""
+  "未加载"
  ],
  "Not running": [
   null,
@@ -1033,7 +1037,7 @@ return plural;
  ],
  "Old passphrase": [
   null,
-  ""
+  "旧密码口令"
  ],
  "On": [
   null,
@@ -1041,7 +1045,7 @@ return plural;
  ],
  "Only $0 of $1 are used.": [
   null,
-  ""
+  "仅使用 $1 中的 $0。"
  ],
  "Operation '$operation' on $target": [
   null,
@@ -1085,7 +1089,7 @@ return plural;
  ],
  "Passphrase removal may prevent unlocking $0.": [
   null,
-  ""
+  "删除密码口令可能会阻止解锁 $0。"
  ],
  "Passphrases do not match": [
   null,
@@ -1097,19 +1101,19 @@ return plural;
  ],
  "Path on Server": [
   null,
-  ""
+  "服务器上的路径"
  ],
  "Path on server cannot be empty.": [
   null,
-  ""
+  "服务器上的路径不能为空。"
  ],
  "Path on server must start with \"/\".": [
   null,
-  ""
+  "服务器上的路径必须以“/”开头。"
  ],
  "Physical": [
   null,
-  ""
+  "物理"
  ],
  "Physical Volume": [
   null,
@@ -1125,7 +1129,7 @@ return plural;
  ],
  "Physical volumes can not be resized here.": [
   null,
-  ""
+  "物理卷不能在这里改变大小。"
  ],
  "Please confirm deletion of $0": [
   null,
@@ -1133,7 +1137,7 @@ return plural;
  ],
  "Please confirm stopping of $0": [
   null,
-  ""
+  "请确认停止$ 0"
  ],
  "Pool": [
   null,
@@ -1141,15 +1145,15 @@ return plural;
  ],
  "Pool for Thin Logical Volumes": [
   null,
-  "稀疏逻辑卷池"
+  "瘦逻辑卷池"
  ],
  "Pool for Thin Volumes": [
   null,
-  "瘦分配卷的池"
+  "瘦卷的池"
  ],
  "Pool for thinly provisioned volumes": [
   null,
-  "池的瘦分配配置卷"
+  "瘦分配配置卷的池"
  ],
  "Port": [
   null,
@@ -1157,7 +1161,7 @@ return plural;
  ],
  "Process": [
   null,
-  ""
+  "流程"
  ],
  "Purpose": [
   null,
@@ -1253,7 +1257,7 @@ return plural;
  ],
  "Removals:": [
   null,
-  ""
+  "移除"
  ],
  "Remove": [
   null,
@@ -1261,27 +1265,27 @@ return plural;
  ],
  "Remove $0?": [
   null,
-  ""
+  "移除 $0"
  ],
  "Remove Tang keyserver": [
   null,
-  ""
+  "删除 Tang keyserver"
  ],
  "Remove device": [
   null,
-  ""
+  "删除设备"
  ],
  "Remove passphrase": [
   null,
-  ""
+  "删除密码"
  ],
  "Remove passphrase in $0?": [
   null,
-  ""
+  "在 $0 中删除密码？"
  ],
  "Removing $0": [
   null,
-  ""
+  "正在删除 $0"
  ],
  "Removing $target from RAID Device": [
   null,
@@ -1309,11 +1313,11 @@ return plural;
  ],
  "Repairing $target": [
   null,
-  ""
+  "修复$ target"
  ],
  "Repeat passphrase": [
   null,
-  ""
+  "重复密码"
  ],
  "Resizing $target": [
   null,
@@ -1333,7 +1337,7 @@ return plural;
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
-  ""
+  "保存新密码需要解锁磁盘。请提供当前的磁盘密码。"
  ],
  "Securely erasing $target": [
   null,
@@ -1353,7 +1357,7 @@ return plural;
  ],
  "Server cannot be empty.": [
   null,
-  ""
+  "名称不能为空。"
  ],
  "Service": [
   null,
@@ -1369,11 +1373,11 @@ return plural;
  ],
  "Shrink": [
   null,
-  ""
+  "缩小"
  ],
  "Shrink Logical Volume": [
   null,
-  ""
+  "缩小逻辑卷"
  ],
  "Size": [
   null,
@@ -1397,11 +1401,11 @@ return plural;
  ],
  "Size must be at least $0": [
   null,
-  ""
+  "大小必须最小为 $0"
  ],
  "Slot $0": [
   null,
-  ""
+  "插槽 $0"
  ],
  "Spare": [
   null,
@@ -1421,7 +1425,7 @@ return plural;
  ],
  "Starting swapspace $target": [
   null,
-  "启动 swapspace $target"
+  "启动交换空间 $target"
  ],
  "Stop": [
   null,
@@ -1429,15 +1433,15 @@ return plural;
  ],
  "Stop Device": [
   null,
-  ""
+  "停止设备"
  ],
  "Stop and Unmount": [
   null,
-  ""
+  "停止并卸载"
  ],
  "Stop and remove": [
   null,
-  ""
+  "停止并删除"
  ],
  "Stopping RAID Device $target": [
   null,
@@ -1445,7 +1449,7 @@ return plural;
  ],
  "Stopping swapspace $target": [
   null,
-  "停止 swapspace $target"
+  "停止启动交换空间 $target"
  ],
  "Storage": [
   null,
@@ -1461,7 +1465,7 @@ return plural;
  ],
  "Stored Passphrase": [
   null,
-  "已存储口令"
+  "已存储的口令"
  ],
  "Stored passphrase": [
   null,
@@ -1469,7 +1473,7 @@ return plural;
  ],
  "Support is installed.": [
   null,
-  ""
+  "已安装支持。"
  ],
  "Swap": [
   null,
@@ -1481,7 +1485,7 @@ return plural;
  ],
  "Tang keyserver": [
   null,
-  ""
+  "Tang keyserver"
  ],
  "The \"storaged\" API is not available on this system.": [
   null,
@@ -1493,43 +1497,43 @@ return plural;
  ],
  "The RAID device must be running in order to add spare disks.": [
   null,
-  "为了添加备用的磁盘，RAID 设备必须在运行状态。"
+  "为了添加备用的磁盘，RAID 设备必须在运行。"
  ],
  "The RAID device must be running in order to remove disks.": [
   null,
-  "为了移除磁盘，RAID 设备必须在运行状态。"
+  "为了移除磁盘，RAID 设备必须在运行。"
  ],
  "The creation of this VDO device did not finish and the device can't be used.": [
   null,
-  ""
+  "此 VDO 设备的创建未完成，无法使用该设备。"
  ],
  "The currently logged in user is not permitted to see information about keys.": [
   null,
-  ""
+  "当前登录的用户不允许查看有关密钥的信息。"
  ],
  "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
   null,
-  ""
+  "登录会话和系统服务正在使用文件系统。继续进行将停止这些。"
  ],
  "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
   null,
-  ""
+  "登录会话和系统服务正在使用文件系统。继续进行将停止这些。"
  ],
  "The filesystem is in use by login sessions.                Proceeding will stop these.": [
   null,
-  ""
+  "登录会话正在使用文件系统。继续进行将停止这些。"
  ],
  "The filesystem is in use by login sessions. Proceeding will stop these.": [
   null,
-  ""
+  "登录会话正在使用文件系统。继续进行将停止这些。"
  ],
  "The filesystem is in use by system services.                Proceeding will stop these.": [
   null,
-  ""
+  "系统服务正在使用文件系统。继续进行将停止这些。"
  ],
  "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
-  ""
+  "系统服务正在使用文件系统。继续进行将停止这些。"
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
@@ -1537,7 +1541,7 @@ return plural;
  ],
  "The last key slot can not be removed": [
   null,
-  ""
+  "无法删除最后一个密钥槽"
  ],
  "The last physical volume of a volume group cannot be removed.": [
   null,
@@ -1549,11 +1553,11 @@ return plural;
  ],
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
   null,
-  "该系统上有多路径设备，但是多路径服务未运行。"
+  "该系统上有带有多路径的设备，但是多路径服务未运行。"
  ],
  "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
   null,
-  "没有其他足够的空闲空间来移除改物理卷。至少需要 $0 或更多空闲空间。"
+  "其它地方没有足够的空闲空间来移除这个物理卷。至少需要 $0 或更多空闲空间。"
  ],
  "Thin Logical Volume": [
   null,
@@ -1561,19 +1565,19 @@ return plural;
  ],
  "This NFS mount is in use and only its options can be changed.": [
   null,
-  ""
+  "此 NFS 挂载正在使用中，只能更改其选项。"
  ],
  "This VDO device does not use all of its backing device.": [
   null,
-  ""
+  "此 VDO 设备不使用其所有后台设备。"
  ],
  "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
   null,
-  "该设备有正在使用的文件系统。               程序将卸载其上的所有文件系统。"
+  "该设备有正在使用的文件系统。               继续进行将卸载其上的所有文件系统。"
  ],
  "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
   null,
-  ""
+  "该设备有正在使用的文件系统。继续进行将卸载其上的所有文件系统。"
  ],
  "This device is currently used for RAID devices.": [
   null,
@@ -1581,15 +1585,15 @@ return plural;
  ],
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
   null,
-  "该设备正在被 RAID 设备使用。                程序将从其 RAID 设备中移除它。"
+  "该设备正在被 RAID 设备使用。                继续进行将会从 RAID 设备中移除它。"
  ],
  "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
   null,
-  ""
+  "该设备正在被 RAID 设备使用。                继续进行将从 RAID 设备中移除它。"
  ],
  "This device is currently used for VDO devices.": [
   null,
-  ""
+  "该设备正在被 VOD 设备使用。"
  ],
  "This device is currently used for volume groups.": [
   null,
@@ -1597,27 +1601,27 @@ return plural;
  ],
  "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
   null,
-  "该设备正在被卷组使用。                程序将从其卷组中移除它。"
+  "该设备正在被卷组使用。                继续进行将从卷组中移除它。"
  ],
  "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
-  ""
+  "该设备正在被卷组使用。继续进行将从卷组中移除它。"
  ],
  "This disk cannot be removed while the device is recovering.": [
   null,
-  "当磁盘正在恢复时，该磁盘不能被移除。"
+  "当设备正在恢复时，该磁盘不能被移除。"
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
-  ""
+  "在调整大小之前，需要激活此卷。"
  ],
  "Total size: $0": [
   null,
-  ""
+  "总大小：$0"
  ],
  "Trust key": [
   null,
-  ""
+  "信任密钥"
  ],
  "Type": [
   null,
@@ -1633,15 +1637,15 @@ return plural;
  ],
  "Unable to remove mount": [
   null,
-  ""
+  "无法删除挂载"
  ],
  "Unable to unmount filesystem": [
   null,
-  ""
+  "无法卸载文件系统"
  ],
  "Unit": [
   null,
-  ""
+  "单位"
  ],
  "Unknown": [
   null,
@@ -1657,7 +1661,7 @@ return plural;
  ],
  "Unknown type": [
   null,
-  ""
+  "未知类型"
  ],
  "Unlock": [
   null,
@@ -1665,11 +1669,11 @@ return plural;
  ],
  "Unlock at boot": [
   null,
-  ""
+  "在启动时解锁"
  ],
  "Unlock read only": [
   null,
-  ""
+  "只读解锁"
  ],
  "Unlocking $target": [
   null,
@@ -1677,7 +1681,7 @@ return plural;
  ],
  "Unlocking disk...": [
   null,
-  ""
+  "解锁磁盘......"
  ],
  "Unmount": [
   null,
@@ -1693,7 +1697,7 @@ return plural;
  ],
  "Unrecognized data can not be made smaller here.": [
   null,
-  ""
+  "这里不能把无法识别的数据变小。"
  ],
  "Unsupported volume": [
   null,
@@ -1701,11 +1705,11 @@ return plural;
  ],
  "Usage": [
   null,
-  "使用情况"
+  "使用"
  ],
  "Use 512 Byte emulation": [
   null,
-  ""
+  "使用 512 字节模拟"
  ],
  "Used": [
   null,
@@ -1717,27 +1721,27 @@ return plural;
  ],
  "VDO Backing": [
   null,
-  ""
+  "VDO支持"
  ],
  "VDO Device": [
   null,
-  ""
+  "VDO 设备"
  ],
  "VDO Device $0": [
   null,
-  ""
+  "VDO 设备 $0"
  ],
  "VDO Devices": [
   null,
-  ""
+  "VDO 设备"
  ],
  "VDO backing devices can not be made smaller": [
   null,
-  ""
+  "VDO 后台设备不能更小"
  ],
  "VDO support not installed": [
   null,
-  ""
+  "未安装 VDO 的支持"
  ],
  "VFAT - Compatible with all systems and devices": [
   null,
@@ -1745,11 +1749,11 @@ return plural;
  ],
  "Verify key": [
   null,
-  ""
+  "验证密钥"
  ],
  "Very securely erasing $target": [
   null,
-  "多重安全擦除 $target"
+  "非常安全地擦除 $target"
  ],
  "Volume": [
   null,
@@ -1769,11 +1773,11 @@ return plural;
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "等待其他软件管理操作完成"
  ],
  "What if tang-show-keys is not available?": [
   null,
-  ""
+  "如果没有 tang-show-keys？"
  ],
  "Write-mostly": [
   null,
@@ -1809,7 +1813,7 @@ return plural;
  ],
  "key slot $0": [
   null,
-  ""
+  "钥匙槽 $0"
  ],
  "undefined": [
   null,
@@ -1837,7 +1841,7 @@ return plural;
  ],
  "storage-id-desc\u0004Swap Space": [
   null,
-  "Swap 空间"
+  "交换空间"
  ],
  "storage-id-desc\u0004Unrecognized Data": [
   null,
@@ -1845,15 +1849,15 @@ return plural;
  ],
  "storage-id-desc\u0004VDO Backing": [
   null,
-  ""
+  "VDO支持"
  ],
  "storage\u0004Drive": [
   null,
-  "驱动器"
+  "驱动"
  ],
  "storage\u0004Hard Disk": [
   null,
-  "机械硬盘"
+  "硬盘"
  ],
  "storage\u0004Optical Drive": [
   null,
@@ -1865,7 +1869,7 @@ return plural;
  ],
  "storage\u0004Solid-State Disk": [
   null,
-  "固态硬盘"
+  "固态磁盘"
  ],
  "format-bytes\u0004bytes": [
   null,

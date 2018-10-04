@@ -20,6 +20,9 @@
 var cockpit = require("cockpit");
 var React = require("react");
 var ReactDOM = require("react-dom");
+var PropTypes = require("prop-types");
+var createReactClass = require('create-react-class');
+
 var _ = cockpit.gettext;
 
 require("page.css");
@@ -46,13 +49,13 @@ require("cockpit-components-dialog.css");
  *  - idle_message optional, always show this message on the last row when idle
  *  - dialog_done optional, callback when dialog is finished (param true if success, false on cancel)
  */
-var DialogFooter = React.createClass({
+var DialogFooter = createReactClass({
     propTypes: {
-        cancel_clicked: React.PropTypes.func,
-        cancel_caption: React.PropTypes.string,
-        actions: React.PropTypes.array,
-        static_error: React.PropTypes.string,
-        dialog_done: React.PropTypes.func,
+        cancel_clicked: PropTypes.func,
+        cancel_caption: PropTypes.string,
+        actions: PropTypes.array,
+        static_error: PropTypes.string,
+        dialog_done: PropTypes.func,
     },
     getInitialState: function() {
         return {
@@ -72,11 +75,11 @@ var DialogFooter = React.createClass({
     },
     componentDidMount: function() {
         document.body.classList.add("modal-in");
-        document.addEventListener('keyup', this.keyUpHandler.bind(this));
+        document.addEventListener('keyup', this.keyUpHandler);
     },
     componentWillUnmount: function() {
         document.body.classList.remove("modal-in");
-        document.removeEventListener('keyup', this.keyUpHandler.bind(this));
+        document.removeEventListener('keyup', this.keyUpHandler);
     },
     update_progress: function(msg, cancel) {
         this.setState({ action_progress_message: msg, action_progress_cancel: cancel });
@@ -93,7 +96,7 @@ var DialogFooter = React.createClass({
             action_canceled: false,
         });
 
-        var p = handler(this.update_progress.bind(this))
+        var p = handler(this.update_progress)
                 .then(function() {
                     self.setState({ action_in_progress: false, error_message: null });
                     if (self.props.dialog_done)
@@ -113,7 +116,7 @@ var DialogFooter = React.createClass({
                 });
 
         if (p.progress)
-            p.progress(this.update_progress.bind(this));
+            p.progress(this.update_progress);
 
         this.setState({ action_in_progress_promise: p });
 
@@ -222,7 +225,7 @@ var DialogFooter = React.createClass({
                 { wait_element }
                 <button
                     className={ cancel_style }
-                    onClick={ this.cancel_click.bind(this) }
+                    onClick={ this.cancel_click }
                     disabled={ cancel_disabled }
                 >{ cancel_caption }</button>
                 { action_buttons }
@@ -246,14 +249,14 @@ var DialogFooter = React.createClass({
  *  - footer (react element, top element should be of class modal-footer)
  *  - id optional, id that is assigned to the top level dialog node, but not the backdrop
  */
-var Dialog = React.createClass({
+var Dialog = createReactClass({
     propTypes: {
         // TODO: fix following by refactoring the logic showing modal dialog (recently show_modal_dialog())
-        title: React.PropTypes.string, // is effectively required, but show_modal_dialog() provides initially no props and resets them later.
-        no_backdrop: React.PropTypes.bool,
-        body: React.PropTypes.element, // is effectively required, see above
-        footer: React.PropTypes.element, // is effectively required, see above
-        id: React.PropTypes.string,
+        title: PropTypes.string, // is effectively required, but show_modal_dialog() provides initially no props and resets them later.
+        no_backdrop: PropTypes.bool,
+        body: PropTypes.element, // is effectively required, see above
+        footer: PropTypes.element, // is effectively required, see above
+        id: PropTypes.string
     },
     componentDidMount: function() {
         // if we used a button to open this, make sure it's not focused anymore

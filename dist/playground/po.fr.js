@@ -108,15 +108,15 @@ return plural;
  ],
  "Control": [
   null,
-  ""
+  "Contrôle"
  ],
  "Delete '{{ name }}'": [
   null,
-  ""
+  "Supprimer '{{nom}}'"
  ],
  "Empty": [
   null,
-  ""
+  "Vide"
  ],
  "Error": [
   null,
@@ -132,7 +132,7 @@ return plural;
  ],
  "No matching files found": [
   null,
-  ""
+  "Aucun fichier correspondant trouvé"
  ],
  "Not Ready": [
   null,
@@ -140,19 +140,19 @@ return plural;
  ],
  "Off": [
   null,
-  "Éteint"
+  "De"
  ],
  "Ok": [
   null,
-  ""
+  "Ok"
  ],
  "On": [
   null,
-  "Allumé"
+  "Sur"
  ],
  "Path to file": [
   null,
-  ""
+  "Chemin d'accès au fichier"
  ],
  "Ready": [
   null,
@@ -160,11 +160,11 @@ return plural;
  ],
  "Too many files found": [
   null,
-  ""
+  "Trop de fichiers trouvés"
  ],
  "Unavailable": [
   null,
-  ""
+  "Non disponible"
  ],
  "User": [
   null,
@@ -172,7 +172,7 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "indéfini"
  ],
  "disk-non-rotational\u0004$0 disk is missing": [
   "$0 disks are missing",
@@ -181,14 +181,14 @@ return plural;
  ],
  "key\u0004Control": [
   null,
-  ""
+  "Contrôle"
  ],
  "verb\u0004Empty": [
   null,
-  ""
+  "Vide"
  ],
  "verb\u0004Ready": [
   null,
-  ""
+  "Prêt"
  ]
 }));

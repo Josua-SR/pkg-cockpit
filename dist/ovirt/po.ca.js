@@ -147,6 +147,10 @@ return plural;
   null,
   "Bus"
  ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "Ha fallat l'acció CHANGE NETWORK STATE"
+ ],
  "CPU Type:": [
   null,
   "Tipus de CPU:"
@@ -207,6 +211,10 @@ return plural;
   null,
   "Connecta amb qualsevol aplicació de visualització SPICE o VNC."
  ],
+ "Connecting": [
+  null,
+  "S'està connectant"
+ ],
  "Connection": [
   null,
   "Connexió"
@@ -239,6 +247,10 @@ return plural;
   null,
   "Crea la MV"
  ],
+ "Ctrl+Alt+Del": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "Suprimeix"
@@ -262,6 +274,10 @@ return plural;
  "Disconnect": [
   null,
   "Desconnecta"
+ ],
+ "Disconnected": [
+  null,
+  "Desconnectat"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
@@ -319,6 +335,10 @@ return plural;
   null,
   "Formata"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
+ ],
  "GiB": [
   null,
   "GiB"
@@ -342,6 +362,10 @@ return plural;
  "Host": [
   null,
   "Amfitrió"
+ ],
+ "Host Interface": [
+  null,
+  ""
  ],
  "Host to Maintenance": [
   null,
@@ -627,9 +651,9 @@ return plural;
   null,
   ""
  ],
- "Send shortcut": [
+ "Send key": [
   null,
-  "Envia la drecera"
+  ""
  ],
  "Serial Console": [
   null,
@@ -791,6 +815,38 @@ return plural;
   null,
   "Gestió del servei VDSM"
  ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "Ha fallat l'acció VM FORCE OFF"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "Ha fallat l'acció VM FORCE REBOOT"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "Ha fallat l'acció VM REBOOT"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  ""
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "Ha fallat l'acció VM SHUT DOWN"
+ ],
+ "VM START action failed": [
+  null,
+  "Ha fallat l'acció VM START"
+ ],
  "VM icon": [
   null,
   "Icona de la MV"
@@ -834,10 +890,6 @@ return plural;
  "Volume": [
   null,
   "Volum"
- ],
- "Your browser does not support iframes.": [
-  null,
-  "El vostre navegador no admet iframes."
  ],
  "bridge": [
   null,

@@ -147,6 +147,10 @@ return plural;
   null,
   "Канал"
  ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "Не вдалося виконати дію зі зміни стану мережі"
+ ],
  "CPU Type:": [
   null,
   "Тип процесора:"
@@ -207,6 +211,10 @@ return plural;
   null,
   "З’єднатися із будь-якою програмою перегляду SPICE або VNC."
  ],
+ "Connecting": [
+  null,
+  "Встановлюємо з’єднання"
+ ],
  "Connection": [
   null,
   "З’єднання"
@@ -239,6 +247,10 @@ return plural;
   null,
   "Створення ВМ"
  ],
+ "Ctrl+Alt+Del": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "Вилучити"
@@ -262,6 +274,10 @@ return plural;
  "Disconnect": [
   null,
   "Від’єднатися"
+ ],
+ "Disconnected": [
+  null,
+  "Роз'єднано"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
@@ -319,6 +335,10 @@ return plural;
   null,
   "Формат"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "Помилка під час спроби виконати дію GET HYPERVISOR MAX VCPU"
+ ],
  "GiB": [
   null,
   "ГіБ"
@@ -342,6 +362,10 @@ return plural;
  "Host": [
   null,
   "Вузол"
+ ],
+ "Host Interface": [
+  null,
+  ""
  ],
  "Host to Maintenance": [
   null,
@@ -627,9 +651,9 @@ return plural;
   null,
   "Надіслати немасковане переривання"
  ],
- "Send shortcut": [
+ "Send key": [
   null,
-  "Надіслати скорочення"
+  ""
  ],
  "Serial Console": [
   null,
@@ -791,6 +815,38 @@ return plural;
   null,
   "Керування службою VDSM"
  ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "Не вдалося виконати дію FORCE OFF для ВМ"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "Не вдалося виконати дію FORCE REBOOT для ВМ"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "Не вдалося виконати дію REBOOT для ВМ"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "Спроба виконати дію немаскованого переривання VM SEND завершилася невдало"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "Не вдалося виконати дію SHUT DOWN для ВМ"
+ ],
+ "VM START action failed": [
+  null,
+  "Не вдалося виконати дію START для ВМ"
+ ],
  "VM icon": [
   null,
   "Піктограма ВМ"
@@ -834,10 +890,6 @@ return plural;
  "Volume": [
   null,
   "Том"
- ],
- "Your browser does not support iframes.": [
-  null,
-  "У браузері не передбачено підтримки iframe."
  ],
  "bridge": [
   null,
