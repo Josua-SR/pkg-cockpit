@@ -1,3 +1,11 @@
+cockpit (179-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Machines: Detach disk from VM with LibvirtDBus provider
+    - Machines: Offer cockpit-machines as Application
+
+ -- Martin Pitt <mpitt@debian.org>  Thu, 04 Oct 2018 14:09:53 +0000
+
 cockpit (178-1) unstable; urgency=medium
 
   * New upstream release:
