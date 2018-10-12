@@ -30,6 +30,7 @@ import {
     UNDEFINE_VM,
     UPDATE_ADD_VM,
     UPDATE_LIBVIRT_STATE,
+    UPDATE_NETWORKS,
     UPDATE_OS_INFO_LIST,
     UPDATE_STORAGE_POOLS,
     UPDATE_STORAGE_VOLUMES,
@@ -81,6 +82,26 @@ function lazyComposedReducer({ parentReducer, getSubreducer, getSubstate, setSub
         }
         return newState;
     };
+}
+
+function networks(state, action) {
+    state = state || { };
+    /* Example:
+    state = { "connectionNameA": [vnet0, vnet1],
+              "connectionNameB": [vnet2]
+       }
+    */
+    switch (action.type) {
+    case UPDATE_NETWORKS: {
+        const { connectionName, networks } = action.payload;
+        const newState = Object.assign({}, state);
+
+        newState[connectionName] = networks;
+        return newState;
+    }
+    default:
+        return state;
+    }
 }
 
 function vms(state, action) {
@@ -143,14 +164,18 @@ function vms(state, action) {
     }
     case VM_ACTION_FAILED: {
         const indexedVm = findVmToUpdate(state, action.payload);
+        let tab = action.payload.tab || 'overview';
         if (!indexedVm) { // already logged
             return state;
         }
-        const updatedVm = Object.assign(indexedVm.vmCopy, {
-            lastMessage: action.payload.message,
-            lastMessageDetail: action.payload.detail,
-        });
+        if (!indexedVm.vmCopy.errorMessages)
+            indexedVm.vmCopy.errorMessages = {};
 
+        let updatedVm = Object.assign({}, indexedVm.vmCopy);
+        updatedVm.errorMessages = Object.assign({}, indexedVm.vmCopy.errorMessages);
+        updatedVm.errorMessages[tab] = Object.assign({}, indexedVm.vmCopy.errorMessages[tab]);
+        updatedVm.errorMessages[tab].lastMessage = action.payload.message;
+        updatedVm.errorMessages[tab].lastMessageDetail = action.payload.detail;
         return replaceVm({ state, updatedVm, index: indexedVm.index });
     }
     case UNDEFINE_VM: {
@@ -347,6 +372,7 @@ export default combineReducers({
         getSubstate: (state) => state.providerState,
         setSubstate: (state, subState) => Object.assign({}, state, { providerState: subState }),
     }),
+    networks,
     vms,
     systemInfo,
     storagePools,

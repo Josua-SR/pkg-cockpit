@@ -32,6 +32,7 @@
 #include <string.h>
 #include <sys/prctl.h>
 #include <sys/socket.h>
+#include <sys/stat.h>
 
 #define TIMEOUT 120
 
@@ -49,6 +50,9 @@ typedef struct {
   /* setup_mock_sshd */
   GPid mock_sshd;
   guint16 ssh_port;
+  gchar *home_dir;
+  gchar *home_ssh_dir;
+  gchar *home_knownhosts_file;
 } TestCase;
 
 typedef struct {
@@ -56,13 +60,14 @@ typedef struct {
     const char *mock_sshd_arg;
     const char *client_password;
     const char *username;
-    const char *knownhosts_data;
     const char *knownhosts_file;
+    const char *knownhosts_home;
     const char *knownhosts_sssd;
     const char *knownhosts_sssd_host;
     const char *config;
     const char *problem;
     gboolean allow_unknown;
+    gboolean challenge_unknown_host_preconnect;
 } TestFixture;
 
 static GString *
@@ -182,7 +187,13 @@ setup_env (const TestFixture *fix)
 
   if (fix && fix->allow_unknown)
     {
-      env = g_environ_setenv (env, "COCKPIT_SSH_ALLOW_UNKNOWN",
+      env = g_environ_setenv (env, "COCKPIT_SSH_CONNECT_TO_UNKNOWN_HOSTS",
+                              "true", TRUE);
+    }
+
+  if (fix && fix->challenge_unknown_host_preconnect)
+    {
+      env = g_environ_setenv (env, "COCKPIT_SSH_CHALLENGE_UNKNOWN_HOST_PRECONNECT",
                               "true", TRUE);
     }
 
@@ -232,7 +243,6 @@ setup (TestCase *tc,
   const gchar *argv[] = { BUILDDIR "/cockpit-ssh", NULL, NULL };
   gchar **env = NULL;
   gchar *host = NULL;
-  gchar *knownhosts_data = NULL;
   gchar *path = NULL;
 
   alarm (TIMEOUT);
@@ -248,23 +258,28 @@ setup (TestCase *tc,
     host = g_strdup ("127.0.0.1");
   argv[1] = host;
 
-  if (fixture && fixture->knownhosts_data)
-    {
-      if (fixture->knownhosts_data[0] != '\0' &&
-          fixture->knownhosts_data[0] != '*' &&
-          !g_str_equal (fixture->knownhosts_data, "authorize"))
-        {
-          knownhosts_data = g_strdup_printf ("[127.0.0.1]:%d %s",
-                                             tc->ssh_port ? (int)tc->ssh_port : 22,
-                                             fixture->knownhosts_data);
-        }
-      else
-        {
-          knownhosts_data = g_strdup (fixture->knownhosts_data);
-        }
+  /* run our tests with temp home dir, to avoid influence from the real ~/.ssh */
+  tc->home_dir = g_dir_make_tmp ("home.XXXXXX", NULL);
+  g_assert (tc->home_dir != NULL);
+  env = g_environ_setenv (env, "HOME", tc->home_dir, TRUE);
 
-      env = g_environ_setenv (env, "COCKPIT_SSH_KNOWN_HOSTS_DATA",
-                              knownhosts_data, TRUE);
+  if (fixture && fixture->knownhosts_home)
+    {
+      gchar *content;
+
+      tc->home_ssh_dir = g_build_filename (tc->home_dir, ".ssh", NULL);
+      g_assert (tc->home_ssh_dir != NULL);
+      tc->home_knownhosts_file = g_build_filename (tc->home_ssh_dir, "known_hosts", NULL);
+      g_assert (tc->home_knownhosts_file != NULL);
+      g_assert_cmpint (mkdir (tc->home_ssh_dir, 0700), ==, 0);
+
+      content = g_strdup_printf ("[127.0.0.1]:%d %s\n",
+                                 (int)tc->ssh_port,
+                                 fixture->knownhosts_home);
+
+      g_assert (g_file_set_contents (tc->home_knownhosts_file, content, -1, NULL));
+
+      g_free (content);
     }
 
   if (fixture && fixture->knownhosts_sssd)
@@ -287,7 +302,6 @@ setup (TestCase *tc,
   g_signal_connect (tc->transport, "closed", G_CALLBACK (on_closed_set_flag), &tc->closed);
   g_strfreev (env);
   g_free (host);
-  g_free (knownhosts_data);
   g_free (path);
 }
 
@@ -295,6 +309,19 @@ static void
 teardown (TestCase *tc,
           gconstpointer data)
 {
+  if (tc->home_knownhosts_file)
+    {
+      unlink (tc->home_knownhosts_file);
+      g_free (tc->home_knownhosts_file);
+    }
+  if (tc->home_ssh_dir)
+    {
+      rmdir (tc->home_ssh_dir);
+      g_free (tc->home_ssh_dir);
+    }
+  rmdir (tc->home_dir);
+  g_free (tc->home_dir);
+
   WAIT_UNTIL (tc->closed == TRUE);
   g_object_add_weak_pointer (G_OBJECT (tc->transport), (gpointer*)&tc->transport);
   g_object_unref (tc->transport);
@@ -582,7 +609,13 @@ test_echo_large (TestCase *tc,
 
 #define MOCK_RSA_KEY "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCYzo07OA0H6f7orVun9nIVjGYrkf8AuPDScqWGzlKpAqSipoQ9oY/mwONwIOu4uhKh7FTQCq5p+NaOJ6+Q4z++xBzSOLFseKX+zyLxgNG28jnF06WSmrMsSfvPdNuZKt9rZcQFKn9fRNa8oixa+RsqEEVEvTYhGtRf7w2wsV49xIoIza/bln1ABX1YLaCByZow+dK3ZlHn/UU0r4ewpAIZhve4vCvAsMe5+6KJH8ft/OKXXQY06h6jCythLV4h18gY/sYosOa+/4XgpmBiE7fDeFRKVjP3mvkxMpxce+ckOFae2+aJu51h513S9kxY2PmKaV/JU9HBYO+yO4j+j24v"
 
+#if HAVE_DECL_SSH_PUBLICKEY_HASH_SHA256
+static const gchar MOCK_RSA_FP[] = "SHA256:XQ8a7zGxMFstDrGecBRUP9OMnOUXd/T3vkNGtYShs2w";
+#define SSH_PUBLICKEY_HASH_NAME "SHA256"
+#else
 static const gchar MOCK_RSA_FP[] = "0e:6a:c8:b1:07:72:e2:04:95:9f:0e:b3:56:af:48:e2";
+#define SSH_PUBLICKEY_HASH_NAME "MD5"
+#endif
 
 #define MOCK_DSA_PUB_KEY "ssh-dss AAAAB3NzaC1kc3MAAACBAIK3RTEWBw+rAPcYUM2Qq4kEw59gXpUQ/WvkdeY7QDO64MHaaorySj8xsraNudmQFh4xb/i5Q1EMnNchOFxtilfU5bUJgdTvetyZEWFL+2HxqBs8GaWRyB1vtSFAw3GO8VUEnjF844N3dNyLoc0NX8IvzwNIaQho6KTsueQlG1X9AAAAFQCXUl4a5UvElL4thi/8QlxR5PtEewAAAIBqNpl5MTBxKQu5jT0+WASa7pAqwT53ofv7ZTDIEokYRb57/nwzDgkcs1fsBRrI6eczJ/VlXWwKbsgkx2Nh3ZiWYwC+HY5uqRpDaj3HERC6LMn4dzdcl29fYeziEibCbRjJX5lZF2vIaA1Ewv8yT0UlunyHZRiyw4WlEglkf/NITAAAAIBxLsdBBXn+8qEYwWK9KT+arRqNXC/lrl0Fp5YyxGNGCv82JcnuOShGGTzhYf8AtTCY1u5oixiW9kea6KXGAKgTjfJShr7n47SZVfOPOrBT3VLhRdGGO3GblDUppzfL8wsEdoqXjzrJuxSdrGnkFu8S9QjkPn9dCtScvWEcluHqMw=="
 
@@ -654,7 +687,7 @@ do_hostkey_conversation (TestCase *tc,
                                  (int)tc->ssh_port, MOCK_RSA_FP,
                                  (int)tc->ssh_port, MOCK_RSA_KEY);
 
-  do_auth_conversation (tc->transport, "MD5 Fingerprint (ssh-rsa):",
+  do_auth_conversation (tc->transport, SSH_PUBLICKEY_HASH_NAME " Fingerprint (ssh-rsa):",
                         expect_json, response, add_header);
   g_free (expect_json);
 }
@@ -695,23 +728,6 @@ static const TestFixture fixture_unknown_host = {
   .problem = "unknown-host"
 };
 
-static const TestFixture fixture_ignore_hostkey = {
-  .knownhosts_file = "/dev/null",
-  .knownhosts_data = "*"
-};
-
-static const TestFixture fixture_hostkey_config = {
-  .knownhosts_file = "/dev/null",
-  .config = SRCDIR "/src/ws/mock-config"
-};
-
-
-static const TestFixture fixture_knownhost_data = {
-  .knownhosts_data = MOCK_RSA_KEY,
-  .knownhosts_file = "/dev/null",
-  .ssh_command = BUILDDIR "/mock-echo"
-};
-
 static const TestFixture fixture_knownhost_sssd_known = {
   .knownhosts_sssd = MOCK_RSA_KEY,
   .knownhosts_sssd_host = "127.0.0.1",
@@ -740,44 +756,20 @@ static const TestFixture fixture_knownhost_sssd_badkey = {
   .problem = "invalid-hostkey"
 };
 
-static void
-test_knownhost_data (TestCase *tc,
-                     gconstpointer data)
-{
-  const TestFixture *fix = data;
+static const TestFixture fixture_known_host_home = {
+  .knownhosts_file = "/dev/null",
+  .knownhosts_home = MOCK_RSA_KEY,
+  .ssh_command = BUILDDIR "/mock-echo"
+};
 
-  /* This test should validate in spite of not having known_hosts */
-  g_assert (fix->knownhosts_data != NULL);
-  g_assert_cmpstr (fix->knownhosts_file, ==, "/dev/null");
-
-  test_echo_and_close (tc, data);
-}
-
-static void
-test_bad_knownhost_data (TestCase *tc,
-                         gconstpointer data)
-{
-  const TestFixture *fix = data;
-
-  /*
-   * This tail should fail in spite of having key in known_hosts,
-   * because expect_key is set.
-   */
-  g_assert (fix->knownhosts_data != NULL);
-  g_assert_cmpstr (fix->knownhosts_file, ==, NULL);
-
-  test_problem (tc, data);
-}
-
-static const TestFixture fixture_authorize_host_key = {
-  .knownhosts_data = "authorize",
+static const TestFixture fixture_knownhost_challenge_preconnect = {
   .knownhosts_file = "/dev/null",
   .allow_unknown = TRUE,
+  .challenge_unknown_host_preconnect = TRUE,
   .ssh_command = BUILDDIR "/mock-echo"
 };
 
 static const TestFixture fixture_host_key_invalid = {
-  .knownhosts_data = NULL,
   .knownhosts_file = SRCDIR "/src/ssh/invalid_known_hosts",
 };
 
@@ -794,7 +786,6 @@ test_invalid_knownhost (TestCase *tc,
   const TestFixture *fix = data;
   JsonObject *init = NULL;
 
-  g_assert_cmpstr (fix->knownhosts_data, ==, NULL);
   g_assert_cmpstr (fix->knownhosts_file, ==, SRCDIR "/src/ssh/invalid_known_hosts");
   do_auth_response (tc->transport, "*", "");
 
@@ -803,25 +794,6 @@ test_invalid_knownhost (TestCase *tc,
   g_assert_cmpstr (json_object_get_string_member (init, "invalid-hostkey-file"),
                    ==, fix->knownhosts_file);
 
-  json_object_unref (init);
-}
-
-static void
-test_knownhost_data_prompt_blank (TestCase *tc,
-                                  gconstpointer data)
-{
-  const TestFixture *fix = data;
-  JsonObject *init = NULL;
-
-  g_assert_cmpstr (fix->knownhosts_data, ==, "authorize");
-  g_assert_cmpstr (fix->knownhosts_file, ==, "/dev/null");
-
-  do_auth_response (tc->transport, "*", "");
-  do_auth_response (tc->transport, "x-host-key", "");
-  do_hostkey_conversation (tc, "", FALSE);
-
-  init = wait_until_transport_init (tc->transport, "unknown-hostkey");
-  check_host_key_values (tc, init);
   json_object_unref (init);
 }
 
@@ -835,7 +807,6 @@ test_knownhost_data_prompt (TestCase *tc,
                                        (int)tc->ssh_port,
                                        MOCK_RSA_KEY);
 
-  g_assert_cmpstr (fix->knownhosts_data, ==, "authorize");
   g_assert_cmpstr (fix->knownhosts_file, ==, "/dev/null");
 
   do_fixture_auth (tc->transport, data);
@@ -849,31 +820,12 @@ test_knownhost_data_prompt (TestCase *tc,
 }
 
 static void
-test_knownhost_data_prompt_bad (TestCase *tc,
-                                gconstpointer data)
-{
-  const TestFixture *fix = data;
-  JsonObject *init = NULL;
-
-  g_assert_cmpstr (fix->knownhosts_data, ==, "authorize");
-  g_assert_cmpstr (fix->knownhosts_file, ==, "/dev/null");
-
-  do_auth_response (tc->transport, "*", "");
-  do_auth_response (tc->transport, "x-host-key", "x-host-key");
-
-  init = wait_until_transport_init (tc->transport, "invalid-hostkey");
-  check_host_key_values (tc, init);
-  json_object_unref (init);
-}
-
-static void
 test_hostkey_unknown (TestCase *tc,
                       gconstpointer data)
 {
   const TestFixture *fix = data;
   JsonObject *init = NULL;
 
-  g_assert_cmpstr (fix->knownhosts_data, ==, NULL);
   g_assert_cmpstr (fix->knownhosts_file, ==, "/dev/null");
 
   do_auth_response (tc->transport, "*", "");
@@ -891,7 +843,6 @@ test_hostkey_conversation (TestCase *tc,
   const TestFixture *fix = data;
   JsonObject *init = NULL;
 
-  g_assert_cmpstr (fix->knownhosts_data, ==, NULL);
   g_assert_cmpstr (fix->knownhosts_file, ==, "/dev/null");
 
   do_fixture_auth (tc->transport, data);
@@ -909,7 +860,6 @@ test_hostkey_conversation_bad (TestCase *tc,
   const TestFixture *fix = data;
   JsonObject *init = NULL;
 
-  g_assert_cmpstr (fix->knownhosts_data, ==, NULL);
   g_assert_cmpstr (fix->knownhosts_file, ==, "/dev/null");
 
   do_auth_response (tc->transport, "*", "");
@@ -926,7 +876,6 @@ test_hostkey_conversation_invalid (TestCase *tc,
   const TestFixture *fix = data;
   JsonObject *init = NULL;
 
-  g_assert_cmpstr (fix->knownhosts_data, ==, NULL);
   g_assert_cmpstr (fix->knownhosts_file, ==, "/dev/null");
 
   do_auth_response (tc->transport, "*", "");
@@ -935,16 +884,6 @@ test_hostkey_conversation_invalid (TestCase *tc,
   check_host_key_values (tc, init);
   json_object_unref (init);
 }
-
-static const TestFixture fixture_wrong_knownhost_data = {
-  .knownhosts_data = "wrong key",
-  .problem = "invalid-hostkey"
-};
-
-static const TestFixture fixture_invalid_knownhost_data = {
-  .knownhosts_data = "* invalid key",
-  .problem = "invalid-hostkey"
-};
 
 /* The output from this will go to stderr */
 static const TestFixture fixture_bad_command = {
@@ -1400,26 +1339,15 @@ main (int argc,
               &fixture_multi_auth,
               setup, test_multi_auth_3, teardown);
 
-  g_test_add ("/ssh-bridge/ignore-hostkey", TestCase, &fixture_ignore_hostkey,
-              setup, test_echo_and_close, teardown);
-  g_test_add ("/ssh-bridge/ignore-hostkey-configured", TestCase, &fixture_hostkey_config,
-              setup, test_echo_and_close, teardown);
   g_test_add ("/ssh-bridge/unknown-host", TestCase, &fixture_unknown_host,
               setup, test_problem, teardown);
-  g_test_add ("/ssh-bridge/knownhost-data", TestCase, &fixture_knownhost_data,
-              setup, test_knownhost_data, teardown);
-  g_test_add ("/ssh-bridge/wrong-knownhost-data", TestCase, &fixture_wrong_knownhost_data,
-              setup, test_bad_knownhost_data, teardown);
-  g_test_add ("/ssh-bridge/invalid-knownhost-data", TestCase, &fixture_invalid_knownhost_data,
-              setup, test_bad_knownhost_data, teardown);
-  g_test_add ("/ssh-bridge/knownhost-authorize", TestCase, &fixture_authorize_host_key,
+  g_test_add ("/ssh-bridge/knownhost-challenge-preconnect", TestCase,
+              &fixture_knownhost_challenge_preconnect,
               setup, test_knownhost_data_prompt, teardown);
-  g_test_add ("/ssh-bridge/knownhost-authorize-blank", TestCase, &fixture_authorize_host_key,
-              setup, test_knownhost_data_prompt_blank, teardown);
   g_test_add ("/ssh-bridge/knownhost-invalid", TestCase, &fixture_host_key_invalid,
               setup, test_invalid_knownhost, teardown);
-  g_test_add ("/ssh-bridge/knownhost-authorize-bad", TestCase, &fixture_authorize_host_key,
-              setup, test_knownhost_data_prompt_bad, teardown);
+  g_test_add ("/ssh-bridge/knownhost-home", TestCase, &fixture_known_host_home,
+              setup, test_echo_and_close, teardown);
   g_test_add ("/ssh-bridge/knownhost-sssd-known", TestCase, &fixture_knownhost_sssd_known,
               setup, test_echo_and_close, teardown);
   g_test_add ("/ssh-bridge/knownhost-sssd-known-multi-key", TestCase, &fixture_knownhost_sssd_known_multi_key,

@@ -87,14 +87,6 @@ return plural;
   null,
   "添加磁盘"
  ],
- "Additional": [
-  null,
-  "额外"
- ],
- "Address": [
-  null,
-  "地址"
- ],
  "Address:": [
   null,
   "地址："
@@ -363,10 +355,6 @@ return plural;
   null,
   "主机"
  ],
- "Host Interface": [
-  null,
-  ""
- ],
  "Host to Maintenance": [
   null,
   "主机维护"
@@ -391,21 +379,9 @@ return plural;
   null,
   "正在加载数据 ..."
  ],
- "MAC Address": [
-  null,
-  "MAC 地址"
- ],
  "MIGRATE action failed": [
   null,
   "迁移操作失败"
- ],
- "MTU": [
-  null,
-  "MTU"
- ],
- "Managed": [
-  null,
-  "已管理"
  ],
  "Manual Connection": [
   null,
@@ -430,10 +406,6 @@ return plural;
  "Migrate To:": [
   null,
   "迁移到："
- ],
- "Model type": [
-  null,
-  "型号类型"
  ],
  "More Information": [
   null,
@@ -470,10 +442,6 @@ return plural;
  "No disks defined for this VM": [
   null,
   "没有为该虚拟机定义磁盘"
- ],
- "No network interfaces defined for this VM": [
-  null,
-  "没有为此 VM 定义网络接口"
  ],
  "No oVirt connection": [
   null,
@@ -543,10 +511,6 @@ return plural;
   null,
   "请等待直到模板列表从服务器加载。"
  ],
- "Plug": [
-  null,
-  "插"
- ],
  "Pool": [
   null,
   "池"
@@ -554,10 +518,6 @@ return plural;
  "Port": [
   null,
   "端口"
- ],
- "Portgroup": [
-  null,
-  "端口组"
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
@@ -783,14 +743,6 @@ return plural;
   null,
   "每个内核的线程数"
  ],
- "Type": [
-  null,
-  "类型"
- ],
- "Unplug": [
-  null,
-  "拔"
- ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "升级到一个更新版本的 libvirt 来查看磁盘统计数据"
@@ -882,10 +834,6 @@ return plural;
  "Virtual Machines of $0 cluster": [
   null,
   "$0 集群地虚拟机"
- ],
- "Virtualport": [
-  null,
-  "Virtualport"
  ],
  "Volume": [
   null,

@@ -29,6 +29,7 @@ import {
     delayPolling,
     getAllVms,
     getHypervisorMaxVCPU,
+    getNetworks,
     getStoragePools,
     getStorageVolumes,
     getVm,
@@ -37,6 +38,7 @@ import {
 import {
     deleteUnlistedVMs,
     undefineVm,
+    updateNetworks,
     updateStoragePools,
     updateStorageVolumes,
     updateVm,
@@ -102,6 +104,7 @@ const Enum = {
     VIR_DOMAIN_STATS_VCPU: 8,
     VIR_DOMAIN_STATS_BLOCK: 32,
     VIR_DOMAIN_XML_INACTIVE: 2,
+    VIR_CONNECT_LIST_NETWORKS_ACTIVE: 2,
     VIR_CONNECT_LIST_STORAGE_POOLS_ACTIVE: 2,
     VIR_CONNECT_LIST_STORAGE_POOLS_DIR: 64
 };
@@ -159,18 +162,8 @@ LIBVIRT_DBUS_PROVIDER = {
 
         let xmlDesc = getDiskXML(diskFileName, target);
 
-        return dispatch => {
-            call(connectionName, vmId, 'org.libvirt.Domain', 'AttachDevice', [xmlDesc, flags], TIMEOUT)
-                    .fail(exception => {
-                        console.error("ATTACH_DISK failed for diskFileName", diskFileName, JSON.stringify(exception));
-                        dispatch(vmActionFailed({
-                            name: vmName,
-                            connectionName,
-                            message: _("VM ATTACH_DISK action failed"),
-                            detail: { exception }
-                        }));
-                    });
-        };
+        // Error handling is done from the calling side
+        return () => call(connectionName, vmId, 'org.libvirt.Domain', 'AttachDevice', [xmlDesc, flags], TIMEOUT);
     },
 
     CHANGE_NETWORK_STATE({
@@ -182,28 +175,30 @@ LIBVIRT_DBUS_PROVIDER = {
     }) {
         return dispatch => {
             call(connectionName, objPath, 'org.libvirt.Domain', 'GetXMLDesc', [0], TIMEOUT)
-                    .done(domXml => {
+                    .then(domXml => {
                         let updatedXml = updateNetworkIfaceState(domXml[0], networkMac, state);
                         if (!updatedXml) {
                             dispatch(vmActionFailed({
                                 name,
                                 connectionName,
-                                message: _("VM CHANGE_NETWORK_STATE action failed: updated device XML couldn't not be generated"),
+                                message: _("VM CHANGE_NETWORK_STATE action failed"),
+                                detail: { exception: "Updated device XML couldn't not be generated" },
+                                tab: 'network',
                             }));
                         } else {
-                            call(connectionName, objPath, 'org.libvirt.Domain', 'UpdateDevice', [updatedXml, Enum.VIR_DOMAIN_AFFECT_CURRENT], TIMEOUT)
-                                    .done(() => {
-                                        dispatch(getVm({connectionName, id:objPath}));
-                                    })
-                                    .fail(exception => dispatch(vmActionFailed({
-                                        name,
-                                        connectionName,
-                                        message: _("VM CHANGE_NETWORK_STATE action failed"),
-                                        detail: {exception}
-                                    })));
+                            return call(connectionName, objPath, 'org.libvirt.Domain', 'UpdateDevice', [updatedXml, Enum.VIR_DOMAIN_AFFECT_CURRENT], TIMEOUT);
                         }
                     })
-                    .fail(ex => console.error("VM GetXMLDesc method for domain %s failed: %s", name, JSON.stringify(ex)));
+                    .catch(exception => dispatch(vmActionFailed({
+                        name,
+                        connectionName,
+                        message: _("VM CHANGE_NETWORK_STATE action failed"),
+                        detail: {exception},
+                        tab: 'network',
+                    })))
+                    .then(() => {
+                        dispatch(getVm({connectionName, id:objPath}));
+                    });
         };
     },
 
@@ -221,45 +216,16 @@ LIBVIRT_DBUS_PROVIDER = {
     }) {
         let volXmlDesc = getVolumeXML(volumeName, size, format, target);
 
-        return dispatch => {
-            call(connectionName, '/org/libvirt/QEMU', 'org.libvirt.Connect', 'StoragePoolLookupByName', [poolName], TIMEOUT)
-                    .done((storagePoolPath) => {
-                        call(connectionName, storagePoolPath[0], 'org.libvirt.StoragePool', 'StorageVolCreateXML', [volXmlDesc, 0], TIMEOUT)
-                                .done((storageVolumePath) => {
-                                    call(connectionName, storageVolumePath[0], "org.freedesktop.DBus.Properties", "Get", ["org.libvirt.StorageVol", "Path"], TIMEOUT)
-                                            .done((volPath) => {
-                                                return dispatch(attachDisk({ connectionName, diskFileName: volPath[0].v, target, vmId, permanent, hotplug }))
-                                                        .then(() => {
-                                                            // force reload of VM data, events are not reliable (i.e. for a down VM)
-                                                            dispatch(getVm({connectionName, id:vmId}));
-                                                        }, (exception) => dispatch(vmActionFailed({
-                                                            name: vmName,
-                                                            connectionName,
-                                                            message: _("CREATE_AND_ATTACH_VOLUME action failed"),
-                                                            detail: {exception}
-                                                        })));
-                                            })
-                                            .fail(exception => dispatch(vmActionFailed({
-                                                name: vmName,
-                                                connectionName,
-                                                message: _("CREATE_AND_ATTACH_VOLUME action failed"),
-                                                detail: {exception}
-                                            })));
-                                })
-                                .fail(exception => dispatch(vmActionFailed({
-                                    name: vmName,
-                                    connectionName,
-                                    message: _("CREATE_AND_ATTACH_VOLUME action failed"),
-                                    detail: {exception}
-                                })));
-                    })
-                    .fail(exception => dispatch(vmActionFailed({
-                        name: vmName,
-                        connectionName,
-                        message: _("CREATE_AND_ATTACH_VOLUME action failed"),
-                        detail: {exception}
-                    })));
-        };
+        return (dispatch) => call(connectionName, '/org/libvirt/QEMU', 'org.libvirt.Connect', 'StoragePoolLookupByName', [poolName], TIMEOUT)
+                .then((storagePoolPath) => {
+                    return call(connectionName, storagePoolPath[0], 'org.libvirt.StoragePool', 'StorageVolCreateXML', [volXmlDesc, 0], TIMEOUT);
+                })
+                .then((storageVolumePath) => {
+                    return call(connectionName, storageVolumePath[0], "org.freedesktop.DBus.Properties", "Get", ["org.libvirt.StorageVol", "Path"], TIMEOUT);
+                })
+                .then((volPath) => {
+                    return dispatch(attachDisk({ connectionName, diskFileName: volPath[0].v, target, vmId, permanent, hotplug }));
+                });
     },
 
     DELETE_VM({
@@ -399,6 +365,7 @@ LIBVIRT_DBUS_PROVIDER = {
                 startEventMonitor(dispatch, connectionName, libvirtServiceName);
                 doGetAllVms(dispatch, connectionName);
                 dispatch(getStoragePools(connectionName));
+                dispatch(getNetworks(connectionName));
                 dispatch(getHypervisorMaxVCPU(connectionName));
             };
         }
@@ -419,6 +386,36 @@ LIBVIRT_DBUS_PROVIDER = {
         }
 
         return unknownConnectionName(setHypervisorMaxVCPU);
+    },
+
+    /**
+     * Retrieves list of libvirt "networks" for particular connection.
+     */
+    GET_NETWORKS({
+        connectionName
+    }) {
+        let flags = Enum.VIR_CONNECT_LIST_NETWORKS_ACTIVE;
+        return dispatch => call(connectionName, '/org/libvirt/QEMU', 'org.libvirt.Connect', 'ListNetworks', [flags], TIMEOUT)
+                .done(objPaths => {
+                    let networks = [];
+                    let networksPropsPromises = [];
+
+                    logDebug(`GET_NETWORKS: object paths: ${JSON.stringify(objPaths)}`);
+
+                    for (let i = 0; i < objPaths[0].length; i++) {
+                        networksPropsPromises.push(call(connectionName, objPaths[0][i], "org.freedesktop.DBus.Properties", "Get", ["org.libvirt.Network", "Name"], TIMEOUT));
+                    }
+                    Promise.all(networksPropsPromises).then(networkNames => {
+                        for (let i = 0; i < networkNames.length; i++) {
+                            networks.push(networkNames[i][0].v);
+                        }
+                        dispatch(updateNetworks({
+                            connectionName,
+                            networks,
+                        }));
+                    });
+                })
+                .fail(ex => console.error("ListNetworks failed:", JSON.stringify(ex)));
     },
 
     /**

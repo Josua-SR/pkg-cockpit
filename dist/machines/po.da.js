@@ -83,14 +83,6 @@ return plural;
   null,
   "Disk I/O"
  ],
- "Additional": [
-  null,
-  ""
- ],
- "Address": [
-  null,
-  ""
- ],
  "Address:": [
   null,
   ""
@@ -311,18 +303,6 @@ return plural;
   null,
   ""
  ],
- "MAC Address": [
-  null,
-  ""
- ],
- "MTU": [
-  null,
-  ""
- ],
- "Managed": [
-  null,
-  ""
- ],
  "Manual Connection": [
   null,
   ""
@@ -344,10 +324,6 @@ return plural;
   "Hukommelse"
  ],
  "MiB": [
-  null,
-  ""
- ],
- "Model type": [
   null,
   ""
  ],
@@ -395,10 +371,6 @@ return plural;
   null,
   ""
  ],
- "No network interfaces defined for this VM": [
-  null,
-  ""
- ],
  "OS Vendor": [
   null,
   ""
@@ -435,19 +407,11 @@ return plural;
   null,
   ""
  ],
- "Plug": [
-  null,
-  ""
- ],
  "Pool": [
   null,
   "Værtsnavn"
  ],
  "Port": [
-  null,
-  ""
- ],
- "Portgroup": [
   null,
   ""
  ],
@@ -611,10 +575,6 @@ return plural;
   null,
   ""
  ],
- "Type": [
-  null,
-  ""
- ],
  "URL": [
   null,
   ""
@@ -622,10 +582,6 @@ return plural;
  "Unique name": [
   null,
   "Værtsnavn"
- ],
- "Unplug": [
-  null,
-  ""
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
@@ -668,10 +624,6 @@ return plural;
   ""
  ],
  "Virtualization Service is Available": [
-  null,
-  ""
- ],
- "Virtualport": [
   null,
   ""
  ],

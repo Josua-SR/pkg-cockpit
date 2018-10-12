@@ -22,7 +22,6 @@
 
     var cockpit = require("cockpit");
 
-    var mustache = require("mustache");
     var service = require("service");
     var moment = require("moment");
     moment.locale(cockpit.language);
@@ -167,7 +166,7 @@
             type = _("Logical Volume (Snapshot)");
         else
             type = _("Logical Volume");
-        return mustache.render('{{Type}} "{{Name}}"', { Type: type, Name: lvol.Name });
+        return cockpit.format('$0 "$1"', type, lvol.Name);
     };
 
     utils.drive_name = function drive_name(drive) {
@@ -405,14 +404,6 @@
         return spaces;
     };
 
-    utils.available_space_to_option = function available_space_to_option(spc) {
-        return {
-            value: spc,
-            Title: utils.format_size_and_text(spc.size, spc.desc),
-            Label: utils.block_name(spc.block)
-        };
-    };
-
     utils.prepare_available_spaces = function prepare_available_spaces(client, spcs) {
         function prepare(spc) {
             if (spc.type == 'block')
@@ -542,7 +533,7 @@
             return usage;
         }
 
-        // Prepare the result for Mustache
+        // Prepare the result for the dialogs
 
         var usage = get_usage(path);
 

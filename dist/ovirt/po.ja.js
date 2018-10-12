@@ -87,14 +87,6 @@ return plural;
   null,
   ""
  ],
- "Additional": [
-  null,
-  "追加"
- ],
- "Address": [
-  null,
-  "アドレス:"
- ],
  "Address:": [
   null,
   "アドレス: "
@@ -363,10 +355,6 @@ return plural;
   null,
   "ホスト"
  ],
- "Host Interface": [
-  null,
-  ""
- ],
  "Host to Maintenance": [
   null,
   "メンテナンスするホスト"
@@ -391,21 +379,9 @@ return plural;
   null,
   "データのロード中..."
  ],
- "MAC Address": [
-  null,
-  "MAC アドレス"
- ],
  "MIGRATE action failed": [
   null,
   "MIGRATE アクションに失敗しました"
- ],
- "MTU": [
-  null,
-  "MTU"
- ],
- "Managed": [
-  null,
-  "管理"
  ],
  "Manual Connection": [
   null,
@@ -430,10 +406,6 @@ return plural;
  "Migrate To:": [
   null,
   "移行先:"
- ],
- "Model type": [
-  null,
-  "モデルタイプ"
  ],
  "More Information": [
   null,
@@ -470,10 +442,6 @@ return plural;
  "No disks defined for this VM": [
   null,
   "この仮想マシンに対してディスクが定義されていません"
- ],
- "No network interfaces defined for this VM": [
-  null,
-  "この仮想マシンにはネットワークインターフェースが定義されていません"
  ],
  "No oVirt connection": [
   null,
@@ -543,10 +511,6 @@ return plural;
   null,
   "テンプレートの一覧がサーバーからロードされるのをお待ちください。"
  ],
- "Plug": [
-  null,
-  "プラグ"
- ],
  "Pool": [
   null,
   "プール"
@@ -554,10 +518,6 @@ return plural;
  "Port": [
   null,
   "ポート"
- ],
- "Portgroup": [
-  null,
-  "ポートグループ"
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
@@ -783,14 +743,6 @@ return plural;
   null,
   "コアごとのスレッド"
  ],
- "Type": [
-  null,
-  "タイプ"
- ],
- "Unplug": [
-  null,
-  "アンプラグ"
- ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "ディスクの統計情報を表示するには、libvirt を新しいバージョンにアップグレードしてください"
@@ -882,10 +834,6 @@ return plural;
  "Virtual Machines of $0 cluster": [
   null,
   "$0 クラスターの仮想マシン"
- ],
- "Virtualport": [
-  null,
-  "Virtualport"
  ],
  "Volume": [
   null,

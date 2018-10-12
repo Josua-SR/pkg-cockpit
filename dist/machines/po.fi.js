@@ -83,14 +83,6 @@ return plural;
   null,
   ""
  ],
- "Additional": [
-  null,
-  ""
- ],
- "Address": [
-  null,
-  "Osoite"
- ],
  "Address:": [
   null,
   "Osoite:"
@@ -299,10 +291,6 @@ return plural;
   null,
   "Kone"
  ],
- "Host Interface": [
-  null,
-  ""
- ],
  "INSTALL VM action failed": [
   null,
   "INSTALL VM -toiminto epäonnistui"
@@ -339,18 +327,6 @@ return plural;
   null,
   "Ladataan..."
  ],
- "MAC Address": [
-  null,
-  "MAC-osoite"
- ],
- "MTU": [
-  null,
-  "MTU"
- ],
- "Managed": [
-  null,
-  "Hallittu"
- ],
  "Manual Connection": [
   null,
   "Manuaalinen yhteys"
@@ -374,10 +350,6 @@ return plural;
  "MiB": [
   null,
   "MiB"
- ],
- "Model type": [
-  null,
-  "Mallityyppi"
  ],
  "More Information": [
   null,
@@ -423,10 +395,6 @@ return plural;
   null,
   "Vastaavia tiedostoja ei löytynyt."
  ],
- "No network interfaces defined for this VM": [
-  null,
-  "Tälle virtuaalikoneelle ei ole määritetty verkkoliitäntöjä"
- ],
  "OS Vendor": [
   null,
   "Käyttöjärjestelmän toimittaja"
@@ -463,10 +431,6 @@ return plural;
   null,
   "Käynnistä virtuaalikone päästäksesi sen konsoliin."
  ],
- "Plug": [
-  null,
-  ""
- ],
  "Pool": [
   null,
   ""
@@ -474,10 +438,6 @@ return plural;
  "Port": [
   null,
   "Portti"
- ],
- "Portgroup": [
-  null,
-  ""
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
@@ -647,19 +607,11 @@ return plural;
   null,
   "Vianetsintä"
  ],
- "Type": [
-  null,
-  "Tyyppi"
- ],
  "URL": [
   null,
   "URL"
  ],
  "Unique name": [
-  null,
-  ""
- ],
- "Unplug": [
   null,
   ""
  ],
@@ -762,10 +714,6 @@ return plural;
  "Virtualization Service is Available": [
   null,
   "Virtualisointipalvelu ei ole saatavilla"
- ],
- "Virtualport": [
-  null,
-  ""
  ],
  "Volume": [
   null,

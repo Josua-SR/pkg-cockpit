@@ -1397,26 +1397,6 @@ return plural;
   null,
   "Розмір"
  ],
- "Size cannot be negative": [
-  null,
-  "Розмір не може бути від’ємним"
- ],
- "Size cannot be zero": [
-  null,
-  "Розмір не може бути нульовим"
- ],
- "Size is too large": [
-  null,
-  "Розмір є надто великим"
- ],
- "Size must be a number": [
-  null,
-  "Розмір має бути числом"
- ],
- "Size must be at least $0": [
-  null,
-  "Розмір має бути не меншим за $0"
- ],
  "Slot $0": [
   null,
   "Слот $0"
@@ -1529,23 +1509,11 @@ return plural;
   null,
   "Файлова система використовується службами системи або сеансами користувачів. Виконання цієї дії призведе до припинення роботи цих служб та сеансів."
  ],
- "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
-  null,
-  "Файлова система використовується службами системи або сеансами користувачів. Виконання цієї дії призведе до припинення роботи цих служб та сеансів."
- ],
  "The filesystem is in use by login sessions.                Proceeding will stop these.": [
   null,
   "Файлова система використовується сеансами користувачів. Виконання цієї дії призведе до припинення роботи цих сеансів."
  ],
- "The filesystem is in use by login sessions. Proceeding will stop these.": [
-  null,
-  "Файлова система використовується сеансами користувачів. Виконання цієї дії призведе до припинення роботи цих сеансів."
- ],
  "The filesystem is in use by system services.                Proceeding will stop these.": [
-  null,
-  "Файлова система використовується службами системи. Виконання цієї дії призведе до припинення роботи цих служб."
- ],
- "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
   "Файлова система використовується службами системи. Виконання цієї дії призведе до припинення роботи цих служб."
  ],
@@ -1589,19 +1557,11 @@ return plural;
   null,
   "На цьому пристрої міститься файлова система, яка зараз використовується. Виконання дії призведе до демонтування усіх файлових систем на пристрої."
  ],
- "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
-  null,
-  "На цьому пристрої міститься файлова система, яка зараз використовується. Виконання дії призведе до демонтування усіх файлових систем на пристрої."
- ],
  "This device is currently used for RAID devices.": [
   null,
   "Цей пристрій зараз використовується для пристроїв RAID."
  ],
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
-  null,
-  "Цей пристрій зараз використовується для формування пристроїв RAID. Якщо дію буде виконано, пристрій буде вилучено із його пристроїв RAID."
- ],
- "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
   null,
   "Цей пристрій зараз використовується для формування пристроїв RAID. Якщо дію буде виконано, пристрій буде вилучено із його пристроїв RAID."
  ],
@@ -1614,10 +1574,6 @@ return plural;
   "Цей пристрій зараза використовується для груп томів."
  ],
  "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
-  null,
-  "Цей пристрій зараз використовується для груп томів. Якщо дію буде виконано, пристрій буде вилучено із його груп томів."
- ],
- "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
   "Цей пристрій зараз використовується для груп томів. Якщо дію буде виконано, пристрій буде вилучено із його груп томів."
  ],

@@ -87,14 +87,6 @@ return plural;
   null,
   ""
  ],
- "Additional": [
-  null,
-  "Další"
- ],
- "Address": [
-  null,
-  "Adresa"
- ],
  "Address:": [
   null,
   "Adresa:"
@@ -363,10 +355,6 @@ return plural;
   null,
   "Počítač"
  ],
- "Host Interface": [
-  null,
-  ""
- ],
  "Host to Maintenance": [
   null,
   ""
@@ -391,19 +379,7 @@ return plural;
   null,
   ""
  ],
- "MAC Address": [
-  null,
-  "MAC Adresa"
- ],
  "MIGRATE action failed": [
-  null,
-  ""
- ],
- "MTU": [
-  null,
-  ""
- ],
- "Managed": [
   null,
   ""
  ],
@@ -428,10 +404,6 @@ return plural;
   "MiB"
  ],
  "Migrate To:": [
-  null,
-  ""
- ],
- "Model type": [
   null,
   ""
  ],
@@ -468,10 +440,6 @@ return plural;
   ""
  ],
  "No disks defined for this VM": [
-  null,
-  ""
- ],
- "No network interfaces defined for this VM": [
   null,
   ""
  ],
@@ -543,10 +511,6 @@ return plural;
   null,
   ""
  ],
- "Plug": [
-  null,
-  ""
- ],
  "Pool": [
   null,
   "Úložiště"
@@ -554,10 +518,6 @@ return plural;
  "Port": [
   null,
   "Port"
- ],
- "Portgroup": [
-  null,
-  ""
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
@@ -783,14 +743,6 @@ return plural;
   null,
   ""
  ],
- "Type": [
-  null,
-  "Typ"
- ],
- "Unplug": [
-  null,
-  ""
- ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   ""
@@ -880,10 +832,6 @@ return plural;
   ""
  ],
  "Virtual Machines of $0 cluster": [
-  null,
-  ""
- ],
- "Virtualport": [
   null,
   ""
  ],

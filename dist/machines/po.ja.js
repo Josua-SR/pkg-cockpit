@@ -83,14 +83,6 @@ return plural;
   null,
   ""
  ],
- "Additional": [
-  null,
-  "追加"
- ],
- "Address": [
-  null,
-  "アドレス:"
- ],
  "Address:": [
   null,
   "アドレス: "
@@ -299,10 +291,6 @@ return plural;
   null,
   "ホスト"
  ],
- "Host Interface": [
-  null,
-  ""
- ],
  "INSTALL VM action failed": [
   null,
   "INSTALL VM アクションに失敗しました"
@@ -339,18 +327,6 @@ return plural;
   null,
   "ロード中..."
  ],
- "MAC Address": [
-  null,
-  "MAC アドレス"
- ],
- "MTU": [
-  null,
-  "MTU"
- ],
- "Managed": [
-  null,
-  "管理"
- ],
  "Manual Connection": [
   null,
   "手動接続"
@@ -374,10 +350,6 @@ return plural;
  "MiB": [
   null,
   "MiB"
- ],
- "Model type": [
-  null,
-  "モデルタイプ"
  ],
  "More Information": [
   null,
@@ -423,10 +395,6 @@ return plural;
   null,
   "一致するファイルが見つかりませんでした。"
  ],
- "No network interfaces defined for this VM": [
-  null,
-  "この仮想マシンにはネットワークインターフェースが定義されていません"
- ],
  "OS Vendor": [
   null,
   "OS ベンダー"
@@ -463,10 +431,6 @@ return plural;
   null,
   "仮想マシンを起動して、コンソールにアクセスしてください。"
  ],
- "Plug": [
-  null,
-  "プラグ"
- ],
  "Pool": [
   null,
   "プール"
@@ -474,10 +438,6 @@ return plural;
  "Port": [
   null,
   "ポート"
- ],
- "Portgroup": [
-  null,
-  "ポートグループ"
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
@@ -647,10 +607,6 @@ return plural;
   null,
   "トラブルシュート"
  ],
- "Type": [
-  null,
-  "タイプ"
- ],
  "URL": [
   null,
   "URL"
@@ -658,10 +614,6 @@ return plural;
  "Unique name": [
   null,
   ""
- ],
- "Unplug": [
-  null,
-  "アンプラグ"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
@@ -762,10 +714,6 @@ return plural;
  "Virtualization Service is Available": [
   null,
   "仮想化サービスは利用可能です"
- ],
- "Virtualport": [
-  null,
-  "Virtualport"
  ],
  "Volume": [
   null,

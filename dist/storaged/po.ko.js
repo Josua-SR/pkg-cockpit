@@ -1383,26 +1383,6 @@ return plural;
   null,
   ""
  ],
- "Size cannot be negative": [
-  null,
-  ""
- ],
- "Size cannot be zero": [
-  null,
-  ""
- ],
- "Size is too large": [
-  null,
-  ""
- ],
- "Size must be a number": [
-  null,
-  ""
- ],
- "Size must be at least $0": [
-  null,
-  ""
- ],
  "Slot $0": [
   null,
   ""
@@ -1515,23 +1495,11 @@ return plural;
   null,
   ""
  ],
- "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
-  null,
-  ""
- ],
  "The filesystem is in use by login sessions.                Proceeding will stop these.": [
   null,
   ""
  ],
- "The filesystem is in use by login sessions. Proceeding will stop these.": [
-  null,
-  ""
- ],
  "The filesystem is in use by system services.                Proceeding will stop these.": [
-  null,
-  ""
- ],
- "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
   ""
  ],
@@ -1575,19 +1543,11 @@ return plural;
   null,
   ""
  ],
- "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
-  null,
-  ""
- ],
  "This device is currently used for RAID devices.": [
   null,
   ""
  ],
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
-  null,
-  ""
- ],
- "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
   null,
   ""
  ],
@@ -1600,10 +1560,6 @@ return plural;
   ""
  ],
  "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
-  null,
-  ""
- ],
- "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
   ""
  ],

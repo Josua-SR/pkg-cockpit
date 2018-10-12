@@ -1383,26 +1383,6 @@ return plural;
   null,
   "大小"
  ],
- "Size cannot be negative": [
-  null,
-  "大小不能为负数"
- ],
- "Size cannot be zero": [
-  null,
-  "大小不能为零"
- ],
- "Size is too large": [
-  null,
-  "大小太大"
- ],
- "Size must be a number": [
-  null,
-  "大小必须是一个数字"
- ],
- "Size must be at least $0": [
-  null,
-  "大小必须最小为 $0"
- ],
  "Slot $0": [
   null,
   "插槽 $0"
@@ -1515,23 +1495,11 @@ return plural;
   null,
   "登录会话和系统服务正在使用文件系统。继续进行将停止这些。"
  ],
- "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
-  null,
-  "登录会话和系统服务正在使用文件系统。继续进行将停止这些。"
- ],
  "The filesystem is in use by login sessions.                Proceeding will stop these.": [
   null,
   "登录会话正在使用文件系统。继续进行将停止这些。"
  ],
- "The filesystem is in use by login sessions. Proceeding will stop these.": [
-  null,
-  "登录会话正在使用文件系统。继续进行将停止这些。"
- ],
  "The filesystem is in use by system services.                Proceeding will stop these.": [
-  null,
-  "系统服务正在使用文件系统。继续进行将停止这些。"
- ],
- "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
   "系统服务正在使用文件系统。继续进行将停止这些。"
  ],
@@ -1575,10 +1543,6 @@ return plural;
   null,
   "该设备有正在使用的文件系统。               继续进行将卸载其上的所有文件系统。"
  ],
- "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
-  null,
-  "该设备有正在使用的文件系统。继续进行将卸载其上的所有文件系统。"
- ],
  "This device is currently used for RAID devices.": [
   null,
   "该设备正在被 RAID 设备使用。"
@@ -1586,10 +1550,6 @@ return plural;
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
   null,
   "该设备正在被 RAID 设备使用。                继续进行将会从 RAID 设备中移除它。"
- ],
- "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
-  null,
-  "该设备正在被 RAID 设备使用。                继续进行将从 RAID 设备中移除它。"
  ],
  "This device is currently used for VDO devices.": [
   null,
@@ -1602,10 +1562,6 @@ return plural;
  "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
   null,
   "该设备正在被卷组使用。                继续进行将从卷组中移除它。"
- ],
- "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
-  null,
-  "该设备正在被卷组使用。继续进行将从卷组中移除它。"
  ],
  "This disk cannot be removed while the device is recovering.": [
   null,

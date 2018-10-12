@@ -83,14 +83,6 @@ return plural;
   null,
   "Додати диск"
  ],
- "Additional": [
-  null,
-  "Додаткові"
- ],
- "Address": [
-  null,
-  "Адреса"
- ],
  "Address:": [
   null,
   "Адреса:"
@@ -299,10 +291,6 @@ return plural;
   null,
   "Вузол"
  ],
- "Host Interface": [
-  null,
-  ""
- ],
  "INSTALL VM action failed": [
   null,
   "Помилка під час дії зі встановлення ВМ"
@@ -339,18 +327,6 @@ return plural;
   null,
   "Завантажуємо…"
  ],
- "MAC Address": [
-  null,
-  "MAC-адреса"
- ],
- "MTU": [
-  null,
-  "MTU"
- ],
- "Managed": [
-  null,
-  "Керована"
- ],
  "Manual Connection": [
   null,
   "З’єднання вручну"
@@ -374,10 +350,6 @@ return plural;
  "MiB": [
   null,
   "МіБ"
- ],
- "Model type": [
-  null,
-  "Тип моделі"
  ],
  "More Information": [
   null,
@@ -423,10 +395,6 @@ return plural;
   null,
   "Відповідних файлів не знайдено"
  ],
- "No network interfaces defined for this VM": [
-  null,
-  "Немає інтерфейсів мережі, які визначено для цієї ВМ"
- ],
  "OS Vendor": [
   null,
   "Виробник ОС"
@@ -463,10 +431,6 @@ return plural;
   null,
   "Будь ласка, запустіть віртуальну машину, щоб отримати доступ до її консолі."
  ],
- "Plug": [
-  null,
-  "З'єднати"
- ],
  "Pool": [
   null,
   "Буфер"
@@ -474,10 +438,6 @@ return plural;
  "Port": [
   null,
   "Порт"
- ],
- "Portgroup": [
-  null,
-  "Група портів"
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
@@ -647,10 +607,6 @@ return plural;
   null,
   "Діагностика проблем"
  ],
- "Type": [
-  null,
-  "Тип"
- ],
  "URL": [
   null,
   "Адреса"
@@ -658,10 +614,6 @@ return plural;
  "Unique name": [
   null,
   "Унікальна назва"
- ],
- "Unplug": [
-  null,
-  "Від'єднати"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
@@ -762,10 +714,6 @@ return plural;
  "Virtualization Service is Available": [
   null,
   "Доступна служба віртуалізації"
- ],
- "Virtualport": [
-  null,
-  "Віртуальний порт"
  ],
  "Volume": [
   null,

@@ -87,14 +87,6 @@ return plural;
   null,
   "Disk I/O"
  ],
- "Additional": [
-  null,
-  ""
- ],
- "Address": [
-  null,
-  ""
- ],
  "Address:": [
   null,
   ""
@@ -367,19 +359,7 @@ return plural;
   null,
   ""
  ],
- "MAC Address": [
-  null,
-  ""
- ],
  "MIGRATE action failed": [
-  null,
-  ""
- ],
- "MTU": [
-  null,
-  ""
- ],
- "Managed": [
   null,
   ""
  ],
@@ -404,10 +384,6 @@ return plural;
   ""
  ],
  "Migrate To:": [
-  null,
-  ""
- ],
- "Model type": [
   null,
   ""
  ],
@@ -444,10 +420,6 @@ return plural;
   ""
  ],
  "No disks defined for this VM": [
-  null,
-  ""
- ],
- "No network interfaces defined for this VM": [
   null,
   ""
  ],
@@ -519,19 +491,11 @@ return plural;
   null,
   ""
  ],
- "Plug": [
-  null,
-  ""
- ],
  "Pool": [
   null,
   "Værtsnavn"
  ],
  "Port": [
-  null,
-  ""
- ],
- "Portgroup": [
   null,
   ""
  ],
@@ -759,14 +723,6 @@ return plural;
   null,
   ""
  ],
- "Type": [
-  null,
-  ""
- ],
- "Unplug": [
-  null,
-  ""
- ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   ""
@@ -824,10 +780,6 @@ return plural;
   ""
  ],
  "Virtual Machines of $0 cluster": [
-  null,
-  ""
- ],
- "Virtualport": [
   null,
   ""
  ],

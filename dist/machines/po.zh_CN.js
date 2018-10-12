@@ -83,14 +83,6 @@ return plural;
   null,
   "添加磁盘"
  ],
- "Additional": [
-  null,
-  "额外"
- ],
- "Address": [
-  null,
-  "地址"
- ],
  "Address:": [
   null,
   "地址："
@@ -299,10 +291,6 @@ return plural;
   null,
   "主机"
  ],
- "Host Interface": [
-  null,
-  ""
- ],
  "INSTALL VM action failed": [
   null,
   "安装虚拟机操作失败"
@@ -339,18 +327,6 @@ return plural;
   null,
   "加载中......"
  ],
- "MAC Address": [
-  null,
-  "MAC 地址"
- ],
- "MTU": [
-  null,
-  "MTU"
- ],
- "Managed": [
-  null,
-  "已管理"
- ],
  "Manual Connection": [
   null,
   "手动连接"
@@ -374,10 +350,6 @@ return plural;
  "MiB": [
   null,
   "MiB"
- ],
- "Model type": [
-  null,
-  "型号类型"
  ],
  "More Information": [
   null,
@@ -423,10 +395,6 @@ return plural;
   null,
   "没有找到匹配的文件"
  ],
- "No network interfaces defined for this VM": [
-  null,
-  "没有为此 VM 定义网络接口"
- ],
  "OS Vendor": [
   null,
   "操作系统厂商"
@@ -463,10 +431,6 @@ return plural;
   null,
   "请启动虚拟机来访问其控制台。"
  ],
- "Plug": [
-  null,
-  "插"
- ],
  "Pool": [
   null,
   "池"
@@ -474,10 +438,6 @@ return plural;
  "Port": [
   null,
   "端口"
- ],
- "Portgroup": [
-  null,
-  "端口组"
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
@@ -647,10 +607,6 @@ return plural;
   null,
   "排错"
  ],
- "Type": [
-  null,
-  "类型"
- ],
  "URL": [
   null,
   "URL"
@@ -658,10 +614,6 @@ return plural;
  "Unique name": [
   null,
   "唯一名称"
- ],
- "Unplug": [
-  null,
-  "拔"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
@@ -762,10 +714,6 @@ return plural;
  "Virtualization Service is Available": [
   null,
   "虚拟化服务可用"
- ],
- "Virtualport": [
-  null,
-  "Virtualport"
  ],
  "Volume": [
   null,

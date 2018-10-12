@@ -83,14 +83,6 @@ return plural;
   null,
   "Dodaj dysk"
  ],
- "Additional": [
-  null,
-  "Dodatkowe"
- ],
- "Address": [
-  null,
-  "Adres"
- ],
  "Address:": [
   null,
   "Adres:"
@@ -299,10 +291,6 @@ return plural;
   null,
   "Gospodarz"
  ],
- "Host Interface": [
-  null,
-  ""
- ],
  "INSTALL VM action failed": [
   null,
   "Działanie INSTALL VM się nie powiodło"
@@ -339,18 +327,6 @@ return plural;
   null,
   "Wczytywanie…"
  ],
- "MAC Address": [
-  null,
-  "Adres MAC"
- ],
- "MTU": [
-  null,
-  "MTU"
- ],
- "Managed": [
-  null,
-  "Zarządzane"
- ],
  "Manual Connection": [
   null,
   "Ręczne połączenie"
@@ -374,10 +350,6 @@ return plural;
  "MiB": [
   null,
   "MiB"
- ],
- "Model type": [
-  null,
-  "Typ modelu"
  ],
  "More Information": [
   null,
@@ -423,10 +395,6 @@ return plural;
   null,
   "Nie odnaleziono pasujących plików"
  ],
- "No network interfaces defined for this VM": [
-  null,
-  "Nie określono interfejsów sieciowych dla tej maszyny wirtualnej"
- ],
  "OS Vendor": [
   null,
   "Producent systemu operacyjnego"
@@ -463,10 +431,6 @@ return plural;
   null,
   "Proszę uruchomić maszynę wirtualną, aby uzyskać dostęp do jej konsoli."
  ],
- "Plug": [
-  null,
-  "Podłącz"
- ],
  "Pool": [
   null,
   "Pula"
@@ -474,10 +438,6 @@ return plural;
  "Port": [
   null,
   "Port"
- ],
- "Portgroup": [
-  null,
-  "Grupa portów"
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
@@ -647,10 +607,6 @@ return plural;
   null,
   "Rozwiązywanie problemów"
  ],
- "Type": [
-  null,
-  "Typ"
- ],
  "URL": [
   null,
   "Adres URL"
@@ -658,10 +614,6 @@ return plural;
  "Unique name": [
   null,
   "Unikalna nazwa"
- ],
- "Unplug": [
-  null,
-  "Odłącz"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
@@ -762,10 +714,6 @@ return plural;
  "Virtualization Service is Available": [
   null,
   "Usługa wirtualizacji jest dostępna"
- ],
- "Virtualport": [
-  null,
-  "Port wirtualny"
  ],
  "Volume": [
   null,

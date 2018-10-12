@@ -1,5 +1,5 @@
 # Generated Makefile data for apps
-# Stamp: Thu Oct 04 2018 13:19:42 GMT+0000 (UTC)
+# Stamp: Fri Oct 12 2018 10:12:43 GMT+0000 (UTC)
 
 apps_INPUTS = \
 	node_modules/create-react-class/LICENSE.txt \

@@ -87,14 +87,6 @@ return plural;
   null,
   ""
  ],
- "Additional": [
-  null,
-  ""
- ],
- "Address": [
-  null,
-  "주소"
- ],
  "Address:": [
   null,
   ""
@@ -363,10 +355,6 @@ return plural;
   null,
   "호스트"
  ],
- "Host Interface": [
-  null,
-  ""
- ],
  "Host to Maintenance": [
   null,
   ""
@@ -391,19 +379,7 @@ return plural;
   null,
   ""
  ],
- "MAC Address": [
-  null,
-  ""
- ],
  "MIGRATE action failed": [
-  null,
-  ""
- ],
- "MTU": [
-  null,
-  ""
- ],
- "Managed": [
   null,
   ""
  ],
@@ -428,10 +404,6 @@ return plural;
   ""
  ],
  "Migrate To:": [
-  null,
-  ""
- ],
- "Model type": [
   null,
   ""
  ],
@@ -468,10 +440,6 @@ return plural;
   ""
  ],
  "No disks defined for this VM": [
-  null,
-  ""
- ],
- "No network interfaces defined for this VM": [
   null,
   ""
  ],
@@ -543,19 +511,11 @@ return plural;
   null,
   ""
  ],
- "Plug": [
-  null,
-  ""
- ],
  "Pool": [
   null,
   ""
  ],
  "Port": [
-  null,
-  ""
- ],
- "Portgroup": [
   null,
   ""
  ],
@@ -783,14 +743,6 @@ return plural;
   null,
   ""
  ],
- "Type": [
-  null,
-  ""
- ],
- "Unplug": [
-  null,
-  ""
- ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   ""
@@ -880,10 +832,6 @@ return plural;
   ""
  ],
  "Virtual Machines of $0 cluster": [
-  null,
-  ""
- ],
- "Virtualport": [
   null,
   ""
  ],

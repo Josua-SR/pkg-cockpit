@@ -1383,26 +1383,6 @@ return plural;
   null,
   "Size"
  ],
- "Size cannot be negative": [
-  null,
-  "サイズはマイナスにすることができません"
- ],
- "Size cannot be zero": [
-  null,
-  "サイズはゼロにすることができません"
- ],
- "Size is too large": [
-  null,
-  "サイズが大きすぎます"
- ],
- "Size must be a number": [
-  null,
-  "サイズは数値である必要があります"
- ],
- "Size must be at least $0": [
-  null,
-  "サイズは $0 以上にする必要があります"
- ],
  "Slot $0": [
   null,
   ""
@@ -1515,25 +1495,13 @@ return plural;
   null,
   "このファイルシステムは、ログインセッションおよびシステムサービスで使用中です。               続行するとこれらを停止します。"
  ],
- "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
-  null,
-  ""
- ],
  "The filesystem is in use by login sessions.                Proceeding will stop these.": [
   null,
   "このファイルシステムは、ログインセッションで使用中です。                続行するとこれらを停止します。"
  ],
- "The filesystem is in use by login sessions. Proceeding will stop these.": [
-  null,
-  ""
- ],
  "The filesystem is in use by system services.                Proceeding will stop these.": [
   null,
   "このファイルシステムは、システムサービスで使用中です。                続行するとこれらを停止します。"
- ],
- "The filesystem is in use by system services. Proceeding will stop these.": [
-  null,
-  ""
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
@@ -1575,10 +1543,6 @@ return plural;
   null,
   "このデバイスには、現在使用中のファイルシステムがあります。                続行すると、このデバイスのファイルシステムをすべてアンマウントします。"
  ],
- "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
-  null,
-  ""
- ],
  "This device is currently used for RAID devices.": [
   null,
   "このデバイスは、現在 RAID デバイスに使用されています。"
@@ -1586,10 +1550,6 @@ return plural;
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
   null,
   "このデバイスは、現在 RAID デバイスに使用されています。                続行すると、RAID デバイスからこのデバイスが削除されます。"
- ],
- "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
-  null,
-  ""
  ],
  "This device is currently used for VDO devices.": [
   null,
@@ -1602,10 +1562,6 @@ return plural;
  "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
   null,
   "このデバイスは現在ボリュームグループに使用されています。                続行すると、そのボリュームグループからこのデバイスが削除されます。"
- ],
- "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
-  null,
-  ""
  ],
  "This disk cannot be removed while the device is recovering.": [
   null,

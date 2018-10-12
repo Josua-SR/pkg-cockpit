@@ -83,14 +83,6 @@ return plural;
   null,
   ""
  ],
- "Additional": [
-  null,
-  "Addicional"
- ],
- "Address": [
-  null,
-  "Adreça"
- ],
  "Address:": [
   null,
   "Adreça:"
@@ -299,10 +291,6 @@ return plural;
   null,
   "Amfitrió"
  ],
- "Host Interface": [
-  null,
-  ""
- ],
  "INSTALL VM action failed": [
   null,
   "Ha fallat l'acció INSTALL VM"
@@ -339,18 +327,6 @@ return plural;
   null,
   "S'està carregant..."
  ],
- "MAC Address": [
-  null,
-  "Adreça MAC"
- ],
- "MTU": [
-  null,
-  "MTU"
- ],
- "Managed": [
-  null,
-  "Gestionat"
- ],
  "Manual Connection": [
   null,
   "Connexió manual"
@@ -374,10 +350,6 @@ return plural;
  "MiB": [
   null,
   "MiB"
- ],
- "Model type": [
-  null,
-  "Tipus de model"
  ],
  "More Information": [
   null,
@@ -423,10 +395,6 @@ return plural;
   null,
   "No s'ha trobat cap fitxer que coincideixi"
  ],
- "No network interfaces defined for this VM": [
-  null,
-  "No s'ha definit cap interfície de xarxa per aquesta MV"
- ],
  "OS Vendor": [
   null,
   ""
@@ -463,10 +431,6 @@ return plural;
   null,
   ""
  ],
- "Plug": [
-  null,
-  ""
- ],
  "Pool": [
   null,
   "Agrupació"
@@ -474,10 +438,6 @@ return plural;
  "Port": [
   null,
   "Port"
- ],
- "Portgroup": [
-  null,
-  ""
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
@@ -647,19 +607,11 @@ return plural;
   null,
   "Soluciona el problema"
  ],
- "Type": [
-  null,
-  "Tipus"
- ],
  "URL": [
   null,
   "URL"
  ],
  "Unique name": [
-  null,
-  ""
- ],
- "Unplug": [
   null,
   ""
  ],
@@ -762,10 +714,6 @@ return plural;
  "Virtualization Service is Available": [
   null,
   "El servei de virtualització està disponible"
- ],
- "Virtualport": [
-  null,
-  ""
  ],
  "Volume": [
   null,

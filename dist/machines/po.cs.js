@@ -83,14 +83,6 @@ return plural;
   null,
   ""
  ],
- "Additional": [
-  null,
-  "Další"
- ],
- "Address": [
-  null,
-  "Adresa"
- ],
  "Address:": [
   null,
   "Adresa:"
@@ -299,10 +291,6 @@ return plural;
   null,
   "Počítač"
  ],
- "Host Interface": [
-  null,
-  ""
- ],
  "INSTALL VM action failed": [
   null,
   ""
@@ -339,18 +327,6 @@ return plural;
   null,
   ""
  ],
- "MAC Address": [
-  null,
-  "MAC Adresa"
- ],
- "MTU": [
-  null,
-  ""
- ],
- "Managed": [
-  null,
-  ""
- ],
  "Manual Connection": [
   null,
   ""
@@ -374,10 +350,6 @@ return plural;
  "MiB": [
   null,
   "MiB"
- ],
- "Model type": [
-  null,
-  ""
  ],
  "More Information": [
   null,
@@ -423,10 +395,6 @@ return plural;
   null,
   ""
  ],
- "No network interfaces defined for this VM": [
-  null,
-  ""
- ],
  "OS Vendor": [
   null,
   ""
@@ -463,10 +431,6 @@ return plural;
   null,
   ""
  ],
- "Plug": [
-  null,
-  ""
- ],
  "Pool": [
   null,
   "Úložiště"
@@ -474,10 +438,6 @@ return plural;
  "Port": [
   null,
   "Port"
- ],
- "Portgroup": [
-  null,
-  ""
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
@@ -647,19 +607,11 @@ return plural;
   null,
   "Řešit potíže"
  ],
- "Type": [
-  null,
-  "Typ"
- ],
  "URL": [
   null,
   "URL"
  ],
  "Unique name": [
-  null,
-  ""
- ],
- "Unplug": [
   null,
   ""
  ],
@@ -760,10 +712,6 @@ return plural;
   ""
  ],
  "Virtualization Service is Available": [
-  null,
-  ""
- ],
- "Virtualport": [
   null,
   ""
  ],

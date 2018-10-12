@@ -87,14 +87,6 @@ return plural;
   null,
   "Añadir disco"
  ],
- "Additional": [
-  null,
-  "Adicional"
- ],
- "Address": [
-  null,
-  "Dirección"
- ],
  "Address:": [
   null,
   "Dirección:"
@@ -363,10 +355,6 @@ return plural;
   null,
   "Anfitrión"
  ],
- "Host Interface": [
-  null,
-  ""
- ],
  "Host to Maintenance": [
   null,
   "Host para Mantenimiento"
@@ -391,21 +379,9 @@ return plural;
   null,
   "Cargando datos ..."
  ],
- "MAC Address": [
-  null,
-  "Dirección MAC"
- ],
  "MIGRATE action failed": [
   null,
   "Fallo en acción MIGRATE"
- ],
- "MTU": [
-  null,
-  "MTU"
- ],
- "Managed": [
-  null,
-  "Manejado"
  ],
  "Manual Connection": [
   null,
@@ -430,10 +406,6 @@ return plural;
  "Migrate To:": [
   null,
   "Migrar A:"
- ],
- "Model type": [
-  null,
-  "Modelo tipo"
  ],
  "More Information": [
   null,
@@ -470,10 +442,6 @@ return plural;
  "No disks defined for this VM": [
   null,
   "No se han definido discos para esta VM"
- ],
- "No network interfaces defined for this VM": [
-  null,
-  "No se han definido interfaces de red para esta VM"
  ],
  "No oVirt connection": [
   null,
@@ -543,10 +511,6 @@ return plural;
   null,
   "Por favor espere hasta que la lista de plantilla se cargue desde el servidor."
  ],
- "Plug": [
-  null,
-  "Enchufe"
- ],
  "Pool": [
   null,
   "Grupo"
@@ -554,10 +518,6 @@ return plural;
  "Port": [
   null,
   "Puerto"
- ],
- "Portgroup": [
-  null,
-  "Grupo de puertos"
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
@@ -783,14 +743,6 @@ return plural;
   null,
   "Hilos por núcleo"
  ],
- "Type": [
-  null,
-  "Tipo"
- ],
- "Unplug": [
-  null,
-  "Desenchufar"
- ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "Actualizar a una versión más reciente de libvirt para visualizar estadísticas de disco"
@@ -882,10 +834,6 @@ return plural;
  "Virtual Machines of $0 cluster": [
   null,
   "Máquinas Virtuales de $0 cluster"
- ],
- "Virtualport": [
-  null,
-  "Puerto Virtual"
  ],
  "Volume": [
   null,
