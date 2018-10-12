@@ -38,7 +38,9 @@ http = cockpit.http(endpoint, [options])
 http = cockpit.http(options)
 </pre>
 <p>Create a new HTTP client. The <code class="code">endpoint</code> can be a file path starting with
-      <code class="code">/</code> to connect to a unix socket, or it can be a port number to connect to.</p>
+      <code class="code">/</code> to connect to a unix socket, or it can be a port number to connect to.
+      The optional <code class="code">options</code> argument is a javascript plain object, and may
+      include:</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -56,6 +58,12 @@ http = cockpit.http(options)
           identifier will try to use the same connection if it is still open.</p></td>
 </tr>
 <tr>
+<td><p><span class="term"><code class="code">"headers"</code></span></p></td>
+<td><p>Additional HTTP headers to include with the HTTP request. This is a plain
+          javascript object with each key as a header name, and each value as the header
+          value.</p></td>
+</tr>
+<tr>
 <td><p><span class="term"><code class="code">"superuser"</code></span></p></td>
 <td>
 <p>Set to <code class="code">"require"</code> to open this channel as root. If the
@@ -67,8 +75,57 @@ http = cockpit.http(options)
           fall back to perform an unprivileged request.</p>
 </td>
 </tr>
+<tr>
+<td><p><span class="term"><code class="code">"tls"</code></span></p></td>
+<td>
+<p>If set to a plain javascript object, then the connection will be an HTTPS
+            connection and include TLS encryption. The fields of the <code class="code">tls</code> object
+            declare various TLS configuration and data. All fields are optional:</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
+<li class="listitem"><p><code class="code">"authority"</code>: Certificate authority(s) to expect as signers
+              of the server's TLS certificate, represented as a plain javascript object.
+              It should have either a <code class="code">"file"</code> field containing a
+              readable PEM file on the system containing authorities, or a <code class="code">"data"</code> with
+              PEM encoded certificate data.</p></li>
+<li class="listitem"><p><code class="code">"certificate"</code>: A client certificate to use, represented as
+              a plain javascript object. It should have either a <code class="code">"file"</code> field containing a
+              readable PEM file on the system to use as a certificate, or a <code class="code">"data"</code> with
+              PEM encoded certificate data.</p></li>
+<li class="listitem"><p><code class="code">"key"</code>: A client key to use, represented as
+              a plain javascript object. It should have either a <code class="code">"file"</code> field containing a
+              readable PEM file on the system to use as a key, or a <code class="code">"data"</code> with
+              PEM encoded key data.</p></li>
+<li class="listitem"><p><code class="code">"validate"</code>: A boolean that describes whether to validate
+              the server's TLS certificate or not. By default local connections are not validated,
+              and remote connections are validated.</p></li>
+</ul></div>
+</td>
+</tr>
 </tbody>
 </table></div>
+<p>Here is a somewhat complex example of using most of the above <code class="code">options</code> when
+      when calling <code class="code">cockpit.http()</code>:</p>
+<pre class="programlisting">
+http = cockpit.http({
+    "address": "localhost",
+    "headers": {
+        "Authorization": "Basic dXNlcjpwYXNzd29yZA=="
+    },
+    "port": 443,
+    "tls": {
+        "validate": true,
+        "authority": {
+            "file": "/etc/pki/tls/certs/ca-bundle.crt",
+        },
+        "certificate": {
+            "data": "-----BEGIN CERTIFICATE-----\nMIIDsDCCA..."
+        },
+        "key": {
+            "data": "-----BEGIN RSA PRIVATE KEY-----\nMIIEogIBA..."
+        }
+    }
+});
+</pre>
 </div>
 <div class="refsection">
 <a name="cockpit-http-get"></a><h2>http.get()</h2>

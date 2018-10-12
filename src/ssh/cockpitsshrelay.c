@@ -52,6 +52,15 @@
 #include <fcntl.h>
 #include <time.h>
 
+/* libssh 0.8 offers SHA256 fingerprints, use them if available */
+#if HAVE_DECL_SSH_PUBLICKEY_HASH_SHA256
+#define SSH_PUBLICKEY_HASH SSH_PUBLICKEY_HASH_SHA256
+#define SSH_PUBLICKEY_HASH_NAME "SHA256"
+#else
+#define SSH_PUBLICKEY_HASH SSH_PUBLICKEY_HASH_MD5
+#define SSH_PUBLICKEY_HASH_NAME "MD5"
+#endif
+
 /* we had a private one before moving to /etc/ssh/ssh_known_hosts */
 #define LEGACY_KNOWN_HOSTS PACKAGE_LOCALSTATE_DIR "/known_hosts"
 
@@ -505,7 +514,7 @@ prompt_for_host_key (CockpitSshData *data)
 
   message = g_strdup_printf ("The authenticity of host '%s:%d' can't be established. Do you want to proceed this time?",
                              host, port);
-  prompt = g_strdup_printf ("MD5 Fingerprint (%s):", data->host_key_type);
+  prompt = g_strdup_printf (SSH_PUBLICKEY_HASH_NAME " Fingerprint (%s):", data->host_key_type);
 
   reply = prompt_with_authorize (data, prompt, message, data->host_fingerprint, data->host_key, TRUE);
 
@@ -605,38 +614,16 @@ set_knownhosts_file (CockpitSshData *data,
                      const guint port)
 {
   gboolean host_known;
-  const gchar *knownhosts_data;
   const gchar *problem = NULL;
   gchar *sout = NULL;
   gchar *serr = NULL;
-
   gchar *authorize_knownhosts_data = NULL;
 
-  if (data->ssh_options->knownhosts_authorize)
-    {
-      authorize_knownhosts_data = challenge_for_knownhosts_data (data);
-      knownhosts_data = authorize_knownhosts_data;
-    }
-  else
-    {
-      knownhosts_data = data->ssh_options->knownhosts_data;
-    }
-
-  /* $COCKPIT_SSH_KNOWN_HOSTS_DATA has highest priority */
-  if (knownhosts_data)
-    {
-      if (write_tmp_knownhosts_file (data, knownhosts_data, &problem))
-        data->ssh_options->knownhosts_file = tmp_knownhost_file;
-      else
-        goto out;
-    }
-
-  /* now check the default global ssh file */
+  /* first check the default global ssh file */
   host_known = cockpit_is_host_known (data->ssh_options->knownhosts_file, host, port);
 
   /* if we check the default system known hosts file (i. e. not during the test suite), also check
-   * the legacy file in /var/lib/cockpit and the user's ssh; we need to do that even with
-   * allow_unknown_hosts as subsequent code relies on knownhosts_file */
+   * the legacy file in /var/lib/cockpit */
   if (!host_known && strcmp (data->ssh_options->knownhosts_file, cockpit_get_default_knownhosts ()) == 0)
     {
       host_known = cockpit_is_host_known (LEGACY_KNOWN_HOSTS, host, port);
@@ -648,15 +635,15 @@ set_knownhosts_file (CockpitSshData *data,
                    LEGACY_KNOWN_HOSTS);
           data->ssh_options->knownhosts_file = LEGACY_KNOWN_HOSTS;
         }
+    }
 
-      /* check ~/.ssh/known_hosts, unless we are running as a system user ($HOME == "/"); this is not
-       * a security check (if one can write /.ssh/known_hosts then we have to trust them), just caution */
-      if (!host_known && g_strcmp0 (g_get_home_dir (), "/") != 0)
-        {
-          host_known = cockpit_is_host_known (data->user_known_hosts, host, port);
-          if (host_known)
-            data->ssh_options->knownhosts_file = data->user_known_hosts;
-        }
+  /* check ~/.ssh/known_hosts, unless we are running as a system user ($HOME == "/"); this is not
+   * a security check (if one can write /.ssh/known_hosts then we have to trust them), just caution */
+  if (!host_known && g_strcmp0 (g_get_home_dir (), "/") != 0)
+    {
+      host_known = cockpit_is_host_known (data->user_known_hosts, host, port);
+      if (host_known)
+        data->ssh_options->knownhosts_file = data->user_known_hosts;
     }
 
   /* last (most expensive) fallback is to ask sssd's ssh known_hosts proxy */
@@ -705,14 +692,33 @@ set_knownhosts_file (CockpitSshData *data,
         }
     }
 
-  g_debug ("%s: using known hosts file %s", data->logname, data->ssh_options->knownhosts_file);
-  if (!data->ssh_options->allow_unknown_hosts && !host_known)
+  if (!host_known && data->ssh_options->challenge_unknown_host_preconnect)
     {
-      g_message ("%s: refusing to connect to unknown host: %s:%d",
-                 data->logname, host, port);
-      problem = "unknown-host";
-      goto out;
+      authorize_knownhosts_data = challenge_for_knownhosts_data (data);
+      if (authorize_knownhosts_data)
+        {
+          if (write_tmp_knownhosts_file (data, authorize_knownhosts_data, &problem))
+            {
+              /* this should always be known now, but let's make double-sure */
+              host_known = cockpit_is_host_known (tmp_knownhost_file, host, port);
+              if (host_known)
+                data->ssh_options->knownhosts_file = tmp_knownhost_file;
+              else
+                g_warning ("authorize challenge reported key for %s:%u which is not known to cockpit_is_host_known()", host, port);
+            }
+          else
+            goto out;
+        }
     }
+
+  g_debug ("%s: using known hosts file %s", data->logname, data->ssh_options->knownhosts_file);
+  if (!data->ssh_options->connect_to_unknown_hosts && !host_known)
+      {
+          g_message ("%s: refusing to connect to unknown host: %s:%d",
+                     data->logname, host, port);
+          problem = "unknown-host";
+          goto out;
+      }
 
   problem = NULL;
 out:
@@ -759,7 +765,7 @@ verify_knownhost (CockpitSshData *data,
       goto done;
     }
 
-  if (ssh_get_publickey_hash (key, SSH_PUBLICKEY_HASH_MD5, &hash, &len) < 0)
+  if (ssh_get_publickey_hash (key, SSH_PUBLICKEY_HASH, &hash, &len) < 0)
     {
       g_warning ("Couldn't hash ssh public key");
       ret = "internal-error";
@@ -767,7 +773,11 @@ verify_knownhost (CockpitSshData *data,
     }
   else
     {
+#if HAVE_DECL_SSH_GET_FINGERPRINT_HASH
+      data->host_fingerprint = ssh_get_fingerprint_hash (SSH_PUBLICKEY_HASH, hash, len);
+#else
       data->host_fingerprint = ssh_get_hexa (hash, len);
+#endif
       ssh_clean_pubkey_hash (&hash);
     }
 
@@ -1370,8 +1380,8 @@ cockpit_ssh_connect (CockpitSshData *data,
                      ssh_channel *out_channel)
 {
   const gchar *ignore_hostkey;
+  gboolean host_is_whitelisted;
   const gchar *problem;
-  const gchar *knownhosts;
 
   guint port = 22;
   gchar *host;
@@ -1400,30 +1410,20 @@ cockpit_ssh_connect (CockpitSshData *data,
 
   g_warn_if_fail (ssh_options_set (data->session, SSH_OPTIONS_HOST, host) == 0);
 
-  if (!data->ssh_options->ignore_hostkey)
-    {
-      /* This is a single host, for which we have been told to ignore the host key */
-      ignore_hostkey = cockpit_conf_string (COCKPIT_CONF_SSH_SECTION, "host");
-      if (!ignore_hostkey)
-        ignore_hostkey = "127.0.0.1";
+  /* This is a single host, for which we have been told to ignore the host key */
+  ignore_hostkey = cockpit_conf_string (COCKPIT_CONF_SSH_SECTION, "host");
+  if (!ignore_hostkey)
+    ignore_hostkey = "127.0.0.1";
+  host_is_whitelisted = g_str_equal (ignore_hostkey, host);
 
-      data->ssh_options->ignore_hostkey = g_str_equal (ignore_hostkey, host);
-    }
-
-  if (!data->ssh_options->ignore_hostkey)
+  if (!host_is_whitelisted)
     {
       problem = set_knownhosts_file (data, host, port);
       if (problem != NULL)
         goto out;
-      knownhosts = data->ssh_options->knownhosts_file;
-    }
-  else
-    {
-      knownhosts = "/dev/null";
     }
 
-  // Set knownhosts before trying to connect to ensure key exchange uses the right file
-  g_warn_if_fail (ssh_options_set (data->session, SSH_OPTIONS_KNOWNHOSTS, knownhosts) == 0);
+  g_warn_if_fail (ssh_options_set (data->session, SSH_OPTIONS_KNOWNHOSTS, data->ssh_options->knownhosts_file) == 0);
 
   rc = ssh_connect (data->session);
   if (rc != SSH_OK)
@@ -1435,8 +1435,7 @@ cockpit_ssh_connect (CockpitSshData *data,
     }
 
   g_debug ("%s: connected", data->logname);
-
-  if (!data->ssh_options->ignore_hostkey)
+  if (!host_is_whitelisted)
     {
       problem = verify_knownhost (data, host, port);
       if (problem != NULL)

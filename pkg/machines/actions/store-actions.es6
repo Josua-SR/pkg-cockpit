@@ -29,6 +29,7 @@ import {
     UPDATE_ADD_VM,
     UPDATE_LIBVIRT_STATE,
     UPDATE_OS_INFO_LIST,
+    UPDATE_NETWORKS,
     UPDATE_STORAGE_POOLS,
     UPDATE_STORAGE_VOLUMES,
     UPDATE_UI_VM,
@@ -102,9 +103,9 @@ export function deleteUnlistedVMs(connectionName, vmNames, vmIds) {
     };
 }
 
-export function deleteVmMessage({ name, connectionName }) {
+export function deleteVmMessage({ name, connectionName, tab }) {
     // recently there's just the last error message kept so we can reuse the code
-    return vmActionFailed({ name, connectionName, message: null, detail: null, extraPayload: null });
+    return vmActionFailed({ name, connectionName, message: null, detail: null, extraPayload: null, tab });
 }
 
 export function setHypervisorMaxVCPU({ count, connectionName }) {
@@ -155,6 +156,16 @@ export function updateOsInfoList(osInfoList) {
     };
 }
 
+export function updateNetworks({ connectionName, networks }) {
+    return {
+        type: UPDATE_NETWORKS,
+        payload: {
+            connectionName,
+            networks,
+        }
+    };
+}
+
 export function updateStoragePools({ connectionName, pools }) {
     return {
         type: UPDATE_STORAGE_POOLS,
@@ -190,7 +201,7 @@ export function updateVm(props) {
     };
 }
 
-export function vmActionFailed({ name, connectionName, message, detail, extraPayload }) {
+export function vmActionFailed({ name, connectionName, message, detail, extraPayload, tab = 'overview' }) {
     return {
         type: VM_ACTION_FAILED,
         payload: {
@@ -199,6 +210,7 @@ export function vmActionFailed({ name, connectionName, message, detail, extraPay
             message,
             detail,
             extraPayload,
+            tab,
         },
     };
 }

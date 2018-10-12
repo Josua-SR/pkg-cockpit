@@ -1390,26 +1390,6 @@ return plural;
   null,
   "Tamaño"
  ],
- "Size cannot be negative": [
-  null,
-  "El tamaño no puede ser negativo"
- ],
- "Size cannot be zero": [
-  null,
-  "El tamaño no puede ser cero"
- ],
- "Size is too large": [
-  null,
-  "Tamaño es muy grande"
- ],
- "Size must be a number": [
-  null,
-  "Tamaña debe ser un número"
- ],
- "Size must be at least $0": [
-  null,
-  "El tamaño debe ser al menos $0"
- ],
  "Slot $0": [
   null,
   ""
@@ -1522,25 +1502,13 @@ return plural;
   null,
   "El sistema de archivos está en uso por inicios de sesiones y servicios del sistema.                Si se sigue se parará eso."
  ],
- "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
-  null,
-  ""
- ],
  "The filesystem is in use by login sessions.                Proceeding will stop these.": [
   null,
   "El sistema de archivos está en uso por inicio de sesiones.                Si se sigue se pararán."
  ],
- "The filesystem is in use by login sessions. Proceeding will stop these.": [
-  null,
-  ""
- ],
  "The filesystem is in use by system services.                Proceeding will stop these.": [
   null,
   "El sistema de archivos está en uso por servicios del sistema.                Si se sigue se pararán."
- ],
- "The filesystem is in use by system services. Proceeding will stop these.": [
-  null,
-  "Hay servicios del sistema usando el sistema de archivos. Si continúa se pararán."
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
@@ -1582,10 +1550,6 @@ return plural;
   null,
   "Este dispositivo tiene sistemas de archivos que están actualmente en uso.                Procede desmontar todos los sistemas de archivos en él."
  ],
- "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
-  null,
-  "Este dispositivo tiene sistemas de archivos en uso. Continuar desmontará todos los sistemas de archivos en el mismo."
- ],
  "This device is currently used for RAID devices.": [
   null,
   "Este dispositivo está usado actualmente por dispositivos RAID."
@@ -1593,10 +1557,6 @@ return plural;
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
   null,
   "Este dispositivo está usado actualmente por dispositivos RAID.                Procediendo lo quitará de sus dispositivos RAID."
- ],
- "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
-  null,
-  "Hay dispositivos RAID que usan este dispositivo. Si continúa se eliminará de ellos."
  ],
  "This device is currently used for VDO devices.": [
   null,
@@ -1609,10 +1569,6 @@ return plural;
  "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
   null,
   "Este dispositivo está usado actualmente por grupos de volumen.                Procediendo lo quitará de sus grupos de volumen."
- ],
- "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
-  null,
-  "Este dispositivo se usa actualmente en grupo de volúmenes. Si continúa se eliminará de los mismos."
  ],
  "This disk cannot be removed while the device is recovering.": [
   null,

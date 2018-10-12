@@ -1390,26 +1390,6 @@ return plural;
   null,
   "Koko"
  ],
- "Size cannot be negative": [
-  null,
-  "Koko ei  voi olla negatiivinen"
- ],
- "Size cannot be zero": [
-  null,
-  "Koko ei voi olla nolla"
- ],
- "Size is too large": [
-  null,
-  "Koko on liian suuri"
- ],
- "Size must be a number": [
-  null,
-  "Koon tulee olla numero"
- ],
- "Size must be at least $0": [
-  null,
-  "Koon tulee olla vähintään $0"
- ],
  "Slot $0": [
   null,
   ""
@@ -1522,23 +1502,11 @@ return plural;
   null,
   ""
  ],
- "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
-  null,
-  ""
- ],
  "The filesystem is in use by login sessions.                Proceeding will stop these.": [
   null,
   ""
  ],
- "The filesystem is in use by login sessions. Proceeding will stop these.": [
-  null,
-  ""
- ],
  "The filesystem is in use by system services.                Proceeding will stop these.": [
-  null,
-  ""
- ],
- "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
   ""
  ],
@@ -1582,19 +1550,11 @@ return plural;
   null,
   ""
  ],
- "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
-  null,
-  ""
- ],
  "This device is currently used for RAID devices.": [
   null,
   "Tätä laitetta käytetään parhaillaan RAID-laitteille."
  ],
  "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
-  null,
-  ""
- ],
- "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
   null,
   ""
  ],
@@ -1607,10 +1567,6 @@ return plural;
   "Tätä laitetta käytetään parhaillaan taltioryhmille."
  ],
  "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
-  null,
-  ""
- ],
- "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
   ""
  ],

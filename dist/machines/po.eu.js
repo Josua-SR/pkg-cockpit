@@ -83,14 +83,6 @@ return plural;
   null,
   ""
  ],
- "Additional": [
-  null,
-  ""
- ],
- "Address": [
-  null,
-  ""
- ],
  "Address:": [
   null,
   "Helbidea:"
@@ -299,10 +291,6 @@ return plural;
   null,
   ""
  ],
- "Host Interface": [
-  null,
-  ""
- ],
  "INSTALL VM action failed": [
   null,
   ""
@@ -339,18 +327,6 @@ return plural;
   null,
   ""
  ],
- "MAC Address": [
-  null,
-  "MAC helbidea"
- ],
- "MTU": [
-  null,
-  "MTU"
- ],
- "Managed": [
-  null,
-  ""
- ],
  "Manual Connection": [
   null,
   ""
@@ -372,10 +348,6 @@ return plural;
   ""
  ],
  "MiB": [
-  null,
-  ""
- ],
- "Model type": [
   null,
   ""
  ],
@@ -423,10 +395,6 @@ return plural;
   null,
   ""
  ],
- "No network interfaces defined for this VM": [
-  null,
-  ""
- ],
  "OS Vendor": [
   null,
   ""
@@ -463,19 +431,11 @@ return plural;
   null,
   ""
  ],
- "Plug": [
-  null,
-  ""
- ],
  "Pool": [
   null,
   ""
  ],
  "Port": [
-  null,
-  ""
- ],
- "Portgroup": [
   null,
   ""
  ],
@@ -647,19 +607,11 @@ return plural;
   null,
   ""
  ],
- "Type": [
-  null,
-  ""
- ],
  "URL": [
   null,
   ""
  ],
  "Unique name": [
-  null,
-  ""
- ],
- "Unplug": [
   null,
   ""
  ],
@@ -760,10 +712,6 @@ return plural;
   ""
  ],
  "Virtualization Service is Available": [
-  null,
-  ""
- ],
- "Virtualport": [
   null,
   ""
  ],

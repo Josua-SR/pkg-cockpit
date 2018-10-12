@@ -87,14 +87,6 @@ return plural;
   null,
   "Ajouter un disque"
  ],
- "Additional": [
-  null,
-  "Additionnel"
- ],
- "Address": [
-  null,
-  "Adresse"
- ],
  "Address:": [
   null,
   "Adresse:"
@@ -363,10 +355,6 @@ return plural;
   null,
   "Hôte"
  ],
- "Host Interface": [
-  null,
-  ""
- ],
  "Host to Maintenance": [
   null,
   "Hôte à la maintenance"
@@ -391,21 +379,9 @@ return plural;
   null,
   "Chargement des données ..."
  ],
- "MAC Address": [
-  null,
-  "Adresse Mac"
- ],
  "MIGRATE action failed": [
   null,
   "L'action MIGRATE a échoué"
- ],
- "MTU": [
-  null,
-  "MTU"
- ],
- "Managed": [
-  null,
-  "Géré"
  ],
  "Manual Connection": [
   null,
@@ -430,10 +406,6 @@ return plural;
  "Migrate To:": [
   null,
   "Migrer vers:"
- ],
- "Model type": [
-  null,
-  "Type de modèle"
  ],
  "More Information": [
   null,
@@ -470,10 +442,6 @@ return plural;
  "No disks defined for this VM": [
   null,
   "Aucun disque défini pour cette machine virtuelle"
- ],
- "No network interfaces defined for this VM": [
-  null,
-  "Aucune interface réseau définie pour cette machine virtuelle"
  ],
  "No oVirt connection": [
   null,
@@ -543,10 +511,6 @@ return plural;
   null,
   "Veuillez attendre que la liste des modèles soit chargée depuis le serveur."
  ],
- "Plug": [
-  null,
-  "Connecteur"
- ],
  "Pool": [
   null,
   "Pool"
@@ -554,10 +518,6 @@ return plural;
  "Port": [
   null,
   "Port"
- ],
- "Portgroup": [
-  null,
-  "Portgroup"
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
@@ -783,14 +743,6 @@ return plural;
   null,
   "Threads par noyaux"
  ],
- "Type": [
-  null,
-  "Type"
- ],
- "Unplug": [
-  null,
-  "Débrancher"
- ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "Mettre à niveau vers une version plus récente de libvirt pour afficher les statistiques de disque"
@@ -882,10 +834,6 @@ return plural;
  "Virtual Machines of $0 cluster": [
   null,
   "Machines virtuelles de $0 cluster"
- ],
- "Virtualport": [
-  null,
-  "Virtualport"
  ],
  "Volume": [
   null,

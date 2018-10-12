@@ -87,14 +87,6 @@ return plural;
   null,
   "Dodaj dysk"
  ],
- "Additional": [
-  null,
-  "Dodatkowe"
- ],
- "Address": [
-  null,
-  "Adres"
- ],
  "Address:": [
   null,
   "Adres:"
@@ -363,10 +355,6 @@ return plural;
   null,
   "Gospodarz"
  ],
- "Host Interface": [
-  null,
-  ""
- ],
  "Host to Maintenance": [
   null,
   "Gospodarz do konserwacji"
@@ -391,21 +379,9 @@ return plural;
   null,
   "Wczytywanie danych…"
  ],
- "MAC Address": [
-  null,
-  "Adres MAC"
- ],
  "MIGRATE action failed": [
   null,
   "Działanie MIGRATE się nie powiodło"
- ],
- "MTU": [
-  null,
-  "MTU"
- ],
- "Managed": [
-  null,
-  "Zarządzane"
  ],
  "Manual Connection": [
   null,
@@ -430,10 +406,6 @@ return plural;
  "Migrate To:": [
   null,
   "Migracja do:"
- ],
- "Model type": [
-  null,
-  "Typ modelu"
  ],
  "More Information": [
   null,
@@ -470,10 +442,6 @@ return plural;
  "No disks defined for this VM": [
   null,
   "Nie określono dysków dla tej maszyny wirtualnej"
- ],
- "No network interfaces defined for this VM": [
-  null,
-  "Nie określono interfejsów sieciowych dla tej maszyny wirtualnej"
  ],
  "No oVirt connection": [
   null,
@@ -543,10 +511,6 @@ return plural;
   null,
   "Proszę poczekać na wczytanie listy szablonów z serwera."
  ],
- "Plug": [
-  null,
-  "Podłącz"
- ],
  "Pool": [
   null,
   "Pula"
@@ -554,10 +518,6 @@ return plural;
  "Port": [
   null,
   "Port"
- ],
- "Portgroup": [
-  null,
-  "Grupa portów"
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
@@ -783,14 +743,6 @@ return plural;
   null,
   "Wątki na rdzenie"
  ],
- "Type": [
-  null,
-  "Typ"
- ],
- "Unplug": [
-  null,
-  "Odłącz"
- ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "Należy zaktualizować do nowszej wersji biblioteki libvirt, aby przeglądać statystyki dysku"
@@ -882,10 +834,6 @@ return plural;
  "Virtual Machines of $0 cluster": [
   null,
   "Maszyny wirtualne klastra $0"
- ],
- "Virtualport": [
-  null,
-  "Port wirtualny"
  ],
  "Volume": [
   null,

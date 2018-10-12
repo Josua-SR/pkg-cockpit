@@ -83,14 +83,6 @@ return plural;
   null,
   "Ajouter un disque"
  ],
- "Additional": [
-  null,
-  "Additionnel"
- ],
- "Address": [
-  null,
-  "Adresse"
- ],
  "Address:": [
   null,
   "Adresse:"
@@ -299,10 +291,6 @@ return plural;
   null,
   "Hôte"
  ],
- "Host Interface": [
-  null,
-  ""
- ],
  "INSTALL VM action failed": [
   null,
   "Échec de l'action INSTALL VM"
@@ -339,18 +327,6 @@ return plural;
   null,
   "Chargement ..."
  ],
- "MAC Address": [
-  null,
-  "Adresse Mac"
- ],
- "MTU": [
-  null,
-  "MTU"
- ],
- "Managed": [
-  null,
-  "Géré"
- ],
  "Manual Connection": [
   null,
   "Connexion manuelle"
@@ -374,10 +350,6 @@ return plural;
  "MiB": [
   null,
   "MiB"
- ],
- "Model type": [
-  null,
-  "Type de modèle"
  ],
  "More Information": [
   null,
@@ -423,10 +395,6 @@ return plural;
   null,
   "Aucun fichier correspondant trouvé"
  ],
- "No network interfaces defined for this VM": [
-  null,
-  "Aucune interface réseau définie pour cette machine virtuelle"
- ],
  "OS Vendor": [
   null,
   "Fournisseur d'OS"
@@ -463,10 +431,6 @@ return plural;
   null,
   "Veuillez démarrer la machine virtuelle pour accéder à sa console."
  ],
- "Plug": [
-  null,
-  "Connecteur"
- ],
  "Pool": [
   null,
   "Pool"
@@ -474,10 +438,6 @@ return plural;
  "Port": [
   null,
   "Port"
- ],
- "Portgroup": [
-  null,
-  "Portgroup"
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
@@ -647,10 +607,6 @@ return plural;
   null,
   "Troubleshoot"
  ],
- "Type": [
-  null,
-  "Type"
- ],
  "URL": [
   null,
   "URL"
@@ -658,10 +614,6 @@ return plural;
  "Unique name": [
   null,
   "Nom unique"
- ],
- "Unplug": [
-  null,
-  "Débrancher"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
@@ -762,10 +714,6 @@ return plural;
  "Virtualization Service is Available": [
   null,
   "Le service de virtualisation est disponible"
- ],
- "Virtualport": [
-  null,
-  "Virtualport"
  ],
  "Volume": [
   null,

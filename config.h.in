@@ -20,6 +20,14 @@
 /* Define to 1 if you have the `dcgettext' function. */
 #undef HAVE_DCGETTEXT
 
+/* Define to 1 if you have the declaration of `ssh_get_fingerprint_hash', and
+   to 0 if you don't. */
+#undef HAVE_DECL_SSH_GET_FINGERPRINT_HASH
+
+/* Define to 1 if you have the declaration of `SSH_PUBLICKEY_HASH_SHA256', and
+   to 0 if you don't. */
+#undef HAVE_DECL_SSH_PUBLICKEY_HASH_SHA256
+
 /* Define to 1 if you have the `fdwalk' function. */
 #undef HAVE_FDWALK
 

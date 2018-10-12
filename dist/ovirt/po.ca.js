@@ -87,14 +87,6 @@ return plural;
   null,
   ""
  ],
- "Additional": [
-  null,
-  "Addicional"
- ],
- "Address": [
-  null,
-  "Adreça"
- ],
  "Address:": [
   null,
   "Adreça:"
@@ -363,10 +355,6 @@ return plural;
   null,
   "Amfitrió"
  ],
- "Host Interface": [
-  null,
-  ""
- ],
  "Host to Maintenance": [
   null,
   "Amfitrió a manteniment"
@@ -391,21 +379,9 @@ return plural;
   null,
   "S'estan carregant les dades..."
  ],
- "MAC Address": [
-  null,
-  "Adreça MAC"
- ],
  "MIGRATE action failed": [
   null,
   "Ha fallat l'acció MIGRATE"
- ],
- "MTU": [
-  null,
-  "MTU"
- ],
- "Managed": [
-  null,
-  "Gestionat"
  ],
  "Manual Connection": [
   null,
@@ -430,10 +406,6 @@ return plural;
  "Migrate To:": [
   null,
   "Migra a:"
- ],
- "Model type": [
-  null,
-  "Tipus de model"
  ],
  "More Information": [
   null,
@@ -470,10 +442,6 @@ return plural;
  "No disks defined for this VM": [
   null,
   "No hi ha definit cap disc per a aquesta MV"
- ],
- "No network interfaces defined for this VM": [
-  null,
-  "No s'ha definit cap interfície de xarxa per aquesta MV"
  ],
  "No oVirt connection": [
   null,
@@ -543,10 +511,6 @@ return plural;
   null,
   "Espereu fins que la llista de plantilles es carregui del servidor."
  ],
- "Plug": [
-  null,
-  ""
- ],
  "Pool": [
   null,
   "Agrupació"
@@ -554,10 +518,6 @@ return plural;
  "Port": [
   null,
   "Port"
- ],
- "Portgroup": [
-  null,
-  ""
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
@@ -783,14 +743,6 @@ return plural;
   null,
   ""
  ],
- "Type": [
-  null,
-  "Tipus"
- ],
- "Unplug": [
-  null,
-  ""
- ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "Actualitzeu a una versió més recent de libvirt per visualitzar les estadístiques dels discs"
@@ -882,10 +834,6 @@ return plural;
  "Virtual Machines of $0 cluster": [
   null,
   "Màquines virtuals del clúster $0"
- ],
- "Virtualport": [
-  null,
-  ""
  ],
  "Volume": [
   null,

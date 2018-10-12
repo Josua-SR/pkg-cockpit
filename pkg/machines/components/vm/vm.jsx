@@ -28,7 +28,7 @@ import {
 } from "../../helpers.es6";
 
 import VmDisksTab from '../vmDisksTabLibvirt.jsx';
-import VmNetworkTab from '../../vmnetworktab.jsx';
+import VmNetworkTab from '../vmnetworktab.jsx';
 import Consoles from '../consoles.jsx';
 import VmOverviewTab from '../vmOverviewTabLibvirt.jsx';
 import VmActions from './vmActions.jsx';
@@ -41,7 +41,13 @@ const _ = cockpit.gettext;
  */
 const Vm = ({ vm, config, hostDevices, storagePools, onStart, onInstall, onShutdown, onForceoff, onReboot, onForceReboot,
               onUsageStartPolling, onUsageStopPolling, onSendNMI, dispatch }) => {
-    const stateAlert = vm.lastMessage && (<span className='pficon-warning-triangle-o machines-status-alert' />);
+    const defaultTabName = 'overview';
+    const stateAlert = (
+        vm.errorMessages &&
+        vm.errorMessages[defaultTabName] &&
+        vm.errorMessages[defaultTabName].lastMessage &&
+        (<span className='pficon-warning-triangle-o machines-status-alert' />)
+    );
     const stateIcon = (<StateIcon state={vm.state} config={config} valueId={`${vmId(vm.name)}-state`} extra={stateAlert} />);
 
     const overviewTabName = (<div id={`${vmId(vm.name)}-overview`}>{_("Overview")}</div>);

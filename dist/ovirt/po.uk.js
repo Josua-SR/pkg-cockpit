@@ -87,14 +87,6 @@ return plural;
   null,
   "Додати диск"
  ],
- "Additional": [
-  null,
-  "Додаткові"
- ],
- "Address": [
-  null,
-  "Адреса"
- ],
  "Address:": [
   null,
   "Адреса:"
@@ -363,10 +355,6 @@ return plural;
   null,
   "Вузол"
  ],
- "Host Interface": [
-  null,
-  ""
- ],
  "Host to Maintenance": [
   null,
   "Вузол для обслуговування"
@@ -391,21 +379,9 @@ return plural;
   null,
   "Завантажуємо дані…"
  ],
- "MAC Address": [
-  null,
-  "MAC-адреса"
- ],
  "MIGRATE action failed": [
   null,
   "Не вдалося виконати дію MIGRATE"
- ],
- "MTU": [
-  null,
-  "MTU"
- ],
- "Managed": [
-  null,
-  "Керована"
  ],
  "Manual Connection": [
   null,
@@ -430,10 +406,6 @@ return plural;
  "Migrate To:": [
   null,
   "Перенести до:"
- ],
- "Model type": [
-  null,
-  "Тип моделі"
  ],
  "More Information": [
   null,
@@ -470,10 +442,6 @@ return plural;
  "No disks defined for this VM": [
   null,
   "Для цієї ВМ не визначено дисків"
- ],
- "No network interfaces defined for this VM": [
-  null,
-  "Немає інтерфейсів мережі, які визначено для цієї ВМ"
  ],
  "No oVirt connection": [
   null,
@@ -543,10 +511,6 @@ return plural;
   null,
   "Будь ласка, зачекайте, доки з сервера буде завантажено список шаблонів."
  ],
- "Plug": [
-  null,
-  "З'єднати"
- ],
  "Pool": [
   null,
   "Буфер"
@@ -554,10 +518,6 @@ return plural;
  "Port": [
   null,
   "Порт"
- ],
- "Portgroup": [
-  null,
-  "Група портів"
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
@@ -783,14 +743,6 @@ return plural;
   null,
   "Потоків на ядра"
  ],
- "Type": [
-  null,
-  "Тип"
- ],
- "Unplug": [
-  null,
-  "Від'єднати"
- ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "Щоб мати змогу переглядати статистику дисків, оновіться до новішої версії libvirt"
@@ -882,10 +834,6 @@ return plural;
  "Virtual Machines of $0 cluster": [
   null,
   "Віртуальні машини кластера $0"
- ],
- "Virtualport": [
-  null,
-  "Віртуальний порт"
  ],
  "Volume": [
   null,

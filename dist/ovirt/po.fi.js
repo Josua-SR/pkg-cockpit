@@ -87,14 +87,6 @@ return plural;
   null,
   ""
  ],
- "Additional": [
-  null,
-  ""
- ],
- "Address": [
-  null,
-  "Osoite"
- ],
  "Address:": [
   null,
   "Osoite:"
@@ -363,10 +355,6 @@ return plural;
   null,
   "Kone"
  ],
- "Host Interface": [
-  null,
-  ""
- ],
  "Host to Maintenance": [
   null,
   ""
@@ -391,21 +379,9 @@ return plural;
   null,
   "Ladataan tietoja..."
  ],
- "MAC Address": [
-  null,
-  "MAC-osoite"
- ],
  "MIGRATE action failed": [
   null,
   "MIGRATE-toiminto epäonnistui"
- ],
- "MTU": [
-  null,
-  "MTU"
- ],
- "Managed": [
-  null,
-  "Hallittu"
  ],
  "Manual Connection": [
   null,
@@ -430,10 +406,6 @@ return plural;
  "Migrate To:": [
   null,
   ""
- ],
- "Model type": [
-  null,
-  "Mallityyppi"
  ],
  "More Information": [
   null,
@@ -470,10 +442,6 @@ return plural;
  "No disks defined for this VM": [
   null,
   "Tälle virtuaalikoneelle ei ole määritetty levyjä."
- ],
- "No network interfaces defined for this VM": [
-  null,
-  "Tälle virtuaalikoneelle ei ole määritetty verkkoliitäntöjä"
  ],
  "No oVirt connection": [
   null,
@@ -543,10 +511,6 @@ return plural;
   null,
   ""
  ],
- "Plug": [
-  null,
-  ""
- ],
  "Pool": [
   null,
   ""
@@ -554,10 +518,6 @@ return plural;
  "Port": [
   null,
   "Portti"
- ],
- "Portgroup": [
-  null,
-  ""
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
@@ -783,14 +743,6 @@ return plural;
   null,
   ""
  ],
- "Type": [
-  null,
-  "Tyyppi"
- ],
- "Unplug": [
-  null,
-  ""
- ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "Päivitä libvirt uudempaan versioon nähdäksesi levytilastot"
@@ -880,10 +832,6 @@ return plural;
   "Virtuaalikoneet"
  ],
  "Virtual Machines of $0 cluster": [
-  null,
-  ""
- ],
- "Virtualport": [
   null,
   ""
  ],

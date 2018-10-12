@@ -87,14 +87,6 @@ return plural;
   null,
   ""
  ],
- "Additional": [
-  null,
-  "Adicional"
- ],
- "Address": [
-  null,
-  "Endereço"
- ],
  "Address:": [
   null,
   "Endereço:"
@@ -363,10 +355,6 @@ return plural;
   null,
   "Máquina"
  ],
- "Host Interface": [
-  null,
-  ""
- ],
  "Host to Maintenance": [
   null,
   "Host para Manutenção"
@@ -391,21 +379,9 @@ return plural;
   null,
   "Carregando dados ..."
  ],
- "MAC Address": [
-  null,
-  "MAC Address"
- ],
  "MIGRATE action failed": [
   null,
   "A ação MIGRATE falhou"
- ],
- "MTU": [
-  null,
-  "MTU"
- ],
- "Managed": [
-  null,
-  "Gerenciou"
  ],
  "Manual Connection": [
   null,
@@ -430,10 +406,6 @@ return plural;
  "Migrate To:": [
   null,
   "Migrar para:"
- ],
- "Model type": [
-  null,
-  "Tipo de modelo"
  ],
  "More Information": [
   null,
@@ -470,10 +442,6 @@ return plural;
  "No disks defined for this VM": [
   null,
   "Nenhum disco definido para esta VM"
- ],
- "No network interfaces defined for this VM": [
-  null,
-  "Nenhuma interface de rede definida para esta VM"
  ],
  "No oVirt connection": [
   null,
@@ -543,10 +511,6 @@ return plural;
   null,
   "Por favor, aguarde até que a lista de modelos seja carregada do servidor."
  ],
- "Plug": [
-  null,
-  "Plug"
- ],
  "Pool": [
   null,
   "Pool"
@@ -554,10 +518,6 @@ return plural;
  "Port": [
   null,
   "Porta"
- ],
- "Portgroup": [
-  null,
-  "Portgroup"
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
@@ -783,14 +743,6 @@ return plural;
   null,
   "Threads por núcleos"
  ],
- "Type": [
-  null,
-  "Tipo"
- ],
- "Unplug": [
-  null,
-  "Desplugar"
- ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   "Atualize para uma versão mais recente do libvirt para exibir estatísticas de disco"
@@ -882,10 +834,6 @@ return plural;
  "Virtual Machines of $0 cluster": [
   null,
   "Máquinas Virtuais de $0 cluster"
- ],
- "Virtualport": [
-  null,
-  "Virtualport"
  ],
  "Volume": [
   null,
