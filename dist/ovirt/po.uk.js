@@ -87,6 +87,10 @@ return plural;
   null,
   "Додати диск"
  ],
+ "Address": [
+  null,
+  "Адреса"
+ ],
  "Address:": [
   null,
   "Адреса:"
@@ -158,6 +162,10 @@ return plural;
  "Capacity": [
   null,
   "Місткість"
+ ],
+ "Changes will apply on VM shutdown": [
+  null,
+  "Зміни буде внесено при вимиканні ВМ"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -241,7 +249,7 @@ return plural;
  ],
  "Ctrl+Alt+Del": [
   null,
-  ""
+  "Ctrl+Alt+Del"
  ],
  "Delete": [
   null,
@@ -290,6 +298,10 @@ return plural;
  "Download the MSI from $0": [
   null,
   "Отримати MSI з $0"
+ ],
+ "Edit": [
+  null,
+  "Змінити"
  ],
  "Edit the vdsm.conf": [
   null,
@@ -379,9 +391,17 @@ return plural;
   null,
   "Завантажуємо дані…"
  ],
+ "MAC Address": [
+  null,
+  "MAC-адреса"
+ ],
  "MIGRATE action failed": [
   null,
   "Не вдалося виконати дію MIGRATE"
+ ],
+ "Mac Address": [
+  null,
+  "Mac-адреса"
  ],
  "Manual Connection": [
   null,
@@ -407,6 +427,14 @@ return plural;
   null,
   "Перенести до:"
  ],
+ "Model": [
+  null,
+  "Модель"
+ ],
+ "Model type": [
+  null,
+  "Тип моделі"
+ ],
  "More Information": [
   null,
   "Докладніше"
@@ -414,6 +442,14 @@ return plural;
  "Name": [
   null,
   "Назва"
+ ],
+ "Network Type": [
+  null,
+  "Тип мережі"
+ ],
+ "Network settings failed to change with following error: ": [
+  null,
+  "Не вдалося зміни параметри мережі. Повідомлення про помилку:"
  ],
  "Networks": [
   null,
@@ -443,9 +479,17 @@ return plural;
   null,
   "Для цієї ВМ не визначено дисків"
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  "Немає інтерфейсів мережі, які визначено для цієї ВМ"
+ ],
  "No oVirt connection": [
   null,
   "Немає з'єднання oVirt"
+ ],
+ "No virtual networks": [
+  null,
+  "Немає віртуальних мереж"
  ],
  "Number of virtual CPUs that gonna be used.": [
   null,
@@ -510,6 +554,10 @@ return plural;
  "Please wait till list of templates is loaded from the server.": [
   null,
   "Будь ласка, зачекайте, доки з сервера буде завантажено список шаблонів."
+ ],
+ "Plug": [
+  null,
+  "З'єднати"
  ],
  "Pool": [
   null,
@@ -613,7 +661,7 @@ return plural;
  ],
  "Send key": [
   null,
-  ""
+  "Надіслати ключ"
  ],
  "Serial Console": [
   null,
@@ -739,9 +787,17 @@ return plural;
   null,
   "Ця віртуальна машина не керується з боку oVirt"
  ],
- "Threads per cores": [
+ "Threads per core": [
   null,
-  "Потоків на ядра"
+  "Потоків на ядро"
+ ],
+ "Type": [
+  null,
+  "Тип"
+ ],
+ "Unplug": [
+  null,
+  "Від'єднати"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
@@ -769,11 +825,11 @@ return plural;
  ],
  "VM DELETE (DESTROY) action failed": [
   null,
-  ""
+  "Помилка дії VM DELETE (DESTROY)"
  ],
  "VM DELETE (UNDEFINE) action failed": [
   null,
-  ""
+  "Помилка дії VM DELETE (UNDEFINE)"
  ],
  "VM FORCE OFF action failed": [
   null,

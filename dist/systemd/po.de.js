@@ -71,43 +71,13 @@ return plural;
   null,
   "$0 Template"
  ],
- "$0 day": [
-  "$0 days",
-  "$0 Tag",
-  "$0 Tage"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 Stunde",
-  "$0 Stunden"
- ],
  "$0 is not available from any repository.": [
   null,
   ""
  ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 Minute",
-  "$0 Minuten"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 Monat",
-  "$0 Monate"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 Woche",
-  "$0 Wochen"
- ],
  "$0 will be installed.": [
   null,
   "$0 wird installiert."
- ],
- "$0 year": [
-  "$0 years",
-  "$0 Jahr",
-  "$0 Jahre"
  ],
  "1 Minute": [
   null,
@@ -303,7 +273,7 @@ return plural;
  ],
  "After": [
   null,
-  ""
+  "Hinten"
  ],
  "After system boot": [
   null,
@@ -335,7 +305,7 @@ return plural;
  ],
  "BIOS": [
   null,
-  ""
+  "BIOS"
  ],
  "BIOS date": [
   null,
@@ -347,7 +317,7 @@ return plural;
  ],
  "Before": [
   null,
-  ""
+  "Bevor"
  ],
  "Binds To": [
   null,
@@ -391,7 +361,7 @@ return plural;
  ],
  "Change": [
   null,
-  ""
+  "Ändern"
  ],
  "Change Host Name": [
   null,
@@ -411,7 +381,7 @@ return plural;
  ],
  "Class": [
   null,
-  ""
+  "Klasse"
  ],
  "Click to see system hardware information": [
   null,
@@ -443,7 +413,7 @@ return plural;
  ],
  "Conflicts": [
   null,
-  ""
+  "Konflikte"
  ],
  "Consists Of": [
   null,
@@ -479,11 +449,11 @@ return plural;
  ],
  "Description": [
   null,
-  ""
+  "Beschreibung"
  ],
  "Desktop": [
   null,
-  ""
+  "Desktop"
  ],
  "Detachable": [
   null,
@@ -507,7 +477,7 @@ return plural;
  ],
  "Domain": [
   null,
-  ""
+  "Domain"
  ],
  "Don't Repeat": [
   null,
@@ -543,7 +513,7 @@ return plural;
  ],
  "Entry": [
   null,
-  ""
+  "Eintrag"
  ],
  "Error": [
   null,
@@ -561,13 +531,9 @@ return plural;
   null,
   ""
  ],
- "Free": [
-  null,
-  "Verfügbar"
- ],
  "Friday": [
   null,
-  ""
+  "Freitag"
  ],
  "General": [
   null,
@@ -587,7 +553,7 @@ return plural;
  ],
  "Hardware": [
   null,
-  ""
+  "Hardware"
  ],
  "Hardware Information": [
   null,
@@ -615,7 +581,7 @@ return plural;
  ],
  "Id": [
   null,
-  ""
+  "ID"
  ],
  "Info and above": [
   null,
@@ -623,7 +589,7 @@ return plural;
  ],
  "Install": [
   null,
-  ""
+  "Installation"
  ],
  "Install Software": [
   null,
@@ -695,7 +661,7 @@ return plural;
  ],
  "Last 7 days": [
   null,
-  ""
+  "Letzte 7 Tage"
  ],
  "Last Trigger": [
   null,
@@ -715,7 +681,7 @@ return plural;
  ],
  "Logs": [
   null,
-  ""
+  "Protokolle"
  ],
  "Low Profile Desktop": [
   null,
@@ -753,6 +719,10 @@ return plural;
   null,
   "Speicher"
  ],
+ "Memory & Swap": [
+  null,
+  ""
+ ],
  "Message to logged in users": [
   null,
   "Nachricht an angemeldete Benutzer"
@@ -771,15 +741,15 @@ return plural;
  ],
  "Minutes": [
   null,
-  "5 Minuten"
+  "Minuten"
  ],
  "Model": [
   null,
-  ""
+  "Modell"
  ],
  "Monday": [
   null,
-  ""
+  "Montag"
  ],
  "Multi-system Chassis": [
   null,
@@ -807,7 +777,7 @@ return plural;
  ],
  "Nice": [
   null,
-  ""
+  "Nice-Wert"
  ],
  "No Delay": [
   null,
@@ -827,7 +797,7 @@ return plural;
  ],
  "Note": [
   null,
-  ""
+  "Hinweis"
  ],
  "Notebook": [
   null,
@@ -843,7 +813,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "OK"
  ],
  "On": [
   null,
@@ -867,11 +837,11 @@ return plural;
  ],
  "Other": [
   null,
-  ""
+  "Weitere"
  ],
  "PCI": [
   null,
-  ""
+  "PCI"
  ],
  "PackageKit crashed": [
   null,
@@ -883,7 +853,7 @@ return plural;
  ],
  "Paths": [
   null,
-  ""
+  "Pfade"
  ],
  "Performance Profile": [
   null,
@@ -955,7 +925,7 @@ return plural;
  ],
  "Recent": [
   null,
-  ""
+  "Zuletzt verwendet"
  ],
  "Reload": [
   null,
@@ -995,7 +965,7 @@ return plural;
  ],
  "Report": [
   null,
-  ""
+  "Melden"
  ],
  "Reported": [
   null,
@@ -1015,7 +985,7 @@ return plural;
  ],
  "Requires": [
   null,
-  ""
+  "Erfordert"
  ],
  "Requisite": [
   null,
@@ -1027,7 +997,7 @@ return plural;
  ],
  "Reset": [
   null,
-  ""
+  "Zurücksetzen"
  ],
  "Restart": [
   null,
@@ -1035,7 +1005,7 @@ return plural;
  ],
  "Run": [
   null,
-  "Läuft"
+  "Ausführen"
  ],
  "Saturday": [
   null,
@@ -1083,7 +1053,7 @@ return plural;
  ],
  "Severity": [
   null,
-  ""
+  "Schweregrad"
  ],
  "Show fingerprints": [
   null,
@@ -1103,7 +1073,7 @@ return plural;
  ],
  "Sockets": [
   null,
-  ""
+  "Sockets"
  ],
  "Space-saving Computer": [
   null,
@@ -1167,7 +1137,7 @@ return plural;
  ],
  "System Information": [
   null,
-  ""
+  "Systeminformationen"
  ],
  "System Not Registered": [
   null,
@@ -1187,7 +1157,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "Tablett"
  ],
  "Targets": [
   null,
@@ -1195,7 +1165,7 @@ return plural;
  ],
  "Terminal": [
   null,
-  ""
+  "Terminal"
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,
@@ -1304,7 +1274,7 @@ return plural;
  ],
  "Vendor": [
   null,
-  ""
+  "Anbieter"
  ],
  "Version": [
   null,

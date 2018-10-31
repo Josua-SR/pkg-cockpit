@@ -93,11 +93,11 @@ return plural;
  ],
  "Install": [
   null,
-  ""
+  "Installation"
  ],
  "Installing": [
   null,
-  ""
+  "Installation wird ausgeführt"
  ],
  "No applications installed or available": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "OK"
  ],
  "PackageKit crashed": [
   null,
@@ -125,7 +125,7 @@ return plural;
  ],
  "Removing": [
   null,
-  ""
+  "Entfernen"
  ],
  "Unknown Application": [
   null,

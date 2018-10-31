@@ -83,11 +83,6 @@ return plural;
   null,
   ""
  ],
- "$0 day": [
-  "$0 days",
-  "$0 päivä",
-  "$0 päivää"
- ],
  "$0 disk is missing": [
   "$0 disks are missing",
   "$0 levyä ei löydy",
@@ -105,11 +100,6 @@ return plural;
   null,
   ""
  ],
- "$0 hour": [
-  "$0 hours",
-  "$0 tunti",
-  "$0 tuntia"
- ],
  "$0 is in active use": [
   null,
   "$0 on aktiivisessa käytössä"
@@ -117,16 +107,6 @@ return plural;
  "$0 is not available from any repository.": [
   null,
   ""
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 minuutti",
-  "$0 minuuttia"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 kuukausi",
-  "$0 kuukautta"
  ],
  "$0 of $1": [
   null,
@@ -140,19 +120,9 @@ return plural;
   null,
   "$0 käytetty kohteesta $1 ($2 tallennettu)"
  ],
- "$0 week": [
-  "$0 weeks",
-  "$0 viikko",
-  "$0 viikkoa"
- ],
  "$0 will be installed.": [
   null,
   ""
- ],
- "$0 year": [
-  "$0 years",
-  "$0 vuosi",
-  "$0 vuotta"
  ],
  "$0, $1 free": [
   null,
@@ -1390,6 +1360,26 @@ return plural;
   null,
   "Koko"
  ],
+ "Size cannot be negative": [
+  null,
+  "Koko ei  voi olla negatiivinen"
+ ],
+ "Size cannot be zero": [
+  null,
+  "Koko ei voi olla nolla"
+ ],
+ "Size is too large": [
+  null,
+  "Koko on liian suuri"
+ ],
+ "Size must be a number": [
+  null,
+  "Koon tulee olla numero"
+ ],
+ "Size must be at least $0": [
+  null,
+  "Koon tulee olla vähintään $0"
+ ],
  "Slot $0": [
   null,
   ""
@@ -1498,15 +1488,15 @@ return plural;
   null,
   ""
  ],
- "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
+ "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
   null,
   ""
  ],
- "The filesystem is in use by login sessions.                Proceeding will stop these.": [
+ "The filesystem is in use by login sessions. Proceeding will stop these.": [
   null,
   ""
  ],
- "The filesystem is in use by system services.                Proceeding will stop these.": [
+ "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
   ""
  ],
@@ -1546,7 +1536,7 @@ return plural;
   null,
   ""
  ],
- "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
+ "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
   null,
   ""
  ],
@@ -1554,7 +1544,7 @@ return plural;
   null,
   "Tätä laitetta käytetään parhaillaan RAID-laitteille."
  ],
- "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
+ "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
   null,
   ""
  ],
@@ -1566,7 +1556,7 @@ return plural;
   null,
   "Tätä laitetta käytetään parhaillaan taltioryhmille."
  ],
- "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
+ "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
   ""
  ],

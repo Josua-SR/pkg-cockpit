@@ -17,91 +17,92 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
+import React from "react";
+import * as Select from "cockpit-components-select.jsx";
+
 (function() {
     "use strict";
 
-    var React = require("react");
-    var createReactClass = require('create-react-class');
-
-    var Select = require("cockpit-components-select.jsx");
-
     /* Sample dialog body
      */
-    var PatternDialogBody = createReactClass({
-        selectChanged: function(value) {
+    class PatternDialogBody extends React.Component {
+        selectChanged(value) {
             console.log("new value: " + value);
-        },
-        render: function() {
+        }
+
+        render() {
             return (
                 <div className="modal-body">
                     <table className="form-table-ct">
-                        <tr>
-                            <td className="top">
-                                <label className="control-label" htmlFor="control-1">
-                                    Label
-                                </label>
-                            </td>
-                            <td>
-                                <input id="control-1" className="form-control" type="text" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="top">
-                                <label className="control-label">
-                                    Select
-                                </label>
-                            </td>
-                            <td>
-                                <Select.Select onChange={this.selectChanged} id="primary-select">
-                                    <Select.SelectEntry data='one'>One</Select.SelectEntry>
-                                    <Select.SelectEntry data='two'>Two</Select.SelectEntry>
-                                    <Select.SelectEntry data='three'>Three</Select.SelectEntry>
-                                    <Select.SelectEntry data='four' />
-                                </Select.Select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="top">
-                                <label className="control-label">
-                                    Preselected
-                                </label>
-                            </td>
-                            <td>
-                                <Select.Select initial="two">
-                                    <Select.SelectEntry data="one">One</Select.SelectEntry>
-                                    <Select.SelectEntry data="two">Two</Select.SelectEntry>
-                                    <Select.SelectEntry data="three">Three</Select.SelectEntry>
-                                </Select.Select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="top">
-                                <label className="control-label">
-                                    Empty Select
-                                </label>
-                            </td>
-                            <td>
-                                <Select.Select />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="top">
-                                <label className="control-label">
-                                    Nested dialog
-                                </label>
-                            </td>
-                            <td>
-                                <button id="open-nested" onClick={ this.props.clickNested }>
-                                    Try to nest dialog
-                                </button>
-                                <span>Doesn't open a dialog, only shows a warning in the console.</span>
-                            </td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <td className="top">
+                                    <label className="control-label" htmlFor="control-1">
+                                        Label
+                                    </label>
+                                </td>
+                                <td>
+                                    <input id="control-1" className="form-control" type="text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className="top">
+                                    <label className="control-label">
+                                        Select
+                                    </label>
+                                </td>
+                                <td>
+                                    <Select.Select onChange={this.selectChanged} id="primary-select">
+                                        <Select.SelectEntry data='one'>One</Select.SelectEntry>
+                                        <Select.SelectEntry data='two'>Two</Select.SelectEntry>
+                                        <Select.SelectEntry data='three'>Three</Select.SelectEntry>
+                                        <Select.SelectEntry data='four' />
+                                    </Select.Select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className="top">
+                                    <label className="control-label">
+                                        Preselected
+                                    </label>
+                                </td>
+                                <td>
+                                    <Select.Select initial="two">
+                                        <Select.SelectEntry data="one">One</Select.SelectEntry>
+                                        <Select.SelectEntry data="two">Two</Select.SelectEntry>
+                                        <Select.SelectEntry data="three">Three</Select.SelectEntry>
+                                    </Select.Select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className="top">
+                                    <label className="control-label">
+                                        Empty Select
+                                    </label>
+                                </td>
+                                <td>
+                                    <Select.Select />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className="top">
+                                    <label className="control-label">
+                                        Nested dialog
+                                    </label>
+                                </td>
+                                <td>
+                                    <button id="open-nested" onClick={ this.props.clickNested }>
+                                        Try to nest dialog
+                                    </button>
+                                    <span>Doesn't open a dialog, only shows a warning in the console.</span>
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             );
         }
-    });
+    }
 
     module.exports = PatternDialogBody;
 }());

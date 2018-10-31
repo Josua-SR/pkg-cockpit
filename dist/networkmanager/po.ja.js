@@ -67,30 +67,6 @@ return plural;
   "language": "ja",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 day": [
-  "$0 days",
-  "$0 日"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 時間"
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 分"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 ヶ月"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 週"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 年"
- ],
  "$mtu": [
   null,
   "$mtu"
@@ -643,9 +619,9 @@ return plural;
   null,
   "Ping ターゲット"
  ],
- "Please install the {0} package": [
+ "Please install the $0 package": [
   null,
-  "{0} パッケージをインストールしてください"
+  "$0 パッケージをインストールしてください"
  ],
  "Ports": [
   null,

@@ -85,7 +85,11 @@ return plural;
  ],
  "Add Disk": [
   null,
-  ""
+  "ディスクの追加"
+ ],
+ "Address": [
+  null,
+  "アドレス:"
  ],
  "Address:": [
   null,
@@ -105,7 +109,7 @@ return plural;
  ],
  "Attach permanently": [
   null,
-  ""
+  "完全な割り当て"
  ],
  "Automatically selected host": [
   null,
@@ -158,6 +162,10 @@ return plural;
  "Capacity": [
   null,
   "容量"
+ ],
+ "Changes will apply on VM shutdown": [
+  null,
+  ""
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -229,7 +237,7 @@ return plural;
  ],
  "Create New": [
   null,
-  ""
+  "新規作成"
  ],
  "Create New VM": [
   null,
@@ -277,11 +285,11 @@ return plural;
  ],
  "Disk failed to be attached with following error: ": [
   null,
-  ""
+  "以下のエラーが原因でディスクの割り当てに失敗しました: "
  ],
  "Disk failed to be created with following error: ": [
   null,
-  ""
+  "以下のエラーが原因でディスクの作成に失敗しました: "
  ],
  "Disks": [
   null,
@@ -290,6 +298,10 @@ return plural;
  "Download the MSI from $0": [
   null,
   "MSI を $0 からダウンロードします"
+ ],
+ "Edit": [
+  null,
+  "編集"
  ],
  "Edit the vdsm.conf": [
   null,
@@ -379,9 +391,17 @@ return plural;
   null,
   "データのロード中..."
  ],
+ "MAC Address": [
+  null,
+  "MAC アドレス"
+ ],
  "MIGRATE action failed": [
   null,
   "MIGRATE アクションに失敗しました"
+ ],
+ "Mac Address": [
+  null,
+  ""
  ],
  "Manual Connection": [
   null,
@@ -407,6 +427,14 @@ return plural;
   null,
   "移行先:"
  ],
+ "Model": [
+  null,
+  "モデル"
+ ],
+ "Model type": [
+  null,
+  "モデルタイプ"
+ ],
  "More Information": [
   null,
   "詳細情報"
@@ -415,13 +443,21 @@ return plural;
   null,
   "名前"
  ],
+ "Network Type": [
+  null,
+  ""
+ ],
+ "Network settings failed to change with following error: ": [
+  null,
+  ""
+ ],
  "Networks": [
   null,
   "ネットワーク"
  ],
  "New Volume Name": [
   null,
-  ""
+  "新しいボリューム名"
  ],
  "No VM found in oVirt.": [
   null,
@@ -443,9 +479,17 @@ return plural;
   null,
   "この仮想マシンに対してディスクが定義されていません"
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  "この仮想マシンにはネットワークインターフェースが定義されていません"
+ ],
  "No oVirt connection": [
   null,
   "oVirt 接続がありません"
+ ],
+ "No virtual networks": [
+  null,
+  ""
  ],
  "Number of virtual CPUs that gonna be used.": [
   null,
@@ -481,11 +525,11 @@ return plural;
  ],
  "Please enter new volume name": [
   null,
-  ""
+  "新しいボリューム名を入力してください"
  ],
  "Please enter new volume size": [
   null,
-  ""
+  "新しいボリュームサイズを入力してください"
  ],
  "Please provide fully qualified domain name and port of the oVirt engine.": [
   null,
@@ -510,6 +554,10 @@ return plural;
  "Please wait till list of templates is loaded from the server.": [
   null,
   "テンプレートの一覧がサーバーからロードされるのをお待ちください。"
+ ],
+ "Plug": [
+  null,
+  "プラグ"
  ],
  "Pool": [
   null,
@@ -729,7 +777,7 @@ return plural;
  ],
  "The pool is empty": [
   null,
-  ""
+  "プールが空です"
  ],
  "This host is managed by a virtualization manager, so creation of new VMs from the host is not possible.": [
   null,
@@ -739,9 +787,17 @@ return plural;
   null,
   "この仮想マシンは、oVirt で管理されていません"
  ],
- "Threads per cores": [
+ "Threads per core": [
   null,
-  "コアごとのスレッド"
+  ""
+ ],
+ "Type": [
+  null,
+  "タイプ"
+ ],
+ "Unplug": [
+  null,
+  "アンプラグ"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
@@ -753,7 +809,7 @@ return plural;
  ],
  "Use Existing": [
   null,
-  ""
+  "既存の使用"
  ],
  "Used": [
   null,
@@ -985,11 +1041,11 @@ return plural;
  ],
  "qcow2": [
   null,
-  ""
+  "qcow2"
  ],
  "raw": [
   null,
-  ""
+  "raw"
  ],
  "reboot": [
   null,

@@ -69,19 +69,19 @@ return plural;
  },
  "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  "$0 Pouze uživatelé s místními uživatelskými právy mají přístup k tomuto zařízení.  To může mít vliv na ostatní služby jako DNS nastavení and může být rozdílný seznam CA certifikátů."
+  "$0 K tomuto stroji se budou moci přihlásit pouze uživatelé s účty přímo na něm (lokální). Toto může mít vliv také na ostatní služby jako je nastavení DNS překladu a může být odlišný seznam certifikátů cert. autorit."
  ],
  "$0 is not available from any repository.": [
   null,
-  ""
+  "$0 není k dispozici z žádného z repozitářů."
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "$0 bude nainstalováno."
  ],
  "Additional packages:": [
   null,
-  ""
+  "Další balíčky:"
  ],
  "Administrator Password": [
   null,
@@ -89,11 +89,11 @@ return plural;
  ],
  "Are you sure you want to leave the '$0' domain?": [
   null,
-  "Opravdu chcete opustit doménu '$0'?"
+  "Opravdu chcete doménu „$0“ opustit?"
  ],
  "Are you sure you want to leave this domain?": [
   null,
-  "Opravdu chcete opustit tuto doménu?"
+  "Opravdu chcete tuto doménu opustit?"
  ],
  "Authentication": [
   null,
@@ -101,59 +101,59 @@ return plural;
  ],
  "Automatic": [
   null,
-  "Automatický"
+  "Automaticky"
  ],
  "Cancel": [
   null,
-  "Zrušit"
+  "Storno"
  ],
  "Checking installed software": [
   null,
-  ""
+  "Zjišťuje se nainstalovaný sofware"
  ],
  "Computer OU": [
   null,
-  ""
+  "Organizační jednotka počítače"
  ],
  "Domain $0 could not be contacted": [
   null,
-  ""
+  "Doménu $0 se nedaří kontaktovat"
  ],
  "Domain $0 is not supported": [
   null,
-  ""
+  "Doména $0 není podporována"
  ],
  "Domain Address": [
   null,
-  ""
+  "Adresa domény"
  ],
  "Domain Administrator Name": [
   null,
-  ""
+  "Uživatelské jméno správce domény"
  ],
  "Domain Administrator Password": [
   null,
-  ""
+  "Heslo správce domény"
  ],
  "Downloading $0": [
   null,
-  ""
+  "Stahuje se $0"
  ],
  "Install": [
   null,
-  "Instalovat"
+  "Nainstalovat"
  ],
  "Install Software": [
   null,
-  ""
+  "Nainstalovat software"
  ],
  "Installing $0": [
   null,
-  ""
+  "Instaluje se $0"
  ],
  "Join": [
   null,
-  "Přidejte se"
+  "Spojit"
  ],
  "Join Domain": [
   null,
@@ -165,15 +165,15 @@ return plural;
  ],
  "Joining this domain is not supported": [
   null,
-  ""
+  "Připojení se do této domény není podporováno"
  ],
  "Leave": [
   null,
-  ""
+  "Opustit"
  ],
  "Leave Domain": [
   null,
-  ""
+  "Opustit doménu"
  ],
  "More": [
   null,
@@ -185,7 +185,7 @@ return plural;
  ],
  "Off": [
   null,
-  ""
+  "Vypnuto"
  ],
  "Ok": [
   null,
@@ -193,35 +193,35 @@ return plural;
  ],
  "On": [
   null,
-  ""
+  "Zapnuto"
  ],
  "One Time Password": [
   null,
-  ""
+  "Jednorázové heslo"
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "PackageKit zhavaroval"
  ],
  "Removals:": [
   null,
-  ""
+  "Odebrání:"
  ],
  "Removing $0": [
   null,
-  ""
+  "Odebírá se $0"
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
-  ""
+  "Uživatel <b>$0</b> není oprávněn upravovat oblasti"
  ],
  "This may take a while": [
   null,
-  ""
+  "Toto může chvíli trvat"
  ],
  "Total size: $0": [
   null,
-  ""
+  "Celková velikost: $0"
  ],
  "User Name": [
   null,
@@ -229,14 +229,14 @@ return plural;
  ],
  "User Password": [
   null,
-  ""
+  "Heslo uživatele"
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "Čeká se na dokončení ostatních operací správy balíčků"
  ],
  "e.g. \"$0\"": [
   null,
-  ""
+  "např. „$0“"
  ]
 }));

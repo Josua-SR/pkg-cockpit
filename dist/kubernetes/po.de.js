@@ -199,7 +199,7 @@ return plural;
  ],
  "Annotations": [
   null,
-  ""
+  "Annotationen"
  ],
  "Anonymous: Allow all unauthenticated users to pull images": [
   null,
@@ -243,7 +243,7 @@ return plural;
  ],
  "Change": [
   null,
-  ""
+  "Ändern"
  ],
  "Change User": [
   null,
@@ -263,7 +263,7 @@ return plural;
  ],
  "Claim": [
   null,
-  ""
+  "Claim"
  ],
  "Claim Name": [
   null,
@@ -275,7 +275,7 @@ return plural;
  ],
  "Cluster": [
   null,
-  ""
+  "Cluster"
  ],
  "Configuration": [
   null,
@@ -379,7 +379,7 @@ return plural;
  ],
  "Delete Selected": [
   null,
-  ""
+  "Auswahl löschen"
  ],
  "Delete image stream": [
   null,
@@ -395,7 +395,7 @@ return plural;
  ],
  "Deploy": [
   null,
-  ""
+  "Deployen"
  ],
  "Deploy Application": [
   null,
@@ -415,19 +415,19 @@ return plural;
  ],
  "Description": [
   null,
-  ""
+  "Beschreibung"
  ],
  "Details": [
   null,
-  ""
+  "Details"
  ],
  "Directory": [
   null,
-  ""
+  "Ordner"
  ],
  "Disk": [
   null,
-  ""
+  "Festplatte"
  ],
  "Disk Utilization: $0%": [
   null,
@@ -475,7 +475,7 @@ return plural;
  ],
  "Driver": [
   null,
-  ""
+  "Treiber"
  ],
  "Empty Directory": [
   null,
@@ -491,11 +491,11 @@ return plural;
  ],
  "Endpoints": [
   null,
-  ""
+  "Endpunkte"
  ],
  "Environment": [
   null,
-  ""
+  "Umgebung"
  ],
  "Error getting certificate details: $0": [
   null,
@@ -555,7 +555,7 @@ return plural;
  ],
  "Groups": [
   null,
-  ""
+  "Gruppen"
  ],
  "Host": [
   null,
@@ -567,7 +567,7 @@ return plural;
  ],
  "IP": [
   null,
-  ""
+  "IP"
  ],
  "ISCSI": [
   null,
@@ -579,7 +579,7 @@ return plural;
  ],
  "Identity": [
   null,
-  ""
+  "Identität"
  ],
  "Image": [
   null,
@@ -587,7 +587,7 @@ return plural;
  ],
  "Image ID": [
   null,
-  ""
+  "Abbildkennung"
  ],
  "Image Name": [
   null,
@@ -607,7 +607,7 @@ return plural;
  ],
  "Images": [
   null,
-  ""
+  "Abbilder"
  ],
  "Images by project": [
   null,
@@ -627,7 +627,7 @@ return plural;
  ],
  "Interface": [
   null,
-  ""
+  "Schnittstelle"
  ],
  "Kernel Version": [
   null,
@@ -647,7 +647,7 @@ return plural;
  ],
  "Labels": [
   null,
-  ""
+  "Bezeichnungen"
  ],
  "Last Heartbeat": [
   null,
@@ -659,7 +659,7 @@ return plural;
  ],
  "Latest Version": [
   null,
-  ""
+  "Aktuelle Version"
  ],
  "Log into OpenShift command line tools:": [
   null,
@@ -679,7 +679,7 @@ return plural;
  ],
  "Logs": [
   null,
-  ""
+  "Protokolle"
  ],
  "Machine ID": [
   null,
@@ -687,11 +687,11 @@ return plural;
  ],
  "Manifest": [
   null,
-  ""
+  "Manifest"
  ],
  "Medium": [
   null,
-  ""
+  "Mittel"
  ],
  "Member of": [
   null,
@@ -703,7 +703,7 @@ return plural;
  ],
  "Membership": [
   null,
-  ""
+  "Mitgliedschaft"
  ],
  "Memory": [
   null,
@@ -715,15 +715,15 @@ return plural;
  ],
  "Message": [
   null,
-  ""
+  "Anzeige"
  ],
  "Metadata": [
   null,
-  ""
+  "Metadaten"
  ],
  "Modify": [
   null,
-  ""
+  "Ändern"
  ],
  "Monitors": [
   null,
@@ -735,7 +735,7 @@ return plural;
  ],
  "NFS": [
   null,
-  ""
+  "NFS"
  ],
  "NFS Mount": [
   null,
@@ -759,11 +759,11 @@ return plural;
  ],
  "New Group": [
   null,
-  ""
+  "Neue Gruppe"
  ],
  "New Project": [
   null,
-  ""
+  "Neues Projekt"
  ],
  "New image stream": [
   null,
@@ -835,7 +835,7 @@ return plural;
  ],
  "Node": [
   null,
-  ""
+  "Knoten"
  ],
  "Nodes": [
   null,
@@ -867,7 +867,7 @@ return plural;
  ],
  "OS": [
   null,
-  ""
+  "Betriebssystem"
  ],
  "OS Versions": [
   null,
@@ -883,7 +883,7 @@ return plural;
  ],
  "Overview": [
   null,
-  ""
+  "Überblick"
  ],
  "PD Name": [
   null,
@@ -899,7 +899,7 @@ return plural;
  ],
  "Path": [
   null,
-  ""
+  "Pfad"
  ],
  "Pending Volume Claims": [
   null,
@@ -1051,11 +1051,11 @@ return plural;
  ],
  "Project:": [
   null,
-  ""
+  "Projekt:"
  ],
  "Projects": [
   null,
-  ""
+  "Projekte"
  ],
  "Proxy Version": [
   null,
@@ -1087,7 +1087,7 @@ return plural;
  ],
  "Read Only": [
   null,
-  ""
+  "Nur Lesen"
  ],
  "Read and write from a single node": [
   null,
@@ -1107,7 +1107,7 @@ return plural;
  ],
  "Reason": [
   null,
-  ""
+  "Grund"
  ],
  "Reclaim Policy": [
   null,
@@ -1123,7 +1123,7 @@ return plural;
  ],
  "Register": [
   null,
-  ""
+  "Registrieren"
  ],
  "Register New Volume": [
   null,
@@ -1143,7 +1143,7 @@ return plural;
  ],
  "Remove Group": [
   null,
-  ""
+  "Gruppe entfernen"
  ],
  "Remove Member": [
   null,
@@ -1155,7 +1155,7 @@ return plural;
  ],
  "Remove User": [
   null,
-  ""
+  "Benutzer entfernen"
  ],
  "Remove image tag": [
   null,
@@ -1191,7 +1191,7 @@ return plural;
  ],
  "Requests": [
   null,
-  ""
+  "Anfragen"
  ],
  "Requires Authentication": [
   null,
@@ -1211,7 +1211,7 @@ return plural;
  ],
  "Revision": [
   null,
-  ""
+  "Revision"
  ],
  "Role": [
   null,
@@ -1239,7 +1239,7 @@ return plural;
  ],
  "Secret": [
   null,
-  ""
+  "Geheim"
  ],
  "Secret File": [
   null,
@@ -1263,7 +1263,7 @@ return plural;
  ],
  "Select Role": [
   null,
-  ""
+  "Rolle auswählen"
  ],
  "Select an object to see more details.": [
   null,
@@ -1303,7 +1303,7 @@ return plural;
  ],
  "Shell": [
   null,
-  ""
+  "Shell"
  ],
  "Show all Containers": [
   null,
@@ -1391,7 +1391,7 @@ return plural;
  ],
  "Tags": [
   null,
-  ""
+  "Tags"
  ],
  "Target": [
   null,
@@ -1567,7 +1567,7 @@ return plural;
  ],
  "Volume": [
   null,
-  ""
+  "Lautstärke"
  ],
  "Volume ID": [
   null,
@@ -1583,7 +1583,7 @@ return plural;
  ],
  "Volumes": [
   null,
-  ""
+  "Datenträger"
  ],
  "Warning:": [
   null,
@@ -1595,7 +1595,7 @@ return plural;
  ],
  "When": [
   null,
-  ""
+  "Wann"
  ],
  "Yes": [
   null,

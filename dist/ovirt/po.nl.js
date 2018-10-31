@@ -87,6 +87,10 @@ return plural;
   null,
   ""
  ],
+ "Address": [
+  null,
+  ""
+ ],
  "Address:": [
   null,
   ""
@@ -379,6 +383,10 @@ return plural;
   null,
   ""
  ],
+ "MAC Address": [
+  null,
+  ""
+ ],
  "MIGRATE action failed": [
   null,
   ""
@@ -404,6 +412,10 @@ return plural;
   ""
  ],
  "Migrate To:": [
+  null,
+  ""
+ ],
+ "Model type": [
   null,
   ""
  ],
@@ -442,6 +454,10 @@ return plural;
  "No disks defined for this VM": [
   null,
   "Geen schijven bepaald voor deze VM"
+ ],
+ "No network interfaces defined for this VM": [
+  null,
+  ""
  ],
  "No oVirt connection": [
   null,
@@ -508,6 +524,10 @@ return plural;
   ""
  ],
  "Please wait till list of templates is loaded from the server.": [
+  null,
+  ""
+ ],
+ "Plug": [
   null,
   ""
  ],
@@ -739,7 +759,15 @@ return plural;
   null,
   ""
  ],
- "Threads per cores": [
+ "Threads per core": [
+  null,
+  ""
+ ],
+ "Type": [
+  null,
+  ""
+ ],
+ "Unplug": [
   null,
   ""
  ],

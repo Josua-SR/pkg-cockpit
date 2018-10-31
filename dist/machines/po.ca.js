@@ -83,6 +83,10 @@ return plural;
   null,
   ""
  ],
+ "Address": [
+  null,
+  "Adreça"
+ ],
  "Address:": [
   null,
   "Adreça:"
@@ -126,10 +130,6 @@ return plural;
  "CPU Type:": [
   null,
   "Tipus de CPU:"
- ],
- "CREATE_AND_ATTACH_VOLUME action failed": [
-  null,
-  ""
  ],
  "Cancel": [
   null,
@@ -327,6 +327,10 @@ return plural;
   null,
   "S'està carregant..."
  ],
+ "MAC Address": [
+  null,
+  "Adreça MAC"
+ ],
  "Manual Connection": [
   null,
   "Connexió manual"
@@ -350,6 +354,10 @@ return plural;
  "MiB": [
   null,
   "MiB"
+ ],
+ "Model type": [
+  null,
+  "Tipus de model"
  ],
  "More Information": [
   null,
@@ -395,6 +403,10 @@ return plural;
   null,
   "No s'ha trobat cap fitxer que coincideixi"
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  "No s'ha definit cap interfície de xarxa per aquesta MV"
+ ],
  "OS Vendor": [
   null,
   ""
@@ -428,6 +440,10 @@ return plural;
   ""
  ],
  "Please start the virtual machine to access its console.": [
+  null,
+  ""
+ ],
+ "Plug": [
   null,
   ""
  ],
@@ -595,7 +611,7 @@ return plural;
   null,
   ""
  ],
- "Threads per cores": [
+ "Threads per core": [
   null,
   ""
  ],
@@ -607,11 +623,19 @@ return plural;
   null,
   "Soluciona el problema"
  ],
+ "Type": [
+  null,
+  "Tipus"
+ ],
  "URL": [
   null,
   "URL"
  ],
  "Unique name": [
+  null,
+  ""
+ ],
+ "Unplug": [
   null,
   ""
  ],
@@ -631,15 +655,7 @@ return plural;
   null,
   "Utilitzat"
  ],
- "VM ATTACH_DISK action failed": [
-  null,
-  ""
- ],
  "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  ""
- ],
- "VM CHANGE_NETWORK_STATE action failed: updated device XML couldn't not be generated": [
   null,
   ""
  ],
@@ -655,7 +671,7 @@ return plural;
   null,
   ""
  ],
- "VM DETACH action failed": [
+ "VM DETACH_DISK action failed": [
   null,
   ""
  ],

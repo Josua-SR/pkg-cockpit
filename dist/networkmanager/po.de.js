@@ -67,36 +67,6 @@ return plural;
   "language": "de",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 day": [
-  "$0 days",
-  "$0 Tag",
-  "$0 Tage"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 Stunde",
-  "$0 Stunden"
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 Minute",
-  "$0 Minuten"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 Monat",
-  "$0 Monate"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 Woche",
-  "$0 Wochen"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 Jahr",
-  "$0 Jahre"
- ],
  "$mtu": [
   null,
   "$mtu"
@@ -367,7 +337,7 @@ return plural;
  ],
  "Details": [
   null,
-  ""
+  "Details"
  ],
  "Disabled": [
   null,
@@ -399,7 +369,7 @@ return plural;
  ],
  "Firewall": [
   null,
-  ""
+  "Firewall"
  ],
  "Firewall is not available": [
   null,
@@ -519,7 +489,7 @@ return plural;
  ],
  "MAC": [
   null,
-  ""
+  "MAC"
  ],
  "MII (Recommended)": [
   null,
@@ -527,7 +497,7 @@ return plural;
  ],
  "MTU": [
   null,
-  ""
+  "MTU"
  ],
  "MTU must be a positive number": [
   null,
@@ -575,7 +545,7 @@ return plural;
  ],
  "NetworkManager is not running.": [
   null,
-  ""
+  "NetworkManager wird nicht ausgeführt."
  ],
  "Networking": [
   null,
@@ -607,7 +577,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "OK"
  ],
  "On": [
   null,
@@ -639,7 +609,7 @@ return plural;
  ],
  "Permanent": [
   null,
-  ""
+  "Permanent"
  ],
  "Ping Interval": [
   null,
@@ -649,7 +619,7 @@ return plural;
   null,
   "$target wird gelöscht"
  ],
- "Please install the {0} package": [
+ "Please install the $0 package": [
   null,
   ""
  ],
@@ -671,7 +641,7 @@ return plural;
  ],
  "Preserve": [
   null,
-  "Voreinstellen"
+  "Beibehalten"
  ],
  "Primary": [
   null,
@@ -687,7 +657,7 @@ return plural;
  ],
  "Random": [
   null,
-  ""
+  "Zufällig"
  ],
  "Reboot": [
   null,
@@ -719,7 +689,7 @@ return plural;
  ],
  "Runner": [
   null,
-  "Läuft"
+  "Runner"
  ],
  "STP Forward delay": [
   null,
@@ -803,11 +773,11 @@ return plural;
  ],
  "Team": [
   null,
-  ""
+  "Team"
  ],
  "Team Port": [
   null,
-  ""
+  "Netzwerk-Team Anschluss"
  ],
  "Team Port Settings": [
   null,

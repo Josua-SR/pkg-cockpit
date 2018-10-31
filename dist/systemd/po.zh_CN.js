@@ -71,37 +71,13 @@ return plural;
   null,
   "$0 模板"
  ],
- "$0 day": [
-  "$0 days",
-  "$0 天"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 小时"
- ],
  "$0 is not available from any repository.": [
   null,
   "所有仓库都不提供 $0。"
  ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 分钟"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 月"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 周"
- ],
  "$0 will be installed.": [
   null,
   "将安装 $0。"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 年"
  ],
  "1 Minute": [
   null,

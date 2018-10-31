@@ -71,43 +71,13 @@ return plural;
   null,
   "$0 mall"
  ],
- "$0 day": [
-  "$0 days",
-  "$0 dag",
-  "$0 dagar"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 timme",
-  "$0 timmar"
- ],
  "$0 is not available from any repository.": [
   null,
   "$0 är inte tillgängligt från något förråd."
  ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 minut",
-  "$0 minuter"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 månad",
-  "$0 månader"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 vecka",
-  "$0 veckor"
- ],
  "$0 will be installed.": [
   null,
   "$0 kommer att installeras."
- ],
- "$0 year": [
-  "$0 years",
-  "$0 år",
-  "$0 år"
  ],
  "1 Minute": [
   null,
@@ -515,19 +485,19 @@ return plural;
  ],
  "Downloading $0": [
   null,
-  ""
+  "Hämtar $0"
  ],
  "Embedded PC": [
   null,
-  ""
+  "Inbäddad PC"
  ],
  "Enable": [
   null,
-  ""
+  "Aktivera"
  ],
  "Enable Forcefully": [
   null,
-  ""
+  "Aktivera tvingande"
  ],
  "Enable persistent metrics…": [
   null,
@@ -535,19 +505,19 @@ return plural;
  ],
  "Enabled": [
   null,
-  ""
+  "Aktiverad"
  ],
  "Enhancement Updates Available": [
   null,
-  ""
+  "Förbättringsuppdateringar är tillgängliga"
  ],
  "Entry": [
   null,
-  ""
+  "Post"
  ],
  "Error": [
   null,
-  ""
+  "Fel"
  ],
  "Error and above": [
   null,
@@ -555,67 +525,63 @@ return plural;
  ],
  "Everything": [
   null,
-  ""
+  "Allting"
  ],
  "Expansion Chassis": [
   null,
-  ""
- ],
- "Free": [
-  null,
-  ""
+  "Expansionschassin"
  ],
  "Friday": [
   null,
-  ""
+  "Fredag"
  ],
  "General": [
   null,
-  ""
+  "Allmänt"
  ],
  "Go to": [
   null,
-  ""
+  "Gå till"
  ],
  "Go to now": [
   null,
-  ""
+  "Gå till nu"
  ],
  "Hand Held": [
   null,
-  ""
+  "Handhållen"
  ],
  "Hardware": [
   null,
-  ""
+  "Hårdvara"
  ],
  "Hardware Information": [
   null,
-  ""
+  "Hårdvaruinformation"
  ],
  "Host Name": [
   null,
-  ""
+  "Värdnamn"
  ],
  "Hour : Minute": [
   null,
-  ""
+  "Timme : Minut"
  ],
  "Hour needs to be a number between 0-23": [
   null,
-  ""
+  "Timmen måste vara ett tal mellan 0-23"
  ],
  "Hours": [
   null,
-  ""
+  "Timmar"
  ],
  "I/O Wait": [
   null,
-  ""
+  "I/O-väntan"
  ],
  "Id": [
   null,
-  ""
+  "Id"
  ],
  "Info and above": [
   null,
@@ -623,133 +589,137 @@ return plural;
  ],
  "Install": [
   null,
-  ""
+  "Installera"
  ],
  "Install Software": [
   null,
-  ""
+  "Installera programvara"
  ],
  "Installing $0": [
   null,
-  ""
+  "Installerar $0"
  ],
  "Instantiate": [
   null,
-  ""
+  "Instatiera"
  ],
  "Invalid date format": [
   null,
-  ""
+  "Felaktigt datumformat"
  ],
  "Invalid date format and invalid time format": [
   null,
-  ""
+  "Felaktigt datumformat och felaktigt tidsformat"
  ],
  "Invalid date format.": [
   null,
-  ""
+  "Felaktigt datumformat."
  ],
  "Invalid number.": [
   null,
-  ""
+  "Felaktigt tal."
  ],
  "Invalid time format": [
   null,
-  ""
+  "Felaktigt tidsformat"
  ],
  "Invalid time zone": [
   null,
-  ""
+  "Felaktigt tidszon"
  ],
  "IoT Gateway": [
   null,
-  ""
+  "IoT-gateway"
  ],
  "Joins Namespace Of": [
   null,
-  ""
+  "Går med i namnrymden för"
  ],
  "Journal": [
   null,
-  ""
+  "Journal"
  ],
  "Journal entry": [
   null,
-  ""
+  "Journalpost"
  ],
  "Journal entry not found": [
   null,
-  ""
+  "Journalposten hittades inte"
  ],
  "Kernel": [
   null,
-  ""
+  "Kärnan"
  ],
  "Laptop": [
   null,
-  ""
+  "Bärbar dator"
  ],
  "Last 24 hours": [
   null,
-  ""
+  "Senaste 24 timmarna"
  ],
  "Last 7 days": [
   null,
-  ""
+  "Senaste 7 datgarna"
  ],
  "Last Trigger": [
   null,
-  ""
+  "Senaste trigger"
  ],
  "Load earlier entries": [
   null,
-  ""
+  "Läs in tidigare poster"
  ],
  "Loading...": [
   null,
-  ""
+  "Läser in …"
  ],
  "Log messages": [
   null,
-  ""
+  "Loggmeddelanden"
  ],
  "Logs": [
   null,
-  ""
+  "Loggar"
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "Lågprofilskrivbord"
  ],
  "Lunch Box": [
   null,
-  ""
+  "Lunchlåda"
  ],
  "Machine ID": [
   null,
-  ""
+  "Makin-ID"
  ],
  "Machine SSH Key Fingerprints": [
   null,
-  ""
+  "Makinens SSH-nyckels fingeravtryck"
  ],
  "Main Server Chassis": [
   null,
-  ""
+  "Huvudserverchassi"
  ],
  "Manually": [
   null,
-  ""
+  "Manuellt"
  ],
  "Mask": [
   null,
-  ""
+  "Maskera"
  ],
  "Mask Forcefully": [
   null,
-  ""
+  "Maskera tvingande"
  ],
  "Memory": [
+  null,
+  ""
+ ],
+ "Memory & Swap": [
   null,
   ""
  ],
@@ -911,23 +881,23 @@ return plural;
  ],
  "Preset Forcefully": [
   null,
-  ""
+  "Förinställ tvingande"
  ],
  "Pretty Host Name": [
   null,
-  ""
+  "Snyggt värdnamn"
  ],
  "Problem details": [
   null,
-  ""
+  "Problemdetaljer"
  ],
  "Problem info": [
   null,
-  ""
+  "Probleminformation"
  ],
  "Propagates Reload To": [
   null,
-  ""
+  "Vidarebefordrar omladdning till"
  ],
  "RAID Chassis": [
   null,

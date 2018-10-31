@@ -69,7 +69,7 @@ return plural;
  },
  "$0 is not available from any repository.": [
   null,
-  ""
+  "$0 není k dispozici z žádného z repozitářů."
  ],
  "$0 update": [
   "$0 updates",
@@ -79,23 +79,23 @@ return plural;
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "$0 bude nainstalováno."
  ],
  "$1 security fix": [
   "$1 security fixes",
-  "",
-  "",
-  ""
+  "$1 oprava zabezpečení",
+  "$1 opravy zabezpečení",
+  "$1 oprav zabezpečení"
  ],
  ", including $1 security fix": [
   ", including $1 security fixes",
-  "",
-  "",
-  ""
+  ", včetně $1 opravy zabezpečení",
+  ", včetně $1 oprav zabezpečení",
+  ", včetně $1 oprav zabezpečení"
  ],
  "Additional packages:": [
   null,
-  ""
+  "Další balíčky:"
  ],
  "Apply all updates": [
   null,
@@ -103,15 +103,15 @@ return plural;
  ],
  "Apply security updates": [
   null,
-  "Aplikovat bezpečnostní aktualizace"
+  "Aplikovat aktualizace zabezpečení"
  ],
  "Applying updates": [
   null,
-  "Aplikuji aktualizace"
+  "Aplikují se aktualizace"
  ],
  "Applying updates failed": [
   null,
-  "Aplikuji neúspěšné aktualizace"
+  "Aplikace aktualizací se nezdařila"
  ],
  "Automatic Updates": [
   null,
@@ -127,7 +127,7 @@ return plural;
  ],
  "Cancel": [
   null,
-  "Zrušit"
+  "Storno"
  ],
  "Check for Updates": [
   null,
@@ -135,7 +135,7 @@ return plural;
  ],
  "Checking installed software": [
   null,
-  ""
+  "Zjišťuje se nainstalovaný sofware"
  ],
  "Details": [
   null,
@@ -143,19 +143,19 @@ return plural;
  ],
  "Downloaded": [
   null,
-  ""
+  "Staženo"
  ],
  "Downloading": [
   null,
-  "Stažení"
+  "Stahuje se"
  ],
  "Downloading $0": [
   null,
-  ""
+  "Stahuje se $0"
  ],
  "Errata:": [
   null,
-  ""
+  "Errata:"
  ],
  "Ignore": [
   null,
@@ -163,23 +163,23 @@ return plural;
  ],
  "Initializing...": [
   null,
-  ""
+  "Inicializace…"
  ],
  "Install": [
   null,
-  "Instalovat"
+  "Nainstalovat"
  ],
  "Install All Updates": [
   null,
-  ""
+  "Nainstalovat všechny aktualizace"
  ],
  "Install Security Updates": [
   null,
-  ""
+  "Nainstalovat aktualizace zabezpečení"
  ],
  "Install Software": [
   null,
-  ""
+  "Nainstalovat software"
  ],
  "Installed": [
   null,
@@ -187,23 +187,23 @@ return plural;
  ],
  "Installing": [
   null,
-  "Instalování"
+  "Instaluje se"
  ],
  "Installing $0": [
   null,
-  ""
+  "Instaluje se $0"
  ],
  "Last checked: $0 ago": [
   null,
-  ""
+  "Naposledy zkontrolováno: před $0 dny"
  ],
  "Loading available updates failed": [
   null,
-  ""
+  "Načtení dostupných aktualizací se nezdařilo"
  ],
  "Loading available updates, please wait...": [
   null,
-  ""
+  "Načítání dostupných aktualizací, čekejte…"
  ],
  "Name": [
   null,
@@ -211,11 +211,11 @@ return plural;
  ],
  "No updates pending": [
   null,
-  ""
+  "Žádné čekající aktualizace"
  ],
  "Off": [
   null,
-  ""
+  "Vypnuto"
  ],
  "Ok": [
   null,
@@ -223,59 +223,59 @@ return plural;
  ],
  "On": [
   null,
-  ""
+  "Zapnuto"
  ],
  "Package information": [
   null,
-  ""
+  "Informace o balíčku"
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "PackageKit zhavaroval"
  ],
  "PackageKit is not installed": [
   null,
-  ""
+  "PackageKit není nainstalovaný"
  ],
  "PackageKit reported error code $0": [
   null,
-  ""
+  "PackageKit ohlásilo chybový kód $0"
  ],
  "Refreshing package information": [
   null,
-  ""
+  "Obnovují se informace o balíčcích"
  ],
  "Register…": [
   null,
-  ""
+  "Zaregistrovat…"
  ],
  "Removals:": [
   null,
-  ""
+  "Odebrání:"
  ],
  "Removing $0": [
   null,
-  ""
+  "Odebírá se $0"
  ],
  "Restart Now": [
   null,
-  ""
+  "Restartovat nyní"
  ],
  "Restart Recommended": [
   null,
-  ""
+  "Doporučen restart"
  ],
  "Restarting": [
   null,
-  ""
+  "Restartuje se"
  ],
  "Set up": [
   null,
-  ""
+  "Nastavit"
  ],
  "Setting up": [
   null,
-  ""
+  "Nastavení"
  ],
  "Severity": [
   null,
@@ -283,55 +283,55 @@ return plural;
  ],
  "Severity:": [
   null,
-  ""
+  "Závažnost:"
  ],
  "Software Updates": [
   null,
-  ""
+  "Aktualizace software"
  ],
  "Some other program is currently using the package manager, please wait...": [
   null,
-  ""
+  "Správa balíčků je v tuto chvíli používána nějakým jiným programem, vyčkejte…"
  ],
  "System is up to date": [
   null,
-  ""
+  "Systém je aktuální"
  ],
  "The following packages were recently updated:": [
   null,
-  ""
+  "Následující balíčky byly nedávno aktualizovány:"
  ],
  "The following packages were updated $0:": [
   null,
-  ""
+  "Následující balíčky byly aktualizovány $0:"
  ],
  "This system is not registered": [
   null,
-  ""
+  "Tento systém není zaregistrován"
  ],
  "This web console will be updated.": [
   null,
-  ""
+  "Tato webová konzole bude aktualizována"
  ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
-  ""
+  "Pro získávání aktualizací software je třeba systém zaregistrovat u Red Hat, buď pomocí Red Hat portálu pro zákazníky nebo místního serveru předplatného."
  ],
  "Total size: $0": [
   null,
-  ""
+  "Celková velikost: $0"
  ],
  "Unregistered System": [
   null,
-  ""
+  "Systém se zrušenou registrací"
  ],
  "Update History": [
   null,
-  ""
+  "Historie aktualizací"
  ],
  "Update Log": [
   null,
-  ""
+  "Záznam událostí aktualizací"
  ],
  "Updated": [
   null,
@@ -339,23 +339,23 @@ return plural;
  ],
  "Updated packages may require a restart to take effect.": [
   null,
-  ""
+  "Aby se uplatnily, aktualizované balíčky mohou vyžadovat restart."
  ],
  "Updates are disabled.": [
   null,
-  ""
+  "Aktualizace jsou vypnuté."
  ],
  "Updating": [
   null,
-  ""
+  "Aktualizuje se"
  ],
  "Verified": [
   null,
-  ""
+  "Ověřeno"
  ],
  "Verifying": [
   null,
-  "Ověřuji"
+  "Ověřuje se"
  ],
  "Version": [
   null,
@@ -363,66 +363,66 @@ return plural;
  ],
  "View Registration Details": [
   null,
-  ""
+  "Zobrazit podrobnosti registrace"
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "Čeká se na dokončení ostatních operací správy balíčků"
  ],
  "You need to re-subscribe this system.": [
   null,
-  ""
+  "Tento systém je třeba znovu opatřit předplatným."
  ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
-  ""
+  "Váš prohlížeč se odpojí, ale to neovlivní proces aktualizace. Můžete se kdykoli znovu připojit a podívat se na postup."
  ],
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,
-  ""
+  "Server brzy zavře spojení. Po dokončení jeho restartu se budete moci opět připojit."
  ],
  "and restart the machine automatically.": [
   null,
-  ""
+  "a automaticky restartovat stroj."
  ],
  "at": [
   null,
-  ""
+  "v"
  ],
  "every day": [
   null,
-  ""
+  "každý den"
  ],
  "on Fridays": [
   null,
-  ""
+  "v pátky"
  ],
  "on Mondays": [
   null,
-  ""
+  "v pondělky"
  ],
  "on Saturdays": [
   null,
-  ""
+  "v soboty"
  ],
  "on Sundays": [
   null,
-  ""
+  "v neděle"
  ],
  "on Thursdays": [
   null,
-  ""
+  "ve čtvrtky"
  ],
  "on Tuesdays": [
   null,
-  ""
+  "ve středy"
  ],
  "on Wednesdays": [
   null,
-  ""
+  "v úterky"
  ],
  "undefined": [
   null,
-  ""
+  "nedefinované"
  ]
 }));

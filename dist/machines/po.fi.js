@@ -83,6 +83,10 @@ return plural;
   null,
   ""
  ],
+ "Address": [
+  null,
+  "Osoite"
+ ],
  "Address:": [
   null,
   "Osoite:"
@@ -126,10 +130,6 @@ return plural;
  "CPU Type:": [
   null,
   "Prosessorin tyyppi:"
- ],
- "CREATE_AND_ATTACH_VOLUME action failed": [
-  null,
-  ""
  ],
  "Cancel": [
   null,
@@ -327,6 +327,10 @@ return plural;
   null,
   "Ladataan..."
  ],
+ "MAC Address": [
+  null,
+  "MAC-osoite"
+ ],
  "Manual Connection": [
   null,
   "Manuaalinen yhteys"
@@ -350,6 +354,10 @@ return plural;
  "MiB": [
   null,
   "MiB"
+ ],
+ "Model type": [
+  null,
+  "Mallityyppi"
  ],
  "More Information": [
   null,
@@ -395,6 +403,10 @@ return plural;
   null,
   "Vastaavia tiedostoja ei löytynyt."
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  "Tälle virtuaalikoneelle ei ole määritetty verkkoliitäntöjä"
+ ],
  "OS Vendor": [
   null,
   "Käyttöjärjestelmän toimittaja"
@@ -430,6 +442,10 @@ return plural;
  "Please start the virtual machine to access its console.": [
   null,
   "Käynnistä virtuaalikone päästäksesi sen konsoliin."
+ ],
+ "Plug": [
+  null,
+  ""
  ],
  "Pool": [
   null,
@@ -595,7 +611,7 @@ return plural;
   null,
   ""
  ],
- "Threads per cores": [
+ "Threads per core": [
   null,
   ""
  ],
@@ -607,11 +623,19 @@ return plural;
   null,
   "Vianetsintä"
  ],
+ "Type": [
+  null,
+  "Tyyppi"
+ ],
  "URL": [
   null,
   "URL"
  ],
  "Unique name": [
+  null,
+  ""
+ ],
+ "Unplug": [
   null,
   ""
  ],
@@ -631,15 +655,7 @@ return plural;
   null,
   "Käytetty"
  ],
- "VM ATTACH_DISK action failed": [
-  null,
-  ""
- ],
  "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  ""
- ],
- "VM CHANGE_NETWORK_STATE action failed: updated device XML couldn't not be generated": [
   null,
   ""
  ],
@@ -655,7 +671,7 @@ return plural;
   null,
   ""
  ],
- "VM DETACH action failed": [
+ "VM DETACH_DISK action failed": [
   null,
   ""
  ],

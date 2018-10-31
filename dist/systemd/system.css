@@ -32,7 +32,7 @@
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th,
 .dialog-list-ct .list-group-item:hover:not(.active) {
-    background-color: #d4edfa;
+    background-color: #edf8ff;
 }
 
 /* Override patternfly to fit buttons and such */
@@ -211,7 +211,7 @@ a.disabled:hover {
 }
 
 .highlight-ct {
-    background-color: #d4edfa;
+    background-color: #edf8ff;
 }
 
 /* Well and Blankslate */
@@ -1075,8 +1075,12 @@ input[type=number] {
     padding-left: 20px;
 }
 
-.cockpit-log-panel .cockpit-logline:hover {
-    background-color: #d4edfa;
+.cockpit-log-panel > .cockpit-logline:hover {
+    background-color: #def3ff; /* pf-blue-50 */
+}
+
+.cockpit-log-panel > .cockpit-logline:hover .cockpit-log-message {
+    color: #0088ce; /* pf-blue-400 */
 }
 
 .cockpit-log-panel > .cockpit-logline:hover {
@@ -1466,47 +1470,69 @@ a.disabled {
     height: 120px;
 }
 
+.server-graph-container {
+    display: grid;
+    grid-template: "title title" "graph legend";
+    grid-template-columns: 1fr max-content;
+}
+
+.server-graph-title {
+    grid-area: title;
+}
+
+.server-graph-graph {
+    grid-area: graph;
+}
+
 .server-graph-legend {
-    list-style-type: none;
-    padding: 30px 40px;
+    grid-area: legend;
     float: right;
+    line-height: 24px;
+    list-style-type: none;
+    padding: 30px 40px 0 0;
+}
+
+.server-graph-legend li {
+    align-items: center;
+    display: flex;
 }
 
 .server-graph-legend i {
-    padding-right: 3px;
-    font-size: 14px;
+    font-size: 16px;
+    margin-right: 0.5rem;
+    padding: 0;
 }
 
 .server-graph-legend .cpu-io-wait i {
-    color: #e41a1c;
+    color: #cc0000; /* pf-red-100 */
 }
 
 .server-graph-legend .cpu-kernel i {
-    color: #ff7f00;
+    color: #f5c12e; /* pf-orange-300 */
 }
 
 .server-graph-legend .cpu-user i {
-    color: #377eb8;
+    color: #8461f2; /* pf-purple-300 */
 }
 
 .server-graph-legend .cpu-nice i {
-    color: #4daf4a;
+    color: #6eb664; /* pf-green-300 */
 }
 
 .server-graph-legend .memory-swap i {
-    color: #e41a1c;
+    color: #cc0000; /* pf-red-100 */
 }
 
 .server-graph-legend .memory-cached i {
-    color: #ff7f00;
+    color: #c8eb79; /* pf-light-green-200 */
 }
 
 .server-graph-legend .memory-used i {
-    color: #377eb8;
+    color: #0088ce; /* pf-blue-400 */
 }
 
 .server-graph-legend .memory-free i {
-    color: #4daf4a;
+    color: #3f9c35; /* pf-green-400 */
 }
 
 #cpu_status_title {

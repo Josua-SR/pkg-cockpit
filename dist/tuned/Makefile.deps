@@ -1,12 +1,7 @@
 # Generated Makefile data for tuned
-# Stamp: Fri Oct 12 2018 10:12:43 GMT+0000 (UTC)
+# Stamp: Wed Oct 31 2018 13:25:51 GMT+0000 (UTC)
 
 tuned_INPUTS = \
-	node_modules/create-react-class/LICENSE.txt \
-	node_modules/create-react-class/README.md \
-	node_modules/create-react-class/factory.js \
-	node_modules/create-react-class/index.js \
-	node_modules/create-react-class/package.json \
 	node_modules/prop-types/LICENSE \
 	node_modules/prop-types/README.md \
 	node_modules/prop-types/factoryWithThrowingShims.js \
@@ -57,7 +52,7 @@ tuned_TESTS = \
 
 dist/tuned/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/create-react-class/factory.js -N node_modules/create-react-class/index.js -N node_modules/prop-types/factoryWithThrowingShims.js -N node_modules/prop-types/index.js -N node_modules/prop-types/lib/ReactPropTypesSecret.js -N node_modules/react-dom/cjs/react-dom.production.min.js -N node_modules/react-dom/index.js -N node_modules/react/cjs/react.production.min.js -N node_modules/react/index.js -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/page.css -N pkg/lib/service.js -N pkg/tuned/change-profile.jsx -N pkg/tuned/dialog.js -N pkg/tuned/link.html $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/prop-types/factoryWithThrowingShims.js -N node_modules/prop-types/index.js -N node_modules/prop-types/lib/ReactPropTypesSecret.js -N node_modules/react-dom/cjs/react-dom.production.min.js -N node_modules/react-dom/index.js -N node_modules/react/cjs/react.production.min.js -N node_modules/react/index.js -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/page.css -N pkg/lib/service.js -N pkg/tuned/change-profile.jsx -N pkg/tuned/dialog.js -N pkg/tuned/link.html $< > $@.tmp && mv $@.tmp $@
 
 dist/tuned/stamp: $(tuned_INPUTS)
 
@@ -68,16 +63,6 @@ dist/tuned/performance.css.map: dist/tuned/stamp
 dist/tuned/performance.min.js: dist/tuned/stamp
 
 dist/tuned/performance.min.js.map: dist/tuned/stamp
-
-node_modules/create-react-class/LICENSE.txt:
-
-node_modules/create-react-class/README.md:
-
-node_modules/create-react-class/factory.js:
-
-node_modules/create-react-class/index.js:
-
-node_modules/create-react-class/package.json:
 
 node_modules/prop-types/LICENSE:
 

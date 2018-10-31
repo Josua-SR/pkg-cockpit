@@ -83,6 +83,10 @@ return plural;
   null,
   ""
  ],
+ "Address": [
+  null,
+  ""
+ ],
  "Address:": [
   null,
   "Helbidea:"
@@ -126,10 +130,6 @@ return plural;
  "CPU Type:": [
   null,
   "CPU mota"
- ],
- "CREATE_AND_ATTACH_VOLUME action failed": [
-  null,
-  ""
  ],
  "Cancel": [
   null,
@@ -327,6 +327,10 @@ return plural;
   null,
   ""
  ],
+ "MAC Address": [
+  null,
+  "MAC helbidea"
+ ],
  "Manual Connection": [
   null,
   ""
@@ -348,6 +352,10 @@ return plural;
   ""
  ],
  "MiB": [
+  null,
+  ""
+ ],
+ "Model type": [
   null,
   ""
  ],
@@ -395,6 +403,10 @@ return plural;
   null,
   ""
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  ""
+ ],
  "OS Vendor": [
   null,
   ""
@@ -428,6 +440,10 @@ return plural;
   ""
  ],
  "Please start the virtual machine to access its console.": [
+  null,
+  ""
+ ],
+ "Plug": [
   null,
   ""
  ],
@@ -595,7 +611,7 @@ return plural;
   null,
   ""
  ],
- "Threads per cores": [
+ "Threads per core": [
   null,
   ""
  ],
@@ -607,11 +623,19 @@ return plural;
   null,
   ""
  ],
+ "Type": [
+  null,
+  ""
+ ],
  "URL": [
   null,
   ""
  ],
  "Unique name": [
+  null,
+  ""
+ ],
+ "Unplug": [
   null,
   ""
  ],
@@ -631,15 +655,7 @@ return plural;
   null,
   ""
  ],
- "VM ATTACH_DISK action failed": [
-  null,
-  ""
- ],
  "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  ""
- ],
- "VM CHANGE_NETWORK_STATE action failed: updated device XML couldn't not be generated": [
   null,
   ""
  ],
@@ -655,7 +671,7 @@ return plural;
   null,
   ""
  ],
- "VM DETACH action failed": [
+ "VM DETACH_DISK action failed": [
   null,
   ""
  ],

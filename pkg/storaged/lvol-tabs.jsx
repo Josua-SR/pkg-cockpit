@@ -23,7 +23,6 @@ import cockpit from "cockpit";
 import utils from "./utils.js";
 
 import React from "react";
-import createReactClass from 'create-react-class';
 import { StorageButton, StorageLink } from "./storage-controls.jsx";
 import { clevis_recover_passphrase } from "./crypto-keyslots.jsx";
 import { dialog_open, TextInput, PassInput, SizeSlider, BlockingMessage, TeardownMessage } from "./dialog.jsx";
@@ -220,8 +219,8 @@ function lvol_shrink(client, lvol, info) {
     });
 }
 
-var BlockVolTab = createReactClass({
-    render: function () {
+class BlockVolTab extends React.Component {
+    render() {
         var self = this;
         var client = self.props.client;
         var lvol = self.props.lvol;
@@ -353,11 +352,11 @@ var BlockVolTab = createReactClass({
                 </table>
             </div>
         );
-    },
-});
+    }
+}
 
-var PoolVolTab = createReactClass({
-    render: function () {
+class PoolVolTab extends React.Component {
+    render() {
         var self = this;
 
         function perc(ratio) {
@@ -375,34 +374,36 @@ var PoolVolTab = createReactClass({
         return (
             <div>
                 <table className="info-table-ct">
-                    <tr>
-                        <td>{_("Name")}</td>
-                        <td>
-                            <StorageLink onClick={rename}>{this.props.lvol.Name}</StorageLink>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>{_("Size")}</td>
-                        <td>
-                            {utils.fmt_size(this.props.lvol.Size)}
-                            <div className="tab-row-actions">
-                                <StorageButton onClick={grow}>{_("Grow")}</StorageButton>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>{_("Data Used")}</td>
-                        <td>{perc(this.props.lvol.DataAllocatedRatio)}</td>
-                    </tr>
-                    <tr>
-                        <td>{_("Metadata Used")}</td>
-                        <td>{perc(this.props.lvol.MetadataAllocatedRatio)}</td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>{_("Name")}</td>
+                            <td>
+                                <StorageLink onClick={rename}>{this.props.lvol.Name}</StorageLink>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{_("Size")}</td>
+                            <td>
+                                {utils.fmt_size(this.props.lvol.Size)}
+                                <div className="tab-row-actions">
+                                    <StorageButton onClick={grow}>{_("Grow")}</StorageButton>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{_("Data Used")}</td>
+                            <td>{perc(this.props.lvol.DataAllocatedRatio)}</td>
+                        </tr>
+                        <tr>
+                            <td>{_("Metadata Used")}</td>
+                            <td>{perc(this.props.lvol.MetadataAllocatedRatio)}</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         );
-    },
-});
+    }
+}
 
 module.exports = {
     BlockVolTab: BlockVolTab,

@@ -39,6 +39,7 @@ import {
     deleteUnlistedVMs,
     undefineVm,
     updateNetworks,
+    updateOrAddVm,
     updateStoragePools,
     updateStorageVolumes,
     updateVm,
@@ -62,7 +63,6 @@ import {
 } from './helpers.es6';
 
 import {
-    buildFailHandler,
     canConsole,
     canDelete,
     canInstall,
@@ -74,6 +74,7 @@ import {
     getSingleOptionalElem,
     isRunning,
     parseDumpxml,
+    resolveUiState,
     serialConsoleCommand,
     unknownConnectionName,
     updateVCPUSettings,
@@ -101,8 +102,10 @@ const Enum = {
     VIR_DOMAIN_UNDEFINE_SNAPSHOTS_METADATA: 2,
     VIR_DOMAIN_UNDEFINE_NVRAM: 4,
     VIR_DOMAIN_STATS_BALLOON: 4,
+    VIR_DOMAIN_SHUTOFF: 5,
     VIR_DOMAIN_STATS_VCPU: 8,
     VIR_DOMAIN_STATS_BLOCK: 32,
+    VIR_DOMAIN_STATS_STATE: 1,
     VIR_DOMAIN_XML_INACTIVE: 2,
     VIR_CONNECT_LIST_NETWORKS_ACTIVE: 2,
     VIR_CONNECT_LIST_STORAGE_POOLS_ACTIVE: 2,
@@ -166,6 +169,41 @@ LIBVIRT_DBUS_PROVIDER = {
         return () => call(connectionName, vmId, 'org.libvirt.Domain', 'AttachDevice', [xmlDesc, flags], TIMEOUT);
     },
 
+    CHANGE_NETWORK_SETTINGS({
+        name,
+        id: objPath,
+        connectionName,
+        macAddress,
+        networkType,
+        networkSource,
+        networkModel,
+    }) {
+        /*
+         * 0 -> VIR_DOMAIN_AFFECT_CURRENT
+         * 1 -> VIR_DOMAIN_AFFECT_LIVE
+         * 2 -> VIR_DOMAIN_AFFECT_CONFIG
+         */
+        let flags = Enum.VIR_DOMAIN_AFFECT_CURRENT;
+        flags |= Enum.VIR_DOMAIN_AFFECT_CONFIG;
+
+        // Error handling inside the modal dialog this function is called
+        return clientLibvirt[connectionName].call(objPath, 'org.libvirt.Domain', 'GetXMLDesc', [0], TIMEOUT)
+                .then(domXml => {
+                    let updatedXml = updateNetworkIface({
+                        domXml: domXml[0],
+                        networkMac: macAddress,
+                        networkType,
+                        networkSource,
+                        networkModelType: networkModel
+                    });
+                    if (!updatedXml) {
+                        return Promise.reject(new Error("VM CHANGE_NETWORK_SETTINGS action failed: updated device XML couldn't not be generated"));
+                    } else {
+                        return clientLibvirt[connectionName].call(objPath, 'org.libvirt.Domain', 'UpdateDevice', [updatedXml, flags], TIMEOUT);
+                    }
+                });
+    },
+
     CHANGE_NETWORK_STATE({
         connectionName,
         id: objPath,
@@ -176,7 +214,7 @@ LIBVIRT_DBUS_PROVIDER = {
         return dispatch => {
             call(connectionName, objPath, 'org.libvirt.Domain', 'GetXMLDesc', [0], TIMEOUT)
                     .then(domXml => {
-                        let updatedXml = updateNetworkIfaceState(domXml[0], networkMac, state);
+                        let updatedXml = updateNetworkIface({ domXml: domXml[0], networkMac, networkState: state });
                         if (!updatedXml) {
                             dispatch(vmActionFailed({
                                 name,
@@ -291,29 +329,34 @@ LIBVIRT_DBUS_PROVIDER = {
         target,
         live
     }) {
+        let diskXML;
         let detachFlags = Enum.VIR_DOMAIN_AFFECT_CURRENT;
         if (live)
             detachFlags |= Enum.VIR_DOMAIN_AFFECT_LIVE;
 
         return dispatch => {
-            clientLibvirt[connectionName].call(vmPath, 'org.libvirt.Domain', 'GetXMLDesc', [0], TIMEOUT)
-                    .done(domXml => {
-                        let diskXML = getDiskElemByTarget(domXml[0], target);
+            call(connectionName, vmPath, 'org.libvirt.Domain', 'GetXMLDesc', [0], TIMEOUT)
+                    .then(domXml => {
                         let getXMLFlags = Enum.VIR_DOMAIN_XML_INACTIVE;
+                        diskXML = getDiskElemByTarget(domXml[0], target);
 
-                        clientLibvirt[connectionName].call(vmPath, 'org.libvirt.Domain', 'GetXMLDesc', [getXMLFlags], TIMEOUT)
-                                .done(domInactiveXml => {
-                                    let diskInactiveXML = getDiskElemByTarget(domInactiveXml[0], target);
-                                    if (diskInactiveXML)
-                                        detachFlags |= Enum.VIR_DOMAIN_AFFECT_CONFIG;
-
-                                    clientLibvirt[connectionName].call(vmPath, 'org.libvirt.Domain', 'DetachDevice', [diskXML, detachFlags], TIMEOUT)
-                                            .done(() => { dispatch(getVm({connectionName, id:vmPath})) })
-                                            .fail(buildFailHandler({ dispatch, name, connectionName, message: _("VM DETACH action failed") }));
-                                })
-                                .fail(buildFailHandler({ dispatch, name, connectionName, message: _("VM DETACH action failed") }));
+                        return call(connectionName, vmPath, 'org.libvirt.Domain', 'GetXMLDesc', [getXMLFlags], TIMEOUT);
                     })
-                    .fail(buildFailHandler({ dispatch, name, connectionName, message: _("VM DETACH action failed") }));
+                    .then(domInactiveXml => {
+                        let diskInactiveXML = getDiskElemByTarget(domInactiveXml[0], target);
+                        if (diskInactiveXML)
+                            detachFlags |= Enum.VIR_DOMAIN_AFFECT_CONFIG;
+
+                        return call(connectionName, vmPath, 'org.libvirt.Domain', 'DetachDevice', [diskXML, detachFlags], TIMEOUT);
+                    })
+                    .catch(exception => dispatch(vmActionFailed({
+                        name,
+                        connectionName,
+                        message: _("VM DETACH_DISK action failed"),
+                        detail: { exception },
+                        tab: 'disk',
+                    })))
+                    .then(() => dispatch(getVm({connectionName, id:vmPath})));
         };
     },
 
@@ -363,10 +406,10 @@ LIBVIRT_DBUS_PROVIDER = {
                 dispatch(checkLibvirtStatus(libvirtServiceName));
                 dbus_client(connectionName);
                 startEventMonitor(dispatch, connectionName, libvirtServiceName);
-                doGetAllVms(dispatch, connectionName);
                 dispatch(getStoragePools(connectionName));
                 dispatch(getNetworks(connectionName));
                 dispatch(getHypervisorMaxVCPU(connectionName));
+                doGetAllVms(dispatch, connectionName);
             };
         }
 
@@ -491,53 +534,67 @@ LIBVIRT_DBUS_PROVIDER = {
      */
     GET_VM({
         id: objPath,
-        connectionName
+        connectionName,
+        updateOnly,
     }) {
+        let props = {};
+        let domainXML;
+
         return dispatch => {
             call(connectionName, objPath, 'org.libvirt.Domain', 'GetXMLDesc', [0], TIMEOUT)
-                    .done(domXml => {
-                        parseDumpxml(dispatch, connectionName, domXml[0], objPath);
-                        call(connectionName, objPath, 'org.libvirt.Domain', 'GetState', [0], TIMEOUT)
-                                .done(state => {
-                                    let DOMAINSTATE = [
-                                        "no state",
-                                        "running",
-                                        "blocked",
-                                        "paused",
-                                        "shutdown",
-                                        "shut off",
-                                        "crashed",
-                                        "pmsuspended",
-                                    ];
-                                    let stateStr = DOMAINSTATE[state[0][0]];
-                                    let props = {
-                                        connectionName,
-                                        id: objPath,
-                                        state: stateStr,
-                                    };
-                                    if (!LIBVIRT_DBUS_PROVIDER.isRunning(stateStr))
-                                        props.actualTimeInMs = -1;
-
-                                    call(connectionName, objPath, "org.freedesktop.DBus.Properties", "GetAll", ["org.libvirt.Domain"], TIMEOUT)
-                                            .done(function(returnProps) {
-                                                /* Sometimes not all properties are returned, for example when some domain got deleted while part
-                                                 * of the properties got fetched from libvirt. Make sure that there is check before reading the attributes.
-                                                 */
-                                                if ("Name" in returnProps[0])
-                                                    props.name = returnProps[0].Name.v.v;
-                                                if ("Persistent" in returnProps[0])
-                                                    props.persistent = returnProps[0].Persistent.v.v;
-                                                if ("Autostart" in returnProps[0])
-                                                    props.autostart = returnProps[0].Autostart.v.v;
-
-                                                logDebug(`${this.name}.GET_VM(${objPath}, ${connectionName}): update props ${JSON.stringify(props)}`);
-                                                dispatch(updateVm(props));
-                                            })
-                                            .fail(function(ex) { console.warn("failed waiting for Domain proxy to get ready", ex) });
-                                })
-                                .fail(function(ex) { console.warn("GetState method failed for path", objPath, ex) });
+                    .then(domXml => {
+                        domainXML = domXml[0];
+                        return call(connectionName, objPath, 'org.libvirt.Domain', 'GetXMLDesc', [Enum.VIR_DOMAIN_XML_INACTIVE], TIMEOUT);
                     })
-                    .fail(function(ex) { console.warn("GetXMLDesc method failed for path", objPath, ex) });
+                    .then(domInactiveXml => {
+                        let dumpInactiveXmlParams = parseDumpxml(dispatch, connectionName, domInactiveXml[0], objPath);
+                        props.inactiveXML = dumpInactiveXmlParams;
+                        return call(connectionName, objPath, 'org.libvirt.Domain', 'GetState', [0], TIMEOUT);
+                    })
+                    .then(state => {
+                        let DOMAINSTATE = [
+                            "no state",
+                            "running",
+                            "blocked",
+                            "paused",
+                            "shutdown",
+                            "shut off",
+                            "crashed",
+                            "pmsuspended",
+                        ];
+                        let stateStr = DOMAINSTATE[state[0][0]];
+                        props = Object.assign(props, {
+                            connectionName,
+                            id: objPath,
+                            state: stateStr,
+                        });
+
+                        if (!LIBVIRT_DBUS_PROVIDER.isRunning(stateStr))
+                            props.actualTimeInMs = -1;
+
+                        return call(connectionName, objPath, "org.freedesktop.DBus.Properties", "GetAll", ["org.libvirt.Domain"], TIMEOUT);
+                    })
+                    .then(function(returnProps) {
+                        /* Sometimes not all properties are returned, for example when some domain got deleted while part
+                         * of the properties got fetched from libvirt. Make sure that there is check before reading the attributes.
+                         */
+                        if ("Name" in returnProps[0])
+                            props.name = returnProps[0].Name.v.v;
+                        if ("Persistent" in returnProps[0])
+                            props.persistent = returnProps[0].Persistent.v.v;
+                        if ("Autostart" in returnProps[0])
+                            props.autostart = returnProps[0].Autostart.v.v;
+                        props.ui = resolveUiState(dispatch, props.name);
+
+                        logDebug(`${this.name}.GET_VM(${objPath}, ${connectionName}): update props ${JSON.stringify(props)}`);
+
+                        let dumpxmlParams = parseDumpxml(dispatch, connectionName, domainXML, objPath);
+                        if (updateOnly)
+                            dispatch(updateVm(Object.assign({}, props, dumpxmlParams)));
+                        else
+                            dispatch(updateOrAddVm(Object.assign({}, props, dumpxmlParams)));
+                    })
+                    .catch(function(ex) { console.warn("GET_VM action failed failed for path", objPath, ex) });
         };
     },
 
@@ -740,7 +797,7 @@ function doUsagePolling(name, connectionName, objPath) {
             logDebug(`doUsagePolling(${name}, ${connectionName}): usage polling disabled, stopping loop`);
             return;
         }
-        let flags = Enum.VIR_DOMAIN_STATS_BALLOON | Enum.VIR_DOMAIN_STATS_VCPU | Enum.VIR_DOMAIN_STATS_BLOCK;
+        let flags = Enum.VIR_DOMAIN_STATS_BALLOON | Enum.VIR_DOMAIN_STATS_VCPU | Enum.VIR_DOMAIN_STATS_BLOCK | Enum.VIR_DOMAIN_STATS_STATE;
 
         call(connectionName, objPath, 'org.libvirt.Domain', 'GetStats', [flags, 0], { timeout: 5000 })
                 .done(info => {
@@ -751,6 +808,8 @@ function doUsagePolling(name, connectionName, objPath) {
 
                         if ('balloon.rss' in info)
                             props['rssMemory'] = info['balloon.rss'].v.v;
+                        else if ('state.state' in info && info['state.state'].v.v == Enum.VIR_DOMAIN_SHUTOFF)
+                            props['rssMemory'] = 0.0;
                         for (var i = 0; i < info['vcpu.maximum'].v.v; i++) {
                             if (!(`vcpu.${i}.time` in info))
                                 continue;
@@ -836,7 +895,8 @@ function startEventMonitor(dispatch, connectionName, libvirtServiceName) {
             case domainEvent["Stopped"]:
                 dispatch(getVm({
                     connectionName,
-                    id: objPath
+                    id: objPath,
+                    updateOnly: true,
                 }));
                 // transient VMs don't have a separate Undefined event, so remove them on stop
                 dispatch(undefineVm({connectionName, id: objPath, transientOnly: true}));
@@ -917,7 +977,7 @@ function call(connectionName, objectPath, iface, method, args, opts) {
  * @param  {String} state       Desired state; one of up/down.
  * @return {String}             Updated XML description of the device we will update or null on error.
  */
-function updateNetworkIfaceState(domXml, networkMac, state) {
+function updateNetworkIface({ domXml, networkMac, networkState, networkModelType, networkType, networkSource }) {
     let parser = new DOMParser();
     const xmlDoc = parser.parseFromString(domXml, "application/xml");
 
@@ -941,16 +1001,33 @@ function updateNetworkIfaceState(domXml, networkMac, state) {
             if (mac !== networkMac)
                 continue;
 
-            let linkElem = getSingleOptionalElem(interfaceElem, 'link');
-            if (linkElem === undefined) {
-                let doc = document.implementation.createDocument('', '', null);
-                linkElem = doc.createElement('link');
-                interfaceElem.appendChild(linkElem);
+            if (networkState) {
+                let linkElem = getSingleOptionalElem(interfaceElem, 'link');
+                if (linkElem === undefined) {
+                    let doc = document.implementation.createDocument('', '', null);
+                    linkElem = doc.createElement('link');
+                    interfaceElem.appendChild(linkElem);
+                }
+                linkElem.setAttribute('state', networkState);
             }
-            linkElem.setAttribute('state', state);
+
+            if (networkType) {
+                interfaceElem.setAttribute('type', networkType);
+            }
+
+            if (networkSource && networkType) {
+                let sourceElem = getSingleOptionalElem(interfaceElem, 'source');
+                sourceElem.setAttribute(networkType, networkSource);
+            }
+
+            if (networkModelType) {
+                let modelElem = getSingleOptionalElem(interfaceElem, 'model');
+                modelElem.setAttribute('type', networkModelType);
+            }
+
             let returnXML = (new XMLSerializer()).serializeToString(interfaceElem);
 
-            logDebug(`updateNetworkIfaceState: Updated XML: "${returnXML}"`);
+            logDebug(`updateNetworkIface: Updated XML: "${returnXML}"`);
 
             return returnXML;
         }

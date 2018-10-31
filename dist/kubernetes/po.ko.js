@@ -133,7 +133,7 @@ return plural;
  ],
  "Add User": [
   null,
-  ""
+  "사용자 추가 "
  ],
  "Add membership": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "Addresses": [
   null,
-  ""
+  "주소"
  ],
  "Adjust": [
   null,
@@ -169,7 +169,7 @@ return plural;
  ],
  "Admin": [
   null,
-  ""
+  "관리자 "
  ],
  "All Projects": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Authentication": [
   null,
-  ""
+  "인증"
  ],
  "Azure": [
   null,
@@ -229,7 +229,7 @@ return plural;
  ],
  "Capacity": [
   null,
-  ""
+  "용량"
  ],
  "Ceph Filesystem Mount": [
   null,
@@ -241,7 +241,7 @@ return plural;
  ],
  "Change": [
   null,
-  ""
+  "바꾸기"
  ],
  "Change User": [
   null,
@@ -273,11 +273,11 @@ return plural;
  ],
  "Cluster": [
   null,
-  "마스터"
+  "클러스터"
  ],
  "Configuration": [
   null,
-  ""
+  "설정"
  ],
  "Configure Flannel networking": [
   null,
@@ -289,11 +289,11 @@ return plural;
  ],
  "Connect": [
   null,
-  ""
+  "연결"
  ],
  "Connecting...": [
   null,
-  ""
+  "연결 중..."
  ],
  "Connection Error": [
   null,
@@ -349,7 +349,7 @@ return plural;
  ],
  "Created": [
   null,
-  ""
+  "생성 일시"
  ],
  "DNS Policy": [
   null,
@@ -377,7 +377,7 @@ return plural;
  ],
  "Delete Selected": [
   null,
-  ""
+  "선택 항목 삭제 "
  ],
  "Delete image stream": [
   null,
@@ -393,7 +393,7 @@ return plural;
  ],
  "Deploy": [
   null,
-  ""
+  "배포"
  ],
  "Deploy Application": [
   null,
@@ -413,19 +413,19 @@ return plural;
  ],
  "Description": [
   null,
-  ""
+  "설명"
  ],
  "Details": [
   null,
-  ""
+  "상세 정보"
  ],
  "Directory": [
   null,
-  ""
+  "디렉터리"
  ],
  "Disk": [
   null,
-  "디스크 추가"
+  "디스크 "
  ],
  "Disk Utilization: $0%": [
   null,
@@ -473,7 +473,7 @@ return plural;
  ],
  "Driver": [
   null,
-  ""
+  "드라이버"
  ],
  "Empty Directory": [
   null,
@@ -493,7 +493,7 @@ return plural;
  ],
  "Environment": [
   null,
-  ""
+  "환경"
  ],
  "Error getting certificate details: $0": [
   null,
@@ -553,7 +553,7 @@ return plural;
  ],
  "Groups": [
   null,
-  ""
+  "그룹"
  ],
  "Host": [
   null,
@@ -565,7 +565,7 @@ return plural;
  ],
  "IP": [
   null,
-  ""
+  "IP "
  ],
  "ISCSI": [
   null,
@@ -577,7 +577,7 @@ return plural;
  ],
  "Identity": [
   null,
-  ""
+  "ID"
  ],
  "Image": [
   null,
@@ -585,7 +585,7 @@ return plural;
  ],
  "Image ID": [
   null,
-  ""
+  "이미지 ID"
  ],
  "Image Name": [
   null,
@@ -605,7 +605,7 @@ return plural;
  ],
  "Images": [
   null,
-  ""
+  "이미지 "
  ],
  "Images by project": [
   null,
@@ -625,7 +625,7 @@ return plural;
  ],
  "Interface": [
   null,
-  "인터페이스"
+  "인터페이스 "
  ],
  "Kernel Version": [
   null,
@@ -677,7 +677,7 @@ return plural;
  ],
  "Logs": [
   null,
-  ""
+  "로그 "
  ],
  "Machine ID": [
   null,
@@ -685,11 +685,11 @@ return plural;
  ],
  "Manifest": [
   null,
-  ""
+  "매니페스트 "
  ],
  "Medium": [
   null,
-  ""
+  "중간 (Medium)"
  ],
  "Member of": [
   null,
@@ -701,7 +701,7 @@ return plural;
  ],
  "Membership": [
   null,
-  ""
+  "회원"
  ],
  "Memory": [
   null,
@@ -713,15 +713,15 @@ return plural;
  ],
  "Message": [
   null,
-  ""
+  "메세지"
  ],
  "Metadata": [
   null,
-  ""
+  "메타데이터"
  ],
  "Modify": [
   null,
-  ""
+  "수정 "
  ],
  "Monitors": [
   null,
@@ -733,7 +733,7 @@ return plural;
  ],
  "NFS": [
   null,
-  ""
+  "NFS"
  ],
  "NFS Mount": [
   null,
@@ -833,11 +833,11 @@ return plural;
  ],
  "Node": [
   null,
-  ""
+  "노드"
  ],
  "Nodes": [
   null,
-  ""
+  "노드"
  ],
  "Nodes are the machines that run your containers.": [
   null,
@@ -845,7 +845,7 @@ return plural;
  ],
  "None": [
   null,
-  ""
+  "없음"
  ],
  "Not Ready": [
   null,
@@ -865,7 +865,7 @@ return plural;
  ],
  "OS": [
   null,
-  ""
+  "OS"
  ],
  "OS Versions": [
   null,
@@ -873,7 +873,7 @@ return plural;
  ],
  "Operating System": [
   null,
-  ""
+  "운영 체제"
  ],
  "Options": [
   null,
@@ -881,7 +881,7 @@ return plural;
  ],
  "Overview": [
   null,
-  ""
+  "개요"
  ],
  "PD Name": [
   null,
@@ -889,7 +889,7 @@ return plural;
  ],
  "Partition": [
   null,
-  ""
+  "파티션"
  ],
  "Password": [
   null,
@@ -897,7 +897,7 @@ return plural;
  ],
  "Path": [
   null,
-  "Path cost"
+  "경로"
  ],
  "Pending Volume Claims": [
   null,
@@ -1085,7 +1085,7 @@ return plural;
  ],
  "Read Only": [
   null,
-  "준비됨"
+  "읽기 전용"
  ],
  "Read and write from a single node": [
   null,
@@ -1105,7 +1105,7 @@ return plural;
  ],
  "Reason": [
   null,
-  ""
+  "이유"
  ],
  "Reclaim Policy": [
   null,
@@ -1121,7 +1121,7 @@ return plural;
  ],
  "Register": [
   null,
-  ""
+  "시스템 등록"
  ],
  "Register New Volume": [
   null,
@@ -1137,7 +1137,7 @@ return plural;
  ],
  "Remove": [
   null,
-  ""
+  "제거 "
  ],
  "Remove Group": [
   null,
@@ -1181,7 +1181,7 @@ return plural;
  ],
  "Repository URL": [
   null,
-  "리포지터리 "
+  "리포지터리 URL"
  ],
  "Requested": [
   null,
@@ -1189,7 +1189,7 @@ return plural;
  ],
  "Requests": [
   null,
-  ""
+  "요청"
  ],
  "Requires Authentication": [
   null,
@@ -1213,11 +1213,11 @@ return plural;
  ],
  "Role": [
   null,
-  ""
+  "역할"
  ],
  "Roles": [
   null,
-  ""
+  "역할"
  ],
  "Route": [
   null,
@@ -1237,7 +1237,7 @@ return plural;
  ],
  "Secret": [
   null,
-  ""
+  "비밀"
  ],
  "Secret File": [
   null,
@@ -1269,11 +1269,11 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "서버"
  ],
  "Service": [
   null,
-  ""
+  "서비스"
  ],
  "Service Account": [
   null,
@@ -1281,7 +1281,7 @@ return plural;
  ],
  "Services": [
   null,
-  ""
+  "서비스"
  ],
  "Services group pods and provide a common DNS name and an optional, load-balanced IP address to access them.": [
   null,
@@ -1301,7 +1301,7 @@ return plural;
  ],
  "Shell": [
   null,
-  ""
+  "쉘"
  ],
  "Show all Containers": [
   null,
@@ -1357,7 +1357,7 @@ return plural;
  ],
  "Size": [
   null,
-  ""
+  "크기"
  ],
  "Skip Certificate Verification": [
   null,
@@ -1369,7 +1369,7 @@ return plural;
  ],
  "State": [
   null,
-  ""
+  "상태"
  ],
  "Status": [
   null,
@@ -1389,11 +1389,11 @@ return plural;
  ],
  "Tags": [
   null,
-  ""
+  "태그"
  ],
  "Target": [
   null,
-  ""
+  "대상"
  ],
  "Target Portal": [
   null,
@@ -1405,7 +1405,7 @@ return plural;
  ],
  "Template": [
   null,
-  ""
+  "템플릿"
  ],
  "The address contains invalid characters": [
   null,
@@ -1497,7 +1497,7 @@ return plural;
  ],
  "Token": [
   null,
-  ""
+  "토큰 "
  ],
  "Topology": [
   null,
@@ -1509,7 +1509,7 @@ return plural;
  ],
  "Troubleshoot": [
   null,
-  ""
+  "문제 해결"
  ],
  "Trust this certificate for this connection": [
   null,
@@ -1517,11 +1517,11 @@ return plural;
  ],
  "Type": [
   null,
-  ""
+  "유형"
  ],
  "Type:": [
   null,
-  ""
+  "형식:"
  ],
  "Unable to decode Kubernetes application manifest.": [
   null,
@@ -1533,7 +1533,7 @@ return plural;
  ],
  "Unavailable": [
   null,
-  "사용할 수 없습니다"
+  "사용 불가능"
  ],
  "Unknown": [
   null,
@@ -1545,11 +1545,11 @@ return plural;
  ],
  "Used": [
   null,
-  ""
+  "사용 중"
  ],
  "User": [
   null,
-  ""
+  "사용자"
  ],
  "User or Group": [
   null,
@@ -1561,11 +1561,11 @@ return plural;
  ],
  "Users": [
   null,
-  ""
+  "사용자"
  ],
  "Volume": [
   null,
-  "논리 볼륨"
+  "볼륨"
  ],
  "Volume ID": [
   null,
@@ -1577,11 +1577,11 @@ return plural;
  ],
  "Volume Type": [
   null,
-  "볼륨 그룹 $0"
+  "볼륨 유형"
  ],
  "Volumes": [
   null,
-  ""
+  "볼륨"
  ],
  "Warning:": [
   null,
@@ -1593,7 +1593,7 @@ return plural;
  ],
  "When": [
   null,
-  ""
+  "언제"
  ],
  "Yes": [
   null,
@@ -1617,7 +1617,7 @@ return plural;
  ],
  "no": [
   null,
-  ""
+  "아니요"
  ],
  "none": [
   null,
@@ -1629,6 +1629,6 @@ return plural;
  ],
  "yes": [
   null,
-  ""
+  "예 "
  ]
 }));

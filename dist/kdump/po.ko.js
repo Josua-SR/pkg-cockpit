@@ -81,7 +81,7 @@ return plural;
  ],
  "Compression": [
   null,
-  ""
+  "압축"
  ],
  "Crash dump location": [
   null,
@@ -93,7 +93,7 @@ return plural;
  ],
  "Directory": [
   null,
-  ""
+  "디렉터리"
  ],
  "Directory $0 isn't writable or doesn't exist.": [
   null,
@@ -109,7 +109,7 @@ return plural;
  ],
  "Loading...": [
   null,
-  ""
+  "로딩..."
  ],
  "Local Filesystem": [
   null,
@@ -117,11 +117,11 @@ return plural;
  ],
  "Location": [
   null,
-  "마운트 옵션"
+  "위치"
  ],
  "More details": [
   null,
-  ""
+  "더 자세히"
  ],
  "Mount": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "None": [
   null,
-  ""
+  "없음"
  ],
  "Off": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "확인"
  ],
  "On": [
   null,
@@ -177,7 +177,7 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "서버"
  ],
  "Service has an error": [
   null,

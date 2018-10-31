@@ -83,11 +83,6 @@ return plural;
   null,
   "$0 dados + $1 sobrecarga usada de $2 ($3)"
  ],
- "$0 day": [
-  "$0 days",
-  "$0 dia",
-  "$0 dias"
- ],
  "$0 disk is missing": [
   "$0 disks are missing",
   "$0 disco não encontrado",
@@ -105,11 +100,6 @@ return plural;
   null,
   "$0 sistemas de arquivos não podem ser redimensionados aqui."
  ],
- "$0 hour": [
-  "$0 hours",
-  "$0 horas",
-  "$0 horas"
- ],
  "$0 is in active use": [
   null,
   "$0 está ativo e em uso"
@@ -117,16 +107,6 @@ return plural;
  "$0 is not available from any repository.": [
   null,
   "$0 não está disponível em nenhum repositório."
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 minuto",
-  "$0 minutos"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 mês",
-  "$0 meses"
  ],
  "$0 of $1": [
   null,
@@ -140,19 +120,9 @@ return plural;
   null,
   "$0 usados of $1 ($2 salvos)"
  ],
- "$0 week": [
-  "$0 weeks",
-  "$0 semana",
-  "$0 semanas"
- ],
  "$0 will be installed.": [
   null,
   "$0 será instalado."
- ],
- "$0 year": [
-  "$0 years",
-  "$0 ano",
-  "$0 anos"
  ],
  "$0, $1 free": [
   null,
@@ -1390,6 +1360,26 @@ return plural;
   null,
   "Tamanho"
  ],
+ "Size cannot be negative": [
+  null,
+  "O tamanho não pode ser negativo"
+ ],
+ "Size cannot be zero": [
+  null,
+  "O tamanho não pode ser zero"
+ ],
+ "Size is too large": [
+  null,
+  "O tamanho é muito extenso"
+ ],
+ "Size must be a number": [
+  null,
+  "O tamanho deve ser um número"
+ ],
+ "Size must be at least $0": [
+  null,
+  "O tamanho deve ser pelo menos $0"
+ ],
  "Slot $0": [
   null,
   ""
@@ -1498,17 +1488,17 @@ return plural;
   null,
   ""
  ],
- "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
+ "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
   null,
-  "O sistema de arquivos está em uso por sessões de login e serviços do sistema.                 Prosseguir interromperá isso."
+  ""
  ],
- "The filesystem is in use by login sessions.                Proceeding will stop these.": [
+ "The filesystem is in use by login sessions. Proceeding will stop these.": [
   null,
-  "O sistema de arquivos está em uso por sessões de login.                Prosseguir interromperá isso."
+  ""
  ],
- "The filesystem is in use by system services.                Proceeding will stop these.": [
+ "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
-  "O sistema de arquivos está sendo usado pelos serviços do sistema.                Proseguir interromperá isso."
+  ""
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
@@ -1546,17 +1536,17 @@ return plural;
   null,
   "Este dispositivo VDO não usa todo o seu dispositivo de apoio."
  ],
- "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
+ "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
   null,
-  "Não há sistemas de arquivos que você possa montar ou desmontar.\nContate seu administrador de sistemas."
+  ""
  ],
  "This device is currently used for RAID devices.": [
   null,
   "Este dispositivo é atualmente usado por dispositivos RAID."
  ],
- "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
+ "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
   null,
-  "Este dispositivo é usado atualmente para dispositivos RAID.                Proceder o removerá dos seus dispositivos RAID."
+  ""
  ],
  "This device is currently used for VDO devices.": [
   null,
@@ -1566,9 +1556,9 @@ return plural;
   null,
   "Este dispositivo é usado atualmente para grupos de volumes."
  ],
- "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
+ "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
-  "Este dispositivo é usado atualmente para grupos de volumes.                Proceder irá removê-lo dos seus grupos de volumes."
+  ""
  ],
  "This disk cannot be removed while the device is recovering.": [
   null,

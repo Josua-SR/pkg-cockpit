@@ -117,7 +117,7 @@ return plural;
  ],
  "Bugs:": [
   null,
-  ""
+  "버그:"
  ],
  "Cancel": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "Details": [
   null,
-  ""
+  "상세 정보"
  ],
  "Downloaded": [
   null,
@@ -149,7 +149,7 @@ return plural;
  ],
  "Errata:": [
   null,
-  ""
+  "에라타: "
  ],
  "Ignore": [
   null,
@@ -161,7 +161,7 @@ return plural;
  ],
  "Install": [
   null,
-  ""
+  "설치"
  ],
  "Install All Updates": [
   null,
@@ -177,11 +177,11 @@ return plural;
  ],
  "Installed": [
   null,
-  ""
+  "설치됨"
  ],
  "Installing": [
   null,
-  ""
+  "설치 중"
  ],
  "Installing $0": [
   null,
@@ -213,7 +213,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "확인"
  ],
  "On": [
   null,
@@ -273,7 +273,7 @@ return plural;
  ],
  "Severity": [
   null,
-  ""
+  "심각도"
  ],
  "Severity:": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "Software Updates": [
   null,
-  ""
+  "소프트웨어 업데이트"
  ],
  "Some other program is currently using the package manager, please wait...": [
   null,
@@ -289,7 +289,7 @@ return plural;
  ],
  "System is up to date": [
   null,
-  ""
+  "시스템이 업데이트되었음"
  ],
  "The following packages were recently updated:": [
   null,
@@ -317,7 +317,7 @@ return plural;
  ],
  "Unregistered System": [
   null,
-  ""
+  "등록되지 않은 시스템"
  ],
  "Update History": [
   null,
@@ -329,7 +329,7 @@ return plural;
  ],
  "Updated": [
   null,
-  ""
+  "업데이트됨"
  ],
  "Updated packages may require a restart to take effect.": [
   null,
@@ -381,7 +381,7 @@ return plural;
  ],
  "at": [
   null,
-  "Path cost"
+  "시간:"
  ],
  "every day": [
   null,

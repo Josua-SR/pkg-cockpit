@@ -83,6 +83,10 @@ return plural;
   null,
   "Додати диск"
  ],
+ "Address": [
+  null,
+  "Адреса"
+ ],
  "Address:": [
   null,
   "Адреса:"
@@ -127,10 +131,6 @@ return plural;
   null,
   "Тип процесора:"
  ],
- "CREATE_AND_ATTACH_VOLUME action failed": [
-  null,
-  "Помилка дії CREATE_AND_ATTACH_VOLUME"
- ],
  "Cancel": [
   null,
   "Скасувати"
@@ -138,6 +138,10 @@ return plural;
  "Capacity": [
   null,
   "Місткість"
+ ],
+ "Changes will apply on VM shutdown": [
+  null,
+  "Зміни буде внесено при вимиканні ВМ"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -201,7 +205,7 @@ return plural;
  ],
  "Ctrl+Alt+Del": [
   null,
-  ""
+  "Ctrl+Alt+Del"
  ],
  "Delete": [
   null,
@@ -242,6 +246,10 @@ return plural;
  "Download the MSI from $0": [
   null,
   "Отримати MSI з $0"
+ ],
+ "Edit": [
+  null,
+  "Змінити"
  ],
  "Emulated Machine:": [
   null,
@@ -327,6 +335,14 @@ return plural;
   null,
   "Завантажуємо…"
  ],
+ "MAC Address": [
+  null,
+  "MAC-адреса"
+ ],
+ "Mac Address": [
+  null,
+  "Mac-адреса"
+ ],
  "Manual Connection": [
   null,
   "З’єднання вручну"
@@ -351,6 +367,14 @@ return plural;
   null,
   "МіБ"
  ],
+ "Model": [
+  null,
+  "Модель"
+ ],
+ "Model type": [
+  null,
+  "Тип моделі"
+ ],
  "More Information": [
   null,
   "Докладніше"
@@ -366,6 +390,14 @@ return plural;
  "Name should not consist of empty characters only": [
   null,
   "Назва не може складатися лише із порожніх символів"
+ ],
+ "Network Type": [
+  null,
+  "Тип мережі"
+ ],
+ "Network settings failed to change with following error: ": [
+  null,
+  "Не вдалося зміни параметри мережі. Повідомлення про помилку:"
  ],
  "Networks": [
   null,
@@ -394,6 +426,14 @@ return plural;
  "No matching files found": [
   null,
   "Відповідних файлів не знайдено"
+ ],
+ "No network interfaces defined for this VM": [
+  null,
+  "Немає інтерфейсів мережі, які визначено для цієї ВМ"
+ ],
+ "No virtual networks": [
+  null,
+  "Немає віртуальних мереж"
  ],
  "OS Vendor": [
   null,
@@ -430,6 +470,10 @@ return plural;
  "Please start the virtual machine to access its console.": [
   null,
   "Будь ласка, запустіть віртуальну машину, щоб отримати доступ до її консолі."
+ ],
+ "Plug": [
+  null,
+  "З'єднати"
  ],
  "Pool": [
   null,
@@ -491,13 +535,17 @@ return plural;
   null,
   "Порт TLS SPICE:"
  ],
+ "Save": [
+  null,
+  "Зберегти"
+ ],
  "Send Non-Maskable Interrupt": [
   null,
   "Надіслати немасковане переривання"
  ],
  "Send key": [
   null,
-  ""
+  "Надіслати ключ"
  ],
  "Serial Console": [
   null,
@@ -595,9 +643,9 @@ return plural;
   null,
   "Буфер порожній"
  ],
- "Threads per cores": [
+ "Threads per core": [
   null,
-  "Потоків на ядра"
+  "Потоків на ядро"
  ],
  "Too many files found": [
   null,
@@ -607,6 +655,10 @@ return plural;
   null,
   "Діагностика проблем"
  ],
+ "Type": [
+  null,
+  "Тип"
+ ],
  "URL": [
   null,
   "Адреса"
@@ -614,6 +666,10 @@ return plural;
  "Unique name": [
   null,
   "Унікальна назва"
+ ],
+ "Unplug": [
+  null,
+  "Від'єднати"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
@@ -631,33 +687,25 @@ return plural;
   null,
   "Використано"
  ],
- "VM ATTACH_DISK action failed": [
-  null,
-  "Помилка дії VM ATTACH_DISK"
- ],
  "VM CHANGE_NETWORK_STATE action failed": [
   null,
   "Помилка дії VM CHANGE_NETWORK_STATE"
  ],
- "VM CHANGE_NETWORK_STATE action failed: updated device XML couldn't not be generated": [
-  null,
-  "Помилка дії VM CHANGE_NETWORK_STATE: не вдалося створити оновлений XML пристрою"
- ],
  "VM DELETE (DESTROY) action failed": [
   null,
-  ""
+  "Помилка дії VM DELETE (DESTROY)"
  ],
  "VM DELETE (UNDEFINE) action failed": [
   null,
-  ""
+  "Помилка дії VM DELETE (UNDEFINE)"
  ],
  "VM DELETE action failed": [
   null,
-  ""
+  "Помилка дії VM DELETE"
  ],
- "VM DETACH action failed": [
+ "VM DETACH_DISK action failed": [
   null,
-  ""
+  "Помилка дії VM DETACH_DISK"
  ],
  "VM FORCE OFF action failed": [
   null,

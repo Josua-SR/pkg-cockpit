@@ -132,7 +132,7 @@ if test "$enable_ssh" != "no"; then
     AC_DEFINE_UNQUOTED(HAVE_SSH_GET_SERVER_PUBLICKEY, 1, Whether ssh_get_server_publickey is available)
   ])
 
-  AC_CHECK_DECLS([SSH_PUBLICKEY_HASH_SHA256, ssh_get_fingerprint_hash], [], [], [[#include <libssh/libssh.h>]])
+  AC_CHECK_DECLS([SSH_PUBLICKEY_HASH_SHA256, ssh_get_fingerprint_hash, ssh_session_has_known_hosts_entry], [], [], [[#include <libssh/libssh.h>]])
 
   COCKPIT_SSH_SESSION_CFLAGS="$COCKPIT_CFLAGS $LIBSSH_CFLAGS $KRB5_CFLAGS"
   COCKPIT_SSH_SESSION_LIBS="$COCKPIT_LIBS $LIBSSH_LIBS $KRB5_LIBS"
@@ -145,6 +145,11 @@ else
 fi
 
 AM_CONDITIONAL(WITH_COCKPIT_SSH, test "$enable_ssh" = "yes")
+AM_CONDITIONAL(HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY, test "$ac_cv_have_decl_ssh_session_has_known_hosts_entry" = "yes")
+
+# HACK: https://bugs.libssh.org/T117: libssh 0.8.4 breaks interactive keyboard auth on server side, i. e. our mock-ssh for unit tests
+PKG_CHECK_MODULES(LIBSSH_BROKEN_KBDINT, [libssh = 0.8.4], [broken_ssh_kbdint=yes], [broken_ssh_kbdint=no])
+AM_CONDITIONAL(HAVE_BROKEN_SSH_KBDINT, test "$broken_ssh_kbdint" = "yes")
 
 # pam
 AC_CHECK_HEADER([security/pam_appl.h], ,
@@ -503,7 +508,7 @@ elif test "$enable_debug" = "no"; then
   NODE_ENV="production"
 else
   debug_status="default"
-  NODE_ENV="production"
+  NODE_ENV="${NODE_ENV:-production}"
 fi
 AM_CONDITIONAL(WITH_DEBUG, test "$enable_debug" = "yes")
 AC_MSG_RESULT($debug_status)
@@ -590,6 +595,7 @@ echo "
         Maintainer mode:            ${USE_MAINTAINER_MODE}
         Building docs:              ${enable_doc}
         Debug mode:                 ${debug_status}
+        Node environment:           ${NODE_ENV}
         With coverage:              ${enable_coverage}
         With address sanitizer:     ${asan_status}
         With PCP:                   ${enable_pcp}

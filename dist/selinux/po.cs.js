@@ -75,11 +75,11 @@ return plural;
  ],
  "Apply this solution": [
   null,
-  "Aplikovat toto řešení"
+  "Použít toto řešení"
  ],
  "Applying solution...": [
   null,
-  "Aplikuji řešení..."
+  "Aplikace řešení…"
  ],
  "Audit log": [
   null,
@@ -87,31 +87,31 @@ return plural;
  ],
  "Connecting to SETroubleshoot daemon...": [
   null,
-  ""
+  "Připojování k procesu služby SETroubleshoot…"
  ],
  "Enforce policy:": [
   null,
-  ""
+  "Vynutit zásadu:"
  ],
  "Error while deleting alert: $0": [
   null,
-  ""
+  "Chyba při mazání výstrahy: $0"
  ],
  "Error while setting SELinux mode: '$0'": [
   null,
-  ""
+  "Chyba při nastavování SELinux režimu: „$0“"
  ],
  "Failed to delete alert: $0": [
   null,
-  ""
+  "Nepodařilo se smazat výstrahu: $0"
  ],
  "Install setroubleshoot-server to troubleshoot SELinux events.": [
   null,
-  ""
+  "Nainstalovat setroubleshoot-server pro řešení potíží s SELinux."
  ],
  "No SELinux alerts.": [
   null,
-  ""
+  "Žádné výstrahy SELinux."
  ],
  "Not connected": [
   null,
@@ -119,90 +119,90 @@ return plural;
  ],
  "Occurred $0": [
   null,
-  ""
+  "Vyskytlo se $0"
  ],
  "Occurred between $0 and $1": [
   null,
-  ""
+  "Vyskytlo se mezi $0 a $1"
  ],
  "Off": [
   null,
-  ""
+  "Vypnuto"
  ],
  "On": [
   null,
-  ""
+  "Zapnuto"
  ],
  "SELinux Access Control Errors": [
   null,
-  ""
+  "Chyby řízení přístup SELinux"
  ],
  "SELinux Policy": [
   null,
-  ""
+  "SELinux zásada"
  ],
  "SELinux Troubleshoot": [
   null,
-  ""
+  "Řešení problémů s SELinux"
  ],
  "SELinux is disabled on the system": [
   null,
-  ""
+  "SELinux je na tomto systému vypnutý."
  ],
  "SELinux is disabled on the system.": [
   null,
-  ""
+  "SELinux je na tomto systému vypnutý."
  ],
  "SELinux system status is unknown.": [
   null,
-  ""
+  "Systémový stav SELinux není znám."
  ],
  "Setting deviates from the configured state and will revert on the next boot.": [
   null,
-  ""
+  "Nastavení se odchyluje od nastaveného stavu a bude navráceno při příštím restartu."
  ],
  "Solution applied successfully": [
   null,
-  ""
+  "Řešení úspěšně uplatněno"
  ],
  "Solution failed": [
   null,
-  ""
+  "Řešení se nezdařilo"
  ],
  "Solutions": [
   null,
-  ""
+  "Řešení"
  ],
  "The configured state is unknown, it might change on the next boot.": [
   null,
-  ""
+  "Nastavený stav není znám, může se změnit při příštím startu."
  ],
  "Unable to apply this solution automatically": [
   null,
-  ""
+  "Nedaří se automaticky uplatnit toto řešení"
  ],
  "Unable to get alert details.": [
   null,
-  ""
+  "Nedaří se získat podrobnosti o výstraze."
  ],
  "Unable to get alert: $0": [
   null,
-  ""
+  "Nedaří se získat výstrahu: $0"
  ],
  "Unable to run fix: %0": [
   null,
-  ""
+  "Nedaří se spustit opravu: %0"
  ],
  "Unable to start setroubleshootd": [
   null,
-  ""
+  "Nedaří se spustit setroubleshootd"
  ],
  "Waiting for details...": [
   null,
-  ""
+  "Čeká se na podrobnosti…"
  ],
  "solution details": [
   null,
-  ""
+  "podrobnosti řešení"
  ]
 }));

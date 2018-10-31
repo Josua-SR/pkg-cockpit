@@ -71,39 +71,9 @@ return plural;
   null,
   " (compartido con el SO)"
  ],
- "$0 day": [
-  "$0 days",
-  "$0 día",
-  "$0 días"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 horas",
-  "$0 horas"
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 minuto",
-  "$0 minutos"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 mes",
-  "$0 meses"
- ],
  "$0 shares": [
   null,
   "$0 comparticiones"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 semana",
-  "$0 semanas"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 año",
-  "$0 años"
  ],
  "${hip}:${hport} -> $cport": [
   null,

@@ -97,7 +97,7 @@ return plural;
  ],
  "Authentication": [
   null,
-  ""
+  "인증"
  ],
  "Automatic": [
   null,
@@ -141,7 +141,7 @@ return plural;
  ],
  "Install": [
   null,
-  ""
+  "설치"
  ],
  "Install Software": [
   null,
@@ -153,11 +153,11 @@ return plural;
  ],
  "Join": [
   null,
-  ""
+  "참가"
  ],
  "Join Domain": [
   null,
-  ""
+  "도메인 참가"
  ],
  "Join a Domain": [
   null,
@@ -189,7 +189,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "확인"
  ],
  "On": [
   null,

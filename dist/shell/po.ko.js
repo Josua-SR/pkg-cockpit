@@ -101,7 +101,7 @@ return plural;
  ],
  "Authentication": [
   null,
-  ""
+  "인증"
  ],
  "Authentication Failed": [
   null,
@@ -109,7 +109,7 @@ return plural;
  ],
  "Available": [
   null,
-  ""
+  "사용 가능"
  ],
  "Cancel": [
   null,
@@ -177,19 +177,19 @@ return plural;
  ],
  "Color": [
   null,
-  ""
+  "색"
  ],
  "Comment": [
   null,
-  ""
+  "설명"
  ],
  "Confirm": [
   null,
-  ""
+  "확인"
  ],
  "Connect": [
   null,
-  ""
+  "연결"
  ],
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "Details": [
   null,
-  ""
+  "상세 정보"
  ],
  "Disconnected": [
   null,
@@ -245,7 +245,7 @@ return plural;
  ],
  "Fingerprint": [
   null,
-  ""
+  "지문 "
  ],
  "Host": [
   null,
@@ -285,11 +285,11 @@ return plural;
  ],
  "Log In": [
   null,
-  ""
+  "로그인"
  ],
  "Log Out": [
   null,
-  ""
+  "로그 아웃 "
  ],
  "Log in again": [
   null,
@@ -337,7 +337,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "확인"
  ],
  "Old Password": [
   null,
@@ -373,7 +373,7 @@ return plural;
  ],
  "Port": [
   null,
-  ""
+  "포트"
  ],
  "Privileged": [
   null,
@@ -405,7 +405,7 @@ return plural;
  ],
  "Select": [
   null,
-  ""
+  "선택"
  ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
@@ -413,7 +413,7 @@ return plural;
  ],
  "Synchronize": [
   null,
-  ""
+  "동기화 "
  ],
  "Synchronize users": [
   null,
@@ -465,7 +465,7 @@ return plural;
  ],
  "Troubleshoot": [
   null,
-  ""
+  "문제 해결"
  ],
  "Try to reconnect": [
   null,
@@ -473,7 +473,7 @@ return plural;
  ],
  "Type": [
   null,
-  ""
+  "유형"
  ],
  "Type a password": [
   null,
@@ -493,7 +493,7 @@ return plural;
  ],
  "Update": [
   null,
-  ""
+  "업데이트"
  ],
  "Use the following keys to authenticate against other systems": [
   null,
@@ -501,7 +501,7 @@ return plural;
  ],
  "User name": [
   null,
-  ""
+  "사용자 이름 "
  ],
  "Using available credentials": [
   null,
@@ -521,6 +521,6 @@ return plural;
  ],
  "active": [
   null,
-  ""
+  "active"
  ]
 }));

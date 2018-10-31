@@ -19,21 +19,20 @@
 
 "use strict";
 
+import React from "react";
+
+import cockpit from "cockpit";
+import utils from "./utils.js";
+
 import {
     dialog_open,
     TextInput, PassInput, CheckBox, SelectOne, TextInputChecked, SizeSlider,
     BlockingMessage, TeardownMessage
 } from "./dialog.jsx";
 
-var React = require("react");
-var createReactClass = require('create-react-class');
+import StorageControls from "./storage-controls.jsx";
 
-var cockpit = require("cockpit");
-var utils = require("./utils.js");
-
-var StorageControls = require("./storage-controls.jsx");
-
-var _ = cockpit.gettext;
+const _ = cockpit.gettext;
 
 function parse_options(options) {
     if (options)
@@ -377,11 +376,17 @@ function format_dialog(client, path, start, size, enable_dos_extended) {
     });
 }
 
-var FormatButton = createReactClass({
-    onClick: function () {
+class FormatButton extends React.Component {
+    constructor(props) {
+        super(props);
+        this.onClick = this.onClick.bind(this);
+    }
+
+    onClick() {
         format_dialog(this.props.client, this.props.block.path);
-    },
-    render: function () {
+    }
+
+    render() {
         return (
             <StorageControls.StorageButton onClick={this.onClick}
                                            excuse={this.props.block.ReadOnly ? _("Device is read-only") : null}>
@@ -389,7 +394,7 @@ var FormatButton = createReactClass({
             </StorageControls.StorageButton>
         );
     }
-});
+}
 
 module.exports = {
     parse_options: parse_options,

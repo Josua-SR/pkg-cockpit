@@ -85,7 +85,7 @@ return plural;
  ],
  "Architecture": [
   null,
-  ""
+  "Architektur"
  ],
  "Cancel": [
   null,
@@ -105,15 +105,15 @@ return plural;
  ],
  "Details": [
   null,
-  ""
+  "Details"
  ],
  "Ends": [
   null,
-  ""
+  "Ende"
  ],
  "Installed products": [
   null,
-  ""
+  "Installierte Produkte"
  ],
  "Invalid credentials": [
   null,
@@ -121,11 +121,11 @@ return plural;
  ],
  "Invalid username or password": [
   null,
-  ""
+  "Benutzername oder Passwort ungültig"
  ],
  "Login": [
   null,
-  ""
+  "Login"
  ],
  "Login/password or activation key required to register.": [
   null,
@@ -137,11 +137,11 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "OK"
  ],
  "Organization": [
   null,
-  "Übersetzung"
+  "Organisation"
  ],
  "Password": [
   null,
@@ -149,19 +149,19 @@ return plural;
  ],
  "Product ID": [
   null,
-  ""
+  "Produkt-ID"
  ],
  "Product name": [
   null,
-  ""
+  "Produktname"
  ],
  "Proxy": [
   null,
-  ""
+  "Proxy"
  ],
  "Register": [
   null,
-  ""
+  "Registrieren"
  ],
  "Register system": [
   null,
@@ -193,7 +193,7 @@ return plural;
  ],
  "Subscriptions": [
   null,
-  ""
+  "Subskriptionen"
  ],
  "The current user isn't allowed to access system subscription status.": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "Unregister": [
   null,
-  ""
+  "Abmelden"
  ],
  "Unregistering system...": [
   null,

@@ -101,23 +101,23 @@ return plural;
  ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
-  ""
+  "Tjänsten kdump är inte installerad.  Se till att paketet kexec-tools är installerat."
  ],
  "Kernel Dump": [
   null,
-  ""
+  "Kärndump"
  ],
  "Loading...": [
   null,
-  ""
+  "Läser in …"
  ],
  "Local Filesystem": [
   null,
-  ""
+  "Lokala filsystem"
  ],
  "Location": [
   null,
-  ""
+  "Plats"
  ],
  "More details": [
   null,

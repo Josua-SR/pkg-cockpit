@@ -17,37 +17,40 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-var cockpit = require("cockpit");
-var _ = cockpit.gettext;
+import cockpit from "cockpit";
 
-var React = require("react");
-var createReactClass = require('create-react-class');
+import React from "react";
 
-var cockpitListing = require("cockpit-components-listing.jsx");
-var OnOffSwitch = require("cockpit-components-onoff.jsx").OnOffSwitch;
+import * as cockpitListing from "cockpit-components-listing.jsx";
+import { OnOffSwitch } from "cockpit-components-onoff.jsx";
+
+const _ = cockpit.gettext;
 
 /* Show details for an alert, including possible solutions
  * Props correspond to an item in the setroubleshoot dataStore
  */
-var SELinuxEventDetails = createReactClass({
-    getInitialState: function() {
+class SELinuxEventDetails extends React.Component {
+    constructor(props) {
+        super(props);
         var expanded;
         // all details are collapsed by default
-        if (this.props.details)
-            expanded = this.props.details.pluginAnalysis.map(function() { return false });
+        if (props.details)
+            expanded = props.details.pluginAnalysis.map(function() { return false });
 
-        return {
+        this.state = {
             solutionExpanded: expanded, // show details for solution
         };
-    },
-    handleSolutionDetailsClick: function(itmIdx, e) {
+    }
+
+    handleSolutionDetailsClick(itmIdx, e) {
         var solutionExpanded = this.state.solutionExpanded;
         solutionExpanded[itmIdx] = !solutionExpanded[itmIdx];
         this.setState({ solutionExpanded: solutionExpanded });
         e.stopPropagation();
         e.preventDefault();
-    },
-    runFix: function(itmIdx) {
+    }
+
+    runFix(itmIdx) {
         // make sure the details for the solution are collapsed, or they can hide the progress and result
         var solutionExpanded = this.state.solutionExpanded;
         if (solutionExpanded[itmIdx]) {
@@ -57,8 +60,9 @@ var SELinuxEventDetails = createReactClass({
         var localId = this.props.details.localId;
         var analysisId = this.props.details.pluginAnalysis[itmIdx].analysisId;
         this.props.runFix(localId, analysisId);
-    },
-    render: function() {
+    }
+
+    render() {
         if (!this.props.details) {
             // details should be requested by default, so we just need to wait for them
             var waiting = (this.props.details === undefined);
@@ -152,11 +156,11 @@ var SELinuxEventDetails = createReactClass({
             </div>
         );
     }
-});
+}
 
 /* Show the audit log events for an alert */
-var SELinuxEventLog = createReactClass({
-    render: function() {
+class SELinuxEventLog extends React.Component {
+    render() {
         if (!this.props.details) {
             // details should be requested by default, so we just need to wait for them
             var waiting = (this.props.details === undefined);
@@ -178,7 +182,7 @@ var SELinuxEventLog = createReactClass({
             <div className="setroubleshoot-log">{logEntries}</div>
         );
     }
-});
+}
 
 /* Implements a subset of the PatternFly Empty State pattern
  * https://www.patternfly.org/patterns/empty-state/
@@ -186,8 +190,8 @@ var SELinuxEventLog = createReactClass({
  *   - 'waiting' - display spinner
  *   - 'error'   - display error icon
  */
-var EmptyState = createReactClass({
-    render: function() {
+class EmptyState extends React.Component {
+    render() {
         var description = null;
         if (this.props.description)
             description = <h1>{this.props.description}</h1>;
@@ -216,21 +220,27 @@ var EmptyState = createReactClass({
             </div>
         );
     }
-});
+}
 
 /* Component to show a dismissable error, message as child text
  * dismissError callback function triggered when the close button is pressed
  */
-var DismissableError = createReactClass({
-    handleDismissError: function(e) {
+class DismissableError extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleDismissError = this.handleDismissError.bind(this);
+    }
+
+    handleDismissError(e) {
         // only consider primary mouse button
         if (!e || e.button !== 0)
             return;
         if (this.props.dismissError)
             this.props.dismissError();
         e.stopPropagation();
-    },
-    render: function() {
+    }
+
+    render() {
         return (
             <div className="alert alert-danger alert-dismissable alert-ct-top">
                 <span className="pficon pficon-error-circle-o" />
@@ -241,7 +251,7 @@ var DismissableError = createReactClass({
             </div>
         );
     }
-});
+}
 
 /* Component to show selinux status and offer an option to change it
  * selinuxStatus      status of selinux on the system, properties as defined in selinux-client.js
@@ -249,8 +259,8 @@ var DismissableError = createReactClass({
  * changeSelinuxMode  function to use for changing the selinux enforcing mode
  * dismissError       function to dismiss the error message
  */
-var SELinuxStatus = createReactClass({
-    render: function() {
+class SELinuxStatus extends React.Component {
+    render() {
         var errorMessage;
         if (this.props.selinuxStatusError) {
             errorMessage = (
@@ -293,7 +303,7 @@ var SELinuxStatus = createReactClass({
             </div>
         );
     }
-});
+}
 
 /* The listing only shows if we have a connection to the dbus API
  * Otherwise we have blank slate: trying to connect, error
@@ -312,24 +322,32 @@ var SELinuxStatus = createReactClass({
  * changeSelinuxMode  function to use for changing the selinux enforcing mode
  * dismissStatusError function that is triggered to dismiss the selinux status error
  */
-var SETroubleshootPage = createReactClass({
-    handleDeleteAlert: function(alertId, e) {
+class SETroubleshootPage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleDeleteAlert = this.handleDeleteAlert.bind(this);
+        this.handleDismissError = this.handleDismissError.bind(this);
+    }
+
+    handleDeleteAlert(alertId, e) {
         // only consider primary mouse button
         if (!e || e.button !== 0)
             return;
         if (this.props.deleteAlert)
             this.props.deleteAlert(alertId);
         e.stopPropagation();
-    },
-    handleDismissError: function(e) {
+    }
+
+    handleDismissError(e) {
         // only consider primary mouse button
         if (!e || e.button !== 0)
             return;
         if (this.props.dismissError)
             this.props.dismissError();
         e.stopPropagation();
-    },
-    render: function() {
+    }
+
+    render() {
         // if selinux is disabled, we only show EmptyState
         if (this.props.selinuxStatus.enabled === false) {
             return (
@@ -363,7 +381,7 @@ var SETroubleshootPage = createReactClass({
                 );
             }
         } else {
-            entries = this.props.entries.map(function(itm) {
+            entries = this.props.entries.map(function(itm, index) {
                 itm.runFix = self.props.runFix;
                 var listingDetail;
                 if (itm.details && 'firstSeen' in itm.details) {
@@ -416,10 +434,11 @@ var SETroubleshootPage = createReactClass({
                 }
                 return (
                     <cockpitListing.ListingRow
+                        key={itm.details.localId || index}
                         columns={columns}
                         tabRenderers={tabRenderers}
                         listingDetail={listingDetail}
-                        listingActions={ [dismissAction] } />
+                        listingActions={dismissAction} />
                 );
             });
         }
@@ -459,7 +478,7 @@ var SETroubleshootPage = createReactClass({
             </div>
         );
     }
-});
+}
 
 module.exports = {
     SETroubleshootPage: SETroubleshootPage,

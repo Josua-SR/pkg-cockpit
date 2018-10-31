@@ -82,7 +82,7 @@ return plural;
  ],
  "Audit log": [
   null,
-  ""
+  "Audit-Protokoll"
  ],
  "Connecting to SETroubleshoot daemon...": [
   null,
@@ -114,7 +114,7 @@ return plural;
  ],
  "Not connected": [
   null,
-  ""
+  "Nicht verbunden"
  ],
  "Occurred $0": [
   null,

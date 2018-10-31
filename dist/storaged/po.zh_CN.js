@@ -83,10 +83,6 @@ return plural;
   null,
   "$0 数据 + $1 开销使用 $ 2（$3）"
  ],
- "$0 day": [
-  "$0 days",
-  "$0 天"
- ],
  "$0 disk is missing": [
   "$0 disks are missing",
   "$0 磁盘缺失"
@@ -103,10 +99,6 @@ return plural;
   null,
   "$ 0文件系统不能在这里改变大小。"
  ],
- "$0 hour": [
-  "$0 hours",
-  "$0 小时"
- ],
  "$0 is in active use": [
   null,
   "$0 正处于激活使用中"
@@ -114,14 +106,6 @@ return plural;
  "$0 is not available from any repository.": [
   null,
   "所有仓库都不提供 $0。"
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 分钟"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 月"
  ],
  "$0 of $1": [
   null,
@@ -135,17 +119,9 @@ return plural;
   null,
   "$0 使用 $1（已保存 $2）"
  ],
- "$0 week": [
-  "$0 weeks",
-  "$0 周"
- ],
  "$0 will be installed.": [
   null,
   "将安装 $0。"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 年"
  ],
  "$0, $1 free": [
   null,
@@ -281,7 +257,7 @@ return plural;
  ],
  "Address is not a valid URL": [
   null,
-  ""
+  "该地址无效"
  ],
  "Apply": [
   null,
@@ -1383,6 +1359,26 @@ return plural;
   null,
   "大小"
  ],
+ "Size cannot be negative": [
+  null,
+  "大小不能为负数"
+ ],
+ "Size cannot be zero": [
+  null,
+  "大小不能为零"
+ ],
+ "Size is too large": [
+  null,
+  "大小太大"
+ ],
+ "Size must be a number": [
+  null,
+  "大小必须是一个数字"
+ ],
+ "Size must be at least $0": [
+  null,
+  "大小必须最小为 $0"
+ ],
  "Slot $0": [
   null,
   "插槽 $0"
@@ -1491,15 +1487,15 @@ return plural;
   null,
   "当前登录的用户不允许查看有关密钥的信息。"
  ],
- "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
+ "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
   null,
   "登录会话和系统服务正在使用文件系统。继续进行将停止这些。"
  ],
- "The filesystem is in use by login sessions.                Proceeding will stop these.": [
+ "The filesystem is in use by login sessions. Proceeding will stop these.": [
   null,
   "登录会话正在使用文件系统。继续进行将停止这些。"
  ],
- "The filesystem is in use by system services.                Proceeding will stop these.": [
+ "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
   "系统服务正在使用文件系统。继续进行将停止这些。"
  ],
@@ -1539,17 +1535,17 @@ return plural;
   null,
   "此 VDO 设备不使用其所有后台设备。"
  ],
- "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
+ "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
   null,
-  "该设备有正在使用的文件系统。               继续进行将卸载其上的所有文件系统。"
+  "该设备有正在使用的文件系统。继续进行将卸载其上的所有文件系统。"
  ],
  "This device is currently used for RAID devices.": [
   null,
   "该设备正在被 RAID 设备使用。"
  ],
- "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
+ "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
   null,
-  "该设备正在被 RAID 设备使用。                继续进行将会从 RAID 设备中移除它。"
+  "该设备正在被 RAID 设备使用。                继续进行将从 RAID 设备中移除它。"
  ],
  "This device is currently used for VDO devices.": [
   null,
@@ -1559,9 +1555,9 @@ return plural;
   null,
   "该设备正在被卷组使用。"
  ],
- "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
+ "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
-  "该设备正在被卷组使用。                继续进行将从卷组中移除它。"
+  "该设备正在被卷组使用。继续进行将从卷组中移除它。"
  ],
  "This disk cannot be removed while the device is recovering.": [
   null,

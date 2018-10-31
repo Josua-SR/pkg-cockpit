@@ -71,36 +71,12 @@ return plural;
   null,
   ""
  ],
- "$0 day": [
-  "$0 days",
-  ""
- ],
- "$0 hour": [
-  "$0 hours",
-  ""
- ],
  "$0 is not available from any repository.": [
   null,
   ""
  ],
- "$0 minute": [
-  "$0 minutes",
-  ""
- ],
- "$0 month": [
-  "$0 months",
-  ""
- ],
- "$0 week": [
-  "$0 weeks",
-  ""
- ],
  "$0 will be installed.": [
   null,
-  ""
- ],
- "$0 year": [
-  "$0 years",
   ""
  ],
  "1 Minute": [
@@ -297,7 +273,7 @@ return plural;
  ],
  "After": [
   null,
-  ""
+  "뒤에"
  ],
  "After system boot": [
   null,
@@ -313,7 +289,7 @@ return plural;
  ],
  "Asset Tag": [
   null,
-  ""
+  "자산 태그"
  ],
  "At specific time": [
   null,
@@ -329,7 +305,7 @@ return plural;
  ],
  "BIOS": [
   null,
-  ""
+  "BIOS"
  ],
  "BIOS date": [
   null,
@@ -341,7 +317,7 @@ return plural;
  ],
  "Before": [
   null,
-  ""
+  "앞에"
  ],
  "Binds To": [
   null,
@@ -385,7 +361,7 @@ return plural;
  ],
  "Change": [
   null,
-  ""
+  "바꾸기"
  ],
  "Change Host Name": [
   null,
@@ -405,7 +381,7 @@ return plural;
  ],
  "Class": [
   null,
-  ""
+  "클래스 "
  ],
  "Click to see system hardware information": [
   null,
@@ -437,7 +413,7 @@ return plural;
  ],
  "Conflicts": [
   null,
-  ""
+  "충돌"
  ],
  "Consists Of": [
   null,
@@ -473,11 +449,11 @@ return plural;
  ],
  "Description": [
   null,
-  ""
+  "설명"
  ],
  "Desktop": [
   null,
-  ""
+  "데스크탑"
  ],
  "Detachable": [
   null,
@@ -485,7 +461,7 @@ return plural;
  ],
  "Disable": [
   null,
-  ""
+  "비활성화"
  ],
  "Disabled": [
   null,
@@ -493,7 +469,7 @@ return plural;
  ],
  "Disk I/O": [
   null,
-  ""
+  "디스크 I/O"
  ],
  "Docking Station": [
   null,
@@ -501,7 +477,7 @@ return plural;
  ],
  "Domain": [
   null,
-  ""
+  "도메인 "
  ],
  "Don't Repeat": [
   null,
@@ -517,7 +493,7 @@ return plural;
  ],
  "Enable": [
   null,
-  ""
+  "사용"
  ],
  "Enable Forcefully": [
   null,
@@ -529,7 +505,7 @@ return plural;
  ],
  "Enabled": [
   null,
-  ""
+  "사용"
  ],
  "Enhancement Updates Available": [
   null,
@@ -537,11 +513,11 @@ return plural;
  ],
  "Entry": [
   null,
-  ""
+  "항목"
  ],
  "Error": [
   null,
-  ""
+  "오류"
  ],
  "Error and above": [
   null,
@@ -555,13 +531,9 @@ return plural;
   null,
   ""
  ],
- "Free": [
-  null,
-  ""
- ],
  "Friday": [
   null,
-  ""
+  "금요일"
  ],
  "General": [
   null,
@@ -581,7 +553,7 @@ return plural;
  ],
  "Hardware": [
   null,
-  ""
+  "하드웨어"
  ],
  "Hardware Information": [
   null,
@@ -589,7 +561,7 @@ return plural;
  ],
  "Host Name": [
   null,
-  ""
+  "호스트명"
  ],
  "Hour : Minute": [
   null,
@@ -601,7 +573,7 @@ return plural;
  ],
  "Hours": [
   null,
-  ""
+  "시"
  ],
  "I/O Wait": [
   null,
@@ -609,7 +581,7 @@ return plural;
  ],
  "Id": [
   null,
-  ""
+  "ID "
  ],
  "Info and above": [
   null,
@@ -617,7 +589,7 @@ return plural;
  ],
  "Install": [
   null,
-  ""
+  "설치"
  ],
  "Install Software": [
   null,
@@ -677,7 +649,7 @@ return plural;
  ],
  "Kernel": [
   null,
-  ""
+  "커널 "
  ],
  "Laptop": [
   null,
@@ -701,7 +673,7 @@ return plural;
  ],
  "Loading...": [
   null,
-  ""
+  "로딩..."
  ],
  "Log messages": [
   null,
@@ -709,7 +681,7 @@ return plural;
  ],
  "Logs": [
   null,
-  ""
+  "로그 "
  ],
  "Low Profile Desktop": [
   null,
@@ -737,7 +709,7 @@ return plural;
  ],
  "Mask": [
   null,
-  ""
+  "마스크 "
  ],
  "Mask Forcefully": [
   null,
@@ -746,6 +718,10 @@ return plural;
  "Memory": [
   null,
   "메모리"
+ ],
+ "Memory & Swap": [
+  null,
+  ""
  ],
  "Message to logged in users": [
   null,
@@ -765,15 +741,15 @@ return plural;
  ],
  "Minutes": [
   null,
-  ""
+  "분"
  ],
  "Model": [
   null,
-  ""
+  "모델 "
  ],
  "Monday": [
   null,
-  ""
+  "월요일"
  ],
  "Multi-system Chassis": [
   null,
@@ -801,7 +777,7 @@ return plural;
  ],
  "Nice": [
   null,
-  ""
+  "Nice"
  ],
  "No Delay": [
   null,
@@ -821,7 +797,7 @@ return plural;
  ],
  "Note": [
   null,
-  ""
+  "알림"
  ],
  "Notebook": [
   null,
@@ -837,7 +813,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "확인"
  ],
  "On": [
   null,
@@ -857,15 +833,15 @@ return plural;
  ],
  "Operating System": [
   null,
-  ""
+  "운영 체제"
  ],
  "Other": [
   null,
-  ""
+  "기타"
  ],
  "PCI": [
   null,
-  ""
+  "PCI"
  ],
  "PackageKit crashed": [
   null,
@@ -877,7 +853,7 @@ return plural;
  ],
  "Paths": [
   null,
-  ""
+  "경로 "
  ],
  "Performance Profile": [
   null,
@@ -945,15 +921,15 @@ return plural;
  ],
  "Reboot": [
   null,
-  ""
+  "다시 시작"
  ],
  "Recent": [
   null,
-  ""
+  "최근"
  ],
  "Reload": [
   null,
-  ""
+  "다시읽기"
  ],
  "Reload Propagated From": [
   null,
@@ -989,7 +965,7 @@ return plural;
  ],
  "Report": [
   null,
-  ""
+  "보고  "
  ],
  "Reported": [
   null,
@@ -1009,7 +985,7 @@ return plural;
  ],
  "Requires": [
   null,
-  ""
+  "요구 사항 "
  ],
  "Requisite": [
   null,
@@ -1021,15 +997,15 @@ return plural;
  ],
  "Reset": [
   null,
-  ""
+  "초기화"
  ],
  "Restart": [
   null,
-  ""
+  "재시작"
  ],
  "Run": [
   null,
-  ""
+  "실행"
  ],
  "Saturday": [
   null,
@@ -1037,7 +1013,7 @@ return plural;
  ],
  "Save": [
   null,
-  ""
+  "저장"
  ],
  "Sealed-case PC": [
   null,
@@ -1065,7 +1041,7 @@ return plural;
  ],
  "Services": [
   null,
-  ""
+  "서비스"
  ],
  "Set Host name": [
   null,
@@ -1077,7 +1053,7 @@ return plural;
  ],
  "Severity": [
   null,
-  ""
+  "심각도"
  ],
  "Show fingerprints": [
   null,
@@ -1085,7 +1061,7 @@ return plural;
  ],
  "Shut Down": [
   null,
-  ""
+  "종료"
  ],
  "Since $0": [
   null,
@@ -1097,7 +1073,7 @@ return plural;
  ],
  "Sockets": [
   null,
-  ""
+  "소켓 "
  ],
  "Space-saving Computer": [
   null,
@@ -1109,15 +1085,15 @@ return plural;
  ],
  "Start": [
   null,
-  ""
+  "시작"
  ],
  "State": [
   null,
-  ""
+  "상태"
  ],
  "Static": [
   null,
-  ""
+  "정적"
  ],
  "Stick PC": [
   null,
@@ -1141,7 +1117,7 @@ return plural;
  ],
  "Sunday": [
   null,
-  ""
+  "일요일"
  ],
  "Swap Used": [
   null,
@@ -1157,11 +1133,11 @@ return plural;
  ],
  "System": [
   null,
-  ""
+  "시스템 "
  ],
  "System Information": [
   null,
-  ""
+  "시스템 정보 "
  ],
  "System Not Registered": [
   null,
@@ -1181,7 +1157,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "타블렛"
  ],
  "Targets": [
   null,
@@ -1189,7 +1165,7 @@ return plural;
  ],
  "Terminal": [
   null,
-  ""
+  "터미널"
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,
@@ -1233,11 +1209,11 @@ return plural;
  ],
  "Thursday": [
   null,
-  ""
+  "목요일"
  ],
  "Time Zone": [
   null,
-  ""
+  "시간대"
  ],
  "Timers": [
   null,
@@ -1265,11 +1241,11 @@ return plural;
  ],
  "Tuesday": [
   null,
-  ""
+  "화요일"
  ],
  "Type": [
   null,
-  ""
+  "유형"
  ],
  "Unknown": [
   null,
@@ -1281,7 +1257,7 @@ return plural;
  ],
  "Updates Available": [
   null,
-  ""
+  "사용 가능한 업데이트 "
  ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",
@@ -1289,15 +1265,15 @@ return plural;
  ],
  "Used": [
   null,
-  ""
+  "사용 중"
  ],
  "User": [
   null,
-  ""
+  "사용자"
  ],
  "Vendor": [
   null,
-  ""
+  "벤더"
  ],
  "Version": [
   null,
@@ -1321,7 +1297,7 @@ return plural;
  ],
  "Wednesday": [
   null,
-  ""
+  "수요일"
  ],
  "Weeks": [
   null,
@@ -1357,6 +1333,6 @@ return plural;
  ],
  "page-title\u0004Memory": [
   null,
-  ""
+  "메모리"
  ]
 }));

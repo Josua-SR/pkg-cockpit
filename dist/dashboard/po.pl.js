@@ -67,42 +67,6 @@ return plural;
   "language": "pl",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 day": [
-  "$0 days",
-  "$0 dzień",
-  "$0 dni",
-  "$0 dni"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 godzina",
-  "$0 godziny",
-  "$0 godzin"
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 minuta",
-  "$0 minuty",
-  "$0 minut"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 miesiąc",
-  "$0 miesiące",
-  "$0 miesięcy"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 tydzień",
-  "$0 tygodnie",
-  "$0 tygodni"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 rok",
-  "$0 lata",
-  "$0 lat"
- ],
  "1 day": [
   null,
   "1 dzień"

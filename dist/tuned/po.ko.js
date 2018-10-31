@@ -105,11 +105,11 @@ return plural;
  ],
  "None": [
   null,
-  ""
+  "없음"
  ],
  "Ok": [
   null,
-  ""
+  "확인"
  ],
  "The user <b>$0</b> is not permitted to change profiles": [
   null,

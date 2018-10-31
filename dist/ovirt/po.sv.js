@@ -87,6 +87,10 @@ return plural;
   null,
   "Lägg till disk"
  ],
+ "Address": [
+  null,
+  "Adress"
+ ],
  "Address:": [
   null,
   "Adress:"
@@ -159,6 +163,10 @@ return plural;
   null,
   "Kapacitet"
  ],
+ "Changes will apply on VM shutdown": [
+  null,
+  "Ändringar kommer gälla när VM:en stängs av"
+ ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
   "Att klicka ”Starta fjärrvisare” kommer hämta en .vv-fil och starta $0"
@@ -205,7 +213,7 @@ return plural;
  ],
  "Connecting": [
   null,
-  ""
+  "Ansluter"
  ],
  "Connection": [
   null,
@@ -241,7 +249,7 @@ return plural;
  ],
  "Ctrl+Alt+Del": [
   null,
-  ""
+  "Ctrl+Alt+Del"
  ],
  "Delete": [
   null,
@@ -289,83 +297,87 @@ return plural;
  ],
  "Download the MSI from $0": [
   null,
-  ""
+  "Hämta MSI:n från $0"
+ ],
+ "Edit": [
+  null,
+  "Redigera"
  ],
  "Edit the vdsm.conf": [
   null,
-  ""
+  "Redigera vdsm.conf"
  ],
  "Emulated Machine:": [
   null,
-  ""
+  "Emulerad maskin:"
  ],
  "Enter New VM name": [
   null,
-  ""
+  "Ange nytt VM-namn"
  ],
  "FQDN": [
   null,
-  ""
+  "FQDN"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
-  ""
+  "Färre än det maximala antalet virtuella CPU:er skall vara aktiverade."
  ],
  "File": [
   null,
-  ""
+  "Arkiv"
  ],
  "Force Restart": [
   null,
-  ""
+  "Framtvinga omstart"
  ],
  "Force Shut Down": [
   null,
-  ""
+  "Framtvinga avstängning"
  ],
  "Format": [
   null,
-  ""
+  "Formater"
  ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
-  ""
+  "Åtgärden GET HYPERVISOR MAX VCPU misslyckades"
  ],
  "GiB": [
   null,
-  ""
+  "GiB"
  ],
  "Graphics Console (VNC)": [
   null,
-  ""
+  "Grafisk konsol (VNC)"
  ],
  "Graphics Console in Desktop Viewer": [
   null,
-  ""
+  "Grafisk konsol i skrivbordsvisare"
  ],
  "HA": [
   null,
-  ""
+  "HA"
  ],
  "HA:": [
   null,
-  ""
+  "HA:"
  ],
  "Host": [
   null,
-  ""
+  "Värd"
  ],
  "Host to Maintenance": [
   null,
-  ""
+  "Värd till underhåll"
  ],
  "INSTALL VM action failed": [
   null,
-  ""
+  "Åtgärden INSTALL VM misslyckades"
  ],
  "Install": [
   null,
-  ""
+  "Installera"
  ],
  "Launch Remote Viewer": [
   null,
@@ -373,19 +385,27 @@ return plural;
  ],
  "Loading ...": [
   null,
-  ""
+  "Läser in …"
  ],
  "Loading data ...": [
   null,
-  ""
+  "Läser in data …"
+ ],
+ "MAC Address": [
+  null,
+  "MAC-adress"
  ],
  "MIGRATE action failed": [
   null,
-  ""
+  "Åtgärden MIGRATE misslyckades"
+ ],
+ "Mac Address": [
+  null,
+  "Mac-adress"
  ],
  "Manual Connection": [
   null,
-  ""
+  "Manuell anslutning"
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
@@ -407,11 +427,27 @@ return plural;
   null,
   ""
  ],
+ "Model": [
+  null,
+  ""
+ ],
+ "Model type": [
+  null,
+  ""
+ ],
  "More Information": [
   null,
   ""
  ],
  "Name": [
+  null,
+  ""
+ ],
+ "Network Type": [
+  null,
+  ""
+ ],
+ "Network settings failed to change with following error: ": [
   null,
   ""
  ],
@@ -443,7 +479,15 @@ return plural;
   null,
   ""
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  ""
+ ],
  "No oVirt connection": [
+  null,
+  ""
+ ],
+ "No virtual networks": [
   null,
   ""
  ],
@@ -511,6 +555,10 @@ return plural;
   null,
   ""
  ],
+ "Plug": [
+  null,
+  ""
+ ],
  "Pool": [
   null,
   ""
@@ -529,7 +577,7 @@ return plural;
  ],
  "Protocol": [
   null,
-  ""
+  "Protokoll"
  ],
  "REBOOT action failed": [
   null,
@@ -739,7 +787,15 @@ return plural;
   null,
   ""
  ],
- "Threads per cores": [
+ "Threads per core": [
+  null,
+  ""
+ ],
+ "Type": [
+  null,
+  ""
+ ],
+ "Unplug": [
   null,
   ""
  ],

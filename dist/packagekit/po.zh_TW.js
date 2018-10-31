@@ -1,0 +1,422 @@
+(function (root, data) {
+    var loaded, module;
+
+    /* Load into AMD if desired */
+    if (typeof define === 'function' && define.amd) {
+        define(data);
+        loaded = true;
+    }
+
+    /* Load into Cockpit locale */
+    if (typeof cockpit === 'object') {
+        cockpit.locale(data)
+        loaded = true;
+    }
+
+    function transformAngular(data, prev) {
+        var key, context, parts, value, result = { };
+        for (key in data) {
+            if (key === "")
+                continue;
+            parts = key.split("\u0004");
+            value = data[key];
+            if (parts[1]) {
+                context = parts[0];
+                key = parts[1];
+            } else {
+                context = "$$noContext";
+                key = parts[0];
+            }
+            if (value[0] === null)
+                value = value[1];
+            else
+                value = value.slice(1);
+            if (!(key in result))
+                result[key] = { };
+            result[key][context] = value;
+        }
+        return angular.extend(prev, result);
+    }
+
+    /* Load into angular here */
+    if (typeof angular === 'object') {
+        try {
+            module = angular.module(["gettext"]);
+        } catch(ex) { console.log(ex); /* Either no angular or angular-gettext */ };
+        if (module) {
+            loaded = true;
+            module.run(['gettextCatalog', function(gettextCatalog) {
+                var lang = data[""]["language"];
+                var prev = (gettextCatalog.getCurrentLanguage() == lang) ? gettextCatalog.strings : { };
+                gettextCatalog.setStrings(lang, transformAngular(data, prev));
+                gettextCatalog.setCurrentLanguage(lang);
+            }]);
+        }
+    }
+
+    if (!loaded)
+        root.po = data;
+
+/* The syntax of this line is important  by po2json */
+}(this, {
+ "": {'plural-forms':function(n) {
+var nplurals, plural;
+nplurals=1; plural=0;
+return plural;
+},
+  "language": "zh_TW",
+  "x-generator": "Zanata 4.6.2"
+ },
+ "$0 is not available from any repository.": [
+  null,
+  ""
+ ],
+ "$0 update": [
+  "$0 updates",
+  ""
+ ],
+ "$0 will be installed.": [
+  null,
+  ""
+ ],
+ "$1 security fix": [
+  "$1 security fixes",
+  ""
+ ],
+ ", including $1 security fix": [
+  ", including $1 security fixes",
+  ""
+ ],
+ "Additional packages:": [
+  null,
+  ""
+ ],
+ "Apply all updates": [
+  null,
+  ""
+ ],
+ "Apply security updates": [
+  null,
+  ""
+ ],
+ "Applying updates": [
+  null,
+  ""
+ ],
+ "Applying updates failed": [
+  null,
+  ""
+ ],
+ "Automatic Updates": [
+  null,
+  ""
+ ],
+ "Available Updates": [
+  null,
+  ""
+ ],
+ "Bugs:": [
+  null,
+  "Bug："
+ ],
+ "Cancel": [
+  null,
+  "取消"
+ ],
+ "Check for Updates": [
+  null,
+  ""
+ ],
+ "Checking installed software": [
+  null,
+  ""
+ ],
+ "Details": [
+  null,
+  "詳情"
+ ],
+ "Downloaded": [
+  null,
+  ""
+ ],
+ "Downloading": [
+  null,
+  "下載中"
+ ],
+ "Downloading $0": [
+  null,
+  ""
+ ],
+ "Errata:": [
+  null,
+  "勘誤："
+ ],
+ "Ignore": [
+  null,
+  "忽略"
+ ],
+ "Initializing...": [
+  null,
+  ""
+ ],
+ "Install": [
+  null,
+  "安裝"
+ ],
+ "Install All Updates": [
+  null,
+  ""
+ ],
+ "Install Security Updates": [
+  null,
+  ""
+ ],
+ "Install Software": [
+  null,
+  ""
+ ],
+ "Installed": [
+  null,
+  "已安裝"
+ ],
+ "Installing": [
+  null,
+  "安裝"
+ ],
+ "Installing $0": [
+  null,
+  ""
+ ],
+ "Last checked: $0 ago": [
+  null,
+  ""
+ ],
+ "Loading available updates failed": [
+  null,
+  ""
+ ],
+ "Loading available updates, please wait...": [
+  null,
+  ""
+ ],
+ "Name": [
+  null,
+  "名稱"
+ ],
+ "No updates pending": [
+  null,
+  ""
+ ],
+ "Off": [
+  null,
+  "關閉"
+ ],
+ "Ok": [
+  null,
+  "確定"
+ ],
+ "On": [
+  null,
+  "開"
+ ],
+ "Package information": [
+  null,
+  ""
+ ],
+ "PackageKit crashed": [
+  null,
+  ""
+ ],
+ "PackageKit is not installed": [
+  null,
+  ""
+ ],
+ "PackageKit reported error code $0": [
+  null,
+  ""
+ ],
+ "Refreshing package information": [
+  null,
+  ""
+ ],
+ "Register…": [
+  null,
+  ""
+ ],
+ "Removals:": [
+  null,
+  ""
+ ],
+ "Removing $0": [
+  null,
+  ""
+ ],
+ "Restart Now": [
+  null,
+  ""
+ ],
+ "Restart Recommended": [
+  null,
+  ""
+ ],
+ "Restarting": [
+  null,
+  ""
+ ],
+ "Set up": [
+  null,
+  ""
+ ],
+ "Setting up": [
+  null,
+  ""
+ ],
+ "Severity": [
+  null,
+  "嚴重性"
+ ],
+ "Severity:": [
+  null,
+  ""
+ ],
+ "Software Updates": [
+  null,
+  ""
+ ],
+ "Some other program is currently using the package manager, please wait...": [
+  null,
+  ""
+ ],
+ "System is up to date": [
+  null,
+  "系統已更新至最新狀態"
+ ],
+ "The following packages were recently updated:": [
+  null,
+  ""
+ ],
+ "The following packages were updated $0:": [
+  null,
+  ""
+ ],
+ "This system is not registered": [
+  null,
+  ""
+ ],
+ "This web console will be updated.": [
+  null,
+  ""
+ ],
+ "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
+  null,
+  ""
+ ],
+ "Total size: $0": [
+  null,
+  ""
+ ],
+ "Unregistered System": [
+  null,
+  "未註冊的系統"
+ ],
+ "Update History": [
+  null,
+  ""
+ ],
+ "Update Log": [
+  null,
+  ""
+ ],
+ "Updated": [
+  null,
+  "已更新"
+ ],
+ "Updated packages may require a restart to take effect.": [
+  null,
+  ""
+ ],
+ "Updates are disabled.": [
+  null,
+  ""
+ ],
+ "Updating": [
+  null,
+  ""
+ ],
+ "Verified": [
+  null,
+  ""
+ ],
+ "Verifying": [
+  null,
+  ""
+ ],
+ "Version": [
+  null,
+  "版本"
+ ],
+ "View Registration Details": [
+  null,
+  ""
+ ],
+ "Waiting for other software management operations to finish": [
+  null,
+  ""
+ ],
+ "You need to re-subscribe this system.": [
+  null,
+  ""
+ ],
+ "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
+  null,
+  ""
+ ],
+ "Your server will close the connection soon. You can reconnect after it has restarted.": [
+  null,
+  ""
+ ],
+ "and restart the machine automatically.": [
+  null,
+  ""
+ ],
+ "at": [
+  null,
+  "於"
+ ],
+ "every day": [
+  null,
+  ""
+ ],
+ "on Fridays": [
+  null,
+  ""
+ ],
+ "on Mondays": [
+  null,
+  ""
+ ],
+ "on Saturdays": [
+  null,
+  ""
+ ],
+ "on Sundays": [
+  null,
+  ""
+ ],
+ "on Thursdays": [
+  null,
+  ""
+ ],
+ "on Tuesdays": [
+  null,
+  ""
+ ],
+ "on Wednesdays": [
+  null,
+  ""
+ ],
+ "undefined": [
+  null,
+  ""
+ ]
+}));

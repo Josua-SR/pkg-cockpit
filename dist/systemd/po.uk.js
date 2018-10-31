@@ -71,49 +71,13 @@ return plural;
   null,
   "Шаблон $0"
  ],
- "$0 day": [
-  "$0 days",
-  "$0 день",
-  "$0 дні",
-  "$0 днів"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 година",
-  "$0 години",
-  "$0 годин"
- ],
  "$0 is not available from any repository.": [
   null,
   "$0 немає у жодному зі сховищ."
  ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 хвилина",
-  "$0 хвилини",
-  "$0 хвилин"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 місяць",
-  "$0 місяці",
-  "$0 місяців"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 тиждень",
-  "$0 тижні",
-  "$0 тижнів"
- ],
  "$0 will be installed.": [
   null,
   "Буде встановлено $0."
- ],
- "$0 year": [
-  "$0 years",
-  "$0 рік",
-  "$0 роки",
-  "$0 років"
  ],
  "1 Minute": [
   null,
@@ -567,10 +531,6 @@ return plural;
   null,
   "Апаратний блок розширення"
  ],
- "Free": [
-  null,
-  "Вільно"
- ],
  "Friday": [
   null,
   "п'ятниця"
@@ -758,6 +718,10 @@ return plural;
  "Memory": [
   null,
   "Пам'ять"
+ ],
+ "Memory & Swap": [
+  null,
+  "Пам'ять і резерв"
  ],
  "Message to logged in users": [
   null,

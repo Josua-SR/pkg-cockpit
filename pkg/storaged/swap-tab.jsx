@@ -19,31 +19,35 @@
 
 "use strict";
 
-var React = require("react");
-var createReactClass = require('create-react-class');
-var cockpit = require("cockpit");
-var utils = require("./utils.js");
-var $ = require("jquery");
+import React from "react";
+import cockpit from "cockpit";
+import utils from "./utils.js";
+import $ from "jquery";
 
-var StorageControls = require("./storage-controls.jsx");
-var FormatDialog = require("./format-dialog.jsx");
+import { StorageButton } from "./storage-controls.jsx";
+import { FormatButton } from "./format-dialog.jsx";
 
-var StorageButton = StorageControls.StorageButton;
-var FormatButton = FormatDialog.FormatButton;
+const _ = cockpit.gettext;
 
-var _ = cockpit.gettext;
+class SwapTab extends React.Component {
+    constructor(props) {
+        super(props);
+        this.onSamplesChanged = this.onSamplesChanged.bind(this);
+    }
 
-var SwapTab = createReactClass({
-    onSamplesChanged: function () {
+    onSamplesChanged() {
         this.setState({});
-    },
-    componentDidMount: function () {
+    }
+
+    componentDidMount() {
         $(this.props.client.swap_sizes).on("changed", this.onSamplesChanged);
-    },
-    componentWillUnmount: function () {
+    }
+
+    componentWillUnmount() {
         $(this.props.client.swap_sizes).off("changed", this.onSamplesChanged);
-    },
-    render: function () {
+    }
+
+    render() {
         var self = this;
         var block_swap = self.props.client.blocks_swap[self.props.block.path];
         var is_active = block_swap && block_swap.Active;
@@ -86,8 +90,8 @@ var SwapTab = createReactClass({
                 </table>
             </div>
         );
-    },
-});
+    }
+}
 
 module.exports = {
     SwapTab: SwapTab

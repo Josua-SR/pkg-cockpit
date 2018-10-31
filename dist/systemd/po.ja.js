@@ -71,37 +71,13 @@ return plural;
   null,
   "$0 テンプレート"
  ],
- "$0 day": [
-  "$0 days",
-  "$0 日"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 時間"
- ],
  "$0 is not available from any repository.": [
   null,
   "$0 は、あらゆるリポジトリーから利用できません。"
  ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 分"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 ヶ月"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 週"
- ],
  "$0 will be installed.": [
   null,
   "$0 がインストールされます。"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 年"
  ],
  "1 Minute": [
   null,
@@ -555,10 +531,6 @@ return plural;
   null,
   "拡張シャーシ"
  ],
- "Free": [
-  null,
-  "空き"
- ],
  "Friday": [
   null,
   "金曜日"
@@ -746,6 +718,10 @@ return plural;
  "Memory": [
   null,
   "メモリ"
+ ],
+ "Memory & Swap": [
+  null,
+  ""
  ],
  "Message to logged in users": [
   null,

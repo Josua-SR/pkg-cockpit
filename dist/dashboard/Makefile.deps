@@ -1,5 +1,5 @@
 # Generated Makefile data for dashboard
-# Stamp: Fri Oct 12 2018 10:12:42 GMT+0000 (UTC)
+# Stamp: Wed Oct 31 2018 13:25:51 GMT+0000 (UTC)
 
 dashboard_INPUTS = \
 	node_modules/jquery-flot/LICENSE.txt \
@@ -32,7 +32,7 @@ dashboard_INPUTS = \
 	pkg/lib/machines.js \
 	pkg/lib/mustache.js \
 	pkg/lib/patterns.js \
-	pkg/lib/plot.js \
+	pkg/lib/plot.es6 \
 	$(NULL)
 
 dashboard_OUTPUTS = \
@@ -58,7 +58,7 @@ dashboard_TESTS = \
 
 dist/dashboard/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/jquery-flot/jquery.flot.js -N node_modules/jquery-flot/jquery.flot.selection.js -N node_modules/jquery-flot/jquery.flot.time.js -N node_modules/mustache/mustache.js -N pkg/dashboard/image-editor.js -N pkg/dashboard/index.html -N pkg/dashboard/list.js -N pkg/lib/credentials-ssh-private-keys.sh -N pkg/lib/credentials-ssh-remove-key.sh -N pkg/lib/credentials.js -N pkg/lib/machine-add.html -N pkg/lib/machine-auth-failed.html -N pkg/lib/machine-change-auth.html -N pkg/lib/machine-change-port.html -N pkg/lib/machine-color-picker.html -N pkg/lib/machine-dialogs.js -N pkg/lib/machine-info.es6 -N pkg/lib/machine-invalid-hostkey.html -N pkg/lib/machine-not-supported.html -N pkg/lib/machine-sync-users.html -N pkg/lib/machine-unknown-hostkey.html -N pkg/lib/machines.js -N pkg/lib/mustache.js -N pkg/lib/patterns.js -N pkg/lib/plot.js $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/jquery-flot/jquery.flot.js -N node_modules/jquery-flot/jquery.flot.selection.js -N node_modules/jquery-flot/jquery.flot.time.js -N node_modules/mustache/mustache.js -N pkg/dashboard/image-editor.js -N pkg/dashboard/index.html -N pkg/dashboard/list.js -N pkg/lib/credentials-ssh-private-keys.sh -N pkg/lib/credentials-ssh-remove-key.sh -N pkg/lib/credentials.js -N pkg/lib/machine-add.html -N pkg/lib/machine-auth-failed.html -N pkg/lib/machine-change-auth.html -N pkg/lib/machine-change-port.html -N pkg/lib/machine-color-picker.html -N pkg/lib/machine-dialogs.js -N pkg/lib/machine-info.es6 -N pkg/lib/machine-invalid-hostkey.html -N pkg/lib/machine-not-supported.html -N pkg/lib/machine-sync-users.html -N pkg/lib/machine-unknown-hostkey.html -N pkg/lib/machines.js -N pkg/lib/mustache.js -N pkg/lib/patterns.js -N pkg/lib/plot.es6 $< > $@.tmp && mv $@.tmp $@
 
 dist/dashboard/stamp: $(dashboard_INPUTS)
 
@@ -128,7 +128,7 @@ pkg/lib/mustache.js:
 
 pkg/lib/patterns.js:
 
-pkg/lib/plot.js:
+pkg/lib/plot.es6:
 
 WEBPACK_INPUTS += $(dashboard_INPUTS)
 WEBPACK_OUTPUTS += $(dashboard_OUTPUTS)

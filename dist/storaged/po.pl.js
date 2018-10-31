@@ -83,12 +83,6 @@ return plural;
   null,
   "$0 danych + $1 nadwyżki użyto z $2 ($3)"
  ],
- "$0 day": [
-  "$0 days",
-  "$0 dzień",
-  "$0 dni",
-  "$0 dni"
- ],
  "$0 disk is missing": [
   "$0 disks are missing",
   "Brak $0 dysku",
@@ -107,12 +101,6 @@ return plural;
   null,
   "Nie można tutaj zmieniać rozmiaru systemów plików $0."
  ],
- "$0 hour": [
-  "$0 hours",
-  "$0 godzina",
-  "$0 godziny",
-  "$0 godzin"
- ],
  "$0 is in active use": [
   null,
   "$0 jest obecnie używane"
@@ -120,18 +108,6 @@ return plural;
  "$0 is not available from any repository.": [
   null,
   "$0 nie jest dostępne w żadnym repozytorium."
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 minuta",
-  "$0 minuty",
-  "$0 minut"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 miesiąc",
-  "$0 miesiące",
-  "$0 miesięcy"
  ],
  "$0 of $1": [
   null,
@@ -145,21 +121,9 @@ return plural;
   null,
   "$0 używanych z $1 ($2 zapisano)"
  ],
- "$0 week": [
-  "$0 weeks",
-  "$0 tydzień",
-  "$0 tygodnie",
-  "$0 tygodni"
- ],
  "$0 will be installed.": [
   null,
   "$0 zostanie zainstalowane."
- ],
- "$0 year": [
-  "$0 years",
-  "$0 rok",
-  "$0 lata",
-  "$0 lat"
  ],
  "$0, $1 free": [
   null,
@@ -1397,6 +1361,26 @@ return plural;
   null,
   "Rozmiar"
  ],
+ "Size cannot be negative": [
+  null,
+  "Rozmiar nie może być ujemny"
+ ],
+ "Size cannot be zero": [
+  null,
+  "Rozmiar nie może wynosić zero"
+ ],
+ "Size is too large": [
+  null,
+  "Rozmiar jest za duży"
+ ],
+ "Size must be a number": [
+  null,
+  "Rozmiar musi być liczbą"
+ ],
+ "Size must be at least $0": [
+  null,
+  "Rozmiar musi wynosić co najmniej $0"
+ ],
  "Slot $0": [
   null,
   "Gniazdo $0"
@@ -1505,17 +1489,17 @@ return plural;
   null,
   "Obecnie zalogowany użytkownik nie ma zezwolenia na wyświetlanie informacji o kluczach."
  ],
- "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
+ "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
   null,
-  "System plików jest używany przez sesje logowania i usługi systemowe.                Kontynuacja je zatrzyma."
+  "System plików jest używany przez sesje logowania i usługi systemowe. Kontynuacja je zatrzyma."
  ],
- "The filesystem is in use by login sessions.                Proceeding will stop these.": [
+ "The filesystem is in use by login sessions. Proceeding will stop these.": [
   null,
-  "System plików jest używany przez sesje logowania.                Kontynuacja je zatrzyma."
+  "System plików jest używany przez sesje logowania. Kontynuacja je zatrzyma."
  ],
- "The filesystem is in use by system services.                Proceeding will stop these.": [
+ "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
-  "System plików jest używany przez usługi systemowe.                Kontynuacja je zatrzyma."
+  "System plików jest używany przez usługi systemowe. Kontynuacja je zatrzyma."
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
@@ -1553,17 +1537,17 @@ return plural;
   null,
   "To urządzenie VDO nie używa całości swojego urządzenia podstawowego."
  ],
- "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
+ "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
   null,
-  "To urządzenie ma obecnie używane systemy plików.                Kontynuacja odmontuje wszystkie jego systemy plików."
+  "To urządzenie ma obecnie używane systemy plików. Kontynuacja odmontuje wszystkie jego systemy plików."
  ],
  "This device is currently used for RAID devices.": [
   null,
   "To urządzenie jest obecnie używane dla urządzeń RAID."
  ],
- "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
+ "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
   null,
-  "To urządzenie jest obecnie używane dla urządzeń RAID.                Kontynuacja usunie je z jego urządzeń RAID."
+  "To urządzenie jest obecnie używane dla urządzeń RAID. Kontynuacja usunie je z jego urządzeń RAID."
  ],
  "This device is currently used for VDO devices.": [
   null,
@@ -1573,9 +1557,9 @@ return plural;
   null,
   "To urządzenie jest obecnie używane dla grup woluminów."
  ],
- "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
+ "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
-  "To urządzenie jest obecnie używane dla grup woluminów.                Kontynuacja usunie je z jego grup woluminów."
+  "To urządzenie jest obecnie używane dla grup woluminów. Kontynuacja usunie je z jego grup woluminów."
  ],
  "This disk cannot be removed while the device is recovering.": [
   null,

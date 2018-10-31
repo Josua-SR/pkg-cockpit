@@ -140,67 +140,67 @@ return plural;
  ],
  "Downloaded": [
   null,
-  ""
+  "Hämtat"
  ],
  "Downloading": [
   null,
-  ""
+  "Hämtar"
  ],
  "Downloading $0": [
   null,
-  ""
+  "Hämtar $0"
  ],
  "Errata:": [
   null,
-  ""
+  "Errata:"
  ],
  "Ignore": [
   null,
-  ""
+  "Ignorera"
  ],
  "Initializing...": [
   null,
-  ""
+  "Initierar …"
  ],
  "Install": [
   null,
-  ""
+  "Installera"
  ],
  "Install All Updates": [
   null,
-  ""
+  "Installera alla uppdateringar"
  ],
  "Install Security Updates": [
   null,
-  ""
+  "Installera säkerhetsuppdateringar"
  ],
  "Install Software": [
   null,
-  ""
+  "Installera programvara"
  ],
  "Installed": [
   null,
-  ""
+  "Installerad"
  ],
  "Installing": [
   null,
-  ""
+  "Installerar"
  ],
  "Installing $0": [
   null,
-  ""
+  "Installerar $0"
  ],
  "Last checked: $0 ago": [
   null,
-  ""
+  "Senast kontrollerad: $0 sedan"
  ],
  "Loading available updates failed": [
   null,
-  ""
+  "Inläsningen av tillgängliga uppdateringar misslyckades"
  ],
  "Loading available updates, please wait...": [
   null,
-  ""
+  "Läser in tillgängliga uppdateringar, var god dröj …"
  ],
  "Name": [
   null,

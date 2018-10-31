@@ -90,23 +90,23 @@ return plural;
  ],
  "Enforce policy:": [
   null,
-  ""
+  "Tvingande policy:"
  ],
  "Error while deleting alert: $0": [
   null,
-  ""
+  "Fel när larmet togs bort: $0"
  ],
  "Error while setting SELinux mode: '$0'": [
   null,
-  ""
+  "Fel när SELinux-läge ställdes in: ”$0”"
  ],
  "Failed to delete alert: $0": [
   null,
-  ""
+  "Misslyckades att radera larmet: $0"
  ],
  "Install setroubleshoot-server to troubleshoot SELinux events.": [
   null,
-  ""
+  "Installera setroubleshoot-server för att felsöka SELinux-händelser."
  ],
  "No SELinux alerts.": [
   null,

@@ -69,11 +69,11 @@ return plural;
  },
  "'Organization' required to register.": [
   null,
-  "\"Organizace\" je k registraci vyžadována."
+  "„Organizace“ je k registraci vyžadována."
  ],
  "'Organization' required when using activation keys.": [
   null,
-  "\"Organizace\" je vyžadována, pokud používáte aktivační klíče."
+  "„Organizace“ je vyžadována, pokud používáte aktivační klíče."
  ],
  "Access denied": [
   null,
@@ -89,15 +89,15 @@ return plural;
  ],
  "Cancel": [
   null,
-  "Zrušit"
+  "Storno"
  ],
  "Couldn't get system subscription status. Please ensure subscription-manager is installed.": [
   null,
-  "Nelze získat status odběru systému. Ujistěte se prosím, že je nainstalován manager odběru."
+  "Nedaří se získat stav předplatného pro systém. Ověřte, že je nainstalovaná správa předplatného."
  ],
  "Custom URL": [
   null,
-  ""
+  "Uživatelsky určená URL adresa"
  ],
  "Default": [
   null,
@@ -109,19 +109,19 @@ return plural;
  ],
  "Ends": [
   null,
-  ""
+  "Končí"
  ],
  "Installed products": [
   null,
-  ""
+  "Nainstalované produkty"
  ],
  "Invalid credentials": [
   null,
-  ""
+  "Neplatné přihlašovací údaje"
  ],
  "Invalid username or password": [
   null,
-  ""
+  "Neplatné uživatelské jméno a heslo"
  ],
  "Login": [
   null,
@@ -129,11 +129,11 @@ return plural;
  ],
  "Login/password or activation key required to register.": [
   null,
-  ""
+  "Pro registraci je zapotřebí uživatelského jména / hesla nebo aktivačního klíče"
  ],
  "No installed products on the system.": [
   null,
-  ""
+  "Na tomto systému nejsou nainstalované žádné produkty."
  ],
  "Ok": [
   null,
@@ -141,7 +141,7 @@ return plural;
  ],
  "Organization": [
   null,
-  ""
+  "Organizace"
  ],
  "Password": [
   null,
@@ -149,11 +149,11 @@ return plural;
  ],
  "Product ID": [
   null,
-  "ID produktu"
+  "Identif. produktu"
  ],
  "Product name": [
   null,
-  ""
+  "Název produktu"
  ],
  "Proxy": [
   null,
@@ -161,15 +161,15 @@ return plural;
  ],
  "Register": [
   null,
-  ""
+  "Zaregistrovat"
  ],
  "Register system": [
   null,
-  ""
+  "Zaregistrovat systém"
  ],
  "Retrieving subscription status...": [
   null,
-  ""
+  "Získává se stav předplatného…"
  ],
  "Server": [
   null,
@@ -177,7 +177,7 @@ return plural;
  ],
  "Starts": [
   null,
-  ""
+  "Začíná"
  ],
  "Status": [
   null,
@@ -185,19 +185,19 @@ return plural;
  ],
  "Status: $0": [
   null,
-  ""
+  "Stav: $0"
  ],
  "Status: System isn't registered": [
   null,
-  ""
+  "Stav: systém není zaregistrován"
  ],
  "Subscriptions": [
   null,
-  ""
+  "Předplatné"
  ],
  "The current user isn't allowed to access system subscription status.": [
   null,
-  ""
+  "Stávající uživatel není oprávněn přistupovat ke stavu předplatného systému."
  ],
  "URL": [
   null,
@@ -205,23 +205,23 @@ return plural;
  ],
  "Unable to connect": [
   null,
-  ""
+  "Nedaří se připojit"
  ],
  "Unregister": [
   null,
-  ""
+  "Zrušit registraci"
  ],
  "Unregistering system...": [
   null,
-  ""
+  "Ruší se registrace systému…"
  ],
  "Updating": [
   null,
-  ""
+  "Aktualizuje se"
  ],
  "Use proxy server": [
   null,
-  ""
+  "Použít proxy server"
  ],
  "User": [
   null,
@@ -233,6 +233,6 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "nedefinované"
  ]
 }));

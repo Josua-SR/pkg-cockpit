@@ -69,7 +69,7 @@ return plural;
  },
  "Cancel": [
   null,
-  "Zrušit"
+  "Storno"
  ],
  "Change Performance Profile": [
   null,
@@ -81,27 +81,27 @@ return plural;
  ],
  "Communication with tuned has failed": [
   null,
-  ""
+  "Komunikace s procesem služby tuned se nezdařila"
  ],
  "Disable tuned": [
   null,
-  ""
+  "Vypnout proces služby tuned"
  ],
  "Failed to disable tuned": [
   null,
-  ""
+  "Nepodařilo se zakázat proces služby tuned"
  ],
  "Failed to disable tuned profile": [
   null,
-  ""
+  "Nepodařilo se vypnout profil tuned"
  ],
  "Failed to enable tuned": [
   null,
-  ""
+  "Nepodařilo se zapnout tuned"
  ],
  "Failed to switch profile": [
   null,
-  ""
+  "Nepodařilo se přepnout profil"
  ],
  "None": [
   null,
@@ -113,31 +113,31 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to change profiles": [
   null,
-  ""
+  "Uživatel <b>$0</b> není oprávněn měnit profily"
  ],
  "This system is using a custom profile": [
   null,
-  ""
+  "Tento systém používá uživatelsky určený profil"
  ],
  "This system is using the recommended profile": [
   null,
-  ""
+  "Tento systém používá doporučený profil"
  ],
  "Tuned has failed to start": [
   null,
-  ""
+  "Spuštění procesu služby tuned se nezdařilo"
  ],
  "Tuned is not available": [
   null,
-  ""
+  "Tuned není k dispozici"
  ],
  "Tuned is not running": [
   null,
-  ""
+  "Tuned není spuštěné"
  ],
  "Tuned is off": [
   null,
-  ""
+  "Tuned je vypnuté"
  ],
  "none": [
   null,
@@ -145,6 +145,6 @@ return plural;
  ],
  "recommended": [
   null,
-  ""
+  "doporučeno"
  ]
 }));

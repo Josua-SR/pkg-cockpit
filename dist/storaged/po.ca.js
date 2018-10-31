@@ -83,11 +83,6 @@ return plural;
   null,
   ""
  ],
- "$0 day": [
-  "$0 days",
-  "$0 dia",
-  "$0 dies"
- ],
  "$0 disk is missing": [
   "$0 disks are missing",
   "falta $0 disc",
@@ -105,11 +100,6 @@ return plural;
   null,
   ""
  ],
- "$0 hour": [
-  "$0 hours",
-  "$0 hora",
-  "$0 hores"
- ],
  "$0 is in active use": [
   null,
   ""
@@ -117,16 +107,6 @@ return plural;
  "$0 is not available from any repository.": [
   null,
   ""
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 minut",
-  "$0 minuts"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 mes",
-  "$0 mesos"
  ],
  "$0 of $1": [
   null,
@@ -140,19 +120,9 @@ return plural;
   null,
   "$0 utilitzats de $1 ($2 estalviat)"
  ],
- "$0 week": [
-  "$0 weeks",
-  "$0 setmana",
-  "$0 setmanes"
- ],
  "$0 will be installed.": [
   null,
   ""
- ],
- "$0 year": [
-  "$0 years",
-  "$0 any",
-  "$0 anys"
  ],
  "$0, $1 free": [
   null,
@@ -1390,6 +1360,26 @@ return plural;
   null,
   "Mida"
  ],
+ "Size cannot be negative": [
+  null,
+  "La mida no pot ser negativa"
+ ],
+ "Size cannot be zero": [
+  null,
+  "La mida no pot ser zero"
+ ],
+ "Size is too large": [
+  null,
+  "La mida és massa gran"
+ ],
+ "Size must be a number": [
+  null,
+  "La mida ha de ser un número"
+ ],
+ "Size must be at least $0": [
+  null,
+  "La mida com a mínim ha de ser $0"
+ ],
  "Slot $0": [
   null,
   ""
@@ -1498,15 +1488,15 @@ return plural;
   null,
   ""
  ],
- "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
+ "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
   null,
   ""
  ],
- "The filesystem is in use by login sessions.                Proceeding will stop these.": [
+ "The filesystem is in use by login sessions. Proceeding will stop these.": [
   null,
   ""
  ],
- "The filesystem is in use by system services.                Proceeding will stop these.": [
+ "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
   ""
  ],
@@ -1546,17 +1536,17 @@ return plural;
   null,
   ""
  ],
- "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
+ "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
   null,
-  "Aquest dispositiu té sistemes de fitxers actualment en ús. El procediment desmuntarà tots els sistemes de fitxers que conté."
+  ""
  ],
  "This device is currently used for RAID devices.": [
   null,
   "Aquest dispositiu s'utilitza actualment amb dispositius RAID."
  ],
- "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
+ "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
   null,
-  "Aquest dispositiu s'utilitza actualment amb dispositius RAID.                Si continueu, s'eliminarà dels dispositius\n RAID."
+  ""
  ],
  "This device is currently used for VDO devices.": [
   null,
@@ -1566,9 +1556,9 @@ return plural;
   null,
   "Aquest dispositiu s'utilitza actualment amb grups de volums."
  ],
- "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
+ "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
-  "Aquest dispositiu s'utilitza actualment amb grups de volums.                Si continueu, s'eliminarà dels grups de volums."
+  ""
  ],
  "This disk cannot be removed while the device is recovering.": [
   null,

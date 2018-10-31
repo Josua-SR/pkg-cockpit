@@ -73,11 +73,11 @@ return plural;
  ],
  "Cancel": [
   null,
-  "Zrušit"
+  "Storno"
  ],
  "Checking for new applications": [
   null,
-  "Hledám nové aplikace"
+  "Hledají se nové aplikace"
  ],
  "Close": [
   null,
@@ -89,27 +89,27 @@ return plural;
  ],
  "Go to Application": [
   null,
-  ""
+  "Přejít na aplikaci"
  ],
  "Install": [
   null,
-  "Instalovat"
+  "Nainstalovat"
  ],
  "Installing": [
   null,
-  "Instalování"
+  "Instaluje se"
  ],
  "No applications installed or available": [
   null,
-  ""
+  "Nejsou nainstalované ani dostupné žádné aplikace"
  ],
  "No description provided.": [
   null,
-  ""
+  "Není poskytnut žádný popis."
  ],
  "No installation package found for this application.": [
   null,
-  ""
+  "Pro tuto aplikaci nebyl nalezen žádný instalační balíček."
  ],
  "Ok": [
   null,
@@ -117,22 +117,22 @@ return plural;
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "PackageKit zhavaroval"
  ],
  "Remove": [
   null,
-  "Odstranit"
+  "Odebrat"
  ],
  "Removing": [
   null,
-  "K odstranění"
+  "Odebírá se"
  ],
  "Unknown Application": [
   null,
-  ""
+  "Neznámá aplikace"
  ],
  "Waiting for other programs to finish using the package manager...": [
   null,
-  ""
+  "Čeká se až ostatní programy dokončí použití správy balíčků…"
  ]
 }));

@@ -83,6 +83,10 @@ return plural;
   null,
   "Añadir disco"
  ],
+ "Address": [
+  null,
+  "Dirección"
+ ],
  "Address:": [
   null,
   "Dirección:"
@@ -126,10 +130,6 @@ return plural;
  "CPU Type:": [
   null,
   "Tipo de CPU"
- ],
- "CREATE_AND_ATTACH_VOLUME action failed": [
-  null,
-  ""
  ],
  "Cancel": [
   null,
@@ -327,6 +327,10 @@ return plural;
   null,
   "Cargando ..."
  ],
+ "MAC Address": [
+  null,
+  "Dirección MAC"
+ ],
  "Manual Connection": [
   null,
   "Conexión Manual"
@@ -350,6 +354,10 @@ return plural;
  "MiB": [
   null,
   "MiB"
+ ],
+ "Model type": [
+  null,
+  "Modelo tipo"
  ],
  "More Information": [
   null,
@@ -395,6 +403,10 @@ return plural;
   null,
   "No se han encontrado ficheros coincidentes"
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  "No se han definido interfaces de red para esta VM"
+ ],
  "OS Vendor": [
   null,
   "Proveedor de SO"
@@ -430,6 +442,10 @@ return plural;
  "Please start the virtual machine to access its console.": [
   null,
   "Por favor arranque la maquina virtual para acceder a su consola."
+ ],
+ "Plug": [
+  null,
+  "Enchufe"
  ],
  "Pool": [
   null,
@@ -595,9 +611,9 @@ return plural;
   null,
   "El grupo está vacío"
  ],
- "Threads per cores": [
+ "Threads per core": [
   null,
-  "Hilos por núcleo"
+  ""
  ],
  "Too many files found": [
   null,
@@ -607,6 +623,10 @@ return plural;
   null,
   "Soporte"
  ],
+ "Type": [
+  null,
+  "Tipo"
+ ],
  "URL": [
   null,
   "URL"
@@ -614,6 +634,10 @@ return plural;
  "Unique name": [
   null,
   "Nombre único"
+ ],
+ "Unplug": [
+  null,
+  "Desenchufar"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
@@ -631,15 +655,7 @@ return plural;
   null,
   "Usado"
  ],
- "VM ATTACH_DISK action failed": [
-  null,
-  ""
- ],
  "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  ""
- ],
- "VM CHANGE_NETWORK_STATE action failed: updated device XML couldn't not be generated": [
   null,
   ""
  ],
@@ -655,7 +671,7 @@ return plural;
   null,
   ""
  ],
- "VM DETACH action failed": [
+ "VM DETACH_DISK action failed": [
   null,
   ""
  ],

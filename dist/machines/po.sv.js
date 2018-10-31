@@ -83,6 +83,10 @@ return plural;
   null,
   "Lägg till disk"
  ],
+ "Address": [
+  null,
+  "Adress"
+ ],
  "Address:": [
   null,
   "Adress:"
@@ -127,10 +131,6 @@ return plural;
   null,
   "CPU-typ:"
  ],
- "CREATE_AND_ATTACH_VOLUME action failed": [
-  null,
-  "Åtgärden CREATE_AND_ATTACH_VOLUME misslyckades"
- ],
  "Cancel": [
   null,
   "Avbryt"
@@ -138,6 +138,10 @@ return plural;
  "Capacity": [
   null,
   "Kapacitet"
+ ],
+ "Changes will apply on VM shutdown": [
+  null,
+  "Ändringar kommer gälla när VM:en stängs av"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -157,7 +161,7 @@ return plural;
  ],
  "Connecting": [
   null,
-  ""
+  "Ansluter"
  ],
  "Connecting to Virtualization Service": [
   null,
@@ -201,7 +205,7 @@ return plural;
  ],
  "Ctrl+Alt+Del": [
   null,
-  ""
+  "Ctrl+Alt+Del"
  ],
  "Delete": [
   null,
@@ -241,83 +245,87 @@ return plural;
  ],
  "Download the MSI from $0": [
   null,
-  ""
+  "Hämta MSI:n från $0"
+ ],
+ "Edit": [
+  null,
+  "Redigera"
  ],
  "Emulated Machine:": [
   null,
-  ""
+  "Emulerad maskin:"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
-  ""
+  "Färre än det maximala antalet virtuella CPU:er skall vara aktiverade."
  ],
  "File": [
   null,
-  ""
+  "Arkiv"
  ],
  "Filesystem": [
   null,
-  ""
+  "Filsystem"
  ],
  "Force Restart": [
   null,
-  ""
+  "Framtvinga omstart"
  ],
  "Force Shut Down": [
   null,
-  ""
+  "Framtvinga avstängning"
  ],
  "Format": [
   null,
-  ""
+  "Formater"
  ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
-  ""
+  "Åtgärden GET HYPERVISOR MAX VCPU misslyckades"
  ],
  "GiB": [
   null,
-  ""
+  "GiB"
  ],
  "Graphics Console (VNC)": [
   null,
-  ""
+  "Grafisk konsol (VNC)"
  ],
  "Graphics Console in Desktop Viewer": [
   null,
-  ""
+  "Grafisk konsol i skrivbordsvisare"
  ],
  "Host": [
   null,
-  ""
+  "Värd"
  ],
  "INSTALL VM action failed": [
   null,
-  ""
+  "Åtgärden INSTALL VM misslyckades"
  ],
  "Immediately Start VM": [
   null,
-  ""
+  "Starta VM:en omedelbart"
  ],
  "Install": [
   null,
-  ""
+  "Installera"
  ],
  "Installation Source": [
   null,
-  ""
+  "Installationskälla"
  ],
  "Installation Source Type": [
   null,
-  ""
+  "Installatinskälltyp"
  ],
  "Installation Source should not be empty": [
   null,
-  ""
+  "Installationskällan skall inte vara tom"
  ],
  "Invalid filename": [
   null,
-  ""
+  "Felaktigt filnamn"
  ],
  "Launch Remote Viewer": [
   null,
@@ -325,11 +333,19 @@ return plural;
  ],
  "Loading ...": [
   null,
-  ""
+  "Läser in …"
+ ],
+ "MAC Address": [
+  null,
+  "MAC-adress"
+ ],
+ "Mac Address": [
+  null,
+  "Mac-adress"
  ],
  "Manual Connection": [
   null,
-  ""
+  "Manuell anslutning"
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
@@ -351,6 +367,14 @@ return plural;
   null,
   ""
  ],
+ "Model": [
+  null,
+  ""
+ ],
+ "Model type": [
+  null,
+  ""
+ ],
  "More Information": [
   null,
   ""
@@ -364,6 +388,14 @@ return plural;
   ""
  ],
  "Name should not consist of empty characters only": [
+  null,
+  ""
+ ],
+ "Network Type": [
+  null,
+  ""
+ ],
+ "Network settings failed to change with following error: ": [
   null,
   ""
  ],
@@ -392,6 +424,14 @@ return plural;
   ""
  ],
  "No matching files found": [
+  null,
+  ""
+ ],
+ "No network interfaces defined for this VM": [
+  null,
+  ""
+ ],
+ "No virtual networks": [
   null,
   ""
  ],
@@ -431,6 +471,10 @@ return plural;
   null,
   ""
  ],
+ "Plug": [
+  null,
+  ""
+ ],
  "Pool": [
   null,
   ""
@@ -445,7 +489,7 @@ return plural;
  ],
  "Protocol": [
   null,
-  ""
+  "Protokoll"
  ],
  "Readonly": [
   null,
@@ -488,6 +532,10 @@ return plural;
   ""
  ],
  "SPICE TLS Port:": [
+  null,
+  ""
+ ],
+ "Save": [
   null,
   ""
  ],
@@ -595,7 +643,7 @@ return plural;
   null,
   "Poolen är tom"
  ],
- "Threads per cores": [
+ "Threads per core": [
   null,
   ""
  ],
@@ -607,11 +655,19 @@ return plural;
   null,
   ""
  ],
+ "Type": [
+  null,
+  ""
+ ],
  "URL": [
   null,
   ""
  ],
  "Unique name": [
+  null,
+  ""
+ ],
+ "Unplug": [
   null,
   ""
  ],
@@ -631,15 +687,7 @@ return plural;
   null,
   ""
  ],
- "VM ATTACH_DISK action failed": [
-  null,
-  ""
- ],
  "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  ""
- ],
- "VM CHANGE_NETWORK_STATE action failed: updated device XML couldn't not be generated": [
   null,
   ""
  ],
@@ -655,7 +703,7 @@ return plural;
   null,
   ""
  ],
- "VM DETACH action failed": [
+ "VM DETACH_DISK action failed": [
   null,
   ""
  ],

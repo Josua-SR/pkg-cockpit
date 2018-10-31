@@ -17,13 +17,13 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-var React = require("react");
-var createReactClass = require('create-react-class');
+import React from "react";
 
-var cockpit = require("cockpit");
-var _ = cockpit.gettext;
+import cockpit from "cockpit";
 
-var Select = require("cockpit-components-select.jsx");
+import * as Select from "cockpit-components-select.jsx";
+
+const _ = cockpit.gettext;
 
 function defaultRegisterDialogSettings() {
     return {
@@ -44,8 +44,8 @@ function defaultRegisterDialogSettings() {
  *   - onChange  callback to signal when the data has changed
  *   - properties as in defaultRegisterDialogSettings()
  */
-var PatternDialogBody = createReactClass({
-    render: function() {
+class PatternDialogBody extends React.Component {
+    render() {
         var customURL;
         if (this.props.url == 'custom') {
             customURL = (
@@ -191,7 +191,7 @@ var PatternDialogBody = createReactClass({
             </div>
         );
     }
-});
+}
 
 module.exports = {
     defaultSettings: defaultRegisterDialogSettings,

@@ -25,7 +25,7 @@ var packagekit = require("packagekit.es6");
 var install_dialog = require("cockpit-components-install-dialog.jsx").install_dialog;
 
 var Mustache = require("mustache");
-var plot = require("plot");
+var plot = require("plot.es6");
 var service = require("service");
 
 /* These add themselves to jQuery so just including is enough */
@@ -542,14 +542,14 @@ PageServer.prototype = {
         $.extend(cpu_options.yaxis, { tickFormatter: function(v) { return v.toFixed(0) },
                                       max: 100
                                     });
-        self.cpu_plot = plot.plot($("#server_cpu_graph"), 300);
+        self.cpu_plot = new plot.Plot($("#server_cpu_graph"), 300);
         self.cpu_plot.set_options(cpu_options);
         // This is added to the plot once we have the machine info, see below.
 
         /* Memory graph */
 
         var memory_data = {
-            direct: [ "mem.util.used" ],
+            direct: [ "mem.physmem", "mem.util.available" ],
             internal: [ "memory.used" ],
             units: "bytes"
         };
@@ -563,9 +563,9 @@ PageServer.prototype = {
             $('#server_memory_unit').text(plot.bytes_tick_unit(axes.yaxis));
         };
 
-        self.memory_plot = plot.plot($("#server_memory_graph"), 300);
+        self.memory_plot = new plot.Plot($("#server_memory_graph"), 300);
         self.memory_plot.set_options(memory_options);
-        self.memory_plot.add_metrics_sum_series(memory_data, { });
+        self.memory_plot.add_metrics_difference_series(memory_data, { });
 
         /* Network graph */
 
@@ -593,7 +593,7 @@ PageServer.prototype = {
             $('#server_network_traffic_unit').text(plot.bits_per_sec_tick_unit(axes.yaxis));
         };
 
-        self.network_plot = plot.plot($("#server_network_traffic_graph"), 300);
+        self.network_plot = new plot.Plot($("#server_network_traffic_graph"), 300);
         self.network_plot.set_options(network_options);
         self.network_plot.add_metrics_sum_series(network_data, { });
 
@@ -623,7 +623,7 @@ PageServer.prototype = {
             $('#server_disk_io_unit').text(plot.bytes_per_sec_tick_unit(axes.yaxis));
         };
 
-        self.disk_plot = plot.plot($("#server_disk_io_graph"), 300);
+        self.disk_plot = new plot.Plot($("#server_disk_io_graph"), 300);
         self.disk_plot.set_options(disk_options);
         self.disk_plot.add_metrics_sum_series(disk_data, { });
 
@@ -634,7 +634,30 @@ PageServer.prototype = {
                                                    info.cpus));
                 cpu_data.factor = 0.1 / info.cpus; // millisec / sec -> percent
                 self.cpu_plot.add_metrics_sum_series(cpu_data, { });
-                memory_options.yaxis.max = info.memory;
+
+                if (info.swap) {
+                    memory_options.yaxis.max = info.memory + info.swap * 0.25;
+                    memory_options.yaxis.tickFormatter = function (v) {
+                        return v <= info.memory ? plot.format_bytes_tick_no_unit(v, memory_options.yaxis)
+                            : plot.format_bytes_tick_no_unit(v + (v - info.memory) * 4,memory_options.yaxis);
+                    };
+                    memory_options.colors[1] = "#CC0000";
+                    memory_options.grid.markings = [
+                        { yaxis: {from: info.memory, to: info.memory + info.swap * 0.25 }, color: "#ededed"}
+                    ];
+                    var swap_data = {
+                        internal: [ "memory.swap-used" ],
+                        units: "bytes",
+                        factor: 0.25,
+                        threshold: info.memory,
+                        offset: info.memory
+                    };
+                    self.memory_plot.add_metrics_sum_series(swap_data, { });
+                    $("#link-memory").hide();
+                    $("#link-memory-and-swap").show();
+                } else {
+                    memory_options.yaxis.max = info.memory;
+                }
                 self.memory_plot.set_options(memory_options);
             });
 
@@ -1425,7 +1448,7 @@ PageCpuStatus.prototype = {
 
         var options = {
             series: {shadowSize: 0,
-                     lines: {lineWidth: 0, fill: true}
+                     lines: {lineWidth: 0, fill: 1}
                     },
             yaxis: {min: 0,
                     max: n_cpus * 1000,
@@ -1449,10 +1472,10 @@ PageCpuStatus.prototype = {
         ];
 
         var series = [
-            { color: "#e41a1c", label: _("I/O Wait") },
-            { color: "#ff7f00", label: _("Kernel") },
-            { color: "#377eb8", label: _("User") },
-            { color: "#4daf4a", label: _("Nice") },
+            { color: "#cc0000", label: _("I/O Wait") },
+            { color: "#f5c12e", label: _("Kernel") },
+            { color: "#8461f7", label: _("User") },
+            { color: "#6eb664", label: _("Nice") },
         ];
 
         self.channel = cockpit.metrics(1000, {
@@ -1513,63 +1536,86 @@ PageMemoryStatus.prototype = {
 
     enter: function() {
         var self = this;
+        var dfd = cockpit.defer();
+        self.setupPromise = dfd.promise;
 
-        var options = {
-            series: {shadowSize: 0, // drawing is faster without shadows
-                     lines: {lineWidth: 0.0, fill: true}
-                    },
-            yaxis: {min: 0,
+        machine_info.cpu_ram_info().done(function (info) {
+            var options = {
+                series: {
+                    shadowSize: 0, // drawing is faster without shadows
+                    lines: {lineWidth: 0.0, fill: 1}
+                },
+                yaxis: {
+                    min: 0,
+                    max: info.memory,
                     ticks: 5,
                     tickFormatter: function (v) {
                         return cockpit.format_bytes(v);
                     }
-                   },
-            xaxis: {show: true,
+                },
+                xaxis: {
+                    show: true,
                     ticks: [[0.0 * 60, _("5 min")],
                             [1.0 * 60, _("4 min")],
                             [2.0 * 60, _("3 min")],
                             [3.0 * 60, _("2 min")],
-                            [4.0 * 60, _("1 min")]]},
-            x_rh_stack_graphs: true
-        };
+                            [4.0 * 60, _("1 min")]]
+                },
+                x_rh_stack_graphs: true,
+            };
+            var metrics = [
+                { name: "memory.used" },
+                { name: "memory.cached" },
+            ];
+            var series = [
+                { color: "#0088ce", label: _("Used") },
+                { color: "#e4f5bc", label: _("Cached") },
+            ];
 
-        var metrics = [
-            { name: "memory.swap-used" },
-            { name: "memory.cached" },
-            { name: "memory.used" },
-            { name: "memory.free" },
-        ];
+            if (info.swap) {
+                options.yaxis.max = info.memory + info.swap * 0.25;
+                options.yaxis.tickFormatter = function (v) {
+                    return v <= info.memory ? cockpit.format_bytes(v)
+                        : cockpit.format_bytes(v + (v - info.memory) * 4);
+                };
+                $.extend(options, { grid: { aboveData: false, markings: [
+                    { yaxis: { from: info.memory, to: info.memory + info.swap * 0.25 }, color: "#ededed" }
+                ]}});
+                metrics.push({ name: "memory.swap-used" });
+                series.push({ color: "#e41a1c", label: _("Swap Used"), offset: info.memory, factor: 0.25 });
+            } else {
+                $("#memory_status .memory-swap").hide();
+            }
 
-        var series = [
-            { color: "#e41a1c", label: _("Swap Used") },
-            { color: "#ff7f00", label: _("Cached") },
-            { color: "#377eb8", label: _("Used") },
-            { color: "#4daf4a", label: _("Free") },
-        ];
+            self.channel = cockpit.metrics(1000, {
+                source: "internal",
+                metrics: metrics,
+                cache: "memory-status"
+            });
+            /* The grid shows us the last five minutes */
+            self.grid = cockpit.grid(1000, -300, -0);
+            for(var i = 0; i < series.length; i++)
+                series[i].row = self.grid.add(self.channel, [ metrics[i].name ]);
 
-        self.channel = cockpit.metrics(1000, {
-            source: "internal",
-            metrics: metrics,
-            cache: "memory-status"
+            /* Start pulling data, and make the grid follow the data */
+            self.channel.follow();
+            self.grid.walk();
+            self.plot = plot.setup_complicated_plot("#memory_status_graph", self.grid, series, options);
+            dfd.resolve();
+        }).fail(function(ex) {
+            debug("Couldn't read memory info: " + ex);
+            dfd.reject();
         });
-
-        /* The grid shows us the last five minutes */
-        self.grid = cockpit.grid(1000, -300, -0);
-
-        var i;
-        for(i = 0; i < series.length; i++) {
-            series[i].row = self.grid.add(self.channel, [ metrics[i].name ]);
-        }
-
-        /* Start pulling data, and make the grid follow the data */
-        self.channel.follow();
-        self.grid.walk();
-
-        this.plot = plot.setup_complicated_plot("#memory_status_graph", self.grid, series, options);
     },
 
     show: function() {
-        this.plot.start();
+        var self = this;
+        if (self.setupPromise) {
+            self.setupPromise.done(function() {
+                self.plot.start();
+                $("#memory_status_graph canvas").css("z-index", -1);
+            });
+        }
     },
 
     leave: function() {
@@ -1588,7 +1634,7 @@ $("#link-cpu").on("click", function() {
     return false;
 });
 
-$("#link-memory").on("click", function() {
+$("#link-memory, #link-memory-and-swap").on("click", function() {
     cockpit.location.go([ "memory" ]);
     return false;
 });

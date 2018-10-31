@@ -109,27 +109,27 @@ return plural;
  ],
  "Ends": [
   null,
-  ""
+  "Slutar"
  ],
  "Installed products": [
   null,
-  ""
+  "Installerade produkter"
  ],
  "Invalid credentials": [
   null,
-  ""
+  "Felaktiga kreditiv"
  ],
  "Invalid username or password": [
   null,
-  ""
+  "Felaktigt användarnamn eller lösenord"
  ],
  "Login": [
   null,
-  ""
+  "Inloggning"
  ],
  "Login/password or activation key required to register.": [
   null,
-  ""
+  "Inloggning/lösenord eller aktiveringsnyckel krävs för att registrera."
  ],
  "No installed products on the system.": [
   null,
@@ -149,15 +149,15 @@ return plural;
  ],
  "Product ID": [
   null,
-  ""
+  "Produkt-ID"
  ],
  "Product name": [
   null,
-  ""
+  "Produktnamn"
  ],
  "Proxy": [
   null,
-  ""
+  "Proxy"
  ],
  "Register": [
   null,

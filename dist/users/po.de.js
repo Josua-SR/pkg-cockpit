@@ -109,7 +109,7 @@ return plural;
  ],
  "Change": [
   null,
-  ""
+  "Ändern"
  ],
  "Close": [
   null,
@@ -177,7 +177,7 @@ return plural;
  ],
  "Full Name": [
   null,
-  ""
+  "Vollständiger Name"
  ],
  "Image Builder": [
   null,
@@ -301,7 +301,7 @@ return plural;
  ],
  "Reset": [
   null,
-  ""
+  "Zurücksetzen"
  ],
  "Roles": [
   null,
@@ -313,7 +313,7 @@ return plural;
  ],
  "Set": [
   null,
-  ""
+  "Einstellen"
  ],
  "Set Password": [
   null,

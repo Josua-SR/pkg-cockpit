@@ -19,41 +19,38 @@
 
 'use strict';
 
-var React = require('react');
-var createReactClass = require('create-react-class');
+import React from 'react';
+import cockpit from 'cockpit';
 
-var cockpit = require('cockpit');
-var _ = cockpit.gettext;
+import $ from "jquery";
+import docker from './docker';
+import atomic from './atomic';
+import util from './util';
+import searchImage from "./search";
 
-var $ = require("jquery");
-var docker = require('./docker');
-var atomic = require('./atomic');
-var util = require('./util');
-var searchImage = require("./search");
+import * as Listing from 'cockpit-components-listing.jsx';
+import * as Select from 'cockpit-components-select.jsx';
+import moment from 'moment';
 
-var Listing = require('cockpit-components-listing.jsx');
-var Select = require('cockpit-components-select.jsx');
-var moment = require('moment');
-
+const _ = cockpit.gettext;
 moment.locale(cockpit.language);
 
-var Dropdown = createReactClass({
-    getDefaultProps: function () {
-        return {
-            actions: [ { label: '' } ]
-        };
-    },
+class Dropdown extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
 
-    handleClick: function (event) {
+    handleClick(event) {
         if (event.button !== 0)
             return;
 
         var action = this.props.actions[event.currentTarget.getAttribute('data-value')];
         if (!action.disabled && action.onActivate)
             action.onActivate();
-    },
+    }
 
-    render: function () {
+    render() {
         return (
             <div className="btn-group">
                 <button className="btn btn-default" type="button" data-value="0" onClick={this.handleClick}>
@@ -66,7 +63,7 @@ var Dropdown = createReactClass({
                     {
                         this.props.actions.map(function (action, index) {
                             return (
-                                <li className={ action.disabled ? 'disabled' : '' }>
+                                <li key={index} className={ action.disabled ? 'disabled' : '' }>
                                     <a data-value={index} role="link" tabIndex="0" onClick={this.handleClick}>{action.label}</a>
                                 </li>
                             );
@@ -76,30 +73,37 @@ var Dropdown = createReactClass({
             </div>
         );
     }
-});
+}
+Dropdown.defaultProps = {
+    actions: [ { label: '' } ]
+};
 
-var ContainerHeader = createReactClass({
-    getInitialState: function () {
-        return {
+class ContainerHeader extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
             filter: 'running',
             filterText: ''
         };
-    },
+        this.filterChanged = this.filterChanged.bind(this);
+        this.handleFilterChange = this.handleFilterChange.bind(this);
+        this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
+    }
 
-    filterChanged: function () {
+    filterChanged() {
         if (this.props.onFilterChanged)
             this.props.onFilterChanged(this.state.filter, this.state.filterText);
-    },
+    }
 
-    handleFilterChange: function (value) {
+    handleFilterChange(value) {
         this.setState({ filter: value }, this.filterChanged);
-    },
+    }
 
-    handleFilterTextChange: function () {
+    handleFilterTextChange() {
         this.setState({ filterText: this.refs.filterTextInput.value }, this.filterChanged);
-    },
+    }
 
-    render: function () {
+    render() {
         return (
             <div>
                 <Select.Select id="containers-containers-filter" initial={this.state.filter} onChange={this.handleFilterChange}>
@@ -115,10 +119,10 @@ var ContainerHeader = createReactClass({
             </div>
         );
     }
-});
+}
 
-var ContainerDetails = createReactClass({
-    render: function () {
+class ContainerDetails extends React.Component {
+    render() {
         var container = this.props.container;
         return (
             <div className='listing-ct-body'>
@@ -133,18 +137,23 @@ var ContainerDetails = createReactClass({
             </div>
         );
     }
-});
+}
 
-var ContainerProblems = createReactClass({
-    onItemClick: function (event) {
+class ContainerProblems extends React.Component {
+    constructor(props) {
+        super(props);
+        this.onItemClick = this.onItemClick.bind(this);
+    }
+
+    onItemClick(event) {
         cockpit.jump(event.currentTarget.dataset.url, cockpit.transport.host);
-    },
+    }
 
-    render: function () {
+    render() {
         var problem = this.props.problem;
         var problem_cursors = [];
         for (var i = 0; i < problem.length; i++) {
-            problem_cursors.push(<a data-url={problem[i][0]} className='list-group-item' role="link" tabIndex="0" onClick={this.onItemClick}>
+            problem_cursors.push(<a key={i} data-url={problem[i][0]} className='list-group-item' role="link" tabIndex="0" onClick={this.onItemClick}>
                 <span className="pficon pficon-warning-triangle-o fa-lg" />
                 {problem[i][1]}
             </a>);
@@ -156,41 +165,37 @@ var ContainerProblems = createReactClass({
             </div>
         );
     }
-});
+}
 
-var ContainerList = createReactClass({
-    getDefaultProps: function () {
-        return {
-            client: {},
-            onlyShowRunning: true,
-            filterText: ''
-        };
-    },
-
-    getInitialState: function () {
-        return {
+class ContainerList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
             containers: [],
             problems: {}
         };
-    },
+        this.containersChanged = this.containersChanged.bind(this);
+        this.setNewProblem = this.setNewProblem.bind(this);
+        this.newProblemOccurred = this.newProblemOccurred.bind(this);
+    }
 
-    navigateToContainer: function (container) {
+    navigateToContainer(container) {
         cockpit.location.go([ container.Id ]);
-    },
+    }
 
-    startContainer: function (container) {
+    startContainer(container) {
         this.props.client.start(container.Id).fail(util.show_unexpected_error);
-    },
+    }
 
-    stopContainer: function (container) {
+    stopContainer(container) {
         this.props.client.stop(container.Id).fail(util.show_unexpected_error);
-    },
+    }
 
-    restartContainer: function (container) {
+    restartContainer(container) {
         this.props.client.restart(container.Id).fail(util.show_unexpected_error);
-    },
+    }
 
-    deleteContainer: function (container, event) {
+    deleteContainer(container, event) {
         if (event.button !== 0)
             return;
 
@@ -201,9 +206,9 @@ var ContainerList = createReactClass({
                     util.docker_container_delete(this.props.client, container.Id,
                                                  function() { }, function () { });
                 }.bind(this));
-    },
+    }
 
-    containersChanged: function () {
+    containersChanged() {
         var containers = Object.keys(this.props.client.containers).map(function (id) {
             return this.props.client.containers[id];
         }.bind(this));
@@ -213,9 +218,9 @@ var ContainerList = createReactClass({
         });
 
         this.setState({ containers: containers });
-    },
+    }
 
-    setNewProblem: function (c_id, url, message) {
+    setNewProblem(c_id, url, message) {
         /* New problem is always displayed, no matter if the same problem is
          * already shown. It is because user may be interested into dynamic
          * watching of the problems occurring. After refreshing the site, only
@@ -227,13 +232,13 @@ var ContainerList = createReactClass({
         else
             known_problems[c_id] = [[url, message]];
         this.setState({ problems: known_problems });
-    },
+    }
 
-    newProblemOccurred: function (event, problem_path) {
+    newProblemOccurred(event, problem_path) {
         util.find_container_log(this.problems_client, problem_path, this.setNewProblem);
-    },
+    }
 
-    componentDidMount: function () {
+    componentDidMount() {
         var self = this;
         this.problems_client = cockpit.dbus('org.freedesktop.problems', { superuser: "try" });
         this.service = this.problems_client.proxy('org.freedesktop.Problems2', '/org/freedesktop/Problems2');
@@ -252,16 +257,16 @@ var ContainerList = createReactClass({
         this.service.addEventListener("Crash", this.newProblemOccurred);
 
         util.find_all_problems(this.problems, this.problems_client, this.service, self.setNewProblem);
-    },
+    }
 
-    componentWillUnmount: function () {
+    componentWillUnmount() {
         $(this.props.client).off('container.containers', this.containersChanged);
         $(this.props.client).off('container.container-details', this.containersChanged);
         this.service.removeEventListener("Crash", this.newProblemOccurred);
         this.problems_client.close();
-    },
+    }
 
-    render: function () {
+    render() {
         var filtered = this.state.containers.filter(function (container) {
             if (this.props.onlyShowRunning && !container.State.Running)
                 return false;
@@ -314,17 +319,19 @@ var ContainerList = createReactClass({
                 disabled: !isRunning
             });
 
-            var actions = [
-                <button className="btn btn-danger btn-delete pficon pficon-delete"
-                        onClick={ this.deleteContainer.bind(this, container) } />,
-                <button className="btn btn-default"
-                        disabled={isRunning}
-                        data-container-id={container.Id}
-                        data-toggle="modal" data-target="#container-commit-dialog">
-                    {_("Commit")}
-                </button>,
-                <Dropdown actions={startStopActions} />
-            ];
+            var actions = (
+                <React.Fragment>
+                    <button className="btn btn-danger btn-delete pficon pficon-delete"
+                            onClick={ this.deleteContainer.bind(this, container) } />
+                    <button className="btn btn-default"
+                            disabled={isRunning}
+                            data-container-id={container.Id}
+                            data-toggle="modal" data-target="#container-commit-dialog">
+                        {_("Commit")}
+                    </button>
+                    <Dropdown actions={startStopActions} />
+                </React.Fragment>
+            );
 
             var tabs = [
                 {
@@ -372,10 +379,15 @@ var ContainerList = createReactClass({
             </Listing.Listing>
         );
     }
-});
+}
+ContainerList.defaultProps = {
+    client: {},
+    onlyShowRunning: true,
+    filterText: ''
+};
 
-var ImageDetails = createReactClass({
-    render: function () {
+class ImageDetails extends React.Component {
+    render() {
         var image = this.props.image;
         var created = moment.unix(image.Created);
         var entrypoint = '';
@@ -406,10 +418,10 @@ var ImageDetails = createReactClass({
             </div>
         );
     }
-});
+}
 
-var ImageSecurity = createReactClass({
-    render: function () {
+class ImageSecurity extends React.Component {
+    render() {
         var info = this.props.info;
         var text, rows;
         var args = {
@@ -429,7 +441,8 @@ var ImageSecurity = createReactClass({
 
             rows = info.vulnerabilities.map(function (vulnerability) {
                 return (
-                    <div className="vulnerability-row-ct-docker" title={vulnerability.description}>
+                    <div key={vulnerability.description}
+                         className="vulnerability-row-ct-docker" title={vulnerability.description}>
                         <span>{vulnerability.title}</span>
                         <span className="pull-right">{vulnerability.severity}</span>
                     </div>
@@ -448,28 +461,30 @@ var ImageSecurity = createReactClass({
             </div>
         );
     }
-});
+}
 
-var ImageInline = createReactClass({
-    getInitialState: function () {
-        return {
+class ImageInline extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
             vulnerableInfos: {}
         };
-    },
+        this.vulnerableInfoChanged = this.vulnerableInfoChanged.bind(this);
+    }
 
-    vulnerableInfoChanged: function(event, infos) {
+    vulnerableInfoChanged(event, infos) {
         this.setState({ vulnerableInfos: infos });
-    },
+    }
 
-    componentDidMount: function () {
+    componentDidMount() {
         atomic.addEventListener('vulnerableInfoChanged', this.vulnerableInfoChanged);
-    },
+    }
 
-    componentWillUnmount: function () {
+    componentWillUnmount() {
         atomic.removeEventListener('vulnerableInfoChanged', this.vulnerableInfoChanged);
-    },
+    }
 
-    render: function() {
+    render() {
         var image = this.props.image;
 
         if (!image) {
@@ -503,38 +518,37 @@ var ImageInline = createReactClass({
             </div>
         );
     }
-});
+}
 
-var ImageList = createReactClass({
-    getDefaultProps: function () {
-        return {
-            client: {},
-            filterText: ''
-        };
-    },
-
-    getInitialState: function () {
-        return {
+class ImageList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
             images: [],
             pulling: [],
             vulnerableInfos: {}
         };
-    },
+        this.handleSearchImageClick = this.handleSearchImageClick.bind(this);
+        this.imagesChanged = this.imagesChanged.bind(this);
+        this.pullingChanged = this.pullingChanged.bind(this);
+        this.vulnerableInfoChanged = this.vulnerableInfoChanged.bind(this);
+        this.renderRow = this.renderRow.bind(this);
+    }
 
-    navigateToImage: function (image) {
+    navigateToImage(image) {
         cockpit.location.go([ 'image', image.Id ]);
-    },
+    }
 
-    handleSearchImageClick: function (event) {
+    handleSearchImageClick(event) {
         if (event.button !== 0)
             return;
 
         searchImage(this.props.client).then(function (repo, tag, registry) {
             this.props.client.pull(repo, tag, registry);
         }.bind(this));
-    },
+    }
 
-    deleteImage: function (image, event) {
+    deleteImage(image, event) {
         if (event.button !== 0)
             return;
         util.delete_image_confirm(this.props.client, image).done(
@@ -545,14 +559,14 @@ var ImageList = createReactClass({
                         util.show_unexpected_error(ex);
                     }));
             });
-    },
+    }
 
-    showRunImageDialog: function (event) {
+    showRunImageDialog(event) {
         $('#containers_run_image_dialog').modal('show', event.currentTarget);
         event.stopPropagation();
-    },
+    }
 
-    imagesChanged: function () {
+    imagesChanged() {
         var images = Object.keys(this.props.client.images).map(function (id) {
             return this.props.client.images[id];
         }.bind(this));
@@ -562,31 +576,31 @@ var ImageList = createReactClass({
         });
 
         this.setState({ images: images });
-    },
+    }
 
-    pullingChanged: function () {
+    pullingChanged() {
         this.setState({ pulling: this.props.client.pulling });
-    },
+    }
 
-    vulnerableInfoChanged: function (event, infos) {
+    vulnerableInfoChanged(event, infos) {
         this.setState({ vulnerableInfos: infos });
-    },
+    }
 
-    componentDidMount: function () {
+    componentDidMount() {
         $(this.props.client).on('image.containers', this.imagesChanged);
         $(this.props.client).on('pulling.containers', this.pullingChanged);
 
         atomic.addEventListener('vulnerableInfoChanged', this.vulnerableInfoChanged);
-    },
+    }
 
-    componentWillUnmount: function () {
+    componentWillUnmount() {
         $(this.props.client).off('image.containers', this.imagesChanged);
         $(this.props.client).off('pulling.containers', this.pullingChanged);
 
         atomic.removeEventListener('vulnerableInfoChanged', this.vulnerableInfoChanged);
-    },
+    }
 
-    renderRow: function (image) {
+    renderRow(image) {
         var vulnerabilityColumn = '';
 
         var vulnerableInfo = this.state.vulnerableInfos[image.Id.replace(/^sha256:/, '')];
@@ -643,10 +657,10 @@ var ImageList = createReactClass({
             });
         }
 
-        var actions = [
-            <button key="delete" className="btn btn-danger btn-delete pficon pficon-delete"
+        var actions = (
+            <button className="btn btn-danger btn-delete pficon pficon-delete"
                     onClick={ this.deleteImage.bind(this, image) } />
-        ];
+        );
 
         return <Listing.ListingRow key={image.Id}
                                    rowId={image.Id}
@@ -654,9 +668,9 @@ var ImageList = createReactClass({
                                    tabRenderers={tabs}
                                    navigateToItem={ this.navigateToImage.bind(this, image) }
                                    listingActions={actions} />;
-    },
+    }
 
-    render: function () {
+    render() {
         var filtered = this.state.images.filter(function (image) {
             return (image.RepoTags &&
                     image.RepoTags[0].toLowerCase().indexOf(this.props.filterText.toLowerCase()) >= 0);
@@ -664,7 +678,7 @@ var ImageList = createReactClass({
 
         var imageRows = filtered.map(this.renderRow, this);
 
-        var getNewImageAction = <a key="new" role="link" tabIndex="0" onClick={this.handleSearchImageClick} className="card-pf-link-with-icon pull-right">
+        var getNewImageAction = <a role="link" tabIndex="0" onClick={this.handleSearchImageClick} className="card-pf-link-with-icon pull-right">
             <span className="pficon pficon-add-circle-o" />{_("Get new image")}
         </a>;
 
@@ -699,14 +713,18 @@ var ImageList = createReactClass({
                 <Listing.Listing title={_("Images")}
                     columnTitles={columnTitles}
                     emptyCaption={emptyCaption}
-                    actions={[ getNewImageAction ]}>
+                    actions={getNewImageAction}>
                     {imageRows}
                 </Listing.Listing>
                 {pendingRows}
             </div>
         );
     }
-});
+}
+ImageList.defaultProps = {
+    client: {},
+    filterText: ''
+};
 
 module.exports = {
     ContainerHeader: ContainerHeader,

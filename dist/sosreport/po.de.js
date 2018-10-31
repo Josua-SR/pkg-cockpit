@@ -89,7 +89,7 @@ return plural;
  ],
  "Done!": [
   null,
-  ""
+  "Fertig!"
  ],
  "Download report": [
   null,

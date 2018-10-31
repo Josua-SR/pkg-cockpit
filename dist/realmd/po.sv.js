@@ -137,43 +137,43 @@ return plural;
  ],
  "Downloading $0": [
   null,
-  ""
+  "Hämtar $0"
  ],
  "Install": [
   null,
-  ""
+  "Installera"
  ],
  "Install Software": [
   null,
-  ""
+  "Installera programvara"
  ],
  "Installing $0": [
   null,
-  ""
+  "Installerar $0"
  ],
  "Join": [
   null,
-  ""
+  "Gå med"
  ],
  "Join Domain": [
   null,
-  ""
+  "Gå med i domän"
  ],
  "Join a Domain": [
   null,
-  ""
+  "Gå med i en domän"
  ],
  "Joining this domain is not supported": [
   null,
-  ""
+  "Att gå med i denna domän stödjs inte"
  ],
  "Leave": [
   null,
-  ""
+  "Lämna"
  ],
  "Leave Domain": [
   null,
-  ""
+  "Lämna domänen"
  ],
  "More": [
   null,

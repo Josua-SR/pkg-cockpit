@@ -19,13 +19,12 @@
 
 "use strict";
 
-var cockpit = require("cockpit");
-var React = require("react");
-var createReactClass = require('create-react-class');
+import cockpit from "cockpit";
+import React from "react";
 
-var _ = cockpit.gettext;
+import "./cockpit-components-onoff.css";
 
-require("./cockpit-components-onoff.css");
+const _ = cockpit.gettext;
 
 /* Component to show an on/off switch
  * state      boolean value (off or on)
@@ -34,15 +33,8 @@ require("./cockpit-components-onoff.css");
  * onChange   triggered when the switch is flipped, parameter: new state
  * enabled    whether the component is enabled or not, defaults to true
  */
-var OnOffSwitch = createReactClass({
-    getDefaultProps: function() {
-        return {
-            captionOff: _("Off"),
-            captionOn: _("On"),
-            enabled: true,
-        };
-    },
-    handleOnOffClick: function(newState, e) {
+class OnOffSwitch extends React.Component {
+    handleOnOffClick(newState, e) {
         // only consider primary mouse button
         if (!e || e.button !== 0)
             return;
@@ -50,8 +42,9 @@ var OnOffSwitch = createReactClass({
         if (this.props.onChange && this.props.enabled)
             this.props.onChange(newState);
         e.stopPropagation();
-    },
-    render: function() {
+    }
+
+    render() {
         var onClasses = ["btn"];
         var offClasses = ["btn"];
         if (this.props.state)
@@ -76,7 +69,12 @@ var OnOffSwitch = createReactClass({
             </div>
         );
     }
-});
+}
+OnOffSwitch.defaultProps = {
+    captionOff: _("Off"),
+    captionOn: _("On"),
+    enabled: true,
+};
 
 module.exports = {
     OnOffSwitch: OnOffSwitch,

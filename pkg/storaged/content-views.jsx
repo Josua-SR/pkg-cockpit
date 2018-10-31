@@ -25,7 +25,6 @@ import {
 import utils from "./utils.js";
 
 import React from "react";
-import createReactClass from 'create-react-class';
 
 import { Listing, ListingRow } from "cockpit-components-listing.jsx";
 import { StorageButton, StorageLink } from "./storage-controls.jsx";
@@ -308,7 +307,7 @@ function create_tabs(client, target, is_partition) {
 
     return {
         renderers: tabs,
-        actions: [ <div key="actions" >{tab_actions}</div> ],
+        actions: <React.Fragment>{tab_actions}</React.Fragment>,
         row_action: row_action,
     };
 }
@@ -530,7 +529,7 @@ const BlockContent = ({ client, block, allow_partitions }) => {
     var format_disk_btn = null;
     if (allow_partitions)
         format_disk_btn = (
-            <div className="pull-right" key="create-partition-table">
+            <div className="pull-right">
                 <StorageButton onClick={format_disk} excuse={block.ReadOnly ? _("Device is read-only") : null}>
                     {_("Create partition table")}
                 </StorageButton>
@@ -538,7 +537,7 @@ const BlockContent = ({ client, block, allow_partitions }) => {
 
     return (
         <Listing title={_("Content")}
-                 actions={[ format_disk_btn ]}
+                 actions={format_disk_btn}
                  emptyCaption="">
             { block_rows(client, block) }
         </Listing>
@@ -610,8 +609,8 @@ function vgroup_rows(client, vgroup) {
     return rows;
 }
 
-var VGroup = createReactClass({
-    render: function () {
+class VGroup extends React.Component {
+    render() {
         var self = this;
         var vgroup = this.props.vgroup;
 
@@ -683,7 +682,7 @@ var VGroup = createReactClass({
         var excuse = vgroup.FreeSize == 0 && _("No free space");
 
         var new_volume_link = (
-            <div className="pull-right" key="new-logical-volume">
+            <div className="pull-right">
                 <StorageLink onClick={create_logical_volume}
                              excuse={excuse}>
                     <span className="pficon pficon-add-circle-o" />
@@ -694,13 +693,13 @@ var VGroup = createReactClass({
 
         return (
             <Listing title="Logical Volumes"
-                     actions={[ new_volume_link ]}
+                     actions={new_volume_link}
                      emptyCaption={_("No Logical Volumes")}>
                 { vgroup_rows(self.props.client, vgroup) }
             </Listing>
         );
     }
-});
+}
 
 module.exports = {
     Block: Block,

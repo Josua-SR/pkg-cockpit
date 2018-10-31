@@ -17,37 +17,38 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
+import React from "react";
+import ReactDOM from "react-dom";
+import PropTypes from "prop-types";
+
+import * as cockpitListing from "cockpit-components-listing.jsx";
+
 (function() {
     "use strict";
-
-    var React = require("react");
-    var ReactDOM = require("react-dom");
-    var PropTypes = require("prop-types");
-    var createReactClass = require('create-react-class');
-
-    var cockpitListing = require("cockpit-components-listing.jsx");
 
     /* Sample tab renderer for listing pattern
      * Shows a caption and the time it was instantiated
      */
-    var DemoListingTab = createReactClass({
-        propTypes: {
-            description: PropTypes.string.isRequired,
-        },
-        getInitialState: function() {
-            return {
+    class DemoListingTab extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
                 initTime: new Date().toLocaleString(),
             };
-        },
-        render: function() {
+        }
+
+        render() {
             return (<div>
                 <span>This is a listing tab</span><br />
                 <span>{this.props.description}</span><br />
                 <span>Initialized at: {this.state.initTime}</span>
             </div>
             );
-        },
-    });
+        }
+    }
+    DemoListingTab.propTypes = {
+        description: PropTypes.string.isRequired,
+    };
 
     var showListingDemo = function(rootElement, rootElementSelectable, rootElementEmptyList) {
         var navigateToItem = function(msg) {
@@ -137,7 +138,7 @@
                     columns={ [ { name: "not selected by default", 'header': true }, 'aoeuaoeu', '127.30.168.11', 'Running' ] }
                     selected={false} />
                 <cockpitListing.ListingRow
-                    columns={ [ { name: "no selected entry", 'header': true }, 'aoeuaoeu', '127.30.168.12', rowAction ] } />
+                    columns={ [ { name: "not selectable", 'header': true }, 'aoeuaoeu', '127.30.168.12', rowAction ] } />
             </cockpitListing.Listing>
         );
         ReactDOM.render(listing, rootElementSelectable);
