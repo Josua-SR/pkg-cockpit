@@ -1,4 +1,4 @@
-cockpit (181-1) UNRELEASED; urgency=medium
+cockpit (181-1) unstable; urgency=medium
 
   * New upstream release:
     - Followup fixes related to the switch away from react-lite
@@ -6,7 +6,7 @@ cockpit (181-1) UNRELEASED; urgency=medium
     - Machines: edit network interfaces
     - Update look of lists to match Patternfly
 
- -- Martin Pitt <mpitt@debian.org>  Wed, 31 Oct 2018 17:45:33 +0000
+ -- Martin Pitt <mpitt@debian.org>  Wed, 31 Oct 2018 17:46:38 +0000
 
 cockpit (180-1) unstable; urgency=medium
 
