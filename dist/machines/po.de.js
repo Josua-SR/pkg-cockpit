@@ -83,9 +83,13 @@ return plural;
   null,
   ""
  ],
+ "Address": [
+  null,
+  "Adresse"
+ ],
  "Address:": [
   null,
-  ""
+  "Adresse:"
  ],
  "All changes will take effect only after stopping and starting the VM.": [
   null,
@@ -109,7 +113,7 @@ return plural;
  ],
  "Available": [
   null,
-  ""
+  "Verfügbar"
  ],
  "Boot Order:": [
   null,
@@ -127,10 +131,6 @@ return plural;
   null,
   ""
  ],
- "CREATE_AND_ATTACH_VOLUME action failed": [
-  null,
-  ""
- ],
  "Cancel": [
   null,
   "Abbrechen"
@@ -138,6 +138,10 @@ return plural;
  "Capacity": [
   null,
   "Kapazität"
+ ],
+ "Changes will apply on VM shutdown": [
+  null,
+  ""
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -177,7 +181,7 @@ return plural;
  ],
  "Cores per socket": [
   null,
-  ""
+  "Kerne pro Socket"
  ],
  "Create": [
   null,
@@ -185,7 +189,7 @@ return plural;
  ],
  "Create New": [
   null,
-  ""
+  "Neu erstellen"
  ],
  "Create New VM": [
   null,
@@ -213,11 +217,11 @@ return plural;
  ],
  "Device": [
   null,
-  ""
+  "Gerät"
  ],
  "Disconnect": [
   null,
-  ""
+  "Verbindung trennen"
  ],
  "Disconnected": [
   null,
@@ -243,6 +247,10 @@ return plural;
   null,
   ""
  ],
+ "Edit": [
+  null,
+  "Bearbeiten"
+ ],
  "Emulated Machine:": [
   null,
   ""
@@ -253,7 +261,7 @@ return plural;
  ],
  "File": [
   null,
-  ""
+  "Datei"
  ],
  "Filesystem": [
   null,
@@ -277,7 +285,7 @@ return plural;
  ],
  "GiB": [
   null,
-  ""
+  "GiB"
  ],
  "Graphics Console (VNC)": [
   null,
@@ -301,7 +309,7 @@ return plural;
  ],
  "Install": [
   null,
-  ""
+  "Installation"
  ],
  "Installation Source": [
   null,
@@ -325,6 +333,14 @@ return plural;
  ],
  "Loading ...": [
   null,
+  "Ladevorgang ..."
+ ],
+ "MAC Address": [
+  null,
+  "MAC-Adresse"
+ ],
+ "Mac Address": [
+  null,
   ""
  ],
  "Manual Connection": [
@@ -345,9 +361,17 @@ return plural;
  ],
  "Memory:": [
   null,
-  ""
+  "Speicher:"
  ],
  "MiB": [
+  null,
+  "MiB"
+ ],
+ "Model": [
+  null,
+  "Modell"
+ ],
+ "Model type": [
   null,
   ""
  ],
@@ -367,9 +391,17 @@ return plural;
   null,
   ""
  ],
- "Networks": [
+ "Network Type": [
   null,
   ""
+ ],
+ "Network settings failed to change with following error: ": [
+  null,
+  ""
+ ],
+ "Networks": [
+  null,
+  "Netzwerke"
  ],
  "New Volume Name": [
   null,
@@ -395,13 +427,21 @@ return plural;
   null,
   ""
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  ""
+ ],
+ "No virtual networks": [
+  null,
+  ""
+ ],
  "OS Vendor": [
   null,
   ""
  ],
  "Ok": [
   null,
-  ""
+  "OK"
  ],
  "Operating System": [
   null,
@@ -409,7 +449,7 @@ return plural;
  ],
  "Overview": [
   null,
-  ""
+  "Überblick"
  ],
  "Path to ISO file on host's file system": [
   null,
@@ -431,13 +471,17 @@ return plural;
   null,
   ""
  ],
+ "Plug": [
+  null,
+  ""
+ ],
  "Pool": [
   null,
   ""
  ],
  "Port": [
   null,
-  ""
+  "Port"
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
@@ -445,11 +489,11 @@ return plural;
  ],
  "Protocol": [
   null,
-  ""
+  "Protokoll"
  ],
  "Readonly": [
   null,
-  ""
+  "Schreibgeschützt"
  ],
  "Reconnect": [
   null,
@@ -465,7 +509,7 @@ return plural;
  ],
  "Run": [
   null,
-  "Läuft"
+  "Ausführen"
  ],
  "SET VCPU SETTINGS action failed": [
   null,
@@ -490,6 +534,10 @@ return plural;
  "SPICE TLS Port:": [
   null,
   ""
+ ],
+ "Save": [
+  null,
+  "Speichern"
  ],
  "Send Non-Maskable Interrupt": [
   null,
@@ -517,11 +565,11 @@ return plural;
  ],
  "Sockets": [
   null,
-  ""
+  "Sockets"
  ],
  "Source": [
   null,
-  ""
+  "Quelle"
  ],
  "Source should start with http, ftp or nfs protocol": [
   null,
@@ -595,7 +643,7 @@ return plural;
   null,
   ""
  ],
- "Threads per cores": [
+ "Threads per core": [
   null,
   ""
  ],
@@ -607,11 +655,19 @@ return plural;
   null,
   "Fehlersuche"
  ],
+ "Type": [
+  null,
+  "Typ"
+ ],
  "URL": [
   null,
   "URL"
  ],
  "Unique name": [
+  null,
+  ""
+ ],
+ "Unplug": [
   null,
   ""
  ],
@@ -621,7 +677,7 @@ return plural;
  ],
  "Usage": [
   null,
-  ""
+  "Verbrauch"
  ],
  "Use Existing": [
   null,
@@ -631,15 +687,7 @@ return plural;
   null,
   "Benutzt"
  ],
- "VM ATTACH_DISK action failed": [
-  null,
-  ""
- ],
  "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  ""
- ],
- "VM CHANGE_NETWORK_STATE action failed: updated device XML couldn't not be generated": [
   null,
   ""
  ],
@@ -655,7 +703,7 @@ return plural;
   null,
   ""
  ],
- "VM DETACH action failed": [
+ "VM DETACH_DISK action failed": [
   null,
   ""
  ],
@@ -689,7 +737,7 @@ return plural;
  ],
  "VNC": [
   null,
-  ""
+  "VNC"
  ],
  "VNC Address:": [
   null,
@@ -717,7 +765,7 @@ return plural;
  ],
  "Volume": [
   null,
-  ""
+  "Lautstärke"
  ],
  "bridge": [
   null,
@@ -745,11 +793,11 @@ return plural;
  ],
  "disk": [
   null,
-  ""
+  "Datenträger"
  ],
  "down": [
   null,
-  ""
+  "runter"
  ],
  "dying": [
   null,
@@ -765,7 +813,7 @@ return plural;
  ],
  "host": [
   null,
-  ""
+  "host"
  ],
  "hostdev": [
   null,
@@ -789,7 +837,7 @@ return plural;
  ],
  "other": [
   null,
-  ""
+  "other"
  ],
  "paused": [
   null,
@@ -801,7 +849,7 @@ return plural;
  ],
  "raw": [
   null,
-  ""
+  "raw"
  ],
  "running": [
   null,
@@ -809,7 +857,7 @@ return plural;
  ],
  "server": [
   null,
-  ""
+  "server"
  ],
  "show less": [
   null,
@@ -833,7 +881,7 @@ return plural;
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "undefined": [
   null,
@@ -841,11 +889,11 @@ return plural;
  ],
  "up": [
   null,
-  ""
+  "hoch"
  ],
  "user": [
   null,
-  ""
+  "Benutzer"
  ],
  "vCPU Count": [
   null,

@@ -83,10 +83,6 @@ return plural;
   null,
   "$0 データ + $1 オーバーヘッドが $2 ($3) を使用しています"
  ],
- "$0 day": [
-  "$0 days",
-  "$0 日"
- ],
  "$0 disk is missing": [
   "$0 disks are missing",
   "$0 ディスクがありません"
@@ -103,10 +99,6 @@ return plural;
   null,
   "ここでは、$0 ファイルシステムのサイズを変更できません。"
  ],
- "$0 hour": [
-  "$0 hours",
-  "$0 時間"
- ],
  "$0 is in active use": [
   null,
   "$0 は、アクティブに使用されています。"
@@ -115,37 +107,21 @@ return plural;
   null,
   "$0 は、あらゆるリポジトリーから利用できません。"
  ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 分"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 ヶ月"
- ],
  "$0 of $1": [
   null,
   "$0/$1"
  ],
  "$0 slots remain": [
   null,
-  ""
+  "$0 スロットが残ります"
  ],
  "$0 used of $1 ($2 saved)": [
   null,
   "$0 が $1  ($2 が保存) を使用しています"
  ],
- "$0 week": [
-  "$0 weeks",
-  "$0 週"
- ],
  "$0 will be installed.": [
   null,
   "$0 がインストールされます。"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 年"
  ],
  "$0, $1 free": [
   null,
@@ -257,7 +233,7 @@ return plural;
  ],
  "Add Key": [
   null,
-  ""
+  "鍵の追加"
  ],
  "Add iSCSI Portal": [
   null,
@@ -277,7 +253,7 @@ return plural;
  ],
  "Address cannot be empty": [
   null,
-  ""
+  "アドレスは空欄にできません"
  ],
  "Address is not a valid URL": [
   null,
@@ -337,7 +313,7 @@ return plural;
  ],
  "Change passphrase": [
   null,
-  ""
+  "パスフレーズの変更"
  ],
  "Checking $target": [
   null,
@@ -385,7 +361,7 @@ return plural;
  ],
  "Confirm removal with passphrase": [
   null,
-  ""
+  "パスフレーズで削除を確認"
  ],
  "Content": [
   null,
@@ -557,7 +533,7 @@ return plural;
  ],
  "Disk passphrase": [
   null,
-  ""
+  "ディスクのパスフレーズ"
  ],
  "Disks": [
   null,
@@ -585,11 +561,11 @@ return plural;
  ],
  "Edit Tang keyserver": [
   null,
-  ""
+  "Tang キーサーバーの編集"
  ],
  "Editing a key requires a free slot": [
   null,
-  ""
+  "キーの編集にはフリースロットが必要です"
  ],
  "Ejecting $target": [
   null,
@@ -677,7 +653,7 @@ return plural;
  ],
  "Force remove passphrase in $0": [
   null,
-  ""
+  "$0 のパスフレーズの削除を強制します"
  ],
  "Format": [
   null,
@@ -729,7 +705,7 @@ return plural;
  ],
  "If tang-show-keys is not available, run the following:": [
   null,
-  ""
+  "tang-show-keys を利用できない場合は、以下を実行します。"
  ],
  "In Sync": [
   null,
@@ -757,7 +733,7 @@ return plural;
  ],
  "Install VDO support": [
   null,
-  ""
+  "VDO サポートをインストール"
  ],
  "Installing $0": [
   null,
@@ -773,27 +749,27 @@ return plural;
  ],
  "Key slots with unknown types can not be edited here": [
   null,
-  ""
+  "タイプ不明のキースロットは、ここでは編集できません"
  ],
  "Key source": [
   null,
-  ""
+  "キーソース"
  ],
  "Keys": [
   null,
-  ""
+  "キー"
  ],
  "Keyserver": [
   null,
-  ""
+  "キーサーバー"
  ],
  "Keyserver address": [
   null,
-  ""
+  "キーサーバーのアドレス"
  ],
  "Keyserver removal may prevent unlocking $0.": [
   null,
-  ""
+  "キーサーバーの削除により、$0 のロック解除ができない可能性があります。"
  ],
  "Local Mount Point": [
   null,
@@ -829,11 +805,11 @@ return plural;
  ],
  "Make sure the key hash from the Tang server matches:": [
   null,
-  ""
+  "Tang サーバーのキーハッシュが一致することを確認します。"
  ],
  "Manually check with SSH: ": [
   null,
-  ""
+  "手動で SSH を確認します。"
  ],
  "Marking $target as faulty": [
   null,
@@ -949,7 +925,7 @@ return plural;
  ],
  "New passphrase": [
   null,
-  ""
+  "新しいパスフレーズ"
  ],
  "Next": [
   null,
@@ -969,7 +945,7 @@ return plural;
  ],
  "No available slots": [
   null,
-  ""
+  "利用可能なスロットはありません"
  ],
  "No disks are available.": [
   null,
@@ -981,7 +957,7 @@ return plural;
  ],
  "No free key slots": [
   null,
-  ""
+  "フリーのキースロットはありません"
  ],
  "No free space": [
   null,
@@ -993,7 +969,7 @@ return plural;
  ],
  "No keys added": [
   null,
-  ""
+  "追加されたキーはありません"
  ],
  "No media inserted": [
   null,
@@ -1037,7 +1013,7 @@ return plural;
  ],
  "Old passphrase": [
   null,
-  ""
+  "古いパスフレーズ"
  ],
  "On": [
   null,
@@ -1089,7 +1065,7 @@ return plural;
  ],
  "Passphrase removal may prevent unlocking $0.": [
   null,
-  ""
+  "パスフレーズの削除で、$0 のロック解除ができない可能性があります。"
  ],
  "Passphrases do not match": [
   null,
@@ -1265,11 +1241,11 @@ return plural;
  ],
  "Remove $0?": [
   null,
-  ""
+  "$0 を削除しますか?"
  ],
  "Remove Tang keyserver": [
   null,
-  ""
+  "Tang キーサーバーを削除"
  ],
  "Remove device": [
   null,
@@ -1277,11 +1253,11 @@ return plural;
  ],
  "Remove passphrase": [
   null,
-  ""
+  "パスフレーズを削除"
  ],
  "Remove passphrase in $0?": [
   null,
-  ""
+  "$0 のパスフレーズを削除しますか?"
  ],
  "Removing $0": [
   null,
@@ -1317,7 +1293,7 @@ return plural;
  ],
  "Repeat passphrase": [
   null,
-  ""
+  "パスフレーズの繰り返し"
  ],
  "Resizing $target": [
   null,
@@ -1337,7 +1313,7 @@ return plural;
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
-  ""
+  "新しいパスフレーズの保存には、ディスクのロック解除が必要です。現在のディスクのパスフレーズを提供してください。"
  ],
  "Securely erasing $target": [
   null,
@@ -1383,9 +1359,29 @@ return plural;
   null,
   "Size"
  ],
+ "Size cannot be negative": [
+  null,
+  "サイズはマイナスにすることができません"
+ ],
+ "Size cannot be zero": [
+  null,
+  "サイズはゼロにすることができません"
+ ],
+ "Size is too large": [
+  null,
+  "サイズが大きすぎます"
+ ],
+ "Size must be a number": [
+  null,
+  "サイズは数値である必要があります"
+ ],
+ "Size must be at least $0": [
+  null,
+  "サイズは $0 以上にする必要があります"
+ ],
  "Slot $0": [
   null,
-  ""
+  "スロット $0"
  ],
  "Spare": [
   null,
@@ -1465,7 +1461,7 @@ return plural;
  ],
  "Tang keyserver": [
   null,
-  ""
+  "Tang キーサーバー"
  ],
  "The \"storaged\" API is not available on this system.": [
   null,
@@ -1489,19 +1485,19 @@ return plural;
  ],
  "The currently logged in user is not permitted to see information about keys.": [
   null,
-  ""
+  "現在ログイン中のユーザーは、キーに関する情報を見ることを許可されていません。"
  ],
- "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
+ "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
   null,
-  "このファイルシステムは、ログインセッションおよびシステムサービスで使用中です。               続行するとこれらを停止します。"
+  "このファイルシステムは、ログインセッションおよびシステムサービスで使用中です。続行すると、これらを停止します。"
  ],
- "The filesystem is in use by login sessions.                Proceeding will stop these.": [
+ "The filesystem is in use by login sessions. Proceeding will stop these.": [
   null,
-  "このファイルシステムは、ログインセッションで使用中です。                続行するとこれらを停止します。"
+  "このファイルシステムは、ログインセッションで使用中です。続行すると、これらを停止します。"
  ],
- "The filesystem is in use by system services.                Proceeding will stop these.": [
+ "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
-  "このファイルシステムは、システムサービスで使用中です。                続行するとこれらを停止します。"
+  "このファイルシステムは、システムサービスで使用中です。続行すると、これらを停止します。"
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
@@ -1509,7 +1505,7 @@ return plural;
  ],
  "The last key slot can not be removed": [
   null,
-  ""
+  "最後のキースロットは削除できません。"
  ],
  "The last physical volume of a volume group cannot be removed.": [
   null,
@@ -1539,17 +1535,17 @@ return plural;
   null,
   "この VDO デバイスは、そのバッキングデバイスをすべて使用していません。"
  ],
- "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
+ "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
   null,
-  "このデバイスには、現在使用中のファイルシステムがあります。                続行すると、このデバイスのファイルシステムをすべてアンマウントします。"
+  "このデバイスには、現在使用中のファイルシステムがあります。続行すると、このデバイスのファイルシステムをすべてアンマウントします。"
  ],
  "This device is currently used for RAID devices.": [
   null,
   "このデバイスは、現在 RAID デバイスに使用されています。"
  ],
- "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
+ "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
   null,
-  "このデバイスは、現在 RAID デバイスに使用されています。                続行すると、RAID デバイスからこのデバイスが削除されます。"
+  "このデバイスは、現在 RAID デバイスに使用されています。続行すると、RAID デバイスからこのデバイスが削除されます。"
  ],
  "This device is currently used for VDO devices.": [
   null,
@@ -1559,9 +1555,9 @@ return plural;
   null,
   "このデバイスは、現在ボリュームグループに使用されています。"
  ],
- "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
+ "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
-  "このデバイスは現在ボリュームグループに使用されています。                続行すると、そのボリュームグループからこのデバイスが削除されます。"
+  "このデバイスは現在ボリュームグループに使用されています。続行すると、そのボリュームグループからこのデバイスが削除されます。"
  ],
  "This disk cannot be removed while the device is recovering.": [
   null,
@@ -1577,7 +1573,7 @@ return plural;
  ],
  "Trust key": [
   null,
-  ""
+  "キーを信頼します"
  ],
  "Type": [
   null,
@@ -1617,7 +1613,7 @@ return plural;
  ],
  "Unknown type": [
   null,
-  ""
+  "不明なタイプ"
  ],
  "Unlock": [
   null,
@@ -1637,7 +1633,7 @@ return plural;
  ],
  "Unlocking disk...": [
   null,
-  ""
+  "ディスクをロック解除中..."
  ],
  "Unmount": [
   null,
@@ -1697,7 +1693,7 @@ return plural;
  ],
  "VDO support not installed": [
   null,
-  ""
+  "VDO サポートはインストールされていません"
  ],
  "VFAT - Compatible with all systems and devices": [
   null,
@@ -1705,7 +1701,7 @@ return plural;
  ],
  "Verify key": [
   null,
-  ""
+  "キーを検証します"
  ],
  "Very securely erasing $target": [
   null,
@@ -1733,7 +1729,7 @@ return plural;
  ],
  "What if tang-show-keys is not available?": [
   null,
-  ""
+  "tang-show-keys を利用できない場合はどうしますか?"
  ],
  "Write-mostly": [
   null,
@@ -1769,7 +1765,7 @@ return plural;
  ],
  "key slot $0": [
   null,
-  ""
+  "キースロット $0"
  ],
  "undefined": [
   null,

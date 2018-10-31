@@ -87,6 +87,10 @@ return plural;
   null,
   "Ajouter un disque"
  ],
+ "Address": [
+  null,
+  "Adresse"
+ ],
  "Address:": [
   null,
   "Adresse:"
@@ -379,6 +383,10 @@ return plural;
   null,
   "Chargement des données ..."
  ],
+ "MAC Address": [
+  null,
+  "Adresse Mac"
+ ],
  "MIGRATE action failed": [
   null,
   "L'action MIGRATE a échoué"
@@ -406,6 +414,10 @@ return plural;
  "Migrate To:": [
   null,
   "Migrer vers:"
+ ],
+ "Model type": [
+  null,
+  "Type de modèle"
  ],
  "More Information": [
   null,
@@ -442,6 +454,10 @@ return plural;
  "No disks defined for this VM": [
   null,
   "Aucun disque défini pour cette machine virtuelle"
+ ],
+ "No network interfaces defined for this VM": [
+  null,
+  "Aucune interface réseau définie pour cette machine virtuelle"
  ],
  "No oVirt connection": [
   null,
@@ -510,6 +526,10 @@ return plural;
  "Please wait till list of templates is loaded from the server.": [
   null,
   "Veuillez attendre que la liste des modèles soit chargée depuis le serveur."
+ ],
+ "Plug": [
+  null,
+  "Connecteur"
  ],
  "Pool": [
   null,
@@ -739,9 +759,17 @@ return plural;
   null,
   "Cette machine virtuelle n'est pas gérée par oVirt"
  ],
- "Threads per cores": [
+ "Threads per core": [
   null,
-  "Threads par noyaux"
+  ""
+ ],
+ "Type": [
+  null,
+  "Type"
+ ],
+ "Unplug": [
+  null,
+  "Débrancher"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,

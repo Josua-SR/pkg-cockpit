@@ -89,19 +89,19 @@ return plural;
  ],
  "Failed to disable tuned": [
   null,
-  ""
+  "Misslyckades att avaktivera tuned"
  ],
  "Failed to disable tuned profile": [
   null,
-  ""
+  "Misslyckades avaktivera en tuned-profil"
  ],
  "Failed to enable tuned": [
   null,
-  ""
+  "Misslyckades att aktivera tuned"
  ],
  "Failed to switch profile": [
   null,
-  ""
+  "Misslyckades att byta profil"
  ],
  "None": [
   null,

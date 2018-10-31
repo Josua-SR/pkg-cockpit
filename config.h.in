@@ -28,6 +28,10 @@
    to 0 if you don't. */
 #undef HAVE_DECL_SSH_PUBLICKEY_HASH_SHA256
 
+/* Define to 1 if you have the declaration of
+   `ssh_session_has_known_hosts_entry', and to 0 if you don't. */
+#undef HAVE_DECL_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY
+
 /* Define to 1 if you have the `fdwalk' function. */
 #undef HAVE_FDWALK
 

@@ -67,36 +67,6 @@ return plural;
   "language": "sv",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 day": [
-  "$0 days",
-  "$0 dag",
-  "$0 dagar"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 timme",
-  "$0 timmar"
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 minut",
-  "$0 minuter"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 månad",
-  "$0 månader"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 vecka",
-  "$0 veckor"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 år",
-  "$0 år"
- ],
  "1 day": [
   null,
   "1 dag"
@@ -267,123 +237,123 @@ return plural;
  ],
  "Edit Server": [
   null,
-  ""
+  "Redigera server"
  ],
  "Embedded PC": [
   null,
-  ""
+  "Inbäddad PC"
  ],
  "Enter IP address or host name": [
   null,
-  ""
+  "Ange en IP-adress eller ett värdnamn"
  ],
  "Entering a different password here means you will need to retype it every time you reconnect to this machine": [
   null,
-  ""
+  "Att ange ett annat lösenord här innebär att du kommer behöva skriva in det igen varje gång du återansluter till denna maskin"
  ],
  "Error loading users: {{perm_failed}}": [
   null,
-  ""
+  "Fel när användare lästes in: {{perm_failed}}"
  ],
  "Expansion Chassis": [
   null,
-  ""
+  "Expansionschassin"
  ],
  "Failed to add machine: $0": [
   null,
-  ""
+  "Misslyckades att lägga till en maskin: $0"
  ],
  "Failed to change password": [
   null,
-  ""
+  "Misslyckades att ändra lösenord"
  ],
  "Failed to edit machine: $0": [
   null,
-  ""
+  "Misslyckades att redigera en makin: $0"
  ],
  "Fingerprint": [
   null,
-  ""
+  "Fingeravtryck"
  ],
  "Go to now": [
   null,
-  ""
+  "Gå till nu"
  ],
  "Hand Held": [
   null,
-  ""
+  "Handhållen"
  ],
  "Host Name": [
   null,
-  ""
+  "Värdnamn"
  ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "För att synkronisera användare behöver du logga in på {{#strong}}{{host}}{{/strong}}."
  ],
  "Incorrect Host Key": [
   null,
-  ""
+  "Felaktig värdnyckel"
  ],
  "Invalid file permissions": [
   null,
-  ""
+  "Felaktiga filrättigheter"
  ],
  "IoT Gateway": [
   null,
-  ""
+  "IoT-gateway"
  ],
  "Is sshd running on a different port?": [
   null,
-  ""
+  "Kör sshd på en annan port?"
  ],
  "Kerberos Based SSO": [
   null,
-  ""
+  "Kerberos-baserad SSO"
  ],
  "Kerberos Ticket": [
   null,
-  ""
+  "Kerberosbiljett"
  ],
  "Laptop": [
   null,
-  ""
+  "Bärbar dator"
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
-  ""
+  "Lämna tomt för att ansluta till denna maskin som den nu inloggade användaren.  Om du anger ett annat användarnamn kommer den användaren alltid användas när man ansluter till denna maskin."
  ],
  "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
-  ""
+  "Lämna tomt för att ansluta till denna maskin som den nu inloggade användaren{{#default_user}} ({{default_user}}){{/default_user}}.  Om du anger ett annat användarnamn kommer den användaren alltid användas när man ansluter till denna maskin."
  ],
  "Log In": [
   null,
-  ""
+  "Logga in"
  ],
  "Log in to {{host}}": [
   null,
-  ""
+  "Logga in på {{host}}"
  ],
  "Login Password": [
   null,
-  ""
+  "Inloggningslösenord"
  ],
  "Lost connection. Trying to reconnect": [
   null,
-  ""
+  "Förlorade förbindelsen.  Försöker återansluta"
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "Lågprofilskrivbord"
  ],
  "Lunch Box": [
   null,
-  ""
+  "Lunchlåda"
  ],
  "Main Server Chassis": [
   null,
-  ""
+  "Huvudserverchassi"
  ],
  "Memory": [
   null,
@@ -463,15 +433,15 @@ return plural;
  ],
  "Prompting via ssh-add timed out": [
   null,
-  ""
+  "Tidsgränsen överskreds vid fråga via ssh-add"
  ],
  "Prompting via ssh-keygen timed out": [
   null,
-  ""
+  "Tidsgränsen överskreds vid fråga via ssh-keygen"
  ],
  "Public Key": [
   null,
-  ""
+  "Publik nyckel"
  ],
  "RAID Chassis": [
   null,

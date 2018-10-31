@@ -123,10 +123,6 @@ return plural;
   null,
   ""
  ],
- "Container Administrator": [
-  null,
-  ""
- ],
  "Create": [
   null,
   ""
@@ -139,27 +135,11 @@ return plural;
   null,
   "ဖျက်ဆီးပါ။"
  ],
- "Delete $0": [
-  null,
-  ""
- ],
  "Delete Files": [
   null,
   ""
  ],
- "Error": [
-  null,
-  ""
- ],
  "Error saving authorized keys: ": [
-  null,
-  ""
- ],
- "Excellent password": [
-  null,
-  ""
- ],
- "Failed to change password": [
   null,
   ""
  ],
@@ -179,19 +159,7 @@ return plural;
   null,
   ""
  ],
- "Image Builder": [
-  null,
-  ""
- ],
- "Invalid expiration date": [
-  null,
-  ""
- ],
  "Invalid key": [
-  null,
-  ""
- ],
- "Invalid number of days": [
   null,
   ""
  ],
@@ -207,18 +175,6 @@ return plural;
   null,
   ""
  ],
- "Lock account on $0": [
-  null,
-  ""
- ],
- "Logged In": [
-  null,
-  ""
- ],
- "Never": [
-  null,
-  ""
- ],
  "Never expire password": [
   null,
   ""
@@ -231,27 +187,11 @@ return plural;
   null,
   ""
  ],
- "New password was not accepted": [
-  null,
-  ""
- ],
- "No real name specified": [
-  null,
-  ""
- ],
- "No user name specified": [
-  null,
-  ""
- ],
  "Off": [
   null,
   "ဖွင့်"
  ],
  "Old Password": [
-  null,
-  ""
- ],
- "Old password not accepted": [
   null,
   ""
  ],
@@ -267,35 +207,7 @@ return plural;
   null,
   ""
  ],
- "Password is not acceptable": [
-  null,
-  ""
- ],
- "Password is too weak": [
-  null,
-  ""
- ],
- "Password must be changed": [
-  null,
-  ""
- ],
  "Paste the contents of your public SSH key file here": [
-  null,
-  ""
- ],
- "Please specify an expiration date": [
-  null,
-  ""
- ],
- "Prompting via passwd timed out": [
-  null,
-  ""
- ],
- "Require password change every $0 days": [
-  null,
-  ""
- ],
- "Require password change on $0": [
   null,
   ""
  ],
@@ -304,10 +216,6 @@ return plural;
   ""
  ],
  "Roles": [
-  null,
-  ""
- ],
- "Server Administrator": [
   null,
   ""
  ],
@@ -323,43 +231,11 @@ return plural;
   null,
   ""
  ],
- "The account '$0' will be forced to change their password on next login": [
-  null,
-  ""
- ],
  "The key you provided was not valid.": [
   null,
   ""
  ],
- "The passwords do not match": [
-  null,
-  ""
- ],
- "The user <b>$0</b> is not permitted to modify accounts": [
-  null,
-  ""
- ],
- "The user name can only consist of letters from a-z, digits, dots, dashes and underscores.": [
-  null,
-  ""
- ],
  "There are no authorized public keys for this account.": [
-  null,
-  ""
- ],
- "This user name already exists": [
-  null,
-  ""
- ],
- "Unable to delete root account": [
-  null,
-  ""
- ],
- "Unable to rename root account": [
-  null,
-  ""
- ],
- "Unexpected error": [
   null,
   ""
  ],
@@ -380,10 +256,6 @@ return plural;
   ""
  ],
  "translatable": [
-  null,
-  ""
- ],
- "page-title\u0004Accounts": [
   null,
   ""
  ]

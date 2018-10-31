@@ -17,23 +17,21 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-var React = require("react");
-var createReactClass = require('create-react-class');
+import React from "react";
 
-var cockpit = require("cockpit");
-var _ = cockpit.gettext;
+import cockpit from "cockpit";
 
-var listingPattern = require("cockpit-components-listing.jsx");
-var Listing = listingPattern.Listing;
-var ListingRow = listingPattern.ListingRow;
+import { Listing, ListingRow } from "cockpit-components-listing.jsx";
+
+const _ = cockpit.gettext;
 
 /* Dialog body to show active Cockpit pages
  * Props:
  *  - iframes          iframe elements on page to list
  *  - selectionChanged callback when the select state changed, parameters: frame object, new value
  */
-var ActivePagesDialogBody = createReactClass({
-    render: function() {
+class ActivePagesDialogBody extends React.Component {
+    render() {
         var self = this;
         var frames = self.props.iframes.map(function(frame) {
             var badge;
@@ -47,7 +45,7 @@ var ActivePagesDialogBody = createReactClass({
             if (self.props.selectionChanged)
                 selectCallback = self.props.selectionChanged.bind(self, frame);
             return (
-                <ListingRow columns={columns}
+                <ListingRow key={frame.name} columns={columns}
                     rowId={frame.name}
                     selected={frame.selected}
                     selectChanged={selectCallback}
@@ -63,6 +61,6 @@ var ActivePagesDialogBody = createReactClass({
             </div>
         );
     }
-});
+}
 
 module.exports = ActivePagesDialogBody;

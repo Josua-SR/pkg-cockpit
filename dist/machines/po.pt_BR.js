@@ -81,7 +81,11 @@ return plural;
  ],
  "Add Disk": [
   null,
-  ""
+  "Adicionar disco"
+ ],
+ "Address": [
+  null,
+  "Endereço"
  ],
  "Address:": [
   null,
@@ -127,10 +131,6 @@ return plural;
   null,
   "Tipo de CPU:"
  ],
- "CREATE_AND_ATTACH_VOLUME action failed": [
-  null,
-  ""
- ],
  "Cancel": [
   null,
   "Cancelar"
@@ -138,6 +138,10 @@ return plural;
  "Capacity": [
   null,
   "Capacidade"
+ ],
+ "Changes will apply on VM shutdown": [
+  null,
+  ""
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -185,7 +189,7 @@ return plural;
  ],
  "Create New": [
   null,
-  ""
+  "Criar novo"
  ],
  "Create New VM": [
   null,
@@ -242,6 +246,10 @@ return plural;
  "Download the MSI from $0": [
   null,
   "Baixe o MSI de $0"
+ ],
+ "Edit": [
+  null,
+  "Editar"
  ],
  "Emulated Machine:": [
   null,
@@ -327,6 +335,14 @@ return plural;
   null,
   "Carregando ..."
  ],
+ "MAC Address": [
+  null,
+  "MAC Address"
+ ],
+ "Mac Address": [
+  null,
+  ""
+ ],
  "Manual Connection": [
   null,
   "Conexão manual"
@@ -351,6 +367,14 @@ return plural;
   null,
   "MiB"
  ],
+ "Model": [
+  null,
+  "Modelo"
+ ],
+ "Model type": [
+  null,
+  "Tipo de modelo"
+ ],
  "More Information": [
   null,
   "Mais Informações"
@@ -366,6 +390,14 @@ return plural;
  "Name should not consist of empty characters only": [
   null,
   "O nome não deve conter apenas caracteres vazios"
+ ],
+ "Network Type": [
+  null,
+  ""
+ ],
+ "Network settings failed to change with following error: ": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -394,6 +426,14 @@ return plural;
  "No matching files found": [
   null,
   "Nenhum arquivo correspondente encontrado"
+ ],
+ "No network interfaces defined for this VM": [
+  null,
+  "Nenhuma interface de rede definida para esta VM"
+ ],
+ "No virtual networks": [
+  null,
+  ""
  ],
  "OS Vendor": [
   null,
@@ -430,6 +470,10 @@ return plural;
  "Please start the virtual machine to access its console.": [
   null,
   "Por favor, inicie a máquina virtual para acessar seu console."
+ ],
+ "Plug": [
+  null,
+  "Plug"
  ],
  "Pool": [
   null,
@@ -490,6 +534,10 @@ return plural;
  "SPICE TLS Port:": [
   null,
   "SPICE TLS Porta:"
+ ],
+ "Save": [
+  null,
+  "Salvar"
  ],
  "Send Non-Maskable Interrupt": [
   null,
@@ -595,9 +643,9 @@ return plural;
   null,
   ""
  ],
- "Threads per cores": [
+ "Threads per core": [
   null,
-  "Threads por núcleos"
+  ""
  ],
  "Too many files found": [
   null,
@@ -607,6 +655,10 @@ return plural;
   null,
   "Solução de problemas"
  ],
+ "Type": [
+  null,
+  "Tipo"
+ ],
  "URL": [
   null,
   "URL"
@@ -614,6 +666,10 @@ return plural;
  "Unique name": [
   null,
   ""
+ ],
+ "Unplug": [
+  null,
+  "Desplugar"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
@@ -625,21 +681,13 @@ return plural;
  ],
  "Use Existing": [
   null,
-  ""
+  "Usar existente"
  ],
  "Used": [
   null,
   "Usado"
  ],
- "VM ATTACH_DISK action failed": [
-  null,
-  ""
- ],
  "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  ""
- ],
- "VM CHANGE_NETWORK_STATE action failed: updated device XML couldn't not be generated": [
   null,
   ""
  ],
@@ -655,7 +703,7 @@ return plural;
   null,
   ""
  ],
- "VM DETACH action failed": [
+ "VM DETACH_DISK action failed": [
   null,
   ""
  ],
@@ -801,7 +849,7 @@ return plural;
  ],
  "raw": [
   null,
-  ""
+  "raw"
  ],
  "running": [
   null,
@@ -841,7 +889,7 @@ return plural;
  ],
  "up": [
   null,
-  ""
+  "up"
  ],
  "user": [
   null,

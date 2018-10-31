@@ -76,15 +76,10 @@ class HostVmsList extends React.Component {
     }
 
     render() {
-        const { vms, config, ui, storagePools, dispatch, actions } = this.props;
+        const { vms, config, ui, storagePools, dispatch, actions, networks } = this.props;
         const combinedVms = [...vms, ...this.asDummVms(vms, ui.vms)];
 
         const sortFunction = (vmA, vmB) => vmA.name.localeCompare(vmB.name);
-
-        let allActions = [];
-        if (actions) {
-            allActions = allActions.concat(actions);
-        }
 
         return (<div className='container-fluid'>
             <NotificationArea id={"notification-area"}
@@ -92,7 +87,7 @@ class HostVmsList extends React.Component {
                 onDismiss={(id) => dispatch(clearNotification(id))} />
             <Listing title={_("Virtual Machines")}
                 columnTitles={[_("Name"), _("Connection"), _("State")]}
-                actions={allActions}
+                actions={actions}
                 emptyCaption={_("No VM is running or defined on this host")}>
                 {combinedVms
                         .sort(sortFunction)
@@ -116,6 +111,7 @@ class HostVmsList extends React.Component {
                                     onUsageStopPolling={() => dispatch(usageStopPolling(vm))}
                                     onSendNMI={() => dispatch(sendNMI(vm))}
                                     dispatch={dispatch}
+                                    networks={networks}
                                     key={`${vmId(vm.name)}`}
                                 />);
                         })}
@@ -130,6 +126,7 @@ HostVmsList.propTypes = {
     ui: PropTypes.object.isRequired,
     storagePools: PropTypes.object.isRequired,
     dispatch: PropTypes.func.isRequired,
+    networks: PropTypes.object.isRequired,
 };
 
 export default HostVmsList;

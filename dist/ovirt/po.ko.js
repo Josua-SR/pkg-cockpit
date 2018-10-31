@@ -77,7 +77,7 @@ return plural;
  ],
  "Action": [
   null,
-  ""
+  "동작 "
  ],
  "Add": [
   null,
@@ -87,9 +87,13 @@ return plural;
   null,
   ""
  ],
+ "Address": [
+  null,
+  "주소"
+ ],
  "Address:": [
   null,
-  ""
+  "주소:"
  ],
  "All changes will take effect only after stopping and starting the VM.": [
   null,
@@ -117,7 +121,7 @@ return plural;
  ],
  "Available": [
   null,
-  ""
+  "사용 가능"
  ],
  "Base Template": [
   null,
@@ -157,6 +161,10 @@ return plural;
  ],
  "Capacity": [
   null,
+  "용량"
+ ],
+ "Changes will apply on VM shutdown": [
+  null,
   ""
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
@@ -165,7 +173,7 @@ return plural;
  ],
  "Cluster": [
   null,
-  "마스터"
+  "클러스터"
  ],
  "Cluster Templates": [
   null,
@@ -209,7 +217,7 @@ return plural;
  ],
  "Connection": [
   null,
-  "Docker에 연결중입니다."
+  "연결"
  ],
  "Console Type": [
   null,
@@ -221,7 +229,7 @@ return plural;
  ],
  "Cores per socket": [
   null,
-  ""
+  "소켓당 코어 수 "
  ],
  "Create": [
   null,
@@ -253,19 +261,19 @@ return plural;
  ],
  "Description": [
   null,
-  ""
+  "설명"
  ],
  "Description:": [
   null,
-  ""
+  "설명:"
  ],
  "Device": [
   null,
-  ""
+  "장치"
  ],
  "Disconnect": [
   null,
-  ""
+  "연결 끊김"
  ],
  "Disconnected": [
   null,
@@ -291,6 +299,10 @@ return plural;
   null,
   ""
  ],
+ "Edit": [
+  null,
+  "편집"
+ ],
  "Edit the vdsm.conf": [
   null,
   ""
@@ -305,7 +317,7 @@ return plural;
  ],
  "FQDN": [
   null,
-  ""
+  "FQDN"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -313,7 +325,7 @@ return plural;
  ],
  "File": [
   null,
-  ""
+  "파일"
  ],
  "Force Restart": [
   null,
@@ -333,7 +345,7 @@ return plural;
  ],
  "GiB": [
   null,
-  ""
+  "GiB"
  ],
  "Graphics Console (VNC)": [
   null,
@@ -365,7 +377,7 @@ return plural;
  ],
  "Install": [
   null,
-  ""
+  "설치"
  ],
  "Launch Remote Viewer": [
   null,
@@ -373,13 +385,21 @@ return plural;
  ],
  "Loading ...": [
   null,
-  ""
+  "로딩 중..."
  ],
  "Loading data ...": [
   null,
   ""
  ],
+ "MAC Address": [
+  null,
+  "MAC 주소"
+ ],
  "MIGRATE action failed": [
+  null,
+  ""
+ ],
+ "Mac Address": [
   null,
   ""
  ],
@@ -397,13 +417,21 @@ return plural;
  ],
  "Memory:": [
   null,
-  ""
+  "메모리:"
  ],
  "MiB": [
   null,
-  ""
+  "MiB"
  ],
  "Migrate To:": [
+  null,
+  ""
+ ],
+ "Model": [
+  null,
+  "모델 "
+ ],
+ "Model type": [
   null,
   ""
  ],
@@ -415,9 +443,17 @@ return plural;
   null,
   "이름"
  ],
- "Networks": [
+ "Network Type": [
   null,
   ""
+ ],
+ "Network settings failed to change with following error: ": [
+  null,
+  ""
+ ],
+ "Networks": [
+  null,
+  "네트워크"
  ],
  "New Volume Name": [
   null,
@@ -443,7 +479,15 @@ return plural;
   null,
   ""
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  ""
+ ],
  "No oVirt connection": [
+  null,
+  ""
+ ],
+ "No virtual networks": [
   null,
   ""
  ],
@@ -453,11 +497,11 @@ return plural;
  ],
  "OK": [
   null,
-  ""
+  "OK"
  ],
  "OS": [
   null,
-  ""
+  "OS"
  ],
  "OS Type:": [
   null,
@@ -465,7 +509,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "확인"
  ],
  "Optimized for:": [
   null,
@@ -473,7 +517,7 @@ return plural;
  ],
  "Overview": [
   null,
-  ""
+  "개요"
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
@@ -511,13 +555,17 @@ return plural;
   null,
   ""
  ],
+ "Plug": [
+  null,
+  ""
+ ],
  "Pool": [
   null,
   ""
  ],
  "Port": [
   null,
-  ""
+  "포트"
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
@@ -529,7 +577,7 @@ return plural;
  ],
  "Protocol": [
   null,
-  ""
+  "프로토콜"
  ],
  "REBOOT action failed": [
   null,
@@ -537,7 +585,7 @@ return plural;
  ],
  "Readonly": [
   null,
-  ""
+  "읽기 전용 "
  ],
  "Reconnect": [
   null,
@@ -553,15 +601,15 @@ return plural;
  ],
  "Reload": [
   null,
-  ""
+  "다시읽기"
  ],
  "Restart": [
   null,
-  ""
+  "재시작"
  ],
  "Run": [
   null,
-  ""
+  "실행"
  ],
  "Run Here": [
   null,
@@ -581,7 +629,7 @@ return plural;
  ],
  "SPICE": [
   null,
-  ""
+  "SPICE"
  ],
  "SPICE Address:": [
   null,
@@ -605,7 +653,7 @@ return plural;
  ],
  "Save": [
   null,
-  ""
+  "저장"
  ],
  "Send Non-Maskable Interrupt": [
   null,
@@ -621,23 +669,23 @@ return plural;
  ],
  "Session": [
   null,
-  "버전"
+  "세션"
  ],
  "Shut Down": [
   null,
-  ""
+  "종료"
  ],
  "Size": [
   null,
-  ""
+  "크기"
  ],
  "Sockets": [
   null,
-  ""
+  "소켓 "
  ],
  "Source": [
   null,
-  ""
+  "원본"
  ],
  "Start the VM to see disk statistics.": [
   null,
@@ -645,7 +693,7 @@ return plural;
  ],
  "State": [
   null,
-  ""
+  "상태"
  ],
  "Stateless": [
   null,
@@ -657,7 +705,7 @@ return plural;
  ],
  "Suspend": [
   null,
-  ""
+  "절전"
  ],
  "Switch Host to Maintenance": [
   null,
@@ -673,19 +721,19 @@ return plural;
  ],
  "System": [
   null,
-  ""
+  "시스템 "
  ],
  "Target": [
   null,
-  ""
+  "대상"
  ],
  "Template": [
   null,
-  ""
+  "템플릿"
  ],
  "Templates": [
   null,
-  ""
+  "템플릿"
  ],
  "Templates of $0 cluster": [
   null,
@@ -739,7 +787,15 @@ return plural;
   null,
   ""
  ],
- "Threads per cores": [
+ "Threads per core": [
+  null,
+  ""
+ ],
+ "Type": [
+  null,
+  "유형"
+ ],
+ "Unplug": [
   null,
   ""
  ],
@@ -749,7 +805,7 @@ return plural;
  ],
  "Usage": [
   null,
-  ""
+  "사용법"
  ],
  "Use Existing": [
   null,
@@ -757,11 +813,11 @@ return plural;
  ],
  "Used": [
   null,
-  ""
+  "사용 중"
  ],
  "VDSM": [
   null,
-  ""
+  "VDSM"
  ],
  "VDSM Service Management": [
   null,
@@ -805,7 +861,7 @@ return plural;
  ],
  "VNC": [
   null,
-  ""
+  "VNC"
  ],
  "VNC Address:": [
   null,
@@ -829,7 +885,7 @@ return plural;
  ],
  "Virtual Machines": [
   null,
-  ""
+  "가상머신"
  ],
  "Virtual Machines of $0 cluster": [
   null,
@@ -837,7 +893,7 @@ return plural;
  ],
  "Volume": [
   null,
-  "논리 볼륨"
+  "볼륨"
  ],
  "bridge": [
   null,
@@ -849,7 +905,7 @@ return plural;
  ],
  "connecting": [
   null,
-  ""
+  "연결"
  ],
  "cores": [
   null,
@@ -869,15 +925,15 @@ return plural;
  ],
  "disabled": [
   null,
-  "사용 안함"
+  "비활성화됨 "
  ],
  "disk": [
   null,
-  ""
+  "디스크"
  ],
  "down": [
   null,
-  ""
+  "아래로"
  ],
  "dying": [
   null,
@@ -885,11 +941,11 @@ return plural;
  ],
  "enabled": [
   null,
-  "사용 안함"
+  "활성화됨 "
  ],
  "error": [
   null,
-  ""
+  "오류 "
  ],
  "ethernet": [
   null,
@@ -897,7 +953,7 @@ return plural;
  ],
  "host": [
   null,
-  ""
+  "호스트"
  ],
  "hostdev": [
   null,
@@ -937,7 +993,7 @@ return plural;
  ],
  "no": [
   null,
-  ""
+  "아니요"
  ],
  "non operational": [
   null,
@@ -977,7 +1033,7 @@ return plural;
  ],
  "paused": [
   null,
-  ""
+  "일시 중지"
  ],
  "pending approval": [
   null,
@@ -989,15 +1045,15 @@ return plural;
  ],
  "raw": [
   null,
-  ""
+  "raw"
  ],
  "reboot": [
   null,
-  ""
+  "재부팅 "
  ],
  "running": [
   null,
-  "작동중"
+  "실행 중"
  ],
  "server": [
   null,
@@ -1033,7 +1089,7 @@ return plural;
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "unassigned": [
   null,
@@ -1045,11 +1101,11 @@ return plural;
  ],
  "up": [
   null,
-  ""
+  "위로"
  ],
  "user": [
   null,
-  ""
+  "사용자 "
  ],
  "vCPU Count": [
   null,
@@ -1061,7 +1117,7 @@ return plural;
  ],
  "vCPUs": [
   null,
-  ""
+  "vCPU"
  ],
  "vCPUs:": [
   null,
@@ -1073,6 +1129,6 @@ return plural;
  ],
  "yes": [
   null,
-  ""
+  "예 "
  ]
 }));

@@ -123,10 +123,6 @@ return plural;
   null,
   "Yeni Parolayı Onayla"
  ],
- "Container Administrator": [
-  null,
-  "Konteyner Yöneticisi"
- ],
  "Create": [
   null,
   "Yarat"
@@ -139,29 +135,13 @@ return plural;
   null,
   "Sil"
  ],
- "Delete $0": [
-  null,
-  "Sil: $0"
- ],
  "Delete Files": [
   null,
   "Dosyaları Sil"
  ],
- "Error": [
-  null,
-  "Hata"
- ],
  "Error saving authorized keys: ": [
   null,
   "Yetkilendirilmiş anahtarın kaydedilmesinde hata:"
- ],
- "Excellent password": [
-  null,
-  "Mükemmel Parola"
- ],
- "Failed to change password": [
-  null,
-  "Parola değişimi başarısız oldu"
  ],
  "Failed to load authorized keys.": [
   null,
@@ -179,21 +159,9 @@ return plural;
   null,
   "Tam İsim"
  ],
- "Image Builder": [
-  null,
-  ""
- ],
- "Invalid expiration date": [
-  null,
-  ""
- ],
  "Invalid key": [
   null,
   "Geçersiz anahtar"
- ],
- "Invalid number of days": [
-  null,
-  ""
  ],
  "Last Login": [
   null,
@@ -207,18 +175,6 @@ return plural;
   null,
   "Hesabı Kilitle"
  ],
- "Lock account on $0": [
-  null,
-  ""
- ],
- "Logged In": [
-  null,
-  "Giriş Yapıldı"
- ],
- "Never": [
-  null,
-  "Asla"
- ],
  "Never expire password": [
   null,
   ""
@@ -231,18 +187,6 @@ return plural;
   null,
   "Yeni Parola"
  ],
- "New password was not accepted": [
-  null,
-  "Yeni parola kabul edilmedi"
- ],
- "No real name specified": [
-  null,
-  "Gerçek ad belirtilmedi"
- ],
- "No user name specified": [
-  null,
-  "Kullanıcı adı belirtilmedi"
- ],
  "Off": [
   null,
   "Kapalı"
@@ -250,10 +194,6 @@ return plural;
  "Old Password": [
   null,
   "Eski Parola"
- ],
- "Old password not accepted": [
-  null,
-  "Eski parola kabul edilmedi"
  ],
  "On": [
   null,
@@ -267,35 +207,7 @@ return plural;
   null,
   ""
  ],
- "Password is not acceptable": [
-  null,
-  "Parola kabul edilebilir değil"
- ],
- "Password is too weak": [
-  null,
-  "Parola çok güçsüz"
- ],
- "Password must be changed": [
-  null,
-  ""
- ],
  "Paste the contents of your public SSH key file here": [
-  null,
-  ""
- ],
- "Please specify an expiration date": [
-  null,
-  ""
- ],
- "Prompting via passwd timed out": [
-  null,
-  ""
- ],
- "Require password change every $0 days": [
-  null,
-  ""
- ],
- "Require password change on $0": [
   null,
   ""
  ],
@@ -306,10 +218,6 @@ return plural;
  "Roles": [
   null,
   "Roller"
- ],
- "Server Administrator": [
-  null,
-  "Sunucu Yöneticisi"
  ],
  "Set": [
   null,
@@ -323,45 +231,13 @@ return plural;
   null,
   ""
  ],
- "The account '$0' will be forced to change their password on next login": [
-  null,
-  ""
- ],
  "The key you provided was not valid.": [
   null,
   "Sağladığınız anahtar geçerli değil."
  ],
- "The passwords do not match": [
-  null,
-  "Parolalar eşleşmişyor"
- ],
- "The user <b>$0</b> is not permitted to modify accounts": [
-  null,
-  "<b>$0</b> kullanıcısı hesapları düzenlemek için yetkili değil"
- ],
- "The user name can only consist of letters from a-z, digits, dots, dashes and underscores.": [
-  null,
-  ""
- ],
  "There are no authorized public keys for this account.": [
   null,
   "Bu hesap için yetkilendirilmiş açık anahtar yok."
- ],
- "This user name already exists": [
-  null,
-  "Böyle bir kullanıcı adı zaten var"
- ],
- "Unable to delete root account": [
-  null,
-  "Kök hesabı silinemiyor"
- ],
- "Unable to rename root account": [
-  null,
-  "Kök hesabı yeniden adlandırılamıyor"
- ],
- "Unexpected error": [
-  null,
-  "Beklenmeyen hata"
  ],
  "Unnamed": [
   null,
@@ -382,9 +258,5 @@ return plural;
  "translatable": [
   null,
   ""
- ],
- "page-title\u0004Accounts": [
-  null,
-  "Hesaplar"
  ]
 }));

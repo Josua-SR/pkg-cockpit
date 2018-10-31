@@ -67,36 +67,6 @@ return plural;
   "language": "de",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 day": [
-  "$0 days",
-  "$0 Tag",
-  "$0 Tage"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 Stunde",
-  "$0 Stunden"
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 Minute",
-  "$0 Minuten"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 Monat",
-  "$0 Monate"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 Woche",
-  "$0 Wochen"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 Jahr",
-  "$0 Jahre"
- ],
  "1 day": [
   null,
   "1 Tag"
@@ -151,7 +121,7 @@ return plural;
  ],
  "Available": [
   null,
-  ""
+  "Verfügbar"
  ],
  "Avatar": [
   null,
@@ -251,7 +221,7 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Desktop"
  ],
  "Detachable": [
   null,
@@ -303,7 +273,7 @@ return plural;
  ],
  "Fingerprint": [
   null,
-  ""
+  "Fingerabdruck"
  ],
  "Go to now": [
   null,
@@ -435,7 +405,7 @@ return plural;
  ],
  "Other": [
   null,
-  ""
+  "Weitere"
  ],
  "Password": [
   null,
@@ -455,7 +425,7 @@ return plural;
  ],
  "Port": [
   null,
-  ""
+  "Port"
  ],
  "Portable": [
   null,
@@ -495,7 +465,7 @@ return plural;
  ],
  "Set": [
   null,
-  ""
+  "Einstellen"
  ],
  "Space-saving Computer": [
   null,
@@ -523,7 +493,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "Tablett"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,

@@ -115,14 +115,14 @@ libexec_PROGRAMS = $(am__EXEEXT_1) cockpit-askpass$(EXEEXT) \
 	cockpit-ws$(EXEEXT) cockpit-session$(EXEEXT)
 noinst_PROGRAMS = $(am__EXEEXT_6) mock-bridge$(EXEEXT) $(am__EXEEXT_7) \
 	frob-websocket$(EXEEXT) test-websocket$(EXEEXT) \
-	$(am__EXEEXT_4) $(am__EXEEXT_9) test-server$(EXEEXT) \
-	$(am__EXEEXT_11) mock-echo$(EXEEXT) mock-auth-command$(EXEEXT) \
-	$(am__EXEEXT_4) mock-pam-conv-mod.so$(EXEEXT) $(am__EXEEXT_12)
+	$(am__EXEEXT_4) $(am__EXEEXT_11) test-server$(EXEEXT) \
+	$(am__EXEEXT_13) mock-echo$(EXEEXT) mock-auth-command$(EXEEXT) \
+	$(am__EXEEXT_4) mock-pam-conv-mod.so$(EXEEXT) $(am__EXEEXT_14)
 sbin_PROGRAMS = remotectl$(EXEEXT)
-TESTS = $(am__EXEEXT_4) $(am__EXEEXT_13) $(am__EXEEXT_16) \
+TESTS = $(am__EXEEXT_4) $(am__EXEEXT_15) $(am__EXEEXT_18) \
 	$(am__EXEEXT_6) $(am__EXEEXT_7) test-websocket$(EXEEXT) \
 	$(am__EXEEXT_4) tools/test-static-code $(am__EXEEXT_4) \
-	$(am__EXEEXT_17) $(am__EXEEXT_11) $(am__EXEEXT_12)
+	$(am__EXEEXT_19) $(am__EXEEXT_13) $(am__EXEEXT_14)
 @ENABLE_DOC_TRUE@am__append_1 = doc/cockpit-transport.svg \
 @ENABLE_DOC_TRUE@	doc/cockpit-transport.png $(NULL) \
 @ENABLE_DOC_TRUE@	$(GUIDE_DOCBOOK) $(GUIDE_INCLUDES) \
@@ -167,13 +167,25 @@ TESTS = $(am__EXEEXT_4) $(am__EXEEXT_13) $(am__EXEEXT_16) \
 
 @WITH_COCKPIT_SSH_TRUE@am__append_11 = libcockpit-ssh.a
 @WITH_COCKPIT_SSH_TRUE@am__append_12 = cockpit-ssh
-@WITH_COCKPIT_SSH_TRUE@am__append_13 = mock-sshd $(SSH_CHECKS)
-@WITH_COCKPIT_SSH_TRUE@am__append_14 = test_rsa_key
-@WITH_COCKPIT_SSH_TRUE@am__append_15 = \
+@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@am__append_13 = \
+@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@	src/ssh/cockpitsshknownhosts.h \
+@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@	src/ssh/cockpitsshknownhosts.c \
+@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@	$(NULL)
+
+@WITH_COCKPIT_SSH_TRUE@am__append_14 = mock-sshd $(SSH_CHECKS)
+
+# HACK: https://bugs.libssh.org/T117: libssh 0.8.4 breaks interactive keyboard auth on server side, i. e. our mock-ssh for unit tests
+@HAVE_BROKEN_SSH_KBDINT_FALSE@@WITH_COCKPIT_SSH_TRUE@am__append_15 = test-sshbridge
+@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@am__append_16 = \
+@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@	test-knownhosts \
+@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@	$(NULL)
+
+@WITH_COCKPIT_SSH_TRUE@am__append_17 = test_rsa_key
+@WITH_COCKPIT_SSH_TRUE@am__append_18 = \
 @WITH_COCKPIT_SSH_TRUE@	test_rsa_key \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
-@WITH_COCKPIT_SSH_TRUE@am__append_16 = \
+@WITH_COCKPIT_SSH_TRUE@am__append_19 = \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock_rsa_key \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock_dsa_key \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/test_rsa \
@@ -183,17 +195,20 @@ TESTS = $(am__EXEEXT_4) $(am__EXEEXT_13) $(am__EXEEXT_16) \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock-bin/sss_ssh_knownhostsproxy \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock-config \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/invalid_known_hosts \
+@WITH_COCKPIT_SSH_TRUE@	src/ssh/mock_known_hosts_2 \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
-@WITH_COCKPIT_SSH_TRUE@am__append_17 = \
+@WITH_COCKPIT_SSH_TRUE@am__append_20 = \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock-pid-cat \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock-bin/sss_ssh_knownhostsproxy \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
-@WITH_COCKPIT_SSH_TRUE@am__append_18 = $(SSH_CHECKS)
-@WITH_COCKPIT_SSH_TRUE@am__append_19 = \
-@WITH_COCKPIT_SSH_TRUE@	test-authssh \
-@WITH_COCKPIT_SSH_TRUE@	$(NULL)
+@WITH_COCKPIT_SSH_TRUE@am__append_21 = $(SSH_CHECKS)
+
+# HACK: https://bugs.libssh.org/T117: libssh 0.8.4 breaks interactive keyboard auth on server side, i. e. our mock-ssh for unit tests
+@HAVE_BROKEN_SSH_KBDINT_FALSE@@WITH_COCKPIT_SSH_TRUE@am__append_22 = \
+@HAVE_BROKEN_SSH_KBDINT_FALSE@@WITH_COCKPIT_SSH_TRUE@	test-authssh \
+@HAVE_BROKEN_SSH_KBDINT_FALSE@@WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
 subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -258,7 +273,6 @@ am_libcockpit_common_a_OBJECTS =  \
 	src/common/libcockpit_common_a-cockpithash.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpithex.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpitjson.$(OBJEXT) \
-	src/common/libcockpit_common_a-cockpitknownhosts.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpitlog.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpitlocale.$(OBJEXT) \
 	src/common/libcockpit_common_a-cockpitloopback.$(OBJEXT) \
@@ -328,11 +342,14 @@ libcockpit_ssh_a_LIBADD =
 am__libcockpit_ssh_a_SOURCES_DIST = src/ssh/cockpitsshoptions.c \
 	src/ssh/cockpitsshoptions.h src/ssh/cockpitsshrelay.h \
 	src/ssh/cockpitsshrelay.c src/common/cockpitauthorize.c \
-	src/common/cockpitauthorize.h
+	src/common/cockpitauthorize.h src/ssh/cockpitsshknownhosts.h \
+	src/ssh/cockpitsshknownhosts.c
+@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@am__objects_5 = src/ssh/libcockpit_ssh_a-cockpitsshknownhosts.$(OBJEXT) \
+@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@	$(am__objects_1)
 @WITH_COCKPIT_SSH_TRUE@am_libcockpit_ssh_a_OBJECTS = src/ssh/libcockpit_ssh_a-cockpitsshoptions.$(OBJEXT) \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/libcockpit_ssh_a-cockpitsshrelay.$(OBJEXT) \
 @WITH_COCKPIT_SSH_TRUE@	src/common/libcockpit_ssh_a-cockpitauthorize.$(OBJEXT) \
-@WITH_COCKPIT_SSH_TRUE@	$(am__objects_1)
+@WITH_COCKPIT_SSH_TRUE@	$(am__objects_1) $(am__objects_5)
 libcockpit_ssh_a_OBJECTS = $(am_libcockpit_ssh_a_OBJECTS)
 libcockpit_stub_a_AR = $(AR) $(ARFLAGS)
 libcockpit_stub_a_LIBADD =
@@ -426,27 +443,29 @@ am__EXEEXT_6 = test-paths$(EXEEXT) test-rules$(EXEEXT) \
 	test-process$(EXEEXT) test-bridge$(EXEEXT) \
 	test-router$(EXEEXT) $(am__EXEEXT_4) $(am__EXEEXT_5)
 am__EXEEXT_7 = test-hash$(EXEEXT) test-hex$(EXEEXT) test-json$(EXEEXT) \
-	test-locale$(EXEEXT) test-knownhosts$(EXEEXT) \
-	test-pipe$(EXEEXT) test-transport$(EXEEXT) \
-	test-channel$(EXEEXT) test-unixsignal$(EXEEXT) \
-	test-template$(EXEEXT) test-webresponse$(EXEEXT) \
-	test-webserver$(EXEEXT) test-config$(EXEEXT) \
-	test-unicode$(EXEEXT) test-version$(EXEEXT) \
-	test-system$(EXEEXT) test-base64$(EXEEXT) \
-	test-authorize$(EXEEXT) $(am__EXEEXT_4)
-@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_8 = test-sshoptions$(EXEEXT) \
-@WITH_COCKPIT_SSH_TRUE@	test-sshbridge$(EXEEXT) $(am__EXEEXT_4)
-@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_9 = mock-sshd$(EXEEXT) \
-@WITH_COCKPIT_SSH_TRUE@	$(am__EXEEXT_8)
-@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_10 = test-authssh$(EXEEXT) \
-@WITH_COCKPIT_SSH_TRUE@	$(am__EXEEXT_4)
-am__EXEEXT_11 = test-base64$(EXEEXT) test-creds$(EXEEXT) \
+	test-locale$(EXEEXT) test-pipe$(EXEEXT) \
+	test-transport$(EXEEXT) test-channel$(EXEEXT) \
+	test-unixsignal$(EXEEXT) test-template$(EXEEXT) \
+	test-webresponse$(EXEEXT) test-webserver$(EXEEXT) \
+	test-config$(EXEEXT) test-unicode$(EXEEXT) \
+	test-version$(EXEEXT) test-system$(EXEEXT) \
+	test-base64$(EXEEXT) test-authorize$(EXEEXT) $(am__EXEEXT_4)
+@HAVE_BROKEN_SSH_KBDINT_FALSE@@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_8 = test-sshbridge$(EXEEXT)
+@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_9 = test-knownhosts$(EXEEXT) \
+@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@	$(am__EXEEXT_4)
+@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_10 = test-sshoptions$(EXEEXT) \
+@WITH_COCKPIT_SSH_TRUE@	$(am__EXEEXT_8) $(am__EXEEXT_9)
+@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_11 = mock-sshd$(EXEEXT) \
+@WITH_COCKPIT_SSH_TRUE@	$(am__EXEEXT_10)
+@HAVE_BROKEN_SSH_KBDINT_FALSE@@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_12 = test-authssh$(EXEEXT) \
+@HAVE_BROKEN_SSH_KBDINT_FALSE@@WITH_COCKPIT_SSH_TRUE@	$(am__EXEEXT_4)
+am__EXEEXT_13 = test-base64$(EXEEXT) test-creds$(EXEEXT) \
 	test-auth$(EXEEXT) test-compat$(EXEEXT) \
 	test-webservice$(EXEEXT) test-channelresponse$(EXEEXT) \
 	test-handlers$(EXEEXT) test-kerberos$(EXEEXT) \
 	test-remotectlcertificate$(EXEEXT) $(am__EXEEXT_4) \
-	$(am__EXEEXT_10)
-am__EXEEXT_12 = test-ssh-add$(EXEEXT) $(am__EXEEXT_4)
+	$(am__EXEEXT_12)
+am__EXEEXT_14 = test-ssh-add$(EXEEXT) $(am__EXEEXT_4)
 PROGRAMS = $(bin_PROGRAMS) $(libexec_PROGRAMS) $(noinst_PROGRAMS) \
 	$(sbin_PROGRAMS)
 am_cockpit_askpass_OBJECTS =  \
@@ -468,15 +487,15 @@ cockpit_bridge_LINK = $(CCLD) $(cockpit_bridge_CFLAGS) $(CFLAGS) \
 am__cockpit_kube_auth_SOURCES_DIST = pkg/kubernetes/standalone/src/cockpit-kube-auth/helpers/creds.go \
 	pkg/kubernetes/standalone/src/cockpit-kube-auth/helpers/client.go \
 	pkg/kubernetes/standalone/src/cockpit-kube-auth/main.go
-@WITH_GOLANG_TRUE@am__objects_5 = $(am__objects_1)
-@WITH_GOLANG_TRUE@am__objects_6 = $(am__objects_5) $(am__objects_1)
-@WITH_GOLANG_TRUE@am_cockpit_kube_auth_OBJECTS = $(am__objects_6)
+@WITH_GOLANG_TRUE@am__objects_6 = $(am__objects_1)
+@WITH_GOLANG_TRUE@am__objects_7 = $(am__objects_6) $(am__objects_1)
+@WITH_GOLANG_TRUE@am_cockpit_kube_auth_OBJECTS = $(am__objects_7)
 cockpit_kube_auth_OBJECTS = $(am_cockpit_kube_auth_OBJECTS)
 cockpit_kube_auth_LDADD = $(LDADD)
 am__cockpit_kube_launch_SOURCES_DIST = pkg/kubernetes/standalone/src/cockpit-kube-auth/helpers/creds.go \
 	pkg/kubernetes/standalone/src/cockpit-kube-auth/helpers/client.go \
 	pkg/kubernetes/standalone/src/cockpit-kube-launch/main.go
-@WITH_GOLANG_TRUE@am_cockpit_kube_launch_OBJECTS = $(am__objects_6)
+@WITH_GOLANG_TRUE@am_cockpit_kube_launch_OBJECTS = $(am__objects_7)
 cockpit_kube_launch_OBJECTS = $(am_cockpit_kube_launch_OBJECTS)
 cockpit_kube_launch_LDADD = $(LDADD)
 am__cockpit_pcp_SOURCES_DIST = src/bridge/cockpitpcp.c
@@ -702,10 +721,14 @@ test_kerberos_OBJECTS = $(am_test_kerberos_OBJECTS)
 test_kerberos_DEPENDENCIES = libcockpit-ws.a $(am__DEPENDENCIES_8)
 test_kerberos_LINK = $(CCLD) $(test_kerberos_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
-am_test_knownhosts_OBJECTS =  \
-	src/common/test_knownhosts-test-knownhosts.$(OBJEXT)
+am__test_knownhosts_SOURCES_DIST = src/ssh/test-knownhosts.c
+@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@am_test_knownhosts_OBJECTS = src/ssh/test_knownhosts-test-knownhosts.$(OBJEXT)
 test_knownhosts_OBJECTS = $(am_test_knownhosts_OBJECTS)
-test_knownhosts_DEPENDENCIES = $(am__DEPENDENCIES_9)
+@WITH_COCKPIT_SSH_TRUE@am__DEPENDENCIES_10 = $(am__DEPENDENCIES_4) \
+@WITH_COCKPIT_SSH_TRUE@	$(am__DEPENDENCIES_1) \
+@WITH_COCKPIT_SSH_TRUE@	$(am__DEPENDENCIES_1)
+@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@test_knownhosts_DEPENDENCIES = libcockpit-ssh.a \
+@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@	$(am__DEPENDENCIES_10)
 test_knownhosts_LINK = $(CCLD) $(test_knownhosts_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_locale_OBJECTS = src/common/test_locale-test-locale.$(OBJEXT)
@@ -814,25 +837,22 @@ test_setup_LINK = $(CCLD) $(test_setup_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
 am_test_ssh_add_OBJECTS =  \
 	src/pam-ssh-add/test_ssh_add-test-ssh-add.$(OBJEXT)
 test_ssh_add_OBJECTS = $(am_test_ssh_add_OBJECTS)
-am__DEPENDENCIES_10 = libpam_ssh_add.a $(am__DEPENDENCIES_1)
-test_ssh_add_DEPENDENCIES = $(am__DEPENDENCIES_10) libretest.a
+am__DEPENDENCIES_11 = libpam_ssh_add.a $(am__DEPENDENCIES_1)
+test_ssh_add_DEPENDENCIES = $(am__DEPENDENCIES_11) libretest.a
 test_ssh_add_LINK = $(CCLD) $(test_ssh_add_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am__test_sshbridge_SOURCES_DIST = src/ssh/test-sshbridge.c
 @WITH_COCKPIT_SSH_TRUE@am_test_sshbridge_OBJECTS = src/ssh/test_sshbridge-test-sshbridge.$(OBJEXT)
 test_sshbridge_OBJECTS = $(am_test_sshbridge_OBJECTS)
-@WITH_COCKPIT_SSH_TRUE@am__DEPENDENCIES_11 = $(am__DEPENDENCIES_4) \
-@WITH_COCKPIT_SSH_TRUE@	$(am__DEPENDENCIES_1) \
-@WITH_COCKPIT_SSH_TRUE@	$(am__DEPENDENCIES_1)
 @WITH_COCKPIT_SSH_TRUE@test_sshbridge_DEPENDENCIES = libcockpit-ssh.a \
-@WITH_COCKPIT_SSH_TRUE@	$(am__DEPENDENCIES_11)
+@WITH_COCKPIT_SSH_TRUE@	$(am__DEPENDENCIES_10)
 test_sshbridge_LINK = $(CCLD) $(test_sshbridge_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am__test_sshoptions_SOURCES_DIST = src/ssh/test-sshoptions.c
 @WITH_COCKPIT_SSH_TRUE@am_test_sshoptions_OBJECTS = src/ssh/test_sshoptions-test-sshoptions.$(OBJEXT)
 test_sshoptions_OBJECTS = $(am_test_sshoptions_OBJECTS)
 @WITH_COCKPIT_SSH_TRUE@test_sshoptions_DEPENDENCIES =  \
-@WITH_COCKPIT_SSH_TRUE@	libcockpit-ssh.a $(am__DEPENDENCIES_11)
+@WITH_COCKPIT_SSH_TRUE@	libcockpit-ssh.a $(am__DEPENDENCIES_10)
 test_sshoptions_LINK = $(CCLD) $(test_sshoptions_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
 am_test_stream_OBJECTS = src/bridge/test_stream-test-stream.$(OBJEXT) \
@@ -878,12 +898,12 @@ test_version_OBJECTS = $(am_test_version_OBJECTS)
 test_version_DEPENDENCIES = $(am__DEPENDENCIES_9)
 test_version_LINK = $(CCLD) $(test_version_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
-am__objects_7 = src/common/test_webresponse-cockpitassets.$(OBJEXT) \
+am__objects_8 = src/common/test_webresponse-cockpitassets.$(OBJEXT) \
 	$(am__objects_1)
 am_test_webresponse_OBJECTS =  \
 	src/common/test_webresponse-test-webresponse.$(OBJEXT) \
 	src/common/test_webresponse-mock-io-stream.$(OBJEXT) \
-	$(am__objects_7) $(am__objects_1)
+	$(am__objects_8) $(am__objects_1)
 test_webresponse_OBJECTS = $(am_test_webresponse_OBJECTS)
 test_webresponse_DEPENDENCIES = $(am__DEPENDENCIES_9)
 test_webresponse_LINK = $(CCLD) $(test_webresponse_CFLAGS) $(CFLAGS) \
@@ -1039,7 +1059,7 @@ DIST_SOURCES = $(libcockpit_bridge_a_SOURCES) \
 	$(test_fs_SOURCES) $(test_handlers_SOURCES) \
 	$(test_hash_SOURCES) $(test_hex_SOURCES) \
 	$(test_httpstream_SOURCES) $(test_json_SOURCES) \
-	$(test_kerberos_SOURCES) $(test_knownhosts_SOURCES) \
+	$(test_kerberos_SOURCES) $(am__test_knownhosts_SOURCES_DIST) \
 	$(test_locale_SOURCES) $(test_metrics_SOURCES) \
 	$(test_packages_SOURCES) $(test_paths_SOURCES) \
 	$(am__test_pcp_SOURCES_DIST) \
@@ -1257,8 +1277,8 @@ am__set_TESTS_bases = \
   bases=`for i in $$bases; do echo $$i; done | sed 's/\.log$$//'`; \
   bases=`echo $$bases`
 RECHECK_LOGS = $(TEST_LOGS)
-am__EXEEXT_13 = pkg/users/test-list-public-keys.sh $(am__EXEEXT_4)
-am__EXEEXT_14 = dist/base1/test-base64.html dist/base1/test-utf8.html \
+am__EXEEXT_15 = pkg/users/test-list-public-keys.sh $(am__EXEEXT_4)
+am__EXEEXT_16 = dist/base1/test-base64.html dist/base1/test-utf8.html \
 	dist/base1/test-events.html dist/base1/test-chan.html \
 	dist/base1/test-dbus.html dist/base1/test-dbus-address.html \
 	dist/base1/test-echo.html dist/base1/test-spawn.html \
@@ -1271,11 +1291,11 @@ am__EXEEXT_14 = dist/base1/test-base64.html dist/base1/test-utf8.html \
 	dist/base1/test-cache.html dist/base1/test-websocket.html \
 	dist/base1/test-stub.html dist/base1/test-browser-storage.html \
 	$(am__EXEEXT_4)
-am__EXEEXT_15 = dist/base1/test-no-jquery.html \
+am__EXEEXT_17 = dist/base1/test-no-jquery.html \
 	dist/base1/test-framed-cache.html dist/base1/test-framed.html \
 	dist/base1/test-dbus-framed.html $(am__EXEEXT_4)
-am__EXEEXT_16 = $(am__EXEEXT_14) $(am__EXEEXT_15)
-@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_17 = $(am__EXEEXT_8)
+am__EXEEXT_18 = $(am__EXEEXT_16) $(am__EXEEXT_17)
+@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_19 = $(am__EXEEXT_10)
 TEST_SUITE_LOG = test-suite.log
 LOG_COMPILE = $(LOG_COMPILER) $(AM_LOG_FLAGS) $(LOG_FLAGS)
 am__set_b = \
@@ -1402,6 +1422,8 @@ KRB5_CONFIG = @KRB5_CONFIG@
 LDFLAGS = @LDFLAGS@
 LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
+LIBSSH_BROKEN_KBDINT_CFLAGS = @LIBSSH_BROKEN_KBDINT_CFLAGS@
+LIBSSH_BROKEN_KBDINT_LIBS = @LIBSSH_BROKEN_KBDINT_LIBS@
 LIBSSH_CFLAGS = @LIBSSH_CFLAGS@
 LIBSSH_LIBS = @LIBSSH_LIBS@
 LIBSYSTEMD_CFLAGS = @LIBSYSTEMD_CFLAGS@
@@ -1520,14 +1542,17 @@ man_MANS = $(am__append_4)
 BUILT_SOURCES = $(COCKPIT_ASSETS)
 check_SCRIPTS = 
 noinst_SCRIPTS = $(WEBPACK_STAMPS) $(WEBPACK_INSTALL) $(base_TESTS) \
-	$(am__append_17) src/ws/mock-cat-with-init $(NULL)
+	$(am__append_20) src/ws/mock-cat-with-init $(NULL)
 
 # ----------------------------------------------------------------------------------------------------
 noinst_LIBRARIES = libcockpit-stub.a libcockpit-bridge.a $(NULL) \
 	$(am__append_7) libcockpit-common.a libwebsocket.a \
 	$(am__append_11) libcockpit-ws.a libretest.a libpam_ssh_add.a
-noinst_DATA = $(am__append_2) $(am__append_9) $(am__append_14)
-nodist_noinst_DATA = 
+noinst_DATA = $(am__append_2) $(am__append_9) $(am__append_17)
+
+# preload wrapper library for unit tests that need a temp home dir
+# we don't use libtool, so build this manually
+nodist_noinst_DATA = libpreload-temp-home.so
 
 # For the test-locale test
 nodist_noinst_SCRIPTS =  \
@@ -1563,15 +1588,15 @@ CLEANFILES = $(man_MANS) valgrind-suppressions $(NULL) \
 	dist/base1/require.min.js.map dist/base1/simple-tap.js \
 	dist/base1/test-dbus-common.js $(base_TESTS) \
 	$(base_TESTS_JAVASCRIPT) $(NULL) $(am__append_10) \
-	$(COCKPIT_ASSETS) $(test_locale_MO) $(NULL) $(am__append_15) \
-	dist/static/login.html dist/static/login.min.html \
-	dist/static/login.js dist/static/login.min.js \
-	dist/static/login.css dist/static/login.min.css $(NULL) \
-	src/ws/cockpit.socket src/ws/cockpit.service \
-	src/ws/cockpit-motd.service $(nodist_tempconf_DATA) $(NULL) \
-	$(nodist_appdata_DATA) $(nodist_desktop_DATA) $(NULL) \
-	mock-pam-conv-mod.so pam_ssh_add.so $(KUBERNETES_DIR)/rpms \
-	$(WS_DIR)/rpms
+	$(COCKPIT_ASSETS) $(test_locale_MO) libpreload-temp-home.so \
+	$(NULL) $(am__append_18) dist/static/login.html \
+	dist/static/login.min.html dist/static/login.js \
+	dist/static/login.min.js dist/static/login.css \
+	dist/static/login.min.css $(NULL) src/ws/cockpit.socket \
+	src/ws/cockpit.service src/ws/cockpit-motd.service \
+	$(nodist_tempconf_DATA) $(NULL) $(nodist_appdata_DATA) \
+	$(nodist_desktop_DATA) $(NULL) mock-pam-conv-mod.so \
+	pam_ssh_add.so $(KUBERNETES_DIR)/rpms $(WS_DIR)/rpms
 DISTCLEANFILES = \
 	$(srcdir)/Makefile \
 	node_modules \
@@ -1615,11 +1640,11 @@ EXTRA_DIST = package.json README.md $(NULL) $(WEBPACK_STAMPS) \
 	src/bridge/mock-client.crt src/bridge/mock-client.key \
 	src/bridge/mock-server.crt src/bridge/mock-server.key $(NULL) \
 	$(pmlogconf_files) src/common/mock-content \
-	src/common/mock_known_hosts src/common/mock-stderr \
+	src/common/mock-stderr \
 	src/common/com.redhat.Cockpit.DBusTests.xml \
 	src/common/cockpitassets.gresource.xml src/common/fail.html \
-	$(test_locale_PO) $(NULL) \
-	pkg/apps/content-security-policy.override $(am__append_16) \
+	$(test_locale_PO) $(NULL) src/common/preload-temp-home.c \
+	pkg/apps/content-security-policy.override $(am__append_19) \
 	dist/static/login.html dist/static/login.min.html \
 	dist/static/login.js dist/static/login.min.js \
 	dist/static/login.css dist/static/login.min.css \
@@ -2410,8 +2435,6 @@ libcockpit_common_a_SOURCES = \
 	src/common/cockpithex.h \
 	src/common/cockpitjson.c \
 	src/common/cockpitjson.h \
-	src/common/cockpitknownhosts.c \
-	src/common/cockpitknownhosts.h \
 	src/common/cockpitlog.h src/common/cockpitlog.c \
 	src/common/cockpitlocale.c \
 	src/common/cockpitlocale.h \
@@ -2477,7 +2500,6 @@ COCKPIT_CHECKS = \
 	test-hex \
 	test-json \
 	test-locale \
-	test-knownhosts \
 	test-pipe \
 	test-transport \
 	test-channel \
@@ -2538,9 +2560,6 @@ test_locale_MO = $(test_locale_PO:.po=.mo)
 test_locale_CFLAGS = $(libcockpit_common_a_CFLAGS)
 test_locale_SOURCES = src/common/test-locale.c
 test_locale_LDADD = $(libcockpit_common_a_LIBS)
-test_knownhosts_CFLAGS = $(libcockpit_common_a_CFLAGS)
-test_knownhosts_SOURCES = src/common/test-knownhosts.c
-test_knownhosts_LDADD = $(libcockpit_common_a_LIBS)
 test_pipe_CFLAGS = $(libcockpit_common_a_CFLAGS)
 test_pipe_SOURCES = src/common/test-pipe.c \
 	src/common/mock-pressure.c src/common/mock-pressure.h
@@ -2611,15 +2630,14 @@ test_websocket_SOURCES = src/websocket/test-websocket.c \
 
 test_websocket_CPPFLAGS = $(libwebsocket_a_CPPFLAGS)
 test_websocket_LDADD = libwebsocket.a $(libwebsocket_a_LIBS)
-@WITH_COCKPIT_SSH_TRUE@libcockpit_ssh_a_SOURCES = \
+@WITH_COCKPIT_SSH_TRUE@libcockpit_ssh_a_SOURCES =  \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/cockpitsshoptions.c \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/cockpitsshoptions.h \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/cockpitsshrelay.h \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/cockpitsshrelay.c \
 @WITH_COCKPIT_SSH_TRUE@	src/common/cockpitauthorize.c \
-@WITH_COCKPIT_SSH_TRUE@	src/common/cockpitauthorize.h \
-@WITH_COCKPIT_SSH_TRUE@	$(NULL)
-
+@WITH_COCKPIT_SSH_TRUE@	src/common/cockpitauthorize.h $(NULL) \
+@WITH_COCKPIT_SSH_TRUE@	$(am__append_13)
 @WITH_COCKPIT_SSH_TRUE@libcockpit_ssh_a_CFLAGS = \
 @WITH_COCKPIT_SSH_TRUE@	-I$(top_srcdir)/src/ssh \
 @WITH_COCKPIT_SSH_TRUE@	-DCOCKPIT_BUILD_INFO=\"$(COCKPIT_BUILD_INFO)\"	\
@@ -2655,17 +2673,17 @@ test_websocket_LDADD = libwebsocket.a $(libwebsocket_a_LIBS)
 @WITH_COCKPIT_SSH_TRUE@	$(COCKPIT_SSH_SESSION_CFLAGS) \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
-@WITH_COCKPIT_SSH_TRUE@SSH_CHECKS = \
-@WITH_COCKPIT_SSH_TRUE@	test-sshoptions \
-@WITH_COCKPIT_SSH_TRUE@	test-sshbridge \
-@WITH_COCKPIT_SSH_TRUE@	$(NULL)
-
+@WITH_COCKPIT_SSH_TRUE@SSH_CHECKS = test-sshoptions $(am__append_15) \
+@WITH_COCKPIT_SSH_TRUE@	$(am__append_16)
 @WITH_COCKPIT_SSH_TRUE@test_sshoptions_CFLAGS = $(cockpit_ssh_CFLAGS)
 @WITH_COCKPIT_SSH_TRUE@test_sshoptions_SOURCES = src/ssh/test-sshoptions.c
 @WITH_COCKPIT_SSH_TRUE@test_sshoptions_LDADD = libcockpit-ssh.a $(cockpit_ssh_LDADD)
 @WITH_COCKPIT_SSH_TRUE@test_sshbridge_CFLAGS = $(cockpit_ssh_CFLAGS)
 @WITH_COCKPIT_SSH_TRUE@test_sshbridge_SOURCES = src/ssh/test-sshbridge.c
 @WITH_COCKPIT_SSH_TRUE@test_sshbridge_LDADD = libcockpit-ssh.a $(cockpit_ssh_LDADD)
+@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@test_knownhosts_CFLAGS = $(cockpit_ssh_CFLAGS)
+@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@test_knownhosts_SOURCES = src/ssh/test-knownhosts.c
+@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@test_knownhosts_LDADD = libcockpit-ssh.a $(cockpit_ssh_LDADD)
 COCKPIT_BUILD_INFO = "Built on $(shell date)"
 LOGIN_PO_FILES = $(patsubst %,dist/static/login.po.%.html,$(LINGUAS))
 staticdir = $(datadir)/cockpit/static
@@ -2784,7 +2802,7 @@ test_server_LDADD = \
 WS_CHECKS = test-base64 test-creds test-auth test-compat \
 	test-webservice test-channelresponse test-handlers \
 	test-kerberos test-remotectlcertificate $(NULL) \
-	$(am__append_19)
+	$(am__append_22)
 test_auth_CFLAGS = $(cockpit_ws_CFLAGS)
 test_auth_SOURCES = \
 	src/ws/test-auth.c \
@@ -3081,9 +3099,6 @@ src/common/libcockpit_common_a-cockpithex.$(OBJEXT):  \
 src/common/libcockpit_common_a-cockpitjson.$(OBJEXT):  \
 	src/common/$(am__dirstamp) \
 	src/common/$(DEPDIR)/$(am__dirstamp)
-src/common/libcockpit_common_a-cockpitknownhosts.$(OBJEXT):  \
-	src/common/$(am__dirstamp) \
-	src/common/$(DEPDIR)/$(am__dirstamp)
 src/common/libcockpit_common_a-cockpitlog.$(OBJEXT):  \
 	src/common/$(am__dirstamp) \
 	src/common/$(DEPDIR)/$(am__dirstamp)
@@ -3218,6 +3233,8 @@ src/ssh/libcockpit_ssh_a-cockpitsshrelay.$(OBJEXT):  \
 src/common/libcockpit_ssh_a-cockpitauthorize.$(OBJEXT):  \
 	src/common/$(am__dirstamp) \
 	src/common/$(DEPDIR)/$(am__dirstamp)
+src/ssh/libcockpit_ssh_a-cockpitsshknownhosts.$(OBJEXT):  \
+	src/ssh/$(am__dirstamp) src/ssh/$(DEPDIR)/$(am__dirstamp)
 
 libcockpit-ssh.a: $(libcockpit_ssh_a_OBJECTS) $(libcockpit_ssh_a_DEPENDENCIES) $(EXTRA_libcockpit_ssh_a_DEPENDENCIES) 
 	$(AM_V_at)-rm -f libcockpit-ssh.a
@@ -3761,9 +3778,8 @@ src/ws/test_kerberos-test-kerberos.$(OBJEXT): src/ws/$(am__dirstamp) \
 test-kerberos$(EXEEXT): $(test_kerberos_OBJECTS) $(test_kerberos_DEPENDENCIES) $(EXTRA_test_kerberos_DEPENDENCIES) 
 	@rm -f test-kerberos$(EXEEXT)
 	$(AM_V_CCLD)$(test_kerberos_LINK) $(test_kerberos_OBJECTS) $(test_kerberos_LDADD) $(LIBS)
-src/common/test_knownhosts-test-knownhosts.$(OBJEXT):  \
-	src/common/$(am__dirstamp) \
-	src/common/$(DEPDIR)/$(am__dirstamp)
+src/ssh/test_knownhosts-test-knownhosts.$(OBJEXT):  \
+	src/ssh/$(am__dirstamp) src/ssh/$(DEPDIR)/$(am__dirstamp)
 
 test-knownhosts$(EXEEXT): $(test_knownhosts_OBJECTS) $(test_knownhosts_DEPENDENCIES) $(EXTRA_test_knownhosts_DEPENDENCIES) 
 	@rm -f test-knownhosts$(EXEEXT)
@@ -4165,7 +4181,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpithash.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpithex.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitjson.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitknownhosts.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitlocale.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitlog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/libcockpit_common_a-cockpitloopback.Po@am__quote@
@@ -4206,7 +4221,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_hex-test-hex.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_httpstream-mock-transport.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_json-test-json.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_knownhosts-test-knownhosts.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_locale-test-locale.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_metrics-mock-transport.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/common/$(DEPDIR)/test_packages-mock-transport.Po@am__quote@
@@ -4238,9 +4252,11 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/pam-ssh-add/$(DEPDIR)/test_ssh_add-test-ssh-add.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/retest/$(DEPDIR)/retest.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/ssh/$(DEPDIR)/cockpit_ssh-ssh.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/ssh/$(DEPDIR)/libcockpit_ssh_a-cockpitsshknownhosts.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/ssh/$(DEPDIR)/libcockpit_ssh_a-cockpitsshoptions.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/ssh/$(DEPDIR)/libcockpit_ssh_a-cockpitsshrelay.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/ssh/$(DEPDIR)/mock_sshd-mock-sshd.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/ssh/$(DEPDIR)/test_knownhosts-test-knownhosts.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/ssh/$(DEPDIR)/test_sshbridge-test-sshbridge.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/ssh/$(DEPDIR)/test_sshoptions-test-sshoptions.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/websocket/$(DEPDIR)/frob_websocket-frob-websocket.Po@am__quote@
@@ -4691,20 +4707,6 @@ src/common/libcockpit_common_a-cockpitjson.obj: src/common/cockpitjson.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitjson.c' object='src/common/libcockpit_common_a-cockpitjson.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitjson.obj `if test -f 'src/common/cockpitjson.c'; then $(CYGPATH_W) 'src/common/cockpitjson.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitjson.c'; fi`
-
-src/common/libcockpit_common_a-cockpitknownhosts.o: src/common/cockpitknownhosts.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitknownhosts.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitknownhosts.Tpo -c -o src/common/libcockpit_common_a-cockpitknownhosts.o `test -f 'src/common/cockpitknownhosts.c' || echo '$(srcdir)/'`src/common/cockpitknownhosts.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_a-cockpitknownhosts.Tpo src/common/$(DEPDIR)/libcockpit_common_a-cockpitknownhosts.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitknownhosts.c' object='src/common/libcockpit_common_a-cockpitknownhosts.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitknownhosts.o `test -f 'src/common/cockpitknownhosts.c' || echo '$(srcdir)/'`src/common/cockpitknownhosts.c
-
-src/common/libcockpit_common_a-cockpitknownhosts.obj: src/common/cockpitknownhosts.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitknownhosts.obj -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitknownhosts.Tpo -c -o src/common/libcockpit_common_a-cockpitknownhosts.obj `if test -f 'src/common/cockpitknownhosts.c'; then $(CYGPATH_W) 'src/common/cockpitknownhosts.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitknownhosts.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/libcockpit_common_a-cockpitknownhosts.Tpo src/common/$(DEPDIR)/libcockpit_common_a-cockpitknownhosts.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitknownhosts.c' object='src/common/libcockpit_common_a-cockpitknownhosts.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_common_a-cockpitknownhosts.obj `if test -f 'src/common/cockpitknownhosts.c'; then $(CYGPATH_W) 'src/common/cockpitknownhosts.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitknownhosts.c'; fi`
 
 src/common/libcockpit_common_a-cockpitlog.o: src/common/cockpitlog.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_common_a_CFLAGS) $(CFLAGS) -MT src/common/libcockpit_common_a-cockpitlog.o -MD -MP -MF src/common/$(DEPDIR)/libcockpit_common_a-cockpitlog.Tpo -c -o src/common/libcockpit_common_a-cockpitlog.o `test -f 'src/common/cockpitlog.c' || echo '$(srcdir)/'`src/common/cockpitlog.c
@@ -5265,6 +5267,20 @@ src/common/libcockpit_ssh_a-cockpitauthorize.obj: src/common/cockpitauthorize.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/cockpitauthorize.c' object='src/common/libcockpit_ssh_a-cockpitauthorize.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_ssh_a_CFLAGS) $(CFLAGS) -c -o src/common/libcockpit_ssh_a-cockpitauthorize.obj `if test -f 'src/common/cockpitauthorize.c'; then $(CYGPATH_W) 'src/common/cockpitauthorize.c'; else $(CYGPATH_W) '$(srcdir)/src/common/cockpitauthorize.c'; fi`
+
+src/ssh/libcockpit_ssh_a-cockpitsshknownhosts.o: src/ssh/cockpitsshknownhosts.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_ssh_a_CFLAGS) $(CFLAGS) -MT src/ssh/libcockpit_ssh_a-cockpitsshknownhosts.o -MD -MP -MF src/ssh/$(DEPDIR)/libcockpit_ssh_a-cockpitsshknownhosts.Tpo -c -o src/ssh/libcockpit_ssh_a-cockpitsshknownhosts.o `test -f 'src/ssh/cockpitsshknownhosts.c' || echo '$(srcdir)/'`src/ssh/cockpitsshknownhosts.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/ssh/$(DEPDIR)/libcockpit_ssh_a-cockpitsshknownhosts.Tpo src/ssh/$(DEPDIR)/libcockpit_ssh_a-cockpitsshknownhosts.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/ssh/cockpitsshknownhosts.c' object='src/ssh/libcockpit_ssh_a-cockpitsshknownhosts.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_ssh_a_CFLAGS) $(CFLAGS) -c -o src/ssh/libcockpit_ssh_a-cockpitsshknownhosts.o `test -f 'src/ssh/cockpitsshknownhosts.c' || echo '$(srcdir)/'`src/ssh/cockpitsshknownhosts.c
+
+src/ssh/libcockpit_ssh_a-cockpitsshknownhosts.obj: src/ssh/cockpitsshknownhosts.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_ssh_a_CFLAGS) $(CFLAGS) -MT src/ssh/libcockpit_ssh_a-cockpitsshknownhosts.obj -MD -MP -MF src/ssh/$(DEPDIR)/libcockpit_ssh_a-cockpitsshknownhosts.Tpo -c -o src/ssh/libcockpit_ssh_a-cockpitsshknownhosts.obj `if test -f 'src/ssh/cockpitsshknownhosts.c'; then $(CYGPATH_W) 'src/ssh/cockpitsshknownhosts.c'; else $(CYGPATH_W) '$(srcdir)/src/ssh/cockpitsshknownhosts.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/ssh/$(DEPDIR)/libcockpit_ssh_a-cockpitsshknownhosts.Tpo src/ssh/$(DEPDIR)/libcockpit_ssh_a-cockpitsshknownhosts.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/ssh/cockpitsshknownhosts.c' object='src/ssh/libcockpit_ssh_a-cockpitsshknownhosts.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_ssh_a_CFLAGS) $(CFLAGS) -c -o src/ssh/libcockpit_ssh_a-cockpitsshknownhosts.obj `if test -f 'src/ssh/cockpitsshknownhosts.c'; then $(CYGPATH_W) 'src/ssh/cockpitsshknownhosts.c'; else $(CYGPATH_W) '$(srcdir)/src/ssh/cockpitsshknownhosts.c'; fi`
 
 src/bridge/libcockpit_stub_a-cockpitconnect.o: src/bridge/cockpitconnect.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libcockpit_stub_a_CFLAGS) $(CFLAGS) -MT src/bridge/libcockpit_stub_a-cockpitconnect.o -MD -MP -MF src/bridge/$(DEPDIR)/libcockpit_stub_a-cockpitconnect.Tpo -c -o src/bridge/libcockpit_stub_a-cockpitconnect.o `test -f 'src/bridge/cockpitconnect.c' || echo '$(srcdir)/'`src/bridge/cockpitconnect.c
@@ -6372,19 +6388,19 @@ src/ws/test_kerberos-test-kerberos.obj: src/ws/test-kerberos.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_kerberos_CFLAGS) $(CFLAGS) -c -o src/ws/test_kerberos-test-kerberos.obj `if test -f 'src/ws/test-kerberos.c'; then $(CYGPATH_W) 'src/ws/test-kerberos.c'; else $(CYGPATH_W) '$(srcdir)/src/ws/test-kerberos.c'; fi`
 
-src/common/test_knownhosts-test-knownhosts.o: src/common/test-knownhosts.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_knownhosts_CFLAGS) $(CFLAGS) -MT src/common/test_knownhosts-test-knownhosts.o -MD -MP -MF src/common/$(DEPDIR)/test_knownhosts-test-knownhosts.Tpo -c -o src/common/test_knownhosts-test-knownhosts.o `test -f 'src/common/test-knownhosts.c' || echo '$(srcdir)/'`src/common/test-knownhosts.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_knownhosts-test-knownhosts.Tpo src/common/$(DEPDIR)/test_knownhosts-test-knownhosts.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/test-knownhosts.c' object='src/common/test_knownhosts-test-knownhosts.o' libtool=no @AMDEPBACKSLASH@
+src/ssh/test_knownhosts-test-knownhosts.o: src/ssh/test-knownhosts.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_knownhosts_CFLAGS) $(CFLAGS) -MT src/ssh/test_knownhosts-test-knownhosts.o -MD -MP -MF src/ssh/$(DEPDIR)/test_knownhosts-test-knownhosts.Tpo -c -o src/ssh/test_knownhosts-test-knownhosts.o `test -f 'src/ssh/test-knownhosts.c' || echo '$(srcdir)/'`src/ssh/test-knownhosts.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/ssh/$(DEPDIR)/test_knownhosts-test-knownhosts.Tpo src/ssh/$(DEPDIR)/test_knownhosts-test-knownhosts.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/ssh/test-knownhosts.c' object='src/ssh/test_knownhosts-test-knownhosts.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_knownhosts_CFLAGS) $(CFLAGS) -c -o src/common/test_knownhosts-test-knownhosts.o `test -f 'src/common/test-knownhosts.c' || echo '$(srcdir)/'`src/common/test-knownhosts.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_knownhosts_CFLAGS) $(CFLAGS) -c -o src/ssh/test_knownhosts-test-knownhosts.o `test -f 'src/ssh/test-knownhosts.c' || echo '$(srcdir)/'`src/ssh/test-knownhosts.c
 
-src/common/test_knownhosts-test-knownhosts.obj: src/common/test-knownhosts.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_knownhosts_CFLAGS) $(CFLAGS) -MT src/common/test_knownhosts-test-knownhosts.obj -MD -MP -MF src/common/$(DEPDIR)/test_knownhosts-test-knownhosts.Tpo -c -o src/common/test_knownhosts-test-knownhosts.obj `if test -f 'src/common/test-knownhosts.c'; then $(CYGPATH_W) 'src/common/test-knownhosts.c'; else $(CYGPATH_W) '$(srcdir)/src/common/test-knownhosts.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/common/$(DEPDIR)/test_knownhosts-test-knownhosts.Tpo src/common/$(DEPDIR)/test_knownhosts-test-knownhosts.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/common/test-knownhosts.c' object='src/common/test_knownhosts-test-knownhosts.obj' libtool=no @AMDEPBACKSLASH@
+src/ssh/test_knownhosts-test-knownhosts.obj: src/ssh/test-knownhosts.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_knownhosts_CFLAGS) $(CFLAGS) -MT src/ssh/test_knownhosts-test-knownhosts.obj -MD -MP -MF src/ssh/$(DEPDIR)/test_knownhosts-test-knownhosts.Tpo -c -o src/ssh/test_knownhosts-test-knownhosts.obj `if test -f 'src/ssh/test-knownhosts.c'; then $(CYGPATH_W) 'src/ssh/test-knownhosts.c'; else $(CYGPATH_W) '$(srcdir)/src/ssh/test-knownhosts.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/ssh/$(DEPDIR)/test_knownhosts-test-knownhosts.Tpo src/ssh/$(DEPDIR)/test_knownhosts-test-knownhosts.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/ssh/test-knownhosts.c' object='src/ssh/test_knownhosts-test-knownhosts.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_knownhosts_CFLAGS) $(CFLAGS) -c -o src/common/test_knownhosts-test-knownhosts.obj `if test -f 'src/common/test-knownhosts.c'; then $(CYGPATH_W) 'src/common/test-knownhosts.c'; else $(CYGPATH_W) '$(srcdir)/src/common/test-knownhosts.c'; fi`
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_knownhosts_CFLAGS) $(CFLAGS) -c -o src/ssh/test_knownhosts-test-knownhosts.obj `if test -f 'src/ssh/test-knownhosts.c'; then $(CYGPATH_W) 'src/ssh/test-knownhosts.c'; else $(CYGPATH_W) '$(srcdir)/src/ssh/test-knownhosts.c'; fi`
 
 src/common/test_locale-test-locale.o: src/common/test-locale.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(test_locale_CFLAGS) $(CFLAGS) -MT src/common/test_locale-test-locale.o -MD -MP -MF src/common/$(DEPDIR)/test_locale-test-locale.Tpo -c -o src/common/test_locale-test-locale.o `test -f 'src/common/test-locale.c' || echo '$(srcdir)/'`src/common/test-locale.c
@@ -8136,13 +8152,6 @@ test-locale.log: test-locale$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
-test-knownhosts.log: test-knownhosts$(EXEEXT)
-	@p='test-knownhosts$(EXEEXT)'; \
-	b='test-knownhosts'; \
-	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
-	--log-file $$b.log --trs-file $$b.trs \
-	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
-	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-pipe.log: test-pipe$(EXEEXT)
 	@p='test-pipe$(EXEEXT)'; \
 	b='test-pipe'; \
@@ -8258,6 +8267,13 @@ test-sshoptions.log: test-sshoptions$(EXEEXT)
 test-sshbridge.log: test-sshbridge$(EXEEXT)
 	@p='test-sshbridge$(EXEEXT)'; \
 	b='test-sshbridge'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-knownhosts.log: test-knownhosts$(EXEEXT)
+	@p='test-knownhosts$(EXEEXT)'; \
+	b='test-knownhosts'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -9188,6 +9204,9 @@ src/common/cockpitassets.c: src/common/cockpitassets.gresource.xml src/common/fa
 
 # Tell make that we depend on these files being built here
 src/common/test-locale.c: $(test_locale_MO)
+
+libpreload-temp-home.so: src/common/preload-temp-home.c
+	$(AM_V_CCLD) $(CC) $(CFLAGS) -fPIC -shared -o $@ $^
 
 @WITH_COVERAGE_TRUE@coverage:
 @WITH_COVERAGE_TRUE@	mkdir -p tools/coverage

@@ -73,7 +73,7 @@ return plural;
  ],
  "Cancel": [
   null,
-  "Zrušit"
+  "Storno"
  ],
  "Compress crash dumps to save space": [
   null,
@@ -85,35 +85,35 @@ return plural;
  ],
  "Crash dump location": [
   null,
-  ""
+  "Umístění výpisu paměti pádu"
  ],
  "Crash system": [
   null,
-  ""
+  "Zhavarovat systém"
  ],
  "Directory": [
   null,
-  "Adresář"
+  "Složka"
  ],
  "Directory $0 isn't writable or doesn't exist.": [
   null,
-  ""
+  "Složka $0 není zapisovatelná nebo neexistuje."
  ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
-  ""
+  "Služba kdump není nainstalovaná. Zajistěte, aby byl nainstalován balíček kexec-tools."
  ],
  "Kernel Dump": [
   null,
-  ""
+  "Výpis paměti jádra"
  ],
  "Loading...": [
   null,
-  ""
+  "Načítání…"
  ],
  "Local Filesystem": [
   null,
-  ""
+  "Místní souborový systém"
  ],
  "Location": [
   null,
@@ -121,19 +121,19 @@ return plural;
  ],
  "More details": [
   null,
-  "Více podrobností"
+  "Další podrobnosti"
  ],
  "Mount": [
   null,
-  ""
+  "Připojit (mount)"
  ],
  "No configuration found": [
   null,
-  ""
+  "Nenalezeno žádné nastavení"
  ],
  "No memory reserved. Append a crashkernel option to the kernel command line (e.g. in /etc/default/grub) to reserve memory at boot time. Example: crashkernel=512M": [
   null,
-  ""
+  "Není vyhrazena žádná paměť. K příkazovému řádku jádra připojte volbu crashkernel (např. v /etc/default/grub) pro vyhrazení paměti při startu. Příklad: crashkernel=512M"
  ],
  "None": [
   null,
@@ -141,7 +141,7 @@ return plural;
  ],
  "Off": [
   null,
-  ""
+  "Vypnuto"
  ],
  "Ok": [
   null,
@@ -149,31 +149,31 @@ return plural;
  ],
  "On": [
   null,
-  ""
+  "Zapnuto"
  ],
  "On a mounted device": [
   null,
-  ""
+  "Na připojeném zařízení"
  ],
  "Raw to a device": [
   null,
-  ""
+  "Neupravované na zařízení"
  ],
  "Reading...": [
   null,
-  ""
+  "Načítání…"
  ],
  "Remote over NFS": [
   null,
-  ""
+  "Vzdálené přes NFS"
  ],
  "Remote over SSH": [
   null,
-  ""
+  "Vzdálené přes SSH"
  ],
  "Reserved memory": [
   null,
-  ""
+  "Vyhrazená paměť"
  ],
  "Server": [
   null,
@@ -181,70 +181,70 @@ return plural;
  ],
  "Service has an error": [
   null,
-  ""
+  "Služba má chybu"
  ],
  "Service is running": [
   null,
-  ""
+  "Služba je spuštěná"
  ],
  "Service is starting": [
   null,
-  ""
+  "Služba se spouští"
  ],
  "Service is stopped": [
   null,
-  ""
+  "Služba je zastavená"
  ],
  "Service is stopping": [
   null,
-  ""
+  "Služba se zastavuje"
  ],
  "Test Configuration": [
   null,
-  ""
+  "Vyzkoušet nastavení"
  ],
  "Test is only available while the kdump service is running.": [
   null,
-  ""
+  "Test je k dispozici pouze pokud je spuštěná služba kdump."
  ],
  "Test kdump settings": [
   null,
-  ""
+  "Vyzkoušet nastavení kdump"
  ],
  "This will test kdump settings by crashing the kernel and thereby the system. Depending on the settings, the system may not automatically reboot and the process may take a while.": [
   null,
-  ""
+  "Toto vyzkouší nastavení kdump vyvoláním havárie jádra a tím i systému. V závislosti na nastavení se systém nemusí automaticky zrestartovat a proces může chvíli trvat."
  ],
  "This will test the kdump configuration by crashing the kernel.": [
   null,
-  ""
+  "Toto vyzkouší nastavení kdump vyvoláním havárie jádra."
  ],
  "Unable to apply settings: $0": [
   null,
-  ""
+  "Nastavení se nedaří uplatnit: $0"
  ],
  "Use the setting in /etc/kdump.conf": [
   null,
-  ""
+  "Použít nastavení v /etc/kdump.conf"
  ],
  "invalid: multiple targets defined": [
   null,
-  ""
+  "neplatné: definováno vícero cílů"
  ],
  "kdump status": [
   null,
-  ""
+  "stav kdump"
  ],
  "locally in $0": [
   null,
-  ""
+  "místně v $0"
  ],
  "ssh key": [
   null,
-  ""
+  "ssh klíč"
  ],
  "undefined": [
   null,
-  ""
+  "nedefinované"
  ]
 }));

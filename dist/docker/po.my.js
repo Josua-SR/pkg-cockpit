@@ -71,32 +71,8 @@ return plural;
   null,
   ""
  ],
- "$0 day": [
-  "$0 days",
-  ""
- ],
- "$0 hour": [
-  "$0 hours",
-  ""
- ],
- "$0 minute": [
-  "$0 minutes",
-  ""
- ],
- "$0 month": [
-  "$0 months",
-  ""
- ],
  "$0 shares": [
   null,
-  ""
- ],
- "$0 week": [
-  "$0 weeks",
-  ""
- ],
- "$0 year": [
-  "$0 years",
   ""
  ],
  "${hip}:${hport} -> $cport": [

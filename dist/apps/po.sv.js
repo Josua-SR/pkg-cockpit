@@ -85,19 +85,19 @@ return plural;
  ],
  "Error": [
   null,
-  ""
+  "Fel"
  ],
  "Go to Application": [
   null,
-  ""
+  "Gå till programmet"
  ],
  "Install": [
   null,
-  ""
+  "Installera"
  ],
  "Installing": [
   null,
-  ""
+  "Installerar"
  ],
  "No applications installed or available": [
   null,

@@ -17,35 +17,37 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
+import React from "react";
+
+import cockpit from "cockpit";
+import utils from "./utils.js";
+import $ from "jquery";
+
 import { dialog_open, TextInput } from "./dialog.jsx";
+import { StorageButton, StorageLink } from "./storage-controls.jsx";
+import FormatDialog from "./format-dialog.jsx";
 
-var React = require("react");
-var createReactClass = require('create-react-class');
+const _ = cockpit.gettext;
 
-var cockpit = require("cockpit");
-var utils = require("./utils.js");
-var $ = require("jquery");
+class FilesystemTab extends React.Component {
+    constructor(props) {
+        super(props);
+        this.onSamplesChanged = this.onSamplesChanged.bind(this);
+    }
 
-var StorageControls = require("./storage-controls.jsx");
-var FormatDialog = require("./format-dialog.jsx");
-
-var StorageButton = StorageControls.StorageButton;
-var StorageLink = StorageControls.StorageLink;
-var FormatButton = FormatDialog.FormatButton;
-
-var _ = cockpit.gettext;
-
-var FilesystemTab = createReactClass({
-    onSamplesChanged: function () {
+    onSamplesChanged() {
         this.setState({});
-    },
-    componentDidMount: function () {
+    }
+
+    componentDidMount() {
         $(this.props.client.fsys_sizes).on("changed", this.onSamplesChanged);
-    },
-    componentWillUnmount: function () {
+    }
+
+    componentWillUnmount() {
         $(this.props.client.fsys_sizes).off("changed", this.onSamplesChanged);
-    },
-    render: function () {
+    }
+
+    render() {
         var self = this;
         var block = self.props.block;
         var block_fsys = block && self.props.client.blocks_fsys[block.path];
@@ -143,7 +145,7 @@ var FilesystemTab = createReactClass({
         return (
             <div>
                 <div className="tab-actions">
-                    <FormatButton client={this.props.client} block={this.props.block} />
+                    <FormatDialog.FormatButton client={this.props.client} block={this.props.block} />
                 </div>
                 <table className="info-table-ct">
                     <tbody>
@@ -212,8 +214,8 @@ var FilesystemTab = createReactClass({
                 </table>
             </div>
         );
-    },
-});
+    }
+}
 
 module.exports = {
     FilesystemTab: FilesystemTab

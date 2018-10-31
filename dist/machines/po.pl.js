@@ -83,6 +83,10 @@ return plural;
   null,
   "Dodaj dysk"
  ],
+ "Address": [
+  null,
+  "Adres"
+ ],
  "Address:": [
   null,
   "Adres:"
@@ -127,10 +131,6 @@ return plural;
   null,
   "Typ procesora:"
  ],
- "CREATE_AND_ATTACH_VOLUME action failed": [
-  null,
-  "Działanie CREATE_AND_ATTACH_VOLUME się nie powiodło"
- ],
  "Cancel": [
   null,
   "Anuluj"
@@ -138,6 +138,10 @@ return plural;
  "Capacity": [
   null,
   "Pojemność"
+ ],
+ "Changes will apply on VM shutdown": [
+  null,
+  "Zmiany zostaną zastosowane podczas wyłączania maszyny wirtualnej"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -201,7 +205,7 @@ return plural;
  ],
  "Ctrl+Alt+Del": [
   null,
-  ""
+  "Ctrl+Alt+Del"
  ],
  "Delete": [
   null,
@@ -242,6 +246,10 @@ return plural;
  "Download the MSI from $0": [
   null,
   "Pobierz plik MSI z $0"
+ ],
+ "Edit": [
+  null,
+  "Modyfikuj"
  ],
  "Emulated Machine:": [
   null,
@@ -327,6 +335,14 @@ return plural;
   null,
   "Wczytywanie…"
  ],
+ "MAC Address": [
+  null,
+  "Adres MAC"
+ ],
+ "Mac Address": [
+  null,
+  "Adres MAC"
+ ],
  "Manual Connection": [
   null,
   "Ręczne połączenie"
@@ -351,6 +367,14 @@ return plural;
   null,
   "MiB"
  ],
+ "Model": [
+  null,
+  "Model"
+ ],
+ "Model type": [
+  null,
+  "Typ modelu"
+ ],
  "More Information": [
   null,
   "Więcej informacji"
@@ -366,6 +390,14 @@ return plural;
  "Name should not consist of empty characters only": [
   null,
   "Nazwa nie może składać się tylko z pustych znaków"
+ ],
+ "Network Type": [
+  null,
+  "Typ sieci"
+ ],
+ "Network settings failed to change with following error: ": [
+  null,
+  "Zmiana ustawień sieci się nie powiodła, wystąpił ten błąd: "
  ],
  "Networks": [
   null,
@@ -394,6 +426,14 @@ return plural;
  "No matching files found": [
   null,
   "Nie odnaleziono pasujących plików"
+ ],
+ "No network interfaces defined for this VM": [
+  null,
+  "Nie określono interfejsów sieciowych dla tej maszyny wirtualnej"
+ ],
+ "No virtual networks": [
+  null,
+  "Brak sieci wirtualnych"
  ],
  "OS Vendor": [
   null,
@@ -430,6 +470,10 @@ return plural;
  "Please start the virtual machine to access its console.": [
   null,
   "Proszę uruchomić maszynę wirtualną, aby uzyskać dostęp do jej konsoli."
+ ],
+ "Plug": [
+  null,
+  "Podłącz"
  ],
  "Pool": [
   null,
@@ -491,13 +535,17 @@ return plural;
   null,
   "Port TLS SPICE:"
  ],
+ "Save": [
+  null,
+  "Zapisz"
+ ],
  "Send Non-Maskable Interrupt": [
   null,
   "Wyślij niemaskowalne przerwanie"
  ],
  "Send key": [
   null,
-  ""
+  "Wyślij klawisz"
  ],
  "Serial Console": [
   null,
@@ -595,9 +643,9 @@ return plural;
   null,
   "Pula jest pusta"
  ],
- "Threads per cores": [
+ "Threads per core": [
   null,
-  "Wątki na rdzenie"
+  "Wątki na rdzeń"
  ],
  "Too many files found": [
   null,
@@ -607,6 +655,10 @@ return plural;
   null,
   "Rozwiązywanie problemów"
  ],
+ "Type": [
+  null,
+  "Typ"
+ ],
  "URL": [
   null,
   "Adres URL"
@@ -614,6 +666,10 @@ return plural;
  "Unique name": [
   null,
   "Unikalna nazwa"
+ ],
+ "Unplug": [
+  null,
+  "Odłącz"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
@@ -631,33 +687,25 @@ return plural;
   null,
   "Używane"
  ],
- "VM ATTACH_DISK action failed": [
-  null,
-  "Działanie VM ATTACH_DISK się nie powiodło"
- ],
  "VM CHANGE_NETWORK_STATE action failed": [
   null,
   "Działanie VM CHANGE_NETWORK_STATE się nie powiodło"
  ],
- "VM CHANGE_NETWORK_STATE action failed: updated device XML couldn't not be generated": [
-  null,
-  "Działanie VM CHANGE_NETWORK_STATE się nie powiodło: nie można utworzyć zaktualizowanego XML urządzenia"
- ],
  "VM DELETE (DESTROY) action failed": [
   null,
-  ""
+  "Działanie VM DELETE (DESTROY) się nie powiodło"
  ],
  "VM DELETE (UNDEFINE) action failed": [
   null,
-  ""
+  "Działanie VM DELETE (UNDEFINE) się nie powiodło"
  ],
  "VM DELETE action failed": [
   null,
-  ""
+  "Działanie VM DELETE się nie powiodło"
  ],
- "VM DETACH action failed": [
+ "VM DETACH_DISK action failed": [
   null,
-  ""
+  "Działanie VM DETACH_DISK się nie powiodło"
  ],
  "VM FORCE OFF action failed": [
   null,

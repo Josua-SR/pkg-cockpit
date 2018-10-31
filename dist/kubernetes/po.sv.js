@@ -475,55 +475,55 @@ return plural;
  ],
  "Driver": [
   null,
-  ""
+  "Drivrutin"
  ],
  "Empty Directory": [
   null,
-  ""
+  "Tom katalog"
  ],
  "Endpoint": [
   null,
-  ""
+  "Ändpunkt"
  ],
  "Endpoint Name": [
   null,
-  ""
+  "Ändpunktsnamn"
  ],
  "Endpoints": [
   null,
-  ""
+  "Ändpunkter"
  ],
  "Environment": [
   null,
-  ""
+  "Miljö"
  ],
  "Error getting certificate details: $0": [
   null,
-  ""
+  "Fel när certifikatdetaljer hämtades: $0"
  ],
  "Error writing kubectl config": [
   null,
-  ""
+  "Fel när konfiguration av kubectl skrevs"
  ],
  "Fibre Channel": [
   null,
-  ""
+  "Fiberkanal"
  ],
  "Filesystem Type": [
   null,
-  ""
+  "Filsystemstyp"
  ],
  "Flex": [
   null,
-  ""
+  "Flex"
  ],
  "Flocker": [
   null,
-  ""
+  "Flocker"
  ],
  "Flocker Dataset Name": [
   null,
-  ""
+  "Flockers datamängdsnamn"
  ],
  "GCE Persistent Disk": [
   null,
@@ -531,163 +531,163 @@ return plural;
  ],
  "Git Repository": [
   null,
-  ""
+  "Git-förråd"
  ],
  "Gluster FS": [
   null,
-  ""
+  "Gluster-FS"
  ],
  "GlusterFS": [
   null,
-  ""
+  "GlusterFS"
  ],
  "Grant additional push or admin access to specific members below.": [
   null,
-  ""
+  "Ge ytterligare push- eller admin-åtkomst till de specifika medlemmarna nedan."
  ],
  "Group Members": [
   null,
-  ""
+  "Gruppmedlemmar"
  ],
  "Group or Project": [
   null,
-  ""
+  "Grupp eller projekt"
  ],
  "Groups": [
   null,
-  ""
+  "Grupper"
  ],
  "Host": [
   null,
-  ""
+  "Värd"
  ],
  "Host Path": [
   null,
-  ""
+  "Värdsökväg"
  ],
  "IP": [
   null,
-  ""
+  "IP"
  ],
  "ISCSI": [
   null,
-  ""
+  "ISCSI"
  ],
  "Identities": [
   null,
-  ""
+  "Identiteter"
  ],
  "Identity": [
   null,
-  ""
+  "Identitet"
  ],
  "Image": [
   null,
-  ""
+  "Avbild"
  ],
  "Image ID": [
   null,
-  ""
+  "Avbilds-ID"
  ],
  "Image Name": [
   null,
-  ""
+  "Avbildsnamn"
  ],
  "Image Registry": [
   null,
-  ""
+  "Avbildsregister"
  ],
  "Image Stream": [
   null,
-  ""
+  "Avbildsström"
  ],
  "Image commands": [
   null,
-  ""
+  "Avbildskommandon"
  ],
  "Images": [
   null,
-  ""
+  "Avbilder"
  ],
  "Images by project": [
   null,
-  ""
+  "Avbilder per projekt"
  ],
  "Images pushed recently": [
   null,
-  ""
+  "Avbilder trycktes upp nyligen"
  ],
  "In order to begin pushing images to the registry, use the commands below.": [
   null,
-  ""
+  "För att börja trycka avbilder till registret, använd kommandona nedan."
  ],
  "In order to begin pushing images to the registry, you need to create a project.": [
   null,
-  ""
+  "För att börja trycka avbilder till registret behöver du skapa ett projekt."
  ],
  "Interface": [
   null,
-  ""
+  "Gränssnitt"
  ],
  "Kernel Version": [
   null,
-  ""
+  "Kärnversion"
  ],
  "Key Ring Path": [
   null,
-  ""
+  "Nyckelringssökväg"
  ],
  "Kubelet Version": [
   null,
-  ""
+  "Kubelet-version"
  ],
  "Kubernetes Cluster": [
   null,
-  ""
+  "Kubernetes-kluster"
  ],
  "Labels": [
   null,
-  ""
+  "Etiketter"
  ],
  "Last Heartbeat": [
   null,
-  ""
+  "Senaste hjärtslag"
  ],
  "Last Status Change": [
   null,
-  ""
+  "Senaste statusändring"
  ],
  "Latest Version": [
   null,
-  ""
+  "Senaste version"
  ],
  "Log into OpenShift command line tools:": [
   null,
-  ""
+  "Logga in till OpenShifts kommandoradsverktyg:"
  ],
  "Log into the registry:": [
   null,
-  ""
+  "Logga in i registret:"
  ],
  "Logical Unit Number": [
   null,
-  ""
+  "Logiskt enhetsnummer"
  ],
  "Login commands": [
   null,
-  ""
+  "Inloggningskommandon"
  ],
  "Logs": [
   null,
-  ""
+  "Loggar"
  ],
  "Machine ID": [
   null,
-  ""
+  "Makin-ID"
  ],
  "Manifest": [
   null,
-  ""
+  "Förteckning"
  ],
  "Medium": [
   null,
@@ -1031,11 +1031,11 @@ return plural;
  ],
  "Project": [
   null,
-  ""
+  "Projekt"
  ],
  "Project Members": [
   null,
-  ""
+  "Projektmedlemmar"
  ],
  "Project access policy allows anonymous users to pull images.": [
   null,
@@ -1047,39 +1047,39 @@ return plural;
  ],
  "Project access policy only allows specific members to access images.": [
   null,
-  ""
+  "Projektåtkomstpolicyn tillåter endast specifika medlemmar att komma åt avbilder."
  ],
  "Project:": [
   null,
-  ""
+  "Projekt:"
  ],
  "Projects": [
   null,
-  ""
+  "Projekt"
  ],
  "Proxy Version": [
   null,
-  ""
+  "Proxy-version"
  ],
  "Pull an image:": [
   null,
-  ""
+  "Hämta en avbild:"
  ],
  "Pull from": [
   null,
-  ""
+  "Hämta ifrån"
  ],
  "Pull specific tags from another image repository": [
   null,
-  ""
+  "Hämta specifika taggar från ett annat avbildsförråd"
  ],
  "Push an image:": [
   null,
-  ""
+  "Tryck ut en avbild:"
  ],
  "Qualified Name": [
   null,
-  ""
+  "Kvalificerat namn"
  ],
  "Rados Block Device": [
   null,

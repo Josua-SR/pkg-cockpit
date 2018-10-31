@@ -69,11 +69,11 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  "$0 je k dispozici pro většinu operačních systémů. K instalaci je třeba hledat v GNOME Software nebo spustit:"
+  "$0 je k dispozici pro většinu operačních systémů. Pro instalaci vyhledejte v GNOME Software nebo spusťte následující:"
  ],
  "$0 vCPU Details": [
   null,
-  ""
+  "Podrobnosti o virt. procesoru $0"
  ],
  "Add": [
   null,
@@ -81,7 +81,11 @@ return plural;
  ],
  "Add Disk": [
   null,
-  ""
+  "Přidat disk"
+ ],
+ "Address": [
+  null,
+  "Adresa"
  ],
  "Address:": [
   null,
@@ -89,7 +93,7 @@ return plural;
  ],
  "All changes will take effect only after stopping and starting the VM.": [
   null,
-  ""
+  "Jakékoli změny se projeví teprve až po zastavení a spuštění virt. stroje."
  ],
  "Apply": [
   null,
@@ -97,15 +101,15 @@ return plural;
  ],
  "Attach permanently": [
   null,
-  ""
+  "Připojit trvale"
  ],
  "Automatically start libvirt on boot": [
   null,
-  ""
+  "Spouštět libvirt automaticky při startu"
  ],
  "Autostart:": [
   null,
-  "Automatické spuštění"
+  "Automatické spuštění:"
  ],
  "Available": [
   null,
@@ -113,35 +117,35 @@ return plural;
  ],
  "Boot Order:": [
   null,
-  "Boot příkaz:"
+  "Pořadí zavádění:"
  ],
  "Bus": [
   null,
-  "Bus"
+  "Sběrnice"
  ],
  "CHANGE NETWORK STATE action failed": [
   null,
-  "CHANGE NETWORK STATE akce selhala"
+  "Akce ZMĚNIT STAV SÍTĚ se nezdařila"
  ],
  "CPU Type:": [
   null,
-  "Typ CPU:"
- ],
- "CREATE_AND_ATTACH_VOLUME action failed": [
-  null,
-  ""
+  "Typ procesoru:"
  ],
  "Cancel": [
   null,
-  "Zrušit"
+  "Storno"
  ],
  "Capacity": [
   null,
   "Kapacita"
  ],
+ "Changes will apply on VM shutdown": [
+  null,
+  ""
+ ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  "Kliknutím na tlačítko \"Spustit vzdálený prohlížeč\" se stáhne soubor ve formátu .vv a spustí se $0."
+  "Kliknutím na „Spustit vzdálený prohlížeč“ se stáhne soubor ve formátu .vv a spustí se $0."
  ],
  "Confirm deletion of $0": [
   null,
@@ -149,19 +153,19 @@ return plural;
  ],
  "Connect with any $0 viewer application.": [
   null,
-  ""
+  "Připojte se libovolnou aplikací pro zobrazování $0."
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  ""
+  "Připojte se libovolnou aplikací pro zobrazování SPICE nebo VNC."
  ],
  "Connecting": [
   null,
-  ""
+  "Připojování"
  ],
  "Connecting to Virtualization Service": [
   null,
-  ""
+  "Připojuje se ke službě virtualizace"
  ],
  "Connection": [
   null,
@@ -169,39 +173,39 @@ return plural;
  ],
  "Console Type": [
   null,
-  ""
+  "Typ konzole"
  ],
  "Consoles": [
   null,
-  ""
+  "Konzole"
  ],
  "Cores per socket": [
   null,
-  ""
+  "Jader na patici"
  ],
  "Create": [
   null,
-  ""
+  "Vytvořit"
  ],
  "Create New": [
   null,
-  ""
+  "Vytvořit nový"
  ],
  "Create New VM": [
   null,
-  ""
+  "Vytvořit nový virt. stroj"
  ],
  "Create New Virtual Machine": [
   null,
-  ""
+  "Vytvořit nový virtuální stroj"
  ],
  "Creation of vm $0 failed": [
   null,
-  ""
+  "Vytvoření virt. stroje $0 se nezdařilo"
  ],
  "Ctrl+Alt+Del": [
   null,
-  ""
+  "Ctrl+Alt+Del"
  ],
  "Delete": [
   null,
@@ -209,7 +213,7 @@ return plural;
  ],
  "Delete associated storage files:": [
   null,
-  ""
+  "Smazat související soubory úložiště:"
  ],
  "Device": [
   null,
@@ -217,7 +221,7 @@ return plural;
  ],
  "Disconnect": [
   null,
-  ""
+  "Odpojit"
  ],
  "Disconnected": [
   null,
@@ -225,15 +229,15 @@ return plural;
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
-  ""
+  "Odpojeno od sériové konzole. Klikněte na tlačítko Znovu připojit"
  ],
  "Disk failed to be attached with following error: ": [
   null,
-  ""
+  "Disk se nepodařilo připojit s následující chybou:"
  ],
  "Disk failed to be created with following error: ": [
   null,
-  ""
+  "Disk se nepodařilo vytvořit s následující chybou:"
  ],
  "Disks": [
   null,
@@ -241,15 +245,19 @@ return plural;
  ],
  "Download the MSI from $0": [
   null,
-  ""
+  "Stáhnout MSI z $0"
+ ],
+ "Edit": [
+  null,
+  "Upravit"
  ],
  "Emulated Machine:": [
   null,
-  ""
+  "Emulovaný stroj:"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
-  ""
+  "Mělo by být zapnuto méně než maximální počet virtuálních procesorů."
  ],
  "File": [
   null,
@@ -257,15 +265,15 @@ return plural;
  ],
  "Filesystem": [
   null,
-  "Systém souborů"
+  "Souborový systém"
  ],
  "Force Restart": [
   null,
-  ""
+  "Vynutit restart"
  ],
  "Force Shut Down": [
   null,
-  ""
+  "Vynutit vypnutí"
  ],
  "Format": [
   null,
@@ -273,7 +281,7 @@ return plural;
  ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
-  ""
+  "Akce ZJISTIT MAXIMUM VIRT. PROCESORŮ HYPERVIZORU se nezdařila"
  ],
  "GiB": [
   null,
@@ -281,11 +289,11 @@ return plural;
  ],
  "Graphics Console (VNC)": [
   null,
-  ""
+  "Grafická konzole (VNC)"
  ],
  "Graphics Console in Desktop Viewer": [
   null,
-  ""
+  "Grafická konzole v desktopovém prohlížeči"
  ],
  "Host": [
   null,
@@ -293,15 +301,15 @@ return plural;
  ],
  "INSTALL VM action failed": [
   null,
-  ""
+  "Akce NAINSTALOVAT VIRT. STROJ se nezdařila"
  ],
  "Immediately Start VM": [
   null,
-  ""
+  "Okamžitě spustit virt. stroj"
  ],
  "Install": [
   null,
-  "Instalovat"
+  "Nainstalovat"
  ],
  "Installation Source": [
   null,
@@ -309,15 +317,15 @@ return plural;
  ],
  "Installation Source Type": [
   null,
-  ""
+  "Typ zdroje instalace"
  ],
  "Installation Source should not be empty": [
   null,
-  ""
+  "Zdroj instalace je třeba vyplnit"
  ],
  "Invalid filename": [
   null,
-  ""
+  "Neplatný název souboru"
  ],
  "Launch Remote Viewer": [
   null,
@@ -325,15 +333,23 @@ return plural;
  ],
  "Loading ...": [
   null,
+  "Načítání…"
+ ],
+ "MAC Address": [
+  null,
+  "MAC adresa"
+ ],
+ "Mac Address": [
+  null,
   ""
  ],
  "Manual Connection": [
   null,
-  ""
+  "Ruční připojení"
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
-  ""
+  "Maximální počet virtuálních procesorů, přiřazených operačnímu systému hosta. Je třeba, aby bylo z rozmezí 1 až $0"
  ],
  "Memory": [
   null,
@@ -341,7 +357,7 @@ return plural;
  ],
  "Memory should be positive number": [
   null,
-  ""
+  "Paměť by mělo být kladné číslo"
  ],
  "Memory:": [
   null,
@@ -351,9 +367,17 @@ return plural;
   null,
   "MiB"
  ],
+ "Model": [
+  null,
+  "Model"
+ ],
+ "Model type": [
+  null,
+  "Typ modelu"
+ ],
  "More Information": [
   null,
-  ""
+  "Více informací"
  ],
  "Name": [
   null,
@@ -361,43 +385,59 @@ return plural;
  ],
  "Name should not be empty": [
   null,
-  ""
+  "Název je třeba vyplnit"
  ],
  "Name should not consist of empty characters only": [
+  null,
+  "Název by se neměl sestávat pouze z prázdných znaků"
+ ],
+ "Network Type": [
+  null,
+  ""
+ ],
+ "Network settings failed to change with following error: ": [
   null,
   ""
  ],
  "Networks": [
   null,
-  ""
+  "Sítě"
  ],
  "New Volume Name": [
   null,
-  ""
+  "Název pro nový svazek"
  ],
  "No VM is running or defined on this host": [
   null,
-  ""
+  "Na tomto stroji nejsou spuštěné nebo definované žádné virt. stroje"
  ],
  "No boot device found": [
   null,
-  ""
+  "Nenalezeno žádné zařízení pro zavádění"
  ],
  "No console defined for this virtual machine.": [
   null,
-  ""
+  "Pro tento virtuální stroj není definována žádná konzole."
  ],
  "No disks defined for this VM": [
   null,
-  ""
+  "Pro tento virt. stroj nejsou definované žádné disky"
  ],
  "No matching files found": [
+  null,
+  "Nenalezeny žádné odpovídající soubory"
+ ],
+ "No network interfaces defined for this VM": [
+  null,
+  "Pro tento virt. stroj nebyla určena žádná síťová rozhraní"
+ ],
+ "No virtual networks": [
   null,
   ""
  ],
  "OS Vendor": [
   null,
-  ""
+  "Výrobce oper. systému"
  ],
  "Ok": [
   null,
@@ -405,7 +445,7 @@ return plural;
  ],
  "Operating System": [
   null,
-  ""
+  "Operační systém"
  ],
  "Overview": [
   null,
@@ -413,23 +453,27 @@ return plural;
  ],
  "Path to ISO file on host's file system": [
   null,
-  ""
+  "Popis umístění ISO souboru na souborovém systému hostitele"
  ],
  "Path to file": [
   null,
-  ""
+  "Popis umístění serveru"
  ],
  "Please enter new volume name": [
   null,
-  ""
+  "Zadejte název pro nový svazek"
  ],
  "Please enter new volume size": [
   null,
-  ""
+  "Zadejte velikost nového svazku"
  ],
  "Please start the virtual machine to access its console.": [
   null,
-  ""
+  "Pro přístup k jeho konzoli je třeba virtuální stroj napřed zapnout"
+ ],
+ "Plug": [
+  null,
+  "Připojit"
  ],
  "Pool": [
   null,
@@ -441,7 +485,7 @@ return plural;
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
-  ""
+  "Upřednostňovaný počet patic který odhalit hostovi."
  ],
  "Protocol": [
   null,
@@ -449,15 +493,15 @@ return plural;
  ],
  "Readonly": [
   null,
-  ""
+  "Pouze pro čtení"
  ],
  "Reconnect": [
   null,
-  ""
+  "Znovu připojit"
  ],
  "Remote URL": [
   null,
-  ""
+  "Vzdálená URL adresa"
  ],
  "Restart": [
   null,
@@ -469,47 +513,51 @@ return plural;
  ],
  "SET VCPU SETTINGS action failed": [
   null,
-  ""
+  "Akce NASTAVIT NASTAVENÍ VIRT. PROCESORU se nezdařila"
  ],
  "SET_VCPU_SETTINGS action failed": [
   null,
-  ""
+  "Akce NASTAVIT NASTAVENÍ VIRT. PROCESORU se nezdařila"
  ],
  "SPICE": [
   null,
-  ""
+  "SPICE"
  ],
  "SPICE Address:": [
   null,
-  ""
+  "Adresa SPICE:"
  ],
  "SPICE Port:": [
   null,
-  ""
+  "Port SPICE:"
  ],
  "SPICE TLS Port:": [
   null,
-  ""
+  "TLS port SPICE:"
+ ],
+ "Save": [
+  null,
+  "Uložit"
  ],
  "Send Non-Maskable Interrupt": [
   null,
-  ""
+  "Poslat nemaskovatelné přerušení"
  ],
  "Send key": [
   null,
-  ""
+  "Poslat stisk klávesy"
  ],
  "Serial Console": [
   null,
-  ""
+  "Sériová konzole"
  ],
  "Session": [
   null,
-  ""
+  "Sezení"
  ],
  "Shut Down": [
   null,
-  "Ukončit"
+  "Vypnout"
  ],
  "Size": [
   null,
@@ -517,7 +565,7 @@ return plural;
  ],
  "Sockets": [
   null,
-  ""
+  "Patice"
  ],
  "Source": [
   null,
@@ -525,15 +573,15 @@ return plural;
  ],
  "Source should start with http, ftp or nfs protocol": [
   null,
-  ""
+  "Zdroj by měl začínat na http, ftp nebo nfs protokol"
  ],
  "Start libvirt": [
   null,
-  ""
+  "Spustit libvirt"
  ],
  "Start the VM to see disk statistics.": [
   null,
-  ""
+  "Pro zobrazení statistik disku je třeba virt. stroj spustit"
  ],
  "State": [
   null,
@@ -541,11 +589,11 @@ return plural;
  ],
  "Storage Size": [
   null,
-  ""
+  "Velikost úložiště"
  ],
  "Storage Size should not be negative number": [
   null,
-  ""
+  "Velikost úložiště by nemělo být záporné číslo"
  ],
  "System": [
   null,
@@ -557,55 +605,59 @@ return plural;
  ],
  "The VM crashed.": [
   null,
-  ""
+  "Virt. stroj zhavaroval."
  ],
  "The VM is down.": [
   null,
-  ""
+  "Virt. stroj je vypnutý."
  ],
  "The VM is going down.": [
   null,
-  ""
+  "Virt. stroj se vypíná"
  ],
  "The VM is idle.": [
   null,
-  ""
+  "Virt. stroj je nečinný."
  ],
  "The VM is in process of dying (shut down or crash is not completed).": [
   null,
-  ""
+  "Virt. stroj se poroučí (vypnutí nebo nedokončený pád)."
  ],
  "The VM is paused.": [
   null,
-  ""
+  "Virt. stroj je pozastavený."
  ],
  "The VM is running and will be forced off before deletion.": [
   null,
-  ""
+  "Virt. stroj je spuštěný a před smazáním bude vynuceně vypnut."
  ],
  "The VM is running.": [
   null,
-  ""
+  "Virt. stroj je spuštěný."
  ],
  "The VM is suspended by guest power management.": [
   null,
-  ""
+  "Virt. stroj je uspaný svou vlastní správou napájení."
  ],
  "The pool is empty": [
   null,
-  ""
+  "Fond je prázdný"
  ],
- "Threads per cores": [
+ "Threads per core": [
   null,
-  ""
+  "Vláken na jádro"
  ],
  "Too many files found": [
   null,
-  ""
+  "Nalezeno příliš mnoho souborů"
  ],
  "Troubleshoot": [
   null,
   "Řešit potíže"
+ ],
+ "Type": [
+  null,
+  "Typ"
  ],
  "URL": [
   null,
@@ -613,11 +665,15 @@ return plural;
  ],
  "Unique name": [
   null,
-  ""
+  "Neopakující se název"
+ ],
+ "Unplug": [
+  null,
+  "Odpojit"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
-  ""
+  "Pro zobrazení statistik disku je třeba přejít na novější verzi libvirt"
  ],
  "Usage": [
   null,
@@ -625,67 +681,59 @@ return plural;
  ],
  "Use Existing": [
   null,
-  ""
+  "Použít existující"
  ],
  "Used": [
   null,
-  ""
- ],
- "VM ATTACH_DISK action failed": [
-  null,
-  ""
+  "Využito"
  ],
  "VM CHANGE_NETWORK_STATE action failed": [
   null,
-  ""
- ],
- "VM CHANGE_NETWORK_STATE action failed: updated device XML couldn't not be generated": [
-  null,
-  ""
+  "Akce ZMĚNA STAVU SÍTĚ VIRT. STROJE se nezdařila"
  ],
  "VM DELETE (DESTROY) action failed": [
   null,
-  ""
+  "Akce SMAZAT VIRT. STROJ (ZLIKVIDOVAT) se nezdařila"
  ],
  "VM DELETE (UNDEFINE) action failed": [
   null,
-  ""
+  "Akce SMAZAT VIRT. STROJ (ZRUŠIT DEFINICI) se nezdařila"
  ],
  "VM DELETE action failed": [
   null,
-  ""
+  "Akce SMAZAT STROJ se nezdařila"
  ],
- "VM DETACH action failed": [
+ "VM DETACH_DISK action failed": [
   null,
-  ""
+  "Akce ODPOJIT DISK VIRT. STROJE se nezdařila"
  ],
  "VM FORCE OFF action failed": [
   null,
-  ""
+  "Akce VYNUCENÉ VYPNUTÍ VIRT. STROJE se nezdařila"
  ],
  "VM FORCE REBOOT action failed": [
   null,
-  ""
+  "Akce VYNUCENÝ RESTART se nezdařila"
  ],
  "VM REBOOT action failed": [
   null,
-  ""
+  "Akce RESTART se nezdařila"
  ],
  "VM SEND Non-Maskable Interrrupt action failed": [
   null,
-  ""
+  "Akce POSLAT VIRT. STROJI nemaskovatelné přerušení se nezdařila"
  ],
  "VM SENDNMI action failed": [
   null,
-  ""
+  "Akce POSLAT VIRT. STROJI NEMASK. PŘERUŠENÍ se nezdařila"
  ],
  "VM SHUT DOWN action failed": [
   null,
-  ""
+  "Akce VYPNOUT VIRT STROJ se nezdařila"
  ],
  "VM START action failed": [
   null,
-  ""
+  "Akce SPUSTIT VIRT STROJ se nezdařila"
  ],
  "VNC": [
   null,
@@ -693,27 +741,27 @@ return plural;
  ],
  "VNC Address:": [
   null,
-  ""
+  "VNC adresa:"
  ],
  "VNC Port:": [
   null,
-  ""
+  "VNC port"
  ],
  "VNC TLS Port:": [
   null,
-  ""
+  "VNC TLS port:"
  ],
  "Virtual Machines": [
   null,
-  ""
+  "Virtuální stroje"
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
-  ""
+  "Služba virtualizace (libvirt) není aktivní"
  ],
  "Virtualization Service is Available": [
   null,
-  ""
+  "Virtualizační služba je k dispozici"
  ],
  "Volume": [
   null,
@@ -725,19 +773,19 @@ return plural;
  ],
  "cdrom": [
   null,
-  ""
+  "cdrom"
  ],
  "crashed": [
   null,
-  "pád"
+  "zhavarovalo"
  ],
  "custom": [
   null,
-  ""
+  "uživatelsky určené"
  ],
  "direct": [
   null,
-  ""
+  "přímé"
  ],
  "disabled": [
   null,
@@ -745,15 +793,15 @@ return plural;
  ],
  "disk": [
   null,
-  ""
+  "disk"
  ],
  "down": [
   null,
-  ""
+  "vypnuté"
  ],
  "dying": [
   null,
-  ""
+  "vypíná se"
  ],
  "enabled": [
   null,
@@ -761,15 +809,15 @@ return plural;
  ],
  "ethernet": [
   null,
-  ""
+  "ethernet"
  ],
  "host": [
   null,
-  ""
+  "stroj"
  ],
  "hostdev": [
   null,
-  ""
+  "zařízení hostitele"
  ],
  "idle": [
   null,
@@ -777,47 +825,47 @@ return plural;
  ],
  "mcast": [
   null,
-  ""
+  "vícesměrvysílání"
  ],
  "network": [
   null,
-  ""
+  "síť"
  ],
  "no": [
   null,
-  ""
+  "ne"
  ],
  "other": [
   null,
-  ""
+  "ostatní"
  ],
  "paused": [
   null,
-  ""
+  "pozastaveno"
  ],
  "qcow2": [
   null,
-  ""
+  "qcow2"
  ],
  "raw": [
   null,
-  ""
+  "raw"
  ],
  "running": [
   null,
-  "běžící"
+  "spuštěné"
  ],
  "server": [
   null,
-  ""
+  "server"
  ],
  "show less": [
   null,
-  ""
+  "zobrazit méně"
  ],
  "show more": [
   null,
-  ""
+  "zobrazit více"
  ],
  "shut off": [
   null,
@@ -825,11 +873,11 @@ return plural;
  ],
  "shutdown": [
   null,
-  ""
+  "vypnout"
  ],
  "suspended (PM)": [
   null,
-  ""
+  "uspáno (správou napájení)"
  ],
  "udp": [
   null,
@@ -837,11 +885,11 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "nedefinované"
  ],
  "up": [
   null,
-  ""
+  "zapnuto"
  ],
  "user": [
   null,
@@ -849,19 +897,19 @@ return plural;
  ],
  "vCPU Count": [
   null,
-  ""
+  "Počet virt. procesorů"
  ],
  "vCPU Maximum": [
   null,
-  ""
+  "Maximum virt. procesorů"
  ],
  "vCPUs:": [
   null,
-  ""
+  "virt. procesorů:"
  ],
  "vhostuser": [
   null,
-  ""
+  "uzivatelvirtstroje"
  ],
  "yes": [
   null,

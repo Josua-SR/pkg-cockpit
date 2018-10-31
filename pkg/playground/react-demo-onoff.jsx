@@ -17,48 +17,55 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-var React = require("react");
-var ReactDOM = require("react-dom");
-var createReactClass = require('create-react-class');
+import React from "react";
+import ReactDOM from "react-dom";
 
-var OnOffSwitch = require("cockpit-components-onoff.jsx").OnOffSwitch;
+import { OnOffSwitch } from "cockpit-components-onoff.jsx";
 
-var OnOffDemo = createReactClass({
-    getInitialState: function() {
-        return {
+class OnOffDemo extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
             onOffA: true,
             onOffB: false
         };
-    },
-    onChangeA: function(val) {
+        this.onChangeA = this.onChangeA.bind(this);
+        this.onChangeB = this.onChangeB.bind(this);
+    }
+
+    onChangeA(val) {
         this.setState({onOffA: val});
-    },
-    onChangeB: function(val) {
+    }
+
+    onChangeB(val) {
         this.setState({onOffB: val});
-    },
-    render: function() {
+    }
+
+    render() {
         return (
             <table>
-                <tr>
-                    <td><span>Regular</span></td>
-                    <td><OnOffSwitch state={this.state.onOffA} onChange={this.onChangeA} /></td>
-                </tr>
-                <tr>
-                    <td><span>Regular</span></td>
-                    <td><OnOffSwitch state={this.state.onOffB} onChange={this.onChangeB} /></td>
-                </tr>
-                <tr>
-                    <td><span>Disabled On</span></td>
-                    <td><OnOffSwitch state enabled={false} /></td>
-                </tr>
-                <tr>
-                    <td><span>Disabled Off</span></td>
-                    <td><OnOffSwitch state={false} enabled={false} /></td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td><span>Regular</span></td>
+                        <td><OnOffSwitch state={this.state.onOffA} onChange={this.onChangeA} /></td>
+                    </tr>
+                    <tr>
+                        <td><span>Regular</span></td>
+                        <td><OnOffSwitch state={this.state.onOffB} onChange={this.onChangeB} /></td>
+                    </tr>
+                    <tr>
+                        <td><span>Disabled On</span></td>
+                        <td><OnOffSwitch state enabled={false} /></td>
+                    </tr>
+                    <tr>
+                        <td><span>Disabled Off</span></td>
+                        <td><OnOffSwitch state={false} enabled={false} /></td>
+                    </tr>
+                </tbody>
             </table>
         );
     }
-});
+}
 
 var showOnOffDemo = function(rootElement) {
     ReactDOM.render(<OnOffDemo />, rootElement);

@@ -17,19 +17,19 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
+import React from "react";
+
+import cockpit from "cockpit";
+import utils from "./utils.js";
+import $ from "jquery";
+
 import { OnOffSwitch } from "cockpit-components-onoff.jsx";
 
-var React = require("react");
-var createReactClass = require('create-react-class');
+import { dialog_open } from "./dialog.jsx";
+import { Tooltip } from "cockpit-components-tooltip.jsx";
+import { fmt_to_fragments } from "./utilsx.jsx";
 
-var cockpit = require("cockpit");
-var utils = require("./utils.js");
-var $ = require("jquery");
-
-var dialog_open = require("./dialog.jsx").dialog_open;
-var Tooltip = require("cockpit-components-tooltip.jsx").Tooltip;
-
-var _ = cockpit.gettext;
+const _ = cockpit.gettext;
 
 /* StorageControl - a button or similar that triggers
  *                  a privileged action.
@@ -46,20 +46,28 @@ var _ = cockpit.gettext;
 
 var permission = cockpit.permission({ admin: true });
 
-var StorageControl = createReactClass({
-    getInitialState: function () {
-        return { allowed: permission.allowed !== false };
-    },
-    onPermissionChanged: function () {
+class StorageControl extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            allowed: permission.allowed !== false
+        };
+        this.onPermissionChanged = this.onPermissionChanged.bind(this);
+    }
+
+    onPermissionChanged() {
         this.setState({ allowed: permission.allowed !== false });
-    },
-    componentDidMount: function () {
+    }
+
+    componentDidMount() {
         $(permission).on("changed", this.onPermissionChanged);
-    },
-    componentWillUnmount: function () {
+    }
+
+    componentWillUnmount() {
         $(permission).off("changed", this.onPermissionChanged);
-    },
-    render: function () {
+    }
+
+    render() {
         var excuse = this.props.excuse;
         if (!this.state.allowed) {
             var markup = {
@@ -75,8 +83,7 @@ var StorageControl = createReactClass({
             </Tooltip>
         );
     }
-
-});
+}
 
 function checked(callback) {
     return function (event) {
@@ -94,8 +101,8 @@ function checked(callback) {
     };
 }
 
-var StorageButton = createReactClass({
-    render: function () {
+class StorageButton extends React.Component {
+    render() {
         var classes = "btn";
         if (this.props.kind)
             classes += " btn-" + this.props.kind;
@@ -113,10 +120,10 @@ var StorageButton = createReactClass({
                             )} />
         );
     }
-});
+}
 
-var StorageLink = createReactClass({
-    render: function () {
+class StorageLink extends React.Component {
+    render() {
         return (
             <StorageControl excuse={this.props.excuse}
                             content={(excuse) => (
@@ -129,7 +136,7 @@ var StorageLink = createReactClass({
                             )} />
         );
     }
-});
+}
 
 /* StorageBlockNavLink - describe a given block device concisely and
                          allow navigating to its details.
@@ -140,8 +147,8 @@ var StorageLink = createReactClass({
    - block
  */
 
-var StorageBlockNavLink = createReactClass({
-    render: function () {
+class StorageBlockNavLink extends React.Component {
+    render() {
         var self = this;
         var client = self.props.client;
         var block = self.props.block;
@@ -152,16 +159,14 @@ var StorageBlockNavLink = createReactClass({
         var parts = utils.get_block_link_parts(client, block.path);
 
         var link = (
-            // There is only one element in the array produced by fmt_to_array below, but
-            // React wants it to have a unique key anyway, so we give it one.
-            <a key="key" role="link" tabIndex="0" onClick={() => { cockpit.location.go(parts.location) }}>
+            <a role="link" tabIndex="0" onClick={() => { cockpit.location.go(parts.location) }}>
                 {parts.link}
             </a>
         );
 
-        return <span>{utils.fmt_to_array(parts.format, link)}</span>;
+        return <span>{fmt_to_fragments(parts.format, link)}</span>;
     }
-});
+}
 
 // StorageOnOff - OnOff switch for asynchronous actions.
 //

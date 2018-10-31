@@ -67,36 +67,6 @@ return plural;
   "language": "fi",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 day": [
-  "$0 days",
-  "$0 päivä",
-  "$0 päivää"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 tunti",
-  "$0 tuntia"
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 minuutti",
-  "$0 minuuttia"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 kuukausi",
-  "$0 kuukautta"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 viikko",
-  "$0 viikkoa"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 vuosi",
-  "$0 vuotta"
- ],
  "1 day": [
   null,
   "1 päivä"

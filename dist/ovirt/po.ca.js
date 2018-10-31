@@ -87,6 +87,10 @@ return plural;
   null,
   ""
  ],
+ "Address": [
+  null,
+  "Adreça"
+ ],
  "Address:": [
   null,
   "Adreça:"
@@ -379,6 +383,10 @@ return plural;
   null,
   "S'estan carregant les dades..."
  ],
+ "MAC Address": [
+  null,
+  "Adreça MAC"
+ ],
  "MIGRATE action failed": [
   null,
   "Ha fallat l'acció MIGRATE"
@@ -406,6 +414,10 @@ return plural;
  "Migrate To:": [
   null,
   "Migra a:"
+ ],
+ "Model type": [
+  null,
+  "Tipus de model"
  ],
  "More Information": [
   null,
@@ -442,6 +454,10 @@ return plural;
  "No disks defined for this VM": [
   null,
   "No hi ha definit cap disc per a aquesta MV"
+ ],
+ "No network interfaces defined for this VM": [
+  null,
+  "No s'ha definit cap interfície de xarxa per aquesta MV"
  ],
  "No oVirt connection": [
   null,
@@ -510,6 +526,10 @@ return plural;
  "Please wait till list of templates is loaded from the server.": [
   null,
   "Espereu fins que la llista de plantilles es carregui del servidor."
+ ],
+ "Plug": [
+  null,
+  ""
  ],
  "Pool": [
   null,
@@ -739,7 +759,15 @@ return plural;
   null,
   "Aquesta màquina virtual no està gestionada per oVirt"
  ],
- "Threads per cores": [
+ "Threads per core": [
+  null,
+  ""
+ ],
+ "Type": [
+  null,
+  "Tipus"
+ ],
+ "Unplug": [
   null,
   ""
  ],

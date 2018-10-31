@@ -87,6 +87,10 @@ return plural;
   null,
   "Dodaj dysk"
  ],
+ "Address": [
+  null,
+  "Adres"
+ ],
  "Address:": [
   null,
   "Adres:"
@@ -158,6 +162,10 @@ return plural;
  "Capacity": [
   null,
   "Pojemność"
+ ],
+ "Changes will apply on VM shutdown": [
+  null,
+  "Zmiany zostaną zastosowane podczas wyłączania maszyny wirtualnej"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -241,7 +249,7 @@ return plural;
  ],
  "Ctrl+Alt+Del": [
   null,
-  ""
+  "Ctrl+Alt+Del"
  ],
  "Delete": [
   null,
@@ -290,6 +298,10 @@ return plural;
  "Download the MSI from $0": [
   null,
   "Pobierz plik MSI z $0"
+ ],
+ "Edit": [
+  null,
+  "Modyfikuj"
  ],
  "Edit the vdsm.conf": [
   null,
@@ -379,9 +391,17 @@ return plural;
   null,
   "Wczytywanie danych…"
  ],
+ "MAC Address": [
+  null,
+  "Adres MAC"
+ ],
  "MIGRATE action failed": [
   null,
   "Działanie MIGRATE się nie powiodło"
+ ],
+ "Mac Address": [
+  null,
+  "Adres MAC"
  ],
  "Manual Connection": [
   null,
@@ -407,6 +427,14 @@ return plural;
   null,
   "Migracja do:"
  ],
+ "Model": [
+  null,
+  "Model"
+ ],
+ "Model type": [
+  null,
+  "Typ modelu"
+ ],
  "More Information": [
   null,
   "Więcej informacji"
@@ -414,6 +442,14 @@ return plural;
  "Name": [
   null,
   "Nazwa"
+ ],
+ "Network Type": [
+  null,
+  "Typ sieci"
+ ],
+ "Network settings failed to change with following error: ": [
+  null,
+  "Zmiana ustawień sieci się nie powiodła, wystąpił ten błąd: "
  ],
  "Networks": [
   null,
@@ -443,9 +479,17 @@ return plural;
   null,
   "Nie określono dysków dla tej maszyny wirtualnej"
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  "Nie określono interfejsów sieciowych dla tej maszyny wirtualnej"
+ ],
  "No oVirt connection": [
   null,
   "Brak połączenia oVirt"
+ ],
+ "No virtual networks": [
+  null,
+  "Brak sieci wirtualnych"
  ],
  "Number of virtual CPUs that gonna be used.": [
   null,
@@ -510,6 +554,10 @@ return plural;
  "Please wait till list of templates is loaded from the server.": [
   null,
   "Proszę poczekać na wczytanie listy szablonów z serwera."
+ ],
+ "Plug": [
+  null,
+  "Podłącz"
  ],
  "Pool": [
   null,
@@ -613,7 +661,7 @@ return plural;
  ],
  "Send key": [
   null,
-  ""
+  "Wyślij klawisz"
  ],
  "Serial Console": [
   null,
@@ -739,9 +787,17 @@ return plural;
   null,
   "Ta maszyna wirtualna nie jest zarządzana przez oprogramowanie oVirt"
  ],
- "Threads per cores": [
+ "Threads per core": [
   null,
-  "Wątki na rdzenie"
+  "Wątki na rdzeń"
+ ],
+ "Type": [
+  null,
+  "Typ"
+ ],
+ "Unplug": [
+  null,
+  "Odłącz"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
@@ -769,11 +825,11 @@ return plural;
  ],
  "VM DELETE (DESTROY) action failed": [
   null,
-  ""
+  "Działanie VM DELETE (DESTROY) się nie powiodło"
  ],
  "VM DELETE (UNDEFINE) action failed": [
   null,
-  ""
+  "Działanie VM DELETE (UNDEFINE) się nie powiodło"
  ],
  "VM FORCE OFF action failed": [
   null,

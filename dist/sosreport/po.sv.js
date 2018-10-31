@@ -89,15 +89,15 @@ return plural;
  ],
  "Done!": [
   null,
-  ""
+  "Klar!"
  ],
  "Download report": [
   null,
-  ""
+  "Hämta en rapport"
  ],
  "Generating report": [
   null,
-  ""
+  "Genererar en rapport"
  ],
  "No archive has been created.": [
   null,

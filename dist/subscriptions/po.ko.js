@@ -77,15 +77,15 @@ return plural;
  ],
  "Access denied": [
   null,
-  ""
+  "접근 거부됨"
  ],
  "Activation Key": [
   null,
-  ""
+  "활성키"
  ],
  "Architecture": [
   null,
-  ""
+  "아키텍처"
  ],
  "Cancel": [
   null,
@@ -97,7 +97,7 @@ return plural;
  ],
  "Custom URL": [
   null,
-  ""
+  "사용자 설정 URL"
  ],
  "Default": [
   null,
@@ -105,15 +105,15 @@ return plural;
  ],
  "Details": [
   null,
-  ""
+  "상세 정보"
  ],
  "Ends": [
   null,
-  ""
+  "끝"
  ],
  "Installed products": [
   null,
-  ""
+  "설치된 제품"
  ],
  "Invalid credentials": [
   null,
@@ -121,11 +121,11 @@ return plural;
  ],
  "Invalid username or password": [
   null,
-  ""
+  "잘못된 사용자 이름 또는 비밀번호"
  ],
  "Login": [
   null,
-  ""
+  "로그인"
  ],
  "Login/password or activation key required to register.": [
   null,
@@ -137,11 +137,11 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "확인"
  ],
  "Organization": [
   null,
-  ""
+  "조직"
  ],
  "Password": [
   null,
@@ -149,19 +149,19 @@ return plural;
  ],
  "Product ID": [
   null,
-  ""
+  "제품 ID"
  ],
  "Product name": [
   null,
-  ""
+  "제품 이름 "
  ],
  "Proxy": [
   null,
-  ""
+  "프록시 "
  ],
  "Register": [
   null,
-  ""
+  "시스템 등록"
  ],
  "Register system": [
   null,
@@ -173,11 +173,11 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "서버"
  ],
  "Starts": [
   null,
-  ""
+  "시작 "
  ],
  "Status": [
   null,
@@ -185,7 +185,7 @@ return plural;
  ],
  "Status: $0": [
   null,
-  ""
+  "상태: $0"
  ],
  "Status: System isn't registered": [
   null,
@@ -193,23 +193,23 @@ return plural;
  ],
  "Subscriptions": [
   null,
-  ""
+  "서브스크립션 "
  ],
  "The current user isn't allowed to access system subscription status.": [
   null,
-  ""
+  "현재 사용자는 시스템 서브스크립션 상태에 액세스할 수 없습니다."
  ],
  "URL": [
   null,
-  ""
+  "URL"
  ],
  "Unable to connect": [
   null,
-  ""
+  "연결할 수 없음"
  ],
  "Unregister": [
   null,
-  ""
+  "등록 해제"
  ],
  "Unregistering system...": [
   null,
@@ -225,7 +225,7 @@ return plural;
  ],
  "User": [
   null,
-  ""
+  "사용자"
  ],
  "Version": [
   null,

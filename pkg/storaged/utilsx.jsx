@@ -1,7 +1,7 @@
 /*
  * This file is part of Cockpit.
  *
- * Copyright (C) 2016 Red Hat, Inc.
+ * Copyright (C) 2018 Red Hat, Inc.
  *
  * Cockpit is free software; you can redistribute it and/or modify it
  * under the terms of the GNU Lesser General Public License as published by
@@ -17,17 +17,13 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef __COCKPIT_KNOWN_HOSTS_H__
-#define __COCKPIT_KNOWN_HOSTS_H__
+import React from "react";
 
-#include <glib.h>
-
-G_BEGIN_DECLS
-
-gboolean        cockpit_is_host_known       (const gchar *known_hosts_file,
-                                             const gchar *host,
-                                             guint port);
-
-G_END_DECLS
-
-#endif /* __COCKPIT_KNOWN_HOSTS_H__ */
+// TODO - generalize this to arbitrary number of arguments (when needed)
+export function fmt_to_fragments(fmt, arg) {
+    var index = fmt.indexOf("$0");
+    if (index >= 0)
+        return <React.Fragment>{fmt.slice(0, index)}{arg}{fmt.slice(index + 2)}</React.Fragment>;
+    else
+        return fmt;
+}

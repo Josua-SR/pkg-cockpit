@@ -523,6 +523,7 @@ class MachineCase(unittest.TestCase):
     machine_class = None
     browser = None
     network = None
+    journal_start = None
 
     # provision is a dictionary of dictionaries, one for each additional machine to be created, e.g.:
     # provision = { 'openshift' : { 'image': 'openshift', 'memory_mb': 1024 } }
@@ -676,6 +677,7 @@ class MachineCase(unittest.TestCase):
                 machine.dhcp_server()
 
         if self.machine:
+            self.journal_start = self.machine.journal_cursor()
             self.browser = self.new_browser()
         self.tmpdir = tempfile.mkdtemp()
 
@@ -690,7 +692,7 @@ class MachineCase(unittest.TestCase):
     def tearDown(self):
         if self.checkSuccess() and self.machine.ssh_reachable:
             self.check_journal_messages()
-            self.check_browser_messages()
+            self.check_browser_errors()
         shutil.rmtree(self.tmpdir)
 
     def login_and_go(self, path=None, user=None, host=None, authorized=True):
@@ -699,6 +701,7 @@ class MachineCase(unittest.TestCase):
 
     allow_core_dumps = False
 
+    # Whitelist of allowed journal messages during tests; these need to match the *entire* message
     allowed_messages = [
         # This is a failed login, which happens every time
         "Returning error-response 401 with reason `Sorry'",
@@ -760,8 +763,14 @@ class MachineCase(unittest.TestCase):
         "Failed to send coredump datagram:.*",
     ]
 
+    # Whitelist of allowed console.error() messages during tests; these match substrings
+    allowed_console_errors = [
+        # HACK: These should be fixed, but debugging these is not trivial, and the impact is very low
+        "Warning: .* setState.*on an unmounted component",
+    ]
+
     def allow_journal_messages(self, *patterns):
-        """Don't fail if the journal contains a entry matching the given regexp"""
+        """Don't fail if the journal contains a entry completely matching the given regexp"""
         for p in patterns:
             self.allowed_messages.append(p)
 
@@ -812,12 +821,14 @@ class MachineCase(unittest.TestCase):
     def check_journal_messages(self, machine=None):
         """Check for unexpected journal entries."""
         machine = machine or self.machine
+        # on main machine, only consider journal entries since test case start
+        cursor = (machine == self.machine) and self.journal_start or None
         syslog_ids = [ "cockpit-ws", "cockpit-bridge" ]
         if not self.allow_core_dumps:
             syslog_ids += [ "systemd-coredump" ]
-        messages = machine.journal_messages(syslog_ids, 5)
+        messages = machine.journal_messages(syslog_ids, 5, cursor=cursor)
         if "TEST_AUDIT_NO_SELINUX" not in os.environ:
-            messages += machine.audit_messages("14") # 14xx is selinux
+            messages += machine.audit_messages("14", cursor=cursor) # 14xx is selinux
 
         # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1557913
         # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1563143
@@ -834,7 +845,7 @@ class MachineCase(unittest.TestCase):
             self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { read } for .* comm="agetty" name="motd".*')
 
         # these images don't have tuned; keep in sync with bots/images/scripts/debian.setup
-        if self.image in ["ubuntu-1604", "debian-stable"]:
+        if self.image in ["debian-stable"]:
             self.allowed_messages.append('com.redhat.tuned: .*org.freedesktop.DBus.Error.ServiceUnknown.*')
 
         all_found = True
@@ -842,6 +853,9 @@ class MachineCase(unittest.TestCase):
         for m in messages:
             # remove leading/trailing whitespace
             m = m.strip()
+            # Ignore empty lines
+            if not m:
+                continue
             found = False
             for p in self.allowed_messages:
                 match = re.match(p, m)
@@ -860,11 +874,22 @@ class MachineCase(unittest.TestCase):
             self.copy_cores("FAIL")
             raise Error(first)
 
-    def check_browser_messages(self):
+    def allow_browser_errors(self, *patterns):
+        """Don't fail if the test caused a console error contains the given regexp"""
+        for p in patterns:
+            self.allowed_console_errors.append(p)
+
+    def check_browser_errors(self):
         if not self.browser:
             return
         for log in self.browser.get_js_log():
-            if log.startswith("error: uncaught"):
+            if not log.startswith("error: "):
+                continue
+            # errors are fatal in general; they need to be explicitly whitelisted
+            for p in self.allowed_console_errors:
+                if re.search(p, log):
+                    break
+            else:
                 raise Error(log)
 
     def check_axe(self, label=None, suffix=""):

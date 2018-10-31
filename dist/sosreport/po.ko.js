@@ -89,7 +89,7 @@ return plural;
  ],
  "Done!": [
   null,
-  ""
+  "완료"
  ],
  "Download report": [
   null,

@@ -120,7 +120,7 @@ return plural;
  ],
  "Bugs:": [
   null,
-  ""
+  "Bugs:"
  ],
  "Cancel": [
   null,
@@ -136,7 +136,7 @@ return plural;
  ],
  "Details": [
   null,
-  ""
+  "Details"
  ],
  "Downloaded": [
   null,
@@ -144,7 +144,7 @@ return plural;
  ],
  "Downloading": [
   null,
-  ""
+  "Herunterladen"
  ],
  "Downloading $0": [
   null,
@@ -152,7 +152,7 @@ return plural;
  ],
  "Errata:": [
   null,
-  ""
+  "Errata:"
  ],
  "Ignore": [
   null,
@@ -164,7 +164,7 @@ return plural;
  ],
  "Install": [
   null,
-  ""
+  "Installation"
  ],
  "Install All Updates": [
   null,
@@ -180,11 +180,11 @@ return plural;
  ],
  "Installed": [
   null,
-  ""
+  "Installiert"
  ],
  "Installing": [
   null,
-  ""
+  "Installation wird ausgeführt"
  ],
  "Installing $0": [
   null,
@@ -216,7 +216,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "OK"
  ],
  "On": [
   null,
@@ -276,7 +276,7 @@ return plural;
  ],
  "Severity": [
   null,
-  ""
+  "Schweregrad"
  ],
  "Severity:": [
   null,
@@ -292,7 +292,7 @@ return plural;
  ],
  "System is up to date": [
   null,
-  ""
+  "System ist aktualisiert"
  ],
  "The following packages were recently updated:": [
   null,
@@ -320,7 +320,7 @@ return plural;
  ],
  "Unregistered System": [
   null,
-  ""
+  "Nicht registriertes System"
  ],
  "Update History": [
   null,
@@ -332,7 +332,7 @@ return plural;
  ],
  "Updated": [
   null,
-  ""
+  "Aktualisiert"
  ],
  "Updated packages may require a restart to take effect.": [
   null,
@@ -384,7 +384,7 @@ return plural;
  ],
  "at": [
   null,
-  ""
+  "um"
  ],
  "every day": [
   null,

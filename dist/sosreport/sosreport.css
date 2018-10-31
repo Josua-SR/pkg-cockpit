@@ -65,7 +65,7 @@ a.disabled:hover {
 }
 
 .highlight-ct {
-    background-color: #d4edfa;
+    background-color: #edf8ff;
 }
 
 /* Well and Blankslate */
@@ -267,7 +267,7 @@ input[type=number] {
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th,
 .dialog-list-ct .list-group-item:hover:not(.active) {
-    background-color: #d4edfa;
+    background-color: #edf8ff;
 }
 
 /* Override patternfly to fit buttons and such */

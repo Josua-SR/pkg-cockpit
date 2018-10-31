@@ -67,36 +67,6 @@ return plural;
   "language": "sv",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 day": [
-  "$0 days",
-  "$0 dag",
-  "$0 dagar"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 timme",
-  "$0 timmar"
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 minut",
-  "$0 minuter"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 månad",
-  "$0 månader"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 vecka",
-  "$0 veckor"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 år",
-  "$0 år"
- ],
  "$mtu": [
   null,
   "$mtu"
@@ -375,167 +345,167 @@ return plural;
  ],
  "Enable Service": [
   null,
-  ""
+  "Aktivera tjänst"
  ],
  "Ethernet MAC": [
   null,
-  ""
+  "Ethernet-MAC"
  ],
  "Ethernet MTU": [
   null,
-  ""
+  "Ethernet-MTU"
  ],
  "Ethtool": [
   null,
-  ""
+  "Ethtool"
  ],
  "Failed": [
   null,
-  ""
+  "Misslyckades"
  ],
  "Filter Services": [
   null,
-  ""
+  "Filtrera tjänster"
  ],
  "Firewall": [
   null,
-  ""
+  "Brandvägg"
  ],
  "Firewall is not available": [
   null,
-  ""
+  "Brandväggen är inte tillgänglig"
  ],
  "Forward delay $forward_delay": [
   null,
-  ""
+  "Fördröjning framåt $forward_delay"
  ],
  "General": [
   null,
-  ""
+  "Allmänt"
  ],
  "Go to now": [
   null,
-  ""
+  "Gå till nu"
  ],
  "Hair Pin mode": [
   null,
-  ""
+  "Hårnålsläge"
  ],
  "Hairpin mode": [
   null,
-  ""
+  "Hårnålsläge"
  ],
  "Hello time $hello_time": [
   null,
-  ""
+  "Hälsningstid $hello_time"
  ],
  "IP Address": [
   null,
-  ""
+  "IP-adress"
  ],
  "IP Settings": [
   null,
-  ""
+  "IP-inställningar"
  ],
  "IPv4": [
   null,
-  ""
+  "IPv4"
  ],
  "IPv4 Settings": [
   null,
-  ""
+  "IPv4-inställningar"
  ],
  "IPv6": [
   null,
-  ""
+  "IPv6"
  ],
  "IPv6 Settings": [
   null,
-  ""
+  "IPv6-inställningar"
  ],
  "Id $id": [
   null,
-  ""
+  "Id $id"
  ],
  "Ignore": [
   null,
-  ""
+  "Ignorera"
  ],
  "Inactive": [
   null,
-  ""
+  "Inaktiv"
  ],
  "Interfaces": [
   null,
-  ""
+  "Gränssnitt"
  ],
  "Invalid address $0": [
   null,
-  ""
+  "Felaktig adress $0"
  ],
  "Invalid metric $0": [
   null,
-  ""
+  "Felaktigt mått $0"
  ],
  "Invalid prefix $0": [
   null,
-  ""
+  "Felaktigt prefix $0"
  ],
  "Invalid prefix or netmask $0": [
   null,
-  ""
+  "Felaktigt prefix eller nätmask $0"
  ],
  "Keep connection": [
   null,
-  ""
+  "Behåll förbindelsen"
  ],
  "LACP Key": [
   null,
-  ""
+  "LACP-nyckel"
  ],
  "Link Monitoring": [
   null,
-  ""
+  "Länkövervakning"
  ],
  "Link Watch": [
   null,
-  ""
+  "Länkbetraktelse"
  ],
  "Link down delay": [
   null,
-  ""
+  "Länk nere fördröjning"
  ],
  "Link local": [
   null,
-  ""
+  "Länklokal"
  ],
  "Link up delay": [
   null,
-  ""
+  "Länk uppe fördröjning"
  ],
  "Load Balancing": [
   null,
-  ""
+  "Lastbalansering"
  ],
  "MAC": [
   null,
-  ""
+  "MAC"
  ],
  "MII (Recommended)": [
   null,
-  ""
+  "MII (Rekommenderas)"
  ],
  "MTU": [
   null,
-  ""
+  "MTU"
  ],
  "MTU must be a positive number": [
   null,
-  ""
+  "MTU måste vara ett positivt tal"
  ],
  "Manual": [
   null,
-  ""
+  "Manuell"
  ],
  "Master": [
   null,
@@ -649,7 +619,7 @@ return plural;
   null,
   ""
  ],
- "Please install the {0} package": [
+ "Please install the $0 package": [
   null,
   ""
  ],
@@ -675,15 +645,15 @@ return plural;
  ],
  "Primary": [
   null,
-  ""
+  "Primär"
  ],
  "Priority": [
   null,
-  ""
+  "Prioritet"
  ],
  "Priority $priority": [
   null,
-  ""
+  "Prioritet $priority"
  ],
  "Random": [
   null,

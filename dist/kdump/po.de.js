@@ -93,7 +93,7 @@ return plural;
  ],
  "Directory": [
   null,
-  ""
+  "Ordner"
  ],
  "Directory $0 isn't writable or doesn't exist.": [
   null,
@@ -117,11 +117,11 @@ return plural;
  ],
  "Location": [
   null,
-  ""
+  "Ort"
  ],
  "More details": [
   null,
-  ""
+  "Weitere Details"
  ],
  "Mount": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "OK"
  ],
  "On": [
   null,

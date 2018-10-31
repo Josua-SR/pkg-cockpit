@@ -71,33 +71,9 @@ return plural;
   null,
   " (OS と共有)"
  ],
- "$0 day": [
-  "$0 days",
-  "$0 日"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 時間"
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 分"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 ヶ月"
- ],
  "$0 shares": [
   null,
   "$0 シェア"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 週"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 年"
  ],
  "${hip}:${hport} -> $cport": [
   null,
@@ -749,7 +725,7 @@ return plural;
  ],
  "Stop and delete": [
   null,
-  ""
+  "停止して削除"
  ],
  "Stopped": [
   null,
@@ -793,7 +769,7 @@ return plural;
  ],
  "The following containers depend on this image and will become unusable.": [
   null,
-  ""
+  "以下のコンテナーはこのイメージに依存しており、使用できなくなります。"
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,

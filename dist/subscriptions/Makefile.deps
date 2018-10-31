@@ -1,16 +1,11 @@
 # Generated Makefile data for subscriptions
-# Stamp: Fri Oct 12 2018 10:12:44 GMT+0000 (UTC)
+# Stamp: Wed Oct 31 2018 13:25:52 GMT+0000 (UTC)
 
 subscriptions_INPUTS = \
 	node_modules/bootstrap/LICENSE \
 	node_modules/bootstrap/README.md \
 	node_modules/bootstrap/less/variables.less \
 	node_modules/bootstrap/package.json \
-	node_modules/create-react-class/LICENSE.txt \
-	node_modules/create-react-class/README.md \
-	node_modules/create-react-class/factory.js \
-	node_modules/create-react-class/index.js \
-	node_modules/create-react-class/package.json \
 	node_modules/patternfly/LICENSE.txt \
 	node_modules/patternfly/README.md \
 	node_modules/patternfly/dist/less/color-variables.less \
@@ -75,7 +70,7 @@ subscriptions_TESTS = \
 
 dist/subscriptions/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/create-react-class/factory.js -N node_modules/create-react-class/index.js -N node_modules/patternfly/dist/less/color-variables.less -N node_modules/patternfly/dist/less/variables.less -N node_modules/prop-types/factoryWithThrowingShims.js -N node_modules/prop-types/index.js -N node_modules/prop-types/lib/ReactPropTypesSecret.js -N node_modules/react-dom/cjs/react-dom.production.min.js -N node_modules/react-dom/index.js -N node_modules/react/cjs/react.production.min.js -N node_modules/react/index.js -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-select.jsx -N pkg/lib/listing.less -N pkg/lib/page.css -N pkg/lib/table.css -N pkg/lib/variables.less -N pkg/subscriptions/index.html -N pkg/subscriptions/main.js -N pkg/subscriptions/subscriptions-client.js -N pkg/subscriptions/subscriptions-register.jsx -N pkg/subscriptions/subscriptions-view.jsx -N pkg/subscriptions/subscriptions.css $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/patternfly/dist/less/color-variables.less -N node_modules/patternfly/dist/less/variables.less -N node_modules/prop-types/factoryWithThrowingShims.js -N node_modules/prop-types/index.js -N node_modules/prop-types/lib/ReactPropTypesSecret.js -N node_modules/react-dom/cjs/react-dom.production.min.js -N node_modules/react-dom/index.js -N node_modules/react/cjs/react.production.min.js -N node_modules/react/index.js -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-select.jsx -N pkg/lib/listing.less -N pkg/lib/page.css -N pkg/lib/table.css -N pkg/lib/variables.less -N pkg/subscriptions/index.html -N pkg/subscriptions/main.js -N pkg/subscriptions/subscriptions-client.js -N pkg/subscriptions/subscriptions-register.jsx -N pkg/subscriptions/subscriptions-view.jsx -N pkg/subscriptions/subscriptions.css $< > $@.tmp && mv $@.tmp $@
 
 dist/subscriptions/stamp: $(subscriptions_INPUTS)
 
@@ -96,16 +91,6 @@ node_modules/bootstrap/README.md:
 node_modules/bootstrap/less/variables.less:
 
 node_modules/bootstrap/package.json:
-
-node_modules/create-react-class/LICENSE.txt:
-
-node_modules/create-react-class/README.md:
-
-node_modules/create-react-class/factory.js:
-
-node_modules/create-react-class/index.js:
-
-node_modules/create-react-class/package.json:
 
 node_modules/patternfly/LICENSE.txt:
 

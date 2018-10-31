@@ -12,6 +12,13 @@ libcockpit_ssh_a_SOURCES = \
 	src/common/cockpitauthorize.h \
 	$(NULL)
 
+if !HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY
+libcockpit_ssh_a_SOURCES += \
+	src/ssh/cockpitsshknownhosts.h \
+	src/ssh/cockpitsshknownhosts.c \
+	$(NULL)
+endif
+
 libcockpit_ssh_a_CFLAGS = \
 	-I$(top_srcdir)/src/ssh \
 	-DCOCKPIT_BUILD_INFO=\"$(COCKPIT_BUILD_INFO)\"	\
@@ -50,10 +57,12 @@ mock_sshd_CFLAGS = \
 	$(COCKPIT_SSH_SESSION_CFLAGS) \
 	$(NULL)
 
-SSH_CHECKS = \
-	test-sshoptions \
-	test-sshbridge \
-	$(NULL)
+SSH_CHECKS = test-sshoptions
+
+# HACK: https://bugs.libssh.org/T117: libssh 0.8.4 breaks interactive keyboard auth on server side, i. e. our mock-ssh for unit tests
+if !HAVE_BROKEN_SSH_KBDINT
+SSH_CHECKS += test-sshbridge
+endif
 
 test_sshoptions_CFLAGS = $(cockpit_ssh_CFLAGS)
 test_sshoptions_SOURCES = src/ssh/test-sshoptions.c
@@ -62,6 +71,16 @@ test_sshoptions_LDADD = libcockpit-ssh.a $(cockpit_ssh_LDADD)
 test_sshbridge_CFLAGS = $(cockpit_ssh_CFLAGS)
 test_sshbridge_SOURCES = src/ssh/test-sshbridge.c
 test_sshbridge_LDADD = libcockpit-ssh.a $(cockpit_ssh_LDADD)
+
+if !HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY
+SSH_CHECKS += \
+	test-knownhosts \
+	$(NULL)
+
+test_knownhosts_CFLAGS = $(cockpit_ssh_CFLAGS)
+test_knownhosts_SOURCES = src/ssh/test-knownhosts.c
+test_knownhosts_LDADD = libcockpit-ssh.a $(cockpit_ssh_LDADD)
+endif
 
 test_rsa_key: src/ssh/test_rsa
 	$(AM_V_GEN) cp $< $@ && chmod 600 $@
@@ -81,6 +100,7 @@ EXTRA_DIST += \
 	src/ssh/mock-bin/sss_ssh_knownhostsproxy \
 	src/ssh/mock-config \
 	src/ssh/invalid_known_hosts \
+	src/ssh/mock_known_hosts_2 \
 	$(NULL)
 
 noinst_SCRIPTS += \

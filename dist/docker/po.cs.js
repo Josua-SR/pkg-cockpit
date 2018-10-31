@@ -69,47 +69,11 @@ return plural;
  },
  " (shared with the OS)": [
   null,
-  "(sdíleno s OS)"
- ],
- "$0 day": [
-  "$0 days",
-  "$0 den",
-  "$0 dny",
-  "$0 dnů"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 hodina",
-  "$0 hodiny",
-  "$0 hodin"
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 minuta",
-  "$0 minuty",
-  "$0 minut"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 měsíc",
-  "$0 měsíce",
-  "$0 měsíců"
+  "(sdíleno s operačním systémem)"
  ],
  "$0 shares": [
   null,
   "$0 sdílení"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 týden",
-  "$0 týdny",
-  "$0 týdnů"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 rok",
-  "$0 roky",
-  "$0 roků"
  ],
  "${hip}:${hport} -> $cport": [
   null,
@@ -125,7 +89,7 @@ return plural;
  ],
  "Additional Storage": [
   null,
-  "Dodatečné úložiště"
+  "Další úložiště"
  ],
  "Advanced TCA": [
   null,
@@ -137,7 +101,7 @@ return plural;
  ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
-  "Všechna data na vybraných discích budou vymazána a disky budou přidány do fondu úložišť."
+  "Všechna data na vybraných discích budou vymazána a disky budou přidány do fondu úložiště."
  ],
  "Always": [
   null,
@@ -149,47 +113,47 @@ return plural;
  ],
  "Blade": [
   null,
-  ""
+  "Blade server"
  ],
  "Blade enclosure": [
   null,
-  ""
+  "Skříň se šachtami pro blade servery"
  ],
  "Bus Expansion Chassis": [
   null,
-  ""
+  "Skříň rozšíření sběrnice"
  ],
  "CPU": [
   null,
-  "CPU"
+  "Procesor"
  ],
  "CPU priority": [
   null,
-  "Priorita CPU"
+  "Priorita procesoru"
  ],
  "CPU usage:": [
   null,
-  "Využití CPU:"
+  "Využití procesoru:"
  ],
  "Can&rsquo;t connect to Docker": [
   null,
-  "Nelze se spojit s Docker"
+  "Nedaří se spojit s Docker"
  ],
  "Cancel": [
   null,
-  "Zrušit"
+  "Storno"
  ],
  "Change": [
   null,
-  "Změna"
+  "Změnit"
  ],
  "Change resource limits": [
   null,
-  "Změnit limity zdroje"
+  "Změnit limity prostředku"
  ],
  "Change resources limits": [
   null,
-  "Změnit limity zdrojů"
+  "Změnit limity prostředků"
  ],
  "Close": [
   null,
@@ -201,9 +165,9 @@ return plural;
  ],
  "Combined usage of $0 CPU core": [
   "Combined usage of $0 CPU cores",
-  "",
-  "",
-  ""
+  "Kombinované využití $0 jádra procesoru",
+  "Kombinované využití $0 jader procesoru",
+  "Kombinované využití $0 jader procesoru"
  ],
  "Command": [
   null,
@@ -211,7 +175,7 @@ return plural;
  ],
  "Command can't be empty": [
   null,
-  "Příkaz nesmí být prázdný"
+  "Příkaz je třeba vyplnit"
  ],
  "Command:": [
   null,
@@ -219,43 +183,43 @@ return plural;
  ],
  "Commit": [
   null,
-  ""
+  "Odeslat"
  ],
  "Commit Image": [
   null,
-  ""
+  "Odeslat obraz"
  ],
  "Compact PCI": [
   null,
-  ""
+  "Compact PCI"
  ],
  "Configure storage...": [
   null,
-  "Konfigurace úložiště..."
+  "Nastavit úložiště…"
  ],
  "Connecting to Docker": [
   null,
-  ""
+  "Připojování k Docker"
  ],
  "Container": [
   null,
-  ""
+  "Kontejner"
  ],
  "Container Name": [
   null,
-  ""
+  "Název kontejneru"
  ],
  "Container is currently marked as not running, but regular stopping failed.": [
   null,
-  ""
+  "Kontejner je nyní označen jako nespuštěný, ale běžné zastavení se nezdařilo."
  ],
  "Container is currently running.": [
   null,
-  ""
+  "Kontejner je v tuto chvíli spuštěný."
  ],
  "Container:": [
   null,
-  ""
+  "Kontejner:"
  ],
  "Containers": [
   null,
@@ -263,23 +227,23 @@ return plural;
  ],
  "Convertible": [
   null,
-  "Konvertibilní"
+  "Počítač 2v1"
  ],
  "Could not add all disks": [
   null,
-  "Nelze přidat všechny disky"
+  "Nedaří se přidat všechny disky"
  ],
  "Could not reset the storage pool": [
   null,
-  "Nelze obnovit úložný prostor"
+  "Nedaří se resetovat fond úložiště"
  ],
  "Created": [
   null,
-  ""
+  "Vytvořeno"
  ],
  "Created:": [
   null,
-  ""
+  "Vytvořeno:"
  ],
  "Default": [
   null,
@@ -291,7 +255,7 @@ return plural;
  ],
  "Deleting a container will erase all data in it.": [
   null,
-  ""
+  "Smazání kontejneru vymaže veškerá data v něm."
  ],
  "Desktop": [
   null,
@@ -299,7 +263,7 @@ return plural;
  ],
  "Detachable": [
   null,
-  ""
+  "Odpojitelné"
  ],
  "Details": [
   null,
@@ -307,11 +271,11 @@ return plural;
  ],
  "Docker is not installed or activated on the system": [
   null,
-  ""
+  "Docker na tomto systému není nainstalovaný nebo aktivovaný"
  ],
  "Docking Station": [
   null,
-  ""
+  "Dokovací stanice"
  ],
  "Download": [
   null,
@@ -319,35 +283,35 @@ return plural;
  ],
  "Drive": [
   null,
-  "Mechanika"
+  "Jednotka"
  ],
  "Duplicate alias": [
   null,
-  ""
+  "Duplikovat alternativní názvy"
  ],
  "Duplicate port": [
   null,
-  ""
+  "Duplikovat port"
  ],
  "Embedded PC": [
   null,
-  ""
+  "Jednodeskový počítač"
  ],
  "Entrypoint": [
   null,
-  ""
+  "Koncový bod"
  ],
  "Environment": [
   null,
-  ""
+  "Prostředí"
  ],
  "Erase containers and reset storage pool": [
   null,
-  ""
+  "Vymazat kontejnery a resetovat fond úložiště"
  ],
  "Error message from Docker:": [
   null,
-  ""
+  "Chybové hlášení z Docker:"
  ],
  "Everything": [
   null,
@@ -355,27 +319,27 @@ return plural;
  ],
  "Exited $ExitCode": [
   null,
-  ""
+  "Skončilo s $ExitCode"
  ],
  "Expansion Chassis": [
   null,
-  ""
+  "Rozšiřující šasi"
  ],
  "Expose container ports": [
   null,
-  ""
+  "Odhalit porty kontejneru"
  ],
  "Failed to start Docker: $0": [
   null,
-  ""
+  "Nepodařilo se spustit Docker: $0"
  ],
  "Failed to stop Docker scope: $0": [
   null,
-  ""
+  "Nepodařilo se zastavit Docker rozsah: $0"
  ],
  "Force Delete": [
   null,
-  ""
+  "Vynutit smazání"
  ],
  "Free": [
   null,
@@ -387,11 +351,11 @@ return plural;
  ],
  "Get new image": [
   null,
-  ""
+  "Získat nový obraz"
  ],
  "Hand Held": [
   null,
-  ""
+  "Pro držení v rukou"
  ],
  "Hard Disk": [
   null,
@@ -403,87 +367,87 @@ return plural;
  ],
  "IP Prefix Length:": [
   null,
-  ""
+  "Délka předpony IP adresy:"
  ],
  "Id": [
   null,
-  "Id"
+  "Identif."
  ],
  "Id:": [
   null,
-  "Id:"
+  "Identif.:"
  ],
  "Image": [
   null,
-  ""
+  "Obraz"
  ],
  "Image $0": [
   null,
-  ""
+  "Obraz $0"
  ],
  "Image Search": [
   null,
-  ""
+  "Hledání obrazu"
  ],
  "Image:": [
   null,
-  ""
+  "Obraz:"
  ],
  "Images": [
   null,
-  ""
+  "Obrazy"
  ],
  "Images and running containers": [
   null,
-  ""
+  "Obrazy a spuštěné kontejnery"
  ],
  "Information about the Docker storage pool is not available.": [
   null,
-  ""
+  "Informace o Docker fondu úložiště nejsou k dispozici."
  ],
  "Invalid port": [
   null,
-  ""
+  "Neplatný port"
  ],
  "IoT Gateway": [
   null,
-  ""
+  "Brána Internetu věcí (IoT)"
  ],
  "Laptop": [
   null,
-  ""
+  "Notebook"
  ],
  "Link to another container": [
   null,
-  ""
+  "Propojení s jiným kontejnerem"
  ],
  "Links": [
   null,
-  ""
+  "Linky"
  ],
  "Links:": [
   null,
-  ""
+  "Linky:"
  ],
  "Local Disks": [
   null,
-  ""
+  "Místní disky"
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "Nízký desktop"
  ],
  "Lunch Box": [
   null,
-  ""
+  "Kufříkový počítač"
  ],
  "MAC Address:": [
   null,
-  ""
+  "MAC adresa"
  ],
  "Main Server Chassis": [
   null,
-  ""
+  "Hlavní skříň serveru"
  ],
  "Memory": [
   null,
@@ -491,11 +455,11 @@ return plural;
  ],
  "Memory limit": [
   null,
-  ""
+  "Limit paměti"
  ],
  "Memory usage:": [
   null,
-  ""
+  "Využití paměti:"
  ],
  "MiB": [
   null,
@@ -503,19 +467,19 @@ return plural;
  ],
  "Mini PC": [
   null,
-  ""
+  "Mini PC"
  ],
  "Mini Tower": [
   null,
-  ""
+  "Mini věž"
  ],
  "Mount container volumes": [
   null,
-  ""
+  "Připojit svazky kontejneru"
  ],
  "Multi-system Chassis": [
   null,
-  ""
+  "Skříň pro více systémů"
  ],
  "Name": [
   null,
@@ -523,51 +487,51 @@ return plural;
  ],
  "No": [
   null,
-  ""
+  "Ne"
  ],
  "No additional local storage found.": [
   null,
-  ""
+  "Nenalezeno žádné další místní úložiště."
  ],
  "No alias specified": [
   null,
-  ""
+  "Není zadán žádný alternativní název"
  ],
  "No container specified": [
   null,
-  ""
+  "Není určený žádný kontejner"
  ],
  "No containers": [
   null,
-  ""
+  "Žádné kontejnery"
  ],
  "No containers that match the current filter": [
   null,
-  ""
+  "Žádné kontejnery, které by odpovídaly stávajícímu filtru"
  ],
  "No images": [
   null,
-  ""
+  "Žádné obrazy"
  ],
  "No images that match the current filter": [
   null,
-  ""
+  "Stávajícímu filtru neodpovídají žádné obrazy"
  ],
  "No results for $0": [
   null,
-  ""
+  "Žádné výsledky pro $0"
  ],
  "No running containers": [
   null,
-  ""
+  "Žádné spuštěné kontejnery"
  ],
  "No running containers that match the current filter": [
   null,
-  ""
+  "Žádné spuštěné kontejnery, které by odpovídaly stávajícímu filtru"
  ],
  "Not authorized to access Docker on this system": [
   null,
-  ""
+  "Neoprávněni k přístupu k Dockeru na tomto systému"
  ],
  "Not found": [
   null,
@@ -575,11 +539,11 @@ return plural;
  ],
  "Notebook": [
   null,
-  ""
+  "Notebook"
  ],
  "Off": [
   null,
-  ""
+  "Vypnuto"
  ],
  "Ok": [
   null,
@@ -587,21 +551,21 @@ return plural;
  ],
  "On": [
   null,
-  ""
+  "Zapnuto"
  ],
  "On Failure": [
   null,
-  ""
+  "Při nezdaru"
  ],
  "On failure, retry $0 time": [
   "On failure, retry $0 times",
-  "",
-  "",
-  ""
+  "V případě nezdaru, zkusit znovu $0 krát",
+  "V případě nezdaru, zkusit znovu $0 krát",
+  "V případě nezdaru, zkusit znovu $0 krát"
  ],
  "Other": [
   null,
-  ""
+  "Ostatní"
  ],
  "Overview": [
   null,
@@ -609,23 +573,23 @@ return plural;
  ],
  "Peripheral Chassis": [
   null,
-  ""
+  "Skříň periferií"
  ],
  "Pizza Box": [
   null,
-  ""
+  "Velikost „krabice od pizzy“"
  ],
  "Please confirm deletion of $0": [
   null,
-  ""
+  "Potvrďte smazání $0"
  ],
  "Please confirm forced deletion of $0": [
   null,
-  ""
+  "Potvrďte vynucené smazání $0"
  ],
  "Please try another term": [
   null,
-  ""
+  "Zkuste jiný pojem"
  ],
  "Portable": [
   null,
@@ -637,27 +601,27 @@ return plural;
  ],
  "Ports:": [
   null,
-  ""
+  "Porty:"
  ],
  "Problems": [
   null,
-  ""
+  "Problémy"
  ],
  "RAID Chassis": [
   null,
-  ""
+  "RAID skříň"
  ],
  "Rack Mount Chassis": [
   null,
-  ""
+  "Skříň do stojanu"
  ],
  "ReadOnly": [
   null,
-  ""
+  "Pouze pro čtení"
  ],
  "ReadWrite": [
   null,
-  ""
+  "Čtení i zápis"
  ],
  "Reboot": [
   null,
@@ -665,7 +629,7 @@ return plural;
  ],
  "Reformat and add disks": [
   null,
-  ""
+  "Znovu naformátovat a přidat disky"
  ],
  "Repository": [
   null,
@@ -677,11 +641,11 @@ return plural;
  ],
  "Reset Storage Pool": [
   null,
-  ""
+  "Resetovat fond úložišť"
  ],
  "Resetting the storage pool will erase all containers and release disks in the pool.": [
   null,
-  ""
+  "Resetování fondu úložiště vymaže všechny kontejnery a uvolní disky ve fondu"
  ],
  "Restart": [
   null,
@@ -689,15 +653,15 @@ return plural;
  ],
  "Restart Policy": [
   null,
-  ""
+  "Zásada restartu"
  ],
  "Restart Policy:": [
   null,
-  ""
+  "Zásada restartu:"
  ],
  "Retries:": [
   null,
-  ""
+  "Opětovných pokusů:"
  ],
  "Run": [
   null,
@@ -705,27 +669,27 @@ return plural;
  ],
  "Run Image": [
   null,
-  ""
+  "Spustit obraz"
  ],
  "Sealed-case PC": [
   null,
-  ""
+  "Počítač se zapečetěnou skříní"
  ],
  "Security": [
   null,
-  "Bezpečnost"
+  "Zabezpečení"
  ],
  "Set container environment variables": [
   null,
-  ""
+  "Nastavit proměnné prostředí pro kontejner"
  ],
  "Show all containers": [
   null,
-  ""
+  "Zobrazit všechny kontejnery"
  ],
  "Show all images": [
   null,
-  ""
+  "Zobrazit všechny obrazy"
  ],
  "Size": [
   null,
@@ -733,19 +697,19 @@ return plural;
  ],
  "Solid-State Disk": [
   null,
-  ""
+  "Jednotka bez pohyblivých částí"
  ],
  "Space-saving Computer": [
   null,
-  ""
+  "Prostorově úsporný počítač"
  ],
  "Start": [
   null,
-  "Start"
+  "Spustit"
  ],
  "Start Docker": [
   null,
-  ""
+  "Spustit Docker"
  ],
  "State": [
   null,
@@ -757,7 +721,7 @@ return plural;
  ],
  "Stick PC": [
   null,
-  ""
+  "Počítač v klíčence"
  ],
  "Stop": [
   null,
@@ -765,7 +729,7 @@ return plural;
  ],
  "Stop and delete": [
   null,
-  ""
+  "Zastavit a smazat"
  ],
  "Stopped": [
   null,
@@ -777,19 +741,19 @@ return plural;
  ],
  "Storage pool": [
   null,
-  ""
+  "Fond úložiště"
  ],
  "Sub Chassis": [
   null,
-  ""
+  "Dílčí skříň"
  ],
  "Sub Notebook": [
   null,
-  ""
+  "Zmenšený notebook"
  ],
  "TCP": [
   null,
-  ""
+  "TCP"
  ],
  "Tablet": [
   null,
@@ -797,107 +761,107 @@ return plural;
  ],
  "Tag": [
   null,
-  ""
+  "Štítek"
  ],
  "Tags": [
   null,
-  "Tagy"
+  "Šítky"
  ],
  "The Docker storage pool cannot be managed on this system.": [
   null,
-  ""
+  "Docker fond úložiště není na tomto systému možné spravovat."
  ],
  "The following containers depend on this image and will become unusable.": [
   null,
-  ""
+  "Následující kontejnery závisí na tomto obrazu a přestanou být použitelné."
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,
-  ""
+  "Sken z $time ($type) nenalezl žádné zranitelnosti."
  ],
  "The scan from $time ($type) was not successful.": [
   null,
-  ""
+  "Sken z $time ($type) nebyl úspěšný."
  ],
  "This image does not exist.": [
   null,
-  ""
+  "Tento obraz neexistuje."
  ],
  "Total": [
   null,
-  "Celkový"
+  "Celkem"
  ],
  "Tower": [
   null,
-  ""
+  "Věž"
  ],
  "Try again": [
   null,
-  ""
+  "Zkusit znovu"
  ],
  "Type to filter…": [
   null,
-  ""
+  "Filtrujte psaním…"
  ],
  "UDP": [
   null,
-  ""
+  "UDP"
  ],
  "Unexpected error": [
   null,
-  ""
+  "Neočekávaná chyba"
  ],
  "Unknown": [
   null,
-  "Neznámý"
+  "Neznámé"
  ],
  "Unless Stopped": [
   null,
-  ""
+  "Pokud nezastaveno"
  ],
  "Up since $0": [
   null,
-  ""
+  "Zapnuto od $0"
  ],
  "Used": [
   null,
-  ""
+  "Využito"
  ],
  "Used by Containers": [
   null,
-  ""
+  "Využito kontejnery"
  ],
  "Volumes": [
   null,
-  ""
+  "Svazky"
  ],
  "Volumes:": [
   null,
-  ""
+  "Svazky:"
  ],
  "With terminal": [
   null,
-  ""
+  "S terminálem"
  ],
  "You don't have permission to manage the Docker storage pool.": [
   null,
-  ""
+  "Nemáte oprávnění spravovat fond úložiště pro Docker."
  ],
  "[$0 bytes of binary data]": [
   null,
-  ""
+  "[$0 bajtů binárních dat]"
  ],
  "[binary data]": [
   null,
-  ""
+  "[binarní data]"
  ],
  "[no data]": [
   null,
-  ""
+  "[žádná data]"
  ],
  "alias": [
   null,
-  ""
+  "alternativní název"
  ],
  "default": [
   null,
@@ -905,7 +869,7 @@ return plural;
  ],
  "key": [
   null,
-  ""
+  "klíč"
  ],
  "none": [
   null,
@@ -913,31 +877,31 @@ return plural;
  ],
  "search by name, namespace or description": [
   null,
-  ""
+  "hledat podle názvu, jmenného prostoru nebo popisu"
  ],
  "select container": [
   null,
-  ""
+  "vybrat kontejner"
  ],
  "shares": [
   null,
-  ""
+  "sdílení"
  ],
  "to host path": [
   null,
-  ""
+  "do umístění stroje"
  ],
  "to host port": [
   null,
-  ""
+  "na port stroje"
  ],
  "undefined": [
   null,
-  ""
+  "nedefinované"
  ],
  "value": [
   null,
-  ""
+  "hodnota"
  ],
  "page-title\u0004Containers": [
   null,
@@ -945,6 +909,6 @@ return plural;
  ],
  "page-title\u0004Images": [
   null,
-  ""
+  "Obrazy"
  ]
 }));

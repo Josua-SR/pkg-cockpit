@@ -30,10 +30,12 @@
 #include "common/cockpittest.h"
 #include "common/cockpittransport.h"
 #include "common/cockpitunixfd.h"
-#include "common/cockpitknownhosts.h"
 
 #include "cockpitsshrelay.h"
 #include "cockpitsshoptions.h"
+#if !HAVE_DECL_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY
+#include "cockpitsshknownhosts.h"
+#endif
 
 #include <libssh/libssh.h>
 #include <libssh/callbacks.h>
@@ -60,9 +62,6 @@
 #define SSH_PUBLICKEY_HASH SSH_PUBLICKEY_HASH_MD5
 #define SSH_PUBLICKEY_HASH_NAME "MD5"
 #endif
-
-/* we had a private one before moving to /etc/ssh/ssh_known_hosts */
-#define LEGACY_KNOWN_HOSTS PACKAGE_LOCALSTATE_DIR "/known_hosts"
 
 typedef struct {
   const gchar *logname;
@@ -435,61 +434,6 @@ create_knownhosts_temp (void)
   return NULL;
 }
 
-
-/*
- * NOTE: This function changes the SSH_OPTIONS_KNOWNHOSTS option on
- * the session.
- *
- * We can't save and restore it since ssh_options_get doesn't allow us
- * to retrieve the old value of SSH_OPTIONS_KNOWNHOSTS.
- *
- * HACK: This function should be provided by libssh.
- *
- * https://red.libssh.org/issues/162
-*/
-static gchar *
-get_knownhosts_line (ssh_session session)
-{
-
-  gchar *name = NULL;
-  GError *error = NULL;
-  gchar *line = NULL;
-
-  name = create_knownhosts_temp ();
-  if (!name)
-    goto out;
-
-  if (ssh_options_set (session, SSH_OPTIONS_KNOWNHOSTS, name) != SSH_OK)
-    {
-      g_warning ("Couldn't set SSH_OPTIONS_KNOWNHOSTS option.");
-      goto out;
-    }
-
-  if (ssh_write_knownhost (session) != SSH_OK)
-    {
-      g_warning ("Couldn't write knownhosts file: %s", ssh_get_error (session));
-      goto out;
-    }
-
-  if (!g_file_get_contents (name, &line, NULL, &error))
-    {
-      g_warning ("Couldn't read temporary known_hosts %s: %s", name, error->message);
-      g_clear_error (&error);
-      goto out;
-    }
-
-  g_strstrip (line);
-
-out:
-  if (name)
-    {
-      g_unlink (name);
-      g_free (name);
-    }
-
-  return line;
-}
-
 static const gchar *
 prompt_for_host_key (CockpitSshData *data)
 {
@@ -593,11 +537,32 @@ prepend_host_port (const gchar *host,
   GString *result = g_string_new (NULL);
 
   for (line = lines; *line; ++line)
-    g_string_append_printf (result, "[%s]:%d %s\n", host, port, *line);
+    {
+      if (port == 22)
+        g_string_append_printf (result, "%s %s\n", host, *line);
+      else
+        g_string_append_printf (result, "[%s]:%d %s\n", host, port, *line);
+    }
 
   g_strfreev (lines);
   return g_string_free (result, FALSE);
 
+}
+
+static gboolean
+session_has_known_host_in_file (const gchar *file,
+                                CockpitSshData *data,
+                                const gchar *host,
+                                const guint port)
+{
+#if !HAVE_DECL_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY
+  shim_set_knownhosts_file(file);
+#endif
+  /* HACK: https://bugs.libssh.org/T108 */
+  if (!file)
+      g_warn_if_fail (ssh_options_set (data->session, SSH_OPTIONS_SSH_DIR, NULL) == SSH_OK);
+  g_warn_if_fail (ssh_options_set (data->session, SSH_OPTIONS_KNOWNHOSTS, file) == SSH_OK);
+  return ssh_session_has_known_hosts_entry (data->session) == SSH_KNOWN_HOSTS_OK;
 }
 
 /**
@@ -619,29 +584,14 @@ set_knownhosts_file (CockpitSshData *data,
   gchar *serr = NULL;
   gchar *authorize_knownhosts_data = NULL;
 
-  /* first check the default global ssh file */
-  host_known = cockpit_is_host_known (data->ssh_options->knownhosts_file, host, port);
-
-  /* if we check the default system known hosts file (i. e. not during the test suite), also check
-   * the legacy file in /var/lib/cockpit */
-  if (!host_known && strcmp (data->ssh_options->knownhosts_file, cockpit_get_default_knownhosts ()) == 0)
-    {
-      host_known = cockpit_is_host_known (LEGACY_KNOWN_HOSTS, host, port);
-      if (host_known)
-        {
-          g_debug ("%s: not known in %s but in legacy file %s",
-                   data->logname,
-                   data->ssh_options->knownhosts_file,
-                   LEGACY_KNOWN_HOSTS);
-          data->ssh_options->knownhosts_file = LEGACY_KNOWN_HOSTS;
-        }
-    }
+  /* first check the global ssh file or file set by COCKPIT_SSH_KNOWN_HOSTS_FILE */
+  host_known = session_has_known_host_in_file (data->ssh_options->knownhosts_file, data, host, port);
 
   /* check ~/.ssh/known_hosts, unless we are running as a system user ($HOME == "/"); this is not
    * a security check (if one can write /.ssh/known_hosts then we have to trust them), just caution */
   if (!host_known && g_strcmp0 (g_get_home_dir (), "/") != 0)
     {
-      host_known = cockpit_is_host_known (data->user_known_hosts, host, port);
+      host_known = session_has_known_host_in_file (data->user_known_hosts, data, host, port);
       if (host_known)
         data->ssh_options->knownhosts_file = data->user_known_hosts;
     }
@@ -676,12 +626,11 @@ set_knownhosts_file (CockpitSshData *data,
               if (!res)
                 goto out;
 
-              /* this should always be known now, but let's make double-sure */
-              host_known = cockpit_is_host_known (tmp_knownhost_file, host, port);
+              host_known = session_has_known_host_in_file (tmp_knownhost_file, data, host, port);
               if (host_known)
                 data->ssh_options->knownhosts_file = tmp_knownhost_file;
               else
-                g_warning ("sss_ssh_knownhostsproxy reported key for %s:%u which is not known to cockpit_is_host_known()", host, port);
+                g_warning ("sss_ssh_knownhostsproxy reported key for %s:%u which is not known to session_has_known_host_in_file()", host, port);
             } else {
               /* the --pubkey option is not yet known by many older distributions; don't show the error in the log */
               g_debug ("%s: sss_ssh_knownhostsproxy failed: exit code %i, output '%s', error '%s'", data->logname, exit, sout, serr);
@@ -699,8 +648,7 @@ set_knownhosts_file (CockpitSshData *data,
         {
           if (write_tmp_knownhosts_file (data, authorize_knownhosts_data, &problem))
             {
-              /* this should always be known now, but let's make double-sure */
-              host_known = cockpit_is_host_known (tmp_knownhost_file, host, port);
+              host_known = session_has_known_host_in_file (tmp_knownhost_file, data, host, port);
               if (host_known)
                 data->ssh_options->knownhosts_file = tmp_knownhost_file;
               else
@@ -739,7 +687,7 @@ verify_knownhost (CockpitSshData *data,
   int state;
   gsize len;
 
-  data->host_key = get_knownhosts_line (data->session);
+  g_warn_if_fail (ssh_session_export_known_hosts_entry(data->session, &data->host_key) == SSH_OK);
   if (data->host_key == NULL)
     {
       ret = "internal-error";
@@ -781,6 +729,10 @@ verify_knownhost (CockpitSshData *data,
       ssh_clean_pubkey_hash (&hash);
     }
 
+  /* the shim implementation of ssh_session_export_known_hosts_entry manipulates
+   *  the knownhosts file, so set it again
+   */
+#if !HAVE_DECL_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY
   if (ssh_options_set (data->session, SSH_OPTIONS_KNOWNHOSTS,
                        data->ssh_options->knownhosts_file) != SSH_OK)
     {
@@ -788,6 +740,7 @@ verify_knownhost (CockpitSshData *data,
       ret = "internal-error";
       goto done;
     }
+#endif
 
   state = ssh_is_server_known (data->session);
   if (state == SSH_SERVER_KNOWN_OK)
@@ -1422,8 +1375,6 @@ cockpit_ssh_connect (CockpitSshData *data,
       if (problem != NULL)
         goto out;
     }
-
-  g_warn_if_fail (ssh_options_set (data->session, SSH_OPTIONS_KNOWNHOSTS, data->ssh_options->knownhosts_file) == 0);
 
   rc = ssh_connect (data->session);
   if (rc != SSH_OK)

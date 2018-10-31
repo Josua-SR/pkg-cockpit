@@ -17,16 +17,15 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-var cockpit = require("cockpit");
-var _ = cockpit.gettext;
+import cockpit from "cockpit";
 
-var React = require("react");
-var createReactClass = require('create-react-class');
+import React from "react";
+import { OnOffSwitch } from "cockpit-components-onoff.jsx";
+import * as Select from "cockpit-components-select.jsx";
+import dialogPattern from "cockpit-components-dialog.jsx";
+import { Tooltip } from "cockpit-components-tooltip.jsx";
 
-var OnOffSwitch = require("cockpit-components-onoff.jsx").OnOffSwitch;
-var Select = require("cockpit-components-select.jsx");
-var dialogPattern = require("cockpit-components-dialog.jsx");
-var Tooltip = require("cockpit-components-tooltip.jsx").Tooltip;
+const _ = cockpit.gettext;
 
 /* kdump: dump target dialog body
  * Expected props:
@@ -44,30 +43,36 @@ var Tooltip = require("cockpit-components-tooltip.jsx").Tooltip;
  * nfs and ssh are disabled for now
  */
 
-var KdumpTargetBody = createReactClass({
-    getInitialState: function() {
-        return {
+class KdumpTargetBody extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
             storeDest: this.props.initialTarget.target, // dialog mode, depends on location
         };
-    },
-    changeLocation: function(target) {
+        this.changeLocation = this.changeLocation.bind(this);
+    }
+
+    changeLocation(target) {
         // if previous dest wasn't "other", remove that
         // settings for the new target will be changed when the details are edited
         if (this.state.storeDest != "other")
             this.props.onChange(this.state.storeDest.target, undefined);
         // depending on our chosen target, we should send the default values we show in the ui
         this.setState({ storeDest: target });
-    },
-    changeValue: function(key, e) {
+    }
+
+    changeValue(key, e) {
         if (this.props.onChange) {
             if (e && e.target && e.target.value)
                 this.props.onChange(key, e.target.value);
         }
-    },
-    handleCompressionClick: function(e) {
+    }
+
+    handleCompressionClick(e) {
         this.props.onChange("compression", e.target.checked);
-    },
-    render: function() {
+    }
+
+    render() {
         var detailRows;
         // only allow compression if there is no core collector set or it's set to makedumpfile
         var compressionPossible = (
@@ -207,7 +212,7 @@ var KdumpTargetBody = createReactClass({
             </div>
         );
     }
-});
+}
 
 /* Show kdump status of the system and offer options to change or test the state
  * Expected properties:
@@ -219,14 +224,20 @@ var KdumpTargetBody = createReactClass({
  * reservedMemory    memory reserved at boot time for kdump use
  * onCrashKernel     callback to crash the kernel via kdumpClient, expects a promise
  */
-var KdumpPage = createReactClass({
-    getInitialState: function() {
-        return {
+class KdumpPage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
             dialogSettings: undefined,
             dialogObj: undefined, // this is used if there's an open dialog
         };
-    },
-    compressionStatus: function(settings) {
+        this.changeSetting = this.changeSetting.bind(this);
+        this.handleTestSettingsClick = this.handleTestSettingsClick.bind(this);
+        this.dialogClosed = this.dialogClosed.bind(this);
+        this.handleSettingsClick = this.handleSettingsClick.bind(this);
+    }
+
+    compressionStatus(settings) {
         // compression is enabled if we have a core_collector command with the "-c" parameter
         return (
             settings &&
@@ -234,8 +245,9 @@ var KdumpPage = createReactClass({
               settings["core_collector"].value &&
               (settings["core_collector"].value.split(" ").indexOf("-c") != -1)
         );
-    },
-    changeSetting: function(key, value) {
+    }
+
+    changeSetting(key, value) {
         var settings = this.state.dialogSettings;
 
         // is compression enabled in the current config?
@@ -281,8 +293,9 @@ var KdumpPage = createReactClass({
         this.setState({ dialogSettings: settings });
         this.state.dialogObj.updateDialogBody();
         this.state.dialogObj.render();
-    },
-    handleApplyClick: function() {
+    }
+
+    handleApplyClick() {
         // TODO test settings (e.g. path writable, nfs mountable, ssh key works)
         var dfd = cockpit.defer();
         this.props.onApplySettings(this.state.dialogSettings)
@@ -291,8 +304,9 @@ var KdumpPage = createReactClass({
                     dfd.reject(cockpit.format(_("Unable to apply settings: $0"), String(error)));
                 });
         return dfd.promise();
-    },
-    handleTestSettingsClick: function(e) {
+    }
+
+    handleTestSettingsClick(e) {
         // only consider primary mouse button
         if (!e || e.button !== 0)
             return;
@@ -319,17 +333,20 @@ var KdumpPage = createReactClass({
         };
         var dialogObj = dialogPattern.show_modal_dialog(dialogProps, footerProps);
         this.setState({ dialogObj: dialogObj });
-    },
-    handleServiceDetailsClick: function(e) {
+    }
+
+    handleServiceDetailsClick(e) {
         // only consider primary mouse button
         if (!e || e.button !== 0)
             return;
         cockpit.jump("/system/services#/kdump.service", cockpit.transport.host);
-    },
-    dialogClosed: function() {
+    }
+
+    dialogClosed() {
         this.setState({ dialogSettings: undefined, dialogObj: undefined });
-    },
-    handleSettingsClick: function(e) {
+    }
+
+    handleSettingsClick(e) {
         // only consider primary mouse button
         if (!e || e.button !== 0)
             return;
@@ -365,8 +382,9 @@ var KdumpPage = createReactClass({
         var dialogObj = dialogPattern.show_modal_dialog(dialogProps, footerProps);
         dialogObj.updateDialogBody = updateDialogBody;
         this.setState({ dialogSettings: settings, dialogObj: dialogObj });
-    },
-    render: function() {
+    }
+
+    render() {
         var kdumpLocation = (
             <div className="dialog-wait-ct">
                 <div className="spinner spinner-sm" />
@@ -417,9 +435,9 @@ var KdumpPage = createReactClass({
             );
         } else if (this.props.reservedMemory == 0) {
             // nothing reserved, give hint
-            reservedMemory = [
+            reservedMemory = (
                 <span>{_("None")} </span>
-            ];
+            );
         } else if (this.props.reservedMemory == "error") {
             // error while reading
         } else {
@@ -528,7 +546,7 @@ var KdumpPage = createReactClass({
             </div>
         );
     }
-});
+}
 
 module.exports = {
     page: KdumpPage,

@@ -24,6 +24,7 @@ import cockpit from 'cockpit';
 
 import {
     updateVm,
+    updateOrAddVm,
     undefineVm,
     deleteUnlistedVMs,
     updateStoragePools,
@@ -63,6 +64,7 @@ import {
     createTempFile,
     isRunning,
     parseDumpxml,
+    resolveUiState,
     serialConsoleCommand,
     unknownConnectionName,
     updateVCPUSettings,
@@ -150,17 +152,37 @@ LIBVIRT_PROVIDER = {
      * @param VM name
      * @returns {Function}
      */
-    GET_VM ({ name, connectionName }) {
+    GET_VM ({ name, connectionName, updateOnly }) {
         logDebug(`${this.name}.GET_VM()`);
+        let xmlDesc;
+        let xmlInactiveDesc;
 
         return dispatch => {
             if (!isEmpty(name)) {
-                return spawnVirshReadOnly({connectionName, method: 'dumpxml', name}).then(domXml => {
-                    parseDumpxml(dispatch, connectionName, domXml);
-                    return spawnVirshReadOnly({connectionName, method: 'dominfo', name});
-                })
+                return spawnVirshReadOnly({connectionName, method: 'dumpxml', name})
+                        .then(domXml => {
+                            xmlDesc = domXml;
+                            return spawnVirshReadOnly({connectionName, method: 'dumpxml', params: '--inactive', name});
+                        })
+                        .then(domInactiveXml => {
+                            xmlInactiveDesc = domInactiveXml;
+                            return spawnVirshReadOnly({connectionName, method: 'dominfo', name});
+                        })
                         .then(domInfo => {
-                            parseDominfo(dispatch, connectionName, name, domInfo);
+                            let dumpxmlParams = parseDumpxml(dispatch, connectionName, xmlDesc);
+                            let domInfoParams = parseDominfo(dispatch, connectionName, name, domInfo);
+
+                            dumpxmlParams.ui = resolveUiState(dispatch, name);
+                            dumpxmlParams.inactiveXML = parseDumpxml(dispatch, connectionName, xmlInactiveDesc);
+
+                            if (updateOnly)
+                                dispatch(updateVm(
+                                    Object.assign({}, dumpxmlParams, domInfoParams)
+                                ));
+                            else
+                                dispatch(updateOrAddVm(
+                                    Object.assign({}, dumpxmlParams, domInfoParams)
+                                ));
                         }); // end of GET_VM return
             }
         };
@@ -437,8 +459,10 @@ function spawnVirsh({connectionName, method, failHandler, args}) {
     });
 }
 
-function spawnVirshReadOnly({connectionName, method, name, failHandler}) {
-    return spawnVirsh({connectionName, method, args: ['-r', method, name], failHandler});
+function spawnVirshReadOnly({connectionName, method, name, params, failHandler}) {
+    let args = params ? ['-r', method, params, name] : ['-r', method, name];
+
+    return spawnVirsh({connectionName, method, args, failHandler});
 }
 
 function parseDominfo(dispatch, connectionName, name, domInfo) {
@@ -448,12 +472,10 @@ function parseDominfo(dispatch, connectionName, name, domInfo) {
     const persistent = getValueFromLine(lines, 'Persistent:') == 'yes';
 
     if (!LIBVIRT_PROVIDER.isRunning(state)) { // clean usage data
-        dispatch(updateVm({connectionName, name, state, autostart, persistent, actualTimeInMs: -1}));
+        return {connectionName, name, state, autostart, persistent, actualTimeInMs: -1};
     } else {
-        dispatch(updateVm({connectionName, name, state, persistent, autostart}));
+        return {connectionName, name, state, persistent, autostart};
     }
-
-    return state;
 }
 
 function parseDommemstat(dispatch, connectionName, name, dommemstat) {
@@ -462,7 +484,7 @@ function parseDommemstat(dispatch, connectionName, name, dommemstat) {
     let rssMemory = getValueFromLine(lines, 'rss'); // in KiB
 
     if (rssMemory) {
-        dispatch(updateVm({connectionName, name, rssMemory}));
+        return {connectionName, name, rssMemory};
     }
 }
 
@@ -473,12 +495,12 @@ function parseDomstats(dispatch, connectionName, name, domstats) {
 
     const cpuTime = getValueFromLine(lines, 'cpu.time=');
     // TODO: Add network usage statistics
+    let retParams = {connectionName, name, actualTimeInMs, disksStats: parseDomstatsForDisks(lines)};
 
     if (cpuTime) {
-        dispatch(updateVm({connectionName, name, actualTimeInMs, cpuTime}));
+        retParams['cpuTime'] = cpuTime;
     }
-
-    dispatch(updateVm({connectionName, name, disksStats: parseDomstatsForDisks(lines)}));
+    return retParams;
 }
 
 function parseDomstatsForDisks(domstatsLines) {
@@ -565,17 +587,22 @@ function doUsagePolling (name, connectionName) {
         // Do polling even if following virsh calls fails. Might fail i.e. if a VM is not (yet) started
         dispatch(delayPolling(doUsagePolling(name, connectionName), null, name, connectionName));
 
-        return spawnVirshReadOnly({ connectionName, method: 'dommemstat', name, failHandler: canFailHandler })
-                .then(dommemstat => {
-                    if (dommemstat) { // is undefined if vm is not running
-                        parseDommemstat(dispatch, connectionName, name, dommemstat);
-                        return spawnVirshReadOnly({ connectionName, method: 'domstats', name, failHandler: canFailHandler });
-                    }
-                })
+        return spawnVirshReadOnly({ connectionName, method: 'domstats', name, failHandler: canFailHandler })
                 .then(domstats => {
-                    if (domstats)
-                        parseDomstats(dispatch, connectionName, name, domstats);
-                });
+                    if (domstats) {
+                        let domstatsParams = parseDomstats(dispatch, connectionName, name, domstats);
+                        dispatch(updateVm(domstatsParams));
+                    }
+                    return spawnVirshReadOnly({ connectionName, method: 'dommemstat', name, failHandler: canFailHandler });
+                })
+                .then(dommemstats => {
+                    if (dommemstats) {
+                        let dommemstatsParams = parseDommemstat(dispatch, connectionName, name, dommemstats);
+                        if (dommemstatsParams)
+                            dispatch(updateVm(dommemstatsParams));
+                    }
+                }, dispatch(updateVm({connectionName, name, rssMemory: 0.0}))
+                );
     };
 }
 
@@ -617,7 +644,7 @@ function handleEvent(dispatch, connectionName, line) {
 
         case 'Stopped':
             // there might be changes between live and permanent domain definition, so full reload
-            dispatch(getVm({connectionName, name}));
+            dispatch(getVm({connectionName, name, updateOnly: true}));
 
             // transient VMs don't have a separate Undefined event, so remove them on stop
             dispatch(undefineVm({connectionName, name, transientOnly: true}));

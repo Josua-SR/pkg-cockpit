@@ -69,7 +69,7 @@ return plural;
  },
  "Applications": [
   null,
-  ""
+  "애플리케이션 "
  ],
  "Cancel": [
   null,
@@ -85,7 +85,7 @@ return plural;
  ],
  "Error": [
   null,
-  ""
+  "오류"
  ],
  "Go to Application": [
   null,
@@ -93,11 +93,11 @@ return plural;
  ],
  "Install": [
   null,
-  ""
+  "설치"
  ],
  "Installing": [
   null,
-  ""
+  "설치 중"
  ],
  "No applications installed or available": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "확인"
  ],
  "PackageKit crashed": [
   null,
@@ -121,11 +121,11 @@ return plural;
  ],
  "Remove": [
   null,
-  ""
+  "제거 "
  ],
  "Removing": [
   null,
-  ""
+  "삭제 중"
  ],
  "Unknown Application": [
   null,

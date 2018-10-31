@@ -71,33 +71,9 @@ return plural;
   null,
   ""
  ],
- "$0 day": [
-  "$0 days",
-  ""
- ],
- "$0 hour": [
-  "$0 hours",
-  ""
- ],
- "$0 minute": [
-  "$0 minutes",
-  ""
- ],
- "$0 month": [
-  "$0 months",
-  ""
- ],
  "$0 shares": [
   null,
   "$0 공유"
- ],
- "$0 week": [
-  "$0 weeks",
-  ""
- ],
- "$0 year": [
-  "$0 years",
-  ""
  ],
  "${hip}:${hport} -> $cport": [
   null,
@@ -129,7 +105,7 @@ return plural;
  ],
  "Always": [
   null,
-  ""
+  "항상"
  ],
  "Author": [
   null,
@@ -169,7 +145,7 @@ return plural;
  ],
  "Change": [
   null,
-  ""
+  "바꾸기"
  ],
  "Change resource limits": [
   null,
@@ -205,7 +181,7 @@ return plural;
  ],
  "Commit": [
   null,
-  ""
+  "커밋 "
  ],
  "Commit Image": [
   null,
@@ -261,11 +237,11 @@ return plural;
  ],
  "Created": [
   null,
-  ""
+  "생성 일시"
  ],
  "Created:": [
   null,
-  ""
+  "작성일: "
  ],
  "Default": [
   null,
@@ -281,7 +257,7 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "데스크탑"
  ],
  "Detachable": [
   null,
@@ -289,7 +265,7 @@ return plural;
  ],
  "Details": [
   null,
-  ""
+  "상세 정보"
  ],
  "Docker is not installed or activated on the system": [
   null,
@@ -301,7 +277,7 @@ return plural;
  ],
  "Download": [
   null,
-  ""
+  "다운로드 "
  ],
  "Drive": [
   null,
@@ -321,11 +297,11 @@ return plural;
  ],
  "Entrypoint": [
   null,
-  ""
+  "시작점"
  ],
  "Environment": [
   null,
-  ""
+  "환경"
  ],
  "Erase containers and reset storage pool": [
   null,
@@ -365,11 +341,11 @@ return plural;
  ],
  "Free": [
   null,
-  ""
+  "남은 양"
  ],
  "Gateway:": [
   null,
-  ""
+  "게이트웨이:"
  ],
  "Get new image": [
   null,
@@ -381,11 +357,11 @@ return plural;
  ],
  "Hard Disk": [
   null,
-  ""
+  "하드 디스크"
  ],
  "IP Address:": [
   null,
-  "IP 주소"
+  "IP 주소:"
  ],
  "IP Prefix Length:": [
   null,
@@ -393,7 +369,7 @@ return plural;
  ],
  "Id": [
   null,
-  ""
+  "ID "
  ],
  "Id:": [
   null,
@@ -417,7 +393,7 @@ return plural;
  ],
  "Images": [
   null,
-  ""
+  "이미지 "
  ],
  "Images and running containers": [
   null,
@@ -485,7 +461,7 @@ return plural;
  ],
  "MiB": [
   null,
-  ""
+  "MiB"
  ],
  "Mini PC": [
   null,
@@ -569,7 +545,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "확인"
  ],
  "On": [
   null,
@@ -585,11 +561,11 @@ return plural;
  ],
  "Other": [
   null,
-  ""
+  "기타"
  ],
  "Overview": [
   null,
-  ""
+  "개요"
  ],
  "Peripheral Chassis": [
   null,
@@ -645,7 +621,7 @@ return plural;
  ],
  "Reboot": [
   null,
-  ""
+  "다시 시작"
  ],
  "Reformat and add disks": [
   null,
@@ -657,7 +633,7 @@ return plural;
  ],
  "Reset": [
   null,
-  ""
+  "초기화"
  ],
  "Reset Storage Pool": [
   null,
@@ -669,7 +645,7 @@ return plural;
  ],
  "Restart": [
   null,
-  ""
+  "재시작"
  ],
  "Restart Policy": [
   null,
@@ -685,7 +661,7 @@ return plural;
  ],
  "Run": [
   null,
-  ""
+  "실행"
  ],
  "Run Image": [
   null,
@@ -697,7 +673,7 @@ return plural;
  ],
  "Security": [
   null,
-  ""
+  "보안"
  ],
  "Set container environment variables": [
   null,
@@ -713,7 +689,7 @@ return plural;
  ],
  "Size": [
   null,
-  ""
+  "크기"
  ],
  "Solid-State Disk": [
   null,
@@ -725,7 +701,7 @@ return plural;
  ],
  "Start": [
   null,
-  ""
+  "시작"
  ],
  "Start Docker": [
   null,
@@ -733,11 +709,11 @@ return plural;
  ],
  "State": [
   null,
-  ""
+  "상태"
  ],
  "State:": [
   null,
-  ""
+  "상태:"
  ],
  "Stick PC": [
   null,
@@ -757,11 +733,11 @@ return plural;
  ],
  "Storage": [
   null,
-  ""
+  "스토리지"
  ],
  "Storage pool": [
   null,
-  ""
+  "스토리지 풀 "
  ],
  "Sub Chassis": [
   null,
@@ -777,7 +753,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "타블렛"
  ],
  "Tag": [
   null,
@@ -785,7 +761,7 @@ return plural;
  ],
  "Tags": [
   null,
-  ""
+  "태그"
  ],
  "The Docker storage pool cannot be managed on this system.": [
   null,
@@ -809,7 +785,7 @@ return plural;
  ],
  "Total": [
   null,
-  ""
+  "전체"
  ],
  "Tower": [
   null,
@@ -845,7 +821,7 @@ return plural;
  ],
  "Used": [
   null,
-  ""
+  "사용 중"
  ],
  "Used by Containers": [
   null,
@@ -853,7 +829,7 @@ return plural;
  ],
  "Volumes": [
   null,
-  ""
+  "볼륨"
  ],
  "Volumes:": [
   null,
@@ -921,7 +897,7 @@ return plural;
  ],
  "value": [
   null,
-  ""
+  "값"
  ],
  "page-title\u0004Containers": [
   null,
@@ -929,6 +905,6 @@ return plural;
  ],
  "page-title\u0004Images": [
   null,
-  "이미지"
+  "이미지 "
  ]
 }));

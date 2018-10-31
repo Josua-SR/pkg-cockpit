@@ -83,11 +83,6 @@ return plural;
   null,
   "$0 data + $1 överskjutande använt av $2 ($3)"
  ],
- "$0 day": [
-  "$0 days",
-  "$0 dag",
-  "$0 dagar"
- ],
  "$0 disk is missing": [
   "$0 disks are missing",
   "$0 disk saknas",
@@ -105,11 +100,6 @@ return plural;
   null,
   "$0 filsystem kan inte storleksändras här."
  ],
- "$0 hour": [
-  "$0 hours",
-  "$0 timme",
-  "$0 timmar"
- ],
  "$0 is in active use": [
   null,
   "$0 används aktivt"
@@ -117,16 +107,6 @@ return plural;
  "$0 is not available from any repository.": [
   null,
   "$0 är inte tillgängligt från något förråd."
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 minut",
-  "$0 minuter"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 månad",
-  "$0 månader"
  ],
  "$0 of $1": [
   null,
@@ -140,19 +120,9 @@ return plural;
   null,
   "$0 använt av $1 ($2 sparat)"
  ],
- "$0 week": [
-  "$0 weeks",
-  "$0 vecka",
-  "$0 veckor"
- ],
  "$0 will be installed.": [
   null,
   "$0 kommer att installeras."
- ],
- "$0 year": [
-  "$0 years",
-  "$0 år",
-  "$0 år"
  ],
  "$0, $1 free": [
   null,
@@ -576,275 +546,275 @@ return plural;
  ],
  "Downloading $0": [
   null,
-  ""
+  "Hämtar $0"
  ],
  "Drive": [
   null,
-  ""
+  "Enhet"
  ],
  "Drives": [
   null,
-  ""
+  "Enheter"
  ],
  "Edit": [
   null,
-  ""
+  "Redigera"
  ],
  "Edit Tang keyserver": [
   null,
-  ""
+  "Redigera Tang-nyckelserver"
  ],
  "Editing a key requires a free slot": [
   null,
-  ""
+  "Att redigera en nyckel kräver ett fritt fack"
  ],
  "Ejecting $target": [
   null,
-  ""
+  "Matar ut $target"
  ],
  "Emptying $target": [
   null,
-  ""
+  "Tömmer $target"
  ],
  "Encrypted $0": [
   null,
-  ""
+  "Krypterad $0"
  ],
  "Encrypted EXT4 (LUKS)": [
   null,
-  ""
+  "Krypterat EXT4 (LUKS)"
  ],
  "Encrypted Logical Volume of $0": [
   null,
-  ""
+  "Krypterad logisk volym av $0"
  ],
  "Encrypted Partition of $0": [
   null,
-  ""
+  "Krypterad partition av $0"
  ],
  "Encrypted XFS (LUKS)": [
   null,
-  ""
+  "Krypterat XFS (LUKS)"
  ],
  "Encrypted volumes can not be resized here.": [
   null,
-  ""
+  "Storleken på krypterade volymer kan inte ändras här."
  ],
  "Encrypted volumes need to be unlocked before they can be resized.": [
   null,
-  ""
+  "Krypterade volymer behöver låsas upp innan deras storlek kan ändras."
  ],
  "Encryption": [
   null,
-  ""
+  "Kryptering"
  ],
  "Encryption Options": [
   null,
-  ""
+  "Krypteringsalternativ"
  ],
  "Erase": [
   null,
-  ""
+  "Radera"
  ],
  "Erasing $target": [
   null,
-  ""
+  "Raderar $target"
  ],
  "Error": [
   null,
-  ""
+  "Fel"
  ],
  "Extended Partition": [
   null,
-  ""
+  "Utökad partition"
  ],
  "FAILED": [
   null,
-  ""
+  "MISSLYCKADES"
  ],
  "Filesystem": [
   null,
-  ""
+  "Filsystem"
  ],
  "Filesystem Mounting": [
   null,
-  ""
+  "Filsystemmontering"
  ],
  "Filesystem Name": [
   null,
-  ""
+  "Filsystemsnamn"
  ],
  "Filesystem type": [
   null,
-  ""
+  "Filsystemstyp"
  ],
  "Filesystems": [
   null,
-  ""
+  "Filsystem"
  ],
  "Force remove passphrase in $0": [
   null,
-  ""
+  "Framtvinga borttagande av lösenfras i $0"
  ],
  "Format": [
   null,
-  ""
+  "Formater"
  ],
  "Format $0": [
   null,
-  ""
+  "Formatera $0"
  ],
  "Format Disk $0": [
   null,
-  ""
+  "Formatera disken $0"
  ],
  "Formatting a disk will erase all data on it.": [
   null,
-  ""
+  "Att formatera en disk kommer att radera all data på den."
  ],
  "Formatting a storage device will erase all data on it.": [
   null,
-  ""
+  "Att formatera en lagringsenhet kommer att radera all data på den."
  ],
  "Free": [
   null,
-  ""
+  "Ledigt"
  ],
  "Free Space": [
   null,
-  ""
+  "Ledigt utrymme"
  ],
  "Go to now": [
   null,
-  ""
+  "Gå till nu"
  ],
  "Grow": [
   null,
-  ""
+  "Utöka"
  ],
  "Grow Logical Volume": [
   null,
-  ""
+  "Utöka en logisk volym"
  ],
  "Grow logical size of $0": [
   null,
-  ""
+  "Utöka den logiska storleken av $0"
  ],
  "Grow to take all space": [
   null,
-  ""
+  "Utöka till att ta allt utrymme"
  ],
  "If tang-show-keys is not available, run the following:": [
   null,
-  ""
+  "Om tang-show-keys inte är tillgängligt, kör det följande:"
  ],
  "In Sync": [
   null,
-  ""
+  "I synk"
  ],
  "Inactive volume": [
   null,
-  ""
+  "Inaktiv volym"
  ],
  "Index Memory": [
   null,
-  ""
+  "Indexminne"
  ],
  "Install": [
   null,
-  ""
+  "Installera"
  ],
  "Install NFS Support": [
   null,
-  ""
+  "Installera stöd för NFS"
  ],
  "Install Software": [
   null,
-  ""
+  "Installera programvara"
  ],
  "Install VDO support": [
   null,
-  ""
+  "Installera VDO-stöd"
  ],
  "Installing $0": [
   null,
-  ""
+  "Installerar $0"
  ],
  "Invalid username or password": [
   null,
-  ""
+  "Felaktigt användarnamn eller lösenord"
  ],
  "Jobs": [
   null,
-  ""
+  "Jobb"
  ],
  "Key slots with unknown types can not be edited here": [
   null,
-  ""
+  "Nyckelfack med okända typer kan inte redigeras här"
  ],
  "Key source": [
   null,
-  ""
+  "Nyckelkälla"
  ],
  "Keys": [
   null,
-  ""
+  "Nycklar"
  ],
  "Keyserver": [
   null,
-  ""
+  "Nyckelserver"
  ],
  "Keyserver address": [
   null,
-  ""
+  "Nyckelserverns adress"
  ],
  "Keyserver removal may prevent unlocking $0.": [
   null,
-  ""
+  "Att ta bort nyckelservern kan förhindra upplåsning av $0."
  ],
  "Local Mount Point": [
   null,
-  ""
+  "Lokal monteringspunkt"
  ],
  "Lock": [
   null,
-  ""
+  "Lås"
  ],
  "Locking $target": [
   null,
-  ""
+  "Låser $target"
  ],
  "Logical": [
   null,
-  ""
+  "Logisk"
  ],
  "Logical Size": [
   null,
-  ""
+  "Logisk storlek"
  ],
  "Logical Volume": [
   null,
-  ""
+  "Logisk volym"
  ],
  "Logical Volume (Snapshot)": [
   null,
-  ""
+  "Logisk volym (ögonblicksbild)"
  ],
  "Logical Volume of $0": [
   null,
-  ""
+  "Logisk voly av $0"
  ],
  "Make sure the key hash from the Tang server matches:": [
   null,
-  ""
+  "Se till att kontrollsumman för nyckeln från Tang-servern stämmer:"
  ],
  "Manually check with SSH: ": [
   null,
-  ""
+  "Kontrollera manuellt med SSH:"
  ],
  "Marking $target as faulty": [
   null,
-  ""
+  "Markerar $target som felaktig"
  ],
  "Member of RAID Device": [
   null,
@@ -1168,39 +1138,39 @@ return plural;
  ],
  "Process": [
   null,
-  ""
+  "Process"
  ],
  "Purpose": [
   null,
-  ""
+  "Syfte"
  ],
  "RAID ($0)": [
   null,
-  ""
+  "RAID ($0)"
  ],
  "RAID 0": [
   null,
-  ""
+  "RAID 0"
  ],
  "RAID 0 (Stripe)": [
   null,
-  ""
+  "RAID 0 (Strimlor)"
  ],
  "RAID 1": [
   null,
-  ""
+  "RAID 1"
  ],
  "RAID 1 (Mirror)": [
   null,
-  ""
+  "RAID 1 (Spegel)"
  ],
  "RAID 10": [
   null,
-  ""
+  "RAID 10"
  ],
  "RAID 10 (Stripe of Mirrors)": [
   null,
-  ""
+  "RAID 10 (Strimlor av speglar)"
  ],
  "RAID 4": [
   null,
@@ -1390,6 +1360,26 @@ return plural;
   null,
   ""
  ],
+ "Size cannot be negative": [
+  null,
+  ""
+ ],
+ "Size cannot be zero": [
+  null,
+  ""
+ ],
+ "Size is too large": [
+  null,
+  ""
+ ],
+ "Size must be a number": [
+  null,
+  ""
+ ],
+ "Size must be at least $0": [
+  null,
+  ""
+ ],
  "Slot $0": [
   null,
   ""
@@ -1498,15 +1488,15 @@ return plural;
   null,
   ""
  ],
- "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
+ "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
   null,
   ""
  ],
- "The filesystem is in use by login sessions.                Proceeding will stop these.": [
+ "The filesystem is in use by login sessions. Proceeding will stop these.": [
   null,
   ""
  ],
- "The filesystem is in use by system services.                Proceeding will stop these.": [
+ "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
   ""
  ],
@@ -1546,7 +1536,7 @@ return plural;
   null,
   ""
  ],
- "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
+ "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
   null,
   ""
  ],
@@ -1554,7 +1544,7 @@ return plural;
   null,
   ""
  ],
- "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
+ "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
   null,
   ""
  ],
@@ -1566,7 +1556,7 @@ return plural;
   null,
   ""
  ],
- "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
+ "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
   ""
  ],
@@ -1796,7 +1786,7 @@ return plural;
  ],
  "storage-id-desc\u0004Encrypted data": [
   null,
-  ""
+  "Krypterad data"
  ],
  "storage-id-desc\u0004Other Data": [
   null,
@@ -1816,11 +1806,11 @@ return plural;
  ],
  "storage\u0004Drive": [
   null,
-  ""
+  "Enhet"
  ],
  "storage\u0004Hard Disk": [
   null,
-  ""
+  "Hårddisk"
  ],
  "storage\u0004Optical Drive": [
   null,

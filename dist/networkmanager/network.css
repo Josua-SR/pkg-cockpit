@@ -65,7 +65,7 @@ a.disabled:hover {
 }
 
 .highlight-ct {
-    background-color: #d4edfa;
+    background-color: #edf8ff;
 }
 
 /* Well and Blankslate */
@@ -267,7 +267,7 @@ input[type=number] {
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th,
 .dialog-list-ct .list-group-item:hover:not(.active) {
-    background-color: #d4edfa;
+    background-color: #edf8ff;
 }
 
 /* Override patternfly to fit buttons and such */
@@ -723,8 +723,12 @@ h1 .btn-onoff-ct {
     padding-left: 20px;
 }
 
-.cockpit-log-panel .cockpit-logline:hover {
-    background-color: #d4edfa;
+.cockpit-log-panel > .cockpit-logline:hover {
+    background-color: #def3ff; /* pf-blue-50 */
+}
+
+.cockpit-log-panel > .cockpit-logline:hover .cockpit-log-message {
+    color: #0088ce; /* pf-blue-400 */
 }
 
 .cockpit-log-panel > .cockpit-logline:hover {

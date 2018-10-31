@@ -83,6 +83,10 @@ return plural;
   null,
   "添加磁盘"
  ],
+ "Address": [
+  null,
+  "地址"
+ ],
  "Address:": [
   null,
   "地址："
@@ -126,10 +130,6 @@ return plural;
  "CPU Type:": [
   null,
   "CPU 类型："
- ],
- "CREATE_AND_ATTACH_VOLUME action failed": [
-  null,
-  ""
  ],
  "Cancel": [
   null,
@@ -327,6 +327,10 @@ return plural;
   null,
   "加载中......"
  ],
+ "MAC Address": [
+  null,
+  "MAC 地址"
+ ],
  "Manual Connection": [
   null,
   "手动连接"
@@ -350,6 +354,10 @@ return plural;
  "MiB": [
   null,
   "MiB"
+ ],
+ "Model type": [
+  null,
+  "型号类型"
  ],
  "More Information": [
   null,
@@ -395,6 +403,10 @@ return plural;
   null,
   "没有找到匹配的文件"
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  "没有为此 VM 定义网络接口"
+ ],
  "OS Vendor": [
   null,
   "操作系统厂商"
@@ -430,6 +442,10 @@ return plural;
  "Please start the virtual machine to access its console.": [
   null,
   "请启动虚拟机来访问其控制台。"
+ ],
+ "Plug": [
+  null,
+  "插"
  ],
  "Pool": [
   null,
@@ -497,7 +513,7 @@ return plural;
  ],
  "Send key": [
   null,
-  ""
+  "发送密钥"
  ],
  "Serial Console": [
   null,
@@ -595,9 +611,9 @@ return plural;
   null,
   "池为空"
  ],
- "Threads per cores": [
+ "Threads per core": [
   null,
-  "每个内核的线程数"
+  ""
  ],
  "Too many files found": [
   null,
@@ -607,6 +623,10 @@ return plural;
   null,
   "排错"
  ],
+ "Type": [
+  null,
+  "类型"
+ ],
  "URL": [
   null,
   "URL"
@@ -614,6 +634,10 @@ return plural;
  "Unique name": [
   null,
   "唯一名称"
+ ],
+ "Unplug": [
+  null,
+  "拔"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
@@ -631,15 +655,7 @@ return plural;
   null,
   "已使用"
  ],
- "VM ATTACH_DISK action failed": [
-  null,
-  ""
- ],
  "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  ""
- ],
- "VM CHANGE_NETWORK_STATE action failed: updated device XML couldn't not be generated": [
   null,
   ""
  ],
@@ -655,7 +671,7 @@ return plural;
   null,
   ""
  ],
- "VM DETACH action failed": [
+ "VM DETACH_DISK action failed": [
   null,
   ""
  ],

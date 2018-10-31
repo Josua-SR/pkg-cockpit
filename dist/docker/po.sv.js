@@ -71,39 +71,9 @@ return plural;
   null,
   "(delat med OS:et)"
  ],
- "$0 day": [
-  "$0 days",
-  "$0 dag",
-  "$0 dagar"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 timme",
-  "$0 timmar"
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 minut",
-  "$0 minuter"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 månad",
-  "$0 månader"
- ],
  "$0 shares": [
   null,
   "$0 utdelningar"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 vecka",
-  "$0 veckor"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 år",
-  "$0 år"
  ],
  "${hip}:${hport} -> $cport": [
   null,
@@ -308,175 +278,175 @@ return plural;
  ],
  "Download": [
   null,
-  ""
+  "Hämta"
  ],
  "Drive": [
   null,
-  ""
+  "Enhet"
  ],
  "Duplicate alias": [
   null,
-  ""
+  "Dubblerat alias"
  ],
  "Duplicate port": [
   null,
-  ""
+  "Dubblerad port"
  ],
  "Embedded PC": [
   null,
-  ""
+  "Inbäddad PC"
  ],
  "Entrypoint": [
   null,
-  ""
+  "Ingångspunkt"
  ],
  "Environment": [
   null,
-  ""
+  "Miljö"
  ],
  "Erase containers and reset storage pool": [
   null,
-  ""
+  "Radera behållare och återställ lagringspoolen"
  ],
  "Error message from Docker:": [
   null,
-  ""
+  "Felmeddelande från Docker:"
  ],
  "Everything": [
   null,
-  ""
+  "Allting"
  ],
  "Exited $ExitCode": [
   null,
-  ""
+  "Avslutade $ExitCode"
  ],
  "Expansion Chassis": [
   null,
-  ""
+  "Expansionschassin"
  ],
  "Expose container ports": [
   null,
-  ""
+  "Exponerade behållarportar"
  ],
  "Failed to start Docker: $0": [
   null,
-  ""
+  "Misslyckades att stara Docker: $0"
  ],
  "Failed to stop Docker scope: $0": [
   null,
-  ""
+  "Misslyckades att stoppa Docker-scope: $0"
  ],
  "Force Delete": [
   null,
-  ""
+  "Framtvinga borttagande"
  ],
  "Free": [
   null,
-  ""
+  "Ledigt"
  ],
  "Gateway:": [
   null,
-  ""
+  "Gateway:"
  ],
  "Get new image": [
   null,
-  ""
+  "Hämta ny avbild"
  ],
  "Hand Held": [
   null,
-  ""
+  "Handhållen"
  ],
  "Hard Disk": [
   null,
-  ""
+  "Hårddisk"
  ],
  "IP Address:": [
   null,
-  ""
+  "IP-adress:"
  ],
  "IP Prefix Length:": [
   null,
-  ""
+  "IP-prefixlängd:"
  ],
  "Id": [
   null,
-  ""
+  "Id"
  ],
  "Id:": [
   null,
-  ""
+  "Id:"
  ],
  "Image": [
   null,
-  ""
+  "Avbild"
  ],
  "Image $0": [
   null,
-  ""
+  "Avbild $0"
  ],
  "Image Search": [
   null,
-  ""
+  "Avbildssökning"
  ],
  "Image:": [
   null,
-  ""
+  "Avbild:"
  ],
  "Images": [
   null,
-  ""
+  "Avbilder"
  ],
  "Images and running containers": [
   null,
-  ""
+  "Avbilder och körande behållare"
  ],
  "Information about the Docker storage pool is not available.": [
   null,
-  ""
+  "Information om Dockers lagringspool är inte tillgängligt."
  ],
  "Invalid port": [
   null,
-  ""
+  "Felaktig port"
  ],
  "IoT Gateway": [
   null,
-  ""
+  "IoT-gateway"
  ],
  "Laptop": [
   null,
-  ""
+  "Bärbar dator"
  ],
  "Link to another container": [
   null,
-  ""
+  "Länka till en annan behållare"
  ],
  "Links": [
   null,
-  ""
+  "Länkar"
  ],
  "Links:": [
   null,
-  ""
+  "Länkar:"
  ],
  "Local Disks": [
   null,
-  ""
+  "Lokala diskar"
  ],
  "Low Profile Desktop": [
   null,
-  ""
+  "Lågprofilskrivbord"
  ],
  "Lunch Box": [
   null,
-  ""
+  "Lunchlåda"
  ],
  "MAC Address:": [
   null,
-  ""
+  "MAC-adress:"
  ],
  "Main Server Chassis": [
   null,
-  ""
+  "Huvudserverchassi"
  ],
  "Memory": [
   null,
@@ -633,7 +603,7 @@ return plural;
  ],
  "Problems": [
   null,
-  ""
+  "Problem"
  ],
  "RAID Chassis": [
   null,
@@ -937,6 +907,6 @@ return plural;
  ],
  "page-title\u0004Images": [
   null,
-  ""
+  "Avbilder"
  ]
 }));

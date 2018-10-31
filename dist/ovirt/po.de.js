@@ -87,9 +87,13 @@ return plural;
   null,
   ""
  ],
+ "Address": [
+  null,
+  "Adresse"
+ ],
  "Address:": [
   null,
-  ""
+  "Adresse:"
  ],
  "All changes will take effect only after stopping and starting the VM.": [
   null,
@@ -117,7 +121,7 @@ return plural;
  ],
  "Available": [
   null,
-  ""
+  "Verfügbar"
  ],
  "Base Template": [
   null,
@@ -159,13 +163,17 @@ return plural;
   null,
   "Kapazität"
  ],
+ "Changes will apply on VM shutdown": [
+  null,
+  ""
+ ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
   ""
  ],
  "Cluster": [
   null,
-  ""
+  "Cluster"
  ],
  "Cluster Templates": [
   null,
@@ -221,7 +229,7 @@ return plural;
  ],
  "Cores per socket": [
   null,
-  ""
+  "Kerne pro Socket"
  ],
  "Create": [
   null,
@@ -229,7 +237,7 @@ return plural;
  ],
  "Create New": [
   null,
-  ""
+  "Neu erstellen"
  ],
  "Create New VM": [
   null,
@@ -253,19 +261,19 @@ return plural;
  ],
  "Description": [
   null,
-  ""
+  "Beschreibung"
  ],
  "Description:": [
   null,
-  ""
+  "Beschreibung:"
  ],
  "Device": [
   null,
-  ""
+  "Gerät"
  ],
  "Disconnect": [
   null,
-  ""
+  "Verbindung trennen"
  ],
  "Disconnected": [
   null,
@@ -291,6 +299,10 @@ return plural;
   null,
   ""
  ],
+ "Edit": [
+  null,
+  "Bearbeiten"
+ ],
  "Edit the vdsm.conf": [
   null,
   ""
@@ -305,7 +317,7 @@ return plural;
  ],
  "FQDN": [
   null,
-  ""
+  "FQDN"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -313,7 +325,7 @@ return plural;
  ],
  "File": [
   null,
-  ""
+  "Datei"
  ],
  "Force Restart": [
   null,
@@ -333,7 +345,7 @@ return plural;
  ],
  "GiB": [
   null,
-  ""
+  "GiB"
  ],
  "Graphics Console (VNC)": [
   null,
@@ -365,7 +377,7 @@ return plural;
  ],
  "Install": [
   null,
-  ""
+  "Installation"
  ],
  "Launch Remote Viewer": [
   null,
@@ -373,13 +385,21 @@ return plural;
  ],
  "Loading ...": [
   null,
-  ""
+  "Ladevorgang ..."
  ],
  "Loading data ...": [
   null,
   ""
  ],
+ "MAC Address": [
+  null,
+  "MAC-Adresse"
+ ],
  "MIGRATE action failed": [
+  null,
+  ""
+ ],
+ "Mac Address": [
   null,
   ""
  ],
@@ -397,13 +417,21 @@ return plural;
  ],
  "Memory:": [
   null,
-  ""
+  "Speicher:"
  ],
  "MiB": [
   null,
-  ""
+  "MiB"
  ],
  "Migrate To:": [
+  null,
+  ""
+ ],
+ "Model": [
+  null,
+  "Modell"
+ ],
+ "Model type": [
   null,
   ""
  ],
@@ -415,9 +443,17 @@ return plural;
   null,
   "Name"
  ],
- "Networks": [
+ "Network Type": [
   null,
   ""
+ ],
+ "Network settings failed to change with following error: ": [
+  null,
+  ""
+ ],
+ "Networks": [
+  null,
+  "Netzwerke"
  ],
  "New Volume Name": [
   null,
@@ -443,7 +479,15 @@ return plural;
   null,
   ""
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  ""
+ ],
  "No oVirt connection": [
+  null,
+  ""
+ ],
+ "No virtual networks": [
   null,
   ""
  ],
@@ -453,11 +497,11 @@ return plural;
  ],
  "OK": [
   null,
-  ""
+  "OK"
  ],
  "OS": [
   null,
-  ""
+  "Betriebssystem"
  ],
  "OS Type:": [
   null,
@@ -465,7 +509,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "OK"
  ],
  "Optimized for:": [
   null,
@@ -473,7 +517,7 @@ return plural;
  ],
  "Overview": [
   null,
-  ""
+  "Überblick"
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
@@ -511,13 +555,17 @@ return plural;
   null,
   ""
  ],
+ "Plug": [
+  null,
+  ""
+ ],
  "Pool": [
   null,
   ""
  ],
  "Port": [
   null,
-  ""
+  "Port"
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
@@ -529,7 +577,7 @@ return plural;
  ],
  "Protocol": [
   null,
-  ""
+  "Protokoll"
  ],
  "REBOOT action failed": [
   null,
@@ -537,7 +585,7 @@ return plural;
  ],
  "Readonly": [
   null,
-  ""
+  "Schreibgeschützt"
  ],
  "Reconnect": [
   null,
@@ -561,7 +609,7 @@ return plural;
  ],
  "Run": [
   null,
-  "Läuft"
+  "Ausführen"
  ],
  "Run Here": [
   null,
@@ -633,11 +681,11 @@ return plural;
  ],
  "Sockets": [
   null,
-  ""
+  "Sockets"
  ],
  "Source": [
   null,
-  ""
+  "Quelle"
  ],
  "Start the VM to see disk statistics.": [
   null,
@@ -649,7 +697,7 @@ return plural;
  ],
  "Stateless": [
   null,
-  ""
+  "Stateless"
  ],
  "Stateless:": [
   null,
@@ -657,7 +705,7 @@ return plural;
  ],
  "Suspend": [
   null,
-  ""
+  "Bereitschaft"
  ],
  "Switch Host to Maintenance": [
   null,
@@ -685,7 +733,7 @@ return plural;
  ],
  "Templates": [
   null,
-  ""
+  "Vorlagen"
  ],
  "Templates of $0 cluster": [
   null,
@@ -739,7 +787,15 @@ return plural;
   null,
   ""
  ],
- "Threads per cores": [
+ "Threads per core": [
+  null,
+  ""
+ ],
+ "Type": [
+  null,
+  "Typ"
+ ],
+ "Unplug": [
   null,
   ""
  ],
@@ -749,7 +805,7 @@ return plural;
  ],
  "Usage": [
   null,
-  ""
+  "Verbrauch"
  ],
  "Use Existing": [
   null,
@@ -805,7 +861,7 @@ return plural;
  ],
  "VNC": [
   null,
-  ""
+  "VNC"
  ],
  "VNC Address:": [
   null,
@@ -837,7 +893,7 @@ return plural;
  ],
  "Volume": [
   null,
-  ""
+  "Lautstärke"
  ],
  "bridge": [
   null,
@@ -849,7 +905,7 @@ return plural;
  ],
  "connecting": [
   null,
-  ""
+  "wird verbunden"
  ],
  "cores": [
   null,
@@ -873,11 +929,11 @@ return plural;
  ],
  "disk": [
   null,
-  ""
+  "Datenträger"
  ],
  "down": [
   null,
-  ""
+  "runter"
  ],
  "dying": [
   null,
@@ -897,7 +953,7 @@ return plural;
  ],
  "host": [
   null,
-  ""
+  "host"
  ],
  "hostdev": [
   null,
@@ -949,7 +1005,7 @@ return plural;
  ],
  "oVirt": [
   null,
-  ""
+  "oVirt"
  ],
  "oVirt Host State:": [
   null,
@@ -973,7 +1029,7 @@ return plural;
  ],
  "other": [
   null,
-  ""
+  "other"
  ],
  "paused": [
   null,
@@ -989,11 +1045,11 @@ return plural;
  ],
  "raw": [
   null,
-  ""
+  "raw"
  ],
  "reboot": [
   null,
-  ""
+  "neustarten"
  ],
  "running": [
   null,
@@ -1001,7 +1057,7 @@ return plural;
  ],
  "server": [
   null,
-  ""
+  "server"
  ],
  "show less": [
   null,
@@ -1029,11 +1085,11 @@ return plural;
  ],
  "threads": [
   null,
-  ""
+  "threads"
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "unassigned": [
   null,
@@ -1045,11 +1101,11 @@ return plural;
  ],
  "up": [
   null,
-  ""
+  "hoch"
  ],
  "user": [
   null,
-  ""
+  "Benutzer"
  ],
  "vCPU Count": [
   null,
@@ -1061,7 +1117,7 @@ return plural;
  ],
  "vCPUs": [
   null,
-  ""
+  "vCPUs"
  ],
  "vCPUs:": [
   null,

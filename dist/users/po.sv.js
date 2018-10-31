@@ -149,71 +149,71 @@ return plural;
  ],
  "Error": [
   null,
-  ""
+  "Fel"
  ],
  "Error saving authorized keys: ": [
   null,
-  ""
+  "Fel när auktoriserade nycklar sparades: "
  ],
  "Excellent password": [
   null,
-  ""
+  "Utmärkt lösenord"
  ],
  "Failed to change password": [
   null,
-  ""
+  "Misslyckades att ändra lösenord"
  ],
  "Failed to load authorized keys.": [
   null,
-  ""
+  "Misslyckades att läsa in auktoriserade nycklar."
  ],
  "Force Change": [
   null,
-  ""
+  "Framtvinga ändring"
  ],
  "Force password change": [
   null,
-  ""
+  "Framtvinga lösenordsändring"
  ],
  "Full Name": [
   null,
-  ""
+  "Fullständigt namn"
  ],
  "Image Builder": [
   null,
-  ""
+  "Avbildsbyggare"
  ],
  "Invalid expiration date": [
   null,
-  ""
+  "Felaktigt utgångsdatum"
  ],
  "Invalid key": [
   null,
-  ""
+  "Felaktig nyckel"
  ],
  "Invalid number of days": [
   null,
-  ""
+  "Felaktigt antal dagar"
  ],
  "Last Login": [
   null,
-  ""
+  "Senaste inloggning"
  ],
  "Local Accounts": [
   null,
-  ""
+  "Lokala konton"
  ],
  "Lock Account": [
   null,
-  ""
+  "Lås kontot"
  ],
  "Lock account on $0": [
   null,
-  ""
+  "Lås kontot på $0"
  ],
  "Logged In": [
   null,
-  ""
+  "Inloggad"
  ],
  "Never": [
   null,
@@ -289,7 +289,7 @@ return plural;
  ],
  "Prompting via passwd timed out": [
   null,
-  ""
+  "Tidsgränsen överskreds vid fråga via passwd"
  ],
  "Require password change every $0 days": [
   null,

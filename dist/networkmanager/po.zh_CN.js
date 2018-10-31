@@ -67,30 +67,6 @@ return plural;
   "language": "zh_CN",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 day": [
-  "$0 days",
-  "$0 天"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 小时"
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 分钟"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 月"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 周"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 年"
- ],
  "$mtu": [
   null,
   "$mtu"
@@ -643,9 +619,9 @@ return plural;
   null,
   "Ping 目标"
  ],
- "Please install the {0} package": [
+ "Please install the $0 package": [
   null,
-  "请安装{0}软件包"
+  "请安装$0软件包"
  ],
  "Ports": [
   null,

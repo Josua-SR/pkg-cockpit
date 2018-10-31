@@ -67,33 +67,9 @@ return plural;
   "language": "ja",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 day": [
-  "$0 days",
-  "$0 日"
- ],
  "$0 disk is missing": [
   "$0 disks are missing",
   "$0 ディスクがありません"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 時間"
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 分"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 ヶ月"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 週"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 年"
  ],
  "Cancel": [
   null,

@@ -83,11 +83,6 @@ return plural;
   null,
   ""
  ],
- "$0 day": [
-  "$0 days",
-  "$0 ਦਿਨ",
-  "$0 ਦਿਨ"
- ],
  "$0 disk is missing": [
   "$0 disks are missing",
   "$0 ਡਿਸਕ ਗੁੰਮ ਹੈ",
@@ -105,11 +100,6 @@ return plural;
   null,
   ""
  ],
- "$0 hour": [
-  "$0 hours",
-  "$0 ਘੰਟਾ",
-  "$0 ਘੰਟੇ"
- ],
  "$0 is in active use": [
   null,
   ""
@@ -117,16 +107,6 @@ return plural;
  "$0 is not available from any repository.": [
   null,
   ""
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 ਮਿੰਟ",
-  "$0 ਮਿੰਟ"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 ਮਹੀਨਾ",
-  "$0 ਮਹੀਨੇ"
  ],
  "$0 of $1": [
   null,
@@ -140,19 +120,9 @@ return plural;
   null,
   ""
  ],
- "$0 week": [
-  "$0 weeks",
-  "$0 ਹਫ਼ਤਾ",
-  "$0 ਹਫ਼ਤੇ"
- ],
  "$0 will be installed.": [
   null,
   ""
- ],
- "$0 year": [
-  "$0 years",
-  "$0 ਸਾਲ",
-  "$0 ਸਾਲ"
  ],
  "$0, $1 free": [
   null,
@@ -1390,6 +1360,26 @@ return plural;
   null,
   "ਆਕਾਰ"
  ],
+ "Size cannot be negative": [
+  null,
+  "ਆਕਾਰ ਸਿਫ਼ਰ ਤੋਂ ਘੱਟ ਨਹੀਂ ਹੋ ਸਕਦਾ"
+ ],
+ "Size cannot be zero": [
+  null,
+  "ਆਕਾਰ ਸਿਫ਼ਰ ਨਹੀਂ ਹੋ ਸਕਦਾ"
+ ],
+ "Size is too large": [
+  null,
+  "ਆਕਾਰ ਬਹੁਤ ਵੱਡਾ ਹੈ"
+ ],
+ "Size must be a number": [
+  null,
+  "ਆਕਾਰ ਨੰਬਰ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ"
+ ],
+ "Size must be at least $0": [
+  null,
+  ""
+ ],
  "Slot $0": [
   null,
   ""
@@ -1498,15 +1488,15 @@ return plural;
   null,
   ""
  ],
- "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
+ "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
   null,
   ""
  ],
- "The filesystem is in use by login sessions.                Proceeding will stop these.": [
+ "The filesystem is in use by login sessions. Proceeding will stop these.": [
   null,
   ""
  ],
- "The filesystem is in use by system services.                Proceeding will stop these.": [
+ "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
   ""
  ],
@@ -1546,7 +1536,7 @@ return plural;
   null,
   ""
  ],
- "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
+ "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
   null,
   ""
  ],
@@ -1554,7 +1544,7 @@ return plural;
   null,
   ""
  ],
- "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
+ "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
   null,
   ""
  ],
@@ -1566,7 +1556,7 @@ return plural;
   null,
   ""
  ],
- "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
+ "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
   ""
  ],

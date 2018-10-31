@@ -221,95 +221,95 @@ return plural;
  ],
  "Enter IP address or host name": [
   null,
-  ""
+  "Ange en IP-adress eller ett värdnamn"
  ],
  "Entering a different password here means you will need to retype it every time you reconnect to this machine": [
   null,
-  ""
+  "Att ange ett annat lösenord här innebär att du kommer behöva skriva in det igen varje gång du återansluter till denna maskin"
  ],
  "Error loading users: {{perm_failed}}": [
   null,
-  ""
+  "Fel när användare lästes in: {{perm_failed}}"
  ],
  "Failed to add machine: $0": [
   null,
-  ""
+  "Misslyckades att lägga till en maskin: $0"
  ],
  "Failed to change password": [
   null,
-  ""
+  "Misslyckades att ändra lösenord"
  ],
  "Failed to edit machine: $0": [
   null,
-  ""
+  "Misslyckades att redigera en makin: $0"
  ],
  "Fingerprint": [
   null,
-  ""
+  "Fingeravtryck"
  ],
  "Host": [
   null,
-  ""
+  "Värd"
  ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "För att synkronisera användare behöver du logga in på {{#strong}}{{host}}{{/strong}}."
  ],
  "Incorrect Host Key": [
   null,
-  ""
+  "Felaktig värdnyckel"
  ],
  "Invalid file permissions": [
   null,
-  ""
+  "Felaktiga filrättigheter"
  ],
  "Is sshd running on a different port?": [
   null,
-  ""
+  "Kör sshd på en annan port?"
  ],
  "Kerberos Based SSO": [
   null,
-  ""
+  "Kerberos-baserad SSO"
  ],
  "Kerberos Ticket": [
   null,
-  ""
+  "Kerberosbiljett"
  ],
  "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
-  ""
+  "Lämna tomt för att ansluta till denna maskin som den nu inloggade användaren{{#default_user}} ({{default_user}}){{/default_user}}.  Om du anger ett annat användarnamn kommer den användaren alltid användas när man ansluter till denna maskin."
  ],
  "Licensed under:": [
   null,
-  ""
+  "Licensierad under:"
  ],
  "Log In": [
   null,
-  ""
+  "Logga in"
  ],
  "Log Out": [
   null,
-  ""
+  "Logga ut"
  ],
  "Log in again": [
   null,
-  ""
+  "Logga in igen"
  ],
  "Log in to {{host}}": [
   null,
-  ""
+  "Logga in på {{host}}"
  ],
  "Login Password": [
   null,
-  ""
+  "Inloggningslösenord"
  ],
  "Login has escalated admin privileges": [
   null,
-  ""
+  "Inloggningen har upphöjda administratörsprivilegier"
  ],
  "Machines": [
   null,
-  ""
+  "Maskiner"
  ],
  "New Password": [
   null,
@@ -377,23 +377,23 @@ return plural;
  ],
  "Privileged": [
   null,
-  ""
+  "Priviligierad"
  ],
  "Project website": [
   null,
-  ""
+  "Projektwebbsajt"
  ],
  "Prompting via ssh-add timed out": [
   null,
-  ""
+  "Tidsgränsen överskreds vid fråga via ssh-add"
  ],
  "Prompting via ssh-keygen timed out": [
   null,
-  ""
+  "Tidsgränsen överskreds vid fråga via ssh-keygen"
  ],
  "Public Key": [
   null,
-  ""
+  "Publik nyckel"
  ],
  "Reconnect": [
   null,

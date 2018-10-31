@@ -30,7 +30,7 @@ a{cursor:pointer}
 .btn-control-ct,.btn-control-ct:hover{background-position:center center;background-size:16px 16px;background-repeat:no-repeat;background-image:none;-webkit-border-radius:2;-moz-border-radius:2;border-radius:2px;height:28px;width:28px;box-shadow:none}
 .btn-control-ct{background-color:#eee}
 .btn-control-ct:hover{background-color:#e0e0e0}
-.dialog-list-ct .list-group-item:hover:not(.active),.highlight-ct,.table-hover>tbody>tr:hover>td,.table-hover>tbody>tr:hover>th{background-color:#d4edfa}
+.dialog-list-ct .list-group-item:hover:not(.active),.highlight-ct,.table-hover>tbody>tr:hover>td,.table-hover>tbody>tr:hover>th{background-color:#edf8ff}
 .table>tbody>tr>td,.table>thead>tr>th{padding:8px}
 .table>thead{background-image:none;background-color:#fff}
 .table tbody tr td:first-child,.table thead tr th:first-child{padding-left:15px}
@@ -85,7 +85,7 @@ tbody.open .listing-ct-panel{border:1px solid #ccc}
 tbody.open .listing-ct-panel .listing-ct-body{border:none}
 tbody.open tr.listing-ct-panel+tr.listing-ct-body{border-top:none}
 tbody.open tr.listing-ct-panel td div.listing-ct-head{border:none;border-bottom:1px solid #ccc}
-tbody:not(.open) tr.listing-ct-item:not(.listing-ct-nonavigate):hover{background-color:#d4edfa}
+tbody:not(.open) tr.listing-ct-item:not(.listing-ct-nonavigate):hover{background-color:#edf8ff}
 tbody.open tr.listing-ct-item:hover,td.listing-ct-toggle:hover~td,td.listing-ct-toggle:hover~th,tr.listing-ct-item.listing-ct-nonavigate:hover{background-color:#ededed}
 tr.listing-ct-item .listing-ct-toggle{padding:0!important;width:35px;color:#000}
 table.listing-ct thead .listing-ct-toggle+th,tr.listing-ct-item .listing-ct-toggle+td,tr.listing-ct-item .listing-ct-toggle+th{padding-left:0}

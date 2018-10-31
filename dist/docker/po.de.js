@@ -71,39 +71,9 @@ return plural;
   null,
   ""
  ],
- "$0 day": [
-  "$0 days",
-  "$0 Tag",
-  "$0 Tage"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 Stunde",
-  "$0 Stunden"
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 Minute",
-  "$0 Minuten"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 Monat",
-  "$0 Monate"
- ],
  "$0 shares": [
   null,
   "$0 mal geteilt"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 Woche",
-  "$0 Wochen"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 Jahr",
-  "$0 Jahre"
  ],
  "${hip}:${hport} -> $cport": [
   null,
@@ -135,7 +105,7 @@ return plural;
  ],
  "Always": [
   null,
-  ""
+  "Immer"
  ],
  "Author": [
   null,
@@ -175,7 +145,7 @@ return plural;
  ],
  "Change": [
   null,
-  ""
+  "Ändern"
  ],
  "Change resource limits": [
   null,
@@ -212,7 +182,7 @@ return plural;
  ],
  "Commit": [
   null,
-  "Befehl"
+  "Festschreiben"
  ],
  "Commit Image": [
   null,
@@ -288,7 +258,7 @@ return plural;
  ],
  "Desktop": [
   null,
-  ""
+  "Desktop"
  ],
  "Detachable": [
   null,
@@ -296,7 +266,7 @@ return plural;
  ],
  "Details": [
   null,
-  ""
+  "Details"
  ],
  "Docker is not installed or activated on the system": [
   null,
@@ -308,11 +278,11 @@ return plural;
  ],
  "Download": [
   null,
-  ""
+  "Herunterladen"
  ],
  "Drive": [
   null,
-  ""
+  "Speichergerät"
  ],
  "Duplicate alias": [
   null,
@@ -328,11 +298,11 @@ return plural;
  ],
  "Entrypoint": [
   null,
-  ""
+  "Einsprungpunkt"
  ],
  "Environment": [
   null,
-  ""
+  "Umgebung"
  ],
  "Erase containers and reset storage pool": [
   null,
@@ -376,7 +346,7 @@ return plural;
  ],
  "Gateway:": [
   null,
-  ""
+  "Gateway:"
  ],
  "Get new image": [
   null,
@@ -392,7 +362,7 @@ return plural;
  ],
  "IP Address:": [
   null,
-  ""
+  "IP-Adresse:"
  ],
  "IP Prefix Length:": [
   null,
@@ -400,7 +370,7 @@ return plural;
  ],
  "Id": [
   null,
-  ""
+  "ID"
  ],
  "Id:": [
   null,
@@ -424,7 +394,7 @@ return plural;
  ],
  "Images": [
   null,
-  ""
+  "Abbilder"
  ],
  "Images and running containers": [
   null,
@@ -492,7 +462,7 @@ return plural;
  ],
  "MiB": [
   null,
-  ""
+  "MiB"
  ],
  "Mini PC": [
   null,
@@ -576,7 +546,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "OK"
  ],
  "On": [
   null,
@@ -593,11 +563,11 @@ return plural;
  ],
  "Other": [
   null,
-  ""
+  "Weitere"
  ],
  "Overview": [
   null,
-  ""
+  "Überblick"
  ],
  "Peripheral Chassis": [
   null,
@@ -633,7 +603,7 @@ return plural;
  ],
  "Problems": [
   null,
-  ""
+  "Probleme"
  ],
  "RAID Chassis": [
   null,
@@ -665,7 +635,7 @@ return plural;
  ],
  "Reset": [
   null,
-  ""
+  "Zurücksetzen"
  ],
  "Reset Storage Pool": [
   null,
@@ -693,7 +663,7 @@ return plural;
  ],
  "Run": [
   null,
-  "Läuft"
+  "Ausführen"
  ],
  "Run Image": [
   null,
@@ -769,7 +739,7 @@ return plural;
  ],
  "Storage pool": [
   null,
-  ""
+  "Storage Pool"
  ],
  "Sub Chassis": [
   null,
@@ -785,7 +755,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "Tablett"
  ],
  "Tag": [
   null,
@@ -793,7 +763,7 @@ return plural;
  ],
  "Tags": [
   null,
-  ""
+  "Tags"
  ],
  "The Docker storage pool cannot be managed on this system.": [
   null,
@@ -861,7 +831,7 @@ return plural;
  ],
  "Volumes": [
   null,
-  ""
+  "Datenträger"
  ],
  "Volumes:": [
   null,
@@ -929,7 +899,7 @@ return plural;
  ],
  "value": [
   null,
-  "Wert"
+  "value"
  ],
  "page-title\u0004Containers": [
   null,
@@ -937,6 +907,6 @@ return plural;
  ],
  "page-title\u0004Images": [
   null,
-  "Bild"
+  "Abbilder"
  ]
 }));

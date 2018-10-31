@@ -83,10 +83,6 @@ return plural;
   null,
   ""
  ],
- "$0 day": [
-  "$0 days",
-  ""
- ],
  "$0 disk is missing": [
   "$0 disks are missing",
   ""
@@ -103,24 +99,12 @@ return plural;
   null,
   ""
  ],
- "$0 hour": [
-  "$0 hours",
-  ""
- ],
  "$0 is in active use": [
   null,
   ""
  ],
  "$0 is not available from any repository.": [
   null,
-  ""
- ],
- "$0 minute": [
-  "$0 minutes",
-  ""
- ],
- "$0 month": [
-  "$0 months",
   ""
  ],
  "$0 of $1": [
@@ -135,16 +119,8 @@ return plural;
   null,
   ""
  ],
- "$0 week": [
-  "$0 weeks",
-  ""
- ],
  "$0 will be installed.": [
   null,
-  ""
- ],
- "$0 year": [
-  "$0 years",
   ""
  ],
  "$0, $1 free": [
@@ -161,11 +137,11 @@ return plural;
  ],
  "(default)": [
   null,
-  ""
+  "(기본값)"
  ],
  "(none)": [
   null,
-  ""
+  "(없음)"
  ],
  "--": [
   null,
@@ -237,7 +213,7 @@ return plural;
  ],
  "Activate": [
   null,
-  ""
+  "활성화"
  ],
  "Activating $target": [
   null,
@@ -297,7 +273,7 @@ return plural;
  ],
  "Authentication required": [
   null,
-  ""
+  "인증이 필요합니다"
  ],
  "Available targets on $0": [
   null,
@@ -309,7 +285,7 @@ return plural;
  ],
  "Block": [
   null,
-  ""
+  "블럭"
  ],
  "Block device for filesystems": [
   null,
@@ -329,7 +305,7 @@ return plural;
  ],
  "Change": [
   null,
-  ""
+  "바꾸기"
  ],
  "Change iSCSI Initiator Name": [
   null,
@@ -377,7 +353,7 @@ return plural;
  ],
  "Compression": [
   null,
-  ""
+  "압축"
  ],
  "Confirm passphrase": [
   null,
@@ -389,7 +365,7 @@ return plural;
  ],
  "Content": [
   null,
-  ""
+  "컨텐츠"
  ],
  "Create": [
   null,
@@ -493,7 +469,7 @@ return plural;
  ],
  "Deactivate": [
   null,
-  ""
+  "비활성화 "
  ],
  "Deactivating $target": [
   null,
@@ -549,7 +525,7 @@ return plural;
  ],
  "Disk": [
   null,
-  "디스크 추가"
+  "디스크 "
  ],
  "Disk is OK": [
   null,
@@ -581,7 +557,7 @@ return plural;
  ],
  "Edit": [
   null,
-  ""
+  "편집"
  ],
  "Edit Tang keyserver": [
   null,
@@ -629,7 +605,7 @@ return plural;
  ],
  "Encryption": [
   null,
-  ""
+  "암호화"
  ],
  "Encryption Options": [
   null,
@@ -645,7 +621,7 @@ return plural;
  ],
  "Error": [
   null,
-  ""
+  "오류"
  ],
  "Extended Partition": [
   null,
@@ -657,7 +633,7 @@ return plural;
  ],
  "Filesystem": [
   null,
-  ""
+  "파일 시스템"
  ],
  "Filesystem Mounting": [
   null,
@@ -701,7 +677,7 @@ return plural;
  ],
  "Free": [
   null,
-  ""
+  "남은 양"
  ],
  "Free Space": [
   null,
@@ -745,7 +721,7 @@ return plural;
  ],
  "Install": [
   null,
-  ""
+  "설치"
  ],
  "Install NFS Support": [
   null,
@@ -765,11 +741,11 @@ return plural;
  ],
  "Invalid username or password": [
   null,
-  ""
+  "잘못된 사용자 이름 또는 비밀번호"
  ],
  "Jobs": [
   null,
-  ""
+  "작업"
  ],
  "Key slots with unknown types can not be edited here": [
   null,
@@ -801,7 +777,7 @@ return plural;
  ],
  "Lock": [
   null,
-  ""
+  "잠그기"
  ],
  "Locking $target": [
   null,
@@ -1033,7 +1009,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "확인"
  ],
  "Old passphrase": [
   null,
@@ -1069,7 +1045,7 @@ return plural;
  ],
  "Partition": [
   null,
-  ""
+  "파티션"
  ],
  "Partition of $0": [
   null,
@@ -1081,7 +1057,7 @@ return plural;
  ],
  "Passphrase": [
   null,
-  ""
+  "암호문"
  ],
  "Passphrase cannot be empty": [
   null,
@@ -1113,7 +1089,7 @@ return plural;
  ],
  "Physical": [
   null,
-  ""
+  "물리"
  ],
  "Physical Volume": [
   null,
@@ -1157,15 +1133,15 @@ return plural;
  ],
  "Port": [
   null,
-  ""
+  "포트"
  ],
  "Process": [
   null,
-  ""
+  "프로세스"
  ],
  "Purpose": [
   null,
-  ""
+  "목적"
  ],
  "RAID ($0)": [
   null,
@@ -1221,7 +1197,7 @@ return plural;
  ],
  "RAID Device": [
   null,
-  ""
+  "RAID 장치"
  ],
  "RAID Device $0": [
   null,
@@ -1245,7 +1221,7 @@ return plural;
  ],
  "Reboot": [
   null,
-  ""
+  "다시 시작"
  ],
  "Recovering": [
   null,
@@ -1261,7 +1237,7 @@ return plural;
  ],
  "Remove": [
   null,
-  ""
+  "제거 "
  ],
  "Remove $0?": [
   null,
@@ -1297,7 +1273,7 @@ return plural;
  ],
  "Rename": [
   null,
-  ""
+  "이름 변경 "
  ],
  "Rename Logical Volume": [
   null,
@@ -1333,7 +1309,7 @@ return plural;
  ],
  "Save": [
   null,
-  ""
+  "저장"
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
@@ -1345,7 +1321,7 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "서버"
  ],
  "Server Address": [
   null,
@@ -1361,11 +1337,11 @@ return plural;
  ],
  "Service": [
   null,
-  ""
+  "서비스"
  ],
  "Session": [
   null,
-  "버전"
+  "세션"
  ],
  "Setting up loop device $target": [
   null,
@@ -1373,13 +1349,33 @@ return plural;
  ],
  "Shrink": [
   null,
-  ""
+  "축소 "
  ],
  "Shrink Logical Volume": [
   null,
   ""
  ],
  "Size": [
+  null,
+  "크기"
+ ],
+ "Size cannot be negative": [
+  null,
+  ""
+ ],
+ "Size cannot be zero": [
+  null,
+  ""
+ ],
+ "Size is too large": [
+  null,
+  ""
+ ],
+ "Size must be a number": [
+  null,
+  ""
+ ],
+ "Size must be at least $0": [
   null,
   ""
  ],
@@ -1393,7 +1389,7 @@ return plural;
  ],
  "Start": [
   null,
-  ""
+  "시작"
  ],
  "Start Multipath": [
   null,
@@ -1433,7 +1429,7 @@ return plural;
  ],
  "Storage": [
   null,
-  ""
+  "스토리지"
  ],
  "Storage Logs": [
   null,
@@ -1457,7 +1453,7 @@ return plural;
  ],
  "Swap": [
   null,
-  ""
+  "스왑"
  ],
  "Synchronizing RAID Device $target": [
   null,
@@ -1491,15 +1487,15 @@ return plural;
   null,
   ""
  ],
- "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
+ "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
   null,
   ""
  ],
- "The filesystem is in use by login sessions.                Proceeding will stop these.": [
+ "The filesystem is in use by login sessions. Proceeding will stop these.": [
   null,
   ""
  ],
- "The filesystem is in use by system services.                Proceeding will stop these.": [
+ "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
   ""
  ],
@@ -1539,7 +1535,7 @@ return plural;
   null,
   ""
  ],
- "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
+ "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
   null,
   ""
  ],
@@ -1547,7 +1543,7 @@ return plural;
   null,
   ""
  ],
- "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
+ "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
   null,
   ""
  ],
@@ -1559,7 +1555,7 @@ return plural;
   null,
   ""
  ],
- "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
+ "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
   ""
  ],
@@ -1581,11 +1577,11 @@ return plural;
  ],
  "Type": [
   null,
-  ""
+  "유형"
  ],
  "UUID": [
   null,
-  ""
+  "UUID"
  ],
  "Unable to reach server": [
   null,
@@ -1601,7 +1597,7 @@ return plural;
  ],
  "Unit": [
   null,
-  ""
+  "단위"
  ],
  "Unknown": [
   null,
@@ -1641,7 +1637,7 @@ return plural;
  ],
  "Unmount": [
   null,
-  ""
+  "마운트 해제"
  ],
  "Unmounting $target": [
   null,
@@ -1661,7 +1657,7 @@ return plural;
  ],
  "Usage": [
   null,
-  ""
+  "사용법"
  ],
  "Use 512 Byte emulation": [
   null,
@@ -1669,7 +1665,7 @@ return plural;
  ],
  "Used": [
   null,
-  ""
+  "사용 중"
  ],
  "Username": [
   null,
@@ -1713,11 +1709,11 @@ return plural;
  ],
  "Volume": [
   null,
-  "논리 볼륨"
+  "볼륨"
  ],
  "Volume Group": [
   null,
-  ""
+  "볼륨 그룹 "
  ],
  "Volume Group $0": [
   null,
@@ -1813,7 +1809,7 @@ return plural;
  ],
  "storage\u0004Hard Disk": [
   null,
-  ""
+  "하드 디스크"
  ],
  "storage\u0004Optical Drive": [
   null,

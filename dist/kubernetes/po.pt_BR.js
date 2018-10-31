@@ -1263,7 +1263,7 @@ return plural;
  ],
  "Select Role": [
   null,
-  ""
+  "Selecionar Função"
  ],
  "Select an object to see more details.": [
   null,

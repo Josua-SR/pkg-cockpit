@@ -67,36 +67,6 @@ return plural;
   "language": "ca",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 day": [
-  "$0 days",
-  "$0 dia",
-  "$0 dies"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 hora",
-  "$0 hores"
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 minut",
-  "$0 minuts"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 mes",
-  "$0 mesos"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 setmana",
-  "$0 setmanes"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 any",
-  "$0 anys"
- ],
  "$mtu": [
   null,
   "$mtu"
@@ -649,9 +619,9 @@ return plural;
   null,
   "Objectiu de ping"
  ],
- "Please install the {0} package": [
+ "Please install the $0 package": [
   null,
-  "Si us plau, instal·leu el paquet {0}"
+  "Si us plau, instal·leu el paquet $0"
  ],
  "Ports": [
   null,

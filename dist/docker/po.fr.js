@@ -71,39 +71,9 @@ return plural;
   null,
   "(partagé avec l'OS)"
  ],
- "$0 day": [
-  "$0 days",
-  "$0 jour",
-  "$0 jours"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 heure",
-  "$0 heures"
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 minute",
-  "$0 minutes"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 mois",
-  "$0 mois"
- ],
  "$0 shares": [
   null,
   "$0 actions"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 semaine",
-  "$0 semaines"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 an",
-  "$0 ans"
  ],
  "${hip}:${hport} -> $cport": [
   null,

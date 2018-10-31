@@ -87,6 +87,10 @@ return plural;
   null,
   ""
  ],
+ "Address": [
+  null,
+  "Osoite"
+ ],
  "Address:": [
   null,
   "Osoite:"
@@ -379,6 +383,10 @@ return plural;
   null,
   "Ladataan tietoja..."
  ],
+ "MAC Address": [
+  null,
+  "MAC-osoite"
+ ],
  "MIGRATE action failed": [
   null,
   "MIGRATE-toiminto epäonnistui"
@@ -406,6 +414,10 @@ return plural;
  "Migrate To:": [
   null,
   ""
+ ],
+ "Model type": [
+  null,
+  "Mallityyppi"
  ],
  "More Information": [
   null,
@@ -442,6 +454,10 @@ return plural;
  "No disks defined for this VM": [
   null,
   "Tälle virtuaalikoneelle ei ole määritetty levyjä."
+ ],
+ "No network interfaces defined for this VM": [
+  null,
+  "Tälle virtuaalikoneelle ei ole määritetty verkkoliitäntöjä"
  ],
  "No oVirt connection": [
   null,
@@ -508,6 +524,10 @@ return plural;
   "Odota että virtuaalikoneiden lista ladataan palvelimelta."
  ],
  "Please wait till list of templates is loaded from the server.": [
+  null,
+  ""
+ ],
+ "Plug": [
   null,
   ""
  ],
@@ -739,7 +759,15 @@ return plural;
   null,
   "Tämä virtuaalikone ei ole oVirtin hallinnassa"
  ],
- "Threads per cores": [
+ "Threads per core": [
+  null,
+  ""
+ ],
+ "Type": [
+  null,
+  "Tyyppi"
+ ],
+ "Unplug": [
   null,
   ""
  ],

@@ -1257,11 +1257,11 @@ return plural;
  ],
  "Select Member": [
   null,
-  ""
+  "メンバーの選択"
  ],
  "Select Role": [
   null,
-  ""
+  "ロールの選択"
  ],
  "Select an object to see more details.": [
   null,

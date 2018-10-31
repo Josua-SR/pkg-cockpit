@@ -67,30 +67,6 @@ return plural;
   "language": "ko",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 day": [
-  "$0 days",
-  ""
- ],
- "$0 hour": [
-  "$0 hours",
-  ""
- ],
- "$0 minute": [
-  "$0 minutes",
-  ""
- ],
- "$0 month": [
-  "$0 months",
-  ""
- ],
- "$0 week": [
-  "$0 weeks",
-  ""
- ],
- "$0 year": [
-  "$0 years",
-  ""
- ],
  "$mtu": [
   null,
   ""
@@ -201,7 +177,7 @@ return plural;
  ],
  "Addresses": [
   null,
-  ""
+  "주소"
  ],
  "Allowed Services": [
   null,
@@ -329,7 +305,7 @@ return plural;
  ],
  "DNS": [
   null,
-  ""
+  "DNS"
  ],
  "DNS $val": [
   null,
@@ -361,7 +337,7 @@ return plural;
  ],
  "Details": [
   null,
-  ""
+  "상세 정보"
  ],
  "Disabled": [
   null,
@@ -393,7 +369,7 @@ return plural;
  ],
  "Firewall": [
   null,
-  ""
+  "방화벽"
  ],
  "Firewall is not available": [
   null,
@@ -437,7 +413,7 @@ return plural;
  ],
  "IPv4 Settings": [
   null,
-  ""
+  "IPv4 설정"
  ],
  "IPv6": [
   null,
@@ -445,7 +421,7 @@ return plural;
  ],
  "IPv6 Settings": [
   null,
-  ""
+  "IPv6 설정"
  ],
  "Id $id": [
   null,
@@ -513,7 +489,7 @@ return plural;
  ],
  "MAC": [
   null,
-  ""
+  "MAC"
  ],
  "MII (Recommended)": [
   null,
@@ -521,7 +497,7 @@ return plural;
  ],
  "MTU": [
   null,
-  ""
+  "MTU"
  ],
  "MTU must be a positive number": [
   null,
@@ -569,7 +545,7 @@ return plural;
  ],
  "NetworkManager is not running.": [
   null,
-  ""
+  "NetworkManager가 실행되고 있지 않습니다."
  ],
  "Networking": [
   null,
@@ -601,7 +577,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "확인"
  ],
  "On": [
   null,
@@ -633,7 +609,7 @@ return plural;
  ],
  "Permanent": [
   null,
-  ""
+  "영구적 "
  ],
  "Ping Interval": [
   null,
@@ -643,7 +619,7 @@ return plural;
   null,
   ""
  ],
- "Please install the {0} package": [
+ "Please install the $0 package": [
   null,
   ""
  ],
@@ -665,7 +641,7 @@ return plural;
  ],
  "Preserve": [
   null,
-  ""
+  "저장 "
  ],
  "Primary": [
   null,
@@ -681,11 +657,11 @@ return plural;
  ],
  "Random": [
   null,
-  ""
+  "임의"
  ],
  "Reboot": [
   null,
-  ""
+  "다시 시작"
  ],
  "Receiving": [
   null,
@@ -737,7 +713,7 @@ return plural;
  ],
  "Service": [
   null,
-  ""
+  "서비스"
  ],
  "Set to": [
   null,
@@ -797,11 +773,11 @@ return plural;
  ],
  "Team": [
   null,
-  ""
+  " 팀"
  ],
  "Team Port": [
   null,
-  ""
+  "팀 포트"
  ],
  "Team Port Settings": [
   null,

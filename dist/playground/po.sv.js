@@ -67,40 +67,10 @@ return plural;
   "language": "sv",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 day": [
-  "$0 days",
-  "$0 dag",
-  "$0 dagar"
- ],
  "$0 disk is missing": [
   "$0 disks are missing",
   "$0 disk saknas",
   "$0 diskar saknas"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 timme",
-  "$0 timmar"
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 minut",
-  "$0 minuter"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 månad",
-  "$0 månader"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 vecka",
-  "$0 veckor"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 år",
-  "$0 år"
  ],
  "Cancel": [
   null,
@@ -116,11 +86,11 @@ return plural;
  ],
  "Empty": [
   null,
-  ""
+  "Tom"
  ],
  "Error": [
   null,
-  ""
+  "Fel"
  ],
  "Memory": [
   null,
@@ -185,7 +155,7 @@ return plural;
  ],
  "verb\u0004Empty": [
   null,
-  ""
+  "Töm"
  ],
  "verb\u0004Ready": [
   null,

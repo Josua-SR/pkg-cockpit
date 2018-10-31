@@ -17,22 +17,21 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
+import $ from "jquery";
+import cockpit from "cockpit";
+
+import React from "react";
+import ReactDOM from "react-dom";
+
+import dialog_view from "cockpit-components-dialog.jsx";
+
+import * as python from "python.jsx";
+import cockpit_atomic_storage from "raw!./cockpit-atomic-storage";
+
 (function() {
     "use strict";
 
-    var $ = require("jquery");
-    var cockpit = require("cockpit");
-
-    var React = require("react");
-    var ReactDOM = require("react-dom");
-    var createReactClass = require('create-react-class');
-
-    var dialog_view = require("cockpit-components-dialog.jsx");
-
-    var python = require("python.jsx");
-    var cockpit_atomic_storage = require("raw!./cockpit-atomic-storage");
-
-    var _ = cockpit.gettext;
+    const _ = cockpit.gettext;
 
     function init_model() {
         var process;
@@ -103,33 +102,42 @@
      *           the "Add" button is clicked.
      *
      */
-    var DriveBox = createReactClass({
-        getInitialState: function () {
-            return {
+    class DriveBox extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
                 drives: this.props.model.extra_devices,
                 checked: { }
             };
-        },
-        onModelChanged: function () {
+            this.onModelChanged = this.onModelChanged.bind(this);
+            this.driveChecked = this.driveChecked.bind(this);
+            this.toggleDrive = this.toggleDrive.bind(this);
+            this.onButtonClicked = this.onButtonClicked.bind(this);
+        }
+
+        onModelChanged() {
             this.setState({ drives: this.props.model.extra_devices });
-        },
-        componentDidMount: function () {
+        }
+
+        componentDidMount() {
             $(this.props.model).on("changed", this.onModelChanged);
             this.onModelChanged();
-        },
-        componentWillUnmount: function () {
-            $(this.props.model).off("changed", this.onModelChanged);
-        },
+        }
 
-        driveChecked: function (drive) {
+        componentWillUnmount() {
+            $(this.props.model).off("changed", this.onModelChanged);
+        }
+
+        driveChecked(drive) {
             return !!this.state.checked[drive.path];
-        },
-        toggleDrive: function (drive) {
+        }
+
+        toggleDrive(drive) {
             this.state.checked[drive.path] = !this.state.checked[drive.path];
             this.setState({ checked: this.state.checked });
-        },
+        }
 
-        onButtonClicked: function () {
+        onButtonClicked() {
             var self = this;
             if (self.props.callback) {
                 var drives = [ ];
@@ -145,9 +153,9 @@
                 self.setState({ checked: { } });
                 self.props.callback(drives, self.props.model);
             }
-        },
+        }
 
-        render: function() {
+        render() {
             var self = this;
             var i;
 
@@ -174,6 +182,7 @@
                 drive_rows.push(
                     <tr key={drive.path} onClick={self.toggleDrive.bind(self, drive)}>
                         <td><input type="checkbox"
+                                   onChange={ () => null /* click handled by parent element, silence React warning */ }
                                    checked={self.driveChecked(drive)} />
                         </td>
                         <td><img role="presentation" src="images/drive-harddisk-symbolic.svg" /></td>
@@ -213,30 +222,35 @@
                 </div>
             );
         }
-    });
+    }
 
     /* A list of drives in the Docker storage pool.
      *
      * model: The model as returned by get_storage_model.
      */
-    var PoolBox = createReactClass({
-        getInitialState: function () {
-            return {
+    class PoolBox extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
                 drives: [ ]
             };
-        },
-        onModelChanged: function () {
+            this.onModelChanged = this.onModelChanged.bind(this);
+        }
+
+        onModelChanged() {
             this.setState({ drives: this.props.model.pool_devices });
-        },
-        componentDidMount: function () {
+        }
+
+        componentDidMount() {
             $(this.props.model).on("changed", this.onModelChanged);
             this.onModelChanged();
-        },
-        componentWillUnmount: function () {
-            $(this.props.model).off("changed", this.onModelChanged);
-        },
+        }
 
-        render: function() {
+        componentWillUnmount() {
+            $(this.props.model).off("changed", this.onModelChanged);
+        }
+
+        render() {
             var self = this;
 
             function render_drive_rows() {
@@ -257,7 +271,7 @@
                     </tbody>
                 </table>);
         }
-    });
+    }
 
     /* An overview of the Docker Storage pool size and how much is used.
      *
@@ -266,24 +280,32 @@
      * small: If true, a small version is rendered
      *        with a link to the setup page.
      */
-    var OverviewBox = createReactClass({
-        getInitialState: function () {
-            return { total: 0, used: 0 };
-        },
-        onModelChanged: function () {
+    class OverviewBox extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                total: 0,
+                used: 0
+            };
+            this.onModelChanged = this.onModelChanged.bind(this);
+        }
+
+        onModelChanged() {
             this.setState({ error: this.props.model.error,
                             total: this.props.model.total,
                             used: this.props.model.used });
-        },
-        componentDidMount: function () {
+        }
+
+        componentDidMount() {
             $(this.props.model).on("changed", this.onModelChanged);
             this.onModelChanged();
-        },
-        componentWillUnmount: function () {
-            $(this.props.model).off("changed", this.onModelChanged);
-        },
+        }
 
-        render: function() {
+        componentWillUnmount() {
+            $(this.props.model).off("changed", this.onModelChanged);
+        }
+
+        render() {
             var self = this;
 
             if (!self.state.total) {
@@ -336,13 +358,13 @@
                     </div>);
             }
         }
-    });
+    }
 
     function add_storage(client, drives, model) {
         function render_drive_rows() {
             return drives.map(function (drive) {
                 return (
-                    <tr>
+                    <tr key={drive.name}>
                         <td>{cockpit.format_bytes(drive.size)}</td>
                         <td><img role="presentation" src="images/drive-harddisk-symbolic.svg" /></td>
                         <td>{drive.name}</td>
@@ -361,7 +383,9 @@
                                             <div className="modal-body">
                                                 <p>{_("All data on selected disks will be erased and disks will be added to the storage pool.")}</p>
                                                 <table className="drive-list">
-                                                    { render_drive_rows() }
+                                                    <tbody>
+                                                        { render_drive_rows() }
+                                                    </tbody>
                                                 </table>
                                             </div>),
         },

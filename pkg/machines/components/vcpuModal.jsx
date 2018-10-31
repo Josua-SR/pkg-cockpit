@@ -5,7 +5,7 @@ import cockpit from 'cockpit';
 import { show_modal_dialog } from 'cockpit-components-dialog.jsx';
 import * as SelectComponent from 'cockpit-components-select.jsx';
 import InfoRecord from './infoRecord.jsx';
-import { Alert } from './notification/inlineNotification.jsx';
+import { Alert } from 'patternfly-react';
 import { setVCPUSettings } from "../actions/provider-actions.es6";
 
 const _ = cockpit.gettext;
@@ -33,7 +33,7 @@ const clamp = (value, max, min) => {
 const Select = function ({ id, items, onChange, value }) {
     return (<SelectComponent.Select id={id} initial={value} onChange={onChange}>
         {items.map((t) => (
-            <SelectComponent.SelectEntry data={t}>{t}</SelectComponent.SelectEntry>
+            <SelectComponent.SelectEntry key={t} data={t}>{t}</SelectComponent.SelectEntry>
         ))}
     </SelectComponent.Select>);
 };
@@ -157,43 +157,51 @@ class VCPUModalBody extends React.Component {
             caution = (
                 <tr>
                     <td colSpan={2} className="machines-vcpu-caution">
-                        <Alert text={_("All changes will take effect only after stopping and starting the VM.")} />
+                        <Alert type='warning'>
+                            {_("All changes will take effect only after stopping and starting the VM.")}
+                        </Alert>
                     </td>
                 </tr>);
         }
 
         return (<div className="modal-body">
             <table className="vcpu-detail-modal-table">
-                <tr>
-                    <td>
-                        <table className='form-table-ct'>
-                            <InfoRecord
-                                descr={_("vCPU Count")}
-                                tooltip={_("Fewer than the maximum number of virtual CPUs should be enabled.")}
-                                value={<input id="machines-vcpu-count-field" type="number" className="form-control" value={this.state.count} onChange={this.onCountSelect} />}
-                            />
-                            <InfoRecord
-                                descr={_("vCPU Maximum")}
-                                tooltip={cockpit.format(_("Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0"), this.props.hypervisorMax)}
-                                value={<input id="machines-vcpu-max-field" type="number" className="form-control" onChange={this.onMaxChange} value={this.state.max} />}
-                            />
-                        </table>
-                    </td>
-                    <td>
-                        <table className='form-table-ct vcpu-detail-modal-right'>
-                            <InfoRecord descr={_("Sockets")} tooltip={_("Preferred number of sockets to expose to the guest.")} value={
-                                <Select id='socketsSelect' value={this.state.sockets.toString()} onChange={this.onSocketChange} items={dividers(this.state.max).map((t) => t.toString())} />
-                            } />
-                            <InfoRecord descr={_("Cores per socket")} value={
-                                <Select id='coresSelect' value={this.state.cores.toString()} onChange={this.onCoresChange} items={dividers(this.state.max).map((t) => t.toString())} />
-                            } />
-                            <InfoRecord descr={_("Threads per core")} value={
-                                <Select id='threadsSelect' value={this.state.threads.toString()} onChange={this.onThreadsChange} items={dividers(this.state.max).map((t) => t.toString())} />
-                            } />
-                        </table>
-                    </td>
-                </tr>
-                { caution }
+                <tbody>
+                    <tr>
+                        <td>
+                            <table className='form-table-ct'>
+                                <tbody>
+                                    <InfoRecord
+                                        descr={_("vCPU Count")}
+                                        tooltip={_("Fewer than the maximum number of virtual CPUs should be enabled.")}
+                                        value={<input id="machines-vcpu-count-field" type="number" className="form-control" value={this.state.count} onChange={this.onCountSelect} />}
+                                    />
+                                    <InfoRecord
+                                        descr={_("vCPU Maximum")}
+                                        tooltip={cockpit.format(_("Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0"), this.props.hypervisorMax)}
+                                        value={<input id="machines-vcpu-max-field" type="number" className="form-control" onChange={this.onMaxChange} value={this.state.max} />}
+                                    />
+                                </tbody>
+                            </table>
+                        </td>
+                        <td>
+                            <table className='form-table-ct vcpu-detail-modal-right'>
+                                <tbody>
+                                    <InfoRecord descr={_("Sockets")} tooltip={_("Preferred number of sockets to expose to the guest.")} value={
+                                        <Select id='socketsSelect' value={this.state.sockets.toString()} onChange={this.onSocketChange} items={dividers(this.state.max).map((t) => t.toString())} />
+                                    } />
+                                    <InfoRecord descr={_("Cores per socket")} value={
+                                        <Select id='coresSelect' value={this.state.cores.toString()} onChange={this.onCoresChange} items={dividers(this.state.max).map((t) => t.toString())} />
+                                    } />
+                                    <InfoRecord descr={_("Threads per core")} value={
+                                        <Select id='threadsSelect' value={this.state.threads.toString()} onChange={this.onThreadsChange} items={dividers(this.state.max).map((t) => t.toString())} />
+                                    } />
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    { caution }
+                </tbody>
             </table>
         </div>);
     }
@@ -216,7 +224,7 @@ export default function ({ vm, dispatch, config }) {
     return show_modal_dialog(
         {
             title: cockpit.format(_("$0 vCPU Details"), vm.name),
-            body: (<VCPUModalBody vcpus={vm.vcpus} cpu={vm.cpu} onChange={onStateChange} isRunning={vm.state == 'running'} hypervisorMax={config.hypervisorMaxVCPU[vm.connectionName]} />),
+            body: (<VCPUModalBody vcpus={vm.vcpus} cpu={vm.cpu} onChange={onStateChange} isRunning={vm.state == 'running'} hypervisorMax={parseInt(config.hypervisorMaxVCPU[vm.connectionName])} />),
             id: "machines-vcpu-modal-dialog"
         },
         { actions: [

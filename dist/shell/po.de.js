@@ -109,7 +109,7 @@ return plural;
  ],
  "Available": [
   null,
-  ""
+  "Verfügbar"
  ],
  "Cancel": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "Details": [
   null,
-  ""
+  "Details"
  ],
  "Disconnected": [
   null,
@@ -245,7 +245,7 @@ return plural;
  ],
  "Fingerprint": [
   null,
-  ""
+  "Fingerabdruck"
  ],
  "Host": [
   null,
@@ -337,7 +337,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "OK"
  ],
  "Old Password": [
   null,
@@ -373,7 +373,7 @@ return plural;
  ],
  "Port": [
   null,
-  ""
+  "Port"
  ],
  "Privileged": [
   null,
@@ -405,7 +405,7 @@ return plural;
  ],
  "Select": [
   null,
-  ""
+  "Auswählen"
  ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,

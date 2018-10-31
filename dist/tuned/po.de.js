@@ -109,7 +109,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "OK"
  ],
  "The user <b>$0</b> is not permitted to change profiles": [
   null,

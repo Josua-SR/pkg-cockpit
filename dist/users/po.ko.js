@@ -69,7 +69,7 @@ return plural;
  },
  "Access": [
   null,
-  ""
+  "액세스"
  ],
  "Account Expiration": [
   null,
@@ -109,7 +109,7 @@ return plural;
  ],
  "Change": [
   null,
-  ""
+  "바꾸기"
  ],
  "Close": [
   null,
@@ -117,7 +117,7 @@ return plural;
  ],
  "Confirm": [
   null,
-  ""
+  "확인"
  ],
  "Confirm New Password": [
   null,
@@ -145,11 +145,11 @@ return plural;
  ],
  "Delete Files": [
   null,
-  ""
+  "파일 삭제"
  ],
  "Error": [
   null,
-  ""
+  "오류"
  ],
  "Error saving authorized keys: ": [
   null,
@@ -177,7 +177,7 @@ return plural;
  ],
  "Full Name": [
   null,
-  ""
+  "성명"
  ],
  "Image Builder": [
   null,
@@ -217,7 +217,7 @@ return plural;
  ],
  "Never": [
   null,
-  ""
+  "하지 않기"
  ],
  "Never expire password": [
   null,
@@ -301,11 +301,11 @@ return plural;
  ],
  "Reset": [
   null,
-  ""
+  "초기화"
  ],
  "Roles": [
   null,
-  ""
+  "역할"
  ],
  "Server Administrator": [
   null,
@@ -313,7 +313,7 @@ return plural;
  ],
  "Set": [
   null,
-  ""
+  "설정"
  ],
  "Set Password": [
   null,
@@ -365,7 +365,7 @@ return plural;
  ],
  "Unnamed": [
   null,
-  ""
+  "이름 없음"
  ],
  "User Name": [
   null,

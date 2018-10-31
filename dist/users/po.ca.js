@@ -123,10 +123,6 @@ return plural;
   null,
   "Confirmació de la contrasenya nova"
  ],
- "Container Administrator": [
-  null,
-  "Administrador del contenidor"
- ],
  "Create": [
   null,
   "Crea"
@@ -139,29 +135,13 @@ return plural;
   null,
   "Suprimeix"
  ],
- "Delete $0": [
-  null,
-  "Suprimeix $0"
- ],
  "Delete Files": [
   null,
   "Suprimeix els fitxers"
  ],
- "Error": [
-  null,
-  "Error"
- ],
  "Error saving authorized keys: ": [
   null,
   "Error en desar les claus autoritzades: "
- ],
- "Excellent password": [
-  null,
-  "Contrasenya excel·lent"
- ],
- "Failed to change password": [
-  null,
-  "Ha fallat el canvi de contrasenya"
  ],
  "Failed to load authorized keys.": [
   null,
@@ -179,21 +159,9 @@ return plural;
   null,
   "Nom complet"
  ],
- "Image Builder": [
-  null,
-  ""
- ],
- "Invalid expiration date": [
-  null,
-  "Data de venciment no vàlida"
- ],
  "Invalid key": [
   null,
   "Clau no vàlida"
- ],
- "Invalid number of days": [
-  null,
-  "Nombre de dies no vàlid"
  ],
  "Last Login": [
   null,
@@ -207,18 +175,6 @@ return plural;
   null,
   "Bloqueja el compte"
  ],
- "Lock account on $0": [
-  null,
-  "Bloqueja el compte el $0"
- ],
- "Logged In": [
-  null,
-  "Autenticat"
- ],
- "Never": [
-  null,
-  "Mai"
- ],
  "Never expire password": [
   null,
   "Mai venç la contrasenya"
@@ -231,18 +187,6 @@ return plural;
   null,
   "Contrasenya nova"
  ],
- "New password was not accepted": [
-  null,
-  "No s'ha acceptat la nova contrasenya"
- ],
- "No real name specified": [
-  null,
-  "Sense especificar el nom real"
- ],
- "No user name specified": [
-  null,
-  "Sense especificar el nom d'usuari"
- ],
  "Off": [
   null,
   "Off"
@@ -250,10 +194,6 @@ return plural;
  "Old Password": [
   null,
   "Contrasenya antiga"
- ],
- "Old password not accepted": [
-  null,
-  "Contrasenya antiga no acceptada"
  ],
  "On": [
   null,
@@ -267,37 +207,9 @@ return plural;
   null,
   "Venciment de la contrasenya"
  ],
- "Password is not acceptable": [
-  null,
-  "La contrasenya no és acceptable"
- ],
- "Password is too weak": [
-  null,
-  "La contrasenya és massa feble"
- ],
- "Password must be changed": [
-  null,
-  "S'ha de canviar la contrasenya"
- ],
  "Paste the contents of your public SSH key file here": [
   null,
   "Enganxeu aquí el contingut del fitxer de la vostra clau SSH pública"
- ],
- "Please specify an expiration date": [
-  null,
-  "Si us plau, especifiqueu una data de venciment"
- ],
- "Prompting via passwd timed out": [
-  null,
-  "Per mitjà del temps d'espera de passwd"
- ],
- "Require password change every $0 days": [
-  null,
-  "Requereix el canvi de la contrasenya cada $0 dies"
- ],
- "Require password change on $0": [
-  null,
-  "Requereix el canvi de la contrasenya el $0"
  ],
  "Reset": [
   null,
@@ -306,10 +218,6 @@ return plural;
  "Roles": [
   null,
   "Rols"
- ],
- "Server Administrator": [
-  null,
-  "Administrador del servidor"
  ],
  "Set": [
   null,
@@ -323,45 +231,13 @@ return plural;
   null,
   "Acaba la sessió"
  ],
- "The account '$0' will be forced to change their password on next login": [
-  null,
-  "El compte '$0' es veurà forçat a canviar de contrasenya el pròxim com que iniciï la sessió."
- ],
  "The key you provided was not valid.": [
   null,
   "La clau que heu proporcionat no era vàlida."
  ],
- "The passwords do not match": [
-  null,
-  "Les contrasenyes no coincideixen"
- ],
- "The user <b>$0</b> is not permitted to modify accounts": [
-  null,
-  "A l'usuari <b>$0</b> no se li permet modificar els comptes"
- ],
- "The user name can only consist of letters from a-z, digits, dots, dashes and underscores.": [
-  null,
-  "El nom d'usuari només pot contenir lletres a-z, dígits, punts, guions baixos i guions."
- ],
  "There are no authorized public keys for this account.": [
   null,
   "No hi ha cap clau pública autoritzada per aquest compte."
- ],
- "This user name already exists": [
-  null,
-  "Aquest nom d'usuari ja existeix"
- ],
- "Unable to delete root account": [
-  null,
-  "No es pot suprimir el compte de root"
- ],
- "Unable to rename root account": [
-  null,
-  "No es pot reanomenar el compte de root"
- ],
- "Unexpected error": [
-  null,
-  "Error inesperat"
  ],
  "Unnamed": [
   null,
@@ -382,9 +258,5 @@ return plural;
  "translatable": [
   null,
   ""
- ],
- "page-title\u0004Accounts": [
-  null,
-  "Comptes"
  ]
 }));

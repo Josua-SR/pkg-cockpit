@@ -67,30 +67,6 @@ return plural;
   "language": "ko",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 day": [
-  "$0 days",
-  ""
- ],
- "$0 hour": [
-  "$0 hours",
-  ""
- ],
- "$0 minute": [
-  "$0 minutes",
-  ""
- ],
- "$0 month": [
-  "$0 months",
-  ""
- ],
- "$0 week": [
-  "$0 weeks",
-  ""
- ],
- "$0 year": [
-  "$0 years",
-  ""
- ],
  "1 day": [
   null,
   "1 일"
@@ -137,7 +113,7 @@ return plural;
  ],
  "Authentication": [
   null,
-  ""
+  "인증"
  ],
  "Authentication Failed": [
   null,
@@ -145,7 +121,7 @@ return plural;
  ],
  "Available": [
   null,
-  ""
+  "사용 가능"
  ],
  "Avatar": [
   null,
@@ -213,7 +189,7 @@ return plural;
  ],
  "Color": [
   null,
-  ""
+  "색"
  ],
  "Compact PCI": [
   null,
@@ -221,7 +197,7 @@ return plural;
  ],
  "Connect": [
   null,
-  ""
+  "연결"
  ],
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
@@ -241,11 +217,11 @@ return plural;
  ],
  "Dashboard": [
   null,
-  ""
+  "대시보드"
  ],
  "Desktop": [
   null,
-  ""
+  "데스크탑"
  ],
  "Detachable": [
   null,
@@ -253,7 +229,7 @@ return plural;
  ],
  "Disk I/O": [
   null,
-  ""
+  "디스크 I/O"
  ],
  "Docking Station": [
   null,
@@ -297,7 +273,7 @@ return plural;
  ],
  "Fingerprint": [
   null,
-  ""
+  "지문 "
  ],
  "Go to now": [
   null,
@@ -309,7 +285,7 @@ return plural;
  ],
  "Host Name": [
   null,
-  ""
+  "호스트명"
  ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
@@ -353,7 +329,7 @@ return plural;
  ],
  "Log In": [
   null,
-  ""
+  "로그인"
  ],
  "Log in to {{host}}": [
   null,
@@ -429,7 +405,7 @@ return plural;
  ],
  "Other": [
   null,
-  ""
+  "기타"
  ],
  "Password": [
   null,
@@ -449,7 +425,7 @@ return plural;
  ],
  "Port": [
   null,
-  ""
+  "포트"
  ],
  "Portable": [
   null,
@@ -485,11 +461,11 @@ return plural;
  ],
  "Servers": [
   null,
-  ""
+  "서버 "
  ],
  "Set": [
   null,
-  ""
+  "설정"
  ],
  "Space-saving Computer": [
   null,
@@ -509,7 +485,7 @@ return plural;
  ],
  "Synchronize": [
   null,
-  ""
+  "동기화 "
  ],
  "Synchronize users": [
   null,
@@ -517,7 +493,7 @@ return plural;
  ],
  "Tablet": [
   null,
-  ""
+  "타블렛"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -569,15 +545,15 @@ return plural;
  ],
  "Update": [
   null,
-  ""
+  "업데이트"
  ],
  "User": [
   null,
-  ""
+  "사용자"
  ],
  "User name": [
   null,
-  ""
+  "사용자 이름 "
  ],
  "Using available credentials": [
   null,

@@ -83,9 +83,13 @@ return plural;
   null,
   ""
  ],
+ "Address": [
+  null,
+  "주소"
+ ],
  "Address:": [
   null,
-  ""
+  "주소:"
  ],
  "All changes will take effect only after stopping and starting the VM.": [
   null,
@@ -109,7 +113,7 @@ return plural;
  ],
  "Available": [
   null,
-  ""
+  "사용 가능"
  ],
  "Boot Order:": [
   null,
@@ -127,15 +131,15 @@ return plural;
   null,
   ""
  ],
- "CREATE_AND_ATTACH_VOLUME action failed": [
-  null,
-  ""
- ],
  "Cancel": [
   null,
   "취소"
  ],
  "Capacity": [
+  null,
+  "용량"
+ ],
+ "Changes will apply on VM shutdown": [
   null,
   ""
  ],
@@ -165,7 +169,7 @@ return plural;
  ],
  "Connection": [
   null,
-  "Docker에 연결중입니다."
+  "연결"
  ],
  "Console Type": [
   null,
@@ -177,7 +181,7 @@ return plural;
  ],
  "Cores per socket": [
   null,
-  ""
+  "소켓당 코어 수 "
  ],
  "Create": [
   null,
@@ -213,11 +217,11 @@ return plural;
  ],
  "Device": [
   null,
-  ""
+  "장치"
  ],
  "Disconnect": [
   null,
-  ""
+  "연결 끊김"
  ],
  "Disconnected": [
   null,
@@ -243,6 +247,10 @@ return plural;
   null,
   ""
  ],
+ "Edit": [
+  null,
+  "편집"
+ ],
  "Emulated Machine:": [
   null,
   ""
@@ -253,11 +261,11 @@ return plural;
  ],
  "File": [
   null,
-  ""
+  "파일"
  ],
  "Filesystem": [
   null,
-  ""
+  "파일 시스템"
  ],
  "Force Restart": [
   null,
@@ -277,7 +285,7 @@ return plural;
  ],
  "GiB": [
   null,
-  ""
+  "GiB"
  ],
  "Graphics Console (VNC)": [
   null,
@@ -301,7 +309,7 @@ return plural;
  ],
  "Install": [
   null,
-  ""
+  "설치"
  ],
  "Installation Source": [
   null,
@@ -325,6 +333,14 @@ return plural;
  ],
  "Loading ...": [
   null,
+  "로딩 중..."
+ ],
+ "MAC Address": [
+  null,
+  "MAC 주소"
+ ],
+ "Mac Address": [
+  null,
   ""
  ],
  "Manual Connection": [
@@ -345,9 +361,17 @@ return plural;
  ],
  "Memory:": [
   null,
-  ""
+  "메모리:"
  ],
  "MiB": [
+  null,
+  "MiB"
+ ],
+ "Model": [
+  null,
+  "모델 "
+ ],
+ "Model type": [
   null,
   ""
  ],
@@ -367,9 +391,17 @@ return plural;
   null,
   ""
  ],
- "Networks": [
+ "Network Type": [
   null,
   ""
+ ],
+ "Network settings failed to change with following error: ": [
+  null,
+  ""
+ ],
+ "Networks": [
+  null,
+  "네트워크"
  ],
  "New Volume Name": [
   null,
@@ -395,21 +427,29 @@ return plural;
   null,
   ""
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  ""
+ ],
+ "No virtual networks": [
+  null,
+  ""
+ ],
  "OS Vendor": [
   null,
   ""
  ],
  "Ok": [
   null,
-  ""
+  "확인"
  ],
  "Operating System": [
   null,
-  ""
+  "운영 체제"
  ],
  "Overview": [
   null,
-  ""
+  "개요"
  ],
  "Path to ISO file on host's file system": [
   null,
@@ -431,13 +471,17 @@ return plural;
   null,
   ""
  ],
+ "Plug": [
+  null,
+  ""
+ ],
  "Pool": [
   null,
   ""
  ],
  "Port": [
   null,
-  ""
+  "포트"
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
@@ -445,11 +489,11 @@ return plural;
  ],
  "Protocol": [
   null,
-  ""
+  "프로토콜"
  ],
  "Readonly": [
   null,
-  ""
+  "읽기 전용 "
  ],
  "Reconnect": [
   null,
@@ -461,11 +505,11 @@ return plural;
  ],
  "Restart": [
   null,
-  ""
+  "재시작"
  ],
  "Run": [
   null,
-  ""
+  "실행"
  ],
  "SET VCPU SETTINGS action failed": [
   null,
@@ -477,7 +521,7 @@ return plural;
  ],
  "SPICE": [
   null,
-  ""
+  "SPICE"
  ],
  "SPICE Address:": [
   null,
@@ -490,6 +534,10 @@ return plural;
  "SPICE TLS Port:": [
   null,
   ""
+ ],
+ "Save": [
+  null,
+  "저장"
  ],
  "Send Non-Maskable Interrupt": [
   null,
@@ -505,23 +553,23 @@ return plural;
  ],
  "Session": [
   null,
-  "버전"
+  "세션"
  ],
  "Shut Down": [
   null,
-  ""
+  "종료"
  ],
  "Size": [
   null,
-  ""
+  "크기"
  ],
  "Sockets": [
   null,
-  ""
+  "소켓 "
  ],
  "Source": [
   null,
-  ""
+  "원본"
  ],
  "Source should start with http, ftp or nfs protocol": [
   null,
@@ -537,7 +585,7 @@ return plural;
  ],
  "State": [
   null,
-  ""
+  "상태"
  ],
  "Storage Size": [
   null,
@@ -549,11 +597,11 @@ return plural;
  ],
  "System": [
   null,
-  ""
+  "시스템 "
  ],
  "Target": [
   null,
-  ""
+  "대상"
  ],
  "The VM crashed.": [
   null,
@@ -595,7 +643,7 @@ return plural;
   null,
   ""
  ],
- "Threads per cores": [
+ "Threads per core": [
   null,
   ""
  ],
@@ -605,13 +653,21 @@ return plural;
  ],
  "Troubleshoot": [
   null,
-  ""
+  "문제 해결"
+ ],
+ "Type": [
+  null,
+  "유형"
  ],
  "URL": [
   null,
-  ""
+  "URL"
  ],
  "Unique name": [
+  null,
+  ""
+ ],
+ "Unplug": [
   null,
   ""
  ],
@@ -621,7 +677,7 @@ return plural;
  ],
  "Usage": [
   null,
-  ""
+  "사용법"
  ],
  "Use Existing": [
   null,
@@ -629,17 +685,9 @@ return plural;
  ],
  "Used": [
   null,
-  ""
- ],
- "VM ATTACH_DISK action failed": [
-  null,
-  ""
+  "사용 중"
  ],
  "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  ""
- ],
- "VM CHANGE_NETWORK_STATE action failed: updated device XML couldn't not be generated": [
   null,
   ""
  ],
@@ -655,7 +703,7 @@ return plural;
   null,
   ""
  ],
- "VM DETACH action failed": [
+ "VM DETACH_DISK action failed": [
   null,
   ""
  ],
@@ -689,7 +737,7 @@ return plural;
  ],
  "VNC": [
   null,
-  ""
+  "VNC"
  ],
  "VNC Address:": [
   null,
@@ -705,7 +753,7 @@ return plural;
  ],
  "Virtual Machines": [
   null,
-  ""
+  "가상머신"
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
@@ -717,7 +765,7 @@ return plural;
  ],
  "Volume": [
   null,
-  "논리 볼륨"
+  "볼륨"
  ],
  "bridge": [
   null,
@@ -741,15 +789,15 @@ return plural;
  ],
  "disabled": [
   null,
-  "사용 안함"
+  "비활성화됨 "
  ],
  "disk": [
   null,
-  ""
+  "디스크"
  ],
  "down": [
   null,
-  ""
+  "아래로"
  ],
  "dying": [
   null,
@@ -757,7 +805,7 @@ return plural;
  ],
  "enabled": [
   null,
-  "사용 안함"
+  "활성화됨 "
  ],
  "ethernet": [
   null,
@@ -765,7 +813,7 @@ return plural;
  ],
  "host": [
   null,
-  ""
+  "호스트"
  ],
  "hostdev": [
   null,
@@ -785,7 +833,7 @@ return plural;
  ],
  "no": [
   null,
-  ""
+  "아니요"
  ],
  "other": [
   null,
@@ -793,7 +841,7 @@ return plural;
  ],
  "paused": [
   null,
-  ""
+  "일시 중지"
  ],
  "qcow2": [
   null,
@@ -801,11 +849,11 @@ return plural;
  ],
  "raw": [
   null,
-  ""
+  "raw"
  ],
  "running": [
   null,
-  "작동중"
+  "실행 중"
  ],
  "server": [
   null,
@@ -833,7 +881,7 @@ return plural;
  ],
  "udp": [
   null,
-  ""
+  "udp"
  ],
  "undefined": [
   null,
@@ -841,11 +889,11 @@ return plural;
  ],
  "up": [
   null,
-  ""
+  "위로"
  ],
  "user": [
   null,
-  ""
+  "사용자 "
  ],
  "vCPU Count": [
   null,
@@ -865,6 +913,6 @@ return plural;
  ],
  "yes": [
   null,
-  ""
+  "예 "
  ]
 }));

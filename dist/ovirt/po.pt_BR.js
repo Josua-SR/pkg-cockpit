@@ -85,7 +85,11 @@ return plural;
  ],
  "Add Disk": [
   null,
-  ""
+  "Adicionar disco"
+ ],
+ "Address": [
+  null,
+  "Endereço"
  ],
  "Address:": [
   null,
@@ -159,6 +163,10 @@ return plural;
   null,
   "Capacidade"
  ],
+ "Changes will apply on VM shutdown": [
+  null,
+  ""
+ ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
   "Clicar em \"Iniciar Visualizador Remoto\" fará o download de um arquivo .vv e será iniciado $0."
@@ -229,7 +237,7 @@ return plural;
  ],
  "Create New": [
   null,
-  ""
+  "Criar novo"
  ],
  "Create New VM": [
   null,
@@ -290,6 +298,10 @@ return plural;
  "Download the MSI from $0": [
   null,
   "Baixe o MSI de $0"
+ ],
+ "Edit": [
+  null,
+  "Editar"
  ],
  "Edit the vdsm.conf": [
   null,
@@ -379,9 +391,17 @@ return plural;
   null,
   "Carregando dados ..."
  ],
+ "MAC Address": [
+  null,
+  "MAC Address"
+ ],
  "MIGRATE action failed": [
   null,
   "A ação MIGRATE falhou"
+ ],
+ "Mac Address": [
+  null,
+  ""
  ],
  "Manual Connection": [
   null,
@@ -407,6 +427,14 @@ return plural;
   null,
   "Migrar para:"
  ],
+ "Model": [
+  null,
+  "Modelo"
+ ],
+ "Model type": [
+  null,
+  "Tipo de modelo"
+ ],
  "More Information": [
   null,
   "Mais Informações"
@@ -414,6 +442,14 @@ return plural;
  "Name": [
   null,
   "Nome"
+ ],
+ "Network Type": [
+  null,
+  ""
+ ],
+ "Network settings failed to change with following error: ": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -443,9 +479,17 @@ return plural;
   null,
   "Nenhum disco definido para esta VM"
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  "Nenhuma interface de rede definida para esta VM"
+ ],
  "No oVirt connection": [
   null,
   "Sem conexão com oVirt"
+ ],
+ "No virtual networks": [
+  null,
+  ""
  ],
  "Number of virtual CPUs that gonna be used.": [
   null,
@@ -510,6 +554,10 @@ return plural;
  "Please wait till list of templates is loaded from the server.": [
   null,
   "Por favor, aguarde até que a lista de modelos seja carregada do servidor."
+ ],
+ "Plug": [
+  null,
+  "Plug"
  ],
  "Pool": [
   null,
@@ -739,9 +787,17 @@ return plural;
   null,
   "Esta máquina virtual não é gerenciada pelo oVirt"
  ],
- "Threads per cores": [
+ "Threads per core": [
   null,
-  "Threads por núcleos"
+  ""
+ ],
+ "Type": [
+  null,
+  "Tipo"
+ ],
+ "Unplug": [
+  null,
+  "Desplugar"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
@@ -753,7 +809,7 @@ return plural;
  ],
  "Use Existing": [
   null,
-  ""
+  "Usar existente"
  ],
  "Used": [
   null,
@@ -949,7 +1005,7 @@ return plural;
  ],
  "oVirt": [
   null,
-  ""
+  "oVirt"
  ],
  "oVirt Host State:": [
   null,
@@ -989,11 +1045,11 @@ return plural;
  ],
  "raw": [
   null,
-  ""
+  "raw"
  ],
  "reboot": [
   null,
-  ""
+  "reiniciar"
  ],
  "running": [
   null,
@@ -1045,7 +1101,7 @@ return plural;
  ],
  "up": [
   null,
-  ""
+  "up"
  ],
  "user": [
   null,

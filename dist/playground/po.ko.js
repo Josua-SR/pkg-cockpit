@@ -67,32 +67,8 @@ return plural;
   "language": "ko",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 day": [
-  "$0 days",
-  ""
- ],
  "$0 disk is missing": [
   "$0 disks are missing",
-  ""
- ],
- "$0 hour": [
-  "$0 hours",
-  ""
- ],
- "$0 minute": [
-  "$0 minutes",
-  ""
- ],
- "$0 month": [
-  "$0 months",
-  ""
- ],
- "$0 week": [
-  "$0 weeks",
-  ""
- ],
- "$0 year": [
-  "$0 years",
   ""
  ],
  "Cancel": [
@@ -109,11 +85,11 @@ return plural;
  ],
  "Empty": [
   null,
-  ""
+  "비었음"
  ],
  "Error": [
   null,
-  ""
+  "오류"
  ],
  "Memory": [
   null,
@@ -137,7 +113,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "확인"
  ],
  "On": [
   null,
@@ -157,11 +133,11 @@ return plural;
  ],
  "Unavailable": [
   null,
-  "사용할 수 없습니다"
+  "사용 불가능"
  ],
  "User": [
   null,
-  ""
+  "사용자"
  ],
  "undefined": [
   null,
@@ -177,10 +153,10 @@ return plural;
  ],
  "verb\u0004Empty": [
   null,
-  ""
+  "비었음"
  ],
  "verb\u0004Ready": [
   null,
-  ""
+  "준비됨"
  ]
 }));

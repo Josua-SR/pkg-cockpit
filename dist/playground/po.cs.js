@@ -67,59 +67,23 @@ return plural;
   "language": "cs",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 day": [
-  "$0 days",
-  "$0 den",
-  "$0 dny",
-  "$0 dnů"
- ],
  "$0 disk is missing": [
   "$0 disks are missing",
   "$0 disk chybí",
   "$0 disky chybí",
   "$0 disků chybí"
  ],
- "$0 hour": [
-  "$0 hours",
-  "$0 hodina",
-  "$0 hodiny",
-  "$0 hodin"
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 minuta",
-  "$0 minuty",
-  "$0 minut"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 měsíc",
-  "$0 měsíce",
-  "$0 měsíců"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 týden",
-  "$0 týdny",
-  "$0 týdnů"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 rok",
-  "$0 roky",
-  "$0 roků"
- ],
  "Cancel": [
   null,
-  "Zrušit"
+  "Storno"
  ],
  "Control": [
   null,
-  ""
+  "Ovládání"
  ],
  "Delete '{{ name }}'": [
   null,
-  ""
+  "Smazat „{{ name }}“"
  ],
  "Empty": [
   null,
@@ -139,15 +103,15 @@ return plural;
  ],
  "No matching files found": [
   null,
-  ""
+  "Nenalezeny žádné odpovídající soubory"
  ],
  "Not Ready": [
   null,
-  ""
+  "Nepřipraveno"
  ],
  "Off": [
   null,
-  ""
+  "Vypnuto"
  ],
  "Ok": [
   null,
@@ -155,19 +119,19 @@ return plural;
  ],
  "On": [
   null,
-  ""
+  "Zapnuto"
  ],
  "Path to file": [
   null,
-  ""
+  "Popis umístění serveru"
  ],
  "Ready": [
   null,
-  ""
+  "Připraveno"
  ],
  "Too many files found": [
   null,
-  ""
+  "Nalezeno příliš mnoho souborů"
  ],
  "Unavailable": [
   null,
@@ -179,7 +143,7 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "nedefinované"
  ],
  "disk-non-rotational\u0004$0 disk is missing": [
   "$0 disks are missing",
@@ -189,7 +153,7 @@ return plural;
  ],
  "key\u0004Control": [
   null,
-  ""
+  "Ovládání"
  ],
  "verb\u0004Empty": [
   null,
@@ -197,6 +161,6 @@ return plural;
  ],
  "verb\u0004Ready": [
   null,
-  ""
+  "Připraveno"
  ]
 }));

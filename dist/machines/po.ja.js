@@ -81,7 +81,11 @@ return plural;
  ],
  "Add Disk": [
   null,
-  ""
+  "ディスクの追加"
+ ],
+ "Address": [
+  null,
+  "アドレス:"
  ],
  "Address:": [
   null,
@@ -97,7 +101,7 @@ return plural;
  ],
  "Attach permanently": [
   null,
-  ""
+  "完全な割り当て"
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -127,10 +131,6 @@ return plural;
   null,
   "CPU タイプ:"
  ],
- "CREATE_AND_ATTACH_VOLUME action failed": [
-  null,
-  ""
- ],
  "Cancel": [
   null,
   "取り消し"
@@ -138,6 +138,10 @@ return plural;
  "Capacity": [
   null,
   "容量"
+ ],
+ "Changes will apply on VM shutdown": [
+  null,
+  ""
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -185,7 +189,7 @@ return plural;
  ],
  "Create New": [
   null,
-  ""
+  "新規作成"
  ],
  "Create New VM": [
   null,
@@ -229,11 +233,11 @@ return plural;
  ],
  "Disk failed to be attached with following error: ": [
   null,
-  ""
+  "以下のエラーが原因でディスクの割り当てに失敗しました: "
  ],
  "Disk failed to be created with following error: ": [
   null,
-  ""
+  "以下のエラーが原因でディスクの作成に失敗しました: "
  ],
  "Disks": [
   null,
@@ -242,6 +246,10 @@ return plural;
  "Download the MSI from $0": [
   null,
   "MSI を $0 からダウンロードします"
+ ],
+ "Edit": [
+  null,
+  "編集"
  ],
  "Emulated Machine:": [
   null,
@@ -327,6 +335,14 @@ return plural;
   null,
   "ロード中..."
  ],
+ "MAC Address": [
+  null,
+  "MAC アドレス"
+ ],
+ "Mac Address": [
+  null,
+  ""
+ ],
  "Manual Connection": [
   null,
   "手動接続"
@@ -351,6 +367,14 @@ return plural;
   null,
   "MiB"
  ],
+ "Model": [
+  null,
+  "モデル"
+ ],
+ "Model type": [
+  null,
+  "モデルタイプ"
+ ],
  "More Information": [
   null,
   "詳細情報"
@@ -367,13 +391,21 @@ return plural;
   null,
   "名前は空欄にできません"
  ],
+ "Network Type": [
+  null,
+  ""
+ ],
+ "Network settings failed to change with following error: ": [
+  null,
+  ""
+ ],
  "Networks": [
   null,
   "ネットワーク"
  ],
  "New Volume Name": [
   null,
-  ""
+  "新しいボリューム名"
  ],
  "No VM is running or defined on this host": [
   null,
@@ -394,6 +426,14 @@ return plural;
  "No matching files found": [
   null,
   "一致するファイルが見つかりませんでした。"
+ ],
+ "No network interfaces defined for this VM": [
+  null,
+  "この仮想マシンにはネットワークインターフェースが定義されていません"
+ ],
+ "No virtual networks": [
+  null,
+  ""
  ],
  "OS Vendor": [
   null,
@@ -421,15 +461,19 @@ return plural;
  ],
  "Please enter new volume name": [
   null,
-  ""
+  "新しいボリューム名を入力してください"
  ],
  "Please enter new volume size": [
   null,
-  ""
+  "新しいボリュームサイズを入力してください"
  ],
  "Please start the virtual machine to access its console.": [
   null,
   "仮想マシンを起動して、コンソールにアクセスしてください。"
+ ],
+ "Plug": [
+  null,
+  "プラグ"
  ],
  "Pool": [
   null,
@@ -490,6 +534,10 @@ return plural;
  "SPICE TLS Port:": [
   null,
   "SPICE TLS ポート:"
+ ],
+ "Save": [
+  null,
+  "保存"
  ],
  "Send Non-Maskable Interrupt": [
   null,
@@ -593,11 +641,11 @@ return plural;
  ],
  "The pool is empty": [
   null,
-  ""
+  "プールが空です"
  ],
- "Threads per cores": [
+ "Threads per core": [
   null,
-  "コアごとのスレッド"
+  ""
  ],
  "Too many files found": [
   null,
@@ -607,13 +655,21 @@ return plural;
   null,
   "トラブルシュート"
  ],
+ "Type": [
+  null,
+  "タイプ"
+ ],
  "URL": [
   null,
   "URL"
  ],
  "Unique name": [
   null,
-  ""
+  "固有名"
+ ],
+ "Unplug": [
+  null,
+  "アンプラグ"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
@@ -625,21 +681,13 @@ return plural;
  ],
  "Use Existing": [
   null,
-  ""
+  "既存の使用"
  ],
  "Used": [
   null,
   "Used"
  ],
- "VM ATTACH_DISK action failed": [
-  null,
-  ""
- ],
  "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  ""
- ],
- "VM CHANGE_NETWORK_STATE action failed: updated device XML couldn't not be generated": [
   null,
   ""
  ],
@@ -655,7 +703,7 @@ return plural;
   null,
   ""
  ],
- "VM DETACH action failed": [
+ "VM DETACH_DISK action failed": [
   null,
   ""
  ],
@@ -797,11 +845,11 @@ return plural;
  ],
  "qcow2": [
   null,
-  ""
+  "qcow2"
  ],
  "raw": [
   null,
-  ""
+  "raw"
  ],
  "running": [
   null,

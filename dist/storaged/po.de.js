@@ -83,11 +83,6 @@ return plural;
   null,
   ""
  ],
- "$0 day": [
-  "$0 days",
-  "$0 Tag",
-  "$0 Tage"
- ],
  "$0 disk is missing": [
   "$0 disks are missing",
   "$0 Festplatte fehlt",
@@ -105,11 +100,6 @@ return plural;
   null,
   ""
  ],
- "$0 hour": [
-  "$0 hours",
-  "$0 Stunde",
-  "$0 Stunden"
- ],
  "$0 is in active use": [
   null,
   ""
@@ -117,16 +107,6 @@ return plural;
  "$0 is not available from any repository.": [
   null,
   ""
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 Minute",
-  "$0 Minuten"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 Monat",
-  "$0 Monate"
  ],
  "$0 of $1": [
   null,
@@ -140,19 +120,9 @@ return plural;
   null,
   "$0 verwendet von $1 ($2 gespeichert)"
  ],
- "$0 week": [
-  "$0 weeks",
-  "$0 Woche",
-  "$0 Wochen"
- ],
  "$0 will be installed.": [
   null,
   "$0 wird installiert."
- ],
- "$0 year": [
-  "$0 years",
-  "$0 Jahr",
-  "$0 Jahre"
  ],
  "$0, $1 free": [
   null,
@@ -168,11 +138,11 @@ return plural;
  ],
  "(default)": [
   null,
-  ""
+  "(Vorgabe)"
  ],
  "(none)": [
   null,
-  ""
+  "(keine)"
  ],
  "--": [
   null,
@@ -316,7 +286,7 @@ return plural;
  ],
  "Block": [
   null,
-  ""
+  "Block"
  ],
  "Block device for filesystems": [
   null,
@@ -336,7 +306,7 @@ return plural;
  ],
  "Change": [
   null,
-  ""
+  "Ändern"
  ],
  "Change iSCSI Initiator Name": [
   null,
@@ -548,7 +518,7 @@ return plural;
  ],
  "Device File": [
   null,
-  ""
+  "Gerätedatei"
  ],
  "Device is read-only": [
   null,
@@ -556,7 +526,7 @@ return plural;
  ],
  "Disk": [
   null,
-  ""
+  "Festplatte"
  ],
  "Disk is OK": [
   null,
@@ -580,7 +550,7 @@ return plural;
  ],
  "Drive": [
   null,
-  ""
+  "Speichergerät"
  ],
  "Drives": [
   null,
@@ -588,7 +558,7 @@ return plural;
  ],
  "Edit": [
   null,
-  ""
+  "Bearbeiten"
  ],
  "Edit Tang keyserver": [
   null,
@@ -636,7 +606,7 @@ return plural;
  ],
  "Encryption": [
   null,
-  ""
+  "Verschlüsselung"
  ],
  "Encryption Options": [
   null,
@@ -752,7 +722,7 @@ return plural;
  ],
  "Install": [
   null,
-  ""
+  "Installation"
  ],
  "Install NFS Support": [
   null,
@@ -772,11 +742,11 @@ return plural;
  ],
  "Invalid username or password": [
   null,
-  ""
+  "Benutzername oder Passwort ungültig"
  ],
  "Jobs": [
   null,
-  ""
+  "Jobs"
  ],
  "Key slots with unknown types can not be edited here": [
   null,
@@ -1040,7 +1010,7 @@ return plural;
  ],
  "Ok": [
   null,
-  ""
+  "OK"
  ],
  "Old passphrase": [
   null,
@@ -1120,7 +1090,7 @@ return plural;
  ],
  "Physical": [
   null,
-  ""
+  "Physisch"
  ],
  "Physical Volume": [
   null,
@@ -1164,15 +1134,15 @@ return plural;
  ],
  "Port": [
   null,
-  ""
+  "Port"
  ],
  "Process": [
   null,
-  ""
+  "Prozess"
  ],
  "Purpose": [
   null,
-  ""
+  "Verwendungszweck"
  ],
  "RAID ($0)": [
   null,
@@ -1228,7 +1198,7 @@ return plural;
  ],
  "RAID Device": [
   null,
-  ""
+  "RAID-Gerät"
  ],
  "RAID Device $0": [
   null,
@@ -1380,7 +1350,7 @@ return plural;
  ],
  "Shrink": [
   null,
-  ""
+  "Verkleinern"
  ],
  "Shrink Logical Volume": [
   null,
@@ -1389,6 +1359,26 @@ return plural;
  "Size": [
   null,
   "Größe"
+ ],
+ "Size cannot be negative": [
+  null,
+  "Größe darf nicht negativ sein"
+ ],
+ "Size cannot be zero": [
+  null,
+  "Größe darf nicht Null sein"
+ ],
+ "Size is too large": [
+  null,
+  "Größe zu groß"
+ ],
+ "Size must be a number": [
+  null,
+  "Größe muss eine Zahl sein"
+ ],
+ "Size must be at least $0": [
+  null,
+  ""
  ],
  "Slot $0": [
   null,
@@ -1498,15 +1488,15 @@ return plural;
   null,
   ""
  ],
- "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
+ "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
   null,
   ""
  ],
- "The filesystem is in use by login sessions.                Proceeding will stop these.": [
+ "The filesystem is in use by login sessions. Proceeding will stop these.": [
   null,
   ""
  ],
- "The filesystem is in use by system services.                Proceeding will stop these.": [
+ "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
   ""
  ],
@@ -1546,7 +1536,7 @@ return plural;
   null,
   ""
  ],
- "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
+ "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
   null,
   ""
  ],
@@ -1554,7 +1544,7 @@ return plural;
   null,
   ""
  ],
- "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
+ "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
   null,
   ""
  ],
@@ -1566,7 +1556,7 @@ return plural;
   null,
   ""
  ],
- "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
+ "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
   ""
  ],
@@ -1608,7 +1598,7 @@ return plural;
  ],
  "Unit": [
   null,
-  ""
+  "Einheit"
  ],
  "Unknown": [
   null,
@@ -1668,7 +1658,7 @@ return plural;
  ],
  "Usage": [
   null,
-  ""
+  "Verbrauch"
  ],
  "Use 512 Byte emulation": [
   null,
@@ -1720,7 +1710,7 @@ return plural;
  ],
  "Volume": [
   null,
-  ""
+  "Lautstärke"
  ],
  "Volume Group": [
   null,

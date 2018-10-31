@@ -113,7 +113,7 @@ return plural;
  ],
  "Not connected": [
   null,
-  "연결 해제됨"
+  "연결되지 않음"
  ],
  "Occurred $0": [
   null,

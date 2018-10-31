@@ -69,7 +69,7 @@ return plural;
  },
  "Cancel": [
   null,
-  "Zrušit"
+  "Storno"
  ],
  "Close": [
   null,
@@ -77,15 +77,15 @@ return plural;
  ],
  "Create Report": [
   null,
-  ""
+  "Vytvořit výkaz"
  ],
  "Create diagnostic report": [
   null,
-  ""
+  "Vytvořit diagnostické hlášení"
  ],
  "Diagnostic reports": [
   null,
-  ""
+  "Diagnostická hlášení"
  ],
  "Done!": [
   null,
@@ -93,26 +93,26 @@ return plural;
  ],
  "Download report": [
   null,
-  ""
+  "Stáhnout si výkaz"
  ],
  "Generating report": [
   null,
-  ""
+  "Vytváření výkazu"
  ],
  "No archive has been created.": [
   null,
-  ""
+  "Nebyl vytvořen žádný archiv."
  ],
  "The collected information will be stored locally on the system.": [
   null,
-  ""
+  "Shromážděné informace budou uloženy lokálně na systému."
  ],
  "The generated archive contains data considered sensitive and its content should be reviewed by the originating organization before being passed to any third party.": [
   null,
-  ""
+  "Vytvořený archiv obsahuje data považovaná za citlivá a jeho obsah by měl být zrevidován organizací, ze které pochází předtím, než bude předán jakékoli třetí straně."
  ],
  "This tool will collect system configuration and diagnostic information from this system for use with diagnosing problems with the system.": [
   null,
-  ""
+  "Tento nástroj shromáždí informace o nastavení systému a diagnostice pro použití při analýze problémů se systémem."
  ]
 }));
