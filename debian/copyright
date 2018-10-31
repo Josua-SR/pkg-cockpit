@@ -102,10 +102,6 @@ Files: node_modules/c3/*
 Copyright: Copyright (c) 2013 Masayuki Tanaka
 License: MIT
 
-Files: node_modules/create-react-class/*
-Copyright: Copyright (c) 2013-present, Facebook, Inc.
-License: MIT
-
 Files: node_modules/d3/*
 Copyright: Copyright (c) 2010-2016, Michael Bostock
 License: BSD-3-Clause
