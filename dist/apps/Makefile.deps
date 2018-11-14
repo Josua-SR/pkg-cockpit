@@ -1,5 +1,5 @@
 # Generated Makefile data for apps
-# Stamp: Wed Oct 31 2018 13:25:51 GMT+0000 (UTC)
+# Stamp: Wed Nov 14 2018 15:21:34 GMT+0000 (UTC)
 
 apps_INPUTS = \
 	node_modules/promise/LICENSE \

@@ -183,10 +183,6 @@ return plural;
   null,
   "Klustrets virtuella maskiner"
  ],
- "Confirm deletion of $0": [
-  null,
-  "Bekräfta radering av $0"
- ],
  "Confirm migration": [
   null,
   "Bekräfta migrering"
@@ -409,115 +405,115 @@ return plural;
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
-  ""
+  "Maximalt antal virtuella CPU:er allokerade till gäst-OS:et, vilket måste vara mellan 1 och $0"
  ],
  "Memory": [
   null,
-  ""
+  "Minne"
  ],
  "Memory:": [
   null,
-  ""
+  "Minne:"
  ],
  "MiB": [
   null,
-  ""
+  "MiB"
  ],
  "Migrate To:": [
   null,
-  ""
+  "Migrera till:"
  ],
  "Model": [
   null,
-  ""
+  "Modell"
  ],
  "Model type": [
   null,
-  ""
+  "Modelltyp"
  ],
  "More Information": [
   null,
-  ""
+  "Mer information"
  ],
  "Name": [
   null,
-  ""
+  "Namn"
  ],
  "Network Type": [
   null,
-  ""
+  "Nätverkstyp"
  ],
  "Network settings failed to change with following error: ": [
   null,
-  ""
+  "Nätverksinställningarna kunde inte ändras utan fick följande fel:"
  ],
  "Networks": [
   null,
-  ""
+  "Nätverk"
  ],
  "New Volume Name": [
   null,
-  ""
+  "Nytt volymnamn"
  ],
  "No VM found in oVirt.": [
   null,
-  ""
+  "Ingen VM hittad i oVirt."
  ],
  "No VM is running or defined on this host": [
   null,
-  ""
+  "Ingen VM kör eller är definierad på denna värd."
  ],
  "No boot device found": [
   null,
-  ""
+  "Ingen startenhet hittades"
  ],
  "No console defined for this virtual machine.": [
   null,
-  ""
+  "Ingen konsol definierad för denna virtuella maskin."
  ],
  "No disks defined for this VM": [
   null,
-  ""
+  "Inga diskar är definerade för denna VM"
  ],
  "No network interfaces defined for this VM": [
   null,
-  ""
+  "Inga nätverksgränssnitt är definierade för denna VM"
  ],
  "No oVirt connection": [
   null,
-  ""
+  "Ingen oVirt-förbindelse"
  ],
  "No virtual networks": [
   null,
-  ""
+  "Inga virtuella nätverk"
  ],
  "Number of virtual CPUs that gonna be used.": [
   null,
-  ""
+  "Antal virtuella CPU:er som kommer användas."
  ],
  "OK": [
   null,
-  ""
+  "OK"
  ],
  "OS": [
   null,
-  ""
+  "OS"
  ],
  "OS Type:": [
   null,
-  ""
+  "OS-typ:"
  ],
  "Ok": [
   null,
-  ""
+  "Ok"
  ],
  "Optimized for:": [
   null,
-  ""
+  "Optimerad för:"
  ],
  "Overview": [
   null,
-  ""
+  "Översikt"
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
@@ -721,7 +717,7 @@ return plural;
  ],
  "System": [
   null,
-  ""
+  "System"
  ],
  "Target": [
   null,

@@ -705,10 +705,6 @@ input[type=number] {
 .dialog-ct-visible {
     display: block;
 }
-#cockpit_modal_dialog .modal-body.scroll {
-    max-height: calc(75vh - 10rem);
-    overflow: auto;
-}
 .dialog-field {
     display: inline-flex;
     padding: 0px;
@@ -793,32 +789,6 @@ input[type=number] {
 .machines-more-button {
     padding-left: 10px;
 }
-.tooltip-ct-outer {
-    display:  inline-block;
-    position: relative;
-}
-
-.tooltip-ct-inner {
-    display:  inline-block;
-}
-
-/* Layout fix for tooltip arrows.
- *
- * Sometimes when there are non-integer coordinates involved
- * somewhere, rounding seems to make it so that there is a visible one
- * pixel gap between tooltip-inner and tooltip-arrow.  We avoid that
- * gap by letting the arrow and inner parts overlap by one pixel.
- *
- * This happens within the caption of the content listing.
- */
-
-.tooltip.top .tooltip-arrow {
-    bottom: 1px;
-}
-
-.tooltip.bottom .tooltip-arrow {
-    top: 1px;
-}
 /* Standard dialog is too narrow and wide dialog is too wide */
 .nic-edit > .modal-dialog {
     width: 70rem;
@@ -893,6 +863,10 @@ table.delete-dialog-disks.table tbody tr td:nth-child(3) {
 }
 .header {
     padding-bottom: 10px;
+}
+#cockpit_modal_dialog .modal-body.scroll {
+    max-height: calc(75vh - 10rem);
+    overflow: auto;
 }
 .file-autocomplete-ct input {
     padding-right: 24px;

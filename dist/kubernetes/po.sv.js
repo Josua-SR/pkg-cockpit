@@ -691,211 +691,211 @@ return plural;
  ],
  "Medium": [
   null,
-  ""
+  "Medium"
  ],
  "Member of": [
   null,
-  ""
+  "Medlem i"
  ],
  "Members": [
   null,
-  ""
+  "Medlemmar"
  ],
  "Membership": [
   null,
-  ""
+  "Medlemskap"
  ],
  "Memory": [
   null,
-  ""
+  "Minne"
  ],
  "Memory Utilization: $0%": [
   null,
-  ""
+  "Minnesanvändning: $0 %"
  ],
  "Message": [
   null,
-  ""
+  "Meddelande"
  ],
  "Metadata": [
   null,
-  ""
+  "Metadata"
  ],
  "Modify": [
   null,
-  ""
+  "Modifiera"
  ],
  "Monitors": [
   null,
-  ""
+  "Övervakare"
  ],
  "Mount Location": [
   null,
-  ""
+  "Monteringsplats"
  ],
  "NFS": [
   null,
-  ""
+  "NFS"
  ],
  "NFS Mount": [
   null,
-  ""
+  "NFS-montering"
  ],
  "Name": [
   null,
-  ""
+  "Namn"
  ],
  "Namespace": [
   null,
-  ""
+  "Namnrymd"
  ],
  "Namespace cannot be empty.": [
   null,
-  ""
+  "Namnrymden får inte vara tom."
  ],
  "Network": [
   null,
-  ""
+  "Nätverk"
  ],
  "New Group": [
   null,
-  ""
+  "Ny grupp"
  ],
  "New Project": [
   null,
-  ""
+  "Nytt projekt"
  ],
  "New image stream": [
   null,
-  ""
+  "Ny avbildsström"
  ],
  "New project": [
   null,
-  ""
+  "Nytt projekt"
  ],
  "No": [
   null,
-  ""
+  "Nej"
  ],
  "No Pods are using this claim": [
   null,
-  ""
+  "Inga kapslar använder detta anspråk"
  ],
  "No Volume Bound": [
   null,
-  ""
+  "Ingen volymgräns"
  ],
  "No groups are present.": [
   null,
-  ""
+  "Inga grupper finns."
  ],
  "No images pushed": [
   null,
-  ""
+  "Inga avbilder trycktes"
  ],
  "No metadata file was selected. Please select a Kubernetes metadata file.": [
   null,
-  ""
+  "Ingen metadatafil valdes.  Välj en fil med Kubernetes metadata."
  ],
  "No nodes in cluster": [
   null,
-  ""
+  "Inga noder i klustret"
  ],
  "No pods deployed": [
   null,
-  ""
+  "Inga kapslar är utplacerade"
  ],
  "No pods replicated": [
   null,
-  ""
+  "Inga kapslar är replikerade"
  ],
  "No pods scheduled": [
   null,
-  ""
+  "Inga kapslar är schemalagda"
  ],
  "No pods selected": [
   null,
-  ""
+  "Inga kapslar är valda"
  ],
  "No projects are present.": [
   null,
-  ""
+  "Inga projekt finns."
  ],
  "No users are present.": [
   null,
-  ""
+  "Inga användare finns."
  ],
  "No volumes are present.": [
   null,
-  ""
+  "Inga volymer finns."
  ],
  "No volumes in use": [
   null,
-  ""
+  "Inga volymer används"
  ],
  "Node": [
   null,
-  ""
+  "Nod"
  ],
  "Nodes": [
   null,
-  ""
+  "Noder"
  ],
  "Nodes are the machines that run your containers.": [
   null,
-  ""
+  "Noder är maskinerna som kör dina behållare."
  ],
  "None": [
   null,
-  ""
+  "Inga"
  ],
  "Not Ready": [
   null,
-  ""
+  "Inte klar"
  ],
  "Not a valid number of replicas": [
   null,
-  ""
+  "Inte ett giltigt antal repliker"
  ],
  "Not a valid value for Host": [
   null,
-  ""
+  "Inte ett giltigt värde på värd"
  ],
  "Not deployed": [
   null,
-  ""
+  "Inte utplacerad"
  ],
  "OS": [
   null,
-  ""
+  "OS"
  ],
  "OS Versions": [
   null,
-  ""
+  "OS-versioner"
  ],
  "Operating System": [
   null,
-  ""
+  "Operativsystem"
  ],
  "Options": [
   null,
-  ""
+  "Alternativ"
  ],
  "Overview": [
   null,
-  ""
+  "Översikt"
  ],
  "PD Name": [
   null,
-  ""
+  "PD-namn"
  ],
  "Partition": [
   null,
-  ""
+  "Partition"
  ],
  "Password": [
   null,
-  ""
+  "Lösenord"
  ],
  "Path": [
   null,
@@ -1103,7 +1103,7 @@ return plural;
  ],
  "Ready": [
   null,
-  ""
+  "Klar"
  ],
  "Reason": [
   null,
@@ -1487,7 +1487,7 @@ return plural;
  ],
  "This option is for single node testing only – local storage will not work in a multi-node cluster": [
   null,
-  ""
+  "Denna flagga är endast för test av enstaka noder — lokal lagring kommer inte fungera i ett flernodskluster"
  ],
  "This volume has been claimed by {{ item.item.spec.claimRef.namespace }} / {{ item.item.spec.claimRef.name }}. Deleting it will break that claim and may cause issues with any pods depending on it.": [
   null,

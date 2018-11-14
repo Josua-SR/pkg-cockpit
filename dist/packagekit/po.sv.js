@@ -204,39 +204,39 @@ return plural;
  ],
  "Name": [
   null,
-  ""
+  "Namn"
  ],
  "No updates pending": [
   null,
-  ""
+  "Inga väntande uppdateringar"
  ],
  "Off": [
   null,
-  ""
+  "Av"
  ],
  "Ok": [
   null,
-  ""
+  "Ok"
  ],
  "On": [
   null,
-  ""
+  "På"
  ],
  "Package information": [
   null,
-  ""
+  "Paketinformation"
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "PackageKit kraschade"
  ],
  "PackageKit is not installed": [
   null,
-  ""
+  "PackageKit är inte installerat"
  ],
  "PackageKit reported error code $0": [
   null,
-  ""
+  "PackageKit rapporterade felkod $0"
  ],
  "Refreshing package information": [
   null,
@@ -304,7 +304,7 @@ return plural;
  ],
  "This system is not registered": [
   null,
-  ""
+  "Detta system är inte registrerat"
  ],
  "This web console will be updated.": [
   null,
@@ -315,10 +315,6 @@ return plural;
   ""
  ],
  "Total size: $0": [
-  null,
-  ""
- ],
- "Unregistered System": [
   null,
   ""
  ],
@@ -338,10 +334,6 @@ return plural;
   null,
   ""
  ],
- "Updates are disabled.": [
-  null,
-  ""
- ],
  "Updating": [
   null,
   ""
@@ -358,17 +350,9 @@ return plural;
   null,
   ""
  ],
- "View Registration Details": [
-  null,
-  ""
- ],
  "Waiting for other software management operations to finish": [
   null,
   ""
- ],
- "You need to re-subscribe this system.": [
-  null,
-  "Du behöver prenumerera om detta system."
  ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
@@ -383,6 +367,14 @@ return plural;
   ""
  ],
  "at": [
+  null,
+  ""
+ ],
+ "bug fix": [
+  null,
+  ""
+ ],
+ "enhancement": [
   null,
   ""
  ],
@@ -415,6 +407,10 @@ return plural;
   ""
  ],
  "on Wednesdays": [
+  null,
+  ""
+ ],
+ "security": [
   null,
   ""
  ],

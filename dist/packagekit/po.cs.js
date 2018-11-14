@@ -321,10 +321,6 @@ return plural;
   null,
   "Celková velikost: $0"
  ],
- "Unregistered System": [
-  null,
-  "Systém se zrušenou registrací"
- ],
  "Update History": [
   null,
   "Historie aktualizací"
@@ -340,10 +336,6 @@ return plural;
  "Updated packages may require a restart to take effect.": [
   null,
   "Aby se uplatnily, aktualizované balíčky mohou vyžadovat restart."
- ],
- "Updates are disabled.": [
-  null,
-  "Aktualizace jsou vypnuté."
  ],
  "Updating": [
   null,
@@ -361,17 +353,9 @@ return plural;
   null,
   "Verze"
  ],
- "View Registration Details": [
-  null,
-  "Zobrazit podrobnosti registrace"
- ],
  "Waiting for other software management operations to finish": [
   null,
   "Čeká se na dokončení ostatních operací správy balíčků"
- ],
- "You need to re-subscribe this system.": [
-  null,
-  "Tento systém je třeba znovu opatřit předplatným."
  ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
@@ -388,6 +372,14 @@ return plural;
  "at": [
   null,
   "v"
+ ],
+ "bug fix": [
+  null,
+  ""
+ ],
+ "enhancement": [
+  null,
+  ""
  ],
  "every day": [
   null,
@@ -420,6 +412,10 @@ return plural;
  "on Wednesdays": [
   null,
   "v úterky"
+ ],
+ "security": [
+  null,
+  ""
  ],
  "undefined": [
   null,

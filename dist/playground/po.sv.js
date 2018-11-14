@@ -94,31 +94,31 @@ return plural;
  ],
  "Memory": [
   null,
-  ""
+  "Minne"
  ],
  "Network": [
   null,
-  ""
+  "Nätverk"
  ],
  "No matching files found": [
   null,
-  ""
+  "Inga matchande filer hittade"
  ],
  "Not Ready": [
   null,
-  ""
+  "Inte klar"
  ],
  "Off": [
   null,
-  ""
+  "Av"
  ],
  "Ok": [
   null,
-  ""
+  "Ok"
  ],
  "On": [
   null,
-  ""
+  "På"
  ],
  "Path to file": [
   null,
@@ -126,7 +126,7 @@ return plural;
  ],
  "Ready": [
   null,
-  ""
+  "Klar"
  ],
  "Too many files found": [
   null,
@@ -159,6 +159,6 @@ return plural;
  ],
  "verb\u0004Ready": [
   null,
-  ""
+  "Klar"
  ]
 }));

@@ -1,11 +1,19 @@
 # Generated Makefile data for storaged
-# Stamp: Wed Oct 31 2018 13:25:52 GMT+0000 (UTC)
+# Stamp: Wed Nov 14 2018 15:21:34 GMT+0000 (UTC)
 
 storaged_INPUTS = \
 	node_modules/bootstrap/LICENSE \
 	node_modules/bootstrap/README.md \
 	node_modules/bootstrap/less/variables.less \
 	node_modules/bootstrap/package.json \
+	node_modules/c3/LICENSE \
+	node_modules/c3/README.md \
+	node_modules/c3/c3.js \
+	node_modules/c3/package.json \
+	node_modules/d3/LICENSE \
+	node_modules/d3/README.md \
+	node_modules/d3/d3.js \
+	node_modules/d3/package.json \
 	node_modules/jquery-flot/LICENSE.txt \
 	node_modules/jquery-flot/README.md \
 	node_modules/jquery-flot/jquery.flot.js \
@@ -150,8 +158,288 @@ storaged_INPUTS = \
 	node_modules/mustache/README.md \
 	node_modules/mustache/mustache.js \
 	node_modules/mustache/package.json \
+	node_modules/patternfly-react/LICENSE \
+	node_modules/patternfly-react/README.md \
+	node_modules/patternfly-react/dist/js/common/Timer.js \
+	node_modules/patternfly-react/dist/js/common/controlled.js \
+	node_modules/patternfly-react/dist/js/common/helpers.js \
+	node_modules/patternfly-react/dist/js/common/patternfly.js \
+	node_modules/patternfly-react/dist/js/components/AboutModal/AboutModal.js \
+	node_modules/patternfly-react/dist/js/components/AboutModal/AboutModalVersionItem.js \
+	node_modules/patternfly-react/dist/js/components/AboutModal/AboutModalVersions.js \
+	node_modules/patternfly-react/dist/js/components/AboutModal/index.js \
+	node_modules/patternfly-react/dist/js/components/Alert/Alert.js \
+	node_modules/patternfly-react/dist/js/components/Alert/AlertConstants.js \
+	node_modules/patternfly-react/dist/js/components/Alert/helpers.js \
+	node_modules/patternfly-react/dist/js/components/Alert/index.js \
+	node_modules/patternfly-react/dist/js/components/Badge/Badge.js \
+	node_modules/patternfly-react/dist/js/components/Badge/index.js \
+	node_modules/patternfly-react/dist/js/components/Breadcrumb/Breadcrumb.js \
+	node_modules/patternfly-react/dist/js/components/Breadcrumb/index.js \
+	node_modules/patternfly-react/dist/js/components/Button/Button.js \
+	node_modules/patternfly-react/dist/js/components/Button/ButtonConstants.js \
+	node_modules/patternfly-react/dist/js/components/Button/ButtonGroup.js \
+	node_modules/patternfly-react/dist/js/components/Button/DropdownButton.js \
+	node_modules/patternfly-react/dist/js/components/Button/SplitButton.js \
+	node_modules/patternfly-react/dist/js/components/Button/index.js \
+	node_modules/patternfly-react/dist/js/components/Cards/AggregateStatusCard/AggregateStatusCount.js \
+	node_modules/patternfly-react/dist/js/components/Cards/AggregateStatusCard/AggregateStatusNotification.js \
+	node_modules/patternfly-react/dist/js/components/Cards/AggregateStatusCard/AggregateStatusNotifications.js \
+	node_modules/patternfly-react/dist/js/components/Cards/AggregateStatusCard/index.js \
+	node_modules/patternfly-react/dist/js/components/Cards/Card.js \
+	node_modules/patternfly-react/dist/js/components/Cards/CardBody.js \
+	node_modules/patternfly-react/dist/js/components/Cards/CardDropdownButton.js \
+	node_modules/patternfly-react/dist/js/components/Cards/CardFooter.js \
+	node_modules/patternfly-react/dist/js/components/Cards/CardGrid.js \
+	node_modules/patternfly-react/dist/js/components/Cards/CardHeading.js \
+	node_modules/patternfly-react/dist/js/components/Cards/CardHeightMatching.js \
+	node_modules/patternfly-react/dist/js/components/Cards/CardLink.js \
+	node_modules/patternfly-react/dist/js/components/Cards/CardTitle.js \
+	node_modules/patternfly-react/dist/js/components/Cards/UtilizationTrendCard/UtilizationCard.js \
+	node_modules/patternfly-react/dist/js/components/Cards/UtilizationTrendCard/UtilizationCardDetails.js \
+	node_modules/patternfly-react/dist/js/components/Cards/UtilizationTrendCard/UtilizationCardDetailsCount.js \
+	node_modules/patternfly-react/dist/js/components/Cards/UtilizationTrendCard/UtilizationCardDetailsDesc.js \
+	node_modules/patternfly-react/dist/js/components/Cards/UtilizationTrendCard/UtilizationCardDetailsLine1.js \
+	node_modules/patternfly-react/dist/js/components/Cards/UtilizationTrendCard/UtilizationCardDetailsLine2.js \
+	node_modules/patternfly-react/dist/js/components/Cards/UtilizationTrendCard/index.js \
+	node_modules/patternfly-react/dist/js/components/Cards/index.js \
+	node_modules/patternfly-react/dist/js/components/Chart/AreaChart.js \
+	node_modules/patternfly-react/dist/js/components/Chart/BarChart.js \
+	node_modules/patternfly-react/dist/js/components/Chart/ChartConstants.js \
+	node_modules/patternfly-react/dist/js/components/Chart/DonutChart.js \
+	node_modules/patternfly-react/dist/js/components/Chart/GroupedBarChart.js \
+	node_modules/patternfly-react/dist/js/components/Chart/LineChart.js \
+	node_modules/patternfly-react/dist/js/components/Chart/PieChart.js \
+	node_modules/patternfly-react/dist/js/components/Chart/SingleAreaChart.js \
+	node_modules/patternfly-react/dist/js/components/Chart/SingleLineChart.js \
+	node_modules/patternfly-react/dist/js/components/Chart/SparklineChart.js \
+	node_modules/patternfly-react/dist/js/components/Chart/StackedBarChart.js \
+	node_modules/patternfly-react/dist/js/components/Chart/index.js \
+	node_modules/patternfly-react/dist/js/components/Dropdown/Dropdown.js \
+	node_modules/patternfly-react/dist/js/components/Dropdown/NavDropdown.js \
+	node_modules/patternfly-react/dist/js/components/Dropdown/index.js \
+	node_modules/patternfly-react/dist/js/components/DropdownKebab/DropdownKebab.js \
+	node_modules/patternfly-react/dist/js/components/DropdownKebab/index.js \
+	node_modules/patternfly-react/dist/js/components/EmptyState/EmptyState.js \
+	node_modules/patternfly-react/dist/js/components/EmptyState/EmptyStateAction.js \
+	node_modules/patternfly-react/dist/js/components/EmptyState/EmptyStateHelp.js \
+	node_modules/patternfly-react/dist/js/components/EmptyState/EmptyStateIcon.js \
+	node_modules/patternfly-react/dist/js/components/EmptyState/EmptyStateInfo.js \
+	node_modules/patternfly-react/dist/js/components/EmptyState/EmptyStateTitle.js \
+	node_modules/patternfly-react/dist/js/components/EmptyState/index.js \
+	node_modules/patternfly-react/dist/js/components/FieldLevelHelp/FieldLevelHelp.js \
+	node_modules/patternfly-react/dist/js/components/FieldLevelHelp/index.js \
+	node_modules/patternfly-react/dist/js/components/Filter/Filter.js \
+	node_modules/patternfly-react/dist/js/components/Filter/FilterActiveLabel.js \
+	node_modules/patternfly-react/dist/js/components/Filter/FilterCategorySelector.js \
+	node_modules/patternfly-react/dist/js/components/Filter/FilterCategoryValueSelector.js \
+	node_modules/patternfly-react/dist/js/components/Filter/FilterItem.js \
+	node_modules/patternfly-react/dist/js/components/Filter/FilterList.js \
+	node_modules/patternfly-react/dist/js/components/Filter/FilterTypeSelector.js \
+	node_modules/patternfly-react/dist/js/components/Filter/FilterValueSelector.js \
+	node_modules/patternfly-react/dist/js/components/Filter/index.js \
+	node_modules/patternfly-react/dist/js/components/Form/Checkbox.js \
+	node_modules/patternfly-react/dist/js/components/Form/ControlLabel.js \
+	node_modules/patternfly-react/dist/js/components/Form/Form.js \
+	node_modules/patternfly-react/dist/js/components/Form/FormControl.js \
+	node_modules/patternfly-react/dist/js/components/Form/FormGroup.js \
+	node_modules/patternfly-react/dist/js/components/Form/HelpBlock.js \
+	node_modules/patternfly-react/dist/js/components/Form/InputGroup.js \
+	node_modules/patternfly-react/dist/js/components/Form/Radio.js \
+	node_modules/patternfly-react/dist/js/components/Form/index.js \
+	node_modules/patternfly-react/dist/js/components/Grid/Clearfix.js \
+	node_modules/patternfly-react/dist/js/components/Grid/Col.js \
+	node_modules/patternfly-react/dist/js/components/Grid/Grid.js \
+	node_modules/patternfly-react/dist/js/components/Grid/Row.js \
+	node_modules/patternfly-react/dist/js/components/Grid/index.js \
+	node_modules/patternfly-react/dist/js/components/Icon/Icon.js \
+	node_modules/patternfly-react/dist/js/components/Icon/InnerComponents/PatternflyIcon.js \
+	node_modules/patternfly-react/dist/js/components/Icon/index.js \
+	node_modules/patternfly-react/dist/js/components/InfoTip/InfoTip.js \
+	node_modules/patternfly-react/dist/js/components/InfoTip/InfoTipMenu.js \
+	node_modules/patternfly-react/dist/js/components/InfoTip/InfoTipMenuFooter.js \
+	node_modules/patternfly-react/dist/js/components/InfoTip/InfoTipMenuItemIcon.js \
+	node_modules/patternfly-react/dist/js/components/InfoTip/InfoTipToggle.js \
+	node_modules/patternfly-react/dist/js/components/InfoTip/index.js \
+	node_modules/patternfly-react/dist/js/components/Label/DisposableLabel.js \
+	node_modules/patternfly-react/dist/js/components/Label/Label.js \
+	node_modules/patternfly-react/dist/js/components/Label/RemoveButton.js \
+	node_modules/patternfly-react/dist/js/components/Label/index.js \
+	node_modules/patternfly-react/dist/js/components/ListGroup/ListGroup.js \
+	node_modules/patternfly-react/dist/js/components/ListGroup/ListGroupItem.js \
+	node_modules/patternfly-react/dist/js/components/ListGroup/index.js \
+	node_modules/patternfly-react/dist/js/components/ListView/ListView.js \
+	node_modules/patternfly-react/dist/js/components/ListView/ListViewActions.js \
+	node_modules/patternfly-react/dist/js/components/ListView/ListViewAdditionalInfo.js \
+	node_modules/patternfly-react/dist/js/components/ListView/ListViewBody.js \
+	node_modules/patternfly-react/dist/js/components/ListView/ListViewCheckbox.js \
+	node_modules/patternfly-react/dist/js/components/ListView/ListViewDescription.js \
+	node_modules/patternfly-react/dist/js/components/ListView/ListViewDescriptionHeading.js \
+	node_modules/patternfly-react/dist/js/components/ListView/ListViewDescriptionText.js \
+	node_modules/patternfly-react/dist/js/components/ListView/ListViewExpand.js \
+	node_modules/patternfly-react/dist/js/components/ListView/ListViewGroupItem.js \
+	node_modules/patternfly-react/dist/js/components/ListView/ListViewGroupItemContainer.js \
+	node_modules/patternfly-react/dist/js/components/ListView/ListViewGroupItemHeader.js \
+	node_modules/patternfly-react/dist/js/components/ListView/ListViewIcon.js \
+	node_modules/patternfly-react/dist/js/components/ListView/ListViewInfoItem.js \
+	node_modules/patternfly-react/dist/js/components/ListView/ListViewItem.js \
+	node_modules/patternfly-react/dist/js/components/ListView/ListViewLeft.js \
+	node_modules/patternfly-react/dist/js/components/ListView/ListViewMainInfo.js \
+	node_modules/patternfly-react/dist/js/components/ListView/ListViewRow.js \
+	node_modules/patternfly-react/dist/js/components/ListView/index.js \
+	node_modules/patternfly-react/dist/js/components/MenuItem/MenuItem.js \
+	node_modules/patternfly-react/dist/js/components/MenuItem/index.js \
+	node_modules/patternfly-react/dist/js/components/Modal/InnerComponents/CustomModalDialog.js \
+	node_modules/patternfly-react/dist/js/components/Modal/Modal.js \
+	node_modules/patternfly-react/dist/js/components/Modal/ModalCloseButton.js \
+	node_modules/patternfly-react/dist/js/components/Modal/index.js \
+	node_modules/patternfly-react/dist/js/components/Nav/Nav.js \
+	node_modules/patternfly-react/dist/js/components/Nav/NavItem.js \
+	node_modules/patternfly-react/dist/js/components/Nav/index.js \
+	node_modules/patternfly-react/dist/js/components/Navbar/Navbar.js \
+	node_modules/patternfly-react/dist/js/components/Navbar/index.js \
+	node_modules/patternfly-react/dist/js/components/Notification/Notification.js \
+	node_modules/patternfly-react/dist/js/components/Notification/NotificationContent.js \
+	node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawer.js \
+	node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerAccordion.js \
+	node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerDropDown.js \
+	node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanel.js \
+	node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanelAction.js \
+	node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanelActionLink.js \
+	node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanelBody.js \
+	node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanelCollapse.js \
+	node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanelCounter.js \
+	node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanelHeading.js \
+	node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanelTitle.js \
+	node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerTitle.js \
+	node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerToggle.js \
+	node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/index.js \
+	node_modules/patternfly-react/dist/js/components/Notification/NotificationInfo.js \
+	node_modules/patternfly-react/dist/js/components/Notification/NotificationInfoLeft.js \
+	node_modules/patternfly-react/dist/js/components/Notification/NotificationInfoRight.js \
+	node_modules/patternfly-react/dist/js/components/Notification/NotificationMessage.js \
+	node_modules/patternfly-react/dist/js/components/Notification/Wrappers/Icon.consts.js \
+	node_modules/patternfly-react/dist/js/components/Notification/Wrappers/NotificationDrawerPanelWrapper.js \
+	node_modules/patternfly-react/dist/js/components/Notification/Wrappers/NotificationDrawerWrapper.js \
+	node_modules/patternfly-react/dist/js/components/Notification/Wrappers/StatefulNotificationDrawerWrapper.js \
+	node_modules/patternfly-react/dist/js/components/Notification/Wrappers/StatefulToggleNotificationDrawerWrapper.js \
+	node_modules/patternfly-react/dist/js/components/Notification/Wrappers/index.js \
+	node_modules/patternfly-react/dist/js/components/Notification/index.js \
+	node_modules/patternfly-react/dist/js/components/OverlayTrigger/OverlayTrigger.js \
+	node_modules/patternfly-react/dist/js/components/OverlayTrigger/index.js \
+	node_modules/patternfly-react/dist/js/components/Pagination/Pager.js \
+	node_modules/patternfly-react/dist/js/components/Pagination/PaginationConstants.js \
+	node_modules/patternfly-react/dist/js/components/Pagination/PaginationRow.js \
+	node_modules/patternfly-react/dist/js/components/Pagination/PaginationRowAmountOfPages.js \
+	node_modules/patternfly-react/dist/js/components/Pagination/PaginationRowArrowIcon.js \
+	node_modules/patternfly-react/dist/js/components/Pagination/PaginationRowBack.js \
+	node_modules/patternfly-react/dist/js/components/Pagination/PaginationRowButtonGroup.js \
+	node_modules/patternfly-react/dist/js/components/Pagination/PaginationRowForward.js \
+	node_modules/patternfly-react/dist/js/components/Pagination/PaginationRowItems.js \
+	node_modules/patternfly-react/dist/js/components/Pagination/Paginator.js \
+	node_modules/patternfly-react/dist/js/components/Pagination/index.js \
+	node_modules/patternfly-react/dist/js/components/Pagination/paginate.js \
+	node_modules/patternfly-react/dist/js/components/Popover/Popover.js \
+	node_modules/patternfly-react/dist/js/components/Popover/index.js \
+	node_modules/patternfly-react/dist/js/components/ProgressBar/ProgressBar.js \
+	node_modules/patternfly-react/dist/js/components/ProgressBar/index.js \
+	node_modules/patternfly-react/dist/js/components/Slider/BootstrapSlider.js \
+	node_modules/patternfly-react/dist/js/components/Slider/Boundaries.js \
+	node_modules/patternfly-react/dist/js/components/Slider/DropdownMenu.js \
+	node_modules/patternfly-react/dist/js/components/Slider/Slider.js \
+	node_modules/patternfly-react/dist/js/components/Slider/index.js \
+	node_modules/patternfly-react/dist/js/components/Sort/Sort.js \
+	node_modules/patternfly-react/dist/js/components/Sort/SortDirectionSelector.js \
+	node_modules/patternfly-react/dist/js/components/Sort/SortTypeSelector.js \
+	node_modules/patternfly-react/dist/js/components/Sort/index.js \
+	node_modules/patternfly-react/dist/js/components/Spinner/Spinner.js \
+	node_modules/patternfly-react/dist/js/components/Spinner/index.js \
+	node_modules/patternfly-react/dist/js/components/Switch/Switch.js \
+	node_modules/patternfly-react/dist/js/components/Switch/SwitchConstants.js \
+	node_modules/patternfly-react/dist/js/components/Switch/index.js \
+	node_modules/patternfly-react/dist/js/components/Table/Formatters/actionHeaderCellFormatter.js \
+	node_modules/patternfly-react/dist/js/components/Table/Formatters/customHeaderFormattersDefinition.js \
+	node_modules/patternfly-react/dist/js/components/Table/Formatters/selectionCellFormatter.js \
+	node_modules/patternfly-react/dist/js/components/Table/Formatters/selectionHeaderCellFormatter.js \
+	node_modules/patternfly-react/dist/js/components/Table/Formatters/sortableHeaderCellFormatter.js \
+	node_modules/patternfly-react/dist/js/components/Table/Formatters/tableCellFormatter.js \
+	node_modules/patternfly-react/dist/js/components/Table/Table.js \
+	node_modules/patternfly-react/dist/js/components/Table/TableActions.js \
+	node_modules/patternfly-react/dist/js/components/Table/TableButton.js \
+	node_modules/patternfly-react/dist/js/components/Table/TableCell.js \
+	node_modules/patternfly-react/dist/js/components/Table/TableCheckbox.js \
+	node_modules/patternfly-react/dist/js/components/Table/TableConstants.js \
+	node_modules/patternfly-react/dist/js/components/Table/TableDropdownKebab.js \
+	node_modules/patternfly-react/dist/js/components/Table/TableHeading.js \
+	node_modules/patternfly-react/dist/js/components/Table/TablePfProvider.js \
+	node_modules/patternfly-react/dist/js/components/Table/TableSelectionCell.js \
+	node_modules/patternfly-react/dist/js/components/Table/TableSelectionHeading.js \
+	node_modules/patternfly-react/dist/js/components/Table/index.js \
+	node_modules/patternfly-react/dist/js/components/Tabs/Tab.js \
+	node_modules/patternfly-react/dist/js/components/Tabs/TabContainer.js \
+	node_modules/patternfly-react/dist/js/components/Tabs/TabContent.js \
+	node_modules/patternfly-react/dist/js/components/Tabs/TabPane.js \
+	node_modules/patternfly-react/dist/js/components/Tabs/Tabs.js \
+	node_modules/patternfly-react/dist/js/components/Tabs/index.js \
+	node_modules/patternfly-react/dist/js/components/ToastNotification/TimedToastNotification.js \
+	node_modules/patternfly-react/dist/js/components/ToastNotification/ToastNotification.js \
+	node_modules/patternfly-react/dist/js/components/ToastNotification/ToastNotificationList.js \
+	node_modules/patternfly-react/dist/js/components/ToastNotification/index.js \
+	node_modules/patternfly-react/dist/js/components/Toolbar/Toolbar.js \
+	node_modules/patternfly-react/dist/js/components/Toolbar/ToolbarConstants.js \
+	node_modules/patternfly-react/dist/js/components/Toolbar/ToolbarFind.js \
+	node_modules/patternfly-react/dist/js/components/Toolbar/ToolbarResults.js \
+	node_modules/patternfly-react/dist/js/components/Toolbar/ToolbarRightContent.js \
+	node_modules/patternfly-react/dist/js/components/Toolbar/ToolbarViewSelector.js \
+	node_modules/patternfly-react/dist/js/components/Toolbar/index.js \
+	node_modules/patternfly-react/dist/js/components/Tooltip/Tooltip.js \
+	node_modules/patternfly-react/dist/js/components/Tooltip/index.js \
+	node_modules/patternfly-react/dist/js/components/TreeView/TreeView.js \
+	node_modules/patternfly-react/dist/js/components/TreeView/TreeViewExpand.js \
+	node_modules/patternfly-react/dist/js/components/TreeView/TreeViewIcon.js \
+	node_modules/patternfly-react/dist/js/components/TreeView/TreeViewIndents.js \
+	node_modules/patternfly-react/dist/js/components/TreeView/TreeViewNode.js \
+	node_modules/patternfly-react/dist/js/components/TreeView/index.js \
+	node_modules/patternfly-react/dist/js/components/UtilizationBar/UtilizationBar.js \
+	node_modules/patternfly-react/dist/js/components/UtilizationBar/helpers.js \
+	node_modules/patternfly-react/dist/js/components/UtilizationBar/index.js \
+	node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNav.js \
+	node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavBadge.js \
+	node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavBrand.js \
+	node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavConstants.js \
+	node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavIconBar.js \
+	node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavItem.js \
+	node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavItemHelper.js \
+	node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavMasthead.js \
+	node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavSecondaryItem.js \
+	node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavTertiaryItem.js \
+	node_modules/patternfly-react/dist/js/components/VerticalNav/index.js \
+	node_modules/patternfly-react/dist/js/components/Wizard/Wizard.js \
+	node_modules/patternfly-react/dist/js/components/Wizard/WizardBody.js \
+	node_modules/patternfly-react/dist/js/components/Wizard/WizardContents.js \
+	node_modules/patternfly-react/dist/js/components/Wizard/WizardFooter.js \
+	node_modules/patternfly-react/dist/js/components/Wizard/WizardHeader.js \
+	node_modules/patternfly-react/dist/js/components/Wizard/WizardMain.js \
+	node_modules/patternfly-react/dist/js/components/Wizard/WizardReviewContent.js \
+	node_modules/patternfly-react/dist/js/components/Wizard/WizardReviewItem.js \
+	node_modules/patternfly-react/dist/js/components/Wizard/WizardReviewStep.js \
+	node_modules/patternfly-react/dist/js/components/Wizard/WizardReviewSteps.js \
+	node_modules/patternfly-react/dist/js/components/Wizard/WizardReviewSubStep.js \
+	node_modules/patternfly-react/dist/js/components/Wizard/WizardReviewSubSteps.js \
+	node_modules/patternfly-react/dist/js/components/Wizard/WizardRow.js \
+	node_modules/patternfly-react/dist/js/components/Wizard/WizardSidebar.js \
+	node_modules/patternfly-react/dist/js/components/Wizard/WizardSidebarGroup.js \
+	node_modules/patternfly-react/dist/js/components/Wizard/WizardSidebarGroupItem.js \
+	node_modules/patternfly-react/dist/js/components/Wizard/WizardStep.js \
+	node_modules/patternfly-react/dist/js/components/Wizard/WizardSteps.js \
+	node_modules/patternfly-react/dist/js/components/Wizard/WizardSubStep.js \
+	node_modules/patternfly-react/dist/js/components/Wizard/index.js \
+	node_modules/patternfly-react/dist/js/index.js \
+	node_modules/patternfly-react/package.json \
 	node_modules/patternfly/LICENSE.txt \
 	node_modules/patternfly/README.md \
+	node_modules/patternfly/dist/js/patternfly-settings-charts.js \
+	node_modules/patternfly/dist/js/patternfly-settings.js \
 	node_modules/patternfly/dist/less/color-variables.less \
 	node_modules/patternfly/dist/less/variables.less \
 	node_modules/patternfly/package.json \
@@ -176,6 +464,114 @@ storaged_INPUTS = \
 	node_modules/qunitjs/package.json \
 	node_modules/qunitjs/qunit/qunit.css \
 	node_modules/qunitjs/qunit/qunit.js \
+	node_modules/react-bootstrap/LICENSE \
+	node_modules/react-bootstrap/README.md \
+	node_modules/react-bootstrap/lib/Accordion.js \
+	node_modules/react-bootstrap/lib/Alert.js \
+	node_modules/react-bootstrap/lib/Badge.js \
+	node_modules/react-bootstrap/lib/Breadcrumb.js \
+	node_modules/react-bootstrap/lib/BreadcrumbItem.js \
+	node_modules/react-bootstrap/lib/Button.js \
+	node_modules/react-bootstrap/lib/ButtonGroup.js \
+	node_modules/react-bootstrap/lib/ButtonToolbar.js \
+	node_modules/react-bootstrap/lib/Carousel.js \
+	node_modules/react-bootstrap/lib/CarouselCaption.js \
+	node_modules/react-bootstrap/lib/CarouselItem.js \
+	node_modules/react-bootstrap/lib/Checkbox.js \
+	node_modules/react-bootstrap/lib/Clearfix.js \
+	node_modules/react-bootstrap/lib/CloseButton.js \
+	node_modules/react-bootstrap/lib/Col.js \
+	node_modules/react-bootstrap/lib/Collapse.js \
+	node_modules/react-bootstrap/lib/ControlLabel.js \
+	node_modules/react-bootstrap/lib/Dropdown.js \
+	node_modules/react-bootstrap/lib/DropdownButton.js \
+	node_modules/react-bootstrap/lib/DropdownMenu.js \
+	node_modules/react-bootstrap/lib/DropdownToggle.js \
+	node_modules/react-bootstrap/lib/Fade.js \
+	node_modules/react-bootstrap/lib/Form.js \
+	node_modules/react-bootstrap/lib/FormControl.js \
+	node_modules/react-bootstrap/lib/FormControlFeedback.js \
+	node_modules/react-bootstrap/lib/FormControlStatic.js \
+	node_modules/react-bootstrap/lib/FormGroup.js \
+	node_modules/react-bootstrap/lib/Glyphicon.js \
+	node_modules/react-bootstrap/lib/Grid.js \
+	node_modules/react-bootstrap/lib/HelpBlock.js \
+	node_modules/react-bootstrap/lib/Image.js \
+	node_modules/react-bootstrap/lib/InputGroup.js \
+	node_modules/react-bootstrap/lib/InputGroupAddon.js \
+	node_modules/react-bootstrap/lib/InputGroupButton.js \
+	node_modules/react-bootstrap/lib/Jumbotron.js \
+	node_modules/react-bootstrap/lib/Label.js \
+	node_modules/react-bootstrap/lib/ListGroup.js \
+	node_modules/react-bootstrap/lib/ListGroupItem.js \
+	node_modules/react-bootstrap/lib/Media.js \
+	node_modules/react-bootstrap/lib/MediaBody.js \
+	node_modules/react-bootstrap/lib/MediaHeading.js \
+	node_modules/react-bootstrap/lib/MediaLeft.js \
+	node_modules/react-bootstrap/lib/MediaList.js \
+	node_modules/react-bootstrap/lib/MediaListItem.js \
+	node_modules/react-bootstrap/lib/MediaRight.js \
+	node_modules/react-bootstrap/lib/MenuItem.js \
+	node_modules/react-bootstrap/lib/Modal.js \
+	node_modules/react-bootstrap/lib/ModalBody.js \
+	node_modules/react-bootstrap/lib/ModalDialog.js \
+	node_modules/react-bootstrap/lib/ModalFooter.js \
+	node_modules/react-bootstrap/lib/ModalHeader.js \
+	node_modules/react-bootstrap/lib/ModalTitle.js \
+	node_modules/react-bootstrap/lib/Nav.js \
+	node_modules/react-bootstrap/lib/NavDropdown.js \
+	node_modules/react-bootstrap/lib/NavItem.js \
+	node_modules/react-bootstrap/lib/Navbar.js \
+	node_modules/react-bootstrap/lib/NavbarBrand.js \
+	node_modules/react-bootstrap/lib/NavbarCollapse.js \
+	node_modules/react-bootstrap/lib/NavbarHeader.js \
+	node_modules/react-bootstrap/lib/NavbarToggle.js \
+	node_modules/react-bootstrap/lib/Overlay.js \
+	node_modules/react-bootstrap/lib/OverlayTrigger.js \
+	node_modules/react-bootstrap/lib/PageHeader.js \
+	node_modules/react-bootstrap/lib/PageItem.js \
+	node_modules/react-bootstrap/lib/Pager.js \
+	node_modules/react-bootstrap/lib/PagerItem.js \
+	node_modules/react-bootstrap/lib/Pagination.js \
+	node_modules/react-bootstrap/lib/PaginationItem.js \
+	node_modules/react-bootstrap/lib/Panel.js \
+	node_modules/react-bootstrap/lib/PanelBody.js \
+	node_modules/react-bootstrap/lib/PanelCollapse.js \
+	node_modules/react-bootstrap/lib/PanelFooter.js \
+	node_modules/react-bootstrap/lib/PanelGroup.js \
+	node_modules/react-bootstrap/lib/PanelHeading.js \
+	node_modules/react-bootstrap/lib/PanelTitle.js \
+	node_modules/react-bootstrap/lib/PanelToggle.js \
+	node_modules/react-bootstrap/lib/Popover.js \
+	node_modules/react-bootstrap/lib/ProgressBar.js \
+	node_modules/react-bootstrap/lib/Radio.js \
+	node_modules/react-bootstrap/lib/ResponsiveEmbed.js \
+	node_modules/react-bootstrap/lib/Row.js \
+	node_modules/react-bootstrap/lib/SafeAnchor.js \
+	node_modules/react-bootstrap/lib/SplitButton.js \
+	node_modules/react-bootstrap/lib/SplitToggle.js \
+	node_modules/react-bootstrap/lib/Tab.js \
+	node_modules/react-bootstrap/lib/TabContainer.js \
+	node_modules/react-bootstrap/lib/TabContent.js \
+	node_modules/react-bootstrap/lib/TabPane.js \
+	node_modules/react-bootstrap/lib/Table.js \
+	node_modules/react-bootstrap/lib/Tabs.js \
+	node_modules/react-bootstrap/lib/Thumbnail.js \
+	node_modules/react-bootstrap/lib/ToggleButton.js \
+	node_modules/react-bootstrap/lib/ToggleButtonGroup.js \
+	node_modules/react-bootstrap/lib/Tooltip.js \
+	node_modules/react-bootstrap/lib/Well.js \
+	node_modules/react-bootstrap/lib/index.js \
+	node_modules/react-bootstrap/lib/utils/PropTypes.js \
+	node_modules/react-bootstrap/lib/utils/StyleConfig.js \
+	node_modules/react-bootstrap/lib/utils/ValidComponentChildren.js \
+	node_modules/react-bootstrap/lib/utils/bootstrapUtils.js \
+	node_modules/react-bootstrap/lib/utils/capitalize.js \
+	node_modules/react-bootstrap/lib/utils/createChainedFunction.js \
+	node_modules/react-bootstrap/lib/utils/deprecationWarning.js \
+	node_modules/react-bootstrap/lib/utils/index.js \
+	node_modules/react-bootstrap/lib/utils/splitComponentProps.js \
+	node_modules/react-bootstrap/package.json \
 	node_modules/react-dom/LICENSE \
 	node_modules/react-dom/README.md \
 	node_modules/react-dom/cjs/react-dom.production.min.js \
@@ -195,7 +591,6 @@ storaged_INPUTS = \
 	pkg/lib/cockpit-components-onoff.css \
 	pkg/lib/cockpit-components-onoff.jsx \
 	pkg/lib/cockpit-components-select.jsx \
-	pkg/lib/cockpit-components-tooltip.jsx \
 	pkg/lib/inotify.py \
 	pkg/lib/journal.css \
 	pkg/lib/journal.js \
@@ -215,7 +610,6 @@ storaged_INPUTS = \
 	pkg/lib/qunit-tests.js \
 	pkg/lib/service.js \
 	pkg/lib/table.css \
-	pkg/lib/tooltip.css \
 	pkg/lib/variables.less \
 	pkg/storaged/block-details.jsx \
 	pkg/storaged/clevis-luks-passphrase.sh \
@@ -303,7 +697,7 @@ storaged_TESTS = \
 
 dist/storaged/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/jquery-flot/jquery.flot.js -N node_modules/jquery-flot/jquery.flot.selection.js -N node_modules/jquery-flot/jquery.flot.time.js -N node_modules/js-sha1/src/sha1.js -N node_modules/json-stable-stringify-without-jsonify/index.js -N node_modules/moment/locale/af.js -N node_modules/moment/locale/ar-dz.js -N node_modules/moment/locale/ar-kw.js -N node_modules/moment/locale/ar-ly.js -N node_modules/moment/locale/ar-ma.js -N node_modules/moment/locale/ar-sa.js -N node_modules/moment/locale/ar-tn.js -N node_modules/moment/locale/ar.js -N node_modules/moment/locale/az.js -N node_modules/moment/locale/be.js -N node_modules/moment/locale/bg.js -N node_modules/moment/locale/bm.js -N node_modules/moment/locale/bn.js -N node_modules/moment/locale/bo.js -N node_modules/moment/locale/br.js -N node_modules/moment/locale/bs.js -N node_modules/moment/locale/ca.js -N node_modules/moment/locale/cs.js -N node_modules/moment/locale/cv.js -N node_modules/moment/locale/cy.js -N node_modules/moment/locale/da.js -N node_modules/moment/locale/de-at.js -N node_modules/moment/locale/de-ch.js -N node_modules/moment/locale/de.js -N node_modules/moment/locale/dv.js -N node_modules/moment/locale/el.js -N node_modules/moment/locale/en-au.js -N node_modules/moment/locale/en-ca.js -N node_modules/moment/locale/en-gb.js -N node_modules/moment/locale/en-ie.js -N node_modules/moment/locale/en-il.js -N node_modules/moment/locale/en-nz.js -N node_modules/moment/locale/eo.js -N node_modules/moment/locale/es-do.js -N node_modules/moment/locale/es-us.js -N node_modules/moment/locale/es.js -N node_modules/moment/locale/et.js -N node_modules/moment/locale/eu.js -N node_modules/moment/locale/fa.js -N node_modules/moment/locale/fi.js -N node_modules/moment/locale/fo.js -N node_modules/moment/locale/fr-ca.js -N node_modules/moment/locale/fr-ch.js -N node_modules/moment/locale/fr.js -N node_modules/moment/locale/fy.js -N node_modules/moment/locale/gd.js -N node_modules/moment/locale/gl.js -N node_modules/moment/locale/gom-latn.js -N node_modules/moment/locale/gu.js -N node_modules/moment/locale/he.js -N node_modules/moment/locale/hi.js -N node_modules/moment/locale/hr.js -N node_modules/moment/locale/hu.js -N node_modules/moment/locale/hy-am.js -N node_modules/moment/locale/id.js -N node_modules/moment/locale/is.js -N node_modules/moment/locale/it.js -N node_modules/moment/locale/ja.js -N node_modules/moment/locale/jv.js -N node_modules/moment/locale/ka.js -N node_modules/moment/locale/kk.js -N node_modules/moment/locale/km.js -N node_modules/moment/locale/kn.js -N node_modules/moment/locale/ko.js -N node_modules/moment/locale/ky.js -N node_modules/moment/locale/lb.js -N node_modules/moment/locale/lo.js -N node_modules/moment/locale/lt.js -N node_modules/moment/locale/lv.js -N node_modules/moment/locale/me.js -N node_modules/moment/locale/mi.js -N node_modules/moment/locale/mk.js -N node_modules/moment/locale/ml.js -N node_modules/moment/locale/mn.js -N node_modules/moment/locale/mr.js -N node_modules/moment/locale/ms-my.js -N node_modules/moment/locale/ms.js -N node_modules/moment/locale/mt.js -N node_modules/moment/locale/my.js -N node_modules/moment/locale/nb.js -N node_modules/moment/locale/ne.js -N node_modules/moment/locale/nl-be.js -N node_modules/moment/locale/nl.js -N node_modules/moment/locale/nn.js -N node_modules/moment/locale/pa-in.js -N node_modules/moment/locale/pl.js -N node_modules/moment/locale/pt-br.js -N node_modules/moment/locale/pt.js -N node_modules/moment/locale/ro.js -N node_modules/moment/locale/ru.js -N node_modules/moment/locale/sd.js -N node_modules/moment/locale/se.js -N node_modules/moment/locale/si.js -N node_modules/moment/locale/sk.js -N node_modules/moment/locale/sl.js -N node_modules/moment/locale/sq.js -N node_modules/moment/locale/sr-cyrl.js -N node_modules/moment/locale/sr.js -N node_modules/moment/locale/ss.js -N node_modules/moment/locale/sv.js -N node_modules/moment/locale/sw.js -N node_modules/moment/locale/ta.js -N node_modules/moment/locale/te.js -N node_modules/moment/locale/tet.js -N node_modules/moment/locale/tg.js -N node_modules/moment/locale/th.js -N node_modules/moment/locale/tl-ph.js -N node_modules/moment/locale/tlh.js -N node_modules/moment/locale/tr.js -N node_modules/moment/locale/tzl.js -N node_modules/moment/locale/tzm-latn.js -N node_modules/moment/locale/tzm.js -N node_modules/moment/locale/ug-cn.js -N node_modules/moment/locale/uk.js -N node_modules/moment/locale/ur.js -N node_modules/moment/locale/uz-latn.js -N node_modules/moment/locale/uz.js -N node_modules/moment/locale/vi.js -N node_modules/moment/locale/x-pseudo.js -N node_modules/moment/locale/yo.js -N node_modules/moment/locale/zh-cn.js -N node_modules/moment/locale/zh-hk.js -N node_modules/moment/locale/zh-tw.js -N node_modules/moment/moment.js -N node_modules/mustache/mustache.js -N node_modules/patternfly/dist/less/color-variables.less -N node_modules/patternfly/dist/less/variables.less -N node_modules/promise/lib/core.js -N node_modules/promise/lib/es6-extensions.js -N node_modules/promise/polyfill-done.js -N node_modules/promise/polyfill.js -N node_modules/prop-types/factoryWithThrowingShims.js -N node_modules/prop-types/index.js -N node_modules/prop-types/lib/ReactPropTypesSecret.js -N node_modules/qunit-tap/lib/qunit-tap.js -N node_modules/qunitjs/qunit/qunit.css -N node_modules/qunitjs/qunit/qunit.js -N node_modules/react-dom/cjs/react-dom.production.min.js -N node_modules/react-dom/index.js -N node_modules/react/cjs/react.production.min.js -N node_modules/react/index.js -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-install-dialog.css -N pkg/lib/cockpit-components-install-dialog.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-logs-panel.jsx -N pkg/lib/cockpit-components-onoff.css -N pkg/lib/cockpit-components-onoff.jsx -N pkg/lib/cockpit-components-select.jsx -N pkg/lib/cockpit-components-tooltip.jsx -N pkg/lib/inotify.py -N pkg/lib/journal.css -N pkg/lib/journal.js -N pkg/lib/journal_day_header.mustache -N pkg/lib/journal_line.mustache -N pkg/lib/journal_reboot.mustache -N pkg/lib/listing.less -N pkg/lib/mustache.js -N pkg/lib/packagekit.es6 -N pkg/lib/page.css -N pkg/lib/plot.css -N pkg/lib/plot.es6 -N pkg/lib/polyfills.js -N pkg/lib/python.jsx -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/service.js -N pkg/lib/table.css -N pkg/lib/tooltip.css -N pkg/lib/variables.less -N pkg/storaged/block-details.jsx -N pkg/storaged/clevis-luks-passphrase.sh -N pkg/storaged/client.js -N pkg/storaged/content-views.jsx -N pkg/storaged/crypto-keyslots.jsx -N pkg/storaged/crypto-tab.jsx -N pkg/storaged/details.jsx -N pkg/storaged/devices.js -N pkg/storaged/dialog.jsx -N pkg/storaged/drive-details.jsx -N pkg/storaged/drives-panel.jsx -N pkg/storaged/format-dialog.jsx -N pkg/storaged/fsys-panel.jsx -N pkg/storaged/fsys-tab.jsx -N pkg/storaged/images/storage-array.png -N pkg/storaged/images/storage-disk.png -N pkg/storaged/index.html -N pkg/storaged/iscsi-panel.jsx -N pkg/storaged/jobs-panel.jsx -N pkg/storaged/logs-panel.jsx -N pkg/storaged/luksmeta-monitor-hack.py -N pkg/storaged/lvol-tabs.jsx -N pkg/storaged/mdraid-details.jsx -N pkg/storaged/mdraids-panel.jsx -N pkg/storaged/nfs-details.jsx -N pkg/storaged/nfs-mounts.py -N pkg/storaged/nfs-panel.jsx -N pkg/storaged/optional-panel.jsx -N pkg/storaged/others-panel.jsx -N pkg/storaged/overview.jsx -N pkg/storaged/part-tab.jsx -N pkg/storaged/plot.jsx -N pkg/storaged/pvol-tabs.jsx -N pkg/storaged/storage-controls.jsx -N pkg/storaged/storage.css -N pkg/storaged/swap-tab.jsx -N pkg/storaged/test-util.js -N pkg/storaged/unrecognized-tab.jsx -N pkg/storaged/utils.js -N pkg/storaged/utilsx.jsx -N pkg/storaged/vdo-details.jsx -N pkg/storaged/vdo-monitor.py -N pkg/storaged/vdos-panel.jsx -N pkg/storaged/vgroup-details.jsx -N pkg/storaged/vgroups-panel.jsx $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/c3/c3.js -N node_modules/d3/d3.js -N node_modules/jquery-flot/jquery.flot.js -N node_modules/jquery-flot/jquery.flot.selection.js -N node_modules/jquery-flot/jquery.flot.time.js -N node_modules/js-sha1/src/sha1.js -N node_modules/json-stable-stringify-without-jsonify/index.js -N node_modules/moment/locale/af.js -N node_modules/moment/locale/ar-dz.js -N node_modules/moment/locale/ar-kw.js -N node_modules/moment/locale/ar-ly.js -N node_modules/moment/locale/ar-ma.js -N node_modules/moment/locale/ar-sa.js -N node_modules/moment/locale/ar-tn.js -N node_modules/moment/locale/ar.js -N node_modules/moment/locale/az.js -N node_modules/moment/locale/be.js -N node_modules/moment/locale/bg.js -N node_modules/moment/locale/bm.js -N node_modules/moment/locale/bn.js -N node_modules/moment/locale/bo.js -N node_modules/moment/locale/br.js -N node_modules/moment/locale/bs.js -N node_modules/moment/locale/ca.js -N node_modules/moment/locale/cs.js -N node_modules/moment/locale/cv.js -N node_modules/moment/locale/cy.js -N node_modules/moment/locale/da.js -N node_modules/moment/locale/de-at.js -N node_modules/moment/locale/de-ch.js -N node_modules/moment/locale/de.js -N node_modules/moment/locale/dv.js -N node_modules/moment/locale/el.js -N node_modules/moment/locale/en-au.js -N node_modules/moment/locale/en-ca.js -N node_modules/moment/locale/en-gb.js -N node_modules/moment/locale/en-ie.js -N node_modules/moment/locale/en-il.js -N node_modules/moment/locale/en-nz.js -N node_modules/moment/locale/eo.js -N node_modules/moment/locale/es-do.js -N node_modules/moment/locale/es-us.js -N node_modules/moment/locale/es.js -N node_modules/moment/locale/et.js -N node_modules/moment/locale/eu.js -N node_modules/moment/locale/fa.js -N node_modules/moment/locale/fi.js -N node_modules/moment/locale/fo.js -N node_modules/moment/locale/fr-ca.js -N node_modules/moment/locale/fr-ch.js -N node_modules/moment/locale/fr.js -N node_modules/moment/locale/fy.js -N node_modules/moment/locale/gd.js -N node_modules/moment/locale/gl.js -N node_modules/moment/locale/gom-latn.js -N node_modules/moment/locale/gu.js -N node_modules/moment/locale/he.js -N node_modules/moment/locale/hi.js -N node_modules/moment/locale/hr.js -N node_modules/moment/locale/hu.js -N node_modules/moment/locale/hy-am.js -N node_modules/moment/locale/id.js -N node_modules/moment/locale/is.js -N node_modules/moment/locale/it.js -N node_modules/moment/locale/ja.js -N node_modules/moment/locale/jv.js -N node_modules/moment/locale/ka.js -N node_modules/moment/locale/kk.js -N node_modules/moment/locale/km.js -N node_modules/moment/locale/kn.js -N node_modules/moment/locale/ko.js -N node_modules/moment/locale/ky.js -N node_modules/moment/locale/lb.js -N node_modules/moment/locale/lo.js -N node_modules/moment/locale/lt.js -N node_modules/moment/locale/lv.js -N node_modules/moment/locale/me.js -N node_modules/moment/locale/mi.js -N node_modules/moment/locale/mk.js -N node_modules/moment/locale/ml.js -N node_modules/moment/locale/mn.js -N node_modules/moment/locale/mr.js -N node_modules/moment/locale/ms-my.js -N node_modules/moment/locale/ms.js -N node_modules/moment/locale/mt.js -N node_modules/moment/locale/my.js -N node_modules/moment/locale/nb.js -N node_modules/moment/locale/ne.js -N node_modules/moment/locale/nl-be.js -N node_modules/moment/locale/nl.js -N node_modules/moment/locale/nn.js -N node_modules/moment/locale/pa-in.js -N node_modules/moment/locale/pl.js -N node_modules/moment/locale/pt-br.js -N node_modules/moment/locale/pt.js -N node_modules/moment/locale/ro.js -N node_modules/moment/locale/ru.js -N node_modules/moment/locale/sd.js -N node_modules/moment/locale/se.js -N node_modules/moment/locale/si.js -N node_modules/moment/locale/sk.js -N node_modules/moment/locale/sl.js -N node_modules/moment/locale/sq.js -N node_modules/moment/locale/sr-cyrl.js -N node_modules/moment/locale/sr.js -N node_modules/moment/locale/ss.js -N node_modules/moment/locale/sv.js -N node_modules/moment/locale/sw.js -N node_modules/moment/locale/ta.js -N node_modules/moment/locale/te.js -N node_modules/moment/locale/tet.js -N node_modules/moment/locale/tg.js -N node_modules/moment/locale/th.js -N node_modules/moment/locale/tl-ph.js -N node_modules/moment/locale/tlh.js -N node_modules/moment/locale/tr.js -N node_modules/moment/locale/tzl.js -N node_modules/moment/locale/tzm-latn.js -N node_modules/moment/locale/tzm.js -N node_modules/moment/locale/ug-cn.js -N node_modules/moment/locale/uk.js -N node_modules/moment/locale/ur.js -N node_modules/moment/locale/uz-latn.js -N node_modules/moment/locale/uz.js -N node_modules/moment/locale/vi.js -N node_modules/moment/locale/x-pseudo.js -N node_modules/moment/locale/yo.js -N node_modules/moment/locale/zh-cn.js -N node_modules/moment/locale/zh-hk.js -N node_modules/moment/locale/zh-tw.js -N node_modules/moment/moment.js -N node_modules/mustache/mustache.js -N node_modules/patternfly-react/dist/js/common/Timer.js -N node_modules/patternfly-react/dist/js/common/controlled.js -N node_modules/patternfly-react/dist/js/common/helpers.js -N node_modules/patternfly-react/dist/js/common/patternfly.js -N node_modules/patternfly-react/dist/js/components/AboutModal/AboutModal.js -N node_modules/patternfly-react/dist/js/components/AboutModal/AboutModalVersionItem.js -N node_modules/patternfly-react/dist/js/components/AboutModal/AboutModalVersions.js -N node_modules/patternfly-react/dist/js/components/AboutModal/index.js -N node_modules/patternfly-react/dist/js/components/Alert/Alert.js -N node_modules/patternfly-react/dist/js/components/Alert/AlertConstants.js -N node_modules/patternfly-react/dist/js/components/Alert/helpers.js -N node_modules/patternfly-react/dist/js/components/Alert/index.js -N node_modules/patternfly-react/dist/js/components/Badge/Badge.js -N node_modules/patternfly-react/dist/js/components/Badge/index.js -N node_modules/patternfly-react/dist/js/components/Breadcrumb/Breadcrumb.js -N node_modules/patternfly-react/dist/js/components/Breadcrumb/index.js -N node_modules/patternfly-react/dist/js/components/Button/Button.js -N node_modules/patternfly-react/dist/js/components/Button/ButtonConstants.js -N node_modules/patternfly-react/dist/js/components/Button/ButtonGroup.js -N node_modules/patternfly-react/dist/js/components/Button/DropdownButton.js -N node_modules/patternfly-react/dist/js/components/Button/SplitButton.js -N node_modules/patternfly-react/dist/js/components/Button/index.js -N node_modules/patternfly-react/dist/js/components/Cards/AggregateStatusCard/AggregateStatusCount.js -N node_modules/patternfly-react/dist/js/components/Cards/AggregateStatusCard/AggregateStatusNotification.js -N node_modules/patternfly-react/dist/js/components/Cards/AggregateStatusCard/AggregateStatusNotifications.js -N node_modules/patternfly-react/dist/js/components/Cards/AggregateStatusCard/index.js -N node_modules/patternfly-react/dist/js/components/Cards/Card.js -N node_modules/patternfly-react/dist/js/components/Cards/CardBody.js -N node_modules/patternfly-react/dist/js/components/Cards/CardDropdownButton.js -N node_modules/patternfly-react/dist/js/components/Cards/CardFooter.js -N node_modules/patternfly-react/dist/js/components/Cards/CardGrid.js -N node_modules/patternfly-react/dist/js/components/Cards/CardHeading.js -N node_modules/patternfly-react/dist/js/components/Cards/CardHeightMatching.js -N node_modules/patternfly-react/dist/js/components/Cards/CardLink.js -N node_modules/patternfly-react/dist/js/components/Cards/CardTitle.js -N node_modules/patternfly-react/dist/js/components/Cards/UtilizationTrendCard/UtilizationCard.js -N node_modules/patternfly-react/dist/js/components/Cards/UtilizationTrendCard/UtilizationCardDetails.js -N node_modules/patternfly-react/dist/js/components/Cards/UtilizationTrendCard/UtilizationCardDetailsCount.js -N node_modules/patternfly-react/dist/js/components/Cards/UtilizationTrendCard/UtilizationCardDetailsDesc.js -N node_modules/patternfly-react/dist/js/components/Cards/UtilizationTrendCard/UtilizationCardDetailsLine1.js -N node_modules/patternfly-react/dist/js/components/Cards/UtilizationTrendCard/UtilizationCardDetailsLine2.js -N node_modules/patternfly-react/dist/js/components/Cards/UtilizationTrendCard/index.js -N node_modules/patternfly-react/dist/js/components/Cards/index.js -N node_modules/patternfly-react/dist/js/components/Chart/AreaChart.js -N node_modules/patternfly-react/dist/js/components/Chart/BarChart.js -N node_modules/patternfly-react/dist/js/components/Chart/ChartConstants.js -N node_modules/patternfly-react/dist/js/components/Chart/DonutChart.js -N node_modules/patternfly-react/dist/js/components/Chart/GroupedBarChart.js -N node_modules/patternfly-react/dist/js/components/Chart/LineChart.js -N node_modules/patternfly-react/dist/js/components/Chart/PieChart.js -N node_modules/patternfly-react/dist/js/components/Chart/SingleAreaChart.js -N node_modules/patternfly-react/dist/js/components/Chart/SingleLineChart.js -N node_modules/patternfly-react/dist/js/components/Chart/SparklineChart.js -N node_modules/patternfly-react/dist/js/components/Chart/StackedBarChart.js -N node_modules/patternfly-react/dist/js/components/Chart/index.js -N node_modules/patternfly-react/dist/js/components/Dropdown/Dropdown.js -N node_modules/patternfly-react/dist/js/components/Dropdown/NavDropdown.js -N node_modules/patternfly-react/dist/js/components/Dropdown/index.js -N node_modules/patternfly-react/dist/js/components/DropdownKebab/DropdownKebab.js -N node_modules/patternfly-react/dist/js/components/DropdownKebab/index.js -N node_modules/patternfly-react/dist/js/components/EmptyState/EmptyState.js -N node_modules/patternfly-react/dist/js/components/EmptyState/EmptyStateAction.js -N node_modules/patternfly-react/dist/js/components/EmptyState/EmptyStateHelp.js -N node_modules/patternfly-react/dist/js/components/EmptyState/EmptyStateIcon.js -N node_modules/patternfly-react/dist/js/components/EmptyState/EmptyStateInfo.js -N node_modules/patternfly-react/dist/js/components/EmptyState/EmptyStateTitle.js -N node_modules/patternfly-react/dist/js/components/EmptyState/index.js -N node_modules/patternfly-react/dist/js/components/FieldLevelHelp/FieldLevelHelp.js -N node_modules/patternfly-react/dist/js/components/FieldLevelHelp/index.js -N node_modules/patternfly-react/dist/js/components/Filter/Filter.js -N node_modules/patternfly-react/dist/js/components/Filter/FilterActiveLabel.js -N node_modules/patternfly-react/dist/js/components/Filter/FilterCategorySelector.js -N node_modules/patternfly-react/dist/js/components/Filter/FilterCategoryValueSelector.js -N node_modules/patternfly-react/dist/js/components/Filter/FilterItem.js -N node_modules/patternfly-react/dist/js/components/Filter/FilterList.js -N node_modules/patternfly-react/dist/js/components/Filter/FilterTypeSelector.js -N node_modules/patternfly-react/dist/js/components/Filter/FilterValueSelector.js -N node_modules/patternfly-react/dist/js/components/Filter/index.js -N node_modules/patternfly-react/dist/js/components/Form/Checkbox.js -N node_modules/patternfly-react/dist/js/components/Form/ControlLabel.js -N node_modules/patternfly-react/dist/js/components/Form/Form.js -N node_modules/patternfly-react/dist/js/components/Form/FormControl.js -N node_modules/patternfly-react/dist/js/components/Form/FormGroup.js -N node_modules/patternfly-react/dist/js/components/Form/HelpBlock.js -N node_modules/patternfly-react/dist/js/components/Form/InputGroup.js -N node_modules/patternfly-react/dist/js/components/Form/Radio.js -N node_modules/patternfly-react/dist/js/components/Form/index.js -N node_modules/patternfly-react/dist/js/components/Grid/Clearfix.js -N node_modules/patternfly-react/dist/js/components/Grid/Col.js -N node_modules/patternfly-react/dist/js/components/Grid/Grid.js -N node_modules/patternfly-react/dist/js/components/Grid/Row.js -N node_modules/patternfly-react/dist/js/components/Grid/index.js -N node_modules/patternfly-react/dist/js/components/Icon/Icon.js -N node_modules/patternfly-react/dist/js/components/Icon/InnerComponents/PatternflyIcon.js -N node_modules/patternfly-react/dist/js/components/Icon/index.js -N node_modules/patternfly-react/dist/js/components/InfoTip/InfoTip.js -N node_modules/patternfly-react/dist/js/components/InfoTip/InfoTipMenu.js -N node_modules/patternfly-react/dist/js/components/InfoTip/InfoTipMenuFooter.js -N node_modules/patternfly-react/dist/js/components/InfoTip/InfoTipMenuItemIcon.js -N node_modules/patternfly-react/dist/js/components/InfoTip/InfoTipToggle.js -N node_modules/patternfly-react/dist/js/components/InfoTip/index.js -N node_modules/patternfly-react/dist/js/components/Label/DisposableLabel.js -N node_modules/patternfly-react/dist/js/components/Label/Label.js -N node_modules/patternfly-react/dist/js/components/Label/RemoveButton.js -N node_modules/patternfly-react/dist/js/components/Label/index.js -N node_modules/patternfly-react/dist/js/components/ListGroup/ListGroup.js -N node_modules/patternfly-react/dist/js/components/ListGroup/ListGroupItem.js -N node_modules/patternfly-react/dist/js/components/ListGroup/index.js -N node_modules/patternfly-react/dist/js/components/ListView/ListView.js -N node_modules/patternfly-react/dist/js/components/ListView/ListViewActions.js -N node_modules/patternfly-react/dist/js/components/ListView/ListViewAdditionalInfo.js -N node_modules/patternfly-react/dist/js/components/ListView/ListViewBody.js -N node_modules/patternfly-react/dist/js/components/ListView/ListViewCheckbox.js -N node_modules/patternfly-react/dist/js/components/ListView/ListViewDescription.js -N node_modules/patternfly-react/dist/js/components/ListView/ListViewDescriptionHeading.js -N node_modules/patternfly-react/dist/js/components/ListView/ListViewDescriptionText.js -N node_modules/patternfly-react/dist/js/components/ListView/ListViewExpand.js -N node_modules/patternfly-react/dist/js/components/ListView/ListViewGroupItem.js -N node_modules/patternfly-react/dist/js/components/ListView/ListViewGroupItemContainer.js -N node_modules/patternfly-react/dist/js/components/ListView/ListViewGroupItemHeader.js -N node_modules/patternfly-react/dist/js/components/ListView/ListViewIcon.js -N node_modules/patternfly-react/dist/js/components/ListView/ListViewInfoItem.js -N node_modules/patternfly-react/dist/js/components/ListView/ListViewItem.js -N node_modules/patternfly-react/dist/js/components/ListView/ListViewLeft.js -N node_modules/patternfly-react/dist/js/components/ListView/ListViewMainInfo.js -N node_modules/patternfly-react/dist/js/components/ListView/ListViewRow.js -N node_modules/patternfly-react/dist/js/components/ListView/index.js -N node_modules/patternfly-react/dist/js/components/MenuItem/MenuItem.js -N node_modules/patternfly-react/dist/js/components/MenuItem/index.js -N node_modules/patternfly-react/dist/js/components/Modal/InnerComponents/CustomModalDialog.js -N node_modules/patternfly-react/dist/js/components/Modal/Modal.js -N node_modules/patternfly-react/dist/js/components/Modal/ModalCloseButton.js -N node_modules/patternfly-react/dist/js/components/Modal/index.js -N node_modules/patternfly-react/dist/js/components/Nav/Nav.js -N node_modules/patternfly-react/dist/js/components/Nav/NavItem.js -N node_modules/patternfly-react/dist/js/components/Nav/index.js -N node_modules/patternfly-react/dist/js/components/Navbar/Navbar.js -N node_modules/patternfly-react/dist/js/components/Navbar/index.js -N node_modules/patternfly-react/dist/js/components/Notification/Notification.js -N node_modules/patternfly-react/dist/js/components/Notification/NotificationContent.js -N node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawer.js -N node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerAccordion.js -N node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerDropDown.js -N node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanel.js -N node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanelAction.js -N node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanelActionLink.js -N node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanelBody.js -N node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanelCollapse.js -N node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanelCounter.js -N node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanelHeading.js -N node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanelTitle.js -N node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerTitle.js -N node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerToggle.js -N node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/index.js -N node_modules/patternfly-react/dist/js/components/Notification/NotificationInfo.js -N node_modules/patternfly-react/dist/js/components/Notification/NotificationInfoLeft.js -N node_modules/patternfly-react/dist/js/components/Notification/NotificationInfoRight.js -N node_modules/patternfly-react/dist/js/components/Notification/NotificationMessage.js -N node_modules/patternfly-react/dist/js/components/Notification/Wrappers/Icon.consts.js -N node_modules/patternfly-react/dist/js/components/Notification/Wrappers/NotificationDrawerPanelWrapper.js -N node_modules/patternfly-react/dist/js/components/Notification/Wrappers/NotificationDrawerWrapper.js -N node_modules/patternfly-react/dist/js/components/Notification/Wrappers/StatefulNotificationDrawerWrapper.js -N node_modules/patternfly-react/dist/js/components/Notification/Wrappers/StatefulToggleNotificationDrawerWrapper.js -N node_modules/patternfly-react/dist/js/components/Notification/Wrappers/index.js -N node_modules/patternfly-react/dist/js/components/Notification/index.js -N node_modules/patternfly-react/dist/js/components/OverlayTrigger/OverlayTrigger.js -N node_modules/patternfly-react/dist/js/components/OverlayTrigger/index.js -N node_modules/patternfly-react/dist/js/components/Pagination/Pager.js -N node_modules/patternfly-react/dist/js/components/Pagination/PaginationConstants.js -N node_modules/patternfly-react/dist/js/components/Pagination/PaginationRow.js -N node_modules/patternfly-react/dist/js/components/Pagination/PaginationRowAmountOfPages.js -N node_modules/patternfly-react/dist/js/components/Pagination/PaginationRowArrowIcon.js -N node_modules/patternfly-react/dist/js/components/Pagination/PaginationRowBack.js -N node_modules/patternfly-react/dist/js/components/Pagination/PaginationRowButtonGroup.js -N node_modules/patternfly-react/dist/js/components/Pagination/PaginationRowForward.js -N node_modules/patternfly-react/dist/js/components/Pagination/PaginationRowItems.js -N node_modules/patternfly-react/dist/js/components/Pagination/Paginator.js -N node_modules/patternfly-react/dist/js/components/Pagination/index.js -N node_modules/patternfly-react/dist/js/components/Pagination/paginate.js -N node_modules/patternfly-react/dist/js/components/Popover/Popover.js -N node_modules/patternfly-react/dist/js/components/Popover/index.js -N node_modules/patternfly-react/dist/js/components/ProgressBar/ProgressBar.js -N node_modules/patternfly-react/dist/js/components/ProgressBar/index.js -N node_modules/patternfly-react/dist/js/components/Slider/BootstrapSlider.js -N node_modules/patternfly-react/dist/js/components/Slider/Boundaries.js -N node_modules/patternfly-react/dist/js/components/Slider/DropdownMenu.js -N node_modules/patternfly-react/dist/js/components/Slider/Slider.js -N node_modules/patternfly-react/dist/js/components/Slider/index.js -N node_modules/patternfly-react/dist/js/components/Sort/Sort.js -N node_modules/patternfly-react/dist/js/components/Sort/SortDirectionSelector.js -N node_modules/patternfly-react/dist/js/components/Sort/SortTypeSelector.js -N node_modules/patternfly-react/dist/js/components/Sort/index.js -N node_modules/patternfly-react/dist/js/components/Spinner/Spinner.js -N node_modules/patternfly-react/dist/js/components/Spinner/index.js -N node_modules/patternfly-react/dist/js/components/Switch/Switch.js -N node_modules/patternfly-react/dist/js/components/Switch/SwitchConstants.js -N node_modules/patternfly-react/dist/js/components/Switch/index.js -N node_modules/patternfly-react/dist/js/components/Table/Formatters/actionHeaderCellFormatter.js -N node_modules/patternfly-react/dist/js/components/Table/Formatters/customHeaderFormattersDefinition.js -N node_modules/patternfly-react/dist/js/components/Table/Formatters/selectionCellFormatter.js -N node_modules/patternfly-react/dist/js/components/Table/Formatters/selectionHeaderCellFormatter.js -N node_modules/patternfly-react/dist/js/components/Table/Formatters/sortableHeaderCellFormatter.js -N node_modules/patternfly-react/dist/js/components/Table/Formatters/tableCellFormatter.js -N node_modules/patternfly-react/dist/js/components/Table/Table.js -N node_modules/patternfly-react/dist/js/components/Table/TableActions.js -N node_modules/patternfly-react/dist/js/components/Table/TableButton.js -N node_modules/patternfly-react/dist/js/components/Table/TableCell.js -N node_modules/patternfly-react/dist/js/components/Table/TableCheckbox.js -N node_modules/patternfly-react/dist/js/components/Table/TableConstants.js -N node_modules/patternfly-react/dist/js/components/Table/TableDropdownKebab.js -N node_modules/patternfly-react/dist/js/components/Table/TableHeading.js -N node_modules/patternfly-react/dist/js/components/Table/TablePfProvider.js -N node_modules/patternfly-react/dist/js/components/Table/TableSelectionCell.js -N node_modules/patternfly-react/dist/js/components/Table/TableSelectionHeading.js -N node_modules/patternfly-react/dist/js/components/Table/index.js -N node_modules/patternfly-react/dist/js/components/Tabs/Tab.js -N node_modules/patternfly-react/dist/js/components/Tabs/TabContainer.js -N node_modules/patternfly-react/dist/js/components/Tabs/TabContent.js -N node_modules/patternfly-react/dist/js/components/Tabs/TabPane.js -N node_modules/patternfly-react/dist/js/components/Tabs/Tabs.js -N node_modules/patternfly-react/dist/js/components/Tabs/index.js -N node_modules/patternfly-react/dist/js/components/ToastNotification/TimedToastNotification.js -N node_modules/patternfly-react/dist/js/components/ToastNotification/ToastNotification.js -N node_modules/patternfly-react/dist/js/components/ToastNotification/ToastNotificationList.js -N node_modules/patternfly-react/dist/js/components/ToastNotification/index.js -N node_modules/patternfly-react/dist/js/components/Toolbar/Toolbar.js -N node_modules/patternfly-react/dist/js/components/Toolbar/ToolbarConstants.js -N node_modules/patternfly-react/dist/js/components/Toolbar/ToolbarFind.js -N node_modules/patternfly-react/dist/js/components/Toolbar/ToolbarResults.js -N node_modules/patternfly-react/dist/js/components/Toolbar/ToolbarRightContent.js -N node_modules/patternfly-react/dist/js/components/Toolbar/ToolbarViewSelector.js -N node_modules/patternfly-react/dist/js/components/Toolbar/index.js -N node_modules/patternfly-react/dist/js/components/Tooltip/Tooltip.js -N node_modules/patternfly-react/dist/js/components/Tooltip/index.js -N node_modules/patternfly-react/dist/js/components/TreeView/TreeView.js -N node_modules/patternfly-react/dist/js/components/TreeView/TreeViewExpand.js -N node_modules/patternfly-react/dist/js/components/TreeView/TreeViewIcon.js -N node_modules/patternfly-react/dist/js/components/TreeView/TreeViewIndents.js -N node_modules/patternfly-react/dist/js/components/TreeView/TreeViewNode.js -N node_modules/patternfly-react/dist/js/components/TreeView/index.js -N node_modules/patternfly-react/dist/js/components/UtilizationBar/UtilizationBar.js -N node_modules/patternfly-react/dist/js/components/UtilizationBar/helpers.js -N node_modules/patternfly-react/dist/js/components/UtilizationBar/index.js -N node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNav.js -N node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavBadge.js -N node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavBrand.js -N node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavConstants.js -N node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavIconBar.js -N node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavItem.js -N node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavItemHelper.js -N node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavMasthead.js -N node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavSecondaryItem.js -N node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavTertiaryItem.js -N node_modules/patternfly-react/dist/js/components/VerticalNav/index.js -N node_modules/patternfly-react/dist/js/components/Wizard/Wizard.js -N node_modules/patternfly-react/dist/js/components/Wizard/WizardBody.js -N node_modules/patternfly-react/dist/js/components/Wizard/WizardContents.js -N node_modules/patternfly-react/dist/js/components/Wizard/WizardFooter.js -N node_modules/patternfly-react/dist/js/components/Wizard/WizardHeader.js -N node_modules/patternfly-react/dist/js/components/Wizard/WizardMain.js -N node_modules/patternfly-react/dist/js/components/Wizard/WizardReviewContent.js -N node_modules/patternfly-react/dist/js/components/Wizard/WizardReviewItem.js -N node_modules/patternfly-react/dist/js/components/Wizard/WizardReviewStep.js -N node_modules/patternfly-react/dist/js/components/Wizard/WizardReviewSteps.js -N node_modules/patternfly-react/dist/js/components/Wizard/WizardReviewSubStep.js -N node_modules/patternfly-react/dist/js/components/Wizard/WizardReviewSubSteps.js -N node_modules/patternfly-react/dist/js/components/Wizard/WizardRow.js -N node_modules/patternfly-react/dist/js/components/Wizard/WizardSidebar.js -N node_modules/patternfly-react/dist/js/components/Wizard/WizardSidebarGroup.js -N node_modules/patternfly-react/dist/js/components/Wizard/WizardSidebarGroupItem.js -N node_modules/patternfly-react/dist/js/components/Wizard/WizardStep.js -N node_modules/patternfly-react/dist/js/components/Wizard/WizardSteps.js -N node_modules/patternfly-react/dist/js/components/Wizard/WizardSubStep.js -N node_modules/patternfly-react/dist/js/components/Wizard/index.js -N node_modules/patternfly-react/dist/js/index.js -N node_modules/patternfly/dist/js/patternfly-settings-charts.js -N node_modules/patternfly/dist/js/patternfly-settings.js -N node_modules/patternfly/dist/less/color-variables.less -N node_modules/patternfly/dist/less/variables.less -N node_modules/promise/lib/core.js -N node_modules/promise/lib/es6-extensions.js -N node_modules/promise/polyfill-done.js -N node_modules/promise/polyfill.js -N node_modules/prop-types/factoryWithThrowingShims.js -N node_modules/prop-types/index.js -N node_modules/prop-types/lib/ReactPropTypesSecret.js -N node_modules/qunit-tap/lib/qunit-tap.js -N node_modules/qunitjs/qunit/qunit.css -N node_modules/qunitjs/qunit/qunit.js -N node_modules/react-bootstrap/lib/Accordion.js -N node_modules/react-bootstrap/lib/Alert.js -N node_modules/react-bootstrap/lib/Badge.js -N node_modules/react-bootstrap/lib/Breadcrumb.js -N node_modules/react-bootstrap/lib/BreadcrumbItem.js -N node_modules/react-bootstrap/lib/Button.js -N node_modules/react-bootstrap/lib/ButtonGroup.js -N node_modules/react-bootstrap/lib/ButtonToolbar.js -N node_modules/react-bootstrap/lib/Carousel.js -N node_modules/react-bootstrap/lib/CarouselCaption.js -N node_modules/react-bootstrap/lib/CarouselItem.js -N node_modules/react-bootstrap/lib/Checkbox.js -N node_modules/react-bootstrap/lib/Clearfix.js -N node_modules/react-bootstrap/lib/CloseButton.js -N node_modules/react-bootstrap/lib/Col.js -N node_modules/react-bootstrap/lib/Collapse.js -N node_modules/react-bootstrap/lib/ControlLabel.js -N node_modules/react-bootstrap/lib/Dropdown.js -N node_modules/react-bootstrap/lib/DropdownButton.js -N node_modules/react-bootstrap/lib/DropdownMenu.js -N node_modules/react-bootstrap/lib/DropdownToggle.js -N node_modules/react-bootstrap/lib/Fade.js -N node_modules/react-bootstrap/lib/Form.js -N node_modules/react-bootstrap/lib/FormControl.js -N node_modules/react-bootstrap/lib/FormControlFeedback.js -N node_modules/react-bootstrap/lib/FormControlStatic.js -N node_modules/react-bootstrap/lib/FormGroup.js -N node_modules/react-bootstrap/lib/Glyphicon.js -N node_modules/react-bootstrap/lib/Grid.js -N node_modules/react-bootstrap/lib/HelpBlock.js -N node_modules/react-bootstrap/lib/Image.js -N node_modules/react-bootstrap/lib/InputGroup.js -N node_modules/react-bootstrap/lib/InputGroupAddon.js -N node_modules/react-bootstrap/lib/InputGroupButton.js -N node_modules/react-bootstrap/lib/Jumbotron.js -N node_modules/react-bootstrap/lib/Label.js -N node_modules/react-bootstrap/lib/ListGroup.js -N node_modules/react-bootstrap/lib/ListGroupItem.js -N node_modules/react-bootstrap/lib/Media.js -N node_modules/react-bootstrap/lib/MediaBody.js -N node_modules/react-bootstrap/lib/MediaHeading.js -N node_modules/react-bootstrap/lib/MediaLeft.js -N node_modules/react-bootstrap/lib/MediaList.js -N node_modules/react-bootstrap/lib/MediaListItem.js -N node_modules/react-bootstrap/lib/MediaRight.js -N node_modules/react-bootstrap/lib/MenuItem.js -N node_modules/react-bootstrap/lib/Modal.js -N node_modules/react-bootstrap/lib/ModalBody.js -N node_modules/react-bootstrap/lib/ModalDialog.js -N node_modules/react-bootstrap/lib/ModalFooter.js -N node_modules/react-bootstrap/lib/ModalHeader.js -N node_modules/react-bootstrap/lib/ModalTitle.js -N node_modules/react-bootstrap/lib/Nav.js -N node_modules/react-bootstrap/lib/NavDropdown.js -N node_modules/react-bootstrap/lib/NavItem.js -N node_modules/react-bootstrap/lib/Navbar.js -N node_modules/react-bootstrap/lib/NavbarBrand.js -N node_modules/react-bootstrap/lib/NavbarCollapse.js -N node_modules/react-bootstrap/lib/NavbarHeader.js -N node_modules/react-bootstrap/lib/NavbarToggle.js -N node_modules/react-bootstrap/lib/Overlay.js -N node_modules/react-bootstrap/lib/OverlayTrigger.js -N node_modules/react-bootstrap/lib/PageHeader.js -N node_modules/react-bootstrap/lib/PageItem.js -N node_modules/react-bootstrap/lib/Pager.js -N node_modules/react-bootstrap/lib/PagerItem.js -N node_modules/react-bootstrap/lib/Pagination.js -N node_modules/react-bootstrap/lib/PaginationItem.js -N node_modules/react-bootstrap/lib/Panel.js -N node_modules/react-bootstrap/lib/PanelBody.js -N node_modules/react-bootstrap/lib/PanelCollapse.js -N node_modules/react-bootstrap/lib/PanelFooter.js -N node_modules/react-bootstrap/lib/PanelGroup.js -N node_modules/react-bootstrap/lib/PanelHeading.js -N node_modules/react-bootstrap/lib/PanelTitle.js -N node_modules/react-bootstrap/lib/PanelToggle.js -N node_modules/react-bootstrap/lib/Popover.js -N node_modules/react-bootstrap/lib/ProgressBar.js -N node_modules/react-bootstrap/lib/Radio.js -N node_modules/react-bootstrap/lib/ResponsiveEmbed.js -N node_modules/react-bootstrap/lib/Row.js -N node_modules/react-bootstrap/lib/SafeAnchor.js -N node_modules/react-bootstrap/lib/SplitButton.js -N node_modules/react-bootstrap/lib/SplitToggle.js -N node_modules/react-bootstrap/lib/Tab.js -N node_modules/react-bootstrap/lib/TabContainer.js -N node_modules/react-bootstrap/lib/TabContent.js -N node_modules/react-bootstrap/lib/TabPane.js -N node_modules/react-bootstrap/lib/Table.js -N node_modules/react-bootstrap/lib/Tabs.js -N node_modules/react-bootstrap/lib/Thumbnail.js -N node_modules/react-bootstrap/lib/ToggleButton.js -N node_modules/react-bootstrap/lib/ToggleButtonGroup.js -N node_modules/react-bootstrap/lib/Tooltip.js -N node_modules/react-bootstrap/lib/Well.js -N node_modules/react-bootstrap/lib/index.js -N node_modules/react-bootstrap/lib/utils/PropTypes.js -N node_modules/react-bootstrap/lib/utils/StyleConfig.js -N node_modules/react-bootstrap/lib/utils/ValidComponentChildren.js -N node_modules/react-bootstrap/lib/utils/bootstrapUtils.js -N node_modules/react-bootstrap/lib/utils/capitalize.js -N node_modules/react-bootstrap/lib/utils/createChainedFunction.js -N node_modules/react-bootstrap/lib/utils/deprecationWarning.js -N node_modules/react-bootstrap/lib/utils/index.js -N node_modules/react-bootstrap/lib/utils/splitComponentProps.js -N node_modules/react-dom/cjs/react-dom.production.min.js -N node_modules/react-dom/index.js -N node_modules/react/cjs/react.production.min.js -N node_modules/react/index.js -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-install-dialog.css -N pkg/lib/cockpit-components-install-dialog.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-logs-panel.jsx -N pkg/lib/cockpit-components-onoff.css -N pkg/lib/cockpit-components-onoff.jsx -N pkg/lib/cockpit-components-select.jsx -N pkg/lib/inotify.py -N pkg/lib/journal.css -N pkg/lib/journal.js -N pkg/lib/journal_day_header.mustache -N pkg/lib/journal_line.mustache -N pkg/lib/journal_reboot.mustache -N pkg/lib/listing.less -N pkg/lib/mustache.js -N pkg/lib/packagekit.es6 -N pkg/lib/page.css -N pkg/lib/plot.css -N pkg/lib/plot.es6 -N pkg/lib/polyfills.js -N pkg/lib/python.jsx -N pkg/lib/qunit-config.js -N pkg/lib/qunit-template.html -N pkg/lib/qunit-tests.js -N pkg/lib/service.js -N pkg/lib/table.css -N pkg/lib/variables.less -N pkg/storaged/block-details.jsx -N pkg/storaged/clevis-luks-passphrase.sh -N pkg/storaged/client.js -N pkg/storaged/content-views.jsx -N pkg/storaged/crypto-keyslots.jsx -N pkg/storaged/crypto-tab.jsx -N pkg/storaged/details.jsx -N pkg/storaged/devices.js -N pkg/storaged/dialog.jsx -N pkg/storaged/drive-details.jsx -N pkg/storaged/drives-panel.jsx -N pkg/storaged/format-dialog.jsx -N pkg/storaged/fsys-panel.jsx -N pkg/storaged/fsys-tab.jsx -N pkg/storaged/images/storage-array.png -N pkg/storaged/images/storage-disk.png -N pkg/storaged/index.html -N pkg/storaged/iscsi-panel.jsx -N pkg/storaged/jobs-panel.jsx -N pkg/storaged/logs-panel.jsx -N pkg/storaged/luksmeta-monitor-hack.py -N pkg/storaged/lvol-tabs.jsx -N pkg/storaged/mdraid-details.jsx -N pkg/storaged/mdraids-panel.jsx -N pkg/storaged/nfs-details.jsx -N pkg/storaged/nfs-mounts.py -N pkg/storaged/nfs-panel.jsx -N pkg/storaged/optional-panel.jsx -N pkg/storaged/others-panel.jsx -N pkg/storaged/overview.jsx -N pkg/storaged/part-tab.jsx -N pkg/storaged/plot.jsx -N pkg/storaged/pvol-tabs.jsx -N pkg/storaged/storage-controls.jsx -N pkg/storaged/storage.css -N pkg/storaged/swap-tab.jsx -N pkg/storaged/test-util.js -N pkg/storaged/unrecognized-tab.jsx -N pkg/storaged/utils.js -N pkg/storaged/utilsx.jsx -N pkg/storaged/vdo-details.jsx -N pkg/storaged/vdo-monitor.py -N pkg/storaged/vdos-panel.jsx -N pkg/storaged/vgroup-details.jsx -N pkg/storaged/vgroups-panel.jsx $< > $@.tmp && mv $@.tmp $@
 
 dist/storaged/stamp: $(storaged_INPUTS)
 
@@ -338,6 +732,22 @@ node_modules/bootstrap/README.md:
 node_modules/bootstrap/less/variables.less:
 
 node_modules/bootstrap/package.json:
+
+node_modules/c3/LICENSE:
+
+node_modules/c3/README.md:
+
+node_modules/c3/c3.js:
+
+node_modules/c3/package.json:
+
+node_modules/d3/LICENSE:
+
+node_modules/d3/README.md:
+
+node_modules/d3/d3.js:
+
+node_modules/d3/package.json:
 
 node_modules/jquery-flot/LICENSE.txt:
 
@@ -627,9 +1037,569 @@ node_modules/mustache/mustache.js:
 
 node_modules/mustache/package.json:
 
+node_modules/patternfly-react/LICENSE:
+
+node_modules/patternfly-react/README.md:
+
+node_modules/patternfly-react/dist/js/common/Timer.js:
+
+node_modules/patternfly-react/dist/js/common/controlled.js:
+
+node_modules/patternfly-react/dist/js/common/helpers.js:
+
+node_modules/patternfly-react/dist/js/common/patternfly.js:
+
+node_modules/patternfly-react/dist/js/components/AboutModal/AboutModal.js:
+
+node_modules/patternfly-react/dist/js/components/AboutModal/AboutModalVersionItem.js:
+
+node_modules/patternfly-react/dist/js/components/AboutModal/AboutModalVersions.js:
+
+node_modules/patternfly-react/dist/js/components/AboutModal/index.js:
+
+node_modules/patternfly-react/dist/js/components/Alert/Alert.js:
+
+node_modules/patternfly-react/dist/js/components/Alert/AlertConstants.js:
+
+node_modules/patternfly-react/dist/js/components/Alert/helpers.js:
+
+node_modules/patternfly-react/dist/js/components/Alert/index.js:
+
+node_modules/patternfly-react/dist/js/components/Badge/Badge.js:
+
+node_modules/patternfly-react/dist/js/components/Badge/index.js:
+
+node_modules/patternfly-react/dist/js/components/Breadcrumb/Breadcrumb.js:
+
+node_modules/patternfly-react/dist/js/components/Breadcrumb/index.js:
+
+node_modules/patternfly-react/dist/js/components/Button/Button.js:
+
+node_modules/patternfly-react/dist/js/components/Button/ButtonConstants.js:
+
+node_modules/patternfly-react/dist/js/components/Button/ButtonGroup.js:
+
+node_modules/patternfly-react/dist/js/components/Button/DropdownButton.js:
+
+node_modules/patternfly-react/dist/js/components/Button/SplitButton.js:
+
+node_modules/patternfly-react/dist/js/components/Button/index.js:
+
+node_modules/patternfly-react/dist/js/components/Cards/AggregateStatusCard/AggregateStatusCount.js:
+
+node_modules/patternfly-react/dist/js/components/Cards/AggregateStatusCard/AggregateStatusNotification.js:
+
+node_modules/patternfly-react/dist/js/components/Cards/AggregateStatusCard/AggregateStatusNotifications.js:
+
+node_modules/patternfly-react/dist/js/components/Cards/AggregateStatusCard/index.js:
+
+node_modules/patternfly-react/dist/js/components/Cards/Card.js:
+
+node_modules/patternfly-react/dist/js/components/Cards/CardBody.js:
+
+node_modules/patternfly-react/dist/js/components/Cards/CardDropdownButton.js:
+
+node_modules/patternfly-react/dist/js/components/Cards/CardFooter.js:
+
+node_modules/patternfly-react/dist/js/components/Cards/CardGrid.js:
+
+node_modules/patternfly-react/dist/js/components/Cards/CardHeading.js:
+
+node_modules/patternfly-react/dist/js/components/Cards/CardHeightMatching.js:
+
+node_modules/patternfly-react/dist/js/components/Cards/CardLink.js:
+
+node_modules/patternfly-react/dist/js/components/Cards/CardTitle.js:
+
+node_modules/patternfly-react/dist/js/components/Cards/UtilizationTrendCard/UtilizationCard.js:
+
+node_modules/patternfly-react/dist/js/components/Cards/UtilizationTrendCard/UtilizationCardDetails.js:
+
+node_modules/patternfly-react/dist/js/components/Cards/UtilizationTrendCard/UtilizationCardDetailsCount.js:
+
+node_modules/patternfly-react/dist/js/components/Cards/UtilizationTrendCard/UtilizationCardDetailsDesc.js:
+
+node_modules/patternfly-react/dist/js/components/Cards/UtilizationTrendCard/UtilizationCardDetailsLine1.js:
+
+node_modules/patternfly-react/dist/js/components/Cards/UtilizationTrendCard/UtilizationCardDetailsLine2.js:
+
+node_modules/patternfly-react/dist/js/components/Cards/UtilizationTrendCard/index.js:
+
+node_modules/patternfly-react/dist/js/components/Cards/index.js:
+
+node_modules/patternfly-react/dist/js/components/Chart/AreaChart.js:
+
+node_modules/patternfly-react/dist/js/components/Chart/BarChart.js:
+
+node_modules/patternfly-react/dist/js/components/Chart/ChartConstants.js:
+
+node_modules/patternfly-react/dist/js/components/Chart/DonutChart.js:
+
+node_modules/patternfly-react/dist/js/components/Chart/GroupedBarChart.js:
+
+node_modules/patternfly-react/dist/js/components/Chart/LineChart.js:
+
+node_modules/patternfly-react/dist/js/components/Chart/PieChart.js:
+
+node_modules/patternfly-react/dist/js/components/Chart/SingleAreaChart.js:
+
+node_modules/patternfly-react/dist/js/components/Chart/SingleLineChart.js:
+
+node_modules/patternfly-react/dist/js/components/Chart/SparklineChart.js:
+
+node_modules/patternfly-react/dist/js/components/Chart/StackedBarChart.js:
+
+node_modules/patternfly-react/dist/js/components/Chart/index.js:
+
+node_modules/patternfly-react/dist/js/components/Dropdown/Dropdown.js:
+
+node_modules/patternfly-react/dist/js/components/Dropdown/NavDropdown.js:
+
+node_modules/patternfly-react/dist/js/components/Dropdown/index.js:
+
+node_modules/patternfly-react/dist/js/components/DropdownKebab/DropdownKebab.js:
+
+node_modules/patternfly-react/dist/js/components/DropdownKebab/index.js:
+
+node_modules/patternfly-react/dist/js/components/EmptyState/EmptyState.js:
+
+node_modules/patternfly-react/dist/js/components/EmptyState/EmptyStateAction.js:
+
+node_modules/patternfly-react/dist/js/components/EmptyState/EmptyStateHelp.js:
+
+node_modules/patternfly-react/dist/js/components/EmptyState/EmptyStateIcon.js:
+
+node_modules/patternfly-react/dist/js/components/EmptyState/EmptyStateInfo.js:
+
+node_modules/patternfly-react/dist/js/components/EmptyState/EmptyStateTitle.js:
+
+node_modules/patternfly-react/dist/js/components/EmptyState/index.js:
+
+node_modules/patternfly-react/dist/js/components/FieldLevelHelp/FieldLevelHelp.js:
+
+node_modules/patternfly-react/dist/js/components/FieldLevelHelp/index.js:
+
+node_modules/patternfly-react/dist/js/components/Filter/Filter.js:
+
+node_modules/patternfly-react/dist/js/components/Filter/FilterActiveLabel.js:
+
+node_modules/patternfly-react/dist/js/components/Filter/FilterCategorySelector.js:
+
+node_modules/patternfly-react/dist/js/components/Filter/FilterCategoryValueSelector.js:
+
+node_modules/patternfly-react/dist/js/components/Filter/FilterItem.js:
+
+node_modules/patternfly-react/dist/js/components/Filter/FilterList.js:
+
+node_modules/patternfly-react/dist/js/components/Filter/FilterTypeSelector.js:
+
+node_modules/patternfly-react/dist/js/components/Filter/FilterValueSelector.js:
+
+node_modules/patternfly-react/dist/js/components/Filter/index.js:
+
+node_modules/patternfly-react/dist/js/components/Form/Checkbox.js:
+
+node_modules/patternfly-react/dist/js/components/Form/ControlLabel.js:
+
+node_modules/patternfly-react/dist/js/components/Form/Form.js:
+
+node_modules/patternfly-react/dist/js/components/Form/FormControl.js:
+
+node_modules/patternfly-react/dist/js/components/Form/FormGroup.js:
+
+node_modules/patternfly-react/dist/js/components/Form/HelpBlock.js:
+
+node_modules/patternfly-react/dist/js/components/Form/InputGroup.js:
+
+node_modules/patternfly-react/dist/js/components/Form/Radio.js:
+
+node_modules/patternfly-react/dist/js/components/Form/index.js:
+
+node_modules/patternfly-react/dist/js/components/Grid/Clearfix.js:
+
+node_modules/patternfly-react/dist/js/components/Grid/Col.js:
+
+node_modules/patternfly-react/dist/js/components/Grid/Grid.js:
+
+node_modules/patternfly-react/dist/js/components/Grid/Row.js:
+
+node_modules/patternfly-react/dist/js/components/Grid/index.js:
+
+node_modules/patternfly-react/dist/js/components/Icon/Icon.js:
+
+node_modules/patternfly-react/dist/js/components/Icon/InnerComponents/PatternflyIcon.js:
+
+node_modules/patternfly-react/dist/js/components/Icon/index.js:
+
+node_modules/patternfly-react/dist/js/components/InfoTip/InfoTip.js:
+
+node_modules/patternfly-react/dist/js/components/InfoTip/InfoTipMenu.js:
+
+node_modules/patternfly-react/dist/js/components/InfoTip/InfoTipMenuFooter.js:
+
+node_modules/patternfly-react/dist/js/components/InfoTip/InfoTipMenuItemIcon.js:
+
+node_modules/patternfly-react/dist/js/components/InfoTip/InfoTipToggle.js:
+
+node_modules/patternfly-react/dist/js/components/InfoTip/index.js:
+
+node_modules/patternfly-react/dist/js/components/Label/DisposableLabel.js:
+
+node_modules/patternfly-react/dist/js/components/Label/Label.js:
+
+node_modules/patternfly-react/dist/js/components/Label/RemoveButton.js:
+
+node_modules/patternfly-react/dist/js/components/Label/index.js:
+
+node_modules/patternfly-react/dist/js/components/ListGroup/ListGroup.js:
+
+node_modules/patternfly-react/dist/js/components/ListGroup/ListGroupItem.js:
+
+node_modules/patternfly-react/dist/js/components/ListGroup/index.js:
+
+node_modules/patternfly-react/dist/js/components/ListView/ListView.js:
+
+node_modules/patternfly-react/dist/js/components/ListView/ListViewActions.js:
+
+node_modules/patternfly-react/dist/js/components/ListView/ListViewAdditionalInfo.js:
+
+node_modules/patternfly-react/dist/js/components/ListView/ListViewBody.js:
+
+node_modules/patternfly-react/dist/js/components/ListView/ListViewCheckbox.js:
+
+node_modules/patternfly-react/dist/js/components/ListView/ListViewDescription.js:
+
+node_modules/patternfly-react/dist/js/components/ListView/ListViewDescriptionHeading.js:
+
+node_modules/patternfly-react/dist/js/components/ListView/ListViewDescriptionText.js:
+
+node_modules/patternfly-react/dist/js/components/ListView/ListViewExpand.js:
+
+node_modules/patternfly-react/dist/js/components/ListView/ListViewGroupItem.js:
+
+node_modules/patternfly-react/dist/js/components/ListView/ListViewGroupItemContainer.js:
+
+node_modules/patternfly-react/dist/js/components/ListView/ListViewGroupItemHeader.js:
+
+node_modules/patternfly-react/dist/js/components/ListView/ListViewIcon.js:
+
+node_modules/patternfly-react/dist/js/components/ListView/ListViewInfoItem.js:
+
+node_modules/patternfly-react/dist/js/components/ListView/ListViewItem.js:
+
+node_modules/patternfly-react/dist/js/components/ListView/ListViewLeft.js:
+
+node_modules/patternfly-react/dist/js/components/ListView/ListViewMainInfo.js:
+
+node_modules/patternfly-react/dist/js/components/ListView/ListViewRow.js:
+
+node_modules/patternfly-react/dist/js/components/ListView/index.js:
+
+node_modules/patternfly-react/dist/js/components/MenuItem/MenuItem.js:
+
+node_modules/patternfly-react/dist/js/components/MenuItem/index.js:
+
+node_modules/patternfly-react/dist/js/components/Modal/InnerComponents/CustomModalDialog.js:
+
+node_modules/patternfly-react/dist/js/components/Modal/Modal.js:
+
+node_modules/patternfly-react/dist/js/components/Modal/ModalCloseButton.js:
+
+node_modules/patternfly-react/dist/js/components/Modal/index.js:
+
+node_modules/patternfly-react/dist/js/components/Nav/Nav.js:
+
+node_modules/patternfly-react/dist/js/components/Nav/NavItem.js:
+
+node_modules/patternfly-react/dist/js/components/Nav/index.js:
+
+node_modules/patternfly-react/dist/js/components/Navbar/Navbar.js:
+
+node_modules/patternfly-react/dist/js/components/Navbar/index.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/Notification.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/NotificationContent.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawer.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerAccordion.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerDropDown.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanel.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanelAction.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanelActionLink.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanelBody.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanelCollapse.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanelCounter.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanelHeading.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerAccordion/NotificationDrawerPanelTitle.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerTitle.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/NotificationDrawerToggle.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/NotificationDrawer/index.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/NotificationInfo.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/NotificationInfoLeft.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/NotificationInfoRight.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/NotificationMessage.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/Wrappers/Icon.consts.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/Wrappers/NotificationDrawerPanelWrapper.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/Wrappers/NotificationDrawerWrapper.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/Wrappers/StatefulNotificationDrawerWrapper.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/Wrappers/StatefulToggleNotificationDrawerWrapper.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/Wrappers/index.js:
+
+node_modules/patternfly-react/dist/js/components/Notification/index.js:
+
+node_modules/patternfly-react/dist/js/components/OverlayTrigger/OverlayTrigger.js:
+
+node_modules/patternfly-react/dist/js/components/OverlayTrigger/index.js:
+
+node_modules/patternfly-react/dist/js/components/Pagination/Pager.js:
+
+node_modules/patternfly-react/dist/js/components/Pagination/PaginationConstants.js:
+
+node_modules/patternfly-react/dist/js/components/Pagination/PaginationRow.js:
+
+node_modules/patternfly-react/dist/js/components/Pagination/PaginationRowAmountOfPages.js:
+
+node_modules/patternfly-react/dist/js/components/Pagination/PaginationRowArrowIcon.js:
+
+node_modules/patternfly-react/dist/js/components/Pagination/PaginationRowBack.js:
+
+node_modules/patternfly-react/dist/js/components/Pagination/PaginationRowButtonGroup.js:
+
+node_modules/patternfly-react/dist/js/components/Pagination/PaginationRowForward.js:
+
+node_modules/patternfly-react/dist/js/components/Pagination/PaginationRowItems.js:
+
+node_modules/patternfly-react/dist/js/components/Pagination/Paginator.js:
+
+node_modules/patternfly-react/dist/js/components/Pagination/index.js:
+
+node_modules/patternfly-react/dist/js/components/Pagination/paginate.js:
+
+node_modules/patternfly-react/dist/js/components/Popover/Popover.js:
+
+node_modules/patternfly-react/dist/js/components/Popover/index.js:
+
+node_modules/patternfly-react/dist/js/components/ProgressBar/ProgressBar.js:
+
+node_modules/patternfly-react/dist/js/components/ProgressBar/index.js:
+
+node_modules/patternfly-react/dist/js/components/Slider/BootstrapSlider.js:
+
+node_modules/patternfly-react/dist/js/components/Slider/Boundaries.js:
+
+node_modules/patternfly-react/dist/js/components/Slider/DropdownMenu.js:
+
+node_modules/patternfly-react/dist/js/components/Slider/Slider.js:
+
+node_modules/patternfly-react/dist/js/components/Slider/index.js:
+
+node_modules/patternfly-react/dist/js/components/Sort/Sort.js:
+
+node_modules/patternfly-react/dist/js/components/Sort/SortDirectionSelector.js:
+
+node_modules/patternfly-react/dist/js/components/Sort/SortTypeSelector.js:
+
+node_modules/patternfly-react/dist/js/components/Sort/index.js:
+
+node_modules/patternfly-react/dist/js/components/Spinner/Spinner.js:
+
+node_modules/patternfly-react/dist/js/components/Spinner/index.js:
+
+node_modules/patternfly-react/dist/js/components/Switch/Switch.js:
+
+node_modules/patternfly-react/dist/js/components/Switch/SwitchConstants.js:
+
+node_modules/patternfly-react/dist/js/components/Switch/index.js:
+
+node_modules/patternfly-react/dist/js/components/Table/Formatters/actionHeaderCellFormatter.js:
+
+node_modules/patternfly-react/dist/js/components/Table/Formatters/customHeaderFormattersDefinition.js:
+
+node_modules/patternfly-react/dist/js/components/Table/Formatters/selectionCellFormatter.js:
+
+node_modules/patternfly-react/dist/js/components/Table/Formatters/selectionHeaderCellFormatter.js:
+
+node_modules/patternfly-react/dist/js/components/Table/Formatters/sortableHeaderCellFormatter.js:
+
+node_modules/patternfly-react/dist/js/components/Table/Formatters/tableCellFormatter.js:
+
+node_modules/patternfly-react/dist/js/components/Table/Table.js:
+
+node_modules/patternfly-react/dist/js/components/Table/TableActions.js:
+
+node_modules/patternfly-react/dist/js/components/Table/TableButton.js:
+
+node_modules/patternfly-react/dist/js/components/Table/TableCell.js:
+
+node_modules/patternfly-react/dist/js/components/Table/TableCheckbox.js:
+
+node_modules/patternfly-react/dist/js/components/Table/TableConstants.js:
+
+node_modules/patternfly-react/dist/js/components/Table/TableDropdownKebab.js:
+
+node_modules/patternfly-react/dist/js/components/Table/TableHeading.js:
+
+node_modules/patternfly-react/dist/js/components/Table/TablePfProvider.js:
+
+node_modules/patternfly-react/dist/js/components/Table/TableSelectionCell.js:
+
+node_modules/patternfly-react/dist/js/components/Table/TableSelectionHeading.js:
+
+node_modules/patternfly-react/dist/js/components/Table/index.js:
+
+node_modules/patternfly-react/dist/js/components/Tabs/Tab.js:
+
+node_modules/patternfly-react/dist/js/components/Tabs/TabContainer.js:
+
+node_modules/patternfly-react/dist/js/components/Tabs/TabContent.js:
+
+node_modules/patternfly-react/dist/js/components/Tabs/TabPane.js:
+
+node_modules/patternfly-react/dist/js/components/Tabs/Tabs.js:
+
+node_modules/patternfly-react/dist/js/components/Tabs/index.js:
+
+node_modules/patternfly-react/dist/js/components/ToastNotification/TimedToastNotification.js:
+
+node_modules/patternfly-react/dist/js/components/ToastNotification/ToastNotification.js:
+
+node_modules/patternfly-react/dist/js/components/ToastNotification/ToastNotificationList.js:
+
+node_modules/patternfly-react/dist/js/components/ToastNotification/index.js:
+
+node_modules/patternfly-react/dist/js/components/Toolbar/Toolbar.js:
+
+node_modules/patternfly-react/dist/js/components/Toolbar/ToolbarConstants.js:
+
+node_modules/patternfly-react/dist/js/components/Toolbar/ToolbarFind.js:
+
+node_modules/patternfly-react/dist/js/components/Toolbar/ToolbarResults.js:
+
+node_modules/patternfly-react/dist/js/components/Toolbar/ToolbarRightContent.js:
+
+node_modules/patternfly-react/dist/js/components/Toolbar/ToolbarViewSelector.js:
+
+node_modules/patternfly-react/dist/js/components/Toolbar/index.js:
+
+node_modules/patternfly-react/dist/js/components/Tooltip/Tooltip.js:
+
+node_modules/patternfly-react/dist/js/components/Tooltip/index.js:
+
+node_modules/patternfly-react/dist/js/components/TreeView/TreeView.js:
+
+node_modules/patternfly-react/dist/js/components/TreeView/TreeViewExpand.js:
+
+node_modules/patternfly-react/dist/js/components/TreeView/TreeViewIcon.js:
+
+node_modules/patternfly-react/dist/js/components/TreeView/TreeViewIndents.js:
+
+node_modules/patternfly-react/dist/js/components/TreeView/TreeViewNode.js:
+
+node_modules/patternfly-react/dist/js/components/TreeView/index.js:
+
+node_modules/patternfly-react/dist/js/components/UtilizationBar/UtilizationBar.js:
+
+node_modules/patternfly-react/dist/js/components/UtilizationBar/helpers.js:
+
+node_modules/patternfly-react/dist/js/components/UtilizationBar/index.js:
+
+node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNav.js:
+
+node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavBadge.js:
+
+node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavBrand.js:
+
+node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavConstants.js:
+
+node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavIconBar.js:
+
+node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavItem.js:
+
+node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavItemHelper.js:
+
+node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavMasthead.js:
+
+node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavSecondaryItem.js:
+
+node_modules/patternfly-react/dist/js/components/VerticalNav/VerticalNavTertiaryItem.js:
+
+node_modules/patternfly-react/dist/js/components/VerticalNav/index.js:
+
+node_modules/patternfly-react/dist/js/components/Wizard/Wizard.js:
+
+node_modules/patternfly-react/dist/js/components/Wizard/WizardBody.js:
+
+node_modules/patternfly-react/dist/js/components/Wizard/WizardContents.js:
+
+node_modules/patternfly-react/dist/js/components/Wizard/WizardFooter.js:
+
+node_modules/patternfly-react/dist/js/components/Wizard/WizardHeader.js:
+
+node_modules/patternfly-react/dist/js/components/Wizard/WizardMain.js:
+
+node_modules/patternfly-react/dist/js/components/Wizard/WizardReviewContent.js:
+
+node_modules/patternfly-react/dist/js/components/Wizard/WizardReviewItem.js:
+
+node_modules/patternfly-react/dist/js/components/Wizard/WizardReviewStep.js:
+
+node_modules/patternfly-react/dist/js/components/Wizard/WizardReviewSteps.js:
+
+node_modules/patternfly-react/dist/js/components/Wizard/WizardReviewSubStep.js:
+
+node_modules/patternfly-react/dist/js/components/Wizard/WizardReviewSubSteps.js:
+
+node_modules/patternfly-react/dist/js/components/Wizard/WizardRow.js:
+
+node_modules/patternfly-react/dist/js/components/Wizard/WizardSidebar.js:
+
+node_modules/patternfly-react/dist/js/components/Wizard/WizardSidebarGroup.js:
+
+node_modules/patternfly-react/dist/js/components/Wizard/WizardSidebarGroupItem.js:
+
+node_modules/patternfly-react/dist/js/components/Wizard/WizardStep.js:
+
+node_modules/patternfly-react/dist/js/components/Wizard/WizardSteps.js:
+
+node_modules/patternfly-react/dist/js/components/Wizard/WizardSubStep.js:
+
+node_modules/patternfly-react/dist/js/components/Wizard/index.js:
+
+node_modules/patternfly-react/dist/js/index.js:
+
+node_modules/patternfly-react/package.json:
+
 node_modules/patternfly/LICENSE.txt:
 
 node_modules/patternfly/README.md:
+
+node_modules/patternfly/dist/js/patternfly-settings-charts.js:
+
+node_modules/patternfly/dist/js/patternfly-settings.js:
 
 node_modules/patternfly/dist/less/color-variables.less:
 
@@ -679,6 +1649,222 @@ node_modules/qunitjs/qunit/qunit.css:
 
 node_modules/qunitjs/qunit/qunit.js:
 
+node_modules/react-bootstrap/LICENSE:
+
+node_modules/react-bootstrap/README.md:
+
+node_modules/react-bootstrap/lib/Accordion.js:
+
+node_modules/react-bootstrap/lib/Alert.js:
+
+node_modules/react-bootstrap/lib/Badge.js:
+
+node_modules/react-bootstrap/lib/Breadcrumb.js:
+
+node_modules/react-bootstrap/lib/BreadcrumbItem.js:
+
+node_modules/react-bootstrap/lib/Button.js:
+
+node_modules/react-bootstrap/lib/ButtonGroup.js:
+
+node_modules/react-bootstrap/lib/ButtonToolbar.js:
+
+node_modules/react-bootstrap/lib/Carousel.js:
+
+node_modules/react-bootstrap/lib/CarouselCaption.js:
+
+node_modules/react-bootstrap/lib/CarouselItem.js:
+
+node_modules/react-bootstrap/lib/Checkbox.js:
+
+node_modules/react-bootstrap/lib/Clearfix.js:
+
+node_modules/react-bootstrap/lib/CloseButton.js:
+
+node_modules/react-bootstrap/lib/Col.js:
+
+node_modules/react-bootstrap/lib/Collapse.js:
+
+node_modules/react-bootstrap/lib/ControlLabel.js:
+
+node_modules/react-bootstrap/lib/Dropdown.js:
+
+node_modules/react-bootstrap/lib/DropdownButton.js:
+
+node_modules/react-bootstrap/lib/DropdownMenu.js:
+
+node_modules/react-bootstrap/lib/DropdownToggle.js:
+
+node_modules/react-bootstrap/lib/Fade.js:
+
+node_modules/react-bootstrap/lib/Form.js:
+
+node_modules/react-bootstrap/lib/FormControl.js:
+
+node_modules/react-bootstrap/lib/FormControlFeedback.js:
+
+node_modules/react-bootstrap/lib/FormControlStatic.js:
+
+node_modules/react-bootstrap/lib/FormGroup.js:
+
+node_modules/react-bootstrap/lib/Glyphicon.js:
+
+node_modules/react-bootstrap/lib/Grid.js:
+
+node_modules/react-bootstrap/lib/HelpBlock.js:
+
+node_modules/react-bootstrap/lib/Image.js:
+
+node_modules/react-bootstrap/lib/InputGroup.js:
+
+node_modules/react-bootstrap/lib/InputGroupAddon.js:
+
+node_modules/react-bootstrap/lib/InputGroupButton.js:
+
+node_modules/react-bootstrap/lib/Jumbotron.js:
+
+node_modules/react-bootstrap/lib/Label.js:
+
+node_modules/react-bootstrap/lib/ListGroup.js:
+
+node_modules/react-bootstrap/lib/ListGroupItem.js:
+
+node_modules/react-bootstrap/lib/Media.js:
+
+node_modules/react-bootstrap/lib/MediaBody.js:
+
+node_modules/react-bootstrap/lib/MediaHeading.js:
+
+node_modules/react-bootstrap/lib/MediaLeft.js:
+
+node_modules/react-bootstrap/lib/MediaList.js:
+
+node_modules/react-bootstrap/lib/MediaListItem.js:
+
+node_modules/react-bootstrap/lib/MediaRight.js:
+
+node_modules/react-bootstrap/lib/MenuItem.js:
+
+node_modules/react-bootstrap/lib/Modal.js:
+
+node_modules/react-bootstrap/lib/ModalBody.js:
+
+node_modules/react-bootstrap/lib/ModalDialog.js:
+
+node_modules/react-bootstrap/lib/ModalFooter.js:
+
+node_modules/react-bootstrap/lib/ModalHeader.js:
+
+node_modules/react-bootstrap/lib/ModalTitle.js:
+
+node_modules/react-bootstrap/lib/Nav.js:
+
+node_modules/react-bootstrap/lib/NavDropdown.js:
+
+node_modules/react-bootstrap/lib/NavItem.js:
+
+node_modules/react-bootstrap/lib/Navbar.js:
+
+node_modules/react-bootstrap/lib/NavbarBrand.js:
+
+node_modules/react-bootstrap/lib/NavbarCollapse.js:
+
+node_modules/react-bootstrap/lib/NavbarHeader.js:
+
+node_modules/react-bootstrap/lib/NavbarToggle.js:
+
+node_modules/react-bootstrap/lib/Overlay.js:
+
+node_modules/react-bootstrap/lib/OverlayTrigger.js:
+
+node_modules/react-bootstrap/lib/PageHeader.js:
+
+node_modules/react-bootstrap/lib/PageItem.js:
+
+node_modules/react-bootstrap/lib/Pager.js:
+
+node_modules/react-bootstrap/lib/PagerItem.js:
+
+node_modules/react-bootstrap/lib/Pagination.js:
+
+node_modules/react-bootstrap/lib/PaginationItem.js:
+
+node_modules/react-bootstrap/lib/Panel.js:
+
+node_modules/react-bootstrap/lib/PanelBody.js:
+
+node_modules/react-bootstrap/lib/PanelCollapse.js:
+
+node_modules/react-bootstrap/lib/PanelFooter.js:
+
+node_modules/react-bootstrap/lib/PanelGroup.js:
+
+node_modules/react-bootstrap/lib/PanelHeading.js:
+
+node_modules/react-bootstrap/lib/PanelTitle.js:
+
+node_modules/react-bootstrap/lib/PanelToggle.js:
+
+node_modules/react-bootstrap/lib/Popover.js:
+
+node_modules/react-bootstrap/lib/ProgressBar.js:
+
+node_modules/react-bootstrap/lib/Radio.js:
+
+node_modules/react-bootstrap/lib/ResponsiveEmbed.js:
+
+node_modules/react-bootstrap/lib/Row.js:
+
+node_modules/react-bootstrap/lib/SafeAnchor.js:
+
+node_modules/react-bootstrap/lib/SplitButton.js:
+
+node_modules/react-bootstrap/lib/SplitToggle.js:
+
+node_modules/react-bootstrap/lib/Tab.js:
+
+node_modules/react-bootstrap/lib/TabContainer.js:
+
+node_modules/react-bootstrap/lib/TabContent.js:
+
+node_modules/react-bootstrap/lib/TabPane.js:
+
+node_modules/react-bootstrap/lib/Table.js:
+
+node_modules/react-bootstrap/lib/Tabs.js:
+
+node_modules/react-bootstrap/lib/Thumbnail.js:
+
+node_modules/react-bootstrap/lib/ToggleButton.js:
+
+node_modules/react-bootstrap/lib/ToggleButtonGroup.js:
+
+node_modules/react-bootstrap/lib/Tooltip.js:
+
+node_modules/react-bootstrap/lib/Well.js:
+
+node_modules/react-bootstrap/lib/index.js:
+
+node_modules/react-bootstrap/lib/utils/PropTypes.js:
+
+node_modules/react-bootstrap/lib/utils/StyleConfig.js:
+
+node_modules/react-bootstrap/lib/utils/ValidComponentChildren.js:
+
+node_modules/react-bootstrap/lib/utils/bootstrapUtils.js:
+
+node_modules/react-bootstrap/lib/utils/capitalize.js:
+
+node_modules/react-bootstrap/lib/utils/createChainedFunction.js:
+
+node_modules/react-bootstrap/lib/utils/deprecationWarning.js:
+
+node_modules/react-bootstrap/lib/utils/index.js:
+
+node_modules/react-bootstrap/lib/utils/splitComponentProps.js:
+
+node_modules/react-bootstrap/package.json:
+
 node_modules/react-dom/LICENSE:
 
 node_modules/react-dom/README.md:
@@ -717,8 +1903,6 @@ pkg/lib/cockpit-components-onoff.jsx:
 
 pkg/lib/cockpit-components-select.jsx:
 
-pkg/lib/cockpit-components-tooltip.jsx:
-
 pkg/lib/inotify.py:
 
 pkg/lib/journal.css:
@@ -756,8 +1940,6 @@ pkg/lib/qunit-tests.js:
 pkg/lib/service.js:
 
 pkg/lib/table.css:
-
-pkg/lib/tooltip.css:
 
 pkg/lib/variables.less:
 

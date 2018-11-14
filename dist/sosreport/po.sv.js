@@ -101,7 +101,7 @@ return plural;
  ],
  "No archive has been created.": [
   null,
-  ""
+  "Inget arkiv har skapats."
  ],
  "The collected information will be stored locally on the system.": [
   null,

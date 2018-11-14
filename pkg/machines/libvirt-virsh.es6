@@ -50,8 +50,6 @@ import {
     logDebug,
 } from './helpers.es6';
 
-import VCPUModal from './components/vcpuModal.jsx';
-
 import {
     buildFailHandler,
     canConsole,
@@ -72,6 +70,7 @@ import {
     CHECK_LIBVIRT_STATUS,
     CREATE_VM,
     ENABLE_LIBVIRT,
+    GET_LOGGED_IN_USER,
     GET_OS_INFO_LIST,
     INIT_DATA_RETRIEVAL,
     INSTALL_VM,
@@ -124,8 +123,6 @@ LIBVIRT_PROVIDER = {
         return true; // or Promise
     },
 
-    openVCPUModal: (params) => VCPUModal(params),
-
     /* Start of common provider functions */
     canConsole,
     canDelete,
@@ -140,6 +137,7 @@ LIBVIRT_PROVIDER = {
     CHECK_LIBVIRT_STATUS,
     CREATE_VM,
     ENABLE_LIBVIRT,
+    GET_LOGGED_IN_USER,
     GET_OS_INFO_LIST,
     INIT_DATA_RETRIEVAL,
     INSTALL_VM,

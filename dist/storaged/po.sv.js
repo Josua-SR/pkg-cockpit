@@ -818,223 +818,223 @@ return plural;
  ],
  "Member of RAID Device": [
   null,
-  ""
+  "Medlem i RAID-enhet"
  ],
  "Member of RAID Device $0": [
   null,
-  ""
+  "Medlem i RAID-enhet $0"
  ],
  "Metadata Used": [
   null,
-  ""
+  "Metadata använt"
  ],
  "Modifying $target": [
   null,
-  ""
+  "Modifiera $target"
  ],
  "Mount": [
   null,
-  ""
+  "Montering"
  ],
  "Mount Options": [
   null,
-  ""
+  "Monteringsflaggor"
  ],
  "Mount Point": [
   null,
-  ""
+  "Monteringspunkt"
  ],
  "Mount at boot": [
   null,
-  ""
+  "Montera vid uppstart"
  ],
  "Mount options": [
   null,
-  ""
+  "Monteringsflaggor"
  ],
  "Mount point can not be empty": [
   null,
-  ""
+  "Monteringspunkten får inte vara tom"
  ],
  "Mount point cannot be empty.": [
   null,
-  ""
+  "Monteringspunkten får inte vara tom."
  ],
  "Mount point must start with \"/\".": [
   null,
-  ""
+  "Monteringspunkten måste börja med ”/”."
  ],
  "Mount read only": [
   null,
-  ""
+  "Montera skrivskyddat"
  ],
  "Mounted At": [
   null,
-  ""
+  "Monterad på"
  ],
  "Mounting": [
   null,
-  ""
+  "Monterar"
  ],
  "Mounting $target": [
   null,
-  ""
+  "Monterar $target"
  ],
  "NFS Mount": [
   null,
-  ""
+  "NFS-montering"
  ],
  "NFS Mounts": [
   null,
-  ""
+  "NFS-monteringar"
  ],
  "NFS Support not installed": [
   null,
-  ""
+  "Stöd för NFS är inte installerat"
  ],
  "NTFS - Compatible with most systems": [
   null,
-  ""
+  "NTFS — kompatibelt med de flesta system"
  ],
  "Name": [
   null,
-  ""
+  "Namn"
  ],
  "Name can not be empty.": [
   null,
-  ""
+  "Namnet får inte vara tomt."
  ],
  "Name cannot be empty.": [
   null,
-  ""
+  "Namnet får inte vara tomt."
  ],
  "Name cannot be longer than 127 characters.": [
   null,
-  ""
+  "Namnet får inte vara längre än 127 tecken."
  ],
  "Name cannot contain the character '$0'.": [
   null,
-  ""
+  "Namnet får inte innehålla tecknet ”$0”."
  ],
  "Name cannot contain whitespace.": [
   null,
-  ""
+  "Namnet får inte innehålla blanktecken."
  ],
  "New NFS Mount": [
   null,
-  ""
+  "Ny NFS-montering"
  ],
  "New passphrase": [
   null,
-  ""
+  "Ny lösenfras"
  ],
  "Next": [
   null,
-  ""
+  "Nästa"
  ],
  "No Filesystem": [
   null,
-  ""
+  "Inget filsystem"
  ],
  "No Logical Volumes": [
   null,
-  ""
+  "Inga logiska volymer"
  ],
  "No NFS mounts set up": [
   null,
-  ""
+  "Inga NFS-monteringar uppsatta"
  ],
  "No available slots": [
   null,
-  ""
+  "Inga tillgängliga platser"
  ],
  "No disks are available.": [
   null,
-  ""
+  "Inga diskar är tillgängliga."
  ],
  "No drives attached": [
   null,
-  ""
+  "Inga diskar är anslutna"
  ],
  "No free key slots": [
   null,
-  ""
+  "Inga fria nyckelfack"
  ],
  "No free space": [
   null,
-  ""
+  "Inget ledigt utrymme"
  ],
  "No iSCSI targets set up": [
   null,
-  ""
+  "Inga iSCSI-mål är uppsatta"
  ],
  "No keys added": [
   null,
-  ""
+  "Inga nycklar tillagda"
  ],
  "No media inserted": [
   null,
-  ""
+  "Inget medium isatt"
  ],
  "No partitioning": [
   null,
-  ""
+  "Ingen partitionering"
  ],
  "No storage set up as RAID": [
   null,
-  ""
+  "Ingen lagring uppsatt som RAID"
  ],
  "No storage set up as VDO": [
   null,
-  ""
+  "Ingen lagring uppsatt som VDO"
  ],
  "No volume groups created": [
   null,
-  ""
+  "Inga volymgrupper skapade"
  ],
  "Not found": [
   null,
-  ""
+  "Finns inte"
  ],
  "Not mounted": [
   null,
-  ""
+  "Inte monterat"
  ],
  "Not running": [
   null,
-  ""
+  "Kör inte"
  ],
  "Off": [
   null,
-  ""
+  "Av"
  ],
  "Ok": [
   null,
-  ""
+  "Ok"
  ],
  "Old passphrase": [
   null,
-  ""
+  "Gammal lösenfras"
  ],
  "On": [
   null,
-  ""
+  "På"
  ],
  "Only $0 of $1 are used.": [
   null,
-  ""
+  "Endast $0 av $1 används."
  ],
  "Operation '$operation' on $target": [
   null,
-  ""
+  "Åtgärden ”$operation” på $target"
  ],
  "Options": [
   null,
-  ""
+  "Alternativ"
  ],
  "Other Devices": [
   null,
-  ""
+  "Andra enheter"
  ],
  "Overwrite existing data with zeros": [
   null,
@@ -1042,39 +1042,39 @@ return plural;
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "PackageKit kraschade"
  ],
  "Partition": [
   null,
-  ""
+  "Partition"
  ],
  "Partition of $0": [
   null,
-  ""
+  "Partition av $0"
  ],
  "Partitioning": [
   null,
-  ""
+  "Partitionering"
  ],
  "Passphrase": [
   null,
-  ""
+  "Lösenfras"
  ],
  "Passphrase cannot be empty": [
   null,
-  ""
+  "Lösenfrasen får inte vara tom"
  ],
  "Passphrase removal may prevent unlocking $0.": [
   null,
-  ""
+  "Att ta bort lösenfrasen kan förhindra upplåsning av $0."
  ],
  "Passphrases do not match": [
   null,
-  ""
+  "Lösenfraserna stämmer inte överens"
  ],
  "Password": [
   null,
-  ""
+  "Lösenord"
  ],
  "Path on Server": [
   null,
@@ -1458,7 +1458,7 @@ return plural;
  ],
  "Synchronizing RAID Device $target": [
   null,
-  ""
+  "Synkroniserar RAID-enheten $target"
  ],
  "Tang keyserver": [
   null,
@@ -1790,7 +1790,7 @@ return plural;
  ],
  "storage-id-desc\u0004Other Data": [
   null,
-  ""
+  "Andra data"
  ],
  "storage-id-desc\u0004Swap Space": [
   null,
@@ -1814,7 +1814,7 @@ return plural;
  ],
  "storage\u0004Optical Drive": [
   null,
-  ""
+  "Optisk enhet"
  ],
  "storage\u0004Removable Drive": [
   null,

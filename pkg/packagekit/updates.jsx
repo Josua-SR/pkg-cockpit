@@ -23,7 +23,7 @@ import React from "react";
 import ReactDOM from 'react-dom';
 
 import moment from "moment";
-import { Tooltip } from "cockpit-components-tooltip.jsx";
+import { OverlayTrigger, Tooltip } from "patternfly-react";
 import Markdown from "react-remarkable";
 import AutoUpdates from "./autoupdates.jsx";
 
@@ -257,18 +257,27 @@ class UpdateItem extends React.Component {
                 secSeverityURL = <a rel="noopener" referrerPolicy="no-referrer" target="_blank" href={secSeverityURL}>{secSeverity}</a>;
             type = (
                 <React.Fragment>
-                    <span className={iconClasses}>&nbsp;</span>
+                    <OverlayTrigger overlay={ <Tooltip id="tip-severity">{ secSeverity || _("security") }</Tooltip> } placement="top">
+                        <span className={iconClasses}>&nbsp;</span>
+                    </OverlayTrigger>
                     { (info.cve_urls && info.cve_urls.length > 0) ? info.cve_urls.length : "" }
                 </React.Fragment>);
         } else {
+            const tip = (info.severity >= PK.Enum.INFO_NORMAL) ? _("bug fix") : _("enhancement");
             type = (
                 <React.Fragment>
-                    <span className={iconClasses}>&nbsp;</span>
+                    <OverlayTrigger overlay={ <Tooltip id="tip-severity">{tip}</Tooltip> } placement="top">
+                        <span className={iconClasses}>&nbsp;</span>
+                    </OverlayTrigger>
                     { bugs ? info.bug_urls.length : "" }
                 </React.Fragment>);
         }
 
-        var pkgList = this.props.pkgNames.map(n => (<Tooltip key={n} tip={packageSummaries[n]}><span>{n}</span></Tooltip>));
+        var pkgList = this.props.pkgNames.map(n => (
+            <OverlayTrigger key={n} overlay={ <Tooltip id="tip-summary">{packageSummaries[n]}</Tooltip> } placement="top">
+                <span>{n}</span>
+            </OverlayTrigger>)
+        );
         var pkgs = insertCommas(pkgList);
         var pkgsTruncated = pkgs;
         if (pkgList.length > 4)
@@ -391,7 +400,11 @@ function UpdateHistory(props) {
     function formatPkgs(pkgs) {
         let names = Object.keys(pkgs).filter(i => i != "_time");
         names.sort();
-        return names.map(n => <Tooltip key={n} tip={ n + " " + pkgs[n] }><li>{n}</li></Tooltip>);
+        return names.map(n => (
+            <OverlayTrigger key={n} overlay={ <Tooltip id="tip-history">{ n + " " + pkgs[n] }</Tooltip> } placement="top">
+                <li>{n}</li>
+            </OverlayTrigger>)
+        );
     }
 
     let history = props.history;
@@ -779,6 +792,24 @@ class OsUpdates extends React.Component {
     renderContent() {
         var applySecurity, applyAll, unregisteredWarning;
 
+        if (this.state.unregistered) {
+            // always show empty state pattern, even if there are some repositories enabled that don't require subscriptions
+            return (
+                <div className="blank-slate-pf">
+                    <div className="blank-slate-pf-icon">
+                        <span className="fa fa-exclamation-circle" />
+                    </div>
+                    <h1>{_("This system is not registered")}</h1>
+                    <p>{_("To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.")}</p>
+                    <div className="blank-slate-pf-main-action">
+                        <button className="btn btn-lg btn-primary"
+                            onClick={ () => cockpit.jump("/subscriptions", cockpit.transport.host) }>
+                            {_("Register…")}
+                        </button>
+                    </div>
+                </div>);
+        }
+
         switch (this.state.state) {
         case "loading":
         case "refreshing":
@@ -795,25 +826,7 @@ class OsUpdates extends React.Component {
                 return <div className="spinner spinner-lg progress-main-view" />;
 
         case "available":
-            // when unregistered, hide the Apply buttons and show a warning
-            if (this.state.unregistered) {
-                unregisteredWarning = (
-                    <React.Fragment>
-                        <h2>{ _("Unregistered System") }</h2>
-                        <div className="alert alert-warning">
-                            <span className="pficon pficon-warning-triangle-o" />
-                            <span>
-                                <strong>{ _("Updates are disabled.") }</strong>
-                                    &nbsp;
-                                { _("You need to re-subscribe this system.") }
-                            </span>
-                            <button className="btn btn-primary pull-right"
-                                onClick={ () => cockpit.jump("/subscriptions", cockpit.transport.host) }>
-                                { _("View Registration Details") }
-                            </button>
-                        </div>
-                    </React.Fragment>);
-            } else {
+            {
                 let num_updates = Object.keys(this.state.updates).length;
                 let num_security_updates = count_security_updates(this.state.updates);
 
@@ -887,23 +900,6 @@ class OsUpdates extends React.Component {
                 </div>);
 
         case "uptodate":
-            if (this.state.unregistered) {
-                return (
-                    <div className="blank-slate-pf">
-                        <div className="blank-slate-pf-icon">
-                            <span className="fa fa-exclamation-circle" />
-                        </div>
-                        <h1>{_("This system is not registered")}</h1>
-                        <p>{_("To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.")}</p>
-                        <div className="blank-slate-pf-main-action">
-                            <button className="btn btn-lg btn-primary"
-                                onClick={ () => cockpit.jump("/subscriptions", cockpit.transport.host) }>
-                                {_("Register…")}
-                            </button>
-                        </div>
-                    </div>);
-            }
-
             return (
                 <React.Fragment>
                     <AutoUpdates onInitialized={ enabled => this.setState({ autoUpdatesEnabled: enabled }) } />

@@ -357,59 +357,59 @@ return plural;
  ],
  "Memory": [
   null,
-  ""
+  "Minne"
  ],
  "Mini PC": [
   null,
-  ""
+  "Mini-PC"
  ],
  "Mini Tower": [
   null,
-  ""
+  "Minitorn"
  ],
  "Multi-system Chassis": [
   null,
-  ""
+  "Multisystemschassi"
  ],
  "Network": [
   null,
-  ""
+  "Nätverk"
  ],
  "New password was not accepted": [
   null,
-  ""
+  "Det nya lösenordet godtogs inte"
  ],
  "No such file or directory": [
   null,
-  ""
+  "Filen eller katalogen finns inte"
  ],
  "Not a valid private key": [
   null,
-  ""
+  "Inte en giltig privat nyckel"
  ],
  "Notebook": [
   null,
-  ""
+  "Bärbar (notebook)"
  ],
  "Off": [
   null,
-  ""
+  "Av"
  ],
  "Old password not accepted": [
   null,
-  ""
+  "Det gamla lösenordet accepterades inte"
  ],
  "On": [
   null,
-  ""
+  "På"
  ],
  "Other": [
   null,
-  ""
+  "Annan"
  ],
  "Password": [
   null,
-  ""
+  "Lösenord"
  ],
  "Password not accepted": [
   null,
@@ -457,7 +457,7 @@ return plural;
  ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
-  ""
+  "Välj användaren som du vill skall synkorniseras med {{#strong}}{{host}}{{/strong}}"
  ],
  "Servers": [
   null,
@@ -485,11 +485,11 @@ return plural;
  ],
  "Synchronize": [
   null,
-  ""
+  "Synkronisera"
  ],
  "Synchronize users": [
   null,
-  ""
+  "Synkronisera användare"
  ],
  "Tablet": [
   null,
@@ -517,7 +517,7 @@ return plural;
  ],
  "This machine has already been added.": [
   null,
-  ""
+  "Denna maskin har redan lagts till."
  ],
  "This version of cockpit-ws does not support connecting to a host with an alternate user or port": [
   null,

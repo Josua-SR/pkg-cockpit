@@ -721,7 +721,7 @@ return plural;
  ],
  "Memory & Swap": [
   null,
-  ""
+  "Operační paměť a odkládací prostor stránek"
  ],
  "Message to logged in users": [
   null,
