@@ -1,11 +1,11 @@
-cockpit (182-1) UNRELEASED; urgency=medium
+cockpit (182-1) unstable; urgency=medium
 
   * New upstream release:
     - libvirt connection choice during VM creation
     - PackageKit page update severity tooltip
     - PackageKit page display registration status clearly
 
- -- Martin Pitt <mpitt@debian.org>  Wed, 14 Nov 2018 16:37:09 +0000
+ -- Martin Pitt <mpitt@debian.org>  Wed, 14 Nov 2018 16:37:50 +0000
 
 cockpit (181-1) unstable; urgency=medium
 
