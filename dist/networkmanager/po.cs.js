@@ -621,7 +621,7 @@ return plural;
  ],
  "Please install the $0 package": [
   null,
-  "Nainstalujte balíček $0"
+  ""
  ],
  "Ports": [
   null,

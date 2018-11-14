@@ -313,51 +313,51 @@ return plural;
  ],
  "New Password": [
   null,
-  ""
+  "Nytt lösenord"
  ],
  "New password was not accepted": [
   null,
-  ""
+  "Det nya lösenordet godtogs inte"
  ],
  "No matching files found": [
   null,
-  ""
+  "Inga matchande filer hittade"
  ],
  "No such file or directory": [
   null,
-  ""
+  "Filen eller katalogen finns inte"
  ],
  "Not a valid private key": [
   null,
-  ""
+  "Inte en giltig privat nyckel"
  ],
  "Off": [
   null,
-  ""
+  "Av"
  ],
  "Ok": [
   null,
-  ""
+  "Ok"
  ],
  "Old Password": [
   null,
-  ""
+  "Gammalt lösenord"
  ],
  "Old password not accepted": [
   null,
-  ""
+  "Det gamla lösenordet accepterades inte"
  ],
  "On": [
   null,
-  ""
+  "På"
  ],
  "Ooops!": [
   null,
-  ""
+  "Hoppsan!"
  ],
  "Password": [
   null,
-  ""
+  "Lösenord"
  ],
  "Password not accepted": [
   null,
@@ -409,15 +409,15 @@ return plural;
  ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
-  ""
+  "Välj användaren som du vill skall synkorniseras med {{#strong}}{{host}}{{/strong}}"
  ],
  "Synchronize": [
   null,
-  ""
+  "Synkronisera"
  ],
  "Synchronize users": [
   null,
-  ""
+  "Synkronisera användare"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -445,7 +445,7 @@ return plural;
  ],
  "This machine has already been added.": [
   null,
-  ""
+  "Denna maskin har redan lagts till."
  ],
  "This version of cockpit-ws does not support connecting to a host with an alternate user or port": [
   null,

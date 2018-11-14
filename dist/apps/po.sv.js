@@ -101,23 +101,23 @@ return plural;
  ],
  "No applications installed or available": [
   null,
-  ""
+  "Inga program installerade eller tillgängliga"
  ],
  "No description provided.": [
   null,
-  ""
+  "Ingen besrkivning tillhandahållen."
  ],
  "No installation package found for this application.": [
   null,
-  ""
+  "Inget installationspaket hittat för detta program."
  ],
  "Ok": [
   null,
-  ""
+  "Ok"
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "PackageKit kraschade"
  ],
  "Remove": [
   null,

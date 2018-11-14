@@ -450,124 +450,124 @@ return plural;
  ],
  "Memory": [
   null,
-  ""
+  "Minne"
  ],
  "Memory limit": [
   null,
-  ""
+  "Minnesgräns"
  ],
  "Memory usage:": [
   null,
-  ""
+  "Minnesanvändning:"
  ],
  "MiB": [
   null,
-  ""
+  "MiB"
  ],
  "Mini PC": [
   null,
-  ""
+  "Mini-PC"
  ],
  "Mini Tower": [
   null,
-  ""
+  "Minitorn"
  ],
  "Mount container volumes": [
   null,
-  ""
+  "Montera behållarvolymer"
  ],
  "Multi-system Chassis": [
   null,
-  ""
+  "Multisystemschassi"
  ],
  "Name": [
   null,
-  ""
+  "Namn"
  ],
  "No": [
   null,
-  ""
+  "Nej"
  ],
  "No additional local storage found.": [
   null,
-  ""
+  "Ingen ytterligare lokal lagring hittad."
  ],
  "No alias specified": [
   null,
-  ""
+  "Inget alias angivet"
  ],
  "No container specified": [
   null,
-  ""
+  "Ingen behållare angiven"
  ],
  "No containers": [
   null,
-  ""
+  "Inga behållare"
  ],
  "No containers that match the current filter": [
   null,
-  ""
+  "Inga behållare som stämmer med det aktuella filtret"
  ],
  "No images": [
   null,
-  ""
+  "Inga avbilder"
  ],
  "No images that match the current filter": [
   null,
-  ""
+  "Inga avbilder som stämmer med det aktuella filtret"
  ],
  "No results for $0": [
   null,
-  ""
+  "Inga resultat för $0"
  ],
  "No running containers": [
   null,
-  ""
+  "Inga körande behållare"
  ],
  "No running containers that match the current filter": [
   null,
-  ""
+  "Inga körande behållare som stämmer med det aktuella filtret"
  ],
  "Not authorized to access Docker on this system": [
   null,
-  ""
+  "Har inte rättigheter att komma åt Docker på detta system"
  ],
  "Not found": [
   null,
-  ""
+  "Finns inte"
  ],
  "Notebook": [
   null,
-  ""
+  "Bärbar (notebook)"
  ],
  "Off": [
   null,
-  ""
+  "Av"
  ],
  "Ok": [
   null,
-  ""
+  "Ok"
  ],
  "On": [
   null,
-  ""
+  "På"
  ],
  "On Failure": [
   null,
-  ""
+  "Vid misslyckande"
  ],
  "On failure, retry $0 time": [
   "On failure, retry $0 times",
-  "",
-  ""
+  "Vid misslyckande, försök igen $0 gång",
+  "Vid misslyckande, försök igen $0 gånger"
  ],
  "Other": [
   null,
-  ""
+  "Annan"
  ],
  "Overview": [
   null,
-  ""
+  "Översikt"
  ],
  "Peripheral Chassis": [
   null,

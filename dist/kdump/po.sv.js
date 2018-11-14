@@ -121,39 +121,39 @@ return plural;
  ],
  "More details": [
   null,
-  ""
+  "Fler detaljer"
  ],
  "Mount": [
   null,
-  ""
+  "Montering"
  ],
  "No configuration found": [
   null,
-  ""
+  "Ingen konfiguration hittad"
  ],
  "No memory reserved. Append a crashkernel option to the kernel command line (e.g. in /etc/default/grub) to reserve memory at boot time. Example: crashkernel=512M": [
   null,
-  ""
+  "Inget minne är reserverat.  Lägg till ett crashkernel-argument till kärnans kommandorad (t.ex. i /etc/default/grub) för att reservera minne vid uppstartstillfället.  Exempel: crashkernel=512M"
  ],
  "None": [
   null,
-  ""
+  "Inga"
  ],
  "Off": [
   null,
-  ""
+  "Av"
  ],
  "Ok": [
   null,
-  ""
+  "Ok"
  ],
  "On": [
   null,
-  ""
+  "På"
  ],
  "On a mounted device": [
   null,
-  ""
+  "På en monterad enhet"
  ],
  "Raw to a device": [
   null,

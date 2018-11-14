@@ -71,10 +71,6 @@ return plural;
   null,
   "$0 je k dispozici pro většinu operačních systémů. Pro instalaci vyhledejte v GNOME Software nebo spusťte následující:"
  ],
- "$0 vCPU Details": [
-  null,
-  "Podrobnosti o virt. procesoru $0"
- ],
  "Add": [
   null,
   "Přidat"
@@ -141,15 +137,11 @@ return plural;
  ],
  "Changes will apply on VM shutdown": [
   null,
-  ""
+  "Změny se uplatní po vypnutí virt. stroje"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
   "Kliknutím na „Spustit vzdálený prohlížeč“ se stáhne soubor ve formátu .vv a spustí se $0."
- ],
- "Confirm deletion of $0": [
-  null,
-  "Potvrdit smazání $0"
  ],
  "Connect with any $0 viewer application.": [
   null,
@@ -341,7 +333,7 @@ return plural;
  ],
  "Mac Address": [
   null,
-  ""
+  "MAC adresa"
  ],
  "Manual Connection": [
   null,
@@ -393,11 +385,11 @@ return plural;
  ],
  "Network Type": [
   null,
-  ""
+  "Typ sítě"
  ],
  "Network settings failed to change with following error: ": [
   null,
-  ""
+  "Nastavení sítě se nepodařilo změnit z důvodu následující chyby: "
  ],
  "Networks": [
   null,
@@ -433,7 +425,7 @@ return plural;
  ],
  "No virtual networks": [
   null,
-  ""
+  "Žádné virtuální sítě"
  ],
  "OS Vendor": [
   null,
@@ -490,6 +482,14 @@ return plural;
  "Protocol": [
   null,
   "Protokol"
+ ],
+ "QEMU/KVM System connection": [
+  null,
+  ""
+ ],
+ "QEMU/KVM User connection": [
+  null,
+  ""
  ],
  "Readonly": [
   null,

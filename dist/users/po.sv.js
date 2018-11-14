@@ -217,67 +217,67 @@ return plural;
  ],
  "Never": [
   null,
-  ""
+  "Aldrig"
  ],
  "Never expire password": [
   null,
-  ""
+  "Låt aldrig lösenord gå ut"
  ],
  "Never lock account": [
   null,
-  ""
+  "Lås aldrig konton"
  ],
  "New Password": [
   null,
-  ""
+  "Nytt lösenord"
  ],
  "New password was not accepted": [
   null,
-  ""
+  "Det nya lösenordet godtogs inte"
  ],
  "No real name specified": [
   null,
-  ""
+  "Inget verkligt namn angivet"
  ],
  "No user name specified": [
   null,
-  ""
+  "Inget användarnamn angivet."
  ],
  "Off": [
   null,
-  ""
+  "Av"
  ],
  "Old Password": [
   null,
-  ""
+  "Gammalt lösenord"
  ],
  "Old password not accepted": [
   null,
-  ""
+  "Det gamla lösenordet accepterades inte"
  ],
  "On": [
   null,
-  ""
+  "På"
  ],
  "Password": [
   null,
-  ""
+  "Lösenord"
  ],
  "Password Expiration": [
   null,
-  ""
+  "Utgång av lösenord"
  ],
  "Password is not acceptable": [
   null,
-  ""
+  "Lösenordet är inte godtagbart"
  ],
  "Password is too weak": [
   null,
-  ""
+  "Lösenordet är för svagt"
  ],
  "Password must be changed": [
   null,
-  ""
+  "Lösenordet måste ändras"
  ],
  "Paste the contents of your public SSH key file here": [
   null,

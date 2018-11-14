@@ -177,31 +177,31 @@ return plural;
  ],
  "More": [
   null,
-  ""
+  "Mera"
  ],
  "Next": [
   null,
-  ""
+  "Nästa"
  ],
  "Off": [
   null,
-  ""
+  "Av"
  ],
  "Ok": [
   null,
-  ""
+  "Ok"
  ],
  "On": [
   null,
-  ""
+  "På"
  ],
  "One Time Password": [
   null,
-  ""
+  "Engångslösenord"
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "PackageKit kraschade"
  ],
  "Removals:": [
   null,
@@ -217,7 +217,7 @@ return plural;
  ],
  "This may take a while": [
   null,
-  ""
+  "Detta kan ta ett tag"
  ],
  "Total size: $0": [
   null,

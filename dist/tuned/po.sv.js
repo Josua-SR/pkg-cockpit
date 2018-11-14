@@ -105,11 +105,11 @@ return plural;
  ],
  "None": [
   null,
-  ""
+  "Inga"
  ],
  "Ok": [
   null,
-  ""
+  "Ok"
  ],
  "The user <b>$0</b> is not permitted to change profiles": [
   null,
@@ -117,7 +117,7 @@ return plural;
  ],
  "This system is using a custom profile": [
   null,
-  ""
+  "Detta system använder en anpassad profil"
  ],
  "This system is using the recommended profile": [
   null,

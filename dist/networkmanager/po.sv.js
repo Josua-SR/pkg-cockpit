@@ -509,95 +509,95 @@ return plural;
  ],
  "Master": [
   null,
-  ""
+  "Huvudgränssnitt"
  ],
  "Maximum message age $max_age": [
   null,
-  ""
+  "Maximal meddelandeålder $max_age"
  ],
  "Members": [
   null,
-  ""
+  "Medlemmar"
  ],
  "Mode": [
   null,
-  ""
+  "Läge"
  ],
  "Monitoring Interval": [
   null,
-  ""
+  "Övervakningsintervall"
  ],
  "Monitoring Targets": [
   null,
-  ""
+  "Övervakningsmål"
  ],
  "NSNA Ping": [
   null,
-  ""
+  "NSNA-ping"
  ],
  "Name": [
   null,
-  ""
+  "Namn"
  ],
  "Network devices and graphs require NetworkManager.": [
   null,
-  ""
+  "Nätverksenheter och -grafer behöver NetworkManager."
  ],
  "NetworkManager is not running.": [
   null,
-  ""
+  "NetworkManager kör inte."
  ],
  "Networking": [
   null,
-  ""
+  "Nätverk"
  ],
  "Networking Logs": [
   null,
-  ""
+  "Nätverksloggar"
  ],
  "No": [
   null,
-  ""
+  "Nej"
  ],
  "No carrier": [
   null,
-  ""
+  "Ingen bärvåg"
  ],
  "No open ports": [
   null,
-  ""
+  "Inga öppna portar"
  ],
  "Not available": [
   null,
-  ""
+  "Inte tillgängligt"
  ],
  "Off": [
   null,
-  ""
+  "Av"
  ],
  "Ok": [
   null,
-  ""
+  "Ok"
  ],
  "On": [
   null,
-  ""
+  "På"
  ],
  "Parent": [
   null,
-  ""
+  "Förälder"
  ],
  "Parent $parent": [
   null,
-  ""
+  "Förälder $parent"
  ],
  "Part of ": [
   null,
-  ""
+  "Del av"
  ],
  "Passive": [
   null,
-  ""
+  "Passiv"
  ],
  "Path cost": [
   null,
@@ -865,6 +865,6 @@ return plural;
  ],
  "page-title\u0004Networking": [
   null,
-  ""
+  "Nätverk"
  ]
 }));

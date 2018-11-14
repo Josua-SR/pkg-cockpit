@@ -165,7 +165,7 @@ return plural;
  ],
  "Changes will apply on VM shutdown": [
   null,
-  ""
+  "Změny se uplatní po vypnutí virt. stroje"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -182,10 +182,6 @@ return plural;
  "Cluster Virtual Machines": [
   null,
   "Cluster virtuálních strojů"
- ],
- "Confirm deletion of $0": [
-  null,
-  "Potvrdit smazání $0"
  ],
  "Confirm migration": [
   null,
@@ -401,7 +397,7 @@ return plural;
  ],
  "Mac Address": [
   null,
-  ""
+  "MAC adresa"
  ],
  "Manual Connection": [
   null,
@@ -445,11 +441,11 @@ return plural;
  ],
  "Network Type": [
   null,
-  ""
+  "Typ sítě"
  ],
  "Network settings failed to change with following error: ": [
   null,
-  ""
+  "Nastavení sítě se nepodařilo změnit z důvodu následující chyby: "
  ],
  "Networks": [
   null,
@@ -489,7 +485,7 @@ return plural;
  ],
  "No virtual networks": [
   null,
-  ""
+  "Žádné virtuální sítě"
  ],
  "Number of virtual CPUs that gonna be used.": [
   null,

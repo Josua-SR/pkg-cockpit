@@ -717,91 +717,91 @@ return plural;
  ],
  "Memory": [
   null,
-  ""
+  "Minne"
  ],
  "Memory & Swap": [
   null,
-  ""
+  "Minne och växling"
  ],
  "Message to logged in users": [
   null,
-  ""
+  "Meddelande till inloggade användare"
  ],
  "Mini PC": [
   null,
-  ""
+  "Mini-PC"
  ],
  "Mini Tower": [
   null,
-  ""
+  "Minitorn"
  ],
  "Minute needs to be a number between 0-59": [
   null,
-  ""
+  "Minuterna måste vara ett tal mellan 0-59"
  ],
  "Minutes": [
   null,
-  ""
+  "Minuter"
  ],
  "Model": [
   null,
-  ""
+  "Modell"
  ],
  "Monday": [
   null,
-  ""
+  "Måndag"
  ],
  "Multi-system Chassis": [
   null,
-  ""
+  "Multisystemschassi"
  ],
  "NTP Server": [
   null,
-  ""
+  "NTP-server"
  ],
  "Name": [
   null,
-  ""
+  "Namn"
  ],
  "Need at least one NTP server": [
   null,
-  ""
+  "Behöver åtminstone en NTP-server"
  ],
  "Network Traffic": [
   null,
-  ""
+  "Nätverkstrafik"
  ],
  "Next Run": [
   null,
-  ""
+  "Nästa körning"
  ],
  "Nice": [
   null,
-  ""
+  "Nice"
  ],
  "No Delay": [
   null,
-  ""
+  "Ingen fördröjning"
  ],
  "No host keys found.": [
   null,
-  ""
+  "Inga värdnycklar hittade."
  ],
  "Not authorized to upload-report": [
   null,
-  ""
+  "Har inte rättigheter att skicka rapport"
  ],
  "Not synchronized": [
   null,
-  ""
+  "Inte synkroniserad"
  ],
  "Note": [
   null,
-  ""
+  "Observera"
  ],
  "Notebook": [
   null,
-  ""
+  "Bärbar (notebook)"
  ],
  "Notice and above": [
   null,
@@ -809,47 +809,47 @@ return plural;
  ],
  "Off": [
   null,
-  ""
+  "Av"
  ],
  "Ok": [
   null,
-  ""
+  "Ok"
  ],
  "On": [
   null,
-  ""
+  "På"
  ],
  "On Failure": [
   null,
-  ""
+  "Vid misslyckande"
  ],
  "Only Emergency": [
   null,
-  ""
+  "Endast nödläge"
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
-  ""
+  "Endast alfabetet, nummer, :, _, ., @, - är tillåtna."
  ],
  "Operating System": [
   null,
-  ""
+  "Operativsystem"
  ],
  "Other": [
   null,
-  ""
+  "Annan"
  ],
  "PCI": [
   null,
-  ""
+  "PCI"
  ],
  "PackageKit crashed": [
   null,
-  ""
+  "PackageKit kraschade"
  ],
  "Part Of": [
   null,
-  ""
+  "Del av"
  ],
  "Paths": [
   null,
@@ -1125,15 +1125,15 @@ return plural;
  ],
  "Synchronized": [
   null,
-  ""
+  "Synkroniserad"
  ],
  "Synchronized with {{Server}}": [
   null,
-  ""
+  "Synkroniserad med {{Server}}"
  ],
  "System": [
   null,
-  ""
+  "System"
  ],
  "System Information": [
   null,
@@ -1335,6 +1335,6 @@ return plural;
  ],
  "page-title\u0004Memory": [
   null,
-  ""
+  "Minne"
  ]
 }));

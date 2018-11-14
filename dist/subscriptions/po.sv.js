@@ -133,19 +133,19 @@ return plural;
  ],
  "No installed products on the system.": [
   null,
-  ""
+  "Inga installerade produkter på systemet."
  ],
  "Ok": [
   null,
-  ""
+  "Ok"
  ],
  "Organization": [
   null,
-  ""
+  "Organisation"
  ],
  "Password": [
   null,
-  ""
+  "Lösenord"
  ],
  "Product ID": [
   null,

@@ -71,10 +71,6 @@ return plural;
   null,
   "$0 är tillgängligt till de flesta operativsystem.  Sök efter det i GNOME-programvara för att installera det eller kör följande:"
  ],
- "$0 vCPU Details": [
-  null,
-  "$0 vCPU-detaljer"
- ],
  "Add": [
   null,
   "Lägg till"
@@ -146,10 +142,6 @@ return plural;
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
   "Att klicka ”Starta fjärrvisare” kommer hämta en .vv-fil och starta $0"
- ],
- "Confirm deletion of $0": [
-  null,
-  "Bekräfta radering av $0"
  ],
  "Connect with any $0 viewer application.": [
   null,
@@ -349,107 +341,107 @@ return plural;
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
-  ""
+  "Maximalt antal virtuella CPU:er allokerade till gäst-OS:et, vilket måste vara mellan 1 och $0"
  ],
  "Memory": [
   null,
-  ""
+  "Minne"
  ],
  "Memory should be positive number": [
   null,
-  ""
+  "Minnet skall vara ett positivt tal"
  ],
  "Memory:": [
   null,
-  ""
+  "Minne:"
  ],
  "MiB": [
   null,
-  ""
+  "MiB"
  ],
  "Model": [
   null,
-  ""
+  "Modell"
  ],
  "Model type": [
   null,
-  ""
+  "Modelltyp"
  ],
  "More Information": [
   null,
-  ""
+  "Mer information"
  ],
  "Name": [
   null,
-  ""
+  "Namn"
  ],
  "Name should not be empty": [
   null,
-  ""
+  "Namnet får inte vara tomt"
  ],
  "Name should not consist of empty characters only": [
   null,
-  ""
+  "Namnet får inte inte bestå av endast tomma tecken"
  ],
  "Network Type": [
   null,
-  ""
+  "Nätverkstyp"
  ],
  "Network settings failed to change with following error: ": [
   null,
-  ""
+  "Nätverksinställningarna kunde inte ändras utan fick följande fel:"
  ],
  "Networks": [
   null,
-  ""
+  "Nätverk"
  ],
  "New Volume Name": [
   null,
-  ""
+  "Nytt volymnamn"
  ],
  "No VM is running or defined on this host": [
   null,
-  ""
+  "Ingen VM kör eller är definierad på denna värd."
  ],
  "No boot device found": [
   null,
-  ""
+  "Ingen startenhet hittades"
  ],
  "No console defined for this virtual machine.": [
   null,
-  ""
+  "Ingen konsol definierad för denna virtuella maskin."
  ],
  "No disks defined for this VM": [
   null,
-  ""
+  "Inga diskar är definerade för denna VM"
  ],
  "No matching files found": [
   null,
-  ""
+  "Inga matchande filer hittade"
  ],
  "No network interfaces defined for this VM": [
   null,
-  ""
+  "Inga nätverksgränssnitt är definierade för denna VM"
  ],
  "No virtual networks": [
   null,
-  ""
+  "Inga virtuella nätverk"
  ],
  "OS Vendor": [
   null,
-  ""
+  "OS-leverantör"
  ],
  "Ok": [
   null,
-  ""
+  "Ok"
  ],
  "Operating System": [
   null,
-  ""
+  "Operativsystem"
  ],
  "Overview": [
   null,
-  ""
+  "Översikt"
  ],
  "Path to ISO file on host's file system": [
   null,
@@ -490,6 +482,14 @@ return plural;
  "Protocol": [
   null,
   "Protokoll"
+ ],
+ "QEMU/KVM System connection": [
+  null,
+  ""
+ ],
+ "QEMU/KVM User connection": [
+  null,
+  ""
  ],
  "Readonly": [
   null,
@@ -597,7 +597,7 @@ return plural;
  ],
  "System": [
   null,
-  ""
+  "System"
  ],
  "Target": [
   null,

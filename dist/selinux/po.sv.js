@@ -110,27 +110,27 @@ return plural;
  ],
  "No SELinux alerts.": [
   null,
-  ""
+  "Inga SELinux-larm."
  ],
  "Not connected": [
   null,
-  ""
+  "Inte ansluten"
  ],
  "Occurred $0": [
   null,
-  ""
+  "Hände $0"
  ],
  "Occurred between $0 and $1": [
   null,
-  ""
+  "Hände mellan $0 och $1"
  ],
  "Off": [
   null,
-  ""
+  "Av"
  ],
  "On": [
   null,
-  ""
+  "På"
  ],
  "SELinux Access Control Errors": [
   null,
