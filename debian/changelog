@@ -1,3 +1,13 @@
+cockpit (183-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Machines: Manage storage pools
+    - Kernel Dump: Support non-local targets
+    - Respect SSH configuration
+    - Never send Content-Length with chunked encoding
+
+ -- Martin Pitt <mpitt@debian.org>  Wed, 28 Nov 2018 14:50:36 +0000
+
 cockpit (182-1) unstable; urgency=medium
 
   * New upstream release:
