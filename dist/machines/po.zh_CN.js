@@ -71,10 +71,6 @@ return plural;
   null,
   "$0 对大多数操作系统可用。为了安装它，在 GNOME 软件中搜索它，或运行以下命令： "
  ],
- "$0 vCPU Details": [
-  null,
-  "$0 vCPU 详情"
- ],
  "Add": [
   null,
   "添加"
@@ -90,10 +86,6 @@ return plural;
  "Address:": [
   null,
   "地址："
- ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  "只有在停止和启动 VM 后，所有更改才会生效。"
  ],
  "Apply": [
   null,
@@ -139,13 +131,13 @@ return plural;
   null,
   "容量"
  ],
+ "Changes will take effect after shutting down the VM": [
+  null,
+  ""
+ ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
   "点击 \"启动 Remote Viewer\" 将下载一个  .vv 文件并加载 $0。"
- ],
- "Confirm deletion of $0": [
-  null,
-  "确认删除 $0"
  ],
  "Connect with any $0 viewer application.": [
   null,
@@ -187,13 +179,9 @@ return plural;
   null,
   "新建"
  ],
- "Create New VM": [
+ "Create VM": [
   null,
-  "新建 VM"
- ],
- "Create New Virtual Machine": [
-  null,
-  "创建新的虚拟机"
+  "创建虚拟机"
  ],
  "Creation of vm $0 failed": [
   null,
@@ -227,13 +215,13 @@ return plural;
   null,
   "从串行控制台断开连接。单击“重新连接”按钮。"
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
-  "因为以下错误磁盘无法被附加： "
+  ""
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
-  "因为以下错误磁盘无法被创建："
+  ""
  ],
  "Disks": [
   null,
@@ -242,6 +230,10 @@ return plural;
  "Download the MSI from $0": [
   null,
   "从 $0 下载 MSI"
+ ],
+ "Edit": [
+  null,
+  "编辑"
  ],
  "Emulated Machine:": [
   null,
@@ -331,6 +323,10 @@ return plural;
   null,
   "MAC 地址"
  ],
+ "Mac Address": [
+  null,
+  ""
+ ],
  "Manual Connection": [
   null,
   "手动连接"
@@ -355,6 +351,10 @@ return plural;
   null,
   "MiB"
  ],
+ "Model": [
+  null,
+  "型号"
+ ],
  "Model type": [
   null,
   "型号类型"
@@ -375,6 +375,14 @@ return plural;
   null,
   "名称不应仅包含空字符"
  ],
+ "Network Type": [
+  null,
+  ""
+ ],
+ "Network settings could not be saved": [
+  null,
+  ""
+ ],
  "Networks": [
   null,
   "网络"
@@ -382,6 +390,10 @@ return plural;
  "New Volume Name": [
   null,
   "新卷名称"
+ ],
+ "No Storage Volumes defined for this Storage Pool": [
+  null,
+  ""
  ],
  "No VM is running or defined on this host": [
   null,
@@ -407,13 +419,17 @@ return plural;
   null,
   "没有为此 VM 定义网络接口"
  ],
+ "No storage pool is defined on this host": [
+  null,
+  ""
+ ],
+ "No virtual networks": [
+  null,
+  ""
+ ],
  "OS Vendor": [
   null,
   "操作系统厂商"
- ],
- "Ok": [
-  null,
-  "确认"
  ],
  "Operating System": [
   null,
@@ -463,6 +479,14 @@ return plural;
   null,
   "协议"
  ],
+ "QEMU/KVM System connection": [
+  null,
+  ""
+ ],
+ "QEMU/KVM User connection": [
+  null,
+  ""
+ ],
  "Readonly": [
   null,
   "只读"
@@ -483,14 +507,6 @@ return plural;
   null,
   "运行"
  ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  "SET VCPU SETTINGS 操作失败"
- ],
- "SET_VCPU_SETTINGS action failed": [
-  null,
-  ""
- ],
  "SPICE": [
   null,
   "SPICE"
@@ -506,6 +522,10 @@ return plural;
  "SPICE TLS Port:": [
   null,
   "SPICE TLS 端口："
+ ],
+ "Save": [
+  null,
+  "保存"
  ],
  "Send Non-Maskable Interrupt": [
   null,
@@ -555,6 +575,10 @@ return plural;
   null,
   "状态"
  ],
+ "Storage Pools": [
+  null,
+  ""
+ ],
  "Storage Size": [
   null,
   "存储大小"
@@ -562,6 +586,10 @@ return plural;
  "Storage Size should not be negative number": [
   null,
   "存储大小不应为负数"
+ ],
+ "Storage Volumes": [
+  null,
+  ""
  ],
  "System": [
   null,
@@ -655,6 +683,10 @@ return plural;
   null,
   "已使用"
  ],
+ "VCPU settings could not be saved": [
+  null,
+  ""
+ ],
  "VM CHANGE_NETWORK_STATE action failed": [
   null,
   ""
@@ -735,6 +767,10 @@ return plural;
   null,
   "卷"
  ],
+ "active": [
+  null,
+  "激活"
+ ],
  "bridge": [
   null,
   "网桥"
@@ -790,6 +826,10 @@ return plural;
  "idle": [
   null,
   "休眠"
+ ],
+ "inactive": [
+  null,
+  "未激活"
  ],
  "mcast": [
   null,

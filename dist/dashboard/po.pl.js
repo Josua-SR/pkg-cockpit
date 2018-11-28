@@ -566,9 +566,5 @@ return plural;
  "You are currently connected directly to this server. You cannot delete it.": [
   null,
   "Obecnie połączono bezpośrednio z tym serwerem. Nie można go usunąć."
- ],
- "You can remove the previously stored key by running the following command": [
-  null,
-  "Można usunąć poprzednio przechowywany klucz wykonując następujące polecenie"
  ]
 }));

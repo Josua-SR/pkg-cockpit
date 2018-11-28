@@ -71,10 +71,6 @@ return plural;
   null,
   "$0 можна користуватися у більшості операційних систем. Щоб встановити пакунок із програмою, знайдіть відповідний запис у Програмних засобах GNOME або віддайте таку команду:"
  ],
- "$0 vCPU Details": [
-  null,
-  "Параметри віртуального процесора $0"
- ],
  "Add": [
   null,
   "Додати"
@@ -90,10 +86,6 @@ return plural;
  "Address:": [
   null,
   "Адреса:"
- ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  "Усі зміни набудуть чинності лише після перезапуску віртуальної машини."
  ],
  "Apply": [
   null,
@@ -139,17 +131,13 @@ return plural;
   null,
   "Місткість"
  ],
- "Changes will apply on VM shutdown": [
+ "Changes will take effect after shutting down the VM": [
   null,
-  "Зміни буде внесено при вимиканні ВМ"
+  ""
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
   "У результаті натискання «Запустити віддалений переглядач» буде отримано файл .vv і запущено $0."
- ],
- "Confirm deletion of $0": [
-  null,
-  "Підтвердження вилучення $0"
  ],
  "Connect with any $0 viewer application.": [
   null,
@@ -191,13 +179,9 @@ return plural;
   null,
   "Створити"
  ],
- "Create New VM": [
+ "Create VM": [
   null,
-  "Створити віртуальну машину"
- ],
- "Create New Virtual Machine": [
-  null,
-  "Створити віртуальну машину"
+  "Створення ВМ"
  ],
  "Creation of vm $0 failed": [
   null,
@@ -231,13 +215,13 @@ return plural;
   null,
   "Від'єднано від послідовної консолі. Натисніть кнопку «Повторно з'єднатися»."
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
-  "Не вдалося долучити диск. Повідомлення щодо помилки:"
+  ""
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
-  "Не вдалося створити диск. Повідомлення щодо помилки:"
+  ""
  ],
  "Disks": [
   null,
@@ -395,9 +379,9 @@ return plural;
   null,
   "Тип мережі"
  ],
- "Network settings failed to change with following error: ": [
+ "Network settings could not be saved": [
   null,
-  "Не вдалося зміни параметри мережі. Повідомлення про помилку:"
+  ""
  ],
  "Networks": [
   null,
@@ -406,6 +390,10 @@ return plural;
  "New Volume Name": [
   null,
   "Назва нового тому"
+ ],
+ "No Storage Volumes defined for this Storage Pool": [
+  null,
+  ""
  ],
  "No VM is running or defined on this host": [
   null,
@@ -431,6 +419,10 @@ return plural;
   null,
   "Немає інтерфейсів мережі, які визначено для цієї ВМ"
  ],
+ "No storage pool is defined on this host": [
+  null,
+  ""
+ ],
  "No virtual networks": [
   null,
   "Немає віртуальних мереж"
@@ -438,10 +430,6 @@ return plural;
  "OS Vendor": [
   null,
   "Виробник ОС"
- ],
- "Ok": [
-  null,
-  "Гаразд"
  ],
  "Operating System": [
   null,
@@ -491,6 +479,14 @@ return plural;
   null,
   "Протокол"
  ],
+ "QEMU/KVM System connection": [
+  null,
+  "З'єднання системи QEMU/KVM"
+ ],
+ "QEMU/KVM User connection": [
+  null,
+  "З'єднання користувача QEMU/KVM"
+ ],
  "Readonly": [
   null,
   "Лише запис"
@@ -510,14 +506,6 @@ return plural;
  "Run": [
   null,
   "Запустити"
- ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  "Помилка під час спроби виконати дію SET VCPU SETTINGS"
- ],
- "SET_VCPU_SETTINGS action failed": [
-  null,
-  "Помилка дії SET_VCPU_SETTINGS"
  ],
  "SPICE": [
   null,
@@ -587,6 +575,10 @@ return plural;
   null,
   "Стан"
  ],
+ "Storage Pools": [
+  null,
+  ""
+ ],
  "Storage Size": [
   null,
   "Розмір зберігання"
@@ -594,6 +586,10 @@ return plural;
  "Storage Size should not be negative number": [
   null,
   "Розмір зберігання має бути невід'ємним числом"
+ ],
+ "Storage Volumes": [
+  null,
+  ""
  ],
  "System": [
   null,
@@ -687,6 +683,10 @@ return plural;
   null,
   "Використано"
  ],
+ "VCPU settings could not be saved": [
+  null,
+  ""
+ ],
  "VM CHANGE_NETWORK_STATE action failed": [
   null,
   "Помилка дії VM CHANGE_NETWORK_STATE"
@@ -767,6 +767,10 @@ return plural;
   null,
   "Том"
  ],
+ "active": [
+  null,
+  "активний"
+ ],
  "bridge": [
   null,
   "місток"
@@ -822,6 +826,10 @@ return plural;
  "idle": [
   null,
   "бездіяльний"
+ ],
+ "inactive": [
+  null,
+  "неактивний"
  ],
  "mcast": [
   null,

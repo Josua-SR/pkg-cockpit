@@ -671,6 +671,15 @@ tbody + thead.listing-ct-empty {
 .listing-ct-wide {
   width: 100%;
 }
+/* Listing pattern mod to redce the padding */
+.listing-ct-compact tbody td,
+.listing-ct-compact tbody th {
+  padding: 5px;
+}
+.listing-ct-compact tbody .listing-ct-item > .listing-ct-toggle:not(:empty) + td::before,
+.listing-ct-compact tbody .listing-ct-item > .listing-ct-toggle:not(:empty) + th::before {
+  top: 5px;
+}
 div.listing-ct-head {
   overflow: visible;
 }
@@ -716,6 +725,9 @@ tbody tr.listing-ct-noexpand {
 }
 .notification-message {
     white-space: pre-wrap;
+}
+.machines-more-button {
+    padding-left: 10px;
 }
 .dialog-field {
     display: inline-flex;
@@ -798,9 +810,6 @@ tbody tr.listing-ct-noexpand {
 }
 
 .add-disk-select-source > input[type=radio] { }
-.machines-more-button {
-    padding-left: 10px;
-}
 /* Standard dialog is too narrow and wide dialog is too wide */
 .nic-edit > .modal-dialog {
     width: 70rem;
@@ -811,37 +820,8 @@ tbody tr.listing-ct-noexpand {
     padding-right: 0;
 }
 
-.nic-edit-idle-message {
-    align-items: center;
-    display: flex;
-    float: left;
-    line-height: 24px; /* Same height as a button */
-}
-
-.pficon-pending {
-    color: #ec7a08; /* pf-orange-400 */
-    font-size: 16px;
-}
-
 .machines-network-list .pficon-pending {
     margin-left: 0.5rem;
-}
-
-.nic-edit .pficon-pending {
-    line-height: inherit;
-    margin-right: 0.5rem;
-}
-
-/* FIXME: This CSS should be moved upstream. */
-.form-text {
-    /* Set size similar to a widget; like control-label, but no alignment */
-    display: inline-block;
-    padding-top: 3px;
-    margin-bottom: 0;
-}
-.modal-body + .modal-footer {
-    /* Remove unneeded margin when there's a modal body and footer */
-    margin-top: 0;
 }
 .console-type-select {
     width: 19em !important;
@@ -1075,6 +1055,262 @@ table.delete-dialog-disks.table tbody tr td:nth-child(3) {
     width: 1px;
     height: 1px;
     overflow: hidden;
+}
+.rbt {
+  outline: none;
+}
+
+.rbt-menu {
+  margin-bottom: 2px;
+}
+
+.rbt-menu > li a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rbt-menu > li a:focus {
+  outline: none;
+}
+
+.rbt-menu-pagination-option {
+  text-align: center;
+}
+
+.rbt .rbt-input-main::-ms-clear {
+  display: none;
+}
+
+.rbt-input-multi {
+  cursor: text;
+  overflow: hidden;
+  position: relative;
+  height: auto;
+}
+
+.rbt-input-multi.focus {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  border-color: #66afe9;
+  outline: 0;
+}
+
+.rbt-input-multi.form-control[disabled] {
+  background-color: #e9ecef;
+  opacity: 1;
+}
+
+.rbt-input-multi input::-moz-placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+.rbt-input-multi input:-ms-input-placeholder {
+  color: #999;
+}
+
+.rbt-input-multi input::-webkit-input-placeholder {
+  color: #999;
+}
+
+.rbt-input-multi .rbt-input-wrapper {
+  margin-bottom: -4px;
+  margin-top: -1px;
+  overflow: hidden;
+}
+
+.rbt-input-multi .rbt-input-main {
+  height: 20px;
+  margin: 1px 0 4px;
+}
+
+.rbt-input-multi .rbt-input-hint-container {
+  display: inline-block;
+}
+
+.rbt-input-multi.input-lg .rbt-input-main, .rbt-input-multi.form-control-lg .rbt-input-main {
+  height: 24px;
+}
+
+.rbt-input-multi.input-sm .rbt-input-main, .rbt-input-multi.form-control-sm .rbt-input-main {
+  height: 18px;
+}
+
+.rbt-close {
+  z-index: 1;
+}
+
+.rbt-close-lg {
+  font-size: 24px;
+}
+
+.rbt-token {
+  background-color: #e7f4ff;
+  border: 0;
+  border-radius: 2px;
+  color: #1f8dd6;
+  display: inline-block;
+  line-height: 1em;
+  margin: 0 3px 3px 0;
+  padding: 4px 7px;
+  position: relative;
+}
+
+.rbt-token-disabled {
+  background-color: #ddd;
+  color: #888;
+  pointer-events: none;
+}
+
+.rbt-token-removeable {
+  cursor: pointer;
+  padding-right: 21px;
+}
+
+.rbt-token-active {
+  background-color: #1f8dd6;
+  color: #fff;
+  outline: none;
+  text-decoration: none;
+}
+
+.rbt-token .rbt-token-remove-button {
+  bottom: 0;
+  color: inherit;
+  font-size: inherit;
+  font-weight: normal;
+  opacity: 1;
+  outline: none;
+  padding: 3px 7px;
+  position: absolute;
+  right: 0;
+  text-shadow: none;
+  top: -2px;
+}
+
+.rbt-loader {
+  -webkit-animation: loader-animation 600ms infinite linear;
+  -o-animation: loader-animation 600ms infinite linear;
+  animation: loader-animation 600ms infinite linear;
+  border: 1px solid #d5d5d5;
+  border-radius: 50%;
+  border-top-color: #1f8dd6;
+  display: block;
+  height: 16px;
+  width: 16px;
+}
+
+.rbt-loader-lg {
+  height: 20px;
+  width: 20px;
+}
+
+.rbt-aux {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  bottom: 0;
+  justify-content: center;
+  pointer-events: none;
+  /* Don't block clicks on the input */
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 34px;
+}
+
+.rbt-aux-lg {
+  width: 46px;
+}
+
+.rbt-aux .rbt-close {
+  margin-top: -4px;
+  pointer-events: auto;
+  /* Override pointer-events: none; above */
+}
+
+.has-aux .rbt-input {
+  padding-right: 34px;
+}
+
+.rbt-highlight-text {
+  background-color: inherit;
+  color: inherit;
+  font-weight: bold;
+  padding: 0;
+}
+
+/* Input Groups */
+.input-group > .rbt {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.input-group > .rbt .rbt-input-hint-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.input-group > .rbt .rbt-input-hint {
+  z-index: 5;
+}
+
+.input-group > .rbt .rbt-aux {
+  z-index: 5;
+}
+
+.input-group > .rbt:not(:first-child) .form-control {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group > .rbt:not(:last-child) .form-control {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Validation States */
+.has-error .rbt-input-multi.focus {
+  border-color: #843534;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+}
+
+.has-warning .rbt-input-multi.focus {
+  border-color: #66512c;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
+}
+
+.has-success .rbt-input-multi.focus {
+  border-color: #2b542c;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+}
+
+@keyframes loader-animation {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@-webkit-keyframes loader-animation {
+  to {
+    -webkit-transform: rotate(1turn);
+  }
 }
 a {
   cursor: pointer;
@@ -1692,6 +1928,15 @@ tbody + thead.listing-ct-empty {
 .listing-ct-wide {
   width: 100%;
 }
+/* Listing pattern mod to redce the padding */
+.listing-ct-compact tbody td,
+.listing-ct-compact tbody th {
+  padding: 5px;
+}
+.listing-ct-compact tbody .listing-ct-item > .listing-ct-toggle:not(:empty) + td::before,
+.listing-ct-compact tbody .listing-ct-item > .listing-ct-toggle:not(:empty) + th::before {
+  top: 5px;
+}
 div.listing-ct-head {
   overflow: visible;
 }
@@ -1734,6 +1979,75 @@ tbody tr.listing-ct-noexpand {
 .listing-ct-body {
   /* 42 = (20px padding + 1px border) * 2 */
   max-width: calc(100vw - 42px);
+}
+/* Organize cards in a grid instead of BootStrap */
+.grid-cards-ct {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  padding: 20px;
+}
+.grid-cards-ct > div {
+  /* No funky negative margins are needed for grid */
+  margin: 0;
+}
+.grid-cards-ct:first-child {
+  margin-top: ;
+}
+@media screen and (min-width: 60rem) {
+  /* Make a single card no longer than half the width */
+  .grid-cards-ct > div:first-child:last-child {
+    /* Remove 1/2 grid-gap to keep width the same */
+    max-width: calc(50% - 10px);
+  }
+}
+/* PatternFly overrides for hybrid style */
+.cards-ct-hybrid .card-pf {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+}
+.cards-ct-hybrid .card-pf-title,
+.cards-ct-hybrid .card-pf-body {
+  margin: 0;
+}
+.cards-ct-hybrid .card-pf-title,
+.cards-ct-hybrid .card-pf-title a {
+  display: flex;
+  align-items: baseline;
+}
+.cards-ct-hybrid .card-pf-title {
+  flex: auto;
+  padding: 20px;
+  line-height: 16px;
+  /* Same as icon */
+}
+.cards-ct-hybrid .card-pf-title a {
+  color: #0088ce !important;
+  margin: -20px;
+  padding: 20px;
+  text-align: left;
+  width: 100%;
+}
+.cards-ct-hybrid .card-pf-title a:hover {
+  text-decoration: none;
+}
+.cards-ct-hybrid .card-pf-title a:hover .card-pf-title-link {
+  text-decoration: underline;
+}
+.cards-ct-hybrid .card-pf-title .pficon,
+.cards-ct-hybrid .card-pf-title .fa {
+  margin-right: 1rem;
+}
+.cards-ct-hybrid .card-pf-body {
+  flex: 0 auto;
+  padding: 10px 20px;
+}
+.cards-ct-hybrid .card-pf-aggregate-status-count {
+  color: inherit;
+  padding: 0 .5rem 0;
 }
 /* Panels don't draw borders between them */
 .panel > .table > tbody:first-child td {
@@ -2073,6 +2387,28 @@ tbody tr.listing-ct-noexpand {
   display: inline-block;
   margin-left: 5px;
 }
+.modal.right-side-modal-pf {
+  left: initial;
+}
+.modal.right-side-modal-pf .modal-dialog {
+  margin: 60px 0 0 10px;
+}
+.modal.right-side-modal-pf .modal-dialog .modal-content {
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+}
+.modal.right-side-modal-pf .modal-dialog .modal-content .modal-body {
+  flex-grow: 1;
+  overflow: hidden auto;
+}
+.modal.right-side-modal-pf.fade:not(.in) .modal-dialog {
+  -webkit-transform: translate3d(-25%, 0, 0);
+  transform: translate3d(25%, 0, 0);
+}
+.modal.modeless-pf.shown {
+  display: block;
+}
 .drawer-pf.drawer-alt-pf {
   overflow-y: hidden;
   display: flex;
@@ -2109,23 +2445,202 @@ tbody tr.listing-ct-noexpand {
   flex: none;
 }
 /**
-  Styling shared by both VncConsole and SerialConsole.
+  Inline edit tables
 */
+table.pf-table-inline-edit thead tr.editing th {
+  border-bottom-color: #7dc3e8;
+  border-bottom-width: 3px;
+}
+table.pf-table-inline-edit tbody tr td {
+  padding: 5px 10px 3px;
+}
+table.pf-table-inline-edit tbody tr td.editable {
+  padding: 0;
+}
+table.pf-table-inline-edit tbody tr td.editable.editing {
+  padding: 2px 3px;
+}
+table.pf-table-inline-edit tbody tr.editing td {
+  background: #def3ff;
+  border-top-color: #7dc3e8;
+  border-bottom-color: #7dc3e8;
+}
+table.pf-table-inline-edit tbody tr.editing td:first-child {
+  border-left-color: #7dc3e8;
+}
+table.pf-table-inline-edit tbody tr.editing td:last-child {
+  border-right-color: #7dc3e8;
+}
+table.pf-table-inline-edit tbody .input {
+  border: 1px solid transparent;
+  display: block;
+  margin: 2px 3px 2px;
+  min-height: 26px;
+  padding: 3px 6px 1px;
+}
+table.pf-table-inline-edit tbody .input:hover {
+  background: #fff;
+  border: 1px solid #bbb;
+  cursor: text;
+}
+table.pf-table-inline-edit tbody .input:hover::after {
+  content: "\F040";
+  float: right;
+  font-family: "FontAwesome";
+  margin-left: 15px;
+}
+table.pf-table-inline-edit tbody .static {
+  border: 1px solid transparent;
+  display: block;
+  margin: 2px 3px 2px;
+  padding: 3px 6px 1px;
+}
+.inline-edit-buttons {
+  background: #def3ff;
+  border: 1px solid #7dc3e8;
+  margin: 0;
+  padding: 4px;
+  position: fixed;
+  z-index: 1000;
+}
+.inline-edit-buttons.top {
+  border-bottom: 0;
+}
+.inline-edit-buttons.bottom {
+  border-top: 0;
+}
+.inline-edit-buttons.bold {
+  border-width: 3px;
+}
+.inline-edit-buttons .btn {
+  height: 26px;
+  margin-left: 4px;
+  width: 26px;
+}
+.inline-edit-buttons .btn:first-child {
+  margin-left: 0;
+}
+.popover-pf-info {
+  margin-left: 3px;
+  padding: 0;
+}
+.rbt-input-main {
+  padding: 2px 6px;
+}
+.rbt-input-multi {
+  height: fit-content;
+}
+.rbt-menu.dropdown-menu.show {
+  margin: 0;
+}
+.rbt-menu.dropdown-menu .dropdown-item.disabled {
+  color: #72767b;
+}
+.rbt-token {
+  margin-right: 6px;
+  border-radius: 5px;
+}
+.rbt-token.rbt-token-removeable {
+  background-color: #ededed;
+  height: 20px;
+  font-size: 12px;
+  color: #363636;
+}
+.rbt-token .rbt-token-remove-button {
+  color: #363636;
+  font-size: 10px;
+  padding: 0 6px;
+  top: 0;
+}
+.rbt-token .rbt-input-multi.rbt-input-wrapper {
+  margin-bottom: -3px;
+}
+.rbt-token .rbt-input-multi.rbt-input {
+  height: auto;
+}
+.rbt-aux .rbt-close {
+  margin-top: 0;
+}
+.vertical-sub-header-pf {
+  line-height: 25px;
+  font-size: 12px;
+  margin-left: 20px;
+  padding: 20px 0 2px 5px;
+  font-weight: bold;
+  color: #fff;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: calc(200px - 20px);
+}
+.treeview .list-group {
+  margin-bottom: 0;
+}
+.treeview .list-group-item {
+  padding: 0;
+  outline: 0;
+  border: none !important;
+}
+.treeview .treeitem-row {
+  display: block;
+  border: 1px solid transparent;
+  padding-left: 10px;
+}
+.treeview .treeitem-row.focus {
+  border: 1px solid #0088ce;
+}
+.treeview-select .treeitem-row {
+  cursor: pointer;
+}
+.treeview-hover .treeitem-row {
+  cursor: pointer;
+}
+.treeview-hover .treeitem-row:hover {
+  background-color: #def3ff;
+  border-color: #bee1f4;
+}
+.treeview-select .list-group-item.node-selected > .treeitem-row {
+  background: #0088ce;
+  border-color: #0088ce;
+  color: #fff;
+}
+.pagination > li.disabled a {
+  pointer-events: none;
+}
+.expand-collapse-pf .expand-collapse-pf-link-container {
+  display: flex;
+}
+.expand-collapse-pf .btn.btn-link:focus {
+  outline: none;
+}
+.expand-collapse-pf .btn.btn-link .fa,
+.expand-collapse-pf .btn.btn-link .pficon {
+  color: initial;
+  font-size: 14px;
+  margin-right: 5px;
+  width: 10px;
+}
+.expand-collapse-pf .expand-collapse-pf-separator {
+  flex: 1;
+  height: 1px;
+  margin-top: 12px;
+}
+.expand-collapse-pf .expand-collapse-pf-separator.bordered {
+  border-top: 1px solid #d1d1d1;
+}
 /**
   SerialConsole styles
- */
+*/
 .serial-console-pf {
   height: 100%;
 }
-.console-pf > .terminal {
-  color: #fff;
-  text-align: left;
-  outline: medium none;
-  background-color: #030303;
-  border: 1px solid #030303;
-  padding: 10px;
+.serial-console-pf .toolbar-pf-results {
+  padding: 15px 0;
+  border-top: none;
+  margin-top: 0;
 }
-.console-pf {
+.serial-console-pf .console-pf {
   font-family: Menlo, Monaco, Consolas, monospace;
   font-size: 15px;
   margin-top: 0;
@@ -2134,12 +2649,29 @@ tbody tr.listing-ct-noexpand {
   line-height: normal;
   height: 100%;
 }
-.console-pf .terminal .terminal-cursor {
+.serial-console-pf .console-pf .terminal {
+  color: #fff;
+  text-align: left;
+  outline: medium none;
+  background-color: #030303;
+  border: 1px solid #030303;
+  padding: 10px;
+}
+.serial-console-pf .console-pf .terminal .terminal-cursor {
   border: 1px solid #fff;
 }
-.console-pf .terminal:focus .terminal-cursor {
+.serial-console-pf .console-pf .terminal:focus .terminal-cursor {
   border: none;
   animation: blink 1s step-end infinite;
+}
+.serial-console-pf .console-terminal-pf {
+  width: 100%;
+  height: 100%;
+  padding-right: 0;
+  padding-left: 0;
+}
+.serial-console-pf .console-actions-buttons-pf {
+  margin-left: 5px;
 }
 @keyframes blink {
   from {
@@ -2151,23 +2683,10 @@ tbody tr.listing-ct-noexpand {
     background: #030303;
   }
 }
-.console-terminal-pf {
-  width: 100%;
-  height: 100%;
-  padding-right: 0px;
-  padding-left: 0px;
-}
-.console-actions-pf {
-  float: right;
-  position: relative;
-  top: -2em;
-}
-.console-actions-buttons-pf {
-  margin-left: 5px;
-}
-.vnc-console {
-  padding-right: 0px;
-  padding-left: 0px;
+.vnc-console .toolbar-pf-results {
+  padding: 15px 0;
+  border-top: none;
+  margin-top: 15px;
 }
 .vnc-console .vnc-console-connecting {
   background-color: #3f9c35;
@@ -2175,15 +2694,65 @@ tbody tr.listing-ct-noexpand {
 .vnc-console .vnc-console-disconnected {
   background-color: #cc0000;
 }
-.vnc-console .toolbar-pf {
-  border-bottom: none;
-}
-.vnc-console .toolbar-pf-results {
-  padding-top: 10px;
+.vnc-console .toolbar-pf-action-right {
+  padding-bottom: 5px;
 }
 .vnc-console .toolbar-pf-action-right .dropdown-menu {
   min-width: 102px;
-  /* avoid overflow if DropdownButton is used under Toolbar.RightContent */
+}
+.console-selector-pf {
+  margin-bottom: 0;
+  float: left;
+}
+.console-selector-pf-disconnect-switch {
+  margin-left: 15px;
+}
+.desktop-viewer-pf {
+  display: flex;
+  flex-wrap: wrap;
+}
+.desktop-viewer-pf .manual-connection-pf {
+  min-width: 350px;
+}
+.desktop-viewer-pf .manual-connection-pf > h2 {
+  text-align: center;
+}
+.desktop-viewer-pf .manual-connection-pf > p {
+  text-align: center;
+}
+.desktop-viewer-pf .manual-connection-pf .form {
+  min-width: 350px;
+}
+.desktop-viewer-pf .manual-connection-pf .form-group {
+  margin-bottom: 0;
+}
+.desktop-viewer-pf .manual-connection-pf .manual-connection-pf-title {
+  text-align: right;
+}
+.desktop-viewer-pf .manual-connection-pf .manual-connection-pf-value {
+  text-align: left;
+  font-weight: bolder;
+}
+.desktop-viewer-pf .remote-viewer-pf {
+  position: relative;
+  top: 15%;
+  width: 50%;
+  min-width: 350px;
+  margin-right: 50px;
+}
+.desktop-viewer-pf .remote-viewer-pf .expand-collapse-pf {
+  margin-top: 1em;
+}
+.desktop-viewer-pf .remote-viewer-pf .remote-viewer-pf-launch {
+  text-align: center;
+  margin-top: 20px;
+  /* Align with h2 of manual-connection-pf */
+}
+.desktop-viewer-pf .remote-viewer-pf .more-information-pf-install {
+  display: inline-flex;
+}
+.desktop-viewer-pf .remote-viewer-pf .more-information-pf-install > b {
+  margin-right: 5px;
 }
 .icon-2x-vms {
   font-size: 2em;
@@ -2375,6 +2944,51 @@ table.vcpu-detail-modal-right .btn-group.bootstrap-select.dropdown {
 }
 #machines-vcpu-modal-dialog div.modal-body {
   overflow: visible;
+}
+#create-vm-dialog .spinner {
+  display: inline-block;
+}
+/* FIXME: This CSS should be moved upstream */
+.form-text {
+  /* Set size similar to a widget; like control-label, but no alignment */
+  display: inline-block;
+  padding-top: 3px;
+  margin-bottom: 0;
+}
+.modal-body + .modal-footer {
+  /* Remove unneeded margin when there's a modal body and footer */
+  margin-top: 0;
+}
+/* Machines Modal footer custom CSS */
+.modal-footer .idle-message {
+  align-items: center;
+  display: flex;
+  float: left;
+  line-height: 24px;
+  /* Same height as a button */
+}
+.pficon-pending {
+  color: #ec7a08;
+  /* pf-orange-400 */
+  font-size: 16px;
+}
+.modal-footer .pficon-pending {
+  line-height: inherit;
+  margin-right: 0.5rem;
+}
+.col-no-padding {
+  padding-left: 0px !important;
+}
+.storage-pool-listing-breadcrumb {
+  padding-left: 20px !important;
+}
+td > .utilization-bar-pf {
+  width: 100%;
+  min-width: 4em;
+}
+td > .utilization-bar-pf > .progress {
+  margin-bottom: 0;
+  height: 0.75rem;
 }
 .ovirt-provider-listing-top-column {
   width: 33%;

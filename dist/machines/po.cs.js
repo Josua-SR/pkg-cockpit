@@ -87,10 +87,6 @@ return plural;
   null,
   "Adresa:"
  ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  "Jakékoli změny se projeví teprve až po zastavení a spuštění virt. stroje."
- ],
  "Apply": [
   null,
   "Použít"
@@ -135,9 +131,9 @@ return plural;
   null,
   "Kapacita"
  ],
- "Changes will apply on VM shutdown": [
+ "Changes will take effect after shutting down the VM": [
   null,
-  "Změny se uplatní po vypnutí virt. stroje"
+  "Změny se projeví až po vypnutí virt. stroje"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -183,13 +179,9 @@ return plural;
   null,
   "Vytvořit nový"
  ],
- "Create New VM": [
+ "Create VM": [
   null,
-  "Vytvořit nový virt. stroj"
- ],
- "Create New Virtual Machine": [
-  null,
-  "Vytvořit nový virtuální stroj"
+  "Vytvořit virt. stroj"
  ],
  "Creation of vm $0 failed": [
   null,
@@ -223,13 +215,13 @@ return plural;
   null,
   "Odpojeno od sériové konzole. Klikněte na tlačítko Znovu připojit"
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
-  "Disk se nepodařilo připojit s následující chybou:"
+  "Disk se nepodařilo připojit"
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
-  "Disk se nepodařilo vytvořit s následující chybou:"
+  "Disk se nepodařilo vytvořit"
  ],
  "Disks": [
   null,
@@ -387,9 +379,9 @@ return plural;
   null,
   "Typ sítě"
  ],
- "Network settings failed to change with following error: ": [
+ "Network settings could not be saved": [
   null,
-  "Nastavení sítě se nepodařilo změnit z důvodu následující chyby: "
+  "Nastavení sítě se nepodařilo uložit"
  ],
  "Networks": [
   null,
@@ -398,6 +390,10 @@ return plural;
  "New Volume Name": [
   null,
   "Název pro nový svazek"
+ ],
+ "No Storage Volumes defined for this Storage Pool": [
+  null,
+  "Pro tento fond úložiště nejsou definované žádné úložné svazky"
  ],
  "No VM is running or defined on this host": [
   null,
@@ -423,6 +419,10 @@ return plural;
   null,
   "Pro tento virt. stroj nebyla určena žádná síťová rozhraní"
  ],
+ "No storage pool is defined on this host": [
+  null,
+  "Na tomto stroji není definován žádný fond úložiště"
+ ],
  "No virtual networks": [
   null,
   "Žádné virtuální sítě"
@@ -430,10 +430,6 @@ return plural;
  "OS Vendor": [
   null,
   "Výrobce oper. systému"
- ],
- "Ok": [
-  null,
-  "Ok"
  ],
  "Operating System": [
   null,
@@ -485,11 +481,11 @@ return plural;
  ],
  "QEMU/KVM System connection": [
   null,
-  ""
+  "Systémové QEMU/KVM spojení"
  ],
  "QEMU/KVM User connection": [
   null,
-  ""
+  "Uživatelské QEMU/KVM spojení"
  ],
  "Readonly": [
   null,
@@ -510,14 +506,6 @@ return plural;
  "Run": [
   null,
   "Spustit"
- ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  "Akce NASTAVIT NASTAVENÍ VIRT. PROCESORU se nezdařila"
- ],
- "SET_VCPU_SETTINGS action failed": [
-  null,
-  "Akce NASTAVIT NASTAVENÍ VIRT. PROCESORU se nezdařila"
  ],
  "SPICE": [
   null,
@@ -565,7 +553,7 @@ return plural;
  ],
  "Sockets": [
   null,
-  "Patice"
+  "Sokety"
  ],
  "Source": [
   null,
@@ -587,6 +575,10 @@ return plural;
   null,
   "Stav"
  ],
+ "Storage Pools": [
+  null,
+  "Fondy úložiště"
+ ],
  "Storage Size": [
   null,
   "Velikost úložiště"
@@ -594,6 +586,10 @@ return plural;
  "Storage Size should not be negative number": [
   null,
   "Velikost úložiště by nemělo být záporné číslo"
+ ],
+ "Storage Volumes": [
+  null,
+  "Úložné svazky"
  ],
  "System": [
   null,
@@ -687,6 +683,10 @@ return plural;
   null,
   "Využito"
  ],
+ "VCPU settings could not be saved": [
+  null,
+  "Nastavení virt. procesoru se nepodařilo uložit"
+ ],
  "VM CHANGE_NETWORK_STATE action failed": [
   null,
   "Akce ZMĚNA STAVU SÍTĚ VIRT. STROJE se nezdařila"
@@ -767,6 +767,10 @@ return plural;
   null,
   "Svazek"
  ],
+ "active": [
+  null,
+  "aktivní"
+ ],
  "bridge": [
   null,
   "most"
@@ -822,6 +826,10 @@ return plural;
  "idle": [
   null,
   "nečinný"
+ ],
+ "inactive": [
+  null,
+  "neaktivní"
  ],
  "mcast": [
   null,

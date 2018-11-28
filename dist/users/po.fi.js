@@ -91,10 +91,6 @@ return plural;
   null,
   "Lisää julkinen avain"
  ],
- "Adding key": [
-  null,
-  "Avainta lisätään"
- ],
  "Authorized Public SSH Keys": [
   null,
   "Valtuutetut julkiset SSH-avaimet"
@@ -138,10 +134,6 @@ return plural;
  "Delete Files": [
   null,
   "Poista tiedostot"
- ],
- "Error saving authorized keys: ": [
-  null,
-  "Virhe tallentaessa valtuutettuja avaimia:"
  ],
  "Failed to load authorized keys.": [
   null,
@@ -231,10 +223,6 @@ return plural;
   null,
   ""
  ],
- "The key you provided was not valid.": [
-  null,
-  "Antamasi avain ei ollut kelvollinen."
- ],
  "There are no authorized public keys for this account.": [
   null,
   "Tällä tilillä ei ole valtuutettuja julkisia avaimia."
@@ -246,10 +234,6 @@ return plural;
  "User Name": [
   null,
   "Käyttäjätunnus"
- ],
- "Validating key": [
-  null,
-  "Vahvistetaan avainta"
  ],
  "You do not have permission to view the authorized public keys for this account.": [
   null,

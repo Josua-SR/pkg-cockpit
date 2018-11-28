@@ -28,18 +28,21 @@ import {
     CHECK_LIBVIRT_STATUS,
     CONSOLE_VM,
     CREATE_AND_ATTACH_VOLUME,
+    CREATE_STORAGE_POOL,
     CREATE_VM,
     DELETE_VM,
     DETACH_DISK,
     ENABLE_LIBVIRT,
     FORCEOFF_VM,
     FORCEREBOOT_VM,
+    GET_ALL_NETWORKS,
+    GET_ALL_STORAGE_POOLS,
     GET_ALL_VMS,
     GET_HYPERVISOR_MAX_VCPU,
     GET_LOGGED_IN_USER,
     GET_OS_INFO_LIST,
-    GET_NETWORKS,
-    GET_STORAGE_POOLS,
+    GET_NETWORK,
+    GET_STORAGE_POOL,
     GET_STORAGE_VOLUMES,
     GET_VM,
     INIT_DATA_RETRIEVAL,
@@ -88,6 +91,10 @@ export function checkLibvirtStatus(serviceName) {
     return virt(CHECK_LIBVIRT_STATUS, { serviceName });
 }
 
+export function createStoragePool({ connectionName, name, type, source, target, autostart }) {
+    return virt(CREATE_STORAGE_POOL, { connectionName, name, type, source, target, autostart });
+}
+
 export function createVm(vmParams) {
     return virt(CREATE_VM, vmParams);
 }
@@ -112,6 +119,14 @@ export function forceVmOff(vm) {
     return virt(FORCEOFF_VM, { name: vm.name, id: vm.id, connectionName: vm.connectionName });
 }
 
+export function getAllNetworks(connectionName) {
+    return virt(GET_ALL_NETWORKS, { connectionName });
+}
+
+export function getAllStoragePools(connectionName) {
+    return virt(GET_ALL_STORAGE_POOLS, { connectionName });
+}
+
 /**
  *
  * @param connectionName optional - if `undefined` then for all connections
@@ -133,15 +148,15 @@ export function getOsInfoList() {
     return virt(GET_OS_INFO_LIST);
 }
 
-export function getNetworks(connectionName) {
-    return virt(GET_NETWORKS, { connectionName });
+export function getNetwork({ connectionName, id, name }) {
+    return virt(GET_NETWORK, { connectionName, id, name });
 }
 
-export function getStoragePools(connectionName) {
-    return virt(GET_STORAGE_POOLS, { connectionName });
+export function getStoragePool({ connectionName, id, name }) {
+    return virt(GET_STORAGE_POOL, { connectionName, id, name });
 }
 
-export function getStorageVolumes(connectionName, poolName) {
+export function getStorageVolumes({ connectionName, poolName }) {
     return virt(GET_STORAGE_VOLUMES, { connectionName, poolName });
 }
 

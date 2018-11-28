@@ -27,6 +27,10 @@
     Cockpit can use the PCP logging feature to display archived data about the
     system from a different point in time. If PCP is not available, then Cockpit
     gathers the metrics data itself, but archival features are not available.</p>
+<p>Whether or not metrics are archived depends on whether the
+    <code class="code">pmlogger.service</code> and <code class="code">pmcd.service</code> systemd units
+    are running or not.  The "Store Performance Data" button in Cockpit
+    will enable and start these services.</p>
 <p>To see similar metrics data from the command line, you can use tools like
     <a class="ulink" href="https://pcp.io/books/PCP_UAG/html/LE38515-PARENT.html#LE91266-PARENT" target="_top"><code class="code">pmstat</code></a>
     or <a class="ulink" href="https://pcp.io/books/PCP_UAG/html/LE60452-PARENT.html" target="_top"><code class="code">pminfo</code></a>:</p>

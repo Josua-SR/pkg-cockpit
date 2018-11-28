@@ -21,6 +21,9 @@ import VMS_CONFIG from './config.es6';
 
 const _ = cockpit.gettext;
 
+export const LIBVIRT_SESSION_CONNECTION = 'session';
+export const LIBVIRT_SYSTEM_CONNECTION = 'system';
+
 export function toReadableNumber(number) {
     if (number < 1) {
         return number.toFixed(2);
@@ -154,6 +157,7 @@ export function digitFilter(event, allowDots = false) {
                  event.key === 'Backspace' || event.key === 'Delete' || event.key === 'Tab' ||
                  event.key === 'ArrowLeft' || event.key === 'ArrowRight' ||
                  event.key === 'ArrowUp' || event.key === 'ArrowDown' ||
+                 (event.key === 'a' && event.ctrlKey) ||
                  event.key === 'Home' || event.key === 'End';
 
     if (!accept)
@@ -297,6 +301,10 @@ export function vmId(vmName) {
     return `vm-${vmName}`;
 }
 
+export function storagePoolId(poolName, connectionName) {
+    return `pool-${poolName}-${connectionName}`;
+}
+
 export function mouseClick(fun) {
     return function (event) {
         if (!event || event.button !== 0)
@@ -311,7 +319,8 @@ export function mouseClick(fun) {
  *
  * @param promise
  * @param delay of timeout in ms
- * @param afterTimeoutHandler called only if promise succeeded after timeout
+ * @param afterTimeoutHandler called if promise succeeded before timeout expired
+ * or timeout expired before promise returned
  * @param afterTimeoutFailHandler called only if promise failed after timeout
  * @returns new promise
  */
@@ -323,6 +332,7 @@ export function timeoutedPromise(promise, delay, afterTimeoutHandler, afterTimeo
         if (!done) {
             deferred.resolve();
             done = true;
+            afterTimeoutHandler();
         }
     }, delay);
 
@@ -331,7 +341,8 @@ export function timeoutedPromise(promise, delay, afterTimeoutHandler, afterTimeo
             done = true;
             window.clearTimeout(timer);
             deferred.resolve.apply(deferred, arguments);
-        } else if (typeof afterTimeoutHandler === 'function') {
+        }
+        if (typeof afterTimeoutHandler === 'function') {
             afterTimeoutHandler.apply(afterTimeoutFailHandler, arguments);
         }
     });
@@ -341,7 +352,8 @@ export function timeoutedPromise(promise, delay, afterTimeoutHandler, afterTimeo
             done = true;
             window.clearTimeout(timer);
             deferred.reject.apply(deferred, arguments);
-        } else if (typeof afterTimeoutFailHandler === 'function') {
+        }
+        if (typeof afterTimeoutFailHandler === 'function') {
             afterTimeoutFailHandler.apply(afterTimeoutFailHandler, arguments);
         }
     });

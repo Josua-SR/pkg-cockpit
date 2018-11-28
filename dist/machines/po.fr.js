@@ -71,10 +71,6 @@ return plural;
   null,
   "$0 est disponible pour la plupart des systèmes d'exploitation. Pour l'installer, recherchez-le dans le logiciel GNOME ou exécutez les opérations suivantes:"
  ],
- "$0 vCPU Details": [
-  null,
-  "$0 vCPU Détails"
- ],
  "Add": [
   null,
   "Ajouter"
@@ -90,10 +86,6 @@ return plural;
  "Address:": [
   null,
   "Adresse:"
- ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  "Toutes les modifications ne prendront effet qu'après l'arrêt et le démarrage de la VM."
  ],
  "Apply": [
   null,
@@ -139,13 +131,13 @@ return plural;
   null,
   "Capacité"
  ],
+ "Changes will take effect after shutting down the VM": [
+  null,
+  ""
+ ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
   "En cliquant sur \"Launch Remote Viewer\" (lancer ll'afficheur à distance), vous téléchargerez un fichier .vv et le lancerez $0 ."
- ],
- "Confirm deletion of $0": [
-  null,
-  "Confirmer la suppression de $0"
  ],
  "Connect with any $0 viewer application.": [
   null,
@@ -187,13 +179,9 @@ return plural;
   null,
   "Créer Nouveau"
  ],
- "Create New VM": [
+ "Create VM": [
   null,
-  "Créer Nouvelle VM"
- ],
- "Create New Virtual Machine": [
-  null,
-  "Créer une nouvelle machine virtuelle"
+  "Créer VM"
  ],
  "Creation of vm $0 failed": [
   null,
@@ -227,13 +215,13 @@ return plural;
   null,
   "Déconnecté de la console série. Cliquez sur le bouton Reconnecter."
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
-  "Le disque n'a pas pu être attaché, avec l’erreur suivante :"
+  ""
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
-  "Le disque n’a pas pu être créé, avec l’erreur suivante :"
+  ""
  ],
  "Disks": [
   null,
@@ -242,6 +230,10 @@ return plural;
  "Download the MSI from $0": [
   null,
   "Télécharger le MSI depuis $0"
+ ],
+ "Edit": [
+  null,
+  "Modifier"
  ],
  "Emulated Machine:": [
   null,
@@ -331,6 +323,10 @@ return plural;
   null,
   "Adresse Mac"
  ],
+ "Mac Address": [
+  null,
+  ""
+ ],
  "Manual Connection": [
   null,
   "Connexion manuelle"
@@ -355,6 +351,10 @@ return plural;
   null,
   "MiB"
  ],
+ "Model": [
+  null,
+  "Modèle"
+ ],
  "Model type": [
   null,
   "Type de modèle"
@@ -375,6 +375,14 @@ return plural;
   null,
   "Le nom ne doit pas être composé uniquement de caractères vides"
  ],
+ "Network Type": [
+  null,
+  ""
+ ],
+ "Network settings could not be saved": [
+  null,
+  ""
+ ],
  "Networks": [
   null,
   "Réseaux"
@@ -382,6 +390,10 @@ return plural;
  "New Volume Name": [
   null,
   "Nouveau nom de volume"
+ ],
+ "No Storage Volumes defined for this Storage Pool": [
+  null,
+  ""
  ],
  "No VM is running or defined on this host": [
   null,
@@ -407,13 +419,17 @@ return plural;
   null,
   "Aucune interface réseau définie pour cette machine virtuelle"
  ],
+ "No storage pool is defined on this host": [
+  null,
+  ""
+ ],
+ "No virtual networks": [
+  null,
+  ""
+ ],
  "OS Vendor": [
   null,
   "Fournisseur d'OS"
- ],
- "Ok": [
-  null,
-  "Ok"
  ],
  "Operating System": [
   null,
@@ -463,6 +479,14 @@ return plural;
   null,
   "Protocole"
  ],
+ "QEMU/KVM System connection": [
+  null,
+  ""
+ ],
+ "QEMU/KVM User connection": [
+  null,
+  ""
+ ],
  "Readonly": [
   null,
   "LectureUniquement"
@@ -483,14 +507,6 @@ return plural;
   null,
   "Exécuter"
  ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  "L’action SET VCPU SETTINGS a échoué"
- ],
- "SET_VCPU_SETTINGS action failed": [
-  null,
-  ""
- ],
  "SPICE": [
   null,
   "SPICE"
@@ -506,6 +522,10 @@ return plural;
  "SPICE TLS Port:": [
   null,
   "Port SPICE TLS :"
+ ],
+ "Save": [
+  null,
+  "sauvegarder"
  ],
  "Send Non-Maskable Interrupt": [
   null,
@@ -555,6 +575,10 @@ return plural;
   null,
   "État"
  ],
+ "Storage Pools": [
+  null,
+  ""
+ ],
  "Storage Size": [
   null,
   "Taille de stockage"
@@ -562,6 +586,10 @@ return plural;
  "Storage Size should not be negative number": [
   null,
   "La taille du stockage ne doit pas correspondre à un nombre négatif"
+ ],
+ "Storage Volumes": [
+  null,
+  ""
  ],
  "System": [
   null,
@@ -655,6 +683,10 @@ return plural;
   null,
   "Utilisé"
  ],
+ "VCPU settings could not be saved": [
+  null,
+  ""
+ ],
  "VM CHANGE_NETWORK_STATE action failed": [
   null,
   ""
@@ -735,6 +767,10 @@ return plural;
   null,
   "Volume"
  ],
+ "active": [
+  null,
+  "actif"
+ ],
  "bridge": [
   null,
   "pont"
@@ -788,6 +824,10 @@ return plural;
   "hostdev"
  ],
  "idle": [
+  null,
+  "inactif"
+ ],
+ "inactive": [
   null,
   "inactif"
  ],

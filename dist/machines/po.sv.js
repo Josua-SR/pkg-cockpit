@@ -87,10 +87,6 @@ return plural;
   null,
   "Adress:"
  ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  "Alla ändringar kommer att få effekt först efter att ha stoppat och startat VM:en."
- ],
  "Apply": [
   null,
   "Lägg på"
@@ -135,9 +131,9 @@ return plural;
   null,
   "Kapacitet"
  ],
- "Changes will apply on VM shutdown": [
+ "Changes will take effect after shutting down the VM": [
   null,
-  "Ändringar kommer gälla när VM:en stängs av"
+  "Ändringar kommer verkställas efter att VM:en stängs av"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -183,13 +179,9 @@ return plural;
   null,
   "Skapa ny"
  ],
- "Create New VM": [
+ "Create VM": [
   null,
-  "Skapa en ny VM"
- ],
- "Create New Virtual Machine": [
-  null,
-  "Skapa en ny virtuell maskin"
+  "Skapa en VM"
  ],
  "Creation of vm $0 failed": [
   null,
@@ -223,13 +215,13 @@ return plural;
   null,
   "Frånkopplad från seriekonsolen.  Klicka på återanslutknappen."
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
-  "Disken kunde inte anslutas utan fick följande fel: "
+  "Disken kunde inte anslutas"
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
-  "Disken kunde inte skapas utan fick följande fel: "
+  "Disken kunde inte skapas"
  ],
  "Disks": [
   null,
@@ -387,9 +379,9 @@ return plural;
   null,
   "Nätverkstyp"
  ],
- "Network settings failed to change with following error: ": [
+ "Network settings could not be saved": [
   null,
-  "Nätverksinställningarna kunde inte ändras utan fick följande fel:"
+  "Nätverksinställningarna kunde inte sparas"
  ],
  "Networks": [
   null,
@@ -398,6 +390,10 @@ return plural;
  "New Volume Name": [
   null,
   "Nytt volymnamn"
+ ],
+ "No Storage Volumes defined for this Storage Pool": [
+  null,
+  "Inga lagringsvolymer är definierade för denna lagringspool"
  ],
  "No VM is running or defined on this host": [
   null,
@@ -423,6 +419,10 @@ return plural;
   null,
   "Inga nätverksgränssnitt är definierade för denna VM"
  ],
+ "No storage pool is defined on this host": [
+  null,
+  "Ingen lagringspool är definierad på denna värd"
+ ],
  "No virtual networks": [
   null,
   "Inga virtuella nätverk"
@@ -430,10 +430,6 @@ return plural;
  "OS Vendor": [
   null,
   "OS-leverantör"
- ],
- "Ok": [
-  null,
-  "Ok"
  ],
  "Operating System": [
   null,
@@ -445,39 +441,39 @@ return plural;
  ],
  "Path to ISO file on host's file system": [
   null,
-  ""
+  "Sökväg till ISO-fil på värdens filsystem"
  ],
  "Path to file": [
   null,
-  ""
+  "Sökväg till filen"
  ],
  "Please enter new volume name": [
   null,
-  ""
+  "Ange ett nytt volymnamn"
  ],
  "Please enter new volume size": [
   null,
-  ""
+  "Ange en ny volymstorlek"
  ],
  "Please start the virtual machine to access its console.": [
   null,
-  ""
+  "Starta den virtuella maskinen för att komma åt dess konsol."
  ],
  "Plug": [
   null,
-  ""
+  "Plugg"
  ],
  "Pool": [
   null,
-  ""
+  "Pool"
  ],
  "Port": [
   null,
-  ""
+  "Port"
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
-  ""
+  "Föredraget antal uttag att exponera för gästen."
  ],
  "Protocol": [
   null,
@@ -485,15 +481,15 @@ return plural;
  ],
  "QEMU/KVM System connection": [
   null,
-  ""
+  "QEMU/KVM-systemanslutning"
  ],
  "QEMU/KVM User connection": [
   null,
-  ""
+  "QEMU/KVM-användaranslutning"
  ],
  "Readonly": [
   null,
-  ""
+  "Skrivskyddat"
  ],
  "Reconnect": [
   null,
@@ -501,55 +497,47 @@ return plural;
  ],
  "Remote URL": [
   null,
-  ""
+  "Fjärr-URL"
  ],
  "Restart": [
   null,
-  ""
+  "Starta om"
  ],
  "Run": [
   null,
-  ""
- ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  ""
- ],
- "SET_VCPU_SETTINGS action failed": [
-  null,
-  ""
+  "Kör"
  ],
  "SPICE": [
   null,
-  ""
+  "SPICE"
  ],
  "SPICE Address:": [
   null,
-  ""
+  "SPICE-adress:"
  ],
  "SPICE Port:": [
   null,
-  ""
+  "SPICE-port:"
  ],
  "SPICE TLS Port:": [
   null,
-  ""
+  "SPICE TLS-port:"
  ],
  "Save": [
   null,
-  ""
+  "Spara"
  ],
  "Send Non-Maskable Interrupt": [
   null,
-  ""
+  "Skicka ej maskerbart avbrott"
  ],
  "Send key": [
   null,
-  ""
+  "Skicka tangenttryck"
  ],
  "Serial Console": [
   null,
-  ""
+  "Seriekonsol"
  ],
  "Session": [
   null,
@@ -587,11 +575,19 @@ return plural;
   null,
   ""
  ],
+ "Storage Pools": [
+  null,
+  ""
+ ],
  "Storage Size": [
   null,
   ""
  ],
  "Storage Size should not be negative number": [
+  null,
+  ""
+ ],
+ "Storage Volumes": [
   null,
   ""
  ],
@@ -687,6 +683,10 @@ return plural;
   null,
   ""
  ],
+ "VCPU settings could not be saved": [
+  null,
+  ""
+ ],
  "VM CHANGE_NETWORK_STATE action failed": [
   null,
   ""
@@ -767,6 +767,10 @@ return plural;
   null,
   ""
  ],
+ "active": [
+  null,
+  ""
+ ],
  "bridge": [
   null,
   ""
@@ -820,6 +824,10 @@ return plural;
   ""
  ],
  "idle": [
+  null,
+  ""
+ ],
+ "inactive": [
   null,
   ""
  ],

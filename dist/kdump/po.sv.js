@@ -157,23 +157,23 @@ return plural;
  ],
  "Raw to a device": [
   null,
-  ""
+  "Rå till en enhet"
  ],
  "Reading...": [
   null,
-  ""
+  "Läser …"
  ],
  "Remote over NFS": [
   null,
-  ""
+  "Fjärr över NFS"
  ],
  "Remote over SSH": [
   null,
-  ""
+  "Fjärr över SSH"
  ],
  "Reserved memory": [
   null,
-  ""
+  "Reserverat minne"
  ],
  "Server": [
   null,
@@ -223,10 +223,6 @@ return plural;
   null,
   ""
  ],
- "Use the setting in /etc/kdump.conf": [
-  null,
-  ""
- ],
  "invalid: multiple targets defined": [
   null,
   ""
@@ -239,7 +235,19 @@ return plural;
   null,
   ""
  ],
+ "nfs dump target isn't formated as server:path": [
+  null,
+  ""
+ ],
  "ssh key": [
+  null,
+  ""
+ ],
+ "ssh key isn't a path": [
+  null,
+  ""
+ ],
+ "ssh server is empty": [
   null,
   ""
  ],

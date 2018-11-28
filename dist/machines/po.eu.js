@@ -131,10 +131,6 @@ return plural;
   null,
   "CPU mota"
  ],
- "Cancel": [
-  null,
-  ""
- ],
  "Capacity": [
   null,
   "Edukiera"
@@ -408,10 +404,6 @@ return plural;
   ""
  ],
  "OS Vendor": [
-  null,
-  ""
- ],
- "Ok": [
   null,
   ""
  ],

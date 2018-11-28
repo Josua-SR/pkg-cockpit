@@ -121,11 +121,11 @@ return plural;
  ],
  "Remove": [
   null,
-  ""
+  "Ta bort"
  ],
  "Removing": [
   null,
-  ""
+  "Tar bort"
  ],
  "Unknown Application": [
   null,

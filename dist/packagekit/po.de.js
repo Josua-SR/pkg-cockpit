@@ -318,10 +318,6 @@ return plural;
   null,
   ""
  ],
- "Unregistered System": [
-  null,
-  "Nicht registriertes System"
- ],
  "Update History": [
   null,
   ""
@@ -335,10 +331,6 @@ return plural;
   "Aktualisiert"
  ],
  "Updated packages may require a restart to take effect.": [
-  null,
-  ""
- ],
- "Updates are disabled.": [
   null,
   ""
  ],
@@ -358,15 +350,7 @@ return plural;
   null,
   "Version"
  ],
- "View Registration Details": [
-  null,
-  ""
- ],
  "Waiting for other software management operations to finish": [
-  null,
-  ""
- ],
- "You need to re-subscribe this system.": [
   null,
   ""
  ],
@@ -385,6 +369,14 @@ return plural;
  "at": [
   null,
   "um"
+ ],
+ "bug fix": [
+  null,
+  ""
+ ],
+ "enhancement": [
+  null,
+  ""
  ],
  "every day": [
   null,
@@ -415,6 +407,10 @@ return plural;
   ""
  ],
  "on Wednesdays": [
+  null,
+  ""
+ ],
+ "security": [
   null,
   ""
  ],

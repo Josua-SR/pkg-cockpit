@@ -413,23 +413,23 @@ return plural;
  ],
  "Password not accepted": [
   null,
-  ""
+  "Lösenordet accepterades inte"
  ],
  "Peripheral Chassis": [
   null,
-  ""
+  "Periferichassi"
  ],
  "Pizza Box": [
   null,
-  ""
+  "Pizzalåda"
  ],
  "Port": [
   null,
-  ""
+  "Port"
  ],
  "Portable": [
   null,
-  ""
+  "Bärbar"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -445,15 +445,15 @@ return plural;
  ],
  "RAID Chassis": [
   null,
-  ""
+  "RAID-chassi"
  ],
  "Rack Mount Chassis": [
   null,
-  ""
+  "Rackmonteringschassi"
  ],
  "Sealed-case PC": [
   null,
-  ""
+  "PC med slutet hölje"
  ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
@@ -566,9 +566,5 @@ return plural;
  "You are currently connected directly to this server. You cannot delete it.": [
   null,
   "Du är för närvarande ansluten direkt till denna server.  Du kan inte ta bort den."
- ],
- "You can remove the previously stored key by running the following command": [
-  null,
-  "Du kan ta bort den tidigare lagrade nyckeln genom att köra följande kommando"
  ]
 }));

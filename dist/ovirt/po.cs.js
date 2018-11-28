@@ -95,10 +95,6 @@ return plural;
   null,
   "Adresa:"
  ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  "Jakékoli změny se projeví teprve až po zastavení a spuštění virt. stroje."
- ],
  "All running virtual machines will be turned off.": [
   null,
   "Všechny spuštěné virtuální stroje budou vypnuty."
@@ -163,9 +159,9 @@ return plural;
   null,
   "Kapacita"
  ],
- "Changes will apply on VM shutdown": [
+ "Changes will take effect after shutting down the VM": [
   null,
-  "Změny se uplatní po vypnutí virt. stroje"
+  "Změny se projeví až po vypnutí virt. stroje"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -279,13 +275,13 @@ return plural;
   null,
   "Odpojeno od sériové konzole. Klikněte na tlačítko Znovu připojit"
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
-  "Disk se nepodařilo připojit s následující chybou:"
+  "Disk se nepodařilo připojit"
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
-  "Disk se nepodařilo vytvořit s následující chybou:"
+  "Disk se nepodařilo vytvořit"
  ],
  "Disks": [
   null,
@@ -443,9 +439,9 @@ return plural;
   null,
   "Typ sítě"
  ],
- "Network settings failed to change with following error: ": [
+ "Network settings could not be saved": [
   null,
-  "Nastavení sítě se nepodařilo změnit z důvodu následující chyby: "
+  "Nastavení sítě se nepodařilo uložit"
  ],
  "Networks": [
   null,
@@ -677,7 +673,7 @@ return plural;
  ],
  "Sockets": [
   null,
-  "Patice"
+  "Sokety"
  ],
  "Source": [
   null,
@@ -810,6 +806,10 @@ return plural;
  "Used": [
   null,
   "Využito"
+ ],
+ "VCPU settings could not be saved": [
+  null,
+  "Nastavení virt. procesoru se nepodařilo uložit"
  ],
  "VDSM": [
   null,

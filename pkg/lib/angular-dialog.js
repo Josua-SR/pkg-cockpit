@@ -35,28 +35,27 @@
      * of result and cancel where the dialog is closed when either method
      * is called.
      */
-    .directive('modalDialog', [
-        "$q",
-        function($q) {
-            return {
-                restrict: 'E',
-                transclude: true,
-                template: '<modal-group><ng-transclude></ng-transclude></modal-group>',
-                link: function(scope, element, attrs) {
+            .directive('modalDialog', [
+                "$q",
+                function($q) {
+                    return {
+                        restrict: 'E',
+                        transclude: true,
+                        template: '<modal-group><ng-transclude></ng-transclude></modal-group>',
+                        link: function(scope, element, attrs) {
+                            scope.cancel = function() {
+                                scope.$dismiss();
+                            };
 
-                    scope.cancel = function() {
-                        scope.$dismiss();
+                            scope.result = function(success, result) {
+                                /* Close dialog on success */
+                                if (success)
+                                    scope.$close(result);
+                            };
+                        },
                     };
-
-                    scope.result = function(success, result) {
-                        /* Close dialog on success */
-                        if (success)
-                            scope.$close(result);
-                    };
-                },
-            };
-        }
-    ])
+                }
+            ])
 
     /*
      * Implements a <modal-group> directive that works with ui-bootstrap's
@@ -98,75 +97,77 @@
      * will remain clickable, and clicking it will cancel the promise, and
      * when the promise completes, will call the cancel method.
      */
-    .directive('modalGroup', [
-        "$q",
-        function($q) {
-            return {
-                restrict: 'E',
-                transclude: true,
-                template: '<ng-transclude></ng-transclude>',
-                link: function(scope, element, attrs) {
-                    var state = null;
+            .directive('modalGroup', [
+                "$q",
+                function($q) {
+                    return {
+                        restrict: 'E',
+                        transclude: true,
+                        template: '<ng-transclude></ng-transclude>',
+                        link: function(scope, element, attrs) {
+                            var state = null;
 
-                    function detach() {
-                        if (state)
-                            state.detach();
-                        state = null;
-                    }
+                            function detach() {
+                                if (state)
+                                    state.detach();
+                                state = null;
+                            }
 
-                    scope.complete = function(thing) {
-                        var buttonSel = scope.modalGroupButtonSel || ".modal-footer";
-                        var errorAfter = scope.modalGroupErrorAfter || false;
+                            scope.complete = function(thing) {
+                                var buttonSel = scope.modalGroupButtonSel || ".modal-footer";
+                                var errorAfter = scope.modalGroupErrorAfter || false;
 
-                        detach();
-                        if (!thing || !thing.then)
-                            thing = $q(thing);
-                        state = new DialogState(element, buttonSel, errorAfter, thing, scope);
+                                detach();
+                                if (!thing || !thing.then)
+                                    thing = $q(thing);
+                                state = new DialogState(element, buttonSel, errorAfter, thing, scope);
+                            };
+
+                            scope.failure = function(/* ... */) {
+                                var errors;
+                                var n = arguments.length;
+                                if (n === 0) {
+                                    errors = null;
+                                } else if (n === 1) {
+                                    errors = arguments[0];
+                                } else {
+                                    errors = [];
+                                    errors.push.apply(errors, arguments);
+                                }
+
+                                if (!errors) {
+                                    detach();
+                                    return;
+                                }
+
+                                var defer = $q.defer();
+                                defer.reject(errors);
+                                scope.complete(defer.promise);
+                            };
+
+                            /* Dialog cancellation before promises kick in */
+                            function dismissDialog() {
+                                scope.cancel();
+                            }
+
+                            var cancel = queryFirst(element, ".btn-cancel");
+                            cancel.on("click", dismissDialog);
+                            scope.$on("$routeChangeStart", dismissDialog);
+
+                            scope.$on("$destroy", function() {
+                                cancel.off("click", dismissDialog);
+                                detach();
+                            });
+                        },
                     };
-
-                    scope.failure = function(/* ... */) {
-                        var errors;
-                        var n = arguments.length;
-                        if (n === 0) {
-                            errors = null;
-                        } else if (n === 1) {
-                            errors = arguments[0];
-                        } else {
-                            errors = [];
-                            errors.push.apply(errors, arguments);
-                        }
-
-                        if (!errors) {
-                            detach();
-                            return;
-                        }
-
-                        var defer = $q.defer();
-                        defer.reject(errors);
-                        scope.complete(defer.promise);
-                    };
-
-                    /* Dialog cancellation before promises kick in */
-                    function dismissDialog() {
-                        scope.cancel();
-                    }
-
-                    var cancel = queryFirst(element, ".btn-cancel");
-                    cancel.on("click", dismissDialog);
-                    scope.$on("$routeChangeStart", dismissDialog);
-
-                    scope.$on("$destroy", function() {
-                        cancel.off("click", dismissDialog);
-                        detach();
-                    });
-                },
-            };
-        }
-    ]);
+                }
+            ]);
 
     function queryAll(element, selector) {
-        var list, result = [];
-        var j, i, jlen, len = element.length;
+        var list;
+        var result = [];
+        var j, i, jlen;
+        var len = element.length;
         for (i = 0; i < len; i++) {
             list = element[i].querySelectorAll(selector);
             if (list) {
@@ -179,7 +180,8 @@
 
     function queryFirst(element, selector) {
         var result = null;
-        var i, len = element.length;
+        var i;
+        var len = element.length;
         for (i = 0; !result && i < len; i++)
             result = element[i].querySelector(selector);
         return angular.element(result);
@@ -241,7 +243,6 @@
             state = value;
             if (cancelled) {
                 scope.cancel();
-                return;
             } else if (state === null) {
                 clearErrors();
                 displayWait();
@@ -311,7 +312,6 @@
 
         function handleClear(ev) {
             var target = ev.target;
-            /* jshint validthis:true */
             while (target !== this) {
                 clearError(angular.element(target));
                 target = target.parentNode;
@@ -371,7 +371,7 @@
             function disable(el) {
                 var control = angular.element(el);
                 if (control.attr("disabled") ||
-                    promise.cancel && control.hasClass("btn-cancel"))
+                    (promise.cancel && control.hasClass("btn-cancel")))
                     return;
                 disabled.push(control);
                 control.attr("disabled", "disabled");
@@ -384,5 +384,4 @@
             queryFirst(element, ".btn-cancel").on("click", handleCancel);
         }
     }
-
 }());

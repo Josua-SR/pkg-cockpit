@@ -1,5 +1,3 @@
-/* jshint esversion: 6 */
-
 /*
  * This file is part of Cockpit.
  *
@@ -257,7 +255,7 @@ export class Firewall extends React.Component {
         show_modal_dialog(
             {
                 title: _("Add Services"),
-                body: <AddServicesDialogBody selectionChanged={s => { selected = [...s] }} />
+                body: <AddServicesDialogBody selectionChanged={s => { selected = new Set(s) }} />
             },
             {
                 cancel_caption: _("Cancel"),
@@ -265,7 +263,7 @@ export class Firewall extends React.Component {
                     {
                         caption: _("Add Services"),
                         style: 'primary',
-                        clicked: () => firewall.addServices(selected)
+                        clicked: () => firewall.addServices([...selected])
                     }
                 ]
             });
@@ -308,7 +306,9 @@ export class Firewall extends React.Component {
                 </OverlayTrigger>
             );
         } else {
-            addServiceAction = <button className="btn btn-primary pull-right" onClick={this.onAddServices}>{_("Add Services…")}</button>;
+            addServiceAction = <button className="btn btn-primary pull-right"
+                                       onClick={this.onAddServices}
+                                       disabled={!this.state.firewall.enabled}>{_("Add Services…")}</button>;
         }
 
         var services = [...this.state.firewall.enabledServices].map(id => this.state.firewall.services[id]);

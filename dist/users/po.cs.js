@@ -313,7 +313,7 @@ return plural;
  ],
  "Set": [
   null,
-  "Sada"
+  "Nastavit"
  ],
  "Set Password": [
   null,
@@ -378,6 +378,10 @@ return plural;
  "You do not have permission to view the authorized public keys for this account.": [
   null,
   "Nemáte oprávnění zobrazovat pověřené klíče pro tento účet."
+ ],
+ "You must wait longer to change your password": [
+  null,
+  ""
  ],
  "translatable": [
   null,

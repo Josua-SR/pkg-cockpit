@@ -78,27 +78,27 @@
 
         var buffer = "";
         var req = http.request(options)
-            .stream(function(data) {
-                buffer += data;
-                var next = docker.json_skip(buffer, 0);
-                if (next === 0)
-                    return; /* not enough data yet */
-                var progress = JSON.parse(buffer.substring(0, next));
-                buffer = buffer.substring(next);
-                if (progress.error)
-                    error = progress.error;
-                else if (progress.status)
-                    dfd.notify(progress.status, progress);
-            })
-            .fail(function(ex) {
-                dfd.reject(ex);
-            })
-            .done(function() {
-                if (error)
-                    dfd.reject(new Error(error));
-                else
-                    dfd.resolve();
-            });
+                .stream(function(data) {
+                    buffer += data;
+                    var next = docker.json_skip(buffer, 0);
+                    if (next === 0)
+                        return; /* not enough data yet */
+                    var progress = JSON.parse(buffer.substring(0, next));
+                    buffer = buffer.substring(next);
+                    if (progress.error)
+                        error = progress.error;
+                    else if (progress.status)
+                        dfd.notify(progress.status, progress);
+                })
+                .fail(function(ex) {
+                    dfd.reject(ex);
+                })
+                .done(function() {
+                    if (error)
+                        dfd.reject(new Error(error));
+                    else
+                        dfd.resolve();
+                });
 
         var promise = dfd.promise();
         promise.cancel = function cancel() {
@@ -113,12 +113,12 @@
     docker.inspect_image = function inspect_image(image) {
         var dfd = $.Deferred();
         http.get("/v1.12/images/" + encodeURIComponent(image) + "/json")
-            .done(function(data) {
-                dfd.resolve(JSON.parse(data));
-            })
-            .fail(function(ex) {
-                dfd.reject(ex);
-            });
+                .done(function(data) {
+                    dfd.resolve(JSON.parse(data));
+                })
+                .fail(function(ex) {
+                    dfd.reject(ex);
+                });
         var promise = dfd.promise();
         promise.cancel = function cancel() {
             return promise;
@@ -168,14 +168,14 @@
             return self;
         }
 
-        $(channel).
-            on("close", function(ev, options) {
-                var problem = options.problem || "disconnected";
-                term.write('\x1b[31m' + problem + '\x1b[m\r\n');
-                self.typeable(false);
-                $(channel).off("message");
-                channel = null;
-            });
+        $(channel)
+                .on("close", function(ev, options) {
+                    var problem = options.problem || "disconnected";
+                    term.write('\x1b[31m' + problem + '\x1b[m\r\n');
+                    self.typeable(false);
+                    $(channel).off("message");
+                    channel = null;
+                });
 
         self.process = function process(buffer) {
             term.write(decoder.decode(buffer));
@@ -248,8 +248,6 @@
                 write(decoder.decode(block, { stream: true }));
                 at += 8 + size;
             }
-
-            return at;
         };
 
         self.focus = function() {
@@ -265,19 +263,21 @@
          * protocol. It starts with a HTTP GET, and then quickly
          * degenerates into a stream with framing.
          */
-        $(channel).
-            on("close", function(ev, options) {
-                write(options.reason || "disconnected");
-                $(channel).off();
-                channel = null;
-            });
+        $(channel)
+                .on("close", function(ev, options) {
+                    write(options.reason || "disconnected");
+                    $(channel).off();
+                    channel = null;
+                });
 
         return self;
     }
 
     function sequence_find(seq, find) {
-        var f, fl = find.length;
-        var s, sl = (seq.length - fl) + 1;
+        var f;
+        var fl = find.length;
+        var s;
+        var sl = (seq.length - fl) + 1;
         for (s = 0; s < sl; s++) {
             for (f = 0; f < fl; f++) {
                 if (seq[s + f] !== find[f])
@@ -383,20 +383,20 @@
             }
 
             /* Prepare the command to be executed */
-            var prep = http.request($.extend({ }, options, exec))
-                .always(function() {
-                    prep = null;
-                })
-                .done(function(data) {
-                    var resp = JSON.parse(data);
-                    var body = JSON.stringify({ Detach: false, Tty: tty });
-                    return attach("POST /v1.15/exec/" + encodeURIComponent(resp.Id) +
+            prep = http.request($.extend({ }, options, exec))
+                    .always(function() {
+                        prep = null;
+                    })
+                    .done(function(data) {
+                        var resp = JSON.parse(data);
+                        var body = JSON.stringify({ Detach: false, Tty: tty });
+                        return attach("POST /v1.15/exec/" + encodeURIComponent(resp.Id) +
                                   "/start HTTP/1.0\r\n" +
-                                  "Content-Length: " + body.length +"\r\n\r\n" + body);
-                })
-                .fail(function(ex) {
-                    failure(ex.message);
-                });
+                                  "Content-Length: " + body.length + "\r\n\r\n" + body);
+                    })
+                    .fail(function(ex) {
+                        failure(ex.message);
+                    });
         }
 
         /*
@@ -423,24 +423,24 @@
             docker_debug(request);
             channel.send(request);
 
-            $(channel).
-                on("close.attach", function(ev, options) {
-                    docker_debug(container_id + ": console close: ", options);
-                    $(channel).off(".attach");
-                    channel = null;
+            $(channel)
+                    .on("close.attach", function(ev, options) {
+                        docker_debug(container_id + ": console close: ", options);
+                        $(channel).off(".attach");
+                        channel = null;
 
-                    /*
+                        /*
                      * HACK: If we're disconnected unceremoniously, try
                      * and reconnect. Certain versions of docker do this
                      * during container startup.
                      */
-                    if (self.connected && !options.problem) {
-                        window.setTimeout(function() {
-                            if (self.connected && !channel)
-                                attach(request);
-                        }, 1000);
-                    }
-                });
+                        if (self.connected && !options.problem) {
+                            window.setTimeout(function() {
+                                if (self.connected && !channel)
+                                    attach(request);
+                            }, 1000);
+                        }
+                    });
 
             var headers = null;
             var buffer = channel.buffer();
@@ -521,15 +521,15 @@
         }
 
         $(self)
-            .on("focusin", function() {
-                focused = true;
-                update_typeable();
-                view.focus();
-            })
-            .on("focusout", function() {
-                focused = false;
-                update_typeable();
-            });
+                .on("focusin", function() {
+                    focused = true;
+                    update_typeable();
+                    view.focus();
+                })
+                .on("focusout", function() {
+                    focused = false;
+                    update_typeable();
+                });
 
         self.typeable = function typeable(yes) {
             want_typeable = yes;
@@ -606,7 +606,7 @@
             }
 
             any = true;
-            switch(ch) {
+            switch (ch) {
             case '[':
             case '{':
                 depth++;
@@ -734,7 +734,8 @@
         if (separate === undefined)
             separate = " ";
 
-        var format = formatted.split(separate).pop().toUpperCase();
+        var format = formatted.split(separate).pop()
+                .toUpperCase();
         var spot = byte_suffixes.indexOf(format);
 
         /* TODO: Make the decimal separator translatable */

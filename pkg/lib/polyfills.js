@@ -1,4 +1,3 @@
-/*jshint esversion: 6 */
 /*
  * This file is part of Cockpit.
  *
@@ -21,6 +20,9 @@
 /**
  This file contains various polyfills and other compatibility hacks
  */
+
+// Don't complain about extending native data types -- that's what polyfills do
+/* eslint-disable no-extend-native */
 
 // for IE 11
 require('promise/polyfill.js');
@@ -50,12 +52,12 @@ if (!String.prototype.startsWith) {
 
 // for IE 11
 if (!String.prototype.endsWith) {
-	String.prototype.endsWith = function(search, this_len) {
-		if (this_len === undefined || this_len > this.length) {
-			this_len = this.length;
-		}
-		return this.substring(this_len - search.length, this_len) === search;
-	};
+    String.prototype.endsWith = function(search, this_len) {
+        if (this_len === undefined || this_len > this.length) {
+            this_len = this.length;
+        }
+        return this.substring(this_len - search.length, this_len) === search;
+    };
 }
 
 // for IE 11
@@ -179,7 +181,6 @@ if (!Array.prototype.find) {
 if (!Array.prototype.includes) {
     Object.defineProperty(Array.prototype, 'includes', {
         value: function(searchElement, fromIndex) {
-
             if (this === null) {
                 throw new TypeError('"this" is null or not defined');
             }

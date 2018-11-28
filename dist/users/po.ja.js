@@ -91,10 +91,6 @@ return plural;
   null,
   "公開鍵の追加"
  ],
- "Adding key": [
-  null,
-  "鍵の追加"
- ],
  "Authorized Public SSH Keys": [
   null,
   "承認された公開 SSH 鍵"
@@ -150,10 +146,6 @@ return plural;
  "Error": [
   null,
   "エラー"
- ],
- "Error saving authorized keys: ": [
-  null,
-  "承認された鍵の保存中にエラーが発生しました: "
  ],
  "Excellent password": [
   null,
@@ -327,10 +319,6 @@ return plural;
   null,
   "アカウント '$0' が次回ログインする際に、パスワードの変更が求められます"
  ],
- "The key you provided was not valid.": [
-  null,
-  "提供した鍵が有効ではありません。"
- ],
  "The passwords do not match": [
   null,
   "パスワードが一致しません"
@@ -370,10 +358,6 @@ return plural;
  "User Name": [
   null,
   "ユーザー名"
- ],
- "Validating key": [
-  null,
-  "鍵の検証"
  ],
  "You do not have permission to view the authorized public keys for this account.": [
   null,

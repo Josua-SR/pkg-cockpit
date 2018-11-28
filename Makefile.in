@@ -419,12 +419,11 @@ am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" \
 	"$(DESTDIR)$(firewalldir)" \
 	"$(DESTDIR)$(kubernetesbrandingdir)" \
 	"$(DESTDIR)$(metainfodir)" "$(DESTDIR)$(appdatadir)" \
-	"$(DESTDIR)$(basedir)" "$(DESTDIR)$(desktopdir)" \
-	"$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" \
-	"$(DESTDIR)$(tempconfdir)" "$(DESTDIR)$(ovirtdir)" \
-	"$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(pixmapsdir)" \
-	"$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" \
-	"$(DESTDIR)$(registrybrandingdir)" \
+	"$(DESTDIR)$(basedir)" "$(DESTDIR)$(staticdir)" \
+	"$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(tempconfdir)" \
+	"$(DESTDIR)$(ovirtdir)" "$(DESTDIR)$(pixmapdir)" \
+	"$(DESTDIR)$(pixmapsdir)" "$(DESTDIR)$(playgrounddir)" \
+	"$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" \
 	"$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticfontsdir)" \
 	"$(DESTDIR)$(ubuntubrandingdir)"
 @WITH_GOLANG_TRUE@am__EXEEXT_1 = cockpit-kube-auth$(EXEEXT) \
@@ -1092,11 +1091,10 @@ DATA = $(base_DATA) $(basedebug_DATA) $(basefonts_DATA) \
 	$(dist_systemdunit_DATA) $(fedorabranding_DATA) \
 	$(firewall_DATA) $(kubernetesbranding_DATA) $(metainfo_DATA) \
 	$(nodist_appdata_DATA) $(nodist_base_DATA) \
-	$(nodist_desktop_DATA) $(nodist_noinst_DATA) \
-	$(nodist_static_DATA) $(nodist_systemdunit_DATA) \
-	$(nodist_tempconf_DATA) $(noinst_DATA) $(ovirt_DATA) \
-	$(pixmap_DATA) $(pixmaps_DATA) $(playground_DATA) \
-	$(pmlogconf_DATA) $(registrybranding_DATA) \
+	$(nodist_noinst_DATA) $(nodist_static_DATA) \
+	$(nodist_systemdunit_DATA) $(nodist_tempconf_DATA) \
+	$(noinst_DATA) $(ovirt_DATA) $(pixmap_DATA) $(pixmaps_DATA) \
+	$(playground_DATA) $(pmlogconf_DATA) $(registrybranding_DATA) \
 	$(rhelbranding_DATA) $(staticfonts_DATA) \
 	$(ubuntubranding_DATA)
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) \
@@ -1426,6 +1424,8 @@ LIBSSH_BROKEN_KBDINT_CFLAGS = @LIBSSH_BROKEN_KBDINT_CFLAGS@
 LIBSSH_BROKEN_KBDINT_LIBS = @LIBSSH_BROKEN_KBDINT_LIBS@
 LIBSSH_CFLAGS = @LIBSSH_CFLAGS@
 LIBSSH_LIBS = @LIBSSH_LIBS@
+LIBSSH_SAFE_PROXY_COMMANDS_CFLAGS = @LIBSSH_SAFE_PROXY_COMMANDS_CFLAGS@
+LIBSSH_SAFE_PROXY_COMMANDS_LIBS = @LIBSSH_SAFE_PROXY_COMMANDS_LIBS@
 LIBSYSTEMD_CFLAGS = @LIBSYSTEMD_CFLAGS@
 LIBSYSTEMD_LIBS = @LIBSYSTEMD_LIBS@
 LN_S = @LN_S@
@@ -1710,8 +1710,8 @@ MIN_CSS_RULE = \
 	$(srcdir)/tools/missing $(CLEAN_CSS) --keep-line-breaks --output=$@ \
 		--source-map --source-map-inline-sources $^
 
-JSHINT_RULE = \
-	$(V_CHECK) $(srcdir)/tools/missing $(srcdir)/tools/jshint $<
+ESLINT_RULE = \
+	$(V_CHECK) eslint $<
 
 SUBST_RULE = \
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && sed \
@@ -2779,9 +2779,6 @@ tempconf_in = src/ws/cockpit-tempfiles.conf.in
 appdatadir = $(datadir)/metainfo
 nodist_appdata_DATA = src/ws/cockpit.appdata.xml
 appdata_in = src/ws/cockpit.appdata.xml.in
-desktopdir = $(datadir)/applications
-nodist_desktop_DATA = src/ws/cockpit.desktop
-desktop_in = src/ws/cockpit.desktop.in
 pixmapdir = $(datadir)/pixmaps
 pixmap_DATA = src/ws/cockpit.png
 test_server_SOURCES = src/ws/test-server.c $(mock_dbus_sources)
@@ -7524,27 +7521,6 @@ uninstall-nodist_baseDATA:
 	@list='$(nodist_base_DATA)'; test -n "$(basedir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(basedir)'; $(am__uninstall_files_from_dir)
-install-nodist_desktopDATA: $(nodist_desktop_DATA)
-	@$(NORMAL_INSTALL)
-	@list='$(nodist_desktop_DATA)'; test -n "$(desktopdir)" || list=; \
-	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(desktopdir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(desktopdir)" || exit 1; \
-	fi; \
-	for p in $$list; do \
-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-	  echo "$$d$$p"; \
-	done | $(am__base_list) | \
-	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(desktopdir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(desktopdir)" || exit $$?; \
-	done
-
-uninstall-nodist_desktopDATA:
-	@$(NORMAL_UNINSTALL)
-	@list='$(nodist_desktop_DATA)'; test -n "$(desktopdir)" || list=; \
-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	dir='$(DESTDIR)$(desktopdir)'; $(am__uninstall_files_from_dir)
 install-nodist_staticDATA: $(nodist_static_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(nodist_static_DATA)'; test -n "$(staticdir)" || list=; \
@@ -8546,7 +8522,7 @@ check: $(BUILT_SOURCES)
 all-am: Makefile $(LIBRARIES) $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) \
 		config.h all-local
 installdirs:
-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(motddir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(basedebugdir)" "$(DESTDIR)$(basefontsdir)" "$(DESTDIR)$(centosbrandingdir)" "$(DESTDIR)$(debianbrandingdir)" "$(DESTDIR)$(defaultbrandingdir)" "$(DESTDIR)$(motddir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" "$(DESTDIR)$(firewalldir)" "$(DESTDIR)$(kubernetesbrandingdir)" "$(DESTDIR)$(metainfodir)" "$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(tempconfdir)" "$(DESTDIR)$(ovirtdir)" "$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(pixmapsdir)" "$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" "$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"; do \
+	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(motddir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(basedebugdir)" "$(DESTDIR)$(basefontsdir)" "$(DESTDIR)$(centosbrandingdir)" "$(DESTDIR)$(debianbrandingdir)" "$(DESTDIR)$(defaultbrandingdir)" "$(DESTDIR)$(motddir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" "$(DESTDIR)$(firewalldir)" "$(DESTDIR)$(kubernetesbrandingdir)" "$(DESTDIR)$(metainfodir)" "$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(tempconfdir)" "$(DESTDIR)$(ovirtdir)" "$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(pixmapsdir)" "$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" "$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: $(BUILT_SOURCES)
@@ -8633,13 +8609,12 @@ install-data-am: install-baseDATA install-basedebugDATA \
 	install-fedorabrandingDATA install-firewallDATA \
 	install-kubernetesbrandingDATA install-man \
 	install-metainfoDATA install-nodist_appdataDATA \
-	install-nodist_baseDATA install-nodist_desktopDATA \
-	install-nodist_staticDATA install-nodist_systemdunitDATA \
-	install-nodist_tempconfDATA install-ovirtDATA \
-	install-pixmapDATA install-pixmapsDATA install-playgroundDATA \
-	install-pmlogconfDATA install-registrybrandingDATA \
-	install-rhelbrandingDATA install-staticfontsDATA \
-	install-ubuntubrandingDATA
+	install-nodist_baseDATA install-nodist_staticDATA \
+	install-nodist_systemdunitDATA install-nodist_tempconfDATA \
+	install-ovirtDATA install-pixmapDATA install-pixmapsDATA \
+	install-playgroundDATA install-pmlogconfDATA \
+	install-registrybrandingDATA install-rhelbrandingDATA \
+	install-staticfontsDATA install-ubuntubrandingDATA
 	@$(NORMAL_INSTALL)
 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
 install-dvi: install-dvi-am
@@ -8698,9 +8673,9 @@ uninstall-am: uninstall-baseDATA uninstall-basedebugDATA \
 	uninstall-kubernetesbrandingDATA uninstall-libexecPROGRAMS \
 	uninstall-local uninstall-man uninstall-metainfoDATA \
 	uninstall-nodist_appdataDATA uninstall-nodist_baseDATA \
-	uninstall-nodist_desktopDATA uninstall-nodist_staticDATA \
-	uninstall-nodist_systemdunitDATA uninstall-nodist_tempconfDATA \
-	uninstall-ovirtDATA uninstall-pixmapDATA uninstall-pixmapsDATA \
+	uninstall-nodist_staticDATA uninstall-nodist_systemdunitDATA \
+	uninstall-nodist_tempconfDATA uninstall-ovirtDATA \
+	uninstall-pixmapDATA uninstall-pixmapsDATA \
 	uninstall-playgroundDATA uninstall-pmlogconfDATA \
 	uninstall-registrybrandingDATA uninstall-rhelbrandingDATA \
 	uninstall-sbinPROGRAMS uninstall-staticfontsDATA \
@@ -8734,14 +8709,13 @@ uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 	install-info-am install-kubernetesbrandingDATA \
 	install-libexecPROGRAMS install-man install-man1 install-man5 \
 	install-man8 install-metainfoDATA install-nodist_appdataDATA \
-	install-nodist_baseDATA install-nodist_desktopDATA \
-	install-nodist_staticDATA install-nodist_systemdunitDATA \
-	install-nodist_tempconfDATA install-ovirtDATA install-pdf \
-	install-pdf-am install-pixmapDATA install-pixmapsDATA \
-	install-playgroundDATA install-pmlogconfDATA install-ps \
-	install-ps-am install-registrybrandingDATA \
-	install-rhelbrandingDATA install-sbinPROGRAMS \
-	install-staticfontsDATA install-strip \
+	install-nodist_baseDATA install-nodist_staticDATA \
+	install-nodist_systemdunitDATA install-nodist_tempconfDATA \
+	install-ovirtDATA install-pdf install-pdf-am \
+	install-pixmapDATA install-pixmapsDATA install-playgroundDATA \
+	install-pmlogconfDATA install-ps install-ps-am \
+	install-registrybrandingDATA install-rhelbrandingDATA \
+	install-sbinPROGRAMS install-staticfontsDATA install-strip \
 	install-ubuntubrandingDATA installcheck installcheck-am \
 	installdirs maintainer-clean maintainer-clean-generic \
 	mostlyclean mostlyclean-compile mostlyclean-generic pdf pdf-am \
@@ -8756,9 +8730,9 @@ uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 	uninstall-local uninstall-man uninstall-man1 uninstall-man5 \
 	uninstall-man8 uninstall-metainfoDATA \
 	uninstall-nodist_appdataDATA uninstall-nodist_baseDATA \
-	uninstall-nodist_desktopDATA uninstall-nodist_staticDATA \
-	uninstall-nodist_systemdunitDATA uninstall-nodist_tempconfDATA \
-	uninstall-ovirtDATA uninstall-pixmapDATA uninstall-pixmapsDATA \
+	uninstall-nodist_staticDATA uninstall-nodist_systemdunitDATA \
+	uninstall-nodist_tempconfDATA uninstall-ovirtDATA \
+	uninstall-pixmapDATA uninstall-pixmapsDATA \
 	uninstall-playgroundDATA uninstall-pmlogconfDATA \
 	uninstall-registrybrandingDATA uninstall-rhelbrandingDATA \
 	uninstall-sbinPROGRAMS uninstall-staticfontsDATA \
@@ -9067,7 +9041,7 @@ dist/base1/jquery.js:
 dist/base1/jquery.min.js: dist/base1/jquery.js
 	$(MIN_JS_RULE)
 dist/base1/cockpit.js: src/base1/cockpit.js
-	$(JSHINT_RULE)
+	$(ESLINT_RULE)
 	$(COPY_RULE)
 dist/base1/cockpit.min.js: dist/base1/cockpit.js
 	$(MIN_JS_RULE)
@@ -9130,21 +9104,21 @@ dist/base1/qunit.css:
 	cp $(srcdir)/node_modules/qunitjs/qunit/qunit.css $@.tmp && $(MV) $@.tmp $@
 
 dist/base1/test-dbus-common.js: src/base1/test-dbus-common.js
-	$(JSHINT_RULE)
+	$(ESLINT_RULE)
 	$(COPY_RULE)
 
 $(base_QUNIT_TESTS): dist/base1/test-%.html: src/base1/test-%.js $(base_QUNIT_DEPS)
-	$(JSHINT_RULE)
+	$(ESLINT_RULE)
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
 	cp -L $< $@.tmp.js && $(MV) $@.tmp.js $(dir $@)/$(notdir $<) && \
 	$(SED_TEST_TEMPLATE) $(srcdir)/src/base1/qunit-template.html > $@.tmp && $(MV) $@.tmp $@
 
 dist/base1/simple-tap.js: src/base1/simple-tap.js
-	$(JSHINT_RULE)
+	$(ESLINT_RULE)
 	$(COPY_RULE)
 
 $(base_SIMPLE_TESTS): dist/base1/test-%.html: src/base1/test-%.js $(base_SIMPLE_DEPS)
-	$(JSHINT_RULE)
+	$(ESLINT_RULE)
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
 	cp -L $< $@.tmp.js && $(MV) $@.tmp.js $(dir $@)/$(notdir $<) && \
 	$(SED_TEST_TEMPLATE) $(srcdir)/src/base1/simple-template.html > $@.tmp && $(MV) $@.tmp $@
@@ -9238,7 +9212,7 @@ libpreload-temp-home.so: src/common/preload-temp-home.c
 @WITH_COCKPIT_SSH_TRUE@			$(srcdir)/src/ssh/mock_known_hosts
 
 dist/static/login.js: src/ws/login.js
-	$(JSHINT_RULE)
+	$(ESHINT_RULE)
 	$(COPY_RULE)
 dist/static/login.min.js: dist/static/login.js
 	$(MIN_JS_RULE)
@@ -9283,9 +9257,6 @@ install-exec-hook::
 
 $(nodist_appdata_DATA): $(appdata_in) $(PO_FILES)
 	$(AM_V_GEN) LC_ALL=C $(INTLTOOL_MERGE) -q -x -u $(top_srcdir)/po $< $@
-
-$(nodist_desktop_DATA): $(desktop_in) $(PO_FILES)
-	$(AM_V_GEN) LC_ALL=C $(INTLTOOL_MERGE) -q -d -u $(top_srcdir)/po $< $@
 mock-pam-conv-mod.so$(EXEEXT): $(mock_pam_conv_mod_so_SOURCES)
 	$(AM_V_CCLD) $(CC) -fPIC -shared $(CFLAGS) -I$(builddir) \
 		-o $@ $^ $(PAM_LIBS) $(LDFLAGS)

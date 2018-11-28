@@ -7,7 +7,7 @@ staticdir = $(datadir)/cockpit/static
 nodist_static_DATA = dist/static/login.min.html dist/static/login.po.html $(LOGIN_PO_FILES)
 
 dist/static/login.js: src/ws/login.js
-	$(JSHINT_RULE)
+	$(ESHINT_RULE)
 	$(COPY_RULE)
 dist/static/login.min.js: dist/static/login.js
 	$(MIN_JS_RULE)
@@ -213,13 +213,6 @@ appdata_in = src/ws/cockpit.appdata.xml.in
 
 $(nodist_appdata_DATA): $(appdata_in) $(PO_FILES)
 	$(AM_V_GEN) LC_ALL=C $(INTLTOOL_MERGE) -q -x -u $(top_srcdir)/po $< $@
-
-desktopdir = $(datadir)/applications
-nodist_desktop_DATA = src/ws/cockpit.desktop
-desktop_in = src/ws/cockpit.desktop.in
-
-$(nodist_desktop_DATA): $(desktop_in) $(PO_FILES)
-	$(AM_V_GEN) LC_ALL=C $(INTLTOOL_MERGE) -q -d -u $(top_srcdir)/po $< $@
 
 pixmapdir = $(datadir)/pixmaps
 pixmap_DATA = src/ws/cockpit.png

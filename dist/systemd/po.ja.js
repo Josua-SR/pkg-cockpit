@@ -67,10 +67,6 @@ return plural;
   "language": "ja",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 Template": [
-  null,
-  "$0 テンプレート"
- ],
  "$0 is not available from any repository.": [
   null,
   "$0 は、あらゆるリポジトリーから利用できません。"
@@ -90,10 +86,6 @@ return plural;
  "1 hour": [
   null,
   "1 時間"
- ],
- "1 min": [
-  null,
-  "1 分"
  ],
  "1 week": [
   null,
@@ -143,10 +135,6 @@ return plural;
   null,
   "1 日"
  ],
- "2 min": [
-  null,
-  "2 分"
- ],
  "20 Minutes": [
   null,
   "20 分"
@@ -195,10 +183,6 @@ return plural;
   null,
   "2 日"
  ],
- "3 min": [
-  null,
-  "3 分"
- ],
  "30th": [
   null,
   "30 日"
@@ -211,10 +195,6 @@ return plural;
   null,
   "3 日"
  ],
- "4 min": [
-  null,
-  "4 分"
- ],
  "40 Minutes": [
   null,
   "40 分"
@@ -224,10 +204,6 @@ return plural;
   "4 日"
  ],
  "5 Minutes": [
-  null,
-  "5 分"
- ],
- "5 min": [
   null,
   "5 分"
  ],
@@ -315,14 +291,6 @@ return plural;
   null,
   "BIOS のバージョン"
  ],
- "Before": [
-  null,
-  "前"
- ],
- "Binds To": [
-  null,
-  "バインドする"
- ],
  "Blade": [
   null,
   "ブレード"
@@ -330,14 +298,6 @@ return plural;
  "Blade enclosure": [
   null,
   "ブレードエンクロージャー"
- ],
- "Bound By": [
-  null,
-  "バインドされた"
- ],
- "Bug Fix Updates Available": [
-  null,
-  "バグ修正の更新が利用可能"
  ],
  "Bus Expansion Chassis": [
   null,
@@ -355,10 +315,6 @@ return plural;
   null,
   "取り消し"
  ],
- "Cannot schedule event in the past": [
-  null,
-  "過去のイベントはスケジュールできません"
- ],
  "Change": [
   null,
   "変更"
@@ -371,10 +327,6 @@ return plural;
   null,
   "システム時間の変更"
  ],
- "Checking for updates…": [
-  null,
-  "更新の確認…"
- ],
  "Checking installed software": [
   null,
   "インストールされたソフトウェアの確認"
@@ -382,10 +334,6 @@ return plural;
  "Class": [
   null,
   "クラス"
- ],
- "Click to see system hardware information": [
-  null,
-  "クリックしてシステムハードウェア情報を確認"
  ],
  "Close": [
   null,
@@ -399,25 +347,9 @@ return plural;
   null,
   "PCI の圧縮"
  ],
- "Condition $0=$1 was not met": [
-  null,
-  "条件 $0=$1 を満たしていませんでした。"
- ],
  "Condition failed": [
   null,
   "条件が満たされませんでした。"
- ],
- "Conflicted By": [
-  null,
-  "競合する"
- ],
- "Conflicts": [
-  null,
-  "競合"
- ],
- "Consists Of": [
-  null,
-  "構成するもの"
  ],
  "Convertible": [
   null,
@@ -459,14 +391,6 @@ return plural;
   null,
   "割り当て解除可能"
  ],
- "Disable": [
-  null,
-  "無効化"
- ],
- "Disabled": [
-  null,
-  "無効"
- ],
  "Disk I/O": [
   null,
   "ディスク I/O"
@@ -491,25 +415,9 @@ return plural;
   null,
   "組み込み PC"
  ],
- "Enable": [
-  null,
-  "有効化"
- ],
- "Enable Forcefully": [
-  null,
-  "強制的に有効にします"
- ],
  "Enable persistent metrics…": [
   null,
   "永続メトリクスを有効にします…"
- ],
- "Enabled": [
-  null,
-  "有効"
- ],
- "Enhancement Updates Available": [
-  null,
-  "機能拡張の更新を利用できます"
  ],
  "Entry": [
   null,
@@ -567,10 +475,6 @@ return plural;
   null,
   "時間: 分"
  ],
- "Hour needs to be a number between 0-23": [
-  null,
-  "時間は 0〜23 の数字である必要があります"
- ],
  "Hours": [
   null,
   "時"
@@ -578,10 +482,6 @@ return plural;
  "I/O Wait": [
   null,
   "I/O 待機"
- ],
- "Id": [
-  null,
-  "ID"
  ],
  "Info and above": [
   null,
@@ -603,26 +503,6 @@ return plural;
   null,
   "インスタンス化"
  ],
- "Invalid date format": [
-  null,
-  "無効な日付形式"
- ],
- "Invalid date format and invalid time format": [
-  null,
-  "無効な日付形式と無効な時間形式"
- ],
- "Invalid date format.": [
-  null,
-  "無効な日付形式。"
- ],
- "Invalid number.": [
-  null,
-  "無効な数字。"
- ],
- "Invalid time format": [
-  null,
-  "無効な時間形式"
- ],
  "Invalid time zone": [
   null,
   "無効なタイムゾーン"
@@ -630,10 +510,6 @@ return plural;
  "IoT Gateway": [
   null,
   "IoT ゲートウェイ"
- ],
- "Joins Namespace Of": [
-  null,
-  "名前空間に参加"
  ],
  "Journal": [
   null,
@@ -662,10 +538,6 @@ return plural;
  "Last 7 days": [
   null,
   "過去 7 日間"
- ],
- "Last Trigger": [
-  null,
-  "最後のトリガー"
  ],
  "Load earlier entries": [
   null,
@@ -707,14 +579,6 @@ return plural;
   null,
   "手動"
  ],
- "Mask": [
-  null,
-  "マスク"
- ],
- "Mask Forcefully": [
-  null,
-  "強制的にマスク"
- ],
  "Memory": [
   null,
   "メモリ"
@@ -723,10 +587,6 @@ return plural;
   null,
   ""
  ],
- "Message to logged in users": [
-  null,
-  "ログインしているユーザーへのメッセージ"
- ],
  "Mini PC": [
   null,
   "ミニ PC"
@@ -734,10 +594,6 @@ return plural;
  "Mini Tower": [
   null,
   "ミニタワー"
- ],
- "Minute needs to be a number between 0-59": [
-  null,
-  "分は 0〜59 の数字である必要があります"
  ],
  "Minutes": [
   null,
@@ -755,25 +611,13 @@ return plural;
   null,
   "マルチシステムシャーシ"
  ],
- "NTP Server": [
-  null,
-  "NTP サーバー"
- ],
  "Name": [
   null,
   "名前"
  ],
- "Need at least one NTP server": [
-  null,
-  "少なくとも 1 つの NTP サーバーが必要です"
- ],
  "Network Traffic": [
   null,
   "ネットワークトラフィック"
- ],
- "Next Run": [
-  null,
-  "次回の実行日時"
  ],
  "Nice": [
   null,
@@ -819,17 +663,9 @@ return plural;
   null,
   "オン"
  ],
- "On Failure": [
-  null,
-  "障害発生時"
- ],
  "Only Emergency": [
   null,
   "緊急時限定"
- ],
- "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
-  null,
-  "アルファベット、数字、:、 _ 、.、@、- のみを使用できます。"
  ],
  "Operating System": [
   null,
@@ -846,10 +682,6 @@ return plural;
  "PackageKit crashed": [
   null,
   "PackageKit がクラッシュしました"
- ],
- "Part Of": [
-  null,
-  "一部"
  ],
  "Paths": [
   null,
@@ -875,14 +707,6 @@ return plural;
   null,
   "電源オプション"
  ],
- "Preset": [
-  null,
-  "事前設定"
- ],
- "Preset Forcefully": [
-  null,
-  "強制的に事前設定"
- ],
  "Pretty Host Name": [
   null,
   "プリティホスト名"
@@ -894,10 +718,6 @@ return plural;
  "Problem info": [
   null,
   "問題の情報"
- ],
- "Propagates Reload To": [
-  null,
-  "再読み込み先を伝搬"
  ],
  "RAID Chassis": [
   null,
@@ -911,14 +731,6 @@ return plural;
   null,
   "実際のホスト名"
  ],
- "Real host name can only contain lower-case characters, digits, dashes, and periods (with populated subdomains)": [
-  null,
-  "実際のホスト名には小文字、数字、ダッシュ、およびピリオドのみを使用できます (入力されたサブドメインを含む)。"
- ],
- "Real host name must be 64 characters or less": [
-  null,
-  "実際のホスト名は 64 文字以下である必要があります"
- ],
  "Reboot": [
   null,
   "再起動"
@@ -926,14 +738,6 @@ return plural;
  "Recent": [
   null,
   "最近開いたファイル"
- ],
- "Reload": [
-  null,
-  "再読み込み"
- ],
- "Reload Propagated From": [
-  null,
-  "伝搬元を再読み込み"
  ],
  "Removals:": [
   null,
@@ -979,22 +783,6 @@ return plural;
   null,
   "レポートは成功しませんでした。次を試してください: `reporter-ureport -d"
  ],
- "Required By": [
-  null,
-  "必要とされる"
- ],
- "Requires": [
-  null,
-  "必要"
- ],
- "Requisite": [
-  null,
-  "必須"
- ],
- "Requisite Of": [
-  null,
-  "必須の"
- ],
  "Reset": [
   null,
   "リセット"
@@ -1027,10 +815,6 @@ return plural;
   null,
   "セキュアシェルキー"
  ],
- "Security Updates Available": [
-  null,
-  "セキュリティーの更新を利用できます"
- ],
  "Service Logs": [
   null,
   "サービスログ"
@@ -1042,10 +826,6 @@ return plural;
  "Services": [
   null,
   "サービス"
- ],
- "Set Host name": [
-  null,
-  "ホスト名の設定"
  ],
  "Set Time": [
   null,
@@ -1063,10 +843,6 @@ return plural;
   null,
   "シャットダウン"
  ],
- "Since $0": [
-  null,
-  "$0 以降"
- ],
  "Slot": [
   null,
   "スロット"
@@ -1083,25 +859,9 @@ return plural;
   null,
   "特定の時間"
  ],
- "Start": [
-  null,
-  "開始日"
- ],
- "State": [
-  null,
-  "状態"
- ],
- "Static": [
-  null,
-  "静的"
- ],
  "Stick PC": [
   null,
   "スティッキー PC"
- ],
- "Stop": [
-  null,
-  "停止"
  ],
  "Store Performance Data": [
   null,
@@ -1139,10 +899,6 @@ return plural;
   null,
   "システム情報"
  ],
- "System Not Registered": [
-  null,
-  "システムは登録されていません"
- ],
  "System Services": [
   null,
   "システムサービス"
@@ -1150,10 +906,6 @@ return plural;
  "System Time": [
   null,
   "システム時間"
- ],
- "System Up To Date": [
-  null,
-  "システムは最新の状態です"
  ],
  "Tablet": [
   null,
@@ -1166,42 +918,6 @@ return plural;
  "Terminal": [
   null,
   "端末"
- ],
- "The user <b>$0</b> does not have permissions for creating timers": [
-  null,
-  "ユーザー <b>$0</b> はタイマーを作成するパーミッションを持っていません"
- ],
- "The user <b>$0</b> is not permitted to change the system time": [
-  null,
-  "ユーザー <b>$0</b> は、システムの時間の変更を許可されていません"
- ],
- "The user <b>$0</b> is not permitted to enable or disable services": [
-  null,
-  "ユーザー <b>$0</b> は、サービスを有効または無効にすることを許可されていません"
- ],
- "The user <b>$0</b> is not permitted to modify hostnames": [
-  null,
-  "ユーザー <b>$0</b> はホスト名を変更することを許可されていません"
- ],
- "The user <b>$0</b> is not permitted to shutdown or restart this server": [
-  null,
-  "ユーザー <b>$0</b> は、このサーバーをシャットダウンまたは再起動することを許可されていません"
- ],
- "The user <b>$0</b> is not permitted to start or stop services": [
-  null,
-  "ユーザー <b>$0</b> は、サービスを開始または停止することを許可されていません"
- ],
- "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
-  null,
-  "この日はすべての月で存在しません。<br> タイマーは 31 日がある月でのみ実行されます。"
- ],
- "This field cannot be empty.": [
-  null,
-  "このフィールドは空にできません。"
- ],
- "This unit is an instance of the $0 template.": [
-  null,
-  "このユニットは $0 テンプレートのインスタンスです。"
  ],
  "This unit is not designed to be enabled explicitly.": [
   null,
@@ -1227,14 +943,6 @@ return plural;
   null,
   "タワー"
  ],
- "Triggered By": [
-  null,
-  "トリガー元"
- ],
- "Triggers": [
-  null,
-  "トリガー"
- ],
  "Trying to synchronize with {{Server}}": [
   null,
   "{{Server}} との同期を試行中です"
@@ -1250,18 +958,6 @@ return plural;
  "Unknown": [
   null,
   "不明"
- ],
- "Unmask": [
-  null,
-  "マスク解除"
- ],
- "Updates Available": [
-  null,
-  "更新を利用できます"
- ],
- "Usage of $0 CPU core": [
-  "Usage of $0 CPU cores",
-  "$0 CPU コアの使用率"
  ],
  "Used": [
   null,
@@ -1282,14 +978,6 @@ return plural;
  "Waiting for other software management operations to finish": [
   null,
   "他のソフトウェア管理オペレーションが終了するまで待機中"
- ],
- "Wanted By": [
-  null,
-  "望まれる"
- ],
- "Wants": [
-  null,
-  "望む"
  ],
  "Warning and above": [
   null,
@@ -1314,25 +1002,5 @@ return plural;
  "[no data]": [
   null,
   "[データなし]"
- ],
- "failed to list ssh host keys: $0": [
-  null,
-  "ssh ホスト鍵の一覧表示に失敗しました: $0"
- ],
- "of $0 CPU core": [
-  "of $0 CPU cores",
-  "$0 CPU コアの"
- ],
- "unknown": [
-  null,
-  "不明"
- ],
- "page-title\u0004CPU Status": [
-  null,
-  "CPU ステータス"
- ],
- "page-title\u0004Memory": [
-  null,
-  "メモリー"
  ]
 }));

@@ -223,10 +223,6 @@ return plural;
   null,
   "Не вдалося застосувати параметри: $0"
  ],
- "Use the setting in /etc/kdump.conf": [
-  null,
-  "Використовувати параметр у /etc/kdump.conf"
- ],
  "invalid: multiple targets defined": [
   null,
   "помилка: визначено декілька цілей"
@@ -239,9 +235,21 @@ return plural;
   null,
   "локально у $0"
  ],
+ "nfs dump target isn't formated as server:path": [
+  null,
+  ""
+ ],
  "ssh key": [
   null,
   "ключ ssh"
+ ],
+ "ssh key isn't a path": [
+  null,
+  ""
+ ],
+ "ssh server is empty": [
+  null,
+  ""
  ],
  "undefined": [
   null,

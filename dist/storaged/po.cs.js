@@ -843,7 +843,7 @@ return plural;
  ],
  "Mount Point": [
   null,
-  "Připojit do"
+  "Přípojný bod"
  ],
  "Mount at boot": [
   null,

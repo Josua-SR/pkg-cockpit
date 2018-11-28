@@ -17,13 +17,13 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 import React from 'react';
-import { Alert, Button, Modal } from 'patternfly-react';
+import { Button, Modal } from 'patternfly-react';
 import cockpit from 'cockpit';
 
 import * as Select from "cockpit-components-select.jsx";
-
+import { ModalError } from './notification/inlineNotification.jsx';
 import { units, convertToUnit, digitFilter, toFixedPrecision } from '../helpers.es6';
-import { volumeCreateAndAttach, attachDisk, getVm, getStoragePools } from '../actions/provider-actions.es6';
+import { volumeCreateAndAttach, attachDisk, getVm, getAllStoragePools } from '../actions/provider-actions.es6';
 
 import './diskAdd.css';
 
@@ -277,7 +277,7 @@ const UseExistingDisk = ({ idPrefix, onValueChanged, dialogValues, vmStoragePool
 };
 
 function getDiskFileName(storagePools, vm, poolName, volumeName) {
-    const vmStoragePools = storagePools[vm.connectionName];
+    const vmStoragePools = storagePools;
     let volume;
     if (vmStoragePools && vmStoragePools[poolName]) {
         volume = vmStoragePools[poolName].find(volume => volume.name === volumeName);
@@ -301,7 +301,7 @@ export class AddDiskAction extends React.Component {
         // Refresh storage volume list before displaying the dialog.
         // There are recently no Libvirt events for storage volumes and polling is ugly.
         // https://bugzilla.redhat.com/show_bug.cgi?id=1578836
-        this.props.dispatch(getStoragePools(this.props.vm.connectionName))
+        this.props.dispatch(getAllStoragePools(this.props.vm.connectionName))
                 .then(() => {
                     this.setState({ showModal: true });
                 });
@@ -310,13 +310,23 @@ export class AddDiskAction extends React.Component {
     render() {
         const { vm, storagePools, provider, dispatch } = this.props;
         const idPrefix = `${this.props.idPrefix}-adddisk`;
+        /*
+         * For now only Storage Pools of dir type are supported.
+         * TODO: Add support for other Storage Pool types.
+         */
+        const filteredStoragePools = storagePools
+                .filter(pool => pool.connectionName == vm.connectionName && pool.active && pool.type == 'dir')
+                .reduce((result, filter) => {
+                    result[filter.name] = filter.volumes;
+                    return result;
+                }, {});
 
         return (
             <div id={`${idPrefix}-add-dialog-full`}>
                 <Button id={`${idPrefix}`} bsStyle='primary' onClick={this.open} className='pull-right' >
                     {_("Add Disk")}
                 </Button>
-                { this.state.showModal && <AddDiskModalBody close={this.close} dispatch={dispatch} idPrefix={this.props.idPrefix} vm={vm} storagePools={storagePools} provider={provider} /> }
+                { this.state.showModal && <AddDiskModalBody close={this.close} dispatch={dispatch} idPrefix={this.props.idPrefix} vm={vm} storagePools={filteredStoragePools} provider={provider} /> }
             </div>
         );
     }
@@ -328,7 +338,6 @@ class AddDiskModalBody extends React.Component {
         this.state = this.initialState;
         this.onValueChanged = this.onValueChanged.bind(this);
         this.dialogErrorSet = this.dialogErrorSet.bind(this);
-        this.dialogErrorDismiss = this.dialogErrorDismiss.bind(this);
         this.onAddClicked = this.onAddClicked.bind(this);
         this.getDefaultVolumeName = this.getDefaultVolumeName.bind(this);
     }
@@ -338,7 +347,7 @@ class AddDiskModalBody extends React.Component {
         const availableTargets = getAvailableTargets(vm);
 
         return {
-            storagePoolName: storagePools && storagePools[vm.connectionName] && Object.getOwnPropertyNames(storagePools[vm.connectionName]).sort()[0],
+            storagePoolName: storagePools && Object.getOwnPropertyNames(storagePools).sort()[0],
             mode: CREATE_NEW,
             volumeName: undefined,
             existingVolumeName: undefined,
@@ -354,8 +363,7 @@ class AddDiskModalBody extends React.Component {
 
     getDefaultVolumeName(poolName) {
         const { storagePools, vm } = this.props;
-        const vmStoragePools = storagePools[vm.connectionName];
-        const vmStoragePool = vmStoragePools[poolName];
+        const vmStoragePool = storagePools[poolName];
         const filteredVolumes = getFilteredVolumes(vmStoragePool, vm.disks);
         return filteredVolumes[0] && filteredVolumes[0].name;
     }
@@ -375,12 +383,8 @@ class AddDiskModalBody extends React.Component {
         this.setState(stateDelta);
     }
 
-    dialogErrorSet(text) {
-        this.setState({ dialogError: text });
-    }
-
-    dialogErrorDismiss() {
-        this.setState({ dialogError: undefined });
+    dialogErrorSet(text, detail) {
+        this.setState({ dialogError: text, dialogErrorDetail: detail });
     }
 
     onAddClicked() {
@@ -406,7 +410,7 @@ class AddDiskModalBody extends React.Component {
                                                     hotplug: this.state.hotplug,
                                                     vmName: vm.name,
                                                     vmId: vm.id }))
-                    .fail(exc => this.dialogErrorSet(_("Disk failed to be created with following error: ") + exc.message))
+                    .fail(exc => this.dialogErrorSet(_("Disk failed to be created"), exc.message))
                     .then(() => { // force reload of VM data, events are not reliable (i.e. for a down VM)
                         this.props.close();
                         return dispatch(getVm({connectionName: vm.connectionName, name: vm.name, id: vm.id}));
@@ -421,7 +425,7 @@ class AddDiskModalBody extends React.Component {
                                      hotplug: this.state.hotplug,
                                      vmName: vm.name,
                                      vmId: vm.id }))
-                .fail(exc => this.dialogErrorSet(_("Disk failed to be attached with following error: ") + exc.message))
+                .fail(exc => this.dialogErrorSet(_("Disk failed to be attached"), exc.message))
                 .then(() => { // force reload of VM data, events are not reliable (i.e. for a down VM)
                     this.props.close();
                     return dispatch(getVm({connectionName: vm.connectionName, name: vm.name, id: vm.id}));
@@ -431,7 +435,7 @@ class AddDiskModalBody extends React.Component {
     render() {
         const { vm, storagePools, provider } = this.props;
         const idPrefix = `${this.props.idPrefix}-adddisk`;
-        const vmStoragePools = storagePools[vm.connectionName];
+        const vmStoragePools = storagePools;
 
         const defaultBody = (
             <div className='modal-body add-disk-dialog'>
@@ -495,10 +499,10 @@ class AddDiskModalBody extends React.Component {
                     <Modal.Title> {`Add Disk`} </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    {this.state.dialogError && (<Alert onDismiss={this.dialogErrorDismiss}> {this.state.dialogError} </Alert>)}
                     {defaultBody}
                 </Modal.Body>
                 <Modal.Footer>
+                    {this.state.dialogError && <ModalError dialogError={this.state.dialogError} dialogErrorDetail={this.state.dialogErrorDetail} />}
                     <Button id={`${idPrefix}-dialog-cancel`} bsStyle='default' className='btn-cancel' onClick={this.props.close}>
                         {_("Cancel")}
                     </Button>

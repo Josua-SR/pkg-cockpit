@@ -531,10 +531,6 @@ return plural;
   null,
   "Châssis d'extension"
  ],
- "Free": [
-  null,
-  "Gratuit"
- ],
  "Friday": [
   null,
   "Vendredi"
@@ -722,6 +718,10 @@ return plural;
  "Memory": [
   null,
   "Mémoire"
+ ],
+ "Memory & Swap": [
+  null,
+  ""
  ],
  "Message to logged in users": [
   null,

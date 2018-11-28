@@ -43,6 +43,8 @@
 
 #define PASSWORD "this is the password"
 
+#define INVALID_KEY ""
+
 typedef struct {
   CockpitTransport *transport;
   gboolean closed;
@@ -53,6 +55,7 @@ typedef struct {
   gchar *home_dir;
   gchar *home_ssh_dir;
   gchar *home_knownhosts_file;
+  gchar *home_ssh_config_file;
 } TestCase;
 
 typedef struct {
@@ -64,10 +67,11 @@ typedef struct {
     const char *knownhosts_home;
     const char *knownhosts_sssd;
     const char *knownhosts_sssd_host;
+    const char *host_key_authorize; /* authorize x-host-key response for test_problem() */
     const char *config;
     const char *problem;
     gboolean allow_unknown;
-    gboolean challenge_unknown_host_preconnect;
+    gboolean test_home_ssh_config;
 } TestFixture;
 
 static GString *
@@ -191,12 +195,6 @@ setup_env (const TestFixture *fix)
                               "true", TRUE);
     }
 
-  if (fix && fix->challenge_unknown_host_preconnect)
-    {
-      env = g_environ_setenv (env, "COCKPIT_SSH_CHALLENGE_UNKNOWN_HOST_PRECONNECT",
-                              "true", TRUE);
-    }
-
   knownhosts_file = fix ? fix->knownhosts_file : NULL;
   if (!knownhosts_file)
       knownhosts_file = SRCDIR "/src/ssh/mock_known_hosts";
@@ -265,12 +263,13 @@ setup (TestCase *tc,
   /* use preload library to bend getpwuid_r home dir to the temporary one */
   env = g_environ_setenv (env, "LD_PRELOAD", BUILDDIR "/libpreload-temp-home.so", TRUE);
 
+  tc->home_ssh_dir = g_build_filename (tc->home_dir, ".ssh", NULL);
+  g_assert (tc->home_ssh_dir != NULL);
+
   if (fixture && fixture->knownhosts_home)
     {
       gchar *content;
 
-      tc->home_ssh_dir = g_build_filename (tc->home_dir, ".ssh", NULL);
-      g_assert (tc->home_ssh_dir != NULL);
       tc->home_knownhosts_file = g_build_filename (tc->home_ssh_dir, "known_hosts", NULL);
       g_assert (tc->home_knownhosts_file != NULL);
       g_assert_cmpint (mkdir (tc->home_ssh_dir, 0700), ==, 0);
@@ -283,6 +282,32 @@ setup (TestCase *tc,
 
       g_free (content);
     }
+
+#if LIBSSH_085
+  if (fixture && fixture->test_home_ssh_config)
+    {
+      gchar *content;
+      gchar **host_port;
+
+      tc->home_ssh_config_file = g_build_filename (tc->home_ssh_dir, "config", NULL);
+      if (!fixture->knownhosts_home)
+          g_assert_cmpint (mkdir (tc->home_ssh_dir, 0700), ==, 0);
+      host_port = g_strsplit (host, ":", 0);
+
+      content = g_strdup_printf ("Host some_host\n "
+                                 "\tHostname %s\n"
+                                 "\tPort %s\n",
+                                 host_port[0],
+                                 g_strv_length (host_port) > 1 ? host_port[1] : "22");
+      g_assert (g_file_set_contents (tc->home_ssh_config_file, content, -1, NULL));
+      g_free (host);
+      host = g_strdup ("some_host");
+      argv[1] = host;
+
+      g_strfreev (host_port);
+      g_free (content);
+    }
+#endif
 
   if (fixture && fixture->knownhosts_sssd)
     {
@@ -315,6 +340,11 @@ teardown (TestCase *tc,
     {
       unlink (tc->home_knownhosts_file);
       g_free (tc->home_knownhosts_file);
+    }
+  if (tc->home_ssh_config_file)
+    {
+      unlink (tc->home_ssh_config_file);
+      g_free (tc->home_ssh_config_file);
     }
   if (tc->home_ssh_dir)
     {
@@ -707,8 +737,6 @@ check_host_key_values (TestCase *tc,
   g_assert_cmpstr (json_object_get_string_member (init, "host-fingerprint"),
                    ==, MOCK_RSA_FP);
 
-  g_assert (json_object_has_member (init, "invalid-hostkey-file") == FALSE);
-
   g_free (knownhosts);
 }
 
@@ -720,6 +748,8 @@ test_problem (TestCase *tc,
   const TestFixture *fix = data;
 
   do_fixture_auth (tc->transport, data);
+  if (fix->host_key_authorize)
+    do_auth_response (tc->transport, "x-host-key", fix->host_key_authorize);
   init = wait_until_transport_init (tc->transport, fix->problem);
   json_object_unref (init);
 }
@@ -727,6 +757,7 @@ test_problem (TestCase *tc,
 
 static const TestFixture fixture_unknown_host = {
   .knownhosts_file = "/dev/null",
+  .host_key_authorize = INVALID_KEY,
   .problem = "unknown-host"
 };
 
@@ -748,6 +779,7 @@ static const TestFixture fixture_knownhost_sssd_unknown = {
   .knownhosts_sssd = MOCK_RSA_KEY,
   .knownhosts_sssd_host = "somehost",
   .knownhosts_file = "/dev/null",
+  .host_key_authorize = INVALID_KEY,
   .problem = "unknown-host"
 };
 
@@ -764,10 +796,17 @@ static const TestFixture fixture_known_host_home = {
   .ssh_command = BUILDDIR "/mock-echo"
 };
 
+static const TestFixture fixture_home_ssh_config = {
+  .knownhosts_file = "/dev/null",
+  .test_home_ssh_config = TRUE,
+  .knownhosts_home = MOCK_RSA_KEY,
+  .allow_unknown = TRUE,
+  .ssh_command = BUILDDIR "/mock-echo"
+};
+
 static const TestFixture fixture_knownhost_challenge_preconnect = {
   .knownhosts_file = "/dev/null",
   .allow_unknown = TRUE,
-  .challenge_unknown_host_preconnect = TRUE,
   .ssh_command = BUILDDIR "/mock-echo"
 };
 
@@ -792,9 +831,6 @@ test_invalid_knownhost (TestCase *tc,
   do_auth_response (tc->transport, "*", "");
 
   init = wait_until_transport_init (tc->transport, "invalid-hostkey");
-
-  g_assert_cmpstr (json_object_get_string_member (init, "invalid-hostkey-file"),
-                   ==, fix->knownhosts_file);
 
   json_object_unref (init);
 }
@@ -831,6 +867,7 @@ test_hostkey_unknown (TestCase *tc,
   g_assert_cmpstr (fix->knownhosts_file, ==, "/dev/null");
 
   do_auth_response (tc->transport, "*", "");
+  do_auth_response (tc->transport, "x-host-key", INVALID_KEY);
   do_hostkey_conversation (tc, "", FALSE);
 
   init = wait_until_transport_init (tc->transport, "unknown-hostkey");
@@ -848,6 +885,7 @@ test_hostkey_conversation (TestCase *tc,
   g_assert_cmpstr (fix->knownhosts_file, ==, "/dev/null");
 
   do_fixture_auth (tc->transport, data);
+  do_auth_response (tc->transport, "x-host-key", INVALID_KEY);
   do_hostkey_conversation (tc, MOCK_RSA_FP, TRUE);
   init = wait_until_transport_init (tc->transport, NULL);
   do_echo_and_close (tc);
@@ -865,6 +903,7 @@ test_hostkey_conversation_bad (TestCase *tc,
   g_assert_cmpstr (fix->knownhosts_file, ==, "/dev/null");
 
   do_auth_response (tc->transport, "*", "");
+  do_auth_response (tc->transport, "x-host-key", INVALID_KEY);
   do_hostkey_conversation (tc, "other-value", TRUE);
   init = wait_until_transport_init (tc->transport, "unknown-hostkey");
   check_host_key_values (tc, init);
@@ -881,6 +920,7 @@ test_hostkey_conversation_invalid (TestCase *tc,
   g_assert_cmpstr (fix->knownhosts_file, ==, "/dev/null");
 
   do_auth_response (tc->transport, "*", "");
+  do_auth_response (tc->transport, "x-host-key", INVALID_KEY);
   do_hostkey_conversation (tc, "other-value", FALSE);
   init = wait_until_transport_init (tc->transport, "unknown-hostkey");
   check_host_key_values (tc, init);
@@ -1296,6 +1336,8 @@ main (int argc,
   g_test_add ("/ssh-bridge/command-just-fails", TestCase, &fixture_command_fails,
               setup, test_problem, teardown);
   g_test_add_func ("/ssh-bridge/cannot-connect", test_cannot_connect);
+  g_test_add ("/ssh-bridge/ssh-config-home", TestCase, &fixture_home_ssh_config,
+              setup, test_echo_and_close, teardown);
 
   g_test_add ("/ssh-bridge/terminate-problem", TestCase, &fixture_terminate_problem,
               setup, test_problem, teardown);

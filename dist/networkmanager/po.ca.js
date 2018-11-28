@@ -621,7 +621,7 @@ return plural;
  ],
  "Please install the $0 package": [
   null,
-  "Si us plau, instal·leu el paquet $0"
+  ""
  ],
  "Ports": [
   null,

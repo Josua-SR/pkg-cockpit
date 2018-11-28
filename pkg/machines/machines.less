@@ -1,5 +1,6 @@
 @import (less) "../lib/page.css";
 @import "../lib/listing.less";
+@import "../lib/cards.less";
 @import (less) "../lib/table.css";
 
 @import (less) "../../node_modules/c3/c3.css";
@@ -249,4 +250,57 @@ table.vcpu-detail-modal-right .btn-group.bootstrap-select.dropdown {
 
 #machines-vcpu-modal-dialog div.modal-body {
     overflow: visible;
+}
+
+#create-vm-dialog .spinner {
+    display: inline-block;
+}
+
+/* FIXME: This CSS should be moved upstream */
+.form-text {
+    /* Set size similar to a widget; like control-label, but no alignment */
+    display: inline-block;
+    padding-top: 3px;
+    margin-bottom: 0;
+}
+
+.modal-body + .modal-footer {
+    /* Remove unneeded margin when there's a modal body and footer */
+    margin-top: 0;
+}
+
+/* Machines Modal footer custom CSS */
+.modal-footer .idle-message {
+    align-items: center;
+    display: flex;
+    float: left;
+    line-height: 24px; /* Same height as a button */
+}
+
+.pficon-pending {
+    color: #ec7a08; /* pf-orange-400 */
+    font-size: 16px;
+}
+
+.modal-footer .pficon-pending {
+    line-height: inherit;
+    margin-right: 0.5rem;
+}
+
+.col-no-padding {
+    padding-left: 0px !important;
+}
+
+.storage-pool-listing-breadcrumb {
+    padding-left: 20px !important;
+}
+
+td > .utilization-bar-pf {
+    width: 100%;
+    min-width: 4em;
+
+    > .progress {
+        margin-bottom: 0;
+        height: 0.75rem;
+    }
 }

@@ -95,10 +95,6 @@ return plural;
   null,
   "Adresse:"
  ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  ""
- ],
  "All running virtual machines will be turned off.": [
   null,
   ""
@@ -163,7 +159,7 @@ return plural;
   null,
   "Kapazität"
  ],
- "Changes will apply on VM shutdown": [
+ "Changes will take effect after shutting down the VM": [
   null,
   ""
  ],
@@ -180,10 +176,6 @@ return plural;
   ""
  ],
  "Cluster Virtual Machines": [
-  null,
-  ""
- ],
- "Confirm deletion of $0": [
   null,
   ""
  ],
@@ -283,11 +275,11 @@ return plural;
   null,
   ""
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
   ""
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
   ""
  ],
@@ -447,7 +439,7 @@ return plural;
   null,
   ""
  ],
- "Network settings failed to change with following error: ": [
+ "Network settings could not be saved": [
   null,
   ""
  ],
@@ -814,6 +806,10 @@ return plural;
  "Used": [
   null,
   "Benutzt"
+ ],
+ "VCPU settings could not be saved": [
+  null,
+  ""
  ],
  "VDSM": [
   null,

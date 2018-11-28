@@ -56,7 +56,7 @@ function detectLibvirtProvider() {
 
 function render() {
     ReactDOM.render(
-        React.createElement(App, {store: store}),
+        <App store={store} />,
         document.getElementById('app')
     );
 }
@@ -75,7 +75,7 @@ function renderApp() {
 /**
  * Start the application.
  */
-export function appMain() {
+function appMain() {
     logDebug('index.es6: initial state: ' + JSON.stringify(store.getState()));
 
     detectLibvirtProvider().then((providerVal) => {
@@ -84,3 +84,9 @@ export function appMain() {
         renderApp();
     });
 }
+
+(function() {
+    document.addEventListener("DOMContentLoaded", function() {
+        appMain();
+    });
+}());

@@ -205,11 +205,11 @@ return plural;
  ],
  "Removals:": [
   null,
-  ""
+  "Borttagningar:"
  ],
  "Removing $0": [
   null,
-  ""
+  "Tar bort $0"
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,

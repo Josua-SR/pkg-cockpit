@@ -499,9 +499,9 @@ return plural;
   null,
   "Wymuś włączenie"
  ],
- "Enable persistent metrics…": [
+ "Enable stored metrics…": [
   null,
-  "Włącz trwałe statystyki…"
+  ""
  ],
  "Enabled": [
   null,
@@ -1103,9 +1103,9 @@ return plural;
   null,
   "Zatrzymaj"
  ],
- "Store Performance Data": [
+ "Store metrics": [
   null,
-  "Przechowywanie danych wydajności"
+  ""
  ],
  "Sub Chassis": [
   null,

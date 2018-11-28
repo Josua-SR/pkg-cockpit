@@ -128,6 +128,9 @@ if test "$enable_ssh" != "no"; then
 
   AC_DEFINE_UNQUOTED(WITH_COCKPIT_SSH, 1, [Build cockpit-ssh and include libssh dependency])
 
+  PKG_CHECK_MODULES(LIBSSH_SAFE_PROXY_COMMANDS, [libssh >= 0.8.5],
+    [AC_DEFINE_UNQUOTED(LIBSSH_085, [1], [Fixes to proxy commands and knownhost parsing are available starting libssh-0.8.5])], [0])
+
   AC_CHECK_LIB(ssh, ssh_get_server_publickey, [
     AC_DEFINE_UNQUOTED(HAVE_SSH_GET_SERVER_PUBLICKEY, 1, Whether ssh_get_server_publickey is available)
   ])
@@ -148,8 +151,10 @@ AM_CONDITIONAL(WITH_COCKPIT_SSH, test "$enable_ssh" = "yes")
 AM_CONDITIONAL(HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY, test "$ac_cv_have_decl_ssh_session_has_known_hosts_entry" = "yes")
 
 # HACK: https://bugs.libssh.org/T117: libssh 0.8.4 breaks interactive keyboard auth on server side, i. e. our mock-ssh for unit tests
+# This also affects Debian stable (https://bugs.debian.org/913870)
 PKG_CHECK_MODULES(LIBSSH_BROKEN_KBDINT, [libssh = 0.8.4], [broken_ssh_kbdint=yes], [broken_ssh_kbdint=no])
-AM_CONDITIONAL(HAVE_BROKEN_SSH_KBDINT, test "$broken_ssh_kbdint" = "yes")
+AM_CONDITIONAL(HAVE_BROKEN_SSH_KBDINT, test "$broken_ssh_kbdint" = "yes" ||
+                                       test $(dpkg-query --show --showformat='${Version}' libssh-4 2>/dev/null) = "0.7.3-2+deb9u1")
 
 # pam
 AC_CHECK_HEADER([security/pam_appl.h], ,

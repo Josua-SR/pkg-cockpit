@@ -531,10 +531,6 @@ return plural;
   null,
   "扩展机箱"
  ],
- "Free": [
-  null,
-  "可用"
- ],
  "Friday": [
   null,
   "星期五"
@@ -722,6 +718,10 @@ return plural;
  "Memory": [
   null,
   "内存"
+ ],
+ "Memory & Swap": [
+  null,
+  ""
  ],
  "Message to logged in users": [
   null,

@@ -143,10 +143,6 @@ return plural;
   null,
   "CPU"
  ],
- "Can't load image": [
-  null,
-  ""
- ],
  "Cancel": [
   null,
   "취소"
@@ -202,10 +198,6 @@ return plural;
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
   ""
- ],
- "Connection Error": [
-  null,
-  "Docker에 연결중입니다."
  ],
  "Convertible": [
   null,
@@ -511,10 +503,6 @@ return plural;
   null,
   ""
  ],
- "The user <b>$0</b> is not permitted to manage servers": [
-  null,
-  "사용자 <b>$0</b> 는 서버 관리 권한이 없습니다."
- ],
  "This machine has already been added.": [
   null,
   ""
@@ -562,10 +550,6 @@ return plural;
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
   ""
- ],
- "You are currently connected directly to this server. You cannot delete it.": [
-  null,
-  "현재 직접적으로 이 서버에 연결되어 있습니다. 삭제하실 수 없습니다."
  ],
  "You can remove the previously stored key by running the following command": [
   null,

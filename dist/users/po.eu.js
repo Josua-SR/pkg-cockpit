@@ -91,10 +91,6 @@ return plural;
   null,
   ""
  ],
- "Adding key": [
-  null,
-  ""
- ],
  "Authorized Public SSH Keys": [
   null,
   ""
@@ -138,10 +134,6 @@ return plural;
  "Delete Files": [
   null,
   "Ezabatu fitxategiak"
- ],
- "Error saving authorized keys: ": [
-  null,
-  ""
  ],
  "Failed to load authorized keys.": [
   null,
@@ -231,10 +223,6 @@ return plural;
   null,
   ""
  ],
- "The key you provided was not valid.": [
-  null,
-  ""
- ],
  "There are no authorized public keys for this account.": [
   null,
   ""
@@ -244,10 +232,6 @@ return plural;
   ""
  ],
  "User Name": [
-  null,
-  ""
- ],
- "Validating key": [
   null,
   ""
  ],

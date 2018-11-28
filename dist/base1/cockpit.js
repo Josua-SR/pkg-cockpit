@@ -17,14 +17,17 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
+/* eslint-disable indent,no-empty */
+
 var url_root;
 
 try {
     // Sometimes this throws a SecurityError such as during testing
     url_root = window.localStorage.getItem('url-root');
-} catch(e) { }
+} catch (e) { }
 
-var mock = mock || { };
+/* injected by tests */
+var mock = mock || { }; // eslint-disable-line no-use-before-define
 
 (function() {
 "use strict";
@@ -37,7 +40,7 @@ if (typeof window.debugging === "undefined") {
         // Sometimes this throws a SecurityError such as during testing
         window.debugging = window.sessionStorage["debugging"] ||
                            window.localStorage["debugging"];
-    } catch(e) { }
+    } catch (e) { }
 }
 
 function in_array(array, val) {
@@ -114,12 +117,11 @@ var transport_origin = window.location.origin;
 
 if (!transport_origin) {
     transport_origin = window.location.protocol + "//" + window.location.hostname +
-        (window.location.port ? ':' + window.location.port: '');
+        (window.location.port ? ':' + window.location.port : '');
 }
 
 function array_from_raw_string(str, constructor) {
     var length = str.length;
-    /* jshint -W056 */
     var data = new (constructor || Array)(length);
     for (var i = 0; i < length; i++)
         data[i] = str.charCodeAt(i) & 0xFF;
@@ -127,7 +129,8 @@ function array_from_raw_string(str, constructor) {
 }
 
 function array_to_raw_string(data) {
-    var length = data.length, str = "";
+    var length = data.length;
+    var str = "";
     for (var i = 0; i < length; i++)
         str += String.fromCharCode(data[i]);
     return str;
@@ -150,7 +153,9 @@ function base64_encode(data) {
     /* For when the caller has chosen to use ArrayBuffer */
     if (data instanceof window.ArrayBuffer)
         data = new window.Uint8Array(data);
-    var length = data.length, mod3 = 2, str = "";
+    var length = data.length;
+    var mod3 = 2;
+    var str = "";
     for (var uint24 = 0, i = 0; i < length; i++) {
         mod3 = i % 3;
         uint24 |= data[i] << (16 >>> mod3 & 24);
@@ -167,8 +172,8 @@ function base64_encode(data) {
 }
 
 function b64_to_uint6 (x) {
-    return x > 64 && x < 91 ? x - 65 : x > 96 && x < 123 ?
-        x - 71 : x > 47 && x < 58 ? x + 4 : x === 43 ? 62 : x === 47 ? 63 : 0;
+    return x > 64 && x < 91 ? x - 65 : x > 96 && x < 123
+        ? x - 71 : x > 47 && x < 58 ? x + 4 : x === 43 ? 62 : x === 47 ? 63 : 0;
 }
 
 function base64_decode(str, constructor) {
@@ -180,7 +185,6 @@ function base64_decode(str, constructor) {
             break;
     }
     var olen = (ilen * 3 + 1 >> 2) - eq;
-    /* jshint -W056 */
     var data = new (constructor || Array)(olen);
     for (var mod3, mod4, uint24 = 0, oi = 0, ii = 0; ii < ilen; ii++) {
         mod4 = ii & 3;
@@ -309,8 +313,9 @@ function join_data(buffers, binary) {
         return buffers.join("");
 
     var data;
-    var j, k, total = 0;
-    var i, length = buffers.length;
+    var i, j, k;
+    var total = 0;
+    var length = buffers.length;
     for (i = 0; i < length; i++)
         total += buffers[i].length;
 
@@ -534,11 +539,12 @@ function Transport() {
         if (!channel) {
             transport_debug("recv control:", payload);
             control = JSON.parse(payload);
-        } else  {
+        } else {
             transport_debug("recv " + channel + ":", payload);
         }
 
-        var i, length = incoming_filters ? incoming_filters.length : 0;
+        var i;
+        var length = incoming_filters ? incoming_filters.length : 0;
         for (i = 0; i < length; i++) {
             if (incoming_filters[i](message, channel, control) === false)
                 return false;
@@ -576,7 +582,7 @@ function Transport() {
     };
 
     function process_init(options) {
-        if (options.problem){
+        if (options.problem) {
             self.close({ "problem": options.problem });
             return;
         }
@@ -614,7 +620,6 @@ function Transport() {
         /* Init message received */
         if (data.command == "init") {
             process_init(data);
-
         } else if (waiting_for_init) {
             waiting_for_init = false;
             if (data.command != "close" || channel) {
@@ -627,25 +632,23 @@ function Transport() {
         } else if (data.command == "ping") {
             data["command"] = "pong";
             self.send_control(data);
-
         } else if (data.command == "pong") {
             /* Any pong commands are ignored */
 
         } else if (data.command == "hint") {
             if (process_hints)
                 process_hints(data);
-
         } else if (channel !== undefined) {
             func = control_cbs[channel];
             if (func)
-                func.apply(null, [data]);
+                func(data);
         }
     }
 
     function process_message(channel, payload) {
         var func = message_cbs[channel];
         if (func)
-            func.apply(null, [payload]);
+            func(payload);
     }
 
     /* The channel/control arguments is used by filters, and auto-populated if necessary */
@@ -655,7 +658,8 @@ function Transport() {
             return false;
         }
 
-        var i, length = outgoing_filters ? outgoing_filters.length : 0;
+        var i;
+        var length = outgoing_filters ? outgoing_filters.length : 0;
         for (i = 0; i < length; i++) {
             if (channel === undefined)
                 channel = parse_channel(data);
@@ -680,7 +684,7 @@ function Transport() {
         if (payload.byteLength || is_array(payload)) {
             if (payload instanceof window.ArrayBuffer)
                 payload = new window.Uint8Array(payload);
-            var output = join_data([array_from_raw_string(channel), [ 10 ], payload ], true);
+            var output = join_data([ array_from_raw_string(channel), [ 10 ], payload ], true);
             return self.send_data(output.buffer, channel, control);
 
         /* A string message */
@@ -690,7 +694,7 @@ function Transport() {
     };
 
     self.send_control = function send_control(data) {
-        if(!ws && (data.command == "close" || data.command == "kill"))
+        if (!ws && (data.command == "close" || data.command == "kill"))
             return; /* don't complain if closed and closing */
         if (check_health_timer &&
             data.command == "hint" && data.hint == "ignore_transport_health_check") {
@@ -797,7 +801,6 @@ function Channel(options) {
         if (done && received_done) {
             console.warn("received two done commands on channel");
             self.close("protocol-error");
-
         } else {
             if (done)
                 received_done = true;
@@ -845,7 +848,7 @@ function Channel(options) {
         transport.send_control(command);
 
         /* Now drain the queue */
-        while(queue.length > 0) {
+        while (queue.length > 0) {
             var item = queue.shift();
             if (item[0]) {
                 item[1]["channel"] = id;
@@ -871,7 +874,7 @@ function Channel(options) {
         options = options || { };
         if (!options.command)
             options.command = "options";
-	if (options.command === "done")
+        if (options.command === "done")
             sent_done = true;
         options.channel = id;
         if (!transport)
@@ -989,7 +992,6 @@ function resolve_path_dots(parts) {
 }
 
 function factory() {
-
     cockpit.channel = function channel(options) {
         return new Channel(options);
     };
@@ -1038,19 +1040,21 @@ function factory() {
             }
 
             /* We have to scan to do non-fatal and streaming */
-            var beg = 0, i = 0, len = data.length;
+            var beg = 0;
+            var i = 0;
+            var len = data.length;
             var p, x, j, ok;
             var str = "";
 
             while (i < len) {
                 p = data.charCodeAt(i);
-                x = p == 255 ? 0 :
-                    p > 251 && p < 254 ? 6 :
-                    p > 247 && p < 252 ? 5 :
-                    p > 239 && p < 248 ? 4 :
-                    p > 223 && p < 240 ? 3 :
-                    p > 191 && p < 224 ? 2 :
-                    p < 128 ? 1 : 0;
+                x = p == 255 ? 0
+                    : p > 251 && p < 254 ? 6
+                    : p > 247 && p < 252 ? 5
+                    : p > 239 && p < 248 ? 4
+                    : p > 223 && p < 240 ? 3
+                    : p > 191 && p < 224 ? 2
+                    : p < 128 ? 1 : 0;
 
                 ok = (i + x <= len);
                 if (!ok && stream) {
@@ -1138,7 +1142,7 @@ function factory() {
         close: function close(problem) {
             var options;
             if (problem)
-                options = {"problem": problem };
+                options = { "problem": problem };
             if (default_transport)
                 default_transport.close(options);
             default_transport = null;
@@ -1169,7 +1173,8 @@ function factory() {
     var later_timeout = null;
 
     function later_drain() {
-        var func, queue = later_queue;
+        var func;
+        var queue = later_queue;
         later_timeout = null;
         later_queue = [];
         for (;;) {
@@ -1211,7 +1216,6 @@ function factory() {
     }
 
     function create_promise(state) {
-
         /* Like jQuery the promise object is callable */
         var self = function Promise(target) {
             if (target) {
@@ -1298,11 +1302,12 @@ function factory() {
         if (state.process_scheduled || !state.pending)
             return;
         state.process_scheduled = true;
-        later_invoke(function() { process_queue(state); });
+        later_invoke(function() { process_queue(state) });
     }
 
     function deferred_resolve(state, values) {
-        var then, done = false;
+        var then;
+        var done = false;
         if (is_object(values[0]) || is_function(values[0]))
             then = values[0] && values[0].then;
         if (is_function(then)) {
@@ -1389,7 +1394,7 @@ function factory() {
         var callback_output = null;
         if (is_function(callback))
             callback_output = callback();
-        if (callback_output && is_function (callback_output.then)) {
+        if (callback_output && is_function(callback_output.then)) {
             return callback_output.then(function() {
                 return prep_promise(values, is_resolved);
             }, function() {
@@ -1411,7 +1416,7 @@ function factory() {
         var counter = 0;
         var results = [];
 
-        if (arguments.length != 1 && !is_array (promises))
+        if (arguments.length != 1 && !is_array(promises))
             promises = Array.prototype.slice.call(arguments);
 
         promises.forEach(function(promise, key) {
@@ -1476,7 +1481,7 @@ function factory() {
          * non-localised conversions (and in both cases, show no
          * fractional part).
          */
-	var lang = cockpit.language === undefined ? undefined : cockpit.language.replace('_', '-');
+        var lang = cockpit.language === undefined ? undefined : cockpit.language.replace('_', '-');
 
         if (!number && number !== 0)
             return "";
@@ -1505,7 +1510,6 @@ function factory() {
         /* Find that factor string */
         if (!number && number !== 0) {
             suffix = null;
-
         } else if (typeof (factor) === "string") {
             /* Prefer larger factors */
             keys = [];
@@ -1564,7 +1568,7 @@ function factory() {
     };
 
     cockpit.get_byte_units = function get_byte_units(guide_value, factor) {
-        if (factor === undefined || ! (factor in byte_suffixes))
+        if (factor === undefined || !(factor in byte_suffixes))
             factor = 1024;
 
         function unit(index) {
@@ -1578,7 +1582,7 @@ function factory() {
         // The default unit is the largest one that gives us at least
         // two decimal digits in front of the comma.
 
-        for (var i = units.length-1; i >= 0; i--) {
+        for (var i = units.length - 1; i >= 0; i--) {
             if (i === 0 || (guide_value / units[i].factor) >= 10) {
                 units[i].selected = true;
                 break;
@@ -1682,7 +1686,7 @@ function factory() {
                 storage = win["cv1-storage"];
                 if (!storage)
                     win["cv1-storage"] = storage = { };
-            } catch(ex) { }
+            } catch (ex) { }
         }
         return storage;
     }
@@ -1899,7 +1903,7 @@ function factory() {
                      * again for the same range while they are still fetching
                      * it asynchronously.
                      */
-                    stash(beg, new Array(end-beg), { });
+                    stash(beg, new Array(end - beg), { });
                 }
                 fetch_callback(beg, end, for_walking);
             }
@@ -1912,7 +1916,8 @@ function factory() {
             var at = search(index, beg);
 
             var entry;
-            var b, e, eb, en, i, len = index.length;
+            var b, e, eb, en, i;
+            var len = index.length;
             var last = beg;
 
             /* We do this in two phases: First, we walk the index to
@@ -1961,11 +1966,11 @@ function factory() {
             var at = search(index, beg);
 
             var end = beg + items.length;
-            var remove = [ ];
             var entry;
             var num;
 
-            var b, e, eb, en, i, len = index.length;
+            var b, e, eb, en, i;
+            var len = index.length;
             for (i = at > 0 ? at - 1 : at; i < len; i++) {
                 entry = index[i];
                 en = entry.items.length;
@@ -2043,7 +2048,7 @@ function factory() {
         /* An undocumented function called by DataGrid */
         self._register = function _register(grid, id) {
             if (grid.interval != interval)
-                throw "mismatched metric interval between grid and sink";
+                throw Error("mismatched metric interval between grid and sink");
             var gdata = registered[id];
             if (!gdata) {
                 gdata = registered[id] = { grid: grid, links: [ ] };
@@ -2071,7 +2076,6 @@ function factory() {
 
                 /* Does this grid overlap the bounds of item? */
                 if (b < e) {
-
                     /* Where in the items to take from */
                     f = b - beg;
 
@@ -2172,7 +2176,8 @@ function factory() {
                 n = (self.end - self.beg) - x;
             if (n <= 0)
                 return;
-            var j, jlen = callbacks.length;
+            var j;
+            var jlen = callbacks.length;
             var callback, row;
             for (j = 0; j < jlen; j++) {
                 callback = callbacks[j][0];
@@ -2187,7 +2192,7 @@ function factory() {
             var row = [];
             rows.push(row);
 
-            var registered, sink, path, links, cb;
+            var sink, path, links, cb;
 
             /* Called as add(sink, path) */
             if (is_object(arguments[0])) {
@@ -2216,7 +2221,7 @@ function factory() {
 
             /* Not called as add() */
             } else if (arguments.length !== 0) {
-                throw "invalid args to grid.add()";
+                throw Error("invalid args to grid.add()");
             }
 
             return row;
@@ -2248,7 +2253,8 @@ function factory() {
         };
 
         self.remove_sink = function remove_sink(sink) {
-            var i, len = sinks.length;
+            var i;
+            var len = sinks.length;
             for (i = 0; i < len; i++) {
                 if (sinks[i].sink === sink) {
                     sinks[i].links.remove();
@@ -2263,7 +2269,8 @@ function factory() {
             suppress++;
 
             /* Ask all sinks to load data */
-            var sink, i, len = sinks.length;
+            var sink, i;
+            var len = sinks.length;
             for (i = 0; i < len; i++) {
                 sink = sinks[i].sink;
                 sink.load(self.beg, self.end, for_walking);
@@ -2490,7 +2497,8 @@ function factory() {
 
         function decode_path(input) {
             var parts = input.split('/').map(decodeURIComponent);
-            var result, i, pre_parts = [];
+            var result, i;
+            var pre_parts = [];
 
             if (self.url_root)
                 pre_parts = self.url_root.split('/').map(decodeURIComponent);
@@ -2527,7 +2535,8 @@ function factory() {
             href = href.replace("%3D", "=");
             href = href.replace(/%2B/g, "+");
 
-            var i, opt, value, query = [];
+            var opt, value;
+            var query = [];
             function push_option(v) {
                 query.push(encodeURIComponent(opt) + "=" + encodeURIComponent(v));
             }
@@ -2557,8 +2566,10 @@ function factory() {
                 first = href.substr(0, pos);
             var path = decode_path(first);
             if (pos !== -1 && options) {
-                href.substring(pos + 1).split("&").forEach(function(opt) {
-                    var last, parts = opt.split('=');
+                href.substring(pos + 1).split("&")
+                .forEach(function(opt) {
+                    var last;
+                    var parts = opt.split('=');
                     var name = decodeURIComponent(parts[0]);
                     var value = decodeURIComponent(parts[1]);
                     if (options.hasOwnProperty(name)) {
@@ -2621,7 +2632,7 @@ function factory() {
             replace: { value: replace },
             encode: { value: encode },
             decode: { value: decode },
-            toString: { value: function() { return href; } }
+            toString: { value: function() { return href } }
         });
     }
 
@@ -2652,7 +2663,10 @@ function factory() {
 
     cockpit.jump = function jump(path, host) {
         if (is_array(path))
-            path = "/" + path.map(encodeURIComponent).join("/").replace("%40", "@").replace("%3D", "=").replace(/%2B/g, "+");
+            path = "/" + path.map(encodeURIComponent).join("/")
+.replace("%40", "@")
+.replace("%3D", "=")
+.replace(/%2B/g, "+");
         else
             path = "" + path;
 
@@ -2834,7 +2848,7 @@ function factory() {
     }
 
     function DBusError(arg, arg1) {
-        if (typeof(arg) == "string") {
+        if (typeof (arg) == "string") {
             this.problem = arg;
             this.name = null;
             this.message = arg1 || cockpit.message(arg);
@@ -2863,7 +2877,8 @@ function factory() {
                 callbacks.push(cb);
             return {
                 remove: function remove() {
-                    var i, length = callbacks.length;
+                    var i;
+                    var length = callbacks.length;
                     for (i = 0; i < length; i++) {
                         var cb = callbacks[i];
                         if (cb[0] === path && cb[1] === iface && cb[2] === callback) {
@@ -2877,7 +2892,8 @@ function factory() {
 
         function emit(path, iface, props) {
             var copy = callbacks.slice();
-            var i, length = copy.length;
+            var i;
+            var length = copy.length;
             for (i = 0; i < length; i++) {
                 var cb = copy[i];
                 if ((!cb[0] || cb[0] === path) &&
@@ -2924,7 +2940,8 @@ function factory() {
             self.data = { };
             var copy = callbacks;
             callbacks = [ ];
-            var i, length = copy.length;
+            var i;
+            var length = copy.length;
             for (i = 0; i < length; i++)
                 copy[i].callback();
         };
@@ -2943,7 +2960,7 @@ function factory() {
             "client": { value: client, enumerable: false, writable: false },
             "path": { value: path, enumerable: false, writable: false },
             "iface": { value: iface, enumerable: false, writable: false },
-            "valid": { get: function() { return valid; }, enumerable: false },
+            "valid": { get: function() { return valid }, enumerable: false },
             "wait": { enumerable: false, writable: false,
                 value: function(func) {
                     if (func)
@@ -2951,7 +2968,7 @@ function factory() {
                     return waits.promise;
                 }
             },
-            "call": { value: function(name, args, options) { return client.call(path, iface, name, args, options); },
+            "call": { value: function(name, args, options) { return client.call(path, iface, name, args, options) },
                       enumerable: false, writable: false },
             "data": { value: { }, enumerable: false }
         });
@@ -2981,9 +2998,9 @@ function factory() {
                     enumerable: false,
                     value: function() {
                         var dfd = cockpit.defer();
-                        client.call(path, iface, name, Array.prototype.slice.call(arguments)).
-                            done(function(reply) { dfd.resolve.apply(dfd, reply); }).
-                            fail(function(ex) { dfd.reject(ex); });
+                        client.call(path, iface, name, Array.prototype.slice.call(arguments))
+                            .done(function(reply) { dfd.resolve.apply(dfd, reply) })
+                            .fail(function(ex) { dfd.reject(ex) });
                         return dfd.promise;
                     }
                 });
@@ -2995,16 +3012,16 @@ function factory() {
 
                 var config = {
                     enumerable: true,
-                    get: function() { return self.data[name]; },
-                    set: function(v) { throw name + "is not writable"; }
+                    get: function() { return self.data[name] },
+                    set: function(v) { throw Error(name + "is not writable") }
                 };
 
                 var prop = meta.properties[name];
                 if (prop.flags && prop.flags.indexOf('w') !== -1) {
                     config.set = function(v) {
                         client.call(path, "org.freedesktop.DBus.Properties", "Set",
-                                [ iface, name, cockpit.variant(prop.type, v) ]).
-                            fail(function(ex) {
+                                [ iface, name, cockpit.variant(prop.type, v) ])
+                            .fail(function(ex) {
                                 console.log("Couldn't set " + iface + " " + name +
                                             " at " + path + ": " + ex);
                             });
@@ -3099,17 +3116,17 @@ function factory() {
 
         function update(props, path) {
             var proxy = self[path];
-            if (!path) {
-                return;
-            } else if (!props && proxy) {
-                delete self[path];
-                self.dispatchEvent("removed", proxy);
-            } else if (props) {
-                if (!proxy) {
-                    proxy = self[path] = client.proxy(iface, path, options);
-                    self.dispatchEvent("added", proxy);
+            if (path) {
+                if (!props && proxy) {
+                    delete self[path];
+                    self.dispatchEvent("removed", proxy);
+                } else if (props) {
+                    if (!proxy) {
+                        proxy = self[path] = client.proxy(iface, path, options);
+                        self.dispatchEvent("added", proxy);
+                    }
+                    self.dispatchEvent("changed", proxy);
                 }
-                self.dispatchEvent("changed", proxy);
             }
         }
 
@@ -3187,7 +3204,7 @@ function factory() {
             var msg;
             try {
                 msg = JSON.parse(payload);
-            } catch(ex) {
+            } catch (ex) {
                 console.warn("received invalid dbus json message:", ex);
             }
             if (msg === undefined) {
@@ -3208,7 +3225,6 @@ function factory() {
                     delete calls[msg.id];
                 }
                 return;
-
             } else if (msg.error) {
                 if (dfd) {
                     dfd.reject(new DBusError(msg.error));
@@ -3293,7 +3309,8 @@ function factory() {
 
         function close_perform(options) {
             closed = options.problem || "disconnected";
-            var id, outstanding = calls;
+            var id;
+            var outstanding = calls;
             calls = { };
             for (id in outstanding) {
                 outstanding[id].reject(new DBusError(closed, options.message));
@@ -3362,7 +3379,7 @@ function factory() {
         };
 
         this.subscribe = function subscribe(match, callback, rule) {
-            var msg, subscription = {
+            var subscription = {
                 match: extend({ }, match),
                 callback: callback
             };
@@ -3526,7 +3543,6 @@ function factory() {
             ensure_cache();
             return new DBusProxies(self, cache, String(iface), String(path_namespace), options);
         };
-
     }
 
     /* Well known busses */
@@ -3691,8 +3707,7 @@ function factory() {
                     file_content = null;
                 else
                     file_content = stringify(new_content);
-            }
-            catch (e) {
+            } catch (e) {
                 dfd.reject(e);
                 return dfd.promise;
             }
@@ -3717,7 +3732,8 @@ function factory() {
                 }
             });
 
-            var len = 0, binary = false;
+            var len = 0;
+            var binary = false;
             if (file_content) {
                 if (file_content.byteLength) {
                     len = file_content.byteLength;
@@ -3727,7 +3743,8 @@ function factory() {
                 }
             }
 
-            var i, n, batch = 16 * 1024;
+            var i, n;
+            var batch = 16 * 1024;
             for (i = 0; i < len; i += batch) {
                 n = Math.min(len - i, batch);
                 if (binary)
@@ -3747,11 +3764,11 @@ function factory() {
                 var new_content = callback(content);
                 if (new_content === undefined)
                     new_content = content;
-                replace(new_content, tag).
-                    done(function (new_tag) {
+                replace(new_content, tag)
+                    .done(function (new_tag) {
                         dfd.resolve(new_content, new_tag);
-                    }).
-                    fail(function (error) {
+                    })
+                    .fail(function (error) {
                         if (error.problem == "change-conflict")
                             read_then_update();
                         else
@@ -3760,9 +3777,9 @@ function factory() {
             }
 
             function read_then_update() {
-                read().
-                    done(update).
-                    fail (function (error) {
+                read()
+                    .done(update)
+                    .fail(function (error) {
                         dfd.reject(error);
                     });
             }
@@ -3793,8 +3810,7 @@ function factory() {
                 watch_channel = cockpit.channel(opts);
                 watch_channel.addEventListener("message", function (event, message_string) {
                     var message;
-                    try      { message = JSON.parse(message_string); }
-                    catch(e) { message = null; }
+                    try { message = JSON.parse(message_string) } catch (e) { message = null }
                     if (message && message.path == path && message.tag && message.tag != watch_tag)
                         read();
                 });
@@ -3877,10 +3893,10 @@ function factory() {
     };
 
     cockpit.translate = function translate(/* ... */) {
-	var what;
+        var what;
 
         /* Called without arguments, entire document */
-	if (arguments.length === 0)
+        if (arguments.length === 0)
             what = [ document ];
 
         /* Called with a single array like argument */
@@ -3893,8 +3909,7 @@ function factory() {
 
         /* Translate all the things */
         var w, wlen, val, i, ilen, t, tlen, list, tasks, el;
-	for (w = 0, wlen = what.length; w < wlen; w++) {
-
+        for (w = 0, wlen = what.length; w < wlen; w++) {
             /* The list of things to translate */
             list = null;
             if (what[w].querySelectorAll)
@@ -3943,8 +3958,8 @@ function factory() {
         return string;
     };
 
-    function imply( val ) {
-        return (val === true ? 1 : val ? val : 0);
+    function imply(val) {
+        return (val === true ? 1 : val || 0);
     }
 
     cockpit.ngettext = function ngettext(context, string1, stringN, num) {
@@ -4068,7 +4083,7 @@ function factory() {
                 if (!isNaN(port))
                     options.port = port;
                 else
-                    throw "The endpoint must be either a unix path or port number";
+                    throw Error("The endpoint must be either a unix path or port number");
             }
         }
 
@@ -4081,7 +4096,10 @@ function factory() {
         function param(obj) {
             return Object.keys(obj).map(function(k) {
                 return encodeURIComponent(k) + '=' + encodeURIComponent(obj[k]);
-            }).join('&').split('%20').join('+'); /* split/join because phantomjs */
+            })
+.join('&')
+.split('%20')
+.join('+'); /* split/join because phantomjs */
         }
 
         self.request = function request(req) {
@@ -4162,7 +4180,6 @@ function factory() {
                 if (options.problem) {
                     http_debug("http problem: ", options.problem);
                     dfd.reject(new BasicError(options.problem));
-
                 } else {
                     var body = buffer.squash();
 
@@ -4176,7 +4193,6 @@ function factory() {
                         }
                         http_debug("http status: ", resp.status);
                         dfd.reject(new HttpError(resp.status, resp.reason, message), body);
-
                     } else {
                         http_debug("http done");
                         dfd.resolve(body);
@@ -4257,7 +4273,6 @@ function factory() {
             for (var i = 0; i < reqs.length; i++)
                 reqs[i].close(problem);
         };
-
     }
 
     /* public */
@@ -4273,15 +4288,13 @@ function factory() {
      * Permission
      */
 
-    var authority = null;
-
     function check_superuser() {
         var dfd = cockpit.defer();
         var ch = cockpit.channel({ payload: "null", superuser: "require" });
         ch.wait()
-            .then(function () { dfd.resolve(true); })
-            .fail(function () { dfd.resolve(false); })
-            .always(function () { ch.close(); });
+            .then(function () { dfd.resolve(true) })
+            .fail(function () { dfd.resolve(false) })
+            .always(function () { ch.close() });
 
         return dfd.promise();
     }
@@ -4347,17 +4360,6 @@ function factory() {
      * Metrics
      *
      */
-
-    function timestamp(when, interval) {
-        if (typeof when == "number")
-            return when * interval;
-        else if (typeof when == "string")
-            when = new Date(when);
-        if (when instanceof Date)
-            return when.getTime();
-        else
-            throw "invalid date or offset";
-    }
 
     function MetricsChannel(interval, options_list, cache) {
         var self = this;
@@ -4431,7 +4433,7 @@ function factory() {
             channel.addEventListener("message", function(ev, payload) {
                 var message = JSON.parse(payload);
 
-                var data, data_len, last_len, dataj, dataj_len, lastj, lastj_len;
+                var data, last_len, dataj, dataj_len, lastj, lastj_len;
                 var i, j, k;
                 var timestamp;
 
@@ -4451,12 +4453,10 @@ function factory() {
 
                 /* A data message */
                 } else if (meta) {
-
                     /* Data decompression */
                     for (i = 0; i < message_len; i++) {
                         data = message[i];
                         if (last) {
-                            data_len = data.length;
                             last_len = last.length;
                             for (j = 0; j < last_len; j++) {
                                 dataj = data[j];
@@ -4542,7 +4542,8 @@ function factory() {
         };
 
         self.close = function close(options) {
-            var i, len = channels.length;
+            var i;
+            var len = channels.length;
             if (self.series)
                 self.series.close();
 
@@ -4602,9 +4603,8 @@ if (pos !== -1) {
 /* Cockpit loaded via AMD loader */
 if (is_function(window.define) && window.define.amd) {
     if (self_module_id)
-        define(self_module_id, [], window.cockpit);
+        define(self_module_id, [], window.cockpit); // eslint-disable-line no-undef
     else
-        define([], factory);
+        define([], factory); // eslint-disable-line no-undef
 }
-
 })();

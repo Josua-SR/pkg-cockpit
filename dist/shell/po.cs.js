@@ -149,7 +149,7 @@ return plural;
  ],
  "Cockpit is an interactive Linux server admin interface.": [
   null,
-  "Cockpit je interaktivní rozhraní pro správu Linuxového serveru."
+  "Cockpit je interaktivní rozhraní pro správu linuxového serveru."
  ],
  "Cockpit is not installed": [
   null,
@@ -285,7 +285,7 @@ return plural;
  ],
  "Log In": [
   null,
-  "Přihlášení"
+  "Přihlásit"
  ],
  "Log Out": [
   null,
@@ -365,7 +365,7 @@ return plural;
  ],
  "Password not usable for privileged tasks or to connect to other machines": [
   null,
-  "Heslo není použitelné pro privilegované úkoly nebo pro připojování se k ostatním strojům"
+  "Heslo není použitelné pro privilegované úlohy nebo pro připojování se k ostatním strojům"
  ],
  "Path to file": [
   null,
@@ -401,7 +401,7 @@ return plural;
  ],
  "Reuse my password for privileged tasks and to connect to other machines": [
   null,
-  "Použít mé heslo i pro privilegované úkoly a připojování k dalším strojům"
+  "Použít mé heslo i pro privilegované úlohy a připojování k dalším strojům"
  ],
  "Select": [
   null,
@@ -514,10 +514,6 @@ return plural;
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
   "Jste sice připojení k {{#strong}}{{host}}{{/strong}}, nicméně pro synchronizaci uživatelských účtů je zapotřebí uživatele s oprávněním pro správu systému."
- ],
- "You can remove the previously stored key by running the following command": [
-  null,
-  "Už uložený klíč je možné odebrat spuštěním následujícího příkazu"
  ],
  "active": [
   null,

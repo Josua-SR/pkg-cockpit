@@ -28,7 +28,7 @@
     QUnit.test("bytes_from_format", function() {
         var checks = [
             [ "999", 999 ],
-            [ "1.9 kb", 1945.6],
+            [ "1.9 kb", 1945.6 ],
             [ "2.0 KB", 2048 ],
             [ "1.0 MB", 1048576 ],
             [ "1 GB", 1073741824 ],
@@ -95,10 +95,11 @@
         ];
 
         assert.expect(checks.length);
+        var pos;
         for (var i = 0; i < checks.length; i++) {
             var res = [];
-            var pos = undefined;
             var next;
+            pos = undefined;
             for (var j = 0; j < 16; j++) {
                 next = docker.json_skip(checks[i][1], pos);
                 res.push(next);
@@ -112,41 +113,39 @@
 
     QUnit.test("quote_cmdline", function() {
         var checks = [
-            [ [ "foo" ],          "foo" ],
-            [ [ "foo", "bar" ],   "foo bar" ],
-            [ [ "f o o" ],        "\"f o o\"" ],
-            [ [ "f\\o" ],         "f\\\\o" ],
-            [ [ "f\"o" ],         "'f\"o'" ],
-            [ [ "f\"\'o" ],       "'f\"\\'o'" ],
-            [ [ "f \"o" ],        "\"f \\\"o\"" ]
+            [ [ "foo" ], "foo" ],
+            [ [ "foo", "bar" ], "foo bar" ],
+            [ [ "f o o" ], "\"f o o\"" ],
+            [ [ "f\\o" ], "f\\\\o" ],
+            [ [ "f\"o" ], "'f\"o'" ],
+            [ [ "f\"'o" ], "'f\"\\'o'" ],
+            [ [ "f \"o" ], "\"f \\\"o\"" ]
         ];
 
         assert.expect(checks.length);
         for (var i = 0; i < checks.length; i++)
             assert.strictEqual(docker.quote_cmdline(checks[i][0]), checks[i][1],
                                "quote(" + String(checks[i][0]) + ") = " + checks[i][1]);
-
     });
 
     QUnit.test("unquote_cmdline", function() {
         var checks = [
-            [ [ "foo" ],            "  foo  " ],
-            [ [ "foo", "bar" ],     "foo    bar  " ],
-            [ [ "f o o" ],          "\"f o o\"" ],
-            [ [ "f o o" ],          "'f o o'" ],
-            [ [ "f\\o" ],           "f\\\\o" ],
-            [ [ "f\"o" ],           "'f\"o'" ],
-            [ [ "f\"\'o" ],         "'f\"\\'o'" ],
-            [ [ "f \"o" ],          "\"f \\\"o\"" ],
-            [ [ "f o o" ],          "f' 'o\" \"o" ],
-            [ [ "f'" , "o\" \"o" ], "f\\' 'o\" \"o" ]
+            [ [ "foo" ], "  foo  " ],
+            [ [ "foo", "bar" ], "foo    bar  " ],
+            [ [ "f o o" ], "\"f o o\"" ],
+            [ [ "f o o" ], "'f o o'" ],
+            [ [ "f\\o" ], "f\\\\o" ],
+            [ [ "f\"o" ], "'f\"o'" ],
+            [ [ "f\"'o" ], "'f\"\\'o'" ],
+            [ [ "f \"o" ], "\"f \\\"o\"" ],
+            [ [ "f o o" ], "f' 'o\" \"o" ],
+            [ [ "f'", "o\" \"o" ], "f\\' 'o\" \"o" ]
         ];
 
         assert.expect(checks.length);
         for (var i = 0; i < checks.length; i++)
             assert.deepEqual(docker.unquote_cmdline(checks[i][1]), checks[i][0],
                              "unquote(" + String(checks[i][1]) + ") = " + checks[i][0]);
-
     });
 
     QUnit.test("render_container_status", function() {
@@ -157,13 +156,13 @@
             [ { Restarting: true }, "restarting" ],
             [ { FinishedAt: "0001-01-01" }, "created" ],
             [ { FinishedAt: "2016-11-11" }, "exited" ],
-            [ {  }, "exited" ],
+            [ { }, "exited" ],
         ];
 
         assert.expect(checks.length);
         checks.forEach(function(check) {
             assert.equal(util.render_container_status(check[0]), check[1],
-                    "render_container_status = " + check[1]);
+                         "render_container_status = " + check[1]);
         });
     });
 

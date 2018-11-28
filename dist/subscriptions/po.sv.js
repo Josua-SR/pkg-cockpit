@@ -161,15 +161,15 @@ return plural;
  ],
  "Register": [
   null,
-  ""
+  "Registrera"
  ],
  "Register system": [
   null,
-  ""
+  "Registrera system"
  ],
  "Retrieving subscription status...": [
   null,
-  ""
+  "Hämtar prenumerationsstatus …"
  ],
  "Server": [
   null,

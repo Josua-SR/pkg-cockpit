@@ -318,10 +318,6 @@ return plural;
   null,
   ""
  ],
- "Unregistered System": [
-  null,
-  "Sistema sense registrar"
- ],
  "Update History": [
   null,
   "Historial d'actualitzacions"
@@ -337,10 +333,6 @@ return plural;
  "Updated packages may require a restart to take effect.": [
   null,
   "Els paquets actualitzats poden requerir un reinici perquè tinguin efecte."
- ],
- "Updates are disabled.": [
-  null,
-  "Les actualitzacions estan inhabilitades."
  ],
  "Updating": [
   null,
@@ -358,17 +350,9 @@ return plural;
   null,
   "Versió"
  ],
- "View Registration Details": [
-  null,
-  "Mostra els detalls del registrament"
- ],
  "Waiting for other software management operations to finish": [
   null,
   ""
- ],
- "You need to re-subscribe this system.": [
-  null,
-  "Heu de tornar a subscriure aquest sistema."
  ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
@@ -385,6 +369,14 @@ return plural;
  "at": [
   null,
   "Camí"
+ ],
+ "bug fix": [
+  null,
+  ""
+ ],
+ "enhancement": [
+  null,
+  ""
  ],
  "every day": [
   null,
@@ -417,6 +409,10 @@ return plural;
  "on Wednesdays": [
   null,
   "els dimecres"
+ ],
+ "security": [
+  null,
+  ""
  ],
  "undefined": [
   null,

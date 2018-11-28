@@ -223,10 +223,6 @@ return plural;
   null,
   "无法应用设置： $0"
  ],
- "Use the setting in /etc/kdump.conf": [
-  null,
-  "使用 /etc/kdump.conf 中的设置"
- ],
  "invalid: multiple targets defined": [
   null,
   "无效：定义了多个目标"
@@ -239,9 +235,21 @@ return plural;
   null,
   "位于 $0 本地"
  ],
+ "nfs dump target isn't formated as server:path": [
+  null,
+  ""
+ ],
  "ssh key": [
   null,
   "SSH 密钥"
+ ],
+ "ssh key isn't a path": [
+  null,
+  ""
+ ],
+ "ssh server is empty": [
+  null,
+  ""
  ],
  "undefined": [
   null,

@@ -7,7 +7,8 @@ $(function() {
     var manifests;
 
     function update(str) {
-        var new_m = JSON.parse(str), p;
+        var new_m = JSON.parse(str);
+        var p;
 
         if (manifests) {
             for (p in new_m) {
@@ -36,10 +37,10 @@ $(function() {
             });
         }
         $("#reload").on("click", function() {
-            proxy.Reload().
-                fail(function (error) {
-                    console.log("ERROR", error);
-                });
+            proxy.Reload()
+                    .fail(function (error) {
+                        console.log("ERROR", error);
+                    });
         });
     });
 });

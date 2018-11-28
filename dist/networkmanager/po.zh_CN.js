@@ -621,7 +621,7 @@ return plural;
  ],
  "Please install the $0 package": [
   null,
-  "请安装$0软件包"
+  ""
  ],
  "Ports": [
   null,

@@ -83,6 +83,10 @@
 /* Define to 1 if you have the <unistd.h> header file. */
 #undef HAVE_UNISTD_H
 
+/* Fixes to proxy commands and knownhost parsing are available starting
+   libssh-0.8.5 */
+#undef LIBSSH_085
+
 /* Maximum size of packet messages */
 #undef MAX_PACKET_SIZE
 

@@ -91,10 +91,6 @@ return plural;
   null,
   ""
  ],
- "Adding key": [
-  null,
-  ""
- ],
  "Authorized Public SSH Keys": [
   null,
   ""
@@ -150,10 +146,6 @@ return plural;
  "Error": [
   null,
   "오류"
- ],
- "Error saving authorized keys: ": [
-  null,
-  ""
  ],
  "Excellent password": [
   null,
@@ -327,10 +319,6 @@ return plural;
   null,
   ""
  ],
- "The key you provided was not valid.": [
-  null,
-  ""
- ],
  "The passwords do not match": [
   null,
   ""
@@ -370,10 +358,6 @@ return plural;
  "User Name": [
   null,
   "사용자 이름"
- ],
- "Validating key": [
-  null,
-  ""
  ],
  "You do not have permission to view the authorized public keys for this account.": [
   null,

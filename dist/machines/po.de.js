@@ -71,10 +71,6 @@ return plural;
   null,
   ""
  ],
- "$0 vCPU Details": [
-  null,
-  "$0 vCPU-Details"
- ],
  "Add": [
   null,
   "Hinzufügen"
@@ -90,10 +86,6 @@ return plural;
  "Address:": [
   null,
   "Adresse:"
- ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  ""
  ],
  "Apply": [
   null,
@@ -139,15 +131,11 @@ return plural;
   null,
   "Kapazität"
  ],
- "Changes will apply on VM shutdown": [
+ "Changes will take effect after shutting down the VM": [
   null,
   ""
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
-  null,
-  ""
- ],
- "Confirm deletion of $0": [
   null,
   ""
  ],
@@ -191,11 +179,7 @@ return plural;
   null,
   "Neu erstellen"
  ],
- "Create New VM": [
-  null,
-  ""
- ],
- "Create New Virtual Machine": [
+ "Create VM": [
   null,
   ""
  ],
@@ -231,11 +215,11 @@ return plural;
   null,
   ""
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
   ""
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
   ""
  ],
@@ -395,7 +379,7 @@ return plural;
   null,
   ""
  ],
- "Network settings failed to change with following error: ": [
+ "Network settings could not be saved": [
   null,
   ""
  ],
@@ -404,6 +388,10 @@ return plural;
   "Netzwerke"
  ],
  "New Volume Name": [
+  null,
+  ""
+ ],
+ "No Storage Volumes defined for this Storage Pool": [
   null,
   ""
  ],
@@ -431,6 +419,10 @@ return plural;
   null,
   ""
  ],
+ "No storage pool is defined on this host": [
+  null,
+  ""
+ ],
  "No virtual networks": [
   null,
   ""
@@ -438,10 +430,6 @@ return plural;
  "OS Vendor": [
   null,
   ""
- ],
- "Ok": [
-  null,
-  "OK"
  ],
  "Operating System": [
   null,
@@ -491,6 +479,14 @@ return plural;
   null,
   "Protokoll"
  ],
+ "QEMU/KVM System connection": [
+  null,
+  ""
+ ],
+ "QEMU/KVM User connection": [
+  null,
+  ""
+ ],
  "Readonly": [
   null,
   "Schreibgeschützt"
@@ -510,14 +506,6 @@ return plural;
  "Run": [
   null,
   "Ausführen"
- ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  ""
- ],
- "SET_VCPU_SETTINGS action failed": [
-  null,
-  ""
  ],
  "SPICE": [
   null,
@@ -587,11 +575,19 @@ return plural;
   null,
   "Status"
  ],
+ "Storage Pools": [
+  null,
+  ""
+ ],
  "Storage Size": [
   null,
   ""
  ],
  "Storage Size should not be negative number": [
+  null,
+  ""
+ ],
+ "Storage Volumes": [
   null,
   ""
  ],
@@ -687,6 +683,10 @@ return plural;
   null,
   "Benutzt"
  ],
+ "VCPU settings could not be saved": [
+  null,
+  ""
+ ],
  "VM CHANGE_NETWORK_STATE action failed": [
   null,
   ""
@@ -767,6 +767,10 @@ return plural;
   null,
   "Lautstärke"
  ],
+ "active": [
+  null,
+  "Aktiv"
+ ],
  "bridge": [
   null,
   ""
@@ -822,6 +826,10 @@ return plural;
  "idle": [
   null,
   ""
+ ],
+ "inactive": [
+  null,
+  "Inaktiv"
  ],
  "mcast": [
   null,

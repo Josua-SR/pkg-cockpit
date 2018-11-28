@@ -74,7 +74,7 @@
 %endif
 
 Name:           cockpit
-Summary:        A user interface for Linux servers
+Summary:        Web Console for Linux servers
 
 License:        LGPLv2+
 URL:            https://cockpit-project.org/
@@ -274,6 +274,9 @@ find %{buildroot}%{_datadir}/cockpit/ovirt -type f >> ovirt.list
 echo '%dir %{_datadir}/cockpit/selinux' > selinux.list
 find %{buildroot}%{_datadir}/cockpit/selinux -type f >> selinux.list
 
+echo '%dir %{_datadir}/cockpit/playground' > tests.list
+find %{buildroot}%{_datadir}/cockpit/playground -type f >> tests.list
+
 %ifarch x86_64 %{arm} aarch64 ppc64le i686 s390x
 %if 0%{?fedora} || 0%{?rhel} < 8
 echo '%dir %{_datadir}/cockpit/docker' > docker.list
@@ -386,8 +389,11 @@ rm -f %{buildroot}%{_datadir}/metainfo/org.cockpit-project.cockpit-selinux.metai
 %if 0%{?build_basic}
 
 %description
-Cockpit runs in a browser and can manage your network of GNU/Linux
-machines.
+The Cockpit Web Console enables users to administer GNU/Linux servers using a
+web browser.
+
+It offers network configuration, log inspection, diagnostic reports, SELinux
+troubleshooting, interactive command-line sessions, and more.
 
 %files
 %{_docdir}/cockpit/AUTHORS
@@ -395,7 +401,6 @@ machines.
 %{_docdir}/cockpit/README.md
 %dir %{_datadir}/cockpit
 %{_datadir}/metainfo/cockpit.appdata.xml
-%{_datadir}/applications/cockpit.desktop
 %{_datadir}/pixmaps/cockpit.png
 %doc %{_mandir}/man1/cockpit.1.gz
 
@@ -407,6 +412,8 @@ Requires: glib-networking
 Provides: cockpit-ssh = %{version}-%{release}
 # cockpit-ssh moved from dashboard to bridge in 171
 Conflicts: cockpit-dashboard < 170.x
+# PR #10430 dropped workaround for ws' inability to understand x-host-key challenge
+Conflicts: cockpit-ws < 181.x
 %endif
 
 %description bridge
@@ -476,7 +483,7 @@ Provides: bundled(nodejs-flot) = 0.8.3
 Provides: bundled(nodejs-promise) = 8.0.2
 Provides: bundled(nodejs-requirejs) = 2.1.22
 Provides: bundled(xstatic-bootstrap-datepicker-common) = 1.8.0
-Provides: bundled(xstatic-patternfly-common) = 3.35.1
+Provides: bundled(xstatic-patternfly-common) = 3.58.0
 
 %description system
 This package contains the Cockpit shell and system configuration interfaces.
@@ -669,9 +676,8 @@ Obsoletes: cockpit-test-assets < 132
 This package contains tests and files used while testing Cockpit.
 These files are not required for running Cockpit.
 
-%files -n cockpit-tests
+%files -n cockpit-tests -f tests.list
 %config(noreplace) %{_sysconfdir}/cockpit/cockpit.conf
-%{_datadir}/cockpit/playground
 %{_prefix}/%{__lib}/cockpit-test-assets
 
 %package -n cockpit-machines
@@ -741,11 +747,13 @@ Summary: Cockpit remote servers and dashboard
 Provides: cockpit-ssh = %{version}-%{release}
 # nothing depends on the dashboard, but we can't use it with older versions of the bridge
 Conflicts: cockpit-bridge < 135
+# PR #10430 dropped workaround for ws' inability to understand x-host-key challenge
+Conflicts: cockpit-ws < 173.1
 %else
 BuildArch: noarch
 Requires: cockpit-ssh >= 135
-%endif
 Conflicts: cockpit-ws < 135
+%endif
 
 %description -n cockpit-dashboard
 Cockpit support for connecting to remote servers (through ssh),

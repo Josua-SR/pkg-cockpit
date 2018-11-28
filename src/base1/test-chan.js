@@ -61,8 +61,8 @@ function MockPeer() {
     };
 
     /* Methods filled in by MockWebSocket */
-    self.send = function(channel, payload) { throw "not reached"; };
-    self.close = function(options) { throw "not reached"; };
+    self.send = function(channel, payload) { throw Error("not reached") };
+    self.close = function(options) { throw Error("not reached") };
 }
 
 window.mock = { url: "ws://url" };
@@ -77,9 +77,9 @@ QUnit.testDone(function() {
 /* Mock WebSocket */
 function MockWebSocket(url, protocol) {
     if (typeof url != "string")
-        throw "WebSocket(@url) is not a string: " + typeof url;
+        throw Error("WebSocket(@url) is not a string: " + typeof url);
     if (typeof protocol != "string")
-        throw "WebSocket(@protocol) is not a string: " + typeof protocol;
+        throw Error("WebSocket(@protocol) is not a string: " + typeof protocol);
 
     this.onopen = function(event) { };
     this.onclose = function(event) { };
@@ -96,24 +96,24 @@ function MockWebSocket(url, protocol) {
 
     this.send = function(data) {
         if (typeof data != "string")
-            throw "WebSocket.send(@data) is not a string: " + typeof data;
+            throw Error("WebSocket.send(@data) is not a string: " + typeof data);
         var pos = data.indexOf("\n");
         if (pos == -1)
-            throw "Invalid frame sent to WebSocket: " + data;
+            throw Error("Invalid frame sent to WebSocket: " + data);
         var channel = data.substring(0, pos);
         var payload = data.substring(pos + 1);
-        window.setTimeout(function() { $(mock).triggerHandler("recv", [channel, payload]); }, 5);
+        window.setTimeout(function() { $(mock).triggerHandler("recv", [channel, payload]) }, 5);
     };
 
     this.close = function(code, reason) {
         if (typeof code != "number" && typeof code != "undefined")
-            throw "WebSocket.close(@code) is not a number: " + typeof code;
+            throw Error("WebSocket.close(@code) is not a number: " + typeof code);
         if (typeof reason != "string" && typeof reason != "undefined")
-            throw "WebSocket.close(@reason) is not a number: " + typeof string;
+            throw Error("WebSocket.close(@reason) is not a number: " + typeof string);
         if (this.readyState > 1)
-            throw "WebSocket.close() called on a closed WebSocket" + this.readyState + " " + code + reason;
+            throw Error("WebSocket.close() called on a closed WebSocket" + this.readyState + " " + code + reason);
         this.readyState = 3;
-        this.onclose({"name": "close", "code": code || 1000, "reason": reason, "wasClean": true });
+        this.onclose({ "name": "close", "code": code || 1000, "reason": reason, "wasClean": true });
     };
 
     /* Instantiate the global mock peer */
@@ -136,7 +136,7 @@ function MockWebSocket(url, protocol) {
         if (!options)
             options = { };
         window.setTimeout(function() {
-            ws.close(options.reason && 1000 || 1011, options.reason || "");
+            ws.close(options.reason ? 1000 : 1011, options.reason || "");
         }, 5);
     };
 
@@ -182,9 +182,9 @@ function check_transport (base_url, application, socket, url_root) {
     for (i = 0; i < arr.length; i++) {
         window.mock.pathname = arr[i];
         assert.equal(cockpit.transport.application(), application,
-              arr[i] + " transport.application is " + socket);
+                     arr[i] + " transport.application is " + socket);
         assert.equal(cockpit.transport.uri(), "ws://" + window.location.host + socket,
-              arr[i] + " transport.uri is " + socket);
+                     arr[i] + " transport.uri is " + socket);
     }
 
     window.mock.url = old_url;
@@ -211,17 +211,17 @@ QUnit.test("public api", function() {
     else
         assert.equal(typeof cockpit.transport.origin, "string", "cockpit.transport.origin is present");
 
-    check_transport ('/', 'cockpit', '/cockpit/socket');
-    check_transport ('/cockpit', 'cockpit', '/cockpit/socket');
-    check_transport ('/cockpitother/', 'cockpit', '/cockpit/socket');
-    check_transport ('/cockpita+pplication/', 'cockpit', '/cockpit/socket');
-    check_transport ('/cockpit+application', 'cockpit+application', '/cockpit+application/socket');
-    check_transport ('/=machine', 'cockpit+=machine', '/cockpit+=machine/socket');
-    check_transport ('/url-root', 'cockpit', '/url-root/cockpit/socket', 'url-root');
-    check_transport ('/url-root/cockpit', 'cockpit', '/url-root/cockpit/socket', 'url-root');
-    check_transport ('/url-root/cockpit+application', 'cockpit+application',
-                     '/url-root/cockpit+application/socket', 'url-root');
-    check_transport ('/url-root/=machine', 'cockpit+=machine', '/url-root/cockpit+=machine/socket', 'url-root');
+    check_transport('/', 'cockpit', '/cockpit/socket');
+    check_transport('/cockpit', 'cockpit', '/cockpit/socket');
+    check_transport('/cockpitother/', 'cockpit', '/cockpit/socket');
+    check_transport('/cockpita+pplication/', 'cockpit', '/cockpit/socket');
+    check_transport('/cockpit+application', 'cockpit+application', '/cockpit+application/socket');
+    check_transport('/=machine', 'cockpit+=machine', '/cockpit+=machine/socket');
+    check_transport('/url-root', 'cockpit', '/url-root/cockpit/socket', 'url-root');
+    check_transport('/url-root/cockpit', 'cockpit', '/url-root/cockpit/socket', 'url-root');
+    check_transport('/url-root/cockpit+application', 'cockpit+application',
+                    '/url-root/cockpit+application/socket', 'url-root');
+    check_transport('/url-root/=machine', 'cockpit+=machine', '/url-root/cockpit+=machine/socket', 'url-root');
 });
 
 QUnit.asyncTest("open channel", function() {
@@ -263,9 +263,10 @@ QUnit.asyncTest("multiple", function() {
 });
 
 QUnit.asyncTest("open no host", function() {
-    assert.expect(2);
+    assert.expect(3);
 
     var channel = cockpit.channel({ });
+    assert.ok(channel);
     $(mock_peer).on("open", function(event) {
         assert.ok(true, "websocket connected");
     });
@@ -279,10 +280,11 @@ QUnit.asyncTest("open no host", function() {
 });
 
 QUnit.asyncTest("open auto host", function() {
-    assert.expect(2);
+    assert.expect(3);
 
     force_default_host = "planetexpress";
     var channel = cockpit.channel({ });
+    assert.ok(channel);
     $(mock_peer).on("open", function(event) {
         assert.ok(true, "websocket connected");
     });
@@ -300,7 +302,7 @@ QUnit.asyncTest("send message", function() {
 
     var channel = cockpit.channel({ });
     $(mock_peer).on("open", function(event) {
-	channel.send("Scruffy gonna die the way he lived");
+        channel.send("Scruffy gonna die the way he lived");
     });
     $(mock_peer).on("recv", function(event, chan, payload) {
         /* Ignore the open and init messages */
@@ -496,9 +498,10 @@ QUnit.asyncTest("wait ready", function() {
         assert.strictEqual(channel.valid, true, "when valid");
     }, function() {
         assert.ok(false, "should not fail");
-    }).always(function() {
-        QUnit.start();
-    });
+    })
+            .always(function() {
+                QUnit.start();
+            });
 });
 
 QUnit.asyncTest("wait close", function() {
@@ -514,9 +517,10 @@ QUnit.asyncTest("wait close", function() {
         assert.equal(options.command, "close", "wait is close");
         assert.equal(options.problem, "not-supported", "wait options has fields");
         assert.strictEqual(channel.valid, false, "channel not valid");
-    }).always(function() {
-        QUnit.start();
-    });
+    })
+            .always(function() {
+                QUnit.start();
+            });
 });
 
 QUnit.asyncTest("wait callback", function() {
@@ -579,7 +583,7 @@ QUnit.asyncTest("droppriv", function() {
 });
 
 QUnit.asyncTest("info", function() {
-    assert.expect(3);
+    assert.expect(4);
 
     var info_changed = false;
 
@@ -600,8 +604,8 @@ QUnit.asyncTest("info", function() {
     });
 
     var channel = cockpit.channel({ "host": "scruffy" });
+    assert.ok(channel);
 });
-
 
 QUnit.asyncTest("send after close", function() {
     assert.expect(1);
@@ -631,8 +635,8 @@ QUnit.asyncTest("ignore other commands", function() {
 
     console_ignore_log(/unhandled control message.*/);
 
-    mock_peer.send(0, JSON.stringify({ "command": "ping"}));
-    mock_peer.send(0, JSON.stringify({ "command": "unexpected"}));
+    mock_peer.send(0, JSON.stringify({ "command": "ping" }));
+    mock_peer.send(0, JSON.stringify({ "command": "unexpected" }));
 
     window.setTimeout(function() {
         assert.ok(channel.valid, "other messages didn't screw up channel");
@@ -790,8 +794,6 @@ QUnit.asyncTest("transport options", function() {
     channel = cockpit.channel({ });
     channel.send("blah");
 });
-
-var shell = shell || { };
 
 QUnit.test("message", function() {
     assert.expect(4);

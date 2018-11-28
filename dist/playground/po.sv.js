@@ -122,7 +122,7 @@ return plural;
  ],
  "Path to file": [
   null,
-  ""
+  "Sökväg till filen"
  ],
  "Ready": [
   null,

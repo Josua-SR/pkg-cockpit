@@ -1,4 +1,3 @@
-/* jshint esversion: 6 */
 /*
  * This file is part of Cockpit.
  *
@@ -81,7 +80,7 @@ class HostVmsList extends React.Component {
 
         const sortFunction = (vmA, vmB) => vmA.name.localeCompare(vmB.name);
 
-        return (<div className='container-fluid'>
+        return (<div id='virtual-machines-listing' className='container-fluid'>
             <NotificationArea id={"notification-area"}
                 notifications={ui.notifications}
                 onDismiss={(id) => dispatch(clearNotification(id))} />
@@ -124,9 +123,9 @@ HostVmsList.propTypes = {
     vms: PropTypes.array.isRequired,
     config: PropTypes.object.isRequired,
     ui: PropTypes.object.isRequired,
-    storagePools: PropTypes.object.isRequired,
+    storagePools: PropTypes.array.isRequired,
     dispatch: PropTypes.func.isRequired,
-    networks: PropTypes.object.isRequired,
+    networks: PropTypes.array.isRequired,
 };
 
 export default HostVmsList;

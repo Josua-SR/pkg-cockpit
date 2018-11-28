@@ -1,5 +1,5 @@
 # Generated Makefile data for selinux
-# Stamp: Wed Nov 14 2018 15:21:34 GMT+0000 (UTC)
+# Stamp: Wed Nov 28 2018 13:11:10 GMT+0000 (UTC)
 
 selinux_INPUTS = \
 	node_modules/bootstrap/LICENSE \

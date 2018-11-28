@@ -556,12 +556,16 @@ session_has_known_host_in_file (const gchar *file,
                                 const guint port)
 {
 #if !HAVE_DECL_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY
-  shim_set_knownhosts_file(file);
+  shim_set_knownhosts_file (file ?: data->user_known_hosts);
 #endif
   /* HACK: https://bugs.libssh.org/T108 */
   if (!file)
-      g_warn_if_fail (ssh_options_set (data->session, SSH_OPTIONS_SSH_DIR, NULL) == SSH_OK);
-  g_warn_if_fail (ssh_options_set (data->session, SSH_OPTIONS_KNOWNHOSTS, file) == SSH_OK);
+    g_warn_if_fail (ssh_options_set (data->session, SSH_OPTIONS_SSH_DIR, NULL) == 0);
+#if LIBSSH_085
+  g_warn_if_fail (ssh_options_set (data->session, SSH_OPTIONS_GLOBAL_KNOWNHOSTS, file) == 0);
+#else
+  g_warn_if_fail (ssh_options_set (data->session, SSH_OPTIONS_KNOWNHOSTS, file) == 0);
+#endif
   return ssh_session_has_known_hosts_entry (data->session) == SSH_KNOWN_HOSTS_OK;
 }
 
@@ -584,17 +588,24 @@ set_knownhosts_file (CockpitSshData *data,
   gchar *serr = NULL;
   gchar *authorize_knownhosts_data = NULL;
 
-  /* first check the global ssh file or file set by COCKPIT_SSH_KNOWN_HOSTS_FILE */
-  host_known = session_has_known_host_in_file (data->ssh_options->knownhosts_file, data, host, port);
+  /* first check the libssh defaults including local and global file */
+  host_known = session_has_known_host_in_file (NULL, data, host, port);
+#if !LIBSSH_085
+  if (host_known)
+    data->ssh_options->knownhosts_file = data->user_known_hosts;
 
-  /* check ~/.ssh/known_hosts, unless we are running as a system user ($HOME == "/"); this is not
-   * a security check (if one can write /.ssh/known_hosts then we have to trust them), just caution */
-  if (!host_known && g_strcmp0 (g_get_home_dir (), "/") != 0)
+  if (!host_known && !data->ssh_options->knownhosts_file)
     {
-      host_known = session_has_known_host_in_file (data->user_known_hosts, data, host, port);
+      host_known = session_has_known_host_in_file (PACKAGE_SYSCONF_DIR "/ssh/ssh_known_hosts", data, host, port);
       if (host_known)
-        data->ssh_options->knownhosts_file = data->user_known_hosts;
+        data->ssh_options->knownhosts_file = PACKAGE_SYSCONF_DIR "/ssh/ssh_known_hosts";
     }
+#endif
+
+  /* check file set by COCKPIT_SSH_KNOWN_HOSTS_FILE */
+  if (!host_known)
+    host_known = session_has_known_host_in_file (data->ssh_options->knownhosts_file, data, host, port);
+
 
   /* last (most expensive) fallback is to ask sssd's ssh known_hosts proxy */
   if (!host_known && tmp_knownhost_file == NULL)
@@ -641,7 +652,7 @@ set_knownhosts_file (CockpitSshData *data,
         }
     }
 
-  if (!host_known && data->ssh_options->challenge_unknown_host_preconnect)
+  if (!host_known)
     {
       authorize_knownhosts_data = challenge_for_knownhosts_data (data);
       if (authorize_knownhosts_data)
@@ -734,7 +745,7 @@ verify_knownhost (CockpitSshData *data,
    */
 #if !HAVE_DECL_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY
   if (ssh_options_set (data->session, SSH_OPTIONS_KNOWNHOSTS,
-                       data->ssh_options->knownhosts_file) != SSH_OK)
+                       data->ssh_options->knownhosts_file) != 0)
     {
       g_warning ("Couldn't set knownhosts file location");
       ret = "internal-error";
@@ -1228,13 +1239,6 @@ send_auth_reply (CockpitSshData *data,
   if (data->host_fingerprint)
     json_object_set_string_member (object, "host-fingerprint", data->host_fingerprint);
 
-  if (g_strcmp0 (problem, "invalid-hostkey") == 0 &&
-      tmp_knownhost_file == NULL)
-    {
-      json_object_set_string_member (object, "invalid-hostkey-file",
-                                     data->ssh_options->knownhosts_file);
-    }
-
   json_object_set_string_member (object, "problem", problem);
   json_object_set_string_member (object, "error", problem);
 
@@ -1336,7 +1340,7 @@ cockpit_ssh_connect (CockpitSshData *data,
   gboolean host_is_whitelisted;
   const gchar *problem;
 
-  guint port = 22;
+  guint port = 0;
   gchar *host;
 
   ssh_channel channel;
@@ -1358,10 +1362,22 @@ cockpit_ssh_connect (CockpitSshData *data,
       goto out;
     }
 
-  g_warn_if_fail (ssh_options_set (data->session, SSH_OPTIONS_USER, data->username) == 0);
-  g_warn_if_fail (ssh_options_set (data->session, SSH_OPTIONS_PORT, &port) == 0);
-
   g_warn_if_fail (ssh_options_set (data->session, SSH_OPTIONS_HOST, host) == 0);
+#if LIBSSH_085
+    g_warn_if_fail (ssh_options_parse_config (data->session, NULL) == 0);
+#endif
+  g_warn_if_fail (ssh_options_set (data->session, SSH_OPTIONS_USER, data->username) == 0);
+  if (port != 0)
+    g_warn_if_fail (ssh_options_set (data->session, SSH_OPTIONS_PORT, &port) == 0);
+
+  /* Parsing the config might have changed the host or port */
+  gchar *new_host;
+  if (ssh_options_get (data->session, SSH_OPTIONS_HOST, &new_host) == 0)
+    {
+      g_free (host);
+      host = new_host;
+    }
+  g_warn_if_fail (ssh_options_get_port (data->session, &port) == 0);
 
   /* This is a single host, for which we have been told to ignore the host key */
   ignore_hostkey = cockpit_conf_string (COCKPIT_CONF_SSH_SECTION, "host");

@@ -91,10 +91,6 @@ return plural;
   null,
   "Açık anahtar ekle"
  ],
- "Adding key": [
-  null,
-  "Anahtar ekleniyor"
- ],
  "Authorized Public SSH Keys": [
   null,
   "Yetkilendirilmiş Açık SSH Anahtarları"
@@ -138,10 +134,6 @@ return plural;
  "Delete Files": [
   null,
   "Dosyaları Sil"
- ],
- "Error saving authorized keys: ": [
-  null,
-  "Yetkilendirilmiş anahtarın kaydedilmesinde hata:"
  ],
  "Failed to load authorized keys.": [
   null,
@@ -231,10 +223,6 @@ return plural;
   null,
   ""
  ],
- "The key you provided was not valid.": [
-  null,
-  "Sağladığınız anahtar geçerli değil."
- ],
  "There are no authorized public keys for this account.": [
   null,
   "Bu hesap için yetkilendirilmiş açık anahtar yok."
@@ -246,10 +234,6 @@ return plural;
  "User Name": [
   null,
   "Kullanıcı Adı"
- ],
- "Validating key": [
-  null,
-  "Anahtar doğrulanıyor"
  ],
  "You do not have permission to view the authorized public keys for this account.": [
   null,

@@ -95,10 +95,6 @@ return plural;
   null,
   "Adress:"
  ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  "Alla ändringar kommer att få effekt först efter att ha stoppat och startat VM:en."
- ],
  "All running virtual machines will be turned off.": [
   null,
   "Alla körande virtuella maskiner kommer stängas av."
@@ -163,9 +159,9 @@ return plural;
   null,
   "Kapacitet"
  ],
- "Changes will apply on VM shutdown": [
+ "Changes will take effect after shutting down the VM": [
   null,
-  "Ändringar kommer gälla när VM:en stängs av"
+  "Ändringar kommer verkställas efter att VM:en stängs av"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -279,13 +275,13 @@ return plural;
   null,
   "Frånkopplad från seriekonsolen.  Klicka på återanslutknappen."
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
-  "Disken kunde inte anslutas utan fick följande fel: "
+  "Disken kunde inte anslutas"
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
-  "Disken kunde inte skapas utan fick följande fel: "
+  "Disken kunde inte skapas"
  ],
  "Disks": [
   null,
@@ -443,9 +439,9 @@ return plural;
   null,
   "Nätverkstyp"
  ],
- "Network settings failed to change with following error: ": [
+ "Network settings could not be saved": [
   null,
-  "Nätverksinställningarna kunde inte ändras utan fick följande fel:"
+  "Nätverksinställningarna kunde inte sparas"
  ],
  "Networks": [
   null,
@@ -517,59 +513,59 @@ return plural;
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
-  ""
+  "Bekräfta att värden skall slås om till underhållsläge."
  ],
  "Please enter new volume name": [
   null,
-  ""
+  "Ange ett nytt volymnamn"
  ],
  "Please enter new volume size": [
   null,
-  ""
+  "Ange en ny volymstorlek"
  ],
  "Please provide fully qualified domain name and port of the oVirt engine.": [
   null,
-  ""
+  "Ange ett full kvalificerat domännamn och en port till oVirt-motorn."
  ],
  "Please provide valid oVirt engine fully qualified domain name (FQDN) and port (443 by default)": [
   null,
-  ""
+  "Ange ett giltigt fullständigt kvalificerat domännamn (FQDN) och en port (443 som standard) till oVirt-motorn"
  ],
  "Please refer to oVirt's $0 for more information about Remote Viewer setup.": [
   null,
-  ""
+  "Referera oVirts $0 för mer information om uppsättning av fjärrvisare."
  ],
  "Please start the virtual machine to access its console.": [
   null,
-  ""
+  "Starta den virtuella maskinen för att komma åt dess konsol."
  ],
  "Please wait till VMs list is loaded from the server.": [
   null,
-  ""
+  "Vänta tills VM-listan är inläst från servern."
  ],
  "Please wait till list of templates is loaded from the server.": [
   null,
-  ""
+  "Vänta till listan av mallar är inläst från servern."
  ],
  "Plug": [
   null,
-  ""
+  "Plugg"
  ],
  "Pool": [
   null,
-  ""
+  "Pool"
  ],
  "Port": [
   null,
-  ""
+  "Port"
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
-  ""
+  "Föredraget antal uttag att exponera för gästen."
  ],
  "Preparing for Maintenance": [
   null,
-  ""
+  "Förbereder för underhåll"
  ],
  "Protocol": [
   null,
@@ -577,11 +573,11 @@ return plural;
  ],
  "REBOOT action failed": [
   null,
-  ""
+  "Åtgärden REBOOT misslyckades"
  ],
  "Readonly": [
   null,
-  ""
+  "Skrivskyddat"
  ],
  "Reconnect": [
   null,
@@ -589,79 +585,79 @@ return plural;
  ],
  "Register oVirt": [
   null,
-  ""
+  "Registrera oVirt"
  ],
  "Registering oVirt to Cockpit": [
   null,
-  ""
+  "Registrera oVirt i Cockpit"
  ],
  "Reload": [
   null,
-  ""
+  "Läs om"
  ],
  "Restart": [
   null,
-  ""
+  "Starta om"
  ],
  "Run": [
   null,
-  ""
+  "Kör"
  ],
  "Run Here": [
   null,
-  ""
+  "Kör här"
  ],
  "Running Since:": [
   null,
-  ""
+  "Kör sedan:"
  ],
  "SET VCPU SETTINGS action failed": [
   null,
-  ""
+  "Åtgärden SET VCPU SETTINGS misslyckades"
  ],
  "SHUTDOWN action failed": [
   null,
-  ""
+  "Åtgärden SHUTDOWN misslyckades"
  ],
  "SPICE": [
   null,
-  ""
+  "SPICE"
  ],
  "SPICE Address:": [
   null,
-  ""
+  "SPICE-adress:"
  ],
  "SPICE Port:": [
   null,
-  ""
+  "SPICE-port:"
  ],
  "SPICE TLS Port:": [
   null,
-  ""
+  "SPICE TLS-port:"
  ],
  "START action failed": [
   null,
-  ""
+  "Åtgärden START misslyckades"
  ],
  "SUSPEND action failed": [
   null,
-  ""
+  "Åtgärden SUSPEND misslyckades"
  ],
  "Save": [
   null,
-  ""
+  "Spara"
  ],
  "Send Non-Maskable Interrupt": [
   null,
-  ""
+  "Skicka ej maskerbart avbrott"
  ],
  "Send key": [
   null,
-  ""
+  "Skicka tangenttryck"
  ],
  "Serial Console": [
   null,
-  ""
+  "Seriekonsol"
  ],
  "Session": [
   null,
@@ -808,6 +804,10 @@ return plural;
   ""
  ],
  "Used": [
+  null,
+  ""
+ ],
+ "VCPU settings could not be saved": [
   null,
   ""
  ],

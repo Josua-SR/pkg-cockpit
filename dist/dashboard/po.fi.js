@@ -143,10 +143,6 @@ return plural;
   null,
   "Prosessori"
  ],
- "Can't load image": [
-  null,
-  ""
- ],
  "Cancel": [
   null,
   "Peru"
@@ -202,10 +198,6 @@ return plural;
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
   "Samanaikainen yhdistäminen useampaan kuin {{ limit }} koneeseen ei ole tuettu."
- ],
- "Connection Error": [
-  null,
-  "Yhteysvirhe"
  ],
  "Convertible": [
   null,
@@ -511,10 +503,6 @@ return plural;
   null,
   "Salasanat eivät täsmää."
  ],
- "The user <b>$0</b> is not permitted to manage servers": [
-  null,
-  "Käyttäjällä <b>$0</b> ei ole oikeutta hallita palvelimia"
- ],
  "This machine has already been added.": [
   null,
   "Tämä kone on jo lisätty."
@@ -562,10 +550,6 @@ return plural;
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
   "Olet yhdistetty kohteeseen {{#strong}}{{host}}{{/strong}}, mutta synkronoidaksesi käyttäjiä vaaditaan yksi käyttäjä superuser-oikeuksilla."
- ],
- "You are currently connected directly to this server. You cannot delete it.": [
-  null,
-  "Olet tällä hetkellä suoraan yhteydessä tähän palvelimeen. Et voi poistaa sitä."
  ],
  "You can remove the previously stored key by running the following command": [
   null,

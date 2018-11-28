@@ -899,11 +899,11 @@ return plural;
  ],
  "Path": [
   null,
-  ""
+  "Sökväg"
  ],
  "Pending Volume Claims": [
   null,
-  ""
+  "Väntande volymanspråk"
  ],
  "Persistent Volumes": [
   null,
@@ -911,119 +911,119 @@ return plural;
  ],
  "Phase": [
   null,
-  ""
+  "Fas"
  ],
  "Please create another namespace for $0 \"$1\"": [
   null,
-  ""
+  "Skapa en annan namnrymd för $0 ”$1”"
  ],
  "Please provide a GlusterFS volume name": [
   null,
-  ""
+  "Ge ett GlusterFS-volymnamn"
  ],
  "Please provide a username": [
   null,
-  ""
+  "Ange ett användarnamn"
  ],
  "Please provide a valid NFS server": [
   null,
-  ""
+  "Ange en giltig NFS-server"
  ],
  "Please provide a valid address": [
   null,
-  ""
+  "Ange en giltig adress"
  ],
  "Please provide a valid filesystem type": [
   null,
-  ""
+  "Ange en giltig filsystemtyp"
  ],
  "Please provide a valid interface": [
   null,
-  ""
+  "Ange ett giltigt gränssnitt"
  ],
  "Please provide a valid logical unit number": [
   null,
-  ""
+  "Ange ett giltigt nummer på en logisk enhet"
  ],
  "Please provide a valid name": [
   null,
-  ""
+  "Ange ett giltigt namn"
  ],
  "Please provide a valid namespace.": [
   null,
-  ""
+  "Ange en giltig namnrymd."
  ],
  "Please provide a valid path": [
   null,
-  ""
+  "Ange en giltig sökväg"
  ],
  "Please provide a valid qualified name": [
   null,
-  ""
+  "Ange ett giltigt kvalificerat namn"
  ],
  "Please provide a valid storage capacity.": [
   null,
-  ""
+  "Ange en giltig lagringskapacitet."
  ],
  "Please provide a valid target": [
   null,
-  ""
+  "Ange ett giltigt mål"
  ],
  "Please select a valid access mode": [
   null,
-  ""
+  "Välj ett giltigt åtkomstläge"
  ],
  "Please select a valid endpoint": [
   null,
-  ""
+  "Välj en giltig slutpunkt"
  ],
  "Please select a valid policy option.": [
   null,
-  ""
+  "Välj ett giltigt policyalternativ."
  ],
  "Please type an address": [
   null,
-  ""
+  "Skriv en adress"
  ],
  "Pod": [
   null,
-  ""
+  "Kapsel"
  ],
  "Pod Address": [
   null,
-  ""
+  "Kapseladress"
  ],
  "Pod Endpoints": [
   null,
-  ""
+  "Kapseländpunkter"
  ],
  "Pod Replicated": [
   null,
-  ""
+  "Kapsel replikerad"
  ],
  "Pod Selector": [
   null,
-  ""
+  "Kapselväljare"
  ],
  "Pods": [
   null,
-  ""
+  "Kapslar"
  ],
  "Pods contain one or more containers that run together on a node, containing your application code.": [
   null,
-  ""
+  "Kapslar innehåller en eller flera behållare som kör tillsamans på en nod, och innehåller din programkod."
  ],
  "Pool Name": [
   null,
-  ""
+  "Poolnamn"
  ],
  "Populate": [
   null,
-  ""
+  "Populera"
  ],
  "Ports": [
   null,
-  ""
+  "Portar"
  ],
  "Private: Allow only specific users or groups to pull images": [
   null,
@@ -1083,23 +1083,23 @@ return plural;
  ],
  "Rados Block Device": [
   null,
-  ""
+  "Rados-blockenhet"
  ],
  "Read Only": [
   null,
-  ""
+  "Skrivskyddad"
  ],
  "Read and write from a single node": [
   null,
-  ""
+  "Läs och skriv från en enstaka nod"
  ],
  "Read and write from multiple nodes": [
   null,
-  ""
+  "Läs och skriv från flera noder"
  ],
  "Read only from multiple nodes": [
   null,
-  ""
+  "Läs endast från flera noder"
  ],
  "Ready": [
   null,
@@ -1107,11 +1107,11 @@ return plural;
  ],
  "Reason": [
   null,
-  ""
+  "Orsak"
  ],
  "Reclaim Policy": [
   null,
-  ""
+  "Återvinningspolicy"
  ],
  "Reconnect": [
   null,
@@ -1119,15 +1119,15 @@ return plural;
  ],
  "Recycle": [
   null,
-  ""
+  "Återvinn"
  ],
  "Register": [
   null,
-  ""
+  "Registrera"
  ],
  "Register New Volume": [
   null,
-  ""
+  "Registrera en ny volym"
  ],
  "Register Persistent Volume": [
   null,
@@ -1135,139 +1135,139 @@ return plural;
  ],
  "Remote registry is insecure": [
   null,
-  ""
+  "Fjärregistret är osäkert"
  ],
  "Remove": [
   null,
-  ""
+  "Ta bort"
  ],
  "Remove Group": [
   null,
-  ""
+  "Ta bort grupp"
  ],
  "Remove Member": [
   null,
-  ""
+  "Ta bort medlem"
  ],
  "Remove Role": [
   null,
-  ""
+  "Ta bort roll"
  ],
  "Remove User": [
   null,
-  ""
+  "Ta bort användare"
  ],
  "Remove image tag": [
   null,
-  ""
+  "Ta bort avbildstagg"
  ],
  "Remove membership": [
   null,
-  ""
+  "Ta bort medlemskap"
  ],
  "Replicas": [
   null,
-  ""
+  "Repliker"
  ],
  "Replication Controller": [
   null,
-  ""
+  "Replikeringsstyrare"
  ],
  "Replication Controllers": [
   null,
-  ""
+  "Replikeringsstyrare"
  ],
  "Replication controllers dynamically create instances of pods from templates, and remove pods when necessary.": [
   null,
-  ""
+  "Replikeringsstyrare skapar dynamiskt instanser av kapslar från mallar, och tar bort kapslar vid behov."
  ],
  "Repository URL": [
   null,
-  ""
+  "Förråds-URL"
  ],
  "Requested": [
   null,
-  ""
+  "Begärd"
  ],
  "Requests": [
   null,
-  ""
+  "Begäranden"
  ],
  "Requires Authentication": [
   null,
-  ""
+  "Begär autentisering"
  ],
  "Restart Count": [
   null,
-  ""
+  "Omstartsräknare"
  ],
  "Restart Policy": [
   null,
-  ""
+  "Omstartspolicy"
  ],
  "Retain": [
   null,
-  ""
+  "Behåll"
  ],
  "Revision": [
   null,
-  ""
+  "Revision"
  ],
  "Role": [
   null,
-  ""
+  "Roll"
  ],
  "Roles": [
   null,
-  ""
+  "Roller"
  ],
  "Route": [
   null,
-  ""
+  "Rutt"
  ],
  "Routes": [
   null,
-  ""
+  "Rutter"
  ],
  "Scheduled Pods": [
   null,
-  ""
+  "Schemalagda kapslar"
  ],
  "Scheduling Disabled": [
   null,
-  ""
+  "Schemaläggningen avaktiverad"
  ],
  "Secret": [
   null,
-  ""
+  "Hemlighet"
  ],
  "Secret File": [
   null,
-  ""
+  "Hemlig fil"
  ],
  "Secret Name": [
   null,
-  ""
+  "Hemligt namn"
  ],
  "Secret Volume": [
   null,
-  ""
+  "Hemlig volym"
  ],
  "Select Manifest File...": [
   null,
-  ""
+  "Välj förteckningsfil …"
  ],
  "Select Member": [
   null,
-  ""
+  "Välj medlem"
  ],
  "Select Role": [
   null,
-  ""
+  "Välj roll"
  ],
  "Select an object to see more details.": [
   null,
-  ""
+  "Välj ett objekt för att se fler detaljer."
  ],
  "Server": [
   null,

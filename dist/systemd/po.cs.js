@@ -437,7 +437,7 @@ return plural;
  ],
  "Current boot": [
   null,
-  "Toto zavedení"
+  "Od tohoto spuštění systému"
  ],
  "Debug and above": [
   null,
@@ -499,9 +499,9 @@ return plural;
   null,
   "Vynuceně zapnout"
  ],
- "Enable persistent metrics…": [
+ "Enable stored metrics…": [
   null,
-  "Zapnout trvalé metriky…"
+  ""
  ],
  "Enabled": [
   null,
@@ -665,7 +665,7 @@ return plural;
  ],
  "Last Trigger": [
   null,
-  "Poslední spouštěč"
+  "Naposledy spuštěno"
  ],
  "Load earlier entries": [
   null,
@@ -825,7 +825,7 @@ return plural;
  ],
  "Only Emergency": [
   null,
-  "Pouze v nouzi"
+  "Pouze nouzové"
  ],
  "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
@@ -1073,7 +1073,7 @@ return plural;
  ],
  "Sockets": [
   null,
-  "Patice"
+  "Sokety"
  ],
  "Space-saving Computer": [
   null,
@@ -1103,9 +1103,9 @@ return plural;
   null,
   "Zastavit"
  ],
- "Store Performance Data": [
+ "Store metrics": [
   null,
-  "Data o výkonnosti úložiště"
+  ""
  ],
  "Sub Chassis": [
   null,

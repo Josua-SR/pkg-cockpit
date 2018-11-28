@@ -71,10 +71,6 @@ return plural;
   null,
   ""
  ],
- "$0 vCPU Details": [
-  null,
-  ""
- ],
  "Add": [
   null,
   ""
@@ -83,11 +79,11 @@ return plural;
   null,
   "Disk I/O"
  ],
- "Address:": [
+ "Address": [
   null,
   ""
  ],
- "All changes will take effect only after stopping and starting the VM.": [
+ "Address:": [
   null,
   ""
  ],
@@ -119,6 +115,10 @@ return plural;
   null,
   ""
  ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  ""
+ ],
  "CPU Type:": [
   null,
   ""
@@ -131,11 +131,11 @@ return plural;
   null,
   ""
  ],
- "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
+ "Changes will take effect after shutting down the VM": [
   null,
   ""
  ],
- "Confirm deletion of $0": [
+ "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
   ""
  ],
@@ -144,6 +144,10 @@ return plural;
   ""
  ],
  "Connect with any SPICE or VNC viewer application.": [
+  null,
+  ""
+ ],
+ "Connecting": [
   null,
   ""
  ],
@@ -175,15 +179,15 @@ return plural;
   null,
   ""
  ],
- "Create New VM": [
-  null,
-  ""
- ],
- "Create New Virtual Machine": [
+ "Create VM": [
   null,
   ""
  ],
  "Creation of vm $0 failed": [
+  null,
+  ""
+ ],
+ "Ctrl+Alt+Del": [
   null,
   ""
  ],
@@ -203,15 +207,19 @@ return plural;
   null,
   ""
  ],
+ "Disconnected": [
+  null,
+  ""
+ ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
   ""
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
   ""
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
   ""
  ],
@@ -220,6 +228,10 @@ return plural;
   "Disk I/O"
  ],
  "Download the MSI from $0": [
+  null,
+  ""
+ ],
+ "Edit": [
   null,
   ""
  ],
@@ -248,6 +260,10 @@ return plural;
   ""
  ],
  "Format": [
+  null,
+  ""
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
   null,
   ""
  ],
@@ -303,6 +319,14 @@ return plural;
   null,
   ""
  ],
+ "MAC Address": [
+  null,
+  ""
+ ],
+ "Mac Address": [
+  null,
+  ""
+ ],
  "Manual Connection": [
   null,
   ""
@@ -327,6 +351,14 @@ return plural;
   null,
   ""
  ],
+ "Model": [
+  null,
+  ""
+ ],
+ "Model type": [
+  null,
+  ""
+ ],
  "More Information": [
   null,
   "Indstillinger"
@@ -343,6 +375,14 @@ return plural;
   null,
   ""
  ],
+ "Network Type": [
+  null,
+  "Netværks Traffik"
+ ],
+ "Network settings could not be saved": [
+  null,
+  ""
+ ],
  "Networks": [
   null,
   "Netværks Traffik"
@@ -350,6 +390,10 @@ return plural;
  "New Volume Name": [
   null,
   "Værtsnavn"
+ ],
+ "No Storage Volumes defined for this Storage Pool": [
+  null,
+  ""
  ],
  "No VM is running or defined on this host": [
   null,
@@ -371,11 +415,19 @@ return plural;
   null,
   ""
  ],
- "OS Vendor": [
+ "No network interfaces defined for this VM": [
   null,
   ""
  ],
- "Ok": [
+ "No storage pool is defined on this host": [
+  null,
+  ""
+ ],
+ "No virtual networks": [
+  null,
+  ""
+ ],
+ "OS Vendor": [
   null,
   ""
  ],
@@ -407,6 +459,10 @@ return plural;
   null,
   ""
  ],
+ "Plug": [
+  null,
+  ""
+ ],
  "Pool": [
   null,
   "Værtsnavn"
@@ -420,6 +476,14 @@ return plural;
   ""
  ],
  "Protocol": [
+  null,
+  ""
+ ],
+ "QEMU/KVM System connection": [
+  null,
+  ""
+ ],
+ "QEMU/KVM User connection": [
   null,
   ""
  ],
@@ -459,11 +523,15 @@ return plural;
   null,
   ""
  ],
+ "Save": [
+  null,
+  ""
+ ],
  "Send Non-Maskable Interrupt": [
   null,
   ""
  ],
- "Send shortcut": [
+ "Send key": [
   null,
   ""
  ],
@@ -507,6 +575,10 @@ return plural;
   null,
   ""
  ],
+ "Storage Pools": [
+  null,
+  ""
+ ],
  "Storage Size": [
   null,
   ""
@@ -514,6 +586,10 @@ return plural;
  "Storage Size should not be negative number": [
   null,
   ""
+ ],
+ "Storage Volumes": [
+  null,
+  "Værtsnavn"
  ],
  "System": [
   null,
@@ -563,7 +639,7 @@ return plural;
   null,
   ""
  ],
- "Threads per cores": [
+ "Threads per core": [
   null,
   ""
  ],
@@ -575,6 +651,10 @@ return plural;
   null,
   ""
  ],
+ "Type": [
+  null,
+  ""
+ ],
  "URL": [
   null,
   ""
@@ -582,6 +662,10 @@ return plural;
  "Unique name": [
   null,
   "Værtsnavn"
+ ],
+ "Unplug": [
+  null,
+  ""
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
@@ -596,6 +680,58 @@ return plural;
   ""
  ],
  "Used": [
+  null,
+  ""
+ ],
+ "VCPU settings could not be saved": [
+  null,
+  ""
+ ],
+ "VM CHANGE_NETWORK_STATE action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE action failed": [
+  null,
+  ""
+ ],
+ "VM DETACH_DISK action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  ""
+ ],
+ "VM SENDNMI action failed": [
+  null,
+  ""
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  ""
+ ],
+ "VM START action failed": [
   null,
   ""
  ],
@@ -631,7 +767,7 @@ return plural;
   null,
   ""
  ],
- "Your browser does not support iframes.": [
+ "active": [
   null,
   ""
  ],
@@ -688,6 +824,10 @@ return plural;
   ""
  ],
  "idle": [
+  null,
+  ""
+ ],
+ "inactive": [
   null,
   ""
  ],

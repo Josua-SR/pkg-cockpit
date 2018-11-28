@@ -281,11 +281,11 @@ return plural;
  ],
  "Paste the contents of your public SSH key file here": [
   null,
-  ""
+  "Klistra in innehållet i din publika SSH-nyckelfil här"
  ],
  "Please specify an expiration date": [
   null,
-  ""
+  "Ange ett utgångsdatum"
  ],
  "Prompting via passwd timed out": [
   null,
@@ -293,19 +293,19 @@ return plural;
  ],
  "Require password change every $0 days": [
   null,
-  ""
+  "Begär en lösenordsändring var $0:e dag"
  ],
  "Require password change on $0": [
   null,
-  ""
+  "Begär lösenordsändring den $0"
  ],
  "Reset": [
   null,
-  ""
+  "Återställ"
  ],
  "Roles": [
   null,
-  ""
+  "Roller"
  ],
  "Server Administrator": [
   null,
@@ -378,6 +378,10 @@ return plural;
  "You do not have permission to view the authorized public keys for this account.": [
   null,
   "Du har inte rättigheter att se de auktoriserade publika nycklarna för detta konto."
+ ],
+ "You must wait longer to change your password": [
+  null,
+  ""
  ],
  "translatable": [
   null,

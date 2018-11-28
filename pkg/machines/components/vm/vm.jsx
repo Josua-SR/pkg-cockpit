@@ -114,7 +114,7 @@ const Vm = ({ vm, config, hostDevices, storagePools, onStart, onInstall, onShutd
 Vm.propTypes = {
     vm: PropTypes.object.isRequired,
     config: PropTypes.object.isRequired,
-    storagePools: PropTypes.object.isRequired,
+    storagePools: PropTypes.array.isRequired,
     hostDevices: PropTypes.object.isRequired,
     onStart: PropTypes.func.isRequired,
     onShutdown: PropTypes.func.isRequired,
@@ -125,7 +125,7 @@ Vm.propTypes = {
     onUsageStopPolling: PropTypes.func.isRequired,
     onSendNMI: PropTypes.func.isRequired,
     dispatch: PropTypes.func.isRequired,
-    networks: PropTypes.object.isRequired,
+    networks: PropTypes.array.isRequired,
 };
 
 export default Vm;

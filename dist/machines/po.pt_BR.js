@@ -71,10 +71,6 @@ return plural;
   null,
   "$0 está disponível para a maioria dos sistemas operacionais. Para instalá-lo, procure-o no GNOME Software ou execute o seguinte:"
  ],
- "$0 vCPU Details": [
-  null,
-  "$0 vCPU Detalhes"
- ],
  "Add": [
   null,
   "Adicionar"
@@ -90,10 +86,6 @@ return plural;
  "Address:": [
   null,
   "Endereço:"
- ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  "Todas as alterações entrarão em vigor somente após parar e iniciar a VM."
  ],
  "Apply": [
   null,
@@ -139,17 +131,13 @@ return plural;
   null,
   "Capacidade"
  ],
- "Changes will apply on VM shutdown": [
+ "Changes will take effect after shutting down the VM": [
   null,
   ""
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
   "Clicar em \"Iniciar Visualizador Remoto\" fará o download de um arquivo .vv e será iniciado $0."
- ],
- "Confirm deletion of $0": [
-  null,
-  "Confirme a exclusão de $0"
  ],
  "Connect with any $0 viewer application.": [
   null,
@@ -191,13 +179,9 @@ return plural;
   null,
   "Criar novo"
  ],
- "Create New VM": [
+ "Create VM": [
   null,
-  "Criar nova VM"
- ],
- "Create New Virtual Machine": [
-  null,
-  "Criar nova máquina virtual"
+  "Criar VM"
  ],
  "Creation of vm $0 failed": [
   null,
@@ -231,11 +215,11 @@ return plural;
   null,
   "Desconectado do console serial. Clique no botão Reconectar."
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
   ""
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
   ""
  ],
@@ -395,7 +379,7 @@ return plural;
   null,
   ""
  ],
- "Network settings failed to change with following error: ": [
+ "Network settings could not be saved": [
   null,
   ""
  ],
@@ -404,6 +388,10 @@ return plural;
   "Networks"
  ],
  "New Volume Name": [
+  null,
+  ""
+ ],
+ "No Storage Volumes defined for this Storage Pool": [
   null,
   ""
  ],
@@ -431,6 +419,10 @@ return plural;
   null,
   "Nenhuma interface de rede definida para esta VM"
  ],
+ "No storage pool is defined on this host": [
+  null,
+  ""
+ ],
  "No virtual networks": [
   null,
   ""
@@ -438,10 +430,6 @@ return plural;
  "OS Vendor": [
   null,
   "Fornecedor de SO"
- ],
- "Ok": [
-  null,
-  "Ok"
  ],
  "Operating System": [
   null,
@@ -491,6 +479,14 @@ return plural;
   null,
   "Protocolo"
  ],
+ "QEMU/KVM System connection": [
+  null,
+  ""
+ ],
+ "QEMU/KVM User connection": [
+  null,
+  ""
+ ],
  "Readonly": [
   null,
   "Apenasleitura"
@@ -510,14 +506,6 @@ return plural;
  "Run": [
   null,
   "Executar"
- ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  "A ação SET SETUP VCPU falhou"
- ],
- "SET_VCPU_SETTINGS action failed": [
-  null,
-  ""
  ],
  "SPICE": [
   null,
@@ -587,6 +575,10 @@ return plural;
   null,
   "Estado"
  ],
+ "Storage Pools": [
+  null,
+  ""
+ ],
  "Storage Size": [
   null,
   "Storage Size"
@@ -594,6 +586,10 @@ return plural;
  "Storage Size should not be negative number": [
   null,
   "Tamanho de armazenamento não deve ser negativo"
+ ],
+ "Storage Volumes": [
+  null,
+  ""
  ],
  "System": [
   null,
@@ -687,6 +683,10 @@ return plural;
   null,
   "Usado"
  ],
+ "VCPU settings could not be saved": [
+  null,
+  ""
+ ],
  "VM CHANGE_NETWORK_STATE action failed": [
   null,
   ""
@@ -767,6 +767,10 @@ return plural;
   null,
   "Volume"
  ],
+ "active": [
+  null,
+  "ativo"
+ ],
  "bridge": [
   null,
   "bridge"
@@ -822,6 +826,10 @@ return plural;
  "idle": [
   null,
   "ocioso"
+ ],
+ "inactive": [
+  null,
+  "inativo"
  ],
  "mcast": [
   null,

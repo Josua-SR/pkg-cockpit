@@ -439,10 +439,6 @@ return plural;
   null,
   ""
  ],
- "Ok": [
-  null,
-  "確定"
- ],
  "Operating System": [
   null,
   "作業系統"

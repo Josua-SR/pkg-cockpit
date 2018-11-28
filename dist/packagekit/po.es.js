@@ -318,10 +318,6 @@ return plural;
   null,
   "Tamaño total: $0"
  ],
- "Unregistered System": [
-  null,
-  "Sistema No Registrado"
- ],
  "Update History": [
   null,
   "Histórico de Actualización"
@@ -337,10 +333,6 @@ return plural;
  "Updated packages may require a restart to take effect.": [
   null,
   "Los paquetes actualizados pueden requerir un reinicio para tener efecto."
- ],
- "Updates are disabled.": [
-  null,
-  "Las actualizaciones están deshabilitadas."
  ],
  "Updating": [
   null,
@@ -358,17 +350,9 @@ return plural;
   null,
   "Versión"
  ],
- "View Registration Details": [
-  null,
-  "Visualizar Detalles de Registro"
- ],
  "Waiting for other software management operations to finish": [
   null,
   "Esperando a que finalicen otras operaciones de gestión de software"
- ],
- "You need to re-subscribe this system.": [
-  null,
-  "Usted necesita volver a suscribirse a este sistema."
  ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
@@ -385,6 +369,14 @@ return plural;
  "at": [
   null,
   "en"
+ ],
+ "bug fix": [
+  null,
+  ""
+ ],
+ "enhancement": [
+  null,
+  ""
  ],
  "every day": [
   null,
@@ -417,6 +409,10 @@ return plural;
  "on Wednesdays": [
   null,
   "en Miércoles"
+ ],
+ "security": [
+  null,
+  ""
  ],
  "undefined": [
   null,
