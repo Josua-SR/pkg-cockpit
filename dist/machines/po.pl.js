@@ -71,10 +71,6 @@ return plural;
   null,
   "$0 jest dostępne dla większości systemów operacyjnych. Aby zainstalować, należy wyszukać w Menedżerze oprogramowania GNOME lub wykonać polecenie:"
  ],
- "$0 vCPU Details": [
-  null,
-  "Informacje o wirtualnym procesorze $0"
- ],
  "Add": [
   null,
   "Dodaj"
@@ -90,10 +86,6 @@ return plural;
  "Address:": [
   null,
   "Adres:"
- ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  "Wszystkie zmiany zostaną uwzględnione tylko po zatrzymaniu i uruchomieniu maszyny wirtualnej."
  ],
  "Apply": [
   null,
@@ -139,17 +131,13 @@ return plural;
   null,
   "Pojemność"
  ],
- "Changes will apply on VM shutdown": [
+ "Changes will take effect after shutting down the VM": [
   null,
-  "Zmiany zostaną zastosowane podczas wyłączania maszyny wirtualnej"
+  "Zmiany zostaną uwzględnione po wyłączeniu maszyny wirtualnej"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
   "Kliknięcie „Uruchom zdalną przeglądarkę” pobierze plik .vv i uruchomi $0."
- ],
- "Confirm deletion of $0": [
-  null,
-  "Proszę potwierdzić usunięcie $0"
  ],
  "Connect with any $0 viewer application.": [
   null,
@@ -191,13 +179,9 @@ return plural;
   null,
   "Utwórz nowy"
  ],
- "Create New VM": [
+ "Create VM": [
   null,
-  "Utwórz nową maszynę wirtualną"
- ],
- "Create New Virtual Machine": [
-  null,
-  "Utwórz nową maszynę wirtualną"
+  "Utwórz maszynę wirtualną"
  ],
  "Creation of vm $0 failed": [
   null,
@@ -231,13 +215,13 @@ return plural;
   null,
   "Rozłączono z konsoli szeregowej. Proszę kliknąć przycisk „Połącz ponownie”."
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
-  "Podłączenie dysku się nie powiodło: "
+  "Podłączenie dysku się nie powiodło"
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
-  "Utworzenie dysku się nie powiodło: "
+  "Utworzenie dysku się nie powiodło"
  ],
  "Disks": [
   null,
@@ -395,9 +379,9 @@ return plural;
   null,
   "Typ sieci"
  ],
- "Network settings failed to change with following error: ": [
+ "Network settings could not be saved": [
   null,
-  "Zmiana ustawień sieci się nie powiodła, wystąpił ten błąd: "
+  "Nie można zapisać ustawień sieci"
  ],
  "Networks": [
   null,
@@ -406,6 +390,10 @@ return plural;
  "New Volume Name": [
   null,
   "Nazwa nowego woluminu"
+ ],
+ "No Storage Volumes defined for this Storage Pool": [
+  null,
+  "Dla tej puli urządzeń do przechowywania danych nie określono żadnych woluminów urządzeń do przechowywania danych"
  ],
  "No VM is running or defined on this host": [
   null,
@@ -431,6 +419,10 @@ return plural;
   null,
   "Nie określono interfejsów sieciowych dla tej maszyny wirtualnej"
  ],
+ "No storage pool is defined on this host": [
+  null,
+  "Na tym gospodarzu nie określono żadnej puli urządzeń do przechowywania danych"
+ ],
  "No virtual networks": [
   null,
   "Brak sieci wirtualnych"
@@ -438,10 +430,6 @@ return plural;
  "OS Vendor": [
   null,
   "Producent systemu operacyjnego"
- ],
- "Ok": [
-  null,
-  "OK"
  ],
  "Operating System": [
   null,
@@ -491,6 +479,14 @@ return plural;
   null,
   "Protokół"
  ],
+ "QEMU/KVM System connection": [
+  null,
+  "Połączenie systemowe QEMU/KVM"
+ ],
+ "QEMU/KVM User connection": [
+  null,
+  "Połączenie użytkownika QEMU/KVM"
+ ],
  "Readonly": [
   null,
   "Tylko do odczytu"
@@ -510,14 +506,6 @@ return plural;
  "Run": [
   null,
   "Uruchom"
- ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  "Działanie SET VCPU SETTINGS się nie powiodło"
- ],
- "SET_VCPU_SETTINGS action failed": [
-  null,
-  "Działanie SET_VCPU_SETTINGS się nie powiodło"
  ],
  "SPICE": [
   null,
@@ -587,6 +575,10 @@ return plural;
   null,
   "Stan"
  ],
+ "Storage Pools": [
+  null,
+  "Pule urządzeń do przechowywania danych"
+ ],
  "Storage Size": [
   null,
   "Rozmiar urządzenia do przechowywania danych"
@@ -594,6 +586,10 @@ return plural;
  "Storage Size should not be negative number": [
   null,
   "Rozmiar urządzenia do przechowywania danych nie może być liczbą ujemną"
+ ],
+ "Storage Volumes": [
+  null,
+  "Woluminy urządzeń do przechowywania danych"
  ],
  "System": [
   null,
@@ -687,6 +683,10 @@ return plural;
   null,
   "Używane"
  ],
+ "VCPU settings could not be saved": [
+  null,
+  "Nie można zapisać ustawień wirtualnego procesora"
+ ],
  "VM CHANGE_NETWORK_STATE action failed": [
   null,
   "Działanie VM CHANGE_NETWORK_STATE się nie powiodło"
@@ -767,6 +767,10 @@ return plural;
   null,
   "Wolumin"
  ],
+ "active": [
+  null,
+  "aktywne"
+ ],
  "bridge": [
   null,
   "mostek"
@@ -822,6 +826,10 @@ return plural;
  "idle": [
   null,
   "bezczynne"
+ ],
+ "inactive": [
+  null,
+  "nieaktywne"
  ],
  "mcast": [
   null,

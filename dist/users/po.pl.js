@@ -379,6 +379,10 @@ return plural;
   null,
   "Brak uprawnienia do wyświetlania upoważnionych publicznych kluczy dla tego konta."
  ],
+ "You must wait longer to change your password": [
+  null,
+  ""
+ ],
  "translatable": [
   null,
   "można tłumaczyć"

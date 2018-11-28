@@ -321,10 +321,6 @@ return plural;
   null,
   "Загальний розмір: $0"
  ],
- "Unregistered System": [
-  null,
-  "Незареєстрована система"
- ],
  "Update History": [
   null,
   "Історія оновлень"
@@ -340,10 +336,6 @@ return plural;
  "Updated packages may require a restart to take effect.": [
   null,
   "Використання оновлених пакунків може потребувати перезапуску."
- ],
- "Updates are disabled.": [
-  null,
-  "Оновлення вимкнено."
  ],
  "Updating": [
   null,
@@ -361,17 +353,9 @@ return plural;
   null,
   "Версія"
  ],
- "View Registration Details": [
-  null,
-  "Переглянути параметри реєстрації"
- ],
  "Waiting for other software management operations to finish": [
   null,
   "Очікуємо на завершення інших дій із програмним забезпеченням"
- ],
- "You need to re-subscribe this system.": [
-  null,
-  "Вам слід поновити передплату для цієї системи."
  ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
@@ -388,6 +372,14 @@ return plural;
  "at": [
   null,
   "на"
+ ],
+ "bug fix": [
+  null,
+  "виправлення вад"
+ ],
+ "enhancement": [
+  null,
+  "поліпшення"
  ],
  "every day": [
   null,
@@ -420,6 +412,10 @@ return plural;
  "on Wednesdays": [
   null,
   "по середах"
+ ],
+ "security": [
+  null,
+  "безпека"
  ],
  "undefined": [
   null,

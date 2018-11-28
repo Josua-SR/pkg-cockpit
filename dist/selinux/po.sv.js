@@ -134,27 +134,27 @@ return plural;
  ],
  "SELinux Access Control Errors": [
   null,
-  ""
+  "SELinux-fel vid åtkomstkontroller"
  ],
  "SELinux Policy": [
   null,
-  ""
+  "SELinux-policy"
  ],
  "SELinux Troubleshoot": [
   null,
-  ""
+  "SELinux-felsökning"
  ],
  "SELinux is disabled on the system": [
   null,
-  ""
+  "SELinux är avaktiverat på systemet"
  ],
  "SELinux is disabled on the system.": [
   null,
-  ""
+  "SELinux är avaktiverat på systemet."
  ],
  "SELinux system status is unknown.": [
   null,
-  ""
+  "SELinux systemstatus är okänd."
  ],
  "Setting deviates from the configured state and will revert on the next boot.": [
   null,

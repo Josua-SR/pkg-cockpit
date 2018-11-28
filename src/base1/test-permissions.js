@@ -1,4 +1,4 @@
-/* global $, cockpit, QUnit, unescape, escape */
+/* global cockpit, QUnit, unescape, escape */
 
 /* To help with future migration */
 var assert = QUnit;
@@ -15,13 +15,6 @@ var priv_user = {
     groups: ["user", "agroup"]
 };
 
-var limited_user = {
-    name: "limited",
-    id: 1001,
-    groups: ["limited"]
-};
-
-
 QUnit.module("Permission tests", {
     setup: function() {
         this.old_dbus = cockpit.dbus;
@@ -33,7 +26,6 @@ QUnit.module("Permission tests", {
         cockpit._is_superuser = this.old_is_superuser;
     }
 });
-
 
 QUnit.test("root-all-permissions", function() {
     assert.expect(2);

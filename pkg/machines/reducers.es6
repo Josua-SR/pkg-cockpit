@@ -29,11 +29,11 @@ import {
     SET_PROVIDER,
     SET_LOGGED_IN_USER,
     UNDEFINE_VM,
+    UPDATE_ADD_NETWORK,
     UPDATE_ADD_VM,
+    UPDATE_ADD_STORAGE_POOL,
     UPDATE_LIBVIRT_STATE,
-    UPDATE_NETWORKS,
     UPDATE_OS_INFO_LIST,
-    UPDATE_STORAGE_POOLS,
     UPDATE_STORAGE_VOLUMES,
     UPDATE_UI_VM,
     UPDATE_VM,
@@ -41,10 +41,16 @@ import {
 } from './constants/store-action-types.es6';
 
 // --- helpers -------------------
-function getFirstIndexOfVm(state, field, value, connectionName) {
+function getFirstIndexOfResource(state, field, value, connectionName) {
     return state.findIndex(e => {
-        return e.connectionName === connectionName && e[field] === value;
+        return e && e.connectionName === connectionName && e[field] === value;
     });
+}
+
+function replaceResource({ state, updatedResource, index }) {
+    return state.slice(0, index)
+            .concat(updatedResource)
+            .concat(state.slice(index + 1));
 }
 
 // --- reducers ------------------
@@ -86,19 +92,20 @@ function lazyComposedReducer({ parentReducer, getSubreducer, getSubstate, setSub
 }
 
 function networks(state, action) {
-    state = state || { };
-    /* Example:
-    state = { "connectionNameA": [vnet0, vnet1],
-              "connectionNameB": [vnet2]
-       }
-    */
-    switch (action.type) {
-    case UPDATE_NETWORKS: {
-        const { connectionName, networks } = action.payload;
-        const newState = Object.assign({}, state);
+    state = state || [];
 
-        newState[connectionName] = networks;
-        return newState;
+    switch (action.type) {
+    case UPDATE_ADD_NETWORK: {
+        const { network } = action.payload;
+        const connectionName = network.connectionName;
+        const index = network.id ? getFirstIndexOfResource(state, 'id', network.id, connectionName)
+            : getFirstIndexOfResource(state, 'name', network.name, connectionName);
+        if (index < 0) { // add
+            return [...state, network];
+        }
+
+        const updatedNetwork = Object.assign({}, state[index], network);
+        return replaceResource({ state, updatedNetwork, index });
     }
     default:
         return state;
@@ -111,8 +118,8 @@ function vms(state, action) {
     logDebug('reducer vms: action=' + JSON.stringify(action));
 
     function findVmToUpdate(state, { connectionName, id, name }) {
-        const index = id ? getFirstIndexOfVm(state, 'id', id, connectionName)
-            : getFirstIndexOfVm(state, 'name', name, connectionName);
+        const index = id ? getFirstIndexOfResource(state, 'id', id, connectionName)
+            : getFirstIndexOfResource(state, 'name', name, connectionName);
         if (index < 0) {
             if (id)
                 logDebug(`vms reducer: vm (id='${id}', connectionName='${connectionName}') not found, skipping`);
@@ -126,23 +133,17 @@ function vms(state, action) {
         };
     }
 
-    function replaceVm({ state, updatedVm, index }) {
-        return state.slice(0, index)
-                .concat(updatedVm)
-                .concat(state.slice(index + 1));
-    }
-
     switch (action.type) {
     case UPDATE_ADD_VM: {
         const connectionName = action.vm.connectionName;
-        const index = action.vm.id ? getFirstIndexOfVm(state, 'id', action.vm.id, connectionName)
-            : getFirstIndexOfVm(state, 'name', action.vm.name, connectionName);
+        const index = action.vm.id ? getFirstIndexOfResource(state, 'id', action.vm.id, connectionName)
+            : getFirstIndexOfResource(state, 'name', action.vm.name, connectionName);
         if (index < 0) { // add
             return [...state, action.vm];
         }
 
         const updatedVm = Object.assign({}, state[index], action.vm);
-        return replaceVm({ state, updatedVm, index });
+        return replaceResource({ state, updatedResource: updatedVm, index });
     }
     case UPDATE_VM: {
         const indexedVm = findVmToUpdate(state, action.vm);
@@ -161,7 +162,7 @@ function vms(state, action) {
         }
 
         // replace whole object
-        return replaceVm({ state, updatedVm, index: indexedVm.index });
+        return replaceResource({ state, updatedResource: updatedVm, index: indexedVm.index });
     }
     case VM_ACTION_FAILED: {
         const indexedVm = findVmToUpdate(state, action.payload);
@@ -177,7 +178,7 @@ function vms(state, action) {
         updatedVm.errorMessages[tab] = Object.assign({}, indexedVm.vmCopy.errorMessages[tab]);
         updatedVm.errorMessages[tab].lastMessage = action.payload.message;
         updatedVm.errorMessages[tab].lastMessageDetail = action.payload.detail;
-        return replaceVm({ state, updatedVm, index: indexedVm.index });
+        return replaceResource({ state, updatedResource: updatedVm, index: indexedVm.index });
     }
     case UNDEFINE_VM: {
         if (action.id)
@@ -232,54 +233,46 @@ function systemInfo(state, action) {
 }
 
 function storagePools(state, action) {
-    state = state || { };
-    /* Example:
-    state = { "connectionNameA": {
-            "poolNameA": [
-                {name, path},
-                {name, path},
-            ],
-            "poolNameB": []
-            },
-            "connectionNameB": {}
-       }
-    */
+    state = state || [];
+
+    function findStoragePoolToUpdate(state, { connectionName, id, name }) {
+        const index = id ? getFirstIndexOfResource(state, 'id', id, connectionName)
+            : getFirstIndexOfResource(state, 'name', name, connectionName);
+        if (index < 0) {
+            return null;
+        }
+        return {
+            index,
+            storagePoolCopy: Object.assign({}, state[index]),
+        };
+    }
+
     switch (action.type) {
-    case UPDATE_STORAGE_POOLS: {
-        const { connectionName, pools } = action.payload;
-
-        const newState = Object.assign({}, state);
-        if (!(connectionName in newState))
-            newState[connectionName] = {};
-        else
-            newState[connectionName] = Object.assign({}, state[connectionName]);
-
-        // Delete pools from state that are not in the payload
-        for (var poolCurrent in newState[connectionName]) {
-            if (!pools.includes(poolCurrent)) {
-                delete newState[connectionName][poolCurrent];
-            }
+    case UPDATE_ADD_STORAGE_POOL: {
+        const { storagePool } = action.payload;
+        const connectionName = storagePool.connectionName;
+        const index = getFirstIndexOfResource(state, 'id', storagePool.id, connectionName);
+        if (index < 0) {
+            return [...state, storagePool];
         }
+        const updatedStoragePool = Object.assign({}, state[index], storagePool);
 
-        // Add new pools to state
-        for (var i in pools) {
-            let poolName = pools[i];
-            if (!(poolName in newState[connectionName])) {
-                newState[connectionName][poolName] = [];
-            }
-        }
-
-        return newState;
+        return replaceResource({ state, updatedResource: updatedStoragePool, index });
     }
     case UPDATE_STORAGE_VOLUMES: {
         const { connectionName, poolName, volumes } = action.payload;
+        const indexedStoragePool = findStoragePoolToUpdate(state, { connectionName, name: poolName });
+        const index = getFirstIndexOfResource(state, 'name', poolName, connectionName);
+        if (index < 0) {
+            return state;
+        }
+        const updatedStoragePool = Object.assign({}, state[index]);
 
-        const newState = Object.assign({}, state);
-        newState[connectionName] = Object.assign({}, newState[connectionName]);
-        newState[connectionName][poolName] = volumes;
-        return newState;
+        updatedStoragePool.volumes = volumes;
+
+        return replaceResource({ state, updatedResource: updatedStoragePool, index: indexedStoragePool.index });
     }
-    default: // by default all reducers should return initial state on unknown actions
+    default:
         return state;
     }
 }

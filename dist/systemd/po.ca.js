@@ -531,10 +531,6 @@ return plural;
   null,
   ""
  ],
- "Free": [
-  null,
-  "Lliure"
- ],
  "Friday": [
   null,
   "Divendres"
@@ -722,6 +718,10 @@ return plural;
  "Memory": [
   null,
   "Memòria"
+ ],
+ "Memory & Swap": [
+  null,
+  ""
  ],
  "Message to logged in users": [
   null,

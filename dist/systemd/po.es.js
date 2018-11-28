@@ -531,10 +531,6 @@ return plural;
   null,
   "Chasis de Expansión"
  ],
- "Free": [
-  null,
-  "Libre"
- ],
  "Friday": [
   null,
   "Viernes"
@@ -722,6 +718,10 @@ return plural;
  "Memory": [
   null,
   "Memoria"
+ ],
+ "Memory & Swap": [
+  null,
+  ""
  ],
  "Message to logged in users": [
   null,

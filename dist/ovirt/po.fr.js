@@ -95,10 +95,6 @@ return plural;
   null,
   "Adresse:"
  ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  "Toutes les modifications ne prendront effet qu'après l'arrêt et le démarrage de la VM."
- ],
  "All running virtual machines will be turned off.": [
   null,
   "Toutes les machines virtuelles en cours d'exécution seront désactivées."
@@ -163,6 +159,10 @@ return plural;
   null,
   "Capacité"
  ],
+ "Changes will take effect after shutting down the VM": [
+  null,
+  ""
+ ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
   "En cliquant sur \"Launch Remote Viewer\" (lancer ll'afficheur à distance), vous téléchargerez un fichier .vv et le lancerez $0 ."
@@ -178,10 +178,6 @@ return plural;
  "Cluster Virtual Machines": [
   null,
   "Machines virtuelles de cluster"
- ],
- "Confirm deletion of $0": [
-  null,
-  "Confirmer la suppression de $0"
  ],
  "Confirm migration": [
   null,
@@ -279,13 +275,13 @@ return plural;
   null,
   "Déconnecté de la console série. Cliquez sur le bouton Reconnecter."
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
-  "Le disque n'a pas pu être attaché, avec l’erreur suivante :"
+  ""
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
-  "Le disque n’a pas pu être créé, avec l’erreur suivante :"
+  ""
  ],
  "Disks": [
   null,
@@ -294,6 +290,10 @@ return plural;
  "Download the MSI from $0": [
   null,
   "Télécharger le MSI depuis $0"
+ ],
+ "Edit": [
+  null,
+  "Modifier"
  ],
  "Edit the vdsm.conf": [
   null,
@@ -391,6 +391,10 @@ return plural;
   null,
   "L'action MIGRATE a échoué"
  ],
+ "Mac Address": [
+  null,
+  ""
+ ],
  "Manual Connection": [
   null,
   "Connexion manuelle"
@@ -415,6 +419,10 @@ return plural;
   null,
   "Migrer vers:"
  ],
+ "Model": [
+  null,
+  "Modèle"
+ ],
  "Model type": [
   null,
   "Type de modèle"
@@ -426,6 +434,14 @@ return plural;
  "Name": [
   null,
   "Nom"
+ ],
+ "Network Type": [
+  null,
+  ""
+ ],
+ "Network settings could not be saved": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -462,6 +478,10 @@ return plural;
  "No oVirt connection": [
   null,
   "Pas de connexion oVirt"
+ ],
+ "No virtual networks": [
+  null,
+  ""
  ],
  "Number of virtual CPUs that gonna be used.": [
   null,
@@ -786,6 +806,10 @@ return plural;
  "Used": [
   null,
   "Utilisé"
+ ],
+ "VCPU settings could not be saved": [
+  null,
+  ""
  ],
  "VDSM": [
   null,

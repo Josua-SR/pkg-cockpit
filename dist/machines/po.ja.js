@@ -439,10 +439,6 @@ return plural;
   null,
   "OS ベンダー"
  ],
- "Ok": [
-  null,
-  "OK"
- ],
  "Operating System": [
   null,
   "オペレーティングシステム"

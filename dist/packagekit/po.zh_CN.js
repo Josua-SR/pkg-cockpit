@@ -315,10 +315,6 @@ return plural;
   null,
   "总大小：$0"
  ],
- "Unregistered System": [
-  null,
-  "未注册的系统"
- ],
  "Update History": [
   null,
   "更新历史"
@@ -334,10 +330,6 @@ return plural;
  "Updated packages may require a restart to take effect.": [
   null,
   "已更新的软件包可能需要重启生效。"
- ],
- "Updates are disabled.": [
-  null,
-  "更新不可用。"
  ],
  "Updating": [
   null,
@@ -355,17 +347,9 @@ return plural;
   null,
   "版本"
  ],
- "View Registration Details": [
-  null,
-  "查看注册详情"
- ],
  "Waiting for other software management operations to finish": [
   null,
   "等待其他软件管理操作完成"
- ],
- "You need to re-subscribe this system.": [
-  null,
-  "您需要重新注册该系统。"
  ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
@@ -382,6 +366,14 @@ return plural;
  "at": [
   null,
   "在"
+ ],
+ "bug fix": [
+  null,
+  ""
+ ],
+ "enhancement": [
+  null,
+  ""
  ],
  "every day": [
   null,
@@ -414,6 +406,10 @@ return plural;
  "on Wednesdays": [
   null,
   "在周三"
+ ],
+ "security": [
+  null,
+  ""
  ],
  "undefined": [
   null,

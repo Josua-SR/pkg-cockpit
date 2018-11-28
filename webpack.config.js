@@ -9,7 +9,7 @@ var info = {
         ],
 
         "dashboard/dashboard": [
-            "dashboard/list.js",
+            "dashboard/list.es6",
         ],
 
         "docker/docker": [
@@ -34,7 +34,7 @@ var info = {
         ],
 
         "machines/machines": [
-            "machines/index.js",
+            "machines/index.es6",
             "machines/machines.less",
         ],
 
@@ -119,14 +119,14 @@ var info = {
         ],
 
         "systemd/services": [
-            "systemd/init.js",
+            "systemd/init.es6",
             "systemd/services.css",
         ],
         "systemd/logs": [
             "systemd/logs.js",
         ],
         "systemd/system": [
-            "systemd/host.js",
+            "systemd/host.es6",
             "systemd/host.css",
         ],
         "systemd/terminal": [
@@ -397,17 +397,7 @@ module.exports = {
     module: {
         preLoaders: [
             {
-                test: /\.js$/, // include .js files
-                exclude: /\/node_modules\/.*\//, // exclude external dependencies
-                loader: "jshint-loader"
-            },
-            {
-                test: /\.es6$/,
-                exclude: /\/node_modules\/.*\//, // exclude external dependencies
-                loader: "eslint-loader"
-            },
-            {
-                test: /\.jsx$/,
+                test: /\.(js|es6|jsx)$/,
                 exclude: /\/node_modules\/.*\//, // exclude external dependencies
                 loader: "eslint-loader"
             }
@@ -448,17 +438,5 @@ module.exports = {
                 loader: "exports?angular"
             }
         ],
-    },
-
-    jshint: {
-        emitErrors: true,
-        failOnHint: true,
-        latedef: "nofunc",
-        sub: true,
-        multistr: true,
-        undef: true,
-        unused: "vars",
-        predef: [ "window", "document", "console" ],
-        lastsemic : true,
-    },
+    }
 };

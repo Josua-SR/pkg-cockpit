@@ -439,10 +439,6 @@ return plural;
   null,
   ""
  ],
- "Ok": [
-  null,
-  "확인"
- ],
  "Operating System": [
   null,
   "운영 체제"

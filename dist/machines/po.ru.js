@@ -439,10 +439,6 @@ return plural;
   null,
   ""
  ],
- "Ok": [
-  null,
-  "OK"
- ],
  "Operating System": [
   null,
   "Операционная система"

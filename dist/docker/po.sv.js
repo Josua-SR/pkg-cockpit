@@ -571,35 +571,35 @@ return plural;
  ],
  "Peripheral Chassis": [
   null,
-  ""
+  "Periferichassi"
  ],
  "Pizza Box": [
   null,
-  ""
+  "Pizzalåda"
  ],
  "Please confirm deletion of $0": [
   null,
-  ""
+  "Bekräfta raderingen av $0"
  ],
  "Please confirm forced deletion of $0": [
   null,
-  ""
+  "Bekräfta den tvingande raderingen av $0"
  ],
  "Please try another term": [
   null,
-  ""
+  "Försök med en annan term"
  ],
  "Portable": [
   null,
-  ""
+  "Bärbar"
  ],
  "Ports": [
   null,
-  ""
+  "Portar"
  ],
  "Ports:": [
   null,
-  ""
+  "Portar:"
  ],
  "Problems": [
   null,
@@ -607,75 +607,75 @@ return plural;
  ],
  "RAID Chassis": [
   null,
-  ""
+  "RAID-chassi"
  ],
  "Rack Mount Chassis": [
   null,
-  ""
+  "Rackmonteringschassi"
  ],
  "ReadOnly": [
   null,
-  ""
+  "LäsEndast"
  ],
  "ReadWrite": [
   null,
-  ""
+  "LäsSkriv"
  ],
  "Reboot": [
   null,
-  ""
+  "Starta om"
  ],
  "Reformat and add disks": [
   null,
-  ""
+  "Omformatera och lägg till diskar"
  ],
  "Repository": [
   null,
-  ""
+  "Förråd"
  ],
  "Reset": [
   null,
-  ""
+  "Återställ"
  ],
  "Reset Storage Pool": [
   null,
-  ""
+  "Återställ lagringspoolen"
  ],
  "Resetting the storage pool will erase all containers and release disks in the pool.": [
   null,
-  ""
+  "Att återställa lagringspoolen kommer radera alla behållare och släppa diskar i poolen."
  ],
  "Restart": [
   null,
-  ""
+  "Starta om"
  ],
  "Restart Policy": [
   null,
-  ""
+  "Omstartspolicy"
  ],
  "Restart Policy:": [
   null,
-  ""
+  "Omstartspolicy:"
  ],
  "Retries:": [
   null,
-  ""
+  "Omförsök:"
  ],
  "Run": [
   null,
-  ""
+  "Kör"
  ],
  "Run Image": [
   null,
-  ""
+  "Kör avbild"
  ],
  "Sealed-case PC": [
   null,
-  ""
+  "PC med slutet hölje"
  ],
  "Security": [
   null,
-  ""
+  "Säkerhet"
  ],
  "Set container environment variables": [
   null,

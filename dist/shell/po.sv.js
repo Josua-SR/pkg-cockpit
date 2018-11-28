@@ -361,19 +361,19 @@ return plural;
  ],
  "Password not accepted": [
   null,
-  ""
+  "Lösenordet accepterades inte"
  ],
  "Password not usable for privileged tasks or to connect to other machines": [
   null,
-  ""
+  "Lösenordet är inte användbart för priviligerade uppgifter eller för att ansluta till andra maskiner"
  ],
  "Path to file": [
   null,
-  ""
+  "Sökväg till filen"
  ],
  "Port": [
   null,
-  ""
+  "Port"
  ],
  "Privileged": [
   null,
@@ -401,11 +401,11 @@ return plural;
  ],
  "Reuse my password for privileged tasks and to connect to other machines": [
   null,
-  ""
+  "Återanvänd mitt lösenord för priviligierade uppgifter och för att ansluta till andra maskiner"
  ],
  "Select": [
   null,
-  ""
+  "Välj"
  ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
@@ -514,10 +514,6 @@ return plural;
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
   "Du är ansluten till {{#strong}}{{host}}{{/strong}}, dock, för att synkronisera användare krävs en användare med superanvändarens rättigheter."
- ],
- "You can remove the previously stored key by running the following command": [
-  null,
-  "Du kan ta bort den tidigare lagrade nyckeln genom att köra följande kommando"
  ],
  "active": [
   null,

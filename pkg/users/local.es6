@@ -23,7 +23,7 @@ import cockpit from 'cockpit';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Mustache from 'mustache';
-import authorized_keys from './authorized-keys';
+import authorized_keys from './authorized-keys.es6';
 
 import 'patterns';
 import 'bootstrap-datepicker/dist/js/bootstrap-datepicker';
@@ -63,6 +63,7 @@ function update_accounts_privileged() {
 
 function passwd_self(old_pass, new_pass) {
     var old_exps = [
+        /Current password: $/,
         /.*\(current\) UNIX password: $/,
     ];
     var new_exps = [
@@ -71,6 +72,9 @@ function passwd_self(old_pass, new_pass) {
     ];
     var bad_exps = [
         /.*BAD PASSWORD:.*/
+    ];
+    var too_new_exps = [
+        /.*must wait longer to change.*/
     ];
 
     var dfd = cockpit.defer();
@@ -103,6 +107,15 @@ function passwd_self(old_pass, new_pass) {
                     if (old_exps[i].test(buffer)) {
                         buffer = "";
                         this.input(old_pass + "\n", true);
+                        return;
+                    }
+                }
+
+                for (i = 0; i < too_new_exps.length; i++) {
+                    if (too_new_exps[i].test(buffer)) {
+                        buffer = "";
+                        failure = _("You must wait longer to change your password");
+                        this.input("\n", true);
                         return;
                     }
                 }

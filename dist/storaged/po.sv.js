@@ -1078,63 +1078,63 @@ return plural;
  ],
  "Path on Server": [
   null,
-  ""
+  "Sökväg på servern"
  ],
  "Path on server cannot be empty.": [
   null,
-  ""
+  "Sökvägen på servern får inte vara tom."
  ],
  "Path on server must start with \"/\".": [
   null,
-  ""
+  "Sökvägen på servern måste börja med ”/”."
  ],
  "Physical": [
   null,
-  ""
+  "Fysiskt"
  ],
  "Physical Volume": [
   null,
-  ""
+  "Fysisk volym"
  ],
  "Physical Volumes": [
   null,
-  ""
+  "Fysiska volymer"
  ],
  "Physical volume of $0": [
   null,
-  ""
+  "Fysisk volym för $0"
  ],
  "Physical volumes can not be resized here.": [
   null,
-  ""
+  "Storleken på fysiska volymer kan inte ändras här."
  ],
  "Please confirm deletion of $0": [
   null,
-  ""
+  "Bekräfta raderingen av $0"
  ],
  "Please confirm stopping of $0": [
   null,
-  ""
+  "Bekräfta stoppandet av $0"
  ],
  "Pool": [
   null,
-  ""
+  "Pool"
  ],
  "Pool for Thin Logical Volumes": [
   null,
-  ""
+  "Pool för tunna logiska volymer"
  ],
  "Pool for Thin Volumes": [
   null,
-  ""
+  "Pool för tunna volymer"
  ],
  "Pool for thinly provisioned volumes": [
   null,
-  ""
+  "Pool för tunt underhållna volymer"
  ],
  "Port": [
   null,
-  ""
+  "Port"
  ],
  "Process": [
   null,
@@ -1174,123 +1174,123 @@ return plural;
  ],
  "RAID 4": [
   null,
-  ""
+  "RAID 4"
  ],
  "RAID 4 (Dedicated Parity)": [
   null,
-  ""
+  "RAID 4 (dedikerad paritet)"
  ],
  "RAID 5": [
   null,
-  ""
+  "RAID 5"
  ],
  "RAID 5 (Distributed Parity)": [
   null,
-  ""
+  "RAID 5 (distribuerad paritet)"
  ],
  "RAID 6": [
   null,
-  ""
+  "RAID 6"
  ],
  "RAID 6 (Double Distributed Parity)": [
   null,
-  ""
+  "RAID 6 (dubbel distribuerad paritet)"
  ],
  "RAID Device": [
   null,
-  ""
+  "RAID-enhet"
  ],
  "RAID Device $0": [
   null,
-  ""
+  "RAID-enhet $0"
  ],
  "RAID Devices": [
   null,
-  ""
+  "RAID-enheter"
  ],
  "RAID Level": [
   null,
-  ""
+  "RAID-nivå"
  ],
  "RAID Member": [
   null,
-  ""
+  "RAID-medlem"
  ],
  "Reading": [
   null,
-  ""
+  "Läser"
  ],
  "Reboot": [
   null,
-  ""
+  "Starta om"
  ],
  "Recovering": [
   null,
-  ""
+  "Återställer"
  ],
  "Recovering RAID Device $target": [
   null,
-  ""
+  "Återställer RAID-enhet $target"
  ],
  "Removals:": [
   null,
-  ""
+  "Borttagningar:"
  ],
  "Remove": [
   null,
-  ""
+  "Ta bort"
  ],
  "Remove $0?": [
   null,
-  ""
+  "Ta bort $0?"
  ],
  "Remove Tang keyserver": [
   null,
-  ""
+  "Ta bort Tang-nyckelserver"
  ],
  "Remove device": [
   null,
-  ""
+  "Ta bort enhet"
  ],
  "Remove passphrase": [
   null,
-  ""
+  "Ta bort lösenfras"
  ],
  "Remove passphrase in $0?": [
   null,
-  ""
+  "Ta bort lösenfrasen i $0?"
  ],
  "Removing $0": [
   null,
-  ""
+  "Tar bort $0"
  ],
  "Removing $target from RAID Device": [
   null,
-  ""
+  "Tar bort $target från RAID-enheten"
  ],
  "Removing physical volume from $target": [
   null,
-  ""
+  "Tar bort den fysiska volymen från $target"
  ],
  "Rename": [
   null,
-  ""
+  "Byt namn"
  ],
  "Rename Logical Volume": [
   null,
-  ""
+  "Byt namn på en logisk volym"
  ],
  "Rename Volume Group": [
   null,
-  ""
+  "Byt namn på en volymgrupp"
  ],
  "Renaming $target": [
   null,
-  ""
+  "Byter namn på $target"
  ],
  "Repairing $target": [
   null,
-  ""
+  "Reparerar $target"
  ],
  "Repeat passphrase": [
   null,
@@ -1298,27 +1298,27 @@ return plural;
  ],
  "Resizing $target": [
   null,
-  ""
+  "Ändrar storlek på $target"
  ],
  "Running": [
   null,
-  ""
+  "Kör"
  ],
  "SMART self-test of $target": [
   null,
-  ""
+  "SMART-självtest av $target"
  ],
  "Save": [
   null,
-  ""
+  "Spara"
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
-  ""
+  "Att spara en ny lösenfras kräver att disken låses upp.  Ge en aktuell disklösenfras."
  ],
  "Securely erasing $target": [
   null,
-  ""
+  "Raderar säkert $target"
  ],
  "Server": [
   null,
@@ -1818,7 +1818,7 @@ return plural;
  ],
  "storage\u0004Removable Drive": [
   null,
-  ""
+  "Löstagbar disk"
  ],
  "storage\u0004Solid-State Disk": [
   null,

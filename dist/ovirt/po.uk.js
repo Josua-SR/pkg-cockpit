@@ -95,10 +95,6 @@ return plural;
   null,
   "Адреса:"
  ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  "Усі зміни набудуть чинності лише після перезапуску віртуальної машини."
- ],
  "All running virtual machines will be turned off.": [
   null,
   "Усі запущені віртуальні машини буде вимкнено."
@@ -163,9 +159,9 @@ return plural;
   null,
   "Місткість"
  ],
- "Changes will apply on VM shutdown": [
+ "Changes will take effect after shutting down the VM": [
   null,
-  "Зміни буде внесено при вимиканні ВМ"
+  ""
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -182,10 +178,6 @@ return plural;
  "Cluster Virtual Machines": [
   null,
   "Віртуальні машини кластера"
- ],
- "Confirm deletion of $0": [
-  null,
-  "Підтвердження вилучення $0"
  ],
  "Confirm migration": [
   null,
@@ -283,13 +275,13 @@ return plural;
   null,
   "Від'єднано від послідовної консолі. Натисніть кнопку «Повторно з'єднатися»."
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
-  "Не вдалося долучити диск. Повідомлення щодо помилки:"
+  ""
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
-  "Не вдалося створити диск. Повідомлення щодо помилки:"
+  ""
  ],
  "Disks": [
   null,
@@ -447,9 +439,9 @@ return plural;
   null,
   "Тип мережі"
  ],
- "Network settings failed to change with following error: ": [
+ "Network settings could not be saved": [
   null,
-  "Не вдалося зміни параметри мережі. Повідомлення про помилку:"
+  ""
  ],
  "Networks": [
   null,
@@ -814,6 +806,10 @@ return plural;
  "Used": [
   null,
   "Використано"
+ ],
+ "VCPU settings could not be saved": [
+  null,
+  ""
  ],
  "VDSM": [
   null,

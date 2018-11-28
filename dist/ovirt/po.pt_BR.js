@@ -95,10 +95,6 @@ return plural;
   null,
   "Endereço:"
  ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  "Todas as alterações entrarão em vigor somente após parar e iniciar a VM."
- ],
  "All running virtual machines will be turned off.": [
   null,
   "Todas as máquinas virtuais em execução serão desativadas."
@@ -163,7 +159,7 @@ return plural;
   null,
   "Capacidade"
  ],
- "Changes will apply on VM shutdown": [
+ "Changes will take effect after shutting down the VM": [
   null,
   ""
  ],
@@ -182,10 +178,6 @@ return plural;
  "Cluster Virtual Machines": [
   null,
   "Máquinas Virtuais de Cluster"
- ],
- "Confirm deletion of $0": [
-  null,
-  "Confirme a exclusão de $0"
  ],
  "Confirm migration": [
   null,
@@ -283,11 +275,11 @@ return plural;
   null,
   "Desconectado do console serial. Clique no botão Reconectar."
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
   ""
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
   ""
  ],
@@ -447,7 +439,7 @@ return plural;
   null,
   ""
  ],
- "Network settings failed to change with following error: ": [
+ "Network settings could not be saved": [
   null,
   ""
  ],
@@ -814,6 +806,10 @@ return plural;
  "Used": [
   null,
   "Usado"
+ ],
+ "VCPU settings could not be saved": [
+  null,
+  ""
  ],
  "VDSM": [
   null,

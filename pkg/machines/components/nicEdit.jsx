@@ -20,13 +20,14 @@ import React from 'react';
 import cockpit from 'cockpit';
 import PropTypes from 'prop-types';
 import {
-    Alert,
     Form,
     FormGroup,
     Grid,
     Modal,
     Button
 } from 'patternfly-react';
+
+import { ModalError } from './notification/inlineNotification.jsx';
 import * as Select from 'cockpit-components-select.jsx';
 import {
     changeNetworkSettings,
@@ -97,7 +98,7 @@ const NetworkTypeAndSourceRow = ({ idPrefix, onValueChanged, dialogValues, netwo
     availableNetworkTypes.sort(function(x, y) { return x.name == defaultNetworkType ? -1 : y.name == defaultNetworkType ? 1 : 0 });
 
     if (dialogValues.networkType == 'network')
-        availableNetworkSources = networks[connectionName];
+        availableNetworkSources = networks.map(network => network.name);
     if (availableNetworkSources.length > 0) {
         defaultNetworkSource = defaultNetworkSource == undefined ? availableNetworkSources[0] : defaultNetworkSource;
         networkSourcesContent = availableNetworkSources
@@ -192,7 +193,6 @@ export class EditNICAction extends React.Component {
         this.save = this.save.bind(this);
         this.onValueChanged = this.onValueChanged.bind(this);
         this.dialogErrorSet = this.dialogErrorSet.bind(this);
-        this.dialogErrorDismiss = this.dialogErrorDismiss.bind(this);
     }
 
     onValueChanged(key, value) {
@@ -201,17 +201,12 @@ export class EditNICAction extends React.Component {
         this.setState(stateDelta);
     }
 
-    dialogErrorSet(text) {
-        this.setState({ dialogError: text });
-    }
-
-    dialogErrorDismiss() {
-        this.setState({ dialogError: undefined });
+    dialogErrorSet(text, detail) {
+        this.setState({ dialogError: text, dialogErrorDetail: detail });
     }
 
     close() {
-        this.setState({ showModal: false });
-        this.dialogErrorDismiss();
+        this.setState({ showModal: false, dialogError: undefined });
     }
 
     open() {
@@ -228,7 +223,7 @@ export class EditNICAction extends React.Component {
             networkSource: this.state.networkSource
         }))
                 .fail((exc) => {
-                    this.dialogErrorSet(_("Network settings failed to change with following error: ") + exc.message);
+                    this.dialogErrorSet(_("Network settings could not be saved"), exc.message);
                 })
                 .then(() => {
                     dispatch(getVm({ connectionName: vm.connectionName, id: vm.id }));
@@ -238,13 +233,14 @@ export class EditNICAction extends React.Component {
 
     render() {
         const { idPrefix, vm, network, networks } = this.props;
+        const networksFiltered = networks.filter(network => network.connectionName == vm.connectionName);
         const defaultBody = (
             <Form horizontal>
                 <NetworkTypeAndSourceRow idPrefix={idPrefix}
                                          dialogValues={this.state}
                                          onValueChanged={this.onValueChanged}
                                          network={network}
-                                         networks={networks}
+                                         networks={networksFiltered}
                                          connectionName={vm.connectionName}
                                          isRunning={vm.state == 'running'} />
                 <NetworkModelRow idPrefix={idPrefix}
@@ -264,9 +260,9 @@ export class EditNICAction extends React.Component {
                 this.state.networkModel !== network.model)
             ) {
                 return (
-                    <span id={`${idPrefix}-edit-dialog-idle-message`} className='nic-edit-idle-message'>
+                    <span id={`${idPrefix}-edit-dialog-idle-message`} className='idle-message'>
                         <i className='pficon pficon-pending' />
-                        <span>{_("Changes will apply on VM shutdown")}</span>
+                        <span>{_("Changes will take effect after shutting down the VM")}</span>
                     </span>
                 );
             }
@@ -284,10 +280,10 @@ export class EditNICAction extends React.Component {
                         <Modal.Title> {`${network.mac} Virtual Network Interface Settings`} </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        {this.state.dialogError && (<Alert onDismiss={this.dialogErrorDismiss}> {this.state.dialogError} </Alert>)}
                         {defaultBody}
                     </Modal.Body>
                     <Modal.Footer>
+                        {this.state.dialogError && <ModalError dialogError={this.state.dialogError} dialogErrorDetail={this.state.dialogErrorDetail} />}
                         { showFooterWarning() }
                         <Button id={`${idPrefix}-edit-dialog-cancel`} bsStyle='default' className='btn-cancel' onClick={this.close}>
                             {_("Cancel")}
@@ -307,7 +303,7 @@ EditNICAction.propTypes = {
     idPrefix: PropTypes.string.isRequired,
     vm: PropTypes.object.isRequired,
     network: PropTypes.object.isRequired,
-    networks: PropTypes.object.isRequired,
+    networks: PropTypes.array.isRequired,
 };
 
 export default EditNICAction;

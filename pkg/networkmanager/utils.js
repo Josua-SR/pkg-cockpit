@@ -63,7 +63,8 @@
     }
 
     function bytes_from_nm32(num) {
-        var bytes = [], i;
+        var bytes = [];
+        var i;
         if (byteorder == "be") {
             for (i = 3; i >= 0; i--) {
                 bytes[i] = num & 0xFF;
@@ -81,7 +82,8 @@
     function ip4_to_text(num, zero_is_empty) {
         if (num === 0 && zero_is_empty)
             return "";
-        return bytes_from_nm32(num).map(toDec).join('.');
+        return bytes_from_nm32(num).map(toDec)
+                .join('.');
     }
 
     function ip4_from_text(text, empty_is_zero) {
@@ -107,7 +109,7 @@
         function shift(b) {
             if (isNaN(b) || b < 0 || b > 0xFF)
                 invalid();
-            num = 0x100*num + b;
+            num = 0x100 * num + b;
         }
 
         var i;
@@ -160,7 +162,7 @@
         var parts = [];
         var bytes = cockpit.base64_decode(data);
         for (var i = 0; i < 8; i++)
-            parts[i] = ((bytes[2*i] << 8) + bytes[2*i+1]).toString(16);
+            parts[i] = ((bytes[2 * i] << 8) + bytes[2 * i + 1]).toString(16);
         var result = parts.join(':');
         if (result == "0:0:0:0:0:0:0:0" && zero_is_empty)
             return "";
@@ -174,8 +176,8 @@
 
         if (text === "" && empty_is_zero)
             return cockpit.base64_encode([ 0, 0, 0, 0, 0, 0, 0, 0,
-                                           0, 0, 0, 0, 0, 0, 0, 0,
-                                         ]);
+                0, 0, 0, 0, 0, 0, 0, 0,
+            ]);
 
         var parts = text.split(':');
         if (parts.length < 1 || parts.length > 8)
@@ -183,10 +185,11 @@
 
         if (parts[0] === "")
             parts[0] = "0";
-        if (parts[parts.length-1] === "")
-            parts[parts.length-1] = "0";
+        if (parts[parts.length - 1] === "")
+            parts[parts.length - 1] = "0";
 
-        var bytes = [], n, i, j;
+        var bytes = [];
+        var n, i, j;
         var empty_seen = false;
         for (i = 0, j = 0; i < parts.length; i++, j++) {
             if (parts[i] === "") {
@@ -194,7 +197,7 @@
                     invalid();
                 empty_seen = true;
                 while (j < i + (8 - parts.length)) {
-                    bytes[2*j] = bytes[2*j+1] = 0;
+                    bytes[2 * j] = bytes[2 * j + 1] = 0;
                     j++;
                 }
             } else {
@@ -203,8 +206,8 @@
                 n = parseInt(parts[i], 16);
                 if (isNaN(n) || n < 0 || n > 0xFFFF)
                     invalid();
-                bytes[2*j] = n >> 8;
-                bytes[2*j+1] = n & 0xFF;
+                bytes[2 * j] = n >> 8;
+                bytes[2 * j + 1] = n & 0xFF;
             }
         }
         if (j != 8)
@@ -228,5 +231,4 @@
         ip6_to_text: ip6_to_text,
         ip6_from_text: ip6_from_text
     };
-
 })();

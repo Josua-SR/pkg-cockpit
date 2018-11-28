@@ -131,10 +131,6 @@ return plural;
   null,
   "Prosessorin tyyppi:"
  ],
- "Cancel": [
-  null,
-  "Peru"
- ],
  "Capacity": [
   null,
   "Koko"
@@ -410,10 +406,6 @@ return plural;
  "OS Vendor": [
   null,
   "Käyttöjärjestelmän toimittaja"
- ],
- "Ok": [
-  null,
-  "OK"
  ],
  "Operating System": [
   null,

@@ -95,10 +95,6 @@ return plural;
   null,
   "Adres:"
  ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  "Wszystkie zmiany zostaną uwzględnione tylko po zatrzymaniu i uruchomieniu maszyny wirtualnej."
- ],
  "All running virtual machines will be turned off.": [
   null,
   "Wszystkie uruchomione maszyny wirtualne zostaną wyłączone."
@@ -163,9 +159,9 @@ return plural;
   null,
   "Pojemność"
  ],
- "Changes will apply on VM shutdown": [
+ "Changes will take effect after shutting down the VM": [
   null,
-  "Zmiany zostaną zastosowane podczas wyłączania maszyny wirtualnej"
+  "Zmiany zostaną uwzględnione po wyłączeniu maszyny wirtualnej"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -182,10 +178,6 @@ return plural;
  "Cluster Virtual Machines": [
   null,
   "Maszyny wirtualne klastrów"
- ],
- "Confirm deletion of $0": [
-  null,
-  "Proszę potwierdzić usunięcie $0"
  ],
  "Confirm migration": [
   null,
@@ -283,13 +275,13 @@ return plural;
   null,
   "Rozłączono z konsoli szeregowej. Proszę kliknąć przycisk „Połącz ponownie”."
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
-  "Podłączenie dysku się nie powiodło: "
+  "Podłączenie dysku się nie powiodło"
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
-  "Utworzenie dysku się nie powiodło: "
+  "Utworzenie dysku się nie powiodło"
  ],
  "Disks": [
   null,
@@ -447,9 +439,9 @@ return plural;
   null,
   "Typ sieci"
  ],
- "Network settings failed to change with following error: ": [
+ "Network settings could not be saved": [
   null,
-  "Zmiana ustawień sieci się nie powiodła, wystąpił ten błąd: "
+  "Nie można zapisać ustawień sieci"
  ],
  "Networks": [
   null,
@@ -814,6 +806,10 @@ return plural;
  "Used": [
   null,
   "Używane"
+ ],
+ "VCPU settings could not be saved": [
+  null,
+  "Nie można zapisać ustawień wirtualnego procesora"
  ],
  "VDSM": [
   null,

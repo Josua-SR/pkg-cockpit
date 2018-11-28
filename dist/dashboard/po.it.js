@@ -143,10 +143,6 @@ return plural;
   null,
   "CPU"
  ],
- "Can't load image": [
-  null,
-  ""
- ],
  "Cancel": [
   null,
   "Annulla"
@@ -200,10 +196,6 @@ return plural;
   "Connetti"
  ],
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
-  null,
-  ""
- ],
- "Connection Error": [
   null,
   ""
  ],
@@ -511,10 +503,6 @@ return plural;
   null,
   ""
  ],
- "The user <b>$0</b> is not permitted to manage servers": [
-  null,
-  ""
- ],
  "This machine has already been added.": [
   null,
   ""
@@ -560,10 +548,6 @@ return plural;
   ""
  ],
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
-  null,
-  ""
- ],
- "You are currently connected directly to this server. You cannot delete it.": [
   null,
   ""
  ],

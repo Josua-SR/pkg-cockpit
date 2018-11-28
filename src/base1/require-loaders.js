@@ -2,7 +2,6 @@
     var module = { };
 
     module.load = function load(name, parentRequire, onload, config) {
-
         /* Predefined in the bundle */
         var predef = name + "_text";
         if (parentRequire.specified(predef)) {
@@ -15,14 +14,14 @@
         var xhr = new XMLHttpRequest();
         xhr.open("GET", parentRequire.toUrl(name), true);
         xhr.onreadystatechange = function () {
-            if (xhr.readyState != 4) {
-                return;
-            } else if (xhr.status == 200) {
-                onload(xhr.responseText);
-            } else if (xhr.statusText) {
-                onload.error(new Error(name + ": " + xhr.statusText));
-            } else {
-                onload.error(new Error(name + ": " + xhr.status + " error"));
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    onload(xhr.responseText);
+                } else if (xhr.statusText) {
+                    onload.error(new Error(name + ": " + xhr.statusText));
+                } else {
+                    onload.error(new Error(name + ": " + xhr.status + " error"));
+                }
             }
         };
         xhr.overrideMimeType("text/plain");
@@ -30,6 +29,6 @@
     };
 
     /* Define this under two names, one of which is more webpack compatible */
-    define('raw', module);
-    define('data', module);
+    define('raw', module); // eslint-disable-line no-undef
+    define('data', module); // eslint-disable-line no-undef
 }());

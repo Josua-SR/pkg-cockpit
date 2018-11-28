@@ -67,10 +67,6 @@ return plural;
   "language": "hr",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 Template": [
-  null,
-  ""
- ],
  "$0 is not available from any repository.": [
   null,
   ""
@@ -90,10 +86,6 @@ return plural;
  "1 hour": [
   null,
   "1 sat"
- ],
- "1 min": [
-  null,
-  ""
  ],
  "1 week": [
   null,
@@ -140,10 +132,6 @@ return plural;
   ""
  ],
  "1st": [
-  null,
-  ""
- ],
- "2 min": [
   null,
   ""
  ],
@@ -195,10 +183,6 @@ return plural;
   null,
   ""
  ],
- "3 min": [
-  null,
-  ""
- ],
  "30th": [
   null,
   ""
@@ -211,10 +195,6 @@ return plural;
   null,
   ""
  ],
- "4 min": [
-  null,
-  ""
- ],
  "40 Minutes": [
   null,
   ""
@@ -224,10 +204,6 @@ return plural;
   ""
  ],
  "5 Minutes": [
-  null,
-  ""
- ],
- "5 min": [
   null,
   ""
  ],
@@ -315,27 +291,11 @@ return plural;
   null,
   ""
  ],
- "Before": [
-  null,
-  ""
- ],
- "Binds To": [
-  null,
-  ""
- ],
  "Blade": [
   null,
   ""
  ],
  "Blade enclosure": [
-  null,
-  ""
- ],
- "Bound By": [
-  null,
-  ""
- ],
- "Bug Fix Updates Available": [
   null,
   ""
  ],
@@ -355,10 +315,6 @@ return plural;
   null,
   "Odustani"
  ],
- "Cannot schedule event in the past": [
-  null,
-  ""
- ],
  "Change": [
   null,
   ""
@@ -371,19 +327,11 @@ return plural;
   null,
   ""
  ],
- "Checking for updates…": [
-  null,
-  ""
- ],
  "Checking installed software": [
   null,
   ""
  ],
  "Class": [
-  null,
-  ""
- ],
- "Click to see system hardware information": [
   null,
   ""
  ],
@@ -399,23 +347,7 @@ return plural;
   null,
   ""
  ],
- "Condition $0=$1 was not met": [
-  null,
-  ""
- ],
  "Condition failed": [
-  null,
-  ""
- ],
- "Conflicted By": [
-  null,
-  ""
- ],
- "Conflicts": [
-  null,
-  ""
- ],
- "Consists Of": [
   null,
   ""
  ],
@@ -459,14 +391,6 @@ return plural;
   null,
   ""
  ],
- "Disable": [
-  null,
-  ""
- ],
- "Disabled": [
-  null,
-  "Onemogućen"
- ],
  "Disk I/O": [
   null,
   ""
@@ -491,23 +415,7 @@ return plural;
   null,
   ""
  ],
- "Enable": [
-  null,
-  ""
- ],
- "Enable Forcefully": [
-  null,
-  ""
- ],
  "Enable persistent metrics…": [
-  null,
-  ""
- ],
- "Enabled": [
-  null,
-  ""
- ],
- "Enhancement Updates Available": [
   null,
   ""
  ],
@@ -571,19 +479,11 @@ return plural;
   null,
   ""
  ],
- "Hour needs to be a number between 0-23": [
-  null,
-  ""
- ],
  "Hours": [
   null,
   ""
  ],
  "I/O Wait": [
-  null,
-  ""
- ],
- "Id": [
   null,
   ""
  ],
@@ -607,35 +507,11 @@ return plural;
   null,
   ""
  ],
- "Invalid date format": [
-  null,
-  ""
- ],
- "Invalid date format and invalid time format": [
-  null,
-  ""
- ],
- "Invalid date format.": [
-  null,
-  ""
- ],
- "Invalid number.": [
-  null,
-  ""
- ],
- "Invalid time format": [
-  null,
-  ""
- ],
  "Invalid time zone": [
   null,
   ""
  ],
  "IoT Gateway": [
-  null,
-  ""
- ],
- "Joins Namespace Of": [
   null,
   ""
  ],
@@ -664,10 +540,6 @@ return plural;
   ""
  ],
  "Last 7 days": [
-  null,
-  ""
- ],
- "Last Trigger": [
   null,
   ""
  ],
@@ -711,31 +583,15 @@ return plural;
   null,
   "Ručno"
  ],
- "Mask": [
-  null,
-  ""
- ],
- "Mask Forcefully": [
-  null,
-  ""
- ],
  "Memory": [
   null,
   "Memorija"
- ],
- "Message to logged in users": [
-  null,
-  ""
  ],
  "Mini PC": [
   null,
   ""
  ],
  "Mini Tower": [
-  null,
-  ""
- ],
- "Minute needs to be a number between 0-59": [
   null,
   ""
  ],
@@ -755,25 +611,13 @@ return plural;
   null,
   ""
  ],
- "NTP Server": [
-  null,
-  ""
- ],
  "Name": [
   null,
   "Naziv"
  ],
- "Need at least one NTP server": [
-  null,
-  ""
- ],
  "Network Traffic": [
   null,
   ""
- ],
- "Next Run": [
-  null,
-  "Sljedeće"
  ],
  "Nice": [
   null,
@@ -819,15 +663,7 @@ return plural;
   null,
   "Uključi"
  ],
- "On Failure": [
-  null,
-  "Neuspjelo"
- ],
  "Only Emergency": [
-  null,
-  ""
- ],
- "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
   ""
  ],
@@ -844,10 +680,6 @@ return plural;
   ""
  ],
  "PackageKit crashed": [
-  null,
-  ""
- ],
- "Part Of": [
   null,
   ""
  ],
@@ -875,14 +707,6 @@ return plural;
   null,
   ""
  ],
- "Preset": [
-  null,
-  ""
- ],
- "Preset Forcefully": [
-  null,
-  ""
- ],
  "Pretty Host Name": [
   null,
   ""
@@ -892,10 +716,6 @@ return plural;
   ""
  ],
  "Problem info": [
-  null,
-  ""
- ],
- "Propagates Reload To": [
   null,
   ""
  ],
@@ -911,27 +731,11 @@ return plural;
   null,
   ""
  ],
- "Real host name can only contain lower-case characters, digits, dashes, and periods (with populated subdomains)": [
-  null,
-  ""
- ],
- "Real host name must be 64 characters or less": [
-  null,
-  ""
- ],
  "Reboot": [
   null,
   ""
  ],
  "Recent": [
-  null,
-  ""
- ],
- "Reload": [
-  null,
-  ""
- ],
- "Reload Propagated From": [
   null,
   ""
  ],
@@ -979,22 +783,6 @@ return plural;
   null,
   ""
  ],
- "Required By": [
-  null,
-  ""
- ],
- "Requires": [
-  null,
-  ""
- ],
- "Requisite": [
-  null,
-  ""
- ],
- "Requisite Of": [
-  null,
-  ""
- ],
  "Reset": [
   null,
   ""
@@ -1027,10 +815,6 @@ return plural;
   null,
   ""
  ],
- "Security Updates Available": [
-  null,
-  ""
- ],
  "Service Logs": [
   null,
   ""
@@ -1040,10 +824,6 @@ return plural;
   ""
  ],
  "Services": [
-  null,
-  ""
- ],
- "Set Host name": [
   null,
   ""
  ],
@@ -1063,10 +843,6 @@ return plural;
   null,
   ""
  ],
- "Since $0": [
-  null,
-  ""
- ],
  "Slot": [
   null,
   ""
@@ -1083,23 +859,7 @@ return plural;
   null,
   ""
  ],
- "Start": [
-  null,
-  ""
- ],
- "State": [
-  null,
-  ""
- ],
- "Static": [
-  null,
-  ""
- ],
  "Stick PC": [
-  null,
-  ""
- ],
- "Stop": [
   null,
   ""
  ],
@@ -1139,19 +899,11 @@ return plural;
   null,
   ""
  ],
- "System Not Registered": [
-  null,
-  ""
- ],
  "System Services": [
   null,
   ""
  ],
  "System Time": [
-  null,
-  ""
- ],
- "System Up To Date": [
   null,
   ""
  ],
@@ -1164,42 +916,6 @@ return plural;
   ""
  ],
  "Terminal": [
-  null,
-  ""
- ],
- "The user <b>$0</b> does not have permissions for creating timers": [
-  null,
-  ""
- ],
- "The user <b>$0</b> is not permitted to change the system time": [
-  null,
-  ""
- ],
- "The user <b>$0</b> is not permitted to enable or disable services": [
-  null,
-  ""
- ],
- "The user <b>$0</b> is not permitted to modify hostnames": [
-  null,
-  ""
- ],
- "The user <b>$0</b> is not permitted to shutdown or restart this server": [
-  null,
-  ""
- ],
- "The user <b>$0</b> is not permitted to start or stop services": [
-  null,
-  ""
- ],
- "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
-  null,
-  ""
- ],
- "This field cannot be empty.": [
-  null,
-  ""
- ],
- "This unit is an instance of the $0 template.": [
   null,
   ""
  ],
@@ -1227,14 +943,6 @@ return plural;
   null,
   ""
  ],
- "Triggered By": [
-  null,
-  ""
- ],
- "Triggers": [
-  null,
-  ""
- ],
  "Trying to synchronize with {{Server}}": [
   null,
   ""
@@ -1250,20 +958,6 @@ return plural;
  "Unknown": [
   null,
   "Nepoznato"
- ],
- "Unmask": [
-  null,
-  ""
- ],
- "Updates Available": [
-  null,
-  ""
- ],
- "Usage of $0 CPU core": [
-  "Usage of $0 CPU cores",
-  "",
-  "",
-  ""
  ],
  "Used": [
   null,
@@ -1282,14 +976,6 @@ return plural;
   "Inačica"
  ],
  "Waiting for other software management operations to finish": [
-  null,
-  ""
- ],
- "Wanted By": [
-  null,
-  ""
- ],
- "Wants": [
   null,
   ""
  ],
@@ -1314,28 +1000,6 @@ return plural;
   ""
  ],
  "[no data]": [
-  null,
-  ""
- ],
- "failed to list ssh host keys: $0": [
-  null,
-  "Pokretanje Docker-a neuspjelo: $0"
- ],
- "of $0 CPU core": [
-  "of $0 CPU cores",
-  "",
-  "",
-  ""
- ],
- "unknown": [
-  null,
-  "Nepoznato"
- ],
- "page-title\u0004CPU Status": [
-  null,
-  ""
- ],
- "page-title\u0004Memory": [
   null,
   ""
  ]

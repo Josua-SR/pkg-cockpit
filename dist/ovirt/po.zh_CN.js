@@ -95,10 +95,6 @@ return plural;
   null,
   "地址："
  ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  "只有在停止和启动 VM 后，所有更改才会生效。"
- ],
  "All running virtual machines will be turned off.": [
   null,
   "将关闭所有正在运行的虚拟机。"
@@ -163,6 +159,10 @@ return plural;
   null,
   "容量"
  ],
+ "Changes will take effect after shutting down the VM": [
+  null,
+  ""
+ ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
   "点击 \"启动 Remote Viewer\" 将下载一个  .vv 文件并加载 $0。"
@@ -178,10 +178,6 @@ return plural;
  "Cluster Virtual Machines": [
   null,
   "集群虚拟机"
- ],
- "Confirm deletion of $0": [
-  null,
-  "确认删除 $0"
  ],
  "Confirm migration": [
   null,
@@ -279,13 +275,13 @@ return plural;
   null,
   "从串行控制台断开连接。单击“重新连接”按钮。"
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
-  "因为以下错误磁盘无法被附加： "
+  ""
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
-  "因为以下错误磁盘无法被创建："
+  ""
  ],
  "Disks": [
   null,
@@ -294,6 +290,10 @@ return plural;
  "Download the MSI from $0": [
   null,
   "从 $0 下载 MSI"
+ ],
+ "Edit": [
+  null,
+  "编辑"
  ],
  "Edit the vdsm.conf": [
   null,
@@ -391,6 +391,10 @@ return plural;
   null,
   "迁移操作失败"
  ],
+ "Mac Address": [
+  null,
+  ""
+ ],
  "Manual Connection": [
   null,
   "手动连接"
@@ -415,6 +419,10 @@ return plural;
   null,
   "迁移到："
  ],
+ "Model": [
+  null,
+  "型号"
+ ],
  "Model type": [
   null,
   "型号类型"
@@ -426,6 +434,14 @@ return plural;
  "Name": [
   null,
   "名称"
+ ],
+ "Network Type": [
+  null,
+  ""
+ ],
+ "Network settings could not be saved": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -462,6 +478,10 @@ return plural;
  "No oVirt connection": [
   null,
   "没有 oVirt 连接"
+ ],
+ "No virtual networks": [
+  null,
+  ""
  ],
  "Number of virtual CPUs that gonna be used.": [
   null,
@@ -786,6 +806,10 @@ return plural;
  "Used": [
   null,
   "已使用"
+ ],
+ "VCPU settings could not be saved": [
+  null,
+  ""
  ],
  "VDSM": [
   null,

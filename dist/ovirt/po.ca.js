@@ -95,10 +95,6 @@ return plural;
   null,
   "Adreça:"
  ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  ""
- ],
  "All running virtual machines will be turned off.": [
   null,
   "S'apagaran totes les màquines virtuals."
@@ -163,6 +159,10 @@ return plural;
   null,
   "Capacitat"
  ],
+ "Changes will take effect after shutting down the VM": [
+  null,
+  ""
+ ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
   ""
@@ -178,10 +178,6 @@ return plural;
  "Cluster Virtual Machines": [
   null,
   "Màquines virtuals del clúster"
- ],
- "Confirm deletion of $0": [
-  null,
-  "Confirma la supressió de $0"
  ],
  "Confirm migration": [
   null,
@@ -279,11 +275,11 @@ return plural;
   null,
   ""
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
   ""
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
   ""
  ],
@@ -294,6 +290,10 @@ return plural;
  "Download the MSI from $0": [
   null,
   "Baixa el MSI de $0"
+ ],
+ "Edit": [
+  null,
+  "Edita"
  ],
  "Edit the vdsm.conf": [
   null,
@@ -391,6 +391,10 @@ return plural;
   null,
   "Ha fallat l'acció MIGRATE"
  ],
+ "Mac Address": [
+  null,
+  ""
+ ],
  "Manual Connection": [
   null,
   "Connexió manual"
@@ -415,6 +419,10 @@ return plural;
   null,
   "Migra a:"
  ],
+ "Model": [
+  null,
+  "Model"
+ ],
  "Model type": [
   null,
   "Tipus de model"
@@ -426,6 +434,14 @@ return plural;
  "Name": [
   null,
   "Nom"
+ ],
+ "Network Type": [
+  null,
+  ""
+ ],
+ "Network settings could not be saved": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -460,6 +476,10 @@ return plural;
   "No s'ha definit cap interfície de xarxa per aquesta MV"
  ],
  "No oVirt connection": [
+  null,
+  ""
+ ],
+ "No virtual networks": [
   null,
   ""
  ],
@@ -786,6 +806,10 @@ return plural;
  "Used": [
   null,
   "Utilitzat"
+ ],
+ "VCPU settings could not be saved": [
+  null,
+  ""
  ],
  "VDSM": [
   null,

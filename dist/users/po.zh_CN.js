@@ -123,6 +123,10 @@ return plural;
   null,
   "确认新密码"
  ],
+ "Container Administrator": [
+  null,
+  "容器管理员"
+ ],
  "Create": [
   null,
   "创建"
@@ -135,13 +139,29 @@ return plural;
   null,
   "删除"
  ],
+ "Delete $0": [
+  null,
+  "删除 $0"
+ ],
  "Delete Files": [
   null,
   "删除文件"
  ],
+ "Error": [
+  null,
+  "错误"
+ ],
  "Error saving authorized keys: ": [
   null,
   "保存授权密钥时出错: "
+ ],
+ "Excellent password": [
+  null,
+  "密码强度良好"
+ ],
+ "Failed to change password": [
+  null,
+  "修改密码失败"
  ],
  "Failed to load authorized keys.": [
   null,
@@ -159,9 +179,21 @@ return plural;
   null,
   "全名"
  ],
+ "Image Builder": [
+  null,
+  "图像生成器"
+ ],
+ "Invalid expiration date": [
+  null,
+  "无效的过期时间"
+ ],
  "Invalid key": [
   null,
   "无效的 key"
+ ],
+ "Invalid number of days": [
+  null,
+  "无效的天数"
  ],
  "Last Login": [
   null,
@@ -175,6 +207,18 @@ return plural;
   null,
   "锁定账户"
  ],
+ "Lock account on $0": [
+  null,
+  "锁定 $0 上的账号"
+ ],
+ "Logged In": [
+  null,
+  "登录"
+ ],
+ "Never": [
+  null,
+  "从不"
+ ],
  "Never expire password": [
   null,
   "密码从不过期"
@@ -187,6 +231,18 @@ return plural;
   null,
   "新密码"
  ],
+ "New password was not accepted": [
+  null,
+  "新密码不被接受"
+ ],
+ "No real name specified": [
+  null,
+  "未指定真实姓名"
+ ],
+ "No user name specified": [
+  null,
+  "未指定用户名"
+ ],
  "Off": [
   null,
   "关"
@@ -194,6 +250,10 @@ return plural;
  "Old Password": [
   null,
   "旧密码"
+ ],
+ "Old password not accepted": [
+  null,
+  "旧密码不被接受"
  ],
  "On": [
   null,
@@ -207,9 +267,37 @@ return plural;
   null,
   "密码过期"
  ],
+ "Password is not acceptable": [
+  null,
+  "不接受该密码"
+ ],
+ "Password is too weak": [
+  null,
+  "密码太弱"
+ ],
+ "Password must be changed": [
+  null,
+  "密码必须被修改"
+ ],
  "Paste the contents of your public SSH key file here": [
   null,
   "在这里粘贴 SSH 公钥文件内容"
+ ],
+ "Please specify an expiration date": [
+  null,
+  "请指定一个过期时间"
+ ],
+ "Prompting via passwd timed out": [
+  null,
+  "通过密码提示已超时"
+ ],
+ "Require password change every $0 days": [
+  null,
+  "要求每 $0 天修改密码"
+ ],
+ "Require password change on $0": [
+  null,
+  "要求于 $0 修改密码"
  ],
  "Reset": [
   null,
@@ -218,6 +306,10 @@ return plural;
  "Roles": [
   null,
   "角色"
+ ],
+ "Server Administrator": [
+  null,
+  "服务器管理员"
  ],
  "Set": [
   null,
@@ -231,13 +323,45 @@ return plural;
   null,
   "终止会话"
  ],
+ "The account '$0' will be forced to change their password on next login": [
+  null,
+  "账号 '$0' 将在下次登录时被强制变更其密码"
+ ],
  "The key you provided was not valid.": [
   null,
   "您提供的 key 是无效的."
  ],
+ "The passwords do not match": [
+  null,
+  "密码不匹配"
+ ],
+ "The user <b>$0</b> is not permitted to modify accounts": [
+  null,
+  "用户 <b>$0</b> 不允许修改账户"
+ ],
+ "The user name can only consist of letters from a-z, digits, dots, dashes and underscores.": [
+  null,
+  "用户名仅能包含 a-z、数字、点、破折号和下划线的字母。"
+ ],
  "There are no authorized public keys for this account.": [
   null,
   "没有这个帐户的授权公钥."
+ ],
+ "This user name already exists": [
+  null,
+  "用户名已存在"
+ ],
+ "Unable to delete root account": [
+  null,
+  "不能删除 root 账户"
+ ],
+ "Unable to rename root account": [
+  null,
+  "不能重命名 root 账户"
+ ],
+ "Unexpected error": [
+  null,
+  "意外的错误"
  ],
  "Unnamed": [
   null,
@@ -258,5 +382,9 @@ return plural;
  "translatable": [
   null,
   "翻译"
+ ],
+ "page-title\u0004Accounts": [
+  null,
+  "账户"
  ]
 }));

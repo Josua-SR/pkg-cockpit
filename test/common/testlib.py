@@ -42,7 +42,10 @@ import unittest
 import gzip
 
 import tap
-import testvm
+try:
+    from machine_core import testvm
+except ImportError:
+    import testvm
 import cdp
 
 TEST_DIR = os.path.normpath(os.path.dirname(os.path.realpath(os.path.join(__file__, ".."))))
@@ -228,25 +231,62 @@ class Browser:
     def blur(self, selector):
         self.call_js_func('ph_blur', selector)
 
-    def key_press(self, keys):
-        for k in keys:
-            if k == "Backspace":
-                self.cdp.invoke("Input.dispatchKeyEvent", type="keyDown", windowsVirtualKeyCode=8)
-            elif k.isalnum():
-                self.cdp.invoke("Input.dispatchKeyEvent", type="char", text=k, key=k)
-            else:
-                self.cdp.invoke("Input.dispatchKeyEvent", type="char", text=k)
+    def key_press(self, keys, modifiers=0):
+        for key in keys:
+            args = { "type":"keyDown", "modifiers":modifiers }
 
-    def set_input_text(self, selector, val):
-        self.set_val(selector, "")
+            # If modifiers are used we need to pass windowsVirtualKeyCode which is
+            # basically the asci decimal representation of the key
+            args["text"] = key
+            if (not key.isalnum() and ord(key) < 32) or modifiers != 0:
+                args["windowsVirtualKeyCode"] = ord(key.upper())
+            else:
+                args["key"] = key
+
+            self.cdp.invoke("Input.dispatchKeyEvent", **args)
+
+    def select_from_dropdown(self, selector, value):
+        button_text_selector = "{0} button span:nth-of-type(1)".format(selector)
+
+        self.wait_visible(selector)
+        if not self.text(button_text_selector) == value:
+            item_selector = "{0} ul li[data-value*='{1}'] a".format(selector, value)
+            self.click(selector)
+            self.wait_present(item_selector)
+            self.wait_visible(item_selector)
+            self.click(item_selector)
+            self.wait_in_text(button_text_selector, value)
+
+    def set_input_text(self, selector, val, append=False):
         self.focus(selector)
+        if not append:
+            self.key_press("a", 2) # Ctrl + a
         if val == "":
-            # We need some real action for React to emit change signals
-            self.key_press([ " ", "Backspace" ])
+            self.key_press("\b") # Backspace
         else:
             self.key_press(val)
+
         self.wait_val(selector, val)
         self.blur(selector)
+
+    def set_file_autocomplete_val(self, selector, location):
+        caret_selector = "{0} span.caret".format(selector)
+        spinner_selector = "{0} .spinner".format(selector)
+        file_item_selector_template = "{0} ul li a:contains({1})"
+
+        self.wait_present(selector)
+        self.wait_visible(selector)
+
+        for path_part in filter(None, location.split('/')):
+            self.wait_not_present(spinner_selector)
+            file_item_selector = file_item_selector_template.format(selector, path_part)
+            if not self.is_present(file_item_selector) or not self.is_visible(file_item_selector):
+                self.click(caret_selector)
+            self.wait_visible(file_item_selector)
+            self.click(file_item_selector)
+
+        self.wait_not_present(spinner_selector)
+        self.wait_val(selector + " input", location)
 
     def wait_timeout(self, timeout):
         browser = self
@@ -535,7 +575,10 @@ class MachineCase(unittest.TestCase):
         return label.replace(".", "-")
 
     def new_machine(self, image=None, forward={ }, **kwargs):
-        import testvm
+        try:
+            from machine_core import testvm
+        except ImportError:
+            import testvm
         machine_class = self.machine_class
         if image is None:
             image = self.image
@@ -767,6 +810,7 @@ class MachineCase(unittest.TestCase):
     allowed_console_errors = [
         # HACK: These should be fixed, but debugging these is not trivial, and the impact is very low
         "Warning: .* setState.*on an unmounted component",
+        "Warning: Can't perform a React state update on an unmounted component."
     ]
 
     def allow_journal_messages(self, *patterns):

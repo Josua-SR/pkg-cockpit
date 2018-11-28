@@ -223,10 +223,6 @@ return plural;
   null,
   "Nastavení se nedaří uplatnit: $0"
  ],
- "Use the setting in /etc/kdump.conf": [
-  null,
-  "Použít nastavení v /etc/kdump.conf"
- ],
  "invalid: multiple targets defined": [
   null,
   "neplatné: definováno vícero cílů"
@@ -239,9 +235,21 @@ return plural;
   null,
   "místně v $0"
  ],
+ "nfs dump target isn't formated as server:path": [
+  null,
+  "cíl výpisu nfs nemá podobu server:umisteni"
+ ],
  "ssh key": [
   null,
   "ssh klíč"
+ ],
+ "ssh key isn't a path": [
+  null,
+  "v kolonce ssh klíč není vyplněné jeho umístění"
+ ],
+ "ssh server is empty": [
+  null,
+  "není vyplněná kolonka ssh server"
  ],
  "undefined": [
   null,

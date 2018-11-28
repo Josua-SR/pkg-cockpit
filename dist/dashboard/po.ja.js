@@ -143,10 +143,6 @@ return plural;
   null,
   "CPU"
  ],
- "Can't load image": [
-  null,
-  "画像を読み込めません。"
- ],
  "Cancel": [
   null,
   "取り消し"
@@ -202,10 +198,6 @@ return plural;
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
   "{{ limit }} 台を超えるマシンへの同時接続はサポートされていません。"
- ],
- "Connection Error": [
-  null,
-  "接続エラー"
  ],
  "Convertible": [
   null,
@@ -511,10 +503,6 @@ return plural;
   null,
   "パスワードが一致しません。"
  ],
- "The user <b>$0</b> is not permitted to manage servers": [
-  null,
-  "ユーザー <b>$0</b> はサーバーを管理することを許可されていません"
- ],
  "This machine has already been added.": [
   null,
   "このマシンはすでに追加されています。"
@@ -562,10 +550,6 @@ return plural;
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
   "{{#strong}}{{host}}{{/strong}} に接続されていますが、ユーザーを同期するには、スーパーユーザー権限を持つユーザーが必要です。"
- ],
- "You are currently connected directly to this server. You cannot delete it.": [
-  null,
-  "現在このサーバーに直接接続されています。削除できません。"
  ],
  "You can remove the previously stored key by running the following command": [
   null,

@@ -375,11 +375,11 @@ return plural;
  ],
  "bug fix": [
   null,
-  ""
+  "oprava chyby"
  ],
  "enhancement": [
   null,
-  ""
+  "vylepšení"
  ],
  "every day": [
   null,
@@ -415,7 +415,7 @@ return plural;
  ],
  "security": [
   null,
-  ""
+  "zabezpečení"
  ],
  "undefined": [
   null,

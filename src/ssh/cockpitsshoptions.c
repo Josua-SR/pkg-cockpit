@@ -21,7 +21,6 @@
 
 #include "cockpitsshoptions.h"
 
-static const gchar *default_knownhosts = PACKAGE_SYSCONF_DIR "/ssh/ssh_known_hosts";
 static const gchar *default_command = "cockpit-bridge";
 
 static gboolean
@@ -100,24 +99,10 @@ cockpit_ssh_options_from_env (gchar **env)
 {
 
   CockpitSshOptions *options = g_new0 (CockpitSshOptions, 1);
-  options->knownhosts_file = get_environment_val (env, "COCKPIT_SSH_KNOWN_HOSTS_FILE",
-                                                  default_knownhosts);
+  options->knownhosts_file = get_environment_val (env, "COCKPIT_SSH_KNOWN_HOSTS_FILE", NULL);
   options->command = get_environment_val (env, "COCKPIT_SSH_BRIDGE_COMMAND", default_command);
   options->remote_peer = get_environment_val (env, "COCKPIT_REMOTE_PEER", "localhost");
   options->connect_to_unknown_hosts = get_connect_to_unknown_hosts (env);
-
-  /* HACK: Set to receive an authorize challenge if the host is unknown, before
-   * connecting to the host. This is done in cockpit-bridge (via
-   * pkg/ssh/manifest.json.in), but not for direct URL logins in cockpit-ws.
-   * This is an internal hack to mimic the obsolete magic
-   * COCKPIT_SSH_KNOWN_HOSTS_DATA=authorize mode, until cockpit-ws starts to
-   * set this through the JSON protocol.*/
-  options->challenge_unknown_host_preconnect =
-    get_environment_bool (env, "COCKPIT_SSH_CHALLENGE_UNKNOWN_HOST_PRECONNECT", FALSE);
-  if (!has_environment_val (env, "COCKPIT_SSH_CHALLENGE_UNKNOWN_HOST_PRECONNECT") &&
-      g_str_equal (get_environment_val (env, "COCKPIT_SSH_KNOWN_HOSTS_DATA", ""),
-                   "authorize"))
-    options->challenge_unknown_host_preconnect = TRUE;
 
   return options;
 }
@@ -128,8 +113,6 @@ cockpit_ssh_options_to_env (CockpitSshOptions *options,
 {
   env = set_environment_bool (env, "COCKPIT_SSH_CONNECT_TO_UNKNOWN_HOSTS",
                               options->connect_to_unknown_hosts);
-  env = set_environment_bool (env, "COCKPIT_SSH_CHALLENGE_UNKNOWN_HOST_PRECONNECT",
-                              options->challenge_unknown_host_preconnect);
   env = set_environment_val (env, "COCKPIT_SSH_KNOWN_HOSTS_FILE",
                              options->knownhosts_file);
   env = set_environment_val (env, "COCKPIT_REMOTE_PEER",
@@ -143,10 +126,4 @@ cockpit_ssh_options_to_env (CockpitSshOptions *options,
     }
 
   return env;
-}
-
-const gchar *
-cockpit_get_default_knownhosts (void)
-{
-  return default_knownhosts;
 }

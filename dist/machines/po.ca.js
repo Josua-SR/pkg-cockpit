@@ -71,10 +71,6 @@ return plural;
   null,
   "$0 està disponible per a la majoria de sistemes operatius. Per instal·lar-ho, cerqueu-ho a GNOME Software o executeu el següent:"
  ],
- "$0 vCPU Details": [
-  null,
-  ""
- ],
  "Add": [
   null,
   "Afegeix"
@@ -90,10 +86,6 @@ return plural;
  "Address:": [
   null,
   "Adreça:"
- ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  ""
  ],
  "Apply": [
   null,
@@ -139,13 +131,13 @@ return plural;
   null,
   "Capacitat"
  ],
- "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
+ "Changes will take effect after shutting down the VM": [
   null,
   ""
  ],
- "Confirm deletion of $0": [
+ "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  "Confirma la supressió de $0"
+  ""
  ],
  "Connect with any $0 viewer application.": [
   null,
@@ -187,13 +179,9 @@ return plural;
   null,
   ""
  ],
- "Create New VM": [
+ "Create VM": [
   null,
-  "Crea una MV nova"
- ],
- "Create New Virtual Machine": [
-  null,
-  "Crea una màquina virtual nova"
+  "Crea la MV"
  ],
  "Creation of vm $0 failed": [
   null,
@@ -227,11 +215,11 @@ return plural;
   null,
   ""
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
   ""
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
   ""
  ],
@@ -242,6 +230,10 @@ return plural;
  "Download the MSI from $0": [
   null,
   "Baixa el MSI de $0"
+ ],
+ "Edit": [
+  null,
+  "Edita"
  ],
  "Emulated Machine:": [
   null,
@@ -331,6 +323,10 @@ return plural;
   null,
   "Adreça MAC"
  ],
+ "Mac Address": [
+  null,
+  ""
+ ],
  "Manual Connection": [
   null,
   "Connexió manual"
@@ -355,6 +351,10 @@ return plural;
   null,
   "MiB"
  ],
+ "Model": [
+  null,
+  "Model"
+ ],
  "Model type": [
   null,
   "Tipus de model"
@@ -375,11 +375,23 @@ return plural;
   null,
   ""
  ],
+ "Network Type": [
+  null,
+  ""
+ ],
+ "Network settings could not be saved": [
+  null,
+  ""
+ ],
  "Networks": [
   null,
   "Xarxes"
  ],
  "New Volume Name": [
+  null,
+  ""
+ ],
+ "No Storage Volumes defined for this Storage Pool": [
   null,
   ""
  ],
@@ -407,13 +419,17 @@ return plural;
   null,
   "No s'ha definit cap interfície de xarxa per aquesta MV"
  ],
- "OS Vendor": [
+ "No storage pool is defined on this host": [
   null,
   ""
  ],
- "Ok": [
+ "No virtual networks": [
   null,
-  "D'acord"
+  ""
+ ],
+ "OS Vendor": [
+  null,
+  ""
  ],
  "Operating System": [
   null,
@@ -463,6 +479,14 @@ return plural;
   null,
   "Protocol"
  ],
+ "QEMU/KVM System connection": [
+  null,
+  ""
+ ],
+ "QEMU/KVM User connection": [
+  null,
+  ""
+ ],
  "Readonly": [
   null,
   "NomésLectura"
@@ -483,14 +507,6 @@ return plural;
   null,
   "Executa"
  ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  ""
- ],
- "SET_VCPU_SETTINGS action failed": [
-  null,
-  ""
- ],
  "SPICE": [
   null,
   "SPICE"
@@ -506,6 +522,10 @@ return plural;
  "SPICE TLS Port:": [
   null,
   "Port TLS SPICE:"
+ ],
+ "Save": [
+  null,
+  "Desa"
  ],
  "Send Non-Maskable Interrupt": [
   null,
@@ -555,6 +575,10 @@ return plural;
   null,
   "Estat"
  ],
+ "Storage Pools": [
+  null,
+  ""
+ ],
  "Storage Size": [
   null,
   "Mida de l'emmagatzematge"
@@ -562,6 +586,10 @@ return plural;
  "Storage Size should not be negative number": [
   null,
   "La mida de l'emmagatzematge no pot ser un número negatiu"
+ ],
+ "Storage Volumes": [
+  null,
+  ""
  ],
  "System": [
   null,
@@ -655,6 +683,10 @@ return plural;
   null,
   "Utilitzat"
  ],
+ "VCPU settings could not be saved": [
+  null,
+  ""
+ ],
  "VM CHANGE_NETWORK_STATE action failed": [
   null,
   ""
@@ -735,6 +767,10 @@ return plural;
   null,
   "Volum"
  ],
+ "active": [
+  null,
+  "actiu"
+ ],
  "bridge": [
   null,
   "pont"
@@ -790,6 +826,10 @@ return plural;
  "idle": [
   null,
   "ociós"
+ ],
+ "inactive": [
+  null,
+  "inactiu"
  ],
  "mcast": [
   null,

@@ -87,11 +87,11 @@ return plural;
   null,
   "Disk I/O"
  ],
- "Address:": [
+ "Address": [
   null,
   ""
  ],
- "All changes will take effect only after stopping and starting the VM.": [
+ "Address:": [
   null,
   ""
  ],
@@ -139,6 +139,10 @@ return plural;
   null,
   ""
  ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  ""
+ ],
  "CPU Type:": [
   null,
   ""
@@ -155,6 +159,10 @@ return plural;
   null,
   ""
  ],
+ "Changes will take effect after shutting down the VM": [
+  null,
+  ""
+ ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
   ""
@@ -168,10 +176,6 @@ return plural;
   ""
  ],
  "Cluster Virtual Machines": [
-  null,
-  ""
- ],
- "Confirm deletion of $0": [
   null,
   ""
  ],
@@ -196,6 +200,10 @@ return plural;
   ""
  ],
  "Connect with any SPICE or VNC viewer application.": [
+  null,
+  ""
+ ],
+ "Connecting": [
   null,
   ""
  ],
@@ -231,6 +239,10 @@ return plural;
   null,
   ""
  ],
+ "Ctrl+Alt+Del": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   ""
@@ -255,15 +267,19 @@ return plural;
   null,
   ""
  ],
+ "Disconnected": [
+  null,
+  ""
+ ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
   ""
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
   ""
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
   ""
  ],
@@ -272,6 +288,10 @@ return plural;
   "Disk I/O"
  ],
  "Download the MSI from $0": [
+  null,
+  ""
+ ],
+ "Edit": [
   null,
   ""
  ],
@@ -308,6 +328,10 @@ return plural;
   ""
  ],
  "Format": [
+  null,
+  ""
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
   null,
   ""
  ],
@@ -359,7 +383,15 @@ return plural;
   null,
   ""
  ],
+ "MAC Address": [
+  null,
+  ""
+ ],
  "MIGRATE action failed": [
+  null,
+  ""
+ ],
+ "Mac Address": [
   null,
   ""
  ],
@@ -387,6 +419,14 @@ return plural;
   null,
   ""
  ],
+ "Model": [
+  null,
+  ""
+ ],
+ "Model type": [
+  null,
+  ""
+ ],
  "More Information": [
   null,
   "Indstillinger"
@@ -394,6 +434,14 @@ return plural;
  "Name": [
   null,
   "Værtsnavn"
+ ],
+ "Network Type": [
+  null,
+  "Netværks Traffik"
+ ],
+ "Network settings could not be saved": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -423,7 +471,15 @@ return plural;
   null,
   ""
  ],
+ "No network interfaces defined for this VM": [
+  null,
+  ""
+ ],
  "No oVirt connection": [
+  null,
+  ""
+ ],
+ "No virtual networks": [
   null,
   ""
  ],
@@ -488,6 +544,10 @@ return plural;
   ""
  ],
  "Please wait till list of templates is loaded from the server.": [
+  null,
+  ""
+ ],
+ "Plug": [
   null,
   ""
  ],
@@ -591,7 +651,7 @@ return plural;
   null,
   ""
  ],
- "Send shortcut": [
+ "Send key": [
   null,
   ""
  ],
@@ -719,7 +779,15 @@ return plural;
   null,
   ""
  ],
- "Threads per cores": [
+ "Threads per core": [
+  null,
+  ""
+ ],
+ "Type": [
+  null,
+  ""
+ ],
+ "Unplug": [
   null,
   ""
  ],
@@ -739,6 +807,10 @@ return plural;
   null,
   ""
  ],
+ "VCPU settings could not be saved": [
+  null,
+  ""
+ ],
  "VDSM": [
   null,
   ""
@@ -746,6 +818,38 @@ return plural;
  "VDSM Service Management": [
   null,
   "Værtsnavn"
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  ""
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  ""
+ ],
+ "VM START action failed": [
+  null,
+  ""
  ],
  "VM icon": [
   null,
@@ -784,10 +888,6 @@ return plural;
   ""
  ],
  "Volume": [
-  null,
-  ""
- ],
- "Your browser does not support iframes.": [
   null,
   ""
  ],

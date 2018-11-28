@@ -217,7 +217,7 @@ return plural;
  ],
  "Dashboard": [
   null,
-  "Nástěnka"
+  "Přehled"
  ],
  "Desktop": [
   null,
@@ -329,7 +329,7 @@ return plural;
  ],
  "Log In": [
   null,
-  "Přihlášení"
+  "Přihlásit"
  ],
  "Log in to {{host}}": [
   null,
@@ -465,7 +465,7 @@ return plural;
  ],
  "Set": [
   null,
-  "Sada"
+  "Nastavit"
  ],
  "Space-saving Computer": [
   null,
@@ -566,9 +566,5 @@ return plural;
  "You are currently connected directly to this server. You cannot delete it.": [
   null,
   "V tuto chvíli jste připojení přímo na tento server. Nemůžete ho proto smazat."
- ],
- "You can remove the previously stored key by running the following command": [
-  null,
-  "Už uložený klíč je možné odebrat spuštěním následujícího příkazu"
  ]
 }));

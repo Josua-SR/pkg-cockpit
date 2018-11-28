@@ -67,10 +67,6 @@ return plural;
   "language": "zh_TW",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 Template": [
-  null,
-  ""
- ],
  "$0 is not available from any repository.": [
   null,
   ""
@@ -88,10 +84,6 @@ return plural;
   ""
  ],
  "1 hour": [
-  null,
-  ""
- ],
- "1 min": [
   null,
   ""
  ],
@@ -143,10 +135,6 @@ return plural;
   null,
   ""
  ],
- "2 min": [
-  null,
-  ""
- ],
  "20 Minutes": [
   null,
   ""
@@ -195,10 +183,6 @@ return plural;
   null,
   ""
  ],
- "3 min": [
-  null,
-  ""
- ],
  "30th": [
   null,
   ""
@@ -211,10 +195,6 @@ return plural;
   null,
   ""
  ],
- "4 min": [
-  null,
-  ""
- ],
  "40 Minutes": [
   null,
   ""
@@ -224,10 +204,6 @@ return plural;
   ""
  ],
  "5 Minutes": [
-  null,
-  ""
- ],
- "5 min": [
   null,
   ""
  ],
@@ -315,27 +291,11 @@ return plural;
   null,
   ""
  ],
- "Before": [
-  null,
-  "之前"
- ],
- "Binds To": [
-  null,
-  ""
- ],
  "Blade": [
   null,
   ""
  ],
  "Blade enclosure": [
-  null,
-  ""
- ],
- "Bound By": [
-  null,
-  ""
- ],
- "Bug Fix Updates Available": [
   null,
   ""
  ],
@@ -355,10 +315,6 @@ return plural;
   null,
   "取消"
  ],
- "Cannot schedule event in the past": [
-  null,
-  ""
- ],
  "Change": [
   null,
   "改變"
@@ -371,10 +327,6 @@ return plural;
   null,
   ""
  ],
- "Checking for updates…": [
-  null,
-  ""
- ],
  "Checking installed software": [
   null,
   ""
@@ -382,10 +334,6 @@ return plural;
  "Class": [
   null,
   "類別"
- ],
- "Click to see system hardware information": [
-  null,
-  ""
  ],
  "Close": [
   null,
@@ -399,23 +347,7 @@ return plural;
   null,
   ""
  ],
- "Condition $0=$1 was not met": [
-  null,
-  ""
- ],
  "Condition failed": [
-  null,
-  ""
- ],
- "Conflicted By": [
-  null,
-  ""
- ],
- "Conflicts": [
-  null,
-  "衝突"
- ],
- "Consists Of": [
   null,
   ""
  ],
@@ -459,14 +391,6 @@ return plural;
   null,
   ""
  ],
- "Disable": [
-  null,
-  "停用"
- ],
- "Disabled": [
-  null,
-  "已停用"
- ],
  "Disk I/O": [
   null,
   "磁碟 I/O"
@@ -491,23 +415,7 @@ return plural;
   null,
   ""
  ],
- "Enable": [
-  null,
-  "啟用"
- ],
- "Enable Forcefully": [
-  null,
-  ""
- ],
  "Enable persistent metrics…": [
-  null,
-  ""
- ],
- "Enabled": [
-  null,
-  "已啟用"
- ],
- "Enhancement Updates Available": [
   null,
   ""
  ],
@@ -567,10 +475,6 @@ return plural;
   null,
   ""
  ],
- "Hour needs to be a number between 0-23": [
-  null,
-  ""
- ],
  "Hours": [
   null,
   "時"
@@ -578,10 +482,6 @@ return plural;
  "I/O Wait": [
   null,
   ""
- ],
- "Id": [
-  null,
-  "ID"
  ],
  "Info and above": [
   null,
@@ -603,35 +503,11 @@ return plural;
   null,
   ""
  ],
- "Invalid date format": [
-  null,
-  ""
- ],
- "Invalid date format and invalid time format": [
-  null,
-  ""
- ],
- "Invalid date format.": [
-  null,
-  ""
- ],
- "Invalid number.": [
-  null,
-  ""
- ],
- "Invalid time format": [
-  null,
-  ""
- ],
  "Invalid time zone": [
   null,
   ""
  ],
  "IoT Gateway": [
-  null,
-  ""
- ],
- "Joins Namespace Of": [
   null,
   ""
  ],
@@ -660,10 +536,6 @@ return plural;
   ""
  ],
  "Last 7 days": [
-  null,
-  ""
- ],
- "Last Trigger": [
   null,
   ""
  ],
@@ -707,14 +579,6 @@ return plural;
   null,
   ""
  ],
- "Mask": [
-  null,
-  "遮罩"
- ],
- "Mask Forcefully": [
-  null,
-  ""
- ],
  "Memory": [
   null,
   "記憶體"
@@ -723,19 +587,11 @@ return plural;
   null,
   ""
  ],
- "Message to logged in users": [
-  null,
-  ""
- ],
  "Mini PC": [
   null,
   ""
  ],
  "Mini Tower": [
-  null,
-  ""
- ],
- "Minute needs to be a number between 0-59": [
   null,
   ""
  ],
@@ -755,23 +611,11 @@ return plural;
   null,
   ""
  ],
- "NTP Server": [
-  null,
-  ""
- ],
  "Name": [
   null,
   "名稱"
  ],
- "Need at least one NTP server": [
-  null,
-  ""
- ],
  "Network Traffic": [
-  null,
-  ""
- ],
- "Next Run": [
   null,
   ""
  ],
@@ -819,15 +663,7 @@ return plural;
   null,
   "開"
  ],
- "On Failure": [
-  null,
-  ""
- ],
  "Only Emergency": [
-  null,
-  ""
- ],
- "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
   ""
  ],
@@ -844,10 +680,6 @@ return plural;
   "PCI"
  ],
  "PackageKit crashed": [
-  null,
-  ""
- ],
- "Part Of": [
   null,
   ""
  ],
@@ -875,14 +707,6 @@ return plural;
   null,
   ""
  ],
- "Preset": [
-  null,
-  ""
- ],
- "Preset Forcefully": [
-  null,
-  ""
- ],
  "Pretty Host Name": [
   null,
   ""
@@ -892,10 +716,6 @@ return plural;
   ""
  ],
  "Problem info": [
-  null,
-  ""
- ],
- "Propagates Reload To": [
   null,
   ""
  ],
@@ -911,14 +731,6 @@ return plural;
   null,
   ""
  ],
- "Real host name can only contain lower-case characters, digits, dashes, and periods (with populated subdomains)": [
-  null,
-  ""
- ],
- "Real host name must be 64 characters or less": [
-  null,
-  ""
- ],
  "Reboot": [
   null,
   "重新開機"
@@ -926,14 +738,6 @@ return plural;
  "Recent": [
   null,
   "最近開啟"
- ],
- "Reload": [
-  null,
-  "重新載入"
- ],
- "Reload Propagated From": [
-  null,
-  ""
  ],
  "Removals:": [
   null,
@@ -979,22 +783,6 @@ return plural;
   null,
   ""
  ],
- "Required By": [
-  null,
-  ""
- ],
- "Requires": [
-  null,
-  "需要"
- ],
- "Requisite": [
-  null,
-  ""
- ],
- "Requisite Of": [
-  null,
-  ""
- ],
  "Reset": [
   null,
   "重設"
@@ -1027,10 +815,6 @@ return plural;
   null,
   ""
  ],
- "Security Updates Available": [
-  null,
-  ""
- ],
  "Service Logs": [
   null,
   ""
@@ -1042,10 +826,6 @@ return plural;
  "Services": [
   null,
   "服務"
- ],
- "Set Host name": [
-  null,
-  ""
  ],
  "Set Time": [
   null,
@@ -1063,10 +843,6 @@ return plural;
   null,
   "關機"
  ],
- "Since $0": [
-  null,
-  ""
- ],
  "Slot": [
   null,
   ""
@@ -1083,25 +859,9 @@ return plural;
   null,
   ""
  ],
- "Start": [
-  null,
-  "開始"
- ],
- "State": [
-  null,
-  "狀態"
- ],
- "Static": [
-  null,
-  "靜態"
- ],
  "Stick PC": [
   null,
   ""
- ],
- "Stop": [
-  null,
-  "停止"
  ],
  "Store Performance Data": [
   null,
@@ -1139,19 +899,11 @@ return plural;
   null,
   "系統資訊"
  ],
- "System Not Registered": [
-  null,
-  ""
- ],
  "System Services": [
   null,
   ""
  ],
  "System Time": [
-  null,
-  ""
- ],
- "System Up To Date": [
   null,
   ""
  ],
@@ -1166,42 +918,6 @@ return plural;
  "Terminal": [
   null,
   "終端機"
- ],
- "The user <b>$0</b> does not have permissions for creating timers": [
-  null,
-  ""
- ],
- "The user <b>$0</b> is not permitted to change the system time": [
-  null,
-  ""
- ],
- "The user <b>$0</b> is not permitted to enable or disable services": [
-  null,
-  ""
- ],
- "The user <b>$0</b> is not permitted to modify hostnames": [
-  null,
-  ""
- ],
- "The user <b>$0</b> is not permitted to shutdown or restart this server": [
-  null,
-  ""
- ],
- "The user <b>$0</b> is not permitted to start or stop services": [
-  null,
-  ""
- ],
- "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
-  null,
-  ""
- ],
- "This field cannot be empty.": [
-  null,
-  ""
- ],
- "This unit is an instance of the $0 template.": [
-  null,
-  ""
  ],
  "This unit is not designed to be enabled explicitly.": [
   null,
@@ -1227,14 +943,6 @@ return plural;
   null,
   ""
  ],
- "Triggered By": [
-  null,
-  ""
- ],
- "Triggers": [
-  null,
-  ""
- ],
  "Trying to synchronize with {{Server}}": [
   null,
   ""
@@ -1250,18 +958,6 @@ return plural;
  "Unknown": [
   null,
   "不明"
- ],
- "Unmask": [
-  null,
-  ""
- ],
- "Updates Available": [
-  null,
-  ""
- ],
- "Usage of $0 CPU core": [
-  "Usage of $0 CPU cores",
-  ""
  ],
  "Used": [
   null,
@@ -1280,14 +976,6 @@ return plural;
   "版本"
  ],
  "Waiting for other software management operations to finish": [
-  null,
-  ""
- ],
- "Wanted By": [
-  null,
-  ""
- ],
- "Wants": [
   null,
   ""
  ],
@@ -1314,25 +1002,5 @@ return plural;
  "[no data]": [
   null,
   ""
- ],
- "failed to list ssh host keys: $0": [
-  null,
-  ""
- ],
- "of $0 CPU core": [
-  "of $0 CPU cores",
-  ""
- ],
- "unknown": [
-  null,
-  "不明"
- ],
- "page-title\u0004CPU Status": [
-  null,
-  ""
- ],
- "page-title\u0004Memory": [
-  null,
-  "記憶體"
  ]
 }));

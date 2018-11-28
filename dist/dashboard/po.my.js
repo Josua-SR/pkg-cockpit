@@ -143,10 +143,6 @@ return plural;
   null,
   "CPU"
  ],
- "Can't load image": [
-  null,
-  ""
- ],
  "Cancel": [
   null,
   ""
@@ -200,10 +196,6 @@ return plural;
   ""
  ],
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
-  null,
-  ""
- ],
- "Connection Error": [
   null,
   ""
  ],
@@ -511,10 +503,6 @@ return plural;
   null,
   ""
  ],
- "The user <b>$0</b> is not permitted to manage servers": [
-  null,
-  "<b>$0</b> ဟူသော အသုံးပြုသူသည် Server များကိုစီမံကွပ်ကဲရန် ခွင့်ထားခြင်းမရှိပါ။"
- ],
  "This machine has already been added.": [
   null,
   ""
@@ -562,10 +550,6 @@ return plural;
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
   ""
- ],
- "You are currently connected directly to this server. You cannot delete it.": [
-  null,
-  "သင်သည် ယခု Server သို့ တိုက်ရိုက်ချိတ်ဆက်ထားသောကြောင့် ၄င်းအား ဖျက်ပစ်၍မရပါ။"
  ],
  "You can remove the previously stored key by running the following command": [
   null,

@@ -12743,7 +12743,7 @@ if (typeof jQuery === 'undefined') {
   'use strict';
 
   var patternfly = {
-    version: "3.35.1"
+    version: "3.57.2"
   };
 
   // definition of breakpoint sizes for tablet and desktop modes
@@ -12754,10 +12754,13 @@ if (typeof jQuery === 'undefined') {
 
   window.patternfly = patternfly;
 
-})(window);
+})(typeof window !== 'undefined' ? window : global);
 
 (function (window) {
   'use strict';
+
+  // Ensure we are assigning these to the patternfly property of the window argument, and not the implicit global patternfly
+  var patternfly = window.patternfly;
 
   // Util: PatternFly Palette colors
   patternfly.pfPaletteColors = {
@@ -12842,11 +12845,14 @@ if (typeof jQuery === 'undefined') {
     red400:        '#470000',
     red500:        '#2c0000'
   };
-})(window);
+})(typeof window !== 'undefined' ? window : global);
 
 
 (function (window) {
   'use strict';
+
+  // Ensure we are assigning these to the patternfly property of the window argument, and not the implicit global patternfly
+  var patternfly = window.patternfly;
 
   // Util: PatternFly C3 Chart Defaults
   patternfly.pfSetDonutChartTitle = function (selector, primary, secondary) {
@@ -13002,6 +13008,18 @@ if (typeof jQuery === 'undefined') {
           ]
         };
       },
+      getDefaultRelationshipDonutColors = function () {
+        return {
+          pattern: [
+            patternfly.pfPaletteColors.blue,
+            patternfly.pfPaletteColors.red100,
+            patternfly.pfPaletteColors.orange400,
+            patternfly.pfPaletteColors.green400,
+            patternfly.pfPaletteColors.cyan500,
+            patternfly.pfPaletteColors.gold200,
+          ]
+        };
+      },
       getDefaultDonutTooltip = function () {
         return {
           show: false
@@ -13018,6 +13036,15 @@ if (typeof jQuery === 'undefined') {
           size: this.getDefaultDonutSize(),
           legend: this.getDefaultDonutLegend(),
           color: this.getDefaultDonutColors(),
+          tooltip: this.getDefaultDonutTooltip()
+        };
+      },
+      getDefaultRelationshipDonutConfig = function (title) {
+        return {
+          donut: this.getDefaultDonut(title),
+          size: this.getDefaultDonutSize(),
+          legend: this.getDefaultDonutLegend(),
+          color: this.getDefaultRelationshipDonutColors(),
           tooltip: this.getDefaultDonutTooltip()
         };
       },
@@ -13238,9 +13265,11 @@ if (typeof jQuery === 'undefined') {
       getDefaultDonutTooltip: getDefaultDonutTooltip,
       getDefaultDonutLegend: getDefaultDonutLegend,
       getDefaultDonutConfig: getDefaultDonutConfig,
+      getDefaultRelationshipDonutConfig: getDefaultRelationshipDonutConfig,
       getDefaultPie: getDefaultPie,
       getDefaultPieSize: getDefaultPieSize,
       getDefaultPieColors: getDefaultPieColors,
+      getDefaultRelationshipDonutColors: getDefaultRelationshipDonutColors,
       getDefaultPieTooltip: getDefaultPieTooltip,
       getDefaultPieLegend: getDefaultPieLegend,
       getDefaultPieConfig: getDefaultPieConfig,
@@ -13267,7 +13296,7 @@ if (typeof jQuery === 'undefined') {
       getDefaultSingleAreaConfig: getDefaultSingleAreaConfig
     };
   };
-})(window);
+})(typeof window !== 'undefined' ? window : global);
 
 // Util: definition of breakpoint sizes for tablet and desktop modes
 (function ($) {
@@ -13380,7 +13409,7 @@ if (typeof jQuery === 'undefined') {
     }
   });
 
-  $(window).resize(function () {
+  $(window).on('resize', function () {
     // Call sidebar() on resize if .sidebar-pf exists
     if ($('.sidebar-pf').length > 0) {
       $.fn.sidebar();
@@ -13856,9 +13885,31 @@ if (typeof jQuery === 'undefined') {
     setCollapseHeights();
 
     // Update on window resizing
-    $(window).resize(setCollapseHeights);
+    $(window).on('resize', setCollapseHeights);
 
   };
+
+  $.fn.initFixedAccordion = function () {
+    var fixedAccordion = this, initOpen;
+
+    fixedAccordion.on('show.bs.collapse','.collapse', function (event) {
+      $(event.target.parentNode).addClass('panel-open');
+    });
+
+    fixedAccordion.on('hide.bs.collapse','.collapse', function (event) {
+      $(event.target.parentNode).removeClass('panel-open');
+    });
+
+    fixedAccordion.find('.panel').each(function (index, item) {
+      $(item).removeClass('panel-open');
+    });
+
+    initOpen = $(fixedAccordion.find('.collapse.in'))[0];
+    if (initOpen) {
+      $(initOpen.parentNode).addClass('panel-open');
+    }
+  };
+
 }(jQuery));
 
 // Util: PatternFly TreeGrid Tables
@@ -13870,7 +13921,10 @@ if (typeof jQuery === 'undefined') {
 
     if (typeof parent === "string") {
       if (isNaN(parent)) {
-        parent = rows.closest(parent);
+        parent = $(parent);
+        if (parent.length > 1) {
+          parent = rows.closest(parent);
+        }
       } else {
         parent = $(rows[parseInt(parent, 10)]);
       }
@@ -13946,16 +14000,22 @@ if (typeof jQuery === 'undefined') {
 (function ($) {
   'use strict';
 
-  $.fn.setupVerticalNavigation = function (handleItemSelections, ignoreDrawer) {
+  $.fn.setupVerticalNavigation = function (handleItemSelections, ignoreDrawer, userOptions) {
 
-    var navElement = $('.nav-pf-vertical'),
+    var options = $.extend({
+        hoverDelay: 500,
+        hideDelay: 700,
+        rememberOpenState: true,
+        storage: 'localStorage',
+      }, userOptions || {}),
+
+      navElement = $('.nav-pf-vertical'),
       bodyContentElement = $('.container-pf-nav-pf-vertical'),
       toggleNavBarButton = $('.navbar-toggle'),
       handleResize = true,
       explicitCollapse = false,
       subDesktop = false,
-      hoverDelay = 500,
-      hideDelay = hoverDelay + 200,
+      storageLocation = options.storage === 'sessionStorage' ? 'sessionStorage' : 'localStorage',
 
       inMobileState = function () {
         return bodyContentElement.hasClass('hidden-nav');
@@ -14223,10 +14283,14 @@ if (typeof jQuery === 'undefined') {
               }
             }
           } else if (navElement.hasClass('collapsed')) {
-            window.localStorage.setItem('patternfly-navigation-primary', 'expanded');
+            if (options.rememberOpenState) {
+              window[storageLocation].setItem('patternfly-navigation-primary', 'expanded');
+            }
             expandMenu();
           } else {
-            window.localStorage.setItem('patternfly-navigation-primary', 'collapsed');
+            if (options.rememberOpenState) {
+              window[storageLocation].setItem('patternfly-navigation-primary', 'collapsed');
+            }
             collapseMenu();
           }
         });
@@ -14333,12 +14397,16 @@ if (typeof jQuery === 'undefined') {
               e.stopImmediatePropagation();
             } else {
               if ($this.hasClass('collapsed')) {
-                window.localStorage.setItem('patternfly-navigation-secondary', 'expanded');
-                window.localStorage.setItem('patternfly-navigation-tertiary', 'expanded');
+                if (options.rememberOpenState) {
+                  window[storageLocation].setItem('patternfly-navigation-secondary', 'expanded');
+                  window[storageLocation].setItem('patternfly-navigation-tertiary', 'expanded');
+                }
                 updateSecondaryCollapsedState(false, $this);
                 forceHideSecondaryMenu();
               } else {
-                window.localStorage.setItem('patternfly-navigation-secondary', 'collapsed');
+                if (options.rememberOpenState) {
+                  window[storageLocation].setItem('patternfly-navigation-secondary', 'collapsed');
+                }
                 updateSecondaryCollapsedState(true, $this);
               }
             }
@@ -14359,12 +14427,16 @@ if (typeof jQuery === 'undefined') {
                 e.stopImmediatePropagation();
               } else {
                 if ($this.hasClass('collapsed')) {
-                  window.localStorage.setItem('patternfly-navigation-secondary', 'expanded');
-                  window.localStorage.setItem('patternfly-navigation-tertiary', 'expanded');
+                  if (options.rememberOpenState) {
+                    window[storageLocation].setItem('patternfly-navigation-secondary', 'expanded');
+                    window[storageLocation].setItem('patternfly-navigation-tertiary', 'expanded');
+                  }
                   updateTertiaryCollapsedState(false, $this);
                   forceHideSecondaryMenu();
                 } else {
-                  window.localStorage.setItem('patternfly-navigation-tertiary', 'collapsed');
+                  if (options.rememberOpenState) {
+                    window[storageLocation].setItem('patternfly-navigation-tertiary', 'collapsed');
+                  }
                   updateTertiaryCollapsedState(true, $this);
                 }
               }
@@ -14390,7 +14462,7 @@ if (typeof jQuery === 'undefined') {
                 navElement.addClass('hover-secondary-nav-pf');
                 $this.addClass('is-hover');
                 $this[0].navHoverTimeout = undefined;
-              }, hoverDelay);
+              }, options.hoverDelay);
             }
           }
         });
@@ -14408,7 +14480,7 @@ if (typeof jQuery === 'undefined') {
               }
               $this.removeClass('is-hover');
               $this[0].navUnHoverTimeout = undefined;
-            }, hideDelay);
+            }, options.hideDelay);
           }
         });
 
@@ -14424,7 +14496,7 @@ if (typeof jQuery === 'undefined') {
                 navElement.addClass('hover-tertiary-nav-pf');
                 $this.addClass('is-hover');
                 $this[0].navHoverTimeout = undefined;
-              }, hoverDelay);
+              }, options.hoverDelay);
             }
           }
         });
@@ -14440,7 +14512,7 @@ if (typeof jQuery === 'undefined') {
               }
               $this.removeClass('is-hover');
               $this[0].navUnHoverTimeout = undefined;
-            }, hideDelay);
+            }, options.hideDelay);
           }
         });
       },
@@ -14450,16 +14522,16 @@ if (typeof jQuery === 'undefined') {
           return;
         }
 
-        if (window.localStorage.getItem('patternfly-navigation-primary') === 'collapsed') {
+        if (window[storageLocation].getItem('patternfly-navigation-primary') === 'collapsed') {
           collapseMenu();
         }
 
         if ($('.nav-pf-vertical.nav-pf-vertical-collapsible-menus').length > 0) {
-          if (window.localStorage.getItem('patternfly-navigation-secondary') === 'collapsed') {
+          if (window[storageLocation].getItem('patternfly-navigation-secondary') === 'collapsed') {
             updateSecondaryCollapsedState(true, $('.secondary-nav-item-pf.active [data-toggle=collapse-secondary-nav]'));
           }
 
-          if (window.localStorage.getItem('patternfly-navigation-tertiary') === 'collapsed') {
+          if (window[storageLocation].getItem('patternfly-navigation-tertiary') === 'collapsed') {
             updateTertiaryCollapsedState(true, $('.tertiary-nav-item-pf.active [data-toggle=collapse-tertiary-nav]'));
           }
         }
@@ -14496,7 +14568,9 @@ if (typeof jQuery === 'undefined') {
         //Set tooltips
         setTooltips();
 
-        loadFromLocalStorage();
+        if (options.rememberOpenState) {
+          loadFromLocalStorage();
+        }
 
         // Show the nav menus
         navElement.removeClass('hide-nav-pf');

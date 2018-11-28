@@ -44,49 +44,46 @@
     }
     var c = l;
     var d, f, p, w;
-    var g = /[?&]?([^=]+)=([^&]*)/g;
-    var v = null;
+    var v = /[?&]?([^=]+)=([^&]*)/g;
+    var g = null;
     function y(e) {
         e = e.split("+").join(" ");
         var t = {};
         var n;
         for (;;) {
-            n = g.exec(e);
+            n = v.exec(e);
             if (!n) break;
             t[decodeURIComponent(n[1])] = decodeURIComponent(n[2]);
         }
         return t;
     }
-    function m(e) {
-        e = e.trim();
-        if (e[0] == '"') e = e.substr(1, e.length - 2);
-        return e;
-    }
     if (!e) e = function() {};
     if (window.location.pathname.indexOf("/cockpit/") === 0 || window.location.pathname.indexOf("/cockpit+") === 0) document.documentElement.setAttribute("class", "inline");
-    function h(e) {
+    function m(e) {
         return document.getElementById(e);
     }
-    function b(t) {
+    function h(t) {
         if (window.console) e.warn("fatal:", t);
-        h("login-again").style.display = "none";
-        h("login-wait-validating").style.display = "none";
-        if (v) {
-            h("login-again").href = v;
-            h("login-again").style.display = "block";
+        m("login-again").style.display = "none";
+        m("login-wait-validating").style.display = "none";
+        if (g) {
+            m("login-again").href = g;
+            m("login-again").style.display = "block";
         }
-        h("login").style.display = "none";
-        h("login-details").style.display = "none";
-        h("login-fatal").style.display = "block";
-        var n = h("login-fatal-message");
+        m("login").style.display = "none";
+        m("login-details").style.display = "none";
+        m("login-fatal").style.display = "block";
+        var n = m("login-fatal-message");
         n.textContent = "";
         n.appendChild(document.createTextNode(t));
     }
-    function k(e, t) {
-        var n, o = h(e);
+    function b(e, t) {
+        var n;
+        var o = m(e);
         if (o && window.getComputedStyle) n = window.getComputedStyle(o, ":before");
         if (!n) return;
-        var i, r = n.content;
+        var i;
+        var r = n.content;
         if (r && r != "none" && r != "normal") {
             i = r.length;
             if ((r[0] === '"' || r[0] === "'") && i > 2 && r[i - 1] === r[0]) r = r.substr(1, i - 2);
@@ -95,12 +92,12 @@
             o.removeAttribute("class");
         }
     }
-    function x() {
+    function k() {
         function t(t) {
             if (window.console) e.warn(a(c("This web browser is too old to run Cockpit (missing $0)"), t));
-            h("login").style.display = "none";
-            h("login-details").style.display = "none";
-            h("unsupported-browser").style.display = "block";
+            m("login").style.display = "none";
+            m("login-details").style.display = "none";
+            m("unsupported-browser").style.display = "block";
             document.body.className += " brand-unsupported-browser";
         }
         function n(e, n) {
@@ -108,7 +105,7 @@
             try {
                 o = n[e];
             } catch (i) {
-                b(a(c("The web browser configuration prevents Cockpit from running (inaccessible $0)"), e));
+                h(a(c("The web browser configuration prevents Cockpit from running (inaccessible $0)"), e));
                 throw i;
             }
             if (o === undefined) {
@@ -120,18 +117,18 @@
         function o() {
             var e = [].join.call(arguments, ": ");
             if (!window.CSS.supports.apply(this, arguments)) {
-                b(a(c("The web browser configuration prevents Cockpit from running (inaccessible $0)"), e));
+                h(a(c("The web browser configuration prevents Cockpit from running (inaccessible $0)"), e));
                 t(e);
                 return false;
             }
             return true;
         }
-        return ("MozWebSocket" in window || n("WebSocket", window)) && n("XMLHttpRequest", window) && n("sessionStorage", window) && n("JSON", window) && n("defineProperty", Object) && n("console", window) && n("pushState", window.history) && n("textContent", document) && n("CSS", window) && n("supports", window.CSS);
+        return ("MozWebSocket" in window || n("WebSocket", window)) && n("XMLHttpRequest", window) && n("sessionStorage", window) && n("JSON", window) && n("defineProperty", Object) && n("console", window) && n("pushState", window.history) && n("textContent", document) && n("CSS", window) && n("supports", window.CSS) && o("display", "flex") && o("display", "grid");
     }
-    function S(e) {
+    function x(e) {
         return e.replace(/^\s+|\s+$/g, "");
     }
-    function T(e) {
+    function S(e) {
         var n = document.createElement("a");
         var r = document.baseURI;
         var s;
@@ -158,156 +155,156 @@
         w = f;
         p = d;
     }
-    function C(e, t) {
+    function T(e, t) {
         if (e && e.type === "keypress" && e.key !== " ") return;
         if (e && e.type === "click") e.preventDefault();
-        if (t === undefined) t = h("server-group").style.display === "none";
-        h("option-group").setAttribute("data-state", t);
+        if (t === undefined) t = m("server-group").style.display === "none";
+        m("option-group").setAttribute("data-state", t);
         if (t) {
-            h("server-group").style.display = "block";
-            h("option-caret").setAttribute("class", "caret caret-down");
-            h("option-caret").setAttribute("className", "caret caret-down");
+            m("server-group").style.display = "block";
+            m("option-caret").setAttribute("class", "caret caret-down");
+            m("option-caret").setAttribute("className", "caret caret-down");
         } else {
-            h("server-group").style.display = "none";
-            h("option-caret").setAttribute("class", "caret caret-right");
-            h("option-caret").setAttribute("className", "caret caret-right");
+            m("server-group").style.display = "none";
+            m("option-caret").setAttribute("class", "caret caret-right");
+            m("option-caret").setAttribute("className", "caret caret-right");
         }
     }
-    function O() {
+    function C() {
         window.onload = null;
         u();
-        T(window.location.pathname);
+        S(window.location.pathname);
         var e = i.page.title;
         if (!e || f.indexOf("cockpit+=") === 0) e = i.hostname;
         document.title = e;
         if (f.indexOf("cockpit+=") === 0) {
-            h("brand").style.display = "none";
-            h("badge").style.visibility = "hidden";
+            m("brand").style.display = "none";
+            m("badge").style.visibility = "hidden";
         } else {
-            k("badge", "");
-            k("brand", "Cockpit");
+            b("badge", "");
+            b("brand", "Cockpit");
         }
-        if (!x()) return;
-        h("show-other-login-options").addEventListener("click", C);
-        h("show-other-login-options").addEventListener("keypress", C);
-        h("server-clear").addEventListener("click", function() {
-            var e = h("server-field");
+        if (!k()) return;
+        m("show-other-login-options").addEventListener("click", T);
+        m("show-other-login-options").addEventListener("keypress", T);
+        m("server-clear").addEventListener("click", function() {
+            var e = m("server-field");
             e.value = "";
             e.focus();
         });
         var n = t.getItem("authorized-default") || "";
-        if (n.indexOf("password") !== -1) h("authorized-input").checked = true;
+        if (n.indexOf("password") !== -1) m("authorized-input").checked = true;
         var o = i["os-release"];
         if (o) t.setItem("os-release", JSON.stringify(o));
         var s = window.sessionStorage.getItem("logout-intent") == "explicit";
         if (s) window.sessionStorage.removeItem("logout-intent");
         if (r) {
-            h("login-details").style.display = "none";
-            h("login").style.display = "none";
+            m("login-details").style.display = "none";
+            m("login").style.display = "none";
             if (s) {
-                E();
-                h("login-again").textContent = c("Login Again");
-                b(c("Logout Successful"));
+                I();
+                m("login-again").textContent = c("Login Again");
+                h(c("Logout Successful"));
             } else {
-                L();
+                E();
             }
         } else if (s) {
-            q();
+            P();
         } else {
-            I();
+            O();
         }
     }
-    function I() {
+    function O() {
         var e = new XMLHttpRequest();
         e.open("GET", d, true);
         e.onreadystatechange = function() {
-            if (e.readyState != 4) {
-                return;
-            } else if (e.status == 200) {
-                D(JSON.parse(e.responseText));
-            } else if (e.status == 401) {
-                q();
-            } else if (e.statusText) {
-                b(decodeURIComponent(e.statusText));
-            } else if (e.status === 0) {
-                q();
-            } else {
-                b(a(c("$0 error"), e.status));
+            if (e.readyState == 4) {
+                if (e.status == 200) {
+                    B(JSON.parse(e.responseText));
+                } else if (e.status == 401) {
+                    P();
+                } else if (e.statusText) {
+                    h(decodeURIComponent(e.statusText));
+                } else if (e.status === 0) {
+                    P();
+                } else {
+                    h(a(c("$0 error"), e.status));
+                }
             }
         };
         e.send();
     }
-    function E() {
+    function I() {
         var e = window.location.href.split("#", 2);
-        v = r.URL;
-        if (r.URL.indexOf("?") > -1) v += "&"; else v += "?";
-        v += "redirect_uri=" + encodeURIComponent(e[0]);
+        g = r.URL;
+        if (r.URL.indexOf("?") > -1) g += "&"; else g += "?";
+        g += "redirect_uri=" + encodeURIComponent(e[0]);
     }
-    function L() {
+    function E() {
         var e = document.createElement("a");
-        if (!r.URL) return b(c("Cockpit authentication is configured incorrectly."));
+        if (!r.URL) return h(c("Cockpit authentication is configured incorrectly."));
         var t = y(window.location.search);
         if (!window.location.search && window.location.hash) t = y(window.location.hash.slice(1));
         var n, o, i;
-        E();
+        I();
         if (t[r.TokenParam]) {
             if (window.sessionStorage.getItem("login-wanted")) {
                 e.href = window.sessionStorage.getItem("login-wanted");
-                T(e.pathname);
+                S(e.pathname);
             }
             n = t[r.TokenParam];
-            h("login-wait-validating").style.display = "block";
+            m("login-wait-validating").style.display = "block";
             i = new XMLHttpRequest();
             i.open("GET", d, true);
             i.setRequestHeader("Authorization", "Bearer " + n);
             i.onreadystatechange = function() {
-                if (i.readyState != 4) {
-                    return;
-                } else if (i.status == 200) {
-                    D(JSON.parse(i.responseText));
-                } else {
-                    o = W(i.getResponseHeader("WWW-Authenticate"), i.responseText);
-                    if (o) $(o); else b(i.statusText);
+                if (i.readyState == 4) {
+                    if (i.status == 200) {
+                        B(JSON.parse(i.responseText));
+                    } else {
+                        o = J(i.getResponseHeader("WWW-Authenticate"), i.responseText);
+                        if (o) q(o); else h(i.statusText);
+                    }
                 }
             };
             i.send();
         } else if (t[r.ErrorParam]) {
-            b(t[r.ErrorParam]);
+            h(t[r.ErrorParam]);
         } else {
             window.sessionStorage.setItem("login-wanted", window.location.href);
-            window.location = v;
+            window.location = g;
         }
     }
-    function A() {
-        h("error-group").style.display = "none";
-        h("login-error-message").textContent = "";
+    function L() {
+        m("error-group").style.display = "none";
+        m("login-error-message").textContent = "";
     }
-    function R(e, t) {
-        A();
+    function A(e, t) {
+        L();
         if (e) {
             if (r) {
-                b(e);
+                h(e);
             } else {
-                P(t);
-                h("login-error-message").textContent = e;
-                h("error-group").style.display = "block";
+                z(t);
+                m("login-error-message").textContent = e;
+                m("error-group").style.display = "block";
             }
         }
     }
-    function H(e) {
-        var t = h("server-field").value;
+    function R(e) {
+        var t = m("server-field").value;
         if (!t) {
-            R(e, false);
+            A(e, false);
         } else {
-            A();
-            h("login-error-message").textContent = e;
-            h("error-group").style.display = "block";
-            C(null, true);
-            P();
+            L();
+            m("login-error-message").textContent = e;
+            m("error-group").style.display = "block";
+            T(null, true);
+            z();
         }
     }
-    function N(e) {
-        var t = h("login-note");
+    function H(e) {
+        var t = m("login-note");
         if (e) {
             t.style.display = "block";
             t.textContent = e;
@@ -315,18 +312,19 @@
             t.innerHTML = "&nbsp;";
         }
     }
-    function U() {
+    function N() {
         return i.page.require_host && w.indexOf("cockpit+=") === -1;
     }
-    function z() {
-        R(null);
-        var e, n = S(h("login-user-input").value);
+    function U() {
+        A(null);
+        var e;
+        var n = x(m("login-user-input").value);
         if (n === "") {
-            R(c("User name cannot be empty"));
-        } else if (U() && h("server-field").value === "") {
-            R(c("Please specify the host to connect to"));
+            A(c("User name cannot be empty"));
+        } else if (N() && m("server-field").value === "") {
+            A(c("Please specify the host to connect to"));
         } else {
-            e = h("server-field").value;
+            e = m("server-field").value;
             if (e) {
                 f = "cockpit+=" + e;
                 d = p.replace("/" + w + "/", "/" + f + "/");
@@ -334,63 +332,63 @@
                 f = w;
                 d = p;
             }
-            h("server-name").textContent = e || i.hostname;
-            h("login-button").removeEventListener("click", z);
-            var o = h("authorized-input").checked ? "password" : "";
-            var r = h("login-password-input").value;
+            m("server-name").textContent = e || i.hostname;
+            m("login-button").removeEventListener("click", U);
+            var o = m("authorized-input").checked ? "password" : "";
+            var r = m("login-password-input").value;
             t.setItem("authorized-default", o);
             var s = {
-                Authorization: "Basic " + window.btoa(J(n + ":" + r)),
+                Authorization: "Basic " + window.btoa($(n + ":" + r)),
                 "X-Authorize": o
             };
-            M("GET", s, false);
+            W("GET", s, false);
         }
     }
-    function P(e) {
+    function z(e) {
         var t = i.page.connect;
-        var n = h("option-group").getAttribute("data-state");
-        h("login-wait-validating").style.display = "none";
-        h("login").style.visibility = "visible";
-        h("login").style.display = "block";
-        h("user-group").style.display = e ? "none" : "block";
-        h("password-group").style.display = e ? "none" : "block";
-        h("conversation-group").style.display = e ? "block" : "none";
-        h("login-button-text").textContent = c("Log In");
-        h("login-password-input").value = "";
-        if (U()) {
-            h("option-group").style.display = "none";
+        var n = m("option-group").getAttribute("data-state");
+        m("login-wait-validating").style.display = "none";
+        m("login").style.visibility = "visible";
+        m("login").style.display = "block";
+        m("user-group").style.display = e ? "none" : "block";
+        m("password-group").style.display = e ? "none" : "block";
+        m("conversation-group").style.display = e ? "block" : "none";
+        m("login-button-text").textContent = c("Log In");
+        m("login-password-input").value = "";
+        if (N()) {
+            m("option-group").style.display = "none";
             n = true;
         } else {
-            h("option-group").style.display = !t || e ? "none" : "block";
+            m("option-group").style.display = !t || e ? "none" : "block";
         }
         if (!t || e) {
-            h("server-group").style.display = "none";
+            m("server-group").style.display = "none";
         } else {
-            h("server-group").style.display = n ? "block" : "none";
+            m("server-group").style.display = n ? "block" : "none";
         }
-        h("login-button").removeAttribute("disabled");
-        if (!e) h("login-button").addEventListener("click", z);
+        m("login-button").removeAttribute("disabled");
+        if (!e) m("login-button").addEventListener("click", U);
     }
-    function q() {
-        h("server-name").textContent = document.title;
-        N(c("Log in with your server user account."));
-        h("login-user-input").addEventListener("keydown", function(e) {
-            R(null);
-            if (e.which == 13) h("login-password-input").focus();
+    function P() {
+        m("server-name").textContent = document.title;
+        H(c("Log in with your server user account."));
+        m("login-user-input").addEventListener("keydown", function(e) {
+            A(null);
+            if (e.which == 13) m("login-password-input").focus();
         }, false);
         var e = function(e) {
-            R(null);
-            if (e.which == 13) z();
+            A(null);
+            if (e.which == 13) U();
         };
-        h("login-password-input").addEventListener("keydown", e);
-        h("authorized-input").addEventListener("keydown", e);
-        P();
-        h("login-user-input").focus();
+        m("login-password-input").addEventListener("keydown", e);
+        m("authorized-input").addEventListener("keydown", e);
+        z();
+        m("login-user-input").focus();
     }
-    function $(e) {
+    function q(e) {
         var t = e.echo ? "text" : "password";
-        h("conversation-prompt").textContent = e.prompt;
-        var n = h("conversation-message");
+        m("conversation-prompt").textContent = e.prompt;
+        var n = m("conversation-message");
         var o = e.error || e.message;
         if (o) {
             n.textContent = o;
@@ -398,32 +396,32 @@
         } else {
             n.style.display = "none";
         }
-        var i = h("conversation-input");
+        var i = m("conversation-input");
         i.value = "";
         if (e["default"]) i.value = e["default"];
         i.setAttribute("type", t);
         i.focus();
-        R("");
+        A("");
         function r() {
-            h("conversation-input").removeEventListener("keydown", s);
-            h("login-button").removeEventListener("click", r);
-            R(null, true);
-            G(e.id, h("conversation-input").value);
+            m("conversation-input").removeEventListener("keydown", s);
+            m("login-button").removeEventListener("click", r);
+            A(null, true);
+            M(e.id, m("conversation-input").value);
         }
         function s(e) {
-            R(null, true);
+            A(null, true);
             if (e.which == 13) {
                 r();
             }
         }
-        h("conversation-input").addEventListener("keydown", s);
-        h("login-button").addEventListener("click", r);
-        P(true);
+        m("conversation-input").addEventListener("keydown", s);
+        m("login-button").addEventListener("click", r);
+        z(true);
     }
-    function J(e) {
+    function $(e) {
         return window.unescape(encodeURIComponent(e));
     }
-    function W(t, n) {
+    function J(t, n) {
         var o;
         var i;
         var r;
@@ -448,8 +446,8 @@
         r.prompt = i;
         return r;
     }
-    function M(t, n, o) {
-        h("login-button").setAttribute("disabled", "true");
+    function W(t, n, o) {
+        m("login-button").setAttribute("disabled", "true");
         var i = new XMLHttpRequest();
         i.open("GET", d, true);
         var r;
@@ -461,51 +459,51 @@
                 return;
             } else if (i.status == 200) {
                 var t = JSON.parse(i.responseText);
-                D(t);
+                B(t);
             } else if (i.status == 401) {
                 s = i.getResponseHeader("WWW-Authenticate");
                 if (s && s.toLowerCase().indexOf("x-conversation") === 0) {
-                    r = W(s, i.responseText);
-                    if (r) $(r); else b(c("Internal Error: Invalid challenge header"));
+                    r = J(s, i.responseText);
+                    if (r) q(r); else h(c("Internal Error: Invalid challenge header"));
                 } else {
                     if (window.console) e.log(i.statusText);
                     if (i.statusText.indexOf("authentication-not-supported") > -1) {
-                        var n = S(h("login-user-input").value);
-                        b(a(c("The server refused to authenticate '$0' using password authentication, and no other supported authentication methods are available."), n));
+                        var n = x(m("login-user-input").value);
+                        h(a(c("The server refused to authenticate '$0' using password authentication, and no other supported authentication methods are available."), n));
                     } else if (i.statusText.indexOf("terminated") > -1) {
-                        R(c("Authentication Failed: Server closed connection"));
+                        A(c("Authentication Failed: Server closed connection"));
                     } else if (i.statusText.indexOf("no-host") > -1) {
-                        H(c("Unable to connect to that address"));
+                        R(c("Unable to connect to that address"));
                     } else if (i.statusText.indexOf("unknown-hostkey") > -1) {
-                        H(c("Refusing to connect. Hostkey is unknown"));
+                        R(c("Refusing to connect. Hostkey is unknown"));
                     } else if (i.statusText.indexOf("unknown-host") > -1) {
-                        H(c("Refusing to connect. Host is unknown"));
+                        R(c("Refusing to connect. Host is unknown"));
                     } else if (i.statusText.indexOf("invalid-hostkey") > -1) {
-                        H(c("Refusing to connect. Hostkey does not match"));
+                        R(c("Refusing to connect. Hostkey does not match"));
                     } else if (o) {
-                        R(c("Authentication failed"));
+                        A(c("Authentication failed"));
                     } else {
-                        R(c("Wrong user name or password"));
+                        A(c("Wrong user name or password"));
                     }
                 }
             } else if (i.status == 403) {
-                R(decodeURIComponent(i.statusText) || c("Permission denied"));
+                A(decodeURIComponent(i.statusText) || c("Permission denied"));
             } else if (i.statusText) {
-                b(decodeURIComponent(i.statusText));
+                h(decodeURIComponent(i.statusText));
             } else {
-                b(a(c("$0 error"), i.status));
+                h(a(c("$0 error"), i.status));
             }
-            h("login-button").removeAttribute("disabled");
+            m("login-button").removeAttribute("disabled");
         };
         i.send();
     }
-    function G(e, t) {
+    function M(e, t) {
         var n = {
-            Authorization: "X-Conversation " + e + " " + window.btoa(J(t))
+            Authorization: "X-Conversation " + e + " " + window.btoa($(t))
         };
-        M("GET", n, true);
+        W("GET", n, true);
     }
-    function X(e) {
+    function G(e) {
         var t = window.setTimeout(function() {
             t = null;
             window.location.reload(true);
@@ -516,38 +514,38 @@
             t = null;
         };
     }
-    function _(e) {
+    function X(e) {
         var t = "/" + f + "/@localhost/";
         if (o) t = "/" + o + t;
         var n = t + "shell/index.html";
         var i = new XMLHttpRequest();
         i.open("GET", t + "manifests.json", true);
         i.onreadystatechange = function() {
-            if (i.readyState != 4) {
-                return;
-            } else if (i.status == 200) {
-                var t = JSON.parse(i.responseText);
-                var o = t ? t["base1"] : {};
-                if (!o["version"] || o["version"] < "119.x") {
-                    X(n);
-                } else X(e);
-            } else {
-                X(n);
+            if (i.readyState == 4) {
+                if (i.status == 200) {
+                    var t = JSON.parse(i.responseText);
+                    var o = t ? t["base1"] : {};
+                    if (!o["version"] || o["version"] < "119.x") {
+                        G(n);
+                    } else G(e);
+                } else {
+                    G(n);
+                }
             }
         };
         i.send();
     }
-    function j(e, t, n) {
+    function _(e, t, n) {
         var o = 0;
         while (o < e.length) {
             var i = e.key(o);
             if (n && i.indexOf("cockpit") !== 0) e.removeItem(i); else if (i.indexOf(t) === 0) e.removeItem(i); else o++;
         }
     }
-    function B(e) {
-        j(window.sessionStorage, f, true);
+    function j(e) {
+        _(window.sessionStorage, f, true);
         t.removeItem("login-data");
-        j(t, f, false);
+        _(t, f, false);
         var n;
         if (e && e["login-data"]) {
             n = JSON.stringify(e["login-data"]);
@@ -556,23 +554,22 @@
         }
         if (o) t.setItem("url-root", o);
     }
-    function D(e) {
+    function B(e) {
         var t = window.sessionStorage.getItem("login-wanted");
-        var n = h("server-field").value;
-        var i;
+        var n = m("server-field").value;
         if (n && f != w) {
             t = "/=" + n;
             if (o) t = "/" + o + t;
         }
-        j(window.sessionStorage, f, false);
-        B(e);
+        _(window.sessionStorage, f, false);
+        j(e);
         if (f.indexOf("cockpit+=") === 0) {
-            _(t);
-        } else {
             X(t);
+        } else {
+            G(t);
         }
     }
-    window.onload = O;
+    window.onload = C;
 })(window.console);
 //# sourceMappingURL=login.min.js.map    </script>
     <style>

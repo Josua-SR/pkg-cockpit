@@ -34,7 +34,7 @@
     var fmt_re = /\$\{([^}]+)\}|\$([a-zA-Z0-9_]+)/g;
     function format(fmt /* ... */) {
         var args = Array.prototype.slice.call(arguments, 1);
-        return fmt.replace(fmt_re, function(m, x, y) { return args[x || y] || ""; });
+        return fmt.replace(fmt_re, function(m, x, y) { return args[x || y] || "" });
     }
 
     function gettext(key) {
@@ -75,13 +75,6 @@
         return params;
     }
 
-    function unquote(str) {
-        str = str.trim();
-        if (str[0] == '"')
-            str = str.substr(1, str.length - 2);
-        return str;
-    }
-
     if (!console)
         console = function() { };
 
@@ -116,14 +109,16 @@
     }
 
     function brand(_id, def) {
-        var style, elt = id(_id);
+        var style;
+        var elt = id(_id);
         if (elt && window.getComputedStyle)
             style = window.getComputedStyle(elt, ":before");
 
         if (!style)
             return;
 
-        var len, content = style.content;
+        var len;
+        var content = style.content;
         if (content && content != "none" && content != "normal") {
             len = content.length;
             if ((content[0] === '"' || content[0] === '\'') &&
@@ -149,7 +144,7 @@
             var ret;
             try {
                 ret = (obj[name]);
-            } catch(ex) {
+            } catch (ex) {
                 fatal(format(_("The web browser configuration prevents Cockpit from running (inaccessible $0)"), name));
                 throw ex;
             }
@@ -161,6 +156,15 @@
         }
 
         function css() {
+            /*
+             * Be certain to use parenthesis when checking CSS strings
+             * as Edge is oddly particular.
+             *
+             * Instead of "display: inline", use:
+             * "(display: inline)"
+             *        or
+             * "display", "inline"
+             */
             var args = [].join.call(arguments, ": ");
 
             if (!window.CSS.supports.apply(this, arguments)) {
@@ -180,7 +184,9 @@
                req("pushState", window.history) &&
                req("textContent", document) &&
                req("CSS", window) &&
-               req("supports", window.CSS);
+               req("supports", window.CSS) &&
+               css("display", "flex") &&
+               css("display", "grid");
     }
 
     function trim(s) {
@@ -194,7 +200,7 @@
         var base_tags;
         /* Some IEs don't support baseURI */
         if (!base) {
-            base_tags = document.getElementsByTagName ("base");
+            base_tags = document.getElementsByTagName("base");
             if (base_tags.length > 0)
                 base = base_tags[0].href;
             else
@@ -254,7 +260,7 @@
 
         translate();
 
-        setup_path_globals (window.location.pathname);
+        setup_path_globals(window.location.pathname);
 
         // Setup title
         var title = environment.page.title;
@@ -316,18 +322,18 @@
         var xhr = new XMLHttpRequest();
         xhr.open("GET", login_path, true);
         xhr.onreadystatechange = function () {
-            if (xhr.readyState != 4) {
-                return;
-            } else if (xhr.status == 200) {
-                run(JSON.parse(xhr.responseText));
-            } else if (xhr.status == 401) {
-                show_login();
-            } else if (xhr.statusText) {
-                fatal(decodeURIComponent(xhr.statusText));
-            } else if (xhr.status === 0) {
-                show_login();
-            } else {
-                fatal(format(_("$0 error"), xhr.status));
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    run(JSON.parse(xhr.responseText));
+                } else if (xhr.status == 401) {
+                    show_login();
+                } else if (xhr.statusText) {
+                    fatal(decodeURIComponent(xhr.statusText));
+                } else if (xhr.status === 0) {
+                    show_login();
+                } else {
+                    fatal(format(_("$0 error"), xhr.status));
+                }
             }
         };
         xhr.send();
@@ -360,7 +366,7 @@
         if (query[oauth.TokenParam]) {
             if (window.sessionStorage.getItem('login-wanted')) {
                 parser.href = window.sessionStorage.getItem('login-wanted');
-                setup_path_globals (parser.pathname);
+                setup_path_globals(parser.pathname);
             }
 
             token_val = query[oauth.TokenParam];
@@ -369,17 +375,17 @@
             xhr.open("GET", login_path, true);
             xhr.setRequestHeader("Authorization", "Bearer " + token_val);
             xhr.onreadystatechange = function () {
-                if (xhr.readyState != 4) {
-                    return;
-                } else if (xhr.status == 200) {
-                    run(JSON.parse(xhr.responseText));
-                } else {
-                    prompt_data = get_prompt_from_challenge(xhr.getResponseHeader("WWW-Authenticate"),
-                                                            xhr.responseText);
-                    if (prompt_data)
-                        show_converse(prompt_data);
-                    else
-                        fatal(xhr.statusText);
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
+                        run(JSON.parse(xhr.responseText));
+                    } else {
+                        prompt_data = get_prompt_from_challenge(xhr.getResponseHeader("WWW-Authenticate"),
+                                                                xhr.responseText);
+                        if (prompt_data)
+                            show_converse(prompt_data);
+                        else
+                            fatal(xhr.statusText);
+                    }
                 }
             };
             xhr.send();
@@ -444,7 +450,8 @@
 
     function call_login() {
         login_failure(null);
-        var machine, user = trim(id("login-user-input").value);
+        var machine;
+        var user = trim(id("login-user-input").value);
         if (user === "") {
             login_failure(_("User name cannot be empty"));
         } else if (need_host() && id("server-field").value === "") {
@@ -461,7 +468,6 @@
 
             id("server-name").textContent = machine || environment.hostname;
             id("login-button").removeEventListener("click", call_login);
-
 
             /* When checked we tell the server to keep authentication */
             var authorized = id("authorized-input").checked ? "password" : "";
@@ -502,7 +508,6 @@
         } else {
             id("server-group").style.display = expanded ? "block" : "none";
         }
-
 
         id("login-button").removeAttribute('disabled');
 
@@ -707,17 +712,17 @@
         var xhr = new XMLHttpRequest();
         xhr.open("GET", base + 'manifests.json', true);
         xhr.onreadystatechange = function () {
-            if (xhr.readyState != 4) {
-                return;
-            } else if (xhr.status == 200) {
-                var resp = JSON.parse(xhr.responseText);
-                var base1 = resp ? resp['base1'] : {};
-                if (!base1['version'] || base1['version'] < "119.x") {
-                    login_reload (embeded_url);
-                } else
-                    login_reload (wanted);
-            } else {
-                login_reload (embeded_url);
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    var resp = JSON.parse(xhr.responseText);
+                    var base1 = resp ? resp['base1'] : {};
+                    if (!base1['version'] || base1['version'] < "119.x") {
+                        login_reload(embeded_url);
+                    } else
+                        login_reload(wanted);
+                } else {
+                    login_reload(embeded_url);
+                }
             }
         };
         xhr.send();
@@ -740,7 +745,7 @@
         /* Clear anything not prefixed with
          * different application from sessionStorage
          */
-        clear_storage (window.sessionStorage, application, true);
+        clear_storage(window.sessionStorage, application, true);
 
         /* Clear anything prefixed with our application
          * and login-data, but not other non-application values.
@@ -770,7 +775,6 @@
     function run(response) {
         var wanted = window.sessionStorage.getItem('login-wanted');
         var machine = id("server-field").value;
-        var str;
 
         if (machine && application != org_application) {
             wanted = "/=" + machine;
@@ -789,9 +793,9 @@
          * urls that reference machines.
          */
         if (application.indexOf("cockpit+=") === 0) {
-            machine_application_login_reload (wanted);
+            machine_application_login_reload(wanted);
         } else {
-            login_reload (wanted);
+            login_reload(wanted);
         }
     }
 

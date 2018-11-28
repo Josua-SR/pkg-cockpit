@@ -223,10 +223,6 @@ return plural;
   null,
   ""
  ],
- "Use the setting in /etc/kdump.conf": [
-  null,
-  ""
- ],
  "invalid: multiple targets defined": [
   null,
   ""
@@ -239,7 +235,19 @@ return plural;
   null,
   ""
  ],
+ "nfs dump target isn't formated as server:path": [
+  null,
+  ""
+ ],
  "ssh key": [
+  null,
+  ""
+ ],
+ "ssh key isn't a path": [
+  null,
+  ""
+ ],
+ "ssh server is empty": [
   null,
   ""
  ],

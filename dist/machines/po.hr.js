@@ -131,10 +131,6 @@ return plural;
   null,
   ""
  ],
- "Cancel": [
-  null,
-  "Odustani"
- ],
  "Capacity": [
   null,
   ""
@@ -408,10 +404,6 @@ return plural;
   ""
  ],
  "OS Vendor": [
-  null,
-  ""
- ],
- "Ok": [
   null,
   ""
  ],

@@ -223,10 +223,6 @@ return plural;
   null,
   "Impossible d'appliquer les paramètres : $0"
  ],
- "Use the setting in /etc/kdump.conf": [
-  null,
-  "Utilisez le paramètre dans /etc/kdump.conf"
- ],
  "invalid: multiple targets defined": [
   null,
   "invalide: plusieurs cibles définies"
@@ -239,9 +235,21 @@ return plural;
   null,
   "localement dans $0"
  ],
+ "nfs dump target isn't formated as server:path": [
+  null,
+  ""
+ ],
  "ssh key": [
   null,
   "clé ssh"
+ ],
+ "ssh key isn't a path": [
+  null,
+  ""
+ ],
+ "ssh server is empty": [
+  null,
+  ""
  ],
  "undefined": [
   null,

@@ -125,7 +125,7 @@ return plural;
  ],
  "Adaptive transmit load balancing": [
   null,
-  "Přizpůsobující se rozkládání přenosové zátěže"
+  "Přizpůsobující se rozkládání přenosové zátěže odesílání"
  ],
  "Add $0": [
   null,
@@ -621,7 +621,7 @@ return plural;
  ],
  "Please install the $0 package": [
   null,
-  ""
+  "Nainstalujte balíček $0"
  ],
  "Ports": [
   null,
@@ -665,7 +665,7 @@ return plural;
  ],
  "Receiving": [
   null,
-  "Získávání"
+  "Příchozí"
  ],
  "Remove $0": [
   null,
@@ -709,7 +709,7 @@ return plural;
  ],
  "Sending": [
   null,
-  "Odesílá se"
+  "Odchozí"
  ],
  "Service": [
   null,

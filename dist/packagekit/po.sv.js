@@ -240,31 +240,31 @@ return plural;
  ],
  "Refreshing package information": [
   null,
-  ""
+  "Uppdaterar paketinformation"
  ],
  "Register…": [
   null,
-  ""
+  "Registrera …"
  ],
  "Removals:": [
   null,
-  ""
+  "Borttagningar:"
  ],
  "Removing $0": [
   null,
-  ""
+  "Tar bort $0"
  ],
  "Restart Now": [
   null,
-  ""
+  "Starta om nu"
  ],
  "Restart Recommended": [
   null,
-  ""
+  "Omstart rekommenderas"
  ],
  "Restarting": [
   null,
-  ""
+  "Startar om"
  ],
  "Set up": [
   null,

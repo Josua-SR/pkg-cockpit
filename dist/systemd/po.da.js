@@ -499,7 +499,7 @@ return plural;
   null,
   ""
  ],
- "Enable persistent metrics…": [
+ "Enable stored metrics…": [
   null,
   ""
  ],
@@ -528,10 +528,6 @@ return plural;
   ""
  ],
  "Expansion Chassis": [
-  null,
-  ""
- ],
- "Free": [
   null,
   ""
  ],
@@ -722,6 +718,10 @@ return plural;
  "Memory": [
   null,
   ""
+ ],
+ "Memory & Swap": [
+  null,
+  "Hukommelse"
  ],
  "Message to logged in users": [
   null,
@@ -1103,9 +1103,9 @@ return plural;
   null,
   ""
  ],
- "Store Performance Data": [
+ "Store metrics": [
   null,
-  ""
+  "Værtsnavn"
  ],
  "Sub Chassis": [
   null,

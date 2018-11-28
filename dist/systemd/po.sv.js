@@ -499,9 +499,9 @@ return plural;
   null,
   "Aktivera tvingande"
  ],
- "Enable persistent metrics…": [
+ "Enable stored metrics…": [
   null,
-  "Aktivera beständiga mätningar …"
+  ""
  ],
  "Enabled": [
   null,
@@ -853,31 +853,31 @@ return plural;
  ],
  "Paths": [
   null,
-  ""
+  "Sökvägar"
  ],
  "Performance Profile": [
   null,
-  ""
+  "Prestandaprofil"
  ],
  "Peripheral Chassis": [
   null,
-  ""
+  "Periferichassi"
  ],
  "Pizza Box": [
   null,
-  ""
+  "Pizzalåda"
  ],
  "Portable": [
   null,
-  ""
+  "Bärbar"
  ],
  "Power Options": [
   null,
-  ""
+  "Strömalternativ"
  ],
  "Preset": [
   null,
-  ""
+  "Förinställ"
  ],
  "Preset Forcefully": [
   null,
@@ -901,47 +901,47 @@ return plural;
  ],
  "RAID Chassis": [
   null,
-  ""
+  "RAID-chassi"
  ],
  "Rack Mount Chassis": [
   null,
-  ""
+  "Rackmonteringschassi"
  ],
  "Real Host Name": [
   null,
-  ""
+  "Verkligt värdnamn"
  ],
  "Real host name can only contain lower-case characters, digits, dashes, and periods (with populated subdomains)": [
   null,
-  ""
+  "Det verkliga värdnamnet kan endast innehålla gemena bokstäver, siffror, bindestreck och punkter (med populerade underdomäner)"
  ],
  "Real host name must be 64 characters or less": [
   null,
-  ""
+  "Det verkliga värdnamnet får bara vara 64 tecken eller mindre"
  ],
  "Reboot": [
   null,
-  ""
+  "Starta om"
  ],
  "Recent": [
   null,
-  ""
+  "Senaste"
  ],
  "Reload": [
   null,
-  ""
+  "Läs om"
  ],
  "Reload Propagated From": [
   null,
-  ""
+  "Omläsning vidarebefordrad från"
  ],
  "Removals:": [
   null,
-  ""
+  "Borttagningar:"
  ],
  "Removing $0": [
   null,
-  ""
+  "Tar bort $0"
  ],
  "Repeat Daily": [
   null,
@@ -965,71 +965,71 @@ return plural;
  ],
  "Report": [
   null,
-  ""
+  "Rapport"
  ],
  "Reported": [
   null,
-  ""
+  "Rapporterad"
  ],
  "Reporter 'reporter-ureport' not found.": [
   null,
-  ""
+  "Rapporteraren ”reporter-ureport” finns inte."
  ],
  "Reporting was unsucessful. Try running `reporter-ureport -d ": [
   null,
-  ""
+  "Rapporterandet misslyckades.  Försök att köra ”reporter-ureport -d"
  ],
  "Required By": [
   null,
-  ""
+  "Begärd av"
  ],
  "Requires": [
   null,
-  ""
+  "Begär"
  ],
  "Requisite": [
   null,
-  ""
+  "Behov"
  ],
  "Requisite Of": [
   null,
-  ""
+  "Behov av"
  ],
  "Reset": [
   null,
-  ""
+  "Återställ"
  ],
  "Restart": [
   null,
-  ""
+  "Starta om"
  ],
  "Run": [
   null,
-  ""
+  "Kör"
  ],
  "Saturday": [
   null,
-  ""
+  "Lördag"
  ],
  "Save": [
   null,
-  ""
+  "Spara"
  ],
  "Sealed-case PC": [
   null,
-  ""
+  "PC med slutet hölje"
  ],
  "Seconds": [
   null,
-  ""
+  "Sekunder"
  ],
  "Secure Shell Keys": [
   null,
-  ""
+  "Säkra skalnycklar"
  ],
  "Security Updates Available": [
   null,
-  ""
+  "Säkerhetsuppdateringar tillgängliga"
  ],
  "Service Logs": [
   null,
@@ -1103,7 +1103,7 @@ return plural;
   null,
   ""
  ],
- "Store Performance Data": [
+ "Store metrics": [
   null,
   ""
  ],

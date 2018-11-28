@@ -117,7 +117,7 @@ return plural;
  ],
  "Active Backup": [
   null,
-  "Aktiv säkerhetskopia"
+  "Aktiv reserv"
  ],
  "Adaptive load balancing": [
   null,
@@ -601,47 +601,47 @@ return plural;
  ],
  "Path cost": [
   null,
-  ""
+  "Sökvägskostnad"
  ],
  "Path cost $path_cost": [
   null,
-  ""
+  "Sökvägskostnad $path_cost"
  ],
  "Permanent": [
   null,
-  ""
+  "Permanent"
  ],
  "Ping Interval": [
   null,
-  ""
+  "Ping-intervall"
  ],
  "Ping Target": [
   null,
-  ""
+  "Ping-mål"
  ],
  "Please install the $0 package": [
   null,
-  ""
+  "Installera paketet $0"
  ],
  "Ports": [
   null,
-  ""
+  "Portar"
  ],
  "Prefix length": [
   null,
-  ""
+  "Prefixlängd"
  ],
  "Prefix length or Netmask": [
   null,
-  ""
+  "Nätmaskens prefixlängd"
  ],
  "Preparing": [
   null,
-  ""
+  "Förbereder"
  ],
  "Preserve": [
   null,
-  ""
+  "Bevara"
  ],
  "Primary": [
   null,
@@ -657,59 +657,59 @@ return plural;
  ],
  "Random": [
   null,
-  ""
+  "Slumpvis"
  ],
  "Reboot": [
   null,
-  ""
+  "Starta om"
  ],
  "Receiving": [
   null,
-  ""
+  "Tar emot"
  ],
  "Remove $0": [
   null,
-  ""
+  "Ta bort $0"
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Att ta bort <b>$0</b> kommer bryta anslutningen till servern, och kommer göra administrationsgränssnittet otillgängligt."
  ],
  "Restoring connection": [
   null,
-  ""
+  "Återställer förbindelsen"
  ],
  "Round Robin": [
   null,
-  ""
+  "Turas om"
  ],
  "Routes": [
   null,
-  ""
+  "Rutter"
  ],
  "Runner": [
   null,
-  ""
+  "Körare"
  ],
  "STP Forward delay": [
   null,
-  ""
+  "Fördröjning av STP-vidarebefordran"
  ],
  "STP Hello time": [
   null,
-  ""
+  "STP Hello-tid"
  ],
  "STP Maximum message age": [
   null,
-  ""
+  "STP maximal meddelandeålder"
  ],
  "STP Priority": [
   null,
-  ""
+  "STP-prioritet"
  ],
  "Sending": [
   null,
-  ""
+  "Skickar"
  ],
  "Service": [
   null,

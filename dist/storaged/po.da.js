@@ -256,6 +256,10 @@ return plural;
   null,
   ""
  ],
+ "Address is not a valid URL": [
+  null,
+  ""
+ ],
  "Apply": [
   null,
   ""
@@ -1356,6 +1360,26 @@ return plural;
   null,
   ""
  ],
+ "Size cannot be negative": [
+  null,
+  ""
+ ],
+ "Size cannot be zero": [
+  null,
+  ""
+ ],
+ "Size is too large": [
+  null,
+  ""
+ ],
+ "Size must be a number": [
+  null,
+  ""
+ ],
+ "Size must be at least $0": [
+  null,
+  ""
+ ],
  "Slot $0": [
   null,
   ""
@@ -1464,15 +1488,15 @@ return plural;
   null,
   ""
  ],
- "The filesystem is in use by login sessions and system services.                Proceeding will stop these.": [
+ "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
   null,
   ""
  ],
- "The filesystem is in use by login sessions.                Proceeding will stop these.": [
+ "The filesystem is in use by login sessions. Proceeding will stop these.": [
   null,
   ""
  ],
- "The filesystem is in use by system services.                Proceeding will stop these.": [
+ "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
   ""
  ],
@@ -1512,7 +1536,7 @@ return plural;
   null,
   ""
  ],
- "This device has filesystems that are currently in use.                Proceeding will unmount all filesystems on it.": [
+ "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
   null,
   ""
  ],
@@ -1520,7 +1544,7 @@ return plural;
   null,
   ""
  ],
- "This device is currently used for RAID devices.                Proceeding will remove it from its RAID devices.": [
+ "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
   null,
   ""
  ],
@@ -1532,7 +1556,7 @@ return plural;
   null,
   ""
  ],
- "This device is currently used for volume groups.                Proceeding will remove it from its volume groups.": [
+ "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
   ""
  ],
