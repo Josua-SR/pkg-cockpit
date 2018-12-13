@@ -22,18 +22,18 @@ import PropTypes from 'prop-types';
 import { Alert, Button, Modal } from 'patternfly-react';
 
 import cockpit from 'cockpit';
+import { MachinesConnectionSelector } from '../machinesConnectionSelector.jsx';
 import * as Select from "cockpit-components-select.jsx";
 import FileAutoComplete from "cockpit-components-file-autocomplete.jsx";
-import { createVm } from '../../actions/provider-actions.es6';
-import { addErrorNotification } from '../../actions/store-actions.es6';
+import { createVm } from '../../actions/provider-actions.js';
+import { addErrorNotification } from '../../actions/store-actions.js';
 import {
     isEmpty,
     convertToUnit,
     timeoutedPromise,
     units,
     LIBVIRT_SYSTEM_CONNECTION,
-    LIBVIRT_SESSION_CONNECTION,
-} from "../../helpers.es6";
+} from "../../helpers.js";
 
 import {
     NOT_SPECIFIED,
@@ -41,11 +41,12 @@ import {
     DIVIDER_FAMILY,
     prepareVendors,
     getOSStringRepresentation,
-} from "./createVmDialogUtils.es6";
+} from "./createVmDialogUtils.js";
 import MemorySelectRow from '../memorySelectRow.jsx';
 
 import './createVmDialog.less';
-import VMS_CONFIG from '../../config.es6';
+import 'form-layout.less';
+import VMS_CONFIG from '../../config.js';
 
 const _ = cockpit.gettext;
 
@@ -70,8 +71,10 @@ class CreateVM extends React.Component {
             storageSizeUnit: units.GiB.name,
             sourceType: props.vmParams.sourceType,
             startVm: props.vmParams.startVm,
-            connection: props.vmParams.connection,
+            connectionName: props.vmParams.connectionName,
         };
+
+        this.onChangedValue = this.onChangedValue.bind(this);
     }
 
     onChangedEventValue(key, e) {
@@ -144,10 +147,8 @@ class CreateVM extends React.Component {
             this.setState({ [key]: value });
             break;
         }
-        case 'connection':
+        case 'connectionName':
             this.setState({ [key]: value });
-            notifyValuesChanged('connection', null);
-            notifyValuesChanged('error', null);
             break;
         default:
             break;
@@ -210,132 +211,88 @@ class CreateVM extends React.Component {
             break;
         }
 
-        let connectionUris = [
-            <Select.SelectEntry data={LIBVIRT_SYSTEM_CONNECTION}
-                                key={LIBVIRT_SYSTEM_CONNECTION}>{_("QEMU/KVM System connection")}
-            </Select.SelectEntry>,
-        ];
-
-        // Root user should not be presented the session connection
-        if (this.props.loggedUser.id != 0)
-            connectionUris.push(
-                <Select.SelectEntry data={LIBVIRT_SESSION_CONNECTION}
-                    key={LIBVIRT_SESSION_CONNECTION}>{_("QEMU/KVM User connection")}
-                </Select.SelectEntry>
-            );
-
         return (
-            <div className="modal-body modal-dialog-body-table">
-                <table className="form-table-ct">
-                    <tbody>
-                        <tr>
-                            <td className="top">
-                                <label className="control-label" htmlFor="connection">
-                                    {_("Connection")}
-                                </label>
-                            </td>
-                            <td>
-                                <Select.Select id="connection"
-                                               initial={this.state.connection}
-                                               onChange={this.onChangedValue.bind(this, 'connection')}>
-                                    {connectionUris}
-                                </Select.Select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="top">
-                                <label className="control-label" htmlFor="vm-name">
-                                    {_("Name")}
-                                </label>
-                            </td>
-                            <td>
-                                <input id="vm-name" className="form-control" type="text" minLength={1}
-                                       value={this.state.vmName}
-                                       placeholder={_("Unique name")}
-                                       onChange={this.onChangedEventValue.bind(this, 'vmName')} />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="top">
-                                <label className="control-label" htmlFor="source-type">
-                                    {_("Installation Source Type")}
-                                </label>
-                            </td>
-                            <td>
-                                <Select.Select id="source-type"
-                                               initial={this.state.sourceType}
-                                               onChange={this.onChangedValue.bind(this, 'sourceType')}>
-                                    <Select.SelectEntry data={COCKPIT_FILESYSTEM_SOURCE}
-                                                        key={COCKPIT_FILESYSTEM_SOURCE}>{_("Filesystem")}</Select.SelectEntry>
-                                    <Select.SelectEntry data={URL_SOURCE} key={URL_SOURCE}>{_("URL")}</Select.SelectEntry>
-                                </Select.Select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="top">
-                                <label className="control-label" htmlFor={installationSourceId}>
-                                    {_("Installation Source")}
-                                </label>
-                            </td>
-                            <td>
-                                {installationSource}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="top">
-                                <label className="control-label" htmlFor="vendor-select">
-                                    {_("OS Vendor")}
-                                </label>
-                            </td>
-                            <td>
-                                <Select.Select id="vendor-select"
-                                               initial={this.state.vendor}
-                                               onChange={this.onChangedValue.bind(this, 'vendor')}>
-                                    {vendorSelectEntries}
-                                </Select.Select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="top">
-                                <label className="control-label" htmlFor="vendor-select">
-                                    {_("Operating System")}
-                                </label>
-                            </td>
-                            <td>
-                                <Select.StatelessSelect id="system-select"
-                                                        selected={this.state.os}
-                                                        onChange={this.onChangedValue.bind(this, 'os')}>
-                                    {osEntries}
-                                </Select.StatelessSelect>
-                            </td>
-                        </tr>
-                        <MemorySelectRow label={_("Memory")}
-                                         id={"memory-size"}
-                                         value={this.state.memorySize}
-                                         initialUnit={this.state.memorySizeUnit}
-                                         onValueChange={this.onChangedEventValue.bind(this, 'memorySize')}
-                                         onUnitChange={this.onChangedValue.bind(this, 'memorySizeUnit')} />
-                        <MemorySelectRow label={_("Storage Size")}
-                                         id={"storage-size"}
-                                         value={this.state.storageSize}
-                                         initialUnit={this.state.storageSizeUnit}
-                                         onValueChange={this.onChangedEventValue.bind(this, 'storageSize')}
-                                         onUnitChange={this.onChangedValue.bind(this, 'storageSizeUnit')} />
-                        <tr>
-                            <td className="top">
-                                <label className="control-label" htmlFor="start-vm">
-                                    {_("Immediately Start VM")}
-                                </label>
-                            </td>
-                            <td>
-                                <input id="start-vm" type="checkbox"
-                                       checked={this.state.startVm}
-                                       onChange={this.onChangedEventChecked.bind(this, 'startVm')} />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <form className="ct-form-layout">
+                <label className="control-label" htmlFor="connection">
+                    {_("Connection")}
+                </label>
+                <MachinesConnectionSelector id='connection'
+                    dialogValues={this.state}
+                    onValueChanged={this.onChangedValue}
+                    loggedUser={this.props.loggedUser} />
+
+                <hr />
+
+                <label className="control-label" htmlFor="vm-name">
+                    {_("Name")}
+                </label>
+                <input id="vm-name" className="form-control" type="text" minLength={1}
+                       value={this.state.vmName}
+                       placeholder={_("Unique name")}
+                       onChange={this.onChangedEventValue.bind(this, 'vmName')} />
+
+                <hr />
+
+                <label className="control-label" htmlFor="source-type">
+                    {_("Installation Source Type")}
+                </label>
+                <Select.Select id="source-type"
+                               initial={this.state.sourceType}
+                               onChange={this.onChangedValue.bind(this, 'sourceType')}>
+                    <Select.SelectEntry data={COCKPIT_FILESYSTEM_SOURCE}
+                                        key={COCKPIT_FILESYSTEM_SOURCE}>{_("Filesystem")}</Select.SelectEntry>
+                    <Select.SelectEntry data={URL_SOURCE} key={URL_SOURCE}>{_("URL")}</Select.SelectEntry>
+                </Select.Select>
+
+                <label className="control-label" htmlFor={installationSourceId}>
+                    {_("Installation Source")}
+                </label>
+                {installationSource}
+
+                <hr />
+                <label className="control-label" htmlFor="vendor-select">
+                    {_("OS Vendor")}
+                </label>
+                <Select.Select id="vendor-select"
+                               initial={this.state.vendor}
+                               onChange={this.onChangedValue.bind(this, 'vendor')}>
+                    {vendorSelectEntries}
+                </Select.Select>
+
+                <label className="control-label" htmlFor="vendor-select">
+                    {_("Operating System")}
+                </label>
+                <Select.StatelessSelect id="system-select"
+                                        selected={this.state.os}
+                                        onChange={this.onChangedValue.bind(this, 'os')}>
+                    {osEntries}
+                </Select.StatelessSelect>
+
+                <hr />
+
+                <MemorySelectRow label={_("Memory")}
+                                 id={"memory-size"}
+                                 value={this.state.memorySize}
+                                 initialUnit={this.state.memorySizeUnit}
+                                 onValueChange={this.onChangedEventValue.bind(this, 'memorySize')}
+                                 onUnitChange={this.onChangedValue.bind(this, 'memorySizeUnit')} />
+
+                <MemorySelectRow label={_("Storage Size")}
+                                 id={"storage-size"}
+                                 value={this.state.storageSize}
+                                 initialUnit={this.state.storageSizeUnit}
+                                 onValueChange={this.onChangedEventValue.bind(this, 'storageSize')}
+                                 onUnitChange={this.onChangedValue.bind(this, 'storageSizeUnit')} />
+
+                <hr />
+
+                <label className="checkbox-inline">
+                    <input id="start-vm" type="checkbox"
+                           checked={this.state.startVm}
+                           onChange={this.onChangedEventChecked.bind(this, 'startVm')} />
+                    {_("Immediately Start VM")}
+                </label>
+            </form>
         );
     }
 }
@@ -373,10 +330,10 @@ function validateParams(vmParams) {
             break;
         case URL_SOURCE:
         default:
-            if (!vmParams.source.startsWith("http") &&
+            if (!vmParams.source.startsWith("https") &&
                     !vmParams.source.startsWith("ftp") &&
                     !vmParams.source.startsWith("nfs")) {
-                return _("Source should start with http, ftp or nfs protocol");
+                return _("Source should start with https, ftp or nfs protocol");
             }
             break;
         }
@@ -404,7 +361,7 @@ class CreateVmModal extends React.Component {
         this.state = {
             'inProgress': false,
             'vmName': '',
-            'connection': LIBVIRT_SYSTEM_CONNECTION,
+            'connectionName': LIBVIRT_SYSTEM_CONNECTION,
             "sourceType": COCKPIT_FILESYSTEM_SOURCE,
             'source': '',
             'vendor': NOT_SPECIFIED,

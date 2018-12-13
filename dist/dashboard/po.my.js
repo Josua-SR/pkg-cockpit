@@ -67,6 +67,30 @@ return plural;
   "language": "my",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 day": [
+  "$0 days",
+  ""
+ ],
+ "$0 hour": [
+  "$0 hours",
+  ""
+ ],
+ "$0 minute": [
+  "$0 minutes",
+  ""
+ ],
+ "$0 month": [
+  "$0 months",
+  ""
+ ],
+ "$0 week": [
+  "$0 weeks",
+  ""
+ ],
+ "$0 year": [
+  "$0 years",
+  ""
+ ],
  "1 day": [
   null,
   "၁ ရက်"
@@ -103,14 +127,6 @@ return plural;
   null,
   ""
  ],
- "Advanced TCA": [
-  null,
-  ""
- ],
- "All In One": [
-  null,
-  ""
- ],
  "Authentication": [
   null,
   ""
@@ -127,21 +143,13 @@ return plural;
   null,
   ""
  ],
- "Blade": [
-  null,
-  ""
- ],
- "Blade enclosure": [
-  null,
-  ""
- ],
- "Bus Expansion Chassis": [
-  null,
-  ""
- ],
  "CPU": [
   null,
   "CPU"
+ ],
+ "Can't load image": [
+  null,
+  ""
  ],
  "Cancel": [
   null,
@@ -187,10 +195,6 @@ return plural;
   null,
   ""
  ],
- "Compact PCI": [
-  null,
-  ""
- ],
  "Connect": [
   null,
   ""
@@ -199,7 +203,7 @@ return plural;
   null,
   ""
  ],
- "Convertible": [
+ "Connection Error": [
   null,
   ""
  ],
@@ -211,27 +215,11 @@ return plural;
   null,
   ""
  ],
- "Desktop": [
-  null,
-  ""
- ],
- "Detachable": [
-  null,
-  ""
- ],
  "Disk I/O": [
   null,
   ""
  ],
- "Docking Station": [
-  null,
-  ""
- ],
  "Edit Server": [
-  null,
-  ""
- ],
- "Embedded PC": [
   null,
   ""
  ],
@@ -244,10 +232,6 @@ return plural;
   ""
  ],
  "Error loading users: {{perm_failed}}": [
-  null,
-  ""
- ],
- "Expansion Chassis": [
   null,
   ""
  ],
@@ -271,10 +255,6 @@ return plural;
   null,
   ""
  ],
- "Hand Held": [
-  null,
-  ""
- ],
  "Host Name": [
   null,
   ""
@@ -291,10 +271,6 @@ return plural;
   null,
   ""
  ],
- "IoT Gateway": [
-  null,
-  ""
- ],
  "Is sshd running on a different port?": [
   null,
   ""
@@ -304,10 +280,6 @@ return plural;
   ""
  ],
  "Kerberos Ticket": [
-  null,
-  ""
- ],
- "Laptop": [
   null,
   ""
  ],
@@ -335,33 +307,9 @@ return plural;
   null,
   "ချိတ်ဆက်မှု ပြတ်တောက်သွားသည်။ ပြန်လည်ချိတ်ဆက်နေပါသည်။"
  ],
- "Low Profile Desktop": [
-  null,
-  ""
- ],
- "Lunch Box": [
-  null,
-  ""
- ],
- "Main Server Chassis": [
-  null,
-  ""
- ],
  "Memory": [
   null,
   "Memory"
- ],
- "Mini PC": [
-  null,
-  ""
- ],
- "Mini Tower": [
-  null,
-  ""
- ],
- "Multi-system Chassis": [
-  null,
-  ""
  ],
  "Network": [
   null,
@@ -379,10 +327,6 @@ return plural;
   null,
   ""
  ],
- "Notebook": [
-  null,
-  ""
- ],
  "Off": [
   null,
   "ဖွင့်"
@@ -395,10 +339,6 @@ return plural;
   null,
   "ပိတ်"
  ],
- "Other": [
-  null,
-  ""
- ],
  "Password": [
   null,
   ""
@@ -407,19 +347,7 @@ return plural;
   null,
   ""
  ],
- "Peripheral Chassis": [
-  null,
-  ""
- ],
- "Pizza Box": [
-  null,
-  ""
- ],
  "Port": [
-  null,
-  ""
- ],
- "Portable": [
   null,
   ""
  ],
@@ -435,18 +363,6 @@ return plural;
   null,
   ""
  ],
- "RAID Chassis": [
-  null,
-  ""
- ],
- "Rack Mount Chassis": [
-  null,
-  ""
- ],
- "Sealed-case PC": [
-  null,
-  ""
- ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
   ""
@@ -459,31 +375,11 @@ return plural;
   null,
   ""
  ],
- "Space-saving Computer": [
-  null,
-  ""
- ],
- "Stick PC": [
-  null,
-  ""
- ],
- "Sub Chassis": [
-  null,
-  ""
- ],
- "Sub Notebook": [
-  null,
-  ""
- ],
  "Synchronize": [
   null,
   ""
  ],
  "Synchronize users": [
-  null,
-  ""
- ],
- "Tablet": [
   null,
   ""
  ],
@@ -503,6 +399,10 @@ return plural;
   null,
   ""
  ],
+ "The user <b>$0</b> is not permitted to manage servers": [
+  null,
+  "<b>$0</b> ဟူသော အသုံးပြုသူသည် Server များကိုစီမံကွပ်ကဲရန် ခွင့်ထားခြင်းမရှိပါ။"
+ ],
  "This machine has already been added.": [
   null,
   ""
@@ -515,15 +415,7 @@ return plural;
   null,
   ""
  ],
- "Tower": [
-  null,
-  ""
- ],
  "Type a password": [
-  null,
-  ""
- ],
- "Unknown": [
   null,
   ""
  ],
@@ -550,6 +442,10 @@ return plural;
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
   ""
+ ],
+ "You are currently connected directly to this server. You cannot delete it.": [
+  null,
+  "သင်သည် ယခု Server သို့ တိုက်ရိုက်ချိတ်ဆက်ထားသောကြောင့် ၄င်းအား ဖျက်ပစ်၍မရပါ။"
  ],
  "You can remove the previously stored key by running the following command": [
   null,

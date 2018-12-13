@@ -77,7 +77,7 @@ return plural;
  ],
  "Compress crash dumps to save space": [
   null,
-  ""
+  "Comprimere i crash dump per risparmiare spazio"
  ],
  "Compression": [
   null,
@@ -85,27 +85,23 @@ return plural;
  ],
  "Crash dump location": [
   null,
-  ""
+  "Posizione della discarica di crash"
  ],
  "Crash system": [
   null,
-  ""
+  "Sistema Crash"
  ],
  "Directory": [
   null,
   "Directory"
  ],
- "Directory $0 isn't writable or doesn't exist.": [
-  null,
-  ""
- ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
-  ""
+  "Servizio Kdump non installato. Assicurarsi che il pacchetto kexec-tools sia installato."
  ],
  "Kernel Dump": [
   null,
-  ""
+  "Kernel Dump"
  ],
  "Loading...": [
   null,
@@ -113,7 +109,7 @@ return plural;
  ],
  "Local Filesystem": [
   null,
-  ""
+  "File system locale"
  ],
  "Location": [
   null,
@@ -125,15 +121,15 @@ return plural;
  ],
  "Mount": [
   null,
-  ""
+  "Mount"
  ],
  "No configuration found": [
   null,
-  ""
+  "Nessuna configurazione trovata"
  ],
  "No memory reserved. Append a crashkernel option to the kernel command line (e.g. in /etc/default/grub) to reserve memory at boot time. Example: crashkernel=512M": [
   null,
-  ""
+  "Nessuna riserva di memoria. Aggiungere un'opzione crashkernel alla riga di comando del kernel (p.e. in /etc/default/grub) per riservare memoria all'avvio. Esempio: crashkernel=512M"
  ],
  "None": [
   null,
@@ -153,27 +149,27 @@ return plural;
  ],
  "On a mounted device": [
   null,
-  ""
+  "Su un dispositivo montato"
  ],
  "Raw to a device": [
   null,
-  ""
+  "Crudo a un dispositivo"
  ],
  "Reading...": [
   null,
-  ""
+  "Lettura....."
  ],
  "Remote over NFS": [
   null,
-  ""
+  "Remoto su NFS"
  ],
  "Remote over SSH": [
   null,
-  ""
+  "Remoto su SSH"
  ],
  "Reserved memory": [
   null,
-  ""
+  "Memoria riservata"
  ],
  "Server": [
   null,
@@ -181,70 +177,66 @@ return plural;
  ],
  "Service has an error": [
   null,
-  ""
+  "Il servizio ha un errore"
  ],
  "Service is running": [
   null,
-  ""
+  "Il servizio è in funzione"
  ],
  "Service is starting": [
   null,
-  ""
+  "Il servizio è in fase di avvio"
  ],
  "Service is stopped": [
   null,
-  ""
+  "Il servizio è interrotto"
  ],
  "Service is stopping": [
   null,
-  ""
+  "Il servizio si sta fermando"
  ],
  "Test Configuration": [
   null,
-  ""
+  "Test configurazione"
  ],
  "Test is only available while the kdump service is running.": [
   null,
-  ""
+  "Il test è disponibile solo mentre il servizio kdump è in funzione."
  ],
  "Test kdump settings": [
   null,
-  ""
+  "Test impostazioni kdump"
  ],
  "This will test kdump settings by crashing the kernel and thereby the system. Depending on the settings, the system may not automatically reboot and the process may take a while.": [
   null,
-  ""
+  "Questo testerà le impostazioni di kdump bloccando il kernel e quindi il sistema. A seconda delle impostazioni, il sistema potrebbe non riavviare automaticamente il sistema e il processo potrebbe richiedere del tempo."
  ],
  "This will test the kdump configuration by crashing the kernel.": [
   null,
-  ""
+  "Questo testerà la configurazione di kdump mandando in crash il kernel."
  ],
  "Unable to apply settings: $0": [
   null,
-  ""
- ],
- "Use the setting in /etc/kdump.conf": [
-  null,
-  ""
+  "Impossibile applicare le impostazioni: $0"
  ],
  "invalid: multiple targets defined": [
   null,
-  ""
+  "non valido: sono stati definiti più obiettivi multipli"
  ],
  "kdump status": [
   null,
-  ""
+  "stato kdump"
  ],
  "locally in $0": [
   null,
-  ""
+  "localmente in $0"
  ],
  "ssh key": [
   null,
-  ""
+  "chiave ssh"
  ],
  "undefined": [
   null,
-  ""
+  "non definito"
  ]
 }));

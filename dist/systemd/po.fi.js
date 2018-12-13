@@ -67,13 +67,47 @@ return plural;
   "language": "fi",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Template": [
+  null,
+  "$0 mallipohja"
+ ],
+ "$0 day": [
+  "$0 days",
+  "$0 päivä",
+  "$0 päivää"
+ ],
+ "$0 hour": [
+  "$0 hours",
+  "$0 tunti",
+  "$0 tuntia"
+ ],
  "$0 is not available from any repository.": [
   null,
   ""
  ],
+ "$0 minute": [
+  "$0 minutes",
+  "$0 minuutti",
+  "$0 minuuttia"
+ ],
+ "$0 month": [
+  "$0 months",
+  "$0 kuukausi",
+  "$0 kuukautta"
+ ],
+ "$0 week": [
+  "$0 weeks",
+  "$0 viikko",
+  "$0 viikkoa"
+ ],
  "$0 will be installed.": [
   null,
   ""
+ ],
+ "$0 year": [
+  "$0 years",
+  "$0 vuosi",
+  "$0 vuotta"
  ],
  "1 Minute": [
   null,
@@ -86,6 +120,10 @@ return plural;
  "1 hour": [
   null,
   "1 tunti"
+ ],
+ "1 min": [
+  null,
+  "1 min"
  ],
  "1 week": [
   null,
@@ -135,6 +173,10 @@ return plural;
   null,
   "1."
  ],
+ "2 min": [
+  null,
+  "2 min"
+ ],
  "20 Minutes": [
   null,
   "20 minuuttia"
@@ -183,6 +225,10 @@ return plural;
   null,
   "2."
  ],
+ "3 min": [
+  null,
+  "3 min"
+ ],
  "30th": [
   null,
   "30."
@@ -195,6 +241,10 @@ return plural;
   null,
   "3."
  ],
+ "4 min": [
+  null,
+  "4 min"
+ ],
  "40 Minutes": [
   null,
   "40 minuuttia"
@@ -206,6 +256,10 @@ return plural;
  "5 Minutes": [
   null,
   "5 minuuttia"
+ ],
+ "5 min": [
+  null,
+  "5 min"
  ],
  "5 minutes": [
   null,
@@ -243,10 +297,6 @@ return plural;
   null,
   ""
  ],
- "Advanced TCA": [
-  null,
-  ""
- ],
  "After": [
   null,
   "Jälkeen"
@@ -256,10 +306,6 @@ return plural;
   "Järjestelmän käynnistyksen jälkeen"
  ],
  "Alert and above": [
-  null,
-  ""
- ],
- "All In One": [
   null,
   ""
  ],
@@ -291,15 +337,19 @@ return plural;
   null,
   "BIOS-versio"
  ],
- "Blade": [
+ "Before": [
   null,
   ""
  ],
- "Blade enclosure": [
+ "Binds To": [
   null,
   ""
  ],
- "Bus Expansion Chassis": [
+ "Bound By": [
+  null,
+  ""
+ ],
+ "Bug Fix Updates Available": [
   null,
   ""
  ],
@@ -315,6 +365,10 @@ return plural;
   null,
   "Peru"
  ],
+ "Cannot schedule event in the past": [
+  null,
+  "Tapahtumaa ei voi aikatauluttaa menneisyyteen"
+ ],
  "Change": [
   null,
   "Vaihda"
@@ -327,6 +381,10 @@ return plural;
   null,
   "Vaihda järjestelmän aika"
  ],
+ "Checking for updates…": [
+  null,
+  "Etsitään päivityksiä…"
+ ],
  "Checking installed software": [
   null,
   ""
@@ -334,6 +392,10 @@ return plural;
  "Class": [
   null,
   ""
+ ],
+ "Click to see system hardware information": [
+  null,
+  "Napsauta nähdäksesi järjestelmän laitteistotiedot"
  ],
  "Close": [
   null,
@@ -343,15 +405,23 @@ return plural;
   null,
   "Komento"
  ],
- "Compact PCI": [
+ "Condition $0=$1 was not met": [
   null,
-  ""
+  "Ehto $0=$1 ei toteutunut"
  ],
  "Condition failed": [
   null,
   "Ehto epäonnistui"
  ],
- "Convertible": [
+ "Conflicted By": [
+  null,
+  ""
+ ],
+ "Conflicts": [
+  null,
+  ""
+ ],
+ "Consists Of": [
   null,
   ""
  ],
@@ -383,21 +453,17 @@ return plural;
   null,
   "Kuvaus"
  ],
- "Desktop": [
+ "Disable": [
   null,
-  "Työpöytä"
+  "Poista käytöstä"
  ],
- "Detachable": [
+ "Disabled": [
   null,
-  ""
+  "Ei käytössä"
  ],
  "Disk I/O": [
   null,
   "Levyn I/O"
- ],
- "Docking Station": [
-  null,
-  ""
  ],
  "Domain": [
   null,
@@ -411,11 +477,23 @@ return plural;
   null,
   ""
  ],
- "Embedded PC": [
+ "Enable": [
+  null,
+  "Ota käyttöön"
+ ],
+ "Enable Forcefully": [
+  null,
+  "Ota käyttöön väkisin"
+ ],
+ "Enable persistent metrics…": [
   null,
   ""
  ],
- "Enable persistent metrics…": [
+ "Enabled": [
+  null,
+  "Käytössä"
+ ],
+ "Enhancement Updates Available": [
   null,
   ""
  ],
@@ -434,10 +512,6 @@ return plural;
  "Everything": [
   null,
   "Kaikki"
- ],
- "Expansion Chassis": [
-  null,
-  ""
  ],
  "Free": [
   null,
@@ -459,10 +533,6 @@ return plural;
   null,
   "Mene nyt"
  ],
- "Hand Held": [
-  null,
-  ""
- ],
  "Hardware": [
   null,
   "Laitteisto"
@@ -479,6 +549,10 @@ return plural;
   null,
   "Tunti : Minuutti"
  ],
+ "Hour needs to be a number between 0-23": [
+  null,
+  "Tunti tarvitsee numeron väliltä 0-23"
+ ],
  "Hours": [
   null,
   "Tuntia"
@@ -486,6 +560,10 @@ return plural;
  "I/O Wait": [
   null,
   "I/O Odottaa"
+ ],
+ "Id": [
+  null,
+  "Id"
  ],
  "Info and above": [
   null,
@@ -507,11 +585,31 @@ return plural;
   null,
   "Instansoi"
  ],
+ "Invalid date format": [
+  null,
+  "Virheellinen päivämuoto"
+ ],
+ "Invalid date format and invalid time format": [
+  null,
+  "Virheellinen päivämuoto ja aikamuoto"
+ ],
+ "Invalid date format.": [
+  null,
+  "Virheellinen päivämuoto."
+ ],
+ "Invalid number.": [
+  null,
+  "Virheellinen numero."
+ ],
+ "Invalid time format": [
+  null,
+  "Virheellinen aikamuoto"
+ ],
  "Invalid time zone": [
   null,
   "Virheellinen aikavyöhyke"
  ],
- "IoT Gateway": [
+ "Joins Namespace Of": [
   null,
   ""
  ],
@@ -531,10 +629,6 @@ return plural;
   null,
   "Kernel"
  ],
- "Laptop": [
-  null,
-  "Kannettava"
- ],
  "Last 24 hours": [
   null,
   "Viimeiset 24 tuntia"
@@ -542,6 +636,10 @@ return plural;
  "Last 7 days": [
   null,
   "Viimeiset 7 päivää"
+ ],
+ "Last Trigger": [
+  null,
+  "Edellinen liipaisin"
  ],
  "Load earlier entries": [
   null,
@@ -559,14 +657,6 @@ return plural;
   null,
   "Lokit"
  ],
- "Low Profile Desktop": [
-  null,
-  "Matalan tason työpöytä"
- ],
- "Lunch Box": [
-  null,
-  ""
- ],
  "Machine ID": [
   null,
   "Koneen ID"
@@ -575,25 +665,29 @@ return plural;
   null,
   "Koneen SSH-avaimen sormenjäljet"
  ],
- "Main Server Chassis": [
-  null,
-  ""
- ],
  "Manually": [
   null,
   "Manuaalisesti"
+ ],
+ "Mask": [
+  null,
+  "Peite"
+ ],
+ "Mask Forcefully": [
+  null,
+  "Peitä väkisin"
  ],
  "Memory": [
   null,
   "Muisti"
  ],
- "Mini PC": [
+ "Message to logged in users": [
   null,
-  ""
+  "Viesti sisäänkirjautuneille käyttäjille"
  ],
- "Mini Tower": [
+ "Minute needs to be a number between 0-59": [
   null,
-  ""
+  "Minuutit tulee olla esitetty numerovälillä 0-59"
  ],
  "Minutes": [
   null,
@@ -607,17 +701,25 @@ return plural;
   null,
   "Maanantai"
  ],
- "Multi-system Chassis": [
+ "NTP Server": [
   null,
-  ""
+  "NTP-palvelin"
  ],
  "Name": [
   null,
   "Nimi"
  ],
+ "Need at least one NTP server": [
+  null,
+  "Tarvitaan vähintään yksi NTP-palvelin"
+ ],
  "Network Traffic": [
   null,
   "Verkkoliikenne"
+ ],
+ "Next Run": [
+  null,
+  ""
  ],
  "Nice": [
   null,
@@ -643,10 +745,6 @@ return plural;
   null,
   ""
  ],
- "Notebook": [
-  null,
-  ""
- ],
  "Notice and above": [
   null,
   ""
@@ -663,7 +761,15 @@ return plural;
   null,
   "Päällä"
  ],
+ "On Failure": [
+  null,
+  ""
+ ],
  "Only Emergency": [
+  null,
+  ""
+ ],
+ "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
   ""
  ],
@@ -671,17 +777,13 @@ return plural;
   null,
   "Käyttöjärjestelmä"
  ],
- "Other": [
-  null,
-  ""
- ],
  "PCI": [
   null,
   "PCI"
  ],
- "PackageKit crashed": [
+ "Part Of": [
   null,
-  "PackageKit kaatui"
+  ""
  ],
  "Paths": [
   null,
@@ -691,19 +793,15 @@ return plural;
   null,
   "Suorituskykyprofiili"
  ],
- "Peripheral Chassis": [
-  null,
-  ""
- ],
- "Pizza Box": [
-  null,
-  ""
- ],
- "Portable": [
-  null,
-  ""
- ],
  "Power Options": [
+  null,
+  ""
+ ],
+ "Preset": [
+  null,
+  ""
+ ],
+ "Preset Forcefully": [
   null,
   ""
  ],
@@ -719,15 +817,19 @@ return plural;
   null,
   ""
  ],
- "RAID Chassis": [
-  null,
-  ""
- ],
- "Rack Mount Chassis": [
+ "Propagates Reload To": [
   null,
   ""
  ],
  "Real Host Name": [
+  null,
+  ""
+ ],
+ "Real host name can only contain lower-case characters, digits, dashes, and periods (with populated subdomains)": [
+  null,
+  ""
+ ],
+ "Real host name must be 64 characters or less": [
   null,
   ""
  ],
@@ -736,6 +838,14 @@ return plural;
   "Käynnistä uudelleen"
  ],
  "Recent": [
+  null,
+  ""
+ ],
+ "Reload": [
+  null,
+  "Lataa uudelleen"
+ ],
+ "Reload Propagated From": [
   null,
   ""
  ],
@@ -783,6 +893,22 @@ return plural;
   null,
   ""
  ],
+ "Required By": [
+  null,
+  ""
+ ],
+ "Requires": [
+  null,
+  ""
+ ],
+ "Requisite": [
+  null,
+  ""
+ ],
+ "Requisite Of": [
+  null,
+  ""
+ ],
  "Reset": [
   null,
   ""
@@ -803,10 +929,6 @@ return plural;
   null,
   "Tallenna"
  ],
- "Sealed-case PC": [
-  null,
-  ""
- ],
  "Seconds": [
   null,
   "Sekunnit"
@@ -814,6 +936,10 @@ return plural;
  "Secure Shell Keys": [
   null,
   ""
+ ],
+ "Security Updates Available": [
+  null,
+  "Tietoturvapäivityksiä saatavilla"
  ],
  "Service Logs": [
   null,
@@ -826,6 +952,10 @@ return plural;
  "Services": [
   null,
   "Palvelut"
+ ],
+ "Set Host name": [
+  null,
+  ""
  ],
  "Set Time": [
   null,
@@ -843,6 +973,10 @@ return plural;
   null,
   "Sammuta"
  ],
+ "Since $0": [
+  null,
+  ""
+ ],
  "Slot": [
   null,
   ""
@@ -851,27 +985,27 @@ return plural;
   null,
   ""
  ],
- "Space-saving Computer": [
-  null,
-  ""
- ],
  "Specific Time": [
   null,
   ""
  ],
- "Stick PC": [
+ "Start": [
   null,
-  "Tikku-PC"
+  "Käynnistä"
+ ],
+ "State": [
+  null,
+  "Tila"
+ ],
+ "Static": [
+  null,
+  ""
+ ],
+ "Stop": [
+  null,
+  "Pysäytä"
  ],
  "Store Performance Data": [
-  null,
-  ""
- ],
- "Sub Chassis": [
-  null,
-  ""
- ],
- "Sub Notebook": [
   null,
   ""
  ],
@@ -899,6 +1033,10 @@ return plural;
   null,
   "Järjestelmätiedot"
  ],
+ "System Not Registered": [
+  null,
+  "Järjestelmää ei ole rekisteröity"
+ ],
  "System Services": [
   null,
   "Järjestelmäpalvelut"
@@ -907,15 +1045,51 @@ return plural;
   null,
   "Järjestelmän aika"
  ],
- "Tablet": [
+ "System Up To Date": [
   null,
-  ""
+  "Järjestelmä ajan tasalla"
  ],
  "Targets": [
   null,
   ""
  ],
  "Terminal": [
+  null,
+  ""
+ ],
+ "The user <b>$0</b> does not have permissions for creating timers": [
+  null,
+  "Käyttäjällä <b>$0</b> ei ole oikeutta luoda ajastimia"
+ ],
+ "The user <b>$0</b> is not permitted to change the system time": [
+  null,
+  ""
+ ],
+ "The user <b>$0</b> is not permitted to enable or disable services": [
+  null,
+  ""
+ ],
+ "The user <b>$0</b> is not permitted to modify hostnames": [
+  null,
+  ""
+ ],
+ "The user <b>$0</b> is not permitted to shutdown or restart this server": [
+  null,
+  "Käyttäjällä <b>$0</b> ei ole oikeutta sammuttaa tai käynnistää uudelleen tätä palvelinta"
+ ],
+ "The user <b>$0</b> is not permitted to start or stop services": [
+  null,
+  ""
+ ],
+ "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
+  null,
+  "Tätä päivää ei ole kaikissa kuukausissa. <br> Ajastin ajetaan vain kuukausissa, joissa on 31. päivä."
+ ],
+ "This field cannot be empty.": [
+  null,
+  "Tämä kenttä ei voi olla tyhjä."
+ ],
+ "This unit is an instance of the $0 template.": [
   null,
   ""
  ],
@@ -939,9 +1113,13 @@ return plural;
   null,
   ""
  ],
- "Tower": [
+ "Triggered By": [
   null,
-  "Torni"
+  ""
+ ],
+ "Triggers": [
+  null,
+  "Liipaisimet"
  ],
  "Trying to synchronize with {{Server}}": [
   null,
@@ -955,9 +1133,18 @@ return plural;
   null,
   "Tyyppi"
  ],
- "Unknown": [
+ "Unmask": [
   null,
-  "Tuntematon"
+  ""
+ ],
+ "Updates Available": [
+  null,
+  "Päivityksiä saatavilla"
+ ],
+ "Usage of $0 CPU core": [
+  "Usage of $0 CPU cores",
+  "",
+  ""
  ],
  "Used": [
   null,
@@ -976,6 +1163,14 @@ return plural;
   "Versio"
  ],
  "Waiting for other software management operations to finish": [
+  null,
+  ""
+ ],
+ "Wanted By": [
+  null,
+  ""
+ ],
+ "Wants": [
   null,
   ""
  ],
@@ -1002,5 +1197,26 @@ return plural;
  "[no data]": [
   null,
   "[ei dataa]"
+ ],
+ "failed to list ssh host keys: $0": [
+  null,
+  ""
+ ],
+ "of $0 CPU core": [
+  "of $0 CPU cores",
+  "",
+  ""
+ ],
+ "unknown": [
+  null,
+  "tuntematon"
+ ],
+ "page-title\u0004CPU Status": [
+  null,
+  "Prosessorin tila"
+ ],
+ "page-title\u0004Memory": [
+  null,
+  "Muisti"
  ]
 }));

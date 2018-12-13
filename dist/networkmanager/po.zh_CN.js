@@ -575,10 +575,6 @@ return plural;
   null,
   "关"
  ],
- "Ok": [
-  null,
-  "确认"
- ],
  "On": [
   null,
   "开"
@@ -621,7 +617,7 @@ return plural;
  ],
  "Please install the $0 package": [
   null,
-  ""
+  "请安装 $0 软件包"
  ],
  "Ports": [
   null,

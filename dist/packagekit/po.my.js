@@ -223,10 +223,6 @@ return plural;
   null,
   ""
  ],
- "PackageKit crashed": [
-  null,
-  ""
- ],
  "PackageKit is not installed": [
   null,
   ""

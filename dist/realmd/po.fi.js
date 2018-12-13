@@ -199,10 +199,6 @@ return plural;
   null,
   "Kertakäyttöinen salasana"
  ],
- "PackageKit crashed": [
-  null,
-  "PackageKit kaatui"
- ],
  "Removals:": [
   null,
   ""

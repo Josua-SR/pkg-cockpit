@@ -258,7 +258,7 @@ return plural;
  ],
  "Address is not a valid URL": [
   null,
-  ""
+  "L'adresse ne correspond pas à une URL valide"
  ],
  "Apply": [
   null,
@@ -684,6 +684,10 @@ return plural;
   null,
   "Espace libre"
  ],
+ "Free up space in this group: Shrink or delete other logical volumes or add another physical volume.": [
+  null,
+  ""
+ ],
  "Go to now": [
   null,
   "Aller à maintenant"
@@ -908,6 +912,14 @@ return plural;
   null,
   "Le nom ne peut pas être vide."
  ],
+ "Name cannot be longer than $0 bytes": [
+  null,
+  ""
+ ],
+ "Name cannot be longer than $0 characters": [
+  null,
+  ""
+ ],
  "Name cannot be longer than 127 characters.": [
   null,
   "Le nom ne peut pas dépasser 127 caractères."
@@ -992,6 +1004,10 @@ return plural;
   null,
   "Aucun groupe de volumes créé"
  ],
+ "Not enough space to grow.": [
+  null,
+  ""
+ ],
  "Not found": [
   null,
   "Non trouvé"
@@ -1039,10 +1055,6 @@ return plural;
  "Overwrite existing data with zeros": [
   null,
   "Remplacer les données existantes par des zéros"
- ],
- "PackageKit crashed": [
-  null,
-  "PackageKit crash"
  ],
  "Partition": [
   null,

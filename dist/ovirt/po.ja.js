@@ -95,10 +95,6 @@ return plural;
   null,
   "アドレス: "
  ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  "すべての変更は、仮想マシンの停止および開始後にのみ、実施されます。"
- ],
  "All running virtual machines will be turned off.": [
   null,
   "全ての実行中のマシンはオフされます。"
@@ -143,17 +139,9 @@ return plural;
   null,
   "バス"
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "CHANGE NETWORK STATE アクションに失敗しました"
- ],
  "CPU Type:": [
   null,
   "CPU タイプ:"
- ],
- "CREATE VM action failed": [
-  null,
-  "CREATE VM アクションに失敗しました"
  ],
  "Cancel": [
   null,
@@ -163,9 +151,9 @@ return plural;
   null,
   "容量"
  ],
- "Changes will apply on VM shutdown": [
+ "Changes will take effect after shutting down the VM": [
   null,
-  ""
+  "変更は、仮想マシンをシャットダウンすると反映されます。"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -182,10 +170,6 @@ return plural;
  "Cluster Virtual Machines": [
   null,
   "クラスター仮想マシン"
- ],
- "Confirm deletion of $0": [
-  null,
-  "$0 の削除を確定"
  ],
  "Confirm migration": [
   null,
@@ -213,7 +197,7 @@ return plural;
  ],
  "Connecting": [
   null,
-  ""
+  "接続中"
  ],
  "Connection": [
   null,
@@ -249,7 +233,7 @@ return plural;
  ],
  "Ctrl+Alt+Del": [
   null,
-  ""
+  "Ctrl+Alt+Del"
  ],
  "Delete": [
   null,
@@ -283,13 +267,13 @@ return plural;
   null,
   "シリアルコンソールから切断されました。「再接続」ボタンをクリックします。"
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
-  "以下のエラーが原因でディスクの割り当てに失敗しました: "
+  "ディスクの割り当てに失敗しました"
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
-  "以下のエラーが原因でディスクの作成に失敗しました: "
+  "ディスクの作成に失敗しました"
  ],
  "Disks": [
   null,
@@ -339,10 +323,6 @@ return plural;
   null,
   "フォーマット"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "GET HYPERVISOR MAX VCPU アクションに失敗しました"
- ],
  "GiB": [
   null,
   "GiB"
@@ -371,10 +351,6 @@ return plural;
   null,
   "メンテナンスするホスト"
  ],
- "INSTALL VM action failed": [
-  null,
-  "INSTALL VM アクションに失敗しました"
- ],
  "Install": [
   null,
   "インストール"
@@ -395,13 +371,9 @@ return plural;
   null,
   "MAC アドレス"
  ],
- "MIGRATE action failed": [
-  null,
-  "MIGRATE アクションに失敗しました"
- ],
  "Mac Address": [
   null,
-  ""
+  "Mac アドレス"
  ],
  "Manual Connection": [
   null,
@@ -445,11 +417,11 @@ return plural;
  ],
  "Network Type": [
   null,
-  ""
+  "ネットワークタイプ"
  ],
- "Network settings failed to change with following error: ": [
+ "Network settings could not be saved": [
   null,
-  ""
+  "ネットワーク設定を保存できませんでした"
  ],
  "Networks": [
   null,
@@ -489,7 +461,7 @@ return plural;
  ],
  "No virtual networks": [
   null,
-  ""
+  "仮想ネットワークがありません"
  ],
  "Number of virtual CPUs that gonna be used.": [
   null,
@@ -571,17 +543,9 @@ return plural;
   null,
   "ゲストへの公開用の推奨されるソケットの数。"
  ],
- "Preparing for Maintenance": [
-  null,
-  "メンテナンスの準備中"
- ],
  "Protocol": [
   null,
   "プロトコル"
- ],
- "REBOOT action failed": [
-  null,
-  "REBOOT アクションに失敗しました"
  ],
  "Readonly": [
   null,
@@ -619,14 +583,6 @@ return plural;
   null,
   "実行開始:"
  ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  "SET VCPU SETTINGS アクションに失敗しました"
- ],
- "SHUTDOWN action failed": [
-  null,
-  "SHUTDOWN アクションに失敗しました"
- ],
  "SPICE": [
   null,
   "SPICE"
@@ -643,14 +599,6 @@ return plural;
   null,
   "SPICE TLS ポート:"
  ],
- "START action failed": [
-  null,
-  "START アクションに失敗しました"
- ],
- "SUSPEND action failed": [
-  null,
-  "SUSPEND アクションに失敗しました"
- ],
  "Save": [
   null,
   "保存"
@@ -661,15 +609,11 @@ return plural;
  ],
  "Send key": [
   null,
-  ""
+  "キーの送信"
  ],
  "Serial Console": [
   null,
   "シリアルコンソール"
- ],
- "Session": [
-  null,
-  "セッション"
  ],
  "Shut Down": [
   null,
@@ -710,18 +654,6 @@ return plural;
  "Switch Host to Maintenance": [
   null,
   "ホストをメンテナンスに切り替え"
- ],
- "Switching host to maintenance mode failed. Received error: ": [
-  null,
-  "ホストをメンテナンスモードに切り替えることができませんでした。受け取ったエラー: "
- ],
- "Switching host to maintenance mode in progress ...": [
-  null,
-  "ホストをメンテナンスモードに切り替え中..."
- ],
- "System": [
-  null,
-  "システム"
  ],
  "Target": [
   null,
@@ -789,7 +721,7 @@ return plural;
  ],
  "Threads per core": [
   null,
-  ""
+  "コアあたりのスレッド"
  ],
  "Type": [
   null,
@@ -815,6 +747,10 @@ return plural;
   null,
   "Used"
  ],
+ "VCPU settings could not be saved": [
+  null,
+  "VCPU 設定を保存できませんでした"
+ ],
  "VDSM": [
   null,
   "VDSM"
@@ -822,38 +758,6 @@ return plural;
  "VDSM Service Management": [
   null,
   "VDSM サービス管理"
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  ""
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  ""
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "VM FORCE OFF アクションに失敗しました"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "VM FORCE REBOOT アクションに失敗しました"
- ],
- "VM REBOOT action failed": [
-  null,
-  "VM REBOOT アクションに失敗しました"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  "VM SEND マスク不可な割り込みアクションに失敗しました"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "VM SHUT DOWN アクションに失敗しました"
- ],
- "VM START action failed": [
-  null,
-  "VM START アクションに失敗しました"
  ],
  "VM icon": [
   null,
@@ -895,117 +799,21 @@ return plural;
   null,
   "音量"
  ],
- "bridge": [
-  null,
-  "ブリッジ"
- ],
- "cdrom": [
-  null,
-  "cdrom"
- ],
- "connecting": [
-  null,
-  "接続中"
- ],
  "cores": [
   null,
   "コア"
- ],
- "crashed": [
-  null,
-  "クラッシュ"
- ],
- "custom": [
-  null,
-  "カスタム"
- ],
- "direct": [
-  null,
-  "ダイレクト"
  ],
  "disabled": [
   null,
   "無効"
  ],
- "disk": [
-  null,
-  "ディスク"
- ],
- "down": [
-  null,
-  "下へ"
- ],
- "dying": [
-  null,
-  "終了中"
- ],
  "enabled": [
   null,
   "有効"
  ],
- "error": [
-  null,
-  "エラー"
- ],
- "ethernet": [
-  null,
-  "Ethernet"
- ],
- "host": [
-  null,
-  "ホスト"
- ],
- "hostdev": [
-  null,
-  "hostdev"
- ],
- "idle": [
-  null,
-  "アイドル"
- ],
- "initializing": [
-  null,
-  "初期化中"
- ],
- "installation failed": [
-  null,
-  "インストールに失敗しました"
- ],
- "installing OS": [
-  null,
-  "OS のインストール中"
- ],
- "kdumping": [
-  null,
-  "kdump 中"
- ],
- "maintenance": [
-  null,
-  "メンテナンス"
- ],
- "mcast": [
-  null,
-  "mcast"
- ],
- "network": [
-  null,
-  "ネットワーク"
- ],
  "no": [
   null,
   "いいえ"
- ],
- "non operational": [
-  null,
-  "稼動していません"
- ],
- "non responsive": [
-  null,
-  "応答しません"
- ],
- "oVirt": [
-  null,
-  "oVirt"
  ],
  "oVirt Host State:": [
   null,
@@ -1027,18 +835,6 @@ return plural;
   null,
   "oVirt ログインの処理中"
  ],
- "other": [
-  null,
-  "その他"
- ],
- "paused": [
-  null,
-  "一時停止"
- ],
- "pending approval": [
-  null,
-  "保留中の承認"
- ],
  "qcow2": [
   null,
   "qcow2"
@@ -1046,18 +842,6 @@ return plural;
  "raw": [
   null,
   "raw"
- ],
- "reboot": [
-  null,
-  "再起動"
- ],
- "running": [
-  null,
-  "実行中"
- ],
- "server": [
-  null,
-  "サーバー"
  ],
  "show less": [
   null,
@@ -1067,45 +851,17 @@ return plural;
   null,
   "表示を増やす"
  ],
- "shut off": [
-  null,
-  "シャットオフ"
- ],
- "shutdown": [
-  null,
-  "shutdown"
- ],
  "sockets": [
   null,
   "ソケット"
- ],
- "suspended (PM)": [
-  null,
-  "一時停止中 (PM)"
  ],
  "threads": [
   null,
   "スレッド"
  ],
- "udp": [
-  null,
-  "udp"
- ],
- "unassigned": [
-  null,
-  "未割り当て"
- ],
  "undefined": [
   null,
   "未定義"
- ],
- "up": [
-  null,
-  "上へ"
- ],
- "user": [
-  null,
-  "ユーザー"
  ],
  "vCPU Count": [
   null,
@@ -1122,10 +878,6 @@ return plural;
  "vCPUs:": [
   null,
   "vCPU:"
- ],
- "vhostuser": [
-  null,
-  "vhostuser"
  ],
  "yes": [
   null,

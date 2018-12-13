@@ -515,10 +515,6 @@ return plural;
   null,
   "{{#strong}}{{host}}{{/strong}} に接続されていますが、ユーザーを同期するには、スーパーユーザー権限を持つユーザーが必要です。"
  ],
- "You can remove the previously stored key by running the following command": [
-  null,
-  "以前に保存された鍵を削除するには次のコマンドを実行します"
- ],
  "active": [
   null,
   "アクティブ"

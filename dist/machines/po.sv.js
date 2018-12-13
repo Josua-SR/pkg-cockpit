@@ -115,10 +115,6 @@ return plural;
   null,
   "Buss"
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Åtgärden ÄNDRA NÄTVERKSTILLSTÅND misslyckades"
- ],
  "CPU Type:": [
   null,
   "CPU-typ:"
@@ -178,6 +174,10 @@ return plural;
  "Create New": [
   null,
   "Skapa ny"
+ ],
+ "Create Storage Pool": [
+  null,
+  "Skapa en lagringspool"
  ],
  "Create VM": [
   null,
@@ -251,6 +251,10 @@ return plural;
   null,
   "Filsystem"
  ],
+ "Filesystem Directory": [
+  null,
+  "Filsystemskatalog"
+ ],
  "Force Restart": [
   null,
   "Framtvinga omstart"
@@ -262,10 +266,6 @@ return plural;
  "Format": [
   null,
   "Formater"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "Åtgärden GET HYPERVISOR MAX VCPU misslyckades"
  ],
  "GiB": [
   null,
@@ -283,9 +283,13 @@ return plural;
   null,
   "Värd"
  ],
- "INSTALL VM action failed": [
+ "Host Name": [
   null,
-  "Åtgärden INSTALL VM misslyckades"
+  "Värdnamn"
+ ],
+ "Host should not be empty": [
+  null,
+  "Värden får inte vara tom"
  ],
  "Immediately Start VM": [
   null,
@@ -375,6 +379,10 @@ return plural;
   null,
   "Namnet får inte inte bestå av endast tomma tecken"
  ],
+ "Network File System": [
+  null,
+  "Nätverksfilsystem"
+ ],
  "Network Type": [
   null,
   "Nätverkstyp"
@@ -438,6 +446,10 @@ return plural;
  "Overview": [
   null,
   "Översikt"
+ ],
+ "Path on host's filesystem": [
+  null,
+  "Sökväg på värdens filsystem"
  ],
  "Path to ISO file on host's file system": [
   null,
@@ -539,101 +551,129 @@ return plural;
   null,
   "Seriekonsol"
  ],
- "Session": [
-  null,
-  ""
- ],
  "Shut Down": [
   null,
-  ""
+  "Stäng av"
  ],
  "Size": [
   null,
-  ""
+  "Storlek"
  ],
  "Sockets": [
   null,
-  ""
+  "Uttag"
  ],
  "Source": [
   null,
-  ""
+  "Källa"
  ],
- "Source should start with http, ftp or nfs protocol": [
+ "Source Path": [
   null,
-  ""
+  "Källsökväg"
+ ],
+ "Source path should not be empty": [
+  null,
+  "Källsökvägen får inte vara tom"
+ ],
+ "Source should start with https, ftp or nfs protocol": [
+  null,
+  "Källan skall börja med ett av protokollen https, ftp eller nfs"
  ],
  "Start libvirt": [
   null,
-  ""
+  "Starta libvirt"
+ ],
+ "Start pool when host boots": [
+  null,
+  "Starta poolen när värden startar upp"
  ],
  "Start the VM to see disk statistics.": [
   null,
-  ""
+  "Starta VM:en för att se diskvärden"
+ ],
+ "Startup": [
+  null,
+  "Uppstart"
  ],
  "State": [
   null,
-  ""
+  "Tillstånd"
+ ],
+ "Storage Pool Name": [
+  null,
+  "Lagringspoolsnamn"
+ ],
+ "Storage Pool failed to be created": [
+  null,
+  "Lagringspoolen kunde inte skapas"
  ],
  "Storage Pools": [
   null,
-  ""
+  "Lagringspooler"
  ],
  "Storage Size": [
   null,
-  ""
+  "Lagringsstorlek"
  ],
  "Storage Size should not be negative number": [
   null,
-  ""
+  "Lagringsstorleken skall inte vara ett negativt tal"
  ],
  "Storage Volumes": [
   null,
-  ""
- ],
- "System": [
-  null,
-  "System"
+  " Lagringsvolymer"
  ],
  "Target": [
   null,
-  ""
+  "Mål"
+ ],
+ "Target Path": [
+  null,
+  "Målsökväg"
+ ],
+ "Target path should not be empty": [
+  null,
+  "Målsökvägen får inte vara tom"
  ],
  "The VM crashed.": [
   null,
-  ""
+  "VM:en kraschade."
  ],
  "The VM is down.": [
   null,
-  ""
+  "VM:en är nere."
  ],
  "The VM is going down.": [
   null,
-  ""
+  "VM:en går ner."
  ],
  "The VM is idle.": [
   null,
-  ""
+  "VM:en är inaktiv."
  ],
  "The VM is in process of dying (shut down or crash is not completed).": [
   null,
-  ""
+  "VM:en är på gång att dö (en avstängning eller krasch är inte fullbordad)."
  ],
  "The VM is paused.": [
   null,
-  ""
+  "VM:en är pausad."
  ],
  "The VM is running and will be forced off before deletion.": [
   null,
-  ""
+  "VM:en kör och kommer tvingande stängas av före den tas bort."
  ],
  "The VM is running.": [
   null,
-  ""
+  "VM:en kör."
  ],
  "The VM is suspended by guest power management.": [
   null,
-  ""
+  "VM:en är i vila av gästens strömhantering."
+ ],
+ "The directory on the server being exported": [
+  null,
+  "Katalogen på servern exporteras"
  ],
  "The pool is empty": [
   null,
@@ -641,11 +681,11 @@ return plural;
  ],
  "Threads per core": [
   null,
-  ""
+  "Trådar per kärna"
  ],
  "Too many files found": [
   null,
-  ""
+  "För många filer hittade"
  ],
  "Troubleshoot": [
   null,
@@ -687,54 +727,6 @@ return plural;
   null,
   ""
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  ""
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  ""
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  ""
- ],
- "VM DELETE action failed": [
-  null,
-  ""
- ],
- "VM DETACH_DISK action failed": [
-  null,
-  ""
- ],
- "VM FORCE OFF action failed": [
-  null,
-  ""
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  ""
- ],
- "VM REBOOT action failed": [
-  null,
-  ""
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  ""
- ],
- "VM SENDNMI action failed": [
-  null,
-  ""
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  ""
- ],
- "VM START action failed": [
-  null,
-  ""
- ],
  "VNC": [
   null,
   ""
@@ -771,83 +763,11 @@ return plural;
   null,
   ""
  ],
- "bridge": [
-  null,
-  ""
- ],
- "cdrom": [
-  null,
-  ""
- ],
- "crashed": [
-  null,
-  ""
- ],
- "custom": [
-  null,
-  ""
- ],
- "direct": [
-  null,
-  ""
- ],
- "disabled": [
-  null,
-  ""
- ],
- "disk": [
-  null,
-  ""
- ],
- "down": [
-  null,
-  ""
- ],
- "dying": [
-  null,
-  ""
- ],
- "enabled": [
-  null,
-  ""
- ],
- "ethernet": [
-  null,
-  ""
- ],
- "host": [
-  null,
-  ""
- ],
- "hostdev": [
-  null,
-  ""
- ],
- "idle": [
-  null,
-  ""
- ],
  "inactive": [
   null,
   ""
  ],
- "mcast": [
-  null,
-  ""
- ],
- "network": [
-  null,
-  ""
- ],
  "no": [
-  null,
-  ""
- ],
- "other": [
-  null,
-  ""
- ],
- "paused": [
   null,
   ""
  ],
@@ -859,14 +779,6 @@ return plural;
   null,
   ""
  ],
- "running": [
-  null,
-  ""
- ],
- "server": [
-  null,
-  ""
- ],
  "show less": [
   null,
   ""
@@ -875,31 +787,7 @@ return plural;
   null,
   ""
  ],
- "shut off": [
-  null,
-  ""
- ],
- "shutdown": [
-  null,
-  ""
- ],
- "suspended (PM)": [
-  null,
-  ""
- ],
- "udp": [
-  null,
-  ""
- ],
  "undefined": [
-  null,
-  ""
- ],
- "up": [
-  null,
-  ""
- ],
- "user": [
   null,
   ""
  ],
@@ -912,10 +800,6 @@ return plural;
   ""
  ],
  "vCPUs:": [
-  null,
-  ""
- ],
- "vhostuser": [
   null,
   ""
  ],

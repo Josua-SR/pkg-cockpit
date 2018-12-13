@@ -69,7 +69,7 @@ return plural;
  },
  "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  ""
+  "$0 로컬 인증서가 있는 사용자만 시스템에 로그인할 수 있습니다. 이 경우 다른 서비스가 DNS 확인 설정으로 적용될 수 있으며 신뢰할 수 있는 CA 목록이 변경될 수 있습니다."
  ],
  "$0 is not available from any repository.": [
   null,
@@ -81,11 +81,11 @@ return plural;
  ],
  "Additional packages:": [
   null,
-  ""
+  "추가 패키지 :"
  ],
  "Administrator Password": [
   null,
-  ""
+  "관리자 암호"
  ],
  "Are you sure you want to leave the '$0' domain?": [
   null,
@@ -109,7 +109,7 @@ return plural;
  ],
  "Checking installed software": [
   null,
-  ""
+  "설치된 소프트웨어 확인 중 "
  ],
  "Computer OU": [
   null,
@@ -196,10 +196,6 @@ return plural;
   "활성"
  ],
  "One Time Password": [
-  null,
-  ""
- ],
- "PackageKit crashed": [
   null,
   ""
  ],

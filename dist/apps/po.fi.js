@@ -115,10 +115,6 @@ return plural;
   null,
   "OK"
  ],
- "PackageKit crashed": [
-  null,
-  "PackageKit kaatui"
- ],
  "Remove": [
   null,
   "Poista"

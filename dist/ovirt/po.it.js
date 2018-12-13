@@ -69,11 +69,11 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  ""
+  "$0 è disponibile per la maggior parte dei sistemi operativi. Per installarlo, cercarlo nel software GNOME o eseguire quanto segue:"
  ],
  "$0 vCPU Details": [
   null,
-  ""
+  "$0 dettagli vCPU"
  ],
  "Action": [
   null,
@@ -85,7 +85,7 @@ return plural;
  ],
  "Add Disk": [
   null,
-  ""
+  "Aggiungi disco"
  ],
  "Address": [
   null,
@@ -95,13 +95,9 @@ return plural;
   null,
   "Indirizzo:"
  ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  ""
- ],
  "All running virtual machines will be turned off.": [
   null,
-  ""
+  "Tutte le macchine virtuali in esecuzione saranno disattivate."
  ],
  "Apply": [
   null,
@@ -109,15 +105,15 @@ return plural;
  ],
  "Attach permanently": [
   null,
-  ""
+  "Fissare in modo permanente"
  ],
  "Automatically selected host": [
   null,
-  ""
+  "Ospite selezionato automaticamente"
  ],
  "Autostart:": [
   null,
-  ""
+  "Avvio automatico:"
  ],
  "Available": [
   null,
@@ -125,35 +121,27 @@ return plural;
  ],
  "Base Template": [
   null,
-  ""
+  "Modello di base"
  ],
  "Base template": [
   null,
-  ""
+  "Modello di base"
  ],
  "Base template:": [
   null,
-  ""
+  "Modello di base:"
  ],
  "Boot Order:": [
   null,
-  ""
+  "Ordine boot"
  ],
  "Bus": [
   null,
-  ""
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  ""
+  "Bus"
  ],
  "CPU Type:": [
   null,
-  ""
- ],
- "CREATE VM action failed": [
-  null,
-  ""
+  "Tipo CPU:"
  ],
  "Cancel": [
   null,
@@ -163,13 +151,13 @@ return plural;
   null,
   "Capacità"
  ],
- "Changes will apply on VM shutdown": [
+ "Changes will take effect after shutting down the VM": [
   null,
-  ""
+  "Le modifiche avranno effetto dopo lo spegnimento della VM."
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  ""
+  "Facendo clic su \"Avvia visualizzatore remoto\" si scarica un file .vv e si avvia $0."
  ],
  "Cluster": [
   null,
@@ -177,43 +165,39 @@ return plural;
  ],
  "Cluster Templates": [
   null,
-  ""
+  "Modelli di cluster"
  ],
  "Cluster Virtual Machines": [
   null,
-  ""
- ],
- "Confirm deletion of $0": [
-  null,
-  ""
+  "Cluster Virtual Machines"
  ],
  "Confirm migration": [
   null,
-  ""
+  "Confermare la migrazione"
  ],
  "Confirm reload:": [
   null,
-  ""
+  "Confermare la ricarica:"
  ],
  "Confirm save:": [
   null,
-  ""
+  "Confermare il salvataggio:"
  ],
  "Connect to oVirt Engine": [
   null,
-  ""
+  "Colega al motore oVirt"
  ],
  "Connect with any $0 viewer application.": [
   null,
-  ""
+  "Connettiti con qualsiasi applicazione di visualizzazione $0."
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  ""
+  "Connessione con qualsiasi applicazione di visualizzazione SPICE o VNC."
  ],
  "Connecting": [
   null,
-  ""
+  "Connessione"
  ],
  "Connection": [
   null,
@@ -221,11 +205,11 @@ return plural;
  ],
  "Console Type": [
   null,
-  ""
+  "Tipo di console"
  ],
  "Consoles": [
   null,
-  ""
+  "Console"
  ],
  "Cores per socket": [
   null,
@@ -237,19 +221,19 @@ return plural;
  ],
  "Create New": [
   null,
-  ""
+  "Crea nuovo"
  ],
  "Create New VM": [
   null,
-  ""
+  "Creare una nuova macchina virtuale"
  ],
  "Create VM": [
   null,
-  ""
+  "Creare VM"
  ],
  "Ctrl+Alt+Del": [
   null,
-  ""
+  "Ctrl+Alt+Del"
  ],
  "Delete": [
   null,
@@ -257,7 +241,7 @@ return plural;
  ],
  "Delete associated storage files:": [
   null,
-  ""
+  "Elimina i file di archiviazione associati:"
  ],
  "Description": [
   null,
@@ -281,23 +265,23 @@ return plural;
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
-  ""
+  "Scollegato dalla console seriale. Fare clic sul pulsante Ricollega."
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
-  ""
+  "Il disco non è stato collegato"
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
-  ""
+  "Disco che non è stato creato"
  ],
  "Disks": [
   null,
-  ""
+  "Dischi"
  ],
  "Download the MSI from $0": [
   null,
-  ""
+  "Scarica l'MSI da $0"
  ],
  "Edit": [
   null,
@@ -305,23 +289,23 @@ return plural;
  ],
  "Edit the vdsm.conf": [
   null,
-  ""
+  "Modifica il file vdsm.conf"
  ],
  "Emulated Machine:": [
   null,
-  ""
+  "Macchina emulata:"
  ],
  "Enter New VM name": [
   null,
-  ""
+  "Inserire il nome della nuova macchina virtuale"
  ],
  "FQDN": [
   null,
-  ""
+  "FQDN"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
-  ""
+  "Meno del numero massimo di CPU virtuali dovrebbe essere abilitato."
  ],
  "File": [
   null,
@@ -329,19 +313,15 @@ return plural;
  ],
  "Force Restart": [
   null,
-  ""
+  "Riavvio della forza"
  ],
  "Force Shut Down": [
   null,
-  ""
+  "Spegnimento forzato"
  ],
  "Format": [
   null,
   "Formato"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  ""
  ],
  "GiB": [
   null,
@@ -349,19 +329,19 @@ return plural;
  ],
  "Graphics Console (VNC)": [
   null,
-  ""
+  "Console grafica (VNC)"
  ],
  "Graphics Console in Desktop Viewer": [
   null,
-  ""
+  "Console grafica in Desktop Viewer"
  ],
  "HA": [
   null,
-  ""
+  "HA"
  ],
  "HA:": [
   null,
-  ""
+  "HA:"
  ],
  "Host": [
   null,
@@ -369,11 +349,7 @@ return plural;
  ],
  "Host to Maintenance": [
   null,
-  ""
- ],
- "INSTALL VM action failed": [
-  null,
-  ""
+  "Ospite a Manutenzione"
  ],
  "Install": [
   null,
@@ -381,7 +357,7 @@ return plural;
  ],
  "Launch Remote Viewer": [
   null,
-  ""
+  "Avviare il visualizzatore remoto"
  ],
  "Loading ...": [
   null,
@@ -389,27 +365,23 @@ return plural;
  ],
  "Loading data ...": [
   null,
-  ""
+  "Caricamento dati ...."
  ],
  "MAC Address": [
   null,
   "Indirizzo MAC"
  ],
- "MIGRATE action failed": [
-  null,
-  ""
- ],
  "Mac Address": [
   null,
-  ""
+  "Indirizzo Mac"
  ],
  "Manual Connection": [
   null,
-  ""
+  "Collegamento manuale"
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
-  ""
+  "Numero massimo di CPU virtuali allocate per il sistema operativo guest, che deve essere compreso tra 1 e $0"
  ],
  "Memory": [
   null,
@@ -425,7 +397,7 @@ return plural;
  ],
  "Migrate To:": [
   null,
-  ""
+  "Migrare a:"
  ],
  "Model": [
   null,
@@ -433,11 +405,11 @@ return plural;
  ],
  "Model type": [
   null,
-  ""
+  "Tipo di modello"
  ],
  "More Information": [
   null,
-  ""
+  "Per saperne di più"
  ],
  "Name": [
   null,
@@ -445,11 +417,11 @@ return plural;
  ],
  "Network Type": [
   null,
-  ""
+  "Tipo di rete"
  ],
- "Network settings failed to change with following error: ": [
+ "Network settings could not be saved": [
   null,
-  ""
+  "Le impostazioni di rete non possono essere salvate"
  ],
  "Networks": [
   null,
@@ -457,43 +429,43 @@ return plural;
  ],
  "New Volume Name": [
   null,
-  ""
+  "Nuovo nome del volume"
  ],
  "No VM found in oVirt.": [
   null,
-  ""
+  "Nessuna VM trovata in oVirt."
  ],
  "No VM is running or defined on this host": [
   null,
-  ""
+  "Nessuna VM è in esecuzione o definita su questo host"
  ],
  "No boot device found": [
   null,
-  ""
+  "Nessun dispositivo di avvio trovato"
  ],
  "No console defined for this virtual machine.": [
   null,
-  ""
+  "Nessuna console definita per questa macchina virtuale."
  ],
  "No disks defined for this VM": [
   null,
-  ""
+  "Nessun disco definito per questa VM"
  ],
  "No network interfaces defined for this VM": [
   null,
-  ""
+  "Nessuna interfaccia di rete definita per questa macchina virtuale"
  ],
  "No oVirt connection": [
   null,
-  ""
+  "Nessuna connessione oVirt"
  ],
  "No virtual networks": [
   null,
-  ""
+  "Nessuna rete virtuale"
  ],
  "Number of virtual CPUs that gonna be used.": [
   null,
-  ""
+  "Numero di CPU virtuali che verranno utilizzate."
  ],
  "OK": [
   null,
@@ -505,7 +477,7 @@ return plural;
  ],
  "OS Type:": [
   null,
-  ""
+  "Tipo di OS:"
  ],
  "Ok": [
   null,
@@ -513,7 +485,7 @@ return plural;
  ],
  "Optimized for:": [
   null,
-  ""
+  "Ottimizzato per:"
  ],
  "Overview": [
   null,
@@ -521,47 +493,47 @@ return plural;
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
-  ""
+  "Si prega di confermare, l'host deve essere impostato sulla modalità di manutenzione."
  ],
  "Please enter new volume name": [
   null,
-  ""
+  "Si prega di inserire il nuovo nome del volume"
  ],
  "Please enter new volume size": [
   null,
-  ""
+  "Si prega di inserire una nuova dimensione del volume"
  ],
  "Please provide fully qualified domain name and port of the oVirt engine.": [
   null,
-  ""
+  "Si prega di fornire il nome di dominio completo e la porta del motore oVirt."
  ],
  "Please provide valid oVirt engine fully qualified domain name (FQDN) and port (443 by default)": [
   null,
-  ""
+  "Si prega di fornire un motore oVirt valido, un nome di dominio pienamente qualificato (FQDN) e una porta (443 di default)"
  ],
  "Please refer to oVirt's $0 for more information about Remote Viewer setup.": [
   null,
-  ""
+  "Per $0ulteriori informazioni sulla configurazione del Remote Viewer, fare riferimento a oVirt."
  ],
  "Please start the virtual machine to access its console.": [
   null,
-  ""
+  "Avviare la macchina virtuale per accedere alla sua console."
  ],
  "Please wait till VMs list is loaded from the server.": [
   null,
-  ""
+  "Attendere che l'elenco delle macchine virtuali sia caricato dal server."
  ],
  "Please wait till list of templates is loaded from the server.": [
   null,
-  ""
+  "Attendere che l'elenco dei modelli sia caricato dal server."
  ],
  "Plug": [
   null,
-  ""
+  "Spina"
  ],
  "Pool": [
   null,
-  ""
+  "Pool"
  ],
  "Port": [
   null,
@@ -569,19 +541,11 @@ return plural;
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
-  ""
- ],
- "Preparing for Maintenance": [
-  null,
-  ""
+  "Numero preferito di prese da esporre all'ospite."
  ],
  "Protocol": [
   null,
   "Protocollo"
- ],
- "REBOOT action failed": [
-  null,
-  ""
  ],
  "Readonly": [
   null,
@@ -589,15 +553,15 @@ return plural;
  ],
  "Reconnect": [
   null,
-  ""
+  "Ricollegare"
  ],
  "Register oVirt": [
   null,
-  ""
+  "Registrati su oVirt"
  ],
  "Registering oVirt to Cockpit": [
   null,
-  ""
+  "Registrazione oVirt su Cockpit"
  ],
  "Reload": [
   null,
@@ -613,43 +577,27 @@ return plural;
  ],
  "Run Here": [
   null,
-  ""
+  "Esegui qu"
  ],
  "Running Since:": [
   null,
-  ""
- ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  ""
- ],
- "SHUTDOWN action failed": [
-  null,
-  ""
+  "Corsa da allora:"
  ],
  "SPICE": [
   null,
-  ""
+  "SPICE"
  ],
  "SPICE Address:": [
   null,
-  ""
+  "Indirizzo SPICE:"
  ],
  "SPICE Port:": [
   null,
-  ""
+  "Porta SPICE:"
  ],
  "SPICE TLS Port:": [
   null,
-  ""
- ],
- "START action failed": [
-  null,
-  ""
- ],
- "SUSPEND action failed": [
-  null,
-  ""
+  "SPICE TLS Port:"
  ],
  "Save": [
   null,
@@ -657,19 +605,15 @@ return plural;
  ],
  "Send Non-Maskable Interrupt": [
   null,
-  ""
+  "Invia Interruzione non mascherabile"
  ],
  "Send key": [
   null,
-  ""
+  "Invia combinazione di tasti"
  ],
  "Serial Console": [
   null,
-  ""
- ],
- "Session": [
-  null,
-  "Sessione"
+  "Console seriale"
  ],
  "Shut Down": [
   null,
@@ -689,7 +633,7 @@ return plural;
  ],
  "Start the VM to see disk statistics.": [
   null,
-  ""
+  "Avviare la macchina virtuale per visualizzare le statistiche del disco."
  ],
  "State": [
   null,
@@ -697,11 +641,11 @@ return plural;
  ],
  "Stateless": [
   null,
-  ""
+  "Stateless"
  ],
  "Stateless:": [
   null,
-  ""
+  "Stateless:"
  ],
  "Suspend": [
   null,
@@ -709,19 +653,7 @@ return plural;
  ],
  "Switch Host to Maintenance": [
   null,
-  ""
- ],
- "Switching host to maintenance mode failed. Received error: ": [
-  null,
-  ""
- ],
- "Switching host to maintenance mode in progress ...": [
-  null,
-  ""
- ],
- "System": [
-  null,
-  "Sistema"
+  "Passa da l'host in modalità di manutenzione"
  ],
  "Target": [
   null,
@@ -737,59 +669,59 @@ return plural;
  ],
  "Templates of $0 cluster": [
   null,
-  ""
+  "Modelli di cluster $0"
  ],
  "The VM crashed.": [
   null,
-  ""
+  "La VM si è interrotta."
  ],
  "The VM is down.": [
   null,
-  ""
+  "La VM è spenta."
  ],
  "The VM is going down.": [
   null,
-  ""
+  "La VM si sta spegnendo."
  ],
  "The VM is idle.": [
   null,
-  ""
+  "La VM è inattiva."
  ],
  "The VM is in process of dying (shut down or crash is not completed).": [
   null,
-  ""
+  "La macchina virtuale sta morendo (arresto o crash non completato)."
  ],
  "The VM is paused.": [
   null,
-  ""
+  "La VM è in pausa."
  ],
  "The VM is running and will be forced off before deletion.": [
   null,
-  ""
+  "The VM is running and will be forced off before deletion."
  ],
  "The VM is running.": [
   null,
-  ""
+  "La macchina virtuale è in funzione."
  ],
  "The VM is suspended by guest power management.": [
   null,
-  ""
+  "La VM è sospesa dalla gestione dell'alimentazione degli ospiti."
  ],
  "The pool is empty": [
   null,
-  ""
+  "La piscina è vuota"
  ],
  "This host is managed by a virtualization manager, so creation of new VMs from the host is not possible.": [
   null,
-  ""
+  "Questo host è gestito da un gestore di virtualizzazione, quindi non è possibile creare nuove macchine virtuali dall'host."
  ],
  "This virtual machine is not managed by oVirt": [
   null,
-  ""
+  "Questa macchina virtuale non è gestita da oVirt"
  ],
  "Threads per core": [
   null,
-  ""
+  "Threads per core"
  ],
  "Type": [
   null,
@@ -797,11 +729,11 @@ return plural;
  ],
  "Unplug": [
   null,
-  ""
+  "Scollegare"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
-  ""
+  "Aggiornare a una versione più recente di libvirt per visualizzare le statistiche del disco"
  ],
  "Usage": [
   null,
@@ -809,55 +741,27 @@ return plural;
  ],
  "Use Existing": [
   null,
-  ""
+  "Usa esistente"
  ],
  "Used": [
   null,
   "Usato"
  ],
+ "VCPU settings could not be saved": [
+  null,
+  "Non è stato possibile salvare le impostazioni del VCPU"
+ ],
  "VDSM": [
   null,
-  ""
+  "VDSM"
  ],
  "VDSM Service Management": [
   null,
-  ""
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  ""
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  ""
- ],
- "VM FORCE OFF action failed": [
-  null,
-  ""
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  ""
- ],
- "VM REBOOT action failed": [
-  null,
-  ""
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  ""
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  ""
- ],
- "VM START action failed": [
-  null,
-  ""
+  "Gestione dei servizi VDSM"
  ],
  "VM icon": [
   null,
-  ""
+  "Icona VM"
  ],
  "VNC": [
   null,
@@ -865,15 +769,15 @@ return plural;
  ],
  "VNC Address:": [
   null,
-  ""
+  "Indirizzo VNC:"
  ],
  "VNC Port:": [
   null,
-  ""
+  "Porta VNC:"
  ],
  "VNC TLS Port:": [
   null,
-  ""
+  "Porta VNC TLS:"
  ],
  "Version": [
   null,
@@ -881,7 +785,7 @@ return plural;
  ],
  "Version num": [
   null,
-  ""
+  "Version num"
  ],
  "Virtual Machines": [
   null,
@@ -889,231 +793,83 @@ return plural;
  ],
  "Virtual Machines of $0 cluster": [
   null,
-  ""
+  "Macchine virtuali del cluster $0"
  ],
  "Volume": [
   null,
   "Volume"
  ],
- "bridge": [
-  null,
-  ""
- ],
- "cdrom": [
-  null,
-  ""
- ],
- "connecting": [
-  null,
-  "connessione in corso"
- ],
  "cores": [
   null,
-  ""
- ],
- "crashed": [
-  null,
-  ""
- ],
- "custom": [
-  null,
-  ""
- ],
- "direct": [
-  null,
-  ""
+  "core"
  ],
  "disabled": [
   null,
   "disabilitato"
  ],
- "disk": [
-  null,
-  "disco"
- ],
- "down": [
-  null,
-  "giù"
- ],
- "dying": [
-  null,
-  ""
- ],
  "enabled": [
   null,
   "abilitato"
- ],
- "error": [
-  null,
-  "errore"
- ],
- "ethernet": [
-  null,
-  ""
- ],
- "host": [
-  null,
-  ""
- ],
- "hostdev": [
-  null,
-  ""
- ],
- "idle": [
-  null,
-  ""
- ],
- "initializing": [
-  null,
-  ""
- ],
- "installation failed": [
-  null,
-  ""
- ],
- "installing OS": [
-  null,
-  ""
- ],
- "kdumping": [
-  null,
-  ""
- ],
- "maintenance": [
-  null,
-  ""
- ],
- "mcast": [
-  null,
-  ""
- ],
- "network": [
-  null,
-  ""
  ],
  "no": [
   null,
   "no"
  ],
- "non operational": [
-  null,
-  ""
- ],
- "non responsive": [
-  null,
-  ""
- ],
- "oVirt": [
-  null,
-  "oVirt"
- ],
  "oVirt Host State:": [
   null,
-  ""
+  "Stato host oVirt:"
  ],
  "oVirt Provider installation script failed due to missing arguments.": [
   null,
-  ""
+  "oVirt Provider non è riuscito a causa di argomenti mancanti."
  ],
  "oVirt Provider installation script failed: Can't write to /etc/cockpit/machines-ovirt.config, try as root.": [
   null,
-  ""
+  "script di installazione oVirt Provider fallito: non è possibile scrivere su /etc/cockpit/machines-ovirt.config, provare come root."
  ],
  "oVirt installation script failed with following output: ": [
   null,
-  ""
+  "lo script di installazione di oVirt non è riuscito con il seguente output: "
  ],
  "oVirt login in progress": [
   null,
-  ""
- ],
- "other": [
-  null,
-  ""
- ],
- "paused": [
-  null,
-  "in pausa"
- ],
- "pending approval": [
-  null,
-  ""
+  "oVirt login in corso"
  ],
  "qcow2": [
   null,
-  ""
+  "qcow2"
  ],
  "raw": [
   null,
   "raw"
  ],
- "reboot": [
-  null,
-  "riavvia"
- ],
- "running": [
-  null,
-  "in esecuzione"
- ],
- "server": [
-  null,
-  ""
- ],
  "show less": [
   null,
-  ""
+  "mostra meno"
  ],
  "show more": [
   null,
-  ""
- ],
- "shut off": [
-  null,
-  ""
- ],
- "shutdown": [
-  null,
-  ""
+  "mostra di più"
  ],
  "sockets": [
   null,
-  ""
- ],
- "suspended (PM)": [
-  null,
-  ""
+  "raccordi"
  ],
  "threads": [
   null,
-  ""
- ],
- "udp": [
-  null,
-  "udp"
- ],
- "unassigned": [
-  null,
-  ""
+  "thread"
  ],
  "undefined": [
   null,
-  ""
- ],
- "up": [
-  null,
-  "su"
- ],
- "user": [
-  null,
-  "utente"
+  "non definito"
  ],
  "vCPU Count": [
   null,
-  ""
+  "conteggio vCPU"
  ],
  "vCPU Maximum": [
   null,
-  ""
+  "vCPU Massimo"
  ],
  "vCPUs": [
   null,
@@ -1121,11 +877,7 @@ return plural;
  ],
  "vCPUs:": [
   null,
-  ""
- ],
- "vhostuser": [
-  null,
-  ""
+  "vCPU"
  ],
  "yes": [
   null,

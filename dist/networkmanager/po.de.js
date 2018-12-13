@@ -141,11 +141,11 @@ return plural;
  ],
  "Add Services": [
   null,
-  ""
+  "Dienste hinzufügen"
  ],
  "Add Services…": [
   null,
-  ""
+  "Services hinzufügen…"
  ],
  "Add Team": [
   null,
@@ -161,15 +161,15 @@ return plural;
  ],
  "Additional DNS $val": [
   null,
-  ""
+  "Zusätzliches DNS $val"
  ],
  "Additional DNS Search Domains $val": [
   null,
-  ""
+  "Zusätzliche DNS-Suchdomänen $val"
  ],
  "Additional address $val": [
   null,
-  ""
+  "Zusätzliche Adresse $val"
  ],
  "Address $val": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Allowed Services": [
   null,
-  ""
+  "Zulässige Dienste"
  ],
  "Apply": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Balancer": [
   null,
-  ""
+  "Balancer"
  ],
  "Bond": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "Connection will be lost": [
   null,
-  ""
+  "Verbindung geht verloren"
  ],
  "Create it": [
   null,
@@ -293,7 +293,7 @@ return plural;
  ],
  "Creating this bond will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Durch das Erstellen dieser Verbindung wird die Verbindung zum Server unterbrochen und die Verwaltungsbenutzeroberfläche wird nicht verfügbar."
  ],
  "Creating this bridge will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -301,7 +301,7 @@ return plural;
  ],
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Durch das Erstellen dieses Teams wird die Verbindung zum Server unterbrochen und die Verwaltungsoberfläche wird nicht verfügbar."
  ],
  "DNS": [
   null,
@@ -317,7 +317,7 @@ return plural;
  ],
  "DNS Search Domains $val": [
   null,
-  ""
+  "DNS-Suchdomänen $val"
  ],
  "Deactivating": [
   null,
@@ -333,7 +333,7 @@ return plural;
  ],
  "Deleting <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Löschen <b>$0</b> bricht die Verbindung zum Server ab und macht die Administrationsoberfläche nicht verfügbar."
  ],
  "Details": [
   null,
@@ -345,19 +345,19 @@ return plural;
  ],
  "Enable Service": [
   null,
-  ""
+  "Service aktivieren"
  ],
  "Ethernet MAC": [
   null,
-  ""
+  "Ethernet-MAC"
  ],
  "Ethernet MTU": [
   null,
-  ""
+  "Ethernet-MTU"
  ],
  "Ethtool": [
   null,
-  ""
+  "Ethtool"
  ],
  "Failed": [
   null,
@@ -365,7 +365,7 @@ return plural;
  ],
  "Filter Services": [
   null,
-  ""
+  "Filterdienste"
  ],
  "Firewall": [
   null,
@@ -373,7 +373,7 @@ return plural;
  ],
  "Firewall is not available": [
   null,
-  ""
+  "Firewall ist nicht verfügbar"
  ],
  "Forward delay $forward_delay": [
   null,
@@ -457,11 +457,11 @@ return plural;
  ],
  "Keep connection": [
   null,
-  ""
+  "Verbindung halten"
  ],
  "LACP Key": [
   null,
-  ""
+  "LACP Key"
  ],
  "Link Monitoring": [
   null,
@@ -501,7 +501,7 @@ return plural;
  ],
  "MTU must be a positive number": [
   null,
-  ""
+  "MTU muss eine positive Zahl sein"
  ],
  "Manual": [
   null,
@@ -533,7 +533,7 @@ return plural;
  ],
  "NSNA Ping": [
   null,
-  ""
+  "NSNA-Ping"
  ],
  "Name": [
   null,
@@ -541,7 +541,7 @@ return plural;
  ],
  "Network devices and graphs require NetworkManager.": [
   null,
-  ""
+  "Netzwerkgeräte und -diagramme erfordern NetworkManager."
  ],
  "NetworkManager is not running.": [
   null,
@@ -565,7 +565,7 @@ return plural;
  ],
  "No open ports": [
   null,
-  ""
+  "Keine offenen Ports"
  ],
  "Not available": [
   null,
@@ -574,10 +574,6 @@ return plural;
  "Off": [
   null,
   "Aus"
- ],
- "Ok": [
-  null,
-  "OK"
  ],
  "On": [
   null,
@@ -597,7 +593,7 @@ return plural;
  ],
  "Passive": [
   null,
-  ""
+  "Passiv"
  ],
  "Path cost": [
   null,
@@ -621,7 +617,7 @@ return plural;
  ],
  "Please install the $0 package": [
   null,
-  ""
+  "Bitte installieren Sie die $0 Paket"
  ],
  "Ports": [
   null,
@@ -717,7 +713,7 @@ return plural;
  ],
  "Set to": [
   null,
-  ""
+  "Einstellen"
  ],
  "Shared": [
   null,
@@ -737,7 +733,7 @@ return plural;
  ],
  "Start Service": [
   null,
-  ""
+  "Dienst starten"
  ],
  "Status": [
   null,
@@ -745,7 +741,7 @@ return plural;
  ],
  "Sticky": [
   null,
-  ""
+  "Sticky"
  ],
  "Switch off $0": [
   null,
@@ -813,7 +809,7 @@ return plural;
  ],
  "Unknown \"$0\"": [
   null,
-  ""
+  "Unbekannte \"$0\""
  ],
  "Unknown configuration": [
   null,
@@ -849,7 +845,7 @@ return plural;
  ],
  "You are not authorized to modify the firewall.": [
   null,
-  ""
+  "Sie sind nicht berechtigt, die Firewall zu ändern."
  ],
  "[$0 bytes of binary data]": [
   null,

@@ -95,10 +95,6 @@ return plural;
   null,
   "Hakemisto"
  ],
- "Directory $0 isn't writable or doesn't exist.": [
-  null,
-  "Hakemistolle $0 ei voi kirjoittaa tai se ei ole olemassa."
- ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
   "Kdump-palvelua ei ole asennettu. Varmista, että paketti kexec-tools on asennettu."

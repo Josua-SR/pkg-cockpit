@@ -173,31 +173,31 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "Server"
  ],
  "Starts": [
   null,
-  ""
+  "Startar"
  ],
  "Status": [
   null,
-  ""
+  "Status"
  ],
  "Status: $0": [
   null,
-  ""
+  "Status: $0"
  ],
  "Status: System isn't registered": [
   null,
-  ""
+  "Status: systemet är inte registrerat"
  ],
  "Subscriptions": [
   null,
-  ""
+  "Prenumerationer"
  ],
  "The current user isn't allowed to access system subscription status.": [
   null,
-  ""
+  "Den aktuella användaren har inte tillåtelse att komma åt systemets prenumerationsstatus."
  ],
  "URL": [
   null,

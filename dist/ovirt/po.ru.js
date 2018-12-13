@@ -69,11 +69,11 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  ""
+  "$0 доступен для большинства операционных систем. Чтобы установить его, выполните поиск в программном обеспечении GNOME или выполните следующие действия:"
  ],
  "$0 vCPU Details": [
   null,
-  ""
+  "$0 Сведения о VCPU"
  ],
  "Action": [
   null,
@@ -85,7 +85,7 @@ return plural;
  ],
  "Add Disk": [
   null,
-  ""
+  "Добавить диск"
  ],
  "Address": [
   null,
@@ -95,13 +95,9 @@ return plural;
   null,
   "Адрес:"
  ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  ""
- ],
  "All running virtual machines will be turned off.": [
   null,
-  ""
+  "Все запущенные виртуальные машины будут отключены."
  ],
  "Apply": [
   null,
@@ -113,11 +109,11 @@ return plural;
  ],
  "Automatically selected host": [
   null,
-  ""
+  "Автоматически выбранный хост"
  ],
  "Autostart:": [
   null,
-  ""
+  "Автоматический старт:"
  ],
  "Available": [
   null,
@@ -125,35 +121,27 @@ return plural;
  ],
  "Base Template": [
   null,
-  ""
+  "Базовый шаблон"
  ],
  "Base template": [
   null,
-  ""
+  "Базовый шаблон"
  ],
  "Base template:": [
   null,
-  ""
+  "Базовый шаблон:"
  ],
  "Boot Order:": [
   null,
-  ""
+  "Порядок загрузки:"
  ],
  "Bus": [
   null,
-  ""
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  ""
+  "автобус"
  ],
  "CPU Type:": [
   null,
-  ""
- ],
- "CREATE VM action failed": [
-  null,
-  ""
+  "Тип процессора:"
  ],
  "Cancel": [
   null,
@@ -163,13 +151,13 @@ return plural;
   null,
   "Объем"
  ],
- "Changes will apply on VM shutdown": [
+ "Changes will take effect after shutting down the VM": [
   null,
-  ""
+  "Изменения вступят в силу после выключения виртуальной машины"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  ""
+  "Нажав «Launch Remote Viewer», вы загрузите файл .vv и запустите $0"
  ],
  "Cluster": [
   null,
@@ -177,43 +165,39 @@ return plural;
  ],
  "Cluster Templates": [
   null,
-  ""
+  "Кластерные шаблоны"
  ],
  "Cluster Virtual Machines": [
   null,
-  ""
- ],
- "Confirm deletion of $0": [
-  null,
-  ""
+  "Виртуальные машины кластера"
  ],
  "Confirm migration": [
   null,
-  ""
+  "Подтверждение миграции"
  ],
  "Confirm reload:": [
   null,
-  ""
+  "Подтвердите перезагрузку:"
  ],
  "Confirm save:": [
   null,
-  ""
+  "Подтвердить сохранение:"
  ],
  "Connect to oVirt Engine": [
   null,
-  ""
+  "Подключиться к oVirt Engine"
  ],
  "Connect with any $0 viewer application.": [
   null,
-  ""
+  "Подключитесь к любому $0 приложение для просмотра."
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  ""
+  "Подключайтесь к любому приложению SPICE или VNC."
  ],
  "Connecting": [
   null,
-  ""
+  "Подключение"
  ],
  "Connection": [
   null,
@@ -221,11 +205,11 @@ return plural;
  ],
  "Console Type": [
   null,
-  ""
+  "Тип консоли"
  ],
  "Consoles": [
   null,
-  ""
+  "консоли"
  ],
  "Cores per socket": [
   null,
@@ -241,15 +225,15 @@ return plural;
  ],
  "Create New VM": [
   null,
-  ""
+  "Создать новую виртуальную машину"
  ],
  "Create VM": [
   null,
-  ""
+  "Создать виртуальную машину"
  ],
  "Ctrl+Alt+Del": [
   null,
-  ""
+  "Ctrl + Alt + Del"
  ],
  "Delete": [
   null,
@@ -257,7 +241,7 @@ return plural;
  ],
  "Delete associated storage files:": [
   null,
-  ""
+  "Удаление связанных файлов хранения:"
  ],
  "Description": [
   null,
@@ -281,23 +265,23 @@ return plural;
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
-  ""
+  "Отключен от последовательной консоли. Нажмите кнопку «Повторное подключение»."
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
-  ""
+  "Не удалось подключить диск"
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
-  ""
+  "Не удалось создать диск"
  ],
  "Disks": [
   null,
-  ""
+  "Диски"
  ],
  "Download the MSI from $0": [
   null,
-  ""
+  "Загрузите MSI из $0"
  ],
  "Edit": [
   null,
@@ -305,15 +289,15 @@ return plural;
  ],
  "Edit the vdsm.conf": [
   null,
-  ""
+  "Измените vdsm.conf"
  ],
  "Emulated Machine:": [
   null,
-  ""
+  "Эмулированные машины:"
  ],
  "Enter New VM name": [
   null,
-  ""
+  "Введите новое имя виртуальной машины"
  ],
  "FQDN": [
   null,
@@ -321,7 +305,7 @@ return plural;
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
-  ""
+  "Меньше, чем максимальное количество виртуальных процессоров должно быть включено."
  ],
  "File": [
   null,
@@ -329,19 +313,15 @@ return plural;
  ],
  "Force Restart": [
   null,
-  ""
+  "Принудительный перезапуск"
  ],
  "Force Shut Down": [
   null,
-  ""
+  "Завершение работы"
  ],
  "Format": [
   null,
   "Формат"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  ""
  ],
  "GiB": [
   null,
@@ -349,19 +329,19 @@ return plural;
  ],
  "Graphics Console (VNC)": [
   null,
-  ""
+  "Графическая консоль (VNC)"
  ],
  "Graphics Console in Desktop Viewer": [
   null,
-  ""
+  "Графическая консоль в Desktop Viewer"
  ],
  "HA": [
   null,
-  ""
+  "HA"
  ],
  "HA:": [
   null,
-  ""
+  "HA:"
  ],
  "Host": [
   null,
@@ -369,11 +349,7 @@ return plural;
  ],
  "Host to Maintenance": [
   null,
-  ""
- ],
- "INSTALL VM action failed": [
-  null,
-  ""
+  "Хост для обслуживания"
  ],
  "Install": [
   null,
@@ -381,7 +357,7 @@ return plural;
  ],
  "Launch Remote Viewer": [
   null,
-  ""
+  "Запустить средство удаленного просмотра"
  ],
  "Loading ...": [
   null,
@@ -389,27 +365,23 @@ return plural;
  ],
  "Loading data ...": [
   null,
-  ""
+  "Загрузка данных ..."
  ],
  "MAC Address": [
   null,
   "MAC-адрес"
  ],
- "MIGRATE action failed": [
-  null,
-  ""
- ],
  "Mac Address": [
   null,
-  ""
+  "MAC-адрес"
  ],
  "Manual Connection": [
   null,
-  ""
+  "Ручное подключение"
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
-  ""
+  "Максимальное количество виртуальных процессоров, выделенных для гостевой ОС, которое должно быть от 1 до $0"
  ],
  "Memory": [
   null,
@@ -425,7 +397,7 @@ return plural;
  ],
  "Migrate To:": [
   null,
-  ""
+  "Миграция в:"
  ],
  "Model": [
   null,
@@ -433,11 +405,11 @@ return plural;
  ],
  "Model type": [
   null,
-  ""
+  "Тип модели"
  ],
  "More Information": [
   null,
-  ""
+  "Дополнительная информация"
  ],
  "Name": [
   null,
@@ -445,11 +417,11 @@ return plural;
  ],
  "Network Type": [
   null,
-  ""
+  "Тип сети"
  ],
- "Network settings failed to change with following error: ": [
+ "Network settings could not be saved": [
   null,
-  ""
+  "Сетевые настройки не могут быть сохранены"
  ],
  "Networks": [
   null,
@@ -457,43 +429,43 @@ return plural;
  ],
  "New Volume Name": [
   null,
-  ""
+  "Новое имя тома"
  ],
  "No VM found in oVirt.": [
   null,
-  ""
+  "В vVirt нет VM."
  ],
  "No VM is running or defined on this host": [
   null,
-  ""
+  "Никакая виртуальная машина не запущена или не определена на этом хосте"
  ],
  "No boot device found": [
   null,
-  ""
+  "Не найдено загрузочного устройства"
  ],
  "No console defined for this virtual machine.": [
   null,
-  ""
+  "Консоли не определены для этой виртуальной машины."
  ],
  "No disks defined for this VM": [
   null,
-  ""
+  "Диски, определенные для этой виртуальной машины"
  ],
  "No network interfaces defined for this VM": [
   null,
-  ""
+  "Сетевые интерфейсы, определенные для этой виртуальной машины"
  ],
  "No oVirt connection": [
   null,
-  ""
+  "Нет подключения oVirt"
  ],
  "No virtual networks": [
   null,
-  ""
+  "Нет виртуальных сетей"
  ],
  "Number of virtual CPUs that gonna be used.": [
   null,
-  ""
+  "Количество виртуальных процессоров, которые будут использоваться."
  ],
  "OK": [
   null,
@@ -505,7 +477,7 @@ return plural;
  ],
  "OS Type:": [
   null,
-  ""
+  "Тип ОС:"
  ],
  "Ok": [
   null,
@@ -513,7 +485,7 @@ return plural;
  ],
  "Optimized for:": [
   null,
-  ""
+  "Оптимизирован для:"
  ],
  "Overview": [
   null,
@@ -521,47 +493,47 @@ return plural;
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
-  ""
+  "Пожалуйста, подтвердите, что хост должен быть переключен в режим обслуживания."
  ],
  "Please enter new volume name": [
   null,
-  ""
+  "Введите новое имя тома"
  ],
  "Please enter new volume size": [
   null,
-  ""
+  "Введите новый размер тома"
  ],
  "Please provide fully qualified domain name and port of the oVirt engine.": [
   null,
-  ""
+  "Предоставьте полное доменное имя и порт устройства oVirt."
  ],
  "Please provide valid oVirt engine fully qualified domain name (FQDN) and port (443 by default)": [
   null,
-  ""
+  "Предоставьте действительное полное доменное имя (FQDN) и порт (0) по умолчанию для oVirt."
  ],
  "Please refer to oVirt's $0 for more information about Remote Viewer setup.": [
   null,
-  ""
+  "Пожалуйста, обратитесь к oVirt's $0 для получения дополнительной информации о настройке Remote Viewer."
  ],
  "Please start the virtual machine to access its console.": [
   null,
-  ""
+  "Пожалуйста, запустите виртуальную машину, чтобы получить доступ к ее консоли."
  ],
  "Please wait till VMs list is loaded from the server.": [
   null,
-  ""
+  "Подождите, пока список VMs не будет загружен с сервера."
  ],
  "Please wait till list of templates is loaded from the server.": [
   null,
-  ""
+  "Подождите, пока список шаблонов не будет загружен с сервера."
  ],
  "Plug": [
   null,
-  ""
+  "штепсель"
  ],
  "Pool": [
   null,
-  ""
+  "Пул"
  ],
  "Port": [
   null,
@@ -569,19 +541,11 @@ return plural;
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
-  ""
- ],
- "Preparing for Maintenance": [
-  null,
-  ""
+  "Предпочтительное количество сокетов, которые выставляют гостю."
  ],
  "Protocol": [
   null,
   "Протокол"
- ],
- "REBOOT action failed": [
-  null,
-  ""
  ],
  "Readonly": [
   null,
@@ -589,15 +553,15 @@ return plural;
  ],
  "Reconnect": [
   null,
-  ""
+  "Заново"
  ],
  "Register oVirt": [
   null,
-  ""
+  "Регистрация oVirt"
  ],
  "Registering oVirt to Cockpit": [
   null,
-  ""
+  "Регистрация oVirt в кабину"
  ],
  "Reload": [
   null,
@@ -613,43 +577,27 @@ return plural;
  ],
  "Run Here": [
   null,
-  ""
+  "Выполнить здесь"
  ],
  "Running Since:": [
   null,
-  ""
- ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  ""
- ],
- "SHUTDOWN action failed": [
-  null,
-  ""
+  "Работает с:"
  ],
  "SPICE": [
   null,
-  ""
+  "SPICE"
  ],
  "SPICE Address:": [
   null,
-  ""
+  "SPICE Адрес:"
  ],
  "SPICE Port:": [
   null,
-  ""
+  "Порт SPICE:"
  ],
  "SPICE TLS Port:": [
   null,
-  ""
- ],
- "START action failed": [
-  null,
-  ""
- ],
- "SUSPEND action failed": [
-  null,
-  ""
+  "Порт SPICE TLS:"
  ],
  "Save": [
   null,
@@ -657,19 +605,15 @@ return plural;
  ],
  "Send Non-Maskable Interrupt": [
   null,
-  ""
+  "Отправить не-маскируемое прерывание"
  ],
  "Send key": [
   null,
-  ""
+  "Отправить ключ"
  ],
  "Serial Console": [
   null,
-  ""
- ],
- "Session": [
-  null,
-  "Сеанс"
+  "Серийная консоль"
  ],
  "Shut Down": [
   null,
@@ -689,7 +633,7 @@ return plural;
  ],
  "Start the VM to see disk statistics.": [
   null,
-  ""
+  "Запустите виртуальную машину, чтобы просмотреть статистику диска."
  ],
  "State": [
   null,
@@ -701,7 +645,7 @@ return plural;
  ],
  "Stateless:": [
   null,
-  ""
+  "Stateless:"
  ],
  "Suspend": [
   null,
@@ -709,19 +653,7 @@ return plural;
  ],
  "Switch Host to Maintenance": [
   null,
-  ""
- ],
- "Switching host to maintenance mode failed. Received error: ": [
-  null,
-  ""
- ],
- "Switching host to maintenance mode in progress ...": [
-  null,
-  ""
- ],
- "System": [
-  null,
-  "Система"
+  "Переключить узел на обслуживание"
  ],
  "Target": [
   null,
@@ -737,59 +669,59 @@ return plural;
  ],
  "Templates of $0 cluster": [
   null,
-  ""
+  "Шаблоны $0 кластер"
  ],
  "The VM crashed.": [
   null,
-  ""
+  "VM потерпела крах."
  ],
  "The VM is down.": [
   null,
-  ""
+  "VM отключена."
  ],
  "The VM is going down.": [
   null,
-  ""
+  "ВМ идет вниз."
  ],
  "The VM is idle.": [
   null,
-  ""
+  "VM бездействует."
  ],
  "The VM is in process of dying (shut down or crash is not completed).": [
   null,
-  ""
+  "VM находится в процессе умирания (закрытие или сбой не завершены)."
  ],
  "The VM is paused.": [
   null,
-  ""
+  "VM приостановлена."
  ],
  "The VM is running and will be forced off before deletion.": [
   null,
-  ""
+  "VM запускается и будет отключена перед удалением."
  ],
  "The VM is running.": [
   null,
-  ""
+  "VM запущена."
  ],
  "The VM is suspended by guest power management.": [
   null,
-  ""
+  "VM приостанавливается управлением гостевой системой."
  ],
  "The pool is empty": [
   null,
-  ""
+  "Пул пуст"
  ],
  "This host is managed by a virtualization manager, so creation of new VMs from the host is not possible.": [
   null,
-  ""
+  "Этот хост управляется менеджером виртуализации, поэтому создание новых виртуальных машин с хоста невозможно."
  ],
  "This virtual machine is not managed by oVirt": [
   null,
-  ""
+  "Эта виртуальная машина не управляется oVirt"
  ],
  "Threads per core": [
   null,
-  ""
+  "Потоков на ядро"
  ],
  "Type": [
   null,
@@ -797,11 +729,11 @@ return plural;
  ],
  "Unplug": [
   null,
-  ""
+  "Отключайте"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
-  ""
+  "Переход на более позднюю версию libvirt для просмотра статистики диска"
  ],
  "Usage": [
   null,
@@ -809,55 +741,27 @@ return plural;
  ],
  "Use Existing": [
   null,
-  ""
+  "Использовать существующие"
  ],
  "Used": [
   null,
   "Использовано"
  ],
+ "VCPU settings could not be saved": [
+  null,
+  "Не удалось сохранить настройки VCPU"
+ ],
  "VDSM": [
   null,
-  ""
+  "VDSM"
  ],
  "VDSM Service Management": [
   null,
-  ""
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  ""
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  ""
- ],
- "VM FORCE OFF action failed": [
-  null,
-  ""
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  ""
- ],
- "VM REBOOT action failed": [
-  null,
-  ""
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  ""
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  ""
- ],
- "VM START action failed": [
-  null,
-  ""
+  "Управление службами VDSM"
  ],
  "VM icon": [
   null,
-  ""
+  "Значок VM"
  ],
  "VNC": [
   null,
@@ -865,15 +769,15 @@ return plural;
  ],
  "VNC Address:": [
   null,
-  ""
+  "VNC Адрес:"
  ],
  "VNC Port:": [
   null,
-  ""
+  "Порт VNC:"
  ],
  "VNC TLS Port:": [
   null,
-  ""
+  "Порт VNC TLS:"
  ],
  "Version": [
   null,
@@ -881,7 +785,7 @@ return plural;
  ],
  "Version num": [
   null,
-  ""
+  "Версия num"
  ],
  "Virtual Machines": [
   null,
@@ -889,231 +793,83 @@ return plural;
  ],
  "Virtual Machines of $0 cluster": [
   null,
-  ""
+  "Виртуальные машины $0 кластер"
  ],
  "Volume": [
   null,
   "Громкость"
  ],
- "bridge": [
-  null,
-  ""
- ],
- "cdrom": [
-  null,
-  ""
- ],
- "connecting": [
-  null,
-  "подключение"
- ],
  "cores": [
   null,
-  ""
- ],
- "crashed": [
-  null,
-  ""
- ],
- "custom": [
-  null,
-  ""
- ],
- "direct": [
-  null,
-  ""
+  "ядра"
  ],
  "disabled": [
   null,
   "отключено"
  ],
- "disk": [
-  null,
-  "диск"
- ],
- "down": [
-  null,
-  "вниз"
- ],
- "dying": [
-  null,
-  ""
- ],
  "enabled": [
   null,
   "включено"
- ],
- "error": [
-  null,
-  "ошибка"
- ],
- "ethernet": [
-  null,
-  ""
- ],
- "host": [
-  null,
-  "узел"
- ],
- "hostdev": [
-  null,
-  ""
- ],
- "idle": [
-  null,
-  ""
- ],
- "initializing": [
-  null,
-  ""
- ],
- "installation failed": [
-  null,
-  ""
- ],
- "installing OS": [
-  null,
-  ""
- ],
- "kdumping": [
-  null,
-  ""
- ],
- "maintenance": [
-  null,
-  ""
- ],
- "mcast": [
-  null,
-  ""
- ],
- "network": [
-  null,
-  ""
  ],
  "no": [
   null,
   "нет"
  ],
- "non operational": [
-  null,
-  ""
- ],
- "non responsive": [
-  null,
-  ""
- ],
- "oVirt": [
-  null,
-  ""
- ],
  "oVirt Host State:": [
   null,
-  ""
+  "oVirt Host State:"
  ],
  "oVirt Provider installation script failed due to missing arguments.": [
   null,
-  ""
+  "Не удалось установить сценарий установки поставщика OVirt из-за отсутствующих аргументов."
  ],
  "oVirt Provider installation script failed: Can't write to /etc/cockpit/machines-ovirt.config, try as root.": [
   null,
-  ""
+  "Не удалось установить сценарий установки поставщика OVirt: Не удается записать файл /etc/cockpit/machines-ovirt.config, попробуйте выполнить команду root."
  ],
  "oVirt installation script failed with following output: ": [
   null,
-  ""
+  "Не удалось выполнить скрипт установки oVirt с последующим выходом: "
  ],
  "oVirt login in progress": [
   null,
-  ""
- ],
- "other": [
-  null,
-  ""
- ],
- "paused": [
-  null,
-  "приостановлено"
- ],
- "pending approval": [
-  null,
-  ""
+  "Вход в систему oVirt"
  ],
  "qcow2": [
   null,
-  ""
+  "qcow2"
  ],
  "raw": [
   null,
   "raw"
  ],
- "reboot": [
-  null,
-  "перезагрузка"
- ],
- "running": [
-  null,
-  "выполняется"
- ],
- "server": [
-  null,
-  ""
- ],
  "show less": [
   null,
-  ""
+  "показывай меньше"
  ],
  "show more": [
   null,
-  ""
- ],
- "shut off": [
-  null,
-  ""
- ],
- "shutdown": [
-  null,
-  ""
+  "показать больше"
  ],
  "sockets": [
   null,
-  ""
- ],
- "suspended (PM)": [
-  null,
-  ""
+  "Розетки"
  ],
  "threads": [
   null,
-  ""
- ],
- "udp": [
-  null,
-  "udp"
- ],
- "unassigned": [
-  null,
-  ""
+  "потоки"
  ],
  "undefined": [
   null,
-  ""
- ],
- "up": [
-  null,
-  "вверх"
- ],
- "user": [
-  null,
-  "пользователь"
+  "не определено"
  ],
  "vCPU Count": [
   null,
-  ""
+  "счетчик vCPU"
  ],
  "vCPU Maximum": [
   null,
-  ""
+  "максимум vCPU"
  ],
  "vCPUs": [
   null,
@@ -1121,11 +877,7 @@ return plural;
  ],
  "vCPUs:": [
   null,
-  ""
- ],
- "vhostuser": [
-  null,
-  ""
+  "VCPU будут:"
  ],
  "yes": [
   null,

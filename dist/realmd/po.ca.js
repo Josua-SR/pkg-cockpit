@@ -199,10 +199,6 @@ return plural;
   null,
   "Contrasenya d'un sol cop"
  ],
- "PackageKit crashed": [
-  null,
-  "PackageKit s'ha estavellat."
- ],
  "Removals:": [
   null,
   ""

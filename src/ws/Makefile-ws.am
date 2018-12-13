@@ -106,6 +106,9 @@ EXTRA_DIST += \
 	src/ws/mock-kdc.conf.in \
 	src/ws/mock-static \
 	src/ws/mock-config \
+	src/ws/mock-pipes/exit127 \
+	src/ws/mock-pipes/someprogram \
+	src/ws/mock-pipes/cockpit-session \
 	$(NULL)
 
 # ----------------------------------------------------------------------------------------------------
@@ -192,10 +195,16 @@ install-exec-hook::
 	chown -f root:$(COCKPIT_GROUP) $(DESTDIR)$(libexecdir)/cockpit-session || true
 	test "$(COCKPIT_USER)" != "root" && chmod -f 4750 $(DESTDIR)$(libexecdir)/cockpit-session || true
 
+libexec_SCRIPTS = cockpit-desktop
+
+cockpit-desktop: src/ws/cockpit-desktop.in
+	$(SUBST_RULE)
+
 EXTRA_DIST += \
 	src/ws/cockpit-motd.service.in \
 	src/ws/cockpit.service.in \
 	src/ws/cockpit.socket.in \
+	src/ws/cockpit-desktop.in \
 	$(firewall_DATA) \
 	$(tempconf_in) \
 	$(NULL)
@@ -205,6 +214,7 @@ CLEANFILES += \
 	src/ws/cockpit.service \
 	src/ws/cockpit-motd.service \
 	$(nodist_tempconf_DATA) \
+	cockpit-desktop \
 	$(NULL)
 
 appdatadir = $(datadir)/metainfo
@@ -219,12 +229,10 @@ pixmap_DATA = src/ws/cockpit.png
 
 CLEANFILES += \
 	$(nodist_appdata_DATA) \
-	$(nodist_desktop_DATA) \
 	$(NULL)
 
 EXTRA_DIST += \
 	$(appdata_in) \
-	$(desktop_in) \
 	$(pixmap_DATA) \
 	$(NULL)
 
@@ -414,8 +422,4 @@ prepare-po-appdata: $(appdata_in)
 	cp $< .
 	$(INTLTOOL_EXTRACT) -l --type=gettext/xml $(notdir $(appdata_in))
 
-prepare-po-desktop: $(desktop_in)
-	cp $< .
-	$(INTLTOOL_EXTRACT) -l --type=gettext/ini $(notdir $(desktop_in))
-
-prepare-po:: prepare-po-appdata prepare-po-desktop
+prepare-po:: prepare-po-appdata

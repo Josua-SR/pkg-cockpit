@@ -158,23 +158,23 @@ return plural;
  ],
  "Setting deviates from the configured state and will revert on the next boot.": [
   null,
-  ""
+  "Inställningarna avviker från det konfigurerade tillståndet och kommer återgå vid nästa uppstart."
  ],
  "Solution applied successfully": [
   null,
-  ""
+  "Lösningen verkställd"
  ],
  "Solution failed": [
   null,
-  ""
+  "Lösningen misslyckades"
  ],
  "Solutions": [
   null,
-  ""
+  "Lösningar"
  ],
  "The configured state is unknown, it might change on the next boot.": [
   null,
-  ""
+  "Det konfigurerade tillståndet är okänt, det kan ändra sig vid nästa uppstart."
  ],
  "Unable to apply this solution automatically": [
   null,

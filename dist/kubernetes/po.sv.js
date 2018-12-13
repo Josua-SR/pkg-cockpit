@@ -1271,19 +1271,19 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "Server"
  ],
  "Service": [
   null,
-  ""
+  "Tjänst"
  ],
  "Service Account": [
   null,
-  ""
+  "Tjänstekonto"
  ],
  "Services": [
   null,
-  ""
+  "Tjänster"
  ],
  "Services group pods and provide a common DNS name and an optional, load-balanced IP address to access them.": [
   null,
@@ -1291,11 +1291,11 @@ return plural;
  ],
  "Session Affinity": [
   null,
-  ""
+  "Sessionsaffinitet"
  ],
  "Share Name": [
   null,
-  ""
+  "Delat namn"
  ],
  "Shared: Allow any authenticated user to pull images": [
   null,
@@ -1303,19 +1303,19 @@ return plural;
  ],
  "Shell": [
   null,
-  ""
+  "Skal"
  ],
  "Show all Containers": [
   null,
-  ""
+  "Visa alla behållare"
  ],
  "Show all Deployment Configs": [
   null,
-  ""
+  "Visa alla utplaceringskonfigurationer"
  ],
  "Show all Nodes": [
   null,
-  ""
+  "Visa alla noder"
  ],
  "Show all Persistent Volumes": [
   null,
@@ -1323,127 +1323,127 @@ return plural;
  ],
  "Show all Pod Containers": [
   null,
-  ""
+  "Visa alla kapselbehållare"
  ],
  "Show all Pods": [
   null,
-  ""
+  "Visa alla kapslar"
  ],
  "Show all Projects": [
   null,
-  ""
+  "Visa alla projekt"
  ],
  "Show all Replication Controllers": [
   null,
-  ""
+  "Visa alla replikeringsstyrare"
  ],
  "Show all Routes": [
   null,
-  ""
+  "Visa alla rutter"
  ],
  "Show all Services": [
   null,
-  ""
+  "Visa alla tjänster"
  ],
  "Show all image streams": [
   null,
-  ""
+  "Visa alla avbildsströmmar"
  ],
  "Show all images": [
   null,
-  ""
+  "Visa alla avbilder"
  ],
  "Since": [
   null,
-  ""
+  "Sedan"
  ],
  "Size": [
   null,
-  ""
+  "Storlek"
  ],
  "Skip Certificate Verification": [
   null,
-  ""
+  "Hoppa över certifikatverifikation"
  ],
  "Sorry, I don't know how to modify this volume": [
   null,
-  ""
+  "Ledsen, jag vet inte hur man ändrar denna volym"
  ],
  "State": [
   null,
-  ""
+  "Tillstånd"
  ],
  "Status": [
   null,
-  ""
+  "Status"
  ],
  "Strategy": [
   null,
-  ""
+  "Strategi"
  ],
  "Sync all tags from a remote image repository": [
   null,
-  ""
+  "Synkronisera alla taggar från ett fjärravbildsförråd"
  ],
  "TLS Termination": [
   null,
-  ""
+  "TLS-avslutning"
  ],
  "Tags": [
   null,
-  ""
+  "Taggar"
  ],
  "Target": [
   null,
-  ""
+  "Mål"
  ],
  "Target Portal": [
   null,
-  ""
+  "Målportal"
  ],
  "Target World Wide Names": [
   null,
-  ""
+  "Målets världsvida namn"
  ],
  "Template": [
   null,
-  ""
+  "Mall"
  ],
  "The address contains invalid characters": [
   null,
-  ""
+  "Adressen innehåller otillåtna tecken"
  ],
  "The container '{{ target }}' does not exist.": [
   null,
-  ""
+  "Behållaren ”{{ target }}” finns inte."
  ],
  "The deployment config '{{ target }}' does not exist.": [
   null,
-  ""
+  "Utplaceringskonfigurationen ”{{ target }}” finns inte."
  ],
  "The group '{{ groupName }}' does not exist.": [
   null,
-  ""
+  "Gruppen ”{{ groupName }}” finns inte."
  ],
  "The maximum number of replicas is 128": [
   null,
-  ""
+  "Det maximala antalet repliker är 128"
  ],
  "The name contains invalid characters": [
   null,
-  ""
+  "Namnet innehåller ogiltiga tecken"
  ],
  "The node '{{ target }}' does not exist.": [
   null,
-  ""
+  "Noden ”{{ target }}” finns inte."
  ],
  "The node doesn't have enough disk space": [
   null,
-  ""
+  "Noden har inte tillräckligt med diskutrymme"
  ],
  "The node doesn't have enough free memory": [
   null,
-  ""
+  "Noden har inte tillräckligt med fritt minne"
  ],
  "The persistent volume '{{ target }}' does not exist.": [
   null,
@@ -1455,35 +1455,35 @@ return plural;
  ],
  "The project '{{ projName }}' does not exist.": [
   null,
-  ""
+  "Projektet ”{{ projName }}” finns inte."
  ],
  "The replication controller '{{ target }}' does not exist.": [
   null,
-  ""
+  "Replikeringsstyraren ”{{ target }}” finns inte."
  ],
  "The route '{{ target }}' does not exist.": [
   null,
-  ""
+  "Rutten ”{{ target }}” finns inte."
  ],
  "The selected file is not a valid Kubernetes application manifest.": [
   null,
-  ""
+  "Den valda filen är inte en giltig programförteckning för Kubernetes."
  ],
  "The server uses a certificate signed by an unknown authority.": [
   null,
-  ""
+  "Servern använder ett certifikat signerat av en okänd auktoritet."
  ],
  "The service '{{ target }}' does not exist.": [
   null,
-  ""
+  "Tjänsten ”{{ target }}” finns inte."
  ],
  "The user '{{ userName }}' does not exist.": [
   null,
-  ""
+  "Användaren ”{{ target }}” finns inte."
  ],
  "This claim is in use. Deleting it may cause issues with the following pod:": [
   null,
-  ""
+  "Detta anspråk används.  Att ta bort den kan orsaka problem med följande kapsel:"
  ],
  "This option is for single node testing only – local storage will not work in a multi-node cluster": [
   null,
@@ -1491,19 +1491,19 @@ return plural;
  ],
  "This volume has been claimed by {{ item.item.spec.claimRef.namespace }} / {{ item.item.spec.claimRef.name }}. Deleting it will break that claim and may cause issues with any pods depending on it.": [
   null,
-  ""
+  "Denna volym har tagits i anspråk av {{ item.item.spec.claimRef.namespace }} / {{ item.item.spec.claimRef.name }}.  Att ta bort den kommer bryta detta anspråk och kan orsaka problem med de kapslar som beror på den."
  ],
  "This volume has not been claimed": [
   null,
-  ""
+  "Denna volym har inte tagits  anspråk"
  ],
  "Token": [
   null,
-  ""
+  "Symbol"
  ],
  "Topology": [
   null,
-  ""
+  "Topologi"
  ],
  "Triggers": [
   null,
@@ -1627,7 +1627,7 @@ return plural;
  ],
  "pending volume claims": [
   null,
-  ""
+  "väntande volymanspråk"
  ],
  "yes": [
   null,

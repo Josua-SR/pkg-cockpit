@@ -115,10 +115,6 @@ return plural;
   null,
   "Sběrnice"
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Akce ZMĚNIT STAV SÍTĚ se nezdařila"
- ],
  "CPU Type:": [
   null,
   "Typ procesoru:"
@@ -178,6 +174,10 @@ return plural;
  "Create New": [
   null,
   "Vytvořit nový"
+ ],
+ "Create Storage Pool": [
+  null,
+  "Vytvořit fond úložiště"
  ],
  "Create VM": [
   null,
@@ -251,6 +251,10 @@ return plural;
   null,
   "Souborový systém"
  ],
+ "Filesystem Directory": [
+  null,
+  "Složka v souborovém systému"
+ ],
  "Force Restart": [
   null,
   "Vynutit restart"
@@ -262,10 +266,6 @@ return plural;
  "Format": [
   null,
   "Formát"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "Akce ZJISTIT MAXIMUM VIRT. PROCESORŮ HYPERVIZORU se nezdařila"
  ],
  "GiB": [
   null,
@@ -283,9 +283,13 @@ return plural;
   null,
   "Počítač"
  ],
- "INSTALL VM action failed": [
+ "Host Name": [
   null,
-  "Akce NAINSTALOVAT VIRT. STROJ se nezdařila"
+  "Název počítače"
+ ],
+ "Host should not be empty": [
+  null,
+  "Hostitele je třeba vyplnit"
  ],
  "Immediately Start VM": [
   null,
@@ -375,6 +379,10 @@ return plural;
   null,
   "Název by se neměl sestávat pouze z prázdných znaků"
  ],
+ "Network File System": [
+  null,
+  "Síťový souborový systém"
+ ],
  "Network Type": [
   null,
   "Typ sítě"
@@ -438,6 +446,10 @@ return plural;
  "Overview": [
   null,
   "Přehled"
+ ],
+ "Path on host's filesystem": [
+  null,
+  "Umístění v souborovém systému hostitele"
  ],
  "Path to ISO file on host's file system": [
   null,
@@ -539,10 +551,6 @@ return plural;
   null,
   "Sériová konzole"
  ],
- "Session": [
-  null,
-  "Sezení"
- ],
  "Shut Down": [
   null,
   "Vypnout"
@@ -559,21 +567,45 @@ return plural;
   null,
   "Zdroj"
  ],
- "Source should start with http, ftp or nfs protocol": [
+ "Source Path": [
   null,
-  "Zdroj by měl začínat na http, ftp nebo nfs protokol"
+  "Popis umístění zdroje"
+ ],
+ "Source path should not be empty": [
+  null,
+  "Popis umístění zdroje je třeba vyplnit"
+ ],
+ "Source should start with https, ftp or nfs protocol": [
+  null,
+  "Zdroj by měl začínat protokolem https, ftp nebo nfs"
  ],
  "Start libvirt": [
   null,
   "Spustit libvirt"
  ],
+ "Start pool when host boots": [
+  null,
+  "Spustit fond při startu hostitele"
+ ],
  "Start the VM to see disk statistics.": [
   null,
   "Pro zobrazení statistik disku je třeba virt. stroj spustit"
  ],
+ "Startup": [
+  null,
+  "Při spuštění"
+ ],
  "State": [
   null,
   "Stav"
+ ],
+ "Storage Pool Name": [
+  null,
+  "Název fondu úložiště"
+ ],
+ "Storage Pool failed to be created": [
+  null,
+  "Fond úložiště se nepodařilo uložit"
  ],
  "Storage Pools": [
   null,
@@ -591,13 +623,17 @@ return plural;
   null,
   "Úložné svazky"
  ],
- "System": [
-  null,
-  "Systém"
- ],
  "Target": [
   null,
   "Cíl"
+ ],
+ "Target Path": [
+  null,
+  "Popis umístění cíle"
+ ],
+ "Target path should not be empty": [
+  null,
+  "Popis umístění cíle je třeba vyplnit"
  ],
  "The VM crashed.": [
   null,
@@ -634,6 +670,10 @@ return plural;
  "The VM is suspended by guest power management.": [
   null,
   "Virt. stroj je uspaný svou vlastní správou napájení."
+ ],
+ "The directory on the server being exported": [
+  null,
+  "Složka na serveru, kterou exportovat"
  ],
  "The pool is empty": [
   null,
@@ -687,54 +727,6 @@ return plural;
   null,
   "Nastavení virt. procesoru se nepodařilo uložit"
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  "Akce ZMĚNA STAVU SÍTĚ VIRT. STROJE se nezdařila"
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  "Akce SMAZAT VIRT. STROJ (ZLIKVIDOVAT) se nezdařila"
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  "Akce SMAZAT VIRT. STROJ (ZRUŠIT DEFINICI) se nezdařila"
- ],
- "VM DELETE action failed": [
-  null,
-  "Akce SMAZAT STROJ se nezdařila"
- ],
- "VM DETACH_DISK action failed": [
-  null,
-  "Akce ODPOJIT DISK VIRT. STROJE se nezdařila"
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "Akce VYNUCENÉ VYPNUTÍ VIRT. STROJE se nezdařila"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "Akce VYNUCENÝ RESTART se nezdařila"
- ],
- "VM REBOOT action failed": [
-  null,
-  "Akce RESTART se nezdařila"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  "Akce POSLAT VIRT. STROJI nemaskovatelné přerušení se nezdařila"
- ],
- "VM SENDNMI action failed": [
-  null,
-  "Akce POSLAT VIRT. STROJI NEMASK. PŘERUŠENÍ se nezdařila"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "Akce VYPNOUT VIRT STROJ se nezdařila"
- ],
- "VM START action failed": [
-  null,
-  "Akce SPUSTIT VIRT STROJ se nezdařila"
- ],
  "VNC": [
   null,
   "VNC"
@@ -771,85 +763,13 @@ return plural;
   null,
   "aktivní"
  ],
- "bridge": [
-  null,
-  "most"
- ],
- "cdrom": [
-  null,
-  "cdrom"
- ],
- "crashed": [
-  null,
-  "zhavarovalo"
- ],
- "custom": [
-  null,
-  "uživatelsky určené"
- ],
- "direct": [
-  null,
-  "přímé"
- ],
- "disabled": [
-  null,
-  "zakázáno"
- ],
- "disk": [
-  null,
-  "disk"
- ],
- "down": [
-  null,
-  "vypnuté"
- ],
- "dying": [
-  null,
-  "vypíná se"
- ],
- "enabled": [
-  null,
-  "povoleno"
- ],
- "ethernet": [
-  null,
-  "ethernet"
- ],
- "host": [
-  null,
-  "stroj"
- ],
- "hostdev": [
-  null,
-  "zařízení hostitele"
- ],
- "idle": [
-  null,
-  "nečinný"
- ],
  "inactive": [
   null,
   "neaktivní"
  ],
- "mcast": [
-  null,
-  "vícesměrvysílání"
- ],
- "network": [
-  null,
-  "síť"
- ],
  "no": [
   null,
   "ne"
- ],
- "other": [
-  null,
-  "ostatní"
- ],
- "paused": [
-  null,
-  "pozastaveno"
  ],
  "qcow2": [
   null,
@@ -859,14 +779,6 @@ return plural;
   null,
   "raw"
  ],
- "running": [
-  null,
-  "spuštěné"
- ],
- "server": [
-  null,
-  "server"
- ],
  "show less": [
   null,
   "zobrazit méně"
@@ -875,33 +787,9 @@ return plural;
   null,
   "zobrazit více"
  ],
- "shut off": [
-  null,
-  "vypnuto"
- ],
- "shutdown": [
-  null,
-  "vypnout"
- ],
- "suspended (PM)": [
-  null,
-  "uspáno (správou napájení)"
- ],
- "udp": [
-  null,
-  "udp"
- ],
  "undefined": [
   null,
   "nedefinované"
- ],
- "up": [
-  null,
-  "zapnuto"
- ],
- "user": [
-  null,
-  "uživatel"
  ],
  "vCPU Count": [
   null,
@@ -914,10 +802,6 @@ return plural;
  "vCPUs:": [
   null,
   "virt. procesorů:"
- ],
- "vhostuser": [
-  null,
-  "uzivatelvirtstroje"
  ],
  "yes": [
   null,

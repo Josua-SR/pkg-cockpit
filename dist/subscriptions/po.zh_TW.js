@@ -69,11 +69,11 @@ return plural;
  },
  "'Organization' required to register.": [
   null,
-  ""
+  "“組織”需要註冊。"
  ],
  "'Organization' required when using activation keys.": [
   null,
-  ""
+  "使用激活密鑰時需要“組織”。"
  ],
  "Access denied": [
   null,
@@ -93,7 +93,7 @@ return plural;
  ],
  "Couldn't get system subscription status. Please ensure subscription-manager is installed.": [
   null,
-  ""
+  "無法獲得系統訂閱狀態。請確保已安裝訂閱管理器。"
  ],
  "Custom URL": [
   null,
@@ -117,7 +117,7 @@ return plural;
  ],
  "Invalid credentials": [
   null,
-  ""
+  "無效證件"
  ],
  "Invalid username or password": [
   null,
@@ -129,11 +129,11 @@ return plural;
  ],
  "Login/password or activation key required to register.": [
   null,
-  ""
+  "註冊需要登錄/密碼或激活密鑰。"
  ],
  "No installed products on the system.": [
   null,
-  ""
+  "系統上沒有安裝產品。"
  ],
  "Ok": [
   null,
@@ -165,11 +165,11 @@ return plural;
  ],
  "Register system": [
   null,
-  ""
+  "註冊系統"
  ],
  "Retrieving subscription status...": [
   null,
-  ""
+  "檢索訂閱狀態..."
  ],
  "Server": [
   null,
@@ -189,7 +189,7 @@ return plural;
  ],
  "Status: System isn't registered": [
   null,
-  ""
+  "狀態：系統未註冊"
  ],
  "Subscriptions": [
   null,
@@ -213,15 +213,15 @@ return plural;
  ],
  "Unregistering system...": [
   null,
-  ""
+  "取消註冊系統......"
  ],
  "Updating": [
   null,
-  ""
+  "更新"
  ],
  "Use proxy server": [
   null,
-  ""
+  "使用代理服務器"
  ],
  "User": [
   null,
@@ -233,6 +233,6 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "未定義"
  ]
 }));

@@ -67,6 +67,30 @@ return plural;
   "language": "my",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 day": [
+  "$0 days",
+  ""
+ ],
+ "$0 hour": [
+  "$0 hours",
+  ""
+ ],
+ "$0 minute": [
+  "$0 minutes",
+  ""
+ ],
+ "$0 month": [
+  "$0 months",
+  ""
+ ],
+ "$0 week": [
+  "$0 weeks",
+  ""
+ ],
+ "$0 year": [
+  "$0 years",
+  ""
+ ],
  "$mtu": [
   null,
   ""
@@ -574,10 +598,6 @@ return plural;
  "Off": [
   null,
   "ဖွင့်"
- ],
- "Ok": [
-  null,
-  ""
  ],
  "On": [
   null,

@@ -103,14 +103,6 @@ return plural;
   null,
   "Adresa"
  ],
- "Advanced TCA": [
-  null,
-  "Pokročilé TCA"
- ],
- "All In One": [
-  null,
-  "Vše v jednom"
- ],
  "Authentication": [
   null,
   "Ověření"
@@ -127,25 +119,9 @@ return plural;
   null,
   "Avatar"
  ],
- "Blade": [
-  null,
-  "Blade server"
- ],
- "Blade enclosure": [
-  null,
-  "Skříň se šachtami pro blade servery"
- ],
- "Bus Expansion Chassis": [
-  null,
-  "Skříň rozšíření sběrnice"
- ],
  "CPU": [
   null,
   "Procesor"
- ],
- "Can't load image": [
-  null,
-  "Obraz se nedaří smazat"
  ],
  "Cancel": [
   null,
@@ -191,10 +167,6 @@ return plural;
   null,
   "Barva"
  ],
- "Compact PCI": [
-  null,
-  "Compact PCI"
- ],
  "Connect": [
   null,
   "Připojit"
@@ -202,14 +174,6 @@ return plural;
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
   "Souběžné spojení s více než {{ limit }} stroji není podporováno."
- ],
- "Connection Error": [
-  null,
-  "Chyba připojení"
- ],
- "Convertible": [
-  null,
-  "Počítač 2v1"
  ],
  "Could not contact {{host}}": [
   null,
@@ -219,29 +183,13 @@ return plural;
   null,
   "Přehled"
  ],
- "Desktop": [
-  null,
-  "Desktop"
- ],
- "Detachable": [
-  null,
-  "Odpojitelné"
- ],
  "Disk I/O": [
   null,
   "Diskový vst/výst."
  ],
- "Docking Station": [
-  null,
-  "Dokovací stanice"
- ],
  "Edit Server": [
   null,
   "Upravit server"
- ],
- "Embedded PC": [
-  null,
-  "Jednodeskový počítač"
  ],
  "Enter IP address or host name": [
   null,
@@ -254,10 +202,6 @@ return plural;
  "Error loading users: {{perm_failed}}": [
   null,
   "Chyba při načítání uživatelů: {{perm_failed}}"
- ],
- "Expansion Chassis": [
-  null,
-  "Rozšiřující šasi"
  ],
  "Failed to add machine: $0": [
   null,
@@ -279,10 +223,6 @@ return plural;
   null,
   "Přejít na nyní"
  ],
- "Hand Held": [
-  null,
-  "Pro držení v rukou"
- ],
  "Host Name": [
   null,
   "Název počítače"
@@ -299,10 +239,6 @@ return plural;
   null,
   "Neplatná souborová práva"
  ],
- "IoT Gateway": [
-  null,
-  "Brána Internetu věcí (IoT)"
- ],
  "Is sshd running on a different port?": [
   null,
   "Není sshd spuštěný na jiném portu?"
@@ -314,10 +250,6 @@ return plural;
  "Kerberos Ticket": [
   null,
   "Kerberos tiket"
- ],
- "Laptop": [
-  null,
-  "Notebook"
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
@@ -343,33 +275,9 @@ return plural;
   null,
   "Spojení ztraceno. Pokus o opětovné připojení"
  ],
- "Low Profile Desktop": [
-  null,
-  "Nízký desktop"
- ],
- "Lunch Box": [
-  null,
-  "Kufříkový počítač"
- ],
- "Main Server Chassis": [
-  null,
-  "Hlavní skříň serveru"
- ],
  "Memory": [
   null,
   "Paměť"
- ],
- "Mini PC": [
-  null,
-  "Mini PC"
- ],
- "Mini Tower": [
-  null,
-  "Mini věž"
- ],
- "Multi-system Chassis": [
-  null,
-  "Skříň pro více systémů"
  ],
  "Network": [
   null,
@@ -387,10 +295,6 @@ return plural;
   null,
   "Není platná soukromá část klíče"
  ],
- "Notebook": [
-  null,
-  "Notebook"
- ],
  "Off": [
   null,
   "Vypnuto"
@@ -403,10 +307,6 @@ return plural;
   null,
   "Zapnuto"
  ],
- "Other": [
-  null,
-  "Ostatní"
- ],
  "Password": [
   null,
   "Heslo"
@@ -415,21 +315,9 @@ return plural;
   null,
   "Heslo nebylo přijato"
  ],
- "Peripheral Chassis": [
-  null,
-  "Skříň periferií"
- ],
- "Pizza Box": [
-  null,
-  "Velikost „krabice od pizzy“"
- ],
  "Port": [
   null,
   "Port"
- ],
- "Portable": [
-  null,
-  "Přenosný"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -443,18 +331,6 @@ return plural;
   null,
   "Veřejná část klíče"
  ],
- "RAID Chassis": [
-  null,
-  "RAID skříň"
- ],
- "Rack Mount Chassis": [
-  null,
-  "Skříň do stojanu"
- ],
- "Sealed-case PC": [
-  null,
-  "Počítač se zapečetěnou skříní"
- ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
   "Vyberte uživatele které chcete synchronizovat s {{#strong}}{{host}}{{/strong}}"
@@ -467,22 +343,6 @@ return plural;
   null,
   "Nastavit"
  ],
- "Space-saving Computer": [
-  null,
-  "Prostorově úsporný počítač"
- ],
- "Stick PC": [
-  null,
-  "Počítač v klíčence"
- ],
- "Sub Chassis": [
-  null,
-  "Dílčí skříň"
- ],
- "Sub Notebook": [
-  null,
-  "Zmenšený notebook"
- ],
  "Synchronize": [
   null,
   "Synchronizovat"
@@ -490,10 +350,6 @@ return plural;
  "Synchronize users": [
   null,
   "Synchronizovat uživatele"
- ],
- "Tablet": [
-  null,
-  "Tablet"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -511,10 +367,6 @@ return plural;
   null,
   "Zadání hesla se neshodují."
  ],
- "The user <b>$0</b> is not permitted to manage servers": [
-  null,
-  "Uživatel <b>$0</b> není oprávněn spravovat servery"
- ],
  "This machine has already been added.": [
   null,
   "Tento stroj už byl přidán."
@@ -527,17 +379,9 @@ return plural;
   null,
   "Pro vyzkoušení jiného portu bude třeba přejít na novější verzi cockpit-ws."
  ],
- "Tower": [
-  null,
-  "Věž"
- ],
  "Type a password": [
   null,
   "Zadejte heslo"
- ],
- "Unknown": [
-  null,
-  "Neznámé"
  ],
  "Unknown Host Key": [
   null,
@@ -562,9 +406,5 @@ return plural;
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
   "Jste sice připojení k {{#strong}}{{host}}{{/strong}}, nicméně pro synchronizaci uživatelských účtů je zapotřebí uživatele s oprávněním pro správu systému."
- ],
- "You are currently connected directly to this server. You cannot delete it.": [
-  null,
-  "V tuto chvíli jste připojení přímo na tento server. Nemůžete ho proto smazat."
  ]
 }));

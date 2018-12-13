@@ -6,7 +6,7 @@
 @import (less) "../../node_modules/c3/c3.css";
 
 // For patternfly-react and @patternfly/react-console
-@import "~xterm/dist/xterm.css";
+@import "~xterm/lib/xterm.css";
 @import "~bootstrap/less/variables";
 @import "~patternfly/dist/less/variables";
 @import "~patternfly-react/dist/less/patternfly-react.less";
@@ -33,19 +33,33 @@
     white-space: nowrap;
 }
 
+.machines-disks .listing-ct th:nth-last-child(-n+2),
+.machines-disks .listing-ct td:nth-last-child(-n+2) {
+    text-align: left;
+}
+
 .machines-disks-source {
-    float: right;
+    /* Counter-act parent td padding for the table */
+    margin: -5px 0;
+
+    th, td {
+        padding: 0;
+        vertical-align: baseline;
+    }
+
+    th + td,
+    td + td {
+        padding-left: 0.5em;
+    }
 }
 
 .machines-disks-source-descr {
     color: #888888;
-    text-align: right;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
 }
 
 .machines-disks-source-value {
-    text-align: left !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
 }
@@ -254,14 +268,6 @@ table.vcpu-detail-modal-right .btn-group.bootstrap-select.dropdown {
 
 #create-vm-dialog .spinner {
     display: inline-block;
-}
-
-/* FIXME: This CSS should be moved upstream */
-.form-text {
-    /* Set size similar to a widget; like control-label, but no alignment */
-    display: inline-block;
-    padding-top: 3px;
-    margin-bottom: 0;
 }
 
 .modal-body + .modal-footer {

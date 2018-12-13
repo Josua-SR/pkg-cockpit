@@ -421,27 +421,27 @@ return plural;
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
-  ""
+  "IP-adressen och värdnamnet får inte innehålla blanktecken."
  ],
  "The authenticity of host {{#strong}}{{host}}{{/strong}} can't be established. Are you sure you want to continue connecting?": [
   null,
-  ""
+  "Autenticiteten hos värden {{#strong}}{{host}}{{/strong}} kan inte fastställas.  Är du säker på att du vill fortsätta ansluta?"
  ],
  "The key of {{#strong}}{{host}}{{/strong}} does not match the key previously in use. Unless this machine was recently replaced, it is likely that someone is trying to attack your connection to this machine.": [
   null,
-  ""
+  "Nyckeln för {{#strong}}{{host}}{{/strong}} stämmer inte med den tidigare använda nyckeln.  Om inte denna maskin ersattes nyligen är det troligt att någon försöker attackera din förbindelse till denna maskin."
  ],
  "The machine is restarting": [
   null,
-  ""
+  "Maskinen startar om"
  ],
  "The passwords do not match.": [
   null,
-  ""
+  "Lösenorden stämmer inte överens."
  ],
  "There are currently no active pages": [
   null,
-  ""
+  "Det finns för närvarande inga aktiva sidor"
  ],
  "This machine has already been added.": [
   null,
@@ -449,19 +449,19 @@ return plural;
  ],
  "This version of cockpit-ws does not support connecting to a host with an alternate user or port": [
   null,
-  ""
+  "Denna version av cockpit-ws stödjer inte att ansluta till en värd med en alternativ användare eller port"
  ],
  "Tip: Make your key password match your login password to automatically authenticate against other systems.": [
   null,
-  ""
+  "Tips: gör så att ditt nyckellösenord stämmer med ditt inloggningslösenord för att automatiskt autentisera mot andra system."
  ],
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
   null,
-  ""
+  "För att använda en annan port behöver du uppgradera cockpit-ws till en nyare version."
  ],
  "Too many files found": [
   null,
-  ""
+  "För många filer hittade"
  ],
  "Troubleshoot": [
   null,

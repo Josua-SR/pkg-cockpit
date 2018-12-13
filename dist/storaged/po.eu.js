@@ -83,6 +83,11 @@ return plural;
   null,
   ""
  ],
+ "$0 day": [
+  "$0 days",
+  "",
+  ""
+ ],
  "$0 disk is missing": [
   "$0 disks are missing",
   "",
@@ -100,6 +105,11 @@ return plural;
   null,
   ""
  ],
+ "$0 hour": [
+  "$0 hours",
+  "ordu $0",
+  "$0 ordu"
+ ],
  "$0 is in active use": [
   null,
   ""
@@ -107,6 +117,16 @@ return plural;
  "$0 is not available from any repository.": [
   null,
   ""
+ ],
+ "$0 minute": [
+  "$0 minutes",
+  "minutu $0",
+  "$0 minutu"
+ ],
+ "$0 month": [
+  "$0 months",
+  "hilabete $0",
+  "$0 hilabete"
  ],
  "$0 of $1": [
   null,
@@ -120,8 +140,18 @@ return plural;
   null,
   ""
  ],
+ "$0 week": [
+  "$0 weeks",
+  "",
+  ""
+ ],
  "$0 will be installed.": [
   null,
+  ""
+ ],
+ "$0 year": [
+  "$0 years",
+  "",
   ""
  ],
  "$0, $1 free": [
@@ -1037,10 +1067,6 @@ return plural;
   ""
  ],
  "Overwrite existing data with zeros": [
-  null,
-  ""
- ],
- "PackageKit crashed": [
   null,
   ""
  ],

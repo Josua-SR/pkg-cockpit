@@ -199,10 +199,6 @@ return plural;
   null,
   "Engångslösenord"
  ],
- "PackageKit crashed": [
-  null,
-  "PackageKit kraschade"
- ],
  "Removals:": [
   null,
   "Borttagningar:"
@@ -213,7 +209,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
-  ""
+  "Användaren <b>$0</b> har inte rättighet att ändra riken"
  ],
  "This may take a while": [
   null,

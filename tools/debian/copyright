@@ -167,15 +167,15 @@ Files: node_modules/prop-types/*
 Copyright: Copyright (c) 2013-present, Facebook, Inc.
 License: MIT
 
+Files: node_modules/qunit/*
+Copyright: Copyright 2006 Google Inc.
+License: MIT
+
 Files: node_modules/qunit-tap/*
 Copyright: Copyright (C) 1989, 1991 Free Software Foundation, Inc.
  Copyright (c) 2010-2016 Takuto Wada
  Copyright (c) 2010-2016 Takuto Wada, https://github.com/twada/qunit-tap
  Copyright 2012 jQuery Foundation and other contributors
-License: MIT
-
-Files: node_modules/qunitjs/*
-Copyright: Copyright 2006 Google Inc.
 License: MIT
 
 Files: node_modules/react/*
@@ -211,6 +211,17 @@ Files: node_modules/term.js-cockpit/*
 Copyright: Copyright (c) 2011 Fabrice Bellard
  Copyright (c) 2012-2013, Christopher Jeffrey (MIT License)
  Copyright (c) 2012-2013, Christopher Jeffrey (https://github.com/chjj/)
+License: MIT
+
+Files: node_modules/xterm/*
+Copyright: Copyright (c) 2011 Fabrice Bellard
+ Copyright (c) 2012-2013, Christopher Jeffrey (MIT License)
+ Copyright (c) 2012-2013, Christopher Jeffrey (https://github.com/chjj/)
+ Copyright (c) 2014 The xterm.js authors. All rights reserved
+ Copyright (c) 2014-2016, SourceLair Private Company (https://www.sourcelair.com)
+ Copyright (c) 2014-2017, SourceLair, Private Company ([www.sourcelair.com](https://www.sourcelair.com/home)) (MIT License)<br>
+ Copyright (c) 2017-2018, The xterm.js authors (https://github.com/xtermjs/xterm.js)
+ Copyright (c) 2017-2018, [The xterm.js authors](https://github.com/xtermjs/xterm.js/graphs/contributors) (MIT License)<br>
 License: MIT
 
 

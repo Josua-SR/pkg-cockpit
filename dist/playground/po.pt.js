@@ -67,10 +67,40 @@ return plural;
   "language": "pt",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 day": [
+  "$0 days",
+  "$0 dia",
+  "$0 dias"
+ ],
  "$0 disk is missing": [
   "$0 disks are missing",
   "$0 disco não existe",
   "$0 discos não existem"
+ ],
+ "$0 hour": [
+  "$0 hours",
+  "$0 hora",
+  "$0 horas"
+ ],
+ "$0 minute": [
+  "$0 minutes",
+  "$0 minuto",
+  "$0 minutos"
+ ],
+ "$0 month": [
+  "$0 months",
+  "$0 mês",
+  "$0 meses"
+ ],
+ "$0 week": [
+  "$0 weeks",
+  "",
+  ""
+ ],
+ "$0 year": [
+  "$0 years",
+  "",
+  ""
  ],
  "Cancel": [
   null,

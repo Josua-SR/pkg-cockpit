@@ -77,7 +77,7 @@ return plural;
  ],
  "Compress crash dumps to save space": [
   null,
-  ""
+  "Сжатие аварийных дампов для экономии места"
  ],
  "Compression": [
   null,
@@ -85,27 +85,23 @@ return plural;
  ],
  "Crash dump location": [
   null,
-  ""
+  "Место сброса аварии"
  ],
  "Crash system": [
   null,
-  ""
+  "Аварийная система"
  ],
  "Directory": [
   null,
   "Каталог"
  ],
- "Directory $0 isn't writable or doesn't exist.": [
-  null,
-  ""
- ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
-  ""
+  "Служба Kdump не установлена. Убедитесь, что установлен пакет kexec-tools."
  ],
  "Kernel Dump": [
   null,
-  ""
+  "Сброс ядра"
  ],
  "Loading...": [
   null,
@@ -113,7 +109,7 @@ return plural;
  ],
  "Local Filesystem": [
   null,
-  ""
+  "Локальная файловая система"
  ],
  "Location": [
   null,
@@ -125,15 +121,15 @@ return plural;
  ],
  "Mount": [
   null,
-  ""
+  "гора"
  ],
  "No configuration found": [
   null,
-  ""
+  "Конфигурация не найдена"
  ],
  "No memory reserved. Append a crashkernel option to the kernel command line (e.g. in /etc/default/grub) to reserve memory at boot time. Example: crashkernel=512M": [
   null,
-  ""
+  "Память не сохраняется. Добавьте резервную копию в командную строку ядра (например, в файле / etc / default / grub), чтобы зарезервировать память во время загрузки. Пример: crashkernel = 512M"
  ],
  "None": [
   null,
@@ -153,27 +149,27 @@ return plural;
  ],
  "On a mounted device": [
   null,
-  ""
+  "На установленном устройстве"
  ],
  "Raw to a device": [
   null,
-  ""
+  "Необработанные устройства"
  ],
  "Reading...": [
   null,
-  ""
+  "Чтение ..."
  ],
  "Remote over NFS": [
   null,
-  ""
+  "Удаленный доступ к NFS"
  ],
  "Remote over SSH": [
   null,
-  ""
+  "Удаленный доступ к SSH"
  ],
  "Reserved memory": [
   null,
-  ""
+  "Зарезервированная память"
  ],
  "Server": [
   null,
@@ -181,70 +177,66 @@ return plural;
  ],
  "Service has an error": [
   null,
-  ""
+  "У службы есть ошибка"
  ],
  "Service is running": [
   null,
-  ""
+  "Служба работает"
  ],
  "Service is starting": [
   null,
-  ""
+  "Служба запускается"
  ],
  "Service is stopped": [
   null,
-  ""
+  "Служба остановлена"
  ],
  "Service is stopping": [
   null,
-  ""
+  "Служба останавливается"
  ],
  "Test Configuration": [
   null,
-  ""
+  "Конфигурация тестирования"
  ],
  "Test is only available while the kdump service is running.": [
   null,
-  ""
+  "Тест доступен только во время работы службы kdump."
  ],
  "Test kdump settings": [
   null,
-  ""
+  "Проверить настройки kdump"
  ],
  "This will test kdump settings by crashing the kernel and thereby the system. Depending on the settings, the system may not automatically reboot and the process may take a while.": [
   null,
-  ""
+  "Это проверит настройки kdump, разбив ядро ​​и тем самым систему. В зависимости от настроек система может не перезагружаться автоматически, и процесс может занять некоторое время."
  ],
  "This will test the kdump configuration by crashing the kernel.": [
   null,
-  ""
+  "Это проверит конфигурацию kdump, разбив ядро."
  ],
  "Unable to apply settings: $0": [
   null,
-  ""
- ],
- "Use the setting in /etc/kdump.conf": [
-  null,
-  ""
+  "Невозможно применить настройки: $0"
  ],
  "invalid: multiple targets defined": [
   null,
-  ""
+  "недействителен: несколько заданных целей"
  ],
  "kdump status": [
   null,
-  ""
+  "Статус kdump"
  ],
  "locally in $0": [
   null,
-  ""
+  "локально в $0"
  ],
  "ssh key": [
   null,
-  ""
+  "клавиша ssh"
  ],
  "undefined": [
   null,
-  ""
+  "не определено"
  ]
 }));

@@ -115,10 +115,6 @@ return plural;
   null,
   "Bus"
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "A ação MUDAR DE ESTADO DE REDE falhou"
- ],
  "CPU Type:": [
   null,
   "Tipo de CPU:"
@@ -133,7 +129,7 @@ return plural;
  ],
  "Changes will take effect after shutting down the VM": [
   null,
-  ""
+  "As alterações entrarão em vigor após o desligamento da VM"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -149,7 +145,7 @@ return plural;
  ],
  "Connecting": [
   null,
-  ""
+  "Conectando"
  ],
  "Connecting to Virtualization Service": [
   null,
@@ -179,6 +175,10 @@ return plural;
   null,
   "Criar novo"
  ],
+ "Create Storage Pool": [
+  null,
+  "Criar pool de armazenamento"
+ ],
  "Create VM": [
   null,
   "Criar VM"
@@ -189,7 +189,7 @@ return plural;
  ],
  "Ctrl+Alt+Del": [
   null,
-  ""
+  "Ctrl+Alt+Del"
  ],
  "Delete": [
   null,
@@ -217,11 +217,11 @@ return plural;
  ],
  "Disk failed to be attached": [
   null,
-  ""
+  "Disco falhou ao ser anexado"
  ],
  "Disk failed to be created": [
   null,
-  ""
+  "Disco falhou ao ser criado"
  ],
  "Disks": [
   null,
@@ -251,6 +251,10 @@ return plural;
   null,
   "Sistema de arquivos"
  ],
+ "Filesystem Directory": [
+  null,
+  "Diretório do sistema de arquivos"
+ ],
  "Force Restart": [
   null,
   "Forçar Reinicialização"
@@ -262,10 +266,6 @@ return plural;
  "Format": [
   null,
   "Formate"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "GET HYPERVISOR MAX VCPU falhou"
  ],
  "GiB": [
   null,
@@ -283,9 +283,13 @@ return plural;
   null,
   "Máquina"
  ],
- "INSTALL VM action failed": [
+ "Host Name": [
   null,
-  "A ação de instalação da VM falhou"
+  "Nome do host"
+ ],
+ "Host should not be empty": [
+  null,
+  "Host não deve estar vazio"
  ],
  "Immediately Start VM": [
   null,
@@ -325,7 +329,7 @@ return plural;
  ],
  "Mac Address": [
   null,
-  ""
+  "Endereço MAC"
  ],
  "Manual Connection": [
   null,
@@ -375,13 +379,17 @@ return plural;
   null,
   "O nome não deve conter apenas caracteres vazios"
  ],
+ "Network File System": [
+  null,
+  "Sistema de arquivos de rede"
+ ],
  "Network Type": [
   null,
-  ""
+  "Tipo de rede"
  ],
  "Network settings could not be saved": [
   null,
-  ""
+  "As configurações de rede não puderam ser salvas"
  ],
  "Networks": [
   null,
@@ -389,11 +397,11 @@ return plural;
  ],
  "New Volume Name": [
   null,
-  ""
+  "Novo nome do volume"
  ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
-  ""
+  "Nenhum volume de armazenamento definido para este pool de armazenamento"
  ],
  "No VM is running or defined on this host": [
   null,
@@ -421,11 +429,11 @@ return plural;
  ],
  "No storage pool is defined on this host": [
   null,
-  ""
+  "Nenhum conjunto de armazenamento é definido neste host"
  ],
  "No virtual networks": [
   null,
-  ""
+  "Nenhuma rede virtual"
  ],
  "OS Vendor": [
   null,
@@ -439,6 +447,10 @@ return plural;
   null,
   "Visão geral"
  ],
+ "Path on host's filesystem": [
+  null,
+  "Caminho no sistema de arquivos do host"
+ ],
  "Path to ISO file on host's file system": [
   null,
   "Caminho para o arquivo ISO no sistema de arquivos do host"
@@ -449,11 +461,11 @@ return plural;
  ],
  "Please enter new volume name": [
   null,
-  ""
+  "Por favor insira o novo nome do volume"
  ],
  "Please enter new volume size": [
   null,
-  ""
+  "Por favor insira o novo tamanho do volume"
  ],
  "Please start the virtual machine to access its console.": [
   null,
@@ -481,11 +493,11 @@ return plural;
  ],
  "QEMU/KVM System connection": [
   null,
-  ""
+  "Conexão do sistema QEMU / KVM"
  ],
  "QEMU/KVM User connection": [
   null,
-  ""
+  "Conexão do usuário QEMU / KVM"
  ],
  "Readonly": [
   null,
@@ -533,15 +545,11 @@ return plural;
  ],
  "Send key": [
   null,
-  ""
+  "Chave de envio"
  ],
  "Serial Console": [
   null,
   "Console Serial"
- ],
- "Session": [
-  null,
-  "Sessão"
  ],
  "Shut Down": [
   null,
@@ -559,7 +567,15 @@ return plural;
   null,
   "Fonte"
  ],
- "Source should start with http, ftp or nfs protocol": [
+ "Source Path": [
+  null,
+  "Caminho da origem"
+ ],
+ "Source path should not be empty": [
+  null,
+  "O caminho da origem não deve estar vazio"
+ ],
+ "Source should start with https, ftp or nfs protocol": [
   null,
   "A fonte deve começar com o protocolo http, ftp ou nfs"
  ],
@@ -567,17 +583,33 @@ return plural;
   null,
   "Iniciar libvirt"
  ],
+ "Start pool when host boots": [
+  null,
+  "Iniciar pool quando o host inicializa"
+ ],
  "Start the VM to see disk statistics.": [
   null,
   "Inicie a VM para ver as estatísticas do disco."
+ ],
+ "Startup": [
+  null,
+  "Comece"
  ],
  "State": [
   null,
   "Estado"
  ],
+ "Storage Pool Name": [
+  null,
+  "Nome do pool de armazenamento"
+ ],
+ "Storage Pool failed to be created": [
+  null,
+  "O pool de armazenamento não pôde ser criado"
+ ],
  "Storage Pools": [
   null,
-  ""
+  "Piscinas de Armazenamento"
  ],
  "Storage Size": [
   null,
@@ -589,15 +621,19 @@ return plural;
  ],
  "Storage Volumes": [
   null,
-  ""
- ],
- "System": [
-  null,
-  "Sistema"
+  "Volumes de Armazenamento"
  ],
  "Target": [
   null,
   "Alvo"
+ ],
+ "Target Path": [
+  null,
+  "Caminho de Destino"
+ ],
+ "Target path should not be empty": [
+  null,
+  "O caminho de destino não deve estar vazio"
  ],
  "The VM crashed.": [
   null,
@@ -635,13 +671,17 @@ return plural;
   null,
   "A VM é suspensa pela gerência de poder do convidado."
  ],
+ "The directory on the server being exported": [
+  null,
+  "O diretório no servidor que está sendo exportado"
+ ],
  "The pool is empty": [
   null,
-  ""
+  "A piscina está vazia"
  ],
  "Threads per core": [
   null,
-  ""
+  "Tópicos por núcleo"
  ],
  "Too many files found": [
   null,
@@ -661,7 +701,7 @@ return plural;
  ],
  "Unique name": [
   null,
-  ""
+  "Nome único"
  ],
  "Unplug": [
   null,
@@ -685,55 +725,7 @@ return plural;
  ],
  "VCPU settings could not be saved": [
   null,
-  ""
- ],
- "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  ""
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  ""
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  ""
- ],
- "VM DELETE action failed": [
-  null,
-  ""
- ],
- "VM DETACH_DISK action failed": [
-  null,
-  ""
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "ação VM FORCE OFF falhou"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "ação VM FORCE REBOOT falhou"
- ],
- "VM REBOOT action failed": [
-  null,
-  "ação VM REBOOT falhou"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  "VM SEND Falha na ação de interrupção não mascarável"
- ],
- "VM SENDNMI action failed": [
-  null,
-  ""
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "ação VM SHUT DOWN falhou"
- ],
- "VM START action failed": [
-  null,
-  "ação VM START falhou"
+  "Configurações de VCPU não puderam ser salvas"
  ],
  "VNC": [
   null,
@@ -771,101 +763,21 @@ return plural;
   null,
   "ativo"
  ],
- "bridge": [
-  null,
-  "bridge"
- ],
- "cdrom": [
-  null,
-  "cdrom"
- ],
- "crashed": [
-  null,
-  "travou"
- ],
- "custom": [
-  null,
-  "personalizado"
- ],
- "direct": [
-  null,
-  "direto"
- ],
- "disabled": [
-  null,
-  "desabilitado"
- ],
- "disk": [
-  null,
-  "disco"
- ],
- "down": [
-  null,
-  "down"
- ],
- "dying": [
-  null,
-  "morrendo"
- ],
- "enabled": [
-  null,
-  "habilitado"
- ],
- "ethernet": [
-  null,
-  ""
- ],
- "host": [
-  null,
-  "host"
- ],
- "hostdev": [
-  null,
-  ""
- ],
- "idle": [
-  null,
-  "ocioso"
- ],
  "inactive": [
   null,
   "inativo"
- ],
- "mcast": [
-  null,
-  ""
- ],
- "network": [
-  null,
-  "rede"
  ],
  "no": [
   null,
   "não"
  ],
- "other": [
-  null,
-  "outro"
- ],
- "paused": [
-  null,
-  "pausado"
- ],
  "qcow2": [
   null,
-  ""
+  "qcow2"
  ],
  "raw": [
   null,
   "raw"
- ],
- "running": [
-  null,
-  "executando"
- ],
- "server": [
-  null,
-  "servidor"
  ],
  "show less": [
   null,
@@ -875,33 +787,9 @@ return plural;
   null,
   "mostrar mais"
  ],
- "shut off": [
-  null,
-  "desligar"
- ],
- "shutdown": [
-  null,
-  "desligar"
- ],
- "suspended (PM)": [
-  null,
-  "suspenso (PM)"
- ],
- "udp": [
-  null,
-  "udp"
- ],
  "undefined": [
   null,
   "indefinido"
- ],
- "up": [
-  null,
-  "up"
- ],
- "user": [
-  null,
-  "usuário"
  ],
  "vCPU Count": [
   null,
@@ -909,15 +797,11 @@ return plural;
  ],
  "vCPU Maximum": [
   null,
-  ""
+  "Máximo de vCPU"
  ],
  "vCPUs:": [
   null,
   "vCPUs:"
- ],
- "vhostuser": [
-  null,
-  ""
  ],
  "yes": [
   null,

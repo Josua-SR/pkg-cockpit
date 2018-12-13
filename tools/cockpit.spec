@@ -205,6 +205,7 @@ echo '{ "linguas": null }' > %{buildroot}%{_datadir}/cockpit/shell/override.json
 echo '%dir %{_datadir}/cockpit/base1' > base.list
 find %{buildroot}%{_datadir}/cockpit/base1 -type f >> base.list
 echo '%{_sysconfdir}/cockpit/machines.d' >> base.list
+echo %{buildroot}%{_datadir}/polkit-1/actions/org.cockpit-project.cockpit-bridge.policy >> base.list
 # RHEL 7 needs to keep cockpit-ssh in dashboard for backwards compat
 %if 0%{?rhel} == 7
 find %{buildroot}%{_datadir}/cockpit/ssh -type f >> dashboard.list
@@ -311,13 +312,13 @@ for pkg in base1 branding motd kdump networkmanager realmd selinux shell sosrepo
     rm -r %{buildroot}/%{_datadir}/cockpit/$pkg
     rm -f %{buildroot}/%{_datadir}/metainfo/org.cockpit-project.cockpit-${pkg}.metainfo.xml
 done
-for data in applications doc locale man pixmaps; do
+for data in doc locale man pixmaps polkit-1; do
     rm -r %{buildroot}/%{_datadir}/$data
 done
 for lib in systemd tmpfiles.d firewalld; do
     rm -r %{buildroot}/%{_prefix}/%{__lib}/$lib
 done
-for libexec in cockpit-askpass cockpit-session cockpit-ws; do
+for libexec in cockpit-askpass cockpit-session cockpit-ws cockpit-desktop; do
     rm %{buildroot}/%{_libexecdir}/$libexec
 done
 rm -r %{buildroot}/%{_libdir}/security %{buildroot}/%{_sysconfdir}/pam.d %{buildroot}/%{_sysconfdir}/motd.d %{buildroot}/%{_sysconfdir}/issue.d
@@ -512,6 +513,7 @@ Requires(postun): systemd
 The Cockpit Web Service listens on the network, and authenticates users.
 
 %files ws -f cockpit.lang
+%doc %{_mandir}/man1/cockpit-desktop.1.gz
 %doc %{_mandir}/man5/cockpit.conf.5.gz
 %doc %{_mandir}/man8/cockpit-ws.8.gz
 %doc %{_mandir}/man8/remotectl.8.gz
@@ -532,6 +534,7 @@ The Cockpit Web Service listens on the network, and authenticates users.
 %{_sbindir}/remotectl
 %{_libdir}/security/pam_ssh_add.so
 %{_libexecdir}/cockpit-ws
+%{_libexecdir}/cockpit-desktop
 %attr(4750, root, cockpit-ws) %{_libexecdir}/cockpit-session
 %attr(775, -, wheel) %{_localstatedir}/lib/cockpit
 %{_datadir}/cockpit/static

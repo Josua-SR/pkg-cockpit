@@ -103,14 +103,6 @@ return plural;
   null,
   "Adress"
  ],
- "Advanced TCA": [
-  null,
-  "Avanserad TCA"
- ],
- "All In One": [
-  null,
-  "Allt-i-ett"
- ],
  "Authentication": [
   null,
   "Autentisering"
@@ -127,25 +119,9 @@ return plural;
   null,
   "Avatar"
  ],
- "Blade": [
-  null,
-  "Blad"
- ],
- "Blade enclosure": [
-  null,
-  "Bladhölje"
- ],
- "Bus Expansion Chassis": [
-  null,
-  "Bussexpansionschassi"
- ],
  "CPU": [
   null,
   "CPU"
- ],
- "Can't load image": [
-  null,
-  "Kan inte ladda avbilden"
  ],
  "Cancel": [
   null,
@@ -191,10 +167,6 @@ return plural;
   null,
   "Färg"
  ],
- "Compact PCI": [
-  null,
-  "Kompakt PCI"
- ],
  "Connect": [
   null,
   "Anslut"
@@ -202,14 +174,6 @@ return plural;
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
   "Att ansluta till mer än {{ limit }} maskiner samtidigt stödjs inte."
- ],
- "Connection Error": [
-  null,
-  "Anslutningsfel"
- ],
- "Convertible": [
-  null,
-  "Konvertibel"
  ],
  "Could not contact {{host}}": [
   null,
@@ -219,29 +183,13 @@ return plural;
   null,
   "Panel"
  ],
- "Desktop": [
-  null,
-  "Skrivbord"
- ],
- "Detachable": [
-  null,
-  "Frånkopplingsbar"
- ],
  "Disk I/O": [
   null,
   "Disk-I/O"
  ],
- "Docking Station": [
-  null,
-  "Dockningsstation"
- ],
  "Edit Server": [
   null,
   "Redigera server"
- ],
- "Embedded PC": [
-  null,
-  "Inbäddad PC"
  ],
  "Enter IP address or host name": [
   null,
@@ -254,10 +202,6 @@ return plural;
  "Error loading users: {{perm_failed}}": [
   null,
   "Fel när användare lästes in: {{perm_failed}}"
- ],
- "Expansion Chassis": [
-  null,
-  "Expansionschassin"
  ],
  "Failed to add machine: $0": [
   null,
@@ -279,10 +223,6 @@ return plural;
   null,
   "Gå till nu"
  ],
- "Hand Held": [
-  null,
-  "Handhållen"
- ],
  "Host Name": [
   null,
   "Värdnamn"
@@ -299,10 +239,6 @@ return plural;
   null,
   "Felaktiga filrättigheter"
  ],
- "IoT Gateway": [
-  null,
-  "IoT-gateway"
- ],
  "Is sshd running on a different port?": [
   null,
   "Kör sshd på en annan port?"
@@ -314,10 +250,6 @@ return plural;
  "Kerberos Ticket": [
   null,
   "Kerberosbiljett"
- ],
- "Laptop": [
-  null,
-  "Bärbar dator"
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
@@ -343,33 +275,9 @@ return plural;
   null,
   "Förlorade förbindelsen.  Försöker återansluta"
  ],
- "Low Profile Desktop": [
-  null,
-  "Lågprofilskrivbord"
- ],
- "Lunch Box": [
-  null,
-  "Lunchlåda"
- ],
- "Main Server Chassis": [
-  null,
-  "Huvudserverchassi"
- ],
  "Memory": [
   null,
   "Minne"
- ],
- "Mini PC": [
-  null,
-  "Mini-PC"
- ],
- "Mini Tower": [
-  null,
-  "Minitorn"
- ],
- "Multi-system Chassis": [
-  null,
-  "Multisystemschassi"
  ],
  "Network": [
   null,
@@ -387,10 +295,6 @@ return plural;
   null,
   "Inte en giltig privat nyckel"
  ],
- "Notebook": [
-  null,
-  "Bärbar (notebook)"
- ],
  "Off": [
   null,
   "Av"
@@ -403,10 +307,6 @@ return plural;
   null,
   "På"
  ],
- "Other": [
-  null,
-  "Annan"
- ],
  "Password": [
   null,
   "Lösenord"
@@ -415,21 +315,9 @@ return plural;
   null,
   "Lösenordet accepterades inte"
  ],
- "Peripheral Chassis": [
-  null,
-  "Periferichassi"
- ],
- "Pizza Box": [
-  null,
-  "Pizzalåda"
- ],
  "Port": [
   null,
   "Port"
- ],
- "Portable": [
-  null,
-  "Bärbar"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -443,45 +331,17 @@ return plural;
   null,
   "Publik nyckel"
  ],
- "RAID Chassis": [
-  null,
-  "RAID-chassi"
- ],
- "Rack Mount Chassis": [
-  null,
-  "Rackmonteringschassi"
- ],
- "Sealed-case PC": [
-  null,
-  "PC med slutet hölje"
- ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
   "Välj användaren som du vill skall synkorniseras med {{#strong}}{{host}}{{/strong}}"
  ],
  "Servers": [
   null,
-  ""
+  "Servrar"
  ],
  "Set": [
   null,
-  ""
- ],
- "Space-saving Computer": [
-  null,
-  ""
- ],
- "Stick PC": [
-  null,
-  ""
- ],
- "Sub Chassis": [
-  null,
-  ""
- ],
- "Sub Notebook": [
-  null,
-  ""
+  "Sätt"
  ],
  "Synchronize": [
   null,
@@ -491,29 +351,21 @@ return plural;
   null,
   "Synkronisera användare"
  ],
- "Tablet": [
-  null,
-  ""
- ],
  "The IP address or host name cannot contain whitespace.": [
   null,
-  ""
+  "IP-adressen och värdnamnet får inte innehålla blanktecken."
  ],
  "The authenticity of host {{#strong}}{{host}}{{/strong}} can't be established. Are you sure you want to continue connecting?": [
   null,
-  ""
+  "Autenticiteten hos värden {{#strong}}{{host}}{{/strong}} kan inte fastställas.  Är du säker på att du vill fortsätta ansluta?"
  ],
  "The key of {{#strong}}{{host}}{{/strong}} does not match the key previously in use. Unless this machine was recently replaced, it is likely that someone is trying to attack your connection to this machine.": [
   null,
-  ""
+  "Nyckeln för {{#strong}}{{host}}{{/strong}} stämmer inte med den tidigare använda nyckeln.  Om inte denna maskin ersattes nyligen är det troligt att någon försöker attackera din förbindelse till denna maskin."
  ],
  "The passwords do not match.": [
   null,
-  ""
- ],
- "The user <b>$0</b> is not permitted to manage servers": [
-  null,
-  ""
+  "Lösenorden stämmer inte överens."
  ],
  "This machine has already been added.": [
   null,
@@ -521,21 +373,13 @@ return plural;
  ],
  "This version of cockpit-ws does not support connecting to a host with an alternate user or port": [
   null,
-  ""
+  "Denna version av cockpit-ws stödjer inte att ansluta till en värd med en alternativ användare eller port"
  ],
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
   null,
-  ""
- ],
- "Tower": [
-  null,
-  ""
+  "För att använda en annan port behöver du uppgradera cockpit-ws till en nyare version."
  ],
  "Type a password": [
-  null,
-  ""
- ],
- "Unknown": [
   null,
   ""
  ],
@@ -562,9 +406,5 @@ return plural;
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
   "Du är ansluten till {{#strong}}{{host}}{{/strong}}, dock, för att synkronisera användare krävs en användare med superanvändarens rättigheter."
- ],
- "You are currently connected directly to this server. You cannot delete it.": [
-  null,
-  "Du är för närvarande ansluten direkt till denna server.  Du kan inte ta bort den."
  ]
 }));

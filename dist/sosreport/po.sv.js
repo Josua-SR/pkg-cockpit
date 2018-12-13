@@ -105,14 +105,14 @@ return plural;
  ],
  "The collected information will be stored locally on the system.": [
   null,
-  ""
+  "Den insamlade informationen kommer lagras lokalt på systemet."
  ],
  "The generated archive contains data considered sensitive and its content should be reviewed by the originating organization before being passed to any third party.": [
   null,
-  ""
+  "Det genererade arkivet innehåller data som betraktas som känsligt och dess innehåll bör granskas av ursprungsorganisationen innan den skickas till någon tredje part."
  ],
  "This tool will collect system configuration and diagnostic information from this system for use with diagnosing problems with the system.": [
   null,
-  ""
+  "Detta verktyg kommer samla in systemkonfiguration och diagnostisk information från systemet för att användas vid diagnostisering av problem med systemet."
  ]
 }));

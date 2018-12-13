@@ -69,8 +69,8 @@ return plural;
  },
  "$0 disk is missing": [
   "$0 disks are missing",
-  "",
-  ""
+  "Il $0 disco non esiste",
+  "Il $0 disco non esiste"
  ],
  "Cancel": [
   null,
@@ -78,11 +78,11 @@ return plural;
  ],
  "Control": [
   null,
-  ""
+  "Controllo"
  ],
  "Delete '{{ name }}'": [
   null,
-  ""
+  "Cancellare '{{ name }}' "
  ],
  "Empty": [
   null,
@@ -102,11 +102,11 @@ return plural;
  ],
  "No matching files found": [
   null,
-  ""
+  "Nessun file corrispondente trovato"
  ],
  "Not Ready": [
   null,
-  ""
+  "Non pronto"
  ],
  "Off": [
   null,
@@ -122,15 +122,15 @@ return plural;
  ],
  "Path to file": [
   null,
-  ""
+  "Percorso da file"
  ],
  "Ready": [
   null,
-  ""
+  "Ready"
  ],
  "Too many files found": [
   null,
-  ""
+  "Troppi file trovati"
  ],
  "Unavailable": [
   null,
@@ -142,16 +142,16 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "non definito"
  ],
  "disk-non-rotational\u0004$0 disk is missing": [
   "$0 disks are missing",
-  "",
-  ""
+  "Il $0 disco non esiste",
+  "Il $0 disco non esiste"
  ],
  "key\u0004Control": [
   null,
-  ""
+  "Controllo"
  ],
  "verb\u0004Empty": [
   null,
@@ -159,6 +159,6 @@ return plural;
  ],
  "verb\u0004Ready": [
   null,
-  ""
+  "Pronto"
  ]
 }));

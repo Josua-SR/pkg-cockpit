@@ -91,14 +91,6 @@ return plural;
   null,
   "Додаткове сховище"
  ],
- "Advanced TCA": [
-  null,
-  "Розширене TCA"
- ],
- "All In One": [
-  null,
-  "Усе-в-одному"
- ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
   "Всі дані на позначених дисках буде витерто, а диски буде додано до резервного сховища даних."
@@ -110,18 +102,6 @@ return plural;
  "Author": [
   null,
   "Автор"
- ],
- "Blade": [
-  null,
-  "Blade"
- ],
- "Blade enclosure": [
-  null,
-  "Обгортка Blade"
- ],
- "Bus Expansion Chassis": [
-  null,
-  "Апаратний блок розширення каналу"
  ],
  "CPU": [
   null,
@@ -189,10 +169,6 @@ return plural;
   null,
   "Надіслати образ"
  ],
- "Compact PCI": [
-  null,
-  "Компактний PCI"
- ],
  "Configure storage...": [
   null,
   "Налаштувати сховище даних…"
@@ -225,10 +201,6 @@ return plural;
   null,
   "Контейнери"
  ],
- "Convertible": [
-  null,
-  "Змінюваний"
- ],
  "Could not add all disks": [
   null,
   "Не вдалося додати усі диски"
@@ -257,14 +229,6 @@ return plural;
   null,
   "Вилучення контейнера призведе до витирання усіх даних, що на ньому зберігаються."
  ],
- "Desktop": [
-  null,
-  "Робоча станція"
- ],
- "Detachable": [
-  null,
-  "Змінний"
- ],
  "Details": [
   null,
   "Подробиці"
@@ -272,10 +236,6 @@ return plural;
  "Docker is not installed or activated on the system": [
   null,
   "Docker не встановлено або не активовано у цій системі"
- ],
- "Docking Station": [
-  null,
-  "Станція заряджання"
  ],
  "Download": [
   null,
@@ -292,10 +252,6 @@ return plural;
  "Duplicate port": [
   null,
   "Дублювання порту"
- ],
- "Embedded PC": [
-  null,
-  "Вбудований ПК"
  ],
  "Entrypoint": [
   null,
@@ -320,10 +276,6 @@ return plural;
  "Exited $ExitCode": [
   null,
   "Завершено $ExitCode"
- ],
- "Expansion Chassis": [
-  null,
-  "Апаратний блок розширення"
  ],
  "Expose container ports": [
   null,
@@ -352,10 +304,6 @@ return plural;
  "Get new image": [
   null,
   "Отримати новий образ"
- ],
- "Hand Held": [
-  null,
-  "Портативний"
  ],
  "Hard Disk": [
   null,
@@ -409,14 +357,6 @@ return plural;
   null,
   "Некоректний порт"
  ],
- "IoT Gateway": [
-  null,
-  "Шлюз IoT"
- ],
- "Laptop": [
-  null,
-  "Переносний ПК"
- ],
  "Link to another container": [
   null,
   "Посилання на інший контейнер"
@@ -433,21 +373,9 @@ return plural;
   null,
   "Локальні диски"
  ],
- "Low Profile Desktop": [
-  null,
-  "Низькопрофільна робоча станція"
- ],
- "Lunch Box": [
-  null,
-  "Пусковий комп'ютер"
- ],
  "MAC Address:": [
   null,
   "MAC-адреса:"
- ],
- "Main Server Chassis": [
-  null,
-  "Апаратний блок основного сервера"
  ],
  "Memory": [
   null,
@@ -465,21 +393,9 @@ return plural;
   null,
   "МіБ"
  ],
- "Mini PC": [
-  null,
-  "Міні-ПК"
- ],
- "Mini Tower": [
-  null,
-  "Міні-башточка"
- ],
  "Mount container volumes": [
   null,
   "Змонтувати томи контейнера"
- ],
- "Multi-system Chassis": [
-  null,
-  "Багатосистемний апаратний блок"
  ],
  "Name": [
   null,
@@ -537,10 +453,6 @@ return plural;
   null,
   "Не знайдено"
  ],
- "Notebook": [
-  null,
-  "Ноутбук"
- ],
  "Off": [
   null,
   "Вимкнено"
@@ -563,21 +475,9 @@ return plural;
   "Якщо помилка, повторити $0 рази",
   "Якщо помилка, повторити $0 разів"
  ],
- "Other": [
-  null,
-  "Інше"
- ],
  "Overview": [
   null,
   "Огляд"
- ],
- "Peripheral Chassis": [
-  null,
-  "Периферійний апаратний блок"
- ],
- "Pizza Box": [
-  null,
-  "З коробку для піци"
  ],
  "Please confirm deletion of $0": [
   null,
@@ -591,10 +491,6 @@ return plural;
   null,
   "Будь ласка, спробуйте інший ключ"
  ],
- "Portable": [
-  null,
-  "Портативний"
- ],
  "Ports": [
   null,
   "Порти"
@@ -606,14 +502,6 @@ return plural;
  "Problems": [
   null,
   "Проблеми"
- ],
- "RAID Chassis": [
-  null,
-  "Апаратний блок RAID"
- ],
- "Rack Mount Chassis": [
-  null,
-  "Апаратний блок монтування стійок"
  ],
  "ReadOnly": [
   null,
@@ -671,10 +559,6 @@ return plural;
   null,
   "Запустити образ"
  ],
- "Sealed-case PC": [
-  null,
-  "ПК з опломбованим корпусом"
- ],
  "Security": [
   null,
   "Безпека"
@@ -699,10 +583,6 @@ return plural;
   null,
   "Твердотільний диск"
  ],
- "Space-saving Computer": [
-  null,
-  "Компактний комп'ютер"
- ],
  "Start": [
   null,
   "Почати"
@@ -718,10 +598,6 @@ return plural;
  "State:": [
   null,
   "Стан:"
- ],
- "Stick PC": [
-  null,
-  "Паличковий ПК"
  ],
  "Stop": [
   null,
@@ -743,21 +619,9 @@ return plural;
   null,
   "Буфер сховища"
  ],
- "Sub Chassis": [
-  null,
-  "Підблок"
- ],
- "Sub Notebook": [
-  null,
-  "Підноутбук"
- ],
  "TCP": [
   null,
   "TCP"
- ],
- "Tablet": [
-  null,
-  "Планшет"
  ],
  "Tag": [
   null,
@@ -791,10 +655,6 @@ return plural;
   null,
   "Загалом"
  ],
- "Tower": [
-  null,
-  "Башточка"
- ],
  "Try again": [
   null,
   "Повторити спробу"
@@ -810,10 +670,6 @@ return plural;
  "Unexpected error": [
   null,
   "Неочікувана помилка"
- ],
- "Unknown": [
-  null,
-  "Невідомий"
  ],
  "Unless Stopped": [
   null,

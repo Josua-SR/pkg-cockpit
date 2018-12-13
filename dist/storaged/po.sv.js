@@ -684,6 +684,10 @@ return plural;
   null,
   "Ledigt utrymme"
  ],
+ "Free up space in this group: Shrink or delete other logical volumes or add another physical volume.": [
+  null,
+  "Frigör utrymme i denna grupp: krymp eller radera andra logiska volymer eller lägg till en ytterligare fysisk volym."
+ ],
  "Go to now": [
   null,
   "Gå till nu"
@@ -908,6 +912,14 @@ return plural;
   null,
   "Namnet får inte vara tomt."
  ],
+ "Name cannot be longer than $0 bytes": [
+  null,
+  ""
+ ],
+ "Name cannot be longer than $0 characters": [
+  null,
+  ""
+ ],
  "Name cannot be longer than 127 characters.": [
   null,
   "Namnet får inte vara längre än 127 tecken."
@@ -992,6 +1004,10 @@ return plural;
   null,
   "Inga volymgrupper skapade"
  ],
+ "Not enough space to grow.": [
+  null,
+  "Inte tillräckligt med utrymme för att växa"
+ ],
  "Not found": [
   null,
   "Finns inte"
@@ -1039,10 +1055,6 @@ return plural;
  "Overwrite existing data with zeros": [
   null,
   "Skriv över befintliga data med nollor"
- ],
- "PackageKit crashed": [
-  null,
-  "PackageKit kraschade"
  ],
  "Partition": [
   null,
@@ -1322,139 +1334,139 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "Server"
  ],
  "Server Address": [
   null,
-  ""
+  "Serveradress"
  ],
  "Server address cannot be empty.": [
   null,
-  ""
+  "Serveradressen får inte vara tom."
  ],
  "Server cannot be empty.": [
   null,
-  ""
+  "Servern får inte vara tom."
  ],
  "Service": [
   null,
-  ""
+  "Tjänst"
  ],
  "Session": [
   null,
-  ""
+  "Session"
  ],
  "Setting up loop device $target": [
   null,
-  ""
+  "Sätter upp vändslingeenheten $target"
  ],
  "Shrink": [
   null,
-  ""
+  "Krymp"
  ],
  "Shrink Logical Volume": [
   null,
-  ""
+  "Krymp en logisk volym"
  ],
  "Size": [
   null,
-  ""
+  "Storlek"
  ],
  "Size cannot be negative": [
   null,
-  ""
+  "Storleken kan inte vara negativ"
  ],
  "Size cannot be zero": [
   null,
-  ""
+  "Storleken kan inte vara noll"
  ],
  "Size is too large": [
   null,
-  ""
+  "Storleken är för stor"
  ],
  "Size must be a number": [
   null,
-  ""
+  "Storleken måste vara ett tal"
  ],
  "Size must be at least $0": [
   null,
-  ""
+  "Storleken måste vara åtminstone $0"
  ],
  "Slot $0": [
   null,
-  ""
+  "Plats $0"
  ],
  "Spare": [
   null,
-  ""
+  "Reserv"
  ],
  "Start": [
   null,
-  ""
+  "Starta"
  ],
  "Start Multipath": [
   null,
-  ""
+  "Starta multipath"
  ],
  "Starting RAID Device $target": [
   null,
-  ""
+  "Starta RAID-enhet $target"
  ],
  "Starting swapspace $target": [
   null,
-  ""
+  "Starta växlingsutrymmet $target"
  ],
  "Stop": [
   null,
-  ""
+  "Stoppa"
  ],
  "Stop Device": [
   null,
-  ""
+  "Stoppa enhet"
  ],
  "Stop and Unmount": [
   null,
-  ""
+  "Stoppa och avmontera"
  ],
  "Stop and remove": [
   null,
-  ""
+  "Stoppa och ta bort"
  ],
  "Stopping RAID Device $target": [
   null,
-  ""
+  "Stoppar RAID-enhet $target"
  ],
  "Stopping swapspace $target": [
   null,
-  ""
+  "Stoppar växlingsutrymmet $target"
  ],
  "Storage": [
   null,
-  ""
+  "Lagring"
  ],
  "Storage Logs": [
   null,
-  ""
+  "Lagringsloggar"
  ],
  "Store passphrase": [
   null,
-  ""
+  "Lagra lösenfrasen"
  ],
  "Stored Passphrase": [
   null,
-  ""
+  "Lagrad lösenfras"
  ],
  "Stored passphrase": [
   null,
-  ""
+  "Lagrad lösenfras"
  ],
  "Support is installed.": [
   null,
-  ""
+  "Stöd är installerat."
  ],
  "Swap": [
   null,
-  ""
+  "Växlingsutrymme"
  ],
  "Synchronizing RAID Device $target": [
   null,
@@ -1462,111 +1474,111 @@ return plural;
  ],
  "Tang keyserver": [
   null,
-  ""
+  "Tang-nyckelserver"
  ],
  "The \"storaged\" API is not available on this system.": [
   null,
-  ""
+  "API:et till ”storaged” är inte tillgängligt på det här systemet."
  ],
  "The RAID Array is in a degraded state": [
   null,
-  ""
+  "RAID-vektor är i ett nedsatt tillstånd"
  ],
  "The RAID device must be running in order to add spare disks.": [
   null,
-  ""
+  "RAID-enheten måste köra för att kunna lägga till reservdiskar."
  ],
  "The RAID device must be running in order to remove disks.": [
   null,
-  ""
+  "RAID-enheten måste köra för att kunna ta bort diskar."
  ],
  "The creation of this VDO device did not finish and the device can't be used.": [
   null,
-  ""
+  "Skapandet av denna VDO-enhet avslutade inte och enheten kan inte användas."
  ],
  "The currently logged in user is not permitted to see information about keys.": [
   null,
-  ""
+  "Användaren som för närvarande är inloggad har inte tillstånd att se information om nycklar."
  ],
  "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
   null,
-  ""
+  "Filsystemet används av inloggningssesioner och systemtjänster.  Att gå vidare kommer stoppa dessa."
  ],
  "The filesystem is in use by login sessions. Proceeding will stop these.": [
   null,
-  ""
+  "Filsystemet används av inloggningssessioner.  Att gå vidare kommer stoppa dessa."
  ],
  "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
-  ""
+  "Filsystemet används av systemtjänster.  Att gå vidare kommer stoppa dessa."
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
-  ""
+  "Den sista disken i en RAID-enhet kan inte tas bort."
  ],
  "The last key slot can not be removed": [
   null,
-  ""
+  "Det sista nyckelfacket kan inte tas bort"
  ],
  "The last physical volume of a volume group cannot be removed.": [
   null,
-  ""
+  "Den sista fysiska volymen i en volymgrupp kan inte tas bort."
  ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
-  ""
+  "Användaren <b>$0</b> har inte rättighet att hantera lagring"
  ],
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
   null,
-  ""
+  "Det finns enheter med flera sökvägar på systemet, men multipath-tjänsten kör inte."
  ],
  "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
   null,
-  ""
+  "Det finns inte tillräckligt med fritt utrymme någon annanstans för att ta bort dennay fysiska volym.  Åtminstone $0 mer ledigt utrymme behövs."
  ],
  "Thin Logical Volume": [
   null,
-  ""
+  "Tunn logisk volym"
  ],
  "This NFS mount is in use and only its options can be changed.": [
   null,
-  ""
+  "Denna NFS-montering används och endast dess alternativ kan ändras."
  ],
  "This VDO device does not use all of its backing device.": [
   null,
-  ""
+  "Denna VDO-enhet använder inte alla sina underliggande enheter."
  ],
  "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
   null,
-  ""
+  "Denna enhet har filsystem som används just nu.  Att gå vidare kommer avmontera alla filsystem på den."
  ],
  "This device is currently used for RAID devices.": [
   null,
-  ""
+  "Denna enhet används just nu till RAID-enheter."
  ],
  "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
   null,
-  ""
+  "Denna enhet används just nu till RAID-enheter.  Att gå vidare kommer ta bort den från sin RAID-enhet."
  ],
  "This device is currently used for VDO devices.": [
   null,
-  ""
+  "Denna enhet används just nu till VDO-enheter."
  ],
  "This device is currently used for volume groups.": [
   null,
-  ""
+  "Denna enhet används just nu till volymgrupper."
  ],
  "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
-  ""
+  "Denna enhet används just nu till volymgrupper.  Att gå vidare kommer ta bort den från sin volymgrupper."
  ],
  "This disk cannot be removed while the device is recovering.": [
   null,
-  ""
+  "Denna disk kan inte tas bort medans enheten återhämtar sig."
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
-  ""
+  "Denna volym behöver aktiveras före dess storlek kan ändras."
  ],
  "Total size: $0": [
   null,
@@ -1794,7 +1806,7 @@ return plural;
  ],
  "storage-id-desc\u0004Swap Space": [
   null,
-  ""
+  "Växlingsutrymme"
  ],
  "storage-id-desc\u0004Unrecognized Data": [
   null,
@@ -1822,7 +1834,7 @@ return plural;
  ],
  "storage\u0004Solid-State Disk": [
   null,
-  ""
+  "SSD-minne"
  ],
  "format-bytes\u0004bytes": [
   null,

@@ -115,10 +115,6 @@ return plural;
   null,
   "总线"
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "更改网络状态操作失败"
- ],
  "CPU Type:": [
   null,
   "CPU 类型："
@@ -133,7 +129,7 @@ return plural;
  ],
  "Changes will take effect after shutting down the VM": [
   null,
-  ""
+  "关机后所做的改变将会起作用。"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -179,6 +175,10 @@ return plural;
   null,
   "新建"
  ],
+ "Create Storage Pool": [
+  null,
+  "创建存储池"
+ ],
  "Create VM": [
   null,
   "创建虚拟机"
@@ -189,7 +189,7 @@ return plural;
  ],
  "Ctrl+Alt+Del": [
   null,
-  ""
+  "Ctrl+Alt+Del"
  ],
  "Delete": [
   null,
@@ -217,11 +217,11 @@ return plural;
  ],
  "Disk failed to be attached": [
   null,
-  ""
+  "附加磁盘失败"
  ],
  "Disk failed to be created": [
   null,
-  ""
+  "创建磁盘失败"
  ],
  "Disks": [
   null,
@@ -251,6 +251,10 @@ return plural;
   null,
   "文件系统"
  ],
+ "Filesystem Directory": [
+  null,
+  "文件系统目录"
+ ],
  "Force Restart": [
   null,
   "强制重启"
@@ -262,10 +266,6 @@ return plural;
  "Format": [
   null,
   "格式化"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "获取 HYPERVISOR MAX VCPU 操作失败"
  ],
  "GiB": [
   null,
@@ -283,9 +283,13 @@ return plural;
   null,
   "主机"
  ],
- "INSTALL VM action failed": [
+ "Host Name": [
   null,
-  "安装虚拟机操作失败"
+  "主机名"
+ ],
+ "Host should not be empty": [
+  null,
+  "主机不能为空"
  ],
  "Immediately Start VM": [
   null,
@@ -325,7 +329,7 @@ return plural;
  ],
  "Mac Address": [
   null,
-  ""
+  "MAC 地址"
  ],
  "Manual Connection": [
   null,
@@ -375,13 +379,17 @@ return plural;
   null,
   "名称不应仅包含空字符"
  ],
+ "Network File System": [
+  null,
+  "网络文件系统"
+ ],
  "Network Type": [
   null,
-  ""
+  "网络类型"
  ],
  "Network settings could not be saved": [
   null,
-  ""
+  "网络设置不能被保存"
  ],
  "Networks": [
   null,
@@ -393,7 +401,7 @@ return plural;
  ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
-  ""
+  "没有为这个存储池定义存储卷"
  ],
  "No VM is running or defined on this host": [
   null,
@@ -421,11 +429,11 @@ return plural;
  ],
  "No storage pool is defined on this host": [
   null,
-  ""
+  "没有在这个主机上定义存储池"
  ],
  "No virtual networks": [
   null,
-  ""
+  "没有虚拟网络"
  ],
  "OS Vendor": [
   null,
@@ -438,6 +446,10 @@ return plural;
  "Overview": [
   null,
   "概览"
+ ],
+ "Path on host's filesystem": [
+  null,
+  "主机文件系统上的路径"
  ],
  "Path to ISO file on host's file system": [
   null,
@@ -481,11 +493,11 @@ return plural;
  ],
  "QEMU/KVM System connection": [
   null,
-  ""
+  "QEMU/KVM 系统连接"
  ],
  "QEMU/KVM User connection": [
   null,
-  ""
+  "QEMU/KVM 用户连接"
  ],
  "Readonly": [
   null,
@@ -539,10 +551,6 @@ return plural;
   null,
   "串行控制台"
  ],
- "Session": [
-  null,
-  "会话"
- ],
  "Shut Down": [
   null,
   "关机"
@@ -559,7 +567,15 @@ return plural;
   null,
   "源"
  ],
- "Source should start with http, ftp or nfs protocol": [
+ "Source Path": [
+  null,
+  "源路径"
+ ],
+ "Source path should not be empty": [
+  null,
+  "源路径不能为空"
+ ],
+ "Source should start with https, ftp or nfs protocol": [
   null,
   "源应该以 http、ftp 或 nfs 协议开头"
  ],
@@ -567,17 +583,33 @@ return plural;
   null,
   "启动 libvirt"
  ],
+ "Start pool when host boots": [
+  null,
+  "在主机引导时启动池"
+ ],
  "Start the VM to see disk statistics.": [
   null,
   "启动 VM 查看磁盘统计数据"
+ ],
+ "Startup": [
+  null,
+  "启动"
  ],
  "State": [
   null,
   "状态"
  ],
+ "Storage Pool Name": [
+  null,
+  "存储池名"
+ ],
+ "Storage Pool failed to be created": [
+  null,
+  "创建存储池失败"
+ ],
  "Storage Pools": [
   null,
-  ""
+  "存储池"
  ],
  "Storage Size": [
   null,
@@ -589,15 +621,19 @@ return plural;
  ],
  "Storage Volumes": [
   null,
-  ""
- ],
- "System": [
-  null,
-  "系统"
+  "存储卷"
  ],
  "Target": [
   null,
   "目标"
+ ],
+ "Target Path": [
+  null,
+  "目标路径"
+ ],
+ "Target path should not be empty": [
+  null,
+  "目标路径不能为空"
  ],
  "The VM crashed.": [
   null,
@@ -635,13 +671,17 @@ return plural;
   null,
   "虚拟机已被客户机电源管理暂停。"
  ],
+ "The directory on the server being exported": [
+  null,
+  "服务器上的目录被导出"
+ ],
  "The pool is empty": [
   null,
   "池为空"
  ],
  "Threads per core": [
   null,
-  ""
+  "每个内核的线程数"
  ],
  "Too many files found": [
   null,
@@ -685,55 +725,7 @@ return plural;
  ],
  "VCPU settings could not be saved": [
   null,
-  ""
- ],
- "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  ""
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  ""
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  ""
- ],
- "VM DELETE action failed": [
-  null,
-  ""
- ],
- "VM DETACH_DISK action failed": [
-  null,
-  ""
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "虚拟机强制关闭操作失败"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "虚拟机强制重启操作失败"
- ],
- "VM REBOOT action failed": [
-  null,
-  "虚拟机重启操作失败"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  "虚拟机发送非屏蔽中断操作失败"
- ],
- "VM SENDNMI action failed": [
-  null,
-  ""
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "虚拟机关机操作失败"
- ],
- "VM START action failed": [
-  null,
-  "虚拟机启动操作失败"
+  "VCPU 设置不能被保存"
  ],
  "VNC": [
   null,
@@ -771,85 +763,13 @@ return plural;
   null,
   "激活"
  ],
- "bridge": [
-  null,
-  "网桥"
- ],
- "cdrom": [
-  null,
-  "光驱"
- ],
- "crashed": [
-  null,
-  "已崩溃"
- ],
- "custom": [
-  null,
-  "自定义"
- ],
- "direct": [
-  null,
-  "直接"
- ],
- "disabled": [
-  null,
-  "已禁用"
- ],
- "disk": [
-  null,
-  "磁盘"
- ],
- "down": [
-  null,
-  "已关闭"
- ],
- "dying": [
-  null,
-  "失活的"
- ],
- "enabled": [
-  null,
-  "已启用"
- ],
- "ethernet": [
-  null,
-  "以太网"
- ],
- "host": [
-  null,
-  "主机"
- ],
- "hostdev": [
-  null,
-  "hostdev"
- ],
- "idle": [
-  null,
-  "休眠"
- ],
  "inactive": [
   null,
   "未激活"
  ],
- "mcast": [
-  null,
-  "MCAST"
- ],
- "network": [
-  null,
-  "网络"
- ],
  "no": [
   null,
   "否"
- ],
- "other": [
-  null,
-  "其他"
- ],
- "paused": [
-  null,
-  "已暂停"
  ],
  "qcow2": [
   null,
@@ -859,14 +779,6 @@ return plural;
   null,
   "raw"
  ],
- "running": [
-  null,
-  "运行中"
- ],
- "server": [
-  null,
-  "服务器"
- ],
  "show less": [
   null,
   "显示更少"
@@ -875,33 +787,9 @@ return plural;
   null,
   "显示更多"
  ],
- "shut off": [
-  null,
-  "关闭"
- ],
- "shutdown": [
-  null,
-  "关机"
- ],
- "suspended (PM)": [
-  null,
-  "已挂起 （电源管理）"
- ],
- "udp": [
-  null,
-  "udp"
- ],
  "undefined": [
   null,
   "未定义"
- ],
- "up": [
-  null,
-  "运行中"
- ],
- "user": [
-  null,
-  "用户"
  ],
  "vCPU Count": [
   null,
@@ -914,10 +802,6 @@ return plural;
  "vCPUs:": [
   null,
   "vCPU："
- ],
- "vhostuser": [
-  null,
-  "vhostuser"
  ],
  "yes": [
   null,

@@ -69,17 +69,17 @@ return plural;
  },
  "$0 occurrence": [
   "$1 occurrences",
-  "",
-  "",
-  ""
+  "$0 вхождение",
+  "$1 вхождений",
+  "$1 вхождений"
  ],
  "Apply this solution": [
   null,
-  ""
+  "Применить это решение"
  ],
  "Applying solution...": [
   null,
-  ""
+  "Применение решения ..."
  ],
  "Audit log": [
   null,
@@ -87,31 +87,31 @@ return plural;
  ],
  "Connecting to SETroubleshoot daemon...": [
   null,
-  ""
+  "Подключение к демону SETroubleshoot ..."
  ],
  "Enforce policy:": [
   null,
-  ""
+  "Принудительная политика:"
  ],
  "Error while deleting alert: $0": [
   null,
-  ""
+  "Ошибка при удалении предупреждения: $0"
  ],
  "Error while setting SELinux mode: '$0'": [
   null,
-  ""
+  "Ошибка при установке режима SELinux:$0'"
  ],
  "Failed to delete alert: $0": [
   null,
-  ""
+  "Не удалось удалить предупреждение: $0"
  ],
  "Install setroubleshoot-server to troubleshoot SELinux events.": [
   null,
-  ""
+  "Установите setroubleshoot-server для устранения неполадок SELinux."
  ],
  "No SELinux alerts.": [
   null,
-  ""
+  "Нет предупреждений SELinux."
  ],
  "Not connected": [
   null,
@@ -119,11 +119,11 @@ return plural;
  ],
  "Occurred $0": [
   null,
-  ""
+  "Происходило $0"
  ],
  "Occurred between $0 and $1": [
   null,
-  ""
+  "Произошло между $0 а также $1"
  ],
  "Off": [
   null,
@@ -135,74 +135,74 @@ return plural;
  ],
  "SELinux Access Control Errors": [
   null,
-  ""
+  "Ошибки контроля доступа SELinux"
  ],
  "SELinux Policy": [
   null,
-  ""
+  "Политика SELinux"
  ],
  "SELinux Troubleshoot": [
   null,
-  ""
+  "SELinux Устранение неполадок"
  ],
  "SELinux is disabled on the system": [
   null,
-  ""
+  "SELinux отключен в системе"
  ],
  "SELinux is disabled on the system.": [
   null,
-  ""
+  "SELinux отключен в системе."
  ],
  "SELinux system status is unknown.": [
   null,
-  ""
+  "Состояние системы SELinux неизвестно."
  ],
  "Setting deviates from the configured state and will revert on the next boot.": [
   null,
-  ""
+  "Настройка отклоняется от настроенного состояния и будет возвращаться при следующей загрузке."
  ],
  "Solution applied successfully": [
   null,
-  ""
+  "Решение успешно применено"
  ],
  "Solution failed": [
   null,
-  ""
+  "Не удалось решить проблему"
  ],
  "Solutions": [
   null,
-  ""
+  "Решения"
  ],
  "The configured state is unknown, it might change on the next boot.": [
   null,
-  ""
+  "Конфигурированное состояние неизвестно, оно может измениться при следующей загрузке."
  ],
  "Unable to apply this solution automatically": [
   null,
-  ""
+  "Невозможно применить это решение автоматически"
  ],
  "Unable to get alert details.": [
   null,
-  ""
+  "Не удалось получить подробные сведения."
  ],
  "Unable to get alert: $0": [
   null,
-  ""
+  "Не удалось получить предупреждение: $0"
  ],
  "Unable to run fix: %0": [
   null,
-  ""
+  "Не удалось запустить исправление: %0"
  ],
  "Unable to start setroubleshootd": [
   null,
-  ""
+  "Не удалось запустить setroubleshootd"
  ],
  "Waiting for details...": [
   null,
-  ""
+  "В ожидании подробностей ..."
  ],
  "solution details": [
   null,
-  ""
+  "детали решения"
  ]
 }));

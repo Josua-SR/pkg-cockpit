@@ -226,10 +226,6 @@ return plural;
   null,
   "Informations sur le paquet"
  ],
- "PackageKit crashed": [
-  null,
-  "PackageKit crash"
- ],
  "PackageKit is not installed": [
   null,
   "PackageKit non installé"
@@ -372,11 +368,11 @@ return plural;
  ],
  "bug fix": [
   null,
-  ""
+  "Correctif de bogue"
  ],
  "enhancement": [
   null,
-  ""
+  "amélioration"
  ],
  "every day": [
   null,
@@ -412,7 +408,7 @@ return plural;
  ],
  "security": [
   null,
-  ""
+  "sécurité"
  ],
  "undefined": [
   null,

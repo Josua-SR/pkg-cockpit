@@ -83,6 +83,11 @@ return plural;
   null,
   ""
  ],
+ "$0 day": [
+  "$0 days",
+  "$0 ਦਿਨ",
+  "$0 ਦਿਨ"
+ ],
  "$0 disk is missing": [
   "$0 disks are missing",
   "$0 ਡਿਸਕ ਗੁੰਮ ਹੈ",
@@ -100,6 +105,11 @@ return plural;
   null,
   ""
  ],
+ "$0 hour": [
+  "$0 hours",
+  "$0 ਘੰਟਾ",
+  "$0 ਘੰਟੇ"
+ ],
  "$0 is in active use": [
   null,
   ""
@@ -107,6 +117,16 @@ return plural;
  "$0 is not available from any repository.": [
   null,
   ""
+ ],
+ "$0 minute": [
+  "$0 minutes",
+  "$0 ਮਿੰਟ",
+  "$0 ਮਿੰਟ"
+ ],
+ "$0 month": [
+  "$0 months",
+  "$0 ਮਹੀਨਾ",
+  "$0 ਮਹੀਨੇ"
  ],
  "$0 of $1": [
   null,
@@ -120,9 +140,19 @@ return plural;
   null,
   ""
  ],
+ "$0 week": [
+  "$0 weeks",
+  "$0 ਹਫ਼ਤਾ",
+  "$0 ਹਫ਼ਤੇ"
+ ],
  "$0 will be installed.": [
   null,
   ""
+ ],
+ "$0 year": [
+  "$0 years",
+  "$0 ਸਾਲ",
+  "$0 ਸਾਲ"
  ],
  "$0, $1 free": [
   null,
@@ -1037,10 +1067,6 @@ return plural;
   "ਹੋਰ ਡਿਵਾਇਸ"
  ],
  "Overwrite existing data with zeros": [
-  null,
-  ""
- ],
- "PackageKit crashed": [
   null,
   ""
  ],

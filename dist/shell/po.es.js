@@ -305,7 +305,7 @@ return plural;
  ],
  "Login has escalated admin privileges": [
   null,
-  ""
+  "El inicio de sesión ha aumentado los privilegios de administrador"
  ],
  "Machines": [
   null,
@@ -514,10 +514,6 @@ return plural;
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
   "Usted esta conectado a {{#strong}}{{host}}{{/strong}}, sin embargo para sincronizar usuarios, es requerido un usuario con privilegios de súper usuario."
- ],
- "You can remove the previously stored key by running the following command": [
-  null,
-  "Puede quitar la clave almacenada anteriormente si ejecuta esta orden"
  ],
  "active": [
   null,

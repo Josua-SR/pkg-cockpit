@@ -123,10 +123,6 @@ return plural;
   null,
   ""
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "CHANGE NETWORK STATE -toiminto epäonnistui"
- ],
  "CPU Type:": [
   null,
   "Prosessorin tyyppi:"
@@ -267,10 +263,6 @@ return plural;
   null,
   "Alusta"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  ""
- ],
  "GiB": [
   null,
   "GiB"
@@ -286,10 +278,6 @@ return plural;
  "Host": [
   null,
   "Kone"
- ],
- "INSTALL VM action failed": [
-  null,
-  "INSTALL VM -toiminto epäonnistui"
  ],
  "Immediately Start VM": [
   null,
@@ -475,14 +463,6 @@ return plural;
   null,
   ""
  ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  ""
- ],
- "SET_VCPU_SETTINGS action failed": [
-  null,
-  ""
- ],
  "SPICE": [
   null,
   "SPICE"
@@ -510,10 +490,6 @@ return plural;
  "Serial Console": [
   null,
   ""
- ],
- "Session": [
-  null,
-  "Istunto"
  ],
  "Shut Down": [
   null,
@@ -554,10 +530,6 @@ return plural;
  "Storage Size should not be negative number": [
   null,
   ""
- ],
- "System": [
-  null,
-  "Järjestelmä"
  ],
  "Target": [
   null,
@@ -647,54 +619,6 @@ return plural;
   null,
   "Käytetty"
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  ""
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  ""
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  ""
- ],
- "VM DELETE action failed": [
-  null,
-  ""
- ],
- "VM DETACH_DISK action failed": [
-  null,
-  ""
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "VM FORCE OFF -toiminto epäonnistui"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "VM FORCE REBOOT -toiminto epäonnistui"
- ],
- "VM REBOOT action failed": [
-  null,
-  "VM REBOOT -toiminto epäonnistui"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  "VM SEND Non-Maskable Interrrupt -toiminto epäonnistui"
- ],
- "VM SENDNMI action failed": [
-  null,
-  ""
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "VM SHUT DOWN -toiminto epäonnistui"
- ],
- "VM START action failed": [
-  null,
-  "VM START -toiminto epäonnistui"
- ],
  "VNC": [
   null,
   "VNC"
@@ -727,81 +651,9 @@ return plural;
   null,
   "Taltio"
  ],
- "bridge": [
-  null,
-  ""
- ],
- "cdrom": [
-  null,
-  ""
- ],
- "crashed": [
-  null,
-  "kaatui"
- ],
- "custom": [
-  null,
-  ""
- ],
- "direct": [
-  null,
-  ""
- ],
- "disabled": [
-  null,
-  "pois käytöstä"
- ],
- "disk": [
-  null,
-  ""
- ],
- "down": [
-  null,
-  ""
- ],
- "dying": [
-  null,
-  "kuolemassa"
- ],
- "enabled": [
-  null,
-  "käytössä"
- ],
- "ethernet": [
-  null,
-  "ethernet"
- ],
- "host": [
-  null,
-  ""
- ],
- "hostdev": [
-  null,
-  ""
- ],
- "idle": [
-  null,
-  "jouten"
- ],
- "mcast": [
-  null,
-  ""
- ],
- "network": [
-  null,
-  "verkko"
- ],
  "no": [
   null,
   "ei"
- ],
- "other": [
-  null,
-  "muu"
- ],
- "paused": [
-  null,
-  "pysäytetty"
  ],
  "qcow2": [
   null,
@@ -811,14 +663,6 @@ return plural;
   null,
   ""
  ],
- "running": [
-  null,
-  "suoritetaan"
- ],
- "server": [
-  null,
-  "palvelin"
- ],
  "show less": [
   null,
   "näytä vähemmän"
@@ -827,33 +671,9 @@ return plural;
   null,
   "näytä enemmän"
  ],
- "shut off": [
-  null,
-  "sammutettu"
- ],
- "shutdown": [
-  null,
-  "sammuta"
- ],
- "suspended (PM)": [
-  null,
-  "pysäytetty (PM)"
- ],
- "udp": [
-  null,
-  "udp"
- ],
  "undefined": [
   null,
   "määrittämätön"
- ],
- "up": [
-  null,
-  ""
- ],
- "user": [
-  null,
-  "käyttäjä"
  ],
  "vCPU Count": [
   null,
@@ -866,10 +686,6 @@ return plural;
  "vCPUs:": [
   null,
   "vCPUt:"
- ],
- "vhostuser": [
-  null,
-  ""
  ],
  "yes": [
   null,

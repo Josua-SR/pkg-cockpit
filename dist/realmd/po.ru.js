@@ -69,31 +69,31 @@ return plural;
  },
  "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  ""
+  "$0 Только пользователи с локальными учетными данными смогут подключиться к этой машине. Это может также повлиять на другие сервисы в качестве параметров разрешения DNS, и список доверенных ЦС может измениться."
  ],
  "$0 is not available from any repository.": [
   null,
-  ""
+  "$0 недоступен из какого-либо репозитория."
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "$0 будет установлен."
  ],
  "Additional packages:": [
   null,
-  ""
+  "Дополнительные пакеты:"
  ],
  "Administrator Password": [
   null,
-  ""
+  "Пароль администратора"
  ],
  "Are you sure you want to leave the '$0' domain?": [
   null,
-  ""
+  "Вы уверены, что хотите оставить \"$0' домен?"
  ],
  "Are you sure you want to leave this domain?": [
   null,
-  ""
+  "Вы действительно хотите покинуть этот домен?"
  ],
  "Authentication": [
   null,
@@ -109,35 +109,35 @@ return plural;
  ],
  "Checking installed software": [
   null,
-  ""
+  "Проверка установленного программного обеспечения"
  ],
  "Computer OU": [
   null,
-  ""
+  "Компьютерное подразделение"
  ],
  "Domain $0 could not be contacted": [
   null,
-  ""
+  "Домен $0 не удалось связаться"
  ],
  "Domain $0 is not supported": [
   null,
-  ""
+  "Домен $0 не поддерживается"
  ],
  "Domain Address": [
   null,
-  ""
+  "Адрес домена"
  ],
  "Domain Administrator Name": [
   null,
-  ""
+  "Имя администратора домена"
  ],
  "Domain Administrator Password": [
   null,
-  ""
+  "Пароль администратора домена"
  ],
  "Downloading $0": [
   null,
-  ""
+  "загрузка $0"
  ],
  "Install": [
   null,
@@ -145,11 +145,11 @@ return plural;
  ],
  "Install Software": [
   null,
-  ""
+  "Установить программное обеспечение"
  ],
  "Installing $0": [
   null,
-  ""
+  "Установка $0"
  ],
  "Join": [
   null,
@@ -161,23 +161,23 @@ return plural;
  ],
  "Join a Domain": [
   null,
-  ""
+  "Присоединиться к домену"
  ],
  "Joining this domain is not supported": [
   null,
-  ""
+  "Присоединение к этому домену не поддерживается"
  ],
  "Leave": [
   null,
-  ""
+  "Покидать"
  ],
  "Leave Domain": [
   null,
-  ""
+  "Оставить домен"
  ],
  "More": [
   null,
-  ""
+  "Больше"
  ],
  "Next": [
   null,
@@ -197,31 +197,27 @@ return plural;
  ],
  "One Time Password": [
   null,
-  ""
- ],
- "PackageKit crashed": [
-  null,
-  ""
+  "Одноразовый пароль"
  ],
  "Removals:": [
   null,
-  ""
+  "Удаления:"
  ],
  "Removing $0": [
   null,
-  ""
+  "Удаление $0"
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
-  ""
+  "Пользователь <b>$0</b> не разрешено изменять сферы"
  ],
  "This may take a while": [
   null,
-  ""
+  "Это может занять некоторое время"
  ],
  "Total size: $0": [
   null,
-  ""
+  "Общий размер: $0"
  ],
  "User Name": [
   null,
@@ -229,14 +225,14 @@ return plural;
  ],
  "User Password": [
   null,
-  ""
+  "Пользовательский пароль"
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "Ожидание выполнения других операций управления программным обеспечением"
  ],
  "e.g. \"$0\"": [
   null,
-  ""
+  "например, \"$0\""
  ]
 }));

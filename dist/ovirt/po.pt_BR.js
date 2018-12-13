@@ -139,17 +139,9 @@ return plural;
   null,
   "Bus"
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "A ação MUDAR DE ESTADO DE REDE falhou"
- ],
  "CPU Type:": [
   null,
   "Tipo de CPU:"
- ],
- "CREATE VM action failed": [
-  null,
-  "A ação CRiar VM falhou"
  ],
  "Cancel": [
   null,
@@ -161,7 +153,7 @@ return plural;
  ],
  "Changes will take effect after shutting down the VM": [
   null,
-  ""
+  "As alterações entrarão em vigor após o desligamento da VM"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -205,7 +197,7 @@ return plural;
  ],
  "Connecting": [
   null,
-  ""
+  "Conectando"
  ],
  "Connection": [
   null,
@@ -241,7 +233,7 @@ return plural;
  ],
  "Ctrl+Alt+Del": [
   null,
-  ""
+  "Ctrl+Alt+Del"
  ],
  "Delete": [
   null,
@@ -277,11 +269,11 @@ return plural;
  ],
  "Disk failed to be attached": [
   null,
-  ""
+  "Disco falhou ao ser anexado"
  ],
  "Disk failed to be created": [
   null,
-  ""
+  "Disco falhou ao ser criado"
  ],
  "Disks": [
   null,
@@ -331,10 +323,6 @@ return plural;
   null,
   "Formate"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "GET HYPERVISOR MAX VCPU falhou"
- ],
  "GiB": [
   null,
   "GiB"
@@ -363,10 +351,6 @@ return plural;
   null,
   "Host para Manutenção"
  ],
- "INSTALL VM action failed": [
-  null,
-  "A ação de instalação da VM falhou"
- ],
  "Install": [
   null,
   "Instale"
@@ -387,13 +371,9 @@ return plural;
   null,
   "MAC Address"
  ],
- "MIGRATE action failed": [
-  null,
-  "A ação MIGRATE falhou"
- ],
  "Mac Address": [
   null,
-  ""
+  "Endereço MAC"
  ],
  "Manual Connection": [
   null,
@@ -437,11 +417,11 @@ return plural;
  ],
  "Network Type": [
   null,
-  ""
+  "Tipo de rede"
  ],
  "Network settings could not be saved": [
   null,
-  ""
+  "As configurações de rede não puderam ser salvas"
  ],
  "Networks": [
   null,
@@ -449,7 +429,7 @@ return plural;
  ],
  "New Volume Name": [
   null,
-  ""
+  "Novo nome do volume"
  ],
  "No VM found in oVirt.": [
   null,
@@ -481,7 +461,7 @@ return plural;
  ],
  "No virtual networks": [
   null,
-  ""
+  "Nenhuma rede virtual"
  ],
  "Number of virtual CPUs that gonna be used.": [
   null,
@@ -517,11 +497,11 @@ return plural;
  ],
  "Please enter new volume name": [
   null,
-  ""
+  "Por favor insira o novo nome do volume"
  ],
  "Please enter new volume size": [
   null,
-  ""
+  "Por favor insira o novo tamanho do volume"
  ],
  "Please provide fully qualified domain name and port of the oVirt engine.": [
   null,
@@ -563,17 +543,9 @@ return plural;
   null,
   "Número preferido de soquetes para expor ao convidado."
  ],
- "Preparing for Maintenance": [
-  null,
-  "Preparando-se para manutenção"
- ],
  "Protocol": [
   null,
   "Protocolo"
- ],
- "REBOOT action failed": [
-  null,
-  "A ação REBOOT falhou"
  ],
  "Readonly": [
   null,
@@ -611,14 +583,6 @@ return plural;
   null,
   "Correndo desde:"
  ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  "A ação SET SETUP VCPU falhou"
- ],
- "SHUTDOWN action failed": [
-  null,
-  "A ação SHUTDOWN falhou"
- ],
  "SPICE": [
   null,
   "SPICE"
@@ -635,14 +599,6 @@ return plural;
   null,
   "SPICE TLS Porta:"
  ],
- "START action failed": [
-  null,
-  "START Ação: falhou"
- ],
- "SUSPEND action failed": [
-  null,
-  "SUSPEND Ação: falhou"
- ],
  "Save": [
   null,
   "Salvar"
@@ -653,15 +609,11 @@ return plural;
  ],
  "Send key": [
   null,
-  ""
+  "Chave de envio"
  ],
  "Serial Console": [
   null,
   "Console Serial"
- ],
- "Session": [
-  null,
-  "Sessão"
  ],
  "Shut Down": [
   null,
@@ -702,18 +654,6 @@ return plural;
  "Switch Host to Maintenance": [
   null,
   "Trocar de host para manutenção"
- ],
- "Switching host to maintenance mode failed. Received error: ": [
-  null,
-  "A comutação do host para o modo de manutenção falhou. Erro recebido:"
- ],
- "Switching host to maintenance mode in progress ...": [
-  null,
-  "Mudando o host para o modo de manutenção em andamento ..."
- ],
- "System": [
-  null,
-  "Sistema"
  ],
  "Target": [
   null,
@@ -769,7 +709,7 @@ return plural;
  ],
  "The pool is empty": [
   null,
-  ""
+  "A piscina está vazia"
  ],
  "This host is managed by a virtualization manager, so creation of new VMs from the host is not possible.": [
   null,
@@ -781,7 +721,7 @@ return plural;
  ],
  "Threads per core": [
   null,
-  ""
+  "Tópicos por núcleo"
  ],
  "Type": [
   null,
@@ -809,7 +749,7 @@ return plural;
  ],
  "VCPU settings could not be saved": [
   null,
-  ""
+  "Configurações de VCPU não puderam ser salvas"
  ],
  "VDSM": [
   null,
@@ -818,38 +758,6 @@ return plural;
  "VDSM Service Management": [
   null,
   "VDSM Gerenciamento de Serviços"
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  ""
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  ""
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "ação VM FORCE OFF falhou"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "ação VM FORCE REBOOT falhou"
- ],
- "VM REBOOT action failed": [
-  null,
-  "ação VM REBOOT falhou"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  "VM SEND Falha na ação de interrupção não mascarável"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "ação VM SHUT DOWN falhou"
- ],
- "VM START action failed": [
-  null,
-  "ação VM START falhou"
  ],
  "VM icon": [
   null,
@@ -891,169 +799,49 @@ return plural;
   null,
   "Volume"
  ],
- "bridge": [
-  null,
-  "bridge"
- ],
- "cdrom": [
-  null,
-  "cdrom"
- ],
- "connecting": [
-  null,
-  "conectando"
- ],
  "cores": [
   null,
   "cores"
- ],
- "crashed": [
-  null,
-  "travou"
- ],
- "custom": [
-  null,
-  "personalizado"
- ],
- "direct": [
-  null,
-  "direto"
  ],
  "disabled": [
   null,
   "desabilitado"
  ],
- "disk": [
-  null,
-  "disco"
- ],
- "down": [
-  null,
-  "down"
- ],
- "dying": [
-  null,
-  "morrendo"
- ],
  "enabled": [
   null,
   "habilitado"
- ],
- "error": [
-  null,
-  "erro"
- ],
- "ethernet": [
-  null,
-  ""
- ],
- "host": [
-  null,
-  "host"
- ],
- "hostdev": [
-  null,
-  ""
- ],
- "idle": [
-  null,
-  "ocioso"
- ],
- "initializing": [
-  null,
-  ""
- ],
- "installation failed": [
-  null,
-  ""
- ],
- "installing OS": [
-  null,
-  ""
- ],
- "kdumping": [
-  null,
-  ""
- ],
- "maintenance": [
-  null,
-  ""
- ],
- "mcast": [
-  null,
-  ""
- ],
- "network": [
-  null,
-  "rede"
  ],
  "no": [
   null,
   "não"
  ],
- "non operational": [
-  null,
-  ""
- ],
- "non responsive": [
-  null,
-  ""
- ],
- "oVirt": [
-  null,
-  "oVirt"
- ],
  "oVirt Host State:": [
   null,
-  ""
+  "oVirt Host State:"
  ],
  "oVirt Provider installation script failed due to missing arguments.": [
   null,
-  ""
+  "O script de instalação do Provedor oVirt falhou devido a argumentos ausentes."
  ],
  "oVirt Provider installation script failed: Can't write to /etc/cockpit/machines-ovirt.config, try as root.": [
   null,
-  ""
+  "Falha no script de instalação do Provedor oVirt: Não é possível gravar em /etc/cockpit/machines-ovirt.config, tente como root."
  ],
  "oVirt installation script failed with following output: ": [
   null,
-  ""
+  "O script de instalação do ivirt falhou com a seguinte saída: "
  ],
  "oVirt login in progress": [
   null,
-  ""
- ],
- "other": [
-  null,
-  "outro"
- ],
- "paused": [
-  null,
-  "pausado"
- ],
- "pending approval": [
-  null,
-  ""
+  "login do theVirt em andamento"
  ],
  "qcow2": [
   null,
-  ""
+  "qcow2"
  ],
  "raw": [
   null,
   "raw"
- ],
- "reboot": [
-  null,
-  "reiniciar"
- ],
- "running": [
-  null,
-  "executando"
- ],
- "server": [
-  null,
-  "servidor"
  ],
  "show less": [
   null,
@@ -1063,45 +851,17 @@ return plural;
   null,
   "mostrar mais"
  ],
- "shut off": [
-  null,
-  "desligar"
- ],
- "shutdown": [
-  null,
-  "desligar"
- ],
  "sockets": [
   null,
   "sockets"
- ],
- "suspended (PM)": [
-  null,
-  "suspenso (PM)"
  ],
  "threads": [
   null,
   "threads"
  ],
- "udp": [
-  null,
-  "udp"
- ],
- "unassigned": [
-  null,
-  "não assinado"
- ],
  "undefined": [
   null,
   "indefinido"
- ],
- "up": [
-  null,
-  "up"
- ],
- "user": [
-  null,
-  "usuário"
  ],
  "vCPU Count": [
   null,
@@ -1109,7 +869,7 @@ return plural;
  ],
  "vCPU Maximum": [
   null,
-  ""
+  "Máximo de vCPU"
  ],
  "vCPUs": [
   null,
@@ -1118,10 +878,6 @@ return plural;
  "vCPUs:": [
   null,
   "vCPUs:"
- ],
- "vhostuser": [
-  null,
-  ""
  ],
  "yes": [
   null,

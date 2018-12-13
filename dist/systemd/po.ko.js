@@ -77,7 +77,7 @@ return plural;
  ],
  "1 Minute": [
   null,
-  ""
+  "1 분"
  ],
  "1 day": [
   null,
@@ -89,123 +89,123 @@ return plural;
  ],
  "1 week": [
   null,
-  "1 주"
+  "1주"
  ],
  "10th": [
   null,
-  ""
+  "10일 "
  ],
  "11th": [
   null,
-  ""
+  "11일"
  ],
  "12th": [
   null,
-  ""
+  "12일"
  ],
  "13th": [
   null,
-  ""
+  "13일"
  ],
  "14th": [
   null,
-  ""
+  "14일"
  ],
  "15th": [
   null,
-  ""
+  "15일"
  ],
  "16th": [
   null,
-  ""
+  "16일 "
  ],
  "17th": [
   null,
-  ""
+  "17일"
  ],
  "18th": [
   null,
-  ""
+  "18일"
  ],
  "19th": [
   null,
-  ""
+  "19일"
  ],
  "1st": [
   null,
-  ""
+  "1일 "
  ],
  "20 Minutes": [
   null,
-  ""
+  "20분"
  ],
  "20th": [
   null,
-  ""
+  "20일"
  ],
  "21st": [
   null,
-  ""
+  "21일"
  ],
  "22nd": [
   null,
-  ""
+  "22일 "
  ],
  "23rd": [
   null,
-  ""
+  "23일 "
  ],
  "24th": [
   null,
-  ""
+  "24일 "
  ],
  "25th": [
   null,
-  ""
+  "25일 "
  ],
  "26th": [
   null,
-  ""
+  "26일 "
  ],
  "27th": [
   null,
-  ""
+  "27일"
  ],
  "28th": [
   null,
-  ""
+  "28일 "
  ],
  "29th": [
   null,
-  ""
+  "29일"
  ],
  "2nd": [
   null,
-  ""
+  "2일 "
  ],
  "30th": [
   null,
-  ""
+  "30일 "
  ],
  "31st": [
   null,
-  ""
+  "31일 "
  ],
  "3rd": [
   null,
-  ""
+  "3일 "
  ],
  "40 Minutes": [
   null,
-  ""
+  "40분 "
  ],
  "4th": [
   null,
-  ""
+  "4일 "
  ],
  "5 Minutes": [
   null,
-  ""
+  "5분 "
  ],
  "5 minutes": [
   null,
@@ -213,7 +213,7 @@ return plural;
  ],
  "5th": [
   null,
-  ""
+  "5일 "
  ],
  "6 hours": [
   null,
@@ -221,45 +221,37 @@ return plural;
  ],
  "60 Minutes": [
   null,
-  ""
+  "60분 "
  ],
  "6th": [
   null,
-  ""
+  "6일 "
  ],
  "7th": [
   null,
-  ""
+  "7일 "
  ],
  "8th": [
   null,
-  ""
+  "8일 "
  ],
  "9th": [
   null,
-  ""
+  "9일 "
  ],
  "Additional packages:": [
   null,
-  ""
- ],
- "Advanced TCA": [
-  null,
-  ""
+  "추가 패키지 :"
  ],
  "After": [
   null,
-  "뒤에"
+  "이후 "
  ],
  "After system boot": [
   null,
-  ""
+  "시스템 부팅 후"
  ],
  "Alert and above": [
-  null,
-  ""
- ],
- "All In One": [
   null,
   ""
  ],
@@ -273,11 +265,11 @@ return plural;
  ],
  "Automatically using NTP": [
   null,
-  ""
+  "자동으로 NTP 사용"
  ],
  "Automatically using specific NTP servers": [
   null,
-  ""
+  "특정 NTP 서버를 자동으로 사용"
  ],
  "BIOS": [
   null,
@@ -285,23 +277,11 @@ return plural;
  ],
  "BIOS date": [
   null,
-  ""
+  "BIOS 날짜"
  ],
  "BIOS version": [
   null,
-  ""
- ],
- "Blade": [
-  null,
-  ""
- ],
- "Blade enclosure": [
-  null,
-  ""
- ],
- "Bus Expansion Chassis": [
-  null,
-  ""
+  "BIOS 버전"
  ],
  "CPU": [
   null,
@@ -317,19 +297,19 @@ return plural;
  ],
  "Change": [
   null,
-  "바꾸기"
+  "변경 "
  ],
  "Change Host Name": [
   null,
-  ""
+  "호스트 이름 변경"
  ],
  "Change System Time": [
   null,
-  ""
+  "시스템 시간 변경"
  ],
  "Checking installed software": [
   null,
-  ""
+  "설치된 소프트웨어 확인 중 "
  ],
  "Class": [
   null,
@@ -343,15 +323,7 @@ return plural;
   null,
   "명령"
  ],
- "Compact PCI": [
-  null,
-  ""
- ],
  "Condition failed": [
-  null,
-  ""
- ],
- "Convertible": [
   null,
   ""
  ],
@@ -383,21 +355,9 @@ return plural;
   null,
   "설명"
  ],
- "Desktop": [
-  null,
-  "데스크탑"
- ],
- "Detachable": [
-  null,
-  ""
- ],
  "Disk I/O": [
   null,
   "디스크 I/O"
- ],
- "Docking Station": [
-  null,
-  ""
  ],
  "Domain": [
   null,
@@ -411,11 +371,7 @@ return plural;
   null,
   ""
  ],
- "Embedded PC": [
-  null,
-  ""
- ],
- "Enable persistent metrics…": [
+ "Enable stored metrics…": [
   null,
   ""
  ],
@@ -435,10 +391,6 @@ return plural;
   null,
   ""
  ],
- "Expansion Chassis": [
-  null,
-  ""
- ],
  "Friday": [
   null,
   "금요일"
@@ -454,10 +406,6 @@ return plural;
  "Go to now": [
   null,
   "지금 바로 가기"
- ],
- "Hand Held": [
-  null,
-  ""
  ],
  "Hardware": [
   null,
@@ -507,10 +455,6 @@ return plural;
   null,
   ""
  ],
- "IoT Gateway": [
-  null,
-  ""
- ],
  "Journal": [
   null,
   ""
@@ -526,10 +470,6 @@ return plural;
  "Kernel": [
   null,
   "커널 "
- ],
- "Laptop": [
-  null,
-  ""
  ],
  "Last 24 hours": [
   null,
@@ -555,23 +495,11 @@ return plural;
   null,
   "로그 "
  ],
- "Low Profile Desktop": [
-  null,
-  ""
- ],
- "Lunch Box": [
-  null,
-  ""
- ],
  "Machine ID": [
   null,
   ""
  ],
  "Machine SSH Key Fingerprints": [
-  null,
-  ""
- ],
- "Main Server Chassis": [
   null,
   ""
  ],
@@ -587,14 +515,6 @@ return plural;
   null,
   ""
  ],
- "Mini PC": [
-  null,
-  ""
- ],
- "Mini Tower": [
-  null,
-  ""
- ],
  "Minutes": [
   null,
   "분"
@@ -606,10 +526,6 @@ return plural;
  "Monday": [
   null,
   "월요일"
- ],
- "Multi-system Chassis": [
-  null,
-  ""
  ],
  "Name": [
   null,
@@ -643,10 +559,6 @@ return plural;
   null,
   "알림"
  ],
- "Notebook": [
-  null,
-  ""
- ],
  "Notice and above": [
   null,
   ""
@@ -671,35 +583,15 @@ return plural;
   null,
   "운영 체제"
  ],
- "Other": [
-  null,
-  "기타"
- ],
  "PCI": [
   null,
   "PCI"
- ],
- "PackageKit crashed": [
-  null,
-  ""
  ],
  "Paths": [
   null,
   "경로 "
  ],
  "Performance Profile": [
-  null,
-  ""
- ],
- "Peripheral Chassis": [
-  null,
-  ""
- ],
- "Pizza Box": [
-  null,
-  ""
- ],
- "Portable": [
   null,
   ""
  ],
@@ -716,14 +608,6 @@ return plural;
   ""
  ],
  "Problem info": [
-  null,
-  ""
- ],
- "RAID Chassis": [
-  null,
-  ""
- ],
- "Rack Mount Chassis": [
   null,
   ""
  ],
@@ -803,10 +687,6 @@ return plural;
   null,
   "저장"
  ],
- "Sealed-case PC": [
-  null,
-  ""
- ],
  "Seconds": [
   null,
   ""
@@ -851,27 +731,11 @@ return plural;
   null,
   "소켓 "
  ],
- "Space-saving Computer": [
-  null,
-  ""
- ],
  "Specific Time": [
   null,
   ""
  ],
- "Stick PC": [
-  null,
-  ""
- ],
- "Store Performance Data": [
-  null,
-  ""
- ],
- "Sub Chassis": [
-  null,
-  ""
- ],
- "Sub Notebook": [
+ "Store metrics": [
   null,
   ""
  ],
@@ -907,10 +771,6 @@ return plural;
   null,
   ""
  ],
- "Tablet": [
-  null,
-  "타블렛"
- ],
  "Targets": [
   null,
   ""
@@ -939,10 +799,6 @@ return plural;
   null,
   ""
  ],
- "Tower": [
-  null,
-  ""
- ],
  "Trying to synchronize with {{Server}}": [
   null,
   ""
@@ -954,10 +810,6 @@ return plural;
  "Type": [
   null,
   "유형"
- ],
- "Unknown": [
-  null,
-  "알 수 없음"
  ],
  "Used": [
   null,

@@ -115,10 +115,6 @@ return plural;
   null,
   "Aceptar"
  ],
- "PackageKit crashed": [
-  null,
-  "PackageKit roto"
- ],
  "Remove": [
   null,
   "Eliminar"

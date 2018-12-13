@@ -139,17 +139,9 @@ return plural;
   null,
   "总线"
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "更改网络状态操作失败"
- ],
  "CPU Type:": [
   null,
   "CPU 类型："
- ],
- "CREATE VM action failed": [
-  null,
-  "创建虚拟机操作失败"
  ],
  "Cancel": [
   null,
@@ -161,7 +153,7 @@ return plural;
  ],
  "Changes will take effect after shutting down the VM": [
   null,
-  ""
+  "关机后所做的改变将会起作用。"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -241,7 +233,7 @@ return plural;
  ],
  "Ctrl+Alt+Del": [
   null,
-  ""
+  "Ctrl+Alt+Del"
  ],
  "Delete": [
   null,
@@ -277,11 +269,11 @@ return plural;
  ],
  "Disk failed to be attached": [
   null,
-  ""
+  "附加磁盘失败"
  ],
  "Disk failed to be created": [
   null,
-  ""
+  "创建磁盘失败"
  ],
  "Disks": [
   null,
@@ -331,10 +323,6 @@ return plural;
   null,
   "格式化"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "获取 HYPERVISOR MAX VCPU 操作失败"
- ],
  "GiB": [
   null,
   "GiB"
@@ -363,10 +351,6 @@ return plural;
   null,
   "主机维护"
  ],
- "INSTALL VM action failed": [
-  null,
-  "安装虚拟机操作失败"
- ],
  "Install": [
   null,
   "安装"
@@ -387,13 +371,9 @@ return plural;
   null,
   "MAC 地址"
  ],
- "MIGRATE action failed": [
-  null,
-  "迁移操作失败"
- ],
  "Mac Address": [
   null,
-  ""
+  "MAC 地址"
  ],
  "Manual Connection": [
   null,
@@ -437,11 +417,11 @@ return plural;
  ],
  "Network Type": [
   null,
-  ""
+  "网络类型"
  ],
  "Network settings could not be saved": [
   null,
-  ""
+  "网络设置不能被保存"
  ],
  "Networks": [
   null,
@@ -481,7 +461,7 @@ return plural;
  ],
  "No virtual networks": [
   null,
-  ""
+  "没有虚拟网络"
  ],
  "Number of virtual CPUs that gonna be used.": [
   null,
@@ -563,17 +543,9 @@ return plural;
   null,
   "向客户机公开的首选插槽数。"
  ],
- "Preparing for Maintenance": [
-  null,
-  "正在准备维护"
- ],
  "Protocol": [
   null,
   "协议"
- ],
- "REBOOT action failed": [
-  null,
-  "重启操作失败"
  ],
  "Readonly": [
   null,
@@ -611,14 +583,6 @@ return plural;
   null,
   "运行自："
  ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  "SET VCPU SETTINGS 操作失败"
- ],
- "SHUTDOWN action failed": [
-  null,
-  "关机操作失败"
- ],
  "SPICE": [
   null,
   "SPICE"
@@ -635,14 +599,6 @@ return plural;
   null,
   "SPICE TLS 端口："
  ],
- "START action failed": [
-  null,
-  "启动操作失败"
- ],
- "SUSPEND action failed": [
-  null,
-  "挂起操作失败"
- ],
  "Save": [
   null,
   "保存"
@@ -658,10 +614,6 @@ return plural;
  "Serial Console": [
   null,
   "串行控制台"
- ],
- "Session": [
-  null,
-  "会话"
  ],
  "Shut Down": [
   null,
@@ -702,18 +654,6 @@ return plural;
  "Switch Host to Maintenance": [
   null,
   "把主机切换到维护模式"
- ],
- "Switching host to maintenance mode failed. Received error: ": [
-  null,
-  "将主机切换到维护模式失败。收到错误： "
- ],
- "Switching host to maintenance mode in progress ...": [
-  null,
-  "将主机切换到维护模式正在进行中... "
- ],
- "System": [
-  null,
-  "系统"
  ],
  "Target": [
   null,
@@ -781,7 +721,7 @@ return plural;
  ],
  "Threads per core": [
   null,
-  ""
+  "每个内核的线程数"
  ],
  "Type": [
   null,
@@ -809,7 +749,7 @@ return plural;
  ],
  "VCPU settings could not be saved": [
   null,
-  ""
+  "VCPU 设置不能被保存"
  ],
  "VDSM": [
   null,
@@ -818,38 +758,6 @@ return plural;
  "VDSM Service Management": [
   null,
   "VDSM 服务管理"
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  ""
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  ""
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "虚拟机强制关闭操作失败"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "虚拟机强制重启操作失败"
- ],
- "VM REBOOT action failed": [
-  null,
-  "虚拟机重启操作失败"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  "虚拟机发送非屏蔽中断操作失败"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "虚拟机关机操作失败"
- ],
- "VM START action failed": [
-  null,
-  "虚拟机启动操作失败"
  ],
  "VM icon": [
   null,
@@ -891,117 +799,21 @@ return plural;
   null,
   "卷"
  ],
- "bridge": [
-  null,
-  "网桥"
- ],
- "cdrom": [
-  null,
-  "光驱"
- ],
- "connecting": [
-  null,
-  "正在连接"
- ],
  "cores": [
   null,
   "核"
- ],
- "crashed": [
-  null,
-  "已崩溃"
- ],
- "custom": [
-  null,
-  "自定义"
- ],
- "direct": [
-  null,
-  "直接"
  ],
  "disabled": [
   null,
   "已禁用"
  ],
- "disk": [
-  null,
-  "磁盘"
- ],
- "down": [
-  null,
-  "已关闭"
- ],
- "dying": [
-  null,
-  "失活的"
- ],
  "enabled": [
   null,
   "已启用"
  ],
- "error": [
-  null,
-  "错误"
- ],
- "ethernet": [
-  null,
-  "以太网"
- ],
- "host": [
-  null,
-  "主机"
- ],
- "hostdev": [
-  null,
-  "hostdev"
- ],
- "idle": [
-  null,
-  "休眠"
- ],
- "initializing": [
-  null,
-  "正在初始化"
- ],
- "installation failed": [
-  null,
-  "安装失败"
- ],
- "installing OS": [
-  null,
-  "正在安装操作系统"
- ],
- "kdumping": [
-  null,
-  "正在执行内核转储"
- ],
- "maintenance": [
-  null,
-  "维护"
- ],
- "mcast": [
-  null,
-  "MCAST"
- ],
- "network": [
-  null,
-  "网络"
- ],
  "no": [
   null,
   "否"
- ],
- "non operational": [
-  null,
-  "不可操作"
- ],
- "non responsive": [
-  null,
-  "未响应"
- ],
- "oVirt": [
-  null,
-  "oVirt"
  ],
  "oVirt Host State:": [
   null,
@@ -1023,18 +835,6 @@ return plural;
   null,
   "正在登录oVirt"
  ],
- "other": [
-  null,
-  "其他"
- ],
- "paused": [
-  null,
-  "已暂停"
- ],
- "pending approval": [
-  null,
-  "等待批准"
- ],
  "qcow2": [
   null,
   "qcow2"
@@ -1042,18 +842,6 @@ return plural;
  "raw": [
   null,
   "raw"
- ],
- "reboot": [
-  null,
-  "重启"
- ],
- "running": [
-  null,
-  "运行中"
- ],
- "server": [
-  null,
-  "服务器"
  ],
  "show less": [
   null,
@@ -1063,45 +851,17 @@ return plural;
   null,
   "显示更多"
  ],
- "shut off": [
-  null,
-  "关闭"
- ],
- "shutdown": [
-  null,
-  "关机"
- ],
  "sockets": [
   null,
   "套接字"
- ],
- "suspended (PM)": [
-  null,
-  "已挂起 （电源管理）"
  ],
  "threads": [
   null,
   "线程"
  ],
- "udp": [
-  null,
-  "udp"
- ],
- "unassigned": [
-  null,
-  "未指定"
- ],
  "undefined": [
   null,
   "未定义"
- ],
- "up": [
-  null,
-  "运行中"
- ],
- "user": [
-  null,
-  "用户"
  ],
  "vCPU Count": [
   null,
@@ -1118,10 +878,6 @@ return plural;
  "vCPUs:": [
   null,
   "vCPU："
- ],
- "vhostuser": [
-  null,
-  "vhostuser"
  ],
  "yes": [
   null,

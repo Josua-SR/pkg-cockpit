@@ -73,35 +73,27 @@ return plural;
  ],
  "$0 shares": [
   null,
-  ""
+  "$0 titoli azionari"
  ],
  "${hip}:${hport} -> $cport": [
   null,
-  ""
+  "${hip}:${hport} -> $cport"
  ],
  "Add Additional Storage": [
   null,
-  ""
+  "Aggiungi memoria aggiuntiva"
  ],
  "Add Storage": [
   null,
-  ""
+  "Aggiungi storage"
  ],
  "Additional Storage": [
   null,
-  ""
- ],
- "Advanced TCA": [
-  null,
-  ""
- ],
- "All In One": [
-  null,
-  ""
+  "Memoria aggiuntiva"
  ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
-  ""
+  "Tutti i dati sui dischi selezionati verranno cancellati e i dischi verranno aggiunti al pool di archiviazione."
  ],
  "Always": [
   null,
@@ -111,33 +103,21 @@ return plural;
   null,
   "Autore"
  ],
- "Blade": [
-  null,
-  ""
- ],
- "Blade enclosure": [
-  null,
-  ""
- ],
- "Bus Expansion Chassis": [
-  null,
-  ""
- ],
  "CPU": [
   null,
   "CPU"
  ],
  "CPU priority": [
   null,
-  ""
+  "Priorità della CPU"
  ],
  "CPU usage:": [
   null,
-  ""
+  "Utilizzo CPU"
  ],
  "Can&rsquo;t connect to Docker": [
   null,
-  ""
+  "Non è possibile connettersi a Docker"
  ],
  "Cancel": [
   null,
@@ -149,11 +129,11 @@ return plural;
  ],
  "Change resource limits": [
   null,
-  ""
+  "Modificare i limiti delle risorse"
  ],
  "Change resources limits": [
   null,
-  ""
+  "Modificare i limiti delle risorse"
  ],
  "Close": [
   null,
@@ -161,12 +141,12 @@ return plural;
  ],
  "Combined memory usage": [
   null,
-  ""
+  "Utilizzo della memoria combinata"
  ],
  "Combined usage of $0 CPU core": [
   "Combined usage of $0 CPU cores",
-  "",
-  ""
+  "Utilizzo combinato di $0 core della CPU",
+  "Utilizzo combinato di $0 core della CPU"
  ],
  "Command": [
   null,
@@ -174,11 +154,11 @@ return plural;
  ],
  "Command can't be empty": [
   null,
-  ""
+  "Il comando non può essere vuoto"
  ],
  "Command:": [
   null,
-  ""
+  "Comando:"
  ],
  "Commit": [
   null,
@@ -186,55 +166,47 @@ return plural;
  ],
  "Commit Image": [
   null,
-  ""
- ],
- "Compact PCI": [
-  null,
-  ""
+  "Commit immagine"
  ],
  "Configure storage...": [
   null,
-  ""
+  "Configura storage....."
  ],
  "Connecting to Docker": [
   null,
-  ""
+  "Collegamento a Docker"
  ],
  "Container": [
   null,
-  ""
+  "Container"
  ],
  "Container Name": [
   null,
-  ""
+  "Nome container"
  ],
  "Container is currently marked as not running, but regular stopping failed.": [
   null,
-  ""
+  "Il contenitore è attualmente contrassegnato come non funzionante, ma l'arresto regolare non è riuscito."
  ],
  "Container is currently running.": [
   null,
-  ""
+  "Il contenitore è attualmente in funzione."
  ],
  "Container:": [
   null,
-  ""
+  "Container:"
  ],
  "Containers": [
   null,
   "Container"
  ],
- "Convertible": [
-  null,
-  ""
- ],
  "Could not add all disks": [
   null,
-  ""
+  "Impossibile aggiungere tutti i dischi"
  ],
  "Could not reset the storage pool": [
   null,
-  ""
+  "Impossibile resettare il pool di stoccaggio"
  ],
  "Created": [
   null,
@@ -254,15 +226,7 @@ return plural;
  ],
  "Deleting a container will erase all data in it.": [
   null,
-  ""
- ],
- "Desktop": [
-  null,
-  "Desktop"
- ],
- "Detachable": [
-  null,
-  ""
+  "L'eliminazione di un contenitore cancellerà tutti i dati in esso contenuti."
  ],
  "Details": [
   null,
@@ -270,11 +234,7 @@ return plural;
  ],
  "Docker is not installed or activated on the system": [
   null,
-  ""
- ],
- "Docking Station": [
-  null,
-  ""
+  "Docker non è installato o attivato sul sistema"
  ],
  "Download": [
   null,
@@ -282,23 +242,19 @@ return plural;
  ],
  "Drive": [
   null,
-  ""
+  "Drive"
  ],
  "Duplicate alias": [
   null,
-  ""
+  "Duplica alias"
  ],
  "Duplicate port": [
   null,
-  ""
- ],
- "Embedded PC": [
-  null,
-  ""
+  "Duplica porta"
  ],
  "Entrypoint": [
   null,
-  ""
+  "Punto d'ingresso"
  ],
  "Environment": [
   null,
@@ -306,39 +262,35 @@ return plural;
  ],
  "Erase containers and reset storage pool": [
   null,
-  ""
+  "Cancellare i contenitori e resettare il pool di stoccaggio"
  ],
  "Error message from Docker:": [
   null,
-  ""
+  "Messaggio di errore da parte di Docker:"
  ],
  "Everything": [
   null,
-  ""
+  "Tutto"
  ],
  "Exited $ExitCode": [
   null,
-  ""
- ],
- "Expansion Chassis": [
-  null,
-  ""
+  "Codice di uscita $ExitCode"
  ],
  "Expose container ports": [
   null,
-  ""
+  "Esporre le porte dei contenitori"
  ],
  "Failed to start Docker: $0": [
   null,
-  ""
+  "Non sono riuscito a far partire Docker: $0"
  ],
  "Failed to stop Docker scope: $0": [
   null,
-  ""
+  "Non è riuscito a fermare il cannocchiale Docker: $0"
  ],
  "Force Delete": [
   null,
-  ""
+  "Forza Cancella"
  ],
  "Free": [
   null,
@@ -350,11 +302,7 @@ return plural;
  ],
  "Get new image": [
   null,
-  ""
- ],
- "Hand Held": [
-  null,
-  ""
+  "Ricevi una nuova immagine"
  ],
  "Hard Disk": [
   null,
@@ -366,7 +314,7 @@ return plural;
  ],
  "IP Prefix Length:": [
   null,
-  ""
+  "Lunghezza prefisso IP:"
  ],
  "Id": [
   null,
@@ -374,7 +322,7 @@ return plural;
  ],
  "Id:": [
   null,
-  ""
+  "Id:"
  ],
  "Image": [
   null,
@@ -382,15 +330,15 @@ return plural;
  ],
  "Image $0": [
   null,
-  ""
+  "Immagine $0"
  ],
  "Image Search": [
   null,
-  ""
+  "Ricerca immagini"
  ],
  "Image:": [
   null,
-  ""
+  "Immagine:"
  ],
  "Images": [
   null,
@@ -398,55 +346,35 @@ return plural;
  ],
  "Images and running containers": [
   null,
-  ""
+  "Immagini e container in esecuzione"
  ],
  "Information about the Docker storage pool is not available.": [
   null,
-  ""
+  "Le informazioni sul pool di archiviazione Docker non sono disponibili."
  ],
  "Invalid port": [
   null,
-  ""
- ],
- "IoT Gateway": [
-  null,
-  ""
- ],
- "Laptop": [
-  null,
-  ""
+  "Porta non valida"
  ],
  "Link to another container": [
   null,
-  ""
+  "Collegamento ad un altro contenitore"
  ],
  "Links": [
   null,
-  ""
+  "Link"
  ],
  "Links:": [
   null,
-  ""
+  "Link:"
  ],
  "Local Disks": [
   null,
-  ""
- ],
- "Low Profile Desktop": [
-  null,
-  ""
- ],
- "Lunch Box": [
-  null,
-  ""
+  "Dischi locali"
  ],
  "MAC Address:": [
   null,
-  ""
- ],
- "Main Server Chassis": [
-  null,
-  ""
+  "Indirizzo MAC:"
  ],
  "Memory": [
   null,
@@ -454,31 +382,19 @@ return plural;
  ],
  "Memory limit": [
   null,
-  ""
+  "Limite memoria"
  ],
  "Memory usage:": [
   null,
-  ""
+  "Utilizzo memoria:"
  ],
  "MiB": [
   null,
   "MiB"
  ],
- "Mini PC": [
-  null,
-  ""
- ],
- "Mini Tower": [
-  null,
-  ""
- ],
  "Mount container volumes": [
   null,
-  ""
- ],
- "Multi-system Chassis": [
-  null,
-  ""
+  "Montare i volumi dei container"
  ],
  "Name": [
   null,
@@ -490,55 +406,51 @@ return plural;
  ],
  "No additional local storage found.": [
   null,
-  ""
+  "Non è stata trovata alcuna ulteriore conservazione locale."
  ],
  "No alias specified": [
   null,
-  ""
+  "Nessun alias specificato"
  ],
  "No container specified": [
   null,
-  ""
+  "Nessun contenitore specificato"
  ],
  "No containers": [
   null,
-  ""
+  "Nessun contenitore"
  ],
  "No containers that match the current filter": [
   null,
-  ""
+  "Nessun contenitore che corrisponde al filtro corrente"
  ],
  "No images": [
   null,
-  ""
+  "Nessuna immagine"
  ],
  "No images that match the current filter": [
   null,
-  ""
+  "Nessuna immagine che corrisponde al filtro corrente"
  ],
  "No results for $0": [
   null,
-  ""
+  "Nessun risultato per $0"
  ],
  "No running containers": [
   null,
-  ""
+  "Nessun contenitore in funzione"
  ],
  "No running containers that match the current filter": [
   null,
-  ""
+  "Nessun contenitore in esecuzione che corrisponde al filtro corrente"
  ],
  "Not authorized to access Docker on this system": [
   null,
-  ""
+  "Non autorizzato ad accedere a Docker su questo sistema"
  ],
  "Not found": [
   null,
-  ""
- ],
- "Notebook": [
-  null,
-  ""
+  "Non trovato"
  ],
  "Off": [
   null,
@@ -554,44 +466,28 @@ return plural;
  ],
  "On Failure": [
   null,
-  ""
+  "In caso di guasto"
  ],
  "On failure, retry $0 time": [
   "On failure, retry $0 times",
-  "",
-  ""
- ],
- "Other": [
-  null,
-  "Altro"
+  "In caso di guasto, $0tempo di ripetizione del tentativo",
+  "In caso di guasto, $0tempi di ripetizione"
  ],
  "Overview": [
   null,
   "Panoramica"
  ],
- "Peripheral Chassis": [
-  null,
-  ""
- ],
- "Pizza Box": [
-  null,
-  ""
- ],
  "Please confirm deletion of $0": [
   null,
-  ""
+  "Si prega di confermare la cancellazione di $0"
  ],
  "Please confirm forced deletion of $0": [
   null,
-  ""
+  "Si prega di confermare la cancellazione forzata di $0"
  ],
  "Please try another term": [
   null,
-  ""
- ],
- "Portable": [
-  null,
-  ""
+  "Per favore, prova con un altro termine"
  ],
  "Ports": [
   null,
@@ -599,27 +495,19 @@ return plural;
  ],
  "Ports:": [
   null,
-  ""
+  "Porte:"
  ],
  "Problems": [
   null,
-  ""
- ],
- "RAID Chassis": [
-  null,
-  ""
- ],
- "Rack Mount Chassis": [
-  null,
-  ""
+  "Problemi"
  ],
  "ReadOnly": [
   null,
-  ""
+  "Solo lettura"
  ],
  "ReadWrite": [
   null,
-  ""
+  "Lettura scrittura"
  ],
  "Reboot": [
   null,
@@ -627,7 +515,7 @@ return plural;
  ],
  "Reformat and add disks": [
   null,
-  ""
+  "Riformattare e aggiungere dischi"
  ],
  "Repository": [
   null,
@@ -639,11 +527,11 @@ return plural;
  ],
  "Reset Storage Pool": [
   null,
-  ""
+  "Reimpostare la piscina di stoccaggio"
  ],
  "Resetting the storage pool will erase all containers and release disks in the pool.": [
   null,
-  ""
+  "Il ripristino della piscina di stoccaggio cancellerà tutti i contenitori e i dischi di rilascio nella piscina."
  ],
  "Restart": [
   null,
@@ -651,15 +539,15 @@ return plural;
  ],
  "Restart Policy": [
   null,
-  ""
+  "Politica di riavvio"
  ],
  "Restart Policy:": [
   null,
-  ""
+  "Politica di riavvio:"
  ],
  "Retries:": [
   null,
-  ""
+  "Riprova:"
  ],
  "Run": [
   null,
@@ -667,11 +555,7 @@ return plural;
  ],
  "Run Image": [
   null,
-  ""
- ],
- "Sealed-case PC": [
-  null,
-  ""
+  "Esegui Immagine"
  ],
  "Security": [
   null,
@@ -679,15 +563,15 @@ return plural;
  ],
  "Set container environment variables": [
   null,
-  ""
+  "Impostare le variabili d'ambiente del container"
  ],
  "Show all containers": [
   null,
-  ""
+  "Mostra tutti i container"
  ],
  "Show all images": [
   null,
-  ""
+  "Mostra tutte le immagini"
  ],
  "Size": [
   null,
@@ -695,11 +579,7 @@ return plural;
  ],
  "Solid-State Disk": [
   null,
-  ""
- ],
- "Space-saving Computer": [
-  null,
-  ""
+  "Disco a stato solido"
  ],
  "Start": [
   null,
@@ -707,7 +587,7 @@ return plural;
  ],
  "Start Docker": [
   null,
-  ""
+  "Avvia Docker"
  ],
  "State": [
   null,
@@ -717,17 +597,13 @@ return plural;
   null,
   "Stato:"
  ],
- "Stick PC": [
-  null,
-  ""
- ],
  "Stop": [
   null,
-  ""
+  "Ferma"
  ],
  "Stop and delete": [
   null,
-  ""
+  "Ferma ed elimina"
  ],
  "Stopped": [
   null,
@@ -741,21 +617,9 @@ return plural;
   null,
   "Pool di archiviazione"
  ],
- "Sub Chassis": [
-  null,
-  ""
- ],
- "Sub Notebook": [
-  null,
-  ""
- ],
  "TCP": [
   null,
   "TCP"
- ],
- "Tablet": [
-  null,
-  "Tavoletta"
  ],
  "Tag": [
   null,
@@ -767,39 +631,35 @@ return plural;
  ],
  "The Docker storage pool cannot be managed on this system.": [
   null,
-  ""
+  "Il pool di archiviazione Docker non può essere gestito su questo sistema."
  ],
  "The following containers depend on this image and will become unusable.": [
   null,
-  ""
+  "I seguenti contenitori dipendono da questa immagine e diventeranno inutilizzabili."
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,
-  ""
+  "La scansione da $time ($type) non ha trovato vulnerabilità."
  ],
  "The scan from $time ($type) was not successful.": [
   null,
-  ""
+  "La scansione da $time ($type) non ha avuto successo."
  ],
  "This image does not exist.": [
   null,
-  ""
+  "Questa immagine non esiste."
  ],
  "Total": [
   null,
   "Totale"
  ],
- "Tower": [
-  null,
-  ""
- ],
  "Try again": [
   null,
-  ""
+  "Riprova"
  ],
  "Type to filter…": [
   null,
-  ""
+  "Tipo da filtrare...."
  ],
  "UDP": [
   null,
@@ -807,19 +667,15 @@ return plural;
  ],
  "Unexpected error": [
   null,
-  ""
- ],
- "Unknown": [
-  null,
-  "Sconosciuto"
+  "Errore imprevisto"
  ],
  "Unless Stopped": [
   null,
-  ""
+  "A meno che non si sia fermato"
  ],
  "Up since $0": [
   null,
-  ""
+  "Avviato dal $0"
  ],
  "Used": [
   null,
@@ -827,7 +683,7 @@ return plural;
  ],
  "Used by Containers": [
   null,
-  ""
+  "Usato da Contenitori"
  ],
  "Volumes": [
   null,
@@ -835,31 +691,31 @@ return plural;
  ],
  "Volumes:": [
   null,
-  ""
+  "Volumi:"
  ],
  "With terminal": [
   null,
-  ""
+  "Con terminale"
  ],
  "You don't have permission to manage the Docker storage pool.": [
   null,
-  ""
+  "Non hai il permesso di gestire il pool di archiviazione di Docker."
  ],
  "[$0 bytes of binary data]": [
   null,
-  ""
+  "[$0byte di dati binari]"
  ],
  "[binary data]": [
   null,
-  ""
+  "[dati binari]"
  ],
  "[no data]": [
   null,
-  ""
+  "[nessun dato]"
  ],
  "alias": [
   null,
-  ""
+  "alias"
  ],
  "default": [
   null,
@@ -867,7 +723,7 @@ return plural;
  ],
  "key": [
   null,
-  ""
+  "chiave"
  ],
  "none": [
   null,
@@ -875,27 +731,27 @@ return plural;
  ],
  "search by name, namespace or description": [
   null,
-  ""
+  "ricerca per nome, spazio dei nomi o descrizione"
  ],
  "select container": [
   null,
-  ""
+  "seleziona container"
  ],
  "shares": [
   null,
-  ""
+  "condivisioni"
  ],
  "to host path": [
   null,
-  ""
+  "per ospitare il percorso"
  ],
  "to host port": [
   null,
-  ""
+  "per ospitare la porta"
  ],
  "undefined": [
   null,
-  ""
+  "non definito"
  ],
  "value": [
   null,

@@ -69,11 +69,11 @@ return plural;
  },
  "'Organization' required to register.": [
   null,
-  ""
+  "Organizzazione\" necessaria per la registrazione."
  ],
  "'Organization' required when using activation keys.": [
   null,
-  ""
+  "Organizzazione\" richiesta quando si utilizzano i tasti di attivazione."
  ],
  "Access denied": [
   null,
@@ -93,7 +93,7 @@ return plural;
  ],
  "Couldn't get system subscription status. Please ensure subscription-manager is installed.": [
   null,
-  ""
+  "Non è stato possibile ottenere lo stato di abbonamento al sistema. Assicurati che il gestore di abbonamento sia installato."
  ],
  "Custom URL": [
   null,
@@ -117,7 +117,7 @@ return plural;
  ],
  "Invalid credentials": [
   null,
-  ""
+  "Credenziali non valide"
  ],
  "Invalid username or password": [
   null,
@@ -129,11 +129,11 @@ return plural;
  ],
  "Login/password or activation key required to register.": [
   null,
-  ""
+  "Login/password o chiave di attivazione richiesta per la registrazione."
  ],
  "No installed products on the system.": [
   null,
-  ""
+  "Nessun prodotto installato sul sistema."
  ],
  "Ok": [
   null,
@@ -165,11 +165,11 @@ return plural;
  ],
  "Register system": [
   null,
-  ""
+  "Sistema di registro"
  ],
  "Retrieving subscription status...": [
   null,
-  ""
+  "Richiamare lo stato dell'abbonamento....."
  ],
  "Server": [
   null,
@@ -189,7 +189,7 @@ return plural;
  ],
  "Status: System isn't registered": [
   null,
-  ""
+  "Stato: il sistema non è registrato"
  ],
  "Subscriptions": [
   null,
@@ -213,15 +213,15 @@ return plural;
  ],
  "Unregistering system...": [
   null,
-  ""
+  "Sistema di non registrazione....."
  ],
  "Updating": [
   null,
-  ""
+  "Aggiornamento"
  ],
  "Use proxy server": [
   null,
-  ""
+  "Usa server proxy"
  ],
  "User": [
   null,
@@ -233,6 +233,6 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "non definito"
  ]
 }));

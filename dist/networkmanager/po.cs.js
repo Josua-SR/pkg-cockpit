@@ -575,10 +575,6 @@ return plural;
   null,
   "Vypnuto"
  ],
- "Ok": [
-  null,
-  "Ok"
- ],
  "On": [
   null,
   "Zapnuto"

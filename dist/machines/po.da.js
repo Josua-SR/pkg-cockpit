@@ -115,10 +115,6 @@ return plural;
   null,
   ""
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  ""
- ],
  "CPU Type:": [
   null,
   ""
@@ -176,6 +172,10 @@ return plural;
   ""
  ],
  "Create New": [
+  null,
+  ""
+ ],
+ "Create Storage Pool": [
   null,
   ""
  ],
@@ -251,6 +251,10 @@ return plural;
   null,
   ""
  ],
+ "Filesystem Directory": [
+  null,
+  ""
+ ],
  "Force Restart": [
   null,
   ""
@@ -260,10 +264,6 @@ return plural;
   ""
  ],
  "Format": [
-  null,
-  ""
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
   null,
   ""
  ],
@@ -283,7 +283,11 @@ return plural;
   null,
   ""
  ],
- "INSTALL VM action failed": [
+ "Host Name": [
+  null,
+  ""
+ ],
+ "Host should not be empty": [
   null,
   ""
  ],
@@ -375,6 +379,10 @@ return plural;
   null,
   ""
  ],
+ "Network File System": [
+  null,
+  "Netværks Traffik"
+ ],
  "Network Type": [
   null,
   "Netværks Traffik"
@@ -436,6 +444,10 @@ return plural;
   ""
  ],
  "Overview": [
+  null,
+  ""
+ ],
+ "Path on host's filesystem": [
   null,
   ""
  ],
@@ -539,10 +551,6 @@ return plural;
   null,
   ""
  ],
- "Session": [
-  null,
-  ""
- ],
  "Shut Down": [
   null,
   ""
@@ -559,6 +567,14 @@ return plural;
   null,
   ""
  ],
+ "Source Path": [
+  null,
+  ""
+ ],
+ "Source path should not be empty": [
+  null,
+  ""
+ ],
  "Source should start with http, ftp or nfs protocol": [
   null,
   ""
@@ -567,11 +583,27 @@ return plural;
   null,
   ""
  ],
+ "Start pool when host boots": [
+  null,
+  ""
+ ],
  "Start the VM to see disk statistics.": [
   null,
   ""
  ],
+ "Startup": [
+  null,
+  ""
+ ],
  "State": [
+  null,
+  ""
+ ],
+ "Storage Pool Name": [
+  null,
+  "Værtsnavn"
+ ],
+ "Storage Pool failed to be created": [
   null,
   ""
  ],
@@ -591,11 +623,15 @@ return plural;
   null,
   "Værtsnavn"
  ],
- "System": [
+ "Target": [
   null,
   ""
  ],
- "Target": [
+ "Target Path": [
+  null,
+  ""
+ ],
+ "Target path should not be empty": [
   null,
   ""
  ],
@@ -632,6 +668,10 @@ return plural;
   ""
  ],
  "The VM is suspended by guest power management.": [
+  null,
+  ""
+ ],
+ "The directory on the server being exported": [
   null,
   ""
  ],
@@ -687,54 +727,6 @@ return plural;
   null,
   ""
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  ""
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  ""
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  ""
- ],
- "VM DELETE action failed": [
-  null,
-  ""
- ],
- "VM DETACH_DISK action failed": [
-  null,
-  ""
- ],
- "VM FORCE OFF action failed": [
-  null,
-  ""
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  ""
- ],
- "VM REBOOT action failed": [
-  null,
-  ""
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  ""
- ],
- "VM SENDNMI action failed": [
-  null,
-  ""
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  ""
- ],
- "VM START action failed": [
-  null,
-  ""
- ],
  "VNC": [
   null,
   ""
@@ -771,83 +763,11 @@ return plural;
   null,
   ""
  ],
- "bridge": [
-  null,
-  ""
- ],
- "cdrom": [
-  null,
-  ""
- ],
- "crashed": [
-  null,
-  ""
- ],
- "custom": [
-  null,
-  ""
- ],
- "direct": [
-  null,
-  ""
- ],
- "disabled": [
-  null,
-  ""
- ],
- "disk": [
-  null,
-  ""
- ],
- "down": [
-  null,
-  ""
- ],
- "dying": [
-  null,
-  ""
- ],
- "enabled": [
-  null,
-  ""
- ],
- "ethernet": [
-  null,
-  ""
- ],
- "host": [
-  null,
-  ""
- ],
- "hostdev": [
-  null,
-  ""
- ],
- "idle": [
-  null,
-  ""
- ],
  "inactive": [
   null,
   ""
  ],
- "mcast": [
-  null,
-  ""
- ],
- "network": [
-  null,
-  "Netværks Traffik"
- ],
  "no": [
-  null,
-  ""
- ],
- "other": [
-  null,
-  ""
- ],
- "paused": [
   null,
   ""
  ],
@@ -859,14 +779,6 @@ return plural;
   null,
   ""
  ],
- "running": [
-  null,
-  ""
- ],
- "server": [
-  null,
-  ""
- ],
  "show less": [
   null,
   ""
@@ -875,31 +787,7 @@ return plural;
   null,
   ""
  ],
- "shut off": [
-  null,
-  ""
- ],
- "shutdown": [
-  null,
-  ""
- ],
- "suspended (PM)": [
-  null,
-  ""
- ],
- "udp": [
-  null,
-  ""
- ],
  "undefined": [
-  null,
-  ""
- ],
- "up": [
-  null,
-  ""
- ],
- "user": [
   null,
   ""
  ],
@@ -912,10 +800,6 @@ return plural;
   ""
  ],
  "vCPUs:": [
-  null,
-  ""
- ],
- "vhostuser": [
   null,
   ""
  ],

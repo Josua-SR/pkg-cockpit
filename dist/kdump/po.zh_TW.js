@@ -77,7 +77,7 @@ return plural;
  ],
  "Compress crash dumps to save space": [
   null,
-  ""
+  "壓縮故障轉儲以節省空間"
  ],
  "Compression": [
   null,
@@ -85,27 +85,23 @@ return plural;
  ],
  "Crash dump location": [
   null,
-  ""
+  "崩潰轉儲位置"
  ],
  "Crash system": [
   null,
-  ""
+  "崩潰系統"
  ],
  "Directory": [
   null,
   "目錄"
  ],
- "Directory $0 isn't writable or doesn't exist.": [
-  null,
-  ""
- ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
-  ""
+  "沒有安裝Kdump服務。請確保已安裝包kexec-tools。"
  ],
  "Kernel Dump": [
   null,
-  ""
+  "內核轉儲"
  ],
  "Loading...": [
   null,
@@ -113,7 +109,7 @@ return plural;
  ],
  "Local Filesystem": [
   null,
-  ""
+  "本地文件系統"
  ],
  "Location": [
   null,
@@ -125,15 +121,15 @@ return plural;
  ],
  "Mount": [
   null,
-  ""
+  "安裝"
  ],
  "No configuration found": [
   null,
-  ""
+  "找不到配置"
  ],
  "No memory reserved. Append a crashkernel option to the kernel command line (e.g. in /etc/default/grub) to reserve memory at boot time. Example: crashkernel=512M": [
   null,
-  ""
+  "沒有內存保留。將crashkernel選項附加到內核命令行（例如，在/ etc / default / grub中）以在引導時保留內存。示例：crashkernel = 512M"
  ],
  "None": [
   null,
@@ -153,27 +149,27 @@ return plural;
  ],
  "On a mounted device": [
   null,
-  ""
+  "在已安裝的設備上"
  ],
  "Raw to a device": [
   null,
-  ""
+  "原始設備"
  ],
  "Reading...": [
   null,
-  ""
+  "讀..."
  ],
  "Remote over NFS": [
   null,
-  ""
+  "遠程通過NFS"
  ],
  "Remote over SSH": [
   null,
-  ""
+  "遠程通過SSH"
  ],
  "Reserved memory": [
   null,
-  ""
+  "保留的內存"
  ],
  "Server": [
   null,
@@ -181,70 +177,66 @@ return plural;
  ],
  "Service has an error": [
   null,
-  ""
+  "服務有錯誤"
  ],
  "Service is running": [
   null,
-  ""
+  "服務正在運行"
  ],
  "Service is starting": [
   null,
-  ""
+  "服務正在開始"
  ],
  "Service is stopped": [
   null,
-  ""
+  "服務已停止"
  ],
  "Service is stopping": [
   null,
-  ""
+  "服務正在停止"
  ],
  "Test Configuration": [
   null,
-  ""
+  "測試配置"
  ],
  "Test is only available while the kdump service is running.": [
   null,
-  ""
+  "測試僅在kdump服務運行時可用。"
  ],
  "Test kdump settings": [
   null,
-  ""
+  "測試kdump設置"
  ],
  "This will test kdump settings by crashing the kernel and thereby the system. Depending on the settings, the system may not automatically reboot and the process may take a while.": [
   null,
-  ""
+  "這將通過崩潰內核以及系統來測試kdump設置。根據設置，系統可能不會自動重啟，並且該過程可能需要一段時間。"
  ],
  "This will test the kdump configuration by crashing the kernel.": [
   null,
-  ""
+  "這將通過崩潰內核來測試kdump配置。"
  ],
  "Unable to apply settings: $0": [
   null,
-  ""
- ],
- "Use the setting in /etc/kdump.conf": [
-  null,
-  ""
+  "無法應用設置： $0"
  ],
  "invalid: multiple targets defined": [
   null,
-  ""
+  "無效：定義了多個目標"
  ],
  "kdump status": [
   null,
-  ""
+  "kdump狀態"
  ],
  "locally in $0": [
   null,
-  ""
+  "在當地 $0"
  ],
  "ssh key": [
   null,
-  ""
+  "ssh鍵"
  ],
  "undefined": [
   null,
-  ""
+  "未定義"
  ]
 }));

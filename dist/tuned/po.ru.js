@@ -73,35 +73,35 @@ return plural;
  ],
  "Change Performance Profile": [
   null,
-  ""
+  "Изменить профиль производительности"
  ],
  "Change Profile": [
   null,
-  ""
+  "Изменить профиль"
  ],
  "Communication with tuned has failed": [
   null,
-  ""
+  "Не удалось связаться с настройкой"
  ],
  "Disable tuned": [
   null,
-  ""
+  "Отключить настроенный"
  ],
  "Failed to disable tuned": [
   null,
-  ""
+  "Не удалось отключить настроенный"
  ],
  "Failed to disable tuned profile": [
   null,
-  ""
+  "Не удалось отключить настроенный профиль"
  ],
  "Failed to enable tuned": [
   null,
-  ""
+  "Не удалось включить настройку"
  ],
  "Failed to switch profile": [
   null,
-  ""
+  "Не удалось переключить профиль"
  ],
  "None": [
   null,
@@ -113,31 +113,31 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to change profiles": [
   null,
-  ""
+  "Пользователь <b>$0</b> не разрешается изменять профили"
  ],
  "This system is using a custom profile": [
   null,
-  ""
+  "Эта система использует настраиваемый профиль"
  ],
  "This system is using the recommended profile": [
   null,
-  ""
+  "Эта система использует рекомендуемый профиль"
  ],
  "Tuned has failed to start": [
   null,
-  ""
+  "Не удалось запустить Tuned"
  ],
  "Tuned is not available": [
   null,
-  ""
+  "Не настроено"
  ],
  "Tuned is not running": [
   null,
-  ""
+  "Настроено не работает"
  ],
  "Tuned is off": [
   null,
-  ""
+  "Отключено"
  ],
  "none": [
   null,
@@ -145,6 +145,6 @@ return plural;
  ],
  "recommended": [
   null,
-  ""
+  "рекомендуемые"
  ]
 }));

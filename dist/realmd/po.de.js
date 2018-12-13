@@ -69,11 +69,11 @@ return plural;
  },
  "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  ""
+  "$0 Nur Benutzer mit lokalen Anmeldeinformationen können sich an diesem Computer anmelden. Dies kann sich auch auf andere Dienste auswirken, da sich die DNS-Auflösungseinstellungen ändern und sich die Liste der vertrauenswürdigen Zertifizierungsstellen ändern kann."
  ],
  "$0 is not available from any repository.": [
   null,
-  ""
+  "$0 ist in keinem Repository verfügbar."
  ],
  "$0 will be installed.": [
   null,
@@ -81,7 +81,7 @@ return plural;
  ],
  "Additional packages:": [
   null,
-  ""
+  "Zusatzpakete:"
  ],
  "Administrator Password": [
   null,
@@ -89,11 +89,11 @@ return plural;
  ],
  "Are you sure you want to leave the '$0' domain?": [
   null,
-  ""
+  "Sind Sie sicher, dass Sie das verlassen möchten?$0Domain?"
  ],
  "Are you sure you want to leave this domain?": [
   null,
-  ""
+  "Möchten Sie diese Domain wirklich verlassen?"
  ],
  "Authentication": [
   null,
@@ -109,7 +109,7 @@ return plural;
  ],
  "Checking installed software": [
   null,
-  ""
+  "Installierte Software überprüfen"
  ],
  "Computer OU": [
   null,
@@ -121,7 +121,7 @@ return plural;
  ],
  "Domain $0 is not supported": [
   null,
-  ""
+  "Domain $0 wird nicht unterstützt"
  ],
  "Domain Address": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Downloading $0": [
   null,
-  ""
+  "wird heruntergeladen $0"
  ],
  "Install": [
   null,
@@ -145,11 +145,11 @@ return plural;
  ],
  "Install Software": [
   null,
-  ""
+  "Software installieren"
  ],
  "Installing $0": [
   null,
-  ""
+  "$0 wird installiert"
  ],
  "Join": [
   null,
@@ -165,7 +165,7 @@ return plural;
  ],
  "Joining this domain is not supported": [
   null,
-  ""
+  "Der Beitritt zu dieser Domain wird nicht unterstützt"
  ],
  "Leave": [
   null,
@@ -199,17 +199,13 @@ return plural;
   null,
   "Einmalpasswort"
  ],
- "PackageKit crashed": [
-  null,
-  ""
- ],
  "Removals:": [
   null,
-  ""
+  "Umzüge:"
  ],
  "Removing $0": [
   null,
-  ""
+  "Entfernen $0"
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
@@ -221,7 +217,7 @@ return plural;
  ],
  "Total size: $0": [
   null,
-  ""
+  "Gesamtgröße: $0"
  ],
  "User Name": [
   null,
@@ -233,7 +229,7 @@ return plural;
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "Warten, bis andere Software-Verwaltungsvorgänge abgeschlossen sind"
  ],
  "e.g. \"$0\"": [
   null,

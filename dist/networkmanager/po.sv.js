@@ -575,10 +575,6 @@ return plural;
   null,
   "Av"
  ],
- "Ok": [
-  null,
-  "Ok"
- ],
  "On": [
   null,
   "På"
@@ -713,63 +709,63 @@ return plural;
  ],
  "Service": [
   null,
-  ""
+  "Tjänst"
  ],
  "Set to": [
   null,
-  ""
+  "Sätt till"
  ],
  "Shared": [
   null,
-  ""
+  "Delad"
  ],
  "Spanning Tree Protocol": [
   null,
-  ""
+  "Uppspännande-träd-protokollet"
  ],
  "Spanning Tree Protocol (STP)": [
   null,
-  ""
+  "Uppspännande-träd-protokollet (STP)"
  ],
  "Stable": [
   null,
-  ""
+  "Stabilt"
  ],
  "Start Service": [
   null,
-  ""
+  "Starta tjänst"
  ],
  "Status": [
   null,
-  ""
+  "Status"
  ],
  "Sticky": [
   null,
-  ""
+  "Fast"
  ],
  "Switch off $0": [
   null,
-  ""
+  "Stäng av $0"
  ],
  "Switch on $0": [
   null,
-  ""
+  "Sätt på $0"
  ],
  "Switching off <b>$0</b>  will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Att slå av <b>$0</b> kommer bryta anslutningen till servern, och kommer göra administrationsgränssnittet otillgängligt."
  ],
  "Switching off <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Att slå av <b>$0</b> kommer bryta anslutningen till servern, och kommer göra administrationsgränssnittet otillgängligt."
  ],
  "Switching on <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "Att sätta på <b>$0</b> kommer bryta anslutningen till servern, och kommer göra administrationsgränssnittet otillgängligt."
  ],
  "TCP": [
   null,
-  ""
+  "TCP"
  ],
  "Team": [
   null,
@@ -789,15 +785,15 @@ return plural;
  ],
  "Testing connection": [
   null,
-  ""
+  "Testar anslutningen"
  ],
  "The user <b>$0</b> is not permitted to modify network settings": [
   null,
-  ""
+  "Användaren <b>$0</b> har inte rättighet att ändra nätverksinställningar"
  ],
  "This device cannot be managed here.": [
   null,
-  ""
+  "Denna enhet kan inte hanteras här."
  ],
  "UDP": [
   null,

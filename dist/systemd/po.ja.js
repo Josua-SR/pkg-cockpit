@@ -243,10 +243,6 @@ return plural;
   null,
   "追加のパッケージ:"
  ],
- "Advanced TCA": [
-  null,
-  "高度な TCA"
- ],
  "After": [
   null,
   "後"
@@ -258,10 +254,6 @@ return plural;
  "Alert and above": [
   null,
   "アラート以上のレベル"
- ],
- "All In One": [
-  null,
-  "一体型"
  ],
  "Asset Tag": [
   null,
@@ -290,18 +282,6 @@ return plural;
  "BIOS version": [
   null,
   "BIOS のバージョン"
- ],
- "Blade": [
-  null,
-  "ブレード"
- ],
- "Blade enclosure": [
-  null,
-  "ブレードエンクロージャー"
- ],
- "Bus Expansion Chassis": [
-  null,
-  "バス拡張シャーシ"
  ],
  "CPU": [
   null,
@@ -343,17 +323,9 @@ return plural;
   null,
   "コマンド"
  ],
- "Compact PCI": [
-  null,
-  "PCI の圧縮"
- ],
  "Condition failed": [
   null,
   "条件が満たされませんでした。"
- ],
- "Convertible": [
-  null,
-  "変換可能"
  ],
  "Create Timer": [
   null,
@@ -383,21 +355,9 @@ return plural;
   null,
   "説明"
  ],
- "Desktop": [
-  null,
-  "デスクトップ"
- ],
- "Detachable": [
-  null,
-  "割り当て解除可能"
- ],
  "Disk I/O": [
   null,
   "ディスク I/O"
- ],
- "Docking Station": [
-  null,
-  "ドッキングステーション"
  ],
  "Domain": [
   null,
@@ -411,13 +371,9 @@ return plural;
   null,
   "$0 をダウンロード中"
  ],
- "Embedded PC": [
+ "Enable stored metrics…": [
   null,
-  "組み込み PC"
- ],
- "Enable persistent metrics…": [
-  null,
-  "永続メトリクスを有効にします…"
+  "保存済みメトリクスを有効にします…"
  ],
  "Entry": [
   null,
@@ -435,10 +391,6 @@ return plural;
   null,
   "すべて"
  ],
- "Expansion Chassis": [
-  null,
-  "拡張シャーシ"
- ],
  "Friday": [
   null,
   "金曜日"
@@ -454,10 +406,6 @@ return plural;
  "Go to now": [
   null,
   "今すぐ移動"
- ],
- "Hand Held": [
-  null,
-  "ハンドヘルド"
  ],
  "Hardware": [
   null,
@@ -507,10 +455,6 @@ return plural;
   null,
   "無効なタイムゾーン"
  ],
- "IoT Gateway": [
-  null,
-  "IoT ゲートウェイ"
- ],
  "Journal": [
   null,
   "ジャーナル"
@@ -526,10 +470,6 @@ return plural;
  "Kernel": [
   null,
   "カーネル"
- ],
- "Laptop": [
-  null,
-  "ラップトップ"
  ],
  "Last 24 hours": [
   null,
@@ -555,14 +495,6 @@ return plural;
   null,
   "ログ"
  ],
- "Low Profile Desktop": [
-  null,
-  "低プロファイルデスクトップ"
- ],
- "Lunch Box": [
-  null,
-  "Lunch Box"
- ],
  "Machine ID": [
   null,
   "マシン ID"
@@ -570,10 +502,6 @@ return plural;
  "Machine SSH Key Fingerprints": [
   null,
   "マシンSSH 鍵フィンガープリント"
- ],
- "Main Server Chassis": [
-  null,
-  "メインサーバーシャーシ"
  ],
  "Manually": [
   null,
@@ -585,15 +513,7 @@ return plural;
  ],
  "Memory & Swap": [
   null,
-  ""
- ],
- "Mini PC": [
-  null,
-  "ミニ PC"
- ],
- "Mini Tower": [
-  null,
-  "ミニタワー"
+  "メモリー & スワップ"
  ],
  "Minutes": [
   null,
@@ -606,10 +526,6 @@ return plural;
  "Monday": [
   null,
   "月曜日"
- ],
- "Multi-system Chassis": [
-  null,
-  "マルチシステムシャーシ"
  ],
  "Name": [
   null,
@@ -643,10 +559,6 @@ return plural;
   null,
   "注記"
  ],
- "Notebook": [
-  null,
-  "ノートブック"
- ],
  "Notice and above": [
   null,
   "注意以上のレベル"
@@ -671,17 +583,9 @@ return plural;
   null,
   "オペレーティングシステム"
  ],
- "Other": [
-  null,
-  "その他"
- ],
  "PCI": [
   null,
   "PCI"
- ],
- "PackageKit crashed": [
-  null,
-  "PackageKit がクラッシュしました"
  ],
  "Paths": [
   null,
@@ -690,18 +594,6 @@ return plural;
  "Performance Profile": [
   null,
   "パフォーマンスプロファイル"
- ],
- "Peripheral Chassis": [
-  null,
-  "周辺機器シャーシ"
- ],
- "Pizza Box": [
-  null,
-  "Pizza Box"
- ],
- "Portable": [
-  null,
-  "ポータブル"
  ],
  "Power Options": [
   null,
@@ -718,14 +610,6 @@ return plural;
  "Problem info": [
   null,
   "問題の情報"
- ],
- "RAID Chassis": [
-  null,
-  "RAID シャーシ"
- ],
- "Rack Mount Chassis": [
-  null,
-  "ラックマウントシャーシ"
  ],
  "Real Host Name": [
   null,
@@ -803,10 +687,6 @@ return plural;
   null,
   "保存"
  ],
- "Sealed-case PC": [
-  null,
-  "シールドケース PC"
- ],
  "Seconds": [
   null,
   "秒"
@@ -851,29 +731,13 @@ return plural;
   null,
   "ソケット"
  ],
- "Space-saving Computer": [
-  null,
-  "省スペースコンピューター"
- ],
  "Specific Time": [
   null,
   "特定の時間"
  ],
- "Stick PC": [
+ "Store metrics": [
   null,
-  "スティッキー PC"
- ],
- "Store Performance Data": [
-  null,
-  "パフォーマンスデータの保存"
- ],
- "Sub Chassis": [
-  null,
-  "サブシャーシ"
- ],
- "Sub Notebook": [
-  null,
-  "サブノートブック"
+  "メトリクスの保存"
  ],
  "Sunday": [
   null,
@@ -907,10 +771,6 @@ return plural;
   null,
   "システム時間"
  ],
- "Tablet": [
-  null,
-  "タブレット"
- ],
  "Targets": [
   null,
   "ターゲット"
@@ -939,10 +799,6 @@ return plural;
   null,
   "合計サイズ: $0"
  ],
- "Tower": [
-  null,
-  "タワー"
- ],
  "Trying to synchronize with {{Server}}": [
   null,
   "{{Server}} との同期を試行中です"
@@ -954,10 +810,6 @@ return plural;
  "Type": [
   null,
   "タイプ"
- ],
- "Unknown": [
-  null,
-  "不明"
  ],
  "Used": [
   null,

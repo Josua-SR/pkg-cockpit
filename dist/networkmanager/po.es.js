@@ -541,7 +541,7 @@ return plural;
  ],
  "Network devices and graphs require NetworkManager.": [
   null,
-  ""
+  "Los dispositivos y gráficos de red requieren NetworkManager."
  ],
  "NetworkManager is not running.": [
   null,
@@ -574,10 +574,6 @@ return plural;
  "Off": [
   null,
   "Apagado"
- ],
- "Ok": [
-  null,
-  "Aceptar"
  ],
  "On": [
   null,
@@ -621,7 +617,7 @@ return plural;
  ],
  "Please install the $0 package": [
   null,
-  ""
+  "Por favor instale el $0 paquete"
  ],
  "Ports": [
   null,

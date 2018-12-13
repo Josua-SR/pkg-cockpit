@@ -73,31 +73,31 @@ return plural;
  ],
  "Account Expiration": [
   null,
-  ""
+  "Срок действия учетной записи"
  ],
  "Account not available or cannot be edited.": [
   null,
-  ""
+  "Учетная запись недоступна или не может быть изменена."
  ],
  "Accounts": [
   null,
-  ""
+  "Счета"
  ],
  "Add key": [
   null,
-  ""
+  "Добавить ключ"
  ],
  "Add public key": [
   null,
-  ""
+  "Добавить открытый ключ"
  ],
  "Authorized Public SSH Keys": [
   null,
-  ""
+  "Авторизованные общедоступные SSH-ключи"
  ],
  "Back to Accounts": [
   null,
-  ""
+  "Вернуться к учетным записям"
  ],
  "Cancel": [
   null,
@@ -117,11 +117,7 @@ return plural;
  ],
  "Confirm New Password": [
   null,
-  ""
- ],
- "Container Administrator": [
-  null,
-  ""
+  "Подтвердите новый пароль"
  ],
  "Create": [
   null,
@@ -129,111 +125,59 @@ return plural;
  ],
  "Create New Account": [
   null,
-  ""
+  "Создать новый аккаунт"
  ],
  "Delete": [
   null,
   "Удалить"
  ],
- "Delete $0": [
-  null,
-  ""
- ],
  "Delete Files": [
   null,
   "Удалить файлы"
  ],
- "Error": [
-  null,
-  "Ошибка"
- ],
- "Excellent password": [
-  null,
-  ""
- ],
- "Failed to change password": [
-  null,
-  ""
- ],
  "Failed to load authorized keys.": [
   null,
-  ""
+  "Не удалось загрузить авторизованные ключи."
  ],
  "Force Change": [
   null,
-  ""
+  "Изменение силы"
  ],
  "Force password change": [
   null,
-  ""
+  "Заменить пароль"
  ],
  "Full Name": [
   null,
   "Полное имя"
  ],
- "Image Builder": [
-  null,
-  ""
- ],
- "Invalid expiration date": [
-  null,
-  ""
- ],
  "Invalid key": [
   null,
-  ""
- ],
- "Invalid number of days": [
-  null,
-  ""
+  "Неправильный ключ"
  ],
  "Last Login": [
   null,
-  ""
+  "Последний Войти"
  ],
  "Local Accounts": [
   null,
-  ""
+  "Местные учетные записи"
  ],
  "Lock Account": [
   null,
-  ""
- ],
- "Lock account on $0": [
-  null,
-  ""
- ],
- "Logged In": [
-  null,
-  ""
- ],
- "Never": [
-  null,
-  "Никогда"
+  "Учетная запись"
  ],
  "Never expire password": [
   null,
-  ""
+  "Никогда не истекает пароль"
  ],
  "Never lock account": [
   null,
-  ""
+  "Никогда не блокировать аккаунт"
  ],
  "New Password": [
   null,
-  ""
- ],
- "New password was not accepted": [
-  null,
-  ""
- ],
- "No real name specified": [
-  null,
-  ""
- ],
- "No user name specified": [
-  null,
-  ""
+  "новый пароль"
  ],
  "Off": [
   null,
@@ -241,11 +185,7 @@ return plural;
  ],
  "Old Password": [
   null,
-  ""
- ],
- "Old password not accepted": [
-  null,
-  ""
+  "Прежний пароль"
  ],
  "On": [
   null,
@@ -257,39 +197,11 @@ return plural;
  ],
  "Password Expiration": [
   null,
-  ""
- ],
- "Password is not acceptable": [
-  null,
-  ""
- ],
- "Password is too weak": [
-  null,
-  ""
- ],
- "Password must be changed": [
-  null,
-  ""
+  "Истечение срока действия пароля"
  ],
  "Paste the contents of your public SSH key file here": [
   null,
-  ""
- ],
- "Please specify an expiration date": [
-  null,
-  ""
- ],
- "Prompting via passwd timed out": [
-  null,
-  ""
- ],
- "Require password change every $0 days": [
-  null,
-  ""
- ],
- "Require password change on $0": [
-  null,
-  ""
+  "Вставьте содержимое своего общедоступного ключевого файла SSH здесь."
  ],
  "Reset": [
   null,
@@ -299,57 +211,21 @@ return plural;
   null,
   "Роли"
  ],
- "Server Administrator": [
-  null,
-  ""
- ],
  "Set": [
   null,
   "Настроить"
  ],
  "Set Password": [
   null,
-  ""
+  "Установка пароля"
  ],
  "Terminate Session": [
   null,
-  ""
- ],
- "The account '$0' will be forced to change their password on next login": [
-  null,
-  ""
- ],
- "The passwords do not match": [
-  null,
-  ""
- ],
- "The user <b>$0</b> is not permitted to modify accounts": [
-  null,
-  ""
- ],
- "The user name can only consist of letters from a-z, digits, dots, dashes and underscores.": [
-  null,
-  ""
+  "Завершить сеанс"
  ],
  "There are no authorized public keys for this account.": [
   null,
-  ""
- ],
- "This user name already exists": [
-  null,
-  ""
- ],
- "Unable to delete root account": [
-  null,
-  ""
- ],
- "Unable to rename root account": [
-  null,
-  ""
- ],
- "Unexpected error": [
-  null,
-  "Непредвиденная ошибка"
+  "Для этой учетной записи нет официальных ключей."
  ],
  "Unnamed": [
   null,
@@ -361,14 +237,10 @@ return plural;
  ],
  "You do not have permission to view the authorized public keys for this account.": [
   null,
-  ""
+  "У вас нет разрешения на просмотр разрешенных открытых ключей для этой учетной записи."
  ],
  "translatable": [
   null,
-  ""
- ],
- "page-title\u0004Accounts": [
-  null,
-  ""
+  "переводимый"
  ]
 }));

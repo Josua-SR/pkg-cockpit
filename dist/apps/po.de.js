@@ -77,7 +77,7 @@ return plural;
  ],
  "Checking for new applications": [
   null,
-  ""
+  "Nach neuen Anwendungen suchen"
  ],
  "Close": [
   null,
@@ -89,7 +89,7 @@ return plural;
  ],
  "Go to Application": [
   null,
-  ""
+  "Gehe zur Anwendung"
  ],
  "Install": [
   null,
@@ -101,23 +101,19 @@ return plural;
  ],
  "No applications installed or available": [
   null,
-  ""
+  "Keine Anwendungen installiert oder verfügbar"
  ],
  "No description provided.": [
   null,
-  ""
+  "Keine Beschreibung angegeben."
  ],
  "No installation package found for this application.": [
   null,
-  ""
+  "Kein Installationspaket für diese Anwendung gefunden."
  ],
  "Ok": [
   null,
   "OK"
- ],
- "PackageKit crashed": [
-  null,
-  ""
  ],
  "Remove": [
   null,
@@ -129,10 +125,10 @@ return plural;
  ],
  "Unknown Application": [
   null,
-  ""
+  "Unbekannte Anwendung"
  ],
  "Waiting for other programs to finish using the package manager...": [
   null,
-  ""
+  "Warten, bis andere Programme mit dem Paketmanager fertig sind ..."
  ]
 }));

@@ -73,27 +73,27 @@ return plural;
  ],
  "$0 is not available from any repository.": [
   null,
-  ""
+  "$0 non è disponibile in nessun deposito."
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "$0 sarà installato."
  ],
  "Additional packages:": [
   null,
-  ""
+  "Pacchetti aggiuntivi:"
  ],
  "Administrator Password": [
   null,
-  ""
+  "Password amministratore"
  ],
  "Are you sure you want to leave the '$0' domain?": [
   null,
-  ""
+  "Sei sicuro di voler lasciare il dominio '$0'?"
  ],
  "Are you sure you want to leave this domain?": [
   null,
-  ""
+  "Sei sicuro di voler lasciare questo dominio?"
  ],
  "Authentication": [
   null,
@@ -109,35 +109,35 @@ return plural;
  ],
  "Checking installed software": [
   null,
-  ""
+  "Verifica del software installato"
  ],
  "Computer OU": [
   null,
-  ""
+  "OU del computer"
  ],
  "Domain $0 could not be contacted": [
   null,
-  ""
+  "Il dominio $0 non può essere contattato"
  ],
  "Domain $0 is not supported": [
   null,
-  ""
+  "Il dominio $0 non è supportato"
  ],
  "Domain Address": [
   null,
-  ""
+  "Indirizzo del dominio"
  ],
  "Domain Administrator Name": [
   null,
-  ""
+  "Nome dell'amministratore di dominio"
  ],
  "Domain Administrator Password": [
   null,
-  ""
+  "Password dell'amministratore di dominio"
  ],
  "Downloading $0": [
   null,
-  ""
+  "Download di $0"
  ],
  "Install": [
   null,
@@ -145,11 +145,11 @@ return plural;
  ],
  "Install Software": [
   null,
-  ""
+  "Installare il software"
  ],
  "Installing $0": [
   null,
-  ""
+  "Installazione di $0"
  ],
  "Join": [
   null,
@@ -161,23 +161,23 @@ return plural;
  ],
  "Join a Domain": [
   null,
-  ""
+  "Join a un dominio"
  ],
  "Joining this domain is not supported": [
   null,
-  ""
+  "L'adesione a questo dominio non è supportata"
  ],
  "Leave": [
   null,
-  ""
+  "Lascia"
  ],
  "Leave Domain": [
   null,
-  ""
+  "Lascia dominio"
  ],
  "More": [
   null,
-  ""
+  "Di più"
  ],
  "Next": [
   null,
@@ -197,46 +197,42 @@ return plural;
  ],
  "One Time Password": [
   null,
-  ""
- ],
- "PackageKit crashed": [
-  null,
-  ""
+  "Password unica"
  ],
  "Removals:": [
   null,
-  ""
+  "Traslochi:"
  ],
  "Removing $0": [
   null,
-  ""
+  "Rimozione $0"
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
-  ""
+  "L'utente non <b>$0</b>è autorizzato a modificare i regni"
  ],
  "This may take a while": [
   null,
-  ""
+  "Attendere prego."
  ],
  "Total size: $0": [
   null,
-  ""
+  "Dimensione totale: $0"
  ],
  "User Name": [
   null,
-  ""
+  "Nome utente"
  ],
  "User Password": [
   null,
-  ""
+  "Password utente"
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "In attesa che finiscano le altre operazioni di gestione del software"
  ],
  "e.g. \"$0\"": [
   null,
-  ""
+  "es: \"$0\""
  ]
 }));

@@ -95,10 +95,6 @@ return plural;
   null,
   "目录"
  ],
- "Directory $0 isn't writable or doesn't exist.": [
-  null,
-  "目录 $0 不可写或不存在。"
- ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
   "Kdump 服务未安装。请保证软件包 kexec-tools 已安装。"
@@ -235,21 +231,9 @@ return plural;
   null,
   "位于 $0 本地"
  ],
- "nfs dump target isn't formated as server:path": [
-  null,
-  ""
- ],
  "ssh key": [
   null,
   "SSH 密钥"
- ],
- "ssh key isn't a path": [
-  null,
-  ""
- ],
- "ssh server is empty": [
-  null,
-  ""
  ],
  "undefined": [
   null,

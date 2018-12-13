@@ -226,10 +226,6 @@ return plural;
   null,
   "Informações do pacote"
  ],
- "PackageKit crashed": [
-  null,
-  "PackageKit caiu"
- ],
  "PackageKit is not installed": [
   null,
   "PackageKit não está instalado"
@@ -372,47 +368,47 @@ return plural;
  ],
  "bug fix": [
   null,
-  ""
+  "correção de bug"
  ],
  "enhancement": [
   null,
-  ""
+  "Aprimoramento"
  ],
  "every day": [
   null,
-  ""
+  "todo dia"
  ],
  "on Fridays": [
   null,
-  ""
+  "às sextas-feiras"
  ],
  "on Mondays": [
   null,
-  ""
+  "nas segundas"
  ],
  "on Saturdays": [
   null,
-  ""
+  "aos sábados"
  ],
  "on Sundays": [
   null,
-  ""
+  "nos domingos"
  ],
  "on Thursdays": [
   null,
-  ""
+  "Nas quintas feiras"
  ],
  "on Tuesdays": [
   null,
-  ""
+  "nas terças"
  ],
  "on Wednesdays": [
   null,
-  ""
+  "às quartas-feiras"
  ],
  "security": [
   null,
-  ""
+  "segurança"
  ],
  "undefined": [
   null,

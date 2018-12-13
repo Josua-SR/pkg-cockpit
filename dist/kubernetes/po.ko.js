@@ -69,7 +69,7 @@ return plural;
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
-  ""
+  " 1 \"다음 노드를 삭제 하시겠습니까?"
  ],
  "$0% Free": [
   "$0% Free",
@@ -81,15 +81,15 @@ return plural;
  ],
  "AWS Elastic Block Store": [
   null,
-  ""
+  "AWS Elastic Block Store"
  ],
  "Access Modes": [
   null,
-  ""
+  "액세스 모드"
  ],
  "Access Policy": [
   null,
-  ""
+  "액세스 정책"
  ],
  "Actual": [
   null,
@@ -101,19 +101,19 @@ return plural;
  ],
  "Add Cluster Node": [
   null,
-  ""
+  "클러스터 노드 추가"
  ],
  "Add Group": [
   null,
-  ""
+  "그룹 추가"
  ],
  "Add Kubernetes Node": [
   null,
-  "Kubernetes 클러스터"
+  "Kubernetes 노드 추가 "
  ],
  "Add Member": [
   null,
-  ""
+  "멤버 추가 "
  ],
  "Add Membership": [
   null,
@@ -121,15 +121,15 @@ return plural;
  ],
  "Add New Cluster": [
   null,
-  ""
+  "새 클러스터 추가"
  ],
  "Add New User": [
   null,
-  ""
+  "새 사용자 추가 "
  ],
  "Add Role": [
   null,
-  "본드 추가"
+  "역할 추가"
  ],
  "Add User": [
   null,
@@ -173,11 +173,11 @@ return plural;
  ],
  "All Projects": [
   null,
-  ""
+  "모든 프로젝트"
  ],
  "All Types": [
   null,
-  ""
+  "모든 유형"
  ],
  "All healthy": [
   null,
@@ -185,7 +185,7 @@ return plural;
  ],
  "All images": [
   null,
-  ""
+  "모든 이미지"
  ],
  "All in use": [
   null,
@@ -209,11 +209,11 @@ return plural;
  ],
  "Azure": [
   null,
-  ""
+  "Azure"
  ],
  "Boot ID": [
   null,
-  ""
+  "부팅 ID"
  ],
  "CPU": [
   null,
@@ -221,7 +221,7 @@ return plural;
  ],
  "CPU Utilization: $0%": [
   null,
-  ""
+  "CPU 사용률 : $0%"
  ],
  "Cancel": [
   null,
@@ -241,23 +241,23 @@ return plural;
  ],
  "Change": [
   null,
-  "바꾸기"
+  "변경 "
  ],
  "Change User": [
   null,
-  ""
+  "사용자 변경"
  ],
  "Change image stream": [
   null,
-  ""
+  "이미지 스트림 변경"
  ],
  "Change project": [
   null,
-  ""
+  "프로젝트 변경"
  ],
  "Cinder": [
   null,
-  ""
+  "Cinder"
  ],
  "Claim": [
   null,
@@ -269,7 +269,7 @@ return plural;
  ],
  "Client Certificate": [
   null,
-  ""
+  "클라이언트 인증서"
  ],
  "Cluster": [
   null,
@@ -1605,7 +1605,7 @@ return plural;
  ],
  "You can deploy an application to your cluster.": [
   null,
-  ""
+  "클러스터에 애플리케이션을 배포할 수 있습니다."
  ],
  "Your login credentials do not give you access to use the docker registry from the command line.": [
   null,
@@ -1613,7 +1613,7 @@ return plural;
  ],
  "eg: my-image-stream": [
   null,
-  ""
+  "예: my-image-stream"
  ],
  "no": [
   null,

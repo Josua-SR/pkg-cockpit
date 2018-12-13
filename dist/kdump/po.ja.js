@@ -95,10 +95,6 @@ return plural;
   null,
   "フォルダー"
  ],
- "Directory $0 isn't writable or doesn't exist.": [
-  null,
-  "ディレクトリー $0 は書込み可能でないか、存在しません。"
- ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
   "Kdump サービスがインストールされていません。パッケージ kexec-tools がインストールされていることを確認してください。"
@@ -222,10 +218,6 @@ return plural;
  "Unable to apply settings: $0": [
   null,
   "設定を適用できません: $0"
- ],
- "Use the setting in /etc/kdump.conf": [
-  null,
-  "/etc/kdump.conf の設定を使用します"
  ],
  "invalid: multiple targets defined": [
   null,

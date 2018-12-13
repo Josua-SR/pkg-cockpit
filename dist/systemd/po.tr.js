@@ -67,12 +67,46 @@ return plural;
   "language": "tr",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Template": [
+  null,
+  ""
+ ],
+ "$0 day": [
+  "$0 days",
+  "",
+  ""
+ ],
+ "$0 hour": [
+  "$0 hours",
+  "",
+  ""
+ ],
  "$0 is not available from any repository.": [
   null,
   ""
  ],
+ "$0 minute": [
+  "$0 minutes",
+  "",
+  ""
+ ],
+ "$0 month": [
+  "$0 months",
+  "",
+  ""
+ ],
+ "$0 week": [
+  "$0 weeks",
+  "",
+  ""
+ ],
  "$0 will be installed.": [
   null,
+  ""
+ ],
+ "$0 year": [
+  "$0 years",
+  "",
   ""
  ],
  "1 Minute": [
@@ -86,6 +120,10 @@ return plural;
  "1 hour": [
   null,
   "1 saat "
+ ],
+ "1 min": [
+  null,
+  ""
  ],
  "1 week": [
   null,
@@ -132,6 +170,10 @@ return plural;
   ""
  ],
  "1st": [
+  null,
+  ""
+ ],
+ "2 min": [
   null,
   ""
  ],
@@ -183,6 +225,10 @@ return plural;
   null,
   ""
  ],
+ "3 min": [
+  null,
+  ""
+ ],
  "30th": [
   null,
   ""
@@ -192,6 +238,10 @@ return plural;
   ""
  ],
  "3rd": [
+  null,
+  ""
+ ],
+ "4 min": [
   null,
   ""
  ],
@@ -206,6 +256,10 @@ return plural;
  "5 Minutes": [
   null,
   "5 dakika"
+ ],
+ "5 min": [
+  null,
+  ""
  ],
  "5 minutes": [
   null,
@@ -243,10 +297,6 @@ return plural;
   null,
   ""
  ],
- "Advanced TCA": [
-  null,
-  ""
- ],
  "After": [
   null,
   ""
@@ -256,10 +306,6 @@ return plural;
   ""
  ],
  "Alert and above": [
-  null,
-  ""
- ],
- "All In One": [
   null,
   ""
  ],
@@ -291,15 +337,19 @@ return plural;
   null,
   ""
  ],
- "Blade": [
+ "Before": [
   null,
   ""
  ],
- "Blade enclosure": [
+ "Binds To": [
   null,
   ""
  ],
- "Bus Expansion Chassis": [
+ "Bound By": [
+  null,
+  ""
+ ],
+ "Bug Fix Updates Available": [
   null,
   ""
  ],
@@ -315,6 +365,10 @@ return plural;
   null,
   "İptal"
  ],
+ "Cannot schedule event in the past": [
+  null,
+  ""
+ ],
  "Change": [
   null,
   ""
@@ -327,11 +381,19 @@ return plural;
   null,
   ""
  ],
+ "Checking for updates…": [
+  null,
+  ""
+ ],
  "Checking installed software": [
   null,
   ""
  ],
  "Class": [
+  null,
+  ""
+ ],
+ "Click to see system hardware information": [
   null,
   ""
  ],
@@ -343,7 +405,7 @@ return plural;
   null,
   "Komut"
  ],
- "Compact PCI": [
+ "Condition $0=$1 was not met": [
   null,
   ""
  ],
@@ -351,7 +413,15 @@ return plural;
   null,
   ""
  ],
- "Convertible": [
+ "Conflicted By": [
+  null,
+  ""
+ ],
+ "Conflicts": [
+  null,
+  ""
+ ],
+ "Consists Of": [
   null,
   ""
  ],
@@ -383,19 +453,15 @@ return plural;
   null,
   ""
  ],
- "Desktop": [
+ "Disable": [
   null,
   ""
  ],
- "Detachable": [
+ "Disabled": [
   null,
-  ""
+  "Etkin değil"
  ],
  "Disk I/O": [
-  null,
-  ""
- ],
- "Docking Station": [
   null,
   ""
  ],
@@ -411,11 +477,23 @@ return plural;
   null,
   ""
  ],
- "Embedded PC": [
+ "Enable": [
+  null,
+  ""
+ ],
+ "Enable Forcefully": [
   null,
   ""
  ],
  "Enable persistent metrics…": [
+  null,
+  ""
+ ],
+ "Enabled": [
+  null,
+  ""
+ ],
+ "Enhancement Updates Available": [
   null,
   ""
  ],
@@ -432,10 +510,6 @@ return plural;
   ""
  ],
  "Everything": [
-  null,
-  ""
- ],
- "Expansion Chassis": [
   null,
   ""
  ],
@@ -459,10 +533,6 @@ return plural;
   null,
   "Şimdiye git"
  ],
- "Hand Held": [
-  null,
-  ""
- ],
  "Hardware": [
   null,
   ""
@@ -479,6 +549,10 @@ return plural;
   null,
   ""
  ],
+ "Hour needs to be a number between 0-23": [
+  null,
+  ""
+ ],
  "Hours": [
   null,
   ""
@@ -486,6 +560,10 @@ return plural;
  "I/O Wait": [
   null,
   "I/O Beklemesi"
+ ],
+ "Id": [
+  null,
+  ""
  ],
  "Info and above": [
   null,
@@ -507,11 +585,31 @@ return plural;
   null,
   ""
  ],
+ "Invalid date format": [
+  null,
+  "Geçersiz tarih biçimi"
+ ],
+ "Invalid date format and invalid time format": [
+  null,
+  "Geçersiz tarih ve geçersiz zaman biçimi"
+ ],
+ "Invalid date format.": [
+  null,
+  ""
+ ],
+ "Invalid number.": [
+  null,
+  ""
+ ],
+ "Invalid time format": [
+  null,
+  "Geçersiz zaman biçimi"
+ ],
  "Invalid time zone": [
   null,
   ""
  ],
- "IoT Gateway": [
+ "Joins Namespace Of": [
   null,
   ""
  ],
@@ -531,15 +629,15 @@ return plural;
   null,
   "Çekirdek"
  ],
- "Laptop": [
-  null,
-  ""
- ],
  "Last 24 hours": [
   null,
   ""
  ],
  "Last 7 days": [
+  null,
+  ""
+ ],
+ "Last Trigger": [
   null,
   ""
  ],
@@ -559,14 +657,6 @@ return plural;
   null,
   ""
  ],
- "Low Profile Desktop": [
-  null,
-  ""
- ],
- "Lunch Box": [
-  null,
-  ""
- ],
  "Machine ID": [
   null,
   ""
@@ -575,23 +665,27 @@ return plural;
   null,
   ""
  ],
- "Main Server Chassis": [
-  null,
-  ""
- ],
  "Manually": [
   null,
   "Elle"
+ ],
+ "Mask": [
+  null,
+  ""
+ ],
+ "Mask Forcefully": [
+  null,
+  ""
  ],
  "Memory": [
   null,
   "Bellek"
  ],
- "Mini PC": [
+ "Message to logged in users": [
   null,
-  ""
+  "Giriş yapmış kullanıcılara mesaj"
  ],
- "Mini Tower": [
+ "Minute needs to be a number between 0-59": [
   null,
   ""
  ],
@@ -607,7 +701,7 @@ return plural;
   null,
   ""
  ],
- "Multi-system Chassis": [
+ "NTP Server": [
   null,
   ""
  ],
@@ -615,9 +709,17 @@ return plural;
   null,
   "İsim"
  ],
+ "Need at least one NTP server": [
+  null,
+  ""
+ ],
  "Network Traffic": [
   null,
   ""
+ ],
+ "Next Run": [
+  null,
+  "Sonraki"
  ],
  "Nice": [
   null,
@@ -643,10 +745,6 @@ return plural;
   null,
   ""
  ],
- "Notebook": [
-  null,
-  ""
- ],
  "Notice and above": [
   null,
   ""
@@ -663,7 +761,15 @@ return plural;
   null,
   "Açık"
  ],
+ "On Failure": [
+  null,
+  ""
+ ],
  "Only Emergency": [
+  null,
+  ""
+ ],
+ "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
   ""
  ],
@@ -671,15 +777,11 @@ return plural;
   null,
   ""
  ],
- "Other": [
-  null,
-  ""
- ],
  "PCI": [
   null,
   ""
  ],
- "PackageKit crashed": [
+ "Part Of": [
   null,
   ""
  ],
@@ -691,21 +793,17 @@ return plural;
   null,
   ""
  ],
- "Peripheral Chassis": [
-  null,
-  ""
- ],
- "Pizza Box": [
-  null,
-  ""
- ],
- "Portable": [
-  null,
-  ""
- ],
  "Power Options": [
   null,
   "Güç Seçenekleri"
+ ],
+ "Preset": [
+  null,
+  ""
+ ],
+ "Preset Forcefully": [
+  null,
+  ""
  ],
  "Pretty Host Name": [
   null,
@@ -719,11 +817,7 @@ return plural;
   null,
   ""
  ],
- "RAID Chassis": [
-  null,
-  ""
- ],
- "Rack Mount Chassis": [
+ "Propagates Reload To": [
   null,
   ""
  ],
@@ -731,11 +825,27 @@ return plural;
   null,
   "Gerçek Host İsmi"
  ],
+ "Real host name can only contain lower-case characters, digits, dashes, and periods (with populated subdomains)": [
+  null,
+  ""
+ ],
+ "Real host name must be 64 characters or less": [
+  null,
+  ""
+ ],
  "Reboot": [
   null,
   ""
  ],
  "Recent": [
+  null,
+  ""
+ ],
+ "Reload": [
+  null,
+  ""
+ ],
+ "Reload Propagated From": [
   null,
   ""
  ],
@@ -783,6 +893,22 @@ return plural;
   null,
   ""
  ],
+ "Required By": [
+  null,
+  ""
+ ],
+ "Requires": [
+  null,
+  ""
+ ],
+ "Requisite": [
+  null,
+  ""
+ ],
+ "Requisite Of": [
+  null,
+  ""
+ ],
  "Reset": [
   null,
   ""
@@ -803,15 +929,15 @@ return plural;
   null,
   ""
  ],
- "Sealed-case PC": [
-  null,
-  ""
- ],
  "Seconds": [
   null,
   ""
  ],
  "Secure Shell Keys": [
+  null,
+  ""
+ ],
+ "Security Updates Available": [
   null,
   ""
  ],
@@ -826,6 +952,10 @@ return plural;
  "Services": [
   null,
   "Servisler"
+ ],
+ "Set Host name": [
+  null,
+  "Host ismi ayarla"
  ],
  "Set Time": [
   null,
@@ -843,6 +973,10 @@ return plural;
   null,
   ""
  ],
+ "Since $0": [
+  null,
+  ""
+ ],
  "Slot": [
   null,
   ""
@@ -851,27 +985,27 @@ return plural;
   null,
   ""
  ],
- "Space-saving Computer": [
-  null,
-  ""
- ],
  "Specific Time": [
   null,
   "Özel Bir Zamanda"
  ],
- "Stick PC": [
+ "Start": [
+  null,
+  "Başlat"
+ ],
+ "State": [
   null,
   ""
+ ],
+ "Static": [
+  null,
+  ""
+ ],
+ "Stop": [
+  null,
+  "Durdur"
  ],
  "Store Performance Data": [
-  null,
-  ""
- ],
- "Sub Chassis": [
-  null,
-  ""
- ],
- "Sub Notebook": [
   null,
   ""
  ],
@@ -899,6 +1033,10 @@ return plural;
   null,
   ""
  ],
+ "System Not Registered": [
+  null,
+  ""
+ ],
  "System Services": [
   null,
   ""
@@ -907,7 +1045,7 @@ return plural;
   null,
   ""
  ],
- "Tablet": [
+ "System Up To Date": [
   null,
   ""
  ],
@@ -916,6 +1054,42 @@ return plural;
   ""
  ],
  "Terminal": [
+  null,
+  ""
+ ],
+ "The user <b>$0</b> does not have permissions for creating timers": [
+  null,
+  ""
+ ],
+ "The user <b>$0</b> is not permitted to change the system time": [
+  null,
+  ""
+ ],
+ "The user <b>$0</b> is not permitted to enable or disable services": [
+  null,
+  ""
+ ],
+ "The user <b>$0</b> is not permitted to modify hostnames": [
+  null,
+  ""
+ ],
+ "The user <b>$0</b> is not permitted to shutdown or restart this server": [
+  null,
+  ""
+ ],
+ "The user <b>$0</b> is not permitted to start or stop services": [
+  null,
+  ""
+ ],
+ "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
+  null,
+  ""
+ ],
+ "This field cannot be empty.": [
+  null,
+  ""
+ ],
+ "This unit is an instance of the $0 template.": [
   null,
   ""
  ],
@@ -939,7 +1113,11 @@ return plural;
   null,
   ""
  ],
- "Tower": [
+ "Triggered By": [
+  null,
+  ""
+ ],
+ "Triggers": [
   null,
   ""
  ],
@@ -955,9 +1133,18 @@ return plural;
   null,
   "Tip"
  ],
- "Unknown": [
+ "Unmask": [
   null,
-  "Bilinmiyor"
+  ""
+ ],
+ "Updates Available": [
+  null,
+  ""
+ ],
+ "Usage of $0 CPU core": [
+  "Usage of $0 CPU cores",
+  "",
+  ""
  ],
  "Used": [
   null,
@@ -976,6 +1163,14 @@ return plural;
   "Sürüm"
  ],
  "Waiting for other software management operations to finish": [
+  null,
+  ""
+ ],
+ "Wanted By": [
+  null,
+  ""
+ ],
+ "Wants": [
   null,
   ""
  ],
@@ -1002,5 +1197,26 @@ return plural;
  "[no data]": [
   null,
   ""
+ ],
+ "failed to list ssh host keys: $0": [
+  null,
+  ""
+ ],
+ "of $0 CPU core": [
+  "of $0 CPU cores",
+  "",
+  ""
+ ],
+ "unknown": [
+  null,
+  "Bilinmiyor"
+ ],
+ "page-title\u0004CPU Status": [
+  null,
+  "CPU Durumu"
+ ],
+ "page-title\u0004Memory": [
+  null,
+  "Bellek"
  ]
 }));

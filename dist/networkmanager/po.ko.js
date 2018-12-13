@@ -69,7 +69,7 @@ return plural;
  },
  "$mtu": [
   null,
-  ""
+  "$mtu"
  ],
  "1 day": [
   null,
@@ -81,7 +81,7 @@ return plural;
  ],
  "1 week": [
   null,
-  "1 주"
+  "1주"
  ],
  "5 minutes": [
   null,
@@ -97,7 +97,7 @@ return plural;
  ],
  "802.3ad LACP": [
   null,
-  ""
+  "802.3ad LACP"
  ],
  "ARP": [
   null,
@@ -109,7 +109,7 @@ return plural;
  ],
  "ARP Ping": [
   null,
-  ""
+  "ARP Ping"
  ],
  "Active": [
   null,
@@ -129,7 +129,7 @@ return plural;
  ],
  "Add $0": [
   null,
-  ""
+  "$0 추가 "
  ],
  "Add Bond": [
   null,
@@ -141,15 +141,15 @@ return plural;
  ],
  "Add Services": [
   null,
-  ""
+  "서비스 추가"
  ],
  "Add Services…": [
   null,
-  ""
+  "서비스 추가 ..."
  ],
  "Add Team": [
   null,
-  ""
+  "팀 추가"
  ],
  "Add VLAN": [
   null,
@@ -161,19 +161,19 @@ return plural;
  ],
  "Additional DNS $val": [
   null,
-  ""
+  "추가 DNS $val"
  ],
  "Additional DNS Search Domains $val": [
   null,
-  ""
+  "추가 DNS 검색 도메인 $val"
  ],
  "Additional address $val": [
   null,
-  ""
+  "추가 주소 $val"
  ],
  "Address $val": [
   null,
-  ""
+  "주소 $val"
  ],
  "Addresses": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Allowed Services": [
   null,
-  ""
+  "허용된 서비스"
  ],
  "Apply": [
   null,
@@ -197,7 +197,7 @@ return plural;
  ],
  "Automatic (DHCP only)": [
   null,
-  "자동(DHCP only)"
+  "자동(DHCP만)"
  ],
  "Automatic (DHCP)": [
   null,
@@ -249,7 +249,7 @@ return plural;
  ],
  "Change the settings": [
   null,
-  ""
+  "설정 변경"
  ],
  "Changing the settings will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -575,10 +575,6 @@ return plural;
   null,
   "비활성"
  ],
- "Ok": [
-  null,
-  "확인"
- ],
  "On": [
   null,
   "활성"
@@ -849,7 +845,7 @@ return plural;
  ],
  "You are not authorized to modify the firewall.": [
   null,
-  ""
+  "방화벽을 수정할 수있는 권한이 없습니다."
  ],
  "[$0 bytes of binary data]": [
   null,

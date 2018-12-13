@@ -91,10 +91,6 @@ return plural;
   null,
   "Lägg till publik nyckel"
  ],
- "Adding key": [
-  null,
-  "Lägger till nyckel"
- ],
  "Authorized Public SSH Keys": [
   null,
   "Auktoriserade publika SSH-nycklar"
@@ -123,10 +119,6 @@ return plural;
   null,
   "Bekräfta nytt lösenord"
  ],
- "Container Administrator": [
-  null,
-  "Behållaradministratör"
- ],
  "Create": [
   null,
   "Skapa"
@@ -139,29 +131,9 @@ return plural;
   null,
   "Ta bort"
  ],
- "Delete $0": [
-  null,
-  "Ta bort $0"
- ],
  "Delete Files": [
   null,
   "Ta bort filer"
- ],
- "Error": [
-  null,
-  "Fel"
- ],
- "Error saving authorized keys: ": [
-  null,
-  "Fel när auktoriserade nycklar sparades: "
- ],
- "Excellent password": [
-  null,
-  "Utmärkt lösenord"
- ],
- "Failed to change password": [
-  null,
-  "Misslyckades att ändra lösenord"
  ],
  "Failed to load authorized keys.": [
   null,
@@ -179,21 +151,9 @@ return plural;
   null,
   "Fullständigt namn"
  ],
- "Image Builder": [
-  null,
-  "Avbildsbyggare"
- ],
- "Invalid expiration date": [
-  null,
-  "Felaktigt utgångsdatum"
- ],
  "Invalid key": [
   null,
   "Felaktig nyckel"
- ],
- "Invalid number of days": [
-  null,
-  "Felaktigt antal dagar"
  ],
  "Last Login": [
   null,
@@ -207,18 +167,6 @@ return plural;
   null,
   "Lås kontot"
  ],
- "Lock account on $0": [
-  null,
-  "Lås kontot på $0"
- ],
- "Logged In": [
-  null,
-  "Inloggad"
- ],
- "Never": [
-  null,
-  "Aldrig"
- ],
  "Never expire password": [
   null,
   "Låt aldrig lösenord gå ut"
@@ -231,18 +179,6 @@ return plural;
   null,
   "Nytt lösenord"
  ],
- "New password was not accepted": [
-  null,
-  "Det nya lösenordet godtogs inte"
- ],
- "No real name specified": [
-  null,
-  "Inget verkligt namn angivet"
- ],
- "No user name specified": [
-  null,
-  "Inget användarnamn angivet."
- ],
  "Off": [
   null,
   "Av"
@@ -250,10 +186,6 @@ return plural;
  "Old Password": [
   null,
   "Gammalt lösenord"
- ],
- "Old password not accepted": [
-  null,
-  "Det gamla lösenordet accepterades inte"
  ],
  "On": [
   null,
@@ -267,37 +199,9 @@ return plural;
   null,
   "Utgång av lösenord"
  ],
- "Password is not acceptable": [
-  null,
-  "Lösenordet är inte godtagbart"
- ],
- "Password is too weak": [
-  null,
-  "Lösenordet är för svagt"
- ],
- "Password must be changed": [
-  null,
-  "Lösenordet måste ändras"
- ],
  "Paste the contents of your public SSH key file here": [
   null,
   "Klistra in innehållet i din publika SSH-nyckelfil här"
- ],
- "Please specify an expiration date": [
-  null,
-  "Ange ett utgångsdatum"
- ],
- "Prompting via passwd timed out": [
-  null,
-  "Tidsgränsen överskreds vid fråga via passwd"
- ],
- "Require password change every $0 days": [
-  null,
-  "Begär en lösenordsändring var $0:e dag"
- ],
- "Require password change on $0": [
-  null,
-  "Begär lösenordsändring den $0"
  ],
  "Reset": [
   null,
@@ -307,61 +211,21 @@ return plural;
   null,
   "Roller"
  ],
- "Server Administrator": [
-  null,
-  ""
- ],
  "Set": [
   null,
-  ""
+  "Sätt"
  ],
  "Set Password": [
   null,
-  ""
+  "Sätt lösenord"
  ],
  "Terminate Session": [
   null,
-  ""
- ],
- "The account '$0' will be forced to change their password on next login": [
-  null,
-  ""
- ],
- "The key you provided was not valid.": [
-  null,
-  ""
- ],
- "The passwords do not match": [
-  null,
-  ""
- ],
- "The user <b>$0</b> is not permitted to modify accounts": [
-  null,
-  ""
- ],
- "The user name can only consist of letters from a-z, digits, dots, dashes and underscores.": [
-  null,
-  ""
+  "Avsluta sessionen"
  ],
  "There are no authorized public keys for this account.": [
   null,
-  ""
- ],
- "This user name already exists": [
-  null,
-  ""
- ],
- "Unable to delete root account": [
-  null,
-  ""
- ],
- "Unable to rename root account": [
-  null,
-  ""
- ],
- "Unexpected error": [
-  null,
-  ""
+  "Det finns inga auktoriserade publika nycklar för detta konto."
  ],
  "Unnamed": [
   null,
@@ -371,24 +235,12 @@ return plural;
   null,
   ""
  ],
- "Validating key": [
-  null,
-  ""
- ],
  "You do not have permission to view the authorized public keys for this account.": [
   null,
   "Du har inte rättigheter att se de auktoriserade publika nycklarna för detta konto."
  ],
- "You must wait longer to change your password": [
-  null,
-  ""
- ],
  "translatable": [
   null,
   ""
- ],
- "page-title\u0004Accounts": [
-  null,
-  "Konton"
  ]
 }));

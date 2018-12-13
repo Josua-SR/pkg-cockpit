@@ -22,7 +22,7 @@ import cockpit from 'cockpit';
 
 import { Listing, ListingRow } from 'cockpit-components-listing.jsx';
 import { Info } from './notification/inlineNotification.jsx';
-import { convertToUnit, toReadableNumber, units } from "../helpers.es6";
+import { convertToUnit, toReadableNumber, units } from "../helpers.js";
 import RemoveDiskAction from './diskRemove.jsx';
 import VmLastMessage from './vmLastMessage.jsx';
 
@@ -78,6 +78,8 @@ const VmDisksTab = ({ idPrefix, vm, disks, actions, renderCapacity, notification
             columnTitles.push(_("Readonly"));
         }
         columnTitles.push(_("Source"));
+        // An empty string header is needed for detach actions
+        columnTitles.push("");
 
         if (notificationText) {
             notification = (<Info text={notificationText}
@@ -86,7 +88,7 @@ const VmDisksTab = ({ idPrefix, vm, disks, actions, renderCapacity, notification
     }
 
     return (
-        <div>
+        <div className="machines-disks">
             {notification}
             {message}
             <Listing compact columnTitles={columnTitles} actions={actions} emptyCaption={_("No disks defined for this VM")}>
@@ -119,7 +121,7 @@ const VmDisksTab = ({ idPrefix, vm, disks, actions, renderCapacity, notification
                             target: disk.target,
                             idPrefixRow,
                         });
-                        columns.push(<div>{removeDiskAction}</div>);
+                        columns.push(removeDiskAction);
                     }
 
                     return (<ListingRow key={idPrefixRow} columns={columns} navigateToItem={disk.onNavigate} />);

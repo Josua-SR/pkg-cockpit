@@ -139,17 +139,9 @@ return plural;
   null,
   "Канал"
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Не вдалося виконати дію зі зміни стану мережі"
- ],
  "CPU Type:": [
   null,
   "Тип процесора:"
- ],
- "CREATE VM action failed": [
-  null,
-  "Не вдалося виконати дію CREATE VM"
  ],
  "Cancel": [
   null,
@@ -161,7 +153,7 @@ return plural;
  ],
  "Changes will take effect after shutting down the VM": [
   null,
-  ""
+  "Зміни буде застосовано після завершення роботи ВМ"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -277,11 +269,11 @@ return plural;
  ],
  "Disk failed to be attached": [
   null,
-  ""
+  "Не вдалося долучити диск"
  ],
  "Disk failed to be created": [
   null,
-  ""
+  "Не вдалося створити диск"
  ],
  "Disks": [
   null,
@@ -331,10 +323,6 @@ return plural;
   null,
   "Формат"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "Помилка під час спроби виконати дію GET HYPERVISOR MAX VCPU"
- ],
  "GiB": [
   null,
   "ГіБ"
@@ -363,10 +351,6 @@ return plural;
   null,
   "Вузол для обслуговування"
  ],
- "INSTALL VM action failed": [
-  null,
-  "Помилка під час дії зі встановлення ВМ"
- ],
  "Install": [
   null,
   "Встановити"
@@ -386,10 +370,6 @@ return plural;
  "MAC Address": [
   null,
   "MAC-адреса"
- ],
- "MIGRATE action failed": [
-  null,
-  "Не вдалося виконати дію MIGRATE"
  ],
  "Mac Address": [
   null,
@@ -441,7 +421,7 @@ return plural;
  ],
  "Network settings could not be saved": [
   null,
-  ""
+  "Не вдалося зберегти параметри мережі"
  ],
  "Networks": [
   null,
@@ -563,17 +543,9 @@ return plural;
   null,
   "Бажана кількість сокетів, які слід надавати гостьовій системі."
  ],
- "Preparing for Maintenance": [
-  null,
-  "Готуємося до обслуговування"
- ],
  "Protocol": [
   null,
   "Протокол"
- ],
- "REBOOT action failed": [
-  null,
-  "Не вдалося виконати дію REBOOT"
  ],
  "Readonly": [
   null,
@@ -611,14 +583,6 @@ return plural;
   null,
   "Працює з:"
  ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  "Помилка під час спроби виконати дію SET VCPU SETTINGS"
- ],
- "SHUTDOWN action failed": [
-  null,
-  "Не вдалося виконати дію SHUTDOWN"
- ],
  "SPICE": [
   null,
   "SPICE"
@@ -635,14 +599,6 @@ return plural;
   null,
   "Порт TLS SPICE:"
  ],
- "START action failed": [
-  null,
-  "Не вдалося виконати дію START"
- ],
- "SUSPEND action failed": [
-  null,
-  "Не вдалося виконати дію SUSPEND"
- ],
  "Save": [
   null,
   "Зберегти"
@@ -658,10 +614,6 @@ return plural;
  "Serial Console": [
   null,
   "Послідовна консоль"
- ],
- "Session": [
-  null,
-  "Сеанс"
  ],
  "Shut Down": [
   null,
@@ -702,18 +654,6 @@ return plural;
  "Switch Host to Maintenance": [
   null,
   "Перемкнути вузол у режим обслуговування"
- ],
- "Switching host to maintenance mode failed. Received error: ": [
-  null,
-  "Не вдалося перемкнути вузол у режим обслуговування. Отримано повідомлення про помилку:"
- ],
- "Switching host to maintenance mode in progress ...": [
-  null,
-  "Виконуємо перемикання вузла у режим обслуговування…"
- ],
- "System": [
-  null,
-  "Система"
  ],
  "Target": [
   null,
@@ -809,7 +749,7 @@ return plural;
  ],
  "VCPU settings could not be saved": [
   null,
-  ""
+  "Не вдалося зберегти параметри віртуальних процесорів"
  ],
  "VDSM": [
   null,
@@ -818,38 +758,6 @@ return plural;
  "VDSM Service Management": [
   null,
   "Керування службою VDSM"
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  "Помилка дії VM DELETE (DESTROY)"
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  "Помилка дії VM DELETE (UNDEFINE)"
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "Не вдалося виконати дію FORCE OFF для ВМ"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "Не вдалося виконати дію FORCE REBOOT для ВМ"
- ],
- "VM REBOOT action failed": [
-  null,
-  "Не вдалося виконати дію REBOOT для ВМ"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  "Спроба виконати дію немаскованого переривання VM SEND завершилася невдало"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "Не вдалося виконати дію SHUT DOWN для ВМ"
- ],
- "VM START action failed": [
-  null,
-  "Не вдалося виконати дію START для ВМ"
  ],
  "VM icon": [
   null,
@@ -891,117 +799,21 @@ return plural;
   null,
   "Том"
  ],
- "bridge": [
-  null,
-  "місток"
- ],
- "cdrom": [
-  null,
-  "cdrom"
- ],
- "connecting": [
-  null,
-  "встановлюємо з'єднання"
- ],
  "cores": [
   null,
   "ядра"
- ],
- "crashed": [
-  null,
-  "аварійне завершення"
- ],
- "custom": [
-  null,
-  "нетиповий"
- ],
- "direct": [
-  null,
-  "безпосередньо"
  ],
  "disabled": [
   null,
   "вимкнено"
  ],
- "disk": [
-  null,
-  "диск"
- ],
- "down": [
-  null,
-  "нижче"
- ],
- "dying": [
-  null,
-  "вмирає"
- ],
  "enabled": [
   null,
   "увімкнено"
  ],
- "error": [
-  null,
-  "помилка"
- ],
- "ethernet": [
-  null,
-  "ethernet"
- ],
- "host": [
-  null,
-  "вузол"
- ],
- "hostdev": [
-  null,
-  "пристрій осн. системи"
- ],
- "idle": [
-  null,
-  "бездіяльний"
- ],
- "initializing": [
-  null,
-  "ініціалізація"
- ],
- "installation failed": [
-  null,
-  "не вдалося встановити"
- ],
- "installing OS": [
-  null,
-  "встановлюємо ОС"
- ],
- "kdumping": [
-  null,
-  "створюємо дамп ядра"
- ],
- "maintenance": [
-  null,
-  "супровід"
- ],
- "mcast": [
-  null,
-  "mcast"
- ],
- "network": [
-  null,
-  "мережа"
- ],
  "no": [
   null,
   "ні"
- ],
- "non operational": [
-  null,
-  "не придатна до роботи"
- ],
- "non responsive": [
-  null,
-  "не відповідає"
- ],
- "oVirt": [
-  null,
-  "oVirt"
  ],
  "oVirt Host State:": [
   null,
@@ -1023,18 +835,6 @@ return plural;
   null,
   "Виконуємо вхід до oVirt"
  ],
- "other": [
-  null,
-  "інше"
- ],
- "paused": [
-  null,
-  "призупинено"
- ],
- "pending approval": [
-  null,
-  "чекаємо на підтвердження"
- ],
  "qcow2": [
   null,
   "qcow2"
@@ -1042,18 +842,6 @@ return plural;
  "raw": [
   null,
   "raw"
- ],
- "reboot": [
-  null,
-  "перезавантаження"
- ],
- "running": [
-  null,
-  "працює"
- ],
- "server": [
-  null,
-  "сервер"
  ],
  "show less": [
   null,
@@ -1063,45 +851,17 @@ return plural;
   null,
   "показати більше"
  ],
- "shut off": [
-  null,
-  "вимкнути"
- ],
- "shutdown": [
-  null,
-  "завершити роботу"
- ],
  "sockets": [
   null,
   "сокети"
- ],
- "suspended (PM)": [
-  null,
-  "призупинено (PM)"
  ],
  "threads": [
   null,
   "потоки"
  ],
- "udp": [
-  null,
-  "udp"
- ],
- "unassigned": [
-  null,
-  "не прив'язано"
- ],
  "undefined": [
   null,
   "не визначено"
- ],
- "up": [
-  null,
-  "вище"
- ],
- "user": [
-  null,
-  "користувач"
  ],
  "vCPU Count": [
   null,
@@ -1118,10 +878,6 @@ return plural;
  "vCPUs:": [
   null,
   "vCPU:"
- ],
- "vhostuser": [
-  null,
-  "vhostuser"
  ],
  "yes": [
   null,

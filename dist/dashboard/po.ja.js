@@ -103,14 +103,6 @@ return plural;
   null,
   "アドレス:"
  ],
- "Advanced TCA": [
-  null,
-  "高度な TCA"
- ],
- "All In One": [
-  null,
-  "一体型"
- ],
  "Authentication": [
   null,
   "認証"
@@ -126,18 +118,6 @@ return plural;
  "Avatar": [
   null,
   "アバター"
- ],
- "Blade": [
-  null,
-  "ブレード"
- ],
- "Blade enclosure": [
-  null,
-  "ブレードエンクロージャー"
- ],
- "Bus Expansion Chassis": [
-  null,
-  "バス拡張シャーシ"
  ],
  "CPU": [
   null,
@@ -187,10 +167,6 @@ return plural;
   null,
   "色"
  ],
- "Compact PCI": [
-  null,
-  "PCI の圧縮"
- ],
  "Connect": [
   null,
   "接続"
@@ -198,10 +174,6 @@ return plural;
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
   "{{ limit }} 台を超えるマシンへの同時接続はサポートされていません。"
- ],
- "Convertible": [
-  null,
-  "変換可能"
  ],
  "Could not contact {{host}}": [
   null,
@@ -211,29 +183,13 @@ return plural;
   null,
   "ダッシュボード"
  ],
- "Desktop": [
-  null,
-  "デスクトップ"
- ],
- "Detachable": [
-  null,
-  "割り当て解除可能"
- ],
  "Disk I/O": [
   null,
   "ディスク I/O"
  ],
- "Docking Station": [
-  null,
-  "ドッキングステーション"
- ],
  "Edit Server": [
   null,
   "サーバーの編集"
- ],
- "Embedded PC": [
-  null,
-  "組み込み PC"
  ],
  "Enter IP address or host name": [
   null,
@@ -246,10 +202,6 @@ return plural;
  "Error loading users: {{perm_failed}}": [
   null,
   "ユーザーのロード中にエラーが発生しました: {{perm_failed}}"
- ],
- "Expansion Chassis": [
-  null,
-  "拡張シャーシ"
  ],
  "Failed to add machine: $0": [
   null,
@@ -271,10 +223,6 @@ return plural;
   null,
   "今すぐ移動"
  ],
- "Hand Held": [
-  null,
-  "ハンドヘルド"
- ],
  "Host Name": [
   null,
   "ホスト名"
@@ -291,10 +239,6 @@ return plural;
   null,
   "無効なファイルパーミッション"
  ],
- "IoT Gateway": [
-  null,
-  "IoT ゲートウェイ"
- ],
  "Is sshd running on a different port?": [
   null,
   "sshd が別のポートで実行されていますか?"
@@ -306,10 +250,6 @@ return plural;
  "Kerberos Ticket": [
   null,
   "Kerberos チケット"
- ],
- "Laptop": [
-  null,
-  "ラップトップ"
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
@@ -335,33 +275,9 @@ return plural;
   null,
   "接続が失われました。再接続の試行中です"
  ],
- "Low Profile Desktop": [
-  null,
-  "低プロファイルデスクトップ"
- ],
- "Lunch Box": [
-  null,
-  "Lunch Box"
- ],
- "Main Server Chassis": [
-  null,
-  "メインサーバーシャーシ"
- ],
  "Memory": [
   null,
   "メモリ"
- ],
- "Mini PC": [
-  null,
-  "ミニ PC"
- ],
- "Mini Tower": [
-  null,
-  "ミニタワー"
- ],
- "Multi-system Chassis": [
-  null,
-  "マルチシステムシャーシ"
  ],
  "Network": [
   null,
@@ -379,10 +295,6 @@ return plural;
   null,
   "有効な秘密鍵ではありません"
  ],
- "Notebook": [
-  null,
-  "ノートブック"
- ],
  "Off": [
   null,
   "オフ"
@@ -395,10 +307,6 @@ return plural;
   null,
   "オン"
  ],
- "Other": [
-  null,
-  "その他"
- ],
  "Password": [
   null,
   "パスワード"
@@ -407,21 +315,9 @@ return plural;
   null,
   "パスワードは受け入れられません"
  ],
- "Peripheral Chassis": [
-  null,
-  "周辺機器シャーシ"
- ],
- "Pizza Box": [
-  null,
-  "Pizza Box"
- ],
  "Port": [
   null,
   "ポート"
- ],
- "Portable": [
-  null,
-  "ポータブル"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -435,18 +331,6 @@ return plural;
   null,
   "公開鍵"
  ],
- "RAID Chassis": [
-  null,
-  "RAID シャーシ"
- ],
- "Rack Mount Chassis": [
-  null,
-  "ラックマウントシャーシ"
- ],
- "Sealed-case PC": [
-  null,
-  "シールドケース PC"
- ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
   "{{#strong}}{{host}}{{/strong}} と同期するユーザーを選択します"
@@ -459,22 +343,6 @@ return plural;
   null,
   "セット"
  ],
- "Space-saving Computer": [
-  null,
-  "省スペースコンピューター"
- ],
- "Stick PC": [
-  null,
-  "スティッキー PC"
- ],
- "Sub Chassis": [
-  null,
-  "サブシャーシ"
- ],
- "Sub Notebook": [
-  null,
-  "サブノートブック"
- ],
  "Synchronize": [
   null,
   "同期"
@@ -482,10 +350,6 @@ return plural;
  "Synchronize users": [
   null,
   "ユーザーの同期"
- ],
- "Tablet": [
-  null,
-  "タブレット"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -515,17 +379,9 @@ return plural;
   null,
   "別のポートを試すには、cockpit-ws を新しいバージョンにアップグレードする必要があります。"
  ],
- "Tower": [
-  null,
-  "タワー"
- ],
  "Type a password": [
   null,
   "パスワードを入力します"
- ],
- "Unknown": [
-  null,
-  "不明"
  ],
  "Unknown Host Key": [
   null,
@@ -550,9 +406,5 @@ return plural;
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
   "{{#strong}}{{host}}{{/strong}} に接続されていますが、ユーザーを同期するには、スーパーユーザー権限を持つユーザーが必要です。"
- ],
- "You can remove the previously stored key by running the following command": [
-  null,
-  "以前に保存された鍵を削除するには次のコマンドを実行します"
  ]
 }));

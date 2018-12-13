@@ -73,7 +73,7 @@ return plural;
  ],
  "$0 update": [
   "$0 updates",
-  ""
+  "$0 업데이트 "
  ],
  "$0 will be installed.": [
   null,
@@ -81,7 +81,7 @@ return plural;
  ],
  "$1 security fix": [
   "$1 security fixes",
-  ""
+  "$1 보안 수정"
  ],
  ", including $1 security fix": [
   ", including $1 security fixes",
@@ -89,31 +89,31 @@ return plural;
  ],
  "Additional packages:": [
   null,
-  ""
+  "추가 패키지 :"
  ],
  "Apply all updates": [
   null,
-  ""
+  "모든 업데이트 적용"
  ],
  "Apply security updates": [
   null,
-  ""
+  "보안 업데이트 적용"
  ],
  "Applying updates": [
   null,
-  ""
+  "업데이트 적용 중 "
  ],
  "Applying updates failed": [
   null,
-  ""
+  "업데이트 적용 실패"
  ],
  "Automatic Updates": [
   null,
-  ""
+  "자동 업데이트"
  ],
  "Available Updates": [
   null,
-  ""
+  "사용 가능한 업데이트"
  ],
  "Bugs:": [
   null,
@@ -125,11 +125,11 @@ return plural;
  ],
  "Check for Updates": [
   null,
-  ""
+  "업데이트 확인"
  ],
  "Checking installed software": [
   null,
-  ""
+  "설치된 소프트웨어 확인 중 "
  ],
  "Details": [
   null,
@@ -223,10 +223,6 @@ return plural;
   null,
   ""
  ],
- "PackageKit crashed": [
-  null,
-  ""
- ],
  "PackageKit is not installed": [
   null,
   ""
@@ -315,10 +311,6 @@ return plural;
   null,
   ""
  ],
- "Unregistered System": [
-  null,
-  "등록되지 않은 시스템"
- ],
  "Update History": [
   null,
   ""
@@ -332,10 +324,6 @@ return plural;
   "업데이트됨"
  ],
  "Updated packages may require a restart to take effect.": [
-  null,
-  ""
- ],
- "Updates are disabled.": [
   null,
   ""
  ],
@@ -355,15 +343,7 @@ return plural;
   null,
   "버전"
  ],
- "View Registration Details": [
-  null,
-  ""
- ],
  "Waiting for other software management operations to finish": [
-  null,
-  ""
- ],
- "You need to re-subscribe this system.": [
   null,
   ""
  ],
@@ -382,6 +362,14 @@ return plural;
  "at": [
   null,
   "시간:"
+ ],
+ "bug fix": [
+  null,
+  "버그 수정"
+ ],
+ "enhancement": [
+  null,
+  ""
  ],
  "every day": [
   null,
@@ -414,6 +402,10 @@ return plural;
  "on Wednesdays": [
   null,
   ""
+ ],
+ "security": [
+  null,
+  "보안"
  ],
  "undefined": [
   null,

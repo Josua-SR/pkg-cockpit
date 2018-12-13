@@ -226,10 +226,6 @@ return plural;
   null,
   "Paketinformation"
  ],
- "PackageKit crashed": [
-  null,
-  "PackageKit kraschade"
- ],
  "PackageKit is not installed": [
   null,
   "PackageKit är inte installerat"
@@ -268,39 +264,39 @@ return plural;
  ],
  "Set up": [
   null,
-  ""
+  "Sätt upp"
  ],
  "Setting up": [
   null,
-  ""
+  "Sätter upp"
  ],
  "Severity": [
   null,
-  ""
+  "Allvarsgrad"
  ],
  "Severity:": [
   null,
-  ""
+  "Allvarsgrad:"
  ],
  "Software Updates": [
   null,
-  ""
+  "Programvaruuppdateringar"
  ],
  "Some other program is currently using the package manager, please wait...": [
   null,
-  ""
+  "Något annat program använder just nu pakethanteraren, var god dröj …"
  ],
  "System is up to date": [
   null,
-  ""
+  "Systemet är uppdaterat"
  ],
  "The following packages were recently updated:": [
   null,
-  ""
+  "Följande paket uppdaterades nyligen:"
  ],
  "The following packages were updated $0:": [
   null,
-  ""
+  "Följande paket uppdaterades $0:"
  ],
  "This system is not registered": [
   null,
@@ -308,11 +304,11 @@ return plural;
  ],
  "This web console will be updated.": [
   null,
-  ""
+  "Denna webbkonsol kommer uppdateras."
  ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
-  ""
+  "För att få programvaruuppdateringar behöver detta system registreras hos Red Hat, antingen genom att använda Red Hats kundportal eller en lokal prenumerationsserver."
  ],
  "Total size: $0": [
   null,

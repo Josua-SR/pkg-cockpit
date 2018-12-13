@@ -199,10 +199,6 @@ return plural;
   null,
   "Tek Seferlik Parola"
  ],
- "PackageKit crashed": [
-  null,
-  ""
- ],
  "Removals:": [
   null,
   ""

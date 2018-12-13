@@ -133,6 +133,7 @@ TESTS = $(am__EXEEXT_4) $(am__EXEEXT_15) $(am__EXEEXT_18) \
 @ENABLE_DOC_TRUE@	doc/guide/footer.html doc/guide/version.in \
 @ENABLE_DOC_TRUE@	$(NULL) doc/man/cockpit-bridge.xml $(NULL) \
 @ENABLE_DOC_TRUE@	doc/man/cockpit.xml doc/man/cockpit-ws.xml \
+@ENABLE_DOC_TRUE@	doc/man/cockpit-desktop.xml \
 @ENABLE_DOC_TRUE@	doc/man/cockpit.conf.xml \
 @ENABLE_DOC_TRUE@	doc/man/pam_ssh_add.xml doc/man/remotectl.xml \
 @ENABLE_DOC_TRUE@	$(NULL)
@@ -148,9 +149,10 @@ TESTS = $(am__EXEEXT_4) $(am__EXEEXT_15) $(am__EXEEXT_18) \
 @ENABLE_DOC_TRUE@	$(NULL)
 
 @ENABLE_DOC_TRUE@am__append_4 = doc/man/cockpit-bridge.1 $(NULL) \
-@ENABLE_DOC_TRUE@	doc/man/cockpit.1 doc/man/cockpit-ws.8 \
-@ENABLE_DOC_TRUE@	doc/man/cockpit.conf.5 doc/man/pam_ssh_add.8 \
-@ENABLE_DOC_TRUE@	doc/man/remotectl.8 $(NULL)
+@ENABLE_DOC_TRUE@	doc/man/cockpit.1 doc/man/cockpit-desktop.1 \
+@ENABLE_DOC_TRUE@	doc/man/cockpit-ws.8 doc/man/cockpit.conf.5 \
+@ENABLE_DOC_TRUE@	doc/man/pam_ssh_add.8 doc/man/remotectl.8 \
+@ENABLE_DOC_TRUE@	$(NULL)
 @WITH_GOLANG_TRUE@am__append_5 = cockpit-kube-auth cockpit-kube-launch
 @ENABLE_PCP_TRUE@am__append_6 = cockpit-pcp
 @ENABLE_PCP_TRUE@am__append_7 = libcockpit-pcp.a
@@ -409,10 +411,10 @@ am_libwebsocket_a_OBJECTS =  \
 libwebsocket_a_OBJECTS = $(am_libwebsocket_a_OBJECTS)
 am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" \
 	"$(DESTDIR)$(sbindir)" "$(DESTDIR)$(motddir)" \
-	"$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" \
-	"$(DESTDIR)$(man8dir)" "$(DESTDIR)$(basedir)" \
-	"$(DESTDIR)$(basedebugdir)" "$(DESTDIR)$(basefontsdir)" \
-	"$(DESTDIR)$(centosbrandingdir)" \
+	"$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(man1dir)" \
+	"$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" \
+	"$(DESTDIR)$(basedir)" "$(DESTDIR)$(basedebugdir)" \
+	"$(DESTDIR)$(basefontsdir)" "$(DESTDIR)$(centosbrandingdir)" \
 	"$(DESTDIR)$(debianbrandingdir)" \
 	"$(DESTDIR)$(defaultbrandingdir)" "$(DESTDIR)$(motddir)" \
 	"$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" \
@@ -423,7 +425,8 @@ am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" \
 	"$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(tempconfdir)" \
 	"$(DESTDIR)$(ovirtdir)" "$(DESTDIR)$(pixmapdir)" \
 	"$(DESTDIR)$(pixmapsdir)" "$(DESTDIR)$(playgrounddir)" \
-	"$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" \
+	"$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(polkitdir)" \
+	"$(DESTDIR)$(registrybrandingdir)" \
 	"$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticfontsdir)" \
 	"$(DESTDIR)$(ubuntubrandingdir)"
 @WITH_GOLANG_TRUE@am__EXEEXT_1 = cockpit-kube-auth$(EXEEXT) \
@@ -961,8 +964,8 @@ am__uninstall_files_from_dir = { \
     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
          $(am__cd) "$$dir" && rm -f $$files; }; \
   }
-SCRIPTS = $(dist_motd_SCRIPTS) $(nodist_noinst_SCRIPTS) \
-	$(noinst_SCRIPTS)
+SCRIPTS = $(dist_motd_SCRIPTS) $(libexec_SCRIPTS) \
+	$(nodist_noinst_SCRIPTS) $(noinst_SCRIPTS)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -1094,9 +1097,9 @@ DATA = $(base_DATA) $(basedebug_DATA) $(basefonts_DATA) \
 	$(nodist_noinst_DATA) $(nodist_static_DATA) \
 	$(nodist_systemdunit_DATA) $(nodist_tempconf_DATA) \
 	$(noinst_DATA) $(ovirt_DATA) $(pixmap_DATA) $(pixmaps_DATA) \
-	$(playground_DATA) $(pmlogconf_DATA) $(registrybranding_DATA) \
-	$(rhelbranding_DATA) $(staticfonts_DATA) \
-	$(ubuntubranding_DATA)
+	$(playground_DATA) $(pmlogconf_DATA) $(polkit_DATA) \
+	$(registrybranding_DATA) $(rhelbranding_DATA) \
+	$(staticfonts_DATA) $(ubuntubranding_DATA)
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) \
 	$(LISP)config.h.in
 # Read a list of newline-separated strings from the standard input,
@@ -1587,16 +1590,17 @@ CLEANFILES = $(man_MANS) valgrind-suppressions $(NULL) \
 	dist/base1/require.min.js dist/base1/require.min.js.gz \
 	dist/base1/require.min.js.map dist/base1/simple-tap.js \
 	dist/base1/test-dbus-common.js $(base_TESTS) \
-	$(base_TESTS_JAVASCRIPT) $(NULL) $(am__append_10) \
-	$(COCKPIT_ASSETS) $(test_locale_MO) libpreload-temp-home.so \
-	$(NULL) $(am__append_18) dist/static/login.html \
-	dist/static/login.min.html dist/static/login.js \
-	dist/static/login.min.js dist/static/login.css \
-	dist/static/login.min.css $(NULL) src/ws/cockpit.socket \
-	src/ws/cockpit.service src/ws/cockpit-motd.service \
-	$(nodist_tempconf_DATA) $(NULL) $(nodist_appdata_DATA) \
-	$(nodist_desktop_DATA) $(NULL) mock-pam-conv-mod.so \
-	pam_ssh_add.so $(KUBERNETES_DIR)/rpms $(WS_DIR)/rpms
+	$(base_TESTS_JAVASCRIPT) $(NULL) $(polkit_DATA) \
+	$(am__append_10) $(COCKPIT_ASSETS) $(test_locale_MO) \
+	libpreload-temp-home.so $(NULL) $(am__append_18) \
+	dist/static/login.html dist/static/login.min.html \
+	dist/static/login.js dist/static/login.min.js \
+	dist/static/login.css dist/static/login.min.css $(NULL) \
+	src/ws/cockpit.socket src/ws/cockpit.service \
+	src/ws/cockpit-motd.service $(nodist_tempconf_DATA) \
+	cockpit-desktop $(NULL) $(nodist_appdata_DATA) $(NULL) \
+	mock-pam-conv-mod.so pam_ssh_add.so $(KUBERNETES_DIR)/rpms \
+	$(WS_DIR)/rpms
 DISTCLEANFILES = \
 	$(srcdir)/Makefile \
 	node_modules \
@@ -1639,7 +1643,7 @@ EXTRA_DIST = package.json README.md $(NULL) $(WEBPACK_STAMPS) \
 	src/bridge/mock-pmda.c src/bridge/mock-pmns \
 	src/bridge/mock-client.crt src/bridge/mock-client.key \
 	src/bridge/mock-server.crt src/bridge/mock-server.key $(NULL) \
-	$(pmlogconf_files) src/common/mock-content \
+	$(polkit_in_files) $(pmlogconf_files) src/common/mock-content \
 	src/common/mock-stderr \
 	src/common/com.redhat.Cockpit.DBusTests.xml \
 	src/common/cockpitassets.gresource.xml src/common/fail.html \
@@ -1653,11 +1657,13 @@ EXTRA_DIST = package.json README.md $(NULL) $(WEBPACK_STAMPS) \
 	$(NULL) src/ws/mock_cert src/ws/mock-cat-with-init \
 	src/ws/mock-kdc src/ws/mock-krb5.conf.in \
 	src/ws/mock-kdc.conf.in src/ws/mock-static src/ws/mock-config \
-	$(NULL) src/ws/cockpit-motd.service.in \
-	src/ws/cockpit.service.in src/ws/cockpit.socket.in \
+	src/ws/mock-pipes/exit127 src/ws/mock-pipes/someprogram \
+	src/ws/mock-pipes/cockpit-session $(NULL) \
+	src/ws/cockpit-motd.service.in src/ws/cockpit.service.in \
+	src/ws/cockpit.socket.in src/ws/cockpit-desktop.in \
 	$(firewall_DATA) $(tempconf_in) $(NULL) $(appdata_in) \
-	$(desktop_in) $(pixmap_DATA) $(NULL) src/ws/fatal.conf \
-	$(pam_ssh_add_FILES) $(NULL) src/pam-ssh-add/mock-ssh-agent \
+	$(pixmap_DATA) $(NULL) src/ws/fatal.conf $(pam_ssh_add_FILES) \
+	$(NULL) src/pam-ssh-add/mock-ssh-agent \
 	src/pam-ssh-add/mock-ssh-add src/pam-ssh-add/mock-environment \
 	$(NULL)
 SUFFIXES = \
@@ -2363,6 +2369,12 @@ test_websocketstream_CFLAGS = $(libcockpit_bridge_a_CFLAGS)
 test_websocketstream_LDADD = $(libcockpit_bridge_LIBS) -ldl
 
 # -----------------------------------------------------------------------------
+# polkit
+polkitdir = $(datadir)/polkit-1/actions
+polkit_in_files = src/bridge/org.cockpit-project.cockpit-bridge.policy.in
+polkit_DATA = $(polkit_in_files:.policy.in=.policy)
+
+# -----------------------------------------------------------------------------
 # PCP
 
 # make sure this ends up in the tarball, even with --disable-pcp
@@ -2776,6 +2788,7 @@ dist_motd_SCRIPTS = src/ws/update-motd
 tempconfdir = $(prefix)/lib/tmpfiles.d
 nodist_tempconf_DATA = src/ws/cockpit-tempfiles.conf
 tempconf_in = src/ws/cockpit-tempfiles.conf.in
+libexec_SCRIPTS = cockpit-desktop
 appdatadir = $(datadir)/metainfo
 nodist_appdata_DATA = src/ws/cockpit.appdata.xml
 appdata_in = src/ws/cockpit.appdata.xml.in
@@ -4075,6 +4088,41 @@ uninstall-dist_motdSCRIPTS:
 	files=`for p in $$list; do echo "$$p"; done | \
 	       sed -e 's,.*/,,;$(transform)'`; \
 	dir='$(DESTDIR)$(motddir)'; $(am__uninstall_files_from_dir)
+install-libexecSCRIPTS: $(libexec_SCRIPTS)
+	@$(NORMAL_INSTALL)
+	@list='$(libexec_SCRIPTS)'; test -n "$(libexecdir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(libexecdir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(libexecdir)" || exit 1; \
+	fi; \
+	for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  if test -f "$$d$$p"; then echo "$$d$$p"; echo "$$p"; else :; fi; \
+	done | \
+	sed -e 'p;s,.*/,,;n' \
+	    -e 'h;s|.*|.|' \
+	    -e 'p;x;s,.*/,,;$(transform)' | sed 'N;N;N;s,\n, ,g' | \
+	$(AWK) 'BEGIN { files["."] = ""; dirs["."] = 1; } \
+	  { d=$$3; if (dirs[d] != 1) { print "d", d; dirs[d] = 1 } \
+	    if ($$2 == $$4) { files[d] = files[d] " " $$1; \
+	      if (++n[d] == $(am__install_max)) { \
+		print "f", d, files[d]; n[d] = 0; files[d] = "" } } \
+	    else { print "f", d "/" $$4, $$1 } } \
+	  END { for (d in files) print "f", d, files[d] }' | \
+	while read type dir files; do \
+	     if test "$$dir" = .; then dir=; else dir=/$$dir; fi; \
+	     test -z "$$files" || { \
+	       echo " $(INSTALL_SCRIPT) $$files '$(DESTDIR)$(libexecdir)$$dir'"; \
+	       $(INSTALL_SCRIPT) $$files "$(DESTDIR)$(libexecdir)$$dir" || exit $$?; \
+	     } \
+	; done
+
+uninstall-libexecSCRIPTS:
+	@$(NORMAL_UNINSTALL)
+	@list='$(libexec_SCRIPTS)'; test -n "$(libexecdir)" || exit 0; \
+	files=`for p in $$list; do echo "$$p"; done | \
+	       sed -e 's,.*/,,;$(transform)'`; \
+	dir='$(DESTDIR)$(libexecdir)'; $(am__uninstall_files_from_dir)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -7689,6 +7737,27 @@ uninstall-pmlogconfDATA:
 	@list='$(pmlogconf_DATA)'; test -n "$(pmlogconfdir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(pmlogconfdir)'; $(am__uninstall_files_from_dir)
+install-polkitDATA: $(polkit_DATA)
+	@$(NORMAL_INSTALL)
+	@list='$(polkit_DATA)'; test -n "$(polkitdir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(polkitdir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(polkitdir)" || exit 1; \
+	fi; \
+	for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  echo "$$d$$p"; \
+	done | $(am__base_list) | \
+	while read files; do \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(polkitdir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(polkitdir)" || exit $$?; \
+	done
+
+uninstall-polkitDATA:
+	@$(NORMAL_UNINSTALL)
+	@list='$(polkit_DATA)'; test -n "$(polkitdir)" || list=; \
+	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+	dir='$(DESTDIR)$(polkitdir)'; $(am__uninstall_files_from_dir)
 install-registrybrandingDATA: $(registrybranding_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(registrybranding_DATA)'; test -n "$(registrybrandingdir)" || list=; \
@@ -8522,7 +8591,7 @@ check: $(BUILT_SOURCES)
 all-am: Makefile $(LIBRARIES) $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) \
 		config.h all-local
 installdirs:
-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(motddir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(basedebugdir)" "$(DESTDIR)$(basefontsdir)" "$(DESTDIR)$(centosbrandingdir)" "$(DESTDIR)$(debianbrandingdir)" "$(DESTDIR)$(defaultbrandingdir)" "$(DESTDIR)$(motddir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" "$(DESTDIR)$(firewalldir)" "$(DESTDIR)$(kubernetesbrandingdir)" "$(DESTDIR)$(metainfodir)" "$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(tempconfdir)" "$(DESTDIR)$(ovirtdir)" "$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(pixmapsdir)" "$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(registrybrandingdir)" "$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"; do \
+	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(motddir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man5dir)" "$(DESTDIR)$(man8dir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(basedebugdir)" "$(DESTDIR)$(basefontsdir)" "$(DESTDIR)$(centosbrandingdir)" "$(DESTDIR)$(debianbrandingdir)" "$(DESTDIR)$(defaultbrandingdir)" "$(DESTDIR)$(motddir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(fedorabrandingdir)" "$(DESTDIR)$(firewalldir)" "$(DESTDIR)$(kubernetesbrandingdir)" "$(DESTDIR)$(metainfodir)" "$(DESTDIR)$(appdatadir)" "$(DESTDIR)$(basedir)" "$(DESTDIR)$(staticdir)" "$(DESTDIR)$(systemdunitdir)" "$(DESTDIR)$(tempconfdir)" "$(DESTDIR)$(ovirtdir)" "$(DESTDIR)$(pixmapdir)" "$(DESTDIR)$(pixmapsdir)" "$(DESTDIR)$(playgrounddir)" "$(DESTDIR)$(pmlogconfdir)" "$(DESTDIR)$(polkitdir)" "$(DESTDIR)$(registrybrandingdir)" "$(DESTDIR)$(rhelbrandingdir)" "$(DESTDIR)$(staticfontsdir)" "$(DESTDIR)$(ubuntubrandingdir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: $(BUILT_SOURCES)
@@ -8613,8 +8682,9 @@ install-data-am: install-baseDATA install-basedebugDATA \
 	install-nodist_systemdunitDATA install-nodist_tempconfDATA \
 	install-ovirtDATA install-pixmapDATA install-pixmapsDATA \
 	install-playgroundDATA install-pmlogconfDATA \
-	install-registrybrandingDATA install-rhelbrandingDATA \
-	install-staticfontsDATA install-ubuntubrandingDATA
+	install-polkitDATA install-registrybrandingDATA \
+	install-rhelbrandingDATA install-staticfontsDATA \
+	install-ubuntubrandingDATA
 	@$(NORMAL_INSTALL)
 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
 install-dvi: install-dvi-am
@@ -8622,7 +8692,8 @@ install-dvi: install-dvi-am
 install-dvi-am:
 
 install-exec-am: install-binPROGRAMS install-exec-local \
-	install-libexecPROGRAMS install-sbinPROGRAMS
+	install-libexecPROGRAMS install-libexecSCRIPTS \
+	install-sbinPROGRAMS
 	@$(NORMAL_INSTALL)
 	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
 install-html: install-html-am
@@ -8671,15 +8742,15 @@ uninstall-am: uninstall-baseDATA uninstall-basedebugDATA \
 	uninstall-dist_motdSCRIPTS uninstall-dist_systemdunitDATA \
 	uninstall-fedorabrandingDATA uninstall-firewallDATA \
 	uninstall-kubernetesbrandingDATA uninstall-libexecPROGRAMS \
-	uninstall-local uninstall-man uninstall-metainfoDATA \
-	uninstall-nodist_appdataDATA uninstall-nodist_baseDATA \
-	uninstall-nodist_staticDATA uninstall-nodist_systemdunitDATA \
-	uninstall-nodist_tempconfDATA uninstall-ovirtDATA \
-	uninstall-pixmapDATA uninstall-pixmapsDATA \
+	uninstall-libexecSCRIPTS uninstall-local uninstall-man \
+	uninstall-metainfoDATA uninstall-nodist_appdataDATA \
+	uninstall-nodist_baseDATA uninstall-nodist_staticDATA \
+	uninstall-nodist_systemdunitDATA uninstall-nodist_tempconfDATA \
+	uninstall-ovirtDATA uninstall-pixmapDATA uninstall-pixmapsDATA \
 	uninstall-playgroundDATA uninstall-pmlogconfDATA \
-	uninstall-registrybrandingDATA uninstall-rhelbrandingDATA \
-	uninstall-sbinPROGRAMS uninstall-staticfontsDATA \
-	uninstall-ubuntubrandingDATA
+	uninstall-polkitDATA uninstall-registrybrandingDATA \
+	uninstall-rhelbrandingDATA uninstall-sbinPROGRAMS \
+	uninstall-staticfontsDATA uninstall-ubuntubrandingDATA
 
 uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 
@@ -8707,13 +8778,14 @@ uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 	install-exec-local install-fedorabrandingDATA \
 	install-firewallDATA install-html install-html-am install-info \
 	install-info-am install-kubernetesbrandingDATA \
-	install-libexecPROGRAMS install-man install-man1 install-man5 \
-	install-man8 install-metainfoDATA install-nodist_appdataDATA \
-	install-nodist_baseDATA install-nodist_staticDATA \
-	install-nodist_systemdunitDATA install-nodist_tempconfDATA \
-	install-ovirtDATA install-pdf install-pdf-am \
-	install-pixmapDATA install-pixmapsDATA install-playgroundDATA \
-	install-pmlogconfDATA install-ps install-ps-am \
+	install-libexecPROGRAMS install-libexecSCRIPTS install-man \
+	install-man1 install-man5 install-man8 install-metainfoDATA \
+	install-nodist_appdataDATA install-nodist_baseDATA \
+	install-nodist_staticDATA install-nodist_systemdunitDATA \
+	install-nodist_tempconfDATA install-ovirtDATA install-pdf \
+	install-pdf-am install-pixmapDATA install-pixmapsDATA \
+	install-playgroundDATA install-pmlogconfDATA \
+	install-polkitDATA install-ps install-ps-am \
 	install-registrybrandingDATA install-rhelbrandingDATA \
 	install-sbinPROGRAMS install-staticfontsDATA install-strip \
 	install-ubuntubrandingDATA installcheck installcheck-am \
@@ -8727,16 +8799,16 @@ uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 	uninstall-dist_motdSCRIPTS uninstall-dist_systemdunitDATA \
 	uninstall-fedorabrandingDATA uninstall-firewallDATA \
 	uninstall-kubernetesbrandingDATA uninstall-libexecPROGRAMS \
-	uninstall-local uninstall-man uninstall-man1 uninstall-man5 \
-	uninstall-man8 uninstall-metainfoDATA \
-	uninstall-nodist_appdataDATA uninstall-nodist_baseDATA \
-	uninstall-nodist_staticDATA uninstall-nodist_systemdunitDATA \
-	uninstall-nodist_tempconfDATA uninstall-ovirtDATA \
-	uninstall-pixmapDATA uninstall-pixmapsDATA \
+	uninstall-libexecSCRIPTS uninstall-local uninstall-man \
+	uninstall-man1 uninstall-man5 uninstall-man8 \
+	uninstall-metainfoDATA uninstall-nodist_appdataDATA \
+	uninstall-nodist_baseDATA uninstall-nodist_staticDATA \
+	uninstall-nodist_systemdunitDATA uninstall-nodist_tempconfDATA \
+	uninstall-ovirtDATA uninstall-pixmapDATA uninstall-pixmapsDATA \
 	uninstall-playgroundDATA uninstall-pmlogconfDATA \
-	uninstall-registrybrandingDATA uninstall-rhelbrandingDATA \
-	uninstall-sbinPROGRAMS uninstall-staticfontsDATA \
-	uninstall-ubuntubrandingDATA
+	uninstall-polkitDATA uninstall-registrybrandingDATA \
+	uninstall-rhelbrandingDATA uninstall-sbinPROGRAMS \
+	uninstall-staticfontsDATA uninstall-ubuntubrandingDATA
 
 .PRECIOUS: Makefile
 
@@ -8949,7 +9021,7 @@ po/POTFILES.html.in:
 	( cd $(srcdir) && find $(TRANSLATE) -name '*.html' ) > $@
 po/POTFILES.js.in:
 	$(MKDIR_P) $(notdir $@)
-	( cd $(srcdir) && find src/base1/ $(TRANSLATE) -name '*.js' -o -name '*.jsx' -o -name '*.es6' ) > $@
+	( cd $(srcdir) && find src/base1/ $(TRANSLATE) -name '*.js' -o -name '*.jsx' ) > $@
 po/POTFILES.manifest.in:
 	$(MKDIR_P) $(notdir $@)
 	( cd $(srcdir) && find $(TRANSLATE) -name 'manifest.json' ) > $@
@@ -9095,13 +9167,13 @@ install-data-local::
 
 dist/base1/qunit.js:
 	$(V_COPY) $(MKDIR_P) $(dir $@) && \
-	cat $(srcdir)/node_modules/qunitjs/qunit/qunit.js \
+	cat $(srcdir)/node_modules/qunit/qunit/qunit.js \
 	    $(srcdir)/node_modules/qunit-tap/lib/qunit-tap.js \
             $(srcdir)/pkg/lib/qunit-config.js > $@.tmp && $(MV) $@.tmp $@
 
 dist/base1/qunit.css:
 	$(V_COPY) $(MKDIR_P) $(dir $@) && \
-	cp $(srcdir)/node_modules/qunitjs/qunit/qunit.css $@.tmp && $(MV) $@.tmp $@
+	cp $(srcdir)/node_modules/qunit/qunit/qunit.css $@.tmp && $(MV) $@.tmp $@
 
 dist/base1/test-dbus-common.js: src/base1/test-dbus-common.js
 	$(ESLINT_RULE)
@@ -9152,6 +9224,15 @@ install-data-hook::
 # Opportunistically use plymouth ubuntu logo
 install-data-hook::
 	$(LN_S) -f /usr/share/plymouth/ubuntu-logo.png $(DESTDIR)$(ubuntubrandingdir)/logo.png
+
+%.policy: %.policy.in $(PO_FILES)
+	$(AM_V_GEN) $(INTLTOOL_MERGE) -x $(top_srcdir)/po $< $@
+
+prepare-po-bridge-policy: $(polkit_in_files)
+	cp $< .
+	$(AM_V_GEN) $(INTLTOOL_EXTRACT) -l --type=gettext/xml $(notdir $<)
+
+prepare-po:: prepare-po-bridge-policy
 
 # This is non-portable, but I don't feel like dragging in libtool just
 # for this.
@@ -9255,6 +9336,9 @@ install-exec-hook::
 	chown -f root:$(COCKPIT_GROUP) $(DESTDIR)$(libexecdir)/cockpit-session || true
 	test "$(COCKPIT_USER)" != "root" && chmod -f 4750 $(DESTDIR)$(libexecdir)/cockpit-session || true
 
+cockpit-desktop: src/ws/cockpit-desktop.in
+	$(SUBST_RULE)
+
 $(nodist_appdata_DATA): $(appdata_in) $(PO_FILES)
 	$(AM_V_GEN) LC_ALL=C $(INTLTOOL_MERGE) -q -x -u $(top_srcdir)/po $< $@
 mock-pam-conv-mod.so$(EXEEXT): $(mock_pam_conv_mod_so_SOURCES)
@@ -9274,11 +9358,7 @@ prepare-po-appdata: $(appdata_in)
 	cp $< .
 	$(INTLTOOL_EXTRACT) -l --type=gettext/xml $(notdir $(appdata_in))
 
-prepare-po-desktop: $(desktop_in)
-	cp $< .
-	$(INTLTOOL_EXTRACT) -l --type=gettext/ini $(notdir $(desktop_in))
-
-prepare-po:: prepare-po-appdata prepare-po-desktop
+prepare-po:: prepare-po-appdata
 pam_ssh_add.so: libpam_ssh_add.a $(pam_ssh_add_FILES)
 	$(AM_V_CCLD) $(CC) -fPIC -shared $(CFLAGS) $(libpam_ssh_add_a_CFLAGS) -I$(builddir) \
 		-o $@ $^ $(libpam_ssh_add_a_LIBS) $(LDFLAGS)

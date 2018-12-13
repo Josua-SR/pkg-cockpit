@@ -132,6 +132,26 @@
         }
     };
 
+    utils.validate_fsys_label = function validate_fsys_label(label, type) {
+        var fs_label_max = {
+            "xfs":   12,
+            "ext4":  16,
+            "vfat":  11,
+            "ntfs": 128,
+        };
+
+        var limit = fs_label_max[type.replace("luks+", "")];
+        var bytes = cockpit.utf8_encoder().encode(label);
+        if (limit && bytes.length > limit) {
+            // Let's not confuse people with encoding issues unless
+            // they use funny characters.
+            if (bytes.length == label.length)
+                return cockpit.format(_("Name cannot be longer than $0 characters"), limit);
+            else
+                return cockpit.format(_("Name cannot be longer than $0 bytes"), limit);
+        }
+    };
+
     utils.block_name = function block_name(block) {
         return utils.decode_filename(block.PreferredDevice);
     };
@@ -462,6 +482,39 @@
             return client.blocks_lvm2[path].LogicalVolume;
         if (client.lvols[path] && client.vgroups[client.lvols[path].VolumeGroup])
             return client.lvols[path].VolumeGroup;
+    };
+
+    utils.get_direct_parent_blocks = function(client, path) {
+        var parent = utils.get_parent(client, path);
+        if (!parent)
+            return [ ];
+        if (client.blocks[parent])
+            return [ parent ];
+        if (client.mdraids[parent])
+            return client.mdraids_members[parent].map(function (m) { return m.path });
+        if (client.lvols[parent])
+            parent = client.lvols[parent].VolumeGroup;
+        if (client.vgroups[parent])
+            return client.vgroups_pvols[parent].map(function (pv) { return pv.path });
+        return [ ];
+    };
+
+    utils.get_parent_blocks = function(client, path) {
+        var direct_parents = utils.get_direct_parent_blocks(client, path);
+        var direct_and_indirect_parents = utils.flatten(direct_parents.map(function (p) {
+            return utils.get_parent_blocks(client, p);
+        }));
+        return [ path ].concat(direct_and_indirect_parents);
+    };
+
+    utils.is_netdev = function(client, path) {
+        var block = client.blocks[path];
+        var drive = block && client.drives[block.Drive];
+        if (drive && drive.Vendor == "LIO-ORG")
+            return true;
+        if (block && block.Major == 43) // NBD
+            return true;
+        return false;
     };
 
     function get_children(client, path) {

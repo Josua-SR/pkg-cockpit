@@ -115,10 +115,6 @@ return plural;
   null,
   "确认"
  ],
- "PackageKit crashed": [
-  null,
-  "PackageKit 已崩溃"
- ],
  "Remove": [
   null,
   "删除"

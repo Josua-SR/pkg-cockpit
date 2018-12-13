@@ -115,10 +115,6 @@ return plural;
   null,
   "Канал"
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Не вдалося виконати дію зі зміни стану мережі"
- ],
  "CPU Type:": [
   null,
   "Тип процесора:"
@@ -133,7 +129,7 @@ return plural;
  ],
  "Changes will take effect after shutting down the VM": [
   null,
-  ""
+  "Зміни буде застосовано після завершення роботи ВМ"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -179,6 +175,10 @@ return plural;
   null,
   "Створити"
  ],
+ "Create Storage Pool": [
+  null,
+  "Створити резервне сховище"
+ ],
  "Create VM": [
   null,
   "Створення ВМ"
@@ -217,11 +217,11 @@ return plural;
  ],
  "Disk failed to be attached": [
   null,
-  ""
+  "Не вдалося долучити диск"
  ],
  "Disk failed to be created": [
   null,
-  ""
+  "Не вдалося створити диск"
  ],
  "Disks": [
   null,
@@ -251,6 +251,10 @@ return plural;
   null,
   "Файлова система"
  ],
+ "Filesystem Directory": [
+  null,
+  "Каталог файлової системи"
+ ],
  "Force Restart": [
   null,
   "Примусовий перезапуск"
@@ -262,10 +266,6 @@ return plural;
  "Format": [
   null,
   "Формат"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "Помилка під час спроби виконати дію GET HYPERVISOR MAX VCPU"
  ],
  "GiB": [
   null,
@@ -283,9 +283,13 @@ return plural;
   null,
   "Вузол"
  ],
- "INSTALL VM action failed": [
+ "Host Name": [
   null,
-  "Помилка під час дії зі встановлення ВМ"
+  "Назва вузла"
+ ],
+ "Host should not be empty": [
+  null,
+  "Вузол не повинен бути порожнім"
  ],
  "Immediately Start VM": [
   null,
@@ -375,13 +379,17 @@ return plural;
   null,
   "Назва не може складатися лише із порожніх символів"
  ],
+ "Network File System": [
+  null,
+  "Мережева файлова система"
+ ],
  "Network Type": [
   null,
   "Тип мережі"
  ],
  "Network settings could not be saved": [
   null,
-  ""
+  "Не вдалося зберегти параметри мережі"
  ],
  "Networks": [
   null,
@@ -393,7 +401,7 @@ return plural;
  ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
-  ""
+  "Для цього буфера зберігання сховища не визначено томів сховища"
  ],
  "No VM is running or defined on this host": [
   null,
@@ -421,7 +429,7 @@ return plural;
  ],
  "No storage pool is defined on this host": [
   null,
-  ""
+  "На цьому вузлі не визначено буфера зберігання даних"
  ],
  "No virtual networks": [
   null,
@@ -438,6 +446,10 @@ return plural;
  "Overview": [
   null,
   "Огляд"
+ ],
+ "Path on host's filesystem": [
+  null,
+  "Шлях у файловій системі вузла"
  ],
  "Path to ISO file on host's file system": [
   null,
@@ -539,10 +551,6 @@ return plural;
   null,
   "Послідовна консоль"
  ],
- "Session": [
-  null,
-  "Сеанс"
- ],
  "Shut Down": [
   null,
   "Вимкнути"
@@ -559,25 +567,49 @@ return plural;
   null,
   "Джерело"
  ],
- "Source should start with http, ftp or nfs protocol": [
+ "Source Path": [
   null,
-  "Адреса джерела має починатися із назви протоколу — http, ftp або nfs"
+  "Шлях до джерела"
+ ],
+ "Source path should not be empty": [
+  null,
+  "Шлях до джерела не може бути порожнім"
+ ],
+ "Source should start with https, ftp or nfs protocol": [
+  null,
+  "Запис джерела має починатися із назви протоколу: https, ftp або nfs"
  ],
  "Start libvirt": [
   null,
   "Запустити libvirt"
  ],
+ "Start pool when host boots": [
+  null,
+  "Запускати резервне сховище після завантаження вузла"
+ ],
  "Start the VM to see disk statistics.": [
   null,
   "Запустити віртуальну машину для перегляду статистики диска."
+ ],
+ "Startup": [
+  null,
+  "Запуск"
  ],
  "State": [
   null,
   "Стан"
  ],
+ "Storage Pool Name": [
+  null,
+  "Назва резервного сховища"
+ ],
+ "Storage Pool failed to be created": [
+  null,
+  "Не вдалося створити резервне сховище"
+ ],
  "Storage Pools": [
   null,
-  ""
+  "Буфери даних"
  ],
  "Storage Size": [
   null,
@@ -589,15 +621,19 @@ return plural;
  ],
  "Storage Volumes": [
   null,
-  ""
- ],
- "System": [
-  null,
-  "Система"
+  "Томи даних"
  ],
  "Target": [
   null,
   "Призначення"
+ ],
+ "Target Path": [
+  null,
+  "Шлях призначення"
+ ],
+ "Target path should not be empty": [
+  null,
+  "Шлях призначення не може бути порожнім"
  ],
  "The VM crashed.": [
   null,
@@ -634,6 +670,10 @@ return plural;
  "The VM is suspended by guest power management.": [
   null,
   "Роботу віртуальної машини призупинено засобами керування живленням гостьової системи."
+ ],
+ "The directory on the server being exported": [
+  null,
+  "Каталог на сервері, який експортується"
  ],
  "The pool is empty": [
   null,
@@ -685,55 +725,7 @@ return plural;
  ],
  "VCPU settings could not be saved": [
   null,
-  ""
- ],
- "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  "Помилка дії VM CHANGE_NETWORK_STATE"
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  "Помилка дії VM DELETE (DESTROY)"
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  "Помилка дії VM DELETE (UNDEFINE)"
- ],
- "VM DELETE action failed": [
-  null,
-  "Помилка дії VM DELETE"
- ],
- "VM DETACH_DISK action failed": [
-  null,
-  "Помилка дії VM DETACH_DISK"
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "Не вдалося виконати дію FORCE OFF для ВМ"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "Не вдалося виконати дію FORCE REBOOT для ВМ"
- ],
- "VM REBOOT action failed": [
-  null,
-  "Не вдалося виконати дію REBOOT для ВМ"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  "Спроба виконати дію немаскованого переривання VM SEND завершилася невдало"
- ],
- "VM SENDNMI action failed": [
-  null,
-  "Помилка дії VM SENDNMI"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "Не вдалося виконати дію SHUT DOWN для ВМ"
- ],
- "VM START action failed": [
-  null,
-  "Не вдалося виконати дію START для ВМ"
+  "Не вдалося зберегти параметри віртуальних процесорів"
  ],
  "VNC": [
   null,
@@ -771,85 +763,13 @@ return plural;
   null,
   "активний"
  ],
- "bridge": [
-  null,
-  "місток"
- ],
- "cdrom": [
-  null,
-  "cdrom"
- ],
- "crashed": [
-  null,
-  "аварійне завершення"
- ],
- "custom": [
-  null,
-  "нетиповий"
- ],
- "direct": [
-  null,
-  "безпосередньо"
- ],
- "disabled": [
-  null,
-  "вимкнено"
- ],
- "disk": [
-  null,
-  "диск"
- ],
- "down": [
-  null,
-  "нижче"
- ],
- "dying": [
-  null,
-  "вмирає"
- ],
- "enabled": [
-  null,
-  "увімкнено"
- ],
- "ethernet": [
-  null,
-  "ethernet"
- ],
- "host": [
-  null,
-  "вузол"
- ],
- "hostdev": [
-  null,
-  "пристрій осн. системи"
- ],
- "idle": [
-  null,
-  "бездіяльний"
- ],
  "inactive": [
   null,
   "неактивний"
  ],
- "mcast": [
-  null,
-  "mcast"
- ],
- "network": [
-  null,
-  "мережа"
- ],
  "no": [
   null,
   "ні"
- ],
- "other": [
-  null,
-  "інше"
- ],
- "paused": [
-  null,
-  "призупинено"
  ],
  "qcow2": [
   null,
@@ -859,14 +779,6 @@ return plural;
   null,
   "raw"
  ],
- "running": [
-  null,
-  "працює"
- ],
- "server": [
-  null,
-  "сервер"
- ],
  "show less": [
   null,
   "показати менше"
@@ -875,33 +787,9 @@ return plural;
   null,
   "показати більше"
  ],
- "shut off": [
-  null,
-  "вимкнути"
- ],
- "shutdown": [
-  null,
-  "завершити роботу"
- ],
- "suspended (PM)": [
-  null,
-  "призупинено (PM)"
- ],
- "udp": [
-  null,
-  "udp"
- ],
  "undefined": [
   null,
   "не визначено"
- ],
- "up": [
-  null,
-  "вище"
- ],
- "user": [
-  null,
-  "користувач"
  ],
  "vCPU Count": [
   null,
@@ -914,10 +802,6 @@ return plural;
  "vCPUs:": [
   null,
   "vCPU:"
- ],
- "vhostuser": [
-  null,
-  "vhostuser"
  ],
  "yes": [
   null,

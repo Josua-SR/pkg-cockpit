@@ -1,5 +1,5 @@
 # Generated Makefile data for realmd
-# Stamp: Wed Nov 28 2018 13:11:10 GMT+0000 (UTC)
+# Stamp: Thu Dec 13 2018 16:13:17 GMT+0000 (UTC)
 
 realmd_INPUTS = \
 	node_modules/prop-types/LICENSE \
@@ -22,7 +22,7 @@ realmd_INPUTS = \
 	pkg/lib/cockpit-components-dialog.jsx \
 	pkg/lib/cockpit-components-install-dialog.css \
 	pkg/lib/cockpit-components-install-dialog.jsx \
-	pkg/lib/packagekit.es6 \
+	pkg/lib/packagekit.js \
 	pkg/lib/page.css \
 	pkg/lib/patterns.js \
 	pkg/realmd/operation.html \
@@ -54,7 +54,7 @@ realmd_TESTS = \
 
 dist/realmd/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/prop-types/factoryWithThrowingShims.js -N node_modules/prop-types/index.js -N node_modules/prop-types/lib/ReactPropTypesSecret.js -N node_modules/react-dom/cjs/react-dom.production.min.js -N node_modules/react-dom/index.js -N node_modules/react/cjs/react.production.min.js -N node_modules/react/index.js -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-install-dialog.css -N pkg/lib/cockpit-components-install-dialog.jsx -N pkg/lib/packagekit.es6 -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/realmd/operation.html -N pkg/realmd/operation.js $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/prop-types/factoryWithThrowingShims.js -N node_modules/prop-types/index.js -N node_modules/prop-types/lib/ReactPropTypesSecret.js -N node_modules/react-dom/cjs/react-dom.production.min.js -N node_modules/react-dom/index.js -N node_modules/react/cjs/react.production.min.js -N node_modules/react/index.js -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-install-dialog.css -N pkg/lib/cockpit-components-install-dialog.jsx -N pkg/lib/packagekit.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/realmd/operation.html -N pkg/realmd/operation.js $< > $@.tmp && mv $@.tmp $@
 
 dist/realmd/stamp: $(realmd_INPUTS)
 
@@ -106,7 +106,7 @@ pkg/lib/cockpit-components-install-dialog.css:
 
 pkg/lib/cockpit-components-install-dialog.jsx:
 
-pkg/lib/packagekit.es6:
+pkg/lib/packagekit.js:
 
 pkg/lib/page.css:
 
