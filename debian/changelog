@@ -1,4 +1,4 @@
-cockpit (184-1) UNRELEASED; urgency=medium
+cockpit (184-1) unstable; urgency=medium
 
   * New upstream release:
     - Machines: Dialog and tab layout is now responsive
@@ -6,7 +6,7 @@ cockpit (184-1) UNRELEASED; urgency=medium
     - Storage: Some mount options are prefilled when needed
     - Integration of Cockpit pages on the desktop
 
- -- Martin Pitt <mpitt@debian.org>  Thu, 13 Dec 2018 18:40:36 +0000
+ -- Martin Pitt <mpitt@debian.org>  Thu, 13 Dec 2018 18:42:02 +0000
 
 cockpit (183-1) unstable; urgency=medium
 
