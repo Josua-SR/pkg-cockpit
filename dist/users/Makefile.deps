@@ -1,5 +1,5 @@
 # Generated Makefile data for users
-# Stamp: Wed Nov 28 2018 13:11:10 GMT+0000 (UTC)
+# Stamp: Thu Dec 13 2018 16:13:17 GMT+0000 (UTC)
 
 users_INPUTS = \
 	node_modules/bootstrap-datepicker/LICENSE \
@@ -24,9 +24,9 @@ users_INPUTS = \
 	pkg/lib/page.css \
 	pkg/lib/patterns.js \
 	pkg/lib/table.css \
-	pkg/users/authorized-keys.es6 \
+	pkg/users/authorized-keys.js \
 	pkg/users/index.html \
-	pkg/users/local.es6 \
+	pkg/users/local.js \
 	pkg/users/ssh-add-public-key.sh \
 	pkg/users/ssh-list-public-keys.sh \
 	pkg/users/users.css \
@@ -59,7 +59,7 @@ users_TESTS = \
 
 dist/users/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js -N node_modules/mustache/mustache.js -N node_modules/react-dom/cjs/react-dom.production.min.js -N node_modules/react-dom/index.js -N node_modules/react/cjs/react.production.min.js -N node_modules/react/index.js -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/table.css -N pkg/users/authorized-keys.es6 -N pkg/users/index.html -N pkg/users/local.es6 -N pkg/users/ssh-add-public-key.sh -N pkg/users/ssh-list-public-keys.sh -N pkg/users/users.css $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js -N node_modules/mustache/mustache.js -N node_modules/react-dom/cjs/react-dom.production.min.js -N node_modules/react-dom/index.js -N node_modules/react/cjs/react.production.min.js -N node_modules/react/index.js -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/table.css -N pkg/users/authorized-keys.js -N pkg/users/index.html -N pkg/users/local.js -N pkg/users/ssh-add-public-key.sh -N pkg/users/ssh-list-public-keys.sh -N pkg/users/users.css $< > $@.tmp && mv $@.tmp $@
 
 dist/users/stamp: $(users_INPUTS)
 
@@ -117,11 +117,11 @@ pkg/lib/patterns.js:
 
 pkg/lib/table.css:
 
-pkg/users/authorized-keys.es6:
+pkg/users/authorized-keys.js:
 
 pkg/users/index.html:
 
-pkg/users/local.es6:
+pkg/users/local.js:
 
 pkg/users/ssh-add-public-key.sh:
 

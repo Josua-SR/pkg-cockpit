@@ -199,10 +199,6 @@ return plural;
   null,
   "Contraseña de un solo uso"
  ],
- "PackageKit crashed": [
-  null,
-  "PackageKit roto"
- ],
  "Removals:": [
   null,
   "Eliminaciones:"

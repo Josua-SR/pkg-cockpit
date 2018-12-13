@@ -257,7 +257,7 @@ return plural;
  ],
  "Address is not a valid URL": [
   null,
-  ""
+  "アドレスは有効ではありません。"
  ],
  "Apply": [
   null,
@@ -683,6 +683,10 @@ return plural;
   null,
   "空き領域"
  ],
+ "Free up space in this group: Shrink or delete other logical volumes or add another physical volume.": [
+  null,
+  ""
+ ],
  "Go to now": [
   null,
   "今すぐ移動"
@@ -907,6 +911,14 @@ return plural;
   null,
   "名前は空欄にすることができません。"
  ],
+ "Name cannot be longer than $0 bytes": [
+  null,
+  ""
+ ],
+ "Name cannot be longer than $0 characters": [
+  null,
+  ""
+ ],
  "Name cannot be longer than 127 characters.": [
   null,
   "名前は 127 文字を超えることができません。"
@@ -991,6 +1003,10 @@ return plural;
   null,
   "ボリュームグループが作成されていません"
  ],
+ "Not enough space to grow.": [
+  null,
+  ""
+ ],
  "Not found": [
   null,
   "見つかりません"
@@ -1038,10 +1054,6 @@ return plural;
  "Overwrite existing data with zeros": [
   null,
   "既存のデータをゼロで上書きする"
- ],
- "PackageKit crashed": [
-  null,
-  "PackageKit がクラッシュしました"
  ],
  "Partition": [
   null,

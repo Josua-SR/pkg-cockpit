@@ -139,17 +139,9 @@ return plural;
   null,
   "Bus"
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Échec de l'action CHANGE NETWORK STATE"
- ],
  "CPU Type:": [
   null,
   "Type de CPU:"
- ],
- "CREATE VM action failed": [
-  null,
-  "Échec de l'action CREATE VM"
  ],
  "Cancel": [
   null,
@@ -161,7 +153,7 @@ return plural;
  ],
  "Changes will take effect after shutting down the VM": [
   null,
-  ""
+  "Ces modifications prendront effet après la prochaine extinction de la VM"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -205,7 +197,7 @@ return plural;
  ],
  "Connecting": [
   null,
-  ""
+  "Connexion en cours"
  ],
  "Connection": [
   null,
@@ -241,7 +233,7 @@ return plural;
  ],
  "Ctrl+Alt+Del": [
   null,
-  ""
+  "Ctrl+Alt+Del"
  ],
  "Delete": [
   null,
@@ -277,11 +269,11 @@ return plural;
  ],
  "Disk failed to be attached": [
   null,
-  ""
+  "Le disque n'a pas pu être attaché"
  ],
  "Disk failed to be created": [
   null,
-  ""
+  "Le disque n’a pas pu être créé"
  ],
  "Disks": [
   null,
@@ -331,10 +323,6 @@ return plural;
   null,
   "Formater"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "L’action GET HYPERVISOR MAX VCPU a échoué"
- ],
  "GiB": [
   null,
   "GiB"
@@ -363,10 +351,6 @@ return plural;
   null,
   "Hôte à la maintenance"
  ],
- "INSTALL VM action failed": [
-  null,
-  "Échec de l'action INSTALL VM"
- ],
  "Install": [
   null,
   "Installer"
@@ -387,13 +371,9 @@ return plural;
   null,
   "Adresse Mac"
  ],
- "MIGRATE action failed": [
-  null,
-  "L'action MIGRATE a échoué"
- ],
  "Mac Address": [
   null,
-  ""
+  "Adresse MAC"
  ],
  "Manual Connection": [
   null,
@@ -437,11 +417,11 @@ return plural;
  ],
  "Network Type": [
   null,
-  ""
+  "Type de réseau"
  ],
  "Network settings could not be saved": [
   null,
-  ""
+  "Les paramètres de réseau n'ont pas pu être enregistrés"
  ],
  "Networks": [
   null,
@@ -481,7 +461,7 @@ return plural;
  ],
  "No virtual networks": [
   null,
-  ""
+  "Aucun réseau virtuel"
  ],
  "Number of virtual CPUs that gonna be used.": [
   null,
@@ -563,17 +543,9 @@ return plural;
   null,
   "Nombre choisi de sockets à exposer à l'invité."
  ],
- "Preparing for Maintenance": [
-  null,
-  "Préparation à la maintenance"
- ],
  "Protocol": [
   null,
   "Protocole"
- ],
- "REBOOT action failed": [
-  null,
-  "L'action REBOOT a échoué"
  ],
  "Readonly": [
   null,
@@ -611,14 +583,6 @@ return plural;
   null,
   "En cours d'exécution depuis :"
  ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  "L’action SET VCPU SETTINGS a échoué"
- ],
- "SHUTDOWN action failed": [
-  null,
-  "L'action SHUTDOWN a échoué"
- ],
  "SPICE": [
   null,
   "SPICE"
@@ -635,14 +599,6 @@ return plural;
   null,
   "Port SPICE TLS :"
  ],
- "START action failed": [
-  null,
-  "L'action START a échoué"
- ],
- "SUSPEND action failed": [
-  null,
-  "L'action SUSPEND a échoué"
- ],
  "Save": [
   null,
   "sauvegarder"
@@ -653,15 +609,11 @@ return plural;
  ],
  "Send key": [
   null,
-  ""
+  "Envoi de la clé"
  ],
  "Serial Console": [
   null,
   "Console série"
- ],
- "Session": [
-  null,
-  "Session"
  ],
  "Shut Down": [
   null,
@@ -702,18 +654,6 @@ return plural;
  "Switch Host to Maintenance": [
   null,
   "Passer l'hôte à la maintenance"
- ],
- "Switching host to maintenance mode failed. Received error: ": [
-  null,
-  "La commutation de l'hôte en mode de maintenance a échoué. Erreur reçue:"
- ],
- "Switching host to maintenance mode in progress ...": [
-  null,
-  "Passage de l'hôte au mode maintenance en cours ..."
- ],
- "System": [
-  null,
-  "Système"
  ],
  "Target": [
   null,
@@ -781,7 +721,7 @@ return plural;
  ],
  "Threads per core": [
   null,
-  ""
+  "Threads par noyaux"
  ],
  "Type": [
   null,
@@ -809,7 +749,7 @@ return plural;
  ],
  "VCPU settings could not be saved": [
   null,
-  ""
+  "Les paramètres de configuration de VCPU n'ont pas pu être sauvegardés"
  ],
  "VDSM": [
   null,
@@ -818,38 +758,6 @@ return plural;
  "VDSM Service Management": [
   null,
   "VDSM Service Management"
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  ""
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  ""
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "L'action VM FORCE OFF a échoué"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "L'action VM FORCE REBOOT a échoué"
- ],
- "VM REBOOT action failed": [
-  null,
-  "L'action VM REBOOT a échoué"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  "Échec de l'action d'interruption non masquable VM SEND"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "L'action VM SHUT DOWN a échoué"
- ],
- "VM START action failed": [
-  null,
-  "L'action VM START a échoué"
  ],
  "VM icon": [
   null,
@@ -891,117 +799,21 @@ return plural;
   null,
   "Volume"
  ],
- "bridge": [
-  null,
-  "pont"
- ],
- "cdrom": [
-  null,
-  "CD ROM"
- ],
- "connecting": [
-  null,
-  "connexion"
- ],
  "cores": [
   null,
   "noyaux"
- ],
- "crashed": [
-  null,
-  "planté"
- ],
- "custom": [
-  null,
-  "personnalisé"
- ],
- "direct": [
-  null,
-  "direct"
  ],
  "disabled": [
   null,
   "désactivé"
  ],
- "disk": [
-  null,
-  "disque"
- ],
- "down": [
-  null,
-  "arrêté"
- ],
- "dying": [
-  null,
-  "sur le point ce cesser toute activité"
- ],
  "enabled": [
   null,
   "activée"
  ],
- "error": [
-  null,
-  "erreur"
- ],
- "ethernet": [
-  null,
-  "ethernet"
- ],
- "host": [
-  null,
-  "hôte"
- ],
- "hostdev": [
-  null,
-  "hostdev"
- ],
- "idle": [
-  null,
-  "inactif"
- ],
- "initializing": [
-  null,
-  "initialisation"
- ],
- "installation failed": [
-  null,
-  "l'installation a échoué"
- ],
- "installing OS": [
-  null,
-  "l'installation du système"
- ],
- "kdumping": [
-  null,
-  "kdumping"
- ],
- "maintenance": [
-  null,
-  "maintenance"
- ],
- "mcast": [
-  null,
-  "mcast"
- ],
- "network": [
-  null,
-  "réseau"
- ],
  "no": [
   null,
   "non"
- ],
- "non operational": [
-  null,
-  "non opérationnel"
- ],
- "non responsive": [
-  null,
-  "non réactif"
- ],
- "oVirt": [
-  null,
-  "oVirt"
  ],
  "oVirt Host State:": [
   null,
@@ -1023,18 +835,6 @@ return plural;
   null,
   "Connexion oVirt en cours"
  ],
- "other": [
-  null,
-  "autre"
- ],
- "paused": [
-  null,
-  "mis en pause"
- ],
- "pending approval": [
-  null,
-  "validation en attente"
- ],
  "qcow2": [
   null,
   "qcow2"
@@ -1042,18 +842,6 @@ return plural;
  "raw": [
   null,
   "raw"
- ],
- "reboot": [
-  null,
-  "redémarrer"
- ],
- "running": [
-  null,
-  "en cours"
- ],
- "server": [
-  null,
-  "serveur"
  ],
  "show less": [
   null,
@@ -1063,45 +851,17 @@ return plural;
   null,
   "montrer plus"
  ],
- "shut off": [
-  null,
-  "éteindre"
- ],
- "shutdown": [
-  null,
-  "fermeture"
- ],
  "sockets": [
   null,
   "sockets"
- ],
- "suspended (PM)": [
-  null,
-  "suspendu (PM)"
  ],
  "threads": [
   null,
   "threads"
  ],
- "udp": [
-  null,
-  "UDP"
- ],
- "unassigned": [
-  null,
-  "non attribué"
- ],
  "undefined": [
   null,
   "indéfini"
- ],
- "up": [
-  null,
-  "en cours"
- ],
- "user": [
-  null,
-  "utilisateur"
  ],
  "vCPU Count": [
   null,
@@ -1118,10 +878,6 @@ return plural;
  "vCPUs:": [
   null,
   "vCPU :"
- ],
- "vhostuser": [
-  null,
-  "vhostuser"
  ],
  "yes": [
   null,

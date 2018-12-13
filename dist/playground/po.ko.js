@@ -69,7 +69,7 @@ return plural;
  },
  "$0 disk is missing": [
   "$0 disks are missing",
-  ""
+  "$0 디스크 누락 "
  ],
  "Cancel": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "disk-non-rotational\u0004$0 disk is missing": [
   "$0 disks are missing",
-  ""
+  "$0 디스크 누락 "
  ],
  "key\u0004Control": [
   null,

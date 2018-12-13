@@ -229,10 +229,6 @@ return plural;
   null,
   "Informacje o pakiecie"
  ],
- "PackageKit crashed": [
-  null,
-  "Usługa PackageKit uległa awarii"
- ],
  "PackageKit is not installed": [
   null,
   "Usługa PackageKit nie jest zainstalowana"

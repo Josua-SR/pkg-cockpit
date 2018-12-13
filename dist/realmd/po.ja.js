@@ -199,10 +199,6 @@ return plural;
   null,
   "ワンタイムパスワード"
  ],
- "PackageKit crashed": [
-  null,
-  "PackageKit がクラッシュしました"
- ],
  "Removals:": [
   null,
   "削除:"

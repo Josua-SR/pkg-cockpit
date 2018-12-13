@@ -91,14 +91,6 @@ return plural;
   null,
   "Ytterligare lagring"
  ],
- "Advanced TCA": [
-  null,
-  "Avanserad TCA"
- ],
- "All In One": [
-  null,
-  "Allt-i-ett"
- ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
   "Alla data på valda diskar kommer raderas och diskarna kommer läggas till i lagringspoolen."
@@ -110,18 +102,6 @@ return plural;
  "Author": [
   null,
   "Upphovsman"
- ],
- "Blade": [
-  null,
-  "Blad"
- ],
- "Blade enclosure": [
-  null,
-  "Bladhölje"
- ],
- "Bus Expansion Chassis": [
-  null,
-  "Bussexpansionschassi"
  ],
  "CPU": [
   null,
@@ -188,10 +168,6 @@ return plural;
   null,
   "Fastställ avbild"
  ],
- "Compact PCI": [
-  null,
-  "Kompakt PCI"
- ],
  "Configure storage...": [
   null,
   "Konfigurera lagring …"
@@ -224,10 +200,6 @@ return plural;
   null,
   "Behållare"
  ],
- "Convertible": [
-  null,
-  "Konvertibel"
- ],
  "Could not add all disks": [
   null,
   "Kunde inte lägga till alla diskar"
@@ -256,14 +228,6 @@ return plural;
   null,
   "Att ta bort en behållare kommer att radera all data i den."
  ],
- "Desktop": [
-  null,
-  "Skrivbord"
- ],
- "Detachable": [
-  null,
-  "Frånkopplingsbar"
- ],
  "Details": [
   null,
   "Detaljer"
@@ -271,10 +235,6 @@ return plural;
  "Docker is not installed or activated on the system": [
   null,
   "Docker är inte installerat eller aktiverat på systemet"
- ],
- "Docking Station": [
-  null,
-  "Dockningsstation"
  ],
  "Download": [
   null,
@@ -291,10 +251,6 @@ return plural;
  "Duplicate port": [
   null,
   "Dubblerad port"
- ],
- "Embedded PC": [
-  null,
-  "Inbäddad PC"
  ],
  "Entrypoint": [
   null,
@@ -319,10 +275,6 @@ return plural;
  "Exited $ExitCode": [
   null,
   "Avslutade $ExitCode"
- ],
- "Expansion Chassis": [
-  null,
-  "Expansionschassin"
  ],
  "Expose container ports": [
   null,
@@ -351,10 +303,6 @@ return plural;
  "Get new image": [
   null,
   "Hämta ny avbild"
- ],
- "Hand Held": [
-  null,
-  "Handhållen"
  ],
  "Hard Disk": [
   null,
@@ -408,14 +356,6 @@ return plural;
   null,
   "Felaktig port"
  ],
- "IoT Gateway": [
-  null,
-  "IoT-gateway"
- ],
- "Laptop": [
-  null,
-  "Bärbar dator"
- ],
  "Link to another container": [
   null,
   "Länka till en annan behållare"
@@ -432,21 +372,9 @@ return plural;
   null,
   "Lokala diskar"
  ],
- "Low Profile Desktop": [
-  null,
-  "Lågprofilskrivbord"
- ],
- "Lunch Box": [
-  null,
-  "Lunchlåda"
- ],
  "MAC Address:": [
   null,
   "MAC-adress:"
- ],
- "Main Server Chassis": [
-  null,
-  "Huvudserverchassi"
  ],
  "Memory": [
   null,
@@ -464,21 +392,9 @@ return plural;
   null,
   "MiB"
  ],
- "Mini PC": [
-  null,
-  "Mini-PC"
- ],
- "Mini Tower": [
-  null,
-  "Minitorn"
- ],
  "Mount container volumes": [
   null,
   "Montera behållarvolymer"
- ],
- "Multi-system Chassis": [
-  null,
-  "Multisystemschassi"
  ],
  "Name": [
   null,
@@ -536,10 +452,6 @@ return plural;
   null,
   "Finns inte"
  ],
- "Notebook": [
-  null,
-  "Bärbar (notebook)"
- ],
  "Off": [
   null,
   "Av"
@@ -561,21 +473,9 @@ return plural;
   "Vid misslyckande, försök igen $0 gång",
   "Vid misslyckande, försök igen $0 gånger"
  ],
- "Other": [
-  null,
-  "Annan"
- ],
  "Overview": [
   null,
   "Översikt"
- ],
- "Peripheral Chassis": [
-  null,
-  "Periferichassi"
- ],
- "Pizza Box": [
-  null,
-  "Pizzalåda"
  ],
  "Please confirm deletion of $0": [
   null,
@@ -589,10 +489,6 @@ return plural;
   null,
   "Försök med en annan term"
  ],
- "Portable": [
-  null,
-  "Bärbar"
- ],
  "Ports": [
   null,
   "Portar"
@@ -604,14 +500,6 @@ return plural;
  "Problems": [
   null,
   "Problem"
- ],
- "RAID Chassis": [
-  null,
-  "RAID-chassi"
- ],
- "Rack Mount Chassis": [
-  null,
-  "Rackmonteringschassi"
  ],
  "ReadOnly": [
   null,
@@ -669,129 +557,101 @@ return plural;
   null,
   "Kör avbild"
  ],
- "Sealed-case PC": [
-  null,
-  "PC med slutet hölje"
- ],
  "Security": [
   null,
   "Säkerhet"
  ],
  "Set container environment variables": [
   null,
-  ""
+  "Sätt behållarens miljövariabler"
  ],
  "Show all containers": [
   null,
-  ""
+  "Visa alla behållare"
  ],
  "Show all images": [
   null,
-  ""
+  "Visa alla avbilder"
  ],
  "Size": [
   null,
-  ""
+  "Storlek"
  ],
  "Solid-State Disk": [
   null,
-  ""
- ],
- "Space-saving Computer": [
-  null,
-  ""
+  "SSD-minne"
  ],
  "Start": [
   null,
-  ""
+  "Starta"
  ],
  "Start Docker": [
   null,
-  ""
+  "Starta Docker"
  ],
  "State": [
   null,
-  ""
+  "Tillstånd"
  ],
  "State:": [
   null,
-  ""
- ],
- "Stick PC": [
-  null,
-  ""
+  "Tillstånd:"
  ],
  "Stop": [
   null,
-  ""
+  "Stoppa"
  ],
  "Stop and delete": [
   null,
-  ""
+  "Stoppa och radera"
  ],
  "Stopped": [
   null,
-  ""
+  "Stoppad"
  ],
  "Storage": [
   null,
-  ""
+  "Lagring"
  ],
  "Storage pool": [
   null,
-  ""
- ],
- "Sub Chassis": [
-  null,
-  ""
- ],
- "Sub Notebook": [
-  null,
-  ""
+  "Lagringspool"
  ],
  "TCP": [
   null,
-  ""
- ],
- "Tablet": [
-  null,
-  ""
+  "TCP"
  ],
  "Tag": [
   null,
-  ""
+  "Tagg"
  ],
  "Tags": [
   null,
-  ""
+  "Taggar"
  ],
  "The Docker storage pool cannot be managed on this system.": [
   null,
-  ""
+  "Dockers lagringspool kan inte hanteras på det här system."
  ],
  "The following containers depend on this image and will become unusable.": [
   null,
-  ""
+  "Följande behållare beror på denna avbild och kommer bli oanvändbara."
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,
-  ""
+  "Skanningen från $time ($type) hittade inga sårbarheter."
  ],
  "The scan from $time ($type) was not successful.": [
   null,
-  ""
+  "Skanningen från $time ($type) lyckades inte."
  ],
  "This image does not exist.": [
   null,
-  ""
+  "Denna avbild finns inte."
  ],
  "Total": [
   null,
-  ""
- ],
- "Tower": [
-  null,
-  ""
+  "Totalt"
  ],
  "Try again": [
   null,
@@ -806,10 +666,6 @@ return plural;
   ""
  ],
  "Unexpected error": [
-  null,
-  ""
- ],
- "Unknown": [
   null,
   ""
  ],

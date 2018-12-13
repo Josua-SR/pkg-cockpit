@@ -6,7 +6,7 @@ import cockpit from 'cockpit';
 import { ModalError } from './notification/inlineNotification.jsx';
 import * as SelectComponent from 'cockpit-components-select.jsx';
 import InfoRecord from './infoRecord.jsx';
-import { setVCPUSettings } from "../actions/provider-actions.es6";
+import { setVCPUSettings } from "../actions/provider-actions.js";
 
 const _ = cockpit.gettext;
 
@@ -198,7 +198,10 @@ export class VCPUModal extends React.Component {
                                         />
                                         <InfoRecord
                                             descr={_("vCPU Maximum")}
-                                            tooltip={cockpit.format(_("Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0"), this.props.hypervisorMax)}
+                                            tooltip={cockpit.format(
+                                                _("Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0"),
+                                                parseInt(this.props.config.hypervisorMaxVCPU[vm.connectionName])
+                                            )}
                                             value={<input id="machines-vcpu-max-field" type="number" className="form-control" onChange={this.onMaxChange} value={this.state.max} />}
                                         />
                                     </tbody>

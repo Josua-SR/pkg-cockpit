@@ -130,7 +130,7 @@ return plural;
  ],
  "Too many files found": [
   null,
-  ""
+  "För många filer hittade"
  ],
  "Unavailable": [
   null,

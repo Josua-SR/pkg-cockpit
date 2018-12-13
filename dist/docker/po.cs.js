@@ -91,14 +91,6 @@ return plural;
   null,
   "Další úložiště"
  ],
- "Advanced TCA": [
-  null,
-  "Pokročilé TCA"
- ],
- "All In One": [
-  null,
-  "Vše v jednom"
- ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
   "Všechna data na vybraných discích budou vymazána a disky budou přidány do fondu úložiště."
@@ -110,18 +102,6 @@ return plural;
  "Author": [
   null,
   "Autor"
- ],
- "Blade": [
-  null,
-  "Blade server"
- ],
- "Blade enclosure": [
-  null,
-  "Skříň se šachtami pro blade servery"
- ],
- "Bus Expansion Chassis": [
-  null,
-  "Skříň rozšíření sběrnice"
  ],
  "CPU": [
   null,
@@ -189,10 +169,6 @@ return plural;
   null,
   "Odeslat obraz"
  ],
- "Compact PCI": [
-  null,
-  "Compact PCI"
- ],
  "Configure storage...": [
   null,
   "Nastavit úložiště…"
@@ -225,10 +201,6 @@ return plural;
   null,
   "Kontejnery"
  ],
- "Convertible": [
-  null,
-  "Počítač 2v1"
- ],
  "Could not add all disks": [
   null,
   "Nedaří se přidat všechny disky"
@@ -257,14 +229,6 @@ return plural;
   null,
   "Smazání kontejneru vymaže veškerá data v něm."
  ],
- "Desktop": [
-  null,
-  "Desktop"
- ],
- "Detachable": [
-  null,
-  "Odpojitelné"
- ],
  "Details": [
   null,
   "Podrobnosti"
@@ -272,10 +236,6 @@ return plural;
  "Docker is not installed or activated on the system": [
   null,
   "Docker na tomto systému není nainstalovaný nebo aktivovaný"
- ],
- "Docking Station": [
-  null,
-  "Dokovací stanice"
  ],
  "Download": [
   null,
@@ -292,10 +252,6 @@ return plural;
  "Duplicate port": [
   null,
   "Duplikovat port"
- ],
- "Embedded PC": [
-  null,
-  "Jednodeskový počítač"
  ],
  "Entrypoint": [
   null,
@@ -320,10 +276,6 @@ return plural;
  "Exited $ExitCode": [
   null,
   "Skončilo s $ExitCode"
- ],
- "Expansion Chassis": [
-  null,
-  "Rozšiřující šasi"
  ],
  "Expose container ports": [
   null,
@@ -352,10 +304,6 @@ return plural;
  "Get new image": [
   null,
   "Získat nový obraz"
- ],
- "Hand Held": [
-  null,
-  "Pro držení v rukou"
  ],
  "Hard Disk": [
   null,
@@ -409,14 +357,6 @@ return plural;
   null,
   "Neplatný port"
  ],
- "IoT Gateway": [
-  null,
-  "Brána Internetu věcí (IoT)"
- ],
- "Laptop": [
-  null,
-  "Notebook"
- ],
  "Link to another container": [
   null,
   "Propojení s jiným kontejnerem"
@@ -433,21 +373,9 @@ return plural;
   null,
   "Místní disky"
  ],
- "Low Profile Desktop": [
-  null,
-  "Nízký desktop"
- ],
- "Lunch Box": [
-  null,
-  "Kufříkový počítač"
- ],
  "MAC Address:": [
   null,
   "MAC adresa"
- ],
- "Main Server Chassis": [
-  null,
-  "Hlavní skříň serveru"
  ],
  "Memory": [
   null,
@@ -465,21 +393,9 @@ return plural;
   null,
   "MiB"
  ],
- "Mini PC": [
-  null,
-  "Mini PC"
- ],
- "Mini Tower": [
-  null,
-  "Mini věž"
- ],
  "Mount container volumes": [
   null,
   "Připojit svazky kontejneru"
- ],
- "Multi-system Chassis": [
-  null,
-  "Skříň pro více systémů"
  ],
  "Name": [
   null,
@@ -537,10 +453,6 @@ return plural;
   null,
   "Nenalezeno"
  ],
- "Notebook": [
-  null,
-  "Notebook"
- ],
  "Off": [
   null,
   "Vypnuto"
@@ -563,21 +475,9 @@ return plural;
   "V případě nezdaru, zkusit znovu $0 krát",
   "V případě nezdaru, zkusit znovu $0 krát"
  ],
- "Other": [
-  null,
-  "Ostatní"
- ],
  "Overview": [
   null,
   "Přehled"
- ],
- "Peripheral Chassis": [
-  null,
-  "Skříň periferií"
- ],
- "Pizza Box": [
-  null,
-  "Velikost „krabice od pizzy“"
  ],
  "Please confirm deletion of $0": [
   null,
@@ -591,10 +491,6 @@ return plural;
   null,
   "Zkuste jiný pojem"
  ],
- "Portable": [
-  null,
-  "Přenosný"
- ],
  "Ports": [
   null,
   "Porty"
@@ -606,14 +502,6 @@ return plural;
  "Problems": [
   null,
   "Problémy"
- ],
- "RAID Chassis": [
-  null,
-  "RAID skříň"
- ],
- "Rack Mount Chassis": [
-  null,
-  "Skříň do stojanu"
  ],
  "ReadOnly": [
   null,
@@ -671,10 +559,6 @@ return plural;
   null,
   "Spustit obraz"
  ],
- "Sealed-case PC": [
-  null,
-  "Počítač se zapečetěnou skříní"
- ],
  "Security": [
   null,
   "Zabezpečení"
@@ -699,10 +583,6 @@ return plural;
   null,
   "Jednotka bez pohyblivých částí"
  ],
- "Space-saving Computer": [
-  null,
-  "Prostorově úsporný počítač"
- ],
  "Start": [
   null,
   "Spustit"
@@ -718,10 +598,6 @@ return plural;
  "State:": [
   null,
   "Stav:"
- ],
- "Stick PC": [
-  null,
-  "Počítač v klíčence"
  ],
  "Stop": [
   null,
@@ -743,21 +619,9 @@ return plural;
   null,
   "Fond úložiště"
  ],
- "Sub Chassis": [
-  null,
-  "Dílčí skříň"
- ],
- "Sub Notebook": [
-  null,
-  "Zmenšený notebook"
- ],
  "TCP": [
   null,
   "TCP"
- ],
- "Tablet": [
-  null,
-  "Tablet"
  ],
  "Tag": [
   null,
@@ -791,10 +655,6 @@ return plural;
   null,
   "Celkem"
  ],
- "Tower": [
-  null,
-  "Věž"
- ],
  "Try again": [
   null,
   "Zkusit znovu"
@@ -810,10 +670,6 @@ return plural;
  "Unexpected error": [
   null,
   "Neočekávaná chyba"
- ],
- "Unknown": [
-  null,
-  "Neznámé"
  ],
  "Unless Stopped": [
   null,

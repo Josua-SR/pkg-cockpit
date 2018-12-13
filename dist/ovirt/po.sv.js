@@ -139,17 +139,9 @@ return plural;
   null,
   "Buss"
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Åtgärden ÄNDRA NÄTVERKSTILLSTÅND misslyckades"
- ],
  "CPU Type:": [
   null,
   "CPU-typ:"
- ],
- "CREATE VM action failed": [
-  null,
-  "Åtgärden SKAPA VM misslyckades"
  ],
  "Cancel": [
   null,
@@ -331,10 +323,6 @@ return plural;
   null,
   "Formater"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "Åtgärden GET HYPERVISOR MAX VCPU misslyckades"
- ],
  "GiB": [
   null,
   "GiB"
@@ -363,10 +351,6 @@ return plural;
   null,
   "Värd till underhåll"
  ],
- "INSTALL VM action failed": [
-  null,
-  "Åtgärden INSTALL VM misslyckades"
- ],
  "Install": [
   null,
   "Installera"
@@ -386,10 +370,6 @@ return plural;
  "MAC Address": [
   null,
   "MAC-adress"
- ],
- "MIGRATE action failed": [
-  null,
-  "Åtgärden MIGRATE misslyckades"
  ],
  "Mac Address": [
   null,
@@ -563,17 +543,9 @@ return plural;
   null,
   "Föredraget antal uttag att exponera för gästen."
  ],
- "Preparing for Maintenance": [
-  null,
-  "Förbereder för underhåll"
- ],
  "Protocol": [
   null,
   "Protokoll"
- ],
- "REBOOT action failed": [
-  null,
-  "Åtgärden REBOOT misslyckades"
  ],
  "Readonly": [
   null,
@@ -611,14 +583,6 @@ return plural;
   null,
   "Kör sedan:"
  ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  "Åtgärden SET VCPU SETTINGS misslyckades"
- ],
- "SHUTDOWN action failed": [
-  null,
-  "Åtgärden SHUTDOWN misslyckades"
- ],
  "SPICE": [
   null,
   "SPICE"
@@ -634,14 +598,6 @@ return plural;
  "SPICE TLS Port:": [
   null,
   "SPICE TLS-port:"
- ],
- "START action failed": [
-  null,
-  "Åtgärden START misslyckades"
- ],
- "SUSPEND action failed": [
-  null,
-  "Åtgärden SUSPEND misslyckades"
  ],
  "Save": [
   null,
@@ -659,113 +615,97 @@ return plural;
   null,
   "Seriekonsol"
  ],
- "Session": [
-  null,
-  ""
- ],
  "Shut Down": [
   null,
-  ""
+  "Stäng av"
  ],
  "Size": [
   null,
-  ""
+  "Storlek"
  ],
  "Sockets": [
   null,
-  ""
+  "Uttag"
  ],
  "Source": [
   null,
-  ""
+  "Källa"
  ],
  "Start the VM to see disk statistics.": [
   null,
-  ""
+  "Starta VM:en för att se diskvärden"
  ],
  "State": [
   null,
-  ""
+  "Tillstånd"
  ],
  "Stateless": [
   null,
-  ""
+  "Tillståndslös"
  ],
  "Stateless:": [
   null,
-  ""
+  "Tillståndslös:"
  ],
  "Suspend": [
   null,
-  ""
+  "Vila"
  ],
  "Switch Host to Maintenance": [
   null,
-  ""
- ],
- "Switching host to maintenance mode failed. Received error: ": [
-  null,
-  ""
- ],
- "Switching host to maintenance mode in progress ...": [
-  null,
-  ""
- ],
- "System": [
-  null,
-  "System"
+  "Slå om värden till underhåll"
  ],
  "Target": [
   null,
-  ""
+  "Mål"
  ],
  "Template": [
   null,
-  ""
+  "Mall"
  ],
  "Templates": [
   null,
-  ""
+  "Mallar"
  ],
  "Templates of $0 cluster": [
   null,
-  ""
+  "Mallar över $0 kluster"
  ],
  "The VM crashed.": [
   null,
-  ""
+  "VM:en kraschade."
  ],
  "The VM is down.": [
   null,
-  ""
+  "VM:en är nere."
  ],
  "The VM is going down.": [
   null,
-  ""
+  "VM:en går ner."
  ],
  "The VM is idle.": [
   null,
-  ""
+  "VM:en är inaktiv."
  ],
  "The VM is in process of dying (shut down or crash is not completed).": [
   null,
-  ""
+  "VM:en är på gång att dö (en avstängning eller krasch är inte fullbordad)."
  ],
  "The VM is paused.": [
   null,
-  ""
+  "VM:en är pausad."
  ],
  "The VM is running and will be forced off before deletion.": [
   null,
-  ""
+  "VM:en kör och kommer tvingande stängas av före den tas bort."
  ],
  "The VM is running.": [
   null,
-  ""
+  "VM:en kör."
  ],
  "The VM is suspended by guest power management.": [
   null,
-  ""
+  "VM:en är i vila av gästens strömhantering."
  ],
  "The pool is empty": [
   null,
@@ -773,15 +713,15 @@ return plural;
  ],
  "This host is managed by a virtualization manager, so creation of new VMs from the host is not possible.": [
   null,
-  ""
+  "Denna värd hanteras av en virtualiseringshanterare, så att skapa nya VM:er av värden är inte möjligt."
  ],
  "This virtual machine is not managed by oVirt": [
   null,
-  ""
+  "Denna virtuella maskin hanteras inte av oVirt"
  ],
  "Threads per core": [
   null,
-  ""
+  "Trådar per kärna"
  ],
  "Type": [
   null,
@@ -816,38 +756,6 @@ return plural;
   ""
  ],
  "VDSM Service Management": [
-  null,
-  ""
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  ""
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  ""
- ],
- "VM FORCE OFF action failed": [
-  null,
-  ""
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  ""
- ],
- "VM REBOOT action failed": [
-  null,
-  ""
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  ""
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  ""
- ],
- "VM START action failed": [
   null,
   ""
  ],
@@ -891,31 +799,7 @@ return plural;
   null,
   ""
  ],
- "bridge": [
-  null,
-  ""
- ],
- "cdrom": [
-  null,
-  ""
- ],
- "connecting": [
-  null,
-  ""
- ],
  "cores": [
-  null,
-  ""
- ],
- "crashed": [
-  null,
-  ""
- ],
- "custom": [
-  null,
-  ""
- ],
- "direct": [
   null,
   ""
  ],
@@ -923,83 +807,11 @@ return plural;
   null,
   ""
  ],
- "disk": [
-  null,
-  ""
- ],
- "down": [
-  null,
-  ""
- ],
- "dying": [
-  null,
-  ""
- ],
  "enabled": [
   null,
   ""
  ],
- "error": [
-  null,
-  ""
- ],
- "ethernet": [
-  null,
-  ""
- ],
- "host": [
-  null,
-  ""
- ],
- "hostdev": [
-  null,
-  ""
- ],
- "idle": [
-  null,
-  ""
- ],
- "initializing": [
-  null,
-  ""
- ],
- "installation failed": [
-  null,
-  ""
- ],
- "installing OS": [
-  null,
-  ""
- ],
- "kdumping": [
-  null,
-  ""
- ],
- "maintenance": [
-  null,
-  ""
- ],
- "mcast": [
-  null,
-  ""
- ],
- "network": [
-  null,
-  ""
- ],
  "no": [
-  null,
-  ""
- ],
- "non operational": [
-  null,
-  ""
- ],
- "non responsive": [
-  null,
-  ""
- ],
- "oVirt": [
   null,
   ""
  ],
@@ -1023,35 +835,11 @@ return plural;
   null,
   ""
  ],
- "other": [
-  null,
-  ""
- ],
- "paused": [
-  null,
-  ""
- ],
- "pending approval": [
-  null,
-  ""
- ],
  "qcow2": [
   null,
   ""
  ],
  "raw": [
-  null,
-  ""
- ],
- "reboot": [
-  null,
-  ""
- ],
- "running": [
-  null,
-  ""
- ],
- "server": [
   null,
   ""
  ],
@@ -1063,19 +851,7 @@ return plural;
   null,
   ""
  ],
- "shut off": [
-  null,
-  ""
- ],
- "shutdown": [
-  null,
-  ""
- ],
  "sockets": [
-  null,
-  ""
- ],
- "suspended (PM)": [
   null,
   ""
  ],
@@ -1083,23 +859,7 @@ return plural;
   null,
   ""
  ],
- "udp": [
-  null,
-  ""
- ],
- "unassigned": [
-  null,
-  ""
- ],
  "undefined": [
-  null,
-  ""
- ],
- "up": [
-  null,
-  ""
- ],
- "user": [
   null,
   ""
  ],
@@ -1116,10 +876,6 @@ return plural;
   ""
  ],
  "vCPUs:": [
-  null,
-  ""
- ],
- "vhostuser": [
   null,
   ""
  ],

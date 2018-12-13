@@ -69,39 +69,31 @@ return plural;
  },
  " (shared with the OS)": [
   null,
-  ""
+  " (совместно с ОС)"
  ],
  "$0 shares": [
   null,
-  ""
+  "$0 акции"
  ],
  "${hip}:${hport} -> $cport": [
   null,
-  ""
+  "${hip}:${hport} -> $cport"
  ],
  "Add Additional Storage": [
   null,
-  ""
+  "Добавить дополнительное хранилище"
  ],
  "Add Storage": [
   null,
-  ""
+  "Добавить хранилище"
  ],
  "Additional Storage": [
   null,
-  ""
- ],
- "Advanced TCA": [
-  null,
-  ""
- ],
- "All In One": [
-  null,
-  ""
+  "Дополнительное хранилище"
  ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
-  ""
+  "Все данные на выбранных дисках будут удалены, а диски будут добавлены в пул хранения."
  ],
  "Always": [
   null,
@@ -111,33 +103,21 @@ return plural;
   null,
   "Автор"
  ],
- "Blade": [
-  null,
-  ""
- ],
- "Blade enclosure": [
-  null,
-  ""
- ],
- "Bus Expansion Chassis": [
-  null,
-  ""
- ],
  "CPU": [
   null,
   "ЦП"
  ],
  "CPU priority": [
   null,
-  ""
+  "Приоритет процессора"
  ],
  "CPU usage:": [
   null,
-  ""
+  "Использование процессора:"
  ],
  "Can&rsquo;t connect to Docker": [
   null,
-  ""
+  "Can & rsquo; t подключиться к Docker"
  ],
  "Cancel": [
   null,
@@ -149,11 +129,11 @@ return plural;
  ],
  "Change resource limits": [
   null,
-  ""
+  "Изменение ограничений ресурсов"
  ],
  "Change resources limits": [
   null,
-  ""
+  "Изменение ограничений ресурсов"
  ],
  "Close": [
   null,
@@ -161,13 +141,13 @@ return plural;
  ],
  "Combined memory usage": [
   null,
-  ""
+  "Использование комбинированной памяти"
  ],
  "Combined usage of $0 CPU core": [
   "Combined usage of $0 CPU cores",
-  "",
-  "",
-  ""
+  "Комбинированное использование $0 Ядро процессора",
+  "Комбинированное использование $0 Процессорные ядра",
+  "Комбинированное использование $0 Процессорные ядра"
  ],
  "Command": [
   null,
@@ -175,11 +155,11 @@ return plural;
  ],
  "Command can't be empty": [
   null,
-  ""
+  "Команда не может быть пуста"
  ],
  "Command:": [
   null,
-  ""
+  "Команда:"
  ],
  "Commit": [
   null,
@@ -187,19 +167,15 @@ return plural;
  ],
  "Commit Image": [
   null,
-  ""
- ],
- "Compact PCI": [
-  null,
-  ""
+  "Commit Image"
  ],
  "Configure storage...": [
   null,
-  ""
+  "Настроить хранилище ..."
  ],
  "Connecting to Docker": [
   null,
-  ""
+  "Подключение к Docker"
  ],
  "Container": [
   null,
@@ -207,35 +183,31 @@ return plural;
  ],
  "Container Name": [
   null,
-  ""
+  "Название контейнера"
  ],
  "Container is currently marked as not running, but regular stopping failed.": [
   null,
-  ""
+  "Контейнер в настоящее время отмечен как не запущенный, но регулярная остановка не удалась."
  ],
  "Container is currently running.": [
   null,
-  ""
+  "Контейнер в настоящее время запущен."
  ],
  "Container:": [
   null,
-  ""
+  "Контейнер:"
  ],
  "Containers": [
   null,
   "Контейнеры"
  ],
- "Convertible": [
-  null,
-  ""
- ],
  "Could not add all disks": [
   null,
-  ""
+  "Не удалось добавить все диски"
  ],
  "Could not reset the storage pool": [
   null,
-  ""
+  "Не удалось сбросить пул хранения"
  ],
  "Created": [
   null,
@@ -255,15 +227,7 @@ return plural;
  ],
  "Deleting a container will erase all data in it.": [
   null,
-  ""
- ],
- "Desktop": [
-  null,
-  "Рабочий стол"
- ],
- "Detachable": [
-  null,
-  ""
+  "Удаление контейнера приведет к удалению всех данных."
  ],
  "Details": [
   null,
@@ -271,11 +235,7 @@ return plural;
  ],
  "Docker is not installed or activated on the system": [
   null,
-  ""
- ],
- "Docking Station": [
-  null,
-  ""
+  "Докер не установлен или не активирован в системе"
  ],
  "Download": [
   null,
@@ -283,19 +243,15 @@ return plural;
  ],
  "Drive": [
   null,
-  ""
+  "Привод"
  ],
  "Duplicate alias": [
   null,
-  ""
+  "Дублировать псевдоним"
  ],
  "Duplicate port": [
   null,
-  ""
- ],
- "Embedded PC": [
-  null,
-  ""
+  "Дублированный порт"
  ],
  "Entrypoint": [
   null,
@@ -307,39 +263,35 @@ return plural;
  ],
  "Erase containers and reset storage pool": [
   null,
-  ""
+  "Удаление контейнеров и сброс пула хранения"
  ],
  "Error message from Docker:": [
   null,
-  ""
+  "Сообщение об ошибке от Docker:"
  ],
  "Everything": [
   null,
-  ""
+  "Все"
  ],
  "Exited $ExitCode": [
   null,
-  ""
- ],
- "Expansion Chassis": [
-  null,
-  ""
+  "возбужденном $ExitCode"
  ],
  "Expose container ports": [
   null,
-  ""
+  "Экспортировать порты контейнера"
  ],
  "Failed to start Docker: $0": [
   null,
-  ""
+  "Не удалось запустить Docker: $0"
  ],
  "Failed to stop Docker scope: $0": [
   null,
-  ""
+  "Не удалось остановить область Docker: $0"
  ],
  "Force Delete": [
   null,
-  ""
+  "Удалить силу"
  ],
  "Free": [
   null,
@@ -351,11 +303,7 @@ return plural;
  ],
  "Get new image": [
   null,
-  ""
- ],
- "Hand Held": [
-  null,
-  ""
+  "Получить новое изображение"
  ],
  "Hard Disk": [
   null,
@@ -367,7 +315,7 @@ return plural;
  ],
  "IP Prefix Length:": [
   null,
-  ""
+  "IP Префикс Длина:"
  ],
  "Id": [
   null,
@@ -375,7 +323,7 @@ return plural;
  ],
  "Id:": [
   null,
-  ""
+  "Я бы:"
  ],
  "Image": [
   null,
@@ -383,15 +331,15 @@ return plural;
  ],
  "Image $0": [
   null,
-  ""
+  "Образ $0"
  ],
  "Image Search": [
   null,
-  ""
+  "Поиск изображений"
  ],
  "Image:": [
   null,
-  ""
+  "Образ:"
  ],
  "Images": [
   null,
@@ -399,55 +347,35 @@ return plural;
  ],
  "Images and running containers": [
   null,
-  ""
+  "Изображения и беговые контейнеры"
  ],
  "Information about the Docker storage pool is not available.": [
   null,
-  ""
+  "Информация о пуле хранения Docker недоступна."
  ],
  "Invalid port": [
   null,
-  ""
- ],
- "IoT Gateway": [
-  null,
-  ""
- ],
- "Laptop": [
-  null,
-  ""
+  "Недопустимый порт"
  ],
  "Link to another container": [
   null,
-  ""
+  "Ссылка на другой контейнер"
  ],
  "Links": [
   null,
-  ""
+  "связи"
  ],
  "Links:": [
   null,
-  ""
+  "Ссылки:"
  ],
  "Local Disks": [
   null,
-  ""
- ],
- "Low Profile Desktop": [
-  null,
-  ""
- ],
- "Lunch Box": [
-  null,
-  ""
+  "Локальные диски"
  ],
  "MAC Address:": [
   null,
-  ""
- ],
- "Main Server Chassis": [
-  null,
-  ""
+  "MAC-адрес:"
  ],
  "Memory": [
   null,
@@ -455,31 +383,19 @@ return plural;
  ],
  "Memory limit": [
   null,
-  ""
+  "Предел памяти"
  ],
  "Memory usage:": [
   null,
-  ""
+  "Использование памяти:"
  ],
  "MiB": [
   null,
   "МиБ"
  ],
- "Mini PC": [
-  null,
-  ""
- ],
- "Mini Tower": [
-  null,
-  ""
- ],
  "Mount container volumes": [
   null,
-  ""
- ],
- "Multi-system Chassis": [
-  null,
-  ""
+  "Объемы контейнеров"
  ],
  "Name": [
   null,
@@ -491,55 +407,51 @@ return plural;
  ],
  "No additional local storage found.": [
   null,
-  ""
+  "Никакого дополнительного локального хранилища не найдено."
  ],
  "No alias specified": [
   null,
-  ""
+  "Не указан псевдоним"
  ],
  "No container specified": [
   null,
-  ""
+  "Контейнер не указан"
  ],
  "No containers": [
   null,
-  ""
+  "Нет контейнеров"
  ],
  "No containers that match the current filter": [
   null,
-  ""
+  "Нет контейнеров, соответствующих текущему фильтру"
  ],
  "No images": [
   null,
-  ""
+  "Нет изображений"
  ],
  "No images that match the current filter": [
   null,
-  ""
+  "Нет изображений, соответствующих текущему фильтру"
  ],
  "No results for $0": [
   null,
-  ""
+  "Нет результатов для $0"
  ],
  "No running containers": [
   null,
-  ""
+  "Нет запущенных контейнеров"
  ],
  "No running containers that match the current filter": [
   null,
-  ""
+  "Нет запущенных контейнеров, соответствующих текущему фильтру"
  ],
  "Not authorized to access Docker on this system": [
   null,
-  ""
+  "Не разрешено доступ к Докеру в этой системе"
  ],
  "Not found": [
   null,
-  ""
- ],
- "Notebook": [
-  null,
-  ""
+  "Не найдено"
  ],
  "Off": [
   null,
@@ -555,45 +467,29 @@ return plural;
  ],
  "On Failure": [
   null,
-  ""
+  "О неисправности"
  ],
  "On failure, retry $0 time": [
   "On failure, retry $0 times",
-  "",
-  "",
-  ""
- ],
- "Other": [
-  null,
-  "Другие"
+  "При сбое повторите попытку $0 время",
+  "При сбое повторите попытку $0 раз",
+  "При сбое повторите попытку $0 раз"
  ],
  "Overview": [
   null,
   "Обзор"
  ],
- "Peripheral Chassis": [
-  null,
-  ""
- ],
- "Pizza Box": [
-  null,
-  ""
- ],
  "Please confirm deletion of $0": [
   null,
-  ""
+  "Пожалуйста, подтвердите удаление $0"
  ],
  "Please confirm forced deletion of $0": [
   null,
-  ""
+  "Пожалуйста, подтвердите принудительное удаление $0"
  ],
  "Please try another term": [
   null,
-  ""
- ],
- "Portable": [
-  null,
-  ""
+  "Попробуйте другой термин"
  ],
  "Ports": [
   null,
@@ -601,27 +497,19 @@ return plural;
  ],
  "Ports:": [
   null,
-  ""
+  "Порты:"
  ],
  "Problems": [
   null,
   "Проблемы"
  ],
- "RAID Chassis": [
-  null,
-  ""
- ],
- "Rack Mount Chassis": [
-  null,
-  ""
- ],
  "ReadOnly": [
   null,
-  ""
+  "ReadOnly"
  ],
  "ReadWrite": [
   null,
-  ""
+  "Читай пиши"
  ],
  "Reboot": [
   null,
@@ -629,7 +517,7 @@ return plural;
  ],
  "Reformat and add disks": [
   null,
-  ""
+  "Переформатировать и добавить диски"
  ],
  "Repository": [
   null,
@@ -641,11 +529,11 @@ return plural;
  ],
  "Reset Storage Pool": [
   null,
-  ""
+  "Сброс пула хранения"
  ],
  "Resetting the storage pool will erase all containers and release disks in the pool.": [
   null,
-  ""
+  "Сброс пула хранения приведет к удалению всех контейнеров и выпуску дисков в пуле."
  ],
  "Restart": [
   null,
@@ -653,15 +541,15 @@ return plural;
  ],
  "Restart Policy": [
   null,
-  ""
+  "Политика перезагрузки"
  ],
  "Restart Policy:": [
   null,
-  ""
+  "Политика перезагрузки:"
  ],
  "Retries:": [
   null,
-  ""
+  "Повторы:"
  ],
  "Run": [
   null,
@@ -669,11 +557,7 @@ return plural;
  ],
  "Run Image": [
   null,
-  ""
- ],
- "Sealed-case PC": [
-  null,
-  ""
+  "Запустить изображение"
  ],
  "Security": [
   null,
@@ -681,15 +565,15 @@ return plural;
  ],
  "Set container environment variables": [
   null,
-  ""
+  "Установка переменных среды контейнера"
  ],
  "Show all containers": [
   null,
-  ""
+  "Показать все контейнеры"
  ],
  "Show all images": [
   null,
-  ""
+  "Показать все изображения"
  ],
  "Size": [
   null,
@@ -697,11 +581,7 @@ return plural;
  ],
  "Solid-State Disk": [
   null,
-  ""
- ],
- "Space-saving Computer": [
-  null,
-  ""
+  "Твердотельный диск"
  ],
  "Start": [
   null,
@@ -709,7 +589,7 @@ return plural;
  ],
  "Start Docker": [
   null,
-  ""
+  "Запустить Docker"
  ],
  "State": [
   null,
@@ -719,17 +599,13 @@ return plural;
   null,
   "Состояние:"
  ],
- "Stick PC": [
-  null,
-  ""
- ],
  "Stop": [
   null,
   "Остановить"
  ],
  "Stop and delete": [
   null,
-  ""
+  "Остановить и удалить"
  ],
  "Stopped": [
   null,
@@ -743,21 +619,9 @@ return plural;
   null,
   "Пул"
  ],
- "Sub Chassis": [
-  null,
-  ""
- ],
- "Sub Notebook": [
-  null,
-  ""
- ],
  "TCP": [
   null,
   "TCP"
- ],
- "Tablet": [
-  null,
-  "Планшет"
  ],
  "Tag": [
   null,
@@ -769,39 +633,35 @@ return plural;
  ],
  "The Docker storage pool cannot be managed on this system.": [
   null,
-  ""
+  "Пул хранения Docker нельзя управлять в этой системе."
  ],
  "The following containers depend on this image and will become unusable.": [
   null,
-  ""
+  "Следующие контейнеры зависят от этого изображения и станут непригодными для использования."
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,
-  ""
+  "Сканирование с $time ($type) не обнаружено уязвимостей."
  ],
  "The scan from $time ($type) was not successful.": [
   null,
-  ""
+  "Сканирование с $time ($type) не удалось."
  ],
  "This image does not exist.": [
   null,
-  ""
+  "Это изображение не существует."
  ],
  "Total": [
   null,
   "Всего"
  ],
- "Tower": [
-  null,
-  ""
- ],
  "Try again": [
   null,
-  ""
+  "Попробуйте снова"
  ],
  "Type to filter…": [
   null,
-  ""
+  "Тип фильтра ..."
  ],
  "UDP": [
   null,
@@ -811,17 +671,13 @@ return plural;
   null,
   "Непредвиденная ошибка"
  ],
- "Unknown": [
-  null,
-  "Неизвестно"
- ],
  "Unless Stopped": [
   null,
-  ""
+  "Если не остановлено"
  ],
  "Up since $0": [
   null,
-  ""
+  "С тех пор $0"
  ],
  "Used": [
   null,
@@ -829,7 +685,7 @@ return plural;
  ],
  "Used by Containers": [
   null,
-  ""
+  "Используется контейнерами"
  ],
  "Volumes": [
   null,
@@ -837,31 +693,31 @@ return plural;
  ],
  "Volumes:": [
   null,
-  ""
+  "Объемы:"
  ],
  "With terminal": [
   null,
-  ""
+  "С терминалом"
  ],
  "You don't have permission to manage the Docker storage pool.": [
   null,
-  ""
+  "У вас нет разрешения на управление пулом хранилища Docker."
  ],
  "[$0 bytes of binary data]": [
   null,
-  ""
+  "[$0 байты двоичных данных]"
  ],
  "[binary data]": [
   null,
-  ""
+  "[двоичные данные]"
  ],
  "[no data]": [
   null,
-  ""
+  "[нет данных]"
  ],
  "alias": [
   null,
-  ""
+  "псевдоним"
  ],
  "default": [
   null,
@@ -869,7 +725,7 @@ return plural;
  ],
  "key": [
   null,
-  ""
+  "ключ"
  ],
  "none": [
   null,
@@ -877,27 +733,27 @@ return plural;
  ],
  "search by name, namespace or description": [
   null,
-  ""
+  "поиск по имени, пространству имен или описанию"
  ],
  "select container": [
   null,
-  ""
+  "выбрать контейнер"
  ],
  "shares": [
   null,
-  ""
+  "акции"
  ],
  "to host path": [
   null,
-  ""
+  "путь хозяина"
  ],
  "to host port": [
   null,
-  ""
+  "для размещения порта"
  ],
  "undefined": [
   null,
-  ""
+  "не определено"
  ],
  "value": [
   null,

@@ -77,7 +77,7 @@ return plural;
  ],
  "Checking for new applications": [
   null,
-  ""
+  "檢查新的應用程序"
  ],
  "Close": [
   null,
@@ -89,7 +89,7 @@ return plural;
  ],
  "Go to Application": [
   null,
-  ""
+  "轉到應用程序"
  ],
  "Install": [
   null,
@@ -101,23 +101,19 @@ return plural;
  ],
  "No applications installed or available": [
   null,
-  ""
+  "沒有安裝或可用的應用程序"
  ],
  "No description provided.": [
   null,
-  ""
+  "沒有提供說明。"
  ],
  "No installation package found for this application.": [
   null,
-  ""
+  "找不到此應用程序的安裝包。"
  ],
  "Ok": [
   null,
   "確定"
- ],
- "PackageKit crashed": [
-  null,
-  ""
  ],
  "Remove": [
   null,
@@ -129,10 +125,10 @@ return plural;
  ],
  "Unknown Application": [
   null,
-  ""
+  "未知的申請"
  ],
  "Waiting for other programs to finish using the package manager...": [
   null,
-  ""
+  "等待其他程序完成使用包管理器..."
  ]
 }));

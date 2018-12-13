@@ -69,11 +69,7 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  ""
- ],
- "$0 vCPU Details": [
-  null,
-  ""
+  "$0 대부분의 운영 체제에서 사용할 수 있습니다. 설치하려면 GNOME 소프트웨어에서 검색하거나 다음을 실행하십시오."
  ],
  "Add": [
   null,
@@ -81,7 +77,7 @@ return plural;
  ],
  "Add Disk": [
   null,
-  ""
+  "디스크 추가"
  ],
  "Address": [
   null,
@@ -90,10 +86,6 @@ return plural;
  "Address:": [
   null,
   "주소:"
- ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  ""
  ],
  "Apply": [
   null,
@@ -105,11 +97,11 @@ return plural;
  ],
  "Automatically start libvirt on boot": [
   null,
-  ""
+  "부트시 자동으로 libvirt 시작"
  ],
  "Autostart:": [
   null,
-  ""
+  "자동 시작 :"
  ],
  "Available": [
   null,
@@ -117,19 +109,15 @@ return plural;
  ],
  "Boot Order:": [
   null,
-  ""
+  "부팅 순서 :"
  ],
  "Bus": [
   null,
   ""
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  ""
- ],
  "CPU Type:": [
   null,
-  ""
+  "CPU 유형 :"
  ],
  "Cancel": [
   null,
@@ -139,15 +127,11 @@ return plural;
   null,
   "용량"
  ],
- "Changes will apply on VM shutdown": [
+ "Changes will take effect after shutting down the VM": [
   null,
   ""
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
-  null,
-  ""
- ],
- "Confirm deletion of $0": [
   null,
   ""
  ],
@@ -191,11 +175,11 @@ return plural;
   null,
   ""
  ],
- "Create New VM": [
+ "Create Storage Pool": [
   null,
   ""
  ],
- "Create New Virtual Machine": [
+ "Create VM": [
   null,
   ""
  ],
@@ -231,11 +215,11 @@ return plural;
   null,
   ""
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
   ""
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
   ""
  ],
@@ -267,6 +251,10 @@ return plural;
   null,
   "파일 시스템"
  ],
+ "Filesystem Directory": [
+  null,
+  ""
+ ],
  "Force Restart": [
   null,
   ""
@@ -278,10 +266,6 @@ return plural;
  "Format": [
   null,
   "포멧"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  ""
  ],
  "GiB": [
   null,
@@ -299,7 +283,11 @@ return plural;
   null,
   "호스트"
  ],
- "INSTALL VM action failed": [
+ "Host Name": [
+  null,
+  "호스트명"
+ ],
+ "Host should not be empty": [
   null,
   ""
  ],
@@ -391,11 +379,15 @@ return plural;
   null,
   ""
  ],
+ "Network File System": [
+  null,
+  ""
+ ],
  "Network Type": [
   null,
   ""
  ],
- "Network settings failed to change with following error: ": [
+ "Network settings could not be saved": [
   null,
   ""
  ],
@@ -404,6 +396,10 @@ return plural;
   "네트워크"
  ],
  "New Volume Name": [
+  null,
+  ""
+ ],
+ "No Storage Volumes defined for this Storage Pool": [
   null,
   ""
  ],
@@ -431,6 +427,10 @@ return plural;
   null,
   ""
  ],
+ "No storage pool is defined on this host": [
+  null,
+  ""
+ ],
  "No virtual networks": [
   null,
   ""
@@ -446,6 +446,10 @@ return plural;
  "Overview": [
   null,
   "개요"
+ ],
+ "Path on host's filesystem": [
+  null,
+  ""
  ],
  "Path to ISO file on host's file system": [
   null,
@@ -487,6 +491,14 @@ return plural;
   null,
   "프로토콜"
  ],
+ "QEMU/KVM System connection": [
+  null,
+  ""
+ ],
+ "QEMU/KVM User connection": [
+  null,
+  ""
+ ],
  "Readonly": [
   null,
   "읽기 전용 "
@@ -506,14 +518,6 @@ return plural;
  "Run": [
   null,
   "실행"
- ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  ""
- ],
- "SET_VCPU_SETTINGS action failed": [
-  null,
-  ""
  ],
  "SPICE": [
   null,
@@ -547,10 +551,6 @@ return plural;
   null,
   ""
  ],
- "Session": [
-  null,
-  "세션"
- ],
  "Shut Down": [
   null,
   "종료"
@@ -567,7 +567,15 @@ return plural;
   null,
   "원본"
  ],
- "Source should start with http, ftp or nfs protocol": [
+ "Source Path": [
+  null,
+  ""
+ ],
+ "Source path should not be empty": [
+  null,
+  ""
+ ],
+ "Source should start with https, ftp or nfs protocol": [
   null,
   ""
  ],
@@ -575,13 +583,33 @@ return plural;
   null,
   ""
  ],
+ "Start pool when host boots": [
+  null,
+  ""
+ ],
  "Start the VM to see disk statistics.": [
+  null,
+  ""
+ ],
+ "Startup": [
   null,
   ""
  ],
  "State": [
   null,
   "상태"
+ ],
+ "Storage Pool Name": [
+  null,
+  ""
+ ],
+ "Storage Pool failed to be created": [
+  null,
+  ""
+ ],
+ "Storage Pools": [
+  null,
+  ""
  ],
  "Storage Size": [
   null,
@@ -591,13 +619,21 @@ return plural;
   null,
   ""
  ],
- "System": [
+ "Storage Volumes": [
   null,
-  "시스템 "
+  ""
  ],
  "Target": [
   null,
   "대상"
+ ],
+ "Target Path": [
+  null,
+  ""
+ ],
+ "Target path should not be empty": [
+  null,
+  ""
  ],
  "The VM crashed.": [
   null,
@@ -632,6 +668,10 @@ return plural;
   ""
  ],
  "The VM is suspended by guest power management.": [
+  null,
+  ""
+ ],
+ "The directory on the server being exported": [
   null,
   ""
  ],
@@ -683,51 +723,7 @@ return plural;
   null,
   "사용 중"
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  ""
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  ""
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  ""
- ],
- "VM DELETE action failed": [
-  null,
-  ""
- ],
- "VM DETACH_DISK action failed": [
-  null,
-  ""
- ],
- "VM FORCE OFF action failed": [
-  null,
-  ""
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  ""
- ],
- "VM REBOOT action failed": [
-  null,
-  ""
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  ""
- ],
- "VM SENDNMI action failed": [
-  null,
-  ""
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  ""
- ],
- "VM START action failed": [
+ "VCPU settings could not be saved": [
   null,
   ""
  ],
@@ -763,67 +759,11 @@ return plural;
   null,
   "볼륨"
  ],
- "bridge": [
+ "active": [
   null,
-  ""
+  "active"
  ],
- "cdrom": [
-  null,
-  ""
- ],
- "crashed": [
-  null,
-  ""
- ],
- "custom": [
-  null,
-  ""
- ],
- "direct": [
-  null,
-  ""
- ],
- "disabled": [
-  null,
-  "비활성화됨 "
- ],
- "disk": [
-  null,
-  "디스크"
- ],
- "down": [
-  null,
-  "아래로"
- ],
- "dying": [
-  null,
-  ""
- ],
- "enabled": [
-  null,
-  "활성화됨 "
- ],
- "ethernet": [
-  null,
-  ""
- ],
- "host": [
-  null,
-  "호스트"
- ],
- "hostdev": [
-  null,
-  ""
- ],
- "idle": [
-  null,
-  ""
- ],
- "mcast": [
-  null,
-  ""
- ],
- "network": [
+ "inactive": [
   null,
   ""
  ],
@@ -831,29 +771,13 @@ return plural;
   null,
   "아니요"
  ],
- "other": [
-  null,
-  ""
- ],
- "paused": [
-  null,
-  "일시 중지"
- ],
  "qcow2": [
   null,
-  ""
+  "qcow2"
  ],
  "raw": [
   null,
   "raw"
- ],
- "running": [
-  null,
-  "실행 중"
- ],
- "server": [
-  null,
-  ""
  ],
  "show less": [
   null,
@@ -863,37 +787,13 @@ return plural;
   null,
   ""
  ],
- "shut off": [
-  null,
-  ""
- ],
- "shutdown": [
-  null,
-  ""
- ],
- "suspended (PM)": [
-  null,
-  ""
- ],
- "udp": [
-  null,
-  "udp"
- ],
  "undefined": [
   null,
   ""
  ],
- "up": [
-  null,
-  "위로"
- ],
- "user": [
-  null,
-  "사용자 "
- ],
  "vCPU Count": [
   null,
-  ""
+  "vCPU 개수"
  ],
  "vCPU Maximum": [
   null,
@@ -901,11 +801,7 @@ return plural;
  ],
  "vCPUs:": [
   null,
-  ""
- ],
- "vhostuser": [
-  null,
-  ""
+  "vCPU:"
  ],
  "yes": [
   null,

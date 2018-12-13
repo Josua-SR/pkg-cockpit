@@ -115,10 +115,6 @@ return plural;
   null,
   "Magistrala"
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Działanie CHANGE NETWORK STATE się nie powiodło"
- ],
  "CPU Type:": [
   null,
   "Typ procesora:"
@@ -178,6 +174,10 @@ return plural;
  "Create New": [
   null,
   "Utwórz nowy"
+ ],
+ "Create Storage Pool": [
+  null,
+  "Utwórz pulę urządzeń do przechowywania danych"
  ],
  "Create VM": [
   null,
@@ -251,6 +251,10 @@ return plural;
   null,
   "System plików"
  ],
+ "Filesystem Directory": [
+  null,
+  "Katalog systemu plików"
+ ],
  "Force Restart": [
   null,
   "Wymuś ponowne uruchomienie"
@@ -262,10 +266,6 @@ return plural;
  "Format": [
   null,
   "Sformatuj"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "Działanie GET HYPERVISOR MAX VCPU się nie powiodło"
  ],
  "GiB": [
   null,
@@ -283,9 +283,13 @@ return plural;
   null,
   "Gospodarz"
  ],
- "INSTALL VM action failed": [
+ "Host Name": [
   null,
-  "Działanie INSTALL VM się nie powiodło"
+  "Nazwa komputera"
+ ],
+ "Host should not be empty": [
+  null,
+  "Gospodarz nie może być pusty"
  ],
  "Immediately Start VM": [
   null,
@@ -375,6 +379,10 @@ return plural;
   null,
   "Nazwa nie może składać się tylko z pustych znaków"
  ],
+ "Network File System": [
+  null,
+  "NFS"
+ ],
  "Network Type": [
   null,
   "Typ sieci"
@@ -438,6 +446,10 @@ return plural;
  "Overview": [
   null,
   "Przegląd"
+ ],
+ "Path on host's filesystem": [
+  null,
+  "Ścieżka w systemie plików gospodarza"
  ],
  "Path to ISO file on host's file system": [
   null,
@@ -539,10 +551,6 @@ return plural;
   null,
   "Konsola szeregowa"
  ],
- "Session": [
-  null,
-  "Sesja"
- ],
  "Shut Down": [
   null,
   "Wyłącz"
@@ -559,7 +567,15 @@ return plural;
   null,
   "Źródło"
  ],
- "Source should start with http, ftp or nfs protocol": [
+ "Source Path": [
+  null,
+  "Ścieżka źródłowa"
+ ],
+ "Source path should not be empty": [
+  null,
+  "Ścieżka źródłowa nie może być pusta"
+ ],
+ "Source should start with https, ftp or nfs protocol": [
   null,
   "Źródło musi zaczynać się od protokołu http, ftp lub nfs"
  ],
@@ -567,13 +583,29 @@ return plural;
   null,
   "Uruchom usługę libvirt"
  ],
+ "Start pool when host boots": [
+  null,
+  "Włączanie puli po uruchomieniu gospodarza"
+ ],
  "Start the VM to see disk statistics.": [
   null,
   "Należy uruchomić maszynę wirtualną, aby wyświetlić statystyki dysku."
  ],
+ "Startup": [
+  null,
+  "Uruchamianie"
+ ],
  "State": [
   null,
   "Stan"
+ ],
+ "Storage Pool Name": [
+  null,
+  "Nazwa puli urządzeń do przechowywania danych"
+ ],
+ "Storage Pool failed to be created": [
+  null,
+  "Utworzenie puli urządzeń do przechowywania danych się nie powiodło"
  ],
  "Storage Pools": [
   null,
@@ -591,13 +623,17 @@ return plural;
   null,
   "Woluminy urządzeń do przechowywania danych"
  ],
- "System": [
-  null,
-  "System"
- ],
  "Target": [
   null,
   "Cel"
+ ],
+ "Target Path": [
+  null,
+  "Ścieżka docelowa"
+ ],
+ "Target path should not be empty": [
+  null,
+  "Ścieżka docelowa nie może być pusta"
  ],
  "The VM crashed.": [
   null,
@@ -634,6 +670,10 @@ return plural;
  "The VM is suspended by guest power management.": [
   null,
   "Maszyna wirtualna jest uśpiona przez zarządzanie zasilaniem."
+ ],
+ "The directory on the server being exported": [
+  null,
+  "Eksportowany katalog na serwerze"
  ],
  "The pool is empty": [
   null,
@@ -687,54 +727,6 @@ return plural;
   null,
   "Nie można zapisać ustawień wirtualnego procesora"
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  "Działanie VM CHANGE_NETWORK_STATE się nie powiodło"
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  "Działanie VM DELETE (DESTROY) się nie powiodło"
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  "Działanie VM DELETE (UNDEFINE) się nie powiodło"
- ],
- "VM DELETE action failed": [
-  null,
-  "Działanie VM DELETE się nie powiodło"
- ],
- "VM DETACH_DISK action failed": [
-  null,
-  "Działanie VM DETACH_DISK się nie powiodło"
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "Działanie VM FORCE OFF się nie powiodło"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "Działanie VM FORCE REBOOT się nie powiodło"
- ],
- "VM REBOOT action failed": [
-  null,
-  "Działanie VM REBOOT się nie powiodło"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  "Działanie VM SEND niemaskowalnego przerwania się nie powiodło"
- ],
- "VM SENDNMI action failed": [
-  null,
-  "Działanie VM SENDNMI się nie powiodło"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "Działanie VM SHUT DOWN się nie powiodło"
- ],
- "VM START action failed": [
-  null,
-  "Działanie VM START się nie powiodło"
- ],
  "VNC": [
   null,
   "VNC"
@@ -771,85 +763,13 @@ return plural;
   null,
   "aktywne"
  ],
- "bridge": [
-  null,
-  "mostek"
- ],
- "cdrom": [
-  null,
-  "CD-ROM"
- ],
- "crashed": [
-  null,
-  "uległo awarii"
- ],
- "custom": [
-  null,
-  "niestandardowe"
- ],
- "direct": [
-  null,
-  "bezpośrednie"
- ],
- "disabled": [
-  null,
-  "wyłączone"
- ],
- "disk": [
-  null,
-  "dysk"
- ],
- "down": [
-  null,
-  "w dół"
- ],
- "dying": [
-  null,
-  "w trakcie umierania"
- ],
- "enabled": [
-  null,
-  "włączone"
- ],
- "ethernet": [
-  null,
-  "Ethernet"
- ],
- "host": [
-  null,
-  "gospodarz"
- ],
- "hostdev": [
-  null,
-  "urządzenie gospodarza"
- ],
- "idle": [
-  null,
-  "bezczynne"
- ],
  "inactive": [
   null,
   "nieaktywne"
  ],
- "mcast": [
-  null,
-  "multicast"
- ],
- "network": [
-  null,
-  "sieć"
- ],
  "no": [
   null,
   "nie"
- ],
- "other": [
-  null,
-  "inne"
- ],
- "paused": [
-  null,
-  "wstrzymane"
  ],
  "qcow2": [
   null,
@@ -859,14 +779,6 @@ return plural;
   null,
   "surowy"
  ],
- "running": [
-  null,
-  "działanie"
- ],
- "server": [
-  null,
-  "serwer"
- ],
  "show less": [
   null,
   "wyświetl mniej"
@@ -875,33 +787,9 @@ return plural;
   null,
   "wyświetl więcej"
  ],
- "shut off": [
-  null,
-  "wyłącz"
- ],
- "shutdown": [
-  null,
-  "wyłączenie"
- ],
- "suspended (PM)": [
-  null,
-  "uśpione (PM)"
- ],
- "udp": [
-  null,
-  "UDP"
- ],
  "undefined": [
   null,
   "nieokreślone"
- ],
- "up": [
-  null,
-  "w górę"
- ],
- "user": [
-  null,
-  "użytkownik"
  ],
  "vCPU Count": [
   null,
@@ -914,10 +802,6 @@ return plural;
  "vCPUs:": [
   null,
   "Wirtualne procesory:"
- ],
- "vhostuser": [
-  null,
-  "użytkownik gospodarza wirtualizacji"
  ],
  "yes": [
   null,

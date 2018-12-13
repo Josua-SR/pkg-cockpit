@@ -73,31 +73,31 @@ return plural;
  ],
  "Account Expiration": [
   null,
-  ""
+  "Scadenza account"
  ],
  "Account not available or cannot be edited.": [
   null,
-  ""
+  "Account non disponibile o non modificabile."
  ],
  "Accounts": [
   null,
-  ""
+  "Account"
  ],
  "Add key": [
   null,
-  ""
+  "Aggiungi chiave"
  ],
  "Add public key": [
   null,
-  ""
+  "Aggiungere la chiave pubblica"
  ],
  "Authorized Public SSH Keys": [
   null,
-  ""
+  "Chiavi SSH pubbliche autorizzate"
  ],
  "Back to Accounts": [
   null,
-  ""
+  "Torna agli account"
  ],
  "Cancel": [
   null,
@@ -117,11 +117,7 @@ return plural;
  ],
  "Confirm New Password": [
   null,
-  ""
- ],
- "Container Administrator": [
-  null,
-  ""
+  "Conferma nuova password"
  ],
  "Create": [
   null,
@@ -129,111 +125,59 @@ return plural;
  ],
  "Create New Account": [
   null,
-  ""
+  "Crea un nuovo account"
  ],
  "Delete": [
   null,
   "Cancella"
  ],
- "Delete $0": [
-  null,
-  ""
- ],
  "Delete Files": [
   null,
   "Cancella file"
  ],
- "Error": [
-  null,
-  "Errore"
- ],
- "Excellent password": [
-  null,
-  ""
- ],
- "Failed to change password": [
-  null,
-  ""
- ],
  "Failed to load authorized keys.": [
   null,
-  ""
+  "Impossibile caricare le chiavi autorizzate."
  ],
  "Force Change": [
   null,
-  ""
+  "Cambio di forza"
  ],
  "Force password change": [
   null,
-  ""
+  "Forzare la modifica della password"
  ],
  "Full Name": [
   null,
   "Nome completo"
  ],
- "Image Builder": [
-  null,
-  ""
- ],
- "Invalid expiration date": [
-  null,
-  ""
- ],
  "Invalid key": [
   null,
-  ""
- ],
- "Invalid number of days": [
-  null,
-  ""
+  "Chiave non valida"
  ],
  "Last Login": [
   null,
-  ""
+  "Ultimo accesso"
  ],
  "Local Accounts": [
   null,
-  ""
+  "Conti locali"
  ],
  "Lock Account": [
   null,
-  ""
- ],
- "Lock account on $0": [
-  null,
-  ""
- ],
- "Logged In": [
-  null,
-  ""
- ],
- "Never": [
-  null,
-  "Mai"
+  "Blocca account"
  ],
  "Never expire password": [
   null,
-  ""
+  "Non scadere mai la password"
  ],
  "Never lock account": [
   null,
-  ""
+  "Non chiudere mai il conto"
  ],
  "New Password": [
   null,
-  ""
- ],
- "New password was not accepted": [
-  null,
-  ""
- ],
- "No real name specified": [
-  null,
-  ""
- ],
- "No user name specified": [
-  null,
-  ""
+  "Nuova password"
  ],
  "Off": [
   null,
@@ -241,11 +185,7 @@ return plural;
  ],
  "Old Password": [
   null,
-  ""
- ],
- "Old password not accepted": [
-  null,
-  ""
+  "Vecchia password"
  ],
  "On": [
   null,
@@ -257,39 +197,11 @@ return plural;
  ],
  "Password Expiration": [
   null,
-  ""
- ],
- "Password is not acceptable": [
-  null,
-  ""
- ],
- "Password is too weak": [
-  null,
-  ""
- ],
- "Password must be changed": [
-  null,
-  ""
+  "Scadenza della password"
  ],
  "Paste the contents of your public SSH key file here": [
   null,
-  ""
- ],
- "Please specify an expiration date": [
-  null,
-  ""
- ],
- "Prompting via passwd timed out": [
-  null,
-  ""
- ],
- "Require password change every $0 days": [
-  null,
-  ""
- ],
- "Require password change on $0": [
-  null,
-  ""
+  "Incollare qui il contenuto del file della chiave SSH pubblica"
  ],
  "Reset": [
   null,
@@ -299,57 +211,21 @@ return plural;
   null,
   "Ruoli"
  ],
- "Server Administrator": [
-  null,
-  ""
- ],
  "Set": [
   null,
   "Set"
  ],
  "Set Password": [
   null,
-  ""
+  "Imposta password"
  ],
  "Terminate Session": [
   null,
-  ""
- ],
- "The account '$0' will be forced to change their password on next login": [
-  null,
-  ""
- ],
- "The passwords do not match": [
-  null,
-  ""
- ],
- "The user <b>$0</b> is not permitted to modify accounts": [
-  null,
-  ""
- ],
- "The user name can only consist of letters from a-z, digits, dots, dashes and underscores.": [
-  null,
-  ""
+  "Terminare la sessione"
  ],
  "There are no authorized public keys for this account.": [
   null,
-  ""
- ],
- "This user name already exists": [
-  null,
-  ""
- ],
- "Unable to delete root account": [
-  null,
-  ""
- ],
- "Unable to rename root account": [
-  null,
-  ""
- ],
- "Unexpected error": [
-  null,
-  ""
+  "Non ci sono chiavi pubbliche autorizzate per questo account."
  ],
  "Unnamed": [
   null,
@@ -357,18 +233,14 @@ return plural;
  ],
  "User Name": [
   null,
-  ""
+  "Nome utente"
  ],
  "You do not have permission to view the authorized public keys for this account.": [
   null,
-  ""
+  "Non hai il permesso di visualizzare le chiavi pubbliche autorizzate per questo account."
  ],
  "translatable": [
   null,
-  ""
- ],
- "page-title\u0004Accounts": [
-  null,
-  ""
+  "translatable"
  ]
 }));

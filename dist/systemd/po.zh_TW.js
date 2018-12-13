@@ -69,183 +69,179 @@ return plural;
  },
  "$0 is not available from any repository.": [
   null,
-  ""
+  "$0 在任何存儲庫中都不可用。"
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "$0 將會被安裝。"
  ],
  "1 Minute": [
   null,
-  ""
+  "1分鐘"
  ],
  "1 day": [
   null,
-  ""
+  "1天"
  ],
  "1 hour": [
   null,
-  ""
+  "1小時"
  ],
  "1 week": [
   null,
-  ""
+  "1週"
  ],
  "10th": [
   null,
-  ""
+  "第10"
  ],
  "11th": [
   null,
-  ""
+  "第11"
  ],
  "12th": [
   null,
-  ""
+  "第12"
  ],
  "13th": [
   null,
-  ""
+  "第13"
  ],
  "14th": [
   null,
-  ""
+  "第14"
  ],
  "15th": [
   null,
-  ""
+  "第15"
  ],
  "16th": [
   null,
-  ""
+  "第16"
  ],
  "17th": [
   null,
-  ""
+  "17"
  ],
  "18th": [
   null,
-  ""
+  "18"
  ],
  "19th": [
   null,
-  ""
+  "19"
  ],
  "1st": [
   null,
-  ""
+  "1"
  ],
  "20 Minutes": [
   null,
-  ""
+  "20分鐘"
  ],
  "20th": [
   null,
-  ""
+  "20"
  ],
  "21st": [
   null,
-  ""
+  "21"
  ],
  "22nd": [
   null,
-  ""
+  "第22"
  ],
  "23rd": [
   null,
-  ""
+  "第23"
  ],
  "24th": [
   null,
-  ""
+  "第24"
  ],
  "25th": [
   null,
-  ""
+  "第25"
  ],
  "26th": [
   null,
-  ""
+  "第26"
  ],
  "27th": [
   null,
-  ""
+  "第27"
  ],
  "28th": [
   null,
-  ""
+  "第28"
  ],
  "29th": [
   null,
-  ""
+  "第29"
  ],
  "2nd": [
   null,
-  ""
+  "第2"
  ],
  "30th": [
   null,
-  ""
+  "第30"
  ],
  "31st": [
   null,
-  ""
+  "第31"
  ],
  "3rd": [
   null,
-  ""
+  "第3"
  ],
  "40 Minutes": [
   null,
-  ""
+  "40分鐘"
  ],
  "4th": [
   null,
-  ""
+  "第四"
  ],
  "5 Minutes": [
   null,
-  ""
+  "5分鐘"
  ],
  "5 minutes": [
   null,
-  ""
+  "5分鐘"
  ],
  "5th": [
   null,
-  ""
+  "第5"
  ],
  "6 hours": [
   null,
-  ""
+  "6個小時"
  ],
  "60 Minutes": [
   null,
-  ""
+  "60分鐘"
  ],
  "6th": [
   null,
-  ""
+  "第6"
  ],
  "7th": [
   null,
-  ""
+  "7日"
  ],
  "8th": [
   null,
-  ""
+  "第八"
  ],
  "9th": [
   null,
-  ""
+  "9日"
  ],
  "Additional packages:": [
   null,
-  ""
- ],
- "Advanced TCA": [
-  null,
-  ""
+  "附加包："
  ],
  "After": [
   null,
@@ -253,15 +249,11 @@ return plural;
  ],
  "After system boot": [
   null,
-  ""
+  "系統啟動後"
  ],
  "Alert and above": [
   null,
-  ""
- ],
- "All In One": [
-  null,
-  ""
+  "警報及以上"
  ],
  "Asset Tag": [
   null,
@@ -269,15 +261,15 @@ return plural;
  ],
  "At specific time": [
   null,
-  ""
+  "在特定時間"
  ],
  "Automatically using NTP": [
   null,
-  ""
+  "自動使用NTP"
  ],
  "Automatically using specific NTP servers": [
   null,
-  ""
+  "自動使用特定的NTP服務器"
  ],
  "BIOS": [
   null,
@@ -285,23 +277,11 @@ return plural;
  ],
  "BIOS date": [
   null,
-  ""
+  "BIOS日期"
  ],
  "BIOS version": [
   null,
-  ""
- ],
- "Blade": [
-  null,
-  ""
- ],
- "Blade enclosure": [
-  null,
-  ""
- ],
- "Bus Expansion Chassis": [
-  null,
-  ""
+  "BIOS版本"
  ],
  "CPU": [
   null,
@@ -309,7 +289,7 @@ return plural;
  ],
  "Cached": [
   null,
-  ""
+  "緩存"
  ],
  "Cancel": [
   null,
@@ -321,15 +301,15 @@ return plural;
  ],
  "Change Host Name": [
   null,
-  ""
+  "更改主機名"
  ],
  "Change System Time": [
   null,
-  ""
+  "改變系統時間"
  ],
  "Checking installed software": [
   null,
-  ""
+  "檢查已安裝的軟件"
  ],
  "Class": [
   null,
@@ -343,61 +323,41 @@ return plural;
   null,
   "指令"
  ],
- "Compact PCI": [
-  null,
-  ""
- ],
  "Condition failed": [
   null,
-  ""
- ],
- "Convertible": [
-  null,
-  ""
+  "條件失敗"
  ],
  "Create Timer": [
   null,
-  ""
+  "創建計時器"
  ],
  "Create Timers": [
   null,
-  ""
+  "創建計時器"
  ],
  "Critical and above": [
   null,
-  ""
+  "關鍵及以上"
  ],
  "Current boot": [
   null,
-  ""
+  "當前啟動"
  ],
  "Debug and above": [
   null,
-  ""
+  "調試及以上"
  ],
  "Delay": [
   null,
-  ""
+  "延遲"
  ],
  "Description": [
   null,
   "說明"
  ],
- "Desktop": [
-  null,
-  "桌面環境"
- ],
- "Detachable": [
-  null,
-  ""
- ],
  "Disk I/O": [
   null,
   "磁碟 I/O"
- ],
- "Docking Station": [
-  null,
-  ""
  ],
  "Domain": [
   null,
@@ -405,19 +365,15 @@ return plural;
  ],
  "Don't Repeat": [
   null,
-  ""
+  "不要重複"
  ],
  "Downloading $0": [
   null,
-  ""
+  "下載 $0"
  ],
- "Embedded PC": [
+ "Enable stored metrics…": [
   null,
-  ""
- ],
- "Enable persistent metrics…": [
-  null,
-  ""
+  "啟用存儲的指標..."
  ],
  "Entry": [
   null,
@@ -429,15 +385,11 @@ return plural;
  ],
  "Error and above": [
   null,
-  ""
+  "錯誤及以上"
  ],
  "Everything": [
   null,
-  ""
- ],
- "Expansion Chassis": [
-  null,
-  ""
+  "一切"
  ],
  "Friday": [
   null,
@@ -449,15 +401,11 @@ return plural;
  ],
  "Go to": [
   null,
-  ""
+  "去"
  ],
  "Go to now": [
   null,
-  ""
- ],
- "Hand Held": [
-  null,
-  ""
+  "去吧"
  ],
  "Hardware": [
   null,
@@ -465,7 +413,7 @@ return plural;
  ],
  "Hardware Information": [
   null,
-  ""
+  "硬件信息"
  ],
  "Host Name": [
   null,
@@ -473,7 +421,7 @@ return plural;
  ],
  "Hour : Minute": [
   null,
-  ""
+  "小時：分鐘"
  ],
  "Hours": [
   null,
@@ -481,11 +429,11 @@ return plural;
  ],
  "I/O Wait": [
   null,
-  ""
+  "I / O等待"
  ],
  "Info and above": [
   null,
-  ""
+  "信息及以上"
  ],
  "Install": [
   null,
@@ -493,55 +441,47 @@ return plural;
  ],
  "Install Software": [
   null,
-  ""
+  "安裝軟件"
  ],
  "Installing $0": [
   null,
-  ""
+  "正在安裝 $0"
  ],
  "Instantiate": [
   null,
-  ""
+  "實例"
  ],
  "Invalid time zone": [
   null,
-  ""
- ],
- "IoT Gateway": [
-  null,
-  ""
+  "時區無效"
  ],
  "Journal": [
   null,
-  ""
+  "日誌"
  ],
  "Journal entry": [
   null,
-  ""
+  "期刊錄入"
  ],
  "Journal entry not found": [
   null,
-  ""
+  "期刊條目未找到"
  ],
  "Kernel": [
   null,
   "Kernel"
  ],
- "Laptop": [
-  null,
-  ""
- ],
  "Last 24 hours": [
   null,
-  ""
+  "過去24小時"
  ],
  "Last 7 days": [
   null,
-  ""
+  "過去7天"
  ],
  "Load earlier entries": [
   null,
-  ""
+  "加載較早的條目"
  ],
  "Loading...": [
   null,
@@ -549,35 +489,23 @@ return plural;
  ],
  "Log messages": [
   null,
-  ""
+  "記錄消息"
  ],
  "Logs": [
   null,
   "日誌"
  ],
- "Low Profile Desktop": [
-  null,
-  ""
- ],
- "Lunch Box": [
-  null,
-  ""
- ],
  "Machine ID": [
   null,
-  ""
+  "機器ID"
  ],
  "Machine SSH Key Fingerprints": [
   null,
-  ""
- ],
- "Main Server Chassis": [
-  null,
-  ""
+  "機器SSH密鑰指紋"
  ],
  "Manually": [
   null,
-  ""
+  "手動"
  ],
  "Memory": [
   null,
@@ -585,15 +513,7 @@ return plural;
  ],
  "Memory & Swap": [
   null,
-  ""
- ],
- "Mini PC": [
-  null,
-  ""
- ],
- "Mini Tower": [
-  null,
-  ""
+  "記憶和交換"
  ],
  "Minutes": [
   null,
@@ -607,17 +527,13 @@ return plural;
   null,
   "週一"
  ],
- "Multi-system Chassis": [
-  null,
-  ""
- ],
  "Name": [
   null,
   "名稱"
  ],
  "Network Traffic": [
   null,
-  ""
+  "網絡流量"
  ],
  "Nice": [
   null,
@@ -625,31 +541,27 @@ return plural;
  ],
  "No Delay": [
   null,
-  ""
+  "沒有延遲"
  ],
  "No host keys found.": [
   null,
-  ""
+  "找不到主機密鑰。"
  ],
  "Not authorized to upload-report": [
   null,
-  ""
+  "未授權上傳報告"
  ],
  "Not synchronized": [
   null,
-  ""
+  "不同步"
  ],
  "Note": [
   null,
   "備註"
  ],
- "Notebook": [
-  null,
-  ""
- ],
  "Notice and above": [
   null,
-  ""
+  "注意及以上"
  ],
  "Off": [
   null,
@@ -665,23 +577,15 @@ return plural;
  ],
  "Only Emergency": [
   null,
-  ""
+  "只有緊急情況"
  ],
  "Operating System": [
   null,
   "作業系統"
  ],
- "Other": [
-  null,
-  "其它"
- ],
  "PCI": [
   null,
   "PCI"
- ],
- "PackageKit crashed": [
-  null,
-  ""
  ],
  "Paths": [
   null,
@@ -689,47 +593,27 @@ return plural;
  ],
  "Performance Profile": [
   null,
-  ""
- ],
- "Peripheral Chassis": [
-  null,
-  ""
- ],
- "Pizza Box": [
-  null,
-  ""
- ],
- "Portable": [
-  null,
-  ""
+  "績效簡介"
  ],
  "Power Options": [
   null,
-  ""
+  "電源選項"
  ],
  "Pretty Host Name": [
   null,
-  ""
+  "漂亮的主機名"
  ],
  "Problem details": [
   null,
-  ""
+  "問題詳情"
  ],
  "Problem info": [
   null,
-  ""
- ],
- "RAID Chassis": [
-  null,
-  ""
- ],
- "Rack Mount Chassis": [
-  null,
-  ""
+  "問題信息"
  ],
  "Real Host Name": [
   null,
-  ""
+  "真實主機名"
  ],
  "Reboot": [
   null,
@@ -741,31 +625,31 @@ return plural;
  ],
  "Removals:": [
   null,
-  ""
+  "清除："
  ],
  "Removing $0": [
   null,
-  ""
+  "刪除 $0"
  ],
  "Repeat Daily": [
   null,
-  ""
+  "每日重複"
  ],
  "Repeat Hourly": [
   null,
-  ""
+  "每小時重複一次"
  ],
  "Repeat Monthly": [
   null,
-  ""
+  "重複每月"
  ],
  "Repeat Weekly": [
   null,
-  ""
+  "重複每週"
  ],
  "Repeat Yearly": [
   null,
-  ""
+  "每年重複一次"
  ],
  "Report": [
   null,
@@ -773,15 +657,15 @@ return plural;
  ],
  "Reported": [
   null,
-  ""
+  "報導"
  ],
  "Reporter 'reporter-ureport' not found.": [
   null,
-  ""
+  "記者'記者 - 尿道'未找到。"
  ],
  "Reporting was unsucessful. Try running `reporter-ureport -d ": [
   null,
-  ""
+  "報告不成功。嘗試運行`reporter-ureport -d "
  ],
  "Reset": [
   null,
@@ -803,25 +687,21 @@ return plural;
   null,
   "儲存"
  ],
- "Sealed-case PC": [
-  null,
-  ""
- ],
  "Seconds": [
   null,
   "秒"
  ],
  "Secure Shell Keys": [
   null,
-  ""
+  "安全外殼密鑰"
  ],
  "Service Logs": [
   null,
-  ""
+  "服務日誌"
  ],
  "Service name": [
   null,
-  ""
+  "服務名稱"
  ],
  "Services": [
   null,
@@ -829,7 +709,7 @@ return plural;
  ],
  "Set Time": [
   null,
-  ""
+  "設置時間"
  ],
  "Severity": [
   null,
@@ -837,7 +717,7 @@ return plural;
  ],
  "Show fingerprints": [
   null,
-  ""
+  "顯示指紋"
  ],
  "Shut Down": [
   null,
@@ -845,35 +725,19 @@ return plural;
  ],
  "Slot": [
   null,
-  ""
+  "插槽"
  ],
  "Sockets": [
   null,
   "插槽"
  ],
- "Space-saving Computer": [
-  null,
-  ""
- ],
  "Specific Time": [
   null,
-  ""
+  "特定的時間"
  ],
- "Stick PC": [
+ "Store metrics": [
   null,
-  ""
- ],
- "Store Performance Data": [
-  null,
-  ""
- ],
- "Sub Chassis": [
-  null,
-  ""
- ],
- "Sub Notebook": [
-  null,
-  ""
+  "存儲指標"
  ],
  "Sunday": [
   null,
@@ -881,15 +745,15 @@ return plural;
  ],
  "Swap Used": [
   null,
-  ""
+  "交換使用"
  ],
  "Synchronized": [
   null,
-  ""
+  "同步"
  ],
  "Synchronized with {{Server}}": [
   null,
-  ""
+  "與...同步 {{Server}}"
  ],
  "System": [
   null,
@@ -901,19 +765,15 @@ return plural;
  ],
  "System Services": [
   null,
-  ""
+  "系統服務"
  ],
  "System Time": [
   null,
-  ""
- ],
- "Tablet": [
-  null,
-  "面板"
+  "系統時間"
  ],
  "Targets": [
   null,
-  ""
+  "目標"
  ],
  "Terminal": [
   null,
@@ -921,7 +781,7 @@ return plural;
  ],
  "This unit is not designed to be enabled explicitly.": [
   null,
-  ""
+  "此單元未設計為顯式啟用。"
  ],
  "Thursday": [
   null,
@@ -933,19 +793,15 @@ return plural;
  ],
  "Timers": [
   null,
-  ""
+  "計時器"
  ],
  "Total size: $0": [
   null,
-  ""
- ],
- "Tower": [
-  null,
-  ""
+  "總大小： $0"
  ],
  "Trying to synchronize with {{Server}}": [
   null,
-  ""
+  "試圖與...同步 {{Server}}"
  ],
  "Tuesday": [
   null,
@@ -954,10 +810,6 @@ return plural;
  "Type": [
   null,
   "類型"
- ],
- "Unknown": [
-  null,
-  "不明"
  ],
  "Used": [
   null,
@@ -977,11 +829,11 @@ return plural;
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "等待其他軟件管理操作完成"
  ],
  "Warning and above": [
   null,
-  ""
+  "警告及以上"
  ],
  "Wednesday": [
   null,
@@ -989,18 +841,18 @@ return plural;
  ],
  "Weeks": [
   null,
-  ""
+  "週"
  ],
  "[$0 bytes of binary data]": [
   null,
-  ""
+  "[$0 二進制數據的字節]"
  ],
  "[binary data]": [
   null,
-  ""
+  "[二進制數據]"
  ],
  "[no data]": [
   null,
-  ""
+  "[沒有數據]"
  ]
 }));

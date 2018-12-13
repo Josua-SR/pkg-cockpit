@@ -77,7 +77,7 @@ return plural;
  ],
  "1 week": [
   null,
-  "1 주"
+  "1주"
  ],
  "5 minutes": [
   null,
@@ -97,19 +97,11 @@ return plural;
  ],
  "Add Machine to Dashboard": [
   null,
-  ""
+  "대시보드에 시스템 추가 "
  ],
  "Address": [
   null,
   "주소"
- ],
- "Advanced TCA": [
-  null,
-  ""
- ],
- "All In One": [
-  null,
-  ""
  ],
  "Authentication": [
   null,
@@ -117,25 +109,13 @@ return plural;
  ],
  "Authentication Failed": [
   null,
-  ""
+  "인증 실패"
  ],
  "Available": [
   null,
   "사용 가능"
  ],
  "Avatar": [
-  null,
-  ""
- ],
- "Blade": [
-  null,
-  ""
- ],
- "Blade enclosure": [
-  null,
-  ""
- ],
- "Bus Expansion Chassis": [
   null,
   ""
  ],
@@ -187,19 +167,11 @@ return plural;
   null,
   "색"
  ],
- "Compact PCI": [
-  null,
-  ""
- ],
  "Connect": [
   null,
   "연결"
  ],
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
-  null,
-  ""
- ],
- "Convertible": [
   null,
   ""
  ],
@@ -211,27 +183,11 @@ return plural;
   null,
   "대시보드"
  ],
- "Desktop": [
-  null,
-  "데스크탑"
- ],
- "Detachable": [
-  null,
-  ""
- ],
  "Disk I/O": [
   null,
   "디스크 I/O"
  ],
- "Docking Station": [
-  null,
-  ""
- ],
  "Edit Server": [
-  null,
-  ""
- ],
- "Embedded PC": [
   null,
   ""
  ],
@@ -244,10 +200,6 @@ return plural;
   ""
  ],
  "Error loading users: {{perm_failed}}": [
-  null,
-  ""
- ],
- "Expansion Chassis": [
   null,
   ""
  ],
@@ -271,10 +223,6 @@ return plural;
   null,
   "지금 바로 가기"
  ],
- "Hand Held": [
-  null,
-  ""
- ],
  "Host Name": [
   null,
   "호스트명"
@@ -291,10 +239,6 @@ return plural;
   null,
   ""
  ],
- "IoT Gateway": [
-  null,
-  ""
- ],
  "Is sshd running on a different port?": [
   null,
   ""
@@ -304,10 +248,6 @@ return plural;
   ""
  ],
  "Kerberos Ticket": [
-  null,
-  ""
- ],
- "Laptop": [
   null,
   ""
  ],
@@ -335,33 +275,9 @@ return plural;
   null,
   "연결이 끓어졌습니다. 다시 시도 하는 중입니다."
  ],
- "Low Profile Desktop": [
-  null,
-  ""
- ],
- "Lunch Box": [
-  null,
-  ""
- ],
- "Main Server Chassis": [
-  null,
-  ""
- ],
  "Memory": [
   null,
   "메모리"
- ],
- "Mini PC": [
-  null,
-  ""
- ],
- "Mini Tower": [
-  null,
-  ""
- ],
- "Multi-system Chassis": [
-  null,
-  ""
  ],
  "Network": [
   null,
@@ -379,10 +295,6 @@ return plural;
   null,
   ""
  ],
- "Notebook": [
-  null,
-  ""
- ],
  "Off": [
   null,
   "비활성"
@@ -395,10 +307,6 @@ return plural;
   null,
   "활성"
  ],
- "Other": [
-  null,
-  "기타"
- ],
  "Password": [
   null,
   "암호"
@@ -407,21 +315,9 @@ return plural;
   null,
   ""
  ],
- "Peripheral Chassis": [
-  null,
-  ""
- ],
- "Pizza Box": [
-  null,
-  ""
- ],
  "Port": [
   null,
   "포트"
- ],
- "Portable": [
-  null,
-  ""
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -432,18 +328,6 @@ return plural;
   ""
  ],
  "Public Key": [
-  null,
-  ""
- ],
- "RAID Chassis": [
-  null,
-  ""
- ],
- "Rack Mount Chassis": [
-  null,
-  ""
- ],
- "Sealed-case PC": [
   null,
   ""
  ],
@@ -459,22 +343,6 @@ return plural;
   null,
   "설정"
  ],
- "Space-saving Computer": [
-  null,
-  ""
- ],
- "Stick PC": [
-  null,
-  ""
- ],
- "Sub Chassis": [
-  null,
-  ""
- ],
- "Sub Notebook": [
-  null,
-  ""
- ],
  "Synchronize": [
   null,
   "동기화 "
@@ -482,10 +350,6 @@ return plural;
  "Synchronize users": [
   null,
   ""
- ],
- "Tablet": [
-  null,
-  "타블렛"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -515,17 +379,9 @@ return plural;
   null,
   ""
  ],
- "Tower": [
-  null,
-  ""
- ],
  "Type a password": [
   null,
   ""
- ],
- "Unknown": [
-  null,
-  "알 수 없음"
  ],
  "Unknown Host Key": [
   null,
@@ -548,10 +404,6 @@ return plural;
   ""
  ],
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
-  null,
-  ""
- ],
- "You can remove the previously stored key by running the following command": [
   null,
   ""
  ]

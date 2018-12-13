@@ -199,10 +199,6 @@ return plural;
   null,
   "Uma senha do tempo"
  ],
- "PackageKit crashed": [
-  null,
-  "PackageKit caiu"
- ],
  "Removals:": [
   null,
   "Remoções:"

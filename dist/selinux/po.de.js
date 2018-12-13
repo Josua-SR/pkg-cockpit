@@ -69,16 +69,16 @@ return plural;
  },
  "$0 occurrence": [
   "$1 occurrences",
-  "",
-  ""
+  "$0 Auftreten",
+  "$1 Vorkommen"
  ],
  "Apply this solution": [
   null,
-  ""
+  "Wenden Sie diese Lösung an"
  ],
  "Applying solution...": [
   null,
-  ""
+  "Lösung anwenden ..."
  ],
  "Audit log": [
   null,
@@ -90,27 +90,27 @@ return plural;
  ],
  "Enforce policy:": [
   null,
-  ""
+  "Politik erzwingen:"
  ],
  "Error while deleting alert: $0": [
   null,
-  ""
+  "Fehler beim Löschen der Warnung: $0"
  ],
  "Error while setting SELinux mode: '$0'": [
   null,
-  ""
+  "Fehler beim Einstellen des SELinux-Modus: '$0'"
  ],
  "Failed to delete alert: $0": [
   null,
-  ""
+  "Fehler beim Löschen der Warnung: $0"
  ],
  "Install setroubleshoot-server to troubleshoot SELinux events.": [
   null,
-  ""
+  "Installieren Sie setroubleshoot-server, um SELinux-Ereignisse zu behandeln."
  ],
  "No SELinux alerts.": [
   null,
-  ""
+  "Keine SELinux-Alarme"
  ],
  "Not connected": [
   null,
@@ -118,11 +118,11 @@ return plural;
  ],
  "Occurred $0": [
   null,
-  ""
+  "Aufgetreten $0"
  ],
  "Occurred between $0 and $1": [
   null,
-  ""
+  "Zwischen aufgetreten $0 und $1"
  ],
  "Off": [
   null,
@@ -134,15 +134,15 @@ return plural;
  ],
  "SELinux Access Control Errors": [
   null,
-  ""
+  "SELinux-Zugriffssteuerungsfehler"
  ],
  "SELinux Policy": [
   null,
-  ""
+  "SELinux-Richtlinie"
  ],
  "SELinux Troubleshoot": [
   null,
-  ""
+  "SELinux-Problembehandlung"
  ],
  "SELinux is disabled on the system": [
   null,
@@ -182,15 +182,15 @@ return plural;
  ],
  "Unable to get alert details.": [
   null,
-  ""
+  "Alarmdetails können nicht abgerufen werden."
  ],
  "Unable to get alert: $0": [
   null,
-  ""
+  "Alarm kann nicht abgerufen werden: $0"
  ],
  "Unable to run fix: %0": [
   null,
-  ""
+  "Fix kann nicht ausgeführt werden: %0"
  ],
  "Unable to start setroubleshootd": [
   null,
@@ -198,7 +198,7 @@ return plural;
  ],
  "Waiting for details...": [
   null,
-  ""
+  "Warten auf Details ..."
  ],
  "solution details": [
   null,

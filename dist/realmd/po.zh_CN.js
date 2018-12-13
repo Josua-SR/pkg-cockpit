@@ -199,10 +199,6 @@ return plural;
   null,
   "一次性密码"
  ],
- "PackageKit crashed": [
-  null,
-  "PackageKit 已崩溃"
- ],
  "Removals:": [
   null,
   "移除"

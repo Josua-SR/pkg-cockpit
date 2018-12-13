@@ -69,7 +69,7 @@ return plural;
  },
  "$0 disk is missing": [
   "$0 disks are missing",
-  ""
+  "$0 磁盤丟失了"
  ],
  "Cancel": [
   null,
@@ -77,11 +77,11 @@ return plural;
  ],
  "Control": [
   null,
-  ""
+  "控制"
  ],
  "Delete '{{ name }}'": [
   null,
-  ""
+  "刪除'{{ name }}“"
  ],
  "Empty": [
   null,
@@ -101,11 +101,11 @@ return plural;
  ],
  "No matching files found": [
   null,
-  ""
+  "找不到匹配的文件"
  ],
  "Not Ready": [
   null,
-  ""
+  "沒有準備好"
  ],
  "Off": [
   null,
@@ -121,7 +121,7 @@ return plural;
  ],
  "Path to file": [
   null,
-  ""
+  "文件路徑"
  ],
  "Ready": [
   null,
@@ -129,7 +129,7 @@ return plural;
  ],
  "Too many files found": [
   null,
-  ""
+  "找到的文件太多"
  ],
  "Unavailable": [
   null,
@@ -141,15 +141,15 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "未定義"
  ],
  "disk-non-rotational\u0004$0 disk is missing": [
   "$0 disks are missing",
-  ""
+  "$0 磁盤丟失了"
  ],
  "key\u0004Control": [
   null,
-  ""
+  "控制"
  ],
  "verb\u0004Empty": [
   null,

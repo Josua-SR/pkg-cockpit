@@ -683,6 +683,10 @@ return plural;
   null,
   "空闲空间"
  ],
+ "Free up space in this group: Shrink or delete other logical volumes or add another physical volume.": [
+  null,
+  ""
+ ],
  "Go to now": [
   null,
   "转到现在"
@@ -907,6 +911,14 @@ return plural;
   null,
   "名称不能为空。"
  ],
+ "Name cannot be longer than $0 bytes": [
+  null,
+  ""
+ ],
+ "Name cannot be longer than $0 characters": [
+  null,
+  ""
+ ],
  "Name cannot be longer than 127 characters.": [
   null,
   "名称不能长于127个字符。"
@@ -991,6 +1003,10 @@ return plural;
   null,
   "没有创建的卷组"
  ],
+ "Not enough space to grow.": [
+  null,
+  ""
+ ],
  "Not found": [
   null,
   "未找到"
@@ -1038,10 +1054,6 @@ return plural;
  "Overwrite existing data with zeros": [
   null,
   "使用 0 覆盖已存在数据"
- ],
- "PackageKit crashed": [
-  null,
-  "PackageKit 已崩溃"
  ],
  "Partition": [
   null,

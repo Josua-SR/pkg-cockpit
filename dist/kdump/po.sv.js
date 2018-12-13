@@ -95,10 +95,6 @@ return plural;
   null,
   "Katalog"
  ],
- "Directory $0 isn't writable or doesn't exist.": [
-  null,
-  "Katalogen $0 är inte skrivbar eller finns inte."
- ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
   "Tjänsten kdump är inte installerad.  Se till att paketet kexec-tools är installerat."
@@ -177,47 +173,47 @@ return plural;
  ],
  "Server": [
   null,
-  ""
+  "Server"
  ],
  "Service has an error": [
   null,
-  ""
+  "Tjänsten har ett fel"
  ],
  "Service is running": [
   null,
-  ""
+  "Tjänster kör"
  ],
  "Service is starting": [
   null,
-  ""
+  "Tjänsten startar"
  ],
  "Service is stopped": [
   null,
-  ""
+  "Tjänsten är stoppad"
  ],
  "Service is stopping": [
   null,
-  ""
+  "Tjänsten stoppas"
  ],
  "Test Configuration": [
   null,
-  ""
+  "Testa konfigurationen"
  ],
  "Test is only available while the kdump service is running.": [
   null,
-  ""
+  "Testet är endast tillgängligt medans tjänsten kdump kör."
  ],
  "Test kdump settings": [
   null,
-  ""
+  "Testa kdump-inställningar"
  ],
  "This will test kdump settings by crashing the kernel and thereby the system. Depending on the settings, the system may not automatically reboot and the process may take a while.": [
   null,
-  ""
+  "Detta kommer testa kdump-inställningarna genom att krascha kärnan och därmed systemet.  Beroende på inställningarna kanske inte systemet kommer starta om automatiskt och processen kan ta en stund."
  ],
  "This will test the kdump configuration by crashing the kernel.": [
   null,
-  ""
+  "Detta kommer testa kdump-inställningarna genom att krascha kärnan."
  ],
  "Unable to apply settings: $0": [
   null,
@@ -235,19 +231,7 @@ return plural;
   null,
   ""
  ],
- "nfs dump target isn't formated as server:path": [
-  null,
-  ""
- ],
  "ssh key": [
-  null,
-  ""
- ],
- "ssh key isn't a path": [
-  null,
-  ""
- ],
- "ssh server is empty": [
   null,
   ""
  ],

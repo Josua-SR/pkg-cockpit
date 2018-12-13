@@ -69,15 +69,15 @@ return plural;
  },
  "$0 occurrence": [
   "$1 occurrences",
-  ""
+  "$0 발생 "
  ],
  "Apply this solution": [
   null,
-  ""
+  "솔루션 적용"
  ],
  "Applying solution...": [
   null,
-  ""
+  "솔루션 적용 중 ..."
  ],
  "Audit log": [
   null,

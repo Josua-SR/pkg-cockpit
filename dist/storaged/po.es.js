@@ -114,7 +114,7 @@ return plural;
  ],
  "$0 slots remain": [
   null,
-  ""
+  "$0 las ranuras permanecen"
  ],
  "$0 used of $1 ($2 saved)": [
   null,
@@ -258,7 +258,7 @@ return plural;
  ],
  "Address is not a valid URL": [
   null,
-  ""
+  "La dirección no es una URL válida"
  ],
  "Apply": [
   null,
@@ -562,11 +562,11 @@ return plural;
  ],
  "Edit Tang keyserver": [
   null,
-  ""
+  "Editar Tang keyserver"
  ],
  "Editing a key requires a free slot": [
   null,
-  ""
+  "Editar una clave requiere una ranura libre"
  ],
  "Ejecting $target": [
   null,
@@ -654,7 +654,7 @@ return plural;
  ],
  "Force remove passphrase in $0": [
   null,
-  ""
+  "Forzar la eliminación de la contraseña en $0"
  ],
  "Format": [
   null,
@@ -684,6 +684,10 @@ return plural;
   null,
   "Espacio Libre"
  ],
+ "Free up space in this group: Shrink or delete other logical volumes or add another physical volume.": [
+  null,
+  ""
+ ],
  "Go to now": [
   null,
   "Ir a ahora"
@@ -706,7 +710,7 @@ return plural;
  ],
  "If tang-show-keys is not available, run the following:": [
   null,
-  ""
+  "Si tang-show-keys no está disponible, ejecuta lo siguiente:"
  ],
  "In Sync": [
   null,
@@ -750,11 +754,11 @@ return plural;
  ],
  "Key slots with unknown types can not be edited here": [
   null,
-  ""
+  "Las ranuras clave con tipos desconocidos no se pueden editar aquí"
  ],
  "Key source": [
   null,
-  ""
+  "Fuente clave"
  ],
  "Keys": [
   null,
@@ -770,7 +774,7 @@ return plural;
  ],
  "Keyserver removal may prevent unlocking $0.": [
   null,
-  ""
+  "La eliminación de Keyserver puede evitar el desbloqueo $0."
  ],
  "Local Mount Point": [
   null,
@@ -806,11 +810,11 @@ return plural;
  ],
  "Make sure the key hash from the Tang server matches:": [
   null,
-  ""
+  "Asegúrese de que la clave hash del servidor Tang coincida:"
  ],
  "Manually check with SSH: ": [
   null,
-  ""
+  "Compruebe manualmente con SSH: "
  ],
  "Marking $target as faulty": [
   null,
@@ -908,6 +912,14 @@ return plural;
   null,
   "El nombre no puede estar vacío."
  ],
+ "Name cannot be longer than $0 bytes": [
+  null,
+  ""
+ ],
+ "Name cannot be longer than $0 characters": [
+  null,
+  ""
+ ],
  "Name cannot be longer than 127 characters.": [
   null,
   "El nombre no puede superar los 127 caracteres."
@@ -946,7 +958,7 @@ return plural;
  ],
  "No available slots": [
   null,
-  ""
+  "No hay ranuras disponibles"
  ],
  "No disks are available.": [
   null,
@@ -958,7 +970,7 @@ return plural;
  ],
  "No free key slots": [
   null,
-  ""
+  "No hay ranuras clave gratis"
  ],
  "No free space": [
   null,
@@ -970,7 +982,7 @@ return plural;
  ],
  "No keys added": [
   null,
-  ""
+  "Sin llaves añadidas"
  ],
  "No media inserted": [
   null,
@@ -991,6 +1003,10 @@ return plural;
  "No volume groups created": [
   null,
   "No hay grupos de volumen creados"
+ ],
+ "Not enough space to grow.": [
+  null,
+  ""
  ],
  "Not found": [
   null,
@@ -1040,10 +1056,6 @@ return plural;
   null,
   "Sobreescribir los datos existentes con ceros"
  ],
- "PackageKit crashed": [
-  null,
-  "PackageKit roto"
- ],
  "Partition": [
   null,
   "Partición"
@@ -1066,7 +1078,7 @@ return plural;
  ],
  "Passphrase removal may prevent unlocking $0.": [
   null,
-  ""
+  "La eliminación de la frase de contraseña puede evitar el desbloqueo $0."
  ],
  "Passphrases do not match": [
   null,
@@ -1246,7 +1258,7 @@ return plural;
  ],
  "Remove Tang keyserver": [
   null,
-  ""
+  "Eliminar Tang keyserver"
  ],
  "Remove device": [
   null,
@@ -1382,7 +1394,7 @@ return plural;
  ],
  "Slot $0": [
   null,
-  ""
+  "Espacio $0"
  ],
  "Spare": [
   null,
@@ -1450,7 +1462,7 @@ return plural;
  ],
  "Support is installed.": [
   null,
-  ""
+  "El soporte está instalado."
  ],
  "Swap": [
   null,
@@ -1462,7 +1474,7 @@ return plural;
  ],
  "Tang keyserver": [
   null,
-  ""
+  "Tang keyserver"
  ],
  "The \"storaged\" API is not available on this system.": [
   null,
@@ -1490,11 +1502,11 @@ return plural;
  ],
  "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
   null,
-  ""
+  "El sistema de archivos está en uso por sesiones de inicio de sesión y servicios del sistema. Procediendo detendrá estos."
  ],
  "The filesystem is in use by login sessions. Proceeding will stop these.": [
   null,
-  ""
+  "El sistema de archivos está en uso por sesiones de inicio de sesión. Procediendo detendrá estos."
  ],
  "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
@@ -1506,7 +1518,7 @@ return plural;
  ],
  "The last key slot can not be removed": [
   null,
-  ""
+  "La última ranura de la llave no se puede quitar"
  ],
  "The last physical volume of a volume group cannot be removed.": [
   null,
@@ -1574,7 +1586,7 @@ return plural;
  ],
  "Trust key": [
   null,
-  ""
+  "Clave de confianza"
  ],
  "Type": [
   null,
@@ -1730,7 +1742,7 @@ return plural;
  ],
  "What if tang-show-keys is not available?": [
   null,
-  ""
+  "¿Qué pasa si tang-show-keys no está disponible?"
  ],
  "Write-mostly": [
   null,
@@ -1766,7 +1778,7 @@ return plural;
  ],
  "key slot $0": [
   null,
-  ""
+  "ranura para llaves $0"
  ],
  "undefined": [
   null,

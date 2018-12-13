@@ -95,10 +95,6 @@ return plural;
   null,
   "디렉터리"
  ],
- "Directory $0 isn't writable or doesn't exist.": [
-  null,
-  ""
- ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
   ""
@@ -223,17 +219,13 @@ return plural;
   null,
   ""
  ],
- "Use the setting in /etc/kdump.conf": [
-  null,
-  ""
- ],
  "invalid: multiple targets defined": [
   null,
   ""
  ],
  "kdump status": [
   null,
-  ""
+  "kdump 상태"
  ],
  "locally in $0": [
   null,

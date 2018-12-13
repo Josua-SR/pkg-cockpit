@@ -69,11 +69,7 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  ""
- ],
- "$0 vCPU Details": [
-  null,
-  ""
+  "$0 доступен для большинства операционных систем. Чтобы установить его, выполните поиск в программном обеспечении GNOME или выполните следующие действия:"
  ],
  "Add": [
   null,
@@ -81,7 +77,7 @@ return plural;
  ],
  "Add Disk": [
   null,
-  ""
+  "Добавить диск"
  ],
  "Address": [
   null,
@@ -90,10 +86,6 @@ return plural;
  "Address:": [
   null,
   "Адрес:"
- ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  ""
  ],
  "Apply": [
   null,
@@ -105,11 +97,11 @@ return plural;
  ],
  "Automatically start libvirt on boot": [
   null,
-  ""
+  "Автоматически запускать libvirt при загрузке"
  ],
  "Autostart:": [
   null,
-  ""
+  "Автоматический старт:"
  ],
  "Available": [
   null,
@@ -117,19 +109,15 @@ return plural;
  ],
  "Boot Order:": [
   null,
-  ""
+  "Порядок загрузки:"
  ],
  "Bus": [
   null,
-  ""
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  ""
+  "автобус"
  ],
  "CPU Type:": [
   null,
-  ""
+  "Тип процессора:"
  ],
  "Cancel": [
   null,
@@ -139,33 +127,29 @@ return plural;
   null,
   "Объем"
  ],
- "Changes will apply on VM shutdown": [
+ "Changes will take effect after shutting down the VM": [
   null,
-  ""
+  "Изменения вступят в силу после выключения виртуальной машины"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  ""
- ],
- "Confirm deletion of $0": [
-  null,
-  ""
+  "Нажав «Launch Remote Viewer», вы загрузите файл .vv и запустите $0"
  ],
  "Connect with any $0 viewer application.": [
   null,
-  ""
+  "Подключитесь к любому $0 приложение для просмотра."
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  ""
+  "Подключайтесь к любому приложению SPICE или VNC."
  ],
  "Connecting": [
   null,
-  ""
+  "Подключение"
  ],
  "Connecting to Virtualization Service": [
   null,
-  ""
+  "Подключение к службе виртуализации"
  ],
  "Connection": [
   null,
@@ -173,11 +157,11 @@ return plural;
  ],
  "Console Type": [
   null,
-  ""
+  "Тип консоли"
  ],
  "Consoles": [
   null,
-  ""
+  "консоли"
  ],
  "Cores per socket": [
   null,
@@ -191,21 +175,21 @@ return plural;
   null,
   "Создать"
  ],
- "Create New VM": [
+ "Create Storage Pool": [
   null,
-  ""
+  "Создать пул хранения"
  ],
- "Create New Virtual Machine": [
+ "Create VM": [
   null,
-  ""
+  "Создать виртуальную машину"
  ],
  "Creation of vm $0 failed": [
   null,
-  ""
+  "Создание vm $0 не удалось"
  ],
  "Ctrl+Alt+Del": [
   null,
-  ""
+  "Ctrl + Alt + Del"
  ],
  "Delete": [
   null,
@@ -213,7 +197,7 @@ return plural;
  ],
  "Delete associated storage files:": [
   null,
-  ""
+  "Удаление связанных файлов хранения:"
  ],
  "Device": [
   null,
@@ -229,23 +213,23 @@ return plural;
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
-  ""
+  "Отключен от последовательной консоли. Нажмите кнопку «Повторное подключение»."
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
-  ""
+  "Не удалось подключить диск"
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
-  ""
+  "Не удалось создать диск"
  ],
  "Disks": [
   null,
-  ""
+  "Диски"
  ],
  "Download the MSI from $0": [
   null,
-  ""
+  "Загрузите MSI из $0"
  ],
  "Edit": [
   null,
@@ -253,11 +237,11 @@ return plural;
  ],
  "Emulated Machine:": [
   null,
-  ""
+  "Эмулированные машины:"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
-  ""
+  "Меньше, чем максимальное количество виртуальных процессоров должно быть включено."
  ],
  "File": [
   null,
@@ -267,21 +251,21 @@ return plural;
   null,
   "Файловая система"
  ],
+ "Filesystem Directory": [
+  null,
+  "Каталог файловой системы"
+ ],
  "Force Restart": [
   null,
-  ""
+  "Принудительный перезапуск"
  ],
  "Force Shut Down": [
   null,
-  ""
+  "Завершение работы"
  ],
  "Format": [
   null,
   "Формат"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  ""
  ],
  "GiB": [
   null,
@@ -289,23 +273,27 @@ return plural;
  ],
  "Graphics Console (VNC)": [
   null,
-  ""
+  "Графическая консоль (VNC)"
  ],
  "Graphics Console in Desktop Viewer": [
   null,
-  ""
+  "Графическая консоль в Desktop Viewer"
  ],
  "Host": [
   null,
   "Узел"
  ],
- "INSTALL VM action failed": [
+ "Host Name": [
   null,
-  ""
+  "Имя узла"
+ ],
+ "Host should not be empty": [
+  null,
+  "Хост не должен быть пустым"
  ],
  "Immediately Start VM": [
   null,
-  ""
+  "Немедленно запустите VM"
  ],
  "Install": [
   null,
@@ -313,23 +301,23 @@ return plural;
  ],
  "Installation Source": [
   null,
-  ""
+  "Источник установки"
  ],
  "Installation Source Type": [
   null,
-  ""
+  "Тип источника установки"
  ],
  "Installation Source should not be empty": [
   null,
-  ""
+  "Источник установки не должен быть пустым"
  ],
  "Invalid filename": [
   null,
-  ""
+  "Неверное имя файла"
  ],
  "Launch Remote Viewer": [
   null,
-  ""
+  "Запустить средство удаленного просмотра"
  ],
  "Loading ...": [
   null,
@@ -341,15 +329,15 @@ return plural;
  ],
  "Mac Address": [
   null,
-  ""
+  "MAC-адрес"
  ],
  "Manual Connection": [
   null,
-  ""
+  "Ручное подключение"
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
-  ""
+  "Максимальное количество виртуальных процессоров, выделенных для гостевой ОС, которое должно быть от 1 до $0"
  ],
  "Memory": [
   null,
@@ -357,7 +345,7 @@ return plural;
  ],
  "Memory should be positive number": [
   null,
-  ""
+  "Память должна быть положительной"
  ],
  "Memory:": [
   null,
@@ -373,11 +361,11 @@ return plural;
  ],
  "Model type": [
   null,
-  ""
+  "Тип модели"
  ],
  "More Information": [
   null,
-  ""
+  "Дополнительная информация"
  ],
  "Name": [
   null,
@@ -385,19 +373,23 @@ return plural;
  ],
  "Name should not be empty": [
   null,
-  ""
+  "Имя не должно быть пустым"
  ],
  "Name should not consist of empty characters only": [
   null,
-  ""
+  "Имя не должно состоять только из пустых символов"
+ ],
+ "Network File System": [
+  null,
+  "Сетевая файловая система"
  ],
  "Network Type": [
   null,
-  ""
+  "Тип сети"
  ],
- "Network settings failed to change with following error: ": [
+ "Network settings could not be saved": [
   null,
-  ""
+  "Сетевые настройки не могут быть сохранены"
  ],
  "Networks": [
   null,
@@ -405,39 +397,47 @@ return plural;
  ],
  "New Volume Name": [
   null,
-  ""
+  "Новое имя тома"
+ ],
+ "No Storage Volumes defined for this Storage Pool": [
+  null,
+  "Для этого пула хранения не определены тома хранения"
  ],
  "No VM is running or defined on this host": [
   null,
-  ""
+  "Никакая виртуальная машина не запущена или не определена на этом хосте"
  ],
  "No boot device found": [
   null,
-  ""
+  "Не найдено загрузочного устройства"
  ],
  "No console defined for this virtual machine.": [
   null,
-  ""
+  "Консоли не определены для этой виртуальной машины."
  ],
  "No disks defined for this VM": [
   null,
-  ""
+  "Диски, определенные для этой виртуальной машины"
  ],
  "No matching files found": [
   null,
-  ""
+  "Не найдено совпадающих файлов"
  ],
  "No network interfaces defined for this VM": [
   null,
-  ""
+  "Сетевые интерфейсы, определенные для этой виртуальной машины"
+ ],
+ "No storage pool is defined on this host": [
+  null,
+  "На этом хосте не определен пул хранения"
  ],
  "No virtual networks": [
   null,
-  ""
+  "Нет виртуальных сетей"
  ],
  "OS Vendor": [
   null,
-  ""
+  "Поставщик ОС"
  ],
  "Operating System": [
   null,
@@ -447,33 +447,37 @@ return plural;
   null,
   "Обзор"
  ],
+ "Path on host's filesystem": [
+  null,
+  "Путь в файловой системе хоста"
+ ],
  "Path to ISO file on host's file system": [
   null,
-  ""
+  "Путь к файлу ISO в файловой системе хоста"
  ],
  "Path to file": [
   null,
-  ""
+  "Путь к файлу"
  ],
  "Please enter new volume name": [
   null,
-  ""
+  "Введите новое имя тома"
  ],
  "Please enter new volume size": [
   null,
-  ""
+  "Введите новый размер тома"
  ],
  "Please start the virtual machine to access its console.": [
   null,
-  ""
+  "Пожалуйста, запустите виртуальную машину, чтобы получить доступ к ее консоли."
  ],
  "Plug": [
   null,
-  ""
+  "штепсель"
  ],
  "Pool": [
   null,
-  ""
+  "Пул"
  ],
  "Port": [
   null,
@@ -481,11 +485,19 @@ return plural;
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
-  ""
+  "Предпочтительное количество сокетов, которые выставляют гостю."
  ],
  "Protocol": [
   null,
   "Протокол"
+ ],
+ "QEMU/KVM System connection": [
+  null,
+  "QEMU / KVM Системное соединение"
+ ],
+ "QEMU/KVM User connection": [
+  null,
+  "QEMU / KVM Подключение пользователя"
  ],
  "Readonly": [
   null,
@@ -493,11 +505,11 @@ return plural;
  ],
  "Reconnect": [
   null,
-  ""
+  "Заново"
  ],
  "Remote URL": [
   null,
-  ""
+  "Удаленный URL"
  ],
  "Restart": [
   null,
@@ -507,29 +519,21 @@ return plural;
   null,
   "Запустить"
  ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  ""
- ],
- "SET_VCPU_SETTINGS action failed": [
-  null,
-  ""
- ],
  "SPICE": [
   null,
-  ""
+  "SPICE"
  ],
  "SPICE Address:": [
   null,
-  ""
+  "SPICE Адрес:"
  ],
  "SPICE Port:": [
   null,
-  ""
+  "Порт SPICE:"
  ],
  "SPICE TLS Port:": [
   null,
-  ""
+  "Порт SPICE TLS:"
  ],
  "Save": [
   null,
@@ -537,19 +541,15 @@ return plural;
  ],
  "Send Non-Maskable Interrupt": [
   null,
-  ""
+  "Отправить не-маскируемое прерывание"
  ],
  "Send key": [
   null,
-  ""
+  "Отправить ключ"
  ],
  "Serial Console": [
   null,
-  ""
- ],
- "Session": [
-  null,
-  "Сеанс"
+  "Серийная консоль"
  ],
  "Shut Down": [
   null,
@@ -567,85 +567,125 @@ return plural;
   null,
   "Источник"
  ],
- "Source should start with http, ftp or nfs protocol": [
+ "Source Path": [
   null,
-  ""
+  "Путь к источнику"
+ ],
+ "Source path should not be empty": [
+  null,
+  "Исходный путь не должен быть пустым"
+ ],
+ "Source should start with https, ftp or nfs protocol": [
+  null,
+  "Источник должен начинаться с протокола http, ftp или nfs"
  ],
  "Start libvirt": [
   null,
-  ""
+  "Начать libvirt"
+ ],
+ "Start pool when host boots": [
+  null,
+  "Запуск пула при загрузке хоста"
  ],
  "Start the VM to see disk statistics.": [
   null,
-  ""
+  "Запустите виртуальную машину, чтобы просмотреть статистику диска."
+ ],
+ "Startup": [
+  null,
+  "Запускать"
  ],
  "State": [
   null,
   "Состояние"
  ],
+ "Storage Pool Name": [
+  null,
+  "Имя пула хранения"
+ ],
+ "Storage Pool failed to be created": [
+  null,
+  "Не удалось создать пул хранения"
+ ],
+ "Storage Pools": [
+  null,
+  "Бассейны"
+ ],
  "Storage Size": [
   null,
-  ""
+  "Размер хранилища"
  ],
  "Storage Size should not be negative number": [
   null,
-  ""
+  "Размер хранилища не должен быть отрицательным числом"
  ],
- "System": [
+ "Storage Volumes": [
   null,
-  "Система"
+  "Объемы хранения"
  ],
  "Target": [
   null,
   "Целевой"
  ],
+ "Target Path": [
+  null,
+  "Целевой путь"
+ ],
+ "Target path should not be empty": [
+  null,
+  "Целевой путь не должен быть пустым"
+ ],
  "The VM crashed.": [
   null,
-  ""
+  "VM потерпела крах."
  ],
  "The VM is down.": [
   null,
-  ""
+  "VM отключена."
  ],
  "The VM is going down.": [
   null,
-  ""
+  "ВМ идет вниз."
  ],
  "The VM is idle.": [
   null,
-  ""
+  "VM бездействует."
  ],
  "The VM is in process of dying (shut down or crash is not completed).": [
   null,
-  ""
+  "VM находится в процессе умирания (закрытие или сбой не завершены)."
  ],
  "The VM is paused.": [
   null,
-  ""
+  "VM приостановлена."
  ],
  "The VM is running and will be forced off before deletion.": [
   null,
-  ""
+  "VM запускается и будет отключена перед удалением."
  ],
  "The VM is running.": [
   null,
-  ""
+  "VM запущена."
  ],
  "The VM is suspended by guest power management.": [
   null,
-  ""
+  "VM приостанавливается управлением гостевой системой."
+ ],
+ "The directory on the server being exported": [
+  null,
+  "Каталог на экспортируемом сервере"
  ],
  "The pool is empty": [
   null,
-  ""
+  "Пул пуст"
  ],
  "Threads per core": [
   null,
-  ""
+  "Потоков на ядро"
  ],
  "Too many files found": [
   null,
-  ""
+  "Слишком много файлов найдено"
  ],
  "Troubleshoot": [
   null,
@@ -661,15 +701,15 @@ return plural;
  ],
  "Unique name": [
   null,
-  ""
+  "Уникальное имя"
  ],
  "Unplug": [
   null,
-  ""
+  "Отключайте"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
-  ""
+  "Переход на более позднюю версию libvirt для просмотра статистики диска"
  ],
  "Usage": [
   null,
@@ -677,59 +717,15 @@ return plural;
  ],
  "Use Existing": [
   null,
-  ""
+  "Использовать существующие"
  ],
  "Used": [
   null,
   "Использовано"
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
+ "VCPU settings could not be saved": [
   null,
-  ""
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  ""
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  ""
- ],
- "VM DELETE action failed": [
-  null,
-  ""
- ],
- "VM DETACH_DISK action failed": [
-  null,
-  ""
- ],
- "VM FORCE OFF action failed": [
-  null,
-  ""
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  ""
- ],
- "VM REBOOT action failed": [
-  null,
-  ""
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  ""
- ],
- "VM SENDNMI action failed": [
-  null,
-  ""
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  ""
- ],
- "VM START action failed": [
-  null,
-  ""
+  "Не удалось сохранить настройки VCPU"
  ],
  "VNC": [
   null,
@@ -737,15 +733,15 @@ return plural;
  ],
  "VNC Address:": [
   null,
-  ""
+  "VNC Адрес:"
  ],
  "VNC Port:": [
   null,
-  ""
+  "Порт VNC:"
  ],
  "VNC TLS Port:": [
   null,
-  ""
+  "Порт VNC TLS:"
  ],
  "Virtual Machines": [
   null,
@@ -753,159 +749,59 @@ return plural;
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
-  ""
+  "Служба виртуализации (libvirt) не активна"
  ],
  "Virtualization Service is Available": [
   null,
-  ""
+  "Доступна служба виртуализации"
  ],
  "Volume": [
   null,
   "Громкость"
  ],
- "bridge": [
+ "active": [
   null,
-  ""
+  "активных"
  ],
- "cdrom": [
+ "inactive": [
   null,
-  ""
- ],
- "crashed": [
-  null,
-  ""
- ],
- "custom": [
-  null,
-  ""
- ],
- "direct": [
-  null,
-  ""
- ],
- "disabled": [
-  null,
-  "отключено"
- ],
- "disk": [
-  null,
-  "диск"
- ],
- "down": [
-  null,
-  "вниз"
- ],
- "dying": [
-  null,
-  ""
- ],
- "enabled": [
-  null,
-  "включено"
- ],
- "ethernet": [
-  null,
-  ""
- ],
- "host": [
-  null,
-  "узел"
- ],
- "hostdev": [
-  null,
-  ""
- ],
- "idle": [
-  null,
-  ""
- ],
- "mcast": [
-  null,
-  ""
- ],
- "network": [
-  null,
-  ""
+  "неактивный"
  ],
  "no": [
   null,
   "нет"
  ],
- "other": [
-  null,
-  ""
- ],
- "paused": [
-  null,
-  "приостановлено"
- ],
  "qcow2": [
   null,
-  ""
+  "qcow2"
  ],
  "raw": [
   null,
   "raw"
  ],
- "running": [
-  null,
-  "выполняется"
- ],
- "server": [
-  null,
-  ""
- ],
  "show less": [
   null,
-  ""
+  "показывай меньше"
  ],
  "show more": [
   null,
-  ""
- ],
- "shut off": [
-  null,
-  ""
- ],
- "shutdown": [
-  null,
-  ""
- ],
- "suspended (PM)": [
-  null,
-  ""
- ],
- "udp": [
-  null,
-  "udp"
+  "показать больше"
  ],
  "undefined": [
   null,
-  ""
- ],
- "up": [
-  null,
-  "вверх"
- ],
- "user": [
-  null,
-  "пользователь"
+  "не определено"
  ],
  "vCPU Count": [
   null,
-  ""
+  "счетчик vCPU"
  ],
  "vCPU Maximum": [
   null,
-  ""
+  "максимум vCPU"
  ],
  "vCPUs:": [
   null,
-  ""
- ],
- "vhostuser": [
-  null,
-  ""
+  "VCPU будут:"
  ],
  "yes": [
   null,

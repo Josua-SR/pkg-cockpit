@@ -115,10 +115,6 @@ return plural;
   null,
   "확인"
  ],
- "PackageKit crashed": [
-  null,
-  ""
- ],
  "Remove": [
   null,
   "제거 "

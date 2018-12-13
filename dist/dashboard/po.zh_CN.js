@@ -103,14 +103,6 @@ return plural;
   null,
   "地址"
  ],
- "Advanced TCA": [
-  null,
-  "高级 TCA"
- ],
- "All In One": [
-  null,
-  "所有"
- ],
  "Authentication": [
   null,
   "验证"
@@ -127,25 +119,9 @@ return plural;
   null,
   "头像"
  ],
- "Blade": [
-  null,
-  "刀片"
- ],
- "Blade enclosure": [
-  null,
-  "刀片机箱"
- ],
- "Bus Expansion Chassis": [
-  null,
-  "总线扩展机箱"
- ],
  "CPU": [
   null,
   "CPU"
- ],
- "Can't load image": [
-  null,
-  "无法加载镜像"
  ],
  "Cancel": [
   null,
@@ -173,7 +149,7 @@ return plural;
  ],
  "Cockpit was unable to log in to {{#strong}}{{host}}{{/strong}}. {{#can_sync}}You may want to try to {{#sync_link}}synchronize users{{/sync_link}}.{{/can_sync}} For more authentication options and troubleshooting support please upgrade cockpit-ws to a newer version.": [
   null,
-  "Cockpit 无法登录到 {{#strong}}{{host}}{{/strong}}。 您可以尝试使用 {{#can_sync}}对用户进行同步{{/sync_link}}。{{/can_sync}} 如需更多验证选项和排错支持，请把 cockpit-ws 更新到一个新版本。"
+  "Cockpit 无法登录到 {{#strong}}{{host}}{{/strong}}。 {{#can_sync}}您可以尝试使用 {{#sync_link}}对用户进行同步{{/sync_link}}。{{/can_sync}} 如需更多验证选项和排错支持，请把 cockpit-ws 更新到一个新版本。"
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}.": [
   null,
@@ -191,10 +167,6 @@ return plural;
   null,
   "颜色"
  ],
- "Compact PCI": [
-  null,
-  "紧凑型 PCI"
- ],
  "Connect": [
   null,
   "连接"
@@ -202,14 +174,6 @@ return plural;
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
   "不支持同时连接到超过 {{ limit }} 主机。"
- ],
- "Connection Error": [
-  null,
-  "连接错误"
- ],
- "Convertible": [
-  null,
-  "可转换"
  ],
  "Could not contact {{host}}": [
   null,
@@ -219,29 +183,13 @@ return plural;
   null,
   "仪表板"
  ],
- "Desktop": [
-  null,
-  "桌面"
- ],
- "Detachable": [
-  null,
-  "可拆开"
- ],
  "Disk I/O": [
   null,
   "磁盘 I/O"
  ],
- "Docking Station": [
-  null,
-  "Docking Station"
- ],
  "Edit Server": [
   null,
   "编辑服务器"
- ],
- "Embedded PC": [
-  null,
-  "嵌入式 PC"
  ],
  "Enter IP address or host name": [
   null,
@@ -254,10 +202,6 @@ return plural;
  "Error loading users: {{perm_failed}}": [
   null,
   "加载用户: {{perm_failed}} 出错"
- ],
- "Expansion Chassis": [
-  null,
-  "扩展机箱"
  ],
  "Failed to add machine: $0": [
   null,
@@ -279,10 +223,6 @@ return plural;
   null,
   "转到现在"
  ],
- "Hand Held": [
-  null,
-  "手持"
- ],
  "Host Name": [
   null,
   "主机名"
@@ -299,10 +239,6 @@ return plural;
   null,
   "无效的文件权限"
  ],
- "IoT Gateway": [
-  null,
-  "IoT 网关"
- ],
  "Is sshd running on a different port?": [
   null,
   "sshd 是否在一个不同的端口上运行？"
@@ -314,10 +250,6 @@ return plural;
  "Kerberos Ticket": [
   null,
   "Kerberos 权证"
- ],
- "Laptop": [
-  null,
-  "笔记本电脑"
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
@@ -343,33 +275,9 @@ return plural;
   null,
   "连接失败。请重新连接"
  ],
- "Low Profile Desktop": [
-  null,
-  "低调桌面"
- ],
- "Lunch Box": [
-  null,
-  "午餐盒"
- ],
- "Main Server Chassis": [
-  null,
-  "主服务器机箱"
- ],
  "Memory": [
   null,
   "内存"
- ],
- "Mini PC": [
-  null,
-  "迷你电脑"
- ],
- "Mini Tower": [
-  null,
-  "Mini Tower"
- ],
- "Multi-system Chassis": [
-  null,
-  "多系统机箱"
  ],
  "Network": [
   null,
@@ -387,10 +295,6 @@ return plural;
   null,
   "无效的私钥"
  ],
- "Notebook": [
-  null,
-  "笔记本"
- ],
  "Off": [
   null,
   "关"
@@ -403,10 +307,6 @@ return plural;
   null,
   "开"
  ],
- "Other": [
-  null,
-  "其他"
- ],
  "Password": [
   null,
   "密码"
@@ -415,21 +315,9 @@ return plural;
   null,
   "密码未接受"
  ],
- "Peripheral Chassis": [
-  null,
-  "外设机箱"
- ],
- "Pizza Box": [
-  null,
-  "披萨盒"
- ],
  "Port": [
   null,
   "端口"
- ],
- "Portable": [
-  null,
-  "手提"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -443,18 +331,6 @@ return plural;
   null,
   "公钥"
  ],
- "RAID Chassis": [
-  null,
-  "RAID 机箱"
- ],
- "Rack Mount Chassis": [
-  null,
-  "机架式机箱"
- ],
- "Sealed-case PC": [
-  null,
-  "密封式 PC"
- ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
   "选择您需要与 {{#strong}}{{host}}{{/strong}} 同步的用户"
@@ -467,22 +343,6 @@ return plural;
   null,
   "设置"
  ],
- "Space-saving Computer": [
-  null,
-  "节省空间的计算机"
- ],
- "Stick PC": [
-  null,
-  "Stick PC"
- ],
- "Sub Chassis": [
-  null,
-  "子机箱"
- ],
- "Sub Notebook": [
-  null,
-  "子笔记本"
- ],
  "Synchronize": [
   null,
   "同步"
@@ -490,10 +350,6 @@ return plural;
  "Synchronize users": [
   null,
   "同步用户"
- ],
- "Tablet": [
-  null,
-  "平板"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -511,10 +367,6 @@ return plural;
   null,
   "密码不匹配"
  ],
- "The user <b>$0</b> is not permitted to manage servers": [
-  null,
-  "用户 <b>$0</b> 不允许管理服务器"
- ],
  "This machine has already been added.": [
   null,
   "该主机已经被添加。"
@@ -527,17 +379,9 @@ return plural;
   null,
   "为了尝试一个不同的端口，需要把 cockpit-ws 升级到一个新版本。"
  ],
- "Tower": [
-  null,
-  "Tower"
- ],
  "Type a password": [
   null,
   "输入密码"
- ],
- "Unknown": [
-  null,
-  "未知"
  ],
  "Unknown Host Key": [
   null,
@@ -562,13 +406,5 @@ return plural;
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
   "已经连接到 {{#strong}}{{host}}{{/strong}}，然而为了同步用户，需要一个特权用户。"
- ],
- "You are currently connected directly to this server. You cannot delete it.": [
-  null,
-  "您当前已直接连接到该服务器。您不能删除它。"
- ],
- "You can remove the previously stored key by running the following command": [
-  null,
-  "可以通过使用以下命令来移除之前保存的密钥"
  ]
 }));

@@ -89,11 +89,11 @@ return plural;
  ],
  "Add Machine to Dashboard": [
   null,
-  ""
+  "대시보드에 시스템 추가 "
  ],
  "Add key": [
   null,
-  ""
+  "키 추가"
  ],
  "Address": [
   null,
@@ -105,7 +105,7 @@ return plural;
  ],
  "Authentication Failed": [
   null,
-  ""
+  "인증 실패"
  ],
  "Available": [
   null,
@@ -117,11 +117,11 @@ return plural;
  ],
  "Cannot connect to an unknown machine": [
   null,
-  ""
+  "알 수 없는 컴퓨터에 연결할 수 없습니다."
  ],
  "Change Password": [
   null,
-  ""
+  "비밀번호 변경"
  ],
  "Checking for public keys": [
   null,
@@ -129,7 +129,7 @@ return plural;
  ],
  "Choose the language to be used in the application": [
   null,
-  "사용하실 언어를 선택해주세요"
+  "사용하실 언어를 선택해 주세요"
  ],
  "Close": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Close Selected Pages": [
   null,
-  ""
+  "선택한 페이지 닫기 "
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
@@ -512,10 +512,6 @@ return plural;
   "버전"
  ],
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
-  null,
-  ""
- ],
- "You can remove the previously stored key by running the following command": [
   null,
   ""
  ],

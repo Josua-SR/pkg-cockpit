@@ -223,10 +223,6 @@ return plural;
   null,
   "パッケージ情報"
  ],
- "PackageKit crashed": [
-  null,
-  "PackageKit がクラッシュしました"
- ],
  "PackageKit is not installed": [
   null,
   "PackageKit はインストールされていません"
@@ -315,10 +311,6 @@ return plural;
   null,
   "合計サイズ: $0"
  ],
- "Unregistered System": [
-  null,
-  "未登録のシステム"
- ],
  "Update History": [
   null,
   "履歴の更新"
@@ -334,10 +326,6 @@ return plural;
  "Updated packages may require a restart to take effect.": [
   null,
   "パッケージの更新を反映するには、再起動が必要になる場合があります。"
- ],
- "Updates are disabled.": [
-  null,
-  "更新が無効です。"
  ],
  "Updating": [
   null,
@@ -355,17 +343,9 @@ return plural;
   null,
   "バージョン"
  ],
- "View Registration Details": [
-  null,
-  "登録の詳細を表示"
- ],
  "Waiting for other software management operations to finish": [
   null,
   "他のソフトウェア管理オペレーションが終了するまで待機中"
- ],
- "You need to re-subscribe this system.": [
-  null,
-  "再度、このシステムをサブスクライブする必要があります。"
  ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
@@ -382,6 +362,14 @@ return plural;
  "at": [
   null,
   "時間: "
+ ],
+ "bug fix": [
+  null,
+  "バグ修正"
+ ],
+ "enhancement": [
+  null,
+  "機能強化"
  ],
  "every day": [
   null,
@@ -414,6 +402,10 @@ return plural;
  "on Wednesdays": [
   null,
   "毎週水曜日"
+ ],
+ "security": [
+  null,
+  "セキュリティー"
  ],
  "undefined": [
   null,

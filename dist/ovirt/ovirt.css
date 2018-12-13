@@ -274,7 +274,7 @@ table.listing-ct > thead td > a {
 table.listing-ct > thead th {
   border-top: 1px solid #f1f1f1;
   font-weight: normal;
-  padding: 10px;
+  padding: 10px 20px;
   color: #888;
 }
 table.listing-ct > thead th:first-child {
@@ -320,11 +320,12 @@ tbody.open > tr.listing-ct-item th {
 tbody.open td div.listing-ct-head {
   background-color: #fff;
 }
-tbody.open .listing-ct-panel {
+tbody.open > .listing-ct-panel {
   border: 1px solid #ccc;
 }
-tbody.open .listing-ct-panel .listing-ct-body {
+tbody.open > .listing-ct-panel > td > .listing-ct-body {
   border: none;
+  overflow: auto;
 }
 tbody.open > tr.listing-ct-panel + tr.listing-ct-body {
   border-top: none;
@@ -346,7 +347,7 @@ tbody.open:hover > tr.listing-ct-item,
 tr.listing-ct-item.listing-ct-nonavigate:hover {
   background-color: #edf8ff;
 }
-tr.listing-ct-item .listing-ct-toggle {
+tr.listing-ct-item .listing-ct-toggle:not(:empty) {
   width: 35px;
   color: #393f44;
 }
@@ -355,7 +356,11 @@ tr.listing-ct-item .listing-ct-toggle {
 tbody.open .listing-ct-toggle {
   color: #65bedf;
 }
-.listing-ct > thead > .listing-ct-toggle + th,
+.listing-ct .listing-ct-toggle:empty {
+  width: 0;
+  padding: 0;
+}
+.listing-ct > thead > tr > .listing-ct-toggle + th,
 .listing-ct-item > .listing-ct-toggle + td,
 .listing-ct-item > .listing-ct-toggle + th {
   padding-left: 10px;
@@ -394,11 +399,22 @@ tbody.open td.listing-ct-toggle i:before {
   }
 }
 /* Listing items have decent padding ... */
-tr.listing-ct-item td,
-tr.listing-ct-item th {
+.listing-ct > thead > tr > th,
+tr.listing-ct-item > th,
+tr.listing-ct-item > td {
   padding: 15px;
   vertical-align: text-top;
   /* baseline doesn't support wrapped lines */
+}
+tr.listing-ct-item > td > .btn {
+  /* .btn has padding of 6px and 1px border */
+  margin-top: -7px;
+  margin-bottom: -7px;
+}
+tr.listing-ct-item > td > .btn-control-ct {
+  /* Adapt for Cockpit's modified button, which is larger by 8px */
+  margin-top: -3px;
+  margin-bottom: -3px;
 }
 /* Listing caption is text next to the actions, text should be similar to nav (.nav-tabs-pf > li > a)*/
 .listing-ct-actions > .listing-ct-caption {
@@ -512,7 +528,7 @@ tbody.active .listing-ct-head {
   border: 1px solid #ccc;
   background-color: #fff;
 }
-.listing-ct-inline > .listing-ct-body {
+.listing-ct-inline > td > .listing-ct-body {
   border: none;
   padding-top: 0px;
   padding-left: 20px;
@@ -592,15 +608,15 @@ table.listing-ct tbody.open {
 }
 /* By default these are hidden */
 /* (HACK: Special-case the user auth dialog) */
-tbody:not(.ssh-key-body) tr.listing-ct-head,
-tbody tr.listing-ct-panel,
-tbody tr.listing-ct-body {
+tbody:not(.ssh-key-body) > tr.listing-ct-head,
+tbody > tr.listing-ct-panel,
+tbody > tr.listing-ct-body {
   display: none;
 }
 /* ... unless they are in the right state */
-tbody.open tr.listing-ct-head,
-tbody.open tr.listing-ct-panel,
-tbody.open tr.listing-ct-body {
+tbody.open > tr.listing-ct-head,
+tbody.open > tr.listing-ct-panel,
+tbody.open > tr.listing-ct-body {
   display: table-row;
 }
 /* Animate the listing head & the last visible body */
@@ -672,12 +688,17 @@ tbody + thead.listing-ct-empty {
   width: 100%;
 }
 /* Listing pattern mod to redce the padding */
-.listing-ct-compact tbody td,
-.listing-ct-compact tbody th {
+.listing-ct-compact > thead > tr > th,
+.listing-ct-compact > tbody > tr > th,
+.listing-ct-compact > tbody > tr > td {
   padding: 5px;
 }
-.listing-ct-compact tbody .listing-ct-item > .listing-ct-toggle:not(:empty) + td::before,
-.listing-ct-compact tbody .listing-ct-item > .listing-ct-toggle:not(:empty) + th::before {
+.listing-ct-compact > tbody > tr > .listing-ct-toggle:not(:empty) + th,
+.listing-ct-compact > tbody > tr > .listing-ct-toggle:not(:empty) + td {
+  padding-left: 5px;
+}
+.listing-ct-compact > tbody > tr > .listing-ct-toggle:not(:empty) + th::before,
+.listing-ct-compact > tbody > tr > .listing-ct-toggle:not(:empty) + td::before {
   top: 5px;
 }
 div.listing-ct-head {
@@ -729,95 +750,159 @@ tbody tr.listing-ct-noexpand {
 .machines-more-button {
     padding-left: 10px;
 }
-.dialog-field {
-    display: inline-flex;
-    padding: 0px;
+/* Form layout */
+:root {
+  --ct-form-layout-columns: 2;
 }
-
-.dialog-field > label {
-    white-space: nowrap;
-    color: #888888;
-    float: right;
-    width: 100%;
-    text-align: right;
+.ct-form-layout {
+  display: grid;
+  grid-gap: 0 10px;
+  grid-template-columns: repeat(var(--ct-form-layout-columns), minmax(4em, max-content) 1fr);
+  place-items: baseline stretch;
 }
-
-.dialog-field .form-control {
-    margin-left: 5px !important;
+.ct-form-layout > hr {
+  border: none;
+  grid-column: 1 / -1;
+  height: 15px;
+  margin: 0;
+  padding: 0;
 }
-
-.modal-body .add-disk-dialog {
-    height: 16em;
-    padding-bottom: 0px !important;
+.ct-form-layout label {
+  line-height: 26px;
 }
-
-.add-disk-body .row,
-.add-disk-dialog .row {
-    padding-bottom: 0.5em;
+.ct-form-layout > .control-label {
+  align-self: flex-start;
+  padding-left: 10px;
+  text-align: right;
 }
-
-.add-disk-body .row:first-child {
-    padding-bottom: 2em;
-    padding-top: 1em;
+.ct-form-layout > div,
+.ct-form-layout > span,
+.ct-form-layout > p,
+.ct-form-layout > dl,
+.ct-form-layout > ol,
+.ct-form-layout > ul,
+.ct-form-layout > fieldset,
+.ct-form-layout > input,
+.ct-form-layout > textarea,
+.ct-form-layout > samp,
+.ct-form-layout > pre,
+.ct-form-layout > code,
+.ct-form-layout > kbd,
+.ct-form-layout > label:not(.control-label) {
+  grid-column: 2 / -1;
+  line-height: 26px;
+  margin: 0;
 }
-
-.add-disk-body .row:last-child {
-    padding-top: 1em;
+.ct-form-layout > div:not(.ct-form-layout-relax),
+.ct-form-layout > span:not(.ct-form-layout-relax),
+.ct-form-layout > p:not(.ct-form-layout-relax),
+.ct-form-layout > dl:not(.ct-form-layout-relax),
+.ct-form-layout > ol:not(.ct-form-layout-relax),
+.ct-form-layout > ul:not(.ct-form-layout-relax),
+.ct-form-layout > fieldset:not(.ct-form-layout-relax),
+.ct-form-layout > input:not(.ct-form-layout-relax),
+.ct-form-layout > textarea:not(.ct-form-layout-relax),
+.ct-form-layout > samp:not(.ct-form-layout-relax),
+.ct-form-layout > pre:not(.ct-form-layout-relax),
+.ct-form-layout > code:not(.ct-form-layout-relax),
+.ct-form-layout > kbd:not(.ct-form-layout-relax),
+.ct-form-layout > label:not(.control-label):not(.ct-form-layout-relax) {
+  width: auto;
 }
-
-.add-disk-size {
-    width: 5em;
-    margin-right: 5px;
-    text-align: right;
+.ct-form-layout > input[size] {
+  justify-self: start;
 }
-
-.add-disk-target > label {
-    width: auto;
-    padding-left: 2em;
+.ct-form-layout > .bootstrap-select:not(.ct-form-layout-relax),
+.ct-form-layout > .btn-group:not(.ct-form-layout-relax),
+.ct-form-layout > .dropdown:not(.ct-form-layout-relax) {
+  width: auto !important;
 }
-
-.add-disk-file-format > label {
-    width: auto;
-    padding-left: 2em;
+.ct-form-layout > [role=group] {
+  align-self: start;
+  display: grid;
+  grid-gap: 5px;
+  grid-auto-flow: column;
+  grid-template-columns: max-content;
+  justify-content: start;
 }
-
-.add-disk-attach-perm {
-    padding-left: 5px;
+.ct-form-layout > [role=group]:not(.ct-form-layout-relax) > .dropdown {
+  width: auto !important;
 }
-
-.add-disk-attach-perm > label {
-    margin-left: 5px;
+.ct-form-layout > [role=group] > .form-control {
+  width: auto;
+}
+.ct-form-layout .checkbox > label,
+.ct-form-layout .radio > label,
+.ct-form-layout .checkbox-inline,
+.ct-form-layout .radio-inline {
+  display: inline-flex;
+  padding-left: 0;
+  padding-right: 10px;
+}
+.ct-form-layout .checkbox > label > input[type="checkbox"],
+.ct-form-layout .radio > label > input[type="checkbox"],
+.ct-form-layout .checkbox-inline > input[type="checkbox"],
+.ct-form-layout .radio-inline > input[type="checkbox"],
+.ct-form-layout .checkbox > label > input[type="radio"],
+.ct-form-layout .radio > label > input[type="radio"],
+.ct-form-layout .checkbox-inline > input[type="radio"],
+.ct-form-layout .radio-inline > input[type="radio"] {
+  height: 16px;
+  margin: 5px 0;
+  margin-right: 10px;
+  position: static;
+}
+.ct-form-layout fieldset > .checkbox:first-child,
+.ct-form-layout fieldset > .radio:first-child {
+  margin-top: 0;
+}
+.ct-form-layout fieldset > .checkbox:last-child,
+.ct-form-layout fieldset > .radio:last-child {
+  margin-bottom: 0;
+}
+.ct-form-layout .list-group {
+  margin-bottom: 5px;
+}
+.ct-form-layout > .ct-form-layout-split {
+  grid-column: auto / auto;
+}
+.ct-form-layout-stretch {
+  justify-content: stretch !important;
+}
+.ct-form-layout-relax {
+  justify-self: start;
+}
+.modal-dialog.modal-sm .ct-form-layout > .ct-form-layout-split {
+  grid-column: 2 / -1;
+}
+@media (max-width: 640px) {
+  :root {
+    --ct-form-layout-columns: 1;
+  }
+}
+@media (max-width: 480px) {
+  .ct-form-layout {
+    grid-template-columns: initial;
+  }
+  .ct-form-layout > * {
+    grid-column: auto;
+    line-height: 1.66666667;
+    max-width: 100%;
+  }
+  .ct-form-layout > .control-label {
+    padding: 0;
     text-align: left;
-    color: #363636;
+  }
+  .ct-form-layout > .control-label:not(:first-child) {
+    margin: 6px 0 0;
+  }
+  .ct-form-layout > hr {
+    height: 12px;
+  }
 }
-
-.add-disk-attach-perm > input[type=checkbox] { }
-
-.add-disk-source {
-    padding-left: 5px;
-}
-
-.add-disk-select-source {
-    padding: 0px;
-    width: auto;
-    padding-right: 20px;
-}
-
-.add-disk-select-source > label {
-    margin-left: 5px;
-    text-align: left;
-    color: #363636;
-}
-
-.add-disk-select-source > input[type=radio] { }
 /* Standard dialog is too narrow and wide dialog is too wide */
 .nic-edit > .modal-dialog {
-    width: 70rem;
-}
-
-/* Form has double padding; remove it, except for the last in row */
-.nic-edit .form-group > :not(:last-child) {
-    padding-right: 0;
+    max-width: 60rem;
 }
 
 .machines-network-list .pficon-pending {
@@ -1033,7 +1118,7 @@ table.delete-dialog-disks.table tbody tr td:nth-child(3) {
     cursor: pointer;
 }
 
-.xterm.xterm-cursor-crosshair {
+.xterm.column-select.focus {
     /* Column selection mode */
     cursor: crosshair;
 }
@@ -1531,7 +1616,7 @@ table.listing-ct > thead td > a {
 table.listing-ct > thead th {
   border-top: 1px solid #f1f1f1;
   font-weight: normal;
-  padding: 10px;
+  padding: 10px 20px;
   color: #888;
 }
 table.listing-ct > thead th:first-child {
@@ -1577,11 +1662,12 @@ tbody.open > tr.listing-ct-item th {
 tbody.open td div.listing-ct-head {
   background-color: #fff;
 }
-tbody.open .listing-ct-panel {
+tbody.open > .listing-ct-panel {
   border: 1px solid #ccc;
 }
-tbody.open .listing-ct-panel .listing-ct-body {
+tbody.open > .listing-ct-panel > td > .listing-ct-body {
   border: none;
+  overflow: auto;
 }
 tbody.open > tr.listing-ct-panel + tr.listing-ct-body {
   border-top: none;
@@ -1603,7 +1689,7 @@ tbody.open:hover > tr.listing-ct-item,
 tr.listing-ct-item.listing-ct-nonavigate:hover {
   background-color: #edf8ff;
 }
-tr.listing-ct-item .listing-ct-toggle {
+tr.listing-ct-item .listing-ct-toggle:not(:empty) {
   width: 35px;
   color: #393f44;
 }
@@ -1612,7 +1698,11 @@ tr.listing-ct-item .listing-ct-toggle {
 tbody.open .listing-ct-toggle {
   color: #65bedf;
 }
-.listing-ct > thead > .listing-ct-toggle + th,
+.listing-ct .listing-ct-toggle:empty {
+  width: 0;
+  padding: 0;
+}
+.listing-ct > thead > tr > .listing-ct-toggle + th,
 .listing-ct-item > .listing-ct-toggle + td,
 .listing-ct-item > .listing-ct-toggle + th {
   padding-left: 10px;
@@ -1651,11 +1741,22 @@ tbody.open td.listing-ct-toggle i:before {
   }
 }
 /* Listing items have decent padding ... */
-tr.listing-ct-item td,
-tr.listing-ct-item th {
+.listing-ct > thead > tr > th,
+tr.listing-ct-item > th,
+tr.listing-ct-item > td {
   padding: 15px;
   vertical-align: text-top;
   /* baseline doesn't support wrapped lines */
+}
+tr.listing-ct-item > td > .btn {
+  /* .btn has padding of 6px and 1px border */
+  margin-top: -7px;
+  margin-bottom: -7px;
+}
+tr.listing-ct-item > td > .btn-control-ct {
+  /* Adapt for Cockpit's modified button, which is larger by 8px */
+  margin-top: -3px;
+  margin-bottom: -3px;
 }
 /* Listing caption is text next to the actions, text should be similar to nav (.nav-tabs-pf > li > a)*/
 .listing-ct-actions > .listing-ct-caption {
@@ -1769,7 +1870,7 @@ tbody.active .listing-ct-head {
   border: 1px solid #ccc;
   background-color: #fff;
 }
-.listing-ct-inline > .listing-ct-body {
+.listing-ct-inline > td > .listing-ct-body {
   border: none;
   padding-top: 0px;
   padding-left: 20px;
@@ -1849,15 +1950,15 @@ table.listing-ct tbody.open {
 }
 /* By default these are hidden */
 /* (HACK: Special-case the user auth dialog) */
-tbody:not(.ssh-key-body) tr.listing-ct-head,
-tbody tr.listing-ct-panel,
-tbody tr.listing-ct-body {
+tbody:not(.ssh-key-body) > tr.listing-ct-head,
+tbody > tr.listing-ct-panel,
+tbody > tr.listing-ct-body {
   display: none;
 }
 /* ... unless they are in the right state */
-tbody.open tr.listing-ct-head,
-tbody.open tr.listing-ct-panel,
-tbody.open tr.listing-ct-body {
+tbody.open > tr.listing-ct-head,
+tbody.open > tr.listing-ct-panel,
+tbody.open > tr.listing-ct-body {
   display: table-row;
 }
 /* Animate the listing head & the last visible body */
@@ -1929,12 +2030,17 @@ tbody + thead.listing-ct-empty {
   width: 100%;
 }
 /* Listing pattern mod to redce the padding */
-.listing-ct-compact tbody td,
-.listing-ct-compact tbody th {
+.listing-ct-compact > thead > tr > th,
+.listing-ct-compact > tbody > tr > th,
+.listing-ct-compact > tbody > tr > td {
   padding: 5px;
 }
-.listing-ct-compact tbody .listing-ct-item > .listing-ct-toggle:not(:empty) + td::before,
-.listing-ct-compact tbody .listing-ct-item > .listing-ct-toggle:not(:empty) + th::before {
+.listing-ct-compact > tbody > tr > .listing-ct-toggle:not(:empty) + th,
+.listing-ct-compact > tbody > tr > .listing-ct-toggle:not(:empty) + td {
+  padding-left: 5px;
+}
+.listing-ct-compact > tbody > tr > .listing-ct-toggle:not(:empty) + th::before,
+.listing-ct-compact > tbody > tr > .listing-ct-toggle:not(:empty) + td::before {
   top: 5px;
 }
 div.listing-ct-head {
@@ -2740,6 +2846,9 @@ table.pf-table-inline-edit tbody .static {
   min-width: 350px;
   margin-right: 50px;
 }
+.desktop-viewer-pf .remote-viewer-pf > h2 {
+  text-align: center;
+}
 .desktop-viewer-pf .remote-viewer-pf .expand-collapse-pf {
   margin-top: 1em;
 }
@@ -2747,6 +2856,9 @@ table.pf-table-inline-edit tbody .static {
   text-align: center;
   margin-top: 20px;
   /* Align with h2 of manual-connection-pf */
+}
+.desktop-viewer-pf .remote-viewer-pf .remote-viewer-pf-launch > button {
+  margin-left: 1em;
 }
 .desktop-viewer-pf .remote-viewer-pf .more-information-pf-install {
   display: inline-flex;
@@ -2771,17 +2883,29 @@ table.pf-table-inline-edit tbody .static {
   float: right;
   white-space: nowrap;
 }
+.machines-disks .listing-ct th:nth-last-child(-n+2),
+.machines-disks .listing-ct td:nth-last-child(-n+2) {
+  text-align: left;
+}
 .machines-disks-source {
-  float: right;
+  /* Counter-act parent td padding for the table */
+  margin: -5px 0;
+}
+.machines-disks-source th,
+.machines-disks-source td {
+  padding: 0;
+  vertical-align: baseline;
+}
+.machines-disks-source th + td,
+.machines-disks-source td + td {
+  padding-left: 0.5em;
 }
 .machines-disks-source-descr {
   color: #888888;
-  text-align: right;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
 .machines-disks-source-value {
-  text-align: left !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
@@ -2947,13 +3071,6 @@ table.vcpu-detail-modal-right .btn-group.bootstrap-select.dropdown {
 }
 #create-vm-dialog .spinner {
   display: inline-block;
-}
-/* FIXME: This CSS should be moved upstream */
-.form-text {
-  /* Set size similar to a widget; like control-label, but no alignment */
-  display: inline-block;
-  padding-top: 3px;
-  margin-bottom: 0;
 }
 .modal-body + .modal-footer {
   /* Remove unneeded margin when there's a modal body and footer */

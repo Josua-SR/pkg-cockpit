@@ -67,7 +67,7 @@ table.listing-ct > thead td > a {
 table.listing-ct > thead th {
   border-top: 1px solid #f1f1f1;
   font-weight: normal;
-  padding: 10px;
+  padding: 10px 20px;
   color: #888;
 }
 table.listing-ct > thead th:first-child {
@@ -113,11 +113,12 @@ tbody.open > tr.listing-ct-item th {
 tbody.open td div.listing-ct-head {
   background-color: #fff;
 }
-tbody.open .listing-ct-panel {
+tbody.open > .listing-ct-panel {
   border: 1px solid #ccc;
 }
-tbody.open .listing-ct-panel .listing-ct-body {
+tbody.open > .listing-ct-panel > td > .listing-ct-body {
   border: none;
+  overflow: auto;
 }
 tbody.open > tr.listing-ct-panel + tr.listing-ct-body {
   border-top: none;
@@ -139,7 +140,7 @@ tbody.open:hover > tr.listing-ct-item,
 tr.listing-ct-item.listing-ct-nonavigate:hover {
   background-color: #edf8ff;
 }
-tr.listing-ct-item .listing-ct-toggle {
+tr.listing-ct-item .listing-ct-toggle:not(:empty) {
   width: 35px;
   color: #393f44;
 }
@@ -148,7 +149,11 @@ tr.listing-ct-item .listing-ct-toggle {
 tbody.open .listing-ct-toggle {
   color: #65bedf;
 }
-.listing-ct > thead > .listing-ct-toggle + th,
+.listing-ct .listing-ct-toggle:empty {
+  width: 0;
+  padding: 0;
+}
+.listing-ct > thead > tr > .listing-ct-toggle + th,
 .listing-ct-item > .listing-ct-toggle + td,
 .listing-ct-item > .listing-ct-toggle + th {
   padding-left: 10px;
@@ -187,11 +192,22 @@ tbody.open td.listing-ct-toggle i:before {
   }
 }
 /* Listing items have decent padding ... */
-tr.listing-ct-item td,
-tr.listing-ct-item th {
+.listing-ct > thead > tr > th,
+tr.listing-ct-item > th,
+tr.listing-ct-item > td {
   padding: 15px;
   vertical-align: text-top;
   /* baseline doesn't support wrapped lines */
+}
+tr.listing-ct-item > td > .btn {
+  /* .btn has padding of 6px and 1px border */
+  margin-top: -7px;
+  margin-bottom: -7px;
+}
+tr.listing-ct-item > td > .btn-control-ct {
+  /* Adapt for Cockpit's modified button, which is larger by 8px */
+  margin-top: -3px;
+  margin-bottom: -3px;
 }
 /* Listing caption is text next to the actions, text should be similar to nav (.nav-tabs-pf > li > a)*/
 .listing-ct-actions > .listing-ct-caption {
@@ -305,7 +321,7 @@ tbody.active .listing-ct-head {
   border: 1px solid #ccc;
   background-color: #fff;
 }
-.listing-ct-inline > .listing-ct-body {
+.listing-ct-inline > td > .listing-ct-body {
   border: none;
   padding-top: 0px;
   padding-left: 20px;
@@ -385,15 +401,15 @@ table.listing-ct tbody.open {
 }
 /* By default these are hidden */
 /* (HACK: Special-case the user auth dialog) */
-tbody:not(.ssh-key-body) tr.listing-ct-head,
-tbody tr.listing-ct-panel,
-tbody tr.listing-ct-body {
+tbody:not(.ssh-key-body) > tr.listing-ct-head,
+tbody > tr.listing-ct-panel,
+tbody > tr.listing-ct-body {
   display: none;
 }
 /* ... unless they are in the right state */
-tbody.open tr.listing-ct-head,
-tbody.open tr.listing-ct-panel,
-tbody.open tr.listing-ct-body {
+tbody.open > tr.listing-ct-head,
+tbody.open > tr.listing-ct-panel,
+tbody.open > tr.listing-ct-body {
   display: table-row;
 }
 /* Animate the listing head & the last visible body */
@@ -465,12 +481,17 @@ tbody + thead.listing-ct-empty {
   width: 100%;
 }
 /* Listing pattern mod to redce the padding */
-.listing-ct-compact tbody td,
-.listing-ct-compact tbody th {
+.listing-ct-compact > thead > tr > th,
+.listing-ct-compact > tbody > tr > th,
+.listing-ct-compact > tbody > tr > td {
   padding: 5px;
 }
-.listing-ct-compact tbody .listing-ct-item > .listing-ct-toggle:not(:empty) + td::before,
-.listing-ct-compact tbody .listing-ct-item > .listing-ct-toggle:not(:empty) + th::before {
+.listing-ct-compact > tbody > tr > .listing-ct-toggle:not(:empty) + th,
+.listing-ct-compact > tbody > tr > .listing-ct-toggle:not(:empty) + td {
+  padding-left: 5px;
+}
+.listing-ct-compact > tbody > tr > .listing-ct-toggle:not(:empty) + th::before,
+.listing-ct-compact > tbody > tr > .listing-ct-toggle:not(:empty) + td::before {
   top: 5px;
 }
 div.listing-ct-head {

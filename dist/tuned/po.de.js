@@ -77,7 +77,7 @@ return plural;
  ],
  "Change Profile": [
   null,
-  ""
+  "Profil ändern"
  ],
  "Communication with tuned has failed": [
   null,
@@ -89,19 +89,19 @@ return plural;
  ],
  "Failed to disable tuned": [
   null,
-  ""
+  "Fehler beim Deaktivieren"
  ],
  "Failed to disable tuned profile": [
   null,
-  ""
+  "Das abgestimmte Profil konnte nicht deaktiviert werden"
  ],
  "Failed to enable tuned": [
   null,
-  ""
+  "Tuned konnte nicht aktiviert werden"
  ],
  "Failed to switch profile": [
   null,
-  ""
+  "Profil konnte nicht gewechselt werden"
  ],
  "None": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to change profiles": [
   null,
-  ""
+  "Der Benutzer <b>$0</b> darf das Profil nicht ändern"
  ],
  "This system is using a custom profile": [
   null,

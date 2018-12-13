@@ -69,27 +69,27 @@ return plural;
  },
  "$mtu": [
   null,
-  ""
+  "$mtu"
  ],
  "1 day": [
   null,
-  ""
+  "1 giorno"
  ],
  "1 hour": [
   null,
-  ""
+  "1 ora"
  ],
  "1 week": [
   null,
-  ""
+  "1 settimana"
  ],
  "5 minutes": [
   null,
-  ""
+  "5 minuti"
  ],
  "6 hours": [
   null,
-  ""
+  "6 ore"
  ],
  "802.3ad": [
   null,
@@ -97,7 +97,7 @@ return plural;
  ],
  "802.3ad LACP": [
   null,
-  ""
+  "802.3ad LACP"
  ],
  "ARP": [
   null,
@@ -105,11 +105,11 @@ return plural;
  ],
  "ARP Monitoring": [
   null,
-  ""
+  "Monitoraggio ARP"
  ],
  "ARP Ping": [
   null,
-  ""
+  "ARP Ping"
  ],
  "Active": [
   null,
@@ -129,51 +129,51 @@ return plural;
  ],
  "Add $0": [
   null,
-  ""
+  "Aggiungi $0"
  ],
  "Add Bond": [
   null,
-  ""
+  "Aggiungi bond"
  ],
  "Add Bridge": [
   null,
-  ""
+  "Aggiungi bridge"
  ],
  "Add Services": [
   null,
-  ""
+  "Aggiungi servizi"
  ],
  "Add Services…": [
   null,
-  ""
+  "Aggiungi servizi...."
  ],
  "Add Team": [
   null,
-  ""
+  "Aggiungi team"
  ],
  "Add VLAN": [
   null,
-  ""
+  "Aggiungi VLAN"
  ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "L'aggiunta di I <b>$0</b>interromperà la connessione al server e renderà l'interfaccia utente di amministrazione non disponibile."
  ],
  "Additional DNS $val": [
   null,
-  ""
+  "DNS aggiuntivo $val"
  ],
  "Additional DNS Search Domains $val": [
   null,
-  ""
+  "Domini di ricerca DNS aggiuntivi $val"
  ],
  "Additional address $val": [
   null,
-  ""
+  "Indirizzo aggiuntivo $val"
  ],
  "Address $val": [
   null,
-  ""
+  "Indirizzo $val"
  ],
  "Addresses": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Allowed Services": [
   null,
-  ""
+  "Servizi consentiti"
  ],
  "Apply": [
   null,
@@ -189,7 +189,7 @@ return plural;
  ],
  "Authenticating": [
   null,
-  ""
+  "Autenticazione"
  ],
  "Automatic": [
   null,
@@ -197,7 +197,7 @@ return plural;
  ],
  "Automatic (DHCP only)": [
   null,
-  ""
+  "Automatico (solo DHCP)"
  ],
  "Automatic (DHCP)": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Balancer": [
   null,
-  ""
+  "Balancer"
  ],
  "Bond": [
   null,
@@ -213,7 +213,7 @@ return plural;
  ],
  "Bond Settings": [
   null,
-  ""
+  "Impostazioni bond"
  ],
  "Bridge": [
   null,
@@ -221,15 +221,15 @@ return plural;
  ],
  "Bridge Port Settings": [
   null,
-  ""
+  "Impostazioni della porta del bridge"
  ],
  "Bridge Settings": [
   null,
-  ""
+  "Impostazioni del bridge"
  ],
  "Bridge port": [
   null,
-  ""
+  "Porta bridge"
  ],
  "Broadcast": [
   null,
@@ -237,7 +237,7 @@ return plural;
  ],
  "Broken configuration": [
   null,
-  ""
+  "Configurazione rotta"
  ],
  "Cancel": [
   null,
@@ -245,19 +245,19 @@ return plural;
  ],
  "Carrier": [
   null,
-  ""
+  "Carrier"
  ],
  "Change the settings": [
   null,
-  ""
+  "Modificare le impostazioni"
  ],
  "Changing the settings will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "La modifica delle impostazioni interromperà la connessione al server e renderà l'interfaccia utente di amministrazione non disponibile."
  ],
  "Checking IP": [
   null,
-  ""
+  "Controllo dell'IP"
  ],
  "Close": [
   null,
@@ -269,39 +269,39 @@ return plural;
  ],
  "Configuring": [
   null,
-  ""
+  "Configurazione"
  ],
  "Configuring IP": [
   null,
-  ""
+  "Configurazione dell'IP"
  ],
  "Connect automatically": [
   null,
-  ""
+  "Connessione automatica"
  ],
  "Connection will be lost": [
   null,
-  ""
+  "La connessione andrà persa"
  ],
  "Create it": [
   null,
-  ""
+  "Crea"
  ],
  "Creating this VLAN will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "La creazione di questa VLAN interromperà la connessione al server e renderà l'interfaccia utente di amministrazione non disponibile."
  ],
  "Creating this bond will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "La creazione di questo bond interromperà la connessione al server e renderà l'interfaccia utente di amministrazione non disponibile."
  ],
  "Creating this bridge will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "La creazione di questo bridge interromperà la connessione al server e renderà l'interfaccia utente di amministrazione non disponibile."
  ],
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "La creazione di questo team interromperà la connessione al server e renderà l'interfaccia utente di amministrazione non disponibile."
  ],
  "DNS": [
   null,
@@ -309,19 +309,19 @@ return plural;
  ],
  "DNS $val": [
   null,
-  ""
+  "DNS $val"
  ],
  "DNS Search Domains": [
   null,
-  ""
+  "Domini di ricerca DNS"
  ],
  "DNS Search Domains $val": [
   null,
-  ""
+  "Domini di ricerca DNS $val"
  ],
  "Deactivating": [
   null,
-  ""
+  "Disattivazione"
  ],
  "Delete": [
   null,
@@ -329,11 +329,11 @@ return plural;
  ],
  "Delete $0": [
   null,
-  ""
+  "Cancellare $0"
  ],
  "Deleting <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "L'eliminazione di xcelection <b>$0</b>interromperà la connessione al server e renderà l'interfaccia utente di amministrazione non disponibile."
  ],
  "Details": [
   null,
@@ -345,19 +345,19 @@ return plural;
  ],
  "Enable Service": [
   null,
-  ""
+  "Attivare il servizio"
  ],
  "Ethernet MAC": [
   null,
-  ""
+  "Ethernet MAC"
  ],
  "Ethernet MTU": [
   null,
-  ""
+  "Ethernet MTU"
  ],
  "Ethtool": [
   null,
-  ""
+  "Ethtool"
  ],
  "Failed": [
   null,
@@ -365,7 +365,7 @@ return plural;
  ],
  "Filter Services": [
   null,
-  ""
+  "Servizi di filtraggio"
  ],
  "Firewall": [
   null,
@@ -373,11 +373,11 @@ return plural;
  ],
  "Firewall is not available": [
   null,
-  ""
+  "Firewall non è disponibile"
  ],
  "Forward delay $forward_delay": [
   null,
-  ""
+  "Ritardo in avanti $forward_ritardo"
  ],
  "General": [
   null,
@@ -385,11 +385,11 @@ return plural;
  ],
  "Go to now": [
   null,
-  ""
+  "Vai a ora"
  ],
  "Hair Pin mode": [
   null,
-  ""
+  "Capelli Modalità pin"
  ],
  "Hairpin mode": [
   null,
@@ -397,7 +397,7 @@ return plural;
  ],
  "Hello time $hello_time": [
   null,
-  ""
+  "Ciao tempo $hello_time"
  ],
  "IP Address": [
   null,
@@ -405,7 +405,7 @@ return plural;
  ],
  "IP Settings": [
   null,
-  ""
+  "Impostazioni IP"
  ],
  "IPv4": [
   null,
@@ -425,7 +425,7 @@ return plural;
  ],
  "Id $id": [
   null,
-  ""
+  "Id $id"
  ],
  "Ignore": [
   null,
@@ -441,35 +441,35 @@ return plural;
  ],
  "Invalid address $0": [
   null,
-  ""
+  "Indirizzo non valido $0"
  ],
  "Invalid metric $0": [
   null,
-  ""
+  "Metrica non valida $0"
  ],
  "Invalid prefix $0": [
   null,
-  ""
+  "Prefisso non valido $0"
  ],
  "Invalid prefix or netmask $0": [
   null,
-  ""
+  "Prefisso o maschera di rete non validi $0"
  ],
  "Keep connection": [
   null,
-  ""
+  "Mantenere la connessione"
  ],
  "LACP Key": [
   null,
-  ""
+  "Chiave LACP"
  ],
  "Link Monitoring": [
   null,
-  ""
+  "Monitoraggio dei collegamenti"
  ],
  "Link Watch": [
   null,
-  ""
+  "Orologio Link"
  ],
  "Link down delay": [
   null,
@@ -477,7 +477,7 @@ return plural;
  ],
  "Link local": [
   null,
-  ""
+  "Collegamento locale"
  ],
  "Link up delay": [
   null,
@@ -485,7 +485,7 @@ return plural;
  ],
  "Load Balancing": [
   null,
-  ""
+  "Bilanciamento del carico"
  ],
  "MAC": [
   null,
@@ -493,7 +493,7 @@ return plural;
  ],
  "MII (Recommended)": [
   null,
-  ""
+  "MII (consigliato)"
  ],
  "MTU": [
   null,
@@ -501,7 +501,7 @@ return plural;
  ],
  "MTU must be a positive number": [
   null,
-  ""
+  "MTU deve essere un numero positivo"
  ],
  "Manual": [
   null,
@@ -509,15 +509,15 @@ return plural;
  ],
  "Master": [
   null,
-  ""
+  "Maestro"
  ],
  "Maximum message age $max_age": [
   null,
-  ""
+  "Età massima del messaggio $max_età"
  ],
  "Members": [
   null,
-  ""
+  "Membri"
  ],
  "Mode": [
   null,
@@ -525,15 +525,15 @@ return plural;
  ],
  "Monitoring Interval": [
   null,
-  ""
+  "Intervallo di monitoraggio"
  ],
  "Monitoring Targets": [
   null,
-  ""
+  "Obiettivi di monitoraggio"
  ],
  "NSNA Ping": [
   null,
-  ""
+  "NSNA Ping"
  ],
  "Name": [
   null,
@@ -541,7 +541,7 @@ return plural;
  ],
  "Network devices and graphs require NetworkManager.": [
   null,
-  ""
+  "I dispositivi di rete e i grafici richiedono NetworkManager."
  ],
  "NetworkManager is not running.": [
   null,
@@ -553,7 +553,7 @@ return plural;
  ],
  "Networking Logs": [
   null,
-  ""
+  "Log di rete"
  ],
  "No": [
   null,
@@ -561,11 +561,11 @@ return plural;
  ],
  "No carrier": [
   null,
-  ""
+  "Nessun vettore"
  ],
  "No open ports": [
   null,
-  ""
+  "Nessuna porta aperta"
  ],
  "Not available": [
   null,
@@ -574,10 +574,6 @@ return plural;
  "Off": [
   null,
   "Off"
- ],
- "Ok": [
-  null,
-  "Ok"
  ],
  "On": [
   null,
@@ -589,15 +585,15 @@ return plural;
  ],
  "Parent $parent": [
   null,
-  ""
+  "Genitore $parent"
  ],
  "Part of ": [
   null,
-  ""
+  "Parte di "
  ],
  "Passive": [
   null,
-  ""
+  "Passivo"
  ],
  "Path cost": [
   null,
@@ -605,7 +601,7 @@ return plural;
  ],
  "Path cost $path_cost": [
   null,
-  ""
+  "Costo della traiettoria $path_costo"
  ],
  "Permanent": [
   null,
@@ -613,15 +609,15 @@ return plural;
  ],
  "Ping Interval": [
   null,
-  ""
+  "Intervallo ping"
  ],
  "Ping Target": [
   null,
-  ""
+  "Target ping"
  ],
- "Please install the {0} package": [
+ "Please install the $0 package": [
   null,
-  ""
+  "Si prega di installare il $0pacchetto"
  ],
  "Ports": [
   null,
@@ -629,11 +625,11 @@ return plural;
  ],
  "Prefix length": [
   null,
-  ""
+  "Lunghezza prefisso"
  ],
  "Prefix length or Netmask": [
   null,
-  ""
+  "Lunghezza prefisso o maschera di rete"
  ],
  "Preparing": [
   null,
@@ -653,7 +649,7 @@ return plural;
  ],
  "Priority $priority": [
   null,
-  ""
+  "Priorità $priority"
  ],
  "Random": [
   null,
@@ -669,23 +665,23 @@ return plural;
  ],
  "Remove $0": [
   null,
-  ""
+  "Rimuovere $0"
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "La rimozione di I <b>$0</b>interromperà la connessione al server e renderà l'interfaccia utente di amministrazione non disponibile."
  ],
  "Restoring connection": [
   null,
-  ""
+  "Ripristino della connessione"
  ],
  "Round Robin": [
   null,
-  ""
+  "Round robin"
  ],
  "Routes": [
   null,
-  ""
+  "Rotte"
  ],
  "Runner": [
   null,
@@ -693,19 +689,19 @@ return plural;
  ],
  "STP Forward delay": [
   null,
-  ""
+  "STP Ritardo in avanti"
  ],
  "STP Hello time": [
   null,
-  ""
+  "STP Ciao tempo"
  ],
  "STP Maximum message age": [
   null,
-  ""
+  "STP Età massima del messaggio"
  ],
  "STP Priority": [
   null,
-  ""
+  "Priorità STP"
  ],
  "Sending": [
   null,
@@ -717,7 +713,7 @@ return plural;
  ],
  "Set to": [
   null,
-  ""
+  "Impostare su"
  ],
  "Shared": [
   null,
@@ -725,11 +721,11 @@ return plural;
  ],
  "Spanning Tree Protocol": [
   null,
-  ""
+  "Spanning Tree Protocol"
  ],
  "Spanning Tree Protocol (STP)": [
   null,
-  ""
+  "Protocollo dell'albero di scansione (STP)"
  ],
  "Stable": [
   null,
@@ -737,7 +733,7 @@ return plural;
  ],
  "Start Service": [
   null,
-  ""
+  "Avviare il servizio"
  ],
  "Status": [
   null,
@@ -745,27 +741,27 @@ return plural;
  ],
  "Sticky": [
   null,
-  ""
+  "Sticky"
  ],
  "Switch off $0": [
   null,
-  ""
+  "Spegni $0"
  ],
  "Switch on $0": [
   null,
-  ""
+  "Accendi $0"
  ],
  "Switching off <b>$0</b>  will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "La disattivazione di ² interromperà la connessione al server e renderà l'interfaccia utente di amministrazione non disponibile."
  ],
  "Switching off <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "La disattivazione di <b>$0</b>questa opzione interromperà la connessione al server e renderà l'interfaccia utente di amministrazione non disponibile."
  ],
  "Switching on <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "L<b>$0</b>'attivazione di questa opzione interromperà la connessione al server e renderà l'interfaccia utente di amministrazione non disponibile."
  ],
  "TCP": [
   null,
@@ -781,23 +777,23 @@ return plural;
  ],
  "Team Port Settings": [
   null,
-  ""
+  "Impostazioni della porta del team"
  ],
  "Team Settings": [
   null,
-  ""
+  "Impostazioni della squadra"
  ],
  "Testing connection": [
   null,
-  ""
+  "Test connessione"
  ],
  "The user <b>$0</b> is not permitted to modify network settings": [
   null,
-  ""
+  "L'utente non <b>$0</b>è autorizzato a modificare le impostazioni di rete"
  ],
  "This device cannot be managed here.": [
   null,
-  ""
+  "Questo dispositivo non può essere gestito qui."
  ],
  "UDP": [
   null,
@@ -805,7 +801,7 @@ return plural;
  ],
  "Unexpected error": [
   null,
-  ""
+  "Errore imprevisto"
  ],
  "Unknown": [
   null,
@@ -813,15 +809,15 @@ return plural;
  ],
  "Unknown \"$0\"": [
   null,
-  ""
+  "Sconosciuto \" \" \" \" \""
  ],
  "Unknown configuration": [
   null,
-  ""
+  "Configurazione sconosciuta"
  ],
  "Unmanaged Interfaces": [
   null,
-  ""
+  "Interfacce non gestite"
  ],
  "VLAN": [
   null,
@@ -829,11 +825,11 @@ return plural;
  ],
  "VLAN Id": [
   null,
-  ""
+  "ID VLAN"
  ],
  "VLAN Settings": [
   null,
-  ""
+  "Impostazioni VLAN"
  ],
  "Waiting": [
   null,
@@ -849,19 +845,19 @@ return plural;
  ],
  "You are not authorized to modify the firewall.": [
   null,
-  ""
+  "Non sei autorizzato a modificare il firewall."
  ],
  "[$0 bytes of binary data]": [
   null,
-  ""
+  "[$0byte di dati binari]"
  ],
  "[binary data]": [
   null,
-  ""
+  "[dati binari]"
  ],
  "[no data]": [
   null,
-  ""
+  "[nessun dato]"
  ],
  "page-title\u0004Networking": [
   null,

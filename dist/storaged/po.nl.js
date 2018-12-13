@@ -83,6 +83,11 @@ return plural;
   null,
   ""
  ],
+ "$0 day": [
+  "$0 days",
+  "",
+  ""
+ ],
  "$0 disk is missing": [
   "$0 disks are missing",
   "$0 schijf ontbreekt",
@@ -100,12 +105,27 @@ return plural;
   null,
   ""
  ],
+ "$0 hour": [
+  "$0 hours",
+  "",
+  ""
+ ],
  "$0 is in active use": [
   null,
   ""
  ],
  "$0 is not available from any repository.": [
   null,
+  ""
+ ],
+ "$0 minute": [
+  "$0 minutes",
+  "",
+  ""
+ ],
+ "$0 month": [
+  "$0 months",
+  "",
   ""
  ],
  "$0 of $1": [
@@ -120,8 +140,18 @@ return plural;
   null,
   ""
  ],
+ "$0 week": [
+  "$0 weeks",
+  "",
+  ""
+ ],
  "$0 will be installed.": [
   null,
+  ""
+ ],
+ "$0 year": [
+  "$0 years",
+  "",
   ""
  ],
  "$0, $1 free": [
@@ -1037,10 +1067,6 @@ return plural;
   ""
  ],
  "Overwrite existing data with zeros": [
-  null,
-  ""
- ],
- "PackageKit crashed": [
   null,
   ""
  ],

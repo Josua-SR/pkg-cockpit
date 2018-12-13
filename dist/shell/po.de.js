@@ -81,7 +81,7 @@ return plural;
  ],
  "Active Pages": [
   null,
-  ""
+  "Aktive Seiten"
  ],
  "Add": [
   null,
@@ -125,7 +125,7 @@ return plural;
  ],
  "Checking for public keys": [
   null,
-  ""
+  "Auf öffentliche Schlüssel überprüfen"
  ],
  "Choose the language to be used in the application": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Close Selected Pages": [
   null,
-  ""
+  "Ausgewählte Seiten schließen"
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
@@ -161,7 +161,7 @@ return plural;
  ],
  "Cockpit was unable to log in to {{#strong}}{{host}}{{/strong}}. {{#can_sync}}You may want to try to {{#sync_link}}synchronize users{{/sync_link}}.{{/can_sync}} For more authentication options and troubleshooting support please upgrade cockpit-ws to a newer version.": [
   null,
-  ""
+  "Cockpit konnte sich nicht anmelden {{#strong}}{{host}}{{/strong}}. {{#can_sync}}Möglicherweise möchten Sie es versuchen {{#sync_link}}Benutzer synchronisieren{{/sync_link}}.{{/can_sync}} Für weitere Authentifizierungsoptionen und Unterstützung bei der Fehlerbehebung aktualisieren Sie bitte Cockpit-ws auf eine neuere Version."
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}.": [
   null,
@@ -169,11 +169,11 @@ return plural;
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. To use this machine with cockpit you will need to enable one of the following authentication methods in the sshd config on {{#strong}}{{host}}{{/strong}}:": [
   null,
-  ""
+  "Cockpit konnte sich nicht anmelden {{#strong}}{{host}}{{/strong}}. Um dieses Gerät mit Cockpit zu verwenden, müssen Sie in der sshd-Konfiguration eine der folgenden Authentifizierungsmethoden aktivieren {{#strong}}{{host}}{{/strong}}:"
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. You can change your authentication credentials below. {{#can_sync}}You may prefer to {{#sync_link}}synchronize accounts and passwords{{/sync_link}}.{{/can_sync}}": [
   null,
-  ""
+  "Cockpit konnte sich nicht anmelden {{#strong}}{{host}}{{/strong}}. Sie können Ihre Authentifizierungsinformationen unten ändern. {{#can_sync}}Sie können es vorziehen {{#sync_link}}Konten und Passwörter synchronisieren{{/sync_link}}.{{/can_sync}}"
  ],
  "Color": [
   null,
@@ -225,11 +225,11 @@ return plural;
  ],
  "Entering a different password here means you will need to retype it every time you reconnect to this machine": [
   null,
-  ""
+  "Wenn Sie hier ein anderes Passwort eingeben, müssen Sie es jedes Mal erneut eingeben, wenn Sie sich erneut mit diesem System verbinden"
  ],
  "Error loading users: {{perm_failed}}": [
   null,
-  ""
+  "Fehler beim Laden von Benutzern: {{perm_failed}}"
  ],
  "Failed to add machine: $0": [
   null,
@@ -253,11 +253,11 @@ return plural;
  ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "Um Benutzer zu synchronisieren, müssen Sie sich bei anmelden {{#strong}}{{host}}{{/strong}}."
  ],
  "Incorrect Host Key": [
   null,
-  ""
+  "Falscher Host-Schlüssel"
  ],
  "Invalid file permissions": [
   null,
@@ -265,23 +265,23 @@ return plural;
  ],
  "Is sshd running on a different port?": [
   null,
-  ""
+  "Läuft sshd auf einem anderen Port?"
  ],
  "Kerberos Based SSO": [
   null,
-  ""
+  "Kerberos-basiertes SSO"
  ],
  "Kerberos Ticket": [
   null,
-  ""
+  "Kerberos Ticket"
  ],
  "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
-  ""
+  "Lassen Sie das Feld leer, um sich als aktuell angemeldeter Benutzer mit diesem System zu verbinden{{#default_user}} ({{default_user}}){{/default_user}}. Wenn Sie einen anderen Benutzernamen eingeben, wird dieser Benutzer immer für die Verbindung zu diesem System verwendet."
  ],
  "Licensed under:": [
   null,
-  ""
+  "Lizenziert unter:"
  ],
  "Log In": [
   null,
@@ -301,7 +301,7 @@ return plural;
  ],
  "Login Password": [
   null,
-  ""
+  "Passwort"
  ],
  "Login has escalated admin privileges": [
   null,
@@ -321,7 +321,7 @@ return plural;
  ],
  "No matching files found": [
   null,
-  ""
+  "Keine passenden Dateien gefunden"
  ],
  "No such file or directory": [
   null,
@@ -365,11 +365,11 @@ return plural;
  ],
  "Password not usable for privileged tasks or to connect to other machines": [
   null,
-  ""
+  "Das Kennwort kann nicht für privilegierte Aufgaben oder zum Herstellen einer Verbindung mit anderen Computern verwendet werden"
  ],
  "Path to file": [
   null,
-  ""
+  "Pfad zur Datei"
  ],
  "Port": [
   null,
@@ -381,19 +381,19 @@ return plural;
  ],
  "Project website": [
   null,
-  ""
+  "Projekt-Website"
  ],
  "Prompting via ssh-add timed out": [
   null,
-  ""
+  "Die Aufforderung über ssh-add ist abgelaufen"
  ],
  "Prompting via ssh-keygen timed out": [
   null,
-  ""
+  "Die Aufforderung über ssh-keygen ist abgelaufen"
  ],
  "Public Key": [
   null,
-  ""
+  "Öffentlicher Schlüssel"
  ],
  "Reconnect": [
   null,
@@ -441,7 +441,7 @@ return plural;
  ],
  "There are currently no active pages": [
   null,
-  ""
+  "Derzeit sind keine aktiven Seiten vorhanden"
  ],
  "This machine has already been added.": [
   null,
@@ -461,7 +461,7 @@ return plural;
  ],
  "Too many files found": [
   null,
-  ""
+  "Es wurden zu viele Dateien gefunden"
  ],
  "Troubleshoot": [
   null,
@@ -489,7 +489,7 @@ return plural;
  ],
  "Unlock Key": [
   null,
-  ""
+  "Schlüssel entsperren"
  ],
  "Update": [
   null,
@@ -514,10 +514,6 @@ return plural;
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
   "Sie sind mit {{#strong}}{{host}}{{/strong}} verbunden, zum Synchronisieren von Nutzern sind jedoch Administratorrechte erforderlich."
- ],
- "You can remove the previously stored key by running the following command": [
-  null,
-  "Sie können den zuvor gespeicherten Schlüssel mit dem folgenden Befehl entfernen"
  ],
  "active": [
   null,

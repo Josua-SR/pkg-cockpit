@@ -114,7 +114,7 @@ return plural;
  ],
  "$0 slots remain": [
   null,
-  ""
+  "$ 0 slots permanecem"
  ],
  "$0 used of $1 ($2 saved)": [
   null,
@@ -234,7 +234,7 @@ return plural;
  ],
  "Add Key": [
   null,
-  ""
+  "Adicionar chave"
  ],
  "Add iSCSI Portal": [
   null,
@@ -254,11 +254,11 @@ return plural;
  ],
  "Address cannot be empty": [
   null,
-  ""
+  "O endereço não pode estar vazio"
  ],
  "Address is not a valid URL": [
   null,
-  ""
+  "O endereço não é um URL válido"
  ],
  "Apply": [
   null,
@@ -314,7 +314,7 @@ return plural;
  ],
  "Change passphrase": [
   null,
-  ""
+  "Alterar senha"
  ],
  "Checking $target": [
   null,
@@ -362,7 +362,7 @@ return plural;
  ],
  "Confirm removal with passphrase": [
   null,
-  ""
+  "Confirme a remoção com a frase secreta"
  ],
  "Content": [
   null,
@@ -534,7 +534,7 @@ return plural;
  ],
  "Disk passphrase": [
   null,
-  ""
+  "Senha de disco"
  ],
  "Disks": [
   null,
@@ -562,11 +562,11 @@ return plural;
  ],
  "Edit Tang keyserver": [
   null,
-  ""
+  "Editar o servidor de chaves Tang"
  ],
  "Editing a key requires a free slot": [
   null,
-  ""
+  "Editar uma chave requer um espaço livre"
  ],
  "Ejecting $target": [
   null,
@@ -654,7 +654,7 @@ return plural;
  ],
  "Force remove passphrase in $0": [
   null,
-  ""
+  "Forçar a remoção da senha em $ 0"
  ],
  "Format": [
   null,
@@ -684,6 +684,10 @@ return plural;
   null,
   "Espaço Livre"
  ],
+ "Free up space in this group: Shrink or delete other logical volumes or add another physical volume.": [
+  null,
+  ""
+ ],
  "Go to now": [
   null,
   "Ir para agora"
@@ -706,7 +710,7 @@ return plural;
  ],
  "If tang-show-keys is not available, run the following:": [
   null,
-  ""
+  "Se tang-show-keys não estiver disponível, execute o seguinte:"
  ],
  "In Sync": [
   null,
@@ -734,7 +738,7 @@ return plural;
  ],
  "Install VDO support": [
   null,
-  ""
+  "Instale o suporte do VDO"
  ],
  "Installing $0": [
   null,
@@ -750,27 +754,27 @@ return plural;
  ],
  "Key slots with unknown types can not be edited here": [
   null,
-  ""
+  "Slots chave com tipos desconhecidos não podem ser editados aqui"
  ],
  "Key source": [
   null,
-  ""
+  "Fonte chave"
  ],
  "Keys": [
   null,
-  ""
+  "Chaves"
  ],
  "Keyserver": [
   null,
-  ""
+  "Keyserver"
  ],
  "Keyserver address": [
   null,
-  ""
+  "Endereço do servidor de chaves"
  ],
  "Keyserver removal may prevent unlocking $0.": [
   null,
-  ""
+  "A remoção do Keyserver pode impedir o desbloqueio de $ 0."
  ],
  "Local Mount Point": [
   null,
@@ -806,11 +810,11 @@ return plural;
  ],
  "Make sure the key hash from the Tang server matches:": [
   null,
-  ""
+  "Certifique-se de que o hash da chave do servidor Tang corresponda:"
  ],
  "Manually check with SSH: ": [
   null,
-  ""
+  "Verificar manualmente com o SSH: "
  ],
  "Marking $target as faulty": [
   null,
@@ -908,6 +912,14 @@ return plural;
   null,
   "O nome não pode estar vazio."
  ],
+ "Name cannot be longer than $0 bytes": [
+  null,
+  ""
+ ],
+ "Name cannot be longer than $0 characters": [
+  null,
+  ""
+ ],
  "Name cannot be longer than 127 characters.": [
   null,
   "O nome não pode ser maior do que 127 caracteres."
@@ -926,7 +938,7 @@ return plural;
  ],
  "New passphrase": [
   null,
-  ""
+  "Nova senha"
  ],
  "Next": [
   null,
@@ -946,7 +958,7 @@ return plural;
  ],
  "No available slots": [
   null,
-  ""
+  "Sem slots disponíveis"
  ],
  "No disks are available.": [
   null,
@@ -958,7 +970,7 @@ return plural;
  ],
  "No free key slots": [
   null,
-  ""
+  "Nenhum slot de chave livre"
  ],
  "No free space": [
   null,
@@ -970,7 +982,7 @@ return plural;
  ],
  "No keys added": [
   null,
-  ""
+  "Nenhuma chave adicionada"
  ],
  "No media inserted": [
   null,
@@ -991,6 +1003,10 @@ return plural;
  "No volume groups created": [
   null,
   "Nenhum grupo de volume criado"
+ ],
+ "Not enough space to grow.": [
+  null,
+  ""
  ],
  "Not found": [
   null,
@@ -1014,7 +1030,7 @@ return plural;
  ],
  "Old passphrase": [
   null,
-  ""
+  "Old passphrase"
  ],
  "On": [
   null,
@@ -1040,10 +1056,6 @@ return plural;
   null,
   "Sobrescrever dados existentes com zeros"
  ],
- "PackageKit crashed": [
-  null,
-  "PackageKit caiu"
- ],
  "Partition": [
   null,
   "Partição"
@@ -1066,7 +1078,7 @@ return plural;
  ],
  "Passphrase removal may prevent unlocking $0.": [
   null,
-  ""
+  "A remoção da senha pode impedir o desbloqueio de $ 0."
  ],
  "Passphrases do not match": [
   null,
@@ -1242,11 +1254,11 @@ return plural;
  ],
  "Remove $0?": [
   null,
-  ""
+  "Remover $ 0?"
  ],
  "Remove Tang keyserver": [
   null,
-  ""
+  "Remover o servidor de chaves Tang"
  ],
  "Remove device": [
   null,
@@ -1254,11 +1266,11 @@ return plural;
  ],
  "Remove passphrase": [
   null,
-  ""
+  "Remover senha"
  ],
  "Remove passphrase in $0?": [
   null,
-  ""
+  "Remover frase secreta em $ 0?"
  ],
  "Removing $0": [
   null,
@@ -1294,7 +1306,7 @@ return plural;
  ],
  "Repeat passphrase": [
   null,
-  ""
+  "Repita a frase secreta"
  ],
  "Resizing $target": [
   null,
@@ -1314,7 +1326,7 @@ return plural;
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
-  ""
+  "Salvar uma nova senha requer o desbloqueio do disco. Por favor, forneça uma senha de disco atual."
  ],
  "Securely erasing $target": [
   null,
@@ -1382,7 +1394,7 @@ return plural;
  ],
  "Slot $0": [
   null,
-  ""
+  "Slot $ 0"
  ],
  "Spare": [
   null,
@@ -1462,7 +1474,7 @@ return plural;
  ],
  "Tang keyserver": [
   null,
-  ""
+  "Tang keyserver"
  ],
  "The \"storaged\" API is not available on this system.": [
   null,
@@ -1486,19 +1498,19 @@ return plural;
  ],
  "The currently logged in user is not permitted to see information about keys.": [
   null,
-  ""
+  "O usuário atualmente conectado não tem permissão para ver informações sobre chaves."
  ],
  "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
   null,
-  ""
+  "O sistema de arquivos está em uso por sessões de login e serviços do sistema. O processo interromperá isso."
  ],
  "The filesystem is in use by login sessions. Proceeding will stop these.": [
   null,
-  ""
+  "O sistema de arquivos está em uso por sessões de login. O processo interromperá isso."
  ],
  "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
-  ""
+  "O sistema de arquivos está em uso pelos serviços do sistema. O processo interromperá isso."
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
@@ -1506,7 +1518,7 @@ return plural;
  ],
  "The last key slot can not be removed": [
   null,
-  ""
+  "O último slot chave não pode ser removido"
  ],
  "The last physical volume of a volume group cannot be removed.": [
   null,
@@ -1538,7 +1550,7 @@ return plural;
  ],
  "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
   null,
-  ""
+  "Este dispositivo possui sistemas de arquivos atualmente em uso. A continuação desmontará todos os sistemas de arquivos nele."
  ],
  "This device is currently used for RAID devices.": [
   null,
@@ -1546,7 +1558,7 @@ return plural;
  ],
  "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
   null,
-  ""
+  "Este dispositivo é usado atualmente para dispositivos RAID. O processo irá removê-lo de seus dispositivos RAID."
  ],
  "This device is currently used for VDO devices.": [
   null,
@@ -1558,7 +1570,7 @@ return plural;
  ],
  "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
-  ""
+  "Este dispositivo é usado atualmente para grupos de volumes. O processo irá removê-lo de seus grupos de volumes."
  ],
  "This disk cannot be removed while the device is recovering.": [
   null,
@@ -1574,7 +1586,7 @@ return plural;
  ],
  "Trust key": [
   null,
-  ""
+  "Chave de confiança"
  ],
  "Type": [
   null,
@@ -1614,7 +1626,7 @@ return plural;
  ],
  "Unknown type": [
   null,
-  ""
+  "Tipo desconhecido"
  ],
  "Unlock": [
   null,
@@ -1634,7 +1646,7 @@ return plural;
  ],
  "Unlocking disk...": [
   null,
-  ""
+  "Desbloqueando o disco ..."
  ],
  "Unmount": [
   null,
@@ -1694,7 +1706,7 @@ return plural;
  ],
  "VDO support not installed": [
   null,
-  ""
+  "Suporte a VDO não instalado"
  ],
  "VFAT - Compatible with all systems and devices": [
   null,
@@ -1702,7 +1714,7 @@ return plural;
  ],
  "Verify key": [
   null,
-  ""
+  "Verificar chave"
  ],
  "Very securely erasing $target": [
   null,
@@ -1730,7 +1742,7 @@ return plural;
  ],
  "What if tang-show-keys is not available?": [
   null,
-  ""
+  "E se tang-show-keys não estiver disponível?"
  ],
  "Write-mostly": [
   null,
@@ -1766,7 +1778,7 @@ return plural;
  ],
  "key slot $0": [
   null,
-  ""
+  "key slot $ 0"
  ],
  "undefined": [
   null,

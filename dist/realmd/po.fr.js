@@ -199,10 +199,6 @@ return plural;
   null,
   "Mot de passe à usage unique"
  ],
- "PackageKit crashed": [
-  null,
-  "PackageKit crash"
- ],
  "Removals:": [
   null,
   "Suppressions :"

@@ -103,14 +103,6 @@ return plural;
   null,
   "Adreça"
  ],
- "Advanced TCA": [
-  null,
-  ""
- ],
- "All In One": [
-  null,
-  "Tot en un"
- ],
  "Authentication": [
   null,
   "Autenticació"
@@ -127,25 +119,9 @@ return plural;
   null,
   "Avatar"
  ],
- "Blade": [
-  null,
-  ""
- ],
- "Blade enclosure": [
-  null,
-  ""
- ],
- "Bus Expansion Chassis": [
-  null,
-  ""
- ],
  "CPU": [
   null,
   "CPU"
- ],
- "Can't load image": [
-  null,
-  "No es pot carregar la imatge"
  ],
  "Cancel": [
   null,
@@ -191,10 +167,6 @@ return plural;
   null,
   "Color"
  ],
- "Compact PCI": [
-  null,
-  "PCI compacte"
- ],
  "Connect": [
   null,
   "Connecta"
@@ -202,14 +174,6 @@ return plural;
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
   ""
- ],
- "Connection Error": [
-  null,
-  "Error de connexió"
- ],
- "Convertible": [
-  null,
-  "Convertible"
  ],
  "Could not contact {{host}}": [
   null,
@@ -219,29 +183,13 @@ return plural;
   null,
   "Tauler de control"
  ],
- "Desktop": [
-  null,
-  "Escriptori"
- ],
- "Detachable": [
-  null,
-  ""
- ],
  "Disk I/O": [
   null,
   "E/S de disc"
  ],
- "Docking Station": [
-  null,
-  ""
- ],
  "Edit Server": [
   null,
   "Edit el servidor"
- ],
- "Embedded PC": [
-  null,
-  ""
  ],
  "Enter IP address or host name": [
   null,
@@ -254,10 +202,6 @@ return plural;
  "Error loading users: {{perm_failed}}": [
   null,
   "Error en carregar els usuaris: {{perm_failed}}"
- ],
- "Expansion Chassis": [
-  null,
-  ""
  ],
  "Failed to add machine: $0": [
   null,
@@ -279,10 +223,6 @@ return plural;
   null,
   "Vés a ara"
  ],
- "Hand Held": [
-  null,
-  ""
- ],
  "Host Name": [
   null,
   "Nom d'amfitrió"
@@ -299,10 +239,6 @@ return plural;
   null,
   "Permisos de fitxer no vàlids"
  ],
- "IoT Gateway": [
-  null,
-  ""
- ],
  "Is sshd running on a different port?": [
   null,
   "S'està executant sshd en un port diferent?"
@@ -314,10 +250,6 @@ return plural;
  "Kerberos Ticket": [
   null,
   "Tiquet de Kerberos"
- ],
- "Laptop": [
-  null,
-  ""
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
@@ -343,33 +275,9 @@ return plural;
   null,
   "S'ha perdut la connexió. S'intenta connectar de nou"
  ],
- "Low Profile Desktop": [
-  null,
-  ""
- ],
- "Lunch Box": [
-  null,
-  ""
- ],
- "Main Server Chassis": [
-  null,
-  ""
- ],
  "Memory": [
   null,
   "Memòria"
- ],
- "Mini PC": [
-  null,
-  "Mini PC"
- ],
- "Mini Tower": [
-  null,
-  "Mini torre"
- ],
- "Multi-system Chassis": [
-  null,
-  ""
  ],
  "Network": [
   null,
@@ -387,10 +295,6 @@ return plural;
   null,
   "No és una clau privada vàlida"
  ],
- "Notebook": [
-  null,
-  ""
- ],
  "Off": [
   null,
   "Off"
@@ -403,10 +307,6 @@ return plural;
   null,
   "On"
  ],
- "Other": [
-  null,
-  "Altres"
- ],
  "Password": [
   null,
   "Contrasenya"
@@ -415,21 +315,9 @@ return plural;
   null,
   "Contrasenya no acceptada"
  ],
- "Peripheral Chassis": [
-  null,
-  ""
- ],
- "Pizza Box": [
-  null,
-  ""
- ],
  "Port": [
   null,
   "Port"
- ],
- "Portable": [
-  null,
-  "Portable"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -443,18 +331,6 @@ return plural;
   null,
   "Clau pública"
  ],
- "RAID Chassis": [
-  null,
-  ""
- ],
- "Rack Mount Chassis": [
-  null,
-  ""
- ],
- "Sealed-case PC": [
-  null,
-  ""
- ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
   "Seleccioneu els usuaris que vulgueu que estiguin sincronitzats amb {{#strong}}{{host}}{{/strong}}"
@@ -467,22 +343,6 @@ return plural;
   null,
   "Estableix"
  ],
- "Space-saving Computer": [
-  null,
-  ""
- ],
- "Stick PC": [
-  null,
-  ""
- ],
- "Sub Chassis": [
-  null,
-  ""
- ],
- "Sub Notebook": [
-  null,
-  ""
- ],
  "Synchronize": [
   null,
   "Sincronitza"
@@ -490,10 +350,6 @@ return plural;
  "Synchronize users": [
   null,
   "Sincronitza els usuaris"
- ],
- "Tablet": [
-  null,
-  "Tauleta"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -511,10 +367,6 @@ return plural;
   null,
   "Les contrasenyes no coincideixen."
  ],
- "The user <b>$0</b> is not permitted to manage servers": [
-  null,
-  "A l'usuari <b>$0</b> no se li permet gestionar els servidors"
- ],
  "This machine has already been added.": [
   null,
   "La màquina ja ha estat afegida."
@@ -527,17 +379,9 @@ return plural;
   null,
   "Per provar un port diferent, haureu d'actualitzar cockpit-ws a una versió més recent."
  ],
- "Tower": [
-  null,
-  "Torre"
- ],
  "Type a password": [
   null,
   "Teclegeu una contrasenya"
- ],
- "Unknown": [
-  null,
-  "Desconegut"
  ],
  "Unknown Host Key": [
   null,
@@ -562,10 +406,6 @@ return plural;
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
   ""
- ],
- "You are currently connected directly to this server. You cannot delete it.": [
-  null,
-  "Actualment esteu connectat directament a aquest servidor. No el podeu suprimir."
  ],
  "You can remove the previously stored key by running the following command": [
   null,

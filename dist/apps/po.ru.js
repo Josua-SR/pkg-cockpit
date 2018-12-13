@@ -77,7 +77,7 @@ return plural;
  ],
  "Checking for new applications": [
   null,
-  ""
+  "Проверка новых приложений"
  ],
  "Close": [
   null,
@@ -89,7 +89,7 @@ return plural;
  ],
  "Go to Application": [
   null,
-  ""
+  "Перейти к заявке"
  ],
  "Install": [
   null,
@@ -101,23 +101,19 @@ return plural;
  ],
  "No applications installed or available": [
   null,
-  ""
+  "Нет приложений, установленных или доступных"
  ],
  "No description provided.": [
   null,
-  ""
+  "Нет описания."
  ],
  "No installation package found for this application.": [
   null,
-  ""
+  "Пакет установки для этого приложения не установлен."
  ],
  "Ok": [
   null,
   "OK"
- ],
- "PackageKit crashed": [
-  null,
-  ""
  ],
  "Remove": [
   null,
@@ -129,10 +125,10 @@ return plural;
  ],
  "Unknown Application": [
   null,
-  ""
+  "Неизвестное приложение"
  ],
  "Waiting for other programs to finish using the package manager...": [
   null,
-  ""
+  "Ожидание завершения других программ с помощью диспетчера пакетов ..."
  ]
 }));

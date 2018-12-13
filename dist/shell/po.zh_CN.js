@@ -161,7 +161,7 @@ return plural;
  ],
  "Cockpit was unable to log in to {{#strong}}{{host}}{{/strong}}. {{#can_sync}}You may want to try to {{#sync_link}}synchronize users{{/sync_link}}.{{/can_sync}} For more authentication options and troubleshooting support please upgrade cockpit-ws to a newer version.": [
   null,
-  "Cockpit 无法登录到 {{#strong}}{{host}}{{/strong}}。 您可以尝试使用 {{#can_sync}}对用户进行同步{{/sync_link}}。{{/can_sync}} 如需更多验证选项和排错支持，请把 cockpit-ws 更新到一个新版本。"
+  "Cockpit 无法登录到 {{#strong}}{{host}}{{/strong}}。 {{#can_sync}}您可以尝试使用 {{#sync_link}}对用户进行同步{{/sync_link}}。{{/can_sync}} 如需更多验证选项和排错支持，请把 cockpit-ws 更新到一个新版本。"
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}.": [
   null,
@@ -514,10 +514,6 @@ return plural;
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
   "已经连接到 {{#strong}}{{host}}{{/strong}}，然而为了同步用户，需要一个特权用户。"
- ],
- "You can remove the previously stored key by running the following command": [
-  null,
-  "可以通过使用以下命令来移除之前保存的密钥"
  ],
  "active": [
   null,

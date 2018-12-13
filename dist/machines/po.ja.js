@@ -71,10 +71,6 @@ return plural;
   null,
   "$0 は、多数のオペレーティングシステムで利用できます。インストールするには、GNOME ソフトウェアで検索するか、以下を実行します:"
  ],
- "$0 vCPU Details": [
-  null,
-  "$0 vCPU の詳細"
- ],
  "Add": [
   null,
   "追加する"
@@ -90,10 +86,6 @@ return plural;
  "Address:": [
   null,
   "アドレス: "
- ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  "すべての変更は、仮想マシンの停止および開始後にのみ、実施されます。"
  ],
  "Apply": [
   null,
@@ -123,10 +115,6 @@ return plural;
   null,
   "バス"
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "CHANGE NETWORK STATE アクションに失敗しました"
- ],
  "CPU Type:": [
   null,
   "CPU タイプ:"
@@ -139,17 +127,13 @@ return plural;
   null,
   "容量"
  ],
- "Changes will apply on VM shutdown": [
+ "Changes will take effect after shutting down the VM": [
   null,
-  ""
+  "変更は、仮想マシンをシャットダウンすると反映されます。"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
   "\"リモートビューアーの起動\" をクリックすると、.vv ファイルをダウンロードし、$0 を起動します。"
- ],
- "Confirm deletion of $0": [
-  null,
-  "$0 の削除を確定"
  ],
  "Connect with any $0 viewer application.": [
   null,
@@ -161,7 +145,7 @@ return plural;
  ],
  "Connecting": [
   null,
-  ""
+  "接続中"
  ],
  "Connecting to Virtualization Service": [
   null,
@@ -191,13 +175,13 @@ return plural;
   null,
   "新規作成"
  ],
- "Create New VM": [
+ "Create Storage Pool": [
   null,
-  "仮想マシンの新規作成"
+  "ストレージプールの作成"
  ],
- "Create New Virtual Machine": [
+ "Create VM": [
   null,
-  "仮想マシンの新規作成"
+  "仮想マシンの作成"
  ],
  "Creation of vm $0 failed": [
   null,
@@ -205,7 +189,7 @@ return plural;
  ],
  "Ctrl+Alt+Del": [
   null,
-  ""
+  "Ctrl+Alt+Del"
  ],
  "Delete": [
   null,
@@ -231,13 +215,13 @@ return plural;
   null,
   "シリアルコンソールから切断されました。「再接続」ボタンをクリックします。"
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
-  "以下のエラーが原因でディスクの割り当てに失敗しました: "
+  "ディスクの割り当てに失敗しました"
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
-  "以下のエラーが原因でディスクの作成に失敗しました: "
+  "ディスクの作成に失敗しました"
  ],
  "Disks": [
   null,
@@ -267,6 +251,10 @@ return plural;
   null,
   "ファイルシステム"
  ],
+ "Filesystem Directory": [
+  null,
+  "ファイルシステムのディレクトリー"
+ ],
  "Force Restart": [
   null,
   "再起動の強制"
@@ -278,10 +266,6 @@ return plural;
  "Format": [
   null,
   "フォーマット"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "GET HYPERVISOR MAX VCPU アクションに失敗しました"
  ],
  "GiB": [
   null,
@@ -299,9 +283,13 @@ return plural;
   null,
   "ホスト"
  ],
- "INSTALL VM action failed": [
+ "Host Name": [
   null,
-  "INSTALL VM アクションに失敗しました"
+  "ホスト名"
+ ],
+ "Host should not be empty": [
+  null,
+  "ホストは空にできません"
  ],
  "Immediately Start VM": [
   null,
@@ -341,7 +329,7 @@ return plural;
  ],
  "Mac Address": [
   null,
-  ""
+  "Mac アドレス"
  ],
  "Manual Connection": [
   null,
@@ -391,13 +379,17 @@ return plural;
   null,
   "名前は空欄にできません"
  ],
+ "Network File System": [
+  null,
+  "ネットワークファイルシステム"
+ ],
  "Network Type": [
   null,
-  ""
+  "ネットワークタイプ"
  ],
- "Network settings failed to change with following error: ": [
+ "Network settings could not be saved": [
   null,
-  ""
+  "ネットワーク設定を保存できませんでした"
  ],
  "Networks": [
   null,
@@ -406,6 +398,10 @@ return plural;
  "New Volume Name": [
   null,
   "新しいボリューム名"
+ ],
+ "No Storage Volumes defined for this Storage Pool": [
+  null,
+  "このストレージプールにストレージボリュームが定義されていません"
  ],
  "No VM is running or defined on this host": [
   null,
@@ -431,9 +427,13 @@ return plural;
   null,
   "この仮想マシンにはネットワークインターフェースが定義されていません"
  ],
+ "No storage pool is defined on this host": [
+  null,
+  "このホストではストレージプールが定義されていません"
+ ],
  "No virtual networks": [
   null,
-  ""
+  "仮想ネットワークがありません"
  ],
  "OS Vendor": [
   null,
@@ -446,6 +446,10 @@ return plural;
  "Overview": [
   null,
   "概要"
+ ],
+ "Path on host's filesystem": [
+  null,
+  "ホストファイルシステム上のパス"
  ],
  "Path to ISO file on host's file system": [
   null,
@@ -487,6 +491,14 @@ return plural;
   null,
   "プロトコル"
  ],
+ "QEMU/KVM System connection": [
+  null,
+  "QEMU/KVM システム接続"
+ ],
+ "QEMU/KVM User connection": [
+  null,
+  "QEMU/KVM ユーザー接続"
+ ],
  "Readonly": [
   null,
   "読み取り専用"
@@ -506,14 +518,6 @@ return plural;
  "Run": [
   null,
   "実行"
- ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  "SET VCPU SETTINGS アクションに失敗しました"
- ],
- "SET_VCPU_SETTINGS action failed": [
-  null,
-  ""
  ],
  "SPICE": [
   null,
@@ -541,15 +545,11 @@ return plural;
  ],
  "Send key": [
   null,
-  ""
+  "キーの送信"
  ],
  "Serial Console": [
   null,
   "シリアルコンソール"
- ],
- "Session": [
-  null,
-  "セッション"
  ],
  "Shut Down": [
   null,
@@ -567,7 +567,15 @@ return plural;
   null,
   "ソース"
  ],
- "Source should start with http, ftp or nfs protocol": [
+ "Source Path": [
+  null,
+  "ソースパス"
+ ],
+ "Source path should not be empty": [
+  null,
+  "ソースパスは空欄にできません"
+ ],
+ "Source should start with https, ftp or nfs protocol": [
   null,
   "ソースは、http、ftp、または nfs プロトコルで開始する必要があります"
  ],
@@ -575,13 +583,33 @@ return plural;
   null,
   "libvirt の開始"
  ],
+ "Start pool when host boots": [
+  null,
+  "ホスト起動時にプールを開始します"
+ ],
  "Start the VM to see disk statistics.": [
   null,
   "仮想マシンを起動して、ディスク統計を確認します"
  ],
+ "Startup": [
+  null,
+  "起動"
+ ],
  "State": [
   null,
   "状態"
+ ],
+ "Storage Pool Name": [
+  null,
+  "ストレージプール名"
+ ],
+ "Storage Pool failed to be created": [
+  null,
+  "ストレージプールの作成に失敗しました"
+ ],
+ "Storage Pools": [
+  null,
+  "ストレージプール"
  ],
  "Storage Size": [
   null,
@@ -591,13 +619,21 @@ return plural;
   null,
   "ストレージのサイズは負の値にすることができません"
  ],
- "System": [
+ "Storage Volumes": [
   null,
-  "システム"
+  "ストレージボリューム"
  ],
  "Target": [
   null,
   "ターゲット"
+ ],
+ "Target Path": [
+  null,
+  "ターゲットパス"
+ ],
+ "Target path should not be empty": [
+  null,
+  "ターゲットパスは空欄にできません"
  ],
  "The VM crashed.": [
   null,
@@ -635,13 +671,17 @@ return plural;
   null,
   "仮想マシンはゲストの電源管理によって一時停止されています。"
  ],
+ "The directory on the server being exported": [
+  null,
+  "サーバー上のディレクトリーをエクスポート中"
+ ],
  "The pool is empty": [
   null,
   "プールが空です"
  ],
  "Threads per core": [
   null,
-  ""
+  "コアあたりのスレッド"
  ],
  "Too many files found": [
   null,
@@ -683,53 +723,9 @@ return plural;
   null,
   "Used"
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
+ "VCPU settings could not be saved": [
   null,
-  ""
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  ""
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  ""
- ],
- "VM DELETE action failed": [
-  null,
-  ""
- ],
- "VM DETACH_DISK action failed": [
-  null,
-  ""
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "VM FORCE OFF アクションに失敗しました"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "VM FORCE REBOOT アクションに失敗しました"
- ],
- "VM REBOOT action failed": [
-  null,
-  "VM REBOOT アクションに失敗しました"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  "VM SEND マスク不可な割り込みアクションに失敗しました"
- ],
- "VM SENDNMI action failed": [
-  null,
-  ""
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "VM SHUT DOWN アクションに失敗しました"
- ],
- "VM START action failed": [
-  null,
-  "VM START アクションに失敗しました"
+  "VCPU 設定を保存できませんでした"
  ],
  "VNC": [
   null,
@@ -763,81 +759,17 @@ return plural;
   null,
   "音量"
  ],
- "bridge": [
+ "active": [
   null,
-  "ブリッジ"
+  "アクティブ"
  ],
- "cdrom": [
+ "inactive": [
   null,
-  "cdrom"
- ],
- "crashed": [
-  null,
-  "クラッシュ"
- ],
- "custom": [
-  null,
-  "カスタム"
- ],
- "direct": [
-  null,
-  "ダイレクト"
- ],
- "disabled": [
-  null,
-  "無効"
- ],
- "disk": [
-  null,
-  "ディスク"
- ],
- "down": [
-  null,
-  "下へ"
- ],
- "dying": [
-  null,
-  "終了中"
- ],
- "enabled": [
-  null,
-  "有効"
- ],
- "ethernet": [
-  null,
-  "Ethernet"
- ],
- "host": [
-  null,
-  "ホスト"
- ],
- "hostdev": [
-  null,
-  "hostdev"
- ],
- "idle": [
-  null,
-  "アイドル"
- ],
- "mcast": [
-  null,
-  "mcast"
- ],
- "network": [
-  null,
-  "ネットワーク"
+  "非アクティブ"
  ],
  "no": [
   null,
   "いいえ"
- ],
- "other": [
-  null,
-  "その他"
- ],
- "paused": [
-  null,
-  "一時停止"
  ],
  "qcow2": [
   null,
@@ -847,14 +779,6 @@ return plural;
   null,
   "raw"
  ],
- "running": [
-  null,
-  "実行中"
- ],
- "server": [
-  null,
-  "サーバー"
- ],
  "show less": [
   null,
   "表示を減らす"
@@ -863,33 +787,9 @@ return plural;
   null,
   "表示を増やす"
  ],
- "shut off": [
-  null,
-  "シャットオフ"
- ],
- "shutdown": [
-  null,
-  "shutdown"
- ],
- "suspended (PM)": [
-  null,
-  "一時停止中 (PM)"
- ],
- "udp": [
-  null,
-  "udp"
- ],
  "undefined": [
   null,
   "未定義"
- ],
- "up": [
-  null,
-  "上へ"
- ],
- "user": [
-  null,
-  "ユーザー"
  ],
  "vCPU Count": [
   null,
@@ -902,10 +802,6 @@ return plural;
  "vCPUs:": [
   null,
   "vCPU:"
- ],
- "vhostuser": [
-  null,
-  "vhostuser"
  ],
  "yes": [
   null,

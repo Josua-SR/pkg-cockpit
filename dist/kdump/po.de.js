@@ -89,23 +89,19 @@ return plural;
  ],
  "Crash system": [
   null,
-  ""
+  "Crash-System"
  ],
  "Directory": [
   null,
   "Ordner"
  ],
- "Directory $0 isn't writable or doesn't exist.": [
-  null,
-  ""
- ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
-  ""
+  "Kdump-Dienst nicht installiert. Bitte stellen Sie sicher, dass das Paket kexec-tools installiert ist."
  ],
  "Kernel Dump": [
   null,
-  ""
+  "Kernel Dump"
  ],
  "Loading...": [
   null,
@@ -133,7 +129,7 @@ return plural;
  ],
  "No memory reserved. Append a crashkernel option to the kernel command line (e.g. in /etc/default/grub) to reserve memory at boot time. Example: crashkernel=512M": [
   null,
-  ""
+  "Kein Speicher reserviert Hängen Sie an die Kernel-Befehlszeile eine Option crashkernel an (z. B. in / etc / default / grub), um Speicherplatz beim Booten zu reservieren. Beispiel: crashkernel = 512M"
  ],
  "None": [
   null,
@@ -153,11 +149,11 @@ return plural;
  ],
  "On a mounted device": [
   null,
-  ""
+  "Auf einem montierten Gerät"
  ],
  "Raw to a device": [
   null,
-  ""
+  "Raw zu einem Gerät"
  ],
  "Reading...": [
   null,
@@ -165,15 +161,15 @@ return plural;
  ],
  "Remote over NFS": [
   null,
-  ""
+  "Remote über NFS"
  ],
  "Remote over SSH": [
   null,
-  ""
+  "Remote über SSH"
  ],
  "Reserved memory": [
   null,
-  ""
+  "Reservierter Speicher"
  ],
  "Server": [
   null,
@@ -213,7 +209,7 @@ return plural;
  ],
  "This will test kdump settings by crashing the kernel and thereby the system. Depending on the settings, the system may not automatically reboot and the process may take a while.": [
   null,
-  ""
+  "Dadurch werden die kdump-Einstellungen getestet, indem der Kernel und damit das System zum Absturz gebracht werden. Abhängig von den Einstellungen wird das System möglicherweise nicht automatisch neu gestartet, und der Vorgang kann eine Weile dauern."
  ],
  "This will test the kdump configuration by crashing the kernel.": [
   null,
@@ -225,7 +221,7 @@ return plural;
  ],
  "invalid: multiple targets defined": [
   null,
-  ""
+  "ungültig: Mehrere Ziele definiert"
  ],
  "kdump status": [
   null,
@@ -235,21 +231,9 @@ return plural;
   null,
   "lokal in $0"
  ],
- "nfs dump target isn't formated as server:path": [
-  null,
-  ""
- ],
  "ssh key": [
   null,
   "SSH-Schlüssel"
- ],
- "ssh key isn't a path": [
-  null,
-  ""
- ],
- "ssh server is empty": [
-  null,
-  ""
  ],
  "undefined": [
   null,

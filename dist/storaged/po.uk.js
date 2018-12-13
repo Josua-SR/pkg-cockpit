@@ -685,6 +685,10 @@ return plural;
   null,
   "Вільне місце"
  ],
+ "Free up space in this group: Shrink or delete other logical volumes or add another physical volume.": [
+  null,
+  "Звільніть місце у цій групі: зменшіть розмір інших логічних томів або вилучіть їх чи додайте ще один фізичний том."
+ ],
  "Go to now": [
   null,
   "Перейти зараз"
@@ -909,6 +913,14 @@ return plural;
   null,
   "Назва не може бути порожньою."
  ],
+ "Name cannot be longer than $0 bytes": [
+  null,
+  ""
+ ],
+ "Name cannot be longer than $0 characters": [
+  null,
+  ""
+ ],
  "Name cannot be longer than 127 characters.": [
   null,
   "Назва не повинна бути довшою за 127 символів."
@@ -993,6 +1005,10 @@ return plural;
   null,
   "Груп томів не створено"
  ],
+ "Not enough space to grow.": [
+  null,
+  "Недостатньо місця для росту."
+ ],
  "Not found": [
   null,
   "Не знайдено"
@@ -1040,10 +1056,6 @@ return plural;
  "Overwrite existing data with zeros": [
   null,
   "Перезаписати наявні дані нулями"
- ],
- "PackageKit crashed": [
-  null,
-  "Аварійне завершення роботи PackageKit"
  ],
  "Partition": [
   null,

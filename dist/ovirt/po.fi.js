@@ -143,17 +143,9 @@ return plural;
   null,
   ""
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "CHANGE NETWORK STATE -toiminto epäonnistui"
- ],
  "CPU Type:": [
   null,
   "Prosessorin tyyppi:"
- ],
- "CREATE VM action failed": [
-  null,
-  "CREATE VM -toiminto epäonnistui"
  ],
  "Cancel": [
   null,
@@ -331,10 +323,6 @@ return plural;
   null,
   "Alusta"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  ""
- ],
  "GiB": [
   null,
   "GiB"
@@ -363,10 +351,6 @@ return plural;
   null,
   ""
  ],
- "INSTALL VM action failed": [
-  null,
-  "INSTALL VM -toiminto epäonnistui"
- ],
  "Install": [
   null,
   "Asenna"
@@ -386,10 +370,6 @@ return plural;
  "MAC Address": [
   null,
   "MAC-osoite"
- ],
- "MIGRATE action failed": [
-  null,
-  "MIGRATE-toiminto epäonnistui"
  ],
  "Manual Connection": [
   null,
@@ -543,17 +523,9 @@ return plural;
   null,
   ""
  ],
- "Preparing for Maintenance": [
-  null,
-  ""
- ],
  "Protocol": [
   null,
   ""
- ],
- "REBOOT action failed": [
-  null,
-  "REBOOT-toiminto epäonnistui"
  ],
  "Readonly": [
   null,
@@ -591,14 +563,6 @@ return plural;
   null,
   ""
  ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  ""
- ],
- "SHUTDOWN action failed": [
-  null,
-  "SHUTDOWN-toiminto epäonnistui"
- ],
  "SPICE": [
   null,
   "SPICE"
@@ -615,14 +579,6 @@ return plural;
   null,
   "SPICE-TLS-portti:"
  ],
- "START action failed": [
-  null,
-  "START-toiminto epäonnistui"
- ],
- "SUSPEND action failed": [
-  null,
-  "SUSPEND-toiminto epäonnistui"
- ],
  "Save": [
   null,
   "Tallenna"
@@ -638,10 +594,6 @@ return plural;
  "Serial Console": [
   null,
   ""
- ],
- "Session": [
-  null,
-  "Istunto"
  ],
  "Shut Down": [
   null,
@@ -682,18 +634,6 @@ return plural;
  "Switch Host to Maintenance": [
   null,
   ""
- ],
- "Switching host to maintenance mode failed. Received error: ": [
-  null,
-  ""
- ],
- "Switching host to maintenance mode in progress ...": [
-  null,
-  ""
- ],
- "System": [
-  null,
-  "Järjestelmä"
  ],
  "Target": [
   null,
@@ -795,38 +735,6 @@ return plural;
   null,
   "VDSM-palveluhallinta"
  ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  ""
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  ""
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "VM FORCE OFF -toiminto epäonnistui"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "VM FORCE REBOOT -toiminto epäonnistui"
- ],
- "VM REBOOT action failed": [
-  null,
-  "VM REBOOT -toiminto epäonnistui"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  "VM SEND Non-Maskable Interrrupt -toiminto epäonnistui"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "VM SHUT DOWN -toiminto epäonnistui"
- ],
- "VM START action failed": [
-  null,
-  "VM START -toiminto epäonnistui"
- ],
  "VM icon": [
   null,
   "VM-kuvake"
@@ -867,31 +775,7 @@ return plural;
   null,
   "Taltio"
  ],
- "bridge": [
-  null,
-  ""
- ],
- "cdrom": [
-  null,
-  ""
- ],
- "connecting": [
-  null,
-  "yhdistetään"
- ],
  "cores": [
-  null,
-  ""
- ],
- "crashed": [
-  null,
-  "kaatui"
- ],
- "custom": [
-  null,
-  ""
- ],
- "direct": [
   null,
   ""
  ],
@@ -899,85 +783,13 @@ return plural;
   null,
   "pois käytöstä"
  ],
- "disk": [
-  null,
-  ""
- ],
- "down": [
-  null,
-  ""
- ],
- "dying": [
-  null,
-  "kuolemassa"
- ],
  "enabled": [
   null,
   "käytössä"
  ],
- "error": [
-  null,
-  "virhe"
- ],
- "ethernet": [
-  null,
-  "ethernet"
- ],
- "host": [
-  null,
-  ""
- ],
- "hostdev": [
-  null,
-  ""
- ],
- "idle": [
-  null,
-  "jouten"
- ],
- "initializing": [
-  null,
-  ""
- ],
- "installation failed": [
-  null,
-  "asennus epäonnistui"
- ],
- "installing OS": [
-  null,
-  "asennetaan käyttöjärjestelmä"
- ],
- "kdumping": [
-  null,
-  ""
- ],
- "maintenance": [
-  null,
-  ""
- ],
- "mcast": [
-  null,
-  ""
- ],
- "network": [
-  null,
-  "verkko"
- ],
  "no": [
   null,
   "ei"
- ],
- "non operational": [
-  null,
-  ""
- ],
- "non responsive": [
-  null,
-  ""
- ],
- "oVirt": [
-  null,
-  "oVirt"
  ],
  "oVirt Host State:": [
   null,
@@ -999,18 +811,6 @@ return plural;
   null,
   ""
  ],
- "other": [
-  null,
-  "muu"
- ],
- "paused": [
-  null,
-  "pysäytetty"
- ],
- "pending approval": [
-  null,
-  "odottaa hyväksyntää"
- ],
  "qcow2": [
   null,
   ""
@@ -1018,18 +818,6 @@ return plural;
  "raw": [
   null,
   ""
- ],
- "reboot": [
-  null,
-  ""
- ],
- "running": [
-  null,
-  "suoritetaan"
- ],
- "server": [
-  null,
-  "palvelin"
  ],
  "show less": [
   null,
@@ -1039,45 +827,17 @@ return plural;
   null,
   "näytä enemmän"
  ],
- "shut off": [
-  null,
-  "sammutettu"
- ],
- "shutdown": [
-  null,
-  "sammuta"
- ],
  "sockets": [
   null,
   ""
- ],
- "suspended (PM)": [
-  null,
-  "pysäytetty (PM)"
  ],
  "threads": [
   null,
   "säikeet"
  ],
- "udp": [
-  null,
-  "udp"
- ],
- "unassigned": [
-  null,
-  ""
- ],
  "undefined": [
   null,
   "määrittämätön"
- ],
- "up": [
-  null,
-  ""
- ],
- "user": [
-  null,
-  "käyttäjä"
  ],
  "vCPU Count": [
   null,
@@ -1094,10 +854,6 @@ return plural;
  "vCPUs:": [
   null,
   "vCPUt:"
- ],
- "vhostuser": [
-  null,
-  ""
  ],
  "yes": [
   null,

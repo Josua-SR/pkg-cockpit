@@ -685,6 +685,10 @@ return plural;
   null,
   "Volné místo"
  ],
+ "Free up space in this group: Shrink or delete other logical volumes or add another physical volume.": [
+  null,
+  "Uvolněte prostor v této skupině: zmenšete nebo smažte nějaké logické svazky nebo přidejte fyzický svazek."
+ ],
  "Go to now": [
   null,
   "Přejít na nyní"
@@ -909,6 +913,14 @@ return plural;
   null,
   "Název je třeba vyplnit."
  ],
+ "Name cannot be longer than $0 bytes": [
+  null,
+  ""
+ ],
+ "Name cannot be longer than $0 characters": [
+  null,
+  ""
+ ],
  "Name cannot be longer than 127 characters.": [
   null,
   "Název nemůže být delší než 127 znaků."
@@ -993,6 +1005,10 @@ return plural;
   null,
   "Nejsou vytvořené žádné skupiny svazků"
  ],
+ "Not enough space to grow.": [
+  null,
+  "Pro zvětšení není k dispozici dostatek prostoru."
+ ],
  "Not found": [
   null,
   "Nenalezeno"
@@ -1040,10 +1056,6 @@ return plural;
  "Overwrite existing data with zeros": [
   null,
   "Přepsat existující data nulami"
- ],
- "PackageKit crashed": [
-  null,
-  "PackageKit zhavaroval"
  ],
  "Partition": [
   null,

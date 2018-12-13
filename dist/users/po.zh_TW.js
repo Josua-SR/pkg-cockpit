@@ -73,31 +73,31 @@ return plural;
  ],
  "Account Expiration": [
   null,
-  ""
+  "帳戶到期"
  ],
  "Account not available or cannot be edited.": [
   null,
-  ""
+  "帳戶不可用或無法編輯。"
  ],
  "Accounts": [
   null,
-  ""
+  "帳號"
  ],
  "Add key": [
   null,
-  ""
+  "添加密鑰"
  ],
  "Add public key": [
   null,
-  ""
+  "添加公鑰"
  ],
  "Authorized Public SSH Keys": [
   null,
-  ""
+  "授權的公共SSH密鑰"
  ],
  "Back to Accounts": [
   null,
-  ""
+  "回到帳戶"
  ],
  "Cancel": [
   null,
@@ -117,11 +117,7 @@ return plural;
  ],
  "Confirm New Password": [
   null,
-  ""
- ],
- "Container Administrator": [
-  null,
-  ""
+  "確認新密碼"
  ],
  "Create": [
   null,
@@ -129,111 +125,59 @@ return plural;
  ],
  "Create New Account": [
   null,
-  ""
+  "建立新帳戶"
  ],
  "Delete": [
   null,
   "刪除"
  ],
- "Delete $0": [
-  null,
-  ""
- ],
  "Delete Files": [
   null,
   "刪除檔案"
  ],
- "Error": [
-  null,
-  "錯誤"
- ],
- "Excellent password": [
-  null,
-  ""
- ],
- "Failed to change password": [
-  null,
-  ""
- ],
  "Failed to load authorized keys.": [
   null,
-  ""
+  "無法加載授權密鑰。"
  ],
  "Force Change": [
   null,
-  ""
+  "強制改變"
  ],
  "Force password change": [
   null,
-  ""
+  "強制更改密碼"
  ],
  "Full Name": [
   null,
   "全名"
  ],
- "Image Builder": [
-  null,
-  ""
- ],
- "Invalid expiration date": [
-  null,
-  ""
- ],
  "Invalid key": [
   null,
-  ""
- ],
- "Invalid number of days": [
-  null,
-  ""
+  "無效的密鑰"
  ],
  "Last Login": [
   null,
-  ""
+  "上次登錄"
  ],
  "Local Accounts": [
   null,
-  ""
+  "本地帳戶"
  ],
  "Lock Account": [
   null,
-  ""
- ],
- "Lock account on $0": [
-  null,
-  ""
- ],
- "Logged In": [
-  null,
-  ""
- ],
- "Never": [
-  null,
-  "永不"
+  "鎖定帳戶"
  ],
  "Never expire password": [
   null,
-  ""
+  "永不過期密碼"
  ],
  "Never lock account": [
   null,
-  ""
+  "從不鎖定帳戶"
  ],
  "New Password": [
   null,
-  ""
- ],
- "New password was not accepted": [
-  null,
-  ""
- ],
- "No real name specified": [
-  null,
-  ""
- ],
- "No user name specified": [
-  null,
-  ""
+  "新密碼"
  ],
  "Off": [
   null,
@@ -241,11 +185,7 @@ return plural;
  ],
  "Old Password": [
   null,
-  ""
- ],
- "Old password not accepted": [
-  null,
-  ""
+  "舊密碼"
  ],
  "On": [
   null,
@@ -257,39 +197,11 @@ return plural;
  ],
  "Password Expiration": [
   null,
-  ""
- ],
- "Password is not acceptable": [
-  null,
-  ""
- ],
- "Password is too weak": [
-  null,
-  ""
- ],
- "Password must be changed": [
-  null,
-  ""
+  "密碼到期"
  ],
  "Paste the contents of your public SSH key file here": [
   null,
-  ""
- ],
- "Please specify an expiration date": [
-  null,
-  ""
- ],
- "Prompting via passwd timed out": [
-  null,
-  ""
- ],
- "Require password change every $0 days": [
-  null,
-  ""
- ],
- "Require password change on $0": [
-  null,
-  ""
+  "在此處粘貼公共SSH密鑰文件的內容"
  ],
  "Reset": [
   null,
@@ -299,57 +211,21 @@ return plural;
   null,
   "角色"
  ],
- "Server Administrator": [
-  null,
-  ""
- ],
  "Set": [
   null,
   "設置"
  ],
  "Set Password": [
   null,
-  ""
+  "設置密碼"
  ],
  "Terminate Session": [
   null,
-  ""
- ],
- "The account '$0' will be forced to change their password on next login": [
-  null,
-  ""
- ],
- "The passwords do not match": [
-  null,
-  ""
- ],
- "The user <b>$0</b> is not permitted to modify accounts": [
-  null,
-  ""
- ],
- "The user name can only consist of letters from a-z, digits, dots, dashes and underscores.": [
-  null,
-  ""
+  "終止會話"
  ],
  "There are no authorized public keys for this account.": [
   null,
-  ""
- ],
- "This user name already exists": [
-  null,
-  ""
- ],
- "Unable to delete root account": [
-  null,
-  ""
- ],
- "Unable to rename root account": [
-  null,
-  ""
- ],
- "Unexpected error": [
-  null,
-  "未預期的錯誤"
+  "此帳戶沒有授權的公鑰。"
  ],
  "Unnamed": [
   null,
@@ -361,14 +237,10 @@ return plural;
  ],
  "You do not have permission to view the authorized public keys for this account.": [
   null,
-  ""
+  "您無權查看此帳戶的授權公鑰。"
  ],
  "translatable": [
   null,
-  ""
- ],
- "page-title\u0004Accounts": [
-  null,
-  ""
+  "翻譯"
  ]
 }));

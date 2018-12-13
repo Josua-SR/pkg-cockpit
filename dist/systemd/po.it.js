@@ -69,183 +69,179 @@ return plural;
  },
  "$0 is not available from any repository.": [
   null,
-  ""
+  "$0 non è disponibile in nessun deposito."
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "$0 sarà installato."
  ],
  "1 Minute": [
   null,
-  ""
+  "1 minuto"
  ],
  "1 day": [
   null,
-  ""
+  "1 giorno"
  ],
  "1 hour": [
   null,
-  ""
+  "1 ora"
  ],
  "1 week": [
   null,
-  ""
+  "1 settimana"
  ],
  "10th": [
   null,
-  ""
+  "10°"
  ],
  "11th": [
   null,
-  ""
+  "11t°"
  ],
  "12th": [
   null,
-  ""
+  "12°"
  ],
  "13th": [
   null,
-  ""
+  "13°"
  ],
  "14th": [
   null,
-  ""
+  "14°"
  ],
  "15th": [
   null,
-  ""
+  "15°"
  ],
  "16th": [
   null,
-  ""
+  "16°"
  ],
  "17th": [
   null,
-  ""
+  "17°"
  ],
  "18th": [
   null,
-  ""
+  "18°"
  ],
  "19th": [
   null,
-  ""
+  "19°"
  ],
  "1st": [
   null,
-  ""
+  "1°"
  ],
  "20 Minutes": [
   null,
-  ""
+  "20 minuti"
  ],
  "20th": [
   null,
-  ""
+  "20"
  ],
  "21st": [
   null,
-  ""
+  "21"
  ],
  "22nd": [
   null,
-  ""
+  "22esimo"
  ],
  "23rd": [
   null,
-  ""
+  "ventitreesimo"
  ],
  "24th": [
   null,
-  ""
+  "ventiquattresimo"
  ],
  "25th": [
   null,
-  ""
+  "venticinquesimo"
  ],
  "26th": [
   null,
-  ""
+  "26°"
  ],
  "27th": [
   null,
-  ""
+  "27"
  ],
  "28th": [
   null,
-  ""
+  "ventottesimo"
  ],
  "29th": [
   null,
-  ""
+  "ventinovesimo"
  ],
  "2nd": [
   null,
-  ""
+  "2a"
  ],
  "30th": [
   null,
-  ""
+  "30"
  ],
  "31st": [
   null,
-  ""
+  "31"
  ],
  "3rd": [
   null,
-  ""
+  "Terzo"
  ],
  "40 Minutes": [
   null,
-  ""
+  "40 minuti"
  ],
  "4th": [
   null,
-  ""
+  "4a"
  ],
  "5 Minutes": [
   null,
-  ""
+  "5 Minuti"
  ],
  "5 minutes": [
   null,
-  ""
+  "5 minuti"
  ],
  "5th": [
   null,
-  ""
+  "Quinto"
  ],
  "6 hours": [
   null,
-  ""
+  "6 ore"
  ],
  "60 Minutes": [
   null,
-  ""
+  "60 minuti"
  ],
  "6th": [
   null,
-  ""
+  "6°"
  ],
  "7th": [
   null,
-  ""
+  "7°"
  ],
  "8th": [
   null,
-  ""
+  "ottavo"
  ],
  "9th": [
   null,
-  ""
+  "Nona"
  ],
  "Additional packages:": [
   null,
-  ""
- ],
- "Advanced TCA": [
-  null,
-  ""
+  "Pacchetti aggiuntivi:"
  ],
  "After": [
   null,
@@ -253,15 +249,11 @@ return plural;
  ],
  "After system boot": [
   null,
-  ""
+  "Dopo l'avvio del sistema"
  ],
  "Alert and above": [
   null,
-  ""
- ],
- "All In One": [
-  null,
-  ""
+  "Allarme e oltre"
  ],
  "Asset Tag": [
   null,
@@ -269,15 +261,15 @@ return plural;
  ],
  "At specific time": [
   null,
-  ""
+  "In un momento specifico"
  ],
  "Automatically using NTP": [
   null,
-  ""
+  "Automaticamente utilizzando NTP"
  ],
  "Automatically using specific NTP servers": [
   null,
-  ""
+  "Automaticamente utilizzando server NTP specifici"
  ],
  "BIOS": [
   null,
@@ -285,23 +277,11 @@ return plural;
  ],
  "BIOS date": [
   null,
-  ""
+  "Data del BIOS"
  ],
  "BIOS version": [
   null,
-  ""
- ],
- "Blade": [
-  null,
-  ""
- ],
- "Blade enclosure": [
-  null,
-  ""
- ],
- "Bus Expansion Chassis": [
-  null,
-  ""
+  "Versione BIOS"
  ],
  "CPU": [
   null,
@@ -309,7 +289,7 @@ return plural;
  ],
  "Cached": [
   null,
-  ""
+  "Imbarcato"
  ],
  "Cancel": [
   null,
@@ -321,15 +301,15 @@ return plural;
  ],
  "Change Host Name": [
   null,
-  ""
+  "Cambia nome host"
  ],
  "Change System Time": [
   null,
-  ""
+  "Modifica dell'ora di sistema"
  ],
  "Checking installed software": [
   null,
-  ""
+  "Verifica del software installato"
  ],
  "Class": [
   null,
@@ -343,61 +323,41 @@ return plural;
   null,
   "Comando"
  ],
- "Compact PCI": [
-  null,
-  ""
- ],
  "Condition failed": [
   null,
-  ""
- ],
- "Convertible": [
-  null,
-  ""
+  "Condizione fallita"
  ],
  "Create Timer": [
   null,
-  ""
+  "Creare un timer"
  ],
  "Create Timers": [
   null,
-  ""
+  "Creazione di timer"
  ],
  "Critical and above": [
   null,
-  ""
+  "Critico e superiore"
  ],
  "Current boot": [
   null,
-  ""
+  "Boot corrente"
  ],
  "Debug and above": [
   null,
-  ""
+  "Debug e superiore"
  ],
  "Delay": [
   null,
-  ""
+  "Ritardo"
  ],
  "Description": [
   null,
   "Descrizione"
  ],
- "Desktop": [
-  null,
-  "Desktop"
- ],
- "Detachable": [
-  null,
-  ""
- ],
  "Disk I/O": [
   null,
   "I/O disco"
- ],
- "Docking Station": [
-  null,
-  ""
  ],
  "Domain": [
   null,
@@ -405,19 +365,15 @@ return plural;
  ],
  "Don't Repeat": [
   null,
-  ""
+  "Non ripetere"
  ],
  "Downloading $0": [
   null,
-  ""
+  "Download di $0"
  ],
- "Embedded PC": [
+ "Enable stored metrics…": [
   null,
-  ""
- ],
- "Enable persistent metrics…": [
-  null,
-  ""
+  "Abilita metriche memorizzate...."
  ],
  "Entry": [
   null,
@@ -429,15 +385,11 @@ return plural;
  ],
  "Error and above": [
   null,
-  ""
+  "Errore e superiore"
  ],
  "Everything": [
   null,
-  ""
- ],
- "Expansion Chassis": [
-  null,
-  ""
+  "Tutto"
  ],
  "Friday": [
   null,
@@ -449,15 +401,11 @@ return plural;
  ],
  "Go to": [
   null,
-  ""
+  "Vai a"
  ],
  "Go to now": [
   null,
-  ""
- ],
- "Hand Held": [
-  null,
-  ""
+  "Vai a ora"
  ],
  "Hardware": [
   null,
@@ -465,7 +413,7 @@ return plural;
  ],
  "Hardware Information": [
   null,
-  ""
+  "Informazioni hardware"
  ],
  "Host Name": [
   null,
@@ -473,7 +421,7 @@ return plural;
  ],
  "Hour : Minute": [
   null,
-  ""
+  "Ora : Minuto"
  ],
  "Hours": [
   null,
@@ -481,11 +429,11 @@ return plural;
  ],
  "I/O Wait": [
   null,
-  ""
+  "Attesa I/O"
  ],
  "Info and above": [
   null,
-  ""
+  "Info e sopra"
  ],
  "Install": [
   null,
@@ -493,55 +441,47 @@ return plural;
  ],
  "Install Software": [
   null,
-  ""
+  "Installare il software"
  ],
  "Installing $0": [
   null,
-  ""
+  "Installazione di $0"
  ],
  "Instantiate": [
   null,
-  ""
+  "Istantanea"
  ],
  "Invalid time zone": [
   null,
-  ""
- ],
- "IoT Gateway": [
-  null,
-  ""
+  "Fuso orario non valido"
  ],
  "Journal": [
   null,
-  ""
+  "Giornale"
  ],
  "Journal entry": [
   null,
-  ""
+  "Voce del diario"
  ],
  "Journal entry not found": [
   null,
-  ""
+  "Voce del diario non trovata"
  ],
  "Kernel": [
   null,
   "Kernel"
  ],
- "Laptop": [
-  null,
-  ""
- ],
  "Last 24 hours": [
   null,
-  ""
+  "Ultime 24 ore"
  ],
  "Last 7 days": [
   null,
-  ""
+  "Ultimi 7 giorni"
  ],
  "Load earlier entries": [
   null,
-  ""
+  "Carica le voci precedenti"
  ],
  "Loading...": [
   null,
@@ -549,35 +489,23 @@ return plural;
  ],
  "Log messages": [
   null,
-  ""
+  "Messaggi di log"
  ],
  "Logs": [
   null,
   "Log"
  ],
- "Low Profile Desktop": [
-  null,
-  ""
- ],
- "Lunch Box": [
-  null,
-  ""
- ],
  "Machine ID": [
   null,
-  ""
+  "ID macchina"
  ],
  "Machine SSH Key Fingerprints": [
   null,
-  ""
- ],
- "Main Server Chassis": [
-  null,
-  ""
+  "Impronte digitali dei tasti SSH a macchina"
  ],
  "Manually": [
   null,
-  ""
+  "Manualmente"
  ],
  "Memory": [
   null,
@@ -585,15 +513,7 @@ return plural;
  ],
  "Memory & Swap": [
   null,
-  ""
- ],
- "Mini PC": [
-  null,
-  ""
- ],
- "Mini Tower": [
-  null,
-  ""
+  "Memoria & Scambio"
  ],
  "Minutes": [
   null,
@@ -607,17 +527,13 @@ return plural;
   null,
   "Lunedì"
  ],
- "Multi-system Chassis": [
-  null,
-  ""
- ],
  "Name": [
   null,
   "Nome"
  ],
  "Network Traffic": [
   null,
-  ""
+  "Traffico di rete"
  ],
  "Nice": [
   null,
@@ -625,31 +541,27 @@ return plural;
  ],
  "No Delay": [
   null,
-  ""
+  "Nessun ritardo"
  ],
  "No host keys found.": [
   null,
-  ""
+  "Non sono state trovate chiavi host."
  ],
  "Not authorized to upload-report": [
   null,
-  ""
+  "Non autorizzato a caricare-report"
  ],
  "Not synchronized": [
   null,
-  ""
+  "Non sincronizzato"
  ],
  "Note": [
   null,
   "Note"
  ],
- "Notebook": [
-  null,
-  ""
- ],
  "Notice and above": [
   null,
-  ""
+  "Notice e oltre"
  ],
  "Off": [
   null,
@@ -665,23 +577,15 @@ return plural;
  ],
  "Only Emergency": [
   null,
-  ""
+  "Solo emergenza"
  ],
  "Operating System": [
   null,
   "Sistema Operativo"
  ],
- "Other": [
-  null,
-  "Altro"
- ],
  "PCI": [
   null,
   "PCI"
- ],
- "PackageKit crashed": [
-  null,
-  ""
  ],
  "Paths": [
   null,
@@ -689,47 +593,27 @@ return plural;
  ],
  "Performance Profile": [
   null,
-  ""
- ],
- "Peripheral Chassis": [
-  null,
-  ""
- ],
- "Pizza Box": [
-  null,
-  ""
- ],
- "Portable": [
-  null,
-  ""
+  "Profilo di prestazione"
  ],
  "Power Options": [
   null,
-  ""
+  "Opzioni di alimentazione"
  ],
  "Pretty Host Name": [
   null,
-  ""
+  "Nome dell'host grazioso"
  ],
  "Problem details": [
   null,
-  ""
+  "Dettagli del problema"
  ],
  "Problem info": [
   null,
-  ""
- ],
- "RAID Chassis": [
-  null,
-  ""
- ],
- "Rack Mount Chassis": [
-  null,
-  ""
+  "Informazioni sul problema"
  ],
  "Real Host Name": [
   null,
-  ""
+  "Nome dell'host reale"
  ],
  "Reboot": [
   null,
@@ -741,31 +625,31 @@ return plural;
  ],
  "Removals:": [
   null,
-  ""
+  "Traslochi:"
  ],
  "Removing $0": [
   null,
-  ""
+  "Rimozione $0"
  ],
  "Repeat Daily": [
   null,
-  ""
+  "Ripetere tutti i giorni"
  ],
  "Repeat Hourly": [
   null,
-  ""
+  "Ripetere ogni ora"
  ],
  "Repeat Monthly": [
   null,
-  ""
+  "Ripetere ogni mese"
  ],
  "Repeat Weekly": [
   null,
-  ""
+  "Ripetere ogni settimana"
  ],
  "Repeat Yearly": [
   null,
-  ""
+  "Ripetere ogni anno"
  ],
  "Report": [
   null,
@@ -773,15 +657,15 @@ return plural;
  ],
  "Reported": [
   null,
-  ""
+  "Segnalato"
  ],
  "Reporter 'reporter-ureport' not found.": [
   null,
-  ""
+  "Reporter \"reporter-ureport\" non trovato."
  ],
  "Reporting was unsucessful. Try running `reporter-ureport -d ": [
   null,
-  ""
+  "La segnalazione non ha avuto successo. Prova a eseguire `reporter-ureport -d "
  ],
  "Reset": [
   null,
@@ -797,31 +681,27 @@ return plural;
  ],
  "Saturday": [
   null,
-  ""
+  "Sabato"
  ],
  "Save": [
   null,
   "Salva"
  ],
- "Sealed-case PC": [
-  null,
-  ""
- ],
  "Seconds": [
   null,
-  ""
+  "Secondi"
  ],
  "Secure Shell Keys": [
   null,
-  ""
+  "Chiavi a guscio sicuro"
  ],
  "Service Logs": [
   null,
-  ""
+  "Log servizi"
  ],
  "Service name": [
   null,
-  ""
+  "Nome del servizio"
  ],
  "Services": [
   null,
@@ -829,7 +709,7 @@ return plural;
  ],
  "Set Time": [
   null,
-  ""
+  "Tempo impostato"
  ],
  "Severity": [
   null,
@@ -837,7 +717,7 @@ return plural;
  ],
  "Show fingerprints": [
   null,
-  ""
+  "Mostra le impronte digitali"
  ],
  "Shut Down": [
   null,
@@ -845,35 +725,19 @@ return plural;
  ],
  "Slot": [
   null,
-  ""
+  "Slot"
  ],
  "Sockets": [
   null,
   "Socket"
  ],
- "Space-saving Computer": [
-  null,
-  ""
- ],
  "Specific Time": [
   null,
-  ""
+  "Tempo specifico"
  ],
- "Stick PC": [
+ "Store metrics": [
   null,
-  ""
- ],
- "Store Performance Data": [
-  null,
-  ""
- ],
- "Sub Chassis": [
-  null,
-  ""
- ],
- "Sub Notebook": [
-  null,
-  ""
+  "Conserva metriche"
  ],
  "Sunday": [
   null,
@@ -881,15 +745,15 @@ return plural;
  ],
  "Swap Used": [
   null,
-  ""
+  "Swap usato"
  ],
  "Synchronized": [
   null,
-  ""
+  "Sincronizzato"
  ],
  "Synchronized with {{Server}}": [
   null,
-  ""
+  "Sincronizzato con {{Server}}"
  ],
  "System": [
   null,
@@ -901,19 +765,15 @@ return plural;
  ],
  "System Services": [
   null,
-  ""
+  "Servizi di sistema"
  ],
  "System Time": [
   null,
-  ""
- ],
- "Tablet": [
-  null,
-  "Tavoletta"
+  "Tempo di sistema"
  ],
  "Targets": [
   null,
-  ""
+  "Obiettivi"
  ],
  "Terminal": [
   null,
@@ -921,7 +781,7 @@ return plural;
  ],
  "This unit is not designed to be enabled explicitly.": [
   null,
-  ""
+  "Questa unità non è stata progettata per essere abilitata esplicitamente."
  ],
  "Thursday": [
   null,
@@ -933,19 +793,15 @@ return plural;
  ],
  "Timers": [
   null,
-  ""
+  "Timer"
  ],
  "Total size: $0": [
   null,
-  ""
- ],
- "Tower": [
-  null,
-  ""
+  "Dimensione totale: $0"
  ],
  "Trying to synchronize with {{Server}}": [
   null,
-  ""
+  "Tenativo di sincronizzazione con {{Server}}"
  ],
  "Tuesday": [
   null,
@@ -954,10 +810,6 @@ return plural;
  "Type": [
   null,
   "Tipo"
- ],
- "Unknown": [
-  null,
-  "Sconosciuto"
  ],
  "Used": [
   null,
@@ -977,11 +829,11 @@ return plural;
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "In attesa che finiscano le altre operazioni di gestione del software"
  ],
  "Warning and above": [
   null,
-  ""
+  "Avvertenza e oltre"
  ],
  "Wednesday": [
   null,
@@ -989,18 +841,18 @@ return plural;
  ],
  "Weeks": [
   null,
-  ""
+  "Settimane"
  ],
  "[$0 bytes of binary data]": [
   null,
-  ""
+  "[$0byte di dati binari]"
  ],
  "[binary data]": [
   null,
-  ""
+  "[dati binari]"
  ],
  "[no data]": [
   null,
-  ""
+  "[nessun dato]"
  ]
 }));

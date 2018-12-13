@@ -69,11 +69,7 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  ""
- ],
- "$0 vCPU Details": [
-  null,
-  ""
+  "$0 適用於大多數操作系統。要安裝它，請在GNOME軟件中搜索它或運行以下命令："
  ],
  "Add": [
   null,
@@ -81,7 +77,7 @@ return plural;
  ],
  "Add Disk": [
   null,
-  ""
+  "添加磁盤"
  ],
  "Address": [
   null,
@@ -90,10 +86,6 @@ return plural;
  "Address:": [
   null,
   "位址："
- ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  ""
  ],
  "Apply": [
   null,
@@ -105,11 +97,11 @@ return plural;
  ],
  "Automatically start libvirt on boot": [
   null,
-  ""
+  "在啟動時自動啟動libvirt"
  ],
  "Autostart:": [
   null,
-  ""
+  "自動開啟："
  ],
  "Available": [
   null,
@@ -117,19 +109,15 @@ return plural;
  ],
  "Boot Order:": [
   null,
-  ""
+  "引導順序："
  ],
  "Bus": [
   null,
-  ""
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  ""
+  "總線"
  ],
  "CPU Type:": [
   null,
-  ""
+  "CPU類型："
  ],
  "Cancel": [
   null,
@@ -139,33 +127,29 @@ return plural;
   null,
   "容量"
  ],
- "Changes will apply on VM shutdown": [
+ "Changes will take effect after shutting down the VM": [
   null,
-  ""
+  "關閉VM後，更改將生效"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  ""
- ],
- "Confirm deletion of $0": [
-  null,
-  ""
+  "單擊“啟動遠程查看器”將下載.vv文件並啟動 $0。"
  ],
  "Connect with any $0 viewer application.": [
   null,
-  ""
+  "與任何人聯繫 $0 查看器應用。"
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  ""
+  "連接任何SPICE或VNC查看器應用程序。"
  ],
  "Connecting": [
   null,
-  ""
+  "連線中"
  ],
  "Connecting to Virtualization Service": [
   null,
-  ""
+  "連接虛擬化服務"
  ],
  "Connection": [
   null,
@@ -173,11 +157,11 @@ return plural;
  ],
  "Console Type": [
   null,
-  ""
+  "控制台類型"
  ],
  "Consoles": [
   null,
-  ""
+  "控制台"
  ],
  "Cores per socket": [
   null,
@@ -191,21 +175,21 @@ return plural;
   null,
   "新建"
  ],
- "Create New VM": [
+ "Create Storage Pool": [
   null,
-  ""
+  "創建存儲池"
  ],
- "Create New Virtual Machine": [
+ "Create VM": [
   null,
-  ""
+  "創建VM"
  ],
  "Creation of vm $0 failed": [
   null,
-  ""
+  "創建vm $0 失敗"
  ],
  "Ctrl+Alt+Del": [
   null,
-  ""
+  "Ctrl+Alt+Del"
  ],
  "Delete": [
   null,
@@ -213,7 +197,7 @@ return plural;
  ],
  "Delete associated storage files:": [
   null,
-  ""
+  "刪除關聯的存儲文件："
  ],
  "Device": [
   null,
@@ -229,23 +213,23 @@ return plural;
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
-  ""
+  "斷開與串行控制台的連接。單擊“重新連接”按鈕。"
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
-  ""
+  "磁槃無法連接"
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
-  ""
+  "磁槃無法創建"
  ],
  "Disks": [
   null,
-  ""
+  "磁盤"
  ],
  "Download the MSI from $0": [
   null,
-  ""
+  "從中下載MSI $0"
  ],
  "Edit": [
   null,
@@ -253,11 +237,11 @@ return plural;
  ],
  "Emulated Machine:": [
   null,
-  ""
+  "仿真機："
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
-  ""
+  "應啟用少於最大虛擬CPU數量。"
  ],
  "File": [
   null,
@@ -267,21 +251,21 @@ return plural;
   null,
   "檔案系統"
  ],
+ "Filesystem Directory": [
+  null,
+  "文件系統目錄"
+ ],
  "Force Restart": [
   null,
-  ""
+  "強制重啟"
  ],
  "Force Shut Down": [
   null,
-  ""
+  "強制關機"
  ],
  "Format": [
   null,
   "格式"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  ""
  ],
  "GiB": [
   null,
@@ -289,23 +273,27 @@ return plural;
  ],
  "Graphics Console (VNC)": [
   null,
-  ""
+  "圖形控制台（VNC）"
  ],
  "Graphics Console in Desktop Viewer": [
   null,
-  ""
+  "Desktop Viewer中的圖形控制台"
  ],
  "Host": [
   null,
   "主機"
  ],
- "INSTALL VM action failed": [
+ "Host Name": [
   null,
-  ""
+  "主機名稱"
+ ],
+ "Host should not be empty": [
+  null,
+  "主持人不應該是空的"
  ],
  "Immediately Start VM": [
   null,
-  ""
+  "立即啟動VM"
  ],
  "Install": [
   null,
@@ -313,23 +301,23 @@ return plural;
  ],
  "Installation Source": [
   null,
-  ""
+  "安裝源"
  ],
  "Installation Source Type": [
   null,
-  ""
+  "安裝源類型"
  ],
  "Installation Source should not be empty": [
   null,
-  ""
+  "安裝源不應為空"
  ],
  "Invalid filename": [
   null,
-  ""
+  "無效的文件名"
  ],
  "Launch Remote Viewer": [
   null,
-  ""
+  "啟動Remote Viewer"
  ],
  "Loading ...": [
   null,
@@ -341,15 +329,15 @@ return plural;
  ],
  "Mac Address": [
   null,
-  ""
+  "MAC地址"
  ],
  "Manual Connection": [
   null,
-  ""
+  "手動連接"
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
-  ""
+  "為guest虛擬機操作系統分配的最大虛擬CPU數，必須介於1和1之間 $0"
  ],
  "Memory": [
   null,
@@ -357,7 +345,7 @@ return plural;
  ],
  "Memory should be positive number": [
   null,
-  ""
+  "記憶應該是正數"
  ],
  "Memory:": [
   null,
@@ -373,11 +361,11 @@ return plural;
  ],
  "Model type": [
   null,
-  ""
+  "型號類型"
  ],
  "More Information": [
   null,
-  ""
+  "更多信息"
  ],
  "Name": [
   null,
@@ -385,19 +373,23 @@ return plural;
  ],
  "Name should not be empty": [
   null,
-  ""
+  "名稱不應為空"
  ],
  "Name should not consist of empty characters only": [
   null,
-  ""
+  "名稱不應僅包含空字符"
+ ],
+ "Network File System": [
+  null,
+  "網絡文件系統"
  ],
  "Network Type": [
   null,
-  ""
+  "網絡類型"
  ],
- "Network settings failed to change with following error: ": [
+ "Network settings could not be saved": [
   null,
-  ""
+  "無法保存網絡設置"
  ],
  "Networks": [
   null,
@@ -405,39 +397,47 @@ return plural;
  ],
  "New Volume Name": [
   null,
-  ""
+  "新卷名稱"
+ ],
+ "No Storage Volumes defined for this Storage Pool": [
+  null,
+  "沒有為此存儲池定義存儲卷"
  ],
  "No VM is running or defined on this host": [
   null,
-  ""
+  "此主機上未運行或定義VM"
  ],
  "No boot device found": [
   null,
-  ""
+  "找不到啟動設備"
  ],
  "No console defined for this virtual machine.": [
   null,
-  ""
+  "沒有為此虛擬機定義的控制台。"
  ],
  "No disks defined for this VM": [
   null,
-  ""
+  "沒有為此VM定義磁盤"
  ],
  "No matching files found": [
   null,
-  ""
+  "找不到匹配的文件"
  ],
  "No network interfaces defined for this VM": [
   null,
-  ""
+  "沒有為此VM定義的網絡接口"
+ ],
+ "No storage pool is defined on this host": [
+  null,
+  "此主機上未定義存儲池"
  ],
  "No virtual networks": [
   null,
-  ""
+  "沒有虛擬網絡"
  ],
  "OS Vendor": [
   null,
-  ""
+  "OS供應商"
  ],
  "Operating System": [
   null,
@@ -447,33 +447,37 @@ return plural;
   null,
   "簡介"
  ],
+ "Path on host's filesystem": [
+  null,
+  "主機文件系統上的路徑"
+ ],
  "Path to ISO file on host's file system": [
   null,
-  ""
+  "主機文件系統上ISO文件的路徑"
  ],
  "Path to file": [
   null,
-  ""
+  "文件路徑"
  ],
  "Please enter new volume name": [
   null,
-  ""
+  "請輸入新的捲名"
  ],
  "Please enter new volume size": [
   null,
-  ""
+  "請輸入新的捲大小"
  ],
  "Please start the virtual machine to access its console.": [
   null,
-  ""
+  "請啟動虛擬機以訪問其控制台。"
  ],
  "Plug": [
   null,
-  ""
+  "插頭"
  ],
  "Pool": [
   null,
-  ""
+  "集池"
  ],
  "Port": [
   null,
@@ -481,11 +485,19 @@ return plural;
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
-  ""
+  "要向guest虛擬機公開的首選套接字數。"
  ],
  "Protocol": [
   null,
   "協定"
+ ],
+ "QEMU/KVM System connection": [
+  null,
+  "QEMU / KVM系統連接"
+ ],
+ "QEMU/KVM User connection": [
+  null,
+  "QEMU / KVM用戶連接"
  ],
  "Readonly": [
   null,
@@ -493,11 +505,11 @@ return plural;
  ],
  "Reconnect": [
   null,
-  ""
+  "重新連接"
  ],
  "Remote URL": [
   null,
-  ""
+  "遠程URL"
  ],
  "Restart": [
   null,
@@ -507,29 +519,21 @@ return plural;
   null,
   "執行"
  ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  ""
- ],
- "SET_VCPU_SETTINGS action failed": [
-  null,
-  ""
- ],
  "SPICE": [
   null,
-  ""
+  "SPICE"
  ],
  "SPICE Address:": [
   null,
-  ""
+  "SPICE地址："
  ],
  "SPICE Port:": [
   null,
-  ""
+  "SPICE端口："
  ],
  "SPICE TLS Port:": [
   null,
-  ""
+  "SPICE TLS端口："
  ],
  "Save": [
   null,
@@ -537,19 +541,15 @@ return plural;
  ],
  "Send Non-Maskable Interrupt": [
   null,
-  ""
+  "發送不可屏蔽中斷"
  ],
  "Send key": [
   null,
-  ""
+  "發送密鑰"
  ],
  "Serial Console": [
   null,
-  ""
- ],
- "Session": [
-  null,
-  "作業階段"
+  "串行控制台"
  ],
  "Shut Down": [
   null,
@@ -567,85 +567,125 @@ return plural;
   null,
   "來源"
  ],
- "Source should start with http, ftp or nfs protocol": [
+ "Source Path": [
   null,
-  ""
+  "來源路徑"
+ ],
+ "Source path should not be empty": [
+  null,
+  "源路徑不應為空"
+ ],
+ "Source should start with https, ftp or nfs protocol": [
+  null,
+  "源應該以http，ftp或nfs協議開頭"
  ],
  "Start libvirt": [
   null,
-  ""
+  "啟動libvirt"
+ ],
+ "Start pool when host boots": [
+  null,
+  "主機啟動時啟動池"
  ],
  "Start the VM to see disk statistics.": [
   null,
-  ""
+  "啟動VM以查看磁盤統計信息。"
+ ],
+ "Startup": [
+  null,
+  "啟動"
  ],
  "State": [
   null,
   "狀態"
  ],
+ "Storage Pool Name": [
+  null,
+  "存儲池名稱"
+ ],
+ "Storage Pool failed to be created": [
+  null,
+  "存儲池無法創建"
+ ],
+ "Storage Pools": [
+  null,
+  "存儲池"
+ ],
  "Storage Size": [
   null,
-  ""
+  "存儲大小"
  ],
  "Storage Size should not be negative number": [
   null,
-  ""
+  "存儲大小不應為負數"
  ],
- "System": [
+ "Storage Volumes": [
   null,
-  "系統"
+  "存儲卷"
  ],
  "Target": [
   null,
   "目標"
  ],
+ "Target Path": [
+  null,
+  "目標路徑"
+ ],
+ "Target path should not be empty": [
+  null,
+  "目標路徑不應為空"
+ ],
  "The VM crashed.": [
   null,
-  ""
+  "虛擬機崩潰了。"
  ],
  "The VM is down.": [
   null,
-  ""
+  "虛擬機已關閉。"
  ],
  "The VM is going down.": [
   null,
-  ""
+  "VM正在下降。"
  ],
  "The VM is idle.": [
   null,
-  ""
+  "VM處於空閒狀態。"
  ],
  "The VM is in process of dying (shut down or crash is not completed).": [
   null,
-  ""
+  "VM正在進行死亡（關閉或崩潰未完成）。"
  ],
  "The VM is paused.": [
   null,
-  ""
+  "VM已暫停。"
  ],
  "The VM is running and will be forced off before deletion.": [
   null,
-  ""
+  "VM正在運行，在刪除之前將被強制關閉。"
  ],
  "The VM is running.": [
   null,
-  ""
+  "VM正在運行。"
  ],
  "The VM is suspended by guest power management.": [
   null,
-  ""
+  "客戶端電源管理暫停VM。"
+ ],
+ "The directory on the server being exported": [
+  null,
+  "正在導出的服務器上的目錄"
  ],
  "The pool is empty": [
   null,
-  ""
+  "游泳池是空的"
  ],
  "Threads per core": [
   null,
-  ""
+  "每個核心的線程"
  ],
  "Too many files found": [
   null,
-  ""
+  "找到的文件太多"
  ],
  "Troubleshoot": [
   null,
@@ -661,15 +701,15 @@ return plural;
  ],
  "Unique name": [
   null,
-  ""
+  "唯一名稱"
  ],
  "Unplug": [
   null,
-  ""
+  "拔"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
-  ""
+  "升級到更新版本的libvirt以查看磁盤統計信息"
  ],
  "Usage": [
   null,
@@ -677,59 +717,15 @@ return plural;
  ],
  "Use Existing": [
   null,
-  ""
+  "利用現有的"
  ],
  "Used": [
   null,
   "已使用"
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
+ "VCPU settings could not be saved": [
   null,
-  ""
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  ""
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  ""
- ],
- "VM DELETE action failed": [
-  null,
-  ""
- ],
- "VM DETACH_DISK action failed": [
-  null,
-  ""
- ],
- "VM FORCE OFF action failed": [
-  null,
-  ""
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  ""
- ],
- "VM REBOOT action failed": [
-  null,
-  ""
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  ""
- ],
- "VM SENDNMI action failed": [
-  null,
-  ""
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  ""
- ],
- "VM START action failed": [
-  null,
-  ""
+  "無法保存VCPU設置"
  ],
  "VNC": [
   null,
@@ -737,15 +733,15 @@ return plural;
  ],
  "VNC Address:": [
   null,
-  ""
+  "VNC地址："
  ],
  "VNC Port:": [
   null,
-  ""
+  "VNC端口："
  ],
  "VNC TLS Port:": [
   null,
-  ""
+  "VNC TLS端口："
  ],
  "Virtual Machines": [
   null,
@@ -753,159 +749,59 @@ return plural;
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
-  ""
+  "虛擬化服務（libvirt）未激活"
  ],
  "Virtualization Service is Available": [
   null,
-  ""
+  "虛擬化服務可用"
  ],
  "Volume": [
   null,
   "音量"
  ],
- "bridge": [
+ "active": [
   null,
-  ""
+  "活性"
  ],
- "cdrom": [
+ "inactive": [
   null,
-  ""
- ],
- "crashed": [
-  null,
-  ""
- ],
- "custom": [
-  null,
-  ""
- ],
- "direct": [
-  null,
-  ""
- ],
- "disabled": [
-  null,
-  "已停用"
- ],
- "disk": [
-  null,
-  "磁碟"
- ],
- "down": [
-  null,
-  "down"
- ],
- "dying": [
-  null,
-  ""
- ],
- "enabled": [
-  null,
-  "已啟用"
- ],
- "ethernet": [
-  null,
-  ""
- ],
- "host": [
-  null,
-  "主機"
- ],
- "hostdev": [
-  null,
-  ""
- ],
- "idle": [
-  null,
-  ""
- ],
- "mcast": [
-  null,
-  ""
- ],
- "network": [
-  null,
-  ""
+  "待用"
  ],
  "no": [
   null,
   "否"
  ],
- "other": [
-  null,
-  ""
- ],
- "paused": [
-  null,
-  "已暫停"
- ],
  "qcow2": [
   null,
-  ""
+  "qcow2"
  ],
  "raw": [
   null,
   "原始"
  ],
- "running": [
-  null,
-  "執行中"
- ],
- "server": [
-  null,
-  ""
- ],
  "show less": [
   null,
-  ""
+  "顯示較少"
  ],
  "show more": [
   null,
-  ""
- ],
- "shut off": [
-  null,
-  ""
- ],
- "shutdown": [
-  null,
-  ""
- ],
- "suspended (PM)": [
-  null,
-  ""
- ],
- "udp": [
-  null,
-  "udp"
+  "顯示更多"
  ],
  "undefined": [
   null,
-  ""
- ],
- "up": [
-  null,
-  "up"
- ],
- "user": [
-  null,
-  "使用者"
+  "未定義"
  ],
  "vCPU Count": [
   null,
-  ""
+  "vCPU計數"
  ],
  "vCPU Maximum": [
   null,
-  ""
+  "vCPU最大值"
  ],
  "vCPUs:": [
   null,
-  ""
- ],
- "vhostuser": [
-  null,
-  ""
+  "個vCPU："
  ],
  "yes": [
   null,

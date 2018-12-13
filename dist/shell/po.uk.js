@@ -515,10 +515,6 @@ return plural;
   null,
   "Ви встановлюєте з’єднання із {{#strong}}{{host}}{{/strong}}. Втім, для синхронізації даних користувачів потрібні права доступу адміністративного користувача."
  ],
- "You can remove the previously stored key by running the following command": [
-  null,
-  "Вилучити раніше збережений ключ можна за допомогою такої команди"
- ],
  "active": [
   null,
   "активний"

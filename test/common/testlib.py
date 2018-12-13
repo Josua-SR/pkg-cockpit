@@ -851,6 +851,7 @@ class MachineCase(unittest.TestCase):
                                     ".*is not in the sudoers file.  This incident will be reported.",
                                     ".*: a password is required",
                                     "user user was reauthorized",
+                                    "sudo: no password was provided",
                                     "sudo: unable to resolve host .*",
                                     ".*: sorry, you must have a tty to run sudo",
                                     ".*/pkexec: bridge exited",
@@ -874,19 +875,15 @@ class MachineCase(unittest.TestCase):
         if "TEST_AUDIT_NO_SELINUX" not in os.environ:
             messages += machine.audit_messages("14", cursor=cursor) # 14xx is selinux
 
-        # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1557913
-        # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1563143
-        # these fail tons of tests due to the SELinux violations (so naughty override causes too much spamming)
-        if self.image in ['fedora-28', 'fedora-atomic']:
-            self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { dac_override }.*')
-            self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { module_request }.*')
-            self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { getattr } for .* comm="which" path="/usr/sbin/setfiles".*')
-
-        if self.image in ['fedora-29', 'fedora-testing', 'fedora-i386']:
+        if self.image in ['fedora-29', 'fedora-testing', 'fedora-i386', 'fedora-atomic']:
             # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1563143
             self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { getattr } for .* comm="which" path="/usr/sbin/setfiles".*')
             # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1629588
             self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { read } for .* comm="agetty" name="motd".*')
+
+        if self.image in ['rhel-8-0']:
+            # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1653872
+            self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { setsched } for .* comm="rngd".*')
 
         # these images don't have tuned; keep in sync with bots/images/scripts/debian.setup
         if self.image in ["debian-stable"]:

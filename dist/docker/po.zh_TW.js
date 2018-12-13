@@ -69,39 +69,31 @@ return plural;
  },
  " (shared with the OS)": [
   null,
-  ""
+  " （與操作系統共享）"
  ],
  "$0 shares": [
   null,
-  ""
+  "$0 分享"
  ],
  "${hip}:${hport} -> $cport": [
   null,
-  ""
+  "${hip}:${hport} -> $cport"
  ],
  "Add Additional Storage": [
   null,
-  ""
+  "添加附加存儲"
  ],
  "Add Storage": [
   null,
-  ""
+  "添加存儲"
  ],
  "Additional Storage": [
   null,
-  ""
- ],
- "Advanced TCA": [
-  null,
-  ""
- ],
- "All In One": [
-  null,
-  ""
+  "額外存儲"
  ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
-  ""
+  "將擦除所選磁盤上的所有數據，並將磁盤添加到存儲池中。"
  ],
  "Always": [
   null,
@@ -111,33 +103,21 @@ return plural;
   null,
   "作者"
  ],
- "Blade": [
-  null,
-  ""
- ],
- "Blade enclosure": [
-  null,
-  ""
- ],
- "Bus Expansion Chassis": [
-  null,
-  ""
- ],
  "CPU": [
   null,
   "CPU"
  ],
  "CPU priority": [
   null,
-  ""
+  "CPU優先級"
  ],
  "CPU usage:": [
   null,
-  ""
+  "CPU使用率："
  ],
  "Can&rsquo;t connect to Docker": [
   null,
-  ""
+  "無法連接到Docker"
  ],
  "Cancel": [
   null,
@@ -149,11 +129,11 @@ return plural;
  ],
  "Change resource limits": [
   null,
-  ""
+  "更改資源限制"
  ],
  "Change resources limits": [
   null,
-  ""
+  "更改資源限制"
  ],
  "Close": [
   null,
@@ -161,11 +141,11 @@ return plural;
  ],
  "Combined memory usage": [
   null,
-  ""
+  "組合內存使用"
  ],
  "Combined usage of $0 CPU core": [
   "Combined usage of $0 CPU cores",
-  ""
+  "綜合使用 $0 CPU核心"
  ],
  "Command": [
   null,
@@ -173,11 +153,11 @@ return plural;
  ],
  "Command can't be empty": [
   null,
-  ""
+  "命令不能為空"
  ],
  "Command:": [
   null,
-  ""
+  "命令："
  ],
  "Commit": [
   null,
@@ -185,19 +165,15 @@ return plural;
  ],
  "Commit Image": [
   null,
-  ""
- ],
- "Compact PCI": [
-  null,
-  ""
+  "提交圖像"
  ],
  "Configure storage...": [
   null,
-  ""
+  "配置存儲......"
  ],
  "Connecting to Docker": [
   null,
-  ""
+  "連接到Docker"
  ],
  "Container": [
   null,
@@ -205,35 +181,31 @@ return plural;
  ],
  "Container Name": [
   null,
-  ""
+  "容器名稱"
  ],
  "Container is currently marked as not running, but regular stopping failed.": [
   null,
-  ""
+  "Container目前標記為未運行，但定期停止失敗。"
  ],
  "Container is currently running.": [
   null,
-  ""
+  "Container目前正在運行。"
  ],
  "Container:": [
   null,
-  ""
+  "容器："
  ],
  "Containers": [
   null,
   "Container"
  ],
- "Convertible": [
-  null,
-  ""
- ],
  "Could not add all disks": [
   null,
-  ""
+  "無法添加所有磁盤"
  ],
  "Could not reset the storage pool": [
   null,
-  ""
+  "無法重置存儲池"
  ],
  "Created": [
   null,
@@ -253,15 +225,7 @@ return plural;
  ],
  "Deleting a container will erase all data in it.": [
   null,
-  ""
- ],
- "Desktop": [
-  null,
-  "桌面環境"
- ],
- "Detachable": [
-  null,
-  ""
+  "刪除容器將清除其中的所有數據。"
  ],
  "Details": [
   null,
@@ -269,11 +233,7 @@ return plural;
  ],
  "Docker is not installed or activated on the system": [
   null,
-  ""
- ],
- "Docking Station": [
-  null,
-  ""
+  "未在系統上安裝或激活Docker"
  ],
  "Download": [
   null,
@@ -281,19 +241,15 @@ return plural;
  ],
  "Drive": [
   null,
-  ""
+  "駕駛"
  ],
  "Duplicate alias": [
   null,
-  ""
+  "複製別名"
  ],
  "Duplicate port": [
   null,
-  ""
- ],
- "Embedded PC": [
-  null,
-  ""
+  "重複端口"
  ],
  "Entrypoint": [
   null,
@@ -305,39 +261,35 @@ return plural;
  ],
  "Erase containers and reset storage pool": [
   null,
-  ""
+  "擦除容器並重置存儲池"
  ],
  "Error message from Docker:": [
   null,
-  ""
+  "來自Docker的錯誤消息："
  ],
  "Everything": [
   null,
-  ""
+  "一切"
  ],
  "Exited $ExitCode": [
   null,
-  ""
- ],
- "Expansion Chassis": [
-  null,
-  ""
+  "已退出 $ExitCode"
  ],
  "Expose container ports": [
   null,
-  ""
+  "暴露容器端口"
  ],
  "Failed to start Docker: $0": [
   null,
-  ""
+  "無法啟動Docker： $0"
  ],
  "Failed to stop Docker scope: $0": [
   null,
-  ""
+  "無法停止Docker範圍： $0"
  ],
  "Force Delete": [
   null,
-  ""
+  "強制刪除"
  ],
  "Free": [
   null,
@@ -349,11 +301,7 @@ return plural;
  ],
  "Get new image": [
   null,
-  ""
- ],
- "Hand Held": [
-  null,
-  ""
+  "獲取新圖片"
  ],
  "Hard Disk": [
   null,
@@ -365,7 +313,7 @@ return plural;
  ],
  "IP Prefix Length:": [
   null,
-  ""
+  "IP前綴長度："
  ],
  "Id": [
   null,
@@ -373,7 +321,7 @@ return plural;
  ],
  "Id:": [
   null,
-  ""
+  "ID："
  ],
  "Image": [
   null,
@@ -381,15 +329,15 @@ return plural;
  ],
  "Image $0": [
   null,
-  ""
+  "圖片 $0"
  ],
  "Image Search": [
   null,
-  ""
+  "圖片搜索"
  ],
  "Image:": [
   null,
-  ""
+  "圖片："
  ],
  "Images": [
   null,
@@ -397,55 +345,35 @@ return plural;
  ],
  "Images and running containers": [
   null,
-  ""
+  "圖像和運行容器"
  ],
  "Information about the Docker storage pool is not available.": [
   null,
-  ""
+  "有關Docker存儲池的信息不可用。"
  ],
  "Invalid port": [
   null,
-  ""
- ],
- "IoT Gateway": [
-  null,
-  ""
- ],
- "Laptop": [
-  null,
-  ""
+  "無效的端口"
  ],
  "Link to another container": [
   null,
-  ""
+  "鏈接到另一個容器"
  ],
  "Links": [
   null,
-  ""
+  "鏈接"
  ],
  "Links:": [
   null,
-  ""
+  "鏈接："
  ],
  "Local Disks": [
   null,
-  ""
- ],
- "Low Profile Desktop": [
-  null,
-  ""
- ],
- "Lunch Box": [
-  null,
-  ""
+  "本地磁盤"
  ],
  "MAC Address:": [
   null,
-  ""
- ],
- "Main Server Chassis": [
-  null,
-  ""
+  "MAC地址："
  ],
  "Memory": [
   null,
@@ -453,31 +381,19 @@ return plural;
  ],
  "Memory limit": [
   null,
-  ""
+  "內存限制"
  ],
  "Memory usage:": [
   null,
-  ""
+  "內存使用情況："
  ],
  "MiB": [
   null,
   "MiB"
  ],
- "Mini PC": [
-  null,
-  ""
- ],
- "Mini Tower": [
-  null,
-  ""
- ],
  "Mount container volumes": [
   null,
-  ""
- ],
- "Multi-system Chassis": [
-  null,
-  ""
+  "裝載容器卷"
  ],
  "Name": [
   null,
@@ -489,55 +405,51 @@ return plural;
  ],
  "No additional local storage found.": [
   null,
-  ""
+  "找不到其他本地存儲空間。"
  ],
  "No alias specified": [
   null,
-  ""
+  "沒有指定別名"
  ],
  "No container specified": [
   null,
-  ""
+  "沒有指定容器"
  ],
  "No containers": [
   null,
-  ""
+  "沒有容器"
  ],
  "No containers that match the current filter": [
   null,
-  ""
+  "沒有與當前過濾器匹配的容器"
  ],
  "No images": [
   null,
-  ""
+  "沒有圖像"
  ],
  "No images that match the current filter": [
   null,
-  ""
+  "沒有與當前過濾器匹配的圖像"
  ],
  "No results for $0": [
   null,
-  ""
+  "沒有結果 $0"
  ],
  "No running containers": [
   null,
-  ""
+  "沒有運行容器"
  ],
  "No running containers that match the current filter": [
   null,
-  ""
+  "沒有與當前過濾器匹配的正在運行的容器"
  ],
  "Not authorized to access Docker on this system": [
   null,
-  ""
+  "未授權在此系統上訪問Docker"
  ],
  "Not found": [
   null,
-  ""
- ],
- "Notebook": [
-  null,
-  ""
+  "未找到"
  ],
  "Off": [
   null,
@@ -553,43 +465,27 @@ return plural;
  ],
  "On Failure": [
   null,
-  ""
+  "失敗"
  ],
  "On failure, retry $0 time": [
   "On failure, retry $0 times",
-  ""
- ],
- "Other": [
-  null,
-  "其它"
+  "失敗時，重試 $0 時間"
  ],
  "Overview": [
   null,
   "簡介"
  ],
- "Peripheral Chassis": [
-  null,
-  ""
- ],
- "Pizza Box": [
-  null,
-  ""
- ],
  "Please confirm deletion of $0": [
   null,
-  ""
+  "請確認刪除 $0"
  ],
  "Please confirm forced deletion of $0": [
   null,
-  ""
+  "請確認強制刪除 $0"
  ],
  "Please try another term": [
   null,
-  ""
- ],
- "Portable": [
-  null,
-  ""
+  "請嘗試另一個學期"
  ],
  "Ports": [
   null,
@@ -597,27 +493,19 @@ return plural;
  ],
  "Ports:": [
   null,
-  ""
+  "端口："
  ],
  "Problems": [
   null,
   "問題"
  ],
- "RAID Chassis": [
-  null,
-  ""
- ],
- "Rack Mount Chassis": [
-  null,
-  ""
- ],
  "ReadOnly": [
   null,
-  ""
+  "ReadOnly"
  ],
  "ReadWrite": [
   null,
-  ""
+  "ReadWrite"
  ],
  "Reboot": [
   null,
@@ -625,7 +513,7 @@ return plural;
  ],
  "Reformat and add disks": [
   null,
-  ""
+  "重新格式化並添加磁盤"
  ],
  "Repository": [
   null,
@@ -637,11 +525,11 @@ return plural;
  ],
  "Reset Storage Pool": [
   null,
-  ""
+  "重置存儲池"
  ],
  "Resetting the storage pool will erase all containers and release disks in the pool.": [
   null,
-  ""
+  "重置存儲池將清除池中的所有容器和釋放磁盤。"
  ],
  "Restart": [
   null,
@@ -649,15 +537,15 @@ return plural;
  ],
  "Restart Policy": [
   null,
-  ""
+  "重啟政策"
  ],
  "Restart Policy:": [
   null,
-  ""
+  "重啟政策："
  ],
  "Retries:": [
   null,
-  ""
+  "重試次數："
  ],
  "Run": [
   null,
@@ -665,11 +553,7 @@ return plural;
  ],
  "Run Image": [
   null,
-  ""
- ],
- "Sealed-case PC": [
-  null,
-  ""
+  "運行圖像"
  ],
  "Security": [
   null,
@@ -677,15 +561,15 @@ return plural;
  ],
  "Set container environment variables": [
   null,
-  ""
+  "設置容器環境變量"
  ],
  "Show all containers": [
   null,
-  ""
+  "顯示所有容器"
  ],
  "Show all images": [
   null,
-  ""
+  "顯示所有圖像"
  ],
  "Size": [
   null,
@@ -693,11 +577,7 @@ return plural;
  ],
  "Solid-State Disk": [
   null,
-  ""
- ],
- "Space-saving Computer": [
-  null,
-  ""
+  "固態磁盤"
  ],
  "Start": [
   null,
@@ -705,7 +585,7 @@ return plural;
  ],
  "Start Docker": [
   null,
-  ""
+  "啟動Docker"
  ],
  "State": [
   null,
@@ -715,17 +595,13 @@ return plural;
   null,
   "狀態："
  ],
- "Stick PC": [
-  null,
-  ""
- ],
  "Stop": [
   null,
   "停止"
  ],
  "Stop and delete": [
   null,
-  ""
+  "停止並刪除"
  ],
  "Stopped": [
   null,
@@ -739,21 +615,9 @@ return plural;
   null,
   "儲存集區"
  ],
- "Sub Chassis": [
-  null,
-  ""
- ],
- "Sub Notebook": [
-  null,
-  ""
- ],
  "TCP": [
   null,
-  ""
- ],
- "Tablet": [
-  null,
-  "面板"
+  "TCP"
  ],
  "Tag": [
   null,
@@ -765,59 +629,51 @@ return plural;
  ],
  "The Docker storage pool cannot be managed on this system.": [
   null,
-  ""
+  "無法在此系統上管理Docker存儲池。"
  ],
  "The following containers depend on this image and will become unusable.": [
   null,
-  ""
+  "以下容器依賴於此圖像並將變得不可用。"
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,
-  ""
+  "從中掃描 $time （$type）沒有發現任何漏洞。"
  ],
  "The scan from $time ($type) was not successful.": [
   null,
-  ""
+  "從中掃描 $time （$type）沒有成功。"
  ],
  "This image does not exist.": [
   null,
-  ""
+  "此圖像不存在。"
  ],
  "Total": [
   null,
   "總數"
  ],
- "Tower": [
-  null,
-  ""
- ],
  "Try again": [
   null,
-  ""
+  "再試一次"
  ],
  "Type to filter…": [
   null,
-  ""
+  "鍵入以過濾..."
  ],
  "UDP": [
   null,
-  ""
+  "UDP"
  ],
  "Unexpected error": [
   null,
   "未預期的錯誤"
  ],
- "Unknown": [
-  null,
-  "不明"
- ],
  "Unless Stopped": [
   null,
-  ""
+  "除非停止"
  ],
  "Up since $0": [
   null,
-  ""
+  "從那以後 $0"
  ],
  "Used": [
   null,
@@ -825,7 +681,7 @@ return plural;
  ],
  "Used by Containers": [
   null,
-  ""
+  "由容器使用"
  ],
  "Volumes": [
   null,
@@ -833,31 +689,31 @@ return plural;
  ],
  "Volumes:": [
   null,
-  ""
+  "卷："
  ],
  "With terminal": [
   null,
-  ""
+  "有了終端"
  ],
  "You don't have permission to manage the Docker storage pool.": [
   null,
-  ""
+  "您無權管理Docker存儲池。"
  ],
  "[$0 bytes of binary data]": [
   null,
-  ""
+  "[$0 二進制數據的字節]"
  ],
  "[binary data]": [
   null,
-  ""
+  "[二進制數據]"
  ],
  "[no data]": [
   null,
-  ""
+  "[沒有數據]"
  ],
  "alias": [
   null,
-  ""
+  "別號"
  ],
  "default": [
   null,
@@ -865,7 +721,7 @@ return plural;
  ],
  "key": [
   null,
-  ""
+  "鍵"
  ],
  "none": [
   null,
@@ -873,27 +729,27 @@ return plural;
  ],
  "search by name, namespace or description": [
   null,
-  ""
+  "按名稱，名稱空間或描述進行搜索"
  ],
  "select container": [
   null,
-  ""
+  "選擇容器"
  ],
  "shares": [
   null,
-  ""
+  "分享"
  ],
  "to host path": [
   null,
-  ""
+  "主持路徑"
  ],
  "to host port": [
   null,
-  ""
+  "託管端口"
  ],
  "undefined": [
   null,
-  ""
+  "未定義"
  ],
  "value": [
   null,

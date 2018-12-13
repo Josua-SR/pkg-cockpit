@@ -69,7 +69,7 @@ return plural;
  },
  "$0 is not available from any repository.": [
   null,
-  ""
+  "$0 ist in keinem Repository verfügbar."
  ],
  "$0 update": [
   "$0 updates",
@@ -82,41 +82,41 @@ return plural;
  ],
  "$1 security fix": [
   "$1 security fixes",
-  "",
-  ""
+  "$1 Sicherheitsupdate",
+  "$1 Sicherheitsupdates"
  ],
  ", including $1 security fix": [
   ", including $1 security fixes",
-  "",
-  ""
+  ", einschließlich $1 Sicherheitsupdate",
+  ", einschließlich $1 Sicherheitsupdates"
  ],
  "Additional packages:": [
   null,
-  ""
+  "Zusatzpakete:"
  ],
  "Apply all updates": [
   null,
-  ""
+  "Wenden Sie alle Updates an"
  ],
  "Apply security updates": [
   null,
-  ""
+  "Anwenden von Sicherheitsupdates"
  ],
  "Applying updates": [
   null,
-  ""
+  "Aktualisierungen anwenden"
  ],
  "Applying updates failed": [
   null,
-  ""
+  "Das Anwenden von Updates ist fehlgeschlagen"
  ],
  "Automatic Updates": [
   null,
-  ""
+  "Automatische Updates"
  ],
  "Available Updates": [
   null,
-  ""
+  "Verfügbare Updates"
  ],
  "Bugs:": [
   null,
@@ -132,7 +132,7 @@ return plural;
  ],
  "Checking installed software": [
   null,
-  ""
+  "Installierte Software überprüfen"
  ],
  "Details": [
   null,
@@ -140,7 +140,7 @@ return plural;
  ],
  "Downloaded": [
   null,
-  ""
+  "Heruntergeladen"
  ],
  "Downloading": [
   null,
@@ -148,7 +148,7 @@ return plural;
  ],
  "Downloading $0": [
   null,
-  ""
+  "wird heruntergeladen $0"
  ],
  "Errata:": [
   null,
@@ -160,7 +160,7 @@ return plural;
  ],
  "Initializing...": [
   null,
-  ""
+  "Initialisierung ..."
  ],
  "Install": [
   null,
@@ -168,15 +168,15 @@ return plural;
  ],
  "Install All Updates": [
   null,
-  ""
+  "Installieren Sie alle Updates"
  ],
  "Install Security Updates": [
   null,
-  ""
+  "Installieren Sie Sicherheitsupdates"
  ],
  "Install Software": [
   null,
-  ""
+  "Software installieren"
  ],
  "Installed": [
   null,
@@ -188,19 +188,19 @@ return plural;
  ],
  "Installing $0": [
   null,
-  ""
+  "$0 wird installiert"
  ],
  "Last checked: $0 ago": [
   null,
-  ""
+  "Zuletzt geprüft: $0 vor"
  ],
  "Loading available updates failed": [
   null,
-  ""
+  "Das Laden verfügbarer Updates ist fehlgeschlagen"
  ],
  "Loading available updates, please wait...": [
   null,
-  ""
+  "Verfügbare Updates werden geladen, bitte warten ..."
  ],
  "Name": [
   null,
@@ -208,7 +208,7 @@ return plural;
  ],
  "No updates pending": [
   null,
-  ""
+  "Keine Updates ausstehend"
  ],
  "Off": [
   null,
@@ -224,55 +224,51 @@ return plural;
  ],
  "Package information": [
   null,
-  ""
- ],
- "PackageKit crashed": [
-  null,
-  ""
+  "Paket informationen"
  ],
  "PackageKit is not installed": [
   null,
-  ""
+  "PackageKit ist nicht installiert"
  ],
  "PackageKit reported error code $0": [
   null,
-  ""
+  "PackageKit hat Fehlercode gemeldet $0"
  ],
  "Refreshing package information": [
   null,
-  ""
+  "Paketinformationen aktualisieren"
  ],
  "Register…": [
   null,
-  ""
+  "Registrieren…"
  ],
  "Removals:": [
   null,
-  ""
+  "Umzüge:"
  ],
  "Removing $0": [
   null,
-  ""
+  "Entfernen $0"
  ],
  "Restart Now": [
   null,
-  ""
+  "Jetzt neustarten"
  ],
  "Restart Recommended": [
   null,
-  ""
+  "Neustart empfohlen"
  ],
  "Restarting": [
   null,
-  ""
+  "Neustart"
  ],
  "Set up": [
   null,
-  ""
+  "Konfiguration"
  ],
  "Setting up": [
   null,
-  ""
+  "Einrichten"
  ],
  "Severity": [
   null,
@@ -280,7 +276,7 @@ return plural;
  ],
  "Severity:": [
   null,
-  ""
+  "Schwere:"
  ],
  "Software Updates": [
   null,
@@ -288,7 +284,7 @@ return plural;
  ],
  "Some other program is currently using the package manager, please wait...": [
   null,
-  ""
+  "Ein anderes Programm verwendet derzeit den Paketmanager, bitte warten Sie ..."
  ],
  "System is up to date": [
   null,
@@ -296,19 +292,19 @@ return plural;
  ],
  "The following packages were recently updated:": [
   null,
-  ""
+  "Die folgenden Pakete wurden kürzlich aktualisiert:"
  ],
  "The following packages were updated $0:": [
   null,
-  ""
+  "Die folgenden Pakete wurden aktualisiert $0:"
  ],
  "This system is not registered": [
   null,
-  ""
+  "Dieses System ist nicht registriert"
  ],
  "This web console will be updated.": [
   null,
-  ""
+  "Diese Webkonsole wird aktualisiert."
  ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
@@ -316,15 +312,15 @@ return plural;
  ],
  "Total size: $0": [
   null,
-  ""
+  "Gesamtgröße: $0"
  ],
  "Update History": [
   null,
-  ""
+  "Update-Verlauf"
  ],
  "Update Log": [
   null,
-  ""
+  "Aktualisierungsprotokoll"
  ],
  "Updated": [
   null,
@@ -332,7 +328,7 @@ return plural;
  ],
  "Updated packages may require a restart to take effect.": [
   null,
-  ""
+  "Aktualisierte Pakete erfordern möglicherweise einen Neustart, um wirksam zu werden."
  ],
  "Updating": [
   null,
@@ -340,11 +336,11 @@ return plural;
  ],
  "Verified": [
   null,
-  ""
+  "Verifiziert"
  ],
  "Verifying": [
   null,
-  ""
+  "Überprüfung läuft"
  ],
  "Version": [
   null,
@@ -352,19 +348,19 @@ return plural;
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "Warten, bis andere Software-Verwaltungsvorgänge abgeschlossen sind"
  ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
-  ""
+  "Ihr Browser wird die Verbindung trennen, der Update-Vorgang wird dadurch jedoch nicht beeinflusst. Sie können die Verbindung in wenigen Augenblicken wiederherstellen, um den Fortschritt fortzusetzen."
  ],
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,
-  ""
+  "Ihr Server wird die Verbindung bald beenden. Sie können die Verbindung nach dem Neustart wiederherstellen."
  ],
  "and restart the machine automatically.": [
   null,
-  ""
+  "und starten Sie die Maschine automatisch neu."
  ],
  "at": [
   null,
@@ -372,47 +368,47 @@ return plural;
  ],
  "bug fix": [
   null,
-  ""
+  "Bug-Fix"
  ],
  "enhancement": [
   null,
-  ""
+  "Verbesserung"
  ],
  "every day": [
   null,
-  ""
+  "jeden Tag"
  ],
  "on Fridays": [
   null,
-  ""
+  "freitags"
  ],
  "on Mondays": [
   null,
-  ""
+  "Montags"
  ],
  "on Saturdays": [
   null,
-  ""
+  "samstags"
  ],
  "on Sundays": [
   null,
-  ""
+  "Sonntags"
  ],
  "on Thursdays": [
   null,
-  ""
+  "donnerstags"
  ],
  "on Tuesdays": [
   null,
-  ""
+  "an Dienstagen"
  ],
  "on Wednesdays": [
   null,
-  ""
+  "Mittwochs"
  ],
  "security": [
   null,
-  ""
+  "Sicherheit"
  ],
  "undefined": [
   null,

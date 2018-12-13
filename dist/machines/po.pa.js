@@ -123,10 +123,6 @@ return plural;
   null,
   ""
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  ""
- ],
  "CPU Type:": [
   null,
   ""
@@ -267,10 +263,6 @@ return plural;
   null,
   ""
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  ""
- ],
  "GiB": [
   null,
   ""
@@ -284,10 +276,6 @@ return plural;
   ""
  ],
  "Host": [
-  null,
-  ""
- ],
- "INSTALL VM action failed": [
   null,
   ""
  ],
@@ -475,14 +463,6 @@ return plural;
   null,
   ""
  ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  ""
- ],
- "SET_VCPU_SETTINGS action failed": [
-  null,
-  ""
- ],
  "SPICE": [
   null,
   ""
@@ -508,10 +488,6 @@ return plural;
   ""
  ],
  "Serial Console": [
-  null,
-  ""
- ],
- "Session": [
   null,
   ""
  ],
@@ -554,10 +530,6 @@ return plural;
  "Storage Size should not be negative number": [
   null,
   ""
- ],
- "System": [
-  null,
-  "ਸਿਸਟਮ"
  ],
  "Target": [
   null,
@@ -647,54 +619,6 @@ return plural;
   null,
   ""
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  ""
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  ""
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  ""
- ],
- "VM DELETE action failed": [
-  null,
-  ""
- ],
- "VM DETACH_DISK action failed": [
-  null,
-  ""
- ],
- "VM FORCE OFF action failed": [
-  null,
-  ""
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  ""
- ],
- "VM REBOOT action failed": [
-  null,
-  ""
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  ""
- ],
- "VM SENDNMI action failed": [
-  null,
-  ""
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  ""
- ],
- "VM START action failed": [
-  null,
-  ""
- ],
  "VNC": [
   null,
   ""
@@ -727,79 +651,7 @@ return plural;
   null,
   "ਵਾਲੀਅਮ"
  ],
- "bridge": [
-  null,
-  ""
- ],
- "cdrom": [
-  null,
-  ""
- ],
- "crashed": [
-  null,
-  ""
- ],
- "custom": [
-  null,
-  ""
- ],
- "direct": [
-  null,
-  ""
- ],
- "disabled": [
-  null,
-  ""
- ],
- "disk": [
-  null,
-  ""
- ],
- "down": [
-  null,
-  ""
- ],
- "dying": [
-  null,
-  ""
- ],
- "enabled": [
-  null,
-  ""
- ],
- "ethernet": [
-  null,
-  ""
- ],
- "host": [
-  null,
-  ""
- ],
- "hostdev": [
-  null,
-  ""
- ],
- "idle": [
-  null,
-  ""
- ],
- "mcast": [
-  null,
-  ""
- ],
- "network": [
-  null,
-  ""
- ],
  "no": [
-  null,
-  ""
- ],
- "other": [
-  null,
-  ""
- ],
- "paused": [
   null,
   ""
  ],
@@ -811,14 +663,6 @@ return plural;
   null,
   ""
  ],
- "running": [
-  null,
-  "ਚੱਲ ਰਿਹਾ ਹੈ"
- ],
- "server": [
-  null,
-  ""
- ],
  "show less": [
   null,
   ""
@@ -827,33 +671,9 @@ return plural;
   null,
   ""
  ],
- "shut off": [
-  null,
-  ""
- ],
- "shutdown": [
-  null,
-  ""
- ],
- "suspended (PM)": [
-  null,
-  "ਸਸਪੈਂਡ (PM)"
- ],
- "udp": [
-  null,
-  ""
- ],
  "undefined": [
   null,
   "ਨਾ-ਪ੍ਰਭਾਸ਼ਿਤ"
- ],
- "up": [
-  null,
-  ""
- ],
- "user": [
-  null,
-  ""
  ],
  "vCPU Count": [
   null,
@@ -866,10 +686,6 @@ return plural;
  "vCPUs:": [
   null,
   "vCPUs:"
- ],
- "vhostuser": [
-  null,
-  ""
  ],
  "yes": [
   null,

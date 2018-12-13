@@ -515,10 +515,6 @@ return plural;
   null,
   "Vous êtes connecté à {{#strong}}{{host}}{{/strong}}, mais pour synchroniser les utilisateurs, un utilisateur avec des privilèges de super-utilisateur est requis."
  ],
- "You can remove the previously stored key by running the following command": [
-  null,
-  "Vous pouvez supprimer la clé précédemment stockée en exécutant la commande suivante"
- ],
  "active": [
   null,
   "actif"

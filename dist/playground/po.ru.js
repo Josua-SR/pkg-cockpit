@@ -69,9 +69,9 @@ return plural;
  },
  "$0 disk is missing": [
   "$0 disks are missing",
-  "",
-  "",
-  ""
+  "$0 диск отсутствует",
+  "$0 диски отсутствуют",
+  "$0 диски отсутствуют"
  ],
  "Cancel": [
   null,
@@ -79,11 +79,11 @@ return plural;
  ],
  "Control": [
   null,
-  ""
+  "контроль"
  ],
  "Delete '{{ name }}'": [
   null,
-  ""
+  "Удалять '{{ name }}'"
  ],
  "Empty": [
   null,
@@ -103,11 +103,11 @@ return plural;
  ],
  "No matching files found": [
   null,
-  ""
+  "Не найдено совпадающих файлов"
  ],
  "Not Ready": [
   null,
-  ""
+  "Не готов"
  ],
  "Off": [
   null,
@@ -123,7 +123,7 @@ return plural;
  ],
  "Path to file": [
   null,
-  ""
+  "Путь к файлу"
  ],
  "Ready": [
   null,
@@ -131,7 +131,7 @@ return plural;
  ],
  "Too many files found": [
   null,
-  ""
+  "Слишком много файлов найдено"
  ],
  "Unavailable": [
   null,
@@ -143,17 +143,17 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "не определено"
  ],
  "disk-non-rotational\u0004$0 disk is missing": [
   "$0 disks are missing",
-  "",
-  "",
-  ""
+  "$0 диск отсутствует",
+  "$0 диски отсутствуют",
+  "$0 диски отсутствуют"
  ],
  "key\u0004Control": [
   null,
-  ""
+  "контроль"
  ],
  "verb\u0004Empty": [
   null,

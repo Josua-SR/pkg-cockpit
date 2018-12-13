@@ -199,10 +199,6 @@ return plural;
   null,
   "Hasło jednorazowe"
  ],
- "PackageKit crashed": [
-  null,
-  "Usługa PackageKit uległa awarii"
- ],
  "Removals:": [
   null,
   "Usuwane:"

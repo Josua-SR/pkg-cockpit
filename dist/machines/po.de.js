@@ -69,7 +69,7 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  ""
+  "$0 ist für die meisten Betriebssysteme verfügbar. Um es zu installieren, suchen Sie es in der GNOME-Software oder führen Sie Folgendes aus:"
  ],
  "Add": [
   null,
@@ -77,7 +77,7 @@ return plural;
  ],
  "Add Disk": [
   null,
-  ""
+  "Datenträger hinzufügen"
  ],
  "Address": [
   null,
@@ -97,11 +97,11 @@ return plural;
  ],
  "Automatically start libvirt on boot": [
   null,
-  ""
+  "Starten Sie libvirt automatisch beim Booten"
  ],
  "Autostart:": [
   null,
-  ""
+  "Auto-Start:"
  ],
  "Available": [
   null,
@@ -109,19 +109,15 @@ return plural;
  ],
  "Boot Order:": [
   null,
-  ""
+  "Startreihenfolge:"
  ],
  "Bus": [
   null,
-  ""
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  ""
+  "Bus"
  ],
  "CPU Type:": [
   null,
-  ""
+  "CPU-Typ:"
  ],
  "Cancel": [
   null,
@@ -133,27 +129,27 @@ return plural;
  ],
  "Changes will take effect after shutting down the VM": [
   null,
-  ""
+  "Änderungen werden nach dem Herunterfahren der VM wirksam"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  ""
+  "Klicken Sie auf \"Remote Viewer starten\", um eine .vv-Datei herunterzuladen und zu starten $0."
  ],
  "Connect with any $0 viewer application.": [
   null,
-  ""
+  "Verbinden Sie sich mit einem beliebigen $0 Viewer-Anwendung."
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  ""
+  "Verbinden Sie sich mit einer beliebigen SPICE- oder VNC-Viewer-Anwendung."
  ],
  "Connecting": [
   null,
-  ""
+  "Verbindungsaufbau"
  ],
  "Connecting to Virtualization Service": [
   null,
-  ""
+  "Verbindung zum Virtualisierungsdienst herstellen"
  ],
  "Connection": [
   null,
@@ -161,7 +157,7 @@ return plural;
  ],
  "Console Type": [
   null,
-  ""
+  "Konsolentyp"
  ],
  "Consoles": [
   null,
@@ -179,17 +175,21 @@ return plural;
   null,
   "Neu erstellen"
  ],
+ "Create Storage Pool": [
+  null,
+  "Erstellen Sie einen Speicherpool"
+ ],
  "Create VM": [
   null,
-  ""
+  "VM erstellen"
  ],
  "Creation of vm $0 failed": [
   null,
-  ""
+  "Schaffung von vm $0 gescheitert"
  ],
  "Ctrl+Alt+Del": [
   null,
-  ""
+  "Strg + Alt + Entf"
  ],
  "Delete": [
   null,
@@ -197,7 +197,7 @@ return plural;
  ],
  "Delete associated storage files:": [
   null,
-  ""
+  "Verknüpfte Speicherdateien löschen:"
  ],
  "Device": [
   null,
@@ -213,15 +213,15 @@ return plural;
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
-  ""
+  "Verbindung zur seriellen Konsole getrennt Klicken Sie auf die Schaltfläche Neu verbinden."
  ],
  "Disk failed to be attached": [
   null,
-  ""
+  "Festplatte konnte nicht angeschlossen werden"
  ],
  "Disk failed to be created": [
   null,
-  ""
+  "Datenträger konnte nicht erstellt werden"
  ],
  "Disks": [
   null,
@@ -229,7 +229,7 @@ return plural;
  ],
  "Download the MSI from $0": [
   null,
-  ""
+  "Laden Sie das MSI von herunter $0"
  ],
  "Edit": [
   null,
@@ -237,11 +237,11 @@ return plural;
  ],
  "Emulated Machine:": [
   null,
-  ""
+  "Emulierte Maschine:"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
-  ""
+  "Es sollte weniger als die maximale Anzahl virtueller CPUs aktiviert sein."
  ],
  "File": [
   null,
@@ -251,21 +251,21 @@ return plural;
   null,
   "Dateisystem"
  ],
+ "Filesystem Directory": [
+  null,
+  "Dateisystemverzeichnis"
+ ],
  "Force Restart": [
   null,
-  ""
+  "Neustart erzwingen"
  ],
  "Force Shut Down": [
   null,
-  ""
+  "Kraft herunterfahren"
  ],
  "Format": [
   null,
   "Formatieren"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  ""
  ],
  "GiB": [
   null,
@@ -273,23 +273,27 @@ return plural;
  ],
  "Graphics Console (VNC)": [
   null,
-  ""
+  "Grafikkonsole (VNC)"
  ],
  "Graphics Console in Desktop Viewer": [
   null,
-  ""
+  "Grafikkonsole im Desktop Viewer"
  ],
  "Host": [
   null,
   "Host"
  ],
- "INSTALL VM action failed": [
+ "Host Name": [
   null,
-  ""
+  "Rechnername"
+ ],
+ "Host should not be empty": [
+  null,
+  "Host sollte nicht leer sein"
  ],
  "Immediately Start VM": [
   null,
-  ""
+  "Sofort starten Sie die VM"
  ],
  "Install": [
   null,
@@ -297,23 +301,23 @@ return plural;
  ],
  "Installation Source": [
   null,
-  ""
+  "Installationsquelle"
  ],
  "Installation Source Type": [
   null,
-  ""
+  "Installationsquellentyp"
  ],
  "Installation Source should not be empty": [
   null,
-  ""
+  "Installationsquelle sollte nicht leer sein"
  ],
  "Invalid filename": [
   null,
-  ""
+  "Ungültiger Dateiname"
  ],
  "Launch Remote Viewer": [
   null,
-  ""
+  "Starten Sie den Remote Viewer"
  ],
  "Loading ...": [
   null,
@@ -325,15 +329,15 @@ return plural;
  ],
  "Mac Address": [
   null,
-  ""
+  "MAC-Adresse"
  ],
  "Manual Connection": [
   null,
-  ""
+  "Manuelle Verbindung"
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
-  ""
+  "Maximale Anzahl der für das Gastbetriebssystem zugewiesenen virtuellen CPUs, die zwischen 1 und 1 liegen muss $0"
  ],
  "Memory": [
   null,
@@ -341,7 +345,7 @@ return plural;
  ],
  "Memory should be positive number": [
   null,
-  ""
+  "Der Speicher sollte eine positive Zahl sein"
  ],
  "Memory:": [
   null,
@@ -357,11 +361,11 @@ return plural;
  ],
  "Model type": [
   null,
-  ""
+  "Modelltyp"
  ],
  "More Information": [
   null,
-  ""
+  "Mehr Informationen"
  ],
  "Name": [
   null,
@@ -369,19 +373,23 @@ return plural;
  ],
  "Name should not be empty": [
   null,
-  ""
+  "Name sollte nicht leer sein"
  ],
  "Name should not consist of empty characters only": [
   null,
-  ""
+  "Der Name darf nicht nur aus leeren Zeichen bestehen"
+ ],
+ "Network File System": [
+  null,
+  "Netzwerk-Dateisystem"
  ],
  "Network Type": [
   null,
-  ""
+  "Netzwerkart"
  ],
  "Network settings could not be saved": [
   null,
-  ""
+  "Netzwerkeinstellungen konnten nicht gespeichert werden"
  ],
  "Networks": [
   null,
@@ -389,47 +397,47 @@ return plural;
  ],
  "New Volume Name": [
   null,
-  ""
+  "Neuer Volume-Name"
  ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
-  ""
+  "Für dieses Speicherpool sind keine Speichervolumes definiert"
  ],
  "No VM is running or defined on this host": [
   null,
-  ""
+  "Auf diesem Host ist keine VM ausgeführt oder definiert"
  ],
  "No boot device found": [
   null,
-  ""
+  "Kein Startgerät gefunden"
  ],
  "No console defined for this virtual machine.": [
   null,
-  ""
+  "Keine Konsole für diese virtuelle Maschine definiert."
  ],
  "No disks defined for this VM": [
   null,
-  ""
+  "Keine Festplatten für diese VM definiert"
  ],
  "No matching files found": [
   null,
-  ""
+  "Keine passenden Dateien gefunden"
  ],
  "No network interfaces defined for this VM": [
   null,
-  ""
+  "Keine Netzwerkschnittstellen für diese VM definiert"
  ],
  "No storage pool is defined on this host": [
   null,
-  ""
+  "Auf diesem Host ist kein Speicherpool definiert"
  ],
  "No virtual networks": [
   null,
-  ""
+  "Keine virtuellen Netzwerke"
  ],
  "OS Vendor": [
   null,
-  ""
+  "Betriebssystemanbieter"
  ],
  "Operating System": [
   null,
@@ -439,33 +447,37 @@ return plural;
   null,
   "Überblick"
  ],
+ "Path on host's filesystem": [
+  null,
+  "Pfad zum Dateisystem des Hosts"
+ ],
  "Path to ISO file on host's file system": [
   null,
-  ""
+  "Pfad zur ISO-Datei im Dateisystem des Hosts"
  ],
  "Path to file": [
   null,
-  ""
+  "Pfad zur Datei"
  ],
  "Please enter new volume name": [
   null,
-  ""
+  "Bitte geben Sie den neuen Datenträgernamen ein"
  ],
  "Please enter new volume size": [
   null,
-  ""
+  "Bitte geben Sie die neue Volumengröße ein"
  ],
  "Please start the virtual machine to access its console.": [
   null,
-  ""
+  "Starten Sie die virtuelle Maschine, um auf die Konsole zuzugreifen."
  ],
  "Plug": [
   null,
-  ""
+  "Plug"
  ],
  "Pool": [
   null,
-  ""
+  "Pool"
  ],
  "Port": [
   null,
@@ -473,7 +485,7 @@ return plural;
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
-  ""
+  "Bevorzugte Anzahl von Steckdosen, die dem Gast zugänglich gemacht werden sollen."
  ],
  "Protocol": [
   null,
@@ -481,11 +493,11 @@ return plural;
  ],
  "QEMU/KVM System connection": [
   null,
-  ""
+  "QEMU / KVM-Systemverbindung"
  ],
  "QEMU/KVM User connection": [
   null,
-  ""
+  "QEMU / KVM-Benutzerverbindung"
  ],
  "Readonly": [
   null,
@@ -497,7 +509,7 @@ return plural;
  ],
  "Remote URL": [
   null,
-  ""
+  "Remote-URL"
  ],
  "Restart": [
   null,
@@ -509,19 +521,19 @@ return plural;
  ],
  "SPICE": [
   null,
-  ""
+  "WÜRZEN"
  ],
  "SPICE Address:": [
   null,
-  ""
+  "SPICE-Adresse:"
  ],
  "SPICE Port:": [
   null,
-  ""
+  "SPICE Port:"
  ],
  "SPICE TLS Port:": [
   null,
-  ""
+  "SPICE TLS-Port:"
  ],
  "Save": [
   null,
@@ -529,19 +541,15 @@ return plural;
  ],
  "Send Non-Maskable Interrupt": [
   null,
-  ""
+  "Nicht maskierbare Unterbrechung senden"
  ],
  "Send key": [
   null,
-  ""
+  "Schlüssel senden"
  ],
  "Serial Console": [
   null,
-  ""
- ],
- "Session": [
-  null,
-  "Sitzung"
+  "Serielle Konsole"
  ],
  "Shut Down": [
   null,
@@ -559,45 +567,73 @@ return plural;
   null,
   "Quelle"
  ],
- "Source should start with http, ftp or nfs protocol": [
+ "Source Path": [
   null,
-  ""
+  "Quellpfad"
+ ],
+ "Source path should not be empty": [
+  null,
+  "Quellpfad sollte nicht leer sein"
+ ],
+ "Source should start with https, ftp or nfs protocol": [
+  null,
+  "Die Quelle sollte mit dem Protokoll http, ftp oder nfs beginnen"
  ],
  "Start libvirt": [
   null,
-  ""
+  "Starten Sie libvirt"
+ ],
+ "Start pool when host boots": [
+  null,
+  "Starten Sie den Pool, wenn der Host bootet"
  ],
  "Start the VM to see disk statistics.": [
   null,
-  ""
+  "Starten Sie die VM, um Festplattenstatistiken anzuzeigen."
+ ],
+ "Startup": [
+  null,
+  "Anlaufen"
  ],
  "State": [
   null,
   "Status"
  ],
+ "Storage Pool Name": [
+  null,
+  "Speicherpoolname"
+ ],
+ "Storage Pool failed to be created": [
+  null,
+  "Speicherpool konnte nicht erstellt werden"
+ ],
  "Storage Pools": [
   null,
-  ""
+  "Speicherpools"
  ],
  "Storage Size": [
   null,
-  ""
+  "Speichergröße"
  ],
  "Storage Size should not be negative number": [
   null,
-  ""
+  "Die Speichergröße sollte nicht negativ sein"
  ],
  "Storage Volumes": [
   null,
-  ""
- ],
- "System": [
-  null,
-  "System"
+  "Speichervolumen"
  ],
  "Target": [
   null,
   "Ziel"
+ ],
+ "Target Path": [
+  null,
+  "Zielpfad"
+ ],
+ "Target path should not be empty": [
+  null,
+  "Zielpfad sollte nicht leer sein"
  ],
  "The VM crashed.": [
   null,
@@ -617,7 +653,7 @@ return plural;
  ],
  "The VM is in process of dying (shut down or crash is not completed).": [
   null,
-  ""
+  "Die VM befindet sich gerade im Sterben (Herunterfahren oder Absturz ist nicht abgeschlossen)."
  ],
  "The VM is paused.": [
   null,
@@ -625,7 +661,7 @@ return plural;
  ],
  "The VM is running and will be forced off before deletion.": [
   null,
-  ""
+  "Die VM ist in Betrieb und wird vor dem Löschen abgebrochen."
  ],
  "The VM is running.": [
   null,
@@ -635,17 +671,21 @@ return plural;
   null,
   "Die VM ist vom Gast Power Management suspendiert."
  ],
+ "The directory on the server being exported": [
+  null,
+  "Das Verzeichnis auf dem Server, der exportiert wird"
+ ],
  "The pool is empty": [
   null,
-  ""
+  "Der Pool ist leer"
  ],
  "Threads per core": [
   null,
-  ""
+  "Fäden pro Kern"
  ],
  "Too many files found": [
   null,
-  ""
+  "Es wurden zu viele Dateien gefunden"
  ],
  "Troubleshoot": [
   null,
@@ -661,15 +701,15 @@ return plural;
  ],
  "Unique name": [
   null,
-  ""
+  "Einzigartiger Name"
  ],
  "Unplug": [
   null,
-  ""
+  "Ziehen Sie den Stecker heraus"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
-  ""
+  "Aktualisieren Sie auf eine neuere Version von libvirt, um Festplattenstatistiken anzuzeigen"
  ],
  "Usage": [
   null,
@@ -677,7 +717,7 @@ return plural;
  ],
  "Use Existing": [
   null,
-  ""
+  "Benutze existierendes"
  ],
  "Used": [
   null,
@@ -685,55 +725,7 @@ return plural;
  ],
  "VCPU settings could not be saved": [
   null,
-  ""
- ],
- "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  ""
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  ""
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  ""
- ],
- "VM DELETE action failed": [
-  null,
-  ""
- ],
- "VM DETACH_DISK action failed": [
-  null,
-  ""
- ],
- "VM FORCE OFF action failed": [
-  null,
-  ""
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  ""
- ],
- "VM REBOOT action failed": [
-  null,
-  ""
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  ""
- ],
- "VM SENDNMI action failed": [
-  null,
-  ""
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  ""
- ],
- "VM START action failed": [
-  null,
-  ""
+  "VCPU-Einstellungen konnten nicht gespeichert werden"
  ],
  "VNC": [
   null,
@@ -741,15 +733,15 @@ return plural;
  ],
  "VNC Address:": [
   null,
-  ""
+  "VNC-Adresse:"
  ],
  "VNC Port:": [
   null,
-  ""
+  "VNC-Port:"
  ],
  "VNC TLS Port:": [
   null,
-  ""
+  "VNC-TLS-Port:"
  ],
  "Virtual Machines": [
   null,
@@ -757,11 +749,11 @@ return plural;
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
-  ""
+  "Der Virtualisierungsdienst (libvirt) ist nicht aktiv"
  ],
  "Virtualization Service is Available": [
   null,
-  ""
+  "Der Virtualisierungsdienst ist verfügbar"
  ],
  "Volume": [
   null,
@@ -771,153 +763,45 @@ return plural;
   null,
   "Aktiv"
  ],
- "bridge": [
-  null,
-  ""
- ],
- "cdrom": [
-  null,
-  ""
- ],
- "crashed": [
-  null,
-  "abgestürzt"
- ],
- "custom": [
-  null,
-  ""
- ],
- "direct": [
-  null,
-  ""
- ],
- "disabled": [
-  null,
-  "Aus"
- ],
- "disk": [
-  null,
-  "Datenträger"
- ],
- "down": [
-  null,
-  "runter"
- ],
- "dying": [
-  null,
-  ""
- ],
- "enabled": [
-  null,
-  "An"
- ],
- "ethernet": [
-  null,
-  ""
- ],
- "host": [
-  null,
-  "host"
- ],
- "hostdev": [
-  null,
-  ""
- ],
- "idle": [
-  null,
-  ""
- ],
  "inactive": [
   null,
   "Inaktiv"
- ],
- "mcast": [
-  null,
-  ""
- ],
- "network": [
-  null,
-  ""
  ],
  "no": [
   null,
   "Nein"
  ],
- "other": [
-  null,
-  "other"
- ],
- "paused": [
-  null,
-  "pausiert"
- ],
  "qcow2": [
   null,
-  ""
+  "qcow2"
  ],
  "raw": [
   null,
   "raw"
  ],
- "running": [
-  null,
-  "Läuft"
- ],
- "server": [
-  null,
-  "server"
- ],
  "show less": [
   null,
-  ""
+  "zeige weniger"
  ],
  "show more": [
   null,
-  ""
- ],
- "shut off": [
-  null,
-  ""
- ],
- "shutdown": [
-  null,
-  "Herunterfahren"
- ],
- "suspended (PM)": [
-  null,
-  "Angehalten (PM)"
- ],
- "udp": [
-  null,
-  "udp"
+  "Zeig mehr"
  ],
  "undefined": [
   null,
   "nicht definiert"
  ],
- "up": [
-  null,
-  "hoch"
- ],
- "user": [
-  null,
-  "Benutzer"
- ],
  "vCPU Count": [
   null,
-  ""
+  "vCPU Count"
  ],
  "vCPU Maximum": [
   null,
-  ""
+  "vCPU Maximum"
  ],
  "vCPUs:": [
   null,
   "vCPUs:"
- ],
- "vhostuser": [
-  null,
-  ""
  ],
  "yes": [
   null,

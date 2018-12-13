@@ -73,19 +73,19 @@ return plural;
  ],
  "Account Expiration": [
   null,
-  ""
+  "계정 만료"
  ],
  "Account not available or cannot be edited.": [
   null,
-  ""
+  "계정을 사용할 수 없거나 편집 할 수 없습니다."
  ],
  "Accounts": [
   null,
-  ""
+  "계정"
  ],
  "Add key": [
   null,
-  ""
+  "키 추가"
  ],
  "Add public key": [
   null,
@@ -97,7 +97,7 @@ return plural;
  ],
  "Back to Accounts": [
   null,
-  ""
+  "계정으로 돌아 가기"
  ],
  "Cancel": [
   null,
@@ -105,7 +105,7 @@ return plural;
  ],
  "Change": [
   null,
-  "바꾸기"
+  "변경 "
  ],
  "Close": [
   null,
@@ -116,10 +116,6 @@ return plural;
   "확인"
  ],
  "Confirm New Password": [
-  null,
-  ""
- ],
- "Container Administrator": [
   null,
   ""
  ],
@@ -135,25 +131,9 @@ return plural;
   null,
   "삭제"
  ],
- "Delete $0": [
-  null,
-  ""
- ],
  "Delete Files": [
   null,
   "파일 삭제"
- ],
- "Error": [
-  null,
-  "오류"
- ],
- "Excellent password": [
-  null,
-  ""
- ],
- "Failed to change password": [
-  null,
-  ""
  ],
  "Failed to load authorized keys.": [
   null,
@@ -171,19 +151,7 @@ return plural;
   null,
   "성명"
  ],
- "Image Builder": [
-  null,
-  ""
- ],
- "Invalid expiration date": [
-  null,
-  ""
- ],
  "Invalid key": [
-  null,
-  ""
- ],
- "Invalid number of days": [
   null,
   ""
  ],
@@ -199,18 +167,6 @@ return plural;
   null,
   ""
  ],
- "Lock account on $0": [
-  null,
-  ""
- ],
- "Logged In": [
-  null,
-  ""
- ],
- "Never": [
-  null,
-  "하지 않기"
- ],
  "Never expire password": [
   null,
   ""
@@ -223,27 +179,11 @@ return plural;
   null,
   ""
  ],
- "New password was not accepted": [
-  null,
-  ""
- ],
- "No real name specified": [
-  null,
-  ""
- ],
- "No user name specified": [
-  null,
-  ""
- ],
  "Off": [
   null,
   "비활성"
  ],
  "Old Password": [
-  null,
-  ""
- ],
- "Old password not accepted": [
   null,
   ""
  ],
@@ -259,35 +199,7 @@ return plural;
   null,
   ""
  ],
- "Password is not acceptable": [
-  null,
-  ""
- ],
- "Password is too weak": [
-  null,
-  ""
- ],
- "Password must be changed": [
-  null,
-  ""
- ],
  "Paste the contents of your public SSH key file here": [
-  null,
-  ""
- ],
- "Please specify an expiration date": [
-  null,
-  ""
- ],
- "Prompting via passwd timed out": [
-  null,
-  ""
- ],
- "Require password change every $0 days": [
-  null,
-  ""
- ],
- "Require password change on $0": [
   null,
   ""
  ],
@@ -298,10 +210,6 @@ return plural;
  "Roles": [
   null,
   "역할"
- ],
- "Server Administrator": [
-  null,
-  ""
  ],
  "Set": [
   null,
@@ -315,41 +223,9 @@ return plural;
   null,
   ""
  ],
- "The account '$0' will be forced to change their password on next login": [
-  null,
-  ""
- ],
- "The passwords do not match": [
-  null,
-  ""
- ],
- "The user <b>$0</b> is not permitted to modify accounts": [
-  null,
-  ""
- ],
- "The user name can only consist of letters from a-z, digits, dots, dashes and underscores.": [
-  null,
-  ""
- ],
  "There are no authorized public keys for this account.": [
   null,
   ""
- ],
- "This user name already exists": [
-  null,
-  ""
- ],
- "Unable to delete root account": [
-  null,
-  ""
- ],
- "Unable to rename root account": [
-  null,
-  ""
- ],
- "Unexpected error": [
-  null,
-  "예상치 못한 오류"
  ],
  "Unnamed": [
   null,
@@ -364,10 +240,6 @@ return plural;
   ""
  ],
  "translatable": [
-  null,
-  ""
- ],
- "page-title\u0004Accounts": [
   null,
   ""
  ]

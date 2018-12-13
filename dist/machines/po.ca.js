@@ -115,10 +115,6 @@ return plural;
   null,
   "Bus"
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Ha fallat l'acció CHANGE NETWORK STATE"
- ],
  "CPU Type:": [
   null,
   "Tipus de CPU:"
@@ -263,10 +259,6 @@ return plural;
   null,
   "Formata"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  ""
- ],
  "GiB": [
   null,
   "GiB"
@@ -282,10 +274,6 @@ return plural;
  "Host": [
   null,
   "Amfitrió"
- ],
- "INSTALL VM action failed": [
-  null,
-  "Ha fallat l'acció INSTALL VM"
  ],
  "Immediately Start VM": [
   null,
@@ -539,10 +527,6 @@ return plural;
   null,
   "Consola sèrie"
  ],
- "Session": [
-  null,
-  "Sessió"
- ],
  "Shut Down": [
   null,
   "Apaga"
@@ -590,10 +574,6 @@ return plural;
  "Storage Volumes": [
   null,
   ""
- ],
- "System": [
-  null,
-  "Sistema"
  ],
  "Target": [
   null,
@@ -687,54 +667,6 @@ return plural;
   null,
   ""
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  ""
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  ""
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  ""
- ],
- "VM DELETE action failed": [
-  null,
-  ""
- ],
- "VM DETACH_DISK action failed": [
-  null,
-  ""
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "Ha fallat l'acció VM FORCE OFF"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "Ha fallat l'acció VM FORCE REBOOT"
- ],
- "VM REBOOT action failed": [
-  null,
-  "Ha fallat l'acció VM REBOOT"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  ""
- ],
- "VM SENDNMI action failed": [
-  null,
-  ""
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "Ha fallat l'acció VM SHUT DOWN"
- ],
- "VM START action failed": [
-  null,
-  "Ha fallat l'acció VM START"
- ],
  "VNC": [
   null,
   "VNC"
@@ -771,85 +703,13 @@ return plural;
   null,
   "actiu"
  ],
- "bridge": [
-  null,
-  "pont"
- ],
- "cdrom": [
-  null,
-  "cdrom"
- ],
- "crashed": [
-  null,
-  "estavellat"
- ],
- "custom": [
-  null,
-  "personalitzat"
- ],
- "direct": [
-  null,
-  "directe"
- ],
- "disabled": [
-  null,
-  "inhabilitat"
- ],
- "disk": [
-  null,
-  "disc"
- ],
- "down": [
-  null,
-  ""
- ],
- "dying": [
-  null,
-  "morint"
- ],
- "enabled": [
-  null,
-  "habilitat"
- ],
- "ethernet": [
-  null,
-  "ethernet"
- ],
- "host": [
-  null,
-  "amfitrió"
- ],
- "hostdev": [
-  null,
-  ""
- ],
- "idle": [
-  null,
-  "ociós"
- ],
  "inactive": [
   null,
   "inactiu"
  ],
- "mcast": [
-  null,
-  "mcast"
- ],
- "network": [
-  null,
-  "xarxa"
- ],
  "no": [
   null,
   "no"
- ],
- "other": [
-  null,
-  "altres"
- ],
- "paused": [
-  null,
-  "pausa"
  ],
  "qcow2": [
   null,
@@ -859,14 +719,6 @@ return plural;
   null,
   ""
  ],
- "running": [
-  null,
-  "en execució"
- ],
- "server": [
-  null,
-  "servidor"
- ],
  "show less": [
   null,
   "mostra menys"
@@ -875,33 +727,9 @@ return plural;
   null,
   "mostra més"
  ],
- "shut off": [
-  null,
-  "apagat"
- ],
- "shutdown": [
-  null,
-  "apaga"
- ],
- "suspended (PM)": [
-  null,
-  "suspès (PM)"
- ],
- "udp": [
-  null,
-  "udp"
- ],
  "undefined": [
   null,
   "indefinit"
- ],
- "up": [
-  null,
-  ""
- ],
- "user": [
-  null,
-  "usuari"
  ],
  "vCPU Count": [
   null,
@@ -914,10 +742,6 @@ return plural;
  "vCPUs:": [
   null,
   "vCPUs:"
- ],
- "vhostuser": [
-  null,
-  ""
  ],
  "yes": [
   null,

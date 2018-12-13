@@ -95,10 +95,6 @@ return plural;
   null,
   "Каталог"
  ],
- "Directory $0 isn't writable or doesn't exist.": [
-  null,
-  "Каталог $0 є непридатним до запису або не існує."
- ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
   "Не встановлено службу Kdump. Будь ласка, переконайтеся, що у системі встановлено пакунок kexec-tools."
@@ -235,21 +231,9 @@ return plural;
   null,
   "локально у $0"
  ],
- "nfs dump target isn't formated as server:path": [
-  null,
-  ""
- ],
  "ssh key": [
   null,
   "ключ ssh"
- ],
- "ssh key isn't a path": [
-  null,
-  ""
- ],
- "ssh server is empty": [
-  null,
-  ""
  ],
  "undefined": [
   null,

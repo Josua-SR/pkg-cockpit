@@ -115,10 +115,6 @@ return plural;
   null,
   "OK"
  ],
- "PackageKit crashed": [
-  null,
-  "PackageKit がクラッシュしました"
- ],
  "Remove": [
   null,
   "削除"

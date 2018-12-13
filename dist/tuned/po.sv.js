@@ -113,7 +113,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to change profiles": [
   null,
-  ""
+  "Användaren <b>$0</b> har inte rättighet att ändra profiler"
  ],
  "This system is using a custom profile": [
   null,
@@ -121,7 +121,7 @@ return plural;
  ],
  "This system is using the recommended profile": [
   null,
-  ""
+  "Detta system använder den rekommenderade profilen"
  ],
  "Tuned has failed to start": [
   null,

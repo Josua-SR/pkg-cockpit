@@ -69,11 +69,11 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  ""
+  "$0 대부분의 운영 체제에서 사용할 수 있습니다. 설치하려면 GNOME 소프트웨어에서 검색하거나 다음을 실행하십시오."
  ],
  "$0 vCPU Details": [
   null,
-  ""
+  "$0 vCPU 세부 정보"
  ],
  "Action": [
   null,
@@ -85,7 +85,7 @@ return plural;
  ],
  "Add Disk": [
   null,
-  ""
+  "디스크 추가"
  ],
  "Address": [
   null,
@@ -94,10 +94,6 @@ return plural;
  "Address:": [
   null,
   "주소:"
- ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  ""
  ],
  "All running virtual machines will be turned off.": [
   null,
@@ -113,11 +109,11 @@ return plural;
  ],
  "Automatically selected host": [
   null,
-  ""
+  "자동 선택된 호스트"
  ],
  "Autostart:": [
   null,
-  ""
+  "자동 시작 :"
  ],
  "Available": [
   null,
@@ -125,35 +121,27 @@ return plural;
  ],
  "Base Template": [
   null,
-  ""
+  "기본 템플릿"
  ],
  "Base template": [
   null,
-  ""
+  "기본 템플릿"
  ],
  "Base template:": [
   null,
-  ""
+  "기본 템플릿 :"
  ],
  "Boot Order:": [
   null,
-  ""
+  "부팅 순서 :"
  ],
  "Bus": [
   null,
   ""
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  ""
- ],
  "CPU Type:": [
   null,
-  ""
- ],
- "CREATE VM action failed": [
-  null,
-  ""
+  "CPU 유형 :"
  ],
  "Cancel": [
   null,
@@ -163,7 +151,7 @@ return plural;
   null,
   "용량"
  ],
- "Changes will apply on VM shutdown": [
+ "Changes will take effect after shutting down the VM": [
   null,
   ""
  ],
@@ -177,13 +165,9 @@ return plural;
  ],
  "Cluster Templates": [
   null,
-  ""
+  "클러스터 템플릿 "
  ],
  "Cluster Virtual Machines": [
-  null,
-  ""
- ],
- "Confirm deletion of $0": [
   null,
   ""
  ],
@@ -283,11 +267,11 @@ return plural;
   null,
   ""
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
   ""
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
   ""
  ],
@@ -339,10 +323,6 @@ return plural;
   null,
   "포멧"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  ""
- ],
  "GiB": [
   null,
   "GiB"
@@ -371,10 +351,6 @@ return plural;
   null,
   ""
  ],
- "INSTALL VM action failed": [
-  null,
-  ""
- ],
  "Install": [
   null,
   "설치"
@@ -394,10 +370,6 @@ return plural;
  "MAC Address": [
   null,
   "MAC 주소"
- ],
- "MIGRATE action failed": [
-  null,
-  ""
  ],
  "Mac Address": [
   null,
@@ -447,7 +419,7 @@ return plural;
   null,
   ""
  ],
- "Network settings failed to change with following error: ": [
+ "Network settings could not be saved": [
   null,
   ""
  ],
@@ -571,17 +543,9 @@ return plural;
   null,
   ""
  ],
- "Preparing for Maintenance": [
-  null,
-  ""
- ],
  "Protocol": [
   null,
   "프로토콜"
- ],
- "REBOOT action failed": [
-  null,
-  ""
  ],
  "Readonly": [
   null,
@@ -619,14 +583,6 @@ return plural;
   null,
   ""
  ],
- "SET VCPU SETTINGS action failed": [
-  null,
-  ""
- ],
- "SHUTDOWN action failed": [
-  null,
-  ""
- ],
  "SPICE": [
   null,
   "SPICE"
@@ -640,14 +596,6 @@ return plural;
   ""
  ],
  "SPICE TLS Port:": [
-  null,
-  ""
- ],
- "START action failed": [
-  null,
-  ""
- ],
- "SUSPEND action failed": [
   null,
   ""
  ],
@@ -666,10 +614,6 @@ return plural;
  "Serial Console": [
   null,
   ""
- ],
- "Session": [
-  null,
-  "세션"
  ],
  "Shut Down": [
   null,
@@ -710,18 +654,6 @@ return plural;
  "Switch Host to Maintenance": [
   null,
   ""
- ],
- "Switching host to maintenance mode failed. Received error: ": [
-  null,
-  ""
- ],
- "Switching host to maintenance mode in progress ...": [
-  null,
-  ""
- ],
- "System": [
-  null,
-  "시스템 "
  ],
  "Target": [
   null,
@@ -815,43 +747,15 @@ return plural;
   null,
   "사용 중"
  ],
+ "VCPU settings could not be saved": [
+  null,
+  ""
+ ],
  "VDSM": [
   null,
   "VDSM"
  ],
  "VDSM Service Management": [
-  null,
-  ""
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  ""
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  ""
- ],
- "VM FORCE OFF action failed": [
-  null,
-  ""
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  ""
- ],
- "VM REBOOT action failed": [
-  null,
-  ""
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  ""
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  ""
- ],
- "VM START action failed": [
   null,
   ""
  ],
@@ -895,31 +799,7 @@ return plural;
   null,
   "볼륨"
  ],
- "bridge": [
-  null,
-  ""
- ],
- "cdrom": [
-  null,
-  ""
- ],
- "connecting": [
-  null,
-  "연결"
- ],
  "cores": [
-  null,
-  ""
- ],
- "crashed": [
-  null,
-  ""
- ],
- "custom": [
-  null,
-  ""
- ],
- "direct": [
   null,
   ""
  ],
@@ -927,85 +807,13 @@ return plural;
   null,
   "비활성화됨 "
  ],
- "disk": [
-  null,
-  "디스크"
- ],
- "down": [
-  null,
-  "아래로"
- ],
- "dying": [
-  null,
-  ""
- ],
  "enabled": [
   null,
   "활성화됨 "
  ],
- "error": [
-  null,
-  "오류 "
- ],
- "ethernet": [
-  null,
-  ""
- ],
- "host": [
-  null,
-  "호스트"
- ],
- "hostdev": [
-  null,
-  ""
- ],
- "idle": [
-  null,
-  ""
- ],
- "initializing": [
-  null,
-  ""
- ],
- "installation failed": [
-  null,
-  ""
- ],
- "installing OS": [
-  null,
-  ""
- ],
- "kdumping": [
-  null,
-  ""
- ],
- "maintenance": [
-  null,
-  ""
- ],
- "mcast": [
-  null,
-  ""
- ],
- "network": [
-  null,
-  ""
- ],
  "no": [
   null,
   "아니요"
- ],
- "non operational": [
-  null,
-  ""
- ],
- "non responsive": [
-  null,
-  ""
- ],
- "oVirt": [
-  null,
-  ""
  ],
  "oVirt Host State:": [
   null,
@@ -1027,37 +835,13 @@ return plural;
   null,
   ""
  ],
- "other": [
-  null,
-  ""
- ],
- "paused": [
-  null,
-  "일시 중지"
- ],
- "pending approval": [
-  null,
-  ""
- ],
  "qcow2": [
   null,
-  ""
+  "qcow2"
  ],
  "raw": [
   null,
   "raw"
- ],
- "reboot": [
-  null,
-  "재부팅 "
- ],
- "running": [
-  null,
-  "실행 중"
- ],
- "server": [
-  null,
-  ""
  ],
  "show less": [
   null,
@@ -1067,19 +851,7 @@ return plural;
   null,
   ""
  ],
- "shut off": [
-  null,
-  ""
- ],
- "shutdown": [
-  null,
-  ""
- ],
  "sockets": [
-  null,
-  ""
- ],
- "suspended (PM)": [
   null,
   ""
  ],
@@ -1087,29 +859,13 @@ return plural;
   null,
   ""
  ],
- "udp": [
-  null,
-  "udp"
- ],
- "unassigned": [
-  null,
-  ""
- ],
  "undefined": [
   null,
   ""
  ],
- "up": [
-  null,
-  "위로"
- ],
- "user": [
-  null,
-  "사용자 "
- ],
  "vCPU Count": [
   null,
-  ""
+  "vCPU 개수"
  ],
  "vCPU Maximum": [
   null,
@@ -1121,11 +877,7 @@ return plural;
  ],
  "vCPUs:": [
   null,
-  ""
- ],
- "vhostuser": [
-  null,
-  ""
+  "vCPU:"
  ],
  "yes": [
   null,

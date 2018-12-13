@@ -69,27 +69,27 @@ return plural;
  },
  "$mtu": [
   null,
-  ""
+  "$mtu"
  ],
  "1 day": [
   null,
-  ""
+  "1天"
  ],
  "1 hour": [
   null,
-  ""
+  "1小時"
  ],
  "1 week": [
   null,
-  ""
+  "1週"
  ],
  "5 minutes": [
   null,
-  ""
+  "5分鐘"
  ],
  "6 hours": [
   null,
-  ""
+  "6個小時"
  ],
  "802.3ad": [
   null,
@@ -97,7 +97,7 @@ return plural;
  ],
  "802.3ad LACP": [
   null,
-  ""
+  "802.3ad LACP"
  ],
  "ARP": [
   null,
@@ -105,11 +105,11 @@ return plural;
  ],
  "ARP Monitoring": [
   null,
-  ""
+  "ARP監控"
  ],
  "ARP Ping": [
   null,
-  ""
+  "ARP Ping"
  ],
  "Active": [
   null,
@@ -129,51 +129,51 @@ return plural;
  ],
  "Add $0": [
   null,
-  ""
+  "加 $0"
  ],
  "Add Bond": [
   null,
-  ""
+  "添加債券"
  ],
  "Add Bridge": [
   null,
-  ""
+  "添加橋"
  ],
  "Add Services": [
   null,
-  ""
+  "添加服務"
  ],
  "Add Services…": [
   null,
-  ""
+  "添加服務......"
  ],
  "Add Team": [
   null,
-  ""
+  "添加團隊"
  ],
  "Add VLAN": [
   null,
-  ""
+  "添加VLAN"
  ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "添加 <b>$0</b> 將斷開與服務器的連接，並使管理UI不可用。"
  ],
  "Additional DNS $val": [
   null,
-  ""
+  "額外的DNS $val"
  ],
  "Additional DNS Search Domains $val": [
   null,
-  ""
+  "其他DNS搜索域 $val"
  ],
  "Additional address $val": [
   null,
-  ""
+  "另外地址 $val"
  ],
  "Address $val": [
   null,
-  ""
+  "地址 $val"
  ],
  "Addresses": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Allowed Services": [
   null,
-  ""
+  "允許的服務"
  ],
  "Apply": [
   null,
@@ -189,7 +189,7 @@ return plural;
  ],
  "Authenticating": [
   null,
-  ""
+  "認證"
  ],
  "Automatic": [
   null,
@@ -197,7 +197,7 @@ return plural;
  ],
  "Automatic (DHCP only)": [
   null,
-  ""
+  "自動（僅限DHCP）"
  ],
  "Automatic (DHCP)": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Balancer": [
   null,
-  ""
+  "平衡器"
  ],
  "Bond": [
   null,
@@ -213,7 +213,7 @@ return plural;
  ],
  "Bond Settings": [
   null,
-  ""
+  "債券設置"
  ],
  "Bridge": [
   null,
@@ -221,15 +221,15 @@ return plural;
  ],
  "Bridge Port Settings": [
   null,
-  ""
+  "網橋端口設置"
  ],
  "Bridge Settings": [
   null,
-  ""
+  "橋設置"
  ],
  "Bridge port": [
   null,
-  ""
+  "橋接"
  ],
  "Broadcast": [
   null,
@@ -237,7 +237,7 @@ return plural;
  ],
  "Broken configuration": [
   null,
-  ""
+  "配置損壞"
  ],
  "Cancel": [
   null,
@@ -245,19 +245,19 @@ return plural;
  ],
  "Carrier": [
   null,
-  ""
+  "支架"
  ],
  "Change the settings": [
   null,
-  ""
+  "更改設置"
  ],
  "Changing the settings will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "更改設置將中斷與服務器的連接，並使管理UI不可用。"
  ],
  "Checking IP": [
   null,
-  ""
+  "檢查IP"
  ],
  "Close": [
   null,
@@ -269,39 +269,39 @@ return plural;
  ],
  "Configuring": [
   null,
-  ""
+  "配置"
  ],
  "Configuring IP": [
   null,
-  ""
+  "配置IP"
  ],
  "Connect automatically": [
   null,
-  ""
+  "自動連接"
  ],
  "Connection will be lost": [
   null,
-  ""
+  "連接將丟失"
  ],
  "Create it": [
   null,
-  ""
+  "創造它"
  ],
  "Creating this VLAN will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "創建此VLAN將斷開與服務器的連接，並使管理UI不可用。"
  ],
  "Creating this bond will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "創建此綁定將斷開與服務器的連接，並將使管理UI不可用。"
  ],
  "Creating this bridge will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "創建此網橋將斷開與服務器的連接，並使管理UI不可用。"
  ],
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "創建此團隊將斷開與服務器的連接，並使管理UI不可用。"
  ],
  "DNS": [
   null,
@@ -309,19 +309,19 @@ return plural;
  ],
  "DNS $val": [
   null,
-  ""
+  "DNS $val"
  ],
  "DNS Search Domains": [
   null,
-  ""
+  "DNS搜索域"
  ],
  "DNS Search Domains $val": [
   null,
-  ""
+  "DNS搜索域 $val"
  ],
  "Deactivating": [
   null,
-  ""
+  "停用"
  ],
  "Delete": [
   null,
@@ -329,11 +329,11 @@ return plural;
  ],
  "Delete $0": [
   null,
-  ""
+  "刪除 $0"
  ],
  "Deleting <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "刪除 <b>$0</b> 將斷開與服務器的連接，並使管理UI不可用。"
  ],
  "Details": [
   null,
@@ -345,19 +345,19 @@ return plural;
  ],
  "Enable Service": [
   null,
-  ""
+  "啟用服務"
  ],
  "Ethernet MAC": [
   null,
-  ""
+  "以太網MAC"
  ],
  "Ethernet MTU": [
   null,
-  ""
+  "以太網MTU"
  ],
  "Ethtool": [
   null,
-  ""
+  "Ethtool的"
  ],
  "Failed": [
   null,
@@ -365,7 +365,7 @@ return plural;
  ],
  "Filter Services": [
   null,
-  ""
+  "過濾服務"
  ],
  "Firewall": [
   null,
@@ -373,11 +373,11 @@ return plural;
  ],
  "Firewall is not available": [
   null,
-  ""
+  "防火牆不可用"
  ],
  "Forward delay $forward_delay": [
   null,
-  ""
+  "轉發延遲 $forward_延遲"
  ],
  "General": [
   null,
@@ -385,11 +385,11 @@ return plural;
  ],
  "Go to now": [
   null,
-  ""
+  "去吧"
  ],
  "Hair Pin mode": [
   null,
-  ""
+  "髮夾模式"
  ],
  "Hairpin mode": [
   null,
@@ -397,7 +397,7 @@ return plural;
  ],
  "Hello time $hello_time": [
   null,
-  ""
+  "你好時間 $hello_時間"
  ],
  "IP Address": [
   null,
@@ -405,7 +405,7 @@ return plural;
  ],
  "IP Settings": [
   null,
-  ""
+  "IP設置"
  ],
  "IPv4": [
   null,
@@ -425,7 +425,7 @@ return plural;
  ],
  "Id $id": [
   null,
-  ""
+  "ID $id"
  ],
  "Ignore": [
   null,
@@ -441,35 +441,35 @@ return plural;
  ],
  "Invalid address $0": [
   null,
-  ""
+  "無效地址 $0"
  ],
  "Invalid metric $0": [
   null,
-  ""
+  "指標無效 $0"
  ],
  "Invalid prefix $0": [
   null,
-  ""
+  "無效的前綴 $0"
  ],
  "Invalid prefix or netmask $0": [
   null,
-  ""
+  "無效的前綴或網絡掩碼 $0"
  ],
  "Keep connection": [
   null,
-  ""
+  "保持聯繫"
  ],
  "LACP Key": [
   null,
-  ""
+  "LACP密鑰"
  ],
  "Link Monitoring": [
   null,
-  ""
+  "鏈接監控"
  ],
  "Link Watch": [
   null,
-  ""
+  "Link Watch"
  ],
  "Link down delay": [
   null,
@@ -477,7 +477,7 @@ return plural;
  ],
  "Link local": [
   null,
-  ""
+  "鏈接本地"
  ],
  "Link up delay": [
   null,
@@ -485,7 +485,7 @@ return plural;
  ],
  "Load Balancing": [
   null,
-  ""
+  "負載均衡"
  ],
  "MAC": [
   null,
@@ -493,7 +493,7 @@ return plural;
  ],
  "MII (Recommended)": [
   null,
-  ""
+  "信息產業部（推薦）"
  ],
  "MTU": [
   null,
@@ -501,7 +501,7 @@ return plural;
  ],
  "MTU must be a positive number": [
   null,
-  ""
+  "MTU必須是正數"
  ],
  "Manual": [
   null,
@@ -509,15 +509,15 @@ return plural;
  ],
  "Master": [
   null,
-  ""
+  "主"
  ],
  "Maximum message age $max_age": [
   null,
-  ""
+  "最大郵件年齡 $max_年齡"
  ],
  "Members": [
   null,
-  ""
+  "會員"
  ],
  "Mode": [
   null,
@@ -525,15 +525,15 @@ return plural;
  ],
  "Monitoring Interval": [
   null,
-  ""
+  "監控間隔"
  ],
  "Monitoring Targets": [
   null,
-  ""
+  "監控目標"
  ],
  "NSNA Ping": [
   null,
-  ""
+  "NSNA Ping"
  ],
  "Name": [
   null,
@@ -541,7 +541,7 @@ return plural;
  ],
  "Network devices and graphs require NetworkManager.": [
   null,
-  ""
+  "網絡設備和圖形需要NetworkManager。"
  ],
  "NetworkManager is not running.": [
   null,
@@ -553,7 +553,7 @@ return plural;
  ],
  "Networking Logs": [
   null,
-  ""
+  "網絡日誌"
  ],
  "No": [
   null,
@@ -561,11 +561,11 @@ return plural;
  ],
  "No carrier": [
   null,
-  ""
+  "沒有承運人"
  ],
  "No open ports": [
   null,
-  ""
+  "沒有開放的端口"
  ],
  "Not available": [
   null,
@@ -574,10 +574,6 @@ return plural;
  "Off": [
   null,
   "關閉"
- ],
- "Ok": [
-  null,
-  "確定"
  ],
  "On": [
   null,
@@ -589,15 +585,15 @@ return plural;
  ],
  "Parent $parent": [
   null,
-  ""
+  "親 $parent"
  ],
  "Part of ": [
   null,
-  ""
+  "部分 "
  ],
  "Passive": [
   null,
-  ""
+  "被動"
  ],
  "Path cost": [
   null,
@@ -605,7 +601,7 @@ return plural;
  ],
  "Path cost $path_cost": [
   null,
-  ""
+  "路徑成本 $path_成本"
  ],
  "Permanent": [
   null,
@@ -613,15 +609,15 @@ return plural;
  ],
  "Ping Interval": [
   null,
-  ""
+  "Ping間隔"
  ],
  "Ping Target": [
   null,
-  ""
+  "Ping目標"
  ],
- "Please install the {0} package": [
+ "Please install the $0 package": [
   null,
-  ""
+  "請安裝 $0 包"
  ],
  "Ports": [
   null,
@@ -629,11 +625,11 @@ return plural;
  ],
  "Prefix length": [
   null,
-  ""
+  "前綴長度"
  ],
  "Prefix length or Netmask": [
   null,
-  ""
+  "前綴長度或網絡掩碼"
  ],
  "Preparing": [
   null,
@@ -653,7 +649,7 @@ return plural;
  ],
  "Priority $priority": [
   null,
-  ""
+  "優先 $priority"
  ],
  "Random": [
   null,
@@ -669,43 +665,43 @@ return plural;
  ],
  "Remove $0": [
   null,
-  ""
+  "去掉 $0"
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "刪除 <b>$0</b> 將斷開與服務器的連接，並使管理UI不可用。"
  ],
  "Restoring connection": [
   null,
-  ""
+  "恢復連接"
  ],
  "Round Robin": [
   null,
-  ""
+  "Round Robin"
  ],
  "Routes": [
   null,
-  ""
+  "路線"
  ],
  "Runner": [
   null,
-  ""
+  "跑步者"
  ],
  "STP Forward delay": [
   null,
-  ""
+  "STP前向延遲"
  ],
  "STP Hello time": [
   null,
-  ""
+  "STP你好時間"
  ],
  "STP Maximum message age": [
   null,
-  ""
+  "STP最大消息時間"
  ],
  "STP Priority": [
   null,
-  ""
+  "STP優先權"
  ],
  "Sending": [
   null,
@@ -717,7 +713,7 @@ return plural;
  ],
  "Set to": [
   null,
-  ""
+  "調成"
  ],
  "Shared": [
   null,
@@ -725,19 +721,19 @@ return plural;
  ],
  "Spanning Tree Protocol": [
   null,
-  ""
+  "生成樹協議"
  ],
  "Spanning Tree Protocol (STP)": [
   null,
-  ""
+  "生成樹協議（STP）"
  ],
  "Stable": [
   null,
-  ""
+  "穩定"
  ],
  "Start Service": [
   null,
-  ""
+  "開始服務"
  ],
  "Status": [
   null,
@@ -745,31 +741,31 @@ return plural;
  ],
  "Sticky": [
   null,
-  ""
+  "黏"
  ],
  "Switch off $0": [
   null,
-  ""
+  "關掉 $0"
  ],
  "Switch on $0": [
   null,
-  ""
+  "打開 $0"
  ],
  "Switching off <b>$0</b>  will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "正在關掉 <b>$0</b>  將斷開與服務器的連接，並使管理UI不可用。"
  ],
  "Switching off <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "正在關掉 <b>$0</b> 將斷開與服務器的連接，並使管理UI不可用。"
  ],
  "Switching on <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "開啟 <b>$0</b> 將斷開與服務器的連接，並使管理UI不可用。"
  ],
  "TCP": [
   null,
-  ""
+  "TCP"
  ],
  "Team": [
   null,
@@ -781,27 +777,27 @@ return plural;
  ],
  "Team Port Settings": [
   null,
-  ""
+  "團隊端口設置"
  ],
  "Team Settings": [
   null,
-  ""
+  "團隊設置"
  ],
  "Testing connection": [
   null,
-  ""
+  "測試連接"
  ],
  "The user <b>$0</b> is not permitted to modify network settings": [
   null,
-  ""
+  "用戶 <b>$0</b> 不允許修改網絡設置"
  ],
  "This device cannot be managed here.": [
   null,
-  ""
+  "此設備無法在此處管理。"
  ],
  "UDP": [
   null,
-  ""
+  "UDP"
  ],
  "Unexpected error": [
   null,
@@ -813,15 +809,15 @@ return plural;
  ],
  "Unknown \"$0\"": [
   null,
-  ""
+  "未知“$0“"
  ],
  "Unknown configuration": [
   null,
-  ""
+  "配置未知"
  ],
  "Unmanaged Interfaces": [
   null,
-  ""
+  "非託管接口"
  ],
  "VLAN": [
   null,
@@ -829,11 +825,11 @@ return plural;
  ],
  "VLAN Id": [
   null,
-  ""
+  "VLAN Id"
  ],
  "VLAN Settings": [
   null,
-  ""
+  "VLAN設置"
  ],
  "Waiting": [
   null,
@@ -849,19 +845,19 @@ return plural;
  ],
  "You are not authorized to modify the firewall.": [
   null,
-  ""
+  "您無權修改防火牆。"
  ],
  "[$0 bytes of binary data]": [
   null,
-  ""
+  "[$0 二進制數據的字節]"
  ],
  "[binary data]": [
   null,
-  ""
+  "[二進制數據]"
  ],
  "[no data]": [
   null,
-  ""
+  "[沒有數據]"
  ],
  "page-title\u0004Networking": [
   null,

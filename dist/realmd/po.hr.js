@@ -199,10 +199,6 @@ return plural;
   null,
   "Jednokratna Lozinka"
  ],
- "PackageKit crashed": [
-  null,
-  ""
- ],
  "Removals:": [
   null,
   ""

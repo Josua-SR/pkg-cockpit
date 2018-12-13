@@ -1040,10 +1040,6 @@ return plural;
   null,
   "Sobreescriu les dades existents amb zeros"
  ],
- "PackageKit crashed": [
-  null,
-  "PackageKit s'ha estavellat."
- ],
  "Partition": [
   null,
   "Partició"

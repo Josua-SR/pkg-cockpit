@@ -69,31 +69,31 @@ return plural;
  },
  "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  ""
+  "$0 只有具有本地憑據的用戶才能登錄此計算機。這也可能影響其他服務，因為DNS解析設置和可信CA列表可能會更改。"
  ],
  "$0 is not available from any repository.": [
   null,
-  ""
+  "$0 在任何存儲庫中都不可用。"
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "$0 將會被安裝。"
  ],
  "Additional packages:": [
   null,
-  ""
+  "附加包："
  ],
  "Administrator Password": [
   null,
-  ""
+  "管理員密碼"
  ],
  "Are you sure you want to leave the '$0' domain?": [
   null,
-  ""
+  "你確定要離開'$0'域名？"
  ],
  "Are you sure you want to leave this domain?": [
   null,
-  ""
+  "你確定要離開這個域名嗎？"
  ],
  "Authentication": [
   null,
@@ -109,35 +109,35 @@ return plural;
  ],
  "Checking installed software": [
   null,
-  ""
+  "檢查已安裝的軟件"
  ],
  "Computer OU": [
   null,
-  ""
+  "計算機OU"
  ],
  "Domain $0 could not be contacted": [
   null,
-  ""
+  "域 $0 無法聯繫"
  ],
  "Domain $0 is not supported": [
   null,
-  ""
+  "域 $0 不受支持"
  ],
  "Domain Address": [
   null,
-  ""
+  "域名地址"
  ],
  "Domain Administrator Name": [
   null,
-  ""
+  "域管理員名稱"
  ],
  "Domain Administrator Password": [
   null,
-  ""
+  "域管理員密碼"
  ],
  "Downloading $0": [
   null,
-  ""
+  "下載 $0"
  ],
  "Install": [
   null,
@@ -145,11 +145,11 @@ return plural;
  ],
  "Install Software": [
   null,
-  ""
+  "安裝軟件"
  ],
  "Installing $0": [
   null,
-  ""
+  "正在安裝 $0"
  ],
  "Join": [
   null,
@@ -161,23 +161,23 @@ return plural;
  ],
  "Join a Domain": [
   null,
-  ""
+  "加入域名"
  ],
  "Joining this domain is not supported": [
   null,
-  ""
+  "不支持加入此域"
  ],
  "Leave": [
   null,
-  ""
+  "離開"
  ],
  "Leave Domain": [
   null,
-  ""
+  "離開域名"
  ],
  "More": [
   null,
-  ""
+  "更多"
  ],
  "Next": [
   null,
@@ -197,31 +197,27 @@ return plural;
  ],
  "One Time Password": [
   null,
-  ""
- ],
- "PackageKit crashed": [
-  null,
-  ""
+  "一次性密碼"
  ],
  "Removals:": [
   null,
-  ""
+  "清除："
  ],
  "Removing $0": [
   null,
-  ""
+  "刪除 $0"
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
-  ""
+  "用戶 <b>$0</b> 不允許修改領域"
  ],
  "This may take a while": [
   null,
-  ""
+  "可能還要等一下"
  ],
  "Total size: $0": [
   null,
-  ""
+  "總大小： $0"
  ],
  "User Name": [
   null,
@@ -229,14 +225,14 @@ return plural;
  ],
  "User Password": [
   null,
-  ""
+  "用戶密碼"
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "等待其他軟件管理操作完成"
  ],
  "e.g. \"$0\"": [
   null,
-  ""
+  "例如“$0“"
  ]
 }));

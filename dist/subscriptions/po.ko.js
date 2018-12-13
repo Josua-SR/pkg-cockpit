@@ -69,15 +69,15 @@ return plural;
  },
  "'Organization' required to register.": [
   null,
-  ""
+  "'조직'을 등록해야 합니다."
  ],
  "'Organization' required when using activation keys.": [
   null,
-  ""
+  "활성화 키를 사용할 때 '조직'이 필요합니다."
  ],
  "Access denied": [
   null,
-  "접근 거부됨"
+  "액세스 거부됨"
  ],
  "Activation Key": [
   null,

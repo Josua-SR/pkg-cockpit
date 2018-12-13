@@ -9,7 +9,7 @@ var info = {
         ],
 
         "dashboard/dashboard": [
-            "dashboard/list.es6",
+            "dashboard/list.js",
         ],
 
         "docker/docker": [
@@ -34,7 +34,7 @@ var info = {
         ],
 
         "machines/machines": [
-            "machines/index.es6",
+            "machines/index.js",
             "machines/machines.less",
         ],
 
@@ -119,14 +119,14 @@ var info = {
         ],
 
         "systemd/services": [
-            "systemd/init.es6",
+            "systemd/init.js",
             "systemd/services.css",
         ],
         "systemd/logs": [
             "systemd/logs.js",
         ],
         "systemd/system": [
-            "systemd/host.es6",
+            "systemd/host.js",
             "systemd/host.css",
         ],
         "systemd/terminal": [
@@ -148,7 +148,7 @@ var info = {
         ],
 
         "users/users": [
-            "users/local.es6",
+            "users/local.js",
             "users/users.css",
         ]
     },
@@ -414,11 +414,9 @@ module.exports = {
                 loader: "babel-loader"
             },
             {
-                test: /\.jsx$/,
-                loader: "babel-loader"
-            },
-            {
-                test: /\.es6$/,
+                test: /\.(js|jsx|es6)$/,
+                // exclude external dependencies; it's too slow, and they are already plain JS except the above
+                exclude: /\/node_modules\/.*\//,
                 loader: "babel-loader"
             },
             {

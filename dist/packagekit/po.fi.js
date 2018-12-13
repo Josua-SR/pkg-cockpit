@@ -226,10 +226,6 @@ return plural;
   null,
   "Paketin tiedot"
  ],
- "PackageKit crashed": [
-  null,
-  "PackageKit kaatui"
- ],
  "PackageKit is not installed": [
   null,
   "PackageKit ei ole asennettu"

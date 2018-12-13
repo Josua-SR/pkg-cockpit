@@ -77,7 +77,7 @@ return plural;
  ],
  "$0 Disks": [
   null,
-  ""
+  "$0 디스크"
  ],
  "$0 data + $1 overhead used of $2 ($3)": [
   null,
@@ -85,19 +85,19 @@ return plural;
  ],
  "$0 disk is missing": [
   "$0 disks are missing",
-  ""
+  "$0 디스크 누락 "
  ],
  "$0 filesystems can not be made larger.": [
   null,
-  ""
+  "$0 파일 시스템을 더 크게 만들 수는 없습니다."
  ],
  "$0 filesystems can not be made smaller.": [
   null,
-  ""
+  "$0 파일 시스템을 더 작게 만들 수는 없습니다."
  ],
  "$0 filesystems can not be resized here.": [
   null,
-  ""
+  "$0 파일 시스템의 크기를 조정할 수 없습니다."
  ],
  "$0 is in active use": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "$0 slots remain": [
   null,
-  ""
+  "$0 슬롯이 남아 있습니다 "
  ],
  "$0 used of $1 ($2 saved)": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "${size} ${desc}": [
   null,
-  ""
+  "${size} ${desc}"
  ],
  "(default)": [
   null,
@@ -145,11 +145,11 @@ return plural;
  ],
  "--": [
   null,
-  ""
+  "--"
  ],
  "1 MiB": [
   null,
-  ""
+  "1 MiB"
  ],
  "1 day": [
   null,
@@ -161,27 +161,27 @@ return plural;
  ],
  "1 week": [
   null,
-  "1 주"
+  "1주"
  ],
  "128 KiB": [
   null,
-  ""
+  "128 KiB"
  ],
  "16 KiB": [
   null,
-  ""
+  "16 KiB"
  ],
  "2 MiB": [
   null,
-  ""
+  "2 MiB"
  ],
  "32 KiB": [
   null,
-  ""
+  "32 KiB"
  ],
  "4 KiB": [
   null,
-  ""
+  "4 KiB"
  ],
  "5 minutes": [
   null,
@@ -189,7 +189,7 @@ return plural;
  ],
  "512 KiB": [
   null,
-  ""
+  "512 KiB"
  ],
  "6 hours": [
   null,
@@ -197,15 +197,15 @@ return plural;
  ],
  "64 KiB": [
   null,
-  ""
+  "64 KiB"
  ],
  "8 KiB": [
   null,
-  ""
+  "8 KiB"
  ],
  "A disk is needed.": [
   null,
-  ""
+  "디스크가 필요합니다."
  ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
@@ -233,11 +233,11 @@ return plural;
  ],
  "Add Key": [
   null,
-  ""
+  "키 추가"
  ],
  "Add iSCSI Portal": [
   null,
-  ""
+  "iSCSI 포털 추가"
  ],
  "Adding physical volume to $target": [
   null,
@@ -245,7 +245,7 @@ return plural;
  ],
  "Additional packages:": [
   null,
-  ""
+  "추가 패키지 :"
  ],
  "Address": [
   null,
@@ -253,7 +253,7 @@ return plural;
  ],
  "Address cannot be empty": [
   null,
-  ""
+  "주소는 비워 둘 수 없습니다."
  ],
  "Address is not a valid URL": [
   null,
@@ -297,7 +297,7 @@ return plural;
  ],
  "Can't delete while unlocked": [
   null,
-  ""
+  "잠금 해제된 상태에서는 삭제할 수 없습니다."
  ],
  "Cancel": [
   null,
@@ -305,15 +305,15 @@ return plural;
  ],
  "Change": [
   null,
-  "바꾸기"
+  "변경 "
  ],
  "Change iSCSI Initiator Name": [
   null,
-  ""
+  "iSCSI 개시자 이름 변경 "
  ],
  "Change passphrase": [
   null,
-  ""
+  "암호문 변경 "
  ],
  "Checking $target": [
   null,
@@ -329,7 +329,7 @@ return plural;
  ],
  "Checking installed software": [
   null,
-  ""
+  "설치된 소프트웨어 확인 중 "
  ],
  "Chunk Size": [
   null,
@@ -683,6 +683,10 @@ return plural;
   null,
   ""
  ],
+ "Free up space in this group: Shrink or delete other logical volumes or add another physical volume.": [
+  null,
+  ""
+ ],
  "Go to now": [
   null,
   "지금 바로 가기"
@@ -907,6 +911,14 @@ return plural;
   null,
   ""
  ],
+ "Name cannot be longer than $0 bytes": [
+  null,
+  ""
+ ],
+ "Name cannot be longer than $0 characters": [
+  null,
+  ""
+ ],
  "Name cannot be longer than 127 characters.": [
   null,
   ""
@@ -991,6 +1003,10 @@ return plural;
   null,
   ""
  ],
+ "Not enough space to grow.": [
+  null,
+  ""
+ ],
  "Not found": [
   null,
   "찾을 수 없습니다."
@@ -1036,10 +1052,6 @@ return plural;
   ""
  ],
  "Overwrite existing data with zeros": [
-  null,
-  ""
- ],
- "PackageKit crashed": [
   null,
   ""
  ],
@@ -1761,7 +1773,7 @@ return plural;
  ],
  "iSCSI Targets": [
   null,
-  ""
+  "iSCSI 대상"
  ],
  "key slot $0": [
   null,
@@ -1781,7 +1793,7 @@ return plural;
  ],
  "storage-id-desc\u0004$0 File System": [
   null,
-  ""
+  "$0 파일 시스템"
  ],
  "storage-id-desc\u0004Encrypted data": [
   null,

@@ -575,10 +575,6 @@ return plural;
   null,
   "Desligado"
  ],
- "Ok": [
-  null,
-  "Ok"
- ],
  "On": [
   null,
   "Ligado"
@@ -621,7 +617,7 @@ return plural;
  ],
  "Please install the $0 package": [
   null,
-  ""
+  "Por favor, instale o pacote de $ 0"
  ],
  "Ports": [
   null,

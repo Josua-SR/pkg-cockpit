@@ -7,7 +7,7 @@
 <link rel="home" href="index.html" title="Cockpit Guide">
 <link rel="up" href="cockpit-manual.html" title="Manual pages">
 <link rel="prev" href="cockpit.conf.5.html" title="cockpit.conf">
-<link rel="next" href="remotectl.8.html" title="remotectl">
+<link rel="next" href="cockpit-desktop.1.html" title="cockpit-desktop">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -16,7 +16,7 @@
 <td><a accesskey="u" href="cockpit-manual.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
 <td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
 <th width="100%" align="center">Cockpit Guide</th>
-<td><a accesskey="n" href="remotectl.8.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+<td><a accesskey="n" href="cockpit-desktop.1.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
 </tr></table>
 <div class="refentry">
 <a name="cockpit-ws.8"></a><div class="titlepage"></div>
@@ -29,7 +29,7 @@
 </tr></table></div>
 <div class="refsynopsisdiv">
 <h2>Synopsis</h2>
-<div class="cmdsynopsis"><p><code class="command">cockpit-ws</code>  [<code class="option">--help</code>] [<code class="option">--port</code> <em class="replaceable"><code>PORT</code></em>] [<code class="option">--no-tls</code>] [<code class="option">--local-ssh</code>] [<code class="option">--address</code> <em class="replaceable"><code>ADDRESS</code></em>]</p></div>
+<div class="cmdsynopsis"><p><code class="command">cockpit-ws</code>  [<code class="option">--help</code>] [<code class="option">--port</code> <em class="replaceable"><code>PORT</code></em>] [<code class="option">--address</code> <em class="replaceable"><code>ADDRESS</code></em>] [<code class="option">--no-tls</code>] [<code class="option">--local-ssh</code>] [<code class="option">--local-session</code> <em class="replaceable"><code>BRIDGE</code></em>]</p></div>
 </div>
 <div class="refsect1">
 <a name="cockpit-ws-description"></a><h2>DESCRIPTION</h2>
@@ -102,15 +102,6 @@ getcert request -f ${CERT_FILE} -k ${KEY_FILE} -D $(hostname --fqdn) -C "sed -n 
           </p></td>
 </tr>
 <tr>
-<td><p><span class="term"><code class="option">--local-ssh</code></span></p></td>
-<td><p>
-            Normally <span class="command"><strong>cockpit-ws</strong></span> uses
-            <span class="command"><strong>cockpit-session</strong></span> and PAM to authenticate the user and start a
-            user session. With this option enabled, it will instead authenticate via SSH at
-            <code class="literal">127.0.0.1</code> port <code class="literal">22</code>.
-          </p></td>
-</tr>
-<tr>
 <td><p><span class="term"><code class="option">--port</code> <em class="replaceable"><code>PORT</code></em></span></p></td>
 <td><p>
             Serve HTTP requests <em class="replaceable"><code>PORT</code></em> instead of port 9090.
@@ -135,6 +126,41 @@ getcert request -f ${CERT_FILE} -k ${KEY_FILE} -D $(hostname --fqdn) -C "sed -n 
 <td><p>
             Don't use TLS.
           </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">--local-ssh</code></span></p></td>
+<td><p>
+            Normally <span class="command"><strong>cockpit-ws</strong></span> uses
+            <span class="command"><strong>cockpit-session</strong></span> and PAM to authenticate the user and start a
+            user session. With this option enabled, it will instead authenticate via SSH at
+            <code class="literal">127.0.0.1</code> port <code class="literal">22</code>.
+          </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">--local-session</code> <em class="replaceable"><code>BRIDGE</code></em></span></p></td>
+<td>
+<p>
+            Skip all authentication and <span class="command"><strong>cockpit-session</strong></span>, and launch the
+            <span class="command"><strong>cockpit-bridge</strong></span> specified in <em class="replaceable"><code>BRIDGE</code></em> in
+            the local session. If the <em class="replaceable"><code>BRIDGE</code></em> is specified as
+            <span class="command"><strong>-</strong></span> then expect an already running bridge that is connected to
+            stdin and stdout of this <span class="command"><strong>cockpit-ws</strong></span> process. This allows the
+            web server to run as any unprivileged user in an already running session.
+          </p>
+<p>
+            This mode implies <code class="literal">--no-tls</code>, thus you need to use http://
+            URLs with this.
+          </p>
+<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<h3 class="title">Warning</h3>
+<p>
+              If you use this, you <span class="emphasis"><em>have to isolate the opened TCP port</em></span>
+              somehow (for example in a network namespace), otherwise all other users (or
+              even remote machines if the port is not just listening on localhost) can access
+              the session!
+            </p>
+</div>
+</td>
 </tr>
 </tbody>
 </table></div>

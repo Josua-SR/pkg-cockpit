@@ -1040,10 +1040,6 @@ return plural;
   null,
   ""
  ],
- "PackageKit crashed": [
-  null,
-  ""
- ],
  "Partition": [
   null,
   ""

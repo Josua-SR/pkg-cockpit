@@ -69,11 +69,11 @@ return plural;
  },
  "'Organization' required to register.": [
   null,
-  ""
+  "«Организация», необходимая для регистрации."
  ],
  "'Organization' required when using activation keys.": [
   null,
-  ""
+  "«Организация» требуется при использовании ключей активации."
  ],
  "Access denied": [
   null,
@@ -93,7 +93,7 @@ return plural;
  ],
  "Couldn't get system subscription status. Please ensure subscription-manager is installed.": [
   null,
-  ""
+  "Не удалось получить статус системной подписки. Убедитесь, что подписчик-менеджер установлен."
  ],
  "Custom URL": [
   null,
@@ -117,7 +117,7 @@ return plural;
  ],
  "Invalid credentials": [
   null,
-  ""
+  "Недопустимые учетные данные"
  ],
  "Invalid username or password": [
   null,
@@ -129,11 +129,11 @@ return plural;
  ],
  "Login/password or activation key required to register.": [
   null,
-  ""
+  "Логин / пароль или ключ активации, необходимые для регистрации."
  ],
  "No installed products on the system.": [
   null,
-  ""
+  "Нет установленных продуктов в системе."
  ],
  "Ok": [
   null,
@@ -165,11 +165,11 @@ return plural;
  ],
  "Register system": [
   null,
-  ""
+  "Система регистрации"
  ],
  "Retrieving subscription status...": [
   null,
-  ""
+  "Получение статуса подписки ..."
  ],
  "Server": [
   null,
@@ -189,7 +189,7 @@ return plural;
  ],
  "Status: System isn't registered": [
   null,
-  ""
+  "Статус: система не зарегистрирована"
  ],
  "Subscriptions": [
   null,
@@ -213,15 +213,15 @@ return plural;
  ],
  "Unregistering system...": [
   null,
-  ""
+  "Незарегистрированная система ..."
  ],
  "Updating": [
   null,
-  ""
+  "обновление"
  ],
  "Use proxy server": [
   null,
-  ""
+  "Использовать прокси-сервер"
  ],
  "User": [
   null,
@@ -233,6 +233,6 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "не определено"
  ]
 }));

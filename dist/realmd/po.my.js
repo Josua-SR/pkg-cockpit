@@ -199,10 +199,6 @@ return plural;
   null,
   ""
  ],
- "PackageKit crashed": [
-  null,
-  ""
- ],
  "Removals:": [
   null,
   ""

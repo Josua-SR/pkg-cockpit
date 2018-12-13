@@ -1259,7 +1259,7 @@ return plural;
  ],
  "Select Member": [
   null,
-  ""
+  "Selecione o membro"
  ],
  "Select Role": [
   null,

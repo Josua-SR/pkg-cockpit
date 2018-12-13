@@ -69,11 +69,11 @@ return plural;
  },
  "'Organization' required to register.": [
   null,
-  ""
+  "\"Organisation\" zur Registrierung erforderlich."
  ],
  "'Organization' required when using activation keys.": [
   null,
-  ""
+  "'Organisation' erforderlich, wenn Aktivierungsschlüssel verwendet werden."
  ],
  "Access denied": [
   null,
@@ -93,7 +93,7 @@ return plural;
  ],
  "Couldn't get system subscription status. Please ensure subscription-manager is installed.": [
   null,
-  ""
+  "Status des Systemabonnements konnte nicht abgerufen werden. Bitte stellen Sie sicher, dass der Abo-Manager installiert ist."
  ],
  "Custom URL": [
   null,
@@ -129,7 +129,7 @@ return plural;
  ],
  "Login/password or activation key required to register.": [
   null,
-  ""
+  "Login / Passwort oder Aktivierungsschlüssel zur Registrierung erforderlich."
  ],
  "No installed products on the system.": [
   null,
@@ -165,11 +165,11 @@ return plural;
  ],
  "Register system": [
   null,
-  ""
+  "System registrieren"
  ],
  "Retrieving subscription status...": [
   null,
-  ""
+  "Abonnementstatus abrufen ..."
  ],
  "Server": [
   null,
