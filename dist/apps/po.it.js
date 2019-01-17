@@ -115,6 +115,10 @@ return plural;
   null,
   "Ok"
  ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit si è interrotto"
+ ],
  "Remove": [
   null,
   "Elimina Zona"

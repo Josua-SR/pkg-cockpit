@@ -115,6 +115,10 @@ return plural;
   null,
   "Ok"
  ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit kraschade"
+ ],
  "Remove": [
   null,
   "Ta bort"
@@ -125,10 +129,10 @@ return plural;
  ],
  "Unknown Application": [
   null,
-  ""
+  "Okänt program"
  ],
  "Waiting for other programs to finish using the package manager...": [
   null,
-  ""
+  "Väntar på att andra program skall sluta använda pekethanteraren …"
  ]
 }));

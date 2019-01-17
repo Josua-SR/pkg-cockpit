@@ -17,19 +17,16 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-var $ = require("jquery");
+import $ from "jquery";
+import cockpit from "cockpit";
+
+import { mustache } from "mustache";
+import "patterns";
+import * as client from "./client";
+import { util } from "./util";
+
 $(function() {
-    "use strict";
-
-    var cockpit = require("cockpit");
-
-    var Mustache = require("mustache");
-    require("patterns");
-
-    var client = require("./client");
-    var util = require("./util");
-
-    var _ = cockpit.gettext;
+    const _ = cockpit.gettext;
 
     /* RUN IMAGE DIALOG */
 
@@ -393,7 +390,7 @@ $(function() {
 
     function port_renderer() {
         var template = $("#port-expose-tmpl").html();
-        Mustache.parse(template);
+        mustache.parse(template);
 
         function add_row() {
             render();
@@ -417,7 +414,7 @@ $(function() {
             if (port_internal_editable === undefined)
                 port_internal_editable = true;
 
-            var row = $(Mustache.render(template, {
+            var row = $(mustache.render(template, {
                 host_port_label: _("to host port"),
                 placeholder: _("none"),
             }));
@@ -451,7 +448,7 @@ $(function() {
 
     function volume_renderer() {
         var template = $("#volume-mount-tmpl").html();
-        Mustache.parse(template);
+        mustache.parse(template);
 
         function add_row() {
             render();
@@ -473,7 +470,7 @@ $(function() {
             if (volume_internal_editable === undefined)
                 volume_internal_editable = true;
 
-            var row = $(Mustache.render(template, {
+            var row = $(mustache.render(template, {
                 host_volume_label: _("to host path"),
                 placeholder: _("none")
             }));
@@ -502,7 +499,7 @@ $(function() {
 
     function envvar_renderer() {
         var template = $("#envvar-claim-tmpl").html();
-        Mustache.parse(template);
+        mustache.parse(template);
 
         function add_row() {
             render();
@@ -526,7 +523,7 @@ $(function() {
             if (envvar_internal_editable === undefined)
                 envvar_internal_editable = true;
 
-            var row = $(Mustache.render(template, {
+            var row = $(mustache.render(template, {
                 envvar_key_label: _("key"),
                 envvar_value_label: _("value"),
                 placeholder: _("none")
@@ -554,7 +551,7 @@ $(function() {
 
     function link_renderer() {
         var template = $("#container-link-tmpl").html();
-        Mustache.parse(template);
+        mustache.parse(template);
 
         function add_row() {
             render();
@@ -571,7 +568,7 @@ $(function() {
         }
 
         function render(containers) {
-            var row = $(Mustache.render(template, {
+            var row = $(mustache.render(template, {
                 containers: container_names,
                 alias_label: _("alias"),
                 placeholder: _("none")

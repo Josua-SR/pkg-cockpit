@@ -17,11 +17,11 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-var cockpit = require("cockpit");
-var moment = require("moment");
+import cockpit from "cockpit";
+import moment from "moment";
 moment.locale(cockpit.language);
 
-var atomic = {};
+export var atomic = {};
 cockpit.event_target(atomic);
 
 var bus = cockpit.dbus();
@@ -91,5 +91,3 @@ function visibilityChanged() {
 
 cockpit.onvisibilitychange = visibilityChanged;
 visibilityChanged();
-
-module.exports = atomic;

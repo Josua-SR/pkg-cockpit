@@ -201,38 +201,38 @@ return plural;
  ],
  "URL": [
   null,
-  ""
+  "URL"
  ],
  "Unable to connect": [
   null,
-  ""
+  "Kan inte ansluta"
  ],
  "Unregister": [
   null,
-  ""
+  "Avregistrera"
  ],
  "Unregistering system...": [
   null,
-  ""
+  "Avregistrerar systemet …"
  ],
  "Updating": [
   null,
-  ""
+  "Uppdaterar"
  ],
  "Use proxy server": [
   null,
-  ""
+  "Använd en proxyserver"
  ],
  "User": [
   null,
-  ""
+  "Användare"
  ],
  "Version": [
   null,
-  ""
+  "Version"
  ],
  "undefined": [
   null,
-  ""
+  "odefinierad"
  ]
 }));

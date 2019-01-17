@@ -1,14 +1,12 @@
-var $ = require("jquery");
+import $ from "jquery";
+
+import "patterns";
+import "page.css";
+import "listing.less";
+import "timeline.css";
+import "table.css";
+
 $(function() {
-    "use strict";
-
-    require("patterns");
-
-    require("page.css");
-    require("listing.less");
-    require("timeline.css");
-    require("table.css");
-
     $(document).ready(function() {
         $("body").show();
     });

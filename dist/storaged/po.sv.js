@@ -914,11 +914,11 @@ return plural;
  ],
  "Name cannot be longer than $0 bytes": [
   null,
-  ""
+  "Namnet får inte vara längre än $0 byte"
  ],
  "Name cannot be longer than $0 characters": [
   null,
-  ""
+  "Namnet får inte vara längre än $0 tecken"
  ],
  "Name cannot be longer than 127 characters.": [
   null,
@@ -1055,6 +1055,10 @@ return plural;
  "Overwrite existing data with zeros": [
   null,
   "Skriv över befintliga data med nollor"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit kraschade"
  ],
  "Partition": [
   null,
@@ -1448,6 +1452,10 @@ return plural;
   null,
   "Lagringsloggar"
  ],
+ "Storage can not be managed on this system.": [
+  null,
+  ""
+ ],
  "Store passphrase": [
   null,
   "Lagra lösenfrasen"
@@ -1475,10 +1483,6 @@ return plural;
  "Tang keyserver": [
   null,
   "Tang-nyckelserver"
- ],
- "The \"storaged\" API is not available on this system.": [
-  null,
-  "API:et till ”storaged” är inte tillgängligt på det här systemet."
  ],
  "The RAID Array is in a degraded state": [
   null,
@@ -1582,163 +1586,163 @@ return plural;
  ],
  "Total size: $0": [
   null,
-  ""
+  "Total storlek: $0"
  ],
  "Trust key": [
   null,
-  ""
+  "Förtroendenyckel"
  ],
  "Type": [
   null,
-  ""
+  "Typ"
  ],
  "UUID": [
   null,
-  ""
+  "UUID"
  ],
  "Unable to reach server": [
   null,
-  ""
+  "Kan inte nå servern"
  ],
  "Unable to remove mount": [
   null,
-  ""
+  "Kan inte ta bort monteringen"
  ],
  "Unable to unmount filesystem": [
   null,
-  ""
+  "Kan inte avmontera filsystem"
  ],
  "Unit": [
   null,
-  ""
+  "Enhet"
  ],
  "Unknown": [
   null,
-  ""
+  "Okänd"
  ],
  "Unknown ($0)": [
   null,
-  ""
+  "Okänt ($0)"
  ],
  "Unknown host name": [
   null,
-  ""
+  "Okänt värdnamn"
  ],
  "Unknown type": [
   null,
-  ""
+  "Okänd typ"
  ],
  "Unlock": [
   null,
-  ""
+  "Lås upp"
  ],
  "Unlock at boot": [
   null,
-  ""
+  "Lås upp vid uppstart"
  ],
  "Unlock read only": [
   null,
-  ""
+  "Lås upp endast för läsning"
  ],
  "Unlocking $target": [
   null,
-  ""
+  "Lås upp $target"
  ],
  "Unlocking disk...": [
   null,
-  ""
+  "Låser upp disken …"
  ],
  "Unmount": [
   null,
-  ""
+  "Avmontera"
  ],
  "Unmounting $target": [
   null,
-  ""
+  "Avmonterar $target"
  ],
  "Unrecognized Data": [
   null,
-  ""
+  "Okända data"
  ],
  "Unrecognized data can not be made smaller here.": [
   null,
-  ""
+  "Okända data får inte göras mindre här."
  ],
  "Unsupported volume": [
   null,
-  ""
+  "Volym som ej stöds"
  ],
  "Usage": [
   null,
-  ""
+  "Användning"
  ],
  "Use 512 Byte emulation": [
   null,
-  ""
+  "Använd 512-byteemulering"
  ],
  "Used": [
   null,
-  ""
+  "Använt"
  ],
  "Username": [
   null,
-  ""
+  "Användarnamn"
  ],
  "VDO Backing": [
   null,
-  ""
+  "VDO-underlag"
  ],
  "VDO Device": [
   null,
-  ""
+  "VDO-enhet"
  ],
  "VDO Device $0": [
   null,
-  ""
+  "VDO-enhet $0"
  ],
  "VDO Devices": [
   null,
-  ""
+  "VDO-enheter"
  ],
  "VDO backing devices can not be made smaller": [
   null,
-  ""
+  "VDO-underlagsenheter kan inte göras mindre"
  ],
  "VDO support not installed": [
   null,
-  ""
+  "VDO-stöd är inte installerat"
  ],
  "VFAT - Compatible with all systems and devices": [
   null,
-  ""
+  "VFAT - kompatibelt med alla system och enheter"
  ],
  "Verify key": [
   null,
-  ""
+  "Verifiera nyckel"
  ],
  "Very securely erasing $target": [
   null,
-  ""
+  "Raderar mycket säkert $target"
  ],
  "Volume": [
   null,
-  ""
+  "Volym"
  ],
  "Volume Group": [
   null,
-  ""
+  "Volymgrupp"
  ],
  "Volume Group $0": [
   null,
-  ""
+  "Volymgrupp $0"
  ],
  "Volume Groups": [
   null,
-  ""
+  "Volymgrupper"
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "Väntar på att andra programvaruhanteringsåtgärder skall bli klara"
  ],
  "What if tang-show-keys is not available?": [
   null,
@@ -1766,31 +1770,31 @@ return plural;
  ],
  "[no data]": [
   null,
-  ""
+  "[inga data]"
  ],
  "ext4 - Red Hat Enterprise Linux 6 default": [
   null,
-  ""
+  "ext4 — standard för Red Hat Enterprise Linux 6"
  ],
  "iSCSI Targets": [
   null,
-  ""
+  "iSCSI-mål"
  ],
  "key slot $0": [
   null,
-  ""
+  "nyckelfack $0"
  ],
  "undefined": [
   null,
-  ""
+  "odefinierad"
  ],
  "unknown target": [
   null,
-  ""
+  "okänt mål"
  ],
  "unpartitioned space on $0": [
   null,
-  ""
+  "opartitionerat utrymmer på $0"
  ],
  "storage-id-desc\u0004$0 File System": [
   null,
@@ -1810,11 +1814,11 @@ return plural;
  ],
  "storage-id-desc\u0004Unrecognized Data": [
   null,
-  ""
+  "Okända data"
  ],
  "storage-id-desc\u0004VDO Backing": [
   null,
-  ""
+  "VDO-underlag"
  ],
  "storage\u0004Drive": [
   null,
@@ -1838,6 +1842,6 @@ return plural;
  ],
  "format-bytes\u0004bytes": [
   null,
-  ""
+  "byte"
  ]
 }));

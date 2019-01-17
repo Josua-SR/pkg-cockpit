@@ -17,8 +17,6 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-"use strict";
-
 import cockpit from "cockpit";
 import React from "react";
 
@@ -33,7 +31,7 @@ const _ = cockpit.gettext;
  * onChange   triggered when the switch is flipped, parameter: new state
  * enabled    whether the component is enabled or not, defaults to true
  */
-class OnOffSwitch extends React.Component {
+export class OnOffSwitch extends React.Component {
     handleOnOffClick(newState, e) {
         // only consider primary mouse button
         if (!e || e.button !== 0)
@@ -74,8 +72,4 @@ OnOffSwitch.defaultProps = {
     captionOff: _("Off"),
     captionOn: _("On"),
     enabled: true,
-};
-
-module.exports = {
-    OnOffSwitch: OnOffSwitch,
 };

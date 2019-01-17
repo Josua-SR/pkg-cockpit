@@ -17,16 +17,14 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-'use strict';
-
 import React from 'react';
 import cockpit from 'cockpit';
 
 import $ from "jquery";
-import docker from './docker';
-import atomic from './atomic';
-import util from './util';
-import searchImage from "./search";
+import { docker } from './docker';
+import { atomic } from './atomic';
+import { util } from "./util";
+import { search } from "./search";
 
 import * as Listing from 'cockpit-components-listing.jsx';
 import * as Select from 'cockpit-components-select.jsx';
@@ -78,7 +76,7 @@ Dropdown.defaultProps = {
     actions: [ { label: '' } ]
 };
 
-class ContainerHeader extends React.Component {
+export class ContainerHeader extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -167,7 +165,7 @@ class ContainerProblems extends React.Component {
     }
 }
 
-class ContainerList extends React.Component {
+export class ContainerList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -463,7 +461,7 @@ class ImageSecurity extends React.Component {
     }
 }
 
-class ImageInline extends React.Component {
+export class ImageInline extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -520,7 +518,7 @@ class ImageInline extends React.Component {
     }
 }
 
-class ImageList extends React.Component {
+export class ImageList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -543,7 +541,7 @@ class ImageList extends React.Component {
         if (event.button !== 0)
             return;
 
-        searchImage(this.props.client).then(function (repo, tag, registry) {
+        search(this.props.client).then(function (repo, tag, registry) {
             this.props.client.pull(repo, tag, registry);
         }.bind(this));
     }
@@ -724,11 +722,4 @@ class ImageList extends React.Component {
 ImageList.defaultProps = {
     client: {},
     filterText: ''
-};
-
-module.exports = {
-    ContainerHeader: ContainerHeader,
-    ContainerList: ContainerList,
-    ImageList: ImageList,
-    ImageInline: ImageInline,
 };

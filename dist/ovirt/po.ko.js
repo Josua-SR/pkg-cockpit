@@ -97,15 +97,15 @@ return plural;
  ],
  "All running virtual machines will be turned off.": [
   null,
+  "실행 중인 모든 가상 머신이 종료됩니다. "
+ ],
+ "Always attach": [
+  null,
   ""
  ],
  "Apply": [
   null,
   "적용"
- ],
- "Attach permanently": [
-  null,
-  ""
  ],
  "Automatically selected host": [
   null,
@@ -137,11 +137,19 @@ return plural;
  ],
  "Bus": [
   null,
-  ""
+  "버스 "
+ ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "CHANGE NETWORK STATE 동작이 실패했습니다 "
  ],
  "CPU Type:": [
   null,
   "CPU 유형 :"
+ ],
+ "CREATE VM action failed": [
+  null,
+  "CREATE VM 동작이 실패했습니다 "
  ],
  "Cancel": [
   null,
@@ -169,11 +177,11 @@ return plural;
  ],
  "Cluster Virtual Machines": [
   null,
-  ""
+  "클러스터 가상 머신 "
  ],
  "Confirm migration": [
   null,
-  ""
+  "마이그레이션 확인 "
  ],
  "Confirm reload:": [
   null,
@@ -197,7 +205,7 @@ return plural;
  ],
  "Connecting": [
   null,
-  ""
+  "연결 중"
  ],
  "Connection": [
   null,
@@ -205,11 +213,11 @@ return plural;
  ],
  "Console Type": [
   null,
-  ""
+  "콘솔 유형 "
  ],
  "Consoles": [
   null,
-  ""
+  "콘솔 "
  ],
  "Cores per socket": [
   null,
@@ -229,11 +237,11 @@ return plural;
  ],
  "Create VM": [
   null,
-  ""
+  "가상 머신 만들기 "
  ],
  "Ctrl+Alt+Del": [
   null,
-  ""
+  "Ctrl+Alt+Del"
  ],
  "Delete": [
   null,
@@ -323,6 +331,10 @@ return plural;
   null,
   "포멧"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
+ ],
  "GiB": [
   null,
   "GiB"
@@ -351,6 +363,10 @@ return plural;
   null,
   ""
  ],
+ "INSTALL VM action failed": [
+  null,
+  ""
+ ],
  "Install": [
   null,
   "설치"
@@ -370,6 +386,10 @@ return plural;
  "MAC Address": [
   null,
   "MAC 주소"
+ ],
+ "MIGRATE action failed": [
+  null,
+  ""
  ],
  "Mac Address": [
   null,
@@ -491,6 +511,10 @@ return plural;
   null,
   "개요"
  ],
+ "Persistence": [
+  null,
+  ""
+ ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
   ""
@@ -533,7 +557,7 @@ return plural;
  ],
  "Pool": [
   null,
-  ""
+  "풀"
  ],
  "Port": [
   null,
@@ -543,9 +567,17 @@ return plural;
   null,
   ""
  ],
+ "Preparing for Maintenance": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "프로토콜"
+ ],
+ "REBOOT action failed": [
+  null,
+  "REBOOT 작업에 실패했습니다 "
  ],
  "Readonly": [
   null,
@@ -583,21 +615,37 @@ return plural;
   null,
   ""
  ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  "SET VCPU SETTINGS 작업에 실패했습니다 "
+ ],
+ "SHUTDOWN action failed": [
+  null,
+  "SHUTDOWN 작업에 실패했습니다"
+ ],
  "SPICE": [
   null,
   "SPICE"
  ],
  "SPICE Address:": [
   null,
-  ""
+  "SPICE 주소:"
  ],
  "SPICE Port:": [
   null,
-  ""
+  "SPICE 포트:"
  ],
  "SPICE TLS Port:": [
   null,
-  ""
+  "SPICE TLS 포트:"
+ ],
+ "START action failed": [
+  null,
+  "START 작업에 실패했습니다."
+ ],
+ "SUSPEND action failed": [
+  null,
+  "SUSPEND 작업에 실패했습니다"
  ],
  "Save": [
   null,
@@ -614,6 +662,10 @@ return plural;
  "Serial Console": [
   null,
   ""
+ ],
+ "Session": [
+  null,
+  "세션"
  ],
  "Shut Down": [
   null,
@@ -655,9 +707,17 @@ return plural;
   null,
   ""
  ],
- "Target": [
+ "Switching host to maintenance mode failed. Received error: ": [
   null,
-  "대상"
+  ""
+ ],
+ "Switching host to maintenance mode in progress ...": [
+  null,
+  ""
+ ],
+ "System": [
+  null,
+  "시스템 "
  ],
  "Template": [
   null,
@@ -757,11 +817,43 @@ return plural;
  ],
  "VDSM Service Management": [
   null,
-  ""
+  "VDSM 서비스 관리 "
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  "VM DELETE (DESTROY) 작업에 실패했습니다 "
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  "VM DELETE (UNDEFINE) 작업에 실패했습니다 "
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "VM FORCE OFF 작업에 실패했습니다 "
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "VM FORCE REBOOT 작업에 실패했습니다 "
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "VM REBOOT 작업에 실패했습니다 "
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "VM SEND Non-Maskable Interrrupt 작업에 실패했습니다 "
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "VM SHUT DOWN 작업에 실패했습니다 "
+ ],
+ "VM START action failed": [
+  null,
+  "VM START 작업에 실패했습니다 "
  ],
  "VM icon": [
   null,
-  ""
+  "가상 머신 아이콘 "
  ],
  "VNC": [
   null,
@@ -769,15 +861,15 @@ return plural;
  ],
  "VNC Address:": [
   null,
-  ""
+  "VNC 주소:"
  ],
  "VNC Port:": [
   null,
-  ""
+  "VNC 포트:"
  ],
  "VNC TLS Port:": [
   null,
-  ""
+  "VNC TLS 포트:"
  ],
  "Version": [
   null,
@@ -785,7 +877,7 @@ return plural;
  ],
  "Version num": [
   null,
-  ""
+  "버전 번호 "
  ],
  "Virtual Machines": [
   null,
@@ -793,13 +885,37 @@ return plural;
  ],
  "Virtual Machines of $0 cluster": [
   null,
-  ""
+  "$0 클러스터의 가상 머신 "
  ],
  "Volume": [
   null,
   "볼륨"
  ],
+ "bridge": [
+  null,
+  "브릿지"
+ ],
+ "cdrom": [
+  null,
+  "cdrom"
+ ],
+ "connecting": [
+  null,
+  "연결 중 "
+ ],
  "cores": [
+  null,
+  "코어 "
+ ],
+ "crashed": [
+  null,
+  ""
+ ],
+ "custom": [
+  null,
+  "사용자 지정 "
+ ],
+ "direct": [
   null,
   ""
  ],
@@ -807,17 +923,89 @@ return plural;
   null,
   "비활성화됨 "
  ],
+ "disk": [
+  null,
+  "디스크"
+ ],
+ "down": [
+  null,
+  "아래로"
+ ],
+ "dying": [
+  null,
+  ""
+ ],
  "enabled": [
   null,
   "활성화됨 "
+ ],
+ "error": [
+  null,
+  "오류 "
+ ],
+ "ethernet": [
+  null,
+  ""
+ ],
+ "host": [
+  null,
+  "호스트"
+ ],
+ "hostdev": [
+  null,
+  "hostdev"
+ ],
+ "idle": [
+  null,
+  ""
+ ],
+ "initializing": [
+  null,
+  "초기화 중 "
+ ],
+ "installation failed": [
+  null,
+  "설치에 실패했습니다 "
+ ],
+ "installing OS": [
+  null,
+  "OS 설치 중 "
+ ],
+ "kdumping": [
+  null,
+  "kdump 중 "
+ ],
+ "maintenance": [
+  null,
+  "유지 보수 "
+ ],
+ "mcast": [
+  null,
+  "mcast"
+ ],
+ "network": [
+  null,
+  "네트워크 "
  ],
  "no": [
   null,
   "아니요"
  ],
+ "non operational": [
+  null,
+  "작동하지 않습니다 "
+ ],
+ "non responsive": [
+  null,
+  "응답하지 않습니다 "
+ ],
+ "oVirt": [
+  null,
+  "oVirt"
+ ],
  "oVirt Host State:": [
   null,
-  ""
+  "oVirt 호스트 상태:"
  ],
  "oVirt Provider installation script failed due to missing arguments.": [
   null,
@@ -833,7 +1021,19 @@ return plural;
  ],
  "oVirt login in progress": [
   null,
-  ""
+  "oVirt 로그인 처리 중 "
+ ],
+ "other": [
+  null,
+  "기타 "
+ ],
+ "paused": [
+  null,
+  "일시 중지"
+ ],
+ "pending approval": [
+  null,
+  "승인 보류 중 "
  ],
  "qcow2": [
   null,
@@ -843,25 +1043,65 @@ return plural;
   null,
   "raw"
  ],
+ "reboot": [
+  null,
+  "재부팅 "
+ ],
+ "running": [
+  null,
+  "실행 중"
+ ],
+ "server": [
+  null,
+  "서버 "
+ ],
  "show less": [
   null,
-  ""
+  "덜 보기 "
  ],
  "show more": [
   null,
-  ""
+  "더 보기 "
+ ],
+ "shut off": [
+  null,
+  "종료"
+ ],
+ "shutdown": [
+  null,
+  "종료"
  ],
  "sockets": [
   null,
-  ""
+  "소켓 "
+ ],
+ "suspended (PM)": [
+  null,
+  "일시 정지 (PM)"
  ],
  "threads": [
   null,
-  ""
+  "스레드"
+ ],
+ "udp": [
+  null,
+  "udp"
+ ],
+ "unassigned": [
+  null,
+  "할당되지 않음 "
  ],
  "undefined": [
   null,
-  ""
+  "정의되지 않음 "
+ ],
+ "up": [
+  null,
+  "위로"
+ ],
+ "user": [
+  null,
+  "사용자 "
  ],
  "vCPU Count": [
   null,
@@ -869,7 +1109,7 @@ return plural;
  ],
  "vCPU Maximum": [
   null,
-  ""
+  "vCPU 최대 "
  ],
  "vCPUs": [
   null,
@@ -878,6 +1118,10 @@ return plural;
  "vCPUs:": [
   null,
   "vCPU:"
+ ],
+ "vhostuser": [
+  null,
+  "vhostuser"
  ],
  "yes": [
   null,

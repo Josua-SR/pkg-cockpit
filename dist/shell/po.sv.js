@@ -465,7 +465,7 @@ return plural;
  ],
  "Troubleshoot": [
   null,
-  ""
+  "Felsök"
  ],
  "Try to reconnect": [
   null,
@@ -473,43 +473,43 @@ return plural;
  ],
  "Type": [
   null,
-  ""
+  "Typ"
  ],
  "Type a password": [
   null,
-  ""
+  "Skriv ett lösenord"
  ],
  "Unexpected error": [
   null,
-  ""
+  "Oväntat fel"
  ],
  "Unknown Host Key": [
   null,
-  ""
+  "Okänd värdnyckel"
  ],
  "Unlock Key": [
   null,
-  ""
+  "Lås upp nyckeln"
  ],
  "Update": [
   null,
-  ""
+  "Uppdatera"
  ],
  "Use the following keys to authenticate against other systems": [
   null,
-  ""
+  "Använd följande nycklar för att autentisera mot andra system"
  ],
  "User name": [
   null,
-  ""
+  "Användarnamn"
  ],
  "Using available credentials": [
   null,
-  ""
+  "Använder tillgängliga kreditiv"
  ],
  "Version": [
   null,
-  ""
+  "Version"
  ],
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
@@ -517,6 +517,6 @@ return plural;
  ],
  "active": [
   null,
-  ""
+  "aktiv"
  ]
 }));

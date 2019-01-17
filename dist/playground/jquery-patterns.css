@@ -233,6 +233,222 @@ input[type=number] {
 .dialog-ct-visible {
     display: block;
 }
+/* Timeline pattern used together with listing.less */
+
+div.timeline-ct {
+    border-left: 6px solid #ccc;
+    position: relative;
+    margin-left: 25px;
+    padding-left: 30px;
+    min-height: 1px;
+    padding-bottom: 15px;
+}
+
+div.timeline-ct .timeline-ct-point {
+    position: absolute;
+    left: -13.5px;
+    font-size: 21px;
+    text-align: center;
+    width: 20px;
+    height: 27px;
+    display: block;
+    line-height: 21px;
+    background-color: white;
+    padding: 3px 0px;
+    color: #ccc;
+}
+
+div.timeline-ct .timeline-ct-point.active {
+    color: #3f9c35;
+}
+
+div.timeline-ct .timeline-ct-md {
+    font-size: 24px;
+    width: 24px;
+    height: 32px;
+    line-height: 24px;
+    padding: 4px 0px;
+    left: -16px;
+}
+
+div.timeline-ct .timeline-ct-lg {
+    font-size: 40px;
+    width: 40px;
+    height: 44px;
+    line-height: 40px;
+    left: -23.5px;
+    padding: 2px 0px;
+}
+
+div.timeline-ct .fa-caret-up {
+    font-size: 30px;
+    line-height: 20px;
+    height: 24px;
+}
+
+div.timeline-ct div.listing-ct-panel {
+    margin-bottom: 0px;
+}
+
+div.timeline-ct.timeline-ct-end {
+    min-height: 30px;
+    padding-left: 36px;
+    background-repeat: repeat-y;
+    background-position: 0% 100%;
+    background-size: 6px 5px;
+    background-image: linear-gradient(#ccc 33%, #fff 0%);
+    border-left: none;
+}
+
+div.timeline-ct.timeline-ct-end .timeline-ct-md {
+    left: -10px;
+}
+/* Panels don't draw borders between them */
+.panel > .table > tbody:first-child td {
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+/* Table headers should not generate a double border */
+.panel .table thead tr th {
+    border-bottom: none;
+}
+
+.panel-heading {
+    background: #F5F5F5;
+    height: 44px;
+}
+
+/* Vertically center dropdown buttons in panel headers */
+.panel-heading .btn {
+    margin-top: -3px;
+}
+
+/*
+ * Fix up table row hovering.
+ *
+ * When you hover over table rows it's because they're clickable.
+ * Make the table row hover color match the list-group-item.
+ */
+.table-hover > tbody > tr > td,
+.table-hover > tbody > tr > th,
+.dialog-list-ct .list-group-item {
+    cursor: pointer;
+}
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th,
+.dialog-list-ct .list-group-item:hover:not(.active) {
+    background-color: #edf8ff;
+}
+
+/* Override patternfly to fit buttons and such */
+.table > thead > tr > th,
+.table > tbody > tr > td {
+    padding: 8px;
+}
+
+/* Override the heavy patternfly headers */
+.table > thead {
+    background-image: none;
+    background-color: #fff;
+}
+
+/* Make things line up */
+.table tbody tr td:first-child,
+.table thead tr th:first-child {
+    padding-left: 15px;
+}
+
+.table tbody tr td:last-child,
+.table thead tr th:last-child {
+    padding-right: 15px;
+}
+
+.info-table-ct > tr > td,
+.info-table-ct > tbody > tr > td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 0.75em;
+    padding-top: 0.25em;
+    vertical-align: top;
+    line-height: 26px;
+}
+
+.info-table-ct > tr > td:first-child,
+.info-table-ct > tbody > tr > td:first-child {
+    text-align: right;
+    color: #888888;
+}
+
+.info-table-ct > tr > td:not(:first-child),
+.info-table-ct > tbody > tr > td:not(:first-child) {
+    color: black;
+}
+
+.info-table-ct > tr > td button,
+.info-table-ct > tbody > tr > td button {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.form-table-ct {
+    width: 100%;
+}
+
+.form-table-ct td {
+    padding-left: 0.75em;
+    padding-top: 0.25em;
+    line-height: 26px;
+}
+
+.form-table-ct td.top {
+    vertical-align: top;
+}
+
+.form-table-ct td:first-child {
+    text-align: right;
+    white-space: nowrap;
+    color: #888888;
+    width: 5px; /* will be expanded by nowrap */
+}
+
+.form-table-ct td[colspan] {
+    text-align: inherit;
+}
+
+.form-table-ct td {
+    height: 26px;
+}
+
+.form-table-ct td.header {
+    font-weight: bold;
+    text-align: left;
+    color: #4D5258;
+    padding: 20px 0 10px 0;
+}
+
+.form-table-ct label input[type='radio'],
+.form-table-ct label input[type='checkbox'] {
+    margin-right: 4px;
+}
+
+.form-table-ct label {
+    margin-bottom: 0px;
+}
+
+.form-table-ct label span {
+    vertical-align: super;
+}
+
+/* Break up sidebar in columns in smaller sizes*/
+
+@media (min-width: 992px) {
+    .info-table-ct-container .info-table-ct {
+        table-layout: fixed;
+        width: 100%;
+    }
+}
 /* Listing pattern */
 table.listing-ct {
   margin-top: 15px;
@@ -731,222 +947,6 @@ tbody tr.listing-ct-noexpand {
 .listing-ct-body {
   /* 42 = (20px padding + 1px border) * 2 */
   max-width: calc(100vw - 42px);
-}
-/* Timeline pattern used together with listing.less */
-
-div.timeline-ct {
-    border-left: 6px solid #ccc;
-    position: relative;
-    margin-left: 25px;
-    padding-left: 30px;
-    min-height: 1px;
-    padding-bottom: 15px;
-}
-
-div.timeline-ct .timeline-ct-point {
-    position: absolute;
-    left: -13.5px;
-    font-size: 21px;
-    text-align: center;
-    width: 20px;
-    height: 27px;
-    display: block;
-    line-height: 21px;
-    background-color: white;
-    padding: 3px 0px;
-    color: #ccc;
-}
-
-div.timeline-ct .timeline-ct-point.active {
-    color: #3f9c35;
-}
-
-div.timeline-ct .timeline-ct-md {
-    font-size: 24px;
-    width: 24px;
-    height: 32px;
-    line-height: 24px;
-    padding: 4px 0px;
-    left: -16px;
-}
-
-div.timeline-ct .timeline-ct-lg {
-    font-size: 40px;
-    width: 40px;
-    height: 44px;
-    line-height: 40px;
-    left: -23.5px;
-    padding: 2px 0px;
-}
-
-div.timeline-ct .fa-caret-up {
-    font-size: 30px;
-    line-height: 20px;
-    height: 24px;
-}
-
-div.timeline-ct div.listing-ct-panel {
-    margin-bottom: 0px;
-}
-
-div.timeline-ct.timeline-ct-end {
-    min-height: 30px;
-    padding-left: 36px;
-    background-repeat: repeat-y;
-    background-position: 0% 100%;
-    background-size: 6px 5px;
-    background-image: linear-gradient(#ccc 33%, #fff 0%);
-    border-left: none;
-}
-
-div.timeline-ct.timeline-ct-end .timeline-ct-md {
-    left: -10px;
-}
-/* Panels don't draw borders between them */
-.panel > .table > tbody:first-child td {
-    border-top: 1px solid rgb(221, 221, 221);
-}
-
-/* Table headers should not generate a double border */
-.panel .table thead tr th {
-    border-bottom: none;
-}
-
-.panel-heading {
-    background: #F5F5F5;
-    height: 44px;
-}
-
-/* Vertically center dropdown buttons in panel headers */
-.panel-heading .btn {
-    margin-top: -3px;
-}
-
-/*
- * Fix up table row hovering.
- *
- * When you hover over table rows it's because they're clickable.
- * Make the table row hover color match the list-group-item.
- */
-.table-hover > tbody > tr > td,
-.table-hover > tbody > tr > th,
-.dialog-list-ct .list-group-item {
-    cursor: pointer;
-}
-.table-hover > tbody > tr:hover > td,
-.table-hover > tbody > tr:hover > th,
-.dialog-list-ct .list-group-item:hover:not(.active) {
-    background-color: #edf8ff;
-}
-
-/* Override patternfly to fit buttons and such */
-.table > thead > tr > th,
-.table > tbody > tr > td {
-    padding: 8px;
-}
-
-/* Override the heavy patternfly headers */
-.table > thead {
-    background-image: none;
-    background-color: #fff;
-}
-
-/* Make things line up */
-.table tbody tr td:first-child,
-.table thead tr th:first-child {
-    padding-left: 15px;
-}
-
-.table tbody tr td:last-child,
-.table thead tr th:last-child {
-    padding-right: 15px;
-}
-
-.info-table-ct > tr > td,
-.info-table-ct > tbody > tr > td {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding-left: 0.75em;
-    padding-top: 0.25em;
-    vertical-align: top;
-    line-height: 26px;
-}
-
-.info-table-ct > tr > td:first-child,
-.info-table-ct > tbody > tr > td:first-child {
-    text-align: right;
-    color: #888888;
-}
-
-.info-table-ct > tr > td:not(:first-child),
-.info-table-ct > tbody > tr > td:not(:first-child) {
-    color: black;
-}
-
-.info-table-ct > tr > td button,
-.info-table-ct > tbody > tr > td button {
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.form-table-ct {
-    width: 100%;
-}
-
-.form-table-ct td {
-    padding-left: 0.75em;
-    padding-top: 0.25em;
-    line-height: 26px;
-}
-
-.form-table-ct td.top {
-    vertical-align: top;
-}
-
-.form-table-ct td:first-child {
-    text-align: right;
-    white-space: nowrap;
-    color: #888888;
-    width: 5px; /* will be expanded by nowrap */
-}
-
-.form-table-ct td[colspan] {
-    text-align: inherit;
-}
-
-.form-table-ct td {
-    height: 26px;
-}
-
-.form-table-ct td.header {
-    font-weight: bold;
-    text-align: left;
-    color: #4D5258;
-    padding: 20px 0 10px 0;
-}
-
-.form-table-ct label input[type='radio'],
-.form-table-ct label input[type='checkbox'] {
-    margin-right: 4px;
-}
-
-.form-table-ct label {
-    margin-bottom: 0px;
-}
-
-.form-table-ct label span {
-    vertical-align: super;
-}
-
-/* Break up sidebar in columns in smaller sizes*/
-
-@media (min-width: 992px) {
-    .info-table-ct-container .info-table-ct {
-        table-layout: fixed;
-        width: 100%;
-    }
 }
 
 /*# sourceMappingURL=jquery-patterns.css.map*/

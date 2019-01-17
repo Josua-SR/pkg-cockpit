@@ -87,13 +87,13 @@ return plural;
   null,
   "Адрес:"
  ],
+ "Always attach": [
+  null,
+  ""
+ ],
  "Apply": [
   null,
   "Применить"
- ],
- "Attach permanently": [
-  null,
-  ""
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -114,6 +114,10 @@ return plural;
  "Bus": [
   null,
   "автобус"
+ ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "Не удалось выполнить действие CHANGE NETWORK STATE"
  ],
  "CPU Type:": [
   null,
@@ -267,6 +271,10 @@ return plural;
   null,
   "Формат"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "Не удалось выполнить действие GET HYPERVISOR MAX VCPU"
+ ],
  "GiB": [
   null,
   "ГиБ"
@@ -290,6 +298,10 @@ return plural;
  "Host should not be empty": [
   null,
   "Хост не должен быть пустым"
+ ],
+ "INSTALL VM action failed": [
+  null,
+  "УСТАНОВИТЬ действие VM не удалось"
  ],
  "Immediately Start VM": [
   null,
@@ -459,6 +471,10 @@ return plural;
   null,
   "Путь к файлу"
  ],
+ "Persistence": [
+  null,
+  ""
+ ],
  "Please enter new volume name": [
   null,
   "Введите новое имя тома"
@@ -551,6 +567,10 @@ return plural;
   null,
   "Серийная консоль"
  ],
+ "Session": [
+  null,
+  "Сеанс"
+ ],
  "Shut Down": [
   null,
   "Выключение"
@@ -623,9 +643,9 @@ return plural;
   null,
   "Объемы хранения"
  ],
- "Target": [
+ "System": [
   null,
-  "Целевой"
+  "Система"
  ],
  "Target Path": [
   null,
@@ -727,6 +747,54 @@ return plural;
   null,
   "Не удалось сохранить настройки VCPU"
  ],
+ "VM CHANGE_NETWORK_STATE action failed": [
+  null,
+  "Действие VM CHANGE_NETWORK_STATE не выполнено"
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  "Не удалось выполнить действие VM DELETE (DESTROY)"
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  "Не удалось выполнить действие VM DELETE (UNDEFINE)"
+ ],
+ "VM DELETE action failed": [
+  null,
+  "Не удалось выполнить действие VM DELETE"
+ ],
+ "VM DETACH_DISK action failed": [
+  null,
+  "Действие VM DETACH_DISK не выполнено"
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "Не удалось выполнить действие VM FORCE OFF"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "Не удалось выполнить действие VM FORCE REBOOT"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "Не удалось выполнить действие VM REBOOT"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "Отклонено действие VM SEND Непрерывное прерывание"
+ ],
+ "VM SENDNMI action failed": [
+  null,
+  "Сбой действия VM SENDNMI"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "Действие VM SHUT DOWN не выполнено"
+ ],
+ "VM START action failed": [
+  null,
+  "Не удалось выполнить действие VM START"
+ ],
  "VNC": [
   null,
   "VNC"
@@ -757,19 +825,91 @@ return plural;
  ],
  "Volume": [
   null,
-  "Громкость"
+  "Том"
  ],
  "active": [
   null,
   "активных"
  ],
+ "bridge": [
+  null,
+  "мост"
+ ],
+ "cdrom": [
+  null,
+  "CDROM"
+ ],
+ "crashed": [
+  null,
+  "разбившийся"
+ ],
+ "custom": [
+  null,
+  "обычай"
+ ],
+ "direct": [
+  null,
+  "непосредственный"
+ ],
+ "disabled": [
+  null,
+  "отключено"
+ ],
+ "disk": [
+  null,
+  "диск"
+ ],
+ "down": [
+  null,
+  "вниз"
+ ],
+ "dying": [
+  null,
+  "умирающий"
+ ],
+ "enabled": [
+  null,
+  "включено"
+ ],
+ "ethernet": [
+  null,
+  "локальные сети"
+ ],
+ "host": [
+  null,
+  "узел"
+ ],
+ "hostdev": [
+  null,
+  "hostdev"
+ ],
+ "idle": [
+  null,
+  "вхолостую"
+ ],
  "inactive": [
   null,
   "неактивный"
  ],
+ "mcast": [
+  null,
+  "mcast"
+ ],
+ "network": [
+  null,
+  "сеть"
+ ],
  "no": [
   null,
   "нет"
+ ],
+ "other": [
+  null,
+  "Другой"
+ ],
+ "paused": [
+  null,
+  "приостановлено"
  ],
  "qcow2": [
   null,
@@ -779,6 +919,14 @@ return plural;
   null,
   "raw"
  ],
+ "running": [
+  null,
+  "выполняется"
+ ],
+ "server": [
+  null,
+  "сервер"
+ ],
  "show less": [
   null,
   "показывай меньше"
@@ -787,9 +935,33 @@ return plural;
   null,
   "показать больше"
  ],
+ "shut off": [
+  null,
+  "Заткнись"
+ ],
+ "shutdown": [
+  null,
+  "неисправность"
+ ],
+ "suspended (PM)": [
+  null,
+  "приостановлено (PM)"
+ ],
+ "udp": [
+  null,
+  "udp"
+ ],
  "undefined": [
   null,
   "не определено"
+ ],
+ "up": [
+  null,
+  "вверх"
+ ],
+ "user": [
+  null,
+  "пользователь"
  ],
  "vCPU Count": [
   null,
@@ -802,6 +974,10 @@ return plural;
  "vCPUs:": [
   null,
   "VCPU будут:"
+ ],
+ "vhostuser": [
+  null,
+  "vhostuser"
  ],
  "yes": [
   null,

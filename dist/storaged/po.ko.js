@@ -69,11 +69,11 @@ return plural;
  },
  "$0 Block Device": [
   null,
-  ""
+  "$0 블록 장치 "
  ],
  "$0 Chunk Size": [
   null,
-  ""
+  "$0 청크 크기 "
  ],
  "$0 Disks": [
   null,
@@ -81,7 +81,7 @@ return plural;
  ],
  "$0 data + $1 overhead used of $2 ($3)": [
   null,
-  ""
+  "$0 데이터 + $1 오버헤드가 $2 ($3) 사용"
  ],
  "$0 disk is missing": [
   "$0 disks are missing",
@@ -101,15 +101,15 @@ return plural;
  ],
  "$0 is in active use": [
   null,
-  ""
+  "$0 은/는 현재 사용 중입니다. "
  ],
  "$0 is not available from any repository.": [
   null,
-  ""
+  "$0은/는 리포지터리에서 사용할 수 없습니다. "
  ],
  "$0 of $1": [
   null,
-  ""
+  "$0 / $1"
  ],
  "$0 slots remain": [
   null,
@@ -117,15 +117,15 @@ return plural;
  ],
  "$0 used of $1 ($2 saved)": [
   null,
-  ""
+  "$0/$1 ($2 저장)을 사용하고 있습니다 "
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "$0이/가 설치됩니다. "
  ],
  "$0, $1 free": [
   null,
-  ""
+  "$0, $1 여유 공간 "
  ],
  "$name (from $host)": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
-  ""
+  "디스크를 제거하기 전 예비용 디스크를 추가해야 합니다. "
  ],
  "Activate": [
   null,
@@ -217,11 +217,11 @@ return plural;
  ],
  "Activating $target": [
   null,
-  ""
+  " $target 활성화 중 "
  ],
  "Active since": [
   null,
-  ""
+  "이후 활성화 "
  ],
  "Add": [
   null,
@@ -241,7 +241,7 @@ return plural;
  ],
  "Adding physical volume to $target": [
   null,
-  ""
+  "$target에 물리 볼륨 추가 중 "
  ],
  "Additional packages:": [
   null,
@@ -257,7 +257,7 @@ return plural;
  ],
  "Address is not a valid URL": [
   null,
-  ""
+  "주소가 유효하지 않습니다 "
  ],
  "Apply": [
   null,
@@ -277,23 +277,23 @@ return plural;
  ],
  "Available targets on $0": [
   null,
-  ""
+  "$0에서 사용 가능한 대상 "
  ],
  "Backing Device": [
   null,
-  ""
+  "백업 장치 "
  ],
  "Block": [
   null,
-  "블럭"
+  "블록"
  ],
  "Block device for filesystems": [
   null,
-  ""
+  "파일 시스템의 블록 장치 "
  ],
  "Blocked": [
   null,
-  ""
+  "차단됨 "
  ],
  "Can't delete while unlocked": [
   null,
@@ -317,11 +317,11 @@ return plural;
  ],
  "Checking $target": [
   null,
-  ""
+  "$target 확인 중 "
  ],
  "Checking RAID Device $target": [
   null,
-  ""
+  "RAID 장치 $target 확인 중 "
  ],
  "Checking and Repairing RAID Device $target": [
   null,
@@ -333,11 +333,11 @@ return plural;
  ],
  "Chunk Size": [
   null,
-  ""
+  "청크 크기 "
  ],
  "Cleaning up for $target": [
   null,
-  ""
+  "$target 정리 "
  ],
  "Close": [
   null,
@@ -357,7 +357,7 @@ return plural;
  ],
  "Confirm passphrase": [
   null,
-  ""
+  "암호문 확인 "
  ],
  "Confirm removal with passphrase": [
   null,
@@ -385,15 +385,15 @@ return plural;
  ],
  "Create Snapshot": [
   null,
-  ""
+  "스냅샷 생성 "
  ],
  "Create Thin Volume": [
   null,
-  ""
+  "씬 볼륨 만들기 "
  ],
  "Create VDO Device": [
   null,
-  ""
+  "VDO 장치 만들기 "
  ],
  "Create Volume Group": [
   null,
@@ -401,7 +401,7 @@ return plural;
  ],
  "Create new Logical Volume": [
   null,
-  ""
+  "새 볼륨 그룹 만들기 "
  ],
  "Create partition": [
   null,
@@ -413,31 +413,31 @@ return plural;
  ],
  "Create partition table": [
   null,
-  ""
+  "파티션 테이블 만들기 "
  ],
  "Creating RAID Device $target": [
   null,
-  ""
+  "RAID 장치 $target 만들기 "
  ],
  "Creating filesystem on $target": [
   null,
-  ""
+  "$target에 파일 시스템 만드는 중 "
  ],
  "Creating logical volume $target": [
   null,
-  ""
+  "논리 볼륨 $target 만드는 중 "
  ],
  "Creating partition $target": [
   null,
-  ""
+  "파티션 $target 생성 중 "
  ],
  "Creating snapshot of $target": [
   null,
-  ""
+  "$target 스냅샷 생성 중"
  ],
  "Creating volume group $target": [
   null,
-  ""
+  "볼륨 그룹 $target 생성 중 "
  ],
  "Custom": [
   null,
@@ -453,11 +453,11 @@ return plural;
  ],
  "Custom mount option": [
   null,
-  ""
+  "사용자 정의 마운트 옵션 "
  ],
  "Custom mount options": [
   null,
-  ""
+  "사용자 정의 마운트 옵션 "
  ],
  "DISK IS FAILING": [
   null,
@@ -1049,9 +1049,13 @@ return plural;
  ],
  "Other Devices": [
   null,
-  ""
+  "다른 장치 "
  ],
  "Overwrite existing data with zeros": [
+  null,
+  ""
+ ],
+ "PackageKit crashed": [
   null,
   ""
  ],
@@ -1105,11 +1109,11 @@ return plural;
  ],
  "Physical Volume": [
   null,
-  ""
+  "물리 볼륨 "
  ],
  "Physical Volumes": [
   null,
-  ""
+  "물리 볼륨 "
  ],
  "Physical volume of $0": [
   null,
@@ -1129,7 +1133,7 @@ return plural;
  ],
  "Pool": [
   null,
-  ""
+  "풀"
  ],
  "Pool for Thin Logical Volumes": [
   null,
@@ -1157,11 +1161,11 @@ return plural;
  ],
  "RAID ($0)": [
   null,
-  ""
+  "RAID ($0)"
  ],
  "RAID 0": [
   null,
-  ""
+  "RAID 0"
  ],
  "RAID 0 (Stripe)": [
   null,
@@ -1169,15 +1173,15 @@ return plural;
  ],
  "RAID 1": [
   null,
-  ""
+  "RAID 1"
  ],
  "RAID 1 (Mirror)": [
   null,
-  ""
+  "RAID 1 (미러링)"
  ],
  "RAID 10": [
   null,
-  ""
+  "RAID 10"
  ],
  "RAID 10 (Stripe of Mirrors)": [
   null,
@@ -1185,7 +1189,7 @@ return plural;
  ],
  "RAID 4": [
   null,
-  ""
+  "RAID 4"
  ],
  "RAID 4 (Dedicated Parity)": [
   null,
@@ -1193,7 +1197,7 @@ return plural;
  ],
  "RAID 5": [
   null,
-  ""
+  "RAID 5"
  ],
  "RAID 5 (Distributed Parity)": [
   null,
@@ -1201,7 +1205,7 @@ return plural;
  ],
  "RAID 6": [
   null,
-  ""
+  "RAID 6"
  ],
  "RAID 6 (Double Distributed Parity)": [
   null,
@@ -1217,11 +1221,11 @@ return plural;
  ],
  "RAID Devices": [
   null,
-  ""
+  "RAID 장치"
  ],
  "RAID Level": [
   null,
-  ""
+  "RAID 레벨"
  ],
  "RAID Member": [
   null,
@@ -1253,7 +1257,7 @@ return plural;
  ],
  "Remove $0?": [
   null,
-  ""
+  "$0을/를 삭제하시겠습니까?"
  ],
  "Remove Tang keyserver": [
   null,
@@ -1261,7 +1265,7 @@ return plural;
  ],
  "Remove device": [
   null,
-  ""
+  "장치 삭제 "
  ],
  "Remove passphrase": [
   null,
@@ -1273,7 +1277,7 @@ return plural;
  ],
  "Removing $0": [
   null,
-  ""
+  " $0 삭제 중 "
  ],
  "Removing $target from RAID Device": [
   null,
@@ -1289,7 +1293,7 @@ return plural;
  ],
  "Rename Logical Volume": [
   null,
-  ""
+  "논리 볼륨 이름 변경 "
  ],
  "Rename Volume Group": [
   null,
@@ -1429,7 +1433,7 @@ return plural;
  ],
  "Stop and remove": [
   null,
-  ""
+  "중지 및 제거 "
  ],
  "Stopping RAID Device $target": [
   null,
@@ -1444,6 +1448,10 @@ return plural;
   "스토리지"
  ],
  "Storage Logs": [
+  null,
+  ""
+ ],
+ "Storage can not be managed on this system.": [
   null,
   ""
  ],
@@ -1472,10 +1480,6 @@ return plural;
   ""
  ],
  "Tang keyserver": [
-  null,
-  ""
- ],
- "The \"storaged\" API is not available on this system.": [
   null,
   ""
  ],
@@ -1617,15 +1621,15 @@ return plural;
  ],
  "Unknown ($0)": [
   null,
-  ""
+  "알 수 없음 ($0)"
  ],
  "Unknown host name": [
   null,
-  ""
+  "알 수 없는 호스트 이름 "
  ],
  "Unknown type": [
   null,
-  ""
+  "알 수 없는 유형"
  ],
  "Unlock": [
   null,
@@ -1665,7 +1669,7 @@ return plural;
  ],
  "Unsupported volume": [
   null,
-  ""
+  "지원되지 않는 볼륨 "
  ],
  "Usage": [
   null,
@@ -1685,27 +1689,27 @@ return plural;
  ],
  "VDO Backing": [
   null,
-  ""
+  "VDO 백업 "
  ],
  "VDO Device": [
   null,
-  ""
+  "VDO 장치 "
  ],
  "VDO Device $0": [
   null,
-  ""
+  "VDO 장치 $0"
  ],
  "VDO Devices": [
   null,
-  ""
+  "VDO 장치 "
  ],
  "VDO backing devices can not be made smaller": [
   null,
-  ""
+  "VDO 백업 장치를 작게 할 수 없습니다 "
  ],
  "VDO support not installed": [
   null,
-  ""
+  "VDO 지원이 설치되어 있지 않습니다 "
  ],
  "VFAT - Compatible with all systems and devices": [
   null,
@@ -1713,7 +1717,7 @@ return plural;
  ],
  "Verify key": [
   null,
-  ""
+  "키 확인 "
  ],
  "Very securely erasing $target": [
   null,
@@ -1733,7 +1737,7 @@ return plural;
  ],
  "Volume Groups": [
   null,
-  ""
+  "볼륨 그룹 "
  ],
  "Waiting for other software management operations to finish": [
   null,
@@ -1753,7 +1757,7 @@ return plural;
  ],
  "XFS - Red Hat Enterprise Linux 7 default": [
   null,
-  ""
+  "XFS - Red Hat Enterprise Linux 7 기본값 "
  ],
  "[$0 bytes of binary data]": [
   null,
@@ -1781,15 +1785,15 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "정의되지 않음 "
  ],
  "unknown target": [
   null,
-  ""
+  "알 수 없는 대상 "
  ],
  "unpartitioned space on $0": [
   null,
-  ""
+  "$0에서 파티션 설정되지 않은 공간 "
  ],
  "storage-id-desc\u0004$0 File System": [
   null,
@@ -1805,7 +1809,7 @@ return plural;
  ],
  "storage-id-desc\u0004Swap Space": [
   null,
-  ""
+  "스왑 공간 "
  ],
  "storage-id-desc\u0004Unrecognized Data": [
   null,
@@ -1813,7 +1817,7 @@ return plural;
  ],
  "storage-id-desc\u0004VDO Backing": [
   null,
-  ""
+  "VDO 백업 "
  ],
  "storage\u0004Drive": [
   null,

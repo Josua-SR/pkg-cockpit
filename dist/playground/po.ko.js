@@ -77,7 +77,7 @@ return plural;
  ],
  "Control": [
   null,
-  ""
+  "컨트롤 "
  ],
  "Delete '{{ name }}'": [
   null,
@@ -141,7 +141,7 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "정의되지 않음 "
  ],
  "disk-non-rotational\u0004$0 disk is missing": [
   "$0 disks are missing",
@@ -149,7 +149,7 @@ return plural;
  ],
  "key\u0004Control": [
   null,
-  ""
+  "컨트롤 "
  ],
  "verb\u0004Empty": [
   null,

@@ -99,13 +99,13 @@ return plural;
   null,
   "Все запущенные виртуальные машины будут отключены."
  ],
+ "Always attach": [
+  null,
+  ""
+ ],
  "Apply": [
   null,
   "Применить"
- ],
- "Attach permanently": [
-  null,
-  ""
  ],
  "Automatically selected host": [
   null,
@@ -139,9 +139,17 @@ return plural;
   null,
   "автобус"
  ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "Не удалось выполнить действие CHANGE NETWORK STATE"
+ ],
  "CPU Type:": [
   null,
   "Тип процессора:"
+ ],
+ "CREATE VM action failed": [
+  null,
+  "Не удалось выполнить операцию CREATE VM"
  ],
  "Cancel": [
   null,
@@ -323,6 +331,10 @@ return plural;
   null,
   "Формат"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "Не удалось выполнить действие GET HYPERVISOR MAX VCPU"
+ ],
  "GiB": [
   null,
   "ГиБ"
@@ -351,6 +363,10 @@ return plural;
   null,
   "Хост для обслуживания"
  ],
+ "INSTALL VM action failed": [
+  null,
+  "УСТАНОВИТЬ действие VM не удалось"
+ ],
  "Install": [
   null,
   "Установка"
@@ -370,6 +386,10 @@ return plural;
  "MAC Address": [
   null,
   "MAC-адрес"
+ ],
+ "MIGRATE action failed": [
+  null,
+  "Не удалось выполнить действие MIGRATE"
  ],
  "Mac Address": [
   null,
@@ -491,6 +511,10 @@ return plural;
   null,
   "Обзор"
  ],
+ "Persistence": [
+  null,
+  ""
+ ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
   "Пожалуйста, подтвердите, что хост должен быть переключен в режим обслуживания."
@@ -543,9 +567,17 @@ return plural;
   null,
   "Предпочтительное количество сокетов, которые выставляют гостю."
  ],
+ "Preparing for Maintenance": [
+  null,
+  "Подготовка к обслуживанию"
+ ],
  "Protocol": [
   null,
   "Протокол"
+ ],
+ "REBOOT action failed": [
+  null,
+  "Не выполнено действие REBOOT"
  ],
  "Readonly": [
   null,
@@ -583,6 +615,14 @@ return plural;
   null,
   "Работает с:"
  ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  "Не удалось выполнить установку SET VCPU SETTINGS"
+ ],
+ "SHUTDOWN action failed": [
+  null,
+  "Действие SHUTDOWN не выполнено"
+ ],
  "SPICE": [
   null,
   "SPICE"
@@ -599,6 +639,14 @@ return plural;
   null,
   "Порт SPICE TLS:"
  ],
+ "START action failed": [
+  null,
+  "Не удалось выполнить действие START"
+ ],
+ "SUSPEND action failed": [
+  null,
+  "Не удалось выполнить действие SUSPEND."
+ ],
  "Save": [
   null,
   "Сохранить"
@@ -614,6 +662,10 @@ return plural;
  "Serial Console": [
   null,
   "Серийная консоль"
+ ],
+ "Session": [
+  null,
+  "Сеанс"
  ],
  "Shut Down": [
   null,
@@ -655,9 +707,17 @@ return plural;
   null,
   "Переключить узел на обслуживание"
  ],
- "Target": [
+ "Switching host to maintenance mode failed. Received error: ": [
   null,
-  "Целевой"
+  "Не удалось переключить хост в режим обслуживания. Полученная ошибка: "
+ ],
+ "Switching host to maintenance mode in progress ...": [
+  null,
+  "Переключение хоста в режим обслуживания ..."
+ ],
+ "System": [
+  null,
+  "Система"
  ],
  "Template": [
   null,
@@ -759,6 +819,38 @@ return plural;
   null,
   "Управление службами VDSM"
  ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  "Не удалось выполнить действие VM DELETE (DESTROY)"
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  "Не удалось выполнить действие VM DELETE (UNDEFINE)"
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "Не удалось выполнить действие VM FORCE OFF"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "Не удалось выполнить действие VM FORCE REBOOT"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "Не удалось выполнить действие VM REBOOT"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "Отклонено действие VM SEND Непрерывное прерывание"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "Действие VM SHUT DOWN не выполнено"
+ ],
+ "VM START action failed": [
+  null,
+  "Не удалось выполнить действие VM START"
+ ],
  "VM icon": [
   null,
   "Значок VM"
@@ -797,23 +889,119 @@ return plural;
  ],
  "Volume": [
   null,
-  "Громкость"
+  "Том"
+ ],
+ "bridge": [
+  null,
+  "мост"
+ ],
+ "cdrom": [
+  null,
+  "CDROM"
+ ],
+ "connecting": [
+  null,
+  "подключение"
  ],
  "cores": [
   null,
   "ядра"
  ],
+ "crashed": [
+  null,
+  "разбившийся"
+ ],
+ "custom": [
+  null,
+  "обычай"
+ ],
+ "direct": [
+  null,
+  "непосредственный"
+ ],
  "disabled": [
   null,
   "отключено"
+ ],
+ "disk": [
+  null,
+  "диск"
+ ],
+ "down": [
+  null,
+  "вниз"
+ ],
+ "dying": [
+  null,
+  "умирающий"
  ],
  "enabled": [
   null,
   "включено"
  ],
+ "error": [
+  null,
+  "ошибка"
+ ],
+ "ethernet": [
+  null,
+  "локальные сети"
+ ],
+ "host": [
+  null,
+  "узел"
+ ],
+ "hostdev": [
+  null,
+  "hostdev"
+ ],
+ "idle": [
+  null,
+  "вхолостую"
+ ],
+ "initializing": [
+  null,
+  "инициализация"
+ ],
+ "installation failed": [
+  null,
+  "установка не удалась"
+ ],
+ "installing OS": [
+  null,
+  "установка ОС"
+ ],
+ "kdumping": [
+  null,
+  "kdumping"
+ ],
+ "maintenance": [
+  null,
+  "поддержание"
+ ],
+ "mcast": [
+  null,
+  "mcast"
+ ],
+ "network": [
+  null,
+  "сеть"
+ ],
  "no": [
   null,
   "нет"
+ ],
+ "non operational": [
+  null,
+  "недействительный"
+ ],
+ "non responsive": [
+  null,
+  "не реагирующий"
+ ],
+ "oVirt": [
+  null,
+  "oVirt"
  ],
  "oVirt Host State:": [
   null,
@@ -835,6 +1023,18 @@ return plural;
   null,
   "Вход в систему oVirt"
  ],
+ "other": [
+  null,
+  "Другой"
+ ],
+ "paused": [
+  null,
+  "приостановлено"
+ ],
+ "pending approval": [
+  null,
+  "в ожидании утверждения"
+ ],
  "qcow2": [
   null,
   "qcow2"
@@ -842,6 +1042,18 @@ return plural;
  "raw": [
   null,
   "raw"
+ ],
+ "reboot": [
+  null,
+  "перезагрузка"
+ ],
+ "running": [
+  null,
+  "выполняется"
+ ],
+ "server": [
+  null,
+  "сервер"
  ],
  "show less": [
   null,
@@ -851,17 +1063,45 @@ return plural;
   null,
   "показать больше"
  ],
+ "shut off": [
+  null,
+  "Заткнись"
+ ],
+ "shutdown": [
+  null,
+  "неисправность"
+ ],
  "sockets": [
   null,
   "Розетки"
+ ],
+ "suspended (PM)": [
+  null,
+  "приостановлено (PM)"
  ],
  "threads": [
   null,
   "потоки"
  ],
+ "udp": [
+  null,
+  "udp"
+ ],
+ "unassigned": [
+  null,
+  "Unassigned"
+ ],
  "undefined": [
   null,
   "не определено"
+ ],
+ "up": [
+  null,
+  "вверх"
+ ],
+ "user": [
+  null,
+  "пользователь"
  ],
  "vCPU Count": [
   null,
@@ -878,6 +1118,10 @@ return plural;
  "vCPUs:": [
   null,
   "VCPU будут:"
+ ],
+ "vhostuser": [
+  null,
+  "vhostuser"
  ],
  "yes": [
   null,

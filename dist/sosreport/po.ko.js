@@ -77,11 +77,11 @@ return plural;
  ],
  "Create Report": [
   null,
-  ""
+  "보고서 작성 "
  ],
  "Create diagnostic report": [
   null,
-  ""
+  "진단 보고서 작성 "
  ],
  "Diagnostic reports": [
   null,

@@ -17,19 +17,17 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
+import { FIXTURE_BASIC } from "./fixture-basic.js";
+import { FIXTURE_LARGE } from "./fixture-large.js";
+
+import QUnit from "qunit-tests";
 var angular = require("angular");
-var QUnit = require("qunit-tests");
 
 require("./kube-client");
 require("./kube-client-cockpit");
 require("./kube-client-mock");
 
-var FIXTURE_BASIC = require("./fixture-basic");
-var FIXTURE_LARGE = require("./fixture-large");
-
 (function() {
-    "use strict";
-
     /* Filled in with a function */
     var inject;
 

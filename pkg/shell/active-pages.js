@@ -17,16 +17,17 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-var cockpit = require("cockpit");
-var _ = cockpit.gettext;
+import cockpit from "cockpit";
 
-var React = require("react");
+import React from "react";
 
-var dialogPattern = require("cockpit-components-dialog.jsx");
-var PagesDialog = require("./active-pages-dialog.jsx");
+import { show_modal_dialog } from "cockpit-components-dialog.jsx";
+import { ActivePagesDialogBody } from "./active-pages-dialog.jsx";
+
+const _ = cockpit.gettext;
 
 // The argument is a Frames object from base_index.js
-var showDialog = function(frames) {
+export function showDialog (frames) {
     var dataStore = { };
 
     // we omit the host for all pages on our current system
@@ -93,7 +94,7 @@ var showDialog = function(frames) {
     dataStore.dialogProps = {
         title: _("Active Pages"),
         id: "active-pages-dialog",
-        body: React.createElement(PagesDialog, { iframes: iframes, selectionChanged: selectionChanged }),
+        body: React.createElement(ActivePagesDialogBody, { iframes: iframes, selectionChanged: selectionChanged }),
     };
 
     dataStore.footerProps = {
@@ -105,16 +106,12 @@ var showDialog = function(frames) {
         ],
     };
 
-    dataStore.dialogObj = dialogPattern.show_modal_dialog(dataStore.dialogProps, dataStore.footerProps);
+    dataStore.dialogObj = show_modal_dialog(dataStore.dialogProps, dataStore.footerProps);
 
     dataStore.update = function() {
-        dataStore.dialogProps.body = React.createElement(PagesDialog, { });
+        dataStore.dialogProps.body = React.createElement(ActivePagesDialogBody, { });
         dataStore.dialogObj.setProps(dataStore.dialogProps);
     };
 
     return dataStore;
-};
-
-module.exports = {
-    showDialog: showDialog
-};
+}

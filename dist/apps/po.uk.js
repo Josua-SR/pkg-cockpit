@@ -115,6 +115,10 @@ return plural;
   null,
   "Гаразд"
  ],
+ "PackageKit crashed": [
+  null,
+  "Аварійне завершення роботи PackageKit"
+ ],
  "Remove": [
   null,
   "Вилучити"

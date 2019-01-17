@@ -17,14 +17,14 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-var cockpit = require("cockpit");
-var python = require("python.jsx");
-var inotify_py = require("raw!inotify.py");
-var watch_appstream_py = require("raw!./watch-appstream.py");
+import cockpit from "cockpit";
+import * as python from "python.js";
+import inotify_py from "raw-loader!inotify.py";
+import watch_appstream_py from "raw-loader!./watch-appstream.py";
 
 var metainfo_db = null;
 
-function get_metainfo_db() {
+export function get_metainfo_db() {
     if (!metainfo_db) {
         metainfo_db = cockpit.event_target({
             ready: false,
@@ -59,7 +59,3 @@ function get_metainfo_db() {
 
     return metainfo_db;
 }
-
-module.exports = {
-    get_metainfo_db: get_metainfo_db
-};

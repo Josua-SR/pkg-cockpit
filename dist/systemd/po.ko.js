@@ -67,13 +67,17 @@ return plural;
   "language": "ko",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Template": [
+  null,
+  "$0 템플릿 "
+ ],
  "$0 is not available from any repository.": [
   null,
-  ""
+  "$0은/는 리포지터리에서 사용할 수 없습니다. "
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "$0이/가 설치됩니다. "
  ],
  "1 Minute": [
   null,
@@ -86,6 +90,10 @@ return plural;
  "1 hour": [
   null,
   "1 시간"
+ ],
+ "1 min": [
+  null,
+  "1분"
  ],
  "1 week": [
   null,
@@ -135,6 +143,10 @@ return plural;
   null,
   "1일 "
  ],
+ "2 min": [
+  null,
+  "2분"
+ ],
  "20 Minutes": [
   null,
   "20분"
@@ -183,6 +195,10 @@ return plural;
   null,
   "2일 "
  ],
+ "3 min": [
+  null,
+  "3분 "
+ ],
  "30th": [
   null,
   "30일 "
@@ -195,6 +211,10 @@ return plural;
   null,
   "3일 "
  ],
+ "4 min": [
+  null,
+  "4분 "
+ ],
  "40 Minutes": [
   null,
   "40분 "
@@ -204,6 +224,10 @@ return plural;
   "4일 "
  ],
  "5 Minutes": [
+  null,
+  "5분 "
+ ],
+ "5 min": [
   null,
   "5분 "
  ],
@@ -243,6 +267,10 @@ return plural;
   null,
   "추가 패키지 :"
  ],
+ "Advanced TCA": [
+  null,
+  "고급 TCA"
+ ],
  "After": [
   null,
   "이후 "
@@ -253,7 +281,11 @@ return plural;
  ],
  "Alert and above": [
   null,
-  ""
+  "경고 이상의 수준 "
+ ],
+ "All In One": [
+  null,
+  "일체형 "
  ],
  "Asset Tag": [
   null,
@@ -261,7 +293,7 @@ return plural;
  ],
  "At specific time": [
   null,
-  ""
+  "특정 시간  "
  ],
  "Automatically using NTP": [
   null,
@@ -283,17 +315,49 @@ return plural;
   null,
   "BIOS 버전"
  ],
+ "Before": [
+  null,
+  "이전 "
+ ],
+ "Binds To": [
+  null,
+  "바인딩 "
+ ],
+ "Blade": [
+  null,
+  "블레이드 "
+ ],
+ "Blade enclosure": [
+  null,
+  "블레이드 인클로저 "
+ ],
+ "Bound By": [
+  null,
+  "바인딩됨 "
+ ],
+ "Bug Fix Updates Available": [
+  null,
+  "사용 가능한 버그 수정 업데이트"
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  "버스 확장 섀시"
+ ],
  "CPU": [
   null,
   "CPU"
  ],
  "Cached": [
   null,
-  ""
+  "캐시됨 "
  ],
  "Cancel": [
   null,
   "취소"
+ ],
+ "Cannot schedule event in the past": [
+  null,
+  ""
  ],
  "Change": [
   null,
@@ -307,6 +371,10 @@ return plural;
   null,
   "시스템 시간 변경"
  ],
+ "Checking for updates…": [
+  null,
+  "업데이트 확인 중 ..."
+ ],
  "Checking installed software": [
   null,
   "설치된 소프트웨어 확인 중 "
@@ -314,6 +382,10 @@ return plural;
  "Class": [
   null,
   "클래스 "
+ ],
+ "Click to see system hardware information": [
+  null,
+  "시스템 하드웨어 정보를 보려면 클릭하십시오."
  ],
  "Close": [
   null,
@@ -323,17 +395,41 @@ return plural;
   null,
   "명령"
  ],
- "Condition failed": [
+ "Compact PCI": [
   null,
   ""
+ ],
+ "Condition $0=$1 was not met": [
+  null,
+  ""
+ ],
+ "Condition failed": [
+  null,
+  "조건이 충족되지 않았습니다 "
+ ],
+ "Conflicted By": [
+  null,
+  ""
+ ],
+ "Conflicts": [
+  null,
+  "충돌"
+ ],
+ "Consists Of": [
+  null,
+  ""
+ ],
+ "Convertible": [
+  null,
+  "변환 가능 "
  ],
  "Create Timer": [
   null,
-  ""
+  "타이머 만들기 "
  ],
  "Create Timers": [
   null,
-  ""
+  "타이머 만들기 "
  ],
  "Critical and above": [
   null,
@@ -355,9 +451,29 @@ return plural;
   null,
   "설명"
  ],
+ "Desktop": [
+  null,
+  "데스크탑"
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
+ "Disable": [
+  null,
+  "비활성화"
+ ],
+ "Disabled": [
+  null,
+  "사용 안함"
+ ],
  "Disk I/O": [
   null,
   "디스크 I/O"
+ ],
+ "Docking Station": [
+  null,
+  ""
  ],
  "Domain": [
   null,
@@ -371,7 +487,27 @@ return plural;
   null,
   ""
  ],
+ "Embedded PC": [
+  null,
+  ""
+ ],
+ "Enable": [
+  null,
+  "사용"
+ ],
+ "Enable Forcefully": [
+  null,
+  ""
+ ],
  "Enable stored metrics…": [
+  null,
+  ""
+ ],
+ "Enabled": [
+  null,
+  "사용"
+ ],
+ "Enhancement Updates Available": [
   null,
   ""
  ],
@@ -391,6 +527,10 @@ return plural;
   null,
   ""
  ],
+ "Expansion Chassis": [
+  null,
+  ""
+ ],
  "Friday": [
   null,
   "금요일"
@@ -406,6 +546,10 @@ return plural;
  "Go to now": [
   null,
   "지금 바로 가기"
+ ],
+ "Hand Held": [
+  null,
+  ""
  ],
  "Hardware": [
   null,
@@ -423,6 +567,10 @@ return plural;
   null,
   ""
  ],
+ "Hour needs to be a number between 0-23": [
+  null,
+  ""
+ ],
  "Hours": [
   null,
   "시"
@@ -430,6 +578,10 @@ return plural;
  "I/O Wait": [
   null,
   ""
+ ],
+ "Id": [
+  null,
+  "ID "
  ],
  "Info and above": [
   null,
@@ -451,7 +603,35 @@ return plural;
   null,
   ""
  ],
+ "Invalid date format": [
+  null,
+  ""
+ ],
+ "Invalid date format and invalid time format": [
+  null,
+  ""
+ ],
+ "Invalid date format.": [
+  null,
+  ""
+ ],
+ "Invalid number.": [
+  null,
+  ""
+ ],
+ "Invalid time format": [
+  null,
+  ""
+ ],
  "Invalid time zone": [
+  null,
+  ""
+ ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
+ "Joins Namespace Of": [
   null,
   ""
  ],
@@ -471,11 +651,19 @@ return plural;
   null,
   "커널 "
  ],
+ "Laptop": [
+  null,
+  ""
+ ],
  "Last 24 hours": [
   null,
   ""
  ],
  "Last 7 days": [
+  null,
+  ""
+ ],
+ "Last Trigger": [
   null,
   ""
  ],
@@ -495,6 +683,14 @@ return plural;
   null,
   "로그 "
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "Machine ID": [
   null,
   ""
@@ -503,15 +699,43 @@ return plural;
   null,
   ""
  ],
+ "Main Server Chassis": [
+  null,
+  ""
+ ],
  "Manually": [
   null,
   "수동"
+ ],
+ "Mask": [
+  null,
+  "마스크 "
+ ],
+ "Mask Forcefully": [
+  null,
+  ""
  ],
  "Memory": [
   null,
   "메모리"
  ],
  "Memory & Swap": [
+  null,
+  ""
+ ],
+ "Message to logged in users": [
+  null,
+  ""
+ ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
+ "Minute needs to be a number between 0-59": [
   null,
   ""
  ],
@@ -527,13 +751,29 @@ return plural;
   null,
   "월요일"
  ],
+ "Multi-system Chassis": [
+  null,
+  ""
+ ],
+ "NTP Server": [
+  null,
+  ""
+ ],
  "Name": [
   null,
   "이름"
  ],
+ "Need at least one NTP server": [
+  null,
+  ""
+ ],
  "Network Traffic": [
   null,
   ""
+ ],
+ "Next Run": [
+  null,
+  "다음"
  ],
  "Nice": [
   null,
@@ -559,6 +799,10 @@ return plural;
   null,
   "알림"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Notice and above": [
   null,
   ""
@@ -575,7 +819,15 @@ return plural;
   null,
   "활성"
  ],
+ "On Failure": [
+  null,
+  "실패하였습니다"
+ ],
  "Only Emergency": [
+  null,
+  ""
+ ],
+ "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
   null,
   ""
  ],
@@ -583,9 +835,21 @@ return plural;
   null,
   "운영 체제"
  ],
+ "Other": [
+  null,
+  "기타"
+ ],
  "PCI": [
   null,
   "PCI"
+ ],
+ "PackageKit crashed": [
+  null,
+  ""
+ ],
+ "Part Of": [
+  null,
+  ""
  ],
  "Paths": [
   null,
@@ -595,7 +859,27 @@ return plural;
   null,
   ""
  ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
+ "Portable": [
+  null,
+  ""
+ ],
  "Power Options": [
+  null,
+  ""
+ ],
+ "Preset": [
+  null,
+  ""
+ ],
+ "Preset Forcefully": [
   null,
   ""
  ],
@@ -611,7 +895,27 @@ return plural;
   null,
   ""
  ],
+ "Propagates Reload To": [
+  null,
+  ""
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
+  null,
+  ""
+ ],
  "Real Host Name": [
+  null,
+  ""
+ ],
+ "Real host name can only contain lower-case characters, digits, dashes, and periods (with populated subdomains)": [
+  null,
+  ""
+ ],
+ "Real host name must be 64 characters or less": [
   null,
   ""
  ],
@@ -623,13 +927,21 @@ return plural;
   null,
   "최근"
  ],
+ "Reload": [
+  null,
+  "다시읽기"
+ ],
+ "Reload Propagated From": [
+  null,
+  ""
+ ],
  "Removals:": [
   null,
   ""
  ],
  "Removing $0": [
   null,
-  ""
+  " $0 삭제 중 "
  ],
  "Repeat Daily": [
   null,
@@ -667,6 +979,22 @@ return plural;
   null,
   ""
  ],
+ "Required By": [
+  null,
+  ""
+ ],
+ "Requires": [
+  null,
+  "요구 사항 "
+ ],
+ "Requisite": [
+  null,
+  ""
+ ],
+ "Requisite Of": [
+  null,
+  ""
+ ],
  "Reset": [
   null,
   "초기화"
@@ -681,35 +1009,47 @@ return plural;
  ],
  "Saturday": [
   null,
-  ""
+  "토요일 "
  ],
  "Save": [
   null,
   "저장"
  ],
- "Seconds": [
+ "Sealed-case PC": [
   null,
   ""
+ ],
+ "Seconds": [
+  null,
+  "초"
  ],
  "Secure Shell Keys": [
   null,
   ""
  ],
- "Service Logs": [
+ "Security Updates Available": [
   null,
   ""
  ],
+ "Service Logs": [
+  null,
+  "서비스 로그 "
+ ],
  "Service name": [
   null,
-  ""
+  "서비스 이름 "
  ],
  "Services": [
   null,
   "서비스"
  ],
+ "Set Host name": [
+  null,
+  "호스트 이름 설정"
+ ],
  "Set Time": [
   null,
-  ""
+  "시간 설정 "
  ],
  "Severity": [
   null,
@@ -723,6 +1063,10 @@ return plural;
   null,
   "종료"
  ],
+ "Since $0": [
+  null,
+  ""
+ ],
  "Slot": [
   null,
   ""
@@ -731,11 +1075,43 @@ return plural;
   null,
   "소켓 "
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
  "Specific Time": [
   null,
   ""
  ],
+ "Start": [
+  null,
+  "시작"
+ ],
+ "State": [
+  null,
+  "상태"
+ ],
+ "Static": [
+  null,
+  "정적"
+ ],
+ "Stick PC": [
+  null,
+  ""
+ ],
+ "Stop": [
+  null,
+  ""
+ ],
  "Store metrics": [
+  null,
+  ""
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
   null,
   ""
  ],
@@ -763,21 +1139,69 @@ return plural;
   null,
   "시스템 정보 "
  ],
- "System Services": [
+ "System Not Registered": [
   null,
   ""
+ ],
+ "System Services": [
+  null,
+  "시스템 서비스 "
  ],
  "System Time": [
   null,
   ""
  ],
- "Targets": [
+ "System Up To Date": [
   null,
   ""
+ ],
+ "Tablet": [
+  null,
+  "타블렛"
+ ],
+ "Targets": [
+  null,
+  "대상 "
  ],
  "Terminal": [
   null,
   "터미널"
+ ],
+ "The user <b>$0</b> does not have permissions for creating timers": [
+  null,
+  ""
+ ],
+ "The user <b>$0</b> is not permitted to change the system time": [
+  null,
+  ""
+ ],
+ "The user <b>$0</b> is not permitted to enable or disable services": [
+  null,
+  ""
+ ],
+ "The user <b>$0</b> is not permitted to modify hostnames": [
+  null,
+  ""
+ ],
+ "The user <b>$0</b> is not permitted to shutdown or restart this server": [
+  null,
+  ""
+ ],
+ "The user <b>$0</b> is not permitted to start or stop services": [
+  null,
+  ""
+ ],
+ "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
+  null,
+  ""
+ ],
+ "This field cannot be empty.": [
+  null,
+  ""
+ ],
+ "This unit is an instance of the $0 template.": [
+  null,
+  ""
  ],
  "This unit is not designed to be enabled explicitly.": [
   null,
@@ -799,6 +1223,18 @@ return plural;
   null,
   ""
  ],
+ "Tower": [
+  null,
+  ""
+ ],
+ "Triggered By": [
+  null,
+  ""
+ ],
+ "Triggers": [
+  null,
+  ""
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   ""
@@ -810,6 +1246,22 @@ return plural;
  "Type": [
   null,
   "유형"
+ ],
+ "Unknown": [
+  null,
+  "알 수 없음"
+ ],
+ "Unmask": [
+  null,
+  ""
+ ],
+ "Updates Available": [
+  null,
+  "사용 가능한 업데이트 "
+ ],
+ "Usage of $0 CPU core": [
+  "Usage of $0 CPU cores",
+  ""
  ],
  "Used": [
   null,
@@ -831,6 +1283,14 @@ return plural;
   null,
   ""
  ],
+ "Wanted By": [
+  null,
+  ""
+ ],
+ "Wants": [
+  null,
+  ""
+ ],
  "Warning and above": [
   null,
   ""
@@ -841,7 +1301,7 @@ return plural;
  ],
  "Weeks": [
   null,
-  ""
+  "주 "
  ],
  "[$0 bytes of binary data]": [
   null,
@@ -854,5 +1314,25 @@ return plural;
  "[no data]": [
   null,
   ""
+ ],
+ "failed to list ssh host keys: $0": [
+  null,
+  " Docker 실행을 실패하였습니다: $0"
+ ],
+ "of $0 CPU core": [
+  "of $0 CPU cores",
+  ""
+ ],
+ "unknown": [
+  null,
+  "알 수 없음"
+ ],
+ "page-title\u0004CPU Status": [
+  null,
+  "CPU 상태"
+ ],
+ "page-title\u0004Memory": [
+  null,
+  "메모리"
  ]
 }));

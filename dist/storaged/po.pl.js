@@ -687,7 +687,7 @@ return plural;
  ],
  "Free up space in this group: Shrink or delete other logical volumes or add another physical volume.": [
   null,
-  ""
+  "Należy zwolnić miejsce w tej grupie: zmniejszyć lub usunąć inne woluminy logiczne lub dodać kolejny wolumin fizyczny."
  ],
  "Go to now": [
   null,
@@ -915,11 +915,11 @@ return plural;
  ],
  "Name cannot be longer than $0 bytes": [
   null,
-  ""
+  "Nazwa nie może być dłuższa niż $0 B"
  ],
  "Name cannot be longer than $0 characters": [
   null,
-  ""
+  "Nazwa nie może być dłuższa niż $0 znaków"
  ],
  "Name cannot be longer than 127 characters.": [
   null,
@@ -1007,7 +1007,7 @@ return plural;
  ],
  "Not enough space to grow.": [
   null,
-  ""
+  "Za mało miejsca do powiększenia."
  ],
  "Not found": [
   null,
@@ -1056,6 +1056,10 @@ return plural;
  "Overwrite existing data with zeros": [
   null,
   "Zastąp istniejące dane zerami"
+ ],
+ "PackageKit crashed": [
+  null,
+  "Usługa PackageKit uległa awarii"
  ],
  "Partition": [
   null,
@@ -1449,6 +1453,10 @@ return plural;
   null,
   "Dzienniki urządzeń do przechowywania danych"
  ],
+ "Storage can not be managed on this system.": [
+  null,
+  ""
+ ],
  "Store passphrase": [
   null,
   "Przechowaj hasło"
@@ -1476,10 +1484,6 @@ return plural;
  "Tang keyserver": [
   null,
   "Serwer kluczy Tang"
- ],
- "The \"storaged\" API is not available on this system.": [
-  null,
-  "API „storaged” nie jest dostępne w tym systemie."
  ],
  "The RAID Array is in a degraded state": [
   null,

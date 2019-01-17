@@ -237,7 +237,7 @@ return plural;
  ],
  "Ceph Filesystem Mount": [
   null,
-  "Крепление файловой системы Ceph"
+  "Монтирование файловой системы Ceph"
  ],
  "Ceph Monitors": [
   null,
@@ -1569,7 +1569,7 @@ return plural;
  ],
  "Volume": [
   null,
-  "Громкость"
+  "Том"
  ],
  "Volume ID": [
   null,

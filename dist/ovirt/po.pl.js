@@ -99,13 +99,13 @@ return plural;
   null,
   "Wszystkie uruchomione maszyny wirtualne zostaną wyłączone."
  ],
+ "Always attach": [
+  null,
+  "Podłączanie za każdym razem"
+ ],
  "Apply": [
   null,
   "Zastosuj"
- ],
- "Attach permanently": [
-  null,
-  "Podłącz na stałe"
  ],
  "Automatically selected host": [
   null,
@@ -139,9 +139,17 @@ return plural;
   null,
   "Magistrala"
  ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "Działanie CHANGE NETWORK STATE się nie powiodło"
+ ],
  "CPU Type:": [
   null,
   "Typ procesora:"
+ ],
+ "CREATE VM action failed": [
+  null,
+  "Działanie CREATE VM się nie powiodło"
  ],
  "Cancel": [
   null,
@@ -323,6 +331,10 @@ return plural;
   null,
   "Sformatuj"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "Działanie GET HYPERVISOR MAX VCPU się nie powiodło"
+ ],
  "GiB": [
   null,
   "GiB"
@@ -351,6 +363,10 @@ return plural;
   null,
   "Gospodarz do konserwacji"
  ],
+ "INSTALL VM action failed": [
+  null,
+  "Działanie INSTALL VM się nie powiodło"
+ ],
  "Install": [
   null,
   "Zainstaluj"
@@ -370,6 +386,10 @@ return plural;
  "MAC Address": [
   null,
   "Adres MAC"
+ ],
+ "MIGRATE action failed": [
+  null,
+  "Działanie MIGRATE się nie powiodło"
  ],
  "Mac Address": [
   null,
@@ -491,6 +511,10 @@ return plural;
   null,
   "Przegląd"
  ],
+ "Persistence": [
+  null,
+  "Trwałość"
+ ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
   "Proszę potwierdzić, gospodarz zostanie przełączony do trybu konserwacji."
@@ -543,9 +567,17 @@ return plural;
   null,
   "Preferowana liczba gniazd eksponowanych gościowi."
  ],
+ "Preparing for Maintenance": [
+  null,
+  "Przygotowywanie do konserwacji"
+ ],
  "Protocol": [
   null,
   "Protokół"
+ ],
+ "REBOOT action failed": [
+  null,
+  "Działanie REBOOT się nie powiodło"
  ],
  "Readonly": [
   null,
@@ -583,6 +615,14 @@ return plural;
   null,
   "Działa od:"
  ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  "Działanie SET VCPU SETTINGS się nie powiodło"
+ ],
+ "SHUTDOWN action failed": [
+  null,
+  "Działanie SHUTDOWN się nie powiodło"
+ ],
  "SPICE": [
   null,
   "SPICE"
@@ -599,6 +639,14 @@ return plural;
   null,
   "Port TLS SPICE:"
  ],
+ "START action failed": [
+  null,
+  "Działanie START się nie powiodło"
+ ],
+ "SUSPEND action failed": [
+  null,
+  "Działanie SUSPEND się nie powiodło"
+ ],
  "Save": [
   null,
   "Zapisz"
@@ -614,6 +662,10 @@ return plural;
  "Serial Console": [
   null,
   "Konsola szeregowa"
+ ],
+ "Session": [
+  null,
+  "Sesja"
  ],
  "Shut Down": [
   null,
@@ -654,6 +706,18 @@ return plural;
  "Switch Host to Maintenance": [
   null,
   "Przełącz gospodarza do konserwacji"
+ ],
+ "Switching host to maintenance mode failed. Received error: ": [
+  null,
+  "Przełączenie gospodarza do trybu konserwacji się nie powiodło. Otrzymany błąd:"
+ ],
+ "Switching host to maintenance mode in progress ...": [
+  null,
+  "Trwa przełączanie gospodarza do trybu konserwacji…"
+ ],
+ "System": [
+  null,
+  "System"
  ],
  "Target": [
   null,
@@ -759,6 +823,38 @@ return plural;
   null,
   "Zarządzanie usługami VDSM"
  ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  "Działanie VM DELETE (DESTROY) się nie powiodło"
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  "Działanie VM DELETE (UNDEFINE) się nie powiodło"
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "Działanie VM FORCE OFF się nie powiodło"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "Działanie VM FORCE REBOOT się nie powiodło"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "Działanie VM REBOOT się nie powiodło"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "Działanie VM SEND niemaskowalnego przerwania się nie powiodło"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "Działanie VM SHUT DOWN się nie powiodło"
+ ],
+ "VM START action failed": [
+  null,
+  "Działanie VM START się nie powiodło"
+ ],
  "VM icon": [
   null,
   "Ikona maszyny wirtualnej"
@@ -799,21 +895,117 @@ return plural;
   null,
   "Wolumin"
  ],
+ "bridge": [
+  null,
+  "mostek"
+ ],
+ "cdrom": [
+  null,
+  "CD-ROM"
+ ],
+ "connecting": [
+  null,
+  "łączenie"
+ ],
  "cores": [
   null,
   "rdzenie"
+ ],
+ "crashed": [
+  null,
+  "uległo awarii"
+ ],
+ "custom": [
+  null,
+  "niestandardowe"
+ ],
+ "direct": [
+  null,
+  "bezpośrednie"
  ],
  "disabled": [
   null,
   "wyłączone"
  ],
+ "disk": [
+  null,
+  "dysk"
+ ],
+ "down": [
+  null,
+  "w dół"
+ ],
+ "dying": [
+  null,
+  "w trakcie umierania"
+ ],
  "enabled": [
   null,
   "włączone"
  ],
+ "error": [
+  null,
+  "błąd"
+ ],
+ "ethernet": [
+  null,
+  "Ethernet"
+ ],
+ "host": [
+  null,
+  "gospodarz"
+ ],
+ "hostdev": [
+  null,
+  "urządzenie gospodarza"
+ ],
+ "idle": [
+  null,
+  "bezczynne"
+ ],
+ "initializing": [
+  null,
+  "inicjowanie"
+ ],
+ "installation failed": [
+  null,
+  "instalacja się nie powiodła"
+ ],
+ "installing OS": [
+  null,
+  "instalowanie systemu operacyjnego"
+ ],
+ "kdumping": [
+  null,
+  "zrzucanie kdump"
+ ],
+ "maintenance": [
+  null,
+  "konserwacja"
+ ],
+ "mcast": [
+  null,
+  "multicast"
+ ],
+ "network": [
+  null,
+  "sieć"
+ ],
  "no": [
   null,
   "nie"
+ ],
+ "non operational": [
+  null,
+  "nie działa"
+ ],
+ "non responsive": [
+  null,
+  "nie odpowiada"
+ ],
+ "oVirt": [
+  null,
+  "oVirt"
  ],
  "oVirt Host State:": [
   null,
@@ -835,6 +1027,18 @@ return plural;
   null,
   "Trwa logowanie oprogramowania oVirt"
  ],
+ "other": [
+  null,
+  "inne"
+ ],
+ "paused": [
+  null,
+  "wstrzymane"
+ ],
+ "pending approval": [
+  null,
+  "oczekuje na akceptację"
+ ],
  "qcow2": [
   null,
   "qcow2"
@@ -842,6 +1046,18 @@ return plural;
  "raw": [
   null,
   "surowy"
+ ],
+ "reboot": [
+  null,
+  "uruchom ponownie"
+ ],
+ "running": [
+  null,
+  "działanie"
+ ],
+ "server": [
+  null,
+  "serwer"
  ],
  "show less": [
   null,
@@ -851,17 +1067,45 @@ return plural;
   null,
   "wyświetl więcej"
  ],
+ "shut off": [
+  null,
+  "wyłącz"
+ ],
+ "shutdown": [
+  null,
+  "wyłączenie"
+ ],
  "sockets": [
   null,
   "gniazda"
+ ],
+ "suspended (PM)": [
+  null,
+  "uśpione (PM)"
  ],
  "threads": [
   null,
   "wątki"
  ],
+ "udp": [
+  null,
+  "UDP"
+ ],
+ "unassigned": [
+  null,
+  "nieprzydzielone"
+ ],
  "undefined": [
   null,
   "nieokreślone"
+ ],
+ "up": [
+  null,
+  "w górę"
+ ],
+ "user": [
+  null,
+  "użytkownik"
  ],
  "vCPU Count": [
   null,
@@ -878,6 +1122,10 @@ return plural;
  "vCPUs:": [
   null,
   "Wirtualne procesory:"
+ ],
+ "vhostuser": [
+  null,
+  "użytkownik gospodarza wirtualizacji"
  ],
  "yes": [
   null,

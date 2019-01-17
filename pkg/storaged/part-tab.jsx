@@ -17,16 +17,14 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-"use strict";
-
 import React from "react";
 
 import cockpit from "cockpit";
-import utils from "./utils.js";
+import * as utils from "./utils.js";
 
 const _ = cockpit.gettext;
 
-class PartitionTab extends React.Component {
+export class PartitionTab extends React.Component {
     render() {
         var block_part = this.props.client.blocks_part[this.props.block.path];
 
@@ -56,7 +54,3 @@ class PartitionTab extends React.Component {
         );
     }
 }
-
-module.exports = {
-    PartitionTab: PartitionTab
-};

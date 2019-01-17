@@ -67,6 +67,10 @@ return plural;
   "language": "ru",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Template": [
+  null,
+  "$0 шаблон"
+ ],
  "$0 is not available from any repository.": [
   null,
   "$0 недоступен из какого-либо репозитория."
@@ -86,6 +90,10 @@ return plural;
  "1 hour": [
   null,
   "1 час"
+ ],
+ "1 min": [
+  null,
+  "1 минута"
  ],
  "1 week": [
   null,
@@ -135,6 +143,10 @@ return plural;
   null,
   "первый"
  ],
+ "2 min": [
+  null,
+  "2 мин."
+ ],
  "20 Minutes": [
   null,
   "20 минут"
@@ -183,6 +195,10 @@ return plural;
   null,
   "второй"
  ],
+ "3 min": [
+  null,
+  "3 мин."
+ ],
  "30th": [
   null,
   "тридцатые"
@@ -195,6 +211,10 @@ return plural;
   null,
   "третий"
  ],
+ "4 min": [
+  null,
+  "4 мин."
+ ],
  "40 Minutes": [
   null,
   "40 минут"
@@ -204,6 +224,10 @@ return plural;
   "четвёртая"
  ],
  "5 Minutes": [
+  null,
+  "5 минут"
+ ],
+ "5 min": [
   null,
   "5 минут"
  ],
@@ -243,6 +267,10 @@ return plural;
   null,
   "Дополнительные пакеты:"
  ],
+ "Advanced TCA": [
+  null,
+  "Расширенный TCA"
+ ],
  "After": [
   null,
   "После"
@@ -254,6 +282,10 @@ return plural;
  "Alert and above": [
   null,
   "Предупреждение и выше"
+ ],
+ "All In One": [
+  null,
+  "Все в одном"
  ],
  "Asset Tag": [
   null,
@@ -283,6 +315,34 @@ return plural;
   null,
   "Версия BIOS"
  ],
+ "Before": [
+  null,
+  "До"
+ ],
+ "Binds To": [
+  null,
+  "Привязывается к"
+ ],
+ "Blade": [
+  null,
+  "лопасть"
+ ],
+ "Blade enclosure": [
+  null,
+  "Корпус лезвия"
+ ],
+ "Bound By": [
+  null,
+  "Связано"
+ ],
+ "Bug Fix Updates Available": [
+  null,
+  "Доступны исправления ошибок"
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  "Шина расширения шины"
+ ],
  "CPU": [
   null,
   "ЦП"
@@ -294,6 +354,10 @@ return plural;
  "Cancel": [
   null,
   "Отмена"
+ ],
+ "Cannot schedule event in the past": [
+  null,
+  "Невозможно запланировать событие в прошлом"
  ],
  "Change": [
   null,
@@ -307,6 +371,10 @@ return plural;
   null,
   "Изменить системное время"
  ],
+ "Checking for updates…": [
+  null,
+  "Проверка обновлений…"
+ ],
  "Checking installed software": [
   null,
   "Проверка установленного программного обеспечения"
@@ -314,6 +382,10 @@ return plural;
  "Class": [
   null,
   "Класс"
+ ],
+ "Click to see system hardware information": [
+  null,
+  "Нажмите, чтобы просмотреть информацию о системном оборудовании"
  ],
  "Close": [
   null,
@@ -323,9 +395,33 @@ return plural;
   null,
   "Команда"
  ],
+ "Compact PCI": [
+  null,
+  "Компактный PCI"
+ ],
+ "Condition $0=$1 was not met": [
+  null,
+  "Состояние $0знак равно$1 не было выполнено"
+ ],
  "Condition failed": [
   null,
   "Не удалось выполнить условие"
+ ],
+ "Conflicted By": [
+  null,
+  "Конфликт"
+ ],
+ "Conflicts": [
+  null,
+  "Конфликты"
+ ],
+ "Consists Of": [
+  null,
+  "Состоит из"
+ ],
+ "Convertible": [
+  null,
+  "конвертируемый"
  ],
  "Create Timer": [
   null,
@@ -355,9 +451,29 @@ return plural;
   null,
   "Описание"
  ],
+ "Desktop": [
+  null,
+  "Рабочий стол"
+ ],
+ "Detachable": [
+  null,
+  "отрывной"
+ ],
+ "Disable": [
+  null,
+  "Отключить"
+ ],
+ "Disabled": [
+  null,
+  "Выключено"
+ ],
  "Disk I/O": [
   null,
   "Дисковый ввод-вывод"
+ ],
+ "Docking Station": [
+  null,
+  "Док-станция"
  ],
  "Domain": [
   null,
@@ -371,9 +487,29 @@ return plural;
   null,
   "загрузка $0"
  ],
+ "Embedded PC": [
+  null,
+  "Встроенный ПК"
+ ],
+ "Enable": [
+  null,
+  "Включить"
+ ],
+ "Enable Forcefully": [
+  null,
+  "Включить принудительно"
+ ],
  "Enable stored metrics…": [
   null,
   "Включить сохраненные метрики ..."
+ ],
+ "Enabled": [
+  null,
+  "Включено"
+ ],
+ "Enhancement Updates Available": [
+  null,
+  "Доступны обновленные обновления"
  ],
  "Entry": [
   null,
@@ -391,6 +527,10 @@ return plural;
   null,
   "Все"
  ],
+ "Expansion Chassis": [
+  null,
+  "Шасси расширения"
+ ],
  "Friday": [
   null,
   "Пятница"
@@ -406,6 +546,10 @@ return plural;
  "Go to now": [
   null,
   "Перейдите к"
+ ],
+ "Hand Held": [
+  null,
+  "Ручная работа"
  ],
  "Hardware": [
   null,
@@ -423,6 +567,10 @@ return plural;
   null,
   "Время: минута"
  ],
+ "Hour needs to be a number between 0-23": [
+  null,
+  "Час должен быть числом от 0 до 23"
+ ],
  "Hours": [
   null,
   "Часы"
@@ -430,6 +578,10 @@ return plural;
  "I/O Wait": [
   null,
   "Ожидание ввода-вывода"
+ ],
+ "Id": [
+  null,
+  "Идентификатор"
  ],
  "Info and above": [
   null,
@@ -451,9 +603,37 @@ return plural;
   null,
   "иллюстрировать примерами"
  ],
+ "Invalid date format": [
+  null,
+  "Неверный формат даты"
+ ],
+ "Invalid date format and invalid time format": [
+  null,
+  "Недопустимый формат даты и неверный формат времени"
+ ],
+ "Invalid date format.": [
+  null,
+  "Неверный формат даты."
+ ],
+ "Invalid number.": [
+  null,
+  "Неправильный номер."
+ ],
+ "Invalid time format": [
+  null,
+  "Недопустимый формат времени"
+ ],
  "Invalid time zone": [
   null,
   "Недействительный часовой пояс"
+ ],
+ "IoT Gateway": [
+  null,
+  "IoT Gateway"
+ ],
+ "Joins Namespace Of": [
+  null,
+  "Присоединяется к пространству имен"
  ],
  "Journal": [
   null,
@@ -471,6 +651,10 @@ return plural;
   null,
   "Ядро"
  ],
+ "Laptop": [
+  null,
+  "портативный компьютер"
+ ],
  "Last 24 hours": [
   null,
   "Последние 24 часа"
@@ -478,6 +662,10 @@ return plural;
  "Last 7 days": [
   null,
   "Последние 7 дней"
+ ],
+ "Last Trigger": [
+  null,
+  "Последний триггер"
  ],
  "Load earlier entries": [
   null,
@@ -495,6 +683,14 @@ return plural;
   null,
   "Журналы"
  ],
+ "Low Profile Desktop": [
+  null,
+  "Низкий профиль рабочего стола"
+ ],
+ "Lunch Box": [
+  null,
+  "Коробка для ланча"
+ ],
  "Machine ID": [
   null,
   "ИД машины"
@@ -503,9 +699,21 @@ return plural;
   null,
   "Отпечатки пальцев машины SSH"
  ],
+ "Main Server Chassis": [
+  null,
+  "Основной серверный корпус"
+ ],
  "Manually": [
   null,
   "Вручную"
+ ],
+ "Mask": [
+  null,
+  "Маска"
+ ],
+ "Mask Forcefully": [
+  null,
+  "Маска насильно"
  ],
  "Memory": [
   null,
@@ -514,6 +722,22 @@ return plural;
  "Memory & Swap": [
   null,
   "Память и обмен"
+ ],
+ "Message to logged in users": [
+  null,
+  "Сообщение для зарегистрированных пользователей"
+ ],
+ "Mini PC": [
+  null,
+  "Мини-ПК"
+ ],
+ "Mini Tower": [
+  null,
+  "Мини-башня"
+ ],
+ "Minute needs to be a number between 0-59": [
+  null,
+  "Минута должна быть числом от 0 до 59"
  ],
  "Minutes": [
   null,
@@ -527,13 +751,29 @@ return plural;
   null,
   "Понедельник"
  ],
+ "Multi-system Chassis": [
+  null,
+  "Многосистемное шасси"
+ ],
+ "NTP Server": [
+  null,
+  "Сервер NTP"
+ ],
  "Name": [
   null,
   "Имя"
  ],
+ "Need at least one NTP server": [
+  null,
+  "Нужна, по крайней мере, один сервер NTP"
+ ],
  "Network Traffic": [
   null,
   "Сетевой трафик"
+ ],
+ "Next Run": [
+  null,
+  "Следующий прогон"
  ],
  "Nice": [
   null,
@@ -559,6 +799,10 @@ return plural;
   null,
   "Примечание"
  ],
+ "Notebook": [
+  null,
+  "Ноутбук"
+ ],
  "Notice and above": [
   null,
   "Извещение и выше"
@@ -575,17 +819,37 @@ return plural;
   null,
   "Вкл"
  ],
+ "On Failure": [
+  null,
+  "О неисправности"
+ ],
  "Only Emergency": [
   null,
   "Только чрезвычайная ситуация"
+ ],
+ "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
+  null,
+  "Только алфавиты, числа,:, _,. , @ , - разрешены."
  ],
  "Operating System": [
   null,
   "Операционная система"
  ],
+ "Other": [
+  null,
+  "Другие"
+ ],
  "PCI": [
   null,
   "PCI"
+ ],
+ "PackageKit crashed": [
+  null,
+  "Пакет PackageKit разбился"
+ ],
+ "Part Of": [
+  null,
+  "Часть"
  ],
  "Paths": [
   null,
@@ -595,9 +859,29 @@ return plural;
   null,
   "Профиль производительности"
  ],
+ "Peripheral Chassis": [
+  null,
+  "Периферийное шасси"
+ ],
+ "Pizza Box": [
+  null,
+  "Коробка для пиццы"
+ ],
+ "Portable": [
+  null,
+  "портативный"
+ ],
  "Power Options": [
   null,
   "Электропитание"
+ ],
+ "Preset": [
+  null,
+  "Предустановленная"
+ ],
+ "Preset Forcefully": [
+  null,
+  "Предварительно установленный"
  ],
  "Pretty Host Name": [
   null,
@@ -611,9 +895,29 @@ return plural;
   null,
   "Информация о проблеме"
  ],
+ "Propagates Reload To": [
+  null,
+  "Продвигает"
+ ],
+ "RAID Chassis": [
+  null,
+  "Шасси RAID"
+ ],
+ "Rack Mount Chassis": [
+  null,
+  "Корпус для монтажа в стойку"
+ ],
  "Real Host Name": [
   null,
   "Реальное имя хоста"
+ ],
+ "Real host name can only contain lower-case characters, digits, dashes, and periods (with populated subdomains)": [
+  null,
+  "Реальное имя хоста может содержать только строчные символы, цифры, тире и периоды (с заполненными субдоменами)"
+ ],
+ "Real host name must be 64 characters or less": [
+  null,
+  "Реальное имя хоста должно быть не менее 64 символов"
  ],
  "Reboot": [
   null,
@@ -622,6 +926,14 @@ return plural;
  "Recent": [
   null,
   "Недавние"
+ ],
+ "Reload": [
+  null,
+  "Восстановить"
+ ],
+ "Reload Propagated From": [
+  null,
+  "Перезагрузить Пропагандированный"
  ],
  "Removals:": [
   null,
@@ -667,6 +979,22 @@ return plural;
   null,
   "Отчетность была неприемлемой. Попробуйте запустить `reporter-ureport -d "
  ],
+ "Required By": [
+  null,
+  "Требуется"
+ ],
+ "Requires": [
+  null,
+  "Требует"
+ ],
+ "Requisite": [
+  null,
+  "Реквизит"
+ ],
+ "Requisite Of": [
+  null,
+  "Реквизиты"
+ ],
  "Reset": [
   null,
   "Сбросить"
@@ -687,6 +1015,10 @@ return plural;
   null,
   "Сохранить"
  ],
+ "Sealed-case PC": [
+  null,
+  "Компьютер с герметичным корпусом"
+ ],
  "Seconds": [
   null,
   "Секунды"
@@ -694,6 +1026,10 @@ return plural;
  "Secure Shell Keys": [
   null,
   "Защищенные ключи ключей"
+ ],
+ "Security Updates Available": [
+  null,
+  "Доступные обновления для системы безопасности"
  ],
  "Service Logs": [
   null,
@@ -706,6 +1042,10 @@ return plural;
  "Services": [
   null,
   "Службы"
+ ],
+ "Set Host name": [
+  null,
+  "Установить имя хоста"
  ],
  "Set Time": [
   null,
@@ -723,6 +1063,10 @@ return plural;
   null,
   "Выключение"
  ],
+ "Since $0": [
+  null,
+  "поскольку $0"
+ ],
  "Slot": [
   null,
   "слот"
@@ -731,13 +1075,45 @@ return plural;
   null,
   "Сокеты"
  ],
+ "Space-saving Computer": [
+  null,
+  "Компактный компьютер"
+ ],
  "Specific Time": [
   null,
   "Конкретное время"
  ],
+ "Start": [
+  null,
+  "Пуск"
+ ],
+ "State": [
+  null,
+  "Состояние"
+ ],
+ "Static": [
+  null,
+  "Статический"
+ ],
+ "Stick PC": [
+  null,
+  "Stick PC"
+ ],
+ "Stop": [
+  null,
+  "Остановить"
+ ],
  "Store metrics": [
   null,
   "Хранить метрики"
+ ],
+ "Sub Chassis": [
+  null,
+  "Sub Chassis"
+ ],
+ "Sub Notebook": [
+  null,
+  "Sub Notebook"
  ],
  "Sunday": [
   null,
@@ -763,6 +1139,10 @@ return plural;
   null,
   "Сведения о системе"
  ],
+ "System Not Registered": [
+  null,
+  "Система не зарегистрирована"
+ ],
  "System Services": [
   null,
   "Системные службы"
@@ -771,6 +1151,14 @@ return plural;
   null,
   "Системное время"
  ],
+ "System Up To Date": [
+  null,
+  "Система до даты"
+ ],
+ "Tablet": [
+  null,
+  "Планшет"
+ ],
  "Targets": [
   null,
   "Цели"
@@ -778,6 +1166,42 @@ return plural;
  "Terminal": [
   null,
   "Терминал"
+ ],
+ "The user <b>$0</b> does not have permissions for creating timers": [
+  null,
+  "Пользователь <b>$0</b> не имеет разрешений для создания таймеров"
+ ],
+ "The user <b>$0</b> is not permitted to change the system time": [
+  null,
+  "Пользователь <b>$0</b> не разрешено изменять системное время"
+ ],
+ "The user <b>$0</b> is not permitted to enable or disable services": [
+  null,
+  "Пользователь <b>$0</b> не разрешено включать или отключать услуги"
+ ],
+ "The user <b>$0</b> is not permitted to modify hostnames": [
+  null,
+  "Пользователь <b>$0</b> не разрешается изменять имена хостов"
+ ],
+ "The user <b>$0</b> is not permitted to shutdown or restart this server": [
+  null,
+  "Пользователь <b>$0</b> не разрешено выключение или перезагрузка этого сервера"
+ ],
+ "The user <b>$0</b> is not permitted to start or stop services": [
+  null,
+  "Пользователь <b>$0</b> не разрешено запускать или останавливать услуги"
+ ],
+ "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
+  null,
+  "Этот день не существует в течение всех месяцев.<br> Таймер будет выполняться только в месяцах с 31-м."
+ ],
+ "This field cannot be empty.": [
+  null,
+  "Это поле не может быть пустым."
+ ],
+ "This unit is an instance of the $0 template.": [
+  null,
+  "Это устройство является экземпляром $0 шаблон."
  ],
  "This unit is not designed to be enabled explicitly.": [
   null,
@@ -799,6 +1223,18 @@ return plural;
   null,
   "Общий размер: $0"
  ],
+ "Tower": [
+  null,
+  "башня"
+ ],
+ "Triggered By": [
+  null,
+  "Вызваны"
+ ],
+ "Triggers": [
+  null,
+  "Триггеры"
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   "Попытка синхронизировать с {{Server}}"
@@ -810,6 +1246,24 @@ return plural;
  "Type": [
   null,
   "Тип"
+ ],
+ "Unknown": [
+  null,
+  "Неизвестно"
+ ],
+ "Unmask": [
+  null,
+  "Разоблачать"
+ ],
+ "Updates Available": [
+  null,
+  "Доступные обновления"
+ ],
+ "Usage of $0 CPU core": [
+  "Usage of $0 CPU cores",
+  "Использование $0 Ядро процессора",
+  "Использование $0 Процессорные ядра",
+  "Использование $0 Процессорные ядра"
  ],
  "Used": [
   null,
@@ -830,6 +1284,14 @@ return plural;
  "Waiting for other software management operations to finish": [
   null,
   "Ожидание выполнения других операций управления программным обеспечением"
+ ],
+ "Wanted By": [
+  null,
+  "разыскивается"
+ ],
+ "Wants": [
+  null,
+  "хочет"
  ],
  "Warning and above": [
   null,
@@ -854,5 +1316,27 @@ return plural;
  "[no data]": [
   null,
   "[нет данных]"
+ ],
+ "failed to list ssh host keys: $0": [
+  null,
+  "не удалось перечислить ключи хоста ssh: $0"
+ ],
+ "of $0 CPU core": [
+  "of $0 CPU cores",
+  "из $0 Ядро процессора",
+  "из $0 Процессорные ядра",
+  "из $0 Процессорные ядра"
+ ],
+ "unknown": [
+  null,
+  "неизвестно"
+ ],
+ "page-title\u0004CPU Status": [
+  null,
+  "Состояние процессора"
+ ],
+ "page-title\u0004Memory": [
+  null,
+  "Память"
  ]
 }));

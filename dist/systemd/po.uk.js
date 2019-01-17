@@ -67,6 +67,10 @@ return plural;
   "language": "uk",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Template": [
+  null,
+  "Шаблон $0"
+ ],
  "$0 is not available from any repository.": [
   null,
   "$0 немає у жодному зі сховищ."
@@ -86,6 +90,10 @@ return plural;
  "1 hour": [
   null,
   "1 година"
+ ],
+ "1 min": [
+  null,
+  "1 хв."
  ],
  "1 week": [
   null,
@@ -135,6 +143,10 @@ return plural;
   null,
   "1-е"
  ],
+ "2 min": [
+  null,
+  "2 хв."
+ ],
  "20 Minutes": [
   null,
   "20 хвилин"
@@ -183,6 +195,10 @@ return plural;
   null,
   "2-е"
  ],
+ "3 min": [
+  null,
+  "3 хв."
+ ],
  "30th": [
   null,
   "30-е"
@@ -195,6 +211,10 @@ return plural;
   null,
   "3-є"
  ],
+ "4 min": [
+  null,
+  "4 хв."
+ ],
  "40 Minutes": [
   null,
   "40 хвилин"
@@ -206,6 +226,10 @@ return plural;
  "5 Minutes": [
   null,
   "5 хвилин"
+ ],
+ "5 min": [
+  null,
+  "5 хв."
  ],
  "5 minutes": [
   null,
@@ -243,6 +267,10 @@ return plural;
   null,
   "Додаткові пакунки:"
  ],
+ "Advanced TCA": [
+  null,
+  "Розширене TCA"
+ ],
  "After": [
   null,
   "Після"
@@ -254,6 +282,10 @@ return plural;
  "Alert and above": [
   null,
   "Тривога і вище"
+ ],
+ "All In One": [
+  null,
+  "Усе-в-одному"
  ],
  "Asset Tag": [
   null,
@@ -283,6 +315,34 @@ return plural;
   null,
   "Версія BIOS"
  ],
+ "Before": [
+  null,
+  "До"
+ ],
+ "Binds To": [
+  null,
+  "Пов'язано з"
+ ],
+ "Blade": [
+  null,
+  "Blade"
+ ],
+ "Blade enclosure": [
+  null,
+  "Обгортка Blade"
+ ],
+ "Bound By": [
+  null,
+  "Пов'язано"
+ ],
+ "Bug Fix Updates Available": [
+  null,
+  "Доступні оновлення із виправленнями вад"
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  "Апаратний блок розширення каналу"
+ ],
  "CPU": [
   null,
   "Процесор"
@@ -294,6 +354,10 @@ return plural;
  "Cancel": [
   null,
   "Скасувати"
+ ],
+ "Cannot schedule event in the past": [
+  null,
+  "Не можна планувати подію на минуле"
  ],
  "Change": [
   null,
@@ -307,6 +371,10 @@ return plural;
   null,
   "Змінити системний час"
  ],
+ "Checking for updates…": [
+  null,
+  "Шукаємо оновлення…"
+ ],
  "Checking installed software": [
   null,
   "Перевіряємо встановлене програмне забезпечення"
@@ -314,6 +382,10 @@ return plural;
  "Class": [
   null,
   "Клас"
+ ],
+ "Click to see system hardware information": [
+  null,
+  "Натисніть, щоб побачити дані щодо обладнання системи"
  ],
  "Close": [
   null,
@@ -323,9 +395,33 @@ return plural;
   null,
   "Команда"
  ],
+ "Compact PCI": [
+  null,
+  "Компактний PCI"
+ ],
+ "Condition $0=$1 was not met": [
+  null,
+  "Умову $0=$1 не виконано"
+ ],
  "Condition failed": [
   null,
   "Не виконано умову"
+ ],
+ "Conflicted By": [
+  null,
+  "Конфліктує за"
+ ],
+ "Conflicts": [
+  null,
+  "Конфліктує"
+ ],
+ "Consists Of": [
+  null,
+  "Складається з"
+ ],
+ "Convertible": [
+  null,
+  "Змінюваний"
  ],
  "Create Timer": [
   null,
@@ -355,9 +451,29 @@ return plural;
   null,
   "Опис"
  ],
+ "Desktop": [
+  null,
+  "Робоча станція"
+ ],
+ "Detachable": [
+  null,
+  "Змінний"
+ ],
+ "Disable": [
+  null,
+  "Вимкнути"
+ ],
+ "Disabled": [
+  null,
+  "Вимкнено"
+ ],
  "Disk I/O": [
   null,
   "Дисковий ввід/вивід"
+ ],
+ "Docking Station": [
+  null,
+  "Станція заряджання"
  ],
  "Domain": [
   null,
@@ -371,9 +487,29 @@ return plural;
   null,
   "Отримуємо $0"
  ],
+ "Embedded PC": [
+  null,
+  "Вбудований ПК"
+ ],
+ "Enable": [
+  null,
+  "Увімкнути"
+ ],
+ "Enable Forcefully": [
+  null,
+  "Примусово увімкнути"
+ ],
  "Enable stored metrics…": [
   null,
   "Вмикання збереженої метрики…"
+ ],
+ "Enabled": [
+  null,
+  "Увімкнено"
+ ],
+ "Enhancement Updates Available": [
+  null,
+  "Доступні оновлення із поліпшеннями"
  ],
  "Entry": [
   null,
@@ -391,6 +527,10 @@ return plural;
   null,
   "Все"
  ],
+ "Expansion Chassis": [
+  null,
+  "Апаратний блок розширення"
+ ],
  "Friday": [
   null,
   "п'ятниця"
@@ -406,6 +546,10 @@ return plural;
  "Go to now": [
   null,
   "Перейти зараз"
+ ],
+ "Hand Held": [
+  null,
+  "Портативний"
  ],
  "Hardware": [
   null,
@@ -423,6 +567,10 @@ return plural;
   null,
   "Година : Хвилина"
  ],
+ "Hour needs to be a number between 0-23": [
+  null,
+  "Години слід вказувати у форматі числа від 0 до 23"
+ ],
  "Hours": [
   null,
   "Години"
@@ -430,6 +578,10 @@ return plural;
  "I/O Wait": [
   null,
   "Очікування В-В"
+ ],
+ "Id": [
+  null,
+  "Ід."
  ],
  "Info and above": [
   null,
@@ -451,9 +603,37 @@ return plural;
   null,
   "Створити екземпляр"
  ],
+ "Invalid date format": [
+  null,
+  "Некоректний формат дати"
+ ],
+ "Invalid date format and invalid time format": [
+  null,
+  "Некоректний формат дати і часу"
+ ],
+ "Invalid date format.": [
+  null,
+  "Некоректний формат дати."
+ ],
+ "Invalid number.": [
+  null,
+  "Некоректне число."
+ ],
+ "Invalid time format": [
+  null,
+  "Некоректний формат визначення часу"
+ ],
  "Invalid time zone": [
   null,
   "Некоректний часовий пояс"
+ ],
+ "IoT Gateway": [
+  null,
+  "Шлюз IoT"
+ ],
+ "Joins Namespace Of": [
+  null,
+  "Долучається до простору назв"
  ],
  "Journal": [
   null,
@@ -471,6 +651,10 @@ return plural;
   null,
   "Ядро"
  ],
+ "Laptop": [
+  null,
+  "Переносний ПК"
+ ],
  "Last 24 hours": [
   null,
   "Попередні 24 години"
@@ -478,6 +662,10 @@ return plural;
  "Last 7 days": [
   null,
   "Попередні 7 днів"
+ ],
+ "Last Trigger": [
+  null,
+  "Останній перемикач"
  ],
  "Load earlier entries": [
   null,
@@ -495,6 +683,14 @@ return plural;
   null,
   "Журнали"
  ],
+ "Low Profile Desktop": [
+  null,
+  "Низькопрофільна робоча станція"
+ ],
+ "Lunch Box": [
+  null,
+  "Пусковий комп'ютер"
+ ],
  "Machine ID": [
   null,
   "Ід. комп’ютера"
@@ -503,9 +699,21 @@ return plural;
   null,
   "Відбитки ключів SSH комп’ютерів"
  ],
+ "Main Server Chassis": [
+  null,
+  "Апаратний блок основного сервера"
+ ],
  "Manually": [
   null,
   "Вручну"
+ ],
+ "Mask": [
+  null,
+  "Маска"
+ ],
+ "Mask Forcefully": [
+  null,
+  "Примусово замаскувати"
  ],
  "Memory": [
   null,
@@ -514,6 +722,22 @@ return plural;
  "Memory & Swap": [
   null,
   "Пам'ять і резерв"
+ ],
+ "Message to logged in users": [
+  null,
+  "Повідомлення користувачам, які увійшли"
+ ],
+ "Mini PC": [
+  null,
+  "Міні-ПК"
+ ],
+ "Mini Tower": [
+  null,
+  "Міні-башточка"
+ ],
+ "Minute needs to be a number between 0-59": [
+  null,
+  "Хвилини слід вказувати у форматі числа від 0 до 59"
  ],
  "Minutes": [
   null,
@@ -527,13 +751,29 @@ return plural;
   null,
   "понеділок"
  ],
+ "Multi-system Chassis": [
+  null,
+  "Багатосистемний апаратний блок"
+ ],
+ "NTP Server": [
+  null,
+  "Сервер NTP"
+ ],
  "Name": [
   null,
   "Назва"
  ],
+ "Need at least one NTP server": [
+  null,
+  "Потрібен принаймні один сервер NTP"
+ ],
  "Network Traffic": [
   null,
   "Навантаження на мережу"
+ ],
+ "Next Run": [
+  null,
+  "Наступний запуск"
  ],
  "Nice": [
   null,
@@ -559,6 +799,10 @@ return plural;
   null,
   "Примітка"
  ],
+ "Notebook": [
+  null,
+  "Ноутбук"
+ ],
  "Notice and above": [
   null,
   "Зауваження і вище"
@@ -575,17 +819,37 @@ return plural;
   null,
   "Увімкнено"
  ],
+ "On Failure": [
+  null,
+  "Якщо помилка"
+ ],
  "Only Emergency": [
   null,
   "Лише критичне"
+ ],
+ "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
+  null,
+  "Можна використовувати лише літери, цифри, : , _ , . , @ , -."
  ],
  "Operating System": [
   null,
   "Операційна система"
  ],
+ "Other": [
+  null,
+  "Інше"
+ ],
  "PCI": [
   null,
   "PCI"
+ ],
+ "PackageKit crashed": [
+  null,
+  "Аварійне завершення роботи PackageKit"
+ ],
+ "Part Of": [
+  null,
+  "Частина"
  ],
  "Paths": [
   null,
@@ -595,9 +859,29 @@ return plural;
   null,
   "Профіль швидкодії"
  ],
+ "Peripheral Chassis": [
+  null,
+  "Периферійний апаратний блок"
+ ],
+ "Pizza Box": [
+  null,
+  "З коробку для піци"
+ ],
+ "Portable": [
+  null,
+  "Портативний"
+ ],
  "Power Options": [
   null,
   "Параметри живлення"
+ ],
+ "Preset": [
+  null,
+  "Шаблон"
+ ],
+ "Preset Forcefully": [
+  null,
+  "Примусово початкові налаштування"
  ],
  "Pretty Host Name": [
   null,
@@ -611,9 +895,29 @@ return plural;
   null,
   "Дані щодо проблеми"
  ],
+ "Propagates Reload To": [
+  null,
+  "Поширює перезавантаження на"
+ ],
+ "RAID Chassis": [
+  null,
+  "Апаратний блок RAID"
+ ],
+ "Rack Mount Chassis": [
+  null,
+  "Апаратний блок монтування стійок"
+ ],
  "Real Host Name": [
   null,
   "Справжня назва вузла"
+ ],
+ "Real host name can only contain lower-case characters, digits, dashes, and periods (with populated subdomains)": [
+  null,
+  "Назва справжнього вузла має складатися лише з літер у нижньому регістрі, цифр, дефісів та точок (із заповненими піддоменами)"
+ ],
+ "Real host name must be 64 characters or less": [
+  null,
+  "Назва справжнього вузла має складатися не більше ніж з 64 символів"
  ],
  "Reboot": [
   null,
@@ -622,6 +926,14 @@ return plural;
  "Recent": [
   null,
   "Нещодавні"
+ ],
+ "Reload": [
+  null,
+  "Перезавантажити"
+ ],
+ "Reload Propagated From": [
+  null,
+  "Поширене перезавантаження з"
  ],
  "Removals:": [
   null,
@@ -667,6 +979,22 @@ return plural;
   null,
   "Не вдалося надіслати звіт. Спробуйте віддати команду «reporter-ureport -d "
  ],
+ "Required By": [
+  null,
+  "Потрібен для"
+ ],
+ "Requires": [
+  null,
+  "Потребує"
+ ],
+ "Requisite": [
+  null,
+  "Потрібний"
+ ],
+ "Requisite Of": [
+  null,
+  "Потрібний для"
+ ],
  "Reset": [
   null,
   "Скинути"
@@ -687,6 +1015,10 @@ return plural;
   null,
   "Зберегти"
  ],
+ "Sealed-case PC": [
+  null,
+  "ПК з опломбованим корпусом"
+ ],
  "Seconds": [
   null,
   "Секунди"
@@ -694,6 +1026,10 @@ return plural;
  "Secure Shell Keys": [
   null,
   "Ключі захищеної оболонки (SSH)"
+ ],
+ "Security Updates Available": [
+  null,
+  "Доступні оновлення захисту"
  ],
  "Service Logs": [
   null,
@@ -706,6 +1042,10 @@ return plural;
  "Services": [
   null,
   "Служби"
+ ],
+ "Set Host name": [
+  null,
+  "Встановити назву вузла"
  ],
  "Set Time": [
   null,
@@ -723,6 +1063,10 @@ return plural;
   null,
   "Вимкнути"
  ],
+ "Since $0": [
+  null,
+  "З $0"
+ ],
  "Slot": [
   null,
   "Слот"
@@ -731,13 +1075,45 @@ return plural;
   null,
   "Сокети"
  ],
+ "Space-saving Computer": [
+  null,
+  "Компактний комп'ютер"
+ ],
  "Specific Time": [
   null,
   "У визначений час"
  ],
+ "Start": [
+  null,
+  "Почати"
+ ],
+ "State": [
+  null,
+  "Стан"
+ ],
+ "Static": [
+  null,
+  "Статичний"
+ ],
+ "Stick PC": [
+  null,
+  "Паличковий ПК"
+ ],
+ "Stop": [
+  null,
+  "Зупинити"
+ ],
  "Store metrics": [
   null,
   "Метрика зберігання"
+ ],
+ "Sub Chassis": [
+  null,
+  "Підблок"
+ ],
+ "Sub Notebook": [
+  null,
+  "Підноутбук"
  ],
  "Sunday": [
   null,
@@ -763,6 +1139,10 @@ return plural;
   null,
   "Дані щодо системи"
  ],
+ "System Not Registered": [
+  null,
+  "Систему не зареєстровано"
+ ],
  "System Services": [
   null,
   "Служби системи"
@@ -771,6 +1151,14 @@ return plural;
   null,
   "Системний час"
  ],
+ "System Up To Date": [
+  null,
+  "Система не потребує оновлення"
+ ],
+ "Tablet": [
+  null,
+  "Планшет"
+ ],
  "Targets": [
   null,
   "Призначення"
@@ -778,6 +1166,42 @@ return plural;
  "Terminal": [
   null,
   "Термінал"
+ ],
+ "The user <b>$0</b> does not have permissions for creating timers": [
+  null,
+  "Користувачу <b>$0</b> заборонено створювати таймери"
+ ],
+ "The user <b>$0</b> is not permitted to change the system time": [
+  null,
+  "Користувачу <b>$0</b> заборонено змінювати час системи"
+ ],
+ "The user <b>$0</b> is not permitted to enable or disable services": [
+  null,
+  "Користувачеві <b>$0</b> заборонено вмикати або вимикати служби"
+ ],
+ "The user <b>$0</b> is not permitted to modify hostnames": [
+  null,
+  "Користувачу <b>$0</b> не дозволено змінювати назви вузлів"
+ ],
+ "The user <b>$0</b> is not permitted to shutdown or restart this server": [
+  null,
+  "Користувачеві <b>$0</b> заборонено вимикати або перезапускати цей сервер"
+ ],
+ "The user <b>$0</b> is not permitted to start or stop services": [
+  null,
+  "Користувачеві <b>$0</b> заборонено запускати або зупиняти служби"
+ ],
+ "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
+  null,
+  "Цей день є не в усіх місяцях.<br> Таймер виконуватиметься лише у місяці, у яких є 31 день."
+ ],
+ "This field cannot be empty.": [
+  null,
+  "Вміст цього поля не може бути порожнім."
+ ],
+ "This unit is an instance of the $0 template.": [
+  null,
+  "Цей модуль є екземпляром шаблона $0."
  ],
  "This unit is not designed to be enabled explicitly.": [
   null,
@@ -799,6 +1223,18 @@ return plural;
   null,
   "Загальний розмір: $0"
  ],
+ "Tower": [
+  null,
+  "Башточка"
+ ],
+ "Triggered By": [
+  null,
+  "Причина вмикання"
+ ],
+ "Triggers": [
+  null,
+  "Умовні зміни"
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   "Намагаємося синхронізуватися з {{Server}}"
@@ -810,6 +1246,24 @@ return plural;
  "Type": [
   null,
   "Тип"
+ ],
+ "Unknown": [
+  null,
+  "Невідомий"
+ ],
+ "Unmask": [
+  null,
+  "Розмаскувати"
+ ],
+ "Updates Available": [
+  null,
+  "Доступні оновлення"
+ ],
+ "Usage of $0 CPU core": [
+  "Usage of $0 CPU cores",
+  "Використання $0 ядра процесора",
+  "Використання $0 ядер процесора",
+  "Використання $0 ядер процесора"
  ],
  "Used": [
   null,
@@ -830,6 +1284,14 @@ return plural;
  "Waiting for other software management operations to finish": [
   null,
   "Очікуємо на завершення інших дій із програмним забезпеченням"
+ ],
+ "Wanted By": [
+  null,
+  "Бажаний для"
+ ],
+ "Wants": [
+  null,
+  "Бажає"
  ],
  "Warning and above": [
   null,
@@ -854,5 +1316,27 @@ return plural;
  "[no data]": [
   null,
   "[немає даних]"
+ ],
+ "failed to list ssh host keys: $0": [
+  null,
+  "не вдалося побудувати список ключів SSH вузла: $0"
+ ],
+ "of $0 CPU core": [
+  "of $0 CPU cores",
+  "з $0 ядра процесора",
+  "з $0 ядер процесора",
+  "з $0 ядер процесора"
+ ],
+ "unknown": [
+  null,
+  "невідомо"
+ ],
+ "page-title\u0004CPU Status": [
+  null,
+  "Стан процесора"
+ ],
+ "page-title\u0004Memory": [
+  null,
+  "Пам'ять"
  ]
 }));

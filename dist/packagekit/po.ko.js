@@ -69,7 +69,7 @@ return plural;
  },
  "$0 is not available from any repository.": [
   null,
-  ""
+  "$0은/는 리포지터리에서 사용할 수 없습니다. "
  ],
  "$0 update": [
   "$0 updates",
@@ -77,7 +77,7 @@ return plural;
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "$0이/가 설치됩니다. "
  ],
  "$1 security fix": [
   "$1 security fixes",
@@ -85,7 +85,7 @@ return plural;
  ],
  ", including $1 security fix": [
   ", including $1 security fixes",
-  ""
+  "$1 보안 수정 포함"
  ],
  "Additional packages:": [
   null,
@@ -221,6 +221,10 @@ return plural;
  ],
  "Package information": [
   null,
+  "패키지 정보"
+ ],
+ "PackageKit crashed": [
+  null,
   ""
  ],
  "PackageKit is not installed": [
@@ -245,7 +249,7 @@ return plural;
  ],
  "Removing $0": [
   null,
-  ""
+  " $0 삭제 중 "
  ],
  "Restart Now": [
   null,
@@ -289,7 +293,7 @@ return plural;
  ],
  "The following packages were recently updated:": [
   null,
-  ""
+  "다음 패키지가 최근에 업데이트되었습니다: "
  ],
  "The following packages were updated $0:": [
   null,
@@ -329,7 +333,7 @@ return plural;
  ],
  "Updating": [
   null,
-  ""
+  "업데이트 중 "
  ],
  "Verified": [
   null,
@@ -337,7 +341,7 @@ return plural;
  ],
  "Verifying": [
   null,
-  ""
+  "확인 중"
  ],
  "Version": [
   null,
@@ -373,35 +377,35 @@ return plural;
  ],
  "every day": [
   null,
-  ""
+  "매일 "
  ],
  "on Fridays": [
   null,
-  ""
+  "금요일 "
  ],
  "on Mondays": [
   null,
-  ""
+  "월요일 "
  ],
  "on Saturdays": [
   null,
-  ""
+  "토요일 "
  ],
  "on Sundays": [
   null,
-  ""
+  "일요일 "
  ],
  "on Thursdays": [
   null,
-  ""
+  "목요일 "
  ],
  "on Tuesdays": [
   null,
-  ""
+  "화요일 "
  ],
  "on Wednesdays": [
   null,
-  ""
+  "수요일 "
  ],
  "security": [
   null,
@@ -409,6 +413,6 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "정의되지 않음 "
  ]
 }));

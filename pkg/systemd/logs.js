@@ -17,16 +17,13 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-var $ = require("jquery");
+import $ from "jquery";
+import cockpit from "cockpit";
+import { journal } from "journal";
+
 $(function() {
-    "use strict";
-
-    var cockpit = require("cockpit");
-
-    var journal = require("journal");
-
     cockpit.translate();
-    var _ = cockpit.gettext;
+    const _ = cockpit.gettext;
 
     var problems_client = cockpit.dbus('org.freedesktop.problems', { superuser: "try" });
     var service = problems_client.proxy('org.freedesktop.Problems2', '/org/freedesktop/Problems2');

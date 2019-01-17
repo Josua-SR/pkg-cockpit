@@ -73,11 +73,11 @@ return plural;
  ],
  "$0 is not available from any repository.": [
   null,
-  ""
+  "$0은/는 리포지터리에서 사용할 수 없습니다. "
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "$0이/가 설치됩니다. "
  ],
  "Additional packages:": [
   null,
@@ -89,11 +89,11 @@ return plural;
  ],
  "Are you sure you want to leave the '$0' domain?": [
   null,
-  ""
+  "'$0' 도메인을 종료하시겠습니까?"
  ],
  "Are you sure you want to leave this domain?": [
   null,
-  ""
+  "이 도메인을 종료하시겠습니까? "
  ],
  "Authentication": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "Computer OU": [
   null,
-  ""
+  "컴퓨터 OU"
  ],
  "Domain $0 could not be contacted": [
   null,
@@ -199,13 +199,17 @@ return plural;
   null,
   ""
  ],
+ "PackageKit crashed": [
+  null,
+  ""
+ ],
  "Removals:": [
   null,
   ""
  ],
  "Removing $0": [
   null,
-  ""
+  " $0 삭제 중 "
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
@@ -225,7 +229,7 @@ return plural;
  ],
  "User Password": [
   null,
-  ""
+  "사용자 암호 "
  ],
  "Waiting for other software management operations to finish": [
   null,
@@ -233,6 +237,6 @@ return plural;
  ],
  "e.g. \"$0\"": [
   null,
-  ""
+  "예: \"$0\""
  ]
 }));

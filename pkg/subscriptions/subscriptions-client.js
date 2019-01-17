@@ -17,10 +17,10 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-var cockpit = require("cockpit");
-var _ = cockpit.gettext;
+import cockpit from "cockpit";
+const _ = cockpit.gettext;
 
-var client = { };
+export var client = { };
 
 cockpit.event_target(client);
 
@@ -415,5 +415,3 @@ client.init = function() {
     // get initial status
     requestUpdate();
 };
-
-module.exports = client;

@@ -91,6 +91,14 @@ return plural;
   null,
   "Дополнительное хранилище"
  ],
+ "Advanced TCA": [
+  null,
+  "Расширенный TCA"
+ ],
+ "All In One": [
+  null,
+  "Все в одном"
+ ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
   "Все данные на выбранных дисках будут удалены, а диски будут добавлены в пул хранения."
@@ -102,6 +110,18 @@ return plural;
  "Author": [
   null,
   "Автор"
+ ],
+ "Blade": [
+  null,
+  "лопасть"
+ ],
+ "Blade enclosure": [
+  null,
+  "Корпус лезвия"
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  "Шина расширения шины"
  ],
  "CPU": [
   null,
@@ -169,6 +189,10 @@ return plural;
   null,
   "Commit Image"
  ],
+ "Compact PCI": [
+  null,
+  "Компактный PCI"
+ ],
  "Configure storage...": [
   null,
   "Настроить хранилище ..."
@@ -201,6 +225,10 @@ return plural;
   null,
   "Контейнеры"
  ],
+ "Convertible": [
+  null,
+  "конвертируемый"
+ ],
  "Could not add all disks": [
   null,
   "Не удалось добавить все диски"
@@ -229,6 +257,14 @@ return plural;
   null,
   "Удаление контейнера приведет к удалению всех данных."
  ],
+ "Desktop": [
+  null,
+  "Рабочий стол"
+ ],
+ "Detachable": [
+  null,
+  "отрывной"
+ ],
  "Details": [
   null,
   "Подробности"
@@ -236,6 +272,10 @@ return plural;
  "Docker is not installed or activated on the system": [
   null,
   "Докер не установлен или не активирован в системе"
+ ],
+ "Docking Station": [
+  null,
+  "Док-станция"
  ],
  "Download": [
   null,
@@ -252,6 +292,10 @@ return plural;
  "Duplicate port": [
   null,
   "Дублированный порт"
+ ],
+ "Embedded PC": [
+  null,
+  "Встроенный ПК"
  ],
  "Entrypoint": [
   null,
@@ -276,6 +320,10 @@ return plural;
  "Exited $ExitCode": [
   null,
   "возбужденном $ExitCode"
+ ],
+ "Expansion Chassis": [
+  null,
+  "Шасси расширения"
  ],
  "Expose container ports": [
   null,
@@ -304,6 +352,10 @@ return plural;
  "Get new image": [
   null,
   "Получить новое изображение"
+ ],
+ "Hand Held": [
+  null,
+  "Ручная работа"
  ],
  "Hard Disk": [
   null,
@@ -357,6 +409,14 @@ return plural;
   null,
   "Недопустимый порт"
  ],
+ "IoT Gateway": [
+  null,
+  "IoT Gateway"
+ ],
+ "Laptop": [
+  null,
+  "портативный компьютер"
+ ],
  "Link to another container": [
   null,
   "Ссылка на другой контейнер"
@@ -373,9 +433,21 @@ return plural;
   null,
   "Локальные диски"
  ],
+ "Low Profile Desktop": [
+  null,
+  "Низкий профиль рабочего стола"
+ ],
+ "Lunch Box": [
+  null,
+  "Коробка для ланча"
+ ],
  "MAC Address:": [
   null,
   "MAC-адрес:"
+ ],
+ "Main Server Chassis": [
+  null,
+  "Основной серверный корпус"
  ],
  "Memory": [
   null,
@@ -393,9 +465,21 @@ return plural;
   null,
   "МиБ"
  ],
+ "Mini PC": [
+  null,
+  "Мини-ПК"
+ ],
+ "Mini Tower": [
+  null,
+  "Мини-башня"
+ ],
  "Mount container volumes": [
   null,
   "Объемы контейнеров"
+ ],
+ "Multi-system Chassis": [
+  null,
+  "Многосистемное шасси"
  ],
  "Name": [
   null,
@@ -453,6 +537,10 @@ return plural;
   null,
   "Не найдено"
  ],
+ "Notebook": [
+  null,
+  "Ноутбук"
+ ],
  "Off": [
   null,
   "Выкл"
@@ -475,9 +563,21 @@ return plural;
   "При сбое повторите попытку $0 раз",
   "При сбое повторите попытку $0 раз"
  ],
+ "Other": [
+  null,
+  "Другие"
+ ],
  "Overview": [
   null,
   "Обзор"
+ ],
+ "Peripheral Chassis": [
+  null,
+  "Периферийное шасси"
+ ],
+ "Pizza Box": [
+  null,
+  "Коробка для пиццы"
  ],
  "Please confirm deletion of $0": [
   null,
@@ -491,6 +591,10 @@ return plural;
   null,
   "Попробуйте другой термин"
  ],
+ "Portable": [
+  null,
+  "портативный"
+ ],
  "Ports": [
   null,
   "Порты"
@@ -502,6 +606,14 @@ return plural;
  "Problems": [
   null,
   "Проблемы"
+ ],
+ "RAID Chassis": [
+  null,
+  "Шасси RAID"
+ ],
+ "Rack Mount Chassis": [
+  null,
+  "Корпус для монтажа в стойку"
  ],
  "ReadOnly": [
   null,
@@ -559,6 +671,10 @@ return plural;
   null,
   "Запустить изображение"
  ],
+ "Sealed-case PC": [
+  null,
+  "Компьютер с герметичным корпусом"
+ ],
  "Security": [
   null,
   "Безопасность"
@@ -583,6 +699,10 @@ return plural;
   null,
   "Твердотельный диск"
  ],
+ "Space-saving Computer": [
+  null,
+  "Компактный компьютер"
+ ],
  "Start": [
   null,
   "Пуск"
@@ -598,6 +718,10 @@ return plural;
  "State:": [
   null,
   "Состояние:"
+ ],
+ "Stick PC": [
+  null,
+  "Stick PC"
  ],
  "Stop": [
   null,
@@ -619,9 +743,21 @@ return plural;
   null,
   "Пул"
  ],
+ "Sub Chassis": [
+  null,
+  "Sub Chassis"
+ ],
+ "Sub Notebook": [
+  null,
+  "Sub Notebook"
+ ],
  "TCP": [
   null,
   "TCP"
+ ],
+ "Tablet": [
+  null,
+  "Планшет"
  ],
  "Tag": [
   null,
@@ -655,6 +791,10 @@ return plural;
   null,
   "Всего"
  ],
+ "Tower": [
+  null,
+  "башня"
+ ],
  "Try again": [
   null,
   "Попробуйте снова"
@@ -670,6 +810,10 @@ return plural;
  "Unexpected error": [
   null,
   "Непредвиденная ошибка"
+ ],
+ "Unknown": [
+  null,
+  "Неизвестно"
  ],
  "Unless Stopped": [
   null,

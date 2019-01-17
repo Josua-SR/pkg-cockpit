@@ -797,43 +797,43 @@ return plural;
  ],
  "UDP": [
   null,
-  ""
+  "UDP"
  ],
  "Unexpected error": [
   null,
-  ""
+  "Oväntat fel"
  ],
  "Unknown": [
   null,
-  ""
+  "Okänd"
  ],
  "Unknown \"$0\"": [
   null,
-  ""
+  "Okänt ”$0”"
  ],
  "Unknown configuration": [
   null,
-  ""
+  "Okänd konfiguration"
  ],
  "Unmanaged Interfaces": [
   null,
-  ""
+  "Ej hanterade gränssnitt"
  ],
  "VLAN": [
   null,
-  ""
+  "VLAN"
  ],
  "VLAN Id": [
   null,
-  ""
+  "VLAN-id"
  ],
  "VLAN Settings": [
   null,
-  ""
+  "VLAN-inställningar"
  ],
  "Waiting": [
   null,
-  ""
+  "Väntar"
  ],
  "XOR": [
   null,
@@ -857,7 +857,7 @@ return plural;
  ],
  "[no data]": [
   null,
-  ""
+  "[inga data]"
  ],
  "page-title\u0004Networking": [
   null,

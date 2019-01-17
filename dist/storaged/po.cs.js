@@ -915,11 +915,11 @@ return plural;
  ],
  "Name cannot be longer than $0 bytes": [
   null,
-  ""
+  "Název nemůže být delší než $0 bajtů"
  ],
  "Name cannot be longer than $0 characters": [
   null,
-  ""
+  "Název nemůže být delší než $0 znaků"
  ],
  "Name cannot be longer than 127 characters.": [
   null,
@@ -1056,6 +1056,10 @@ return plural;
  "Overwrite existing data with zeros": [
   null,
   "Přepsat existující data nulami"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit zhavaroval"
  ],
  "Partition": [
   null,
@@ -1449,6 +1453,10 @@ return plural;
   null,
   "Záznamy událostí úložiště"
  ],
+ "Storage can not be managed on this system.": [
+  null,
+  "Úložiště není na tomto systému možné spravovat."
+ ],
  "Store passphrase": [
   null,
   "Uložit heslovou frázi"
@@ -1476,10 +1484,6 @@ return plural;
  "Tang keyserver": [
   null,
   "Tang server s klíči"
- ],
- "The \"storaged\" API is not available on this system.": [
-  null,
-  "Aplikační programové rozhraní „storaged“ není na tomto systému k dispozici."
  ],
  "The RAID Array is in a degraded state": [
   null,

@@ -91,9 +91,17 @@ return plural;
   null,
   "추가 스토리지 "
  ],
+ "Advanced TCA": [
+  null,
+  "고급 TCA"
+ ],
+ "All In One": [
+  null,
+  "일체형 "
+ ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
-  ""
+  "선택된 디스크의 모든 데이터가 삭제되며 디스크는 스토리지 풀에 추가됩니다. "
  ],
  "Always": [
   null,
@@ -102,6 +110,18 @@ return plural;
  "Author": [
   null,
   "작성자"
+ ],
+ "Blade": [
+  null,
+  "블레이드 "
+ ],
+ "Blade enclosure": [
+  null,
+  "블레이드 인클로저 "
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  "버스 확장 섀시"
  ],
  "CPU": [
   null,
@@ -145,7 +165,7 @@ return plural;
  ],
  "Combined usage of $0 CPU core": [
   "Combined usage of $0 CPU cores",
-  ""
+  "$0 CPU 코어의 총 사용량"
  ],
  "Command": [
   null,
@@ -165,11 +185,15 @@ return plural;
  ],
  "Commit Image": [
   null,
+  "이미지 커밋 "
+ ],
+ "Compact PCI": [
+  null,
   ""
  ],
  "Configure storage...": [
   null,
-  ""
+  "스토리지 설정..."
  ],
  "Connecting to Docker": [
   null,
@@ -193,15 +217,19 @@ return plural;
  ],
  "Container:": [
   null,
-  ""
+  "컨테이너:"
  ],
  "Containers": [
   null,
   "컨테이너들"
  ],
+ "Convertible": [
+  null,
+  "변환 가능 "
+ ],
  "Could not add all disks": [
   null,
-  ""
+  "모든 디스크를 추가할 수 없습니다 "
  ],
  "Could not reset the storage pool": [
   null,
@@ -227,6 +255,14 @@ return plural;
   null,
   "컨테이너를 삭제하시면, 내부의 모든 데이터도 함께 삭제됩니다. "
  ],
+ "Desktop": [
+  null,
+  "데스크탑"
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Details": [
   null,
   "상세 정보"
@@ -234,6 +270,10 @@ return plural;
  "Docker is not installed or activated on the system": [
   null,
   "본 시스템에 Docker가 설치되어 있지 않거나 활성화되어 있지 않습니다."
+ ],
+ "Docking Station": [
+  null,
+  ""
  ],
  "Download": [
   null,
@@ -250,6 +290,10 @@ return plural;
  "Duplicate port": [
   null,
   "포트 복제"
+ ],
+ "Embedded PC": [
+  null,
+  ""
  ],
  "Entrypoint": [
   null,
@@ -274,6 +318,10 @@ return plural;
  "Exited $ExitCode": [
   null,
   "$ExitCode 로 종료"
+ ],
+ "Expansion Chassis": [
+  null,
+  ""
  ],
  "Expose container ports": [
   null,
@@ -300,6 +348,10 @@ return plural;
   "게이트웨이:"
  ],
  "Get new image": [
+  null,
+  ""
+ ],
+ "Hand Held": [
   null,
   ""
  ],
@@ -355,6 +407,14 @@ return plural;
   null,
   "잘못된 포트"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
+ "Laptop": [
+  null,
+  ""
+ ],
  "Link to another container": [
   null,
   ""
@@ -371,9 +431,21 @@ return plural;
   null,
   ""
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "MAC Address:": [
   null,
   "주소"
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
  ],
  "Memory": [
   null,
@@ -391,7 +463,19 @@ return plural;
   null,
   "MiB"
  ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
  "Mount container volumes": [
+  null,
+  ""
+ ],
+ "Multi-system Chassis": [
   null,
   ""
  ],
@@ -451,6 +535,10 @@ return plural;
   null,
   "찾을 수 없습니다."
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "비활성"
@@ -471,9 +559,21 @@ return plural;
   "On failure, retry $0 times",
   ""
  ],
+ "Other": [
+  null,
+  "기타"
+ ],
  "Overview": [
   null,
   "개요"
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
  ],
  "Please confirm deletion of $0": [
   null,
@@ -487,21 +587,33 @@ return plural;
   null,
   ""
  ],
+ "Portable": [
+  null,
+  ""
+ ],
  "Ports": [
   null,
   "포트"
  ],
  "Ports:": [
   null,
-  ""
+  "포트:"
  ],
  "Problems": [
   null,
   ""
  ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
+  null,
+  ""
+ ],
  "ReadOnly": [
   null,
-  "준비됨"
+  "읽기 전용 "
  ],
  "ReadWrite": [
   null,
@@ -555,13 +667,17 @@ return plural;
   null,
   ""
  ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Security": [
   null,
   "보안"
  ],
  "Set container environment variables": [
   null,
-  ""
+  "컨테이너 환경 변수 설정 "
  ],
  "Show all containers": [
   null,
@@ -576,6 +692,10 @@ return plural;
   "크기"
  ],
  "Solid-State Disk": [
+  null,
+  ""
+ ],
+ "Space-saving Computer": [
   null,
   ""
  ],
@@ -595,13 +715,17 @@ return plural;
   null,
   "상태:"
  ],
+ "Stick PC": [
+  null,
+  ""
+ ],
  "Stop": [
   null,
   ""
  ],
  "Stop and delete": [
   null,
-  ""
+  "중지 및 삭제 "
  ],
  "Stopped": [
   null,
@@ -615,9 +739,21 @@ return plural;
   null,
   "스토리지 풀 "
  ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "TCP": [
   null,
   "TCP"
+ ],
+ "Tablet": [
+  null,
+  "타블렛"
  ],
  "Tag": [
   null,
@@ -651,6 +787,10 @@ return plural;
   null,
   "전체"
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Try again": [
   null,
   "다시 시도"
@@ -666,6 +806,10 @@ return plural;
  "Unexpected error": [
   null,
   "예상치 못한 오류"
+ ],
+ "Unknown": [
+  null,
+  "알 수 없음"
  ],
  "Unless Stopped": [
   null,
@@ -689,7 +833,7 @@ return plural;
  ],
  "Volumes:": [
   null,
-  ""
+  "볼륨: "
  ],
  "With terminal": [
   null,
@@ -737,11 +881,11 @@ return plural;
  ],
  "shares": [
   null,
-  "$0 공유"
+  "공유"
  ],
  "to host path": [
   null,
-  "호스트 포트로"
+  "호스트 경로"
  ],
  "to host port": [
   null,
@@ -749,7 +893,7 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "정의되지 않음 "
  ],
  "value": [
   null,

@@ -99,13 +99,13 @@ return plural;
   null,
   "Tutte le macchine virtuali in esecuzione saranno disattivate."
  ],
+ "Always attach": [
+  null,
+  ""
+ ],
  "Apply": [
   null,
   "Applica"
- ],
- "Attach permanently": [
-  null,
-  "Fissare in modo permanente"
  ],
  "Automatically selected host": [
   null,
@@ -139,9 +139,17 @@ return plural;
   null,
   "Bus"
  ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "Azione CHANGE NETWORK NETWORK STATE fallita"
+ ],
  "CPU Type:": [
   null,
   "Tipo CPU:"
+ ],
+ "CREATE VM action failed": [
+  null,
+  "Azione CREATE VM fallita"
  ],
  "Cancel": [
   null,
@@ -323,6 +331,10 @@ return plural;
   null,
   "Formato"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "GET HYPERVISOR MAX VCPU azione fallita"
+ ],
  "GiB": [
   null,
   "GiB"
@@ -351,6 +363,10 @@ return plural;
   null,
   "Ospite a Manutenzione"
  ],
+ "INSTALL VM action failed": [
+  null,
+  "L'azione INSTALLA VM è fallita"
+ ],
  "Install": [
   null,
   "Installa"
@@ -370,6 +386,10 @@ return plural;
  "MAC Address": [
   null,
   "Indirizzo MAC"
+ ],
+ "MIGRATE action failed": [
+  null,
+  "Azione MIGRATE fallita"
  ],
  "Mac Address": [
   null,
@@ -491,6 +511,10 @@ return plural;
   null,
   "Panoramica"
  ],
+ "Persistence": [
+  null,
+  ""
+ ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
   "Si prega di confermare, l'host deve essere impostato sulla modalità di manutenzione."
@@ -543,9 +567,17 @@ return plural;
   null,
   "Numero preferito di prese da esporre all'ospite."
  ],
+ "Preparing for Maintenance": [
+  null,
+  "Preparazione per la manutenzione"
+ ],
  "Protocol": [
   null,
   "Protocollo"
+ ],
+ "REBOOT action failed": [
+  null,
+  "RIBOT azione fallita"
  ],
  "Readonly": [
   null,
@@ -583,6 +615,14 @@ return plural;
   null,
   "Corsa da allora:"
  ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  "Azione SET_VCPU_SETTINGS fallita"
+ ],
+ "SHUTDOWN action failed": [
+  null,
+  "Azione SHUTDOWN fallita"
+ ],
  "SPICE": [
   null,
   "SPICE"
@@ -599,6 +639,14 @@ return plural;
   null,
   "SPICE TLS Port:"
  ],
+ "START action failed": [
+  null,
+  "Azione START fallita"
+ ],
+ "SUSPEND action failed": [
+  null,
+  "Azione SUSPEND fallita"
+ ],
  "Save": [
   null,
   "Salva"
@@ -614,6 +662,10 @@ return plural;
  "Serial Console": [
   null,
   "Console seriale"
+ ],
+ "Session": [
+  null,
+  "Sessione"
  ],
  "Shut Down": [
   null,
@@ -654,6 +706,18 @@ return plural;
  "Switch Host to Maintenance": [
   null,
   "Passa da l'host in modalità di manutenzione"
+ ],
+ "Switching host to maintenance mode failed. Received error: ": [
+  null,
+  "Cambio dell'host in modalità manutenzione fallita. Errore ricevuto: "
+ ],
+ "Switching host to maintenance mode in progress ...": [
+  null,
+  "Cambio dell'host in modalità di manutenzione in corso ...."
+ ],
+ "System": [
+  null,
+  "Sistema"
  ],
  "Target": [
   null,
@@ -759,6 +823,38 @@ return plural;
   null,
   "Gestione dei servizi VDSM"
  ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  "VM DELETE (DESTROY) azione fallita"
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  "VM DELETE (UNDEFINE) azione fallita"
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "VM FORCE OFF azione fallita"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "VM FORCE REBOOT azione fallita"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "VM REBOOT azione fallita"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "VM SEND Non Maskable Interrrupt azione non riuscita"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "VM SHUT DOWN azione fallita"
+ ],
+ "VM START action failed": [
+  null,
+  "VM START azione fallita"
+ ],
  "VM icon": [
   null,
   "Icona VM"
@@ -799,21 +895,117 @@ return plural;
   null,
   "Volume"
  ],
+ "bridge": [
+  null,
+  "bridge"
+ ],
+ "cdrom": [
+  null,
+  "cdrom"
+ ],
+ "connecting": [
+  null,
+  "connessione in corso"
+ ],
  "cores": [
   null,
   "core"
+ ],
+ "crashed": [
+  null,
+  "interrotto con errore"
+ ],
+ "custom": [
+  null,
+  "personalizzato"
+ ],
+ "direct": [
+  null,
+  "diretto"
  ],
  "disabled": [
   null,
   "disabilitato"
  ],
+ "disk": [
+  null,
+  "disco"
+ ],
+ "down": [
+  null,
+  "giù"
+ ],
+ "dying": [
+  null,
+  "morente"
+ ],
  "enabled": [
   null,
   "abilitato"
  ],
+ "error": [
+  null,
+  "errore"
+ ],
+ "ethernet": [
+  null,
+  "ethernet"
+ ],
+ "host": [
+  null,
+  "host"
+ ],
+ "hostdev": [
+  null,
+  "hostdev"
+ ],
+ "idle": [
+  null,
+  "in attesa"
+ ],
+ "initializing": [
+  null,
+  "inizializzazione"
+ ],
+ "installation failed": [
+  null,
+  "installazione fallita"
+ ],
+ "installing OS": [
+  null,
+  "installazione del sistema operativo"
+ ],
+ "kdumping": [
+  null,
+  "kdumping"
+ ],
+ "maintenance": [
+  null,
+  "mantenimento"
+ ],
+ "mcast": [
+  null,
+  "cast"
+ ],
+ "network": [
+  null,
+  "rete"
+ ],
  "no": [
   null,
   "no"
+ ],
+ "non operational": [
+  null,
+  "non operativo"
+ ],
+ "non responsive": [
+  null,
+  "non risponde"
+ ],
+ "oVirt": [
+  null,
+  "oVirt"
  ],
  "oVirt Host State:": [
   null,
@@ -835,6 +1027,18 @@ return plural;
   null,
   "oVirt login in corso"
  ],
+ "other": [
+  null,
+  "altro"
+ ],
+ "paused": [
+  null,
+  "in pausa"
+ ],
+ "pending approval": [
+  null,
+  "in attesa di approvazione"
+ ],
  "qcow2": [
   null,
   "qcow2"
@@ -842,6 +1046,18 @@ return plural;
  "raw": [
   null,
   "raw"
+ ],
+ "reboot": [
+  null,
+  "riavvia"
+ ],
+ "running": [
+  null,
+  "in esecuzione"
+ ],
+ "server": [
+  null,
+  "server"
  ],
  "show less": [
   null,
@@ -851,17 +1067,45 @@ return plural;
   null,
   "mostra di più"
  ],
+ "shut off": [
+  null,
+  "spento"
+ ],
+ "shutdown": [
+  null,
+  "spegnimento"
+ ],
  "sockets": [
   null,
   "raccordi"
+ ],
+ "suspended (PM)": [
+  null,
+  "sospesi (PM)"
  ],
  "threads": [
   null,
   "thread"
  ],
+ "udp": [
+  null,
+  "udp"
+ ],
+ "unassigned": [
+  null,
+  "non assegnato"
+ ],
  "undefined": [
   null,
   "non definito"
+ ],
+ "up": [
+  null,
+  "su"
+ ],
+ "user": [
+  null,
+  "utente"
  ],
  "vCPU Count": [
   null,
@@ -878,6 +1122,10 @@ return plural;
  "vCPUs:": [
   null,
   "vCPU"
+ ],
+ "vhostuser": [
+  null,
+  "vhostuser"
  ],
  "yes": [
   null,

@@ -17,17 +17,15 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-"use strict";
-
 import cockpit from "cockpit";
-import utils from "./utils.js";
+import * as utils from "./utils.js";
 
 import React from "react";
 import { StorageButton, StorageLink } from "./storage-controls.jsx";
 import { clevis_recover_passphrase } from "./crypto-keyslots.jsx";
 import { dialog_open, TextInput, PassInput, SizeSlider, BlockingMessage, TeardownMessage } from "./dialog.jsx";
 
-var _ = cockpit.gettext;
+const _ = cockpit.gettext;
 
 function lvol_rename(lvol) {
     dialog_open({ Title: _("Rename Logical Volume"),
@@ -219,7 +217,7 @@ function lvol_shrink(client, lvol, info) {
     });
 }
 
-class BlockVolTab extends React.Component {
+export class BlockVolTab extends React.Component {
     render() {
         var self = this;
         var client = self.props.client;
@@ -361,7 +359,7 @@ class BlockVolTab extends React.Component {
     }
 }
 
-class PoolVolTab extends React.Component {
+export class PoolVolTab extends React.Component {
     render() {
         var self = this;
 
@@ -410,8 +408,3 @@ class PoolVolTab extends React.Component {
         );
     }
 }
-
-module.exports = {
-    BlockVolTab: BlockVolTab,
-    PoolVolTab:  PoolVolTab
-};

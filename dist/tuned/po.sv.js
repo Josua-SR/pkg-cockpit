@@ -125,26 +125,26 @@ return plural;
  ],
  "Tuned has failed to start": [
   null,
-  ""
+  "Tuned har misslyckats med att starta"
  ],
  "Tuned is not available": [
   null,
-  ""
+  "Tuned är inte tillgänglig"
  ],
  "Tuned is not running": [
   null,
-  ""
+  "Tuned kör inte"
  ],
  "Tuned is off": [
   null,
-  ""
+  "Tuned är avslagen"
  ],
  "none": [
   null,
-  ""
+  "ingen"
  ],
  "recommended": [
   null,
-  ""
+  "rekommenderad"
  ]
 }));

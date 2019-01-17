@@ -1507,83 +1507,83 @@ return plural;
  ],
  "Triggers": [
   null,
-  ""
+  "Utlösare"
  ],
  "Troubleshoot": [
   null,
-  ""
+  "Felsök"
  ],
  "Trust this certificate for this connection": [
   null,
-  ""
+  "Lita på detta certifikat för denna anslutning"
  ],
  "Type": [
   null,
-  ""
+  "Typ"
  ],
  "Type:": [
   null,
-  ""
+  "Typ:"
  ],
  "Unable to decode Kubernetes application manifest.": [
   null,
-  ""
+  "Kan inte avkoda programförteckningen för Kubernetes"
  ],
  "Unable to read the Kubernetes application manifest. Code $0.": [
   null,
-  ""
+  "Kan inte läsa programförteckningen för Kubernetes.  Kod $0."
  ],
  "Unavailable": [
   null,
-  ""
+  "Otillgänglig"
  ],
  "Unknown": [
   null,
-  ""
+  "Okänd"
  ],
  "Updating $0...": [
   null,
-  ""
+  "Uppdaterar $0 …"
  ],
  "Used": [
   null,
-  ""
+  "Använt"
  ],
  "User": [
   null,
-  ""
+  "Användare"
  ],
  "User or Group": [
   null,
-  ""
+  "Användare eller grupp"
  ],
  "Username": [
   null,
-  ""
+  "Användarnamn"
  ],
  "Users": [
   null,
-  ""
+  "Användare"
  ],
  "Volume": [
   null,
-  ""
+  "Volym"
  ],
  "Volume ID": [
   null,
-  ""
+  "Volym-ID"
  ],
  "Volume Name": [
   null,
-  ""
+  "Volymnamn"
  ],
  "Volume Type": [
   null,
-  ""
+  "Volymtyp"
  ],
  "Volumes": [
   null,
-  ""
+  "Volymer"
  ],
  "Warning:": [
   null,
@@ -1615,15 +1615,15 @@ return plural;
  ],
  "eg: my-image-stream": [
   null,
-  ""
+  "t.ex.: min-avbildsström"
  ],
  "no": [
   null,
-  ""
+  "nej"
  ],
  "none": [
   null,
-  ""
+  "ingen"
  ],
  "pending volume claims": [
   null,
@@ -1631,6 +1631,6 @@ return plural;
  ],
  "yes": [
   null,
-  ""
+  "ja"
  ]
 }));

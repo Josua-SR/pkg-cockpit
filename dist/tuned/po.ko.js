@@ -77,11 +77,11 @@ return plural;
  ],
  "Change Profile": [
   null,
-  ""
+  "프로파일 변경 "
  ],
  "Communication with tuned has failed": [
   null,
-  ""
+  "tuned와의 통신에 실패했습니다 "
  ],
  "Disable tuned": [
   null,
@@ -145,6 +145,6 @@ return plural;
  ],
  "recommended": [
   null,
-  ""
+  "권장 사항 "
  ]
 }));

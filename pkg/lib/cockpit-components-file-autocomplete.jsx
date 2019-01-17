@@ -17,8 +17,6 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-"use strict";
-
 import cockpit from "cockpit";
 import React from "react";
 import PropTypes from "prop-types";
@@ -26,7 +24,7 @@ import "./cockpit-components-file-autocomplete.css";
 
 const _ = cockpit.gettext;
 
-class FileAutoComplete extends React.Component {
+export class FileAutoComplete extends React.Component {
     constructor(props) {
         super(props);
         const value = props.value || "";
@@ -297,8 +295,4 @@ FileAutoComplete.propTypes = {
     value: PropTypes.string,
     superuser: PropTypes.string,
     onChange: PropTypes.func,
-};
-
-module.exports = {
-    FileAutoComplete: FileAutoComplete,
 };

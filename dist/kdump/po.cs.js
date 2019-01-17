@@ -95,6 +95,10 @@ return plural;
   null,
   "Složka"
  ],
+ "Directory $0 isn't writable or doesn't exist.": [
+  null,
+  "Složka $0 není zapisovatelná nebo neexistuje."
+ ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
   "Služba kdump není nainstalovaná. Zajistěte, aby byl nainstalován balíček kexec-tools."
@@ -231,9 +235,21 @@ return plural;
   null,
   "místně v $0"
  ],
+ "nfs dump target isn't formated as server:path": [
+  null,
+  "cíl výpisu nfs nemá podobu server:umisteni"
+ ],
  "ssh key": [
   null,
   "ssh klíč"
+ ],
+ "ssh key isn't a path": [
+  null,
+  "v kolonce ssh klíč není vyplněné jeho umístění"
+ ],
+ "ssh server is empty": [
+  null,
+  "není vyplněná kolonka ssh server"
  ],
  "undefined": [
   null,

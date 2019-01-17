@@ -17,42 +17,38 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-(function() {
-    "use strict";
+import { machines } from "machines";
+import { new_machine_dialog_manager } from "machine-dialogs";
+import * as credentials from "./credentials";
+import * as privileges from "./privileges";
+import * as indexes from "./indexes";
 
-    var machis = require("machines");
-    var credentials = require("./credentials");
-    var mdialogs = require("machine-dialogs");
+var machines_inst = machines.instance();
+var loader = machines.loader(machines_inst);
+var dialogs = new_machine_dialog_manager(machines_inst);
 
-    var indexes = require("./indexes");
+credentials.setup();
 
-    var machines = machis.instance();
-    var loader = machis.loader(machines);
-    var dialogs = mdialogs.new_manager(machines);
+/* When alt is held down we display debugging menu items */
+document.addEventListener("click", function(ev) {
+    var i;
+    var visible = !!ev.altKey;
+    var advanced = document.querySelectorAll(".navbar-advanced");
+    for (i = 0; i < advanced.length; i++)
+        advanced[i].style.display = visible ? "block" : "none";
+}, true);
 
-    credentials.setup();
+var options = {
+    brand_sel: "#index-brand",
+    logout_sel: "#go-logout",
+    oops_sel: "#navbar-oops",
+    language_sel: "#display-language",
+    about_sel: "#about-version",
+    account_sel: "#go-account",
+    user_sel: "#content-user-name",
+    killer_sel: "#active-pages",
+    default_title: "Cockpit",
+    privileges: privileges.instance(),
+};
 
-    /* When alt is held down we display debugging menu items */
-    document.addEventListener("click", function(ev) {
-        var i;
-        var visible = !!ev.altKey;
-        var advanced = document.querySelectorAll(".navbar-advanced");
-        for (i = 0; i < advanced.length; i++)
-            advanced[i].style.display = visible ? "block" : "none";
-    }, true);
-
-    var options = {
-        brand_sel: "#index-brand",
-        logout_sel: "#go-logout",
-        oops_sel: "#navbar-oops",
-        language_sel: "#display-language",
-        about_sel: "#about-version",
-        account_sel: "#go-account",
-        user_sel: "#content-user-name",
-        killer_sel: "#active-pages",
-        default_title: "Cockpit",
-        privileges: require("./privileges").instance(),
-    };
-
-    indexes.machines_index(options, machines, loader, dialogs);
-}());
+indexes.machines_index(options, machines_inst, loader, dialogs);

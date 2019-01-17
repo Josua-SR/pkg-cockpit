@@ -229,6 +229,10 @@ return plural;
   null,
   "Информация о пакете"
  ],
+ "PackageKit crashed": [
+  null,
+  "Пакет PackageKit разбился"
+ ],
  "PackageKit is not installed": [
   null,
   "PackageKit не установлен"

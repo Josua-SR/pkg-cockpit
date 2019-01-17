@@ -914,11 +914,11 @@ return plural;
  ],
  "Name cannot be longer than $0 bytes": [
   null,
-  ""
+  "Il nome non può essere più lungo di $0 byte."
  ],
  "Name cannot be longer than $0 characters": [
   null,
-  ""
+  "Il nome non può essere più lungo di $0 caratteri."
  ],
  "Name cannot be longer than 127 characters.": [
   null,
@@ -1055,6 +1055,10 @@ return plural;
  "Overwrite existing data with zeros": [
   null,
   "Sovrascrivere i dati esistenti con zeri"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit si è interrotto"
  ],
  "Partition": [
   null,

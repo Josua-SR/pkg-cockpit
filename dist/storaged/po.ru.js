@@ -1057,13 +1057,17 @@ return plural;
   null,
   "Перезаписать существующие данные с нулями"
  ],
+ "PackageKit crashed": [
+  null,
+  "Пакет PackageKit разбился"
+ ],
  "Partition": [
   null,
   "раздел"
  ],
  "Partition of $0": [
   null,
-  "Разделение $0"
+  "Раздел $0"
  ],
  "Partitioning": [
   null,
@@ -1449,6 +1453,10 @@ return plural;
   null,
   "Журналы хранения"
  ],
+ "Storage can not be managed on this system.": [
+  null,
+  ""
+ ],
  "Store passphrase": [
   null,
   "Хранить парольную фразу"
@@ -1476,10 +1484,6 @@ return plural;
  "Tang keyserver": [
   null,
   "Tang keyserver"
- ],
- "The \"storaged\" API is not available on this system.": [
-  null,
-  "«Хранимый» API недоступен в этой системе."
  ],
  "The RAID Array is in a degraded state": [
   null,
@@ -1723,7 +1727,7 @@ return plural;
  ],
  "Volume": [
   null,
-  "Громкость"
+  "Том"
  ],
  "Volume Group": [
   null,

@@ -115,6 +115,10 @@ return plural;
   null,
   "OK"
  ],
+ "PackageKit crashed": [
+  null,
+  "Пакет PackageKit разбился"
+ ],
  "Remove": [
   null,
   "Удалить зону"
