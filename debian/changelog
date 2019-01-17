@@ -1,3 +1,11 @@
+cockpit (185-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Responsive dialogs on network, kdump and users page
+    - Kubernetes containers included in docker graphs
+
+ -- Martin Pitt <mpitt@debian.org>  Thu, 17 Jan 2019 07:42:28 +0000
+
 cockpit (184-1) unstable; urgency=medium
 
   * New upstream release:
