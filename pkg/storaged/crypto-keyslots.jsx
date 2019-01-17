@@ -22,7 +22,7 @@ import React from "react";
 import sha1 from "js-sha1";
 import stable_stringify from "json-stable-stringify-without-jsonify";
 
-import * as python from "python.jsx";
+import * as python from "python.js";
 
 import {
     dialog_open,
@@ -32,8 +32,8 @@ import { decode_filename, block_name } from "./utils.js";
 import { fmt_to_fragments } from "./utilsx.jsx";
 import { StorageButton } from "./storage-controls.jsx";
 
-import luksmeta_monitor_hack_py from "raw!./luksmeta-monitor-hack.py";
-import clevis_luks_passphrase_sh from "raw!./clevis-luks-passphrase.sh";
+import luksmeta_monitor_hack_py from "raw-loader!./luksmeta-monitor-hack.py";
+import clevis_luks_passphrase_sh from "raw-loader!./clevis-luks-passphrase.sh";
 
 const _ = cockpit.gettext;
 

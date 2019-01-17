@@ -229,6 +229,10 @@ return plural;
   null,
   "Informace o balíčku"
  ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit zhavaroval"
+ ],
  "PackageKit is not installed": [
   null,
   "PackageKit není nainstalovaný"

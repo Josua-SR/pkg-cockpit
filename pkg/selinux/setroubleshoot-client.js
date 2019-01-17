@@ -17,13 +17,13 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-var cockpit = require("cockpit");
-var _ = cockpit.gettext;
+import cockpit from "cockpit";
+import moment from "moment";
 
-var moment = require("moment");
+const _ = cockpit.gettext;
 moment.locale(cockpit.language);
 
-var client = {};
+export var client = {};
 
 var busName = "org.fedoraproject.Setroubleshootd";
 var dbusInterface = "org.fedoraproject.SetroubleshootdIface";
@@ -214,5 +214,3 @@ client.init = function(capabilitiesChangedCallback) {
     // connect to dbus and start setroubleshootd
     return dfd.promise();
 };
-
-module.exports = client;

@@ -17,19 +17,16 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-"use strict";
-
 import React from "react";
 import cockpit from "cockpit";
-import utils from "./utils.js";
-import $ from "jquery";
+import * as utils from "./utils.js";
 
 import { StorageButton } from "./storage-controls.jsx";
 import { FormatButton } from "./format-dialog.jsx";
 
 const _ = cockpit.gettext;
 
-class SwapTab extends React.Component {
+export class SwapTab extends React.Component {
     constructor(props) {
         super(props);
         this.onSamplesChanged = this.onSamplesChanged.bind(this);
@@ -40,11 +37,11 @@ class SwapTab extends React.Component {
     }
 
     componentDidMount() {
-        $(this.props.client.swap_sizes).on("changed", this.onSamplesChanged);
+        this.props.client.swap_sizes.addEventListener("changed", this.onSamplesChanged);
     }
 
     componentWillUnmount() {
-        $(this.props.client.swap_sizes).off("changed", this.onSamplesChanged);
+        this.props.client.swap_sizes.removeEventListener("changed", this.onSamplesChanged);
     }
 
     render() {
@@ -94,7 +91,3 @@ class SwapTab extends React.Component {
         );
     }
 }
-
-module.exports = {
-    SwapTab: SwapTab
-};

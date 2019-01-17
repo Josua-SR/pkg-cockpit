@@ -915,11 +915,11 @@ return plural;
  ],
  "Name cannot be longer than $0 bytes": [
   null,
-  ""
+  "Назва не повинна бути довшою за $0 байтів"
  ],
  "Name cannot be longer than $0 characters": [
   null,
-  ""
+  "Назва не повинна бути довшою за $0 символів"
  ],
  "Name cannot be longer than 127 characters.": [
   null,
@@ -1056,6 +1056,10 @@ return plural;
  "Overwrite existing data with zeros": [
   null,
   "Перезаписати наявні дані нулями"
+ ],
+ "PackageKit crashed": [
+  null,
+  "Аварійне завершення роботи PackageKit"
  ],
  "Partition": [
   null,
@@ -1449,6 +1453,10 @@ return plural;
   null,
   "Журнали зберігання"
  ],
+ "Storage can not be managed on this system.": [
+  null,
+  "У цій системі не можна керувати сховищем даних."
+ ],
  "Store passphrase": [
   null,
   "Зберігати пароль"
@@ -1476,10 +1484,6 @@ return plural;
  "Tang keyserver": [
   null,
   "Сервер ключів Tang"
- ],
- "The \"storaged\" API is not available on this system.": [
-  null,
-  "У цій системі програмний інтерфейс «storaged» є недоступним."
  ],
  "The RAID Array is in a degraded state": [
   null,

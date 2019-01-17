@@ -77,7 +77,7 @@ return plural;
  ],
  "Checking for new applications": [
   null,
-  ""
+  "새 애플리케이션 확인 중 "
  ],
  "Close": [
   null,
@@ -115,6 +115,10 @@ return plural;
   null,
   "확인"
  ],
+ "PackageKit crashed": [
+  null,
+  ""
+ ],
  "Remove": [
   null,
   "제거 "
@@ -125,7 +129,7 @@ return plural;
  ],
  "Unknown Application": [
   null,
-  ""
+  "알 수 없는 애플리케이션 "
  ],
  "Waiting for other programs to finish using the package manager...": [
   null,

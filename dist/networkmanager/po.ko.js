@@ -157,7 +157,7 @@ return plural;
  ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "<b>$0</b>을/를 추가하면 서버와의 연결이 끊어지고 관리 UI를 사용할 수 없게 됩니다. "
  ],
  "Additional DNS $val": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Balancer": [
   null,
-  ""
+  "벨런서 "
  ],
  "Bond": [
   null,
@@ -237,7 +237,7 @@ return plural;
  ],
  "Broken configuration": [
   null,
-  ""
+  "손상된 설정 "
  ],
  "Cancel": [
   null,
@@ -281,11 +281,11 @@ return plural;
  ],
  "Connection will be lost": [
   null,
-  ""
+  "연결이 끊어졌습니다 "
  ],
  "Create it": [
   null,
-  ""
+  "만들기 "
  ],
  "Creating this VLAN will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -309,15 +309,15 @@ return plural;
  ],
  "DNS $val": [
   null,
-  ""
+  "DNS $val"
  ],
  "DNS Search Domains": [
   null,
-  ""
+  "DNS 검색 도메인 "
  ],
  "DNS Search Domains $val": [
   null,
-  ""
+  "DNS 검색 도메인 $val"
  ],
  "Deactivating": [
   null,
@@ -733,7 +733,7 @@ return plural;
  ],
  "Start Service": [
   null,
-  ""
+  "서비스 시작 "
  ],
  "Status": [
   null,
@@ -809,7 +809,7 @@ return plural;
  ],
  "Unknown \"$0\"": [
   null,
-  ""
+  "알 수 없는 \"$0\""
  ],
  "Unknown configuration": [
   null,

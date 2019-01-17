@@ -22,11 +22,11 @@ import React from "react";
 import { get_active_usage, teardown_active_usage, fmt_size, decode_filename } from "./utils.js";
 import { dialog_open, SizeSlider, BlockingMessage, TeardownMessage } from "./dialog.jsx";
 import { StdDetailsLayout } from "./details.jsx";
-import Content from "./content-views.jsx";
+import { Block } from "./content-views.jsx";
 import { StorageButton, StorageOnOff, StorageBlockNavLink } from "./storage-controls.jsx";
 
-import inotify_py from "raw!inotify.py";
-import vdo_monitor_py from "raw!./vdo-monitor.py";
+import inotify_py from "raw-loader!inotify.py";
+import vdo_monitor_py from "raw-loader!./vdo-monitor.py";
 
 const _ = cockpit.gettext;
 
@@ -54,7 +54,12 @@ export class VDODetails extends React.Component {
         this.state = { stats: null };
     }
 
-    ensure_polling(client, path) {
+    ensure_polling(enable) {
+        var client = this.props.client;
+        var vdo = this.props.vdo;
+        var block = client.slashdevs_block[vdo.dev];
+        var path = enable && block ? vdo.dev : null;
+
         var buf = "";
 
         if (this.poll_path === path)
@@ -79,8 +84,16 @@ export class VDODetails extends React.Component {
         this.poll_path = path;
     }
 
+    componentDidMount() {
+        this.ensure_polling(true);
+    }
+
+    componentDidUpdate() {
+        this.ensure_polling(true);
+    }
+
     componentWillUnmount() {
-        this.ensure_polling(null, null);
+        this.ensure_polling(false);
     }
 
     render() {
@@ -108,8 +121,6 @@ export class VDODetails extends React.Component {
             );
             return <StdDetailsLayout client={this.props.client} alert={broken} />;
         }
-
-        this.ensure_polling(client, block ? vdo.dev : null);
 
         var alert = null;
         if (backing_block && backing_block.Size > vdo.physical_size)
@@ -315,7 +326,7 @@ export class VDODetails extends React.Component {
             </div>
         );
 
-        var content = <Content.Block client={client} block={block} allow_partitions={false} />;
+        var content = <Block client={client} block={block} allow_partitions={false} />;
 
         return <StdDetailsLayout client={this.props.client}
                                  alert={alert}

@@ -229,6 +229,10 @@ return plural;
   null,
   "Дані щодо пакунка"
  ],
+ "PackageKit crashed": [
+  null,
+  "Аварійне завершення роботи PackageKit"
+ ],
  "PackageKit is not installed": [
   null,
   "PackageKit не встановлено"

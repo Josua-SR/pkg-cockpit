@@ -21,8 +21,7 @@ import React from "react";
 import { OverlayTrigger, Tooltip } from "patternfly-react";
 
 import cockpit from "cockpit";
-import utils from "./utils.js";
-import $ from "jquery";
+import * as utils from "./utils.js";
 
 import { OnOffSwitch } from "cockpit-components-onoff.jsx";
 
@@ -60,11 +59,11 @@ class StorageControl extends React.Component {
     }
 
     componentDidMount() {
-        $(permission).on("changed", this.onPermissionChanged);
+        permission.addEventListener("changed", this.onPermissionChanged);
     }
 
     componentWillUnmount() {
-        $(permission).off("changed", this.onPermissionChanged);
+        permission.removeEventListener("changed", this.onPermissionChanged);
     }
 
     render() {
@@ -105,7 +104,7 @@ function checked(callback) {
     };
 }
 
-class StorageButton extends React.Component {
+export class StorageButton extends React.Component {
     render() {
         var classes = "btn";
         if (this.props.kind)
@@ -126,7 +125,7 @@ class StorageButton extends React.Component {
     }
 }
 
-class StorageLink extends React.Component {
+export class StorageLink extends React.Component {
     render() {
         return (
             <StorageControl excuse={this.props.excuse}
@@ -151,7 +150,7 @@ class StorageLink extends React.Component {
    - block
  */
 
-class StorageBlockNavLink extends React.Component {
+export class StorageBlockNavLink extends React.Component {
     render() {
         var self = this;
         var client = self.props.client;
@@ -175,7 +174,7 @@ class StorageBlockNavLink extends React.Component {
 // StorageOnOff - OnOff switch for asynchronous actions.
 //
 
-class StorageOnOff extends React.Component {
+export class StorageOnOff extends React.Component {
     constructor() {
         super();
         this.state = { promise: null };
@@ -211,7 +210,7 @@ class StorageOnOff extends React.Component {
     }
 }
 
-class StorageMultiAction extends React.Component {
+export class StorageMultiAction extends React.Component {
     render() {
         var dflt = this.props.actions[this.props.default];
 
@@ -251,7 +250,7 @@ class StorageMultiAction extends React.Component {
  * in a dangerous color.
  */
 
-class StorageUsageBar extends React.Component {
+export class StorageUsageBar extends React.Component {
     render() {
         var stats = this.props.stats;
         var fraction = stats ? stats[0] / stats[1] : null;
@@ -267,12 +266,3 @@ class StorageUsageBar extends React.Component {
         );
     }
 }
-
-module.exports = {
-    StorageButton: StorageButton,
-    StorageLink:   StorageLink,
-    StorageBlockNavLink: StorageBlockNavLink,
-    StorageOnOff: StorageOnOff,
-    StorageMultiAction: StorageMultiAction,
-    StorageUsageBar: StorageUsageBar
-};

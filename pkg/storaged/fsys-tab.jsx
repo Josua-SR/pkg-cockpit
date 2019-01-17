@@ -20,16 +20,15 @@
 import React from "react";
 
 import cockpit from "cockpit";
-import utils from "./utils.js";
-import $ from "jquery";
+import * as utils from "./utils.js";
 
 import { dialog_open, TextInput } from "./dialog.jsx";
 import { StorageButton, StorageLink } from "./storage-controls.jsx";
-import FormatDialog from "./format-dialog.jsx";
+import * as FormatDialog from "./format-dialog.jsx";
 
 const _ = cockpit.gettext;
 
-class FilesystemTab extends React.Component {
+export class FilesystemTab extends React.Component {
     constructor(props) {
         super(props);
         this.onSamplesChanged = this.onSamplesChanged.bind(this);
@@ -40,11 +39,11 @@ class FilesystemTab extends React.Component {
     }
 
     componentDidMount() {
-        $(this.props.client.fsys_sizes).on("changed", this.onSamplesChanged);
+        this.props.client.fsys_sizes.addEventListener("changed", this.onSamplesChanged);
     }
 
     componentWillUnmount() {
-        $(this.props.client.fsys_sizes).off("changed", this.onSamplesChanged);
+        this.props.client.fsys_sizes.removeEventListener("changed", this.onSamplesChanged);
     }
 
     render() {
@@ -219,7 +218,3 @@ class FilesystemTab extends React.Component {
         );
     }
 }
-
-module.exports = {
-    FilesystemTab: FilesystemTab
-};

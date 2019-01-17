@@ -88,8 +88,7 @@ CLEAN_CSS = $(srcdir)/node_modules/.bin/cleancss
 MIN_JS_RULE = \
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
 	$(srcdir)/tools/missing $(UGLIFY_JS) $(filter-out %.deps, $^) --mangle --comments 'preserve' --beautify \
-		--source-map $@.map --source-map-url $(notdir $@).map --source-map-include-sources > $@.tmp && \
-	$(MV) $@.tmp $@
+		--source-map url=$(notdir $@).map,includeSources --output $@
 
 MIN_CSS_RULE = \
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
@@ -176,7 +175,7 @@ V_WEBPACK = $(V_WEBPACK_$(V))
 V_WEBPACK_ = $(V_WEBPACK_$(AM_DEFAULT_VERBOSITY))
 V_WEBPACK_0 = @echo "  WEBPACK  $(@:dist/%/stamp=%)";
 
-WEBPACK_MAKE = NODE_ENV=$(NODE_ENV) SRCDIR=$(abspath $(srcdir)) BUILDDIR=$(builddir) \
+WEBPACK_MAKE = NODE_ENV=$(NODE_ENV) SRCDIR=$(abspath $(srcdir)) BUILDDIR=$(abs_builddir) \
 	       timeout 5m $(srcdir)/tools/missing $(srcdir)/tools/webpack-make
 
 WEBPACK_CONFIG = $(srcdir)/webpack.config.js
@@ -205,10 +204,11 @@ dist/%/Makefile.deps:
 	  cp -p $(srcdir)/$@ $@.tmp && \
 	  mv $@.tmp $@)
 
-# This is the primary rule for running webpack
+# This is the primary rule for running webpack; some pkgs like ssh or pcp only
+# have a manifest, no actual webpack, so don't call webpack-make for these
 dist/%/stamp: $(WEBPACK_CONFIG) $(srcdir)/tools/webpack-make
 	$(V_WEBPACK) $(MKDIR_P) dist/$* && \
-	  $(WEBPACK_MAKE) -d dist/$*/Makefile.deps $(WEBPACK_CONFIG) && \
+	(if ls $(srcdir)/pkg/$*/*.html >/dev/null 2>&1; then $(WEBPACK_MAKE) -d dist/$*/Makefile.deps $(WEBPACK_CONFIG); else touch dist/$*/Makefile.deps; fi ) && \
 	  touch $@
 
 dist/%/manifest.json: pkg/%/manifest.json
@@ -269,7 +269,7 @@ SH_LOG_DRIVER = $(LOG_DRIVER)
 HTML_LOG_DRIVER = $(LOG_DRIVER)
 HTML_TEST_SERVER = $(builddir)/test-server
 
-HTML_LOG_COMPILER = $(PYTHON) $(top_srcdir)/test/common/tap-cdp --strip=$(top_srcdir)/ -- $(HTML_TEST_SERVER)
+HTML_LOG_COMPILER = $(PYTHON) $(top_srcdir)/test/common/tap-cdp --strip=$(abs_top_srcdir)/ -- $(HTML_TEST_SERVER)
 
 VALGRIND_ARGS = --trace-children=yes --quiet --error-exitcode=33 \
 	--suppressions=valgrind-suppressions --gen-suppressions=all \

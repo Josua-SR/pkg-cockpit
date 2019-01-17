@@ -87,13 +87,13 @@ return plural;
   null,
   "Indirizzo:"
  ],
+ "Always attach": [
+  null,
+  ""
+ ],
  "Apply": [
   null,
   "Applica"
- ],
- "Attach permanently": [
-  null,
-  "Fissare in modo permanente"
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -114,6 +114,10 @@ return plural;
  "Bus": [
   null,
   "Bus"
+ ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "Azione CHANGE NETWORK NETWORK STATE fallita"
  ],
  "CPU Type:": [
   null,
@@ -267,6 +271,10 @@ return plural;
   null,
   "Formato"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "GET HYPERVISOR MAX VCPU azione fallita"
+ ],
  "GiB": [
   null,
   "GiB"
@@ -290,6 +298,10 @@ return plural;
  "Host should not be empty": [
   null,
   "L'host non deve essere vuoto"
+ ],
+ "INSTALL VM action failed": [
+  null,
+  "L'azione INSTALLA VM è fallita"
  ],
  "Immediately Start VM": [
   null,
@@ -459,6 +471,10 @@ return plural;
   null,
   "Percorso da file"
  ],
+ "Persistence": [
+  null,
+  ""
+ ],
  "Please enter new volume name": [
   null,
   "Si prega di inserire il nuovo nome del volume"
@@ -551,6 +567,10 @@ return plural;
   null,
   "Console seriale"
  ],
+ "Session": [
+  null,
+  "Sessione"
+ ],
  "Shut Down": [
   null,
   "Arresto"
@@ -622,6 +642,10 @@ return plural;
  "Storage Volumes": [
   null,
   "Volumi di storage"
+ ],
+ "System": [
+  null,
+  "Sistema"
  ],
  "Target": [
   null,
@@ -727,6 +751,54 @@ return plural;
   null,
   "Non è stato possibile salvare le impostazioni del VCPU"
  ],
+ "VM CHANGE_NETWORK_STATE action failed": [
+  null,
+  "VM CHANGE_NETWORK_STATE azione fallita"
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  "VM DELETE (DESTROY) azione fallita"
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  "VM DELETE (UNDEFINE) azione fallita"
+ ],
+ "VM DELETE action failed": [
+  null,
+  "VM DELETE azione fallita"
+ ],
+ "VM DETACH_DISK action failed": [
+  null,
+  "VM DETACH_DISK azione fallita"
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "VM FORCE OFF azione fallita"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "VM FORCE REBOOT azione fallita"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "VM REBOOT azione fallita"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "VM SEND Non Maskable Interrrupt azione non riuscita"
+ ],
+ "VM SENDNMI action failed": [
+  null,
+  "VM SENDNMI azione fallita"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "VM SHUT DOWN azione fallita"
+ ],
+ "VM START action failed": [
+  null,
+  "VM START azione fallita"
+ ],
  "VNC": [
   null,
   "VNC"
@@ -763,13 +835,85 @@ return plural;
   null,
   "attivo"
  ],
+ "bridge": [
+  null,
+  "bridge"
+ ],
+ "cdrom": [
+  null,
+  "cdrom"
+ ],
+ "crashed": [
+  null,
+  "interrotto con errore"
+ ],
+ "custom": [
+  null,
+  "personalizzato"
+ ],
+ "direct": [
+  null,
+  "diretto"
+ ],
+ "disabled": [
+  null,
+  "disabilitato"
+ ],
+ "disk": [
+  null,
+  "disco"
+ ],
+ "down": [
+  null,
+  "giù"
+ ],
+ "dying": [
+  null,
+  "morente"
+ ],
+ "enabled": [
+  null,
+  "abilitato"
+ ],
+ "ethernet": [
+  null,
+  "ethernet"
+ ],
+ "host": [
+  null,
+  "host"
+ ],
+ "hostdev": [
+  null,
+  "hostdev"
+ ],
+ "idle": [
+  null,
+  "in attesa"
+ ],
  "inactive": [
   null,
   "Inattivo"
  ],
+ "mcast": [
+  null,
+  "cast"
+ ],
+ "network": [
+  null,
+  "rete"
+ ],
  "no": [
   null,
   "no"
+ ],
+ "other": [
+  null,
+  "altro"
+ ],
+ "paused": [
+  null,
+  "in pausa"
  ],
  "qcow2": [
   null,
@@ -779,6 +923,14 @@ return plural;
   null,
   "raw"
  ],
+ "running": [
+  null,
+  "in esecuzione"
+ ],
+ "server": [
+  null,
+  "server"
+ ],
  "show less": [
   null,
   "mostra meno"
@@ -787,9 +939,33 @@ return plural;
   null,
   "mostra di più"
  ],
+ "shut off": [
+  null,
+  "spento"
+ ],
+ "shutdown": [
+  null,
+  "spegnimento"
+ ],
+ "suspended (PM)": [
+  null,
+  "sospesi (PM)"
+ ],
+ "udp": [
+  null,
+  "udp"
+ ],
  "undefined": [
   null,
   "non definito"
+ ],
+ "up": [
+  null,
+  "su"
+ ],
+ "user": [
+  null,
+  "utente"
  ],
  "vCPU Count": [
   null,
@@ -802,6 +978,10 @@ return plural;
  "vCPUs:": [
   null,
   "vCPU"
+ ],
+ "vhostuser": [
+  null,
+  "vhostuser"
  ],
  "yes": [
   null,

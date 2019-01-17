@@ -134,15 +134,15 @@ return plural;
  ],
  "Unavailable": [
   null,
-  ""
+  "Otillgänglig"
  ],
  "User": [
   null,
-  ""
+  "Användare"
  ],
  "undefined": [
   null,
-  ""
+  "odefinierad"
  ],
  "disk-non-rotational\u0004$0 disk is missing": [
   "$0 disks are missing",

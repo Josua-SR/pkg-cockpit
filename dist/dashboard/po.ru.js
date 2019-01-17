@@ -103,6 +103,14 @@ return plural;
   null,
   "Адрес"
  ],
+ "Advanced TCA": [
+  null,
+  "Расширенный TCA"
+ ],
+ "All In One": [
+  null,
+  "Все в одном"
+ ],
  "Authentication": [
   null,
   "Проверка доступа"
@@ -119,9 +127,25 @@ return plural;
   null,
   "Аватар"
  ],
+ "Blade": [
+  null,
+  "лопасть"
+ ],
+ "Blade enclosure": [
+  null,
+  "Корпус лезвия"
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  "Шина расширения шины"
+ ],
  "CPU": [
   null,
   "ЦП"
+ ],
+ "Can't load image": [
+  null,
+  "Не удается загрузить изображение"
  ],
  "Cancel": [
   null,
@@ -167,6 +191,10 @@ return plural;
   null,
   "Цвет"
  ],
+ "Compact PCI": [
+  null,
+  "Компактный PCI"
+ ],
  "Connect": [
   null,
   "Подключаться"
@@ -174,6 +202,14 @@ return plural;
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
   "Одновременное подключение к {{ limit }} машины не поддерживаются."
+ ],
+ "Connection Error": [
+  null,
+  "Ошибка соединения"
+ ],
+ "Convertible": [
+  null,
+  "конвертируемый"
  ],
  "Could not contact {{host}}": [
   null,
@@ -183,13 +219,29 @@ return plural;
   null,
   "Обзор"
  ],
+ "Desktop": [
+  null,
+  "Рабочий стол"
+ ],
+ "Detachable": [
+  null,
+  "отрывной"
+ ],
  "Disk I/O": [
   null,
   "Дисковый ввод-вывод"
  ],
+ "Docking Station": [
+  null,
+  "Док-станция"
+ ],
  "Edit Server": [
   null,
   "Изменить сервер"
+ ],
+ "Embedded PC": [
+  null,
+  "Встроенный ПК"
  ],
  "Enter IP address or host name": [
   null,
@@ -202,6 +254,10 @@ return plural;
  "Error loading users: {{perm_failed}}": [
   null,
   "Ошибка при загрузке пользователей: {{perm_failed}}"
+ ],
+ "Expansion Chassis": [
+  null,
+  "Шасси расширения"
  ],
  "Failed to add machine: $0": [
   null,
@@ -223,6 +279,10 @@ return plural;
   null,
   "Перейдите к"
  ],
+ "Hand Held": [
+  null,
+  "Ручная работа"
+ ],
  "Host Name": [
   null,
   "Имя узла"
@@ -239,6 +299,10 @@ return plural;
   null,
   "Недопустимые разрешения файлов"
  ],
+ "IoT Gateway": [
+  null,
+  "IoT Gateway"
+ ],
  "Is sshd running on a different port?": [
   null,
   "Работает ли sshd на другом порту?"
@@ -250,6 +314,10 @@ return plural;
  "Kerberos Ticket": [
   null,
   "Билеты на Kerberos"
+ ],
+ "Laptop": [
+  null,
+  "портативный компьютер"
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
@@ -275,9 +343,33 @@ return plural;
   null,
   "Потерянное соединение. Попытка повторного подключения"
  ],
+ "Low Profile Desktop": [
+  null,
+  "Низкий профиль рабочего стола"
+ ],
+ "Lunch Box": [
+  null,
+  "Коробка для ланча"
+ ],
+ "Main Server Chassis": [
+  null,
+  "Основной серверный корпус"
+ ],
  "Memory": [
   null,
   "Память"
+ ],
+ "Mini PC": [
+  null,
+  "Мини-ПК"
+ ],
+ "Mini Tower": [
+  null,
+  "Мини-башня"
+ ],
+ "Multi-system Chassis": [
+  null,
+  "Многосистемное шасси"
  ],
  "Network": [
   null,
@@ -295,6 +387,10 @@ return plural;
   null,
   "Недействительный закрытый ключ"
  ],
+ "Notebook": [
+  null,
+  "Ноутбук"
+ ],
  "Off": [
   null,
   "Выкл"
@@ -307,6 +403,10 @@ return plural;
   null,
   "Вкл"
  ],
+ "Other": [
+  null,
+  "Другие"
+ ],
  "Password": [
   null,
   "Пароль"
@@ -315,9 +415,21 @@ return plural;
   null,
   "Пароль не принимается"
  ],
+ "Peripheral Chassis": [
+  null,
+  "Периферийное шасси"
+ ],
+ "Pizza Box": [
+  null,
+  "Коробка для пиццы"
+ ],
  "Port": [
   null,
   "Порт"
+ ],
+ "Portable": [
+  null,
+  "портативный"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -331,6 +443,18 @@ return plural;
   null,
   "Открытый ключ"
  ],
+ "RAID Chassis": [
+  null,
+  "Шасси RAID"
+ ],
+ "Rack Mount Chassis": [
+  null,
+  "Корпус для монтажа в стойку"
+ ],
+ "Sealed-case PC": [
+  null,
+  "Компьютер с герметичным корпусом"
+ ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
   "Выберите пользователей, с которыми вы хотите синхронизировать {{#strong}}{{host}}{{/strong}}"
@@ -343,6 +467,22 @@ return plural;
   null,
   "Настроить"
  ],
+ "Space-saving Computer": [
+  null,
+  "Компактный компьютер"
+ ],
+ "Stick PC": [
+  null,
+  "Stick PC"
+ ],
+ "Sub Chassis": [
+  null,
+  "Sub Chassis"
+ ],
+ "Sub Notebook": [
+  null,
+  "Sub Notebook"
+ ],
  "Synchronize": [
   null,
   "Синхронизировать"
@@ -350,6 +490,10 @@ return plural;
  "Synchronize users": [
   null,
   "Синхронизация пользователей"
+ ],
+ "Tablet": [
+  null,
+  "Планшет"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -367,6 +511,10 @@ return plural;
   null,
   "Пароли не совпадают."
  ],
+ "The user <b>$0</b> is not permitted to manage servers": [
+  null,
+  "Пользователь <b>$0</b> не разрешено управлять серверами"
+ ],
  "This machine has already been added.": [
   null,
   "Эта машина уже добавлена."
@@ -379,9 +527,17 @@ return plural;
   null,
   "Чтобы попробовать другой порт, вам нужно обновить кокпит-ws до более новой версии."
  ],
+ "Tower": [
+  null,
+  "башня"
+ ],
  "Type a password": [
   null,
   "Введите пароль"
+ ],
+ "Unknown": [
+  null,
+  "Неизвестно"
  ],
  "Unknown Host Key": [
   null,
@@ -406,5 +562,9 @@ return plural;
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
   "Вы подключены к {{#strong}}{{host}}{{/strong}}, однако для синхронизации пользователей требуется пользователь с привилегиями суперпользователя."
+ ],
+ "You are currently connected directly to this server. You cannot delete it.": [
+  null,
+  "Вы в настоящий момент подключены непосредственно к этому серверу. Вы не можете удалить его."
  ]
 }));

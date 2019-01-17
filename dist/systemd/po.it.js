@@ -67,6 +67,10 @@ return plural;
   "language": "it",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Template": [
+  null,
+  "$0 Template"
+ ],
  "$0 is not available from any repository.": [
   null,
   "$0 non è disponibile in nessun deposito."
@@ -86,6 +90,10 @@ return plural;
  "1 hour": [
   null,
   "1 ora"
+ ],
+ "1 min": [
+  null,
+  "1 min"
  ],
  "1 week": [
   null,
@@ -135,6 +143,10 @@ return plural;
   null,
   "1°"
  ],
+ "2 min": [
+  null,
+  "2 min"
+ ],
  "20 Minutes": [
   null,
   "20 minuti"
@@ -183,6 +195,10 @@ return plural;
   null,
   "2a"
  ],
+ "3 min": [
+  null,
+  "3 min"
+ ],
  "30th": [
   null,
   "30"
@@ -195,6 +211,10 @@ return plural;
   null,
   "Terzo"
  ],
+ "4 min": [
+  null,
+  "4 min"
+ ],
  "40 Minutes": [
   null,
   "40 minuti"
@@ -206,6 +226,10 @@ return plural;
  "5 Minutes": [
   null,
   "5 Minuti"
+ ],
+ "5 min": [
+  null,
+  "5 min"
  ],
  "5 minutes": [
   null,
@@ -243,6 +267,10 @@ return plural;
   null,
   "Pacchetti aggiuntivi:"
  ],
+ "Advanced TCA": [
+  null,
+  "TCA avanzato"
+ ],
  "After": [
   null,
   "Dopo"
@@ -254,6 +282,10 @@ return plural;
  "Alert and above": [
   null,
   "Allarme e oltre"
+ ],
+ "All In One": [
+  null,
+  "Tutto In Uno"
  ],
  "Asset Tag": [
   null,
@@ -283,6 +315,34 @@ return plural;
   null,
   "Versione BIOS"
  ],
+ "Before": [
+  null,
+  "Prima"
+ ],
+ "Binds To": [
+  null,
+  "Si lega a"
+ ],
+ "Blade": [
+  null,
+  "Lama"
+ ],
+ "Blade enclosure": [
+  null,
+  "Involucro della lama"
+ ],
+ "Bound By": [
+  null,
+  "Legato da"
+ ],
+ "Bug Fix Updates Available": [
+  null,
+  "Aggiornamenti Bug Fix disponibili"
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  "Telaio di espansione bus"
+ ],
  "CPU": [
   null,
   "CPU"
@@ -294,6 +354,10 @@ return plural;
  "Cancel": [
   null,
   "Annulla"
+ ],
+ "Cannot schedule event in the past": [
+  null,
+  "Non è possibile programmare eventi del passato"
  ],
  "Change": [
   null,
@@ -307,6 +371,10 @@ return plural;
   null,
   "Modifica dell'ora di sistema"
  ],
+ "Checking for updates…": [
+  null,
+  "Controllo degli aggiornamenti...."
+ ],
  "Checking installed software": [
   null,
   "Verifica del software installato"
@@ -314,6 +382,10 @@ return plural;
  "Class": [
   null,
   "Classe"
+ ],
+ "Click to see system hardware information": [
+  null,
+  "Fare clic per visualizzare le informazioni sull'hardware del sistema"
  ],
  "Close": [
   null,
@@ -323,9 +395,33 @@ return plural;
   null,
   "Comando"
  ],
+ "Compact PCI": [
+  null,
+  "Compact PCI"
+ ],
+ "Condition $0=$1 was not met": [
+  null,
+  "Condizione $0=$1 non soddisfatta"
+ ],
  "Condition failed": [
   null,
   "Condizione fallita"
+ ],
+ "Conflicted By": [
+  null,
+  "Conflitto da"
+ ],
+ "Conflicts": [
+  null,
+  "Conflitti"
+ ],
+ "Consists Of": [
+  null,
+  "Consiste di"
+ ],
+ "Convertible": [
+  null,
+  "Convertibile"
  ],
  "Create Timer": [
   null,
@@ -355,9 +451,29 @@ return plural;
   null,
   "Descrizione"
  ],
+ "Desktop": [
+  null,
+  "Desktop"
+ ],
+ "Detachable": [
+  null,
+  "Staccabile"
+ ],
+ "Disable": [
+  null,
+  "Disabilita"
+ ],
+ "Disabled": [
+  null,
+  "Disabilitato"
+ ],
  "Disk I/O": [
   null,
   "I/O disco"
+ ],
+ "Docking Station": [
+  null,
+  "Docking Station"
  ],
  "Domain": [
   null,
@@ -371,9 +487,29 @@ return plural;
   null,
   "Download di $0"
  ],
+ "Embedded PC": [
+  null,
+  "PC integrato"
+ ],
+ "Enable": [
+  null,
+  "Abilita"
+ ],
+ "Enable Forcefully": [
+  null,
+  "Abilita forzatamente"
+ ],
  "Enable stored metrics…": [
   null,
   "Abilita metriche memorizzate...."
+ ],
+ "Enabled": [
+  null,
+  "Attivato"
+ ],
+ "Enhancement Updates Available": [
+  null,
+  "Aggiornamenti di miglioramento disponibili"
  ],
  "Entry": [
   null,
@@ -391,6 +527,10 @@ return plural;
   null,
   "Tutto"
  ],
+ "Expansion Chassis": [
+  null,
+  "Telaio di espansione"
+ ],
  "Friday": [
   null,
   "Venerdì"
@@ -406,6 +546,10 @@ return plural;
  "Go to now": [
   null,
   "Vai a ora"
+ ],
+ "Hand Held": [
+  null,
+  "Tenuto in mano"
  ],
  "Hardware": [
   null,
@@ -423,6 +567,10 @@ return plural;
   null,
   "Ora : Minuto"
  ],
+ "Hour needs to be a number between 0-23": [
+  null,
+  "L'ora deve essere un numero compreso tra 0-23"
+ ],
  "Hours": [
   null,
   "Ore"
@@ -430,6 +578,10 @@ return plural;
  "I/O Wait": [
   null,
   "Attesa I/O"
+ ],
+ "Id": [
+  null,
+  "Id"
  ],
  "Info and above": [
   null,
@@ -451,9 +603,37 @@ return plural;
   null,
   "Istantanea"
  ],
+ "Invalid date format": [
+  null,
+  "Formato data non valido"
+ ],
+ "Invalid date format and invalid time format": [
+  null,
+  "Formato data non valido e formato ora non valido"
+ ],
+ "Invalid date format.": [
+  null,
+  "Formato data non valido."
+ ],
+ "Invalid number.": [
+  null,
+  "Numero non valido."
+ ],
+ "Invalid time format": [
+  null,
+  "Formato ora non valido"
+ ],
  "Invalid time zone": [
   null,
   "Fuso orario non valido"
+ ],
+ "IoT Gateway": [
+  null,
+  "IoT Gateway"
+ ],
+ "Joins Namespace Of": [
+  null,
+  "Iscrive Namespace Of"
  ],
  "Journal": [
   null,
@@ -471,6 +651,10 @@ return plural;
   null,
   "Kernel"
  ],
+ "Laptop": [
+  null,
+  "Portatile"
+ ],
  "Last 24 hours": [
   null,
   "Ultime 24 ore"
@@ -478,6 +662,10 @@ return plural;
  "Last 7 days": [
   null,
   "Ultimi 7 giorni"
+ ],
+ "Last Trigger": [
+  null,
+  "Ultimo trigger"
  ],
  "Load earlier entries": [
   null,
@@ -495,6 +683,14 @@ return plural;
   null,
   "Log"
  ],
+ "Low Profile Desktop": [
+  null,
+  "Desktop a basso profilo"
+ ],
+ "Lunch Box": [
+  null,
+  "Scatola da pranzo"
+ ],
  "Machine ID": [
   null,
   "ID macchina"
@@ -503,9 +699,21 @@ return plural;
   null,
   "Impronte digitali dei tasti SSH a macchina"
  ],
+ "Main Server Chassis": [
+  null,
+  "Telaio del server principale"
+ ],
  "Manually": [
   null,
   "Manualmente"
+ ],
+ "Mask": [
+  null,
+  "Maschera"
+ ],
+ "Mask Forcefully": [
+  null,
+  "Maschera con forza"
  ],
  "Memory": [
   null,
@@ -514,6 +722,22 @@ return plural;
  "Memory & Swap": [
   null,
   "Memoria & Scambio"
+ ],
+ "Message to logged in users": [
+  null,
+  "Messaggio agli utenti registrati"
+ ],
+ "Mini PC": [
+  null,
+  "Mini PC"
+ ],
+ "Mini Tower": [
+  null,
+  "Mini Torre"
+ ],
+ "Minute needs to be a number between 0-59": [
+  null,
+  "Il minuto deve essere un numero compreso tra 0-59"
  ],
  "Minutes": [
   null,
@@ -527,13 +751,29 @@ return plural;
   null,
   "Lunedì"
  ],
+ "Multi-system Chassis": [
+  null,
+  "Telaio multisistema"
+ ],
+ "NTP Server": [
+  null,
+  "Server NTP"
+ ],
  "Name": [
   null,
   "Nome"
  ],
+ "Need at least one NTP server": [
+  null,
+  "Immettere almeno un server NTP"
+ ],
  "Network Traffic": [
   null,
   "Traffico di rete"
+ ],
+ "Next Run": [
+  null,
+  "Prossima esecuzione"
  ],
  "Nice": [
   null,
@@ -559,6 +799,10 @@ return plural;
   null,
   "Note"
  ],
+ "Notebook": [
+  null,
+  "Notebook"
+ ],
  "Notice and above": [
   null,
   "Notice e oltre"
@@ -575,17 +819,37 @@ return plural;
   null,
   "On"
  ],
+ "On Failure": [
+  null,
+  "In caso di guasto"
+ ],
  "Only Emergency": [
   null,
   "Solo emergenza"
+ ],
+ "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
+  null,
+  "Sono ammessi solo gli alfabeti, i numeri, : , _ , _ , . , , @ , -."
  ],
  "Operating System": [
   null,
   "Sistema Operativo"
  ],
+ "Other": [
+  null,
+  "Altro"
+ ],
  "PCI": [
   null,
   "PCI"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit si è interrotto"
+ ],
+ "Part Of": [
+  null,
+  "Parte di"
  ],
  "Paths": [
   null,
@@ -595,9 +859,29 @@ return plural;
   null,
   "Profilo di prestazione"
  ],
+ "Peripheral Chassis": [
+  null,
+  "Telaio periferico"
+ ],
+ "Pizza Box": [
+  null,
+  "Scatola della pizza"
+ ],
+ "Portable": [
+  null,
+  "Portatile"
+ ],
  "Power Options": [
   null,
   "Opzioni di alimentazione"
+ ],
+ "Preset": [
+  null,
+  "Preset"
+ ],
+ "Preset Forcefully": [
+  null,
+  "Preselezionato Con forza"
  ],
  "Pretty Host Name": [
   null,
@@ -611,9 +895,29 @@ return plural;
   null,
   "Informazioni sul problema"
  ],
+ "Propagates Reload To": [
+  null,
+  "Propagati Ricarica su"
+ ],
+ "RAID Chassis": [
+  null,
+  "Telaio RAID"
+ ],
+ "Rack Mount Chassis": [
+  null,
+  "Telaio a rack"
+ ],
  "Real Host Name": [
   null,
   "Nome dell'host reale"
+ ],
+ "Real host name can only contain lower-case characters, digits, dashes, and periods (with populated subdomains)": [
+  null,
+  "Il nome host reale può contenere solo caratteri minuscoli, cifre, trattini e periodi (con sottodomini popolati)"
+ ],
+ "Real host name must be 64 characters or less": [
+  null,
+  "Il nome host reale deve essere di 64 caratteri o meno"
  ],
  "Reboot": [
   null,
@@ -622,6 +926,14 @@ return plural;
  "Recent": [
   null,
   "Recenti"
+ ],
+ "Reload": [
+  null,
+  "Ricarica"
+ ],
+ "Reload Propagated From": [
+  null,
+  "Ricarica Propagato da"
  ],
  "Removals:": [
   null,
@@ -667,6 +979,22 @@ return plural;
   null,
   "La segnalazione non ha avuto successo. Prova a eseguire `reporter-ureport -d "
  ],
+ "Required By": [
+  null,
+  "Richiesto da"
+ ],
+ "Requires": [
+  null,
+  "Ha bisogno di"
+ ],
+ "Requisite": [
+  null,
+  "Requisito"
+ ],
+ "Requisite Of": [
+  null,
+  "Requisito di"
+ ],
  "Reset": [
   null,
   "Azzera"
@@ -687,6 +1015,10 @@ return plural;
   null,
   "Salva"
  ],
+ "Sealed-case PC": [
+  null,
+  "Caso PC sigillato"
+ ],
  "Seconds": [
   null,
   "Secondi"
@@ -694,6 +1026,10 @@ return plural;
  "Secure Shell Keys": [
   null,
   "Chiavi a guscio sicuro"
+ ],
+ "Security Updates Available": [
+  null,
+  "Aggiornamenti di sicurezza disponibili"
  ],
  "Service Logs": [
   null,
@@ -706,6 +1042,10 @@ return plural;
  "Services": [
   null,
   "Servizi"
+ ],
+ "Set Host name": [
+  null,
+  "Imposta nome host"
  ],
  "Set Time": [
   null,
@@ -723,6 +1063,10 @@ return plural;
   null,
   "Arresto"
  ],
+ "Since $0": [
+  null,
+  "Da $0"
+ ],
  "Slot": [
   null,
   "Slot"
@@ -731,13 +1075,45 @@ return plural;
   null,
   "Socket"
  ],
+ "Space-saving Computer": [
+  null,
+  "Computer salvaspazio"
+ ],
  "Specific Time": [
   null,
   "Tempo specifico"
  ],
+ "Start": [
+  null,
+  "Avvia"
+ ],
+ "State": [
+  null,
+  "Stato"
+ ],
+ "Static": [
+  null,
+  "Statico"
+ ],
+ "Stick PC": [
+  null,
+  "Stick PC"
+ ],
+ "Stop": [
+  null,
+  "Ferma"
+ ],
  "Store metrics": [
   null,
   "Conserva metriche"
+ ],
+ "Sub Chassis": [
+  null,
+  "Sub Chassis"
+ ],
+ "Sub Notebook": [
+  null,
+  "Sub Notebook"
  ],
  "Sunday": [
   null,
@@ -763,6 +1139,10 @@ return plural;
   null,
   "Informazioni sul sistema"
  ],
+ "System Not Registered": [
+  null,
+  "Sistema non registrato"
+ ],
  "System Services": [
   null,
   "Servizi di sistema"
@@ -771,6 +1151,14 @@ return plural;
   null,
   "Tempo di sistema"
  ],
+ "System Up To Date": [
+  null,
+  "Sistema aggiornato"
+ ],
+ "Tablet": [
+  null,
+  "Tavoletta"
+ ],
  "Targets": [
   null,
   "Obiettivi"
@@ -778,6 +1166,42 @@ return plural;
  "Terminal": [
   null,
   "Terminale"
+ ],
+ "The user <b>$0</b> does not have permissions for creating timers": [
+  null,
+  "L<b>$0</b>'utente non ha i permessi per la creazione di timer"
+ ],
+ "The user <b>$0</b> is not permitted to change the system time": [
+  null,
+  "L'utente non <b>$0</b> è autorizzato a modificare l'orario di sistema"
+ ],
+ "The user <b>$0</b> is not permitted to enable or disable services": [
+  null,
+  "All'utente non <b>$0</b> è consentito abilitare o disabilitare i servizi"
+ ],
+ "The user <b>$0</b> is not permitted to modify hostnames": [
+  null,
+  "L'utente non <b>$0</b>è autorizzato a modificare i nomi degli hostname"
+ ],
+ "The user <b>$0</b> is not permitted to shutdown or restart this server": [
+  null,
+  "L'utente non <b>$0</b>è autorizzato a spegnere o riavviare il server"
+ ],
+ "The user <b>$0</b> is not permitted to start or stop services": [
+  null,
+  "L'utente non <b>$0</b>è autorizzato ad avviare o interrompere i servizi"
+ ],
+ "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
+  null,
+  "Questo giorno non esiste in tutti i mesi. Il<br> timer verrà eseguito solo nei mesi che hanno 31."
+ ],
+ "This field cannot be empty.": [
+  null,
+  "Questo campo non può essere vuoto."
+ ],
+ "This unit is an instance of the $0 template.": [
+  null,
+  "Questa unità è un'istanza del $0 modello."
  ],
  "This unit is not designed to be enabled explicitly.": [
   null,
@@ -799,6 +1223,18 @@ return plural;
   null,
   "Dimensione totale: $0"
  ],
+ "Tower": [
+  null,
+  "Tower"
+ ],
+ "Triggered By": [
+  null,
+  "Attivato da"
+ ],
+ "Triggers": [
+  null,
+  "Trigger"
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   "Tenativo di sincronizzazione con {{Server}}"
@@ -810,6 +1246,23 @@ return plural;
  "Type": [
   null,
   "Tipo"
+ ],
+ "Unknown": [
+  null,
+  "Sconosciuto"
+ ],
+ "Unmask": [
+  null,
+  "Smascherare"
+ ],
+ "Updates Available": [
+  null,
+  "Aggiornamenti disponibili"
+ ],
+ "Usage of $0 CPU core": [
+  "Usage of $0 CPU cores",
+  "Utilizzo del core della $0CPU",
+  "Utilizzo dei core della $0CPU"
  ],
  "Used": [
   null,
@@ -830,6 +1283,14 @@ return plural;
  "Waiting for other software management operations to finish": [
   null,
   "In attesa che finiscano le altre operazioni di gestione del software"
+ ],
+ "Wanted By": [
+  null,
+  "Ricercato da"
+ ],
+ "Wants": [
+  null,
+  "Vuole"
  ],
  "Warning and above": [
   null,
@@ -854,5 +1315,26 @@ return plural;
  "[no data]": [
   null,
   "[nessun dato]"
+ ],
+ "failed to list ssh host keys: $0": [
+  null,
+  "non ha elencato le chiavi host ssh: $0"
+ ],
+ "of $0 CPU core": [
+  "of $0 CPU cores",
+  "di core della CPU $0",
+  "di core della CPU $0"
+ ],
+ "unknown": [
+  null,
+  "sconosciuto"
+ ],
+ "page-title\u0004CPU Status": [
+  null,
+  "Stato CPU"
+ ],
+ "page-title\u0004Memory": [
+  null,
+  "Memoria"
  ]
 }));

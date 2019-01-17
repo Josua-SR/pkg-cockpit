@@ -60,7 +60,7 @@
   grid-gap: 0 @padding-large-vertical;
   // Repeat a label that is a minimum of 4em and its control that
   // fills the remaining space by a CSS variable (default: 2)
-  grid-template-columns: repeat(var(--ct-form-layout-columns), minmax(4em, max-content) 1fr);
+  grid-template-columns: repeat(var(--ct-form-layout-columns), max-content 1fr);
   place-items: baseline stretch;
 
   // Horizontal rules directly under a form-layout container serve to
@@ -80,7 +80,12 @@
     padding: 0;
   }
 
-  label {
+  > label,
+  > [role="group"] > label,
+  .checkbox > label,
+  .radio > label,
+  .checkbox-inline,
+  .radio-inline {
     // Make labels are the same height as controls,
     // to ensure vertical alignment happens properly
     line-height: @widget-height;
@@ -99,6 +104,7 @@
   // stretching to the rightmost column
   > div,
   > span,
+  > a,
   > p,
   > dl,
   > ol,

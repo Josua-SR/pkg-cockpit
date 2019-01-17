@@ -103,6 +103,14 @@ return plural;
   null,
   "Адреса"
  ],
+ "Advanced TCA": [
+  null,
+  "Розширене TCA"
+ ],
+ "All In One": [
+  null,
+  "Усе-в-одному"
+ ],
  "Authentication": [
   null,
   "Розпізнавання"
@@ -119,9 +127,25 @@ return plural;
   null,
   "Аватар"
  ],
+ "Blade": [
+  null,
+  "Blade"
+ ],
+ "Blade enclosure": [
+  null,
+  "Обгортка Blade"
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  "Апаратний блок розширення каналу"
+ ],
  "CPU": [
   null,
   "Процесор"
+ ],
+ "Can't load image": [
+  null,
+  "Не вдалося завантажити образ"
  ],
  "Cancel": [
   null,
@@ -167,6 +191,10 @@ return plural;
   null,
   "Колір"
  ],
+ "Compact PCI": [
+  null,
+  "Компактний PCI"
+ ],
  "Connect": [
   null,
   "З'єднатися"
@@ -174,6 +202,14 @@ return plural;
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
   "Підтримки одночасного з’єднання із понад {{ limit }} комп’ютерами не передбачено."
+ ],
+ "Connection Error": [
+  null,
+  "Помилка з'єднання"
+ ],
+ "Convertible": [
+  null,
+  "Змінюваний"
  ],
  "Could not contact {{host}}": [
   null,
@@ -183,13 +219,29 @@ return plural;
   null,
   "Панель приладів"
  ],
+ "Desktop": [
+  null,
+  "Робоча станція"
+ ],
+ "Detachable": [
+  null,
+  "Змінний"
+ ],
  "Disk I/O": [
   null,
   "Дисковий ввід/вивід"
  ],
+ "Docking Station": [
+  null,
+  "Станція заряджання"
+ ],
  "Edit Server": [
   null,
   "Змінити сервер"
+ ],
+ "Embedded PC": [
+  null,
+  "Вбудований ПК"
  ],
  "Enter IP address or host name": [
   null,
@@ -202,6 +254,10 @@ return plural;
  "Error loading users: {{perm_failed}}": [
   null,
   "Помилка під час завантаження списку користувачів: {{perm_failed}}"
+ ],
+ "Expansion Chassis": [
+  null,
+  "Апаратний блок розширення"
  ],
  "Failed to add machine: $0": [
   null,
@@ -223,6 +279,10 @@ return plural;
   null,
   "Перейти зараз"
  ],
+ "Hand Held": [
+  null,
+  "Портативний"
+ ],
  "Host Name": [
   null,
   "Назва вузла"
@@ -239,6 +299,10 @@ return plural;
   null,
   "Некоректні права доступу до файла"
  ],
+ "IoT Gateway": [
+  null,
+  "Шлюз IoT"
+ ],
  "Is sshd running on a different port?": [
   null,
   "sshd працює на іншому порті?"
@@ -250,6 +314,10 @@ return plural;
  "Kerberos Ticket": [
   null,
   "Квиток Kerberos"
+ ],
+ "Laptop": [
+  null,
+  "Переносний ПК"
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
@@ -275,9 +343,33 @@ return plural;
   null,
   "З’єднання розірвано. Намагаємося його повторно встановити"
  ],
+ "Low Profile Desktop": [
+  null,
+  "Низькопрофільна робоча станція"
+ ],
+ "Lunch Box": [
+  null,
+  "Пусковий комп'ютер"
+ ],
+ "Main Server Chassis": [
+  null,
+  "Апаратний блок основного сервера"
+ ],
  "Memory": [
   null,
   "Пам'ять"
+ ],
+ "Mini PC": [
+  null,
+  "Міні-ПК"
+ ],
+ "Mini Tower": [
+  null,
+  "Міні-башточка"
+ ],
+ "Multi-system Chassis": [
+  null,
+  "Багатосистемний апаратний блок"
  ],
  "Network": [
   null,
@@ -295,6 +387,10 @@ return plural;
   null,
   "Некоректний закритий ключ"
  ],
+ "Notebook": [
+  null,
+  "Ноутбук"
+ ],
  "Off": [
   null,
   "Вимкнено"
@@ -307,6 +403,10 @@ return plural;
   null,
   "Увімкнено"
  ],
+ "Other": [
+  null,
+  "Інше"
+ ],
  "Password": [
   null,
   "Пароль"
@@ -315,9 +415,21 @@ return plural;
   null,
   "Пароль не прийнято"
  ],
+ "Peripheral Chassis": [
+  null,
+  "Периферійний апаратний блок"
+ ],
+ "Pizza Box": [
+  null,
+  "З коробку для піци"
+ ],
  "Port": [
   null,
   "Порт"
+ ],
+ "Portable": [
+  null,
+  "Портативний"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -331,6 +443,18 @@ return plural;
   null,
   "Відкритий ключ"
  ],
+ "RAID Chassis": [
+  null,
+  "Апаратний блок RAID"
+ ],
+ "Rack Mount Chassis": [
+  null,
+  "Апаратний блок монтування стійок"
+ ],
+ "Sealed-case PC": [
+  null,
+  "ПК з опломбованим корпусом"
+ ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
   "Виберіть користувачів, записи яких ви б хотіли синхронізувати з {{#strong}}{{host}}{{/strong}}"
@@ -343,6 +467,22 @@ return plural;
   null,
   "Встановити"
  ],
+ "Space-saving Computer": [
+  null,
+  "Компактний комп'ютер"
+ ],
+ "Stick PC": [
+  null,
+  "Паличковий ПК"
+ ],
+ "Sub Chassis": [
+  null,
+  "Підблок"
+ ],
+ "Sub Notebook": [
+  null,
+  "Підноутбук"
+ ],
  "Synchronize": [
   null,
   "Синхронізувати"
@@ -350,6 +490,10 @@ return plural;
  "Synchronize users": [
   null,
   "Синхронізувати користувачів"
+ ],
+ "Tablet": [
+  null,
+  "Планшет"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -367,6 +511,10 @@ return plural;
   null,
   "Паролі не збігаються."
  ],
+ "The user <b>$0</b> is not permitted to manage servers": [
+  null,
+  "Користувачу <b>$0</b> заборонено керувати серверами"
+ ],
  "This machine has already been added.": [
   null,
   "Цей комп’ютер вже було додано."
@@ -379,9 +527,17 @@ return plural;
   null,
   "Щоб спробувати інший порт, вам слід оновити cockpit-ws."
  ],
+ "Tower": [
+  null,
+  "Башточка"
+ ],
  "Type a password": [
   null,
   "Введіть пароль"
+ ],
+ "Unknown": [
+  null,
+  "Невідомий"
  ],
  "Unknown Host Key": [
   null,
@@ -406,5 +562,9 @@ return plural;
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
   "Ви встановлюєте з’єднання із {{#strong}}{{host}}{{/strong}}. Втім, для синхронізації даних користувачів потрібні права доступу адміністративного користувача."
+ ],
+ "You are currently connected directly to this server. You cannot delete it.": [
+  null,
+  "Зараз ваш комп’ютер безпосередньо з’єднано із цим сервером. Ви не можете його вилучити."
  ]
 }));

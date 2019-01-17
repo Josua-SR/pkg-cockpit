@@ -17,14 +17,14 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-var $ = require("jquery");
-var cockpit = require("cockpit");
+import $ from "jquery";
+import cockpit from "cockpit";
 
 /* These add themselves to jQuery so just including is enough */
-require("patterns");
-require("bootstrap-datepicker/dist/js/bootstrap-datepicker");
+import "patterns";
+import "bootstrap-datepicker/dist/js/bootstrap-datepicker";
 
-var _ = cockpit.gettext;
+const _ = cockpit.gettext;
 
 /* The server time object */
 var server_time = null;
@@ -33,11 +33,11 @@ var server_time = null;
 var operation = null;
 
 /* The entry point, shows the dialog */
-module.exports = function shutdown(op, st) {
+export function shutdown(op, st) {
     operation = op;
     server_time = st;
     $('#shutdown-dialog').modal('show');
-};
+}
 
 $('#shutdown-dialog .shutdown-date').datepicker({
     autoclose: true,

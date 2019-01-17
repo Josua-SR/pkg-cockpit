@@ -73,11 +73,11 @@ return plural;
  ],
  "$0% Free": [
   "$0% Free",
-  ""
+  "$0% 여유 공간 "
  ],
  "$0% Used": [
   "$0% Used",
-  ""
+  "$0% 사용됨 "
  ],
  "AWS Elastic Block Store": [
   null,
@@ -93,7 +93,7 @@ return plural;
  ],
  "Actual": [
   null,
-  ""
+  "실제 "
  ],
  "Add": [
   null,
@@ -117,7 +117,7 @@ return plural;
  ],
  "Add Membership": [
   null,
-  "맴버"
+  "멤버쉽 추가 "
  ],
  "Add New Cluster": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Add membership": [
   null,
-  ""
+  "멤버쉽 추가 "
  ],
  "Address": [
   null,
@@ -153,15 +153,15 @@ return plural;
  ],
  "Adjust Persistent Volume '{{ item.metadata.name }}'": [
   null,
-  ""
+  "영구 볼륨 '{{ item.metadata.name }}' 조정 "
  ],
  "Adjust Replication Controller {{ item.metadata.name }}": [
   null,
-  ""
+  "복제 컨트롤러 {{ item.metadata.name }} 조정 "
  ],
  "Adjust Route": [
   null,
-  ""
+  "라우트 조정 "
  ],
  "Adjust Service": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "All healthy": [
   null,
-  ""
+  "모두 정상 "
  ],
  "All images": [
   null,
@@ -189,11 +189,11 @@ return plural;
  ],
  "All in use": [
   null,
-  ""
+  "모두 사용 중 "
  ],
  "All running": [
   null,
-  "작동중"
+  "모두 실행 중 "
  ],
  "Annotations": [
   null,
@@ -261,11 +261,11 @@ return plural;
  ],
  "Claim": [
   null,
-  ""
+  "클레임 "
  ],
  "Claim Name": [
   null,
-  "컨테이너 이름"
+  "클레임 이름 "
  ],
  "Client Certificate": [
   null,
@@ -285,7 +285,7 @@ return plural;
  ],
  "Configure Kubelet and Proxy": [
   null,
-  "Kubelet 과 프록시 설정"
+  "Kubelet 및 프록시 설정"
  ],
  "Connect": [
   null,
@@ -297,15 +297,15 @@ return plural;
  ],
  "Connection Error": [
   null,
-  "Docker에 연결중입니다."
+  "연결 오류 "
  ],
  "Connection Error: $0": [
   null,
-  "Docker에 연결중입니다."
+  "연결 오류: $0"
  ],
  "Connection Settings": [
   null,
-  "본드 설정"
+  "연결 설정"
  ],
  "Container": [
   null,
@@ -313,11 +313,11 @@ return plural;
  ],
  "Container ID": [
   null,
-  ""
+  "컨테이너 ID"
  ],
  "Container Runtime Version": [
   null,
-  ""
+  "컨테이너 런타임 버전 "
  ],
  "Containers": [
   null,
@@ -325,7 +325,7 @@ return plural;
  ],
  "Could not list services": [
   null,
-  ""
+  "서비스를 나열할 수 없습니다 "
  ],
  "Couldn't connect to server": [
   null,
@@ -341,11 +341,11 @@ return plural;
  ],
  "Create empty image stream": [
   null,
-  ""
+  "빈 이미지 스트림 만들기 "
  ],
  "Create image stream": [
   null,
-  ""
+  "이미지 스트림 만들기 "
  ],
  "Created": [
   null,
@@ -353,7 +353,7 @@ return plural;
  ],
  "DNS Policy": [
   null,
-  ""
+  "DNS 정책 "
  ],
  "Delete": [
   null,
@@ -885,7 +885,7 @@ return plural;
  ],
  "PD Name": [
   null,
-  "이름"
+  "PD 이름 "
  ],
  "Partition": [
   null,
@@ -917,27 +917,27 @@ return plural;
  ],
  "Please provide a GlusterFS volume name": [
   null,
-  "올바른 네임스페이스를 입력하세요."
+  "GlusterFS 볼륨 이름을 입력하세요."
  ],
  "Please provide a username": [
   null,
-  "올바른 네임스페이스를 입력하세요."
+  "사용자 이름을 입력하세요."
  ],
  "Please provide a valid NFS server": [
   null,
-  "올바른 네임스페이스를 입력하세요."
+  "유효한 NFS 서버를 입력하세요."
  ],
  "Please provide a valid address": [
   null,
-  "올바른 네임스페이스를 입력하세요."
+  "유효한 주소를 입력하세요."
  ],
  "Please provide a valid filesystem type": [
   null,
-  "올바른 네임스페이스를 입력하세요."
+  "유효한 파일 시스템 유형을 입력하세요."
  ],
  "Please provide a valid interface": [
   null,
-  "올바른 네임스페이스를 입력하세요."
+  "유효한 인터페이스를 입력하세요."
  ],
  "Please provide a valid logical unit number": [
   null,
@@ -1013,7 +1013,7 @@ return plural;
  ],
  "Pool Name": [
   null,
-  "이름"
+  "풀 이름 "
  ],
  "Populate": [
   null,
@@ -1049,15 +1049,15 @@ return plural;
  ],
  "Project:": [
   null,
-  ""
+  "프로젝트:"
  ],
  "Projects": [
   null,
-  ""
+  "프로젝트 "
  ],
  "Proxy Version": [
   null,
-  ""
+  "프록시 버전 "
  ],
  "Pull an image:": [
   null,
@@ -1141,27 +1141,27 @@ return plural;
  ],
  "Remove Group": [
   null,
-  ""
+  "그룹 삭제 "
  ],
  "Remove Member": [
   null,
-  "맴버"
+  "멤버 삭제 "
  ],
  "Remove Role": [
   null,
-  ""
+  "역할 삭제 "
  ],
  "Remove User": [
   null,
-  ""
+  "사용자 삭제 "
  ],
  "Remove image tag": [
   null,
-  ""
+  "이미지 태그 삭제 "
  ],
  "Remove membership": [
   null,
-  ""
+  "멤버쉽 삭제 "
  ],
  "Replicas": [
   null,
@@ -1257,11 +1257,11 @@ return plural;
  ],
  "Select Member": [
   null,
-  ""
+  "멤버 선택 "
  ],
  "Select Role": [
   null,
-  ""
+  "역할 선택 "
  ],
  "Select an object to see more details.": [
   null,
@@ -1277,7 +1277,7 @@ return plural;
  ],
  "Service Account": [
   null,
-  ""
+  "서비스 계정 "
  ],
  "Services": [
   null,
@@ -1397,7 +1397,7 @@ return plural;
  ],
  "Target Portal": [
   null,
-  ""
+  "대상 포털 "
  ],
  "Target World Wide Names": [
   null,
@@ -1413,7 +1413,7 @@ return plural;
  ],
  "The container '{{ target }}' does not exist.": [
   null,
-  ""
+  "컨테이너 '{{ target }}'은/는 존재하지 않습니다. "
  ],
  "The deployment config '{{ target }}' does not exist.": [
   null,
@@ -1421,7 +1421,7 @@ return plural;
  ],
  "The group '{{ groupName }}' does not exist.": [
   null,
-  ""
+  "그룹 '{{ groupName }}'은/는 존재하지 않습니다. "
  ],
  "The maximum number of replicas is 128": [
   null,
@@ -1433,7 +1433,7 @@ return plural;
  ],
  "The node '{{ target }}' does not exist.": [
   null,
-  ""
+  "노드 '{{ target }}'은/는 존재하지 않습니다. "
  ],
  "The node doesn't have enough disk space": [
   null,
@@ -1501,7 +1501,7 @@ return plural;
  ],
  "Topology": [
   null,
-  ""
+  "토폴로지 "
  ],
  "Triggers": [
   null,
@@ -1553,7 +1553,7 @@ return plural;
  ],
  "User or Group": [
   null,
-  ""
+  "사용자 또는 그룹 "
  ],
  "Username": [
   null,
@@ -1569,11 +1569,11 @@ return plural;
  ],
  "Volume ID": [
   null,
-  ""
+  "볼륨 ID"
  ],
  "Volume Name": [
   null,
-  "사용자 이름"
+  "볼륨 이름 "
  ],
  "Volume Type": [
   null,
@@ -1585,7 +1585,7 @@ return plural;
  ],
  "Warning:": [
   null,
-  "파티션"
+  "경고: "
  ],
  "Welcome to the Image Registry": [
   null,
@@ -1625,7 +1625,7 @@ return plural;
  ],
  "pending volume claims": [
   null,
-  ""
+  "볼륨 클레임 보류 중 "
  ],
  "yes": [
   null,

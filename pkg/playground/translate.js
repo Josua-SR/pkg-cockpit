@@ -1,10 +1,10 @@
-var $ = require("jquery");
-var cockpit = require("cockpit");
-var mustache = require("mustache");
-var angular = require('angular');
-require('angular-gettext/dist/angular-gettext.js');
+import $ from "jquery";
+import cockpit from "cockpit";
+import { mustache } from "mustache";
+import angular from 'angular';
+import 'angular-gettext/dist/angular-gettext.js';
 
-var _ = cockpit.gettext;
+const _ = cockpit.gettext;
 var C_ = cockpit.gettext;
 
 $(function () {

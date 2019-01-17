@@ -17,16 +17,17 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-(function() {
-    "use strict";
+"use strict";
 
-    /* QUnit needs to have 'window' as 'this' in order to load */
-    window.QUnit = require("qunit/qunit/qunit.js");
-    window.qunitTap = require("qunit-tap/lib/qunit-tap.js");
+import QUnit from "qunit/qunit/qunit.js";
+import qunitTap from "qunit-tap/lib/qunit-tap.js";
 
-    require("./qunit-config.js");
+/* QUnit needs to have 'window' as 'this' in order to load */
+window.QUnit = QUnit;
+window.qunitTap = qunitTap;
 
-    require("qunit/qunit/qunit.css");
+require("./qunit-config.js");
 
-    module.exports = window.QUnit;
-}());
+require("qunit/qunit/qunit.css");
+
+export default QUnit;

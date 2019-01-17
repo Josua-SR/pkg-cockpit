@@ -89,11 +89,15 @@ return plural;
  ],
  "Add public key": [
   null,
-  ""
+  "공개 키 추가 "
+ ],
+ "Adding key": [
+  null,
+  "키 추가 중"
  ],
  "Authorized Public SSH Keys": [
   null,
-  ""
+  "승인된 공개 SSH 키"
  ],
  "Back to Accounts": [
   null,
@@ -117,7 +121,11 @@ return plural;
  ],
  "Confirm New Password": [
   null,
-  ""
+  "새 암호 확인 "
+ ],
+ "Container Administrator": [
+  null,
+  "컨테이너 관리자 "
  ],
  "Create": [
   null,
@@ -131,9 +139,29 @@ return plural;
   null,
   "삭제"
  ],
+ "Delete $0": [
+  null,
+  ""
+ ],
  "Delete Files": [
   null,
   "파일 삭제"
+ ],
+ "Error": [
+  null,
+  "오류"
+ ],
+ "Error saving authorized keys: ": [
+  null,
+  ""
+ ],
+ "Excellent password": [
+  null,
+  ""
+ ],
+ "Failed to change password": [
+  null,
+  ""
  ],
  "Failed to load authorized keys.": [
   null,
@@ -151,7 +179,19 @@ return plural;
   null,
   "성명"
  ],
+ "Image Builder": [
+  null,
+  ""
+ ],
+ "Invalid expiration date": [
+  null,
+  ""
+ ],
  "Invalid key": [
+  null,
+  ""
+ ],
+ "Invalid number of days": [
   null,
   ""
  ],
@@ -167,6 +207,18 @@ return plural;
   null,
   ""
  ],
+ "Lock account on $0": [
+  null,
+  ""
+ ],
+ "Logged In": [
+  null,
+  ""
+ ],
+ "Never": [
+  null,
+  "하지 않기"
+ ],
  "Never expire password": [
   null,
   ""
@@ -179,11 +231,27 @@ return plural;
   null,
   ""
  ],
+ "New password was not accepted": [
+  null,
+  ""
+ ],
+ "No real name specified": [
+  null,
+  ""
+ ],
+ "No user name specified": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "비활성"
  ],
  "Old Password": [
+  null,
+  ""
+ ],
+ "Old password not accepted": [
   null,
   ""
  ],
@@ -199,7 +267,35 @@ return plural;
   null,
   ""
  ],
+ "Password is not acceptable": [
+  null,
+  ""
+ ],
+ "Password is too weak": [
+  null,
+  ""
+ ],
+ "Password must be changed": [
+  null,
+  ""
+ ],
  "Paste the contents of your public SSH key file here": [
+  null,
+  ""
+ ],
+ "Please specify an expiration date": [
+  null,
+  ""
+ ],
+ "Prompting via passwd timed out": [
+  null,
+  ""
+ ],
+ "Require password change every $0 days": [
+  null,
+  ""
+ ],
+ "Require password change on $0": [
   null,
   ""
  ],
@@ -211,21 +307,61 @@ return plural;
   null,
   "역할"
  ],
+ "Server Administrator": [
+  null,
+  "서버 관리자 "
+ ],
  "Set": [
   null,
   "설정"
  ],
  "Set Password": [
   null,
-  ""
+  "암호 설정 "
  ],
  "Terminate Session": [
+  null,
+  ""
+ ],
+ "The account '$0' will be forced to change their password on next login": [
+  null,
+  ""
+ ],
+ "The key you provided was not valid.": [
+  null,
+  ""
+ ],
+ "The passwords do not match": [
+  null,
+  ""
+ ],
+ "The user <b>$0</b> is not permitted to modify accounts": [
+  null,
+  ""
+ ],
+ "The user name can only consist of letters from a-z, digits, dots, dashes and underscores.": [
   null,
   ""
  ],
  "There are no authorized public keys for this account.": [
   null,
   ""
+ ],
+ "This user name already exists": [
+  null,
+  ""
+ ],
+ "Unable to delete root account": [
+  null,
+  ""
+ ],
+ "Unable to rename root account": [
+  null,
+  ""
+ ],
+ "Unexpected error": [
+  null,
+  "예상치 못한 오류"
  ],
  "Unnamed": [
   null,
@@ -235,12 +371,24 @@ return plural;
   null,
   "사용자 이름"
  ],
+ "Validating key": [
+  null,
+  ""
+ ],
  "You do not have permission to view the authorized public keys for this account.": [
+  null,
+  ""
+ ],
+ "You must wait longer to change your password": [
   null,
   ""
  ],
  "translatable": [
   null,
-  ""
+  "번역 가능 "
+ ],
+ "page-title\u0004Accounts": [
+  null,
+  "계정"
  ]
 }));

@@ -199,6 +199,10 @@ return plural;
   null,
   "Password unica"
  ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit si è interrotto"
+ ],
  "Removals:": [
   null,
   "Traslochi:"

@@ -199,6 +199,10 @@ return plural;
   null,
   "Engångslösenord"
  ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit kraschade"
+ ],
  "Removals:": [
   null,
   "Borttagningar:"
@@ -217,22 +221,22 @@ return plural;
  ],
  "Total size: $0": [
   null,
-  ""
+  "Total storlek: $0"
  ],
  "User Name": [
   null,
-  ""
+  "Användarnamn"
  ],
  "User Password": [
   null,
-  ""
+  "Användarens lösenord"
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "Väntar på att andra programvaruhanteringsåtgärder skall bli klara"
  ],
  "e.g. \"$0\"": [
   null,
-  ""
+  "t.ex. ”$0”"
  ]
 }));

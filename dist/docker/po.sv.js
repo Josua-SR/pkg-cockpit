@@ -91,6 +91,14 @@ return plural;
   null,
   "Ytterligare lagring"
  ],
+ "Advanced TCA": [
+  null,
+  "Avanserad TCA"
+ ],
+ "All In One": [
+  null,
+  "Allt-i-ett"
+ ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
   "Alla data på valda diskar kommer raderas och diskarna kommer läggas till i lagringspoolen."
@@ -102,6 +110,18 @@ return plural;
  "Author": [
   null,
   "Upphovsman"
+ ],
+ "Blade": [
+  null,
+  "Blad"
+ ],
+ "Blade enclosure": [
+  null,
+  "Bladhölje"
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  "Bussexpansionschassi"
  ],
  "CPU": [
   null,
@@ -168,6 +188,10 @@ return plural;
   null,
   "Fastställ avbild"
  ],
+ "Compact PCI": [
+  null,
+  "Kompakt PCI"
+ ],
  "Configure storage...": [
   null,
   "Konfigurera lagring …"
@@ -200,6 +224,10 @@ return plural;
   null,
   "Behållare"
  ],
+ "Convertible": [
+  null,
+  "Konvertibel"
+ ],
  "Could not add all disks": [
   null,
   "Kunde inte lägga till alla diskar"
@@ -228,6 +256,14 @@ return plural;
   null,
   "Att ta bort en behållare kommer att radera all data i den."
  ],
+ "Desktop": [
+  null,
+  "Skrivbord"
+ ],
+ "Detachable": [
+  null,
+  "Frånkopplingsbar"
+ ],
  "Details": [
   null,
   "Detaljer"
@@ -235,6 +271,10 @@ return plural;
  "Docker is not installed or activated on the system": [
   null,
   "Docker är inte installerat eller aktiverat på systemet"
+ ],
+ "Docking Station": [
+  null,
+  "Dockningsstation"
  ],
  "Download": [
   null,
@@ -251,6 +291,10 @@ return plural;
  "Duplicate port": [
   null,
   "Dubblerad port"
+ ],
+ "Embedded PC": [
+  null,
+  "Inbäddad PC"
  ],
  "Entrypoint": [
   null,
@@ -275,6 +319,10 @@ return plural;
  "Exited $ExitCode": [
   null,
   "Avslutade $ExitCode"
+ ],
+ "Expansion Chassis": [
+  null,
+  "Expansionschassin"
  ],
  "Expose container ports": [
   null,
@@ -303,6 +351,10 @@ return plural;
  "Get new image": [
   null,
   "Hämta ny avbild"
+ ],
+ "Hand Held": [
+  null,
+  "Handhållen"
  ],
  "Hard Disk": [
   null,
@@ -356,6 +408,14 @@ return plural;
   null,
   "Felaktig port"
  ],
+ "IoT Gateway": [
+  null,
+  "IoT-gateway"
+ ],
+ "Laptop": [
+  null,
+  "Bärbar dator"
+ ],
  "Link to another container": [
   null,
   "Länka till en annan behållare"
@@ -372,9 +432,21 @@ return plural;
   null,
   "Lokala diskar"
  ],
+ "Low Profile Desktop": [
+  null,
+  "Lågprofilskrivbord"
+ ],
+ "Lunch Box": [
+  null,
+  "Lunchlåda"
+ ],
  "MAC Address:": [
   null,
   "MAC-adress:"
+ ],
+ "Main Server Chassis": [
+  null,
+  "Huvudserverchassi"
  ],
  "Memory": [
   null,
@@ -392,9 +464,21 @@ return plural;
   null,
   "MiB"
  ],
+ "Mini PC": [
+  null,
+  "Mini-PC"
+ ],
+ "Mini Tower": [
+  null,
+  "Minitorn"
+ ],
  "Mount container volumes": [
   null,
   "Montera behållarvolymer"
+ ],
+ "Multi-system Chassis": [
+  null,
+  "Multisystemschassi"
  ],
  "Name": [
   null,
@@ -452,6 +536,10 @@ return plural;
   null,
   "Finns inte"
  ],
+ "Notebook": [
+  null,
+  "Bärbar (notebook)"
+ ],
  "Off": [
   null,
   "Av"
@@ -473,9 +561,21 @@ return plural;
   "Vid misslyckande, försök igen $0 gång",
   "Vid misslyckande, försök igen $0 gånger"
  ],
+ "Other": [
+  null,
+  "Annan"
+ ],
  "Overview": [
   null,
   "Översikt"
+ ],
+ "Peripheral Chassis": [
+  null,
+  "Periferichassi"
+ ],
+ "Pizza Box": [
+  null,
+  "Pizzalåda"
  ],
  "Please confirm deletion of $0": [
   null,
@@ -489,6 +589,10 @@ return plural;
   null,
   "Försök med en annan term"
  ],
+ "Portable": [
+  null,
+  "Bärbar"
+ ],
  "Ports": [
   null,
   "Portar"
@@ -500,6 +604,14 @@ return plural;
  "Problems": [
   null,
   "Problem"
+ ],
+ "RAID Chassis": [
+  null,
+  "RAID-chassi"
+ ],
+ "Rack Mount Chassis": [
+  null,
+  "Rackmonteringschassi"
  ],
  "ReadOnly": [
   null,
@@ -557,6 +669,10 @@ return plural;
   null,
   "Kör avbild"
  ],
+ "Sealed-case PC": [
+  null,
+  "PC med slutet hölje"
+ ],
  "Security": [
   null,
   "Säkerhet"
@@ -581,6 +697,10 @@ return plural;
   null,
   "SSD-minne"
  ],
+ "Space-saving Computer": [
+  null,
+  "Utrymmessparande dator"
+ ],
  "Start": [
   null,
   "Starta"
@@ -596,6 +716,10 @@ return plural;
  "State:": [
   null,
   "Tillstånd:"
+ ],
+ "Stick PC": [
+  null,
+  "Pinndator"
  ],
  "Stop": [
   null,
@@ -617,9 +741,21 @@ return plural;
   null,
   "Lagringspool"
  ],
+ "Sub Chassis": [
+  null,
+  "Underchassi"
+ ],
+ "Sub Notebook": [
+  null,
+  "ULPC"
+ ],
  "TCP": [
   null,
   "TCP"
+ ],
+ "Tablet": [
+  null,
+  "Platta"
  ],
  "Tag": [
   null,
@@ -653,45 +789,53 @@ return plural;
   null,
   "Totalt"
  ],
+ "Tower": [
+  null,
+  "Torn"
+ ],
  "Try again": [
   null,
-  ""
+  "Försök igen"
  ],
  "Type to filter…": [
   null,
-  ""
+  "Skriv för att filtrera …"
  ],
  "UDP": [
   null,
-  ""
+  "UDP"
  ],
  "Unexpected error": [
   null,
-  ""
+  "Oväntat fel"
+ ],
+ "Unknown": [
+  null,
+  "Okänd"
  ],
  "Unless Stopped": [
   null,
-  ""
+  "Om inte stoppad"
  ],
  "Up since $0": [
   null,
-  ""
+  "Uppe sedan $0"
  ],
  "Used": [
   null,
-  ""
+  "Använt"
  ],
  "Used by Containers": [
   null,
-  ""
+  "Används av behållare"
  ],
  "Volumes": [
   null,
-  ""
+  "Volymer"
  ],
  "Volumes:": [
   null,
-  ""
+  "Volymer:"
  ],
  "With terminal": [
   null,
@@ -711,51 +855,51 @@ return plural;
  ],
  "[no data]": [
   null,
-  ""
+  "[inga data]"
  ],
  "alias": [
   null,
-  ""
+  "alias"
  ],
  "default": [
   null,
-  ""
+  "standard"
  ],
  "key": [
   null,
-  ""
+  "nyckel"
  ],
  "none": [
   null,
-  ""
+  "ingen"
  ],
  "search by name, namespace or description": [
   null,
-  ""
+  "leta efter namn, namnrymd eller beskrivning"
  ],
  "select container": [
   null,
-  ""
+  "välj behållare"
  ],
  "shares": [
   null,
-  ""
+  "utdelningar"
  ],
  "to host path": [
   null,
-  ""
+  "till värdsökväg"
  ],
  "to host port": [
   null,
-  ""
+  "till värdport"
  ],
  "undefined": [
   null,
-  ""
+  "odefinierad"
  ],
  "value": [
   null,
-  ""
+  "värde"
  ],
  "page-title\u0004Containers": [
   null,

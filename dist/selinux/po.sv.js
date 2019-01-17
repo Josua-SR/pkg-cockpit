@@ -178,30 +178,30 @@ return plural;
  ],
  "Unable to apply this solution automatically": [
   null,
-  ""
+  "Kan inte verkställa denna lösning automatiskt"
  ],
  "Unable to get alert details.": [
   null,
-  ""
+  "Kan inte ta bort larmdetaljer."
  ],
  "Unable to get alert: $0": [
   null,
-  ""
+  "Kan inte hämta larmet: $0"
  ],
  "Unable to run fix: %0": [
   null,
-  ""
+  "Kan inte köra fixen: %0"
  ],
  "Unable to start setroubleshootd": [
   null,
-  ""
+  "Kan inte starta setroubleshootd"
  ],
  "Waiting for details...": [
   null,
-  ""
+  "Väntar på detaljer …"
  ],
  "solution details": [
   null,
-  ""
+  "lösningsdetaljer"
  ]
 }));

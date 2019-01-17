@@ -226,6 +226,10 @@ return plural;
   null,
   "Paketinformation"
  ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit kraschade"
+ ],
  "PackageKit is not installed": [
   null,
   "PackageKit är inte installerat"
@@ -312,43 +316,43 @@ return plural;
  ],
  "Total size: $0": [
   null,
-  ""
+  "Total storlek: $0"
  ],
  "Update History": [
   null,
-  ""
+  "Uppdatera historiken"
  ],
  "Update Log": [
   null,
-  ""
+  "Uppdatera loggen"
  ],
  "Updated": [
   null,
-  ""
+  "Uppdaterat"
  ],
  "Updated packages may require a restart to take effect.": [
   null,
-  ""
+  "Uppdaterade paket kan behöva en omstart för att få effekt."
  ],
  "Updating": [
   null,
-  ""
+  "Uppdaterar"
  ],
  "Verified": [
   null,
-  ""
+  "Verifierad"
  ],
  "Verifying": [
   null,
-  ""
+  "Verifierar"
  ],
  "Version": [
   null,
-  ""
+  "Version"
  ],
  "Waiting for other software management operations to finish": [
   null,
-  ""
+  "Väntar på att andra programvaruhanteringsåtgärder skall bli klara"
  ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
@@ -360,58 +364,58 @@ return plural;
  ],
  "and restart the machine automatically.": [
   null,
-  ""
+  "och starta automatiskt om maskinen."
  ],
  "at": [
   null,
-  ""
+  "klockan"
  ],
  "bug fix": [
   null,
-  ""
+  "felrättning"
  ],
  "enhancement": [
   null,
-  ""
+  "förbättring"
  ],
  "every day": [
   null,
-  ""
+  "varje dag"
  ],
  "on Fridays": [
   null,
-  ""
+  "på fredagar"
  ],
  "on Mondays": [
   null,
-  ""
+  "på måndagar"
  ],
  "on Saturdays": [
   null,
-  ""
+  "på lördagar"
  ],
  "on Sundays": [
   null,
-  ""
+  "på söndagar"
  ],
  "on Thursdays": [
   null,
-  ""
+  "på torsdagar"
  ],
  "on Tuesdays": [
   null,
-  ""
+  "på tisdagar"
  ],
  "on Wednesdays": [
   null,
-  ""
+  "på onsdagar"
  ],
  "security": [
   null,
-  ""
+  "säkerhet"
  ],
  "undefined": [
   null,
-  ""
+  "odefinierad"
  ]
 }));

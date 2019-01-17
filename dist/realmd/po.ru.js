@@ -199,6 +199,10 @@ return plural;
   null,
   "Одноразовый пароль"
  ],
+ "PackageKit crashed": [
+  null,
+  "Пакет PackageKit разбился"
+ ],
  "Removals:": [
   null,
   "Удаления:"

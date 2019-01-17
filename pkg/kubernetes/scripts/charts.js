@@ -18,8 +18,6 @@
  */
 
 (function() {
-    "use strict";
-
     var angular = require('angular');
     require('angular-bootstrap-npm/dist/angular-bootstrap.js');
 
@@ -94,7 +92,7 @@
                 "KubeTranslate",
                 "$timeout",
                 function ($window, translate, $timeout) {
-                    var _ = translate.gettext;
+                    const _ = translate.gettext;
 
                     return {
                         restrict: 'A',

@@ -99,13 +99,13 @@ return plural;
   null,
   "Alla körande virtuella maskiner kommer stängas av."
  ],
+ "Always attach": [
+  null,
+  "Anslut alltid"
+ ],
  "Apply": [
   null,
   "Lägg på"
- ],
- "Attach permanently": [
-  null,
-  "Koppla in permanent"
  ],
  "Automatically selected host": [
   null,
@@ -139,9 +139,17 @@ return plural;
   null,
   "Buss"
  ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "Åtgärden ÄNDRA NÄTVERKSTILLSTÅND misslyckades"
+ ],
  "CPU Type:": [
   null,
   "CPU-typ:"
+ ],
+ "CREATE VM action failed": [
+  null,
+  "Åtgärden SKAPA VM misslyckades"
  ],
  "Cancel": [
   null,
@@ -323,6 +331,10 @@ return plural;
   null,
   "Formater"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "Åtgärden GET HYPERVISOR MAX VCPU misslyckades"
+ ],
  "GiB": [
   null,
   "GiB"
@@ -351,6 +363,10 @@ return plural;
   null,
   "Värd till underhåll"
  ],
+ "INSTALL VM action failed": [
+  null,
+  "Åtgärden INSTALL VM misslyckades"
+ ],
  "Install": [
   null,
   "Installera"
@@ -370,6 +386,10 @@ return plural;
  "MAC Address": [
   null,
   "MAC-adress"
+ ],
+ "MIGRATE action failed": [
+  null,
+  "Åtgärden MIGRATE misslyckades"
  ],
  "Mac Address": [
   null,
@@ -491,6 +511,10 @@ return plural;
   null,
   "Översikt"
  ],
+ "Persistence": [
+  null,
+  "Varaktighet"
+ ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
   "Bekräfta att värden skall slås om till underhållsläge."
@@ -543,9 +567,17 @@ return plural;
   null,
   "Föredraget antal uttag att exponera för gästen."
  ],
+ "Preparing for Maintenance": [
+  null,
+  "Förbereder för underhåll"
+ ],
  "Protocol": [
   null,
   "Protokoll"
+ ],
+ "REBOOT action failed": [
+  null,
+  "Åtgärden REBOOT misslyckades"
  ],
  "Readonly": [
   null,
@@ -583,6 +615,14 @@ return plural;
   null,
   "Kör sedan:"
  ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  "Åtgärden SET VCPU SETTINGS misslyckades"
+ ],
+ "SHUTDOWN action failed": [
+  null,
+  "Åtgärden SHUTDOWN misslyckades"
+ ],
  "SPICE": [
   null,
   "SPICE"
@@ -599,6 +639,14 @@ return plural;
   null,
   "SPICE TLS-port:"
  ],
+ "START action failed": [
+  null,
+  "Åtgärden START misslyckades"
+ ],
+ "SUSPEND action failed": [
+  null,
+  "Åtgärden SUSPEND misslyckades"
+ ],
  "Save": [
   null,
   "Spara"
@@ -614,6 +662,10 @@ return plural;
  "Serial Console": [
   null,
   "Seriekonsol"
+ ],
+ "Session": [
+  null,
+  "Session"
  ],
  "Shut Down": [
   null,
@@ -654,6 +706,18 @@ return plural;
  "Switch Host to Maintenance": [
   null,
   "Slå om värden till underhåll"
+ ],
+ "Switching host to maintenance mode failed. Received error: ": [
+  null,
+  "Att slå om värden till underhållsläge misslyckades.  Mottog felet: "
+ ],
+ "Switching host to maintenance mode in progress ...": [
+  null,
+  "Att slå om värden till underhållsläge pågår …"
+ ],
+ "System": [
+  null,
+  "System"
  ],
  "Target": [
   null,
@@ -725,162 +789,346 @@ return plural;
  ],
  "Type": [
   null,
-  ""
+  "Typ"
  ],
  "Unplug": [
   null,
-  ""
+  "Koppla ur"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
-  ""
+  "Uppgradera till en senare version av libvirt för att se diskstatistik"
  ],
  "Usage": [
   null,
-  ""
+  "Användning"
  ],
  "Use Existing": [
   null,
-  ""
+  "Använd befintlig"
  ],
  "Used": [
   null,
-  ""
+  "Använt"
  ],
  "VCPU settings could not be saved": [
   null,
-  ""
+  "VCPU-inställningarna kunde inte sparas"
  ],
  "VDSM": [
   null,
-  ""
+  "VDSM"
  ],
  "VDSM Service Management": [
   null,
-  ""
+  "VDSM tjänstehantering"
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  "Åtgärden VM DELETE (DESTROY) misslyckades"
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  "Åtgärden VM DELETE (UNDEFINE) misslyckades"
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "Åtgärden VM FORCE OFF misslyckades"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "Åtgärden VM FORCE REBOOT misslyckades"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "Åtgärden VM REBOOT misslyckades"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "Åtgärden VM SEND Non-Maskable Interrrupt misslyckades"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "Åtgärden VM SHUT DOWN misslyckades"
+ ],
+ "VM START action failed": [
+  null,
+  "Åtgärden VM START misslyckades"
  ],
  "VM icon": [
   null,
-  ""
+  "VM-ikon"
  ],
  "VNC": [
   null,
-  ""
+  "VNC"
  ],
  "VNC Address:": [
   null,
-  ""
+  "VNC-adress:"
  ],
  "VNC Port:": [
   null,
-  ""
+  "VNC-port:"
  ],
  "VNC TLS Port:": [
   null,
-  ""
+  "VNC TLS-port:"
  ],
  "Version": [
   null,
-  ""
+  "Version"
  ],
  "Version num": [
   null,
-  ""
+  "Version nummer"
  ],
  "Virtual Machines": [
   null,
-  ""
+  "Virtuella maskiner"
  ],
  "Virtual Machines of $0 cluster": [
   null,
-  ""
+  "Virtuella maskiner i klustret $0"
  ],
  "Volume": [
   null,
-  ""
+  "Volym"
+ ],
+ "bridge": [
+  null,
+  "brygga"
+ ],
+ "cdrom": [
+  null,
+  "cdrom"
+ ],
+ "connecting": [
+  null,
+  "ansluter"
  ],
  "cores": [
   null,
-  ""
+  "kärnor"
+ ],
+ "crashed": [
+  null,
+  "kraschad"
+ ],
+ "custom": [
+  null,
+  "anpassad"
+ ],
+ "direct": [
+  null,
+  "direkt"
  ],
  "disabled": [
   null,
-  ""
+  "avaktiverat"
+ ],
+ "disk": [
+  null,
+  "disk"
+ ],
+ "down": [
+  null,
+  "nere"
+ ],
+ "dying": [
+  null,
+  "döende"
  ],
  "enabled": [
   null,
-  ""
+  "aktiverat"
+ ],
+ "error": [
+  null,
+  "fel"
+ ],
+ "ethernet": [
+  null,
+  "ethernet"
+ ],
+ "host": [
+  null,
+  "värd"
+ ],
+ "hostdev": [
+  null,
+  "värdenhet"
+ ],
+ "idle": [
+  null,
+  "overksam"
+ ],
+ "initializing": [
+  null,
+  "initierar"
+ ],
+ "installation failed": [
+  null,
+  "installationen misslyckades"
+ ],
+ "installing OS": [
+  null,
+  "installerar OS"
+ ],
+ "kdumping": [
+  null,
+  "kdumpar"
+ ],
+ "maintenance": [
+  null,
+  "underhåll"
+ ],
+ "mcast": [
+  null,
+  "mcast"
+ ],
+ "network": [
+  null,
+  "nätverk"
  ],
  "no": [
   null,
-  ""
+  "nej"
+ ],
+ "non operational": [
+  null,
+  "inte i drift"
+ ],
+ "non responsive": [
+  null,
+  "svarar inte"
+ ],
+ "oVirt": [
+  null,
+  "oVirt"
  ],
  "oVirt Host State:": [
   null,
-  ""
+  "oVirt-värdtillstånd:"
  ],
  "oVirt Provider installation script failed due to missing arguments.": [
   null,
-  ""
+  "oVirt-leverantörsinstallationsskript misslyckades på grund av saknade argument."
  ],
  "oVirt Provider installation script failed: Can't write to /etc/cockpit/machines-ovirt.config, try as root.": [
   null,
-  ""
+  "oVirt-leverantörsinstallationsskript misslyckades: kan inte skriva till /etc/cockpit/machines-ovirt.config, försök som root."
  ],
  "oVirt installation script failed with following output: ": [
   null,
-  ""
+  "oVirt-installationsskript misslyckades med följande utdata: "
  ],
  "oVirt login in progress": [
   null,
-  ""
+  "oVirt-inloggning pågår"
+ ],
+ "other": [
+  null,
+  "annan"
+ ],
+ "paused": [
+  null,
+  "stannad"
+ ],
+ "pending approval": [
+  null,
+  "väntande godkännande"
  ],
  "qcow2": [
   null,
-  ""
+  "qcow2"
  ],
  "raw": [
   null,
-  ""
+  "rå"
+ ],
+ "reboot": [
+  null,
+  "starta om"
+ ],
+ "running": [
+  null,
+  "kör"
+ ],
+ "server": [
+  null,
+  "server"
  ],
  "show less": [
   null,
-  ""
+  "visa mindre"
  ],
  "show more": [
   null,
-  ""
+  "visa mer"
+ ],
+ "shut off": [
+  null,
+  "stäng av"
+ ],
+ "shutdown": [
+  null,
+  "avstängning"
  ],
  "sockets": [
   null,
-  ""
+  "uttag"
+ ],
+ "suspended (PM)": [
+  null,
+  "vilande (SH)"
  ],
  "threads": [
   null,
-  ""
+  "trådar"
+ ],
+ "udp": [
+  null,
+  "udp"
+ ],
+ "unassigned": [
+  null,
+  "ej tilldelad"
  ],
  "undefined": [
   null,
-  ""
+  "odefinierad"
+ ],
+ "up": [
+  null,
+  "uppe"
+ ],
+ "user": [
+  null,
+  "användare"
  ],
  "vCPU Count": [
   null,
-  ""
+  "vCPU-antal"
  ],
  "vCPU Maximum": [
   null,
-  ""
+  "vCPU-maximum"
  ],
  "vCPUs": [
   null,
-  ""
+  "vCPU:er"
  ],
  "vCPUs:": [
   null,
-  ""
+  "vCPU:er:"
+ ],
+ "vhostuser": [
+  null,
+  "vhost-användare"
  ],
  "yes": [
   null,
-  ""
+  "ja"
  ]
 }));

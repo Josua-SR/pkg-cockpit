@@ -233,6 +233,202 @@ input[type=number] {
 .dialog-ct-visible {
     display: block;
 }
+/* Panels don't draw borders between them */
+.panel > .table > tbody:first-child td {
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+/* Table headers should not generate a double border */
+.panel .table thead tr th {
+    border-bottom: none;
+}
+
+.panel-heading {
+    background: #F5F5F5;
+    height: 44px;
+}
+
+/* Vertically center dropdown buttons in panel headers */
+.panel-heading .btn {
+    margin-top: -3px;
+}
+
+/*
+ * Fix up table row hovering.
+ *
+ * When you hover over table rows it's because they're clickable.
+ * Make the table row hover color match the list-group-item.
+ */
+.table-hover > tbody > tr > td,
+.table-hover > tbody > tr > th,
+.dialog-list-ct .list-group-item {
+    cursor: pointer;
+}
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th,
+.dialog-list-ct .list-group-item:hover:not(.active) {
+    background-color: #edf8ff;
+}
+
+/* Override patternfly to fit buttons and such */
+.table > thead > tr > th,
+.table > tbody > tr > td {
+    padding: 8px;
+}
+
+/* Override the heavy patternfly headers */
+.table > thead {
+    background-image: none;
+    background-color: #fff;
+}
+
+/* Make things line up */
+.table tbody tr td:first-child,
+.table thead tr th:first-child {
+    padding-left: 15px;
+}
+
+.table tbody tr td:last-child,
+.table thead tr th:last-child {
+    padding-right: 15px;
+}
+
+.info-table-ct > tr > td,
+.info-table-ct > tbody > tr > td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 0.75em;
+    padding-top: 0.25em;
+    vertical-align: top;
+    line-height: 26px;
+}
+
+.info-table-ct > tr > td:first-child,
+.info-table-ct > tbody > tr > td:first-child {
+    text-align: right;
+    color: #888888;
+}
+
+.info-table-ct > tr > td:not(:first-child),
+.info-table-ct > tbody > tr > td:not(:first-child) {
+    color: black;
+}
+
+.info-table-ct > tr > td button,
+.info-table-ct > tbody > tr > td button {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.form-table-ct {
+    width: 100%;
+}
+
+.form-table-ct td {
+    padding-left: 0.75em;
+    padding-top: 0.25em;
+    line-height: 26px;
+}
+
+.form-table-ct td.top {
+    vertical-align: top;
+}
+
+.form-table-ct td:first-child {
+    text-align: right;
+    white-space: nowrap;
+    color: #888888;
+    width: 5px; /* will be expanded by nowrap */
+}
+
+.form-table-ct td[colspan] {
+    text-align: inherit;
+}
+
+.form-table-ct td {
+    height: 26px;
+}
+
+.form-table-ct td.header {
+    font-weight: bold;
+    text-align: left;
+    color: #4D5258;
+    padding: 20px 0 10px 0;
+}
+
+.form-table-ct label input[type='radio'],
+.form-table-ct label input[type='checkbox'] {
+    margin-right: 4px;
+}
+
+.form-table-ct label {
+    margin-bottom: 0px;
+}
+
+.form-table-ct label span {
+    vertical-align: super;
+}
+
+/* Break up sidebar in columns in smaller sizes*/
+
+@media (min-width: 992px) {
+    .info-table-ct-container .info-table-ct {
+        table-layout: fixed;
+        width: 100%;
+    }
+}
+#cockpit_modal_dialog .modal-body.scroll {
+    max-height: calc(75vh - 10rem);
+    overflow: auto;
+}
+/* on-off button styling depends on data-toggle in bootstrap */
+.btn-onoff-ct input {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+}
+.file-autocomplete-ct input {
+    padding-right: 24px;
+}
+
+.file-autocomplete-ct ul {
+    max-height: 250px;
+}
+
+.file-autocomplete-ct .alert {
+    margin: 0;
+    border: none;
+    padding: 0 24px 0 6px;
+}
+
+.file-autocomplete-ct .error input {
+    border-color: red;
+}
+
+.file-autocomplete-ct .error input {
+    border-color: red;
+}
+
+.file-autocomplete-ct .error ul {
+    border-color: red;
+    padding: 0;
+}
+
+.file-autocomplete-ct span.spinner,
+.file-autocomplete-ct span.caret {
+    position: absolute;
+    top: 7px;
+    z-index: 9;
+}
+
+.file-autocomplete-ct span.caret {
+    width: 1.5em;
+    height: 1.5em;
+    cursor: pointer;
+    pointer-events: all;
+}
 /* Listing pattern */
 table.listing-ct {
   margin-top: 15px;
@@ -732,201 +928,162 @@ tbody tr.listing-ct-noexpand {
   /* 42 = (20px padding + 1px border) * 2 */
   max-width: calc(100vw - 42px);
 }
-/* Panels don't draw borders between them */
-.panel > .table > tbody:first-child td {
-    border-top: 1px solid rgb(221, 221, 221);
+/* Form layout */
+:root {
+  --ct-form-layout-columns: 2;
 }
-
-/* Table headers should not generate a double border */
-.panel .table thead tr th {
-    border-bottom: none;
+.ct-form-layout {
+  display: grid;
+  grid-gap: 0 10px;
+  grid-template-columns: repeat(var(--ct-form-layout-columns), max-content 1fr);
+  place-items: baseline stretch;
 }
-
-.panel-heading {
-    background: #F5F5F5;
-    height: 44px;
+.ct-form-layout > hr {
+  border: none;
+  grid-column: 1 / -1;
+  height: 15px;
+  margin: 0;
+  padding: 0;
 }
-
-/* Vertically center dropdown buttons in panel headers */
-.panel-heading .btn {
-    margin-top: -3px;
+.ct-form-layout > label,
+.ct-form-layout > [role="group"] > label,
+.ct-form-layout .checkbox > label,
+.ct-form-layout .radio > label,
+.ct-form-layout .checkbox-inline,
+.ct-form-layout .radio-inline {
+  line-height: 26px;
 }
-
-/*
- * Fix up table row hovering.
- *
- * When you hover over table rows it's because they're clickable.
- * Make the table row hover color match the list-group-item.
- */
-.table-hover > tbody > tr > td,
-.table-hover > tbody > tr > th,
-.dialog-list-ct .list-group-item {
-    cursor: pointer;
+.ct-form-layout > .control-label {
+  align-self: flex-start;
+  padding-left: 10px;
+  text-align: right;
 }
-.table-hover > tbody > tr:hover > td,
-.table-hover > tbody > tr:hover > th,
-.dialog-list-ct .list-group-item:hover:not(.active) {
-    background-color: #edf8ff;
+.ct-form-layout > div,
+.ct-form-layout > span,
+.ct-form-layout > a,
+.ct-form-layout > p,
+.ct-form-layout > dl,
+.ct-form-layout > ol,
+.ct-form-layout > ul,
+.ct-form-layout > fieldset,
+.ct-form-layout > input,
+.ct-form-layout > textarea,
+.ct-form-layout > samp,
+.ct-form-layout > pre,
+.ct-form-layout > code,
+.ct-form-layout > kbd,
+.ct-form-layout > label:not(.control-label) {
+  grid-column: 2 / -1;
+  line-height: 26px;
+  margin: 0;
 }
-
-/* Override patternfly to fit buttons and such */
-.table > thead > tr > th,
-.table > tbody > tr > td {
-    padding: 8px;
+.ct-form-layout > div:not(.ct-form-layout-relax),
+.ct-form-layout > span:not(.ct-form-layout-relax),
+.ct-form-layout > a:not(.ct-form-layout-relax),
+.ct-form-layout > p:not(.ct-form-layout-relax),
+.ct-form-layout > dl:not(.ct-form-layout-relax),
+.ct-form-layout > ol:not(.ct-form-layout-relax),
+.ct-form-layout > ul:not(.ct-form-layout-relax),
+.ct-form-layout > fieldset:not(.ct-form-layout-relax),
+.ct-form-layout > input:not(.ct-form-layout-relax),
+.ct-form-layout > textarea:not(.ct-form-layout-relax),
+.ct-form-layout > samp:not(.ct-form-layout-relax),
+.ct-form-layout > pre:not(.ct-form-layout-relax),
+.ct-form-layout > code:not(.ct-form-layout-relax),
+.ct-form-layout > kbd:not(.ct-form-layout-relax),
+.ct-form-layout > label:not(.control-label):not(.ct-form-layout-relax) {
+  width: auto;
 }
-
-/* Override the heavy patternfly headers */
-.table > thead {
-    background-image: none;
-    background-color: #fff;
+.ct-form-layout > input[size] {
+  justify-self: start;
 }
-
-/* Make things line up */
-.table tbody tr td:first-child,
-.table thead tr th:first-child {
-    padding-left: 15px;
+.ct-form-layout > .bootstrap-select:not(.ct-form-layout-relax),
+.ct-form-layout > .btn-group:not(.ct-form-layout-relax),
+.ct-form-layout > .dropdown:not(.ct-form-layout-relax) {
+  width: auto !important;
 }
-
-.table tbody tr td:last-child,
-.table thead tr th:last-child {
-    padding-right: 15px;
+.ct-form-layout > [role=group] {
+  align-self: start;
+  display: grid;
+  grid-gap: 5px;
+  grid-auto-flow: column;
+  grid-template-columns: max-content;
+  justify-content: start;
 }
-
-.info-table-ct > tr > td,
-.info-table-ct > tbody > tr > td {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding-left: 0.75em;
-    padding-top: 0.25em;
-    vertical-align: top;
-    line-height: 26px;
+.ct-form-layout > [role=group]:not(.ct-form-layout-relax) > .dropdown {
+  width: auto !important;
 }
-
-.info-table-ct > tr > td:first-child,
-.info-table-ct > tbody > tr > td:first-child {
-    text-align: right;
-    color: #888888;
+.ct-form-layout > [role=group] > .form-control {
+  width: auto;
 }
-
-.info-table-ct > tr > td:not(:first-child),
-.info-table-ct > tbody > tr > td:not(:first-child) {
-    color: black;
+.ct-form-layout .checkbox > label,
+.ct-form-layout .radio > label,
+.ct-form-layout .checkbox-inline,
+.ct-form-layout .radio-inline {
+  display: inline-flex;
+  padding-left: 0;
+  padding-right: 10px;
 }
-
-.info-table-ct > tr > td button,
-.info-table-ct > tbody > tr > td button {
+.ct-form-layout .checkbox > label > input[type="checkbox"],
+.ct-form-layout .radio > label > input[type="checkbox"],
+.ct-form-layout .checkbox-inline > input[type="checkbox"],
+.ct-form-layout .radio-inline > input[type="checkbox"],
+.ct-form-layout .checkbox > label > input[type="radio"],
+.ct-form-layout .radio > label > input[type="radio"],
+.ct-form-layout .checkbox-inline > input[type="radio"],
+.ct-form-layout .radio-inline > input[type="radio"] {
+  height: 16px;
+  margin: 5px 0;
+  margin-right: 10px;
+  position: static;
+}
+.ct-form-layout fieldset > .checkbox:first-child,
+.ct-form-layout fieldset > .radio:first-child {
+  margin-top: 0;
+}
+.ct-form-layout fieldset > .checkbox:last-child,
+.ct-form-layout fieldset > .radio:last-child {
+  margin-bottom: 0;
+}
+.ct-form-layout .list-group {
+  margin-bottom: 5px;
+}
+.ct-form-layout > .ct-form-layout-split {
+  grid-column: auto / auto;
+}
+.ct-form-layout-stretch {
+  justify-content: stretch !important;
+}
+.ct-form-layout-relax {
+  justify-self: start;
+}
+.modal-dialog.modal-sm .ct-form-layout > .ct-form-layout-split {
+  grid-column: 2 / -1;
+}
+@media (max-width: 640px) {
+  :root {
+    --ct-form-layout-columns: 1;
+  }
+}
+@media (max-width: 480px) {
+  .ct-form-layout {
+    grid-template-columns: initial;
+  }
+  .ct-form-layout > * {
+    grid-column: auto;
+    line-height: 1.66666667;
     max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.form-table-ct {
-    width: 100%;
-}
-
-.form-table-ct td {
-    padding-left: 0.75em;
-    padding-top: 0.25em;
-    line-height: 26px;
-}
-
-.form-table-ct td.top {
-    vertical-align: top;
-}
-
-.form-table-ct td:first-child {
-    text-align: right;
-    white-space: nowrap;
-    color: #888888;
-    width: 5px; /* will be expanded by nowrap */
-}
-
-.form-table-ct td[colspan] {
-    text-align: inherit;
-}
-
-.form-table-ct td {
-    height: 26px;
-}
-
-.form-table-ct td.header {
-    font-weight: bold;
-    text-align: left;
-    color: #4D5258;
-    padding: 20px 0 10px 0;
-}
-
-.form-table-ct label input[type='radio'],
-.form-table-ct label input[type='checkbox'] {
-    margin-right: 4px;
-}
-
-.form-table-ct label {
-    margin-bottom: 0px;
-}
-
-.form-table-ct label span {
-    vertical-align: super;
-}
-
-/* Break up sidebar in columns in smaller sizes*/
-
-@media (min-width: 992px) {
-    .info-table-ct-container .info-table-ct {
-        table-layout: fixed;
-        width: 100%;
-    }
-}
-#cockpit_modal_dialog .modal-body.scroll {
-    max-height: calc(75vh - 10rem);
-    overflow: auto;
-}
-/* on-off button styling depends on data-toggle in bootstrap */
-.btn-onoff-ct input {
-    position: absolute;
-    clip: rect(0, 0, 0, 0);
-    pointer-events: none;
-}
-.file-autocomplete-ct input {
-    padding-right: 24px;
-}
-
-.file-autocomplete-ct ul {
-    max-height: 250px;
-}
-
-.file-autocomplete-ct .alert {
-    margin: 0;
-    border: none;
-    padding: 0 24px 0 6px;
-}
-
-.file-autocomplete-ct .error input {
-    border-color: red;
-}
-
-.file-autocomplete-ct .error input {
-    border-color: red;
-}
-
-.file-autocomplete-ct .error ul {
-    border-color: red;
+  }
+  .ct-form-layout > .control-label {
     padding: 0;
-}
-
-.file-autocomplete-ct span.spinner,
-.file-autocomplete-ct span.caret {
-    position: absolute;
-    top: 7px;
-    z-index: 9;
-}
-
-.file-autocomplete-ct span.caret {
-    width: 1.5em;
-    height: 1.5em;
-    cursor: pointer;
-    pointer-events: all;
+    text-align: left;
+  }
+  .ct-form-layout > .control-label:not(:first-child) {
+    margin: 6px 0 0;
+  }
+  .ct-form-layout > hr {
+    height: 12px;
+  }
 }
 
 /*# sourceMappingURL=react-patterns.css.map*/

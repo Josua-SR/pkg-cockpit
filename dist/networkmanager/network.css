@@ -379,235 +379,6 @@ input[type=number] {
         width: 100%;
     }
 }
-.ipv4-address {
-  display: inline;
-}
-
-.ipv4-address input {
-  width: 2em;
-  background: none;
-  border: none;
-  text-align: center;
-}
-
-.network-number-field {
-    width: 4em;
-}
-
-.network-ip-settings-row {
-    border-bottom: 1px solid lightgray;
-    padding-bottom: 10px;
-}
-
-.network-ip-settings-row:last-of-type {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-.network-ip-settings-row table {
-    margin-top: 10px;
-}
-
-.network-ip-settings-row tr {
-  background: #F4F4F4;
-    border: 1px solid #BABABA;
-}
-
-.network-ip-settings-row tr td {
-    padding: 4px;
-}
-
-.network-ip-settings-row .btn-default {
-    margin-right: 5px;
-}
-
-.network-ip-settings-row tr td .btn-default {
-    margin-right: 4px;
-}
-
-/* Make the whole row a hit target */
-.available-interfaces-group .list-group-item {
-    padding: 0;
-}
-
-.available-interfaces-group .list-group-item label {
-    padding: 3px 10px;
-}
-
-.available-interfaces-group .checkbox label {
-    width: 100%;
-}
-
-.available-interfaces-group .checkbox label input[type="checkbox"] {
-    margin-left: auto;
-    position: relative;
-}
-
-.available-interfaces-group input[type='checkbox'] {
-    margin: 4px 4px 4px -20px;
-}
-
-.available-interfaces-group > .list-group-item {
-    padding: 0px;
-}
-
-ul.available-interfaces-group {
-    margin-bottom: 0px;
-}
-
-/* Fix padding for network graph controls */
-
-#networking-graph-toolbar,
-#network-interface-graph-toolbar {
-    margin-right: 20px;
-}
-
-#networking-rx-graph,
-#networking-tx-graph,
-#network-interface-tx-graph,
-#network-interface-rx-graph {
-    height: 120px;
-}
-
-#network-interface-graph-toolbar .dropdown,
-#networking-graph-toolbar .dropdown {
-    display: inline-block;
-}
-
-#network-interface-graph-toolbar .dropdown button span,
-#networking-graph-toolbar .dropdown button span {
-    width: 6em;
-    text-align: left;
-    padding-left: 5px;
-    display: inline-block;
-}
-
-th.networking-speed {
-    width: 20%;
-}
-
-th.networking-spacer {
-    width: 10em;
-}
-
-th.networking-action {
-    width: 28px;
-}
-
-td.networking-row-configure {
-    text-align: right;
-}
-
-#network-interface-hw {
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-#network-interface-delete {
-    margin-right: 20px;
-}
-
-td.networking-controls label {
-    font-weight: inherit;
-}
-
-td.networking-controls input {
-    margin-left: 0px;
-}
-
-ul.add-button {
-    right: 0px;
-    left: auto;
-    min-width: 0;
-    text-align: left;
-}
-
-span.inverted-switchbox {
-    margin-right: 10px;
-}
-
-.network-ip-settings-row button {
-    width: 2em;
-}
-
-.network-ip-settings-row td {
-    text-align: right;
-    padding-right: 0;
-}
-.network-ip-settings-row td:last-child {
-    width: 28px;
-}
-
-.bootstrap-select {
-    min-width: 150px;
-}
-
-#network-mtu-settings-dialog label {
-    font-weight: normal;
-}
-
-#network-mtu-settings-dialog label input[type=radio] {
-    position: relative;
-    top: 3px;
-    margin-right: 0.5em;
-}
-
-#network-mtu-settings-input {
-    margin-left: 0.5em;
-    width: 5em;
-    display: inline;
-}
-
-#network-mac-settings-dialog label {
-    font-weight: normal;
-}
-
-#testing-connection-curtain {
-    z-index: 2000;
-}
-
-#confirm-breaking-change-popup .pficon-warning-triangle-o {
-    float: left;
-    font-size: 36px;
-    margin-top: 6px;
-    margin-right: 20px;
-}
-
-h1 .btn-onoff-ct {
-    margin-left: 1.5em;
-    vertical-align: text-bottom;
-}
-
-#networking-firewall-summary:hover {
-    cursor: pointer;
-    background-color: #def3ff;
-}
-
-/* set min-height to the same as max-height, so that the list doesn't shrink
- * when filtering */
-#add-services-dialog .dialog-list-ct {
-    min-height: 230px;
-}
-
-#add-services-dialog .form-table-ct {
-    margin-bottom: 0.5em;
-}
-
-#add-services-dialog .list-group-item {
-    padding: 0;
-}
-
-#add-services-dialog .list-group-item label {
-    padding: 10px 15px;
-    margin: 0;
-    width: 100%;
-    cursor: pointer;
-}
-
-#add-services-dialog .list-group-item input[type="checkbox"] {
-    margin: 0;
-    vertical-align: middle;
-}
 .plot-unit {
     display:      inline-block;
     width:        28px;
@@ -786,5 +557,361 @@ h1 .btn-onoff-ct {
     vertical-align: middle;
 }
 
+.ipv4-address {
+  display: inline;
+}
+
+.ipv4-address input {
+  width: 2em;
+  background: none;
+  border: none;
+  text-align: center;
+}
+
+.network-number-field {
+    width: 4em;
+}
+
+.network-ip-settings-row {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 10px;
+}
+
+.network-ip-settings-row:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.network-ip-settings-row table {
+    margin-top: 10px;
+}
+
+.network-ip-settings-row tr {
+  background: #F4F4F4;
+    border: 1px solid #BABABA;
+}
+
+.network-ip-settings-row tr td {
+    padding: 4px;
+}
+
+.network-ip-settings-row .btn-default {
+    margin-right: 5px;
+}
+
+.network-ip-settings-row tr td .btn-default {
+    margin-right: 4px;
+}
+
+/* Fix padding for network graph controls */
+
+#networking-graph-toolbar,
+#network-interface-graph-toolbar {
+    margin-right: 20px;
+}
+
+#networking-rx-graph,
+#networking-tx-graph,
+#network-interface-tx-graph,
+#network-interface-rx-graph {
+    height: 120px;
+}
+
+#network-interface-graph-toolbar .dropdown,
+#networking-graph-toolbar .dropdown {
+    display: inline-block;
+}
+
+#network-interface-graph-toolbar .dropdown button span,
+#networking-graph-toolbar .dropdown button span {
+    width: 6em;
+    text-align: left;
+    padding-left: 5px;
+    display: inline-block;
+}
+
+th.networking-speed {
+    width: 20%;
+}
+
+th.networking-spacer {
+    width: 10em;
+}
+
+th.networking-action {
+    width: 28px;
+}
+
+td.networking-row-configure {
+    text-align: right;
+}
+
+#network-interface-hw {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#network-interface-delete {
+    margin-right: 20px;
+}
+
+td.networking-controls label {
+    font-weight: inherit;
+}
+
+td.networking-controls input {
+    margin-left: 0px;
+}
+
+ul.add-button {
+    right: 0px;
+    left: auto;
+    min-width: 0;
+    text-align: left;
+}
+
+span.inverted-switchbox {
+    margin-right: 10px;
+}
+
+.network-ip-settings-row button {
+    width: 2em;
+}
+
+.network-ip-settings-row td {
+    text-align: right;
+    padding-right: 0;
+}
+.network-ip-settings-row td:last-child {
+    width: 28px;
+}
+
+.bootstrap-select {
+    min-width: 150px;
+}
+
+#network-mtu-settings-dialog label {
+    font-weight: normal;
+}
+
+#network-mtu-settings-dialog label input[type=radio] {
+    position: relative;
+    top: 3px;
+    margin-right: 0.5em;
+}
+
+#network-mtu-settings-input {
+    margin-left: 0.5em;
+    width: 5em;
+    display: inline;
+}
+
+#network-mac-settings-dialog label {
+    font-weight: normal;
+}
+
+#testing-connection-curtain {
+    z-index: 2000;
+}
+
+#confirm-breaking-change-popup .pficon-warning-triangle-o {
+    float: left;
+    font-size: 36px;
+    margin-top: 6px;
+    margin-right: 20px;
+}
+
+h1 .btn-onoff-ct {
+    margin-left: 1.5em;
+    vertical-align: text-bottom;
+}
+
+#networking-firewall-summary:hover {
+    cursor: pointer;
+    background-color: #def3ff;
+}
+
+/* set min-height to the same as max-height, so that the list doesn't shrink
+ * when filtering */
+#add-services-dialog .dialog-list-ct {
+    min-height: 230px;
+}
+
+#add-services-dialog .form-table-ct {
+    margin-bottom: 0.5em;
+}
+
+#add-services-dialog .list-group-item {
+    padding: 0;
+}
+
+#add-services-dialog .list-group-item label {
+    padding: 10px 15px;
+    margin: 0;
+    width: 100%;
+    cursor: pointer;
+}
+
+#add-services-dialog .list-group-item input[type="checkbox"] {
+    margin: 0;
+    vertical-align: middle;
+}
+/* Form layout */
+:root {
+  --ct-form-layout-columns: 2;
+}
+.ct-form-layout {
+  display: grid;
+  grid-gap: 0 10px;
+  grid-template-columns: repeat(var(--ct-form-layout-columns), max-content 1fr);
+  place-items: baseline stretch;
+}
+.ct-form-layout > hr {
+  border: none;
+  grid-column: 1 / -1;
+  height: 15px;
+  margin: 0;
+  padding: 0;
+}
+.ct-form-layout > label,
+.ct-form-layout > [role="group"] > label,
+.ct-form-layout .checkbox > label,
+.ct-form-layout .radio > label,
+.ct-form-layout .checkbox-inline,
+.ct-form-layout .radio-inline {
+  line-height: 26px;
+}
+.ct-form-layout > .control-label {
+  align-self: flex-start;
+  padding-left: 10px;
+  text-align: right;
+}
+.ct-form-layout > div,
+.ct-form-layout > span,
+.ct-form-layout > a,
+.ct-form-layout > p,
+.ct-form-layout > dl,
+.ct-form-layout > ol,
+.ct-form-layout > ul,
+.ct-form-layout > fieldset,
+.ct-form-layout > input,
+.ct-form-layout > textarea,
+.ct-form-layout > samp,
+.ct-form-layout > pre,
+.ct-form-layout > code,
+.ct-form-layout > kbd,
+.ct-form-layout > label:not(.control-label) {
+  grid-column: 2 / -1;
+  line-height: 26px;
+  margin: 0;
+}
+.ct-form-layout > div:not(.ct-form-layout-relax),
+.ct-form-layout > span:not(.ct-form-layout-relax),
+.ct-form-layout > a:not(.ct-form-layout-relax),
+.ct-form-layout > p:not(.ct-form-layout-relax),
+.ct-form-layout > dl:not(.ct-form-layout-relax),
+.ct-form-layout > ol:not(.ct-form-layout-relax),
+.ct-form-layout > ul:not(.ct-form-layout-relax),
+.ct-form-layout > fieldset:not(.ct-form-layout-relax),
+.ct-form-layout > input:not(.ct-form-layout-relax),
+.ct-form-layout > textarea:not(.ct-form-layout-relax),
+.ct-form-layout > samp:not(.ct-form-layout-relax),
+.ct-form-layout > pre:not(.ct-form-layout-relax),
+.ct-form-layout > code:not(.ct-form-layout-relax),
+.ct-form-layout > kbd:not(.ct-form-layout-relax),
+.ct-form-layout > label:not(.control-label):not(.ct-form-layout-relax) {
+  width: auto;
+}
+.ct-form-layout > input[size] {
+  justify-self: start;
+}
+.ct-form-layout > .bootstrap-select:not(.ct-form-layout-relax),
+.ct-form-layout > .btn-group:not(.ct-form-layout-relax),
+.ct-form-layout > .dropdown:not(.ct-form-layout-relax) {
+  width: auto !important;
+}
+.ct-form-layout > [role=group] {
+  align-self: start;
+  display: grid;
+  grid-gap: 5px;
+  grid-auto-flow: column;
+  grid-template-columns: max-content;
+  justify-content: start;
+}
+.ct-form-layout > [role=group]:not(.ct-form-layout-relax) > .dropdown {
+  width: auto !important;
+}
+.ct-form-layout > [role=group] > .form-control {
+  width: auto;
+}
+.ct-form-layout .checkbox > label,
+.ct-form-layout .radio > label,
+.ct-form-layout .checkbox-inline,
+.ct-form-layout .radio-inline {
+  display: inline-flex;
+  padding-left: 0;
+  padding-right: 10px;
+}
+.ct-form-layout .checkbox > label > input[type="checkbox"],
+.ct-form-layout .radio > label > input[type="checkbox"],
+.ct-form-layout .checkbox-inline > input[type="checkbox"],
+.ct-form-layout .radio-inline > input[type="checkbox"],
+.ct-form-layout .checkbox > label > input[type="radio"],
+.ct-form-layout .radio > label > input[type="radio"],
+.ct-form-layout .checkbox-inline > input[type="radio"],
+.ct-form-layout .radio-inline > input[type="radio"] {
+  height: 16px;
+  margin: 5px 0;
+  margin-right: 10px;
+  position: static;
+}
+.ct-form-layout fieldset > .checkbox:first-child,
+.ct-form-layout fieldset > .radio:first-child {
+  margin-top: 0;
+}
+.ct-form-layout fieldset > .checkbox:last-child,
+.ct-form-layout fieldset > .radio:last-child {
+  margin-bottom: 0;
+}
+.ct-form-layout .list-group {
+  margin-bottom: 5px;
+}
+.ct-form-layout > .ct-form-layout-split {
+  grid-column: auto / auto;
+}
+.ct-form-layout-stretch {
+  justify-content: stretch !important;
+}
+.ct-form-layout-relax {
+  justify-self: start;
+}
+.modal-dialog.modal-sm .ct-form-layout > .ct-form-layout-split {
+  grid-column: 2 / -1;
+}
+@media (max-width: 640px) {
+  :root {
+    --ct-form-layout-columns: 1;
+  }
+}
+@media (max-width: 480px) {
+  .ct-form-layout {
+    grid-template-columns: initial;
+  }
+  .ct-form-layout > * {
+    grid-column: auto;
+    line-height: 1.66666667;
+    max-width: 100%;
+  }
+  .ct-form-layout > .control-label {
+    padding: 0;
+    text-align: left;
+  }
+  .ct-form-layout > .control-label:not(:first-child) {
+    margin: 6px 0 0;
+  }
+  .ct-form-layout > hr {
+    height: 12px;
+  }
+}
 
 /*# sourceMappingURL=network.css.map*/

@@ -199,6 +199,10 @@ return plural;
   null,
   "Одноразовий пароль"
  ],
+ "PackageKit crashed": [
+  null,
+  "Аварійне завершення роботи PackageKit"
+ ],
  "Removals:": [
   null,
   "Вилучення:"

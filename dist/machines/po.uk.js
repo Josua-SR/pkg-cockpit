@@ -87,13 +87,13 @@ return plural;
   null,
   "Адреса:"
  ],
+ "Always attach": [
+  null,
+  "Завжди долучати"
+ ],
  "Apply": [
   null,
   "Застосувати"
- ],
- "Attach permanently": [
-  null,
-  "Долучити назавжди"
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -114,6 +114,10 @@ return plural;
  "Bus": [
   null,
   "Канал"
+ ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "Не вдалося виконати дію зі зміни стану мережі"
  ],
  "CPU Type:": [
   null,
@@ -267,6 +271,10 @@ return plural;
   null,
   "Формат"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "Помилка під час спроби виконати дію GET HYPERVISOR MAX VCPU"
+ ],
  "GiB": [
   null,
   "ГіБ"
@@ -290,6 +298,10 @@ return plural;
  "Host should not be empty": [
   null,
   "Вузол не повинен бути порожнім"
+ ],
+ "INSTALL VM action failed": [
+  null,
+  "Помилка під час дії зі встановлення ВМ"
  ],
  "Immediately Start VM": [
   null,
@@ -459,6 +471,10 @@ return plural;
   null,
   "Шлях до файла"
  ],
+ "Persistence": [
+  null,
+  "Сталість"
+ ],
  "Please enter new volume name": [
   null,
   "Будь ласка, введіть назву нового тому"
@@ -551,6 +567,10 @@ return plural;
   null,
   "Послідовна консоль"
  ],
+ "Session": [
+  null,
+  "Сеанс"
+ ],
  "Shut Down": [
   null,
   "Вимкнути"
@@ -623,9 +643,9 @@ return plural;
   null,
   "Томи даних"
  ],
- "Target": [
+ "System": [
   null,
-  "Призначення"
+  "Система"
  ],
  "Target Path": [
   null,
@@ -727,6 +747,54 @@ return plural;
   null,
   "Не вдалося зберегти параметри віртуальних процесорів"
  ],
+ "VM CHANGE_NETWORK_STATE action failed": [
+  null,
+  "Помилка дії VM CHANGE_NETWORK_STATE"
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  "Помилка дії VM DELETE (DESTROY)"
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  "Помилка дії VM DELETE (UNDEFINE)"
+ ],
+ "VM DELETE action failed": [
+  null,
+  "Помилка дії VM DELETE"
+ ],
+ "VM DETACH_DISK action failed": [
+  null,
+  "Помилка дії VM DETACH_DISK"
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "Не вдалося виконати дію FORCE OFF для ВМ"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "Не вдалося виконати дію FORCE REBOOT для ВМ"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "Не вдалося виконати дію REBOOT для ВМ"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "Спроба виконати дію немаскованого переривання VM SEND завершилася невдало"
+ ],
+ "VM SENDNMI action failed": [
+  null,
+  "Помилка дії VM SENDNMI"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "Не вдалося виконати дію SHUT DOWN для ВМ"
+ ],
+ "VM START action failed": [
+  null,
+  "Не вдалося виконати дію START для ВМ"
+ ],
  "VNC": [
   null,
   "VNC"
@@ -763,13 +831,85 @@ return plural;
   null,
   "активний"
  ],
+ "bridge": [
+  null,
+  "місток"
+ ],
+ "cdrom": [
+  null,
+  "cdrom"
+ ],
+ "crashed": [
+  null,
+  "аварійне завершення"
+ ],
+ "custom": [
+  null,
+  "нетиповий"
+ ],
+ "direct": [
+  null,
+  "безпосередньо"
+ ],
+ "disabled": [
+  null,
+  "вимкнено"
+ ],
+ "disk": [
+  null,
+  "диск"
+ ],
+ "down": [
+  null,
+  "нижче"
+ ],
+ "dying": [
+  null,
+  "вмирає"
+ ],
+ "enabled": [
+  null,
+  "увімкнено"
+ ],
+ "ethernet": [
+  null,
+  "ethernet"
+ ],
+ "host": [
+  null,
+  "вузол"
+ ],
+ "hostdev": [
+  null,
+  "пристрій осн. системи"
+ ],
+ "idle": [
+  null,
+  "бездіяльний"
+ ],
  "inactive": [
   null,
   "неактивний"
  ],
+ "mcast": [
+  null,
+  "mcast"
+ ],
+ "network": [
+  null,
+  "мережа"
+ ],
  "no": [
   null,
   "ні"
+ ],
+ "other": [
+  null,
+  "інше"
+ ],
+ "paused": [
+  null,
+  "призупинено"
  ],
  "qcow2": [
   null,
@@ -779,6 +919,14 @@ return plural;
   null,
   "raw"
  ],
+ "running": [
+  null,
+  "працює"
+ ],
+ "server": [
+  null,
+  "сервер"
+ ],
  "show less": [
   null,
   "показати менше"
@@ -787,9 +935,33 @@ return plural;
   null,
   "показати більше"
  ],
+ "shut off": [
+  null,
+  "вимкнути"
+ ],
+ "shutdown": [
+  null,
+  "завершити роботу"
+ ],
+ "suspended (PM)": [
+  null,
+  "призупинено (PM)"
+ ],
+ "udp": [
+  null,
+  "udp"
+ ],
  "undefined": [
   null,
   "не визначено"
+ ],
+ "up": [
+  null,
+  "вище"
+ ],
+ "user": [
+  null,
+  "користувач"
  ],
  "vCPU Count": [
   null,
@@ -802,6 +974,10 @@ return plural;
  "vCPUs:": [
   null,
   "vCPU:"
+ ],
+ "vhostuser": [
+  null,
+  "vhostuser"
  ],
  "yes": [
   null,

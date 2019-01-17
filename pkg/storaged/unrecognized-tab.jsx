@@ -17,8 +17,6 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-"use strict";
-
 import React from "react";
 import cockpit from "cockpit";
 
@@ -26,7 +24,7 @@ import { FormatButton } from "./format-dialog.jsx";
 
 const _ = cockpit.gettext;
 
-class UnrecognizedTab extends React.Component {
+export class UnrecognizedTab extends React.Component {
     render() {
         return (
             <div>
@@ -49,7 +47,3 @@ class UnrecognizedTab extends React.Component {
         );
     }
 }
-
-module.exports = {
-    UnrecognizedTab: UnrecognizedTab
-};

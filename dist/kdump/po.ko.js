@@ -95,6 +95,10 @@ return plural;
   null,
   "디렉터리"
  ],
+ "Directory $0 isn't writable or doesn't exist.": [
+  null,
+  ""
+ ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
   ""
@@ -181,7 +185,7 @@ return plural;
  ],
  "Service is running": [
   null,
-  ""
+  "서비스 실행 중입니다"
  ],
  "Service is starting": [
   null,
@@ -231,12 +235,24 @@ return plural;
   null,
   ""
  ],
- "ssh key": [
+ "nfs dump target isn't formated as server:path": [
   null,
   ""
  ],
+ "ssh key": [
+  null,
+  "ssh 키"
+ ],
+ "ssh key isn't a path": [
+  null,
+  "ssh 키는 경로가 없습니다 "
+ ],
+ "ssh server is empty": [
+  null,
+  "ssh 서버가 비어 있습니다 "
+ ],
  "undefined": [
   null,
-  ""
+  "정의되지 않음 "
  ]
 }));

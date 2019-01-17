@@ -67,6 +67,10 @@ return plural;
   "language": "cs",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Template": [
+  null,
+  "$0 Šablona"
+ ],
  "$0 is not available from any repository.": [
   null,
   "$0 není k dispozici z žádného z repozitářů."
@@ -86,6 +90,10 @@ return plural;
  "1 hour": [
   null,
   "1 hodina"
+ ],
+ "1 min": [
+  null,
+  "1 minuta"
  ],
  "1 week": [
   null,
@@ -135,6 +143,10 @@ return plural;
   null,
   "1."
  ],
+ "2 min": [
+  null,
+  "2 min"
+ ],
  "20 Minutes": [
   null,
   "20 minut"
@@ -183,6 +195,10 @@ return plural;
   null,
   "2."
  ],
+ "3 min": [
+  null,
+  "3 min"
+ ],
  "30th": [
   null,
   "30."
@@ -195,6 +211,10 @@ return plural;
   null,
   "3."
  ],
+ "4 min": [
+  null,
+  "4 min"
+ ],
  "40 Minutes": [
   null,
   "40 minut"
@@ -206,6 +226,10 @@ return plural;
  "5 Minutes": [
   null,
   "5 minut"
+ ],
+ "5 min": [
+  null,
+  "5 min"
  ],
  "5 minutes": [
   null,
@@ -243,6 +267,10 @@ return plural;
   null,
   "Další balíčky:"
  ],
+ "Advanced TCA": [
+  null,
+  "Pokročilé TCA"
+ ],
  "After": [
   null,
   "Později"
@@ -254,6 +282,10 @@ return plural;
  "Alert and above": [
   null,
   "Výstraha a závažnější"
+ ],
+ "All In One": [
+  null,
+  "Vše v jednom"
  ],
  "Asset Tag": [
   null,
@@ -283,6 +315,34 @@ return plural;
   null,
   "Verze BIOS"
  ],
+ "Before": [
+  null,
+  "Před"
+ ],
+ "Binds To": [
+  null,
+  "Spojuje k"
+ ],
+ "Blade": [
+  null,
+  "Blade server"
+ ],
+ "Blade enclosure": [
+  null,
+  "Skříň se šachtami pro blade servery"
+ ],
+ "Bound By": [
+  null,
+  "Spojeno"
+ ],
+ "Bug Fix Updates Available": [
+  null,
+  "Jsou k dispozici aktualizace opravující zabezpečení"
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  "Skříň rozšíření sběrnice"
+ ],
  "CPU": [
   null,
   "Procesor"
@@ -294,6 +354,10 @@ return plural;
  "Cancel": [
   null,
   "Storno"
+ ],
+ "Cannot schedule event in the past": [
+  null,
+  "Nelze naplánovat událost v minulosti"
  ],
  "Change": [
   null,
@@ -307,6 +371,10 @@ return plural;
   null,
   "Změnit systémový čas"
  ],
+ "Checking for updates…": [
+  null,
+  "Zjišťování případných aktualizací…"
+ ],
  "Checking installed software": [
   null,
   "Zjišťuje se nainstalovaný sofware"
@@ -314,6 +382,10 @@ return plural;
  "Class": [
   null,
   "Třída"
+ ],
+ "Click to see system hardware information": [
+  null,
+  "Kliknutím zobrazíte informace o hardware"
  ],
  "Close": [
   null,
@@ -323,9 +395,33 @@ return plural;
   null,
   "Příkaz"
  ],
+ "Compact PCI": [
+  null,
+  "Compact PCI"
+ ],
+ "Condition $0=$1 was not met": [
+  null,
+  "Podmínka $0=$1 nebyla splněna"
+ ],
  "Condition failed": [
   null,
   "Podmínka nebyla úspěšná"
+ ],
+ "Conflicted By": [
+  null,
+  "V konfliktu s"
+ ],
+ "Conflicts": [
+  null,
+  "Konflikty"
+ ],
+ "Consists Of": [
+  null,
+  "Sestává se z"
+ ],
+ "Convertible": [
+  null,
+  "Počítač 2v1"
  ],
  "Create Timer": [
   null,
@@ -355,9 +451,29 @@ return plural;
   null,
   "Popis"
  ],
+ "Desktop": [
+  null,
+  "Desktop"
+ ],
+ "Detachable": [
+  null,
+  "Odpojitelné"
+ ],
+ "Disable": [
+  null,
+  "Vypnout"
+ ],
+ "Disabled": [
+  null,
+  "Vypnuto"
+ ],
  "Disk I/O": [
   null,
   "Diskový vst/výst."
+ ],
+ "Docking Station": [
+  null,
+  "Dokovací stanice"
  ],
  "Domain": [
   null,
@@ -371,9 +487,29 @@ return plural;
   null,
   "Stahuje se $0"
  ],
+ "Embedded PC": [
+  null,
+  "Jednodeskový počítač"
+ ],
+ "Enable": [
+  null,
+  "Povolit"
+ ],
+ "Enable Forcefully": [
+  null,
+  "Vynuceně zapnout"
+ ],
  "Enable stored metrics…": [
   null,
   "Zapnout uchovávání metrik…"
+ ],
+ "Enabled": [
+  null,
+  "Povoleno"
+ ],
+ "Enhancement Updates Available": [
+  null,
+  "Jsou k dispozici vylepšující aktualizace"
  ],
  "Entry": [
   null,
@@ -391,6 +527,10 @@ return plural;
   null,
   "Vše"
  ],
+ "Expansion Chassis": [
+  null,
+  "Rozšiřující šasi"
+ ],
  "Friday": [
   null,
   "pátek"
@@ -406,6 +546,10 @@ return plural;
  "Go to now": [
   null,
   "Přejít na nyní"
+ ],
+ "Hand Held": [
+  null,
+  "Pro držení v rukou"
  ],
  "Hardware": [
   null,
@@ -423,6 +567,10 @@ return plural;
   null,
   "Hodina:minuta"
  ],
+ "Hour needs to be a number between 0-23": [
+  null,
+  "Je třeba, aby hodina bylo číslo z rozmezí 0 až 23"
+ ],
  "Hours": [
   null,
   "Hodin"
@@ -430,6 +578,10 @@ return plural;
  "I/O Wait": [
   null,
   "Čekání na vst./výst."
+ ],
+ "Id": [
+  null,
+  "Identif."
  ],
  "Info and above": [
   null,
@@ -451,9 +603,37 @@ return plural;
   null,
   "Vytvořit instanci a spustit"
  ],
+ "Invalid date format": [
+  null,
+  "Neplatný formát data"
+ ],
+ "Invalid date format and invalid time format": [
+  null,
+  "Neplatný formát data a času"
+ ],
+ "Invalid date format.": [
+  null,
+  "Neplatný formát data."
+ ],
+ "Invalid number.": [
+  null,
+  "Neplatné číslo."
+ ],
+ "Invalid time format": [
+  null,
+  "Neplatný formát času"
+ ],
  "Invalid time zone": [
   null,
   "Neplatná časová zóna"
+ ],
+ "IoT Gateway": [
+  null,
+  "Brána Internetu věcí (IoT)"
+ ],
+ "Joins Namespace Of": [
+  null,
+  "Připojuje jmenný prostor od"
  ],
  "Journal": [
   null,
@@ -471,6 +651,10 @@ return plural;
   null,
   "Jádro"
  ],
+ "Laptop": [
+  null,
+  "Notebook"
+ ],
  "Last 24 hours": [
   null,
   "Uplynulých 24 hodin"
@@ -478,6 +662,10 @@ return plural;
  "Last 7 days": [
   null,
   "Uplynulých 7 dnů"
+ ],
+ "Last Trigger": [
+  null,
+  "Naposledy spuštěno"
  ],
  "Load earlier entries": [
   null,
@@ -495,6 +683,14 @@ return plural;
   null,
   "Záznamy událostí"
  ],
+ "Low Profile Desktop": [
+  null,
+  "Nízký desktop"
+ ],
+ "Lunch Box": [
+  null,
+  "Kufříkový počítač"
+ ],
  "Machine ID": [
   null,
   "Identif. stroje"
@@ -503,9 +699,21 @@ return plural;
   null,
   "Otisky SSH klíče stroje"
  ],
+ "Main Server Chassis": [
+  null,
+  "Hlavní skříň serveru"
+ ],
  "Manually": [
   null,
   "Ručně"
+ ],
+ "Mask": [
+  null,
+  "Maska"
+ ],
+ "Mask Forcefully": [
+  null,
+  "Vynuceně zamaskovat"
  ],
  "Memory": [
   null,
@@ -514,6 +722,22 @@ return plural;
  "Memory & Swap": [
   null,
   "Operační paměť a odkládací prostor stránek"
+ ],
+ "Message to logged in users": [
+  null,
+  "Zpráva přihlášeným uživatelům"
+ ],
+ "Mini PC": [
+  null,
+  "Mini PC"
+ ],
+ "Mini Tower": [
+  null,
+  "Mini věž"
+ ],
+ "Minute needs to be a number between 0-59": [
+  null,
+  "Je třeba, aby minuta bylo číslo z rozmezí 0-59"
  ],
  "Minutes": [
   null,
@@ -527,13 +751,29 @@ return plural;
   null,
   "pondělí"
  ],
+ "Multi-system Chassis": [
+  null,
+  "Skříň pro více systémů"
+ ],
+ "NTP Server": [
+  null,
+  "NTP server"
+ ],
  "Name": [
   null,
   "Název"
  ],
+ "Need at least one NTP server": [
+  null,
+  "Je třeba alespoň jeden NTP server"
+ ],
  "Network Traffic": [
   null,
   "Síťový provoz"
+ ],
+ "Next Run": [
+  null,
+  "Příští spuštění"
  ],
  "Nice": [
   null,
@@ -559,6 +799,10 @@ return plural;
   null,
   "Poznámka"
  ],
+ "Notebook": [
+  null,
+  "Notebook"
+ ],
  "Notice and above": [
   null,
   "Oznámení a závažnější"
@@ -575,17 +819,37 @@ return plural;
   null,
   "Zapnuto"
  ],
+ "On Failure": [
+  null,
+  "Při nezdaru"
+ ],
  "Only Emergency": [
   null,
   "Pouze nouzové"
+ ],
+ "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
+  null,
+  "Dovolena jsou pouze písmena a číslice, dále ještě znaky  : , _ , . , @ , -"
  ],
  "Operating System": [
   null,
   "Operační systém"
  ],
+ "Other": [
+  null,
+  "Ostatní"
+ ],
  "PCI": [
   null,
   "PCI"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit zhavaroval"
+ ],
+ "Part Of": [
+  null,
+  "Součástí"
  ],
  "Paths": [
   null,
@@ -595,9 +859,29 @@ return plural;
   null,
   "Výkonnostní profil"
  ],
+ "Peripheral Chassis": [
+  null,
+  "Skříň periferií"
+ ],
+ "Pizza Box": [
+  null,
+  "Velikost „krabice od pizzy“"
+ ],
+ "Portable": [
+  null,
+  "Přenosný"
+ ],
  "Power Options": [
   null,
   "Možnosti napájení"
+ ],
+ "Preset": [
+  null,
+  "Přednastavené"
+ ],
+ "Preset Forcefully": [
+  null,
+  "Vynucené přednastavené"
  ],
  "Pretty Host Name": [
   null,
@@ -611,9 +895,29 @@ return plural;
   null,
   "Informace o problému"
  ],
+ "Propagates Reload To": [
+  null,
+  "Propaguje načíst znovu k"
+ ],
+ "RAID Chassis": [
+  null,
+  "RAID skříň"
+ ],
+ "Rack Mount Chassis": [
+  null,
+  "Skříň do stojanu"
+ ],
  "Real Host Name": [
   null,
   "Skutečný název stroje"
+ ],
+ "Real host name can only contain lower-case characters, digits, dashes, and periods (with populated subdomains)": [
+  null,
+  "Skutečný název stroje může obsahovat pouze malá písmena (bez diakritiky), číslice, spojovníky a tečky (u použitých subdomén)"
+ ],
+ "Real host name must be 64 characters or less": [
+  null,
+  "Je třeba, aby skutečný název stroje byl nanejvýš 64 znaků dlouhý"
  ],
  "Reboot": [
   null,
@@ -622,6 +926,14 @@ return plural;
  "Recent": [
   null,
   "Nedávné"
+ ],
+ "Reload": [
+  null,
+  "Načíst znovu"
+ ],
+ "Reload Propagated From": [
+  null,
+  "Znovu načíst propagováno z"
  ],
  "Removals:": [
   null,
@@ -667,6 +979,22 @@ return plural;
   null,
   "Hlášení nebylo úspěšné. Zkuste spustit `reporter-ureport -d "
  ],
+ "Required By": [
+  null,
+  "Vyžadováno"
+ ],
+ "Requires": [
+  null,
+  "Vyžaduje"
+ ],
+ "Requisite": [
+  null,
+  "Závislost"
+ ],
+ "Requisite Of": [
+  null,
+  "Závislost pro"
+ ],
  "Reset": [
   null,
   "Reset"
@@ -687,6 +1015,10 @@ return plural;
   null,
   "Uložit"
  ],
+ "Sealed-case PC": [
+  null,
+  "Počítač se zapečetěnou skříní"
+ ],
  "Seconds": [
   null,
   "Sekund"
@@ -694,6 +1026,10 @@ return plural;
  "Secure Shell Keys": [
   null,
   "Klíče zabezpečeného shellu"
+ ],
+ "Security Updates Available": [
+  null,
+  "Jsou k dispozici aktualizace zabezpečení"
  ],
  "Service Logs": [
   null,
@@ -706,6 +1042,10 @@ return plural;
  "Services": [
   null,
   "Služby"
+ ],
+ "Set Host name": [
+  null,
+  "Nastavit název stroje"
  ],
  "Set Time": [
   null,
@@ -723,6 +1063,10 @@ return plural;
   null,
   "Vypnout"
  ],
+ "Since $0": [
+  null,
+  "Od $0"
+ ],
  "Slot": [
   null,
   "Slot"
@@ -731,13 +1075,45 @@ return plural;
   null,
   "Sokety"
  ],
+ "Space-saving Computer": [
+  null,
+  "Prostorově úsporný počítač"
+ ],
  "Specific Time": [
   null,
   "Konkrétní čas"
  ],
+ "Start": [
+  null,
+  "Spustit"
+ ],
+ "State": [
+  null,
+  "Stav"
+ ],
+ "Static": [
+  null,
+  "Statické"
+ ],
+ "Stick PC": [
+  null,
+  "Počítač v klíčence"
+ ],
+ "Stop": [
+  null,
+  "Zastavit"
+ ],
  "Store metrics": [
   null,
   "Uchovávat metriky"
+ ],
+ "Sub Chassis": [
+  null,
+  "Dílčí skříň"
+ ],
+ "Sub Notebook": [
+  null,
+  "Zmenšený notebook"
  ],
  "Sunday": [
   null,
@@ -763,6 +1139,10 @@ return plural;
   null,
   "Informace o systému"
  ],
+ "System Not Registered": [
+  null,
+  "Systém není zaregistrován"
+ ],
  "System Services": [
   null,
   "Systémové služby"
@@ -771,6 +1151,14 @@ return plural;
   null,
   "Systémový čas"
  ],
+ "System Up To Date": [
+  null,
+  "Systém je aktuální"
+ ],
+ "Tablet": [
+  null,
+  "Tablet"
+ ],
  "Targets": [
   null,
   "Cíle"
@@ -778,6 +1166,42 @@ return plural;
  "Terminal": [
   null,
   "Terminál"
+ ],
+ "The user <b>$0</b> does not have permissions for creating timers": [
+  null,
+  "Uživatel <b>$0</b> není oprávněn pro vytváření časovačů"
+ ],
+ "The user <b>$0</b> is not permitted to change the system time": [
+  null,
+  "Uživatel <b>$0</b> není oprávněn měnit systémový čas"
+ ],
+ "The user <b>$0</b> is not permitted to enable or disable services": [
+  null,
+  "Uživatel <b>$0</b> není oprávněn povolovat nebo zakazovat služby"
+ ],
+ "The user <b>$0</b> is not permitted to modify hostnames": [
+  null,
+  "Uživatel <b>$0</b> není oprávněn upravovat názvy strojů"
+ ],
+ "The user <b>$0</b> is not permitted to shutdown or restart this server": [
+  null,
+  "Uživatel <b>$0</b> není oprávněn vypínat či restartovat tento server"
+ ],
+ "The user <b>$0</b> is not permitted to start or stop services": [
+  null,
+  "Uživatel <b>$0</b> není oprávněn spouštět či zastavovat služby"
+ ],
+ "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
+  null,
+  "Tento den neexistuje ve všech měsících.<br> Časovač bude vykonán pouze v měsících, které mají 31. den"
+ ],
+ "This field cannot be empty.": [
+  null,
+  "Tuto kolonku je třeba vyplnit."
+ ],
+ "This unit is an instance of the $0 template.": [
+  null,
+  "Tato jednotka je instancí šablony $0."
  ],
  "This unit is not designed to be enabled explicitly.": [
   null,
@@ -799,6 +1223,18 @@ return plural;
   null,
   "Celková velikost: $0"
  ],
+ "Tower": [
+  null,
+  "Věž"
+ ],
+ "Triggered By": [
+  null,
+  "Spuštěno na základě"
+ ],
+ "Triggers": [
+  null,
+  "Spouštěče"
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   "Pokus o synchronizaci se {{Server}}"
@@ -810,6 +1246,24 @@ return plural;
  "Type": [
   null,
   "Typ"
+ ],
+ "Unknown": [
+  null,
+  "Neznámé"
+ ],
+ "Unmask": [
+  null,
+  "Odmaskovat"
+ ],
+ "Updates Available": [
+  null,
+  "Jsou k dispozici aktualizace"
+ ],
+ "Usage of $0 CPU core": [
+  "Usage of $0 CPU cores",
+  "Využití $0 jádra procesoru",
+  "Využití $0 jader procesoru",
+  "Využití $0 jader procesoru"
  ],
  "Used": [
   null,
@@ -830,6 +1284,14 @@ return plural;
  "Waiting for other software management operations to finish": [
   null,
   "Čeká se na dokončení ostatních operací správy balíčků"
+ ],
+ "Wanted By": [
+  null,
+  "Vyžadováno"
+ ],
+ "Wants": [
+  null,
+  "Vyžaduje"
  ],
  "Warning and above": [
   null,
@@ -854,5 +1316,27 @@ return plural;
  "[no data]": [
   null,
   "[žádná data]"
+ ],
+ "failed to list ssh host keys: $0": [
+  null,
+  "nepodařilo se vypsat ssh klíče stroje: $0"
+ ],
+ "of $0 CPU core": [
+  "of $0 CPU cores",
+  "z $0 jádra procesoru",
+  "ze $0 jader procesoru",
+  "z $0 jader procesoru"
+ ],
+ "unknown": [
+  null,
+  "neznámý"
+ ],
+ "page-title\u0004CPU Status": [
+  null,
+  "Stav procesoru"
+ ],
+ "page-title\u0004Memory": [
+  null,
+  "Paměť"
  ]
 }));

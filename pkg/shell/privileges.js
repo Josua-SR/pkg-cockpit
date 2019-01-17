@@ -17,7 +17,7 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-var cockpit = require("cockpit");
+import cockpit from "cockpit";
 
 function Privileges() {
     var self = this;
@@ -65,10 +65,9 @@ function Privileges() {
 }
 
 var privileges = null;
-module.exports = {
-    instance: function() {
-        if (!privileges)
-            privileges = new Privileges();
-        return privileges;
-    }
-};
+
+export function instance() {
+    if (!privileges)
+        privileges = new Privileges();
+    return privileges;
+}

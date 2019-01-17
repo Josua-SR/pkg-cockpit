@@ -17,15 +17,16 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-var cockpit = require("cockpit");
-var _ = cockpit.gettext;
+import cockpit from "cockpit";
 
-var React = require("react");
-var ReactDOM = require("react-dom");
+import React from "react";
+import ReactDOM from "react-dom";
 
-var troubleshootClient = require("./setroubleshoot-client");
-var selinuxClient = require("./selinux-client.js");
-var troubleshootView = require("./setroubleshoot-view.jsx");
+import * as troubleshootClient from "./setroubleshoot-client";
+import * as selinuxClient from "./selinux-client.js";
+import { SETroubleshootPage } from "./setroubleshoot-view.jsx";
+
+const _ = cockpit.gettext;
 
 var initStore = function(rootElement) {
     var dataStore = { };
@@ -42,7 +43,7 @@ var initStore = function(rootElement) {
     // did we have a connection error?
     dataStore.error = null;
 
-    dataStore.client = troubleshootClient;
+    dataStore.client = troubleshootClient.client;
 
     dataStore.selinuxStatusError = undefined;
 
@@ -140,7 +141,7 @@ var initStore = function(rootElement) {
 
     var render = function() {
         var enableDeleteAlert = ('capabilities' in dataStore.client && 'deleteAlert' in dataStore.client.capabilities);
-        ReactDOM.render(React.createElement(troubleshootView.SETroubleshootPage, {
+        ReactDOM.render(React.createElement(SETroubleshootPage, {
             connected: dataStore.connected,
             connecting: dataStore.connecting,
             error: dataStore.error,

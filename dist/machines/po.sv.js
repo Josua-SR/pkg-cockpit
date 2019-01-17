@@ -87,13 +87,13 @@ return plural;
   null,
   "Adress:"
  ],
+ "Always attach": [
+  null,
+  "Anslut alltid"
+ ],
  "Apply": [
   null,
   "Lägg på"
- ],
- "Attach permanently": [
-  null,
-  "Koppla in permanent"
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -114,6 +114,10 @@ return plural;
  "Bus": [
   null,
   "Buss"
+ ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "Åtgärden ÄNDRA NÄTVERKSTILLSTÅND misslyckades"
  ],
  "CPU Type:": [
   null,
@@ -267,6 +271,10 @@ return plural;
   null,
   "Formater"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "Åtgärden GET HYPERVISOR MAX VCPU misslyckades"
+ ],
  "GiB": [
   null,
   "GiB"
@@ -290,6 +298,10 @@ return plural;
  "Host should not be empty": [
   null,
   "Värden får inte vara tom"
+ ],
+ "INSTALL VM action failed": [
+  null,
+  "Åtgärden INSTALL VM misslyckades"
  ],
  "Immediately Start VM": [
   null,
@@ -459,6 +471,10 @@ return plural;
   null,
   "Sökväg till filen"
  ],
+ "Persistence": [
+  null,
+  "Varaktighet"
+ ],
  "Please enter new volume name": [
   null,
   "Ange ett nytt volymnamn"
@@ -551,6 +567,10 @@ return plural;
   null,
   "Seriekonsol"
  ],
+ "Session": [
+  null,
+  "Session"
+ ],
  "Shut Down": [
   null,
   "Stäng av"
@@ -623,6 +643,10 @@ return plural;
   null,
   " Lagringsvolymer"
  ],
+ "System": [
+  null,
+  "System"
+ ],
  "Target": [
   null,
   "Mål"
@@ -689,122 +713,278 @@ return plural;
  ],
  "Troubleshoot": [
   null,
-  ""
+  "Felsök"
  ],
  "Type": [
   null,
-  ""
+  "Typ"
  ],
  "URL": [
   null,
-  ""
+  "URL"
  ],
  "Unique name": [
   null,
-  ""
+  "Unikt namn"
  ],
  "Unplug": [
   null,
-  ""
+  "Koppla ur"
  ],
  "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
-  ""
+  "Uppgradera till en senare version av libvirt för att se diskstatistik"
  ],
  "Usage": [
   null,
-  ""
+  "Användning"
  ],
  "Use Existing": [
   null,
-  ""
+  "Använd befintlig"
  ],
  "Used": [
   null,
-  ""
+  "Använt"
  ],
  "VCPU settings could not be saved": [
   null,
-  ""
+  "VCPU-inställningarna kunde inte sparas"
+ ],
+ "VM CHANGE_NETWORK_STATE action failed": [
+  null,
+  "Åtgärden VM CHANGE_NETWORK_STATE misslyckades"
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  "Åtgärden VM DELETE (DESTROY) misslyckades"
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  "Åtgärden VM DELETE (UNDEFINE) misslyckades"
+ ],
+ "VM DELETE action failed": [
+  null,
+  "Åtgärden VM DELETE misslyckades"
+ ],
+ "VM DETACH_DISK action failed": [
+  null,
+  "Åtgärden VM DETACH_DISK misslyckades"
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "Åtgärden VM FORCE OFF misslyckades"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "Åtgärden VM FORCE REBOOT misslyckades"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "Åtgärden VM REBOOT misslyckades"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "Åtgärden VM SEND Non-Maskable Interrrupt misslyckades"
+ ],
+ "VM SENDNMI action failed": [
+  null,
+  "Åtgärden VM SENDNMI misslyckades"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "Åtgärden VM SHUT DOWN misslyckades"
+ ],
+ "VM START action failed": [
+  null,
+  "Åtgärden VM START misslyckades"
  ],
  "VNC": [
   null,
-  ""
+  "VNC"
  ],
  "VNC Address:": [
   null,
-  ""
+  "VNC-adress:"
  ],
  "VNC Port:": [
   null,
-  ""
+  "VNC-port:"
  ],
  "VNC TLS Port:": [
   null,
-  ""
+  "VNC TLS-port:"
  ],
  "Virtual Machines": [
   null,
-  ""
+  "Virtuella maskiner"
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
-  ""
+  "Virtualiseringstjänsten (libvirt) är inte aktiv"
  ],
  "Virtualization Service is Available": [
   null,
-  ""
+  "Virtualiseringstjänsten är tillgänglig"
  ],
  "Volume": [
   null,
-  ""
+  "Volym"
  ],
  "active": [
   null,
-  ""
+  "aktiv"
+ ],
+ "bridge": [
+  null,
+  "brygga"
+ ],
+ "cdrom": [
+  null,
+  "cdrom"
+ ],
+ "crashed": [
+  null,
+  "kraschad"
+ ],
+ "custom": [
+  null,
+  "anpassad"
+ ],
+ "direct": [
+  null,
+  "direkt"
+ ],
+ "disabled": [
+  null,
+  "avaktiverat"
+ ],
+ "disk": [
+  null,
+  "disk"
+ ],
+ "down": [
+  null,
+  "nere"
+ ],
+ "dying": [
+  null,
+  "döende"
+ ],
+ "enabled": [
+  null,
+  "aktiverat"
+ ],
+ "ethernet": [
+  null,
+  "ethernet"
+ ],
+ "host": [
+  null,
+  "värd"
+ ],
+ "hostdev": [
+  null,
+  "värdenhet"
+ ],
+ "idle": [
+  null,
+  "overksam"
  ],
  "inactive": [
   null,
-  ""
+  "inaktiv"
+ ],
+ "mcast": [
+  null,
+  "mcast"
+ ],
+ "network": [
+  null,
+  "nätverk"
  ],
  "no": [
   null,
-  ""
+  "nej"
+ ],
+ "other": [
+  null,
+  "annan"
+ ],
+ "paused": [
+  null,
+  "stannad"
  ],
  "qcow2": [
   null,
-  ""
+  "qcow2"
  ],
  "raw": [
   null,
-  ""
+  "rå"
+ ],
+ "running": [
+  null,
+  "kör"
+ ],
+ "server": [
+  null,
+  "server"
  ],
  "show less": [
   null,
-  ""
+  "visa mindre"
  ],
  "show more": [
   null,
-  ""
+  "visa mer"
+ ],
+ "shut off": [
+  null,
+  "stäng av"
+ ],
+ "shutdown": [
+  null,
+  "avstängning"
+ ],
+ "suspended (PM)": [
+  null,
+  "vilande (SH)"
+ ],
+ "udp": [
+  null,
+  "udp"
  ],
  "undefined": [
   null,
-  ""
+  "odefinierad"
+ ],
+ "up": [
+  null,
+  "uppe"
+ ],
+ "user": [
+  null,
+  "användare"
  ],
  "vCPU Count": [
   null,
-  ""
+  "vCPU-antal"
  ],
  "vCPU Maximum": [
   null,
-  ""
+  "vCPU-maximum"
  ],
  "vCPUs:": [
   null,
-  ""
+  "vCPU:er:"
+ ],
+ "vhostuser": [
+  null,
+  "vhost-användare"
  ],
  "yes": [
   null,
-  ""
+  "ja"
  ]
 }));

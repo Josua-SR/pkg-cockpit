@@ -87,13 +87,13 @@ return plural;
   null,
   "Adres:"
  ],
+ "Always attach": [
+  null,
+  "Podłączanie za każdym razem"
+ ],
  "Apply": [
   null,
   "Zastosuj"
- ],
- "Attach permanently": [
-  null,
-  "Podłącz na stałe"
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -114,6 +114,10 @@ return plural;
  "Bus": [
   null,
   "Magistrala"
+ ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "Działanie CHANGE NETWORK STATE się nie powiodło"
  ],
  "CPU Type:": [
   null,
@@ -267,6 +271,10 @@ return plural;
   null,
   "Sformatuj"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "Działanie GET HYPERVISOR MAX VCPU się nie powiodło"
+ ],
  "GiB": [
   null,
   "GiB"
@@ -290,6 +298,10 @@ return plural;
  "Host should not be empty": [
   null,
   "Gospodarz nie może być pusty"
+ ],
+ "INSTALL VM action failed": [
+  null,
+  "Działanie INSTALL VM się nie powiodło"
  ],
  "Immediately Start VM": [
   null,
@@ -459,6 +471,10 @@ return plural;
   null,
   "Ścieżka do pliku"
  ],
+ "Persistence": [
+  null,
+  "Trwałość"
+ ],
  "Please enter new volume name": [
   null,
   "Proszę podać nazwę nowego woluminu"
@@ -551,6 +567,10 @@ return plural;
   null,
   "Konsola szeregowa"
  ],
+ "Session": [
+  null,
+  "Sesja"
+ ],
  "Shut Down": [
   null,
   "Wyłącz"
@@ -577,7 +597,7 @@ return plural;
  ],
  "Source should start with https, ftp or nfs protocol": [
   null,
-  "Źródło musi zaczynać się od protokołu http, ftp lub nfs"
+  "Źródło musi zaczynać się od protokołu https, ftp lub nfs"
  ],
  "Start libvirt": [
   null,
@@ -622,6 +642,10 @@ return plural;
  "Storage Volumes": [
   null,
   "Woluminy urządzeń do przechowywania danych"
+ ],
+ "System": [
+  null,
+  "System"
  ],
  "Target": [
   null,
@@ -727,6 +751,54 @@ return plural;
   null,
   "Nie można zapisać ustawień wirtualnego procesora"
  ],
+ "VM CHANGE_NETWORK_STATE action failed": [
+  null,
+  "Działanie VM CHANGE_NETWORK_STATE się nie powiodło"
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  "Działanie VM DELETE (DESTROY) się nie powiodło"
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  "Działanie VM DELETE (UNDEFINE) się nie powiodło"
+ ],
+ "VM DELETE action failed": [
+  null,
+  "Działanie VM DELETE się nie powiodło"
+ ],
+ "VM DETACH_DISK action failed": [
+  null,
+  "Działanie VM DETACH_DISK się nie powiodło"
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "Działanie VM FORCE OFF się nie powiodło"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "Działanie VM FORCE REBOOT się nie powiodło"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "Działanie VM REBOOT się nie powiodło"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "Działanie VM SEND niemaskowalnego przerwania się nie powiodło"
+ ],
+ "VM SENDNMI action failed": [
+  null,
+  "Działanie VM SENDNMI się nie powiodło"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "Działanie VM SHUT DOWN się nie powiodło"
+ ],
+ "VM START action failed": [
+  null,
+  "Działanie VM START się nie powiodło"
+ ],
  "VNC": [
   null,
   "VNC"
@@ -763,13 +835,85 @@ return plural;
   null,
   "aktywne"
  ],
+ "bridge": [
+  null,
+  "mostek"
+ ],
+ "cdrom": [
+  null,
+  "CD-ROM"
+ ],
+ "crashed": [
+  null,
+  "uległo awarii"
+ ],
+ "custom": [
+  null,
+  "niestandardowe"
+ ],
+ "direct": [
+  null,
+  "bezpośrednie"
+ ],
+ "disabled": [
+  null,
+  "wyłączone"
+ ],
+ "disk": [
+  null,
+  "dysk"
+ ],
+ "down": [
+  null,
+  "w dół"
+ ],
+ "dying": [
+  null,
+  "w trakcie umierania"
+ ],
+ "enabled": [
+  null,
+  "włączone"
+ ],
+ "ethernet": [
+  null,
+  "Ethernet"
+ ],
+ "host": [
+  null,
+  "gospodarz"
+ ],
+ "hostdev": [
+  null,
+  "urządzenie gospodarza"
+ ],
+ "idle": [
+  null,
+  "bezczynne"
+ ],
  "inactive": [
   null,
   "nieaktywne"
  ],
+ "mcast": [
+  null,
+  "multicast"
+ ],
+ "network": [
+  null,
+  "sieć"
+ ],
  "no": [
   null,
   "nie"
+ ],
+ "other": [
+  null,
+  "inne"
+ ],
+ "paused": [
+  null,
+  "wstrzymane"
  ],
  "qcow2": [
   null,
@@ -779,6 +923,14 @@ return plural;
   null,
   "surowy"
  ],
+ "running": [
+  null,
+  "działanie"
+ ],
+ "server": [
+  null,
+  "serwer"
+ ],
  "show less": [
   null,
   "wyświetl mniej"
@@ -787,9 +939,33 @@ return plural;
   null,
   "wyświetl więcej"
  ],
+ "shut off": [
+  null,
+  "wyłącz"
+ ],
+ "shutdown": [
+  null,
+  "wyłączenie"
+ ],
+ "suspended (PM)": [
+  null,
+  "uśpione (PM)"
+ ],
+ "udp": [
+  null,
+  "UDP"
+ ],
  "undefined": [
   null,
   "nieokreślone"
+ ],
+ "up": [
+  null,
+  "w górę"
+ ],
+ "user": [
+  null,
+  "użytkownik"
  ],
  "vCPU Count": [
   null,
@@ -802,6 +978,10 @@ return plural;
  "vCPUs:": [
   null,
   "Wirtualne procesory:"
+ ],
+ "vhostuser": [
+  null,
+  "użytkownik gospodarza wirtualizacji"
  ],
  "yes": [
   null,

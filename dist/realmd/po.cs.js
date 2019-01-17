@@ -199,6 +199,10 @@ return plural;
   null,
   "Jednorázové heslo"
  ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit zhavaroval"
+ ],
  "Removals:": [
   null,
   "Odebrání:"

@@ -17,27 +17,28 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
-var $ = require('jquery');
-var cockpit = require('cockpit');
+import $ from 'jquery';
+import cockpit from 'cockpit';
 
-var firewall = require('./firewall-client.js').default;
-var utils = require('./utils');
-var service = require('service');
+import firewall from './firewall-client.js';
+import * as utils from './utils';
+import * as service from 'service';
 
-var Mustache = require('mustache');
-var plot = require('plot.js');
-var journal = require('journal');
+import { mustache } from 'mustache';
+import * as plot from 'plot.js';
+import { journal } from 'journal';
 
 /* jQuery extensions */
-require('patterns');
+import 'patterns';
 
-require("page.css");
-require("table.css");
-require("plot.css");
-require("journal.css");
-require("./networking.css");
+import "page.css";
+import "table.css";
+import "plot.css";
+import "journal.css";
+import "./networking.css";
+import "form-layout.less";
 
-var _ = cockpit.gettext;
+const _ = cockpit.gettext;
 var C_ = cockpit.gettext;
 
 function nm_debug() {
@@ -3421,7 +3422,7 @@ function slave_interface_choices(model, master) {
 }
 
 function render_slave_interface_choices(model, master) {
-    return $('<ul class="list-group available-interfaces-group dialog-list-ct">').append(
+    return $('<ul class="list-group dialog-list-ct">').append(
         slave_interface_choices(model, master).map(function (iface) {
             return $('<li class="list-group-item">').append(
                 $('<div class="checkbox">')
@@ -3612,7 +3613,7 @@ PageNetworkBondSettings.prototype = {
     _init: function () {
         this.id = "network-bond-settings-dialog";
         this.bond_settings_template = $("#network-bond-settings-template").html();
-        Mustache.parse(this.bond_settings_template);
+        mustache.parse(this.bond_settings_template);
     },
 
     setup: function () {
@@ -3670,7 +3671,8 @@ PageNetworkBondSettings.prototype = {
         function change_mode() {
             options.mode = select_btn_selected(mode_btn);
 
-            primary_btn.parents("tr").toggle(options.mode == "active-backup");
+            primary_btn.toggle(options.mode == "active-backup");
+            primary_btn.prev().toggle(options.mode == "active-backup");
             if (options.mode == "active-backup")
                 options.primary = select_btn_selected(primary_btn);
             else
@@ -3680,9 +3682,12 @@ PageNetworkBondSettings.prototype = {
         function change_monitoring() {
             var use_mii = select_btn_selected(monitoring_btn) == "mii";
 
-            targets_input.parents("tr").toggle(!use_mii);
-            updelay_input.parents("tr").toggle(use_mii);
-            downdelay_input.parents("tr").toggle(use_mii);
+            targets_input.toggle(!use_mii);
+            targets_input.prev().toggle(!use_mii);
+            updelay_input.toggle(use_mii);
+            updelay_input.prev().toggle(use_mii);
+            downdelay_input.toggle(use_mii);
+            downdelay_input.prev().toggle(use_mii);
 
             if (use_mii) {
                 options.miimon = interval_input.val();
@@ -3700,7 +3705,7 @@ PageNetworkBondSettings.prototype = {
         }
 
         var mac = (self.settings.ethernet && self.settings.ethernet.assigned_mac_address) || "";
-        var body = $(Mustache.render(self.bond_settings_template, {
+        var body = $(mustache.render(self.bond_settings_template, {
             interface_name: self.settings.bond.interface_name,
             assigned_mac_address: mac,
             monitoring_interval: options.miimon || options.arp_interval || "100",
@@ -3716,18 +3721,18 @@ PageNetworkBondSettings.prototype = {
                     self.settings.connection.interface_name = val;
                 });
         body.find('#network-bond-settings-members')
-                .append(slaves_element = render_slave_interface_choices(model, master)
+                .replaceWith(slaves_element = render_slave_interface_choices(model, master)
                         .change(change_slaves));
         fill_mac_menu(body.find('#network-bond-settings-mac-menu'),
                       mac_input = body.find('#network-bond-settings-mac-input'),
                       model);
         mac_input.change(change_mac);
         body.find('#network-bond-settings-mode-select')
-                .append(mode_btn = select_btn(change_mode, bond_mode_choices, "form-control"));
+                .replaceWith(mode_btn = select_btn(change_mode, bond_mode_choices, "form-control"));
         body.find('#network-bond-settings-primary-select')
-                .append(primary_btn = slave_chooser_btn(change_mode, slaves_element, "form-control"));
+                .replaceWith(primary_btn = slave_chooser_btn(change_mode, slaves_element, "form-control"));
         body.find('#network-bond-settings-link-monitoring-select')
-                .append(monitoring_btn = select_btn(change_monitoring, bond_monitoring_choices, "form-control"));
+                .replaceWith(monitoring_btn = select_btn(change_monitoring, bond_monitoring_choices, "form-control"));
 
         interval_input = body.find('#network-bond-settings-monitoring-interval-input');
         interval_input.change(change_monitoring);
@@ -3807,7 +3812,7 @@ PageNetworkTeamSettings.prototype = {
     _init: function () {
         this.id = "network-team-settings-dialog";
         this.team_settings_template = $("#network-team-settings-template").html();
-        Mustache.parse(this.team_settings_template);
+        mustache.parse(this.team_settings_template);
     },
 
     setup: function () {
@@ -3868,8 +3873,9 @@ PageNetworkTeamSettings.prototype = {
 
         function change_runner() {
             config.runner.name = select_btn_selected(runner_btn);
-            balancer_btn.parents("tr").toggle(config.runner.name == "loadbalance" ||
-                                              config.runner.name == "lacp");
+            var toggle_condition = config.runner.name == "loadbalance" || config.runner.name == "lacp";
+            balancer_btn.toggle(toggle_condition);
+            balancer_btn.prev().toggle(toggle_condition);
         }
 
         function change_balancer() {
@@ -3886,11 +3892,16 @@ PageNetworkTeamSettings.prototype = {
 
         function change_watch() {
             var name = select_btn_selected(watch_btn);
+            var toggle_condition = name != "ethtool";
 
-            interval_input.parents("tr").toggle(name != "ethtool");
-            target_input.parents("tr").toggle(name != "ethtool");
-            updelay_input.parents("tr").toggle(name == "ethtool");
-            downdelay_input.parents("tr").toggle(name == "ethtool");
+            interval_input.toggle(toggle_condition);
+            interval_input.prev().toggle(toggle_condition);
+            target_input.toggle(toggle_condition);
+            target_input.prev().toggle(toggle_condition);
+            updelay_input.toggle(!toggle_condition);
+            updelay_input.prev().toggle(!toggle_condition);
+            downdelay_input.toggle(!toggle_condition);
+            downdelay_input.prev().toggle(!toggle_condition);
 
             config.link_watch = { "name": name };
 
@@ -3903,7 +3914,7 @@ PageNetworkTeamSettings.prototype = {
             }
         }
 
-        var body = $(Mustache.render(self.team_settings_template,
+        var body = $(mustache.render(self.team_settings_template,
                                      {
                                          interface_name: self.settings.team.interface_name,
                                          config: config
@@ -3916,13 +3927,13 @@ PageNetworkTeamSettings.prototype = {
                     self.settings.connection.interface_name = val;
                 });
         body.find('#network-team-settings-members')
-                .append(render_slave_interface_choices(model, master).change(change_slaves));
+                .replaceWith(render_slave_interface_choices(model, master).change(change_slaves));
         body.find('#network-team-settings-runner-select')
-                .append(runner_btn = select_btn(change_runner, team_runner_choices, "form-control"));
+                .replaceWith(runner_btn = select_btn(change_runner, team_runner_choices, "form-control"));
         body.find('#network-team-settings-balancer-select')
-                .append(balancer_btn = select_btn(change_balancer, team_balancer_choices, "form-control"));
+                .replaceWith(balancer_btn = select_btn(change_balancer, team_balancer_choices, "form-control"));
         body.find('#network-team-settings-link-watch-select')
-                .append(watch_btn = select_btn(change_watch, team_watch_choices, "form-control"));
+                .replaceWith(watch_btn = select_btn(change_watch, team_watch_choices, "form-control"));
 
         interval_input = body.find('#network-team-settings-ping-interval-input');
         interval_input.change(change_watch);
@@ -4000,7 +4011,7 @@ PageNetworkTeamPortSettings.prototype = {
     _init: function () {
         this.id = "network-teamport-settings-dialog";
         this.team_port_settings_template = $("#network-team-port-settings-template").html();
-        Mustache.parse(this.team_port_settings_template);
+        mustache.parse(this.team_port_settings_template);
     },
 
     setup: function () {
@@ -4041,7 +4052,7 @@ PageNetworkTeamPortSettings.prototype = {
             }
         }
 
-        var body = $(Mustache.render(self.team_port_settings_template, config));
+        var body = $(mustache.render(self.team_port_settings_template, config));
         ab_prio_input = body.find('#network-team-port-settings-ab-prio-input');
         ab_prio_input.change(change);
         ab_sticky_input = body.find('#network-team-port-settings-ab-sticky-input');
@@ -4051,10 +4062,17 @@ PageNetworkTeamPortSettings.prototype = {
         lacp_key_input = body.find('#network-team-port-settings-lacp-key-input');
         lacp_key_input.change(change);
 
-        ab_prio_input.parents("tr").toggle(master_config.runner.name == "activebackup");
-        ab_sticky_input.parents("tr").toggle(master_config.runner.name == "activebackup");
-        lacp_prio_input.parents("tr").toggle(master_config.runner.name == "lacp");
-        lacp_key_input.parents("tr").toggle(master_config.runner.name == "lacp");
+        ab_prio_input.toggle(master_config.runner.name == "activebackup");
+        ab_prio_input.prev().toggle(master_config.runner.name == "activebackup");
+        ab_sticky_input.toggle(master_config.runner.name == "activebackup");
+        ab_sticky_input
+                .parent()
+                .prev()
+                .toggle(master_config.runner.name == "activebackup");
+        lacp_prio_input.toggle(master_config.runner.name == "lacp");
+        lacp_prio_input.prev().toggle(master_config.runner.name == "lacp");
+        lacp_key_input.toggle(master_config.runner.name == "lacp");
+        lacp_key_input.prev().toggle(master_config.runner.name == "lacp");
 
         $('#network-teamport-settings-body').html(body);
     },
@@ -4092,7 +4110,7 @@ PageNetworkBridgeSettings.prototype = {
     _init: function () {
         this.id = "network-bridge-settings-dialog";
         this.bridge_settings_template = $("#network-bridge-settings-template").html();
-        Mustache.parse(this.bridge_settings_template);
+        mustache.parse(this.bridge_settings_template);
     },
 
     setup: function () {
@@ -4141,13 +4159,17 @@ PageNetworkBridgeSettings.prototype = {
             options.hello_time = parseInt(hello_time_input.val(), 10);
             options.max_age = parseInt(max_age_input.val(), 10);
 
-            priority_input.parents("tr").toggle(options.stp);
-            forward_delay_input.parents("tr").toggle(options.stp);
-            hello_time_input.parents("tr").toggle(options.stp);
-            max_age_input.parents("tr").toggle(options.stp);
+            priority_input.toggle(options.stp);
+            priority_input.prev().toggle(options.stp);
+            forward_delay_input.toggle(options.stp);
+            forward_delay_input.prev().toggle(options.stp);
+            hello_time_input.toggle(options.stp);
+            hello_time_input.prev().toggle(options.stp);
+            max_age_input.toggle(options.stp);
+            max_age_input.prev().toggle(options.stp);
         }
 
-        var body = $(Mustache.render(self.bridge_settings_template, {
+        var body = $(mustache.render(self.bridge_settings_template, {
             bridge_name: options.interface_name,
             stp_checked: options.stp,
             stp_priority: options.priority,
@@ -4162,10 +4184,11 @@ PageNetworkBridgeSettings.prototype = {
                     self.settings.connection.id = val;
                     self.settings.connection.interface_name = val;
                 });
-        body.find('#network-bridge-settings-slave-interfaces')
-                .append(render_slave_interface_choices(model, con).change(change_slaves))
-                .parent()
-                .toggle(!con);
+        var slave_interfaces = body.find('#network-bridge-settings-slave-interfaces')
+                .replaceWith(render_slave_interface_choices(model, con).change(change_slaves));
+        slave_interfaces.toggle(!con);
+        slave_interfaces.prev().toggle(!con);
+
         stp_input = body.find('#network-bridge-settings-stp-enabled-input');
         stp_input.change(change_stp);
         priority_input = body.find('#network-bridge-settings-stp-priority-input');
@@ -4242,7 +4265,7 @@ PageNetworkBridgePortSettings.prototype = {
     _init: function () {
         this.id = "network-bridgeport-settings-dialog";
         this.bridge_port_settings_template = $("#network-bridge-port-settings-template").html();
-        Mustache.parse(this.bridge_port_settings_template);
+        mustache.parse(this.bridge_port_settings_template);
     },
 
     setup: function () {
@@ -4275,7 +4298,7 @@ PageNetworkBridgePortSettings.prototype = {
             options.hairpin_mode = hairpin_mode_input.prop('checked');
         }
 
-        var body = $(Mustache.render(self.bridge_port_settings_template, {
+        var body = $(mustache.render(self.bridge_port_settings_template, {
             priority: options.priority,
             path_cost: options.path_cost,
             hairpin_mode_checked: options.hairpin_mode
@@ -4324,7 +4347,7 @@ PageNetworkVlanSettings.prototype = {
     _init: function () {
         this.id = "network-vlan-settings-dialog";
         this.vlan_settings_template = $("#network-vlan-settings-template").html();
-        Mustache.parse(this.vlan_settings_template);
+        mustache.parse(this.vlan_settings_template);
     },
 
     setup: function () {
@@ -4379,12 +4402,12 @@ PageNetworkVlanSettings.prototype = {
                 parent_choices.push({ title: i.Name, choice: i.Name });
         });
 
-        var body = $(Mustache.render(self.vlan_settings_template, {
+        var body = $(mustache.render(self.vlan_settings_template, {
             vlan_id: options.id || "1",
             interface_name: options.interface_name
         }));
         parent_btn = select_btn(change, parent_choices, "form-control");
-        body.find('#network-vlan-settings-parent-select').html(parent_btn);
+        body.find('#network-vlan-settings-parent-select').replaceWith(parent_btn);
         id_input = body.find('#network-vlan-settings-vlan-id-input')
                 .change(change)
                 .on('input', change);
@@ -4445,7 +4468,7 @@ PageNetworkMtuSettings.prototype = {
     _init: function () {
         this.id = "network-mtu-settings-dialog";
         this.ethernet_settings_template = $("#network-mtu-settings-template").html();
-        Mustache.parse(this.ethernet_settings_template);
+        mustache.parse(this.ethernet_settings_template);
     },
 
     setup: function () {
@@ -4469,7 +4492,7 @@ PageNetworkMtuSettings.prototype = {
         var self = this;
         var options = self.settings.ethernet;
 
-        var body = $(Mustache.render(self.ethernet_settings_template, options));
+        var body = $(mustache.render(self.ethernet_settings_template, options));
         $('#network-mtu-settings-body').html(body);
         $('#network-mtu-settings-input').focus(function () {
             $('#network-mtu-settings-custom').prop('checked', true);
@@ -4524,7 +4547,7 @@ PageNetworkMacSettings.prototype = {
     _init: function () {
         this.id = "network-mac-settings-dialog";
         this.ethernet_settings_template = $("#network-mac-settings-template").html();
-        Mustache.parse(this.ethernet_settings_template);
+        mustache.parse(this.ethernet_settings_template);
     },
 
     setup: function () {
@@ -4548,7 +4571,7 @@ PageNetworkMacSettings.prototype = {
         var self = this;
         var options = self.settings.ethernet;
 
-        var body = $(Mustache.render(self.ethernet_settings_template, options));
+        var body = $(mustache.render(self.ethernet_settings_template, options));
         $('#network-mac-settings-body').html(body);
 
         fill_mac_menu($('#network-mac-settings-menu'),

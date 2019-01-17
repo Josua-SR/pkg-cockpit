@@ -18,8 +18,6 @@
  */
 
 (function() {
-    "use strict";
-
     var angular = require('angular');
     require('angular-route');
 
@@ -358,7 +356,7 @@
                 "KubeFormat",
                 "KubeTranslate",
                 function($q, $scope, $timeout, $instance, filter, methods, KubeFormat, translate) {
-                    var _ = translate.gettext;
+                    const _ = translate.gettext;
 
                     var file;
                     var fields = {

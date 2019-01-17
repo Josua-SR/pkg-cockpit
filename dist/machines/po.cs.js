@@ -87,13 +87,13 @@ return plural;
   null,
   "Adresa:"
  ],
+ "Always attach": [
+  null,
+  "Vždy připojit"
+ ],
  "Apply": [
   null,
   "Použít"
- ],
- "Attach permanently": [
-  null,
-  "Připojit trvale"
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -114,6 +114,10 @@ return plural;
  "Bus": [
   null,
   "Sběrnice"
+ ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "Akce ZMĚNIT STAV SÍTĚ se nezdařila"
  ],
  "CPU Type:": [
   null,
@@ -267,6 +271,10 @@ return plural;
   null,
   "Formát"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "Akce ZJISTIT MAXIMUM VIRT. PROCESORŮ HYPERVIZORU se nezdařila"
+ ],
  "GiB": [
   null,
   "GiB"
@@ -290,6 +298,10 @@ return plural;
  "Host should not be empty": [
   null,
   "Hostitele je třeba vyplnit"
+ ],
+ "INSTALL VM action failed": [
+  null,
+  "Akce NAINSTALOVAT VIRT. STROJ se nezdařila"
  ],
  "Immediately Start VM": [
   null,
@@ -459,6 +471,10 @@ return plural;
   null,
   "Popis umístění serveru"
  ],
+ "Persistence": [
+  null,
+  "Trvalost"
+ ],
  "Please enter new volume name": [
   null,
   "Zadejte název pro nový svazek"
@@ -551,6 +567,10 @@ return plural;
   null,
   "Sériová konzole"
  ],
+ "Session": [
+  null,
+  "Sezení"
+ ],
  "Shut Down": [
   null,
   "Vypnout"
@@ -623,9 +643,9 @@ return plural;
   null,
   "Úložné svazky"
  ],
- "Target": [
+ "System": [
   null,
-  "Cíl"
+  "Systém"
  ],
  "Target Path": [
   null,
@@ -727,6 +747,54 @@ return plural;
   null,
   "Nastavení virt. procesoru se nepodařilo uložit"
  ],
+ "VM CHANGE_NETWORK_STATE action failed": [
+  null,
+  "Akce ZMĚNA STAVU SÍTĚ VIRT. STROJE se nezdařila"
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  "Akce SMAZAT VIRT. STROJ (ZLIKVIDOVAT) se nezdařila"
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  "Akce SMAZAT VIRT. STROJ (ZRUŠIT DEFINICI) se nezdařila"
+ ],
+ "VM DELETE action failed": [
+  null,
+  "Akce SMAZAT STROJ se nezdařila"
+ ],
+ "VM DETACH_DISK action failed": [
+  null,
+  "Akce ODPOJIT DISK VIRT. STROJE se nezdařila"
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "Akce VYNUCENÉ VYPNUTÍ VIRT. STROJE se nezdařila"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "Akce VYNUCENÝ RESTART se nezdařila"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "Akce RESTART se nezdařila"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "Akce POSLAT VIRT. STROJI nemaskovatelné přerušení se nezdařila"
+ ],
+ "VM SENDNMI action failed": [
+  null,
+  "Akce POSLAT VIRT. STROJI NEMASK. PŘERUŠENÍ se nezdařila"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "Akce VYPNOUT VIRT STROJ se nezdařila"
+ ],
+ "VM START action failed": [
+  null,
+  "Akce SPUSTIT VIRT STROJ se nezdařila"
+ ],
  "VNC": [
   null,
   "VNC"
@@ -763,13 +831,85 @@ return plural;
   null,
   "aktivní"
  ],
+ "bridge": [
+  null,
+  "most"
+ ],
+ "cdrom": [
+  null,
+  "cdrom"
+ ],
+ "crashed": [
+  null,
+  "zhavarovalo"
+ ],
+ "custom": [
+  null,
+  "uživatelsky určené"
+ ],
+ "direct": [
+  null,
+  "přímé"
+ ],
+ "disabled": [
+  null,
+  "zakázáno"
+ ],
+ "disk": [
+  null,
+  "disk"
+ ],
+ "down": [
+  null,
+  "vypnuté"
+ ],
+ "dying": [
+  null,
+  "vypíná se"
+ ],
+ "enabled": [
+  null,
+  "povoleno"
+ ],
+ "ethernet": [
+  null,
+  "ethernet"
+ ],
+ "host": [
+  null,
+  "stroj"
+ ],
+ "hostdev": [
+  null,
+  "zařízení hostitele"
+ ],
+ "idle": [
+  null,
+  "nečinný"
+ ],
  "inactive": [
   null,
   "neaktivní"
  ],
+ "mcast": [
+  null,
+  "vícesměrvysílání"
+ ],
+ "network": [
+  null,
+  "síť"
+ ],
  "no": [
   null,
   "ne"
+ ],
+ "other": [
+  null,
+  "ostatní"
+ ],
+ "paused": [
+  null,
+  "pozastaveno"
  ],
  "qcow2": [
   null,
@@ -779,6 +919,14 @@ return plural;
   null,
   "raw"
  ],
+ "running": [
+  null,
+  "spuštěné"
+ ],
+ "server": [
+  null,
+  "server"
+ ],
  "show less": [
   null,
   "zobrazit méně"
@@ -787,9 +935,33 @@ return plural;
   null,
   "zobrazit více"
  ],
+ "shut off": [
+  null,
+  "vypnuto"
+ ],
+ "shutdown": [
+  null,
+  "vypnout"
+ ],
+ "suspended (PM)": [
+  null,
+  "uspáno (správou napájení)"
+ ],
+ "udp": [
+  null,
+  "udp"
+ ],
  "undefined": [
   null,
   "nedefinované"
+ ],
+ "up": [
+  null,
+  "zapnuto"
+ ],
+ "user": [
+  null,
+  "uživatel"
  ],
  "vCPU Count": [
   null,
@@ -802,6 +974,10 @@ return plural;
  "vCPUs:": [
   null,
   "virt. procesorů:"
+ ],
+ "vhostuser": [
+  null,
+  "uzivatelvirtstroje"
  ],
  "yes": [
   null,

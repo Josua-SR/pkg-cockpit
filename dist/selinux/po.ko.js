@@ -81,11 +81,11 @@ return plural;
  ],
  "Audit log": [
   null,
-  ""
+  "감사 로그 "
  ],
  "Connecting to SETroubleshoot daemon...": [
   null,
-  ""
+  "SETroubleshoot 데몬에 연결 중..."
  ],
  "Enforce policy:": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "SELinux Policy": [
   null,
-  ""
+  "SELinux 정책 "
  ],
  "SELinux Troubleshoot": [
   null,
@@ -169,7 +169,7 @@ return plural;
  ],
  "Solutions": [
   null,
-  ""
+  "솔루션 "
  ],
  "The configured state is unknown, it might change on the next boot.": [
   null,
@@ -201,6 +201,6 @@ return plural;
  ],
  "solution details": [
   null,
-  ""
+  "솔루션 상세 정보 "
  ]
 }));

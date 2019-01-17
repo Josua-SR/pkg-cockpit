@@ -422,7 +422,6 @@ The Cockpit bridge component installed server side and runs commands on the
 system on behalf of the web based user interface.
 
 %files bridge -f base.list
-%{_datadir}/cockpit/base1/bundle.min.js.gz
 %doc %{_mandir}/man1/cockpit-bridge.1.gz
 %{_bindir}/cockpit-bridge
 %{_libexecdir}/cockpit-askpass
@@ -479,10 +478,9 @@ Requires: subscription-manager >= 1.13
 %endif
 # NPM modules which are also available as packages
 Provides: bundled(js-jquery) = 3.3.1
-Provides: bundled(js-moment) = 2.22.2
+Provides: bundled(js-moment) = 2.23.0
 Provides: bundled(nodejs-flot) = 0.8.3
 Provides: bundled(nodejs-promise) = 8.0.2
-Provides: bundled(nodejs-requirejs) = 2.1.22
 Provides: bundled(xstatic-bootstrap-datepicker-common) = 1.8.0
 Provides: bundled(xstatic-patternfly-common) = 3.58.0
 

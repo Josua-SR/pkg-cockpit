@@ -164,6 +164,7 @@ LIBVIRT_DBUS_PROVIDER = {
         connectionName,
         poolName,
         volumeName,
+        format,
         target,
         vmId,
         vmName,
@@ -176,7 +177,7 @@ LIBVIRT_DBUS_PROVIDER = {
         if (permanent)
             flags |= Enum.VIR_DOMAIN_AFFECT_CONFIG;
 
-        let xmlDesc = getDiskXML(poolName, volumeName, target);
+        let xmlDesc = getDiskXML(poolName, volumeName, format, target);
 
         // Error handling is done from the calling side
         return () => call(connectionName, vmId, 'org.libvirt.Domain', 'AttachDevice', [xmlDesc, flags], TIMEOUT);
@@ -272,7 +273,7 @@ LIBVIRT_DBUS_PROVIDER = {
                     return call(connectionName, storagePoolPath[0], 'org.libvirt.StoragePool', 'StorageVolCreateXML', [volXmlDesc, 0], TIMEOUT);
                 })
                 .then((volPath) => {
-                    return dispatch(attachDisk({ connectionName, poolName, volumeName, target, vmId, permanent, hotplug }));
+                    return dispatch(attachDisk({ connectionName, poolName, volumeName, format, target, vmId, permanent, hotplug }));
                 });
     },
 
@@ -557,34 +558,45 @@ LIBVIRT_DBUS_PROVIDER = {
 
     GET_STORAGE_VOLUMES({ connectionName, poolName }) {
         return dispatch => call(connectionName, '/org/libvirt/QEMU', 'org.libvirt.Connect', 'StoragePoolLookupByName', [poolName], TIMEOUT)
-                .done(storagePoolPath => {
-                    call(connectionName, storagePoolPath[0], 'org.libvirt.StoragePool', 'ListStorageVolumes', [0], TIMEOUT)
-                            .done((objPaths) => {
-                                let volumes = [];
-                                let storageVolumesPropsPromises = [];
-
-                                for (let i = 0; i < objPaths[0].length; i++) {
-                                    const objPath = objPaths[0][i];
-
-                                    storageVolumesPropsPromises.push(call(connectionName, objPath, 'org.libvirt.StorageVol', 'GetXMLDesc', [0], TIMEOUT));
-                                }
-                                Promise.all(storageVolumesPropsPromises).then(volumeXmlList => {
-                                    for (let i = 0; i < volumeXmlList.length; i++) {
-                                        let volumeXml = volumeXmlList[i][0];
-                                        const dumpxmlParams = parseStorageVolumeDumpxml(connectionName, volumeXml);
-
-                                        volumes.push(dumpxmlParams);
-                                    }
-                                    return dispatch(updateStorageVolumes({
-                                        connectionName,
-                                        poolName,
-                                        volumes
-                                    }));
-                                });
-                            })
-                            .fail(ex => console.warn("ListStorageVolumes failed:", ex));
+                .then(storagePoolPath => {
+                    return call(connectionName, storagePoolPath[0], 'org.libvirt.StoragePool', 'ListStorageVolumes', [0], TIMEOUT);
                 })
-                .fail(ex => console.warn("StoragePoolLookupByName for pool %s failed: %s", poolName, JSON.stringify(ex)));
+                .then((objPaths) => {
+                    let volumes = [];
+                    let storageVolumesPropsPromises = [];
+
+                    for (let i = 0; i < objPaths[0].length; i++) {
+                        const objPath = objPaths[0][i];
+
+                        storageVolumesPropsPromises.push(
+                            call(connectionName, objPath, 'org.libvirt.StorageVol', 'GetXMLDesc', [0], TIMEOUT)
+                        );
+                    }
+
+                    // WA to avoid Promise.all() fail-fast behavior
+                    const toResultObject = (promise) => {
+                        return promise
+                                .then(result => ({ success: true, result }))
+                                .catch(error => ({ success: false, error }));
+                    };
+
+                    Promise.all(storageVolumesPropsPromises.map(toResultObject)).then(volumeXmlList => {
+                        for (let i = 0; i < volumeXmlList.length; i++) {
+                            if (volumeXmlList[i].success) {
+                                let volumeXml = volumeXmlList[i].result[0];
+                                const dumpxmlParams = parseStorageVolumeDumpxml(connectionName, volumeXml);
+
+                                volumes.push(dumpxmlParams);
+                            }
+                        }
+                        return dispatch(updateStorageVolumes({
+                            connectionName,
+                            poolName,
+                            volumes
+                        }));
+                    });
+                })
+                .fail(ex => console.warn("GET_STORAGE_VOLUMES action failed for pool %s: %s", poolName, JSON.stringify(ex)));
     },
 
     /*

@@ -87,13 +87,13 @@ return plural;
   null,
   "주소:"
  ],
+ "Always attach": [
+  null,
+  ""
+ ],
  "Apply": [
   null,
   "적용"
- ],
- "Attach permanently": [
-  null,
-  ""
  ],
  "Automatically start libvirt on boot": [
   null,
@@ -113,7 +113,11 @@ return plural;
  ],
  "Bus": [
   null,
-  ""
+  "버스 "
+ ],
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "CHANGE NETWORK STATE 동작이 실패했습니다 "
  ],
  "CPU Type:": [
   null,
@@ -145,11 +149,11 @@ return plural;
  ],
  "Connecting": [
   null,
-  ""
+  "연결 중"
  ],
  "Connecting to Virtualization Service": [
   null,
-  ""
+  "가상 서비스에 연결 중입니다 "
  ],
  "Connection": [
   null,
@@ -157,11 +161,11 @@ return plural;
  ],
  "Console Type": [
   null,
-  ""
+  "콘솔 유형 "
  ],
  "Consoles": [
   null,
-  ""
+  "콘솔 "
  ],
  "Cores per socket": [
   null,
@@ -177,11 +181,11 @@ return plural;
  ],
  "Create Storage Pool": [
   null,
-  ""
+  "스토리지 풀 만들기 "
  ],
  "Create VM": [
   null,
-  ""
+  "가상 머신 만들기 "
  ],
  "Creation of vm $0 failed": [
   null,
@@ -189,7 +193,7 @@ return plural;
  ],
  "Ctrl+Alt+Del": [
   null,
-  ""
+  "Ctrl+Alt+Del"
  ],
  "Delete": [
   null,
@@ -267,6 +271,10 @@ return plural;
   null,
   "포멧"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
+ ],
  "GiB": [
   null,
   "GiB"
@@ -288,6 +296,10 @@ return plural;
   "호스트명"
  ],
  "Host should not be empty": [
+  null,
+  ""
+ ],
+ "INSTALL VM action failed": [
   null,
   ""
  ],
@@ -459,6 +471,10 @@ return plural;
   null,
   ""
  ],
+ "Persistence": [
+  null,
+  ""
+ ],
  "Please enter new volume name": [
   null,
   ""
@@ -477,7 +493,7 @@ return plural;
  ],
  "Pool": [
   null,
-  ""
+  "풀"
  ],
  "Port": [
   null,
@@ -493,11 +509,11 @@ return plural;
  ],
  "QEMU/KVM System connection": [
   null,
-  ""
+  "QEMU/KVM 시스템 연결 "
  ],
  "QEMU/KVM User connection": [
   null,
-  ""
+  "QEMU/KVM 사용자 연결 "
  ],
  "Readonly": [
   null,
@@ -509,7 +525,7 @@ return plural;
  ],
  "Remote URL": [
   null,
-  ""
+  "원격 URL"
  ],
  "Restart": [
   null,
@@ -525,15 +541,15 @@ return plural;
  ],
  "SPICE Address:": [
   null,
-  ""
+  "SPICE 주소:"
  ],
  "SPICE Port:": [
   null,
-  ""
+  "SPICE 포트:"
  ],
  "SPICE TLS Port:": [
   null,
-  ""
+  "SPICE TLS 포트:"
  ],
  "Save": [
   null,
@@ -550,6 +566,10 @@ return plural;
  "Serial Console": [
   null,
   ""
+ ],
+ "Session": [
+  null,
+  "세션"
  ],
  "Shut Down": [
   null,
@@ -569,7 +589,7 @@ return plural;
  ],
  "Source Path": [
   null,
-  ""
+  "소스 경로 "
  ],
  "Source path should not be empty": [
   null,
@@ -581,7 +601,7 @@ return plural;
  ],
  "Start libvirt": [
   null,
-  ""
+  "libvirt 시작 "
  ],
  "Start pool when host boots": [
   null,
@@ -601,7 +621,7 @@ return plural;
  ],
  "Storage Pool Name": [
   null,
-  ""
+  "스토리지 풀 이름 "
  ],
  "Storage Pool failed to be created": [
   null,
@@ -609,11 +629,11 @@ return plural;
  ],
  "Storage Pools": [
   null,
-  ""
+  "스토리지 풀 "
  ],
  "Storage Size": [
   null,
-  ""
+  "스토리지 크기 "
  ],
  "Storage Size should not be negative number": [
   null,
@@ -621,15 +641,15 @@ return plural;
  ],
  "Storage Volumes": [
   null,
-  ""
+  "스토리지 볼륨 "
  ],
- "Target": [
+ "System": [
   null,
-  "대상"
+  "시스템 "
  ],
  "Target Path": [
   null,
-  ""
+  "대상 경로"
  ],
  "Target path should not be empty": [
   null,
@@ -727,21 +747,69 @@ return plural;
   null,
   ""
  ],
+ "VM CHANGE_NETWORK_STATE action failed": [
+  null,
+  "VM CHANGE_NETWORK_STATE 작업에 실패했습니다 "
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  "VM DELETE (DESTROY) 작업에 실패했습니다 "
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  "VM DELETE (UNDEFINE) 작업에 실패했습니다 "
+ ],
+ "VM DELETE action failed": [
+  null,
+  "VM DELETE 작업에 실패했습니다 "
+ ],
+ "VM DETACH_DISK action failed": [
+  null,
+  "VM DETACH_DISK 작업에 실패했습니다 "
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "VM FORCE OFF 작업에 실패했습니다 "
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "VM FORCE REBOOT 작업에 실패했습니다 "
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "VM REBOOT 작업에 실패했습니다 "
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "VM SEND Non-Maskable Interrrupt 작업에 실패했습니다 "
+ ],
+ "VM SENDNMI action failed": [
+  null,
+  "VM SENDNMI 작업에 실패했습니다 "
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "VM SHUT DOWN 작업에 실패했습니다 "
+ ],
+ "VM START action failed": [
+  null,
+  "VM START 작업에 실패했습니다 "
+ ],
  "VNC": [
   null,
   "VNC"
  ],
  "VNC Address:": [
   null,
-  ""
+  "VNC 주소:"
  ],
  "VNC Port:": [
   null,
-  ""
+  "VNC 포트:"
  ],
  "VNC TLS Port:": [
   null,
-  ""
+  "VNC TLS 포트:"
  ],
  "Virtual Machines": [
   null,
@@ -749,11 +817,11 @@ return plural;
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
-  ""
+  "가상화 서비스 (libvirt)가 활성화되어 있지 않습니다"
  ],
  "Virtualization Service is Available": [
   null,
-  ""
+  "가상화 서비스를 사용할 수 있습니다 "
  ],
  "Volume": [
   null,
@@ -763,13 +831,85 @@ return plural;
   null,
   "active"
  ],
- "inactive": [
+ "bridge": [
+  null,
+  "브릿지"
+ ],
+ "cdrom": [
+  null,
+  "cdrom"
+ ],
+ "crashed": [
   null,
   ""
+ ],
+ "custom": [
+  null,
+  "사용자 지정 "
+ ],
+ "direct": [
+  null,
+  ""
+ ],
+ "disabled": [
+  null,
+  "비활성화됨 "
+ ],
+ "disk": [
+  null,
+  "디스크"
+ ],
+ "down": [
+  null,
+  "아래로"
+ ],
+ "dying": [
+  null,
+  ""
+ ],
+ "enabled": [
+  null,
+  "활성화됨 "
+ ],
+ "ethernet": [
+  null,
+  ""
+ ],
+ "host": [
+  null,
+  "호스트"
+ ],
+ "hostdev": [
+  null,
+  "hostdev"
+ ],
+ "idle": [
+  null,
+  ""
+ ],
+ "inactive": [
+  null,
+  "비활성"
+ ],
+ "mcast": [
+  null,
+  "mcast"
+ ],
+ "network": [
+  null,
+  "네트워크 "
  ],
  "no": [
   null,
   "아니요"
+ ],
+ "other": [
+  null,
+  "기타 "
+ ],
+ "paused": [
+  null,
+  "일시 중지"
  ],
  "qcow2": [
   null,
@@ -779,17 +919,49 @@ return plural;
   null,
   "raw"
  ],
+ "running": [
+  null,
+  "실행 중"
+ ],
+ "server": [
+  null,
+  "서버 "
+ ],
  "show less": [
   null,
-  ""
+  "덜 보기 "
  ],
  "show more": [
   null,
-  ""
+  "더 보기 "
+ ],
+ "shut off": [
+  null,
+  "종료"
+ ],
+ "shutdown": [
+  null,
+  "종료"
+ ],
+ "suspended (PM)": [
+  null,
+  "일시 정지 (PM)"
+ ],
+ "udp": [
+  null,
+  "udp"
  ],
  "undefined": [
   null,
-  ""
+  "정의되지 않음 "
+ ],
+ "up": [
+  null,
+  "위로"
+ ],
+ "user": [
+  null,
+  "사용자 "
  ],
  "vCPU Count": [
   null,
@@ -797,11 +969,15 @@ return plural;
  ],
  "vCPU Maximum": [
   null,
-  ""
+  "vCPU 최대 "
  ],
  "vCPUs:": [
   null,
   "vCPU:"
+ ],
+ "vhostuser": [
+  null,
+  "vhostuser"
  ],
  "yes": [
   null,

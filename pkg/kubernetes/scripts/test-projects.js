@@ -17,14 +17,12 @@
  * along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
  */
 
+import QUnit from "qunit-tests";
 var angular = require("angular");
-var QUnit = require("qunit-tests");
 
 require("./projects");
 
 function suite(fixtures) {
-    "use strict";
-
     /* Filled in with a function */
     var inject;
 

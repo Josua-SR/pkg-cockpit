@@ -95,6 +95,10 @@ return plural;
   null,
   "Katalog"
  ],
+ "Directory $0 isn't writable or doesn't exist.": [
+  null,
+  "Katalogen $0 är inte skrivbar eller finns inte."
+ ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
   "Tjänsten kdump är inte installerad.  Se till att paketet kexec-tools är installerat."
@@ -217,26 +221,38 @@ return plural;
  ],
  "Unable to apply settings: $0": [
   null,
-  ""
+  "Kan inte verkställa inställningarna: $0"
  ],
  "invalid: multiple targets defined": [
   null,
-  ""
+  "felaktigt: flera mål definierade"
  ],
  "kdump status": [
   null,
-  ""
+  "kdump-status"
  ],
  "locally in $0": [
   null,
-  ""
+  "lokalt i $0"
+ ],
+ "nfs dump target isn't formated as server:path": [
+  null,
+  "nfs-dumpmålet är inte formaterat som server:sökväg"
  ],
  "ssh key": [
   null,
-  ""
+  "ssh-nyckel"
+ ],
+ "ssh key isn't a path": [
+  null,
+  "ssh-nyckeln är inte en sökväg"
+ ],
+ "ssh server is empty": [
+  null,
+  "ssh-servern är tom"
  ],
  "undefined": [
   null,
-  ""
+  "odefinierad"
  ]
 }));

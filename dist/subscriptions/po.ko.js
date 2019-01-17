@@ -217,11 +217,11 @@ return plural;
  ],
  "Updating": [
   null,
-  ""
+  "업데이트 중 "
  ],
  "Use proxy server": [
   null,
-  ""
+  "프록시 서버 사용 "
  ],
  "User": [
   null,
@@ -233,6 +233,6 @@ return plural;
  ],
  "undefined": [
   null,
-  ""
+  "정의되지 않음 "
  ]
 }));

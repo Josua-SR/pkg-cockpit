@@ -1,3 +1,23 @@
+html, body {
+        height: 100%;
+}
+
+.console-ct-container {
+    height: 100%;
+}
+
+.console-ct-container .panel-body {
+    padding: 0;
+    position: fixed;
+    top: 44px; /* panel-heading in cockpit.css */
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+#terminal {
+    height: 100%;
+}
 .term-bg-color-0 { background-color: #2e3436; }
 .term-fg-color-0 { color: #2e3436; }
 .term-bg-color-1 { background-color: #cc0000; }
@@ -576,26 +596,6 @@
         color: #f0f0f0;
         background: #000;
     }
-}
-html, body {
-        height: 100%;
-}
-
-.console-ct-container {
-    height: 100%;
-}
-
-.console-ct-container .panel-body {
-    padding: 0;
-    position: fixed;
-    top: 44px; /* panel-heading in cockpit.css */
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-}
-
-#terminal {
-    height: 100%;
 }
 
 /*# sourceMappingURL=terminal.css.map*/

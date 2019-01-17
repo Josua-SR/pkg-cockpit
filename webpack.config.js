@@ -110,7 +110,7 @@ var info = {
         ],
 
         "storaged/storage": [
-            "storaged/devices.js"
+            "storaged/devices.jsx"
         ],
 
         "subscriptions/subscriptions": [
@@ -195,7 +195,6 @@ var info = {
         "kubernetes/index.html",
         "kubernetes/registry.html",
 
-        "machines/base.css",
         "machines/index.html",
 
         "networkmanager/index.html",
@@ -212,7 +211,6 @@ var info = {
         "playground/metrics.html",
         "playground/pkgs.html",
         "playground/plot.html",
-        "playground/po.js",
         "playground/react-patterns.html",
         "playground/service.html",
         "playground/speed.html",
@@ -322,11 +320,6 @@ info.files.forEach(function(value) {
 info.files = files;
 
 var plugins = [
-    new webpack.DefinePlugin({
-        'process.env': {
-            'NODE_ENV': JSON.stringify(production ? 'production' : 'development')
-        }
-    }),
     new copy(info.files),
     new extract("[name].css"),
 ];
@@ -339,13 +332,6 @@ var output = {
 
 /* Only minimize when in production mode */
 if (production) {
-    plugins.unshift(new webpack.optimize.UglifyJsPlugin({
-        beautify: true,
-        compress: {
-            warnings: false
-        },
-    }));
-
     /* Rename output files when minimizing */
     output.filename = "[name].min.js";
 }
@@ -378,14 +364,31 @@ var aliases = {
 if (production)
     aliases["redux/dist/redux"] = "redux/dist/redux.min.js";
 
+
+var babel_loader = {
+    loader: "babel-loader",
+    options: {
+        presets: [
+            ["@babel/env", {
+                "targets": {
+                    "chrome": "57",
+                    "firefox": "52",
+                    "safari": "10.3",
+                    "edge": "16",
+                    "opera": "44"
+                }
+            }],
+            "@babel/preset-react"
+        ]
+    }
+}
+
 module.exports = {
+    mode: production ? 'production' : 'development',
     resolve: {
         alias: aliases,
-        modulesDirectories: [ libdir, nodedir ],
-        extensions: ["", ".js", ".json", ".less"]
-    },
-    resolveLoader: {
-        root: nodedir
+        modules: [ libdir, nodedir ],
+        extensions: ["*", ".js", ".json", ".less"]
     },
     entry: info.entries,
     output: output,
@@ -394,30 +397,35 @@ module.exports = {
 
     devtool: "source-map",
 
+    // disable noisy warnings about exceeding the recommended size limit
+    performance: {
+        maxAssetSize: 20000000,
+        maxEntrypointSize: 20000000,
+    },
+
     module: {
-        preLoaders: [
+        rules: [
             {
+                enforce: 'pre',
                 test: /\.(js|es6|jsx)$/,
                 exclude: /\/node_modules\/.*\//, // exclude external dependencies
                 loader: "eslint-loader"
-            }
-        ],
-        loaders: [
+            },
             {
                 test: /\.js$/,
                 exclude: /\/node_modules\/.*\//, // exclude external dependencies
-                loader: 'strict' // Adds "use strict"
+                loader: 'strict-loader' // Adds "use strict"
             },
             /* these are called *.js, but are ES6 */
             {
                 test: /\/node_modules\/@novnc.*\.js$/,
-                loader: "babel-loader"
+                use: babel_loader
             },
             {
                 test: /\.(js|jsx|es6)$/,
                 // exclude external dependencies; it's too slow, and they are already plain JS except the above
                 exclude: /\/node_modules\/.*\//,
-                loader: "babel-loader"
+                use: babel_loader
             },
             {
                 test: /\.css$/,
@@ -429,11 +437,23 @@ module.exports = {
             },
             {
                 test: /views\/[^\/]+\.html$/,
-                loader: "ng-cache?prefix=[dir]"
+                use: [{
+                    loader: 'ng-cache-loader',
+
+                    options: {
+                        prefix: '[dir]'
+                    }
+                }]
             },
             {
                 test: /[\/]angular\.js$/,
-                loader: "exports?angular"
+                use: [{
+                    loader: 'exports-loader',
+
+                    options: {
+                        angular: true
+                    }
+                }]
             }
         ],
     }
