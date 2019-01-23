@@ -1,10 +1,10 @@
-cockpit (186-1) UNRELEASED; urgency=medium
+cockpit (186-1) unstable; urgency=medium
 
   * New upstream release:
     - Redesign the Service page
     - Make System Overview page mobile friendly
 
- -- Martin Pitt <mpitt@debian.org>  Wed, 23 Jan 2019 16:24:53 +0000
+ -- Martin Pitt <mpitt@debian.org>  Wed, 23 Jan 2019 16:25:51 +0000
 
 cockpit (185-1) unstable; urgency=medium
 
