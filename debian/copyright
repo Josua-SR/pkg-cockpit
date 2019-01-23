@@ -91,7 +91,7 @@ Copyright: Copyright (c) 2010-2015 Google, Inc. http://angularjs.org
 License: MIT
 
 Files: node_modules/bootstrap/*
-Copyright: Copyright (c) 2011-2016 Twitter, Inc.
+Copyright: Copyright (c) 2011-2018 Twitter, Inc.
 License: MIT
 
 Files: node_modules/bootstrap-datepicker/*
@@ -211,6 +211,10 @@ Files: node_modules/term.js-cockpit/*
 Copyright: Copyright (c) 2011 Fabrice Bellard
  Copyright (c) 2012-2013, Christopher Jeffrey (MIT License)
  Copyright (c) 2012-2013, Christopher Jeffrey (https://github.com/chjj/)
+License: MIT
+
+Files: node_modules/uuid/*
+Copyright: Copyright (c) 2010-2016 Robert Kieffer and other contributors
 License: MIT
 
 Files: node_modules/xterm/*
