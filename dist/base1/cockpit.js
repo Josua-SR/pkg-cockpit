@@ -1310,7 +1310,7 @@ function factory() {
             then = values[0] && values[0].then;
         if (is_function(then)) {
             state.status = -1;
-            then.call(values, function(/* ... */) {
+            then.call(values[0], function(/* ... */) {
                 if (done)
                     return;
                 done = true;
@@ -1409,7 +1409,7 @@ function factory() {
         return result.promise.then(fulfilled, rejected, updated);
     };
 
-    cockpit.all = function all(promises) {
+    cockpit.all = function all(promises) { // eslint-disable-line cockpit/no-cockpit-all
         var deferred = cockpit.defer();
         var counter = 0;
         var results = [];
@@ -4333,6 +4333,7 @@ function factory() {
         if (self.user && self.is_superuser !== null) {
             self.allowed = decide(self.user);
         } else {
+            // eslint-disable-next-line cockpit/no-cockpit-all
             cockpit.all(cockpit.user(), check_superuser())
                 .done(function (user, is_superuser) {
                     self.user = user;

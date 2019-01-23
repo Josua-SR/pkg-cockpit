@@ -71,10 +71,6 @@ return plural;
   null,
   ""
  ],
- "$0 vCPU Details": [
-  null,
-  ""
- ],
  "Add": [
   null,
   "ਜੋੜੋ"
@@ -91,7 +87,7 @@ return plural;
   null,
   ""
  ],
- "All changes will take effect only after stopping and starting the VM.": [
+ "Always attach": [
   null,
   ""
  ],
@@ -99,15 +95,11 @@ return plural;
   null,
   ""
  ],
- "Attach permanently": [
-  null,
-  ""
- ],
  "Automatically start libvirt on boot": [
   null,
   ""
  ],
- "Autostart:": [
+ "Autostart": [
   null,
   ""
  ],
@@ -115,7 +107,7 @@ return plural;
   null,
   ""
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
   ""
  ],
@@ -123,7 +115,15 @@ return plural;
   null,
   ""
  ],
- "CPU Type:": [
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  ""
+ ],
+ "CPU Type": [
+  null,
+  "ਕਿਸਮ"
+ ],
+ "Cancel": [
   null,
   ""
  ],
@@ -131,11 +131,11 @@ return plural;
   null,
   ""
  ],
- "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
+ "Changes will take effect after shutting down the VM": [
   null,
   ""
  ],
- "Confirm deletion of $0": [
+ "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
   ""
  ],
@@ -179,11 +179,11 @@ return plural;
   null,
   ""
  ],
- "Create New VM": [
+ "Create Storage Pool": [
   null,
-  ""
+  "ਸਟੋਰੇਜ਼ ਪੂਲ"
  ],
- "Create New Virtual Machine": [
+ "Create VM": [
   null,
   ""
  ],
@@ -219,11 +219,11 @@ return plural;
   null,
   ""
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
   ""
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
   ""
  ],
@@ -235,9 +235,13 @@ return plural;
   null,
   ""
  ],
- "Emulated Machine:": [
+ "Edit": [
   null,
   ""
+ ],
+ "Emulated Machine": [
+  null,
+  "ਵਰਚੁਅਲ ਮਸ਼ੀਨਾਂ"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -251,6 +255,10 @@ return plural;
   null,
   ""
  ],
+ "Filesystem Directory": [
+  null,
+  "ਫਾਇਲ-ਸਿਸਟਮ"
+ ],
  "Force Restart": [
   null,
   ""
@@ -260,6 +268,10 @@ return plural;
   ""
  ],
  "Format": [
+  null,
+  ""
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
   null,
   ""
  ],
@@ -276,6 +288,18 @@ return plural;
   ""
  ],
  "Host": [
+  null,
+  ""
+ ],
+ "Host Name": [
+  null,
+  ""
+ ],
+ "Host should not be empty": [
+  null,
+  ""
+ ],
+ "INSTALL VM action failed": [
   null,
   ""
  ],
@@ -315,6 +339,10 @@ return plural;
   null,
   ""
  ],
+ "Mac Address": [
+  null,
+  ""
+ ],
  "Manual Connection": [
   null,
   ""
@@ -331,11 +359,11 @@ return plural;
   null,
   ""
  ],
- "Memory:": [
+ "MiB": [
   null,
   ""
  ],
- "MiB": [
+ "Model": [
   null,
   ""
  ],
@@ -359,11 +387,27 @@ return plural;
   null,
   ""
  ],
+ "Network File System": [
+  null,
+  "$0 ਫ਼ਾਈਲ ਸਿਸਟਮ"
+ ],
+ "Network Type": [
+  null,
+  ""
+ ],
+ "Network settings could not be saved": [
+  null,
+  ""
+ ],
  "Networks": [
   null,
   ""
  ],
  "New Volume Name": [
+  null,
+  ""
+ ],
+ "No Storage Volumes defined for this Storage Pool": [
   null,
   ""
  ],
@@ -391,6 +435,14 @@ return plural;
   null,
   ""
  ],
+ "No storage pool is defined on this host": [
+  null,
+  ""
+ ],
+ "No virtual networks": [
+  null,
+  ""
+ ],
  "OS Vendor": [
   null,
   ""
@@ -403,11 +455,19 @@ return plural;
   null,
   ""
  ],
+ "Path on host's filesystem": [
+  null,
+  ""
+ ],
  "Path to ISO file on host's file system": [
   null,
   ""
  ],
  "Path to file": [
+  null,
+  ""
+ ],
+ "Persistence": [
   null,
   ""
  ],
@@ -440,6 +500,14 @@ return plural;
   ""
  ],
  "Protocol": [
+  null,
+  ""
+ ],
+ "QEMU/KVM System connection": [
+  null,
+  ""
+ ],
+ "QEMU/KVM User connection": [
   null,
   ""
  ],
@@ -479,6 +547,10 @@ return plural;
   null,
   ""
  ],
+ "Save": [
+  null,
+  ""
+ ],
  "Send Non-Maskable Interrupt": [
   null,
   ""
@@ -488,6 +560,10 @@ return plural;
   ""
  ],
  "Serial Console": [
+  null,
+  ""
+ ],
+ "Session": [
   null,
   ""
  ],
@@ -507,7 +583,15 @@ return plural;
   null,
   ""
  ],
- "Source should start with http, ftp or nfs protocol": [
+ "Source Path": [
+  null,
+  "ਸਰੋਤ URL"
+ ],
+ "Source path should not be empty": [
+  null,
+  ""
+ ],
+ "Source should start with https, ftp or nfs protocol": [
   null,
   ""
  ],
@@ -515,13 +599,33 @@ return plural;
   null,
   ""
  ],
+ "Start pool when host boots": [
+  null,
+  ""
+ ],
  "Start the VM to see disk statistics.": [
   null,
   ""
  ],
+ "Startup": [
+  null,
+  "ਸ਼ੁਰੂ ਕਰੋ"
+ ],
  "State": [
   null,
   "ਹਾਲਤ"
+ ],
+ "Storage Pool Name": [
+  null,
+  "ਸਟੋਰੇਜ਼ ਪੂਲ"
+ ],
+ "Storage Pool failed to be created": [
+  null,
+  ""
+ ],
+ "Storage Pools": [
+  null,
+  "ਸਟੋਰੇਜ਼ ਪੂਲ"
  ],
  "Storage Size": [
   null,
@@ -531,7 +635,19 @@ return plural;
   null,
   ""
  ],
- "Target": [
+ "Storage Volumes": [
+  null,
+  "ਸਟੋਰੇਜ਼ ਲਾਗ"
+ ],
+ "System": [
+  null,
+  "ਸਿਸਟਮ"
+ ],
+ "Target Path": [
+  null,
+  ""
+ ],
+ "Target path should not be empty": [
   null,
   ""
  ],
@@ -568,6 +684,10 @@ return plural;
   ""
  ],
  "The VM is suspended by guest power management.": [
+  null,
+  ""
+ ],
+ "The directory on the server being exported": [
   null,
   ""
  ],
@@ -619,6 +739,58 @@ return plural;
   null,
   ""
  ],
+ "VCPU settings could not be saved": [
+  null,
+  ""
+ ],
+ "VM CHANGE_NETWORK_STATE action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE action failed": [
+  null,
+  ""
+ ],
+ "VM DETACH_DISK action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  ""
+ ],
+ "VM SENDNMI action failed": [
+  null,
+  ""
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  ""
+ ],
+ "VM START action failed": [
+  null,
+  ""
+ ],
  "VNC": [
   null,
   ""
@@ -651,7 +823,87 @@ return plural;
   null,
   "ਵਾਲੀਅਮ"
  ],
+ "active": [
+  null,
+  ""
+ ],
+ "bridge": [
+  null,
+  ""
+ ],
+ "cdrom": [
+  null,
+  ""
+ ],
+ "crashed": [
+  null,
+  ""
+ ],
+ "custom": [
+  null,
+  ""
+ ],
+ "direct": [
+  null,
+  ""
+ ],
+ "disabled": [
+  null,
+  ""
+ ],
+ "disk": [
+  null,
+  ""
+ ],
+ "down": [
+  null,
+  ""
+ ],
+ "dying": [
+  null,
+  ""
+ ],
+ "enabled": [
+  null,
+  ""
+ ],
+ "ethernet": [
+  null,
+  ""
+ ],
+ "host": [
+  null,
+  ""
+ ],
+ "hostdev": [
+  null,
+  ""
+ ],
+ "idle": [
+  null,
+  ""
+ ],
+ "inactive": [
+  null,
+  "ਸਰਗਰਮ ਕਰੋ"
+ ],
+ "mcast": [
+  null,
+  ""
+ ],
+ "network": [
+  null,
+  ""
+ ],
  "no": [
+  null,
+  ""
+ ],
+ "other": [
+  null,
+  ""
+ ],
+ "paused": [
   null,
   ""
  ],
@@ -663,6 +915,14 @@ return plural;
   null,
   ""
  ],
+ "running": [
+  null,
+  "ਚੱਲ ਰਿਹਾ ਹੈ"
+ ],
+ "server": [
+  null,
+  ""
+ ],
  "show less": [
   null,
   ""
@@ -671,9 +931,33 @@ return plural;
   null,
   ""
  ],
+ "shut off": [
+  null,
+  ""
+ ],
+ "shutdown": [
+  null,
+  ""
+ ],
+ "suspended (PM)": [
+  null,
+  "ਸਸਪੈਂਡ (PM)"
+ ],
+ "udp": [
+  null,
+  ""
+ ],
  "undefined": [
   null,
   "ਨਾ-ਪ੍ਰਭਾਸ਼ਿਤ"
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
+  null,
+  ""
  ],
  "vCPU Count": [
   null,
@@ -683,9 +967,13 @@ return plural;
   null,
   ""
  ],
- "vCPUs:": [
+ "vCPUs": [
   null,
-  "vCPUs:"
+  ""
+ ],
+ "vhostuser": [
+  null,
+  ""
  ],
  "yes": [
   null,

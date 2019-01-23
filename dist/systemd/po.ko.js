@@ -295,6 +295,10 @@ return plural;
   null,
   "특정 시간  "
  ],
+ "Automatic Startup": [
+  null,
+  "자동 업데이트"
+ ],
  "Automatically using NTP": [
   null,
   "자동으로 NTP 사용"
@@ -851,6 +855,10 @@ return plural;
   null,
   ""
  ],
+ "Path": [
+  null,
+  "경로"
+ ],
  "Paths": [
   null,
   "경로 "
@@ -1007,6 +1015,10 @@ return plural;
   null,
   "실행"
  ],
+ "Running Since": [
+  null,
+  "작동중"
+ ],
  "Saturday": [
   null,
   "토요일 "
@@ -1063,10 +1075,6 @@ return plural;
   null,
   "종료"
  ],
- "Since $0": [
-  null,
-  ""
- ],
  "Slot": [
   null,
   ""
@@ -1094,6 +1102,10 @@ return plural;
  "Static": [
   null,
   "정적"
+ ],
+ "Status": [
+  null,
+  "상태"
  ],
  "Stick PC": [
   null,

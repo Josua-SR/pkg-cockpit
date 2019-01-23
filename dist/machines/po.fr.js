@@ -87,37 +87,41 @@ return plural;
   null,
   "Adresse:"
  ],
+ "Always attach": [
+  null,
+  "Toujours"
+ ],
  "Apply": [
   null,
   "Appliquer"
- ],
- "Attach permanently": [
-  null,
-  "Attacher de façon permanente"
  ],
  "Automatically start libvirt on boot": [
   null,
   "Lancement automatique de libvirt au démarrage"
  ],
- "Autostart:": [
+ "Autostart": [
   null,
-  "Autostart :"
+  "Autostart "
  ],
  "Available": [
   null,
   "Disponible"
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
-  "Ordre de démarrage:"
+  "Ordre de démarrage"
  ],
  "Bus": [
   null,
   "Bus"
  ],
- "CPU Type:": [
+ "CHANGE NETWORK STATE action failed": [
   null,
-  "Type de CPU:"
+  "Échec de l'action CHANGE NETWORK STATE"
+ ],
+ "CPU Type": [
+  null,
+  "Type de CPU"
  ],
  "Cancel": [
   null,
@@ -235,9 +239,9 @@ return plural;
   null,
   "Modifier"
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
-  "Machine émulée :"
+  "Machine émulée "
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -267,6 +271,10 @@ return plural;
   null,
   "Formater"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "L’action GET HYPERVISOR MAX VCPU a échoué"
+ ],
  "GiB": [
   null,
   "GiB"
@@ -290,6 +298,10 @@ return plural;
  "Host should not be empty": [
   null,
   "Le nom d'hôte n'est peut-être pas vide"
+ ],
+ "INSTALL VM action failed": [
+  null,
+  "Échec de l'action INSTALL VM"
  ],
  "Immediately Start VM": [
   null,
@@ -346,10 +358,6 @@ return plural;
  "Memory should be positive number": [
   null,
   "La mémoire devrait être un nombre positif"
- ],
- "Memory:": [
-  null,
-  "Mémoire:"
  ],
  "MiB": [
   null,
@@ -459,6 +467,10 @@ return plural;
   null,
   "Chemin d'accès au fichier"
  ],
+ "Persistence": [
+  null,
+  "Volumes persistants"
+ ],
  "Please enter new volume name": [
   null,
   "Veuillez saisir un nouveau nom de volume"
@@ -551,6 +563,10 @@ return plural;
   null,
   "Console série"
  ],
+ "Session": [
+  null,
+  "Session"
+ ],
  "Shut Down": [
   null,
   "Fermeture"
@@ -623,9 +639,9 @@ return plural;
   null,
   "Volumes de stockage"
  ],
- "Target": [
+ "System": [
   null,
-  "Cible"
+  "Système"
  ],
  "Target Path": [
   null,
@@ -727,6 +743,54 @@ return plural;
   null,
   "Les paramètres de configuration de VCPU n'ont pas pu être sauvegardés"
  ],
+ "VM CHANGE_NETWORK_STATE action failed": [
+  null,
+  "VM CHANGE_NETWORK_STATE a échoué"
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  "VM DELETE (DESTROY) a échoué"
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  "VM DELETE (UNDEFINE) a échoué"
+ ],
+ "VM DELETE action failed": [
+  null,
+  "VM DELETE a échoué"
+ ],
+ "VM DETACH_DISK action failed": [
+  null,
+  "VM DETACH_DISK a échoué"
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "L'action VM FORCE OFF a échoué"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "L'action VM FORCE REBOOT a échoué"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "L'action VM REBOOT a échoué"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "Échec de l'action d'interruption non masquable VM SEND"
+ ],
+ "VM SENDNMI action failed": [
+  null,
+  "VM SENDNMI a échoué"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "L'action VM SHUT DOWN a échoué"
+ ],
+ "VM START action failed": [
+  null,
+  "L'action VM START a échoué"
+ ],
  "VNC": [
   null,
   "VNC"
@@ -763,13 +827,85 @@ return plural;
   null,
   "actif"
  ],
+ "bridge": [
+  null,
+  "pont"
+ ],
+ "cdrom": [
+  null,
+  "CD ROM"
+ ],
+ "crashed": [
+  null,
+  "planté"
+ ],
+ "custom": [
+  null,
+  "personnalisé"
+ ],
+ "direct": [
+  null,
+  "direct"
+ ],
+ "disabled": [
+  null,
+  "désactivé"
+ ],
+ "disk": [
+  null,
+  "disque"
+ ],
+ "down": [
+  null,
+  "arrêté"
+ ],
+ "dying": [
+  null,
+  "sur le point ce cesser toute activité"
+ ],
+ "enabled": [
+  null,
+  "activée"
+ ],
+ "ethernet": [
+  null,
+  "ethernet"
+ ],
+ "host": [
+  null,
+  "hôte"
+ ],
+ "hostdev": [
+  null,
+  "hostdev"
+ ],
+ "idle": [
+  null,
+  "inactif"
+ ],
  "inactive": [
   null,
   "inactif"
  ],
+ "mcast": [
+  null,
+  "mcast"
+ ],
+ "network": [
+  null,
+  "réseau"
+ ],
  "no": [
   null,
   "non"
+ ],
+ "other": [
+  null,
+  "autre"
+ ],
+ "paused": [
+  null,
+  "mis en pause"
  ],
  "qcow2": [
   null,
@@ -779,6 +915,14 @@ return plural;
   null,
   "raw"
  ],
+ "running": [
+  null,
+  "en cours"
+ ],
+ "server": [
+  null,
+  "serveur"
+ ],
  "show less": [
   null,
   "montrer moins"
@@ -787,9 +931,33 @@ return plural;
   null,
   "montrer plus"
  ],
+ "shut off": [
+  null,
+  "éteindre"
+ ],
+ "shutdown": [
+  null,
+  "fermeture"
+ ],
+ "suspended (PM)": [
+  null,
+  "suspendu (PM)"
+ ],
+ "udp": [
+  null,
+  "UDP"
+ ],
  "undefined": [
   null,
   "indéfini"
+ ],
+ "up": [
+  null,
+  "en cours"
+ ],
+ "user": [
+  null,
+  "utilisateur"
  ],
  "vCPU Count": [
   null,
@@ -799,9 +967,13 @@ return plural;
   null,
   "vCPU Maximum"
  ],
- "vCPUs:": [
+ "vCPUs": [
   null,
-  "vCPU :"
+  "vCPU"
+ ],
+ "vhostuser": [
+  null,
+  "vhostuser"
  ],
  "yes": [
   null,

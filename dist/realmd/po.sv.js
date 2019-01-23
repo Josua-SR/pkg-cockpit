@@ -139,6 +139,10 @@ return plural;
   null,
   "Hämtar $0"
  ],
+ "Host name should not be changed in a domain": [
+  null,
+  "Värden får inte vara tom"
+ ],
  "Install": [
   null,
   "Installera"

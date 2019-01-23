@@ -200,6 +200,9 @@ LIBVIRT_PROVIDER = {
             });
             logDebug(`GET_ALL_STORAGE_POOLS: vmNames: ${JSON.stringify(storagePoolNames)}`);
 
+            // We can't use Promise.all() here until cockpit is able to dispatch es2015 promises
+            // https://github.com/cockpit-project/cockpit/issues/10956
+            // eslint-disable-next-line cockpit/no-cockpit-all
             return cockpit.all(storagePoolNames.map((name) => dispatch(getStoragePool({connectionName, name}))));
         });
     },
@@ -460,7 +463,9 @@ function doGetAllVms (dispatch, connectionName) {
         // remove undefined domains
         dispatch(deleteUnlistedVMs(connectionName, vmNames));
 
-        // read VM details
+        // We can't use Promise.all() here until cockpit is able to dispatch es2015 promises
+        // https://github.com/cockpit-project/cockpit/issues/10956
+        // eslint-disable-next-line cockpit/no-cockpit-all
         return cockpit.all(vmNames.map((name) => dispatch(getVm({connectionName, name}))));
     });
 }
@@ -531,8 +536,6 @@ function parseDomstatsForDisks(domstatsLines) {
         return;
     }
 
-    // Libvirt reports disk capacity since version 1.2.18 (year 2015)
-    // TODO: If disk stats is required for old systems, find a way how to get it when 'block.X.capacity' is not present, consider various options for 'sources'
     const disksStats = {};
     for (let i = 0; i < count; i++) {
         const target = getValueFromLine(domstatsLines, `block.${i}.name=`);

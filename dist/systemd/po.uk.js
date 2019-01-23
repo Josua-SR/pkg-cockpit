@@ -295,6 +295,10 @@ return plural;
   null,
   "У вказаний момент часу"
  ],
+ "Automatic Startup": [
+  null,
+  "Автоматичні оновлення"
+ ],
  "Automatically using NTP": [
   null,
   "Автоматично на основі NTP"
@@ -851,6 +855,10 @@ return plural;
   null,
   "Частина"
  ],
+ "Path": [
+  null,
+  "Шлях"
+ ],
  "Paths": [
   null,
   "Шляхи"
@@ -1007,6 +1015,10 @@ return plural;
   null,
   "Запустити"
  ],
+ "Running Since": [
+  null,
+  "Працює з"
+ ],
  "Saturday": [
   null,
   "субота"
@@ -1063,10 +1075,6 @@ return plural;
   null,
   "Вимкнути"
  ],
- "Since $0": [
-  null,
-  "З $0"
- ],
  "Slot": [
   null,
   "Слот"
@@ -1094,6 +1102,10 @@ return plural;
  "Static": [
   null,
   "Статичний"
+ ],
+ "Status": [
+  null,
+  "Стан"
  ],
  "Stick PC": [
   null,

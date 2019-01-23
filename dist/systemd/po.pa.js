@@ -71,43 +71,13 @@ return plural;
   null,
   "$0 ਟੈਪਲੇਟ"
  ],
- "$0 day": [
-  "$0 days",
-  "$0 ਦਿਨ",
-  "$0 ਦਿਨ"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 ਘੰਟਾ",
-  "$0 ਘੰਟੇ"
- ],
  "$0 is not available from any repository.": [
   null,
   ""
  ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 ਮਿੰਟ",
-  "$0 ਮਿੰਟ"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 ਮਹੀਨਾ",
-  "$0 ਮਹੀਨੇ"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 ਹਫ਼ਤਾ",
-  "$0 ਹਫ਼ਤੇ"
- ],
  "$0 will be installed.": [
   null,
   ""
- ],
- "$0 year": [
-  "$0 years",
-  "$0 ਸਾਲ",
-  "$0 ਸਾਲ"
  ],
  "1 Minute": [
   null,
@@ -297,6 +267,10 @@ return plural;
   null,
   ""
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
  "After": [
   null,
   ""
@@ -309,11 +283,19 @@ return plural;
   null,
   ""
  ],
+ "All In One": [
+  null,
+  ""
+ ],
  "Asset Tag": [
   null,
   ""
  ],
  "At specific time": [
+  null,
+  ""
+ ],
+ "Automatic Startup": [
   null,
   ""
  ],
@@ -345,11 +327,23 @@ return plural;
   null,
   ""
  ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
  "Bound By": [
   null,
   ""
  ],
  "Bug Fix Updates Available": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
   null,
   ""
  ],
@@ -405,6 +399,10 @@ return plural;
   null,
   ""
  ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
  "Condition $0=$1 was not met": [
   null,
   ""
@@ -422,6 +420,10 @@ return plural;
   ""
  ],
  "Consists Of": [
+  null,
+  ""
+ ],
+ "Convertible": [
   null,
   ""
  ],
@@ -453,6 +455,14 @@ return plural;
   null,
   ""
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Disable": [
   null,
   ""
@@ -462,6 +472,10 @@ return plural;
   ""
  ],
  "Disk I/O": [
+  null,
+  ""
+ ],
+ "Docking Station": [
   null,
   ""
  ],
@@ -477,6 +491,10 @@ return plural;
   null,
   ""
  ],
+ "Embedded PC": [
+  null,
+  ""
+ ],
  "Enable": [
   null,
   ""
@@ -485,7 +503,7 @@ return plural;
   null,
   ""
  ],
- "Enable persistent metrics…": [
+ "Enable stored metrics…": [
   null,
   ""
  ],
@@ -513,7 +531,7 @@ return plural;
   null,
   ""
  ],
- "Free": [
+ "Expansion Chassis": [
   null,
   ""
  ],
@@ -530,6 +548,10 @@ return plural;
   "ਜਾਓ"
  ],
  "Go to now": [
+  null,
+  ""
+ ],
+ "Hand Held": [
   null,
   ""
  ],
@@ -609,6 +631,10 @@ return plural;
   null,
   ""
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
  "Joins Namespace Of": [
   null,
   ""
@@ -626,6 +652,10 @@ return plural;
   ""
  ],
  "Kernel": [
+  null,
+  ""
+ ],
+ "Laptop": [
   null,
   ""
  ],
@@ -657,11 +687,23 @@ return plural;
   null,
   ""
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "Machine ID": [
   null,
   ""
  ],
  "Machine SSH Key Fingerprints": [
+  null,
+  ""
+ ],
+ "Main Server Chassis": [
   null,
   ""
  ],
@@ -681,7 +723,19 @@ return plural;
   null,
   ""
  ],
+ "Memory & Swap": [
+  null,
+  ""
+ ],
  "Message to logged in users": [
+  null,
+  ""
+ ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
   null,
   ""
  ],
@@ -698,6 +752,10 @@ return plural;
   ""
  ],
  "Monday": [
+  null,
+  ""
+ ],
+ "Multi-system Chassis": [
   null,
   ""
  ],
@@ -745,6 +803,10 @@ return plural;
   null,
   ""
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Notice and above": [
   null,
   ""
@@ -777,11 +839,23 @@ return plural;
   null,
   ""
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "PCI": [
   null,
   ""
  ],
+ "PackageKit crashed": [
+  null,
+  ""
+ ],
  "Part Of": [
+  null,
+  ""
+ ],
+ "Path": [
   null,
   ""
  ],
@@ -790,6 +864,18 @@ return plural;
   ""
  ],
  "Performance Profile": [
+  null,
+  ""
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
+ "Portable": [
   null,
   ""
  ],
@@ -818,6 +904,14 @@ return plural;
   ""
  ],
  "Propagates Reload To": [
+  null,
+  ""
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
   null,
   ""
  ],
@@ -921,11 +1015,19 @@ return plural;
   null,
   ""
  ],
+ "Running Since": [
+  null,
+  "ਚੱਲ ਰਿਹਾ ਹੈ"
+ ],
  "Saturday": [
   null,
   ""
  ],
  "Save": [
+  null,
+  ""
+ ],
+ "Sealed-case PC": [
   null,
   ""
  ],
@@ -973,10 +1075,6 @@ return plural;
   null,
   "ਬੰਦ ਕਰੋ"
  ],
- "Since $0": [
-  null,
-  "$0 ਤੋਂ"
- ],
  "Slot": [
   null,
   ""
@@ -984,6 +1082,10 @@ return plural;
  "Sockets": [
   null,
   "ਸਾਕਟ"
+ ],
+ "Space-saving Computer": [
+  null,
+  ""
  ],
  "Specific Time": [
   null,
@@ -1001,13 +1103,29 @@ return plural;
   null,
   "ਸਥਿਰ"
  ],
+ "Status": [
+  null,
+  "ਹਾਲਤ"
+ ],
+ "Stick PC": [
+  null,
+  ""
+ ],
  "Stop": [
   null,
   "ਰੋਕੋ"
  ],
- "Store Performance Data": [
+ "Store metrics": [
   null,
-  "ਸਟੋਰੇਜ਼ ਕਾਰਗੁਜ਼ਾਰੀ ਡਾਟਾ"
+  ""
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
  ],
  "Sunday": [
   null,
@@ -1046,6 +1164,10 @@ return plural;
   "ਸਿਸਟਮ ਸਮਾਂ"
  ],
  "System Up To Date": [
+  null,
+  ""
+ ],
+ "Tablet": [
   null,
   ""
  ],
@@ -1113,6 +1235,10 @@ return plural;
   null,
   ""
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Triggered By": [
   null,
   ""
@@ -1132,6 +1258,10 @@ return plural;
  "Type": [
   null,
   "ਕਿਸਮ"
+ ],
+ "Unknown": [
+  null,
+  ""
  ],
  "Unmask": [
   null,

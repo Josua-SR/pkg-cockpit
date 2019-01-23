@@ -99,11 +99,11 @@ return plural;
   null,
   ""
  ],
- "Apply": [
+ "Always attach": [
   null,
   ""
  ],
- "Attach permanently": [
+ "Apply": [
   null,
   ""
  ],
@@ -111,7 +111,7 @@ return plural;
   null,
   ""
  ],
- "Autostart:": [
+ "Autostart": [
   null,
   ""
  ],
@@ -131,7 +131,7 @@ return plural;
   null,
   ""
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
   ""
  ],
@@ -139,7 +139,15 @@ return plural;
   null,
   ""
  ],
- "CPU Type:": [
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  ""
+ ],
+ "CPU Type": [
+  null,
+  ""
+ ],
+ "CREATE VM action failed": [
   null,
   ""
  ],
@@ -291,7 +299,7 @@ return plural;
   null,
   ""
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
   ""
  ],
@@ -323,6 +331,10 @@ return plural;
   null,
   ""
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
+ ],
  "GiB": [
   null,
   ""
@@ -351,6 +363,10 @@ return plural;
   null,
   ""
  ],
+ "INSTALL VM action failed": [
+  null,
+  ""
+ ],
  "Install": [
   null,
   ""
@@ -371,6 +387,10 @@ return plural;
   null,
   ""
  ],
+ "MIGRATE action failed": [
+  null,
+  ""
+ ],
  "Mac Address": [
   null,
   ""
@@ -386,10 +406,6 @@ return plural;
  "Memory": [
   null,
   ""
- ],
- "Memory:": [
-  null,
-  "Hukommelse"
  ],
  "MiB": [
   null,
@@ -491,6 +507,10 @@ return plural;
   null,
   ""
  ],
+ "Persistence": [
+  null,
+  ""
+ ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
   ""
@@ -543,7 +563,15 @@ return plural;
   null,
   ""
  ],
+ "Preparing for Maintenance": [
+  null,
+  ""
+ ],
  "Protocol": [
+  null,
+  ""
+ ],
+ "REBOOT action failed": [
   null,
   ""
  ],
@@ -583,6 +611,14 @@ return plural;
   null,
   ""
  ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  ""
+ ],
+ "SHUTDOWN action failed": [
+  null,
+  ""
+ ],
  "SPICE": [
   null,
   ""
@@ -599,6 +635,14 @@ return plural;
   null,
   ""
  ],
+ "START action failed": [
+  null,
+  ""
+ ],
+ "SUSPEND action failed": [
+  null,
+  ""
+ ],
  "Save": [
   null,
   ""
@@ -612,6 +656,10 @@ return plural;
   ""
  ],
  "Serial Console": [
+  null,
+  ""
+ ],
+ "Session": [
   null,
   ""
  ],
@@ -655,7 +703,15 @@ return plural;
   null,
   ""
  ],
- "Target": [
+ "Switching host to maintenance mode failed. Received error: ": [
+  null,
+  ""
+ ],
+ "Switching host to maintenance mode in progress ...": [
+  null,
+  ""
+ ],
+ "System": [
   null,
   ""
  ],
@@ -759,6 +815,38 @@ return plural;
   null,
   "Værtsnavn"
  ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  ""
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  ""
+ ],
+ "VM START action failed": [
+  null,
+  ""
+ ],
  "VM icon": [
   null,
   ""
@@ -799,7 +887,31 @@ return plural;
   null,
   ""
  ],
+ "bridge": [
+  null,
+  ""
+ ],
+ "cdrom": [
+  null,
+  ""
+ ],
+ "connecting": [
+  null,
+  ""
+ ],
  "cores": [
+  null,
+  ""
+ ],
+ "crashed": [
+  null,
+  ""
+ ],
+ "custom": [
+  null,
+  ""
+ ],
+ "direct": [
   null,
   ""
  ],
@@ -807,11 +919,83 @@ return plural;
   null,
   ""
  ],
+ "disk": [
+  null,
+  ""
+ ],
+ "down": [
+  null,
+  ""
+ ],
+ "dying": [
+  null,
+  ""
+ ],
  "enabled": [
   null,
   ""
  ],
+ "error": [
+  null,
+  ""
+ ],
+ "ethernet": [
+  null,
+  ""
+ ],
+ "host": [
+  null,
+  ""
+ ],
+ "hostdev": [
+  null,
+  ""
+ ],
+ "idle": [
+  null,
+  ""
+ ],
+ "initializing": [
+  null,
+  ""
+ ],
+ "installation failed": [
+  null,
+  ""
+ ],
+ "installing OS": [
+  null,
+  ""
+ ],
+ "kdumping": [
+  null,
+  ""
+ ],
+ "maintenance": [
+  null,
+  ""
+ ],
+ "mcast": [
+  null,
+  ""
+ ],
+ "network": [
+  null,
+  "Netværks Traffik"
+ ],
  "no": [
+  null,
+  ""
+ ],
+ "non operational": [
+  null,
+  "Indstillinger"
+ ],
+ "non responsive": [
+  null,
+  ""
+ ],
+ "oVirt": [
   null,
   ""
  ],
@@ -835,11 +1019,35 @@ return plural;
   null,
   ""
  ],
+ "other": [
+  null,
+  ""
+ ],
+ "paused": [
+  null,
+  ""
+ ],
+ "pending approval": [
+  null,
+  ""
+ ],
  "qcow2": [
   null,
   ""
  ],
  "raw": [
+  null,
+  ""
+ ],
+ "reboot": [
+  null,
+  ""
+ ],
+ "running": [
+  null,
+  ""
+ ],
+ "server": [
   null,
   ""
  ],
@@ -851,7 +1059,19 @@ return plural;
   null,
   ""
  ],
+ "shut off": [
+  null,
+  ""
+ ],
+ "shutdown": [
+  null,
+  ""
+ ],
  "sockets": [
+  null,
+  ""
+ ],
+ "suspended (PM)": [
   null,
   ""
  ],
@@ -859,7 +1079,23 @@ return plural;
   null,
   ""
  ],
+ "udp": [
+  null,
+  ""
+ ],
+ "unassigned": [
+  null,
+  ""
+ ],
  "undefined": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
   null,
   ""
  ],
@@ -875,7 +1111,7 @@ return plural;
   null,
   ""
  ],
- "vCPUs:": [
+ "vhostuser": [
   null,
   ""
  ],

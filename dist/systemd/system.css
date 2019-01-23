@@ -178,13 +178,10 @@ a.disabled:hover {
 /* Small list inside a dialog */
 /* Alert fixups */
 
-/* HACK: word-wrap workaround for long alerts https://github.com/patternfly/patternfly/issues/491 */
-
 .modal-content .alert {
     text-align: left;
     padding-top: 5px;
     padding-bottom: 5px;
-    word-wrap: break-word;
 }
 
 .modal-content .alert .fa {
@@ -232,6 +229,204 @@ input[type=number] {
 /* Make a dialog visible */
 .dialog-ct-visible {
     display: block;
+}
+/* Form layout */
+:root {
+  --ct-form-layout-columns: 2;
+}
+.ct-form-layout {
+  display: grid;
+  grid-gap: 5px 10px;
+  grid-template-columns: repeat(var(--ct-form-layout-columns), max-content 1fr);
+  place-items: baseline stretch;
+}
+.ct-form-layout > .control-label {
+  align-self: flex-start;
+  text-align: right;
+}
+.ct-form-layout > :not(.control-label):not(hr):not(.ct-form-layout-split) {
+  grid-column: 2 / -1;
+}
+.ct-form-layout > :not(.ct-form-layout-relax) {
+  width: auto;
+}
+.ct-form-layout > hr {
+  border: none;
+  grid-column: 1 / -1;
+  height: 10px;
+  margin: 0;
+  padding: 0;
+}
+.ct-form-layout > input[size] {
+  justify-self: start;
+}
+.ct-form-layout input[type=number] {
+  -webkit-appearance: textarea;
+}
+.ct-form-layout > input,
+.ct-form-layout > textarea,
+.ct-form-layout > select,
+.ct-form-layout > .bootstrap-select,
+.ct-form-layout > .dropdown,
+.ct-form-layout > .combobox-container,
+.ct-form-layout > fieldset,
+.ct-form-layout > [role=group],
+.ct-form-layout > .form-group,
+.ct-form-layout > .btn-group,
+.ct-form-layout > .checkbox-inline,
+.ct-form-layout > .radio-inline {
+  margin-top: -3px;
+  min-height: 26px;
+}
+.ct-form-layout > input:not(.ct-form-layout-relax),
+.ct-form-layout > textarea:not(.ct-form-layout-relax),
+.ct-form-layout > select:not(.ct-form-layout-relax),
+.ct-form-layout > .bootstrap-select:not(.ct-form-layout-relax),
+.ct-form-layout > .dropdown:not(.ct-form-layout-relax),
+.ct-form-layout > .combobox-container:not(.ct-form-layout-relax),
+.ct-form-layout > fieldset:not(.ct-form-layout-relax),
+.ct-form-layout > [role=group]:not(.ct-form-layout-relax),
+.ct-form-layout > .form-group:not(.ct-form-layout-relax),
+.ct-form-layout > .btn-group:not(.ct-form-layout-relax),
+.ct-form-layout > .checkbox-inline:not(.ct-form-layout-relax),
+.ct-form-layout > .radio-inline:not(.ct-form-layout-relax) {
+  width: auto !important;
+}
+.ct-form-layout fieldset,
+.ct-form-layout > [role=group] {
+  -webkit-appearance: none;
+  appearance: none;
+  align-content: center;
+  align-self: start;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 5px;
+  grid-template-columns: max-content;
+  justify-content: start;
+}
+.ct-form-layout fieldset:not(.ct-form-layout-relax) > .dropdown,
+.ct-form-layout > [role=group]:not(.ct-form-layout-relax) > .dropdown {
+  width: auto !important;
+}
+.ct-form-layout fieldset > .form-control,
+.ct-form-layout > [role=group] > .form-control {
+  width: auto;
+}
+.ct-form-layout .checkbox > label,
+.ct-form-layout .radio > label,
+.ct-form-layout .checkbox-inline,
+.ct-form-layout .radio-inline {
+  display: inline-flex;
+  padding-left: 0;
+  padding-right: 10px;
+  align-items: center;
+}
+.ct-form-layout .checkbox > label > input[type="checkbox"],
+.ct-form-layout .radio > label > input[type="checkbox"],
+.ct-form-layout .checkbox-inline > input[type="checkbox"],
+.ct-form-layout .radio-inline > input[type="checkbox"],
+.ct-form-layout .checkbox > label > input[type="radio"],
+.ct-form-layout .radio > label > input[type="radio"],
+.ct-form-layout .checkbox-inline > input[type="radio"],
+.ct-form-layout .radio-inline > input[type="radio"] {
+  height: 16px;
+  margin: 5px 0;
+  margin-right: 0.5rem;
+  position: static;
+}
+.ct-form-layout fieldset > .checkbox:first-child,
+.ct-form-layout fieldset > .radio:first-child {
+  margin-top: 0;
+}
+.ct-form-layout fieldset > .checkbox:last-child,
+.ct-form-layout fieldset > .radio:last-child {
+  margin-bottom: 0;
+}
+.ct-form-layout .list-group {
+  margin-bottom: 5px;
+}
+.ct-form-layout > .ct-form-layout-split {
+  grid-column: auto / auto;
+}
+.modal .ct-form-layout > .control-label {
+  padding-left: 0.5rem;
+}
+.ct-form-layout-stretch {
+  justify-content: stretch !important;
+}
+.ct-form-layout-relax {
+  justify-self: start;
+}
+.modal-dialog.modal-sm .ct-form-layout > .ct-form-layout-split {
+  grid-column: 2 / -1;
+}
+@media (max-width: 640px) {
+  .listing-ct-body,
+  .modal {
+    --ct-form-layout-columns: 1;
+  }
+}
+@media (max-width: 480px) {
+  .listing-ct-body .ct-form-layout,
+  .modal .ct-form-layout {
+    grid-template-columns: initial;
+  }
+  .listing-ct-body .ct-form-layout > *,
+  .modal .ct-form-layout > * {
+    grid-column: auto;
+    max-width: 100%;
+  }
+  .listing-ct-body .ct-form-layout > .control-label,
+  .modal .ct-form-layout > .control-label {
+    padding: 0;
+    text-align: left;
+  }
+  .listing-ct-body .ct-form-layout > .control-label:not(:first-child),
+  .modal .ct-form-layout > .control-label:not(:first-child) {
+    margin: 6px 0 0;
+  }
+  .listing-ct-body .ct-form-layout > hr,
+  .modal .ct-form-layout > hr {
+    height: 12px;
+  }
+}
+.package-list-ct {
+    margin: 1em 0;
+    padding: 0;
+    max-width: 110rem;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.package-list-ct li {
+    text-align: left;
+    box-sizing: border-box;
+    width: 22rem;
+    padding: 0 1ex;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.scale-up-ct {
+    animation: dialogScaleUpCt 1s;
+}
+
+@keyframes dialogScaleUpCt {
+    0% {
+        opacity: 0;
+        max-height: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+        max-height: 100vh;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 .term-bg-color-0 { background-color: #2e3436; }
 .term-fg-color-0 { color: #2e3436; }
@@ -950,87 +1145,9 @@ input[type=number] {
     vertical-align: middle;
 }
 
-.package-list-ct {
-    margin: 1em 0;
-    padding: 0;
-    max-width: 110rem;
-    text-align: left;
-    box-sizing: border-box;
-}
-
-.package-list-ct li {
-    text-align: left;
-    box-sizing: border-box;
-    width: 22rem;
-    padding: 0 1ex;
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-.scale-up-ct {
-    animation: dialogScaleUpCt 1s;
-}
-
-@keyframes dialogScaleUpCt {
-    0% {
-        opacity: 0;
-        max-height: 0;
-    }
-    25% {
-        opacity: 0;
-    }
-    50% {
-        max-height: 100vh;
-    }
-    100% {
-        opacity: 1;
-    }
-}
 #cockpit_modal_dialog .modal-body.scroll {
     max-height: calc(75vh - 10rem);
     overflow: auto;
-}
-.plot-unit {
-    display:      inline-block;
-    width:        28px;
-    font-size:    smaller;
-    text-align:   right;
-    color:        #545454;
-    margin-right: 7px;
-}
-
-.plot-title {
-    color: black;
-}
-
-.flot-y-axis .flot-tick-label {
-    width: 28px;
-    margin-right: 7px;
-}
-
-.flot-x-axis .flot-tick-label {
-    margin-top: 3px;
-}
-
-.zoom-controls {
-    visibility: hidden;
-}
-
-.show-zoom-controls .zoom-controls {
-    visibility: visible;
-}
-
-.show-zoom-cursor .zoomable-plot {
-    cursor: ew-resize;
-}
-
-.standard-zoom-controls {
-    text-align:    right;       /* on the right */
-    margin-bottom: -15px;       /* overlapping with the title */
-    z-index:       1;           /* but on top of it */
-    position:      relative;
 }
 /* Panels don't draw borders between them */
 .panel > .table > tbody:first-child td {
@@ -1379,6 +1496,48 @@ a.disabled {
     white-space: nowrap;
 }
 
+body {
+  /* Work around a pesky scrollbar on the page, due to 100% height */
+  height: auto;
+}
+
+.server-overview {
+    display: grid;
+    grid-gap: 0 2rem;
+    /* By default, horizontally stack the grid elements */
+    grid-template-areas: "motd" "info" "graphs";
+    grid-template-columns: 1fr;
+    margin: 2rem;
+    padding: 0;
+}
+
+@media screen and (min-width: 640px) {
+    /* Lay out overview in a grid, if there's enough width */
+    .server-overview {
+        grid-template-areas: "motd motd" "info graphs";
+        grid-template-columns: auto 1fr;
+    }
+}
+
+.server-overview > .info-table-ct-container {
+    grid-area: info;
+}
+
+.server-overview > .server-graphs {
+    grid-area: graphs;
+}
+
+.server-overview > .motd-box {
+    grid-area: motd;
+}
+
+/* Flot needs a little coaxing to behave */
+.server-graphs canvas,
+.server-graphs .flot-text {
+  max-width: 100%;
+  overflow: hidden;
+}
+
 .systime-inline form .pficon-close,
 .systime-inline form .fa-plus {
     height: 26px;
@@ -1595,9 +1754,10 @@ a.disabled {
     word-wrap: break-word;
 }
 
-#system_information_machine_id_row .tooltip-inner {
+#system_machine_id {
+    display: inline-block;
     font-family: monospace;
-    max-width: 35em;
+    word-break: break-all;
 }
 
 @media (min-width: 500px) {
@@ -1630,6 +1790,10 @@ a.disabled {
     color: red;
 }
 
+.service-action-btn {
+    margin-left: 10px;
+}
+
 .service-action-btn ul {
     right: 0px;
     left: auto;
@@ -1637,16 +1801,8 @@ a.disabled {
     text-align: left;
 }
 
-.service-panel td:first-child {
-    text-align: left;
-}
-
 .service-panel span {
     font-weight: bold;
-}
-
-.service-panel td:last-child {
-    text-align: right;
 }
 
 .service-panel table {
@@ -1754,6 +1910,46 @@ a.disabled {
     padding: 0px;
     margin: 0px;
     white-space: pre-wrap;
+}
+.plot-unit {
+    display:      inline-block;
+    width:        28px;
+    font-size:    smaller;
+    text-align:   right;
+    color:        #545454;
+    margin-right: 7px;
+}
+
+.plot-title {
+    color: black;
+}
+
+.flot-y-axis .flot-tick-label {
+    width: 28px;
+    margin-right: 7px;
+}
+
+.flot-x-axis .flot-tick-label {
+    margin-top: 3px;
+}
+
+.zoom-controls {
+    visibility: hidden;
+}
+
+.show-zoom-controls .zoom-controls {
+    visibility: visible;
+}
+
+.show-zoom-cursor .zoomable-plot {
+    cursor: ew-resize;
+}
+
+.standard-zoom-controls {
+    text-align:    right;       /* on the right */
+    margin-bottom: -15px;       /* overlapping with the title */
+    z-index:       1;           /* but on top of it */
+    position:      relative;
 }
 
 /*# sourceMappingURL=system.css.map*/

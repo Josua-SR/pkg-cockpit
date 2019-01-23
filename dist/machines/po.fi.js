@@ -71,10 +71,6 @@ return plural;
   null,
   "$0 on saatavilla useimmille käyttöjärjestelmille. Asentaaksesi sen, hae sitä GNOME Softwaresta, tai aja seuraava komento:"
  ],
- "$0 vCPU Details": [
-  null,
-  ""
- ],
  "Add": [
   null,
   "Lisää"
@@ -91,53 +87,57 @@ return plural;
   null,
   "Osoite:"
  ],
- "All changes will take effect only after stopping and starting the VM.": [
+ "Always attach": [
   null,
-  ""
+  "Aina"
  ],
  "Apply": [
   null,
   "Toteuta"
  ],
- "Attach permanently": [
-  null,
-  ""
- ],
  "Automatically start libvirt on boot": [
   null,
   "Käynnistä libvirt automaattisesti käynnistyksen yhteydessä"
  ],
- "Autostart:": [
+ "Autostart": [
   null,
-  "Autostart:"
+  "Autostart"
  ],
  "Available": [
   null,
   "Saatavilla"
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
-  "Käynnistysjärjestys:"
+  "Käynnistysjärjestys"
  ],
  "Bus": [
   null,
   ""
  ],
- "CPU Type:": [
+ "CHANGE NETWORK STATE action failed": [
   null,
-  "Prosessorin tyyppi:"
+  "CHANGE NETWORK STATE -toiminto epäonnistui"
+ ],
+ "CPU Type": [
+  null,
+  "Prosessorin tyyppi"
+ ],
+ "Cancel": [
+  null,
+  "Peru"
  ],
  "Capacity": [
   null,
   "Koko"
  ],
+ "Changes will take effect after shutting down the VM": [
+  null,
+  ""
+ ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
   "Painamalla \"Launch Remote Viewer\" lataat .vv-tiedoston ja avaat $0."
- ],
- "Confirm deletion of $0": [
-  null,
-  "Vahvista $0 poistaminen"
  ],
  "Connect with any $0 viewer application.": [
   null,
@@ -179,13 +179,13 @@ return plural;
   null,
   ""
  ],
- "Create New VM": [
+ "Create Storage Pool": [
   null,
-  "Luo uusi VM"
+  "Ei voitu resetoida tallennusvarantoa"
  ],
- "Create New Virtual Machine": [
+ "Create VM": [
   null,
-  "Luo uusi virtuaalikone"
+  "Luo VM"
  ],
  "Creation of vm $0 failed": [
   null,
@@ -219,13 +219,13 @@ return plural;
   null,
   ""
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
-  ""
+  "Ei voitu ottaa tuned käyttöön"
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
-  ""
+  "Ei voitu ottaa tuned käyttöön"
  ],
  "Disks": [
   null,
@@ -235,9 +235,13 @@ return plural;
   null,
   "Lataa MSI kohteesta $0"
  ],
- "Emulated Machine:": [
+ "Edit": [
   null,
-  "Emuloitu kone:"
+  "Muokkaa"
+ ],
+ "Emulated Machine": [
+  null,
+  "Emuloitu kone"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -251,6 +255,10 @@ return plural;
   null,
   "Tiedostojärjestelmä"
  ],
+ "Filesystem Directory": [
+  null,
+  "Tiedostojärjestelmän tyyppi"
+ ],
  "Force Restart": [
   null,
   "Pakota uudelleenkäynnistys"
@@ -262,6 +270,10 @@ return plural;
  "Format": [
   null,
   "Alusta"
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
  ],
  "GiB": [
   null,
@@ -278,6 +290,18 @@ return plural;
  "Host": [
   null,
   "Kone"
+ ],
+ "Host Name": [
+  null,
+  "Koneen nimi"
+ ],
+ "Host should not be empty": [
+  null,
+  "Nimen ei tule olla tyhjä."
+ ],
+ "INSTALL VM action failed": [
+  null,
+  "INSTALL VM -toiminto epäonnistui"
  ],
  "Immediately Start VM": [
   null,
@@ -315,6 +339,10 @@ return plural;
   null,
   "MAC-osoite"
  ],
+ "Mac Address": [
+  null,
+  "MAC-osoite"
+ ],
  "Manual Connection": [
   null,
   "Manuaalinen yhteys"
@@ -331,13 +359,13 @@ return plural;
   null,
   "Muistin tulee olla positiivinen numero"
  ],
- "Memory:": [
-  null,
-  "Muisti:"
- ],
  "MiB": [
   null,
   "MiB"
+ ],
+ "Model": [
+  null,
+  "Malli"
  ],
  "Model type": [
   null,
@@ -359,6 +387,18 @@ return plural;
   null,
   ""
  ],
+ "Network File System": [
+  null,
+  "Ei tiedostojärjestelmää"
+ ],
+ "Network Type": [
+  null,
+  "Verkko"
+ ],
+ "Network settings could not be saved": [
+  null,
+  ""
+ ],
  "Networks": [
   null,
   "Verkot"
@@ -366,6 +406,10 @@ return plural;
  "New Volume Name": [
   null,
   ""
+ ],
+ "No Storage Volumes defined for this Storage Pool": [
+  null,
+  "Tälle virtuaalikoneelle ei ole määritetty verkkoliitäntöjä"
  ],
  "No VM is running or defined on this host": [
   null,
@@ -391,6 +435,14 @@ return plural;
   null,
   "Tälle virtuaalikoneelle ei ole määritetty verkkoliitäntöjä"
  ],
+ "No storage pool is defined on this host": [
+  null,
+  "Tälle virtuaalikoneelle ei ole määritetty levyjä."
+ ],
+ "No virtual networks": [
+  null,
+  ""
+ ],
  "OS Vendor": [
   null,
   "Käyttöjärjestelmän toimittaja"
@@ -403,6 +455,10 @@ return plural;
   null,
   ""
  ],
+ "Path on host's filesystem": [
+  null,
+  ""
+ ],
  "Path to ISO file on host's file system": [
   null,
   ""
@@ -410,6 +466,10 @@ return plural;
  "Path to file": [
   null,
   ""
+ ],
+ "Persistence": [
+  null,
+  "GCE Persistent Disk"
  ],
  "Please enter new volume name": [
   null,
@@ -442,6 +502,14 @@ return plural;
  "Protocol": [
   null,
   ""
+ ],
+ "QEMU/KVM System connection": [
+  null,
+  "Pidä yhteys"
+ ],
+ "QEMU/KVM User connection": [
+  null,
+  "Pidä yhteys"
  ],
  "Readonly": [
   null,
@@ -479,6 +547,10 @@ return plural;
   null,
   "SPICE-TLS-portti:"
  ],
+ "Save": [
+  null,
+  "Tallenna"
+ ],
  "Send Non-Maskable Interrupt": [
   null,
   ""
@@ -490,6 +562,10 @@ return plural;
  "Serial Console": [
   null,
   ""
+ ],
+ "Session": [
+  null,
+  "Istunto"
  ],
  "Shut Down": [
   null,
@@ -507,7 +583,15 @@ return plural;
   null,
   "Lähde"
  ],
- "Source should start with http, ftp or nfs protocol": [
+ "Source Path": [
+  null,
+  "Lähde"
+ ],
+ "Source path should not be empty": [
+  null,
+  "Nimen ei tule olla tyhjä."
+ ],
+ "Source should start with https, ftp or nfs protocol": [
   null,
   ""
  ],
@@ -515,13 +599,33 @@ return plural;
   null,
   "Käynnistä libvirt"
  ],
+ "Start pool when host boots": [
+  null,
+  ""
+ ],
  "Start the VM to see disk statistics.": [
   null,
   ""
  ],
+ "Startup": [
+  null,
+  "Käynnistä"
+ ],
  "State": [
   null,
   "Tila"
+ ],
+ "Storage Pool Name": [
+  null,
+  "Tallennustilan lokit"
+ ],
+ "Storage Pool failed to be created": [
+  null,
+  ""
+ ],
+ "Storage Pools": [
+  null,
+  "Tallennustilan lokit"
  ],
  "Storage Size": [
   null,
@@ -531,9 +635,21 @@ return plural;
   null,
   ""
  ],
- "Target": [
+ "Storage Volumes": [
   null,
-  ""
+  "Tallennustilan lokit"
+ ],
+ "System": [
+  null,
+  "Järjestelmä"
+ ],
+ "Target Path": [
+  null,
+  "Koneen polku"
+ ],
+ "Target path should not be empty": [
+  null,
+  "Nimen ei tule olla tyhjä."
  ],
  "The VM crashed.": [
   null,
@@ -568,6 +684,10 @@ return plural;
   "Virtuaalikone on käynnissä."
  ],
  "The VM is suspended by guest power management.": [
+  null,
+  ""
+ ],
+ "The directory on the server being exported": [
   null,
   ""
  ],
@@ -619,6 +739,58 @@ return plural;
   null,
   "Käytetty"
  ],
+ "VCPU settings could not be saved": [
+  null,
+  ""
+ ],
+ "VM CHANGE_NETWORK_STATE action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE action failed": [
+  null,
+  ""
+ ],
+ "VM DETACH_DISK action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "VM FORCE OFF -toiminto epäonnistui"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "VM FORCE REBOOT -toiminto epäonnistui"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "VM REBOOT -toiminto epäonnistui"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "VM SEND Non-Maskable Interrrupt -toiminto epäonnistui"
+ ],
+ "VM SENDNMI action failed": [
+  null,
+  ""
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "VM SHUT DOWN -toiminto epäonnistui"
+ ],
+ "VM START action failed": [
+  null,
+  "VM START -toiminto epäonnistui"
+ ],
  "VNC": [
   null,
   "VNC"
@@ -651,9 +823,89 @@ return plural;
   null,
   "Taltio"
  ],
+ "active": [
+  null,
+  ""
+ ],
+ "bridge": [
+  null,
+  ""
+ ],
+ "cdrom": [
+  null,
+  ""
+ ],
+ "crashed": [
+  null,
+  "kaatui"
+ ],
+ "custom": [
+  null,
+  ""
+ ],
+ "direct": [
+  null,
+  ""
+ ],
+ "disabled": [
+  null,
+  "pois käytöstä"
+ ],
+ "disk": [
+  null,
+  ""
+ ],
+ "down": [
+  null,
+  ""
+ ],
+ "dying": [
+  null,
+  "kuolemassa"
+ ],
+ "enabled": [
+  null,
+  "käytössä"
+ ],
+ "ethernet": [
+  null,
+  "ethernet"
+ ],
+ "host": [
+  null,
+  ""
+ ],
+ "hostdev": [
+  null,
+  ""
+ ],
+ "idle": [
+  null,
+  "jouten"
+ ],
+ "inactive": [
+  null,
+  "Epäaktiivinen"
+ ],
+ "mcast": [
+  null,
+  ""
+ ],
+ "network": [
+  null,
+  "verkko"
+ ],
  "no": [
   null,
   "ei"
+ ],
+ "other": [
+  null,
+  "muu"
+ ],
+ "paused": [
+  null,
+  "pysäytetty"
  ],
  "qcow2": [
   null,
@@ -663,6 +915,14 @@ return plural;
   null,
   ""
  ],
+ "running": [
+  null,
+  "suoritetaan"
+ ],
+ "server": [
+  null,
+  "palvelin"
+ ],
  "show less": [
   null,
   "näytä vähemmän"
@@ -671,9 +931,33 @@ return plural;
   null,
   "näytä enemmän"
  ],
+ "shut off": [
+  null,
+  "sammutettu"
+ ],
+ "shutdown": [
+  null,
+  "sammuta"
+ ],
+ "suspended (PM)": [
+  null,
+  "pysäytetty (PM)"
+ ],
+ "udp": [
+  null,
+  "udp"
+ ],
  "undefined": [
   null,
   "määrittämätön"
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
+  null,
+  "käyttäjä"
  ],
  "vCPU Count": [
   null,
@@ -683,9 +967,13 @@ return plural;
   null,
   ""
  ],
- "vCPUs:": [
+ "vCPUs": [
   null,
-  "vCPUt:"
+  ""
+ ],
+ "vhostuser": [
+  null,
+  ""
  ],
  "yes": [
   null,

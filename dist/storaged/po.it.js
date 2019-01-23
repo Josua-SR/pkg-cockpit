@@ -1452,6 +1452,10 @@ return plural;
   null,
   "Log storage"
  ],
+ "Storage can not be managed on this system.": [
+  null,
+  "Il pool di archiviazione Docker non può essere gestito su questo sistema."
+ ],
  "Store passphrase": [
   null,
   "Conservare la passphrase"
@@ -1479,10 +1483,6 @@ return plural;
  "Tang keyserver": [
   null,
   "Tang keyserver"
- ],
- "The \"storaged\" API is not available on this system.": [
-  null,
-  "L'API \"storaged\" non è disponibile su questo sistema."
  ],
  "The RAID Array is in a degraded state": [
   null,

@@ -111,9 +111,9 @@ return plural;
   null,
   "Automaticky vybraný stroj"
  ],
- "Autostart:": [
+ "Autostart": [
   null,
-  "Automatické spuštění:"
+  "Automatické spuštění"
  ],
  "Available": [
   null,
@@ -131,9 +131,9 @@ return plural;
   null,
   "Základní šablona:"
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
-  "Pořadí zavádění:"
+  "Pořadí zavádění"
  ],
  "Bus": [
   null,
@@ -143,9 +143,9 @@ return plural;
   null,
   "Akce ZMĚNIT STAV SÍTĚ se nezdařila"
  ],
- "CPU Type:": [
+ "CPU Type": [
   null,
-  "Typ procesoru:"
+  "Typ procesoru"
  ],
  "CREATE VM action failed": [
   null,
@@ -299,9 +299,9 @@ return plural;
   null,
   "Upravit vdsm.conf"
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
-  "Emulovaný stroj:"
+  "Emulovaný stroj"
  ],
  "Enter New VM name": [
   null,
@@ -406,10 +406,6 @@ return plural;
  "Memory": [
   null,
   "Paměť"
- ],
- "Memory:": [
-  null,
-  "Paměť:"
  ],
  "MiB": [
   null,
@@ -1114,10 +1110,6 @@ return plural;
  "vCPUs": [
   null,
   "virt. procesorů"
- ],
- "vCPUs:": [
-  null,
-  "virt. procesorů:"
  ],
  "vhostuser": [
   null,

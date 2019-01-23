@@ -91,6 +91,14 @@ return plural;
   null,
   "Armazenamento Adicional"
  ],
+ "Advanced TCA": [
+  null,
+  "TCA Avançado"
+ ],
+ "All In One": [
+  null,
+  "Tudo em um"
+ ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
   "Todos os dados em discos selecionados serão apagados e os discos serão adicionados ao pool de armazenamento."
@@ -102,6 +110,18 @@ return plural;
  "Author": [
   null,
   "Autor"
+ ],
+ "Blade": [
+  null,
+  "Blade"
+ ],
+ "Blade enclosure": [
+  null,
+  "Blade enclosure"
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  "Chassi de Expansão de Barramento"
  ],
  "CPU": [
   null,
@@ -168,6 +188,10 @@ return plural;
   null,
   "Imagem Commit "
  ],
+ "Compact PCI": [
+  null,
+  "Compacto PCI"
+ ],
  "Configure storage...": [
   null,
   "Configurar armazenamento..."
@@ -200,6 +224,10 @@ return plural;
   null,
   "Containers"
  ],
+ "Convertible": [
+  null,
+  "Conversível"
+ ],
  "Could not add all disks": [
   null,
   "Não foi possível adicionar todos os discos"
@@ -228,6 +256,14 @@ return plural;
   null,
   "A exclusão de um container irá apagar todos os dados nele."
  ],
+ "Desktop": [
+  null,
+  "Desktop"
+ ],
+ "Detachable": [
+  null,
+  "Destacável"
+ ],
  "Details": [
   null,
   "Detalhes"
@@ -235,6 +271,10 @@ return plural;
  "Docker is not installed or activated on the system": [
   null,
   "Docker não está instalado ou ativado no sistema"
+ ],
+ "Docking Station": [
+  null,
+  "Estação de ancoragem."
  ],
  "Download": [
   null,
@@ -251,6 +291,10 @@ return plural;
  "Duplicate port": [
   null,
   "Porta duplicada"
+ ],
+ "Embedded PC": [
+  null,
+  "Embedded PC"
  ],
  "Entrypoint": [
   null,
@@ -275,6 +319,10 @@ return plural;
  "Exited $ExitCode": [
   null,
   "Encerrado $ExitCode"
+ ],
+ "Expansion Chassis": [
+  null,
+  "Chassi de Expansão"
  ],
  "Expose container ports": [
   null,
@@ -303,6 +351,10 @@ return plural;
  "Get new image": [
   null,
   "Obter nova imagem"
+ ],
+ "Hand Held": [
+  null,
+  "Portátil"
  ],
  "Hard Disk": [
   null,
@@ -356,6 +408,14 @@ return plural;
   null,
   "Porta inválida"
  ],
+ "IoT Gateway": [
+  null,
+  "Gateway IoT"
+ ],
+ "Laptop": [
+  null,
+  "Laptop"
+ ],
  "Link to another container": [
   null,
   "Link para outro contêiner"
@@ -372,9 +432,21 @@ return plural;
   null,
   "Discos Locais"
  ],
+ "Low Profile Desktop": [
+  null,
+  "Desktop de baixo perfil"
+ ],
+ "Lunch Box": [
+  null,
+  "Lunch Box"
+ ],
  "MAC Address:": [
   null,
   "Endereço MAC:"
+ ],
+ "Main Server Chassis": [
+  null,
+  "Chassi do Servidor Principal"
  ],
  "Memory": [
   null,
@@ -392,9 +464,21 @@ return plural;
   null,
   "MiB"
  ],
+ "Mini PC": [
+  null,
+  "Mini PC"
+ ],
+ "Mini Tower": [
+  null,
+  "Mini Torre"
+ ],
  "Mount container volumes": [
   null,
   "Montar contêiners de volumes"
+ ],
+ "Multi-system Chassis": [
+  null,
+  "Chassi Multi-sistema"
  ],
  "Name": [
   null,
@@ -452,6 +536,10 @@ return plural;
   null,
   "Não encontrado"
  ],
+ "Notebook": [
+  null,
+  "Notebook"
+ ],
  "Off": [
   null,
   "Desligado"
@@ -473,9 +561,21 @@ return plural;
   "Em falha, repetir $0 vez",
   "Em falha, repetir $0 vezes"
  ],
+ "Other": [
+  null,
+  "De outros"
+ ],
  "Overview": [
   null,
   "Visão geral"
+ ],
+ "Peripheral Chassis": [
+  null,
+  "Chassi Periférico"
+ ],
+ "Pizza Box": [
+  null,
+  "Pizza Box"
  ],
  "Please confirm deletion of $0": [
   null,
@@ -489,6 +589,10 @@ return plural;
   null,
   "Por favor, tente outro termo"
  ],
+ "Portable": [
+  null,
+  "Portatil"
+ ],
  "Ports": [
   null,
   "Portas"
@@ -500,6 +604,14 @@ return plural;
  "Problems": [
   null,
   "Problemas"
+ ],
+ "RAID Chassis": [
+  null,
+  "RAID Chassis"
+ ],
+ "Rack Mount Chassis": [
+  null,
+  "Rack Mount Chassis"
  ],
  "ReadOnly": [
   null,
@@ -557,6 +669,10 @@ return plural;
   null,
   "Executar Imagem"
  ],
+ "Sealed-case PC": [
+  null,
+  "PC com caixa vedada"
+ ],
  "Security": [
   null,
   "Segurança"
@@ -581,6 +697,10 @@ return plural;
   null,
   "Disco de Estado Sólido"
  ],
+ "Space-saving Computer": [
+  null,
+  "Computador com economia de espaço"
+ ],
  "Start": [
   null,
   "Iniciar"
@@ -596,6 +716,10 @@ return plural;
  "State:": [
   null,
   "Estado:"
+ ],
+ "Stick PC": [
+  null,
+  "Stick PC"
  ],
  "Stop": [
   null,
@@ -617,9 +741,21 @@ return plural;
   null,
   "Pool de Armazenamento"
  ],
+ "Sub Chassis": [
+  null,
+  "Sub Chassis"
+ ],
+ "Sub Notebook": [
+  null,
+  "Sub Notebook"
+ ],
  "TCP": [
   null,
   "TCP"
+ ],
+ "Tablet": [
+  null,
+  "Tablet"
  ],
  "Tag": [
   null,
@@ -653,6 +789,10 @@ return plural;
   null,
   "Total"
  ],
+ "Tower": [
+  null,
+  "Torre"
+ ],
  "Try again": [
   null,
   "Tente novamente"
@@ -668,6 +808,10 @@ return plural;
  "Unexpected error": [
   null,
   "Erro inesperado"
+ ],
+ "Unknown": [
+  null,
+  "Desconhecido"
  ],
  "Unless Stopped": [
   null,

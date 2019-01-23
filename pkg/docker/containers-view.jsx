@@ -404,7 +404,7 @@ class ImageDetails extends React.Component {
 
         return (
             <React.Fragment>
-                <dl>
+                <dl className='listing-ct-body'>
                     <dt>{_("Id")}</dt>         <dd title={image.Id}>{ docker.truncate_id(image.Id) }</dd>
                     <dt>{_("Tags")}</dt>       <dd>{ repotags.join(" ") }</dd>
                     <dt>{_("Entrypoint")}</dt> <dd>{ util.quote_cmdline(entrypoint) }</dd>
@@ -552,7 +552,7 @@ export class ImageList extends React.Component {
         util.delete_image_confirm(this.props.client, image).done(
             (runningContainers, force) => {
                 var stopPromises = runningContainers.map(id => this.props.client.stop(id));
-                cockpit.all(stopPromises).done(() =>
+                Promise.all(stopPromises).then(() =>
                     this.props.client.rmi(image.Id, force).fail((ex) => {
                         util.show_unexpected_error(ex);
                     }));

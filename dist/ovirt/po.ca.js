@@ -99,21 +99,21 @@ return plural;
   null,
   "S'apagaran totes les màquines virtuals."
  ],
+ "Always attach": [
+  null,
+  "Sempre"
+ ],
  "Apply": [
   null,
   "Aplica"
- ],
- "Attach permanently": [
-  null,
-  ""
  ],
  "Automatically selected host": [
   null,
   "Amfitrió seleccionat automàticament"
  ],
- "Autostart:": [
+ "Autostart": [
   null,
-  "Inici automàtic:"
+  "Inici automàtic"
  ],
  "Available": [
   null,
@@ -131,17 +131,25 @@ return plural;
   null,
   "Plantilla base:"
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
-  "Ordre d'arrencada:"
+  "Ordre d'arrencada"
  ],
  "Bus": [
   null,
   "Bus"
  ],
- "CPU Type:": [
+ "CHANGE NETWORK STATE action failed": [
   null,
-  "Tipus de CPU:"
+  "Ha fallat l'acció CHANGE NETWORK STATE"
+ ],
+ "CPU Type": [
+  null,
+  "Tipus de CPU"
+ ],
+ "CREATE VM action failed": [
+  null,
+  "Ha fallat l'acció CREATE VM"
  ],
  "Cancel": [
   null,
@@ -291,9 +299,9 @@ return plural;
   null,
   "Edita el fitxer vdsm.conf"
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
-  "Màquina emulada:"
+  "Màquina emulada"
  ],
  "Enter New VM name": [
   null,
@@ -323,6 +331,10 @@ return plural;
   null,
   "Formata"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
+ ],
  "GiB": [
   null,
   "GiB"
@@ -351,6 +363,10 @@ return plural;
   null,
   "Amfitrió a manteniment"
  ],
+ "INSTALL VM action failed": [
+  null,
+  "Ha fallat l'acció INSTALL VM"
+ ],
  "Install": [
   null,
   "Instal·la"
@@ -371,6 +387,10 @@ return plural;
   null,
   "Adreça MAC"
  ],
+ "MIGRATE action failed": [
+  null,
+  "Ha fallat l'acció MIGRATE"
+ ],
  "Mac Address": [
   null,
   ""
@@ -386,10 +406,6 @@ return plural;
  "Memory": [
   null,
   "Memòria"
- ],
- "Memory:": [
-  null,
-  "Memòria:"
  ],
  "MiB": [
   null,
@@ -491,6 +507,10 @@ return plural;
   null,
   "Visió de conjunt"
  ],
+ "Persistence": [
+  null,
+  "Volums persistents"
+ ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
   "Confirmeu que l'amfitrió s'ha de canviar al mode de manteniment."
@@ -543,9 +563,17 @@ return plural;
   null,
   ""
  ],
+ "Preparing for Maintenance": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protocol"
+ ],
+ "REBOOT action failed": [
+  null,
+  "Ha fallat l'acció REBOOT"
  ],
  "Readonly": [
   null,
@@ -583,6 +611,14 @@ return plural;
   null,
   "En execució des de:"
  ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  ""
+ ],
+ "SHUTDOWN action failed": [
+  null,
+  "Ha fallat l'acció SHUTDOWN"
+ ],
  "SPICE": [
   null,
   "SPICE"
@@ -599,6 +635,14 @@ return plural;
   null,
   "Port TLS SPICE:"
  ],
+ "START action failed": [
+  null,
+  "Ha fallat l'acció START"
+ ],
+ "SUSPEND action failed": [
+  null,
+  "Ha fallat l'acció SUSPEND"
+ ],
  "Save": [
   null,
   "Desa"
@@ -614,6 +658,10 @@ return plural;
  "Serial Console": [
   null,
   "Consola sèrie"
+ ],
+ "Session": [
+  null,
+  "Sessió"
  ],
  "Shut Down": [
   null,
@@ -655,9 +703,17 @@ return plural;
   null,
   "Canvia l'amfitrió a manteniment"
  ],
- "Target": [
+ "Switching host to maintenance mode failed. Received error: ": [
   null,
-  "Objectiu"
+  "Ha fallat el canvi de l'amfitrió a manteniment. Error rebut: "
+ ],
+ "Switching host to maintenance mode in progress ...": [
+  null,
+  "Canvi de l'amfitrió a manteniment en progrés..."
+ ],
+ "System": [
+  null,
+  "Sistema"
  ],
  "Template": [
   null,
@@ -759,6 +815,38 @@ return plural;
   null,
   "Gestió del servei VDSM"
  ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "Ha fallat l'acció VM FORCE OFF"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "Ha fallat l'acció VM FORCE REBOOT"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "Ha fallat l'acció VM REBOOT"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  ""
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "Ha fallat l'acció VM SHUT DOWN"
+ ],
+ "VM START action failed": [
+  null,
+  "Ha fallat l'acció VM START"
+ ],
  "VM icon": [
   null,
   "Icona de la MV"
@@ -799,21 +887,117 @@ return plural;
   null,
   "Volum"
  ],
+ "bridge": [
+  null,
+  "pont"
+ ],
+ "cdrom": [
+  null,
+  "cdrom"
+ ],
+ "connecting": [
+  null,
+  "connectant"
+ ],
  "cores": [
   null,
   "nuclis"
+ ],
+ "crashed": [
+  null,
+  "estavellat"
+ ],
+ "custom": [
+  null,
+  "personalitzat"
+ ],
+ "direct": [
+  null,
+  "directe"
  ],
  "disabled": [
   null,
   "inhabilitat"
  ],
+ "disk": [
+  null,
+  "disc"
+ ],
+ "down": [
+  null,
+  ""
+ ],
+ "dying": [
+  null,
+  "morint"
+ ],
  "enabled": [
   null,
   "habilitat"
  ],
+ "error": [
+  null,
+  "error"
+ ],
+ "ethernet": [
+  null,
+  "ethernet"
+ ],
+ "host": [
+  null,
+  "amfitrió"
+ ],
+ "hostdev": [
+  null,
+  ""
+ ],
+ "idle": [
+  null,
+  "ociós"
+ ],
+ "initializing": [
+  null,
+  "inicialitzant"
+ ],
+ "installation failed": [
+  null,
+  "ha fallat la instal·lació"
+ ],
+ "installing OS": [
+  null,
+  "instal·lant el SO"
+ ],
+ "kdumping": [
+  null,
+  ""
+ ],
+ "maintenance": [
+  null,
+  "manteniment"
+ ],
+ "mcast": [
+  null,
+  "mcast"
+ ],
+ "network": [
+  null,
+  "xarxa"
+ ],
  "no": [
   null,
   "no"
+ ],
+ "non operational": [
+  null,
+  ""
+ ],
+ "non responsive": [
+  null,
+  ""
+ ],
+ "oVirt": [
+  null,
+  "oVirt"
  ],
  "oVirt Host State:": [
   null,
@@ -835,6 +1019,18 @@ return plural;
   null,
   "Inici de sessió d'oVirt en progrés"
  ],
+ "other": [
+  null,
+  "altres"
+ ],
+ "paused": [
+  null,
+  "pausa"
+ ],
+ "pending approval": [
+  null,
+  "pendent d'aprovació"
+ ],
  "qcow2": [
   null,
   ""
@@ -842,6 +1038,18 @@ return plural;
  "raw": [
   null,
   ""
+ ],
+ "reboot": [
+  null,
+  "reinicia"
+ ],
+ "running": [
+  null,
+  "en execució"
+ ],
+ "server": [
+  null,
+  "servidor"
  ],
  "show less": [
   null,
@@ -851,17 +1059,45 @@ return plural;
   null,
   "mostra més"
  ],
+ "shut off": [
+  null,
+  "apagat"
+ ],
+ "shutdown": [
+  null,
+  "apaga"
+ ],
  "sockets": [
   null,
   ""
+ ],
+ "suspended (PM)": [
+  null,
+  "suspès (PM)"
  ],
  "threads": [
   null,
   "fils"
  ],
+ "udp": [
+  null,
+  "udp"
+ ],
+ "unassigned": [
+  null,
+  "sense assignar"
+ ],
  "undefined": [
   null,
   "indefinit"
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
+  null,
+  "usuari"
  ],
  "vCPU Count": [
   null,
@@ -875,9 +1111,9 @@ return plural;
   null,
   "vCPU"
  ],
- "vCPUs:": [
+ "vhostuser": [
   null,
-  "vCPUs:"
+  ""
  ],
  "yes": [
   null,

@@ -515,10 +515,6 @@ return plural;
   null,
   "Olet yhdistetty kohteeseen {{#strong}}{{host}}{{/strong}}, mutta synkronoidaksesi käyttäjiä vaaditaan yksi käyttäjä superuser-oikeuksilla."
  ],
- "You can remove the previously stored key by running the following command": [
-  null,
-  "Voit poistaa aiemmin tallennetun avaimen ajamalla seuraavan komennon"
- ],
  "active": [
   null,
   ""

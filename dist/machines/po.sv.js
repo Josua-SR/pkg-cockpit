@@ -99,17 +99,17 @@ return plural;
   null,
   "Starta automatiskt libvirt vid uppstart"
  ],
- "Autostart:": [
+ "Autostart": [
   null,
-  "Starta automatiskt:"
+  "Starta automatiskt"
  ],
  "Available": [
   null,
   "Tillgängliga"
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
-  "Startordning:"
+  "Startordning"
  ],
  "Bus": [
   null,
@@ -119,9 +119,9 @@ return plural;
   null,
   "Åtgärden ÄNDRA NÄTVERKSTILLSTÅND misslyckades"
  ],
- "CPU Type:": [
+ "CPU Type": [
   null,
-  "CPU-typ:"
+  "CPU-typ"
  ],
  "Cancel": [
   null,
@@ -239,9 +239,9 @@ return plural;
   null,
   "Redigera"
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
-  "Emulerad maskin:"
+  "Emulerad maskin"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -358,10 +358,6 @@ return plural;
  "Memory should be positive number": [
   null,
   "Minnet skall vara ett positivt tal"
- ],
- "Memory:": [
-  null,
-  "Minne:"
  ],
  "MiB": [
   null,
@@ -646,10 +642,6 @@ return plural;
  "System": [
   null,
   "System"
- ],
- "Target": [
-  null,
-  "Mål"
  ],
  "Target Path": [
   null,
@@ -975,9 +967,9 @@ return plural;
   null,
   "vCPU-maximum"
  ],
- "vCPUs:": [
+ "vCPUs": [
   null,
-  "vCPU:er:"
+  "vCPU:er"
  ],
  "vhostuser": [
   null,

@@ -139,6 +139,10 @@ return plural;
   null,
   "正在下载"
  ],
+ "Host name should not be changed in a domain": [
+  null,
+  "主机不能为空"
+ ],
  "Install": [
   null,
   "安装"
@@ -198,6 +202,10 @@ return plural;
  "One Time Password": [
   null,
   "一次性密码"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit 已崩溃"
  ],
  "Removals:": [
   null,

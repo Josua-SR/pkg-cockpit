@@ -95,6 +95,10 @@ return plural;
   null,
   "フォルダー"
  ],
+ "Directory $0 isn't writable or doesn't exist.": [
+  null,
+  "ディレクトリー $0 は書込み可能でないか、存在しません。"
+ ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
   "Kdump サービスがインストールされていません。パッケージ kexec-tools がインストールされていることを確認してください。"
@@ -231,9 +235,21 @@ return plural;
   null,
   "$0 (ローカル)"
  ],
+ "nfs dump target isn't formated as server:path": [
+  null,
+  "nfs ダンプターゲットは server:path の形式になっていません"
+ ],
  "ssh key": [
   null,
   "ssh 鍵"
+ ],
+ "ssh key isn't a path": [
+  null,
+  "ssh 鍵 はパスではありません"
+ ],
+ "ssh server is empty": [
+  null,
+  "ssh サーバーが空です"
  ],
  "undefined": [
   null,

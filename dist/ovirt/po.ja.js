@@ -99,21 +99,21 @@ return plural;
   null,
   "全ての実行中のマシンはオフされます。"
  ],
+ "Always attach": [
+  null,
+  "常時"
+ ],
  "Apply": [
   null,
   "適用"
- ],
- "Attach permanently": [
-  null,
-  "完全な割り当て"
  ],
  "Automatically selected host": [
   null,
   "自動的に選択されたホスト"
  ],
- "Autostart:": [
+ "Autostart": [
   null,
-  "自動起動:"
+  "自動起動"
  ],
  "Available": [
   null,
@@ -131,17 +131,25 @@ return plural;
   null,
   "ベーステンプレート:"
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
-  "ブート順序:"
+  "ブート順序"
  ],
  "Bus": [
   null,
   "バス"
  ],
- "CPU Type:": [
+ "CHANGE NETWORK STATE action failed": [
   null,
-  "CPU タイプ:"
+  "CHANGE NETWORK STATE アクションに失敗しました"
+ ],
+ "CPU Type": [
+  null,
+  "CPU タイプ"
+ ],
+ "CREATE VM action failed": [
+  null,
+  "CREATE VM アクションに失敗しました"
  ],
  "Cancel": [
   null,
@@ -291,9 +299,9 @@ return plural;
   null,
   "vdsm.conf を編集します"
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
-  "エミュレートされたマシン:"
+  "エミュレートされたマシン"
  ],
  "Enter New VM name": [
   null,
@@ -323,6 +331,10 @@ return plural;
   null,
   "フォーマット"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "GET HYPERVISOR MAX VCPU アクションに失敗しました"
+ ],
  "GiB": [
   null,
   "GiB"
@@ -351,6 +363,10 @@ return plural;
   null,
   "メンテナンスするホスト"
  ],
+ "INSTALL VM action failed": [
+  null,
+  "INSTALL VM アクションに失敗しました"
+ ],
  "Install": [
   null,
   "インストール"
@@ -371,6 +387,10 @@ return plural;
   null,
   "MAC アドレス"
  ],
+ "MIGRATE action failed": [
+  null,
+  "MIGRATE アクションに失敗しました"
+ ],
  "Mac Address": [
   null,
   "Mac アドレス"
@@ -386,10 +406,6 @@ return plural;
  "Memory": [
   null,
   "メモリ"
- ],
- "Memory:": [
-  null,
-  "メモリー:"
  ],
  "MiB": [
   null,
@@ -491,6 +507,10 @@ return plural;
   null,
   "概要"
  ],
+ "Persistence": [
+  null,
+  "永続ボリューム"
+ ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
   "ホストがメンテナンスモードに切り替わっていることを確認してください。"
@@ -543,9 +563,17 @@ return plural;
   null,
   "ゲストへの公開用の推奨されるソケットの数。"
  ],
+ "Preparing for Maintenance": [
+  null,
+  "メンテナンスの準備中"
+ ],
  "Protocol": [
   null,
   "プロトコル"
+ ],
+ "REBOOT action failed": [
+  null,
+  "REBOOT アクションに失敗しました"
  ],
  "Readonly": [
   null,
@@ -583,6 +611,14 @@ return plural;
   null,
   "実行開始:"
  ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  "SET VCPU SETTINGS アクションに失敗しました"
+ ],
+ "SHUTDOWN action failed": [
+  null,
+  "SHUTDOWN アクションに失敗しました"
+ ],
  "SPICE": [
   null,
   "SPICE"
@@ -599,6 +635,14 @@ return plural;
   null,
   "SPICE TLS ポート:"
  ],
+ "START action failed": [
+  null,
+  "START アクションに失敗しました"
+ ],
+ "SUSPEND action failed": [
+  null,
+  "SUSPEND アクションに失敗しました"
+ ],
  "Save": [
   null,
   "保存"
@@ -614,6 +658,10 @@ return plural;
  "Serial Console": [
   null,
   "シリアルコンソール"
+ ],
+ "Session": [
+  null,
+  "セッション"
  ],
  "Shut Down": [
   null,
@@ -655,9 +703,17 @@ return plural;
   null,
   "ホストをメンテナンスに切り替え"
  ],
- "Target": [
+ "Switching host to maintenance mode failed. Received error: ": [
   null,
-  "ターゲット"
+  "ホストをメンテナンスモードに切り替えることができませんでした。受け取ったエラー: "
+ ],
+ "Switching host to maintenance mode in progress ...": [
+  null,
+  "ホストをメンテナンスモードに切り替え中..."
+ ],
+ "System": [
+  null,
+  "システム"
  ],
  "Template": [
   null,
@@ -759,6 +815,38 @@ return plural;
   null,
   "VDSM サービス管理"
  ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  "VM DELETE (DESTROY) アクションに失敗しました"
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  "VM DELETE (UNDEFINE) アクションに失敗しました"
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "VM FORCE OFF アクションに失敗しました"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "VM FORCE REBOOT アクションに失敗しました"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "VM REBOOT アクションに失敗しました"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "VM SEND マスク不可な割り込みアクションに失敗しました"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "VM SHUT DOWN アクションに失敗しました"
+ ],
+ "VM START action failed": [
+  null,
+  "VM START アクションに失敗しました"
+ ],
  "VM icon": [
   null,
   "仮想マシンのアイコン"
@@ -799,21 +887,117 @@ return plural;
   null,
   "音量"
  ],
+ "bridge": [
+  null,
+  "ブリッジ"
+ ],
+ "cdrom": [
+  null,
+  "cdrom"
+ ],
+ "connecting": [
+  null,
+  "接続中"
+ ],
  "cores": [
   null,
   "コア"
+ ],
+ "crashed": [
+  null,
+  "クラッシュ"
+ ],
+ "custom": [
+  null,
+  "カスタム"
+ ],
+ "direct": [
+  null,
+  "ダイレクト"
  ],
  "disabled": [
   null,
   "無効"
  ],
+ "disk": [
+  null,
+  "ディスク"
+ ],
+ "down": [
+  null,
+  "下へ"
+ ],
+ "dying": [
+  null,
+  "終了中"
+ ],
  "enabled": [
   null,
   "有効"
  ],
+ "error": [
+  null,
+  "エラー"
+ ],
+ "ethernet": [
+  null,
+  "Ethernet"
+ ],
+ "host": [
+  null,
+  "ホスト"
+ ],
+ "hostdev": [
+  null,
+  "hostdev"
+ ],
+ "idle": [
+  null,
+  "アイドル"
+ ],
+ "initializing": [
+  null,
+  "初期化中"
+ ],
+ "installation failed": [
+  null,
+  "インストールに失敗しました"
+ ],
+ "installing OS": [
+  null,
+  "OS のインストール中"
+ ],
+ "kdumping": [
+  null,
+  "kdump 中"
+ ],
+ "maintenance": [
+  null,
+  "メンテナンス"
+ ],
+ "mcast": [
+  null,
+  "mcast"
+ ],
+ "network": [
+  null,
+  "ネットワーク"
+ ],
  "no": [
   null,
   "いいえ"
+ ],
+ "non operational": [
+  null,
+  "稼動していません"
+ ],
+ "non responsive": [
+  null,
+  "応答しません"
+ ],
+ "oVirt": [
+  null,
+  "oVirt"
  ],
  "oVirt Host State:": [
   null,
@@ -835,6 +1019,18 @@ return plural;
   null,
   "oVirt ログインの処理中"
  ],
+ "other": [
+  null,
+  "その他"
+ ],
+ "paused": [
+  null,
+  "一時停止"
+ ],
+ "pending approval": [
+  null,
+  "保留中の承認"
+ ],
  "qcow2": [
   null,
   "qcow2"
@@ -842,6 +1038,18 @@ return plural;
  "raw": [
   null,
   "raw"
+ ],
+ "reboot": [
+  null,
+  "再起動"
+ ],
+ "running": [
+  null,
+  "実行中"
+ ],
+ "server": [
+  null,
+  "サーバー"
  ],
  "show less": [
   null,
@@ -851,17 +1059,45 @@ return plural;
   null,
   "表示を増やす"
  ],
+ "shut off": [
+  null,
+  "シャットオフ"
+ ],
+ "shutdown": [
+  null,
+  "shutdown"
+ ],
  "sockets": [
   null,
   "ソケット"
+ ],
+ "suspended (PM)": [
+  null,
+  "一時停止中 (PM)"
  ],
  "threads": [
   null,
   "スレッド"
  ],
+ "udp": [
+  null,
+  "udp"
+ ],
+ "unassigned": [
+  null,
+  "未割り当て"
+ ],
  "undefined": [
   null,
   "未定義"
+ ],
+ "up": [
+  null,
+  "上へ"
+ ],
+ "user": [
+  null,
+  "ユーザー"
  ],
  "vCPU Count": [
   null,
@@ -875,9 +1111,9 @@ return plural;
   null,
   "vCPU"
  ],
- "vCPUs:": [
+ "vhostuser": [
   null,
-  "vCPU:"
+  "vhostuser"
  ],
  "yes": [
   null,

@@ -295,6 +295,10 @@ return plural;
   null,
   "В определенное время"
  ],
+ "Automatic Startup": [
+  null,
+  "Автоматические обновления"
+ ],
  "Automatically using NTP": [
   null,
   "Автоматическое использование NTP"
@@ -851,6 +855,10 @@ return plural;
   null,
   "Часть"
  ],
+ "Path": [
+  null,
+  "Путь"
+ ],
  "Paths": [
   null,
   "Пути"
@@ -1007,6 +1015,10 @@ return plural;
   null,
   "Запустить"
  ],
+ "Running Since": [
+  null,
+  "Работает с"
+ ],
  "Saturday": [
   null,
   "Суббота"
@@ -1063,10 +1075,6 @@ return plural;
   null,
   "Выключение"
  ],
- "Since $0": [
-  null,
-  "поскольку $0"
- ],
  "Slot": [
   null,
   "слот"
@@ -1094,6 +1102,10 @@ return plural;
  "Static": [
   null,
   "Статический"
+ ],
+ "Status": [
+  null,
+  "Состояние"
  ],
  "Stick PC": [
   null,

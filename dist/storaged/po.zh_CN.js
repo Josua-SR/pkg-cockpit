@@ -1055,6 +1055,10 @@ return plural;
   null,
   "使用 0 覆盖已存在数据"
  ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit 已崩溃"
+ ],
  "Partition": [
   null,
   "分区"
@@ -1447,6 +1451,10 @@ return plural;
   null,
   "存储日志"
  ],
+ "Storage can not be managed on this system.": [
+  null,
+  "Docker 存储池不能在这个系统上被管理。"
+ ],
  "Store passphrase": [
   null,
   "存储口令"
@@ -1474,10 +1482,6 @@ return plural;
  "Tang keyserver": [
   null,
   "Tang keyserver"
- ],
- "The \"storaged\" API is not available on this system.": [
-  null,
-  "在此系统中, \"storaged\" API 不可用."
  ],
  "The RAID Array is in a degraded state": [
   null,

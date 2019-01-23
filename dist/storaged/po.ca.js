@@ -684,6 +684,10 @@ return plural;
   null,
   "Espai lliure"
  ],
+ "Free up space in this group: Shrink or delete other logical volumes or add another physical volume.": [
+  null,
+  ""
+ ],
  "Go to now": [
   null,
   "Vés a ara"
@@ -908,6 +912,14 @@ return plural;
   null,
   "El nom no pot estar en blanc."
  ],
+ "Name cannot be longer than $0 bytes": [
+  null,
+  "El nom no pot ser superior als 127 caràcters."
+ ],
+ "Name cannot be longer than $0 characters": [
+  null,
+  "El nom no pot ser superior als 127 caràcters."
+ ],
  "Name cannot be longer than 127 characters.": [
   null,
   "El nom no pot ser superior als 127 caràcters."
@@ -992,6 +1004,10 @@ return plural;
   null,
   "Cap grup de volums creat"
  ],
+ "Not enough space to grow.": [
+  null,
+  ""
+ ],
  "Not found": [
   null,
   "No s'ha trobat"
@@ -1039,6 +1055,10 @@ return plural;
  "Overwrite existing data with zeros": [
   null,
   "Sobreescriu les dades existents amb zeros"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit s'ha estavellat."
  ],
  "Partition": [
   null,
@@ -1432,6 +1452,10 @@ return plural;
   null,
   "Registres de l'emmagatzematge"
  ],
+ "Storage can not be managed on this system.": [
+  null,
+  "L'API «storaged» no està disponible en aquest sistema."
+ ],
  "Store passphrase": [
   null,
   "Emmagatzema la contrasenya"
@@ -1459,10 +1483,6 @@ return plural;
  "Tang keyserver": [
   null,
   ""
- ],
- "The \"storaged\" API is not available on this system.": [
-  null,
-  "L'API «storaged» no està disponible en aquest sistema."
  ],
  "The RAID Array is in a degraded state": [
   null,

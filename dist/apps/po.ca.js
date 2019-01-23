@@ -115,6 +115,10 @@ return plural;
   null,
   "D'acord"
  ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit s'ha estavellat."
+ ],
  "Remove": [
   null,
   "Suprimeix"

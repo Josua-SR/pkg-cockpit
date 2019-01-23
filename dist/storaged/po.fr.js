@@ -1056,6 +1056,10 @@ return plural;
   null,
   "Remplacer les données existantes par des zéros"
  ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit crash"
+ ],
  "Partition": [
   null,
   "Partition"
@@ -1448,6 +1452,10 @@ return plural;
   null,
   "Journaux de stockage"
  ],
+ "Storage can not be managed on this system.": [
+  null,
+  "Le pool de stockage Docker ne peut pas être géré sur ce système."
+ ],
  "Store passphrase": [
   null,
   "Stocker la phrase de passe"
@@ -1475,10 +1483,6 @@ return plural;
  "Tang keyserver": [
   null,
   "Serveur de clés Tang"
- ],
- "The \"storaged\" API is not available on this system.": [
-  null,
-  "L'API \"stockée\" n'est pas disponible sur ce système."
  ],
  "The RAID Array is in a degraded state": [
   null,

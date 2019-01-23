@@ -223,6 +223,10 @@ return plural;
   null,
   "パッケージ情報"
  ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit がクラッシュしました"
+ ],
  "PackageKit is not installed": [
   null,
   "PackageKit はインストールされていません"

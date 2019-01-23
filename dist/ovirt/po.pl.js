@@ -111,9 +111,9 @@ return plural;
   null,
   "Automatycznie wybrany gospodarz"
  ],
- "Autostart:": [
+ "Autostart": [
   null,
-  "Automatyczne uruchamianie:"
+  "Automatyczne uruchamianie"
  ],
  "Available": [
   null,
@@ -131,9 +131,9 @@ return plural;
   null,
   "Podstawowy szablon:"
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
-  "Kolejność uruchamiania:"
+  "Kolejność uruchamiania"
  ],
  "Bus": [
   null,
@@ -143,9 +143,9 @@ return plural;
   null,
   "Działanie CHANGE NETWORK STATE się nie powiodło"
  ],
- "CPU Type:": [
+ "CPU Type": [
   null,
-  "Typ procesora:"
+  "Typ procesora"
  ],
  "CREATE VM action failed": [
   null,
@@ -299,9 +299,9 @@ return plural;
   null,
   "Modyfikuj plik vdsm.conf"
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
-  "Emulowany komputer:"
+  "Emulowany komputer"
  ],
  "Enter New VM name": [
   null,
@@ -406,10 +406,6 @@ return plural;
  "Memory": [
   null,
   "Pamięć"
- ],
- "Memory:": [
-  null,
-  "Pamięć:"
  ],
  "MiB": [
   null,
@@ -718,10 +714,6 @@ return plural;
  "System": [
   null,
   "System"
- ],
- "Target": [
-  null,
-  "Cel"
  ],
  "Template": [
   null,
@@ -1118,10 +1110,6 @@ return plural;
  "vCPUs": [
   null,
   "Wirtualne procesory"
- ],
- "vCPUs:": [
-  null,
-  "Wirtualne procesory:"
  ],
  "vhostuser": [
   null,

@@ -139,6 +139,10 @@ return plural;
   null,
   "Stahuje se $0"
  ],
+ "Host name should not be changed in a domain": [
+  null,
+  "Hostitele je třeba vyplnit"
+ ],
  "Install": [
   null,
   "Nainstalovat"

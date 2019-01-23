@@ -295,6 +295,10 @@ return plural;
   null,
   "V uvedený čas"
  ],
+ "Automatic Startup": [
+  null,
+  "Automatické aktualizace"
+ ],
  "Automatically using NTP": [
   null,
   "Automatické použití NTP"
@@ -851,6 +855,10 @@ return plural;
   null,
   "Součástí"
  ],
+ "Path": [
+  null,
+  "Popis umístění"
+ ],
  "Paths": [
   null,
   "Popisy umístění"
@@ -1007,6 +1015,10 @@ return plural;
   null,
   "Spustit"
  ],
+ "Running Since": [
+  null,
+  "Spuštěno od"
+ ],
  "Saturday": [
   null,
   "sobota"
@@ -1063,10 +1075,6 @@ return plural;
   null,
   "Vypnout"
  ],
- "Since $0": [
-  null,
-  "Od $0"
- ],
  "Slot": [
   null,
   "Slot"
@@ -1094,6 +1102,10 @@ return plural;
  "Static": [
   null,
   "Statické"
+ ],
+ "Status": [
+  null,
+  "Stav"
  ],
  "Stick PC": [
   null,

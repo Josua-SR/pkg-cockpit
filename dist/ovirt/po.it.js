@@ -111,9 +111,9 @@ return plural;
   null,
   "Ospite selezionato automaticamente"
  ],
- "Autostart:": [
+ "Autostart": [
   null,
-  "Avvio automatico:"
+  "Avvio automatico"
  ],
  "Available": [
   null,
@@ -131,7 +131,7 @@ return plural;
   null,
   "Modello di base:"
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
   "Ordine boot"
  ],
@@ -143,9 +143,9 @@ return plural;
   null,
   "Azione CHANGE NETWORK NETWORK STATE fallita"
  ],
- "CPU Type:": [
+ "CPU Type": [
   null,
-  "Tipo CPU:"
+  "Tipo CPU"
  ],
  "CREATE VM action failed": [
   null,
@@ -299,9 +299,9 @@ return plural;
   null,
   "Modifica il file vdsm.conf"
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
-  "Macchina emulata:"
+  "Macchina emulata"
  ],
  "Enter New VM name": [
   null,
@@ -406,10 +406,6 @@ return plural;
  "Memory": [
   null,
   "Memoria"
- ],
- "Memory:": [
-  null,
-  "Memoria:"
  ],
  "MiB": [
   null,
@@ -718,10 +714,6 @@ return plural;
  "System": [
   null,
   "Sistema"
- ],
- "Target": [
-  null,
-  "Obiettivo"
  ],
  "Template": [
   null,
@@ -1116,10 +1108,6 @@ return plural;
   "vCPU Massimo"
  ],
  "vCPUs": [
-  null,
-  "vCPU"
- ],
- "vCPUs:": [
   null,
   "vCPU"
  ],

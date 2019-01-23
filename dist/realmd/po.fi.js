@@ -139,6 +139,10 @@ return plural;
   null,
   ""
  ],
+ "Host name should not be changed in a domain": [
+  null,
+  ""
+ ],
  "Install": [
   null,
   "Asenna"
@@ -198,6 +202,10 @@ return plural;
  "One Time Password": [
   null,
   "Kertakäyttöinen salasana"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit kaatui"
  ],
  "Removals:": [
   null,

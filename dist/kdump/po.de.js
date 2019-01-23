@@ -95,6 +95,10 @@ return plural;
   null,
   "Ordner"
  ],
+ "Directory $0 isn't writable or doesn't exist.": [
+  null,
+  "Verzeichnis $0 ist nicht beschreibbar oder existiert nicht."
+ ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
   "Kdump-Dienst nicht installiert. Bitte stellen Sie sicher, dass das Paket kexec-tools installiert ist."
@@ -231,9 +235,21 @@ return plural;
   null,
   "lokal in $0"
  ],
+ "nfs dump target isn't formated as server:path": [
+  null,
+  "Das NFS-Speicherauszugsziel ist nicht als Serverpfad formatiert"
+ ],
  "ssh key": [
   null,
   "SSH-Schlüssel"
+ ],
+ "ssh key isn't a path": [
+  null,
+  "Der SSH-Schlüssel ist kein Pfad"
+ ],
+ "ssh server is empty": [
+  null,
+  "SSH-Server ist leer"
  ],
  "undefined": [
   null,

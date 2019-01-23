@@ -23,7 +23,7 @@ import cockpit from 'cockpit';
 
 const _ = cockpit.gettext;
 
-const Items = ({ items, idPrefix, divider, colClass }) => {
+const Items = ({ items, idPrefix }) => {
     if (!items) {
         return null;
     }
@@ -54,10 +54,10 @@ const VmOverviewTab = ({ message, idPrefix, items, extraItems }) => {
     return (
         <div>
             {message}
-            <Items items={items} idPrefix={idPrefix} divider={extraItems ? 6 : 12} />
+            <Items items={items} idPrefix={idPrefix} />
             {extraItems && extraItems.map(col =>
-                (<Items items={col} idPrefix={idPrefix} divider='3'
-                        colClass='col-lg-12 col-md-12 col-sm-12 col-xs-12' key={col} />))}
+                (<Items items={col} idPrefix={idPrefix}
+                        key={col} />))}
         </div>);
 };
 
@@ -71,8 +71,8 @@ VmOverviewTab.propTypes = {
  * Unique wording for the same props across various use cases.
  */
 export const commonTitles = {
-    MEMORY: _("Memory:"),
-    CPUS: _("vCPUs:"),
+    MEMORY: _("Memory"),
+    CPUS: _("vCPUs"),
 };
 
 export default VmOverviewTab;

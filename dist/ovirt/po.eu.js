@@ -95,29 +95,25 @@ return plural;
   null,
   "Helbidea:"
  ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  ""
- ],
  "All running virtual machines will be turned off.": [
   null,
   ""
+ ],
+ "Always attach": [
+  null,
+  "Beti"
  ],
  "Apply": [
   null,
   "Aplikatu"
  ],
- "Attach permanently": [
-  null,
-  ""
- ],
  "Automatically selected host": [
   null,
   ""
  ],
- "Autostart:": [
+ "Autostart": [
   null,
-  ""
+  "Automatikoa"
  ],
  "Available": [
   null,
@@ -135,17 +131,25 @@ return plural;
   null,
   ""
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
-  "Abio ordena:"
+  "Abio ordena"
  ],
  "Bus": [
   null,
   ""
  ],
- "CPU Type:": [
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  ""
+ ],
+ "CPU Type": [
   null,
   "CPU mota"
+ ],
+ "CREATE VM action failed": [
+  null,
+  ""
  ],
  "Cancel": [
   null,
@@ -154,6 +158,10 @@ return plural;
  "Capacity": [
   null,
   "Edukiera"
+ ],
+ "Changes will take effect after shutting down the VM": [
+  null,
+  ""
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -168,10 +176,6 @@ return plural;
   ""
  ],
  "Cluster Virtual Machines": [
-  null,
-  ""
- ],
- "Confirm deletion of $0": [
   null,
   ""
  ],
@@ -271,11 +275,11 @@ return plural;
   null,
   ""
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
   ""
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
   ""
  ],
@@ -287,11 +291,15 @@ return plural;
   null,
   ""
  ],
+ "Edit": [
+  null,
+  ""
+ ],
  "Edit the vdsm.conf": [
   null,
   ""
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
   ""
  ],
@@ -323,6 +331,10 @@ return plural;
   null,
   ""
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
+ ],
  "GiB": [
   null,
   ""
@@ -351,6 +363,10 @@ return plural;
   null,
   ""
  ],
+ "INSTALL VM action failed": [
+  null,
+  ""
+ ],
  "Install": [
   null,
   ""
@@ -371,6 +387,14 @@ return plural;
   null,
   "MAC helbidea"
  ],
+ "MIGRATE action failed": [
+  null,
+  ""
+ ],
+ "Mac Address": [
+  null,
+  "MAC helbidea"
+ ],
  "Manual Connection": [
   null,
   ""
@@ -383,15 +407,15 @@ return plural;
   null,
   ""
  ],
- "Memory:": [
-  null,
-  ""
- ],
  "MiB": [
   null,
   ""
  ],
  "Migrate To:": [
+  null,
+  ""
+ ],
+ "Model": [
   null,
   ""
  ],
@@ -404,6 +428,14 @@ return plural;
   ""
  ],
  "Name": [
+  null,
+  ""
+ ],
+ "Network Type": [
+  null,
+  "sarea"
+ ],
+ "Network settings could not be saved": [
   null,
   ""
  ],
@@ -443,6 +475,10 @@ return plural;
   null,
   ""
  ],
+ "No virtual networks": [
+  null,
+  ""
+ ],
  "Number of virtual CPUs that gonna be used.": [
   null,
   ""
@@ -468,6 +504,10 @@ return plural;
   ""
  ],
  "Overview": [
+  null,
+  ""
+ ],
+ "Persistence": [
   null,
   ""
  ],
@@ -523,7 +563,15 @@ return plural;
   null,
   ""
  ],
+ "Preparing for Maintenance": [
+  null,
+  ""
+ ],
  "Protocol": [
+  null,
+  ""
+ ],
+ "REBOOT action failed": [
   null,
   ""
  ],
@@ -563,6 +611,14 @@ return plural;
   null,
   ""
  ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  ""
+ ],
+ "SHUTDOWN action failed": [
+  null,
+  ""
+ ],
  "SPICE": [
   null,
   ""
@@ -579,6 +635,14 @@ return plural;
   null,
   ""
  ],
+ "START action failed": [
+  null,
+  ""
+ ],
+ "SUSPEND action failed": [
+  null,
+  ""
+ ],
  "Save": [
   null,
   ""
@@ -592,6 +656,10 @@ return plural;
   ""
  ],
  "Serial Console": [
+  null,
+  ""
+ ],
+ "Session": [
   null,
   ""
  ],
@@ -635,7 +703,15 @@ return plural;
   null,
   ""
  ],
- "Target": [
+ "Switching host to maintenance mode failed. Received error: ": [
+  null,
+  ""
+ ],
+ "Switching host to maintenance mode in progress ...": [
+  null,
+  ""
+ ],
+ "System": [
   null,
   ""
  ],
@@ -727,11 +803,47 @@ return plural;
   null,
   ""
  ],
+ "VCPU settings could not be saved": [
+  null,
+  ""
+ ],
  "VDSM": [
   null,
   ""
  ],
  "VDSM Service Management": [
+  null,
+  ""
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  ""
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  ""
+ ],
+ "VM START action failed": [
   null,
   ""
  ],
@@ -775,7 +887,31 @@ return plural;
   null,
   ""
  ],
+ "bridge": [
+  null,
+  ""
+ ],
+ "cdrom": [
+  null,
+  ""
+ ],
+ "connecting": [
+  null,
+  ""
+ ],
  "cores": [
+  null,
+  ""
+ ],
+ "crashed": [
+  null,
+  ""
+ ],
+ "custom": [
+  null,
+  ""
+ ],
+ "direct": [
   null,
   ""
  ],
@@ -783,13 +919,85 @@ return plural;
   null,
   ""
  ],
+ "disk": [
+  null,
+  ""
+ ],
+ "down": [
+  null,
+  ""
+ ],
+ "dying": [
+  null,
+  ""
+ ],
  "enabled": [
   null,
   "gaitua"
  ],
+ "error": [
+  null,
+  "errorea"
+ ],
+ "ethernet": [
+  null,
+  "ethernet"
+ ],
+ "host": [
+  null,
+  ""
+ ],
+ "hostdev": [
+  null,
+  ""
+ ],
+ "idle": [
+  null,
+  ""
+ ],
+ "initializing": [
+  null,
+  ""
+ ],
+ "installation failed": [
+  null,
+  ""
+ ],
+ "installing OS": [
+  null,
+  ""
+ ],
+ "kdumping": [
+  null,
+  ""
+ ],
+ "maintenance": [
+  null,
+  ""
+ ],
+ "mcast": [
+  null,
+  ""
+ ],
+ "network": [
+  null,
+  "sarea"
+ ],
  "no": [
   null,
   "ez"
+ ],
+ "non operational": [
+  null,
+  ""
+ ],
+ "non responsive": [
+  null,
+  ""
+ ],
+ "oVirt": [
+  null,
+  "oVirt"
  ],
  "oVirt Host State:": [
   null,
@@ -811,6 +1019,18 @@ return plural;
   null,
   ""
  ],
+ "other": [
+  null,
+  ""
+ ],
+ "paused": [
+  null,
+  "pausatua"
+ ],
+ "pending approval": [
+  null,
+  ""
+ ],
  "qcow2": [
   null,
   ""
@@ -818,6 +1038,18 @@ return plural;
  "raw": [
   null,
   ""
+ ],
+ "reboot": [
+  null,
+  "berrabiarazi"
+ ],
+ "running": [
+  null,
+  ""
+ ],
+ "server": [
+  null,
+  "zerbitzaria"
  ],
  "show less": [
   null,
@@ -827,7 +1059,19 @@ return plural;
   null,
   ""
  ],
+ "shut off": [
+  null,
+  ""
+ ],
+ "shutdown": [
+  null,
+  "itzali"
+ ],
  "sockets": [
+  null,
+  ""
+ ],
+ "suspended (PM)": [
   null,
   ""
  ],
@@ -835,7 +1079,23 @@ return plural;
   null,
   "hariak"
  ],
+ "udp": [
+  null,
+  "udp"
+ ],
+ "unassigned": [
+  null,
+  ""
+ ],
  "undefined": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
   null,
   ""
  ],
@@ -851,7 +1111,7 @@ return plural;
   null,
   ""
  ],
- "vCPUs:": [
+ "vhostuser": [
   null,
   ""
  ],

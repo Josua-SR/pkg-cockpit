@@ -139,6 +139,10 @@ return plural;
   null,
   "下載 $0"
  ],
+ "Host name should not be changed in a domain": [
+  null,
+  "主持人不應該是空的"
+ ],
  "Install": [
   null,
   "安裝"
@@ -198,6 +202,10 @@ return plural;
  "One Time Password": [
   null,
   "一次性密碼"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit崩潰了"
  ],
  "Removals:": [
   null,

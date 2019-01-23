@@ -218,13 +218,10 @@ a.disabled:hover {
 /* Small list inside a dialog */
 /* Alert fixups */
 
-/* HACK: word-wrap workaround for long alerts https://github.com/patternfly/patternfly/issues/491 */
-
 .modal-content .alert {
     text-align: left;
     padding-top: 5px;
     padding-bottom: 5px;
-    word-wrap: break-word;
 }
 
 .modal-content .alert .fa {
@@ -941,12 +938,10 @@ a.disabled:hover {
 }
 /* Small list inside a dialog */
 /* Alert fixups */
-/* HACK: word-wrap workaround for long alerts https://github.com/patternfly/patternfly/issues/491 */
 .modal-content .alert {
   text-align: left;
   padding-top: 5px;
   padding-bottom: 5px;
-  word-wrap: break-word;
 }
 .modal-content .alert .fa {
   position: absolute;
@@ -2177,11 +2172,6 @@ thead.credential-lock.credential-unlocked > *:last-child {
   color: #A94442;
 }
 /* System information */
-#system-info-domain-list {
-  padding: 0px;
-  padding-top: 15px;
-  border: none;
-}
 #systime-date-input {
   display: inline;
   width: 150px;
@@ -2347,6 +2337,7 @@ It is less bad than using !important, at least.
   /* Normalize the icons in the navbar */
   line-height: inherit;
   margin-right: 5px;
+  padding-right: 0;
   position: static;
 }
 @media (min-width: 768px) {
@@ -2356,6 +2347,7 @@ It is less bad than using !important, at least.
     line-height: 50px;
     margin: 0;
     padding: 0 10px;
+    font-size: 13px;
   }
   #machine-spinner {
     /* Vertical alignment is a hack here. (50px - 24px) / 2 = 13px */

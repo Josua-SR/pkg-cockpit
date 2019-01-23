@@ -155,9 +155,12 @@ function doRefreshEvents(dispatch, getState) {
                                 .forEach(id => promises.push(doRefreshTemplates(dispatch, getState, id)));
                     }
 
+                    // We can't use Promise.all() here until cockpit is able to dispatch es2015 promises
+                    // https://github.com/cockpit-project/cockpit/issues/10956
+                    // eslint-disable-next-line cockpit/no-cockpit-all
                     cockpit.all(promises)
                             .then(() => deferred.resolve())
-                            .fail((r) => deferred.reject(r));
+                            .catch((r) => deferred.reject(r));
                 } else {
                     if (result && Object.getOwnPropertyNames(result).length === 0) { // no new events
                         logDebug('No new oVirt events received');

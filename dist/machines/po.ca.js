@@ -87,37 +87,41 @@ return plural;
   null,
   "Adreça:"
  ],
+ "Always attach": [
+  null,
+  "Sempre"
+ ],
  "Apply": [
   null,
   "Aplica"
- ],
- "Attach permanently": [
-  null,
-  ""
  ],
  "Automatically start libvirt on boot": [
   null,
   "Inicia automàticament libvirt amb l'arrencada"
  ],
- "Autostart:": [
+ "Autostart": [
   null,
-  "Inici automàtic:"
+  "Inici automàtic"
  ],
  "Available": [
   null,
   "Disponible"
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
-  "Ordre d'arrencada:"
+  "Ordre d'arrencada"
  ],
  "Bus": [
   null,
   "Bus"
  ],
- "CPU Type:": [
+ "CHANGE NETWORK STATE action failed": [
   null,
-  "Tipus de CPU:"
+  "Ha fallat l'acció CHANGE NETWORK STATE"
+ ],
+ "CPU Type": [
+  null,
+  "Tipus de CPU"
  ],
  "Cancel": [
   null,
@@ -175,6 +179,10 @@ return plural;
   null,
   ""
  ],
+ "Create Storage Pool": [
+  null,
+  "Restableix l'agrupació d'emmagatzematge"
+ ],
  "Create VM": [
   null,
   "Crea la MV"
@@ -231,9 +239,9 @@ return plural;
   null,
   "Edita"
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
-  "Màquina emulada:"
+  "Màquina emulada"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -247,6 +255,10 @@ return plural;
   null,
   "Sistema de fitxers"
  ],
+ "Filesystem Directory": [
+  null,
+  "Tipus de sistema de fitxers"
+ ],
  "Force Restart": [
   null,
   "Força el reinici"
@@ -258,6 +270,10 @@ return plural;
  "Format": [
   null,
   "Formata"
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
  ],
  "GiB": [
   null,
@@ -274,6 +290,18 @@ return plural;
  "Host": [
   null,
   "Amfitrió"
+ ],
+ "Host Name": [
+  null,
+  "Nom d'amfitrió"
+ ],
+ "Host should not be empty": [
+  null,
+  "El nom no pot estar en blanc"
+ ],
+ "INSTALL VM action failed": [
+  null,
+  "Ha fallat l'acció INSTALL VM"
  ],
  "Immediately Start VM": [
   null,
@@ -331,10 +359,6 @@ return plural;
   null,
   ""
  ],
- "Memory:": [
-  null,
-  "Memòria:"
- ],
  "MiB": [
   null,
   "MiB"
@@ -362,6 +386,10 @@ return plural;
  "Name should not consist of empty characters only": [
   null,
   ""
+ ],
+ "Network File System": [
+  null,
+  "Sense sistema de fitxers"
  ],
  "Network Type": [
   null,
@@ -427,6 +455,10 @@ return plural;
   null,
   "Visió de conjunt"
  ],
+ "Path on host's filesystem": [
+  null,
+  "Camí al fitxer ISO al sistema de fitxers de l'amfitrió"
+ ],
  "Path to ISO file on host's file system": [
   null,
   "Camí al fitxer ISO al sistema de fitxers de l'amfitrió"
@@ -434,6 +466,10 @@ return plural;
  "Path to file": [
   null,
   "Camí al fitxer"
+ ],
+ "Persistence": [
+  null,
+  "Volums persistents"
  ],
  "Please enter new volume name": [
   null,
@@ -527,6 +563,10 @@ return plural;
   null,
   "Consola sèrie"
  ],
+ "Session": [
+  null,
+  "Sessió"
+ ],
  "Shut Down": [
   null,
   "Apaga"
@@ -543,7 +583,15 @@ return plural;
   null,
   "Origen"
  ],
- "Source should start with http, ftp or nfs protocol": [
+ "Source Path": [
+  null,
+  "Origen"
+ ],
+ "Source path should not be empty": [
+  null,
+  "El nom no pot estar en blanc"
+ ],
+ "Source should start with https, ftp or nfs protocol": [
   null,
   ""
  ],
@@ -551,13 +599,29 @@ return plural;
   null,
   "Inicia libvirt"
  ],
+ "Start pool when host boots": [
+  null,
+  ""
+ ],
  "Start the VM to see disk statistics.": [
   null,
   "Inicieu la MV per veure les estadístiques del disc."
  ],
+ "Startup": [
+  null,
+  "Inicia"
+ ],
  "State": [
   null,
   "Estat"
+ ],
+ "Storage Pool Name": [
+  null,
+  "Agrupació d'emmagatzematge"
+ ],
+ "Storage Pool failed to be created": [
+  null,
+  ""
  ],
  "Storage Pools": [
   null,
@@ -575,9 +639,17 @@ return plural;
   null,
   ""
  ],
- "Target": [
+ "System": [
+  null,
+  "Sistema"
+ ],
+ "Target Path": [
   null,
   "Objectiu"
+ ],
+ "Target path should not be empty": [
+  null,
+  "El nom no pot estar en blanc"
  ],
  "The VM crashed.": [
   null,
@@ -614,6 +686,10 @@ return plural;
  "The VM is suspended by guest power management.": [
   null,
   "La MV està en suspensió per la gestió d'energia del convidat."
+ ],
+ "The directory on the server being exported": [
+  null,
+  ""
  ],
  "The pool is empty": [
   null,
@@ -667,6 +743,54 @@ return plural;
   null,
   ""
  ],
+ "VM CHANGE_NETWORK_STATE action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE action failed": [
+  null,
+  ""
+ ],
+ "VM DETACH_DISK action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "Ha fallat l'acció VM FORCE OFF"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "Ha fallat l'acció VM FORCE REBOOT"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "Ha fallat l'acció VM REBOOT"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  ""
+ ],
+ "VM SENDNMI action failed": [
+  null,
+  ""
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "Ha fallat l'acció VM SHUT DOWN"
+ ],
+ "VM START action failed": [
+  null,
+  "Ha fallat l'acció VM START"
+ ],
  "VNC": [
   null,
   "VNC"
@@ -703,13 +827,85 @@ return plural;
   null,
   "actiu"
  ],
+ "bridge": [
+  null,
+  "pont"
+ ],
+ "cdrom": [
+  null,
+  "cdrom"
+ ],
+ "crashed": [
+  null,
+  "estavellat"
+ ],
+ "custom": [
+  null,
+  "personalitzat"
+ ],
+ "direct": [
+  null,
+  "directe"
+ ],
+ "disabled": [
+  null,
+  "inhabilitat"
+ ],
+ "disk": [
+  null,
+  "disc"
+ ],
+ "down": [
+  null,
+  ""
+ ],
+ "dying": [
+  null,
+  "morint"
+ ],
+ "enabled": [
+  null,
+  "habilitat"
+ ],
+ "ethernet": [
+  null,
+  "ethernet"
+ ],
+ "host": [
+  null,
+  "amfitrió"
+ ],
+ "hostdev": [
+  null,
+  ""
+ ],
+ "idle": [
+  null,
+  "ociós"
+ ],
  "inactive": [
   null,
   "inactiu"
  ],
+ "mcast": [
+  null,
+  "mcast"
+ ],
+ "network": [
+  null,
+  "xarxa"
+ ],
  "no": [
   null,
   "no"
+ ],
+ "other": [
+  null,
+  "altres"
+ ],
+ "paused": [
+  null,
+  "pausa"
  ],
  "qcow2": [
   null,
@@ -719,6 +915,14 @@ return plural;
   null,
   ""
  ],
+ "running": [
+  null,
+  "en execució"
+ ],
+ "server": [
+  null,
+  "servidor"
+ ],
  "show less": [
   null,
   "mostra menys"
@@ -727,9 +931,33 @@ return plural;
   null,
   "mostra més"
  ],
+ "shut off": [
+  null,
+  "apagat"
+ ],
+ "shutdown": [
+  null,
+  "apaga"
+ ],
+ "suspended (PM)": [
+  null,
+  "suspès (PM)"
+ ],
+ "udp": [
+  null,
+  "udp"
+ ],
  "undefined": [
   null,
   "indefinit"
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
+  null,
+  "usuari"
  ],
  "vCPU Count": [
   null,
@@ -739,9 +967,13 @@ return plural;
   null,
   ""
  ],
- "vCPUs:": [
+ "vCPUs": [
   null,
-  "vCPUs:"
+  "vCPU"
+ ],
+ "vhostuser": [
+  null,
+  ""
  ],
  "yes": [
   null,

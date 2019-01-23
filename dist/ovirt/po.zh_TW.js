@@ -99,19 +99,19 @@ return plural;
   null,
   "將關閉所有正在運行的虛擬機。"
  ],
+ "Always attach": [
+  null,
+  "總是"
+ ],
  "Apply": [
   null,
   "套用"
- ],
- "Attach permanently": [
-  null,
-  ""
  ],
  "Automatically selected host": [
   null,
   "自動選擇主機"
  ],
- "Autostart:": [
+ "Autostart": [
   null,
   "自動開啟："
  ],
@@ -131,7 +131,7 @@ return plural;
   null,
   "基本模板："
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
   "引導順序："
  ],
@@ -139,9 +139,17 @@ return plural;
   null,
   "總線"
  ],
- "CPU Type:": [
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "更改網絡狀態操作失敗"
+ ],
+ "CPU Type": [
   null,
   "CPU類型："
+ ],
+ "CREATE VM action failed": [
+  null,
+  "CREATE VM操作失敗"
  ],
  "Cancel": [
   null,
@@ -291,7 +299,7 @@ return plural;
   null,
   "編輯vdsm.conf"
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
   "仿真機："
  ],
@@ -323,6 +331,10 @@ return plural;
   null,
   "格式"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "獲取HYPERVISOR MAX VCPU操作失敗"
+ ],
  "GiB": [
   null,
   "GiB"
@@ -351,6 +363,10 @@ return plural;
   null,
   "主持維護"
  ],
+ "INSTALL VM action failed": [
+  null,
+  "安裝VM操作失敗"
+ ],
  "Install": [
   null,
   "安裝"
@@ -371,6 +387,10 @@ return plural;
   null,
   "MAC 位址"
  ],
+ "MIGRATE action failed": [
+  null,
+  "MIGRATE操作失敗"
+ ],
  "Mac Address": [
   null,
   "MAC地址"
@@ -386,10 +406,6 @@ return plural;
  "Memory": [
   null,
   "記憶體"
- ],
- "Memory:": [
-  null,
-  "記憶體："
  ],
  "MiB": [
   null,
@@ -491,6 +507,10 @@ return plural;
   null,
   "簡介"
  ],
+ "Persistence": [
+  null,
+  "持續卷"
+ ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
   "請確認，主機應切換到維護模式。"
@@ -543,9 +563,17 @@ return plural;
   null,
   "要向guest虛擬機公開的首選套接字數。"
  ],
+ "Preparing for Maintenance": [
+  null,
+  "準備維護"
+ ],
  "Protocol": [
   null,
   "協定"
+ ],
+ "REBOOT action failed": [
+  null,
+  "REBOOT操作失敗"
  ],
  "Readonly": [
   null,
@@ -583,6 +611,14 @@ return plural;
   null,
   "運行自："
  ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  "SET VCPU SETTINGS操作失敗"
+ ],
+ "SHUTDOWN action failed": [
+  null,
+  "SHUTDOWN操作失敗"
+ ],
  "SPICE": [
   null,
   "SPICE"
@@ -599,6 +635,14 @@ return plural;
   null,
   "SPICE TLS端口："
  ],
+ "START action failed": [
+  null,
+  "START操作失敗"
+ ],
+ "SUSPEND action failed": [
+  null,
+  "SUSPEND操作失敗"
+ ],
  "Save": [
   null,
   "儲存"
@@ -614,6 +658,10 @@ return plural;
  "Serial Console": [
   null,
   "串行控制台"
+ ],
+ "Session": [
+  null,
+  "作業階段"
  ],
  "Shut Down": [
   null,
@@ -655,9 +703,17 @@ return plural;
   null,
   "將主機切換到維護"
  ],
- "Target": [
+ "Switching host to maintenance mode failed. Received error: ": [
   null,
-  "目標"
+  "將主機切換到維護模式失敗。收到錯誤： "
+ ],
+ "Switching host to maintenance mode in progress ...": [
+  null,
+  "將主機切換到正在進行的維護模式"
+ ],
+ "System": [
+  null,
+  "系統"
  ],
  "Template": [
   null,
@@ -759,6 +815,38 @@ return plural;
   null,
   "VDSM服務管理"
  ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  "VM DELETE（DESTROY）操作失敗"
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  "VM DELETE（UNDEFINE）操作失敗"
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "VM FORCE OFF操作失敗"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "VM FORCE REBOOT操作失敗"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "VM REBOOT操作失敗"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "VM SEND不可屏蔽中斷操作失敗"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "VM SHUT DOWN操作失敗"
+ ],
+ "VM START action failed": [
+  null,
+  "VM START操作失敗"
+ ],
  "VM icon": [
   null,
   "VM圖標"
@@ -799,21 +887,117 @@ return plural;
   null,
   "音量"
  ],
+ "bridge": [
+  null,
+  "橋"
+ ],
+ "cdrom": [
+  null,
+  "cdrom"
+ ],
+ "connecting": [
+  null,
+  "連線中"
+ ],
  "cores": [
   null,
   "核心"
+ ],
+ "crashed": [
+  null,
+  "墜毀"
+ ],
+ "custom": [
+  null,
+  "習慣"
+ ],
+ "direct": [
+  null,
+  "直接"
  ],
  "disabled": [
   null,
   "已停用"
  ],
+ "disk": [
+  null,
+  "磁碟"
+ ],
+ "down": [
+  null,
+  "down"
+ ],
+ "dying": [
+  null,
+  "垂死"
+ ],
  "enabled": [
   null,
   "已啟用"
  ],
+ "error": [
+  null,
+  "錯誤"
+ ],
+ "ethernet": [
+  null,
+  "以太網絡"
+ ],
+ "host": [
+  null,
+  "主機"
+ ],
+ "hostdev": [
+  null,
+  "hostdev"
+ ],
+ "idle": [
+  null,
+  "閒"
+ ],
+ "initializing": [
+  null,
+  "初始化"
+ ],
+ "installation failed": [
+  null,
+  "安裝失敗"
+ ],
+ "installing OS": [
+  null,
+  "安裝OS"
+ ],
+ "kdumping": [
+  null,
+  "kdumping"
+ ],
+ "maintenance": [
+  null,
+  "保養"
+ ],
+ "mcast": [
+  null,
+  "MCAST"
+ ],
+ "network": [
+  null,
+  "網絡"
+ ],
  "no": [
   null,
   "否"
+ ],
+ "non operational": [
+  null,
+  "不運作"
+ ],
+ "non responsive": [
+  null,
+  "沒有回應"
+ ],
+ "oVirt": [
+  null,
+  "oVirt"
  ],
  "oVirt Host State:": [
   null,
@@ -835,6 +1019,18 @@ return plural;
   null,
   "oVirt登錄正在進行中"
  ],
+ "other": [
+  null,
+  "其他"
+ ],
+ "paused": [
+  null,
+  "已暫停"
+ ],
+ "pending approval": [
+  null,
+  "待批准"
+ ],
  "qcow2": [
   null,
   "qcow2"
@@ -842,6 +1038,18 @@ return plural;
  "raw": [
   null,
   "原始"
+ ],
+ "reboot": [
+  null,
+  "重新啟動"
+ ],
+ "running": [
+  null,
+  "執行中"
+ ],
+ "server": [
+  null,
+  "服務器"
  ],
  "show less": [
   null,
@@ -851,17 +1059,45 @@ return plural;
   null,
   "顯示更多"
  ],
+ "shut off": [
+  null,
+  "關閉"
+ ],
+ "shutdown": [
+  null,
+  "關掉"
+ ],
  "sockets": [
   null,
   "插座"
+ ],
+ "suspended (PM)": [
+  null,
+  "暫停（PM）"
  ],
  "threads": [
   null,
   "線程"
  ],
+ "udp": [
+  null,
+  "udp"
+ ],
+ "unassigned": [
+  null,
+  "未分配"
+ ],
  "undefined": [
   null,
   "未定義"
+ ],
+ "up": [
+  null,
+  "up"
+ ],
+ "user": [
+  null,
+  "使用者"
  ],
  "vCPU Count": [
   null,
@@ -875,9 +1111,9 @@ return plural;
   null,
   "vCPUs"
  ],
- "vCPUs:": [
+ "vhostuser": [
   null,
-  "個vCPU："
+  "vhostuser"
  ],
  "yes": [
   null,

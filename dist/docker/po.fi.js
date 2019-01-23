@@ -71,39 +71,9 @@ return plural;
   null,
   " (jaettu OS:n kanssa)"
  ],
- "$0 day": [
-  "$0 days",
-  "$0 päivä",
-  "$0 päivää"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 tunti",
-  "$0 tuntia"
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 minuutti",
-  "$0 minuuttia"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 kuukausi",
-  "$0 kuukautta"
- ],
  "$0 shares": [
   null,
   "$0 jaot"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 viikko",
-  "$0 viikkoa"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 vuosi",
-  "$0 vuotta"
  ],
  "${hip}:${hport} -> $cport": [
   null,
@@ -121,6 +91,14 @@ return plural;
   null,
   "Uusi tallennustila"
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
+ "All In One": [
+  null,
+  ""
+ ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
   "Kaikki valituilla levyillä oleva data poistetaan ja levyt lisätään tallennuspooliin."
@@ -132,6 +110,18 @@ return plural;
  "Author": [
   null,
   "Tekijä"
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -198,6 +188,10 @@ return plural;
   null,
   ""
  ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
  "Configure storage...": [
   null,
   "Aseta tallennustila..."
@@ -230,6 +224,10 @@ return plural;
   null,
   "Kontit"
  ],
+ "Convertible": [
+  null,
+  ""
+ ],
  "Could not add all disks": [
   null,
   "Ei voitu lisätä kaikkia levyjä"
@@ -258,6 +256,14 @@ return plural;
   null,
   "Kontin poistaminen tuhoaa kaiken sillä olevan datan."
  ],
+ "Desktop": [
+  null,
+  "Työpöytä"
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Details": [
   null,
   "Yksityiskohdat"
@@ -265,6 +271,10 @@ return plural;
  "Docker is not installed or activated on the system": [
   null,
   "Docker ei ole asennettu tai aktiivisena järjestelmässä"
+ ],
+ "Docking Station": [
+  null,
+  ""
  ],
  "Download": [
   null,
@@ -281,6 +291,10 @@ return plural;
  "Duplicate port": [
   null,
   "Portin duplikaatti"
+ ],
+ "Embedded PC": [
+  null,
+  ""
  ],
  "Entrypoint": [
   null,
@@ -305,6 +319,10 @@ return plural;
  "Exited $ExitCode": [
   null,
   "Poistui $ExitCode"
+ ],
+ "Expansion Chassis": [
+  null,
+  ""
  ],
  "Expose container ports": [
   null,
@@ -333,6 +351,10 @@ return plural;
  "Get new image": [
   null,
   "Hae uusi levykuva"
+ ],
+ "Hand Held": [
+  null,
+  ""
  ],
  "Hard Disk": [
   null,
@@ -386,6 +408,14 @@ return plural;
   null,
   "Virheellinen portti"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
+ "Laptop": [
+  null,
+  "Kannettava"
+ ],
  "Link to another container": [
   null,
   "Yhdistä toiseen konttiin"
@@ -402,9 +432,21 @@ return plural;
   null,
   "Paikalliset levyt"
  ],
+ "Low Profile Desktop": [
+  null,
+  "Matalan tason työpöytä"
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "MAC Address:": [
   null,
   "MAC-osoite:"
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
  ],
  "Memory": [
   null,
@@ -422,9 +464,21 @@ return plural;
   null,
   "MiB"
  ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
  "Mount container volumes": [
   null,
   "Liitä konttitaltiot"
+ ],
+ "Multi-system Chassis": [
+  null,
+  ""
  ],
  "Name": [
   null,
@@ -482,6 +536,10 @@ return plural;
   null,
   "Ei löytynyt"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "Pois"
@@ -503,7 +561,19 @@ return plural;
   "",
   ""
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Overview": [
+  null,
+  ""
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
   null,
   ""
  ],
@@ -519,6 +589,10 @@ return plural;
   null,
   ""
  ],
+ "Portable": [
+  null,
+  ""
+ ],
  "Ports": [
   null,
   "Portit"
@@ -530,6 +604,14 @@ return plural;
  "Problems": [
   null,
   "Ongelmat"
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
+  null,
+  ""
  ],
  "ReadOnly": [
   null,
@@ -587,6 +669,10 @@ return plural;
   null,
   ""
  ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Security": [
   null,
   ""
@@ -611,6 +697,10 @@ return plural;
   null,
   ""
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
  "Start": [
   null,
   "Käynnistä"
@@ -626,6 +716,10 @@ return plural;
  "State:": [
   null,
   "Tila:"
+ ],
+ "Stick PC": [
+  null,
+  "Tikku-PC"
  ],
  "Stop": [
   null,
@@ -647,9 +741,21 @@ return plural;
   null,
   ""
  ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "TCP": [
   null,
   "TCP"
+ ],
+ "Tablet": [
+  null,
+  ""
  ],
  "Tag": [
   null,
@@ -683,6 +789,10 @@ return plural;
   null,
   "Yhteensä"
  ],
+ "Tower": [
+  null,
+  "Torni"
+ ],
  "Try again": [
   null,
   "Yritä uudelleen"
@@ -698,6 +808,10 @@ return plural;
  "Unexpected error": [
   null,
   "Odottamaton virhe"
+ ],
+ "Unknown": [
+  null,
+  "Tuntematon"
  ],
  "Unless Stopped": [
   null,

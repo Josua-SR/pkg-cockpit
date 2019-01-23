@@ -91,6 +91,14 @@ return plural;
   null,
   "额外的存储"
  ],
+ "Advanced TCA": [
+  null,
+  "高级 TCA"
+ ],
+ "All In One": [
+  null,
+  "所有"
+ ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
   "所选磁盘上的所有数据将会被删除，磁盘将会被添加到存储池。"
@@ -102,6 +110,18 @@ return plural;
  "Author": [
   null,
   "作者"
+ ],
+ "Blade": [
+  null,
+  "刀片"
+ ],
+ "Blade enclosure": [
+  null,
+  "刀片机箱"
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  "总线扩展机箱"
  ],
  "CPU": [
   null,
@@ -167,6 +187,10 @@ return plural;
   null,
   "提交镜像"
  ],
+ "Compact PCI": [
+  null,
+  "紧凑型 PCI"
+ ],
  "Configure storage...": [
   null,
   "配置存储..."
@@ -199,6 +223,10 @@ return plural;
   null,
   "容器"
  ],
+ "Convertible": [
+  null,
+  "可转换"
+ ],
  "Could not add all disks": [
   null,
   "无法添加所有磁盘"
@@ -227,6 +255,14 @@ return plural;
   null,
   "删除容器将清除其中的所有数据。"
  ],
+ "Desktop": [
+  null,
+  "桌面"
+ ],
+ "Detachable": [
+  null,
+  "可拆开"
+ ],
  "Details": [
   null,
   "详情"
@@ -234,6 +270,10 @@ return plural;
  "Docker is not installed or activated on the system": [
   null,
   "系统中的 Docker 未安装或未激活"
+ ],
+ "Docking Station": [
+  null,
+  "Docking Station"
  ],
  "Download": [
   null,
@@ -250,6 +290,10 @@ return plural;
  "Duplicate port": [
   null,
   "重复端口"
+ ],
+ "Embedded PC": [
+  null,
+  "嵌入式 PC"
  ],
  "Entrypoint": [
   null,
@@ -274,6 +318,10 @@ return plural;
  "Exited $ExitCode": [
   null,
   "已退出 $ExitCode"
+ ],
+ "Expansion Chassis": [
+  null,
+  "扩展机箱"
  ],
  "Expose container ports": [
   null,
@@ -302,6 +350,10 @@ return plural;
  "Get new image": [
   null,
   "获取新镜像"
+ ],
+ "Hand Held": [
+  null,
+  "手持"
  ],
  "Hard Disk": [
   null,
@@ -355,6 +407,14 @@ return plural;
   null,
   "无效端口"
  ],
+ "IoT Gateway": [
+  null,
+  "IoT 网关"
+ ],
+ "Laptop": [
+  null,
+  "笔记本电脑"
+ ],
  "Link to another container": [
   null,
   "链接到另一个容器"
@@ -371,9 +431,21 @@ return plural;
   null,
   "本地磁盘"
  ],
+ "Low Profile Desktop": [
+  null,
+  "低调桌面"
+ ],
+ "Lunch Box": [
+  null,
+  "午餐盒"
+ ],
  "MAC Address:": [
   null,
   "MAC 地址:"
+ ],
+ "Main Server Chassis": [
+  null,
+  "主服务器机箱"
  ],
  "Memory": [
   null,
@@ -391,9 +463,21 @@ return plural;
   null,
   "MiB"
  ],
+ "Mini PC": [
+  null,
+  "迷你电脑"
+ ],
+ "Mini Tower": [
+  null,
+  "Mini Tower"
+ ],
  "Mount container volumes": [
   null,
   "挂载容器卷"
+ ],
+ "Multi-system Chassis": [
+  null,
+  "多系统机箱"
  ],
  "Name": [
   null,
@@ -451,6 +535,10 @@ return plural;
   null,
   "未找到"
  ],
+ "Notebook": [
+  null,
+  "笔记本"
+ ],
  "Off": [
   null,
   "关"
@@ -471,9 +559,21 @@ return plural;
   "On failure, retry $0 times",
   "失败时, 重试 $0 次"
  ],
+ "Other": [
+  null,
+  "其他"
+ ],
  "Overview": [
   null,
   "概览"
+ ],
+ "Peripheral Chassis": [
+  null,
+  "外设机箱"
+ ],
+ "Pizza Box": [
+  null,
+  "披萨盒"
  ],
  "Please confirm deletion of $0": [
   null,
@@ -487,6 +587,10 @@ return plural;
   null,
   "请尝试另一个终端"
  ],
+ "Portable": [
+  null,
+  "手提"
+ ],
  "Ports": [
   null,
   "端口"
@@ -498,6 +602,14 @@ return plural;
  "Problems": [
   null,
   "问题"
+ ],
+ "RAID Chassis": [
+  null,
+  "RAID 机箱"
+ ],
+ "Rack Mount Chassis": [
+  null,
+  "机架式机箱"
  ],
  "ReadOnly": [
   null,
@@ -555,6 +667,10 @@ return plural;
   null,
   "运行镜像"
  ],
+ "Sealed-case PC": [
+  null,
+  "密封式 PC"
+ ],
  "Security": [
   null,
   "安全性"
@@ -579,6 +695,10 @@ return plural;
   null,
   "固态磁盘"
  ],
+ "Space-saving Computer": [
+  null,
+  "节省空间的计算机"
+ ],
  "Start": [
   null,
   "启动"
@@ -594,6 +714,10 @@ return plural;
  "State:": [
   null,
   "阶段："
+ ],
+ "Stick PC": [
+  null,
+  "Stick PC"
  ],
  "Stop": [
   null,
@@ -615,9 +739,21 @@ return plural;
   null,
   "存储池"
  ],
+ "Sub Chassis": [
+  null,
+  "子机箱"
+ ],
+ "Sub Notebook": [
+  null,
+  "子笔记本"
+ ],
  "TCP": [
   null,
   "TCP"
+ ],
+ "Tablet": [
+  null,
+  "平板"
  ],
  "Tag": [
   null,
@@ -651,6 +787,10 @@ return plural;
   null,
   "总共"
  ],
+ "Tower": [
+  null,
+  "Tower"
+ ],
  "Try again": [
   null,
   "重试"
@@ -666,6 +806,10 @@ return plural;
  "Unexpected error": [
   null,
   "意外的错误"
+ ],
+ "Unknown": [
+  null,
+  "未知"
  ],
  "Unless Stopped": [
   null,

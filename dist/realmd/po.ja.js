@@ -139,6 +139,10 @@ return plural;
   null,
   "$0 をダウンロード中"
  ],
+ "Host name should not be changed in a domain": [
+  null,
+  "ホストは空にできません"
+ ],
  "Install": [
   null,
   "インストール"
@@ -198,6 +202,10 @@ return plural;
  "One Time Password": [
   null,
   "ワンタイムパスワード"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit がクラッシュしました"
  ],
  "Removals:": [
   null,

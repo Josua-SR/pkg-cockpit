@@ -379,6 +379,10 @@ return plural;
   null,
   ""
  ],
+ "You must wait longer to change your password": [
+  null,
+  ""
+ ],
  "translatable": [
   null,
   "itzulgarria"

@@ -67,6 +67,10 @@ return plural;
   "language": "zh_TW",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Template": [
+  null,
+  "$0 模板"
+ ],
  "$0 is not available from any repository.": [
   null,
   "$0 在任何存儲庫中都不可用。"
@@ -86,6 +90,10 @@ return plural;
  "1 hour": [
   null,
   "1小時"
+ ],
+ "1 min": [
+  null,
+  "1分鐘"
  ],
  "1 week": [
   null,
@@ -135,6 +143,10 @@ return plural;
   null,
   "1"
  ],
+ "2 min": [
+  null,
+  "2分鐘"
+ ],
  "20 Minutes": [
   null,
   "20分鐘"
@@ -183,6 +195,10 @@ return plural;
   null,
   "第2"
  ],
+ "3 min": [
+  null,
+  "3分鐘"
+ ],
  "30th": [
   null,
   "第30"
@@ -195,6 +211,10 @@ return plural;
   null,
   "第3"
  ],
+ "4 min": [
+  null,
+  "4分鐘"
+ ],
  "40 Minutes": [
   null,
   "40分鐘"
@@ -204,6 +224,10 @@ return plural;
   "第四"
  ],
  "5 Minutes": [
+  null,
+  "5分鐘"
+ ],
+ "5 min": [
   null,
   "5分鐘"
  ],
@@ -243,6 +267,10 @@ return plural;
   null,
   "附加包："
  ],
+ "Advanced TCA": [
+  null,
+  "高級TCA"
+ ],
  "After": [
   null,
   "封底"
@@ -255,6 +283,10 @@ return plural;
   null,
   "警報及以上"
  ],
+ "All In One": [
+  null,
+  "一體"
+ ],
  "Asset Tag": [
   null,
   "資產標籤"
@@ -262,6 +294,10 @@ return plural;
  "At specific time": [
   null,
   "在特定時間"
+ ],
+ "Automatic Startup": [
+  null,
+  "自動更新"
  ],
  "Automatically using NTP": [
   null,
@@ -283,6 +319,34 @@ return plural;
   null,
   "BIOS版本"
  ],
+ "Before": [
+  null,
+  "之前"
+ ],
+ "Binds To": [
+  null,
+  "綁定到"
+ ],
+ "Blade": [
+  null,
+  "刀"
+ ],
+ "Blade enclosure": [
+  null,
+  "刀片機箱"
+ ],
+ "Bound By": [
+  null,
+  "以......為界"
+ ],
+ "Bug Fix Updates Available": [
+  null,
+  "錯誤修復更新可用"
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  "總線擴展機箱"
+ ],
  "CPU": [
   null,
   "CPU"
@@ -294,6 +358,10 @@ return plural;
  "Cancel": [
   null,
   "取消"
+ ],
+ "Cannot schedule event in the past": [
+  null,
+  "無法安排過去的活動"
  ],
  "Change": [
   null,
@@ -307,6 +375,10 @@ return plural;
   null,
   "改變系統時間"
  ],
+ "Checking for updates…": [
+  null,
+  "查詢更新…"
+ ],
  "Checking installed software": [
   null,
   "檢查已安裝的軟件"
@@ -314,6 +386,10 @@ return plural;
  "Class": [
   null,
   "類別"
+ ],
+ "Click to see system hardware information": [
+  null,
+  "單擊以查看系統硬件信息"
  ],
  "Close": [
   null,
@@ -323,9 +399,33 @@ return plural;
   null,
   "指令"
  ],
+ "Compact PCI": [
+  null,
+  "緊湊型PCI"
+ ],
+ "Condition $0=$1 was not met": [
+  null,
+  "條件 $0=$1 沒有得到滿足"
+ ],
  "Condition failed": [
   null,
   "條件失敗"
+ ],
+ "Conflicted By": [
+  null,
+  "衝突的"
+ ],
+ "Conflicts": [
+  null,
+  "衝突"
+ ],
+ "Consists Of": [
+  null,
+  "由組成"
+ ],
+ "Convertible": [
+  null,
+  "可兌換"
  ],
  "Create Timer": [
   null,
@@ -355,9 +455,29 @@ return plural;
   null,
   "說明"
  ],
+ "Desktop": [
+  null,
+  "桌面環境"
+ ],
+ "Detachable": [
+  null,
+  "可拆開"
+ ],
+ "Disable": [
+  null,
+  "停用"
+ ],
+ "Disabled": [
+  null,
+  "已停用"
+ ],
  "Disk I/O": [
   null,
   "磁碟 I/O"
+ ],
+ "Docking Station": [
+  null,
+  "停靠站"
  ],
  "Domain": [
   null,
@@ -371,9 +491,29 @@ return plural;
   null,
   "下載 $0"
  ],
+ "Embedded PC": [
+  null,
+  "嵌入式PC"
+ ],
+ "Enable": [
+  null,
+  "啟用"
+ ],
+ "Enable Forcefully": [
+  null,
+  "強制啟用"
+ ],
  "Enable stored metrics…": [
   null,
   "啟用存儲的指標..."
+ ],
+ "Enabled": [
+  null,
+  "已啟用"
+ ],
+ "Enhancement Updates Available": [
+  null,
+  "可用的增強更新"
  ],
  "Entry": [
   null,
@@ -391,6 +531,10 @@ return plural;
   null,
   "一切"
  ],
+ "Expansion Chassis": [
+  null,
+  "擴展機箱"
+ ],
  "Friday": [
   null,
   "週五"
@@ -406,6 +550,10 @@ return plural;
  "Go to now": [
   null,
   "去吧"
+ ],
+ "Hand Held": [
+  null,
+  "手持"
  ],
  "Hardware": [
   null,
@@ -423,6 +571,10 @@ return plural;
   null,
   "小時：分鐘"
  ],
+ "Hour needs to be a number between 0-23": [
+  null,
+  "小時需要是0-23之間的數字"
+ ],
  "Hours": [
   null,
   "時"
@@ -430,6 +582,10 @@ return plural;
  "I/O Wait": [
   null,
   "I / O等待"
+ ],
+ "Id": [
+  null,
+  "ID"
  ],
  "Info and above": [
   null,
@@ -451,9 +607,37 @@ return plural;
   null,
   "實例"
  ],
+ "Invalid date format": [
+  null,
+  "日期格式無效"
+ ],
+ "Invalid date format and invalid time format": [
+  null,
+  "日期格式無效，時間格式無效"
+ ],
+ "Invalid date format.": [
+  null,
+  "日期格式無效。"
+ ],
+ "Invalid number.": [
+  null,
+  "無效號碼。"
+ ],
+ "Invalid time format": [
+  null,
+  "時間格式無效"
+ ],
  "Invalid time zone": [
   null,
   "時區無效"
+ ],
+ "IoT Gateway": [
+  null,
+  "物聯網網關"
+ ],
+ "Joins Namespace Of": [
+  null,
+  "加入命名空間"
  ],
  "Journal": [
   null,
@@ -471,6 +655,10 @@ return plural;
   null,
   "Kernel"
  ],
+ "Laptop": [
+  null,
+  "筆記本電腦"
+ ],
  "Last 24 hours": [
   null,
   "過去24小時"
@@ -478,6 +666,10 @@ return plural;
  "Last 7 days": [
   null,
   "過去7天"
+ ],
+ "Last Trigger": [
+  null,
+  "最後觸發"
  ],
  "Load earlier entries": [
   null,
@@ -495,6 +687,14 @@ return plural;
   null,
   "日誌"
  ],
+ "Low Profile Desktop": [
+  null,
+  "低調桌面"
+ ],
+ "Lunch Box": [
+  null,
+  "午餐盒"
+ ],
  "Machine ID": [
   null,
   "機器ID"
@@ -503,9 +703,21 @@ return plural;
   null,
   "機器SSH密鑰指紋"
  ],
+ "Main Server Chassis": [
+  null,
+  "主服務器機箱"
+ ],
  "Manually": [
   null,
   "手動"
+ ],
+ "Mask": [
+  null,
+  "遮罩"
+ ],
+ "Mask Forcefully": [
+  null,
+  "面具強有力"
  ],
  "Memory": [
   null,
@@ -514,6 +726,22 @@ return plural;
  "Memory & Swap": [
   null,
   "記憶和交換"
+ ],
+ "Message to logged in users": [
+  null,
+  "登錄用戶的消息"
+ ],
+ "Mini PC": [
+  null,
+  "迷你電腦"
+ ],
+ "Mini Tower": [
+  null,
+  "迷你塔"
+ ],
+ "Minute needs to be a number between 0-59": [
+  null,
+  "分鐘需要是0-59之間的數字"
  ],
  "Minutes": [
   null,
@@ -527,13 +755,29 @@ return plural;
   null,
   "週一"
  ],
+ "Multi-system Chassis": [
+  null,
+  "多系統機箱"
+ ],
+ "NTP Server": [
+  null,
+  "NTP服務器"
+ ],
  "Name": [
   null,
   "名稱"
  ],
+ "Need at least one NTP server": [
+  null,
+  "至少需要一台NTP服務器"
+ ],
  "Network Traffic": [
   null,
   "網絡流量"
+ ],
+ "Next Run": [
+  null,
+  "下次運行"
  ],
  "Nice": [
   null,
@@ -559,6 +803,10 @@ return plural;
   null,
   "備註"
  ],
+ "Notebook": [
+  null,
+  "筆記本"
+ ],
  "Notice and above": [
   null,
   "注意及以上"
@@ -575,17 +823,41 @@ return plural;
   null,
   "開"
  ],
+ "On Failure": [
+  null,
+  "失敗"
+ ],
  "Only Emergency": [
   null,
   "只有緊急情況"
+ ],
+ "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
+  null,
+  "只有字母，數字，：，_ ,. ， @ ， - 被允許。"
  ],
  "Operating System": [
   null,
   "作業系統"
  ],
+ "Other": [
+  null,
+  "其它"
+ ],
  "PCI": [
   null,
   "PCI"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit崩潰了"
+ ],
+ "Part Of": [
+  null,
+  "部分"
+ ],
+ "Path": [
+  null,
+  "路徑"
  ],
  "Paths": [
   null,
@@ -595,9 +867,29 @@ return plural;
   null,
   "績效簡介"
  ],
+ "Peripheral Chassis": [
+  null,
+  "外圍機箱"
+ ],
+ "Pizza Box": [
+  null,
+  "披薩盒"
+ ],
+ "Portable": [
+  null,
+  "手提"
+ ],
  "Power Options": [
   null,
   "電源選項"
+ ],
+ "Preset": [
+  null,
+  "預置"
+ ],
+ "Preset Forcefully": [
+  null,
+  "強制預設"
  ],
  "Pretty Host Name": [
   null,
@@ -611,9 +903,29 @@ return plural;
   null,
   "問題信息"
  ],
+ "Propagates Reload To": [
+  null,
+  "宣傳重新加載"
+ ],
+ "RAID Chassis": [
+  null,
+  "RAID機箱"
+ ],
+ "Rack Mount Chassis": [
+  null,
+  "機架式機箱"
+ ],
  "Real Host Name": [
   null,
   "真實主機名"
+ ],
+ "Real host name can only contain lower-case characters, digits, dashes, and periods (with populated subdomains)": [
+  null,
+  "真實主機名只能包含小寫字符，數字，短劃線和句點（帶有填充的子域）"
+ ],
+ "Real host name must be 64 characters or less": [
+  null,
+  "實際主機名必須為64個字符或更少"
  ],
  "Reboot": [
   null,
@@ -622,6 +934,14 @@ return plural;
  "Recent": [
   null,
   "最近開啟"
+ ],
+ "Reload": [
+  null,
+  "重新載入"
+ ],
+ "Reload Propagated From": [
+  null,
+  "重新傳播來自"
  ],
  "Removals:": [
   null,
@@ -667,6 +987,22 @@ return plural;
   null,
   "報告不成功。嘗試運行`reporter-ureport -d "
  ],
+ "Required By": [
+  null,
+  "要求的"
+ ],
+ "Requires": [
+  null,
+  "需要"
+ ],
+ "Requisite": [
+  null,
+  "必要"
+ ],
+ "Requisite Of": [
+  null,
+  "必備的"
+ ],
  "Reset": [
   null,
   "重設"
@@ -679,6 +1015,10 @@ return plural;
   null,
   "執行"
  ],
+ "Running Since": [
+  null,
+  "運行自："
+ ],
  "Saturday": [
   null,
   "週六"
@@ -687,6 +1027,10 @@ return plural;
   null,
   "儲存"
  ],
+ "Sealed-case PC": [
+  null,
+  "密封式PC"
+ ],
  "Seconds": [
   null,
   "秒"
@@ -694,6 +1038,10 @@ return plural;
  "Secure Shell Keys": [
   null,
   "安全外殼密鑰"
+ ],
+ "Security Updates Available": [
+  null,
+  "安全更新可用"
  ],
  "Service Logs": [
   null,
@@ -706,6 +1054,10 @@ return plural;
  "Services": [
   null,
   "服務"
+ ],
+ "Set Host name": [
+  null,
+  "設置主機名"
  ],
  "Set Time": [
   null,
@@ -731,13 +1083,49 @@ return plural;
   null,
   "插槽"
  ],
+ "Space-saving Computer": [
+  null,
+  "節省空間的計算機"
+ ],
  "Specific Time": [
   null,
   "特定的時間"
  ],
+ "Start": [
+  null,
+  "開始"
+ ],
+ "State": [
+  null,
+  "狀態"
+ ],
+ "Static": [
+  null,
+  "靜態"
+ ],
+ "Status": [
+  null,
+  "狀態"
+ ],
+ "Stick PC": [
+  null,
+  "堅持使用PC"
+ ],
+ "Stop": [
+  null,
+  "停止"
+ ],
  "Store metrics": [
   null,
   "存儲指標"
+ ],
+ "Sub Chassis": [
+  null,
+  "子機箱"
+ ],
+ "Sub Notebook": [
+  null,
+  "子筆記本"
  ],
  "Sunday": [
   null,
@@ -763,6 +1151,10 @@ return plural;
   null,
   "系統資訊"
  ],
+ "System Not Registered": [
+  null,
+  "系統未註冊"
+ ],
  "System Services": [
   null,
   "系統服務"
@@ -771,6 +1163,14 @@ return plural;
   null,
   "系統時間"
  ],
+ "System Up To Date": [
+  null,
+  "系統最新"
+ ],
+ "Tablet": [
+  null,
+  "面板"
+ ],
  "Targets": [
   null,
   "目標"
@@ -778,6 +1178,42 @@ return plural;
  "Terminal": [
   null,
   "終端機"
+ ],
+ "The user <b>$0</b> does not have permissions for creating timers": [
+  null,
+  "用戶 <b>$0</b> 沒有創建計時器的權限"
+ ],
+ "The user <b>$0</b> is not permitted to change the system time": [
+  null,
+  "用戶 <b>$0</b> 不允許更改系統時間"
+ ],
+ "The user <b>$0</b> is not permitted to enable or disable services": [
+  null,
+  "用戶 <b>$0</b> 不允許啟用或禁用服務"
+ ],
+ "The user <b>$0</b> is not permitted to modify hostnames": [
+  null,
+  "用戶 <b>$0</b> 不允許修改主機名"
+ ],
+ "The user <b>$0</b> is not permitted to shutdown or restart this server": [
+  null,
+  "用戶 <b>$0</b> 不允許關閉或重新啟動此服務器"
+ ],
+ "The user <b>$0</b> is not permitted to start or stop services": [
+  null,
+  "用戶 <b>$0</b> 不允許啟動或停止服務"
+ ],
+ "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
+  null,
+  "這一天並非在所有月份都存在。<br> 計時器只會在有31個月的月份執行。"
+ ],
+ "This field cannot be empty.": [
+  null,
+  "此字段不能為空。"
+ ],
+ "This unit is an instance of the $0 template.": [
+  null,
+  "這個單位是一個實例 $0 模板。"
  ],
  "This unit is not designed to be enabled explicitly.": [
   null,
@@ -799,6 +1235,18 @@ return plural;
   null,
   "總大小： $0"
  ],
+ "Tower": [
+  null,
+  "塔"
+ ],
+ "Triggered By": [
+  null,
+  "觸發"
+ ],
+ "Triggers": [
+  null,
+  "觸發器"
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   "試圖與...同步 {{Server}}"
@@ -810,6 +1258,22 @@ return plural;
  "Type": [
   null,
   "類型"
+ ],
+ "Unknown": [
+  null,
+  "不明"
+ ],
+ "Unmask": [
+  null,
+  "UNMASK"
+ ],
+ "Updates Available": [
+  null,
+  "可用更新"
+ ],
+ "Usage of $0 CPU core": [
+  "Usage of $0 CPU cores",
+  "用法 $0 CPU核心"
  ],
  "Used": [
   null,
@@ -830,6 +1294,14 @@ return plural;
  "Waiting for other software management operations to finish": [
   null,
   "等待其他軟件管理操作完成"
+ ],
+ "Wanted By": [
+  null,
+  "通緝"
+ ],
+ "Wants": [
+  null,
+  "希望"
  ],
  "Warning and above": [
   null,
@@ -854,5 +1326,25 @@ return plural;
  "[no data]": [
   null,
   "[沒有數據]"
+ ],
+ "failed to list ssh host keys: $0": [
+  null,
+  "無法列出ssh​​主機密鑰： $0"
+ ],
+ "of $0 CPU core": [
+  "of $0 CPU cores",
+  "的 $0 CPU核心"
+ ],
+ "unknown": [
+  null,
+  "不明"
+ ],
+ "page-title\u0004CPU Status": [
+  null,
+  "CPU狀態"
+ ],
+ "page-title\u0004Memory": [
+  null,
+  "記憶體"
  ]
 }));

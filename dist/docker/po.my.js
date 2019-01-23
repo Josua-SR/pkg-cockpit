@@ -71,32 +71,8 @@ return plural;
   null,
   ""
  ],
- "$0 day": [
-  "$0 days",
-  ""
- ],
- "$0 hour": [
-  "$0 hours",
-  ""
- ],
- "$0 minute": [
-  "$0 minutes",
-  ""
- ],
- "$0 month": [
-  "$0 months",
-  ""
- ],
  "$0 shares": [
   null,
-  ""
- ],
- "$0 week": [
-  "$0 weeks",
-  ""
- ],
- "$0 year": [
-  "$0 years",
   ""
  ],
  "${hip}:${hport} -> $cport": [
@@ -115,6 +91,14 @@ return plural;
   null,
   ""
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
+ "All In One": [
+  null,
+  ""
+ ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
   ""
@@ -126,6 +110,18 @@ return plural;
  "Author": [
   null,
   "ေရးသူ"
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -191,6 +187,10 @@ return plural;
   null,
   ""
  ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
  "Configure storage...": [
   null,
   ""
@@ -223,6 +223,10 @@ return plural;
   null,
   ""
  ],
+ "Convertible": [
+  null,
+  ""
+ ],
  "Could not add all disks": [
   null,
   ""
@@ -251,11 +255,23 @@ return plural;
   null,
   "Container ကို ဖျက်ဆီးခြင်းသည် ၄င်းထဲတွင်ရှိသော အချက်အလက်များအားလုံးကိုပါ ဖျက်ဆီးပစ်လိမ့်မည်။"
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Details": [
   null,
   ""
  ],
  "Docker is not installed or activated on the system": [
+  null,
+  ""
+ ],
+ "Docking Station": [
   null,
   ""
  ],
@@ -274,6 +290,10 @@ return plural;
  "Duplicate port": [
   null,
   "Port ထပ်နေသည်။"
+ ],
+ "Embedded PC": [
+  null,
+  ""
  ],
  "Entrypoint": [
   null,
@@ -298,6 +318,10 @@ return plural;
  "Exited $ExitCode": [
   null,
   "ထွက်သွားခဲ့သည်။"
+ ],
+ "Expansion Chassis": [
+  null,
+  ""
  ],
  "Expose container ports": [
   null,
@@ -324,6 +348,10 @@ return plural;
   ""
  ],
  "Get new image": [
+  null,
+  ""
+ ],
+ "Hand Held": [
   null,
   ""
  ],
@@ -379,6 +407,14 @@ return plural;
   null,
   ""
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
+ "Laptop": [
+  null,
+  ""
+ ],
  "Link to another container": [
   null,
   ""
@@ -395,7 +431,19 @@ return plural;
   null,
   ""
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "MAC Address:": [
+  null,
+  ""
+ ],
+ "Main Server Chassis": [
   null,
   ""
  ],
@@ -415,7 +463,19 @@ return plural;
   null,
   ""
  ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
  "Mount container volumes": [
+  null,
+  ""
+ ],
+ "Multi-system Chassis": [
   null,
   ""
  ],
@@ -475,6 +535,10 @@ return plural;
   null,
   "မတွေ့ပါ။"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "ဖွင့်"
@@ -495,7 +559,19 @@ return plural;
   "On failure, retry $0 times",
   ""
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Overview": [
+  null,
+  ""
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
   null,
   ""
  ],
@@ -511,6 +587,10 @@ return plural;
   null,
   ""
  ],
+ "Portable": [
+  null,
+  ""
+ ],
  "Ports": [
   null,
   "Ports"
@@ -520,6 +600,14 @@ return plural;
   ""
  ],
  "Problems": [
+  null,
+  ""
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
   null,
   ""
  ],
@@ -579,6 +667,10 @@ return plural;
   null,
   ""
  ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Security": [
   null,
   ""
@@ -603,6 +695,10 @@ return plural;
   null,
   ""
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
  "Start": [
   null,
   ""
@@ -616,6 +712,10 @@ return plural;
   ""
  ],
  "State:": [
+  null,
+  ""
+ ],
+ "Stick PC": [
   null,
   ""
  ],
@@ -639,9 +739,21 @@ return plural;
   null,
   ""
  ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "TCP": [
   null,
   "TCP"
+ ],
+ "Tablet": [
+  null,
+  ""
  ],
  "Tag": [
   null,
@@ -675,6 +787,10 @@ return plural;
   null,
   ""
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Try again": [
   null,
   "ထပ်ကြိုးစားပါ။"
@@ -688,6 +804,10 @@ return plural;
   "UDP"
  ],
  "Unexpected error": [
+  null,
+  ""
+ ],
+ "Unknown": [
   null,
   ""
  ],

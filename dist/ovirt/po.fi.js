@@ -95,29 +95,25 @@ return plural;
   null,
   "Osoite:"
  ],
- "All changes will take effect only after stopping and starting the VM.": [
-  null,
-  ""
- ],
  "All running virtual machines will be turned off.": [
   null,
   "Kaikki käynnissä olevat virtuaalikoneet tullaan sammuttamaan."
+ ],
+ "Always attach": [
+  null,
+  "Aina"
  ],
  "Apply": [
   null,
   "Toteuta"
  ],
- "Attach permanently": [
-  null,
-  ""
- ],
  "Automatically selected host": [
   null,
   "Automaattisesti valittu kone"
  ],
- "Autostart:": [
+ "Autostart": [
   null,
-  "Autostart:"
+  "Autostart"
  ],
  "Available": [
   null,
@@ -135,17 +131,25 @@ return plural;
   null,
   ""
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
-  "Käynnistysjärjestys:"
+  "Käynnistysjärjestys"
  ],
  "Bus": [
   null,
   ""
  ],
- "CPU Type:": [
+ "CHANGE NETWORK STATE action failed": [
   null,
-  "Prosessorin tyyppi:"
+  "CHANGE NETWORK STATE -toiminto epäonnistui"
+ ],
+ "CPU Type": [
+  null,
+  "Prosessorin tyyppi"
+ ],
+ "CREATE VM action failed": [
+  null,
+  "CREATE VM -toiminto epäonnistui"
  ],
  "Cancel": [
   null,
@@ -154,6 +158,10 @@ return plural;
  "Capacity": [
   null,
   "Koko"
+ ],
+ "Changes will take effect after shutting down the VM": [
+  null,
+  ""
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -170,10 +178,6 @@ return plural;
  "Cluster Virtual Machines": [
   null,
   "Klusterin virtuaalikoneet"
- ],
- "Confirm deletion of $0": [
-  null,
-  "Vahvista $0 poistaminen"
  ],
  "Confirm migration": [
   null,
@@ -271,13 +275,13 @@ return plural;
   null,
   ""
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
-  ""
+  "Ei voitu ottaa tuned käyttöön"
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
-  ""
+  "Ei voitu ottaa tuned käyttöön"
  ],
  "Disks": [
   null,
@@ -287,13 +291,17 @@ return plural;
   null,
   "Lataa MSI kohteesta $0"
  ],
+ "Edit": [
+  null,
+  "Muokkaa"
+ ],
  "Edit the vdsm.conf": [
   null,
   "Muokkaa vdsm.conf-tiedostoa"
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
-  "Emuloitu kone:"
+  "Emuloitu kone"
  ],
  "Enter New VM name": [
   null,
@@ -323,6 +331,10 @@ return plural;
   null,
   "Alusta"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
+ ],
  "GiB": [
   null,
   "GiB"
@@ -351,6 +363,10 @@ return plural;
   null,
   ""
  ],
+ "INSTALL VM action failed": [
+  null,
+  "INSTALL VM -toiminto epäonnistui"
+ ],
  "Install": [
   null,
   "Asenna"
@@ -371,6 +387,14 @@ return plural;
   null,
   "MAC-osoite"
  ],
+ "MIGRATE action failed": [
+  null,
+  "MIGRATE-toiminto epäonnistui"
+ ],
+ "Mac Address": [
+  null,
+  "MAC-osoite"
+ ],
  "Manual Connection": [
   null,
   "Manuaalinen yhteys"
@@ -383,10 +407,6 @@ return plural;
   null,
   "Muisti"
  ],
- "Memory:": [
-  null,
-  "Muisti:"
- ],
  "MiB": [
   null,
   "MiB"
@@ -394,6 +414,10 @@ return plural;
  "Migrate To:": [
   null,
   ""
+ ],
+ "Model": [
+  null,
+  "Malli"
  ],
  "Model type": [
   null,
@@ -406,6 +430,14 @@ return plural;
  "Name": [
   null,
   "Nimi"
+ ],
+ "Network Type": [
+  null,
+  "Verkko"
+ ],
+ "Network settings could not be saved": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -443,6 +475,10 @@ return plural;
   null,
   "Ei oVirt-yhteyttä"
  ],
+ "No virtual networks": [
+  null,
+  ""
+ ],
  "Number of virtual CPUs that gonna be used.": [
   null,
   ""
@@ -470,6 +506,10 @@ return plural;
  "Overview": [
   null,
   ""
+ ],
+ "Persistence": [
+  null,
+  "GCE Persistent Disk"
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
@@ -523,9 +563,17 @@ return plural;
   null,
   ""
  ],
+ "Preparing for Maintenance": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   ""
+ ],
+ "REBOOT action failed": [
+  null,
+  "REBOOT-toiminto epäonnistui"
  ],
  "Readonly": [
   null,
@@ -563,6 +611,14 @@ return plural;
   null,
   ""
  ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  ""
+ ],
+ "SHUTDOWN action failed": [
+  null,
+  "SHUTDOWN-toiminto epäonnistui"
+ ],
  "SPICE": [
   null,
   "SPICE"
@@ -579,6 +635,14 @@ return plural;
   null,
   "SPICE-TLS-portti:"
  ],
+ "START action failed": [
+  null,
+  "START-toiminto epäonnistui"
+ ],
+ "SUSPEND action failed": [
+  null,
+  "SUSPEND-toiminto epäonnistui"
+ ],
  "Save": [
   null,
   "Tallenna"
@@ -594,6 +658,10 @@ return plural;
  "Serial Console": [
   null,
   ""
+ ],
+ "Session": [
+  null,
+  "Istunto"
  ],
  "Shut Down": [
   null,
@@ -635,9 +703,17 @@ return plural;
   null,
   ""
  ],
- "Target": [
+ "Switching host to maintenance mode failed. Received error: ": [
   null,
   ""
+ ],
+ "Switching host to maintenance mode in progress ...": [
+  null,
+  ""
+ ],
+ "System": [
+  null,
+  "Järjestelmä"
  ],
  "Template": [
   null,
@@ -727,6 +803,10 @@ return plural;
   null,
   "Käytetty"
  ],
+ "VCPU settings could not be saved": [
+  null,
+  ""
+ ],
  "VDSM": [
   null,
   "VDSM"
@@ -734,6 +814,38 @@ return plural;
  "VDSM Service Management": [
   null,
   "VDSM-palveluhallinta"
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "VM FORCE OFF -toiminto epäonnistui"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "VM FORCE REBOOT -toiminto epäonnistui"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "VM REBOOT -toiminto epäonnistui"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "VM SEND Non-Maskable Interrrupt -toiminto epäonnistui"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "VM SHUT DOWN -toiminto epäonnistui"
+ ],
+ "VM START action failed": [
+  null,
+  "VM START -toiminto epäonnistui"
  ],
  "VM icon": [
   null,
@@ -775,7 +887,31 @@ return plural;
   null,
   "Taltio"
  ],
+ "bridge": [
+  null,
+  ""
+ ],
+ "cdrom": [
+  null,
+  ""
+ ],
+ "connecting": [
+  null,
+  "yhdistetään"
+ ],
  "cores": [
+  null,
+  ""
+ ],
+ "crashed": [
+  null,
+  "kaatui"
+ ],
+ "custom": [
+  null,
+  ""
+ ],
+ "direct": [
   null,
   ""
  ],
@@ -783,13 +919,85 @@ return plural;
   null,
   "pois käytöstä"
  ],
+ "disk": [
+  null,
+  ""
+ ],
+ "down": [
+  null,
+  ""
+ ],
+ "dying": [
+  null,
+  "kuolemassa"
+ ],
  "enabled": [
   null,
   "käytössä"
  ],
+ "error": [
+  null,
+  "virhe"
+ ],
+ "ethernet": [
+  null,
+  "ethernet"
+ ],
+ "host": [
+  null,
+  ""
+ ],
+ "hostdev": [
+  null,
+  ""
+ ],
+ "idle": [
+  null,
+  "jouten"
+ ],
+ "initializing": [
+  null,
+  ""
+ ],
+ "installation failed": [
+  null,
+  "asennus epäonnistui"
+ ],
+ "installing OS": [
+  null,
+  "asennetaan käyttöjärjestelmä"
+ ],
+ "kdumping": [
+  null,
+  ""
+ ],
+ "maintenance": [
+  null,
+  ""
+ ],
+ "mcast": [
+  null,
+  ""
+ ],
+ "network": [
+  null,
+  "verkko"
+ ],
  "no": [
   null,
   "ei"
+ ],
+ "non operational": [
+  null,
+  ""
+ ],
+ "non responsive": [
+  null,
+  ""
+ ],
+ "oVirt": [
+  null,
+  "oVirt"
  ],
  "oVirt Host State:": [
   null,
@@ -811,6 +1019,18 @@ return plural;
   null,
   ""
  ],
+ "other": [
+  null,
+  "muu"
+ ],
+ "paused": [
+  null,
+  "pysäytetty"
+ ],
+ "pending approval": [
+  null,
+  "odottaa hyväksyntää"
+ ],
  "qcow2": [
   null,
   ""
@@ -818,6 +1038,18 @@ return plural;
  "raw": [
   null,
   ""
+ ],
+ "reboot": [
+  null,
+  ""
+ ],
+ "running": [
+  null,
+  "suoritetaan"
+ ],
+ "server": [
+  null,
+  "palvelin"
  ],
  "show less": [
   null,
@@ -827,17 +1059,45 @@ return plural;
   null,
   "näytä enemmän"
  ],
+ "shut off": [
+  null,
+  "sammutettu"
+ ],
+ "shutdown": [
+  null,
+  "sammuta"
+ ],
  "sockets": [
   null,
   ""
+ ],
+ "suspended (PM)": [
+  null,
+  "pysäytetty (PM)"
  ],
  "threads": [
   null,
   "säikeet"
  ],
+ "udp": [
+  null,
+  "udp"
+ ],
+ "unassigned": [
+  null,
+  ""
+ ],
  "undefined": [
   null,
   "määrittämätön"
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
+  null,
+  "käyttäjä"
  ],
  "vCPU Count": [
   null,
@@ -851,9 +1111,9 @@ return plural;
   null,
   ""
  ],
- "vCPUs:": [
+ "vhostuser": [
   null,
-  "vCPUt:"
+  ""
  ],
  "yes": [
   null,

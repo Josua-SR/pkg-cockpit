@@ -83,11 +83,6 @@ return plural;
   null,
   ""
  ],
- "$0 day": [
-  "$0 days",
-  "",
-  ""
- ],
  "$0 disk is missing": [
   "$0 disks are missing",
   "",
@@ -105,11 +100,6 @@ return plural;
   null,
   ""
  ],
- "$0 hour": [
-  "$0 hours",
-  "ordu $0",
-  "$0 ordu"
- ],
  "$0 is in active use": [
   null,
   ""
@@ -117,16 +107,6 @@ return plural;
  "$0 is not available from any repository.": [
   null,
   ""
- ],
- "$0 minute": [
-  "$0 minutes",
-  "minutu $0",
-  "$0 minutu"
- ],
- "$0 month": [
-  "$0 months",
-  "hilabete $0",
-  "$0 hilabete"
  ],
  "$0 of $1": [
   null,
@@ -140,18 +120,8 @@ return plural;
   null,
   ""
  ],
- "$0 week": [
-  "$0 weeks",
-  "",
-  ""
- ],
  "$0 will be installed.": [
   null,
-  ""
- ],
- "$0 year": [
-  "$0 years",
-  "",
   ""
  ],
  "$0, $1 free": [
@@ -714,6 +684,10 @@ return plural;
   null,
   ""
  ],
+ "Free up space in this group: Shrink or delete other logical volumes or add another physical volume.": [
+  null,
+  ""
+ ],
  "Go to now": [
   null,
   ""
@@ -938,6 +912,14 @@ return plural;
   null,
   ""
  ],
+ "Name cannot be longer than $0 bytes": [
+  null,
+  ""
+ ],
+ "Name cannot be longer than $0 characters": [
+  null,
+  ""
+ ],
  "Name cannot be longer than 127 characters.": [
   null,
   ""
@@ -1022,6 +1004,10 @@ return plural;
   null,
   ""
  ],
+ "Not enough space to grow.": [
+  null,
+  ""
+ ],
  "Not found": [
   null,
   ""
@@ -1067,6 +1053,10 @@ return plural;
   ""
  ],
  "Overwrite existing data with zeros": [
+  null,
+  ""
+ ],
+ "PackageKit crashed": [
   null,
   ""
  ],
@@ -1462,6 +1452,10 @@ return plural;
   null,
   ""
  ],
+ "Storage can not be managed on this system.": [
+  null,
+  ""
+ ],
  "Store passphrase": [
   null,
   ""
@@ -1487,10 +1481,6 @@ return plural;
   ""
  ],
  "Tang keyserver": [
-  null,
-  ""
- ],
- "The \"storaged\" API is not available on this system.": [
   null,
   ""
  ],
