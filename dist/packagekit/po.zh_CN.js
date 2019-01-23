@@ -223,6 +223,10 @@ return plural;
   null,
   "软件包信息"
  ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit 已崩溃"
+ ],
  "PackageKit is not installed": [
   null,
   "PackageKit 未安装"

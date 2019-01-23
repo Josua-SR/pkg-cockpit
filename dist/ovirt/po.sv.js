@@ -111,9 +111,9 @@ return plural;
   null,
   "Automatiskt vald värd"
  ],
- "Autostart:": [
+ "Autostart": [
   null,
-  "Starta automatiskt:"
+  "Starta automatiskt"
  ],
  "Available": [
   null,
@@ -131,9 +131,9 @@ return plural;
   null,
   "Basmall:"
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
-  "Startordning:"
+  "Startordning"
  ],
  "Bus": [
   null,
@@ -143,9 +143,9 @@ return plural;
   null,
   "Åtgärden ÄNDRA NÄTVERKSTILLSTÅND misslyckades"
  ],
- "CPU Type:": [
+ "CPU Type": [
   null,
-  "CPU-typ:"
+  "CPU-typ"
  ],
  "CREATE VM action failed": [
   null,
@@ -299,9 +299,9 @@ return plural;
   null,
   "Redigera vdsm.conf"
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
-  "Emulerad maskin:"
+  "Emulerad maskin"
  ],
  "Enter New VM name": [
   null,
@@ -406,10 +406,6 @@ return plural;
  "Memory": [
   null,
   "Minne"
- ],
- "Memory:": [
-  null,
-  "Minne:"
  ],
  "MiB": [
   null,
@@ -718,10 +714,6 @@ return plural;
  "System": [
   null,
   "System"
- ],
- "Target": [
-  null,
-  "Mål"
  ],
  "Template": [
   null,
@@ -1118,10 +1110,6 @@ return plural;
  "vCPUs": [
   null,
   "vCPU:er"
- ],
- "vCPUs:": [
-  null,
-  "vCPU:er:"
  ],
  "vhostuser": [
   null,

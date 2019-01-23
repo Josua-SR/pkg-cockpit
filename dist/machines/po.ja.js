@@ -87,37 +87,41 @@ return plural;
   null,
   "アドレス: "
  ],
+ "Always attach": [
+  null,
+  "常時"
+ ],
  "Apply": [
   null,
   "適用"
- ],
- "Attach permanently": [
-  null,
-  "完全な割り当て"
  ],
  "Automatically start libvirt on boot": [
   null,
   "起動時に libvirt を自動開始"
  ],
- "Autostart:": [
+ "Autostart": [
   null,
-  "自動起動:"
+  "自動起動"
  ],
  "Available": [
   null,
   "利用可能"
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
-  "ブート順序:"
+  "ブート順序"
  ],
  "Bus": [
   null,
   "バス"
  ],
- "CPU Type:": [
+ "CHANGE NETWORK STATE action failed": [
   null,
-  "CPU タイプ:"
+  "CHANGE NETWORK STATE アクションに失敗しました"
+ ],
+ "CPU Type": [
+  null,
+  "CPU タイプ"
  ],
  "Cancel": [
   null,
@@ -235,9 +239,9 @@ return plural;
   null,
   "編集"
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
-  "エミュレートされたマシン:"
+  "エミュレートされたマシン"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -267,6 +271,10 @@ return plural;
   null,
   "フォーマット"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "GET HYPERVISOR MAX VCPU アクションに失敗しました"
+ ],
  "GiB": [
   null,
   "GiB"
@@ -290,6 +298,10 @@ return plural;
  "Host should not be empty": [
   null,
   "ホストは空にできません"
+ ],
+ "INSTALL VM action failed": [
+  null,
+  "INSTALL VM アクションに失敗しました"
  ],
  "Immediately Start VM": [
   null,
@@ -346,10 +358,6 @@ return plural;
  "Memory should be positive number": [
   null,
   "メモリーは正の数値である必要があります"
- ],
- "Memory:": [
-  null,
-  "メモリー:"
  ],
  "MiB": [
   null,
@@ -459,6 +467,10 @@ return plural;
   null,
   "ファイルのパス"
  ],
+ "Persistence": [
+  null,
+  "永続ボリューム"
+ ],
  "Please enter new volume name": [
   null,
   "新しいボリューム名を入力してください"
@@ -551,6 +563,10 @@ return plural;
   null,
   "シリアルコンソール"
  ],
+ "Session": [
+  null,
+  "セッション"
+ ],
  "Shut Down": [
   null,
   "シャットダウン"
@@ -623,9 +639,9 @@ return plural;
   null,
   "ストレージボリューム"
  ],
- "Target": [
+ "System": [
   null,
-  "ターゲット"
+  "システム"
  ],
  "Target Path": [
   null,
@@ -727,6 +743,54 @@ return plural;
   null,
   "VCPU 設定を保存できませんでした"
  ],
+ "VM CHANGE_NETWORK_STATE action failed": [
+  null,
+  "VM CHANGE_NETWORK_STATE アクションに失敗しました"
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  "VM DELETE (DESTROY) アクションに失敗しました"
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  "VM DELETE (UNDEFINE) アクションに失敗しました"
+ ],
+ "VM DELETE action failed": [
+  null,
+  "VM DELETE アクションに失敗しました"
+ ],
+ "VM DETACH_DISK action failed": [
+  null,
+  "VM DETACH_DISK アクションに失敗しました"
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "VM FORCE OFF アクションに失敗しました"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "VM FORCE REBOOT アクションに失敗しました"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "VM REBOOT アクションに失敗しました"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "VM SEND マスク不可な割り込みアクションに失敗しました"
+ ],
+ "VM SENDNMI action failed": [
+  null,
+  "VM SENDNMI アクションに失敗しました"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "VM SHUT DOWN アクションに失敗しました"
+ ],
+ "VM START action failed": [
+  null,
+  "VM START アクションに失敗しました"
+ ],
  "VNC": [
   null,
   "VNC"
@@ -763,13 +827,85 @@ return plural;
   null,
   "アクティブ"
  ],
+ "bridge": [
+  null,
+  "ブリッジ"
+ ],
+ "cdrom": [
+  null,
+  "cdrom"
+ ],
+ "crashed": [
+  null,
+  "クラッシュ"
+ ],
+ "custom": [
+  null,
+  "カスタム"
+ ],
+ "direct": [
+  null,
+  "ダイレクト"
+ ],
+ "disabled": [
+  null,
+  "無効"
+ ],
+ "disk": [
+  null,
+  "ディスク"
+ ],
+ "down": [
+  null,
+  "下へ"
+ ],
+ "dying": [
+  null,
+  "終了中"
+ ],
+ "enabled": [
+  null,
+  "有効"
+ ],
+ "ethernet": [
+  null,
+  "Ethernet"
+ ],
+ "host": [
+  null,
+  "ホスト"
+ ],
+ "hostdev": [
+  null,
+  "hostdev"
+ ],
+ "idle": [
+  null,
+  "アイドル"
+ ],
  "inactive": [
   null,
   "非アクティブ"
  ],
+ "mcast": [
+  null,
+  "mcast"
+ ],
+ "network": [
+  null,
+  "ネットワーク"
+ ],
  "no": [
   null,
   "いいえ"
+ ],
+ "other": [
+  null,
+  "その他"
+ ],
+ "paused": [
+  null,
+  "一時停止"
  ],
  "qcow2": [
   null,
@@ -779,6 +915,14 @@ return plural;
   null,
   "raw"
  ],
+ "running": [
+  null,
+  "実行中"
+ ],
+ "server": [
+  null,
+  "サーバー"
+ ],
  "show less": [
   null,
   "表示を減らす"
@@ -787,9 +931,33 @@ return plural;
   null,
   "表示を増やす"
  ],
+ "shut off": [
+  null,
+  "シャットオフ"
+ ],
+ "shutdown": [
+  null,
+  "shutdown"
+ ],
+ "suspended (PM)": [
+  null,
+  "一時停止中 (PM)"
+ ],
+ "udp": [
+  null,
+  "udp"
+ ],
  "undefined": [
   null,
   "未定義"
+ ],
+ "up": [
+  null,
+  "上へ"
+ ],
+ "user": [
+  null,
+  "ユーザー"
  ],
  "vCPU Count": [
   null,
@@ -799,9 +967,13 @@ return plural;
   null,
   "vCPU 最大値"
  ],
- "vCPUs:": [
+ "vCPUs": [
   null,
-  "vCPU:"
+  "vCPU"
+ ],
+ "vhostuser": [
+  null,
+  "vhostuser"
  ],
  "yes": [
   null,

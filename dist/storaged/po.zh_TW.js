@@ -1055,6 +1055,10 @@ return plural;
   null,
   "用零覆蓋現有數據"
  ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit崩潰了"
+ ],
  "Partition": [
   null,
   "劃分"
@@ -1447,6 +1451,10 @@ return plural;
   null,
   "存儲日誌"
  ],
+ "Storage can not be managed on this system.": [
+  null,
+  "無法在此系統上管理Docker存儲池。"
+ ],
  "Store passphrase": [
   null,
   "存儲密碼"
@@ -1474,10 +1482,6 @@ return plural;
  "Tang keyserver": [
   null,
   "唐鑰匙服務器"
- ],
- "The \"storaged\" API is not available on this system.": [
-  null,
-  "“storaged”API在此系統上不可用。"
  ],
  "The RAID Array is in a degraded state": [
   null,

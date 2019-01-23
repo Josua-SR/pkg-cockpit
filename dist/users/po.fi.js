@@ -379,6 +379,10 @@ return plural;
   null,
   "Sinulla ei ole oikeutta tarkastella tämän käyttäjätilin julkisia avaimia."
  ],
+ "You must wait longer to change your password": [
+  null,
+  "Ei voitu vaihtaa salasanaa"
+ ],
  "translatable": [
   null,
   ""

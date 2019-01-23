@@ -295,6 +295,10 @@ return plural;
   null,
   "Vid en specifik tidpunkt"
  ],
+ "Automatic Startup": [
+  null,
+  "Automatiska uppdateringar"
+ ],
  "Automatically using NTP": [
   null,
   "Använder automatiskt NTP"
@@ -851,6 +855,10 @@ return plural;
   null,
   "Del av"
  ],
+ "Path": [
+  null,
+  "Sökväg"
+ ],
  "Paths": [
   null,
   "Sökvägar"
@@ -1007,6 +1015,10 @@ return plural;
   null,
   "Kör"
  ],
+ "Running Since": [
+  null,
+  "Kör sedan"
+ ],
  "Saturday": [
   null,
   "Lördag"
@@ -1063,10 +1075,6 @@ return plural;
   null,
   "Stäng av"
  ],
- "Since $0": [
-  null,
-  "Sedan $0"
- ],
  "Slot": [
   null,
   "Plats"
@@ -1094,6 +1102,10 @@ return plural;
  "Static": [
   null,
   "Statisk"
+ ],
+ "Status": [
+  null,
+  "Status"
  ],
  "Stick PC": [
   null,

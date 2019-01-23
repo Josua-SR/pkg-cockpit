@@ -99,15 +99,15 @@ return plural;
   null,
   "Avvia automaticamente libvirt al boot"
  ],
- "Autostart:": [
+ "Autostart": [
   null,
-  "Avvio automatico:"
+  "Avvio automatico"
  ],
  "Available": [
   null,
   "Disponibile"
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
   "Ordine boot"
  ],
@@ -119,9 +119,9 @@ return plural;
   null,
   "Azione CHANGE NETWORK NETWORK STATE fallita"
  ],
- "CPU Type:": [
+ "CPU Type": [
   null,
-  "Tipo CPU:"
+  "Tipo CPU"
  ],
  "Cancel": [
   null,
@@ -239,9 +239,9 @@ return plural;
   null,
   "Modifica"
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
-  "Macchina emulata:"
+  "Macchina emulata"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -358,10 +358,6 @@ return plural;
  "Memory should be positive number": [
   null,
   "La memoria deve essere un numero positivo"
- ],
- "Memory:": [
-  null,
-  "Memoria:"
  ],
  "MiB": [
   null,
@@ -646,10 +642,6 @@ return plural;
  "System": [
   null,
   "Sistema"
- ],
- "Target": [
-  null,
-  "Obiettivo"
  ],
  "Target Path": [
   null,
@@ -975,7 +967,7 @@ return plural;
   null,
   "vCPU Massimo"
  ],
- "vCPUs:": [
+ "vCPUs": [
   null,
   "vCPU"
  ],

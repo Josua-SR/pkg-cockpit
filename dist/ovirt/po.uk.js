@@ -111,9 +111,9 @@ return plural;
   null,
   "Автоматично вибраний вузол"
  ],
- "Autostart:": [
+ "Autostart": [
   null,
-  "Автозапуск:"
+  "Автозапуск"
  ],
  "Available": [
   null,
@@ -131,9 +131,9 @@ return plural;
   null,
   "Базовий шаблон:"
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
-  "Порядок завантаження:"
+  "Порядок завантаження"
  ],
  "Bus": [
   null,
@@ -143,9 +143,9 @@ return plural;
   null,
   "Не вдалося виконати дію зі зміни стану мережі"
  ],
- "CPU Type:": [
+ "CPU Type": [
   null,
-  "Тип процесора:"
+  "Тип процесора"
  ],
  "CREATE VM action failed": [
   null,
@@ -299,9 +299,9 @@ return plural;
   null,
   "Редагувати vdsm.conf"
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
-  "Емуляція машини:"
+  "Емуляція машини"
  ],
  "Enter New VM name": [
   null,
@@ -406,10 +406,6 @@ return plural;
  "Memory": [
   null,
   "Пам'ять"
- ],
- "Memory:": [
-  null,
-  "Пам’ять:"
  ],
  "MiB": [
   null,
@@ -1114,10 +1110,6 @@ return plural;
  "vCPUs": [
   null,
   "Вірт. проц."
- ],
- "vCPUs:": [
-  null,
-  "vCPU:"
  ],
  "vhostuser": [
   null,

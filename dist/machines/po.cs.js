@@ -99,17 +99,17 @@ return plural;
   null,
   "Spouštět libvirt automaticky při startu"
  ],
- "Autostart:": [
+ "Autostart": [
   null,
-  "Automatické spuštění:"
+  "Automatické spuštění"
  ],
  "Available": [
   null,
   "Dostupný"
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
-  "Pořadí zavádění:"
+  "Pořadí zavádění"
  ],
  "Bus": [
   null,
@@ -119,9 +119,9 @@ return plural;
   null,
   "Akce ZMĚNIT STAV SÍTĚ se nezdařila"
  ],
- "CPU Type:": [
+ "CPU Type": [
   null,
-  "Typ procesoru:"
+  "Typ procesoru"
  ],
  "Cancel": [
   null,
@@ -239,9 +239,9 @@ return plural;
   null,
   "Upravit"
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
-  "Emulovaný stroj:"
+  "Emulovaný stroj"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -358,10 +358,6 @@ return plural;
  "Memory should be positive number": [
   null,
   "Paměť by mělo být kladné číslo"
- ],
- "Memory:": [
-  null,
-  "Paměť:"
  ],
  "MiB": [
   null,
@@ -971,9 +967,9 @@ return plural;
   null,
   "Maximum virt. procesorů"
  ],
- "vCPUs:": [
+ "vCPUs": [
   null,
-  "virt. procesorů:"
+  "virt. procesorů"
  ],
  "vhostuser": [
   null,

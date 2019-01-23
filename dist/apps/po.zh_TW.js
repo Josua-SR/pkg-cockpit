@@ -115,6 +115,10 @@ return plural;
   null,
   "確定"
  ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit崩潰了"
+ ],
  "Remove": [
   null,
   "移除"

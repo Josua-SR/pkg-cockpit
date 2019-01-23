@@ -521,6 +521,7 @@ function setup() {
     var element = $("<span>");
     var link = $("<a>");
     element.append(link);
+    var hostname_link = $("#system_information_hostname_button");
 
     var realmd = null;
     var realms = null;
@@ -547,10 +548,14 @@ function setup() {
                 joined.push(realm);
         }
 
-        if (!joined || !joined.length)
+        if (!joined || !joined.length) {
             text = _("Join Domain");
-        else
+            hostname_link.removeAttr('disabled');
+        } else {
             text = joined.map(function(x) { return x.Name }).join(", ");
+            hostname_link.attr('disabled', 'disabled');
+            hostname_link.attr('title', _("Host name should not be changed in a domain")).tooltip('fixTitle');
+        }
         link.text(text);
     }
 
@@ -655,7 +660,8 @@ function setup() {
 jQuery(function() {
     var placeholder = jQuery("#system-info-domain");
     if (placeholder.length) {
-        placeholder.find(".button-location").append(setup());
+        placeholder.append(setup());
         placeholder.removeAttr('hidden');
+        placeholder.prev().removeAttr('hidden');
     }
 });

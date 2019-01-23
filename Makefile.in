@@ -1293,7 +1293,7 @@ am__EXEEXT_16 = dist/base1/test-base64.html dist/base1/test-utf8.html \
 	dist/base1/test-permissions.html dist/base1/test-series.html \
 	dist/base1/test-cache.html dist/base1/test-websocket.html \
 	dist/base1/test-stub.html dist/base1/test-browser-storage.html \
-	$(am__EXEEXT_4)
+	dist/base1/test-promise.html $(am__EXEEXT_4)
 am__EXEEXT_17 = dist/base1/test-no-jquery.html \
 	dist/base1/test-framed-cache.html dist/base1/test-framed.html \
 	dist/base1/test-dbus-framed.html $(am__EXEEXT_4)
@@ -2061,6 +2061,7 @@ base_QUNIT_TESTS = \
 	dist/base1/test-websocket.html \
 	dist/base1/test-stub.html \
 	dist/base1/test-browser-storage.html \
+	dist/base1/test-promise.html \
 	$(NULL)
 
 base_QUNIT_DEPS = \

@@ -181,13 +181,10 @@ a.disabled:hover {
 /* Small list inside a dialog */
 /* Alert fixups */
 
-/* HACK: word-wrap workaround for long alerts https://github.com/patternfly/patternfly/issues/491 */
-
 .modal-content .alert {
     text-align: left;
     padding-top: 5px;
     padding-bottom: 5px;
-    word-wrap: break-word;
 }
 
 .modal-content .alert .fa {
@@ -321,7 +318,7 @@ table.delete-dialog-disks.table tbody tr td:nth-child(3) {
     padding-left: 10px;
 }
 .pool-create > .modal-dialog {
-    width: 50rem;
+    max-width: 50rem;
 }
 .input-group {
   width: 100%;
@@ -842,85 +839,79 @@ tbody tr.listing-ct-noexpand {
 }
 .ct-form-layout {
   display: grid;
-  grid-gap: 0 10px;
+  grid-gap: 5px 10px;
   grid-template-columns: repeat(var(--ct-form-layout-columns), max-content 1fr);
   place-items: baseline stretch;
+}
+.ct-form-layout > .control-label {
+  align-self: flex-start;
+  text-align: right;
+}
+.ct-form-layout > :not(.control-label):not(hr):not(.ct-form-layout-split) {
+  grid-column: 2 / -1;
+}
+.ct-form-layout > :not(.ct-form-layout-relax) {
+  width: auto;
 }
 .ct-form-layout > hr {
   border: none;
   grid-column: 1 / -1;
-  height: 15px;
+  height: 10px;
   margin: 0;
   padding: 0;
-}
-.ct-form-layout > label,
-.ct-form-layout > [role="group"] > label,
-.ct-form-layout .checkbox > label,
-.ct-form-layout .radio > label,
-.ct-form-layout .checkbox-inline,
-.ct-form-layout .radio-inline {
-  line-height: 26px;
-}
-.ct-form-layout > .control-label {
-  align-self: flex-start;
-  padding-left: 10px;
-  text-align: right;
-}
-.ct-form-layout > div,
-.ct-form-layout > span,
-.ct-form-layout > a,
-.ct-form-layout > p,
-.ct-form-layout > dl,
-.ct-form-layout > ol,
-.ct-form-layout > ul,
-.ct-form-layout > fieldset,
-.ct-form-layout > input,
-.ct-form-layout > textarea,
-.ct-form-layout > samp,
-.ct-form-layout > pre,
-.ct-form-layout > code,
-.ct-form-layout > kbd,
-.ct-form-layout > label:not(.control-label) {
-  grid-column: 2 / -1;
-  line-height: 26px;
-  margin: 0;
-}
-.ct-form-layout > div:not(.ct-form-layout-relax),
-.ct-form-layout > span:not(.ct-form-layout-relax),
-.ct-form-layout > a:not(.ct-form-layout-relax),
-.ct-form-layout > p:not(.ct-form-layout-relax),
-.ct-form-layout > dl:not(.ct-form-layout-relax),
-.ct-form-layout > ol:not(.ct-form-layout-relax),
-.ct-form-layout > ul:not(.ct-form-layout-relax),
-.ct-form-layout > fieldset:not(.ct-form-layout-relax),
-.ct-form-layout > input:not(.ct-form-layout-relax),
-.ct-form-layout > textarea:not(.ct-form-layout-relax),
-.ct-form-layout > samp:not(.ct-form-layout-relax),
-.ct-form-layout > pre:not(.ct-form-layout-relax),
-.ct-form-layout > code:not(.ct-form-layout-relax),
-.ct-form-layout > kbd:not(.ct-form-layout-relax),
-.ct-form-layout > label:not(.control-label):not(.ct-form-layout-relax) {
-  width: auto;
 }
 .ct-form-layout > input[size] {
   justify-self: start;
 }
+.ct-form-layout input[type=number] {
+  -webkit-appearance: textarea;
+}
+.ct-form-layout > input,
+.ct-form-layout > textarea,
+.ct-form-layout > select,
+.ct-form-layout > .bootstrap-select,
+.ct-form-layout > .dropdown,
+.ct-form-layout > .combobox-container,
+.ct-form-layout > fieldset,
+.ct-form-layout > [role=group],
+.ct-form-layout > .form-group,
+.ct-form-layout > .btn-group,
+.ct-form-layout > .checkbox-inline,
+.ct-form-layout > .radio-inline {
+  margin-top: -3px;
+  min-height: 26px;
+}
+.ct-form-layout > input:not(.ct-form-layout-relax),
+.ct-form-layout > textarea:not(.ct-form-layout-relax),
+.ct-form-layout > select:not(.ct-form-layout-relax),
 .ct-form-layout > .bootstrap-select:not(.ct-form-layout-relax),
+.ct-form-layout > .dropdown:not(.ct-form-layout-relax),
+.ct-form-layout > .combobox-container:not(.ct-form-layout-relax),
+.ct-form-layout > fieldset:not(.ct-form-layout-relax),
+.ct-form-layout > [role=group]:not(.ct-form-layout-relax),
+.ct-form-layout > .form-group:not(.ct-form-layout-relax),
 .ct-form-layout > .btn-group:not(.ct-form-layout-relax),
-.ct-form-layout > .dropdown:not(.ct-form-layout-relax) {
+.ct-form-layout > .checkbox-inline:not(.ct-form-layout-relax),
+.ct-form-layout > .radio-inline:not(.ct-form-layout-relax) {
   width: auto !important;
 }
+.ct-form-layout fieldset,
 .ct-form-layout > [role=group] {
+  -webkit-appearance: none;
+  appearance: none;
+  align-content: center;
   align-self: start;
   display: grid;
-  grid-gap: 5px;
   grid-auto-flow: column;
+  grid-gap: 5px;
   grid-template-columns: max-content;
   justify-content: start;
 }
+.ct-form-layout fieldset:not(.ct-form-layout-relax) > .dropdown,
 .ct-form-layout > [role=group]:not(.ct-form-layout-relax) > .dropdown {
   width: auto !important;
 }
+.ct-form-layout fieldset > .form-control,
 .ct-form-layout > [role=group] > .form-control {
   width: auto;
 }
@@ -931,6 +922,7 @@ tbody tr.listing-ct-noexpand {
   display: inline-flex;
   padding-left: 0;
   padding-right: 10px;
+  align-items: center;
 }
 .ct-form-layout .checkbox > label > input[type="checkbox"],
 .ct-form-layout .radio > label > input[type="checkbox"],
@@ -942,7 +934,7 @@ tbody tr.listing-ct-noexpand {
 .ct-form-layout .radio-inline > input[type="radio"] {
   height: 16px;
   margin: 5px 0;
-  margin-right: 10px;
+  margin-right: 0.5rem;
   position: static;
 }
 .ct-form-layout fieldset > .checkbox:first-child,
@@ -959,6 +951,9 @@ tbody tr.listing-ct-noexpand {
 .ct-form-layout > .ct-form-layout-split {
   grid-column: auto / auto;
 }
+.modal .ct-form-layout > .control-label {
+  padding-left: 0.5rem;
+}
 .ct-form-layout-stretch {
   justify-content: stretch !important;
 }
@@ -969,27 +964,32 @@ tbody tr.listing-ct-noexpand {
   grid-column: 2 / -1;
 }
 @media (max-width: 640px) {
-  :root {
+  .listing-ct-body,
+  .modal {
     --ct-form-layout-columns: 1;
   }
 }
 @media (max-width: 480px) {
-  .ct-form-layout {
+  .listing-ct-body .ct-form-layout,
+  .modal .ct-form-layout {
     grid-template-columns: initial;
   }
-  .ct-form-layout > * {
+  .listing-ct-body .ct-form-layout > *,
+  .modal .ct-form-layout > * {
     grid-column: auto;
-    line-height: 1.66666667;
     max-width: 100%;
   }
-  .ct-form-layout > .control-label {
+  .listing-ct-body .ct-form-layout > .control-label,
+  .modal .ct-form-layout > .control-label {
     padding: 0;
     text-align: left;
   }
-  .ct-form-layout > .control-label:not(:first-child) {
+  .listing-ct-body .ct-form-layout > .control-label:not(:first-child),
+  .modal .ct-form-layout > .control-label:not(:first-child) {
     margin: 6px 0 0;
   }
-  .ct-form-layout > hr {
+  .listing-ct-body .ct-form-layout > hr,
+  .modal .ct-form-layout > hr {
     height: 12px;
   }
 }
@@ -1559,12 +1559,10 @@ a.disabled:hover {
 }
 /* Small list inside a dialog */
 /* Alert fixups */
-/* HACK: word-wrap workaround for long alerts https://github.com/patternfly/patternfly/issues/491 */
 .modal-content .alert {
   text-align: left;
   padding-top: 5px;
   padding-bottom: 5px;
-  word-wrap: break-word;
 }
 .modal-content .alert .fa {
   position: absolute;
@@ -1993,6 +1991,12 @@ input[type=number] {
 .cards-pf .blank-slate-pf .blank-slate-pf-icon {
   color: #d1d1d1;
 }
+.bullet-chart-pf-legend-item-box.error {
+  background-color: #cc0000;
+}
+.bullet-chart-pf-legend-item-box.warning {
+  background-color: #ec7a08;
+}
 .utilization-bar-pf .display-inline-block {
   display: inline-block;
   font-size: 11px;
@@ -2256,6 +2260,143 @@ table.pf-table-inline-edit tbody .static {
   color: #cc0000;
   margin-bottom: 10px;
 }
+.dual-list-pf-arrows {
+  display: inline-block;
+  margin: auto;
+  position: relative;
+  bottom: 110px;
+  font-size: 23px;
+  color: #bbb;
+}
+@media only screen and (max-width: 600px) {
+  .dual-list-pf-arrows {
+    display: block;
+    position: inherit;
+    margin: 5px 0;
+    padding-left: 79px;
+  }
+}
+.dual-list-pf-arrows span {
+  display: block;
+  margin: 25px;
+  cursor: pointer;
+  transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: rotate(-90deg);
+}
+@media only screen and (max-width: 600px) {
+  .dual-list-pf-arrows span {
+    display: inline;
+    margin: 0 20px 0 0;
+  }
+}
+.dual-list-pf-arrows span:hover {
+  color: #8b8d8f;
+}
+.dual-list-pf-body {
+  height: 230px;
+  width: 230px;
+  overflow-y: scroll;
+  overflow-x: auto;
+  display: inline-grid;
+  align-content: flex-start;
+}
+.dual-list-pf-body::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+  background: #fafafa;
+}
+.dual-list-pf-body::-webkit-scrollbar-thumb {
+  background: #d1d1d1;
+  border-radius: 6px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+.dual-list-pf-body::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+  border-radius: 6px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+.dual-list-pf-filter {
+  margin-left: 20px;
+}
+.dual-list-pf-filter input {
+  background-color: #f5f5f5;
+  border: 1px solid #ededed;
+  width: 145px;
+  padding: 0 22px 0 5px;
+  margin-top: 3px;
+}
+.dual-list-pf-filter .search-icon {
+  position: relative;
+  right: 20px;
+  bottom: 1px;
+  color: #bbb;
+}
+.dual-list-pf-filter ::-webkit-input-placeholder {
+  font-style: italic;
+}
+.dual-list-pf-footer {
+  padding: 10px;
+  border-top: 1px solid #d1d1d1;
+}
+.dual-list-pf-heading {
+  border-bottom: 1px solid #d1d1d1;
+}
+.dual-list-pf-item {
+  padding: 5px 0;
+  margin-bottom: 0;
+  font-weight: 400;
+  transition: background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.3s ease-out;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.dual-list-pf-item input[type='checkbox'] {
+  position: relative;
+  left: 10px;
+  vertical-align: top;
+  cursor: pointer;
+}
+.dual-list-pf-item.selected {
+  background-color: #0088ce;
+  color: white;
+}
+.dual-list-pf-item.disabled {
+  cursor: not-allowed;
+  background: #f5f5f5;
+  color: #8b8d8f;
+}
+.dual-list-pf-item.disabled input[type='checkbox'] {
+  cursor: not-allowed;
+}
+.dual-list-pf-item.child {
+  padding-left: 22px;
+}
+.dual-list-pf-item:hover:not(.selected):not(.disabled) {
+  background-color: #bee1f4;
+  color: inherit;
+}
+.dual-list-pf-item-label {
+  margin-left: 20px;
+}
+.dual-list-pf-main-checkbox {
+  position: relative;
+  left: 10px;
+  vertical-align: text-top;
+  cursor: pointer;
+}
+.dual-list-pf-no-items {
+  margin-top: 30px;
+  text-align: center;
+}
+.dual-list-pf-selector {
+  display: inline-block;
+  border: 1px solid #d1d1d1;
+  user-select: none;
+}
+.dual-list-pf-sort-icon {
+  cursor: pointer;
+}
 .access-consoles-pf .desktop-viewer-pf {
   margin-top: 3em;
 }
@@ -2403,10 +2544,6 @@ table.pf-table-inline-edit tbody .static {
   text-align: center;
   width: 200px;
 }
-.machines-disks-total {
-  float: right;
-  white-space: nowrap;
-}
 .machines-disks .listing-ct th:nth-last-child(-n+2),
 .machines-disks .listing-ct td:nth-last-child(-n+2) {
   text-align: left;
@@ -2432,12 +2569,6 @@ table.pf-table-inline-edit tbody .static {
 .machines-disks-source-value {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
-}
-.machines-disks-alias {
-  white-space: nowrap;
-}
-.machines-disks-total-value {
-  font-weight: bold;
 }
 .machines-listing-detail-top-column {
   vertical-align: top;
@@ -2526,16 +2657,10 @@ table.pf-table-inline-edit tbody .static {
 .machines-network-down {
   color: red;
 }
-.machines-network-additional-column {
-  padding-left: 0;
-}
 .machines-network-source-link {
   cursor: pointer;
   text-decoration: underline;
   color: #00659c;
-}
-.machines-network-state-text {
-  margin-right: 5px;
 }
 .machines-network-actions {
   width: 100px;
@@ -2616,9 +2741,6 @@ table.vcpu-detail-modal-right .btn-group.bootstrap-select.dropdown {
 .modal-footer .pficon-pending {
   line-height: inherit;
   margin-right: 0.5rem;
-}
-.col-no-padding {
-  padding-left: 0px !important;
 }
 .storage-pool-listing-breadcrumb {
   padding-left: 20px !important;

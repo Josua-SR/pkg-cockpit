@@ -87,11 +87,11 @@ return plural;
   null,
   ""
  ],
- "Apply": [
+ "Always attach": [
   null,
   ""
  ],
- "Attach permanently": [
+ "Apply": [
   null,
   ""
  ],
@@ -99,7 +99,7 @@ return plural;
   null,
   ""
  ],
- "Autostart:": [
+ "Autostart": [
   null,
   ""
  ],
@@ -107,7 +107,7 @@ return plural;
   null,
   ""
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
   ""
  ],
@@ -115,7 +115,11 @@ return plural;
   null,
   ""
  ],
- "CPU Type:": [
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  ""
+ ],
+ "CPU Type": [
   null,
   ""
  ],
@@ -235,7 +239,7 @@ return plural;
   null,
   ""
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
   ""
  ],
@@ -267,6 +271,10 @@ return plural;
   null,
   ""
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
+ ],
  "GiB": [
   null,
   ""
@@ -288,6 +296,10 @@ return plural;
   ""
  ],
  "Host should not be empty": [
+  null,
+  ""
+ ],
+ "INSTALL VM action failed": [
   null,
   ""
  ],
@@ -346,10 +358,6 @@ return plural;
  "Memory should be positive number": [
   null,
   ""
- ],
- "Memory:": [
-  null,
-  "Hukommelse"
  ],
  "MiB": [
   null,
@@ -459,6 +467,10 @@ return plural;
   null,
   ""
  ],
+ "Persistence": [
+  null,
+  ""
+ ],
  "Please enter new volume name": [
   null,
   ""
@@ -551,6 +563,10 @@ return plural;
   null,
   ""
  ],
+ "Session": [
+  null,
+  ""
+ ],
  "Shut Down": [
   null,
   ""
@@ -575,7 +591,7 @@ return plural;
   null,
   ""
  ],
- "Source should start with http, ftp or nfs protocol": [
+ "Source should start with https, ftp or nfs protocol": [
   null,
   ""
  ],
@@ -623,7 +639,7 @@ return plural;
   null,
   "Værtsnavn"
  ],
- "Target": [
+ "System": [
   null,
   ""
  ],
@@ -727,6 +743,54 @@ return plural;
   null,
   ""
  ],
+ "VM CHANGE_NETWORK_STATE action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE action failed": [
+  null,
+  ""
+ ],
+ "VM DETACH_DISK action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  ""
+ ],
+ "VM SENDNMI action failed": [
+  null,
+  ""
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  ""
+ ],
+ "VM START action failed": [
+  null,
+  ""
+ ],
  "VNC": [
   null,
   ""
@@ -763,11 +827,83 @@ return plural;
   null,
   ""
  ],
+ "bridge": [
+  null,
+  ""
+ ],
+ "cdrom": [
+  null,
+  ""
+ ],
+ "crashed": [
+  null,
+  ""
+ ],
+ "custom": [
+  null,
+  ""
+ ],
+ "direct": [
+  null,
+  ""
+ ],
+ "disabled": [
+  null,
+  ""
+ ],
+ "disk": [
+  null,
+  ""
+ ],
+ "down": [
+  null,
+  ""
+ ],
+ "dying": [
+  null,
+  ""
+ ],
+ "enabled": [
+  null,
+  ""
+ ],
+ "ethernet": [
+  null,
+  ""
+ ],
+ "host": [
+  null,
+  ""
+ ],
+ "hostdev": [
+  null,
+  ""
+ ],
+ "idle": [
+  null,
+  ""
+ ],
  "inactive": [
   null,
   ""
  ],
+ "mcast": [
+  null,
+  ""
+ ],
+ "network": [
+  null,
+  "Netværks Traffik"
+ ],
  "no": [
+  null,
+  ""
+ ],
+ "other": [
+  null,
+  ""
+ ],
+ "paused": [
   null,
   ""
  ],
@@ -779,6 +915,14 @@ return plural;
   null,
   ""
  ],
+ "running": [
+  null,
+  ""
+ ],
+ "server": [
+  null,
+  ""
+ ],
  "show less": [
   null,
   ""
@@ -787,7 +931,31 @@ return plural;
   null,
   ""
  ],
+ "shut off": [
+  null,
+  ""
+ ],
+ "shutdown": [
+  null,
+  ""
+ ],
+ "suspended (PM)": [
+  null,
+  ""
+ ],
+ "udp": [
+  null,
+  ""
+ ],
  "undefined": [
+  null,
+  ""
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
   null,
   ""
  ],
@@ -799,7 +967,11 @@ return plural;
   null,
   ""
  ],
- "vCPUs:": [
+ "vCPUs": [
+  null,
+  ""
+ ],
+ "vhostuser": [
   null,
   ""
  ],

@@ -91,6 +91,14 @@ return plural;
   null,
   "Emmagatzematge addicional"
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
+ "All In One": [
+  null,
+  "Tot en un"
+ ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
   ""
@@ -102,6 +110,18 @@ return plural;
  "Author": [
   null,
   "Autor"
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -168,6 +188,10 @@ return plural;
   null,
   "Consigna la imatge"
  ],
+ "Compact PCI": [
+  null,
+  "PCI compacte"
+ ],
  "Configure storage...": [
   null,
   "Configura l'emmagatzematge..."
@@ -200,6 +224,10 @@ return plural;
   null,
   "Contenidors"
  ],
+ "Convertible": [
+  null,
+  "Convertible"
+ ],
  "Could not add all disks": [
   null,
   "No s'han pogut afegir tots els discs"
@@ -228,6 +256,14 @@ return plural;
   null,
   "La supressió d'un contenidor n'esborrarà totes les dades."
  ],
+ "Desktop": [
+  null,
+  "Escriptori"
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Details": [
   null,
   "Detalls"
@@ -235,6 +271,10 @@ return plural;
  "Docker is not installed or activated on the system": [
   null,
   "Docker no està activat o instal·lat al sistema"
+ ],
+ "Docking Station": [
+  null,
+  ""
  ],
  "Download": [
   null,
@@ -251,6 +291,10 @@ return plural;
  "Duplicate port": [
   null,
   "Port duplicat"
+ ],
+ "Embedded PC": [
+  null,
+  ""
  ],
  "Entrypoint": [
   null,
@@ -275,6 +319,10 @@ return plural;
  "Exited $ExitCode": [
   null,
   "Sortida $ExitCode"
+ ],
+ "Expansion Chassis": [
+  null,
+  ""
  ],
  "Expose container ports": [
   null,
@@ -303,6 +351,10 @@ return plural;
  "Get new image": [
   null,
   "Obtén una imatge nova"
+ ],
+ "Hand Held": [
+  null,
+  ""
  ],
  "Hard Disk": [
   null,
@@ -356,6 +408,14 @@ return plural;
   null,
   "Port no vàlid"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
+ "Laptop": [
+  null,
+  ""
+ ],
  "Link to another container": [
   null,
   "Enllaça a un altre contenidor"
@@ -372,9 +432,21 @@ return plural;
   null,
   "Discs locals"
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "MAC Address:": [
   null,
   "Adreça MAC:"
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
  ],
  "Memory": [
   null,
@@ -392,9 +464,21 @@ return plural;
   null,
   "MiB"
  ],
+ "Mini PC": [
+  null,
+  "Mini PC"
+ ],
+ "Mini Tower": [
+  null,
+  "Mini torre"
+ ],
  "Mount container volumes": [
   null,
   "Munta els volums del contenidor"
+ ],
+ "Multi-system Chassis": [
+  null,
+  ""
  ],
  "Name": [
   null,
@@ -452,6 +536,10 @@ return plural;
   null,
   "No s'ha trobat"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "Off"
@@ -473,9 +561,21 @@ return plural;
   "Amb la fallada, reintenta $0 cop",
   "Amb la fallada, reintenta $0 cops"
  ],
+ "Other": [
+  null,
+  "Altres"
+ ],
  "Overview": [
   null,
   "Visió de conjunt"
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
  ],
  "Please confirm deletion of $0": [
   null,
@@ -489,6 +589,10 @@ return plural;
   null,
   "Si us plau, proveu un altre terme"
  ],
+ "Portable": [
+  null,
+  "Portable"
+ ],
  "Ports": [
   null,
   "Ports"
@@ -500,6 +604,14 @@ return plural;
  "Problems": [
   null,
   "Problemes"
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
+  null,
+  ""
  ],
  "ReadOnly": [
   null,
@@ -557,6 +669,10 @@ return plural;
   null,
   "Executa la imatge"
  ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Security": [
   null,
   "Seguretat"
@@ -581,6 +697,10 @@ return plural;
   null,
   "Disc d'estat sòlid"
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
  "Start": [
   null,
   "Inicia"
@@ -596,6 +716,10 @@ return plural;
  "State:": [
   null,
   "Estat:"
+ ],
+ "Stick PC": [
+  null,
+  ""
  ],
  "Stop": [
   null,
@@ -617,9 +741,21 @@ return plural;
   null,
   "Agrupació d'emmagatzematge"
  ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "TCP": [
   null,
   "TCP"
+ ],
+ "Tablet": [
+  null,
+  "Tauleta"
  ],
  "Tag": [
   null,
@@ -653,6 +789,10 @@ return plural;
   null,
   "Total"
  ],
+ "Tower": [
+  null,
+  "Torre"
+ ],
  "Try again": [
   null,
   "Torna-ho a intentar"
@@ -668,6 +808,10 @@ return plural;
  "Unexpected error": [
   null,
   "Error inesperat"
+ ],
+ "Unknown": [
+  null,
+  "Desconegut"
  ],
  "Unless Stopped": [
   null,

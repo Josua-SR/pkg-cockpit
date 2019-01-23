@@ -226,6 +226,10 @@ return plural;
   null,
   "Paketin tiedot"
  ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit kaatui"
+ ],
  "PackageKit is not installed": [
   null,
   "PackageKit ei ole asennettu"
@@ -314,10 +318,6 @@ return plural;
   null,
   ""
  ],
- "Unregistered System": [
-  null,
-  ""
- ],
  "Update History": [
   null,
   "Päivityshistoria"
@@ -333,10 +333,6 @@ return plural;
  "Updated packages may require a restart to take effect.": [
   null,
   "Päivitetyt paketit saattavat vaatia uudelleenkäynnistyksen, jotta muutokset tulevat voimaan."
- ],
- "Updates are disabled.": [
-  null,
-  "Päivitykset on poistettu käytöstä."
  ],
  "Updating": [
   null,
@@ -354,15 +350,7 @@ return plural;
   null,
   "Versio"
  ],
- "View Registration Details": [
-  null,
-  "Näytä rekisteröinnin tiedot"
- ],
  "Waiting for other software management operations to finish": [
-  null,
-  ""
- ],
- "You need to re-subscribe this system.": [
   null,
   ""
  ],
@@ -379,6 +367,14 @@ return plural;
   ""
  ],
  "at": [
+  null,
+  ""
+ ],
+ "bug fix": [
+  null,
+  ""
+ ],
+ "enhancement": [
   null,
   ""
  ],
@@ -413,6 +409,10 @@ return plural;
  "on Wednesdays": [
   null,
   "keskiviikkoisin"
+ ],
+ "security": [
+  null,
+  "$1 turvallisuuspäivitys"
  ],
  "undefined": [
   null,

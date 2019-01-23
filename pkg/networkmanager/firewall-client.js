@@ -99,6 +99,9 @@ firewalld_service.addEventListener('changed', () => {
 });
 
 function fetchServiceInfos(services) {
+    // We can't use Promise.all() here until cockpit is able to dispatch es2015 promises
+    // https://github.com/cockpit-project/cockpit/issues/10956
+    // eslint-disable-next-line cockpit/no-cockpit-all
     var promises = cockpit.all(services.map(service => {
         if (firewall.services[service])
             return firewall.services[service];
@@ -138,9 +141,9 @@ cockpit.spawn(['sh', '-c', 'pkcheck --action-id org.fedoraproject.FirewallD1.all
             firewall.dispatchEvent('changed');
         });
 
-firewall.enable = () => cockpit.all(firewalld_service.enable(), firewalld_service.start());
+firewall.enable = () => Promise.all([firewalld_service.enable(), firewalld_service.start()]);
 
-firewall.disable = () => cockpit.all(firewalld_service.stop(), firewalld_service.disable());
+firewall.disable = () => Promise.all([firewalld_service.stop(), firewalld_service.disable()]);
 
 firewall.getAvailableServices = () => {
     return firewalld_dbus.call('/org/fedoraproject/FirewallD1',
@@ -196,10 +199,7 @@ firewall.addService = (service) => {
  * Returns a promise that resolves when all services are added.
  */
 firewall.addServices = (services) => {
-    return cockpit.all(services.map(s => firewall.addService(s)))
-            .then(function () {
-                return Array.prototype.slice.call(arguments);
-            });
+    return Promise.all(services.map(s => firewall.addService(s)));
 };
 
 export default firewall;

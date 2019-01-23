@@ -111,9 +111,9 @@ return plural;
   null,
   "Автоматически выбранный хост"
  ],
- "Autostart:": [
+ "Autostart": [
   null,
-  "Автоматический старт:"
+  "Автоматический старт"
  ],
  "Available": [
   null,
@@ -131,9 +131,9 @@ return plural;
   null,
   "Базовый шаблон:"
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
-  "Порядок загрузки:"
+  "Порядок загрузки"
  ],
  "Bus": [
   null,
@@ -143,9 +143,9 @@ return plural;
   null,
   "Не удалось выполнить действие CHANGE NETWORK STATE"
  ],
- "CPU Type:": [
+ "CPU Type": [
   null,
-  "Тип процессора:"
+  "Тип процессора"
  ],
  "CREATE VM action failed": [
   null,
@@ -299,9 +299,9 @@ return plural;
   null,
   "Измените vdsm.conf"
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
-  "Эмулированные машины:"
+  "Эмулированные машины"
  ],
  "Enter New VM name": [
   null,
@@ -406,10 +406,6 @@ return plural;
  "Memory": [
   null,
   "Память"
- ],
- "Memory:": [
-  null,
-  "Память:"
  ],
  "MiB": [
   null,
@@ -1114,10 +1110,6 @@ return plural;
  "vCPUs": [
   null,
   "VCPU"
- ],
- "vCPUs:": [
-  null,
-  "VCPU будут:"
  ],
  "vhostuser": [
   null,

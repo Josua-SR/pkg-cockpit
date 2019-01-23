@@ -226,6 +226,10 @@ return plural;
   null,
   "Informació dels paquets"
  ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit s'ha estavellat."
+ ],
  "PackageKit is not installed": [
   null,
   "PackageKit no està instal·lat"

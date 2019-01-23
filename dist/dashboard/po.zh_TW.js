@@ -103,6 +103,14 @@ return plural;
   null,
   "位址"
  ],
+ "Advanced TCA": [
+  null,
+  "高級TCA"
+ ],
+ "All In One": [
+  null,
+  "一體"
+ ],
  "Authentication": [
   null,
   "核對"
@@ -119,9 +127,25 @@ return plural;
   null,
   "阿凡達"
  ],
+ "Blade": [
+  null,
+  "刀"
+ ],
+ "Blade enclosure": [
+  null,
+  "刀片機箱"
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  "總線擴展機箱"
+ ],
  "CPU": [
   null,
   "CPU"
+ ],
+ "Can't load image": [
+  null,
+  "無法加載圖片"
  ],
  "Cancel": [
   null,
@@ -167,6 +191,10 @@ return plural;
   null,
   "顏色"
  ],
+ "Compact PCI": [
+  null,
+  "緊湊型PCI"
+ ],
  "Connect": [
   null,
   "連接"
@@ -174,6 +202,14 @@ return plural;
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
   "同時連接到多個 {{ limit }} 機器不受支持。"
+ ],
+ "Connection Error": [
+  null,
+  "連接錯誤"
+ ],
+ "Convertible": [
+  null,
+  "可兌換"
  ],
  "Could not contact {{host}}": [
   null,
@@ -183,13 +219,29 @@ return plural;
   null,
   "控制面板"
  ],
+ "Desktop": [
+  null,
+  "桌面環境"
+ ],
+ "Detachable": [
+  null,
+  "可拆開"
+ ],
  "Disk I/O": [
   null,
   "磁碟 I/O"
  ],
+ "Docking Station": [
+  null,
+  "停靠站"
+ ],
  "Edit Server": [
   null,
   "編輯服務器"
+ ],
+ "Embedded PC": [
+  null,
+  "嵌入式PC"
  ],
  "Enter IP address or host name": [
   null,
@@ -202,6 +254,10 @@ return plural;
  "Error loading users: {{perm_failed}}": [
   null,
   "加載用戶時出錯： {{perm_failed}}"
+ ],
+ "Expansion Chassis": [
+  null,
+  "擴展機箱"
  ],
  "Failed to add machine: $0": [
   null,
@@ -223,6 +279,10 @@ return plural;
   null,
   "去吧"
  ],
+ "Hand Held": [
+  null,
+  "手持"
+ ],
  "Host Name": [
   null,
   "主機名稱"
@@ -239,6 +299,10 @@ return plural;
   null,
   "文件權限無效"
  ],
+ "IoT Gateway": [
+  null,
+  "物聯網網關"
+ ],
  "Is sshd running on a different port?": [
   null,
   "sshd是否在不同的端口上運行？"
@@ -250,6 +314,10 @@ return plural;
  "Kerberos Ticket": [
   null,
   "Kerberos票證"
+ ],
+ "Laptop": [
+  null,
+  "筆記本電腦"
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
@@ -275,9 +343,33 @@ return plural;
   null,
   "失去了連接。試圖重新連接"
  ],
+ "Low Profile Desktop": [
+  null,
+  "低調桌面"
+ ],
+ "Lunch Box": [
+  null,
+  "午餐盒"
+ ],
+ "Main Server Chassis": [
+  null,
+  "主服務器機箱"
+ ],
  "Memory": [
   null,
   "記憶體"
+ ],
+ "Mini PC": [
+  null,
+  "迷你電腦"
+ ],
+ "Mini Tower": [
+  null,
+  "迷你塔"
+ ],
+ "Multi-system Chassis": [
+  null,
+  "多系統機箱"
  ],
  "Network": [
   null,
@@ -295,6 +387,10 @@ return plural;
   null,
   "不是有效的私鑰"
  ],
+ "Notebook": [
+  null,
+  "筆記本"
+ ],
  "Off": [
   null,
   "關閉"
@@ -307,6 +403,10 @@ return plural;
   null,
   "開"
  ],
+ "Other": [
+  null,
+  "其它"
+ ],
  "Password": [
   null,
   "密碼"
@@ -315,9 +415,21 @@ return plural;
   null,
   "密碼不被接受"
  ],
+ "Peripheral Chassis": [
+  null,
+  "外圍機箱"
+ ],
+ "Pizza Box": [
+  null,
+  "披薩盒"
+ ],
  "Port": [
   null,
   "連接埠"
+ ],
+ "Portable": [
+  null,
+  "手提"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -331,6 +443,18 @@ return plural;
   null,
   "公鑰"
  ],
+ "RAID Chassis": [
+  null,
+  "RAID機箱"
+ ],
+ "Rack Mount Chassis": [
+  null,
+  "機架式機箱"
+ ],
+ "Sealed-case PC": [
+  null,
+  "密封式PC"
+ ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
   "選擇您要與之同步的用戶 {{#strong}}{{host}}{{/strong}}"
@@ -343,6 +467,22 @@ return plural;
   null,
   "設置"
  ],
+ "Space-saving Computer": [
+  null,
+  "節省空間的計算機"
+ ],
+ "Stick PC": [
+  null,
+  "堅持使用PC"
+ ],
+ "Sub Chassis": [
+  null,
+  "子機箱"
+ ],
+ "Sub Notebook": [
+  null,
+  "子筆記本"
+ ],
  "Synchronize": [
   null,
   "同步"
@@ -350,6 +490,10 @@ return plural;
  "Synchronize users": [
   null,
   "同步用戶"
+ ],
+ "Tablet": [
+  null,
+  "面板"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -367,6 +511,10 @@ return plural;
   null,
   "密碼兩者不相符。"
  ],
+ "The user <b>$0</b> is not permitted to manage servers": [
+  null,
+  "用戶 <b>$0</b> 不允許管理服務器"
+ ],
  "This machine has already been added.": [
   null,
   "這台機器已經添加。"
@@ -379,9 +527,17 @@ return plural;
   null,
   "要嘗試不同的端口，您需要將cockpit-ws升級到更新的版本。"
  ],
+ "Tower": [
+  null,
+  "塔"
+ ],
  "Type a password": [
   null,
   "輸入一個密碼"
+ ],
+ "Unknown": [
+  null,
+  "不明"
  ],
  "Unknown Host Key": [
   null,
@@ -406,5 +562,9 @@ return plural;
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
   "你已經連接到了 {{#strong}}{{host}}{{/strong}}, 但是，為了同步用戶，需要具有超級用戶權限的用戶。"
+ ],
+ "You are currently connected directly to this server. You cannot delete it.": [
+  null,
+  "您當前直接連接到此服務器。你無法刪除它。"
  ]
 }));

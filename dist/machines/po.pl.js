@@ -99,17 +99,17 @@ return plural;
   null,
   "Automatyczne włączanie usługi libvirt podczas uruchamiania"
  ],
- "Autostart:": [
+ "Autostart": [
   null,
-  "Automatyczne uruchamianie:"
+  "Automatyczne uruchamianie"
  ],
  "Available": [
   null,
   "Dostępne"
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
-  "Kolejność uruchamiania:"
+  "Kolejność uruchamiania"
  ],
  "Bus": [
   null,
@@ -119,9 +119,9 @@ return plural;
   null,
   "Działanie CHANGE NETWORK STATE się nie powiodło"
  ],
- "CPU Type:": [
+ "CPU Type": [
   null,
-  "Typ procesora:"
+  "Typ procesora"
  ],
  "Cancel": [
   null,
@@ -239,9 +239,9 @@ return plural;
   null,
   "Modyfikuj"
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
-  "Emulowany komputer:"
+  "Emulowany komputer"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -358,10 +358,6 @@ return plural;
  "Memory should be positive number": [
   null,
   "Pamięć musi być liczbą dodatnią"
- ],
- "Memory:": [
-  null,
-  "Pamięć:"
  ],
  "MiB": [
   null,
@@ -646,10 +642,6 @@ return plural;
  "System": [
   null,
   "System"
- ],
- "Target": [
-  null,
-  "Cel"
  ],
  "Target Path": [
   null,
@@ -975,9 +967,9 @@ return plural;
   null,
   "Maksymalna liczba wirtualnych procesorów"
  ],
- "vCPUs:": [
+ "vCPUs": [
   null,
-  "Wirtualne procesory:"
+  "Wirtualne procesory"
  ],
  "vhostuser": [
   null,

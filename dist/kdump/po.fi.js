@@ -95,6 +95,10 @@ return plural;
   null,
   "Hakemisto"
  ],
+ "Directory $0 isn't writable or doesn't exist.": [
+  null,
+  "Hakemistolle $0 ei voi kirjoittaa tai se ei ole olemassa."
+ ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
   "Kdump-palvelua ei ole asennettu. Varmista, että paketti kexec-tools on asennettu."
@@ -219,10 +223,6 @@ return plural;
   null,
   "Asetusten asettaminen epäonnistui: $0"
  ],
- "Use the setting in /etc/kdump.conf": [
-  null,
-  "Käytä asetusta sijainnissa /etc/kdump.conf"
- ],
  "invalid: multiple targets defined": [
   null,
   "virheellinen: useita kohteita määritelty"
@@ -235,9 +235,21 @@ return plural;
   null,
   ""
  ],
+ "nfs dump target isn't formated as server:path": [
+  null,
+  ""
+ ],
  "ssh key": [
   null,
   "ssh-avain"
+ ],
+ "ssh key isn't a path": [
+  null,
+  ""
+ ],
+ "ssh server is empty": [
+  null,
+  ""
  ],
  "undefined": [
   null,

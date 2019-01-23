@@ -87,19 +87,19 @@ return plural;
   null,
   "地址："
  ],
+ "Always attach": [
+  null,
+  "总是"
+ ],
  "Apply": [
   null,
   "应用"
- ],
- "Attach permanently": [
-  null,
-  "永久附加"
  ],
  "Automatically start libvirt on boot": [
   null,
   "在引导时自动启动 libvirt"
  ],
- "Autostart:": [
+ "Autostart": [
   null,
   "自动启动："
  ],
@@ -107,7 +107,7 @@ return plural;
   null,
   "可用的"
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
   "引导顺序："
  ],
@@ -115,7 +115,11 @@ return plural;
   null,
   "总线"
  ],
- "CPU Type:": [
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  "更改网络状态操作失败"
+ ],
+ "CPU Type": [
   null,
   "CPU 类型："
  ],
@@ -235,7 +239,7 @@ return plural;
   null,
   "编辑"
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
   "模拟的机器："
  ],
@@ -267,6 +271,10 @@ return plural;
   null,
   "格式化"
  ],
+ "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  "获取 HYPERVISOR MAX VCPU 操作失败"
+ ],
  "GiB": [
   null,
   "GiB"
@@ -290,6 +298,10 @@ return plural;
  "Host should not be empty": [
   null,
   "主机不能为空"
+ ],
+ "INSTALL VM action failed": [
+  null,
+  "安装虚拟机操作失败"
  ],
  "Immediately Start VM": [
   null,
@@ -346,10 +358,6 @@ return plural;
  "Memory should be positive number": [
   null,
   "内存需要是正数"
- ],
- "Memory:": [
-  null,
-  "内存："
  ],
  "MiB": [
   null,
@@ -459,6 +467,10 @@ return plural;
   null,
   "文件路径"
  ],
+ "Persistence": [
+  null,
+  "持久卷"
+ ],
  "Please enter new volume name": [
   null,
   "请输入新的卷名"
@@ -551,6 +563,10 @@ return plural;
   null,
   "串行控制台"
  ],
+ "Session": [
+  null,
+  "会话"
+ ],
  "Shut Down": [
   null,
   "关机"
@@ -623,9 +639,9 @@ return plural;
   null,
   "存储卷"
  ],
- "Target": [
+ "System": [
   null,
-  "目标"
+  "系统"
  ],
  "Target Path": [
   null,
@@ -727,6 +743,54 @@ return plural;
   null,
   "VCPU 设置不能被保存"
  ],
+ "VM CHANGE_NETWORK_STATE action failed": [
+  null,
+  "VM CHANGE_NETWORK_STATE 操作失败"
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  "VM DELETE (DESTROY) 操作失败"
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  "VM DELETE (UNDEFINE) 操作失败"
+ ],
+ "VM DELETE action failed": [
+  null,
+  "VM DELETE 操作失败"
+ ],
+ "VM DETACH_DISK action failed": [
+  null,
+  "VM DETACH_DISK 操作失败"
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  "虚拟机强制关闭操作失败"
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  "虚拟机强制重启操作失败"
+ ],
+ "VM REBOOT action failed": [
+  null,
+  "虚拟机重启操作失败"
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  "虚拟机发送非屏蔽中断操作失败"
+ ],
+ "VM SENDNMI action failed": [
+  null,
+  "VM SENDNMI 操作失败"
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  "虚拟机关机操作失败"
+ ],
+ "VM START action failed": [
+  null,
+  "虚拟机启动操作失败"
+ ],
  "VNC": [
   null,
   "VNC"
@@ -763,13 +827,85 @@ return plural;
   null,
   "激活"
  ],
+ "bridge": [
+  null,
+  "网桥"
+ ],
+ "cdrom": [
+  null,
+  "光驱"
+ ],
+ "crashed": [
+  null,
+  "已崩溃"
+ ],
+ "custom": [
+  null,
+  "自定义"
+ ],
+ "direct": [
+  null,
+  "直接"
+ ],
+ "disabled": [
+  null,
+  "已禁用"
+ ],
+ "disk": [
+  null,
+  "磁盘"
+ ],
+ "down": [
+  null,
+  "已关闭"
+ ],
+ "dying": [
+  null,
+  "失活的"
+ ],
+ "enabled": [
+  null,
+  "已启用"
+ ],
+ "ethernet": [
+  null,
+  "以太网"
+ ],
+ "host": [
+  null,
+  "主机"
+ ],
+ "hostdev": [
+  null,
+  "hostdev"
+ ],
+ "idle": [
+  null,
+  "休眠"
+ ],
  "inactive": [
   null,
   "未激活"
  ],
+ "mcast": [
+  null,
+  "MCAST"
+ ],
+ "network": [
+  null,
+  "网络"
+ ],
  "no": [
   null,
   "否"
+ ],
+ "other": [
+  null,
+  "其他"
+ ],
+ "paused": [
+  null,
+  "已暂停"
  ],
  "qcow2": [
   null,
@@ -779,6 +915,14 @@ return plural;
   null,
   "raw"
  ],
+ "running": [
+  null,
+  "运行中"
+ ],
+ "server": [
+  null,
+  "服务器"
+ ],
  "show less": [
   null,
   "显示更少"
@@ -787,9 +931,33 @@ return plural;
   null,
   "显示更多"
  ],
+ "shut off": [
+  null,
+  "关闭"
+ ],
+ "shutdown": [
+  null,
+  "关机"
+ ],
+ "suspended (PM)": [
+  null,
+  "已挂起 （电源管理）"
+ ],
+ "udp": [
+  null,
+  "udp"
+ ],
  "undefined": [
   null,
   "未定义"
+ ],
+ "up": [
+  null,
+  "运行中"
+ ],
+ "user": [
+  null,
+  "用户"
  ],
  "vCPU Count": [
   null,
@@ -799,9 +967,13 @@ return plural;
   null,
   "vCPU 的最大值"
  ],
- "vCPUs:": [
+ "vCPUs": [
   null,
-  "vCPU："
+  "vCPU"
+ ],
+ "vhostuser": [
+  null,
+  "vhostuser"
  ],
  "yes": [
   null,

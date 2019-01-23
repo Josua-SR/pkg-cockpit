@@ -139,6 +139,10 @@ return plural;
   null,
   "Download di $0"
  ],
+ "Host name should not be changed in a domain": [
+  null,
+  "L'host non deve essere vuoto"
+ ],
  "Install": [
   null,
   "Installa"

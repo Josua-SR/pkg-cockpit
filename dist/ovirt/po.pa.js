@@ -95,11 +95,11 @@ return plural;
   null,
   ""
  ],
- "All changes will take effect only after stopping and starting the VM.": [
+ "All running virtual machines will be turned off.": [
   null,
   ""
  ],
- "All running virtual machines will be turned off.": [
+ "Always attach": [
   null,
   ""
  ],
@@ -107,15 +107,11 @@ return plural;
   null,
   ""
  ],
- "Attach permanently": [
-  null,
-  ""
- ],
  "Automatically selected host": [
   null,
   ""
  ],
- "Autostart:": [
+ "Autostart": [
   null,
   ""
  ],
@@ -135,7 +131,7 @@ return plural;
   null,
   ""
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
   ""
  ],
@@ -143,7 +139,15 @@ return plural;
   null,
   ""
  ],
- "CPU Type:": [
+ "CHANGE NETWORK STATE action failed": [
+  null,
+  ""
+ ],
+ "CPU Type": [
+  null,
+  "ਕਿਸਮ"
+ ],
+ "CREATE VM action failed": [
   null,
   ""
  ],
@@ -152,6 +156,10 @@ return plural;
   ""
  ],
  "Capacity": [
+  null,
+  ""
+ ],
+ "Changes will take effect after shutting down the VM": [
   null,
   ""
  ],
@@ -168,10 +176,6 @@ return plural;
   ""
  ],
  "Cluster Virtual Machines": [
-  null,
-  ""
- ],
- "Confirm deletion of $0": [
   null,
   ""
  ],
@@ -271,11 +275,11 @@ return plural;
   null,
   ""
  ],
- "Disk failed to be attached with following error: ": [
+ "Disk failed to be attached": [
   null,
   ""
  ],
- "Disk failed to be created with following error: ": [
+ "Disk failed to be created": [
   null,
   ""
  ],
@@ -287,13 +291,17 @@ return plural;
   null,
   ""
  ],
+ "Edit": [
+  null,
+  ""
+ ],
  "Edit the vdsm.conf": [
   null,
   ""
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
-  ""
+  "ਵਰਚੁਅਲ ਮਸ਼ੀਨਾਂ"
  ],
  "Enter New VM name": [
   null,
@@ -320,6 +328,10 @@ return plural;
   ""
  ],
  "Format": [
+  null,
+  ""
+ ],
+ "GET HYPERVISOR MAX VCPU action failed": [
   null,
   ""
  ],
@@ -351,6 +363,10 @@ return plural;
   null,
   ""
  ],
+ "INSTALL VM action failed": [
+  null,
+  ""
+ ],
  "Install": [
   null,
   ""
@@ -371,6 +387,14 @@ return plural;
   null,
   ""
  ],
+ "MIGRATE action failed": [
+  null,
+  ""
+ ],
+ "Mac Address": [
+  null,
+  ""
+ ],
  "Manual Connection": [
   null,
   ""
@@ -383,15 +407,15 @@ return plural;
   null,
   ""
  ],
- "Memory:": [
-  null,
-  ""
- ],
  "MiB": [
   null,
   ""
  ],
  "Migrate To:": [
+  null,
+  ""
+ ],
+ "Model": [
   null,
   ""
  ],
@@ -406,6 +430,14 @@ return plural;
  "Name": [
   null,
   "ਨਾਂ"
+ ],
+ "Network Type": [
+  null,
+  ""
+ ],
+ "Network settings could not be saved": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -443,6 +475,10 @@ return plural;
   null,
   ""
  ],
+ "No virtual networks": [
+  null,
+  ""
+ ],
  "Number of virtual CPUs that gonna be used.": [
   null,
   ""
@@ -468,6 +504,10 @@ return plural;
   ""
  ],
  "Overview": [
+  null,
+  ""
+ ],
+ "Persistence": [
   null,
   ""
  ],
@@ -523,7 +563,15 @@ return plural;
   null,
   ""
  ],
+ "Preparing for Maintenance": [
+  null,
+  ""
+ ],
  "Protocol": [
+  null,
+  ""
+ ],
+ "REBOOT action failed": [
   null,
   ""
  ],
@@ -563,6 +611,14 @@ return plural;
   null,
   ""
  ],
+ "SET VCPU SETTINGS action failed": [
+  null,
+  ""
+ ],
+ "SHUTDOWN action failed": [
+  null,
+  ""
+ ],
  "SPICE": [
   null,
   ""
@@ -579,6 +635,14 @@ return plural;
   null,
   ""
  ],
+ "START action failed": [
+  null,
+  ""
+ ],
+ "SUSPEND action failed": [
+  null,
+  ""
+ ],
  "Save": [
   null,
   ""
@@ -592,6 +656,10 @@ return plural;
   ""
  ],
  "Serial Console": [
+  null,
+  ""
+ ],
+ "Session": [
   null,
   ""
  ],
@@ -635,9 +703,17 @@ return plural;
   null,
   ""
  ],
- "Target": [
+ "Switching host to maintenance mode failed. Received error: ": [
   null,
   ""
+ ],
+ "Switching host to maintenance mode in progress ...": [
+  null,
+  ""
+ ],
+ "System": [
+  null,
+  "ਸਿਸਟਮ"
  ],
  "Template": [
   null,
@@ -727,11 +803,47 @@ return plural;
   null,
   ""
  ],
+ "VCPU settings could not be saved": [
+  null,
+  ""
+ ],
  "VDSM": [
   null,
   ""
  ],
  "VDSM Service Management": [
+  null,
+  ""
+ ],
+ "VM DELETE (DESTROY) action failed": [
+  null,
+  ""
+ ],
+ "VM DELETE (UNDEFINE) action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE OFF action failed": [
+  null,
+  ""
+ ],
+ "VM FORCE REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM SEND Non-Maskable Interrrupt action failed": [
+  null,
+  ""
+ ],
+ "VM SHUT DOWN action failed": [
+  null,
+  ""
+ ],
+ "VM START action failed": [
   null,
   ""
  ],
@@ -775,7 +887,31 @@ return plural;
   null,
   "ਵਾਲੀਅਮ"
  ],
+ "bridge": [
+  null,
+  ""
+ ],
+ "cdrom": [
+  null,
+  ""
+ ],
+ "connecting": [
+  null,
+  ""
+ ],
  "cores": [
+  null,
+  ""
+ ],
+ "crashed": [
+  null,
+  ""
+ ],
+ "custom": [
+  null,
+  ""
+ ],
+ "direct": [
   null,
   ""
  ],
@@ -783,11 +919,83 @@ return plural;
   null,
   ""
  ],
+ "disk": [
+  null,
+  ""
+ ],
+ "down": [
+  null,
+  ""
+ ],
+ "dying": [
+  null,
+  ""
+ ],
  "enabled": [
   null,
   ""
  ],
+ "error": [
+  null,
+  ""
+ ],
+ "ethernet": [
+  null,
+  ""
+ ],
+ "host": [
+  null,
+  ""
+ ],
+ "hostdev": [
+  null,
+  ""
+ ],
+ "idle": [
+  null,
+  ""
+ ],
+ "initializing": [
+  null,
+  ""
+ ],
+ "installation failed": [
+  null,
+  ""
+ ],
+ "installing OS": [
+  null,
+  ""
+ ],
+ "kdumping": [
+  null,
+  ""
+ ],
+ "maintenance": [
+  null,
+  ""
+ ],
+ "mcast": [
+  null,
+  ""
+ ],
+ "network": [
+  null,
+  ""
+ ],
  "no": [
+  null,
+  ""
+ ],
+ "non operational": [
+  null,
+  ""
+ ],
+ "non responsive": [
+  null,
+  ""
+ ],
+ "oVirt": [
   null,
   ""
  ],
@@ -811,11 +1019,35 @@ return plural;
   null,
   ""
  ],
+ "other": [
+  null,
+  ""
+ ],
+ "paused": [
+  null,
+  ""
+ ],
+ "pending approval": [
+  null,
+  ""
+ ],
  "qcow2": [
   null,
   ""
  ],
  "raw": [
+  null,
+  ""
+ ],
+ "reboot": [
+  null,
+  ""
+ ],
+ "running": [
+  null,
+  "ਚੱਲ ਰਿਹਾ ਹੈ"
+ ],
+ "server": [
   null,
   ""
  ],
@@ -827,17 +1059,45 @@ return plural;
   null,
   ""
  ],
+ "shut off": [
+  null,
+  ""
+ ],
+ "shutdown": [
+  null,
+  ""
+ ],
  "sockets": [
   null,
   ""
  ],
+ "suspended (PM)": [
+  null,
+  "ਸਸਪੈਂਡ (PM)"
+ ],
  "threads": [
+  null,
+  ""
+ ],
+ "udp": [
+  null,
+  ""
+ ],
+ "unassigned": [
   null,
   ""
  ],
  "undefined": [
   null,
   "ਨਾ-ਪ੍ਰਭਾਸ਼ਿਤ"
+ ],
+ "up": [
+  null,
+  ""
+ ],
+ "user": [
+  null,
+  ""
  ],
  "vCPU Count": [
   null,
@@ -851,9 +1111,9 @@ return plural;
   null,
   ""
  ],
- "vCPUs:": [
+ "vhostuser": [
   null,
-  "vCPUs:"
+  ""
  ],
  "yes": [
   null,

@@ -71,38 +71,8 @@ return plural;
   null,
   ""
  ],
- "$0 day": [
-  "$0 days",
-  "",
-  ""
- ],
- "$0 hour": [
-  "$0 hours",
-  "",
-  ""
- ],
- "$0 minute": [
-  "$0 minutes",
-  "",
-  ""
- ],
- "$0 month": [
-  "$0 months",
-  "",
-  ""
- ],
  "$0 shares": [
   null,
-  ""
- ],
- "$0 week": [
-  "$0 weeks",
-  "",
-  ""
- ],
- "$0 year": [
-  "$0 years",
-  "",
   ""
  ],
  "${hip}:${hport} -> $cport": [
@@ -121,6 +91,14 @@ return plural;
   null,
   ""
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
+ "All In One": [
+  null,
+  ""
+ ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
   ""
@@ -130,6 +108,18 @@ return plural;
   ""
  ],
  "Author": [
+  null,
+  ""
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
   null,
   ""
  ],
@@ -198,6 +188,10 @@ return plural;
   null,
   ""
  ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
  "Configure storage...": [
   null,
   ""
@@ -230,6 +224,10 @@ return plural;
   null,
   ""
  ],
+ "Convertible": [
+  null,
+  ""
+ ],
  "Could not add all disks": [
   null,
   ""
@@ -258,11 +256,23 @@ return plural;
   null,
   ""
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Details": [
   null,
   ""
  ],
  "Docker is not installed or activated on the system": [
+  null,
+  ""
+ ],
+ "Docking Station": [
   null,
   ""
  ],
@@ -279,6 +289,10 @@ return plural;
   ""
  ],
  "Duplicate port": [
+  null,
+  ""
+ ],
+ "Embedded PC": [
   null,
   ""
  ],
@@ -303,6 +317,10 @@ return plural;
   ""
  ],
  "Exited $ExitCode": [
+  null,
+  ""
+ ],
+ "Expansion Chassis": [
   null,
   ""
  ],
@@ -331,6 +349,10 @@ return plural;
   ""
  ],
  "Get new image": [
+  null,
+  ""
+ ],
+ "Hand Held": [
   null,
   ""
  ],
@@ -386,6 +408,14 @@ return plural;
   null,
   ""
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
+ "Laptop": [
+  null,
+  ""
+ ],
  "Link to another container": [
   null,
   ""
@@ -402,7 +432,19 @@ return plural;
   null,
   ""
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "MAC Address:": [
+  null,
+  ""
+ ],
+ "Main Server Chassis": [
   null,
   ""
  ],
@@ -422,7 +464,19 @@ return plural;
   null,
   ""
  ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
  "Mount container volumes": [
+  null,
+  ""
+ ],
+ "Multi-system Chassis": [
   null,
   ""
  ],
@@ -482,6 +536,10 @@ return plural;
   null,
   ""
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "Kikapcsolva"
@@ -503,7 +561,19 @@ return plural;
   "",
   ""
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Overview": [
+  null,
+  ""
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
   null,
   ""
  ],
@@ -519,6 +589,10 @@ return plural;
   null,
   ""
  ],
+ "Portable": [
+  null,
+  ""
+ ],
  "Ports": [
   null,
   ""
@@ -528,6 +602,14 @@ return plural;
   ""
  ],
  "Problems": [
+  null,
+  ""
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
   null,
   ""
  ],
@@ -587,6 +669,10 @@ return plural;
   null,
   ""
  ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Security": [
   null,
   ""
@@ -611,6 +697,10 @@ return plural;
   null,
   ""
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
  "Start": [
   null,
   ""
@@ -624,6 +714,10 @@ return plural;
   ""
  ],
  "State:": [
+  null,
+  ""
+ ],
+ "Stick PC": [
   null,
   ""
  ],
@@ -647,7 +741,19 @@ return plural;
   null,
   ""
  ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "TCP": [
+  null,
+  ""
+ ],
+ "Tablet": [
   null,
   ""
  ],
@@ -683,6 +789,10 @@ return plural;
   null,
   ""
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Try again": [
   null,
   ""
@@ -696,6 +806,10 @@ return plural;
   ""
  ],
  "Unexpected error": [
+  null,
+  ""
+ ],
+ "Unknown": [
   null,
   ""
  ],

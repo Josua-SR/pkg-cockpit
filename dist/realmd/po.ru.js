@@ -139,6 +139,10 @@ return plural;
   null,
   "загрузка $0"
  ],
+ "Host name should not be changed in a domain": [
+  null,
+  "Хост не должен быть пустым"
+ ],
  "Install": [
   null,
   "Установка"

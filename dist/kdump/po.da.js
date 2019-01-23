@@ -95,6 +95,10 @@ return plural;
   null,
   ""
  ],
+ "Directory $0 isn't writable or doesn't exist.": [
+  null,
+  ""
+ ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
   ""
@@ -231,7 +235,19 @@ return plural;
   null,
   ""
  ],
+ "nfs dump target isn't formated as server:path": [
+  null,
+  ""
+ ],
  "ssh key": [
+  null,
+  ""
+ ],
+ "ssh key isn't a path": [
+  null,
+  ""
+ ],
+ "ssh server is empty": [
   null,
   ""
  ],

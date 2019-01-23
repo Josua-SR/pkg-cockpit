@@ -99,17 +99,17 @@ return plural;
   null,
   "Автоматически запускать libvirt при загрузке"
  ],
- "Autostart:": [
+ "Autostart": [
   null,
-  "Автоматический старт:"
+  "Автоматический старт"
  ],
  "Available": [
   null,
   "Доступно"
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
-  "Порядок загрузки:"
+  "Порядок загрузки"
  ],
  "Bus": [
   null,
@@ -119,9 +119,9 @@ return plural;
   null,
   "Не удалось выполнить действие CHANGE NETWORK STATE"
  ],
- "CPU Type:": [
+ "CPU Type": [
   null,
-  "Тип процессора:"
+  "Тип процессора"
  ],
  "Cancel": [
   null,
@@ -239,9 +239,9 @@ return plural;
   null,
   "Правка"
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
-  "Эмулированные машины:"
+  "Эмулированные машины"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -358,10 +358,6 @@ return plural;
  "Memory should be positive number": [
   null,
   "Память должна быть положительной"
- ],
- "Memory:": [
-  null,
-  "Память:"
  ],
  "MiB": [
   null,
@@ -971,9 +967,9 @@ return plural;
   null,
   "максимум vCPU"
  ],
- "vCPUs:": [
+ "vCPUs": [
   null,
-  "VCPU будут:"
+  "VCPU"
  ],
  "vhostuser": [
   null,

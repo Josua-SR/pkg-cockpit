@@ -71,43 +71,13 @@ return plural;
   null,
   "$0 mallipohja"
  ],
- "$0 day": [
-  "$0 days",
-  "$0 päivä",
-  "$0 päivää"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 tunti",
-  "$0 tuntia"
- ],
  "$0 is not available from any repository.": [
   null,
   ""
  ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 minuutti",
-  "$0 minuuttia"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 kuukausi",
-  "$0 kuukautta"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 viikko",
-  "$0 viikkoa"
- ],
  "$0 will be installed.": [
   null,
   ""
- ],
- "$0 year": [
-  "$0 years",
-  "$0 vuosi",
-  "$0 vuotta"
  ],
  "1 Minute": [
   null,
@@ -297,6 +267,10 @@ return plural;
   null,
   ""
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
  "After": [
   null,
   "Jälkeen"
@@ -309,6 +283,10 @@ return plural;
   null,
   ""
  ],
+ "All In One": [
+  null,
+  ""
+ ],
  "Asset Tag": [
   null,
   ""
@@ -316,6 +294,10 @@ return plural;
  "At specific time": [
   null,
   "Tiettynä aikana"
+ ],
+ "Automatic Startup": [
+  null,
+  "Automaattiset päivitykset"
  ],
  "Automatically using NTP": [
   null,
@@ -345,11 +327,23 @@ return plural;
   null,
   ""
  ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
  "Bound By": [
   null,
   ""
  ],
  "Bug Fix Updates Available": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
   null,
   ""
  ],
@@ -405,6 +399,10 @@ return plural;
   null,
   "Komento"
  ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
  "Condition $0=$1 was not met": [
   null,
   "Ehto $0=$1 ei toteutunut"
@@ -422,6 +420,10 @@ return plural;
   ""
  ],
  "Consists Of": [
+  null,
+  ""
+ ],
+ "Convertible": [
   null,
   ""
  ],
@@ -453,6 +455,14 @@ return plural;
   null,
   "Kuvaus"
  ],
+ "Desktop": [
+  null,
+  "Työpöytä"
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Disable": [
   null,
   "Poista käytöstä"
@@ -464,6 +474,10 @@ return plural;
  "Disk I/O": [
   null,
   "Levyn I/O"
+ ],
+ "Docking Station": [
+  null,
+  ""
  ],
  "Domain": [
   null,
@@ -477,6 +491,10 @@ return plural;
   null,
   ""
  ],
+ "Embedded PC": [
+  null,
+  ""
+ ],
  "Enable": [
   null,
   "Ota käyttöön"
@@ -485,7 +503,7 @@ return plural;
   null,
   "Ota käyttöön väkisin"
  ],
- "Enable persistent metrics…": [
+ "Enable stored metrics…": [
   null,
   ""
  ],
@@ -513,9 +531,9 @@ return plural;
   null,
   "Kaikki"
  ],
- "Free": [
+ "Expansion Chassis": [
   null,
-  "Vapaa"
+  ""
  ],
  "Friday": [
   null,
@@ -532,6 +550,10 @@ return plural;
  "Go to now": [
   null,
   "Mene nyt"
+ ],
+ "Hand Held": [
+  null,
+  ""
  ],
  "Hardware": [
   null,
@@ -609,6 +631,10 @@ return plural;
   null,
   "Virheellinen aikavyöhyke"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
  "Joins Namespace Of": [
   null,
   ""
@@ -628,6 +654,10 @@ return plural;
  "Kernel": [
   null,
   "Kernel"
+ ],
+ "Laptop": [
+  null,
+  "Kannettava"
  ],
  "Last 24 hours": [
   null,
@@ -657,6 +687,14 @@ return plural;
   null,
   "Lokit"
  ],
+ "Low Profile Desktop": [
+  null,
+  "Matalan tason työpöytä"
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "Machine ID": [
   null,
   "Koneen ID"
@@ -664,6 +702,10 @@ return plural;
  "Machine SSH Key Fingerprints": [
   null,
   "Koneen SSH-avaimen sormenjäljet"
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
  ],
  "Manually": [
   null,
@@ -681,9 +723,21 @@ return plural;
   null,
   "Muisti"
  ],
+ "Memory & Swap": [
+  null,
+  "Muisti"
+ ],
  "Message to logged in users": [
   null,
   "Viesti sisäänkirjautuneille käyttäjille"
+ ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
  ],
  "Minute needs to be a number between 0-59": [
   null,
@@ -700,6 +754,10 @@ return plural;
  "Monday": [
   null,
   "Maanantai"
+ ],
+ "Multi-system Chassis": [
+  null,
+  ""
  ],
  "NTP Server": [
   null,
@@ -745,6 +803,10 @@ return plural;
   null,
   ""
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Notice and above": [
   null,
   ""
@@ -777,13 +839,25 @@ return plural;
   null,
   "Käyttöjärjestelmä"
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "PCI": [
   null,
   "PCI"
  ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit kaatui"
+ ],
  "Part Of": [
   null,
   ""
+ ],
+ "Path": [
+  null,
+  "Polku"
  ],
  "Paths": [
   null,
@@ -792,6 +866,18 @@ return plural;
  "Performance Profile": [
   null,
   "Suorituskykyprofiili"
+ ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
+ "Portable": [
+  null,
+  ""
  ],
  "Power Options": [
   null,
@@ -818,6 +904,14 @@ return plural;
   ""
  ],
  "Propagates Reload To": [
+  null,
+  ""
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
   null,
   ""
  ],
@@ -921,6 +1015,10 @@ return plural;
   null,
   ""
  ],
+ "Running Since": [
+  null,
+  "suoritetaan"
+ ],
  "Saturday": [
   null,
   "Lauantai"
@@ -928,6 +1026,10 @@ return plural;
  "Save": [
   null,
   "Tallenna"
+ ],
+ "Sealed-case PC": [
+  null,
+  ""
  ],
  "Seconds": [
   null,
@@ -973,15 +1075,15 @@ return plural;
   null,
   "Sammuta"
  ],
- "Since $0": [
-  null,
-  ""
- ],
  "Slot": [
   null,
   ""
  ],
  "Sockets": [
+  null,
+  ""
+ ],
+ "Space-saving Computer": [
   null,
   ""
  ],
@@ -1001,11 +1103,27 @@ return plural;
   null,
   ""
  ],
+ "Status": [
+  null,
+  "Tila"
+ ],
+ "Stick PC": [
+  null,
+  "Tikku-PC"
+ ],
  "Stop": [
   null,
   "Pysäytä"
  ],
- "Store Performance Data": [
+ "Store metrics": [
+  null,
+  "Lisätietoja"
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
   null,
   ""
  ],
@@ -1048,6 +1166,10 @@ return plural;
  "System Up To Date": [
   null,
   "Järjestelmä ajan tasalla"
+ ],
+ "Tablet": [
+  null,
+  ""
  ],
  "Targets": [
   null,
@@ -1113,6 +1235,10 @@ return plural;
   null,
   ""
  ],
+ "Tower": [
+  null,
+  "Torni"
+ ],
  "Triggered By": [
   null,
   ""
@@ -1132,6 +1258,10 @@ return plural;
  "Type": [
   null,
   "Tyyppi"
+ ],
+ "Unknown": [
+  null,
+  "Tuntematon"
  ],
  "Unmask": [
   null,

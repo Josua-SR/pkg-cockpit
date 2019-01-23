@@ -515,10 +515,6 @@ return plural;
   null,
   ""
  ],
- "You can remove the previously stored key by running the following command": [
-  null,
-  ""
- ],
  "active": [
   null,
   ""

@@ -67,36 +67,6 @@ return plural;
   "language": "tr",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 day": [
-  "$0 days",
-  "",
-  ""
- ],
- "$0 hour": [
-  "$0 hours",
-  "",
-  ""
- ],
- "$0 minute": [
-  "$0 minutes",
-  "",
-  ""
- ],
- "$0 month": [
-  "$0 months",
-  "",
-  ""
- ],
- "$0 week": [
-  "$0 weeks",
-  "",
-  ""
- ],
- "$0 year": [
-  "$0 years",
-  "",
-  ""
- ],
  "1 day": [
   null,
   "1 gün"
@@ -133,6 +103,14 @@ return plural;
   null,
   "Adres"
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
+ "All In One": [
+  null,
+  ""
+ ],
  "Authentication": [
   null,
   "Yetkilendirme"
@@ -146,6 +124,18 @@ return plural;
   ""
  ],
  "Avatar": [
+  null,
+  ""
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
   null,
   ""
  ],
@@ -201,6 +191,10 @@ return plural;
   null,
   ""
  ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
  "Connect": [
   null,
   ""
@@ -213,6 +207,10 @@ return plural;
   null,
   "Docker'a bağlanılıyor"
  ],
+ "Convertible": [
+  null,
+  ""
+ ],
  "Could not contact {{host}}": [
   null,
   ""
@@ -221,11 +219,27 @@ return plural;
   null,
   ""
  ],
+ "Desktop": [
+  null,
+  ""
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Disk I/O": [
   null,
   ""
  ],
+ "Docking Station": [
+  null,
+  ""
+ ],
  "Edit Server": [
+  null,
+  ""
+ ],
+ "Embedded PC": [
   null,
   ""
  ],
@@ -238,6 +252,10 @@ return plural;
   ""
  ],
  "Error loading users: {{perm_failed}}": [
+  null,
+  ""
+ ],
+ "Expansion Chassis": [
   null,
   ""
  ],
@@ -261,6 +279,10 @@ return plural;
   null,
   "Şimdiye git"
  ],
+ "Hand Held": [
+  null,
+  ""
+ ],
  "Host Name": [
   null,
   ""
@@ -277,6 +299,10 @@ return plural;
   null,
   "Geçersiz dosya izinleri"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
  "Is sshd running on a different port?": [
   null,
   ""
@@ -286,6 +312,10 @@ return plural;
   ""
  ],
  "Kerberos Ticket": [
+  null,
+  ""
+ ],
+ "Laptop": [
   null,
   ""
  ],
@@ -313,9 +343,33 @@ return plural;
   null,
   "Bağlantı koptu. Tekrar bağlanmaya çalışıyor"
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
+ ],
  "Memory": [
   null,
   "Bellek"
+ ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
+ "Multi-system Chassis": [
+  null,
+  ""
  ],
  "Network": [
   null,
@@ -333,6 +387,10 @@ return plural;
   null,
   "Geçerli bir özel anahtar değil"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "Kapalı"
@@ -345,6 +403,10 @@ return plural;
   null,
   "Açık"
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Password": [
   null,
   "Parola"
@@ -353,7 +415,19 @@ return plural;
   null,
   "Parola kabul edilmedi"
  ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
  "Port": [
+  null,
+  ""
+ ],
+ "Portable": [
   null,
   ""
  ],
@@ -369,6 +443,18 @@ return plural;
   null,
   ""
  ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
+  null,
+  ""
+ ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
   ""
@@ -381,11 +467,31 @@ return plural;
   null,
   ""
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
+ "Stick PC": [
+  null,
+  ""
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "Synchronize": [
   null,
   ""
  ],
  "Synchronize users": [
+  null,
+  ""
+ ],
+ "Tablet": [
   null,
   ""
  ],
@@ -421,9 +527,17 @@ return plural;
   null,
   ""
  ],
+ "Tower": [
+  null,
+  ""
+ ],
  "Type a password": [
   null,
   ""
+ ],
+ "Unknown": [
+  null,
+  "Bilinmiyor"
  ],
  "Unknown Host Key": [
   null,
@@ -452,9 +566,5 @@ return plural;
  "You are currently connected directly to this server. You cannot delete it.": [
   null,
   "Şu an bu sunucuya doğrudan bağlısınız. Silme işlemi yapamazsınız."
- ],
- "You can remove the previously stored key by running the following command": [
-  null,
-  ""
  ]
 }));

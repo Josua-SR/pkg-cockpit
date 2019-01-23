@@ -223,6 +223,10 @@ return plural;
   null,
   "包裹信息"
  ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit崩潰了"
+ ],
  "PackageKit is not installed": [
   null,
   "未安裝PackageKit"

@@ -295,6 +295,10 @@ return plural;
   null,
   "O podanym czasie"
  ],
+ "Automatic Startup": [
+  null,
+  "Automatyczne aktualizacje"
+ ],
  "Automatically using NTP": [
   null,
   "Automatycznie za pomocą NTP"
@@ -851,6 +855,10 @@ return plural;
   null,
   "Część"
  ],
+ "Path": [
+  null,
+  "Ścieżka"
+ ],
  "Paths": [
   null,
   "Ścieżki"
@@ -1007,6 +1015,10 @@ return plural;
   null,
   "Uruchom"
  ],
+ "Running Since": [
+  null,
+  "Działa od"
+ ],
  "Saturday": [
   null,
   "sobota"
@@ -1063,10 +1075,6 @@ return plural;
   null,
   "Wyłącz"
  ],
- "Since $0": [
-  null,
-  "Od $0"
- ],
  "Slot": [
   null,
   "Gniazdo"
@@ -1094,6 +1102,10 @@ return plural;
  "Static": [
   null,
   "Statyczne"
+ ],
+ "Status": [
+  null,
+  "Stan"
  ],
  "Stick PC": [
   null,

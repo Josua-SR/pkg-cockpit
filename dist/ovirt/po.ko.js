@@ -111,9 +111,9 @@ return plural;
   null,
   "자동 선택된 호스트"
  ],
- "Autostart:": [
+ "Autostart": [
   null,
-  "자동 시작 :"
+  "자동 시작"
  ],
  "Available": [
   null,
@@ -131,9 +131,9 @@ return plural;
   null,
   "기본 템플릿 :"
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
-  "부팅 순서 :"
+  "부팅 순서"
  ],
  "Bus": [
   null,
@@ -143,9 +143,9 @@ return plural;
   null,
   "CHANGE NETWORK STATE 동작이 실패했습니다 "
  ],
- "CPU Type:": [
+ "CPU Type": [
   null,
-  "CPU 유형 :"
+  "CPU 유형"
  ],
  "CREATE VM action failed": [
   null,
@@ -299,9 +299,9 @@ return plural;
   null,
   ""
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
-  ""
+  "가상머신"
  ],
  "Enter New VM name": [
   null,
@@ -406,10 +406,6 @@ return plural;
  "Memory": [
   null,
   "메모리"
- ],
- "Memory:": [
-  null,
-  "메모리:"
  ],
  "MiB": [
   null,
@@ -1114,10 +1110,6 @@ return plural;
  "vCPUs": [
   null,
   "vCPU"
- ],
- "vCPUs:": [
-  null,
-  "vCPU:"
  ],
  "vhostuser": [
   null,

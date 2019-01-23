@@ -139,6 +139,10 @@ return plural;
   null,
   "wird heruntergeladen $0"
  ],
+ "Host name should not be changed in a domain": [
+  null,
+  "Host sollte nicht leer sein"
+ ],
  "Install": [
   null,
   "Installation"
@@ -198,6 +202,10 @@ return plural;
  "One Time Password": [
   null,
   "Einmalpasswort"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit ist abgestürzt"
  ],
  "Removals:": [
   null,

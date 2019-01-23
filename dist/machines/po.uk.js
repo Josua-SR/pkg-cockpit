@@ -99,17 +99,17 @@ return plural;
   null,
   "Автоматично запускати libvirt при завантаженні"
  ],
- "Autostart:": [
+ "Autostart": [
   null,
-  "Автозапуск:"
+  "Автозапуск"
  ],
  "Available": [
   null,
   "Доступні"
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
-  "Порядок завантаження:"
+  "Порядок завантаження"
  ],
  "Bus": [
   null,
@@ -119,9 +119,9 @@ return plural;
   null,
   "Не вдалося виконати дію зі зміни стану мережі"
  ],
- "CPU Type:": [
+ "CPU Type": [
   null,
-  "Тип процесора:"
+  "Тип процесора"
  ],
  "Cancel": [
   null,
@@ -239,9 +239,9 @@ return plural;
   null,
   "Змінити"
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
-  "Емуляція машини:"
+  "Емуляція машини"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -358,10 +358,6 @@ return plural;
  "Memory should be positive number": [
   null,
   "Об'єм пам'яті має бути додатним числом"
- ],
- "Memory:": [
-  null,
-  "Пам’ять:"
  ],
  "MiB": [
   null,
@@ -971,9 +967,9 @@ return plural;
   null,
   "Макс. вірт. процесорів"
  ],
- "vCPUs:": [
+ "vCPUs": [
   null,
-  "vCPU:"
+  "Вірт. проц."
  ],
  "vhostuser": [
   null,

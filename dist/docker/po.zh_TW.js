@@ -91,6 +91,14 @@ return plural;
   null,
   "額外存儲"
  ],
+ "Advanced TCA": [
+  null,
+  "高級TCA"
+ ],
+ "All In One": [
+  null,
+  "一體"
+ ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
   "將擦除所選磁盤上的所有數據，並將磁盤添加到存儲池中。"
@@ -102,6 +110,18 @@ return plural;
  "Author": [
   null,
   "作者"
+ ],
+ "Blade": [
+  null,
+  "刀"
+ ],
+ "Blade enclosure": [
+  null,
+  "刀片機箱"
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  "總線擴展機箱"
  ],
  "CPU": [
   null,
@@ -167,6 +187,10 @@ return plural;
   null,
   "提交圖像"
  ],
+ "Compact PCI": [
+  null,
+  "緊湊型PCI"
+ ],
  "Configure storage...": [
   null,
   "配置存儲......"
@@ -199,6 +223,10 @@ return plural;
   null,
   "Container"
  ],
+ "Convertible": [
+  null,
+  "可兌換"
+ ],
  "Could not add all disks": [
   null,
   "無法添加所有磁盤"
@@ -227,6 +255,14 @@ return plural;
   null,
   "刪除容器將清除其中的所有數據。"
  ],
+ "Desktop": [
+  null,
+  "桌面環境"
+ ],
+ "Detachable": [
+  null,
+  "可拆開"
+ ],
  "Details": [
   null,
   "詳情"
@@ -234,6 +270,10 @@ return plural;
  "Docker is not installed or activated on the system": [
   null,
   "未在系統上安裝或激活Docker"
+ ],
+ "Docking Station": [
+  null,
+  "停靠站"
  ],
  "Download": [
   null,
@@ -250,6 +290,10 @@ return plural;
  "Duplicate port": [
   null,
   "重複端口"
+ ],
+ "Embedded PC": [
+  null,
+  "嵌入式PC"
  ],
  "Entrypoint": [
   null,
@@ -274,6 +318,10 @@ return plural;
  "Exited $ExitCode": [
   null,
   "已退出 $ExitCode"
+ ],
+ "Expansion Chassis": [
+  null,
+  "擴展機箱"
  ],
  "Expose container ports": [
   null,
@@ -302,6 +350,10 @@ return plural;
  "Get new image": [
   null,
   "獲取新圖片"
+ ],
+ "Hand Held": [
+  null,
+  "手持"
  ],
  "Hard Disk": [
   null,
@@ -355,6 +407,14 @@ return plural;
   null,
   "無效的端口"
  ],
+ "IoT Gateway": [
+  null,
+  "物聯網網關"
+ ],
+ "Laptop": [
+  null,
+  "筆記本電腦"
+ ],
  "Link to another container": [
   null,
   "鏈接到另一個容器"
@@ -371,9 +431,21 @@ return plural;
   null,
   "本地磁盤"
  ],
+ "Low Profile Desktop": [
+  null,
+  "低調桌面"
+ ],
+ "Lunch Box": [
+  null,
+  "午餐盒"
+ ],
  "MAC Address:": [
   null,
   "MAC地址："
+ ],
+ "Main Server Chassis": [
+  null,
+  "主服務器機箱"
  ],
  "Memory": [
   null,
@@ -391,9 +463,21 @@ return plural;
   null,
   "MiB"
  ],
+ "Mini PC": [
+  null,
+  "迷你電腦"
+ ],
+ "Mini Tower": [
+  null,
+  "迷你塔"
+ ],
  "Mount container volumes": [
   null,
   "裝載容器卷"
+ ],
+ "Multi-system Chassis": [
+  null,
+  "多系統機箱"
  ],
  "Name": [
   null,
@@ -451,6 +535,10 @@ return plural;
   null,
   "未找到"
  ],
+ "Notebook": [
+  null,
+  "筆記本"
+ ],
  "Off": [
   null,
   "關閉"
@@ -471,9 +559,21 @@ return plural;
   "On failure, retry $0 times",
   "失敗時，重試 $0 時間"
  ],
+ "Other": [
+  null,
+  "其它"
+ ],
  "Overview": [
   null,
   "簡介"
+ ],
+ "Peripheral Chassis": [
+  null,
+  "外圍機箱"
+ ],
+ "Pizza Box": [
+  null,
+  "披薩盒"
  ],
  "Please confirm deletion of $0": [
   null,
@@ -487,6 +587,10 @@ return plural;
   null,
   "請嘗試另一個學期"
  ],
+ "Portable": [
+  null,
+  "手提"
+ ],
  "Ports": [
   null,
   "連接埠"
@@ -498,6 +602,14 @@ return plural;
  "Problems": [
   null,
   "問題"
+ ],
+ "RAID Chassis": [
+  null,
+  "RAID機箱"
+ ],
+ "Rack Mount Chassis": [
+  null,
+  "機架式機箱"
  ],
  "ReadOnly": [
   null,
@@ -555,6 +667,10 @@ return plural;
   null,
   "運行圖像"
  ],
+ "Sealed-case PC": [
+  null,
+  "密封式PC"
+ ],
  "Security": [
   null,
   "安全性"
@@ -579,6 +695,10 @@ return plural;
   null,
   "固態磁盤"
  ],
+ "Space-saving Computer": [
+  null,
+  "節省空間的計算機"
+ ],
  "Start": [
   null,
   "開始"
@@ -594,6 +714,10 @@ return plural;
  "State:": [
   null,
   "狀態："
+ ],
+ "Stick PC": [
+  null,
+  "堅持使用PC"
  ],
  "Stop": [
   null,
@@ -615,9 +739,21 @@ return plural;
   null,
   "儲存集區"
  ],
+ "Sub Chassis": [
+  null,
+  "子機箱"
+ ],
+ "Sub Notebook": [
+  null,
+  "子筆記本"
+ ],
  "TCP": [
   null,
   "TCP"
+ ],
+ "Tablet": [
+  null,
+  "面板"
  ],
  "Tag": [
   null,
@@ -651,6 +787,10 @@ return plural;
   null,
   "總數"
  ],
+ "Tower": [
+  null,
+  "塔"
+ ],
  "Try again": [
   null,
   "再試一次"
@@ -666,6 +806,10 @@ return plural;
  "Unexpected error": [
   null,
   "未預期的錯誤"
+ ],
+ "Unknown": [
+  null,
+  "不明"
  ],
  "Unless Stopped": [
   null,

@@ -223,6 +223,10 @@ return plural;
   null,
   ""
  ],
+ "PackageKit crashed": [
+  null,
+  ""
+ ],
  "PackageKit is not installed": [
   null,
   ""
@@ -311,10 +315,6 @@ return plural;
   null,
   ""
  ],
- "Unregistered System": [
-  null,
-  ""
- ],
  "Update History": [
   null,
   ""
@@ -328,10 +328,6 @@ return plural;
   ""
  ],
  "Updated packages may require a restart to take effect.": [
-  null,
-  ""
- ],
- "Updates are disabled.": [
   null,
   ""
  ],
@@ -351,15 +347,7 @@ return plural;
   null,
   ""
  ],
- "View Registration Details": [
-  null,
-  ""
- ],
  "Waiting for other software management operations to finish": [
-  null,
-  ""
- ],
- "You need to re-subscribe this system.": [
   null,
   ""
  ],
@@ -376,6 +364,14 @@ return plural;
   ""
  ],
  "at": [
+  null,
+  ""
+ ],
+ "bug fix": [
+  null,
+  ""
+ ],
+ "enhancement": [
   null,
   ""
  ],
@@ -408,6 +404,10 @@ return plural;
   ""
  ],
  "on Wednesdays": [
+  null,
+  ""
+ ],
+ "security": [
   null,
   ""
  ],

@@ -99,17 +99,17 @@ return plural;
   null,
   "부트시 자동으로 libvirt 시작"
  ],
- "Autostart:": [
+ "Autostart": [
   null,
-  "자동 시작 :"
+  "자동 시작"
  ],
  "Available": [
   null,
   "사용 가능"
  ],
- "Boot Order:": [
+ "Boot Order": [
   null,
-  "부팅 순서 :"
+  "부팅 순서"
  ],
  "Bus": [
   null,
@@ -119,9 +119,9 @@ return plural;
   null,
   "CHANGE NETWORK STATE 동작이 실패했습니다 "
  ],
- "CPU Type:": [
+ "CPU Type": [
   null,
-  "CPU 유형 :"
+  "CPU 유형"
  ],
  "Cancel": [
   null,
@@ -239,9 +239,9 @@ return plural;
   null,
   "편집"
  ],
- "Emulated Machine:": [
+ "Emulated Machine": [
   null,
-  ""
+  "가상머신"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -358,10 +358,6 @@ return plural;
  "Memory should be positive number": [
   null,
   ""
- ],
- "Memory:": [
-  null,
-  "메모리:"
  ],
  "MiB": [
   null,
@@ -971,9 +967,9 @@ return plural;
   null,
   "vCPU 최대 "
  ],
- "vCPUs:": [
+ "vCPUs": [
   null,
-  "vCPU:"
+  "vCPU"
  ],
  "vhostuser": [
   null,

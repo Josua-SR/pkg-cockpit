@@ -139,6 +139,10 @@ return plural;
   null,
   ""
  ],
+ "Host name should not be changed in a domain": [
+  null,
+  ""
+ ],
  "Install": [
   null,
   "Instal·la"
@@ -198,6 +202,10 @@ return plural;
  "One Time Password": [
   null,
   "Contrasenya d'un sol cop"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit s'ha estavellat."
  ],
  "Removals:": [
   null,

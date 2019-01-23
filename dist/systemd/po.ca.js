@@ -67,6 +67,10 @@ return plural;
   "language": "ca",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Template": [
+  null,
+  "Plantilla $0"
+ ],
  "$0 is not available from any repository.": [
   null,
   ""
@@ -86,6 +90,10 @@ return plural;
  "1 hour": [
   null,
   "1 hora"
+ ],
+ "1 min": [
+  null,
+  "1 min"
  ],
  "1 week": [
   null,
@@ -135,6 +143,10 @@ return plural;
   null,
   "1r"
  ],
+ "2 min": [
+  null,
+  "2 min"
+ ],
  "20 Minutes": [
   null,
   "20 minuts"
@@ -183,6 +195,10 @@ return plural;
   null,
   "2n"
  ],
+ "3 min": [
+  null,
+  "3 min"
+ ],
  "30th": [
   null,
   "30è"
@@ -195,6 +211,10 @@ return plural;
   null,
   "3r"
  ],
+ "4 min": [
+  null,
+  "4 min"
+ ],
  "40 Minutes": [
   null,
   "40 minuts"
@@ -206,6 +226,10 @@ return plural;
  "5 Minutes": [
   null,
   "5 minuts"
+ ],
+ "5 min": [
+  null,
+  "5 min"
  ],
  "5 minutes": [
   null,
@@ -243,6 +267,10 @@ return plural;
   null,
   ""
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
  "After": [
   null,
   "Després"
@@ -255,6 +283,10 @@ return plural;
   null,
   ""
  ],
+ "All In One": [
+  null,
+  "Tot en un"
+ ],
  "Asset Tag": [
   null,
   "Etiqueta de recurs"
@@ -262,6 +294,10 @@ return plural;
  "At specific time": [
   null,
   "A l'instant específic"
+ ],
+ "Automatic Startup": [
+  null,
+  "Actualitzacions automàtiques"
  ],
  "Automatically using NTP": [
   null,
@@ -283,6 +319,34 @@ return plural;
   null,
   "Versió del BIOS"
  ],
+ "Before": [
+  null,
+  ""
+ ],
+ "Binds To": [
+  null,
+  ""
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bound By": [
+  null,
+  ""
+ ],
+ "Bug Fix Updates Available": [
+  null,
+  "Hi ha disponibles actualitzacions de correcció d'errors"
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
+ ],
  "CPU": [
   null,
   "CPU"
@@ -294,6 +358,10 @@ return plural;
  "Cancel": [
   null,
   "Cancel·la"
+ ],
+ "Cannot schedule event in the past": [
+  null,
+  "No es pot planificar un esdeveniment del passat"
  ],
  "Change": [
   null,
@@ -307,6 +375,10 @@ return plural;
   null,
   "Canvia l'hora del sistema"
  ],
+ "Checking for updates…": [
+  null,
+  "Comprovació per si hi ha actualitzacions..."
+ ],
  "Checking installed software": [
   null,
   ""
@@ -314,6 +386,10 @@ return plural;
  "Class": [
   null,
   "Classe"
+ ],
+ "Click to see system hardware information": [
+  null,
+  "Feu clic per veure la informació del maquinari del sistema"
  ],
  "Close": [
   null,
@@ -323,9 +399,33 @@ return plural;
   null,
   "Ordre"
  ],
+ "Compact PCI": [
+  null,
+  "PCI compacte"
+ ],
+ "Condition $0=$1 was not met": [
+  null,
+  ""
+ ],
  "Condition failed": [
   null,
   "Ha fallat la condició"
+ ],
+ "Conflicted By": [
+  null,
+  ""
+ ],
+ "Conflicts": [
+  null,
+  ""
+ ],
+ "Consists Of": [
+  null,
+  ""
+ ],
+ "Convertible": [
+  null,
+  "Convertible"
  ],
  "Create Timer": [
   null,
@@ -355,9 +455,29 @@ return plural;
   null,
   "Descripció"
  ],
+ "Desktop": [
+  null,
+  "Escriptori"
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
+ "Disable": [
+  null,
+  "Inhabilita"
+ ],
+ "Disabled": [
+  null,
+  "Inhabilitat"
+ ],
  "Disk I/O": [
   null,
   "E/S de disc"
+ ],
+ "Docking Station": [
+  null,
+  ""
  ],
  "Domain": [
   null,
@@ -371,7 +491,27 @@ return plural;
   null,
   ""
  ],
- "Enable persistent metrics…": [
+ "Embedded PC": [
+  null,
+  ""
+ ],
+ "Enable": [
+  null,
+  "Habilita"
+ ],
+ "Enable Forcefully": [
+  null,
+  "Habilita-ho forçosament"
+ ],
+ "Enable stored metrics…": [
+  null,
+  ""
+ ],
+ "Enabled": [
+  null,
+  "Habilitat"
+ ],
+ "Enhancement Updates Available": [
   null,
   ""
  ],
@@ -391,6 +531,10 @@ return plural;
   null,
   "Tot"
  ],
+ "Expansion Chassis": [
+  null,
+  ""
+ ],
  "Friday": [
   null,
   "Divendres"
@@ -406,6 +550,10 @@ return plural;
  "Go to now": [
   null,
   "Vés a ara"
+ ],
+ "Hand Held": [
+  null,
+  ""
  ],
  "Hardware": [
   null,
@@ -423,6 +571,10 @@ return plural;
   null,
   "hora : minut"
  ],
+ "Hour needs to be a number between 0-23": [
+  null,
+  "L'hora ha de ser un nombre entre 0-23"
+ ],
  "Hours": [
   null,
   "Hores"
@@ -430,6 +582,10 @@ return plural;
  "I/O Wait": [
   null,
   "Espera d'E/S"
+ ],
+ "Id": [
+  null,
+  "Id"
  ],
  "Info and above": [
   null,
@@ -451,9 +607,37 @@ return plural;
   null,
   "Instancia"
  ],
+ "Invalid date format": [
+  null,
+  "Format de data no vàlid"
+ ],
+ "Invalid date format and invalid time format": [
+  null,
+  "Format no vàlid de la data i l'hora"
+ ],
+ "Invalid date format.": [
+  null,
+  "Format de data no vàlid."
+ ],
+ "Invalid number.": [
+  null,
+  "Número no vàlid."
+ ],
+ "Invalid time format": [
+  null,
+  "Format d'hora no vàlid"
+ ],
  "Invalid time zone": [
   null,
   "Zona horària no vàlida"
+ ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
+ "Joins Namespace Of": [
+  null,
+  ""
  ],
  "Journal": [
   null,
@@ -471,6 +655,10 @@ return plural;
   null,
   "Kernel"
  ],
+ "Laptop": [
+  null,
+  ""
+ ],
  "Last 24 hours": [
   null,
   "Les últimes 24 hores"
@@ -478,6 +666,10 @@ return plural;
  "Last 7 days": [
   null,
   "Els últims 7 dies"
+ ],
+ "Last Trigger": [
+  null,
+  "Últim disparador"
  ],
  "Load earlier entries": [
   null,
@@ -495,6 +687,14 @@ return plural;
   null,
   "Registres"
  ],
+ "Low Profile Desktop": [
+  null,
+  ""
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
  "Machine ID": [
   null,
   "Id. de màquina"
@@ -503,9 +703,21 @@ return plural;
   null,
   "Empremtes de les claus SSH de la màquina"
  ],
+ "Main Server Chassis": [
+  null,
+  ""
+ ],
  "Manually": [
   null,
   "Manualment"
+ ],
+ "Mask": [
+  null,
+  "Emmascara"
+ ],
+ "Mask Forcefully": [
+  null,
+  "Emmascara-ho forçosament"
  ],
  "Memory": [
   null,
@@ -514,6 +726,22 @@ return plural;
  "Memory & Swap": [
   null,
   ""
+ ],
+ "Message to logged in users": [
+  null,
+  "Missatge per als usuaris que hagin iniciat la sessió"
+ ],
+ "Mini PC": [
+  null,
+  "Mini PC"
+ ],
+ "Mini Tower": [
+  null,
+  "Mini torre"
+ ],
+ "Minute needs to be a number between 0-59": [
+  null,
+  "El minut ha de ser un nombre entre 0-59"
  ],
  "Minutes": [
   null,
@@ -527,13 +755,29 @@ return plural;
   null,
   "Dilluns"
  ],
+ "Multi-system Chassis": [
+  null,
+  ""
+ ],
+ "NTP Server": [
+  null,
+  "Servidor NTP"
+ ],
  "Name": [
   null,
   "Nom"
  ],
+ "Need at least one NTP server": [
+  null,
+  "Com a mínim es necessita un servidor NTP"
+ ],
  "Network Traffic": [
   null,
   "Trànsit de xarxa"
+ ],
+ "Next Run": [
+  null,
+  "Següent execució"
  ],
  "Nice": [
   null,
@@ -559,6 +803,10 @@ return plural;
   null,
   "Nota"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Notice and above": [
   null,
   ""
@@ -575,17 +823,41 @@ return plural;
   null,
   "On"
  ],
+ "On Failure": [
+  null,
+  "Amb la fallada"
+ ],
  "Only Emergency": [
   null,
   "Només emergències"
+ ],
+ "Only alphabets, numbers, : , _ , . , @ , - are allowed.": [
+  null,
+  "Només es permeten lletres, números, : , _ , . , @ , -."
  ],
  "Operating System": [
   null,
   "Sistema operatiu"
  ],
+ "Other": [
+  null,
+  "Altres"
+ ],
  "PCI": [
   null,
   "PCI"
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit s'ha estavellat."
+ ],
+ "Part Of": [
+  null,
+  ""
+ ],
+ "Path": [
+  null,
+  "Camí"
  ],
  "Paths": [
   null,
@@ -595,9 +867,29 @@ return plural;
   null,
   "Perfil de rendiment"
  ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
+ "Portable": [
+  null,
+  "Portable"
+ ],
  "Power Options": [
   null,
   "Opcions d'energia"
+ ],
+ "Preset": [
+  null,
+  "Preajusta"
+ ],
+ "Preset Forcefully": [
+  null,
+  "Preajusta-ho forçosament"
  ],
  "Pretty Host Name": [
   null,
@@ -611,9 +903,29 @@ return plural;
   null,
   "Informació del problema"
  ],
+ "Propagates Reload To": [
+  null,
+  ""
+ ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
+  null,
+  ""
+ ],
  "Real Host Name": [
   null,
   "Nom d'amfitrió real"
+ ],
+ "Real host name can only contain lower-case characters, digits, dashes, and periods (with populated subdomains)": [
+  null,
+  "El nom d'amfitrió real només pot contenir caràcters en minúscules, dígits, guions i punts (amb subdominis poblats)"
+ ],
+ "Real host name must be 64 characters or less": [
+  null,
+  "El nom d'amfitrió real pot tenir com a molt 64 caràcters"
  ],
  "Reboot": [
   null,
@@ -622,6 +934,14 @@ return plural;
  "Recent": [
   null,
   "Recent"
+ ],
+ "Reload": [
+  null,
+  "Recarrega"
+ ],
+ "Reload Propagated From": [
+  null,
+  ""
  ],
  "Removals:": [
   null,
@@ -667,6 +987,22 @@ return plural;
   null,
   ""
  ],
+ "Required By": [
+  null,
+  ""
+ ],
+ "Requires": [
+  null,
+  ""
+ ],
+ "Requisite": [
+  null,
+  ""
+ ],
+ "Requisite Of": [
+  null,
+  ""
+ ],
  "Reset": [
   null,
   "Restableix"
@@ -679,6 +1015,10 @@ return plural;
   null,
   "Executa"
  ],
+ "Running Since": [
+  null,
+  "En execució des de"
+ ],
  "Saturday": [
   null,
   "Dissabte"
@@ -687,6 +1027,10 @@ return plural;
   null,
   "Desa"
  ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Seconds": [
   null,
   "segons"
@@ -694,6 +1038,10 @@ return plural;
  "Secure Shell Keys": [
   null,
   "Claus de shell segures"
+ ],
+ "Security Updates Available": [
+  null,
+  ""
  ],
  "Service Logs": [
   null,
@@ -706,6 +1054,10 @@ return plural;
  "Services": [
   null,
   "Serveis"
+ ],
+ "Set Host name": [
+  null,
+  "Estableix el nom d'amfitrió"
  ],
  "Set Time": [
   null,
@@ -731,13 +1083,49 @@ return plural;
   null,
   "Sockets"
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
  "Specific Time": [
   null,
   "Instant concret"
  ],
- "Store Performance Data": [
+ "Start": [
   null,
-  "Desa les dades de rendiment"
+  "Inicia"
+ ],
+ "State": [
+  null,
+  "Estat"
+ ],
+ "Static": [
+  null,
+  "Estàtic"
+ ],
+ "Status": [
+  null,
+  "Estat"
+ ],
+ "Stick PC": [
+  null,
+  ""
+ ],
+ "Stop": [
+  null,
+  "Atura"
+ ],
+ "Store metrics": [
+  null,
+  "Més detalls"
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
  ],
  "Sunday": [
   null,
@@ -763,6 +1151,10 @@ return plural;
   null,
   "Informació del sistema"
  ],
+ "System Not Registered": [
+  null,
+  ""
+ ],
  "System Services": [
   null,
   "Serveis del sistema"
@@ -771,6 +1163,14 @@ return plural;
   null,
   "Hora del sistema"
  ],
+ "System Up To Date": [
+  null,
+  "El sistema està actualitzat"
+ ],
+ "Tablet": [
+  null,
+  "Tauleta"
+ ],
  "Targets": [
   null,
   "Objectius"
@@ -778,6 +1178,42 @@ return plural;
  "Terminal": [
   null,
   "Terminal"
+ ],
+ "The user <b>$0</b> does not have permissions for creating timers": [
+  null,
+  "A l'usuari <b>$0</b> no se li permet crear temporitzadors"
+ ],
+ "The user <b>$0</b> is not permitted to change the system time": [
+  null,
+  ""
+ ],
+ "The user <b>$0</b> is not permitted to enable or disable services": [
+  null,
+  ""
+ ],
+ "The user <b>$0</b> is not permitted to modify hostnames": [
+  null,
+  "A l'usuari <b>$0</b> no se li permet modificar els noms d'amfitrions"
+ ],
+ "The user <b>$0</b> is not permitted to shutdown or restart this server": [
+  null,
+  "A l'usuari <b>$0</b> no se li permet apagar o reiniciar aquest servidor."
+ ],
+ "The user <b>$0</b> is not permitted to start or stop services": [
+  null,
+  ""
+ ],
+ "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
+  null,
+  "Aquest dia no existeix en tots els mesos.<br> El temporitzador només s'executarà en aquells mesos que en tinguin 31."
+ ],
+ "This field cannot be empty.": [
+  null,
+  "Aquest camp no pot estar en blanc."
+ ],
+ "This unit is an instance of the $0 template.": [
+  null,
+  "Aquesta unitat és una instància de la plantilla $0."
  ],
  "This unit is not designed to be enabled explicitly.": [
   null,
@@ -799,6 +1235,18 @@ return plural;
   null,
   ""
  ],
+ "Tower": [
+  null,
+  "Torre"
+ ],
+ "Triggered By": [
+  null,
+  ""
+ ],
+ "Triggers": [
+  null,
+  "Disparadors"
+ ],
  "Trying to synchronize with {{Server}}": [
   null,
   "S'està intentant la sincronització amb {{Server}}"
@@ -810,6 +1258,23 @@ return plural;
  "Type": [
   null,
   "Tipus"
+ ],
+ "Unknown": [
+  null,
+  "Desconegut"
+ ],
+ "Unmask": [
+  null,
+  "Desemmascara"
+ ],
+ "Updates Available": [
+  null,
+  "Actualitzacions disponibles"
+ ],
+ "Usage of $0 CPU core": [
+  "Usage of $0 CPU cores",
+  "Ús de $0 nucli de CPU",
+  "Ús de $0 nuclis de CPU"
  ],
  "Used": [
   null,
@@ -828,6 +1293,14 @@ return plural;
   "Versió"
  ],
  "Waiting for other software management operations to finish": [
+  null,
+  ""
+ ],
+ "Wanted By": [
+  null,
+  ""
+ ],
+ "Wants": [
   null,
   ""
  ],
@@ -854,5 +1327,26 @@ return plural;
  "[no data]": [
   null,
   "[sense dades]"
+ ],
+ "failed to list ssh host keys: $0": [
+  null,
+  "no s'han pogut llistar les claus d'amfitrions ssh: $0"
+ ],
+ "of $0 CPU core": [
+  "of $0 CPU cores",
+  "de $0 nucli de CPU",
+  "de $0 nuclis de CPU"
+ ],
+ "unknown": [
+  null,
+  "desconegut"
+ ],
+ "page-title\u0004CPU Status": [
+  null,
+  "Estat de la CPU"
+ ],
+ "page-title\u0004Memory": [
+  null,
+  "Memòria"
  ]
 }));

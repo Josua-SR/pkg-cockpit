@@ -226,6 +226,10 @@ return plural;
   null,
   "Informations sur le paquet"
  ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit crash"
+ ],
  "PackageKit is not installed": [
   null,
   "PackageKit non installé"

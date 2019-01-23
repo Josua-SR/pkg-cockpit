@@ -83,11 +83,6 @@ return plural;
   null,
   ""
  ],
- "$0 day": [
-  "$0 days",
-  "$0 päivä",
-  "$0 päivää"
- ],
  "$0 disk is missing": [
   "$0 disks are missing",
   "$0 levyä ei löydy",
@@ -105,11 +100,6 @@ return plural;
   null,
   ""
  ],
- "$0 hour": [
-  "$0 hours",
-  "$0 tunti",
-  "$0 tuntia"
- ],
  "$0 is in active use": [
   null,
   "$0 on aktiivisessa käytössä"
@@ -117,16 +107,6 @@ return plural;
  "$0 is not available from any repository.": [
   null,
   ""
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 minuutti",
-  "$0 minuuttia"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 kuukausi",
-  "$0 kuukautta"
  ],
  "$0 of $1": [
   null,
@@ -140,19 +120,9 @@ return plural;
   null,
   "$0 käytetty kohteesta $1 ($2 tallennettu)"
  ],
- "$0 week": [
-  "$0 weeks",
-  "$0 viikko",
-  "$0 viikkoa"
- ],
  "$0 will be installed.": [
   null,
   ""
- ],
- "$0 year": [
-  "$0 years",
-  "$0 vuosi",
-  "$0 vuotta"
  ],
  "$0, $1 free": [
   null,
@@ -714,6 +684,10 @@ return plural;
   null,
   "Vapaa tila"
  ],
+ "Free up space in this group: Shrink or delete other logical volumes or add another physical volume.": [
+  null,
+  ""
+ ],
  "Go to now": [
   null,
   "Mene nyt"
@@ -938,6 +912,14 @@ return plural;
   null,
   "Nimi ei voi olla tyhjä."
  ],
+ "Name cannot be longer than $0 bytes": [
+  null,
+  "Nimi voi sisältää enintään 127 merkkiä."
+ ],
+ "Name cannot be longer than $0 characters": [
+  null,
+  "Nimi voi sisältää enintään 127 merkkiä."
+ ],
  "Name cannot be longer than 127 characters.": [
   null,
   "Nimi voi sisältää enintään 127 merkkiä."
@@ -1022,6 +1004,10 @@ return plural;
   null,
   "Taltioryhmiä ei ole luotu"
  ],
+ "Not enough space to grow.": [
+  null,
+  ""
+ ],
  "Not found": [
   null,
   "Ei löytynyt"
@@ -1069,6 +1055,10 @@ return plural;
  "Overwrite existing data with zeros": [
   null,
   ""
+ ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit kaatui"
  ],
  "Partition": [
   null,
@@ -1462,6 +1452,10 @@ return plural;
   null,
   "Tallennustilan lokit"
  ],
+ "Storage can not be managed on this system.": [
+  null,
+  "Cockpit ei ole asennettu järjestelmässä."
+ ],
  "Store passphrase": [
   null,
   ""
@@ -1487,10 +1481,6 @@ return plural;
   "Synkronoidaan RAID-laitetta $target"
  ],
  "Tang keyserver": [
-  null,
-  ""
- ],
- "The \"storaged\" API is not available on this system.": [
   null,
   ""
  ],

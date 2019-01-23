@@ -1055,6 +1055,10 @@ return plural;
   null,
   "既存のデータをゼロで上書きする"
  ],
+ "PackageKit crashed": [
+  null,
+  "PackageKit がクラッシュしました"
+ ],
  "Partition": [
   null,
   "パーティション"
@@ -1447,6 +1451,10 @@ return plural;
   null,
   "ストレージログ"
  ],
+ "Storage can not be managed on this system.": [
+  null,
+  "Docker ストレージプールはこのシステムで管理できません。"
+ ],
  "Store passphrase": [
   null,
   "パスフレーズの保存"
@@ -1474,10 +1482,6 @@ return plural;
  "Tang keyserver": [
   null,
   "Tang キーサーバー"
- ],
- "The \"storaged\" API is not available on this system.": [
-  null,
-  "\"storaged\" API はこのシステムでは利用できません。"
  ],
  "The RAID Array is in a degraded state": [
   null,

@@ -103,6 +103,14 @@ return plural;
   null,
   "Dirección"
  ],
+ "Advanced TCA": [
+  null,
+  "TCA avanzado"
+ ],
+ "All In One": [
+  null,
+  "Todo En Uno"
+ ],
  "Authentication": [
   null,
   "Autenticación"
@@ -119,9 +127,25 @@ return plural;
   null,
   "Avatar"
  ],
+ "Blade": [
+  null,
+  "Espada"
+ ],
+ "Blade enclosure": [
+  null,
+  "Recinto de la espada"
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  "Chasis de Expansión de Bus"
+ ],
  "CPU": [
   null,
   "CPU"
+ ],
+ "Can't load image": [
+  null,
+  "No puede cargar imagen"
  ],
  "Cancel": [
   null,
@@ -167,6 +191,10 @@ return plural;
   null,
   "Color"
  ],
+ "Compact PCI": [
+  null,
+  "PCI Compacto"
+ ],
  "Connect": [
   null,
   "Conectar"
@@ -174,6 +202,14 @@ return plural;
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
   "Conectarse simultáneamente a más de {{ limit }} máquinas no está soportado."
+ ],
+ "Connection Error": [
+  null,
+  "Error de Conexión"
+ ],
+ "Convertible": [
+  null,
+  "Convertible"
  ],
  "Could not contact {{host}}": [
   null,
@@ -183,13 +219,29 @@ return plural;
   null,
   "Tablero"
  ],
+ "Desktop": [
+  null,
+  "Escritorio"
+ ],
+ "Detachable": [
+  null,
+  "Desmontable"
+ ],
  "Disk I/O": [
   null,
   "Disco I/O"
  ],
+ "Docking Station": [
+  null,
+  "Estación de Acoplamiento"
+ ],
  "Edit Server": [
   null,
   "Editar Servidor"
+ ],
+ "Embedded PC": [
+  null,
+  "PC Embebido"
  ],
  "Enter IP address or host name": [
   null,
@@ -202,6 +254,10 @@ return plural;
  "Error loading users: {{perm_failed}}": [
   null,
   "Error cargando usuarios: {{perm_failed}}"
+ ],
+ "Expansion Chassis": [
+  null,
+  "Chasis de Expansión"
  ],
  "Failed to add machine: $0": [
   null,
@@ -223,6 +279,10 @@ return plural;
   null,
   "Ir a ahora"
  ],
+ "Hand Held": [
+  null,
+  "Portátil"
+ ],
  "Host Name": [
   null,
   "Nombre de Host"
@@ -239,6 +299,10 @@ return plural;
   null,
   "Permisos de archivo invalidos"
  ],
+ "IoT Gateway": [
+  null,
+  "Pasarela IoT"
+ ],
  "Is sshd running on a different port?": [
   null,
   "¿sshd está corriendo en un puerto diferente?"
@@ -250,6 +314,10 @@ return plural;
  "Kerberos Ticket": [
   null,
   "Tiquete Kerberos"
+ ],
+ "Laptop": [
+  null,
+  "Sobremesa"
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
@@ -275,9 +343,33 @@ return plural;
   null,
   "Conexión perdida. Intentando conectarse nuevamente"
  ],
+ "Low Profile Desktop": [
+  null,
+  "Escritorio de Perfil Bajo"
+ ],
+ "Lunch Box": [
+  null,
+  "Loncheras"
+ ],
+ "Main Server Chassis": [
+  null,
+  "Chasis del Servidor Principal"
+ ],
  "Memory": [
   null,
   "Memoria"
+ ],
+ "Mini PC": [
+  null,
+  "Mini PC"
+ ],
+ "Mini Tower": [
+  null,
+  "Mini Torre"
+ ],
+ "Multi-system Chassis": [
+  null,
+  "Chasis Multisistema"
  ],
  "Network": [
   null,
@@ -295,6 +387,10 @@ return plural;
   null,
   "No es llave privada valida."
  ],
+ "Notebook": [
+  null,
+  "Portátil"
+ ],
  "Off": [
   null,
   "Apagado"
@@ -307,6 +403,10 @@ return plural;
   null,
   "Encencido"
  ],
+ "Other": [
+  null,
+  "Otro"
+ ],
  "Password": [
   null,
   "Contraseña"
@@ -315,9 +415,21 @@ return plural;
   null,
   "Contraseña no aceptada"
  ],
+ "Peripheral Chassis": [
+  null,
+  "Chasis Periférico"
+ ],
+ "Pizza Box": [
+  null,
+  "Pizza Box"
+ ],
  "Port": [
   null,
   "Puerto"
+ ],
+ "Portable": [
+  null,
+  "Portable"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -331,6 +443,18 @@ return plural;
   null,
   "Llave pública"
  ],
+ "RAID Chassis": [
+  null,
+  "Chasis RAID"
+ ],
+ "Rack Mount Chassis": [
+  null,
+  "Chasis Montado en Rack"
+ ],
+ "Sealed-case PC": [
+  null,
+  "PC de Caja Sellada"
+ ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
   "Seleccione el usuario con el que le gustaría sincronizar  {{#strong}}{{host}}{{/strong}}"
@@ -343,6 +467,22 @@ return plural;
   null,
   "Establecer"
  ],
+ "Space-saving Computer": [
+  null,
+  "Ordenador que Ahorra Espacio"
+ ],
+ "Stick PC": [
+  null,
+  "Stick PC"
+ ],
+ "Sub Chassis": [
+  null,
+  "Sub Chasis"
+ ],
+ "Sub Notebook": [
+  null,
+  "Sub Portátil"
+ ],
  "Synchronize": [
   null,
   "Sincronizar"
@@ -350,6 +490,10 @@ return plural;
  "Synchronize users": [
   null,
   "Sincronizar usuarios"
+ ],
+ "Tablet": [
+  null,
+  "Tableta"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -367,6 +511,10 @@ return plural;
   null,
   "Las contraseñas no coinciden."
  ],
+ "The user <b>$0</b> is not permitted to manage servers": [
+  null,
+  "El usuario <b>$0</b> no está autorizado para administrar servidores"
+ ],
  "This machine has already been added.": [
   null,
   "Esta maquina ya ha sido agregada"
@@ -379,9 +527,17 @@ return plural;
   null,
   "Para tratar un puerto diferente usted va a necesitar actualizar cockpit-ws a una nueva versión."
  ],
+ "Tower": [
+  null,
+  "Torre"
+ ],
  "Type a password": [
   null,
   "Introduzca una contraseña"
+ ],
+ "Unknown": [
+  null,
+  "Desconocido"
  ],
  "Unknown Host Key": [
   null,
@@ -406,5 +562,9 @@ return plural;
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
   "Usted esta conectado a {{#strong}}{{host}}{{/strong}}, sin embargo para sincronizar usuarios, es requerido un usuario con privilegios de súper usuario."
+ ],
+ "You are currently connected directly to this server. You cannot delete it.": [
+  null,
+  "Actualmente estás conectado directamente a este servidor. No puedes eliminarlo."
  ]
 }));

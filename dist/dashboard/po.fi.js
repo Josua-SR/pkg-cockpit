@@ -67,36 +67,6 @@ return plural;
   "language": "fi",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 day": [
-  "$0 days",
-  "$0 päivä",
-  "$0 päivää"
- ],
- "$0 hour": [
-  "$0 hours",
-  "$0 tunti",
-  "$0 tuntia"
- ],
- "$0 minute": [
-  "$0 minutes",
-  "$0 minuutti",
-  "$0 minuuttia"
- ],
- "$0 month": [
-  "$0 months",
-  "$0 kuukausi",
-  "$0 kuukautta"
- ],
- "$0 week": [
-  "$0 weeks",
-  "$0 viikko",
-  "$0 viikkoa"
- ],
- "$0 year": [
-  "$0 years",
-  "$0 vuosi",
-  "$0 vuotta"
- ],
  "1 day": [
   null,
   "1 päivä"
@@ -133,6 +103,14 @@ return plural;
   null,
   "Osoite"
  ],
+ "Advanced TCA": [
+  null,
+  ""
+ ],
+ "All In One": [
+  null,
+  ""
+ ],
  "Authentication": [
   null,
   "Tunnistautuminen"
@@ -148,6 +126,18 @@ return plural;
  "Avatar": [
   null,
   "Avatar"
+ ],
+ "Blade": [
+  null,
+  ""
+ ],
+ "Blade enclosure": [
+  null,
+  ""
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  ""
  ],
  "CPU": [
   null,
@@ -201,6 +191,10 @@ return plural;
   null,
   "Väri"
  ],
+ "Compact PCI": [
+  null,
+  ""
+ ],
  "Connect": [
   null,
   "Yhdistä"
@@ -213,6 +207,10 @@ return plural;
   null,
   "Yhteysvirhe"
  ],
+ "Convertible": [
+  null,
+  ""
+ ],
  "Could not contact {{host}}": [
   null,
   "Ei saatu yhteyttä kohteeseen {{host}}"
@@ -221,13 +219,29 @@ return plural;
   null,
   "Kojelauta"
  ],
+ "Desktop": [
+  null,
+  "Työpöytä"
+ ],
+ "Detachable": [
+  null,
+  ""
+ ],
  "Disk I/O": [
   null,
   "Levyn I/O"
  ],
+ "Docking Station": [
+  null,
+  ""
+ ],
  "Edit Server": [
   null,
   "Muokkaa palvelinta"
+ ],
+ "Embedded PC": [
+  null,
+  ""
  ],
  "Enter IP address or host name": [
   null,
@@ -240,6 +254,10 @@ return plural;
  "Error loading users: {{perm_failed}}": [
   null,
   "Virhe ladattaessa käyttäjiä: {{perm_failed}}"
+ ],
+ "Expansion Chassis": [
+  null,
+  ""
  ],
  "Failed to add machine: $0": [
   null,
@@ -261,6 +279,10 @@ return plural;
   null,
   "Mene nyt"
  ],
+ "Hand Held": [
+  null,
+  ""
+ ],
  "Host Name": [
   null,
   "Koneen nimi"
@@ -277,6 +299,10 @@ return plural;
   null,
   "Virheelliset tiedosto-oikeudet"
  ],
+ "IoT Gateway": [
+  null,
+  ""
+ ],
  "Is sshd running on a different port?": [
   null,
   "Onko sshd käynnissä eri portissa?"
@@ -288,6 +314,10 @@ return plural;
  "Kerberos Ticket": [
   null,
   "Kerberos-tiketti"
+ ],
+ "Laptop": [
+  null,
+  "Kannettava"
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
@@ -313,9 +343,33 @@ return plural;
   null,
   "Yhteys menetettiin. Yritetään yhdistää uudelleen"
  ],
+ "Low Profile Desktop": [
+  null,
+  "Matalan tason työpöytä"
+ ],
+ "Lunch Box": [
+  null,
+  ""
+ ],
+ "Main Server Chassis": [
+  null,
+  ""
+ ],
  "Memory": [
   null,
   "Muisti"
+ ],
+ "Mini PC": [
+  null,
+  ""
+ ],
+ "Mini Tower": [
+  null,
+  ""
+ ],
+ "Multi-system Chassis": [
+  null,
+  ""
  ],
  "Network": [
   null,
@@ -333,6 +387,10 @@ return plural;
   null,
   "Ei kelvollinen yksityinen avain"
  ],
+ "Notebook": [
+  null,
+  ""
+ ],
  "Off": [
   null,
   "Pois"
@@ -345,6 +403,10 @@ return plural;
   null,
   "Päällä"
  ],
+ "Other": [
+  null,
+  ""
+ ],
  "Password": [
   null,
   "Salasana"
@@ -353,9 +415,21 @@ return plural;
   null,
   "Salasanaa ei hyväksytty"
  ],
+ "Peripheral Chassis": [
+  null,
+  ""
+ ],
+ "Pizza Box": [
+  null,
+  ""
+ ],
  "Port": [
   null,
   "Portti"
+ ],
+ "Portable": [
+  null,
+  ""
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -369,6 +443,18 @@ return plural;
   null,
   "Julkinen avain"
  ],
+ "RAID Chassis": [
+  null,
+  ""
+ ],
+ "Rack Mount Chassis": [
+  null,
+  ""
+ ],
+ "Sealed-case PC": [
+  null,
+  ""
+ ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
   ""
@@ -381,6 +467,22 @@ return plural;
   null,
   ""
  ],
+ "Space-saving Computer": [
+  null,
+  ""
+ ],
+ "Stick PC": [
+  null,
+  "Tikku-PC"
+ ],
+ "Sub Chassis": [
+  null,
+  ""
+ ],
+ "Sub Notebook": [
+  null,
+  ""
+ ],
  "Synchronize": [
   null,
   "Synkronoi"
@@ -388,6 +490,10 @@ return plural;
  "Synchronize users": [
   null,
   "Synkronoi käyttäjät"
+ ],
+ "Tablet": [
+  null,
+  ""
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -421,9 +527,17 @@ return plural;
   null,
   "Kokeillaksesi toista porttia sinun tulee päivittää cockpit-ws uudempaan versioon."
  ],
+ "Tower": [
+  null,
+  "Torni"
+ ],
  "Type a password": [
   null,
   "Kirjoita salasana"
+ ],
+ "Unknown": [
+  null,
+  "Tuntematon"
  ],
  "Unknown Host Key": [
   null,
@@ -452,9 +566,5 @@ return plural;
  "You are currently connected directly to this server. You cannot delete it.": [
   null,
   "Olet tällä hetkellä suoraan yhteydessä tähän palvelimeen. Et voi poistaa sitä."
- ],
- "You can remove the previously stored key by running the following command": [
-  null,
-  "Voit poistaa aiemmin tallennetun avaimen ajamalla seuraavan komennon"
  ]
 }));

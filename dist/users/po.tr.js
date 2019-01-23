@@ -379,6 +379,10 @@ return plural;
   null,
   "Bu hesabın yetkilendirilmiş açık anahtarlarını görmeniz için izniniz yok."
  ],
+ "You must wait longer to change your password": [
+  null,
+  "Parola değişimi başarısız oldu"
+ ],
  "translatable": [
   null,
   ""

@@ -103,6 +103,14 @@ return plural;
   null,
   "Adresse"
  ],
+ "Advanced TCA": [
+  null,
+  "Fortgeschrittenes TCA"
+ ],
+ "All In One": [
+  null,
+  "Alles in einem"
+ ],
  "Authentication": [
   null,
   "Authentifizierung"
@@ -119,9 +127,25 @@ return plural;
   null,
   "Avatar"
  ],
+ "Blade": [
+  null,
+  "Klinge"
+ ],
+ "Blade enclosure": [
+  null,
+  "Klingengehäuse"
+ ],
+ "Bus Expansion Chassis": [
+  null,
+  "Bus-Erweiterungsgehäuse"
+ ],
  "CPU": [
   null,
   "CPU"
+ ],
+ "Can't load image": [
+  null,
+  "Bild kann nicht geladen werden"
  ],
  "Cancel": [
   null,
@@ -167,6 +191,10 @@ return plural;
   null,
   "Farbe"
  ],
+ "Compact PCI": [
+  null,
+  "Kompakte PCI"
+ ],
  "Connect": [
   null,
   "Verbinden"
@@ -174,6 +202,14 @@ return plural;
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
   "Das gleichzeitige Verbinden zu mehr als  {{ limit }} Maschinen wird nicht unterstützt."
+ ],
+ "Connection Error": [
+  null,
+  "Fehler bei der Verbindung"
+ ],
+ "Convertible": [
+  null,
+  "Convertible"
  ],
  "Could not contact {{host}}": [
   null,
@@ -183,13 +219,29 @@ return plural;
   null,
   "Dashboard"
  ],
+ "Desktop": [
+  null,
+  "Desktop"
+ ],
+ "Detachable": [
+  null,
+  "Abnehmbar"
+ ],
  "Disk I/O": [
   null,
   "Festplatten-E/A"
  ],
+ "Docking Station": [
+  null,
+  "Dockingstation"
+ ],
  "Edit Server": [
   null,
   "Server bearbeiten"
+ ],
+ "Embedded PC": [
+  null,
+  "Eingebetteter PC"
  ],
  "Enter IP address or host name": [
   null,
@@ -202,6 +254,10 @@ return plural;
  "Error loading users: {{perm_failed}}": [
   null,
   "Fehler beim Laden von Benutzern: {{perm_failed}}"
+ ],
+ "Expansion Chassis": [
+  null,
+  "Erweiterungsgehäuse"
  ],
  "Failed to add machine: $0": [
   null,
@@ -223,6 +279,10 @@ return plural;
   null,
   "Zu 'Jetzt' gehen"
  ],
+ "Hand Held": [
+  null,
+  "Hand gehalten"
+ ],
  "Host Name": [
   null,
   "Rechnername"
@@ -239,6 +299,10 @@ return plural;
   null,
   "Ungültige Dateiberechtigungen"
  ],
+ "IoT Gateway": [
+  null,
+  "IoT-Gateway"
+ ],
  "Is sshd running on a different port?": [
   null,
   "Läuft sshd auf einem anderen Port?"
@@ -250,6 +314,10 @@ return plural;
  "Kerberos Ticket": [
   null,
   "Kerberos Ticket"
+ ],
+ "Laptop": [
+  null,
+  "Laptop"
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
@@ -275,9 +343,33 @@ return plural;
   null,
   "Verbindung verloren. "
  ],
+ "Low Profile Desktop": [
+  null,
+  "Low-Profile-Desktop"
+ ],
+ "Lunch Box": [
+  null,
+  "Brotdose"
+ ],
+ "Main Server Chassis": [
+  null,
+  "Hauptservergehäuse"
+ ],
  "Memory": [
   null,
   "Speicher"
+ ],
+ "Mini PC": [
+  null,
+  "Mini PC"
+ ],
+ "Mini Tower": [
+  null,
+  "Mini Tower"
+ ],
+ "Multi-system Chassis": [
+  null,
+  "Multi-System-Chassis"
  ],
  "Network": [
   null,
@@ -295,6 +387,10 @@ return plural;
   null,
   "Ungültiger privater Schlüssel"
  ],
+ "Notebook": [
+  null,
+  "Notizbuch"
+ ],
  "Off": [
   null,
   "Aus"
@@ -307,6 +403,10 @@ return plural;
   null,
   "Ein"
  ],
+ "Other": [
+  null,
+  "Weitere"
+ ],
  "Password": [
   null,
   "Passwort"
@@ -315,9 +415,21 @@ return plural;
   null,
   "Passwort wurde nicht akzeptiert"
  ],
+ "Peripheral Chassis": [
+  null,
+  "Peripheriechassis"
+ ],
+ "Pizza Box": [
+  null,
+  "Pizza-Box"
+ ],
  "Port": [
   null,
   "Port"
+ ],
+ "Portable": [
+  null,
+  "tragbar"
  ],
  "Prompting via ssh-add timed out": [
   null,
@@ -331,6 +443,18 @@ return plural;
   null,
   "Öffentlicher Schlüssel"
  ],
+ "RAID Chassis": [
+  null,
+  "RAID-Chassis"
+ ],
+ "Rack Mount Chassis": [
+  null,
+  "Rack-Einbaugehäuse"
+ ],
+ "Sealed-case PC": [
+  null,
+  "PC mit versiegeltem Gehäuse"
+ ],
  "Select the users that you would like to be synchronized with {{#strong}}{{host}}{{/strong}}": [
   null,
   "Wählen Sie die Nutzer aus, die mit {{#strong}}{{host}}{{/strong}} synchronisiert werden sollen"
@@ -343,6 +467,22 @@ return plural;
   null,
   "Einstellen"
  ],
+ "Space-saving Computer": [
+  null,
+  "Platzsparender Computer"
+ ],
+ "Stick PC": [
+  null,
+  "Stick PC"
+ ],
+ "Sub Chassis": [
+  null,
+  "Sub-Chassis"
+ ],
+ "Sub Notebook": [
+  null,
+  "Subnotizbuch"
+ ],
  "Synchronize": [
   null,
   "Synchronisieren"
@@ -350,6 +490,10 @@ return plural;
  "Synchronize users": [
   null,
   "Benutzer synchronisieren"
+ ],
+ "Tablet": [
+  null,
+  "Tablett"
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
@@ -367,6 +511,10 @@ return plural;
   null,
   "Die Passwörter stimmen nicht überein."
  ],
+ "The user <b>$0</b> is not permitted to manage servers": [
+  null,
+  "Der Benutzer <b>$0</b> hat keine Rechte, um Server zu administrieren"
+ ],
  "This machine has already been added.": [
   null,
   "Diese Maschine wurde bereits hinzugefügt"
@@ -379,9 +527,17 @@ return plural;
   null,
   "Um einen anderen Port zu benutzen müssen Sie cockpit-ws aktualisieren."
  ],
+ "Tower": [
+  null,
+  "Turm"
+ ],
  "Type a password": [
   null,
   "Geben Sie ein Passwort ein"
+ ],
+ "Unknown": [
+  null,
+  "Unbekannt"
  ],
  "Unknown Host Key": [
   null,
@@ -406,5 +562,9 @@ return plural;
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,
   "Sie sind mit {{#strong}}{{host}}{{/strong}} verbunden, zum Synchronisieren von Nutzern sind jedoch Administratorrechte erforderlich."
+ ],
+ "You are currently connected directly to this server. You cannot delete it.": [
+  null,
+  "Sie sind derzeit direkt mit diesem Server verbunden und können ihn deshalb nicht löschen."
  ]
 }));

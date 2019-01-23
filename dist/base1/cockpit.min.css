@@ -42,7 +42,7 @@ a{cursor:pointer}
 .panel .well{margin-bottom:0;border:none;border-radius:0;background-color:#FAFAFA}
 .well.blank-slate-pf{box-shadow:0 0 10px rgba(0,0,0,.05) inset;padding-top:40px}
 .blank-slate-pf .spinner-lg{height:58px;width:58px}
-.modal-content .alert{text-align:left;padding-top:5px;padding-bottom:5px;word-wrap:break-word}
+.modal-content .alert{text-align:left;padding-top:5px;padding-bottom:5px}
 .modal-content .alert .fa{position:absolute;left:10px;top:6px;font-size:20px}
 .modal-content .alert .pficon{top:5px}
 .alert.alert-danger .fa{color:#af151a}

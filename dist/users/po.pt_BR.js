@@ -91,6 +91,10 @@ return plural;
   null,
   "Adicionar chave pública"
  ],
+ "Adding key": [
+  null,
+  "Adicionando chave"
+ ],
  "Authorized Public SSH Keys": [
   null,
   "Chaves Públicas Autorizadas de SSH"
@@ -119,6 +123,10 @@ return plural;
   null,
   "Confirmar Nova Senha"
  ],
+ "Container Administrator": [
+  null,
+  "Administrador de contêineres"
+ ],
  "Create": [
   null,
   "Criar"
@@ -131,9 +139,29 @@ return plural;
   null,
   "Excluir"
  ],
+ "Delete $0": [
+  null,
+  "Deletar $0"
+ ],
  "Delete Files": [
   null,
   "Excluir Arquivos"
+ ],
+ "Error": [
+  null,
+  "Erro"
+ ],
+ "Error saving authorized keys: ": [
+  null,
+  "Erro ao salvar chaves autorizadas:"
+ ],
+ "Excellent password": [
+  null,
+  "Senha excelente"
+ ],
+ "Failed to change password": [
+  null,
+  "Falha ao mudar senha"
  ],
  "Failed to load authorized keys.": [
   null,
@@ -151,9 +179,21 @@ return plural;
   null,
   "Nome Completo"
  ],
+ "Image Builder": [
+  null,
+  "Criador de Imagem de Disco"
+ ],
+ "Invalid expiration date": [
+  null,
+  "Data de validade inválida"
+ ],
  "Invalid key": [
   null,
   "Chave inválida"
+ ],
+ "Invalid number of days": [
+  null,
+  "Número inválido de dias"
  ],
  "Last Login": [
   null,
@@ -167,6 +207,18 @@ return plural;
   null,
   "Bloquear Conta"
  ],
+ "Lock account on $0": [
+  null,
+  "Bloquear conta em $0"
+ ],
+ "Logged In": [
+  null,
+  "Logado"
+ ],
+ "Never": [
+  null,
+  "Nunca"
+ ],
  "Never expire password": [
   null,
   "Senha nunca expira"
@@ -179,6 +231,18 @@ return plural;
   null,
   "Nova Senha"
  ],
+ "New password was not accepted": [
+  null,
+  "Nova senha não foi aceita"
+ ],
+ "No real name specified": [
+  null,
+  "Nenhum nome real especificado"
+ ],
+ "No user name specified": [
+  null,
+  "Nenhum nome de usuário foi especificado"
+ ],
  "Off": [
   null,
   "Desligado"
@@ -186,6 +250,10 @@ return plural;
  "Old Password": [
   null,
   "Senha Atual"
+ ],
+ "Old password not accepted": [
+  null,
+  "Senha antiga não aceita"
  ],
  "On": [
   null,
@@ -199,9 +267,37 @@ return plural;
   null,
   "Expiração de Senha"
  ],
+ "Password is not acceptable": [
+  null,
+  "Senha não é aceitavél"
+ ],
+ "Password is too weak": [
+  null,
+  "Senha é muito fraca"
+ ],
+ "Password must be changed": [
+  null,
+  "A senha deve ser alterada"
+ ],
  "Paste the contents of your public SSH key file here": [
   null,
   "Cole o conteúdo do seu arquivo de chave pública SSH aqui"
+ ],
+ "Please specify an expiration date": [
+  null,
+  "Por favor especifique uma data de expiração"
+ ],
+ "Prompting via passwd timed out": [
+  null,
+  "Tempo excedido na tentativa de solicitação via senha"
+ ],
+ "Require password change every $0 days": [
+  null,
+  "Requer mudança de senha a cada $0 dias"
+ ],
+ "Require password change on $0": [
+  null,
+  "Exigir alteração de senha em $0"
  ],
  "Reset": [
   null,
@@ -210,6 +306,10 @@ return plural;
  "Roles": [
   null,
   "Papéis"
+ ],
+ "Server Administrator": [
+  null,
+  "Administrador do servidor"
  ],
  "Set": [
   null,
@@ -223,9 +323,45 @@ return plural;
   null,
   "Encerrar Sessão"
  ],
+ "The account '$0' will be forced to change their password on next login": [
+  null,
+  "A conta '$0' será forçado a mudar sua senha no próximo login"
+ ],
+ "The key you provided was not valid.": [
+  null,
+  "A chave que você forneceu não era válida."
+ ],
+ "The passwords do not match": [
+  null,
+  "As senhas não batem"
+ ],
+ "The user <b>$0</b> is not permitted to modify accounts": [
+  null,
+  "O usuário <b>$0</b> não tem permissões para odificar contas"
+ ],
+ "The user name can only consist of letters from a-z, digits, dots, dashes and underscores.": [
+  null,
+  "O nome de usuário coniste em letas de  a-z, digitos, pontos, barras e underline."
+ ],
  "There are no authorized public keys for this account.": [
   null,
   "Não existem chaves públicas autorizadas para esta conta."
+ ],
+ "This user name already exists": [
+  null,
+  "Este usuário já existe"
+ ],
+ "Unable to delete root account": [
+  null,
+  "Incapaz de deletar a conta root"
+ ],
+ "Unable to rename root account": [
+  null,
+  "Incapaz de renomear a conta root"
+ ],
+ "Unexpected error": [
+  null,
+  "Erro inesperado"
  ],
  "Unnamed": [
   null,
@@ -235,12 +371,24 @@ return plural;
   null,
   "Nome de Usuário"
  ],
+ "Validating key": [
+  null,
+  "Validando chave"
+ ],
  "You do not have permission to view the authorized public keys for this account.": [
   null,
   "Você não tem permissão para exibir as chaves públicas autorizadas para esta conta."
  ],
+ "You must wait longer to change your password": [
+  null,
+  "Você deve esperar mais tempo para alterar sua senha"
+ ],
  "translatable": [
   null,
   "traduzível"
+ ],
+ "page-title\u0004Accounts": [
+  null,
+  "Contas"
  ]
 }));
