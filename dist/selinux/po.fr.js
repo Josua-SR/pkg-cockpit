@@ -82,7 +82,7 @@ return plural;
  ],
  "Audit log": [
   null,
-  "Journal d'audit"
+  "Journal d’audit"
  ],
  "Connecting to SETroubleshoot daemon...": [
   null,
@@ -94,15 +94,15 @@ return plural;
  ],
  "Error while deleting alert: $0": [
   null,
-  "Erreur lors de la suppression de l'alerte: $0"
+  "Erreur lors de la suppression de l’alerte: $0"
  ],
  "Error while setting SELinux mode: '$0'": [
   null,
-  "Erreur lors du réglage du mode SELinux: ' $0 '"
+  "Erreur lors du réglage du mode SELinux: ’ $0 ’"
  ],
  "Failed to delete alert: $0": [
   null,
-  "Échec de la suppression de l'alerte: $0"
+  "Échec de la suppression de l’alerte: $0"
  ],
  "Install setroubleshoot-server to troubleshoot SELinux events.": [
   null,
@@ -110,7 +110,7 @@ return plural;
  ],
  "No SELinux alerts.": [
   null,
-  "Pas d'alertes SELinux."
+  "Pas d’alertes SELinux."
  ],
  "Not connected": [
   null,
@@ -118,11 +118,11 @@ return plural;
  ],
  "Occurred $0": [
   null,
-  "S'est produit à $0"
+  "S’est produit à $0"
  ],
  "Occurred between $0 and $1": [
   null,
-  "S'est produit entre $0 et $1"
+  "S’est produit entre $0 et $1"
  ],
  "Off": [
   null,
@@ -134,7 +134,7 @@ return plural;
  ],
  "SELinux Access Control Errors": [
   null,
-  "Erreurs de contrôle d'accès SELinux"
+  "Erreurs de contrôle d’accès SELinux"
  ],
  "SELinux Policy": [
   null,
@@ -154,11 +154,11 @@ return plural;
  ],
  "SELinux system status is unknown.": [
   null,
-  "L'état du système SELinux est inconnu."
+  "L’état du système SELinux est inconnu."
  ],
  "Setting deviates from the configured state and will revert on the next boot.": [
   null,
-  "La configuration s'écarte de l'état configuré de départ et reviendra à cet état au prochain démarrage."
+  "La configuration s’écarte de l’état configuré de départ et reviendra à cet état au prochain démarrage."
  ],
  "Solution applied successfully": [
   null,
@@ -174,23 +174,23 @@ return plural;
  ],
  "The configured state is unknown, it might change on the next boot.": [
   null,
-  "L'état configuré est inconnu, il peut changer au démarrage suivant."
+  "L’état configuré est inconnu, il peut changer au démarrage suivant."
  ],
  "Unable to apply this solution automatically": [
   null,
-  "Impossible d'appliquer cette solution automatiquement"
+  "Impossible d’appliquer cette solution automatiquement"
  ],
  "Unable to get alert details.": [
   null,
-  "Impossible d'obtenir les détails de l'alerte."
+  "Impossible d’obtenir les détails de l’alerte."
  ],
  "Unable to get alert: $0": [
   null,
-  "Impossible d'être alerte: $0"
+  "Impossible d’être alerte: $0"
  ],
  "Unable to run fix: %0": [
   null,
-  "Impossible d'exécuter le correctif : %0"
+  "Impossible d’exécuter le correctif : %0"
  ],
  "Unable to start setroubleshootd": [
   null,

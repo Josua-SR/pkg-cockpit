@@ -81,27 +81,27 @@ return plural;
  ],
  "$0 data + $1 overhead used of $2 ($3)": [
   null,
-  "$0 数据 + $1 开销使用 $ 2（$3）"
+  "$0 数据 + $1 过渡使用 $2（$3）"
  ],
  "$0 disk is missing": [
   "$0 disks are missing",
-  "$0 磁盘缺失"
+  "$0 磁盘无法找到"
  ],
  "$0 filesystems can not be made larger.": [
   null,
-  "$ 0文件系统不能变得更大。"
+  "$0文件系统不能变得更大。"
  ],
  "$0 filesystems can not be made smaller.": [
   null,
-  "$ 0文件系统不能变得更小。"
+  "$0文件系统不能变得更小。"
  ],
  "$0 filesystems can not be resized here.": [
   null,
-  "$ 0文件系统不能在这里改变大小。"
+  "$0文件系统不能在这里改变大小。"
  ],
  "$0 is in active use": [
   null,
-  "$0 正处于激活使用中"
+  "$0 已激活"
  ],
  "$0 is not available from any repository.": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "$0 slots remain": [
   null,
-  "剩余 $0 个 slot"
+  "剩余 $0 个槽位"
  ],
  "$0 used of $1 ($2 saved)": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
-  "该磁盘可以被移除前，需要添加一个备用的磁盘。"
+  "该磁盘被移除前，需要添加一个备用的磁盘。"
  ],
  "Activate": [
   null,
@@ -389,7 +389,7 @@ return plural;
  ],
  "Create Thin Volume": [
   null,
-  "创建稀疏卷"
+  "创建Thin卷"
  ],
  "Create VDO Device": [
   null,
@@ -650,6 +650,10 @@ return plural;
  "Filesystems": [
   null,
   "文件系统"
+ ],
+ "For legacy applications only. Reduces performance.": [
+  null,
+  ""
  ],
  "Force remove passphrase in $0": [
   null,
@@ -1129,7 +1133,7 @@ return plural;
  ],
  "Please confirm stopping of $0": [
   null,
-  "请确认停止$ 0"
+  "请确认停止$0"
  ],
  "Pool": [
   null,
@@ -1327,6 +1331,14 @@ return plural;
   null,
   "保存"
  ],
+ "Save space by compressing individual blocks with LZ4": [
+  null,
+  ""
+ ],
+ "Save space by storing identical data blocks just once": [
+  null,
+  ""
+ ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
   "保存新密码需要解锁磁盘。请提供当前的磁盘密码。"
@@ -1453,7 +1465,7 @@ return plural;
  ],
  "Storage can not be managed on this system.": [
   null,
-  "Docker 存储池不能在这个系统上被管理。"
+  ""
  ],
  "Store passphrase": [
   null,

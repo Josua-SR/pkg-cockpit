@@ -89,7 +89,7 @@ return plural;
  ],
  "Go to Application": [
   null,
-  "Aller à l'application"
+  "Aller à l’application"
  ],
  "Install": [
   null,
@@ -109,7 +109,7 @@ return plural;
  ],
  "No installation package found for this application.": [
   null,
-  "Aucun package d'installation trouvé pour cette application."
+  "Aucun package d’installation trouvé pour cette application."
  ],
  "Ok": [
   null,
@@ -133,6 +133,6 @@ return plural;
  ],
  "Waiting for other programs to finish using the package manager...": [
   null,
-  "En attente d'autres programmes pour terminer l'utilisation du gestionnaire de paquets ..."
+  "En attente d’autres programmes pour terminer l’utilisation du gestionnaire de paquets ..."
  ]
 }));

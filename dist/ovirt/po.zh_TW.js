@@ -101,7 +101,7 @@ return plural;
  ],
  "Always attach": [
   null,
-  "總是"
+  ""
  ],
  "Apply": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "自動開啟："
+  ""
  ],
  "Available": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "引導順序："
+  ""
  ],
  "Bus": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "CPU Type": [
   null,
-  "CPU類型："
+  ""
  ],
  "CREATE VM action failed": [
   null,
@@ -301,7 +301,7 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "仿真機："
+  ""
  ],
  "Enter New VM name": [
   null,
@@ -509,7 +509,7 @@ return plural;
  ],
  "Persistence": [
   null,
-  "持續卷"
+  ""
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
@@ -679,10 +679,6 @@ return plural;
   null,
   "來源"
  ],
- "Start the VM to see disk statistics.": [
-  null,
-  "啟動VM以查看磁盤統計信息。"
- ],
  "State": [
   null,
   "狀態"
@@ -786,10 +782,6 @@ return plural;
  "Unplug": [
   null,
   "拔"
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "升級到更新版本的libvirt以查看磁盤統計信息"
  ],
  "Usage": [
   null,

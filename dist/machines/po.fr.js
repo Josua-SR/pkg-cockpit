@@ -69,7 +69,7 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  "$0 est disponible pour la plupart des systèmes d'exploitation. Pour l'installer, recherchez-le dans le logiciel GNOME ou exécutez les opérations suivantes:"
+  "$0 est disponible pour la plupart des systèmes d’exploitation. Pour l’installer, recherchez-le dans le logiciel GNOME ou exécutez les opérations suivantes:"
  ],
  "Add": [
   null,
@@ -89,7 +89,7 @@ return plural;
  ],
  "Always attach": [
   null,
-  "Toujours"
+  "Toujours attacher"
  ],
  "Apply": [
   null,
@@ -101,7 +101,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "Autostart "
+  "Démarrage automatique"
  ],
  "Available": [
   null,
@@ -109,7 +109,7 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "Ordre de démarrage"
+  "Ordre d'amorçage"
  ],
  "Bus": [
   null,
@@ -117,7 +117,7 @@ return plural;
  ],
  "CHANGE NETWORK STATE action failed": [
   null,
-  "Échec de l'action CHANGE NETWORK STATE"
+  "Échec de l’action CHANGE NETWORK STATE"
  ],
  "CPU Type": [
   null,
@@ -137,15 +137,15 @@ return plural;
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  "En cliquant sur \"Launch Remote Viewer\" (lancer ll'afficheur à distance), vous téléchargerez un fichier .vv et le lancerez $0 ."
+  "En cliquant sur \"Launch Remote Viewer\" (lancer l’afficheur à distance), vous téléchargerez un fichier .vv et le lancerez $0 ."
  ],
  "Connect with any $0 viewer application.": [
   null,
-  "Connectez-vous avec n'importe quel $0 application spectateur."
+  "Connectez-vous avec n’importe quel $0 application spectateur."
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  "Connectez-vous avec n'importe quelle application SPICE ou au VNC Viewer."
+  "Connectez-vous avec n’importe quelle application SPICE ou au VNC Viewer."
  ],
  "Connecting": [
   null,
@@ -221,7 +221,7 @@ return plural;
  ],
  "Disk failed to be attached": [
   null,
-  "Le disque n'a pas pu être attaché"
+  "Le disque n’a pas pu être attaché"
  ],
  "Disk failed to be created": [
   null,
@@ -241,7 +241,7 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "Machine émulée "
+  "Machine émulée"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -293,15 +293,15 @@ return plural;
  ],
  "Host Name": [
   null,
-  "Nom d'hôte"
+  "Nom d’hôte"
  ],
  "Host should not be empty": [
   null,
-  "Le nom d'hôte n'est peut-être pas vide"
+  "Le nom d’hôte n’est peut-être pas vide"
  ],
  "INSTALL VM action failed": [
   null,
-  "Échec de l'action INSTALL VM"
+  "Échec de l’action INSTALL VM"
  ],
  "Immediately Start VM": [
   null,
@@ -313,15 +313,15 @@ return plural;
  ],
  "Installation Source": [
   null,
-  "Source d'installation"
+  "Source d’installation"
  ],
  "Installation Source Type": [
   null,
-  "Type de source d'installation"
+  "Type de source d’installation"
  ],
  "Installation Source should not be empty": [
   null,
-  "La source d'installation ne doit pas être vide"
+  "La source d’installation ne doit pas être vide"
  ],
  "Invalid filename": [
   null,
@@ -329,7 +329,7 @@ return plural;
  ],
  "Launch Remote Viewer": [
   null,
-  "Lancer l'afficheur à distance"
+  "Lancer l’afficheur à distance"
  ],
  "Loading ...": [
   null,
@@ -349,7 +349,7 @@ return plural;
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
-  "Nombre maximum de CPU virtuels alloués pour l'OS invité; doit être compris entre 1 et $0."
+  "Nombre maximum de CPU virtuels alloués pour l’OS invité; doit être compris entre 1 et $0."
  ],
  "Memory": [
   null,
@@ -373,7 +373,7 @@ return plural;
  ],
  "More Information": [
   null,
-  "Plus d'information"
+  "Plus d’information"
  ],
  "Name": [
   null,
@@ -397,7 +397,7 @@ return plural;
  ],
  "Network settings could not be saved": [
   null,
-  "Les paramètres de réseau n'ont pas pu être enregistrés"
+  "Les paramètres de réseau n’ont pas pu être enregistrés"
  ],
  "Networks": [
   null,
@@ -409,11 +409,11 @@ return plural;
  ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
-  "Aucun volume de stockage n'a été défini pour ce pool de stockage"
+  "Aucun volume de stockage n’a été défini pour ce pool de stockage"
  ],
  "No VM is running or defined on this host": [
   null,
-  "Aucune machine virtuelle n'est en cours d'exécution ou définie sur cet hôte"
+  "Aucune machine virtuelle n’est en cours d’exécution ou définie sur cet hôte"
  ],
  "No boot device found": [
   null,
@@ -437,7 +437,7 @@ return plural;
  ],
  "No storage pool is defined on this host": [
   null,
-  "Aucun pool de stockage n'a été défini sur cet hôte"
+  "Aucun pool de stockage n’a été défini sur cet hôte"
  ],
  "No virtual networks": [
   null,
@@ -445,31 +445,39 @@ return plural;
  ],
  "OS Vendor": [
   null,
-  "Fournisseur d'OS"
+  "Fournisseur d’OS"
  ],
  "Operating System": [
   null,
-  "Système d'exploitation"
+  "Système d’exploitation"
  ],
  "Overview": [
   null,
   "Aperçu"
  ],
+ "Path": [
+  null,
+  "Chemin"
+ ],
  "Path on host's filesystem": [
   null,
-  "Chemin d'accès sur le système de fichiers de l'hôte"
+  "Chemin d’accès sur le système de fichiers de l’hôte"
  ],
  "Path to ISO file on host's file system": [
   null,
-  "Chemin d'accès au fichier ISO sur le système de fichiers de l'hôte"
+  "Chemin d’accès au fichier ISO sur le système de fichiers de l’hôte"
  ],
  "Path to file": [
   null,
-  "Chemin d'accès au fichier"
+  "Chemin d’accès au fichier"
  ],
  "Persistence": [
   null,
-  "Volumes persistants"
+  "Persistance"
+ ],
+ "Persistent": [
+  null,
+  "Persistant"
  ],
  "Please enter new volume name": [
   null,
@@ -497,7 +505,7 @@ return plural;
  ],
  "Preferred number of sockets to expose to the guest.": [
   null,
-  "Nombre choisi de sockets à exposer à l'invité."
+  "Nombre choisi de sockets à exposer à l’invité."
  ],
  "Protocol": [
   null,
@@ -591,7 +599,7 @@ return plural;
   null,
   "Le chemin de la source ne doit pas être vide"
  ],
- "Source should start with https, ftp or nfs protocol": [
+ "Source should start with http, ftp or nfs protocol": [
   null,
   "La source devrait commencer par le protocole http, ftp ou nfs"
  ],
@@ -601,11 +609,7 @@ return plural;
  ],
  "Start pool when host boots": [
   null,
-  "Démarrer le pool quand l'hôte est amorcé"
- ],
- "Start the VM to see disk statistics.": [
-  null,
-  "Démarrez la VM pour voir les statistiques du disque."
+  "Démarrer le pool quand l’hôte est amorcé"
  ],
  "Startup": [
   null,
@@ -621,7 +625,7 @@ return plural;
  ],
  "Storage Pool failed to be created": [
   null,
-  "Le pool de stockage n'a pas pu être créé"
+  "Le pool de stockage n’a pas pu être créé"
  ],
  "Storage Pools": [
   null,
@@ -669,7 +673,7 @@ return plural;
  ],
  "The VM is in process of dying (shut down or crash is not completed).": [
   null,
-  "La VM est en train de s'éteindre (arrêt ou accident n'est pas terminé)."
+  "La VM est en train de s’éteindre (arrêt ou accident n’est pas terminé)."
  ],
  "The VM is paused.": [
   null,
@@ -677,15 +681,15 @@ return plural;
  ],
  "The VM is running and will be forced off before deletion.": [
   null,
-  "La VM est en cours d'exécution et sera forcée avant la suppression."
+  "La VM est en cours d’exécution et sera forcée avant la suppression."
  ],
  "The VM is running.": [
   null,
-  "La VM est en cours d'exécution."
+  "La VM est en cours d’exécution."
  ],
  "The VM is suspended by guest power management.": [
   null,
-  "La machine virtuelle est suspendue par la gestion de l'alimentation de l'invité."
+  "La machine virtuelle est suspendue par la gestion de l’alimentation de l’invité."
  ],
  "The directory on the server being exported": [
   null,
@@ -723,17 +727,13 @@ return plural;
   null,
   "Débrancher"
  ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Mettre à niveau vers une version plus récente de libvirt pour afficher les statistiques de disque"
- ],
  "Usage": [
   null,
   "Utilisation"
  ],
  "Use Existing": [
   null,
-  "Utiliser l'existant"
+  "Utiliser l’existant"
  ],
  "Used": [
   null,
@@ -741,7 +741,7 @@ return plural;
  ],
  "VCPU settings could not be saved": [
   null,
-  "Les paramètres de configuration de VCPU n'ont pas pu être sauvegardés"
+  "Les paramètres de configuration de VCPU n’ont pas pu être sauvegardés"
  ],
  "VM CHANGE_NETWORK_STATE action failed": [
   null,
@@ -765,19 +765,19 @@ return plural;
  ],
  "VM FORCE OFF action failed": [
   null,
-  "L'action VM FORCE OFF a échoué"
+  "L’action VM FORCE OFF a échoué"
  ],
  "VM FORCE REBOOT action failed": [
   null,
-  "L'action VM FORCE REBOOT a échoué"
+  "L’action VM FORCE REBOOT a échoué"
  ],
  "VM REBOOT action failed": [
   null,
-  "L'action VM REBOOT a échoué"
+  "L’action VM REBOOT a échoué"
  ],
  "VM SEND Non-Maskable Interrrupt action failed": [
   null,
-  "Échec de l'action d'interruption non masquable VM SEND"
+  "Échec de l’action d’interruption non masquable VM SEND"
  ],
  "VM SENDNMI action failed": [
   null,
@@ -785,11 +785,11 @@ return plural;
  ],
  "VM SHUT DOWN action failed": [
   null,
-  "L'action VM SHUT DOWN a échoué"
+  "L’action VM SHUT DOWN a échoué"
  ],
  "VM START action failed": [
   null,
-  "L'action VM START a échoué"
+  "L’action VM START a échoué"
  ],
  "VNC": [
   null,
@@ -813,7 +813,7 @@ return plural;
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
-  "Le service de virtualisation (libvirt) n'est pas actif"
+  "Le service de virtualisation (libvirt) n’est pas actif"
  ],
  "Virtualization Service is Available": [
   null,

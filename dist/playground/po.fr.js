@@ -82,7 +82,7 @@ return plural;
  ],
  "Delete '{{ name }}'": [
   null,
-  "Supprimer '{{nom}}'"
+  "Supprimer « {{nom}} »"
  ],
  "Empty": [
   null,
@@ -122,7 +122,7 @@ return plural;
  ],
  "Path to file": [
   null,
-  "Chemin d'accès au fichier"
+  "Chemin d’accès au fichier"
  ],
  "Ready": [
   null,

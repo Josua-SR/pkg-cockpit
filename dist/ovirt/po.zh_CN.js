@@ -69,7 +69,7 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  "$0 对大多数操作系统可用。为了安装它，在 GNOME 软件中搜索它，或运行以下命令： "
+  "$0 大多数操作系统可用。为了安装它，请在 GNOME 中搜索它，或运行以下命令： "
  ],
  "$0 vCPU Details": [
   null,
@@ -101,7 +101,7 @@ return plural;
  ],
  "Always attach": [
   null,
-  "总是"
+  "保证连接"
  ],
  "Apply": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "自动启动："
+  "自动启动"
  ],
  "Available": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "引导顺序："
+  "启动顺序"
  ],
  "Bus": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "CPU Type": [
   null,
-  "CPU 类型："
+  "CPU类型"
  ],
  "CREATE VM action failed": [
   null,
@@ -161,7 +161,7 @@ return plural;
  ],
  "Changes will take effect after shutting down the VM": [
   null,
-  "关机后所做的改变将会起作用。"
+  "改变生效需要关机。"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -277,7 +277,7 @@ return plural;
  ],
  "Disk failed to be attached": [
   null,
-  "附加磁盘失败"
+  "挂载磁盘失败"
  ],
  "Disk failed to be created": [
   null,
@@ -301,7 +301,7 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "模拟的机器："
+  ""
  ],
  "Enter New VM name": [
   null,
@@ -333,7 +333,7 @@ return plural;
  ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
-  "获取 HYPERVISOR MAX VCPU 操作失败"
+  "获取 HYPERVISOR 最大 VCPU 操作失败"
  ],
  "GiB": [
   null,
@@ -509,7 +509,7 @@ return plural;
  ],
  "Persistence": [
   null,
-  "持久卷"
+  ""
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
@@ -679,10 +679,6 @@ return plural;
   null,
   "源"
  ],
- "Start the VM to see disk statistics.": [
-  null,
-  "启动 VM 查看磁盘统计数据"
- ],
  "State": [
   null,
   "状态"
@@ -786,10 +782,6 @@ return plural;
  "Unplug": [
   null,
   "拔"
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "升级到一个更新版本的 libvirt 来查看磁盘统计数据"
  ],
  "Usage": [
   null,

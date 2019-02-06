@@ -101,7 +101,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "자동 시작"
+  ""
  ],
  "Available": [
   null,
@@ -109,7 +109,7 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "부팅 순서"
+  ""
  ],
  "Bus": [
   null,
@@ -121,7 +121,7 @@ return plural;
  ],
  "CPU Type": [
   null,
-  "CPU 유형"
+  ""
  ],
  "Cancel": [
   null,
@@ -241,7 +241,7 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "가상머신"
+  ""
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -455,6 +455,10 @@ return plural;
   null,
   "개요"
  ],
+ "Path": [
+  null,
+  "경로"
+ ],
  "Path on host's filesystem": [
   null,
   ""
@@ -468,6 +472,10 @@ return plural;
   ""
  ],
  "Persistence": [
+  null,
+  ""
+ ],
+ "Persistent": [
   null,
   ""
  ],
@@ -591,7 +599,7 @@ return plural;
   null,
   ""
  ],
- "Source should start with https, ftp or nfs protocol": [
+ "Source should start with http, ftp or nfs protocol": [
   null,
   ""
  ],
@@ -600,10 +608,6 @@ return plural;
   "libvirt 시작 "
  ],
  "Start pool when host boots": [
-  null,
-  ""
- ],
- "Start the VM to see disk statistics.": [
   null,
   ""
  ],
@@ -720,10 +724,6 @@ return plural;
   ""
  ],
  "Unplug": [
-  null,
-  ""
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   ""
  ],

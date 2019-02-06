@@ -141,7 +141,7 @@ return plural;
  ],
  "Host name should not be changed in a domain": [
   null,
-  "Вузол не повинен бути порожнім"
+  "У домені не слід змінювати назву вузла"
  ],
  "Install": [
   null,

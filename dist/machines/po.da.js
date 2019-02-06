@@ -71,6 +71,10 @@ return plural;
   null,
   ""
  ],
+ "Activate": [
+  null,
+  ""
+ ],
  "Add": [
   null,
   ""
@@ -195,11 +199,31 @@ return plural;
   null,
   ""
  ],
+ "Deactivate": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   ""
  ],
+ "Delete Content": [
+  null,
+  ""
+ ],
+ "Delete Storage Pool $0": [
+  null,
+  "Værtsnavn"
+ ],
  "Delete associated storage files:": [
+  null,
+  ""
+ ],
+ "Delete the Volumes inside this Pool": [
+  null,
+  ""
+ ],
+ "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
   null,
   ""
  ],
@@ -355,10 +379,6 @@ return plural;
   null,
   ""
  ],
- "Memory should be positive number": [
-  null,
-  ""
- ],
  "MiB": [
   null,
   ""
@@ -380,10 +400,6 @@ return plural;
   "Værtsnavn"
  ],
  "Name should not be empty": [
-  null,
-  ""
- ],
- "Name should not consist of empty characters only": [
   null,
   ""
  ],
@@ -455,6 +471,10 @@ return plural;
   null,
   ""
  ],
+ "Path": [
+  null,
+  ""
+ ],
  "Path on host's filesystem": [
   null,
   ""
@@ -468,6 +488,10 @@ return plural;
   ""
  ],
  "Persistence": [
+  null,
+  ""
+ ],
+ "Persistent": [
   null,
   ""
  ],
@@ -591,7 +615,7 @@ return plural;
   null,
   ""
  ],
- "Source should start with https, ftp or nfs protocol": [
+ "Source should start with http, ftp or nfs protocol": [
   null,
   ""
  ],
@@ -600,10 +624,6 @@ return plural;
   ""
  ],
  "Start pool when host boots": [
-  null,
-  ""
- ],
- "Start the VM to see disk statistics.": [
   null,
   ""
  ],
@@ -623,15 +643,19 @@ return plural;
   null,
   ""
  ],
+ "Storage Pool failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool failed to get deactivated": [
+  null,
+  ""
+ ],
  "Storage Pools": [
   null,
   ""
  ],
  "Storage Size": [
-  null,
-  ""
- ],
- "Storage Size should not be negative number": [
   null,
   ""
  ],
@@ -648,6 +672,10 @@ return plural;
   ""
  ],
  "Target path should not be empty": [
+  null,
+  ""
+ ],
+ "The Storage Pool could not be deleted": [
   null,
   ""
  ],
@@ -720,10 +748,6 @@ return plural;
   "Værtsnavn"
  ],
  "Unplug": [
-  null,
-  ""
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   ""
  ],

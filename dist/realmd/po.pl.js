@@ -141,7 +141,7 @@ return plural;
  ],
  "Host name should not be changed in a domain": [
   null,
-  "Gospodarz nie może być pusty"
+  "Nie należy zmieniać nazwy komputera w domenie"
  ],
  "Install": [
   null,

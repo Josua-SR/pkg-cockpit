@@ -78,8 +78,8 @@ return plural;
  ],
  "$0% Used": [
   "$0% Used",
-  "",
-  ""
+  "% in gebruik",
+  "% in gebruik"
  ],
  "AWS Elastic Block Store": [
   null,

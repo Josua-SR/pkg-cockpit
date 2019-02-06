@@ -97,7 +97,7 @@ return plural;
  ],
  "Failed to enable tuned": [
   null,
-  "Échec de l'activation de tuned"
+  "Échec de l’activation de tuned"
  ],
  "Failed to switch profile": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to change profiles": [
   null,
-  "L'utilisateur <b>$0</b> n'a pas le droit de modifier les profils"
+  "L’utilisateur <b>$0</b> n’a pas le droit de modifier les profils"
  ],
  "This system is using a custom profile": [
   null,
@@ -125,11 +125,11 @@ return plural;
  ],
  "Tuned has failed to start": [
   null,
-  "Tuned n'a pas pu démarrer"
+  "Tuned n’a pas pu démarrer"
  ],
  "Tuned is not available": [
   null,
-  "Tuned n'est pas disponible"
+  "Tuned n’est pas disponible"
  ],
  "Tuned is not running": [
   null,

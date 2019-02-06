@@ -73,7 +73,7 @@ return plural;
  ],
  "$0 is not available from any repository.": [
   null,
-  "$0 n'est disponible à partir d'aucun référentiel."
+  "$0 n’est disponible à partir d’aucun référentiel."
  ],
  "$0 will be installed.": [
   null,
@@ -297,7 +297,7 @@ return plural;
  ],
  "Automatic Startup": [
   null,
-  "Mises à jour automatiques"
+  "Démarrage automatique"
  ],
  "Automatically using NTP": [
   null,
@@ -345,7 +345,7 @@ return plural;
  ],
  "Bus Expansion Chassis": [
   null,
-  "Châssis d'extension de bus"
+  "Châssis d’extension de bus"
  ],
  "CPU": [
   null,
@@ -369,11 +369,11 @@ return plural;
  ],
  "Change Host Name": [
   null,
-  "Modifier le nom d'hôte"
+  "Modifier le nom d’hôte"
  ],
  "Change System Time": [
   null,
-  "Modifier l'heure du système"
+  "Modifier l’heure du système"
  ],
  "Checking for updates…": [
   null,
@@ -405,7 +405,7 @@ return plural;
  ],
  "Condition $0=$1 was not met": [
   null,
-  "Condition $0 = $1 n'a pas été remplie"
+  "Condition $0 = $1 n’a pas été remplie"
  ],
  "Condition failed": [
   null,
@@ -463,6 +463,10 @@ return plural;
   null,
   "Détachable"
  ],
+ "Details": [
+  null,
+  "Détails"
+ ],
  "Disable": [
   null,
   "Désactiver"
@@ -477,7 +481,7 @@ return plural;
  ],
  "Docking Station": [
   null,
-  "Station d'accueil"
+  "Station d’accueil"
  ],
  "Domain": [
   null,
@@ -533,7 +537,7 @@ return plural;
  ],
  "Expansion Chassis": [
   null,
-  "Châssis d'extension"
+  "Châssis d’extension"
  ],
  "Friday": [
   null,
@@ -565,7 +569,7 @@ return plural;
  ],
  "Host Name": [
   null,
-  "Nom d'hôte"
+  "Nom d’hôte"
  ],
  "Hour : Minute": [
   null,
@@ -573,7 +577,7 @@ return plural;
  ],
  "Hour needs to be a number between 0-23": [
   null,
-  "L'heure doit être un nombre compris entre 0 et 23"
+  "L’heure doit être un nombre compris entre 0 et 23"
  ],
  "Hours": [
   null,
@@ -613,7 +617,7 @@ return plural;
  ],
  "Invalid date format and invalid time format": [
   null,
-  "Format de date non valide et format d'heure non valide"
+  "Format de date non valide et format d’heure non valide"
  ],
  "Invalid date format.": [
   null,
@@ -625,7 +629,7 @@ return plural;
  ],
  "Invalid time format": [
   null,
-  "Format d'heure non valide"
+  "Format d’heure non valide"
  ],
  "Invalid time zone": [
   null,
@@ -637,7 +641,7 @@ return plural;
  ],
  "Joins Namespace Of": [
   null,
-  "Rejoint l'espace de noms de"
+  "Rejoint l’espace de noms de"
  ],
  "Journal": [
   null,
@@ -769,7 +773,7 @@ return plural;
  ],
  "Need at least one NTP server": [
   null,
-  "Besoin d'au moins un serveur NTP"
+  "Besoin d’au moins un serveur NTP"
  ],
  "Network Traffic": [
   null,
@@ -789,7 +793,7 @@ return plural;
  ],
  "No host keys found.": [
   null,
-  "Aucune clé d'hôte trouvée."
+  "Aucune clé d’hôte trouvée."
  ],
  "Not authorized to upload-report": [
   null,
@@ -825,7 +829,7 @@ return plural;
  ],
  "On Failure": [
   null,
-  "En cas d'échec"
+  "En cas d’échec"
  ],
  "Only Emergency": [
   null,
@@ -837,7 +841,7 @@ return plural;
  ],
  "Operating System": [
   null,
-  "Système d'exploitation"
+  "Système d’exploitation"
  ],
  "Other": [
   null,
@@ -881,7 +885,7 @@ return plural;
  ],
  "Power Options": [
   null,
-  "Options d'alimentation"
+  "Options d’alimentation"
  ],
  "Preset": [
   null,
@@ -893,7 +897,7 @@ return plural;
  ],
  "Pretty Host Name": [
   null,
-  "Nom d'hôte pretty"
+  "Nom d’hôte pretty"
  ],
  "Problem details": [
   null,
@@ -917,15 +921,15 @@ return plural;
  ],
  "Real Host Name": [
   null,
-  "Nom d'hôte réel"
+  "Nom d’hôte réel"
  ],
  "Real host name can only contain lower-case characters, digits, dashes, and periods (with populated subdomains)": [
   null,
-  "Le nom d'hôte réel ne peut contenir que des caractères minuscules, des chiffres, des tirets et des points (avec des sous-domaines remplis)"
+  "Le nom d’hôte réel ne peut contenir que des caractères minuscules, des chiffres, des tirets et des points (avec des sous-domaines remplis)"
  ],
  "Real host name must be 64 characters or less": [
   null,
-  "Le nom d'hôte réel doit comporter 64 caractères ou moins"
+  "Le nom d’hôte réel doit comporter 64 caractères ou moins"
  ],
  "Reboot": [
   null,
@@ -981,11 +985,11 @@ return plural;
  ],
  "Reporter 'reporter-ureport' not found.": [
   null,
-  "'reporter-ureport' non trouvé."
+  "’reporter-ureport’ non trouvé."
  ],
  "Reporting was unsucessful. Try running `reporter-ureport -d ": [
   null,
-  "La signalisation n'a pas abouti. Essayez d'exécuter `reporter-ureport -d"
+  "La signalisation n’a pas abouti. Essayez d’exécuter `reporter-ureport -d"
  ],
  "Required By": [
   null,
@@ -1017,7 +1021,7 @@ return plural;
  ],
  "Running Since": [
   null,
-  "En cours d'exécution depuis "
+  "En fonctionnement depuis"
  ],
  "Saturday": [
   null,
@@ -1057,11 +1061,11 @@ return plural;
  ],
  "Set Host name": [
   null,
-  "Définir le nom d'hôte"
+  "Définir le nom d’hôte"
  ],
  "Set Time": [
   null,
-  "Régler l'heure"
+  "Régler l’heure"
  ],
  "Severity": [
   null,
@@ -1115,7 +1119,7 @@ return plural;
   null,
   "Arrêter"
  ],
- "Store metrics": [
+ "Store Metrics": [
   null,
   "Stocker les métriques"
  ],
@@ -1181,31 +1185,31 @@ return plural;
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,
-  "L'utilisateur <b>$0</b> n'a pas les autorisations pour créer des timers"
+  "L’utilisateur <b>$0</b> n’a pas les autorisations pour créer des timers"
  ],
  "The user <b>$0</b> is not permitted to change the system time": [
   null,
-  "L'utilisateur <b>$0</b> n'a pas le droit de modifier les heures système"
+  "L’utilisateur <b>$0</b> n’a pas le droit de modifier les heures système"
  ],
  "The user <b>$0</b> is not permitted to enable or disable services": [
   null,
-  "L'utilisateur <b>$0</b> n'est pas autorisé à activer ou désactiver les services"
+  "L’utilisateur <b>$0</b> n’est pas autorisé à activer ou désactiver les services"
  ],
  "The user <b>$0</b> is not permitted to modify hostnames": [
   null,
-  "L'utilisateur <b>$0</b> n'est pas autorisé à modifier les noms d'hôte"
+  "L’utilisateur <b>$0</b> n’est pas autorisé à modifier les noms d’hôte"
  ],
  "The user <b>$0</b> is not permitted to shutdown or restart this server": [
   null,
-  "L'utilisateur <b>$0</b> n'est pas autorisé à arrêter ou redémarrer ce serveur"
+  "L’utilisateur <b>$0</b> n’est pas autorisé à arrêter ou redémarrer ce serveur"
  ],
  "The user <b>$0</b> is not permitted to start or stop services": [
   null,
-  "L'utilisateur <b>$0</b> n'est pas autorisé à démarrer ou arrêter les services"
+  "L’utilisateur <b>$0</b> n’est pas autorisé à démarrer ou arrêter les services"
  ],
  "This day doesn't exist in all months.<br> The timer will only be executed in months that have 31st.": [
   null,
-  "Ce jour n'est pas présent tous les mois. <br> Le timer ne sera exécuté que dans les mois qui ont un 31ème jour."
+  "Ce jour n’est pas présent tous les mois. <br> Le timer ne sera exécuté que dans les mois qui ont un 31ème jour."
  ],
  "This field cannot be empty.": [
   null,
@@ -1217,7 +1221,7 @@ return plural;
  ],
  "This unit is not designed to be enabled explicitly.": [
   null,
-  "Cette unité n'est pas conçue pour être activée explicitement."
+  "Cette unité n’est pas conçue pour être activée explicitement."
  ],
  "Thursday": [
   null,
@@ -1330,7 +1334,7 @@ return plural;
  ],
  "failed to list ssh host keys: $0": [
   null,
-  "Échec de listage des clés de l'hôte ssh: $0"
+  "Échec de listage des clés de l’hôte ssh: $0"
  ],
  "of $0 CPU core": [
   "of $0 CPU cores",

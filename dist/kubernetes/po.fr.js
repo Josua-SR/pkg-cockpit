@@ -87,11 +87,11 @@ return plural;
  ],
  "Access Modes": [
   null,
-  "Modes d'accès"
+  "Modes d’accès"
  ],
  "Access Policy": [
   null,
-  "Politique d'accès"
+  "Politique d’accès"
  ],
  "Actual": [
   null,
@@ -155,7 +155,7 @@ return plural;
  ],
  "Adjust Persistent Volume '{{ item.metadata.name }}'": [
   null,
-  "Ajuster le volume persistant '{{item.metadata.name}}'"
+  "Ajuster le volume persistant « {{item.metadata.name}} »"
  ],
  "Adjust Replication Controller {{ item.metadata.name }}": [
   null,
@@ -163,7 +163,7 @@ return plural;
  ],
  "Adjust Route": [
   null,
-  "Ajuster l'itinéraire"
+  "Ajuster l’itinéraire"
  ],
  "Adjust Service": [
   null,
@@ -191,11 +191,11 @@ return plural;
  ],
  "All in use": [
   null,
-  "Tout en cours d'utilisation"
+  "Tout en cours d’utilisation"
  ],
  "All running": [
   null,
-  "Le tout est en cours d'exécution"
+  "Le tout est en cours d’exécution"
  ],
  "Annotations": [
   null,
@@ -247,11 +247,11 @@ return plural;
  ],
  "Change User": [
   null,
-  "Changer d'utilisateur"
+  "Changer d’utilisateur"
  ],
  "Change image stream": [
   null,
-  "Changer le flux d'image"
+  "Changer le flux d’image"
  ],
  "Change project": [
   null,
@@ -335,7 +335,7 @@ return plural;
  ],
  "Couldn't find running API server": [
   null,
-  "Impossible de trouver le serveur d'API en cours d'exécution"
+  "Impossible de trouver le serveur d’API en cours d’exécution"
  ],
  "Create": [
   null,
@@ -343,11 +343,11 @@ return plural;
  ],
  "Create empty image stream": [
   null,
-  "Créer un flux d'images vide"
+  "Créer un flux d’images vide"
  ],
  "Create image stream": [
   null,
-  "Créer un flux d'images"
+  "Créer un flux d’images"
  ],
  "Created": [
   null,
@@ -383,7 +383,7 @@ return plural;
  ],
  "Delete image stream": [
   null,
-  "Supprimer le flux d'images"
+  "Supprimer le flux d’images"
  ],
  "Delete {{ item.kind }}": [
   null,
@@ -399,7 +399,7 @@ return plural;
  ],
  "Deploy Application": [
   null,
-  "Déployer l'application"
+  "Déployer l’application"
  ],
  "Deployment Causes": [
   null,
@@ -439,23 +439,23 @@ return plural;
  ],
  "Do you want to add the role '{{ fields.displayRole }}'?": [
   null,
-  "Voulez-vous ajouter le rôle '{{fields.displayRole}}'?"
+  "Voulez-vous ajouter le rôle « {{fields.displayRole}} » ?"
  ],
  "Do you want to delete the '{{stream.metadata.namespace}}/{{stream.metadata.name}}' image stream?": [
   null,
-  "Voulez-vous supprimer le flux d'image '{{stream.metadata.namespace}} / {{stream.metadata.name}}'?"
+  "Voulez-vous supprimer le flux d’image « {{stream.metadata.namespace}} / {{stream.metadata.name}} » ?"
  ],
  "Do you want to delete the Persistent Volume '{{item.metadata.name}}'?": [
   null,
-  "Voulez-vous supprimer le volume persistant '{{item.metadata.name}}'?"
+  "Voulez-vous supprimer le volume persistant « {{item.metadata.name}} » ?"
  ],
  "Do you want to delete the Persistent Volume Claim '{{item.metadata.name}}'?": [
   null,
-  "Voulez-vous supprimer la requête de volume persistant '{{item.metadata.name}}'?"
+  "Voulez-vous supprimer la requête de volume persistant « {{item.metadata.name}}’ »"
  ],
  "Do you want to delete the {{ item.kind }} '{{item.metadata.name}}'?": [
   null,
-  "Voulez-vous supprimer le {{item.kind}} '{{item.metadata.name}}'?"
+  "Voulez-vous supprimer le {{item.kind}} « {{item.metadata.name}} » ?"
  ],
  "Do you want to delete this Node?": [
   null,
@@ -463,11 +463,11 @@ return plural;
  ],
  "Do you want to remove the image tagged as '{{stream.metadata.namespace}}/{{stream.metadata.name}}:{{tag.tag}}'?": [
   null,
-  "Voulez-vous supprimer l'image intitulée \"{{stream.metadata.namespace}} / {{stream.metadata.name}}: {{tag.tag}}\"?"
+  "Voulez-vous supprimer l’image intitulée « {{stream.metadata.namespace}} / {{stream.metadata.name}} : {{tag.tag}} »?"
  ],
  "Do you want to remove the role '{{ fields.displayRole }}' from member {{ fields.member.metadata.name }}?": [
   null,
-  "Voulez-vous supprimer le rôle '{{fields.displayRole}}' du membre {{fields.member.metadata.name}}?"
+  "Voulez-vous supprimer le rôle « {{fields.displayRole}} » du membre {{fields.member.metadata.name}} ?"
  ],
  "Don't pull images automatically": [
   null,
@@ -483,15 +483,15 @@ return plural;
  ],
  "Endpoint": [
   null,
-  "Point d'accès"
+  "Point d’accès"
  ],
  "Endpoint Name": [
   null,
-  "Nom du point d'accès"
+  "Nom du point d’accès"
  ],
  "Endpoints": [
   null,
-  "Points d'accès"
+  "Points d’accès"
  ],
  "Environment": [
   null,
@@ -499,11 +499,11 @@ return plural;
  ],
  "Error getting certificate details: $0": [
   null,
-  "Erreur lors de l'obtention des détails du certificat: $0"
+  "Erreur lors de l’obtention des détails du certificat: $0"
  ],
  "Error writing kubectl config": [
   null,
-  "Erreur lors de l'écriture de la configuration de kubectl"
+  "Erreur lors de l’écriture de la configuration de kubectl"
  ],
  "Fibre Channel": [
   null,
@@ -563,7 +563,7 @@ return plural;
  ],
  "Host Path": [
   null,
-  "Chemin d'hôte"
+  "Chemin d’hôte"
  ],
  "IP": [
   null,
@@ -587,23 +587,23 @@ return plural;
  ],
  "Image ID": [
   null,
-  "ID de l'image"
+  "ID de l’image"
  ],
  "Image Name": [
   null,
-  "Nom de l'image"
+  "Nom de l’image"
  ],
  "Image Registry": [
   null,
-  "Registre d'images"
+  "Registre d’images"
  ],
  "Image Stream": [
   null,
-  "Flux d'images"
+  "Flux d’images"
  ],
  "Image commands": [
   null,
-  "Commandes d'image"
+  "Commandes d’image"
  ],
  "Images": [
   null,
@@ -671,7 +671,7 @@ return plural;
  ],
  "Logical Unit Number": [
   null,
-  "Numéro d'unité logique"
+  "Numéro d’unité logique"
  ],
  "Login commands": [
   null,
@@ -751,7 +751,7 @@ return plural;
  ],
  "Namespace cannot be empty.": [
   null,
-  "L'espace de noms ne peut pas être vide."
+  "L’espace de noms ne peut pas être vide."
  ],
  "Network": [
   null,
@@ -767,7 +767,7 @@ return plural;
  ],
  "New image stream": [
   null,
-  "Nouveau flux d'images"
+  "Nouveau flux d’images"
  ],
  "New project": [
   null,
@@ -779,7 +779,7 @@ return plural;
  ],
  "No Pods are using this claim": [
   null,
-  "Aucun pod n'utilise cette requête"
+  "Aucun pod n’utilise cette requête"
  ],
  "No Volume Bound": [
   null,
@@ -787,7 +787,7 @@ return plural;
  ],
  "No groups are present.": [
   null,
-  "Aucun groupe n'est présent."
+  "Aucun groupe n’est présent."
  ],
  "No images pushed": [
   null,
@@ -795,7 +795,7 @@ return plural;
  ],
  "No metadata file was selected. Please select a Kubernetes metadata file.": [
   null,
-  "Aucun fichier de métadonnées n'a été sélectionné. Veuillez sélectionner un fichier de méta-données Kubernetes."
+  "Aucun fichier de métadonnées n’a été sélectionné. Veuillez sélectionner un fichier de méta-données Kubernetes."
  ],
  "No nodes in cluster": [
   null,
@@ -819,19 +819,19 @@ return plural;
  ],
  "No projects are present.": [
   null,
-  "Aucun projet n'est présent."
+  "Aucun projet n’est présent."
  ],
  "No users are present.": [
   null,
-  "Aucun utilisateur n'est présent"
+  "Aucun utilisateur n’est présent"
  ],
  "No volumes are present.": [
   null,
-  "Aucun volume n'est présent."
+  "Aucun volume n’est présent."
  ],
  "No volumes in use": [
   null,
-  "Aucun volume en cours d'utilisation"
+  "Aucun volume en cours d’utilisation"
  ],
  "Node": [
   null,
@@ -859,7 +859,7 @@ return plural;
  ],
  "Not a valid value for Host": [
   null,
-  "Valeur non valide pour l'hôte"
+  "Valeur non valide pour l’hôte"
  ],
  "Not deployed": [
   null,
@@ -875,7 +875,7 @@ return plural;
  ],
  "Operating System": [
   null,
-  "Système d'exploitation"
+  "Système d’exploitation"
  ],
  "Options": [
   null,
@@ -923,7 +923,7 @@ return plural;
  ],
  "Please provide a username": [
   null,
-  "Veuillez fournir un nom d'utilisateur"
+  "Veuillez fournir un nom d’utilisateur"
  ],
  "Please provide a valid NFS server": [
   null,
@@ -943,7 +943,7 @@ return plural;
  ],
  "Please provide a valid logical unit number": [
   null,
-  "Veuillez fournir un numéro d'unité logique valide"
+  "Veuillez fournir un numéro d’unité logique valide"
  ],
  "Please provide a valid name": [
   null,
@@ -971,7 +971,7 @@ return plural;
  ],
  "Please select a valid access mode": [
   null,
-  "Veuillez sélectionner un mode d'accès valide"
+  "Veuillez sélectionner un mode d’accès valide"
  ],
  "Please select a valid endpoint": [
   null,
@@ -995,7 +995,7 @@ return plural;
  ],
  "Pod Endpoints": [
   null,
-  "Points d'accès Pod"
+  "Points d’accès Pod"
  ],
  "Pod Replicated": [
   null,
@@ -1011,7 +1011,7 @@ return plural;
  ],
  "Pods contain one or more containers that run together on a node, containing your application code.": [
   null,
-  "Les pods contiennent un ou plusieurs conteneurs qui s'exécutent ensemble sur un nœud, contenant le code de votre application."
+  "Les pods contiennent un ou plusieurs conteneurs qui s’exécutent ensemble sur un nœud, contenant le code de votre application."
  ],
  "Pool Name": [
   null,
@@ -1039,15 +1039,15 @@ return plural;
  ],
  "Project access policy allows anonymous users to pull images.": [
   null,
-  "La stratégie d'accès au projet permet aux utilisateurs anonymes d'extraire des images."
+  "La stratégie d’accès au projet permet aux utilisateurs anonymes d’extraire des images."
  ],
  "Project access policy allows any authenticated user to pull images.": [
   null,
-  "La stratégie d'accès au projet permet à tout utilisateur authentifié d'extraire des images."
+  "La stratégie d’accès au projet permet à tout utilisateur authentifié d’extraire des images."
  ],
  "Project access policy only allows specific members to access images.": [
   null,
-  "La stratégie d'accès au projet autorise uniquement des membres spécifiques à accéder aux images."
+  "La stratégie d’accès au projet autorise uniquement des membres spécifiques à accéder aux images."
  ],
  "Project:": [
   null,
@@ -1071,7 +1071,7 @@ return plural;
  ],
  "Pull specific tags from another image repository": [
   null,
-  "Extraire des tags spécifiques d'un autre référentiel d'images"
+  "Extraire des tags spécifiques d’un autre référentiel d’images"
  ],
  "Push an image:": [
   null,
@@ -1091,7 +1091,7 @@ return plural;
  ],
  "Read and write from a single node": [
   null,
-  "Lecture et Écriture à partir d'un seul nœud"
+  "Lecture et Écriture à partir d’un seul nœud"
  ],
  "Read and write from multiple nodes": [
   null,
@@ -1135,7 +1135,7 @@ return plural;
  ],
  "Remote registry is insecure": [
   null,
-  "L'enregistrement à distance n'est pas sécurisé"
+  "L’enregistrement à distance n’est pas sécurisé"
  ],
  "Remove": [
   null,
@@ -1155,15 +1155,15 @@ return plural;
  ],
  "Remove User": [
   null,
-  "Supprimer l'utilisateur"
+  "Supprimer l’utilisateur"
  ],
  "Remove image tag": [
   null,
-  "Supprimer le tag d'image"
+  "Supprimer le tag d’image"
  ],
  "Remove membership": [
   null,
-  "Révoquez l'appartenance"
+  "Révoquez l’appartenance"
  ],
  "Replicas": [
   null,
@@ -1299,7 +1299,7 @@ return plural;
  ],
  "Shared: Allow any authenticated user to pull images": [
   null,
-  "Shared: permet à tout utilisateur authentifié d'extraire des images"
+  "Shared: permet à tout utilisateur authentifié d’extraire des images"
  ],
  "Shell": [
   null,
@@ -1347,7 +1347,7 @@ return plural;
  ],
  "Show all image streams": [
   null,
-  "Afficher tous les flux d'images"
+  "Afficher tous les flux d’images"
  ],
  "Show all images": [
   null,
@@ -1383,7 +1383,7 @@ return plural;
  ],
  "Sync all tags from a remote image repository": [
   null,
-  "Synchroniser toutes les balises d'un référentiel d'images distant"
+  "Synchroniser toutes les balises d’un référentiel d’images distant"
  ],
  "TLS Termination": [
   null,
@@ -1411,19 +1411,19 @@ return plural;
  ],
  "The address contains invalid characters": [
   null,
-  "L'adresse contient des caractères non valides"
+  "L’adresse contient des caractères non valides"
  ],
  "The container '{{ target }}' does not exist.": [
   null,
-  "Le conteneur '{{target}}' n'existe pas."
+  "Le conteneur « {{target}} » n’existe pas."
  ],
  "The deployment config '{{ target }}' does not exist.": [
   null,
-  "La configuration de déploiement '{{target}}' n'existe pas."
+  "La configuration de déploiement « {{target}} » n’existe pas."
  ],
  "The group '{{ groupName }}' does not exist.": [
   null,
-  "Le groupe '{{groupName}}' n'existe pas."
+  "Le groupe « {{groupName}} » n’existe pas."
  ],
  "The maximum number of replicas is 128": [
   null,
@@ -1435,39 +1435,39 @@ return plural;
  ],
  "The node '{{ target }}' does not exist.": [
   null,
-  "Le nœud '{{target}}' n'existe pas."
+  "Le nœud « {{target}} » n’existe pas."
  ],
  "The node doesn't have enough disk space": [
   null,
-  "Le noeud n'a pas assez d'espace disque"
+  "Le noeud n’a pas assez d’espace disque"
  ],
  "The node doesn't have enough free memory": [
   null,
-  "Le noeud n'a pas assez de mémoire disponible"
+  "Le noeud n’a pas assez de mémoire disponible"
  ],
  "The persistent volume '{{ target }}' does not exist.": [
   null,
-  "Le volume persistant '{{target}}' n'existe pas."
+  "Le volume persistant « {{target}} » n’existe pas."
  ],
  "The pod '{{ target }}' does not exist.": [
   null,
-  "Le pod '{{target}}' n'existe pas."
+  "Le pod « {{target}} » n’existe pas."
  ],
  "The project '{{ projName }}' does not exist.": [
   null,
-  "Le projet '{{projName}}' n'existe pas."
+  "Le projet « {{projName}} » n’existe pas."
  ],
  "The replication controller '{{ target }}' does not exist.": [
   null,
-  "Le contrôleur de réplication '{{target}}' n'existe pas."
+  "Le contrôleur de réplication « {{target}} » n’existe pas."
  ],
  "The route '{{ target }}' does not exist.": [
   null,
-  "La route '{{target}}' n'existe pas."
+  "La route « {{target}} » n’existe pas."
  ],
  "The selected file is not a valid Kubernetes application manifest.": [
   null,
-  "Le fichier sélectionné n'est pas un manifeste d'application Kubernetes valide."
+  "Le fichier sélectionné n’est pas un manifeste d’application Kubernetes valide."
  ],
  "The server uses a certificate signed by an unknown authority.": [
   null,
@@ -1475,15 +1475,15 @@ return plural;
  ],
  "The service '{{ target }}' does not exist.": [
   null,
-  "Le service '{{target}}' n'existe pas."
+  "Le service « {{target}} » n’existe pas."
  ],
  "The user '{{ userName }}' does not exist.": [
   null,
-  "L'utilisateur '{{userName}}' n'existe pas."
+  "L’utilisateur « {{userName}} » n’existe pas."
  ],
  "This claim is in use. Deleting it may cause issues with the following pod:": [
   null,
-  "Cette requête est en cours d'utilisation. La supprimer peut entraîner des problèmes avec le pod suivant :"
+  "Cette requête est en cours d’utilisation. La supprimer peut entraîner des problèmes avec le pod suivant :"
  ],
  "This option is for single node testing only – local storage will not work in a multi-node cluster": [
   null,
@@ -1495,7 +1495,7 @@ return plural;
  ],
  "This volume has not been claimed": [
   null,
-  "Ce volume n'a pas été revendiqué"
+  "Ce volume n’a pas été revendiqué"
  ],
  "Token": [
   null,
@@ -1527,11 +1527,11 @@ return plural;
  ],
  "Unable to decode Kubernetes application manifest.": [
   null,
-  "Impossible de décoder le manifeste d'application Kubernetes."
+  "Impossible de décoder le manifeste d’application Kubernetes."
  ],
  "Unable to read the Kubernetes application manifest. Code $0.": [
   null,
-  "Impossible de lire le manifeste de l'application Kubernetes. Code $0 ."
+  "Impossible de lire le manifeste de l’application Kubernetes. Code $0 ."
  ],
  "Unavailable": [
   null,
@@ -1559,7 +1559,7 @@ return plural;
  ],
  "Username": [
   null,
-  "Nom d'utilisateur"
+  "Nom d’utilisateur"
  ],
  "Users": [
   null,
@@ -1591,7 +1591,7 @@ return plural;
  ],
  "Welcome to the Image Registry": [
   null,
-  "Bienvenue dans le registre d'images"
+  "Bienvenue dans le registre d’images"
  ],
  "When": [
   null,
@@ -1603,7 +1603,7 @@ return plural;
  ],
  "You can bypass the certificate check, but any data you send to the server could be intercepted by others.": [
   null,
-  "Vous pouvez ignorer la vérification du certificat, mais toutes les données que vous envoyez au serveur peuvent être interceptées par d'autres personnes."
+  "Vous pouvez ignorer la vérification du certificat, mais toutes les données que vous envoyez au serveur peuvent être interceptées par d’autres personnes."
  ],
  "You can deploy an application to your cluster.": [
   null,
@@ -1611,7 +1611,7 @@ return plural;
  ],
  "Your login credentials do not give you access to use the docker registry from the command line.": [
   null,
-  "Vos identifiants de connexion ne vous permettent pas d'utiliser le registre docker à partir de la ligne de commande."
+  "Vos identifiants de connexion ne vous permettent pas d’utiliser le registre docker à partir de la ligne de commande."
  ],
  "eg: my-image-stream": [
   null,

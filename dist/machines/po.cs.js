@@ -101,7 +101,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "Automatické spuštění"
+  "Automatické spouštění"
  ],
  "Available": [
   null,
@@ -455,6 +455,10 @@ return plural;
   null,
   "Přehled"
  ],
+ "Path": [
+  null,
+  "Popis umístění"
+ ],
  "Path on host's filesystem": [
   null,
   "Umístění v souborovém systému hostitele"
@@ -470,6 +474,10 @@ return plural;
  "Persistence": [
   null,
   "Trvalost"
+ ],
+ "Persistent": [
+  null,
+  "Trvalé"
  ],
  "Please enter new volume name": [
   null,
@@ -591,9 +599,9 @@ return plural;
   null,
   "Popis umístění zdroje je třeba vyplnit"
  ],
- "Source should start with https, ftp or nfs protocol": [
+ "Source should start with http, ftp or nfs protocol": [
   null,
-  "Zdroj by měl začínat protokolem https, ftp nebo nfs"
+  "Zdroj by měl začínat na http, ftp nebo nfs protokol"
  ],
  "Start libvirt": [
   null,
@@ -602,10 +610,6 @@ return plural;
  "Start pool when host boots": [
   null,
   "Spustit fond při startu hostitele"
- ],
- "Start the VM to see disk statistics.": [
-  null,
-  "Pro zobrazení statistik disku je třeba virt. stroj spustit"
  ],
  "Startup": [
   null,
@@ -722,10 +726,6 @@ return plural;
  "Unplug": [
   null,
   "Odpojit"
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Pro zobrazení statistik disku je třeba přejít na novější verzi libvirt"
  ],
  "Usage": [
   null,

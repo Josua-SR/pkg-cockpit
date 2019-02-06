@@ -69,11 +69,11 @@ return plural;
  },
  "'Organization' required to register.": [
   null,
-  "«Organisation» nécessaire pour s'inscrire."
+  "«Organisation» nécessaire pour s’inscrire."
  ],
  "'Organization' required when using activation keys.": [
   null,
-  "«Organisation» requis lors de l'utilisation des clés d'activation."
+  "«Organisation» requis lors de l’utilisation des clés d’activation."
  ],
  "Access denied": [
   null,
@@ -81,7 +81,7 @@ return plural;
  ],
  "Activation Key": [
   null,
-  "Clé d'activation"
+  "Clé d’activation"
  ],
  "Architecture": [
   null,
@@ -93,7 +93,7 @@ return plural;
  ],
  "Couldn't get system subscription status. Please ensure subscription-manager is installed.": [
   null,
-  "Impossible d'obtenir le statut d'abonnement au système. Veuillez vous assurer que le gestionnaire d'abonnement est installé."
+  "Impossible d’obtenir le statut d’abonnement au système. Veuillez vous assurer que le gestionnaire d’abonnement est installé."
  ],
  "Custom URL": [
   null,
@@ -117,19 +117,19 @@ return plural;
  ],
  "Invalid credentials": [
   null,
-  "Informations d'identification non valides"
+  "Informations d’identification non valides"
  ],
  "Invalid username or password": [
   null,
-  "Nom d'utilisateur ou mot de passe non valide"
+  "Nom d’utilisateur ou mot de passe non valide"
  ],
  "Login": [
   null,
-  "S'identifier"
+  "S’identifier"
  ],
  "Login/password or activation key required to register.": [
   null,
-  "Login / mot de passe ou clé d'activation nécessaire pour vous inscrire."
+  "Login / mot de passe ou clé d’activation nécessaire pour vous inscrire."
  ],
  "No installed products on the system.": [
   null,
@@ -169,7 +169,7 @@ return plural;
  ],
  "Retrieving subscription status...": [
   null,
-  "Récupération du statut de l'abonnement ..."
+  "Récupération du statut de l’abonnement ..."
  ],
  "Server": [
   null,
@@ -189,7 +189,7 @@ return plural;
  ],
  "Status: System isn't registered": [
   null,
-  "Statut : le système n'est pas enregistré"
+  "Statut : le système n’est pas enregistré"
  ],
  "Subscriptions": [
   null,
@@ -197,7 +197,7 @@ return plural;
  ],
  "The current user isn't allowed to access system subscription status.": [
   null,
-  "L'utilisateur actuel n'est pas autorisé à accéder au statut d'abonnement au système."
+  "L’utilisateur actuel n’est pas autorisé à accéder au statut d’abonnement au système."
  ],
  "URL": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "Unregister": [
   null,
-  "Annuler l'inscription"
+  "Annuler l’inscription"
  ],
  "Unregistering system...": [
   null,

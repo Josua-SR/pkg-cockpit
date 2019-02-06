@@ -455,6 +455,10 @@ return plural;
   null,
   "Przegląd"
  ],
+ "Path": [
+  null,
+  "Ścieżka"
+ ],
  "Path on host's filesystem": [
   null,
   "Ścieżka w systemie plików gospodarza"
@@ -470,6 +474,10 @@ return plural;
  "Persistence": [
   null,
   "Trwałość"
+ ],
+ "Persistent": [
+  null,
+  "Trwałe"
  ],
  "Please enter new volume name": [
   null,
@@ -591,9 +599,9 @@ return plural;
   null,
   "Ścieżka źródłowa nie może być pusta"
  ],
- "Source should start with https, ftp or nfs protocol": [
+ "Source should start with http, ftp or nfs protocol": [
   null,
-  "Źródło musi zaczynać się od protokołu https, ftp lub nfs"
+  "Źródło musi zaczynać się od protokołu http, ftp lub nfs"
  ],
  "Start libvirt": [
   null,
@@ -602,10 +610,6 @@ return plural;
  "Start pool when host boots": [
   null,
   "Włączanie puli po uruchomieniu gospodarza"
- ],
- "Start the VM to see disk statistics.": [
-  null,
-  "Należy uruchomić maszynę wirtualną, aby wyświetlić statystyki dysku."
  ],
  "Startup": [
   null,
@@ -722,10 +726,6 @@ return plural;
  "Unplug": [
   null,
   "Odłącz"
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Należy zaktualizować do nowszej wersji biblioteki libvirt, aby przeglądać statystyki dysku"
  ],
  "Usage": [
   null,

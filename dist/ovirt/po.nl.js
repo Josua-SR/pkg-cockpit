@@ -509,7 +509,7 @@ return plural;
  ],
  "Persistence": [
   null,
-  "GCE aanhoudende schijf"
+  ""
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
@@ -679,10 +679,6 @@ return plural;
   null,
   ""
  ],
- "Start the VM to see disk statistics.": [
-  null,
-  ""
- ],
  "State": [
   null,
   ""
@@ -786,10 +782,6 @@ return plural;
  "Unplug": [
   null,
   ""
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Waardeer libvirt op naar een recente versie van om schijf statistieken weer te geven"
  ],
  "Usage": [
   null,

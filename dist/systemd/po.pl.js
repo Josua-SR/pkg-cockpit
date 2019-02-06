@@ -297,7 +297,7 @@ return plural;
  ],
  "Automatic Startup": [
   null,
-  "Automatyczne aktualizacje"
+  "Automatyczne uruchamianie"
  ],
  "Automatically using NTP": [
   null,
@@ -462,6 +462,10 @@ return plural;
  "Detachable": [
   null,
   "Odłączalny"
+ ],
+ "Details": [
+  null,
+  "Szczegóły"
  ],
  "Disable": [
   null,
@@ -1115,7 +1119,7 @@ return plural;
   null,
   "Zatrzymaj"
  ],
- "Store metrics": [
+ "Store Metrics": [
   null,
   "Przechowuj statystyki"
  ],

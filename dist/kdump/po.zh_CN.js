@@ -85,7 +85,7 @@ return plural;
  ],
  "Crash dump location": [
   null,
-  "崩溃储位置"
+  "崩溃信息存放在"
  ],
  "Crash system": [
   null,

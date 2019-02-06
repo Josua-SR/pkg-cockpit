@@ -67,10 +67,6 @@ return plural;
   "language": "ru",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
-  null,
-  "$0 Только пользователи с локальными учетными данными смогут подключиться к этой машине. Это может также повлиять на другие сервисы в качестве параметров разрешения DNS, и список доверенных ЦС может измениться."
- ],
  "$0 is not available from any repository.": [
   null,
   "$0 недоступен из какого-либо репозитория."
@@ -87,13 +83,9 @@ return plural;
   null,
   "Пароль администратора"
  ],
- "Are you sure you want to leave the '$0' domain?": [
+ "After leaving the domain, only users with local credentials will be able                to log into this machine. This may also effect other services as DNS resolution settings and                the list of trusted CAs may change.": [
   null,
-  "Вы уверены, что хотите оставить \"$0' домен?"
- ],
- "Are you sure you want to leave this domain?": [
-  null,
-  "Вы действительно хотите покинуть этот домен?"
+  ""
  ],
  "Authentication": [
   null,
@@ -111,9 +103,21 @@ return plural;
   null,
   "Проверка установленного программного обеспечения"
  ],
+ "Client Software": [
+  null,
+  ""
+ ],
  "Computer OU": [
   null,
   "Компьютерное подразделение"
+ ],
+ "Contacted domain": [
+  null,
+  ""
+ ],
+ "Domain": [
+  null,
+  "Домен"
  ],
  "Domain $0 could not be contacted": [
   null,
@@ -141,7 +145,7 @@ return plural;
  ],
  "Host name should not be changed in a domain": [
   null,
-  "Хост не должен быть пустым"
+  ""
  ],
  "Install": [
   null,
@@ -171,13 +175,13 @@ return plural;
   null,
   "Присоединение к этому домену не поддерживается"
  ],
- "Leave": [
-  null,
-  "Покидать"
- ],
  "Leave Domain": [
   null,
   "Оставить домен"
+ ],
+ "Login Format": [
+  null,
+  ""
  ],
  "More": [
   null,
@@ -215,6 +219,10 @@ return plural;
   null,
   "Удаление $0"
  ],
+ "Server Software": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
   "Пользователь <b>$0</b> не разрешено изменять сферы"
@@ -234,6 +242,10 @@ return plural;
  "User Password": [
   null,
   "Пользовательский пароль"
+ ],
+ "Validating address": [
+  null,
+  ""
  ],
  "Waiting for other software management operations to finish": [
   null,

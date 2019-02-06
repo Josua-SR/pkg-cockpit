@@ -297,7 +297,7 @@ return plural;
  ],
  "Automatic Startup": [
   null,
-  "Автоматичні оновлення"
+  "Автоматичний запуск"
  ],
  "Automatically using NTP": [
   null,
@@ -462,6 +462,10 @@ return plural;
  "Detachable": [
   null,
   "Змінний"
+ ],
+ "Details": [
+  null,
+  "Подробиці"
  ],
  "Disable": [
   null,
@@ -1115,7 +1119,7 @@ return plural;
   null,
   "Зупинити"
  ],
- "Store metrics": [
+ "Store Metrics": [
   null,
   "Метрика зберігання"
  ],

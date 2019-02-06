@@ -89,7 +89,7 @@ return plural;
  ],
  "A compatible version of Cockpit is not installed on {{#strong}}{{host}}{{/strong}}.": [
   null,
-  "Une version compatible de Cockpit n''est pas installée sur {{#strong}}{{host}}{{/strong}}."
+  "Une version compatible de Cockpit n’’est pas installée sur {{#strong}}{{host}}{{/strong}}."
  ],
  "Add": [
   null,
@@ -117,7 +117,7 @@ return plural;
  ],
  "Authentication Failed": [
   null,
-  "Échec d'authentification"
+  "Échec d’authentification"
  ],
  "Available": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Bus Expansion Chassis": [
   null,
-  "Châssis d'extension de bus"
+  "Châssis d’extension de bus"
  ],
  "CPU": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "Can't load image": [
   null,
-  "Impossible de charger l'image"
+  "Impossible de charger l’image"
  ],
  "Cancel": [
   null,
@@ -161,31 +161,31 @@ return plural;
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
-  "Le cockpit n'a pas pu contacter l'hôte donné $0 . Assurez-vous que SSH fonctionne sur le port $1 ou spécifiez un autre port dans l'adresse."
+  "Le cockpit n’a pas pu contacter l’hôte donné $0 . Assurez-vous que SSH fonctionne sur le port $1 ou spécifiez un autre port dans l’adresse."
  ],
  "Cockpit is not installed": [
   null,
-  "Cockpit n'est pas installé"
+  "Cockpit n’est pas installé"
  ],
  "Cockpit was unable to contact {{#strong}}{{host}}{{/strong}}.": [
   null,
-  "Cockpit n'a pas pu contacter {{#strong}}{{host}}{{/strong}}."
+  "Cockpit n’a pas pu contacter {{#strong}}{{host}}{{/strong}}."
  ],
  "Cockpit was unable to log in to {{#strong}}{{host}}{{/strong}}. {{#can_sync}}You may want to try to {{#sync_link}}synchronize users{{/sync_link}}.{{/can_sync}} For more authentication options and troubleshooting support please upgrade cockpit-ws to a newer version.": [
   null,
-  "Cockpit n'a pas pu se connecter à {{#strong}}{{host}}{{/ strong}}. {{#can_sync}} Vous pouvez essayer de {{#sync_link}} synchroniser les utilisateurs {{/ sync_link}}. {{/ can_sync}} Pour plus d'options d'authentification et de support de diagnostic de problèmes, mettez à niveau cockpit-ws vers une version plus récente."
+  "Cockpit n’a pas pu se connecter à {{#strong}}{{host}}{{/ strong}}. {{#can_sync}} Vous pouvez essayer de {{#sync_link}} synchroniser les utilisateurs {{/ sync_link}}. {{/ can_sync}} Pour plus d’options d’authentification et de support de diagnostic de problèmes, mettez à niveau cockpit-ws vers une version plus récente."
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}.": [
   null,
-  "Cockpit n'a pas pu se connecter à {{#strong}}{{host}}{{/ strong}}."
+  "Cockpit n’a pas pu se connecter à {{#strong}}{{host}}{{/ strong}}."
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. To use this machine with cockpit you will need to enable one of the following authentication methods in the sshd config on {{#strong}}{{host}}{{/strong}}:": [
   null,
-  "Cockpit n'a pas pu se connecter à {{#strong}}{{host}}{{/ strong}}. Pour utiliser cette machine avec cockpit, vous devrez activer l'une des méthodes d'authentification suivantes dans la configuration de sshd sur {{#strong}}{{host}}{{/ strong}} :"
+  "Cockpit n’a pas pu se connecter à {{#strong}}{{host}}{{/ strong}}. Pour utiliser cette machine avec cockpit, vous devrez activer l’une des méthodes d’authentification suivantes dans la configuration de sshd sur {{#strong}}{{host}}{{/ strong}} :"
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. You can change your authentication credentials below. {{#can_sync}}You may prefer to {{#sync_link}}synchronize accounts and passwords{{/sync_link}}.{{/can_sync}}": [
   null,
-  "Cockpit n'a pas pu se connecter à {{#strong}}{{host}}{{/ strong}}. Vous pouvez modifier vos informations d'authentification ci-dessous. {{#can_sync}} Vous pouvez préférer {{#sync_link}} synchroniser les comptes et les mots de passe {{/ sync_link}}.{{/ can_sync}}"
+  "Cockpit n’a pas pu se connecter à {{#strong}}{{host}}{{/ strong}}. Vous pouvez modifier vos informations d’authentification ci-dessous. {{#can_sync}} Vous pouvez préférer {{#sync_link}} synchroniser les comptes et les mots de passe {{/ sync_link}}.{{/ can_sync}}"
  ],
  "Color": [
   null,
@@ -201,7 +201,7 @@ return plural;
  ],
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
-  "La connexion simultanée à plus de {{limit}} machines n'est pas prise en charge."
+  "La connexion simultanée à plus de {{limit}} machines n’est pas prise en charge."
  ],
  "Connection Error": [
   null,
@@ -233,7 +233,7 @@ return plural;
  ],
  "Docking Station": [
   null,
-  "Station d'accueil"
+  "Station d’accueil"
  ],
  "Edit Server": [
   null,
@@ -245,7 +245,7 @@ return plural;
  ],
  "Enter IP address or host name": [
   null,
-  "Saisir l'adresse IP ou le nom d'hôte"
+  "Saisir l’adresse IP ou le nom d’hôte"
  ],
  "Entering a different password here means you will need to retype it every time you reconnect to this machine": [
   null,
@@ -257,11 +257,11 @@ return plural;
  ],
  "Expansion Chassis": [
   null,
-  "Châssis d'extension"
+  "Châssis d’extension"
  ],
  "Failed to add machine: $0": [
   null,
-  "Impossible d'ajouter la machine: $0"
+  "Impossible d’ajouter la machine: $0"
  ],
  "Failed to change password": [
   null,
@@ -285,7 +285,7 @@ return plural;
  ],
  "Host Name": [
   null,
-  "Nom d'hôte"
+  "Nom d’hôte"
  ],
  "In order to synchronize users, you need to log in to {{#strong}}{{host}}{{/strong}}.": [
   null,
@@ -305,7 +305,7 @@ return plural;
  ],
  "Is sshd running on a different port?": [
   null,
-  "Sshd est-il en cours d'exécution sur un port différent ?"
+  "Sshd est-il en cours d’exécution sur un port différent ?"
  ],
  "Kerberos Based SSO": [
   null,
@@ -321,11 +321,11 @@ return plural;
  ],
  "Leave blank to connect to this machine as the currently logged in user. If you enter a different username, that user will always be used when connecting to this machine.": [
   null,
-  "Laissez vide pour vous connecter à cette machine en tant qu'utilisateur actuellement connecté. Si vous saisissez un nom d'utilisateur différent, cet utilisateur sera toujours utilisé lors de la connexion à cette machine."
+  "Laissez vide pour vous connecter à cette machine en tant qu’utilisateur actuellement connecté. Si vous saisissez un nom d’utilisateur différent, cet utilisateur sera toujours utilisé lors de la connexion à cette machine."
  ],
  "Leave blank to connect to this machine as the currently logged in user{{#default_user}} ({{default_user}}){{/default_user}}. If you enter a different username, that user will always be used connecting to this machine.": [
   null,
-  "Laissez vide pour vous connecter à cette machine en tant qu'utilisateur actuellement connecté user{{#default_user}} ({{default_user}}){{/default_user}}.. Si vous saisissez un nom d'utilisateur différent, cet utilisateur sera toujours utilisé pour se connecter à cette machine."
+  "Laissez vide pour vous connecter à cette machine en tant qu’utilisateur actuellement connecté user{{#default_user}} ({{default_user}}){{/default_user}}.. Si vous saisissez un nom d’utilisateur différent, cet utilisateur sera toujours utilisé pour se connecter à cette machine."
  ],
  "Log In": [
   null,
@@ -377,7 +377,7 @@ return plural;
  ],
  "New password was not accepted": [
   null,
-  "Le nouveau mot de passe n'a pas été accepté"
+  "Le nouveau mot de passe n’a pas été accepté"
  ],
  "No such file or directory": [
   null,
@@ -433,11 +433,11 @@ return plural;
  ],
  "Prompting via ssh-add timed out": [
   null,
-  "L'invite via ssh-add a expiré"
+  "L’invite via ssh-add a expiré"
  ],
  "Prompting via ssh-keygen timed out": [
   null,
-  "L'invite via ssh-keygen a expiré"
+  "L’invite via ssh-keygen a expiré"
  ],
  "Public Key": [
   null,
@@ -497,15 +497,15 @@ return plural;
  ],
  "The IP address or host name cannot contain whitespace.": [
   null,
-  "L'adresse IP ou le nom d'hôte ne peut pas contenir d'espace."
+  "L’adresse IP ou le nom d’hôte ne peut pas contenir d’espace."
  ],
  "The authenticity of host {{#strong}}{{host}}{{/strong}} can't be established. Are you sure you want to continue connecting?": [
   null,
-  "L'authenticité de l'hôte {{#strong}}{{host}}{{/strong}} ne peut pas être établie. Êtes-vous sûr de vouloir continuer à vous connecter ?"
+  "L’authenticité de l’hôte {{#strong}}{{host}}{{/strong}} ne peut pas être établie. Êtes-vous sûr de vouloir continuer à vous connecter ?"
  ],
  "The key of {{#strong}}{{host}}{{/strong}} does not match the key previously in use. Unless this machine was recently replaced, it is likely that someone is trying to attack your connection to this machine.": [
   null,
-  "La clé de {{#strong}}{{host}}{{/strong}} ne correspond pas à la clé précédemment utilisée. À moins que cette machine ait été récemment remplacée, il est probable que quelqu'un tente d'attaquer votre connexion à cette machine."
+  "La clé de {{#strong}}{{host}}{{/strong}} ne correspond pas à la clé précédemment utilisée. À moins que cette machine ait été récemment remplacée, il est probable que quelqu’un tente d’attaquer votre connexion à cette machine."
  ],
  "The passwords do not match.": [
   null,
@@ -513,7 +513,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to manage servers": [
   null,
-  "L'utilisateur <b>$0</b> n'est pas autorisé à gérer les serveurs"
+  "L’utilisateur <b>$0</b> n’est pas autorisé à gérer les serveurs"
  ],
  "This machine has already been added.": [
   null,
@@ -541,7 +541,7 @@ return plural;
  ],
  "Unknown Host Key": [
   null,
-  "Clé d'hôte inconnue"
+  "Clé d’hôte inconnue"
  ],
  "Update": [
   null,
@@ -553,11 +553,11 @@ return plural;
  ],
  "User name": [
   null,
-  "Nom d'utilisateur"
+  "Nom d’utilisateur"
  ],
  "Using available credentials": [
   null,
-  "Utilisation des informations d'identification disponibles"
+  "Utilisation des informations d’identification disponibles"
  ],
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,

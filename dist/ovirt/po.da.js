@@ -679,10 +679,6 @@ return plural;
   null,
   ""
  ],
- "Start the VM to see disk statistics.": [
-  null,
-  ""
- ],
  "State": [
   null,
   ""
@@ -784,10 +780,6 @@ return plural;
   ""
  ],
  "Unplug": [
-  null,
-  ""
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   ""
  ],

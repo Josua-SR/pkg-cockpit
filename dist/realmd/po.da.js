@@ -67,10 +67,6 @@ return plural;
   "language": "da",
   "x-generator": "Zanata 3.8.4"
  },
- "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
-  null,
-  ""
- ],
  "$0 is not available from any repository.": [
   null,
   ""
@@ -87,11 +83,7 @@ return plural;
   null,
   ""
  ],
- "Are you sure you want to leave the '$0' domain?": [
-  null,
-  ""
- ],
- "Are you sure you want to leave this domain?": [
+ "After leaving the domain, only users with local credentials will be able                to log into this machine. This may also effect other services as DNS resolution settings and                the list of trusted CAs may change.": [
   null,
   ""
  ],
@@ -111,7 +103,19 @@ return plural;
   null,
   ""
  ],
+ "Client Software": [
+  null,
+  ""
+ ],
  "Computer OU": [
+  null,
+  ""
+ ],
+ "Contacted domain": [
+  null,
+  ""
+ ],
+ "Domain": [
   null,
   ""
  ],
@@ -171,11 +175,11 @@ return plural;
   null,
   ""
  ],
- "Leave": [
+ "Leave Domain": [
   null,
   ""
  ],
- "Leave Domain": [
+ "Login Format": [
   null,
   ""
  ],
@@ -215,6 +219,10 @@ return plural;
   null,
   ""
  ],
+ "Server Software": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
   ""
@@ -232,6 +240,10 @@ return plural;
   "Værtsnavn"
  ],
  "User Password": [
+  null,
+  ""
+ ],
+ "Validating address": [
   null,
   ""
  ],

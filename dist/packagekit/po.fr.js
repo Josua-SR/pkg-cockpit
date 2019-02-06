@@ -69,7 +69,7 @@ return plural;
  },
  "$0 is not available from any repository.": [
   null,
-  "$0 n'est disponible à partir d'aucun référentiel."
+  "$0 n’est disponible à partir d’aucun référentiel."
  ],
  "$0 update": [
   "$0 updates",
@@ -108,7 +108,7 @@ return plural;
  ],
  "Applying updates failed": [
   null,
-  "L'application des mises à jour a échoué"
+  "L’application des mises à jour a échoué"
  ],
  "Automatic Updates": [
   null,
@@ -236,7 +236,7 @@ return plural;
  ],
  "PackageKit reported error code $0": [
   null,
-  "PackageKit a signalé le code d'erreur $0"
+  "PackageKit a signalé le code d’erreur $0"
  ],
  "Refreshing package information": [
   null,
@@ -304,7 +304,7 @@ return plural;
  ],
  "This system is not registered": [
   null,
-  "Ce système n'est pas enregistré"
+  "Ce système n’est pas enregistré"
  ],
  "This web console will be updated.": [
   null,
@@ -312,7 +312,7 @@ return plural;
  ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
-  "Pour obtenir des mises à jour logicielles, ce système doit être enregistré auprès de Red Hat, en utilisant le portail client Red Hat ou un serveur d'abonnement local."
+  "Pour obtenir des mises à jour logicielles, ce système doit être enregistré auprès de Red Hat, en utilisant le portail client Red Hat ou un serveur d’abonnement local."
  ],
  "Total size: $0": [
   null,
@@ -356,7 +356,7 @@ return plural;
  ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
-  "Votre navigateur se déconnectera, mais cela n'affectera pas le processus de mise à jour, vous pourrez vous reconnecter dans quelques instants pour continuer à suivre la progression."
+  "Votre navigateur se déconnectera, mais cela n’affectera pas le processus de mise à jour, vous pourrez vous reconnecter dans quelques instants pour continuer à suivre la progression."
  ],
  "Your server will close the connection soon. You can reconnect after it has restarted.": [
   null,

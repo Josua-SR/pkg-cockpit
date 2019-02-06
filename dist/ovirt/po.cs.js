@@ -113,7 +113,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "Automatické spuštění"
+  "Automatické spouštění"
  ],
  "Available": [
   null,
@@ -679,10 +679,6 @@ return plural;
   null,
   "Zdroj"
  ],
- "Start the VM to see disk statistics.": [
-  null,
-  "Pro zobrazení statistik disku je třeba virt. stroj spustit"
- ],
  "State": [
   null,
   "Stav"
@@ -786,10 +782,6 @@ return plural;
  "Unplug": [
   null,
   "Odpojit"
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Pro zobrazení statistik disku je třeba přejít na novější verzi libvirt"
  ],
  "Usage": [
   null,

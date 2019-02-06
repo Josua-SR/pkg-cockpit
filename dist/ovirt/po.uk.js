@@ -301,7 +301,7 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "Емуляція машини"
+  "Емульована машина"
  ],
  "Enter New VM name": [
   null,
@@ -679,10 +679,6 @@ return plural;
   null,
   "Джерело"
  ],
- "Start the VM to see disk statistics.": [
-  null,
-  "Запустити віртуальну машину для перегляду статистики диска."
- ],
  "State": [
   null,
   "Стан"
@@ -786,10 +782,6 @@ return plural;
  "Unplug": [
   null,
   "Від'єднати"
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Щоб мати змогу переглядати статистику дисків, оновіться до новішої версії libvirt"
  ],
  "Usage": [
   null,

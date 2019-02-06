@@ -89,7 +89,7 @@ return plural;
  ],
  "Always attach": [
   null,
-  "總是"
+  ""
  ],
  "Apply": [
   null,
@@ -101,7 +101,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "自動開啟："
+  ""
  ],
  "Available": [
   null,
@@ -109,7 +109,7 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "引導順序："
+  ""
  ],
  "Bus": [
   null,
@@ -121,7 +121,7 @@ return plural;
  ],
  "CPU Type": [
   null,
-  "CPU類型："
+  ""
  ],
  "Cancel": [
   null,
@@ -241,7 +241,7 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "仿真機："
+  ""
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -455,6 +455,10 @@ return plural;
   null,
   "簡介"
  ],
+ "Path": [
+  null,
+  "路徑"
+ ],
  "Path on host's filesystem": [
   null,
   "主機文件系統上的路徑"
@@ -469,7 +473,11 @@ return plural;
  ],
  "Persistence": [
   null,
-  "持續卷"
+  ""
+ ],
+ "Persistent": [
+  null,
+  ""
  ],
  "Please enter new volume name": [
   null,
@@ -591,9 +599,9 @@ return plural;
   null,
   "源路徑不應為空"
  ],
- "Source should start with https, ftp or nfs protocol": [
+ "Source should start with http, ftp or nfs protocol": [
   null,
-  "源應該以http，ftp或nfs協議開頭"
+  ""
  ],
  "Start libvirt": [
   null,
@@ -602,10 +610,6 @@ return plural;
  "Start pool when host boots": [
   null,
   "主機啟動時啟動池"
- ],
- "Start the VM to see disk statistics.": [
-  null,
-  "啟動VM以查看磁盤統計信息。"
  ],
  "Startup": [
   null,
@@ -722,10 +726,6 @@ return plural;
  "Unplug": [
   null,
   "拔"
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "升級到更新版本的libvirt以查看磁盤統計信息"
  ],
  "Usage": [
   null,

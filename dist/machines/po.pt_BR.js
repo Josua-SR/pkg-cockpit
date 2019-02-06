@@ -71,6 +71,10 @@ return plural;
   null,
   "$0 está disponível para a maioria dos sistemas operacionais. Para instalá-lo, procure-o no GNOME Software ou execute o seguinte:"
  ],
+ "Activate": [
+  null,
+  "Ativar"
+ ],
  "Add": [
   null,
   "Adicionar"
@@ -89,7 +93,7 @@ return plural;
  ],
  "Always attach": [
   null,
-  "Sempre"
+  "Sempre anexar"
  ],
  "Apply": [
   null,
@@ -101,7 +105,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "Início automático"
+  ""
  ],
  "Available": [
   null,
@@ -109,7 +113,7 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "Ordem de Inicialização"
+  ""
  ],
  "Bus": [
   null,
@@ -121,7 +125,7 @@ return plural;
  ],
  "CPU Type": [
   null,
-  "Tipo de CPU"
+  "Tipo da CPU"
  ],
  "Cancel": [
   null,
@@ -195,13 +199,33 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "Deactivate": [
+  null,
+  "Desativar"
+ ],
  "Delete": [
   null,
   "Excluir"
  ],
+ "Delete Content": [
+  null,
+  ""
+ ],
+ "Delete Storage Pool $0": [
+  null,
+  ""
+ ],
  "Delete associated storage files:": [
   null,
   "Excluir arquivos de armazenamento associados:"
+ ],
+ "Delete the Volumes inside this Pool": [
+  null,
+  ""
+ ],
+ "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
+  null,
+  ""
  ],
  "Device": [
   null,
@@ -241,7 +265,7 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "Máquina Emulada"
+  ""
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -355,10 +379,6 @@ return plural;
   null,
   "Memória"
  ],
- "Memory should be positive number": [
-  null,
-  "Memória deve ser um número positivo"
- ],
  "MiB": [
   null,
   "MiB"
@@ -382,10 +402,6 @@ return plural;
  "Name should not be empty": [
   null,
   "O nome não deve estar vazio"
- ],
- "Name should not consist of empty characters only": [
-  null,
-  "O nome não deve conter apenas caracteres vazios"
  ],
  "Network File System": [
   null,
@@ -455,6 +471,10 @@ return plural;
   null,
   "Visão geral"
  ],
+ "Path": [
+  null,
+  "Caminho"
+ ],
  "Path on host's filesystem": [
   null,
   "Caminho no sistema de arquivos do host"
@@ -469,7 +489,11 @@ return plural;
  ],
  "Persistence": [
   null,
-  "Volumes Persistentes"
+  "Persistência"
+ ],
+ "Persistent": [
+  null,
+  "Persistente"
  ],
  "Please enter new volume name": [
   null,
@@ -591,7 +615,7 @@ return plural;
   null,
   "O caminho da origem não deve estar vazio"
  ],
- "Source should start with https, ftp or nfs protocol": [
+ "Source should start with http, ftp or nfs protocol": [
   null,
   "A fonte deve começar com o protocolo http, ftp ou nfs"
  ],
@@ -602,10 +626,6 @@ return plural;
  "Start pool when host boots": [
   null,
   "Iniciar pool quando o host inicializa"
- ],
- "Start the VM to see disk statistics.": [
-  null,
-  "Inicie a VM para ver as estatísticas do disco."
  ],
  "Startup": [
   null,
@@ -623,6 +643,14 @@ return plural;
   null,
   "O pool de armazenamento não pôde ser criado"
  ],
+ "Storage Pool failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool failed to get deactivated": [
+  null,
+  ""
+ ],
  "Storage Pools": [
   null,
   "Piscinas de Armazenamento"
@@ -630,10 +658,6 @@ return plural;
  "Storage Size": [
   null,
   "Storage Size"
- ],
- "Storage Size should not be negative number": [
-  null,
-  "Tamanho de armazenamento não deve ser negativo"
  ],
  "Storage Volumes": [
   null,
@@ -650,6 +674,10 @@ return plural;
  "Target path should not be empty": [
   null,
   "O caminho de destino não deve estar vazio"
+ ],
+ "The Storage Pool could not be deleted": [
+  null,
+  ""
  ],
  "The VM crashed.": [
   null,
@@ -722,10 +750,6 @@ return plural;
  "Unplug": [
   null,
   "Desplugar"
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Atualize para uma versão mais recente do libvirt para exibir estatísticas de disco"
  ],
  "Usage": [
   null,

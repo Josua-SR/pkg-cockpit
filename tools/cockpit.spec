@@ -63,6 +63,11 @@
 %endif
 %endif
 
+# cockpit-machines-ovirt is RHEL 7 and Fedora < 30 only
+%if (0%{?fedora} && 0%{?fedora} < 30) || (0%{?rhel} >= 7 && 0%{?rhel} < 8)
+%define build_ovirt 1
+%endif
+
 %if 0%{?rhel} >= 8
 %global go_scl_prefix go-toolset-7-
 %else
@@ -269,8 +274,13 @@ find %{buildroot}%{_datadir}/cockpit/apps -type f >> packagekit.list
 echo '%dir %{_datadir}/cockpit/machines' > machines.list
 find %{buildroot}%{_datadir}/cockpit/machines -type f >> machines.list
 
+%if 0%{?build_ovirt}
 echo '%dir %{_datadir}/cockpit/ovirt' > ovirt.list
 find %{buildroot}%{_datadir}/cockpit/ovirt -type f >> ovirt.list
+%else
+rm -rf %{buildroot}/%{_datadir}/cockpit/ovirt
+touch ovirt.list
+%endif
 
 echo '%dir %{_datadir}/cockpit/selinux' > selinux.list
 find %{buildroot}%{_datadir}/cockpit/selinux -type f >> selinux.list
@@ -478,7 +488,7 @@ Requires: subscription-manager >= 1.13
 %endif
 # NPM modules which are also available as packages
 Provides: bundled(js-jquery) = 3.3.1
-Provides: bundled(js-moment) = 2.23.0
+Provides: bundled(js-moment) = 2.24.0
 Provides: bundled(nodejs-flot) = 0.8.3
 Provides: bundled(nodejs-promise) = 8.0.2
 Provides: bundled(xstatic-bootstrap-datepicker-common) = 1.8.0
@@ -540,7 +550,7 @@ The Cockpit Web Service listens on the network, and authenticates users.
 
 %pre ws
 getent group cockpit-ws >/dev/null || groupadd -r cockpit-ws
-getent passwd cockpit-ws >/dev/null || useradd -r -g cockpit-ws -d / -s /sbin/nologin -c "User for cockpit-ws" cockpit-ws
+getent passwd cockpit-ws >/dev/null || useradd -r -g cockpit-ws -d /nonexisting -s /sbin/nologin -c "User for cockpit-ws" cockpit-ws
 
 %post ws
 %systemd_post cockpit.socket
@@ -706,6 +716,8 @@ If "virt-install" is installed, you can also create new virtual machines.
 %files -n cockpit-machines -f machines.list
 %{_datadir}/metainfo/org.cockpit-project.cockpit-machines.metainfo.xml
 
+%if 0%{?build_ovirt}
+
 %package -n cockpit-machines-ovirt
 BuildArch: noarch
 Summary: Cockpit user interface for oVirt virtual machines
@@ -722,6 +734,8 @@ Requires: libvirt-client
 The Cockpit components for managing oVirt virtual machines.
 
 %files -n cockpit-machines-ovirt -f ovirt.list
+
+%endif
 
 %package -n cockpit-pcp
 Summary: Cockpit PCP integration

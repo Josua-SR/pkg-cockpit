@@ -101,7 +101,7 @@ return plural;
  ],
  "Always attach": [
   null,
-  "常時"
+  ""
  ],
  "Apply": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "自動起動"
+  ""
  ],
  "Available": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "ブート順序"
+  ""
  ],
  "Bus": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "CPU Type": [
   null,
-  "CPU タイプ"
+  ""
  ],
  "CREATE VM action failed": [
   null,
@@ -301,7 +301,7 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "エミュレートされたマシン"
+  ""
  ],
  "Enter New VM name": [
   null,
@@ -509,7 +509,7 @@ return plural;
  ],
  "Persistence": [
   null,
-  "永続ボリューム"
+  ""
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
@@ -679,10 +679,6 @@ return plural;
   null,
   "ソース"
  ],
- "Start the VM to see disk statistics.": [
-  null,
-  "仮想マシンを起動して、ディスク統計を確認します"
- ],
  "State": [
   null,
   "状態"
@@ -786,10 +782,6 @@ return plural;
  "Unplug": [
   null,
   "アンプラグ"
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "ディスクの統計情報を表示するには、libvirt を新しいバージョンにアップグレードしてください"
  ],
  "Usage": [
   null,

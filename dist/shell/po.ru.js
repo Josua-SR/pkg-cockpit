@@ -73,7 +73,7 @@ return plural;
  ],
  "About Cockpit": [
   null,
-  "О кабине экипажа"
+  "О Cockpit"
  ],
  "Account Settings": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "Cockpit had an unexpected internal error. <br/><br/>You can try restarting Cockpit by pressing refresh in your browser. The javascript console contains details about this error (<b>Ctrl-Shift-J</b> in most browsers).": [
   null,
-  "У кабины экипажа была неожиданная внутренняя ошибка. <br/><br/>Вы можете попробовать перезапустить Cockpit, нажав кнопку обновления в своем браузере. Консоль javascript содержит сведения об этой ошибке (<b>Ctrl-Shift-J</b> в большинстве браузеров)."
+  "Неожиданная внутренняя ошибка Cockpit. <br/><br/>Вы можете попробовать перезапустить Cockpit, нажав кнопку обновления в своем браузере. Консоль javascript содержит сведения об этой ошибке (<b>Ctrl-Shift-J</b> в большинстве браузеров)."
  ],
  "Cockpit is an interactive Linux server admin interface.": [
   null,

@@ -297,7 +297,7 @@ return plural;
  ],
  "Automatic Startup": [
   null,
-  "Atualizações automáticas"
+  ""
  ],
  "Automatically using NTP": [
   null,
@@ -462,6 +462,10 @@ return plural;
  "Detachable": [
   null,
   "Destacável"
+ ],
+ "Details": [
+  null,
+  "Detalhes"
  ],
  "Disable": [
   null,
@@ -1017,7 +1021,7 @@ return plural;
  ],
  "Running Since": [
   null,
-  "Correndo desde"
+  "Executando desde"
  ],
  "Saturday": [
   null,
@@ -1115,7 +1119,7 @@ return plural;
   null,
   "Pare"
  ],
- "Store metrics": [
+ "Store Metrics": [
   null,
   "Armazenar métricas"
  ],
@@ -1273,8 +1277,8 @@ return plural;
  ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",
-  "Uso de  $0 da CPU ",
-  "Uso de  $0 da CPU"
+  "Uso de $0 núcleo da CPU ",
+  "Uso de $0 núcleos da CPU"
  ],
  "Used": [
   null,
@@ -1334,8 +1338,8 @@ return plural;
  ],
  "of $0 CPU core": [
   "of $0 CPU cores",
-  "de $ 0 CPU core",
-  "de núcleos de CPU de $ 0"
+  "de $0 núcleo da CPU",
+  "de $0 núcleos da CPU"
  ],
  "unknown": [
   null,
@@ -1343,7 +1347,7 @@ return plural;
  ],
  "page-title\u0004CPU Status": [
   null,
-  "Status de CPU"
+  "Status da CPU"
  ],
  "page-title\u0004Memory": [
   null,

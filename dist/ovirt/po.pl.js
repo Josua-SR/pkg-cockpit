@@ -679,10 +679,6 @@ return plural;
   null,
   "Źródło"
  ],
- "Start the VM to see disk statistics.": [
-  null,
-  "Należy uruchomić maszynę wirtualną, aby wyświetlić statystyki dysku."
- ],
  "State": [
   null,
   "Stan"
@@ -786,10 +782,6 @@ return plural;
  "Unplug": [
   null,
   "Odłącz"
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Należy zaktualizować do nowszej wersji biblioteki libvirt, aby przeglądać statystyki dysku"
  ],
  "Usage": [
   null,

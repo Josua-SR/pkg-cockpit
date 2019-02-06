@@ -69,11 +69,11 @@ return plural;
  },
  "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  "$0 Seuls les utilisateurs disposant d'informations d'identification locales pourront se connecter à cette machine. Cela peut également affecter d'autres services en tant que paramètres de résolution DNS et la liste des autorités de certification approuvées peut changer."
+  "$0 Seuls les utilisateurs disposant d’informations d’identification locales pourront se connecter à cette machine. Cela peut également affecter d’autres services en tant que paramètres de résolution DNS et la liste des autorités de certification approuvées peut changer."
  ],
  "$0 is not available from any repository.": [
   null,
-  "$0 n'est disponible à partir d'aucun référentiel."
+  "$0 n’est disponible à partir d’aucun référentiel."
  ],
  "$0 will be installed.": [
   null,
@@ -117,11 +117,11 @@ return plural;
  ],
  "Domain $0 could not be contacted": [
   null,
-  "Le domaine $0 n'a pas pu être contacté"
+  "Le domaine $0 n’a pas pu être contacté"
  ],
  "Domain $0 is not supported": [
   null,
-  "Le domaine $0 n'est pas pris en charge"
+  "Le domaine $0 n’est pas pris en charge"
  ],
  "Domain Address": [
   null,
@@ -129,7 +129,7 @@ return plural;
  ],
  "Domain Administrator Name": [
   null,
-  "Nom de l'administrateur du domaine"
+  "Nom de l’administrateur du domaine"
  ],
  "Domain Administrator Password": [
   null,
@@ -141,7 +141,7 @@ return plural;
  ],
  "Host name should not be changed in a domain": [
   null,
-  "Le nom d'hôte n'est peut-être pas vide"
+  "Le nom de l’hôte ne devrait pas être changé dans un domaine"
  ],
  "Install": [
   null,
@@ -169,7 +169,7 @@ return plural;
  ],
  "Joining this domain is not supported": [
   null,
-  "Rejoindre ce domaine n'est pas supporté"
+  "Rejoindre ce domaine n’est pas supporté"
  ],
  "Leave": [
   null,
@@ -217,7 +217,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
-  "L'utilisateur <b>$0</b> n'est pas autorisé à modifier les domaines"
+  "L’utilisateur <b>$0</b> n’est pas autorisé à modifier les domaines"
  ],
  "This may take a while": [
   null,
@@ -229,11 +229,11 @@ return plural;
  ],
  "User Name": [
   null,
-  "Nom d'utilisateur"
+  "Nom d’utilisateur"
  ],
  "User Password": [
   null,
-  "Mot de passe de l'utilisateur"
+  "Mot de passe de l’utilisateur"
  ],
  "Waiting for other software management operations to finish": [
   null,

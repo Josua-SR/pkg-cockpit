@@ -297,7 +297,7 @@ return plural;
  ],
  "Automatic Startup": [
   null,
-  "Automatiska uppdateringar"
+  ""
  ],
  "Automatically using NTP": [
   null,
@@ -462,6 +462,10 @@ return plural;
  "Detachable": [
   null,
   "Frånkopplingsbar"
+ ],
+ "Details": [
+  null,
+  "Detaljer"
  ],
  "Disable": [
   null,
@@ -1017,7 +1021,7 @@ return plural;
  ],
  "Running Since": [
   null,
-  "Kör sedan"
+  ""
  ],
  "Saturday": [
   null,
@@ -1115,9 +1119,9 @@ return plural;
   null,
   "Stoppa"
  ],
- "Store metrics": [
+ "Store Metrics": [
   null,
-  "Lagringsmått"
+  ""
  ],
  "Sub Chassis": [
   null,

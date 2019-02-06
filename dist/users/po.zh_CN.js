@@ -77,7 +77,7 @@ return plural;
  ],
  "Account not available or cannot be edited.": [
   null,
-  "帐户不可用或不能编辑."
+  "帐户不可用或不可编辑."
  ],
  "Accounts": [
   null,

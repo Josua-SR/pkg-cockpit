@@ -69,7 +69,7 @@ return plural;
  },
  " (shared with the OS)": [
   null,
-  "(partagé avec l'OS)"
+  "(partagé avec l’OS)"
  ],
  "$0 shares": [
   null,
@@ -121,7 +121,7 @@ return plural;
  ],
  "Bus Expansion Chassis": [
   null,
-  "Châssis d'extension de bus"
+  "Châssis d’extension de bus"
  ],
  "CPU": [
   null,
@@ -186,7 +186,7 @@ return plural;
  ],
  "Commit Image": [
   null,
-  "Enregistrer l'image"
+  "Enregistrer l’image"
  ],
  "Compact PCI": [
   null,
@@ -210,11 +210,11 @@ return plural;
  ],
  "Container is currently marked as not running, but regular stopping failed.": [
   null,
-  "Le conteneur est actuellement marqué comme n'étant pas en cours d'exécution, mais l'arrêt normal a échoué."
+  "Le conteneur est actuellement marqué comme n’étant pas en cours d’exécution, mais l’arrêt normal a échoué."
  ],
  "Container is currently running.": [
   null,
-  "Le conteneur est en cours d'exécution."
+  "Le conteneur est en cours d’exécution."
  ],
  "Container:": [
   null,
@@ -230,7 +230,7 @@ return plural;
  ],
  "Could not add all disks": [
   null,
-  "Impossible d'ajouter tous les disques"
+  "Impossible d’ajouter tous les disques"
  ],
  "Could not reset the storage pool": [
   null,
@@ -254,7 +254,7 @@ return plural;
  ],
  "Deleting a container will erase all data in it.": [
   null,
-  "Supprimer un conteneur effacera toutes les données qu'il contient."
+  "Supprimer un conteneur effacera toutes les données qu’il contient."
  ],
  "Desktop": [
   null,
@@ -270,11 +270,11 @@ return plural;
  ],
  "Docker is not installed or activated on the system": [
   null,
-  "Docker n'est pas installé ou activé sur le système"
+  "Docker n’est pas installé ou activé sur le système"
  ],
  "Docking Station": [
   null,
-  "Station d'accueil"
+  "Station d’accueil"
  ],
  "Download": [
   null,
@@ -298,7 +298,7 @@ return plural;
  ],
  "Entrypoint": [
   null,
-  "Point d'accès"
+  "Point d’accès"
  ],
  "Environment": [
   null,
@@ -310,7 +310,7 @@ return plural;
  ],
  "Error message from Docker:": [
   null,
-  "Message d'erreur de Docker:"
+  "Message d’erreur de Docker:"
  ],
  "Everything": [
   null,
@@ -322,7 +322,7 @@ return plural;
  ],
  "Expansion Chassis": [
   null,
-  "Châssis d'extension"
+  "Châssis d’extension"
  ],
  "Expose container ports": [
   null,
@@ -334,7 +334,7 @@ return plural;
  ],
  "Failed to stop Docker scope: $0": [
   null,
-  "Échec de l'arrêt de Docker scope : $0"
+  "Échec de l’arrêt de Docker scope : $0"
  ],
  "Force Delete": [
   null,
@@ -386,7 +386,7 @@ return plural;
  ],
  "Image Search": [
   null,
-  "Recherche d'image"
+  "Recherche d’image"
  ],
  "Image:": [
   null,
@@ -510,7 +510,7 @@ return plural;
  ],
  "No images": [
   null,
-  "Pas d'images"
+  "Pas d’images"
  ],
  "No images that match the current filter": [
   null,
@@ -522,11 +522,11 @@ return plural;
  ],
  "No running containers": [
   null,
-  "Aucun conteneur en cours d'exécution"
+  "Aucun conteneur en cours d’exécution"
  ],
  "No running containers that match the current filter": [
   null,
-  "Aucun conteneur en cours d'exécution correspondant au filtre actuel"
+  "Aucun conteneur en cours d’exécution correspondant au filtre actuel"
  ],
  "Not authorized to access Docker on this system": [
   null,
@@ -554,12 +554,12 @@ return plural;
  ],
  "On Failure": [
   null,
-  "En cas d'échec"
+  "En cas d’échec"
  ],
  "On failure, retry $0 time": [
   "On failure, retry $0 times",
-  "En cas d'échec, réessayez $0 fois",
-  "En cas d'échec, réessayez $0 fois"
+  "En cas d’échec, réessayez $0 fois",
+  "En cas d’échec, réessayez $0 fois"
  ],
  "Other": [
   null,
@@ -667,7 +667,7 @@ return plural;
  ],
  "Run Image": [
   null,
-  "Exécuter l'image"
+  "Exécuter l’image"
  ],
  "Sealed-case PC": [
   null,
@@ -679,7 +679,7 @@ return plural;
  ],
  "Set container environment variables": [
   null,
-  "Définir les variables d'environnement du conteneur"
+  "Définir les variables d’environnement du conteneur"
  ],
  "Show all containers": [
   null,
@@ -775,15 +775,15 @@ return plural;
  ],
  "The scan from $time ($type) found no vulnerabilities.": [
   null,
-  "Le scan de $time ( $type ) n'a trouvé aucune vulnérabilité."
+  "Le scan de $time ( $type ) n’a trouvé aucune vulnérabilité."
  ],
  "The scan from $time ($type) was not successful.": [
   null,
-  "Le scan de $time ( $type ) n'a pas réussi."
+  "Le scan de $time ( $type ) n’a pas réussi."
  ],
  "This image does not exist.": [
   null,
-  "Cette image n'existe pas."
+  "Cette image n’existe pas."
  ],
  "Total": [
   null,
@@ -843,7 +843,7 @@ return plural;
  ],
  "You don't have permission to manage the Docker storage pool.": [
   null,
-  "Vous n'êtes pas autorisé à gérer le pool de stockage Docker."
+  "Vous n’êtes pas autorisé à gérer le pool de stockage Docker."
  ],
  "[$0 bytes of binary data]": [
   null,

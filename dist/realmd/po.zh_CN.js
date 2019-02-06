@@ -67,10 +67,6 @@ return plural;
   "language": "zh_CN",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
-  null,
-  "$0 仅本地用户可登录到该主机。这可能也会影响其他服务，因为 DNS 解析配置以及信任的 CA 列表可能会改变。"
- ],
  "$0 is not available from any repository.": [
   null,
   "所有仓库都不提供 $0。"
@@ -87,13 +83,9 @@ return plural;
   null,
   "管理员密码"
  ],
- "Are you sure you want to leave the '$0' domain?": [
+ "After leaving the domain, only users with local credentials will be able                to log into this machine. This may also effect other services as DNS resolution settings and                the list of trusted CAs may change.": [
   null,
-  "您确定要离开域 '$0' 吗？"
- ],
- "Are you sure you want to leave this domain?": [
-  null,
-  "您确定要离开这个域吗？"
+  ""
  ],
  "Authentication": [
   null,
@@ -111,9 +103,21 @@ return plural;
   null,
   "检查安装的软件"
  ],
+ "Client Software": [
+  null,
+  ""
+ ],
  "Computer OU": [
   null,
   "计算机 OU"
+ ],
+ "Contacted domain": [
+  null,
+  ""
+ ],
+ "Domain": [
+  null,
+  "域"
  ],
  "Domain $0 could not be contacted": [
   null,
@@ -141,7 +145,7 @@ return plural;
  ],
  "Host name should not be changed in a domain": [
   null,
-  "主机不能为空"
+  "在域内的主机不可更改主机名"
  ],
  "Install": [
   null,
@@ -171,13 +175,13 @@ return plural;
   null,
   "不支持加入该域"
  ],
- "Leave": [
-  null,
-  "离开"
- ],
  "Leave Domain": [
   null,
   "离开域"
+ ],
+ "Login Format": [
+  null,
+  ""
  ],
  "More": [
   null,
@@ -215,6 +219,10 @@ return plural;
   null,
   "正在删除 $0"
  ],
+ "Server Software": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
   "用户 <b>$0</b> 不允许修改 realms"
@@ -234,6 +242,10 @@ return plural;
  "User Password": [
   null,
   "用户密码"
+ ],
+ "Validating address": [
+  null,
+  ""
  ],
  "Waiting for other software management operations to finish": [
   null,

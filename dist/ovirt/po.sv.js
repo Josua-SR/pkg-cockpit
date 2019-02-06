@@ -113,7 +113,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "Starta automatiskt"
+  ""
  ],
  "Available": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "Startordning"
+  ""
  ],
  "Bus": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "CPU Type": [
   null,
-  "CPU-typ"
+  ""
  ],
  "CREATE VM action failed": [
   null,
@@ -301,7 +301,7 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "Emulerad maskin"
+  ""
  ],
  "Enter New VM name": [
   null,
@@ -679,10 +679,6 @@ return plural;
   null,
   "Källa"
  ],
- "Start the VM to see disk statistics.": [
-  null,
-  "Starta VM:en för att se diskvärden"
- ],
  "State": [
   null,
   "Tillstånd"
@@ -786,10 +782,6 @@ return plural;
  "Unplug": [
   null,
   "Koppla ur"
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Uppgradera till en senare version av libvirt för att se diskstatistik"
  ],
  "Usage": [
   null,

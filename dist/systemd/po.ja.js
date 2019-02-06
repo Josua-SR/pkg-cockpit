@@ -297,7 +297,7 @@ return plural;
  ],
  "Automatic Startup": [
   null,
-  "自動アップデート"
+  ""
  ],
  "Automatically using NTP": [
   null,
@@ -462,6 +462,10 @@ return plural;
  "Detachable": [
   null,
   "割り当て解除可能"
+ ],
+ "Details": [
+  null,
+  "詳細"
  ],
  "Disable": [
   null,
@@ -1017,7 +1021,7 @@ return plural;
  ],
  "Running Since": [
   null,
-  "実行開始"
+  ""
  ],
  "Saturday": [
   null,
@@ -1115,9 +1119,9 @@ return plural;
   null,
   "停止"
  ],
- "Store metrics": [
+ "Store Metrics": [
   null,
-  "メトリクスの保存"
+  ""
  ],
  "Sub Chassis": [
   null,

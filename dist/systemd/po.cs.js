@@ -297,7 +297,7 @@ return plural;
  ],
  "Automatic Startup": [
   null,
-  "Automatické aktualizace"
+  "Automatické spouštění"
  ],
  "Automatically using NTP": [
   null,
@@ -462,6 +462,10 @@ return plural;
  "Detachable": [
   null,
   "Odpojitelné"
+ ],
+ "Details": [
+  null,
+  "Podrobnosti"
  ],
  "Disable": [
   null,
@@ -1017,7 +1021,7 @@ return plural;
  ],
  "Running Since": [
   null,
-  "Spuštěno od"
+  "Spuštěno od doby"
  ],
  "Saturday": [
   null,
@@ -1115,9 +1119,9 @@ return plural;
   null,
   "Zastavit"
  ],
- "Store metrics": [
+ "Store Metrics": [
   null,
-  "Uchovávat metriky"
+  "Ukládat metriky"
  ],
  "Sub Chassis": [
   null,
