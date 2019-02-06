@@ -113,7 +113,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "Автоматический старт"
+  ""
  ],
  "Available": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "Порядок загрузки"
+  ""
  ],
  "Bus": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "CPU Type": [
   null,
-  "Тип процессора"
+  ""
  ],
  "CREATE VM action failed": [
   null,
@@ -301,7 +301,7 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "Эмулированные машины"
+  ""
  ],
  "Enter New VM name": [
   null,
@@ -679,10 +679,6 @@ return plural;
   null,
   "Источник"
  ],
- "Start the VM to see disk statistics.": [
-  null,
-  "Запустите виртуальную машину, чтобы просмотреть статистику диска."
- ],
  "State": [
   null,
   "Состояние"
@@ -786,10 +782,6 @@ return plural;
  "Unplug": [
   null,
   "Отключайте"
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Переход на более позднюю версию libvirt для просмотра статистики диска"
  ],
  "Usage": [
   null,

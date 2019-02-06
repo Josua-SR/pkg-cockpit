@@ -106,7 +106,7 @@ return plural;
  ],
  "$0 is not available from any repository.": [
   null,
-  "$0 n'est disponible à partir d'aucun référentiel."
+  "$0 n’est disponible à partir d’aucun référentiel."
  ],
  "$0 of $1": [
   null,
@@ -254,11 +254,11 @@ return plural;
  ],
  "Address cannot be empty": [
   null,
-  "L'adresse ne peut pas être vide"
+  "L’adresse ne peut pas être vide"
  ],
  "Address is not a valid URL": [
   null,
-  "L'adresse ne correspond pas à une URL valide"
+  "L’adresse ne correspond pas à une URL valide"
  ],
  "Apply": [
   null,
@@ -290,7 +290,7 @@ return plural;
  ],
  "Block device for filesystems": [
   null,
-  "Bloquer l'appareil pour les systèmes de fichiers"
+  "Bloquer l’appareil pour les systèmes de fichiers"
  ],
  "Blocked": [
   null,
@@ -310,7 +310,7 @@ return plural;
  ],
  "Change iSCSI Initiator Name": [
   null,
-  "Modifier le nom de l'initiateur iSCSI"
+  "Modifier le nom de l’initiateur iSCSI"
  ],
  "Change passphrase": [
   null,
@@ -418,7 +418,7 @@ return plural;
  ],
  "Creating RAID Device $target": [
   null,
-  "Création d'un périphérique RAID $target"
+  "Création d’un périphérique RAID $target"
  ],
  "Creating filesystem on $target": [
   null,
@@ -434,11 +434,11 @@ return plural;
  ],
  "Creating snapshot of $target": [
   null,
-  "Création d'un instantané de $target"
+  "Création d’un instantané de $target"
  ],
  "Creating volume group $target": [
   null,
-  "Création d'un groupe de volumes $target"
+  "Création d’un groupe de volumes $target"
  ],
  "Custom": [
   null,
@@ -494,23 +494,23 @@ return plural;
  ],
  "Deleting a RAID device will erase all data on it.": [
   null,
-  "La suppression d'un périphérique RAID effacera toutes les données qu'il contient."
+  "La suppression d’un périphérique RAID effacera toutes les données qu’il contient."
  ],
  "Deleting a VDO device will erase all data on it.": [
   null,
-  "Supprimer un appareil VDO effacera toutes les données qu'il contient."
+  "Supprimer un appareil VDO effacera toutes les données qu’il contient."
  ],
  "Deleting a logical volume will delete all data in it.": [
   null,
-  "La suppression d'un volume logique supprimera toutes les données qu'il contient."
+  "La suppression d’un volume logique supprimera toutes les données qu’il contient."
  ],
  "Deleting a partition will delete all data in it.": [
   null,
-  "Supprimer une partition supprimera toutes les données qui s'y trouvent."
+  "Supprimer une partition supprimera toutes les données qui s’y trouvent."
  ],
  "Deleting a volume group will erase all data on it.": [
   null,
-  "La suppression d'un groupe de volumes effacera toutes les données qu'il contient."
+  "La suppression d’un groupe de volumes effacera toutes les données qu’il contient."
  ],
  "Deleting volume group $target": [
   null,
@@ -522,7 +522,7 @@ return plural;
  ],
  "Device is read-only": [
   null,
-  "L'appareil est en lecture seule"
+  "L’appareil est en lecture seule"
  ],
  "Disk": [
   null,
@@ -566,7 +566,7 @@ return plural;
  ],
  "Editing a key requires a free slot": [
   null,
-  "La modification d'une clé nécessite un emplacement libre"
+  "La modification d’une clé nécessite un emplacement libre"
  ],
  "Ejecting $target": [
   null,
@@ -670,11 +670,11 @@ return plural;
  ],
  "Formatting a disk will erase all data on it.": [
   null,
-  "Le formatage d'un disque effacera toutes les données qu'il contient."
+  "Le formatage d’un disque effacera toutes les données qu’il contient."
  ],
  "Formatting a storage device will erase all data on it.": [
   null,
-  "Le formatage d'un périphérique de stockage effacera toutes les données qu'il contient."
+  "Le formatage d’un périphérique de stockage effacera toutes les données qu’il contient."
  ],
  "Free": [
   null,
@@ -686,7 +686,7 @@ return plural;
  ],
  "Free up space in this group: Shrink or delete other logical volumes or add another physical volume.": [
   null,
-  ""
+  "Libérez de l’espace dans ce groupe : réduire ou supprimer les autres volumes logiques ou ajouter un autre volume physique."
  ],
  "Go to now": [
   null,
@@ -706,11 +706,11 @@ return plural;
  ],
  "Grow to take all space": [
   null,
-  "Augmenter en vue de prendre tout l'espace"
+  "Augmenter en vue de prendre tout l’espace"
  ],
  "If tang-show-keys is not available, run the following:": [
   null,
-  "Si tang-show-keys n'est pas disponible, exécutez ce qui suit :"
+  "Si tang-show-keys n’est pas disponible, exécutez ce qui suit :"
  ],
  "In Sync": [
   null,
@@ -722,7 +722,7 @@ return plural;
  ],
  "Index Memory": [
   null,
-  "Mémoire de l'index"
+  "Mémoire de l’index"
  ],
  "Install": [
   null,
@@ -746,7 +746,7 @@ return plural;
  ],
  "Invalid username or password": [
   null,
-  "Nom d'utilisateur ou mot de passe non valide"
+  "Nom d’utilisateur ou mot de passe non valide"
  ],
  "Jobs": [
   null,
@@ -914,11 +914,11 @@ return plural;
  ],
  "Name cannot be longer than $0 bytes": [
   null,
-  ""
+  "Le nom ne peut pas dépasser $0 octets"
  ],
  "Name cannot be longer than $0 characters": [
   null,
-  ""
+  "Le nom ne peut pas dépasser $0 caractères"
  ],
  "Name cannot be longer than 127 characters.": [
   null,
@@ -930,7 +930,7 @@ return plural;
  ],
  "Name cannot contain whitespace.": [
   null,
-  "Le nom ne peut pas contenir d'espace."
+  "Le nom ne peut pas contenir d’espace."
  ],
  "New NFS Mount": [
   null,
@@ -958,7 +958,7 @@ return plural;
  ],
  "No available slots": [
   null,
-  "Pas d'emplacements disponibles"
+  "Pas d’emplacements disponibles"
  ],
  "No disks are available.": [
   null,
@@ -970,11 +970,11 @@ return plural;
  ],
  "No free key slots": [
   null,
-  "Pas d'emplacements libres pour les clés"
+  "Pas d’emplacements libres pour les clés"
  ],
  "No free space": [
   null,
-  "Pas d'espace libre"
+  "Pas d’espace libre"
  ],
  "No iSCSI targets set up": [
   null,
@@ -982,7 +982,7 @@ return plural;
  ],
  "No keys added": [
   null,
-  "Aucune clé n'a été ajoutée"
+  "Aucune clé n’a été ajoutée"
  ],
  "No media inserted": [
   null,
@@ -1006,7 +1006,7 @@ return plural;
  ],
  "Not enough space to grow.": [
   null,
-  ""
+  "Espace insuffisant"
  ],
  "Not found": [
   null,
@@ -1042,7 +1042,7 @@ return plural;
  ],
  "Operation '$operation' on $target": [
   null,
-  "Opération ' $operation ' sur $target"
+  "Opération ’ $operation ’ sur $target"
  ],
  "Options": [
   null,
@@ -1130,7 +1130,7 @@ return plural;
  ],
  "Please confirm stopping of $0": [
   null,
-  "Veuillez confirmer l'arrêt de $0"
+  "Veuillez confirmer l’arrêt de $0"
  ],
  "Pool": [
   null,
@@ -1346,7 +1346,7 @@ return plural;
  ],
  "Server address cannot be empty.": [
   null,
-  "L'adresse du serveur ne peut pas être vide."
+  "L’adresse du serveur ne peut pas être vide."
  ],
  "Server cannot be empty.": [
   null,
@@ -1442,7 +1442,7 @@ return plural;
  ],
  "Stopping swapspace $target": [
   null,
-  "Arrêt de l'espace d'échange $target"
+  "Arrêt de l’espace d’échange $target"
  ],
  "Storage": [
   null,
@@ -1454,7 +1454,7 @@ return plural;
  ],
  "Storage can not be managed on this system.": [
   null,
-  "Le pool de stockage Docker ne peut pas être géré sur ce système."
+  "Le stockage ne peut pas être géré sur ce système."
  ],
  "Store passphrase": [
   null,
@@ -1490,19 +1490,19 @@ return plural;
  ],
  "The RAID device must be running in order to add spare disks.": [
   null,
-  "Le périphérique RAID doit être en cours d'exécution pour pouvoir ajouter des disques supplémentaires."
+  "Le périphérique RAID doit être en cours d’exécution pour pouvoir ajouter des disques supplémentaires."
  ],
  "The RAID device must be running in order to remove disks.": [
   null,
-  "Le périphérique RAID doit être en cours d'exécution pour pouvoir supprimer les disques."
+  "Le périphérique RAID doit être en cours d’exécution pour pouvoir supprimer les disques."
  ],
  "The creation of this VDO device did not finish and the device can't be used.": [
   null,
-  "La création de ce périphérique VDO n'est pas terminée et l'appareil ne peut pas être utilisé."
+  "La création de ce périphérique VDO n’est pas terminée et l’appareil ne peut pas être utilisé."
  ],
  "The currently logged in user is not permitted to see information about keys.": [
   null,
-  "L'utilisateur actuellement connecté n'est pas autorisé à voir les informations sur les clés."
+  "L’utilisateur actuellement connecté n’est pas autorisé à voir les informations sur les clés."
  ],
  "The filesystem is in use by login sessions and system services. Proceeding will stop these.": [
   null,
@@ -1518,7 +1518,7 @@ return plural;
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
-  "Le dernier disque d'un périphérique RAID ne peut pas être supprimé."
+  "Le dernier disque d’un périphérique RAID ne peut pas être supprimé."
  ],
  "The last key slot can not be removed": [
   null,
@@ -1526,19 +1526,19 @@ return plural;
  ],
  "The last physical volume of a volume group cannot be removed.": [
   null,
-  "Le dernier volume physique d'un groupe de volumes ne peut pas être supprimé."
+  "Le dernier volume physique d’un groupe de volumes ne peut pas être supprimé."
  ],
  "The user <b>$0</b> is not permitted to manage storage": [
   null,
-  "L'utilisateur <b>$0</b> n'est pas autorisé à gérer le stockage"
+  "L’utilisateur <b>$0</b> n’est pas autorisé à gérer le stockage"
  ],
  "There are devices with multiple paths on the system, but the multipath service is not running.": [
   null,
-  "Il y a des périphériques avec plusieurs chemins sur le système, mais le service multipath n'est pas en cours d'exécution."
+  "Il y a des périphériques avec plusieurs chemins sur le système, mais le service multipath n’est pas en cours d’exécution."
  ],
  "There is not enough free space elsewhere to remove this physical volume. At least $0 more free space is needed.": [
   null,
-  "Il n'y a pas assez d'espace libre ailleurs pour supprimer ce volume physique. Il faut au moins $0 plus d'espace libre."
+  "Il n’y a pas assez d’espace libre ailleurs pour supprimer ce volume physique. Il faut au moins $0 plus d’espace libre."
  ],
  "Thin Logical Volume": [
   null,
@@ -1546,11 +1546,11 @@ return plural;
  ],
  "This NFS mount is in use and only its options can be changed.": [
   null,
-  "Ce montage NFS est en cours d'utilisation et seules ses options peuvent être modifiées."
+  "Ce montage NFS est en cours d’utilisation et seules ses options peuvent être modifiées."
  ],
  "This VDO device does not use all of its backing device.": [
   null,
-  "Ce périphérique VDO n'utilise pas tout son périphérique de sauvegarde."
+  "Ce périphérique VDO n’utilise pas tout son périphérique de sauvegarde."
  ],
  "This device has filesystems that are currently in use. Proceeding will unmount all filesystems on it.": [
   null,
@@ -1574,7 +1574,7 @@ return plural;
  ],
  "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
-  "Cet appareil est actuellement utilisé pour les groupes de volumes. Le processus l'enlèvera de ses groupes de volumes."
+  "Cet appareil est actuellement utilisé pour les groupes de volumes. Le processus l’enlèvera de ses groupes de volumes."
  ],
  "This disk cannot be removed while the device is recovering.": [
   null,
@@ -1602,7 +1602,7 @@ return plural;
  ],
  "Unable to reach server": [
   null,
-  "Impossible d'atteindre le serveur"
+  "Impossible d’atteindre le serveur"
  ],
  "Unable to remove mount": [
   null,
@@ -1626,7 +1626,7 @@ return plural;
  ],
  "Unknown host name": [
   null,
-  "Nom d'hôte inconnu"
+  "Nom d’hôte inconnu"
  ],
  "Unknown type": [
   null,
@@ -1678,7 +1678,7 @@ return plural;
  ],
  "Use 512 Byte emulation": [
   null,
-  "Utiliser l'émulation 512 octets"
+  "Utiliser l’émulation 512 octets"
  ],
  "Used": [
   null,
@@ -1686,7 +1686,7 @@ return plural;
  ],
  "Username": [
   null,
-  "Nom d'utilisateur"
+  "Nom d’utilisateur"
  ],
  "VDO Backing": [
   null,

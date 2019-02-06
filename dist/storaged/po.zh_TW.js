@@ -1453,7 +1453,7 @@ return plural;
  ],
  "Storage can not be managed on this system.": [
   null,
-  "無法在此系統上管理Docker存儲池。"
+  ""
  ],
  "Store passphrase": [
   null,

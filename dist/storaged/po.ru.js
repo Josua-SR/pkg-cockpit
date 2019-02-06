@@ -653,6 +653,10 @@ return plural;
   null,
   "Файловые"
  ],
+ "For legacy applications only. Reduces performance.": [
+  null,
+  ""
+ ],
  "Force remove passphrase in $0": [
   null,
   "Принудительное удаление кодовой фразы в $0"
@@ -1328,6 +1332,14 @@ return plural;
  "Save": [
   null,
   "Сохранить"
+ ],
+ "Save space by compressing individual blocks with LZ4": [
+  null,
+  ""
+ ],
+ "Save space by storing identical data blocks just once": [
+  null,
+  ""
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,

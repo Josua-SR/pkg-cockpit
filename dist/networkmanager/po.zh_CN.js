@@ -117,7 +117,7 @@ return plural;
  ],
  "Active Backup": [
   null,
-  "激活的备份"
+  "激活备份"
  ],
  "Adaptive load balancing": [
   null,

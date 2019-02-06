@@ -652,6 +652,10 @@ return plural;
   null,
   ""
  ],
+ "For legacy applications only. Reduces performance.": [
+  null,
+  ""
+ ],
  "Force remove passphrase in $0": [
   null,
   ""
@@ -1325,6 +1329,14 @@ return plural;
   ""
  ],
  "Save": [
+  null,
+  ""
+ ],
+ "Save space by compressing individual blocks with LZ4": [
+  null,
+  ""
+ ],
+ "Save space by storing identical data blocks just once": [
   null,
   ""
  ],

@@ -297,7 +297,7 @@ return plural;
  ],
  "Automatic Startup": [
   null,
-  "Автоматические обновления"
+  ""
  ],
  "Automatically using NTP": [
   null,
@@ -462,6 +462,10 @@ return plural;
  "Detachable": [
   null,
   "отрывной"
+ ],
+ "Details": [
+  null,
+  "Подробности"
  ],
  "Disable": [
   null,
@@ -1017,7 +1021,7 @@ return plural;
  ],
  "Running Since": [
   null,
-  "Работает с"
+  ""
  ],
  "Saturday": [
   null,
@@ -1115,9 +1119,9 @@ return plural;
   null,
   "Остановить"
  ],
- "Store metrics": [
+ "Store Metrics": [
   null,
-  "Хранить метрики"
+  ""
  ],
  "Sub Chassis": [
   null,

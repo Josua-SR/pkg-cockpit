@@ -231,6 +231,18 @@ mock_http_connection (CockpitWebResponse *response)
 }
 
 static gboolean
+mock_http_expect_warnings (CockpitWebResponse *response,
+                           GLogLevelFlags warnings)
+{
+  g_log_set_always_fatal (warnings | G_LOG_LEVEL_ERROR);
+
+  cockpit_web_response_headers_full (response, 200, "OK", 0, NULL);
+  cockpit_web_response_complete (response);
+
+  return TRUE;
+}
+
+static gboolean
 on_handle_mock (CockpitWebServer *server,
                 const gchar *path,
                 GHashTable *headers,
@@ -250,6 +262,10 @@ on_handle_mock (CockpitWebServer *server,
     return mock_http_host (response, headers);
   if (g_str_equal (path, "/connection"))
     return mock_http_connection (response);
+  if (g_str_equal (path, "/expect-warnings"))
+    return mock_http_expect_warnings (response, 0);
+  if (g_str_equal (path, "/dont-expect-warnings"))
+    return mock_http_expect_warnings (response, G_LOG_LEVEL_WARNING | G_LOG_LEVEL_CRITICAL);
   else
     return FALSE;
 }
@@ -751,17 +767,26 @@ setup_path (const char *argv0)
   g_free (dir);
 }
 
+static gint
+exit_code_from_pipe_status (CockpitPipe *pipe)
+{
+  gint status;
+
+  status = cockpit_pipe_exit_status (pipe);
+  if (WIFEXITED (status))
+    return WEXITSTATUS (status);
+  else if (status != 0)
+    return 1;
+  else
+    return 0;
+}
+
 static void
 on_bridge_done (CockpitPipe *pipe,
                 const gchar *problem,
                 gpointer user_data)
 {
-  gint status;
-  status = cockpit_pipe_exit_status (pipe);
-  if (WIFEXITED (status))
-    exit_code = WEXITSTATUS (status);
-  else if (status != 0)
-    exit_code = 1;
+  exit_code = exit_code_from_pipe_status (pipe);
   g_main_loop_quit (loop);
 }
 
@@ -777,8 +802,13 @@ on_signal_done (gpointer data)
         cockpit_web_service_disconnect (service);
       if (bridge)
         {
-          g_signal_connect (bridge, "close", G_CALLBACK (on_bridge_done), NULL);
-          return TRUE;
+          if (!cockpit_pipe_is_closed (bridge))
+            {
+              g_signal_connect (bridge, "close", G_CALLBACK (on_bridge_done), NULL);
+              return TRUE;
+            }
+
+          exit_code = exit_code_from_pipe_status (bridge);
         }
     }
 
@@ -821,8 +851,6 @@ main (int argc,
   g_setenv ("COCKPIT_TEST_CONFIG_DIR", config_dir, TRUE);
 
   setup_path (argv[0]);
-
-  g_type_init ();
 
   g_log_set_always_fatal (G_LOG_LEVEL_WARNING | G_LOG_LEVEL_CRITICAL | G_LOG_LEVEL_ERROR);
 

@@ -73,7 +73,7 @@ return plural;
  ],
  "$0 update": [
   "$0 updates",
-  "$0 可更新"
+  "$0 个更新"
  ],
  "$0 will be installed.": [
   null,
@@ -117,7 +117,7 @@ return plural;
  ],
  "Bugs:": [
   null,
-  "Bug："
+  "缺陷："
  ],
  "Cancel": [
   null,
@@ -157,7 +157,7 @@ return plural;
  ],
  "Initializing...": [
   null,
-  "正在初始化中..."
+  "初始化中..."
  ],
  "Install": [
   null,

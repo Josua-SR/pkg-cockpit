@@ -97,7 +97,7 @@ return plural;
  ],
  "All In One": [
   null,
-  "所有"
+  "多合一"
  ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
@@ -161,11 +161,11 @@ return plural;
  ],
  "Combined memory usage": [
   null,
-  "结合内存使用率"
+  "内存使用率总计"
  ],
  "Combined usage of $0 CPU core": [
   "Combined usage of $0 CPU cores",
-  "结合使用 $0 CPU 内核"
+  "总计使用 $0 CPU 内核"
  ],
  "Command": [
   null,
@@ -437,7 +437,7 @@ return plural;
  ],
  "Lunch Box": [
   null,
-  "午餐盒"
+  "主机类型"
  ],
  "MAC Address:": [
   null,
@@ -469,7 +469,7 @@ return plural;
  ],
  "Mini Tower": [
   null,
-  "Mini Tower"
+  "迷你塔式主机"
  ],
  "Mount container volumes": [
   null,

@@ -73,7 +73,7 @@ return plural;
  ],
  "$0% Free": [
   "$0% Free",
-  "$0% Free"
+  "$0% 剩余"
  ],
  "$0% Used": [
   "$0% Used",
@@ -201,7 +201,7 @@ return plural;
  ],
  "Anonymous: Allow all unauthenticated users to pull images": [
   null,
-  "匿名的：允许所有未验证的用户拉取镜像"
+  "匿名用户：允许所有未验证的用户获取镜像"
  ],
  "Authentication": [
   null,
@@ -469,7 +469,7 @@ return plural;
  ],
  "Don't pull images automatically": [
   null,
-  "不自动拉取镜像"
+  "不自动下载镜像"
  ],
  "Driver": [
   null,
@@ -593,7 +593,7 @@ return plural;
  ],
  "Image Registry": [
   null,
-  "镜像 Registry"
+  "镜像注册"
  ],
  "Image Stream": [
   null,

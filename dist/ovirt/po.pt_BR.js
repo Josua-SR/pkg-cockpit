@@ -101,7 +101,7 @@ return plural;
  ],
  "Always attach": [
   null,
-  "Sempre"
+  "Sempre anexar"
  ],
  "Apply": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "Início automático"
+  ""
  ],
  "Available": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "Ordem de Inicialização"
+  ""
  ],
  "Bus": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "CPU Type": [
   null,
-  "Tipo de CPU"
+  "Tipo da CPU"
  ],
  "CREATE VM action failed": [
   null,
@@ -301,7 +301,7 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "Máquina Emulada"
+  ""
  ],
  "Enter New VM name": [
   null,
@@ -509,7 +509,7 @@ return plural;
  ],
  "Persistence": [
   null,
-  "Volumes Persistentes"
+  "Persistência"
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
@@ -679,10 +679,6 @@ return plural;
   null,
   "Fonte"
  ],
- "Start the VM to see disk statistics.": [
-  null,
-  "Inicie a VM para ver as estatísticas do disco."
- ],
  "State": [
   null,
   "Estado"
@@ -786,10 +782,6 @@ return plural;
  "Unplug": [
   null,
   "Desplugar"
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Atualize para uma versão mais recente do libvirt para exibir estatísticas de disco"
  ],
  "Usage": [
   null,

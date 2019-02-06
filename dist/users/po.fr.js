@@ -153,7 +153,7 @@ return plural;
  ],
  "Error saving authorized keys: ": [
   null,
-  "Erreur lors de l'enregistrement des clés autorisées:"
+  "Erreur lors de l’enregistrement des clés autorisées:"
  ],
  "Excellent password": [
   null,
@@ -185,7 +185,7 @@ return plural;
  ],
  "Invalid expiration date": [
   null,
-  "Date d'expiration non valide"
+  "Date d’expiration non valide"
  ],
  "Invalid key": [
   null,
@@ -233,7 +233,7 @@ return plural;
  ],
  "New password was not accepted": [
   null,
-  "Le nouveau mot de passe n'a pas été accepté"
+  "Le nouveau mot de passe n’a pas été accepté"
  ],
  "No real name specified": [
   null,
@@ -241,7 +241,7 @@ return plural;
  ],
  "No user name specified": [
   null,
-  "Aucun nom d'utilisateur spécifié"
+  "Aucun nom d’utilisateur spécifié"
  ],
  "Off": [
   null,
@@ -269,7 +269,7 @@ return plural;
  ],
  "Password is not acceptable": [
   null,
-  "Le mot de passe n'est pas acceptable"
+  "Le mot de passe n’est pas acceptable"
  ],
  "Password is too weak": [
   null,
@@ -285,11 +285,11 @@ return plural;
  ],
  "Please specify an expiration date": [
   null,
-  "Veuillez spécifier une date d'expiration"
+  "Veuillez spécifier une date d’expiration"
  ],
  "Prompting via passwd timed out": [
   null,
-  "L'invite via passwd a expiré"
+  "L’invite via passwd a expiré"
  ],
  "Require password change every $0 days": [
   null,
@@ -325,11 +325,11 @@ return plural;
  ],
  "The account '$0' will be forced to change their password on next login": [
   null,
-  "Le compte ' $0 'sera forcé de changer de mot de passe lors de la prochaine connexion"
+  "Le compte ’ $0 ’sera forcé de changer de mot de passe lors de la prochaine connexion"
  ],
  "The key you provided was not valid.": [
   null,
-  "La clé que vous avez fournie n'était pas valide."
+  "La clé que vous avez fournie n’était pas valide."
  ],
  "The passwords do not match": [
   null,
@@ -337,15 +337,15 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to modify accounts": [
   null,
-  "L'utilisateur <b>$0</b> n'est pas autorisé à modifier les comptes"
+  "L’utilisateur <b>$0</b> n’est pas autorisé à modifier les comptes"
  ],
  "The user name can only consist of letters from a-z, digits, dots, dashes and underscores.": [
   null,
-  "Le nom d'utilisateur ne peut contenir que des lettres de az, des chiffres, des points, des tirets et des traits de soulignement."
+  "Le nom d’utilisateur ne peut contenir que des lettres de az, des chiffres, des points, des tirets et des traits de soulignement."
  ],
  "There are no authorized public keys for this account.": [
   null,
-  "Il n'y a aucune clé publique autorisée pour ce compte."
+  "Il n’y a aucune clé publique autorisée pour ce compte."
  ],
  "This user name already exists": [
   null,
@@ -369,7 +369,7 @@ return plural;
  ],
  "User Name": [
   null,
-  "Nom d'utilisateur"
+  "Nom d’utilisateur"
  ],
  "Validating key": [
   null,
@@ -377,7 +377,7 @@ return plural;
  ],
  "You do not have permission to view the authorized public keys for this account.": [
   null,
-  "Vous n'êtes pas autorisé à afficher les clés publiques autorisées pour ce compte."
+  "Vous n’êtes pas autorisé à afficher les clés publiques autorisées pour ce compte."
  ],
  "You must wait longer to change your password": [
   null,

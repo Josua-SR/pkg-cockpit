@@ -141,7 +141,7 @@ return plural;
  ],
  "Host name should not be changed in a domain": [
   null,
-  "ホストは空にできません"
+  ""
  ],
  "Install": [
   null,

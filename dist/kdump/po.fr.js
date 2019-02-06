@@ -77,7 +77,7 @@ return plural;
  ],
  "Compress crash dumps to save space": [
   null,
-  "Compresser les vidages sur incident pour économiser de l'espace"
+  "Compresser les vidages sur incident pour économiser de l’espace"
  ],
  "Compression": [
   null,
@@ -97,11 +97,11 @@ return plural;
  ],
  "Directory $0 isn't writable or doesn't exist.": [
   null,
-  "Le répertoire $0 n'est pas accessible en écriture ou n'existe pas."
+  "Le répertoire $0 n’est pas accessible en écriture ou n’existe pas."
  ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
-  "Le service Kdump n'est pas installé. Veuillez vous assurer que le paquetage kexec-tools est installé."
+  "Le service Kdump n’est pas installé. Veuillez vous assurer que le paquetage kexec-tools est installé."
  ],
  "Kernel Dump": [
   null,
@@ -185,11 +185,11 @@ return plural;
  ],
  "Service is running": [
   null,
-  "Le service est en cours d'exécution"
+  "Le service est en cours d’exécution"
  ],
  "Service is starting": [
   null,
-  "Le service s'arrête"
+  "Le service s’arrête"
  ],
  "Service is stopped": [
   null,
@@ -197,7 +197,7 @@ return plural;
  ],
  "Service is stopping": [
   null,
-  "Le service s'arrête"
+  "Le service s’arrête"
  ],
  "Test Configuration": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Test is only available while the kdump service is running.": [
   null,
-  "Le test n'est disponible que lorsque le service kdump est en cours d'exécution."
+  "Le test n’est disponible que lorsque le service kdump est en cours d’exécution."
  ],
  "Test kdump settings": [
   null,
@@ -221,7 +221,7 @@ return plural;
  ],
  "Unable to apply settings: $0": [
   null,
-  "Impossible d'appliquer les paramètres : $0"
+  "Impossible d’appliquer les paramètres : $0"
  ],
  "invalid: multiple targets defined": [
   null,
@@ -237,7 +237,7 @@ return plural;
  ],
  "nfs dump target isn't formated as server:path": [
   null,
-  "la cible nfs dump n'a pas été formatée sous la forme server:path"
+  "la cible nfs dump n’a pas été formatée sous la forme server:path"
  ],
  "ssh key": [
   null,
@@ -245,11 +245,11 @@ return plural;
  ],
  "ssh key isn't a path": [
   null,
-  "la clé ssh n'est pas un chemin d'accès"
+  "la clé ssh n’est pas un chemin d’accès"
  ],
  "ssh server is empty": [
   null,
-  "le serveur ssh n'est pas vide"
+  "le serveur ssh n’est pas vide"
  ],
  "undefined": [
   null,

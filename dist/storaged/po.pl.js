@@ -1455,7 +1455,7 @@ return plural;
  ],
  "Storage can not be managed on this system.": [
   null,
-  ""
+  "Urządzenia do przechowywania danych nie mogą być zarządzane na tym systemie."
  ],
  "Store passphrase": [
   null,

@@ -125,7 +125,7 @@ return plural;
  ],
  "Adaptive transmit load balancing": [
   null,
-  "Equilibrage adaptatif de la charge d'émission"
+  "Equilibrage adaptatif de la charge d’émission"
  ],
  "Add $0": [
   null,
@@ -157,7 +157,7 @@ return plural;
  ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "Ajouter <b>$0</b> interrompra la connexion au serveur et rendra l'interface utilisateur d'administration indisponible."
+  "Ajouter <b>$0</b> interrompra la connexion au serveur et rendra l’interface utilisateur d’administration indisponible."
  ],
  "Additional DNS $val": [
   null,
@@ -253,11 +253,11 @@ return plural;
  ],
  "Changing the settings will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "La modification des paramètres interrompt la connexion au serveur et rend l'interface utilisateur d'administration indisponible."
+  "La modification des paramètres interrompt la connexion au serveur et rend l’interface utilisateur d’administration indisponible."
  ],
  "Checking IP": [
   null,
-  "Vérification de l'adresse IP"
+  "Vérification de l’adresse IP"
  ],
  "Close": [
   null,
@@ -273,7 +273,7 @@ return plural;
  ],
  "Configuring IP": [
   null,
-  "Configuration de l'adresse IP"
+  "Configuration de l’adresse IP"
  ],
  "Connect automatically": [
   null,
@@ -289,19 +289,19 @@ return plural;
  ],
  "Creating this VLAN will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "La création de ce VLAN interrompt la connexion au serveur et rend l'interface utilisateur d'administration indisponible."
+  "La création de ce VLAN interrompt la connexion au serveur et rend l’interface utilisateur d’administration indisponible."
  ],
  "Creating this bond will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "La création de cette liaison interrompt la connexion au serveur et rend l'interface utilisateur d'administration indisponible."
+  "La création de cette liaison interrompt la connexion au serveur et rend l’interface utilisateur d’administration indisponible."
  ],
  "Creating this bridge will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "La création de ce pont interrompt la connexion au serveur et rend l'interface utilisateur d'administration indisponible."
+  "La création de ce pont interrompt la connexion au serveur et rend l’interface utilisateur d’administration indisponible."
  ],
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "La création de cette équipe interrompt la connexion au serveur et rend l'interface utilisateur d'administration indisponible."
+  "La création de cette équipe interrompt la connexion au serveur et rend l’interface utilisateur d’administration indisponible."
  ],
  "DNS": [
   null,
@@ -333,7 +333,7 @@ return plural;
  ],
  "Deleting <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "La suppression de <b>$0</b> interrompra la connexion au serveur et rendra l'interface utilisateur d'administration indisponible."
+  "La suppression de <b>$0</b> interrompra la connexion au serveur et rendra l’interface utilisateur d’administration indisponible."
  ],
  "Details": [
   null,
@@ -373,11 +373,11 @@ return plural;
  ],
  "Firewall is not available": [
   null,
-  "Le pare-feu n'est pas disponible"
+  "Le pare-feu n’est pas disponible"
  ],
  "Forward delay $forward_delay": [
   null,
-  "Délai d'attente $forward_delay"
+  "Délai d’attente $forward_delay"
  ],
  "General": [
   null,
@@ -481,11 +481,11 @@ return plural;
  ],
  "Link up delay": [
   null,
-  "Délai d'activation de lien"
+  "Délai d’activation de lien"
  ],
  "Load Balancing": [
   null,
-  "L'équilibrage de charge"
+  "L’équilibrage de charge"
  ],
  "MAC": [
   null,
@@ -545,7 +545,7 @@ return plural;
  ],
  "NetworkManager is not running.": [
   null,
-  "NetworkManager n'est pas en cours d'exécution."
+  "NetworkManager n’est pas en cours d’exécution."
  ],
  "Networking": [
   null,
@@ -669,7 +669,7 @@ return plural;
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "Supprimer <b>$0</b> aura pour effet d'interrompra la connexion au serveur et rendra l'interface utilisateur d'administration indisponible."
+  "Supprimer <b>$0</b> aura pour effet d’interrompra la connexion au serveur et rendra l’interface utilisateur d’administration indisponible."
  ],
  "Restoring connection": [
   null,
@@ -753,15 +753,15 @@ return plural;
  ],
  "Switching off <b>$0</b>  will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "Éteindre <b>$0</b> interrompra la connexion au serveur et rendra l'interface utilisateur d'administration indisponible."
+  "Éteindre <b>$0</b> interrompra la connexion au serveur et rendra l’interface utilisateur d’administration indisponible."
  ],
  "Switching off <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "Éteindre <b>$0</b> interrompra la connexion au serveur et rendra l'interface utilisateur d'administration indisponible."
+  "Éteindre <b>$0</b> interrompra la connexion au serveur et rendra l’interface utilisateur d’administration indisponible."
  ],
  "Switching on <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "Activer <b>$0</b> interrompra la connexion au serveur et rendra l'interface utilisateur d'administration indisponible."
+  "Activer <b>$0</b> interrompra la connexion au serveur et rendra l’interface utilisateur d’administration indisponible."
  ],
  "TCP": [
   null,
@@ -773,15 +773,15 @@ return plural;
  ],
  "Team Port": [
   null,
-  "Port de l'équipe"
+  "Port de l’équipe"
  ],
  "Team Port Settings": [
   null,
-  "Paramètres du port de l'équipe"
+  "Paramètres du port de l’équipe"
  ],
  "Team Settings": [
   null,
-  "Paramètres de l'équipe"
+  "Paramètres de l’équipe"
  ],
  "Testing connection": [
   null,
@@ -789,7 +789,7 @@ return plural;
  ],
  "The user <b>$0</b> is not permitted to modify network settings": [
   null,
-  "L'utilisateur <b>$0</b> n'est pas autorisé à modifier les paramètres réseau"
+  "L’utilisateur <b>$0</b> n’est pas autorisé à modifier les paramètres réseau"
  ],
  "This device cannot be managed here.": [
   null,
@@ -845,7 +845,7 @@ return plural;
  ],
  "You are not authorized to modify the firewall.": [
   null,
-  "Vous n'êtes pas autorisé à modifier le pare-feu."
+  "Vous n’êtes pas autorisé à modifier le pare-feu."
  ],
  "[$0 bytes of binary data]": [
   null,

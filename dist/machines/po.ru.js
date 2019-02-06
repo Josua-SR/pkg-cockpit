@@ -71,6 +71,10 @@ return plural;
   null,
   "$0 доступен для большинства операционных систем. Чтобы установить его, выполните поиск в программном обеспечении GNOME или выполните следующие действия:"
  ],
+ "Activate": [
+  null,
+  "Включить"
+ ],
  "Add": [
   null,
   "Добавить"
@@ -101,7 +105,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "Автоматический старт"
+  ""
  ],
  "Available": [
   null,
@@ -109,7 +113,7 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "Порядок загрузки"
+  ""
  ],
  "Bus": [
   null,
@@ -121,7 +125,7 @@ return plural;
  ],
  "CPU Type": [
   null,
-  "Тип процессора"
+  ""
  ],
  "Cancel": [
   null,
@@ -195,13 +199,33 @@ return plural;
   null,
   "Ctrl + Alt + Del"
  ],
+ "Deactivate": [
+  null,
+  "Отключить"
+ ],
  "Delete": [
   null,
   "Удалить"
  ],
+ "Delete Content": [
+  null,
+  ""
+ ],
+ "Delete Storage Pool $0": [
+  null,
+  ""
+ ],
  "Delete associated storage files:": [
   null,
   "Удаление связанных файлов хранения:"
+ ],
+ "Delete the Volumes inside this Pool": [
+  null,
+  ""
+ ],
+ "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
+  null,
+  ""
  ],
  "Device": [
   null,
@@ -241,7 +265,7 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "Эмулированные машины"
+  ""
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -355,10 +379,6 @@ return plural;
   null,
   "Память"
  ],
- "Memory should be positive number": [
-  null,
-  "Память должна быть положительной"
- ],
  "MiB": [
   null,
   "МиБ"
@@ -382,10 +402,6 @@ return plural;
  "Name should not be empty": [
   null,
   "Имя не должно быть пустым"
- ],
- "Name should not consist of empty characters only": [
-  null,
-  "Имя не должно состоять только из пустых символов"
  ],
  "Network File System": [
   null,
@@ -455,6 +471,10 @@ return plural;
   null,
   "Обзор"
  ],
+ "Path": [
+  null,
+  "Путь"
+ ],
  "Path on host's filesystem": [
   null,
   "Путь в файловой системе хоста"
@@ -468,6 +488,10 @@ return plural;
   "Путь к файлу"
  ],
  "Persistence": [
+  null,
+  ""
+ ],
+ "Persistent": [
   null,
   ""
  ],
@@ -591,9 +615,9 @@ return plural;
   null,
   "Исходный путь не должен быть пустым"
  ],
- "Source should start with https, ftp or nfs protocol": [
+ "Source should start with http, ftp or nfs protocol": [
   null,
-  "Источник должен начинаться с протокола http, ftp или nfs"
+  ""
  ],
  "Start libvirt": [
   null,
@@ -602,10 +626,6 @@ return plural;
  "Start pool when host boots": [
   null,
   "Запуск пула при загрузке хоста"
- ],
- "Start the VM to see disk statistics.": [
-  null,
-  "Запустите виртуальную машину, чтобы просмотреть статистику диска."
  ],
  "Startup": [
   null,
@@ -623,6 +643,14 @@ return plural;
   null,
   "Не удалось создать пул хранения"
  ],
+ "Storage Pool failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool failed to get deactivated": [
+  null,
+  ""
+ ],
  "Storage Pools": [
   null,
   "Бассейны"
@@ -630,10 +658,6 @@ return plural;
  "Storage Size": [
   null,
   "Размер хранилища"
- ],
- "Storage Size should not be negative number": [
-  null,
-  "Размер хранилища не должен быть отрицательным числом"
  ],
  "Storage Volumes": [
   null,
@@ -650,6 +674,10 @@ return plural;
  "Target path should not be empty": [
   null,
   "Целевой путь не должен быть пустым"
+ ],
+ "The Storage Pool could not be deleted": [
+  null,
+  ""
  ],
  "The VM crashed.": [
   null,
@@ -722,10 +750,6 @@ return plural;
  "Unplug": [
   null,
   "Отключайте"
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Переход на более позднюю версию libvirt для просмотра статистики диска"
  ],
  "Usage": [
   null,

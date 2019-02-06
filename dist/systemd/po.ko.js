@@ -297,7 +297,7 @@ return plural;
  ],
  "Automatic Startup": [
   null,
-  "자동 업데이트"
+  ""
  ],
  "Automatically using NTP": [
   null,
@@ -462,6 +462,10 @@ return plural;
  "Detachable": [
   null,
   ""
+ ],
+ "Details": [
+  null,
+  "상세 정보"
  ],
  "Disable": [
   null,
@@ -1017,7 +1021,7 @@ return plural;
  ],
  "Running Since": [
   null,
-  "작동중"
+  ""
  ],
  "Saturday": [
   null,
@@ -1115,7 +1119,7 @@ return plural;
   null,
   ""
  ],
- "Store metrics": [
+ "Store Metrics": [
   null,
   ""
  ],

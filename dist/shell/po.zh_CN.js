@@ -245,7 +245,7 @@ return plural;
  ],
  "Fingerprint": [
   null,
-  "指印"
+  "指纹"
  ],
  "Host": [
   null,

@@ -141,7 +141,7 @@ return plural;
  ],
  "Host name should not be changed in a domain": [
   null,
-  "Hostitele je třeba vyplnit"
+  "Název stroje není v doméně možné měnit"
  ],
  "Install": [
   null,

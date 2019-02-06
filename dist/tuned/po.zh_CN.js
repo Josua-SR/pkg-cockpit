@@ -73,11 +73,11 @@ return plural;
  ],
  "Change Performance Profile": [
   null,
-  "变更性能配置集"
+  "变更性能配置"
  ],
  "Change Profile": [
   null,
-  "变更配置集"
+  "变更配置"
  ],
  "Communication with tuned has failed": [
   null,

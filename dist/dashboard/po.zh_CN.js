@@ -109,7 +109,7 @@ return plural;
  ],
  "All In One": [
   null,
-  "所有"
+  "多合一"
  ],
  "Authentication": [
   null,
@@ -273,7 +273,7 @@ return plural;
  ],
  "Fingerprint": [
   null,
-  "指印"
+  "指纹"
  ],
  "Go to now": [
   null,
@@ -349,7 +349,7 @@ return plural;
  ],
  "Lunch Box": [
   null,
-  "午餐盒"
+  "主机类型"
  ],
  "Main Server Chassis": [
   null,
@@ -365,7 +365,7 @@ return plural;
  ],
  "Mini Tower": [
   null,
-  "Mini Tower"
+  "迷你塔式主机"
  ],
  "Multi-system Chassis": [
   null,

@@ -114,7 +114,7 @@ return plural;
  ],
  "$0 slots remain": [
   null,
-  "$ 0 slots permanecem"
+  "$0 slots permanecem"
  ],
  "$0 used of $1 ($2 saved)": [
   null,
@@ -652,9 +652,13 @@ return plural;
   null,
   "Sistema de Arquivos"
  ],
+ "For legacy applications only. Reduces performance.": [
+  null,
+  ""
+ ],
  "Force remove passphrase in $0": [
   null,
-  "Forçar a remoção da senha em $ 0"
+  "Forçar a remoção da senha em $0"
  ],
  "Format": [
   null,
@@ -774,7 +778,7 @@ return plural;
  ],
  "Keyserver removal may prevent unlocking $0.": [
   null,
-  "A remoção do Keyserver pode impedir o desbloqueio de $ 0."
+  "A remoção do Keyserver pode impedir o desbloqueio de $0."
  ],
  "Local Mount Point": [
   null,
@@ -918,7 +922,7 @@ return plural;
  ],
  "Name cannot be longer than $0 characters": [
   null,
-  ""
+  "O nome não pode ser maior do que $0 caracteres"
  ],
  "Name cannot be longer than 127 characters.": [
   null,
@@ -1082,7 +1086,7 @@ return plural;
  ],
  "Passphrase removal may prevent unlocking $0.": [
   null,
-  "A remoção da senha pode impedir o desbloqueio de $ 0."
+  "A remoção da senha pode impedir o desbloqueio de $0."
  ],
  "Passphrases do not match": [
   null,
@@ -1258,7 +1262,7 @@ return plural;
  ],
  "Remove $0?": [
   null,
-  "Remover $ 0?"
+  "Remover $0?"
  ],
  "Remove Tang keyserver": [
   null,
@@ -1274,7 +1278,7 @@ return plural;
  ],
  "Remove passphrase in $0?": [
   null,
-  "Remover frase secreta em $ 0?"
+  "Remover frase secreta em $0?"
  ],
  "Removing $0": [
   null,
@@ -1327,6 +1331,14 @@ return plural;
  "Save": [
   null,
   "Salvar"
+ ],
+ "Save space by compressing individual blocks with LZ4": [
+  null,
+  ""
+ ],
+ "Save space by storing identical data blocks just once": [
+  null,
+  ""
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
@@ -1398,7 +1410,7 @@ return plural;
  ],
  "Slot $0": [
   null,
-  "Slot $ 0"
+  "Slot $0"
  ],
  "Spare": [
   null,
@@ -1454,7 +1466,7 @@ return plural;
  ],
  "Storage can not be managed on this system.": [
   null,
-  "O pool de armazenamento do Docker não pode ser gerenciado neste sistema."
+  "O armazenamento não pode ser gerenciado neste sistema."
  ],
  "Store passphrase": [
   null,
@@ -1782,7 +1794,7 @@ return plural;
  ],
  "key slot $0": [
   null,
-  "key slot $ 0"
+  "key slot $0"
  ],
  "undefined": [
   null,

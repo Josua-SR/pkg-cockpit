@@ -89,7 +89,7 @@ return plural;
  ],
  "Always attach": [
   null,
-  "常時"
+  ""
  ],
  "Apply": [
   null,
@@ -101,7 +101,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "自動起動"
+  ""
  ],
  "Available": [
   null,
@@ -109,7 +109,7 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "ブート順序"
+  ""
  ],
  "Bus": [
   null,
@@ -121,7 +121,7 @@ return plural;
  ],
  "CPU Type": [
   null,
-  "CPU タイプ"
+  ""
  ],
  "Cancel": [
   null,
@@ -241,7 +241,7 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "エミュレートされたマシン"
+  ""
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -455,6 +455,10 @@ return plural;
   null,
   "概要"
  ],
+ "Path": [
+  null,
+  "パス"
+ ],
  "Path on host's filesystem": [
   null,
   "ホストファイルシステム上のパス"
@@ -469,7 +473,11 @@ return plural;
  ],
  "Persistence": [
   null,
-  "永続ボリューム"
+  ""
+ ],
+ "Persistent": [
+  null,
+  ""
  ],
  "Please enter new volume name": [
   null,
@@ -591,7 +599,7 @@ return plural;
   null,
   "ソースパスは空欄にできません"
  ],
- "Source should start with https, ftp or nfs protocol": [
+ "Source should start with http, ftp or nfs protocol": [
   null,
   "ソースは、http、ftp、または nfs プロトコルで開始する必要があります"
  ],
@@ -602,10 +610,6 @@ return plural;
  "Start pool when host boots": [
   null,
   "ホスト起動時にプールを開始します"
- ],
- "Start the VM to see disk statistics.": [
-  null,
-  "仮想マシンを起動して、ディスク統計を確認します"
  ],
  "Startup": [
   null,
@@ -722,10 +726,6 @@ return plural;
  "Unplug": [
   null,
   "アンプラグ"
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "ディスクの統計情報を表示するには、libvirt を新しいバージョンにアップグレードしてください"
  ],
  "Usage": [
   null,

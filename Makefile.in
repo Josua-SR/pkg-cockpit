@@ -1293,7 +1293,8 @@ am__EXEEXT_16 = dist/base1/test-base64.html dist/base1/test-utf8.html \
 	dist/base1/test-permissions.html dist/base1/test-series.html \
 	dist/base1/test-cache.html dist/base1/test-websocket.html \
 	dist/base1/test-stub.html dist/base1/test-browser-storage.html \
-	dist/base1/test-promise.html $(am__EXEEXT_4)
+	dist/base1/test-promise.html dist/base1/test-protocol.html \
+	$(am__EXEEXT_4)
 am__EXEEXT_17 = dist/base1/test-no-jquery.html \
 	dist/base1/test-framed-cache.html dist/base1/test-framed.html \
 	dist/base1/test-dbus-framed.html $(am__EXEEXT_4)
@@ -2062,6 +2063,7 @@ base_QUNIT_TESTS = \
 	dist/base1/test-stub.html \
 	dist/base1/test-browser-storage.html \
 	dist/base1/test-promise.html \
+	dist/base1/test-protocol.html \
 	$(NULL)
 
 base_QUNIT_DEPS = \
@@ -9211,8 +9213,9 @@ install-data-hook::
 install-data-hook::
 	$(LN_S) -f /usr/share/plymouth/ubuntu-logo.png $(DESTDIR)$(ubuntubrandingdir)/logo.png
 
+# gettext-domain= must only occur on C strings, not translated ones
 %.policy: %.policy.in $(PO_FILES)
-	$(AM_V_GEN) $(INTLTOOL_MERGE) -q -x $(top_srcdir)/po $< $@
+	$(AM_V_GEN) $(INTLTOOL_MERGE) -q -x $(top_srcdir)/po $< - | sed '/xml:lang=/ s/\ gettext-domain=".*"//' > $@
 
 prepare-po-bridge-policy: $(polkit_in_files)
 	cp $< .

@@ -113,7 +113,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "자동 시작"
+  ""
  ],
  "Available": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "부팅 순서"
+  ""
  ],
  "Bus": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "CPU Type": [
   null,
-  "CPU 유형"
+  ""
  ],
  "CREATE VM action failed": [
   null,
@@ -301,7 +301,7 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "가상머신"
+  ""
  ],
  "Enter New VM name": [
   null,
@@ -679,10 +679,6 @@ return plural;
   null,
   "원본"
  ],
- "Start the VM to see disk statistics.": [
-  null,
-  ""
- ],
  "State": [
   null,
   "상태"
@@ -784,10 +780,6 @@ return plural;
   "유형"
  ],
  "Unplug": [
-  null,
-  ""
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   ""
  ],

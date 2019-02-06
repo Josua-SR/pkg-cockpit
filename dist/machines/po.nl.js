@@ -437,7 +437,7 @@ return plural;
  ],
  "No storage pool is defined on this host": [
   null,
-  "Geen schijven bepaald voor deze VM"
+  ""
  ],
  "No virtual networks": [
   null,
@@ -455,6 +455,10 @@ return plural;
   null,
   ""
  ],
+ "Path": [
+  null,
+  ""
+ ],
  "Path on host's filesystem": [
   null,
   ""
@@ -469,7 +473,11 @@ return plural;
  ],
  "Persistence": [
   null,
-  "GCE aanhoudende schijf"
+  ""
+ ],
+ "Persistent": [
+  null,
+  ""
  ],
  "Please enter new volume name": [
   null,
@@ -591,7 +599,7 @@ return plural;
   null,
   ""
  ],
- "Source should start with https, ftp or nfs protocol": [
+ "Source should start with http, ftp or nfs protocol": [
   null,
   ""
  ],
@@ -600,10 +608,6 @@ return plural;
   ""
  ],
  "Start pool when host boots": [
-  null,
-  ""
- ],
- "Start the VM to see disk statistics.": [
   null,
   ""
  ],
@@ -722,10 +726,6 @@ return plural;
  "Unplug": [
   null,
   ""
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Waardeer libvirt op naar een recente versie van om schijf statistieken weer te geven"
  ],
  "Usage": [
   null,

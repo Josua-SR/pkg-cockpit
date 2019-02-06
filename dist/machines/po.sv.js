@@ -101,7 +101,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "Starta automatiskt"
+  ""
  ],
  "Available": [
   null,
@@ -109,7 +109,7 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "Startordning"
+  ""
  ],
  "Bus": [
   null,
@@ -121,7 +121,7 @@ return plural;
  ],
  "CPU Type": [
   null,
-  "CPU-typ"
+  ""
  ],
  "Cancel": [
   null,
@@ -241,7 +241,7 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "Emulerad maskin"
+  ""
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -455,6 +455,10 @@ return plural;
   null,
   "Översikt"
  ],
+ "Path": [
+  null,
+  "Sökväg"
+ ],
  "Path on host's filesystem": [
   null,
   "Sökväg på värdens filsystem"
@@ -470,6 +474,10 @@ return plural;
  "Persistence": [
   null,
   "Varaktighet"
+ ],
+ "Persistent": [
+  null,
+  ""
  ],
  "Please enter new volume name": [
   null,
@@ -591,9 +599,9 @@ return plural;
   null,
   "Källsökvägen får inte vara tom"
  ],
- "Source should start with https, ftp or nfs protocol": [
+ "Source should start with http, ftp or nfs protocol": [
   null,
-  "Källan skall börja med ett av protokollen https, ftp eller nfs"
+  "Källan skall börja med ett av protokollen http, ftp eller nfs"
  ],
  "Start libvirt": [
   null,
@@ -602,10 +610,6 @@ return plural;
  "Start pool when host boots": [
   null,
   "Starta poolen när värden startar upp"
- ],
- "Start the VM to see disk statistics.": [
-  null,
-  "Starta VM:en för att se diskvärden"
  ],
  "Startup": [
   null,
@@ -722,10 +726,6 @@ return plural;
  "Unplug": [
   null,
   "Koppla ur"
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Uppgradera till en senare version av libvirt för att se diskstatistik"
  ],
  "Usage": [
   null,

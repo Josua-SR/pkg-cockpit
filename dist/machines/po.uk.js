@@ -241,7 +241,7 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "Емуляція машини"
+  "Емульована машина"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -455,6 +455,10 @@ return plural;
   null,
   "Огляд"
  ],
+ "Path": [
+  null,
+  "Шлях"
+ ],
  "Path on host's filesystem": [
   null,
   "Шлях у файловій системі вузла"
@@ -470,6 +474,10 @@ return plural;
  "Persistence": [
   null,
   "Сталість"
+ ],
+ "Persistent": [
+  null,
+  "Постійний"
  ],
  "Please enter new volume name": [
   null,
@@ -591,9 +599,9 @@ return plural;
   null,
   "Шлях до джерела не може бути порожнім"
  ],
- "Source should start with https, ftp or nfs protocol": [
+ "Source should start with http, ftp or nfs protocol": [
   null,
-  "Запис джерела має починатися із назви протоколу: https, ftp або nfs"
+  "Адреса джерела має починатися із назви протоколу — http, ftp або nfs"
  ],
  "Start libvirt": [
   null,
@@ -602,10 +610,6 @@ return plural;
  "Start pool when host boots": [
   null,
   "Запускати резервне сховище після завантаження вузла"
- ],
- "Start the VM to see disk statistics.": [
-  null,
-  "Запустити віртуальну машину для перегляду статистики диска."
  ],
  "Startup": [
   null,
@@ -722,10 +726,6 @@ return plural;
  "Unplug": [
   null,
   "Від'єднати"
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Щоб мати змогу переглядати статистику дисків, оновіться до новішої версії libvirt"
  ],
  "Usage": [
   null,

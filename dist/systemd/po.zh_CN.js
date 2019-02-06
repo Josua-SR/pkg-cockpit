@@ -101,47 +101,47 @@ return plural;
  ],
  "10th": [
   null,
-  "10号"
+  "第10"
  ],
  "11th": [
   null,
-  "11号"
+  "第11"
  ],
  "12th": [
   null,
-  "12号"
+  "第12"
  ],
  "13th": [
   null,
-  "13号"
+  "第13"
  ],
  "14th": [
   null,
-  "14号"
+  "第14"
  ],
  "15th": [
   null,
-  "15号"
+  "第15"
  ],
  "16th": [
   null,
-  "16号"
+  "第16"
  ],
  "17th": [
   null,
-  "17号"
+  "第17"
  ],
  "18th": [
   null,
-  "18号"
+  "第18"
  ],
  "19th": [
   null,
-  "19号"
+  "第19"
  ],
  "1st": [
   null,
-  "1号"
+  "第1"
  ],
  "2 min": [
   null,
@@ -153,47 +153,47 @@ return plural;
  ],
  "20th": [
   null,
-  "20号"
+  "第20"
  ],
  "21st": [
   null,
-  "21号"
+  "第21"
  ],
  "22nd": [
   null,
-  "22号"
+  "第22"
  ],
  "23rd": [
   null,
-  "23号"
+  "第23"
  ],
  "24th": [
   null,
-  "24号"
+  "第24"
  ],
  "25th": [
   null,
-  "25号"
+  "第25"
  ],
  "26th": [
   null,
-  "26号"
+  "第26"
  ],
  "27th": [
   null,
-  "27号"
+  "第27"
  ],
  "28th": [
   null,
-  "28号"
+  "第28"
  ],
  "29th": [
   null,
-  "29号"
+  "第29"
  ],
  "2nd": [
   null,
-  "2号"
+  "第2"
  ],
  "3 min": [
   null,
@@ -201,15 +201,15 @@ return plural;
  ],
  "30th": [
   null,
-  "30号"
+  "第30"
  ],
  "31st": [
   null,
-  "31号"
+  "第31"
  ],
  "3rd": [
   null,
-  "3号"
+  "第3"
  ],
  "4 min": [
   null,
@@ -221,7 +221,7 @@ return plural;
  ],
  "4th": [
   null,
-  "4号"
+  "第4"
  ],
  "5 Minutes": [
   null,
@@ -237,7 +237,7 @@ return plural;
  ],
  "5th": [
   null,
-  "5号"
+  "第5"
  ],
  "6 hours": [
   null,
@@ -249,19 +249,19 @@ return plural;
  ],
  "6th": [
   null,
-  "6号"
+  "第6"
  ],
  "7th": [
   null,
-  "7号"
+  "第7"
  ],
  "8th": [
   null,
-  "8号"
+  "第8"
  ],
  "9th": [
   null,
-  "9号"
+  "第9"
  ],
  "Additional packages:": [
   null,
@@ -281,15 +281,15 @@ return plural;
  ],
  "Alert and above": [
   null,
-  "警报及以上"
+  "警报及以上级别"
  ],
  "All In One": [
   null,
-  "所有"
+  "多合一"
  ],
  "Asset Tag": [
   null,
-  "资产标记"
+  "资产标签"
  ],
  "At specific time": [
   null,
@@ -297,7 +297,7 @@ return plural;
  ],
  "Automatic Startup": [
   null,
-  "自动更新"
+  "自动启动"
  ],
  "Automatically using NTP": [
   null,
@@ -341,7 +341,7 @@ return plural;
  ],
  "Bug Fix Updates Available": [
   null,
-  "可用的错误修复更新"
+  "错误修复的更新可以使用"
  ],
  "Bus Expansion Chassis": [
   null,
@@ -437,7 +437,7 @@ return plural;
  ],
  "Critical and above": [
   null,
-  "关键及以上"
+  "关键及以上级别"
  ],
  "Current boot": [
   null,
@@ -462,6 +462,10 @@ return plural;
  "Detachable": [
   null,
   "可拆开"
+ ],
+ "Details": [
+  null,
+  "详情"
  ],
  "Disable": [
   null,
@@ -525,7 +529,7 @@ return plural;
  ],
  "Error and above": [
   null,
-  "Error 及以上"
+  "错误及以上级别"
  ],
  "Everything": [
   null,
@@ -589,7 +593,7 @@ return plural;
  ],
  "Info and above": [
   null,
-  "Info 及以上"
+  "Info 及以上级别"
  ],
  "Install": [
   null,
@@ -693,7 +697,7 @@ return plural;
  ],
  "Lunch Box": [
   null,
-  "午餐盒"
+  "主机类型"
  ],
  "Machine ID": [
   null,
@@ -737,7 +741,7 @@ return plural;
  ],
  "Mini Tower": [
   null,
-  "Mini Tower"
+  "迷你塔式主机"
  ],
  "Minute needs to be a number between 0-59": [
   null,
@@ -1017,7 +1021,7 @@ return plural;
  ],
  "Running Since": [
   null,
-  "运行自："
+  ""
  ],
  "Saturday": [
   null,
@@ -1115,9 +1119,9 @@ return plural;
   null,
   "停止"
  ],
- "Store metrics": [
+ "Store Metrics": [
   null,
-  "存储指标数据"
+  ""
  ],
  "Sub Chassis": [
   null,

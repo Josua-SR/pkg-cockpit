@@ -81,23 +81,23 @@ return plural;
  ],
  "1 Minute": [
   null,
-  ""
+  "1 minuut"
  ],
  "1 day": [
   null,
-  ""
+  "1 dag"
  ],
  "1 hour": [
   null,
-  ""
+  "1 uur"
  ],
  "1 min": [
   null,
-  ""
+  "1 min"
  ],
  "1 week": [
   null,
-  ""
+  "1 week"
  ],
  "10th": [
   null,
@@ -460,6 +460,10 @@ return plural;
   ""
  ],
  "Detachable": [
+  null,
+  ""
+ ],
+ "Details": [
   null,
   ""
  ],
@@ -1115,7 +1119,7 @@ return plural;
   null,
   ""
  ],
- "Store metrics": [
+ "Store Metrics": [
   null,
   ""
  ],

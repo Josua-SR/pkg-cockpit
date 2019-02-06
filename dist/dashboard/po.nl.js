@@ -69,15 +69,15 @@ return plural;
  },
  "1 day": [
   null,
-  ""
+  "1 dag"
  ],
  "1 hour": [
   null,
-  ""
+  "1 uur"
  ],
  "1 week": [
   null,
-  ""
+  "1 week"
  ],
  "5 minutes": [
   null,

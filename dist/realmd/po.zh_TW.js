@@ -141,7 +141,7 @@ return plural;
  ],
  "Host name should not be changed in a domain": [
   null,
-  "主持人不應該是空的"
+  ""
  ],
  "Install": [
   null,

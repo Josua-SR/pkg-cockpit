@@ -90,15 +90,15 @@ return plural;
  ],
  "$0 filesystems can not be made larger.": [
   null,
-  ""
+  "Bestandssystemen kunnen niet uitgebreid worden."
  ],
  "$0 filesystems can not be made smaller.": [
   null,
-  ""
+  "Bestandssystemen kunnen niet verkleind worden."
  ],
  "$0 filesystems can not be resized here.": [
   null,
-  ""
+  "De grootte van bestandssystemen kan hier niet gewijzigd worden."
  ],
  "$0 is in active use": [
   null,
@@ -154,15 +154,15 @@ return plural;
  ],
  "1 day": [
   null,
-  ""
+  "1 dag"
  ],
  "1 hour": [
   null,
-  ""
+  "1 uur"
  ],
  "1 week": [
   null,
-  ""
+  "1 week"
  ],
  "128 KiB": [
   null,

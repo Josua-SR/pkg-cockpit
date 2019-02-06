@@ -463,6 +463,10 @@ return plural;
   null,
   ""
  ],
+ "Details": [
+  null,
+  ""
+ ],
  "Disable": [
   null,
   ""
@@ -1115,7 +1119,7 @@ return plural;
   null,
   ""
  ],
- "Store metrics": [
+ "Store Metrics": [
   null,
   "Værtsnavn"
  ],

@@ -69,7 +69,11 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  "$0 对大多数操作系统可用。为了安装它，在 GNOME 软件中搜索它，或运行以下命令： "
+  "$0 大多数操作系统可用。为了安装它，请在 GNOME 中搜索它，或运行以下命令： "
+ ],
+ "Activate": [
+  null,
+  "激活"
  ],
  "Add": [
   null,
@@ -89,7 +93,7 @@ return plural;
  ],
  "Always attach": [
   null,
-  "总是"
+  "保证连接"
  ],
  "Apply": [
   null,
@@ -101,7 +105,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "自动启动："
+  "自动启动"
  ],
  "Available": [
   null,
@@ -109,7 +113,7 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "引导顺序："
+  "启动顺序"
  ],
  "Bus": [
   null,
@@ -121,7 +125,7 @@ return plural;
  ],
  "CPU Type": [
   null,
-  "CPU 类型："
+  "CPU类型"
  ],
  "Cancel": [
   null,
@@ -133,7 +137,7 @@ return plural;
  ],
  "Changes will take effect after shutting down the VM": [
   null,
-  "关机后所做的改变将会起作用。"
+  "改变生效需要关机。"
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -189,19 +193,39 @@ return plural;
  ],
  "Creation of vm $0 failed": [
   null,
-  "创建 vm $ 0失败"
+  "创建 vm $0失败"
  ],
  "Ctrl+Alt+Del": [
   null,
   "Ctrl+Alt+Del"
  ],
+ "Deactivate": [
+  null,
+  "取消激活"
+ ],
  "Delete": [
   null,
   "删除"
  ],
+ "Delete Content": [
+  null,
+  ""
+ ],
+ "Delete Storage Pool $0": [
+  null,
+  ""
+ ],
  "Delete associated storage files:": [
   null,
   "删除关联的存储文件："
+ ],
+ "Delete the Volumes inside this Pool": [
+  null,
+  ""
+ ],
+ "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
+  null,
+  ""
  ],
  "Device": [
   null,
@@ -221,7 +245,7 @@ return plural;
  ],
  "Disk failed to be attached": [
   null,
-  "附加磁盘失败"
+  "挂载磁盘失败"
  ],
  "Disk failed to be created": [
   null,
@@ -241,7 +265,7 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "模拟的机器："
+  ""
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -273,7 +297,7 @@ return plural;
  ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
-  "获取 HYPERVISOR MAX VCPU 操作失败"
+  "获取 HYPERVISOR 最大 VCPU 操作失败"
  ],
  "GiB": [
   null,
@@ -355,10 +379,6 @@ return plural;
   null,
   "内存"
  ],
- "Memory should be positive number": [
-  null,
-  "内存需要是正数"
- ],
  "MiB": [
   null,
   "MiB"
@@ -382,10 +402,6 @@ return plural;
  "Name should not be empty": [
   null,
   "名称不应为空"
- ],
- "Name should not consist of empty characters only": [
-  null,
-  "名称不应仅包含空字符"
  ],
  "Network File System": [
   null,
@@ -455,6 +471,10 @@ return plural;
   null,
   "概览"
  ],
+ "Path": [
+  null,
+  "路径"
+ ],
  "Path on host's filesystem": [
   null,
   "主机文件系统上的路径"
@@ -469,7 +489,11 @@ return plural;
  ],
  "Persistence": [
   null,
-  "持久卷"
+  ""
+ ],
+ "Persistent": [
+  null,
+  ""
  ],
  "Please enter new volume name": [
   null,
@@ -591,7 +615,7 @@ return plural;
   null,
   "源路径不能为空"
  ],
- "Source should start with https, ftp or nfs protocol": [
+ "Source should start with http, ftp or nfs protocol": [
   null,
   "源应该以 http、ftp 或 nfs 协议开头"
  ],
@@ -602,10 +626,6 @@ return plural;
  "Start pool when host boots": [
   null,
   "在主机引导时启动池"
- ],
- "Start the VM to see disk statistics.": [
-  null,
-  "启动 VM 查看磁盘统计数据"
  ],
  "Startup": [
   null,
@@ -623,6 +643,14 @@ return plural;
   null,
   "创建存储池失败"
  ],
+ "Storage Pool failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool failed to get deactivated": [
+  null,
+  ""
+ ],
  "Storage Pools": [
   null,
   "存储池"
@@ -630,10 +658,6 @@ return plural;
  "Storage Size": [
   null,
   "存储大小"
- ],
- "Storage Size should not be negative number": [
-  null,
-  "存储大小不应为负数"
  ],
  "Storage Volumes": [
   null,
@@ -650,6 +674,10 @@ return plural;
  "Target path should not be empty": [
   null,
   "目标路径不能为空"
+ ],
+ "The Storage Pool could not be deleted": [
+  null,
+  ""
  ],
  "The VM crashed.": [
   null,
@@ -722,10 +750,6 @@ return plural;
  "Unplug": [
   null,
   "拔"
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "升级到一个更新版本的 libvirt 来查看磁盘统计数据"
  ],
  "Usage": [
   null,
