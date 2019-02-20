@@ -67,10 +67,6 @@ return plural;
   "language": "cs",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
-  null,
-  "$0 K tomuto stroji se budou moci přihlásit pouze uživatelé s účty přímo na něm (lokální). Toto může mít vliv také na ostatní služby jako je nastavení DNS překladu a může být odlišný seznam certifikátů cert. autorit."
- ],
  "$0 is not available from any repository.": [
   null,
   "$0 není k dispozici z žádného z repozitářů."
@@ -87,13 +83,9 @@ return plural;
   null,
   "Heslo správce"
  ],
- "Are you sure you want to leave the '$0' domain?": [
+ "After leaving the domain, only users with local credentials will be able                to log into this machine. This may also affect other services as DNS resolution settings and                the list of trusted CAs may change.": [
   null,
-  "Opravdu chcete doménu „$0“ opustit?"
- ],
- "Are you sure you want to leave this domain?": [
-  null,
-  "Opravdu chcete tuto doménu opustit?"
+  ""
  ],
  "Authentication": [
   null,
@@ -111,9 +103,21 @@ return plural;
   null,
   "Zjišťuje se nainstalovaný sofware"
  ],
+ "Client Software": [
+  null,
+  "Klientský software"
+ ],
  "Computer OU": [
   null,
   "Organizační jednotka počítače"
+ ],
+ "Contacted domain": [
+  null,
+  "Připojená doména"
+ ],
+ "Domain": [
+  null,
+  "Doména"
  ],
  "Domain $0 could not be contacted": [
   null,
@@ -171,13 +175,13 @@ return plural;
   null,
   "Připojení se do této domény není podporováno"
  ],
- "Leave": [
-  null,
-  "Opustit"
- ],
  "Leave Domain": [
   null,
   "Opustit doménu"
+ ],
+ "Login Format": [
+  null,
+  "Formát přihlašování"
  ],
  "More": [
   null,
@@ -215,6 +219,10 @@ return plural;
   null,
   "Odebírá se $0"
  ],
+ "Server Software": [
+  null,
+  "Serverový software"
+ ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
   "Uživatel <b>$0</b> není oprávněn upravovat oblasti"
@@ -234,6 +242,10 @@ return plural;
  "User Password": [
   null,
   "Heslo uživatele"
+ ],
+ "Validating address": [
+  null,
+  "Ověřuje se adresa"
  ],
  "Waiting for other software management operations to finish": [
   null,

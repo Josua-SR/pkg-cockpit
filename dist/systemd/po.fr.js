@@ -1341,6 +1341,10 @@ return plural;
   "de $0 noyau CPU",
   "de $0 noyaux CPU"
  ],
+ "undefined": [
+  null,
+  "indéfini"
+ ],
  "unknown": [
   null,
   "inconnu"

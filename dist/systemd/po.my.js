@@ -1335,6 +1335,10 @@ return plural;
   "of $0 CPU cores",
   ""
  ],
+ "undefined": [
+  null,
+  ""
+ ],
  "unknown": [
   null,
   ""

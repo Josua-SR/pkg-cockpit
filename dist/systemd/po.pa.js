@@ -1337,6 +1337,10 @@ return plural;
   "",
   ""
  ],
+ "undefined": [
+  null,
+  "ਨਾ-ਪ੍ਰਭਾਸ਼ਿਤ"
+ ],
  "unknown": [
   null,
   "ਅਣਪਛਾਤਾ"

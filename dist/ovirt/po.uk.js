@@ -607,6 +607,10 @@ return plural;
   null,
   "Запустити тут"
  ],
+ "Run when host boots": [
+  null,
+  ""
+ ],
  "Running Since:": [
   null,
   "Працює з:"

@@ -247,13 +247,26 @@ LIBVIRT_DBUS_PROVIDER = {
                         name,
                         connectionName,
                         message: _("VM CHANGE_NETWORK_STATE action failed"),
-                        detail: {exception},
+                        detail: { exception },
                         tab: 'network',
                     })))
                     .then(() => {
-                        dispatch(getVm({connectionName, id:objPath}));
+                        dispatch(getVm({ connectionName, id:objPath }));
                     });
         };
+    },
+
+    CHANGE_VM_AUTOSTART ({
+        connectionName,
+        vmName,
+        autostart,
+    }) {
+        return (dispatch) => call(connectionName, '/org/libvirt/QEMU', 'org.libvirt.Connect', 'DomainLookupByName', [vmName], TIMEOUT)
+                .then(domainPath => {
+                    const args = ['org.libvirt.Domain', 'Autostart', cockpit.variant('b', autostart)];
+
+                    return call(connectionName, domainPath[0], 'org.freedesktop.DBus.Properties', 'Set', args, TIMEOUT);
+                });
     },
 
     CREATE_AND_ATTACH_VOLUME({
@@ -287,7 +300,7 @@ LIBVIRT_DBUS_PROVIDER = {
         target,
         autostart,
     }) {
-        const poolXmlDesc = getPoolXML({name, type, source, target});
+        const poolXmlDesc = getPoolXML({ name, type, source, target });
         let storagePoolPath;
 
         return (dispatch) => call(connectionName, '/org/libvirt/QEMU', 'org.libvirt.Connect', 'StoragePoolDefineXML', [poolXmlDesc, 0], TIMEOUT)
@@ -314,7 +327,7 @@ LIBVIRT_DBUS_PROVIDER = {
                         name: name,
                         connectionName,
                         message: _("VM DELETE action failed"),
-                        detail: {exception}
+                        detail: { exception }
                     })));
         }
 
@@ -349,7 +362,7 @@ LIBVIRT_DBUS_PROVIDER = {
                         name: name,
                         connectionName,
                         message: _("VM DELETE action failed"),
-                        detail: {exception}
+                        detail: { exception }
                     })));
         }
 
@@ -396,7 +409,7 @@ LIBVIRT_DBUS_PROVIDER = {
                         detail: { exception },
                         tab: 'disk',
                     })))
-                    .then(() => dispatch(getVm({connectionName, id:vmPath})));
+                    .then(() => dispatch(getVm({ connectionName, id:vmPath })));
         };
     },
 
@@ -441,7 +454,7 @@ LIBVIRT_DBUS_PROVIDER = {
                         // We can't use Promise.all() here until cockpit is able to dispatch es2015 promises
                         // https://github.com/cockpit-project/cockpit/issues/10956
                         // eslint-disable-next-line cockpit/no-cockpit-all
-                        return cockpit.all(objPaths[0].map((path) => dispatch(getNetwork({connectionName, id:path}))));
+                        return cockpit.all(objPaths[0].map((path) => dispatch(getNetwork({ connectionName, id:path }))));
                     })
                     .fail(ex => console.warn('GET_ALL_NETWORKS action failed:', JSON.stringify(ex)));
         };
@@ -456,7 +469,7 @@ LIBVIRT_DBUS_PROVIDER = {
                         // We can't use Promise.all() here until cockpit is able to dispatch es2015 promises
                         // https://github.com/cockpit-project/cockpit/issues/10956
                         // eslint-disable-next-line cockpit/no-cockpit-all
-                        return cockpit.all(objPaths[0].map((path) => dispatch(getStoragePool({connectionName, id:path}))));
+                        return cockpit.all(objPaths[0].map((path) => dispatch(getStoragePool({ connectionName, id:path }))));
                     })
                     .fail(ex => console.warn('GET_ALL_STORAGE_POOLS action failed:', JSON.stringify(ex)));
         };
@@ -710,7 +723,7 @@ LIBVIRT_DBUS_PROVIDER = {
                         name,
                         connectionName,
                         message: _("VM SENDNMI action failed"),
-                        detail: {exception}
+                        detail: { exception }
                     })));
         };
     },
@@ -741,7 +754,7 @@ LIBVIRT_DBUS_PROVIDER = {
         return dispatch => {
             call(connectionName, objPath, 'org.libvirt.Domain', 'Shutdown', [0], TIMEOUT)
                     .fail(exception => dispatch(vmActionFailed(
-                        { name, connectionName, message: _("VM SHUT DOWN action failed"), detail: {exception} }
+                        { name, connectionName, message: _("VM SHUT DOWN action failed"), detail: { exception } }
                     )));
         };
     },
@@ -801,6 +814,22 @@ function getDomainMaxVCPU(capsXML) {
     return vcpuMaxAttr;
 }
 
+export function getStorageVolumeUsed(storagePool, vms, storageVolumeName) {
+    let usedBy = [];
+
+    for (let vm of vms) {
+        for (let disk in vm.disks) {
+            const diskProps = vm.disks[disk];
+
+            if ((diskProps.type == 'volume' && diskProps.source.pool == storagePool.name && diskProps.source.volume == storageVolumeName) ||
+                (diskProps.type == 'file' && diskProps.source.file == [storagePool.path, storageVolumeName].join('/'))) {
+                usedBy.push(vm.name);
+            }
+        }
+    }
+    return usedBy;
+}
+
 /**
  * Calculates disk statistics.
  * @param  {info} Object returned by GetStats method call.
@@ -857,7 +886,7 @@ function doGetAllVms(dispatch, connectionName) {
                 // We can't use Promise.all() here until cockpit is able to dispatch es2015 promises
                 // https://github.com/cockpit-project/cockpit/issues/10956
                 // eslint-disable-next-line cockpit/no-cockpit-all
-                return cockpit.all(objPaths[0].map((path) => dispatch(getVm({connectionName, id:path}))));
+                return cockpit.all(objPaths[0].map((path) => dispatch(getVm({ connectionName, id:path }))));
             })
             .fail(ex => console.warn("ListDomains failed:", JSON.stringify(ex)));
 }
@@ -923,6 +952,17 @@ function startEventMonitor(dispatch, connectionName, libvirtServiceName) {
     if (connectionName !== 'session' && connectionName !== 'system')
         return;
 
+    /* Handlers for libvirtd status changes */
+    startEventMonitorLibvirtd(connectionName, dispatch, libvirtServiceName);
+
+    /* Handlers for domain events */
+    startEventMonitorDomains(connectionName, dispatch);
+
+    /* Handlers for storage pool events */
+    startEventMonitorStoragePools(connectionName, dispatch);
+}
+
+function startEventMonitorDomains(connectionName, dispatch) {
     /* Subscribe to Domain Lifecycle signals on Connect Interface */
     dbus_client(connectionName).subscribe(
         { interface: 'org.libvirt.Connect', member: 'DomainEvent' },
@@ -945,15 +985,15 @@ function startEventMonitor(dispatch, connectionName, libvirtServiceName) {
 
             switch (eventType) {
             case domainEvent["Defined"]:
-                dispatch(getVm({connectionName, id:objPath}));
+                dispatch(getVm({ connectionName, id:objPath }));
                 break;
 
             case domainEvent["Undefined"]:
-                dispatch(undefineVm({connectionName, id: objPath}));
+                dispatch(undefineVm({ connectionName, id: objPath }));
                 break;
 
             case domainEvent["Started"]:
-                dispatch(getVm({connectionName, id:objPath}));
+                dispatch(getVm({ connectionName, id:objPath }));
                 break;
 
             case domainEvent["Suspended"]:
@@ -979,7 +1019,7 @@ function startEventMonitor(dispatch, connectionName, libvirtServiceName) {
                     updateOnly: true,
                 }));
                 // transient VMs don't have a separate Undefined event, so remove them on stop
-                dispatch(undefineVm({connectionName, id: objPath, transientOnly: true}));
+                dispatch(undefineVm({ connectionName, id: objPath, transientOnly: true }));
                 break;
 
             default:
@@ -1003,14 +1043,16 @@ function startEventMonitor(dispatch, connectionName, libvirtServiceName) {
             case 'MetadataChanged':
             case 'TrayChange':
             /* These signals imply possible changes in what we display, so re-read the state */
-                dispatch(getVm({connectionName, id:path}));
+                dispatch(getVm({ connectionName, id:path }));
                 break;
 
             default:
-                logDebug(`handleEvent ${connectionName} ${name}: ignoring event ${signal}`);
+                logDebug(`handle DomainEvent on ${connectionName}: ignoring event ${signal}`);
             }
         });
+}
 
+function startEventMonitorLibvirtd(connectionName, dispatch, libvirtServiceName) {
     /* Listen on a stopped libvirtd on systemd D-Bus. If user is using libvirtd not started
      * by systemd this handler will not be triggered.
      */
@@ -1027,8 +1069,9 @@ function startEventMonitor(dispatch, connectionName, libvirtServiceName) {
             }
         );
     }
+}
 
-    /* Handler for storage pool events */
+function startEventMonitorStoragePools(connectionName, dispatch) {
     dbus_client(connectionName).subscribe(
         { interface: 'org.libvirt.Connect', member: 'StoragePoolEvent' },
         (path, iface, signal, args) => {
@@ -1040,10 +1083,10 @@ function startEventMonitor(dispatch, connectionName, libvirtServiceName) {
             case Enum.VIR_STORAGE_POOL_EVENT_STARTED:
             case Enum.VIR_STORAGE_POOL_EVENT_STOPPED:
             case Enum.VIR_STORAGE_POOL_EVENT_CREATED:
-                dispatch(getStoragePool({connectionName, id:objPath}));
+                dispatch(getStoragePool({ connectionName, id:objPath }));
                 break;
             case Enum.VIR_STORAGE_POOL_EVENT_UNDEFINED:
-                dispatch(undefineStoragePool({connectionName, id:objPath}));
+                dispatch(undefineStoragePool({ connectionName, id:objPath }));
                 break;
             case Enum.VIR_STORAGE_POOL_EVENT_DELETED:
             default:
@@ -1051,6 +1094,20 @@ function startEventMonitor(dispatch, connectionName, libvirtServiceName) {
             }
         }
     );
+
+    /* Subscribe to signals on StoragePool Interface */
+    dbus_client(connectionName).subscribe(
+        { interface: 'org.libvirt.StoragePool' },
+        (path, iface, signal, args) => {
+            switch (signal) {
+            case 'Refresh':
+            /* These signals imply possible changes in what we display, so re-read the state */
+                dispatch(getStoragePool({ connectionName, id:path }));
+                break;
+            default:
+                logDebug(`handleEvent StoragePoolEvent on ${connectionName} : ignoring event ${signal}`);
+            }
+        });
 }
 
 /**

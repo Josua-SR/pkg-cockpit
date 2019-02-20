@@ -240,13 +240,19 @@ function event_mixin(obj, handlers) {
                 if (typeof event === "string") {
                     type = event;
                     args = Array.prototype.slice.call(arguments, 1);
-                    event = document.createEvent("CustomEvent");
+
+                    var detail = null;
                     if (arguments.length == 2)
-                        event.initCustomEvent(type, false, false, arguments[1]);
+                        detail = arguments[1];
                     else if (arguments.length > 2)
-                        event.initCustomEvent(type, false, false, args);
-                    else
-                        event.initCustomEvent(type, false, false, null);
+                        detail = args;
+
+                    event = new CustomEvent(type, {
+                        bubbles: false,
+                        cancelable: false,
+                        detail: detail
+                    });
+
                     args.unshift(event);
                 } else {
                     type = event.type;
@@ -482,7 +488,7 @@ function Transport() {
     if (!ws) {
         ws = { close: function() { } };
         window.setTimeout(function() {
-            self.close({"problem": "no-cockpit"});
+            self.close({ "problem": "no-cockpit" });
         }, 50);
     }
 
@@ -587,7 +593,7 @@ function Transport() {
 
         if (options.version !== 1) {
             console.error("received unsupported version in init message: " + options.version);
-            self.close({"problem": "not-supported"});
+            self.close({ "problem": "not-supported" });
             return;
         }
 
@@ -3206,7 +3212,7 @@ function factory() {
                 console.warn("received invalid dbus json message:", ex);
             }
             if (msg === undefined) {
-                channel.close({"problem": "protocol-error"});
+                channel.close({ "problem": "protocol-error" });
                 return;
             }
             var dfd, options;

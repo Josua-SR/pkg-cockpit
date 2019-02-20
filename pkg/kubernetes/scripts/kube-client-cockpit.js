@@ -475,37 +475,27 @@
                             });
 
                             channel.addEventListener("close", function(ev, options) {
-                                var problem = options.problem || "";
                                 channel = null;
 
                                 state = 3;
-                                var cev = document.createEvent('Event');
-                                cev.initEvent('close', false, false, !!problem, 1000, problem);
+                                var cev = new Event("close", { bubbles: false, cancelable: false });
                                 ws.dispatchEvent(cev);
                             });
 
                             channel.addEventListener("message", function(ev, data) {
                                 if (base64)
                                     data = "1" + window.btoa(data);
-                                var mev;
-                                if (window.MessageEvent) {
-                                    mev = new window.MessageEvent('message', { 'data': data });
-                                } else {
-                                    mev = document.createEvent('MessageEvent');
-                                    mev.initMessageEvent('message', false, false, data, null, null, window, null);
-                                }
+                                var mev = new window.MessageEvent('message', { data: data });
                                 ws.dispatchEvent(mev);
                             });
 
                             state = 1;
-                            var oev = document.createEvent('Event');
-                            oev.initEvent('open', false, false);
+                            var oev = new Event("open", { bubbles: false, cancelable: false });
                             ws.dispatchEvent(oev);
                         }
 
                         function fail() {
-                            var ev = document.createEvent('Event');
-                            ev.initEvent('close', false, false, false, 1002, "protocol-error");
+                            var ev = new Event("close", { bubbles: false, cancelable: false });
                             ws.dispatchEvent(ev);
                         }
 
@@ -632,29 +622,20 @@
                             }));
 
                             channel.addEventListener("close", function(ev, options) {
-                                var problem = options.problem || "";
                                 channel = null;
 
                                 state = 3;
-                                var cev = document.createEvent('Event');
-                                cev.initEvent('close', false, false, !!problem, 1000, problem);
+                                var cev = new Event("close", { bubbles: false, cancelable: false });
                                 ws.dispatchEvent(cev);
                             });
 
                             channel.addEventListener("message", function(ev, data) {
-                                var mev;
-                                if (window.MessageEvent) {
-                                    mev = new window.MessageEvent('message', { 'data': data });
-                                } else {
-                                    mev = document.createEvent('MessageEvent');
-                                    mev.initMessageEvent('message', false, false, data, null, null, window, null);
-                                }
+                                var mev = new window.MessageEvent('message', { data: data });
                                 ws.dispatchEvent(mev);
                             });
 
                             state = 1;
-                            var oev = document.createEvent('Event');
-                            oev.initEvent('open', false, false);
+                            var oev = new Event("open", { bubbles: false, cancelable: false });
                             ws.dispatchEvent(oev);
                         });
 

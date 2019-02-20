@@ -1339,6 +1339,10 @@ return plural;
   "of $0 CPU cores",
   "$0 CPU 内核"
  ],
+ "undefined": [
+  null,
+  "未定义"
+ ],
  "unknown": [
   null,
   "未知"

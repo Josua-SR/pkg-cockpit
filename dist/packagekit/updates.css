@@ -372,6 +372,8 @@ tr.listing-ct-item td.changelog {
 tr.listing-ct-item td.changelog * {
   display: inline;
   font: inherit;
+  background: inherit;
+  color: inherit;
 }
 tr.listing-ct-item td.changelog,
 tr.listing-ct-item td.changelog p {

@@ -71,6 +71,10 @@ return plural;
   null,
   "$0 jest dostępne dla większości systemów operacyjnych. Aby zainstalować, należy wyszukać w Menedżerze oprogramowania GNOME lub wykonać polecenie:"
  ],
+ "Activate": [
+  null,
+  "Aktywuj"
+ ],
  "Add": [
   null,
   "Dodaj"
@@ -195,13 +199,33 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "Deactivate": [
+  null,
+  "Dezaktywuj"
+ ],
  "Delete": [
   null,
   "Usuń"
  ],
+ "Delete Content": [
+  null,
+  "Usuń zawartość"
+ ],
+ "Delete Storage Pool $0": [
+  null,
+  "Usuń pulę urządzeń do przechowywania danych $0"
+ ],
  "Delete associated storage files:": [
   null,
   "Usunięcie powiązanych plików urządzeń do przechowywania danych:"
+ ],
+ "Delete the Volumes inside this Pool": [
+  null,
+  "Usuń woluminy wewnątrz tej puli"
+ ],
+ "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
+  null,
+  "Usunięcie nieaktywnej puli urządzeń do przechowywania danych spowoduje tylko usunięcie określenia puli. Jej zawartość nie zostanie usunięta."
  ],
  "Device": [
   null,
@@ -355,10 +379,6 @@ return plural;
   null,
   "Pamięć"
  ],
- "Memory should be positive number": [
-  null,
-  "Pamięć musi być liczbą dodatnią"
- ],
  "MiB": [
   null,
   "MiB"
@@ -382,10 +402,6 @@ return plural;
  "Name should not be empty": [
   null,
   "Nazwa nie może być pusta"
- ],
- "Name should not consist of empty characters only": [
-  null,
-  "Nazwa nie może składać się tylko z pustych znaków"
  ],
  "Network File System": [
   null,
@@ -539,6 +555,10 @@ return plural;
   null,
   "Uruchom"
  ],
+ "Run when host boots": [
+  null,
+  ""
+ ],
  "SPICE": [
   null,
   "SPICE"
@@ -627,6 +647,14 @@ return plural;
   null,
   "Utworzenie puli urządzeń do przechowywania danych się nie powiodło"
  ],
+ "Storage Pool failed to get activated": [
+  null,
+  "Aktywacja puli urządzeń do przechowywania danych się nie powiodła"
+ ],
+ "Storage Pool failed to get deactivated": [
+  null,
+  "Dezaktywacja puli urządzeń do przechowywania danych się nie powiodła"
+ ],
  "Storage Pools": [
   null,
   "Pule urządzeń do przechowywania danych"
@@ -634,10 +662,6 @@ return plural;
  "Storage Size": [
   null,
   "Rozmiar urządzenia do przechowywania danych"
- ],
- "Storage Size should not be negative number": [
-  null,
-  "Rozmiar urządzenia do przechowywania danych nie może być liczbą ujemną"
  ],
  "Storage Volumes": [
   null,
@@ -654,6 +678,10 @@ return plural;
  "Target path should not be empty": [
   null,
   "Ścieżka docelowa nie może być pusta"
+ ],
+ "The Storage Pool could not be deleted": [
+  null,
+  "Nie można usunąć puli urządzeń do przechowywania danych"
  ],
  "The VM crashed.": [
   null,

@@ -653,6 +653,10 @@ return plural;
   null,
   "Systemy plików"
  ],
+ "For legacy applications only. Reduces performance.": [
+  null,
+  "Tylko dla przestarzałych programów. Zmniejsza wydajność."
+ ],
  "Force remove passphrase in $0": [
   null,
   "Wymuś usunięcie hasła w $0"
@@ -1328,6 +1332,14 @@ return plural;
  "Save": [
   null,
   "Zapisz"
+ ],
+ "Save space by compressing individual blocks with LZ4": [
+  null,
+  "Oszczędź miejsce kompresując poszczególne bloki za pomocą L4"
+ ],
+ "Save space by storing identical data blocks just once": [
+  null,
+  "Oszczędź miejsce przez przechowywanie identycznych bloków danych tylko raz"
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,

@@ -1337,6 +1337,10 @@ return plural;
   "von $0 CPU-Kern",
   "von $0 CPU-Kernen"
  ],
+ "undefined": [
+  null,
+  "nicht definiert"
+ ],
  "unknown": [
   null,
   "unbekannt"

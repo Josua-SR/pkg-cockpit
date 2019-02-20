@@ -52,8 +52,7 @@ function ph_set_val (sel, val)
     if (el.value === undefined)
         throw sel + " does not have a value";
     el.value = val;
-    var ev = document.createEvent("Event");
-    ev.initEvent("change", true, false);
+    var ev = new Event("change", { bubbles: true, cancelable: false });
     el.dispatchEvent(ev);
 }
 
@@ -85,8 +84,7 @@ function ph_set_attr (sel, attr, val)
     else
         el.setAttribute(attr, val);
 
-    var ev = document.createEvent("Event");
-    ev.initEvent("change", true, false);
+    var ev = new Event("change", { bubbles: true, cancelable: false });
     el.dispatchEvent(ev);
 }
 
@@ -99,7 +97,7 @@ function ph_mouse(sel, type, x, y, btn, force) {
     let el = ph_find(sel);
 
     /* The element has to be visible, and not collapsed */
-    if (!force && (el.offsetWidth <= 0 || el.offsetHeight <= 0))
+    if (!force && el.offsetWidth <= 0 && el.offsetHeight <= 0)
         throw sel + " is not visible";
 
     /* The event has to actually work */
@@ -119,14 +117,23 @@ function ph_mouse(sel, type, x, y, btn, force) {
         top += elp.offsetTop;
     }
 
-    var ev = document.createEvent("MouseEvent");
-    ev.initMouseEvent(
-        type,
-        true /* bubble */, true /* cancelable */,
-        window, null,
-        left + x, top + y, left + x, top + y, /* coordinates */
-        false, false, false, false, /* modifier keys */
-        btn, null);
+    var detail = 0;
+    if (["click", "mousedown", "mouseup"].indexOf(type) > -1)
+        detail = 1;
+    else if (type === "dblclick")
+        detail = 2;
+
+    var ev = new MouseEvent(type, {
+        bubbles: true,
+        cancelable: true,
+        view: window,
+        detail: detail,
+        screenX: left + x,
+        screenY: top + y,
+        clientX: left + x,
+        clientY: top + y,
+        button: btn
+    });
 
     el.dispatchEvent(ev);
 

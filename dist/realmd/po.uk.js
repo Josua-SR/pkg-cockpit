@@ -67,10 +67,6 @@ return plural;
   "language": "uk",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
-  null,
-  "$0 Лише користувачі із локальними реєстраційними даними зможуть входити до системи на цій машині. Це також може вплинути на роботу інших служб, оскільки можуть змінитися параметри визначення адрес DNS та список довірених служб сертифікації."
- ],
  "$0 is not available from any repository.": [
   null,
   "$0 немає у жодному зі сховищ."
@@ -87,13 +83,9 @@ return plural;
   null,
   "Пароль адміністратора"
  ],
- "Are you sure you want to leave the '$0' domain?": [
+ "After leaving the domain, only users with local credentials will be able                to log into this machine. This may also affect other services as DNS resolution settings and                the list of trusted CAs may change.": [
   null,
-  "Ви справді хочете полишити домен «$0»?"
- ],
- "Are you sure you want to leave this domain?": [
-  null,
-  "Ви справді хочете полишити цей домен?"
+  ""
  ],
  "Authentication": [
   null,
@@ -111,9 +103,21 @@ return plural;
   null,
   "Перевіряємо встановлене програмне забезпечення"
  ],
+ "Client Software": [
+  null,
+  "Клієнтське програмне забезпечення"
+ ],
  "Computer OU": [
   null,
   "OU комп’ютера"
+ ],
+ "Contacted domain": [
+  null,
+  "Пов'язаний домен"
+ ],
+ "Domain": [
+  null,
+  "Домен"
  ],
  "Domain $0 could not be contacted": [
   null,
@@ -171,13 +175,13 @@ return plural;
   null,
   "Підтримки долучення до цього домену не передбачено"
  ],
- "Leave": [
-  null,
-  "Вийти"
- ],
  "Leave Domain": [
   null,
   "Полишити домен"
+ ],
+ "Login Format": [
+  null,
+  "Формат входу"
  ],
  "More": [
   null,
@@ -215,6 +219,10 @@ return plural;
   null,
   "Вилучаємо $0"
  ],
+ "Server Software": [
+  null,
+  "Програмне забезпечення сервера"
+ ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
   "Користувачу <b>$0</b> не дозволено вносити зміни до областей"
@@ -234,6 +242,10 @@ return plural;
  "User Password": [
   null,
   "Пароль користувача"
+ ],
+ "Validating address": [
+  null,
+  "Перевіряємо чинність адреси"
  ],
  "Waiting for other software management operations to finish": [
   null,

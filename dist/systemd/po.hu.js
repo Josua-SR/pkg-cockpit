@@ -1337,6 +1337,10 @@ return plural;
   "",
   ""
  ],
+ "undefined": [
+  null,
+  ""
+ ],
  "unknown": [
   null,
   ""

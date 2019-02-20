@@ -20,8 +20,61 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
-import Term from "term";
+import { Terminal as Term } from "xterm";
+import { ContextMenu } from "cockpit-components-context-menu.jsx";
 import "console.css";
+
+const theme_core = {
+    yellow: "#b58900",
+    brightRed: "#cb4b16",
+    red: "#dc322f",
+    magenta: "#d33682",
+    brightMagenta: "#6c71c4",
+    blue: "#268bd2",
+    cyan: "#2aa198",
+    green: "#859900"
+};
+
+const themes = {
+    "black-theme": {
+        background: "#000000",
+        foreground: "#ffffff"
+    },
+    "dark-theme": Object.assign({}, theme_core, {
+        background: "#002b36",
+        foreground: "#fdf6e3",
+        cursor: "#eee8d5",
+        selection: "#ffffff77",
+        brightBlack: "#002b36",
+        black: "#073642",
+        brightGreen: "#586e75",
+        brightYellow: "#657b83",
+        brightBlue: "#839496",
+        brightCyan: "#93a1a1",
+        white: "#eee8d5",
+        brightWhite: "#fdf6e3"
+    }),
+    "light-theme": Object.assign({}, theme_core, {
+        background: "#fdf6e3",
+        foreground: "#002b36",
+        cursor: "#073642",
+        selection: "#00000044",
+        brightWhite: "#002b36",
+        white: "#073642",
+        brightCyan: "#586e75",
+        brightBlue: "#657b83",
+        brightYellow: "#839496",
+        brightGreen: "#93a1a1",
+        black: "#eee8d5",
+        brightBlack: "#fdf6e3"
+    }),
+    "white-theme": {
+        background: "#ffffff",
+        foreground: "#000000",
+        selection: "#00000044",
+        cursor: "#000000",
+    },
+};
 
 /*
  * A terminal component that communicates over a cockpit channel.
@@ -37,6 +90,8 @@ import "console.css";
  * the title of the terminal changes.
  *
  * Call focus() to set the input focus on the terminal.
+ *
+ * Also it is possible to set up theme by property 'theme'.
  */
 export class Terminal extends React.Component {
     constructor(props) {
@@ -50,13 +105,20 @@ export class Terminal extends React.Component {
         this.onWindowResize = this.onWindowResize.bind(this);
         this.onFocusIn = this.onFocusIn.bind(this);
         this.onFocusOut = this.onFocusOut.bind(this);
+        this.setText = this.setText.bind(this);
+        this.getText = this.getText.bind(this);
+        this.setTerminalTheme = this.setTerminalTheme.bind(this);
     }
 
     componentWillMount() {
         var term = new Term({
             cols: this.props.cols || 80,
             rows: this.props.rows || 25,
-            screenKeys: true
+            screenKeys: true,
+            cursorBlink: true,
+            fontSize: 12,
+            fontFamily: 'Menlo, Monaco, Consolas, monospace',
+            screenReaderMode: true
         });
 
         term.on('data', function(data) {
@@ -78,6 +140,8 @@ export class Terminal extends React.Component {
             window.addEventListener('resize', this.onWindowResize);
             this.onWindowResize();
         }
+        this.setTerminalTheme(this.props.theme || 'black-theme');
+        this.state.terminal.focus();
     }
 
     componentWillUpdate(nextProps, nextState) {
@@ -95,6 +159,9 @@ export class Terminal extends React.Component {
             this.state.terminal.reset();
             this.disconnectChannel();
         }
+
+        if (nextProps.theme !== this.props.theme)
+            this.setTerminalTheme(nextProps.theme);
     }
 
     componentDidUpdate(prevProps) {
@@ -107,21 +174,48 @@ export class Terminal extends React.Component {
                 }
             });
         }
+        this.state.terminal.focus();
     }
 
     render() {
-        // ensure react never reuses this div by keying it with the terminal widget
-        return <div ref="terminal"
-                    key={this.state.terminal}
-                    className="console-ct"
-                    onFocus={this.onFocusIn}
-                    onBlur={this.onFocusOut} />;
+        return (
+            <React.Fragment>
+                <div ref="terminal"
+                        key={this.state.terminal}
+                        className="console-ct"
+                        onFocus={this.onFocusIn}
+                        onContextMenu={this.contextMenu}
+                        onBlur={this.onFocusOut} />
+                <ContextMenu setText={this.setText} getText={this.getText} />
+            </React.Fragment>
+        );
     }
 
     componentWillUnmount() {
         this.disconnectChannel();
         this.state.terminal.destroy();
         window.removeEventListener('resize', this.onWindowResize);
+    }
+
+    setText() {
+        try {
+            navigator.clipboard.readText()
+                    .then(text => this.props.channel.send(text))
+                    .catch(e => console.error('Text could not be pasted, use Shift+Insert ', e ? e.toString() : ""))
+                    .finally(() => this.state.terminal.focus());
+        } catch (error) {
+            console.error('Text could not be pasted, use Shift+Insert:', error.toString());
+        }
+    }
+
+    getText() {
+        try {
+            navigator.clipboard.writeText(this.state.terminal.getSelection())
+                    .catch(e => console.error('Text could not be copied, use Ctrl+Insert ', e ? e.toString() : ""))
+                    .finally(() => this.state.terminal.focus());
+        } catch (error) {
+            console.error('Text could not be copied, use Ctrl+Insert:', error.toString());
+        }
     }
 
     onChannelMessage(event, data) {
@@ -158,19 +252,17 @@ export class Terminal extends React.Component {
     onWindowResize() {
         var padding = 2 * 11;
         var node = ReactDOM.findDOMNode(this);
-        var terminal = this.refs.terminal.querySelector('.terminal');
 
-        var ch = document.createElement('span');
-        ch.textContent = 'M';
-        ch.style.position = 'absolute';
-        terminal.appendChild(ch);
-        var rect = ch.getBoundingClientRect();
-        terminal.removeChild(ch);
-
+        var realHeight = this.state.terminal._core.renderer.dimensions.actualCellHeight;
+        var realWidth = this.state.terminal._core.renderer.dimensions.actualCellWidth;
         this.setState({
-            rows: Math.floor((node.parentElement.clientHeight - padding) / rect.height),
-            cols: Math.floor((node.parentElement.clientWidth - padding) / rect.width)
+            rows: Math.floor((node.parentElement.clientHeight - padding) / realHeight),
+            cols: Math.floor((node.parentElement.clientWidth - padding) / realWidth)
         });
+    }
+
+    setTerminalTheme(theme) {
+        this.state.terminal.setOption("theme", themes[theme]);
     }
 
     onBeforeUnload(event) {
@@ -196,5 +288,6 @@ Terminal.propTypes = {
     cols: PropTypes.number,
     rows: PropTypes.number,
     channel: PropTypes.object.isRequired,
-    onTitleChanged: PropTypes.func
+    onTitleChanged: PropTypes.func,
+    theme: PropTypes.string
 };
