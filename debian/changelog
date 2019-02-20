@@ -1,4 +1,4 @@
-cockpit (188-1) UNRELEASED; urgency=medium
+cockpit (188-1) unstable; urgency=medium
 
   * New upstream release:
     - Machines: Show Storage Volume user
@@ -7,7 +7,7 @@ cockpit (188-1) UNRELEASED; urgency=medium
     - Storage: Responsive dialogs
     - Software Updates: Show three most recent updates
 
- -- Martin Pitt <mpitt@debian.org>  Wed, 20 Feb 2019 16:20:53 +0000
+ -- Martin Pitt <mpitt@debian.org>  Wed, 20 Feb 2019 16:22:20 +0000
 
 cockpit (187-1) unstable; urgency=medium
 
