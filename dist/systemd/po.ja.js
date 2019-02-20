@@ -1339,6 +1339,10 @@ return plural;
   "of $0 CPU cores",
   "$0 CPU コアの"
  ],
+ "undefined": [
+  null,
+  "未定義"
+ ],
  "unknown": [
   null,
   "不明"

@@ -1343,6 +1343,10 @@ return plural;
   "$0 rdzeni procesora",
   "$0 rdzeni procesora"
  ],
+ "undefined": [
+  null,
+  "nieokreślone"
+ ],
  "unknown": [
   null,
   "nieznane"

@@ -71,6 +71,10 @@ return plural;
   null,
   "$0 можна користуватися у більшості операційних систем. Щоб встановити пакунок із програмою, знайдіть відповідний запис у Програмних засобах GNOME або віддайте таку команду:"
  ],
+ "Activate": [
+  null,
+  "Задіяти"
+ ],
  "Add": [
   null,
   "Додати"
@@ -195,13 +199,33 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "Deactivate": [
+  null,
+  "Вимкнути"
+ ],
  "Delete": [
   null,
   "Вилучити"
  ],
+ "Delete Content": [
+  null,
+  "Вилучити дані"
+ ],
+ "Delete Storage Pool $0": [
+  null,
+  "Вилучити буфер зберігання даних $0"
+ ],
  "Delete associated storage files:": [
   null,
   "Вилучити пов’язані файли у сховищі даних:"
+ ],
+ "Delete the Volumes inside this Pool": [
+  null,
+  "Вилучити томи у цьому буфері"
+ ],
+ "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
+  null,
+  "Вилучення неактивного буфера зберігання даних призведе лише до скасування визначення буфера. Вміст буфера вилучено не буде."
  ],
  "Device": [
   null,
@@ -355,10 +379,6 @@ return plural;
   null,
   "Пам'ять"
  ],
- "Memory should be positive number": [
-  null,
-  "Об'єм пам'яті має бути додатним числом"
- ],
  "MiB": [
   null,
   "МіБ"
@@ -382,10 +402,6 @@ return plural;
  "Name should not be empty": [
   null,
   "Назва має бути непорожньою"
- ],
- "Name should not consist of empty characters only": [
-  null,
-  "Назва не може складатися лише із порожніх символів"
  ],
  "Network File System": [
   null,
@@ -539,6 +555,10 @@ return plural;
   null,
   "Запустити"
  ],
+ "Run when host boots": [
+  null,
+  ""
+ ],
  "SPICE": [
   null,
   "SPICE"
@@ -627,6 +647,14 @@ return plural;
   null,
   "Не вдалося створити резервне сховище"
  ],
+ "Storage Pool failed to get activated": [
+  null,
+  "Не вдалося активувати буфер сховища даних"
+ ],
+ "Storage Pool failed to get deactivated": [
+  null,
+  "Не вдалося деактивувати буфер сховища даних"
+ ],
  "Storage Pools": [
   null,
   "Буфери даних"
@@ -634,10 +662,6 @@ return plural;
  "Storage Size": [
   null,
   "Розмір зберігання"
- ],
- "Storage Size should not be negative number": [
-  null,
-  "Розмір зберігання має бути невід'ємним числом"
  ],
  "Storage Volumes": [
   null,
@@ -654,6 +678,10 @@ return plural;
  "Target path should not be empty": [
   null,
   "Шлях призначення не може бути порожнім"
+ ],
+ "The Storage Pool could not be deleted": [
+  null,
+  "Не вдалося вилучити буфер сховища даних"
  ],
  "The VM crashed.": [
   null,

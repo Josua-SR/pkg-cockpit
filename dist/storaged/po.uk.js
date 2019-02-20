@@ -653,6 +653,10 @@ return plural;
   null,
   "Файлові системи"
  ],
+ "For legacy applications only. Reduces performance.": [
+  null,
+  "Лише для застарілих програм. Знижує швидкодію."
+ ],
  "Force remove passphrase in $0": [
   null,
   "Примусово вилучити пароль у $0"
@@ -1328,6 +1332,14 @@ return plural;
  "Save": [
   null,
   "Зберегти"
+ ],
+ "Save space by compressing individual blocks with LZ4": [
+  null,
+  "Заощаджувати місце стисканням окремих блоків за допомогою LZ4"
+ ],
+ "Save space by storing identical data blocks just once": [
+  null,
+  "Заощаджувати місце, зберігаючи ідентичні блоки даних лише раз"
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,

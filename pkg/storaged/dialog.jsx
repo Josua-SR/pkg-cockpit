@@ -220,6 +220,8 @@ import { show_modal_dialog } from "cockpit-components-dialog.jsx";
 import { StatelessSelect, SelectEntry } from "cockpit-components-select.jsx";
 import { fmt_size, block_name, format_size_and_text } from "./utils.js";
 
+import "form-layout.less";
+
 const _ = cockpit.gettext;
 
 const Validated = ({ errors, error_key, explanation, children }) => {
@@ -230,7 +232,7 @@ const Validated = ({ errors, error_key, explanation, children }) => {
     // errors are cleared.  Otherwise the DOM changes enough
     // for the Browser to remove focus.
     return (
-        <div className={error ? "has-error" : ""}>
+        <div className={error ? "ct-validation-wrapper has-error" : "ct-validation-wrapper"}>
             { children }
             { (text && text !== true) ? <span className="help-block dialog-error">{text}</span> : null }
         </div>
@@ -254,17 +256,13 @@ const Row = ({ tag, title, errors, options, children }) => {
                     </React.Fragment>
                 );
             return (
-                <tr>
-                    <td className="top">{title}</td>
-                    <td>{validated}</td>
-                </tr>
+                <React.Fragment>
+                    <label className="control-label">{title}</label>
+                    <React.Fragment>{validated}</React.Fragment>
+                </React.Fragment>
             );
         } else {
-            return (
-                <tr>
-                    <td colSpan="2">{validated}</td>
-                </tr>
-            );
+            return validated;
         }
     } else {
         return children;
@@ -275,7 +273,7 @@ function is_visible(field, values) {
     return !field.options || field.options.visible == undefined || field.options.visible(values);
 }
 
-const Body = ({body, fields, values, errors, onChange}) => {
+const Body = ({ body, fields, values, errors, onChange }) => {
     function make_row(field, index) {
         function change(val) {
             values[field.tag] = val;
@@ -298,11 +296,9 @@ const Body = ({body, fields, values, errors, onChange}) => {
         <div className="modal-body">
             { body || null }
             { fields.length > 0
-                ? <table className="form-table-ct">
-                    <tbody>
-                        { fields.map(make_row) }
-                    </tbody>
-                </table> : null
+                ? <form className="ct-form-layout">
+                    { fields.map(make_row) }
+                </form> : null
             }
         </div>
     );
@@ -420,6 +416,13 @@ export const dialog_open = (def) => {
 
         set_values: (new_vals) => {
             Object.assign(values, new_vals);
+            update(null, null);
+        },
+
+        set_nested_values: (key, new_vals) => {
+            let updated = values[key];
+            Object.assign(updated, new_vals);
+            values[key] = updated;
             update(null, null);
         },
 
@@ -614,7 +617,7 @@ export const SelectSpaces = (tag, title, options) => {
                 return <span className="text-danger">{options.empty_warning}</span>;
 
             return (
-                <ul className="list-group available-disks-group dialog-list-ct"
+                <ul className="list-group dialog-list-ct"
                     data-field={tag} data-field-type="select-spaces">
                     { options.spaces.map(spc => {
                         let selected = (val.indexOf(spc) >= 0);
@@ -628,13 +631,11 @@ export const SelectSpaces = (tag, title, options) => {
 
                         return (
                             <li key={spc.block ? spc.block.Device : spc.desc} className="list-group-item">
-                                <div className="checkbox">
-                                    <label>
-                                        <input type="checkbox" checked={selected} onChange={on_change} />
-                                        { spc.block ? <span className="pull-right">{block_name(spc.block)}</span> : null }
-                                        <span>{format_size_and_text(spc.size, spc.desc)}</span>
-                                    </label>
-                                </div>
+                                <label className="select-space-row">
+                                    <input type="checkbox" checked={selected} onChange={on_change} />
+                                    <span className="select-space-name">{format_size_and_text(spc.size, spc.desc)}</span>
+                                    <span className="select-space-details">{spc.block ? block_name(spc.block) : ""}</span>
+                                </label>
                             </li>
                         );
                     })
@@ -657,7 +658,7 @@ export const SelectSpace = (tag, title, options) => {
                 return <span className="text-danger">{options.empty_warning}</span>;
 
             return (
-                <ul className="list-group available-disks-group dialog-list-ct"
+                <ul className="list-group dialog-list-ct"
                     data-field={tag} data-field-type="select-spaces">
                     { options.spaces.map(spc => {
                         const on_change = (event) => {
@@ -667,13 +668,11 @@ export const SelectSpace = (tag, title, options) => {
 
                         return (
                             <li key={spc.block ? spc.block.Device : spc.desc} className="list-group-item">
-                                <div className="radio">
-                                    <label>
-                                        <input type="radio" checked={val == spc} onChange={on_change} />
-                                        { spc.block ? <span className="pull-right">{block_name(spc.block)}</span> : null }
-                                        <span>{format_size_and_text(spc.size, spc.desc)}</span>
-                                    </label>
-                                </div>
+                                <label className="select-space-row">
+                                    <input type="radio" checked={val == spc} onChange={on_change} />
+                                    <span className="select-space-name">{format_size_and_text(spc.size, spc.desc)}</span>
+                                    <span className="select-space-details">{spc.block ? block_name(spc.block) : ""}</span>
+                                </label>
                             </li>
                         );
                     })
@@ -684,62 +683,80 @@ export const SelectSpace = (tag, title, options) => {
     };
 };
 
-export const CheckBox = (tag, title, options) => {
+const CheckBoxComponent = ({ tag, val, title, tooltip, update_function }) => {
+    return (
+        <div key={tag} className="checkbox">
+            <label key={tag}>
+                <input type="checkbox" data-field={tag} data-field-type="checkbox"
+                       checked={val}
+                       onChange={event => update_function(event.target.checked)} />
+                {title}
+            </label>
+            { tooltip && <OverlayTrigger overlay={ <Tooltip id="tip-service">{tooltip}</Tooltip> } placement="right" >
+                <a className="dialog-item-tooltip">
+                    <span className="fa fa-lg fa-info-circle" />
+                </a>
+            </OverlayTrigger>
+            }
+        </div>
+    );
+};
+
+export const CheckBoxes = (tag, title, options) => {
     return {
         tag: tag,
-        title: options.row_title || "",
+        title: title,
         options: options,
-        initial_value: options.value || false,
+        initial_value: options.value || { },
 
         render: (val, change) => {
+            let fieldset = options.fields.map(field => {
+                let ftag = tag + "." + field.tag;
+                let fval = (val[field.tag] !== undefined) ? val[field.tag] : false;
+                function fchange(newval) {
+                    val[field.tag] = newval;
+                    change(val);
+                }
+
+                if (field.type === undefined || field.type == "checkbox")
+                    return <CheckBoxComponent key={`checkbox-${ftag}`}
+                                              tag={ftag}
+                                              val={fval}
+                                              title={field.title}
+                                              tooltip={field.tooltip}
+                                              options={options}
+                                              update_function={fchange} />;
+                else if (field.type == "checkboxWithInput")
+                    return <TextInputCheckedComponent key={`checkbox-with-text-${ftag}`}
+                                                      tag={ftag}
+                                                      val={fval}
+                                                      title={field.title}
+                                                      update_function={fchange} />;
+            });
+
             return (
-                <div className="checkbox">
-                    <label>
-                        <input type="checkbox" data-field={tag} data-field-type="checkbox"
-                               checked={val}
-                               onChange={event => change(event.target.checked)} />
-                        {title}
-                    </label>
-                    { options.tooltip && <OverlayTrigger overlay={ <Tooltip id="tip-service">{options.tooltip}</Tooltip> } placement="right" >
-                        <a className="dialog-item-tooltip">
-                            <span className="fa fa-lg fa-info-circle" />
-                        </a>
-                    </OverlayTrigger>
-                    }
+                <div role="group" className="ct-form-layout-vertical">
+                    { fieldset }
                 </div>
             );
         }
     };
 };
 
-/* A text input that is guarded by a check box.
- *
- * The value is either "false" when the checkbox
- * is not checked, or the string from the text input.
- */
-
-export const TextInputChecked = (tag, title, options) => {
-    return {
-        tag: tag,
-        title: options.row_title || "",
-        options: options,
-        initial_value: (options.value === undefined) ? false : options.value,
-
-        render: (val, change) => {
-            return (
-                <div className="dialog-checkbox-text" data-field={tag} data-field-type="text-input-checked">
-                    <div className="checkbox">
-                        <label>
-                            <input type="checkbox" checked={val !== false}
-                                   onChange={event => change(event.target.checked ? "" : false)} />{title}
-                        </label>
-                    </div>
-                    <input className="form-control" type="text" hidden={val === false}
-                           value={val} onChange={event => change(event.target.value)} />
-                </div>
-            );
-        }
-    };
+const TextInputCheckedComponent = ({ tag, val, title, update_function }) => {
+    return (
+        <React.Fragment key={tag}>
+            <div className="checkbox ct-form-layout-split dialog-checkbox-text" data-field={tag} data-field-type="text-input-checked">
+                <label>
+                    <input type="checkbox" checked={val !== false}
+                        onChange={event => update_function(event.target.checked ? "" : false)} />
+                    {title}
+                </label>
+            </div>
+            <input className="form-control ct-form-layout-split" type="text" hidden={val === false}
+                   value={val} onChange={event => update_function(event.target.value)} />
+        </React.Fragment>
+    );
 };
 
 export const Skip = (className, options) => {
@@ -750,7 +767,7 @@ export const Skip = (className, options) => {
         initial_value: false,
 
         render: () => {
-            return <tr><td className={className} /></tr>;
+            return <div className={className} />;
         }
     };
 };

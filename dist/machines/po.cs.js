@@ -71,6 +71,10 @@ return plural;
   null,
   "$0 je k dispozici pro většinu operačních systémů. Pro instalaci vyhledejte v GNOME Software nebo spusťte následující:"
  ],
+ "Activate": [
+  null,
+  "Aktivovat"
+ ],
  "Add": [
   null,
   "Přidat"
@@ -195,13 +199,33 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "Deactivate": [
+  null,
+  "Deaktivovat"
+ ],
  "Delete": [
   null,
   "Smazat"
  ],
+ "Delete Content": [
+  null,
+  "Smazat obsah"
+ ],
+ "Delete Storage Pool $0": [
+  null,
+  "Smazat fond úložiště $0"
+ ],
  "Delete associated storage files:": [
   null,
   "Smazat související soubory úložiště:"
+ ],
+ "Delete the Volumes inside this Pool": [
+  null,
+  "Smazat svazek v tomto fondu"
+ ],
+ "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
+  null,
+  "Smazání neaktivního fondu úložiště pouze zruší jeho definici. Obsah fondu samotný smazán nebude."
  ],
  "Device": [
   null,
@@ -355,10 +379,6 @@ return plural;
   null,
   "Paměť"
  ],
- "Memory should be positive number": [
-  null,
-  "Paměť by mělo být kladné číslo"
- ],
  "MiB": [
   null,
   "MiB"
@@ -382,10 +402,6 @@ return plural;
  "Name should not be empty": [
   null,
   "Název je třeba vyplnit"
- ],
- "Name should not consist of empty characters only": [
-  null,
-  "Název by se neměl sestávat pouze z prázdných znaků"
  ],
  "Network File System": [
   null,
@@ -539,6 +555,10 @@ return plural;
   null,
   "Spustit"
  ],
+ "Run when host boots": [
+  null,
+  ""
+ ],
  "SPICE": [
   null,
   "SPICE"
@@ -627,6 +647,14 @@ return plural;
   null,
   "Fond úložiště se nepodařilo uložit"
  ],
+ "Storage Pool failed to get activated": [
+  null,
+  "Fond úložiště se nepodařilo aktivovat"
+ ],
+ "Storage Pool failed to get deactivated": [
+  null,
+  "Fond úložiště se nepodařilo deaktivovat"
+ ],
  "Storage Pools": [
   null,
   "Fondy úložiště"
@@ -634,10 +662,6 @@ return plural;
  "Storage Size": [
   null,
   "Velikost úložiště"
- ],
- "Storage Size should not be negative number": [
-  null,
-  "Velikost úložiště by nemělo být záporné číslo"
  ],
  "Storage Volumes": [
   null,
@@ -654,6 +678,10 @@ return plural;
  "Target path should not be empty": [
   null,
   "Popis umístění cíle je třeba vyplnit"
+ ],
+ "The Storage Pool could not be deleted": [
+  null,
+  "Fond úložiště se nepodařilo smazat"
  ],
  "The VM crashed.": [
   null,

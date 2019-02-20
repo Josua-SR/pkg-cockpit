@@ -780,60 +780,72 @@ h1 .btn-onoff-ct {
   margin: 0;
   padding: 0;
 }
-.ct-form-layout > input[size] {
+.ct-form-layout > input[size],
+.ct-form-layout > .ct-validation-wrapper > input[size] {
   justify-self: start;
 }
 .ct-form-layout input[type=number] {
   -webkit-appearance: textarea;
 }
 .ct-form-layout > input,
+.ct-form-layout > .ct-validation-wrapper > input,
 .ct-form-layout > textarea,
+.ct-form-layout > .ct-validation-wrapper > textarea,
 .ct-form-layout > select,
+.ct-form-layout > .ct-validation-wrapper > select,
 .ct-form-layout > .bootstrap-select,
+.ct-form-layout > .ct-validation-wrapper > .bootstrap-select,
 .ct-form-layout > .dropdown,
+.ct-form-layout > .ct-validation-wrapper > .dropdown,
 .ct-form-layout > .combobox-container,
+.ct-form-layout > .ct-validation-wrapper > .combobox-container,
 .ct-form-layout > fieldset,
+.ct-form-layout > .ct-validation-wrapper > fieldset,
 .ct-form-layout > [role=group],
+.ct-form-layout > .ct-validation-wrapper > [role=group],
+.ct-form-layout > [data-field],
+.ct-form-layout > .ct-validation-wrapper > [data-field],
 .ct-form-layout > .form-group,
+.ct-form-layout > .ct-validation-wrapper > .form-group,
 .ct-form-layout > .btn-group,
+.ct-form-layout > .ct-validation-wrapper > .btn-group,
 .ct-form-layout > .checkbox-inline,
-.ct-form-layout > .radio-inline {
+.ct-form-layout > .ct-validation-wrapper > .checkbox-inline,
+.ct-form-layout > .radio-inline,
+.ct-form-layout > .ct-validation-wrapper > .radio-inline {
   margin-top: -3px;
+  margin-bottom: 3px;
   min-height: 26px;
 }
-.ct-form-layout > input:not(.ct-form-layout-relax),
-.ct-form-layout > textarea:not(.ct-form-layout-relax),
-.ct-form-layout > select:not(.ct-form-layout-relax),
-.ct-form-layout > .bootstrap-select:not(.ct-form-layout-relax),
-.ct-form-layout > .dropdown:not(.ct-form-layout-relax),
-.ct-form-layout > .combobox-container:not(.ct-form-layout-relax),
-.ct-form-layout > fieldset:not(.ct-form-layout-relax),
-.ct-form-layout > [role=group]:not(.ct-form-layout-relax),
-.ct-form-layout > .form-group:not(.ct-form-layout-relax),
-.ct-form-layout > .btn-group:not(.ct-form-layout-relax),
-.ct-form-layout > .checkbox-inline:not(.ct-form-layout-relax),
-.ct-form-layout > .radio-inline:not(.ct-form-layout-relax) {
+.ct-form-layout > :not(.ct-form-layout-relax) {
   width: auto !important;
 }
-.ct-form-layout fieldset,
-.ct-form-layout > [role=group] {
-  -webkit-appearance: none;
-  appearance: none;
+.ct-form-layout > [role=group],
+.ct-form-layout > .ct-validation-wrapper > [role=group] {
   align-content: center;
   align-self: start;
   display: grid;
-  grid-auto-flow: column;
   grid-gap: 5px;
-  grid-template-columns: max-content;
   justify-content: start;
+  grid-template-columns: repeat(2, auto);
 }
-.ct-form-layout fieldset:not(.ct-form-layout-relax) > .dropdown,
-.ct-form-layout > [role=group]:not(.ct-form-layout-relax) > .dropdown {
+.ct-form-layout > [role=group].ct-form-layout-vertical > :not(.ct-form-layout-split),
+.ct-form-layout > .ct-validation-wrapper > [role=group].ct-form-layout-vertical > :not(.ct-form-layout-split) {
+  grid-column: 1 / -1;
+}
+.ct-form-layout > [role=group]:not(.ct-form-layout-relax) > .dropdown,
+.ct-form-layout > .ct-validation-wrapper > [role=group]:not(.ct-form-layout-relax) > .dropdown {
   width: auto !important;
 }
-.ct-form-layout fieldset > .form-control,
-.ct-form-layout > [role=group] > .form-control {
+.ct-form-layout > [role=group] > .form-control,
+.ct-form-layout > .ct-validation-wrapper > [role=group] > .form-control {
   width: auto;
+}
+.ct-form-layout > [role=group] > .checkbox,
+.ct-form-layout > .ct-validation-wrapper > [role=group] > .checkbox,
+.ct-form-layout > [role=group] > .radio,
+.ct-form-layout > .ct-validation-wrapper > [role=group] > .radio {
+  margin: 0;
 }
 .ct-form-layout .checkbox > label,
 .ct-form-layout .radio > label,

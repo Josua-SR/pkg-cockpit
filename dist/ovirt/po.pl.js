@@ -607,6 +607,10 @@ return plural;
   null,
   "Uruchom tutaj"
  ],
+ "Run when host boots": [
+  null,
+  ""
+ ],
  "Running Since:": [
   null,
   "Działa od:"

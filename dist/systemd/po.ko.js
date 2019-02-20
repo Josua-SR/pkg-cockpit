@@ -1339,6 +1339,10 @@ return plural;
   "of $0 CPU cores",
   ""
  ],
+ "undefined": [
+  null,
+  "정의되지 않음 "
+ ],
  "unknown": [
   null,
   "알 수 없음"

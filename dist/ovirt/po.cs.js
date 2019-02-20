@@ -607,6 +607,10 @@ return plural;
   null,
   "Spustit zde"
  ],
+ "Run when host boots": [
+  null,
+  ""
+ ],
  "Running Since:": [
   null,
   "Spuštěno od:"

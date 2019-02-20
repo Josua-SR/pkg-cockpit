@@ -653,6 +653,10 @@ return plural;
   null,
   "Souborové systémy"
  ],
+ "For legacy applications only. Reduces performance.": [
+  null,
+  "Pouze pro staré aplikace. Snižuje výkon."
+ ],
  "Force remove passphrase in $0": [
   null,
   "Vynutit odebrání heslové fráze v $0"
@@ -1328,6 +1332,14 @@ return plural;
  "Save": [
   null,
   "Uložit"
+ ],
+ "Save space by compressing individual blocks with LZ4": [
+  null,
+  "Šetřit prostorem komprimováním jednotlivých bloků pomocí LZ4"
+ ],
+ "Save space by storing identical data blocks just once": [
+  null,
+  "Šetřit prostorem tím, že stejné bloky dat budou ukládány pouze jednou"
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,

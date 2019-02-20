@@ -1343,6 +1343,10 @@ return plural;
   "ze $0 jader procesoru",
   "z $0 jader procesoru"
  ],
+ "undefined": [
+  null,
+  "nedefinované"
+ ],
  "unknown": [
   null,
   "neznámý"

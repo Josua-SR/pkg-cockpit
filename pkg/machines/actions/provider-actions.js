@@ -25,6 +25,7 @@ import {
     ATTACH_DISK,
     CHANGE_NETWORK_SETTINGS,
     CHANGE_NETWORK_STATE,
+    CHANGE_VM_AUTOSTART,
     CHECK_LIBVIRT_STATUS,
     CONSOLE_VM,
     CREATE_AND_ATTACH_VOLUME,
@@ -85,6 +86,10 @@ export function changeNetworkSettings({ vm, macAddress, networkType, networkSour
 
 export function changeNetworkState(vm, networkMac, state) {
     return virt(CHANGE_NETWORK_STATE, { name: vm.name, id: vm.id, networkMac, state, connectionName: vm.connectionName });
+}
+
+export function changeVmAutostart({ vm, autostart }) {
+    return virt(CHANGE_VM_AUTOSTART, { connectionName: vm.connectionName, vmName: vm.name, autostart: autostart });
 }
 
 export function checkLibvirtStatus(serviceName) {
@@ -160,7 +165,7 @@ export function getStorageVolumes({ connectionName, poolName }) {
     return virt(GET_STORAGE_VOLUMES, { connectionName, poolName });
 }
 
-export function getVm({connectionName, name, id, updateOnly = false}) {
+export function getVm({ connectionName, name, id, updateOnly = false }) {
     return virt(GET_VM, {
         connectionName,
         name,

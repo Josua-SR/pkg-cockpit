@@ -1337,6 +1337,10 @@ return plural;
   "de $0 nucli de CPU",
   "de $0 nuclis de CPU"
  ],
+ "undefined": [
+  null,
+  "indefinit"
+ ],
  "unknown": [
   null,
   "desconegut"
