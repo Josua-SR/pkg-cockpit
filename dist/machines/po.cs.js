@@ -347,6 +347,10 @@ return plural;
   null,
   "Zdroj instalace je třeba vyplnit"
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Invalid filename": [
   null,
   "Neplatný název souboru"
@@ -407,17 +411,13 @@ return plural;
   null,
   "Síťový souborový systém"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "Typ sítě"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
-  "Nastavení sítě se nepodařilo uložit"
- ],
- "Networks": [
-  null,
-  "Sítě"
+  ""
  ],
  "New Volume Name": [
   null,
@@ -557,7 +557,7 @@ return plural;
  ],
  "Run when host boots": [
   null,
-  ""
+  "Spustit při startu stroje"
  ],
  "SPICE": [
   null,

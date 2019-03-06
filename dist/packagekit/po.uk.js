@@ -67,6 +67,12 @@ return plural;
   "language": "uk",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Package": [
+  "$0 Packages",
+  "$0 пакунок",
+  "$0 пакунки",
+  "$0 пакунків"
+ ],
  "$0 is not available from any repository.": [
   null,
   "$0 немає у жодному зі сховищ."
@@ -296,14 +302,6 @@ return plural;
  "System is up to date": [
   null,
   "Система не потребує оновлення"
- ],
- "The following packages were recently updated:": [
-  null,
-  "Нещодавно було оновлено такі пакунки:"
- ],
- "The following packages were updated $0:": [
-  null,
-  "Оновлено такі пакунки $0:"
  ],
  "This system is not registered": [
   null,

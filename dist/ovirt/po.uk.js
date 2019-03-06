@@ -371,6 +371,10 @@ return plural;
   null,
   "Встановити"
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Launch Remote Viewer": [
   null,
   "Запустити віддалений переглядач"
@@ -431,17 +435,13 @@ return plural;
   null,
   "Назва"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "Тип мережі"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
-  "Не вдалося зберегти параметри мережі"
- ],
- "Networks": [
-  null,
-  "Мережі"
+  ""
  ],
  "New Volume Name": [
   null,
@@ -609,7 +609,7 @@ return plural;
  ],
  "Run when host boots": [
   null,
-  ""
+  "Запустити під час завантаження основної системи"
  ],
  "Running Since:": [
   null,

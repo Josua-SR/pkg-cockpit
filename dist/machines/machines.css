@@ -1,5 +1,5 @@
-.notification-message {
-    white-space: pre-wrap;
+.machines-more-button {
+    padding-left: 10px;
 }
 a {
     cursor: pointer;
@@ -274,8 +274,11 @@ table.delete-dialog-disks.table tbody tr td:nth-child(3) {
 .header {
     padding-bottom: 10px;
 }
+.notification-message {
+    white-space: pre-wrap;
+}
 .file-autocomplete-ct input {
-    padding-right: 24px;
+    padding-right: 38px;
 }
 
 .file-autocomplete-ct ul {
@@ -301,24 +304,50 @@ table.delete-dialog-disks.table tbody tr td:nth-child(3) {
     padding: 0;
 }
 
-.file-autocomplete-ct span.spinner,
-.file-autocomplete-ct span.caret {
+.file-autocomplete-ct .spinner,
+.file-autocomplete-ct .caret {
     position: absolute;
     top: 7px;
     z-index: 9;
 }
 
-.file-autocomplete-ct span.caret {
-    width: 1.5em;
-    height: 1.5em;
+.file-autocomplete-ct .caret {
+    top: 0;
+    height: 26px;
     cursor: pointer;
     pointer-events: all;
+    padding: 0 23px 0 12px;
 }
-.machines-more-button {
-    padding-left: 10px;
+
+.file-autocomplete-ct .caret:before {
+    position: static;
+}
+.pficon-warning-triangle-o {
+    color: #ec7a08; /* pf-orange-400 */
+    font-size: 16px;
+}
+
+.modal-footer .pficon-warning-triangle-o {
+    line-height: inherit;
+    margin-right: 0.5rem;
+}
+
+.storage-volumes-actions {
+    float: right;
 }
 .pool-create > .modal-dialog {
     max-width: 50rem;
+}
+.networks-page-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 1em;
+  align: left;
+}
+
+.label-title {
+  font-weight: 800;
+  text-align: left !important;
 }
 .input-group {
   width: 100%;
@@ -844,13 +873,14 @@ tbody tr.listing-ct-noexpand {
   --ct-form-layout-columns: 2;
 }
 .ct-form-layout {
+  align-self: start;
   display: grid;
   grid-gap: 5px 10px;
   grid-template-columns: repeat(var(--ct-form-layout-columns), max-content 1fr);
   place-items: baseline stretch;
 }
 .ct-form-layout > .control-label {
-  align-self: flex-start;
+  align-self: start;
   text-align: right;
 }
 .ct-form-layout > :not(.control-label):not(hr):not(.ct-form-layout-split) {
@@ -2760,7 +2790,7 @@ table.vcpu-detail-modal-right .btn-group.bootstrap-select.dropdown {
   line-height: inherit;
   margin-right: 0.5rem;
 }
-.storage-pool-listing-breadcrumb {
+.machines-listing-breadcrumb {
   padding-left: 20px !important;
 }
 td > .utilization-bar-pf {

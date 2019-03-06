@@ -36,7 +36,7 @@ export class StoragePoolList extends React.Component {
 
         return (
             <React.Fragment>
-                <Breadcrumb className='storage-pool-listing-breadcrumb' title>
+                <Breadcrumb className='machines-listing-breadcrumb' title>
                     <Breadcrumb.Item onClick={() => this.props.changeActiveList(1)}>
                         {_("Virtual Machines")}
                     </Breadcrumb.Item>

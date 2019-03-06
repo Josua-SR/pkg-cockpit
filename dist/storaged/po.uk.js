@@ -453,10 +453,6 @@ return plural;
   null,
   "Нетипові параметри шифрування"
  ],
- "Custom mount option": [
-  null,
-  "Нетиповий параметр монтування"
- ],
  "Custom mount options": [
   null,
   "Нетипові параметри монтування"
@@ -701,6 +697,10 @@ return plural;
   null,
   "Збільшити"
  ],
+ "Grow Content": [
+  null,
+  ""
+ ],
  "Grow Logical Volume": [
   null,
   "Збільшити логічний том"
@@ -856,10 +856,6 @@ return plural;
  "Mount at boot": [
   null,
   "Змонтувати при завантаженні"
- ],
- "Mount options": [
-  null,
-  "Параметри монтування"
  ],
  "Mount point can not be empty": [
   null,
@@ -1321,6 +1317,10 @@ return plural;
   null,
   "Зміна розміру $target"
  ],
+ "Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase.": [
+  null,
+  ""
+ ],
  "Running": [
   null,
   "Працює"
@@ -1384,6 +1384,10 @@ return plural;
  "Shrink Logical Volume": [
   null,
   "Стиснути логічний том"
+ ],
+ "Shrink Volume": [
+  null,
+  ""
  ],
  "Size": [
   null,
@@ -1593,6 +1597,10 @@ return plural;
   null,
   "Цей диск не можна вилучати, доки пристрій перебуває у стані відновлення."
  ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  ""
+ ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "Перш ніж розмір цього тому можна буде змінювати, його слід активувати."
@@ -1753,9 +1761,17 @@ return plural;
   null,
   "Групи томів"
  ],
+ "Volume size is $0. Content size is $1.": [
+  null,
+  ""
+ ],
  "Waiting for other software management operations to finish": [
   null,
   "Очікуємо на завершення інших дій із програмним забезпеченням"
+ ],
+ "Warning": [
+  null,
+  ""
  ],
  "What if tang-show-keys is not available?": [
   null,

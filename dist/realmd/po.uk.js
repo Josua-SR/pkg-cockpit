@@ -83,9 +83,9 @@ return plural;
   null,
   "Пароль адміністратора"
  ],
- "After leaving the domain, only users with local credentials will be able                to log into this machine. This may also affect other services as DNS resolution settings and                the list of trusted CAs may change.": [
+ "After leaving the domain, only users with local credentials will be able to log into this machine. This may also affect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  ""
+  "Після полишення цього домену лише користувачі із локальними реєстраційними даними зможуть входити до системи на цій машині. Це також може вплинути на роботу інших служб, оскільки можуть змінитися параметри визначення адрес DNS та список довірених служб сертифікації."
  ],
  "Authentication": [
   null,

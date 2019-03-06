@@ -204,6 +204,15 @@ $(function() {
                 active_state = load_state + " / " + active_state;
 
             unit.CombinedState = active_state;
+            unit.AutomaticStartup = _("Static");
+            unit.AutomaticStartupIndex = 3;
+            if (unit.UnitFileState && startsWith(unit.UnitFileState, 'enabled')) {
+                unit.AutomaticStartup = _("Enabled");
+                unit.AutomaticStartupIndex = 1;
+            } else if (unit.UnitFileState && startsWith(unit.UnitFileState, 'disabled')) {
+                unit.AutomaticStartup = _("Disabled");
+                unit.AutomaticStartupIndex = 2;
+            }
 
             if (unit.Id.slice(-5) == "timer") {
                 unit.is_timer = true;
@@ -258,20 +267,23 @@ $(function() {
         mustache.parse(units_template);
 
         function render_now() {
-            var pattern = $('#services-filter button.active').attr('data-pattern');
+            $("#loading-fallback").hide();
+            var pattern = $('#services-filter li.active').attr('data-pattern');
+            var current_text_filter = $('#services-text-filter').val()
+                    .toLowerCase();
+            var current_type_filter = parseInt($('#current-service-type').attr("data-num"));
 
             function cmp_path(a, b) { return units_by_path[a].Id.localeCompare(units_by_path[b].Id) }
             var sorted_keys = Object.keys(units_by_path).sort(cmp_path);
-            var enabled = [ ];
-            var disabled = [ ];
-            var statics = [ ];
+            var units = [ ];
             var header = {
                 Description: _("Description"),
-                Id: _("Id"),
+                Id: _("Name"),
                 is_timer: (~pattern.indexOf("timer")),
                 Next_Run_Time: _("Next Run"),
                 Last_Trigger_Time: _("Last Trigger"),
-                Current_State: _("State")
+                Current_State: _("State"),
+                Automatic_Startup: _("Automatic Startup")
             };
             if (header.is_timer)
                 $('#create-timer').show();
@@ -283,26 +295,23 @@ $(function() {
                     return;
                 if (unit.LoadState == "not-found")
                     return;
-                if (unit.UnitFileState && startsWith(unit.UnitFileState, 'enabled'))
-                    enabled.push(unit);
-                else if (unit.UnitFileState && startsWith(unit.UnitFileState, 'disabled'))
-                    disabled.push(unit);
-                else
-                    statics.push(unit);
+                if (current_text_filter && unit.Description.toLowerCase().indexOf(current_text_filter) == -1 &&
+                                           unit.Id.indexOf(current_text_filter) == -1)
+                    return;
+                if (current_type_filter !== 0 && current_type_filter !== unit.AutomaticStartupIndex)
+                    return;
+                units.push(unit);
             });
 
-            function fill_table(parent, heading, units) {
-                var text = mustache.render(units_template, {
-                    heading: heading,
+            var text = "";
+            if (units.length > 0)
+                text = mustache.render(units_template, {
                     table_head: header,
                     units: units
                 });
-                parent.html(text);
-            }
-
-            fill_table($('#services-list-enabled'), _("Enabled"), enabled);
-            fill_table($('#services-list-disabled'), _("Disabled"), disabled);
-            fill_table($('#services-list-static'), _("Static"), statics);
+            else
+                text = mustache.render(empty_template);
+            $("#services-list").html(text);
         }
 
         var render_holdoff_timer;
@@ -324,6 +333,16 @@ $(function() {
                 render_now();
             }
         }
+
+        function clear_filters() {
+            $("#services-text-filter").val("");
+            $('#current-service-type').attr("data-num", 0);
+            $('#current-service-type').text(_("All"));
+            render();
+        }
+
+        $("#services-text-filter").on("input", render);
+        $(document).on("click", "#clear-all-filters", clear_filters);
 
         var update_run = 0;
 
@@ -471,13 +490,20 @@ $(function() {
             update_all();
         });
 
-        $('#services-filter button').on('click', function() {
-            $('#services-filter button')
+        $('#services-filter li').on('click', function() {
+            $('#services-filter li')
                     .removeClass('active')
                     .removeAttr('aria-current');
             $(this)
                     .addClass('active')
                     .attr('aria-current', true);
+            render();
+        });
+
+        $('#services-dropdown .dropdown-menu li').on('click', function() {
+            var selected = $(this).children(":first");
+            $("#current-service-type").text(selected.text());
+            $("#current-service-type").attr("data-num", selected.attr("data-num"));
             render();
         });
 
@@ -513,6 +539,9 @@ $(function() {
 
     var template_template = $("#service-template-tmpl").html();
     mustache.parse(template_template);
+
+    var empty_template = $("#service-empty-tmpl").html();
+    mustache.parse(empty_template);
 
     var unit_primary_actions = [ // <method>:<mode>
         { title: _("Start"), action: 'StartUnit' },
@@ -862,8 +891,6 @@ $(function() {
     function update() {
         var path = cockpit.location.path;
 
-        ensure_units();
-
         if (path.length === 0) {
             show_unit(null);
             $("#services").show();
@@ -875,6 +902,7 @@ $(function() {
             cockpit.location = '';
         }
         $("body").show();
+        ensure_units();
     }
 
     $(cockpit).on("locationchanged", update);

@@ -158,6 +158,18 @@ export function getDomainElem(domXml) {
     return xmlDoc.getElementsByTagName("domain")[0];
 }
 
+function getNetworkElem(netXml) {
+    let parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(netXml, "application/xml");
+
+    if (!xmlDoc) {
+        console.warn(`Can't parse dumpxml, input: "${netXml}"`);
+        return;
+    }
+
+    return xmlDoc.getElementsByTagName("network")[0];
+}
+
 function getStoragePoolElem(poolXml) {
     let parser = new DOMParser();
     const xmlDoc = parser.parseFromString(poolXml, "application/xml");
@@ -493,6 +505,78 @@ export function parseDumpxmlMachinesMetadataElement(metadataElem, name) {
     return subElems.length > 0 ? subElems[0].textContent : null;
 }
 
+export function parseNetDumpxml(netXml) {
+    const netElem = getNetworkElem(netXml);
+    if (!netElem) {
+        return;
+    }
+
+    const forwardElem = netElem.getElementsByTagName("forward")[0];
+    const bridgeElem = netElem.getElementsByTagName("bridge")[0];
+    const ipElems = netElem.getElementsByTagName("ip");
+    const mtuElem = netElem.getElementsByTagName("mtu")[0];
+
+    const ip = parseNetDumpxmlForIp(ipElems);
+    const device = bridgeElem ? bridgeElem.getAttribute("name") : undefined;
+    const mtu = mtuElem ? mtuElem.getAttribute("size") : undefined;
+    let mode = forwardElem ? forwardElem.getAttribute("mode") : "none";
+    if (!mode)
+        mode = "nat"; // if mode is not specified, "nat" is assumed, see https://libvirt.org/formatnetwork.html#elementsConnect
+
+    return { device, ip, mode, mtu };
+}
+
+function parseNetDumpxmlForIp(ipElems) {
+    let ip = [];
+
+    for (let i = 0; i < ipElems.length; i++) {
+        const ipElem = ipElems[i];
+
+        let family = ipElem.getAttribute("family");
+        if (!family)
+            family = "ipv4";
+        const address = ipElem.getAttribute("address");
+        const netmask = ipElem.getAttribute("netmask");
+        const prefix = ipElem.getAttribute("prefix");
+        const dhcpElem = ipElem.getElementsByTagName("dhcp")[0];
+
+        let rangeElem;
+        let dhcpHosts = [];
+        if (dhcpElem) {
+            rangeElem = dhcpElem.getElementsByTagName("range")[0];
+            const hostElems = dhcpElem.getElementsByTagName("host");
+
+            for (let i = 0; i < hostElems.length; i++) {
+                const host = {
+                    ip : hostElems[i].getAttribute("ip"),
+                    name : hostElems[i].getAttribute("name"),
+                    mac : hostElems[i].getAttribute("mac"),
+                    id : hostElems[i].getAttribute("id"),
+                };
+                dhcpHosts.push(host);
+            }
+        }
+
+        const tmp = {
+            address: address,
+            family: family,
+            netmask: netmask,
+            prefix: prefix,
+            dhcp : {
+                range : {
+                    start : rangeElem ? rangeElem.getAttribute("start") : undefined,
+                    end : rangeElem ? rangeElem.getAttribute("end") : undefined,
+                },
+                hosts: dhcpHosts,
+            },
+        };
+
+        ip.push(tmp);
+    }
+
+    return ip;
+}
+
 export function parseOsInfoList(dispatch, osList) {
     const osColumnsNames = ['shortId', 'name', 'version', 'family', 'vendor', 'releaseDate', 'eolDate', 'codename'];
     let parsedList = [];
@@ -701,7 +785,7 @@ export function CONSOLE_VM({
     };
 }
 
-export function CREATE_VM({ connectionName, vmName, source, os, memorySize, storageSize, startVm }) {
+export function CREATE_VM({ connectionName, vmName, source, sourceType, os, memorySize, storageSize, startVm }) {
     logDebug(`${this.name}.CREATE_VM(${vmName}):`);
     return dispatch => {
         // shows dummy vm  until we get vm from virsh (cleans up inProgress)
@@ -715,6 +799,7 @@ export function CREATE_VM({ connectionName, vmName, source, os, memorySize, stor
             connectionName,
             vmName,
             source,
+            sourceType,
             os,
             memorySize,
             storageSize,

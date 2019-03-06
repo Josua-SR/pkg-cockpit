@@ -51,7 +51,8 @@ import VMS_CONFIG from '../../config.js';
 const _ = cockpit.gettext;
 
 const URL_SOURCE = 'url';
-const COCKPIT_FILESYSTEM_SOURCE = 'file';
+const LOCAL_INSTALL_MEDIA_SOURCE = 'file';
+const EXISTING_DISK_IMAGE_SOURCE = 'disk_image';
 
 /* Create a virtual machine
  * props:
@@ -184,12 +185,22 @@ class CreateVM extends React.Component {
         let installationSource;
         let installationSourceId;
         switch (this.state.sourceType) {
-        case COCKPIT_FILESYSTEM_SOURCE:
+        case LOCAL_INSTALL_MEDIA_SOURCE:
             installationSourceId = "source-file";
             installationSource = (
                 <FileAutoComplete id={installationSourceId}
                     placeholder={_("Path to ISO file on host's file system")}
-                    onChange={this.onChangedValue.bind(this, 'source')} />
+                    onChange={this.onChangedValue.bind(this, 'source')}
+                    superUser="try" />
+            );
+            break;
+        case EXISTING_DISK_IMAGE_SOURCE:
+            installationSourceId = "source-disk";
+            installationSource = (
+                <FileAutoComplete id={installationSourceId}
+                    placeholder={_("Existing disk image on host's file system")}
+                    onChange={this.onChangedValue.bind(this, 'source')}
+                    superuser="try" />
             );
             break;
         case URL_SOURCE:
@@ -256,9 +267,10 @@ class CreateVM extends React.Component {
                 <Select.Select id="source-type"
                                initial={this.state.sourceType}
                                onChange={this.onChangedValue.bind(this, 'sourceType')}>
-                    <Select.SelectEntry data={COCKPIT_FILESYSTEM_SOURCE}
-                                        key={COCKPIT_FILESYSTEM_SOURCE}>{_("Filesystem")}</Select.SelectEntry>
+                    <Select.SelectEntry data={LOCAL_INSTALL_MEDIA_SOURCE}
+                                        key={LOCAL_INSTALL_MEDIA_SOURCE}>{_("Local Install Media")}</Select.SelectEntry>
                     <Select.SelectEntry data={URL_SOURCE} key={URL_SOURCE}>{_("URL")}</Select.SelectEntry>
+                    <Select.SelectEntry data={EXISTING_DISK_IMAGE_SOURCE} key={EXISTING_DISK_IMAGE_SOURCE}>{_("Existing Disk Image")}</Select.SelectEntry>
                 </Select.Select>
 
                 <label className="control-label" htmlFor={installationSourceId}>
@@ -294,12 +306,13 @@ class CreateVM extends React.Component {
                                  onValueChange={this.onChangedEventValue.bind(this, 'memorySize')}
                                  onUnitChange={this.onChangedValue.bind(this, 'memorySizeUnit')} />
 
+                {this.state.sourceType != EXISTING_DISK_IMAGE_SOURCE &&
                 <MemorySelectRow label={_("Storage Size")}
                                  id={"storage-size"}
                                  value={this.state.storageSize}
                                  initialUnit={this.state.storageSizeUnit}
                                  onValueChange={this.onChangedEventValue.bind(this, 'storageSize')}
-                                 onUnitChange={this.onChangedValue.bind(this, 'storageSizeUnit')} />
+                                 onUnitChange={this.onChangedValue.bind(this, 'storageSizeUnit')} />}
 
                 <hr />
 
@@ -334,7 +347,8 @@ function validateParams(vmParams) {
 
     if (!isEmpty(source)) {
         switch (vmParams.sourceType) {
-        case COCKPIT_FILESYSTEM_SOURCE:
+        case LOCAL_INSTALL_MEDIA_SOURCE:
+        case EXISTING_DISK_IMAGE_SOURCE:
             if (!vmParams.source.startsWith("/")) {
                 validationFailed['source'] = _("Invalid filename");
             }
@@ -363,7 +377,7 @@ class CreateVmModal extends React.Component {
             'validate': false,
             'vmName': '',
             'connectionName': LIBVIRT_SYSTEM_CONNECTION,
-            "sourceType": COCKPIT_FILESYSTEM_SOURCE,
+            "sourceType": LOCAL_INSTALL_MEDIA_SOURCE,
             'source': '',
             'vendor': NOT_SPECIFIED,
             "os": OTHER_OS_SHORT_ID,

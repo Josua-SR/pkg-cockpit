@@ -829,13 +829,14 @@ tbody tr.listing-ct-noexpand {
   --ct-form-layout-columns: 2;
 }
 .ct-form-layout {
+  align-self: start;
   display: grid;
   grid-gap: 5px 10px;
   grid-template-columns: repeat(var(--ct-form-layout-columns), max-content 1fr);
   place-items: baseline stretch;
 }
 .ct-form-layout > .control-label {
-  align-self: flex-start;
+  align-self: start;
   text-align: right;
 }
 .ct-form-layout > :not(.control-label):not(hr):not(.ct-form-layout-split) {
@@ -2745,7 +2746,7 @@ table.vcpu-detail-modal-right .btn-group.bootstrap-select.dropdown {
   line-height: inherit;
   margin-right: 0.5rem;
 }
-.storage-pool-listing-breadcrumb {
+.machines-listing-breadcrumb {
   padding-left: 20px !important;
 }
 td > .utilization-bar-pf {

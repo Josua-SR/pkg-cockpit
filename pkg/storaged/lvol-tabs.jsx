@@ -22,8 +22,8 @@ import * as utils from "./utils.js";
 
 import React from "react";
 import { StorageButton, StorageLink } from "./storage-controls.jsx";
-import { clevis_recover_passphrase } from "./crypto-keyslots.jsx";
-import { dialog_open, TextInput, PassInput, SizeSlider, BlockingMessage, TeardownMessage } from "./dialog.jsx";
+import { existing_passphrase_fields, get_existing_passphrase } from "./crypto-keyslots.jsx";
+import { dialog_open, TextInput, SizeSlider, BlockingMessage, TeardownMessage } from "./dialog.jsx";
 
 const _ = cockpit.gettext;
 
@@ -59,7 +59,10 @@ function lvol_and_fsys_resize(client, lvol, size, offline, passphrase) {
             return;
         fsys = client.blocks_fsys[cleartext.path];
         vdo = client.vdo_overlay.find_by_backing_block(cleartext);
-        crypto_overhead = block.Size - cleartext.Size;
+        if (crypto.MetadataSize !== undefined)
+            crypto_overhead = crypto.MetadataSize;
+        else
+            crypto_overhead = block.Size - cleartext.Size;
     } else {
         fsys = client.blocks_fsys[block.path];
         vdo = client.vdo_overlay.find_by_backing_block(block);
@@ -69,17 +72,21 @@ function lvol_and_fsys_resize(client, lvol, size, offline, passphrase) {
     function fsys_resize() {
         if (fsys) {
             // When doing an offline resize, we need to first repair the filesystem.
-            if (offline) {
+            if (offline || fsys.MountPoints.length === 0) {
                 return fsys.Repair({ }).then(function () { return fsys.Resize(size - crypto_overhead, { }) });
             } else {
                 return fsys.Resize(size - crypto_overhead, { });
             }
+        } else if (vdo) {
+            if (size - crypto_overhead > vdo.physical_size)
+                return vdo.grow_physical();
+            else if (size - crypto_overhead < vdo.physical_size)
+                return cockpit.reject(_("VDO backing devices can not be made smaller"));
+            else
+                return cockpit.resolve();
         } else if (size < orig_size) {
             // This shouldn't happen.  But if it does, continuing is harmful, so we throw an error.
-            console.warn("Trying to shrink unrecognized content.  Ignored.");
-            return cockpit.reject();
-        } else if (vdo) {
-            return vdo.grow_physical();
+            return cockpit.reject(_("Unrecognized data can not be made smaller here."));
         } else {
             // Growing unrecognized content, nothing to do.
             return cockpit.resolve();
@@ -98,7 +105,10 @@ function lvol_and_fsys_resize(client, lvol, size, offline, passphrase) {
     }
 
     function lvm_resize() {
-        return lvol.Resize(size, { });
+        if (size != lvol.Size)
+            return lvol.Resize(size, { });
+        else
+            return cockpit.resolve();
     }
 
     if (fsys && !fsys.Resize) {
@@ -110,31 +120,76 @@ function lvol_and_fsys_resize(client, lvol, size, offline, passphrase) {
         if (size < orig_size) {
             return fsys_resize().then(crypto_resize)
                     .then(lvm_resize);
-        } else if (size > orig_size) {
+        } else if (size >= orig_size) {
             return lvm_resize().then(crypto_resize)
                     .then(fsys_resize);
         }
     }
 }
 
-function figure_out_passphrase(block, dlg) {
-    // TODO - absorb this step into the dialog, like the key slot
-    // dialogs do, once this is rewritten in React.
+export function get_resize_info(client, block, to_fit) {
+    let info, shrink_excuse, grow_excuse;
 
-    if (block && block.IdType == "crypto_LUKS" && block.IdVersion == 2) {
-        clevis_recover_passphrase(block).then(passphrase => {
-            if (passphrase == "") {
-                dlg(true);
+    if (block) {
+        if (block.IdUsage == 'crypto' && client.blocks_crypto[block.path]) {
+            var encrypted = client.blocks_crypto[block.path];
+            var cleartext = client.blocks_cleartext[block.path];
+
+            if (!encrypted.Resize) {
+                info = { };
+                shrink_excuse = grow_excuse = _("Encrypted volumes can not be resized here.");
+            } else if (!cleartext) {
+                info = { };
+                shrink_excuse = grow_excuse = _("Encrypted volumes need to be unlocked before they can be resized.");
             } else {
-                dlg(false, passphrase);
+                return get_resize_info(client, cleartext, to_fit);
             }
-        });
+        } else if (block.IdUsage == 'filesystem') {
+            info = client.fsys_info[block.IdType];
+
+            if (!info) {
+                info = { };
+                shrink_excuse = grow_excuse = cockpit.format(_("$0 filesystems can not be resized here."),
+                                                             block.IdType);
+            } else {
+                if (!info.can_shrink)
+                    shrink_excuse = cockpit.format(_("$0 filesystems can not be made smaller."),
+                                                   block.IdType);
+                if (!info.can_grow)
+                    grow_excuse = cockpit.format(_("$0 filesystems can not be made larger."),
+                                                 block.IdType);
+            }
+        } else if (block.IdUsage == 'raid') {
+            info = { };
+            shrink_excuse = grow_excuse = _("Physical volumes can not be resized here.");
+        } else if (client.vdo_overlay.find_by_backing_block(block)) {
+            info = {
+                can_shrink: false,
+                can_grow: true,
+                grow_needs_unmount: false
+            };
+            shrink_excuse = _("VDO backing devices can not be made smaller");
+        } else {
+            info = {
+                can_shrink: false,
+                can_grow: true,
+                grow_needs_unmount: true
+            };
+            shrink_excuse = _("Unrecognized data can not be made smaller here.");
+        }
+        if (to_fit) {
+            // Shrink to fit doesn't need to resize the content
+            shrink_excuse = null;
+        }
     } else {
-        dlg(false, null);
+        info = { };
+        shrink_excuse = grow_excuse = _("This volume needs to be activated before it can be resized.");
     }
+
+    return { info: info, shrink_excuse: shrink_excuse, grow_excuse: grow_excuse };
 }
 
-function lvol_grow(client, lvol, info) {
+export function lvol_grow(client, lvol, info, to_fit) {
     var block = client.lvols_block[lvol.path];
     var vgroup = client.vgroups[lvol.VolumeGroup];
     var pool = client.lvols[lvol.ThinPool];
@@ -148,40 +203,57 @@ function lvol_grow(client, lvol, info) {
         return;
     }
 
-    figure_out_passphrase(block, (need_explicit_passphrase, passphrase) => {
-        dialog_open({ Title: _("Grow Logical Volume"),
-                      Footer: TeardownMessage(usage),
-                      Fields: [
-                          SizeSlider("size", _("Size"),
-                                     { value: lvol.Size,
-                                       min: lvol.Size,
-                                       max: (pool ? pool.Size * 3 : lvol.Size + vgroup.FreeSize),
-                                       allow_infinite: !!pool,
-                                       round: vgroup.ExtentSize
-                                     }),
-                          PassInput("passphrase", _("Passphrase"),
-                                    { visible: () => need_explicit_passphrase })
-                      ],
-                      Action: {
-                          Title: _("Grow"),
-                          action: function (vals) {
-                              return utils.teardown_active_usage(client, usage)
-                                      .then(function () {
-                                          return lvol_and_fsys_resize(client, lvol, vals.size,
-                                                                      info.grow_needs_unmount,
-                                                                      passphrase || vals.passphrase);
-                                      });
-                          }
-                      }
-        });
+    let grow_size;
+    let size_fields = [ ];
+    if (!to_fit) {
+        size_fields = [
+            SizeSlider("size", _("Size"),
+                       { value: lvol.Size,
+                         min: lvol.Size,
+                         max: (pool ? pool.Size * 3 : lvol.Size + vgroup.FreeSize),
+                         allow_infinite: !!pool,
+                         round: vgroup.ExtentSize
+                       })
+        ];
+    } else {
+        grow_size = block.Size;
+    }
+
+    let recovered_passphrase;
+    let passphrase_fields = [ ];
+    if (block && block.IdType == "crypto_LUKS" && block.IdVersion == 2)
+        passphrase_fields = existing_passphrase_fields(_("Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase."));
+
+    if (!usage.Teardown && size_fields.length + passphrase_fields.length === 0) {
+        return lvol_and_fsys_resize(client, lvol, grow_size, info.grow_needs_unmount, null);
+    }
+
+    let dlg = dialog_open({ Title: _("Grow Logical Volume"),
+                            Footer: TeardownMessage(usage),
+                            Fields: size_fields.concat(passphrase_fields),
+                            Action: {
+                                Title: _("Grow"),
+                                action: function (vals) {
+                                    return utils.teardown_active_usage(client, usage)
+                                            .then(function () {
+                                                return lvol_and_fsys_resize(client, lvol,
+                                                                            to_fit ? grow_size : vals.size,
+                                                                            info.grow_needs_unmount,
+                                                                            vals.passphrase || recovered_passphrase);
+                                            });
+                                }
+                            }
     });
+
+    if (passphrase_fields.length)
+        get_existing_passphrase(dlg, block).then(pp => { recovered_passphrase = pp });
 }
 
-function lvol_shrink(client, lvol, info) {
+export function lvol_shrink(client, lvol, info, to_fit) {
     var block = client.lvols_block[lvol.path];
     var vgroup = client.vgroups[lvol.VolumeGroup];
 
-    var usage = utils.get_active_usage(client, block && info.shrink_needs_unmount ? block.path : null);
+    var usage = utils.get_active_usage(client, block && !to_fit && info.shrink_needs_unmount ? block.path : null);
 
     if (usage.Blocking) {
         dialog_open({ Title: cockpit.format(_("$0 is in active use"), lvol.Name),
@@ -190,31 +262,73 @@ function lvol_shrink(client, lvol, info) {
         return;
     }
 
-    figure_out_passphrase(block, (need_explicit_passphrase, passphrase) => {
-        dialog_open({ Title: _("Shrink Logical Volume"),
-                      Footer: TeardownMessage(usage),
-                      Fields: [
-                          SizeSlider("size", _("Size"),
-                                     { value: lvol.Size,
-                                       max: lvol.Size,
-                                       round: vgroup.ExtentSize
-                                     }),
-                          PassInput("passphrase", _("Passphrase"),
-                                    { visible: () => need_explicit_passphrase })
-                      ],
-                      Action: {
-                          Title: _("Shrink"),
-                          action: function (vals) {
-                              return utils.teardown_active_usage(client, usage)
-                                      .then(function () {
-                                          return lvol_and_fsys_resize(client, lvol, vals.size,
-                                                                      info.shrink_needs_unmount,
-                                                                      passphrase || vals.passphrase);
-                                      });
-                          }
-                      }
-        });
+    let shrink_size;
+    let size_fields = [ ];
+    if (!to_fit) {
+        size_fields = [
+            SizeSlider("size", _("Size"),
+                       { value: lvol.Size,
+                         max: lvol.Size,
+                         round: vgroup.ExtentSize
+                       })
+        ];
+    } else {
+        let crypto = client.blocks_crypto[block.path];
+        let cleartext = client.blocks_cleartext[block.path];
+        let content_path = null;
+        let crypto_overhead = 0;
+
+        if (crypto) {
+            if (crypto.MetadataSize !== undefined && cleartext) {
+                content_path = cleartext.path;
+                crypto_overhead = crypto.MetadataSize;
+            }
+        } else {
+            content_path = block.path;
+        }
+
+        let fsys = client.blocks_fsys[content_path];
+        if (fsys)
+            shrink_size = fsys.Size + crypto_overhead;
+
+        let vdo = client.vdo_overlay.find_by_backing_block(client.blocks[content_path]);
+        if (vdo)
+            shrink_size = vdo.physical_size + crypto_overhead;
+
+        if (shrink_size === undefined) {
+            console.warn("Couldn't determine size to shrink to.");
+            return;
+        }
+    }
+
+    let recovered_passphrase;
+    let passphrase_fields = [ ];
+    if (block && block.IdType == "crypto_LUKS" && block.IdVersion == 2)
+        passphrase_fields = existing_passphrase_fields(_("Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase."));
+
+    if (!usage.Teardown && size_fields.length + passphrase_fields.length === 0) {
+        return lvol_and_fsys_resize(client, lvol, shrink_size, false, null);
+    }
+
+    let dlg = dialog_open({ Title: _("Shrink Logical Volume"),
+                            Footer: TeardownMessage(usage),
+                            Fields: size_fields.concat(passphrase_fields),
+                            Action: {
+                                Title: _("Shrink"),
+                                action: function (vals) {
+                                    return utils.teardown_active_usage(client, usage)
+                                            .then(function () {
+                                                return lvol_and_fsys_resize(client, lvol,
+                                                                            to_fit ? shrink_size : vals.size,
+                                                                            to_fit ? false : info.shrink_needs_unmount,
+                                                                            vals.passphrase || recovered_passphrase);
+                                            });
+                                }
+                            }
     });
+
+    if (passphrase_fields.length)
+        get_existing_passphrase(dlg, block).then(pp => { recovered_passphrase = pp });
 }
 
 export class BlockVolTab extends React.Component {
@@ -253,63 +367,7 @@ export class BlockVolTab extends React.Component {
             lvol_rename(lvol);
         }
 
-        function get_info(block) {
-            if (block) {
-                if (block.IdUsage == 'crypto' && client.blocks_crypto[block.path]) {
-                    var encrypted = client.blocks_crypto[block.path];
-                    var cleartext = client.blocks_cleartext[block.path];
-
-                    if (!encrypted.Resize) {
-                        info = { };
-                        shrink_excuse = grow_excuse = _("Encrypted volumes can not be resized here.");
-                    } else if (!cleartext) {
-                        info = { };
-                        shrink_excuse = grow_excuse = _("Encrypted volumes need to be unlocked before they can be resized.");
-                    } else {
-                        return get_info(cleartext);
-                    }
-                } else if (block.IdUsage == 'filesystem') {
-                    info = client.fsys_info[block.IdType];
-
-                    if (!info) {
-                        info = { };
-                        shrink_excuse = grow_excuse = cockpit.format(_("$0 filesystems can not be resized here."),
-                                                                     block.IdType);
-                    } else {
-                        if (!info.can_shrink)
-                            shrink_excuse = cockpit.format(_("$0 filesystems can not be made smaller."),
-                                                           block.IdType);
-                        if (!info.can_grow)
-                            grow_excuse = cockpit.format(_("$0 filesystems can not be made larger."),
-                                                         block.IdType);
-                    }
-                } else if (block.IdUsage == 'raid') {
-                    info = { };
-                    shrink_excuse = grow_excuse = _("Physical volumes can not be resized here.");
-                } else if (client.vdo_overlay.find_by_backing_block(block)) {
-                    info = {
-                        can_shrink: false,
-                        can_grow: true,
-                        grow_needs_unmount: false
-                    };
-                    shrink_excuse = _("VDO backing devices can not be made smaller");
-                } else {
-                    info = {
-                        can_shrink: false,
-                        can_grow: true,
-                        grow_needs_unmount: true
-                    };
-                    shrink_excuse = _("Unrecognized data can not be made smaller here.");
-                }
-            } else {
-                info = { };
-                shrink_excuse = grow_excuse = _("This volume needs to be activated before it can be resized.");
-            }
-
-            return { info: info, shrink_excuse: shrink_excuse, grow_excuse: grow_excuse };
-        }
-
-        var { info, shrink_excuse, grow_excuse } = get_info(block);
+        var { info, shrink_excuse, grow_excuse } = get_resize_info(client, block, false);
 
         if (!grow_excuse && !pool && vgroup.FreeSize == 0) {
             grow_excuse = (
@@ -322,11 +380,11 @@ export class BlockVolTab extends React.Component {
         }
 
         function shrink() {
-            lvol_shrink(client, lvol, info);
+            lvol_shrink(client, lvol, info, false);
         }
 
         function grow() {
-            lvol_grow(client, lvol, info);
+            lvol_grow(client, lvol, info, false);
         }
 
         return (

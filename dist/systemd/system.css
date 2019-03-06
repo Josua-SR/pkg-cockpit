@@ -235,13 +235,14 @@ input[type=number] {
   --ct-form-layout-columns: 2;
 }
 .ct-form-layout {
+  align-self: start;
   display: grid;
   grid-gap: 5px 10px;
   grid-template-columns: repeat(var(--ct-form-layout-columns), max-content 1fr);
   place-items: baseline stretch;
 }
 .ct-form-layout > .control-label {
-  align-self: flex-start;
+  align-self: start;
   text-align: right;
 }
 .ct-form-layout > :not(.control-label):not(hr):not(.ct-form-layout-split) {
@@ -1457,6 +1458,12 @@ body {
     white-space: nowrap;
 }
 
+@media screen and (max-width: 960px) {
+    .service-unit-data {
+        white-space: normal;
+    }
+}
+
 .service-unit-failed {
     color: red;
 }
@@ -1480,10 +1487,6 @@ body {
     width: 100%;
 }
 
-#services > .container-fluid {
-    margin-top: 5em;
-}
-
 .service-template input {
     width: 50em;
 }
@@ -1492,8 +1495,8 @@ body {
     padding-left: 10px;
 }
 
-#journal-box {
-    margin-top: 5em;
+.content-header-extra + #journal-box {
+    margin-top: 0.5rem;
 }
 
 #journal-entry-message:not(:empty) {
@@ -1528,7 +1531,7 @@ body {
     font-size: 13px;
 }
 
-.panel-heading {
+.panel-heading.problem-panel{
     cursor: pointer;
 }
 
@@ -1564,7 +1567,7 @@ body {
     border-bottom: 1px solid #ddd;
     padding: 10px 20px;
     width: 100%;
-    position: fixed;
+    position: sticky;
     z-index: 900;
     top: 0;
 }

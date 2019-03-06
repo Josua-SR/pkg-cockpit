@@ -453,10 +453,6 @@ return plural;
   null,
   "Uživatelsky určené předvolby šifrování"
  ],
- "Custom mount option": [
-  null,
-  "Uživatelsky určená předvolba připojení"
- ],
  "Custom mount options": [
   null,
   "Uživatelsky určené předvolby připojení"
@@ -701,6 +697,10 @@ return plural;
   null,
   "Zvětšit"
  ],
+ "Grow Content": [
+  null,
+  ""
+ ],
  "Grow Logical Volume": [
   null,
   "Zvětšit logický svazek"
@@ -856,10 +856,6 @@ return plural;
  "Mount at boot": [
   null,
   "Připojit při startu"
- ],
- "Mount options": [
-  null,
-  "Předvolby připojení"
  ],
  "Mount point can not be empty": [
   null,
@@ -1321,6 +1317,10 @@ return plural;
   null,
   "Mění se velikost $target"
  ],
+ "Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase.": [
+  null,
+  ""
+ ],
  "Running": [
   null,
   "Spuštěné"
@@ -1384,6 +1384,10 @@ return plural;
  "Shrink Logical Volume": [
   null,
   "Zmenšit logický svazek"
+ ],
+ "Shrink Volume": [
+  null,
+  ""
  ],
  "Size": [
   null,
@@ -1593,6 +1597,10 @@ return plural;
   null,
   "Disk není možné vyjmout v průběhu zotavování zařízení."
  ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  ""
+ ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "Než bude možné změnit jeho velikost je třeba, aby tento svazek byl aktivován."
@@ -1753,9 +1761,17 @@ return plural;
   null,
   "Skupiny svazků"
  ],
+ "Volume size is $0. Content size is $1.": [
+  null,
+  ""
+ ],
  "Waiting for other software management operations to finish": [
   null,
   "Čeká se na dokončení ostatních operací správy balíčků"
+ ],
+ "Warning": [
+  null,
+  ""
  ],
  "What if tang-show-keys is not available?": [
   null,
