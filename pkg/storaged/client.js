@@ -27,6 +27,8 @@ import inotify_py from "raw-loader!inotify.py";
 import nfs_mounts_py from "raw-loader!./nfs-mounts.py";
 import vdo_monitor_py from "raw-loader!./vdo-monitor.py";
 
+import { find_warnings } from "./warning-tab.jsx";
+
 /* STORAGED CLIENT
  */
 
@@ -394,14 +396,14 @@ function init_model(callback) {
     }
 
     function enable_vdo_features() {
-        return client.vdo_overlay.start()
-                .then(function (success) {
-                    client.features.vdo = success;
-                    return cockpit.resolve();
-                })
-                .fail(function () {
-                    return cockpit.resolve();
-                });
+        return client.vdo_overlay.start().then(
+            function (success) {
+                client.features.vdo = success;
+                return cockpit.resolve();
+            },
+            function () {
+                return cockpit.resolve();
+            });
     }
 
     function enable_clevis_features() {
@@ -510,9 +512,11 @@ function init_model(callback) {
 
             client.storaged_client.addEventListener('notify', function () {
                 update_indices();
+                client.path_warnings = find_warnings(client);
                 client.dispatchEvent("changed");
             });
             update_indices();
+            client.path_warnings = find_warnings(client);
         });
     });
 }
@@ -737,6 +741,7 @@ function vdo_overlay() {
         // just on the vdo_overlay since this data is used all
         // over the place...
 
+        client.path_warnings = find_warnings(client);
         client.dispatchEvent("changed");
     }
 
@@ -757,9 +762,6 @@ function vdo_overlay() {
                                     lines = buf.split("\n");
                                     buf = lines[lines.length - 1];
                                     if (lines.length >= 2) {
-                                        self.entries = JSON.parse(lines[lines.length - 2]);
-                                        self.fsys_sizes = { };
-                                        client.dispatchEvent('changed');
                                         update(JSON.parse(lines[lines.length - 2]));
                                     }
                                 })

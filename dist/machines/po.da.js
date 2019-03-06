@@ -347,6 +347,10 @@ return plural;
   null,
   ""
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Invalid filename": [
   null,
   ""
@@ -407,17 +411,13 @@ return plural;
   null,
   "Netværks Traffik"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
   "Netværks Traffik"
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
   ""
- ],
- "Networks": [
-  null,
-  "Netværks Traffik"
  ],
  "New Volume Name": [
   null,
@@ -552,6 +552,10 @@ return plural;
   ""
  ],
  "Run": [
+  null,
+  ""
+ ],
+ "Run when host boots": [
   null,
   ""
  ],

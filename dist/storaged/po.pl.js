@@ -453,10 +453,6 @@ return plural;
   null,
   "Niestandardowe opcje szyfrowania"
  ],
- "Custom mount option": [
-  null,
-  "Niestandardowa opcja montowania"
- ],
  "Custom mount options": [
   null,
   "Niestandardowe opcje montowania"
@@ -701,6 +697,10 @@ return plural;
   null,
   "Powiększ"
  ],
+ "Grow Content": [
+  null,
+  ""
+ ],
  "Grow Logical Volume": [
   null,
   "Powiększ wolumin logiczny"
@@ -856,10 +856,6 @@ return plural;
  "Mount at boot": [
   null,
   "Montowanie podczas uruchamiania"
- ],
- "Mount options": [
-  null,
-  "Opcje montowania"
  ],
  "Mount point can not be empty": [
   null,
@@ -1321,6 +1317,10 @@ return plural;
   null,
   "Zmienianie rozmiaru $target"
  ],
+ "Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase.": [
+  null,
+  ""
+ ],
  "Running": [
   null,
   "Działające"
@@ -1384,6 +1384,10 @@ return plural;
  "Shrink Logical Volume": [
   null,
   "Zmniejsz wolumin logiczny"
+ ],
+ "Shrink Volume": [
+  null,
+  ""
  ],
  "Size": [
   null,
@@ -1593,6 +1597,10 @@ return plural;
   null,
   "Ten dysk nie może zostać usunięty podczas przywracania urządzenia."
  ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  ""
+ ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "Ten wolumin musi zostać aktywowany przed zmianą rozmiaru."
@@ -1753,9 +1761,17 @@ return plural;
   null,
   "Grupy woluminów"
  ],
+ "Volume size is $0. Content size is $1.": [
+  null,
+  ""
+ ],
  "Waiting for other software management operations to finish": [
   null,
   "Oczekiwanie na ukończenie pozostałych działań zarządzania oprogramowaniem"
+ ],
+ "Warning": [
+  null,
+  ""
  ],
  "What if tang-show-keys is not available?": [
   null,

@@ -287,6 +287,10 @@ return plural;
   null,
   "Усе-в-одному"
  ],
+ "Appearance:": [
+  null,
+  "Вигляд:"
+ ],
  "Asset Tag": [
   null,
   "Мітка активу"
@@ -326,6 +330,10 @@ return plural;
  "Binds To": [
   null,
   "Пов'язано з"
+ ],
+ "Black": [
+  null,
+  "Чорний"
  ],
  "Blade": [
   null,
@@ -427,6 +435,10 @@ return plural;
   null,
   "Змінюваний"
  ],
+ "Copy": [
+  null,
+  "Копіювати"
+ ],
  "Create Timer": [
   null,
   "Створити таймер"
@@ -439,9 +451,17 @@ return plural;
   null,
   "Критичні і вище"
  ],
+ "Ctrl+Insert": [
+  null,
+  "Ctrl+Insert"
+ ],
  "Current boot": [
   null,
   "Поточне завантаження"
+ ],
+ "Dark": [
+  null,
+  "Темний"
  ],
  "Debug and above": [
   null,
@@ -675,6 +695,10 @@ return plural;
   null,
   "Останній перемикач"
  ],
+ "Light": [
+  null,
+  "Світлий"
+ ],
  "Load earlier entries": [
   null,
   "Завантажити попередні записи"
@@ -858,6 +882,10 @@ return plural;
  "Part Of": [
   null,
   "Частина"
+ ],
+ "Paste": [
+  null,
+  "Вставити"
  ],
  "Path": [
   null,
@@ -1070,6 +1098,10 @@ return plural;
  "Severity": [
   null,
   "Важливість"
+ ],
+ "Shift+Insert": [
+  null,
+  "Shift+Insert"
  ],
  "Show fingerprints": [
   null,
@@ -1320,6 +1352,10 @@ return plural;
  "Weeks": [
   null,
   "Тижні"
+ ],
+ "White": [
+  null,
+  "Білий"
  ],
  "[$0 bytes of binary data]": [
   null,

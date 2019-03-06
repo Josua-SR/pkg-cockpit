@@ -268,7 +268,7 @@ cockpit_web_response_new (GIOStream *io,
       host = g_hash_table_lookup (in_headers, "Host");
     }
 
-  protocol = cockpit_web_response_get_protocol (io, in_headers);
+  protocol = cockpit_web_response_get_protocol (self, in_headers);
   if (protocol && host)
     self->origin = g_strdup_printf ("%s://%s", protocol, host);
 
@@ -744,6 +744,7 @@ enum {
     HEADER_CACHE_CONTROL = 1 << 3,
     HEADER_DNS_PREFETCH_CONTROL = 1 << 4,
     HEADER_REFERRER_POLICY = 1 << 5,
+    HEADER_CONTENT_TYPE_OPTIONS = 1 << 6,
 };
 
 static GString *
@@ -782,6 +783,8 @@ append_header (GString *string,
     return HEADER_DNS_PREFETCH_CONTROL;
   if (g_ascii_strcasecmp ("Referrer-Policy", name) == 0)
     return HEADER_REFERRER_POLICY;
+  if (g_ascii_strcasecmp ("X-Content-Type-Options", name) == 0)
+    return HEADER_CONTENT_TYPE_OPTIONS;
   if (g_ascii_strcasecmp ("Content-Length", name) == 0 ||
       g_ascii_strcasecmp ("Transfer-Encoding", name) == 0 ||
       g_ascii_strcasecmp ("Connection", name) == 0)
@@ -894,6 +897,8 @@ finish_headers (CockpitWebResponse *self,
     g_string_append (string, "X-DNS-Prefetch-Control: off\r\n");
   if ((seen & HEADER_REFERRER_POLICY) == 0)
     g_string_append (string, "Referrer-Policy: no-referrer\r\n");
+  if ((seen & HEADER_CONTENT_TYPE_OPTIONS) == 0)
+    g_string_append (string, "X-Content-Type-Options: nosniff\r\n");
 
   g_string_append (string, "\r\n");
   return g_string_free_to_bytes (string);
@@ -1860,6 +1865,8 @@ cockpit_web_response_security_policy (const gchar *content_security_policy,
   const gchar *form_action = "form-action 'self'";
   const gchar *base_uri = "base-uri 'self'";
   const gchar *object_src = "object-src 'none'";
+  const gchar *font_src = "font-src 'self' data:";
+  const gchar *img_src = "img-src 'self' data:";
   const gchar *block_all_mixed_content = "block-all-mixed-content";
   gchar **parts = NULL;
   GString *result;
@@ -1897,6 +1904,10 @@ cockpit_web_response_security_policy (const gchar *content_security_policy,
     g_string_append_printf (result, "%s; ", base_uri);
   if (!strv_have_prefix (parts, "object-src "))
     g_string_append_printf (result, "%s; ", object_src);
+  if (!strv_have_prefix (parts, "font-src "))
+    g_string_append_printf (result, "%s; ", font_src);
+  if (!strv_have_prefix (parts, "img-src "))
+    g_string_append_printf (result, "%s; ", img_src);
   if (!strv_have_prefix (parts, "block-all-mixed-content"))
     g_string_append_printf (result, "%s; ", block_all_mixed_content);
 
@@ -1923,8 +1934,21 @@ cockpit_web_response_get_origin (CockpitWebResponse *self)
 }
 
 const gchar *
-cockpit_web_response_get_protocol (GIOStream *connection,
+cockpit_web_response_get_protocol (CockpitWebResponse *self,
                                    GHashTable *headers)
+{
+  return cockpit_connection_get_protocol (self->io, headers);
+}
+
+static void
+cockpit_web_response_flow_iface_init (CockpitFlowIface *iface)
+{
+  /* No implementation */
+}
+
+const gchar *
+cockpit_connection_get_protocol (GIOStream *connection,
+                                 GHashTable *headers)
 {
   const gchar *protocol = NULL;
   const gchar *protocol_header;
@@ -1941,10 +1965,4 @@ cockpit_web_response_get_protocol (GIOStream *connection,
     }
 
   return protocol ? protocol : "http";
-}
-
-static void
-cockpit_web_response_flow_iface_init (CockpitFlowIface *iface)
-{
-  /* No implementation */
 }

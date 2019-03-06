@@ -287,6 +287,10 @@ return plural;
   null,
   ""
  ],
+ "Appearance:": [
+  null,
+  ""
+ ],
  "Asset Tag": [
   null,
   ""
@@ -324,6 +328,10 @@ return plural;
   ""
  ],
  "Binds To": [
+  null,
+  ""
+ ],
+ "Black": [
   null,
   ""
  ],
@@ -427,6 +435,10 @@ return plural;
   null,
   ""
  ],
+ "Copy": [
+  null,
+  ""
+ ],
  "Create Timer": [
   null,
   ""
@@ -439,7 +451,15 @@ return plural;
   null,
   ""
  ],
+ "Ctrl+Insert": [
+  null,
+  ""
+ ],
  "Current boot": [
+  null,
+  ""
+ ],
+ "Dark": [
   null,
   ""
  ],
@@ -675,6 +695,10 @@ return plural;
   null,
   ""
  ],
+ "Light": [
+  null,
+  ""
+ ],
  "Load earlier entries": [
   null,
   ""
@@ -856,6 +880,10 @@ return plural;
   ""
  ],
  "Part Of": [
+  null,
+  ""
+ ],
+ "Paste": [
   null,
   ""
  ],
@@ -1068,6 +1096,10 @@ return plural;
   ""
  ],
  "Severity": [
+  null,
+  ""
+ ],
+ "Shift+Insert": [
   null,
   ""
  ],
@@ -1317,6 +1349,10 @@ return plural;
   ""
  ],
  "Weeks": [
+  null,
+  ""
+ ],
+ "White": [
   null,
   ""
  ],

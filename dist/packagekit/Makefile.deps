@@ -1,5 +1,5 @@
 # Generated Makefile data for packagekit
-# Stamp: Wed Feb 20 2019 13:54:55 GMT+0000 (UTC)
+# Stamp: Wed Mar 06 2019 13:53:22 GMT+0000 (UTC)
 
 packagekit_INPUTS = \
 	node_modules/bootstrap/LICENSE \
@@ -145,6 +145,7 @@ packagekit_INPUTS = \
 	node_modules/moment/locale/zh-tw.js \
 	node_modules/moment/moment.js \
 	node_modules/moment/package.json \
+	node_modules/patternfly-react/LICENSE \
 	node_modules/patternfly-react/README.md \
 	node_modules/patternfly-react/dist/esm/common/Timer.js \
 	node_modules/patternfly-react/dist/esm/common/closestPolyfill.js \
@@ -982,6 +983,8 @@ node_modules/moment/locale/zh-tw.js:
 node_modules/moment/moment.js:
 
 node_modules/moment/package.json:
+
+node_modules/patternfly-react/LICENSE:
 
 node_modules/patternfly-react/README.md:
 

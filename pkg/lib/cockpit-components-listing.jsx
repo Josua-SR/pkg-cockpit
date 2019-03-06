@@ -42,9 +42,13 @@ import './listing.less';
  * listingActions optional: buttons that are presented as actions for the expanded item
  * selectChanged optional: callback will be used when the "selected" state changes
  * selected optional: true if the item is selected, false if it unselected but selectable,
- *                    not set if it is not selectable. Can't be set if row has navigation or expansion
+ *                    not set if it is not selectable. If row has navigation or expansion the selected can be used
+ *                    only with addCheckbox.
  * initiallyExpanded optional: the entry will be initially rendered as expanded, but then behaves normally
  * expandChanged optional: callback will be used if the row is either expanded or collapsed passing single `isExpanded` boolean argument
+ * addCheckbox optional: if set a checkbox will appear in the start of the row and the selectChanged
+ *                       callback can be used to track row's checked status. Note that rows with checkboxes can't
+ *                       be selected outside of the checkbox.
  */
 export class ListingRow extends React.Component {
     constructor(props) {
@@ -106,7 +110,11 @@ export class ListingRow extends React.Component {
 
     handleSelectClick(e) {
         // only consider primary mouse button
-        if (!e || e.button !== 0)
+        // Rows which enable checkboxes don't have selectable rows outside from the checkbox
+        if (!e || (e.button !== 0 && e.target.type != 'checkbox'))
+            return;
+
+        if (this.props.addCheckbox && e.target.type != 'checkbox')
             return;
 
         let selected = !this.state.selected;
@@ -116,7 +124,6 @@ export class ListingRow extends React.Component {
             this.props.selectChanged(selected);
 
         e.stopPropagation();
-        e.preventDefault();
     }
 
     handleTabClick(tabIdx, e) {
@@ -128,7 +135,7 @@ export class ListingRow extends React.Component {
         let loadedTabs = this.state.loadedTabs;
         if (prevTab !== tabIdx) {
             // see if we need to unload the previous tab
-            if ('presence' in this.props.tabRenderers[prevTab])
+            if (this.props.tabRenderers[prevTab] && 'presence' in this.props.tabRenderers[prevTab])
                 prevTabPresence = this.props.tabRenderers[prevTab].presence;
 
             if (prevTabPresence == 'onlyActive')
@@ -187,11 +194,19 @@ export class ListingRow extends React.Component {
                 clickHandler = this.handleExpandClick;
         }
 
+        let checkboxItem;
+        if (this.props.addCheckbox) {
+            checkboxItem = <td key="checkboxItem" className="listing-ct-toggle" >
+                <input type='checkbox' checked={this.state.selected || false} onChange={this.handleSelectClick} />
+            </td>;
+        }
+
         let listingItem = (
             <tr data-row-id={ this.props.rowId }
                 className={ listingItemClasses.join(' ') }
                 onClick={clickHandler}>
                 {expandToggle}
+                {checkboxItem}
                 {headerEntries}
             </tr>
         );
@@ -209,6 +224,10 @@ export class ListingRow extends React.Component {
             let Renderer;
             let rendererData;
             let row;
+
+            if (this.state.activeTab >= this.props.tabRenderers.length)
+                this.state.activeTab = this.props.tabRenderers.length - 1;
+
             for (tabIdx = 0; tabIdx < this.props.tabRenderers.length; tabIdx++) {
                 Renderer = this.props.tabRenderers[tabIdx].renderer;
                 rendererData = this.props.tabRenderers[tabIdx].data;
@@ -234,7 +253,7 @@ export class ListingRow extends React.Component {
                 <tbody className="open">
                     {listingItem}
                     <tr className="listing-ct-panel">
-                        <td colSpan={ headerEntries.length + (expandToggle ? 1 : 0) }>
+                        <td colSpan={ headerEntries.length + (expandToggle ? 1 : 0) + (this.props.addCheckbox ? 1 : 0) }>
                             <div className="listing-ct-head">
                                 <div className="listing-ct-actions">
                                     {listingDetail}
@@ -264,6 +283,7 @@ ListingRow.defaultProps = {
     tabRenderers: [],
     selected: undefined,
     navigateToItem: null,
+    addCheckbox: false,
 };
 
 ListingRow.propTypes = {
@@ -275,6 +295,7 @@ ListingRow.propTypes = {
     listingActions: PropTypes.node,
     selectChanged: PropTypes.func,
     selected: PropTypes.bool,
+    addCheckbox: PropTypes.bool,
     initiallyExpanded: PropTypes.bool,
     expandChanged: PropTypes.func,
     initiallyActiveTab: PropTypes.number
@@ -289,6 +310,7 @@ ListingRow.propTypes = {
  * - columnTitles: array of column titles, as strings
  * - columnTitleClick: callback for clicking on column title (for sorting)
  *                     receives the column index as argument
+ * - hasCheckbox: true if listing rows have checkboxes
  * - actions: additional listing-wide actions (displayed next to the list's title)
  */
 export const Listing = (props) => {
@@ -306,6 +328,7 @@ export const Listing = (props) => {
         headerRow = (
             <tr>
                 <th key="empty" className="listing-ct-toggle" />
+                { props.hasCheckbox && <th key="empty-checkbox" className="listing-ct-toggle" /> }
                 { props.columnTitles.map((title, index) => {
                     let clickHandler = null;
                     if (props.columnTitleClick)

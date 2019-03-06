@@ -371,6 +371,10 @@ return plural;
   null,
   "Nainstalovat"
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Launch Remote Viewer": [
   null,
   "Spustit vzdálený prohlížeč"
@@ -431,17 +435,13 @@ return plural;
   null,
   "Název"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "Typ sítě"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
-  "Nastavení sítě se nepodařilo uložit"
- ],
- "Networks": [
-  null,
-  "Sítě"
+  ""
  ],
  "New Volume Name": [
   null,
@@ -609,7 +609,7 @@ return plural;
  ],
  "Run when host boots": [
   null,
-  ""
+  "Spustit při startu stroje"
  ],
  "Running Since:": [
   null,

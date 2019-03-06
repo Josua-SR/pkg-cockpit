@@ -452,10 +452,6 @@ return plural;
   null,
   ""
  ],
- "Custom mount option": [
-  null,
-  "Indstillinger"
- ],
  "Custom mount options": [
   null,
   "Indstillinger"
@@ -700,6 +696,10 @@ return plural;
   null,
   ""
  ],
+ "Grow Content": [
+  null,
+  ""
+ ],
  "Grow Logical Volume": [
   null,
   ""
@@ -853,10 +853,6 @@ return plural;
   ""
  ],
  "Mount at boot": [
-  null,
-  "Indstillinger"
- ],
- "Mount options": [
   null,
   "Indstillinger"
  ],
@@ -1320,6 +1316,10 @@ return plural;
   null,
   ""
  ],
+ "Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase.": [
+  null,
+  ""
+ ],
  "Running": [
   null,
   ""
@@ -1383,6 +1383,10 @@ return plural;
  "Shrink Logical Volume": [
   null,
   ""
+ ],
+ "Shrink Volume": [
+  null,
+  "Værtsnavn"
  ],
  "Size": [
   null,
@@ -1592,6 +1596,10 @@ return plural;
   null,
   ""
  ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  ""
+ ],
  "This volume needs to be activated before it can be resized.": [
   null,
   ""
@@ -1752,7 +1760,15 @@ return plural;
   null,
   ""
  ],
+ "Volume size is $0. Content size is $1.": [
+  null,
+  ""
+ ],
  "Waiting for other software management operations to finish": [
+  null,
+  ""
+ ],
+ "Warning": [
   null,
   ""
  ],

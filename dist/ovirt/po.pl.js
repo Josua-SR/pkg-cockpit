@@ -371,6 +371,10 @@ return plural;
   null,
   "Zainstaluj"
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Launch Remote Viewer": [
   null,
   "Uruchom zdalną przeglądarkę"
@@ -431,17 +435,13 @@ return plural;
   null,
   "Nazwa"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "Typ sieci"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
-  "Nie można zapisać ustawień sieci"
- ],
- "Networks": [
-  null,
-  "Sieci"
+  ""
  ],
  "New Volume Name": [
   null,
@@ -609,7 +609,7 @@ return plural;
  ],
  "Run when host boots": [
   null,
-  ""
+  "Uruchamianie po włączeniu gospodarza"
  ],
  "Running Since:": [
   null,

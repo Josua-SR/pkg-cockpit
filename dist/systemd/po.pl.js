@@ -287,6 +287,10 @@ return plural;
   null,
   "Zintegrowane"
  ],
+ "Appearance:": [
+  null,
+  "Wygląd:"
+ ],
  "Asset Tag": [
   null,
   "Etykieta zasobu"
@@ -326,6 +330,10 @@ return plural;
  "Binds To": [
   null,
   "Dowiązuje do"
+ ],
+ "Black": [
+  null,
+  "Czarny"
  ],
  "Blade": [
   null,
@@ -427,6 +435,10 @@ return plural;
   null,
   "2 w jednym"
  ],
+ "Copy": [
+  null,
+  "Skopiuj"
+ ],
  "Create Timer": [
   null,
   "Utwórz licznik"
@@ -439,9 +451,17 @@ return plural;
   null,
   "Krytyczne i powyżej"
  ],
+ "Ctrl+Insert": [
+  null,
+  "Ctrl+Insert"
+ ],
  "Current boot": [
   null,
   "Obecne uruchomienie"
+ ],
+ "Dark": [
+  null,
+  "Ciemny"
  ],
  "Debug and above": [
   null,
@@ -675,6 +695,10 @@ return plural;
   null,
   "Ostatnio wyzwolono"
  ],
+ "Light": [
+  null,
+  "Jasny"
+ ],
  "Load earlier entries": [
   null,
   "Wczytaj wcześniejsze wpisy"
@@ -858,6 +882,10 @@ return plural;
  "Part Of": [
   null,
   "Część"
+ ],
+ "Paste": [
+  null,
+  "Wklej"
  ],
  "Path": [
   null,
@@ -1070,6 +1098,10 @@ return plural;
  "Severity": [
   null,
   "Ważność"
+ ],
+ "Shift+Insert": [
+  null,
+  "Shift+Insert"
  ],
  "Show fingerprints": [
   null,
@@ -1320,6 +1352,10 @@ return plural;
  "Weeks": [
   null,
   "Tygodnie"
+ ],
+ "White": [
+  null,
+  "Biały"
  ],
  "[$0 bytes of binary data]": [
   null,

@@ -347,6 +347,10 @@ return plural;
   null,
   "Запис джерела для встановлення має бути непорожнім"
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Invalid filename": [
   null,
   "Некоректна назва файла"
@@ -407,17 +411,13 @@ return plural;
   null,
   "Мережева файлова система"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "Тип мережі"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
-  "Не вдалося зберегти параметри мережі"
- ],
- "Networks": [
-  null,
-  "Мережі"
+  ""
  ],
  "New Volume Name": [
   null,
@@ -557,7 +557,7 @@ return plural;
  ],
  "Run when host boots": [
   null,
-  ""
+  "Запустити під час завантаження основної системи"
  ],
  "SPICE": [
   null,

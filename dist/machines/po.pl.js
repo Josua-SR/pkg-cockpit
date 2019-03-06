@@ -347,6 +347,10 @@ return plural;
   null,
   "Źródło instalacji nie może być puste"
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Invalid filename": [
   null,
   "Nieprawidłowa nazwa pliku"
@@ -407,17 +411,13 @@ return plural;
   null,
   "NFS"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "Typ sieci"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
-  "Nie można zapisać ustawień sieci"
- ],
- "Networks": [
-  null,
-  "Sieci"
+  ""
  ],
  "New Volume Name": [
   null,
@@ -557,7 +557,7 @@ return plural;
  ],
  "Run when host boots": [
   null,
-  ""
+  "Uruchamianie po włączeniu gospodarza"
  ],
  "SPICE": [
   null,

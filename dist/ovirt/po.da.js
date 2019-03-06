@@ -371,6 +371,10 @@ return plural;
   null,
   ""
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Launch Remote Viewer": [
   null,
   ""
@@ -431,17 +435,13 @@ return plural;
   null,
   "Værtsnavn"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
   "Netværks Traffik"
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
   ""
- ],
- "Networks": [
-  null,
-  "Netværks Traffik"
  ],
  "New Volume Name": [
   null,
@@ -604,6 +604,10 @@ return plural;
   ""
  ],
  "Run Here": [
+  null,
+  ""
+ ],
+ "Run when host boots": [
   null,
   ""
  ],

@@ -83,9 +83,9 @@ return plural;
   null,
   "Heslo správce"
  ],
- "After leaving the domain, only users with local credentials will be able                to log into this machine. This may also affect other services as DNS resolution settings and                the list of trusted CAs may change.": [
+ "After leaving the domain, only users with local credentials will be able to log into this machine. This may also affect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  ""
+  "Po opuštění domény se do tohoto stroje budou moci přihlásit jen ti uživatelé, kteří mají účet přímo na něm. Může to postihnout také ostatní služby, jako je nastavení DNS překladu a může se změnit seznam důvěryhodných cert. autorit."
  ],
  "Authentication": [
   null,

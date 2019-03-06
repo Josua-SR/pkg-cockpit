@@ -287,6 +287,10 @@ return plural;
   null,
   "Vše v jednom"
  ],
+ "Appearance:": [
+  null,
+  "Vzhled:"
+ ],
  "Asset Tag": [
   null,
   "Inventární štítek"
@@ -326,6 +330,10 @@ return plural;
  "Binds To": [
   null,
   "Spojuje k"
+ ],
+ "Black": [
+  null,
+  "Černá"
  ],
  "Blade": [
   null,
@@ -427,6 +435,10 @@ return plural;
   null,
   "Počítač 2v1"
  ],
+ "Copy": [
+  null,
+  "Zkopírovat"
+ ],
  "Create Timer": [
   null,
   "Vytvořit časovač"
@@ -439,9 +451,17 @@ return plural;
   null,
   "Kritické a závažnější"
  ],
+ "Ctrl+Insert": [
+  null,
+  "Ctrl+Insert"
+ ],
  "Current boot": [
   null,
   "Od tohoto spuštění systému"
+ ],
+ "Dark": [
+  null,
+  "Tmavý"
  ],
  "Debug and above": [
   null,
@@ -675,6 +695,10 @@ return plural;
   null,
   "Naposledy spuštěno"
  ],
+ "Light": [
+  null,
+  "Světlý"
+ ],
  "Load earlier entries": [
   null,
   "Načíst dřívější položky"
@@ -858,6 +882,10 @@ return plural;
  "Part Of": [
   null,
   "Součástí"
+ ],
+ "Paste": [
+  null,
+  "Vložit"
  ],
  "Path": [
   null,
@@ -1070,6 +1098,10 @@ return plural;
  "Severity": [
   null,
   "Závažnost"
+ ],
+ "Shift+Insert": [
+  null,
+  "Shift+Insert"
  ],
  "Show fingerprints": [
   null,
@@ -1320,6 +1352,10 @@ return plural;
  "Weeks": [
   null,
   "Týdny"
+ ],
+ "White": [
+  null,
+  "Bílá"
  ],
  "[$0 bytes of binary data]": [
   null,

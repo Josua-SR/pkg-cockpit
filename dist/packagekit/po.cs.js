@@ -67,6 +67,12 @@ return plural;
   "language": "cs",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Package": [
+  "$0 Packages",
+  "$0 balíček",
+  "$0 balíčky",
+  "$0 balíčků"
+ ],
  "$0 is not available from any repository.": [
   null,
   "$0 není k dispozici z žádného z repozitářů."
@@ -296,14 +302,6 @@ return plural;
  "System is up to date": [
   null,
   "Systém je aktuální"
- ],
- "The following packages were recently updated:": [
-  null,
-  "Následující balíčky byly nedávno aktualizovány:"
- ],
- "The following packages were updated $0:": [
-  null,
-  "Následující balíčky byly aktualizovány $0:"
  ],
  "This system is not registered": [
   null,

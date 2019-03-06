@@ -195,7 +195,7 @@ class Browser:
         cookies = self.cdp.invoke("Network.getCookies")
         for c in cookies["cookies"]:
             if c["name"] == name:
-                return c["value"]
+                return c
         return None
 
     def go(self, hash, host="localhost"):
@@ -348,6 +348,12 @@ class Browser:
 
     def wait_attr(self, selector, attr, val):
         return self.wait_js_func('ph_has_attr', selector, attr, val)
+
+    def wait_attr_contains(self, selector, attr, val):
+        return self.wait_js_func('ph_attr_contains', selector, attr, val)
+
+    def wait_attr_not_contains(self, selector, attr, val):
+        return self.wait_js_func('!ph_attr_contains', selector, attr, val)
 
     def wait_not_attr(self, selector, attr, val):
         return self.wait_js_func('!ph_has_attr', selector, attr, val)
@@ -752,8 +758,8 @@ class MachineCase(unittest.TestCase):
             self.check_browser_errors()
         shutil.rmtree(self.tmpdir)
 
-    def login_and_go(self, path=None, user=None, host=None, authorized=True):
-        self.machine.start_cockpit(host)
+    def login_and_go(self, path=None, user=None, host=None, authorized=True, tls=False):
+        self.machine.start_cockpit(host, tls=tls)
         self.browser.login_and_go(path, user=user, host=host, authorized=authorized)
 
     allow_core_dumps = False
@@ -908,6 +914,8 @@ class MachineCase(unittest.TestCase):
         if self.image in ['rhel-8-0']:
             # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1653872
             self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { setsched } for .* comm="rngd".*')
+            # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1679468
+            self.allowed_messages.append('audit: type=1400 audit(.*): avc:  denied  { signull } for .* comm="systemd-journal".*')
 
         # these images don't have tuned; keep in sync with bots/images/scripts/debian.setup
         if self.image in ["debian-stable"]:
