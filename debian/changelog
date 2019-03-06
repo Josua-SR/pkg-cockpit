@@ -1,11 +1,11 @@
-cockpit (189-1) UNRELEASED; urgency=medium
+cockpit (189-1) experimental; urgency=medium
 
   * New upstream release:
     - Machines: Import existing image when creating VM
     - Machines: Introduce virtual networks
     - Services: Filtering of services by name, description, and state
 
- -- Martin Pitt <mpitt@debian.org>  Wed, 06 Mar 2019 15:50:28 +0000
+ -- Martin Pitt <mpitt@debian.org>  Wed, 06 Mar 2019 15:51:24 +0000
 
 cockpit (188-1) unstable; urgency=medium
 
