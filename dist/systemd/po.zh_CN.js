@@ -283,9 +283,17 @@ return plural;
   null,
   "警报及以上级别"
  ],
+ "All": [
+  null,
+  "所有"
+ ],
  "All In One": [
   null,
   "多合一"
+ ],
+ "Appearance:": [
+  null,
+  ""
  ],
  "Asset Tag": [
   null,
@@ -326,6 +334,10 @@ return plural;
  "Binds To": [
   null,
   "绑定到"
+ ],
+ "Black": [
+  null,
+  ""
  ],
  "Blade": [
   null,
@@ -387,6 +399,10 @@ return plural;
   null,
   "等级"
  ],
+ "Clear All Filters": [
+  null,
+  ""
+ ],
  "Click to see system hardware information": [
   null,
   "点击以查看系统硬件信息"
@@ -427,6 +443,10 @@ return plural;
   null,
   "可转换"
  ],
+ "Copy": [
+  null,
+  ""
+ ],
  "Create Timer": [
   null,
   "创建定时器"
@@ -439,9 +459,17 @@ return plural;
   null,
   "关键及以上级别"
  ],
+ "Ctrl+Insert": [
+  null,
+  ""
+ ],
  "Current boot": [
   null,
   "当前启动"
+ ],
+ "Dark": [
+  null,
+  ""
  ],
  "Debug and above": [
   null,
@@ -539,6 +567,10 @@ return plural;
   null,
   "扩展机箱"
  ],
+ "Filter by name or description...": [
+  null,
+  ""
+ ],
  "Friday": [
   null,
   "星期五"
@@ -586,10 +618,6 @@ return plural;
  "I/O Wait": [
   null,
   "I/O 等待"
- ],
- "Id": [
-  null,
-  "ID"
  ],
  "Info and above": [
   null,
@@ -674,6 +702,10 @@ return plural;
  "Last Trigger": [
   null,
   "最近的触发器"
+ ],
+ "Light": [
+  null,
+  ""
  ],
  "Load earlier entries": [
   null,
@@ -791,6 +823,10 @@ return plural;
   null,
   "无延时"
  ],
+ "No Matching Results": [
+  null,
+  ""
+ ],
  "No host keys found.": [
   null,
   "没有找到主机密钥。"
@@ -858,6 +894,10 @@ return plural;
  "Part Of": [
   null,
   "部分"
+ ],
+ "Paste": [
+  null,
+  ""
  ],
  "Path": [
   null,
@@ -1070,6 +1110,10 @@ return plural;
  "Severity": [
   null,
   "严重性"
+ ],
+ "Shift+Insert": [
+  null,
+  ""
  ],
  "Show fingerprints": [
   null,
@@ -1318,6 +1362,10 @@ return plural;
  "Weeks": [
   null,
   "周"
+ ],
+ "White": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

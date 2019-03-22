@@ -452,10 +452,6 @@ return plural;
   null,
   "Mukautetut salausvalinnat"
  ],
- "Custom mount option": [
-  null,
-  "Mukautettu liitosvalinta"
- ],
  "Custom mount options": [
   null,
   "Mukautetut liitosvalinnat"
@@ -652,6 +648,10 @@ return plural;
   null,
   "Tiedostojärjestelmät"
  ],
+ "For legacy applications only. Reduces performance.": [
+  null,
+  ""
+ ],
  "Force remove passphrase in $0": [
   null,
   ""
@@ -695,6 +695,10 @@ return plural;
  "Grow": [
   null,
   "Kasvata"
+ ],
+ "Grow Content": [
+  null,
+  ""
  ],
  "Grow Logical Volume": [
   null,
@@ -852,10 +856,6 @@ return plural;
   null,
   "Liitä käynnistyksen yhteydessä"
  ],
- "Mount options": [
-  null,
-  "Liitosvalinnat"
- ],
  "Mount point can not be empty": [
   null,
   "Liitospiste ei voi olla tyhjä"
@@ -914,11 +914,11 @@ return plural;
  ],
  "Name cannot be longer than $0 bytes": [
   null,
-  "Nimi voi sisältää enintään 127 merkkiä."
+  ""
  ],
  "Name cannot be longer than $0 characters": [
   null,
-  "Nimi voi sisältää enintään 127 merkkiä."
+  ""
  ],
  "Name cannot be longer than 127 characters.": [
   null,
@@ -1316,6 +1316,10 @@ return plural;
   null,
   ""
  ],
+ "Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase.": [
+  null,
+  ""
+ ],
  "Running": [
   null,
   ""
@@ -1327,6 +1331,14 @@ return plural;
  "Save": [
   null,
   "Tallenna"
+ ],
+ "Save space by compressing individual blocks with LZ4": [
+  null,
+  ""
+ ],
+ "Save space by storing identical data blocks just once": [
+  null,
+  ""
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
@@ -1369,6 +1381,10 @@ return plural;
   ""
  ],
  "Shrink Logical Volume": [
+  null,
+  ""
+ ],
+ "Shrink Volume": [
   null,
   ""
  ],
@@ -1454,7 +1470,7 @@ return plural;
  ],
  "Storage can not be managed on this system.": [
   null,
-  "Cockpit ei ole asennettu järjestelmässä."
+  ""
  ],
  "Store passphrase": [
   null,
@@ -1577,6 +1593,10 @@ return plural;
   ""
  ],
  "This disk cannot be removed while the device is recovering.": [
+  null,
+  ""
+ ],
+ "This logical volume is not completely used by its content.": [
   null,
   ""
  ],
@@ -1740,7 +1760,15 @@ return plural;
   null,
   "Taltioryhmät"
  ],
+ "Volume size is $0. Content size is $1.": [
+  null,
+  ""
+ ],
  "Waiting for other software management operations to finish": [
+  null,
+  ""
+ ],
+ "Warning": [
   null,
   ""
  ],

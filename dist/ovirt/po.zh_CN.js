@@ -371,6 +371,10 @@ return plural;
   null,
   "安装"
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Launch Remote Viewer": [
   null,
   "加载 Remote Viewer"
@@ -431,17 +435,13 @@ return plural;
   null,
   "名称"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "网络类型"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
-  "网络设置不能被保存"
- ],
- "Networks": [
-  null,
-  "网络"
+  ""
  ],
  "New Volume Name": [
   null,
@@ -479,6 +479,10 @@ return plural;
   null,
   "没有虚拟网络"
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "Number of virtual CPUs that gonna be used.": [
   null,
   "要使用的虚拟 CPU 数量。"
@@ -498,6 +502,10 @@ return plural;
  "Ok": [
   null,
   "确认"
+ ],
+ "Open": [
+  null,
+  ""
  ],
  "Optimized for:": [
   null,
@@ -567,6 +575,10 @@ return plural;
   null,
   "正在准备维护"
  ],
+ "Private": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "协议"
@@ -606,6 +618,10 @@ return plural;
  "Run Here": [
   null,
   "运行到此"
+ ],
+ "Run when host boots": [
+  null,
+  ""
  ],
  "Running Since:": [
   null,

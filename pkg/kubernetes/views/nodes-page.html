@@ -29,7 +29,7 @@
     <thead>
         <tr>
             <td colspan="5">
-                <a id="add-node" class="pull-right" ng-click="addNode()">
+                <a tabindex="0" id="add-node" class="pull-right" ng-click="addNode()">
                     <i translate class="pficon pficon-add-circle-o"></i>
                     <span translate>Add Kubernetes Node</span>
                 </a>
@@ -60,7 +60,7 @@
             <td>
                 <div ng-if="item.status.nodeInfo.osImage">{{item.status.nodeInfo.osImage}}</div>
             </td>
-            <td>{{item.spec.externalID}}</td>
+            <td>{{ nodeIPAddress(item) }}</td>
             <td>
                 <span class="spinner-inline node-status" kubernetes-status-icon status="nodeStatusIcon(item)"></span>
                 {{ nodeStatus(item) }}

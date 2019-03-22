@@ -67,6 +67,10 @@ return plural;
   "language": "da",
   "x-generator": "Zanata 3.8.4"
  },
+ "$0 Network": [
+  null,
+  "Netværks Traffik"
+ ],
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
   ""
@@ -199,6 +203,10 @@ return plural;
   null,
   ""
  ],
+ "DHCP Range": [
+  null,
+  ""
+ ],
  "Deactivate": [
   null,
   ""
@@ -267,15 +275,19 @@ return plural;
   null,
   ""
  ],
+ "Existing Disk Image": [
+  null,
+  ""
+ ],
+ "Existing disk image on host's file system": [
+  null,
+  ""
+ ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
   ""
  ],
  "File": [
-  null,
-  ""
- ],
- "Filesystem": [
   null,
   ""
  ],
@@ -295,7 +307,15 @@ return plural;
   null,
   ""
  ],
+ "Forwarding mode": [
+  null,
+  ""
+ ],
  "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
+ ],
+ "General": [
   null,
   ""
  ],
@@ -315,6 +335,10 @@ return plural;
   null,
   ""
  ],
+ "Host Device": [
+  null,
+  "Værtsnavn"
+ ],
  "Host Name": [
   null,
   ""
@@ -327,7 +351,19 @@ return plural;
   null,
   ""
  ],
+ "IPv4 Address": [
+  null,
+  ""
+ ],
+ "IPv6 Address": [
+  null,
+  ""
+ ],
  "Immediately Start VM": [
+  null,
+  ""
+ ],
+ "In most configurations, macvtap does not work for host to guest network communication.": [
   null,
   ""
  ],
@@ -355,11 +391,19 @@ return plural;
   null,
   ""
  ],
+ "Isolated Network": [
+  null,
+  ""
+ ],
  "Launch Remote Viewer": [
   null,
   ""
  ],
  "Loading ...": [
+  null,
+  ""
+ ],
+ "Local Install Media": [
   null,
   ""
  ],
@@ -372,6 +416,10 @@ return plural;
   ""
  ],
  "Manual Connection": [
+  null,
+  ""
+ ],
+ "Maximum Transmission Unit": [
   null,
   ""
  ],
@@ -399,11 +447,27 @@ return plural;
   null,
   "Indstillinger"
  ],
+ "NAT to $0": [
+  null,
+  ""
+ ],
  "Name": [
   null,
   "Værtsnavn"
  ],
  "Name should not be empty": [
+  null,
+  ""
+ ],
+ "Name: ": [
+  null,
+  "Værtsnavn"
+ ],
+ "Netmask": [
+  null,
+  ""
+ ],
+ "Network Boot (PXE)": [
   null,
   ""
  ],
@@ -415,9 +479,25 @@ return plural;
   null,
   "Netværks Traffik"
  ],
+ "Network Selection does not support PXE.": [
+  null,
+  ""
+ ],
+ "Network failed to get activated": [
+  null,
+  ""
+ ],
+ "Network failed to get deactivated": [
+  null,
+  ""
+ ],
  "Network interface settings could not be saved": [
   null,
   ""
+ ],
+ "Networks": [
+  null,
+  "Netværks Traffik"
  ],
  "New Volume Name": [
   null,
@@ -451,6 +531,10 @@ return plural;
   null,
   ""
  ],
+ "No network is defined on this host": [
+  null,
+  ""
+ ],
  "No storage pool is defined on this host": [
   null,
   ""
@@ -459,7 +543,19 @@ return plural;
   null,
   ""
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "OS Vendor": [
+  null,
+  ""
+ ],
+ "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
+  null,
+  ""
+ ],
+ "Open": [
   null,
   ""
  ],
@@ -484,6 +580,10 @@ return plural;
   ""
  ],
  "Path to file": [
+  null,
+  ""
+ ],
+ "Pause": [
   null,
   ""
  ],
@@ -523,6 +623,14 @@ return plural;
   null,
   ""
  ],
+ "Prefix": [
+  null,
+  ""
+ ],
+ "Private": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   ""
@@ -550,6 +658,18 @@ return plural;
  "Restart": [
   null,
   ""
+ ],
+ "Resume": [
+  null,
+  ""
+ ],
+ "Route to $0": [
+  null,
+  ""
+ ],
+ "Routed Network": [
+  null,
+  "Netværks Traffik"
  ],
  "Run": [
   null,
@@ -667,6 +787,10 @@ return plural;
   null,
   "Værtsnavn"
  ],
+ "Storage Volumes could not be deleted": [
+  null,
+  ""
+ ],
  "System": [
   null,
   ""
@@ -767,6 +891,10 @@ return plural;
   null,
   ""
  ],
+ "Used by": [
+  null,
+  ""
+ ],
  "VCPU settings could not be saved": [
   null,
   ""
@@ -799,7 +927,15 @@ return plural;
   null,
   ""
  ],
+ "VM Pause action failed": [
+  null,
+  ""
+ ],
  "VM REBOOT action failed": [
+  null,
+  ""
+ ],
+ "VM Resume action failed": [
   null,
   ""
  ],
@@ -838,6 +974,10 @@ return plural;
  "Virtual Machines": [
   null,
   ""
+ ],
+ "Virtual Network": [
+  null,
+  "Netværks Traffik"
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,

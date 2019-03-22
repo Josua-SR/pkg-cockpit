@@ -69,199 +69,199 @@ return plural;
  },
  "$0 Template": [
   null,
-  ""
+  "$0 sablon"
  ],
  "$0 is not available from any repository.": [
   null,
-  ""
+  "A(z) $0 nem érhető el egy tárolóból sem."
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "A(z) $0 telepítve lesz."
  ],
  "1 Minute": [
   null,
-  ""
+  "1 perc"
  ],
  "1 day": [
   null,
-  ""
+  "1 nap"
  ],
  "1 hour": [
   null,
-  ""
+  "1 óra"
  ],
  "1 min": [
   null,
-  ""
+  "1 perc"
  ],
  "1 week": [
   null,
-  ""
+  "1 hét"
  ],
  "10th": [
   null,
-  ""
+  "10."
  ],
  "11th": [
   null,
-  ""
+  "11."
  ],
  "12th": [
   null,
-  ""
+  "12."
  ],
  "13th": [
   null,
-  ""
+  "13."
  ],
  "14th": [
   null,
-  ""
+  "14."
  ],
  "15th": [
   null,
-  ""
+  "15."
  ],
  "16th": [
   null,
-  ""
+  "16."
  ],
  "17th": [
   null,
-  ""
+  "17."
  ],
  "18th": [
   null,
-  ""
+  "18."
  ],
  "19th": [
   null,
-  ""
+  "19."
  ],
  "1st": [
   null,
-  ""
+  "1."
  ],
  "2 min": [
   null,
-  ""
+  "2 perc"
  ],
  "20 Minutes": [
   null,
-  ""
+  "20 perc"
  ],
  "20th": [
   null,
-  ""
+  "20."
  ],
  "21st": [
   null,
-  ""
+  "21."
  ],
  "22nd": [
   null,
-  ""
+  "22."
  ],
  "23rd": [
   null,
-  ""
+  "23."
  ],
  "24th": [
   null,
-  ""
+  "24."
  ],
  "25th": [
   null,
-  ""
+  "25."
  ],
  "26th": [
   null,
-  ""
+  "26."
  ],
  "27th": [
   null,
-  ""
+  "27."
  ],
  "28th": [
   null,
-  ""
+  "28."
  ],
  "29th": [
   null,
-  ""
+  "29."
  ],
  "2nd": [
   null,
-  ""
+  "2."
  ],
  "3 min": [
   null,
-  ""
+  "3 perc"
  ],
  "30th": [
   null,
-  ""
+  "30."
  ],
  "31st": [
   null,
-  ""
+  "31."
  ],
  "3rd": [
   null,
-  ""
+  "3."
  ],
  "4 min": [
   null,
-  ""
+  "4 perc"
  ],
  "40 Minutes": [
   null,
-  ""
+  "40 perc"
  ],
  "4th": [
   null,
-  ""
+  "4."
  ],
  "5 Minutes": [
   null,
-  ""
+  "5 perc"
  ],
  "5 min": [
   null,
-  ""
+  "5 perc"
  ],
  "5 minutes": [
   null,
-  ""
+  "5 perc"
  ],
  "5th": [
   null,
-  ""
+  "5."
  ],
  "6 hours": [
   null,
-  ""
+  "6 óra"
  ],
  "60 Minutes": [
   null,
-  ""
+  "60 perc"
  ],
  "6th": [
   null,
-  ""
+  "6."
  ],
  "7th": [
   null,
-  ""
+  "7."
  ],
  "8th": [
   null,
-  ""
+  "8."
  ],
  "9th": [
   null,
-  ""
+  "9."
  ],
  "Additional packages:": [
   null,
@@ -283,7 +283,15 @@ return plural;
   null,
   ""
  ],
+ "All": [
+  null,
+  ""
+ ],
  "All In One": [
+  null,
+  ""
+ ],
+ "Appearance:": [
   null,
   ""
  ],
@@ -324,6 +332,10 @@ return plural;
   ""
  ],
  "Binds To": [
+  null,
+  ""
+ ],
+ "Black": [
   null,
   ""
  ],
@@ -387,6 +399,10 @@ return plural;
   null,
   ""
  ],
+ "Clear All Filters": [
+  null,
+  ""
+ ],
  "Click to see system hardware information": [
   null,
   ""
@@ -427,6 +443,10 @@ return plural;
   null,
   ""
  ],
+ "Copy": [
+  null,
+  ""
+ ],
  "Create Timer": [
   null,
   ""
@@ -439,7 +459,15 @@ return plural;
   null,
   ""
  ],
+ "Ctrl+Insert": [
+  null,
+  ""
+ ],
  "Current boot": [
+  null,
+  ""
+ ],
+ "Dark": [
   null,
   ""
  ],
@@ -460,6 +488,10 @@ return plural;
   ""
  ],
  "Detachable": [
+  null,
+  ""
+ ],
+ "Details": [
   null,
   ""
  ],
@@ -535,6 +567,10 @@ return plural;
   null,
   ""
  ],
+ "Filter by name or description...": [
+  null,
+  ""
+ ],
  "Friday": [
   null,
   ""
@@ -580,10 +616,6 @@ return plural;
   ""
  ],
  "I/O Wait": [
-  null,
-  ""
- ],
- "Id": [
   null,
   ""
  ],
@@ -668,6 +700,10 @@ return plural;
   ""
  ],
  "Last Trigger": [
+  null,
+  ""
+ ],
+ "Light": [
   null,
   ""
  ],
@@ -787,6 +823,10 @@ return plural;
   null,
   ""
  ],
+ "No Matching Results": [
+  null,
+  ""
+ ],
  "No host keys found.": [
   null,
   ""
@@ -813,7 +853,7 @@ return plural;
  ],
  "Off": [
   null,
-  "Kikapcsolva"
+  "Ki"
  ],
  "Ok": [
   null,
@@ -821,7 +861,7 @@ return plural;
  ],
  "On": [
   null,
-  "Bekapcsolva"
+  "Be"
  ],
  "On Failure": [
   null,
@@ -852,6 +892,10 @@ return plural;
   ""
  ],
  "Part Of": [
+  null,
+  ""
+ ],
+ "Paste": [
   null,
   ""
  ],
@@ -1067,6 +1111,10 @@ return plural;
   null,
   ""
  ],
+ "Shift+Insert": [
+  null,
+  ""
+ ],
  "Show fingerprints": [
   null,
   ""
@@ -1115,7 +1163,7 @@ return plural;
   null,
   ""
  ],
- "Store metrics": [
+ "Store Metrics": [
   null,
   ""
  ],
@@ -1313,6 +1361,10 @@ return plural;
   ""
  ],
  "Weeks": [
+  null,
+  ""
+ ],
+ "White": [
   null,
   ""
  ],

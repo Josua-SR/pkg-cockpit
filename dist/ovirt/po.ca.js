@@ -101,7 +101,7 @@ return plural;
  ],
  "Always attach": [
   null,
-  "Sempre"
+  ""
  ],
  "Apply": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "Inici automàtic"
+  ""
  ],
  "Available": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "Ordre d'arrencada"
+  ""
  ],
  "Bus": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "CPU Type": [
   null,
-  "Tipus de CPU"
+  ""
  ],
  "CREATE VM action failed": [
   null,
@@ -301,7 +301,7 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "Màquina emulada"
+  ""
  ],
  "Enter New VM name": [
   null,
@@ -371,6 +371,10 @@ return plural;
   null,
   "Instal·la"
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Launch Remote Viewer": [
   null,
   "Llança el visualitzador remot"
@@ -431,17 +435,13 @@ return plural;
   null,
   "Nom"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
   ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
   ""
- ],
- "Networks": [
-  null,
-  "Xarxes"
  ],
  "New Volume Name": [
   null,
@@ -479,6 +479,10 @@ return plural;
   null,
   ""
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "Number of virtual CPUs that gonna be used.": [
   null,
   ""
@@ -499,6 +503,10 @@ return plural;
   null,
   "D'acord"
  ],
+ "Open": [
+  null,
+  ""
+ ],
  "Optimized for:": [
   null,
   "Optimitzat per:"
@@ -509,7 +517,7 @@ return plural;
  ],
  "Persistence": [
   null,
-  "Volums persistents"
+  ""
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
@@ -567,6 +575,10 @@ return plural;
   null,
   ""
  ],
+ "Private": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protocol"
@@ -606,6 +618,10 @@ return plural;
  "Run Here": [
   null,
   "Executa-ho aquí"
+ ],
+ "Run when host boots": [
+  null,
+  ""
  ],
  "Running Since:": [
   null,
@@ -678,10 +694,6 @@ return plural;
  "Source": [
   null,
   "Origen"
- ],
- "Start the VM to see disk statistics.": [
-  null,
-  "Inicieu la MV per veure les estadístiques del disc."
  ],
  "State": [
   null,
@@ -786,10 +798,6 @@ return plural;
  "Unplug": [
   null,
   ""
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Actualitzeu a una versió més recent de libvirt per visualitzar les estadístiques dels discs"
  ],
  "Usage": [
   null,

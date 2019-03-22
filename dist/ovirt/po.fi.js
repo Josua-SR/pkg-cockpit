@@ -101,7 +101,7 @@ return plural;
  ],
  "Always attach": [
   null,
-  "Aina"
+  ""
  ],
  "Apply": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "Autostart"
+  ""
  ],
  "Available": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "Käynnistysjärjestys"
+  ""
  ],
  "Bus": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "CPU Type": [
   null,
-  "Prosessorin tyyppi"
+  ""
  ],
  "CREATE VM action failed": [
   null,
@@ -277,11 +277,11 @@ return plural;
  ],
  "Disk failed to be attached": [
   null,
-  "Ei voitu ottaa tuned käyttöön"
+  ""
  ],
  "Disk failed to be created": [
   null,
-  "Ei voitu ottaa tuned käyttöön"
+  ""
  ],
  "Disks": [
   null,
@@ -301,7 +301,7 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "Emuloitu kone"
+  ""
  ],
  "Enter New VM name": [
   null,
@@ -371,6 +371,10 @@ return plural;
   null,
   "Asenna"
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Launch Remote Viewer": [
   null,
   "Käynnistä etäkatselin"
@@ -393,7 +397,7 @@ return plural;
  ],
  "Mac Address": [
   null,
-  "MAC-osoite"
+  ""
  ],
  "Manual Connection": [
   null,
@@ -431,17 +435,13 @@ return plural;
   null,
   "Nimi"
  ],
- "Network Type": [
-  null,
-  "Verkko"
- ],
- "Network settings could not be saved": [
+ "Network Interfaces": [
   null,
   ""
  ],
- "Networks": [
+ "Network interface settings could not be saved": [
   null,
-  "Verkot"
+  ""
  ],
  "New Volume Name": [
   null,
@@ -479,6 +479,10 @@ return plural;
   null,
   ""
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "Number of virtual CPUs that gonna be used.": [
   null,
   ""
@@ -499,6 +503,10 @@ return plural;
   null,
   "OK"
  ],
+ "Open": [
+  null,
+  ""
+ ],
  "Optimized for:": [
   null,
   ""
@@ -509,7 +517,7 @@ return plural;
  ],
  "Persistence": [
   null,
-  "GCE Persistent Disk"
+  ""
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
@@ -567,6 +575,10 @@ return plural;
   null,
   ""
  ],
+ "Private": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   ""
@@ -604,6 +616,10 @@ return plural;
   ""
  ],
  "Run Here": [
+  null,
+  ""
+ ],
+ "Run when host boots": [
   null,
   ""
  ],
@@ -678,10 +694,6 @@ return plural;
  "Source": [
   null,
   "Lähde"
- ],
- "Start the VM to see disk statistics.": [
-  null,
-  ""
  ],
  "State": [
   null,
@@ -786,10 +798,6 @@ return plural;
  "Unplug": [
   null,
   ""
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Päivitä libvirt uudempaan versioon nähdäksesi levytilastot"
  ],
  "Usage": [
   null,

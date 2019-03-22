@@ -67,6 +67,10 @@ return plural;
   "language": "zh_CN",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Package": [
+  "$0 Packages",
+  ""
+ ],
  "$0 is not available from any repository.": [
   null,
   "所有仓库都不提供 $0。"
@@ -151,6 +155,10 @@ return plural;
   null,
   "勘误："
  ],
+ "Fridays": [
+  null,
+  ""
+ ],
  "Ignore": [
   null,
   "忽略"
@@ -198,6 +206,10 @@ return plural;
  "Loading available updates, please wait...": [
   null,
   "正在加载可用的更新，请等待..."
+ ],
+ "Mondays": [
+  null,
+  ""
  ],
  "Name": [
   null,
@@ -263,6 +275,10 @@ return plural;
   null,
   "正在重启"
  ],
+ "Saturdays": [
+  null,
+  ""
+ ],
  "Set up": [
   null,
   "设置"
@@ -287,17 +303,13 @@ return plural;
   null,
   "某些其他程序正在使用软件包管理器，请等待..."
  ],
+ "Sundays": [
+  null,
+  ""
+ ],
  "System is up to date": [
   null,
   "系统已更新到最新"
- ],
- "The following packages were recently updated:": [
-  null,
-  "最近更新的软件包如下："
- ],
- "The following packages were updated $0:": [
-  null,
-  "以下软件包被更新 $0："
  ],
  "This system is not registered": [
   null,
@@ -307,6 +319,10 @@ return plural;
   null,
   "此 Web 控制台将会被更新。"
  ],
+ "Thursdays": [
+  null,
+  ""
+ ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
   "为了获取软件更新，该系统需要通过红帽客户门户网站或本地订阅服务器注册到红帽。"
@@ -314,6 +330,10 @@ return plural;
  "Total size: $0": [
   null,
   "总大小：$0"
+ ],
+ "Tuesdays": [
+  null,
+  ""
  ],
  "Update History": [
   null,
@@ -351,6 +371,10 @@ return plural;
   null,
   "等待其他软件管理操作完成"
  ],
+ "Wednesdays": [
+  null,
+  ""
+ ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
   "您的浏览器将断开连接，但这不会影响更新过程。您可以在几分钟后重新连接以继续观察进度。"
@@ -378,34 +402,6 @@ return plural;
  "every day": [
   null,
   "每天"
- ],
- "on Fridays": [
-  null,
-  "在周五"
- ],
- "on Mondays": [
-  null,
-  "在周一"
- ],
- "on Saturdays": [
-  null,
-  "在周六"
- ],
- "on Sundays": [
-  null,
-  "在每日"
- ],
- "on Thursdays": [
-  null,
-  "在每四"
- ],
- "on Tuesdays": [
-  null,
-  "在每二"
- ],
- "on Wednesdays": [
-  null,
-  "在周三"
  ],
  "security": [
   null,

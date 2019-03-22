@@ -371,6 +371,10 @@ return plural;
   null,
   "Installer"
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Launch Remote Viewer": [
   null,
   "Lancer l’afficheur à distance"
@@ -431,17 +435,13 @@ return plural;
   null,
   "Nom"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "Type de réseau"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
-  "Les paramètres de réseau n’ont pas pu être enregistrés"
- ],
- "Networks": [
-  null,
-  "Réseaux"
+  ""
  ],
  "New Volume Name": [
   null,
@@ -479,6 +479,10 @@ return plural;
   null,
   "Aucun réseau virtuel"
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "Number of virtual CPUs that gonna be used.": [
   null,
   "Nombre de CPU qui seront utilisées."
@@ -498,6 +502,10 @@ return plural;
  "Ok": [
   null,
   "Ok"
+ ],
+ "Open": [
+  null,
+  ""
  ],
  "Optimized for:": [
   null,
@@ -567,6 +575,10 @@ return plural;
   null,
   "Préparation à la maintenance"
  ],
+ "Private": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protocole"
@@ -606,6 +618,10 @@ return plural;
  "Run Here": [
   null,
   "Exécuter ici"
+ ],
+ "Run when host boots": [
+  null,
+  ""
  ],
  "Running Since:": [
   null,

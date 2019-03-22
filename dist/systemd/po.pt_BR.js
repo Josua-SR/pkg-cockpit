@@ -283,9 +283,17 @@ return plural;
   null,
   "Alerta e acima"
  ],
+ "All": [
+  null,
+  "Todos"
+ ],
  "All In One": [
   null,
   "Tudo em um"
+ ],
+ "Appearance:": [
+  null,
+  ""
  ],
  "Asset Tag": [
   null,
@@ -326,6 +334,10 @@ return plural;
  "Binds To": [
   null,
   "Vincula a"
+ ],
+ "Black": [
+  null,
+  ""
  ],
  "Blade": [
   null,
@@ -387,6 +399,10 @@ return plural;
   null,
   "Classe"
  ],
+ "Clear All Filters": [
+  null,
+  ""
+ ],
  "Click to see system hardware information": [
   null,
   "Clique para ver as informações do hardware do sistema"
@@ -427,6 +443,10 @@ return plural;
   null,
   "Conversível"
  ],
+ "Copy": [
+  null,
+  ""
+ ],
  "Create Timer": [
   null,
   "Criar Temporizador"
@@ -439,9 +459,17 @@ return plural;
   null,
   "Crítico e acima"
  ],
+ "Ctrl+Insert": [
+  null,
+  ""
+ ],
  "Current boot": [
   null,
   "Inicialização atual"
+ ],
+ "Dark": [
+  null,
+  ""
  ],
  "Debug and above": [
   null,
@@ -539,6 +567,10 @@ return plural;
   null,
   "Chassi de Expansão"
  ],
+ "Filter by name or description...": [
+  null,
+  ""
+ ],
  "Friday": [
   null,
   "Sexta-feira"
@@ -586,10 +618,6 @@ return plural;
  "I/O Wait": [
   null,
   "E/S Espera"
- ],
- "Id": [
-  null,
-  "Id"
  ],
  "Info and above": [
   null,
@@ -674,6 +702,10 @@ return plural;
  "Last Trigger": [
   null,
   "Último Trigger"
+ ],
+ "Light": [
+  null,
+  ""
  ],
  "Load earlier entries": [
   null,
@@ -791,6 +823,10 @@ return plural;
   null,
   "Sem Atraso"
  ],
+ "No Matching Results": [
+  null,
+  ""
+ ],
  "No host keys found.": [
   null,
   "Nenhuma chave de host encontrada."
@@ -858,6 +894,10 @@ return plural;
  "Part Of": [
   null,
   "Parte de"
+ ],
+ "Paste": [
+  null,
+  ""
  ],
  "Path": [
   null,
@@ -1070,6 +1110,10 @@ return plural;
  "Severity": [
   null,
   "Gravidade"
+ ],
+ "Shift+Insert": [
+  null,
+  ""
  ],
  "Show fingerprints": [
   null,
@@ -1319,6 +1363,10 @@ return plural;
  "Weeks": [
   null,
   "Semanas"
+ ],
+ "White": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

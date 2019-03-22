@@ -283,7 +283,15 @@ return plural;
   null,
   ""
  ],
+ "All": [
+  null,
+  "အားလုံး"
+ ],
  "All In One": [
+  null,
+  ""
+ ],
+ "Appearance:": [
   null,
   ""
  ],
@@ -324,6 +332,10 @@ return plural;
   ""
  ],
  "Binds To": [
+  null,
+  ""
+ ],
+ "Black": [
   null,
   ""
  ],
@@ -387,6 +399,10 @@ return plural;
   null,
   ""
  ],
+ "Clear All Filters": [
+  null,
+  ""
+ ],
  "Click to see system hardware information": [
   null,
   ""
@@ -427,6 +443,10 @@ return plural;
   null,
   ""
  ],
+ "Copy": [
+  null,
+  ""
+ ],
  "Create Timer": [
   null,
   ""
@@ -439,7 +459,15 @@ return plural;
   null,
   ""
  ],
+ "Ctrl+Insert": [
+  null,
+  ""
+ ],
  "Current boot": [
+  null,
+  ""
+ ],
+ "Dark": [
   null,
   ""
  ],
@@ -460,6 +488,10 @@ return plural;
   ""
  ],
  "Detachable": [
+  null,
+  ""
+ ],
+ "Details": [
   null,
   ""
  ],
@@ -535,6 +567,10 @@ return plural;
   null,
   ""
  ],
+ "Filter by name or description...": [
+  null,
+  ""
+ ],
  "Friday": [
   null,
   ""
@@ -580,10 +616,6 @@ return plural;
   ""
  ],
  "I/O Wait": [
-  null,
-  ""
- ],
- "Id": [
   null,
   ""
  ],
@@ -671,6 +703,10 @@ return plural;
   null,
   ""
  ],
+ "Light": [
+  null,
+  ""
+ ],
  "Load earlier entries": [
   null,
   ""
@@ -725,7 +761,7 @@ return plural;
  ],
  "Memory & Swap": [
   null,
-  "Memory"
+  ""
  ],
  "Message to logged in users": [
   null,
@@ -784,6 +820,10 @@ return plural;
   ""
  ],
  "No Delay": [
+  null,
+  ""
+ ],
+ "No Matching Results": [
   null,
   ""
  ],
@@ -852,6 +892,10 @@ return plural;
   ""
  ],
  "Part Of": [
+  null,
+  ""
+ ],
+ "Paste": [
   null,
   ""
  ],
@@ -1017,7 +1061,7 @@ return plural;
  ],
  "Running Since": [
   null,
-  "Running"
+  ""
  ],
  "Saturday": [
   null,
@@ -1064,6 +1108,10 @@ return plural;
   ""
  ],
  "Severity": [
+  null,
+  ""
+ ],
+ "Shift+Insert": [
   null,
   ""
  ],
@@ -1115,7 +1163,7 @@ return plural;
   null,
   ""
  ],
- "Store metrics": [
+ "Store Metrics": [
   null,
   ""
  ],
@@ -1312,6 +1360,10 @@ return plural;
   ""
  ],
  "Weeks": [
+  null,
+  ""
+ ],
+ "White": [
   null,
   ""
  ],

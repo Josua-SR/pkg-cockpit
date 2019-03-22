@@ -451,10 +451,6 @@ return plural;
   null,
   "自定义加密选项"
  ],
- "Custom mount option": [
-  null,
-  "自定义挂载选项"
- ],
  "Custom mount options": [
   null,
   "自定义挂载选项"
@@ -699,6 +695,10 @@ return plural;
   null,
   "增长"
  ],
+ "Grow Content": [
+  null,
+  ""
+ ],
  "Grow Logical Volume": [
   null,
   "稀疏逻辑卷增长"
@@ -854,10 +854,6 @@ return plural;
  "Mount at boot": [
   null,
   "引导时挂载"
- ],
- "Mount options": [
-  null,
-  "挂载选项"
  ],
  "Mount point can not be empty": [
   null,
@@ -1319,6 +1315,10 @@ return plural;
   null,
   "调整大小 $target"
  ],
+ "Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase.": [
+  null,
+  ""
+ ],
  "Running": [
   null,
   "运行中"
@@ -1382,6 +1382,10 @@ return plural;
  "Shrink Logical Volume": [
   null,
   "缩小逻辑卷"
+ ],
+ "Shrink Volume": [
+  null,
+  ""
  ],
  "Size": [
   null,
@@ -1591,6 +1595,10 @@ return plural;
   null,
   "当设备正在恢复时，该磁盘不能被移除。"
  ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  ""
+ ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "在调整大小之前，需要激活此卷。"
@@ -1751,9 +1759,17 @@ return plural;
   null,
   "卷组"
  ],
+ "Volume size is $0. Content size is $1.": [
+  null,
+  ""
+ ],
  "Waiting for other software management operations to finish": [
   null,
   "等待其他软件管理操作完成"
+ ],
+ "Warning": [
+  null,
+  ""
  ],
  "What if tang-show-keys is not available?": [
   null,

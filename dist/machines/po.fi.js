@@ -71,6 +71,10 @@ return plural;
   null,
   "$0 on saatavilla useimmille käyttöjärjestelmille. Asentaaksesi sen, hae sitä GNOME Softwaresta, tai aja seuraava komento:"
  ],
+ "Activate": [
+  null,
+  "Aktivoi"
+ ],
  "Add": [
   null,
   "Lisää"
@@ -89,7 +93,7 @@ return plural;
  ],
  "Always attach": [
   null,
-  "Aina"
+  ""
  ],
  "Apply": [
   null,
@@ -101,7 +105,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "Autostart"
+  ""
  ],
  "Available": [
   null,
@@ -109,7 +113,7 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "Käynnistysjärjestys"
+  ""
  ],
  "Bus": [
   null,
@@ -121,7 +125,7 @@ return plural;
  ],
  "CPU Type": [
   null,
-  "Prosessorin tyyppi"
+  ""
  ],
  "Cancel": [
   null,
@@ -181,7 +185,7 @@ return plural;
  ],
  "Create Storage Pool": [
   null,
-  "Ei voitu resetoida tallennusvarantoa"
+  ""
  ],
  "Create VM": [
   null,
@@ -195,11 +199,35 @@ return plural;
   null,
   ""
  ],
+ "DHCP Range": [
+  null,
+  ""
+ ],
+ "Deactivate": [
+  null,
+  "Deaktivoi"
+ ],
  "Delete": [
   null,
   "Poista"
  ],
+ "Delete Content": [
+  null,
+  ""
+ ],
+ "Delete Storage Pool $0": [
+  null,
+  ""
+ ],
  "Delete associated storage files:": [
+  null,
+  ""
+ ],
+ "Delete the Volumes inside this Pool": [
+  null,
+  ""
+ ],
+ "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
   null,
   ""
  ],
@@ -221,11 +249,11 @@ return plural;
  ],
  "Disk failed to be attached": [
   null,
-  "Ei voitu ottaa tuned käyttöön"
+  ""
  ],
  "Disk failed to be created": [
   null,
-  "Ei voitu ottaa tuned käyttöön"
+  ""
  ],
  "Disks": [
   null,
@@ -241,7 +269,15 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "Emuloitu kone"
+  ""
+ ],
+ "Existing Disk Image": [
+  null,
+  ""
+ ],
+ "Existing disk image on host's file system": [
+  null,
+  ""
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -251,13 +287,9 @@ return plural;
   null,
   "Tiedosto"
  ],
- "Filesystem": [
-  null,
-  "Tiedostojärjestelmä"
- ],
  "Filesystem Directory": [
   null,
-  "Tiedostojärjestelmän tyyppi"
+  ""
  ],
  "Force Restart": [
   null,
@@ -271,9 +303,17 @@ return plural;
   null,
   "Alusta"
  ],
+ "Forwarding mode": [
+  null,
+  ""
+ ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
   ""
+ ],
+ "General": [
+  null,
+  "Yleiset"
  ],
  "GiB": [
   null,
@@ -297,11 +337,19 @@ return plural;
  ],
  "Host should not be empty": [
   null,
-  "Nimen ei tule olla tyhjä."
+  ""
  ],
  "INSTALL VM action failed": [
   null,
   "INSTALL VM -toiminto epäonnistui"
+ ],
+ "IPv4 Address": [
+  null,
+  ""
+ ],
+ "IPv6 Address": [
+  null,
+  ""
  ],
  "Immediately Start VM": [
   null,
@@ -323,6 +371,10 @@ return plural;
   null,
   "Asennuslähteen ei tulisi olla tyhjä"
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Invalid filename": [
   null,
   "Virheellinen tiedostonimi"
@@ -335,17 +387,25 @@ return plural;
   null,
   "Ladataan..."
  ],
+ "Local Install Media": [
+  null,
+  ""
+ ],
  "MAC Address": [
   null,
   "MAC-osoite"
  ],
  "Mac Address": [
   null,
-  "MAC-osoite"
+  ""
  ],
  "Manual Connection": [
   null,
   "Manuaalinen yhteys"
+ ],
+ "Maximum Transmission Unit": [
+  null,
+  ""
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
@@ -354,10 +414,6 @@ return plural;
  "Memory": [
   null,
   "Muisti"
- ],
- "Memory should be positive number": [
-  null,
-  "Muistin tulee olla positiivinen numero"
  ],
  "MiB": [
   null,
@@ -383,19 +439,23 @@ return plural;
   null,
   "Nimen ei tule olla tyhjä."
  ],
- "Name should not consist of empty characters only": [
+ "Name: ": [
+  null,
+  ""
+ ],
+ "Netmask": [
   null,
   ""
  ],
  "Network File System": [
   null,
-  "Ei tiedostojärjestelmää"
+  ""
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "Verkko"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
   ""
  ],
@@ -409,7 +469,7 @@ return plural;
  ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
-  "Tälle virtuaalikoneelle ei ole määritetty verkkoliitäntöjä"
+  ""
  ],
  "No VM is running or defined on this host": [
   null,
@@ -435,17 +495,33 @@ return plural;
   null,
   "Tälle virtuaalikoneelle ei ole määritetty verkkoliitäntöjä"
  ],
+ "No network is defined on this host": [
+  null,
+  ""
+ ],
  "No storage pool is defined on this host": [
   null,
-  "Tälle virtuaalikoneelle ei ole määritetty levyjä."
+  ""
  ],
  "No virtual networks": [
+  null,
+  ""
+ ],
+ "None (Isolated Network)": [
   null,
   ""
  ],
  "OS Vendor": [
   null,
   "Käyttöjärjestelmän toimittaja"
+ ],
+ "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
+  null,
+  ""
+ ],
+ "Open": [
+  null,
+  ""
  ],
  "Operating System": [
   null,
@@ -454,6 +530,10 @@ return plural;
  "Overview": [
   null,
   ""
+ ],
+ "Path": [
+  null,
+  "Polku"
  ],
  "Path on host's filesystem": [
   null,
@@ -469,7 +549,11 @@ return plural;
  ],
  "Persistence": [
   null,
-  "GCE Persistent Disk"
+  ""
+ ],
+ "Persistent": [
+  null,
+  ""
  ],
  "Please enter new volume name": [
   null,
@@ -499,17 +583,25 @@ return plural;
   null,
   ""
  ],
+ "Prefix": [
+  null,
+  ""
+ ],
+ "Private": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   ""
  ],
  "QEMU/KVM System connection": [
   null,
-  "Pidä yhteys"
+  ""
  ],
  "QEMU/KVM User connection": [
   null,
-  "Pidä yhteys"
+  ""
  ],
  "Readonly": [
   null,
@@ -528,6 +620,10 @@ return plural;
   "Käynnistä uudelleen"
  ],
  "Run": [
+  null,
+  ""
+ ],
+ "Run when host boots": [
   null,
   ""
  ],
@@ -585,13 +681,13 @@ return plural;
  ],
  "Source Path": [
   null,
-  "Lähde"
+  ""
  ],
  "Source path should not be empty": [
   null,
-  "Nimen ei tule olla tyhjä."
+  ""
  ],
- "Source should start with https, ftp or nfs protocol": [
+ "Source should start with http, ftp or nfs protocol": [
   null,
   ""
  ],
@@ -603,13 +699,9 @@ return plural;
   null,
   ""
  ],
- "Start the VM to see disk statistics.": [
-  null,
-  ""
- ],
  "Startup": [
   null,
-  "Käynnistä"
+  ""
  ],
  "State": [
   null,
@@ -617,27 +709,35 @@ return plural;
  ],
  "Storage Pool Name": [
   null,
-  "Tallennustilan lokit"
+  ""
  ],
  "Storage Pool failed to be created": [
   null,
   ""
  ],
+ "Storage Pool failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool failed to get deactivated": [
+  null,
+  ""
+ ],
  "Storage Pools": [
   null,
-  "Tallennustilan lokit"
+  ""
  ],
  "Storage Size": [
   null,
   "Tallennustilan koko"
  ],
- "Storage Size should not be negative number": [
+ "Storage Volumes": [
   null,
   ""
  ],
- "Storage Volumes": [
+ "Storage Volumes could not be deleted": [
   null,
-  "Tallennustilan lokit"
+  ""
  ],
  "System": [
   null,
@@ -645,11 +745,15 @@ return plural;
  ],
  "Target Path": [
   null,
-  "Koneen polku"
+  ""
  ],
  "Target path should not be empty": [
   null,
-  "Nimen ei tule olla tyhjä."
+  ""
+ ],
+ "The Storage Pool could not be deleted": [
+  null,
+  ""
  ],
  "The VM crashed.": [
   null,
@@ -723,10 +827,6 @@ return plural;
   null,
   ""
  ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Päivitä libvirt uudempaan versioon nähdäksesi levytilastot"
- ],
  "Usage": [
   null,
   "Käyttö"
@@ -738,6 +838,10 @@ return plural;
  "Used": [
   null,
   "Käytetty"
+ ],
+ "Used by": [
+  null,
+  ""
  ],
  "VCPU settings could not be saved": [
   null,
@@ -885,7 +989,7 @@ return plural;
  ],
  "inactive": [
   null,
-  "Epäaktiivinen"
+  ""
  ],
  "mcast": [
   null,

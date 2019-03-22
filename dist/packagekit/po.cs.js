@@ -163,6 +163,10 @@ return plural;
   null,
   "Errata:"
  ],
+ "Fridays": [
+  null,
+  "Pátky"
+ ],
  "Ignore": [
   null,
   "Ignorovat"
@@ -210,6 +214,10 @@ return plural;
  "Loading available updates, please wait...": [
   null,
   "Načítání dostupných aktualizací, čekejte…"
+ ],
+ "Mondays": [
+  null,
+  "Pondělky"
  ],
  "Name": [
   null,
@@ -275,6 +283,10 @@ return plural;
   null,
   "Restartuje se"
  ],
+ "Saturdays": [
+  null,
+  "Soboty"
+ ],
  "Set up": [
   null,
   "Nastavit"
@@ -299,6 +311,10 @@ return plural;
   null,
   "Správa balíčků je v tuto chvíli používána nějakým jiným programem, vyčkejte…"
  ],
+ "Sundays": [
+  null,
+  "Neděle"
+ ],
  "System is up to date": [
   null,
   "Systém je aktuální"
@@ -311,6 +327,10 @@ return plural;
   null,
   "Tato webová konzole bude aktualizována"
  ],
+ "Thursdays": [
+  null,
+  "Čtvrtky"
+ ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
   "Pro získávání aktualizací software je třeba systém zaregistrovat u Red Hat, buď pomocí Red Hat portálu pro zákazníky nebo místního serveru předplatného."
@@ -318,6 +338,10 @@ return plural;
  "Total size: $0": [
   null,
   "Celková velikost: $0"
+ ],
+ "Tuesdays": [
+  null,
+  "Úterky"
  ],
  "Update History": [
   null,
@@ -355,6 +379,10 @@ return plural;
   null,
   "Čeká se na dokončení ostatních operací správy balíčků"
  ],
+ "Wednesdays": [
+  null,
+  "Středy"
+ ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
   "Váš prohlížeč se odpojí, ale to neovlivní proces aktualizace. Můžete se kdykoli znovu připojit a podívat se na postup."
@@ -382,34 +410,6 @@ return plural;
  "every day": [
   null,
   "každý den"
- ],
- "on Fridays": [
-  null,
-  "v pátky"
- ],
- "on Mondays": [
-  null,
-  "v pondělky"
- ],
- "on Saturdays": [
-  null,
-  "v soboty"
- ],
- "on Sundays": [
-  null,
-  "v neděle"
- ],
- "on Thursdays": [
-  null,
-  "ve čtvrtky"
- ],
- "on Tuesdays": [
-  null,
-  "ve středy"
- ],
- "on Wednesdays": [
-  null,
-  "v úterky"
  ],
  "security": [
   null,

@@ -230,6 +230,56 @@ input[type=number] {
 .dialog-ct-visible {
     display: block;
 }
+
+.ct-select {
+    --dropdown-image: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2237%22 height=%2224%22 viewBox=%220 0 9.487 6%22%3E%3Cpath fill=%22%234d5258%22 d=%22M5.623 2.831l-.09-.09c-.02-.02-.063-.02-.083 0l-.706.707-.707-.708c-.02-.02-.063-.018-.082.001l-.091.09c-.02.02-.02.063 0 .082l.838.838c.02.02.063.02.082 0l.84-.837c.02-.02.019-.063-.001-.083z%22/%3E%3C/svg%3E%0A");
+    --dropdown-background: linear-gradient(#fafafa, #ededed);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    max-width: 100%;
+    padding: 1px 28px 1px 5px;
+    border: 1px solid #bbb;
+    background: var(--dropdown-image) no-repeat 100% 50%, var(--dropdown-background);
+    box-shadow: 0 2px 3px rgba(3, 3, 3, 0.1);
+    border-radius: 1px;
+    color: #4d5258;
+    cursor: pointer;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    font-weight: 600;
+    min-height: 26px;
+}
+
+@-moz-document url-prefix() {
+    /* Accomodate Firefox styling selects with slightly different padding. */
+    .ct-select {
+        padding-left: 1px;
+    }
+}
+
+.ct-select:hover,
+.ct-select:active {
+    --dropdown-background: #f1f1f1;
+}
+
+.ct-select:hover {
+    border-color: #7dc3e8;
+}
+
+.ct-select:focus {
+    border-color: #0088ce; /* pf-blue-400 */
+    /* Outer blue glow */
+    box-shadow: inset 0 1px 1px rgba(3, 3, 3, 0.075), 0 0 8px rgba(0, 136, 206, 0.6);
+    color: #4d5258;
+}
+
+.ct-select:active {
+    box-shadow: inset 0 2px 8px rgba(3, 3, 3, 0.2);
+}
+
+.ct-select > option {
+    background-color: #fff;
+}
 /* Panels don't draw borders between them */
 .panel > .table > tbody:first-child td {
     border-top: 1px solid rgb(221, 221, 221);
@@ -280,36 +330,43 @@ input[type=number] {
 }
 
 /* Make things line up */
-.table tbody tr td:first-child,
-.table thead tr th:first-child {
-    padding-left: 15px;
+.table tbody tr > :first-child,
+.table thead tr > :first-child {
+    padding-left: 1.5rem;
 }
 
-.table tbody tr td:last-child,
-.table thead tr th:last-child {
-    padding-right: 15px;
+.table tbody tr > :last-child,
+.table thead tr > :last-child {
+    padding-right: 1.5rem;
+}
+
+.info-table-ct > tbody > tr > th,
+.info-table-ct > tr > td,
+.info-table-ct > tbody > tr > td {
+    line-height: 26px;
+    vertical-align: baseline;
+}
+
+.info-table-ct > tr > th,
+.info-table-ct > tr > td,
+.info-table-ct > tbody > tr > th,
+.info-table-ct > tbody > tr > td {
+    padding-bottom: 0.5rem;
 }
 
 .info-table-ct > tr > td,
 .info-table-ct > tbody > tr > td {
-    white-space: nowrap;
     overflow: hidden;
+    padding-left: 1rem;
     text-overflow: ellipsis;
-    padding-left: 0.75em;
-    padding-top: 0.25em;
-    vertical-align: top;
-    line-height: 26px;
+    white-space: nowrap;
 }
 
+.info-table-ct > tbody > tr > th,
 .info-table-ct > tr > td:first-child,
 .info-table-ct > tbody > tr > td:first-child {
+    font-weight: 600;
     text-align: right;
-    color: #888888;
-}
-
-.info-table-ct > tr > td:not(:first-child),
-.info-table-ct > tbody > tr > td:not(:first-child) {
-    color: black;
 }
 
 .info-table-ct > tr > td button,
@@ -329,6 +386,7 @@ input[type=number] {
     line-height: 26px;
 }
 
+
 .form-table-ct td.top {
     vertical-align: top;
 }
@@ -336,9 +394,10 @@ input[type=number] {
 .form-table-ct td:first-child {
     text-align: right;
     white-space: nowrap;
-    color: #888888;
+    font-weight: 600;
     width: 5px; /* will be expanded by nowrap */
 }
+
 
 .form-table-ct td[colspan] {
     text-align: inherit;
@@ -413,15 +472,6 @@ input[type=number] {
 .cockpit-account > .cockpit-account-user-name {
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-#account-details td:first-child {
-    text-align: right;
-    color: #888;
-}
-
-#account-details td {
-     padding: 7px;
 }
 
 #account-details div.checkbox:first-child {
@@ -587,6 +637,8 @@ input[type=number] {
 .ct-form-layout > .ct-validation-wrapper > select,
 .ct-form-layout > .bootstrap-select,
 .ct-form-layout > .ct-validation-wrapper > .bootstrap-select,
+.ct-form-layout > .ct-select,
+.ct-form-layout > .ct-validation-wrapper > .ct-select,
 .ct-form-layout > .dropdown,
 .ct-form-layout > .ct-validation-wrapper > .dropdown,
 .ct-form-layout > .combobox-container,
@@ -625,19 +677,21 @@ input[type=number] {
 .ct-form-layout > .ct-validation-wrapper > [role=group].ct-form-layout-vertical > :not(.ct-form-layout-split) {
   grid-column: 1 / -1;
 }
-.ct-form-layout > [role=group]:not(.ct-form-layout-relax) > .dropdown,
-.ct-form-layout > .ct-validation-wrapper > [role=group]:not(.ct-form-layout-relax) > .dropdown {
-  width: auto !important;
-}
-.ct-form-layout > [role=group] > .form-control,
-.ct-form-layout > .ct-validation-wrapper > [role=group] > .form-control {
-  width: auto;
-}
 .ct-form-layout > [role=group] > .checkbox,
 .ct-form-layout > .ct-validation-wrapper > [role=group] > .checkbox,
 .ct-form-layout > [role=group] > .radio,
 .ct-form-layout > .ct-validation-wrapper > [role=group] > .radio {
   margin: 0;
+}
+.ct-form-layout > [role=group]:not(.ct-form-layout-relax) > .dropdown,
+.ct-form-layout > .ct-validation-wrapper > [role=group]:not(.ct-form-layout-relax) > .dropdown,
+.ct-form-layout > .ct-validation-wrapper > [data-field]:not(.ct-form-layout-relax) > .dropdown {
+  width: auto !important;
+}
+.ct-form-layout > [role=group]:not(.ct-form-layout-relax) > .ct-select,
+.ct-form-layout > .ct-validation-wrapper > [role=group]:not(.ct-form-layout-relax) > .ct-select,
+.ct-form-layout > .ct-validation-wrapper > [data-field]:not(.ct-form-layout-relax) > .ct-select {
+  width: 100%;
 }
 .ct-form-layout .checkbox > label,
 .ct-form-layout .radio > label,

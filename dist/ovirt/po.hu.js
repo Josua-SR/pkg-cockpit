@@ -69,23 +69,23 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  ""
+  "A(z) $0 elérhető a legtöbb operációs rendszer számára. A telepítéshez keressen rá a GNOME Szoftverekben vagy futtassa a következőt:"
  ],
  "$0 vCPU Details": [
   null,
-  ""
+  "$0 vCPU részletes adatai"
  ],
  "Action": [
   null,
-  ""
+  "Művelet"
  ],
  "Add": [
   null,
-  ""
+  "Hozzáadás"
  ],
  "Add Disk": [
   null,
-  ""
+  "Lemez hozzáadása"
  ],
  "Address": [
   null,
@@ -169,15 +169,15 @@ return plural;
  ],
  "Cluster": [
   null,
-  ""
+  "Fürt"
  ],
  "Cluster Templates": [
   null,
-  ""
+  "Fürtsablonok"
  ],
  "Cluster Virtual Machines": [
   null,
-  ""
+  "Fürtön futó virtuális gépek"
  ],
  "Confirm migration": [
   null,
@@ -277,11 +277,11 @@ return plural;
  ],
  "Disk failed to be attached": [
   null,
-  "Tuned alkalmazás engedélyezése sikertelen"
+  ""
  ],
  "Disk failed to be created": [
   null,
-  "Tuned alkalmazás engedélyezése sikertelen"
+  ""
  ],
  "Disks": [
   null,
@@ -371,6 +371,10 @@ return plural;
   null,
   ""
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Launch Remote Viewer": [
   null,
   ""
@@ -431,15 +435,11 @@ return plural;
   null,
   ""
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
   ""
  ],
- "Network settings could not be saved": [
-  null,
-  ""
- ],
- "Networks": [
+ "Network interface settings could not be saved": [
   null,
   ""
  ],
@@ -479,6 +479,10 @@ return plural;
   null,
   ""
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "Number of virtual CPUs that gonna be used.": [
   null,
   ""
@@ -496,6 +500,10 @@ return plural;
   ""
  ],
  "Ok": [
+  null,
+  ""
+ ],
+ "Open": [
   null,
   ""
  ],
@@ -567,6 +575,10 @@ return plural;
   null,
   ""
  ],
+ "Private": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   ""
@@ -604,6 +616,10 @@ return plural;
   ""
  ],
  "Run Here": [
+  null,
+  ""
+ ],
+ "Run when host boots": [
   null,
   ""
  ],
@@ -679,10 +695,6 @@ return plural;
   null,
   ""
  ],
- "Start the VM to see disk statistics.": [
-  null,
-  ""
- ],
  "State": [
   null,
   ""
@@ -725,7 +737,7 @@ return plural;
  ],
  "Templates of $0 cluster": [
   null,
-  ""
+  "A(z) $0 fürt sablonjai"
  ],
  "The VM crashed.": [
   null,
@@ -784,10 +796,6 @@ return plural;
   ""
  ],
  "Unplug": [
-  null,
-  ""
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   ""
  ],
@@ -881,7 +889,7 @@ return plural;
  ],
  "Virtual Machines of $0 cluster": [
   null,
-  ""
+  "A(z) $0 fürt virtuális gépei"
  ],
  "Volume": [
   null,

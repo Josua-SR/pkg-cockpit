@@ -69,27 +69,27 @@ return plural;
  },
  "A compatible version of Cockpit is not installed on {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "Nincs telepítve a Cockpit kompatibilis verziója ezen: {{#strong}}{{host}}{{/strong}}."
  ],
  "About Cockpit": [
   null,
-  ""
+  "A Cockpit névjegye"
  ],
  "Account Settings": [
   null,
-  ""
+  "Fiókbeállítások"
  ],
  "Active Pages": [
   null,
-  ""
+  "Aktív lapok"
  ],
  "Add": [
   null,
-  ""
+  "Hozzáadás"
  ],
  "Add Machine to Dashboard": [
   null,
-  ""
+  "Gép hozzáadása a vezérlőpulthoz"
  ],
  "Add key": [
   null,
@@ -333,7 +333,7 @@ return plural;
  ],
  "Off": [
   null,
-  "Kikapcsolva"
+  "Ki"
  ],
  "Ok": [
   null,
@@ -349,7 +349,7 @@ return plural;
  ],
  "On": [
   null,
-  "Bekapcsolva"
+  "Be"
  ],
  "Ooops!": [
   null,
@@ -433,11 +433,11 @@ return plural;
  ],
  "The machine is restarting": [
   null,
-  ""
+  "A gép újraindul"
  ],
  "The passwords do not match.": [
   null,
-  ""
+  "A jelszavak nem egyeznek."
  ],
  "There are currently no active pages": [
   null,
@@ -449,7 +449,7 @@ return plural;
  ],
  "This version of cockpit-ws does not support connecting to a host with an alternate user or port": [
   null,
-  "A cockpit-ws ezen verziója nem támogatja a módosított felhasználóval vagy porttal való csatlakoztatását a kiszolgálóra"
+  "A cockpit-ws ezen verziója nem támogatja a módosított felhasználóval vagy porttal történő kiszolgálóhoz kapcsolódást"
  ],
  "Tip: Make your key password match your login password to automatically authenticate against other systems.": [
   null,

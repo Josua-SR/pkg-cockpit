@@ -283,9 +283,17 @@ return plural;
   null,
   ""
  ],
+ "All": [
+  null,
+  "Tots"
+ ],
  "All In One": [
   null,
   "Tot en un"
+ ],
+ "Appearance:": [
+  null,
+  ""
  ],
  "Asset Tag": [
   null,
@@ -297,7 +305,7 @@ return plural;
  ],
  "Automatic Startup": [
   null,
-  "Actualitzacions automàtiques"
+  ""
  ],
  "Automatically using NTP": [
   null,
@@ -324,6 +332,10 @@ return plural;
   ""
  ],
  "Binds To": [
+  null,
+  ""
+ ],
+ "Black": [
   null,
   ""
  ],
@@ -387,6 +399,10 @@ return plural;
   null,
   "Classe"
  ],
+ "Clear All Filters": [
+  null,
+  ""
+ ],
  "Click to see system hardware information": [
   null,
   "Feu clic per veure la informació del maquinari del sistema"
@@ -427,6 +443,10 @@ return plural;
   null,
   "Convertible"
  ],
+ "Copy": [
+  null,
+  ""
+ ],
  "Create Timer": [
   null,
   "Crea un temporitzador"
@@ -439,9 +459,17 @@ return plural;
   null,
   ""
  ],
+ "Ctrl+Insert": [
+  null,
+  ""
+ ],
  "Current boot": [
   null,
   "Arrencada actual"
+ ],
+ "Dark": [
+  null,
+  ""
  ],
  "Debug and above": [
   null,
@@ -462,6 +490,10 @@ return plural;
  "Detachable": [
   null,
   ""
+ ],
+ "Details": [
+  null,
+  "Detalls"
  ],
  "Disable": [
   null,
@@ -535,6 +567,10 @@ return plural;
   null,
   ""
  ],
+ "Filter by name or description...": [
+  null,
+  ""
+ ],
  "Friday": [
   null,
   "Divendres"
@@ -582,10 +618,6 @@ return plural;
  "I/O Wait": [
   null,
   "Espera d'E/S"
- ],
- "Id": [
-  null,
-  "Id"
  ],
  "Info and above": [
   null,
@@ -670,6 +702,10 @@ return plural;
  "Last Trigger": [
   null,
   "Últim disparador"
+ ],
+ "Light": [
+  null,
+  ""
  ],
  "Load earlier entries": [
   null,
@@ -787,6 +823,10 @@ return plural;
   null,
   "Sense retard"
  ],
+ "No Matching Results": [
+  null,
+  ""
+ ],
  "No host keys found.": [
   null,
   ""
@@ -852,6 +892,10 @@ return plural;
   "PackageKit s'ha estavellat."
  ],
  "Part Of": [
+  null,
+  ""
+ ],
+ "Paste": [
   null,
   ""
  ],
@@ -1017,7 +1061,7 @@ return plural;
  ],
  "Running Since": [
   null,
-  "En execució des de"
+  ""
  ],
  "Saturday": [
   null,
@@ -1067,6 +1111,10 @@ return plural;
   null,
   "Gravetat"
  ],
+ "Shift+Insert": [
+  null,
+  ""
+ ],
  "Show fingerprints": [
   null,
   "Mostra les empremtes"
@@ -1115,9 +1163,9 @@ return plural;
   null,
   "Atura"
  ],
- "Store metrics": [
+ "Store Metrics": [
   null,
-  "Més detalls"
+  ""
  ],
  "Sub Chassis": [
   null,
@@ -1315,6 +1363,10 @@ return plural;
  "Weeks": [
   null,
   "Setmanes"
+ ],
+ "White": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

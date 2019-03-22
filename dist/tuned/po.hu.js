@@ -81,23 +81,23 @@ return plural;
  ],
  "Communication with tuned has failed": [
   null,
-  "Kommunikáció a Tuned alkalmazással meghíúsult"
+  "A kommunikáció a tuned alkalmazással sikertelen"
  ],
  "Disable tuned": [
   null,
-  "Tuned kikapcsolása"
+  "A tuned letiltása"
  ],
  "Failed to disable tuned": [
   null,
-  "Tuned alkalmazás kikapcsolása sikertelen"
+  "A tuned letiltása sikertelen"
  ],
  "Failed to disable tuned profile": [
   null,
-  "Tuned alkalmazás profiljának kikapcsolása sikertelen"
+  "A tuned profil letiltása sikertelen"
  ],
  "Failed to enable tuned": [
   null,
-  "Tuned alkalmazás engedélyezése sikertelen"
+  "A tuned engedélyezése sikertelen"
  ],
  "Failed to switch profile": [
   null,
@@ -117,7 +117,7 @@ return plural;
  ],
  "This system is using a custom profile": [
   null,
-  "Ez a rendszer az egyéni profilt használja"
+  "Ez a rendszer egy egyéni profilt használ"
  ],
  "This system is using the recommended profile": [
   null,
@@ -125,19 +125,19 @@ return plural;
  ],
  "Tuned has failed to start": [
   null,
-  "Tuned alkalmazás nem indult el"
+  "A tuned nem tudott elindulni"
  ],
  "Tuned is not available": [
   null,
-  "Tuned alkalmazás nem elérhető"
+  "A tuned nem érhető el"
  ],
  "Tuned is not running": [
   null,
-  "Tuned alkalmazás nem működik"
+  "A tuned nem fut"
  ],
  "Tuned is off": [
   null,
-  "Tuned alkalmazás kikapcsolva"
+  "A tuned ki van kapcsolva"
  ],
  "none": [
   null,

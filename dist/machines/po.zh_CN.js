@@ -199,6 +199,10 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "DHCP Range": [
+  null,
+  ""
+ ],
  "Deactivate": [
   null,
   "取消激活"
@@ -267,6 +271,14 @@ return plural;
   null,
   ""
  ],
+ "Existing Disk Image": [
+  null,
+  ""
+ ],
+ "Existing disk image on host's file system": [
+  null,
+  ""
+ ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
   "启用的虚拟 CPU 数量应少于最大虚拟 CPU 数量。"
@@ -274,10 +286,6 @@ return plural;
  "File": [
   null,
   "文件"
- ],
- "Filesystem": [
-  null,
-  "文件系统"
  ],
  "Filesystem Directory": [
   null,
@@ -295,9 +303,17 @@ return plural;
   null,
   "格式化"
  ],
+ "Forwarding mode": [
+  null,
+  ""
+ ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
   "获取 HYPERVISOR 最大 VCPU 操作失败"
+ ],
+ "General": [
+  null,
+  "通用"
  ],
  "GiB": [
   null,
@@ -327,6 +343,14 @@ return plural;
   null,
   "安装虚拟机操作失败"
  ],
+ "IPv4 Address": [
+  null,
+  ""
+ ],
+ "IPv6 Address": [
+  null,
+  ""
+ ],
  "Immediately Start VM": [
   null,
   "立即启动 VM"
@@ -347,6 +371,10 @@ return plural;
   null,
   "安装源不应为空"
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Invalid filename": [
   null,
   "无效的文件名"
@@ -359,6 +387,10 @@ return plural;
   null,
   "加载中......"
  ],
+ "Local Install Media": [
+  null,
+  ""
+ ],
  "MAC Address": [
   null,
   "MAC 地址"
@@ -370,6 +402,10 @@ return plural;
  "Manual Connection": [
   null,
   "手动连接"
+ ],
+ "Maximum Transmission Unit": [
+  null,
+  ""
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
@@ -403,17 +439,25 @@ return plural;
   null,
   "名称不应为空"
  ],
+ "Name: ": [
+  null,
+  ""
+ ],
+ "Netmask": [
+  null,
+  ""
+ ],
  "Network File System": [
   null,
   "网络文件系统"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "网络类型"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
-  "网络设置不能被保存"
+  ""
  ],
  "Networks": [
   null,
@@ -451,6 +495,10 @@ return plural;
   null,
   "没有为此 VM 定义网络接口"
  ],
+ "No network is defined on this host": [
+  null,
+  ""
+ ],
  "No storage pool is defined on this host": [
   null,
   "没有在这个主机上定义存储池"
@@ -459,9 +507,21 @@ return plural;
   null,
   "没有虚拟网络"
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "OS Vendor": [
   null,
   "操作系统厂商"
+ ],
+ "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
+  null,
+  ""
+ ],
+ "Open": [
+  null,
+  ""
  ],
  "Operating System": [
   null,
@@ -523,6 +583,14 @@ return plural;
   null,
   "向客户机公开的首选插槽数。"
  ],
+ "Prefix": [
+  null,
+  ""
+ ],
+ "Private": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "协议"
@@ -554,6 +622,10 @@ return plural;
  "Run": [
   null,
   "运行"
+ ],
+ "Run when host boots": [
+  null,
+  ""
  ],
  "SPICE": [
   null,
@@ -663,6 +735,10 @@ return plural;
   null,
   "存储卷"
  ],
+ "Storage Volumes could not be deleted": [
+  null,
+  ""
+ ],
  "System": [
   null,
   "系统"
@@ -762,6 +838,10 @@ return plural;
  "Used": [
   null,
   "已使用"
+ ],
+ "Used by": [
+  null,
+  ""
  ],
  "VCPU settings could not be saved": [
   null,

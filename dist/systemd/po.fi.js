@@ -283,7 +283,15 @@ return plural;
   null,
   ""
  ],
+ "All": [
+  null,
+  "Kaikki"
+ ],
  "All In One": [
+  null,
+  ""
+ ],
+ "Appearance:": [
   null,
   ""
  ],
@@ -297,7 +305,7 @@ return plural;
  ],
  "Automatic Startup": [
   null,
-  "Automaattiset päivitykset"
+  ""
  ],
  "Automatically using NTP": [
   null,
@@ -324,6 +332,10 @@ return plural;
   ""
  ],
  "Binds To": [
+  null,
+  ""
+ ],
+ "Black": [
   null,
   ""
  ],
@@ -387,6 +399,10 @@ return plural;
   null,
   ""
  ],
+ "Clear All Filters": [
+  null,
+  ""
+ ],
  "Click to see system hardware information": [
   null,
   "Napsauta nähdäksesi järjestelmän laitteistotiedot"
@@ -427,6 +443,10 @@ return plural;
   null,
   ""
  ],
+ "Copy": [
+  null,
+  ""
+ ],
  "Create Timer": [
   null,
   "Luo ajastin"
@@ -439,9 +459,17 @@ return plural;
   null,
   ""
  ],
+ "Ctrl+Insert": [
+  null,
+  ""
+ ],
  "Current boot": [
   null,
   "Tämänhetkinen käynnistys"
+ ],
+ "Dark": [
+  null,
+  ""
  ],
  "Debug and above": [
   null,
@@ -462,6 +490,10 @@ return plural;
  "Detachable": [
   null,
   ""
+ ],
+ "Details": [
+  null,
+  "Yksityiskohdat"
  ],
  "Disable": [
   null,
@@ -535,6 +567,10 @@ return plural;
   null,
   ""
  ],
+ "Filter by name or description...": [
+  null,
+  ""
+ ],
  "Friday": [
   null,
   "Perjantai"
@@ -582,10 +618,6 @@ return plural;
  "I/O Wait": [
   null,
   "I/O Odottaa"
- ],
- "Id": [
-  null,
-  "Id"
  ],
  "Info and above": [
   null,
@@ -671,6 +703,10 @@ return plural;
   null,
   "Edellinen liipaisin"
  ],
+ "Light": [
+  null,
+  ""
+ ],
  "Load earlier entries": [
   null,
   "Lataa aiemmat merkinnät"
@@ -725,7 +761,7 @@ return plural;
  ],
  "Memory & Swap": [
   null,
-  "Muisti"
+  ""
  ],
  "Message to logged in users": [
   null,
@@ -784,6 +820,10 @@ return plural;
   ""
  ],
  "No Delay": [
+  null,
+  ""
+ ],
+ "No Matching Results": [
   null,
   ""
  ],
@@ -852,6 +892,10 @@ return plural;
   "PackageKit kaatui"
  ],
  "Part Of": [
+  null,
+  ""
+ ],
+ "Paste": [
   null,
   ""
  ],
@@ -1017,7 +1061,7 @@ return plural;
  ],
  "Running Since": [
   null,
-  "suoritetaan"
+  ""
  ],
  "Saturday": [
   null,
@@ -1064,6 +1108,10 @@ return plural;
   "Aseta aika"
  ],
  "Severity": [
+  null,
+  ""
+ ],
+ "Shift+Insert": [
   null,
   ""
  ],
@@ -1115,9 +1163,9 @@ return plural;
   null,
   "Pysäytä"
  ],
- "Store metrics": [
+ "Store Metrics": [
   null,
-  "Lisätietoja"
+  ""
  ],
  "Sub Chassis": [
   null,
@@ -1315,6 +1363,10 @@ return plural;
  "Weeks": [
   null,
   "Viikot"
+ ],
+ "White": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

@@ -283,6 +283,10 @@ return plural;
   null,
   "Výstraha a závažnější"
  ],
+ "All": [
+  null,
+  "Vše"
+ ],
  "All In One": [
   null,
   "Vše v jednom"
@@ -394,6 +398,10 @@ return plural;
  "Class": [
   null,
   "Třída"
+ ],
+ "Clear All Filters": [
+  null,
+  "Vyčistit všechny filtry"
  ],
  "Click to see system hardware information": [
   null,
@@ -559,6 +567,10 @@ return plural;
   null,
   "Rozšiřující šasi"
  ],
+ "Filter by name or description...": [
+  null,
+  "Filtrovat podle názvu nebo popisu…"
+ ],
  "Friday": [
   null,
   "pátek"
@@ -606,10 +618,6 @@ return plural;
  "I/O Wait": [
   null,
   "Čekání na vst./výst."
- ],
- "Id": [
-  null,
-  "Identif."
  ],
  "Info and above": [
   null,
@@ -814,6 +822,10 @@ return plural;
  "No Delay": [
   null,
   "Bez prodlevy"
+ ],
+ "No Matching Results": [
+  null,
+  "Žádné shodující se výsledky"
  ],
  "No host keys found.": [
   null,

@@ -69,65 +69,65 @@ return plural;
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
-  ""
+  " 1\"Biztos, hogy törli a következő csomópontokat?"
  ],
  "$0% Free": [
   "$0% Free",
-  "",
-  ""
+  "$0% szabad",
+  "$0% szabad"
  ],
  "$0% Used": [
   "$0% Used",
-  "",
-  ""
+  "$0% foglalt",
+  "$0% foglalt"
  ],
  "AWS Elastic Block Store": [
   null,
-  ""
+  "AWS Elastic Block Store"
  ],
  "Access Modes": [
   null,
-  ""
+  "Hozzáférési módok"
  ],
  "Access Policy": [
   null,
-  ""
+  "Hozzáférési házirend"
  ],
  "Actual": [
   null,
-  ""
+  "Jelenlegi"
  ],
  "Add": [
   null,
-  ""
+  "Hozzáadás"
  ],
  "Add Cluster Node": [
   null,
-  ""
+  "Fürtcsomópont hozzáadása"
  ],
  "Add Group": [
   null,
-  ""
+  "Csoport hozzáadása"
  ],
  "Add Kubernetes Node": [
   null,
-  ""
+  "Kubernetes csomópont hozzáadása"
  ],
  "Add Member": [
   null,
-  ""
+  "Tag hozzáadása"
  ],
  "Add Membership": [
   null,
-  ""
+  "Tagság hozzáadása"
  ],
  "Add New Cluster": [
   null,
-  ""
+  "Új fürt hozzáadása"
  ],
  "Add New User": [
   null,
-  ""
+  "Új felhasználó hozzáadása"
  ],
  "Add Role": [
   null,
@@ -275,7 +275,7 @@ return plural;
  ],
  "Cluster": [
   null,
-  ""
+  "Fürt"
  ],
  "Configuration": [
   null,
@@ -363,7 +363,7 @@ return plural;
  ],
  "Delete Node": [
   null,
-  ""
+  "Csomópont törlése"
  ],
  "Delete Persistent Volume": [
   null,
@@ -391,7 +391,7 @@ return plural;
  ],
  "Deleting a Pod will kill all associated containers. Pods may be automatically created again in some cases.": [
   null,
-  ""
+  "Egy pod törlése kilövi az összes kapcsolódó konténert. A podok egyes esetekben automatikusan újra létrehozhatóak."
  ],
  "Deploy": [
   null,
@@ -459,7 +459,7 @@ return plural;
  ],
  "Do you want to delete this Node?": [
   null,
-  ""
+  "Biztos, hogy törli ezt a csomópontot?"
  ],
  "Do you want to remove the image tagged as '{{stream.metadata.namespace}}/{{stream.metadata.name}}:{{tag.tag}}'?": [
   null,
@@ -643,7 +643,7 @@ return plural;
  ],
  "Kubernetes Cluster": [
   null,
-  ""
+  "Kubernetes fürt"
  ],
  "Labels": [
   null,
@@ -799,23 +799,23 @@ return plural;
  ],
  "No nodes in cluster": [
   null,
-  ""
+  "Nincs csomópont a fürtben"
  ],
  "No pods deployed": [
   null,
-  ""
+  "Nincs pod telepítve"
  ],
  "No pods replicated": [
   null,
-  ""
+  "Nincs pod replikálva"
  ],
  "No pods scheduled": [
   null,
-  ""
+  "Nincs pod ütemezve"
  ],
  "No pods selected": [
   null,
-  ""
+  "Nincs pod kiválasztva"
  ],
  "No projects are present.": [
   null,
@@ -835,15 +835,15 @@ return plural;
  ],
  "Node": [
   null,
-  ""
+  "Csomópont"
  ],
  "Nodes": [
   null,
-  ""
+  "Csomópontok"
  ],
  "Nodes are the machines that run your containers.": [
   null,
-  ""
+  "A csomópontok gépek, melyek a konténereit futtatják."
  ],
  "None": [
   null,
@@ -987,31 +987,31 @@ return plural;
  ],
  "Pod": [
   null,
-  ""
+  "Pod"
  ],
  "Pod Address": [
   null,
-  ""
+  "Podcím"
  ],
  "Pod Endpoints": [
   null,
-  ""
+  "Pod végpontok"
  ],
  "Pod Replicated": [
   null,
-  ""
+  "Pod replikálva"
  ],
  "Pod Selector": [
   null,
-  ""
+  "Pod kiválasztó"
  ],
  "Pods": [
   null,
-  ""
+  "Podok"
  ],
  "Pods contain one or more containers that run together on a node, containing your application code.": [
   null,
-  ""
+  "A podok egy vagy több konténert tartalmaznak, amelyek együtt futnak egy csomóponton, és az alkalmazása kódját tartalmazzák."
  ],
  "Pool Name": [
   null,
@@ -1091,15 +1091,15 @@ return plural;
  ],
  "Read and write from a single node": [
   null,
-  ""
+  "Olvasás és írás egy csomópontból"
  ],
  "Read and write from multiple nodes": [
   null,
-  ""
+  "Olvasás és írás több csomópontból"
  ],
  "Read only from multiple nodes": [
   null,
-  ""
+  "Csak olvasás több csomóopontból"
  ],
  "Ready": [
   null,
@@ -1179,7 +1179,7 @@ return plural;
  ],
  "Replication controllers dynamically create instances of pods from templates, and remove pods when necessary.": [
   null,
-  ""
+  "A replikációvezérlők dinamikusan hoznak létre pod példányokat sablonokból, és eltávolítják a podokat, ha szükséges."
  ],
  "Repository URL": [
   null,
@@ -1231,7 +1231,7 @@ return plural;
  ],
  "Scheduled Pods": [
   null,
-  ""
+  "Ütemezett podok"
  ],
  "Scheduling Disabled": [
   null,
@@ -1315,7 +1315,7 @@ return plural;
  ],
  "Show all Nodes": [
   null,
-  ""
+  "Összes csomópont megjelenítése"
  ],
  "Show all Persistent Volumes": [
   null,
@@ -1323,11 +1323,11 @@ return plural;
  ],
  "Show all Pod Containers": [
   null,
-  ""
+  "Az összes pod konténer megjelenítése"
  ],
  "Show all Pods": [
   null,
-  ""
+  "Az összes pod megjelenítése"
  ],
  "Show all Projects": [
   null,
@@ -1427,59 +1427,59 @@ return plural;
  ],
  "The maximum number of replicas is 128": [
   null,
-  ""
+  "A replikák maximális száma 128"
  ],
  "The name contains invalid characters": [
   null,
-  ""
+  "A név érvénytelen karaktereket tartalmaz"
  ],
  "The node '{{ target }}' does not exist.": [
   null,
-  ""
+  "A(z) „{{ target }}” csomópont nem létezik."
  ],
  "The node doesn't have enough disk space": [
   null,
-  ""
+  "A csomóponton nincs elég hely"
  ],
  "The node doesn't have enough free memory": [
   null,
-  ""
+  "A csomóponton nincs elég memória"
  ],
  "The persistent volume '{{ target }}' does not exist.": [
   null,
-  ""
+  "A(z) „{{ target }}” tartós kötet nem létezik."
  ],
  "The pod '{{ target }}' does not exist.": [
   null,
-  ""
+  "A(z) „{{ target }}” pod nem létezik."
  ],
  "The project '{{ projName }}' does not exist.": [
   null,
-  ""
+  "A(z) „{{ projName }}” projekt nem létezik."
  ],
  "The replication controller '{{ target }}' does not exist.": [
   null,
-  ""
+  "A(z) „{{ target }}” replikációvezérlő nem létezik."
  ],
  "The route '{{ target }}' does not exist.": [
   null,
-  ""
+  "A(z) „{{ target }}” útvonal nem létezik."
  ],
  "The selected file is not a valid Kubernetes application manifest.": [
   null,
-  ""
+  "A kiválasztott fájl nem érvényes Kubernetes alkalmazásleíró"
  ],
  "The server uses a certificate signed by an unknown authority.": [
   null,
-  ""
+  "A kiszolgáló egy ismeretlen kiállító által aláírt tanúsítványt használ."
  ],
  "The service '{{ target }}' does not exist.": [
   null,
-  ""
+  "A(z) „{{ target }}” szolgáltatás nem létezik."
  ],
  "The user '{{ userName }}' does not exist.": [
   null,
-  ""
+  "„{{ userName }}” felhasználó nem létezik."
  ],
  "This claim is in use. Deleting it may cause issues with the following pod:": [
   null,
@@ -1487,7 +1487,7 @@ return plural;
  ],
  "This option is for single node testing only – local storage will not work in a multi-node cluster": [
   null,
-  ""
+  "Ez a beállítás csak egy csomópontos tesztelésre szolgál – a helyi tároló nem fog működni egy több csomópontos fürtben"
  ],
  "This volume has been claimed by {{ item.item.spec.claimRef.namespace }} / {{ item.item.spec.claimRef.name }}. Deleting it will break that claim and may cause issues with any pods depending on it.": [
   null,
@@ -1607,7 +1607,7 @@ return plural;
  ],
  "You can deploy an application to your cluster.": [
   null,
-  ""
+  "Alkalmazást telepíthet a fürtjére."
  ],
  "Your login credentials do not give you access to use the docker registry from the command line.": [
   null,

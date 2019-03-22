@@ -69,8 +69,8 @@ return plural;
  },
  "$0 disk is missing": [
   "$0 disks are missing",
-  "",
-  ""
+  "$0 lemez hiányzik",
+  "$0 lemez hiányzik"
  ],
  "Cancel": [
   null,
@@ -110,7 +110,7 @@ return plural;
  ],
  "Off": [
   null,
-  "Kikapcsolva"
+  "Ki"
  ],
  "Ok": [
   null,
@@ -118,7 +118,7 @@ return plural;
  ],
  "On": [
   null,
-  "Bekapcsolva"
+  "Be"
  ],
  "Path to file": [
   null,
@@ -146,8 +146,8 @@ return plural;
  ],
  "disk-non-rotational\u0004$0 disk is missing": [
   "$0 disks are missing",
-  "",
-  ""
+  "$0 lemez hiányzik",
+  "$0 lemez hiányzik"
  ],
  "key\u0004Control": [
   null,

@@ -371,6 +371,10 @@ return plural;
   null,
   ""
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Launch Remote Viewer": [
   null,
   ""
@@ -431,15 +435,11 @@ return plural;
   null,
   "အမည်"
  ],
- "Network Type": [
-  null,
-  "ကွန်ယက်"
- ],
- "Network settings could not be saved": [
+ "Network Interfaces": [
   null,
   ""
  ],
- "Networks": [
+ "Network interface settings could not be saved": [
   null,
   ""
  ],
@@ -479,6 +479,10 @@ return plural;
   null,
   ""
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "Number of virtual CPUs that gonna be used.": [
   null,
   ""
@@ -496,6 +500,10 @@ return plural;
   ""
  ],
  "Ok": [
+  null,
+  ""
+ ],
+ "Open": [
   null,
   ""
  ],
@@ -567,6 +575,10 @@ return plural;
   null,
   ""
  ],
+ "Private": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   ""
@@ -604,6 +616,10 @@ return plural;
   ""
  ],
  "Run Here": [
+  null,
+  ""
+ ],
+ "Run when host boots": [
   null,
   ""
  ],
@@ -676,10 +692,6 @@ return plural;
   ""
  ],
  "Source": [
-  null,
-  ""
- ],
- "Start the VM to see disk statistics.": [
   null,
   ""
  ],
@@ -784,10 +796,6 @@ return plural;
   ""
  ],
  "Unplug": [
-  null,
-  ""
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
   null,
   ""
  ],

@@ -67,10 +67,6 @@ return plural;
   "language": "es",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
-  null,
-  "$0 Sólo usuarios con credenciales locales serán capacs de acceder a esta máquina. Esto puede afectar también a otros servicios como los ajustes de la resolución DNS y la lista de CA de confianza puede cambiar."
- ],
  "$0 is not available from any repository.": [
   null,
   "$0 no está disponible en ningún repositorio"
@@ -87,13 +83,9 @@ return plural;
   null,
   "Contraseña de Administrador"
  ],
- "Are you sure you want to leave the '$0' domain?": [
+ "After leaving the domain, only users with local credentials will be able to log into this machine. This may also affect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  "¿Está seguro que quiere abandonar el dominio '$0'?"
- ],
- "Are you sure you want to leave this domain?": [
-  null,
-  "¿Está seguro que quiere abandonar el dominio?"
+  ""
  ],
  "Authentication": [
   null,
@@ -111,9 +103,21 @@ return plural;
   null,
   "Comprobando el software instalado"
  ],
+ "Client Software": [
+  null,
+  ""
+ ],
  "Computer OU": [
   null,
   "Computadora OU"
+ ],
+ "Contacted domain": [
+  null,
+  ""
+ ],
+ "Domain": [
+  null,
+  "Dominio"
  ],
  "Domain $0 could not be contacted": [
   null,
@@ -141,7 +145,7 @@ return plural;
  ],
  "Host name should not be changed in a domain": [
   null,
-  "El anfitrión no debe estar vacío"
+  ""
  ],
  "Install": [
   null,
@@ -171,13 +175,13 @@ return plural;
   null,
   "Unirse a este dominio no esta soportado"
  ],
- "Leave": [
-  null,
-  "Abandonar"
- ],
  "Leave Domain": [
   null,
   "Abandonar el dominio"
+ ],
+ "Login Format": [
+  null,
+  ""
  ],
  "More": [
   null,
@@ -215,6 +219,10 @@ return plural;
   null,
   "Quitando $0"
  ],
+ "Server Software": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
   "El usuario <b>$0</b> no está autorizado a modificar dominios"
@@ -234,6 +242,10 @@ return plural;
  "User Password": [
   null,
   "Contraseña de usuario"
+ ],
+ "Validating address": [
+  null,
+  ""
  ],
  "Waiting for other software management operations to finish": [
   null,

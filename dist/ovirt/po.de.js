@@ -101,7 +101,7 @@ return plural;
  ],
  "Always attach": [
   null,
-  "Immer"
+  ""
  ],
  "Apply": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "Auto-Start"
+  ""
  ],
  "Available": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "Startreihenfolge"
+  ""
  ],
  "Bus": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "CPU Type": [
   null,
-  "CPU-Typ"
+  ""
  ],
  "CREATE VM action failed": [
   null,
@@ -301,7 +301,7 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "Emulierte Maschine"
+  ""
  ],
  "Enter New VM name": [
   null,
@@ -371,6 +371,10 @@ return plural;
   null,
   "Installation"
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Launch Remote Viewer": [
   null,
   "Starten Sie den Remote Viewer"
@@ -431,17 +435,13 @@ return plural;
   null,
   "Name"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "Netzwerkart"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
-  "Netzwerkeinstellungen konnten nicht gespeichert werden"
- ],
- "Networks": [
-  null,
-  "Netzwerke"
+  ""
  ],
  "New Volume Name": [
   null,
@@ -479,6 +479,10 @@ return plural;
   null,
   "Keine virtuellen Netzwerke"
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "Number of virtual CPUs that gonna be used.": [
   null,
   "Anzahl der virtuellen CPUs, die verwendet werden."
@@ -499,6 +503,10 @@ return plural;
   null,
   "OK"
  ],
+ "Open": [
+  null,
+  ""
+ ],
  "Optimized for:": [
   null,
   "Optimiert für:"
@@ -509,7 +517,7 @@ return plural;
  ],
  "Persistence": [
   null,
-  "Persistent Volumes"
+  ""
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
@@ -567,6 +575,10 @@ return plural;
   null,
   "Wartung vorbereiten"
  ],
+ "Private": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protokoll"
@@ -606,6 +618,10 @@ return plural;
  "Run Here": [
   null,
   "Hier laufen"
+ ],
+ "Run when host boots": [
+  null,
+  ""
  ],
  "Running Since:": [
   null,
@@ -678,10 +694,6 @@ return plural;
  "Source": [
   null,
   "Quelle"
- ],
- "Start the VM to see disk statistics.": [
-  null,
-  "Starten Sie die VM, um Festplattenstatistiken anzuzeigen."
  ],
  "State": [
   null,
@@ -786,10 +798,6 @@ return plural;
  "Unplug": [
   null,
   "Ziehen Sie den Stecker heraus"
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Aktualisieren Sie auf eine neuere Version von libvirt, um Festplattenstatistiken anzuzeigen"
  ],
  "Usage": [
   null,

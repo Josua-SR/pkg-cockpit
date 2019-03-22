@@ -67,6 +67,10 @@ return plural;
   "language": "ko",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Package": [
+  "$0 Packages",
+  ""
+ ],
  "$0 is not available from any repository.": [
   null,
   "$0은/는 리포지터리에서 사용할 수 없습니다. "
@@ -151,6 +155,10 @@ return plural;
   null,
   "에라타: "
  ],
+ "Fridays": [
+  null,
+  ""
+ ],
  "Ignore": [
   null,
   "무시"
@@ -196,6 +204,10 @@ return plural;
   ""
  ],
  "Loading available updates, please wait...": [
+  null,
+  ""
+ ],
+ "Mondays": [
   null,
   ""
  ],
@@ -263,6 +275,10 @@ return plural;
   null,
   ""
  ],
+ "Saturdays": [
+  null,
+  ""
+ ],
  "Set up": [
   null,
   ""
@@ -287,17 +303,13 @@ return plural;
   null,
   ""
  ],
+ "Sundays": [
+  null,
+  ""
+ ],
  "System is up to date": [
   null,
   "시스템이 업데이트되었음"
- ],
- "The following packages were recently updated:": [
-  null,
-  "다음 패키지가 최근에 업데이트되었습니다: "
- ],
- "The following packages were updated $0:": [
-  null,
-  ""
  ],
  "This system is not registered": [
   null,
@@ -307,11 +319,19 @@ return plural;
   null,
   ""
  ],
+ "Thursdays": [
+  null,
+  ""
+ ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
   ""
  ],
  "Total size: $0": [
+  null,
+  ""
+ ],
+ "Tuesdays": [
   null,
   ""
  ],
@@ -351,6 +371,10 @@ return plural;
   null,
   ""
  ],
+ "Wednesdays": [
+  null,
+  ""
+ ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
   ""
@@ -378,34 +402,6 @@ return plural;
  "every day": [
   null,
   "매일 "
- ],
- "on Fridays": [
-  null,
-  "금요일 "
- ],
- "on Mondays": [
-  null,
-  "월요일 "
- ],
- "on Saturdays": [
-  null,
-  "토요일 "
- ],
- "on Sundays": [
-  null,
-  "일요일 "
- ],
- "on Thursdays": [
-  null,
-  "목요일 "
- ],
- "on Tuesdays": [
-  null,
-  "화요일 "
- ],
- "on Wednesdays": [
-  null,
-  "수요일 "
  ],
  "security": [
   null,

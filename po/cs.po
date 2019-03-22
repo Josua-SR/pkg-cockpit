@@ -10,11 +10,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-27 22:58+0000\n"
+"POT-Creation-Date: 2019-03-21 19:08+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-02-21 05:57+0000\n"
+"PO-Revision-Date: 2019-03-14 07:57+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech\n"
 "Language: cs\n"
@@ -46,6 +46,10 @@ msgctxt "storage-id-desc"
 msgid "$0 File System"
 msgstr "$0 Souborový systém"
 
+#: pkg/machines/components/create-vm-dialog/pxe-helpers.js:113
+msgid "$0 Network"
+msgstr ""
+
 #: pkg/packagekit/history.jsx:101
 msgid "$0 Package"
 msgid_plural "$0 Packages"
@@ -53,7 +57,7 @@ msgstr[0] "$0 balíček"
 msgstr[1] "$0 balíčky"
 msgstr[2] "$0 balíčků"
 
-#: pkg/systemd/init.js:377 pkg/systemd/init.js:726
+#: pkg/systemd/init.js:396 pkg/systemd/init.js:755
 msgid "$0 Template"
 msgstr "$0 Šablona"
 
@@ -136,9 +140,9 @@ msgstr ""
 "$0 je k dispozici pro většinu operačních systémů. Pro instalaci vyhledejte v "
 "GNOME Software nebo spusťte následující:"
 
+#: pkg/storaged/content-views.jsx:291 pkg/storaged/content-views.jsx:509
 #: pkg/storaged/format-dialog.jsx:262 pkg/storaged/lvol-tabs.jsx:200
-#: pkg/storaged/lvol-tabs.jsx:259 pkg/storaged/content-views.jsx:291
-#: pkg/storaged/content-views.jsx:509 pkg/storaged/mdraid-details.jsx:237
+#: pkg/storaged/lvol-tabs.jsx:259 pkg/storaged/mdraid-details.jsx:237
 #: pkg/storaged/mdraid-details.jsx:290 pkg/storaged/vdo-details.jsx:146
 #: pkg/storaged/vdo-details.jsx:175 pkg/storaged/vgroup-details.jsx:203
 msgid "$0 is in active use"
@@ -190,14 +194,14 @@ msgstr "Podrobnosti o virt. procesoru $0"
 msgid "$0 will be installed."
 msgstr "$0 bude nainstalováno."
 
-#: pkg/kubernetes/scripts/nodes.js:874
+#: pkg/kubernetes/scripts/nodes.js:871
 msgid "$0% Free"
 msgid_plural "$0% Free"
 msgstr[0] "$0% volný"
 msgstr[1] "$0% volné"
 msgstr[2] "$0% volných"
 
-#: pkg/kubernetes/scripts/nodes.js:876
+#: pkg/kubernetes/scripts/nodes.js:873
 msgid "$0% Used"
 msgid_plural "$0% Used"
 msgstr[0] "$0% využitý"
@@ -215,7 +219,7 @@ msgstr[0] "$1 oprava zabezpečení"
 msgstr[1] "$1 opravy zabezpečení"
 msgstr[2] "$1 oprav zabezpečení"
 
-#: pkg/networkmanager/interfaces.js:2753
+#: pkg/networkmanager/interfaces.js:2749
 msgid "$mtu"
 msgstr "$mtu"
 
@@ -278,7 +282,7 @@ msgstr "1 den"
 msgid "1 hour"
 msgstr "1 hodina"
 
-#: pkg/systemd/host.js:1628
+#: pkg/systemd/host.js:1665
 msgid "1 min"
 msgstr "1 minuta"
 
@@ -288,11 +292,11 @@ msgstr "1 minuta"
 msgid "1 week"
 msgstr "1 týden"
 
-#: pkg/systemd/services.html:245
+#: pkg/systemd/services.html:275
 msgid "10th"
 msgstr "10."
 
-#: pkg/systemd/services.html:246
+#: pkg/systemd/services.html:276
 msgid "11th"
 msgstr "11. "
 
@@ -300,19 +304,19 @@ msgstr "11. "
 msgid "128 KiB"
 msgstr "128 KiB"
 
-#: pkg/systemd/services.html:247
+#: pkg/systemd/services.html:277
 msgid "12th"
 msgstr "12."
 
-#: pkg/systemd/services.html:248
+#: pkg/systemd/services.html:278
 msgid "13th"
 msgstr "13."
 
-#: pkg/systemd/services.html:249
+#: pkg/systemd/services.html:279
 msgid "14th"
 msgstr "14."
 
-#: pkg/systemd/services.html:250
+#: pkg/systemd/services.html:280
 msgid "15th"
 msgstr "15."
 
@@ -320,23 +324,23 @@ msgstr "15."
 msgid "16 KiB"
 msgstr "16 KiB"
 
-#: pkg/systemd/services.html:251
+#: pkg/systemd/services.html:281
 msgid "16th"
 msgstr "16."
 
-#: pkg/systemd/services.html:252
+#: pkg/systemd/services.html:282
 msgid "17th"
 msgstr "17."
 
-#: pkg/systemd/services.html:253
+#: pkg/systemd/services.html:283
 msgid "18th"
 msgstr "18."
 
-#: pkg/systemd/services.html:254
+#: pkg/systemd/services.html:284
 msgid "19th"
 msgstr "19."
 
-#: pkg/systemd/services.html:236
+#: pkg/systemd/services.html:266
 msgid "1st"
 msgstr "1."
 
@@ -344,7 +348,7 @@ msgstr "1."
 msgid "2 MiB"
 msgstr "2 MiB"
 
-#: pkg/systemd/host.js:1627
+#: pkg/systemd/host.js:1664
 msgid "2 min"
 msgstr "2 min"
 
@@ -352,59 +356,59 @@ msgstr "2 min"
 msgid "20 Minutes"
 msgstr "20 minut"
 
-#: pkg/systemd/services.html:255
+#: pkg/systemd/services.html:285
 msgid "20th"
 msgstr "20."
 
-#: pkg/systemd/services.html:256
+#: pkg/systemd/services.html:286
 msgid "21st"
 msgstr "21."
 
-#: pkg/systemd/services.html:257
+#: pkg/systemd/services.html:287
 msgid "22nd"
 msgstr "22."
 
-#: pkg/systemd/services.html:258
+#: pkg/systemd/services.html:288
 msgid "23rd"
 msgstr "23."
 
-#: pkg/systemd/services.html:259
+#: pkg/systemd/services.html:289
 msgid "24th"
 msgstr "24."
 
-#: pkg/systemd/services.html:260
+#: pkg/systemd/services.html:290
 msgid "25th"
 msgstr "25."
 
-#: pkg/systemd/services.html:261
+#: pkg/systemd/services.html:291
 msgid "26th"
 msgstr "26."
 
-#: pkg/systemd/services.html:262
+#: pkg/systemd/services.html:292
 msgid "27th"
 msgstr "27."
 
-#: pkg/systemd/services.html:263
+#: pkg/systemd/services.html:293
 msgid "28th"
 msgstr "28."
 
-#: pkg/systemd/services.html:264
+#: pkg/systemd/services.html:294
 msgid "29th"
 msgstr "29."
 
-#: pkg/systemd/services.html:237
+#: pkg/systemd/services.html:267
 msgid "2nd"
 msgstr "2."
 
-#: pkg/systemd/host.js:1626
+#: pkg/systemd/host.js:1663
 msgid "3 min"
 msgstr "3 min"
 
-#: pkg/systemd/services.html:265
+#: pkg/systemd/services.html:295
 msgid "30th"
 msgstr "30."
 
-#: pkg/systemd/services.html:266
+#: pkg/systemd/services.html:296
 msgid "31st"
 msgstr "31."
 
@@ -412,7 +416,7 @@ msgstr "31."
 msgid "32 KiB"
 msgstr "32 KiB"
 
-#: pkg/systemd/services.html:238
+#: pkg/systemd/services.html:268
 msgid "3rd"
 msgstr "3."
 
@@ -420,7 +424,7 @@ msgstr "3."
 msgid "4 KiB"
 msgstr "4 KiB"
 
-#: pkg/systemd/host.js:1625
+#: pkg/systemd/host.js:1662
 msgid "4 min"
 msgstr "4 min"
 
@@ -428,7 +432,7 @@ msgstr "4 min"
 msgid "40 Minutes"
 msgstr "40 minut"
 
-#: pkg/systemd/services.html:239
+#: pkg/systemd/services.html:269
 msgid "4th"
 msgstr "4."
 
@@ -436,7 +440,7 @@ msgstr "4."
 msgid "5 Minutes"
 msgstr "5 minut"
 
-#: pkg/systemd/host.js:1624
+#: pkg/systemd/host.js:1661
 msgid "5 min"
 msgstr "5 min"
 
@@ -450,7 +454,7 @@ msgstr "5 minut"
 msgid "512 KiB"
 msgstr "512 KiB"
 
-#: pkg/systemd/services.html:240
+#: pkg/systemd/services.html:270
 msgid "5th"
 msgstr "5."
 
@@ -468,11 +472,11 @@ msgstr "60 minut"
 msgid "64 KiB"
 msgstr "64 KiB"
 
-#: pkg/systemd/services.html:241
+#: pkg/systemd/services.html:271
 msgid "6th"
 msgstr "6."
 
-#: pkg/systemd/services.html:242
+#: pkg/systemd/services.html:272
 msgid "7th"
 msgstr "7."
 
@@ -488,11 +492,11 @@ msgstr "802.3ad"
 msgid "802.3ad LACP"
 msgstr "802.3ad LACP"
 
-#: pkg/systemd/services.html:243
+#: pkg/systemd/services.html:273
 msgid "8th"
 msgstr "8."
 
-#: pkg/systemd/services.html:244
+#: pkg/systemd/services.html:274
 msgid "9th"
 msgstr "9."
 
@@ -523,7 +527,7 @@ msgstr "Před odebráním tohoto disku je třeba přidat náhradní."
 msgid "ARP"
 msgstr "ARP"
 
-#: pkg/networkmanager/interfaces.js:2782
+#: pkg/networkmanager/interfaces.js:2778
 msgid "ARP Monitoring"
 msgstr "ARP monitorování"
 
@@ -585,6 +589,7 @@ msgstr "Účty"
 msgid "Action"
 msgstr "Akce"
 
+#: pkg/machines/components/networks/network.jsx:142
 #: pkg/machines/components/storagePools/storagePool.jsx:167
 #: pkg/storaged/content-views.jsx:264
 msgid "Activate"
@@ -628,20 +633,20 @@ msgid "Adaptive transmit load balancing"
 msgstr "Přizpůsobující se rozkládání přenosové zátěže odesílání"
 
 # auto translated by TM merge from project: FreeIPA, version: ipa-4-5, DocId: po/ipa
+#: pkg/kubernetes/views/add-member-role-dialog.html:61
+#: pkg/kubernetes/views/add-role-dialog.html:8
 #: pkg/kubernetes/views/add-user-dialog.html:27
 #: pkg/kubernetes/views/node-add.html:50
 #: pkg/kubernetes/views/user-add-membership.html:49
-#: pkg/kubernetes/views/user-group-add.html:30
-#: pkg/kubernetes/views/add-member-role-dialog.html:61
-#: pkg/kubernetes/views/add-role-dialog.html:8 pkg/lib/machine-add.html:43
+#: pkg/kubernetes/views/user-group-add.html:30 pkg/lib/machine-add.html:43
 #: pkg/shell/index.html:181 pkg/machines/components/diskAdd.jsx:454
-#: pkg/storaged/crypto-keyslots.jsx:228 pkg/storaged/nfs-details.jsx:191
-#: pkg/storaged/iscsi-panel.jsx:132 pkg/storaged/iscsi-panel.jsx:155
-#: pkg/storaged/mdraid-details.jsx:57 pkg/storaged/vgroup-details.jsx:63
+#: pkg/storaged/crypto-keyslots.jsx:228 pkg/storaged/iscsi-panel.jsx:132
+#: pkg/storaged/iscsi-panel.jsx:155 pkg/storaged/mdraid-details.jsx:57
+#: pkg/storaged/nfs-details.jsx:191 pkg/storaged/vgroup-details.jsx:63
 msgid "Add"
 msgstr "Přidat"
 
-#: pkg/networkmanager/interfaces.js:3099
+#: pkg/networkmanager/interfaces.js:3095
 msgid "Add $0"
 msgstr "Přidat $0"
 
@@ -685,11 +690,11 @@ msgstr "Přidat uzel Kubernetes"
 msgid "Add Machine to Dashboard"
 msgstr "Přidat stroj na přehled"
 
+#: pkg/kubernetes/views/add-member-role-dialog.html:4
 #: pkg/kubernetes/views/group-page.html:38
 #: pkg/kubernetes/views/group-panel.html:29
 #: pkg/kubernetes/views/project-body.html:108
 #: pkg/kubernetes/views/user-group-add.html:3
-#: pkg/kubernetes/views/add-member-role-dialog.html:4
 msgid "Add Member"
 msgstr "Přidat člena"
 
@@ -712,13 +717,10 @@ msgstr "Přidat nového uživatele"
 msgid "Add Role"
 msgstr "Přidat roli"
 
-#: pkg/networkmanager/firewall.jsx:241
+#: pkg/networkmanager/firewall.jsx:244 pkg/networkmanager/firewall.jsx:328
+#: pkg/networkmanager/firewall.jsx:334
 msgid "Add Services"
 msgstr "Přidat služby"
-
-#: pkg/networkmanager/firewall.jsx:325 pkg/networkmanager/firewall.jsx:331
-msgid "Add Services…"
-msgstr "Přidat služby…"
 
 #: pkg/docker/storage.jsx:217
 msgid "Add Storage"
@@ -754,7 +756,7 @@ msgstr "Přidat členství"
 msgid "Add public key"
 msgstr "Přidat veřejnou část klíče"
 
-#: pkg/networkmanager/interfaces.js:3098
+#: pkg/networkmanager/interfaces.js:3094
 msgid ""
 "Adding <b>$0</b> will break the connection to the server, and will make the "
 "administration UI unavailable."
@@ -770,11 +772,11 @@ msgstr "Přidání klíče"
 msgid "Adding physical volume to $target"
 msgstr "Přidává se fyzický svazek do $target"
 
-#: pkg/networkmanager/interfaces.js:2652
+#: pkg/networkmanager/interfaces.js:2648
 msgid "Additional DNS $val"
 msgstr "Další DNS $val"
 
-#: pkg/networkmanager/interfaces.js:2655
+#: pkg/networkmanager/interfaces.js:2651
 msgid "Additional DNS Search Domains $val"
 msgstr "Další DNS domény k prohledávání $val"
 
@@ -782,7 +784,7 @@ msgstr "Další DNS domény k prohledávání $val"
 msgid "Additional Storage"
 msgstr "Další úložiště"
 
-#: pkg/networkmanager/interfaces.js:2647
+#: pkg/networkmanager/interfaces.js:2643
 msgid "Additional address $val"
 msgstr "Další adresa $val"
 
@@ -796,11 +798,13 @@ msgstr "Další balíčky:"
 #: pkg/kubernetes/views/details-page.html:174
 #: pkg/kubernetes/views/node-add.html:8 pkg/kubernetes/views/node-body.html:5
 #: pkg/kubernetes/views/nodes-page.html:43 pkg/lib/machine-add.html:11
+#: pkg/machines/components/networks/networkOverviewTab.jsx:117
+#: pkg/machines/components/networks/networkOverviewTab.jsx:140
 #: pkg/machines/components/vmnetworktab.jsx:79 pkg/storaged/iscsi-panel.jsx:127
 msgid "Address"
 msgstr "Adresa"
 
-#: pkg/networkmanager/interfaces.js:2647
+#: pkg/networkmanager/interfaces.js:2643
 msgid "Address $val"
 msgstr "Adresa $val"
 
@@ -820,7 +824,7 @@ msgstr "Adresa:"
 
 # auto translated by TM merge from project: Spacewalk Web UI, version: master, DocId: java/code/src/com/redhat/rhn/frontend/strings/java/StringResource
 #: pkg/kubernetes/views/details-page.html:37
-#: pkg/networkmanager/interfaces.js:3294
+#: pkg/networkmanager/interfaces.js:3290
 msgid "Addresses"
 msgstr "Adresy"
 
@@ -860,7 +864,7 @@ msgstr "Heslo správce"
 msgid "Advanced TCA"
 msgstr "Pokročilé TCA"
 
-#: pkg/systemd/services.html:427 pkg/systemd/init.js:707
+#: pkg/systemd/services.html:457 pkg/systemd/init.js:736
 msgid "After"
 msgstr "Později"
 
@@ -875,14 +879,19 @@ msgstr ""
 "služby, jako je nastavení DNS překladu a může se změnit seznam důvěryhodných "
 "cert. autorit."
 
-#: pkg/systemd/services.html:418 pkg/systemd/services.html:422
-#: pkg/systemd/init.js:1051
+#: pkg/systemd/services.html:448 pkg/systemd/services.html:452
+#: pkg/systemd/init.js:1079
 msgid "After system boot"
 msgstr "Po startu systému"
 
 #: pkg/systemd/logs.html:56
 msgid "Alert and above"
 msgstr "Výstraha a závažnější"
+
+#: pkg/systemd/services.html:67 pkg/systemd/services.html:71
+#: pkg/systemd/init.js:340
+msgid "All"
+msgstr "Vše"
 
 #: pkg/lib/machine-info.js:76
 msgid "All In One"
@@ -924,7 +933,7 @@ msgstr "Všechny spuštěné"
 msgid "All running virtual machines will be turned off."
 msgstr "Všechny spuštěné virtuální stroje budou vypnuty."
 
-#: pkg/networkmanager/firewall.jsx:353
+#: pkg/networkmanager/firewall.jsx:360
 msgid "Allowed Services"
 msgstr "Dovolené služby"
 
@@ -963,17 +972,17 @@ msgstr "Aplikace"
 #: pkg/networkmanager/index.html:630 pkg/networkmanager/index.html:654
 #: pkg/networkmanager/index.html:678 pkg/kdump/kdump-view.jsx:352
 #: pkg/machines/components/vcpuModal.jsx:247
-#: pkg/ovirt/components/vcpuModal.jsx:104 pkg/storaged/nfs-details.jsx:191
-#: pkg/storaged/crypto-tab.jsx:76 pkg/storaged/crypto-tab.jsx:105
-#: pkg/storaged/fsys-tab.jsx:78 pkg/storaged/fsys-tab.jsx:126
+#: pkg/ovirt/components/vcpuModal.jsx:104 pkg/storaged/crypto-tab.jsx:76
+#: pkg/storaged/crypto-tab.jsx:105 pkg/storaged/fsys-tab.jsx:78
+#: pkg/storaged/fsys-tab.jsx:126 pkg/storaged/nfs-details.jsx:191
 msgid "Apply"
 msgstr "Použít"
 
-#: pkg/packagekit/autoupdates.jsx:303
+#: pkg/packagekit/autoupdates.jsx:307
 msgid "Apply all updates"
 msgstr "Aplikovat všechny aktualizace"
 
-#: pkg/packagekit/autoupdates.jsx:304
+#: pkg/packagekit/autoupdates.jsx:308
 msgid "Apply security updates"
 msgstr "Aplikovat aktualizace zabezpečení"
 
@@ -1007,12 +1016,12 @@ msgstr "Inventární štítek"
 msgid "At least $0 disks are needed."
 msgstr "Je vyžadováno alespoň $0 disků."
 
-#: pkg/storaged/vgroups-panel.jsx:63 pkg/storaged/mdraid-details.jsx:51
-#: pkg/storaged/vgroup-details.jsx:57
+#: pkg/storaged/mdraid-details.jsx:51 pkg/storaged/vgroup-details.jsx:57
+#: pkg/storaged/vgroups-panel.jsx:63
 msgid "At least one disk is needed."
 msgstr "Je vyžadován alespoň 1 disk."
 
-#: pkg/systemd/services.html:423
+#: pkg/systemd/services.html:453
 msgid "At specific time"
 msgstr "V uvedený čas"
 
@@ -1068,8 +1077,8 @@ msgstr "Pověřené veřejné SSH klíče"
 
 # auto translated by TM merge from project: anaconda, version: f25, DocId: main
 #: pkg/networkmanager/index.html:184 pkg/networkmanager/interfaces.js:1962
-#: pkg/networkmanager/interfaces.js:2755 pkg/networkmanager/interfaces.js:3302
-#: pkg/networkmanager/interfaces.js:3306 pkg/networkmanager/interfaces.js:3312
+#: pkg/networkmanager/interfaces.js:2751 pkg/networkmanager/interfaces.js:3298
+#: pkg/networkmanager/interfaces.js:3302 pkg/networkmanager/interfaces.js:3308
 #: pkg/realmd/operation.js:339
 msgid "Automatic"
 msgstr "Automaticky"
@@ -1082,11 +1091,11 @@ msgstr "Automaticky (pouze DHCP)"
 msgid "Automatic (DHCP)"
 msgstr "Automaticky (DHCP)"
 
-#: pkg/systemd/services.html:106
+#: pkg/systemd/services.html:127 pkg/systemd/init.js:286
 msgid "Automatic Startup"
 msgstr "Automatické spouštění"
 
-#: pkg/packagekit/autoupdates.jsx:341
+#: pkg/packagekit/autoupdates.jsx:346
 msgid "Automatic Updates"
 msgstr "Automatické aktualizace"
 
@@ -1106,6 +1115,7 @@ msgstr "Automatické použití NTP"
 msgid "Automatically using specific NTP servers"
 msgstr "Automatické použití uvedených NTP serverů"
 
+#: pkg/machines/components/networks/networkOverviewTab.jsx:96
 #: pkg/machines/components/storagePools/storagePoolOverviewTab.jsx:45
 #: pkg/machines/components/vmOverviewTabLibvirt.jsx:100
 msgid "Autostart"
@@ -1174,11 +1184,11 @@ msgstr "Základní šablona"
 msgid "Base template:"
 msgstr "Základní šablona:"
 
-#: pkg/systemd/init.js:706
+#: pkg/systemd/init.js:735
 msgid "Before"
 msgstr "Před"
 
-#: pkg/systemd/init.js:697
+#: pkg/systemd/init.js:726
 msgid "Binds To"
 msgstr "Spojuje k"
 
@@ -1207,8 +1217,8 @@ msgid "Blocked"
 msgstr "Blokované"
 
 # auto translated by TM merge from project: anaconda, version: f25, DocId: main
-#: pkg/networkmanager/interfaces.js:2511 pkg/networkmanager/interfaces.js:2523
-#: pkg/networkmanager/interfaces.js:2787
+#: pkg/networkmanager/interfaces.js:2507 pkg/networkmanager/interfaces.js:2519
+#: pkg/networkmanager/interfaces.js:2783
 msgid "Bond"
 msgstr "Vazba"
 
@@ -1224,13 +1234,13 @@ msgstr "Identif. zavádění"
 msgid "Boot Order"
 msgstr "Pořadí zavádění"
 
-#: pkg/systemd/init.js:702
+#: pkg/systemd/init.js:731
 msgid "Bound By"
 msgstr "Spojeno"
 
 # auto translated by TM merge from project: anaconda, version: f25, DocId: main
-#: pkg/networkmanager/interfaces.js:2517 pkg/networkmanager/interfaces.js:2529
-#: pkg/networkmanager/interfaces.js:2864
+#: pkg/networkmanager/interfaces.js:2513 pkg/networkmanager/interfaces.js:2525
+#: pkg/networkmanager/interfaces.js:2860
 msgid "Bridge"
 msgstr "Most"
 
@@ -1242,7 +1252,7 @@ msgstr "Nastavení portu mostu"
 msgid "Bridge Settings"
 msgstr "Nastavení mostu"
 
-#: pkg/networkmanager/interfaces.js:2885
+#: pkg/networkmanager/interfaces.js:2881
 msgid "Bridge port"
 msgstr "Port mostu"
 
@@ -1251,11 +1261,11 @@ msgstr "Port mostu"
 msgid "Broadcast"
 msgstr "Vysílání"
 
-#: pkg/networkmanager/interfaces.js:2800 pkg/networkmanager/interfaces.js:2834
+#: pkg/networkmanager/interfaces.js:2796 pkg/networkmanager/interfaces.js:2830
 msgid "Broken configuration"
 msgstr "Chybné nastavení"
 
-#: pkg/systemd/host.js:477
+#: pkg/systemd/host.js:494
 msgid "Bug Fix Updates Available"
 msgstr "Jsou k dispozici aktualizace opravující zabezpečení"
 
@@ -1275,18 +1285,18 @@ msgstr "Sběrnice"
 msgid "Bus Expansion Chassis"
 msgstr "Skříň rozšíření sběrnice"
 
-#: pkg/machines/libvirt-virsh.js:407
+#: pkg/machines/libvirt-virsh.js:411
 msgid "CHANGE NETWORK STATE action failed"
 msgstr "Akce ZMĚNIT STAV SÍTĚ se nezdařila"
 
 #: pkg/dashboard/index.html:70 pkg/docker/index.html:270
 #: pkg/docker/containers-view.jsx:359 pkg/kubernetes/scripts/graphs.js:603
-#: pkg/kubernetes/scripts/nodes.js:714 pkg/kubernetes/scripts/nodes.js:821
+#: pkg/kubernetes/scripts/nodes.js:711 pkg/kubernetes/scripts/nodes.js:818
 #: pkg/systemd/hwinfo.jsx:69
 msgid "CPU"
 msgstr "Procesor"
 
-#: pkg/systemd/host.js:1507
+#: pkg/systemd/host.js:1544
 msgctxt "page-title"
 msgid "CPU Status"
 msgstr "Stav procesoru"
@@ -1295,7 +1305,7 @@ msgstr "Stav procesoru"
 msgid "CPU Type"
 msgstr "Typ procesoru"
 
-#: pkg/kubernetes/scripts/nodes.js:715
+#: pkg/kubernetes/scripts/nodes.js:712
 msgid "CPU Utilization: $0%"
 msgstr "Využití procesoru: $0%"
 
@@ -1311,7 +1321,7 @@ msgstr "Využití procesoru:"
 msgid "CREATE VM action failed"
 msgstr "Akce VYTVOŘIT VIRT. STROJ se nezdařila"
 
-#: pkg/systemd/index.html:260 pkg/systemd/host.js:1638
+#: pkg/systemd/index.html:260 pkg/systemd/host.js:1675
 msgid "Cached"
 msgstr "Uloženo v mezipaměti"
 
@@ -1330,7 +1340,10 @@ msgstr "Obraz se nedaří smazat"
 #: pkg/dashboard/index.html:173 pkg/docker/index.html:563
 #: pkg/docker/index.html:597 pkg/docker/index.html:661
 #: pkg/docker/index.html:715 pkg/docker/index.html:755
-#: pkg/docker/index.html:784 pkg/kubernetes/views/add-user-dialog.html:26
+#: pkg/docker/index.html:784 pkg/kubernetes/views/add-group-dialog.html:18
+#: pkg/kubernetes/views/add-member-role-dialog.html:60
+#: pkg/kubernetes/views/add-role-dialog.html:7
+#: pkg/kubernetes/views/add-user-dialog.html:26
 #: pkg/kubernetes/views/auth-form.html:128
 #: pkg/kubernetes/views/auth-rejected-cert.html:31
 #: pkg/kubernetes/views/deploy.html:61
@@ -1356,30 +1369,29 @@ msgstr "Obraz se nedaří smazat"
 #: pkg/kubernetes/views/user-group-remove.html:9
 #: pkg/kubernetes/views/user-modify.html:26
 #: pkg/kubernetes/views/user-remove-membership.html:9
-#: pkg/kubernetes/views/add-group-dialog.html:18
-#: pkg/kubernetes/views/add-member-role-dialog.html:60
-#: pkg/kubernetes/views/add-role-dialog.html:7 pkg/lib/machine-add.html:42
-#: pkg/lib/machine-change-auth.html:80 pkg/lib/machine-change-port.html:40
-#: pkg/lib/machine-sync-users.html:74 pkg/networkmanager/index.html:485
-#: pkg/networkmanager/index.html:509 pkg/networkmanager/index.html:533
-#: pkg/networkmanager/index.html:557 pkg/networkmanager/index.html:581
-#: pkg/networkmanager/index.html:605 pkg/networkmanager/index.html:629
-#: pkg/networkmanager/index.html:653 pkg/networkmanager/index.html:677
-#: pkg/playground/translate.html:39 pkg/realmd/operation.html:81
-#: pkg/shell/index.html:122 pkg/shell/simple.html:90 pkg/shell/stub.html:105
-#: pkg/systemd/services.html:494 pkg/systemd/index.html:340
+#: pkg/lib/machine-add.html:42 pkg/lib/machine-change-auth.html:80
+#: pkg/lib/machine-change-port.html:40 pkg/lib/machine-sync-users.html:74
+#: pkg/networkmanager/index.html:485 pkg/networkmanager/index.html:509
+#: pkg/networkmanager/index.html:533 pkg/networkmanager/index.html:557
+#: pkg/networkmanager/index.html:581 pkg/networkmanager/index.html:605
+#: pkg/networkmanager/index.html:629 pkg/networkmanager/index.html:653
+#: pkg/networkmanager/index.html:677 pkg/playground/translate.html:39
+#: pkg/realmd/operation.html:81 pkg/shell/index.html:122
+#: pkg/shell/simple.html:90 pkg/shell/stub.html:105 pkg/systemd/index.html:340
 #: pkg/systemd/index.html:427 pkg/systemd/index.html:479
-#: pkg/systemd/index.html:495 pkg/users/index.html:199 pkg/users/index.html:238
-#: pkg/users/index.html:277 pkg/users/index.html:316 pkg/users/index.html:333
-#: pkg/users/index.html:357 pkg/users/index.html:414 pkg/apps/utils.jsx:85
+#: pkg/systemd/index.html:495 pkg/systemd/services.html:524
+#: pkg/users/index.html:199 pkg/users/index.html:238 pkg/users/index.html:277
+#: pkg/users/index.html:316 pkg/users/index.html:333 pkg/users/index.html:357
+#: pkg/users/index.html:414 pkg/apps/utils.jsx:85
 #: pkg/lib/cockpit-components-dialog.jsx:159
-#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:433
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:497
+#: pkg/machines/components/diskAdd.jsx:451
+#: pkg/machines/components/nicEdit.jsx:281
 #: pkg/machines/components/storagePools/createStoragePoolDialog.jsx:322
 #: pkg/machines/components/storagePools/storagePoolDelete.jsx:128
-#: pkg/machines/components/deleteDialog.jsx:134
-#: pkg/machines/components/diskAdd.jsx:451
 #: pkg/machines/components/vcpuModal.jsx:244
-#: pkg/machines/components/nicEdit.jsx:281 pkg/networkmanager/firewall.jsx:238
+#: pkg/machines/components/deleteDialog.jsx:148
+#: pkg/networkmanager/firewall.jsx:241
 #: pkg/ovirt/components/ClusterTemplates.jsx:75
 #: pkg/ovirt/components/OVirtTab.jsx:66 pkg/ovirt/components/VdsmView.jsx:97
 #: pkg/ovirt/components/VdsmView.jsx:111 pkg/packagekit/updates.jsx:179
@@ -1411,7 +1423,7 @@ msgstr "Nelze naplánovat událost v minulosti"
 msgid "Capacity"
 msgstr "Kapacita"
 
-#: pkg/networkmanager/interfaces.js:2586
+#: pkg/networkmanager/interfaces.js:2582
 msgid "Carrier"
 msgstr "Nosný signál"
 
@@ -1480,17 +1492,17 @@ msgstr "Změnit limity prostředku"
 msgid "Change resources limits"
 msgstr "Změnit limity prostředků"
 
-#: pkg/networkmanager/interfaces.js:3138
+#: pkg/networkmanager/interfaces.js:3134
 msgid "Change the settings"
 msgstr "Změnit nastavení"
 
+#: pkg/machines/components/nicEdit.jsx:257
 #: pkg/machines/components/vcpuModal.jsx:181
 #: pkg/machines/components/vmnetworktab.jsx:38
-#: pkg/machines/components/nicEdit.jsx:257
 msgid "Changes will take effect after shutting down the VM"
 msgstr "Změny se projeví až po vypnutí virt. stroje"
 
-#: pkg/networkmanager/interfaces.js:3137
+#: pkg/networkmanager/interfaces.js:3133
 msgid ""
 "Changing the settings will break the connection to the server, and will make "
 "the administration UI unavailable."
@@ -1526,7 +1538,7 @@ msgstr "Hledají se nové aplikace"
 msgid "Checking for public keys"
 msgstr "Hledají se veřejné klíče"
 
-#: pkg/systemd/host.js:496
+#: pkg/systemd/host.js:513
 msgid "Checking for updates…"
 msgstr "Zjišťování případných aktualizací…"
 
@@ -1563,7 +1575,11 @@ msgstr "Třída"
 msgid "Cleaning up for $target"
 msgstr "Čištění pro $target"
 
-#: pkg/systemd/host.js:713
+#: pkg/systemd/services.html:196
+msgid "Clear All Filters"
+msgstr "Vyčistit všechny filtry"
+
+#: pkg/systemd/host.js:730
 msgid "Click to see system hardware information"
 msgstr "Kliknutím zobrazíte informace o hardware"
 
@@ -1588,8 +1604,8 @@ msgstr "Klientský software"
 #: pkg/lib/machine-not-supported.html:8 pkg/lib/machine-unknown-hostkey.html:19
 #: pkg/networkmanager/index.html:696 pkg/shell/index.html:96
 #: pkg/shell/index.html:139 pkg/shell/index.html:343 pkg/shell/simple.html:72
-#: pkg/shell/stub.html:79 pkg/shell/stub.html:122 pkg/systemd/services.html:335
-#: pkg/systemd/services.html:353 pkg/systemd/index.html:286
+#: pkg/shell/stub.html:79 pkg/shell/stub.html:122 pkg/systemd/index.html:286
+#: pkg/systemd/services.html:365 pkg/systemd/services.html:383
 #: pkg/users/index.html:45 pkg/apps/utils.jsx:107 pkg/sosreport/index.js:45
 #: pkg/sosreport/index.js:110 pkg/storaged/dialog.jsx:383
 msgid "Close"
@@ -1600,7 +1616,7 @@ msgid "Close Selected Pages"
 msgstr "Zavřít vybrané stránky"
 
 # auto translated by TM merge from project: Fedora Release Notes, version: f23, DocId: pot/Cluster
-#: pkg/kubernetes/views/auth-form.html:5 pkg/kubernetes/index.html:37
+#: pkg/kubernetes/index.html:37 pkg/kubernetes/views/auth-form.html:5
 #: pkg/ovirt/components/App.jsx:107
 msgid "Cluster"
 msgstr "Cluster"
@@ -1742,7 +1758,7 @@ msgstr[2] "Kombinované využití $0 jader procesoru"
 
 # auto translated by TM merge from project: SETroubleShoot, version: master, DocId: framework/po/setroubleshoot
 #: pkg/docker/index.html:269 pkg/docker/index.html:445
-#: pkg/docker/index.html:706 pkg/systemd/services.html:399
+#: pkg/docker/index.html:706 pkg/systemd/services.html:429
 #: node_modules/registry-image-widgets/views/image-config.html:2
 #: pkg/docker/containers-view.jsx:132 pkg/docker/containers-view.jsx:359
 #: pkg/docker/containers-view.jsx:411
@@ -1791,8 +1807,8 @@ msgstr "Kompatibilní s moderním systémem a pevnými disky > 2TB (GPT)"
 msgid "Compress crash dumps to save space"
 msgstr "Komprimovat výpisy paměti z havárií pro úsporu místa"
 
-#: pkg/kdump/kdump-view.jsx:156 pkg/storaged/vdos-panel.jsx:81
-#: pkg/storaged/vdo-details.jsx:304
+#: pkg/kdump/kdump-view.jsx:156 pkg/storaged/vdo-details.jsx:304
+#: pkg/storaged/vdos-panel.jsx:81
 msgid "Compression"
 msgstr "Komprese"
 
@@ -1800,11 +1816,11 @@ msgstr "Komprese"
 msgid "Computer OU"
 msgstr "Organizační jednotka počítače"
 
-#: pkg/systemd/init.js:669
+#: pkg/systemd/init.js:698
 msgid "Condition $0=$1 was not met"
 msgstr "Podmínka $0=$1 nebyla splněna"
 
-#: pkg/systemd/services.html:124
+#: pkg/systemd/services.html:145
 msgid "Condition failed"
 msgstr "Podmínka nebyla úspěšná"
 
@@ -1814,7 +1830,7 @@ msgid "Configuration"
 msgstr "Nastavení"
 
 # auto translated by TM merge from project: system-config-printer, version: master, DocId: system-config-printer
-#: pkg/networkmanager/interfaces.js:2721
+#: pkg/networkmanager/interfaces.js:2717
 msgid "Configure"
 msgstr "Nastavit"
 
@@ -1867,11 +1883,11 @@ msgstr "Potvrdit odebrání pomocí heslové fráze"
 msgid "Confirm save:"
 msgstr "Potvrdit uložení:"
 
-#: pkg/systemd/init.js:705
+#: pkg/systemd/init.js:734
 msgid "Conflicted By"
 msgstr "V konfliktu s"
 
-#: pkg/systemd/init.js:704
+#: pkg/systemd/init.js:733
 msgid "Conflicts"
 msgstr "Konflikty"
 
@@ -1882,7 +1898,7 @@ msgstr "Konflikty"
 msgid "Connect"
 msgstr "Připojit"
 
-#: pkg/networkmanager/interfaces.js:2708
+#: pkg/networkmanager/interfaces.js:2704
 msgid "Connect automatically"
 msgstr "Připojit se automaticky"
 
@@ -1933,10 +1949,11 @@ msgid "Connecting..."
 msgstr "Připojování…"
 
 # auto translated by TM merge from project: system-config-printer, version: master, DocId: system-config-printer
-#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:226
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:280
+#: pkg/machines/components/networks/networkList.jsx:47
 #: pkg/machines/components/storagePools/createStoragePoolDialog.jsx:40
 #: pkg/machines/components/storagePools/storagePoolList.jsx:49
-#: pkg/machines/hostvmslist.jsx:88
+#: pkg/machines/hostvmslist.jsx:90
 msgid "Connection"
 msgstr "Spojení"
 
@@ -1960,7 +1977,7 @@ msgstr "Překročen časový limit připojení."
 msgid "Connection will be lost"
 msgstr "Spojení bude ztraceno"
 
-#: pkg/systemd/init.js:703
+#: pkg/systemd/init.js:732
 msgid "Consists Of"
 msgstr "Sestává se z"
 
@@ -2017,11 +2034,10 @@ msgstr "Kontejner:"
 
 # auto translated by TM merge from project: Fedora Release Notes, version: f24, DocId: pot/Containers
 #: pkg/docker/index.html:23 pkg/docker/index.html:287
-#: pkg/kubernetes/views/containers-listing.html:5
+#: pkg/kubernetes/index.html:55 pkg/kubernetes/views/containers-listing.html:5
 #: pkg/kubernetes/views/dashboard-page.html:158
 #: pkg/kubernetes/views/dashboard-page.html:199
-#: pkg/kubernetes/views/pod-page.html:36 pkg/kubernetes/index.html:55
-#: pkg/docker/containers-view.jsx:375
+#: pkg/kubernetes/views/pod-page.html:36 pkg/docker/containers-view.jsx:375
 msgid "Containers"
 msgstr "Kontejnery"
 
@@ -2137,14 +2153,14 @@ msgstr "Umístění výpisu paměti pádu"
 msgid "Crash system"
 msgstr "Zhavarovat systém"
 
-#: pkg/kubernetes/views/project-modify.html:72
-#: pkg/kubernetes/views/add-group-dialog.html:19 pkg/users/index.html:200
-#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:436
+#: pkg/kubernetes/views/add-group-dialog.html:19
+#: pkg/kubernetes/views/project-modify.html:72 pkg/users/index.html:200
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:500
 #: pkg/machines/components/storagePools/createStoragePoolDialog.jsx:325
 #: pkg/ovirt/components/ClusterTemplates.jsx:76
-#: pkg/storaged/vgroups-panel.jsx:69 pkg/storaged/lvol-tabs.jsx:358
-#: pkg/storaged/vdos-panel.jsx:105 pkg/storaged/mdraids-panel.jsx:86
 #: pkg/storaged/content-views.jsx:117 pkg/storaged/content-views.jsx:693
+#: pkg/storaged/lvol-tabs.jsx:358 pkg/storaged/mdraids-panel.jsx:86
+#: pkg/storaged/vdos-panel.jsx:105 pkg/storaged/vgroups-panel.jsx:69
 msgid "Create"
 msgstr "Vytvořit"
 
@@ -2189,11 +2205,11 @@ msgstr "Vytvořit fond úložiště"
 msgid "Create Thin Volume"
 msgstr "Vytvořit tenký svazek"
 
-#: pkg/systemd/services.html:59
+#: pkg/systemd/services.html:63
 msgid "Create Timer"
 msgstr "Vytvořit časovač"
 
-#: pkg/systemd/services.html:365
+#: pkg/systemd/services.html:395
 msgid "Create Timers"
 msgstr "Vytvořit časovače"
 
@@ -2201,7 +2217,7 @@ msgstr "Vytvořit časovače"
 msgid "Create VDO Device"
 msgstr "Vytvořit VDO zařízení"
 
-#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:469
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:533
 #: pkg/ovirt/components/ClusterTemplates.jsx:81
 msgid "Create VM"
 msgstr "Vytvořit virt. stroj"
@@ -2222,8 +2238,8 @@ msgstr "Vytvořit prázdný proud obrazů"
 msgid "Create image stream"
 msgstr "Vytvořit proud obrazů"
 
-#: pkg/networkmanager/interfaces.js:3807 pkg/networkmanager/interfaces.js:4006
-#: pkg/networkmanager/interfaces.js:4260 pkg/networkmanager/interfaces.js:4465
+#: pkg/networkmanager/interfaces.js:3803 pkg/networkmanager/interfaces.js:4002
+#: pkg/networkmanager/interfaces.js:4256 pkg/networkmanager/interfaces.js:4461
 msgid "Create it"
 msgstr "Vytvořit to"
 
@@ -2276,7 +2292,7 @@ msgstr "Vytváří se oddíl $target"
 msgid "Creating snapshot of $target"
 msgstr "Pořizování zachyceného stavu $target"
 
-#: pkg/networkmanager/interfaces.js:4464
+#: pkg/networkmanager/interfaces.js:4460
 msgid ""
 "Creating this VLAN will break the connection to the server, and will make "
 "the administration UI unavailable."
@@ -2284,7 +2300,7 @@ msgstr ""
 "Vytvoření této VLAN přeruší spojení se serverem a znepřístupní tak rozhraní "
 "pro jeho správu."
 
-#: pkg/networkmanager/interfaces.js:3806
+#: pkg/networkmanager/interfaces.js:3802
 msgid ""
 "Creating this bond will break the connection to the server, and will make "
 "the administration UI unavailable."
@@ -2292,7 +2308,7 @@ msgstr ""
 "Vytvoření tohoto sdružení linek přeruší spojení se serverem a znepřístupní "
 "tak rozhraní pro jeho správu."
 
-#: pkg/networkmanager/interfaces.js:4259
+#: pkg/networkmanager/interfaces.js:4255
 msgid ""
 "Creating this bridge will break the connection to the server, and will make "
 "the administration UI unavailable."
@@ -2300,7 +2316,7 @@ msgstr ""
 "Vytvoření tohoto mostu přeruší spojení se serverem a znepřístupní tak "
 "rozhraní pro jeho správu."
 
-#: pkg/networkmanager/interfaces.js:4005
+#: pkg/networkmanager/interfaces.js:4001
 msgid ""
 "Creating this team will break the connection to the server, and will make "
 "the administration UI unavailable."
@@ -2312,7 +2328,7 @@ msgstr ""
 msgid "Creating volume group $target"
 msgstr "Vytváření skupiny svazků $target"
 
-#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:400
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:461
 msgid "Creation of vm $0 failed"
 msgstr "Vytvoření virt. stroje $0 se nezdařilo"
 
@@ -2353,16 +2369,21 @@ msgstr "Uživatelsky určené předvolby šifrování"
 msgid "Custom mount options"
 msgstr "Uživatelsky určené předvolby připojení"
 
+#: pkg/machines/components/networks/networkOverviewTab.jsx:127
+#: pkg/machines/components/networks/networkOverviewTab.jsx:150
+msgid "DHCP Range"
+msgstr "DHCP rozsah"
+
 #: pkg/storaged/drive-details.jsx:54
 msgid "DISK IS FAILING"
 msgstr "DISK SELHÁVÁ"
 
 # auto translated by TM merge from project: FreeIPA, version: ipa-4-5, DocId: po/ipa
-#: pkg/networkmanager/interfaces.js:3301
+#: pkg/networkmanager/interfaces.js:3297
 msgid "DNS"
 msgstr "DNS"
 
-#: pkg/networkmanager/interfaces.js:2652
+#: pkg/networkmanager/interfaces.js:2648
 msgid "DNS $val"
 msgstr "DNS $val"
 
@@ -2370,11 +2391,11 @@ msgstr "DNS $val"
 msgid "DNS Policy"
 msgstr "DNS zásada"
 
-#: pkg/networkmanager/interfaces.js:3305
+#: pkg/networkmanager/interfaces.js:3301
 msgid "DNS Search Domains"
 msgstr "DNS prohledávané domény"
 
-#: pkg/networkmanager/interfaces.js:2655
+#: pkg/networkmanager/interfaces.js:2651
 msgid "DNS Search Domains $val"
 msgstr "Prohledávat DNS domény $val"
 
@@ -2390,6 +2411,7 @@ msgstr "Přehled"
 msgid "Data Used"
 msgstr "Využito dat"
 
+#: pkg/machines/components/networks/network.jsx:138
 #: pkg/machines/components/storagePools/storagePool.jsx:163
 #: pkg/storaged/content-views.jsx:262
 msgid "Deactivate"
@@ -2407,7 +2429,7 @@ msgstr "Deaktivuje se $target"
 msgid "Debug and above"
 msgstr "Ladící a závažnější"
 
-#: pkg/storaged/vdos-panel.jsx:84 pkg/storaged/vdo-details.jsx:310
+#: pkg/storaged/vdo-details.jsx:310 pkg/storaged/vdos-panel.jsx:84
 msgid "Deduplication"
 msgstr "Deduplikace"
 
@@ -2439,8 +2461,8 @@ msgstr "Prodleva"
 #: pkg/kubernetes/scripts/volumes.js:218
 #: pkg/machines/components/storagePools/storagePoolDelete.jsx:114
 #: pkg/machines/components/storagePools/storagePoolDelete.jsx:131
-#: pkg/machines/components/deleteDialog.jsx:122
-#: pkg/machines/components/deleteDialog.jsx:137
+#: pkg/machines/components/deleteDialog.jsx:136
+#: pkg/machines/components/deleteDialog.jsx:151
 #: pkg/storaged/content-views.jsx:301 pkg/storaged/content-views.jsx:322
 #: pkg/storaged/mdraid-details.jsx:300 pkg/storaged/mdraid-details.jsx:323
 #: pkg/storaged/vdo-details.jsx:199 pkg/storaged/vdo-details.jsx:262
@@ -2448,7 +2470,7 @@ msgstr "Prodleva"
 msgid "Delete"
 msgstr "Smazat"
 
-#: pkg/networkmanager/interfaces.js:2436 pkg/users/local.js:1177
+#: pkg/networkmanager/interfaces.js:2432 pkg/users/local.js:1177
 msgid "Delete $0"
 msgstr "Smazat $0"
 
@@ -2488,7 +2510,7 @@ msgstr "Smazat označené"
 msgid "Delete Storage Pool $0"
 msgstr "Smazat fond úložiště $0"
 
-#: pkg/machines/components/deleteDialog.jsx:55
+#: pkg/machines/components/deleteDialog.jsx:69
 msgid "Delete associated storage files:"
 msgstr "Smazat související soubory úložiště:"
 
@@ -2508,7 +2530,7 @@ msgstr "Smazat {{ item.kind }}"
 msgid "Deleting $target"
 msgstr "Maže se $target"
 
-#: pkg/networkmanager/interfaces.js:2435
+#: pkg/networkmanager/interfaces.js:2431
 msgid ""
 "Deleting <b>$0</b> will break the connection to the server, and will make "
 "the administration UI unavailable."
@@ -2586,11 +2608,11 @@ msgstr "Nastavení nasazení"
 # auto translated by TM merge from project: FreeIPA, version: ipa-4-5, DocId: po/ipa
 #: pkg/kubernetes/views/project-listing.html:15
 #: pkg/kubernetes/views/project-listing.html:54
-#: pkg/kubernetes/views/project-modify.html:40 pkg/systemd/services.html:385
+#: pkg/kubernetes/views/project-modify.html:40 pkg/systemd/services.html:415
 #: node_modules/registry-image-widgets/views/image-body.html:6
 #: pkg/ovirt/components/ClusterTemplates.jsx:135
 #: pkg/ovirt/components/ClusterVms.jsx:83
-#: pkg/ovirt/components/ClusterVms.jsx:181 pkg/systemd/init.js:269
+#: pkg/ovirt/components/ClusterVms.jsx:181 pkg/systemd/init.js:280
 msgid "Description"
 msgstr "Popis"
 
@@ -2613,12 +2635,13 @@ msgstr "Odpojitelné"
 #: pkg/kubernetes/index.html:67 pkg/shell/index.html:249
 #: pkg/docker/containers-view.jsx:336 pkg/docker/containers-view.jsx:504
 #: pkg/docker/containers-view.jsx:514 pkg/docker/containers-view.jsx:642
-#: pkg/networkmanager/firewall.jsx:89 pkg/packagekit/updates.jsx:383
-#: pkg/subscriptions/subscriptions-view.jsx:232 pkg/systemd/host.js:724
+#: pkg/networkmanager/firewall.jsx:87 pkg/packagekit/updates.jsx:383
+#: pkg/subscriptions/subscriptions-view.jsx:232 pkg/systemd/host.js:741
 msgid "Details"
 msgstr "Podrobnosti"
 
 # auto translated by TM merge from project: anaconda, version: f25, DocId: main
+#: pkg/machines/components/networks/networkList.jsx:47
 #: pkg/machines/components/vmDiskSourceCell.jsx:38
 #: pkg/machines/components/vmDisksTab.jsx:59
 msgid "Device"
@@ -2628,7 +2651,7 @@ msgstr "Zařízení"
 msgid "Device File"
 msgstr "Soubor představující zařízení"
 
-#: pkg/storaged/format-dialog.jsx:422 pkg/storaged/content-views.jsx:555
+#: pkg/storaged/content-views.jsx:555 pkg/storaged/format-dialog.jsx:422
 msgid "Device is read-only"
 msgstr "Zařízení je pouze pro čtení"
 
@@ -2652,7 +2675,7 @@ msgid "Directory $0 isn't writable or doesn't exist."
 msgstr "Složka $0 není zapisovatelná nebo neexistuje."
 
 # auto translated by TM merge from project: FreeIPA, version: ipa-4-5, DocId: po/ipa
-#: pkg/systemd/init.js:548
+#: pkg/systemd/init.js:577
 msgid "Disable"
 msgstr "Vypnout"
 
@@ -2660,7 +2683,8 @@ msgstr "Vypnout"
 msgid "Disable tuned"
 msgstr "Vypnout proces služby tuned"
 
-#: pkg/networkmanager/interfaces.js:1957 pkg/systemd/init.js:304
+#: pkg/systemd/services.html:74 pkg/networkmanager/interfaces.js:1957
+#: pkg/systemd/init.js:213
 msgid "Disabled"
 msgstr "Vypnuto"
 
@@ -2678,17 +2702,17 @@ msgid "Disconnected from serial console. Click the Reconnect button."
 msgstr "Odpojeno od sériové konzole. Klikněte na tlačítko Znovu připojit"
 
 # auto translated by TM merge from project: anaconda, version: f25, DocId: main
-#: pkg/kubernetes/scripts/nodes.js:722 pkg/kubernetes/scripts/nodes.js:839
+#: pkg/kubernetes/scripts/nodes.js:719 pkg/kubernetes/scripts/nodes.js:836
 #: pkg/storaged/vdos-panel.jsx:55
 msgid "Disk"
 msgstr "Disk"
 
 # auto translated by TM merge from project: virt-manager, version: master, DocId: virt-manager
-#: pkg/dashboard/index.html:73 pkg/systemd/host.js:528
+#: pkg/dashboard/index.html:73 pkg/systemd/host.js:545
 msgid "Disk I/O"
 msgstr "Diskový vst/výst."
 
-#: pkg/kubernetes/scripts/nodes.js:723
+#: pkg/kubernetes/scripts/nodes.js:720
 msgid "Disk Utilization: $0%"
 msgstr "Využití disku: $0%"
 
@@ -2709,9 +2733,9 @@ msgid "Disk passphrase"
 msgstr "Heslová fráze k disku"
 
 # auto translated by TM merge from project: blivet-gui, version: master, DocId: po/blivet-gui
-#: pkg/machines/components/vm/vm.jsx:55 pkg/storaged/vgroups-panel.jsx:59
-#: pkg/storaged/mdraids-panel.jsx:73 pkg/storaged/mdraid-details.jsx:46
-#: pkg/storaged/mdraid-details.jsx:154 pkg/storaged/vgroup-details.jsx:53
+#: pkg/machines/components/vm/vm.jsx:55 pkg/storaged/mdraid-details.jsx:46
+#: pkg/storaged/mdraid-details.jsx:154 pkg/storaged/mdraids-panel.jsx:73
+#: pkg/storaged/vgroup-details.jsx:53 pkg/storaged/vgroups-panel.jsx:59
 msgid "Disks"
 msgstr "Disky"
 
@@ -2806,12 +2830,12 @@ msgstr "Uživatelské jméno správce domény"
 msgid "Domain Administrator Password"
 msgstr "Heslo správce domény"
 
-#: pkg/systemd/services.html:455 pkg/systemd/services.html:459
-#: pkg/systemd/init.js:1234
+#: pkg/systemd/services.html:485 pkg/systemd/services.html:489
+#: pkg/systemd/init.js:1262
 msgid "Don't Repeat"
 msgstr "Neopakovat"
 
-#: pkg/storaged/format-dialog.jsx:283 pkg/storaged/content-views.jsx:520
+#: pkg/storaged/content-views.jsx:520 pkg/storaged/format-dialog.jsx:283
 msgid "Don't overwrite existing data"
 msgstr "Nepřepisovat existující data"
 
@@ -2883,8 +2907,8 @@ msgid "Duplicate port"
 msgstr "Duplikovat port"
 
 # auto translated by TM merge from project: FreeIPA, version: ipa-4-5, DocId: po/ipa
-#: pkg/machines/components/nicEdit.jsx:266 pkg/storaged/nfs-details.jsx:306
-#: pkg/storaged/crypto-tab.jsx:131
+#: pkg/machines/components/nicEdit.jsx:266 pkg/storaged/crypto-tab.jsx:131
+#: pkg/storaged/nfs-details.jsx:306
 msgid "Edit"
 msgstr "Upravit"
 
@@ -2941,11 +2965,11 @@ msgstr "Vyprazdňuje se $target"
 msgid "Emulated Machine"
 msgstr "Emulovaný stroj"
 
-#: pkg/systemd/init.js:546
+#: pkg/systemd/init.js:575
 msgid "Enable"
 msgstr "Povolit"
 
-#: pkg/systemd/init.js:547
+#: pkg/systemd/init.js:576
 msgid "Enable Forcefully"
 msgstr "Vynuceně zapnout"
 
@@ -2957,7 +2981,7 @@ msgstr "Zapnout službu"
 msgid "Enable stored metrics…"
 msgstr "Zapnout uchovávání metrik…"
 
-#: pkg/systemd/init.js:303
+#: pkg/systemd/services.html:73 pkg/systemd/init.js:210
 msgid "Enabled"
 msgstr "Povoleno"
 
@@ -2999,7 +3023,7 @@ msgstr "Šifrované svazky je třeba před změnou velikosti odemknout."
 msgid "Encryption"
 msgstr "Šifrování"
 
-#: pkg/storaged/format-dialog.jsx:120 pkg/storaged/crypto-tab.jsx:102
+#: pkg/storaged/crypto-tab.jsx:102 pkg/storaged/format-dialog.jsx:120
 msgid "Encryption Options"
 msgstr "Volby šifrování"
 
@@ -3024,7 +3048,7 @@ msgstr "Končí"
 msgid "Enforce policy:"
 msgstr "Vynutit zásadu:"
 
-#: pkg/systemd/host.js:479
+#: pkg/systemd/host.js:496
 msgid "Enhancement Updates Available"
 msgstr "Jsou k dispozici vylepšující aktualizace"
 
@@ -3059,7 +3083,7 @@ msgid "Environment"
 msgstr "Prostředí"
 
 # auto translated by TM merge from project: dnf, version: master, DocId: po/dnf
-#: pkg/storaged/format-dialog.jsx:281 pkg/storaged/content-views.jsx:518
+#: pkg/storaged/content-views.jsx:518 pkg/storaged/format-dialog.jsx:281
 msgid "Erase"
 msgstr "Smazat"
 
@@ -3076,7 +3100,7 @@ msgid "Errata:"
 msgstr "Errata:"
 
 #: pkg/playground/translate.html:100 pkg/playground/translate.html:105
-#: pkg/systemd/services.html:347 pkg/apps/utils.jsx:99
+#: pkg/systemd/services.html:377 pkg/apps/utils.jsx:99
 #: pkg/storaged/multipath.jsx:57 pkg/storaged/storage-controls.jsx:99
 #: pkg/storaged/storage-controls.jsx:192 pkg/users/local.js:1470
 msgid "Error"
@@ -3135,6 +3159,14 @@ msgstr "Vše"
 msgid "Excellent password"
 msgstr "Skvělé heslo"
 
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:318
+msgid "Existing Disk Image"
+msgstr "Existující obraz disku"
+
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:216
+msgid "Existing disk image on host's file system"
+msgstr "Existující obraz disku na souborovém systému hostitele"
+
 #: pkg/docker/util.js:97
 msgid "Exited $ExitCode"
 msgstr "Skončilo s $ExitCode"
@@ -3147,7 +3179,7 @@ msgstr "Rozšiřující šasi"
 msgid "Expose container ports"
 msgstr "Odhalit porty kontejneru"
 
-#: pkg/storaged/format-dialog.jsx:254 pkg/storaged/content-views.jsx:458
+#: pkg/storaged/content-views.jsx:458 pkg/storaged/format-dialog.jsx:254
 msgid "Extended Partition"
 msgstr "Rozšířený oddíl"
 
@@ -3223,7 +3255,6 @@ msgid "File"
 msgstr "Soubor"
 
 # auto translated by TM merge from project: usermode, version: default, DocId: usermode
-#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:260
 #: pkg/storaged/content-views.jsx:139
 msgid "Filesystem"
 msgstr "Souborový systém"
@@ -3260,9 +3291,13 @@ msgstr "Typ souborového systému"
 msgid "Filesystems"
 msgstr "Souborové systémy"
 
-#: pkg/networkmanager/firewall.jsx:191
+#: pkg/networkmanager/firewall.jsx:194
 msgid "Filter Services"
 msgstr "Filtrovat služby"
+
+#: pkg/systemd/services.html:64
+msgid "Filter by name or description..."
+msgstr "Filtrovat podle názvu nebo popisu…"
 
 # auto translated by TM merge from project: FreeIPA, version: ipa-4-5, DocId: po/ipa
 #: pkg/lib/machine-unknown-hostkey.html:10 pkg/shell/index.html:289
@@ -3270,11 +3305,11 @@ msgid "Fingerprint"
 msgstr "Otisk"
 
 #: pkg/networkmanager/firewall.html:22 pkg/networkmanager/index.html:96
-#: pkg/networkmanager/firewall.jsx:345 pkg/networkmanager/firewall.jsx:348
+#: pkg/networkmanager/firewall.jsx:352 pkg/networkmanager/firewall.jsx:355
 msgid "Firewall"
 msgstr "Brána firewall"
 
-#: pkg/networkmanager/firewall.jsx:314
+#: pkg/networkmanager/firewall.jsx:317
 msgid "Firewall is not available"
 msgstr "Brána firewall není k dispozici"
 
@@ -3323,8 +3358,8 @@ msgid "Force remove passphrase in $0"
 msgstr "Vynutit odebrání heslové fráze v $0"
 
 # auto translated by TM merge from project: blivet-gui, version: f23-branch, DocId: blivet-gui
-#: pkg/machines/components/diskAdd.jsx:166 pkg/storaged/format-dialog.jsx:332
-#: pkg/storaged/format-dialog.jsx:423 pkg/storaged/content-views.jsx:534
+#: pkg/machines/components/diskAdd.jsx:166 pkg/storaged/content-views.jsx:534
+#: pkg/storaged/format-dialog.jsx:332 pkg/storaged/format-dialog.jsx:423
 msgid "Format"
 msgstr "Formát"
 
@@ -3345,9 +3380,13 @@ msgid "Formatting a storage device will erase all data on it."
 msgstr ""
 "Formátování úložného zařízení vymaže všechna data, která na něm nyní jsou."
 
-#: pkg/networkmanager/interfaces.js:2857
+#: pkg/networkmanager/interfaces.js:2853
 msgid "Forward delay $forward_delay"
 msgstr "Prodleva přeposlání $forward_delay"
+
+#: pkg/machines/components/networks/networkList.jsx:47
+msgid "Forwarding mode"
+msgstr "Režim přeposílání"
 
 # auto translated by TM merge from project: anaconda, version: f25, DocId: main
 #: pkg/docker/storage.jsx:325 pkg/docker/storage.jsx:348
@@ -3369,9 +3408,13 @@ msgstr ""
 "nebo přidejte fyzický svazek."
 
 # auto translated by TM merge from project: docbook-locales, version: master, DocId: locale
-#: pkg/systemd/services.html:211
+#: pkg/systemd/services.html:241
 msgid "Friday"
 msgstr "pátek"
+
+#: pkg/packagekit/autoupdates.jsx:321
+msgid "Fridays"
+msgstr "Pátky"
 
 #: node_modules/registry-image-widgets/views/image-listing.html:6
 msgid "From"
@@ -3386,7 +3429,7 @@ msgstr "Celé jméno"
 msgid "GCE Persistent Disk"
 msgstr "GCE trvalý disk"
 
-#: pkg/machines/libvirt-virsh.js:442
+#: pkg/machines/libvirt-virsh.js:446
 msgid "GET HYPERVISOR MAX VCPU action failed"
 msgstr "Akce ZJISTIT MAXIMUM VIRT. PROCESORŮ HYPERVIZORU se nezdařila"
 
@@ -3396,7 +3439,8 @@ msgid "Gateway:"
 msgstr "Brána:"
 
 # auto translated by TM merge from project: Cockpit, version: rhel-7.4, DocId: cockpit
-#: pkg/networkmanager/interfaces.js:2699 pkg/systemd/logs.js:404
+#: pkg/machines/components/networks/networkOverviewTab.jsx:90
+#: pkg/networkmanager/interfaces.js:2695 pkg/systemd/logs.js:404
 msgid "General"
 msgstr "Obecné"
 
@@ -3478,7 +3522,7 @@ msgstr "Zvětšit"
 
 #: pkg/storaged/warning-tab.jsx:125
 msgid "Grow Content"
-msgstr ""
+msgstr "Zvětšit obsah"
 
 #: pkg/storaged/lvol-tabs.jsx:231
 msgid "Grow Logical Volume"
@@ -3505,7 +3549,7 @@ msgstr "HA:"
 msgid "Hair Pin mode"
 msgstr "Hair Pin režim"
 
-#: pkg/networkmanager/interfaces.js:2883
+#: pkg/networkmanager/interfaces.js:2879
 msgid "Hairpin mode"
 msgstr "Hair Pin režim"
 
@@ -3533,7 +3577,7 @@ msgstr "Hardware"
 msgid "Hardware Information"
 msgstr "Informace o hardware"
 
-#: pkg/networkmanager/interfaces.js:2859
+#: pkg/networkmanager/interfaces.js:2855
 msgid "Hello time $hello_time"
 msgstr "Oznamovací čas $hello_time"
 
@@ -3543,10 +3587,15 @@ msgstr "Oznamovací čas $hello_time"
 #: pkg/kubernetes/views/route-modify.html:8
 #: pkg/machines/components/storagePools/createStoragePoolDialog.jsx:145
 #: pkg/machines/components/vmDiskSourceCell.jsx:42
-#: pkg/ovirt/components/App.jsx:103 pkg/ovirt/components/ClusterVms.jsx:65
-#: pkg/ovirt/components/ClusterVms.jsx:182 pkg/shell/indexes.js:334
+#: pkg/ovirt/components/ClusterVms.jsx:65
+#: pkg/ovirt/components/ClusterVms.jsx:182 pkg/ovirt/components/App.jsx:103
+#: pkg/shell/indexes.js:334
 msgid "Host"
 msgstr "Počítač"
+
+#: pkg/machines/components/create-vm-dialog/pxe-helpers.js:182
+msgid "Host Device"
+msgstr ""
 
 # auto translated by TM merge from project: FreeIPA, version: ipa-4-5, DocId: po/ipa
 #: pkg/dashboard/index.html:135 pkg/systemd/index.html:113
@@ -3574,24 +3623,24 @@ msgstr "Hostitele je třeba vyplnit"
 msgid "Host to Maintenance"
 msgstr "Stroj do údržby"
 
-#: pkg/systemd/services.html:471
+#: pkg/systemd/services.html:501
 msgid "Hour : Minute"
 msgstr "Hodina:minuta"
 
-#: pkg/systemd/init.js:1310 pkg/systemd/init.js:1339
+#: pkg/systemd/init.js:1338 pkg/systemd/init.js:1367
 msgid "Hour needs to be a number between 0-23"
 msgstr "Je třeba, aby hodina bylo číslo z rozmezí 0 až 23"
 
 # auto translated by TM merge from project: anaconda, version: f25, DocId: main
-#: pkg/systemd/services.html:437
+#: pkg/systemd/services.html:467
 msgid "Hours"
 msgstr "Hodin"
 
-#: pkg/systemd/index.html:246 pkg/systemd/host.js:1541
+#: pkg/systemd/index.html:246 pkg/systemd/host.js:1578
 msgid "I/O Wait"
 msgstr "Čekání na vst./výst."
 
-#: pkg/machines/libvirt-common.js:816
+#: pkg/machines/libvirt-common.js:952
 msgid "INSTALL VM action failed"
 msgstr "Akce NAINSTALOVAT VIRT. STROJ se nezdařila"
 
@@ -3619,20 +3668,28 @@ msgid "IP Settings"
 msgstr "Nastavení IP"
 
 # auto translated by TM merge from project: firewalld, version: master, DocId: po/firewalld
-#: pkg/networkmanager/interfaces.js:2908
+#: pkg/networkmanager/interfaces.js:2904
 msgid "IPv4"
 msgstr "IPv4"
 
-#: pkg/networkmanager/interfaces.js:3344
+#: pkg/machines/components/networks/networkOverviewTab.jsx:113
+msgid "IPv4 Address"
+msgstr "IPv4 adresa"
+
+#: pkg/networkmanager/interfaces.js:3340
 msgid "IPv4 Settings"
 msgstr "Nastavení IPv4"
 
 # auto translated by TM merge from project: firewalld, version: master, DocId: po/firewalld
-#: pkg/networkmanager/interfaces.js:2909
+#: pkg/networkmanager/interfaces.js:2905
 msgid "IPv6"
 msgstr "IPv6"
 
-#: pkg/networkmanager/interfaces.js:3344
+#: pkg/machines/components/networks/networkOverviewTab.jsx:136
+msgid "IPv6 Address"
+msgstr "IPv6 adresa"
+
+#: pkg/networkmanager/interfaces.js:3340
 msgid "IPv6 Settings"
 msgstr "Nastavení IPv6"
 
@@ -3642,11 +3699,10 @@ msgstr "iSCSI"
 
 # auto translated by TM merge from project: libvirt, version: master, DocId: libvirt
 #: pkg/docker/containers-view.jsx:128 pkg/docker/containers-view.jsx:408
-#: pkg/systemd/init.js:270
 msgid "Id"
 msgstr "Identif."
 
-#: pkg/networkmanager/interfaces.js:2900
+#: pkg/networkmanager/interfaces.js:2896
 msgid "Id $id"
 msgstr "Identif. $id"
 
@@ -3656,8 +3712,8 @@ msgid "Id:"
 msgstr "Identif.:"
 
 # auto translated by TM merge from project: anaconda, version: f25, DocId: main
-#: node_modules/registry-image-widgets/views/image-listing.html:7
 #: node_modules/registry-image-widgets/views/image-body.html:24
+#: node_modules/registry-image-widgets/views/image-listing.html:7
 msgid "Identifier"
 msgstr "Identifikátor"
 
@@ -3733,10 +3789,10 @@ msgstr "Proud obrazu"
 msgid "Image:"
 msgstr "Obraz:"
 
+#: pkg/kubernetes/index.html:81 pkg/kubernetes/registry.html:49
 #: pkg/kubernetes/views/images-page.html:13
 #: pkg/kubernetes/views/imagestream-page.html:24
 #: pkg/kubernetes/views/registry-dashboard-page.html:19
-#: pkg/kubernetes/index.html:81 pkg/kubernetes/registry.html:49
 #: pkg/docker/containers-view.jsx:711
 msgid "Images"
 msgstr "Obrazy"
@@ -3774,13 +3830,19 @@ msgstr "Obrazy mohou být stahovány pouze konkrétními uživateli či skupinam
 msgid "Images pushed recently"
 msgstr "Nedávno nahrané obrazy"
 
-#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:310
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:368
 msgid "Immediately Start VM"
 msgstr "Okamžitě spustit virt. stroj"
 
 #: pkg/storaged/mdraid-details.jsx:100
 msgid "In Sync"
 msgstr "Synchronní"
+
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:224
+msgid ""
+"In most configurations, macvtap does not work for host to guest network "
+"communication."
+msgstr ""
 
 #: pkg/kubernetes/views/registry-dashboard-page.html:81
 msgid ""
@@ -3804,7 +3866,7 @@ msgstr ""
 
 # auto translated by TM merge from project: Cockpit, version: rhel-7.4, DocId: cockpit
 #: pkg/networkmanager/interfaces.js:821 pkg/networkmanager/interfaces.js:1414
-#: pkg/networkmanager/interfaces.js:1421 pkg/networkmanager/interfaces.js:2602
+#: pkg/networkmanager/interfaces.js:1421 pkg/networkmanager/interfaces.js:2598
 msgid "Inactive"
 msgstr "Neaktivní"
 
@@ -3816,7 +3878,7 @@ msgstr "Neaktivní svazek"
 msgid "Incorrect Host Key"
 msgstr "Nesprávný klíč stroje"
 
-#: pkg/storaged/vdos-panel.jsx:69 pkg/storaged/vdo-details.jsx:301
+#: pkg/storaged/vdo-details.jsx:301 pkg/storaged/vdos-panel.jsx:69
 msgid "Index Memory"
 msgstr "Paměť indexu"
 
@@ -3835,7 +3897,7 @@ msgstr "Inicializace…"
 # auto translated by TM merge from project: dnf, version: master, DocId: dnf
 #: pkg/apps/application-list.jsx:87 pkg/apps/application.jsx:112
 #: pkg/lib/cockpit-components-install-dialog.jsx:115
-#: pkg/machines/components/vm/vmActions.jsx:84
+#: pkg/machines/components/vm/vmActions.jsx:98
 msgid "Install"
 msgstr "Nainstalovat"
 
@@ -3864,15 +3926,15 @@ msgid "Install setroubleshoot-server to troubleshoot SELinux events."
 msgstr "Nainstalovat setroubleshoot-server pro řešení potíží s SELinux."
 
 # auto translated by TM merge from project: Fedora Installation Guide, version: f22, DocId: pot/SourceSpoke
-#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:265
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:322
 msgid "Installation Source"
 msgstr "Zdroj instalace"
 
-#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:254
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:308
 msgid "Installation Source Type"
 msgstr "Typ zdroje instalace"
 
-#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:352
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:413
 msgid "Installation Source should not be empty"
 msgstr "Zdroj instalace je třeba vyplnit"
 
@@ -3895,7 +3957,7 @@ msgstr "Instaluje se"
 msgid "Installing $0"
 msgstr "Instaluje se $0"
 
-#: pkg/systemd/services.html:165
+#: pkg/systemd/services.html:186
 msgid "Instantiate"
 msgstr "Vytvořit instanci a spustit"
 
@@ -3907,7 +3969,7 @@ msgstr "Rozhraní"
 
 #: pkg/machines/components/nicEdit.jsx:125
 msgid "Interface Type"
-msgstr ""
+msgstr "Typ rozhraní"
 
 # auto translated by TM merge from project: firewalld, version: master, DocId: po/firewalld
 #: pkg/networkmanager/index.html:116
@@ -3931,15 +3993,15 @@ msgstr "Neplatná adresa $0"
 msgid "Invalid credentials"
 msgstr "Neplatné přihlašovací údaje"
 
-#: pkg/systemd/shutdown.js:143 pkg/systemd/host.js:1411
+#: pkg/systemd/host.js:1448 pkg/systemd/shutdown.js:143
 msgid "Invalid date format"
 msgstr "Neplatný formát data"
 
-#: pkg/systemd/shutdown.js:139 pkg/systemd/host.js:1407
+#: pkg/systemd/host.js:1444 pkg/systemd/shutdown.js:139
 msgid "Invalid date format and invalid time format"
 msgstr "Neplatný formát data a času"
 
-#: pkg/systemd/init.js:1345
+#: pkg/systemd/init.js:1373
 msgid "Invalid date format."
 msgstr "Neplatný formát data."
 
@@ -3951,7 +4013,7 @@ msgstr "Neplatné datum skončení platnosti"
 msgid "Invalid file permissions"
 msgstr "Neplatná souborová práva"
 
-#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:339
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:400
 msgid "Invalid filename"
 msgstr "Neplatný název souboru"
 
@@ -3967,7 +4029,7 @@ msgstr "Neplatná metrika $0"
 msgid "Invalid number of days"
 msgstr "Neplatný počet dnů"
 
-#: pkg/systemd/init.js:1292
+#: pkg/systemd/init.js:1320
 msgid "Invalid number."
 msgstr "Neplatné číslo."
 
@@ -3983,7 +4045,7 @@ msgstr "Neplatná předpona $0"
 msgid "Invalid prefix or netmask $0"
 msgstr "Neplatná předpona nebo maska sítě $0"
 
-#: pkg/systemd/shutdown.js:141 pkg/systemd/host.js:1409
+#: pkg/systemd/host.js:1446 pkg/systemd/shutdown.js:141
 msgid "Invalid time format"
 msgstr "Neplatný formát času"
 
@@ -4003,6 +4065,10 @@ msgstr "Brána Internetu věcí (IoT)"
 #: pkg/lib/machine-change-port.html:15
 msgid "Is sshd running on a different port?"
 msgstr "Není sshd spuštěný na jiném portu?"
+
+#: pkg/machines/components/create-vm-dialog/pxe-helpers.js:116
+msgid "Isolated Network"
+msgstr ""
 
 #: pkg/storaged/jobs-panel.jsx:186
 msgid "Jobs"
@@ -4027,7 +4093,7 @@ msgstr "Připojit se k doméně"
 msgid "Joining this domain is not supported"
 msgstr "Připojení se do této domény není podporováno"
 
-#: pkg/systemd/init.js:713
+#: pkg/systemd/init.js:742
 msgid "Joins Namespace Of"
 msgstr "Připojuje jmenný prostor od"
 
@@ -4064,7 +4130,7 @@ msgid "Kerberos Ticket"
 msgstr "Kerberos tiket"
 
 # auto translated by TM merge from project: Fedora Release Notes, version: f23, DocId: pot/Kernel
-#: pkg/systemd/index.html:242 pkg/systemd/host.js:1542
+#: pkg/systemd/index.html:242 pkg/systemd/host.js:1579
 msgid "Kernel"
 msgstr "Jádro"
 
@@ -4150,7 +4216,7 @@ msgstr "Poslední přihlášení"
 msgid "Last Status Change"
 msgstr "Poslední změna stavu"
 
-#: pkg/systemd/init.js:273
+#: pkg/systemd/init.js:284
 msgid "Last Trigger"
 msgstr "Naposledy spuštěno"
 
@@ -4261,8 +4327,9 @@ msgstr "Načítání dostupných aktualizací, čekejte…"
 msgid "Loading data ..."
 msgstr "Načítání dat…"
 
-#: pkg/kdump/kdump-view.jsx:367 pkg/systemd/logs.js:136 pkg/systemd/logs.js:151
-#: pkg/systemd/logs.js:195 pkg/systemd/logs.js:236
+#: pkg/systemd/services.html:86 pkg/kdump/kdump-view.jsx:367
+#: pkg/systemd/logs.js:136 pkg/systemd/logs.js:151 pkg/systemd/logs.js:195
+#: pkg/systemd/logs.js:236
 msgid "Loading..."
 msgstr "Načítání…"
 
@@ -4277,6 +4344,10 @@ msgstr "Místní disky"
 #: pkg/kdump/kdump-view.jsx:136
 msgid "Local Filesystem"
 msgstr "Místní souborový systém"
+
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:314
+msgid "Local Install Media"
+msgstr "Místní instalační médium"
 
 #: pkg/storaged/nfs-details.jsx:162
 msgid "Local Mount Point"
@@ -4347,7 +4418,7 @@ msgstr "Přihlášeni"
 msgid "Logical"
 msgstr "Logický"
 
-#: pkg/storaged/vdos-panel.jsx:63 pkg/storaged/vdo-details.jsx:220
+#: pkg/storaged/vdo-details.jsx:220 pkg/storaged/vdos-panel.jsx:63
 msgid "Logical Size"
 msgstr "Logická velikost"
 
@@ -4446,11 +4517,11 @@ msgstr "Akce MIGRACE se nezdařila"
 msgid "MII (Recommended)"
 msgstr "MII (doporučeno)"
 
-#: pkg/networkmanager/interfaces.js:2757
+#: pkg/networkmanager/interfaces.js:2753
 msgid "MTU"
 msgstr "MTU"
 
-#: pkg/networkmanager/interfaces.js:4530
+#: pkg/networkmanager/interfaces.js:4526
 msgid "MTU must be a positive number"
 msgstr "Je třeba, aby MTU bylo kladné číslo"
 
@@ -4503,19 +4574,23 @@ msgstr "Zkontrolovat ručně s SSH:"
 msgid "Marking $target as faulty"
 msgstr "Označování $target jako vadný"
 
-#: pkg/systemd/init.js:551
+#: pkg/systemd/init.js:580
 msgid "Mask"
 msgstr "Maska"
 
-#: pkg/systemd/init.js:552
+#: pkg/systemd/init.js:581
 msgid "Mask Forcefully"
 msgstr "Vynuceně zamaskovat"
 
-#: pkg/networkmanager/interfaces.js:2763
+#: pkg/networkmanager/interfaces.js:2759
 msgid "Master"
 msgstr "Hlavní"
 
-#: pkg/networkmanager/interfaces.js:2861
+#: pkg/machines/components/networks/networkOverviewTab.jsx:106
+msgid "Maximum Transmission Unit"
+msgstr "Přenosová jednotka nejvýše"
+
+#: pkg/networkmanager/interfaces.js:2857
 msgid "Maximum message age $max_age"
 msgstr "Maximální stáří zpráv $max_age"
 
@@ -4549,7 +4624,7 @@ msgstr "Člen RAID zařízení $0"
 # auto translated by TM merge from project: FreeIPA, version: ipa-4-5, DocId: po/ipa
 #: pkg/kubernetes/views/project-listing.html:16
 #: pkg/kubernetes/views/project-listing.html:55
-#: pkg/networkmanager/index.html:274 pkg/networkmanager/interfaces.js:2982
+#: pkg/networkmanager/index.html:274 pkg/networkmanager/interfaces.js:2978
 msgid "Members"
 msgstr "Členové"
 
@@ -4563,8 +4638,8 @@ msgstr "Členství"
 #: pkg/dashboard/index.html:71 pkg/docker/index.html:271
 #: pkg/playground/translate.html:90 pkg/systemd/index.html:212
 #: pkg/docker/containers-view.jsx:359 pkg/kubernetes/scripts/graphs.js:608
-#: pkg/kubernetes/scripts/nodes.js:718 pkg/kubernetes/scripts/nodes.js:830
-#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:290
+#: pkg/kubernetes/scripts/nodes.js:715 pkg/kubernetes/scripts/nodes.js:827
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:347
 #: pkg/machines/components/vmOverviewTab.jsx:74
 #: pkg/ovirt/components/ClusterTemplates.jsx:135
 #: pkg/ovirt/components/ClusterVms.jsx:181
@@ -4572,7 +4647,7 @@ msgid "Memory"
 msgstr "Paměť"
 
 # auto translated by TM merge from project: Cockpit, version: rhel-7.4, DocId: cockpit
-#: pkg/systemd/host.js:1600
+#: pkg/systemd/host.js:1637
 msgctxt "page-title"
 msgid "Memory"
 msgstr "Paměť"
@@ -4581,7 +4656,7 @@ msgstr "Paměť"
 msgid "Memory & Swap"
 msgstr "Operační paměť a odkládací prostor stránek"
 
-#: pkg/kubernetes/scripts/nodes.js:719
+#: pkg/kubernetes/scripts/nodes.js:716
 msgid "Memory Utilization: $0%"
 msgstr "Využití paměti: $0%"
 
@@ -4633,12 +4708,12 @@ msgstr "Mini PC"
 msgid "Mini Tower"
 msgstr "Mini věž"
 
-#: pkg/systemd/init.js:1316 pkg/systemd/init.js:1325 pkg/systemd/init.js:1334
+#: pkg/systemd/init.js:1344 pkg/systemd/init.js:1353 pkg/systemd/init.js:1362
 msgid "Minute needs to be a number between 0-59"
 msgstr "Je třeba, aby minuta bylo číslo z rozmezí 0-59"
 
 # auto translated by TM merge from project: anaconda, version: f25, DocId: main
-#: pkg/systemd/services.html:436
+#: pkg/systemd/services.html:466
 msgid "Minutes"
 msgstr "Minut"
 
@@ -4666,9 +4741,13 @@ msgid "Modifying $target"
 msgstr "Upravuje se $target"
 
 # auto translated by TM merge from project: docbook-locales, version: master, DocId: locale
-#: pkg/systemd/services.html:207
+#: pkg/systemd/services.html:237
 msgid "Monday"
 msgstr "pondělí"
+
+#: pkg/packagekit/autoupdates.jsx:317
+msgid "Mondays"
+msgstr "Pondělky"
 
 #: pkg/networkmanager/index.html:307
 msgid "Monitoring Interval"
@@ -4697,8 +4776,8 @@ msgstr "Více informací"
 msgid "More details"
 msgstr "Další podrobnosti"
 
-#: pkg/kdump/kdump-view.jsx:99 pkg/storaged/nfs-details.jsx:301
-#: pkg/storaged/fsys-tab.jsx:166 pkg/storaged/fsys-tab.jsx:189
+#: pkg/kdump/kdump-view.jsx:99 pkg/storaged/fsys-tab.jsx:166
+#: pkg/storaged/fsys-tab.jsx:189 pkg/storaged/nfs-details.jsx:301
 msgid "Mount"
 msgstr "Připojit (mount)"
 
@@ -4706,15 +4785,15 @@ msgstr "Připojit (mount)"
 msgid "Mount Location"
 msgstr "Připojit umístění"
 
-#: pkg/storaged/format-dialog.jsx:85 pkg/storaged/nfs-details.jsx:172
-#: pkg/storaged/fsys-tab.jsx:174
+#: pkg/storaged/format-dialog.jsx:85 pkg/storaged/fsys-tab.jsx:174
+#: pkg/storaged/nfs-details.jsx:172
 msgid "Mount Options"
 msgstr "Předvolby připojení"
 
 # auto translated by TM merge from project: anaconda, version: rhel6-branch, DocId: anaconda
-#: pkg/storaged/format-dialog.jsx:75 pkg/storaged/nfs-details.jsx:318
-#: pkg/storaged/fsys-panel.jsx:109 pkg/storaged/nfs-panel.jsx:102
-#: pkg/storaged/fsys-tab.jsx:160
+#: pkg/storaged/format-dialog.jsx:75 pkg/storaged/fsys-panel.jsx:109
+#: pkg/storaged/fsys-tab.jsx:160 pkg/storaged/nfs-details.jsx:318
+#: pkg/storaged/nfs-panel.jsx:102
 msgid "Mount Point"
 msgstr "Přípojný bod"
 
@@ -4758,6 +4837,10 @@ msgstr "Připojování $target"
 msgid "Multi-system Chassis"
 msgstr "Skříň pro více systémů"
 
+#: pkg/machines/components/create-vm-dialog/pxe-helpers.js:101
+msgid "NAT to $0"
+msgstr ""
+
 # auto translated by TM merge from project: Cockpit, version: rhel-7.4, DocId: cockpit
 #: pkg/kubernetes/scripts/volumes.js:865
 msgid "NFS"
@@ -4783,12 +4866,13 @@ msgstr "NSNA Ping"
 msgid "NTFS - Compatible with most systems"
 msgstr "NTFS – kompatibilní s většinou systémů"
 
-#: pkg/systemd/host.js:1473
+#: pkg/systemd/host.js:1510
 msgid "NTP Server"
 msgstr "NTP server"
 
 # auto translated by TM merge from project: Cockpit, version: rhel-7.4, DocId: cockpit
-#: pkg/docker/index.html:267 pkg/kubernetes/views/add-user-dialog.html:9
+#: pkg/docker/index.html:267 pkg/kubernetes/views/add-group-dialog.html:9
+#: pkg/kubernetes/views/add-user-dialog.html:9
 #: pkg/kubernetes/views/containers-listing.html:11
 #: pkg/kubernetes/views/dashboard-page.html:156
 #: pkg/kubernetes/views/dashboard-page.html:198
@@ -4809,29 +4893,32 @@ msgstr "NTP server"
 #: pkg/kubernetes/views/user-modify.html:9
 #: pkg/kubernetes/views/volume-body.html:31
 #: pkg/kubernetes/views/volumes-page.html:19
-#: pkg/kubernetes/views/volumes-page.html:57
-#: pkg/kubernetes/views/add-group-dialog.html:9
-#: pkg/networkmanager/index.html:127 pkg/networkmanager/index.html:145
-#: pkg/networkmanager/index.html:173 pkg/networkmanager/index.html:217
-#: pkg/networkmanager/index.html:270 pkg/networkmanager/index.html:327
+#: pkg/kubernetes/views/volumes-page.html:57 pkg/networkmanager/index.html:127
+#: pkg/networkmanager/index.html:145 pkg/networkmanager/index.html:173
+#: pkg/networkmanager/index.html:217 pkg/networkmanager/index.html:270
+#: pkg/networkmanager/index.html:327
 #: node_modules/registry-image-widgets/views/image-body.html:2
 #: node_modules/registry-image-widgets/views/imagestream-listing.html:5
 #: pkg/docker/containers-view.jsx:359 pkg/docker/containers-view.jsx:683
-#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:236
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:290
+#: pkg/machines/components/diskAdd.jsx:125
+#: pkg/machines/components/networks/networkList.jsx:47
 #: pkg/machines/components/storagePools/createStoragePoolDialog.jsx:56
+#: pkg/machines/components/storagePools/storagePoolVolumesTab.jsx:66
 #: pkg/machines/components/storagePools/storagePoolList.jsx:49
-#: pkg/machines/components/diskAdd.jsx:125 pkg/machines/hostvmslist.jsx:88
+#: pkg/machines/hostvmslist.jsx:90
 #: pkg/ovirt/components/ClusterTemplates.jsx:135
 #: pkg/ovirt/components/ClusterVms.jsx:181 pkg/packagekit/updates.jsx:380
-#: pkg/storaged/vgroups-panel.jsx:55 pkg/storaged/format-dialog.jsx:289
+#: pkg/storaged/content-views.jsx:105 pkg/storaged/content-views.jsx:645
+#: pkg/storaged/format-dialog.jsx:289 pkg/storaged/fsys-panel.jsx:108
+#: pkg/storaged/fsys-tab.jsx:72 pkg/storaged/fsys-tab.jsx:153
+#: pkg/storaged/iscsi-panel.jsx:127 pkg/storaged/iscsi-panel.jsx:178
 #: pkg/storaged/lvol-tabs.jsx:33 pkg/storaged/lvol-tabs.jsx:346
 #: pkg/storaged/lvol-tabs.jsx:396 pkg/storaged/lvol-tabs.jsx:431
-#: pkg/storaged/part-tab.jsx:33 pkg/storaged/vdos-panel.jsx:48
-#: pkg/storaged/fsys-panel.jsx:108 pkg/storaged/iscsi-panel.jsx:127
-#: pkg/storaged/iscsi-panel.jsx:178 pkg/storaged/mdraids-panel.jsx:40
-#: pkg/storaged/content-views.jsx:105 pkg/storaged/content-views.jsx:645
-#: pkg/storaged/fsys-tab.jsx:72 pkg/storaged/fsys-tab.jsx:153
-#: pkg/storaged/vgroup-details.jsx:181 pkg/systemd/hwinfo.jsx:41
+#: pkg/storaged/mdraids-panel.jsx:40 pkg/storaged/part-tab.jsx:33
+#: pkg/storaged/vdos-panel.jsx:48 pkg/storaged/vgroup-details.jsx:181
+#: pkg/storaged/vgroups-panel.jsx:55 pkg/systemd/hwinfo.jsx:41
+#: pkg/systemd/init.js:281
 msgid "Name"
 msgstr "Název"
 
@@ -4863,10 +4950,14 @@ msgstr "Název nemůže obsahovat znak „$0“."
 msgid "Name cannot contain whitespace."
 msgstr "Název nemůže obsahovat prázdné znaky."
 
-#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:330
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:388
 #: pkg/machines/components/storagePools/createStoragePoolDialog.jsx:67
 msgid "Name should not be empty"
 msgstr "Název je třeba vyplnit"
+
+#: pkg/machines/components/networks/networkOverviewTab.jsx:37
+msgid "Name: "
+msgstr "Název:"
 
 #: pkg/kubernetes/views/containers-listing.html:14
 #: pkg/kubernetes/views/dashboard-page.html:160
@@ -4888,9 +4979,13 @@ msgstr "Jmenný prostor"
 msgid "Namespace cannot be empty."
 msgstr "Jmenný prostor je třeba vyplnit."
 
-#: pkg/systemd/host.js:1327
+#: pkg/systemd/host.js:1344
 msgid "Need at least one NTP server"
 msgstr "Je třeba alespoň jeden NTP server"
+
+#: pkg/machines/components/networks/networkOverviewTab.jsx:122
+msgid "Netmask"
+msgstr "Maska sítě"
 
 # auto translated by TM merge from project: Cockpit, version: rhel-7.4, DocId: cockpit
 #: pkg/dashboard/index.html:72 pkg/playground/translate.html:95
@@ -4898,15 +4993,23 @@ msgstr "Je třeba alespoň jeden NTP server"
 msgid "Network"
 msgstr "Síť"
 
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:317
+msgid "Network Boot (PXE)"
+msgstr ""
+
 #: pkg/machines/components/storagePools/createStoragePoolDialog.jsx:77
 msgid "Network File System"
 msgstr "Síťový souborový systém"
 
 #: pkg/machines/components/vm/vm.jsx:56
 msgid "Network Interfaces"
+msgstr "Síťová rozhraní"
+
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:231
+msgid "Network Selection does not support PXE."
 msgstr ""
 
-#: pkg/systemd/host.js:529
+#: pkg/systemd/host.js:546
 msgid "Network Traffic"
 msgstr "Síťový provoz"
 
@@ -4914,9 +5017,17 @@ msgstr "Síťový provoz"
 msgid "Network devices and graphs require NetworkManager."
 msgstr "Síťová zařízení a grafy vyžadují NetworkManager"
 
+#: pkg/machines/components/networks/network.jsx:122
+msgid "Network failed to get activated"
+msgstr "Síť se nepodařilo aktivovat"
+
+#: pkg/machines/components/networks/network.jsx:127
+msgid "Network failed to get deactivated"
+msgstr "Síť se nepodařilo deaktivovat"
+
 #: pkg/machines/components/nicEdit.jsx:216
 msgid "Network interface settings could not be saved"
-msgstr ""
+msgstr "Nastavení síťového rozhraní se nepodařilo uložit"
 
 #: pkg/networkmanager/index.html:46
 msgid "NetworkManager is not running."
@@ -4924,7 +5035,7 @@ msgstr "NetworkManager není spuštěný."
 
 # auto translated by TM merge from project: Fedora Release Notes, version: f24, DocId: pot/Networking
 #: pkg/networkmanager/index.html:23 pkg/networkmanager/index.html:393
-#: pkg/networkmanager/firewall.jsx:344
+#: pkg/networkmanager/firewall.jsx:351
 msgid "Networking"
 msgstr "Síť"
 
@@ -4937,6 +5048,11 @@ msgstr "Síť"
 #: pkg/networkmanager/index.html:157
 msgid "Networking Logs"
 msgstr "Záznamy událostí sítě"
+
+#: pkg/machines/components/networks/networkList.jsx:42
+#: pkg/machines/components/networks/networkList.jsx:46
+msgid "Networks"
+msgstr "Sítě"
 
 #: pkg/users/local.js:961
 msgid "Never"
@@ -4995,17 +5111,17 @@ msgstr "Nový projekt"
 msgid "Next"
 msgstr "Další"
 
-#: pkg/systemd/init.js:272
+#: pkg/systemd/init.js:283
 msgid "Next Run"
 msgstr "Příští spuštění"
 
-#: pkg/systemd/index.html:234 pkg/systemd/host.js:1544
+#: pkg/systemd/index.html:234 pkg/systemd/host.js:1581
 msgid "Nice"
 msgstr "Nice"
 
 #: pkg/docker/index.html:542 pkg/docker/index.html:546 pkg/docker/run.js:239
 #: pkg/docker/util.js:103 pkg/kubernetes/scripts/volumes.js:998
-#: pkg/networkmanager/interfaces.js:2590
+#: pkg/networkmanager/interfaces.js:2586
 msgid "No"
 msgstr "Ne"
 
@@ -5020,6 +5136,10 @@ msgstr "Žádný souborový systém"
 #: pkg/storaged/content-views.jsx:719
 msgid "No Logical Volumes"
 msgstr "Žádné logické svazky"
+
+#: pkg/systemd/services.html:194
+msgid "No Matching Results"
+msgstr "Žádné shodující se výsledky"
 
 #: pkg/storaged/nfs-panel.jsx:111
 msgid "No NFS mounts set up"
@@ -5041,7 +5161,7 @@ msgstr "Tento nárok nepoužívají žádné pody"
 msgid "No SELinux alerts."
 msgstr "Žádné výstrahy SELinux."
 
-#: pkg/machines/components/storagePools/storagePoolVolumesTab.jsx:42
+#: pkg/machines/components/storagePools/storagePoolVolumesTab.jsx:70
 msgid "No Storage Volumes defined for this Storage Pool"
 msgstr "Pro tento fond úložiště nejsou definované žádné úložné svazky"
 
@@ -5050,7 +5170,7 @@ msgstr "Pro tento fond úložiště nejsou definované žádné úložné svazky
 msgid "No VM found in oVirt."
 msgstr "V oVirt nenalezeny žádné virt. stroje."
 
-#: pkg/machines/hostvmslist.jsx:90
+#: pkg/machines/hostvmslist.jsx:92
 msgid "No VM is running or defined on this host"
 msgstr "Na tomto stroji nejsou spuštěné nebo definované žádné virt. stroje"
 
@@ -5090,7 +5210,7 @@ msgstr "Bez signálu"
 msgid "No configuration found"
 msgstr "Nenalezeno žádné nastavení"
 
-#: pkg/machines/components/consoles.jsx:98
+#: pkg/machines/components/consoles.jsx:97
 msgid "No console defined for this virtual machine."
 msgstr "Pro tento virtuální stroj není definována žádná konzole."
 
@@ -5110,9 +5230,9 @@ msgstr "Žádné kontejnery, které by odpovídaly stávajícímu filtru"
 msgid "No description provided."
 msgstr "Není poskytnut žádný popis."
 
-#: pkg/storaged/vgroups-panel.jsx:60 pkg/storaged/vdos-panel.jsx:56
-#: pkg/storaged/mdraids-panel.jsx:75 pkg/storaged/mdraid-details.jsx:48
-#: pkg/storaged/vgroup-details.jsx:54
+#: pkg/storaged/mdraid-details.jsx:48 pkg/storaged/mdraids-panel.jsx:75
+#: pkg/storaged/vdos-panel.jsx:56 pkg/storaged/vgroup-details.jsx:54
+#: pkg/storaged/vgroups-panel.jsx:60
 msgid "No disks are available."
 msgstr "Nejsou k dispozici žádné disky."
 
@@ -5201,6 +5321,10 @@ msgstr ""
 msgid "No network interfaces defined for this VM"
 msgstr "Pro tento virt. stroj nebyla určena žádná síťová rozhraní"
 
+#: pkg/machines/components/networks/networkList.jsx:48
+msgid "No network is defined on this host"
+msgstr "Na tomto hostiteli není definována žádná síť"
+
 #: pkg/kubernetes/views/dashboard-page.html:117
 msgid "No nodes in cluster"
 msgstr "Žádné uzly v clusteru"
@@ -5209,7 +5333,7 @@ msgstr "Žádné uzly v clusteru"
 msgid "No oVirt connection"
 msgstr "Žádné připojení k oVirt"
 
-#: pkg/networkmanager/firewall.jsx:355
+#: pkg/networkmanager/firewall.jsx:362
 msgid "No open ports"
 msgstr "Žádné otevřené porty"
 
@@ -5308,9 +5432,9 @@ msgstr "Žádné svazky v používání"
 msgid "Node"
 msgstr "Uzel"
 
-#: pkg/kubernetes/views/dashboard-page.html:90
+#: pkg/kubernetes/index.html:49 pkg/kubernetes/views/dashboard-page.html:90
 #: pkg/kubernetes/views/dashboard-page.html:192
-#: pkg/kubernetes/views/nodes-page.html:36 pkg/kubernetes/index.html:49
+#: pkg/kubernetes/views/nodes-page.html:36
 msgid "Nodes"
 msgstr "Uzly"
 
@@ -5324,6 +5448,10 @@ msgstr "Uzly jsou stroje na kterých jsou spouštěné kontejnery."
 #: pkg/kdump/kdump-view.jsx:419 pkg/tuned/dialog.js:231
 msgid "None"
 msgstr "Žádný"
+
+#: pkg/machines/helpers.js:222
+msgid "None (Isolated Network)"
+msgstr "Žádné (izolovaná síť)"
 
 #: pkg/kubernetes/views/details-page.html:53
 #: pkg/kubernetes/views/node-body.html:42 pkg/playground/translate.html:29
@@ -5394,7 +5522,7 @@ msgid "Not yet synced"
 msgstr "Doposud nesynchronizováno"
 
 # auto translated by TM merge from project: FreeIPA, version: ipa-4-5, DocId: po/ipa
-#: pkg/systemd/services.html:329
+#: pkg/systemd/services.html:359
 msgid "Note"
 msgstr "Poznámka"
 
@@ -5427,7 +5555,7 @@ msgstr "Operační systém"
 msgid "OS Type:"
 msgstr "Druh oper. systému:"
 
-#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:271
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:328
 msgid "OS Vendor"
 msgstr "Výrobce oper. systému"
 
@@ -5445,8 +5573,8 @@ msgstr "Vyskytlo se mezi $0 a $1"
 
 #: pkg/networkmanager/index.html:105 pkg/playground/jquery-patterns.html:97
 #: pkg/playground/jquery-patterns.html:110 pkg/shell/index.html:241
-#: pkg/systemd/index.html:163 pkg/lib/patterns.js:246
-#: pkg/lib/cockpit-components-onoff.jsx:72
+#: pkg/systemd/index.html:163 pkg/lib/cockpit-components-onoff.jsx:72
+#: pkg/lib/patterns.js:246
 msgid "Off"
 msgstr "Vypnuto"
 
@@ -5468,8 +5596,8 @@ msgstr "Původní heslo nebylo přijato"
 
 #: pkg/networkmanager/index.html:101 pkg/playground/jquery-patterns.html:93
 #: pkg/playground/jquery-patterns.html:106 pkg/shell/index.html:237
-#: pkg/systemd/index.html:159 pkg/lib/patterns.js:246
-#: pkg/lib/cockpit-components-onoff.jsx:73
+#: pkg/systemd/index.html:159 pkg/lib/cockpit-components-onoff.jsx:73
+#: pkg/lib/patterns.js:246
 msgid "On"
 msgstr "Zapnuto"
 
@@ -5477,7 +5605,7 @@ msgstr "Zapnuto"
 msgid "On Build"
 msgstr "Při sestavování"
 
-#: pkg/docker/index.html:547 pkg/systemd/init.js:708
+#: pkg/docker/index.html:547 pkg/systemd/init.js:737
 msgid "On Failure"
 msgstr "Při nezdaru"
 
@@ -5504,6 +5632,14 @@ msgstr ""
 msgid "One Time Password"
 msgstr "Jednorázové heslo"
 
+#: pkg/machines/components/storagePools/storageVolumeDelete.jsx:77
+msgid ""
+"One or more selected volumes are used by domains. Detach the disks first to "
+"allow volume deletion."
+msgstr ""
+"Jeden či více z vybraných svazků je používán doménami. Aby bylo možné svazek "
+"smazat, je třeba nejprve odpojit disky."
+
 #: pkg/storaged/vdo-details.jsx:134
 msgid "Only $0 of $1 are used."
 msgstr "Je použito pouze $0 z $1."
@@ -5512,7 +5648,7 @@ msgstr "Je použito pouze $0 z $1."
 msgid "Only Emergency"
 msgstr "Pouze nouzové"
 
-#: pkg/systemd/init.js:1266
+#: pkg/systemd/init.js:1294
 msgid "Only alphabets, numbers, : , _ , . , @ , - are allowed."
 msgstr ""
 "Dovolena jsou pouze písmena a číslice, dále ještě znaky  : , _ , . , @ , -"
@@ -5521,8 +5657,12 @@ msgstr ""
 msgid "Ooops!"
 msgstr "Jejda!"
 
+#: pkg/machines/helpers.js:220
+msgid "Open"
+msgstr "Otevřít"
+
 #: pkg/kubernetes/views/nodes-page.html:42 pkg/systemd/index.html:98
-#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:280
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:337
 msgid "Operating System"
 msgstr "Operační systém"
 
@@ -5540,8 +5680,8 @@ msgid "Optimized for:"
 msgstr "Optimalizováno pro:"
 
 # auto translated by TM merge from project: FreeIPA, version: ipa-4-5, DocId: po/ipa
-#: pkg/kubernetes/views/volume-body.html:130 pkg/storaged/vdos-panel.jsx:78
-#: pkg/storaged/crypto-tab.jsx:137
+#: pkg/kubernetes/views/volume-body.html:130 pkg/storaged/crypto-tab.jsx:137
+#: pkg/storaged/vdos-panel.jsx:78
 msgid "Options"
 msgstr "Přepínače"
 
@@ -5573,12 +5713,13 @@ msgstr "Ostatní volby"
 # auto translated by TM merge from project: Fedora Release Notes, version: f23, DocId: pot/Overview
 #: pkg/docker/index.html:297 pkg/kubernetes/index.html:43
 #: pkg/kubernetes/registry.html:43
+#: pkg/machines/components/networks/network.jsx:84
 #: pkg/machines/components/storagePools/storagePool.jsx:96
 #: pkg/machines/components/vm/vm.jsx:53
 msgid "Overview"
 msgstr "Přehled"
 
-#: pkg/storaged/format-dialog.jsx:284 pkg/storaged/content-views.jsx:521
+#: pkg/storaged/content-views.jsx:521 pkg/storaged/format-dialog.jsx:284
 msgid "Overwrite existing data with zeros"
 msgstr "Přepsat existující data nulami"
 
@@ -5611,11 +5752,11 @@ msgstr "PackageKit ohlásilo chybový kód $0"
 msgid "Parent"
 msgstr "Nadřazené"
 
-#: pkg/networkmanager/interfaces.js:2899
+#: pkg/networkmanager/interfaces.js:2895
 msgid "Parent $parent"
 msgstr "Nadřazené $parent"
 
-#: pkg/systemd/init.js:698
+#: pkg/systemd/init.js:727
 msgid "Part Of"
 msgstr "Součástí"
 
@@ -5643,8 +5784,8 @@ msgid "Passive"
 msgstr "Pasivní"
 
 # auto translated by TM merge from project: anaconda, version: f22-branch, DocId: anaconda
-#: pkg/storaged/crypto-keyslots.jsx:206 pkg/storaged/crypto-keyslots.jsx:552
-#: pkg/storaged/format-dialog.jsx:298 pkg/storaged/content-views.jsx:232
+#: pkg/storaged/content-views.jsx:232 pkg/storaged/crypto-keyslots.jsx:206
+#: pkg/storaged/crypto-keyslots.jsx:552 pkg/storaged/format-dialog.jsx:298
 msgid "Passphrase"
 msgstr "Heslo"
 
@@ -5713,8 +5854,9 @@ msgstr "Sem vložte obsah veřejné části svého ssh klíče"
 #: pkg/kubernetes/views/pv-modify.html:126
 #: pkg/kubernetes/views/volume-body.html:37
 #: pkg/kubernetes/views/volume-body.html:49
-#: pkg/kubernetes/views/volume-body.html:101 pkg/systemd/services.html:107
+#: pkg/kubernetes/views/volume-body.html:101 pkg/systemd/services.html:128
 #: pkg/machines/components/storagePools/storagePoolOverviewTab.jsx:38
+#: pkg/machines/components/deleteDialog.jsx:44
 msgid "Path"
 msgstr "Popis umístění"
 
@@ -5722,7 +5864,7 @@ msgstr "Popis umístění"
 msgid "Path cost"
 msgstr "Náklady trasy"
 
-#: pkg/networkmanager/interfaces.js:2881
+#: pkg/networkmanager/interfaces.js:2877
 msgid "Path cost $path_cost"
 msgstr "Náklady trasy $path_cost"
 
@@ -5742,7 +5884,7 @@ msgstr "Popis umístění na serveru je třeba vyplnit."
 msgid "Path on server must start with \"/\"."
 msgstr "Je třeba, aby popis umístění na serveru začínal na „/“."
 
-#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:191
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:207
 msgid "Path to ISO file on host's file system"
 msgstr "Popis umístění ISO souboru na souborovém systému hostitele"
 
@@ -5751,9 +5893,13 @@ msgid "Path to file"
 msgstr "Popis umístění serveru"
 
 # auto translated by TM merge from project: anaconda, version: f25, DocId: main
-#: pkg/systemd/services.html:57
+#: pkg/systemd/services.html:60
 msgid "Paths"
 msgstr "Popisy umístění"
+
+#: pkg/machines/components/vm/vmActions.jsx:77
+msgid "Pause"
+msgstr ""
 
 #: pkg/kubernetes/views/volumes-page.html:53
 msgid "Pending Volume Claims"
@@ -5768,7 +5914,7 @@ msgid "Peripheral Chassis"
 msgstr "Skříň periferií"
 
 # auto translated by TM merge from project: firewalld, version: master, DocId: po/firewalld
-#: pkg/networkmanager/interfaces.js:3615
+#: pkg/networkmanager/interfaces.js:3611
 msgid "Permanent"
 msgstr "Trvalá"
 
@@ -5781,6 +5927,7 @@ msgstr "Přístup zamítnut"
 msgid "Persistence"
 msgstr "Trvalost"
 
+#: pkg/machines/components/networks/networkOverviewTab.jsx:93
 #: pkg/machines/components/storagePools/storagePoolOverviewTab.jsx:42
 msgid "Persistent"
 msgstr "Trvalé"
@@ -5856,7 +6003,7 @@ msgstr "Zadejte název pro nový svazek"
 msgid "Please enter new volume size"
 msgstr "Zadejte velikost nového svazku"
 
-#: pkg/networkmanager/firewall.jsx:315
+#: pkg/networkmanager/firewall.jsx:318
 msgid "Please install the $0 package"
 msgstr "Nainstalujte balíček $0"
 
@@ -6019,6 +6166,7 @@ msgstr ""
 # auto translated by TM merge from project: anaconda, version: f25, DocId: main
 #: pkg/machines/components/diskAdd.jsx:187
 #: pkg/machines/components/vmDiskSourceCell.jsx:40
+#: pkg/machines/components/deleteDialog.jsx:52
 #: pkg/storaged/content-views.jsx:127
 msgid "Pool"
 msgstr "Úložiště"
@@ -6062,7 +6210,7 @@ msgstr "Přenosný"
 #: pkg/kubernetes/views/service-body.html:13 pkg/networkmanager/index.html:221
 #: pkg/networkmanager/index.html:331
 #: node_modules/registry-image-widgets/views/image-config.html:27
-#: pkg/docker/containers-view.jsx:414 pkg/networkmanager/interfaces.js:2982
+#: pkg/docker/containers-view.jsx:414 pkg/networkmanager/interfaces.js:2978
 msgid "Ports"
 msgstr "Porty"
 
@@ -6079,11 +6227,15 @@ msgstr "Možnosti napájení"
 msgid "Preferred number of sockets to expose to the guest."
 msgstr "Upřednostňovaný počet patic který odhalit hostovi."
 
-#: pkg/networkmanager/interfaces.js:3291
+#: pkg/machines/components/networks/networkOverviewTab.jsx:145
+msgid "Prefix"
+msgstr "Předpona"
+
+#: pkg/networkmanager/interfaces.js:3287
 msgid "Prefix length"
 msgstr "Délka předpony"
 
-#: pkg/networkmanager/interfaces.js:3291
+#: pkg/networkmanager/interfaces.js:3287
 msgid "Prefix length or Netmask"
 msgstr "Délka předpony nebo maska sítě"
 
@@ -6097,15 +6249,15 @@ msgid "Preparing for Maintenance"
 msgstr "Příprava na údržbu"
 
 # auto translated by TM merge from project: anaconda, version: master, DocId: main
-#: pkg/networkmanager/interfaces.js:3616
+#: pkg/networkmanager/interfaces.js:3612
 msgid "Preserve"
 msgstr "Zachovat"
 
-#: pkg/systemd/init.js:549
+#: pkg/systemd/init.js:578
 msgid "Preset"
 msgstr "Přednastavené"
 
-#: pkg/systemd/init.js:550
+#: pkg/systemd/init.js:579
 msgid "Preset Forcefully"
 msgstr "Vynucené přednastavené"
 
@@ -6124,9 +6276,13 @@ msgstr "Primární"
 msgid "Priority"
 msgstr "Priorita"
 
-#: pkg/networkmanager/interfaces.js:2855 pkg/networkmanager/interfaces.js:2879
+#: pkg/networkmanager/interfaces.js:2851 pkg/networkmanager/interfaces.js:2875
 msgid "Priority $priority"
 msgstr "Priorita $priority"
+
+#: pkg/machines/helpers.js:225
+msgid "Private"
+msgstr "Soukromé"
 
 #: pkg/kubernetes/scripts/projects.js:1042
 msgid "Private: Allow only specific users or groups to pull images"
@@ -6209,10 +6365,10 @@ msgstr "Webové stránky projektu"
 msgid "Project:"
 msgstr "Projekt:"
 
+#: pkg/kubernetes/index.html:88 pkg/kubernetes/registry.html:55
 #: pkg/kubernetes/views/group-delete.html:10
 #: pkg/kubernetes/views/project-listing.html:9
-#: pkg/kubernetes/views/user-delete.html:10 pkg/kubernetes/index.html:88
-#: pkg/kubernetes/registry.html:55
+#: pkg/kubernetes/views/user-delete.html:10
 msgid "Projects"
 msgstr "Projekty"
 
@@ -6228,7 +6384,7 @@ msgstr "Časový limit výzvy prostřednictvím ssh-add překročen"
 msgid "Prompting via ssh-keygen timed out"
 msgstr "Časový limit výzvy prostřednictvím ssh-keygen překročen"
 
-#: pkg/systemd/init.js:711
+#: pkg/systemd/init.js:740
 msgid "Propagates Reload To"
 msgstr "Propaguje načíst znovu k"
 
@@ -6348,7 +6504,7 @@ msgstr "RAID skříň"
 msgid "RAID Device"
 msgstr "RAID zařízení"
 
-#: pkg/storaged/utils.js:241 pkg/storaged/mdraid-details.jsx:316
+#: pkg/storaged/mdraid-details.jsx:316 pkg/storaged/utils.js:241
 msgid "RAID Device $0"
 msgstr "RAID zařízení $0"
 
@@ -6377,7 +6533,7 @@ msgstr "Skříň do stojanu"
 msgid "Rados Block Device"
 msgstr "Rados blokové zařízení"
 
-#: pkg/networkmanager/interfaces.js:3617
+#: pkg/networkmanager/interfaces.js:3613
 msgid "Random"
 msgstr "Náhodné"
 
@@ -6448,7 +6604,7 @@ msgstr "Připraveno"
 msgid "Real Host Name"
 msgstr "Skutečný název stroje"
 
-#: pkg/systemd/host.js:999
+#: pkg/systemd/host.js:1016
 msgid ""
 "Real host name can only contain lower-case characters, digits, dashes, and "
 "periods (with populated subdomains)"
@@ -6456,7 +6612,7 @@ msgstr ""
 "Skutečný název stroje může obsahovat pouze malá písmena (bez diakritiky), "
 "číslice, spojovníky a tečky (u použitých subdomén)"
 
-#: pkg/systemd/host.js:1000
+#: pkg/systemd/host.js:1017
 msgid "Real host name must be 64 characters or less"
 msgstr "Je třeba, aby skutečný název stroje byl nanejvýš 64 znaků dlouhý"
 
@@ -6465,7 +6621,7 @@ msgid "Reason"
 msgstr "Důvod"
 
 # auto translated by TM merge from project: system-config-kdump, version: master, DocId: system-config-kdump
-#: pkg/lib/journal.js:238 pkg/lib/cockpit-components-logs-panel.jsx:82
+#: pkg/lib/cockpit-components-logs-panel.jsx:82 pkg/lib/journal.js:238
 msgid "Reboot"
 msgstr "Restartovat"
 
@@ -6550,16 +6706,16 @@ msgstr "Registruje se Ovirt do Cockpit"
 msgid "Register…"
 msgstr "Zaregistrovat…"
 
-#: pkg/ovirt/components/App.jsx:62 pkg/ovirt/components/VdsmView.jsx:100
-#: pkg/systemd/init.js:523
+#: pkg/ovirt/components/VdsmView.jsx:100 pkg/ovirt/components/App.jsx:62
+#: pkg/systemd/init.js:552
 msgid "Reload"
 msgstr "Načíst znovu"
 
-#: pkg/systemd/init.js:712
+#: pkg/systemd/init.js:741
 msgid "Reload Propagated From"
 msgstr "Znovu načíst propagováno z"
 
-#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:202
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:256
 msgid "Remote URL"
 msgstr "Vzdálená URL adresa"
 
@@ -6595,7 +6751,7 @@ msgstr "Odebrání:"
 msgid "Remove"
 msgstr "Odebrat"
 
-#: pkg/networkmanager/interfaces.js:3051
+#: pkg/networkmanager/interfaces.js:3047
 msgid "Remove $0"
 msgstr "Odebrat $0"
 
@@ -6656,7 +6812,7 @@ msgstr "Odebírá se $0"
 msgid "Removing $target from RAID Device"
 msgstr "Odebírání $target z RAID zařízení"
 
-#: pkg/networkmanager/interfaces.js:3050
+#: pkg/networkmanager/interfaces.js:3046
 msgid ""
 "Removing <b>$0</b> will break the connection to the server, and will make "
 "the administration UI unavailable."
@@ -6689,23 +6845,23 @@ msgstr "Přejmenovává se $target"
 msgid "Repairing $target"
 msgstr "Opravuje se $target"
 
-#: pkg/systemd/services.html:461
+#: pkg/systemd/services.html:491
 msgid "Repeat Daily"
 msgstr "Opakovat každý den"
 
-#: pkg/systemd/services.html:460
+#: pkg/systemd/services.html:490
 msgid "Repeat Hourly"
 msgstr "Opakovat každou hodinu"
 
-#: pkg/systemd/services.html:463
+#: pkg/systemd/services.html:493
 msgid "Repeat Monthly"
 msgstr "Opakovat každý měsíc"
 
-#: pkg/systemd/services.html:462
+#: pkg/systemd/services.html:492
 msgid "Repeat Weekly"
 msgstr "Opakovat každý týden"
 
-#: pkg/systemd/services.html:464
+#: pkg/systemd/services.html:494
 msgid "Repeat Yearly"
 msgstr "Opakovat každý rok"
 
@@ -6784,11 +6940,11 @@ msgstr "Vyžadovat změnu hesla každých $0 dnů"
 msgid "Require password change on $0"
 msgstr "Vyžadovat změnu hesla na $0"
 
-#: pkg/systemd/init.js:699
+#: pkg/systemd/init.js:728
 msgid "Required By"
 msgstr "Vyžadováno"
 
-#: pkg/systemd/init.js:694
+#: pkg/systemd/init.js:723
 msgid "Requires"
 msgstr "Vyžaduje"
 
@@ -6796,11 +6952,11 @@ msgstr "Vyžaduje"
 msgid "Requires Authentication"
 msgstr "Vyžaduje ověření"
 
-#: pkg/systemd/init.js:695
+#: pkg/systemd/init.js:724
 msgid "Requisite"
 msgstr "Závislost"
 
-#: pkg/systemd/init.js:700
+#: pkg/systemd/init.js:729
 msgid "Requisite Of"
 msgstr "Závislost pro"
 
@@ -6835,10 +6991,12 @@ msgid ""
 "Resizing an encrypted filesystem requires unlocking the disk. Please provide "
 "a current disk passphrase."
 msgstr ""
+"Změna velikost šifrovaného souborového systému vyžaduje jeho odemčení. "
+"Zadejte heslovou frázi."
 
 #: pkg/docker/index.html:135 pkg/systemd/index.html:134
 #: pkg/systemd/index.html:144 pkg/docker/containers-view.jsx:315
-#: pkg/machines/components/vm/vmActions.jsx:42 pkg/systemd/init.js:522
+#: pkg/machines/components/vm/vmActions.jsx:42 pkg/systemd/init.js:551
 #: pkg/systemd/shutdown.js:95 pkg/systemd/shutdown.js:96
 msgid "Restart"
 msgstr "Restartovat"
@@ -6870,6 +7028,10 @@ msgstr "Restartuje se"
 #: pkg/networkmanager/index.html:39
 msgid "Restoring connection"
 msgstr "Obnovování spojení"
+
+#: pkg/machines/components/vm/vmActions.jsx:84
+msgid "Resume"
+msgstr ""
 
 #: pkg/kubernetes/scripts/volumes.js:217
 msgid "Retain"
@@ -6905,8 +7067,8 @@ msgstr "Revize"
 msgid "Role"
 msgstr "Role"
 
-#: pkg/kubernetes/views/project-body.html:21
-#: pkg/kubernetes/views/add-member-role-dialog.html:39 pkg/users/index.html:94
+#: pkg/kubernetes/views/add-member-role-dialog.html:39
+#: pkg/kubernetes/views/project-body.html:21 pkg/users/index.html:94
 msgid "Roles"
 msgstr "Role"
 
@@ -6919,14 +7081,22 @@ msgstr "Round Robin"
 msgid "Route"
 msgstr "Trasa"
 
+#: pkg/machines/components/create-vm-dialog/pxe-helpers.js:106
+msgid "Route to $0"
+msgstr ""
+
+#: pkg/machines/components/create-vm-dialog/pxe-helpers.js:108
+msgid "Routed Network"
+msgstr ""
+
 #: pkg/kubernetes/views/details-page.html:65
-#: pkg/kubernetes/scripts/details.js:216 pkg/networkmanager/interfaces.js:3310
+#: pkg/kubernetes/scripts/details.js:216 pkg/networkmanager/interfaces.js:3306
 msgid "Routes"
 msgstr "Trasy"
 
 # auto translated by TM merge from project: virt-manager, version: master, DocId: virt-manager
 #: pkg/docker/index.html:244 pkg/docker/index.html:564
-#: pkg/systemd/services.html:413 pkg/machines/components/vm/vmActions.jsx:77
+#: pkg/systemd/services.html:443 pkg/machines/components/vm/vmActions.jsx:91
 #: pkg/ovirt/components/ClusterVms.jsx:92
 msgid "Run"
 msgstr "Spustit"
@@ -6943,6 +7113,7 @@ msgstr "Spustit obraz"
 msgid "Run as"
 msgstr "Spustit jako"
 
+#: pkg/machines/components/networks/networkOverviewTab.jsx:102
 #: pkg/machines/components/vmOverviewTabLibvirt.jsx:87
 msgid "Run when host boots"
 msgstr "Spustit při startu stroje"
@@ -6956,7 +7127,7 @@ msgstr "Spouštěč"
 msgid "Running"
 msgstr "Spuštěné"
 
-#: pkg/systemd/services.html:104
+#: pkg/systemd/services.html:125
 msgid "Running Since"
 msgstr "Spuštěno od doby"
 
@@ -7041,12 +7212,16 @@ msgid "SUSPEND action failed"
 msgstr "Akce USPAT se nezdařila"
 
 # auto translated by TM merge from project: Cockpit, version: rhel-7.4, DocId: cockpit
-#: pkg/systemd/services.html:212
+#: pkg/systemd/services.html:242
 msgid "Saturday"
 msgstr "sobota"
 
+#: pkg/packagekit/autoupdates.jsx:322
+msgid "Saturdays"
+msgstr "Soboty"
+
 # auto translated by TM merge from project: Cockpit, version: rhel-7.4, DocId: cockpit
-#: pkg/systemd/services.html:495 pkg/machines/components/nicEdit.jsx:284
+#: pkg/systemd/services.html:525 pkg/machines/components/nicEdit.jsx:284
 #: pkg/ovirt/components/VdsmView.jsx:114 pkg/storaged/crypto-keyslots.jsx:261
 #: pkg/storaged/crypto-keyslots.jsx:278
 msgid "Save"
@@ -7080,8 +7255,8 @@ msgstr "Plánování vypnuto."
 msgid "Sealed-case PC"
 msgstr "Počítač se zapečetěnou skříní"
 
-#: pkg/systemd/services.html:431 pkg/systemd/services.html:435
-#: pkg/systemd/init.js:1054
+#: pkg/systemd/services.html:461 pkg/systemd/services.html:465
+#: pkg/systemd/init.js:1082
 msgid "Seconds"
 msgstr "Sekund"
 
@@ -7117,7 +7292,7 @@ msgstr "Jisté vymazávání $target"
 msgid "Security"
 msgstr "Zabezpečení"
 
-#: pkg/systemd/host.js:475
+#: pkg/systemd/host.js:492
 msgid "Security Updates Available"
 msgstr "Jsou k dispozici aktualizace zabezpečení"
 
@@ -7179,7 +7354,7 @@ msgstr "Sériová konzole"
 msgid "Server"
 msgstr "Server"
 
-#: pkg/storaged/nfs-details.jsx:143 pkg/storaged/iscsi-panel.jsx:43
+#: pkg/storaged/iscsi-panel.jsx:43 pkg/storaged/nfs-details.jsx:143
 msgid "Server Address"
 msgstr "Adresa serveru"
 
@@ -7212,7 +7387,7 @@ msgstr "Servery"
 #: pkg/kubernetes/views/service-page.html:12
 #: pkg/kubernetes/views/service-panel.html:8
 #: pkg/kubernetes/views/topology-page.html:30
-#: pkg/networkmanager/firewall.jsx:354 pkg/storaged/dialog.jsx:1037
+#: pkg/networkmanager/firewall.jsx:361 pkg/storaged/dialog.jsx:1037
 msgid "Service"
 msgstr "Služba"
 
@@ -7220,7 +7395,7 @@ msgstr "Služba"
 msgid "Service Account"
 msgstr "Servisní účet"
 
-#: pkg/systemd/services.html:309
+#: pkg/systemd/services.html:339
 msgid "Service Logs"
 msgstr "Záznamy událostí služby"
 
@@ -7244,14 +7419,14 @@ msgstr "Služba je zastavená"
 msgid "Service is stopping"
 msgstr "Služba se zastavuje"
 
-#: pkg/systemd/services.html:371
+#: pkg/systemd/services.html:401
 msgid "Service name"
 msgstr "Název služby"
 
 # auto translated by TM merge from project: FreeIPA, version: ipa-4-5, DocId: po/ipa
 #: pkg/kubernetes/views/dashboard-page.html:134
 #: pkg/kubernetes/views/details-page.html:29 pkg/systemd/services.html:4
-#: pkg/systemd/services.html:302 pkg/kubernetes/scripts/details.js:213
+#: pkg/systemd/services.html:332 pkg/kubernetes/scripts/details.js:213
 msgid "Services"
 msgstr "Služby"
 
@@ -7276,7 +7451,7 @@ msgstr "Přiřazení sezení"
 msgid "Set"
 msgstr "Nastavit"
 
-#: pkg/systemd/host.js:743
+#: pkg/systemd/host.js:760
 msgid "Set Host name"
 msgstr "Nastavit název stroje"
 
@@ -7416,7 +7591,7 @@ msgstr "Zmenšit logický svazek"
 
 #: pkg/storaged/warning-tab.jsx:123
 msgid "Shrink Volume"
-msgstr ""
+msgstr "Zmenšit oddíl"
 
 # auto translated by TM merge from project: virt-manager, version: master, DocId: virt-manager
 #: pkg/systemd/index.html:147 pkg/machines/components/vm/vmActions.jsx:56
@@ -7430,14 +7605,15 @@ msgstr "Od"
 
 # auto translated by TM merge from project: FreeIPA, version: ipa-4-5, DocId: po/ipa
 #: pkg/kubernetes/views/volumes-page.html:60 pkg/docker/containers-view.jsx:683
+#: pkg/machines/components/diskAdd.jsx:142
+#: pkg/machines/components/storagePools/storagePoolVolumesTab.jsx:66
 #: pkg/machines/components/storagePools/storagePoolList.jsx:49
-#: pkg/machines/components/diskAdd.jsx:142 pkg/storaged/format-dialog.jsx:274
+#: pkg/storaged/content-views.jsx:109 pkg/storaged/content-views.jsx:688
+#: pkg/storaged/format-dialog.jsx:274 pkg/storaged/fsys-panel.jsx:110
 #: pkg/storaged/lvol-tabs.jsx:210 pkg/storaged/lvol-tabs.jsx:269
 #: pkg/storaged/lvol-tabs.jsx:348 pkg/storaged/lvol-tabs.jsx:399
 #: pkg/storaged/lvol-tabs.jsx:434 pkg/storaged/nfs-details.jsx:321
-#: pkg/storaged/part-tab.jsx:36 pkg/storaged/fsys-panel.jsx:110
-#: pkg/storaged/nfs-panel.jsx:103 pkg/storaged/content-views.jsx:109
-#: pkg/storaged/content-views.jsx:688
+#: pkg/storaged/nfs-panel.jsx:103 pkg/storaged/part-tab.jsx:36
 msgid "Size"
 msgstr "Velikost"
 
@@ -7474,7 +7650,7 @@ msgstr "Slot"
 msgid "Slot $0"
 msgstr "Slot $0"
 
-#: pkg/systemd/services.html:55 pkg/machines/components/vcpuModal.jsx:213
+#: pkg/systemd/services.html:58 pkg/machines/components/vcpuModal.jsx:213
 #: pkg/ovirt/components/vcpuModal.jsx:64
 msgid "Sockets"
 msgstr "Sokety"
@@ -7516,9 +7692,9 @@ msgstr "Je nám líto, ale není známo, jak upravit tento svazek"
 
 # auto translated by TM merge from project: dnf, version: master, DocId: dnf
 #: pkg/machines/components/diskAdd.jsx:396
+#: pkg/machines/components/nicEdit.jsx:143
 #: pkg/machines/components/vmDisksTab.jsx:78
 #: pkg/machines/components/vmnetworktab.jsx:105
-#: pkg/machines/components/nicEdit.jsx:143
 msgid "Source"
 msgstr "Zdroj"
 
@@ -7534,7 +7710,7 @@ msgstr "Zdrojová URL adresa"
 msgid "Source path should not be empty"
 msgstr "Popis umístění zdroje je třeba vyplnit"
 
-#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:347
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:408
 msgid "Source should start with http, ftp or nfs protocol"
 msgstr "Zdroj by měl začínat na http, ftp nebo nfs protokol"
 
@@ -7542,7 +7718,7 @@ msgstr "Zdroj by měl začínat na http, ftp nebo nfs protokol"
 msgid "Space-saving Computer"
 msgstr "Prostorově úsporný počítač"
 
-#: pkg/networkmanager/interfaces.js:2853
+#: pkg/networkmanager/interfaces.js:2849
 msgid "Spanning Tree Protocol"
 msgstr "Spanning Tree Protocol"
 
@@ -7558,13 +7734,13 @@ msgstr "Náhradní"
 msgid "Specific Time"
 msgstr "Konkrétní čas"
 
-#: pkg/networkmanager/interfaces.js:3618
+#: pkg/networkmanager/interfaces.js:3614
 msgid "Stable"
 msgstr "Stabilní"
 
 #: pkg/docker/index.html:133 pkg/docker/containers-view.jsx:312
 #: pkg/storaged/mdraid-details.jsx:320 pkg/storaged/swap-tab.jsx:78
-#: pkg/storaged/vdo-details.jsx:259 pkg/systemd/init.js:518
+#: pkg/storaged/vdo-details.jsx:259 pkg/systemd/init.js:547
 msgid "Start"
 msgstr "Spustit"
 
@@ -7609,9 +7785,10 @@ msgstr "Při spuštění"
 #: pkg/kubernetes/views/details-page.html:38
 #: pkg/kubernetes/views/details-page.html:175
 #: pkg/docker/containers-view.jsx:133 pkg/docker/containers-view.jsx:359
+#: pkg/machines/components/networks/networkList.jsx:47
 #: pkg/machines/components/storagePools/storagePoolList.jsx:49
-#: pkg/machines/components/vmnetworktab.jsx:129 pkg/machines/hostvmslist.jsx:88
-#: pkg/ovirt/components/ClusterVms.jsx:184 pkg/systemd/init.js:274
+#: pkg/machines/components/vmnetworktab.jsx:129 pkg/machines/hostvmslist.jsx:90
+#: pkg/ovirt/components/ClusterVms.jsx:184 pkg/systemd/init.js:285
 msgid "State"
 msgstr "Stav"
 
@@ -7629,7 +7806,7 @@ msgstr "Bezstavové"
 msgid "Stateless:"
 msgstr "Bezstavové:"
 
-#: pkg/systemd/init.js:305
+#: pkg/systemd/services.html:75 pkg/systemd/init.js:207
 msgid "Static"
 msgstr "Statické"
 
@@ -7638,8 +7815,8 @@ msgstr "Statické"
 #: pkg/kubernetes/views/node-body.html:39
 #: pkg/kubernetes/views/nodes-page.html:44 pkg/kubernetes/views/pv-body.html:24
 #: pkg/kubernetes/views/pv-claim.html:29 pkg/kubernetes/views/pvc-body.html:13
-#: pkg/kubernetes/views/volumes-page.html:21 pkg/systemd/services.html:102
-#: pkg/networkmanager/interfaces.js:2609
+#: pkg/kubernetes/views/volumes-page.html:21 pkg/systemd/services.html:123
+#: pkg/networkmanager/interfaces.js:2605
 #: pkg/subscriptions/subscriptions-view.jsx:37
 msgid "Status"
 msgstr "Stav"
@@ -7664,7 +7841,7 @@ msgstr "Lepkavé"
 #: pkg/docker/index.html:134 pkg/docker/containers-view.jsx:310
 #: pkg/storaged/mdraid-details.jsx:319 pkg/storaged/swap-tab.jsx:77
 #: pkg/storaged/vdo-details.jsx:157 pkg/storaged/vdo-details.jsx:258
-#: pkg/systemd/init.js:519
+#: pkg/systemd/init.js:548
 msgid "Stop"
 msgstr "Zastavit"
 
@@ -7732,13 +7909,17 @@ msgstr "Fond úložiště se nepodařilo deaktivovat"
 msgid "Storage Pools"
 msgstr "Fondy úložiště"
 
-#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:297
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:355
 msgid "Storage Size"
 msgstr "Velikost úložiště"
 
 #: pkg/machines/components/storagePools/storagePool.jsx:101
 msgid "Storage Volumes"
 msgstr "Úložné svazky"
+
+#: pkg/machines/components/storagePools/storageVolumeDelete.jsx:48
+msgid "Storage Volumes could not be deleted"
+msgstr "Svazky úložiště není možné smazat"
 
 #: pkg/storaged/devices.jsx:62
 msgid "Storage can not be managed on this system."
@@ -7786,9 +7967,13 @@ msgid "Summary"
 msgstr "Souhrn"
 
 # auto translated by TM merge from project: docbook-locales, version: master, DocId: locale
-#: pkg/systemd/services.html:213
+#: pkg/systemd/services.html:243
 msgid "Sunday"
 msgstr "neděle"
+
+#: pkg/packagekit/autoupdates.jsx:323
+msgid "Sundays"
+msgstr "Neděle"
 
 #: pkg/storaged/optional-panel.jsx:95
 msgid "Support is installed."
@@ -7808,7 +7993,7 @@ msgctxt "storage-id-desc"
 msgid "Swap Space"
 msgstr "Odkládací prostor"
 
-#: pkg/systemd/index.html:256 pkg/systemd/host.js:1651
+#: pkg/systemd/index.html:256 pkg/systemd/host.js:1688
 msgid "Swap Used"
 msgstr "Využití odkládacího prostoru"
 
@@ -7816,11 +8001,11 @@ msgstr "Využití odkládacího prostoru"
 msgid "Switch Host to Maintenance"
 msgstr "Přepnout stroj do režimu údržby"
 
-#: pkg/networkmanager/interfaces.js:2493 pkg/networkmanager/interfaces.js:3035
+#: pkg/networkmanager/interfaces.js:2489 pkg/networkmanager/interfaces.js:3031
 msgid "Switch off $0"
 msgstr "Vypnout $0"
 
-#: pkg/networkmanager/interfaces.js:2468 pkg/networkmanager/interfaces.js:3023
+#: pkg/networkmanager/interfaces.js:2464 pkg/networkmanager/interfaces.js:3019
 msgid "Switch on $0"
 msgstr "Zapnout $0"
 
@@ -7832,7 +8017,7 @@ msgstr "Přepnutí stroje do režimu údržby se nezdařilo. Obdržena chyba:"
 msgid "Switching host to maintenance mode in progress ..."
 msgstr "Přepínání stroje do režimu údržby…"
 
-#: pkg/networkmanager/interfaces.js:2492
+#: pkg/networkmanager/interfaces.js:2488
 msgid ""
 "Switching off <b>$0</b>  will break the connection to the server, and will "
 "make the administration UI unavailable."
@@ -7840,7 +8025,7 @@ msgstr ""
 "Vypnutí <b>$0</b> přeruší spojení se serverem a znepřístupní tak rozhraní "
 "pro jeho správu."
 
-#: pkg/networkmanager/interfaces.js:3034
+#: pkg/networkmanager/interfaces.js:3030
 msgid ""
 "Switching off <b>$0</b> will break the connection to the server, and will "
 "make the administration UI unavailable."
@@ -7848,7 +8033,7 @@ msgstr ""
 "Vypnutí <b>$0</b> přeruší spojení se serverem a znepřístupní tak rozhraní "
 "pro jeho správu."
 
-#: pkg/networkmanager/interfaces.js:2467 pkg/networkmanager/interfaces.js:3022
+#: pkg/networkmanager/interfaces.js:2463 pkg/networkmanager/interfaces.js:3018
 msgid ""
 "Switching on <b>$0</b> will break the connection to the server, and will "
 "make the administration UI unavailable."
@@ -7890,11 +8075,11 @@ msgstr "Systém"
 msgid "System Information"
 msgstr "Informace o systému"
 
-#: pkg/systemd/host.js:459
+#: pkg/systemd/host.js:476
 msgid "System Not Registered"
 msgstr "Systém není zaregistrován"
 
-#: pkg/systemd/services.html:54
+#: pkg/systemd/services.html:57
 msgid "System Services"
 msgstr "Systémové služby"
 
@@ -7902,7 +8087,7 @@ msgstr "Systémové služby"
 msgid "System Time"
 msgstr "Systémový čas"
 
-#: pkg/systemd/host.js:465
+#: pkg/systemd/host.js:482
 msgid "System Up To Date"
 msgstr "Systém je aktuální"
 
@@ -7911,7 +8096,7 @@ msgid "System is up to date"
 msgstr "Systém je aktuální"
 
 #: pkg/docker/index.html:327 pkg/docker/index.html:331
-#: pkg/networkmanager/firewall.jsx:354
+#: pkg/networkmanager/firewall.jsx:361
 msgid "TCP"
 msgstr "TCP"
 
@@ -7963,17 +8148,17 @@ msgstr "World Wide názvy cíle"
 msgid "Target path should not be empty"
 msgstr "Popis umístění cíle je třeba vyplnit"
 
-#: pkg/systemd/services.html:53
+#: pkg/systemd/services.html:56
 msgid "Targets"
 msgstr "Cíle"
 
 # auto translated by TM merge from project: anaconda, version: f25, DocId: main
-#: pkg/networkmanager/interfaces.js:2513 pkg/networkmanager/interfaces.js:2525
-#: pkg/networkmanager/interfaces.js:2810
+#: pkg/networkmanager/interfaces.js:2509 pkg/networkmanager/interfaces.js:2521
+#: pkg/networkmanager/interfaces.js:2806
 msgid "Team"
 msgstr "Tým"
 
-#: pkg/networkmanager/interfaces.js:2838
+#: pkg/networkmanager/interfaces.js:2834
 msgid "Team Port"
 msgstr "Port týmu"
 
@@ -8077,7 +8262,7 @@ msgstr "Virt. stroj se poroučí (vypnutí nebo nedokončený pád)."
 msgid "The VM is paused."
 msgstr "Virt. stroj je pozastavený."
 
-#: pkg/machines/components/deleteDialog.jsx:49
+#: pkg/machines/components/deleteDialog.jsx:63
 msgid "The VM is running and will be forced off before deletion."
 msgstr "Virt. stroj je spuštěný a před smazáním bude vynuceně vypnut."
 
@@ -8299,7 +8484,7 @@ msgstr "Služba „{{ target }}“ neexistuje."
 msgid "The user '{{ userName }}' does not exist."
 msgstr "Uživatel „{{ userName }}“ neexistuje."
 
-#: pkg/systemd/init.js:900
+#: pkg/systemd/init.js:928
 msgid "The user <b>$0</b> does not have permissions for creating timers"
 msgstr "Uživatel <b>$0</b> není oprávněn pro vytváření časovačů"
 
@@ -8311,7 +8496,7 @@ msgstr "Uživatel <b>$0</b> není oprávněn měnit profily"
 msgid "The user <b>$0</b> is not permitted to change the system time"
 msgstr "Uživatel <b>$0</b> není oprávněn měnit systémový čas"
 
-#: pkg/systemd/init.js:591
+#: pkg/systemd/init.js:620
 msgid "The user <b>$0</b> is not permitted to enable or disable services"
 msgstr "Uživatel <b>$0</b> není oprávněn povolovat nebo zakazovat služby"
 
@@ -8343,7 +8528,7 @@ msgstr "Uživatel <b>$0</b> není oprávněn upravovat oblasti"
 msgid "The user <b>$0</b> is not permitted to shutdown or restart this server"
 msgstr "Uživatel <b>$0</b> není oprávněn vypínat či restartovat tento server"
 
-#: pkg/systemd/init.js:583 pkg/systemd/init.js:587
+#: pkg/systemd/init.js:612 pkg/systemd/init.js:616
 msgid "The user <b>$0</b> is not permitted to start or stop services"
 msgstr "Uživatel <b>$0</b> není oprávněn spouštět či zastavovat služby"
 
@@ -8405,7 +8590,7 @@ msgstr ""
 "Tento nárok je používán. Smazání může způsobit problémy s následujícím podem:"
 ""
 
-#: pkg/systemd/init.js:1349
+#: pkg/systemd/init.js:1377
 msgid ""
 "This day doesn't exist in all months.<br> The timer will only be executed in "
 "months that have 31st."
@@ -8413,7 +8598,7 @@ msgstr ""
 "Tento den neexistuje ve všech měsících.<br> Časovač bude vykonán pouze v "
 "měsících, které mají 31. den"
 
-#: pkg/networkmanager/interfaces.js:2620
+#: pkg/networkmanager/interfaces.js:2616
 msgid "This device cannot be managed here."
 msgstr "Toto zařízení zde nelze spravovat."
 
@@ -8457,7 +8642,7 @@ msgstr ""
 msgid "This disk cannot be removed while the device is recovering."
 msgstr "Disk není možné vyjmout v průběhu zotavování zařízení."
 
-#: pkg/systemd/init.js:1261 pkg/systemd/init.js:1275 pkg/systemd/init.js:1284
+#: pkg/systemd/init.js:1289 pkg/systemd/init.js:1303 pkg/systemd/init.js:1312
 msgid "This field cannot be empty."
 msgstr "Tuto kolonku je třeba vyplnit."
 
@@ -8476,6 +8661,7 @@ msgstr "Tento obraz neexistuje."
 #: pkg/storaged/warning-tab.jsx:116
 msgid "This logical volume is not completely used by its content."
 msgstr ""
+"Tento logický svazek není zcela využíván obsahem, který se na něm nachází."
 
 #: pkg/lib/machine-dialogs.js:362
 msgid "This machine has already been added."
@@ -8522,11 +8708,11 @@ msgstr ""
 "Tento nástroj shromáždí informace o nastavení systému a diagnostice pro "
 "použití při analýze problémů se systémem."
 
-#: pkg/systemd/init.js:662
+#: pkg/systemd/init.js:691
 msgid "This unit is an instance of the $0 template."
 msgstr "Tato jednotka je instancí šablony $0."
 
-#: pkg/systemd/services.html:332
+#: pkg/systemd/services.html:362
 msgid "This unit is not designed to be enabled explicitly."
 msgstr "Tato jednotka není navržena k tomu, aby byla výslovně zapnuta."
 
@@ -8595,15 +8781,19 @@ msgid "Threads per core"
 msgstr "Vláken na jádro"
 
 # auto translated by TM merge from project: docbook-locales, version: master, DocId: locale
-#: pkg/systemd/services.html:210
+#: pkg/systemd/services.html:240
 msgid "Thursday"
 msgstr "čtvrtek"
+
+#: pkg/packagekit/autoupdates.jsx:320
+msgid "Thursdays"
+msgstr "Čtvrtky"
 
 #: pkg/systemd/index.html:372
 msgid "Time Zone"
 msgstr "Časová zóna"
 
-#: pkg/systemd/services.html:56
+#: pkg/systemd/services.html:59
 msgid "Timers"
 msgstr "Časovače"
 
@@ -8667,11 +8857,11 @@ msgstr "Celková velikost: $0"
 msgid "Tower"
 msgstr "Věž"
 
-#: pkg/systemd/init.js:710
+#: pkg/systemd/init.js:739
 msgid "Triggered By"
 msgstr "Spuštěno na základě"
 
-#: pkg/kubernetes/views/deploymentconfig-body.html:32 pkg/systemd/init.js:709
+#: pkg/kubernetes/views/deploymentconfig-body.html:32 pkg/systemd/init.js:738
 msgid "Triggers"
 msgstr "Spouštěče"
 
@@ -8707,9 +8897,13 @@ msgid "Trying to synchronize with {{Server}}"
 msgstr "Pokus o synchronizaci se {{Server}}"
 
 # auto translated by TM merge from project: docbook-locales, version: master, DocId: locale
-#: pkg/systemd/services.html:208
+#: pkg/systemd/services.html:238
 msgid "Tuesday"
 msgstr "úterý"
+
+#: pkg/packagekit/autoupdates.jsx:318
+msgid "Tuesdays"
+msgstr "Úterky"
 
 #: pkg/tuned/dialog.js:260
 msgid "Tuned has failed to start"
@@ -8752,12 +8946,12 @@ msgstr "Filtrujte psaním…"
 msgid "Type:"
 msgstr "Typ:"
 
-#: pkg/docker/index.html:332 pkg/networkmanager/firewall.jsx:354
+#: pkg/docker/index.html:332 pkg/networkmanager/firewall.jsx:361
 msgid "UDP"
 msgstr "UDP"
 
 # auto translated by TM merge from project: FreeIPA, version: ipa-4-5, DocId: po/ipa
-#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:261
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:315
 #: pkg/subscriptions/subscriptions-register.jsx:112
 msgid "URL"
 msgstr "URL"
@@ -8843,7 +9037,7 @@ msgstr "Nedostupné"
 msgid "Unexpected error"
 msgstr "Neočekávaná chyba"
 
-#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:243
+#: pkg/machines/components/create-vm-dialog/createVmDialog.jsx:297
 msgid "Unique name"
 msgstr "Neopakující se název"
 
@@ -8859,16 +9053,16 @@ msgstr "Jednotka"
 #: node_modules/registry-image-widgets/views/image-body.html:16
 #: node_modules/registry-image-widgets/views/imagestream-body.html:30
 #: node_modules/registry-image-widgets/views/imagestream-body.html:31
-#: pkg/kubernetes/scripts/nodes.js:316 pkg/kubernetes/scripts/nodes.js:663
-#: pkg/kubernetes/scripts/nodes.js:757 pkg/kubernetes/scripts/volumes.js:267
+#: pkg/kubernetes/scripts/nodes.js:316 pkg/kubernetes/scripts/nodes.js:660
+#: pkg/kubernetes/scripts/nodes.js:754 pkg/kubernetes/scripts/volumes.js:267
 #: pkg/lib/machine-info.js:65 pkg/networkmanager/interfaces.js:593
-#: pkg/networkmanager/interfaces.js:1064 pkg/networkmanager/interfaces.js:2533
-#: pkg/networkmanager/interfaces.js:2535 pkg/storaged/fsys-tab.jsx:64
+#: pkg/networkmanager/interfaces.js:1064 pkg/networkmanager/interfaces.js:2529
+#: pkg/networkmanager/interfaces.js:2531 pkg/storaged/fsys-tab.jsx:64
 #: pkg/storaged/swap-tab.jsx:58
 msgid "Unknown"
 msgstr "Neznámé"
 
-#: pkg/networkmanager/interfaces.js:2519 pkg/networkmanager/interfaces.js:2531
+#: pkg/networkmanager/interfaces.js:2515 pkg/networkmanager/interfaces.js:2527
 msgid "Unknown \"$0\""
 msgstr "Neznámé „$0“"
 
@@ -8884,7 +9078,7 @@ msgstr "Neznámá aplikace"
 msgid "Unknown Host Key"
 msgstr "Neznámý klíč stroje"
 
-#: pkg/networkmanager/interfaces.js:2636
+#: pkg/networkmanager/interfaces.js:2632
 msgid "Unknown configuration"
 msgstr "Neznámé nastavení"
 
@@ -8929,12 +9123,12 @@ msgstr "Odemykání disku…"
 msgid "Unmanaged Interfaces"
 msgstr "Nespravovaná rozhraní"
 
-#: pkg/systemd/init.js:553
+#: pkg/systemd/init.js:582
 msgid "Unmask"
 msgstr "Odmaskovat"
 
 # auto translated by TM merge from project: blivet-gui, version: f23-branch, DocId: blivet-gui
-#: pkg/storaged/nfs-details.jsx:300 pkg/storaged/fsys-tab.jsx:188
+#: pkg/storaged/fsys-tab.jsx:188 pkg/storaged/nfs-details.jsx:300
 msgid "Unmount"
 msgstr "Odpojit"
 
@@ -9014,7 +9208,7 @@ msgstr "Aktualizováno"
 msgid "Updated packages may require a restart to take effect."
 msgstr "Aby se uplatnily, aktualizované balíčky mohou vyžadovat restart."
 
-#: pkg/systemd/host.js:481
+#: pkg/systemd/host.js:498
 msgid "Updates Available"
 msgstr "Jsou k dispozici aktualizace"
 
@@ -9031,7 +9225,7 @@ msgstr "Aktualizace $0…"
 msgid "Usage"
 msgstr "Použití"
 
-#: pkg/systemd/host.js:1572
+#: pkg/systemd/host.js:1609
 msgid "Usage of $0 CPU core"
 msgid_plural "Usage of $0 CPU cores"
 msgstr[0] "Využití $0 jádra procesoru"
@@ -9055,13 +9249,17 @@ msgid "Use the following keys to authenticate against other systems"
 msgstr "Pro ověřování vůči ostatním systémům použít následující klíče"
 
 #: pkg/systemd/index.html:264 pkg/docker/storage.jsx:340
-#: pkg/kubernetes/scripts/nodes.js:832 pkg/kubernetes/scripts/nodes.js:841
+#: pkg/kubernetes/scripts/nodes.js:829 pkg/kubernetes/scripts/nodes.js:838
 #: pkg/machines/components/vm/vmUsageTab.jsx:64
 #: pkg/machines/components/vm/vmUsageTab.jsx:75
 #: pkg/machines/components/vmDisksTab.jsx:70 pkg/storaged/fsys-tab.jsx:196
-#: pkg/storaged/swap-tab.jsx:83 pkg/systemd/host.js:1637
+#: pkg/storaged/swap-tab.jsx:83 pkg/systemd/host.js:1674
 msgid "Used"
 msgstr "Využito"
+
+#: pkg/machines/components/storagePools/storagePoolVolumesTab.jsx:66
+msgid "Used by"
+msgstr "Používá"
 
 #: pkg/docker/index.html:262
 msgid "Used by Containers"
@@ -9075,7 +9273,7 @@ msgstr "Využito kontejnery"
 #: pkg/kubernetes/views/volume-body.html:64
 #: pkg/kubernetes/views/volume-body.html:103 pkg/playground/translate.html:85
 #: pkg/playground/translate.html:105 pkg/systemd/index.html:238
-#: pkg/subscriptions/subscriptions-register.jsx:77 pkg/systemd/host.js:1543
+#: pkg/subscriptions/subscriptions-register.jsx:77 pkg/systemd/host.js:1580
 msgid "User"
 msgstr "Uživatel"
 
@@ -9164,8 +9362,8 @@ msgid "VFAT - Compatible with all systems and devices"
 msgstr "VFAT – kompatibilní se všemi systémy a zařízeními"
 
 # auto translated by TM merge from project: anaconda, version: f25, DocId: main
-#: pkg/networkmanager/interfaces.js:2515 pkg/networkmanager/interfaces.js:2527
-#: pkg/networkmanager/interfaces.js:2902
+#: pkg/networkmanager/interfaces.js:2511 pkg/networkmanager/interfaces.js:2523
+#: pkg/networkmanager/interfaces.js:2898
 msgid "VLAN"
 msgstr "VLAN"
 
@@ -9177,51 +9375,59 @@ msgstr "Identifikátor VLAN"
 msgid "VLAN Settings"
 msgstr "Nastavení VLAN"
 
-#: pkg/machines/libvirt-dbus.js:238 pkg/machines/libvirt-dbus.js:249
+#: pkg/machines/libvirt-dbus.js:256 pkg/machines/libvirt-dbus.js:267
 msgid "VM CHANGE_NETWORK_STATE action failed"
 msgstr "Akce ZMĚNA STAVU SÍTĚ VIRT. STROJE se nezdařila"
 
-#: pkg/machines/libvirt-virsh.js:376
+#: pkg/machines/libvirt-virsh.js:380
 msgid "VM DELETE (DESTROY) action failed"
 msgstr "Akce SMAZAT VIRT. STROJ (ZLIKVIDOVAT) se nezdařila"
 
-#: pkg/machines/libvirt-virsh.js:389
+#: pkg/machines/libvirt-virsh.js:393
 msgid "VM DELETE (UNDEFINE) action failed"
 msgstr "Akce SMAZAT VIRT. STROJ (ZRUŠIT DEFINICI) se nezdařila"
 
-#: pkg/machines/libvirt-dbus.js:329 pkg/machines/libvirt-dbus.js:364
+#: pkg/machines/libvirt-dbus.js:347 pkg/machines/libvirt-dbus.js:398
 msgid "VM DELETE action failed"
 msgstr "Akce SMAZAT STROJ se nezdařila"
 
-#: pkg/machines/libvirt-dbus.js:408
+#: pkg/machines/libvirt-dbus.js:442
 msgid "VM DETACH_DISK action failed"
 msgstr "Akce ODPOJIT DISK VIRT. STROJE se nezdařila"
 
-#: pkg/machines/libvirt-virsh.js:315 pkg/machines/libvirt-dbus.js:426
+#: pkg/machines/libvirt-dbus.js:460 pkg/machines/libvirt-virsh.js:319
 msgid "VM FORCE OFF action failed"
 msgstr "Akce VYNUCENÉ VYPNUTÍ VIRT. STROJE se nezdařila"
 
-#: pkg/machines/libvirt-virsh.js:335 pkg/machines/libvirt-dbus.js:442
+#: pkg/machines/libvirt-dbus.js:476 pkg/machines/libvirt-virsh.js:339
 msgid "VM FORCE REBOOT action failed"
 msgstr "Akce VYNUCENÝ RESTART se nezdařila"
 
-#: pkg/machines/libvirt-virsh.js:326 pkg/machines/libvirt-dbus.js:709
+#: pkg/machines/libvirt-dbus.js:777
+msgid "VM Pause action failed"
+msgstr ""
+
+#: pkg/machines/libvirt-dbus.js:792 pkg/machines/libvirt-virsh.js:330
 msgid "VM REBOOT action failed"
 msgstr "Akce RESTART se nezdařila"
 
-#: pkg/machines/libvirt-virsh.js:432
+#: pkg/machines/libvirt-dbus.js:806
+msgid "VM Resume action failed"
+msgstr ""
+
+#: pkg/machines/libvirt-virsh.js:436
 msgid "VM SEND Non-Maskable Interrrupt action failed"
 msgstr "Akce POSLAT VIRT. STROJI nemaskovatelné přerušení se nezdařila"
 
-#: pkg/machines/libvirt-dbus.js:725
+#: pkg/machines/libvirt-dbus.js:821
 msgid "VM SENDNMI action failed"
 msgstr "Akce POSLAT VIRT. STROJI NEMASK. PŘERUŠENÍ se nezdařila"
 
-#: pkg/machines/libvirt-virsh.js:306 pkg/machines/libvirt-dbus.js:757
+#: pkg/machines/libvirt-dbus.js:853 pkg/machines/libvirt-virsh.js:310
 msgid "VM SHUT DOWN action failed"
 msgstr "Akce VYPNOUT VIRT STROJ se nezdařila"
 
-#: pkg/machines/libvirt-virsh.js:344 pkg/machines/libvirt-dbus.js:772
+#: pkg/machines/libvirt-dbus.js:868 pkg/machines/libvirt-virsh.js:348
 msgid "VM START action failed"
 msgstr "Akce SPUSTIT VIRT STROJ se nezdařila"
 
@@ -9292,14 +9498,19 @@ msgstr "Číslo verze"
 msgid "Very securely erasing $target"
 msgstr "Velmi jisté vymazávání $target"
 
+#: pkg/machines/components/networks/networkList.jsx:39
 #: pkg/machines/components/storagePools/storagePoolList.jsx:41
-#: pkg/machines/hostvmslist.jsx:87
+#: pkg/machines/hostvmslist.jsx:89
 msgid "Virtual Machines"
 msgstr "Virtuální stroje"
 
 #: pkg/ovirt/components/ClusterVms.jsx:176
 msgid "Virtual Machines of $0 cluster"
 msgstr "Virtuální stroje clusteru $0"
+
+#: pkg/machines/components/create-vm-dialog/pxe-helpers.js:171
+msgid "Virtual Network"
+msgstr ""
 
 #: pkg/machines/components/libvirtSlate.jsx:80
 msgid "Virtualization Service (libvirt) is Not Active"
@@ -9313,6 +9524,7 @@ msgstr "Virtualizační služba je k dispozici"
 #: pkg/kubernetes/views/pv-page.html:13 pkg/kubernetes/views/pv-panel.html:10
 #: pkg/kubernetes/views/pvc-body.html:6 pkg/machines/components/diskAdd.jsx:88
 #: pkg/machines/components/vmDiskSourceCell.jsx:41
+#: pkg/machines/components/deleteDialog.jsx:49
 #: pkg/storaged/content-views.jsx:130
 msgid "Volume"
 msgstr "Svazek"
@@ -9346,10 +9558,11 @@ msgstr "Typ svazku"
 
 #: pkg/storaged/warning-tab.jsx:118
 msgid "Volume size is $0. Content size is $1."
-msgstr ""
+msgstr "Velikost svazku je $0. Velikost obsahu na něm je $1."
 
-#: pkg/docker/index.html:515 pkg/kubernetes/views/dashboard-page.html:47
-#: pkg/kubernetes/views/pod-page.html:18 pkg/kubernetes/index.html:74
+#: pkg/docker/index.html:515 pkg/kubernetes/index.html:74
+#: pkg/kubernetes/views/dashboard-page.html:47
+#: pkg/kubernetes/views/pod-page.html:18
 #: node_modules/registry-image-widgets/views/image-config.html:32
 msgid "Volumes"
 msgstr "Svazky"
@@ -9376,17 +9589,17 @@ msgstr "Čeká se až ostatní programy dokončí použití správy balíčků�
 msgid "Waiting for other software management operations to finish"
 msgstr "Čeká se na dokončení ostatních operací správy balíčků"
 
-#: pkg/systemd/init.js:701
+#: pkg/systemd/init.js:730
 msgid "Wanted By"
 msgstr "Vyžadováno"
 
-#: pkg/systemd/init.js:696
+#: pkg/systemd/init.js:725
 msgid "Wants"
 msgstr "Vyžaduje"
 
 #: pkg/storaged/content-views.jsx:159
 msgid "Warning"
-msgstr ""
+msgstr "Varování"
 
 #: pkg/systemd/logs.html:59
 msgid "Warning and above"
@@ -9401,11 +9614,15 @@ msgid "Web Console for Linux servers"
 msgstr "Webová konzole pro linuxové servery"
 
 # auto translated by TM merge from project: docbook-locales, version: master, DocId: locale
-#: pkg/systemd/services.html:209
+#: pkg/systemd/services.html:239
 msgid "Wednesday"
 msgstr "středa"
 
-#: pkg/systemd/services.html:438
+#: pkg/packagekit/autoupdates.jsx:319
+msgid "Wednesdays"
+msgstr "Středy"
+
+#: pkg/systemd/services.html:468
 msgid "Weeks"
 msgstr "Týdny"
 
@@ -9451,7 +9668,7 @@ msgid "XOR"
 msgstr "XOR"
 
 # auto translated by TM merge from project: selinux (policycoreutils), version: master, DocId: policycoreutils
-#: pkg/kubernetes/scripts/volumes.js:996 pkg/networkmanager/interfaces.js:2589
+#: pkg/kubernetes/scripts/volumes.js:996 pkg/networkmanager/interfaces.js:2585
 msgid "Yes"
 msgstr "Ano"
 
@@ -9471,7 +9688,7 @@ msgstr ""
 "V tuto chvíli jste připojení přímo na tento server. Nemůžete ho proto smazat."
 ""
 
-#: pkg/networkmanager/firewall.jsx:69 pkg/networkmanager/firewall.jsx:324
+#: pkg/networkmanager/firewall.jsx:66 pkg/networkmanager/firewall.jsx:327
 msgid "You are not authorized to modify the firewall."
 msgstr "Nemáte oprávnění upravovat bránu firewall"
 
@@ -9546,6 +9763,7 @@ msgid "[no data]"
 msgstr "[žádná data]"
 
 # auto translated by TM merge from project: libvirt, version: master, DocId: libvirt
+#: pkg/machines/components/networks/network.jsx:71
 #: pkg/machines/components/storagePools/storagePool.jsx:83
 #: pkg/shell/active-pages-dialog.jsx:39
 msgid "active"
@@ -9555,11 +9773,11 @@ msgstr "aktivní"
 msgid "alias"
 msgstr "alternativní název"
 
-#: pkg/packagekit/autoupdates.jsx:331
+#: pkg/packagekit/autoupdates.jsx:336
 msgid "and restart the machine automatically."
 msgstr "a automaticky restartovat stroj."
 
-#: pkg/packagekit/autoupdates.jsx:323
+#: pkg/packagekit/autoupdates.jsx:328
 msgid "at"
 msgstr "v"
 
@@ -9618,7 +9836,7 @@ msgstr "zakázáno"
 msgid "disk"
 msgstr "disk"
 
-#: pkg/machines/helpers.js:225 pkg/ovirt/rephraseUI.js:27
+#: pkg/machines/helpers.js:236 pkg/ovirt/rephraseUI.js:27
 msgid "down"
 msgstr "vypnuté"
 
@@ -9653,7 +9871,7 @@ msgstr "chyba"
 msgid "ethernet"
 msgstr "ethernet"
 
-#: pkg/packagekit/autoupdates.jsx:311
+#: pkg/packagekit/autoupdates.jsx:315
 msgid "every day"
 msgstr "každý den"
 
@@ -9661,7 +9879,7 @@ msgstr "každý den"
 msgid "ext4 - Red Hat Enterprise Linux 6 default"
 msgstr "ext4 – výchozí v Red Hat Enterprise Linux 6"
 
-#: pkg/systemd/host.js:865
+#: pkg/systemd/host.js:882
 msgid "failed to list ssh host keys: $0"
 msgstr "nepodařilo se vypsat ssh klíče stroje: $0"
 
@@ -9682,6 +9900,7 @@ msgstr "iSCSI cíle"
 msgid "idle"
 msgstr "nečinný"
 
+#: pkg/machines/components/networks/network.jsx:71
 #: pkg/machines/components/storagePools/storagePool.jsx:83
 msgid "inactive"
 msgstr "neaktivní"
@@ -9739,9 +9958,10 @@ msgid "nfs dump target isn't formated as server:path"
 msgstr "cíl výpisu nfs nemá podobu server:umisteni"
 
 #: pkg/kubernetes/views/route-body.html:14
+#: pkg/machines/components/networks/networkOverviewTab.jsx:94
 #: pkg/machines/components/storagePools/storagePoolOverviewTab.jsx:43
 #: pkg/machines/components/storagePools/storagePoolOverviewTab.jsx:46
-#: pkg/machines/components/vmDisksTab.jsx:103 pkg/machines/helpers.js:221
+#: pkg/machines/components/vmDisksTab.jsx:103 pkg/machines/helpers.js:232
 #: pkg/ovirt/components/ClusterVms.jsx:38 pkg/ovirt/rephraseUI.js:43
 msgid "no"
 msgstr "ne"
@@ -9797,40 +10017,12 @@ msgstr ""
 msgid "oVirt login in progress"
 msgstr "oVirt přihlášení v běhu"
 
-#: pkg/systemd/host.js:670
+#: pkg/systemd/host.js:687
 msgid "of $0 CPU core"
 msgid_plural "of $0 CPU cores"
 msgstr[0] "z $0 jádra procesoru"
 msgstr[1] "ze $0 jader procesoru"
 msgstr[2] "z $0 jader procesoru"
-
-#: pkg/packagekit/autoupdates.jsx:316
-msgid "on Fridays"
-msgstr "v pátky"
-
-#: pkg/packagekit/autoupdates.jsx:312
-msgid "on Mondays"
-msgstr "v pondělky"
-
-#: pkg/packagekit/autoupdates.jsx:317
-msgid "on Saturdays"
-msgstr "v soboty"
-
-#: pkg/packagekit/autoupdates.jsx:318
-msgid "on Sundays"
-msgstr "v neděle"
-
-#: pkg/packagekit/autoupdates.jsx:315
-msgid "on Thursdays"
-msgstr "ve čtvrtky"
-
-#: pkg/packagekit/autoupdates.jsx:313
-msgid "on Tuesdays"
-msgstr "ve středy"
-
-#: pkg/packagekit/autoupdates.jsx:314
-msgid "on Wednesdays"
-msgstr "v úterky"
 
 #: pkg/machines/libvirt-common.js:112
 msgid "other"
@@ -9955,13 +10147,13 @@ msgstr "udp"
 msgid "unassigned"
 msgstr "nepřiřazeno"
 
-#: pkg/lib/cockpit-components-select.jsx:29
+#: pkg/lib/cockpit-components-select.jsx:28
 msgid "undefined"
 msgstr "nedefinované"
 
 # auto translated by TM merge from project: Spacewalk Backend, version: master, DocId: client/rhel/rhn-client-tools/po/rhn-client-tools
 #: node_modules/registry-image-widgets/views/imagestream-listing.html:31
-#: pkg/systemd/init.js:240 pkg/systemd/init.js:254
+#: pkg/systemd/init.js:249 pkg/systemd/init.js:263
 msgid "unknown"
 msgstr "neznámý"
 
@@ -9973,7 +10165,7 @@ msgstr "neznámý cíl"
 msgid "unpartitioned space on $0"
 msgstr "nerozdělené místo na $0"
 
-#: pkg/machines/helpers.js:224 pkg/ovirt/rephraseUI.js:26
+#: pkg/machines/helpers.js:235 pkg/ovirt/rephraseUI.js:26
 msgid "up"
 msgstr "zapnuto"
 
@@ -10007,9 +10199,10 @@ msgstr "uzivatelvirtstroje"
 
 # auto translated by TM merge from project: Pulseaudio, version: master, DocId: pulseaudio.pot
 #: pkg/kubernetes/views/route-body.html:13
+#: pkg/machines/components/networks/networkOverviewTab.jsx:94
 #: pkg/machines/components/storagePools/storagePoolOverviewTab.jsx:43
 #: pkg/machines/components/storagePools/storagePoolOverviewTab.jsx:46
-#: pkg/machines/components/vmDisksTab.jsx:103 pkg/machines/helpers.js:220
+#: pkg/machines/components/vmDisksTab.jsx:103 pkg/machines/helpers.js:231
 #: pkg/ovirt/components/ClusterVms.jsx:38 pkg/ovirt/rephraseUI.js:42
 msgid "yes"
 msgstr "ano"

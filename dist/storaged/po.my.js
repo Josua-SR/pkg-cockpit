@@ -451,10 +451,6 @@ return plural;
   null,
   ""
  ],
- "Custom mount option": [
-  null,
-  ""
- ],
  "Custom mount options": [
   null,
   ""
@@ -651,6 +647,10 @@ return plural;
   null,
   ""
  ],
+ "For legacy applications only. Reduces performance.": [
+  null,
+  ""
+ ],
  "Force remove passphrase in $0": [
   null,
   ""
@@ -692,6 +692,10 @@ return plural;
   ""
  ],
  "Grow": [
+  null,
+  ""
+ ],
+ "Grow Content": [
   null,
   ""
  ],
@@ -848,10 +852,6 @@ return plural;
   ""
  ],
  "Mount at boot": [
-  null,
-  ""
- ],
- "Mount options": [
   null,
   ""
  ],
@@ -1315,6 +1315,10 @@ return plural;
   null,
   ""
  ],
+ "Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase.": [
+  null,
+  ""
+ ],
  "Running": [
   null,
   "Running"
@@ -1324,6 +1328,14 @@ return plural;
   ""
  ],
  "Save": [
+  null,
+  ""
+ ],
+ "Save space by compressing individual blocks with LZ4": [
+  null,
+  ""
+ ],
+ "Save space by storing identical data blocks just once": [
   null,
   ""
  ],
@@ -1368,6 +1380,10 @@ return plural;
   ""
  ],
  "Shrink Logical Volume": [
+  null,
+  ""
+ ],
+ "Shrink Volume": [
   null,
   ""
  ],
@@ -1579,6 +1595,10 @@ return plural;
   null,
   ""
  ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  ""
+ ],
  "This volume needs to be activated before it can be resized.": [
   null,
   ""
@@ -1739,7 +1759,15 @@ return plural;
   null,
   ""
  ],
+ "Volume size is $0. Content size is $1.": [
+  null,
+  ""
+ ],
  "Waiting for other software management operations to finish": [
+  null,
+  ""
+ ],
+ "Warning": [
   null,
   ""
  ],

@@ -67,10 +67,6 @@ return plural;
   "language": "fr",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
-  null,
-  "$0 Seuls les utilisateurs disposant d’informations d’identification locales pourront se connecter à cette machine. Cela peut également affecter d’autres services en tant que paramètres de résolution DNS et la liste des autorités de certification approuvées peut changer."
- ],
  "$0 is not available from any repository.": [
   null,
   "$0 n’est disponible à partir d’aucun référentiel."
@@ -87,13 +83,9 @@ return plural;
   null,
   "Mot de passe administrateur"
  ],
- "Are you sure you want to leave the '$0' domain?": [
+ "After leaving the domain, only users with local credentials will be able to log into this machine. This may also affect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  "Êtes-vous certain de vouloir quitter le domaine « $0 » ?"
- ],
- "Are you sure you want to leave this domain?": [
-  null,
-  "Êtes-vous sûr de vouloir quitter ce domaine?"
+  ""
  ],
  "Authentication": [
   null,
@@ -111,9 +103,21 @@ return plural;
   null,
   "Vérification des logiciels installés"
  ],
+ "Client Software": [
+  null,
+  ""
+ ],
  "Computer OU": [
   null,
   "Ordinateur OU"
+ ],
+ "Contacted domain": [
+  null,
+  ""
+ ],
+ "Domain": [
+  null,
+  "Domaine"
  ],
  "Domain $0 could not be contacted": [
   null,
@@ -171,13 +175,13 @@ return plural;
   null,
   "Rejoindre ce domaine n’est pas supporté"
  ],
- "Leave": [
-  null,
-  "Quitter"
- ],
  "Leave Domain": [
   null,
   "Quitter le domaine"
+ ],
+ "Login Format": [
+  null,
+  ""
  ],
  "More": [
   null,
@@ -215,6 +219,10 @@ return plural;
   null,
   "Suppression de $0"
  ],
+ "Server Software": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
   "L’utilisateur <b>$0</b> n’est pas autorisé à modifier les domaines"
@@ -234,6 +242,10 @@ return plural;
  "User Password": [
   null,
   "Mot de passe de l’utilisateur"
+ ],
+ "Validating address": [
+  null,
+  ""
  ],
  "Waiting for other software management operations to finish": [
   null,

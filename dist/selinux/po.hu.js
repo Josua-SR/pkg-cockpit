@@ -69,8 +69,8 @@ return plural;
  },
  "$0 occurrence": [
   "$1 occurrences",
-  "",
-  ""
+  "$0 előfordulás",
+  "$1 előfordulás"
  ],
  "Apply this solution": [
   null,
@@ -98,7 +98,7 @@ return plural;
  ],
  "Error while setting SELinux mode: '$0'": [
   null,
-  "Hiba történt az SELinux mód beállításakor: '$0'"
+  "Hiba történt az SELinux mód beállításakor: „$0”"
  ],
  "Failed to delete alert: $0": [
   null,
@@ -126,11 +126,11 @@ return plural;
  ],
  "Off": [
   null,
-  "Kikapcsolva"
+  "Ki"
  ],
  "On": [
   null,
-  "Bekapcsolva"
+  "Be"
  ],
  "SELinux Access Control Errors": [
   null,
@@ -194,7 +194,7 @@ return plural;
  ],
  "Unable to start setroubleshootd": [
   null,
-  "Setroubleshootd indítása nem sikerült"
+  "A setroubleshootd nem indítható el"
  ],
  "Waiting for details...": [
   null,

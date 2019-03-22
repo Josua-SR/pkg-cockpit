@@ -373,7 +373,7 @@ return plural;
  ],
  "Interface Type": [
   null,
-  ""
+  "Typ interfejsu"
  ],
  "Launch Remote Viewer": [
   null,
@@ -437,11 +437,11 @@ return plural;
  ],
  "Network Interfaces": [
   null,
-  ""
+  "Interfejsy sieciowe"
  ],
  "Network interface settings could not be saved": [
   null,
-  ""
+  "Nie można zapisać ustawień interfejsu sieciowego"
  ],
  "New Volume Name": [
   null,
@@ -479,6 +479,10 @@ return plural;
   null,
   "Brak sieci wirtualnych"
  ],
+ "None (Isolated Network)": [
+  null,
+  "Brak (odizolowana sieć)"
+ ],
  "Number of virtual CPUs that gonna be used.": [
   null,
   "Liczba wirtualnych procesorów, które będą używane."
@@ -499,6 +503,10 @@ return plural;
   null,
   "OK"
  ],
+ "Open": [
+  null,
+  "Otwórz"
+ ],
  "Optimized for:": [
   null,
   "Optymalizacja dla:"
@@ -506,6 +514,14 @@ return plural;
  "Overview": [
   null,
   "Przegląd"
+ ],
+ "Path": [
+  null,
+  "Ścieżka"
+ ],
+ "Pause": [
+  null,
+  ""
  ],
  "Persistence": [
   null,
@@ -567,6 +583,10 @@ return plural;
   null,
   "Przygotowywanie do konserwacji"
  ],
+ "Private": [
+  null,
+  "Prywatne"
+ ],
  "Protocol": [
   null,
   "Protokół"
@@ -598,6 +618,10 @@ return plural;
  "Restart": [
   null,
   "Uruchom ponownie"
+ ],
+ "Resume": [
+  null,
+  ""
  ],
  "Run": [
   null,

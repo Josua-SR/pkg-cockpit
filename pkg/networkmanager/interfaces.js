@@ -66,7 +66,7 @@ function select_btn(func, spec, klass) {
     var choice = spec[0].choice;
 
     function option_mapper(opt) {
-        return $('<li>', { value: opt.choice }).append($("<a>").text(opt.title));
+        return $('<li>', { value: opt.choice }).append($("<a tabindex='0'>").text(opt.title));
     }
 
     var toggle = $('<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">').append(
@@ -1402,7 +1402,7 @@ $.fn.extend({
 });
 
 function render_interface_link(iface) {
-    return $('<a>')
+    return $('<a tabindex="0">')
             .text(iface)
             .click(function () {
                 cockpit.location.go([ iface ]);
@@ -1428,7 +1428,7 @@ function render_connection_link(con) {
         $('<span>').append(
             array_join(
                 con.Interfaces.map(function (iface) {
-                    return $('<a>')
+                    return $('<a tabindex="0">')
                             .text(iface.Name)
                             .click(function () {
                                 cockpit.location.go([ iface.Name ]);
@@ -2081,7 +2081,7 @@ function choice_title(choices, choice, def) {
  *
  * settle_time too high:    All operations take a long time, and the
  *                          curtain needs to come up to prevent the
- *                          user form interacting with the page.  Thus settle_time
+ *                          user from interacting with the page.  Thus settle_time
  *                          should be shorter than curtain_time.
  *
  * rollback_time too short: Good changes that take a long time to complete
@@ -2092,8 +2092,8 @@ function choice_title(choices, choice, def) {
  *                          consider Cockpit to be dead already.
  */
 
-var curtain_time = 0.5;
-var settle_time = 0.3;
+var curtain_time = 1.5;
+var settle_time = 1.0;
 var rollback_time = 15.0;
 
 function with_checkpoint(model, modify, options) {
@@ -2400,11 +2400,7 @@ PageNetworkInterface.prototype = {
             // We can't use Promise.all() here until cockpit is able to dispatch es2015 promises
             // https://github.com/cockpit-project/cockpit/issues/10956
             // eslint-disable-next-line cockpit/no-cockpit-all
-            return cockpit.all(con.delete_(),
-                               // eslint-disable-next-line cockpit/no-cockpit-all
-                               cockpit.all(con.Slaves.map(function (s) {
-                                   return free_slave_connection(s);
-                               })));
+            return cockpit.all(con.Slaves.map(s => free_slave_connection(s))).then(() => con.delete_());
         }
 
         function delete_connections(cons) {
@@ -2558,7 +2554,7 @@ PageNetworkInterface.prototype = {
         $('#network-interface-mac').empty();
         if (can_edit_mac) {
             $('#network-interface-mac').append(
-                $('<a>')
+                $('<a tabindex="0">')
                         .text(mac)
                         .syn_click(self.model, function () {
                             self.set_mac();
@@ -2725,7 +2721,7 @@ PageNetworkInterface.prototype = {
                             .text(title)
                             .css('vertical-align', rows.length > 1 ? "top" : "center"),
                     $('<td>').append(
-                        $('<a class="network-privileged">')
+                        $('<a tabindex="0" class="network-privileged">')
                                 .append(link_text)
                                 .syn_click(self.model, function () { configure() })));
             }
@@ -3082,7 +3078,7 @@ PageNetworkInterface.prototype = {
                                     !slave_ifaces[iface.Name] &&
                                     iface != self.iface) {
                                         return $('<li role="presentation">').append(
-                                            $('<a role="menuitem" class="network-privileged">')
+                                            $('<a tabindex="0" role="menuitem" class="network-privileged">')
                                                     .text(iface.Name)
                                                     .syn_click(self.model, function () {
                                                         with_checkpoint(
@@ -3600,7 +3596,7 @@ function fill_mac_menu(menu, input, model) {
     function menu_append(title, value) {
         menu.append(
             $('<li class="presentation">').append(
-                $('<a>')
+                $('<a tabindex="0">')
                         .text(title)
                         .click(function () {
                             input.val(value).trigger("change");

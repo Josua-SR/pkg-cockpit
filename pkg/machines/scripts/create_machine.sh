@@ -48,7 +48,9 @@ if [ "$OS" = "other-os" -o  -z "$OS" ]; then
     OS="auto"
 fi
 
-if [ "$START_VM" = "true" ]; then
+if [ "$SOURCE_TYPE" = "pxe" ]; then
+    INSTALL_METHOD="--pxe --network $SOURCE"
+elif [ "$START_VM" = "true" ]; then
     if [ "$SOURCE_TYPE" = "disk_image" ]; then
         INSTALL_METHOD="--import"
     elif [ "${SOURCE#/}" != "$SOURCE" ] && [ -f "${SOURCE}" ]; then
@@ -66,12 +68,9 @@ fi
 XMLS_FILE="`mktemp`"
 
 if [ "$START_VM" = "true" ]; then
-    STARTUP_PARAMS="--wait -1 --noautoconsole"
-    # `noreboot` parameter should not be used for installation options that
-    # don't have install phase, because it blocks the domain from starting.
-    if [ "$SOURCE_TYPE" != "disk_image" ]; then
-        STARTUP_PARAMS="$STARTUP_PARAMS --noreboot"
-    fi
+    # Use --wait 0 to not wait till guest console closes.
+    # Simply kick off the install and exit
+    STARTUP_PARAMS="--noautoconsole --wait 0"
     HAS_INSTALL_PHASE="false"
 else
     # 2 = last phase only
@@ -121,6 +120,7 @@ echo "$DOMAIN_MATCHES"  |  sed 's/[^0-9]//g' | while read -r FINISH_LINE ; do
 
             METADATA='    <cockpit_machines:data xmlns:cockpit_machines="https://github.com/cockpit-project/cockpit/tree/master/pkg/machines"> \
       <cockpit_machines:has_install_phase>'"$HAS_INSTALL_PHASE"'</cockpit_machines:has_install_phase> \
+      <cockpit_machines:install_source_type>'"$SOURCE_TYPE"'</cockpit_machines:install_source_type> \
       <cockpit_machines:install_source>'"$SOURCE"'</cockpit_machines:install_source> \
       <cockpit_machines:os_variant>'"$OS"'</cockpit_machines:os_variant> \
     </cockpit_machines:data>'

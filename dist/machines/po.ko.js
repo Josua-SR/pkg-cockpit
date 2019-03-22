@@ -71,6 +71,10 @@ return plural;
   null,
   "$0 대부분의 운영 체제에서 사용할 수 있습니다. 설치하려면 GNOME 소프트웨어에서 검색하거나 다음을 실행하십시오."
  ],
+ "Activate": [
+  null,
+  "활성화"
+ ],
  "Add": [
   null,
   "추가"
@@ -195,11 +199,35 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "DHCP Range": [
+  null,
+  ""
+ ],
+ "Deactivate": [
+  null,
+  "비활성화 "
+ ],
  "Delete": [
   null,
   "삭제"
  ],
+ "Delete Content": [
+  null,
+  ""
+ ],
+ "Delete Storage Pool $0": [
+  null,
+  ""
+ ],
  "Delete associated storage files:": [
+  null,
+  ""
+ ],
+ "Delete the Volumes inside this Pool": [
+  null,
+  ""
+ ],
+ "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
   null,
   ""
  ],
@@ -243,6 +271,14 @@ return plural;
   null,
   ""
  ],
+ "Existing Disk Image": [
+  null,
+  ""
+ ],
+ "Existing disk image on host's file system": [
+  null,
+  ""
+ ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
   ""
@@ -250,10 +286,6 @@ return plural;
  "File": [
   null,
   "파일"
- ],
- "Filesystem": [
-  null,
-  "파일 시스템"
  ],
  "Filesystem Directory": [
   null,
@@ -271,9 +303,17 @@ return plural;
   null,
   "포멧"
  ],
+ "Forwarding mode": [
+  null,
+  ""
+ ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
   ""
+ ],
+ "General": [
+  null,
+  "일반"
  ],
  "GiB": [
   null,
@@ -303,6 +343,14 @@ return plural;
   null,
   ""
  ],
+ "IPv4 Address": [
+  null,
+  ""
+ ],
+ "IPv6 Address": [
+  null,
+  ""
+ ],
  "Immediately Start VM": [
   null,
   ""
@@ -323,6 +371,10 @@ return plural;
   null,
   ""
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Invalid filename": [
   null,
   ""
@@ -334,6 +386,10 @@ return plural;
  "Loading ...": [
   null,
   "로딩 중..."
+ ],
+ "Local Install Media": [
+  null,
+  ""
  ],
  "MAC Address": [
   null,
@@ -347,6 +403,10 @@ return plural;
   null,
   ""
  ],
+ "Maximum Transmission Unit": [
+  null,
+  ""
+ ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
   ""
@@ -354,10 +414,6 @@ return plural;
  "Memory": [
   null,
   "메모리"
- ],
- "Memory should be positive number": [
-  null,
-  ""
  ],
  "MiB": [
   null,
@@ -383,7 +439,11 @@ return plural;
   null,
   ""
  ],
- "Name should not consist of empty characters only": [
+ "Name: ": [
+  null,
+  ""
+ ],
+ "Netmask": [
   null,
   ""
  ],
@@ -391,11 +451,11 @@ return plural;
   null,
   ""
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
   ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
   ""
  ],
@@ -435,6 +495,10 @@ return plural;
   null,
   ""
  ],
+ "No network is defined on this host": [
+  null,
+  ""
+ ],
  "No storage pool is defined on this host": [
   null,
   ""
@@ -443,7 +507,19 @@ return plural;
   null,
   ""
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "OS Vendor": [
+  null,
+  ""
+ ],
+ "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
+  null,
+  ""
+ ],
+ "Open": [
   null,
   ""
  ],
@@ -507,6 +583,14 @@ return plural;
   null,
   ""
  ],
+ "Prefix": [
+  null,
+  ""
+ ],
+ "Private": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "프로토콜"
@@ -538,6 +622,10 @@ return plural;
  "Run": [
   null,
   "실행"
+ ],
+ "Run when host boots": [
+  null,
+  ""
  ],
  "SPICE": [
   null,
@@ -627,6 +715,14 @@ return plural;
   null,
   ""
  ],
+ "Storage Pool failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool failed to get deactivated": [
+  null,
+  ""
+ ],
  "Storage Pools": [
   null,
   "스토리지 풀 "
@@ -635,13 +731,13 @@ return plural;
   null,
   "스토리지 크기 "
  ],
- "Storage Size should not be negative number": [
-  null,
-  ""
- ],
  "Storage Volumes": [
   null,
   "스토리지 볼륨 "
+ ],
+ "Storage Volumes could not be deleted": [
+  null,
+  ""
  ],
  "System": [
   null,
@@ -652,6 +748,10 @@ return plural;
   "대상 경로"
  ],
  "Target path should not be empty": [
+  null,
+  ""
+ ],
+ "The Storage Pool could not be deleted": [
   null,
   ""
  ],
@@ -738,6 +838,10 @@ return plural;
  "Used": [
   null,
   "사용 중"
+ ],
+ "Used by": [
+  null,
+  ""
  ],
  "VCPU settings could not be saved": [
   null,

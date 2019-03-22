@@ -163,6 +163,10 @@ return plural;
   null,
   "Помилки:"
  ],
+ "Fridays": [
+  null,
+  "П'ятниці"
+ ],
  "Ignore": [
   null,
   "Ігнорувати"
@@ -210,6 +214,10 @@ return plural;
  "Loading available updates, please wait...": [
   null,
   "Завантажуємо доступні оновлення, зачекайте…"
+ ],
+ "Mondays": [
+  null,
+  "Понеділки"
  ],
  "Name": [
   null,
@@ -275,6 +283,10 @@ return plural;
   null,
   "Перезапускаємо"
  ],
+ "Saturdays": [
+  null,
+  "Суботи"
+ ],
  "Set up": [
   null,
   "Налаштувати"
@@ -299,6 +311,10 @@ return plural;
   null,
   "Програмою для керування пакунків користується якась інша програма, будь ласка, зачекайте…"
  ],
+ "Sundays": [
+  null,
+  "Неділі"
+ ],
  "System is up to date": [
   null,
   "Система не потребує оновлення"
@@ -311,6 +327,10 @@ return plural;
   null,
   "Цю вебконсоль буде оновлено."
  ],
+ "Thursdays": [
+  null,
+  "Четверги"
+ ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
   "Щоб отримувати оновлення програмного забезпечення, цю систему слід зареєструвати у Red Hat або за допомогою порталу клієнтів Red Hat, або за допомогою локального сервера передплати."
@@ -318,6 +338,10 @@ return plural;
  "Total size: $0": [
   null,
   "Загальний розмір: $0"
+ ],
+ "Tuesdays": [
+  null,
+  "Вівторки"
  ],
  "Update History": [
   null,
@@ -355,6 +379,10 @@ return plural;
   null,
   "Очікуємо на завершення інших дій із програмним забезпеченням"
  ],
+ "Wednesdays": [
+  null,
+  "Середи"
+ ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
   "Ваша програма для перегляду інтернету від'єднається, але це не вплине на процес оновлення. Ви зможете з'єднатися знову за декілька секунд, щоб продовжити спостереження за поступом."
@@ -382,34 +410,6 @@ return plural;
  "every day": [
   null,
   "кожного дня"
- ],
- "on Fridays": [
-  null,
-  "по п'ятницях"
- ],
- "on Mondays": [
-  null,
-  "по понеділках"
- ],
- "on Saturdays": [
-  null,
-  "по суботах"
- ],
- "on Sundays": [
-  null,
-  "по неділях"
- ],
- "on Thursdays": [
-  null,
-  "по четвергах"
- ],
- "on Tuesdays": [
-  null,
-  "по вівторках"
- ],
- "on Wednesdays": [
-  null,
-  "по середах"
  ],
  "security": [
   null,

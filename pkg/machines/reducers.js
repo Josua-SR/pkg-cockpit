@@ -28,9 +28,11 @@ import {
     DELETE_UNLISTED_VMS,
     SET_PROVIDER,
     SET_LOGGED_IN_USER,
+    UNDEFINE_NETWORK,
     UNDEFINE_STORAGE_POOL,
     UNDEFINE_VM,
     UPDATE_ADD_NETWORK,
+    UPDATE_ADD_NODE_DEVICE,
     UPDATE_ADD_VM,
     UPDATE_ADD_STORAGE_POOL,
     UPDATE_LIBVIRT_STATE,
@@ -96,6 +98,12 @@ function networks(state, action) {
     state = state || [];
 
     switch (action.type) {
+    case UNDEFINE_NETWORK: {
+        const { connectionName, id } = action.payload;
+
+        return state
+                .filter(network => (connectionName !== network.connectionName || id != network.id));
+    }
     case UPDATE_ADD_NETWORK: {
         const { network } = action.payload;
         const connectionName = network.connectionName;
@@ -106,7 +114,27 @@ function networks(state, action) {
         }
 
         const updatedNetwork = Object.assign({}, state[index], network);
-        return replaceResource({ state, updatedNetwork, index });
+        return replaceResource({ state, updatedResource: updatedNetwork, index });
+    }
+    default:
+        return state;
+    }
+}
+
+function nodeDevices(state, action) {
+    state = state || [];
+
+    switch (action.type) {
+    case UPDATE_ADD_NODE_DEVICE: {
+        const { nodedev } = action.payload;
+        const connectionName = nodedev.connectionName;
+        const index = getFirstIndexOfResource(state, 'name', nodedev.name, connectionName);
+        if (index < 0) { // add
+            return [...state, nodedev];
+        }
+
+        const updatedNodedev = Object.assign({}, state[index], nodedev);
+        return replaceResource({ state, updatedNodedev, index });
     }
     default:
         return state;
@@ -378,6 +406,7 @@ export default combineReducers({
         setSubstate: (state, subState) => Object.assign({}, state, { providerState: subState }),
     }),
     networks,
+    nodeDevices,
     vms,
     systemInfo,
     storagePools,

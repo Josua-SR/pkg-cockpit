@@ -479,6 +479,10 @@ return plural;
   null,
   ""
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "Number of virtual CPUs that gonna be used.": [
   null,
   ""
@@ -499,11 +503,23 @@ return plural;
   null,
   ""
  ],
+ "Open": [
+  null,
+  ""
+ ],
  "Optimized for:": [
   null,
   ""
  ],
  "Overview": [
+  null,
+  ""
+ ],
+ "Path": [
+  null,
+  ""
+ ],
+ "Pause": [
   null,
   ""
  ],
@@ -567,6 +583,10 @@ return plural;
   null,
   ""
  ],
+ "Private": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   ""
@@ -596,6 +616,10 @@ return plural;
   ""
  ],
  "Restart": [
+  null,
+  ""
+ ],
+ "Resume": [
   null,
   ""
  ],

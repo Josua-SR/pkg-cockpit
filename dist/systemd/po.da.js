@@ -283,6 +283,10 @@ return plural;
   null,
   ""
  ],
+ "All": [
+  null,
+  ""
+ ],
  "All In One": [
   null,
   ""
@@ -392,6 +396,10 @@ return plural;
   ""
  ],
  "Class": [
+  null,
+  ""
+ ],
+ "Clear All Filters": [
   null,
   ""
  ],
@@ -559,6 +567,10 @@ return plural;
   null,
   ""
  ],
+ "Filter by name or description...": [
+  null,
+  ""
+ ],
  "Friday": [
   null,
   ""
@@ -604,10 +616,6 @@ return plural;
   ""
  ],
  "I/O Wait": [
-  null,
-  ""
- ],
- "Id": [
   null,
   ""
  ],
@@ -812,6 +820,10 @@ return plural;
   ""
  ],
  "No Delay": [
+  null,
+  ""
+ ],
+ "No Matching Results": [
   null,
   ""
  ],

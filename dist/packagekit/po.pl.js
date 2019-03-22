@@ -163,6 +163,10 @@ return plural;
   null,
   "Poprawka:"
  ],
+ "Fridays": [
+  null,
+  "piątki"
+ ],
  "Ignore": [
   null,
   "Ignorowanie"
@@ -210,6 +214,10 @@ return plural;
  "Loading available updates, please wait...": [
   null,
   "Wczytywanie dostępnych aktualizacji, proszę czekać…"
+ ],
+ "Mondays": [
+  null,
+  "poniedziałki"
  ],
  "Name": [
   null,
@@ -275,6 +283,10 @@ return plural;
   null,
   "Ponowne uruchamianie"
  ],
+ "Saturdays": [
+  null,
+  "soboty"
+ ],
  "Set up": [
   null,
   "Ustaw"
@@ -299,6 +311,10 @@ return plural;
   null,
   "Inny program obecnie używa menedżera pakietów, proszę czekać…"
  ],
+ "Sundays": [
+  null,
+  "niedziele"
+ ],
  "System is up to date": [
   null,
   "System jest aktualny"
@@ -311,6 +327,10 @@ return plural;
   null,
   "Ta konsola internetowa zostanie zaktualizowana."
  ],
+ "Thursdays": [
+  null,
+  "czwartki"
+ ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
   "Aby otrzymywać aktualizacje oprogramowania, ten system musi zostać zarejestrowany w firmie Red Hat za pomocą serwisu Red Hat Customer Portal lub lokalnego serwera subskrypcji."
@@ -318,6 +338,10 @@ return plural;
  "Total size: $0": [
   null,
   "Całkowity rozmiar: $0"
+ ],
+ "Tuesdays": [
+  null,
+  "wtorki"
  ],
  "Update History": [
   null,
@@ -355,6 +379,10 @@ return plural;
   null,
   "Oczekiwanie na ukończenie pozostałych działań zarządzania oprogramowaniem"
  ],
+ "Wednesdays": [
+  null,
+  "środy"
+ ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
   "Przeglądarka się rozłączy, ale nie wpłynie to na proces aktualizacji. Można połączyć się ponownie za kilka chwil, aby kontynuować obserwację procesu."
@@ -382,34 +410,6 @@ return plural;
  "every day": [
   null,
   "codziennie"
- ],
- "on Fridays": [
-  null,
-  "w piątki"
- ],
- "on Mondays": [
-  null,
-  "w poniedziałki"
- ],
- "on Saturdays": [
-  null,
-  "w soboty"
- ],
- "on Sundays": [
-  null,
-  "w niedziele"
- ],
- "on Thursdays": [
-  null,
-  "w czwartki"
- ],
- "on Tuesdays": [
-  null,
-  "we wtorki"
- ],
- "on Wednesdays": [
-  null,
-  "w środy"
  ],
  "security": [
   null,

@@ -699,7 +699,7 @@ return plural;
  ],
  "Grow Content": [
   null,
-  ""
+  "Zvětšit obsah"
  ],
  "Grow Logical Volume": [
   null,
@@ -1319,7 +1319,7 @@ return plural;
  ],
  "Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
-  ""
+  "Změna velikost šifrovaného souborového systému vyžaduje jeho odemčení. Zadejte heslovou frázi."
  ],
  "Running": [
   null,
@@ -1387,7 +1387,7 @@ return plural;
  ],
  "Shrink Volume": [
   null,
-  ""
+  "Zmenšit oddíl"
  ],
  "Size": [
   null,
@@ -1599,7 +1599,7 @@ return plural;
  ],
  "This logical volume is not completely used by its content.": [
   null,
-  ""
+  "Tento logický svazek není zcela využíván obsahem, který se na něm nachází."
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
@@ -1763,7 +1763,7 @@ return plural;
  ],
  "Volume size is $0. Content size is $1.": [
   null,
-  ""
+  "Velikost svazku je $0. Velikost obsahu na něm je $1."
  ],
  "Waiting for other software management operations to finish": [
   null,
@@ -1771,7 +1771,7 @@ return plural;
  ],
  "Warning": [
   null,
-  ""
+  "Varování"
  ],
  "What if tang-show-keys is not available?": [
   null,

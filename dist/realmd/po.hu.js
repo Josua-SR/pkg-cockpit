@@ -67,17 +67,13 @@ return plural;
   "language": "hu",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
-  null,
-  ""
- ],
  "$0 is not available from any repository.": [
   null,
-  ""
+  "A(z) $0 nem érhető el egy tárolóból sem."
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "A(z) $0 telepítve lesz."
  ],
  "Additional packages:": [
   null,
@@ -87,11 +83,7 @@ return plural;
   null,
   ""
  ],
- "Are you sure you want to leave the '$0' domain?": [
-  null,
-  ""
- ],
- "Are you sure you want to leave this domain?": [
+ "After leaving the domain, only users with local credentials will be able to log into this machine. This may also affect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
   ""
  ],
@@ -111,7 +103,19 @@ return plural;
   null,
   ""
  ],
+ "Client Software": [
+  null,
+  ""
+ ],
  "Computer OU": [
+  null,
+  ""
+ ],
+ "Contacted domain": [
+  null,
+  ""
+ ],
+ "Domain": [
   null,
   ""
  ],
@@ -171,11 +175,11 @@ return plural;
   null,
   ""
  ],
- "Leave": [
+ "Leave Domain": [
   null,
   ""
  ],
- "Leave Domain": [
+ "Login Format": [
   null,
   ""
  ],
@@ -189,7 +193,7 @@ return plural;
  ],
  "Off": [
   null,
-  "Kikapcsolva"
+  "Ki"
  ],
  "Ok": [
   null,
@@ -197,7 +201,7 @@ return plural;
  ],
  "On": [
   null,
-  "Bekapcsolva"
+  "Be"
  ],
  "One Time Password": [
   null,
@@ -212,6 +216,10 @@ return plural;
   ""
  ],
  "Removing $0": [
+  null,
+  ""
+ ],
+ "Server Software": [
   null,
   ""
  ],
@@ -232,6 +240,10 @@ return plural;
   ""
  ],
  "User Password": [
+  null,
+  ""
+ ],
+ "Validating address": [
   null,
   ""
  ],

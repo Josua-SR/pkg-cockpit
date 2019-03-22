@@ -67,6 +67,10 @@ return plural;
   "language": "uk",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Network": [
+  null,
+  ""
+ ],
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
   "$0 можна користуватися у більшості операційних систем. Щоб встановити пакунок із програмою, знайдіть відповідний запис у Програмних засобах GNOME або віддайте таку команду:"
@@ -199,6 +203,10 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "DHCP Range": [
+  null,
+  "Діапазон DHCP"
+ ],
  "Deactivate": [
   null,
   "Вимкнути"
@@ -267,6 +275,14 @@ return plural;
   null,
   "Емульована машина"
  ],
+ "Existing Disk Image": [
+  null,
+  "Наявний образ диска"
+ ],
+ "Existing disk image on host's file system": [
+  null,
+  "Наявний образ диска у файловій системі основної системи"
+ ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
   "Має бути увімкнено менше за максимальну кількість віртуальних процесорів."
@@ -274,10 +290,6 @@ return plural;
  "File": [
   null,
   "Файл"
- ],
- "Filesystem": [
-  null,
-  "Файлова система"
  ],
  "Filesystem Directory": [
   null,
@@ -295,9 +307,17 @@ return plural;
   null,
   "Формат"
  ],
+ "Forwarding mode": [
+  null,
+  "Режим переспрямовування"
+ ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
   "Помилка під час спроби виконати дію GET HYPERVISOR MAX VCPU"
+ ],
+ "General": [
+  null,
+  "Загальний"
  ],
  "GiB": [
   null,
@@ -315,6 +335,10 @@ return plural;
   null,
   "Вузол"
  ],
+ "Host Device": [
+  null,
+  ""
+ ],
  "Host Name": [
   null,
   "Назва вузла"
@@ -327,9 +351,21 @@ return plural;
   null,
   "Помилка під час дії зі встановлення ВМ"
  ],
+ "IPv4 Address": [
+  null,
+  "Адреса IPv4"
+ ],
+ "IPv6 Address": [
+  null,
+  "Адреса IPv6"
+ ],
  "Immediately Start VM": [
   null,
   "Негайно запустити ВМ"
+ ],
+ "In most configurations, macvtap does not work for host to guest network communication.": [
+  null,
+  ""
  ],
  "Install": [
   null,
@@ -349,11 +385,15 @@ return plural;
  ],
  "Interface Type": [
   null,
-  ""
+  "Тип інтерфейсу"
  ],
  "Invalid filename": [
   null,
   "Некоректна назва файла"
+ ],
+ "Isolated Network": [
+  null,
+  ""
  ],
  "Launch Remote Viewer": [
   null,
@@ -362,6 +402,10 @@ return plural;
  "Loading ...": [
   null,
   "Завантажуємо…"
+ ],
+ "Local Install Media": [
+  null,
+  "Локальні носії для встановлення"
  ],
  "MAC Address": [
   null,
@@ -374,6 +418,10 @@ return plural;
  "Manual Connection": [
   null,
   "З’єднання вручну"
+ ],
+ "Maximum Transmission Unit": [
+  null,
+  "Максимальна одиниця передавання"
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
@@ -399,6 +447,10 @@ return plural;
   null,
   "Докладніше"
  ],
+ "NAT to $0": [
+  null,
+  ""
+ ],
  "Name": [
   null,
   "Назва"
@@ -407,17 +459,45 @@ return plural;
   null,
   "Назва має бути непорожньою"
  ],
+ "Name: ": [
+  null,
+  "Назва: "
+ ],
+ "Netmask": [
+  null,
+  "Маска мережі"
+ ],
+ "Network Boot (PXE)": [
+  null,
+  ""
+ ],
  "Network File System": [
   null,
   "Мережева файлова система"
  ],
  "Network Interfaces": [
   null,
+  "Інтерфейси мережі"
+ ],
+ "Network Selection does not support PXE.": [
+  null,
   ""
+ ],
+ "Network failed to get activated": [
+  null,
+  "Не вдалося задіяти мережу"
+ ],
+ "Network failed to get deactivated": [
+  null,
+  "Не вдалося вимкнути мережу"
  ],
  "Network interface settings could not be saved": [
   null,
-  ""
+  "Не вдалося зберегти параметри інтерфейсу мережі"
+ ],
+ "Networks": [
+  null,
+  "Мережі"
  ],
  "New Volume Name": [
   null,
@@ -451,6 +531,10 @@ return plural;
   null,
   "Немає інтерфейсів мережі, які визначено для цієї ВМ"
  ],
+ "No network is defined on this host": [
+  null,
+  "У цій основній системі мережу не визначено"
+ ],
  "No storage pool is defined on this host": [
   null,
   "На цьому вузлі не визначено буфера зберігання даних"
@@ -459,9 +543,21 @@ return plural;
   null,
   "Немає віртуальних мереж"
  ],
+ "None (Isolated Network)": [
+  null,
+  "Немає (ізольована мережа)"
+ ],
  "OS Vendor": [
   null,
   "Виробник ОС"
+ ],
+ "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
+  null,
+  "Один або декілька позначених томів використовуються доменами. Щоб уможливити вилучення цих томів, спочатку від'єднайте диски."
+ ],
+ "Open": [
+  null,
+  "Відкрита"
  ],
  "Operating System": [
   null,
@@ -486,6 +582,10 @@ return plural;
  "Path to file": [
   null,
   "Шлях до файла"
+ ],
+ "Pause": [
+  null,
+  ""
  ],
  "Persistence": [
   null,
@@ -523,6 +623,14 @@ return plural;
   null,
   "Бажана кількість сокетів, які слід надавати гостьовій системі."
  ],
+ "Prefix": [
+  null,
+  "Префікс"
+ ],
+ "Private": [
+  null,
+  "Закрита"
+ ],
  "Protocol": [
   null,
   "Протокол"
@@ -550,6 +658,18 @@ return plural;
  "Restart": [
   null,
   "Перезапустити"
+ ],
+ "Resume": [
+  null,
+  ""
+ ],
+ "Route to $0": [
+  null,
+  ""
+ ],
+ "Routed Network": [
+  null,
+  ""
  ],
  "Run": [
   null,
@@ -667,6 +787,10 @@ return plural;
   null,
   "Томи даних"
  ],
+ "Storage Volumes could not be deleted": [
+  null,
+  "Не вдалося вилучити томи сховища даних"
+ ],
  "System": [
   null,
   "Система"
@@ -767,6 +891,10 @@ return plural;
   null,
   "Використано"
  ],
+ "Used by": [
+  null,
+  "Використовується"
+ ],
  "VCPU settings could not be saved": [
   null,
   "Не вдалося зберегти параметри віртуальних процесорів"
@@ -799,9 +927,17 @@ return plural;
   null,
   "Не вдалося виконати дію FORCE REBOOT для ВМ"
  ],
+ "VM Pause action failed": [
+  null,
+  ""
+ ],
  "VM REBOOT action failed": [
   null,
   "Не вдалося виконати дію REBOOT для ВМ"
+ ],
+ "VM Resume action failed": [
+  null,
+  ""
  ],
  "VM SEND Non-Maskable Interrrupt action failed": [
   null,
@@ -838,6 +974,10 @@ return plural;
  "Virtual Machines": [
   null,
   "Віртуальні машини"
+ ],
+ "Virtual Network": [
+  null,
+  ""
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,

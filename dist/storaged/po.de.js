@@ -452,10 +452,6 @@ return plural;
   null,
   "Benutzerdefinierte Verschlüsselungsoptionen"
  ],
- "Custom mount option": [
-  null,
-  "Option zur benutzerdefinierten Montage"
- ],
  "Custom mount options": [
   null,
   "Kundenspezifische Montageoptionen"
@@ -652,6 +648,10 @@ return plural;
   null,
   "Dateisysteme"
  ],
+ "For legacy applications only. Reduces performance.": [
+  null,
+  ""
+ ],
  "Force remove passphrase in $0": [
   null,
   "Entfernen der Passphrase erzwingen $0"
@@ -695,6 +695,10 @@ return plural;
  "Grow": [
   null,
   "Wachsen"
+ ],
+ "Grow Content": [
+  null,
+  ""
  ],
  "Grow Logical Volume": [
   null,
@@ -851,10 +855,6 @@ return plural;
  "Mount at boot": [
   null,
   "Am Kofferraum montieren"
- ],
- "Mount options": [
-  null,
-  "Optionen montieren"
  ],
  "Mount point can not be empty": [
   null,
@@ -1316,6 +1316,10 @@ return plural;
   null,
   "Größenänderung von $target"
  ],
+ "Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase.": [
+  null,
+  ""
+ ],
  "Running": [
   null,
   "Läuft"
@@ -1327,6 +1331,14 @@ return plural;
  "Save": [
   null,
   "Speichern"
+ ],
+ "Save space by compressing individual blocks with LZ4": [
+  null,
+  ""
+ ],
+ "Save space by storing identical data blocks just once": [
+  null,
+  ""
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
@@ -1371,6 +1383,10 @@ return plural;
  "Shrink Logical Volume": [
   null,
   "Logisches Volumen verkleinern"
+ ],
+ "Shrink Volume": [
+  null,
+  ""
  ],
  "Size": [
   null,
@@ -1454,7 +1470,7 @@ return plural;
  ],
  "Storage can not be managed on this system.": [
   null,
-  "Der Docker Storage Pool kann auf diesem System nicht verwaltet werden."
+  ""
  ],
  "Store passphrase": [
   null,
@@ -1579,6 +1595,10 @@ return plural;
  "This disk cannot be removed while the device is recovering.": [
   null,
   "Diese Diskette kann nicht entfernt werden, während das Gerät wiederhergestellt wird."
+ ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  ""
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
@@ -1740,9 +1760,17 @@ return plural;
   null,
   "Datenträgerverbünde"
  ],
+ "Volume size is $0. Content size is $1.": [
+  null,
+  ""
+ ],
  "Waiting for other software management operations to finish": [
   null,
   "Warten, bis andere Software-Verwaltungsvorgänge abgeschlossen sind"
+ ],
+ "Warning": [
+  null,
+  ""
  ],
  "What if tang-show-keys is not available?": [
   null,

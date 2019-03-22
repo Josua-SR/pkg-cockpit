@@ -199,6 +199,10 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "DHCP Range": [
+  null,
+  ""
+ ],
  "Deactivate": [
   null,
   "Desativar"
@@ -267,6 +271,14 @@ return plural;
   null,
   ""
  ],
+ "Existing Disk Image": [
+  null,
+  ""
+ ],
+ "Existing disk image on host's file system": [
+  null,
+  ""
+ ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
   "Menos do que o número máximo de CPUs virtuais deve ser ativado."
@@ -274,10 +286,6 @@ return plural;
  "File": [
   null,
   "Arquivo"
- ],
- "Filesystem": [
-  null,
-  "Sistema de arquivos"
  ],
  "Filesystem Directory": [
   null,
@@ -295,9 +303,17 @@ return plural;
   null,
   "Formate"
  ],
+ "Forwarding mode": [
+  null,
+  ""
+ ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
   "GET HYPERVISOR MAX VCPU falhou"
+ ],
+ "General": [
+  null,
+  "Geral"
  ],
  "GiB": [
   null,
@@ -327,6 +343,14 @@ return plural;
   null,
   "A ação de instalação da VM falhou"
  ],
+ "IPv4 Address": [
+  null,
+  ""
+ ],
+ "IPv6 Address": [
+  null,
+  ""
+ ],
  "Immediately Start VM": [
   null,
   "Imediatamente Iniciar VM"
@@ -347,6 +371,10 @@ return plural;
   null,
   "A fonte de instalação não deve estar vazia"
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Invalid filename": [
   null,
   "Nome de arquivo inválido"
@@ -359,6 +387,10 @@ return plural;
   null,
   "Carregando ..."
  ],
+ "Local Install Media": [
+  null,
+  ""
+ ],
  "MAC Address": [
   null,
   "MAC Address"
@@ -370,6 +402,10 @@ return plural;
  "Manual Connection": [
   null,
   "Conexão manual"
+ ],
+ "Maximum Transmission Unit": [
+  null,
+  ""
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
@@ -403,17 +439,25 @@ return plural;
   null,
   "O nome não deve estar vazio"
  ],
+ "Name: ": [
+  null,
+  ""
+ ],
+ "Netmask": [
+  null,
+  ""
+ ],
  "Network File System": [
   null,
   "Sistema de arquivos de rede"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "Tipo de rede"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
-  "As configurações de rede não puderam ser salvas"
+  ""
  ],
  "Networks": [
   null,
@@ -451,6 +495,10 @@ return plural;
   null,
   "Nenhuma interface de rede definida para esta VM"
  ],
+ "No network is defined on this host": [
+  null,
+  ""
+ ],
  "No storage pool is defined on this host": [
   null,
   "Nenhum conjunto de armazenamento é definido neste host"
@@ -459,9 +507,21 @@ return plural;
   null,
   "Nenhuma rede virtual"
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "OS Vendor": [
   null,
   "Fornecedor de SO"
+ ],
+ "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
+  null,
+  ""
+ ],
+ "Open": [
+  null,
+  ""
  ],
  "Operating System": [
   null,
@@ -523,6 +583,14 @@ return plural;
   null,
   "Número preferido de soquetes para expor ao convidado."
  ],
+ "Prefix": [
+  null,
+  ""
+ ],
+ "Private": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protocolo"
@@ -554,6 +622,10 @@ return plural;
  "Run": [
   null,
   "Executar"
+ ],
+ "Run when host boots": [
+  null,
+  ""
  ],
  "SPICE": [
   null,
@@ -663,6 +735,10 @@ return plural;
   null,
   "Volumes de Armazenamento"
  ],
+ "Storage Volumes could not be deleted": [
+  null,
+  ""
+ ],
  "System": [
   null,
   "Sistema"
@@ -762,6 +838,10 @@ return plural;
  "Used": [
   null,
   "Usado"
+ ],
+ "Used by": [
+  null,
+  ""
  ],
  "VCPU settings could not be saved": [
   null,

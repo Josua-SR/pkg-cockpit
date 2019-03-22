@@ -67,6 +67,10 @@ return plural;
   "language": "pl",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Network": [
+  null,
+  ""
+ ],
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
   "$0 jest dostępne dla większości systemów operacyjnych. Aby zainstalować, należy wyszukać w Menedżerze oprogramowania GNOME lub wykonać polecenie:"
@@ -199,6 +203,10 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "DHCP Range": [
+  null,
+  "Zakres DHCP"
+ ],
  "Deactivate": [
   null,
   "Dezaktywuj"
@@ -267,6 +275,14 @@ return plural;
   null,
   "Emulowany komputer"
  ],
+ "Existing Disk Image": [
+  null,
+  "Istniejący obraz dysku"
+ ],
+ "Existing disk image on host's file system": [
+  null,
+  "Istniejący obraz dysku w systemie plików gospodarza"
+ ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
   "Mniej niż maksymalna liczba wirtualnych procesorów powinna być włączona."
@@ -274,10 +290,6 @@ return plural;
  "File": [
   null,
   "Plik"
- ],
- "Filesystem": [
-  null,
-  "System plików"
  ],
  "Filesystem Directory": [
   null,
@@ -295,9 +307,17 @@ return plural;
   null,
   "Sformatuj"
  ],
+ "Forwarding mode": [
+  null,
+  "Tryb przekierowania"
+ ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
   "Działanie GET HYPERVISOR MAX VCPU się nie powiodło"
+ ],
+ "General": [
+  null,
+  "Ogólne"
  ],
  "GiB": [
   null,
@@ -315,6 +335,10 @@ return plural;
   null,
   "Gospodarz"
  ],
+ "Host Device": [
+  null,
+  ""
+ ],
  "Host Name": [
   null,
   "Nazwa komputera"
@@ -327,9 +351,21 @@ return plural;
   null,
   "Działanie INSTALL VM się nie powiodło"
  ],
+ "IPv4 Address": [
+  null,
+  "Adres IPv4"
+ ],
+ "IPv6 Address": [
+  null,
+  "Adres IPv6"
+ ],
  "Immediately Start VM": [
   null,
   "Od razu uruchom maszynę wirtualną"
+ ],
+ "In most configurations, macvtap does not work for host to guest network communication.": [
+  null,
+  ""
  ],
  "Install": [
   null,
@@ -349,11 +385,15 @@ return plural;
  ],
  "Interface Type": [
   null,
-  ""
+  "Typ interfejsu"
  ],
  "Invalid filename": [
   null,
   "Nieprawidłowa nazwa pliku"
+ ],
+ "Isolated Network": [
+  null,
+  ""
  ],
  "Launch Remote Viewer": [
   null,
@@ -362,6 +402,10 @@ return plural;
  "Loading ...": [
   null,
   "Wczytywanie…"
+ ],
+ "Local Install Media": [
+  null,
+  "Lokalny nośnik instalacji"
  ],
  "MAC Address": [
   null,
@@ -374,6 +418,10 @@ return plural;
  "Manual Connection": [
   null,
   "Ręczne połączenie"
+ ],
+ "Maximum Transmission Unit": [
+  null,
+  "MTU"
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
@@ -399,6 +447,10 @@ return plural;
   null,
   "Więcej informacji"
  ],
+ "NAT to $0": [
+  null,
+  ""
+ ],
  "Name": [
   null,
   "Nazwa"
@@ -407,17 +459,45 @@ return plural;
   null,
   "Nazwa nie może być pusta"
  ],
+ "Name: ": [
+  null,
+  "Nazwa: "
+ ],
+ "Netmask": [
+  null,
+  "Maska sieci"
+ ],
+ "Network Boot (PXE)": [
+  null,
+  ""
+ ],
  "Network File System": [
   null,
   "NFS"
  ],
  "Network Interfaces": [
   null,
+  "Interfejsy sieciowe"
+ ],
+ "Network Selection does not support PXE.": [
+  null,
   ""
+ ],
+ "Network failed to get activated": [
+  null,
+  "Aktywacja sieci się nie powiodła"
+ ],
+ "Network failed to get deactivated": [
+  null,
+  "Dezaktywacja sieci się nie powiodła"
  ],
  "Network interface settings could not be saved": [
   null,
-  ""
+  "Nie można zapisać ustawień interfejsu sieciowego"
+ ],
+ "Networks": [
+  null,
+  "Sieci"
  ],
  "New Volume Name": [
   null,
@@ -451,6 +531,10 @@ return plural;
   null,
   "Nie określono interfejsów sieciowych dla tej maszyny wirtualnej"
  ],
+ "No network is defined on this host": [
+  null,
+  "Na tym gospodarzu nie określono żadnej sieci"
+ ],
  "No storage pool is defined on this host": [
   null,
   "Na tym gospodarzu nie określono żadnej puli urządzeń do przechowywania danych"
@@ -459,9 +543,21 @@ return plural;
   null,
   "Brak sieci wirtualnych"
  ],
+ "None (Isolated Network)": [
+  null,
+  "Brak (odizolowana sieć)"
+ ],
  "OS Vendor": [
   null,
   "Producent systemu operacyjnego"
+ ],
+ "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
+  null,
+  "Jeden lub więcej zaznaczonych woluminów jest używanych przez domeny. Należy najpierw odłączyć dyski, aby umożliwić usuwanie woluminów."
+ ],
+ "Open": [
+  null,
+  "Otwórz"
  ],
  "Operating System": [
   null,
@@ -486,6 +582,10 @@ return plural;
  "Path to file": [
   null,
   "Ścieżka do pliku"
+ ],
+ "Pause": [
+  null,
+  ""
  ],
  "Persistence": [
   null,
@@ -523,6 +623,14 @@ return plural;
   null,
   "Preferowana liczba gniazd eksponowanych gościowi."
  ],
+ "Prefix": [
+  null,
+  "Przedrostek"
+ ],
+ "Private": [
+  null,
+  "Prywatne"
+ ],
  "Protocol": [
   null,
   "Protokół"
@@ -550,6 +658,18 @@ return plural;
  "Restart": [
   null,
   "Uruchom ponownie"
+ ],
+ "Resume": [
+  null,
+  ""
+ ],
+ "Route to $0": [
+  null,
+  ""
+ ],
+ "Routed Network": [
+  null,
+  ""
  ],
  "Run": [
   null,
@@ -667,6 +787,10 @@ return plural;
   null,
   "Woluminy urządzeń do przechowywania danych"
  ],
+ "Storage Volumes could not be deleted": [
+  null,
+  "Nie można usunąć woluminów urządzeń do przechowywania danych"
+ ],
  "System": [
   null,
   "System"
@@ -767,6 +891,10 @@ return plural;
   null,
   "Używane"
  ],
+ "Used by": [
+  null,
+  "Używane przez"
+ ],
  "VCPU settings could not be saved": [
   null,
   "Nie można zapisać ustawień wirtualnego procesora"
@@ -799,9 +927,17 @@ return plural;
   null,
   "Działanie VM FORCE REBOOT się nie powiodło"
  ],
+ "VM Pause action failed": [
+  null,
+  ""
+ ],
  "VM REBOOT action failed": [
   null,
   "Działanie VM REBOOT się nie powiodło"
+ ],
+ "VM Resume action failed": [
+  null,
+  ""
  ],
  "VM SEND Non-Maskable Interrrupt action failed": [
   null,
@@ -838,6 +974,10 @@ return plural;
  "Virtual Machines": [
   null,
   "Maszyny wirtualne"
+ ],
+ "Virtual Network": [
+  null,
+  ""
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,

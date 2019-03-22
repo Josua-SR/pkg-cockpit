@@ -141,7 +141,7 @@ return plural;
  ],
  "Off": [
   null,
-  "Kikapcsolva"
+  "Ki"
  ],
  "Ok": [
   null,
@@ -149,7 +149,7 @@ return plural;
  ],
  "On": [
   null,
-  "Bekapcsolva"
+  "Be"
  ],
  "On a mounted device": [
   null,
