@@ -1,4 +1,4 @@
-cockpit (190-1) UNRELEASED; urgency=medium
+cockpit (190-1) experimental; urgency=medium
 
   * New upstream release:
     - Logs: Filter log entries by service
@@ -7,7 +7,7 @@ cockpit (190-1) UNRELEASED; urgency=medium
     - Machines: Support for creating VM with option to boot from PXE
     - Accessibility improvements
 
- -- Martin Pitt <mpitt@debian.org>  Fri, 22 Mar 2019 17:45:11 +0000
+ -- Martin Pitt <mpitt@debian.org>  Fri, 22 Mar 2019 17:48:29 +0000
 
 cockpit (189-1) experimental; urgency=medium
 
