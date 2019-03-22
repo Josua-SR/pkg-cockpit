@@ -1,3 +1,14 @@
+cockpit (190-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Logs: Filter log entries by service
+    - Machines: Support for Pausing/Resuming VMs
+    - Machines: Make Autostart property of a Virtual Network configurable
+    - Machines: Support for creating VM with option to boot from PXE
+    - Accessibility improvements
+
+ -- Martin Pitt <mpitt@debian.org>  Fri, 22 Mar 2019 17:45:11 +0000
+
 cockpit (189-1) experimental; urgency=medium
 
   * New upstream release:
