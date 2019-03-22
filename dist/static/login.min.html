@@ -276,7 +276,7 @@
                         j(JSON.parse(i.responseText));
                     } else {
                         o = $(i.getResponseHeader("WWW-Authenticate"), i.responseText);
-                        if (o) P(o); else h(i.statusText);
+                        if (o) P(o); else h(decodeURIComponent(i.statusText));
                     }
                 }
             };

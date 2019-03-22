@@ -143,10 +143,6 @@ return plural;
   null,
   ""
  ],
- "Add Services…": [
-  null,
-  ""
- ],
  "Add Team": [
   null,
   ""

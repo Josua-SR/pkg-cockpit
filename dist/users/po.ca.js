@@ -381,7 +381,7 @@ return plural;
  ],
  "You must wait longer to change your password": [
   null,
-  "Ha fallat el canvi de contrasenya"
+  ""
  ],
  "translatable": [
   null,

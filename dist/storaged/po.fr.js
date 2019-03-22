@@ -452,10 +452,6 @@ return plural;
   null,
   "Options de chiffrement personnalisées"
  ],
- "Custom mount option": [
-  null,
-  "Option de montage personnalisée"
- ],
  "Custom mount options": [
   null,
   "Options de montage personnalisées"
@@ -652,6 +648,10 @@ return plural;
   null,
   "Systèmes de fichiers"
  ],
+ "For legacy applications only. Reduces performance.": [
+  null,
+  ""
+ ],
  "Force remove passphrase in $0": [
   null,
   "Suppression de la phrase de passe forcée dans $0"
@@ -695,6 +695,10 @@ return plural;
  "Grow": [
   null,
   "Augmenter"
+ ],
+ "Grow Content": [
+  null,
+  ""
  ],
  "Grow Logical Volume": [
   null,
@@ -851,10 +855,6 @@ return plural;
  "Mount at boot": [
   null,
   "Monter au démarrage"
- ],
- "Mount options": [
-  null,
-  "Options de montage"
  ],
  "Mount point can not be empty": [
   null,
@@ -1316,6 +1316,10 @@ return plural;
   null,
   "Redimensionnement $target"
  ],
+ "Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase.": [
+  null,
+  ""
+ ],
  "Running": [
   null,
   "En cours"
@@ -1327,6 +1331,14 @@ return plural;
  "Save": [
   null,
   "sauvegarder"
+ ],
+ "Save space by compressing individual blocks with LZ4": [
+  null,
+  ""
+ ],
+ "Save space by storing identical data blocks just once": [
+  null,
+  ""
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
@@ -1371,6 +1383,10 @@ return plural;
  "Shrink Logical Volume": [
   null,
   "Réduire le volume logique"
+ ],
+ "Shrink Volume": [
+  null,
+  ""
  ],
  "Size": [
   null,
@@ -1580,6 +1596,10 @@ return plural;
   null,
   "Ce disque ne peut pas être retiré pendant le recouvrement du périphérique."
  ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  ""
+ ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "Ce volume doit être activé avant de pouvoir être redimensionné."
@@ -1740,9 +1760,17 @@ return plural;
   null,
   "Groupes de volumes"
  ],
+ "Volume size is $0. Content size is $1.": [
+  null,
+  ""
+ ],
  "Waiting for other software management operations to finish": [
   null,
   "Attente de la fin des autres opérations de gestion du logiciel"
+ ],
+ "Warning": [
+  null,
+  ""
  ],
  "What if tang-show-keys is not available?": [
   null,

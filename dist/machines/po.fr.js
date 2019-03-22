@@ -71,6 +71,10 @@ return plural;
   null,
   "$0 est disponible pour la plupart des systèmes d’exploitation. Pour l’installer, recherchez-le dans le logiciel GNOME ou exécutez les opérations suivantes:"
  ],
+ "Activate": [
+  null,
+  "Activer"
+ ],
  "Add": [
   null,
   "Ajouter"
@@ -195,13 +199,37 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "DHCP Range": [
+  null,
+  ""
+ ],
+ "Deactivate": [
+  null,
+  "Désactiver"
+ ],
  "Delete": [
   null,
   "Supprimer"
  ],
+ "Delete Content": [
+  null,
+  ""
+ ],
+ "Delete Storage Pool $0": [
+  null,
+  ""
+ ],
  "Delete associated storage files:": [
   null,
   "Supprimer les fichiers de stockage associés:"
+ ],
+ "Delete the Volumes inside this Pool": [
+  null,
+  ""
+ ],
+ "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
+  null,
+  ""
  ],
  "Device": [
   null,
@@ -243,6 +271,14 @@ return plural;
   null,
   "Machine émulée"
  ],
+ "Existing Disk Image": [
+  null,
+  ""
+ ],
+ "Existing disk image on host's file system": [
+  null,
+  ""
+ ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
   "On ne doit pas activer un nombre de CPU supérieur au nombre maximum."
@@ -250,10 +286,6 @@ return plural;
  "File": [
   null,
   "Fichier"
- ],
- "Filesystem": [
-  null,
-  "Système de fichiers"
  ],
  "Filesystem Directory": [
   null,
@@ -271,9 +303,17 @@ return plural;
   null,
   "Formater"
  ],
+ "Forwarding mode": [
+  null,
+  ""
+ ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
   "L’action GET HYPERVISOR MAX VCPU a échoué"
+ ],
+ "General": [
+  null,
+  "Général"
  ],
  "GiB": [
   null,
@@ -303,6 +343,14 @@ return plural;
   null,
   "Échec de l’action INSTALL VM"
  ],
+ "IPv4 Address": [
+  null,
+  ""
+ ],
+ "IPv6 Address": [
+  null,
+  ""
+ ],
  "Immediately Start VM": [
   null,
   "Démarrer immédiatement la VM"
@@ -323,6 +371,10 @@ return plural;
   null,
   "La source d’installation ne doit pas être vide"
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Invalid filename": [
   null,
   "Nom de fichier non valide"
@@ -334,6 +386,10 @@ return plural;
  "Loading ...": [
   null,
   "Chargement ..."
+ ],
+ "Local Install Media": [
+  null,
+  ""
  ],
  "MAC Address": [
   null,
@@ -347,6 +403,10 @@ return plural;
   null,
   "Connexion manuelle"
  ],
+ "Maximum Transmission Unit": [
+  null,
+  ""
+ ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
   "Nombre maximum de CPU virtuels alloués pour l’OS invité; doit être compris entre 1 et $0."
@@ -354,10 +414,6 @@ return plural;
  "Memory": [
   null,
   "Mémoire"
- ],
- "Memory should be positive number": [
-  null,
-  "La mémoire devrait être un nombre positif"
  ],
  "MiB": [
   null,
@@ -383,21 +439,25 @@ return plural;
   null,
   "Le nom ne doit pas être vide"
  ],
- "Name should not consist of empty characters only": [
+ "Name: ": [
   null,
-  "Le nom ne doit pas être composé uniquement de caractères vides"
+  ""
+ ],
+ "Netmask": [
+  null,
+  ""
  ],
  "Network File System": [
   null,
   "Système de fichiers par réseau (NFS)"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "Type de réseau"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
-  "Les paramètres de réseau n’ont pas pu être enregistrés"
+  ""
  ],
  "Networks": [
   null,
@@ -435,6 +495,10 @@ return plural;
   null,
   "Aucune interface réseau définie pour cette machine virtuelle"
  ],
+ "No network is defined on this host": [
+  null,
+  ""
+ ],
  "No storage pool is defined on this host": [
   null,
   "Aucun pool de stockage n’a été défini sur cet hôte"
@@ -443,9 +507,21 @@ return plural;
   null,
   "Aucun réseau virtuel"
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "OS Vendor": [
   null,
   "Fournisseur d’OS"
+ ],
+ "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
+  null,
+  ""
+ ],
+ "Open": [
+  null,
+  ""
  ],
  "Operating System": [
   null,
@@ -507,6 +583,14 @@ return plural;
   null,
   "Nombre choisi de sockets à exposer à l’invité."
  ],
+ "Prefix": [
+  null,
+  ""
+ ],
+ "Private": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protocole"
@@ -538,6 +622,10 @@ return plural;
  "Run": [
   null,
   "Exécuter"
+ ],
+ "Run when host boots": [
+  null,
+  ""
  ],
  "SPICE": [
   null,
@@ -627,6 +715,14 @@ return plural;
   null,
   "Le pool de stockage n’a pas pu être créé"
  ],
+ "Storage Pool failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool failed to get deactivated": [
+  null,
+  ""
+ ],
  "Storage Pools": [
   null,
   "Pools de stockage"
@@ -635,13 +731,13 @@ return plural;
   null,
   "Taille de stockage"
  ],
- "Storage Size should not be negative number": [
-  null,
-  "La taille du stockage ne doit pas correspondre à un nombre négatif"
- ],
  "Storage Volumes": [
   null,
   "Volumes de stockage"
+ ],
+ "Storage Volumes could not be deleted": [
+  null,
+  ""
  ],
  "System": [
   null,
@@ -654,6 +750,10 @@ return plural;
  "Target path should not be empty": [
   null,
   "Le chemin cible ne doit pas rester vide"
+ ],
+ "The Storage Pool could not be deleted": [
+  null,
+  ""
  ],
  "The VM crashed.": [
   null,
@@ -738,6 +838,10 @@ return plural;
  "Used": [
   null,
   "Utilisé"
+ ],
+ "Used by": [
+  null,
+  ""
  ],
  "VCPU settings could not be saved": [
   null,

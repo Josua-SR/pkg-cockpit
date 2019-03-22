@@ -71,6 +71,10 @@ return plural;
   null,
   "$0 esta disponible para muchos sistemas operativos. Para instalarlo, búscalo en \"GNOME Software\" o ejecuta el siguiente comando:"
  ],
+ "Activate": [
+  null,
+  "Activar"
+ ],
  "Add": [
   null,
   "Añadir"
@@ -89,7 +93,7 @@ return plural;
  ],
  "Always attach": [
   null,
-  "Siempre"
+  ""
  ],
  "Apply": [
   null,
@@ -101,7 +105,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "Auto inicio"
+  ""
  ],
  "Available": [
   null,
@@ -109,7 +113,7 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "Orden de Inicio"
+  ""
  ],
  "Bus": [
   null,
@@ -121,7 +125,7 @@ return plural;
  ],
  "CPU Type": [
   null,
-  "Tipo de CPU"
+  ""
  ],
  "Cancel": [
   null,
@@ -195,13 +199,37 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "DHCP Range": [
+  null,
+  ""
+ ],
+ "Deactivate": [
+  null,
+  "Desactivar"
+ ],
  "Delete": [
   null,
   "Eliminar"
  ],
+ "Delete Content": [
+  null,
+  ""
+ ],
+ "Delete Storage Pool $0": [
+  null,
+  ""
+ ],
  "Delete associated storage files:": [
   null,
   "Eliminar archivos de almacenamiento asociados:"
+ ],
+ "Delete the Volumes inside this Pool": [
+  null,
+  ""
+ ],
+ "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
+  null,
+  ""
  ],
  "Device": [
   null,
@@ -241,7 +269,15 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "Maquina Emulada"
+  ""
+ ],
+ "Existing Disk Image": [
+  null,
+  ""
+ ],
+ "Existing disk image on host's file system": [
+  null,
+  ""
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -250,10 +286,6 @@ return plural;
  "File": [
   null,
   "Archivo"
- ],
- "Filesystem": [
-  null,
-  "Sistema de archivos"
  ],
  "Filesystem Directory": [
   null,
@@ -271,9 +303,17 @@ return plural;
   null,
   "Formato"
  ],
+ "Forwarding mode": [
+  null,
+  ""
+ ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
   "Falló la acción GET HYPERVISOR MAX VCPU"
+ ],
+ "General": [
+  null,
+  "General"
  ],
  "GiB": [
   null,
@@ -303,6 +343,14 @@ return plural;
   null,
   "INSTALL VM acción fallada"
  ],
+ "IPv4 Address": [
+  null,
+  ""
+ ],
+ "IPv6 Address": [
+  null,
+  ""
+ ],
  "Immediately Start VM": [
   null,
   "Iniciar Inmediatamente VM"
@@ -323,6 +371,10 @@ return plural;
   null,
   "La Fuente de Instalación no debería estar vacía"
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Invalid filename": [
   null,
   "Nobre de fichero no válido"
@@ -334,6 +386,10 @@ return plural;
  "Loading ...": [
   null,
   "Cargando ..."
+ ],
+ "Local Install Media": [
+  null,
+  ""
  ],
  "MAC Address": [
   null,
@@ -347,6 +403,10 @@ return plural;
   null,
   "Conexión Manual"
  ],
+ "Maximum Transmission Unit": [
+  null,
+  ""
+ ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
   "Número máximo de CPU virtuales asignadas al SO invitado, entre 1 y $0"
@@ -354,10 +414,6 @@ return plural;
  "Memory": [
   null,
   "Memoria"
- ],
- "Memory should be positive number": [
-  null,
-  "La memoria debería ser un número positivo"
  ],
  "MiB": [
   null,
@@ -383,21 +439,25 @@ return plural;
   null,
   "El nombre no debería estar vacío"
  ],
- "Name should not consist of empty characters only": [
+ "Name: ": [
   null,
-  "El nombre no debería constar solo de caracteres vacíos"
+  ""
+ ],
+ "Netmask": [
+  null,
+  ""
  ],
  "Network File System": [
   null,
   "Sistema de archivos de red"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "Tipo de red"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
-  "La configuración de red no se pudo guardar"
+  ""
  ],
  "Networks": [
   null,
@@ -435,6 +495,10 @@ return plural;
   null,
   "No se han definido interfaces de red para esta VM"
  ],
+ "No network is defined on this host": [
+  null,
+  ""
+ ],
  "No storage pool is defined on this host": [
   null,
   "Ningún grupo de almacenamiento está definido en este host"
@@ -443,9 +507,21 @@ return plural;
   null,
   "No hay redes virtuales"
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "OS Vendor": [
   null,
   "Proveedor de SO"
+ ],
+ "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
+  null,
+  ""
+ ],
+ "Open": [
+  null,
+  ""
  ],
  "Operating System": [
   null,
@@ -454,6 +530,10 @@ return plural;
  "Overview": [
   null,
   "Visión conjunta"
+ ],
+ "Path": [
+  null,
+  "Trayecto"
  ],
  "Path on host's filesystem": [
   null,
@@ -469,7 +549,11 @@ return plural;
  ],
  "Persistence": [
   null,
-  "Volúmenes persistentes"
+  ""
+ ],
+ "Persistent": [
+  null,
+  ""
  ],
  "Please enter new volume name": [
   null,
@@ -498,6 +582,14 @@ return plural;
  "Preferred number of sockets to expose to the guest.": [
   null,
   "Número preferido de sockets para exponer al invitado."
+ ],
+ "Prefix": [
+  null,
+  ""
+ ],
+ "Private": [
+  null,
+  ""
  ],
  "Protocol": [
   null,
@@ -530,6 +622,10 @@ return plural;
  "Run": [
   null,
   "Ejecutar"
+ ],
+ "Run when host boots": [
+  null,
+  ""
  ],
  "SPICE": [
   null,
@@ -591,7 +687,7 @@ return plural;
   null,
   "La ruta de origen no debe estar vacía"
  ],
- "Source should start with https, ftp or nfs protocol": [
+ "Source should start with http, ftp or nfs protocol": [
   null,
   "La fuente debería empezar con http, ftp o protocolo nfs"
  ],
@@ -602,10 +698,6 @@ return plural;
  "Start pool when host boots": [
   null,
   "Empezar el pool cuando el host arranque."
- ],
- "Start the VM to see disk statistics.": [
-  null,
-  "Arranque el VM para ver las estadísticas de disco."
  ],
  "Startup": [
   null,
@@ -623,6 +715,14 @@ return plural;
   null,
   "No se pudo crear la agrupación de almacenamiento"
  ],
+ "Storage Pool failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool failed to get deactivated": [
+  null,
+  ""
+ ],
  "Storage Pools": [
   null,
   "Piscinas de almacenamiento"
@@ -631,13 +731,13 @@ return plural;
   null,
   "Tamaño de Almacenamiento"
  ],
- "Storage Size should not be negative number": [
-  null,
-  "El Tamaño de Almacenamiento no puede ser un número negativo"
- ],
  "Storage Volumes": [
   null,
   "Volúmenes de almacenamiento"
+ ],
+ "Storage Volumes could not be deleted": [
+  null,
+  ""
  ],
  "System": [
   null,
@@ -650,6 +750,10 @@ return plural;
  "Target path should not be empty": [
   null,
   "La ruta de destino no debe estar vacía"
+ ],
+ "The Storage Pool could not be deleted": [
+  null,
+  ""
  ],
  "The VM crashed.": [
   null,
@@ -723,10 +827,6 @@ return plural;
   null,
   "Desenchufar"
  ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Actualizar a una versión más reciente de libvirt para visualizar estadísticas de disco"
- ],
  "Usage": [
   null,
   "Utilización"
@@ -738,6 +838,10 @@ return plural;
  "Used": [
   null,
   "Usado"
+ ],
+ "Used by": [
+  null,
+  ""
  ],
  "VCPU settings could not be saved": [
   null,

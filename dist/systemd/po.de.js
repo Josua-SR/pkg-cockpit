@@ -283,9 +283,17 @@ return plural;
   null,
   "Alarm und oben"
  ],
+ "All": [
+  null,
+  "Alle"
+ ],
  "All In One": [
   null,
   "Alles in einem"
+ ],
+ "Appearance:": [
+  null,
+  ""
  ],
  "Asset Tag": [
   null,
@@ -297,7 +305,7 @@ return plural;
  ],
  "Automatic Startup": [
   null,
-  "Automatische Updates"
+  ""
  ],
  "Automatically using NTP": [
   null,
@@ -326,6 +334,10 @@ return plural;
  "Binds To": [
   null,
   "Bindet an"
+ ],
+ "Black": [
+  null,
+  ""
  ],
  "Blade": [
   null,
@@ -387,6 +399,10 @@ return plural;
   null,
   "Klasse"
  ],
+ "Clear All Filters": [
+  null,
+  ""
+ ],
  "Click to see system hardware information": [
   null,
   "Klicken Sie hier, um Informationen zur Systemhardware anzuzeigen"
@@ -427,6 +443,10 @@ return plural;
   null,
   "Convertible"
  ],
+ "Copy": [
+  null,
+  ""
+ ],
  "Create Timer": [
   null,
   "Timer erstellen"
@@ -439,9 +459,17 @@ return plural;
   null,
   "Kritisch und oben"
  ],
+ "Ctrl+Insert": [
+  null,
+  ""
+ ],
  "Current boot": [
   null,
   "Aktueller Boot"
+ ],
+ "Dark": [
+  null,
+  ""
  ],
  "Debug and above": [
   null,
@@ -462,6 +490,10 @@ return plural;
  "Detachable": [
   null,
   "Abnehmbar"
+ ],
+ "Details": [
+  null,
+  "Details"
  ],
  "Disable": [
   null,
@@ -535,6 +567,10 @@ return plural;
   null,
   "Erweiterungsgehäuse"
  ],
+ "Filter by name or description...": [
+  null,
+  ""
+ ],
  "Friday": [
   null,
   "Freitag"
@@ -582,10 +618,6 @@ return plural;
  "I/O Wait": [
   null,
   "I / O Warten"
- ],
- "Id": [
-  null,
-  "ID"
  ],
  "Info and above": [
   null,
@@ -670,6 +702,10 @@ return plural;
  "Last Trigger": [
   null,
   "Letzter Auslöser"
+ ],
+ "Light": [
+  null,
+  ""
  ],
  "Load earlier entries": [
   null,
@@ -787,6 +823,10 @@ return plural;
   null,
   "Keine Verzögerung"
  ],
+ "No Matching Results": [
+  null,
+  ""
+ ],
  "No host keys found.": [
   null,
   "Es wurden keine Host-Schlüssel gefunden."
@@ -854,6 +894,10 @@ return plural;
  "Part Of": [
   null,
   "Teil von"
+ ],
+ "Paste": [
+  null,
+  ""
  ],
  "Path": [
   null,
@@ -1017,7 +1061,7 @@ return plural;
  ],
  "Running Since": [
   null,
-  "Laufen seit"
+  ""
  ],
  "Saturday": [
   null,
@@ -1067,6 +1111,10 @@ return plural;
   null,
   "Schweregrad"
  ],
+ "Shift+Insert": [
+  null,
+  ""
+ ],
  "Show fingerprints": [
   null,
   "Fingerabdrücke anzeigen"
@@ -1115,9 +1163,9 @@ return plural;
   null,
   "Stoppen"
  ],
- "Store metrics": [
+ "Store Metrics": [
   null,
-  "Kennzahlen speichern"
+  ""
  ],
  "Sub Chassis": [
   null,
@@ -1315,6 +1363,10 @@ return plural;
  "Weeks": [
   null,
   "Wochen"
+ ],
+ "White": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

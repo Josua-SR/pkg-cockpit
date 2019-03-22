@@ -67,10 +67,6 @@ return plural;
   "language": "fi",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
-  null,
-  "$0 Vain paikalliset käyttäjät voivat kirjautua tälle koneelle. Tämä voi myös vaikuttaa muihin palveluihin, sillä DNS-määrityksen asetukset ja luotettujen CA:den lista voivat muuttua. "
- ],
  "$0 is not available from any repository.": [
   null,
   ""
@@ -87,13 +83,9 @@ return plural;
   null,
   "Ylläpidon salasana"
  ],
- "Are you sure you want to leave the '$0' domain?": [
+ "After leaving the domain, only users with local credentials will be able to log into this machine. This may also affect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  "Oletko varma, että haluat poistua '$0' -domainista?"
- ],
- "Are you sure you want to leave this domain?": [
-  null,
-  "Oletko varma, että haluat poistua tästä domainista?"
+  ""
  ],
  "Authentication": [
   null,
@@ -111,9 +103,21 @@ return plural;
   null,
   ""
  ],
+ "Client Software": [
+  null,
+  ""
+ ],
  "Computer OU": [
   null,
   "Tietokone-OU"
+ ],
+ "Contacted domain": [
+  null,
+  ""
+ ],
+ "Domain": [
+  null,
+  "Domain"
  ],
  "Domain $0 could not be contacted": [
   null,
@@ -171,13 +175,13 @@ return plural;
   null,
   "Liittyminen tähän domainiin ei ole tuettu"
  ],
- "Leave": [
-  null,
-  "Jätä"
- ],
  "Leave Domain": [
   null,
   "Jätä domain"
+ ],
+ "Login Format": [
+  null,
+  ""
  ],
  "More": [
   null,
@@ -215,6 +219,10 @@ return plural;
   null,
   ""
  ],
+ "Server Software": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
   "Käyttäjällä <b>$0</b> ei ole oikeutta muokata realmeja"
@@ -234,6 +242,10 @@ return plural;
  "User Password": [
   null,
   "Salasana"
+ ],
+ "Validating address": [
+  null,
+  ""
  ],
  "Waiting for other software management operations to finish": [
   null,

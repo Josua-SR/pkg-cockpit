@@ -67,6 +67,11 @@ return plural;
   "language": "ca",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Package": [
+  "$0 Packages",
+  "",
+  ""
+ ],
  "$0 is not available from any repository.": [
   null,
   ""
@@ -154,6 +159,10 @@ return plural;
   null,
   "Fe d'errates:"
  ],
+ "Fridays": [
+  null,
+  ""
+ ],
  "Ignore": [
   null,
   "Ignora"
@@ -201,6 +210,10 @@ return plural;
  "Loading available updates, please wait...": [
   null,
   "S'estan carregant les actualitzacions disponibles, espereu..."
+ ],
+ "Mondays": [
+  null,
+  ""
  ],
  "Name": [
   null,
@@ -266,6 +279,10 @@ return plural;
   null,
   "S'està reiniciant"
  ],
+ "Saturdays": [
+  null,
+  ""
+ ],
  "Set up": [
   null,
   "Configurat"
@@ -290,17 +307,13 @@ return plural;
   null,
   ""
  ],
+ "Sundays": [
+  null,
+  ""
+ ],
  "System is up to date": [
   null,
   "El sistema està al dia"
- ],
- "The following packages were recently updated:": [
-  null,
-  "Els paquets següents s'han actualitzat recentment:"
- ],
- "The following packages were updated $0:": [
-  null,
-  "Els paquets següents s'han actualitzat $0:"
  ],
  "This system is not registered": [
   null,
@@ -310,11 +323,19 @@ return plural;
   null,
   ""
  ],
+ "Thursdays": [
+  null,
+  ""
+ ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
   "Per obtenir actualitzacions de programari, aquest sistema ha d'estar registrat a Red Hat, ja sigui utilitzant Red Hat Customer Portal o un servidor de subscripció local."
  ],
  "Total size: $0": [
+  null,
+  ""
+ ],
+ "Tuesdays": [
   null,
   ""
  ],
@@ -354,6 +375,10 @@ return plural;
   null,
   ""
  ],
+ "Wednesdays": [
+  null,
+  ""
+ ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
   ""
@@ -381,34 +406,6 @@ return plural;
  "every day": [
   null,
   "cada dia"
- ],
- "on Fridays": [
-  null,
-  "els divendres"
- ],
- "on Mondays": [
-  null,
-  "els dilluns"
- ],
- "on Saturdays": [
-  null,
-  "els dissabtes"
- ],
- "on Sundays": [
-  null,
-  "els diumenges"
- ],
- "on Thursdays": [
-  null,
-  "els dijous"
- ],
- "on Tuesdays": [
-  null,
-  "els dimarts"
- ],
- "on Wednesdays": [
-  null,
-  "els dimecres"
  ],
  "security": [
   null,

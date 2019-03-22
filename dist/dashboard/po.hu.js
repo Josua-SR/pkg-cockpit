@@ -69,35 +69,35 @@ return plural;
  },
  "1 day": [
   null,
-  ""
+  "1 nap"
  ],
  "1 hour": [
   null,
-  ""
+  "1 óra"
  ],
  "1 week": [
   null,
-  ""
+  "1 hét"
  ],
  "5 minutes": [
   null,
-  ""
+  "5 perc"
  ],
  "6 hours": [
   null,
-  ""
+  "6 óra"
  ],
  "A compatible version of Cockpit is not installed on {{#strong}}{{host}}{{/strong}}.": [
   null,
-  ""
+  "Nincs telepítve a Cockpit kompatibilis verziója ezen: {{#strong}}{{host}}{{/strong}}."
  ],
  "Add": [
   null,
-  ""
+  "Hozzáadás"
  ],
  "Add Machine to Dashboard": [
   null,
-  ""
+  "Gép hozzáadása a vezérlőpulthoz"
  ],
  "Address": [
   null,
@@ -393,7 +393,7 @@ return plural;
  ],
  "Off": [
   null,
-  "Kikapcsolva"
+  "Ki"
  ],
  "Old password not accepted": [
   null,
@@ -401,7 +401,7 @@ return plural;
  ],
  "On": [
   null,
-  "Bekapcsolva"
+  "Be"
  ],
  "Other": [
   null,
@@ -509,7 +509,7 @@ return plural;
  ],
  "The passwords do not match.": [
   null,
-  ""
+  "A jelszavak nem egyeznek."
  ],
  "The user <b>$0</b> is not permitted to manage servers": [
   null,
@@ -521,7 +521,7 @@ return plural;
  ],
  "This version of cockpit-ws does not support connecting to a host with an alternate user or port": [
   null,
-  "A cockpit-ws ezen verziója nem támogatja a módosított felhasználóval vagy porttal való csatlakoztatását a kiszolgálóra"
+  "A cockpit-ws ezen verziója nem támogatja a módosított felhasználóval vagy porttal történő kiszolgálóhoz kapcsolódást"
  ],
  "To try a different port you will need to upgrade cockpit-ws to a newer version.": [
   null,

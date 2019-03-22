@@ -67,10 +67,6 @@ return plural;
   "language": "ca",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
-  null,
-  ""
- ],
  "$0 is not available from any repository.": [
   null,
   ""
@@ -87,13 +83,9 @@ return plural;
   null,
   "Contrasenya de l'administrador"
  ],
- "Are you sure you want to leave the '$0' domain?": [
+ "After leaving the domain, only users with local credentials will be able to log into this machine. This may also affect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  "Esteu segur que voleu abandonar el domini '$0'?"
- ],
- "Are you sure you want to leave this domain?": [
-  null,
-  "Esteu segur que voleu abandonar aquest domini?"
+  ""
  ],
  "Authentication": [
   null,
@@ -111,9 +103,21 @@ return plural;
   null,
   ""
  ],
+ "Client Software": [
+  null,
+  ""
+ ],
  "Computer OU": [
   null,
   "OU de l'ordinador"
+ ],
+ "Contacted domain": [
+  null,
+  ""
+ ],
+ "Domain": [
+  null,
+  "Domini"
  ],
  "Domain $0 could not be contacted": [
   null,
@@ -171,13 +175,13 @@ return plural;
   null,
   "La unió a aquest domini no està admesa"
  ],
- "Leave": [
-  null,
-  "Abandona"
- ],
  "Leave Domain": [
   null,
   "Abandona el domini"
+ ],
+ "Login Format": [
+  null,
+  ""
  ],
  "More": [
   null,
@@ -215,6 +219,10 @@ return plural;
   null,
   ""
  ],
+ "Server Software": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
   "A l'usuari <b>$0</b> no se li permet modificar els reialmes"
@@ -234,6 +242,10 @@ return plural;
  "User Password": [
   null,
   "Contrasenya d'usuari"
+ ],
+ "Validating address": [
+  null,
+  ""
  ],
  "Waiting for other software management operations to finish": [
   null,

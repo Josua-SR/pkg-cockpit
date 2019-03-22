@@ -283,9 +283,17 @@ return plural;
   null,
   "경고 이상의 수준 "
  ],
+ "All": [
+  null,
+  "모두"
+ ],
  "All In One": [
   null,
   "일체형 "
+ ],
+ "Appearance:": [
+  null,
+  ""
  ],
  "Asset Tag": [
   null,
@@ -326,6 +334,10 @@ return plural;
  "Binds To": [
   null,
   "바인딩 "
+ ],
+ "Black": [
+  null,
+  ""
  ],
  "Blade": [
   null,
@@ -387,6 +399,10 @@ return plural;
   null,
   "클래스 "
  ],
+ "Clear All Filters": [
+  null,
+  ""
+ ],
  "Click to see system hardware information": [
   null,
   "시스템 하드웨어 정보를 보려면 클릭하십시오."
@@ -427,6 +443,10 @@ return plural;
   null,
   "변환 가능 "
  ],
+ "Copy": [
+  null,
+  ""
+ ],
  "Create Timer": [
   null,
   "타이머 만들기 "
@@ -439,7 +459,15 @@ return plural;
   null,
   ""
  ],
+ "Ctrl+Insert": [
+  null,
+  ""
+ ],
  "Current boot": [
+  null,
+  ""
+ ],
+ "Dark": [
   null,
   ""
  ],
@@ -539,6 +567,10 @@ return plural;
   null,
   ""
  ],
+ "Filter by name or description...": [
+  null,
+  ""
+ ],
  "Friday": [
   null,
   "금요일"
@@ -586,10 +618,6 @@ return plural;
  "I/O Wait": [
   null,
   ""
- ],
- "Id": [
-  null,
-  "ID "
  ],
  "Info and above": [
   null,
@@ -672,6 +700,10 @@ return plural;
   ""
  ],
  "Last Trigger": [
+  null,
+  ""
+ ],
+ "Light": [
   null,
   ""
  ],
@@ -791,6 +823,10 @@ return plural;
   null,
   ""
  ],
+ "No Matching Results": [
+  null,
+  ""
+ ],
  "No host keys found.": [
   null,
   "찾을 수 없습니다."
@@ -856,6 +892,10 @@ return plural;
   ""
  ],
  "Part Of": [
+  null,
+  ""
+ ],
+ "Paste": [
   null,
   ""
  ],
@@ -1070,6 +1110,10 @@ return plural;
  "Severity": [
   null,
   "심각도"
+ ],
+ "Shift+Insert": [
+  null,
+  ""
  ],
  "Show fingerprints": [
   null,
@@ -1318,6 +1362,10 @@ return plural;
  "Weeks": [
   null,
   "주 "
+ ],
+ "White": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

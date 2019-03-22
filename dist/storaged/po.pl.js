@@ -699,7 +699,7 @@ return plural;
  ],
  "Grow Content": [
   null,
-  ""
+  "Powiększ zawartość"
  ],
  "Grow Logical Volume": [
   null,
@@ -1319,7 +1319,7 @@ return plural;
  ],
  "Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
-  ""
+  "Zmiana rozmiaru zaszyfrowanego systemu plików wymaga odblokowania dysku. Proszę podać obecne hasło dysku."
  ],
  "Running": [
   null,
@@ -1387,7 +1387,7 @@ return plural;
  ],
  "Shrink Volume": [
   null,
-  ""
+  "Zmniejsz wolumin"
  ],
  "Size": [
   null,
@@ -1599,7 +1599,7 @@ return plural;
  ],
  "This logical volume is not completely used by its content.": [
   null,
-  ""
+  "Ten wolumin logiczny nie jest całkowicie używany przez swoją zawartość."
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
@@ -1763,7 +1763,7 @@ return plural;
  ],
  "Volume size is $0. Content size is $1.": [
   null,
-  ""
+  "Rozmiar woluminu to $0. Rozmiar zawartości to $1."
  ],
  "Waiting for other software management operations to finish": [
   null,
@@ -1771,7 +1771,7 @@ return plural;
  ],
  "Warning": [
   null,
-  ""
+  "Ostrzeżenie"
  ],
  "What if tang-show-keys is not available?": [
   null,

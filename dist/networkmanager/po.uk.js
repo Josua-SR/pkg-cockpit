@@ -143,10 +143,6 @@ return plural;
   null,
   "Додавання служб"
  ],
- "Add Services…": [
-  null,
-  "Додати служби…"
- ],
  "Add Team": [
   null,
   "Додати команду"

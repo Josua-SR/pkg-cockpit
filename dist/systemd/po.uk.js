@@ -283,6 +283,10 @@ return plural;
   null,
   "Тривога і вище"
  ],
+ "All": [
+  null,
+  "Всі"
+ ],
  "All In One": [
   null,
   "Усе-в-одному"
@@ -394,6 +398,10 @@ return plural;
  "Class": [
   null,
   "Клас"
+ ],
+ "Clear All Filters": [
+  null,
+  "Зняти усі фільтри"
  ],
  "Click to see system hardware information": [
   null,
@@ -559,6 +567,10 @@ return plural;
   null,
   "Апаратний блок розширення"
  ],
+ "Filter by name or description...": [
+  null,
+  "Фільтрувати за назвою або описом…"
+ ],
  "Friday": [
   null,
   "п'ятниця"
@@ -606,10 +618,6 @@ return plural;
  "I/O Wait": [
   null,
   "Очікування В-В"
- ],
- "Id": [
-  null,
-  "Ід."
  ],
  "Info and above": [
   null,
@@ -814,6 +822,10 @@ return plural;
  "No Delay": [
   null,
   "Без затримки"
+ ],
+ "No Matching Results": [
+  null,
+  "Нічого не знайдено"
  ],
  "No host keys found.": [
   null,

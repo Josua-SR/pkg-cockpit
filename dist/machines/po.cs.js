@@ -67,6 +67,10 @@ return plural;
   "language": "cs",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Network": [
+  null,
+  ""
+ ],
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
   "$0 je k dispozici pro většinu operačních systémů. Pro instalaci vyhledejte v GNOME Software nebo spusťte následující:"
@@ -199,6 +203,10 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "DHCP Range": [
+  null,
+  "DHCP rozsah"
+ ],
  "Deactivate": [
   null,
   "Deaktivovat"
@@ -267,6 +275,14 @@ return plural;
   null,
   "Emulovaný stroj"
  ],
+ "Existing Disk Image": [
+  null,
+  "Existující obraz disku"
+ ],
+ "Existing disk image on host's file system": [
+  null,
+  "Existující obraz disku na souborovém systému hostitele"
+ ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
   "Mělo by být zapnuto méně než maximální počet virtuálních procesorů."
@@ -274,10 +290,6 @@ return plural;
  "File": [
   null,
   "Soubor"
- ],
- "Filesystem": [
-  null,
-  "Souborový systém"
  ],
  "Filesystem Directory": [
   null,
@@ -295,9 +307,17 @@ return plural;
   null,
   "Formát"
  ],
+ "Forwarding mode": [
+  null,
+  "Režim přeposílání"
+ ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
   "Akce ZJISTIT MAXIMUM VIRT. PROCESORŮ HYPERVIZORU se nezdařila"
+ ],
+ "General": [
+  null,
+  "Obecné"
  ],
  "GiB": [
   null,
@@ -315,6 +335,10 @@ return plural;
   null,
   "Počítač"
  ],
+ "Host Device": [
+  null,
+  ""
+ ],
  "Host Name": [
   null,
   "Název počítače"
@@ -327,9 +351,21 @@ return plural;
   null,
   "Akce NAINSTALOVAT VIRT. STROJ se nezdařila"
  ],
+ "IPv4 Address": [
+  null,
+  "IPv4 adresa"
+ ],
+ "IPv6 Address": [
+  null,
+  "IPv6 adresa"
+ ],
  "Immediately Start VM": [
   null,
   "Okamžitě spustit virt. stroj"
+ ],
+ "In most configurations, macvtap does not work for host to guest network communication.": [
+  null,
+  ""
  ],
  "Install": [
   null,
@@ -349,11 +385,15 @@ return plural;
  ],
  "Interface Type": [
   null,
-  ""
+  "Typ rozhraní"
  ],
  "Invalid filename": [
   null,
   "Neplatný název souboru"
+ ],
+ "Isolated Network": [
+  null,
+  ""
  ],
  "Launch Remote Viewer": [
   null,
@@ -362,6 +402,10 @@ return plural;
  "Loading ...": [
   null,
   "Načítání…"
+ ],
+ "Local Install Media": [
+  null,
+  "Místní instalační médium"
  ],
  "MAC Address": [
   null,
@@ -374,6 +418,10 @@ return plural;
  "Manual Connection": [
   null,
   "Ruční připojení"
+ ],
+ "Maximum Transmission Unit": [
+  null,
+  "Přenosová jednotka nejvýše"
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
@@ -399,6 +447,10 @@ return plural;
   null,
   "Více informací"
  ],
+ "NAT to $0": [
+  null,
+  ""
+ ],
  "Name": [
   null,
   "Název"
@@ -407,17 +459,45 @@ return plural;
   null,
   "Název je třeba vyplnit"
  ],
+ "Name: ": [
+  null,
+  "Název:"
+ ],
+ "Netmask": [
+  null,
+  "Maska sítě"
+ ],
+ "Network Boot (PXE)": [
+  null,
+  ""
+ ],
  "Network File System": [
   null,
   "Síťový souborový systém"
  ],
  "Network Interfaces": [
   null,
+  "Síťová rozhraní"
+ ],
+ "Network Selection does not support PXE.": [
+  null,
   ""
+ ],
+ "Network failed to get activated": [
+  null,
+  "Síť se nepodařilo aktivovat"
+ ],
+ "Network failed to get deactivated": [
+  null,
+  "Síť se nepodařilo deaktivovat"
  ],
  "Network interface settings could not be saved": [
   null,
-  ""
+  "Nastavení síťového rozhraní se nepodařilo uložit"
+ ],
+ "Networks": [
+  null,
+  "Sítě"
  ],
  "New Volume Name": [
   null,
@@ -451,6 +531,10 @@ return plural;
   null,
   "Pro tento virt. stroj nebyla určena žádná síťová rozhraní"
  ],
+ "No network is defined on this host": [
+  null,
+  "Na tomto hostiteli není definována žádná síť"
+ ],
  "No storage pool is defined on this host": [
   null,
   "Na tomto stroji není definován žádný fond úložiště"
@@ -459,9 +543,21 @@ return plural;
   null,
   "Žádné virtuální sítě"
  ],
+ "None (Isolated Network)": [
+  null,
+  "Žádné (izolovaná síť)"
+ ],
  "OS Vendor": [
   null,
   "Výrobce oper. systému"
+ ],
+ "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
+  null,
+  "Jeden či více z vybraných svazků je používán doménami. Aby bylo možné svazek smazat, je třeba nejprve odpojit disky."
+ ],
+ "Open": [
+  null,
+  "Otevřít"
  ],
  "Operating System": [
   null,
@@ -486,6 +582,10 @@ return plural;
  "Path to file": [
   null,
   "Popis umístění serveru"
+ ],
+ "Pause": [
+  null,
+  ""
  ],
  "Persistence": [
   null,
@@ -523,6 +623,14 @@ return plural;
   null,
   "Upřednostňovaný počet patic který odhalit hostovi."
  ],
+ "Prefix": [
+  null,
+  "Předpona"
+ ],
+ "Private": [
+  null,
+  "Soukromé"
+ ],
  "Protocol": [
   null,
   "Protokol"
@@ -550,6 +658,18 @@ return plural;
  "Restart": [
   null,
   "Restartovat"
+ ],
+ "Resume": [
+  null,
+  ""
+ ],
+ "Route to $0": [
+  null,
+  ""
+ ],
+ "Routed Network": [
+  null,
+  ""
  ],
  "Run": [
   null,
@@ -667,6 +787,10 @@ return plural;
   null,
   "Úložné svazky"
  ],
+ "Storage Volumes could not be deleted": [
+  null,
+  "Svazky úložiště není možné smazat"
+ ],
  "System": [
   null,
   "Systém"
@@ -767,6 +891,10 @@ return plural;
   null,
   "Využito"
  ],
+ "Used by": [
+  null,
+  "Používá"
+ ],
  "VCPU settings could not be saved": [
   null,
   "Nastavení virt. procesoru se nepodařilo uložit"
@@ -799,9 +927,17 @@ return plural;
   null,
   "Akce VYNUCENÝ RESTART se nezdařila"
  ],
+ "VM Pause action failed": [
+  null,
+  ""
+ ],
  "VM REBOOT action failed": [
   null,
   "Akce RESTART se nezdařila"
+ ],
+ "VM Resume action failed": [
+  null,
+  ""
  ],
  "VM SEND Non-Maskable Interrrupt action failed": [
   null,
@@ -838,6 +974,10 @@ return plural;
  "Virtual Machines": [
   null,
   "Virtuální stroje"
+ ],
+ "Virtual Network": [
+  null,
+  ""
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,

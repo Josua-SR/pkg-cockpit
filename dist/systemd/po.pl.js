@@ -283,6 +283,10 @@ return plural;
   null,
   "Alarmy i powyżej"
  ],
+ "All": [
+  null,
+  "Wszystkie"
+ ],
  "All In One": [
   null,
   "Zintegrowane"
@@ -394,6 +398,10 @@ return plural;
  "Class": [
   null,
   "Klasa"
+ ],
+ "Clear All Filters": [
+  null,
+  "Wyczyść wszystkie filtry"
  ],
  "Click to see system hardware information": [
   null,
@@ -559,6 +567,10 @@ return plural;
   null,
   "Obudowa rozszerzenia"
  ],
+ "Filter by name or description...": [
+  null,
+  "Wyszukiwanie według nazwy lub opisu…"
+ ],
  "Friday": [
   null,
   "piątek"
@@ -606,10 +618,6 @@ return plural;
  "I/O Wait": [
   null,
   "Oczekiwanie wejścia/wyjścia"
- ],
- "Id": [
-  null,
-  "Identyfikator"
  ],
  "Info and above": [
   null,
@@ -814,6 +822,10 @@ return plural;
  "No Delay": [
   null,
   "Brak opóźnienia"
+ ],
+ "No Matching Results": [
+  null,
+  "Brak wyników"
  ],
  "No host keys found.": [
   null,

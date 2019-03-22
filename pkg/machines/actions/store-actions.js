@@ -26,9 +26,11 @@ import {
     SET_HYPERVISOR_MAX_VCPU,
     SET_LOGGED_IN_USER,
     SET_PROVIDER,
+    UNDEFINE_NETWORK,
     UNDEFINE_STORAGE_POOL,
     UNDEFINE_VM,
     UPDATE_ADD_NETWORK,
+    UPDATE_ADD_NODE_DEVICE,
     UPDATE_ADD_STORAGE_POOL,
     UPDATE_ADD_VM,
     UPDATE_LIBVIRT_STATE,
@@ -136,6 +138,16 @@ export function setProvider(provider) {
     };
 }
 
+export function undefineNetwork({ connectionName, id }) {
+    return {
+        type: UNDEFINE_NETWORK,
+        payload: {
+            connectionName,
+            id,
+        }
+    };
+}
+
 export function undefineStoragePool({ connectionName, id }) {
     return {
         type: UNDEFINE_STORAGE_POOL,
@@ -167,6 +179,13 @@ export function updateOrAddNetwork(props) {
     return {
         type: UPDATE_ADD_NETWORK,
         payload: { network: props },
+    };
+}
+
+export function updateOrAddNodeDevice(props) {
+    return {
+        type: UPDATE_ADD_NODE_DEVICE,
+        payload: { nodedev: props },
     };
 }
 

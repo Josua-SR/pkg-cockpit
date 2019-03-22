@@ -67,28 +67,33 @@ return plural;
   "language": "hu",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Package": [
+  "$0 Packages",
+  "$0 csomag",
+  "$0 csomag"
+ ],
  "$0 is not available from any repository.": [
   null,
-  ""
+  "A(z) $0 nem érhető el egy tárolóból sem."
  ],
  "$0 update": [
   "$0 updates",
-  "",
-  ""
+  "$0 frissítés",
+  "$0 frissítés"
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "A(z) $0 telepítve lesz."
  ],
  "$1 security fix": [
   "$1 security fixes",
-  "",
-  ""
+  "$1 biztonsági javítás",
+  "$1 biztonsági javítás"
  ],
  ", including $1 security fix": [
   ", including $1 security fixes",
-  "",
-  ""
+  ", köztük $1 biztonsági javítás",
+  ", köztük $1 biztonsági javítás"
  ],
  "Additional packages:": [
   null,
@@ -154,6 +159,10 @@ return plural;
   null,
   ""
  ],
+ "Fridays": [
+  null,
+  ""
+ ],
  "Ignore": [
   null,
   ""
@@ -202,6 +211,10 @@ return plural;
   null,
   ""
  ],
+ "Mondays": [
+  null,
+  ""
+ ],
  "Name": [
   null,
   ""
@@ -212,7 +225,7 @@ return plural;
  ],
  "Off": [
   null,
-  "Kikapcsolva"
+  "Ki"
  ],
  "Ok": [
   null,
@@ -220,7 +233,7 @@ return plural;
  ],
  "On": [
   null,
-  "Bekapcsolva"
+  "Be"
  ],
  "Package information": [
   null,
@@ -266,6 +279,10 @@ return plural;
   null,
   ""
  ],
+ "Saturdays": [
+  null,
+  ""
+ ],
  "Set up": [
   null,
   ""
@@ -290,15 +307,11 @@ return plural;
   null,
   ""
  ],
+ "Sundays": [
+  null,
+  ""
+ ],
  "System is up to date": [
-  null,
-  ""
- ],
- "The following packages were recently updated:": [
-  null,
-  ""
- ],
- "The following packages were updated $0:": [
   null,
   ""
  ],
@@ -310,11 +323,19 @@ return plural;
   null,
   ""
  ],
+ "Thursdays": [
+  null,
+  ""
+ ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
   ""
  ],
  "Total size: $0": [
+  null,
+  ""
+ ],
+ "Tuesdays": [
   null,
   ""
  ],
@@ -354,6 +375,10 @@ return plural;
   null,
   ""
  ],
+ "Wednesdays": [
+  null,
+  ""
+ ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
   ""
@@ -379,34 +404,6 @@ return plural;
   ""
  ],
  "every day": [
-  null,
-  ""
- ],
- "on Fridays": [
-  null,
-  ""
- ],
- "on Mondays": [
-  null,
-  ""
- ],
- "on Saturdays": [
-  null,
-  ""
- ],
- "on Sundays": [
-  null,
-  ""
- ],
- "on Thursdays": [
-  null,
-  ""
- ],
- "on Tuesdays": [
-  null,
-  ""
- ],
- "on Wednesdays": [
   null,
   ""
  ],

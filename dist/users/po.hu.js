@@ -69,19 +69,19 @@ return plural;
  },
  "Access": [
   null,
-  ""
+  "Hozzáférés"
  ],
  "Account Expiration": [
   null,
-  ""
+  "Fiók lejárata"
  ],
  "Account not available or cannot be edited.": [
   null,
-  ""
+  "A fiók nem érhető el vagy nem szerkeszthető."
  ],
  "Accounts": [
   null,
-  ""
+  "Fiókok"
  ],
  "Add key": [
   null,
@@ -245,7 +245,7 @@ return plural;
  ],
  "Off": [
   null,
-  "Kikapcsolva"
+  "Ki"
  ],
  "Old Password": [
   null,
@@ -257,7 +257,7 @@ return plural;
  ],
  "On": [
   null,
-  "Bekapcsolva"
+  "Be"
  ],
  "Password": [
   null,
@@ -333,7 +333,7 @@ return plural;
  ],
  "The passwords do not match": [
   null,
-  ""
+  "A jelszavak nem egyeznek."
  ],
  "The user <b>$0</b> is not permitted to modify accounts": [
   null,
@@ -381,7 +381,7 @@ return plural;
  ],
  "You must wait longer to change your password": [
   null,
-  "Felhasználói jelszó megváltoztatása sikertelen"
+  ""
  ],
  "translatable": [
   null,
@@ -389,6 +389,6 @@ return plural;
  ],
  "page-title\u0004Accounts": [
   null,
-  ""
+  "Fiókok"
  ]
 }));

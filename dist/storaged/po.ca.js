@@ -452,10 +452,6 @@ return plural;
   null,
   "Opcions personalitzades de xifrat"
  ],
- "Custom mount option": [
-  null,
-  "Opció personalitzada de muntatge"
- ],
  "Custom mount options": [
   null,
   "Opcions personalitzades de muntatge"
@@ -652,6 +648,10 @@ return plural;
   null,
   "Sistemes de fitxers"
  ],
+ "For legacy applications only. Reduces performance.": [
+  null,
+  ""
+ ],
  "Force remove passphrase in $0": [
   null,
   ""
@@ -695,6 +695,10 @@ return plural;
  "Grow": [
   null,
   "Fes créixer"
+ ],
+ "Grow Content": [
+  null,
+  ""
  ],
  "Grow Logical Volume": [
   null,
@@ -852,10 +856,6 @@ return plural;
   null,
   "Munta a l'arrencada"
  ],
- "Mount options": [
-  null,
-  "Opcions de muntatge"
- ],
  "Mount point can not be empty": [
   null,
   "El punt de muntatge no pot estar en blanc"
@@ -914,11 +914,11 @@ return plural;
  ],
  "Name cannot be longer than $0 bytes": [
   null,
-  "El nom no pot ser superior als 127 caràcters."
+  ""
  ],
  "Name cannot be longer than $0 characters": [
   null,
-  "El nom no pot ser superior als 127 caràcters."
+  ""
  ],
  "Name cannot be longer than 127 characters.": [
   null,
@@ -1316,6 +1316,10 @@ return plural;
   null,
   "S'està redimensionant $target"
  ],
+ "Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase.": [
+  null,
+  ""
+ ],
  "Running": [
   null,
   "En execució"
@@ -1327,6 +1331,14 @@ return plural;
  "Save": [
   null,
   "Desa"
+ ],
+ "Save space by compressing individual blocks with LZ4": [
+  null,
+  ""
+ ],
+ "Save space by storing identical data blocks just once": [
+  null,
+  ""
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
@@ -1369,6 +1381,10 @@ return plural;
   ""
  ],
  "Shrink Logical Volume": [
+  null,
+  ""
+ ],
+ "Shrink Volume": [
   null,
   ""
  ],
@@ -1454,7 +1470,7 @@ return plural;
  ],
  "Storage can not be managed on this system.": [
   null,
-  "L'API «storaged» no està disponible en aquest sistema."
+  ""
  ],
  "Store passphrase": [
   null,
@@ -1579,6 +1595,10 @@ return plural;
  "This disk cannot be removed while the device is recovering.": [
   null,
   "Aquest disc no es pot treure quan s'està recuperant el dispositiu."
+ ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  ""
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
@@ -1740,7 +1760,15 @@ return plural;
   null,
   "Grups de volums"
  ],
+ "Volume size is $0. Content size is $1.": [
+  null,
+  ""
+ ],
  "Waiting for other software management operations to finish": [
+  null,
+  ""
+ ],
+ "Warning": [
   null,
   ""
  ],

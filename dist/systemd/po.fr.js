@@ -283,9 +283,17 @@ return plural;
   null,
   "Alerte et au-dessus"
  ],
+ "All": [
+  null,
+  "Tout"
+ ],
  "All In One": [
   null,
   "Tout en un"
+ ],
+ "Appearance:": [
+  null,
+  ""
  ],
  "Asset Tag": [
   null,
@@ -326,6 +334,10 @@ return plural;
  "Binds To": [
   null,
   "Liaison vers"
+ ],
+ "Black": [
+  null,
+  ""
  ],
  "Blade": [
   null,
@@ -387,6 +399,10 @@ return plural;
   null,
   "Classe"
  ],
+ "Clear All Filters": [
+  null,
+  ""
+ ],
  "Click to see system hardware information": [
   null,
   "Cliquez pour voir les informations sur le matériel du système"
@@ -427,6 +443,10 @@ return plural;
   null,
   "Convertible"
  ],
+ "Copy": [
+  null,
+  ""
+ ],
  "Create Timer": [
   null,
   "Créer Timer"
@@ -439,9 +459,17 @@ return plural;
   null,
   "Critique et au-dessus"
  ],
+ "Ctrl+Insert": [
+  null,
+  ""
+ ],
  "Current boot": [
   null,
   "Boot actuel"
+ ],
+ "Dark": [
+  null,
+  ""
  ],
  "Debug and above": [
   null,
@@ -539,6 +567,10 @@ return plural;
   null,
   "Châssis d’extension"
  ],
+ "Filter by name or description...": [
+  null,
+  ""
+ ],
  "Friday": [
   null,
   "Vendredi"
@@ -586,10 +618,6 @@ return plural;
  "I/O Wait": [
   null,
   "I / O Attente"
- ],
- "Id": [
-  null,
-  "Id"
  ],
  "Info and above": [
   null,
@@ -674,6 +702,10 @@ return plural;
  "Last Trigger": [
   null,
   "Dernier déclencheur"
+ ],
+ "Light": [
+  null,
+  ""
  ],
  "Load earlier entries": [
   null,
@@ -791,6 +823,10 @@ return plural;
   null,
   "Sans délais"
  ],
+ "No Matching Results": [
+  null,
+  ""
+ ],
  "No host keys found.": [
   null,
   "Aucune clé d’hôte trouvée."
@@ -858,6 +894,10 @@ return plural;
  "Part Of": [
   null,
   "Fait partie de"
+ ],
+ "Paste": [
+  null,
+  ""
  ],
  "Path": [
   null,
@@ -1070,6 +1110,10 @@ return plural;
  "Severity": [
   null,
   "Gravité"
+ ],
+ "Shift+Insert": [
+  null,
+  ""
  ],
  "Show fingerprints": [
   null,
@@ -1319,6 +1363,10 @@ return plural;
  "Weeks": [
   null,
   "Semaines"
+ ],
+ "White": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

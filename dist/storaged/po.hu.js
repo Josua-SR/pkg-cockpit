@@ -69,15 +69,15 @@ return plural;
  },
  "$0 Block Device": [
   null,
-  ""
+  "$0 blokkeszköz"
  ],
  "$0 Chunk Size": [
   null,
-  ""
+  "$0 darabméret"
  ],
  "$0 Disks": [
   null,
-  ""
+  "$0 lemez"
  ],
  "$0 data + $1 overhead used of $2 ($3)": [
   null,
@@ -85,156 +85,156 @@ return plural;
  ],
  "$0 disk is missing": [
   "$0 disks are missing",
-  "",
-  ""
+  "$0 lemez hiányzik",
+  "$0 lemez hiányzik"
  ],
  "$0 filesystems can not be made larger.": [
   null,
-  ""
+  "A(z) $0 fájlrendszer nem növelhető."
  ],
  "$0 filesystems can not be made smaller.": [
   null,
-  ""
+  "A(z) $0 fájlrendszer nem zsugorítható."
  ],
  "$0 filesystems can not be resized here.": [
   null,
-  ""
+  "A(z) $0 fájlrendszer nem méretezhető át itt."
  ],
  "$0 is in active use": [
   null,
-  ""
+  "A(z) $0 aktív használatban van"
  ],
  "$0 is not available from any repository.": [
   null,
-  ""
+  "A(z) $0 nem érhető el egy tárolóból sem."
  ],
  "$0 of $1": [
   null,
-  ""
+  "$0 / $1"
  ],
  "$0 slots remain": [
   null,
-  ""
+  "$0 foglalat maradt"
  ],
  "$0 used of $1 ($2 saved)": [
   null,
-  ""
+  "$0 használva / $1 ($2 mentve)"
  ],
  "$0 will be installed.": [
   null,
-  ""
+  "A(z) $0 telepítve lesz."
  ],
  "$0, $1 free": [
   null,
-  ""
+  "$0, $1 szabad"
  ],
  "$name (from $host)": [
   null,
-  ""
+  "$name (innen: $host)"
  ],
  "${size} ${desc}": [
   null,
-  ""
+  "${size} ${desc}"
  ],
  "(default)": [
   null,
-  ""
+  "(alapértelmezett)"
  ],
  "(none)": [
   null,
-  ""
+  "(nincs)"
  ],
  "--": [
   null,
-  ""
+  "--"
  ],
  "1 MiB": [
   null,
-  ""
+  "1 MiB"
  ],
  "1 day": [
   null,
-  ""
+  "1 nap"
  ],
  "1 hour": [
   null,
-  ""
+  "1 óra"
  ],
  "1 week": [
   null,
-  ""
+  "1 hét"
  ],
  "128 KiB": [
   null,
-  ""
+  "128 KiB"
  ],
  "16 KiB": [
   null,
-  ""
+  "16 KiB"
  ],
  "2 MiB": [
   null,
-  ""
+  "2 MiB"
  ],
  "32 KiB": [
   null,
-  ""
+  "32."
  ],
  "4 KiB": [
   null,
-  ""
+  "4 KiB"
  ],
  "5 minutes": [
   null,
-  ""
+  "5 perc"
  ],
  "512 KiB": [
   null,
-  ""
+  "512 KiB"
  ],
  "6 hours": [
   null,
-  ""
+  "6 óra"
  ],
  "64 KiB": [
   null,
-  ""
+  "64 KiB"
  ],
  "8 KiB": [
   null,
-  ""
+  "8 KiB"
  ],
  "A disk is needed.": [
   null,
-  ""
+  "Egy lemez szükséges."
  ],
  "A spare disk needs to be added first before this disk can be removed.": [
   null,
-  ""
+  "Előbb egy tartalék lemezt kell hozzáadni, mielőtt a lemez eltávolítható."
  ],
  "Activate": [
   null,
-  ""
+  "Aktiválás"
  ],
  "Activating $target": [
   null,
-  ""
+  "$target aktiválása"
  ],
  "Active since": [
   null,
-  ""
+  "Ezóta aktív:"
  ],
  "Add": [
   null,
-  ""
+  "Hozzáadás"
  ],
  "Add Disks": [
   null,
-  ""
+  "Lemezek hozzáadása"
  ],
  "Add Key": [
   null,
-  ""
+  "Kulcs hozzáadása"
  ],
  "Add iSCSI Portal": [
   null,
@@ -452,10 +452,6 @@ return plural;
   null,
   ""
  ],
- "Custom mount option": [
-  null,
-  ""
- ],
  "Custom mount options": [
   null,
   ""
@@ -652,6 +648,10 @@ return plural;
   null,
   ""
  ],
+ "For legacy applications only. Reduces performance.": [
+  null,
+  ""
+ ],
  "Force remove passphrase in $0": [
   null,
   ""
@@ -693,6 +693,10 @@ return plural;
   ""
  ],
  "Grow": [
+  null,
+  ""
+ ],
+ "Grow Content": [
   null,
   ""
  ],
@@ -849,10 +853,6 @@ return plural;
   ""
  ],
  "Mount at boot": [
-  null,
-  ""
- ],
- "Mount options": [
   null,
   ""
  ],
@@ -1022,7 +1022,7 @@ return plural;
  ],
  "Off": [
   null,
-  "Kikapcsolva"
+  "Ki"
  ],
  "Ok": [
   null,
@@ -1034,7 +1034,7 @@ return plural;
  ],
  "On": [
   null,
-  "Bekapcsolva"
+  "Be"
  ],
  "Only $0 of $1 are used.": [
   null,
@@ -1316,6 +1316,10 @@ return plural;
   null,
   ""
  ],
+ "Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase.": [
+  null,
+  ""
+ ],
  "Running": [
   null,
   ""
@@ -1325,6 +1329,14 @@ return plural;
   ""
  ],
  "Save": [
+  null,
+  ""
+ ],
+ "Save space by compressing individual blocks with LZ4": [
+  null,
+  ""
+ ],
+ "Save space by storing identical data blocks just once": [
   null,
   ""
  ],
@@ -1369,6 +1381,10 @@ return plural;
   ""
  ],
  "Shrink Logical Volume": [
+  null,
+  ""
+ ],
+ "Shrink Volume": [
   null,
   ""
  ],
@@ -1580,6 +1596,10 @@ return plural;
   null,
   ""
  ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  ""
+ ],
  "This volume needs to be activated before it can be resized.": [
   null,
   ""
@@ -1740,7 +1760,15 @@ return plural;
   null,
   ""
  ],
+ "Volume size is $0. Content size is $1.": [
+  null,
+  ""
+ ],
  "Waiting for other software management operations to finish": [
+  null,
+  ""
+ ],
+ "Warning": [
   null,
   ""
  ],
@@ -1798,7 +1826,7 @@ return plural;
  ],
  "storage-id-desc\u0004$0 File System": [
   null,
-  ""
+  "$0 fájlrendszer"
  ],
  "storage-id-desc\u0004Encrypted data": [
   null,

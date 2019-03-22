@@ -67,6 +67,11 @@ return plural;
   "language": "de",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Package": [
+  "$0 Packages",
+  "",
+  ""
+ ],
  "$0 is not available from any repository.": [
   null,
   "$0 ist in keinem Repository verfügbar."
@@ -154,6 +159,10 @@ return plural;
   null,
   "Errata:"
  ],
+ "Fridays": [
+  null,
+  ""
+ ],
  "Ignore": [
   null,
   "Ignorieren"
@@ -201,6 +210,10 @@ return plural;
  "Loading available updates, please wait...": [
   null,
   "Verfügbare Updates werden geladen, bitte warten ..."
+ ],
+ "Mondays": [
+  null,
+  ""
  ],
  "Name": [
   null,
@@ -266,6 +279,10 @@ return plural;
   null,
   "Neustart"
  ],
+ "Saturdays": [
+  null,
+  ""
+ ],
  "Set up": [
   null,
   "Konfiguration"
@@ -290,17 +307,13 @@ return plural;
   null,
   "Ein anderes Programm verwendet derzeit den Paketmanager, bitte warten Sie ..."
  ],
+ "Sundays": [
+  null,
+  ""
+ ],
  "System is up to date": [
   null,
   "System ist aktualisiert"
- ],
- "The following packages were recently updated:": [
-  null,
-  "Die folgenden Pakete wurden kürzlich aktualisiert:"
- ],
- "The following packages were updated $0:": [
-  null,
-  "Die folgenden Pakete wurden aktualisiert $0:"
  ],
  "This system is not registered": [
   null,
@@ -310,6 +323,10 @@ return plural;
   null,
   "Diese Webkonsole wird aktualisiert."
  ],
+ "Thursdays": [
+  null,
+  ""
+ ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
   "Um Aktualisierungen zu erhalten, muss dieses System bei Red Hat registriert sein; entweder im Red Hat Customer Portal oder einem lokalen Subscription-Dienst."
@@ -317,6 +334,10 @@ return plural;
  "Total size: $0": [
   null,
   "Gesamtgröße: $0"
+ ],
+ "Tuesdays": [
+  null,
+  ""
  ],
  "Update History": [
   null,
@@ -354,6 +375,10 @@ return plural;
   null,
   "Warten, bis andere Software-Verwaltungsvorgänge abgeschlossen sind"
  ],
+ "Wednesdays": [
+  null,
+  ""
+ ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
   "Ihr Browser wird die Verbindung trennen, der Update-Vorgang wird dadurch jedoch nicht beeinflusst. Sie können die Verbindung in wenigen Augenblicken wiederherstellen, um den Fortschritt fortzusetzen."
@@ -381,34 +406,6 @@ return plural;
  "every day": [
   null,
   "jeden Tag"
- ],
- "on Fridays": [
-  null,
-  "freitags"
- ],
- "on Mondays": [
-  null,
-  "Montags"
- ],
- "on Saturdays": [
-  null,
-  "samstags"
- ],
- "on Sundays": [
-  null,
-  "Sonntags"
- ],
- "on Thursdays": [
-  null,
-  "donnerstags"
- ],
- "on Tuesdays": [
-  null,
-  "an Dienstagen"
- ],
- "on Wednesdays": [
-  null,
-  "Mittwochs"
  ],
  "security": [
   null,

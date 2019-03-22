@@ -451,10 +451,6 @@ return plural;
   null,
   ""
  ],
- "Custom mount option": [
-  null,
-  "사용자 정의 마운트 옵션 "
- ],
  "Custom mount options": [
   null,
   "사용자 정의 마운트 옵션 "
@@ -651,6 +647,10 @@ return plural;
   null,
   ""
  ],
+ "For legacy applications only. Reduces performance.": [
+  null,
+  ""
+ ],
  "Force remove passphrase in $0": [
   null,
   ""
@@ -692,6 +692,10 @@ return plural;
   "지금 바로 가기"
  ],
  "Grow": [
+  null,
+  ""
+ ],
+ "Grow Content": [
   null,
   ""
  ],
@@ -848,10 +852,6 @@ return plural;
   "마운트 포인트"
  ],
  "Mount at boot": [
-  null,
-  ""
- ],
- "Mount options": [
   null,
   ""
  ],
@@ -1315,6 +1315,10 @@ return plural;
   null,
   ""
  ],
+ "Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase.": [
+  null,
+  ""
+ ],
  "Running": [
   null,
   "작동중"
@@ -1326,6 +1330,14 @@ return plural;
  "Save": [
   null,
   "저장"
+ ],
+ "Save space by compressing individual blocks with LZ4": [
+  null,
+  ""
+ ],
+ "Save space by storing identical data blocks just once": [
+  null,
+  ""
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
@@ -1368,6 +1380,10 @@ return plural;
   "축소 "
  ],
  "Shrink Logical Volume": [
+  null,
+  ""
+ ],
+ "Shrink Volume": [
   null,
   ""
  ],
@@ -1579,6 +1595,10 @@ return plural;
   null,
   ""
  ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  ""
+ ],
  "This volume needs to be activated before it can be resized.": [
   null,
   ""
@@ -1739,7 +1759,15 @@ return plural;
   null,
   "볼륨 그룹 "
  ],
+ "Volume size is $0. Content size is $1.": [
+  null,
+  ""
+ ],
  "Waiting for other software management operations to finish": [
+  null,
+  ""
+ ],
+ "Warning": [
   null,
   ""
  ],

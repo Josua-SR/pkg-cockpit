@@ -67,6 +67,10 @@ return plural;
   "language": "my",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Package": [
+  "$0 Packages",
+  ""
+ ],
  "$0 is not available from any repository.": [
   null,
   ""
@@ -151,6 +155,10 @@ return plural;
   null,
   ""
  ],
+ "Fridays": [
+  null,
+  ""
+ ],
  "Ignore": [
   null,
   ""
@@ -196,6 +204,10 @@ return plural;
   ""
  ],
  "Loading available updates, please wait...": [
+  null,
+  ""
+ ],
+ "Mondays": [
   null,
   ""
  ],
@@ -263,6 +275,10 @@ return plural;
   null,
   ""
  ],
+ "Saturdays": [
+  null,
+  ""
+ ],
  "Set up": [
   null,
   ""
@@ -287,15 +303,11 @@ return plural;
   null,
   ""
  ],
+ "Sundays": [
+  null,
+  ""
+ ],
  "System is up to date": [
-  null,
-  ""
- ],
- "The following packages were recently updated:": [
-  null,
-  ""
- ],
- "The following packages were updated $0:": [
   null,
   ""
  ],
@@ -307,11 +319,19 @@ return plural;
   null,
   ""
  ],
+ "Thursdays": [
+  null,
+  ""
+ ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
   ""
  ],
  "Total size: $0": [
+  null,
+  ""
+ ],
+ "Tuesdays": [
   null,
   ""
  ],
@@ -351,6 +371,10 @@ return plural;
   null,
   ""
  ],
+ "Wednesdays": [
+  null,
+  ""
+ ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
   ""
@@ -376,34 +400,6 @@ return plural;
   ""
  ],
  "every day": [
-  null,
-  ""
- ],
- "on Fridays": [
-  null,
-  ""
- ],
- "on Mondays": [
-  null,
-  ""
- ],
- "on Saturdays": [
-  null,
-  ""
- ],
- "on Sundays": [
-  null,
-  ""
- ],
- "on Thursdays": [
-  null,
-  ""
- ],
- "on Tuesdays": [
-  null,
-  ""
- ],
- "on Wednesdays": [
   null,
   ""
  ],

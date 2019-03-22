@@ -373,7 +373,7 @@ return plural;
  ],
  "Interface Type": [
   null,
-  ""
+  "Тип інтерфейсу"
  ],
  "Launch Remote Viewer": [
   null,
@@ -437,11 +437,11 @@ return plural;
  ],
  "Network Interfaces": [
   null,
-  ""
+  "Інтерфейси мережі"
  ],
  "Network interface settings could not be saved": [
   null,
-  ""
+  "Не вдалося зберегти параметри інтерфейсу мережі"
  ],
  "New Volume Name": [
   null,
@@ -479,6 +479,10 @@ return plural;
   null,
   "Немає віртуальних мереж"
  ],
+ "None (Isolated Network)": [
+  null,
+  "Немає (ізольована мережа)"
+ ],
  "Number of virtual CPUs that gonna be used.": [
   null,
   "Кількість віртуальних процесорів, які слід використовувати."
@@ -499,6 +503,10 @@ return plural;
   null,
   "Гаразд"
  ],
+ "Open": [
+  null,
+  "Відкрита"
+ ],
  "Optimized for:": [
   null,
   "Оптимізовано для:"
@@ -506,6 +514,14 @@ return plural;
  "Overview": [
   null,
   "Огляд"
+ ],
+ "Path": [
+  null,
+  "Шлях"
+ ],
+ "Pause": [
+  null,
+  ""
  ],
  "Persistence": [
   null,
@@ -567,6 +583,10 @@ return plural;
   null,
   "Готуємося до обслуговування"
  ],
+ "Private": [
+  null,
+  "Закрита"
+ ],
  "Protocol": [
   null,
   "Протокол"
@@ -598,6 +618,10 @@ return plural;
  "Restart": [
   null,
   "Перезапустити"
+ ],
+ "Resume": [
+  null,
+  ""
  ],
  "Run": [
   null,

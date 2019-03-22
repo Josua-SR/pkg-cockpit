@@ -69,81 +69,77 @@ return plural;
  },
  "$mtu": [
   null,
-  ""
+  "$mtu"
  ],
  "1 day": [
   null,
-  ""
+  "1 nap"
  ],
  "1 hour": [
   null,
-  ""
+  "1 óra"
  ],
  "1 week": [
   null,
-  ""
+  "1 hét"
  ],
  "5 minutes": [
   null,
-  ""
+  "5 perc"
  ],
  "6 hours": [
   null,
-  ""
+  "6 óra"
  ],
  "802.3ad": [
   null,
-  ""
+  "802.3ad"
  ],
  "802.3ad LACP": [
   null,
-  ""
+  "802.3ad LACP"
  ],
  "ARP": [
   null,
-  ""
+  "ARP"
  ],
  "ARP Monitoring": [
   null,
-  ""
+  "ARP monitorozás"
  ],
  "ARP Ping": [
   null,
-  ""
+  "ARP ping"
  ],
  "Active": [
   null,
-  ""
+  "Aktív"
  ],
  "Active Backup": [
   null,
-  ""
+  "Aktív biztonsági mentés"
  ],
  "Adaptive load balancing": [
   null,
-  ""
+  "Adaptív terheléselosztás"
  ],
  "Adaptive transmit load balancing": [
   null,
-  ""
+  "Adaptív átviteli terheléselosztás"
  ],
  "Add $0": [
   null,
-  ""
+  "$0 hozzáadása"
  ],
  "Add Bond": [
   null,
-  ""
+  "Bond hozzáadása"
  ],
  "Add Bridge": [
   null,
-  ""
+  "Híd hozzáadása"
  ],
  "Add Services": [
-  null,
-  ""
- ],
- "Add Services…": [
   null,
   ""
  ],
@@ -573,11 +569,11 @@ return plural;
  ],
  "Off": [
   null,
-  "Kikapcsolva"
+  "Ki"
  ],
  "On": [
   null,
-  "Bekapcsolva"
+  "Be"
  ],
  "Parent": [
   null,

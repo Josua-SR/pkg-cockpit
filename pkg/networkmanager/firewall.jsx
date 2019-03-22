@@ -48,9 +48,6 @@ function EmptyState(props) {
 }
 
 function ServiceRow(props) {
-    if (!props.service.name)
-        return <ListingRow key={props.service.id} columns={["", "", ""]} />;
-
     var tcp = props.service.ports.filter(p => p.protocol.toUpperCase() == 'TCP');
     var udp = props.service.ports.filter(p => p.protocol.toUpperCase() == 'UDP');
 
@@ -85,9 +82,9 @@ function ServiceRow(props) {
         deleteButton
     ];
 
-    var tabs = [
-        { name: _("Details"), renderer: () => <p>{props.service.description}</p> }
-    ];
+    var tabs = [];
+    if (props.service.description)
+        tabs.push({ name: _("Details"), renderer: () => <p>{props.service.description}</p> });
 
     return <ListingRow key={props.service.id}
                        rowId={props.service.id}
@@ -115,7 +112,8 @@ class SearchInput extends React.Component {
     }
 
     render() {
-        return <input id={this.props.id}
+        return <input autoFocus
+                      id={this.props.id}
                       className={this.props.className}
                       onChange={this.onValueChanged} />;
     }
@@ -143,7 +141,12 @@ class AddServicesBody extends React.Component {
 
     componentDidMount() {
         firewall.getAvailableServices()
-                .then(services => this.setState({ services: services }));
+                .then(services => this.setState({
+                    services: services.map(s => {
+                        s.name = s.name || s.id;
+                        return s;
+                    })
+                }));
     }
 
     onFilterChanged(value) {
@@ -322,18 +325,22 @@ export class Firewall extends React.Component {
             addServiceAction = (
                 <OverlayTrigger className="pull-right" placement="top"
                                 overlay={ <Tooltip id="tip-auth">{ _("You are not authorized to modify the firewall.") }</Tooltip> } >
-                    <Button bsStyle="primary" className="pull-right" disabled> {_("Add Services…")} </Button>
+                    <Button bsStyle="primary" className="pull-right" disabled> {_("Add Services")} </Button>
                 </OverlayTrigger>
             );
         } else {
             addServiceAction = (
                 <Button bsStyle="primary" onClick={this.open} className="pull-right">
-                    {_("Add Services…")}
+                    {_("Add Services")}
                 </Button>
             );
         }
 
-        var services = [...this.state.firewall.enabledServices].map(id => this.state.firewall.services[id]);
+        var services = [...this.state.firewall.enabledServices].map(id => {
+            const service = this.state.firewall.services[id];
+            service.name = service.name || id;
+            return service;
+        });
         services.sort((a, b) => a.name.localeCompare(b.name));
 
         var enabled = this.state.pendingTarget !== null ? this.state.pendingTarget : this.state.firewall.enabled;
@@ -341,7 +348,7 @@ export class Firewall extends React.Component {
         return (
             <div className="container-fluid page-ct">
                 <ol className="breadcrumb">
-                    <li><a onClick={go_up}>{_("Networking")}</a></li>
+                    <li><a tabIndex="0" onClick={go_up}>{_("Networking")}</a></li>
                     <li className="active">{_("Firewall")}</li>
                 </ol>
                 <h1>

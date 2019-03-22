@@ -71,6 +71,10 @@ return plural;
   null,
   ""
  ],
+ "Activate": [
+  null,
+  "Aktifleştir"
+ ],
  "Add": [
   null,
   "Ekle"
@@ -101,7 +105,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "Otomatik"
+  ""
  ],
  "Available": [
   null,
@@ -121,7 +125,7 @@ return plural;
  ],
  "CPU Type": [
   null,
-  "Tip"
+  ""
  ],
  "Cancel": [
   null,
@@ -181,7 +185,7 @@ return plural;
  ],
  "Create Storage Pool": [
   null,
-  "Depolama"
+  ""
  ],
  "Create VM": [
   null,
@@ -195,11 +199,35 @@ return plural;
   null,
   ""
  ],
+ "DHCP Range": [
+  null,
+  ""
+ ],
+ "Deactivate": [
+  null,
+  "Deaktifleştir"
+ ],
  "Delete": [
   null,
   "Sil"
  ],
+ "Delete Content": [
+  null,
+  ""
+ ],
+ "Delete Storage Pool $0": [
+  null,
+  ""
+ ],
  "Delete associated storage files:": [
+  null,
+  ""
+ ],
+ "Delete the Volumes inside this Pool": [
+  null,
+  ""
+ ],
+ "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
   null,
   ""
  ],
@@ -221,11 +249,11 @@ return plural;
  ],
  "Disk failed to be attached": [
   null,
-  "tuned'i etkinleştirme başarısız"
+  ""
  ],
  "Disk failed to be created": [
   null,
-  "tuned'i etkinleştirme başarısız"
+  ""
  ],
  "Disks": [
   null,
@@ -243,6 +271,14 @@ return plural;
   null,
   ""
  ],
+ "Existing Disk Image": [
+  null,
+  ""
+ ],
+ "Existing disk image on host's file system": [
+  null,
+  ""
+ ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
   ""
@@ -251,13 +287,9 @@ return plural;
   null,
   ""
  ],
- "Filesystem": [
-  null,
-  ""
- ],
  "Filesystem Directory": [
   null,
-  "Dosya sistemi tipi"
+  ""
  ],
  "Force Restart": [
   null,
@@ -271,9 +303,17 @@ return plural;
   null,
   "Biçimlendir"
  ],
+ "Forwarding mode": [
+  null,
+  ""
+ ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
   ""
+ ],
+ "General": [
+  null,
+  "Genel"
  ],
  "GiB": [
   null,
@@ -297,9 +337,17 @@ return plural;
  ],
  "Host should not be empty": [
   null,
-  "İsim boş olamaz"
+  ""
  ],
  "INSTALL VM action failed": [
+  null,
+  ""
+ ],
+ "IPv4 Address": [
+  null,
+  ""
+ ],
+ "IPv6 Address": [
   null,
   ""
  ],
@@ -323,6 +371,10 @@ return plural;
   null,
   ""
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Invalid filename": [
   null,
   ""
@@ -335,15 +387,23 @@ return plural;
   null,
   ""
  ],
+ "Local Install Media": [
+  null,
+  ""
+ ],
  "MAC Address": [
   null,
   ""
  ],
  "Mac Address": [
   null,
-  "Adres"
+  ""
  ],
  "Manual Connection": [
+  null,
+  ""
+ ],
+ "Maximum Transmission Unit": [
   null,
   ""
  ],
@@ -354,10 +414,6 @@ return plural;
  "Memory": [
   null,
   "Bellek"
- ],
- "Memory should be positive number": [
-  null,
-  ""
  ],
  "MiB": [
   null,
@@ -383,19 +439,23 @@ return plural;
   null,
   ""
  ],
- "Name should not consist of empty characters only": [
+ "Name: ": [
+  null,
+  ""
+ ],
+ "Netmask": [
   null,
   ""
  ],
  "Network File System": [
   null,
-  "Dosya sistemi yok"
+  ""
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "Ağ"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
   ""
  ],
@@ -435,6 +495,10 @@ return plural;
   null,
   ""
  ],
+ "No network is defined on this host": [
+  null,
+  ""
+ ],
  "No storage pool is defined on this host": [
   null,
   ""
@@ -443,7 +507,19 @@ return plural;
   null,
   ""
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "OS Vendor": [
+  null,
+  ""
+ ],
+ "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
+  null,
+  ""
+ ],
+ "Open": [
   null,
   ""
  ],
@@ -454,6 +530,10 @@ return plural;
  "Overview": [
   null,
   "Servis"
+ ],
+ "Path": [
+  null,
+  ""
  ],
  "Path on host's filesystem": [
   null,
@@ -468,6 +548,10 @@ return plural;
   ""
  ],
  "Persistence": [
+  null,
+  ""
+ ],
+ "Persistent": [
   null,
   ""
  ],
@@ -496,6 +580,14 @@ return plural;
   ""
  ],
  "Preferred number of sockets to expose to the guest.": [
+  null,
+  ""
+ ],
+ "Prefix": [
+  null,
+  ""
+ ],
+ "Private": [
   null,
   ""
  ],
@@ -528,6 +620,10 @@ return plural;
   "Yeniden başlat"
  ],
  "Run": [
+  null,
+  ""
+ ],
+ "Run when host boots": [
   null,
   ""
  ],
@@ -585,13 +681,13 @@ return plural;
  ],
  "Source Path": [
   null,
-  "Host"
+  ""
  ],
  "Source path should not be empty": [
   null,
-  "İsim boş olamaz"
+  ""
  ],
- "Source should start with https, ftp or nfs protocol": [
+ "Source should start with http, ftp or nfs protocol": [
   null,
   ""
  ],
@@ -603,13 +699,9 @@ return plural;
   null,
   ""
  ],
- "Start the VM to see disk statistics.": [
-  null,
-  ""
- ],
  "Startup": [
   null,
-  "Başlat"
+  ""
  ],
  "State": [
   null,
@@ -617,27 +709,35 @@ return plural;
  ],
  "Storage Pool Name": [
   null,
-  "Depolama"
+  ""
  ],
  "Storage Pool failed to be created": [
   null,
   ""
  ],
+ "Storage Pool failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool failed to get deactivated": [
+  null,
+  ""
+ ],
  "Storage Pools": [
   null,
-  "Depolama"
+  ""
  ],
  "Storage Size": [
   null,
   ""
  ],
- "Storage Size should not be negative number": [
+ "Storage Volumes": [
   null,
   ""
  ],
- "Storage Volumes": [
+ "Storage Volumes could not be deleted": [
   null,
-  "Depolama"
+  ""
  ],
  "System": [
   null,
@@ -645,11 +745,15 @@ return plural;
  ],
  "Target Path": [
   null,
-  "Host"
+  ""
  ],
  "Target path should not be empty": [
   null,
-  "İsim boş olamaz"
+  ""
+ ],
+ "The Storage Pool could not be deleted": [
+  null,
+  ""
  ],
  "The VM crashed.": [
   null,
@@ -723,10 +827,6 @@ return plural;
   null,
   ""
  ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  ""
- ],
  "Usage": [
   null,
   ""
@@ -738,6 +838,10 @@ return plural;
  "Used": [
   null,
   "Kullanılmış"
+ ],
+ "Used by": [
+  null,
+  ""
  ],
  "VCPU settings could not be saved": [
   null,
@@ -885,7 +989,7 @@ return plural;
  ],
  "inactive": [
   null,
-  "Aktif değil"
+  ""
  ],
  "mcast": [
   null,

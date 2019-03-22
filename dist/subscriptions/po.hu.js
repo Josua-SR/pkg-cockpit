@@ -77,11 +77,11 @@ return plural;
  ],
  "Access denied": [
   null,
-  ""
+  "Hozzáférés megtagadva"
  ],
  "Activation Key": [
   null,
-  ""
+  "Aktiválási kulcs"
  ],
  "Architecture": [
   null,

@@ -69,19 +69,19 @@ return plural;
  },
  " (shared with the OS)": [
   null,
-  ""
+  " (megosztva az OS-sel)"
  ],
  "$0 shares": [
   null,
-  ""
+  "$0 megosztás"
  ],
  "${hip}:${hport} -> $cport": [
   null,
-  ""
+  "${hip}:${hport} -> $cport"
  ],
  "Add Additional Storage": [
   null,
-  ""
+  "További tároló hozzáadása"
  ],
  "Add Storage": [
   null,
@@ -542,7 +542,7 @@ return plural;
  ],
  "Off": [
   null,
-  "Kikapcsolva"
+  "Ki"
  ],
  "Ok": [
   null,
@@ -550,7 +550,7 @@ return plural;
  ],
  "On": [
   null,
-  "Bekapcsolva"
+  "Be"
  ],
  "On Failure": [
   null,

@@ -371,6 +371,10 @@ return plural;
   null,
   "Instale"
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Launch Remote Viewer": [
   null,
   "Iniciar o Visualizador Remoto"
@@ -431,17 +435,13 @@ return plural;
   null,
   "Nome"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "Tipo de rede"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
-  "As configurações de rede não puderam ser salvas"
- ],
- "Networks": [
-  null,
-  "Networks"
+  ""
  ],
  "New Volume Name": [
   null,
@@ -479,6 +479,10 @@ return plural;
   null,
   "Nenhuma rede virtual"
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "Number of virtual CPUs that gonna be used.": [
   null,
   "Número de CPUs virtuais que serão usadas."
@@ -498,6 +502,10 @@ return plural;
  "Ok": [
   null,
   "Ok"
+ ],
+ "Open": [
+  null,
+  ""
  ],
  "Optimized for:": [
   null,
@@ -567,6 +575,10 @@ return plural;
   null,
   "Preparando-se para manutenção"
  ],
+ "Private": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protocolo"
@@ -606,6 +618,10 @@ return plural;
  "Run Here": [
   null,
   "Rodar aqui"
+ ],
+ "Run when host boots": [
+  null,
+  ""
  ],
  "Running Since:": [
   null,

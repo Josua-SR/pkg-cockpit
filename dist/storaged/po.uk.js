@@ -699,7 +699,7 @@ return plural;
  ],
  "Grow Content": [
   null,
-  ""
+  "Збільшити вміст"
  ],
  "Grow Logical Volume": [
   null,
@@ -1319,7 +1319,7 @@ return plural;
  ],
  "Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
-  ""
+  "Зміна розмірів зашифрованої системи потребує розблокування диска. Будь ласка, вкажіть поточний пароль до диска."
  ],
  "Running": [
   null,
@@ -1387,7 +1387,7 @@ return plural;
  ],
  "Shrink Volume": [
   null,
-  ""
+  "Стиснути том"
  ],
  "Size": [
   null,
@@ -1599,7 +1599,7 @@ return plural;
  ],
  "This logical volume is not completely used by its content.": [
   null,
-  ""
+  "Місце на цьому логічному томі не повністю використано даними, які на ньому зберігаються."
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
@@ -1763,7 +1763,7 @@ return plural;
  ],
  "Volume size is $0. Content size is $1.": [
   null,
-  ""
+  "Розмір тому — $0. Розмір даних — $1."
  ],
  "Waiting for other software management operations to finish": [
   null,
@@ -1771,7 +1771,7 @@ return plural;
  ],
  "Warning": [
   null,
-  ""
+  "Попередження"
  ],
  "What if tang-show-keys is not available?": [
   null,

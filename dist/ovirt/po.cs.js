@@ -373,7 +373,7 @@ return plural;
  ],
  "Interface Type": [
   null,
-  ""
+  "Typ rozhraní"
  ],
  "Launch Remote Viewer": [
   null,
@@ -437,11 +437,11 @@ return plural;
  ],
  "Network Interfaces": [
   null,
-  ""
+  "Síťová rozhraní"
  ],
  "Network interface settings could not be saved": [
   null,
-  ""
+  "Nastavení síťového rozhraní se nepodařilo uložit"
  ],
  "New Volume Name": [
   null,
@@ -479,6 +479,10 @@ return plural;
   null,
   "Žádné virtuální sítě"
  ],
+ "None (Isolated Network)": [
+  null,
+  "Žádné (izolovaná síť)"
+ ],
  "Number of virtual CPUs that gonna be used.": [
   null,
   "Počet virtuálních procesorů které mají být použity."
@@ -499,6 +503,10 @@ return plural;
   null,
   "Ok"
  ],
+ "Open": [
+  null,
+  "Otevřít"
+ ],
  "Optimized for:": [
   null,
   "Optimalizováno pro:"
@@ -506,6 +514,14 @@ return plural;
  "Overview": [
   null,
   "Přehled"
+ ],
+ "Path": [
+  null,
+  "Popis umístění"
+ ],
+ "Pause": [
+  null,
+  ""
  ],
  "Persistence": [
   null,
@@ -567,6 +583,10 @@ return plural;
   null,
   "Příprava na údržbu"
  ],
+ "Private": [
+  null,
+  "Soukromé"
+ ],
  "Protocol": [
   null,
   "Protokol"
@@ -598,6 +618,10 @@ return plural;
  "Restart": [
   null,
   "Restartovat"
+ ],
+ "Resume": [
+  null,
+  ""
  ],
  "Run": [
   null,

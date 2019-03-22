@@ -69,15 +69,19 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  ""
+  "A(z) $0 elérhető a legtöbb operációs rendszer számára. A telepítéshez keressen rá a GNOME Szoftverekben vagy futtassa a következőt:"
+ ],
+ "Activate": [
+  null,
+  "Aktiválás"
  ],
  "Add": [
   null,
-  ""
+  "Hozzáadás"
  ],
  "Add Disk": [
   null,
-  ""
+  "Lemez hozzáadása"
  ],
  "Address": [
   null,
@@ -195,11 +199,35 @@ return plural;
   null,
   ""
  ],
+ "DHCP Range": [
+  null,
+  ""
+ ],
+ "Deactivate": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   ""
  ],
+ "Delete Content": [
+  null,
+  ""
+ ],
+ "Delete Storage Pool $0": [
+  null,
+  ""
+ ],
  "Delete associated storage files:": [
+  null,
+  ""
+ ],
+ "Delete the Volumes inside this Pool": [
+  null,
+  ""
+ ],
+ "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
   null,
   ""
  ],
@@ -221,11 +249,11 @@ return plural;
  ],
  "Disk failed to be attached": [
   null,
-  "Tuned alkalmazás engedélyezése sikertelen"
+  ""
  ],
  "Disk failed to be created": [
   null,
-  "Tuned alkalmazás engedélyezése sikertelen"
+  ""
  ],
  "Disks": [
   null,
@@ -243,15 +271,19 @@ return plural;
   null,
   ""
  ],
+ "Existing Disk Image": [
+  null,
+  ""
+ ],
+ "Existing disk image on host's file system": [
+  null,
+  ""
+ ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
   ""
  ],
  "File": [
-  null,
-  ""
- ],
- "Filesystem": [
   null,
   ""
  ],
@@ -271,7 +303,15 @@ return plural;
   null,
   ""
  ],
+ "Forwarding mode": [
+  null,
+  ""
+ ],
  "GET HYPERVISOR MAX VCPU action failed": [
+  null,
+  ""
+ ],
+ "General": [
   null,
   ""
  ],
@@ -303,6 +343,14 @@ return plural;
   null,
   ""
  ],
+ "IPv4 Address": [
+  null,
+  ""
+ ],
+ "IPv6 Address": [
+  null,
+  ""
+ ],
  "Immediately Start VM": [
   null,
   ""
@@ -323,6 +371,10 @@ return plural;
   null,
   ""
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Invalid filename": [
   null,
   ""
@@ -332,6 +384,10 @@ return plural;
   ""
  ],
  "Loading ...": [
+  null,
+  ""
+ ],
+ "Local Install Media": [
   null,
   ""
  ],
@@ -347,15 +403,15 @@ return plural;
   null,
   ""
  ],
+ "Maximum Transmission Unit": [
+  null,
+  ""
+ ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
   ""
  ],
  "Memory": [
-  null,
-  ""
- ],
- "Memory should be positive number": [
   null,
   ""
  ],
@@ -383,7 +439,11 @@ return plural;
   null,
   ""
  ],
- "Name should not consist of empty characters only": [
+ "Name: ": [
+  null,
+  ""
+ ],
+ "Netmask": [
   null,
   ""
  ],
@@ -391,11 +451,19 @@ return plural;
   null,
   ""
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
   ""
  ],
- "Network settings could not be saved": [
+ "Network failed to get activated": [
+  null,
+  ""
+ ],
+ "Network failed to get deactivated": [
+  null,
+  ""
+ ],
+ "Network interface settings could not be saved": [
   null,
   ""
  ],
@@ -435,6 +503,10 @@ return plural;
   null,
   ""
  ],
+ "No network is defined on this host": [
+  null,
+  ""
+ ],
  "No storage pool is defined on this host": [
   null,
   ""
@@ -443,7 +515,19 @@ return plural;
   null,
   ""
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "OS Vendor": [
+  null,
+  ""
+ ],
+ "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
+  null,
+  ""
+ ],
+ "Open": [
   null,
   ""
  ],
@@ -452,6 +536,10 @@ return plural;
   ""
  ],
  "Overview": [
+  null,
+  ""
+ ],
+ "Path": [
   null,
   ""
  ],
@@ -468,6 +556,10 @@ return plural;
   ""
  ],
  "Persistence": [
+  null,
+  ""
+ ],
+ "Persistent": [
   null,
   ""
  ],
@@ -496,6 +588,14 @@ return plural;
   ""
  ],
  "Preferred number of sockets to expose to the guest.": [
+  null,
+  ""
+ ],
+ "Prefix": [
+  null,
+  ""
+ ],
+ "Private": [
   null,
   ""
  ],
@@ -528,6 +628,10 @@ return plural;
   ""
  ],
  "Run": [
+  null,
+  ""
+ ],
+ "Run when host boots": [
   null,
   ""
  ],
@@ -591,7 +695,7 @@ return plural;
   null,
   ""
  ],
- "Source should start with https, ftp or nfs protocol": [
+ "Source should start with http, ftp or nfs protocol": [
   null,
   ""
  ],
@@ -600,10 +704,6 @@ return plural;
   ""
  ],
  "Start pool when host boots": [
-  null,
-  ""
- ],
- "Start the VM to see disk statistics.": [
   null,
   ""
  ],
@@ -623,6 +723,14 @@ return plural;
   null,
   ""
  ],
+ "Storage Pool failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool failed to get deactivated": [
+  null,
+  ""
+ ],
  "Storage Pools": [
   null,
   ""
@@ -631,11 +739,11 @@ return plural;
   null,
   ""
  ],
- "Storage Size should not be negative number": [
+ "Storage Volumes": [
   null,
   ""
  ],
- "Storage Volumes": [
+ "Storage Volumes could not be deleted": [
   null,
   ""
  ],
@@ -648,6 +756,10 @@ return plural;
   ""
  ],
  "Target path should not be empty": [
+  null,
+  ""
+ ],
+ "The Storage Pool could not be deleted": [
   null,
   ""
  ],
@@ -723,10 +835,6 @@ return plural;
   null,
   ""
  ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  ""
- ],
  "Usage": [
   null,
   ""
@@ -736,6 +844,10 @@ return plural;
   ""
  ],
  "Used": [
+  null,
+  ""
+ ],
+ "Used by": [
   null,
   ""
  ],

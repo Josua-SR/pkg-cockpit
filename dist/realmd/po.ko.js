@@ -67,10 +67,6 @@ return plural;
   "language": "ko",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
-  null,
-  "$0 로컬 인증서가 있는 사용자만 시스템에 로그인할 수 있습니다. 이 경우 다른 서비스가 DNS 확인 설정으로 적용될 수 있으며 신뢰할 수 있는 CA 목록이 변경될 수 있습니다."
- ],
  "$0 is not available from any repository.": [
   null,
   "$0은/는 리포지터리에서 사용할 수 없습니다. "
@@ -87,13 +83,9 @@ return plural;
   null,
   "관리자 암호"
  ],
- "Are you sure you want to leave the '$0' domain?": [
+ "After leaving the domain, only users with local credentials will be able to log into this machine. This may also affect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  "'$0' 도메인을 종료하시겠습니까?"
- ],
- "Are you sure you want to leave this domain?": [
-  null,
-  "이 도메인을 종료하시겠습니까? "
+  ""
  ],
  "Authentication": [
   null,
@@ -111,9 +103,21 @@ return plural;
   null,
   "설치된 소프트웨어 확인 중 "
  ],
+ "Client Software": [
+  null,
+  ""
+ ],
  "Computer OU": [
   null,
   "컴퓨터 OU"
+ ],
+ "Contacted domain": [
+  null,
+  ""
+ ],
+ "Domain": [
+  null,
+  "도메인 "
  ],
  "Domain $0 could not be contacted": [
   null,
@@ -171,11 +175,11 @@ return plural;
   null,
   ""
  ],
- "Leave": [
+ "Leave Domain": [
   null,
   ""
  ],
- "Leave Domain": [
+ "Login Format": [
   null,
   ""
  ],
@@ -215,6 +219,10 @@ return plural;
   null,
   " $0 삭제 중 "
  ],
+ "Server Software": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
   ""
@@ -234,6 +242,10 @@ return plural;
  "User Password": [
   null,
   "사용자 암호 "
+ ],
+ "Validating address": [
+  null,
+  ""
  ],
  "Waiting for other software management operations to finish": [
   null,

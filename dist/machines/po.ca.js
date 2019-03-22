@@ -71,6 +71,10 @@ return plural;
   null,
   "$0 està disponible per a la majoria de sistemes operatius. Per instal·lar-ho, cerqueu-ho a GNOME Software o executeu el següent:"
  ],
+ "Activate": [
+  null,
+  "Activa"
+ ],
  "Add": [
   null,
   "Afegeix"
@@ -89,7 +93,7 @@ return plural;
  ],
  "Always attach": [
   null,
-  "Sempre"
+  ""
  ],
  "Apply": [
   null,
@@ -101,7 +105,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "Inici automàtic"
+  ""
  ],
  "Available": [
   null,
@@ -109,7 +113,7 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "Ordre d'arrencada"
+  ""
  ],
  "Bus": [
   null,
@@ -121,7 +125,7 @@ return plural;
  ],
  "CPU Type": [
   null,
-  "Tipus de CPU"
+  ""
  ],
  "Cancel": [
   null,
@@ -181,7 +185,7 @@ return plural;
  ],
  "Create Storage Pool": [
   null,
-  "Restableix l'agrupació d'emmagatzematge"
+  ""
  ],
  "Create VM": [
   null,
@@ -195,13 +199,37 @@ return plural;
   null,
   ""
  ],
+ "DHCP Range": [
+  null,
+  ""
+ ],
+ "Deactivate": [
+  null,
+  "Desactiva"
+ ],
  "Delete": [
   null,
   "Suprimeix"
  ],
+ "Delete Content": [
+  null,
+  ""
+ ],
+ "Delete Storage Pool $0": [
+  null,
+  ""
+ ],
  "Delete associated storage files:": [
   null,
   "Suprimeix els fitxers d'emmagatzematge associats:"
+ ],
+ "Delete the Volumes inside this Pool": [
+  null,
+  ""
+ ],
+ "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
+  null,
+  ""
  ],
  "Device": [
   null,
@@ -241,7 +269,15 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "Màquina emulada"
+  ""
+ ],
+ "Existing Disk Image": [
+  null,
+  ""
+ ],
+ "Existing disk image on host's file system": [
+  null,
+  ""
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -251,13 +287,9 @@ return plural;
   null,
   "Fitxer"
  ],
- "Filesystem": [
-  null,
-  "Sistema de fitxers"
- ],
  "Filesystem Directory": [
   null,
-  "Tipus de sistema de fitxers"
+  ""
  ],
  "Force Restart": [
   null,
@@ -271,9 +303,17 @@ return plural;
   null,
   "Formata"
  ],
+ "Forwarding mode": [
+  null,
+  ""
+ ],
  "GET HYPERVISOR MAX VCPU action failed": [
   null,
   ""
+ ],
+ "General": [
+  null,
+  "General"
  ],
  "GiB": [
   null,
@@ -297,11 +337,19 @@ return plural;
  ],
  "Host should not be empty": [
   null,
-  "El nom no pot estar en blanc"
+  ""
  ],
  "INSTALL VM action failed": [
   null,
   "Ha fallat l'acció INSTALL VM"
+ ],
+ "IPv4 Address": [
+  null,
+  ""
+ ],
+ "IPv6 Address": [
+  null,
+  ""
  ],
  "Immediately Start VM": [
   null,
@@ -323,6 +371,10 @@ return plural;
   null,
   "L'origen d'instal·lació no pot estar en blanc"
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Invalid filename": [
   null,
   "nom de fitxer no vàlid"
@@ -334,6 +386,10 @@ return plural;
  "Loading ...": [
   null,
   "S'està carregant..."
+ ],
+ "Local Install Media": [
+  null,
+  ""
  ],
  "MAC Address": [
   null,
@@ -347,6 +403,10 @@ return plural;
   null,
   "Connexió manual"
  ],
+ "Maximum Transmission Unit": [
+  null,
+  ""
+ ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
   ""
@@ -354,10 +414,6 @@ return plural;
  "Memory": [
   null,
   "Memòria"
- ],
- "Memory should be positive number": [
-  null,
-  ""
  ],
  "MiB": [
   null,
@@ -383,19 +439,23 @@ return plural;
   null,
   "El nom no pot estar en blanc"
  ],
- "Name should not consist of empty characters only": [
+ "Name: ": [
+  null,
+  ""
+ ],
+ "Netmask": [
   null,
   ""
  ],
  "Network File System": [
   null,
-  "Sense sistema de fitxers"
+  ""
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
   ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
   ""
  ],
@@ -435,6 +495,10 @@ return plural;
   null,
   "No s'ha definit cap interfície de xarxa per aquesta MV"
  ],
+ "No network is defined on this host": [
+  null,
+  ""
+ ],
  "No storage pool is defined on this host": [
   null,
   ""
@@ -443,7 +507,19 @@ return plural;
   null,
   ""
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "OS Vendor": [
+  null,
+  ""
+ ],
+ "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
+  null,
+  ""
+ ],
+ "Open": [
   null,
   ""
  ],
@@ -455,9 +531,13 @@ return plural;
   null,
   "Visió de conjunt"
  ],
+ "Path": [
+  null,
+  "Camí"
+ ],
  "Path on host's filesystem": [
   null,
-  "Camí al fitxer ISO al sistema de fitxers de l'amfitrió"
+  ""
  ],
  "Path to ISO file on host's file system": [
   null,
@@ -469,7 +549,11 @@ return plural;
  ],
  "Persistence": [
   null,
-  "Volums persistents"
+  ""
+ ],
+ "Persistent": [
+  null,
+  ""
  ],
  "Please enter new volume name": [
   null,
@@ -496,6 +580,14 @@ return plural;
   "Port"
  ],
  "Preferred number of sockets to expose to the guest.": [
+  null,
+  ""
+ ],
+ "Prefix": [
+  null,
+  ""
+ ],
+ "Private": [
   null,
   ""
  ],
@@ -530,6 +622,10 @@ return plural;
  "Run": [
   null,
   "Executa"
+ ],
+ "Run when host boots": [
+  null,
+  ""
  ],
  "SPICE": [
   null,
@@ -585,13 +681,13 @@ return plural;
  ],
  "Source Path": [
   null,
-  "Origen"
+  ""
  ],
  "Source path should not be empty": [
   null,
-  "El nom no pot estar en blanc"
+  ""
  ],
- "Source should start with https, ftp or nfs protocol": [
+ "Source should start with http, ftp or nfs protocol": [
   null,
   ""
  ],
@@ -603,13 +699,9 @@ return plural;
   null,
   ""
  ],
- "Start the VM to see disk statistics.": [
-  null,
-  "Inicieu la MV per veure les estadístiques del disc."
- ],
  "Startup": [
   null,
-  "Inicia"
+  ""
  ],
  "State": [
   null,
@@ -617,9 +709,17 @@ return plural;
  ],
  "Storage Pool Name": [
   null,
-  "Agrupació d'emmagatzematge"
+  ""
  ],
  "Storage Pool failed to be created": [
+  null,
+  ""
+ ],
+ "Storage Pool failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool failed to get deactivated": [
   null,
   ""
  ],
@@ -631,11 +731,11 @@ return plural;
   null,
   "Mida de l'emmagatzematge"
  ],
- "Storage Size should not be negative number": [
-  null,
-  "La mida de l'emmagatzematge no pot ser un número negatiu"
- ],
  "Storage Volumes": [
+  null,
+  ""
+ ],
+ "Storage Volumes could not be deleted": [
   null,
   ""
  ],
@@ -645,11 +745,15 @@ return plural;
  ],
  "Target Path": [
   null,
-  "Objectiu"
+  ""
  ],
  "Target path should not be empty": [
   null,
-  "El nom no pot estar en blanc"
+  ""
+ ],
+ "The Storage Pool could not be deleted": [
+  null,
+  ""
  ],
  "The VM crashed.": [
   null,
@@ -723,10 +827,6 @@ return plural;
   null,
   ""
  ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Actualitzeu a una versió més recent de libvirt per visualitzar les estadístiques dels discs"
- ],
  "Usage": [
   null,
   "Ús"
@@ -738,6 +838,10 @@ return plural;
  "Used": [
   null,
   "Utilitzat"
+ ],
+ "Used by": [
+  null,
+  ""
  ],
  "VCPU settings could not be saved": [
   null,

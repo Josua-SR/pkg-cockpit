@@ -371,6 +371,10 @@ return plural;
   null,
   "설치"
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Launch Remote Viewer": [
   null,
   ""
@@ -431,17 +435,13 @@ return plural;
   null,
   "이름"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
   ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
   ""
- ],
- "Networks": [
-  null,
-  "네트워크"
  ],
  "New Volume Name": [
   null,
@@ -479,6 +479,10 @@ return plural;
   null,
   ""
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "Number of virtual CPUs that gonna be used.": [
   null,
   ""
@@ -498,6 +502,10 @@ return plural;
  "Ok": [
   null,
   "확인"
+ ],
+ "Open": [
+  null,
+  ""
  ],
  "Optimized for:": [
   null,
@@ -567,6 +575,10 @@ return plural;
   null,
   ""
  ],
+ "Private": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "프로토콜"
@@ -604,6 +616,10 @@ return plural;
   "실행"
  ],
  "Run Here": [
+  null,
+  ""
+ ],
+ "Run when host boots": [
   null,
   ""
  ],

@@ -67,6 +67,11 @@ return plural;
   "language": "fi",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Package": [
+  "$0 Packages",
+  "",
+  ""
+ ],
  "$0 is not available from any repository.": [
   null,
   ""
@@ -154,6 +159,10 @@ return plural;
   null,
   ""
  ],
+ "Fridays": [
+  null,
+  ""
+ ],
  "Ignore": [
   null,
   "Ohita"
@@ -201,6 +210,10 @@ return plural;
  "Loading available updates, please wait...": [
   null,
   "Ladataan saatavilla olevat päivitykset, odota hetki..."
+ ],
+ "Mondays": [
+  null,
+  ""
  ],
  "Name": [
   null,
@@ -266,6 +279,10 @@ return plural;
   null,
   "Käynnistetään uudelleen"
  ],
+ "Saturdays": [
+  null,
+  ""
+ ],
  "Set up": [
   null,
   ""
@@ -290,17 +307,13 @@ return plural;
   null,
   ""
  ],
+ "Sundays": [
+  null,
+  ""
+ ],
  "System is up to date": [
   null,
   "Järjestelmä on ajan tasalla"
- ],
- "The following packages were recently updated:": [
-  null,
-  "Seuraavat paketit päivitettiin äskettäin:"
- ],
- "The following packages were updated $0:": [
-  null,
-  "Seuraavat paketit päivitettiin $0:"
  ],
  "This system is not registered": [
   null,
@@ -310,11 +323,19 @@ return plural;
   null,
   ""
  ],
+ "Thursdays": [
+  null,
+  ""
+ ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
   ""
  ],
  "Total size: $0": [
+  null,
+  ""
+ ],
+ "Tuesdays": [
   null,
   ""
  ],
@@ -354,6 +375,10 @@ return plural;
   null,
   ""
  ],
+ "Wednesdays": [
+  null,
+  ""
+ ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
   ""
@@ -382,37 +407,9 @@ return plural;
   null,
   "päivittäin"
  ],
- "on Fridays": [
-  null,
-  "perjantaisin"
- ],
- "on Mondays": [
-  null,
-  "maanantaisin"
- ],
- "on Saturdays": [
-  null,
-  "lauantaisin"
- ],
- "on Sundays": [
-  null,
-  "sunnuntaisin"
- ],
- "on Thursdays": [
-  null,
-  "torstaisin"
- ],
- "on Tuesdays": [
-  null,
-  "tiistaisin"
- ],
- "on Wednesdays": [
-  null,
-  "keskiviikkoisin"
- ],
  "security": [
   null,
-  "$1 turvallisuuspäivitys"
+  ""
  ],
  "undefined": [
   null,
