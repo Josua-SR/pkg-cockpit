@@ -18,28 +18,19 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { OverlayTrigger, Tooltip } from "patternfly-react";
 
 import cockpit from 'cockpit';
-import { changeNetworkState } from "../actions/provider-actions.js";
-import VmLastMessage from './vmLastMessage.jsx';
+import { changeNetworkState, getVm } from "../actions/provider-actions.js";
 import { Listing, ListingRow } from 'cockpit-components-listing.jsx';
 import { rephraseUI, vmId } from "../helpers.js";
 import EditNICAction from './nicEdit.jsx';
+import WarningInactive from './warningInactive.jsx';
 import './nicEdit.css';
 
 const _ = cockpit.gettext;
 
-const VmNetworkTab = function ({ vm, dispatch, config, hostDevices, networks }) {
+const VmNetworkTab = function ({ vm, dispatch, config, hostDevices, networks, onAddErrorNotification }) {
     const id = vmId(vm.name);
-
-    const warningInactive = (id) => {
-        return (
-            <OverlayTrigger overlay={ <Tooltip id="tip-network">{ _("Changes will take effect after shutting down the VM") }</Tooltip> } placement='top'>
-                <i id={id} className='pficon pficon-pending' />
-            </OverlayTrigger>
-        );
-    };
 
     const nicLookupByMAC = (interfacesList, mac) => {
         return interfacesList.filter(iface => iface.mac == mac)[0];
@@ -70,7 +61,14 @@ const VmNetworkTab = function ({ vm, dispatch, config, hostDevices, networks }) 
         return (e) => {
             e.stopPropagation();
             if (network.mac) {
-                dispatch(changeNetworkState(vm, network.mac, network.state === 'up' ? 'down' : 'up'));
+                dispatch(changeNetworkState(vm, network.mac, network.state === 'up' ? 'down' : 'up'))
+                        .catch(ex => {
+                            onAddErrorNotification({
+                                text: cockpit.format(_("NIC $0 of VM $1 failed to change state"), network.mac, vm.name),
+                                detail: ex.message, resourceId: vm.id,
+                            });
+                        })
+                        .then(() => dispatch(getVm({ connectionName: vm.connectionName, id:vm.id, name: vm.name })));
             }
         };
     };
@@ -88,7 +86,7 @@ const VmNetworkTab = function ({ vm, dispatch, config, hostDevices, networks }) 
             return (
                 <div id={`${id}-network-${networkId}-type`}>
                     {network.type}
-                    {inactiveNIC && inactiveNIC.type !== network.type && warningInactive(`${id}-network-${networkId}-type-tooltip`)}
+                    {inactiveNIC && inactiveNIC.type !== network.type && <WarningInactive iconId={`${id}-network-${networkId}-type-tooltip`} tooltipId="tip-network" />}
                 </div>
             );
         } },
@@ -97,7 +95,7 @@ const VmNetworkTab = function ({ vm, dispatch, config, hostDevices, networks }) 
             return (
                 <div id={`${id}-network-${networkId}-model`}>
                     {network.model}
-                    {inactiveNIC && inactiveNIC.model !== network.model && warningInactive(`${id}-network-${networkId}-model-tooltip`)}
+                    {inactiveNIC && inactiveNIC.model !== network.model && <WarningInactive iconId={`${id}-network-${networkId}-model-tooltip`} tooltipId="tip-network" />}
                 </div>
             );
         } },
@@ -118,7 +116,7 @@ const VmNetworkTab = function ({ vm, dispatch, config, hostDevices, networks }) 
                 return (
                     <div id={`${id}-network-${networkId}-source`}>
                         {mapSource[network.type](network.source, networkId)}
-                        {inactiveNIC && inactiveNIC.source[inactiveNIC.type] !== network.source[network.type] && warningInactive(`${id}-network-${networkId}-source-tooltip`)}
+                        {inactiveNIC && inactiveNIC.source[inactiveNIC.type] !== network.source[network.type] && <WarningInactive iconId={`${id}-network-${networkId}-source-tooltip`} tooltipId="tip-network" />}
 
                     </div>
                 );
@@ -148,12 +146,9 @@ const VmNetworkTab = function ({ vm, dispatch, config, hostDevices, networks }) 
     ];
 
     let networkId = 1;
-    const currentTab = 'network';
-    const message = (<VmLastMessage vm={vm} dispatch={dispatch} tab={currentTab} />);
 
     return (
         <div className="machines-network-list">
-            {message}
             <Listing compact columnTitles={detailMap.map(target => target.name)} actions={null} emptyCaption=''>
                 {vm.interfaces.sort().map(target => {
                     const columns = detailMap.map(d => {
@@ -179,6 +174,7 @@ const VmNetworkTab = function ({ vm, dispatch, config, hostDevices, networks }) 
 
 VmNetworkTab.propTypes = {
     vm: PropTypes.object.isRequired,
+    onAddErrorNotification: PropTypes.func.isRequired,
 };
 
 export default VmNetworkTab;

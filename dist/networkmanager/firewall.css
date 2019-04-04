@@ -614,33 +614,316 @@ h1 .btn-onoff-ct {
 /* set min-height to the same as max-height, so that the list doesn't shrink
  * when filtering */
 #add-services-dialog .dialog-list-ct {
-    min-height: 230px;
+    height: 100vh;
+    /* Constrain the list to a maximum size of the viewport height - UI chrome */
+    max-height: calc(100vh - 30rem);
+    min-height: 13em;
 }
 
-#add-services-dialog .form-table-ct {
-    margin-bottom: 0.5em;
+@media screen and (min-width: 640px) {
+    /* Add a bit more padding in desktop mode */
+    #add-services-dialog .dialog-list-ct {
+        max-height: calc(100vh - 40rem);
+    }
 }
 
 #add-services-dialog .list-group-item {
+    cursor: default;
+}
+
+#add-services-dialog .list-view-pf-main-info {
+    padding: 1rem 0;
+}
+
+#add-services-dialog .list-view-pf-checkbox {
+    margin: 1rem 1rem 1rem 0;
+}
+
+#add-services-dialog .list-view-pf-view {
+    margin: 0;
+}
+
+#add-services-dialog .list-view-pf-description {
+    flex: auto;
+}
+
+#add-services-dialog .list-group-item-heading {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+#add-services-dialog .list-group-item-text {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#add-services-dialog .service-ports {
+    opacity: 0.75;
+}
+
+#add-services-dialog .service-ports:first-of-type {
+    margin-right: 1em;
+}
+
+#add-services-dialog .spinner-lg {
+    /* (Max-height of dialog-list-ct (above) - spinner size + grid gap) / 2 */
+    margin: calc(((100vh - 40rem) - 30px + 0.5rem) / 2) auto;
+}
+
+#add-services-dialog .toggle-body > .ct-form-layout {
+    margin-left: 1rem;
+}
+
+#add-services-dialog .toggle-body > .ct-form-layout + label {
+    margin-top: 1rem;
+}
+
+#add-services-dialog .toggle-body > .ct-form-layout > .control-label {
+    padding-left: 0;
+}
+
+.form-control.error {
+    border-color: #cc0000;
+}
+
+.form-control.error:hover {
+    border-color: #990000;
+}
+
+.form-control.error:focus {
+    border-color: #990000;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ff3333;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ff3333;
+}
+
+#add-services-dialog .has-error {
+    animation: 300ms error-slide-down ease-in-out;
+    color: #c00;
     padding: 0;
 }
 
-#add-services-dialog .list-group-item label {
-    padding: 10px 15px;
-    margin: 0;
-    width: 100%;
-    cursor: pointer;
+#add-services-dialog .has-error:empty {
+    display: none;
 }
 
-#add-services-dialog .list-group-item input[type="checkbox"] {
-    margin: 0;
-    vertical-align: middle;
+@keyframes error-slide-down {
+    0% {
+        line-height: 0;
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+    }
+    100% {
+        line-height: inherit;
+        height: auto;
+        opacity: 1;
+    }
 }
 /* on-off button styling depends on data-toggle in bootstrap */
 .btn-onoff-ct input {
     position: absolute;
     clip: rect(0, 0, 0, 0);
     pointer-events: none;
+}
+/* Form layout */
+:root {
+  --ct-form-layout-columns: 2;
+}
+.ct-form-layout {
+  align-self: start;
+  display: grid;
+  grid-gap: 5px 10px;
+  grid-template-columns: repeat(var(--ct-form-layout-columns), max-content 1fr);
+  place-items: baseline stretch;
+}
+.ct-form-layout > .control-label {
+  align-self: start;
+  text-align: right;
+}
+.ct-form-layout > :not(.control-label):not(hr):not(.ct-form-layout-split):not(.ct-form-layout-full) {
+  grid-column: 2 / -1;
+}
+.ct-form-layout > :not(.ct-form-layout-relax):not(.spinner) {
+  width: auto;
+}
+.ct-form-layout > hr {
+  border: none;
+  grid-column: 1 / -1;
+  height: 10px;
+  margin: 0;
+  padding: 0;
+}
+.ct-form-layout > input[size],
+.ct-form-layout > .ct-validation-wrapper > input[size] {
+  justify-self: start;
+}
+.ct-form-layout input[type=number] {
+  -webkit-appearance: textarea;
+}
+.ct-form-layout > input,
+.ct-form-layout > .ct-validation-wrapper > input,
+.ct-form-layout > textarea,
+.ct-form-layout > .ct-validation-wrapper > textarea,
+.ct-form-layout > select,
+.ct-form-layout > .ct-validation-wrapper > select,
+.ct-form-layout > .bootstrap-select,
+.ct-form-layout > .ct-validation-wrapper > .bootstrap-select,
+.ct-form-layout > .ct-select,
+.ct-form-layout > .ct-validation-wrapper > .ct-select,
+.ct-form-layout > .dropdown,
+.ct-form-layout > .ct-validation-wrapper > .dropdown,
+.ct-form-layout > .combobox-container,
+.ct-form-layout > .ct-validation-wrapper > .combobox-container,
+.ct-form-layout > fieldset,
+.ct-form-layout > .ct-validation-wrapper > fieldset,
+.ct-form-layout > [role=group],
+.ct-form-layout > .ct-validation-wrapper > [role=group],
+.ct-form-layout > [data-field],
+.ct-form-layout > .ct-validation-wrapper > [data-field],
+.ct-form-layout > .form-group,
+.ct-form-layout > .ct-validation-wrapper > .form-group,
+.ct-form-layout > .btn-group,
+.ct-form-layout > .ct-validation-wrapper > .btn-group,
+.ct-form-layout > label.checkbox,
+.ct-form-layout > .ct-validation-wrapper > label.checkbox,
+.ct-form-layout > label.radio,
+.ct-form-layout > .ct-validation-wrapper > label.radio,
+.ct-form-layout > .checkbox-inline,
+.ct-form-layout > .ct-validation-wrapper > .checkbox-inline,
+.ct-form-layout > .radio-inline,
+.ct-form-layout > .ct-validation-wrapper > .radio-inline {
+  margin-top: -3px;
+  margin-bottom: 3px;
+  min-height: 26px;
+}
+.ct-form-layout > :not(.ct-form-layout-relax):not(.spinner) {
+  width: auto !important;
+}
+.ct-form-layout > [role=group],
+.ct-form-layout > .ct-validation-wrapper > [role=group] {
+  align-content: center;
+  align-self: start;
+  display: grid;
+  grid-gap: 5px;
+  justify-content: start;
+  grid-template-columns: repeat(2, auto);
+}
+.ct-form-layout > [role=group].ct-form-layout-vertical > :not(.ct-form-layout-split),
+.ct-form-layout > .ct-validation-wrapper > [role=group].ct-form-layout-vertical > :not(.ct-form-layout-split) {
+  grid-column: 1 / -1;
+}
+.ct-form-layout > [role=group] > .checkbox,
+.ct-form-layout > .ct-validation-wrapper > [role=group] > .checkbox,
+.ct-form-layout > [role=group] > .radio,
+.ct-form-layout > .ct-validation-wrapper > [role=group] > .radio {
+  margin: 0;
+}
+.ct-form-layout > [role=group]:not(.ct-form-layout-relax) > .dropdown,
+.ct-form-layout > .ct-validation-wrapper > [role=group]:not(.ct-form-layout-relax) > .dropdown,
+.ct-form-layout > .ct-validation-wrapper > [data-field]:not(.ct-form-layout-relax) > .dropdown {
+  width: auto !important;
+}
+.ct-form-layout > [role=group]:not(.ct-form-layout-relax) > .ct-select,
+.ct-form-layout > .ct-validation-wrapper > [role=group]:not(.ct-form-layout-relax) > .ct-select,
+.ct-form-layout > .ct-validation-wrapper > [data-field]:not(.ct-form-layout-relax) > .ct-select {
+  width: 100%;
+}
+.ct-form-layout label.checkbox,
+.ct-form-layout label.radio,
+.ct-form-layout .checkbox > label,
+.ct-form-layout .radio > label,
+.ct-form-layout .checkbox-inline,
+.ct-form-layout .radio-inline {
+  display: inline-flex;
+  padding-left: 0;
+  padding-right: 10px;
+  align-items: center;
+}
+.ct-form-layout label.checkbox > input[type="checkbox"],
+.ct-form-layout label.radio > input[type="checkbox"],
+.ct-form-layout .checkbox > label > input[type="checkbox"],
+.ct-form-layout .radio > label > input[type="checkbox"],
+.ct-form-layout .checkbox-inline > input[type="checkbox"],
+.ct-form-layout .radio-inline > input[type="checkbox"],
+.ct-form-layout label.checkbox > input[type="radio"],
+.ct-form-layout label.radio > input[type="radio"],
+.ct-form-layout .checkbox > label > input[type="radio"],
+.ct-form-layout .radio > label > input[type="radio"],
+.ct-form-layout .checkbox-inline > input[type="radio"],
+.ct-form-layout .radio-inline > input[type="radio"] {
+  height: 16px;
+  margin: 5px 0;
+  margin-right: 0.5rem;
+  position: static;
+}
+.ct-form-layout fieldset > .checkbox:first-child,
+.ct-form-layout fieldset > .radio:first-child {
+  margin-top: 0;
+}
+.ct-form-layout fieldset > .checkbox:last-child,
+.ct-form-layout fieldset > .radio:last-child {
+  margin-bottom: 0;
+}
+.ct-form-layout .list-group {
+  margin-bottom: 5px;
+}
+.ct-form-layout > .ct-form-layout-split {
+  grid-column: auto / auto;
+}
+.ct-form-layout > .ct-form-layout-full {
+  grid-column: 1 / -1;
+}
+.ct-form-layout > .has-success:not(.form-group),
+.ct-form-layout > .has-warning:not(.form-group),
+.ct-form-layout > .has-error:not(.form-group) {
+  position: relative;
+  top: -0.5rem;
+}
+.ct-form-layout > .help-block {
+  position: relative;
+  top: -0.5rem;
+}
+.modal .ct-form-layout > .control-label {
+  padding-left: 0.5rem;
+}
+.ct-form-layout-stretch {
+  justify-content: stretch !important;
+}
+.ct-form-layout-relax {
+  justify-self: start;
+}
+.modal-dialog.modal-sm .ct-form-layout > .ct-form-layout-split {
+  grid-column: 2 / -1;
+}
+@media (max-width: 640px) {
+  .listing-ct-body,
+  .modal {
+    --ct-form-layout-columns: 1;
+  }
+}
+@media (max-width: 480px) {
+  .listing-ct-body .ct-form-layout,
+  .modal .ct-form-layout {
+    grid-template-columns: initial;
+  }
+  .listing-ct-body .ct-form-layout > *,
+  .modal .ct-form-layout > * {
+    grid-column: auto;
+    max-width: 100%;
+  }
+  .listing-ct-body .ct-form-layout > .control-label,
+  .modal .ct-form-layout > .control-label {
+    padding: 0;
+    text-align: left;
+  }
+  .listing-ct-body .ct-form-layout > .control-label:not(:first-child),
+  .modal .ct-form-layout > .control-label:not(:first-child) {
+    margin: 6px 0 0;
+  }
+  .listing-ct-body .ct-form-layout > hr,
+  .modal .ct-form-layout > hr {
+    height: 12px;
+  }
 }
 /* Listing pattern */
 table.listing-ct {

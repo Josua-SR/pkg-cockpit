@@ -20,23 +20,37 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { storagePoolId } from '../../helpers.js';
-import { ExpandableNotification } from '../notification/inlineNotification.jsx';
 import cockpit from 'cockpit';
 
 import 'form-layout.less';
 
 const _ = cockpit.gettext;
 
-export const StoragePoolOverviewTab = ({ storagePool, actionError, actionErrorDetail, onActionErrorDismiss }) => {
+export const StoragePoolOverviewTab = ({ storagePool }) => {
     const idPrefix = `${storagePoolId(storagePool.name, storagePool.connectionName)}`;
 
     return (
         <div className='ct-form-layout'>
-            { actionError && <ExpandableNotification type='warning' text={actionError} textId={`${idPrefix}-error`} detail={actionErrorDetail} onDismiss={onActionErrorDismiss} /> }
+            { storagePool.source && storagePool.source.host && <React.Fragment>
+                <label className='control-label' htmlFor={`${idPrefix}-host`}> {_("Host")} </label>
+                <div id={`${idPrefix}-host`}>
+                    {storagePool.source.host.name}
+                </div>
+            </React.Fragment> }
 
-            { storagePool.path && <React.Fragment>
-                <label className='control-label' htmlFor={`${idPrefix}-path`}> {_("Path")} </label>
-                <div id={`${idPrefix}-path`}> {storagePool.path} </div>
+            { storagePool.source && storagePool.source.device && <React.Fragment>
+                <label className='control-label' htmlFor={`${idPrefix}-source-path`}> {_("Source Path")} </label>
+                <div id={`${idPrefix}-source-path`}> {storagePool.source.device.path} </div>
+            </React.Fragment> }
+
+            { storagePool.source && storagePool.source.dir && <React.Fragment>
+                <label className='control-label' htmlFor={`${idPrefix}-source-path`}> {_("Source Path")} </label>
+                <div id={`${idPrefix}-source-path`}> {storagePool.source.dir.path} </div>
+            </React.Fragment> }
+
+            { storagePool.target && storagePool.target.path && <React.Fragment>
+                <label className='control-label' htmlFor={`${idPrefix}-target-path`}> {_("Target Path")} </label>
+                <div id={`${idPrefix}-target-path`}> {storagePool.target.path} </div>
             </React.Fragment> }
 
             <label className='control-label' htmlFor={`${idPrefix}-persistent`}> {_("Persistent")} </label>
@@ -52,7 +66,4 @@ export const StoragePoolOverviewTab = ({ storagePool, actionError, actionErrorDe
 };
 StoragePoolOverviewTab.propTypes = {
     storagePool: PropTypes.object.isRequired,
-    actionError: PropTypes.string,
-    actionErrorDetail: PropTypes.string,
-    onActionErrorDismiss: PropTypes.func,
 };

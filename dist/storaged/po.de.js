@@ -404,15 +404,11 @@ return plural;
   null,
   "Logischen Datenträger erstellen"
  ],
- "Create partition": [
-  null,
-  "Partition erzeugen"
- ],
- "Create partition on $0": [
+ "Create Partition on $0": [
   null,
   "Partition auf $0 erzeugen"
  ],
- "Create partition table": [
+ "Create Partition Table": [
   null,
   "Partitionstabelle erzeugen"
  ],

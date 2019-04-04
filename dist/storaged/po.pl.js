@@ -405,15 +405,11 @@ return plural;
   null,
   "Utworzono:"
  ],
- "Create partition": [
-  null,
-  "Utwórz partycję"
- ],
- "Create partition on $0": [
+ "Create Partition on $0": [
   null,
   "Utwórz partycję w $0"
  ],
- "Create partition table": [
+ "Create Partition Table": [
   null,
   "Utwórz tablicę partycji"
  ],

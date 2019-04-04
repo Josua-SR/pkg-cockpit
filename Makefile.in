@@ -1778,11 +1778,23 @@ nodist_noinst_SCRIPTS =  \
 dist_systemdunit_DATA = 
 nodist_systemdunit_DATA = src/ws/cockpit.socket src/ws/cockpit.service \
 	src/ws/cockpit-motd.service $(NULL)
-CLEANFILES = $(man_MANS) valgrind-suppressions $(NULL) \
-	$(WEBPACK_STAMPS) $(WEBPACK_DEPS) $(WEBPACK_OUTPUTS) \
-	$(OPENSANS_FONTS) $(am__append_3) $(MO_FILES) $(POJS_FILES) \
-	$(nodist_po_DATA) po/POTFILES.*.in dist/shell/*.po src/ws/*.po \
-	po/cockpit*.pot po/po.empty.js.gz $(NULL) \
+CLEANFILES = $(man_MANS) valgrind-suppressions $(NULL) $(MO_FILES) \
+	$(POJS_FILES) $(nodist_po_DATA) po/POTFILES.*.in \
+	dist/shell/*.po src/ws/*.po po/cockpit*.pot po/po.empty.js.gz \
+	$(NULL) $(polkit_DATA) $(am__append_10) $(COCKPIT_ASSETS) \
+	$(test_locale_MO) libpreload-temp-home.so $(NULL) \
+	$(am__append_18) src/ws/cockpit.socket src/ws/cockpit.service \
+	src/ws/cockpit-motd.service $(nodist_tempconf_DATA) \
+	cockpit-desktop $(NULL) $(nodist_appdata_DATA) $(NULL) \
+	mock-pam-conv-mod.so pam_ssh_add.so $(KUBERNETES_DIR)/rpms \
+	$(WS_DIR)/rpms
+DISTCLEANFILES = \
+	$(srcdir)/Makefile \
+	cockpit-cache-*.tar.xz \
+	$(NULL)
+
+MAINTAINERCLEANFILES = $(NULL) $(WEBPACK_STAMPS) $(WEBPACK_DEPS) \
+	$(WEBPACK_OUTPUTS) $(OPENSANS_FONTS) $(am__append_3) \
 	dist/base1/cockpit.js dist/base1/cockpit.min.css \
 	dist/base1/cockpit.min.css.gz dist/base1/cockpit.min.css.map \
 	dist/base1/cockpit.min.js dist/base1/cockpit.min.js.gz \
@@ -1802,23 +1814,10 @@ CLEANFILES = $(man_MANS) valgrind-suppressions $(NULL) \
 	dist/base1/patternfly-additions.css.map dist/base1/qunit.css \
 	dist/base1/qunit.js dist/base1/simple-tap.js \
 	dist/base1/test-dbus-common.js $(base_TESTS) \
-	$(base_TESTS_JAVASCRIPT) $(NULL) $(polkit_DATA) \
-	$(am__append_10) $(COCKPIT_ASSETS) $(test_locale_MO) \
-	libpreload-temp-home.so $(NULL) $(am__append_18) \
-	dist/static/login.html dist/static/login.min.html \
-	dist/static/login.js dist/static/login.min.js \
-	dist/static/login.css dist/static/login.min.css $(NULL) \
-	src/ws/cockpit.socket src/ws/cockpit.service \
-	src/ws/cockpit-motd.service $(nodist_tempconf_DATA) \
-	cockpit-desktop $(NULL) $(nodist_appdata_DATA) $(NULL) \
-	mock-pam-conv-mod.so pam_ssh_add.so $(KUBERNETES_DIR)/rpms \
-	$(WS_DIR)/rpms
-DISTCLEANFILES = \
-	$(srcdir)/Makefile \
-	node_modules \
-	cockpit-cache-*.tar.xz \
-	$(NULL)
-
+	$(base_TESTS_JAVASCRIPT) $(NULL) dist/static/login.html \
+	dist/static/login.min.html dist/static/login.js \
+	dist/static/login.min.js dist/static/login.css \
+	dist/static/login.min.css $(NULL)
 EXTRA_DIST = package.json README.md $(NULL) $(WEBPACK_STAMPS) \
 	$(WEBPACK_DEPS) $(WEBPACK_MANIFEST_IN) webpack.config.js \
 	$(OPENSANS_FONTS) $(am__append_1) $(PO_INPUTS) po/LINGUAS \
@@ -1986,7 +1985,7 @@ V_WEBPACK = $(V_WEBPACK_$(V))
 V_WEBPACK_ = $(V_WEBPACK_$(AM_DEFAULT_VERBOSITY))
 V_WEBPACK_0 = @echo "  WEBPACK  $(@:dist/%/stamp=%)";
 WEBPACK_MAKE = NODE_ENV=$(NODE_ENV) SRCDIR=$(abspath $(srcdir)) BUILDDIR=$(abs_builddir) \
-	       timeout 5m $(srcdir)/tools/missing $(srcdir)/tools/webpack-make
+	       timeout 15m $(srcdir)/tools/missing $(srcdir)/tools/webpack-make
 
 WEBPACK_CONFIG = $(srcdir)/webpack.config.js
 WEBPACK_INPUTS = 
@@ -2708,6 +2707,7 @@ libcockpit_common_a_SOURCES = \
 	$(NULL)
 
 libcockpit_common_a_CFLAGS = \
+	-fPIC \
 	-DG_LOG_DOMAIN=\"cockpit-protocol\" \
 	$(COCKPIT_CFLAGS) \
 	$(NULL)
@@ -2865,6 +2865,7 @@ test_websocket_LDADD = libwebsocket.a $(libwebsocket_a_LIBS)
 @WITH_COCKPIT_SSH_TRUE@	src/common/cockpitauthorize.h $(NULL) \
 @WITH_COCKPIT_SSH_TRUE@	$(am__append_13)
 @WITH_COCKPIT_SSH_TRUE@libcockpit_ssh_a_CFLAGS = \
+@WITH_COCKPIT_SSH_TRUE@	-fPIC \
 @WITH_COCKPIT_SSH_TRUE@	-I$(top_srcdir)/src/ssh \
 @WITH_COCKPIT_SSH_TRUE@	-DCOCKPIT_BUILD_INFO=\"$(COCKPIT_BUILD_INFO)\"	\
 @WITH_COCKPIT_SSH_TRUE@	-DG_LOG_DOMAIN=\"cockpit-ssh\" \
@@ -8894,6 +8895,7 @@ maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
 	@echo "it deletes files that may require special tools to rebuild."
 	-test -z "$(BUILT_SOURCES)" || rm -f $(BUILT_SOURCES)
+	-test -z "$(MAINTAINERCLEANFILES)" || rm -f $(MAINTAINERCLEANFILES)
 clean: clean-am
 
 clean-am: clean-binPROGRAMS clean-checkPROGRAMS clean-generic \
@@ -9112,7 +9114,7 @@ distclean: distclean-am
 	-rm -f src/ws/$(DEPDIR)/test_webservice-test-webservice.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
-	distclean-hdr distclean-local distclean-tags
+	distclean-hdr distclean-tags
 
 dvi: dvi-am
 
@@ -9384,7 +9386,8 @@ maintainer-clean: maintainer-clean-am
 	-rm -f src/ws/$(DEPDIR)/test_webservice-mock-auth.Po
 	-rm -f src/ws/$(DEPDIR)/test_webservice-test-webservice.Po
 	-rm -f Makefile
-maintainer-clean-am: distclean-am maintainer-clean-generic
+maintainer-clean-am: distclean-am maintainer-clean-generic \
+	maintainer-clean-local
 
 mostlyclean: mostlyclean-am
 
@@ -9429,12 +9432,11 @@ uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 	ctags ctags-am dist dist-all dist-bzip2 dist-gzip dist-hook \
 	dist-lzip dist-shar dist-tarZ dist-xz dist-zip distcheck \
 	distclean distclean-compile distclean-generic distclean-hdr \
-	distclean-local distclean-tags distcleancheck distdir \
-	distuninstallcheck dvi dvi-am html html-am info info-am \
-	install install-am install-baseDATA install-basedebugDATA \
-	install-basefontsDATA install-binPROGRAMS \
-	install-centosbrandingDATA install-data install-data-am \
-	install-data-hook install-data-local \
+	distclean-tags distcleancheck distdir distuninstallcheck dvi \
+	dvi-am html html-am info info-am install install-am \
+	install-baseDATA install-basedebugDATA install-basefontsDATA \
+	install-binPROGRAMS install-centosbrandingDATA install-data \
+	install-data-am install-data-hook install-data-local \
 	install-debianbrandingDATA install-defaultbrandingDATA \
 	install-dist_motdDATA install-dist_motdSCRIPTS \
 	install-dist_systemdunitDATA install-dvi install-dvi-am \
@@ -9455,21 +9457,22 @@ uninstall-man: uninstall-man1 uninstall-man5 uninstall-man8
 	install-staticfontsDATA install-strip \
 	install-ubuntubrandingDATA installcheck installcheck-am \
 	installdirs maintainer-clean maintainer-clean-generic \
-	mostlyclean mostlyclean-compile mostlyclean-generic pdf pdf-am \
-	ps ps-am recheck tags tags-am uninstall uninstall-am \
-	uninstall-baseDATA uninstall-basedebugDATA \
-	uninstall-basefontsDATA uninstall-binPROGRAMS \
-	uninstall-centosbrandingDATA uninstall-debianbrandingDATA \
-	uninstall-defaultbrandingDATA uninstall-dist_motdDATA \
-	uninstall-dist_motdSCRIPTS uninstall-dist_systemdunitDATA \
-	uninstall-fedorabrandingDATA uninstall-firewallDATA \
-	uninstall-kubernetesbrandingDATA uninstall-libexecPROGRAMS \
-	uninstall-libexecSCRIPTS uninstall-local uninstall-man \
-	uninstall-man1 uninstall-man5 uninstall-man8 \
-	uninstall-metainfoDATA uninstall-nodist_appdataDATA \
-	uninstall-nodist_baseDATA uninstall-nodist_staticDATA \
-	uninstall-nodist_systemdunitDATA uninstall-nodist_tempconfDATA \
-	uninstall-ovirtDATA uninstall-pixmapDATA uninstall-pixmapsDATA \
+	maintainer-clean-local mostlyclean mostlyclean-compile \
+	mostlyclean-generic pdf pdf-am ps ps-am recheck tags tags-am \
+	uninstall uninstall-am uninstall-baseDATA \
+	uninstall-basedebugDATA uninstall-basefontsDATA \
+	uninstall-binPROGRAMS uninstall-centosbrandingDATA \
+	uninstall-debianbrandingDATA uninstall-defaultbrandingDATA \
+	uninstall-dist_motdDATA uninstall-dist_motdSCRIPTS \
+	uninstall-dist_systemdunitDATA uninstall-fedorabrandingDATA \
+	uninstall-firewallDATA uninstall-kubernetesbrandingDATA \
+	uninstall-libexecPROGRAMS uninstall-libexecSCRIPTS \
+	uninstall-local uninstall-man uninstall-man1 uninstall-man5 \
+	uninstall-man8 uninstall-metainfoDATA \
+	uninstall-nodist_appdataDATA uninstall-nodist_baseDATA \
+	uninstall-nodist_staticDATA uninstall-nodist_systemdunitDATA \
+	uninstall-nodist_tempconfDATA uninstall-ovirtDATA \
+	uninstall-pixmapDATA uninstall-pixmapsDATA \
 	uninstall-playgroundDATA uninstall-pmlogconfDATA \
 	uninstall-polkitDATA uninstall-registrybrandingDATA \
 	uninstall-rhelbrandingDATA uninstall-sbinPROGRAMS \
@@ -9525,8 +9528,13 @@ dist/%/manifest.json: pkg/%/manifest.json
 
 -include $(WEBPACK_DEPS)
 
-distclean-local::
-	rm -rf dist/
+# the rules above copy a lot of stuff into builddir; clean it up so that distcleancheck works
+clean-local::
+	$(AM_V_at)test "$(srcdir)" == "$(builddir)" || rm -rf dist/
+
+maintainer-clean-local::
+	rm -rf dist/ node_modules/
+
 install-data-local:: $(WEBPACK_INSTALL)
 	$(MKDIR_P) $(DESTDIR)$(pkgdatadir)
 	tar -cf - $^ | tar -C $(DESTDIR)$(pkgdatadir) --strip-components=1 -xvf -

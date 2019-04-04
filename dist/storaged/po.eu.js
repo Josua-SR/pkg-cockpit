@@ -404,15 +404,11 @@ return plural;
   null,
   ""
  ],
- "Create partition": [
-  null,
-  "Sortu partizioa"
- ],
- "Create partition on $0": [
+ "Create Partition on $0": [
   null,
   ""
  ],
- "Create partition table": [
+ "Create Partition Table": [
   null,
   ""
  ],

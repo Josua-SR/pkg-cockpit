@@ -404,15 +404,11 @@ return plural;
   null,
   "Criar novo Volume Lógico"
  ],
- "Create partition": [
-  null,
-  "Criar partição"
- ],
- "Create partition on $0": [
+ "Create Partition on $0": [
   null,
   "Criar partição em $0"
  ],
- "Create partition table": [
+ "Create Partition Table": [
   null,
   "Criar tabela de partições"
  ],

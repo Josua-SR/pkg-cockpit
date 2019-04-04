@@ -351,10 +351,10 @@ input[type=number] {
   align-self: start;
   text-align: right;
 }
-.ct-form-layout > :not(.control-label):not(hr):not(.ct-form-layout-split) {
+.ct-form-layout > :not(.control-label):not(hr):not(.ct-form-layout-split):not(.ct-form-layout-full) {
   grid-column: 2 / -1;
 }
-.ct-form-layout > :not(.ct-form-layout-relax) {
+.ct-form-layout > :not(.ct-form-layout-relax):not(.spinner) {
   width: auto;
 }
 .ct-form-layout > hr {
@@ -395,6 +395,10 @@ input[type=number] {
 .ct-form-layout > .ct-validation-wrapper > .form-group,
 .ct-form-layout > .btn-group,
 .ct-form-layout > .ct-validation-wrapper > .btn-group,
+.ct-form-layout > label.checkbox,
+.ct-form-layout > .ct-validation-wrapper > label.checkbox,
+.ct-form-layout > label.radio,
+.ct-form-layout > .ct-validation-wrapper > label.radio,
 .ct-form-layout > .checkbox-inline,
 .ct-form-layout > .ct-validation-wrapper > .checkbox-inline,
 .ct-form-layout > .radio-inline,
@@ -403,7 +407,7 @@ input[type=number] {
   margin-bottom: 3px;
   min-height: 26px;
 }
-.ct-form-layout > :not(.ct-form-layout-relax) {
+.ct-form-layout > :not(.ct-form-layout-relax):not(.spinner) {
   width: auto !important;
 }
 .ct-form-layout > [role=group],
@@ -435,6 +439,8 @@ input[type=number] {
 .ct-form-layout > .ct-validation-wrapper > [data-field]:not(.ct-form-layout-relax) > .ct-select {
   width: 100%;
 }
+.ct-form-layout label.checkbox,
+.ct-form-layout label.radio,
 .ct-form-layout .checkbox > label,
 .ct-form-layout .radio > label,
 .ct-form-layout .checkbox-inline,
@@ -444,10 +450,14 @@ input[type=number] {
   padding-right: 10px;
   align-items: center;
 }
+.ct-form-layout label.checkbox > input[type="checkbox"],
+.ct-form-layout label.radio > input[type="checkbox"],
 .ct-form-layout .checkbox > label > input[type="checkbox"],
 .ct-form-layout .radio > label > input[type="checkbox"],
 .ct-form-layout .checkbox-inline > input[type="checkbox"],
 .ct-form-layout .radio-inline > input[type="checkbox"],
+.ct-form-layout label.checkbox > input[type="radio"],
+.ct-form-layout label.radio > input[type="radio"],
 .ct-form-layout .checkbox > label > input[type="radio"],
 .ct-form-layout .radio > label > input[type="radio"],
 .ct-form-layout .checkbox-inline > input[type="radio"],
@@ -470,6 +480,19 @@ input[type=number] {
 }
 .ct-form-layout > .ct-form-layout-split {
   grid-column: auto / auto;
+}
+.ct-form-layout > .ct-form-layout-full {
+  grid-column: 1 / -1;
+}
+.ct-form-layout > .has-success:not(.form-group),
+.ct-form-layout > .has-warning:not(.form-group),
+.ct-form-layout > .has-error:not(.form-group) {
+  position: relative;
+  top: -0.5rem;
+}
+.ct-form-layout > .help-block {
+  position: relative;
+  top: -0.5rem;
 }
 .modal .ct-form-layout > .control-label {
   padding-left: 0.5rem;

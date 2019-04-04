@@ -1,5 +1,5 @@
 # Generated Makefile data for dashboard
-# Stamp: Fri Mar 22 2019 14:43:52 GMT+0000 (Coordinated Universal Time)
+# Stamp: Wed Apr 03 2019 10:22:04 GMT+0000 (Coordinated Universal Time)
 
 dashboard_INPUTS = \
 	node_modules/jquery-flot/LICENSE.txt \
@@ -138,6 +138,6 @@ WEBPACK_DEBUG += $(dashboard_DEBUG)
 TESTS += $(dashboard_TESTS)
 
 dashboard: dist/dashboard/stamp
-clean-dashboard: 
+maintainer-clean-dashboard: 
 	rm -rf $(dashboard_OUTPUTS) $(dashboard_INSTALL) dist/dashboard/stamp
-clean-local:: clean-dashboard
+maintainer-clean-local:: clean-dashboard

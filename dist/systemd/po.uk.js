@@ -363,6 +363,14 @@ return plural;
   null,
   "Процесор"
  ],
+ "CPU Security": [
+  null,
+  ""
+ ],
+ "CPU Security Toggles": [
+  null,
+  ""
+ ],
  "Cached": [
   null,
   "Кеш"
@@ -498,6 +506,10 @@ return plural;
  "Disable": [
   null,
   "Вимкнути"
+ ],
+ "Disable symmetric multithreading": [
+  null,
+  ""
  ],
  "Disabled": [
   null,
@@ -783,6 +795,10 @@ return plural;
   null,
   "Хвилини"
  ],
+ "Mitigations": [
+  null,
+  ""
+ ],
  "Model": [
   null,
   "Модель"
@@ -959,6 +975,10 @@ return plural;
   null,
   "Апаратний блок монтування стійок"
  ],
+ "Read more...": [
+  null,
+  ""
+ ],
  "Real Host Name": [
   null,
   "Справжня назва вузла"
@@ -1071,6 +1091,10 @@ return plural;
   null,
   "Зберегти"
  ],
+ "Save and reboot": [
+  null,
+  ""
+ ],
  "Sealed-case PC": [
   null,
   "ПК з опломбованим корпусом"
@@ -1086,6 +1110,10 @@ return plural;
  "Security Updates Available": [
   null,
   "Доступні оновлення захисту"
+ ],
+ "Service": [
+  null,
+  "Служба"
  ],
  "Service Logs": [
   null,
@@ -1130,6 +1158,10 @@ return plural;
  "Sockets": [
   null,
   "Сокети"
+ ],
+ "Software-based workarounds help prevent CPU security issues. These mitigations have the side effect of reducing performance. Change these settings at your own risk.": [
+  null,
+  ""
  ],
  "Space-saving Computer": [
   null,
@@ -1226,6 +1258,10 @@ return plural;
  "Terminal": [
   null,
   "Термінал"
+ ],
+ "The user $0 is not permitted to change cpu security mitigations": [
+  null,
+  ""
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,

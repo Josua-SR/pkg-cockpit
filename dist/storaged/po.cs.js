@@ -405,15 +405,11 @@ return plural;
   null,
   "Vytvořit nový logický svazek"
  ],
- "Create partition": [
-  null,
-  "Vytvořit oddíl"
- ],
- "Create partition on $0": [
+ "Create Partition on $0": [
   null,
   "Vytvořit oddíl na $0"
  ],
- "Create partition table": [
+ "Create Partition Table": [
   null,
   "Vytvořit tabulku rozdělení úložiště"
  ],

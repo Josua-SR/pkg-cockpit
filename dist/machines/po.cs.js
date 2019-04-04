@@ -69,7 +69,7 @@ return plural;
  },
  "$0 Network": [
   null,
-  ""
+  "Síť $0"
  ],
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -119,13 +119,13 @@ return plural;
   null,
   "Pořadí zavádění"
  ],
+ "Boot order settings could not be saved": [
+  null,
+  ""
+ ],
  "Bus": [
   null,
   "Sběrnice"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Akce ZMĚNIT STAV SÍTĚ se nezdařila"
  ],
  "CPU Type": [
   null,
@@ -195,9 +195,9 @@ return plural;
   null,
   "Vytvořit virt. stroj"
  ],
- "Creation of vm $0 failed": [
+ "Creation of VM $0 failed": [
   null,
-  "Vytvoření virt. stroje $0 se nezdařilo"
+  ""
  ],
  "Ctrl+Alt+Del": [
   null,
@@ -250,6 +250,10 @@ return plural;
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
   "Odpojeno od sériové konzole. Klikněte na tlačítko Znovu připojit"
+ ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  ""
  ],
  "Disk failed to be attached": [
   null,
@@ -311,10 +315,6 @@ return plural;
   null,
   "Režim přeposílání"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "Akce ZJISTIT MAXIMUM VIRT. PROCESORŮ HYPERVIZORU se nezdařila"
- ],
  "General": [
   null,
   "Obecné"
@@ -337,7 +337,7 @@ return plural;
  ],
  "Host Device": [
   null,
-  ""
+  "Zařízení hostitele"
  ],
  "Host Name": [
   null,
@@ -346,10 +346,6 @@ return plural;
  "Host should not be empty": [
   null,
   "Hostitele je třeba vyplnit"
- ],
- "INSTALL VM action failed": [
-  null,
-  "Akce NAINSTALOVAT VIRT. STROJ se nezdařila"
  ],
  "IPv4 Address": [
   null,
@@ -365,7 +361,7 @@ return plural;
  ],
  "In most configurations, macvtap does not work for host to guest network communication.": [
   null,
-  ""
+  "Ve většině uspořádání, macvtap nefunguje pro komunikaci hostitel-host."
  ],
  "Install": [
   null,
@@ -393,7 +389,7 @@ return plural;
  ],
  "Isolated Network": [
   null,
-  ""
+  "Izolovaná síť"
  ],
  "Launch Remote Viewer": [
   null,
@@ -410,6 +406,10 @@ return plural;
  "MAC Address": [
   null,
   "MAC adresa"
+ ],
+ "Mac": [
+  null,
+  ""
  ],
  "Mac Address": [
   null,
@@ -449,6 +449,10 @@ return plural;
  ],
  "NAT to $0": [
   null,
+  "NAT na $0"
+ ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
   ""
  ],
  "Name": [
@@ -467,9 +471,17 @@ return plural;
   null,
   "Maska sítě"
  ],
- "Network Boot (PXE)": [
+ "Network $0 failed to get activated": [
   null,
   ""
+ ],
+ "Network $0 failed to get deactivated": [
+  null,
+  ""
+ ],
+ "Network Boot (PXE)": [
+  null,
+  "Zavádění ze sítě (PXE)"
  ],
  "Network File System": [
   null,
@@ -481,15 +493,7 @@ return plural;
  ],
  "Network Selection does not support PXE.": [
   null,
-  ""
- ],
- "Network failed to get activated": [
-  null,
-  "Síť se nepodařilo aktivovat"
- ],
- "Network failed to get deactivated": [
-  null,
-  "Síť se nepodařilo deaktivovat"
+  "Síťový výběr nepodporuje PXE."
  ],
  "Network interface settings could not be saved": [
   null,
@@ -585,7 +589,7 @@ return plural;
  ],
  "Pause": [
   null,
-  ""
+  "Pozastavit"
  ],
  "Persistence": [
   null,
@@ -631,6 +635,10 @@ return plural;
   null,
   "Soukromé"
  ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protokol"
@@ -661,15 +669,15 @@ return plural;
  ],
  "Resume": [
   null,
-  ""
+  "Obnovit chod"
  ],
  "Route to $0": [
   null,
-  ""
+  "Trasa na $0"
  ],
  "Routed Network": [
   null,
-  ""
+  "Směrovaná síť"
  ],
  "Run": [
   null,
@@ -759,6 +767,14 @@ return plural;
   null,
   "Stav"
  ],
+ "Storage Pool $0 failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool $0 failed to get deactivated": [
+  null,
+  ""
+ ],
  "Storage Pool Name": [
   null,
   "Název fondu úložiště"
@@ -766,14 +782,6 @@ return plural;
  "Storage Pool failed to be created": [
   null,
   "Fond úložiště se nepodařilo uložit"
- ],
- "Storage Pool failed to get activated": [
-  null,
-  "Fond úložiště se nepodařilo aktivovat"
- ],
- "Storage Pool failed to get deactivated": [
-  null,
-  "Fond úložiště se nepodařilo deaktivovat"
  ],
  "Storage Pools": [
   null,
@@ -794,6 +802,10 @@ return plural;
  "System": [
   null,
   "Systém"
+ ],
+ "Target": [
+  null,
+  "Cíl"
  ],
  "Target Path": [
   null,
@@ -867,6 +879,10 @@ return plural;
   null,
   "Typ"
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
  "URL": [
   null,
   "URL"
@@ -874,6 +890,10 @@ return plural;
  "Unique name": [
   null,
   "Neopakující se název"
+ ],
+ "Unit": [
+  null,
+  "Jednotka"
  ],
  "Unplug": [
   null,
@@ -899,61 +919,45 @@ return plural;
   null,
   "Nastavení virt. procesoru se nepodařilo uložit"
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  "Akce ZMĚNA STAVU SÍTĚ VIRT. STROJE se nezdařila"
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  "Akce SMAZAT VIRT. STROJ (ZLIKVIDOVAT) se nezdařila"
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  "Akce SMAZAT VIRT. STROJ (ZRUŠIT DEFINICI) se nezdařila"
- ],
- "VM DELETE action failed": [
-  null,
-  "Akce SMAZAT STROJ se nezdařila"
- ],
- "VM DETACH_DISK action failed": [
-  null,
-  "Akce ODPOJIT DISK VIRT. STROJE se nezdařila"
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "Akce VYNUCENÉ VYPNUTÍ VIRT. STROJE se nezdařila"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "Akce VYNUCENÝ RESTART se nezdařila"
- ],
- "VM Pause action failed": [
+ "VM $0 failed to Reboot": [
   null,
   ""
  ],
- "VM REBOOT action failed": [
-  null,
-  "Akce RESTART se nezdařila"
- ],
- "VM Resume action failed": [
+ "VM $0 failed to force Reboot": [
   null,
   ""
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "Akce POSLAT VIRT. STROJI nemaskovatelné přerušení se nezdařila"
+  ""
  ],
- "VM SENDNMI action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "Akce POSLAT VIRT. STROJI NEMASK. PŘERUŠENÍ se nezdařila"
+  ""
  ],
- "VM SHUT DOWN action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "Akce VYPNOUT VIRT STROJ se nezdařila"
+  ""
  ],
- "VM START action failed": [
+ "VM $0 failed to pause": [
   null,
-  "Akce SPUSTIT VIRT STROJ se nezdařila"
+  ""
+ ],
+ "VM $0 failed to resume": [
+  null,
+  ""
+ ],
+ "VM $0 failed to send NMI": [
+  null,
+  ""
+ ],
+ "VM $0 failed to shutdown": [
+  null,
+  ""
+ ],
+ "VM $0 failed to start": [
+  null,
+  ""
  ],
  "VNC": [
   null,
@@ -971,13 +975,17 @@ return plural;
   null,
   "VNC TLS port:"
  ],
+ "Vendor": [
+  null,
+  "Výrobce"
+ ],
  "Virtual Machines": [
   null,
   "Virtuální stroje"
  ],
  "Virtual Network": [
   null,
-  ""
+  "Virtuální síť"
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
@@ -990,6 +998,10 @@ return plural;
  "Volume": [
   null,
   "Svazek"
+ ],
+ "WWPN": [
+  null,
+  ""
  ],
  "active": [
   null,
@@ -1043,9 +1055,21 @@ return plural;
   null,
   "stroj"
  ],
+ "host device": [
+  null,
+  ""
+ ],
  "hostdev": [
   null,
   "zařízení hostitele"
+ ],
+ "iSCSI Target": [
+  null,
+  ""
+ ],
+ "iSCSI target IQN": [
+  null,
+  ""
  ],
  "idle": [
   null,
@@ -1067,10 +1091,6 @@ return plural;
   null,
   "ne"
  ],
- "other": [
-  null,
-  "ostatní"
- ],
  "paused": [
   null,
   "pozastaveno"
@@ -1082,6 +1102,10 @@ return plural;
  "raw": [
   null,
   "raw"
+ ],
+ "redirected device": [
+  null,
+  ""
  ],
  "running": [
   null,

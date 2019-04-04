@@ -1,5 +1,5 @@
 # Generated Makefile data for selinux
-# Stamp: Fri Mar 22 2019 14:43:53 GMT+0000 (Coordinated Universal Time)
+# Stamp: Wed Apr 03 2019 10:22:06 GMT+0000 (Coordinated Universal Time)
 
 selinux_INPUTS = \
 	node_modules/bootstrap/LICENSE \
@@ -557,6 +557,6 @@ WEBPACK_DEBUG += $(selinux_DEBUG)
 TESTS += $(selinux_TESTS)
 
 selinux: dist/selinux/stamp
-clean-selinux: 
+maintainer-clean-selinux: 
 	rm -rf $(selinux_OUTPUTS) $(selinux_INSTALL) dist/selinux/stamp
-clean-local:: clean-selinux
+maintainer-clean-local:: clean-selinux

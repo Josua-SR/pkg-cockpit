@@ -1,5 +1,5 @@
 # Generated Makefile data for kdump
-# Stamp: Fri Mar 22 2019 14:43:53 GMT+0000 (Coordinated Universal Time)
+# Stamp: Wed Apr 03 2019 10:22:06 GMT+0000 (Coordinated Universal Time)
 
 kdump_INPUTS = \
 	node_modules/bootstrap/LICENSE \
@@ -1655,6 +1655,6 @@ WEBPACK_DEBUG += $(kdump_DEBUG)
 TESTS += $(kdump_TESTS)
 
 kdump: dist/kdump/stamp
-clean-kdump: 
+maintainer-clean-kdump: 
 	rm -rf $(kdump_OUTPUTS) $(kdump_INSTALL) dist/kdump/stamp
-clean-local:: clean-kdump
+maintainer-clean-local:: clean-kdump

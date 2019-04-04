@@ -69,7 +69,7 @@ return plural;
  },
  "$0 Network": [
   null,
-  ""
+  "Мережа $0"
  ],
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -119,13 +119,13 @@ return plural;
   null,
   "Порядок завантаження"
  ],
+ "Boot order settings could not be saved": [
+  null,
+  ""
+ ],
  "Bus": [
   null,
   "Канал"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Не вдалося виконати дію зі зміни стану мережі"
  ],
  "CPU Type": [
   null,
@@ -195,9 +195,9 @@ return plural;
   null,
   "Створення ВМ"
  ],
- "Creation of vm $0 failed": [
+ "Creation of VM $0 failed": [
   null,
-  "Не вдалося створити віртуальну машину $0"
+  ""
  ],
  "Ctrl+Alt+Del": [
   null,
@@ -250,6 +250,10 @@ return plural;
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
   "Від'єднано від послідовної консолі. Натисніть кнопку «Повторно з'єднатися»."
+ ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  ""
  ],
  "Disk failed to be attached": [
   null,
@@ -311,10 +315,6 @@ return plural;
   null,
   "Режим переспрямовування"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "Помилка під час спроби виконати дію GET HYPERVISOR MAX VCPU"
- ],
  "General": [
   null,
   "Загальний"
@@ -337,7 +337,7 @@ return plural;
  ],
  "Host Device": [
   null,
-  ""
+  "Пристрій основної системи"
  ],
  "Host Name": [
   null,
@@ -346,10 +346,6 @@ return plural;
  "Host should not be empty": [
   null,
   "Вузол не повинен бути порожнім"
- ],
- "INSTALL VM action failed": [
-  null,
-  "Помилка під час дії зі встановлення ВМ"
  ],
  "IPv4 Address": [
   null,
@@ -365,7 +361,7 @@ return plural;
  ],
  "In most configurations, macvtap does not work for host to guest network communication.": [
   null,
-  ""
+  "У більшості конфігурацій macvtap не працює для обміну мережею між основною і гостьовою системами."
  ],
  "Install": [
   null,
@@ -393,7 +389,7 @@ return plural;
  ],
  "Isolated Network": [
   null,
-  ""
+  "Ізольована мережа"
  ],
  "Launch Remote Viewer": [
   null,
@@ -410,6 +406,10 @@ return plural;
  "MAC Address": [
   null,
   "MAC-адреса"
+ ],
+ "Mac": [
+  null,
+  ""
  ],
  "Mac Address": [
   null,
@@ -449,6 +449,10 @@ return plural;
  ],
  "NAT to $0": [
   null,
+  "NAT до $0"
+ ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
   ""
  ],
  "Name": [
@@ -467,9 +471,17 @@ return plural;
   null,
   "Маска мережі"
  ],
- "Network Boot (PXE)": [
+ "Network $0 failed to get activated": [
   null,
   ""
+ ],
+ "Network $0 failed to get deactivated": [
+  null,
+  ""
+ ],
+ "Network Boot (PXE)": [
+  null,
+  "Мережеве завантаження (PXE)"
  ],
  "Network File System": [
   null,
@@ -481,15 +493,7 @@ return plural;
  ],
  "Network Selection does not support PXE.": [
   null,
-  ""
- ],
- "Network failed to get activated": [
-  null,
-  "Не вдалося задіяти мережу"
- ],
- "Network failed to get deactivated": [
-  null,
-  "Не вдалося вимкнути мережу"
+  "Для вибору мережі не передбачено підтримки PXE."
  ],
  "Network interface settings could not be saved": [
   null,
@@ -585,7 +589,7 @@ return plural;
  ],
  "Pause": [
   null,
-  ""
+  "Призупинити"
  ],
  "Persistence": [
   null,
@@ -631,6 +635,10 @@ return plural;
   null,
   "Закрита"
  ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Протокол"
@@ -661,15 +669,15 @@ return plural;
  ],
  "Resume": [
   null,
-  ""
+  "Відновити"
  ],
  "Route to $0": [
   null,
-  ""
+  "Маршрут до $0"
  ],
  "Routed Network": [
   null,
-  ""
+  "Маршрутизована мережа"
  ],
  "Run": [
   null,
@@ -759,6 +767,14 @@ return plural;
   null,
   "Стан"
  ],
+ "Storage Pool $0 failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool $0 failed to get deactivated": [
+  null,
+  ""
+ ],
  "Storage Pool Name": [
   null,
   "Назва резервного сховища"
@@ -766,14 +782,6 @@ return plural;
  "Storage Pool failed to be created": [
   null,
   "Не вдалося створити резервне сховище"
- ],
- "Storage Pool failed to get activated": [
-  null,
-  "Не вдалося активувати буфер сховища даних"
- ],
- "Storage Pool failed to get deactivated": [
-  null,
-  "Не вдалося деактивувати буфер сховища даних"
  ],
  "Storage Pools": [
   null,
@@ -794,6 +802,10 @@ return plural;
  "System": [
   null,
   "Система"
+ ],
+ "Target": [
+  null,
+  "Призначення"
  ],
  "Target Path": [
   null,
@@ -867,6 +879,10 @@ return plural;
   null,
   "Тип"
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
  "URL": [
   null,
   "Адреса"
@@ -874,6 +890,10 @@ return plural;
  "Unique name": [
   null,
   "Унікальна назва"
+ ],
+ "Unit": [
+  null,
+  "Модуль"
  ],
  "Unplug": [
   null,
@@ -899,61 +919,45 @@ return plural;
   null,
   "Не вдалося зберегти параметри віртуальних процесорів"
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  "Помилка дії VM CHANGE_NETWORK_STATE"
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  "Помилка дії VM DELETE (DESTROY)"
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  "Помилка дії VM DELETE (UNDEFINE)"
- ],
- "VM DELETE action failed": [
-  null,
-  "Помилка дії VM DELETE"
- ],
- "VM DETACH_DISK action failed": [
-  null,
-  "Помилка дії VM DETACH_DISK"
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "Не вдалося виконати дію FORCE OFF для ВМ"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "Не вдалося виконати дію FORCE REBOOT для ВМ"
- ],
- "VM Pause action failed": [
+ "VM $0 failed to Reboot": [
   null,
   ""
  ],
- "VM REBOOT action failed": [
-  null,
-  "Не вдалося виконати дію REBOOT для ВМ"
- ],
- "VM Resume action failed": [
+ "VM $0 failed to force Reboot": [
   null,
   ""
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "Спроба виконати дію немаскованого переривання VM SEND завершилася невдало"
+  ""
  ],
- "VM SENDNMI action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "Помилка дії VM SENDNMI"
+  ""
  ],
- "VM SHUT DOWN action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "Не вдалося виконати дію SHUT DOWN для ВМ"
+  ""
  ],
- "VM START action failed": [
+ "VM $0 failed to pause": [
   null,
-  "Не вдалося виконати дію START для ВМ"
+  ""
+ ],
+ "VM $0 failed to resume": [
+  null,
+  ""
+ ],
+ "VM $0 failed to send NMI": [
+  null,
+  ""
+ ],
+ "VM $0 failed to shutdown": [
+  null,
+  ""
+ ],
+ "VM $0 failed to start": [
+  null,
+  ""
  ],
  "VNC": [
   null,
@@ -971,13 +975,17 @@ return plural;
   null,
   "Порт TLS VNC:"
  ],
+ "Vendor": [
+  null,
+  "Постачальник"
+ ],
  "Virtual Machines": [
   null,
   "Віртуальні машини"
  ],
  "Virtual Network": [
   null,
-  ""
+  "Віртуальна мережа"
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
@@ -990,6 +998,10 @@ return plural;
  "Volume": [
   null,
   "Том"
+ ],
+ "WWPN": [
+  null,
+  ""
  ],
  "active": [
   null,
@@ -1043,9 +1055,21 @@ return plural;
   null,
   "вузол"
  ],
+ "host device": [
+  null,
+  ""
+ ],
  "hostdev": [
   null,
   "пристрій осн. системи"
+ ],
+ "iSCSI Target": [
+  null,
+  ""
+ ],
+ "iSCSI target IQN": [
+  null,
+  ""
  ],
  "idle": [
   null,
@@ -1067,10 +1091,6 @@ return plural;
   null,
   "ні"
  ],
- "other": [
-  null,
-  "інше"
- ],
  "paused": [
   null,
   "призупинено"
@@ -1082,6 +1102,10 @@ return plural;
  "raw": [
   null,
   "raw"
+ ],
+ "redirected device": [
+  null,
+  ""
  ],
  "running": [
   null,

@@ -405,15 +405,11 @@ return plural;
   null,
   "Створити логічний том"
  ],
- "Create partition": [
-  null,
-  "Створити розділ"
- ],
- "Create partition on $0": [
+ "Create Partition on $0": [
   null,
   "Створити розділ на $0"
  ],
- "Create partition table": [
+ "Create Partition Table": [
   null,
   "Створити таблицю розділів"
  ],

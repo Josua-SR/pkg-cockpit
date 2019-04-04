@@ -1,5 +1,5 @@
 # Generated Makefile data for users
-# Stamp: Fri Mar 22 2019 14:43:53 GMT+0000 (Coordinated Universal Time)
+# Stamp: Wed Apr 03 2019 10:22:06 GMT+0000 (Coordinated Universal Time)
 
 users_INPUTS = \
 	node_modules/bootstrap-datepicker/LICENSE \
@@ -170,6 +170,6 @@ WEBPACK_DEBUG += $(users_DEBUG)
 TESTS += $(users_TESTS)
 
 users: dist/users/stamp
-clean-users: 
+maintainer-clean-users: 
 	rm -rf $(users_OUTPUTS) $(users_INSTALL) dist/users/stamp
-clean-local:: clean-users
+maintainer-clean-local:: clean-users

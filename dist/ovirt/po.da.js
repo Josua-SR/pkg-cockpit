@@ -135,11 +135,11 @@ return plural;
   null,
   ""
  ],
- "Bus": [
+ "Boot order settings could not be saved": [
   null,
   ""
  ],
- "CHANGE NETWORK STATE action failed": [
+ "Bus": [
   null,
   ""
  ],
@@ -275,6 +275,10 @@ return plural;
   null,
   ""
  ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  ""
+ ],
  "Disk failed to be attached": [
   null,
   ""
@@ -307,6 +311,10 @@ return plural;
   null,
   ""
  ],
+ "FORCEOFF action failed: $0": [
+  null,
+  ""
+ ],
  "FQDN": [
   null,
   ""
@@ -328,10 +336,6 @@ return plural;
   ""
  ],
  "Format": [
-  null,
-  ""
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
   null,
   ""
  ],
@@ -363,10 +367,6 @@ return plural;
   null,
   ""
  ],
- "INSTALL VM action failed": [
-  null,
-  ""
- ],
  "Install": [
   null,
   ""
@@ -392,6 +392,10 @@ return plural;
   ""
  ],
  "MIGRATE action failed": [
+  null,
+  ""
+ ],
+ "Mac": [
   null,
   ""
  ],
@@ -430,6 +434,10 @@ return plural;
  "More Information": [
   null,
   "Indstillinger"
+ ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  ""
  ],
  "Name": [
   null,
@@ -587,11 +595,19 @@ return plural;
   null,
   ""
  ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   ""
  ],
  "REBOOT action failed": [
+  null,
+  ""
+ ],
+ "REBOOT_VM action failed: %s0": [
   null,
   ""
  ],
@@ -667,6 +683,10 @@ return plural;
   null,
   ""
  ],
+ "START_VM action failed: %s0": [
+  null,
+  ""
+ ],
  "SUSPEND action failed": [
   null,
   ""
@@ -739,6 +759,10 @@ return plural;
   null,
   ""
  ],
+ "Target": [
+  null,
+  ""
+ ],
  "Template": [
   null,
   ""
@@ -807,6 +831,14 @@ return plural;
   null,
   ""
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
+ "Unit": [
+  null,
+  ""
+ ],
  "Unplug": [
   null,
   ""
@@ -835,35 +867,43 @@ return plural;
   null,
   "Værtsnavn"
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to Reboot": [
   null,
   ""
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
   ""
  ],
- "VM FORCE OFF action failed": [
+ "VM $0 failed to force shutdown": [
   null,
   ""
  ],
- "VM FORCE REBOOT action failed": [
+ "VM $0 failed to get deleted": [
   null,
   ""
  ],
- "VM REBOOT action failed": [
+ "VM $0 failed to get installed": [
   null,
   ""
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to pause": [
   null,
   ""
  ],
- "VM SHUT DOWN action failed": [
+ "VM $0 failed to resume": [
   null,
   ""
  ],
- "VM START action failed": [
+ "VM $0 failed to send NMI": [
+  null,
+  ""
+ ],
+ "VM $0 failed to shutdown": [
+  null,
+  ""
+ ],
+ "VM $0 failed to start": [
   null,
   ""
  ],
@@ -887,6 +927,10 @@ return plural;
   null,
   ""
  ],
+ "Vendor": [
+  null,
+  ""
+ ],
  "Version": [
   null,
   ""
@@ -904,6 +948,10 @@ return plural;
   ""
  ],
  "Volume": [
+  null,
+  ""
+ ],
+ "WWPN": [
   null,
   ""
  ],
@@ -966,6 +1014,10 @@ return plural;
  "host": [
   null,
   ""
+ ],
+ "host device": [
+  null,
+  "Værtsnavn"
  ],
  "hostdev": [
   null,
@@ -1039,10 +1091,6 @@ return plural;
   null,
   ""
  ],
- "other": [
-  null,
-  ""
- ],
  "paused": [
   null,
   ""
@@ -1060,6 +1108,10 @@ return plural;
   ""
  ],
  "reboot": [
+  null,
+  ""
+ ],
+ "redirected device": [
   null,
   ""
  ],
