@@ -1,5 +1,5 @@
 # Generated Makefile data for storaged
-# Stamp: Fri Mar 22 2019 14:43:53 GMT+0000 (Coordinated Universal Time)
+# Stamp: Wed Apr 03 2019 10:22:06 GMT+0000 (Coordinated Universal Time)
 
 storaged_INPUTS = \
 	node_modules/bootstrap/LICENSE \
@@ -2293,6 +2293,6 @@ WEBPACK_DEBUG += $(storaged_DEBUG)
 TESTS += $(storaged_TESTS)
 
 storaged: dist/storaged/stamp
-clean-storaged: 
+maintainer-clean-storaged: 
 	rm -rf $(storaged_OUTPUTS) $(storaged_INSTALL) dist/storaged/stamp
-clean-local:: clean-storaged
+maintainer-clean-local:: clean-storaged

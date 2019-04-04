@@ -119,11 +119,11 @@ return plural;
   null,
   ""
  ],
- "Bus": [
+ "Boot order settings could not be saved": [
   null,
   ""
  ],
- "CHANGE NETWORK STATE action failed": [
+ "Bus": [
   null,
   ""
  ],
@@ -195,7 +195,7 @@ return plural;
   null,
   ""
  ],
- "Creation of vm $0 failed": [
+ "Creation of VM $0 failed": [
   null,
   ""
  ],
@@ -248,6 +248,10 @@ return plural;
   ""
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
+  null,
+  ""
+ ],
+ "Disk $0 fail to get detached from VM $1": [
   null,
   ""
  ],
@@ -311,10 +315,6 @@ return plural;
   null,
   ""
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  ""
- ],
  "General": [
   null,
   ""
@@ -344,10 +344,6 @@ return plural;
   ""
  ],
  "Host should not be empty": [
-  null,
-  ""
- ],
- "INSTALL VM action failed": [
   null,
   ""
  ],
@@ -411,6 +407,10 @@ return plural;
   null,
   ""
  ],
+ "Mac": [
+  null,
+  ""
+ ],
  "Mac Address": [
   null,
   ""
@@ -451,6 +451,10 @@ return plural;
   null,
   ""
  ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  ""
+ ],
  "Name": [
   null,
   "Værtsnavn"
@@ -467,6 +471,14 @@ return plural;
   null,
   ""
  ],
+ "Network $0 failed to get activated": [
+  null,
+  ""
+ ],
+ "Network $0 failed to get deactivated": [
+  null,
+  ""
+ ],
  "Network Boot (PXE)": [
   null,
   ""
@@ -480,14 +492,6 @@ return plural;
   "Netværks Traffik"
  ],
  "Network Selection does not support PXE.": [
-  null,
-  ""
- ],
- "Network failed to get activated": [
-  null,
-  ""
- ],
- "Network failed to get deactivated": [
   null,
   ""
  ],
@@ -631,6 +635,10 @@ return plural;
   null,
   ""
  ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   ""
@@ -759,19 +767,19 @@ return plural;
   null,
   ""
  ],
+ "Storage Pool $0 failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool $0 failed to get deactivated": [
+  null,
+  ""
+ ],
  "Storage Pool Name": [
   null,
   "Værtsnavn"
  ],
  "Storage Pool failed to be created": [
-  null,
-  ""
- ],
- "Storage Pool failed to get activated": [
-  null,
-  ""
- ],
- "Storage Pool failed to get deactivated": [
   null,
   ""
  ],
@@ -792,6 +800,10 @@ return plural;
   ""
  ],
  "System": [
+  null,
+  ""
+ ],
+ "Target": [
   null,
   ""
  ],
@@ -867,6 +879,10 @@ return plural;
   null,
   ""
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
  "URL": [
   null,
   ""
@@ -874,6 +890,10 @@ return plural;
  "Unique name": [
   null,
   "Værtsnavn"
+ ],
+ "Unit": [
+  null,
+  ""
  ],
  "Unplug": [
   null,
@@ -899,59 +919,43 @@ return plural;
   null,
   ""
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
+ "VM $0 failed to Reboot": [
   null,
   ""
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
   ""
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force shutdown": [
   null,
   ""
  ],
- "VM DELETE action failed": [
+ "VM $0 failed to get deleted": [
   null,
   ""
  ],
- "VM DETACH_DISK action failed": [
+ "VM $0 failed to get installed": [
   null,
   ""
  ],
- "VM FORCE OFF action failed": [
+ "VM $0 failed to pause": [
   null,
   ""
  ],
- "VM FORCE REBOOT action failed": [
+ "VM $0 failed to resume": [
   null,
   ""
  ],
- "VM Pause action failed": [
+ "VM $0 failed to send NMI": [
   null,
   ""
  ],
- "VM REBOOT action failed": [
+ "VM $0 failed to shutdown": [
   null,
   ""
  ],
- "VM Resume action failed": [
-  null,
-  ""
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  ""
- ],
- "VM SENDNMI action failed": [
-  null,
-  ""
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  ""
- ],
- "VM START action failed": [
+ "VM $0 failed to start": [
   null,
   ""
  ],
@@ -968,6 +972,10 @@ return plural;
   ""
  ],
  "VNC TLS Port:": [
+  null,
+  ""
+ ],
+ "Vendor": [
   null,
   ""
  ],
@@ -988,6 +996,10 @@ return plural;
   ""
  ],
  "Volume": [
+  null,
+  ""
+ ],
+ "WWPN": [
   null,
   ""
  ],
@@ -1043,7 +1055,19 @@ return plural;
   null,
   ""
  ],
+ "host device": [
+  null,
+  "Værtsnavn"
+ ],
  "hostdev": [
+  null,
+  ""
+ ],
+ "iSCSI Target": [
+  null,
+  ""
+ ],
+ "iSCSI target IQN": [
   null,
   ""
  ],
@@ -1067,10 +1091,6 @@ return plural;
   null,
   ""
  ],
- "other": [
-  null,
-  ""
- ],
  "paused": [
   null,
   ""
@@ -1080,6 +1100,10 @@ return plural;
   ""
  ],
  "raw": [
+  null,
+  ""
+ ],
+ "redirected device": [
   null,
   ""
  ],

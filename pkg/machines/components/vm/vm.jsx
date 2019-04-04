@@ -40,14 +40,8 @@ const _ = cockpit.gettext;
 /** One VM in the list (a row)
  */
 const Vm = ({ vm, config, hostDevices, storagePools, onStart, onInstall, onShutdown, onPause, onResume, onForceoff, onReboot, onForceReboot,
-              onUsageStartPolling, onUsageStopPolling, onSendNMI, dispatch, networks }) => {
-    const defaultTabName = 'overview';
-    const stateAlert = (
-        vm.errorMessages &&
-        vm.errorMessages[defaultTabName] &&
-        vm.errorMessages[defaultTabName].lastMessage &&
-        (<span className='pficon-warning-triangle-o machines-status-alert' />)
-    );
+              onUsageStartPolling, onUsageStopPolling, onSendNMI, dispatch, networks, nodeDevices, resourceHasError, onAddErrorNotification }) => {
+    const stateAlert = resourceHasError[vm.id] ? <span className='pficon-warning-triangle-o machines-status-alert' /> : null;
     const stateIcon = (<StateIcon state={vm.state} config={config} valueId={`${vmId(vm.name)}-state`} extra={stateAlert} />);
 
     const overviewTabName = (<div id={`${vmId(vm.name)}-overview`}>{_("Overview")}</div>);
@@ -57,10 +51,10 @@ const Vm = ({ vm, config, hostDevices, storagePools, onStart, onInstall, onShutd
     const consolesTabName = (<div id={`${vmId(vm.name)}-consoles`}>{_("Consoles")}</div>);
 
     let tabRenderers = [
-        { name: overviewTabName, renderer: VmOverviewTab, data: { vm, config, dispatch } },
+        { name: overviewTabName, renderer: VmOverviewTab, data: { vm, config, dispatch, nodeDevices } },
         { name: usageTabName, renderer: VmUsageTab, data: { vm, onUsageStartPolling, onUsageStopPolling }, presence: 'onlyActive' },
-        { name: disksTabName, renderer: VmDisksTab, data: { vm, config, storagePools, onUsageStartPolling, onUsageStopPolling, dispatch }, presence: 'onlyActive' },
-        { name: networkTabName, renderer: VmNetworkTab, data: { vm, dispatch, config, hostDevices, networks } },
+        { name: disksTabName, renderer: VmDisksTab, data: { vm, config, storagePools, onUsageStartPolling, onUsageStopPolling, dispatch, onAddErrorNotification }, presence: 'onlyActive' },
+        { name: networkTabName, renderer: VmNetworkTab, data: { vm, dispatch, config, hostDevices, networks, onAddErrorNotification } },
         { name: consolesTabName, renderer: Consoles, data: { vm, config, dispatch } },
     ];
 
@@ -86,8 +80,13 @@ const Vm = ({ vm, config, hostDevices, storagePools, onStart, onInstall, onShutd
     }
 
     const name = (<span id={`${vmId(vm.name)}-row`}>{vm.name}</span>);
+    let extraClasses = [];
+
+    if (resourceHasError[vm.id])
+        extraClasses.push('error');
 
     return (<ListingRow
+        extraClasses={extraClasses}
         rowId={`${vmId(vm.name)}`}
         columns={[
             { name, 'header': true },
@@ -130,6 +129,9 @@ Vm.propTypes = {
     onSendNMI: PropTypes.func.isRequired,
     dispatch: PropTypes.func.isRequired,
     networks: PropTypes.array.isRequired,
+    resourceHasError: PropTypes.object.isRequired,
+    onAddErrorNotification: PropTypes.func.isRequired,
+    nodeDevices: PropTypes.array.isRequired,
 };
 
 export default Vm;

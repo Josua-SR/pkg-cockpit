@@ -404,15 +404,11 @@ return plural;
   null,
   "Skapa en ny logisk volym"
  ],
- "Create partition": [
-  null,
-  "Skapa en partition"
- ],
- "Create partition on $0": [
+ "Create Partition on $0": [
   null,
   "Skapa en partition på $0"
  ],
- "Create partition table": [
+ "Create Partition Table": [
   null,
   "Skapa en partitionstabell"
  ],

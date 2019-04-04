@@ -1,5 +1,5 @@
 # Generated Makefile data for realmd
-# Stamp: Fri Mar 22 2019 14:43:52 GMT+0000 (Coordinated Universal Time)
+# Stamp: Wed Apr 03 2019 10:22:05 GMT+0000 (Coordinated Universal Time)
 
 realmd_INPUTS = \
 	node_modules/prop-types/LICENSE \
@@ -124,6 +124,6 @@ WEBPACK_DEBUG += $(realmd_DEBUG)
 TESTS += $(realmd_TESTS)
 
 realmd: dist/realmd/stamp
-clean-realmd: 
+maintainer-clean-realmd: 
 	rm -rf $(realmd_OUTPUTS) $(realmd_INSTALL) dist/realmd/stamp
-clean-local:: clean-realmd
+maintainer-clean-local:: clean-realmd

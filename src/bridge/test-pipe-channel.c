@@ -48,7 +48,7 @@ typedef struct {
   MockTransport *transport;
   CockpitChannel *channel;
   gchar *channel_problem;
-  const gchar *unix_path;
+  gchar *unix_path;
   gchar *temp_file;
 } TestCase;
 
@@ -105,12 +105,12 @@ setup (TestCase *tc,
   GSocketAddress *address;
   GError *error = NULL;
 
-  tc->unix_path = data;
+  tc->unix_path = g_strdup (data);
   if (tc->unix_path == NULL)
     {
-      tc->unix_path = tc->temp_file = g_strdup ("/tmp/cockpit-test-XXXXXX.sock");
+      tc->temp_file = g_strdup ("/tmp/cockpit-test-XXXXXX");
       g_assert (close (g_mkstemp (tc->temp_file)) == 0);
-      g_assert (g_unlink (tc->temp_file) == 0);
+      tc->unix_path = g_strconcat (tc->temp_file, ".sock", NULL);
     }
 
   address = g_unix_socket_address_new (tc->unix_path);
@@ -171,6 +171,8 @@ teardown (TestCase *tc,
   g_clear_object (&tc->conn_sock);
 
   g_unlink (tc->unix_path);
+  g_free (tc->unix_path);
+  g_unlink (tc->temp_file);
   g_free (tc->temp_file);
 
   g_object_unref (tc->transport);
@@ -647,7 +649,7 @@ test_spawn_pty_resize (void)
    * Set shell option `checkwinsize`, which tells bash to update $LINES
    * and $COLUMNS after each command.
    */
-  sent = bytes_from_string ("shopt -s checkwinsize\necho -e \"\\x7b$COLUMNS $LINES\\x7d\"\n");
+  sent = bytes_from_string ("echo -e \"\\x7b$(stty size)\\x7d\"\n");
   cockpit_transport_emit_recv (COCKPIT_TRANSPORT (transport), "548", sent);
   g_bytes_unref (sent);
 
@@ -666,30 +668,61 @@ test_spawn_pty_resize (void)
         }
     }
 
+  cockpit_assert_strmatch (received->str, "*{1234 4567}*");
+
   options = json_object_new ();
   window = json_object_new ();
   json_object_set_int_member (window, "rows", 24);
   json_object_set_int_member (window, "cols", 42);
   json_object_set_object_member (options, "window", window);
-  cockpit_transport_emit_control (COCKPIT_TRANSPORT (transport), "options", "548", options, NULL);
-  json_object_unref (options);
 
-  sent = bytes_from_string ("echo -e \"\\x7b$COLUMNS $LINES\\x7d\"\nexit\n");
+  /* HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1693179
+   * setting PTY size sometimes gets ignored, so retry a few times */
+  for (int retry = 1;; ++retry)
+    {
+      cockpit_transport_emit_control (COCKPIT_TRANSPORT (transport), "options", "548", options, NULL);
+
+      sent = bytes_from_string ("echo -e \"\\x7b$(stty size)\\x7d\"\n");
+      cockpit_transport_emit_recv (COCKPIT_TRANSPORT (transport), "548", sent);
+      g_bytes_unref (sent);
+
+      g_string_truncate (received, 0);
+      while (!problem)
+        {
+          g_main_context_iteration (NULL, TRUE);
+          sent = mock_transport_pop_channel (transport, "548");
+          if (sent)
+            {
+              data = g_bytes_get_data (sent, &len);
+              g_string_append_len (received, data, len);
+              if (memchr (data, '}', len))
+                break;
+            }
+        }
+
+      if (strstr (received->str, "{24 42}"))
+        break;
+
+      g_message ("setting PTY size failed, retry #%i: %s", retry, received->str);
+
+      if (retry == 5)
+      {
+        g_warning ("repeatedly failed to set terminal size for stream channel: %s", received->str);
+        g_test_fail ();
+        break;
+      }
+    }
+
+  sent = bytes_from_string ("exit\n");
   cockpit_transport_emit_recv (COCKPIT_TRANSPORT (transport), "548", sent);
   g_bytes_unref (sent);
-
   while (!problem)
     {
       g_main_context_iteration (NULL, TRUE);
-      sent = mock_transport_pop_channel (transport, "548");
-      if (sent)
-        {
-          data = g_bytes_get_data (sent, &len);
-          g_string_append_len (received, data, len);
-        }
+      mock_transport_pop_channel (transport, "548");
     }
 
-  cockpit_assert_strmatch (received->str, "*{4567 1234}*{42 24}*");
+  json_object_unref (options);
   g_string_free (received, TRUE);
 
   g_assert_cmpstr (problem, ==, "");
@@ -752,6 +785,19 @@ add_remainder (gpointer user_data)
 }
 
 static void
+print_gbytes (GBytes *bytes)
+{
+    gsize i, len;
+    const char* data;
+
+    data = g_bytes_get_data (bytes, &len);
+    g_assert (data);
+    for (i = 0; i < len; ++i)
+      g_printf ("%X", data[i]);
+    puts("");
+}
+
+static void
 test_recv_valid_batched (TestCase *tc,
                          gconstpointer unused)
 {
@@ -773,7 +819,14 @@ test_recv_valid_batched (TestCase *tc,
 
   converted = g_bytes_new ("Marmalaade!\xe2\x94\x80", 14);
   received = mock_transport_combine_output (tc->transport, "548", NULL);
-  g_assert (g_bytes_equal (converted, received));
+  if (!g_bytes_equal (converted, received))
+    {
+      g_test_fail ();
+      puts ("ERROR: unexpected output\nconverted:");
+      print_gbytes (converted);
+      puts ("received:");
+      print_gbytes (received);
+    }
   g_bytes_unref (converted);
   g_bytes_unref (received);
 }

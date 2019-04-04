@@ -363,6 +363,14 @@ return plural;
   null,
   "Procesor"
  ],
+ "CPU Security": [
+  null,
+  ""
+ ],
+ "CPU Security Toggles": [
+  null,
+  ""
+ ],
  "Cached": [
   null,
   "Uloženo v mezipaměti"
@@ -498,6 +506,10 @@ return plural;
  "Disable": [
   null,
   "Vypnout"
+ ],
+ "Disable symmetric multithreading": [
+  null,
+  ""
  ],
  "Disabled": [
   null,
@@ -783,6 +795,10 @@ return plural;
   null,
   "Minut"
  ],
+ "Mitigations": [
+  null,
+  ""
+ ],
  "Model": [
   null,
   "Model"
@@ -959,6 +975,10 @@ return plural;
   null,
   "Skříň do stojanu"
  ],
+ "Read more...": [
+  null,
+  ""
+ ],
  "Real Host Name": [
   null,
   "Skutečný název stroje"
@@ -1071,6 +1091,10 @@ return plural;
   null,
   "Uložit"
  ],
+ "Save and reboot": [
+  null,
+  ""
+ ],
  "Sealed-case PC": [
   null,
   "Počítač se zapečetěnou skříní"
@@ -1086,6 +1110,10 @@ return plural;
  "Security Updates Available": [
   null,
   "Jsou k dispozici aktualizace zabezpečení"
+ ],
+ "Service": [
+  null,
+  "Služba"
  ],
  "Service Logs": [
   null,
@@ -1130,6 +1158,10 @@ return plural;
  "Sockets": [
   null,
   "Sokety"
+ ],
+ "Software-based workarounds help prevent CPU security issues. These mitigations have the side effect of reducing performance. Change these settings at your own risk.": [
+  null,
+  ""
  ],
  "Space-saving Computer": [
   null,
@@ -1226,6 +1258,10 @@ return plural;
  "Terminal": [
   null,
   "Terminál"
+ ],
+ "The user $0 is not permitted to change cpu security mitigations": [
+  null,
+  ""
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,

@@ -404,15 +404,11 @@ return plural;
   null,
   "Luo uusi looginen taltio"
  ],
- "Create partition": [
-  null,
-  "Luo osio"
- ],
- "Create partition on $0": [
+ "Create Partition on $0": [
   null,
   "Luo osio kohteessa $0"
  ],
- "Create partition table": [
+ "Create Partition Table": [
   null,
   "Luo osiotaulu"
  ],

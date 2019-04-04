@@ -135,13 +135,13 @@ return plural;
   null,
   "Kolejność uruchamiania"
  ],
+ "Boot order settings could not be saved": [
+  null,
+  ""
+ ],
  "Bus": [
   null,
   "Magistrala"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Działanie CHANGE NETWORK STATE się nie powiodło"
  ],
  "CPU Type": [
   null,
@@ -275,6 +275,10 @@ return plural;
   null,
   "Rozłączono z konsoli szeregowej. Proszę kliknąć przycisk „Połącz ponownie”."
  ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  ""
+ ],
  "Disk failed to be attached": [
   null,
   "Podłączenie dysku się nie powiodło"
@@ -307,6 +311,10 @@ return plural;
   null,
   "Nazwa nowej maszyny wirtualnej"
  ],
+ "FORCEOFF action failed: $0": [
+  null,
+  ""
+ ],
  "FQDN": [
   null,
   "FQDN"
@@ -330,10 +338,6 @@ return plural;
  "Format": [
   null,
   "Sformatuj"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "Działanie GET HYPERVISOR MAX VCPU się nie powiodło"
  ],
  "GiB": [
   null,
@@ -363,10 +367,6 @@ return plural;
   null,
   "Gospodarz do konserwacji"
  ],
- "INSTALL VM action failed": [
-  null,
-  "Działanie INSTALL VM się nie powiodło"
- ],
  "Install": [
   null,
   "Zainstaluj"
@@ -394,6 +394,10 @@ return plural;
  "MIGRATE action failed": [
   null,
   "Działanie MIGRATE się nie powiodło"
+ ],
+ "Mac": [
+  null,
+  ""
  ],
  "Mac Address": [
   null,
@@ -430,6 +434,10 @@ return plural;
  "More Information": [
   null,
   "Więcej informacji"
+ ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  ""
  ],
  "Name": [
   null,
@@ -521,7 +529,7 @@ return plural;
  ],
  "Pause": [
   null,
-  ""
+  "Wstrzymaj"
  ],
  "Persistence": [
   null,
@@ -587,6 +595,10 @@ return plural;
   null,
   "Prywatne"
  ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protokół"
@@ -594,6 +606,10 @@ return plural;
  "REBOOT action failed": [
   null,
   "Działanie REBOOT się nie powiodło"
+ ],
+ "REBOOT_VM action failed: %s0": [
+  null,
+  ""
  ],
  "Readonly": [
   null,
@@ -621,7 +637,7 @@ return plural;
  ],
  "Resume": [
   null,
-  ""
+  "Wznów"
  ],
  "Run": [
   null,
@@ -666,6 +682,10 @@ return plural;
  "START action failed": [
   null,
   "Działanie START się nie powiodło"
+ ],
+ "START_VM action failed: %s0": [
+  null,
+  ""
  ],
  "SUSPEND action failed": [
   null,
@@ -739,6 +759,10 @@ return plural;
   null,
   "System"
  ],
+ "Target": [
+  null,
+  "Cel"
+ ],
  "Template": [
   null,
   "Szablon"
@@ -807,6 +831,14 @@ return plural;
   null,
   "Typ"
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
+ "Unit": [
+  null,
+  "Jednostka"
+ ],
  "Unplug": [
   null,
   "Odłącz"
@@ -835,37 +867,45 @@ return plural;
   null,
   "Zarządzanie usługami VDSM"
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to Reboot": [
   null,
-  "Działanie VM DELETE (DESTROY) się nie powiodło"
+  ""
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
-  "Działanie VM DELETE (UNDEFINE) się nie powiodło"
+  ""
  ],
- "VM FORCE OFF action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "Działanie VM FORCE OFF się nie powiodło"
+  ""
  ],
- "VM FORCE REBOOT action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "Działanie VM FORCE REBOOT się nie powiodło"
+  ""
  ],
- "VM REBOOT action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "Działanie VM REBOOT się nie powiodło"
+  ""
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to pause": [
   null,
-  "Działanie VM SEND niemaskowalnego przerwania się nie powiodło"
+  ""
  ],
- "VM SHUT DOWN action failed": [
+ "VM $0 failed to resume": [
   null,
-  "Działanie VM SHUT DOWN się nie powiodło"
+  ""
  ],
- "VM START action failed": [
+ "VM $0 failed to send NMI": [
   null,
-  "Działanie VM START się nie powiodło"
+  ""
+ ],
+ "VM $0 failed to shutdown": [
+  null,
+  ""
+ ],
+ "VM $0 failed to start": [
+  null,
+  ""
  ],
  "VM icon": [
   null,
@@ -887,6 +927,10 @@ return plural;
   null,
   "Port TLS VNC:"
  ],
+ "Vendor": [
+  null,
+  "Producent"
+ ],
  "Version": [
   null,
   "Wersja"
@@ -906,6 +950,10 @@ return plural;
  "Volume": [
   null,
   "Wolumin"
+ ],
+ "WWPN": [
+  null,
+  ""
  ],
  "bridge": [
   null,
@@ -966,6 +1014,10 @@ return plural;
  "host": [
   null,
   "gospodarz"
+ ],
+ "host device": [
+  null,
+  ""
  ],
  "hostdev": [
   null,
@@ -1039,10 +1091,6 @@ return plural;
   null,
   "Trwa logowanie oprogramowania oVirt"
  ],
- "other": [
-  null,
-  "inne"
- ],
  "paused": [
   null,
   "wstrzymane"
@@ -1062,6 +1110,10 @@ return plural;
  "reboot": [
   null,
   "uruchom ponownie"
+ ],
+ "redirected device": [
+  null,
+  ""
  ],
  "running": [
   null,

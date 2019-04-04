@@ -377,10 +377,6 @@ return plural;
   null,
   ""
  ],
- "Create Partition": [
-  null,
-  ""
- ],
  "Create RAID Device": [
   null,
   "Stvori RAID uređaj"
@@ -405,15 +401,15 @@ return plural;
   null,
   ""
  ],
- "Create partition": [
+ "Create Partition": [
   null,
   "Načini particiju"
  ],
- "Create partition on $0": [
+ "Create Partition on $0": [
   null,
   ""
  ],
- "Create partition table": [
+ "Create Partition Table": [
   null,
   ""
  ],

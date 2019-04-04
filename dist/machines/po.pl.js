@@ -69,7 +69,7 @@ return plural;
  },
  "$0 Network": [
   null,
-  ""
+  "Sieć $0"
  ],
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -119,13 +119,13 @@ return plural;
   null,
   "Kolejność uruchamiania"
  ],
+ "Boot order settings could not be saved": [
+  null,
+  ""
+ ],
  "Bus": [
   null,
   "Magistrala"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Działanie CHANGE NETWORK STATE się nie powiodło"
  ],
  "CPU Type": [
   null,
@@ -195,9 +195,9 @@ return plural;
   null,
   "Utwórz maszynę wirtualną"
  ],
- "Creation of vm $0 failed": [
+ "Creation of VM $0 failed": [
   null,
-  "Utworzenie maszyny wirtualnej $0 się nie powiodło"
+  ""
  ],
  "Ctrl+Alt+Del": [
   null,
@@ -250,6 +250,10 @@ return plural;
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
   "Rozłączono z konsoli szeregowej. Proszę kliknąć przycisk „Połącz ponownie”."
+ ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  ""
  ],
  "Disk failed to be attached": [
   null,
@@ -311,10 +315,6 @@ return plural;
   null,
   "Tryb przekierowania"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "Działanie GET HYPERVISOR MAX VCPU się nie powiodło"
- ],
  "General": [
   null,
   "Ogólne"
@@ -337,7 +337,7 @@ return plural;
  ],
  "Host Device": [
   null,
-  ""
+  "Urządzenie gospodarza"
  ],
  "Host Name": [
   null,
@@ -346,10 +346,6 @@ return plural;
  "Host should not be empty": [
   null,
   "Gospodarz nie może być pusty"
- ],
- "INSTALL VM action failed": [
-  null,
-  "Działanie INSTALL VM się nie powiodło"
  ],
  "IPv4 Address": [
   null,
@@ -365,7 +361,7 @@ return plural;
  ],
  "In most configurations, macvtap does not work for host to guest network communication.": [
   null,
-  ""
+  "W przypadku większości konfiguracji, macvtap nie działa dla gospodarza w celu komunikacji sieciowej gościa."
  ],
  "Install": [
   null,
@@ -393,7 +389,7 @@ return plural;
  ],
  "Isolated Network": [
   null,
-  ""
+  "Odosobniona sieć"
  ],
  "Launch Remote Viewer": [
   null,
@@ -410,6 +406,10 @@ return plural;
  "MAC Address": [
   null,
   "Adres MAC"
+ ],
+ "Mac": [
+  null,
+  ""
  ],
  "Mac Address": [
   null,
@@ -449,6 +449,10 @@ return plural;
  ],
  "NAT to $0": [
   null,
+  "NAT do $0"
+ ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
   ""
  ],
  "Name": [
@@ -467,9 +471,17 @@ return plural;
   null,
   "Maska sieci"
  ],
- "Network Boot (PXE)": [
+ "Network $0 failed to get activated": [
   null,
   ""
+ ],
+ "Network $0 failed to get deactivated": [
+  null,
+  ""
+ ],
+ "Network Boot (PXE)": [
+  null,
+  "Uruchamianie sieciowe (PXE)"
  ],
  "Network File System": [
   null,
@@ -481,15 +493,7 @@ return plural;
  ],
  "Network Selection does not support PXE.": [
   null,
-  ""
- ],
- "Network failed to get activated": [
-  null,
-  "Aktywacja sieci się nie powiodła"
- ],
- "Network failed to get deactivated": [
-  null,
-  "Dezaktywacja sieci się nie powiodła"
+  "Wybór sieci nie obsługuje PXE."
  ],
  "Network interface settings could not be saved": [
   null,
@@ -585,7 +589,7 @@ return plural;
  ],
  "Pause": [
   null,
-  ""
+  "Wstrzymaj"
  ],
  "Persistence": [
   null,
@@ -631,6 +635,10 @@ return plural;
   null,
   "Prywatne"
  ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protokół"
@@ -661,15 +669,15 @@ return plural;
  ],
  "Resume": [
   null,
-  ""
+  "Wznów"
  ],
  "Route to $0": [
   null,
-  ""
+  "Trasa do $0"
  ],
  "Routed Network": [
   null,
-  ""
+  "Trasowana sieć"
  ],
  "Run": [
   null,
@@ -759,6 +767,14 @@ return plural;
   null,
   "Stan"
  ],
+ "Storage Pool $0 failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool $0 failed to get deactivated": [
+  null,
+  ""
+ ],
  "Storage Pool Name": [
   null,
   "Nazwa puli urządzeń do przechowywania danych"
@@ -766,14 +782,6 @@ return plural;
  "Storage Pool failed to be created": [
   null,
   "Utworzenie puli urządzeń do przechowywania danych się nie powiodło"
- ],
- "Storage Pool failed to get activated": [
-  null,
-  "Aktywacja puli urządzeń do przechowywania danych się nie powiodła"
- ],
- "Storage Pool failed to get deactivated": [
-  null,
-  "Dezaktywacja puli urządzeń do przechowywania danych się nie powiodła"
  ],
  "Storage Pools": [
   null,
@@ -794,6 +802,10 @@ return plural;
  "System": [
   null,
   "System"
+ ],
+ "Target": [
+  null,
+  "Cel"
  ],
  "Target Path": [
   null,
@@ -867,6 +879,10 @@ return plural;
   null,
   "Typ"
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
  "URL": [
   null,
   "Adres URL"
@@ -874,6 +890,10 @@ return plural;
  "Unique name": [
   null,
   "Unikalna nazwa"
+ ],
+ "Unit": [
+  null,
+  "Jednostka"
  ],
  "Unplug": [
   null,
@@ -899,61 +919,45 @@ return plural;
   null,
   "Nie można zapisać ustawień wirtualnego procesora"
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
-  null,
-  "Działanie VM CHANGE_NETWORK_STATE się nie powiodło"
- ],
- "VM DELETE (DESTROY) action failed": [
-  null,
-  "Działanie VM DELETE (DESTROY) się nie powiodło"
- ],
- "VM DELETE (UNDEFINE) action failed": [
-  null,
-  "Działanie VM DELETE (UNDEFINE) się nie powiodło"
- ],
- "VM DELETE action failed": [
-  null,
-  "Działanie VM DELETE się nie powiodło"
- ],
- "VM DETACH_DISK action failed": [
-  null,
-  "Działanie VM DETACH_DISK się nie powiodło"
- ],
- "VM FORCE OFF action failed": [
-  null,
-  "Działanie VM FORCE OFF się nie powiodło"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "Działanie VM FORCE REBOOT się nie powiodło"
- ],
- "VM Pause action failed": [
+ "VM $0 failed to Reboot": [
   null,
   ""
  ],
- "VM REBOOT action failed": [
-  null,
-  "Działanie VM REBOOT się nie powiodło"
- ],
- "VM Resume action failed": [
+ "VM $0 failed to force Reboot": [
   null,
   ""
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "Działanie VM SEND niemaskowalnego przerwania się nie powiodło"
+  ""
  ],
- "VM SENDNMI action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "Działanie VM SENDNMI się nie powiodło"
+  ""
  ],
- "VM SHUT DOWN action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "Działanie VM SHUT DOWN się nie powiodło"
+  ""
  ],
- "VM START action failed": [
+ "VM $0 failed to pause": [
   null,
-  "Działanie VM START się nie powiodło"
+  ""
+ ],
+ "VM $0 failed to resume": [
+  null,
+  ""
+ ],
+ "VM $0 failed to send NMI": [
+  null,
+  ""
+ ],
+ "VM $0 failed to shutdown": [
+  null,
+  ""
+ ],
+ "VM $0 failed to start": [
+  null,
+  ""
  ],
  "VNC": [
   null,
@@ -971,13 +975,17 @@ return plural;
   null,
   "Port TLS VNC:"
  ],
+ "Vendor": [
+  null,
+  "Producent"
+ ],
  "Virtual Machines": [
   null,
   "Maszyny wirtualne"
  ],
  "Virtual Network": [
   null,
-  ""
+  "Sieć wirtualna"
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
@@ -990,6 +998,10 @@ return plural;
  "Volume": [
   null,
   "Wolumin"
+ ],
+ "WWPN": [
+  null,
+  ""
  ],
  "active": [
   null,
@@ -1043,9 +1055,21 @@ return plural;
   null,
   "gospodarz"
  ],
+ "host device": [
+  null,
+  ""
+ ],
  "hostdev": [
   null,
   "urządzenie gospodarza"
+ ],
+ "iSCSI Target": [
+  null,
+  ""
+ ],
+ "iSCSI target IQN": [
+  null,
+  ""
  ],
  "idle": [
   null,
@@ -1067,10 +1091,6 @@ return plural;
   null,
   "nie"
  ],
- "other": [
-  null,
-  "inne"
- ],
  "paused": [
   null,
   "wstrzymane"
@@ -1082,6 +1102,10 @@ return plural;
  "raw": [
   null,
   "surowy"
+ ],
+ "redirected device": [
+  null,
+  ""
  ],
  "running": [
   null,

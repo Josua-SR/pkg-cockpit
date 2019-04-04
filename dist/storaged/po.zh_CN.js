@@ -403,15 +403,11 @@ return plural;
   null,
   "创建新逻辑卷"
  ],
- "Create partition": [
-  null,
-  "创建分区"
- ],
- "Create partition on $0": [
+ "Create Partition on $0": [
   null,
   "为 $0 创建分区"
  ],
- "Create partition table": [
+ "Create Partition Table": [
   null,
   "创建分区表"
  ],

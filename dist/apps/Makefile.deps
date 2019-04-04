@@ -1,5 +1,5 @@
 # Generated Makefile data for apps
-# Stamp: Fri Mar 22 2019 14:43:52 GMT+0000 (Coordinated Universal Time)
+# Stamp: Wed Apr 03 2019 10:22:05 GMT+0000 (Coordinated Universal Time)
 
 apps_INPUTS = \
 	node_modules/promise/LICENSE \
@@ -177,6 +177,6 @@ WEBPACK_DEBUG += $(apps_DEBUG)
 TESTS += $(apps_TESTS)
 
 apps: dist/apps/stamp
-clean-apps: 
+maintainer-clean-apps: 
 	rm -rf $(apps_OUTPUTS) $(apps_INSTALL) dist/apps/stamp
-clean-local:: clean-apps
+maintainer-clean-local:: clean-apps

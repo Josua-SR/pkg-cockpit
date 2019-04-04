@@ -135,13 +135,13 @@ return plural;
   null,
   "Pořadí zavádění"
  ],
+ "Boot order settings could not be saved": [
+  null,
+  ""
+ ],
  "Bus": [
   null,
   "Sběrnice"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Akce ZMĚNIT STAV SÍTĚ se nezdařila"
  ],
  "CPU Type": [
   null,
@@ -275,6 +275,10 @@ return plural;
   null,
   "Odpojeno od sériové konzole. Klikněte na tlačítko Znovu připojit"
  ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  ""
+ ],
  "Disk failed to be attached": [
   null,
   "Disk se nepodařilo připojit"
@@ -307,6 +311,10 @@ return plural;
   null,
   "Zadejte název pro nový virt. stroj"
  ],
+ "FORCEOFF action failed: $0": [
+  null,
+  ""
+ ],
  "FQDN": [
   null,
   "FQDN"
@@ -330,10 +338,6 @@ return plural;
  "Format": [
   null,
   "Formát"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "Akce ZJISTIT MAXIMUM VIRT. PROCESORŮ HYPERVIZORU se nezdařila"
  ],
  "GiB": [
   null,
@@ -363,10 +367,6 @@ return plural;
   null,
   "Stroj do údržby"
  ],
- "INSTALL VM action failed": [
-  null,
-  "Akce NAINSTALOVAT VIRT. STROJ se nezdařila"
- ],
  "Install": [
   null,
   "Nainstalovat"
@@ -394,6 +394,10 @@ return plural;
  "MIGRATE action failed": [
   null,
   "Akce MIGRACE se nezdařila"
+ ],
+ "Mac": [
+  null,
+  ""
  ],
  "Mac Address": [
   null,
@@ -430,6 +434,10 @@ return plural;
  "More Information": [
   null,
   "Více informací"
+ ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  ""
  ],
  "Name": [
   null,
@@ -521,7 +529,7 @@ return plural;
  ],
  "Pause": [
   null,
-  ""
+  "Pozastavit"
  ],
  "Persistence": [
   null,
@@ -587,6 +595,10 @@ return plural;
   null,
   "Soukromé"
  ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protokol"
@@ -594,6 +606,10 @@ return plural;
  "REBOOT action failed": [
   null,
   "Akce RESTART se nezdařila"
+ ],
+ "REBOOT_VM action failed: %s0": [
+  null,
+  ""
  ],
  "Readonly": [
   null,
@@ -621,7 +637,7 @@ return plural;
  ],
  "Resume": [
   null,
-  ""
+  "Obnovit chod"
  ],
  "Run": [
   null,
@@ -666,6 +682,10 @@ return plural;
  "START action failed": [
   null,
   "Akce START se nezdařila"
+ ],
+ "START_VM action failed: %s0": [
+  null,
+  ""
  ],
  "SUSPEND action failed": [
   null,
@@ -739,6 +759,10 @@ return plural;
   null,
   "Systém"
  ],
+ "Target": [
+  null,
+  "Cíl"
+ ],
  "Template": [
   null,
   "Šablona"
@@ -807,6 +831,14 @@ return plural;
   null,
   "Typ"
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
+ "Unit": [
+  null,
+  "Jednotka"
+ ],
  "Unplug": [
   null,
   "Odpojit"
@@ -835,37 +867,45 @@ return plural;
   null,
   "Správa služby VDSM"
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to Reboot": [
   null,
-  "Akce SMAZAT VIRT. STROJ (ZLIKVIDOVAT) se nezdařila"
+  ""
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
-  "Akce SMAZAT VIRT. STROJ (ZRUŠIT DEFINICI) se nezdařila"
+  ""
  ],
- "VM FORCE OFF action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "Akce VYNUCENÉ VYPNUTÍ VIRT. STROJE se nezdařila"
+  ""
  ],
- "VM FORCE REBOOT action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "Akce VYNUCENÝ RESTART se nezdařila"
+  ""
  ],
- "VM REBOOT action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "Akce RESTART se nezdařila"
+  ""
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to pause": [
   null,
-  "Akce POSLAT VIRT. STROJI nemaskovatelné přerušení se nezdařila"
+  ""
  ],
- "VM SHUT DOWN action failed": [
+ "VM $0 failed to resume": [
   null,
-  "Akce VYPNOUT VIRT STROJ se nezdařila"
+  ""
  ],
- "VM START action failed": [
+ "VM $0 failed to send NMI": [
   null,
-  "Akce SPUSTIT VIRT STROJ se nezdařila"
+  ""
+ ],
+ "VM $0 failed to shutdown": [
+  null,
+  ""
+ ],
+ "VM $0 failed to start": [
+  null,
+  ""
  ],
  "VM icon": [
   null,
@@ -887,6 +927,10 @@ return plural;
   null,
   "VNC TLS port:"
  ],
+ "Vendor": [
+  null,
+  "Výrobce"
+ ],
  "Version": [
   null,
   "Verze"
@@ -906,6 +950,10 @@ return plural;
  "Volume": [
   null,
   "Svazek"
+ ],
+ "WWPN": [
+  null,
+  ""
  ],
  "bridge": [
   null,
@@ -966,6 +1014,10 @@ return plural;
  "host": [
   null,
   "stroj"
+ ],
+ "host device": [
+  null,
+  ""
  ],
  "hostdev": [
   null,
@@ -1039,10 +1091,6 @@ return plural;
   null,
   "oVirt přihlášení v běhu"
  ],
- "other": [
-  null,
-  "ostatní"
- ],
  "paused": [
   null,
   "pozastaveno"
@@ -1062,6 +1110,10 @@ return plural;
  "reboot": [
   null,
   "restart"
+ ],
+ "redirected device": [
+  null,
+  ""
  ],
  "running": [
   null,

@@ -135,13 +135,13 @@ return plural;
   null,
   "Порядок завантаження"
  ],
+ "Boot order settings could not be saved": [
+  null,
+  ""
+ ],
  "Bus": [
   null,
   "Канал"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Не вдалося виконати дію зі зміни стану мережі"
  ],
  "CPU Type": [
   null,
@@ -275,6 +275,10 @@ return plural;
   null,
   "Від'єднано від послідовної консолі. Натисніть кнопку «Повторно з'єднатися»."
  ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  ""
+ ],
  "Disk failed to be attached": [
   null,
   "Не вдалося долучити диск"
@@ -307,6 +311,10 @@ return plural;
   null,
   "Введіть назву нової ВМ"
  ],
+ "FORCEOFF action failed: $0": [
+  null,
+  ""
+ ],
  "FQDN": [
   null,
   "FQDN"
@@ -330,10 +338,6 @@ return plural;
  "Format": [
   null,
   "Формат"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "Помилка під час спроби виконати дію GET HYPERVISOR MAX VCPU"
  ],
  "GiB": [
   null,
@@ -363,10 +367,6 @@ return plural;
   null,
   "Вузол для обслуговування"
  ],
- "INSTALL VM action failed": [
-  null,
-  "Помилка під час дії зі встановлення ВМ"
- ],
  "Install": [
   null,
   "Встановити"
@@ -394,6 +394,10 @@ return plural;
  "MIGRATE action failed": [
   null,
   "Не вдалося виконати дію MIGRATE"
+ ],
+ "Mac": [
+  null,
+  ""
  ],
  "Mac Address": [
   null,
@@ -430,6 +434,10 @@ return plural;
  "More Information": [
   null,
   "Докладніше"
+ ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  ""
  ],
  "Name": [
   null,
@@ -521,7 +529,7 @@ return plural;
  ],
  "Pause": [
   null,
-  ""
+  "Призупинити"
  ],
  "Persistence": [
   null,
@@ -587,6 +595,10 @@ return plural;
   null,
   "Закрита"
  ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Протокол"
@@ -594,6 +606,10 @@ return plural;
  "REBOOT action failed": [
   null,
   "Не вдалося виконати дію REBOOT"
+ ],
+ "REBOOT_VM action failed: %s0": [
+  null,
+  ""
  ],
  "Readonly": [
   null,
@@ -621,7 +637,7 @@ return plural;
  ],
  "Resume": [
   null,
-  ""
+  "Відновити"
  ],
  "Run": [
   null,
@@ -666,6 +682,10 @@ return plural;
  "START action failed": [
   null,
   "Не вдалося виконати дію START"
+ ],
+ "START_VM action failed: %s0": [
+  null,
+  ""
  ],
  "SUSPEND action failed": [
   null,
@@ -739,6 +759,10 @@ return plural;
   null,
   "Система"
  ],
+ "Target": [
+  null,
+  "Призначення"
+ ],
  "Template": [
   null,
   "Шаблон"
@@ -807,6 +831,14 @@ return plural;
   null,
   "Тип"
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
+ "Unit": [
+  null,
+  "Модуль"
+ ],
  "Unplug": [
   null,
   "Від'єднати"
@@ -835,37 +867,45 @@ return plural;
   null,
   "Керування службою VDSM"
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to Reboot": [
   null,
-  "Помилка дії VM DELETE (DESTROY)"
+  ""
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
-  "Помилка дії VM DELETE (UNDEFINE)"
+  ""
  ],
- "VM FORCE OFF action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "Не вдалося виконати дію FORCE OFF для ВМ"
+  ""
  ],
- "VM FORCE REBOOT action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "Не вдалося виконати дію FORCE REBOOT для ВМ"
+  ""
  ],
- "VM REBOOT action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "Не вдалося виконати дію REBOOT для ВМ"
+  ""
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to pause": [
   null,
-  "Спроба виконати дію немаскованого переривання VM SEND завершилася невдало"
+  ""
  ],
- "VM SHUT DOWN action failed": [
+ "VM $0 failed to resume": [
   null,
-  "Не вдалося виконати дію SHUT DOWN для ВМ"
+  ""
  ],
- "VM START action failed": [
+ "VM $0 failed to send NMI": [
   null,
-  "Не вдалося виконати дію START для ВМ"
+  ""
+ ],
+ "VM $0 failed to shutdown": [
+  null,
+  ""
+ ],
+ "VM $0 failed to start": [
+  null,
+  ""
  ],
  "VM icon": [
   null,
@@ -887,6 +927,10 @@ return plural;
   null,
   "Порт TLS VNC:"
  ],
+ "Vendor": [
+  null,
+  "Постачальник"
+ ],
  "Version": [
   null,
   "Версія"
@@ -906,6 +950,10 @@ return plural;
  "Volume": [
   null,
   "Том"
+ ],
+ "WWPN": [
+  null,
+  ""
  ],
  "bridge": [
   null,
@@ -966,6 +1014,10 @@ return plural;
  "host": [
   null,
   "вузол"
+ ],
+ "host device": [
+  null,
+  ""
  ],
  "hostdev": [
   null,
@@ -1039,10 +1091,6 @@ return plural;
   null,
   "Виконуємо вхід до oVirt"
  ],
- "other": [
-  null,
-  "інше"
- ],
  "paused": [
   null,
   "призупинено"
@@ -1062,6 +1110,10 @@ return plural;
  "reboot": [
   null,
   "перезавантаження"
+ ],
+ "redirected device": [
+  null,
+  ""
  ],
  "running": [
   null,

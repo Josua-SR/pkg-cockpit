@@ -1,5 +1,5 @@
 # Generated Makefile data for docker
-# Stamp: Fri Mar 22 2019 14:43:53 GMT+0000 (Coordinated Universal Time)
+# Stamp: Wed Apr 03 2019 10:22:06 GMT+0000 (Coordinated Universal Time)
 
 docker_INPUTS = \
 	node_modules/bootstrap/LICENSE \
@@ -912,6 +912,6 @@ WEBPACK_DEBUG += $(docker_DEBUG)
 TESTS += $(docker_TESTS)
 
 docker: dist/docker/stamp
-clean-docker: 
+maintainer-clean-docker: 
 	rm -rf $(docker_OUTPUTS) $(docker_INSTALL) dist/docker/stamp
-clean-local:: clean-docker
+maintainer-clean-local:: clean-docker

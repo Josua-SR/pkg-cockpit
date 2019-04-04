@@ -375,10 +375,6 @@ return plural;
   null,
   "논리 볼륨 이름 바꾸기"
  ],
- "Create Partition": [
-  null,
-  ""
- ],
  "Create RAID Device": [
   null,
   ""
@@ -403,15 +399,15 @@ return plural;
   null,
   "새 볼륨 그룹 만들기 "
  ],
- "Create partition": [
+ "Create Partition": [
   null,
   "파티션 생성"
  ],
- "Create partition on $0": [
+ "Create Partition on $0": [
   null,
   "$0에 파티션 만들기"
  ],
- "Create partition table": [
+ "Create Partition Table": [
   null,
   "파티션 테이블 만들기 "
  ],

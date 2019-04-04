@@ -1,5 +1,5 @@
 # Generated Makefile data for shell
-# Stamp: Fri Mar 22 2019 14:43:53 GMT+0000 (Coordinated Universal Time)
+# Stamp: Wed Apr 03 2019 10:22:06 GMT+0000 (Coordinated Universal Time)
 
 shell_INPUTS = \
 	node_modules/bootstrap/LICENSE \
@@ -31,6 +31,10 @@ shell_INPUTS = \
 	node_modules/react/cjs/react.production.min.js \
 	node_modules/react/index.js \
 	node_modules/react/package.json \
+	node_modules/throttle-debounce/LICENSE.md \
+	node_modules/throttle-debounce/README.md \
+	node_modules/throttle-debounce/dist/index.esm.js \
+	node_modules/throttle-debounce/package.json \
 	pkg/lib/cockpit-components-dialog.css \
 	pkg/lib/cockpit-components-dialog.jsx \
 	pkg/lib/cockpit-components-file-autocomplete.css \
@@ -134,7 +138,7 @@ shell_TESTS = \
 
 dist/shell/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/mustache/mustache.js -N node_modules/patternfly/dist/less/color-variables.less -N node_modules/patternfly/dist/less/variables.less -N node_modules/prop-types/factoryWithThrowingShims.js -N node_modules/prop-types/index.js -N node_modules/prop-types/lib/ReactPropTypesSecret.js -N node_modules/react-dom/cjs/react-dom.production.min.js -N node_modules/react-dom/index.js -N node_modules/react/cjs/react.production.min.js -N node_modules/react/index.js -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-file-autocomplete.css -N pkg/lib/cockpit-components-file-autocomplete.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/credentials-ssh-private-keys.sh -N pkg/lib/credentials-ssh-remove-key.sh -N pkg/lib/credentials.js -N pkg/lib/listing.less -N pkg/lib/machine-add.html -N pkg/lib/machine-auth-failed.html -N pkg/lib/machine-change-auth.html -N pkg/lib/machine-change-port.html -N pkg/lib/machine-color-picker.html -N pkg/lib/machine-dialogs.js -N pkg/lib/machine-invalid-hostkey.html -N pkg/lib/machine-not-supported.html -N pkg/lib/machine-sync-users.html -N pkg/lib/machine-unknown-hostkey.html -N pkg/lib/machines.js -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/table.css -N pkg/lib/variables.less -N pkg/shell/active-pages-dialog.jsx -N pkg/shell/active-pages.js -N pkg/shell/active-pages.less -N pkg/shell/base_index.js -N pkg/shell/credentials.js -N pkg/shell/images/server-error.png -N pkg/shell/images/server-large.png -N pkg/shell/images/server-small.png -N pkg/shell/index-no-machines.js -N pkg/shell/index-stub.js -N pkg/shell/index.html -N pkg/shell/index.js -N pkg/shell/indexes.js -N pkg/shell/privileges.js -N pkg/shell/shell.html -N pkg/shell/shell.less -N pkg/shell/simple.html -N pkg/shell/ssh-file-autocomplete.jsx -N pkg/shell/stub.html -N pkg/shell/switcher.less -N pkg/shell/variables.less $(addprefix -N ,$(shell find pkg/ -name manifest.json)) $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/mustache/mustache.js -N node_modules/patternfly/dist/less/color-variables.less -N node_modules/patternfly/dist/less/variables.less -N node_modules/prop-types/factoryWithThrowingShims.js -N node_modules/prop-types/index.js -N node_modules/prop-types/lib/ReactPropTypesSecret.js -N node_modules/react-dom/cjs/react-dom.production.min.js -N node_modules/react-dom/index.js -N node_modules/react/cjs/react.production.min.js -N node_modules/react/index.js -N node_modules/throttle-debounce/dist/index.esm.js -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-file-autocomplete.css -N pkg/lib/cockpit-components-file-autocomplete.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/credentials-ssh-private-keys.sh -N pkg/lib/credentials-ssh-remove-key.sh -N pkg/lib/credentials.js -N pkg/lib/listing.less -N pkg/lib/machine-add.html -N pkg/lib/machine-auth-failed.html -N pkg/lib/machine-change-auth.html -N pkg/lib/machine-change-port.html -N pkg/lib/machine-color-picker.html -N pkg/lib/machine-dialogs.js -N pkg/lib/machine-invalid-hostkey.html -N pkg/lib/machine-not-supported.html -N pkg/lib/machine-sync-users.html -N pkg/lib/machine-unknown-hostkey.html -N pkg/lib/machines.js -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/table.css -N pkg/lib/variables.less -N pkg/shell/active-pages-dialog.jsx -N pkg/shell/active-pages.js -N pkg/shell/active-pages.less -N pkg/shell/base_index.js -N pkg/shell/credentials.js -N pkg/shell/images/server-error.png -N pkg/shell/images/server-large.png -N pkg/shell/images/server-small.png -N pkg/shell/index-no-machines.js -N pkg/shell/index-stub.js -N pkg/shell/index.html -N pkg/shell/index.js -N pkg/shell/indexes.js -N pkg/shell/privileges.js -N pkg/shell/shell.html -N pkg/shell/shell.less -N pkg/shell/simple.html -N pkg/shell/ssh-file-autocomplete.jsx -N pkg/shell/stub.html -N pkg/shell/switcher.less -N pkg/shell/variables.less $(addprefix -N ,$(shell find pkg/ -name manifest.json)) $< > $@.tmp && mv $@.tmp $@
 
 dist/shell/stamp: $(shell_INPUTS)
 
@@ -233,6 +237,14 @@ node_modules/react/cjs/react.production.min.js:
 node_modules/react/index.js:
 
 node_modules/react/package.json:
+
+node_modules/throttle-debounce/LICENSE.md:
+
+node_modules/throttle-debounce/README.md:
+
+node_modules/throttle-debounce/dist/index.esm.js:
+
+node_modules/throttle-debounce/package.json:
 
 pkg/lib/cockpit-components-dialog.css:
 
@@ -334,6 +346,6 @@ WEBPACK_DEBUG += $(shell_DEBUG)
 TESTS += $(shell_TESTS)
 
 shell: dist/shell/stamp
-clean-shell: 
+maintainer-clean-shell: 
 	rm -rf $(shell_OUTPUTS) $(shell_INSTALL) dist/shell/stamp
-clean-local:: clean-shell
+maintainer-clean-local:: clean-shell
