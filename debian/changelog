@@ -1,3 +1,16 @@
+cockpit (191-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Machines: iSCSI Storage pools
+    - Machines: better notifications
+    - System: CPU security mitigation
+    - Network: Ports in the Firewall
+    - Fix distclean to not remove files from the tarball (Closes: #924744)
+    - Remove broken Scientific Linux branding symlinks (Closes: #925429)
+    - Suggest cockpit-machines (Closes: #881672)
+
+ -- Martin Pitt <mpitt@debian.org>  Thu, 04 Apr 2019 08:43:04 +0000
+
 cockpit (190-1) experimental; urgency=medium
 
   * New upstream release:
