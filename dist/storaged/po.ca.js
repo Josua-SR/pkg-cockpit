@@ -380,6 +380,14 @@ return plural;
   null,
   "Crea una partició"
  ],
+ "Create Partition Table": [
+  null,
+  ""
+ ],
+ "Create Partition on $0": [
+  null,
+  "Crea la partició a $0"
+ ],
  "Create RAID Device": [
   null,
   "Crea un dispositiu RAID"
@@ -403,14 +411,6 @@ return plural;
  "Create new Logical Volume": [
   null,
   "Crea un volum lògic nou"
- ],
- "Create Partition on $0": [
-  null,
-  "Crea una partició a $0"
- ],
- "Create Partition Table": [
-  null,
-  "Crea la taula de particions"
  ],
  "Creating RAID Device $target": [
   null,
@@ -892,10 +892,6 @@ return plural;
   null,
   ""
  ],
- "NTFS - Compatible with most systems": [
-  null,
-  "NTFS - Compatible amb la majoria dels sistemes"
- ],
  "Name": [
   null,
   "Nom"
@@ -1235,6 +1231,10 @@ return plural;
  "Reboot": [
   null,
   "Rearrencada"
+ ],
+ "Recommended default": [
+  null,
+  ""
  ],
  "Recovering": [
   null,
@@ -1728,10 +1728,6 @@ return plural;
   null,
   ""
  ],
- "VFAT - Compatible with all systems and devices": [
-  null,
-  "VFAT - Compatible amb tots els sistemes i dispositius"
- ],
  "Verify key": [
   null,
   ""
@@ -1780,10 +1776,6 @@ return plural;
   null,
   "Escriptura"
  ],
- "XFS - Red Hat Enterprise Linux 7 default": [
-  null,
-  "XFS - per defecte a Red Hat Enterprise Linux 7"
- ],
  "[$0 bytes of binary data]": [
   null,
   "[$0 bytes de dades binàries]"
@@ -1795,10 +1787,6 @@ return plural;
  "[no data]": [
   null,
   "[sense dades]"
- ],
- "ext4 - Red Hat Enterprise Linux 6 default": [
-  null,
-  "ext4 - per defecte a Red Hat Enterprise Linux 6"
  ],
  "iSCSI Targets": [
   null,

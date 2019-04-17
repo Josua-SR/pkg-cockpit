@@ -380,6 +380,14 @@ return plural;
   null,
   "Skapa en partition"
  ],
+ "Create Partition Table": [
+  null,
+  ""
+ ],
+ "Create Partition on $0": [
+  null,
+  ""
+ ],
  "Create RAID Device": [
   null,
   "Skapa en RAID-enhet"
@@ -403,14 +411,6 @@ return plural;
  "Create new Logical Volume": [
   null,
   "Skapa en ny logisk volym"
- ],
- "Create Partition on $0": [
-  null,
-  "Skapa en partition på $0"
- ],
- "Create Partition Table": [
-  null,
-  "Skapa en partitionstabell"
  ],
  "Creating RAID Device $target": [
   null,
@@ -447,10 +447,6 @@ return plural;
  "Custom encryption options": [
   null,
   "Anpassade krypteringsalternativ"
- ],
- "Custom mount option": [
-  null,
-  "Anpassat monteringsalternativ"
  ],
  "Custom mount options": [
   null,
@@ -648,6 +644,10 @@ return plural;
   null,
   "Filsystem"
  ],
+ "For legacy applications only. Reduces performance.": [
+  null,
+  ""
+ ],
  "Force remove passphrase in $0": [
   null,
   "Framtvinga borttagande av lösenfras i $0"
@@ -691,6 +691,10 @@ return plural;
  "Grow": [
   null,
   "Utöka"
+ ],
+ "Grow Content": [
+  null,
+  ""
  ],
  "Grow Logical Volume": [
   null,
@@ -848,10 +852,6 @@ return plural;
   null,
   "Montera vid uppstart"
  ],
- "Mount options": [
-  null,
-  "Monteringsflaggor"
- ],
  "Mount point can not be empty": [
   null,
   "Monteringspunkten får inte vara tom"
@@ -891,10 +891,6 @@ return plural;
  "NFS Support not installed": [
   null,
   "Stöd för NFS är inte installerat"
- ],
- "NTFS - Compatible with most systems": [
-  null,
-  "NTFS — kompatibelt med de flesta system"
  ],
  "Name": [
   null,
@@ -1236,6 +1232,10 @@ return plural;
   null,
   "Starta om"
  ],
+ "Recommended default": [
+  null,
+  ""
+ ],
  "Recovering": [
   null,
   "Återställer"
@@ -1312,6 +1312,10 @@ return plural;
   null,
   "Ändrar storlek på $target"
  ],
+ "Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase.": [
+  null,
+  ""
+ ],
  "Running": [
   null,
   "Kör"
@@ -1323,6 +1327,14 @@ return plural;
  "Save": [
   null,
   "Spara"
+ ],
+ "Save space by compressing individual blocks with LZ4": [
+  null,
+  ""
+ ],
+ "Save space by storing identical data blocks just once": [
+  null,
+  ""
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
@@ -1367,6 +1379,10 @@ return plural;
  "Shrink Logical Volume": [
   null,
   "Krymp en logisk volym"
+ ],
+ "Shrink Volume": [
+  null,
+  ""
  ],
  "Size": [
   null,
@@ -1576,6 +1592,10 @@ return plural;
   null,
   "Denna disk kan inte tas bort medans enheten återhämtar sig."
  ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  ""
+ ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "Denna volym behöver aktiveras före dess storlek kan ändras."
@@ -1708,10 +1728,6 @@ return plural;
   null,
   "VDO-stöd är inte installerat"
  ],
- "VFAT - Compatible with all systems and devices": [
-  null,
-  "VFAT - kompatibelt med alla system och enheter"
- ],
  "Verify key": [
   null,
   "Verifiera nyckel"
@@ -1736,9 +1752,17 @@ return plural;
   null,
   "Volymgrupper"
  ],
+ "Volume size is $0. Content size is $1.": [
+  null,
+  ""
+ ],
  "Waiting for other software management operations to finish": [
   null,
   "Väntar på att andra programvaruhanteringsåtgärder skall bli klara"
+ ],
+ "Warning": [
+  null,
+  ""
  ],
  "What if tang-show-keys is not available?": [
   null,
@@ -1752,10 +1776,6 @@ return plural;
   null,
   "Skriver"
  ],
- "XFS - Red Hat Enterprise Linux 7 default": [
-  null,
-  "XFS — standard för Red Hat Enterprise Linux 7"
- ],
  "[$0 bytes of binary data]": [
   null,
   "[$0 byte med binärdata]"
@@ -1767,10 +1787,6 @@ return plural;
  "[no data]": [
   null,
   "[inga data]"
- ],
- "ext4 - Red Hat Enterprise Linux 6 default": [
-  null,
-  "ext4 — standard för Red Hat Enterprise Linux 6"
  ],
  "iSCSI Targets": [
   null,

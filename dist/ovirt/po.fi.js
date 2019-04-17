@@ -135,13 +135,13 @@ return plural;
   null,
   ""
  ],
- "Bus": [
+ "Boot order settings could not be saved": [
   null,
   ""
  ],
- "CHANGE NETWORK STATE action failed": [
+ "Bus": [
   null,
-  "CHANGE NETWORK STATE -toiminto epäonnistui"
+  ""
  ],
  "CPU Type": [
   null,
@@ -275,6 +275,10 @@ return plural;
   null,
   ""
  ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  ""
+ ],
  "Disk failed to be attached": [
   null,
   ""
@@ -307,6 +311,10 @@ return plural;
   null,
   "Anna Uusi VM nimi"
  ],
+ "FORCEOFF action failed: $0": [
+  null,
+  ""
+ ],
  "FQDN": [
   null,
   "FQDN"
@@ -330,10 +338,6 @@ return plural;
  "Format": [
   null,
   "Alusta"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  ""
  ],
  "GiB": [
   null,
@@ -363,10 +367,6 @@ return plural;
   null,
   ""
  ],
- "INSTALL VM action failed": [
-  null,
-  "INSTALL VM -toiminto epäonnistui"
- ],
  "Install": [
   null,
   "Asenna"
@@ -394,6 +394,10 @@ return plural;
  "MIGRATE action failed": [
   null,
   "MIGRATE-toiminto epäonnistui"
+ ],
+ "Mac": [
+  null,
+  ""
  ],
  "Mac Address": [
   null,
@@ -430,6 +434,10 @@ return plural;
  "More Information": [
   null,
   "Lisää tietoja"
+ ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  ""
  ],
  "Name": [
   null,
@@ -515,6 +523,14 @@ return plural;
   null,
   ""
  ],
+ "Path": [
+  null,
+  "Polku"
+ ],
+ "Pause": [
+  null,
+  ""
+ ],
  "Persistence": [
   null,
   ""
@@ -579,6 +595,10 @@ return plural;
   null,
   ""
  ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   ""
@@ -586,6 +606,10 @@ return plural;
  "REBOOT action failed": [
   null,
   "REBOOT-toiminto epäonnistui"
+ ],
+ "REBOOT_VM action failed: %s0": [
+  null,
+  ""
  ],
  "Readonly": [
   null,
@@ -610,6 +634,10 @@ return plural;
  "Restart": [
   null,
   "Käynnistä uudelleen"
+ ],
+ "Resume": [
+  null,
+  ""
  ],
  "Run": [
   null,
@@ -654,6 +682,10 @@ return plural;
  "START action failed": [
   null,
   "START-toiminto epäonnistui"
+ ],
+ "START_VM action failed: %s0": [
+  null,
+  ""
  ],
  "SUSPEND action failed": [
   null,
@@ -727,6 +759,10 @@ return plural;
   null,
   "Järjestelmä"
  ],
+ "Target": [
+  null,
+  ""
+ ],
  "Template": [
   null,
   ""
@@ -795,6 +831,14 @@ return plural;
   null,
   "Tyyppi"
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
+ "Unit": [
+  null,
+  "Yksikkö"
+ ],
  "Unplug": [
   null,
   ""
@@ -823,37 +867,45 @@ return plural;
   null,
   "VDSM-palveluhallinta"
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to Reboot": [
   null,
   ""
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
   ""
  ],
- "VM FORCE OFF action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "VM FORCE OFF -toiminto epäonnistui"
+  ""
  ],
- "VM FORCE REBOOT action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "VM FORCE REBOOT -toiminto epäonnistui"
+  ""
  ],
- "VM REBOOT action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "VM REBOOT -toiminto epäonnistui"
+  ""
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to pause": [
   null,
-  "VM SEND Non-Maskable Interrrupt -toiminto epäonnistui"
+  ""
  ],
- "VM SHUT DOWN action failed": [
+ "VM $0 failed to resume": [
   null,
-  "VM SHUT DOWN -toiminto epäonnistui"
+  ""
  ],
- "VM START action failed": [
+ "VM $0 failed to send NMI": [
   null,
-  "VM START -toiminto epäonnistui"
+  ""
+ ],
+ "VM $0 failed to shutdown": [
+  null,
+  ""
+ ],
+ "VM $0 failed to start": [
+  null,
+  ""
  ],
  "VM icon": [
   null,
@@ -875,6 +927,10 @@ return plural;
   null,
   "VNC-TLS-portti:"
  ],
+ "Vendor": [
+  null,
+  "Toimittaja"
+ ],
  "Version": [
   null,
   "Versio"
@@ -894,6 +950,10 @@ return plural;
  "Volume": [
   null,
   "Taltio"
+ ],
+ "WWPN": [
+  null,
+  ""
  ],
  "bridge": [
   null,
@@ -952,6 +1012,10 @@ return plural;
   "ethernet"
  ],
  "host": [
+  null,
+  ""
+ ],
+ "host device": [
   null,
   ""
  ],
@@ -1027,10 +1091,6 @@ return plural;
   null,
   ""
  ],
- "other": [
-  null,
-  "muu"
- ],
  "paused": [
   null,
   "pysäytetty"
@@ -1048,6 +1108,10 @@ return plural;
   ""
  ],
  "reboot": [
+  null,
+  ""
+ ],
+ "redirected device": [
   null,
   ""
  ],

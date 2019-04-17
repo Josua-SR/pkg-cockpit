@@ -71,6 +71,10 @@ return plural;
   null,
   "$mtu"
  ],
+ "(Optional)": [
+  null,
+  ""
+ ],
  "1 day": [
   null,
   "1 giorno"
@@ -139,13 +143,13 @@ return plural;
   null,
   "Aggiungi bridge"
  ],
+ "Add Ports": [
+  null,
+  ""
+ ],
  "Add Services": [
   null,
   "Aggiungi servizi"
- ],
- "Add Services…": [
-  null,
-  "Aggiungi servizi...."
  ],
  "Add Team": [
   null,
@@ -263,6 +267,10 @@ return plural;
   null,
   "Chiudi"
  ],
+ "Comma-separated ports, ranges, and aliases are accepted": [
+  null,
+  ""
+ ],
  "Configure": [
   null,
   "Configura"
@@ -302,6 +310,10 @@ return plural;
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
   "La creazione di questo team interromperà la connessione al server e renderà l'interfaccia utente di amministrazione non disponibile."
+ ],
+ "Custom Ports": [
+  null,
+  ""
  ],
  "DNS": [
   null,
@@ -358,6 +370,14 @@ return plural;
  "Ethtool": [
   null,
   "Ethtool"
+ ],
+ "Example: 22,ssh,8080,5900-5910": [
+  null,
+  ""
+ ],
+ "Example: 88,2019,nfs,rsync": [
+  null,
+  ""
  ],
  "Failed": [
   null,
@@ -447,6 +467,10 @@ return plural;
   null,
   "Metrica non valida $0"
  ],
+ "Invalid port number": [
+  null,
+  ""
+ ],
  "Invalid prefix $0": [
   null,
   "Prefisso non valido $0"
@@ -454,6 +478,10 @@ return plural;
  "Invalid prefix or netmask $0": [
   null,
   "Prefisso o maschera di rete non validi $0"
+ ],
+ "Invalid range": [
+  null,
+  ""
  ],
  "Keep connection": [
   null,
@@ -619,6 +647,10 @@ return plural;
   null,
   "Si prega di installare il $0pacchetto"
  ],
+ "Port number and type do not match": [
+  null,
+  ""
+ ],
  "Ports": [
   null,
   "Porte"
@@ -654,6 +686,10 @@ return plural;
  "Random": [
   null,
   "Casuale"
+ ],
+ "Range must be strictly ordered": [
+  null,
+  ""
  ],
  "Reboot": [
   null,
@@ -710,6 +746,10 @@ return plural;
  "Service": [
   null,
   "Servizio"
+ ],
+ "Services": [
+  null,
+  "Servizi"
  ],
  "Set to": [
   null,
@@ -814,6 +854,10 @@ return plural;
  "Unknown configuration": [
   null,
   "Configurazione sconosciuta"
+ ],
+ "Unknown service name": [
+  null,
+  ""
  ],
  "Unmanaged Interfaces": [
   null,

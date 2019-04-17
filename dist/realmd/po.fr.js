@@ -85,7 +85,7 @@ return plural;
  ],
  "After leaving the domain, only users with local credentials will be able to log into this machine. This may also affect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  ""
+  "Une fois le domaine quitté. Seuls les utilisateurs disposant d’identifiants locaux pourront se connecter à cette machine. Cela peut également affecter d’autres services en tant que paramètres de résolution DNS et la liste des autorités de certification approuvées peut changer."
  ],
  "Authentication": [
   null,
@@ -105,7 +105,7 @@ return plural;
  ],
  "Client Software": [
   null,
-  ""
+  "Logiciel client"
  ],
  "Computer OU": [
   null,
@@ -113,7 +113,7 @@ return plural;
  ],
  "Contacted domain": [
   null,
-  ""
+  "Domaine contacté"
  ],
  "Domain": [
   null,
@@ -173,7 +173,7 @@ return plural;
  ],
  "Joining this domain is not supported": [
   null,
-  "Rejoindre ce domaine n’est pas supporté"
+  "Rejoindre ce domaine n’est pas pris en charge"
  ],
  "Leave Domain": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Login Format": [
   null,
-  ""
+  "Format de connexion"
  ],
  "More": [
   null,
@@ -221,7 +221,7 @@ return plural;
  ],
  "Server Software": [
   null,
-  ""
+  "Logiciels du serveur"
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
@@ -245,7 +245,7 @@ return plural;
  ],
  "Validating address": [
   null,
-  ""
+  "Validation de l’adresse"
  ],
  "Waiting for other software management operations to finish": [
   null,

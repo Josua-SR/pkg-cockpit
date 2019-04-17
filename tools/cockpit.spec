@@ -490,7 +490,7 @@ Requires: subscription-manager >= 1.13
 Provides: bundled(js-jquery) = 3.3.1
 Provides: bundled(js-moment) = 2.24.0
 Provides: bundled(nodejs-flot) = 0.8.3
-Provides: bundled(nodejs-promise) = 8.0.2
+Provides: bundled(nodejs-promise) = 8.0.3
 Provides: bundled(xstatic-bootstrap-datepicker-common) = 1.8.0
 Provides: bundled(xstatic-patternfly-common) = 3.58.0
 

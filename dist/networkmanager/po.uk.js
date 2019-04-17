@@ -71,6 +71,10 @@ return plural;
   null,
   "$mtu"
  ],
+ "(Optional)": [
+  null,
+  "(Необов’язково)"
+ ],
  "1 day": [
   null,
   "1 день"
@@ -138,6 +142,10 @@ return plural;
  "Add Bridge": [
   null,
   "Додати місток"
+ ],
+ "Add Ports": [
+  null,
+  "Додати порти"
  ],
  "Add Services": [
   null,
@@ -259,6 +267,10 @@ return plural;
   null,
   "Закрити"
  ],
+ "Comma-separated ports, ranges, and aliases are accepted": [
+  null,
+  "Відокремлені комами порти, діапазони і альтернативні назви прийнято"
+ ],
  "Configure": [
   null,
   "Налаштувати"
@@ -298,6 +310,10 @@ return plural;
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
   "Створення цієї команди призведе до розірвання з’єднання із сервером і зробить адміністративний інтерфейс користувача недоступним."
+ ],
+ "Custom Ports": [
+  null,
+  "Нетипові порти"
  ],
  "DNS": [
   null,
@@ -354,6 +370,14 @@ return plural;
  "Ethtool": [
   null,
   "Ethtool"
+ ],
+ "Example: 22,ssh,8080,5900-5910": [
+  null,
+  "Приклад: 22,ssh,8080,5900-5910"
+ ],
+ "Example: 88,2019,nfs,rsync": [
+  null,
+  "Приклад: 88,2019,nfs,rsync"
  ],
  "Failed": [
   null,
@@ -443,6 +467,10 @@ return plural;
   null,
   "Некоректна метрика $0"
  ],
+ "Invalid port number": [
+  null,
+  "Некоректний номер порту"
+ ],
  "Invalid prefix $0": [
   null,
   "Некоректний префікс $0"
@@ -450,6 +478,10 @@ return plural;
  "Invalid prefix or netmask $0": [
   null,
   "Некоректний префікс або маска мережі $0"
+ ],
+ "Invalid range": [
+  null,
+  "Некоректний діапазон"
  ],
  "Keep connection": [
   null,
@@ -615,6 +647,10 @@ return plural;
   null,
   "Будь ласка, встановіть пакунок $0"
  ],
+ "Port number and type do not match": [
+  null,
+  "Номер порту і тип не є сумісними"
+ ],
  "Ports": [
   null,
   "Порти"
@@ -650,6 +686,10 @@ return plural;
  "Random": [
   null,
   "Випадковий"
+ ],
+ "Range must be strictly ordered": [
+  null,
+  "Діапазон має бути строго упорядковано"
  ],
  "Reboot": [
   null,
@@ -706,6 +746,10 @@ return plural;
  "Service": [
   null,
   "Служба"
+ ],
+ "Services": [
+  null,
+  "Служби"
  ],
  "Set to": [
   null,
@@ -810,6 +854,10 @@ return plural;
  "Unknown configuration": [
   null,
   "Невідомі налаштування"
+ ],
+ "Unknown service name": [
+  null,
+  "Невідома назва служби"
  ],
  "Unmanaged Interfaces": [
   null,

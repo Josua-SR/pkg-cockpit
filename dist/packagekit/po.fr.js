@@ -69,8 +69,8 @@ return plural;
  },
  "$0 Package": [
   "$0 Packages",
-  "",
-  ""
+  "0 paquet",
+  "0 paquets"
  ],
  "$0 is not available from any repository.": [
   null,
@@ -125,7 +125,7 @@ return plural;
  ],
  "Bugs:": [
   null,
-  "Bogues:"
+  "Bogues :"
  ],
  "Cancel": [
   null,
@@ -161,7 +161,7 @@ return plural;
  ],
  "Fridays": [
   null,
-  ""
+  "Vendredis"
  ],
  "Ignore": [
   null,
@@ -169,7 +169,7 @@ return plural;
  ],
  "Initializing...": [
   null,
-  "Initialisation ..."
+  "Initialisation…"
  ],
  "Install": [
   null,
@@ -201,7 +201,7 @@ return plural;
  ],
  "Last checked: $0 ago": [
   null,
-  "Dernière vérification: il y a $0"
+  "Dernière vérification : il y a $0"
  ],
  "Loading available updates failed": [
   null,
@@ -209,11 +209,11 @@ return plural;
  ],
  "Loading available updates, please wait...": [
   null,
-  "Le chargement des mises à jour disponibles est en cours, veuillez patienter ..."
+  "Le chargement des mises à jour disponibles est en cours, veuillez patienter…"
  ],
  "Mondays": [
   null,
-  ""
+  "lundis"
  ],
  "Name": [
   null,
@@ -253,7 +253,7 @@ return plural;
  ],
  "Refreshing package information": [
   null,
-  "Rafraîchissement des informations sur le paquet"
+  "Actualisation des informations sur le paquet"
  ],
  "Register…": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "Saturdays": [
   null,
-  ""
+  "Samedis"
  ],
  "Set up": [
   null,
@@ -305,11 +305,11 @@ return plural;
  ],
  "Some other program is currently using the package manager, please wait...": [
   null,
-  "Un autre programme utilise actuellement le gestionnaire de paquets, veuillez patienter ..."
+  "Un autre programme utilise actuellement le gestionnaire de paquets, veuillez patienter…"
  ],
  "Sundays": [
   null,
-  ""
+  "Dimanches"
  ],
  "System is up to date": [
   null,
@@ -325,7 +325,7 @@ return plural;
  ],
  "Thursdays": [
   null,
-  ""
+  "Jeudis"
  ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
@@ -337,7 +337,7 @@ return plural;
  ],
  "Tuesdays": [
   null,
-  ""
+  "Mardis"
  ],
  "Update History": [
   null,
@@ -353,7 +353,7 @@ return plural;
  ],
  "Updated packages may require a restart to take effect.": [
   null,
-  "Les packages mis à jour peuvent nécessiter un redémarrage pour prendre effet."
+  "Les paquets mis à jour peuvent nécessiter un redémarrage pour prendre effet."
  ],
  "Updating": [
   null,
@@ -377,7 +377,7 @@ return plural;
  ],
  "Wednesdays": [
   null,
-  ""
+  "Mercredis"
  ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,

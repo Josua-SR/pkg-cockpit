@@ -283,9 +283,17 @@ return plural;
   null,
   "Allarme e oltre"
  ],
+ "All": [
+  null,
+  ""
+ ],
  "All In One": [
   null,
   "Tutto In Uno"
+ ],
+ "Appearance:": [
+  null,
+  ""
  ],
  "Asset Tag": [
   null,
@@ -297,7 +305,7 @@ return plural;
  ],
  "Automatic Startup": [
   null,
-  "Aggiornamenti automatici"
+  ""
  ],
  "Automatically using NTP": [
   null,
@@ -327,6 +335,10 @@ return plural;
   null,
   "Si lega a"
  ],
+ "Black": [
+  null,
+  ""
+ ],
  "Blade": [
   null,
   "Lama"
@@ -350,6 +362,14 @@ return plural;
  "CPU": [
   null,
   "CPU"
+ ],
+ "CPU Security": [
+  null,
+  ""
+ ],
+ "CPU Security Toggles": [
+  null,
+  ""
  ],
  "Cached": [
   null,
@@ -386,6 +406,10 @@ return plural;
  "Class": [
   null,
   "Classe"
+ ],
+ "Clear All Filters": [
+  null,
+  ""
  ],
  "Click to see system hardware information": [
   null,
@@ -427,6 +451,10 @@ return plural;
   null,
   "Convertibile"
  ],
+ "Copy": [
+  null,
+  ""
+ ],
  "Create Timer": [
   null,
   "Creare un timer"
@@ -439,9 +467,17 @@ return plural;
   null,
   "Critico e superiore"
  ],
+ "Ctrl+Insert": [
+  null,
+  ""
+ ],
  "Current boot": [
   null,
   "Boot corrente"
+ ],
+ "Dark": [
+  null,
+  ""
  ],
  "Debug and above": [
   null,
@@ -463,9 +499,17 @@ return plural;
   null,
   "Staccabile"
  ],
+ "Details": [
+  null,
+  "Dettagli"
+ ],
  "Disable": [
   null,
   "Disabilita"
+ ],
+ "Disable simultaneous multithreading": [
+  null,
+  ""
  ],
  "Disabled": [
   null,
@@ -535,6 +579,10 @@ return plural;
   null,
   "Telaio di espansione"
  ],
+ "Filter by name or description...": [
+  null,
+  ""
+ ],
  "Friday": [
   null,
   "Venerdì"
@@ -582,10 +630,6 @@ return plural;
  "I/O Wait": [
   null,
   "Attesa I/O"
- ],
- "Id": [
-  null,
-  "Id"
  ],
  "Info and above": [
   null,
@@ -671,6 +715,10 @@ return plural;
   null,
   "Ultimo trigger"
  ],
+ "Light": [
+  null,
+  ""
+ ],
  "Load earlier entries": [
   null,
   "Carica le voci precedenti"
@@ -747,6 +795,10 @@ return plural;
   null,
   "Minuti"
  ],
+ "Mitigations": [
+  null,
+  ""
+ ],
  "Model": [
   null,
   "Modello"
@@ -786,6 +838,10 @@ return plural;
  "No Delay": [
   null,
   "Nessun ritardo"
+ ],
+ "No Matching Results": [
+  null,
+  ""
  ],
  "No host keys found.": [
   null,
@@ -855,6 +911,10 @@ return plural;
   null,
   "Parte di"
  ],
+ "Paste": [
+  null,
+  ""
+ ],
  "Path": [
   null,
   "Percorso"
@@ -914,6 +974,10 @@ return plural;
  "Rack Mount Chassis": [
   null,
   "Telaio a rack"
+ ],
+ "Read more...": [
+  null,
+  ""
  ],
  "Real Host Name": [
   null,
@@ -1017,7 +1081,7 @@ return plural;
  ],
  "Running Since": [
   null,
-  "Corsa da allora"
+  ""
  ],
  "Saturday": [
   null,
@@ -1026,6 +1090,10 @@ return plural;
  "Save": [
   null,
   "Salva"
+ ],
+ "Save and reboot": [
+  null,
+  ""
  ],
  "Sealed-case PC": [
   null,
@@ -1042,6 +1110,10 @@ return plural;
  "Security Updates Available": [
   null,
   "Aggiornamenti di sicurezza disponibili"
+ ],
+ "Service": [
+  null,
+  "Servizio"
  ],
  "Service Logs": [
   null,
@@ -1067,6 +1139,10 @@ return plural;
   null,
   "Severità"
  ],
+ "Shift+Insert": [
+  null,
+  ""
+ ],
  "Show fingerprints": [
   null,
   "Mostra le impronte digitali"
@@ -1082,6 +1158,10 @@ return plural;
  "Sockets": [
   null,
   "Socket"
+ ],
+ "Software-based workarounds help prevent CPU security issues. These mitigations have the side effect of reducing performance. Change these settings at your own risk.": [
+  null,
+  ""
  ],
  "Space-saving Computer": [
   null,
@@ -1115,9 +1195,9 @@ return plural;
   null,
   "Ferma"
  ],
- "Store metrics": [
+ "Store Metrics": [
   null,
-  "Conserva metriche"
+  ""
  ],
  "Sub Chassis": [
   null,
@@ -1178,6 +1258,10 @@ return plural;
  "Terminal": [
   null,
   "Terminale"
+ ],
+ "The user $0 is not permitted to change cpu security mitigations": [
+  null,
+  ""
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,
@@ -1315,6 +1399,10 @@ return plural;
  "Weeks": [
   null,
   "Settimane"
+ ],
+ "White": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

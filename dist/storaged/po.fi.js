@@ -380,6 +380,14 @@ return plural;
   null,
   "Luo osio"
  ],
+ "Create Partition Table": [
+  null,
+  ""
+ ],
+ "Create Partition on $0": [
+  null,
+  ""
+ ],
  "Create RAID Device": [
   null,
   "Luo RAID-laite"
@@ -403,14 +411,6 @@ return plural;
  "Create new Logical Volume": [
   null,
   "Luo uusi looginen taltio"
- ],
- "Create Partition on $0": [
-  null,
-  "Luo osio kohteessa $0"
- ],
- "Create Partition Table": [
-  null,
-  "Luo osiotaulu"
  ],
  "Creating RAID Device $target": [
   null,
@@ -892,10 +892,6 @@ return plural;
   null,
   ""
  ],
- "NTFS - Compatible with most systems": [
-  null,
-  "NTFS - Yhteensopiva useimpien järjestelmien kanssa"
- ],
  "Name": [
   null,
   "Nimi"
@@ -1235,6 +1231,10 @@ return plural;
  "Reboot": [
   null,
   "Käynnistä uudelleen"
+ ],
+ "Recommended default": [
+  null,
+  ""
  ],
  "Recovering": [
   null,
@@ -1728,10 +1728,6 @@ return plural;
   null,
   ""
  ],
- "VFAT - Compatible with all systems and devices": [
-  null,
-  "VFAT - Yhteensopiva kaikkien järjestelmien ja laitteiden kanssa"
- ],
  "Verify key": [
   null,
   ""
@@ -1780,10 +1776,6 @@ return plural;
   null,
   "Kirjoitetaan"
  ],
- "XFS - Red Hat Enterprise Linux 7 default": [
-  null,
-  "XFS - Red Hat Enterprise Linux 7 default"
- ],
  "[$0 bytes of binary data]": [
   null,
   "[$0 tavua binääridatasta]"
@@ -1795,10 +1787,6 @@ return plural;
  "[no data]": [
   null,
   "[ei dataa]"
- ],
- "ext4 - Red Hat Enterprise Linux 6 default": [
-  null,
-  "ext4 - Red Hat Enterprise Linux 6 default"
  ],
  "iSCSI Targets": [
   null,

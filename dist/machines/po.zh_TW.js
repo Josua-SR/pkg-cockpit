@@ -67,9 +67,17 @@ return plural;
   "language": "zh_TW",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Network": [
+  null,
+  ""
+ ],
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
   "$0 適用於大多數操作系統。要安裝它，請在GNOME軟件中搜索它或運行以下命令："
+ ],
+ "Activate": [
+  null,
+  "使用"
  ],
  "Add": [
   null,
@@ -111,13 +119,13 @@ return plural;
   null,
   ""
  ],
+ "Boot order settings could not be saved": [
+  null,
+  ""
+ ],
  "Bus": [
   null,
   "總線"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "更改網絡狀態操作失敗"
  ],
  "CPU Type": [
   null,
@@ -187,21 +195,45 @@ return plural;
   null,
   "創建VM"
  ],
- "Creation of vm $0 failed": [
+ "Creation of VM $0 failed": [
   null,
-  "創建vm $0 失敗"
+  ""
  ],
  "Ctrl+Alt+Del": [
   null,
   "Ctrl+Alt+Del"
  ],
+ "DHCP Range": [
+  null,
+  ""
+ ],
+ "Deactivate": [
+  null,
+  "取消啟動"
+ ],
  "Delete": [
   null,
   "刪除"
  ],
+ "Delete Content": [
+  null,
+  ""
+ ],
+ "Delete Storage Pool $0": [
+  null,
+  ""
+ ],
  "Delete associated storage files:": [
   null,
   "刪除關聯的存儲文件："
+ ],
+ "Delete the Volumes inside this Pool": [
+  null,
+  ""
+ ],
+ "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
+  null,
+  ""
  ],
  "Device": [
   null,
@@ -218,6 +250,10 @@ return plural;
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
   "斷開與串行控制台的連接。單擊“重新連接”按鈕。"
+ ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  ""
  ],
  "Disk failed to be attached": [
   null,
@@ -243,6 +279,14 @@ return plural;
   null,
   ""
  ],
+ "Existing Disk Image": [
+  null,
+  ""
+ ],
+ "Existing disk image on host's file system": [
+  null,
+  ""
+ ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
   "應啟用少於最大虛擬CPU數量。"
@@ -250,10 +294,6 @@ return plural;
  "File": [
   null,
   "檔案"
- ],
- "Filesystem": [
-  null,
-  "檔案系統"
  ],
  "Filesystem Directory": [
   null,
@@ -271,9 +311,13 @@ return plural;
   null,
   "格式"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
+ "Forwarding mode": [
   null,
-  "獲取HYPERVISOR MAX VCPU操作失敗"
+  ""
+ ],
+ "General": [
+  null,
+  "一般"
  ],
  "GiB": [
   null,
@@ -291,6 +335,10 @@ return plural;
   null,
   "主機"
  ],
+ "Host Device": [
+  null,
+  ""
+ ],
  "Host Name": [
   null,
   "主機名稱"
@@ -299,13 +347,21 @@ return plural;
   null,
   "主持人不應該是空的"
  ],
- "INSTALL VM action failed": [
+ "IPv4 Address": [
   null,
-  "安裝VM操作失敗"
+  ""
+ ],
+ "IPv6 Address": [
+  null,
+  ""
  ],
  "Immediately Start VM": [
   null,
   "立即啟動VM"
+ ],
+ "In most configurations, macvtap does not work for host to guest network communication.": [
+  null,
+  ""
  ],
  "Install": [
   null,
@@ -323,9 +379,17 @@ return plural;
   null,
   "安裝源不應為空"
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Invalid filename": [
   null,
   "無效的文件名"
+ ],
+ "Isolated Network": [
+  null,
+  ""
  ],
  "Launch Remote Viewer": [
   null,
@@ -335,9 +399,17 @@ return plural;
   null,
   "正在載入..."
  ],
+ "Local Install Media": [
+  null,
+  ""
+ ],
  "MAC Address": [
   null,
   "MAC 位址"
+ ],
+ "Mac": [
+  null,
+  ""
  ],
  "Mac Address": [
   null,
@@ -347,6 +419,10 @@ return plural;
   null,
   "手動連接"
  ],
+ "Maximum Transmission Unit": [
+  null,
+  ""
+ ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
   "為guest虛擬機操作系統分配的最大虛擬CPU數，必須介於1和1之間 $0"
@@ -354,10 +430,6 @@ return plural;
  "Memory": [
   null,
   "記憶體"
- ],
- "Memory should be positive number": [
-  null,
-  "記憶應該是正數"
  ],
  "MiB": [
   null,
@@ -375,6 +447,14 @@ return plural;
   null,
   "更多信息"
  ],
+ "NAT to $0": [
+  null,
+  ""
+ ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  ""
+ ],
  "Name": [
   null,
   "名稱"
@@ -383,21 +463,41 @@ return plural;
   null,
   "名稱不應為空"
  ],
- "Name should not consist of empty characters only": [
+ "Name: ": [
   null,
-  "名稱不應僅包含空字符"
+  ""
+ ],
+ "Netmask": [
+  null,
+  ""
+ ],
+ "Network $0 failed to get activated": [
+  null,
+  ""
+ ],
+ "Network $0 failed to get deactivated": [
+  null,
+  ""
+ ],
+ "Network Boot (PXE)": [
+  null,
+  ""
  ],
  "Network File System": [
   null,
   "網絡文件系統"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "網絡類型"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network Selection does not support PXE.": [
   null,
-  "無法保存網絡設置"
+  ""
+ ],
+ "Network interface settings could not be saved": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -435,6 +535,10 @@ return plural;
   null,
   "沒有為此VM定義的網絡接口"
  ],
+ "No network is defined on this host": [
+  null,
+  ""
+ ],
  "No storage pool is defined on this host": [
   null,
   "此主機上未定義存儲池"
@@ -443,9 +547,21 @@ return plural;
   null,
   "沒有虛擬網絡"
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "OS Vendor": [
   null,
   "OS供應商"
+ ],
+ "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
+  null,
+  ""
+ ],
+ "Open": [
+  null,
+  ""
  ],
  "Operating System": [
   null,
@@ -470,6 +586,10 @@ return plural;
  "Path to file": [
   null,
   "文件路徑"
+ ],
+ "Pause": [
+  null,
+  ""
  ],
  "Persistence": [
   null,
@@ -507,6 +627,18 @@ return plural;
   null,
   "要向guest虛擬機公開的首選套接字數。"
  ],
+ "Prefix": [
+  null,
+  ""
+ ],
+ "Private": [
+  null,
+  ""
+ ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "協定"
@@ -535,9 +667,25 @@ return plural;
   null,
   "重新啟動"
  ],
+ "Resume": [
+  null,
+  ""
+ ],
+ "Route to $0": [
+  null,
+  ""
+ ],
+ "Routed Network": [
+  null,
+  ""
+ ],
  "Run": [
   null,
   "執行"
+ ],
+ "Run when host boots": [
+  null,
+  ""
  ],
  "SPICE": [
   null,
@@ -619,6 +767,14 @@ return plural;
   null,
   "狀態"
  ],
+ "Storage Pool $0 failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool $0 failed to get deactivated": [
+  null,
+  ""
+ ],
  "Storage Pool Name": [
   null,
   "存儲池名稱"
@@ -635,17 +791,21 @@ return plural;
   null,
   "存儲大小"
  ],
- "Storage Size should not be negative number": [
-  null,
-  "存儲大小不應為負數"
- ],
  "Storage Volumes": [
   null,
   "存儲卷"
  ],
+ "Storage Volumes could not be deleted": [
+  null,
+  ""
+ ],
  "System": [
   null,
   "系統"
+ ],
+ "Target": [
+  null,
+  "目標"
  ],
  "Target Path": [
   null,
@@ -654,6 +814,10 @@ return plural;
  "Target path should not be empty": [
   null,
   "目標路徑不應為空"
+ ],
+ "The Storage Pool could not be deleted": [
+  null,
+  ""
  ],
  "The VM crashed.": [
   null,
@@ -715,6 +879,10 @@ return plural;
   null,
   "類型"
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
  "URL": [
   null,
   "URL"
@@ -722,6 +890,10 @@ return plural;
  "Unique name": [
   null,
   "唯一名稱"
+ ],
+ "Unit": [
+  null,
+  "單位"
  ],
  "Unplug": [
   null,
@@ -739,57 +911,53 @@ return plural;
   null,
   "已使用"
  ],
+ "Used by": [
+  null,
+  ""
+ ],
  "VCPU settings could not be saved": [
   null,
   "無法保存VCPU設置"
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
+ "VM $0 failed to Reboot": [
   null,
-  "VM CHANGE_NETWORK_STATE操作失敗"
+  ""
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
-  "VM DELETE（DESTROY）操作失敗"
+  ""
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "VM DELETE（UNDEFINE）操作失敗"
+  ""
  ],
- "VM DELETE action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "VM DELETE操作失敗"
+  ""
  ],
- "VM DETACH_DISK action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "VM DETACH_DISK操作失敗"
+  ""
  ],
- "VM FORCE OFF action failed": [
+ "VM $0 failed to pause": [
   null,
-  "VM FORCE OFF操作失敗"
+  ""
  ],
- "VM FORCE REBOOT action failed": [
+ "VM $0 failed to resume": [
   null,
-  "VM FORCE REBOOT操作失敗"
+  ""
  ],
- "VM REBOOT action failed": [
+ "VM $0 failed to send NMI": [
   null,
-  "VM REBOOT操作失敗"
+  ""
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to shutdown": [
   null,
-  "VM SEND不可屏蔽中斷操作失敗"
+  ""
  ],
- "VM SENDNMI action failed": [
+ "VM $0 failed to start": [
   null,
-  "VM SENDNMI操作失敗"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "VM SHUT DOWN操作失敗"
- ],
- "VM START action failed": [
-  null,
-  "VM START操作失敗"
+  ""
  ],
  "VNC": [
   null,
@@ -807,9 +975,17 @@ return plural;
   null,
   "VNC TLS端口："
  ],
+ "Vendor": [
+  null,
+  "供應商"
+ ],
  "Virtual Machines": [
   null,
   "虛擬機器"
+ ],
+ "Virtual Network": [
+  null,
+  ""
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
@@ -822,6 +998,10 @@ return plural;
  "Volume": [
   null,
   "音量"
+ ],
+ "WWPN": [
+  null,
+  ""
  ],
  "active": [
   null,
@@ -875,9 +1055,21 @@ return plural;
   null,
   "主機"
  ],
+ "host device": [
+  null,
+  ""
+ ],
  "hostdev": [
   null,
   "hostdev"
+ ],
+ "iSCSI Target": [
+  null,
+  ""
+ ],
+ "iSCSI target IQN": [
+  null,
+  ""
  ],
  "idle": [
   null,
@@ -899,10 +1091,6 @@ return plural;
   null,
   "否"
  ],
- "other": [
-  null,
-  "其他"
- ],
  "paused": [
   null,
   "已暫停"
@@ -914,6 +1102,10 @@ return plural;
  "raw": [
   null,
   "原始"
+ ],
+ "redirected device": [
+  null,
+  ""
  ],
  "running": [
   null,

@@ -67,10 +67,6 @@ return plural;
   "language": "sv",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
-  null,
-  "$0 Endast användare med lokala kreditiv kommer kunna logga in till denna maskin.  Detta kan även påverka andra tjänster eftersom inställningar av DNS-uppslagning och listorna av betrodda CA:n kan ändras."
- ],
  "$0 is not available from any repository.": [
   null,
   "$0 är inte tillgängligt från något förråd."
@@ -87,13 +83,9 @@ return plural;
   null,
   "Administratörslösenord"
  ],
- "Are you sure you want to leave the '$0' domain?": [
+ "After leaving the domain, only users with local credentials will be able to log into this machine. This may also affect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  "Är du säker på att du vill lämna domänen ”$0”?"
- ],
- "Are you sure you want to leave this domain?": [
-  null,
-  "Är du säker på att du vill lämna denna domän?"
+  ""
  ],
  "Authentication": [
   null,
@@ -111,9 +103,21 @@ return plural;
   null,
   "Kontrollerar installerad programvara"
  ],
+ "Client Software": [
+  null,
+  ""
+ ],
  "Computer OU": [
   null,
   "Dator-OU"
+ ],
+ "Contacted domain": [
+  null,
+  ""
+ ],
+ "Domain": [
+  null,
+  "Domän"
  ],
  "Domain $0 could not be contacted": [
   null,
@@ -171,13 +175,13 @@ return plural;
   null,
   "Att gå med i denna domän stödjs inte"
  ],
- "Leave": [
-  null,
-  "Lämna"
- ],
  "Leave Domain": [
   null,
   "Lämna domänen"
+ ],
+ "Login Format": [
+  null,
+  ""
  ],
  "More": [
   null,
@@ -215,6 +219,10 @@ return plural;
   null,
   "Tar bort $0"
  ],
+ "Server Software": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
   "Användaren <b>$0</b> har inte rättighet att ändra riken"
@@ -234,6 +242,10 @@ return plural;
  "User Password": [
   null,
   "Användarens lösenord"
+ ],
+ "Validating address": [
+  null,
+  ""
  ],
  "Waiting for other software management operations to finish": [
   null,

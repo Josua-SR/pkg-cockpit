@@ -135,13 +135,13 @@ return plural;
   null,
   ""
  ],
+ "Boot order settings could not be saved": [
+  null,
+  ""
+ ],
  "Bus": [
   null,
   "Bus"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "A ação MUDAR DE ESTADO DE REDE falhou"
  ],
  "CPU Type": [
   null,
@@ -275,6 +275,10 @@ return plural;
   null,
   "Desconectado do console serial. Clique no botão Reconectar."
  ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  ""
+ ],
  "Disk failed to be attached": [
   null,
   "Disco falhou ao ser anexado"
@@ -307,6 +311,10 @@ return plural;
   null,
   "Insira o novo nome da VM"
  ],
+ "FORCEOFF action failed: $0": [
+  null,
+  ""
+ ],
  "FQDN": [
   null,
   "FQDN"
@@ -330,10 +338,6 @@ return plural;
  "Format": [
   null,
   "Formate"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "GET HYPERVISOR MAX VCPU falhou"
  ],
  "GiB": [
   null,
@@ -363,10 +367,6 @@ return plural;
   null,
   "Host para Manutenção"
  ],
- "INSTALL VM action failed": [
-  null,
-  "A ação de instalação da VM falhou"
- ],
  "Install": [
   null,
   "Instale"
@@ -394,6 +394,10 @@ return plural;
  "MIGRATE action failed": [
   null,
   "A ação MIGRATE falhou"
+ ],
+ "Mac": [
+  null,
+  ""
  ],
  "Mac Address": [
   null,
@@ -430,6 +434,10 @@ return plural;
  "More Information": [
   null,
   "Mais Informações"
+ ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  ""
  ],
  "Name": [
   null,
@@ -515,6 +523,14 @@ return plural;
   null,
   "Visão geral"
  ],
+ "Path": [
+  null,
+  "Caminho"
+ ],
+ "Pause": [
+  null,
+  ""
+ ],
  "Persistence": [
   null,
   "Persistência"
@@ -579,6 +595,10 @@ return plural;
   null,
   ""
  ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protocolo"
@@ -586,6 +606,10 @@ return plural;
  "REBOOT action failed": [
   null,
   "A ação REBOOT falhou"
+ ],
+ "REBOOT_VM action failed: %s0": [
+  null,
+  ""
  ],
  "Readonly": [
   null,
@@ -610,6 +634,10 @@ return plural;
  "Restart": [
   null,
   "Reiniciar"
+ ],
+ "Resume": [
+  null,
+  ""
  ],
  "Run": [
   null,
@@ -654,6 +682,10 @@ return plural;
  "START action failed": [
   null,
   "START Ação: falhou"
+ ],
+ "START_VM action failed: %s0": [
+  null,
+  ""
  ],
  "SUSPEND action failed": [
   null,
@@ -727,6 +759,10 @@ return plural;
   null,
   "Sistema"
  ],
+ "Target": [
+  null,
+  "Alvo"
+ ],
  "Template": [
   null,
   "Modelo"
@@ -795,6 +831,14 @@ return plural;
   null,
   "Tipo"
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
+ "Unit": [
+  null,
+  "Unidade"
+ ],
  "Unplug": [
   null,
   "Desplugar"
@@ -823,37 +867,45 @@ return plural;
   null,
   "VDSM Gerenciamento de Serviços"
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to Reboot": [
   null,
-  "A ação de exclusão de VM (DESTROY) falhou"
+  ""
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
-  "Falha na ação VM DELETE (UNDEFINE)"
+  ""
  ],
- "VM FORCE OFF action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "ação VM FORCE OFF falhou"
+  ""
  ],
- "VM FORCE REBOOT action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "ação VM FORCE REBOOT falhou"
+  ""
  ],
- "VM REBOOT action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "ação VM REBOOT falhou"
+  ""
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to pause": [
   null,
-  "VM SEND Falha na ação de interrupção não mascarável"
+  ""
  ],
- "VM SHUT DOWN action failed": [
+ "VM $0 failed to resume": [
   null,
-  "ação VM SHUT DOWN falhou"
+  ""
  ],
- "VM START action failed": [
+ "VM $0 failed to send NMI": [
   null,
-  "ação VM START falhou"
+  ""
+ ],
+ "VM $0 failed to shutdown": [
+  null,
+  ""
+ ],
+ "VM $0 failed to start": [
+  null,
+  ""
  ],
  "VM icon": [
   null,
@@ -875,6 +927,10 @@ return plural;
   null,
   "VNC TLS Porta:"
  ],
+ "Vendor": [
+  null,
+  "Fabricante"
+ ],
  "Version": [
   null,
   "Versão"
@@ -894,6 +950,10 @@ return plural;
  "Volume": [
   null,
   "Volume"
+ ],
+ "WWPN": [
+  null,
+  ""
  ],
  "bridge": [
   null,
@@ -954,6 +1014,10 @@ return plural;
  "host": [
   null,
   "host"
+ ],
+ "host device": [
+  null,
+  ""
  ],
  "hostdev": [
   null,
@@ -1027,10 +1091,6 @@ return plural;
   null,
   "login do theVirt em andamento"
  ],
- "other": [
-  null,
-  "outro"
- ],
  "paused": [
   null,
   "pausado"
@@ -1050,6 +1110,10 @@ return plural;
  "reboot": [
   null,
   "reiniciar"
+ ],
+ "redirected device": [
+  null,
+  ""
  ],
  "running": [
   null,

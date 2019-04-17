@@ -71,6 +71,10 @@ return plural;
   null,
   "$mtu"
  ],
+ "(Optional)": [
+  null,
+  ""
+ ],
  "1 day": [
   null,
   "1 день"
@@ -139,13 +143,13 @@ return plural;
   null,
   "Добавить мост"
  ],
+ "Add Ports": [
+  null,
+  ""
+ ],
  "Add Services": [
   null,
   "Добавить услуги"
- ],
- "Add Services…": [
-  null,
-  "Добавить услуги ..."
  ],
  "Add Team": [
   null,
@@ -263,6 +267,10 @@ return plural;
   null,
   "Закрыть"
  ],
+ "Comma-separated ports, ranges, and aliases are accepted": [
+  null,
+  ""
+ ],
  "Configure": [
   null,
   "Настройка"
@@ -302,6 +310,10 @@ return plural;
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
   "Создание этой команды нарушит соединение с сервером и сделает пользовательский интерфейс администрирования недоступным."
+ ],
+ "Custom Ports": [
+  null,
+  ""
  ],
  "DNS": [
   null,
@@ -358,6 +370,14 @@ return plural;
  "Ethtool": [
   null,
   "Ethtool"
+ ],
+ "Example: 22,ssh,8080,5900-5910": [
+  null,
+  ""
+ ],
+ "Example: 88,2019,nfs,rsync": [
+  null,
+  ""
  ],
  "Failed": [
   null,
@@ -447,6 +467,10 @@ return plural;
   null,
   "Недопустимый показатель $0"
  ],
+ "Invalid port number": [
+  null,
+  ""
+ ],
  "Invalid prefix $0": [
   null,
   "Недопустимый префикс $0"
@@ -454,6 +478,10 @@ return plural;
  "Invalid prefix or netmask $0": [
   null,
   "Недопустимый префикс или сетевая маска $0"
+ ],
+ "Invalid range": [
+  null,
+  ""
  ],
  "Keep connection": [
   null,
@@ -619,6 +647,10 @@ return plural;
   null,
   "Пожалуйста, установите $0 пакет"
  ],
+ "Port number and type do not match": [
+  null,
+  ""
+ ],
  "Ports": [
   null,
   "Порты"
@@ -654,6 +686,10 @@ return plural;
  "Random": [
   null,
   "Случайный"
+ ],
+ "Range must be strictly ordered": [
+  null,
+  ""
  ],
  "Reboot": [
   null,
@@ -710,6 +746,10 @@ return plural;
  "Service": [
   null,
   "Служба"
+ ],
+ "Services": [
+  null,
+  "Службы"
  ],
  "Set to": [
   null,
@@ -814,6 +854,10 @@ return plural;
  "Unknown configuration": [
   null,
   "Неизвестная конфигурация"
+ ],
+ "Unknown service name": [
+  null,
+  ""
  ],
  "Unmanaged Interfaces": [
   null,

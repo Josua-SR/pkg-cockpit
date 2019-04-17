@@ -121,7 +121,7 @@ return plural;
  ],
  "Boot order settings could not be saved": [
   null,
-  ""
+  "Nastavení pořadí zavádění se nepodařilo uložit"
  ],
  "Bus": [
   null,
@@ -197,7 +197,7 @@ return plural;
  ],
  "Creation of VM $0 failed": [
   null,
-  ""
+  "Vytvoření virt. stroje $0 se nezdařilo"
  ],
  "Ctrl+Alt+Del": [
   null,
@@ -253,7 +253,7 @@ return plural;
  ],
  "Disk $0 fail to get detached from VM $1": [
   null,
-  ""
+  "Disk $0 se nepodařilo odpojit od virt. stroje $1"
  ],
  "Disk failed to be attached": [
   null,
@@ -409,7 +409,7 @@ return plural;
  ],
  "Mac": [
   null,
-  ""
+  "Mac"
  ],
  "Mac Address": [
   null,
@@ -453,7 +453,7 @@ return plural;
  ],
  "NIC $0 of VM $1 failed to change state": [
   null,
-  ""
+  "Nepodařilo se změnit stav síť. rozhraní $0 virt. stroje $1 "
  ],
  "Name": [
   null,
@@ -473,11 +473,11 @@ return plural;
  ],
  "Network $0 failed to get activated": [
   null,
-  ""
+  "Síť $0 se nepodařilo aktivovat"
  ],
  "Network $0 failed to get deactivated": [
   null,
-  ""
+  "Síť $0 se nepodařilo deaktivovat"
  ],
  "Network Boot (PXE)": [
   null,
@@ -637,7 +637,7 @@ return plural;
  ],
  "Product": [
   null,
-  ""
+  "Produkt"
  ],
  "Protocol": [
   null,
@@ -769,11 +769,11 @@ return plural;
  ],
  "Storage Pool $0 failed to get activated": [
   null,
-  ""
+  "Fond úložiště $0 se nepodařilo aktivovat"
  ],
  "Storage Pool $0 failed to get deactivated": [
   null,
-  ""
+  "Fond úložiště $0 se nepodařilo deaktivovat"
  ],
  "Storage Pool Name": [
   null,
@@ -881,7 +881,7 @@ return plural;
  ],
  "Type ID": [
   null,
-  ""
+  "Identifikátor typu"
  ],
  "URL": [
   null,
@@ -921,43 +921,43 @@ return plural;
  ],
  "VM $0 failed to Reboot": [
   null,
-  ""
+  "Virt. stroj $0 se nepodařilo restartovat"
  ],
  "VM $0 failed to force Reboot": [
   null,
-  ""
+  "Nepodařilo se vynutit restart virt. stroje $0"
  ],
  "VM $0 failed to force shutdown": [
   null,
-  ""
+  "Nepodařilo se vynutit vypnutí virt. stroje $0"
  ],
  "VM $0 failed to get deleted": [
   null,
-  ""
+  "Virt. stroj $0 se nezdařilo smazat"
  ],
  "VM $0 failed to get installed": [
   null,
-  ""
+  "Virt. stroj $0 se nezdařilo nainstalovat"
  ],
  "VM $0 failed to pause": [
   null,
-  ""
+  "Virt. stroj $0 se nezdařilo pozastavit"
  ],
  "VM $0 failed to resume": [
   null,
-  ""
+  "Nezdařilo se navázat v chodu virt. stroje $0"
  ],
  "VM $0 failed to send NMI": [
   null,
-  ""
+  "Nezdařilo se zaslat virt. stroji $0 nemaskovatelné přerušení"
  ],
  "VM $0 failed to shutdown": [
   null,
-  ""
+  "Virt. stroj $0 se nepodařilo vypnout"
  ],
  "VM $0 failed to start": [
   null,
-  ""
+  "Virt. stroj $0 se nepodařilo zapnout"
  ],
  "VNC": [
   null,
@@ -1001,7 +1001,7 @@ return plural;
  ],
  "WWPN": [
   null,
-  ""
+  "Neopakující se číslo portu"
  ],
  "active": [
   null,
@@ -1057,7 +1057,7 @@ return plural;
  ],
  "host device": [
   null,
-  ""
+  "zařízení hostitele"
  ],
  "hostdev": [
   null,
@@ -1065,11 +1065,11 @@ return plural;
  ],
  "iSCSI Target": [
   null,
-  ""
+  "iSCSI cíl"
  ],
  "iSCSI target IQN": [
   null,
-  ""
+  "IQN název iSCSI cíle"
  ],
  "idle": [
   null,
@@ -1105,7 +1105,7 @@ return plural;
  ],
  "redirected device": [
   null,
-  ""
+  "přesměrované zařízení"
  ],
  "running": [
   null,

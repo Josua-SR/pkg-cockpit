@@ -381,6 +381,14 @@ return plural;
   null,
   "Создать раздел"
  ],
+ "Create Partition Table": [
+  null,
+  ""
+ ],
+ "Create Partition on $0": [
+  null,
+  ""
+ ],
  "Create RAID Device": [
   null,
   "Создание устройства RAID"
@@ -404,14 +412,6 @@ return plural;
  "Create new Logical Volume": [
   null,
   "Создать новый логический том"
- ],
- "Create Partition on $0": [
-  null,
-  "Создать раздел на $0"
- ],
- "Create Partition Table": [
-  null,
-  "Создать таблицу разделов"
  ],
  "Creating RAID Device $target": [
   null,
@@ -448,10 +448,6 @@ return plural;
  "Custom encryption options": [
   null,
   "Пользовательские параметры шифрования"
- ],
- "Custom mount option": [
-  null,
-  "Пользовательский вариант монтирования"
  ],
  "Custom mount options": [
   null,
@@ -697,6 +693,10 @@ return plural;
   null,
   "расти"
  ],
+ "Grow Content": [
+  null,
+  ""
+ ],
  "Grow Logical Volume": [
   null,
   "Рост логического объема"
@@ -853,10 +853,6 @@ return plural;
   null,
   "Гора при загрузке"
  ],
- "Mount options": [
-  null,
-  "Параметры монтирования"
- ],
  "Mount point can not be empty": [
   null,
   "Точка монтирования не может быть пуста"
@@ -896,10 +892,6 @@ return plural;
  "NFS Support not installed": [
   null,
   "Поддержка NFS не установлена"
- ],
- "NTFS - Compatible with most systems": [
-  null,
-  "NTFS - совместим с большинством систем"
  ],
  "Name": [
   null,
@@ -1241,6 +1233,10 @@ return plural;
   null,
   "Перезагрузить"
  ],
+ "Recommended default": [
+  null,
+  ""
+ ],
  "Recovering": [
   null,
   "Восстановление"
@@ -1317,6 +1313,10 @@ return plural;
   null,
   "Изменение размера $target"
  ],
+ "Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase.": [
+  null,
+  ""
+ ],
  "Running": [
   null,
   "Работает"
@@ -1380,6 +1380,10 @@ return plural;
  "Shrink Logical Volume": [
   null,
   "Термоусадочный логический том"
+ ],
+ "Shrink Volume": [
+  null,
+  ""
  ],
  "Size": [
   null,
@@ -1589,6 +1593,10 @@ return plural;
   null,
   "Этот диск не может быть удален во время восстановления устройства."
  ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  ""
+ ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "Этот том необходимо активировать, прежде чем его можно будет изменить."
@@ -1721,10 +1729,6 @@ return plural;
   null,
   "Поддержка VDO не установлена"
  ],
- "VFAT - Compatible with all systems and devices": [
-  null,
-  "VFAT - Совместимость со всеми системами и устройствами"
- ],
  "Verify key": [
   null,
   "Подтвердить ключ"
@@ -1749,9 +1753,17 @@ return plural;
   null,
   "Группы томов"
  ],
+ "Volume size is $0. Content size is $1.": [
+  null,
+  ""
+ ],
  "Waiting for other software management operations to finish": [
   null,
   "Ожидание выполнения других операций управления программным обеспечением"
+ ],
+ "Warning": [
+  null,
+  ""
  ],
  "What if tang-show-keys is not available?": [
   null,
@@ -1765,10 +1777,6 @@ return plural;
   null,
   "Пишу"
  ],
- "XFS - Red Hat Enterprise Linux 7 default": [
-  null,
-  "XFS - Red Hat Enterprise Linux 7 по умолчанию"
- ],
  "[$0 bytes of binary data]": [
   null,
   "[$0 байты двоичных данных]"
@@ -1780,10 +1788,6 @@ return plural;
  "[no data]": [
   null,
   "[нет данных]"
- ],
- "ext4 - Red Hat Enterprise Linux 6 default": [
-  null,
-  "ext4 - Red Hat Enterprise Linux 6 по умолчанию"
  ],
  "iSCSI Targets": [
   null,

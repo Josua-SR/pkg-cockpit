@@ -283,9 +283,17 @@ return plural;
   null,
   "Предупреждение и выше"
  ],
+ "All": [
+  null,
+  ""
+ ],
  "All In One": [
   null,
   "Все в одном"
+ ],
+ "Appearance:": [
+  null,
+  ""
  ],
  "Asset Tag": [
   null,
@@ -327,6 +335,10 @@ return plural;
   null,
   "Привязывается к"
  ],
+ "Black": [
+  null,
+  ""
+ ],
  "Blade": [
   null,
   "лопасть"
@@ -350,6 +362,14 @@ return plural;
  "CPU": [
   null,
   "ЦП"
+ ],
+ "CPU Security": [
+  null,
+  ""
+ ],
+ "CPU Security Toggles": [
+  null,
+  ""
  ],
  "Cached": [
   null,
@@ -386,6 +406,10 @@ return plural;
  "Class": [
   null,
   "Класс"
+ ],
+ "Clear All Filters": [
+  null,
+  ""
  ],
  "Click to see system hardware information": [
   null,
@@ -427,6 +451,10 @@ return plural;
   null,
   "конвертируемый"
  ],
+ "Copy": [
+  null,
+  ""
+ ],
  "Create Timer": [
   null,
   "Создать таймер"
@@ -439,9 +467,17 @@ return plural;
   null,
   "Критический и выше"
  ],
+ "Ctrl+Insert": [
+  null,
+  ""
+ ],
  "Current boot": [
   null,
   "Текущая загрузка"
+ ],
+ "Dark": [
+  null,
+  ""
  ],
  "Debug and above": [
   null,
@@ -470,6 +506,10 @@ return plural;
  "Disable": [
   null,
   "Отключить"
+ ],
+ "Disable simultaneous multithreading": [
+  null,
+  ""
  ],
  "Disabled": [
   null,
@@ -539,6 +579,10 @@ return plural;
   null,
   "Шасси расширения"
  ],
+ "Filter by name or description...": [
+  null,
+  ""
+ ],
  "Friday": [
   null,
   "Пятница"
@@ -586,10 +630,6 @@ return plural;
  "I/O Wait": [
   null,
   "Ожидание ввода-вывода"
- ],
- "Id": [
-  null,
-  "Идентификатор"
  ],
  "Info and above": [
   null,
@@ -675,6 +715,10 @@ return plural;
   null,
   "Последний триггер"
  ],
+ "Light": [
+  null,
+  ""
+ ],
  "Load earlier entries": [
   null,
   "Загрузка ранних записей"
@@ -751,6 +795,10 @@ return plural;
   null,
   "Минуты"
  ],
+ "Mitigations": [
+  null,
+  ""
+ ],
  "Model": [
   null,
   "Модель"
@@ -790,6 +838,10 @@ return plural;
  "No Delay": [
   null,
   "Без задержки"
+ ],
+ "No Matching Results": [
+  null,
+  ""
  ],
  "No host keys found.": [
   null,
@@ -859,6 +911,10 @@ return plural;
   null,
   "Часть"
  ],
+ "Paste": [
+  null,
+  ""
+ ],
  "Path": [
   null,
   "Путь"
@@ -918,6 +974,10 @@ return plural;
  "Rack Mount Chassis": [
   null,
   "Корпус для монтажа в стойку"
+ ],
+ "Read more...": [
+  null,
+  ""
  ],
  "Real Host Name": [
   null,
@@ -1031,6 +1091,10 @@ return plural;
   null,
   "Сохранить"
  ],
+ "Save and reboot": [
+  null,
+  ""
+ ],
  "Sealed-case PC": [
   null,
   "Компьютер с герметичным корпусом"
@@ -1046,6 +1110,10 @@ return plural;
  "Security Updates Available": [
   null,
   "Доступные обновления для системы безопасности"
+ ],
+ "Service": [
+  null,
+  "Служба"
  ],
  "Service Logs": [
   null,
@@ -1071,6 +1139,10 @@ return plural;
   null,
   "Приоритет"
  ],
+ "Shift+Insert": [
+  null,
+  ""
+ ],
  "Show fingerprints": [
   null,
   "Показать отпечатки пальцев"
@@ -1086,6 +1158,10 @@ return plural;
  "Sockets": [
   null,
   "Сокеты"
+ ],
+ "Software-based workarounds help prevent CPU security issues. These mitigations have the side effect of reducing performance. Change these settings at your own risk.": [
+  null,
+  ""
  ],
  "Space-saving Computer": [
   null,
@@ -1182,6 +1258,10 @@ return plural;
  "Terminal": [
   null,
   "Терминал"
+ ],
+ "The user $0 is not permitted to change cpu security mitigations": [
+  null,
+  ""
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,
@@ -1320,6 +1400,10 @@ return plural;
  "Weeks": [
   null,
   "недели"
+ ],
+ "White": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

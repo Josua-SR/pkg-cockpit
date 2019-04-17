@@ -137,7 +137,7 @@ return plural;
  ],
  "Boot order settings could not be saved": [
   null,
-  ""
+  "Nastavení pořadí zavádění se nepodařilo uložit"
  ],
  "Bus": [
   null,
@@ -277,7 +277,7 @@ return plural;
  ],
  "Disk $0 fail to get detached from VM $1": [
   null,
-  ""
+  "Disk $0 se nepodařilo odpojit od virt. stroje $1"
  ],
  "Disk failed to be attached": [
   null,
@@ -313,7 +313,7 @@ return plural;
  ],
  "FORCEOFF action failed: $0": [
   null,
-  ""
+  "Akce VYNUTITVYPNUTI se nezdařila: $0"
  ],
  "FQDN": [
   null,
@@ -397,7 +397,7 @@ return plural;
  ],
  "Mac": [
   null,
-  ""
+  "Mac"
  ],
  "Mac Address": [
   null,
@@ -437,7 +437,7 @@ return plural;
  ],
  "NIC $0 of VM $1 failed to change state": [
   null,
-  ""
+  "Nepodařilo se změnit stav síť. rozhraní $0 virt. stroje $1 "
  ],
  "Name": [
   null,
@@ -597,7 +597,7 @@ return plural;
  ],
  "Product": [
   null,
-  ""
+  "Produkt"
  ],
  "Protocol": [
   null,
@@ -609,7 +609,7 @@ return plural;
  ],
  "REBOOT_VM action failed: %s0": [
   null,
-  ""
+  "Akce RESTART_VIRTSTROJE se nezdařila: %s0"
  ],
  "Readonly": [
   null,
@@ -685,7 +685,7 @@ return plural;
  ],
  "START_VM action failed: %s0": [
   null,
-  ""
+  "Akce SPUSTENI_VIRTSTROJE se nezdařila: %s0"
  ],
  "SUSPEND action failed": [
   null,
@@ -833,7 +833,7 @@ return plural;
  ],
  "Type ID": [
   null,
-  ""
+  "Identifikátor typu"
  ],
  "Unit": [
   null,
@@ -869,43 +869,43 @@ return plural;
  ],
  "VM $0 failed to Reboot": [
   null,
-  ""
+  "Virt. stroj $0 se nepodařilo restartovat"
  ],
  "VM $0 failed to force Reboot": [
   null,
-  ""
+  "Nepodařilo se vynutit restart virt. stroje $0"
  ],
  "VM $0 failed to force shutdown": [
   null,
-  ""
+  "Nepodařilo se vynutit vypnutí virt. stroje $0"
  ],
  "VM $0 failed to get deleted": [
   null,
-  ""
+  "Virt. stroj $0 se nezdařilo smazat"
  ],
  "VM $0 failed to get installed": [
   null,
-  ""
+  "Virt. stroj $0 se nezdařilo nainstalovat"
  ],
  "VM $0 failed to pause": [
   null,
-  ""
+  "Virt. stroj $0 se nezdařilo pozastavit"
  ],
  "VM $0 failed to resume": [
   null,
-  ""
+  "Nezdařilo se navázat v chodu virt. stroje $0"
  ],
  "VM $0 failed to send NMI": [
   null,
-  ""
+  "Nezdařilo se zaslat virt. stroji $0 nemaskovatelné přerušení"
  ],
  "VM $0 failed to shutdown": [
   null,
-  ""
+  "Virt. stroj $0 se nepodařilo vypnout"
  ],
  "VM $0 failed to start": [
   null,
-  ""
+  "Virt. stroj $0 se nepodařilo zapnout"
  ],
  "VM icon": [
   null,
@@ -953,7 +953,7 @@ return plural;
  ],
  "WWPN": [
   null,
-  ""
+  "Neopakující se číslo portu"
  ],
  "bridge": [
   null,
@@ -1017,7 +1017,7 @@ return plural;
  ],
  "host device": [
   null,
-  ""
+  "zařízení hostitele"
  ],
  "hostdev": [
   null,
@@ -1113,7 +1113,7 @@ return plural;
  ],
  "redirected device": [
   null,
-  ""
+  "přesměrované zařízení"
  ],
  "running": [
   null,

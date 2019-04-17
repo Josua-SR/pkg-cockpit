@@ -135,13 +135,13 @@ return plural;
   null,
   ""
  ],
+ "Boot order settings could not be saved": [
+  null,
+  ""
+ ],
  "Bus": [
   null,
   "Buss"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Åtgärden ÄNDRA NÄTVERKSTILLSTÅND misslyckades"
  ],
  "CPU Type": [
   null,
@@ -275,6 +275,10 @@ return plural;
   null,
   "Frånkopplad från seriekonsolen.  Klicka på återanslutknappen."
  ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  ""
+ ],
  "Disk failed to be attached": [
   null,
   "Disken kunde inte anslutas"
@@ -307,6 +311,10 @@ return plural;
   null,
   "Ange nytt VM-namn"
  ],
+ "FORCEOFF action failed: $0": [
+  null,
+  ""
+ ],
  "FQDN": [
   null,
   "FQDN"
@@ -330,10 +338,6 @@ return plural;
  "Format": [
   null,
   "Formater"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "Åtgärden GET HYPERVISOR MAX VCPU misslyckades"
  ],
  "GiB": [
   null,
@@ -363,13 +367,13 @@ return plural;
   null,
   "Värd till underhåll"
  ],
- "INSTALL VM action failed": [
-  null,
-  "Åtgärden INSTALL VM misslyckades"
- ],
  "Install": [
   null,
   "Installera"
+ ],
+ "Interface Type": [
+  null,
+  ""
  ],
  "Launch Remote Viewer": [
   null,
@@ -390,6 +394,10 @@ return plural;
  "MIGRATE action failed": [
   null,
   "Åtgärden MIGRATE misslyckades"
+ ],
+ "Mac": [
+  null,
+  ""
  ],
  "Mac Address": [
   null,
@@ -427,21 +435,21 @@ return plural;
   null,
   "Mer information"
  ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  ""
+ ],
  "Name": [
   null,
   "Namn"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "Nätverkstyp"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
-  "Nätverksinställningarna kunde inte sparas"
- ],
- "Networks": [
-  null,
-  "Nätverk"
+  ""
  ],
  "New Volume Name": [
   null,
@@ -479,6 +487,10 @@ return plural;
   null,
   "Inga virtuella nätverk"
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "Number of virtual CPUs that gonna be used.": [
   null,
   "Antal virtuella CPU:er som kommer användas."
@@ -499,6 +511,10 @@ return plural;
   null,
   "Ok"
  ],
+ "Open": [
+  null,
+  ""
+ ],
  "Optimized for:": [
   null,
   "Optimerad för:"
@@ -506,6 +522,14 @@ return plural;
  "Overview": [
   null,
   "Översikt"
+ ],
+ "Path": [
+  null,
+  "Sökväg"
+ ],
+ "Pause": [
+  null,
+  ""
  ],
  "Persistence": [
   null,
@@ -567,6 +591,14 @@ return plural;
   null,
   "Förbereder för underhåll"
  ],
+ "Private": [
+  null,
+  ""
+ ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protokoll"
@@ -574,6 +606,10 @@ return plural;
  "REBOOT action failed": [
   null,
   "Åtgärden REBOOT misslyckades"
+ ],
+ "REBOOT_VM action failed: %s0": [
+  null,
+  ""
  ],
  "Readonly": [
   null,
@@ -599,6 +635,10 @@ return plural;
   null,
   "Starta om"
  ],
+ "Resume": [
+  null,
+  ""
+ ],
  "Run": [
   null,
   "Kör"
@@ -606,6 +646,10 @@ return plural;
  "Run Here": [
   null,
   "Kör här"
+ ],
+ "Run when host boots": [
+  null,
+  ""
  ],
  "Running Since:": [
   null,
@@ -638,6 +682,10 @@ return plural;
  "START action failed": [
   null,
   "Åtgärden START misslyckades"
+ ],
+ "START_VM action failed: %s0": [
+  null,
+  ""
  ],
  "SUSPEND action failed": [
   null,
@@ -711,6 +759,10 @@ return plural;
   null,
   "System"
  ],
+ "Target": [
+  null,
+  "Mål"
+ ],
  "Template": [
   null,
   "Mall"
@@ -779,6 +831,14 @@ return plural;
   null,
   "Typ"
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
+ "Unit": [
+  null,
+  "Enhet"
+ ],
  "Unplug": [
   null,
   "Koppla ur"
@@ -807,37 +867,45 @@ return plural;
   null,
   "VDSM tjänstehantering"
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to Reboot": [
   null,
-  "Åtgärden VM DELETE (DESTROY) misslyckades"
+  ""
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
-  "Åtgärden VM DELETE (UNDEFINE) misslyckades"
+  ""
  ],
- "VM FORCE OFF action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "Åtgärden VM FORCE OFF misslyckades"
+  ""
  ],
- "VM FORCE REBOOT action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "Åtgärden VM FORCE REBOOT misslyckades"
+  ""
  ],
- "VM REBOOT action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "Åtgärden VM REBOOT misslyckades"
+  ""
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to pause": [
   null,
-  "Åtgärden VM SEND Non-Maskable Interrrupt misslyckades"
+  ""
  ],
- "VM SHUT DOWN action failed": [
+ "VM $0 failed to resume": [
   null,
-  "Åtgärden VM SHUT DOWN misslyckades"
+  ""
  ],
- "VM START action failed": [
+ "VM $0 failed to send NMI": [
   null,
-  "Åtgärden VM START misslyckades"
+  ""
+ ],
+ "VM $0 failed to shutdown": [
+  null,
+  ""
+ ],
+ "VM $0 failed to start": [
+  null,
+  ""
  ],
  "VM icon": [
   null,
@@ -859,6 +927,10 @@ return plural;
   null,
   "VNC TLS-port:"
  ],
+ "Vendor": [
+  null,
+  "Leverantör"
+ ],
  "Version": [
   null,
   "Version"
@@ -878,6 +950,10 @@ return plural;
  "Volume": [
   null,
   "Volym"
+ ],
+ "WWPN": [
+  null,
+  ""
  ],
  "bridge": [
   null,
@@ -938,6 +1014,10 @@ return plural;
  "host": [
   null,
   "värd"
+ ],
+ "host device": [
+  null,
+  ""
  ],
  "hostdev": [
   null,
@@ -1011,10 +1091,6 @@ return plural;
   null,
   "oVirt-inloggning pågår"
  ],
- "other": [
-  null,
-  "annan"
- ],
  "paused": [
   null,
   "stannad"
@@ -1034,6 +1110,10 @@ return plural;
  "reboot": [
   null,
   "starta om"
+ ],
+ "redirected device": [
+  null,
+  ""
  ],
  "running": [
   null,

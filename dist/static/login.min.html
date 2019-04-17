@@ -59,7 +59,6 @@
         return t;
     }
     if (!a) a = function() {};
-    /* Determine if we are nested or not, and switch styles */    if (window.location.pathname.indexOf("/cockpit/") === 0 || window.location.pathname.indexOf("/cockpit+") === 0) document.documentElement.setAttribute("class", "inline");
     function m(e) {
         return document.getElementById(e);
     }
@@ -186,6 +185,7 @@
         window.onload = null;
         i();
         S(window.location.pathname);
+        /* Determine if we are nested or not, and switch styles */        if (window.location.pathname.indexOf("/" + s + "/cockpit/") === 0 || window.location.pathname.indexOf("/" + s + "/cockpit+") === 0) document.documentElement.setAttribute("class", "inline");
         // Setup title
                 var e = l.page.title;
         if (!e || p.indexOf("cockpit+=") === 0) e = l.hostname;

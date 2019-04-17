@@ -283,9 +283,17 @@ return plural;
   null,
   "Larm och högre"
  ],
+ "All": [
+  null,
+  ""
+ ],
  "All In One": [
   null,
   "Allt-i-ett"
+ ],
+ "Appearance:": [
+  null,
+  ""
  ],
  "Asset Tag": [
   null,
@@ -327,6 +335,10 @@ return plural;
   null,
   "Binder till"
  ],
+ "Black": [
+  null,
+  ""
+ ],
  "Blade": [
   null,
   "Blad"
@@ -350,6 +362,14 @@ return plural;
  "CPU": [
   null,
   "CPU"
+ ],
+ "CPU Security": [
+  null,
+  ""
+ ],
+ "CPU Security Toggles": [
+  null,
+  ""
  ],
  "Cached": [
   null,
@@ -386,6 +406,10 @@ return plural;
  "Class": [
   null,
   "Klass"
+ ],
+ "Clear All Filters": [
+  null,
+  ""
  ],
  "Click to see system hardware information": [
   null,
@@ -427,6 +451,10 @@ return plural;
   null,
   "Konvertibel"
  ],
+ "Copy": [
+  null,
+  ""
+ ],
  "Create Timer": [
   null,
   "Skapa en timer"
@@ -439,9 +467,17 @@ return plural;
   null,
   "Kritisk och högre"
  ],
+ "Ctrl+Insert": [
+  null,
+  ""
+ ],
  "Current boot": [
   null,
   "Nuvarande uppstart"
+ ],
+ "Dark": [
+  null,
+  ""
  ],
  "Debug and above": [
   null,
@@ -470,6 +506,10 @@ return plural;
  "Disable": [
   null,
   "Avaktivera"
+ ],
+ "Disable simultaneous multithreading": [
+  null,
+  ""
  ],
  "Disabled": [
   null,
@@ -539,6 +579,10 @@ return plural;
   null,
   "Expansionschassin"
  ],
+ "Filter by name or description...": [
+  null,
+  ""
+ ],
  "Friday": [
   null,
   "Fredag"
@@ -586,10 +630,6 @@ return plural;
  "I/O Wait": [
   null,
   "I/O-väntan"
- ],
- "Id": [
-  null,
-  "Id"
  ],
  "Info and above": [
   null,
@@ -675,6 +715,10 @@ return plural;
   null,
   "Senaste trigger"
  ],
+ "Light": [
+  null,
+  ""
+ ],
  "Load earlier entries": [
   null,
   "Läs in tidigare poster"
@@ -751,6 +795,10 @@ return plural;
   null,
   "Minuter"
  ],
+ "Mitigations": [
+  null,
+  ""
+ ],
  "Model": [
   null,
   "Modell"
@@ -790,6 +838,10 @@ return plural;
  "No Delay": [
   null,
   "Ingen fördröjning"
+ ],
+ "No Matching Results": [
+  null,
+  ""
  ],
  "No host keys found.": [
   null,
@@ -859,6 +911,10 @@ return plural;
   null,
   "Del av"
  ],
+ "Paste": [
+  null,
+  ""
+ ],
  "Path": [
   null,
   "Sökväg"
@@ -918,6 +974,10 @@ return plural;
  "Rack Mount Chassis": [
   null,
   "Rackmonteringschassi"
+ ],
+ "Read more...": [
+  null,
+  ""
  ],
  "Real Host Name": [
   null,
@@ -1031,6 +1091,10 @@ return plural;
   null,
   "Spara"
  ],
+ "Save and reboot": [
+  null,
+  ""
+ ],
  "Sealed-case PC": [
   null,
   "PC med slutet hölje"
@@ -1046,6 +1110,10 @@ return plural;
  "Security Updates Available": [
   null,
   "Säkerhetsuppdateringar tillgängliga"
+ ],
+ "Service": [
+  null,
+  "Tjänst"
  ],
  "Service Logs": [
   null,
@@ -1071,6 +1139,10 @@ return plural;
   null,
   "Allvarsgrad"
  ],
+ "Shift+Insert": [
+  null,
+  ""
+ ],
  "Show fingerprints": [
   null,
   "Visa fingeravtryck"
@@ -1086,6 +1158,10 @@ return plural;
  "Sockets": [
   null,
   "Uttag"
+ ],
+ "Software-based workarounds help prevent CPU security issues. These mitigations have the side effect of reducing performance. Change these settings at your own risk.": [
+  null,
+  ""
  ],
  "Space-saving Computer": [
   null,
@@ -1182,6 +1258,10 @@ return plural;
  "Terminal": [
   null,
   "Terminal"
+ ],
+ "The user $0 is not permitted to change cpu security mitigations": [
+  null,
+  ""
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,
@@ -1319,6 +1399,10 @@ return plural;
  "Weeks": [
   null,
   "Veckor"
+ ],
+ "White": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

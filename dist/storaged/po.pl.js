@@ -381,6 +381,14 @@ return plural;
   null,
   "Utwórz partycję"
  ],
+ "Create Partition Table": [
+  null,
+  "Utwórz tablicę partycji"
+ ],
+ "Create Partition on $0": [
+  null,
+  "Utwórz partycję na $0"
+ ],
  "Create RAID Device": [
   null,
   "Utwórz urządzenie RAID"
@@ -404,14 +412,6 @@ return plural;
  "Create new Logical Volume": [
   null,
   "Utworzono:"
- ],
- "Create Partition on $0": [
-  null,
-  "Utwórz partycję w $0"
- ],
- "Create Partition Table": [
-  null,
-  "Utwórz tablicę partycji"
  ],
  "Creating RAID Device $target": [
   null,
@@ -893,10 +893,6 @@ return plural;
   null,
   "Obsługa NFS nie jest zainstalowana"
  ],
- "NTFS - Compatible with most systems": [
-  null,
-  "NTFS — zgodne z większością systemów"
- ],
  "Name": [
   null,
   "Nazwa"
@@ -1236,6 +1232,10 @@ return plural;
  "Reboot": [
   null,
   "Uruchom ponownie"
+ ],
+ "Recommended default": [
+  null,
+  "Zalecana wartość domyślna"
  ],
  "Recovering": [
   null,
@@ -1729,10 +1729,6 @@ return plural;
   null,
   "Obsługa VDO nie jest zainstalowana"
  ],
- "VFAT - Compatible with all systems and devices": [
-  null,
-  "VFAT — zgodne ze wszystkimi systemami i urządzeniami"
- ],
  "Verify key": [
   null,
   "Sprawdź poprawność klucza"
@@ -1781,10 +1777,6 @@ return plural;
   null,
   "Zapisywanie"
  ],
- "XFS - Red Hat Enterprise Linux 7 default": [
-  null,
-  "XFS — domyślne w systemie Red Hat Enterprise Linux 7"
- ],
  "[$0 bytes of binary data]": [
   null,
   "[$0 B danych binarnych]"
@@ -1796,10 +1788,6 @@ return plural;
  "[no data]": [
   null,
   "[brak danych]"
- ],
- "ext4 - Red Hat Enterprise Linux 6 default": [
-  null,
-  "ext4 — domyślne w systemie Red Hat Enterprise Linux 6"
  ],
  "iSCSI Targets": [
   null,

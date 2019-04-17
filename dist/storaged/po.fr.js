@@ -282,7 +282,7 @@ return plural;
  ],
  "Backing Device": [
   null,
-  "Dispositif de support"
+  "Dispositif de sauvegarde"
  ],
  "Block": [
   null,
@@ -306,7 +306,7 @@ return plural;
  ],
  "Change": [
   null,
-  "Changement"
+  "Modification"
  ],
  "Change iSCSI Initiator Name": [
   null,
@@ -380,6 +380,14 @@ return plural;
   null,
   "Créer Partition"
  ],
+ "Create Partition Table": [
+  null,
+  ""
+ ],
+ "Create Partition on $0": [
+  null,
+  ""
+ ],
  "Create RAID Device": [
   null,
   "Créer Périphérique RAID"
@@ -403,14 +411,6 @@ return plural;
  "Create new Logical Volume": [
   null,
   "Créer un nouveau volume logique"
- ],
- "Create Partition on $0": [
-  null,
-  "Créer une partition sur $0"
- ],
- "Create Partition Table": [
-  null,
-  "Créer une table de partition"
  ],
  "Creating RAID Device $target": [
   null,
@@ -646,7 +646,7 @@ return plural;
  ],
  "For legacy applications only. Reduces performance.": [
   null,
-  ""
+  "Pour les anciennes applications uniquement. Réduit les performances."
  ],
  "Force remove passphrase in $0": [
   null,
@@ -694,7 +694,7 @@ return plural;
  ],
  "Grow Content": [
   null,
-  ""
+  "Augmenter le contenu"
  ],
  "Grow Logical Volume": [
   null,
@@ -730,7 +730,7 @@ return plural;
  ],
  "Install NFS Support": [
   null,
-  "Installer le support NFS"
+  "Installer la prise en charge de NFS"
  ],
  "Install Software": [
   null,
@@ -738,7 +738,7 @@ return plural;
  ],
  "Install VDO support": [
   null,
-  "Installer le support VDO"
+  "Installer la prise en charge de VDO"
  ],
  "Installing $0": [
   null,
@@ -890,11 +890,7 @@ return plural;
  ],
  "NFS Support not installed": [
   null,
-  "Support NFS non installé"
- ],
- "NTFS - Compatible with most systems": [
-  null,
-  "NTFS - Compatible avec la plupart des systèmes"
+  "Prise en charge NFS non installée"
  ],
  "Name": [
   null,
@@ -1038,7 +1034,7 @@ return plural;
  ],
  "Operation '$operation' on $target": [
   null,
-  "Opération ’ $operation ’ sur $target"
+  "Opération « $operation » sur $target"
  ],
  "Options": [
   null,
@@ -1236,6 +1232,10 @@ return plural;
   null,
   "Redémarrer"
  ],
+ "Recommended default": [
+  null,
+  ""
+ ],
  "Recovering": [
   null,
   "Recouvrement"
@@ -1314,7 +1314,7 @@ return plural;
  ],
  "Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
-  ""
+  "Il faut déverrouiller le disque pour pouvoir redimensionner un système de fichier chiffré. Veuillez fournir une phrase de passe courante."
  ],
  "Running": [
   null,
@@ -1330,11 +1330,11 @@ return plural;
  ],
  "Save space by compressing individual blocks with LZ4": [
   null,
-  ""
+  "Économiser de l’espace en compressant les blocs individuels avec LZ4"
  ],
  "Save space by storing identical data blocks just once": [
   null,
-  ""
+  "Économiser de l’espace en stockant une seule fois les blocs de données identiques"
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
@@ -1382,7 +1382,7 @@ return plural;
  ],
  "Shrink Volume": [
   null,
-  ""
+  "Réduire le volume"
  ],
  "Size": [
   null,
@@ -1482,7 +1482,7 @@ return plural;
  ],
  "Support is installed.": [
   null,
-  "Le support est installé."
+  "La prise en charge est installée."
  ],
  "Swap": [
   null,
@@ -1594,7 +1594,7 @@ return plural;
  ],
  "This logical volume is not completely used by its content.": [
   null,
-  ""
+  "Ce volume logique n’est pas complètement utilisé par son contenu."
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
@@ -1618,15 +1618,15 @@ return plural;
  ],
  "Unable to reach server": [
   null,
-  "Impossible d’atteindre le serveur"
+  "Incapable d’atteindre le serveur"
  ],
  "Unable to remove mount": [
   null,
-  "Impossible de supprimer le montage"
+  "Incapable de supprimer le montage"
  ],
  "Unable to unmount filesystem": [
   null,
-  "Impossible de démonter le système de fichiers"
+  "Incapable de démonter le système de fichiers"
  ],
  "Unit": [
   null,
@@ -1666,7 +1666,7 @@ return plural;
  ],
  "Unlocking disk...": [
   null,
-  "Déverrouillage du disque....."
+  "Déverrouillage du disque….."
  ],
  "Unmount": [
   null,
@@ -1706,7 +1706,7 @@ return plural;
  ],
  "VDO Backing": [
   null,
-  "Support VDO"
+  "Sauvegarde VDO"
  ],
  "VDO Device": [
   null,
@@ -1722,15 +1722,11 @@ return plural;
  ],
  "VDO backing devices can not be made smaller": [
   null,
-  "Les supports VDO ne peuvent pas être plus petits"
+  "Les sauvegardes VDO ne peuvent pas être plus petits"
  ],
  "VDO support not installed": [
   null,
-  "Support VDO non installé"
- ],
- "VFAT - Compatible with all systems and devices": [
-  null,
-  "VFAT - Compatible avec tous les systèmes et appareils"
+  "Prise en charge VDO non installée"
  ],
  "Verify key": [
   null,
@@ -1758,7 +1754,7 @@ return plural;
  ],
  "Volume size is $0. Content size is $1.": [
   null,
-  ""
+  "La taille du volume est $0. La taille du contenu est $1."
  ],
  "Waiting for other software management operations to finish": [
   null,
@@ -1766,7 +1762,7 @@ return plural;
  ],
  "Warning": [
   null,
-  ""
+  "Avertissement"
  ],
  "What if tang-show-keys is not available?": [
   null,
@@ -1780,10 +1776,6 @@ return plural;
   null,
   "Écriture"
  ],
- "XFS - Red Hat Enterprise Linux 7 default": [
-  null,
-  "XFS - Red Hat Enterprise Linux 7 par défaut"
- ],
  "[$0 bytes of binary data]": [
   null,
   "[ $0 octets de données binaires]"
@@ -1795,10 +1787,6 @@ return plural;
  "[no data]": [
   null,
   "[pas de données]"
- ],
- "ext4 - Red Hat Enterprise Linux 6 default": [
-  null,
-  "ext4 - Red Hat Enterprise Linux 6 par défaut"
  ],
  "iSCSI Targets": [
   null,
@@ -1842,7 +1830,7 @@ return plural;
  ],
  "storage-id-desc\u0004VDO Backing": [
   null,
-  "Support VDO"
+  "Sauvegarde VDO"
  ],
  "storage\u0004Drive": [
   null,

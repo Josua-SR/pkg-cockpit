@@ -117,7 +117,7 @@ return plural;
  ],
  "Invalid credentials": [
   null,
-  "Informations d’identification non valides"
+  "Identifiants invalides"
  ],
  "Invalid username or password": [
   null,
@@ -129,7 +129,7 @@ return plural;
  ],
  "Login/password or activation key required to register.": [
   null,
-  "Login / mot de passe ou clé d’activation nécessaire pour vous inscrire."
+  "Identifiant / mot de passe ou clé d’activation nécessaire pour vous inscrire."
  ],
  "No installed products on the system.": [
   null,
@@ -169,7 +169,7 @@ return plural;
  ],
  "Retrieving subscription status...": [
   null,
-  "Récupération du statut de l’abonnement ..."
+  "Récupération du statut de l’abonnement…"
  ],
  "Server": [
   null,
@@ -205,7 +205,7 @@ return plural;
  ],
  "Unable to connect": [
   null,
-  "Impossible de se connecter"
+  "Incapable de se connecter"
  ],
  "Unregister": [
   null,
@@ -213,7 +213,7 @@ return plural;
  ],
  "Unregistering system...": [
   null,
-  "Système de désenregistrement ..."
+  "Système de désenregistrement…"
  ],
  "Updating": [
   null,

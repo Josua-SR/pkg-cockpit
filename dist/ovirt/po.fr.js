@@ -69,7 +69,7 @@ return plural;
  },
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  "$0 est disponible pour la plupart des systèmes d’exploitation. Pour l’installer, recherchez-le dans le logiciel GNOME ou exécutez les opérations suivantes:"
+  "$0 est disponible pour la plupart des systèmes d’exploitation. Pour l’installer, recherchez-le dans le logiciel GNOME ou exécutez les opérations suivantes :"
  ],
  "$0 vCPU Details": [
   null,
@@ -93,7 +93,7 @@ return plural;
  ],
  "Address:": [
   null,
-  "Adresse:"
+  "Adresse :"
  ],
  "All running virtual machines will be turned off.": [
   null,
@@ -129,19 +129,19 @@ return plural;
  ],
  "Base template:": [
   null,
-  "Modèle de base:"
+  "Modèle de base :"
  ],
  "Boot Order": [
   null,
-  "Ordre d'amorçage"
+  "Ordre d’amorçage"
+ ],
+ "Boot order settings could not be saved": [
+  null,
+  "Les paramètres d’ordre du démarrage n’ont pas pu être enregistrés"
  ],
  "Bus": [
   null,
   "Bus"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Échec de l’action CHANGE NETWORK STATE"
  ],
  "CPU Type": [
   null,
@@ -249,7 +249,7 @@ return plural;
  ],
  "Delete associated storage files:": [
   null,
-  "Supprimer les fichiers de stockage associés:"
+  "Supprimer les fichiers de stockage associés :"
  ],
  "Description": [
   null,
@@ -274,6 +274,10 @@ return plural;
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
   "Déconnecté de la console série. Cliquez sur le bouton Reconnecter."
+ ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  "Échec du détachement du disque $0 de la VM $1"
  ],
  "Disk failed to be attached": [
   null,
@@ -307,6 +311,10 @@ return plural;
   null,
   "Saisir le nom de la nouvelle machine virtuelle"
  ],
+ "FORCEOFF action failed: $0": [
+  null,
+  "L’action FORCEOFF a échoué : $0"
+ ],
  "FQDN": [
   null,
   "FQDN"
@@ -330,10 +338,6 @@ return plural;
  "Format": [
   null,
   "Formater"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "L’action GET HYPERVISOR MAX VCPU a échoué"
  ],
  "GiB": [
   null,
@@ -363,17 +367,13 @@ return plural;
   null,
   "Hôte à la maintenance"
  ],
- "INSTALL VM action failed": [
-  null,
-  "Échec de l’action INSTALL VM"
- ],
  "Install": [
   null,
   "Installer"
  ],
  "Interface Type": [
   null,
-  ""
+  "Type d’interface"
  ],
  "Launch Remote Viewer": [
   null,
@@ -381,11 +381,11 @@ return plural;
  ],
  "Loading ...": [
   null,
-  "Chargement ..."
+  "Chargement…"
  ],
  "Loading data ...": [
   null,
-  "Chargement des données ..."
+  "Chargement des données…"
  ],
  "MAC Address": [
   null,
@@ -394,6 +394,10 @@ return plural;
  "MIGRATE action failed": [
   null,
   "L’action MIGRATE a échoué"
+ ],
+ "Mac": [
+  null,
+  "Mac"
  ],
  "Mac Address": [
   null,
@@ -417,7 +421,7 @@ return plural;
  ],
  "Migrate To:": [
   null,
-  "Migrer vers:"
+  "Migrer vers :"
  ],
  "Model": [
   null,
@@ -431,17 +435,21 @@ return plural;
   null,
   "Plus d’information"
  ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  "Échec du changement d’état du NIC $0 de la VM $1"
+ ],
  "Name": [
   null,
   "Nom"
  ],
  "Network Interfaces": [
   null,
-  ""
+  "Interfaces réseau"
  ],
  "Network interface settings could not be saved": [
   null,
-  ""
+  "Les paramètres de l’interface réseau n’ont pas pu être enregistrés"
  ],
  "New Volume Name": [
   null,
@@ -481,7 +489,7 @@ return plural;
  ],
  "None (Isolated Network)": [
   null,
-  ""
+  "Aucune (réseau isolé)"
  ],
  "Number of virtual CPUs that gonna be used.": [
   null,
@@ -497,7 +505,7 @@ return plural;
  ],
  "OS Type:": [
   null,
-  "OS Type:"
+  "OS Type :"
  ],
  "Ok": [
   null,
@@ -505,7 +513,7 @@ return plural;
  ],
  "Open": [
   null,
-  ""
+  "Ouvrir"
  ],
  "Optimized for:": [
   null,
@@ -514,6 +522,14 @@ return plural;
  "Overview": [
   null,
   "Aperçu"
+ ],
+ "Path": [
+  null,
+  "Chemin"
+ ],
+ "Pause": [
+  null,
+  "Suspendre"
  ],
  "Persistence": [
   null,
@@ -577,7 +593,11 @@ return plural;
  ],
  "Private": [
   null,
-  ""
+  "Privé"
+ ],
+ "Product": [
+  null,
+  "Produit"
  ],
  "Protocol": [
   null,
@@ -586,6 +606,10 @@ return plural;
  "REBOOT action failed": [
   null,
   "L’action REBOOT a échoué"
+ ],
+ "REBOOT_VM action failed: %s0": [
+  null,
+  "L’action REBOOT_VM a échoué : %0"
  ],
  "Readonly": [
   null,
@@ -611,6 +635,10 @@ return plural;
   null,
   "Redémarrer"
  ],
+ "Resume": [
+  null,
+  "Reprendre"
+ ],
  "Run": [
   null,
   "Exécuter"
@@ -621,7 +649,7 @@ return plural;
  ],
  "Run when host boots": [
   null,
-  ""
+  "Démarrer quand l’hôte est amorcé"
  ],
  "Running Since:": [
   null,
@@ -654,6 +682,10 @@ return plural;
  "START action failed": [
   null,
   "L’action START a échoué"
+ ],
+ "START_VM action failed: %s0": [
+  null,
+  "L’action START_VM a échoué : %0"
  ],
  "SUSPEND action failed": [
   null,
@@ -717,15 +749,19 @@ return plural;
  ],
  "Switching host to maintenance mode failed. Received error: ": [
   null,
-  "La commutation de l’hôte en mode de maintenance a échoué. Erreur reçue:"
+  "La commutation de l’hôte en mode de maintenance a échoué. Erreur reçue :"
  ],
  "Switching host to maintenance mode in progress ...": [
   null,
-  "Passage de l’hôte au mode maintenance en cours ..."
+  "Passage de l’hôte au mode maintenance en cours…"
  ],
  "System": [
   null,
   "Système"
+ ],
+ "Target": [
+  null,
+  "Cible"
  ],
  "Template": [
   null,
@@ -795,6 +831,14 @@ return plural;
   null,
   "Type"
  ],
+ "Type ID": [
+  null,
+  "ID type"
+ ],
+ "Unit": [
+  null,
+  "Unité"
+ ],
  "Unplug": [
   null,
   "Débrancher"
@@ -823,37 +867,45 @@ return plural;
   null,
   "VDSM Service Management"
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to Reboot": [
   null,
-  "VM DELETE (DESTROY) a échoué"
+  "Échec du redémarrage de la VM $0"
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
-  "VM DELETE (UNDEFINE) a échoué"
+  "Échec du redémarrage forcé de la VM $0"
  ],
- "VM FORCE OFF action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "L’action VM FORCE OFF a échoué"
+  "Échec de l’arrêt forcé de la VM $0"
  ],
- "VM FORCE REBOOT action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "L’action VM FORCE REBOOT a échoué"
+  "Échec de la suppression de la VM $0"
  ],
- "VM REBOOT action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "L’action VM REBOOT a échoué"
+  "Échec de l’installation de la VM $0"
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to pause": [
   null,
-  "Échec de l’action d’interruption non masquable VM SEND"
+  "Échec de la mise en pause de la VM $0"
  ],
- "VM SHUT DOWN action failed": [
+ "VM $0 failed to resume": [
   null,
-  "L’action VM SHUT DOWN a échoué"
+  "Échec de la reprise de la VM $0"
  ],
- "VM START action failed": [
+ "VM $0 failed to send NMI": [
   null,
-  "L’action VM START a échoué"
+  "Échec de l’envoi NMI de la VM $0"
+ ],
+ "VM $0 failed to shutdown": [
+  null,
+  "Échec de l’arrêt de la VM $0"
+ ],
+ "VM $0 failed to start": [
+  null,
+  "Échec du démarrage de la VM $0"
  ],
  "VM icon": [
   null,
@@ -875,6 +927,10 @@ return plural;
   null,
   "Port VNC TLS :"
  ],
+ "Vendor": [
+  null,
+  "Fournisseur"
+ ],
  "Version": [
   null,
   "Version"
@@ -894,6 +950,10 @@ return plural;
  "Volume": [
   null,
   "Volume"
+ ],
+ "WWPN": [
+  null,
+  "WWPN"
  ],
  "bridge": [
   null,
@@ -955,6 +1015,10 @@ return plural;
   null,
   "hôte"
  ],
+ "host device": [
+  null,
+  "Périphérique hôte"
+ ],
  "hostdev": [
   null,
   "hostdev"
@@ -1009,7 +1073,7 @@ return plural;
  ],
  "oVirt Host State:": [
   null,
-  "État hôte oVirt:"
+  "État hôte oVirt :"
  ],
  "oVirt Provider installation script failed due to missing arguments.": [
   null,
@@ -1026,10 +1090,6 @@ return plural;
  "oVirt login in progress": [
   null,
   "Connexion oVirt en cours"
- ],
- "other": [
-  null,
-  "autre"
  ],
  "paused": [
   null,
@@ -1050,6 +1110,10 @@ return plural;
  "reboot": [
   null,
   "redémarrer"
+ ],
+ "redirected device": [
+  null,
+  "périphérique redirigé"
  ],
  "running": [
   null,

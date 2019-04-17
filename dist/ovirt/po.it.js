@@ -113,7 +113,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "Avvio automatico"
+  ""
  ],
  "Available": [
   null,
@@ -133,19 +133,19 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "Ordine boot"
+  ""
+ ],
+ "Boot order settings could not be saved": [
+  null,
+  ""
  ],
  "Bus": [
   null,
   "Bus"
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Azione CHANGE NETWORK NETWORK STATE fallita"
- ],
  "CPU Type": [
   null,
-  "Tipo CPU"
+  ""
  ],
  "CREATE VM action failed": [
   null,
@@ -275,6 +275,10 @@ return plural;
   null,
   "Scollegato dalla console seriale. Fare clic sul pulsante Ricollega."
  ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  ""
+ ],
  "Disk failed to be attached": [
   null,
   "Il disco non è stato collegato"
@@ -301,11 +305,15 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "Macchina emulata"
+  ""
  ],
  "Enter New VM name": [
   null,
   "Inserire il nome della nuova macchina virtuale"
+ ],
+ "FORCEOFF action failed: $0": [
+  null,
+  ""
  ],
  "FQDN": [
   null,
@@ -330,10 +338,6 @@ return plural;
  "Format": [
   null,
   "Formato"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "GET HYPERVISOR MAX VCPU azione fallita"
  ],
  "GiB": [
   null,
@@ -363,13 +367,13 @@ return plural;
   null,
   "Ospite a Manutenzione"
  ],
- "INSTALL VM action failed": [
-  null,
-  "L'azione INSTALLA VM è fallita"
- ],
  "Install": [
   null,
   "Installa"
+ ],
+ "Interface Type": [
+  null,
+  ""
  ],
  "Launch Remote Viewer": [
   null,
@@ -390,6 +394,10 @@ return plural;
  "MIGRATE action failed": [
   null,
   "Azione MIGRATE fallita"
+ ],
+ "Mac": [
+  null,
+  ""
  ],
  "Mac Address": [
   null,
@@ -427,21 +435,21 @@ return plural;
   null,
   "Per saperne di più"
  ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  ""
+ ],
  "Name": [
   null,
   "Nome"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "Tipo di rete"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
-  "Le impostazioni di rete non possono essere salvate"
- ],
- "Networks": [
-  null,
-  "Reti"
+  ""
  ],
  "New Volume Name": [
   null,
@@ -479,6 +487,10 @@ return plural;
   null,
   "Nessuna rete virtuale"
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "Number of virtual CPUs that gonna be used.": [
   null,
   "Numero di CPU virtuali che verranno utilizzate."
@@ -499,6 +511,10 @@ return plural;
   null,
   "Ok"
  ],
+ "Open": [
+  null,
+  ""
+ ],
  "Optimized for:": [
   null,
   "Ottimizzato per:"
@@ -506,6 +522,14 @@ return plural;
  "Overview": [
   null,
   "Panoramica"
+ ],
+ "Path": [
+  null,
+  "Percorso"
+ ],
+ "Pause": [
+  null,
+  ""
  ],
  "Persistence": [
   null,
@@ -567,6 +591,14 @@ return plural;
   null,
   "Preparazione per la manutenzione"
  ],
+ "Private": [
+  null,
+  ""
+ ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protocollo"
@@ -574,6 +606,10 @@ return plural;
  "REBOOT action failed": [
   null,
   "RIBOT azione fallita"
+ ],
+ "REBOOT_VM action failed: %s0": [
+  null,
+  ""
  ],
  "Readonly": [
   null,
@@ -599,6 +635,10 @@ return plural;
   null,
   "Riavvia"
  ],
+ "Resume": [
+  null,
+  ""
+ ],
  "Run": [
   null,
   "Esegui"
@@ -606,6 +646,10 @@ return plural;
  "Run Here": [
   null,
   "Esegui qu"
+ ],
+ "Run when host boots": [
+  null,
+  ""
  ],
  "Running Since:": [
   null,
@@ -638,6 +682,10 @@ return plural;
  "START action failed": [
   null,
   "Azione START fallita"
+ ],
+ "START_VM action failed: %s0": [
+  null,
+  ""
  ],
  "SUSPEND action failed": [
   null,
@@ -679,10 +727,6 @@ return plural;
   null,
   "Sorgente"
  ],
- "Start the VM to see disk statistics.": [
-  null,
-  "Avviare la macchina virtuale per visualizzare le statistiche del disco."
- ],
  "State": [
   null,
   "Stato"
@@ -714,6 +758,10 @@ return plural;
  "System": [
   null,
   "Sistema"
+ ],
+ "Target": [
+  null,
+  "Obiettivo"
  ],
  "Template": [
   null,
@@ -783,13 +831,17 @@ return plural;
   null,
   "Tipo"
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
+ "Unit": [
+  null,
+  "Unità"
+ ],
  "Unplug": [
   null,
   "Scollegare"
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Aggiornare a una versione più recente di libvirt per visualizzare le statistiche del disco"
  ],
  "Usage": [
   null,
@@ -815,37 +867,45 @@ return plural;
   null,
   "Gestione dei servizi VDSM"
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to Reboot": [
   null,
-  "VM DELETE (DESTROY) azione fallita"
+  ""
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
-  "VM DELETE (UNDEFINE) azione fallita"
+  ""
  ],
- "VM FORCE OFF action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "VM FORCE OFF azione fallita"
+  ""
  ],
- "VM FORCE REBOOT action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "VM FORCE REBOOT azione fallita"
+  ""
  ],
- "VM REBOOT action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "VM REBOOT azione fallita"
+  ""
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to pause": [
   null,
-  "VM SEND Non Maskable Interrrupt azione non riuscita"
+  ""
  ],
- "VM SHUT DOWN action failed": [
+ "VM $0 failed to resume": [
   null,
-  "VM SHUT DOWN azione fallita"
+  ""
  ],
- "VM START action failed": [
+ "VM $0 failed to send NMI": [
   null,
-  "VM START azione fallita"
+  ""
+ ],
+ "VM $0 failed to shutdown": [
+  null,
+  ""
+ ],
+ "VM $0 failed to start": [
+  null,
+  ""
  ],
  "VM icon": [
   null,
@@ -867,6 +927,10 @@ return plural;
   null,
   "Porta VNC TLS:"
  ],
+ "Vendor": [
+  null,
+  "Rivenditore"
+ ],
  "Version": [
   null,
   "Versione"
@@ -886,6 +950,10 @@ return plural;
  "Volume": [
   null,
   "Volume"
+ ],
+ "WWPN": [
+  null,
+  ""
  ],
  "bridge": [
   null,
@@ -946,6 +1014,10 @@ return plural;
  "host": [
   null,
   "host"
+ ],
+ "host device": [
+  null,
+  ""
  ],
  "hostdev": [
   null,
@@ -1019,10 +1091,6 @@ return plural;
   null,
   "oVirt login in corso"
  ],
- "other": [
-  null,
-  "altro"
- ],
  "paused": [
   null,
   "in pausa"
@@ -1042,6 +1110,10 @@ return plural;
  "reboot": [
   null,
   "riavvia"
+ ],
+ "redirected device": [
+  null,
+  ""
  ],
  "running": [
   null,

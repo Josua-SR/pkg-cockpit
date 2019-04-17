@@ -78,7 +78,7 @@ return plural;
  ],
  "Applying solution...": [
   null,
-  "Application de la solution ..."
+  "Application de la solution…"
  ],
  "Audit log": [
   null,
@@ -86,7 +86,7 @@ return plural;
  ],
  "Connecting to SETroubleshoot daemon...": [
   null,
-  "Connexion au démon SETroubleshoot ..."
+  "Connexion au démon SETroubleshoot…"
  ],
  "Enforce policy:": [
   null,
@@ -94,15 +94,15 @@ return plural;
  ],
  "Error while deleting alert: $0": [
   null,
-  "Erreur lors de la suppression de l’alerte: $0"
+  "Erreur lors de la suppression de l’alerte : $0"
  ],
  "Error while setting SELinux mode: '$0'": [
   null,
-  "Erreur lors du réglage du mode SELinux: ’ $0 ’"
+  "Erreur lors du réglage du mode SELinux: $0"
  ],
  "Failed to delete alert: $0": [
   null,
-  "Échec de la suppression de l’alerte: $0"
+  "Échec de la suppression de l’alerte : $0"
  ],
  "Install setroubleshoot-server to troubleshoot SELinux events.": [
   null,
@@ -178,27 +178,27 @@ return plural;
  ],
  "Unable to apply this solution automatically": [
   null,
-  "Impossible d’appliquer cette solution automatiquement"
+  "Cette solution n’a pas pu être appliquée automatiquement"
  ],
  "Unable to get alert details.": [
   null,
-  "Impossible d’obtenir les détails de l’alerte."
+  "Incapable d’obtenir les détails de l’alerte."
  ],
  "Unable to get alert: $0": [
   null,
-  "Impossible d’être alerte: $0"
+  "Incapable d’obtenir l’alerte : $0"
  ],
  "Unable to run fix: %0": [
   null,
-  "Impossible d’exécuter le correctif : %0"
+  "Incapable d’exécuter le correctif : %0"
  ],
  "Unable to start setroubleshootd": [
   null,
-  "Impossible de démarrer setroubleshootd"
+  "Incapable de démarrer setroubleshootd"
  ],
  "Waiting for details...": [
   null,
-  "En attente de détails ..."
+  "En attente de détails…"
  ],
  "solution details": [
   null,

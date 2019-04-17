@@ -115,14 +115,14 @@ libexec_PROGRAMS = $(am__EXEEXT_1) cockpit-askpass$(EXEEXT) \
 	cockpit-ws$(EXEEXT) cockpit-session$(EXEEXT)
 noinst_PROGRAMS = $(am__EXEEXT_6) mock-bridge$(EXEEXT) $(am__EXEEXT_7) \
 	frob-websocket$(EXEEXT) test-websocket$(EXEEXT) \
-	$(am__EXEEXT_4) $(am__EXEEXT_11) test-server$(EXEEXT) \
-	$(am__EXEEXT_13) mock-echo$(EXEEXT) mock-auth-command$(EXEEXT) \
-	$(am__EXEEXT_4) mock-pam-conv-mod.so$(EXEEXT) $(am__EXEEXT_14)
+	$(am__EXEEXT_4) $(am__EXEEXT_10) test-server$(EXEEXT) \
+	$(am__EXEEXT_12) mock-echo$(EXEEXT) mock-auth-command$(EXEEXT) \
+	$(am__EXEEXT_4) mock-pam-conv-mod.so$(EXEEXT) $(am__EXEEXT_13)
 sbin_PROGRAMS = remotectl$(EXEEXT)
-TESTS = $(am__EXEEXT_4) $(am__EXEEXT_15) $(am__EXEEXT_18) \
+TESTS = $(am__EXEEXT_4) $(am__EXEEXT_14) $(am__EXEEXT_17) \
 	$(am__EXEEXT_6) $(am__EXEEXT_7) test-websocket$(EXEEXT) \
 	$(am__EXEEXT_4) tools/test-static-code $(am__EXEEXT_4) \
-	$(am__EXEEXT_19) $(am__EXEEXT_13) $(am__EXEEXT_14)
+	$(am__EXEEXT_18) $(am__EXEEXT_12) $(am__EXEEXT_13)
 @ENABLE_DOC_TRUE@am__append_1 = doc/cockpit-transport.svg \
 @ENABLE_DOC_TRUE@	doc/cockpit-transport.png $(NULL) \
 @ENABLE_DOC_TRUE@	$(GUIDE_DOCBOOK) $(GUIDE_INCLUDES) \
@@ -175,19 +175,16 @@ TESTS = $(am__EXEEXT_4) $(am__EXEEXT_15) $(am__EXEEXT_18) \
 @HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
 @WITH_COCKPIT_SSH_TRUE@am__append_14 = mock-sshd $(SSH_CHECKS)
-
-# HACK: https://bugs.libssh.org/T117: libssh 0.8.4 breaks interactive keyboard auth on server side, i. e. our mock-ssh for unit tests
-@HAVE_BROKEN_SSH_KBDINT_FALSE@@WITH_COCKPIT_SSH_TRUE@am__append_15 = test-sshbridge
-@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@am__append_16 = \
+@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@am__append_15 = \
 @HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@	test-knownhosts \
 @HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
-@WITH_COCKPIT_SSH_TRUE@am__append_17 = test_rsa_key
-@WITH_COCKPIT_SSH_TRUE@am__append_18 = \
+@WITH_COCKPIT_SSH_TRUE@am__append_16 = test_rsa_key
+@WITH_COCKPIT_SSH_TRUE@am__append_17 = \
 @WITH_COCKPIT_SSH_TRUE@	test_rsa_key \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
-@WITH_COCKPIT_SSH_TRUE@am__append_19 = \
+@WITH_COCKPIT_SSH_TRUE@am__append_18 = \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock_rsa_key \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock_dsa_key \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/test_rsa \
@@ -200,17 +197,15 @@ TESTS = $(am__EXEEXT_4) $(am__EXEEXT_15) $(am__EXEEXT_18) \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock_known_hosts_2 \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
-@WITH_COCKPIT_SSH_TRUE@am__append_20 = \
+@WITH_COCKPIT_SSH_TRUE@am__append_19 = \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock-pid-cat \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock-bin/sss_ssh_knownhostsproxy \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
-@WITH_COCKPIT_SSH_TRUE@am__append_21 = $(SSH_CHECKS)
-
-# HACK: https://bugs.libssh.org/T117: libssh 0.8.4 breaks interactive keyboard auth on server side, i. e. our mock-ssh for unit tests
-@HAVE_BROKEN_SSH_KBDINT_FALSE@@WITH_COCKPIT_SSH_TRUE@am__append_22 = \
-@HAVE_BROKEN_SSH_KBDINT_FALSE@@WITH_COCKPIT_SSH_TRUE@	test-authssh \
-@HAVE_BROKEN_SSH_KBDINT_FALSE@@WITH_COCKPIT_SSH_TRUE@	$(NULL)
+@WITH_COCKPIT_SSH_TRUE@am__append_20 = $(SSH_CHECKS)
+@WITH_COCKPIT_SSH_TRUE@am__append_21 = \
+@WITH_COCKPIT_SSH_TRUE@	test-authssh \
+@WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
 subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -270,22 +265,22 @@ am__EXEEXT_7 = test-hash$(EXEEXT) test-hex$(EXEEXT) test-json$(EXEEXT) \
 	test-config$(EXEEXT) test-unicode$(EXEEXT) \
 	test-version$(EXEEXT) test-system$(EXEEXT) \
 	test-base64$(EXEEXT) test-authorize$(EXEEXT) $(am__EXEEXT_4)
-@HAVE_BROKEN_SSH_KBDINT_FALSE@@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_8 = test-sshbridge$(EXEEXT)
-@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_9 = test-knownhosts$(EXEEXT) \
+@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_8 = test-knownhosts$(EXEEXT) \
 @HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@	$(am__EXEEXT_4)
-@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_10 = test-sshoptions$(EXEEXT) \
-@WITH_COCKPIT_SSH_TRUE@	$(am__EXEEXT_8) $(am__EXEEXT_9)
-@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_11 = mock-sshd$(EXEEXT) \
-@WITH_COCKPIT_SSH_TRUE@	$(am__EXEEXT_10)
-@HAVE_BROKEN_SSH_KBDINT_FALSE@@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_12 = test-authssh$(EXEEXT) \
-@HAVE_BROKEN_SSH_KBDINT_FALSE@@WITH_COCKPIT_SSH_TRUE@	$(am__EXEEXT_4)
-am__EXEEXT_13 = test-base64$(EXEEXT) test-creds$(EXEEXT) \
+@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_9 = test-sshoptions$(EXEEXT) \
+@WITH_COCKPIT_SSH_TRUE@	test-sshbridge$(EXEEXT) $(am__EXEEXT_4) \
+@WITH_COCKPIT_SSH_TRUE@	$(am__EXEEXT_8)
+@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_10 = mock-sshd$(EXEEXT) \
+@WITH_COCKPIT_SSH_TRUE@	$(am__EXEEXT_9)
+@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_11 = test-authssh$(EXEEXT) \
+@WITH_COCKPIT_SSH_TRUE@	$(am__EXEEXT_4)
+am__EXEEXT_12 = test-base64$(EXEEXT) test-creds$(EXEEXT) \
 	test-auth$(EXEEXT) test-compat$(EXEEXT) \
 	test-webservice$(EXEEXT) test-channelresponse$(EXEEXT) \
 	test-handlers$(EXEEXT) test-kerberos$(EXEEXT) \
 	test-remotectlcertificate$(EXEEXT) $(am__EXEEXT_4) \
-	$(am__EXEEXT_12)
-am__EXEEXT_14 = test-ssh-add$(EXEEXT) $(am__EXEEXT_4)
+	$(am__EXEEXT_11)
+am__EXEEXT_13 = test-ssh-add$(EXEEXT) $(am__EXEEXT_4)
 PROGRAMS = $(bin_PROGRAMS) $(libexec_PROGRAMS) $(noinst_PROGRAMS) \
 	$(sbin_PROGRAMS)
 LIBRARIES = $(noinst_LIBRARIES)
@@ -1490,8 +1485,8 @@ am__set_TESTS_bases = \
   bases=`for i in $$bases; do echo $$i; done | sed 's/\.log$$//'`; \
   bases=`echo $$bases`
 RECHECK_LOGS = $(TEST_LOGS)
-am__EXEEXT_15 = pkg/users/test-list-public-keys.sh $(am__EXEEXT_4)
-am__EXEEXT_16 = dist/base1/test-base64.html dist/base1/test-utf8.html \
+am__EXEEXT_14 = pkg/users/test-list-public-keys.sh $(am__EXEEXT_4)
+am__EXEEXT_15 = dist/base1/test-base64.html dist/base1/test-utf8.html \
 	dist/base1/test-events.html dist/base1/test-chan.html \
 	dist/base1/test-dbus.html dist/base1/test-dbus-address.html \
 	dist/base1/test-echo.html dist/base1/test-spawn.html \
@@ -1505,11 +1500,11 @@ am__EXEEXT_16 = dist/base1/test-base64.html dist/base1/test-utf8.html \
 	dist/base1/test-stub.html dist/base1/test-browser-storage.html \
 	dist/base1/test-promise.html dist/base1/test-protocol.html \
 	$(am__EXEEXT_4)
-am__EXEEXT_17 = dist/base1/test-no-jquery.html \
+am__EXEEXT_16 = dist/base1/test-no-jquery.html \
 	dist/base1/test-framed-cache.html dist/base1/test-framed.html \
 	dist/base1/test-dbus-framed.html $(am__EXEEXT_4)
-am__EXEEXT_18 = $(am__EXEEXT_16) $(am__EXEEXT_17)
-@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_19 = $(am__EXEEXT_10)
+am__EXEEXT_17 = $(am__EXEEXT_15) $(am__EXEEXT_16)
+@WITH_COCKPIT_SSH_TRUE@am__EXEEXT_18 = $(am__EXEEXT_9)
 TEST_SUITE_LOG = test-suite.log
 LOG_COMPILE = $(LOG_COMPILER) $(AM_LOG_FLAGS) $(LOG_FLAGS)
 am__set_b = \
@@ -1637,8 +1632,6 @@ KRB5_CONFIG = @KRB5_CONFIG@
 LDFLAGS = @LDFLAGS@
 LIBOBJS = @LIBOBJS@
 LIBS = @LIBS@
-LIBSSH_BROKEN_KBDINT_CFLAGS = @LIBSSH_BROKEN_KBDINT_CFLAGS@
-LIBSSH_BROKEN_KBDINT_LIBS = @LIBSSH_BROKEN_KBDINT_LIBS@
 LIBSSH_CFLAGS = @LIBSSH_CFLAGS@
 LIBSSH_LIBS = @LIBSSH_LIBS@
 LIBSSH_SAFE_PROXY_COMMANDS_CFLAGS = @LIBSSH_SAFE_PROXY_COMMANDS_CFLAGS@
@@ -1759,13 +1752,13 @@ man_MANS = $(am__append_4)
 BUILT_SOURCES = $(COCKPIT_ASSETS)
 check_SCRIPTS = 
 noinst_SCRIPTS = $(WEBPACK_STAMPS) $(WEBPACK_INSTALL) $(base_TESTS) \
-	$(am__append_20) src/ws/mock-cat-with-init $(NULL)
+	$(am__append_19) src/ws/mock-cat-with-init $(NULL)
 
 # ----------------------------------------------------------------------------------------------------
 noinst_LIBRARIES = libcockpit-stub.a libcockpit-bridge.a $(NULL) \
 	$(am__append_7) libcockpit-common.a libwebsocket.a \
 	$(am__append_11) libcockpit-ws.a libretest.a libpam_ssh_add.a
-noinst_DATA = $(am__append_2) $(am__append_9) $(am__append_17)
+noinst_DATA = $(am__append_2) $(am__append_9) $(am__append_16)
 
 # preload wrapper library for unit tests that need a temp home dir
 # we don't use libtool, so build this manually
@@ -1783,7 +1776,7 @@ CLEANFILES = $(man_MANS) valgrind-suppressions $(NULL) $(MO_FILES) \
 	dist/shell/*.po src/ws/*.po po/cockpit*.pot po/po.empty.js.gz \
 	$(NULL) $(polkit_DATA) $(am__append_10) $(COCKPIT_ASSETS) \
 	$(test_locale_MO) libpreload-temp-home.so $(NULL) \
-	$(am__append_18) src/ws/cockpit.socket src/ws/cockpit.service \
+	$(am__append_17) src/ws/cockpit.socket src/ws/cockpit.service \
 	src/ws/cockpit-motd.service $(nodist_tempconf_DATA) \
 	cockpit-desktop $(NULL) $(nodist_appdata_DATA) $(NULL) \
 	mock-pam-conv-mod.so pam_ssh_add.so $(KUBERNETES_DIR)/rpms \
@@ -1857,7 +1850,7 @@ EXTRA_DIST = package.json README.md $(NULL) $(WEBPACK_STAMPS) \
 	src/common/com.redhat.Cockpit.DBusTests.xml \
 	src/common/cockpitassets.gresource.xml src/common/fail.html \
 	$(test_locale_PO) $(NULL) src/common/preload-temp-home.c \
-	pkg/apps/content-security-policy.override $(am__append_19) \
+	pkg/apps/content-security-policy.override $(am__append_18) \
 	dist/static/login.html dist/static/login.min.html \
 	dist/static/login.js dist/static/login.min.js \
 	dist/static/login.css dist/static/login.min.css \
@@ -2900,8 +2893,8 @@ test_websocket_LDADD = libwebsocket.a $(libwebsocket_a_LIBS)
 @WITH_COCKPIT_SSH_TRUE@	$(COCKPIT_SSH_SESSION_CFLAGS) \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
-@WITH_COCKPIT_SSH_TRUE@SSH_CHECKS = test-sshoptions $(am__append_15) \
-@WITH_COCKPIT_SSH_TRUE@	$(am__append_16)
+@WITH_COCKPIT_SSH_TRUE@SSH_CHECKS = test-sshoptions test-sshbridge \
+@WITH_COCKPIT_SSH_TRUE@	$(NULL) $(am__append_15)
 @WITH_COCKPIT_SSH_TRUE@test_sshoptions_CFLAGS = $(cockpit_ssh_CFLAGS)
 @WITH_COCKPIT_SSH_TRUE@test_sshoptions_SOURCES = src/ssh/test-sshoptions.c
 @WITH_COCKPIT_SSH_TRUE@test_sshoptions_LDADD = libcockpit-ssh.a $(cockpit_ssh_LDADD)
@@ -3029,7 +3022,7 @@ test_server_LDADD = \
 WS_CHECKS = test-base64 test-creds test-auth test-compat \
 	test-webservice test-channelresponse test-handlers \
 	test-kerberos test-remotectlcertificate $(NULL) \
-	$(am__append_22)
+	$(am__append_21)
 test_auth_CFLAGS = $(cockpit_ws_CFLAGS)
 test_auth_SOURCES = \
 	src/ws/test-auth.c \
@@ -9755,10 +9748,12 @@ upload-translations:
 	$(ZANATA_CLI) push --includes=cockpit.pot --project-config "$(srcdir)/po/zanata.xml" \
 		--push-type trans -s "$(builddir)/po" -t "$(srcdir)/po"
 
+clean-po:
+	rm $(srcdir)/po/*.po
+
 download-po:
 	$(ZANATA_CLI) pull --includes=cockpit.pot --project-config "$(srcdir)/po/zanata.xml" \
-		--min-doc-percent 1 -s "$(builddir)/po" -t "$(srcdir)/po"
-	sh -c 'cd $(srcdir)/po; ls *.po' | sed 's/\.po//g' | sort > $(srcdir)/po/LINGUAS
+		--min-doc-percent 50 -s "$(builddir)/po" -t "$(srcdir)/po"
 
 dist/playground/extra.de.po: pkg/playground/extra.de.po
 	$(COPY_RULE)

@@ -121,7 +121,7 @@ return plural;
  ],
  "Boot order settings could not be saved": [
   null,
-  ""
+  "Не вдалося зберегти параметри порядку завантаження"
  ],
  "Bus": [
   null,
@@ -197,7 +197,7 @@ return plural;
  ],
  "Creation of VM $0 failed": [
   null,
-  ""
+  "Не вдалося створити ВМ $0"
  ],
  "Ctrl+Alt+Del": [
   null,
@@ -253,7 +253,7 @@ return plural;
  ],
  "Disk $0 fail to get detached from VM $1": [
   null,
-  ""
+  "Не вдалося від'єднати диск $0 від віртуальної машини $1"
  ],
  "Disk failed to be attached": [
   null,
@@ -409,7 +409,7 @@ return plural;
  ],
  "Mac": [
   null,
-  ""
+  "Mac"
  ],
  "Mac Address": [
   null,
@@ -453,7 +453,7 @@ return plural;
  ],
  "NIC $0 of VM $1 failed to change state": [
   null,
-  ""
+  "NIC $0 ВМ $1, не вдалося змінити стан"
  ],
  "Name": [
   null,
@@ -473,11 +473,11 @@ return plural;
  ],
  "Network $0 failed to get activated": [
   null,
-  ""
+  "Не вдалося активувати мережу $0"
  ],
  "Network $0 failed to get deactivated": [
   null,
-  ""
+  "Не вдалося деактивувати мережу $0"
  ],
  "Network Boot (PXE)": [
   null,
@@ -637,7 +637,7 @@ return plural;
  ],
  "Product": [
   null,
-  ""
+  "Продукт"
  ],
  "Protocol": [
   null,
@@ -769,11 +769,11 @@ return plural;
  ],
  "Storage Pool $0 failed to get activated": [
   null,
-  ""
+  "Не вдалося активувати буфер сховища $0"
  ],
  "Storage Pool $0 failed to get deactivated": [
   null,
-  ""
+  "Не вдалося деактивувати буфер сховища $0"
  ],
  "Storage Pool Name": [
   null,
@@ -881,7 +881,7 @@ return plural;
  ],
  "Type ID": [
   null,
-  ""
+  "Ідентифікатор типу"
  ],
  "URL": [
   null,
@@ -921,43 +921,43 @@ return plural;
  ],
  "VM $0 failed to Reboot": [
   null,
-  ""
+  "Не вдалося перезавантажити віртуальну машину $0"
  ],
  "VM $0 failed to force Reboot": [
   null,
-  ""
+  "Не вдалося примусово перезавантажити віртуальну машину $0"
  ],
  "VM $0 failed to force shutdown": [
   null,
-  ""
+  "Не вдалося примусово вимкнути віртуальну машину $0"
  ],
  "VM $0 failed to get deleted": [
   null,
-  ""
+  "Не вдалося вилучити віртуальну машину $0"
  ],
  "VM $0 failed to get installed": [
   null,
-  ""
+  "Не вдалося встановити віртуальну машину $0"
  ],
  "VM $0 failed to pause": [
   null,
-  ""
+  "Не вдалося призупинити віртуальну машину $0"
  ],
  "VM $0 failed to resume": [
   null,
-  ""
+  "Не вдалося відновити роботу віртуальної машини $0"
  ],
  "VM $0 failed to send NMI": [
   null,
-  ""
+  "Не вдалося надіслати NMI віртуальній машині $0"
  ],
  "VM $0 failed to shutdown": [
   null,
-  ""
+  "Не вдалося вимкнути віртуальну машину $0"
  ],
  "VM $0 failed to start": [
   null,
-  ""
+  "Не вдалося запустити віртуальну машину $0"
  ],
  "VNC": [
   null,
@@ -1001,7 +1001,7 @@ return plural;
  ],
  "WWPN": [
   null,
-  ""
+  "WWPN"
  ],
  "active": [
   null,
@@ -1057,7 +1057,7 @@ return plural;
  ],
  "host device": [
   null,
-  ""
+  "пристрій основної системи"
  ],
  "hostdev": [
   null,
@@ -1065,11 +1065,11 @@ return plural;
  ],
  "iSCSI Target": [
   null,
-  ""
+  "Ціль iSCSI"
  ],
  "iSCSI target IQN": [
   null,
-  ""
+  "IQN цілі iSCSI"
  ],
  "idle": [
   null,
@@ -1105,7 +1105,7 @@ return plural;
  ],
  "redirected device": [
   null,
-  ""
+  "переспрямований пристрій"
  ],
  "running": [
   null,

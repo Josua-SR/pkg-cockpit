@@ -71,6 +71,10 @@ return plural;
   null,
   "$mtu"
  ],
+ "(Optional)": [
+  null,
+  ""
+ ],
  "1 day": [
   null,
   "Un jour"
@@ -139,13 +143,13 @@ return plural;
   null,
   "Ajouter un pont"
  ],
+ "Add Ports": [
+  null,
+  ""
+ ],
  "Add Services": [
   null,
   "Ajouter services"
- ],
- "Add Services…": [
-  null,
-  "Ajouter services..."
  ],
  "Add Team": [
   null,
@@ -249,7 +253,7 @@ return plural;
  ],
  "Change the settings": [
   null,
-  "Changer les paramètres"
+  "Modifier les paramètres"
  ],
  "Changing the settings will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -262,6 +266,10 @@ return plural;
  "Close": [
   null,
   "Fermer"
+ ],
+ "Comma-separated ports, ranges, and aliases are accepted": [
+  null,
+  ""
  ],
  "Configure": [
   null,
@@ -302,6 +310,10 @@ return plural;
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
   "La création de cette équipe interrompt la connexion au serveur et rend l’interface utilisateur d’administration indisponible."
+ ],
+ "Custom Ports": [
+  null,
+  ""
  ],
  "DNS": [
   null,
@@ -358,6 +370,14 @@ return plural;
  "Ethtool": [
   null,
   "Ethtool"
+ ],
+ "Example: 22,ssh,8080,5900-5910": [
+  null,
+  ""
+ ],
+ "Example: 88,2019,nfs,rsync": [
+  null,
+  ""
  ],
  "Failed": [
   null,
@@ -447,6 +467,10 @@ return plural;
   null,
   "Métrique non valide $0"
  ],
+ "Invalid port number": [
+  null,
+  ""
+ ],
  "Invalid prefix $0": [
   null,
   "Préfixe non valide $0"
@@ -454,6 +478,10 @@ return plural;
  "Invalid prefix or netmask $0": [
   null,
   "Préfixe ou masque de réseau non valide $0"
+ ],
+ "Invalid range": [
+  null,
+  ""
  ],
  "Keep connection": [
   null,
@@ -619,6 +647,10 @@ return plural;
   null,
   "Veuillez installer le paquet $0"
  ],
+ "Port number and type do not match": [
+  null,
+  ""
+ ],
  "Ports": [
   null,
   "Ports"
@@ -654,6 +686,10 @@ return plural;
  "Random": [
   null,
   "Random"
+ ],
+ "Range must be strictly ordered": [
+  null,
+  ""
  ],
  "Reboot": [
   null,
@@ -710,6 +746,10 @@ return plural;
  "Service": [
   null,
   "Service"
+ ],
+ "Services": [
+  null,
+  "Prestations de service"
  ],
  "Set to": [
   null,
@@ -814,6 +854,10 @@ return plural;
  "Unknown configuration": [
   null,
   "Configuration inconnue"
+ ],
+ "Unknown service name": [
+  null,
+  ""
  ],
  "Unmanaged Interfaces": [
   null,

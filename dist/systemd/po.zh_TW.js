@@ -283,9 +283,17 @@ return plural;
   null,
   "警報及以上"
  ],
+ "All": [
+  null,
+  ""
+ ],
  "All In One": [
   null,
   "一體"
+ ],
+ "Appearance:": [
+  null,
+  ""
  ],
  "Asset Tag": [
   null,
@@ -327,6 +335,10 @@ return plural;
   null,
   "綁定到"
  ],
+ "Black": [
+  null,
+  ""
+ ],
  "Blade": [
   null,
   "刀"
@@ -350,6 +362,14 @@ return plural;
  "CPU": [
   null,
   "CPU"
+ ],
+ "CPU Security": [
+  null,
+  ""
+ ],
+ "CPU Security Toggles": [
+  null,
+  ""
  ],
  "Cached": [
   null,
@@ -386,6 +406,10 @@ return plural;
  "Class": [
   null,
   "類別"
+ ],
+ "Clear All Filters": [
+  null,
+  ""
  ],
  "Click to see system hardware information": [
   null,
@@ -427,6 +451,10 @@ return plural;
   null,
   "可兌換"
  ],
+ "Copy": [
+  null,
+  ""
+ ],
  "Create Timer": [
   null,
   "創建計時器"
@@ -439,9 +467,17 @@ return plural;
   null,
   "關鍵及以上"
  ],
+ "Ctrl+Insert": [
+  null,
+  ""
+ ],
  "Current boot": [
   null,
   "當前啟動"
+ ],
+ "Dark": [
+  null,
+  ""
  ],
  "Debug and above": [
   null,
@@ -470,6 +506,10 @@ return plural;
  "Disable": [
   null,
   "停用"
+ ],
+ "Disable simultaneous multithreading": [
+  null,
+  ""
  ],
  "Disabled": [
   null,
@@ -539,6 +579,10 @@ return plural;
   null,
   "擴展機箱"
  ],
+ "Filter by name or description...": [
+  null,
+  ""
+ ],
  "Friday": [
   null,
   "週五"
@@ -586,10 +630,6 @@ return plural;
  "I/O Wait": [
   null,
   "I / O等待"
- ],
- "Id": [
-  null,
-  "ID"
  ],
  "Info and above": [
   null,
@@ -675,6 +715,10 @@ return plural;
   null,
   "最後觸發"
  ],
+ "Light": [
+  null,
+  ""
+ ],
  "Load earlier entries": [
   null,
   "加載較早的條目"
@@ -751,6 +795,10 @@ return plural;
   null,
   "分"
  ],
+ "Mitigations": [
+  null,
+  ""
+ ],
  "Model": [
   null,
   "型號"
@@ -790,6 +838,10 @@ return plural;
  "No Delay": [
   null,
   "沒有延遲"
+ ],
+ "No Matching Results": [
+  null,
+  ""
  ],
  "No host keys found.": [
   null,
@@ -859,6 +911,10 @@ return plural;
   null,
   "部分"
  ],
+ "Paste": [
+  null,
+  ""
+ ],
  "Path": [
   null,
   "路徑"
@@ -918,6 +974,10 @@ return plural;
  "Rack Mount Chassis": [
   null,
   "機架式機箱"
+ ],
+ "Read more...": [
+  null,
+  ""
  ],
  "Real Host Name": [
   null,
@@ -1031,6 +1091,10 @@ return plural;
   null,
   "儲存"
  ],
+ "Save and reboot": [
+  null,
+  ""
+ ],
  "Sealed-case PC": [
   null,
   "密封式PC"
@@ -1046,6 +1110,10 @@ return plural;
  "Security Updates Available": [
   null,
   "安全更新可用"
+ ],
+ "Service": [
+  null,
+  "服務"
  ],
  "Service Logs": [
   null,
@@ -1071,6 +1139,10 @@ return plural;
   null,
   "嚴重性"
  ],
+ "Shift+Insert": [
+  null,
+  ""
+ ],
  "Show fingerprints": [
   null,
   "顯示指紋"
@@ -1086,6 +1158,10 @@ return plural;
  "Sockets": [
   null,
   "插槽"
+ ],
+ "Software-based workarounds help prevent CPU security issues. These mitigations have the side effect of reducing performance. Change these settings at your own risk.": [
+  null,
+  ""
  ],
  "Space-saving Computer": [
   null,
@@ -1182,6 +1258,10 @@ return plural;
  "Terminal": [
   null,
   "終端機"
+ ],
+ "The user $0 is not permitted to change cpu security mitigations": [
+  null,
+  ""
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,
@@ -1318,6 +1398,10 @@ return plural;
  "Weeks": [
   null,
   "週"
+ ],
+ "White": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

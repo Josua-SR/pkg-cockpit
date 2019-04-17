@@ -135,13 +135,13 @@ return plural;
   null,
   ""
  ],
+ "Boot order settings could not be saved": [
+  null,
+  ""
+ ],
  "Bus": [
   null,
   "автобус"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Не удалось выполнить действие CHANGE NETWORK STATE"
  ],
  "CPU Type": [
   null,
@@ -275,6 +275,10 @@ return plural;
   null,
   "Отключен от последовательной консоли. Нажмите кнопку «Повторное подключение»."
  ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  ""
+ ],
  "Disk failed to be attached": [
   null,
   "Не удалось подключить диск"
@@ -307,6 +311,10 @@ return plural;
   null,
   "Введите новое имя виртуальной машины"
  ],
+ "FORCEOFF action failed: $0": [
+  null,
+  ""
+ ],
  "FQDN": [
   null,
   "FQDN"
@@ -330,10 +338,6 @@ return plural;
  "Format": [
   null,
   "Формат"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "Не удалось выполнить действие GET HYPERVISOR MAX VCPU"
  ],
  "GiB": [
   null,
@@ -363,13 +367,13 @@ return plural;
   null,
   "Хост для обслуживания"
  ],
- "INSTALL VM action failed": [
-  null,
-  "УСТАНОВИТЬ действие VM не удалось"
- ],
  "Install": [
   null,
   "Установка"
+ ],
+ "Interface Type": [
+  null,
+  ""
  ],
  "Launch Remote Viewer": [
   null,
@@ -390,6 +394,10 @@ return plural;
  "MIGRATE action failed": [
   null,
   "Не удалось выполнить действие MIGRATE"
+ ],
+ "Mac": [
+  null,
+  ""
  ],
  "Mac Address": [
   null,
@@ -427,21 +435,21 @@ return plural;
   null,
   "Дополнительная информация"
  ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  ""
+ ],
  "Name": [
   null,
   "Имя"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "Тип сети"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
-  "Сетевые настройки не могут быть сохранены"
- ],
- "Networks": [
-  null,
-  "Сети"
+  ""
  ],
  "New Volume Name": [
   null,
@@ -479,6 +487,10 @@ return plural;
   null,
   "Нет виртуальных сетей"
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "Number of virtual CPUs that gonna be used.": [
   null,
   "Количество виртуальных процессоров, которые будут использоваться."
@@ -499,6 +511,10 @@ return plural;
   null,
   "OK"
  ],
+ "Open": [
+  null,
+  ""
+ ],
  "Optimized for:": [
   null,
   "Оптимизирован для:"
@@ -506,6 +522,14 @@ return plural;
  "Overview": [
   null,
   "Обзор"
+ ],
+ "Path": [
+  null,
+  "Путь"
+ ],
+ "Pause": [
+  null,
+  ""
  ],
  "Persistence": [
   null,
@@ -567,6 +591,14 @@ return plural;
   null,
   "Подготовка к обслуживанию"
  ],
+ "Private": [
+  null,
+  ""
+ ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Протокол"
@@ -574,6 +606,10 @@ return plural;
  "REBOOT action failed": [
   null,
   "Не выполнено действие REBOOT"
+ ],
+ "REBOOT_VM action failed: %s0": [
+  null,
+  ""
  ],
  "Readonly": [
   null,
@@ -599,6 +635,10 @@ return plural;
   null,
   "Перезапуск"
  ],
+ "Resume": [
+  null,
+  ""
+ ],
  "Run": [
   null,
   "Запустить"
@@ -606,6 +646,10 @@ return plural;
  "Run Here": [
   null,
   "Выполнить здесь"
+ ],
+ "Run when host boots": [
+  null,
+  ""
  ],
  "Running Since:": [
   null,
@@ -638,6 +682,10 @@ return plural;
  "START action failed": [
   null,
   "Не удалось выполнить действие START"
+ ],
+ "START_VM action failed: %s0": [
+  null,
+  ""
  ],
  "SUSPEND action failed": [
   null,
@@ -711,6 +759,10 @@ return plural;
   null,
   "Система"
  ],
+ "Target": [
+  null,
+  "Целевой"
+ ],
  "Template": [
   null,
   "Шаблон"
@@ -779,6 +831,14 @@ return plural;
   null,
   "Тип"
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
+ "Unit": [
+  null,
+  "Сервис"
+ ],
  "Unplug": [
   null,
   "Отключайте"
@@ -807,37 +867,45 @@ return plural;
   null,
   "Управление службами VDSM"
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to Reboot": [
   null,
-  "Не удалось выполнить действие VM DELETE (DESTROY)"
+  ""
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
-  "Не удалось выполнить действие VM DELETE (UNDEFINE)"
+  ""
  ],
- "VM FORCE OFF action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "Не удалось выполнить действие VM FORCE OFF"
+  ""
  ],
- "VM FORCE REBOOT action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "Не удалось выполнить действие VM FORCE REBOOT"
+  ""
  ],
- "VM REBOOT action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "Не удалось выполнить действие VM REBOOT"
+  ""
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to pause": [
   null,
-  "Отклонено действие VM SEND Непрерывное прерывание"
+  ""
  ],
- "VM SHUT DOWN action failed": [
+ "VM $0 failed to resume": [
   null,
-  "Действие VM SHUT DOWN не выполнено"
+  ""
  ],
- "VM START action failed": [
+ "VM $0 failed to send NMI": [
   null,
-  "Не удалось выполнить действие VM START"
+  ""
+ ],
+ "VM $0 failed to shutdown": [
+  null,
+  ""
+ ],
+ "VM $0 failed to start": [
+  null,
+  ""
  ],
  "VM icon": [
   null,
@@ -859,6 +927,10 @@ return plural;
   null,
   "Порт VNC TLS:"
  ],
+ "Vendor": [
+  null,
+  "Производитель"
+ ],
  "Version": [
   null,
   "Версия"
@@ -878,6 +950,10 @@ return plural;
  "Volume": [
   null,
   "Том"
+ ],
+ "WWPN": [
+  null,
+  ""
  ],
  "bridge": [
   null,
@@ -938,6 +1014,10 @@ return plural;
  "host": [
   null,
   "узел"
+ ],
+ "host device": [
+  null,
+  ""
  ],
  "hostdev": [
   null,
@@ -1011,10 +1091,6 @@ return plural;
   null,
   "Вход в систему oVirt"
  ],
- "other": [
-  null,
-  "Другой"
- ],
  "paused": [
   null,
   "приостановлено"
@@ -1034,6 +1110,10 @@ return plural;
  "reboot": [
   null,
   "перезагрузка"
+ ],
+ "redirected device": [
+  null,
+  ""
  ],
  "running": [
   null,

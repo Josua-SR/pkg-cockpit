@@ -363,6 +363,14 @@ return plural;
   null,
   "Prosessori"
  ],
+ "CPU Security": [
+  null,
+  ""
+ ],
+ "CPU Security Toggles": [
+  null,
+  ""
+ ],
  "Cached": [
   null,
   "Välimuistissa"
@@ -498,6 +506,10 @@ return plural;
  "Disable": [
   null,
   "Poista käytöstä"
+ ],
+ "Disable simultaneous multithreading": [
+  null,
+  ""
  ],
  "Disabled": [
   null,
@@ -783,6 +795,10 @@ return plural;
   null,
   "Minuutit"
  ],
+ "Mitigations": [
+  null,
+  ""
+ ],
  "Model": [
   null,
   "Malli"
@@ -959,6 +975,10 @@ return plural;
   null,
   ""
  ],
+ "Read more...": [
+  null,
+  ""
+ ],
  "Real Host Name": [
   null,
   ""
@@ -1071,6 +1091,10 @@ return plural;
   null,
   "Tallenna"
  ],
+ "Save and reboot": [
+  null,
+  ""
+ ],
  "Sealed-case PC": [
   null,
   ""
@@ -1086,6 +1110,10 @@ return plural;
  "Security Updates Available": [
   null,
   "Tietoturvapäivityksiä saatavilla"
+ ],
+ "Service": [
+  null,
+  "Palvelu"
  ],
  "Service Logs": [
   null,
@@ -1128,6 +1156,10 @@ return plural;
   ""
  ],
  "Sockets": [
+  null,
+  ""
+ ],
+ "Software-based workarounds help prevent CPU security issues. These mitigations have the side effect of reducing performance. Change these settings at your own risk.": [
   null,
   ""
  ],
@@ -1224,6 +1256,10 @@ return plural;
   ""
  ],
  "Terminal": [
+  null,
+  ""
+ ],
+ "The user $0 is not permitted to change cpu security mitigations": [
   null,
   ""
  ],
