@@ -1,11 +1,11 @@
-cockpit (192-1) UNRELEASED; urgency=medium
+cockpit (192-1) experimental; urgency=medium
 
   * New upstream release:
     - Machines: Auto-detect guest operating system
     - Translation cleanup
     - Allow accounts with non-standard shells
 
- -- Martin Pitt <mpitt@debian.org>  Wed, 17 Apr 2019 11:28:25 +0000
+ -- Martin Pitt <mpitt@debian.org>  Wed, 17 Apr 2019 11:28:57 +0000
 
 cockpit (191-1) experimental; urgency=medium
 
