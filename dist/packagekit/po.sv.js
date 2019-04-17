@@ -67,6 +67,11 @@ return plural;
   "language": "sv",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Package": [
+  "$0 Packages",
+  "",
+  ""
+ ],
  "$0 is not available from any repository.": [
   null,
   "$0 är inte tillgängligt från något förråd."
@@ -154,6 +159,10 @@ return plural;
   null,
   "Errata:"
  ],
+ "Fridays": [
+  null,
+  ""
+ ],
  "Ignore": [
   null,
   "Ignorera"
@@ -201,6 +210,10 @@ return plural;
  "Loading available updates, please wait...": [
   null,
   "Läser in tillgängliga uppdateringar, var god dröj …"
+ ],
+ "Mondays": [
+  null,
+  ""
  ],
  "Name": [
   null,
@@ -266,6 +279,10 @@ return plural;
   null,
   "Startar om"
  ],
+ "Saturdays": [
+  null,
+  ""
+ ],
  "Set up": [
   null,
   "Sätt upp"
@@ -290,17 +307,13 @@ return plural;
   null,
   "Något annat program använder just nu pakethanteraren, var god dröj …"
  ],
+ "Sundays": [
+  null,
+  ""
+ ],
  "System is up to date": [
   null,
   "Systemet är uppdaterat"
- ],
- "The following packages were recently updated:": [
-  null,
-  "Följande paket uppdaterades nyligen:"
- ],
- "The following packages were updated $0:": [
-  null,
-  "Följande paket uppdaterades $0:"
  ],
  "This system is not registered": [
   null,
@@ -310,6 +323,10 @@ return plural;
   null,
   "Denna webbkonsol kommer uppdateras."
  ],
+ "Thursdays": [
+  null,
+  ""
+ ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
   "För att få programvaruuppdateringar behöver detta system registreras hos Red Hat, antingen genom att använda Red Hats kundportal eller en lokal prenumerationsserver."
@@ -317,6 +334,10 @@ return plural;
  "Total size: $0": [
   null,
   "Total storlek: $0"
+ ],
+ "Tuesdays": [
+  null,
+  ""
  ],
  "Update History": [
   null,
@@ -354,6 +375,10 @@ return plural;
   null,
   "Väntar på att andra programvaruhanteringsåtgärder skall bli klara"
  ],
+ "Wednesdays": [
+  null,
+  ""
+ ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
   "Din webbläsare kommer kopplas ifrån, men detta påverkar inte uppdateringsprocessen.  Du kan återansluta om några ögonblick för att fortsätta följa förloppet."
@@ -381,34 +406,6 @@ return plural;
  "every day": [
   null,
   "varje dag"
- ],
- "on Fridays": [
-  null,
-  "på fredagar"
- ],
- "on Mondays": [
-  null,
-  "på måndagar"
- ],
- "on Saturdays": [
-  null,
-  "på lördagar"
- ],
- "on Sundays": [
-  null,
-  "på söndagar"
- ],
- "on Thursdays": [
-  null,
-  "på torsdagar"
- ],
- "on Tuesdays": [
-  null,
-  "på tisdagar"
- ],
- "on Wednesdays": [
-  null,
-  "på onsdagar"
  ],
  "security": [
   null,

@@ -135,13 +135,13 @@ return plural;
   null,
   ""
  ],
+ "Boot order settings could not be saved": [
+  null,
+  ""
+ ],
  "Bus": [
   null,
   "Bus"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Ha fallat l'acció CHANGE NETWORK STATE"
  ],
  "CPU Type": [
   null,
@@ -275,6 +275,10 @@ return plural;
   null,
   ""
  ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  ""
+ ],
  "Disk failed to be attached": [
   null,
   ""
@@ -307,6 +311,10 @@ return plural;
   null,
   "Introduïu el nom de la nova MV"
  ],
+ "FORCEOFF action failed: $0": [
+  null,
+  ""
+ ],
  "FQDN": [
   null,
   "FQDN"
@@ -330,10 +338,6 @@ return plural;
  "Format": [
   null,
   "Formata"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  ""
  ],
  "GiB": [
   null,
@@ -363,10 +367,6 @@ return plural;
   null,
   "Amfitrió a manteniment"
  ],
- "INSTALL VM action failed": [
-  null,
-  "Ha fallat l'acció INSTALL VM"
- ],
  "Install": [
   null,
   "Instal·la"
@@ -394,6 +394,10 @@ return plural;
  "MIGRATE action failed": [
   null,
   "Ha fallat l'acció MIGRATE"
+ ],
+ "Mac": [
+  null,
+  ""
  ],
  "Mac Address": [
   null,
@@ -430,6 +434,10 @@ return plural;
  "More Information": [
   null,
   "Més informació"
+ ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  ""
  ],
  "Name": [
   null,
@@ -515,6 +523,14 @@ return plural;
   null,
   "Visió de conjunt"
  ],
+ "Path": [
+  null,
+  "Camí"
+ ],
+ "Pause": [
+  null,
+  ""
+ ],
  "Persistence": [
   null,
   ""
@@ -579,6 +595,10 @@ return plural;
   null,
   ""
  ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protocol"
@@ -586,6 +606,10 @@ return plural;
  "REBOOT action failed": [
   null,
   "Ha fallat l'acció REBOOT"
+ ],
+ "REBOOT_VM action failed: %s0": [
+  null,
+  ""
  ],
  "Readonly": [
   null,
@@ -610,6 +634,10 @@ return plural;
  "Restart": [
   null,
   "Reinicia"
+ ],
+ "Resume": [
+  null,
+  ""
  ],
  "Run": [
   null,
@@ -654,6 +682,10 @@ return plural;
  "START action failed": [
   null,
   "Ha fallat l'acció START"
+ ],
+ "START_VM action failed: %s0": [
+  null,
+  ""
  ],
  "SUSPEND action failed": [
   null,
@@ -727,6 +759,10 @@ return plural;
   null,
   "Sistema"
  ],
+ "Target": [
+  null,
+  "Objectiu"
+ ],
  "Template": [
   null,
   "Plantilla"
@@ -795,6 +831,14 @@ return plural;
   null,
   "Tipus"
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
+ "Unit": [
+  null,
+  ""
+ ],
  "Unplug": [
   null,
   ""
@@ -823,37 +867,45 @@ return plural;
   null,
   "Gestió del servei VDSM"
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to Reboot": [
   null,
   ""
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
   ""
  ],
- "VM FORCE OFF action failed": [
-  null,
-  "Ha fallat l'acció VM FORCE OFF"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "Ha fallat l'acció VM FORCE REBOOT"
- ],
- "VM REBOOT action failed": [
-  null,
-  "Ha fallat l'acció VM REBOOT"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to force shutdown": [
   null,
   ""
  ],
- "VM SHUT DOWN action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "Ha fallat l'acció VM SHUT DOWN"
+  ""
  ],
- "VM START action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "Ha fallat l'acció VM START"
+  ""
+ ],
+ "VM $0 failed to pause": [
+  null,
+  ""
+ ],
+ "VM $0 failed to resume": [
+  null,
+  ""
+ ],
+ "VM $0 failed to send NMI": [
+  null,
+  ""
+ ],
+ "VM $0 failed to shutdown": [
+  null,
+  ""
+ ],
+ "VM $0 failed to start": [
+  null,
+  ""
  ],
  "VM icon": [
   null,
@@ -875,6 +927,10 @@ return plural;
   null,
   "Port TLS VNC:"
  ],
+ "Vendor": [
+  null,
+  "Fabricant"
+ ],
  "Version": [
   null,
   "Versió"
@@ -894,6 +950,10 @@ return plural;
  "Volume": [
   null,
   "Volum"
+ ],
+ "WWPN": [
+  null,
+  ""
  ],
  "bridge": [
   null,
@@ -954,6 +1014,10 @@ return plural;
  "host": [
   null,
   "amfitrió"
+ ],
+ "host device": [
+  null,
+  ""
  ],
  "hostdev": [
   null,
@@ -1027,10 +1091,6 @@ return plural;
   null,
   "Inici de sessió d'oVirt en progrés"
  ],
- "other": [
-  null,
-  "altres"
- ],
  "paused": [
   null,
   "pausa"
@@ -1050,6 +1110,10 @@ return plural;
  "reboot": [
   null,
   "reinicia"
+ ],
+ "redirected device": [
+  null,
+  ""
  ],
  "running": [
   null,

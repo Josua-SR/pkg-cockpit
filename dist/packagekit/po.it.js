@@ -67,6 +67,11 @@ return plural;
   "language": "it",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Package": [
+  "$0 Packages",
+  "",
+  ""
+ ],
  "$0 is not available from any repository.": [
   null,
   "$0 non è disponibile in nessun deposito."
@@ -154,6 +159,10 @@ return plural;
   null,
   "Errata:"
  ],
+ "Fridays": [
+  null,
+  ""
+ ],
  "Ignore": [
   null,
   "Ignora"
@@ -201,6 +210,10 @@ return plural;
  "Loading available updates, please wait...": [
   null,
   "Caricamento degli aggiornamenti disponibili, attendere....."
+ ],
+ "Mondays": [
+  null,
+  ""
  ],
  "Name": [
   null,
@@ -266,6 +279,10 @@ return plural;
   null,
   "Riavvio"
  ],
+ "Saturdays": [
+  null,
+  ""
+ ],
  "Set up": [
   null,
   "Configurare"
@@ -290,17 +307,13 @@ return plural;
   null,
   "Qualche altro programma sta attualmente utilizzando il gestore di pacchetti, si prega di attendere....."
  ],
+ "Sundays": [
+  null,
+  ""
+ ],
  "System is up to date": [
   null,
   "Il sistema è aggiornato"
- ],
- "The following packages were recently updated:": [
-  null,
-  "I seguenti pacchetti sono stati recentemente aggiornati:"
- ],
- "The following packages were updated $0:": [
-  null,
-  "Sono stati aggiornati i seguenti pacchetti $0:"
  ],
  "This system is not registered": [
   null,
@@ -310,6 +323,10 @@ return plural;
   null,
   "Questa console web sarà aggiornata."
  ],
+ "Thursdays": [
+  null,
+  ""
+ ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
   "Per ottenere gli aggiornamenti software, questo sistema deve essere registrato con Red Hat, utilizzando il portale clienti Red Hat o un server locale in abbonamento."
@@ -317,6 +334,10 @@ return plural;
  "Total size: $0": [
   null,
   "Dimensione totale: $0"
+ ],
+ "Tuesdays": [
+  null,
+  ""
  ],
  "Update History": [
   null,
@@ -354,6 +375,10 @@ return plural;
   null,
   "In attesa che finiscano le altre operazioni di gestione del software"
  ],
+ "Wednesdays": [
+  null,
+  ""
+ ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
   "Il tuo browser si scollegherà, ma questo non influisce sul processo di aggiornamento. È possibile riconnettersi in pochi istanti per continuare a guardare i progressi."
@@ -381,34 +406,6 @@ return plural;
  "every day": [
   null,
   "quotidianamente"
- ],
- "on Fridays": [
-  null,
-  "il venerdì"
- ],
- "on Mondays": [
-  null,
-  "il lunedì"
- ],
- "on Saturdays": [
-  null,
-  "il sabato"
- ],
- "on Sundays": [
-  null,
-  "la domenica"
- ],
- "on Thursdays": [
-  null,
-  "il giovedì"
- ],
- "on Tuesdays": [
-  null,
-  "il martedì"
- ],
- "on Wednesdays": [
-  null,
-  "il mercoledì"
  ],
  "security": [
   null,

@@ -109,7 +109,7 @@ return plural;
  ],
  "Change": [
   null,
-  "Changement"
+  "Modification"
  ],
  "Close": [
   null,
@@ -153,7 +153,7 @@ return plural;
  ],
  "Error saving authorized keys: ": [
   null,
-  "Erreur lors de l’enregistrement des clés autorisées:"
+  "Erreur lors de l’enregistrement des clés autorisées :"
  ],
  "Excellent password": [
   null,
@@ -165,15 +165,15 @@ return plural;
  ],
  "Failed to load authorized keys.": [
   null,
-  "Impossible de charger les clés autorisées."
+  "Échec du chargement des clés autorisées."
  ],
  "Force Change": [
   null,
-  "Changement forcé"
+  "Forcer la modification"
  ],
  "Force password change": [
   null,
-  "Changement de mot de passe forcé"
+  "Forcer la modification de mot de passe"
  ],
  "Full Name": [
   null,
@@ -237,11 +237,11 @@ return plural;
  ],
  "No real name specified": [
   null,
-  "Aucun nom réel spécifié"
+  "Aucun nom réel n’est renseigné"
  ],
  "No user name specified": [
   null,
-  "Aucun nom d’utilisateur spécifié"
+  "Aucun nom d’utilisateur n’est renseigné"
  ],
  "Off": [
   null,
@@ -325,7 +325,7 @@ return plural;
  ],
  "The account '$0' will be forced to change their password on next login": [
   null,
-  "Le compte ’ $0 ’sera forcé de changer de mot de passe lors de la prochaine connexion"
+  "Le compte « $0 » sera forcé de changer de mot de passe lors de la prochaine connexion"
  ],
  "The key you provided was not valid.": [
   null,
@@ -353,11 +353,11 @@ return plural;
  ],
  "Unable to delete root account": [
   null,
-  "Impossible de supprimer le compte root"
+  "Incapable de supprimer le compte root"
  ],
  "Unable to rename root account": [
   null,
-  "Impossible de renommer le compte root"
+  "Incapable de renommer le compte root"
  ],
  "Unexpected error": [
   null,

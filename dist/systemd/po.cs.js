@@ -365,11 +365,11 @@ return plural;
  ],
  "CPU Security": [
   null,
-  ""
+  "Zabezpečení procesoru"
  ],
  "CPU Security Toggles": [
   null,
-  ""
+  "Přepínače zabezpečení procesoru"
  ],
  "Cached": [
   null,
@@ -507,7 +507,7 @@ return plural;
   null,
   "Vypnout"
  ],
- "Disable symmetric multithreading": [
+ "Disable simultaneous multithreading": [
   null,
   ""
  ],
@@ -797,7 +797,7 @@ return plural;
  ],
  "Mitigations": [
   null,
-  ""
+  "Zmírnění dopadu"
  ],
  "Model": [
   null,
@@ -977,7 +977,7 @@ return plural;
  ],
  "Read more...": [
   null,
-  ""
+  "Zjistit více…"
  ],
  "Real Host Name": [
   null,
@@ -1093,7 +1093,7 @@ return plural;
  ],
  "Save and reboot": [
   null,
-  ""
+  "Uložit a restartovat"
  ],
  "Sealed-case PC": [
   null,
@@ -1161,7 +1161,7 @@ return plural;
  ],
  "Software-based workarounds help prevent CPU security issues. These mitigations have the side effect of reducing performance. Change these settings at your own risk.": [
   null,
-  ""
+  "Softwarová ošetření problémů zabezpečení procesoru, snižující riziko jejich zneužití. Mají negativní dopad na výkonnost. Nastavení měníte na vlastní nebezpeční."
  ],
  "Space-saving Computer": [
   null,
@@ -1261,7 +1261,7 @@ return plural;
  ],
  "The user $0 is not permitted to change cpu security mitigations": [
   null,
-  ""
+  "Uživatel $0 není oprávněn měnit zmírňování dopadu chyb zabezpečení procesoru"
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,

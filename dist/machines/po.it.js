@@ -67,9 +67,17 @@ return plural;
   "language": "it",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Network": [
+  null,
+  ""
+ ],
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
   "$0 è disponibile per la maggior parte dei sistemi operativi. Per installarlo, cercarlo nel software GNOME o eseguire quanto segue:"
+ ],
+ "Activate": [
+  null,
+  "Attiva"
  ],
  "Add": [
   null,
@@ -101,7 +109,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  "Avvio automatico"
+  ""
  ],
  "Available": [
   null,
@@ -109,19 +117,19 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "Ordine boot"
+  ""
+ ],
+ "Boot order settings could not be saved": [
+  null,
+  ""
  ],
  "Bus": [
   null,
   "Bus"
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Azione CHANGE NETWORK NETWORK STATE fallita"
- ],
  "CPU Type": [
   null,
-  "Tipo CPU"
+  ""
  ],
  "Cancel": [
   null,
@@ -187,21 +195,45 @@ return plural;
   null,
   "Creare VM"
  ],
- "Creation of vm $0 failed": [
+ "Creation of VM $0 failed": [
   null,
-  "Creazione vm $0 fallita"
+  ""
  ],
  "Ctrl+Alt+Del": [
   null,
   "Ctrl+Alt+Del"
  ],
+ "DHCP Range": [
+  null,
+  ""
+ ],
+ "Deactivate": [
+  null,
+  "Disattiva"
+ ],
  "Delete": [
   null,
   "Cancella"
  ],
+ "Delete Content": [
+  null,
+  ""
+ ],
+ "Delete Storage Pool $0": [
+  null,
+  ""
+ ],
  "Delete associated storage files:": [
   null,
   "Elimina i file di archiviazione associati:"
+ ],
+ "Delete the Volumes inside this Pool": [
+  null,
+  ""
+ ],
+ "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
+  null,
+  ""
  ],
  "Device": [
   null,
@@ -218,6 +250,10 @@ return plural;
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
   "Scollegato dalla console seriale. Fare clic sul pulsante Ricollega."
+ ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  ""
  ],
  "Disk failed to be attached": [
   null,
@@ -241,7 +277,15 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  "Macchina emulata"
+  ""
+ ],
+ "Existing Disk Image": [
+  null,
+  ""
+ ],
+ "Existing disk image on host's file system": [
+  null,
+  ""
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -250,10 +294,6 @@ return plural;
  "File": [
   null,
   "File"
- ],
- "Filesystem": [
-  null,
-  "File system"
  ],
  "Filesystem Directory": [
   null,
@@ -271,9 +311,13 @@ return plural;
   null,
   "Formato"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
+ "Forwarding mode": [
   null,
-  "GET HYPERVISOR MAX VCPU azione fallita"
+  ""
+ ],
+ "General": [
+  null,
+  "Generale"
  ],
  "GiB": [
   null,
@@ -291,6 +335,10 @@ return plural;
   null,
   "Host"
  ],
+ "Host Device": [
+  null,
+  ""
+ ],
  "Host Name": [
   null,
   "Host Name"
@@ -299,13 +347,21 @@ return plural;
   null,
   "L'host non deve essere vuoto"
  ],
- "INSTALL VM action failed": [
+ "IPv4 Address": [
   null,
-  "L'azione INSTALLA VM è fallita"
+  ""
+ ],
+ "IPv6 Address": [
+  null,
+  ""
  ],
  "Immediately Start VM": [
   null,
   "Avviare immediatamente la VM"
+ ],
+ "In most configurations, macvtap does not work for host to guest network communication.": [
+  null,
+  ""
  ],
  "Install": [
   null,
@@ -323,9 +379,17 @@ return plural;
   null,
   "Installazione La fonte non deve essere vuota"
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Invalid filename": [
   null,
   "Nome file non valido"
+ ],
+ "Isolated Network": [
+  null,
+  ""
  ],
  "Launch Remote Viewer": [
   null,
@@ -335,9 +399,17 @@ return plural;
   null,
   "Caricamento in corso..."
  ],
+ "Local Install Media": [
+  null,
+  ""
+ ],
  "MAC Address": [
   null,
   "Indirizzo MAC"
+ ],
+ "Mac": [
+  null,
+  ""
  ],
  "Mac Address": [
   null,
@@ -347,6 +419,10 @@ return plural;
   null,
   "Collegamento manuale"
  ],
+ "Maximum Transmission Unit": [
+  null,
+  ""
+ ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
   "Numero massimo di CPU virtuali allocate per il sistema operativo guest, che deve essere compreso tra 1 e $0"
@@ -354,10 +430,6 @@ return plural;
  "Memory": [
   null,
   "Memoria"
- ],
- "Memory should be positive number": [
-  null,
-  "La memoria deve essere un numero positivo"
  ],
  "MiB": [
   null,
@@ -375,6 +447,14 @@ return plural;
   null,
   "Per saperne di più"
  ],
+ "NAT to $0": [
+  null,
+  ""
+ ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  ""
+ ],
  "Name": [
   null,
   "Nome"
@@ -383,21 +463,41 @@ return plural;
   null,
   "Il nome non deve essere vuoto"
  ],
- "Name should not consist of empty characters only": [
+ "Name: ": [
   null,
-  "Il nome non deve consistere solo di caratteri vuoti"
+  ""
+ ],
+ "Netmask": [
+  null,
+  ""
+ ],
+ "Network $0 failed to get activated": [
+  null,
+  ""
+ ],
+ "Network $0 failed to get deactivated": [
+  null,
+  ""
+ ],
+ "Network Boot (PXE)": [
+  null,
+  ""
  ],
  "Network File System": [
   null,
   "Sistema di file di rete"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "Tipo di rete"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network Selection does not support PXE.": [
   null,
-  "Le impostazioni di rete non possono essere salvate"
+  ""
+ ],
+ "Network interface settings could not be saved": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -435,6 +535,10 @@ return plural;
   null,
   "Nessuna interfaccia di rete definita per questa macchina virtuale"
  ],
+ "No network is defined on this host": [
+  null,
+  ""
+ ],
  "No storage pool is defined on this host": [
   null,
   "Nessun pool di archiviazione è definito su questo host"
@@ -443,9 +547,21 @@ return plural;
   null,
   "Nessuna rete virtuale"
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "OS Vendor": [
   null,
   "Fornitore di OS"
+ ],
+ "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
+  null,
+  ""
+ ],
+ "Open": [
+  null,
+  ""
  ],
  "Operating System": [
   null,
@@ -454,6 +570,10 @@ return plural;
  "Overview": [
   null,
   "Panoramica"
+ ],
+ "Path": [
+  null,
+  "Percorso"
  ],
  "Path on host's filesystem": [
   null,
@@ -467,7 +587,15 @@ return plural;
   null,
   "Percorso da file"
  ],
+ "Pause": [
+  null,
+  ""
+ ],
  "Persistence": [
+  null,
+  ""
+ ],
+ "Persistent": [
   null,
   ""
  ],
@@ -499,6 +627,18 @@ return plural;
   null,
   "Numero preferito di prese da esporre all'ospite."
  ],
+ "Prefix": [
+  null,
+  ""
+ ],
+ "Private": [
+  null,
+  ""
+ ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protocollo"
@@ -527,9 +667,25 @@ return plural;
   null,
   "Riavvia"
  ],
+ "Resume": [
+  null,
+  ""
+ ],
+ "Route to $0": [
+  null,
+  ""
+ ],
+ "Routed Network": [
+  null,
+  ""
+ ],
  "Run": [
   null,
   "Esegui"
+ ],
+ "Run when host boots": [
+  null,
+  ""
  ],
  "SPICE": [
   null,
@@ -591,7 +747,7 @@ return plural;
   null,
   "Il percorso della sorgente non deve essere vuoto"
  ],
- "Source should start with https, ftp or nfs protocol": [
+ "Source should start with http, ftp or nfs protocol": [
   null,
   "La sorgente dovrebbe iniziare con il protocollo http, ftp o nfs"
  ],
@@ -603,10 +759,6 @@ return plural;
   null,
   "Iniziare la piscina quando gli stivali host"
  ],
- "Start the VM to see disk statistics.": [
-  null,
-  "Avviare la macchina virtuale per visualizzare le statistiche del disco."
- ],
  "Startup": [
   null,
   "Avvio"
@@ -614,6 +766,14 @@ return plural;
  "State": [
   null,
   "Stato"
+ ],
+ "Storage Pool $0 failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool $0 failed to get deactivated": [
+  null,
+  ""
  ],
  "Storage Pool Name": [
   null,
@@ -631,17 +791,21 @@ return plural;
   null,
   "Dimensione storage"
  ],
- "Storage Size should not be negative number": [
-  null,
-  "La dimensione dello storage non dovrebbe essere numero negativo"
- ],
  "Storage Volumes": [
   null,
   "Volumi di storage"
  ],
+ "Storage Volumes could not be deleted": [
+  null,
+  ""
+ ],
  "System": [
   null,
   "Sistema"
+ ],
+ "Target": [
+  null,
+  "Obiettivo"
  ],
  "Target Path": [
   null,
@@ -650,6 +814,10 @@ return plural;
  "Target path should not be empty": [
   null,
   "Il percorso di destinazione non deve essere vuoto"
+ ],
+ "The Storage Pool could not be deleted": [
+  null,
+  ""
  ],
  "The VM crashed.": [
   null,
@@ -711,6 +879,10 @@ return plural;
   null,
   "Tipo"
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
  "URL": [
   null,
   "URL"
@@ -719,13 +891,13 @@ return plural;
   null,
   "Nome unico"
  ],
+ "Unit": [
+  null,
+  "Unità"
+ ],
  "Unplug": [
   null,
   "Scollegare"
- ],
- "Upgrade to a more recent version of libvirt to view disk statistics": [
-  null,
-  "Aggiornare a una versione più recente di libvirt per visualizzare le statistiche del disco"
  ],
  "Usage": [
   null,
@@ -739,57 +911,53 @@ return plural;
   null,
   "Usato"
  ],
+ "Used by": [
+  null,
+  ""
+ ],
  "VCPU settings could not be saved": [
   null,
   "Non è stato possibile salvare le impostazioni del VCPU"
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
+ "VM $0 failed to Reboot": [
   null,
-  "VM CHANGE_NETWORK_STATE azione fallita"
+  ""
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
-  "VM DELETE (DESTROY) azione fallita"
+  ""
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "VM DELETE (UNDEFINE) azione fallita"
+  ""
  ],
- "VM DELETE action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "VM DELETE azione fallita"
+  ""
  ],
- "VM DETACH_DISK action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "VM DETACH_DISK azione fallita"
+  ""
  ],
- "VM FORCE OFF action failed": [
+ "VM $0 failed to pause": [
   null,
-  "VM FORCE OFF azione fallita"
+  ""
  ],
- "VM FORCE REBOOT action failed": [
+ "VM $0 failed to resume": [
   null,
-  "VM FORCE REBOOT azione fallita"
+  ""
  ],
- "VM REBOOT action failed": [
+ "VM $0 failed to send NMI": [
   null,
-  "VM REBOOT azione fallita"
+  ""
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to shutdown": [
   null,
-  "VM SEND Non Maskable Interrrupt azione non riuscita"
+  ""
  ],
- "VM SENDNMI action failed": [
+ "VM $0 failed to start": [
   null,
-  "VM SENDNMI azione fallita"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "VM SHUT DOWN azione fallita"
- ],
- "VM START action failed": [
-  null,
-  "VM START azione fallita"
+  ""
  ],
  "VNC": [
   null,
@@ -807,9 +975,17 @@ return plural;
   null,
   "Porta VNC TLS:"
  ],
+ "Vendor": [
+  null,
+  "Rivenditore"
+ ],
  "Virtual Machines": [
   null,
   "Server Virtuali"
+ ],
+ "Virtual Network": [
+  null,
+  ""
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
@@ -822,6 +998,10 @@ return plural;
  "Volume": [
   null,
   "Volume"
+ ],
+ "WWPN": [
+  null,
+  ""
  ],
  "active": [
   null,
@@ -875,9 +1055,21 @@ return plural;
   null,
   "host"
  ],
+ "host device": [
+  null,
+  ""
+ ],
  "hostdev": [
   null,
   "hostdev"
+ ],
+ "iSCSI Target": [
+  null,
+  ""
+ ],
+ "iSCSI target IQN": [
+  null,
+  ""
  ],
  "idle": [
   null,
@@ -899,10 +1091,6 @@ return plural;
   null,
   "no"
  ],
- "other": [
-  null,
-  "altro"
- ],
  "paused": [
   null,
   "in pausa"
@@ -914,6 +1102,10 @@ return plural;
  "raw": [
   null,
   "raw"
+ ],
+ "redirected device": [
+  null,
+  ""
  ],
  "running": [
   null,

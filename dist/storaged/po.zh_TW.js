@@ -379,6 +379,14 @@ return plural;
   null,
   "創建分區"
  ],
+ "Create Partition Table": [
+  null,
+  ""
+ ],
+ "Create Partition on $0": [
+  null,
+  ""
+ ],
  "Create RAID Device": [
   null,
   "創建RAID設備"
@@ -402,14 +410,6 @@ return plural;
  "Create new Logical Volume": [
   null,
   "創建新的邏輯卷"
- ],
- "Create Partition on $0": [
-  null,
-  "創建分區 $0"
- ],
- "Create Partition Table": [
-  null,
-  "創建分區表"
  ],
  "Creating RAID Device $target": [
   null,
@@ -446,10 +446,6 @@ return plural;
  "Custom encryption options": [
   null,
   "自定義加密選項"
- ],
- "Custom mount option": [
-  null,
-  "自定義安裝選項"
  ],
  "Custom mount options": [
   null,
@@ -647,6 +643,10 @@ return plural;
   null,
   "文件系統"
  ],
+ "For legacy applications only. Reduces performance.": [
+  null,
+  ""
+ ],
  "Force remove passphrase in $0": [
   null,
   "強制刪除密碼 $0"
@@ -690,6 +690,10 @@ return plural;
  "Grow": [
   null,
   "增長"
+ ],
+ "Grow Content": [
+  null,
+  ""
  ],
  "Grow Logical Volume": [
   null,
@@ -847,10 +851,6 @@ return plural;
   null,
   "在靴子上安裝"
  ],
- "Mount options": [
-  null,
-  "裝載選項"
- ],
  "Mount point can not be empty": [
   null,
   "掛載點不能為空"
@@ -890,10 +890,6 @@ return plural;
  "NFS Support not installed": [
   null,
   "未安裝NFS支持"
- ],
- "NTFS - Compatible with most systems": [
-  null,
-  "NTFS  - 與大多數係統兼容"
  ],
  "Name": [
   null,
@@ -1235,6 +1231,10 @@ return plural;
   null,
   "重新開機"
  ],
+ "Recommended default": [
+  null,
+  ""
+ ],
  "Recovering": [
   null,
   "恢復"
@@ -1311,6 +1311,10 @@ return plural;
   null,
   "調整 $target"
  ],
+ "Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase.": [
+  null,
+  ""
+ ],
  "Running": [
   null,
   "執行中"
@@ -1322,6 +1326,14 @@ return plural;
  "Save": [
   null,
   "儲存"
+ ],
+ "Save space by compressing individual blocks with LZ4": [
+  null,
+  ""
+ ],
+ "Save space by storing identical data blocks just once": [
+  null,
+  ""
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
@@ -1366,6 +1378,10 @@ return plural;
  "Shrink Logical Volume": [
   null,
   "收縮邏輯卷"
+ ],
+ "Shrink Volume": [
+  null,
+  ""
  ],
  "Size": [
   null,
@@ -1575,6 +1591,10 @@ return plural;
   null,
   "設備恢復時無法刪除此磁盤。"
  ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  ""
+ ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "在調整大小之前，需要激活此卷。"
@@ -1707,10 +1727,6 @@ return plural;
   null,
   "未安裝VDO支持"
  ],
- "VFAT - Compatible with all systems and devices": [
-  null,
-  "VFAT  - 兼容所有系統和設備"
- ],
  "Verify key": [
   null,
   "驗證密鑰"
@@ -1735,9 +1751,17 @@ return plural;
   null,
   "卷組"
  ],
+ "Volume size is $0. Content size is $1.": [
+  null,
+  ""
+ ],
  "Waiting for other software management operations to finish": [
   null,
   "等待其他軟件管理操作完成"
+ ],
+ "Warning": [
+  null,
+  ""
  ],
  "What if tang-show-keys is not available?": [
   null,
@@ -1751,10 +1775,6 @@ return plural;
   null,
   "寫作"
  ],
- "XFS - Red Hat Enterprise Linux 7 default": [
-  null,
-  "XFS  -  Red Hat Enterprise Linux 7默認"
- ],
  "[$0 bytes of binary data]": [
   null,
   "[$0 二進制數據的字節]"
@@ -1766,10 +1786,6 @@ return plural;
  "[no data]": [
   null,
   "[沒有數據]"
- ],
- "ext4 - Red Hat Enterprise Linux 6 default": [
-  null,
-  "ext4  -  Red Hat Enterprise Linux 6默認"
  ],
  "iSCSI Targets": [
   null,

@@ -71,6 +71,10 @@ return plural;
   null,
   "$mtu"
  ],
+ "(Optional)": [
+  null,
+  ""
+ ],
  "1 day": [
   null,
   "1 den"
@@ -138,6 +142,10 @@ return plural;
  "Add Bridge": [
   null,
   "Přidat síťový most"
+ ],
+ "Add Ports": [
+  null,
+  ""
  ],
  "Add Services": [
   null,
@@ -259,6 +267,10 @@ return plural;
   null,
   "Zavřít"
  ],
+ "Comma-separated ports, ranges, and aliases are accepted": [
+  null,
+  ""
+ ],
  "Configure": [
   null,
   "Nastavit"
@@ -298,6 +310,10 @@ return plural;
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
   "Vytvoření tohoto týmu přeruší spojení se serverem a znepřístupní tak rozhraní pro jeho správu."
+ ],
+ "Custom Ports": [
+  null,
+  ""
  ],
  "DNS": [
   null,
@@ -354,6 +370,14 @@ return plural;
  "Ethtool": [
   null,
   "Ethtool"
+ ],
+ "Example: 22,ssh,8080,5900-5910": [
+  null,
+  ""
+ ],
+ "Example: 88,2019,nfs,rsync": [
+  null,
+  ""
  ],
  "Failed": [
   null,
@@ -443,6 +467,10 @@ return plural;
   null,
   "Neplatná metrika $0"
  ],
+ "Invalid port number": [
+  null,
+  ""
+ ],
  "Invalid prefix $0": [
   null,
   "Neplatná předpona $0"
@@ -450,6 +478,10 @@ return plural;
  "Invalid prefix or netmask $0": [
   null,
   "Neplatná předpona nebo maska sítě $0"
+ ],
+ "Invalid range": [
+  null,
+  ""
  ],
  "Keep connection": [
   null,
@@ -615,6 +647,10 @@ return plural;
   null,
   "Nainstalujte balíček $0"
  ],
+ "Port number and type do not match": [
+  null,
+  ""
+ ],
  "Ports": [
   null,
   "Porty"
@@ -650,6 +686,10 @@ return plural;
  "Random": [
   null,
   "Náhodné"
+ ],
+ "Range must be strictly ordered": [
+  null,
+  ""
  ],
  "Reboot": [
   null,
@@ -706,6 +746,10 @@ return plural;
  "Service": [
   null,
   "Služba"
+ ],
+ "Services": [
+  null,
+  "Služby"
  ],
  "Set to": [
   null,
@@ -810,6 +854,10 @@ return plural;
  "Unknown configuration": [
   null,
   "Neznámé nastavení"
+ ],
+ "Unknown service name": [
+  null,
+  ""
  ],
  "Unmanaged Interfaces": [
   null,

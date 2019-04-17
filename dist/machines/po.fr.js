@@ -67,9 +67,13 @@ return plural;
   "language": "fr",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Network": [
+  null,
+  "Réseau $0"
+ ],
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
-  "$0 est disponible pour la plupart des systèmes d’exploitation. Pour l’installer, recherchez-le dans le logiciel GNOME ou exécutez les opérations suivantes:"
+  "$0 est disponible pour la plupart des systèmes d’exploitation. Pour l’installer, recherchez-le dans le logiciel GNOME ou exécutez les opérations suivantes :"
  ],
  "Activate": [
   null,
@@ -89,7 +93,7 @@ return plural;
  ],
  "Address:": [
   null,
-  "Adresse:"
+  "Adresse :"
  ],
  "Always attach": [
   null,
@@ -113,15 +117,15 @@ return plural;
  ],
  "Boot Order": [
   null,
-  "Ordre d'amorçage"
+  "Ordre d’amorçage"
+ ],
+ "Boot order settings could not be saved": [
+  null,
+  "Les paramètres d’ordre du démarrage n’ont pas pu être enregistrés"
  ],
  "Bus": [
   null,
   "Bus"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Échec de l’action CHANGE NETWORK STATE"
  ],
  "CPU Type": [
   null,
@@ -191,9 +195,9 @@ return plural;
   null,
   "Créer VM"
  ],
- "Creation of vm $0 failed": [
+ "Creation of VM $0 failed": [
   null,
-  "La création de la vm $0 a échoué"
+  "La création de la VM $0 a échoué"
  ],
  "Ctrl+Alt+Del": [
   null,
@@ -201,7 +205,7 @@ return plural;
  ],
  "DHCP Range": [
   null,
-  ""
+  "Plage DHCP"
  ],
  "Deactivate": [
   null,
@@ -213,23 +217,23 @@ return plural;
  ],
  "Delete Content": [
   null,
-  ""
+  "Supprimer le contenu"
  ],
  "Delete Storage Pool $0": [
   null,
-  ""
+  "Supprimer le pool de stockage $0"
  ],
  "Delete associated storage files:": [
   null,
-  "Supprimer les fichiers de stockage associés:"
+  "Supprimer les fichiers de stockage associés :"
  ],
  "Delete the Volumes inside this Pool": [
   null,
-  ""
+  "Supprimer les volumes de ce pool"
  ],
  "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
   null,
-  ""
+  "Supprimer un pool de stockage inactif va seulement déprogrammer le pool. Son contenu sera pas supprimé."
  ],
  "Device": [
   null,
@@ -246,6 +250,10 @@ return plural;
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
   "Déconnecté de la console série. Cliquez sur le bouton Reconnecter."
+ ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  "Échec du détachement du disque $0 de la VM $1"
  ],
  "Disk failed to be attached": [
   null,
@@ -273,11 +281,11 @@ return plural;
  ],
  "Existing Disk Image": [
   null,
-  ""
+  "Image disque existante"
  ],
  "Existing disk image on host's file system": [
   null,
-  ""
+  "Image disque existante sur le système de fichiers de l’hôte"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -305,11 +313,7 @@ return plural;
  ],
  "Forwarding mode": [
   null,
-  ""
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "L’action GET HYPERVISOR MAX VCPU a échoué"
+  "Mode de redirection"
  ],
  "General": [
   null,
@@ -331,6 +335,10 @@ return plural;
   null,
   "Hôte"
  ],
+ "Host Device": [
+  null,
+  "Périphérique hôte"
+ ],
  "Host Name": [
   null,
   "Nom d’hôte"
@@ -339,21 +347,21 @@ return plural;
   null,
   "Le nom d’hôte n’est peut-être pas vide"
  ],
- "INSTALL VM action failed": [
-  null,
-  "Échec de l’action INSTALL VM"
- ],
  "IPv4 Address": [
   null,
-  ""
+  "Adresse IPv4"
  ],
  "IPv6 Address": [
   null,
-  ""
+  "Adresse IPv6"
  ],
  "Immediately Start VM": [
   null,
   "Démarrer immédiatement la VM"
+ ],
+ "In most configurations, macvtap does not work for host to guest network communication.": [
+  null,
+  "Dans la plupart des configurations, macvtap ne fonctionne pas pour les communications en réseau entre hôte et invité."
  ],
  "Install": [
   null,
@@ -373,11 +381,15 @@ return plural;
  ],
  "Interface Type": [
   null,
-  ""
+  "Type d’interface"
  ],
  "Invalid filename": [
   null,
   "Nom de fichier non valide"
+ ],
+ "Isolated Network": [
+  null,
+  "Réseau isolé"
  ],
  "Launch Remote Viewer": [
   null,
@@ -385,15 +397,19 @@ return plural;
  ],
  "Loading ...": [
   null,
-  "Chargement ..."
+  "Chargement…"
  ],
  "Local Install Media": [
   null,
-  ""
+  "Média d’installation local"
  ],
  "MAC Address": [
   null,
   "Adresse Mac"
+ ],
+ "Mac": [
+  null,
+  "Mac"
  ],
  "Mac Address": [
   null,
@@ -405,7 +421,7 @@ return plural;
  ],
  "Maximum Transmission Unit": [
   null,
-  ""
+  "Unité maximale de transmission (MTU)"
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
@@ -431,6 +447,14 @@ return plural;
   null,
   "Plus d’information"
  ],
+ "NAT to $0": [
+  null,
+  "NAT vers $0"
+ ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  "Échec du changement d’état du NIC $0 de la VM $1"
+ ],
  "Name": [
   null,
   "Nom"
@@ -441,11 +465,23 @@ return plural;
  ],
  "Name: ": [
   null,
-  ""
+  "Nom :"
  ],
  "Netmask": [
   null,
-  ""
+  "Masque réseau"
+ ],
+ "Network $0 failed to get activated": [
+  null,
+  "Échec de l’activation du réseau $0"
+ ],
+ "Network $0 failed to get deactivated": [
+  null,
+  "Échec de la désactivation du réseau $0"
+ ],
+ "Network Boot (PXE)": [
+  null,
+  "Démarrage réseau (PXE)"
  ],
  "Network File System": [
   null,
@@ -453,11 +489,15 @@ return plural;
  ],
  "Network Interfaces": [
   null,
-  ""
+  "Interfaces réseau"
+ ],
+ "Network Selection does not support PXE.": [
+  null,
+  "Le réseau sélectionné ne prend pas en charge le PXE."
  ],
  "Network interface settings could not be saved": [
   null,
-  ""
+  "Les paramètres de l’interface réseau n’ont pas pu être enregistrés"
  ],
  "Networks": [
   null,
@@ -497,7 +537,7 @@ return plural;
  ],
  "No network is defined on this host": [
   null,
-  ""
+  "Aucun réseau n’est défini sur cet hôte"
  ],
  "No storage pool is defined on this host": [
   null,
@@ -509,7 +549,7 @@ return plural;
  ],
  "None (Isolated Network)": [
   null,
-  ""
+  "Aucune (réseau isolé)"
  ],
  "OS Vendor": [
   null,
@@ -517,11 +557,11 @@ return plural;
  ],
  "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
   null,
-  ""
+  "Un ou plusieurs modules sélectionnés sont utiliés par les domaines. Détachez d’abords les disques pour permettre la suppression du volume."
  ],
  "Open": [
   null,
-  ""
+  "Ouvrir"
  ],
  "Operating System": [
   null,
@@ -546,6 +586,10 @@ return plural;
  "Path to file": [
   null,
   "Chemin d’accès au fichier"
+ ],
+ "Pause": [
+  null,
+  "Suspendre"
  ],
  "Persistence": [
   null,
@@ -585,11 +629,15 @@ return plural;
  ],
  "Prefix": [
   null,
-  ""
+  "Préfixe"
  ],
  "Private": [
   null,
-  ""
+  "Privé"
+ ],
+ "Product": [
+  null,
+  "Produit"
  ],
  "Protocol": [
   null,
@@ -619,13 +667,25 @@ return plural;
   null,
   "Redémarrer"
  ],
+ "Resume": [
+  null,
+  "Reprendre"
+ ],
+ "Route to $0": [
+  null,
+  "Routage vers $0"
+ ],
+ "Routed Network": [
+  null,
+  "Réseau routé"
+ ],
  "Run": [
   null,
   "Exécuter"
  ],
  "Run when host boots": [
   null,
-  ""
+  "Démarrer quand l’hôte est amorcé"
  ],
  "SPICE": [
   null,
@@ -707,6 +767,14 @@ return plural;
   null,
   "État"
  ],
+ "Storage Pool $0 failed to get activated": [
+  null,
+  "Échec de l’activation du pool de stockage $0"
+ ],
+ "Storage Pool $0 failed to get deactivated": [
+  null,
+  "Échec de la désactivation du pool de stockage $0"
+ ],
  "Storage Pool Name": [
   null,
   "Nom du pool de stockage"
@@ -714,14 +782,6 @@ return plural;
  "Storage Pool failed to be created": [
   null,
   "Le pool de stockage n’a pas pu être créé"
- ],
- "Storage Pool failed to get activated": [
-  null,
-  ""
- ],
- "Storage Pool failed to get deactivated": [
-  null,
-  ""
  ],
  "Storage Pools": [
   null,
@@ -737,11 +797,15 @@ return plural;
  ],
  "Storage Volumes could not be deleted": [
   null,
-  ""
+  "Les volumes de stockage n’ont pas pu être supprimés"
  ],
  "System": [
   null,
   "Système"
+ ],
+ "Target": [
+  null,
+  "Cible"
  ],
  "Target Path": [
   null,
@@ -753,7 +817,7 @@ return plural;
  ],
  "The Storage Pool could not be deleted": [
   null,
-  ""
+  "Le pool de stockage n’a pas pu être supprimé"
  ],
  "The VM crashed.": [
   null,
@@ -815,6 +879,10 @@ return plural;
   null,
   "Type"
  ],
+ "Type ID": [
+  null,
+  "ID type"
+ ],
  "URL": [
   null,
   "URL"
@@ -822,6 +890,10 @@ return plural;
  "Unique name": [
   null,
   "Nom unique"
+ ],
+ "Unit": [
+  null,
+  "Unité"
  ],
  "Unplug": [
   null,
@@ -841,59 +913,51 @@ return plural;
  ],
  "Used by": [
   null,
-  ""
+  "Utilisé par"
  ],
  "VCPU settings could not be saved": [
   null,
   "Les paramètres de configuration de VCPU n’ont pas pu être sauvegardés"
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
+ "VM $0 failed to Reboot": [
   null,
-  "VM CHANGE_NETWORK_STATE a échoué"
+  "Échec du redémarrage de la VM $0"
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
-  "VM DELETE (DESTROY) a échoué"
+  "Échec du redémarrage forcé de la VM $0"
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "VM DELETE (UNDEFINE) a échoué"
+  "Échec de l’arrêt forcé de la VM $0"
  ],
- "VM DELETE action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "VM DELETE a échoué"
+  "Échec de la suppression de la VM $0"
  ],
- "VM DETACH_DISK action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "VM DETACH_DISK a échoué"
+  "Échec de l’installation de la VM $0"
  ],
- "VM FORCE OFF action failed": [
+ "VM $0 failed to pause": [
   null,
-  "L’action VM FORCE OFF a échoué"
+  "Échec de la mise en pause de la VM $0"
  ],
- "VM FORCE REBOOT action failed": [
+ "VM $0 failed to resume": [
   null,
-  "L’action VM FORCE REBOOT a échoué"
+  "Échec de la reprise de la VM $0"
  ],
- "VM REBOOT action failed": [
+ "VM $0 failed to send NMI": [
   null,
-  "L’action VM REBOOT a échoué"
+  "Échec de l’envoi NMI de la VM $0"
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to shutdown": [
   null,
-  "Échec de l’action d’interruption non masquable VM SEND"
+  "Échec de l’arrêt de la VM $0"
  ],
- "VM SENDNMI action failed": [
+ "VM $0 failed to start": [
   null,
-  "VM SENDNMI a échoué"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "L’action VM SHUT DOWN a échoué"
- ],
- "VM START action failed": [
-  null,
-  "L’action VM START a échoué"
+  "Échec du démarrage de la VM $0"
  ],
  "VNC": [
   null,
@@ -911,9 +975,17 @@ return plural;
   null,
   "Port VNC TLS :"
  ],
+ "Vendor": [
+  null,
+  "Fournisseur"
+ ],
  "Virtual Machines": [
   null,
   "Machines virtuelles"
+ ],
+ "Virtual Network": [
+  null,
+  "Réseau virtuel"
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
@@ -926,6 +998,10 @@ return plural;
  "Volume": [
   null,
   "Volume"
+ ],
+ "WWPN": [
+  null,
+  "WWPN"
  ],
  "active": [
   null,
@@ -979,9 +1055,21 @@ return plural;
   null,
   "hôte"
  ],
+ "host device": [
+  null,
+  "Périphérique hôte"
+ ],
  "hostdev": [
   null,
   "hostdev"
+ ],
+ "iSCSI Target": [
+  null,
+  "Cible iSCSI"
+ ],
+ "iSCSI target IQN": [
+  null,
+  "Cible iSCSI IQN"
  ],
  "idle": [
   null,
@@ -1003,10 +1091,6 @@ return plural;
   null,
   "non"
  ],
- "other": [
-  null,
-  "autre"
- ],
  "paused": [
   null,
   "mis en pause"
@@ -1018,6 +1102,10 @@ return plural;
  "raw": [
   null,
   "raw"
+ ],
+ "redirected device": [
+  null,
+  "périphérique redirigé"
  ],
  "running": [
   null,

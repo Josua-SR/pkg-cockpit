@@ -73,11 +73,11 @@ return plural;
  ],
  "Change Performance Profile": [
   null,
-  "Changer le profil de performance"
+  "Modifier le profil de performance"
  ],
  "Change Profile": [
   null,
-  "Change de profil"
+  "Modifier le profil"
  ],
  "Communication with tuned has failed": [
   null,
@@ -105,7 +105,7 @@ return plural;
  ],
  "None": [
   null,
-  "Aucun(e)"
+  "Aucun"
  ],
  "Ok": [
   null,

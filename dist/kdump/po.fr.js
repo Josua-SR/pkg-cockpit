@@ -101,7 +101,7 @@ return plural;
  ],
  "Kdump service not installed. Please ensure package kexec-tools is installed.": [
   null,
-  "Le service Kdump n’est pas installé. Veuillez vous assurer que le paquetage kexec-tools est installé."
+  "Le service Kdump n’est pas installé. Veuillez vous assurer que le paquet kexec-tools est installé."
  ],
  "Kernel Dump": [
   null,
@@ -109,7 +109,7 @@ return plural;
  ],
  "Loading...": [
   null,
-  "Chargement..."
+  "Chargement…"
  ],
  "Local Filesystem": [
   null,
@@ -133,11 +133,11 @@ return plural;
  ],
  "No memory reserved. Append a crashkernel option to the kernel command line (e.g. in /etc/default/grub) to reserve memory at boot time. Example: crashkernel=512M": [
   null,
-  "Pas de mémoire réservée. Ajoutez une option crashkernel à la ligne de commande du noyau (par exemple dans /etc/default/grub) pour réserver de la mémoire au démarrage. Exemple: crashkernel = 512M"
+  "Pas de mémoire réservée. Ajoutez une option crashkernel à la ligne de commande du noyau (par exemple dans /etc/default/grub) pour réserver de la mémoire au démarrage. Exemple : crashkernel = 512M"
  ],
  "None": [
   null,
-  "Aucun(e)"
+  "Aucun"
  ],
  "Off": [
   null,
@@ -161,7 +161,7 @@ return plural;
  ],
  "Reading...": [
   null,
-  "Lecture en cours..."
+  "Lecture en cours…"
  ],
  "Remote over NFS": [
   null,
@@ -221,11 +221,11 @@ return plural;
  ],
  "Unable to apply settings: $0": [
   null,
-  "Impossible d’appliquer les paramètres : $0"
+  "Les paramètres n’ont pas pu être appliés : $0"
  ],
  "invalid: multiple targets defined": [
   null,
-  "invalide: plusieurs cibles définies"
+  "invalide : plusieurs cibles définies"
  ],
  "kdump status": [
   null,
@@ -237,7 +237,7 @@ return plural;
  ],
  "nfs dump target isn't formated as server:path": [
   null,
-  "la cible nfs dump n’a pas été formatée sous la forme server:path"
+  "la cible nfs dump n’a pas été formatée sous la forme server : path"
  ],
  "ssh key": [
   null,

@@ -365,11 +365,11 @@ return plural;
  ],
  "CPU Security": [
   null,
-  ""
+  "Zabezpieczenia procesora"
  ],
  "CPU Security Toggles": [
   null,
-  ""
+  "Przełączniki zabezpieczeń procesora"
  ],
  "Cached": [
   null,
@@ -507,7 +507,7 @@ return plural;
   null,
   "Wyłącz"
  ],
- "Disable symmetric multithreading": [
+ "Disable simultaneous multithreading": [
   null,
   ""
  ],
@@ -797,7 +797,7 @@ return plural;
  ],
  "Mitigations": [
   null,
-  ""
+  "Poprawki zmniejszające ryzyko"
  ],
  "Model": [
   null,
@@ -977,7 +977,7 @@ return plural;
  ],
  "Read more...": [
   null,
-  ""
+  "Więcej informacji…"
  ],
  "Real Host Name": [
   null,
@@ -1093,7 +1093,7 @@ return plural;
  ],
  "Save and reboot": [
   null,
-  ""
+  "Zapisz i uruchom ponownie"
  ],
  "Sealed-case PC": [
   null,
@@ -1161,7 +1161,7 @@ return plural;
  ],
  "Software-based workarounds help prevent CPU security issues. These mitigations have the side effect of reducing performance. Change these settings at your own risk.": [
   null,
-  ""
+  "Programowe obejścia błędów pomagają uniknąć problemów bezpieczeństwa procesora. Ich efektem ubocznym jest zmniejszenie wydajności. Należy zmieniać te ustawienia na własne ryzyko."
  ],
  "Space-saving Computer": [
   null,
@@ -1261,7 +1261,7 @@ return plural;
  ],
  "The user $0 is not permitted to change cpu security mitigations": [
   null,
-  ""
+  "Użytkownik $0 nie ma zezwolenia na zmianę poprawek zabezpieczeń procesora zmniejszających ryzyko"
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,

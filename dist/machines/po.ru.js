@@ -67,6 +67,10 @@ return plural;
   "language": "ru",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Network": [
+  null,
+  ""
+ ],
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
   "$0 доступен для большинства операционных систем. Чтобы установить его, выполните поиск в программном обеспечении GNOME или выполните следующие действия:"
@@ -115,13 +119,13 @@ return plural;
   null,
   ""
  ],
+ "Boot order settings could not be saved": [
+  null,
+  ""
+ ],
  "Bus": [
   null,
   "автобус"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Не удалось выполнить действие CHANGE NETWORK STATE"
  ],
  "CPU Type": [
   null,
@@ -191,13 +195,17 @@ return plural;
   null,
   "Создать виртуальную машину"
  ],
- "Creation of vm $0 failed": [
+ "Creation of VM $0 failed": [
   null,
-  "Создание vm $0 не удалось"
+  ""
  ],
  "Ctrl+Alt+Del": [
   null,
   "Ctrl + Alt + Del"
+ ],
+ "DHCP Range": [
+  null,
+  ""
  ],
  "Deactivate": [
   null,
@@ -243,6 +251,10 @@ return plural;
   null,
   "Отключен от последовательной консоли. Нажмите кнопку «Повторное подключение»."
  ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  ""
+ ],
  "Disk failed to be attached": [
   null,
   "Не удалось подключить диск"
@@ -267,6 +279,14 @@ return plural;
   null,
   ""
  ],
+ "Existing Disk Image": [
+  null,
+  ""
+ ],
+ "Existing disk image on host's file system": [
+  null,
+  ""
+ ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
   "Меньше, чем максимальное количество виртуальных процессоров должно быть включено."
@@ -274,10 +294,6 @@ return plural;
  "File": [
   null,
   "Файл"
- ],
- "Filesystem": [
-  null,
-  "Файловая система"
  ],
  "Filesystem Directory": [
   null,
@@ -295,9 +311,13 @@ return plural;
   null,
   "Формат"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
+ "Forwarding mode": [
   null,
-  "Не удалось выполнить действие GET HYPERVISOR MAX VCPU"
+  ""
+ ],
+ "General": [
+  null,
+  "Общие"
  ],
  "GiB": [
   null,
@@ -315,6 +335,10 @@ return plural;
   null,
   "Узел"
  ],
+ "Host Device": [
+  null,
+  ""
+ ],
  "Host Name": [
   null,
   "Имя узла"
@@ -323,13 +347,21 @@ return plural;
   null,
   "Хост не должен быть пустым"
  ],
- "INSTALL VM action failed": [
+ "IPv4 Address": [
   null,
-  "УСТАНОВИТЬ действие VM не удалось"
+  ""
+ ],
+ "IPv6 Address": [
+  null,
+  ""
  ],
  "Immediately Start VM": [
   null,
   "Немедленно запустите VM"
+ ],
+ "In most configurations, macvtap does not work for host to guest network communication.": [
+  null,
+  ""
  ],
  "Install": [
   null,
@@ -347,9 +379,17 @@ return plural;
   null,
   "Источник установки не должен быть пустым"
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Invalid filename": [
   null,
   "Неверное имя файла"
+ ],
+ "Isolated Network": [
+  null,
+  ""
  ],
  "Launch Remote Viewer": [
   null,
@@ -359,9 +399,17 @@ return plural;
   null,
   "Загрузка..."
  ],
+ "Local Install Media": [
+  null,
+  ""
+ ],
  "MAC Address": [
   null,
   "MAC-адрес"
+ ],
+ "Mac": [
+  null,
+  ""
  ],
  "Mac Address": [
   null,
@@ -370,6 +418,10 @@ return plural;
  "Manual Connection": [
   null,
   "Ручное подключение"
+ ],
+ "Maximum Transmission Unit": [
+  null,
+  ""
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
@@ -395,6 +447,14 @@ return plural;
   null,
   "Дополнительная информация"
  ],
+ "NAT to $0": [
+  null,
+  ""
+ ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  ""
+ ],
  "Name": [
   null,
   "Имя"
@@ -403,17 +463,41 @@ return plural;
   null,
   "Имя не должно быть пустым"
  ],
+ "Name: ": [
+  null,
+  ""
+ ],
+ "Netmask": [
+  null,
+  ""
+ ],
+ "Network $0 failed to get activated": [
+  null,
+  ""
+ ],
+ "Network $0 failed to get deactivated": [
+  null,
+  ""
+ ],
+ "Network Boot (PXE)": [
+  null,
+  ""
+ ],
  "Network File System": [
   null,
   "Сетевая файловая система"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "Тип сети"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network Selection does not support PXE.": [
   null,
-  "Сетевые настройки не могут быть сохранены"
+  ""
+ ],
+ "Network interface settings could not be saved": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -451,6 +535,10 @@ return plural;
   null,
   "Сетевые интерфейсы, определенные для этой виртуальной машины"
  ],
+ "No network is defined on this host": [
+  null,
+  ""
+ ],
  "No storage pool is defined on this host": [
   null,
   "На этом хосте не определен пул хранения"
@@ -459,9 +547,21 @@ return plural;
   null,
   "Нет виртуальных сетей"
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "OS Vendor": [
   null,
   "Поставщик ОС"
+ ],
+ "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
+  null,
+  ""
+ ],
+ "Open": [
+  null,
+  ""
  ],
  "Operating System": [
   null,
@@ -486,6 +586,10 @@ return plural;
  "Path to file": [
   null,
   "Путь к файлу"
+ ],
+ "Pause": [
+  null,
+  ""
  ],
  "Persistence": [
   null,
@@ -523,6 +627,18 @@ return plural;
   null,
   "Предпочтительное количество сокетов, которые выставляют гостю."
  ],
+ "Prefix": [
+  null,
+  ""
+ ],
+ "Private": [
+  null,
+  ""
+ ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Протокол"
@@ -551,9 +667,25 @@ return plural;
   null,
   "Перезапуск"
  ],
+ "Resume": [
+  null,
+  ""
+ ],
+ "Route to $0": [
+  null,
+  ""
+ ],
+ "Routed Network": [
+  null,
+  ""
+ ],
  "Run": [
   null,
   "Запустить"
+ ],
+ "Run when host boots": [
+  null,
+  ""
  ],
  "SPICE": [
   null,
@@ -635,6 +767,14 @@ return plural;
   null,
   "Состояние"
  ],
+ "Storage Pool $0 failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool $0 failed to get deactivated": [
+  null,
+  ""
+ ],
  "Storage Pool Name": [
   null,
   "Имя пула хранения"
@@ -642,14 +782,6 @@ return plural;
  "Storage Pool failed to be created": [
   null,
   "Не удалось создать пул хранения"
- ],
- "Storage Pool failed to get activated": [
-  null,
-  ""
- ],
- "Storage Pool failed to get deactivated": [
-  null,
-  ""
  ],
  "Storage Pools": [
   null,
@@ -663,9 +795,17 @@ return plural;
   null,
   "Объемы хранения"
  ],
+ "Storage Volumes could not be deleted": [
+  null,
+  ""
+ ],
  "System": [
   null,
   "Система"
+ ],
+ "Target": [
+  null,
+  "Целевой"
  ],
  "Target Path": [
   null,
@@ -739,6 +879,10 @@ return plural;
   null,
   "Тип"
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
  "URL": [
   null,
   "Ссылка (URL)"
@@ -746,6 +890,10 @@ return plural;
  "Unique name": [
   null,
   "Уникальное имя"
+ ],
+ "Unit": [
+  null,
+  "Сервис"
  ],
  "Unplug": [
   null,
@@ -763,57 +911,53 @@ return plural;
   null,
   "Использовано"
  ],
+ "Used by": [
+  null,
+  ""
+ ],
  "VCPU settings could not be saved": [
   null,
   "Не удалось сохранить настройки VCPU"
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
+ "VM $0 failed to Reboot": [
   null,
-  "Действие VM CHANGE_NETWORK_STATE не выполнено"
+  ""
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
-  "Не удалось выполнить действие VM DELETE (DESTROY)"
+  ""
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "Не удалось выполнить действие VM DELETE (UNDEFINE)"
+  ""
  ],
- "VM DELETE action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "Не удалось выполнить действие VM DELETE"
+  ""
  ],
- "VM DETACH_DISK action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "Действие VM DETACH_DISK не выполнено"
+  ""
  ],
- "VM FORCE OFF action failed": [
+ "VM $0 failed to pause": [
   null,
-  "Не удалось выполнить действие VM FORCE OFF"
+  ""
  ],
- "VM FORCE REBOOT action failed": [
+ "VM $0 failed to resume": [
   null,
-  "Не удалось выполнить действие VM FORCE REBOOT"
+  ""
  ],
- "VM REBOOT action failed": [
+ "VM $0 failed to send NMI": [
   null,
-  "Не удалось выполнить действие VM REBOOT"
+  ""
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to shutdown": [
   null,
-  "Отклонено действие VM SEND Непрерывное прерывание"
+  ""
  ],
- "VM SENDNMI action failed": [
+ "VM $0 failed to start": [
   null,
-  "Сбой действия VM SENDNMI"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "Действие VM SHUT DOWN не выполнено"
- ],
- "VM START action failed": [
-  null,
-  "Не удалось выполнить действие VM START"
+  ""
  ],
  "VNC": [
   null,
@@ -831,9 +975,17 @@ return plural;
   null,
   "Порт VNC TLS:"
  ],
+ "Vendor": [
+  null,
+  "Производитель"
+ ],
  "Virtual Machines": [
   null,
   "Виртуальные машины"
+ ],
+ "Virtual Network": [
+  null,
+  ""
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
@@ -846,6 +998,10 @@ return plural;
  "Volume": [
   null,
   "Том"
+ ],
+ "WWPN": [
+  null,
+  ""
  ],
  "active": [
   null,
@@ -899,9 +1055,21 @@ return plural;
   null,
   "узел"
  ],
+ "host device": [
+  null,
+  ""
+ ],
  "hostdev": [
   null,
   "hostdev"
+ ],
+ "iSCSI Target": [
+  null,
+  ""
+ ],
+ "iSCSI target IQN": [
+  null,
+  ""
  ],
  "idle": [
   null,
@@ -923,10 +1091,6 @@ return plural;
   null,
   "нет"
  ],
- "other": [
-  null,
-  "Другой"
- ],
  "paused": [
   null,
   "приостановлено"
@@ -938,6 +1102,10 @@ return plural;
  "raw": [
   null,
   "raw"
+ ],
+ "redirected device": [
+  null,
+  ""
  ],
  "running": [
   null,

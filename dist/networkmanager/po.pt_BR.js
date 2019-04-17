@@ -71,6 +71,10 @@ return plural;
   null,
   "$mtu"
  ],
+ "(Optional)": [
+  null,
+  ""
+ ],
  "1 day": [
   null,
   "1 dia"
@@ -139,13 +143,13 @@ return plural;
   null,
   "Adicionar Ponte"
  ],
+ "Add Ports": [
+  null,
+  ""
+ ],
  "Add Services": [
   null,
   "Adicionar serviços"
- ],
- "Add Services…": [
-  null,
-  "Adicionar serviços…"
  ],
  "Add Team": [
   null,
@@ -263,6 +267,10 @@ return plural;
   null,
   "Fechar"
  ],
+ "Comma-separated ports, ranges, and aliases are accepted": [
+  null,
+  ""
+ ],
  "Configure": [
   null,
   "Configurar"
@@ -302,6 +310,10 @@ return plural;
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
   "Criando essa equipe a conexão com o servidor será encerrada e tornará a administração da interface do usuário indisponível."
+ ],
+ "Custom Ports": [
+  null,
+  ""
  ],
  "DNS": [
   null,
@@ -358,6 +370,14 @@ return plural;
  "Ethtool": [
   null,
   "Ethtool"
+ ],
+ "Example: 22,ssh,8080,5900-5910": [
+  null,
+  ""
+ ],
+ "Example: 88,2019,nfs,rsync": [
+  null,
+  ""
  ],
  "Failed": [
   null,
@@ -447,6 +467,10 @@ return plural;
   null,
   "Métrica inválida $0"
  ],
+ "Invalid port number": [
+  null,
+  ""
+ ],
  "Invalid prefix $0": [
   null,
   "Prefixo inválido $0"
@@ -454,6 +478,10 @@ return plural;
  "Invalid prefix or netmask $0": [
   null,
   "Prefixo ou máscara de rede inválidos $0"
+ ],
+ "Invalid range": [
+  null,
+  ""
  ],
  "Keep connection": [
   null,
@@ -619,6 +647,10 @@ return plural;
   null,
   "Por favor, instale o pacote de $0"
  ],
+ "Port number and type do not match": [
+  null,
+  ""
+ ],
  "Ports": [
   null,
   "Portas"
@@ -654,6 +686,10 @@ return plural;
  "Random": [
   null,
   "Aleatório(a)"
+ ],
+ "Range must be strictly ordered": [
+  null,
+  ""
  ],
  "Reboot": [
   null,
@@ -710,6 +746,10 @@ return plural;
  "Service": [
   null,
   "Serviço"
+ ],
+ "Services": [
+  null,
+  "Serviços"
  ],
  "Set to": [
   null,
@@ -814,6 +854,10 @@ return plural;
  "Unknown configuration": [
   null,
   "Configuração desconhecida"
+ ],
+ "Unknown service name": [
+  null,
+  ""
  ],
  "Unmanaged Interfaces": [
   null,

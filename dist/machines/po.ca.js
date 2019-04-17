@@ -67,6 +67,10 @@ return plural;
   "language": "ca",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Network": [
+  null,
+  ""
+ ],
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
   "$0 està disponible per a la majoria de sistemes operatius. Per instal·lar-ho, cerqueu-ho a GNOME Software o executeu el següent:"
@@ -115,13 +119,13 @@ return plural;
   null,
   ""
  ],
+ "Boot order settings could not be saved": [
+  null,
+  ""
+ ],
  "Bus": [
   null,
   "Bus"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Ha fallat l'acció CHANGE NETWORK STATE"
  ],
  "CPU Type": [
   null,
@@ -191,7 +195,7 @@ return plural;
   null,
   "Crea la MV"
  ],
- "Creation of vm $0 failed": [
+ "Creation of VM $0 failed": [
   null,
   ""
  ],
@@ -244,6 +248,10 @@ return plural;
   "Desconnectat"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
+  null,
+  ""
+ ],
+ "Disk $0 fail to get detached from VM $1": [
   null,
   ""
  ],
@@ -307,10 +315,6 @@ return plural;
   null,
   ""
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  ""
- ],
  "General": [
   null,
   "General"
@@ -331,6 +335,10 @@ return plural;
   null,
   "Amfitrió"
  ],
+ "Host Device": [
+  null,
+  ""
+ ],
  "Host Name": [
   null,
   "Nom d'amfitrió"
@@ -338,10 +346,6 @@ return plural;
  "Host should not be empty": [
   null,
   ""
- ],
- "INSTALL VM action failed": [
-  null,
-  "Ha fallat l'acció INSTALL VM"
  ],
  "IPv4 Address": [
   null,
@@ -354,6 +358,10 @@ return plural;
  "Immediately Start VM": [
   null,
   "Inicia automàticament la MV"
+ ],
+ "In most configurations, macvtap does not work for host to guest network communication.": [
+  null,
+  ""
  ],
  "Install": [
   null,
@@ -379,6 +387,10 @@ return plural;
   null,
   "nom de fitxer no vàlid"
  ],
+ "Isolated Network": [
+  null,
+  ""
+ ],
  "Launch Remote Viewer": [
   null,
   "Llança el visualitzador remot"
@@ -394,6 +406,10 @@ return plural;
  "MAC Address": [
   null,
   "Adreça MAC"
+ ],
+ "Mac": [
+  null,
+  ""
  ],
  "Mac Address": [
   null,
@@ -431,6 +447,14 @@ return plural;
   null,
   "Més informació"
  ],
+ "NAT to $0": [
+  null,
+  ""
+ ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  ""
+ ],
  "Name": [
   null,
   "Nom"
@@ -447,11 +471,27 @@ return plural;
   null,
   ""
  ],
+ "Network $0 failed to get activated": [
+  null,
+  ""
+ ],
+ "Network $0 failed to get deactivated": [
+  null,
+  ""
+ ],
+ "Network Boot (PXE)": [
+  null,
+  ""
+ ],
  "Network File System": [
   null,
   ""
  ],
  "Network Interfaces": [
+  null,
+  ""
+ ],
+ "Network Selection does not support PXE.": [
   null,
   ""
  ],
@@ -547,6 +587,10 @@ return plural;
   null,
   "Camí al fitxer"
  ],
+ "Pause": [
+  null,
+  ""
+ ],
  "Persistence": [
   null,
   ""
@@ -591,6 +635,10 @@ return plural;
   null,
   ""
  ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protocol"
@@ -618,6 +666,18 @@ return plural;
  "Restart": [
   null,
   "Reinicia"
+ ],
+ "Resume": [
+  null,
+  ""
+ ],
+ "Route to $0": [
+  null,
+  ""
+ ],
+ "Routed Network": [
+  null,
+  ""
  ],
  "Run": [
   null,
@@ -707,19 +767,19 @@ return plural;
   null,
   "Estat"
  ],
+ "Storage Pool $0 failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool $0 failed to get deactivated": [
+  null,
+  ""
+ ],
  "Storage Pool Name": [
   null,
   ""
  ],
  "Storage Pool failed to be created": [
-  null,
-  ""
- ],
- "Storage Pool failed to get activated": [
-  null,
-  ""
- ],
- "Storage Pool failed to get deactivated": [
   null,
   ""
  ],
@@ -742,6 +802,10 @@ return plural;
  "System": [
   null,
   "Sistema"
+ ],
+ "Target": [
+  null,
+  "Objectiu"
  ],
  "Target Path": [
   null,
@@ -815,11 +879,19 @@ return plural;
   null,
   "Tipus"
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
  "URL": [
   null,
   "URL"
  ],
  "Unique name": [
+  null,
+  ""
+ ],
+ "Unit": [
   null,
   ""
  ],
@@ -847,53 +919,45 @@ return plural;
   null,
   ""
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
+ "VM $0 failed to Reboot": [
   null,
   ""
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
   ""
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force shutdown": [
   null,
   ""
  ],
- "VM DELETE action failed": [
+ "VM $0 failed to get deleted": [
   null,
   ""
  ],
- "VM DETACH_DISK action failed": [
+ "VM $0 failed to get installed": [
   null,
   ""
  ],
- "VM FORCE OFF action failed": [
-  null,
-  "Ha fallat l'acció VM FORCE OFF"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "Ha fallat l'acció VM FORCE REBOOT"
- ],
- "VM REBOOT action failed": [
-  null,
-  "Ha fallat l'acció VM REBOOT"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to pause": [
   null,
   ""
  ],
- "VM SENDNMI action failed": [
+ "VM $0 failed to resume": [
   null,
   ""
  ],
- "VM SHUT DOWN action failed": [
+ "VM $0 failed to send NMI": [
   null,
-  "Ha fallat l'acció VM SHUT DOWN"
+  ""
  ],
- "VM START action failed": [
+ "VM $0 failed to shutdown": [
   null,
-  "Ha fallat l'acció VM START"
+  ""
+ ],
+ "VM $0 failed to start": [
+  null,
+  ""
  ],
  "VNC": [
   null,
@@ -911,9 +975,17 @@ return plural;
   null,
   "Port TLS VNC:"
  ],
+ "Vendor": [
+  null,
+  "Fabricant"
+ ],
  "Virtual Machines": [
   null,
   "Màquines virtuals"
+ ],
+ "Virtual Network": [
+  null,
+  ""
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
@@ -926,6 +998,10 @@ return plural;
  "Volume": [
   null,
   "Volum"
+ ],
+ "WWPN": [
+  null,
+  ""
  ],
  "active": [
   null,
@@ -979,7 +1055,19 @@ return plural;
   null,
   "amfitrió"
  ],
+ "host device": [
+  null,
+  ""
+ ],
  "hostdev": [
+  null,
+  ""
+ ],
+ "iSCSI Target": [
+  null,
+  ""
+ ],
+ "iSCSI target IQN": [
   null,
   ""
  ],
@@ -1003,10 +1091,6 @@ return plural;
   null,
   "no"
  ],
- "other": [
-  null,
-  "altres"
- ],
  "paused": [
   null,
   "pausa"
@@ -1016,6 +1100,10 @@ return plural;
   ""
  ],
  "raw": [
+  null,
+  ""
+ ],
+ "redirected device": [
   null,
   ""
  ],

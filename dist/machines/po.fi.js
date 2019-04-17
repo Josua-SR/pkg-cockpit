@@ -67,6 +67,10 @@ return plural;
   "language": "fi",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Network": [
+  null,
+  ""
+ ],
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
   "$0 on saatavilla useimmille käyttöjärjestelmille. Asentaaksesi sen, hae sitä GNOME Softwaresta, tai aja seuraava komento:"
@@ -115,13 +119,13 @@ return plural;
   null,
   ""
  ],
- "Bus": [
+ "Boot order settings could not be saved": [
   null,
   ""
  ],
- "CHANGE NETWORK STATE action failed": [
+ "Bus": [
   null,
-  "CHANGE NETWORK STATE -toiminto epäonnistui"
+  ""
  ],
  "CPU Type": [
   null,
@@ -191,9 +195,9 @@ return plural;
   null,
   "Luo VM"
  ],
- "Creation of vm $0 failed": [
+ "Creation of VM $0 failed": [
   null,
-  "Virtuaalikoneen $0 luominen epäonnistui"
+  ""
  ],
  "Ctrl+Alt+Del": [
   null,
@@ -244,6 +248,10 @@ return plural;
   "Katkaistu"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
+  null,
+  ""
+ ],
+ "Disk $0 fail to get detached from VM $1": [
   null,
   ""
  ],
@@ -307,10 +315,6 @@ return plural;
   null,
   ""
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  ""
- ],
  "General": [
   null,
   "Yleiset"
@@ -331,6 +335,10 @@ return plural;
   null,
   "Kone"
  ],
+ "Host Device": [
+  null,
+  ""
+ ],
  "Host Name": [
   null,
   "Koneen nimi"
@@ -338,10 +346,6 @@ return plural;
  "Host should not be empty": [
   null,
   ""
- ],
- "INSTALL VM action failed": [
-  null,
-  "INSTALL VM -toiminto epäonnistui"
  ],
  "IPv4 Address": [
   null,
@@ -354,6 +358,10 @@ return plural;
  "Immediately Start VM": [
   null,
   "Käynnistä VM välittömästi"
+ ],
+ "In most configurations, macvtap does not work for host to guest network communication.": [
+  null,
+  ""
  ],
  "Install": [
   null,
@@ -379,6 +387,10 @@ return plural;
   null,
   "Virheellinen tiedostonimi"
  ],
+ "Isolated Network": [
+  null,
+  ""
+ ],
  "Launch Remote Viewer": [
   null,
   "Käynnistä etäkatselin"
@@ -394,6 +406,10 @@ return plural;
  "MAC Address": [
   null,
   "MAC-osoite"
+ ],
+ "Mac": [
+  null,
+  ""
  ],
  "Mac Address": [
   null,
@@ -431,6 +447,14 @@ return plural;
   null,
   "Lisää tietoja"
  ],
+ "NAT to $0": [
+  null,
+  ""
+ ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  ""
+ ],
  "Name": [
   null,
   "Nimi"
@@ -447,11 +471,27 @@ return plural;
   null,
   ""
  ],
+ "Network $0 failed to get activated": [
+  null,
+  ""
+ ],
+ "Network $0 failed to get deactivated": [
+  null,
+  ""
+ ],
+ "Network Boot (PXE)": [
+  null,
+  ""
+ ],
  "Network File System": [
   null,
   ""
  ],
  "Network Interfaces": [
+  null,
+  ""
+ ],
+ "Network Selection does not support PXE.": [
   null,
   ""
  ],
@@ -547,6 +587,10 @@ return plural;
   null,
   ""
  ],
+ "Pause": [
+  null,
+  ""
+ ],
  "Persistence": [
   null,
   ""
@@ -591,6 +635,10 @@ return plural;
   null,
   ""
  ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   ""
@@ -618,6 +666,18 @@ return plural;
  "Restart": [
   null,
   "Käynnistä uudelleen"
+ ],
+ "Resume": [
+  null,
+  ""
+ ],
+ "Route to $0": [
+  null,
+  ""
+ ],
+ "Routed Network": [
+  null,
+  ""
  ],
  "Run": [
   null,
@@ -707,19 +767,19 @@ return plural;
   null,
   "Tila"
  ],
+ "Storage Pool $0 failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool $0 failed to get deactivated": [
+  null,
+  ""
+ ],
  "Storage Pool Name": [
   null,
   ""
  ],
  "Storage Pool failed to be created": [
-  null,
-  ""
- ],
- "Storage Pool failed to get activated": [
-  null,
-  ""
- ],
- "Storage Pool failed to get deactivated": [
   null,
   ""
  ],
@@ -742,6 +802,10 @@ return plural;
  "System": [
   null,
   "Järjestelmä"
+ ],
+ "Target": [
+  null,
+  ""
  ],
  "Target Path": [
   null,
@@ -815,6 +879,10 @@ return plural;
   null,
   "Tyyppi"
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
  "URL": [
   null,
   "URL"
@@ -822,6 +890,10 @@ return plural;
  "Unique name": [
   null,
   ""
+ ],
+ "Unit": [
+  null,
+  "Yksikkö"
  ],
  "Unplug": [
   null,
@@ -847,53 +919,45 @@ return plural;
   null,
   ""
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
+ "VM $0 failed to Reboot": [
   null,
   ""
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
   ""
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force shutdown": [
   null,
   ""
  ],
- "VM DELETE action failed": [
+ "VM $0 failed to get deleted": [
   null,
   ""
  ],
- "VM DETACH_DISK action failed": [
+ "VM $0 failed to get installed": [
   null,
   ""
  ],
- "VM FORCE OFF action failed": [
-  null,
-  "VM FORCE OFF -toiminto epäonnistui"
- ],
- "VM FORCE REBOOT action failed": [
-  null,
-  "VM FORCE REBOOT -toiminto epäonnistui"
- ],
- "VM REBOOT action failed": [
-  null,
-  "VM REBOOT -toiminto epäonnistui"
- ],
- "VM SEND Non-Maskable Interrrupt action failed": [
-  null,
-  "VM SEND Non-Maskable Interrrupt -toiminto epäonnistui"
- ],
- "VM SENDNMI action failed": [
+ "VM $0 failed to pause": [
   null,
   ""
  ],
- "VM SHUT DOWN action failed": [
+ "VM $0 failed to resume": [
   null,
-  "VM SHUT DOWN -toiminto epäonnistui"
+  ""
  ],
- "VM START action failed": [
+ "VM $0 failed to send NMI": [
   null,
-  "VM START -toiminto epäonnistui"
+  ""
+ ],
+ "VM $0 failed to shutdown": [
+  null,
+  ""
+ ],
+ "VM $0 failed to start": [
+  null,
+  ""
  ],
  "VNC": [
   null,
@@ -911,9 +975,17 @@ return plural;
   null,
   "VNC-TLS-portti:"
  ],
+ "Vendor": [
+  null,
+  "Toimittaja"
+ ],
  "Virtual Machines": [
   null,
   "Virtuaalikoneet"
+ ],
+ "Virtual Network": [
+  null,
+  ""
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
@@ -926,6 +998,10 @@ return plural;
  "Volume": [
   null,
   "Taltio"
+ ],
+ "WWPN": [
+  null,
+  ""
  ],
  "active": [
   null,
@@ -979,7 +1055,19 @@ return plural;
   null,
   ""
  ],
+ "host device": [
+  null,
+  ""
+ ],
  "hostdev": [
+  null,
+  ""
+ ],
+ "iSCSI Target": [
+  null,
+  ""
+ ],
+ "iSCSI target IQN": [
   null,
   ""
  ],
@@ -1003,10 +1091,6 @@ return plural;
   null,
   "ei"
  ],
- "other": [
-  null,
-  "muu"
- ],
  "paused": [
   null,
   "pysäytetty"
@@ -1016,6 +1100,10 @@ return plural;
   ""
  ],
  "raw": [
+  null,
+  ""
+ ],
+ "redirected device": [
   null,
   ""
  ],

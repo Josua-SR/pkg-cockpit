@@ -135,13 +135,13 @@ return plural;
   null,
   ""
  ],
+ "Boot order settings could not be saved": [
+  null,
+  ""
+ ],
  "Bus": [
   null,
   "總線"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "更改網絡狀態操作失敗"
  ],
  "CPU Type": [
   null,
@@ -275,6 +275,10 @@ return plural;
   null,
   "斷開與串行控制台的連接。單擊“重新連接”按鈕。"
  ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  ""
+ ],
  "Disk failed to be attached": [
   null,
   "磁槃無法連接"
@@ -307,6 +311,10 @@ return plural;
   null,
   "輸入新VM名稱"
  ],
+ "FORCEOFF action failed: $0": [
+  null,
+  ""
+ ],
  "FQDN": [
   null,
   "FQDN"
@@ -330,10 +338,6 @@ return plural;
  "Format": [
   null,
   "格式"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "獲取HYPERVISOR MAX VCPU操作失敗"
  ],
  "GiB": [
   null,
@@ -363,13 +367,13 @@ return plural;
   null,
   "主持維護"
  ],
- "INSTALL VM action failed": [
-  null,
-  "安裝VM操作失敗"
- ],
  "Install": [
   null,
   "安裝"
+ ],
+ "Interface Type": [
+  null,
+  ""
  ],
  "Launch Remote Viewer": [
   null,
@@ -390,6 +394,10 @@ return plural;
  "MIGRATE action failed": [
   null,
   "MIGRATE操作失敗"
+ ],
+ "Mac": [
+  null,
+  ""
  ],
  "Mac Address": [
   null,
@@ -427,21 +435,21 @@ return plural;
   null,
   "更多信息"
  ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  ""
+ ],
  "Name": [
   null,
   "名稱"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "網絡類型"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
-  "無法保存網絡設置"
- ],
- "Networks": [
-  null,
-  "網路"
+  ""
  ],
  "New Volume Name": [
   null,
@@ -479,6 +487,10 @@ return plural;
   null,
   "沒有虛擬網絡"
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "Number of virtual CPUs that gonna be used.": [
   null,
   "要使用的虛擬CPU數量。"
@@ -499,6 +511,10 @@ return plural;
   null,
   "確定"
  ],
+ "Open": [
+  null,
+  ""
+ ],
  "Optimized for:": [
   null,
   "優化："
@@ -506,6 +522,14 @@ return plural;
  "Overview": [
   null,
   "簡介"
+ ],
+ "Path": [
+  null,
+  "路徑"
+ ],
+ "Pause": [
+  null,
+  ""
  ],
  "Persistence": [
   null,
@@ -567,6 +591,14 @@ return plural;
   null,
   "準備維護"
  ],
+ "Private": [
+  null,
+  ""
+ ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "協定"
@@ -574,6 +606,10 @@ return plural;
  "REBOOT action failed": [
   null,
   "REBOOT操作失敗"
+ ],
+ "REBOOT_VM action failed: %s0": [
+  null,
+  ""
  ],
  "Readonly": [
   null,
@@ -599,6 +635,10 @@ return plural;
   null,
   "重新啟動"
  ],
+ "Resume": [
+  null,
+  ""
+ ],
  "Run": [
   null,
   "執行"
@@ -606,6 +646,10 @@ return plural;
  "Run Here": [
   null,
   "跑到這裡"
+ ],
+ "Run when host boots": [
+  null,
+  ""
  ],
  "Running Since:": [
   null,
@@ -638,6 +682,10 @@ return plural;
  "START action failed": [
   null,
   "START操作失敗"
+ ],
+ "START_VM action failed: %s0": [
+  null,
+  ""
  ],
  "SUSPEND action failed": [
   null,
@@ -711,6 +759,10 @@ return plural;
   null,
   "系統"
  ],
+ "Target": [
+  null,
+  "目標"
+ ],
  "Template": [
   null,
   "範本"
@@ -779,6 +831,14 @@ return plural;
   null,
   "類型"
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
+ "Unit": [
+  null,
+  "單位"
+ ],
  "Unplug": [
   null,
   "拔"
@@ -807,37 +867,45 @@ return plural;
   null,
   "VDSM服務管理"
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to Reboot": [
   null,
-  "VM DELETE（DESTROY）操作失敗"
+  ""
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
-  "VM DELETE（UNDEFINE）操作失敗"
+  ""
  ],
- "VM FORCE OFF action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "VM FORCE OFF操作失敗"
+  ""
  ],
- "VM FORCE REBOOT action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "VM FORCE REBOOT操作失敗"
+  ""
  ],
- "VM REBOOT action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "VM REBOOT操作失敗"
+  ""
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to pause": [
   null,
-  "VM SEND不可屏蔽中斷操作失敗"
+  ""
  ],
- "VM SHUT DOWN action failed": [
+ "VM $0 failed to resume": [
   null,
-  "VM SHUT DOWN操作失敗"
+  ""
  ],
- "VM START action failed": [
+ "VM $0 failed to send NMI": [
   null,
-  "VM START操作失敗"
+  ""
+ ],
+ "VM $0 failed to shutdown": [
+  null,
+  ""
+ ],
+ "VM $0 failed to start": [
+  null,
+  ""
  ],
  "VM icon": [
   null,
@@ -859,6 +927,10 @@ return plural;
   null,
   "VNC TLS端口："
  ],
+ "Vendor": [
+  null,
+  "供應商"
+ ],
  "Version": [
   null,
   "版本"
@@ -878,6 +950,10 @@ return plural;
  "Volume": [
   null,
   "音量"
+ ],
+ "WWPN": [
+  null,
+  ""
  ],
  "bridge": [
   null,
@@ -938,6 +1014,10 @@ return plural;
  "host": [
   null,
   "主機"
+ ],
+ "host device": [
+  null,
+  ""
  ],
  "hostdev": [
   null,
@@ -1011,10 +1091,6 @@ return plural;
   null,
   "oVirt登錄正在進行中"
  ],
- "other": [
-  null,
-  "其他"
- ],
  "paused": [
   null,
   "已暫停"
@@ -1034,6 +1110,10 @@ return plural;
  "reboot": [
   null,
   "重新啟動"
+ ],
+ "redirected device": [
+  null,
+  ""
  ],
  "running": [
   null,

@@ -67,10 +67,6 @@ return plural;
   "language": "zh_TW",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
-  null,
-  "$0 只有具有本地憑據的用戶才能登錄此計算機。這也可能影響其他服務，因為DNS解析設置和可信CA列表可能會更改。"
- ],
  "$0 is not available from any repository.": [
   null,
   "$0 在任何存儲庫中都不可用。"
@@ -87,13 +83,9 @@ return plural;
   null,
   "管理員密碼"
  ],
- "Are you sure you want to leave the '$0' domain?": [
+ "After leaving the domain, only users with local credentials will be able to log into this machine. This may also affect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  "你確定要離開'$0'域名？"
- ],
- "Are you sure you want to leave this domain?": [
-  null,
-  "你確定要離開這個域名嗎？"
+  ""
  ],
  "Authentication": [
   null,
@@ -111,9 +103,21 @@ return plural;
   null,
   "檢查已安裝的軟件"
  ],
+ "Client Software": [
+  null,
+  ""
+ ],
  "Computer OU": [
   null,
   "計算機OU"
+ ],
+ "Contacted domain": [
+  null,
+  ""
+ ],
+ "Domain": [
+  null,
+  "網域"
  ],
  "Domain $0 could not be contacted": [
   null,
@@ -171,13 +175,13 @@ return plural;
   null,
   "不支持加入此域"
  ],
- "Leave": [
-  null,
-  "離開"
- ],
  "Leave Domain": [
   null,
   "離開域名"
+ ],
+ "Login Format": [
+  null,
+  ""
  ],
  "More": [
   null,
@@ -215,6 +219,10 @@ return plural;
   null,
   "刪除 $0"
  ],
+ "Server Software": [
+  null,
+  ""
+ ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
   "用戶 <b>$0</b> 不允許修改領域"
@@ -234,6 +242,10 @@ return plural;
  "User Password": [
   null,
   "用戶密碼"
+ ],
+ "Validating address": [
+  null,
+  ""
  ],
  "Waiting for other software management operations to finish": [
   null,

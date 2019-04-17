@@ -293,7 +293,7 @@ return plural;
  ],
  "Appearance:": [
   null,
-  ""
+  "Apparence :"
  ],
  "Asset Tag": [
   null,
@@ -337,7 +337,7 @@ return plural;
  ],
  "Black": [
   null,
-  ""
+  "Noir"
  ],
  "Blade": [
   null,
@@ -363,6 +363,14 @@ return plural;
   null,
   "CPU"
  ],
+ "CPU Security": [
+  null,
+  "Sécurité du CPU"
+ ],
+ "CPU Security Toggles": [
+  null,
+  "Paramètres de sécurité du CPU"
+ ],
  "Cached": [
   null,
   "En cache"
@@ -377,7 +385,7 @@ return plural;
  ],
  "Change": [
   null,
-  "Changement"
+  "Modification"
  ],
  "Change Host Name": [
   null,
@@ -389,7 +397,7 @@ return plural;
  ],
  "Checking for updates…": [
   null,
-  "Vérification des mises à jour..."
+  "Vérification des mises à jour…"
  ],
  "Checking installed software": [
   null,
@@ -401,7 +409,7 @@ return plural;
  ],
  "Clear All Filters": [
   null,
-  ""
+  "Supprimer tous les filtres"
  ],
  "Click to see system hardware information": [
   null,
@@ -445,7 +453,7 @@ return plural;
  ],
  "Copy": [
   null,
-  ""
+  "Copier"
  ],
  "Create Timer": [
   null,
@@ -461,7 +469,7 @@ return plural;
  ],
  "Ctrl+Insert": [
   null,
-  ""
+  "Ctrl+Inser"
  ],
  "Current boot": [
   null,
@@ -469,7 +477,7 @@ return plural;
  ],
  "Dark": [
   null,
-  ""
+  "Sombre"
  ],
  "Debug and above": [
   null,
@@ -498,6 +506,10 @@ return plural;
  "Disable": [
   null,
   "Désactiver"
+ ],
+ "Disable simultaneous multithreading": [
+  null,
+  ""
  ],
  "Disabled": [
   null,
@@ -537,7 +549,7 @@ return plural;
  ],
  "Enable stored metrics…": [
   null,
-  "Activer les métriques stockées...."
+  "Activer les métriques stockées…."
  ],
  "Enabled": [
   null,
@@ -569,7 +581,7 @@ return plural;
  ],
  "Filter by name or description...": [
   null,
-  ""
+  "Filtrer par nom ou description…"
  ],
  "Friday": [
   null,
@@ -705,7 +717,7 @@ return plural;
  ],
  "Light": [
   null,
-  ""
+  "Clair"
  ],
  "Load earlier entries": [
   null,
@@ -713,7 +725,7 @@ return plural;
  ],
  "Loading...": [
   null,
-  "Chargement..."
+  "Chargement…"
  ],
  "Log messages": [
   null,
@@ -783,6 +795,10 @@ return plural;
   null,
   "Minutes"
  ],
+ "Mitigations": [
+  null,
+  "Mitigations"
+ ],
  "Model": [
   null,
   "Modèle"
@@ -825,7 +841,7 @@ return plural;
  ],
  "No Matching Results": [
   null,
-  ""
+  "Aucun résultat correspondant n’a été trouvé"
  ],
  "No host keys found.": [
   null,
@@ -833,7 +849,7 @@ return plural;
  ],
  "Not authorized to upload-report": [
   null,
-  "Non autorisé à télécharger le rapport"
+  "Non autorisé à téléverser le rapport"
  ],
  "Not synchronized": [
   null,
@@ -897,7 +913,7 @@ return plural;
  ],
  "Paste": [
   null,
-  ""
+  "Coller"
  ],
  "Path": [
   null,
@@ -958,6 +974,10 @@ return plural;
  "Rack Mount Chassis": [
   null,
   "Châssis de montage en rack"
+ ],
+ "Read more...": [
+  null,
+  "En savoir plus…"
  ],
  "Real Host Name": [
   null,
@@ -1071,6 +1091,10 @@ return plural;
   null,
   "sauvegarder"
  ],
+ "Save and reboot": [
+  null,
+  "Enregistrer et redémarrer"
+ ],
  "Sealed-case PC": [
   null,
   "PC scellé"
@@ -1086,6 +1110,10 @@ return plural;
  "Security Updates Available": [
   null,
   "Mises à jour de sécurité disponibles"
+ ],
+ "Service": [
+  null,
+  "Service"
  ],
  "Service Logs": [
   null,
@@ -1113,7 +1141,7 @@ return plural;
  ],
  "Shift+Insert": [
   null,
-  ""
+  "Maj+Inser"
  ],
  "Show fingerprints": [
   null,
@@ -1130,6 +1158,10 @@ return plural;
  "Sockets": [
   null,
   "Sockets"
+ ],
+ "Software-based workarounds help prevent CPU security issues. These mitigations have the side effect of reducing performance. Change these settings at your own risk.": [
+  null,
+  "Les contournements logiciels aident à éviter les problèmes de sécurité des CPU. Ces mitigations on pour effet de bord de réduire les performances. Modifiez ces paramètres à vos risques et périls."
  ],
  "Space-saving Computer": [
   null,
@@ -1226,6 +1258,10 @@ return plural;
  "Terminal": [
   null,
   "Terminal"
+ ],
+ "The user $0 is not permitted to change cpu security mitigations": [
+  null,
+  "L’utilisateur $0 n’est pas autorisé à changer les mitigations de sécurité pour le  CPU"
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,
@@ -1366,7 +1402,7 @@ return plural;
  ],
  "White": [
   null,
-  ""
+  "Blanc"
  ],
  "[$0 bytes of binary data]": [
   null,
@@ -1382,7 +1418,7 @@ return plural;
  ],
  "failed to list ssh host keys: $0": [
   null,
-  "Échec de listage des clés de l’hôte ssh: $0"
+  "Échec de listage des clés de l’hôte ssh : $0"
  ],
  "of $0 CPU core": [
   "of $0 CPU cores",

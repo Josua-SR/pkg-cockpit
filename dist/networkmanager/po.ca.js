@@ -71,6 +71,10 @@ return plural;
   null,
   "$mtu"
  ],
+ "(Optional)": [
+  null,
+  ""
+ ],
  "1 day": [
   null,
   "1 dia"
@@ -139,13 +143,13 @@ return plural;
   null,
   "Afegeix un pont"
  ],
+ "Add Ports": [
+  null,
+  ""
+ ],
  "Add Services": [
   null,
   "Afegeix serveis"
- ],
- "Add Services…": [
-  null,
-  "Afegeix serveis..."
  ],
  "Add Team": [
   null,
@@ -263,6 +267,10 @@ return plural;
   null,
   "Tanca"
  ],
+ "Comma-separated ports, ranges, and aliases are accepted": [
+  null,
+  ""
+ ],
  "Configure": [
   null,
   "Configura"
@@ -300,6 +308,10 @@ return plural;
   ""
  ],
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
+  null,
+  ""
+ ],
+ "Custom Ports": [
   null,
   ""
  ],
@@ -358,6 +370,14 @@ return plural;
  "Ethtool": [
   null,
   "Ethtool"
+ ],
+ "Example: 22,ssh,8080,5900-5910": [
+  null,
+  ""
+ ],
+ "Example: 88,2019,nfs,rsync": [
+  null,
+  ""
  ],
  "Failed": [
   null,
@@ -447,6 +467,10 @@ return plural;
   null,
   "Mètrica no vàlida $0"
  ],
+ "Invalid port number": [
+  null,
+  ""
+ ],
  "Invalid prefix $0": [
   null,
   "Prefix no vàlid $0"
@@ -454,6 +478,10 @@ return plural;
  "Invalid prefix or netmask $0": [
   null,
   "Prefix o màscara de xarxa no vàlid $0"
+ ],
+ "Invalid range": [
+  null,
+  ""
  ],
  "Keep connection": [
   null,
@@ -619,6 +647,10 @@ return plural;
   null,
   ""
  ],
+ "Port number and type do not match": [
+  null,
+  ""
+ ],
  "Ports": [
   null,
   "Ports"
@@ -654,6 +686,10 @@ return plural;
  "Random": [
   null,
   "Aleatòria"
+ ],
+ "Range must be strictly ordered": [
+  null,
+  ""
  ],
  "Reboot": [
   null,
@@ -710,6 +746,10 @@ return plural;
  "Service": [
   null,
   "Servei"
+ ],
+ "Services": [
+  null,
+  "Serveis"
  ],
  "Set to": [
   null,
@@ -814,6 +854,10 @@ return plural;
  "Unknown configuration": [
   null,
   "Configuració desconeguda"
+ ],
+ "Unknown service name": [
+  null,
+  ""
  ],
  "Unmanaged Interfaces": [
   null,

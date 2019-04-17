@@ -69,7 +69,7 @@ return plural;
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
-  " 1\"Désirez-vous supprimer les nœuds suivants?"
+  " 1\"Désirez-vous supprimer les nœuds suivants ?"
  ],
  "$0% Free": [
   "$0% Free",
@@ -223,7 +223,7 @@ return plural;
  ],
  "CPU Utilization: $0%": [
   null,
-  "Utilisation du processeur: $0 %"
+  "Utilisation du processeur : $0 %"
  ],
  "Cancel": [
   null,
@@ -243,19 +243,19 @@ return plural;
  ],
  "Change": [
   null,
-  "Changement"
+  "Modification"
  ],
  "Change User": [
   null,
-  "Changer d’utilisateur"
+  "Modifier l’utilisateur"
  ],
  "Change image stream": [
   null,
-  "Changer le flux d’image"
+  "Modifier le flux d’image"
  ],
  "Change project": [
   null,
-  "Changer de projet"
+  "Modifier le projet"
  ],
  "Cinder": [
   null,
@@ -295,7 +295,7 @@ return plural;
  ],
  "Connecting...": [
   null,
-  "Connexion en cours..."
+  "Connexion en cours…"
  ],
  "Connection Error": [
   null,
@@ -303,7 +303,7 @@ return plural;
  ],
  "Connection Error: $0": [
   null,
-  "Erreur de connexion: $0"
+  "Erreur de connexion : $0"
  ],
  "Connection Settings": [
   null,
@@ -431,7 +431,7 @@ return plural;
  ],
  "Disk Utilization: $0%": [
   null,
-  "Utilisation du disque: $0 %"
+  "Utilisation du disque : $0 %"
  ],
  "Display name": [
   null,
@@ -463,7 +463,7 @@ return plural;
  ],
  "Do you want to remove the image tagged as '{{stream.metadata.namespace}}/{{stream.metadata.name}}:{{tag.tag}}'?": [
   null,
-  "Voulez-vous supprimer l’image intitulée « {{stream.metadata.namespace}} / {{stream.metadata.name}} : {{tag.tag}} »?"
+  "Voulez-vous supprimer l’image intitulée « {{stream.metadata.namespace}} / {{stream.metadata.name}} : {{tag.tag}} » ?"
  ],
  "Do you want to remove the role '{{ fields.displayRole }}' from member {{ fields.member.metadata.name }}?": [
   null,
@@ -499,7 +499,7 @@ return plural;
  ],
  "Error getting certificate details: $0": [
   null,
-  "Erreur lors de l’obtention des détails du certificat: $0"
+  "Erreur lors de l’obtention des détails du certificat : $0"
  ],
  "Error writing kubectl config": [
   null,
@@ -655,7 +655,7 @@ return plural;
  ],
  "Last Status Change": [
   null,
-  "Dernier changement de statut"
+  "Dernière modification de statut"
  ],
  "Latest Version": [
   null,
@@ -667,7 +667,7 @@ return plural;
  ],
  "Log into the registry:": [
   null,
-  "Connectez-vous au registre:"
+  "Connectez-vous au registre :"
  ],
  "Logical Unit Number": [
   null,
@@ -711,7 +711,7 @@ return plural;
  ],
  "Memory Utilization: $0%": [
   null,
-  "Utilisation de la mémoire: $0 %"
+  "Utilisation de la mémoire : $0 %"
  ],
  "Message": [
   null,
@@ -847,7 +847,7 @@ return plural;
  ],
  "None": [
   null,
-  "Aucun(e)"
+  "Aucun"
  ],
  "Not Ready": [
   null,
@@ -1027,7 +1027,7 @@ return plural;
  ],
  "Private: Allow only specific users or groups to pull images": [
   null,
-  "Privé: autoriser uniquement des utilisateurs ou des groupes spécifiques à extraire des images"
+  "Privé : autoriser uniquement des utilisateurs ou des groupes spécifiques à extraire des images"
  ],
  "Project": [
   null,
@@ -1255,7 +1255,7 @@ return plural;
  ],
  "Select Manifest File...": [
   null,
-  "Sélectionnez le fichier manifeste ..."
+  "Sélectionnez le fichier manifeste…"
  ],
  "Select Member": [
   null,
@@ -1299,7 +1299,7 @@ return plural;
  ],
  "Shared: Allow any authenticated user to pull images": [
   null,
-  "Shared: permet à tout utilisateur authentifié d’extraire des images"
+  "Shared : permet à tout utilisateur authentifié d’extraire des images"
  ],
  "Shell": [
   null,
@@ -1527,11 +1527,11 @@ return plural;
  ],
  "Unable to decode Kubernetes application manifest.": [
   null,
-  "Impossible de décoder le manifeste d’application Kubernetes."
+  "Incapable de décoder le manifeste d’application Kubernetes."
  ],
  "Unable to read the Kubernetes application manifest. Code $0.": [
   null,
-  "Impossible de lire le manifeste de l’application Kubernetes. Code $0 ."
+  "Incapable de lire le manifeste de l’application Kubernetes. Code $0 ."
  ],
  "Unavailable": [
   null,
@@ -1543,7 +1543,7 @@ return plural;
  ],
  "Updating $0...": [
   null,
-  "Mise à jour de $0 ..."
+  "Mise à jour de $0…"
  ],
  "Used": [
   null,
@@ -1611,7 +1611,7 @@ return plural;
  ],
  "Your login credentials do not give you access to use the docker registry from the command line.": [
   null,
-  "Vos identifiants de connexion ne vous permettent pas d’utiliser le registre docker à partir de la ligne de commande."
+  "Vos identifiants ne vous permettent pas d’utiliser le registre docker à partir de la ligne de commande."
  ],
  "eg: my-image-stream": [
   null,

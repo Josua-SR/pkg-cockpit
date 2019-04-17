@@ -137,7 +137,7 @@ return plural;
  ],
  "Boot order settings could not be saved": [
   null,
-  ""
+  "Не вдалося зберегти параметри порядку завантаження"
  ],
  "Bus": [
   null,
@@ -277,7 +277,7 @@ return plural;
  ],
  "Disk $0 fail to get detached from VM $1": [
   null,
-  ""
+  "Не вдалося від'єднати диск $0 від віртуальної машини $1"
  ],
  "Disk failed to be attached": [
   null,
@@ -313,7 +313,7 @@ return plural;
  ],
  "FORCEOFF action failed: $0": [
   null,
-  ""
+  "Помилка під час дії FORCEOFF: $0"
  ],
  "FQDN": [
   null,
@@ -397,7 +397,7 @@ return plural;
  ],
  "Mac": [
   null,
-  ""
+  "Mac"
  ],
  "Mac Address": [
   null,
@@ -437,7 +437,7 @@ return plural;
  ],
  "NIC $0 of VM $1 failed to change state": [
   null,
-  ""
+  "NIC $0 ВМ $1, не вдалося змінити стан"
  ],
  "Name": [
   null,
@@ -597,7 +597,7 @@ return plural;
  ],
  "Product": [
   null,
-  ""
+  "Продукт"
  ],
  "Protocol": [
   null,
@@ -609,7 +609,7 @@ return plural;
  ],
  "REBOOT_VM action failed: %s0": [
   null,
-  ""
+  "Помилка під час дії REBOOT_VM: %s0"
  ],
  "Readonly": [
   null,
@@ -685,7 +685,7 @@ return plural;
  ],
  "START_VM action failed: %s0": [
   null,
-  ""
+  "Помилка під час дії START_VM: %s0"
  ],
  "SUSPEND action failed": [
   null,
@@ -833,7 +833,7 @@ return plural;
  ],
  "Type ID": [
   null,
-  ""
+  "Ідентифікатор типу"
  ],
  "Unit": [
   null,
@@ -869,43 +869,43 @@ return plural;
  ],
  "VM $0 failed to Reboot": [
   null,
-  ""
+  "Не вдалося перезавантажити віртуальну машину $0"
  ],
  "VM $0 failed to force Reboot": [
   null,
-  ""
+  "Не вдалося примусово перезавантажити віртуальну машину $0"
  ],
  "VM $0 failed to force shutdown": [
   null,
-  ""
+  "Не вдалося примусово вимкнути віртуальну машину $0"
  ],
  "VM $0 failed to get deleted": [
   null,
-  ""
+  "Не вдалося вилучити віртуальну машину $0"
  ],
  "VM $0 failed to get installed": [
   null,
-  ""
+  "Не вдалося встановити віртуальну машину $0"
  ],
  "VM $0 failed to pause": [
   null,
-  ""
+  "Не вдалося призупинити віртуальну машину $0"
  ],
  "VM $0 failed to resume": [
   null,
-  ""
+  "Не вдалося відновити роботу віртуальної машини $0"
  ],
  "VM $0 failed to send NMI": [
   null,
-  ""
+  "Не вдалося надіслати NMI віртуальній машині $0"
  ],
  "VM $0 failed to shutdown": [
   null,
-  ""
+  "Не вдалося вимкнути віртуальну машину $0"
  ],
  "VM $0 failed to start": [
   null,
-  ""
+  "Не вдалося запустити віртуальну машину $0"
  ],
  "VM icon": [
   null,
@@ -953,7 +953,7 @@ return plural;
  ],
  "WWPN": [
   null,
-  ""
+  "WWPN"
  ],
  "bridge": [
   null,
@@ -1017,7 +1017,7 @@ return plural;
  ],
  "host device": [
   null,
-  ""
+  "пристрій основної системи"
  ],
  "hostdev": [
   null,
@@ -1113,7 +1113,7 @@ return plural;
  ],
  "redirected device": [
   null,
-  ""
+  "переспрямований пристрій"
  ],
  "running": [
   null,

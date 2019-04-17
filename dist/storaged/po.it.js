@@ -380,6 +380,14 @@ return plural;
   null,
   "Crea partizione"
  ],
+ "Create Partition Table": [
+  null,
+  ""
+ ],
+ "Create Partition on $0": [
+  null,
+  ""
+ ],
  "Create RAID Device": [
   null,
   "Creare un dispositivo RAID"
@@ -403,14 +411,6 @@ return plural;
  "Create new Logical Volume": [
   null,
   "Creare un nuovo volume logico"
- ],
- "Create Partition on $0": [
-  null,
-  "Creare una partizione su $0"
- ],
- "Create Partition Table": [
-  null,
-  "Creare una tabella delle partizioni"
  ],
  "Creating RAID Device $target": [
   null,
@@ -447,10 +447,6 @@ return plural;
  "Custom encryption options": [
   null,
   "Opzioni di crittografia personalizzate"
- ],
- "Custom mount option": [
-  null,
-  "Percorso di montaggio personalizzato"
  ],
  "Custom mount options": [
   null,
@@ -648,6 +644,10 @@ return plural;
   null,
   "Sistemi di file system"
  ],
+ "For legacy applications only. Reduces performance.": [
+  null,
+  ""
+ ],
  "Force remove passphrase in $0": [
   null,
   "Forza rimuovere la passphrase in $0"
@@ -691,6 +691,10 @@ return plural;
  "Grow": [
   null,
   "Crescere"
+ ],
+ "Grow Content": [
+  null,
+  ""
  ],
  "Grow Logical Volume": [
   null,
@@ -848,10 +852,6 @@ return plural;
   null,
   "Montaggio all'avvio"
  ],
- "Mount options": [
-  null,
-  "Opzioni di mount"
- ],
  "Mount point can not be empty": [
   null,
   "Il punto di montaggio non può essere vuoto."
@@ -891,10 +891,6 @@ return plural;
  "NFS Support not installed": [
   null,
   "Supporto NFS non installato"
- ],
- "NTFS - Compatible with most systems": [
-  null,
-  "NTFS - Compatibile con la maggior parte dei sistemi"
  ],
  "Name": [
   null,
@@ -1236,6 +1232,10 @@ return plural;
   null,
   "Riavvia"
  ],
+ "Recommended default": [
+  null,
+  ""
+ ],
  "Recovering": [
   null,
   "Recupero"
@@ -1312,6 +1312,10 @@ return plural;
   null,
   "Ridimensionamento $target"
  ],
+ "Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase.": [
+  null,
+  ""
+ ],
  "Running": [
   null,
   "In esecuzione"
@@ -1323,6 +1327,14 @@ return plural;
  "Save": [
   null,
   "Salva"
+ ],
+ "Save space by compressing individual blocks with LZ4": [
+  null,
+  ""
+ ],
+ "Save space by storing identical data blocks just once": [
+  null,
+  ""
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
@@ -1367,6 +1379,10 @@ return plural;
  "Shrink Logical Volume": [
   null,
   "Restringimento del volume logico"
+ ],
+ "Shrink Volume": [
+  null,
+  ""
  ],
  "Size": [
   null,
@@ -1450,7 +1466,7 @@ return plural;
  ],
  "Storage can not be managed on this system.": [
   null,
-  "Il pool di archiviazione Docker non può essere gestito su questo sistema."
+  ""
  ],
  "Store passphrase": [
   null,
@@ -1575,6 +1591,10 @@ return plural;
  "This disk cannot be removed while the device is recovering.": [
   null,
   "Questo disco non può essere rimosso mentre il dispositivo è in fase di ripristino."
+ ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  ""
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
@@ -1708,10 +1728,6 @@ return plural;
   null,
   "Supporto VDO non installato"
  ],
- "VFAT - Compatible with all systems and devices": [
-  null,
-  "VFAT - Compatibile con tutti i sistemi e dispositivi"
- ],
  "Verify key": [
   null,
   "Verificare la chiave"
@@ -1736,9 +1752,17 @@ return plural;
   null,
   "Gruppi di volume"
  ],
+ "Volume size is $0. Content size is $1.": [
+  null,
+  ""
+ ],
  "Waiting for other software management operations to finish": [
   null,
   "In attesa che finiscano le altre operazioni di gestione del software"
+ ],
+ "Warning": [
+  null,
+  ""
  ],
  "What if tang-show-keys is not available?": [
   null,
@@ -1752,10 +1776,6 @@ return plural;
   null,
   "La scrittura"
  ],
- "XFS - Red Hat Enterprise Linux 7 default": [
-  null,
-  "XFS - Red Hat Enterprise Linux 7 predefinito"
- ],
  "[$0 bytes of binary data]": [
   null,
   "[$0byte di dati binari]"
@@ -1767,10 +1787,6 @@ return plural;
  "[no data]": [
   null,
   "[nessun dato]"
- ],
- "ext4 - Red Hat Enterprise Linux 6 default": [
-  null,
-  "ext4 - Red Hat Enterprise Linux 6 predefinito"
  ],
  "iSCSI Targets": [
   null,

@@ -121,7 +121,7 @@ return plural;
  ],
  "Boot order settings could not be saved": [
   null,
-  ""
+  "Nie można zapisać ustawień kolejności uruchamiania"
  ],
  "Bus": [
   null,
@@ -197,7 +197,7 @@ return plural;
  ],
  "Creation of VM $0 failed": [
   null,
-  ""
+  "Utworzenie maszyny wirtualnej $0 się nie powiodło"
  ],
  "Ctrl+Alt+Del": [
   null,
@@ -253,7 +253,7 @@ return plural;
  ],
  "Disk $0 fail to get detached from VM $1": [
   null,
-  ""
+  "Odłączenie dysku $0 z maszyny wirtualnej $1 się nie powiodło"
  ],
  "Disk failed to be attached": [
   null,
@@ -409,7 +409,7 @@ return plural;
  ],
  "Mac": [
   null,
-  ""
+  "Mac"
  ],
  "Mac Address": [
   null,
@@ -453,7 +453,7 @@ return plural;
  ],
  "NIC $0 of VM $1 failed to change state": [
   null,
-  ""
+  "Zmiana stanu NIC $0 maszyny wirtualnej $1 się nie powiodła"
  ],
  "Name": [
   null,
@@ -473,11 +473,11 @@ return plural;
  ],
  "Network $0 failed to get activated": [
   null,
-  ""
+  "Aktywacja sieci $0 się nie powiodła"
  ],
  "Network $0 failed to get deactivated": [
   null,
-  ""
+  "Dezaktywacja sieci $0 się nie powiodła"
  ],
  "Network Boot (PXE)": [
   null,
@@ -637,7 +637,7 @@ return plural;
  ],
  "Product": [
   null,
-  ""
+  "Produkt"
  ],
  "Protocol": [
   null,
@@ -769,11 +769,11 @@ return plural;
  ],
  "Storage Pool $0 failed to get activated": [
   null,
-  ""
+  "Aktywacja puli urządzeń do przechowywania danych $0 się nie powiodła"
  ],
  "Storage Pool $0 failed to get deactivated": [
   null,
-  ""
+  "Dezaktywacja puli urządzeń do przechowywania danych $0 się nie powiodła"
  ],
  "Storage Pool Name": [
   null,
@@ -881,7 +881,7 @@ return plural;
  ],
  "Type ID": [
   null,
-  ""
+  "Identyfikator typu"
  ],
  "URL": [
   null,
@@ -921,43 +921,43 @@ return plural;
  ],
  "VM $0 failed to Reboot": [
   null,
-  ""
+  "Ponowne uruchomienie maszyny wirtualnej $0 się nie powiodło"
  ],
  "VM $0 failed to force Reboot": [
   null,
-  ""
+  "Wymuszenie ponownego uruchomienia maszyny wirtualnej $0 się nie powiodło"
  ],
  "VM $0 failed to force shutdown": [
   null,
-  ""
+  "Wymuszenie wyłączenia maszyny wirtualnej $0 się nie powiodło"
  ],
  "VM $0 failed to get deleted": [
   null,
-  ""
+  "Usunięcie maszyny wirtualnej $0 się nie powiodło"
  ],
  "VM $0 failed to get installed": [
   null,
-  ""
+  "Zainstalowanie maszyny wirtualnej $0 się nie powiodło"
  ],
  "VM $0 failed to pause": [
   null,
-  ""
+  "Wstrzymanie maszyny wirtualnej $0 się nie powiodło"
  ],
  "VM $0 failed to resume": [
   null,
-  ""
+  "Wznowienie maszyny wirtualnej $0 się nie powiodło"
  ],
  "VM $0 failed to send NMI": [
   null,
-  ""
+  "Wysłanie NMI w maszynie wirtualnej $0 się nie powiodło"
  ],
  "VM $0 failed to shutdown": [
   null,
-  ""
+  "Wyłączenie maszyny wirtualnej $0 się nie powiodło"
  ],
  "VM $0 failed to start": [
   null,
-  ""
+  "Uruchomienie maszyny wirtualnej $0 się nie powiodło"
  ],
  "VNC": [
   null,
@@ -1001,7 +1001,7 @@ return plural;
  ],
  "WWPN": [
   null,
-  ""
+  "WWPN"
  ],
  "active": [
   null,
@@ -1057,7 +1057,7 @@ return plural;
  ],
  "host device": [
   null,
-  ""
+  "urządzenie gospodarza"
  ],
  "hostdev": [
   null,
@@ -1065,11 +1065,11 @@ return plural;
  ],
  "iSCSI Target": [
   null,
-  ""
+  "Cel iSCSI"
  ],
  "iSCSI target IQN": [
   null,
-  ""
+  "IQN celu iSCSI"
  ],
  "idle": [
   null,
@@ -1105,7 +1105,7 @@ return plural;
  ],
  "redirected device": [
   null,
-  ""
+  "przekierowane urządzenie"
  ],
  "running": [
   null,

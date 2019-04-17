@@ -71,6 +71,10 @@ return plural;
   null,
   "$mtu"
  ],
+ "(Optional)": [
+  null,
+  ""
+ ],
  "1 day": [
   null,
   "1 päivä"
@@ -139,13 +143,13 @@ return plural;
   null,
   "Lisää silta"
  ],
+ "Add Ports": [
+  null,
+  ""
+ ],
  "Add Services": [
   null,
   "Lisää palveluja"
- ],
- "Add Services…": [
-  null,
-  "Lisää palveluja…"
  ],
  "Add Team": [
   null,
@@ -263,6 +267,10 @@ return plural;
   null,
   "Sulje"
  ],
+ "Comma-separated ports, ranges, and aliases are accepted": [
+  null,
+  ""
+ ],
  "Configure": [
   null,
   "Muokkaa asetuksia"
@@ -300,6 +308,10 @@ return plural;
   "Tämän sillan luominen katkaisee yhteyden serverille, jolloin hallintakäyttöliittymä ei ole saatavilla."
  ],
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
+  null,
+  ""
+ ],
+ "Custom Ports": [
   null,
   ""
  ],
@@ -358,6 +370,14 @@ return plural;
  "Ethtool": [
   null,
   "Ethtool"
+ ],
+ "Example: 22,ssh,8080,5900-5910": [
+  null,
+  ""
+ ],
+ "Example: 88,2019,nfs,rsync": [
+  null,
+  ""
  ],
  "Failed": [
   null,
@@ -447,6 +467,10 @@ return plural;
   null,
   "Virheellinen metriikka $0"
  ],
+ "Invalid port number": [
+  null,
+  ""
+ ],
  "Invalid prefix $0": [
   null,
   "Virheellinen etuliite $0"
@@ -454,6 +478,10 @@ return plural;
  "Invalid prefix or netmask $0": [
   null,
   "Virheellinen etuliite tai verkkopeite $0"
+ ],
+ "Invalid range": [
+  null,
+  ""
  ],
  "Keep connection": [
   null,
@@ -619,6 +647,10 @@ return plural;
   null,
   ""
  ],
+ "Port number and type do not match": [
+  null,
+  ""
+ ],
  "Ports": [
   null,
   "Portit"
@@ -654,6 +686,10 @@ return plural;
  "Random": [
   null,
   "Satunnainen"
+ ],
+ "Range must be strictly ordered": [
+  null,
+  ""
  ],
  "Reboot": [
   null,
@@ -710,6 +746,10 @@ return plural;
  "Service": [
   null,
   "Palvelu"
+ ],
+ "Services": [
+  null,
+  "Palvelut"
  ],
  "Set to": [
   null,
@@ -814,6 +854,10 @@ return plural;
  "Unknown configuration": [
   null,
   "Tuntematon konfiguraatio"
+ ],
+ "Unknown service name": [
+  null,
+  ""
  ],
  "Unmanaged Interfaces": [
   null,

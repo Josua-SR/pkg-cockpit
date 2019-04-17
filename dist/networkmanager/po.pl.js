@@ -71,6 +71,10 @@ return plural;
   null,
   "$mtu"
  ],
+ "(Optional)": [
+  null,
+  "(Opcjonalne)"
+ ],
  "1 day": [
   null,
   "1 dzień"
@@ -138,6 +142,10 @@ return plural;
  "Add Bridge": [
   null,
   "Dodaj mostek"
+ ],
+ "Add Ports": [
+  null,
+  "Dodaj porty"
  ],
  "Add Services": [
   null,
@@ -259,6 +267,10 @@ return plural;
   null,
   "Zamknij"
  ],
+ "Comma-separated ports, ranges, and aliases are accepted": [
+  null,
+  "Przyjmowane są porty, zakresy i aliasy oddzielone przecinkami"
+ ],
  "Configure": [
   null,
   "Skonfiguruj"
@@ -298,6 +310,10 @@ return plural;
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
   "Utworzenie tego zespołu zerwie połączenie z serwerem i uniemożliwi korzystanie z interfejsu administracji."
+ ],
+ "Custom Ports": [
+  null,
+  "Niestandardowe porty"
  ],
  "DNS": [
   null,
@@ -354,6 +370,14 @@ return plural;
  "Ethtool": [
   null,
   "ethtool"
+ ],
+ "Example: 22,ssh,8080,5900-5910": [
+  null,
+  "Przykład: 22,ssh,8080,5900-5910"
+ ],
+ "Example: 88,2019,nfs,rsync": [
+  null,
+  "Przykład: 88,2019,nfs,rsync"
  ],
  "Failed": [
   null,
@@ -443,6 +467,10 @@ return plural;
   null,
   "Nieprawidłowe parametry $0"
  ],
+ "Invalid port number": [
+  null,
+  "Nieprawidłowy numer portu"
+ ],
  "Invalid prefix $0": [
   null,
   "Nieprawidłowy przedrostek $0"
@@ -450,6 +478,10 @@ return plural;
  "Invalid prefix or netmask $0": [
   null,
   "Nieprawidłowy przedrostek lub maska sieci $0"
+ ],
+ "Invalid range": [
+  null,
+  "Nieprawidłowy zakres"
  ],
  "Keep connection": [
   null,
@@ -615,6 +647,10 @@ return plural;
   null,
   "Proszę zainstalować pakiet $0"
  ],
+ "Port number and type do not match": [
+  null,
+  "Numer i typ portu się nie zgadzają"
+ ],
  "Ports": [
   null,
   "Porty"
@@ -650,6 +686,10 @@ return plural;
  "Random": [
   null,
   "Losowo"
+ ],
+ "Range must be strictly ordered": [
+  null,
+  "Zakres musi być w ścisłej kolejności"
  ],
  "Reboot": [
   null,
@@ -706,6 +746,10 @@ return plural;
  "Service": [
   null,
   "Usługa"
+ ],
+ "Services": [
+  null,
+  "Usługi"
  ],
  "Set to": [
   null,
@@ -810,6 +854,10 @@ return plural;
  "Unknown configuration": [
   null,
   "Nieznana konfiguracja"
+ ],
+ "Unknown service name": [
+  null,
+  "Nieznana nazwa usługi"
  ],
  "Unmanaged Interfaces": [
   null,

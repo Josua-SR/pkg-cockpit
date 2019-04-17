@@ -381,6 +381,14 @@ return plural;
   null,
   "Vytvořit oddíl"
  ],
+ "Create Partition Table": [
+  null,
+  ""
+ ],
+ "Create Partition on $0": [
+  null,
+  ""
+ ],
  "Create RAID Device": [
   null,
   "Vytvořit RAID zařízení"
@@ -404,14 +412,6 @@ return plural;
  "Create new Logical Volume": [
   null,
   "Vytvořit nový logický svazek"
- ],
- "Create Partition on $0": [
-  null,
-  "Vytvořit oddíl na $0"
- ],
- "Create Partition Table": [
-  null,
-  "Vytvořit tabulku rozdělení úložiště"
  ],
  "Creating RAID Device $target": [
   null,
@@ -893,10 +893,6 @@ return plural;
   null,
   "Podpora pro NFS není nainstalovaná"
  ],
- "NTFS - Compatible with most systems": [
-  null,
-  "NTFS – kompatibilní s většinou systémů"
- ],
  "Name": [
   null,
   "Název"
@@ -1236,6 +1232,10 @@ return plural;
  "Reboot": [
   null,
   "Restartovat"
+ ],
+ "Recommended default": [
+  null,
+  ""
  ],
  "Recovering": [
   null,
@@ -1729,10 +1729,6 @@ return plural;
   null,
   "Podpora pro VDO není nainstalovaná"
  ],
- "VFAT - Compatible with all systems and devices": [
-  null,
-  "VFAT – kompatibilní se všemi systémy a zařízeními"
- ],
  "Verify key": [
   null,
   "Ověřit klíč"
@@ -1781,10 +1777,6 @@ return plural;
   null,
   "Zapisování"
  ],
- "XFS - Red Hat Enterprise Linux 7 default": [
-  null,
-  "XFS – výchozí pro Red Hat Enterprise Linux 7"
- ],
  "[$0 bytes of binary data]": [
   null,
   "[$0 bajtů binárních dat]"
@@ -1796,10 +1788,6 @@ return plural;
  "[no data]": [
   null,
   "[žádná data]"
- ],
- "ext4 - Red Hat Enterprise Linux 6 default": [
-  null,
-  "ext4 – výchozí v Red Hat Enterprise Linux 6"
  ],
  "iSCSI Targets": [
   null,

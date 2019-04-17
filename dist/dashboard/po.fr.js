@@ -185,7 +185,7 @@ return plural;
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. You can change your authentication credentials below. {{#can_sync}}You may prefer to {{#sync_link}}synchronize accounts and passwords{{/sync_link}}.{{/can_sync}}": [
   null,
-  "Cockpit n’a pas pu se connecter à {{#strong}}{{host}}{{/ strong}}. Vous pouvez modifier vos informations d’authentification ci-dessous. {{#can_sync}} Vous pouvez préférer {{#sync_link}} synchroniser les comptes et les mots de passe {{/ sync_link}}.{{/ can_sync}}"
+  "Cockpit n’a pas pu se connecter à {{#strong}}{{host}}{{/ strong}}. Vous pouvez modifier vos identifiants ci-dessous. {{#can_sync}} Vous pouvez préférer {{#sync_link}} synchroniser les comptes et les mots de passe {{/ sync_link}}.{{/ can_sync}}"
  ],
  "Color": [
   null,
@@ -253,7 +253,7 @@ return plural;
  ],
  "Error loading users: {{perm_failed}}": [
   null,
-  "Erreur lors du chargement des utilisateurs: {{perm_failed}}"
+  "Erreur lors du chargement des utilisateurs : {{perm_failed}}"
  ],
  "Expansion Chassis": [
   null,
@@ -261,7 +261,7 @@ return plural;
  ],
  "Failed to add machine: $0": [
   null,
-  "Impossible d’ajouter la machine: $0"
+  "Échec de l’ajout de la machine : $0"
  ],
  "Failed to change password": [
   null,
@@ -269,7 +269,7 @@ return plural;
  ],
  "Failed to edit machine: $0": [
   null,
-  "Échec de la modification de la machine: $0"
+  "Échec de la modification de la machine : $0"
  ],
  "Fingerprint": [
   null,
@@ -557,7 +557,7 @@ return plural;
  ],
  "Using available credentials": [
   null,
-  "Utilisation des informations d’identification disponibles"
+  "Utilisation des identifiants disponibles"
  ],
  "You are connected to {{#strong}}{{host}}{{/strong}}, however in order to synchronize users, a user with superuser privileges is required.": [
   null,

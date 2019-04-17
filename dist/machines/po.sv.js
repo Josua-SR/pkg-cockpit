@@ -67,9 +67,17 @@ return plural;
   "language": "sv",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Network": [
+  null,
+  ""
+ ],
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
   "$0 är tillgängligt till de flesta operativsystem.  Sök efter det i GNOME-programvara för att installera det eller kör följande:"
+ ],
+ "Activate": [
+  null,
+  "Aktivera"
  ],
  "Add": [
   null,
@@ -111,13 +119,13 @@ return plural;
   null,
   ""
  ],
+ "Boot order settings could not be saved": [
+  null,
+  ""
+ ],
  "Bus": [
   null,
   "Buss"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Åtgärden ÄNDRA NÄTVERKSTILLSTÅND misslyckades"
  ],
  "CPU Type": [
   null,
@@ -187,21 +195,45 @@ return plural;
   null,
   "Skapa en VM"
  ],
- "Creation of vm $0 failed": [
+ "Creation of VM $0 failed": [
   null,
-  "Att skapa en vm $0 misslyckades"
+  ""
  ],
  "Ctrl+Alt+Del": [
   null,
   "Ctrl+Alt+Del"
  ],
+ "DHCP Range": [
+  null,
+  ""
+ ],
+ "Deactivate": [
+  null,
+  "Avaktivera"
+ ],
  "Delete": [
   null,
   "Ta bort"
  ],
+ "Delete Content": [
+  null,
+  ""
+ ],
+ "Delete Storage Pool $0": [
+  null,
+  ""
+ ],
  "Delete associated storage files:": [
   null,
   "Ta bort assoicierade lagringsfiler:"
+ ],
+ "Delete the Volumes inside this Pool": [
+  null,
+  ""
+ ],
+ "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
+  null,
+  ""
  ],
  "Device": [
   null,
@@ -218,6 +250,10 @@ return plural;
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
   "Frånkopplad från seriekonsolen.  Klicka på återanslutknappen."
+ ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  ""
  ],
  "Disk failed to be attached": [
   null,
@@ -243,6 +279,14 @@ return plural;
   null,
   ""
  ],
+ "Existing Disk Image": [
+  null,
+  ""
+ ],
+ "Existing disk image on host's file system": [
+  null,
+  ""
+ ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
   "Färre än det maximala antalet virtuella CPU:er skall vara aktiverade."
@@ -250,10 +294,6 @@ return plural;
  "File": [
   null,
   "Arkiv"
- ],
- "Filesystem": [
-  null,
-  "Filsystem"
  ],
  "Filesystem Directory": [
   null,
@@ -271,9 +311,13 @@ return plural;
   null,
   "Formater"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
+ "Forwarding mode": [
   null,
-  "Åtgärden GET HYPERVISOR MAX VCPU misslyckades"
+  ""
+ ],
+ "General": [
+  null,
+  "Allmänt"
  ],
  "GiB": [
   null,
@@ -291,6 +335,10 @@ return plural;
   null,
   "Värd"
  ],
+ "Host Device": [
+  null,
+  ""
+ ],
  "Host Name": [
   null,
   "Värdnamn"
@@ -299,13 +347,21 @@ return plural;
   null,
   "Värden får inte vara tom"
  ],
- "INSTALL VM action failed": [
+ "IPv4 Address": [
   null,
-  "Åtgärden INSTALL VM misslyckades"
+  ""
+ ],
+ "IPv6 Address": [
+  null,
+  ""
  ],
  "Immediately Start VM": [
   null,
   "Starta VM:en omedelbart"
+ ],
+ "In most configurations, macvtap does not work for host to guest network communication.": [
+  null,
+  ""
  ],
  "Install": [
   null,
@@ -323,9 +379,17 @@ return plural;
   null,
   "Installationskällan skall inte vara tom"
  ],
+ "Interface Type": [
+  null,
+  ""
+ ],
  "Invalid filename": [
   null,
   "Felaktigt filnamn"
+ ],
+ "Isolated Network": [
+  null,
+  ""
  ],
  "Launch Remote Viewer": [
   null,
@@ -335,9 +399,17 @@ return plural;
   null,
   "Läser in …"
  ],
+ "Local Install Media": [
+  null,
+  ""
+ ],
  "MAC Address": [
   null,
   "MAC-adress"
+ ],
+ "Mac": [
+  null,
+  ""
  ],
  "Mac Address": [
   null,
@@ -347,6 +419,10 @@ return plural;
   null,
   "Manuell anslutning"
  ],
+ "Maximum Transmission Unit": [
+  null,
+  ""
+ ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
   "Maximalt antal virtuella CPU:er allokerade till gäst-OS:et, vilket måste vara mellan 1 och $0"
@@ -354,10 +430,6 @@ return plural;
  "Memory": [
   null,
   "Minne"
- ],
- "Memory should be positive number": [
-  null,
-  "Minnet skall vara ett positivt tal"
  ],
  "MiB": [
   null,
@@ -375,6 +447,14 @@ return plural;
   null,
   "Mer information"
  ],
+ "NAT to $0": [
+  null,
+  ""
+ ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  ""
+ ],
  "Name": [
   null,
   "Namn"
@@ -383,21 +463,41 @@ return plural;
   null,
   "Namnet får inte vara tomt"
  ],
- "Name should not consist of empty characters only": [
+ "Name: ": [
   null,
-  "Namnet får inte inte bestå av endast tomma tecken"
+  ""
+ ],
+ "Netmask": [
+  null,
+  ""
+ ],
+ "Network $0 failed to get activated": [
+  null,
+  ""
+ ],
+ "Network $0 failed to get deactivated": [
+  null,
+  ""
+ ],
+ "Network Boot (PXE)": [
+  null,
+  ""
  ],
  "Network File System": [
   null,
   "Nätverksfilsystem"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "Nätverkstyp"
+  ""
  ],
- "Network settings could not be saved": [
+ "Network Selection does not support PXE.": [
   null,
-  "Nätverksinställningarna kunde inte sparas"
+  ""
+ ],
+ "Network interface settings could not be saved": [
+  null,
+  ""
  ],
  "Networks": [
   null,
@@ -435,6 +535,10 @@ return plural;
   null,
   "Inga nätverksgränssnitt är definierade för denna VM"
  ],
+ "No network is defined on this host": [
+  null,
+  ""
+ ],
  "No storage pool is defined on this host": [
   null,
   "Ingen lagringspool är definierad på denna värd"
@@ -443,9 +547,21 @@ return plural;
   null,
   "Inga virtuella nätverk"
  ],
+ "None (Isolated Network)": [
+  null,
+  ""
+ ],
  "OS Vendor": [
   null,
   "OS-leverantör"
+ ],
+ "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
+  null,
+  ""
+ ],
+ "Open": [
+  null,
+  ""
  ],
  "Operating System": [
   null,
@@ -470,6 +586,10 @@ return plural;
  "Path to file": [
   null,
   "Sökväg till filen"
+ ],
+ "Pause": [
+  null,
+  ""
  ],
  "Persistence": [
   null,
@@ -507,6 +627,18 @@ return plural;
   null,
   "Föredraget antal uttag att exponera för gästen."
  ],
+ "Prefix": [
+  null,
+  ""
+ ],
+ "Private": [
+  null,
+  ""
+ ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protokoll"
@@ -535,9 +667,25 @@ return plural;
   null,
   "Starta om"
  ],
+ "Resume": [
+  null,
+  ""
+ ],
+ "Route to $0": [
+  null,
+  ""
+ ],
+ "Routed Network": [
+  null,
+  ""
+ ],
  "Run": [
   null,
   "Kör"
+ ],
+ "Run when host boots": [
+  null,
+  ""
  ],
  "SPICE": [
   null,
@@ -619,6 +767,14 @@ return plural;
   null,
   "Tillstånd"
  ],
+ "Storage Pool $0 failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool $0 failed to get deactivated": [
+  null,
+  ""
+ ],
  "Storage Pool Name": [
   null,
   "Lagringspoolsnamn"
@@ -635,17 +791,21 @@ return plural;
   null,
   "Lagringsstorlek"
  ],
- "Storage Size should not be negative number": [
-  null,
-  "Lagringsstorleken skall inte vara ett negativt tal"
- ],
  "Storage Volumes": [
   null,
   " Lagringsvolymer"
  ],
+ "Storage Volumes could not be deleted": [
+  null,
+  ""
+ ],
  "System": [
   null,
   "System"
+ ],
+ "Target": [
+  null,
+  "Mål"
  ],
  "Target Path": [
   null,
@@ -654,6 +814,10 @@ return plural;
  "Target path should not be empty": [
   null,
   "Målsökvägen får inte vara tom"
+ ],
+ "The Storage Pool could not be deleted": [
+  null,
+  ""
  ],
  "The VM crashed.": [
   null,
@@ -715,6 +879,10 @@ return plural;
   null,
   "Typ"
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
  "URL": [
   null,
   "URL"
@@ -722,6 +890,10 @@ return plural;
  "Unique name": [
   null,
   "Unikt namn"
+ ],
+ "Unit": [
+  null,
+  "Enhet"
  ],
  "Unplug": [
   null,
@@ -739,57 +911,53 @@ return plural;
   null,
   "Använt"
  ],
+ "Used by": [
+  null,
+  ""
+ ],
  "VCPU settings could not be saved": [
   null,
   "VCPU-inställningarna kunde inte sparas"
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
+ "VM $0 failed to Reboot": [
   null,
-  "Åtgärden VM CHANGE_NETWORK_STATE misslyckades"
+  ""
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
-  "Åtgärden VM DELETE (DESTROY) misslyckades"
+  ""
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "Åtgärden VM DELETE (UNDEFINE) misslyckades"
+  ""
  ],
- "VM DELETE action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "Åtgärden VM DELETE misslyckades"
+  ""
  ],
- "VM DETACH_DISK action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "Åtgärden VM DETACH_DISK misslyckades"
+  ""
  ],
- "VM FORCE OFF action failed": [
+ "VM $0 failed to pause": [
   null,
-  "Åtgärden VM FORCE OFF misslyckades"
+  ""
  ],
- "VM FORCE REBOOT action failed": [
+ "VM $0 failed to resume": [
   null,
-  "Åtgärden VM FORCE REBOOT misslyckades"
+  ""
  ],
- "VM REBOOT action failed": [
+ "VM $0 failed to send NMI": [
   null,
-  "Åtgärden VM REBOOT misslyckades"
+  ""
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to shutdown": [
   null,
-  "Åtgärden VM SEND Non-Maskable Interrrupt misslyckades"
+  ""
  ],
- "VM SENDNMI action failed": [
+ "VM $0 failed to start": [
   null,
-  "Åtgärden VM SENDNMI misslyckades"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "Åtgärden VM SHUT DOWN misslyckades"
- ],
- "VM START action failed": [
-  null,
-  "Åtgärden VM START misslyckades"
+  ""
  ],
  "VNC": [
   null,
@@ -807,9 +975,17 @@ return plural;
   null,
   "VNC TLS-port:"
  ],
+ "Vendor": [
+  null,
+  "Leverantör"
+ ],
  "Virtual Machines": [
   null,
   "Virtuella maskiner"
+ ],
+ "Virtual Network": [
+  null,
+  ""
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
@@ -822,6 +998,10 @@ return plural;
  "Volume": [
   null,
   "Volym"
+ ],
+ "WWPN": [
+  null,
+  ""
  ],
  "active": [
   null,
@@ -875,9 +1055,21 @@ return plural;
   null,
   "värd"
  ],
+ "host device": [
+  null,
+  ""
+ ],
  "hostdev": [
   null,
   "värdenhet"
+ ],
+ "iSCSI Target": [
+  null,
+  ""
+ ],
+ "iSCSI target IQN": [
+  null,
+  ""
  ],
  "idle": [
   null,
@@ -899,10 +1091,6 @@ return plural;
   null,
   "nej"
  ],
- "other": [
-  null,
-  "annan"
- ],
  "paused": [
   null,
   "stannad"
@@ -914,6 +1102,10 @@ return plural;
  "raw": [
   null,
   "rå"
+ ],
+ "redirected device": [
+  null,
+  ""
  ],
  "running": [
   null,

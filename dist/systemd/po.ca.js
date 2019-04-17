@@ -363,6 +363,14 @@ return plural;
   null,
   "CPU"
  ],
+ "CPU Security": [
+  null,
+  ""
+ ],
+ "CPU Security Toggles": [
+  null,
+  ""
+ ],
  "Cached": [
   null,
   "Emmagatzemat temporalment"
@@ -498,6 +506,10 @@ return plural;
  "Disable": [
   null,
   "Inhabilita"
+ ],
+ "Disable simultaneous multithreading": [
+  null,
+  ""
  ],
  "Disabled": [
   null,
@@ -783,6 +795,10 @@ return plural;
   null,
   "Minuts"
  ],
+ "Mitigations": [
+  null,
+  ""
+ ],
  "Model": [
   null,
   "Model"
@@ -959,6 +975,10 @@ return plural;
   null,
   ""
  ],
+ "Read more...": [
+  null,
+  ""
+ ],
  "Real Host Name": [
   null,
   "Nom d'amfitrió real"
@@ -1071,6 +1091,10 @@ return plural;
   null,
   "Desa"
  ],
+ "Save and reboot": [
+  null,
+  ""
+ ],
  "Sealed-case PC": [
   null,
   ""
@@ -1086,6 +1110,10 @@ return plural;
  "Security Updates Available": [
   null,
   ""
+ ],
+ "Service": [
+  null,
+  "Servei"
  ],
  "Service Logs": [
   null,
@@ -1130,6 +1158,10 @@ return plural;
  "Sockets": [
   null,
   "Sockets"
+ ],
+ "Software-based workarounds help prevent CPU security issues. These mitigations have the side effect of reducing performance. Change these settings at your own risk.": [
+  null,
+  ""
  ],
  "Space-saving Computer": [
   null,
@@ -1226,6 +1258,10 @@ return plural;
  "Terminal": [
   null,
   "Terminal"
+ ],
+ "The user $0 is not permitted to change cpu security mitigations": [
+  null,
+  ""
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,

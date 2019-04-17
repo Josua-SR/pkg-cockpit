@@ -381,6 +381,14 @@ return plural;
   null,
   "Створити розділ"
  ],
+ "Create Partition Table": [
+  null,
+  "Створити таблицю розділів"
+ ],
+ "Create Partition on $0": [
+  null,
+  "Створити розділ на $0"
+ ],
  "Create RAID Device": [
   null,
   "Створити пристрій RAID"
@@ -404,14 +412,6 @@ return plural;
  "Create new Logical Volume": [
   null,
   "Створити логічний том"
- ],
- "Create Partition on $0": [
-  null,
-  "Створити розділ на $0"
- ],
- "Create Partition Table": [
-  null,
-  "Створити таблицю розділів"
  ],
  "Creating RAID Device $target": [
   null,
@@ -893,10 +893,6 @@ return plural;
   null,
   "Не встановлено підтримки NFS"
  ],
- "NTFS - Compatible with most systems": [
-  null,
-  "NTFS - Сумісна з більшістю систем"
- ],
  "Name": [
   null,
   "Назва"
@@ -1236,6 +1232,10 @@ return plural;
  "Reboot": [
   null,
   "Перезавантажити"
+ ],
+ "Recommended default": [
+  null,
+  "Рекомендоване типове значення"
  ],
  "Recovering": [
   null,
@@ -1729,10 +1729,6 @@ return plural;
   null,
   "Підтримку VDO не встановлено"
  ],
- "VFAT - Compatible with all systems and devices": [
-  null,
-  "VFAT - Сумісна із усіма системами та пристроями"
- ],
  "Verify key": [
   null,
   "Перевірити ключ"
@@ -1781,10 +1777,6 @@ return plural;
   null,
   "Запис"
  ],
- "XFS - Red Hat Enterprise Linux 7 default": [
-  null,
-  "XFS - Типова для Red Hat Enterprise Linux 7"
- ],
  "[$0 bytes of binary data]": [
   null,
   "[$0 байтів двійкових даних]"
@@ -1796,10 +1788,6 @@ return plural;
  "[no data]": [
   null,
   "[немає даних]"
- ],
- "ext4 - Red Hat Enterprise Linux 6 default": [
-  null,
-  "ext4 - Типова для Red Hat Enterprise Linux 6"
  ],
  "iSCSI Targets": [
   null,

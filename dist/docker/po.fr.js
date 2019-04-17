@@ -145,7 +145,7 @@ return plural;
  ],
  "Change": [
   null,
-  "Changement"
+  "Modification"
  ],
  "Change resource limits": [
   null,
@@ -194,7 +194,7 @@ return plural;
  ],
  "Configure storage...": [
   null,
-  "Configurer le stockage ..."
+  "Configurer le stockage…"
  ],
  "Connecting to Docker": [
   null,
@@ -310,7 +310,7 @@ return plural;
  ],
  "Error message from Docker:": [
   null,
-  "Message d’erreur de Docker:"
+  "Message d’erreur de Docker :"
  ],
  "Everything": [
   null,
@@ -330,7 +330,7 @@ return plural;
  ],
  "Failed to start Docker: $0": [
   null,
-  "Impossible de démarrer Docker: $0"
+  "Échec du démarrage de Docker : $0"
  ],
  "Failed to stop Docker scope: $0": [
   null,
@@ -458,7 +458,7 @@ return plural;
  ],
  "Memory usage:": [
   null,
-  "Utilisation de la mémoire:"
+  "Utilisation de la mémoire :"
  ],
  "MiB": [
   null,
@@ -494,11 +494,11 @@ return plural;
  ],
  "No alias specified": [
   null,
-  "Aucun alias spécifié"
+  "Aucun alias n’est renseigné"
  ],
  "No container specified": [
   null,
-  "Aucun conteneur spécifié"
+  "Aucun conteneur n’est renseigné"
  ],
  "No containers": [
   null,
@@ -655,7 +655,7 @@ return plural;
  ],
  "Restart Policy:": [
   null,
-  "Redémarrer la stratégie:"
+  "Redémarrer la stratégie :"
  ],
  "Retries:": [
   null,
@@ -799,7 +799,7 @@ return plural;
  ],
  "Type to filter…": [
   null,
-  "Tapez pour filtrer ..."
+  "Tapez pour filtrer…"
  ],
  "UDP": [
   null,
