@@ -53,7 +53,8 @@
       <a class="ulink" href="https://cockpit-project.org/guide/latest/embedding.html" target="_top">particular page frame</a>,
       not the entire Cockpit navigation and menu. For example, the path
       <code class="literal">/cockpit/@localhost/storage/index.html</code> will open the Storage
-      page.
+      page.  It is also possible to give abbreviated forms of urls, such as "<code class="literal">storage</code>"
+      or "<code class="literal">network/firewall</code>".
     </p>
 </div>
 <div class="refsect1">
@@ -61,8 +62,9 @@
 <p>
       The <code class="literal">BROWSER </code> environment variable specifies
       the browser command (and possibly options) that will be used to open the
-      requested Cockpit page. If not set, <span class="command"><strong>cockpit-desktop</strong></span> uses
-      <span class="citerefentry"><span class="refentrytitle">xdg-open</span>(1)</span>.
+      requested Cockpit page. If not set, <span class="command"><strong>cockpit-desktop</strong></span> attempts to use
+      an internal minimalistic WebKit browser, and failing that, will attempt to detect some
+      reasonable alternatives.
     </p>
 </div>
 <div class="refsect1">

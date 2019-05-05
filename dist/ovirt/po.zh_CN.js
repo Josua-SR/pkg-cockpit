@@ -135,13 +135,13 @@ return plural;
   null,
   "启动顺序"
  ],
+ "Boot order settings could not be saved": [
+  null,
+  "无法保存启动顺序"
+ ],
  "Bus": [
   null,
   "总线"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "更改网络状态操作失败"
  ],
  "CPU Type": [
   null,
@@ -275,6 +275,10 @@ return plural;
   null,
   "从串行控制台断开连接。单击“重新连接”按钮。"
  ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  "磁盘$0无法从虚拟机$1上分离"
+ ],
  "Disk failed to be attached": [
   null,
   "挂载磁盘失败"
@@ -307,6 +311,10 @@ return plural;
   null,
   "输入新的虚拟机名称"
  ],
+ "FORCEOFF action failed: $0": [
+  null,
+  ""
+ ],
  "FQDN": [
   null,
   "FQDN"
@@ -330,10 +338,6 @@ return plural;
  "Format": [
   null,
   "格式化"
- ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "获取 HYPERVISOR 最大 VCPU 操作失败"
  ],
  "GiB": [
   null,
@@ -363,17 +367,13 @@ return plural;
   null,
   "主机维护"
  ],
- "INSTALL VM action failed": [
-  null,
-  "安装虚拟机操作失败"
- ],
  "Install": [
   null,
   "安装"
  ],
  "Interface Type": [
   null,
-  ""
+  "接口类型"
  ],
  "Launch Remote Viewer": [
   null,
@@ -394,6 +394,10 @@ return plural;
  "MIGRATE action failed": [
   null,
   "迁移操作失败"
+ ],
+ "Mac": [
+  null,
+  "Mac"
  ],
  "Mac Address": [
   null,
@@ -430,6 +434,10 @@ return plural;
  "More Information": [
   null,
   "更多信息"
+ ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  ""
  ],
  "Name": [
   null,
@@ -515,6 +523,14 @@ return plural;
   null,
   "概览"
  ],
+ "Path": [
+  null,
+  "路径"
+ ],
+ "Pause": [
+  null,
+  ""
+ ],
  "Persistence": [
   null,
   ""
@@ -579,6 +595,10 @@ return plural;
   null,
   ""
  ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "协议"
@@ -586,6 +606,10 @@ return plural;
  "REBOOT action failed": [
   null,
   "重启操作失败"
+ ],
+ "REBOOT_VM action failed: %s0": [
+  null,
+  ""
  ],
  "Readonly": [
   null,
@@ -610,6 +634,10 @@ return plural;
  "Restart": [
   null,
   "重启"
+ ],
+ "Resume": [
+  null,
+  ""
  ],
  "Run": [
   null,
@@ -654,6 +682,10 @@ return plural;
  "START action failed": [
   null,
   "启动操作失败"
+ ],
+ "START_VM action failed: %s0": [
+  null,
+  ""
  ],
  "SUSPEND action failed": [
   null,
@@ -727,6 +759,10 @@ return plural;
   null,
   "系统"
  ],
+ "Target": [
+  null,
+  "目标"
+ ],
  "Template": [
   null,
   "模板"
@@ -795,6 +831,14 @@ return plural;
   null,
   "类型"
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
+ "Unit": [
+  null,
+  "单位"
+ ],
  "Unplug": [
   null,
   "拔"
@@ -823,37 +867,45 @@ return plural;
   null,
   "VDSM 服务管理"
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to Reboot": [
   null,
-  "VM DELETE (DESTROY) 操作失败"
+  ""
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
-  "VM DELETE (UNDEFINE) 操作失败"
+  ""
  ],
- "VM FORCE OFF action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "虚拟机强制关闭操作失败"
+  ""
  ],
- "VM FORCE REBOOT action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "虚拟机强制重启操作失败"
+  ""
  ],
- "VM REBOOT action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "虚拟机重启操作失败"
+  ""
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to pause": [
   null,
-  "虚拟机发送非屏蔽中断操作失败"
+  ""
  ],
- "VM SHUT DOWN action failed": [
+ "VM $0 failed to resume": [
   null,
-  "虚拟机关机操作失败"
+  ""
  ],
- "VM START action failed": [
+ "VM $0 failed to send NMI": [
   null,
-  "虚拟机启动操作失败"
+  ""
+ ],
+ "VM $0 failed to shutdown": [
+  null,
+  ""
+ ],
+ "VM $0 failed to start": [
+  null,
+  ""
  ],
  "VM icon": [
   null,
@@ -875,6 +927,10 @@ return plural;
   null,
   "VNC TLS 端口："
  ],
+ "Vendor": [
+  null,
+  "厂商"
+ ],
  "Version": [
   null,
   "版本"
@@ -894,6 +950,10 @@ return plural;
  "Volume": [
   null,
   "卷"
+ ],
+ "WWPN": [
+  null,
+  ""
  ],
  "bridge": [
   null,
@@ -954,6 +1014,10 @@ return plural;
  "host": [
   null,
   "主机"
+ ],
+ "host device": [
+  null,
+  ""
  ],
  "hostdev": [
   null,
@@ -1027,10 +1091,6 @@ return plural;
   null,
   "正在登录oVirt"
  ],
- "other": [
-  null,
-  "其他"
- ],
  "paused": [
   null,
   "已暂停"
@@ -1050,6 +1110,10 @@ return plural;
  "reboot": [
   null,
   "重启"
+ ],
+ "redirected device": [
+  null,
+  ""
  ],
  "running": [
   null,

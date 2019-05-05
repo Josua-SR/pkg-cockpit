@@ -383,11 +383,11 @@ return plural;
  ],
  "Create Partition Table": [
   null,
-  ""
+  "Vytvořit tabulku rozdělení na oddíly"
  ],
  "Create Partition on $0": [
   null,
-  ""
+  "Vytvořit oddíl na $0"
  ],
  "Create RAID Device": [
   null,
@@ -776,6 +776,10 @@ return plural;
  "Keyserver removal may prevent unlocking $0.": [
   null,
   "Odebrání serveru s klíči může zabránit odemčení $0."
+ ],
+ "Loading...": [
+  null,
+  "Načítání…"
  ],
  "Local Mount Point": [
   null,
@@ -1235,7 +1239,7 @@ return plural;
  ],
  "Recommended default": [
   null,
-  ""
+  "Doporučené výchozí"
  ],
  "Recovering": [
   null,
@@ -1372,6 +1376,14 @@ return plural;
  "Setting up loop device $target": [
   null,
   "Nastavování zařízení zpětné smyčky $target"
+ ],
+ "Show all": [
+  null,
+  "Zobrazit vše"
+ ],
+ "Show all $0 drives": [
+  null,
+  "Zobrazit všech $0 jednotek"
  ],
  "Shrink": [
   null,
@@ -1760,10 +1772,6 @@ return plural;
  "Waiting for other software management operations to finish": [
   null,
   "Čeká se na dokončení ostatních operací správy balíčků"
- ],
- "Warning": [
-  null,
-  "Varování"
  ],
  "What if tang-show-keys is not available?": [
   null,

@@ -71,6 +71,10 @@ return plural;
   null,
   "$mtu"
  ],
+ "(Optional)": [
+  null,
+  ""
+ ],
  "1 day": [
   null,
   "1 天"
@@ -139,13 +143,13 @@ return plural;
   null,
   "添加网桥"
  ],
+ "Add Ports": [
+  null,
+  "添加端口"
+ ],
  "Add Services": [
   null,
   "添加服务"
- ],
- "Add Services…": [
-  null,
-  "添加服务…"
  ],
  "Add Team": [
   null,
@@ -263,6 +267,10 @@ return plural;
   null,
   "关闭"
  ],
+ "Comma-separated ports, ranges, and aliases are accepted": [
+  null,
+  "可以使用逗号隔开的端口、范围和别名"
+ ],
  "Configure": [
   null,
   "配置"
@@ -302,6 +310,10 @@ return plural;
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
   "创建该组将断开与服务器的连接，并且将会导致管理界面不可用。"
+ ],
+ "Custom Ports": [
+  null,
+  "自定义端口"
  ],
  "DNS": [
   null,
@@ -358,6 +370,14 @@ return plural;
  "Ethtool": [
   null,
   "Ethtool"
+ ],
+ "Example: 22,ssh,8080,5900-5910": [
+  null,
+  "例如: 22,ssh,8080,5900-5910"
+ ],
+ "Example: 88,2019,nfs,rsync": [
+  null,
+  "例如: 88,2019,nfs,rsync"
  ],
  "Failed": [
   null,
@@ -447,6 +467,10 @@ return plural;
   null,
   "无效的度量 $0"
  ],
+ "Invalid port number": [
+  null,
+  "无效的端口号"
+ ],
  "Invalid prefix $0": [
   null,
   "无效的前缀 $0"
@@ -454,6 +478,10 @@ return plural;
  "Invalid prefix or netmask $0": [
   null,
   "无效的前缀或掩码 $0"
+ ],
+ "Invalid range": [
+  null,
+  "无效范围"
  ],
  "Keep connection": [
   null,
@@ -619,6 +647,10 @@ return plural;
   null,
   "请安装 $0 软件包"
  ],
+ "Port number and type do not match": [
+  null,
+  ""
+ ],
  "Ports": [
   null,
   "端口"
@@ -654,6 +686,10 @@ return plural;
  "Random": [
   null,
   "随机"
+ ],
+ "Range must be strictly ordered": [
+  null,
+  ""
  ],
  "Reboot": [
   null,
@@ -708,6 +744,10 @@ return plural;
   "发送中"
  ],
  "Service": [
+  null,
+  "服务"
+ ],
+ "Services": [
   null,
   "服务"
  ],
@@ -814,6 +854,10 @@ return plural;
  "Unknown configuration": [
   null,
   "未知配置"
+ ],
+ "Unknown service name": [
+  null,
+  ""
  ],
  "Unmanaged Interfaces": [
   null,

@@ -379,6 +379,14 @@ return plural;
   null,
   "创建分区"
  ],
+ "Create Partition Table": [
+  null,
+  "创建分区表"
+ ],
+ "Create Partition on $0": [
+  null,
+  "在$0上创建分区"
+ ],
  "Create RAID Device": [
   null,
   "创建 RAID 设备"
@@ -402,14 +410,6 @@ return plural;
  "Create new Logical Volume": [
   null,
   "创建新逻辑卷"
- ],
- "Create Partition on $0": [
-  null,
-  "为 $0 创建分区"
- ],
- "Create Partition Table": [
-  null,
-  "创建分区表"
  ],
  "Creating RAID Device $target": [
   null,
@@ -775,6 +775,10 @@ return plural;
   null,
   "删除 keyserver 可能会阻止解锁 $0。"
  ],
+ "Loading...": [
+  null,
+  "载入中..."
+ ],
  "Local Mount Point": [
   null,
   "挂载点"
@@ -890,10 +894,6 @@ return plural;
  "NFS Support not installed": [
   null,
   "未安装 NFS 的支持"
- ],
- "NTFS - Compatible with most systems": [
-  null,
-  "NTFS - 兼容多数系统"
  ],
  "Name": [
   null,
@@ -1235,6 +1235,10 @@ return plural;
   null,
   "重启"
  ],
+ "Recommended default": [
+  null,
+  ""
+ ],
  "Recovering": [
   null,
   "恢复"
@@ -1370,6 +1374,14 @@ return plural;
  "Setting up loop device $target": [
   null,
   "创建 loop 设备 $target"
+ ],
+ "Show all": [
+  null,
+  ""
+ ],
+ "Show all $0 drives": [
+  null,
+  ""
  ],
  "Shrink": [
   null,
@@ -1727,10 +1739,6 @@ return plural;
   null,
   "未安装 VDO 的支持"
  ],
- "VFAT - Compatible with all systems and devices": [
-  null,
-  "VFAT - 兼容所有系统和设备"
- ],
  "Verify key": [
   null,
   "验证密钥"
@@ -1763,10 +1771,6 @@ return plural;
   null,
   "等待其他软件管理操作完成"
  ],
- "Warning": [
-  null,
-  ""
- ],
  "What if tang-show-keys is not available?": [
   null,
   "如果没有 tang-show-keys？"
@@ -1779,10 +1783,6 @@ return plural;
   null,
   "写入中"
  ],
- "XFS - Red Hat Enterprise Linux 7 default": [
-  null,
-  "XFS - Red Hat Enterprise Linux 7 默认"
- ],
  "[$0 bytes of binary data]": [
   null,
   "[$0 字节二进制数据]"
@@ -1794,10 +1794,6 @@ return plural;
  "[no data]": [
   null,
   "[没有数据]"
- ],
- "ext4 - Red Hat Enterprise Linux 6 default": [
-  null,
-  "ext4 - Red Hat Enterprise Linux 6 默认"
  ],
  "iSCSI Targets": [
   null,

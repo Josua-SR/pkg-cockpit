@@ -692,10 +692,6 @@ return plural;
   null,
   "Crecer"
  ],
- "Grow Content": [
-  null,
-  ""
- ],
  "Grow Logical Volume": [
   null,
   "Crecer Volumen Lógico"
@@ -1380,10 +1376,6 @@ return plural;
   null,
   "Encoger Volumen Lógico"
  ],
- "Shrink Volume": [
-  null,
-  ""
- ],
  "Size": [
   null,
   "Tamaño"
@@ -1592,10 +1584,6 @@ return plural;
   null,
   "El disco no se puede quitar mientras el dispositivo se está recuperando."
  ],
- "This logical volume is not completely used by its content.": [
-  null,
-  ""
- ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "Este volumen necesita ser activado antes de poder modificar el tamaño."
@@ -1755,10 +1743,6 @@ return plural;
  "Volume Groups": [
   null,
   "Grupos de Volumen"
- ],
- "Volume size is $0. Content size is $1.": [
-  null,
-  ""
  ],
  "Waiting for other software management operations to finish": [
   null,

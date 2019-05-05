@@ -73,7 +73,7 @@ return plural;
  ],
  "(Optional)": [
   null,
-  ""
+  "(Volitelné)"
  ],
  "1 day": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "Add Ports": [
   null,
-  ""
+  "Přidat porty"
  ],
  "Add Services": [
   null,
@@ -269,7 +269,7 @@ return plural;
  ],
  "Comma-separated ports, ranges, and aliases are accepted": [
   null,
-  ""
+  "Jsou přijímány čárkou oddělované porty, rozsahy a alternativní názvy"
  ],
  "Configure": [
   null,
@@ -313,7 +313,7 @@ return plural;
  ],
  "Custom Ports": [
   null,
-  ""
+  "Uživatelsky určené porty"
  ],
  "DNS": [
   null,
@@ -373,11 +373,11 @@ return plural;
  ],
  "Example: 22,ssh,8080,5900-5910": [
   null,
-  ""
+  "Příklad: 22,ssh,8080,5900-5910"
  ],
  "Example: 88,2019,nfs,rsync": [
   null,
-  ""
+  "Příkaz: 88,2019,nfs,rsync"
  ],
  "Failed": [
   null,
@@ -469,7 +469,7 @@ return plural;
  ],
  "Invalid port number": [
   null,
-  ""
+  "Neplatné číslo portu"
  ],
  "Invalid prefix $0": [
   null,
@@ -481,7 +481,7 @@ return plural;
  ],
  "Invalid range": [
   null,
-  ""
+  "Neplatný rozsah"
  ],
  "Keep connection": [
   null,
@@ -649,7 +649,7 @@ return plural;
  ],
  "Port number and type do not match": [
   null,
-  ""
+  "Číslo a typ portu si neodpovídají"
  ],
  "Ports": [
   null,
@@ -689,7 +689,7 @@ return plural;
  ],
  "Range must be strictly ordered": [
   null,
-  ""
+  "Je třeba, aby rozsah byl striktně řazený"
  ],
  "Reboot": [
   null,
@@ -857,7 +857,7 @@ return plural;
  ],
  "Unknown service name": [
   null,
-  ""
+  "Neznámý název služby"
  ],
  "Unmanaged Interfaces": [
   null,

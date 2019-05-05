@@ -692,10 +692,6 @@ return plural;
   null,
   "Fes créixer"
  ],
- "Grow Content": [
-  null,
-  ""
- ],
  "Grow Logical Volume": [
   null,
   ""
@@ -1380,10 +1376,6 @@ return plural;
   null,
   ""
  ],
- "Shrink Volume": [
-  null,
-  ""
- ],
  "Size": [
   null,
   "Mida"
@@ -1592,10 +1584,6 @@ return plural;
   null,
   "Aquest disc no es pot treure quan s'està recuperant el dispositiu."
  ],
- "This logical volume is not completely used by its content.": [
-  null,
-  ""
- ],
  "This volume needs to be activated before it can be resized.": [
   null,
   ""
@@ -1751,10 +1739,6 @@ return plural;
  "Volume Groups": [
   null,
   "Grups de volums"
- ],
- "Volume size is $0. Content size is $1.": [
-  null,
-  ""
  ],
  "Waiting for other software management operations to finish": [
   null,

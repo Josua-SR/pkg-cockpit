@@ -73,7 +73,7 @@ return plural;
  ],
  "(Optional)": [
   null,
-  ""
+  "(facultatif)"
  ],
  "1 day": [
   null,
@@ -145,7 +145,7 @@ return plural;
  ],
  "Add Ports": [
   null,
-  ""
+  "Ajouter des ports"
  ],
  "Add Services": [
   null,
@@ -269,7 +269,7 @@ return plural;
  ],
  "Comma-separated ports, ranges, and aliases are accepted": [
   null,
-  ""
+  "Plusieurs ports, pages et alias séparés par des virgules sont acceptés"
  ],
  "Configure": [
   null,
@@ -313,7 +313,7 @@ return plural;
  ],
  "Custom Ports": [
   null,
-  ""
+  "Ports personnalisés"
  ],
  "DNS": [
   null,
@@ -373,11 +373,11 @@ return plural;
  ],
  "Example: 22,ssh,8080,5900-5910": [
   null,
-  ""
+  "Exemple : 22,ssh,8080,5900-5910"
  ],
  "Example: 88,2019,nfs,rsync": [
   null,
-  ""
+  "Exemple : 88,2019,nfs,rsync"
  ],
  "Failed": [
   null,
@@ -469,7 +469,7 @@ return plural;
  ],
  "Invalid port number": [
   null,
-  ""
+  "Numéro de port invalide"
  ],
  "Invalid prefix $0": [
   null,
@@ -481,7 +481,7 @@ return plural;
  ],
  "Invalid range": [
   null,
-  ""
+  "Plage invalide"
  ],
  "Keep connection": [
   null,
@@ -649,7 +649,7 @@ return plural;
  ],
  "Port number and type do not match": [
   null,
-  ""
+  "Le numéro de port et son type ne correspondent pas"
  ],
  "Ports": [
   null,
@@ -689,7 +689,7 @@ return plural;
  ],
  "Range must be strictly ordered": [
   null,
-  ""
+  "La plage doit être strictement ordonnée."
  ],
  "Reboot": [
   null,
@@ -857,7 +857,7 @@ return plural;
  ],
  "Unknown service name": [
   null,
-  ""
+  "Nom de service inconnu"
  ],
  "Unmanaged Interfaces": [
   null,

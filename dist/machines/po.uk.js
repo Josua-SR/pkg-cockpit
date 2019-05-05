@@ -899,6 +899,10 @@ return plural;
   null,
   "Від'єднати"
  ],
+ "Up to $0 $1 available on the host": [
+  null,
+  ""
+ ],
  "Usage": [
   null,
   "Використання"
@@ -1002,6 +1006,10 @@ return plural;
  "WWPN": [
   null,
   "WWPN"
+ ],
+ "You need to select the most closely matching OS vendor and Operating System": [
+  null,
+  "Вам слід вибрати найбільш відповідного виробника операційної системи і операційну систему"
  ],
  "active": [
   null,

@@ -25,6 +25,16 @@ a {
   z-index: auto;
 }
 
+.btn-group, .btn-group-vertical {
+    /* Fix button groups from wrapping in narrow widths */
+    display: inline-flex;
+}
+
+.btn-group-vertical {
+    /* Vertical btn-groups should be vertical */
+    flex-direction: column;
+}
+
 a.disabled {
     cursor: not-allowed !important;
     text-decoration: none;
@@ -599,6 +609,7 @@ tr.listing-ct-item.listing-ct-selected .badge:hover {
 }
 .listing-ct-head .listing-ct-actions {
   margin-top: -7px;
+  order: -1;
 }
 /* The last column of a listing is always right aligned */
 tr.listing-ct-item td:last-child {
@@ -619,6 +630,8 @@ div.listing-ct-head {
   border-style: solid;
   border-width: 1px 1px 0 1px;
   overflow: hidden;
+  display: flex;
+  flex-flow: row-reverse wrap;
 }
 div.listing-ct-head:last-child {
   padding-bottom: 10px;
@@ -646,6 +659,7 @@ tbody.active .listing-ct-head {
   font-size: 13px;
   /* Counteract listing-ct-head padding */
   margin-top: -10px;
+  margin: 0;
 }
 .listing-ct-head .nav-tabs {
   border-bottom: none;
@@ -653,6 +667,7 @@ tbody.active .listing-ct-head {
 .listing-ct-head .nav-tabs-pf {
   /* Counteract listing-ct-head padding */
   margin: -10px 0 0 -10px;
+  flex: auto;
 }
 /* To display info instead of tabs */
 .listing-ct-head dl {

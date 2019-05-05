@@ -382,11 +382,11 @@ return plural;
  ],
  "Create Partition Table": [
   null,
-  ""
+  "Créer une table de partition"
  ],
  "Create Partition on $0": [
   null,
-  ""
+  "Créer une partition sur $0"
  ],
  "Create RAID Device": [
   null,
@@ -775,6 +775,10 @@ return plural;
  "Keyserver removal may prevent unlocking $0.": [
   null,
   "La suppression du serveur de clés peut empêcher le déverrouillage de $0."
+ ],
+ "Loading...": [
+  null,
+  "Chargement…"
  ],
  "Local Mount Point": [
   null,
@@ -1234,7 +1238,7 @@ return plural;
  ],
  "Recommended default": [
   null,
-  ""
+  "Valeur par défaut recommandée"
  ],
  "Recovering": [
   null,
@@ -1371,6 +1375,14 @@ return plural;
  "Setting up loop device $target": [
   null,
   "Configuration du périphérique de boucle $target"
+ ],
+ "Show all": [
+  null,
+  ""
+ ],
+ "Show all $0 drives": [
+  null,
+  ""
  ],
  "Shrink": [
   null,
@@ -1759,10 +1771,6 @@ return plural;
  "Waiting for other software management operations to finish": [
   null,
   "Attente de la fin des autres opérations de gestion du logiciel"
- ],
- "Warning": [
-  null,
-  "Avertissement"
  ],
  "What if tang-show-keys is not available?": [
   null,

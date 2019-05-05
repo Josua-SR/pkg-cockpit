@@ -509,7 +509,7 @@ return plural;
  ],
  "Disable simultaneous multithreading": [
   null,
-  ""
+  "Vypnout souběžné vícevláknové zpracovávání"
  ],
  "Disabled": [
   null,
