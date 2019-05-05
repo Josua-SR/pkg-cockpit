@@ -692,10 +692,6 @@ return plural;
   null,
   "Utöka"
  ],
- "Grow Content": [
-  null,
-  ""
- ],
  "Grow Logical Volume": [
   null,
   "Utöka en logisk volym"
@@ -1380,10 +1376,6 @@ return plural;
   null,
   "Krymp en logisk volym"
  ],
- "Shrink Volume": [
-  null,
-  ""
- ],
  "Size": [
   null,
   "Storlek"
@@ -1592,10 +1584,6 @@ return plural;
   null,
   "Denna disk kan inte tas bort medans enheten återhämtar sig."
  ],
- "This logical volume is not completely used by its content.": [
-  null,
-  ""
- ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "Denna volym behöver aktiveras före dess storlek kan ändras."
@@ -1751,10 +1739,6 @@ return plural;
  "Volume Groups": [
   null,
   "Volymgrupper"
- ],
- "Volume size is $0. Content size is $1.": [
-  null,
-  ""
  ],
  "Waiting for other software management operations to finish": [
   null,

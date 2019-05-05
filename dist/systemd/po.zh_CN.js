@@ -293,7 +293,7 @@ return plural;
  ],
  "Appearance:": [
   null,
-  ""
+  "外观："
  ],
  "Asset Tag": [
   null,
@@ -337,7 +337,7 @@ return plural;
  ],
  "Black": [
   null,
-  ""
+  "黑色"
  ],
  "Blade": [
   null,
@@ -362,6 +362,14 @@ return plural;
  "CPU": [
   null,
   "CPU"
+ ],
+ "CPU Security": [
+  null,
+  "CPU安全性"
+ ],
+ "CPU Security Toggles": [
+  null,
+  "CPU安全性开关"
  ],
  "Cached": [
   null,
@@ -401,7 +409,7 @@ return plural;
  ],
  "Clear All Filters": [
   null,
-  ""
+  "清楚所有过滤器"
  ],
  "Click to see system hardware information": [
   null,
@@ -461,7 +469,7 @@ return plural;
  ],
  "Ctrl+Insert": [
   null,
-  ""
+  "Ctrl+Insert"
  ],
  "Current boot": [
   null,
@@ -469,7 +477,7 @@ return plural;
  ],
  "Dark": [
   null,
-  ""
+  "暗色"
  ],
  "Debug and above": [
   null,
@@ -498,6 +506,10 @@ return plural;
  "Disable": [
   null,
   "禁用"
+ ],
+ "Disable simultaneous multithreading": [
+  null,
+  "禁用同步多线程"
  ],
  "Disabled": [
   null,
@@ -705,7 +717,7 @@ return plural;
  ],
  "Light": [
   null,
-  ""
+  "亮色"
  ],
  "Load earlier entries": [
   null,
@@ -782,6 +794,10 @@ return plural;
  "Minutes": [
   null,
   "分钟"
+ ],
+ "Mitigations": [
+  null,
+  ""
  ],
  "Model": [
   null,
@@ -959,6 +975,10 @@ return plural;
   null,
   "机架式机箱"
  ],
+ "Read more...": [
+  null,
+  ""
+ ],
  "Real Host Name": [
   null,
   "实际主机名"
@@ -1071,6 +1091,10 @@ return plural;
   null,
   "保存"
  ],
+ "Save and reboot": [
+  null,
+  ""
+ ],
  "Sealed-case PC": [
   null,
   "密封式 PC"
@@ -1086,6 +1110,10 @@ return plural;
  "Security Updates Available": [
   null,
   "可用的错误修复更新"
+ ],
+ "Service": [
+  null,
+  "服务"
  ],
  "Service Logs": [
   null,
@@ -1130,6 +1158,10 @@ return plural;
  "Sockets": [
   null,
   "套接字"
+ ],
+ "Software-based workarounds help prevent CPU security issues. These mitigations have the side effect of reducing performance. Change these settings at your own risk.": [
+  null,
+  ""
  ],
  "Space-saving Computer": [
   null,
@@ -1226,6 +1258,10 @@ return plural;
  "Terminal": [
   null,
   "终端"
+ ],
+ "The user $0 is not permitted to change cpu security mitigations": [
+  null,
+  ""
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,

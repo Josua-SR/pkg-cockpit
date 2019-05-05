@@ -509,7 +509,7 @@ return plural;
  ],
  "Disable simultaneous multithreading": [
   null,
-  ""
+  "Wyłącz wielowątkowość współbieżną"
  ],
  "Disabled": [
   null,

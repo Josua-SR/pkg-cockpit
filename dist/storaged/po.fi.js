@@ -692,10 +692,6 @@ return plural;
   null,
   "Kasvata"
  ],
- "Grow Content": [
-  null,
-  ""
- ],
  "Grow Logical Volume": [
   null,
   "Kasvata loogista taltiota"
@@ -1380,10 +1376,6 @@ return plural;
   null,
   ""
  ],
- "Shrink Volume": [
-  null,
-  ""
- ],
  "Size": [
   null,
   "Koko"
@@ -1592,10 +1584,6 @@ return plural;
   null,
   ""
  ],
- "This logical volume is not completely used by its content.": [
-  null,
-  ""
- ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "Tämä taltio tulee aktivoida, ennen kuin sen kokoa voi muuttaa."
@@ -1751,10 +1739,6 @@ return plural;
  "Volume Groups": [
   null,
   "Taltioryhmät"
- ],
- "Volume size is $0. Content size is $1.": [
-  null,
-  ""
  ],
  "Waiting for other software management operations to finish": [
   null,

@@ -691,10 +691,6 @@ return plural;
   null,
   "增長"
  ],
- "Grow Content": [
-  null,
-  ""
- ],
  "Grow Logical Volume": [
   null,
   "增長邏輯卷"
@@ -1379,10 +1375,6 @@ return plural;
   null,
   "收縮邏輯卷"
  ],
- "Shrink Volume": [
-  null,
-  ""
- ],
  "Size": [
   null,
   "大小"
@@ -1591,10 +1583,6 @@ return plural;
   null,
   "設備恢復時無法刪除此磁盤。"
  ],
- "This logical volume is not completely used by its content.": [
-  null,
-  ""
- ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "在調整大小之前，需要激活此卷。"
@@ -1750,10 +1738,6 @@ return plural;
  "Volume Groups": [
   null,
   "卷組"
- ],
- "Volume size is $0. Content size is $1.": [
-  null,
-  ""
  ],
  "Waiting for other software management operations to finish": [
   null,

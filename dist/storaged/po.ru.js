@@ -693,10 +693,6 @@ return plural;
   null,
   "расти"
  ],
- "Grow Content": [
-  null,
-  ""
- ],
  "Grow Logical Volume": [
   null,
   "Рост логического объема"
@@ -1381,10 +1377,6 @@ return plural;
   null,
   "Термоусадочный логический том"
  ],
- "Shrink Volume": [
-  null,
-  ""
- ],
  "Size": [
   null,
   "Размер"
@@ -1593,10 +1585,6 @@ return plural;
   null,
   "Этот диск не может быть удален во время восстановления устройства."
  ],
- "This logical volume is not completely used by its content.": [
-  null,
-  ""
- ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "Этот том необходимо активировать, прежде чем его можно будет изменить."
@@ -1752,10 +1740,6 @@ return plural;
  "Volume Groups": [
   null,
   "Группы томов"
- ],
- "Volume size is $0. Content size is $1.": [
-  null,
-  ""
  ],
  "Waiting for other software management operations to finish": [
   null,

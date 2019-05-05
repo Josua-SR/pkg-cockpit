@@ -777,6 +777,10 @@ return plural;
   null,
   "Usunięcie serwera kluczy może uniemożliwić odblokowanie $0."
  ],
+ "Loading...": [
+  null,
+  "Wczytywanie…"
+ ],
  "Local Mount Point": [
   null,
   "Lokalny punkt montowania"
@@ -1373,6 +1377,14 @@ return plural;
   null,
   "Ustawianie urządzenia zwrotnego $target"
  ],
+ "Show all": [
+  null,
+  "Wyświetl wszystkie"
+ ],
+ "Show all $0 drives": [
+  null,
+  "Wyświetl wszystkie urządzenia $0"
+ ],
  "Shrink": [
   null,
   "Zmniejsz"
@@ -1760,10 +1772,6 @@ return plural;
  "Waiting for other software management operations to finish": [
   null,
   "Oczekiwanie na ukończenie pozostałych działań zarządzania oprogramowaniem"
- ],
- "Warning": [
-  null,
-  "Ostrzeżenie"
  ],
  "What if tang-show-keys is not available?": [
   null,

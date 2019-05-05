@@ -85,7 +85,7 @@ return plural;
  ],
  "After leaving the domain, only users with local credentials will be able to log into this machine. This may also affect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  ""
+  "从域离开后，仅有使用本地凭据的用户可以登录到该主机。这也可能影响到包括DNS解析设置以及信任的CA在内的一系列设置"
  ],
  "Authentication": [
   null,
@@ -105,7 +105,7 @@ return plural;
  ],
  "Client Software": [
   null,
-  ""
+  "客户端软件"
  ],
  "Computer OU": [
   null,

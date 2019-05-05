@@ -777,6 +777,10 @@ return plural;
   null,
   "Вилучення сервера ключів може завадити розблокуванню $0."
  ],
+ "Loading...": [
+  null,
+  "Завантаження…"
+ ],
  "Local Mount Point": [
   null,
   "Локальна точка монтування"
@@ -1373,6 +1377,14 @@ return plural;
   null,
   "Налаштовуємо петльовий пристрій $target"
  ],
+ "Show all": [
+  null,
+  "Показати усі"
+ ],
+ "Show all $0 drives": [
+  null,
+  "Показати усі диски $0"
+ ],
  "Shrink": [
   null,
   "Стиснути"
@@ -1760,10 +1772,6 @@ return plural;
  "Waiting for other software management operations to finish": [
   null,
   "Очікуємо на завершення інших дій із програмним забезпеченням"
- ],
- "Warning": [
-  null,
-  "Попередження"
  ],
  "What if tang-show-keys is not available?": [
   null,

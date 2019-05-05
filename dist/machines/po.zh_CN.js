@@ -67,6 +67,10 @@ return plural;
   "language": "zh_CN",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Network": [
+  null,
+  ""
+ ],
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
   "$0 大多数操作系统可用。为了安装它，请在 GNOME 中搜索它，或运行以下命令： "
@@ -115,13 +119,13 @@ return plural;
   null,
   "启动顺序"
  ],
+ "Boot order settings could not be saved": [
+  null,
+  "无法保存启动顺序"
+ ],
  "Bus": [
   null,
   "总线"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "更改网络状态操作失败"
  ],
  "CPU Type": [
   null,
@@ -191,9 +195,9 @@ return plural;
   null,
   "创建虚拟机"
  ],
- "Creation of vm $0 failed": [
+ "Creation of VM $0 failed": [
   null,
-  "创建 vm $0失败"
+  "虚拟机$0创建失败"
  ],
  "Ctrl+Alt+Del": [
   null,
@@ -201,7 +205,7 @@ return plural;
  ],
  "DHCP Range": [
   null,
-  ""
+  "DHCP 范围"
  ],
  "Deactivate": [
   null,
@@ -213,11 +217,11 @@ return plural;
  ],
  "Delete Content": [
   null,
-  ""
+  "删除内容"
  ],
  "Delete Storage Pool $0": [
   null,
-  ""
+  "删除存储池$0"
  ],
  "Delete associated storage files:": [
   null,
@@ -225,11 +229,11 @@ return plural;
  ],
  "Delete the Volumes inside this Pool": [
   null,
-  ""
+  "删除这个存储池中的卷"
  ],
  "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
   null,
-  ""
+  "删除一个不活跃的池指挥取消定义这个池，而不会删除其数据"
  ],
  "Device": [
   null,
@@ -246,6 +250,10 @@ return plural;
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
   "从串行控制台断开连接。单击“重新连接”按钮。"
+ ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  "磁盘$0无法从虚拟机$1上分离"
  ],
  "Disk failed to be attached": [
   null,
@@ -273,7 +281,7 @@ return plural;
  ],
  "Existing Disk Image": [
   null,
-  ""
+  "现有磁盘镜像"
  ],
  "Existing disk image on host's file system": [
   null,
@@ -307,10 +315,6 @@ return plural;
   null,
   ""
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "获取 HYPERVISOR 最大 VCPU 操作失败"
- ],
  "General": [
   null,
   "通用"
@@ -331,6 +335,10 @@ return plural;
   null,
   "主机"
  ],
+ "Host Device": [
+  null,
+  ""
+ ],
  "Host Name": [
   null,
   "主机名"
@@ -339,21 +347,21 @@ return plural;
   null,
   "主机不能为空"
  ],
- "INSTALL VM action failed": [
-  null,
-  "安装虚拟机操作失败"
- ],
  "IPv4 Address": [
   null,
-  ""
+  "IPv4 地址"
  ],
  "IPv6 Address": [
   null,
-  ""
+  "IPv6 地址"
  ],
  "Immediately Start VM": [
   null,
   "立即启动 VM"
+ ],
+ "In most configurations, macvtap does not work for host to guest network communication.": [
+  null,
+  "在多数配置中，macvtap 不能为主机到客户机的网络通信工作。"
  ],
  "Install": [
   null,
@@ -373,11 +381,15 @@ return plural;
  ],
  "Interface Type": [
   null,
-  ""
+  "接口类型"
  ],
  "Invalid filename": [
   null,
   "无效的文件名"
+ ],
+ "Isolated Network": [
+  null,
+  "隔离的网络"
  ],
  "Launch Remote Viewer": [
   null,
@@ -389,11 +401,15 @@ return plural;
  ],
  "Local Install Media": [
   null,
-  ""
+  "本地安装介质"
  ],
  "MAC Address": [
   null,
   "MAC 地址"
+ ],
+ "Mac": [
+  null,
+  "Mac"
  ],
  "Mac Address": [
   null,
@@ -431,6 +447,14 @@ return plural;
   null,
   "更多信息"
  ],
+ "NAT to $0": [
+  null,
+  ""
+ ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  ""
+ ],
  "Name": [
   null,
   "名称"
@@ -447,11 +471,27 @@ return plural;
   null,
   ""
  ],
+ "Network $0 failed to get activated": [
+  null,
+  ""
+ ],
+ "Network $0 failed to get deactivated": [
+  null,
+  ""
+ ],
+ "Network Boot (PXE)": [
+  null,
+  ""
+ ],
  "Network File System": [
   null,
   "网络文件系统"
  ],
  "Network Interfaces": [
+  null,
+  ""
+ ],
+ "Network Selection does not support PXE.": [
   null,
   ""
  ],
@@ -547,6 +587,10 @@ return plural;
   null,
   "文件路径"
  ],
+ "Pause": [
+  null,
+  ""
+ ],
  "Persistence": [
   null,
   ""
@@ -591,6 +635,10 @@ return plural;
   null,
   ""
  ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "协议"
@@ -618,6 +666,18 @@ return plural;
  "Restart": [
   null,
   "重启"
+ ],
+ "Resume": [
+  null,
+  ""
+ ],
+ "Route to $0": [
+  null,
+  ""
+ ],
+ "Routed Network": [
+  null,
+  ""
  ],
  "Run": [
   null,
@@ -707,6 +767,14 @@ return plural;
   null,
   "状态"
  ],
+ "Storage Pool $0 failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool $0 failed to get deactivated": [
+  null,
+  ""
+ ],
  "Storage Pool Name": [
   null,
   "存储池名"
@@ -714,14 +782,6 @@ return plural;
  "Storage Pool failed to be created": [
   null,
   "创建存储池失败"
- ],
- "Storage Pool failed to get activated": [
-  null,
-  ""
- ],
- "Storage Pool failed to get deactivated": [
-  null,
-  ""
  ],
  "Storage Pools": [
   null,
@@ -742,6 +802,10 @@ return plural;
  "System": [
   null,
   "系统"
+ ],
+ "Target": [
+  null,
+  "目标"
  ],
  "Target Path": [
   null,
@@ -815,6 +879,10 @@ return plural;
   null,
   "类型"
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
  "URL": [
   null,
   "URL"
@@ -823,9 +891,17 @@ return plural;
   null,
   "唯一名称"
  ],
+ "Unit": [
+  null,
+  "单位"
+ ],
  "Unplug": [
   null,
   "拔"
+ ],
+ "Up to $0 $1 available on the host": [
+  null,
+  ""
  ],
  "Usage": [
   null,
@@ -847,53 +923,45 @@ return plural;
   null,
   "VCPU 设置不能被保存"
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
+ "VM $0 failed to Reboot": [
   null,
-  "VM CHANGE_NETWORK_STATE 操作失败"
+  ""
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
-  "VM DELETE (DESTROY) 操作失败"
+  ""
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "VM DELETE (UNDEFINE) 操作失败"
+  ""
  ],
- "VM DELETE action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "VM DELETE 操作失败"
+  ""
  ],
- "VM DETACH_DISK action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "VM DETACH_DISK 操作失败"
+  ""
  ],
- "VM FORCE OFF action failed": [
+ "VM $0 failed to pause": [
   null,
-  "虚拟机强制关闭操作失败"
+  ""
  ],
- "VM FORCE REBOOT action failed": [
+ "VM $0 failed to resume": [
   null,
-  "虚拟机强制重启操作失败"
+  ""
  ],
- "VM REBOOT action failed": [
+ "VM $0 failed to send NMI": [
   null,
-  "虚拟机重启操作失败"
+  ""
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to shutdown": [
   null,
-  "虚拟机发送非屏蔽中断操作失败"
+  ""
  ],
- "VM SENDNMI action failed": [
+ "VM $0 failed to start": [
   null,
-  "VM SENDNMI 操作失败"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "虚拟机关机操作失败"
- ],
- "VM START action failed": [
-  null,
-  "虚拟机启动操作失败"
+  ""
  ],
  "VNC": [
   null,
@@ -911,9 +979,17 @@ return plural;
   null,
   "VNC TLS 端口："
  ],
+ "Vendor": [
+  null,
+  "厂商"
+ ],
  "Virtual Machines": [
   null,
   "虚拟机"
+ ],
+ "Virtual Network": [
+  null,
+  ""
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
@@ -926,6 +1002,14 @@ return plural;
  "Volume": [
   null,
   "卷"
+ ],
+ "WWPN": [
+  null,
+  ""
+ ],
+ "You need to select the most closely matching OS vendor and Operating System": [
+  null,
+  ""
  ],
  "active": [
   null,
@@ -979,9 +1063,21 @@ return plural;
   null,
   "主机"
  ],
+ "host device": [
+  null,
+  ""
+ ],
  "hostdev": [
   null,
   "hostdev"
+ ],
+ "iSCSI Target": [
+  null,
+  ""
+ ],
+ "iSCSI target IQN": [
+  null,
+  ""
  ],
  "idle": [
   null,
@@ -1003,10 +1099,6 @@ return plural;
   null,
   "否"
  ],
- "other": [
-  null,
-  "其他"
- ],
  "paused": [
   null,
   "已暂停"
@@ -1018,6 +1110,10 @@ return plural;
  "raw": [
   null,
   "raw"
+ ],
+ "redirected device": [
+  null,
+  ""
  ],
  "running": [
   null,

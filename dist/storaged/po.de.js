@@ -692,10 +692,6 @@ return plural;
   null,
   "Wachsen"
  ],
- "Grow Content": [
-  null,
-  ""
- ],
  "Grow Logical Volume": [
   null,
   "Logisches Volumen erhöhen"
@@ -1380,10 +1376,6 @@ return plural;
   null,
   "Logisches Volumen verkleinern"
  ],
- "Shrink Volume": [
-  null,
-  ""
- ],
  "Size": [
   null,
   "Größe"
@@ -1592,10 +1584,6 @@ return plural;
   null,
   "Diese Diskette kann nicht entfernt werden, während das Gerät wiederhergestellt wird."
  ],
- "This logical volume is not completely used by its content.": [
-  null,
-  ""
- ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "Dieses Volume muss aktiviert werden, bevor die Größe geändert werden kann."
@@ -1755,10 +1743,6 @@ return plural;
  "Volume Groups": [
   null,
   "Datenträgerverbünde"
- ],
- "Volume size is $0. Content size is $1.": [
-  null,
-  ""
  ],
  "Waiting for other software management operations to finish": [
   null,

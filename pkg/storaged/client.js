@@ -27,7 +27,7 @@ import inotify_py from "raw-loader!inotify.py";
 import nfs_mounts_py from "raw-loader!./nfs-mounts.py";
 import vdo_monitor_py from "raw-loader!./vdo-monitor.py";
 
-import { find_warnings } from "./warning-tab.jsx";
+import { find_warnings } from "./warnings.jsx";
 
 /* STORAGED CLIENT
  */
@@ -60,6 +60,10 @@ function instance_sampler(metrics, source) {
             instances[m] = msg.metrics[m].instances;
             for (var i = 0; i < instances[m].length; i++)
                 self.data[instances[m][i]] = [ ];
+        }
+        if (Object.keys(self.data).length > 100) {
+            close();
+            self.data = { };
         }
     }
 

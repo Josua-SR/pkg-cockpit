@@ -34,6 +34,7 @@ import {
     getHypervisorMaxVCPU,
     getNetwork,
     getNodeDevice,
+    getNodeMaxMemory,
     getStoragePool,
     getStorageVolumes,
     getVm,
@@ -51,6 +52,7 @@ import {
     updateStorageVolumes,
     updateVm,
     setHypervisorMaxVCPU,
+    setNodeMaxMemory,
 } from './actions/store-actions.js';
 
 import {
@@ -358,7 +360,10 @@ LIBVIRT_DBUS_PROVIDER = {
                 }
             }
 
-            return dispatch => Promise.all(storageVolPromises)
+            // We can't use Promise.all() here until cockpit is able to dispatch es2015 promises
+            // https://github.com/cockpit-project/cockpit/issues/10956
+            // eslint-disable-next-line cockpit/no-cockpit-all
+            return dispatch => cockpit.all(storageVolPromises)
                     .then(() => {
                         return call(connectionName, objPath, 'org.libvirt.Domain', 'Undefine', [flags], TIMEOUT);
                     });
@@ -433,7 +438,10 @@ LIBVIRT_DBUS_PROVIDER = {
     }) {
         return dispatch => {
             call(connectionName, '/org/libvirt/QEMU', 'org.libvirt.Connect', 'ListNodeDevices', [0], TIMEOUT)
-                    .then(objPaths => Promise.all(objPaths[0].map(path => dispatch(getNodeDevice({ connectionName, id:path })))))
+                    // We can't use Promise.all() here until cockpit is able to dispatch es2015 promises
+                    // https://github.com/cockpit-project/cockpit/issues/10956
+                    // eslint-disable-next-line cockpit/no-cockpit-all
+                    .then(objPaths => cockpit.all(objPaths[0].map(path => dispatch(getNodeDevice({ connectionName, id:path })))))
                     .fail(ex => console.warn('GET_ALL_NODE_DEVICES action failed:', JSON.stringify(ex)));
         };
     },
@@ -471,6 +479,7 @@ LIBVIRT_DBUS_PROVIDER = {
                 dispatch(getAllNetworks(connectionName));
                 dispatch(getAllNodeDevices(connectionName));
                 dispatch(getHypervisorMaxVCPU(connectionName));
+                dispatch(getNodeMaxMemory(connectionName));
                 doGetAllVms(dispatch, connectionName);
             };
         }
@@ -543,6 +552,16 @@ LIBVIRT_DBUS_PROVIDER = {
                     })
                     .catch(ex => console.warn('GET_NODE_DEVICE action failed failed for path', objPath, ex));
         };
+    },
+
+    GET_NODE_MAX_MEMORY({ connectionName }) {
+        if (connectionName) {
+            return dispatch => call(connectionName, '/org/libvirt/QEMU', 'org.libvirt.Connect', 'NodeGetMemoryStats', [0, 0], TIMEOUT)
+                    .then(stats => dispatch(setNodeMaxMemory({ memory: stats[0].total })))
+                    .catch(ex => console.warn("NodeGetMemoryStats failed: %s", ex));
+        }
+
+        return unknownConnectionName(setNodeMaxMemory);
     },
 
     /*

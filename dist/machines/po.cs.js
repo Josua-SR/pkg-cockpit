@@ -899,6 +899,10 @@ return plural;
   null,
   "Odpojit"
  ],
+ "Up to $0 $1 available on the host": [
+  null,
+  ""
+ ],
  "Usage": [
   null,
   "Použití"
@@ -1002,6 +1006,10 @@ return plural;
  "WWPN": [
   null,
   "Neopakující se číslo portu"
+ ],
+ "You need to select the most closely matching OS vendor and Operating System": [
+  null,
+  "Je třeba vybrat nejpodobnějšího výrobce a vydání operačního systému"
  ],
  "active": [
   null,
