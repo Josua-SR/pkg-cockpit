@@ -1,11 +1,11 @@
-cockpit (193-1) UNRELEASED; urgency=medium
+cockpit (193-1) experimental; urgency=medium
 
   * New upstream release:
     - Machines: iSCSI direct storage pools
     - Storage: The "Format" button is no longer hidden
     - Storage: Improve performance with many block devices
 
- -- Martin Pitt <mpitt@debian.org>  Sun, 05 May 2019 19:17:19 +0000
+ -- Martin Pitt <mpitt@debian.org>  Sun, 05 May 2019 19:18:28 +0000
 
 cockpit (192-1) experimental; urgency=medium
 
