@@ -363,6 +363,14 @@ return plural;
   null,
   "У більшості конфігурацій macvtap не працює для обміну мережею між основною і гостьовою системами."
  ],
+ "Initiator": [
+  null,
+  "Ініціатор"
+ ],
+ "Initiator IQN should not be empty": [
+  null,
+  "IQN ініціатора має бути непорожнімy"
+ ],
  "Install": [
   null,
   "Встановити"
@@ -538,6 +546,10 @@ return plural;
  "No network is defined on this host": [
   null,
   "У цій основній системі мережу не визначено"
+ ],
+ "No networks available": [
+  null,
+  ""
  ],
  "No storage pool is defined on this host": [
   null,
@@ -901,7 +913,7 @@ return plural;
  ],
  "Up to $0 $1 available on the host": [
   null,
-  ""
+  "У основній системі доступними є до $0 $1"
  ],
  "Usage": [
   null,
@@ -1023,6 +1035,10 @@ return plural;
   null,
   "cdrom"
  ],
+ "control-label $0": [
+  null,
+  "control-label $0"
+ ],
  "crashed": [
   null,
   "аварійне завершення"
@@ -1071,9 +1087,17 @@ return plural;
   null,
   "пристрій осн. системи"
  ],
+ "iSCSI Initiator IQN": [
+  null,
+  "IQN ініціатора iSCSI"
+ ],
  "iSCSI Target": [
   null,
   "Ціль iSCSI"
+ ],
+ "iSCSI direct Target": [
+  null,
+  "Безпосереднє призначення iSCSI"
  ],
  "iSCSI target IQN": [
   null,
@@ -1122,14 +1146,6 @@ return plural;
  "server": [
   null,
   "сервер"
- ],
- "show less": [
-  null,
-  "показати менше"
- ],
- "show more": [
-  null,
-  "показати більше"
  ],
  "shut off": [
   null,

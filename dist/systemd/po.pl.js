@@ -955,6 +955,10 @@ return plural;
   null,
   "Czytelna nazwa komputera"
  ],
+ "Previous boot": [
+  null,
+  "Poprzednie uruchomienie"
+ ],
  "Problem details": [
   null,
   "Informacje o problemie"

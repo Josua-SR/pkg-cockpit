@@ -1115,14 +1115,6 @@ return plural;
   null,
   "сервер"
  ],
- "show less": [
-  null,
-  "показывай меньше"
- ],
- "show more": [
-  null,
-  "показать больше"
- ],
  "shut off": [
   null,
   "Заткнись"

@@ -1,5 +1,5 @@
 # Generated Makefile data for playground
-# Stamp: Fri May 03 2019 04:00:40 GMT+0000 (Coordinated Universal Time)
+# Stamp: Wed May 15 2019 13:00:31 GMT+0000 (Coordinated Universal Time)
 
 playground_INPUTS = \
 	node_modules/angular-gettext/LICENSE \
@@ -53,8 +53,8 @@ playground_INPUTS = \
 	pkg/lib/cockpit-components-file-autocomplete.css \
 	pkg/lib/cockpit-components-file-autocomplete.jsx \
 	pkg/lib/cockpit-components-listing.jsx \
-	pkg/lib/cockpit-components-onoff.css \
 	pkg/lib/cockpit-components-onoff.jsx \
+	pkg/lib/cockpit-components-onoff.less \
 	pkg/lib/cockpit-components-select.jsx \
 	pkg/lib/form-layout.less \
 	pkg/lib/listing.less \
@@ -189,7 +189,7 @@ playground_TESTS = \
 
 dist/playground/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/angular-gettext/dist/angular-gettext.js -N node_modules/angular/angular.js -N node_modules/bootstrap/less/variables.less -N node_modules/jquery-flot/jquery.flot.js -N node_modules/jquery-flot/jquery.flot.selection.js -N node_modules/jquery-flot/jquery.flot.time.js -N node_modules/mustache/mustache.js -N node_modules/patternfly/dist/less/color-variables.less -N node_modules/patternfly/dist/less/variables.less -N node_modules/prop-types/factoryWithThrowingShims.js -N node_modules/prop-types/index.js -N node_modules/prop-types/lib/ReactPropTypesSecret.js -N node_modules/react-dom/cjs/react-dom.production.min.js -N node_modules/react-dom/index.js -N node_modules/react/cjs/react.production.min.js -N node_modules/react/index.js -N node_modules/throttle-debounce/dist/index.esm.js -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-file-autocomplete.css -N pkg/lib/cockpit-components-file-autocomplete.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-onoff.css -N pkg/lib/cockpit-components-onoff.jsx -N pkg/lib/cockpit-components-select.jsx -N pkg/lib/form-layout.less -N pkg/lib/listing.less -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/plot.css -N pkg/lib/plot.js -N pkg/lib/service.js -N pkg/lib/table.css -N pkg/lib/timeline.css -N pkg/lib/variables.less -N pkg/playground/exception.html -N pkg/playground/exception.js -N pkg/playground/hammer.gif -N pkg/playground/jquery-patterns.html -N pkg/playground/jquery-patterns.js -N pkg/playground/metrics.html -N pkg/playground/metrics.js -N pkg/playground/pkgs.html -N pkg/playground/pkgs.js -N pkg/playground/plot.html -N pkg/playground/plot.js -N pkg/playground/react-demo-dialog.jsx -N pkg/playground/react-demo-file-autocomplete.jsx -N pkg/playground/react-demo-listing.jsx -N pkg/playground/react-demo-onoff.jsx -N pkg/playground/react-patterns.html -N pkg/playground/react-patterns.js -N pkg/playground/service.html -N pkg/playground/service.js -N pkg/playground/speed.html -N pkg/playground/speed.js -N pkg/playground/test.html -N pkg/playground/test.js -N pkg/playground/translate.html -N pkg/playground/translate.js $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/angular-gettext/dist/angular-gettext.js -N node_modules/angular/angular.js -N node_modules/bootstrap/less/variables.less -N node_modules/jquery-flot/jquery.flot.js -N node_modules/jquery-flot/jquery.flot.selection.js -N node_modules/jquery-flot/jquery.flot.time.js -N node_modules/mustache/mustache.js -N node_modules/patternfly/dist/less/color-variables.less -N node_modules/patternfly/dist/less/variables.less -N node_modules/prop-types/factoryWithThrowingShims.js -N node_modules/prop-types/index.js -N node_modules/prop-types/lib/ReactPropTypesSecret.js -N node_modules/react-dom/cjs/react-dom.production.min.js -N node_modules/react-dom/index.js -N node_modules/react/cjs/react.production.min.js -N node_modules/react/index.js -N node_modules/throttle-debounce/dist/index.esm.js -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-file-autocomplete.css -N pkg/lib/cockpit-components-file-autocomplete.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-onoff.jsx -N pkg/lib/cockpit-components-onoff.less -N pkg/lib/cockpit-components-select.jsx -N pkg/lib/form-layout.less -N pkg/lib/listing.less -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/plot.css -N pkg/lib/plot.js -N pkg/lib/service.js -N pkg/lib/table.css -N pkg/lib/timeline.css -N pkg/lib/variables.less -N pkg/playground/exception.html -N pkg/playground/exception.js -N pkg/playground/hammer.gif -N pkg/playground/jquery-patterns.html -N pkg/playground/jquery-patterns.js -N pkg/playground/metrics.html -N pkg/playground/metrics.js -N pkg/playground/pkgs.html -N pkg/playground/pkgs.js -N pkg/playground/plot.html -N pkg/playground/plot.js -N pkg/playground/react-demo-dialog.jsx -N pkg/playground/react-demo-file-autocomplete.jsx -N pkg/playground/react-demo-listing.jsx -N pkg/playground/react-demo-onoff.jsx -N pkg/playground/react-patterns.html -N pkg/playground/react-patterns.js -N pkg/playground/service.html -N pkg/playground/service.js -N pkg/playground/speed.html -N pkg/playground/speed.js -N pkg/playground/test.html -N pkg/playground/test.js -N pkg/playground/translate.html -N pkg/playground/translate.js $< > $@.tmp && mv $@.tmp $@
 
 dist/playground/stamp: $(playground_INPUTS)
 
@@ -373,9 +373,9 @@ pkg/lib/cockpit-components-file-autocomplete.jsx:
 
 pkg/lib/cockpit-components-listing.jsx:
 
-pkg/lib/cockpit-components-onoff.css:
-
 pkg/lib/cockpit-components-onoff.jsx:
+
+pkg/lib/cockpit-components-onoff.less:
 
 pkg/lib/cockpit-components-select.jsx:
 

@@ -363,6 +363,51 @@ input[type=number] {
 .ct-select > option {
     background-color: #fff;
 }
+.file-autocomplete-ct input {
+    padding-right: 38px;
+}
+
+.file-autocomplete-ct ul {
+    max-height: 250px;
+}
+
+.file-autocomplete-ct .alert {
+    margin: 0;
+    border: none;
+    padding: 0 24px 0 6px;
+}
+
+.file-autocomplete-ct .error input {
+    border-color: red;
+}
+
+.file-autocomplete-ct .error input {
+    border-color: red;
+}
+
+.file-autocomplete-ct .error ul {
+    border-color: red;
+    padding: 0;
+}
+
+.file-autocomplete-ct .spinner,
+.file-autocomplete-ct .caret {
+    position: absolute;
+    top: 7px;
+    z-index: 9;
+}
+
+.file-autocomplete-ct .caret {
+    top: 0;
+    height: 26px;
+    cursor: pointer;
+    pointer-events: all;
+    padding: 0 23px 0 12px;
+}
+
+.file-autocomplete-ct .caret:before {
+    position: static;
+}
 /* Standard dialog is too narrow and wide dialog is too wide */
 .nic-edit > .modal-dialog {
     max-width: 60rem;
@@ -473,53 +518,11 @@ input[type=number] {
 .header {
     padding-bottom: 10px;
 }
-.machines-more-button {
+.more-button {
     padding-left: 10px;
 }
-.file-autocomplete-ct input {
-    padding-right: 38px;
-}
-
-.file-autocomplete-ct ul {
-    max-height: 250px;
-}
-
-.file-autocomplete-ct .alert {
-    margin: 0;
-    border: none;
-    padding: 0 24px 0 6px;
-}
-
-.file-autocomplete-ct .error input {
-    border-color: red;
-}
-
-.file-autocomplete-ct .error input {
-    border-color: red;
-}
-
-.file-autocomplete-ct .error ul {
-    border-color: red;
-    padding: 0;
-}
-
-.file-autocomplete-ct .spinner,
-.file-autocomplete-ct .caret {
-    position: absolute;
-    top: 7px;
-    z-index: 9;
-}
-
-.file-autocomplete-ct .caret {
-    top: 0;
-    height: 26px;
-    cursor: pointer;
-    pointer-events: all;
-    padding: 0 23px 0 12px;
-}
-
-.file-autocomplete-ct .caret:before {
-    position: static;
+.notification-message {
+    white-space: pre-wrap;
 }
 .pficon-warning-triangle-o {
     color: #ec7a08; /* pf-orange-400 */

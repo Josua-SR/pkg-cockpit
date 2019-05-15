@@ -28,7 +28,7 @@ import {
     Modal
 } from 'patternfly-react';
 
-import { ModalError } from './../notification/inlineNotification.jsx';
+import { ModalError } from 'cockpit-components-inline-notification.jsx';
 import {
     findHostNodeDevice,
     getSortedBootOrderDevices,
@@ -65,9 +65,7 @@ const DeviceInfo = ({ descr, value }) => {
     return (
         <div className='ct-form-layout'>
             <label className='control-label' htmlFor={value}>
-                <output>
-                    {descr}
-                </output>
+                {descr}
             </label>
             <span id={value}>
                 {value}

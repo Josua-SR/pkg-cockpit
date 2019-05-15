@@ -75,6 +75,10 @@ return plural;
   null,
   "(Необов’язково)"
  ],
+ "(default)": [
+  null,
+  "(типовий)"
+ ],
  "1 day": [
   null,
   "1 день"
@@ -123,6 +127,10 @@ return plural;
   null,
   "Активне резервування"
  ],
+ "Active zones": [
+  null,
+  ""
+ ],
  "Adaptive load balancing": [
   null,
   "Адаптивне урівноваження навантаження"
@@ -158,6 +166,10 @@ return plural;
  "Add VLAN": [
   null,
   "Додати VLAN"
+ ],
+ "Add services to following zones:": [
+  null,
+  ""
  ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -423,6 +435,10 @@ return plural;
   null,
   "IP-адреса"
  ],
+ "IP Range": [
+  null,
+  ""
+ ],
  "IP Settings": [
   null,
   "Параметри IP"
@@ -587,6 +603,10 @@ return plural;
   null,
   "Ні"
  ],
+ "No active zones": [
+  null,
+  ""
+ ],
  "No carrier": [
   null,
   "Немає сигналу"
@@ -702,6 +722,14 @@ return plural;
  "Remove $0": [
   null,
   "Вилучити $0"
+ ],
+ "Remove service": [
+  null,
+  ""
+ ],
+ "Remove service from zones": [
+  null,
+  ""
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -890,6 +918,14 @@ return plural;
  "You are not authorized to modify the firewall.": [
   null,
   "Вас не уповноважено на внесення змін до брандмауера."
+ ],
+ "Zone": [
+  null,
+  ""
+ ],
+ "Zones": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

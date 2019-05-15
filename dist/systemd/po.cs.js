@@ -955,6 +955,10 @@ return plural;
   null,
   "Hezký název stroje"
  ],
+ "Previous boot": [
+  null,
+  "Předchozí zavedení"
+ ],
  "Problem details": [
   null,
   "Podrobnosti o problému"

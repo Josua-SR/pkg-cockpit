@@ -1123,14 +1123,6 @@ return plural;
   null,
   "服務器"
  ],
- "show less": [
-  null,
-  "顯示較少"
- ],
- "show more": [
-  null,
-  "顯示更多"
- ],
  "shut off": [
   null,
   "關閉"

@@ -967,6 +967,10 @@ return plural;
   null,
   "встановлюємо з'єднання"
  ],
+ "control-label $0": [
+  null,
+  "control-label $0"
+ ],
  "cores": [
   null,
   "ядра"
@@ -1122,14 +1126,6 @@ return plural;
  "server": [
   null,
   "сервер"
- ],
- "show less": [
-  null,
-  "показати менше"
- ],
- "show more": [
-  null,
-  "показати більше"
  ],
  "shut off": [
   null,

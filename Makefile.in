@@ -123,7 +123,8 @@ TESTS = $(am__EXEEXT_4) $(am__EXEEXT_14) $(am__EXEEXT_17) \
 	$(am__EXEEXT_6) $(am__EXEEXT_7) test-websocket$(EXEEXT) \
 	$(am__EXEEXT_4) tools/test-static-code $(am__EXEEXT_4) \
 	$(am__EXEEXT_18) $(am__EXEEXT_12) $(am__EXEEXT_13)
-@ENABLE_DOC_TRUE@am__append_1 = doc/cockpit-transport.svg \
+@VALGRIND_MINADDR_HACK_TRUE@am__append_1 = --aspace-minaddr=0x100000000
+@ENABLE_DOC_TRUE@am__append_2 = doc/cockpit-transport.svg \
 @ENABLE_DOC_TRUE@	doc/cockpit-transport.png $(NULL) \
 @ENABLE_DOC_TRUE@	$(GUIDE_DOCBOOK) $(GUIDE_INCLUDES) \
 @ENABLE_DOC_TRUE@	$(GUIDE_XSLT) $(GUIDE_FONTS) $(GUIDE_STATIC) \
@@ -137,54 +138,54 @@ TESTS = $(am__EXEEXT_4) $(am__EXEEXT_14) $(am__EXEEXT_17) \
 @ENABLE_DOC_TRUE@	doc/man/cockpit.conf.xml \
 @ENABLE_DOC_TRUE@	doc/man/pam_ssh_add.xml doc/man/remotectl.xml \
 @ENABLE_DOC_TRUE@	$(NULL)
-@ENABLE_DOC_TRUE@am__append_2 = \
+@ENABLE_DOC_TRUE@am__append_3 = \
 @ENABLE_DOC_TRUE@	dist/guide/html/index.html \
 @ENABLE_DOC_TRUE@	dist/guide/index.html
 
-@ENABLE_DOC_TRUE@am__append_3 = \
+@ENABLE_DOC_TRUE@am__append_4 = \
 @ENABLE_DOC_TRUE@	dist/guide/html/* \
 @ENABLE_DOC_TRUE@	dist/guide/links.html \
 @ENABLE_DOC_TRUE@	dist/guide/index.html \
 @ENABLE_DOC_TRUE@	*.tmp \
 @ENABLE_DOC_TRUE@	$(NULL)
 
-@ENABLE_DOC_TRUE@am__append_4 = doc/man/cockpit-bridge.1 $(NULL) \
+@ENABLE_DOC_TRUE@am__append_5 = doc/man/cockpit-bridge.1 $(NULL) \
 @ENABLE_DOC_TRUE@	doc/man/cockpit.1 doc/man/cockpit-desktop.1 \
 @ENABLE_DOC_TRUE@	doc/man/cockpit-ws.8 doc/man/cockpit.conf.5 \
 @ENABLE_DOC_TRUE@	doc/man/pam_ssh_add.8 doc/man/remotectl.8 \
 @ENABLE_DOC_TRUE@	$(NULL)
-@WITH_GOLANG_TRUE@am__append_5 = cockpit-kube-auth cockpit-kube-launch
-@ENABLE_PCP_TRUE@am__append_6 = cockpit-pcp
-@ENABLE_PCP_TRUE@am__append_7 = libcockpit-pcp.a
-@ENABLE_PCP_TRUE@am__append_8 = \
+@WITH_GOLANG_TRUE@am__append_6 = cockpit-kube-auth cockpit-kube-launch
+@ENABLE_PCP_TRUE@am__append_7 = cockpit-pcp
+@ENABLE_PCP_TRUE@am__append_8 = libcockpit-pcp.a
+@ENABLE_PCP_TRUE@am__append_9 = \
 @ENABLE_PCP_TRUE@	test-pcp \
 @ENABLE_PCP_TRUE@	test-pcp-archives \
 @ENABLE_PCP_TRUE@	$(NULL)
 
-@ENABLE_PCP_TRUE@am__append_9 = mock-pmda.so
-@ENABLE_PCP_TRUE@am__append_10 = \
+@ENABLE_PCP_TRUE@am__append_10 = mock-pmda.so
+@ENABLE_PCP_TRUE@am__append_11 = \
 @ENABLE_PCP_TRUE@	mock-pmda.so \
 @ENABLE_PCP_TRUE@	mock-archives/* \
 @ENABLE_PCP_TRUE@	$(NULL)
 
-@WITH_COCKPIT_SSH_TRUE@am__append_11 = libcockpit-ssh.a
-@WITH_COCKPIT_SSH_TRUE@am__append_12 = cockpit-ssh
-@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@am__append_13 = \
+@WITH_COCKPIT_SSH_TRUE@am__append_12 = libcockpit-ssh.a
+@WITH_COCKPIT_SSH_TRUE@am__append_13 = cockpit-ssh
+@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@am__append_14 = \
 @HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@	src/ssh/cockpitsshknownhosts.h \
 @HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@	src/ssh/cockpitsshknownhosts.c \
 @HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
-@WITH_COCKPIT_SSH_TRUE@am__append_14 = mock-sshd $(SSH_CHECKS)
-@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@am__append_15 = \
+@WITH_COCKPIT_SSH_TRUE@am__append_15 = mock-sshd $(SSH_CHECKS)
+@HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@am__append_16 = \
 @HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@	test-knownhosts \
 @HAVE_SSH_SESSION_HAS_KNOWN_HOSTS_ENTRY_FALSE@@WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
-@WITH_COCKPIT_SSH_TRUE@am__append_16 = test_rsa_key
-@WITH_COCKPIT_SSH_TRUE@am__append_17 = \
+@WITH_COCKPIT_SSH_TRUE@am__append_17 = test_rsa_key
+@WITH_COCKPIT_SSH_TRUE@am__append_18 = \
 @WITH_COCKPIT_SSH_TRUE@	test_rsa_key \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
-@WITH_COCKPIT_SSH_TRUE@am__append_18 = \
+@WITH_COCKPIT_SSH_TRUE@am__append_19 = \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock_rsa_key \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock_dsa_key \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/test_rsa \
@@ -197,13 +198,13 @@ TESTS = $(am__EXEEXT_4) $(am__EXEEXT_14) $(am__EXEEXT_17) \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock_known_hosts_2 \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
-@WITH_COCKPIT_SSH_TRUE@am__append_19 = \
+@WITH_COCKPIT_SSH_TRUE@am__append_20 = \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock-pid-cat \
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/mock-bin/sss_ssh_knownhostsproxy \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
-@WITH_COCKPIT_SSH_TRUE@am__append_20 = $(SSH_CHECKS)
-@WITH_COCKPIT_SSH_TRUE@am__append_21 = \
+@WITH_COCKPIT_SSH_TRUE@am__append_21 = $(SSH_CHECKS)
+@WITH_COCKPIT_SSH_TRUE@am__append_22 = \
 @WITH_COCKPIT_SSH_TRUE@	test-authssh \
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
@@ -1748,17 +1749,17 @@ with_nfs_client_package = @with_nfs_client_package@
 with_storaged_iscsi_sessions = @with_storaged_iscsi_sessions@
 with_vdo_package = @with_vdo_package@
 NULL = 
-man_MANS = $(am__append_4)
+man_MANS = $(am__append_5)
 BUILT_SOURCES = $(COCKPIT_ASSETS)
 check_SCRIPTS = 
 noinst_SCRIPTS = $(WEBPACK_STAMPS) $(WEBPACK_INSTALL) $(base_TESTS) \
-	$(am__append_19) src/ws/mock-cat-with-init $(NULL)
+	$(am__append_20) src/ws/mock-cat-with-init $(NULL)
 
 # ----------------------------------------------------------------------------------------------------
 noinst_LIBRARIES = libcockpit-stub.a libcockpit-bridge.a $(NULL) \
-	$(am__append_7) libcockpit-common.a libwebsocket.a \
-	$(am__append_11) libcockpit-ws.a libretest.a libpam_ssh_add.a
-noinst_DATA = $(am__append_2) $(am__append_9) $(am__append_16)
+	$(am__append_8) libcockpit-common.a libwebsocket.a \
+	$(am__append_12) libcockpit-ws.a libretest.a libpam_ssh_add.a
+noinst_DATA = $(am__append_3) $(am__append_10) $(am__append_17)
 
 # preload wrapper library for unit tests that need a temp home dir
 # we don't use libtool, so build this manually
@@ -1774,9 +1775,9 @@ nodist_systemdunit_DATA = src/ws/cockpit.socket src/ws/cockpit.service \
 CLEANFILES = $(man_MANS) valgrind-suppressions $(NULL) $(MO_FILES) \
 	$(POJS_FILES) $(nodist_po_DATA) po/POTFILES.*.in \
 	dist/shell/*.po src/ws/*.po po/cockpit*.pot po/po.empty.js.gz \
-	$(NULL) $(polkit_DATA) $(am__append_10) $(COCKPIT_ASSETS) \
+	$(NULL) $(polkit_DATA) $(am__append_11) $(COCKPIT_ASSETS) \
 	$(test_locale_MO) libpreload-temp-home.so $(NULL) \
-	$(am__append_17) src/ws/cockpit.socket src/ws/cockpit.service \
+	$(am__append_18) src/ws/cockpit.socket src/ws/cockpit.service \
 	src/ws/cockpit-motd.service $(nodist_tempconf_DATA) \
 	cockpit-desktop $(NULL) $(nodist_appdata_DATA) $(NULL) \
 	mock-pam-conv-mod.so pam_ssh_add.so $(KUBERNETES_DIR)/rpms \
@@ -1787,7 +1788,7 @@ DISTCLEANFILES = \
 	$(NULL)
 
 MAINTAINERCLEANFILES = $(NULL) $(WEBPACK_STAMPS) $(WEBPACK_DEPS) \
-	$(WEBPACK_OUTPUTS) $(OPENSANS_FONTS) $(am__append_3) \
+	$(WEBPACK_OUTPUTS) $(OPENSANS_FONTS) $(am__append_4) \
 	dist/base1/cockpit.js dist/base1/cockpit.min.css \
 	dist/base1/cockpit.min.css.gz dist/base1/cockpit.min.css.map \
 	dist/base1/cockpit.min.js dist/base1/cockpit.min.js.gz \
@@ -1813,7 +1814,7 @@ MAINTAINERCLEANFILES = $(NULL) $(WEBPACK_STAMPS) $(WEBPACK_DEPS) \
 	dist/static/login.min.css $(NULL)
 EXTRA_DIST = package.json README.md $(NULL) $(WEBPACK_STAMPS) \
 	$(WEBPACK_DEPS) $(WEBPACK_MANIFEST_IN) webpack.config.js \
-	$(OPENSANS_FONTS) $(am__append_1) $(PO_INPUTS) po/LINGUAS \
+	$(OPENSANS_FONTS) $(am__append_2) $(PO_INPUTS) po/LINGUAS \
 	po/po.empty.js po/po2json po/zanata.xml $(NULL) \
 	dist/playground/extra.de.po pkg/playground/extra.de.po \
 	pkg/users/mock pkg/lib/qunit-template.html \
@@ -1850,7 +1851,7 @@ EXTRA_DIST = package.json README.md $(NULL) $(WEBPACK_STAMPS) \
 	src/common/com.redhat.Cockpit.DBusTests.xml \
 	src/common/cockpitassets.gresource.xml src/common/fail.html \
 	$(test_locale_PO) $(NULL) src/common/preload-temp-home.c \
-	pkg/apps/content-security-policy.override $(am__append_18) \
+	pkg/apps/content-security-policy.override $(am__append_19) \
 	dist/static/login.html dist/static/login.min.html \
 	dist/static/login.js dist/static/login.min.js \
 	dist/static/login.css dist/static/login.min.css \
@@ -2027,8 +2028,9 @@ HTML_LOG_COMPILER = $(PYTHON) $(top_srcdir)/test/common/tap-cdp --strip=$(abs_to
 VALGRIND_ARGS = --trace-children=yes --quiet --error-exitcode=33 \
 	--suppressions=valgrind-suppressions --gen-suppressions=all \
 	--num-callers=16 --leak-check=yes --show-leak-kinds=definite \
-	--errors-for-leak-kinds=definite --trace-children-skip='*mock*,/bin*,/usr/bin/*,/usr/local/bin'
-
+	--errors-for-leak-kinds=definite \
+	--trace-children-skip='*mock*,/bin*,/usr/bin/*,/usr/local/bin' \
+	$(am__append_1)
 VALGRIND_SUPPRESSIONS = \
 	tools/gcrypt.supp \
 	tools/glib.supp \
@@ -2182,6 +2184,7 @@ metainfo_DATA = pkg/sosreport/org.cockpit-project.cockpit-sosreport.metainfo.xml
 		pkg/kdump/org.cockpit-project.cockpit-kdump.metainfo.xml \
 		pkg/selinux/org.cockpit-project.cockpit-selinux.metainfo.xml \
 		pkg/machines/org.cockpit-project.cockpit-machines.metainfo.xml \
+		pkg/storaged/org.cockpit-project.cockpit-storaged.metainfo.xml \
 		$(NULL)
 
 pixmapsdir = ${datarootdir}/pixmaps
@@ -2490,7 +2493,7 @@ cockpit_stub_LDADD = $(libcockpit_stub_LIBS)
 BRIDGE_CHECKS = test-paths test-rules test-pipe-channel test-packages \
 	test-peer test-dbus-meta test-fs test-metrics test-connect \
 	test-stream test-httpstream test-setup test-websocketstream \
-	test-process test-bridge test-router $(NULL) $(am__append_8)
+	test-process test-bridge test-router $(NULL) $(am__append_9)
 mock_bridge_SOURCES = src/bridge/mock-bridge.c
 mock_bridge_CFLAGS = \
 	-DG_LOG_DOMAIN=\"mock-bridge\" \
@@ -2856,7 +2859,7 @@ test_websocket_LDADD = libwebsocket.a $(libwebsocket_a_LIBS)
 @WITH_COCKPIT_SSH_TRUE@	src/ssh/cockpitsshrelay.c \
 @WITH_COCKPIT_SSH_TRUE@	src/common/cockpitauthorize.c \
 @WITH_COCKPIT_SSH_TRUE@	src/common/cockpitauthorize.h $(NULL) \
-@WITH_COCKPIT_SSH_TRUE@	$(am__append_13)
+@WITH_COCKPIT_SSH_TRUE@	$(am__append_14)
 @WITH_COCKPIT_SSH_TRUE@libcockpit_ssh_a_CFLAGS = \
 @WITH_COCKPIT_SSH_TRUE@	-fPIC \
 @WITH_COCKPIT_SSH_TRUE@	-I$(top_srcdir)/src/ssh \
@@ -2894,7 +2897,7 @@ test_websocket_LDADD = libwebsocket.a $(libwebsocket_a_LIBS)
 @WITH_COCKPIT_SSH_TRUE@	$(NULL)
 
 @WITH_COCKPIT_SSH_TRUE@SSH_CHECKS = test-sshoptions test-sshbridge \
-@WITH_COCKPIT_SSH_TRUE@	$(NULL) $(am__append_15)
+@WITH_COCKPIT_SSH_TRUE@	$(NULL) $(am__append_16)
 @WITH_COCKPIT_SSH_TRUE@test_sshoptions_CFLAGS = $(cockpit_ssh_CFLAGS)
 @WITH_COCKPIT_SSH_TRUE@test_sshoptions_SOURCES = src/ssh/test-sshoptions.c
 @WITH_COCKPIT_SSH_TRUE@test_sshoptions_LDADD = libcockpit-ssh.a $(cockpit_ssh_LDADD)
@@ -3022,7 +3025,7 @@ test_server_LDADD = \
 WS_CHECKS = test-base64 test-creds test-auth test-compat \
 	test-webservice test-channelresponse test-handlers \
 	test-kerberos test-remotectlcertificate $(NULL) \
-	$(am__append_21)
+	$(am__append_22)
 test_auth_CFLAGS = $(cockpit_ws_CFLAGS)
 test_auth_SOURCES = \
 	src/ws/test-auth.c \

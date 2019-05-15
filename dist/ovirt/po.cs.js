@@ -967,6 +967,10 @@ return plural;
   null,
   "připojuje se"
  ],
+ "control-label $0": [
+  null,
+  "control-label $0"
+ ],
  "cores": [
   null,
   "jádra"
@@ -1122,14 +1126,6 @@ return plural;
  "server": [
   null,
   "server"
- ],
- "show less": [
-  null,
-  "zobrazit méně"
- ],
- "show more": [
-  null,
-  "zobrazit více"
  ],
  "shut off": [
   null,

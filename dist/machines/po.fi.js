@@ -1115,14 +1115,6 @@ return plural;
   null,
   "palvelin"
  ],
- "show less": [
-  null,
-  "näytä vähemmän"
- ],
- "show more": [
-  null,
-  "näytä enemmän"
- ],
  "shut off": [
   null,
   "sammutettu"
