@@ -1123,14 +1123,6 @@ return plural;
   null,
   "server"
  ],
- "show less": [
-  null,
-  "mostra meno"
- ],
- "show more": [
-  null,
-  "mostra di più"
- ],
  "shut off": [
   null,
   "spento"

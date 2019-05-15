@@ -75,6 +75,10 @@ return plural;
   null,
   "(Volitelné)"
  ],
+ "(default)": [
+  null,
+  "(výchozí)"
+ ],
  "1 day": [
   null,
   "1 den"
@@ -123,6 +127,10 @@ return plural;
   null,
   "Aktivní záloha"
  ],
+ "Active zones": [
+  null,
+  ""
+ ],
  "Adaptive load balancing": [
   null,
   "Přizpůsobující se rozkládání zátěže"
@@ -158,6 +166,10 @@ return plural;
  "Add VLAN": [
   null,
   "Přidat VLAN"
+ ],
+ "Add services to following zones:": [
+  null,
+  ""
  ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -423,6 +435,10 @@ return plural;
   null,
   "IP adresa"
  ],
+ "IP Range": [
+  null,
+  ""
+ ],
  "IP Settings": [
   null,
   "Nastavení IP"
@@ -587,6 +603,10 @@ return plural;
   null,
   "Ne"
  ],
+ "No active zones": [
+  null,
+  ""
+ ],
  "No carrier": [
   null,
   "Bez signálu"
@@ -702,6 +722,14 @@ return plural;
  "Remove $0": [
   null,
   "Odebrat $0"
+ ],
+ "Remove service": [
+  null,
+  ""
+ ],
+ "Remove service from zones": [
+  null,
+  ""
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -890,6 +918,14 @@ return plural;
  "You are not authorized to modify the firewall.": [
   null,
   "Nemáte oprávnění upravovat bránu firewall"
+ ],
+ "Zone": [
+  null,
+  ""
+ ],
+ "Zones": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

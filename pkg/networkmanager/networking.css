@@ -164,7 +164,7 @@ span.inverted-switchbox {
     margin-right: 20px;
 }
 
-h1 .btn-onoff-ct {
+h1 .onoff-ct {
     margin-left: 1.5em;
     vertical-align: text-bottom;
 }
@@ -281,4 +281,8 @@ h1 .btn-onoff-ct {
         height: auto;
         opacity: 1;
     }
+}
+
+form.horizontal fieldset {
+  flex-direction: row;
 }

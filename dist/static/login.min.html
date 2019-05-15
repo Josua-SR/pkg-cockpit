@@ -302,7 +302,7 @@
             if (u) {
                 h(e);
             } else {
-                U(t);
+                N(t);
                 m("login-error-message").textContent = e;
                 m("error-group").style.display = "block";
             }
@@ -317,7 +317,7 @@
             m("login-error-message").textContent = e;
             m("error-group").style.display = "block";
             T(null, true);
-            U();
+            N();
         }
     }
     function R(e) {
@@ -332,7 +332,7 @@
     function H() {
         return l.page.require_host && v.indexOf("cockpit+=") === -1;
     }
-    function N() {
+    function U() {
         L(null);
         var e;
         var t = x(m("login-user-input").value);
@@ -350,7 +350,7 @@
                 f = w;
             }
             m("server-name").textContent = e || l.hostname;
-            m("login-button").removeEventListener("click", N);
+            m("login-button").removeEventListener("click", U);
             /* When checked we tell the server to keep authentication */            var n = m("authorized-input").checked ? "password" : "";
             var o = m("login-password-input").value;
             r.setItem("authorized-default", n);
@@ -358,10 +358,12 @@
                 Authorization: "Basic " + window.btoa(q(t + ":" + o)),
                 "X-Authorize": n
             };
+            // allow unknown remote hosts with interactive logins with "Connect to:"
+                        if (e) i["X-SSH-Connect-Unknown-Hosts"] = "yes";
             J("GET", i, false);
         }
     }
-    function U(e) {
+    function N(e) {
         var t = l.page.connect;
         var n = m("option-group").getAttribute("data-state");
         m("login-wait-validating").style.display = "none";
@@ -384,7 +386,7 @@
             m("server-group").style.display = n ? "block" : "none";
         }
         m("login-button").removeAttribute("disabled");
-        if (!e) m("login-button").addEventListener("click", N);
+        if (!e) m("login-button").addEventListener("click", U);
     }
     function z() {
         /* Show the login screen */
@@ -396,11 +398,11 @@
         }, false);
         var e = function(e) {
             L(null);
-            if (e.which == 13) N();
+            if (e.which == 13) U();
         };
         m("login-password-input").addEventListener("keydown", e);
         m("authorized-input").addEventListener("keydown", e);
-        U();
+        N();
         m("login-user-input").focus();
     }
     function P(e) {
@@ -434,7 +436,7 @@
         }
         m("conversation-input").addEventListener("keydown", s);
         m("login-button").addEventListener("click", r);
-        U(true);
+        N(true);
     }
     function q(e) {
         return window.unescape(encodeURIComponent(e));
@@ -536,7 +538,7 @@
             t = null;
         };
     }
-    function G(n) {
+    function X(n) {
         var e = "/" + p + "/@localhost/";
         if (s) e = "/" + s + e;
         var o = e + "shell/index.html";
@@ -557,7 +559,7 @@
         };
         i.send();
     }
-    function X(e, t, n) {
+    function G(e, t, n) {
         var o = 0;
         while (o < e.length) {
             var i = e.key(o);
@@ -568,11 +570,11 @@
         /* Clear anything not prefixed with
          * different application from sessionStorage
          */
-        X(window.sessionStorage, p, true);
+        G(window.sessionStorage, p, true);
         /* Clear anything prefixed with our application
          * and login-data, but not other non-application values.
          */        r.removeItem("login-data");
-        X(r, p, false);
+        G(r, p, false);
         var t;
         if (e && e["login-data"]) {
             t = JSON.stringify(e["login-data"]);
@@ -595,12 +597,12 @@
         }
         /* clean up sessionStorage. clear anything that isn't prefixed
          * with an application and anything prefixed with our application.
-         */        X(window.sessionStorage, p, false);
+         */        G(window.sessionStorage, p, false);
         _(e);
         /* Make sure that the base1 version is new enough to handle
          * urls that reference machines.
          */        if (p.indexOf("cockpit+=") === 0) {
-            G(t);
+            X(t);
         } else {
             M(t);
         }

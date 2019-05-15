@@ -363,6 +363,14 @@ return plural;
   null,
   "Ve většině uspořádání, macvtap nefunguje pro komunikaci hostitel-host."
  ],
+ "Initiator": [
+  null,
+  "Iniciátor"
+ ],
+ "Initiator IQN should not be empty": [
+  null,
+  "IQN iniciátoru by mělo být vyplněné"
+ ],
  "Install": [
   null,
   "Nainstalovat"
@@ -538,6 +546,10 @@ return plural;
  "No network is defined on this host": [
   null,
   "Na tomto hostiteli není definována žádná síť"
+ ],
+ "No networks available": [
+  null,
+  ""
  ],
  "No storage pool is defined on this host": [
   null,
@@ -901,7 +913,7 @@ return plural;
  ],
  "Up to $0 $1 available on the host": [
   null,
-  ""
+  "Až $0 $1 k dispozici na tomto stroji"
  ],
  "Usage": [
   null,
@@ -1023,6 +1035,10 @@ return plural;
   null,
   "cdrom"
  ],
+ "control-label $0": [
+  null,
+  "control-label $0"
+ ],
  "crashed": [
   null,
   "zhavarovalo"
@@ -1071,9 +1087,17 @@ return plural;
   null,
   "zařízení hostitele"
  ],
+ "iSCSI Initiator IQN": [
+  null,
+  "IQN iSCSI iniciátoru"
+ ],
  "iSCSI Target": [
   null,
   "iSCSI cíl"
+ ],
+ "iSCSI direct Target": [
+  null,
+  "Přímý cíl iSCSI"
  ],
  "iSCSI target IQN": [
   null,
@@ -1122,14 +1146,6 @@ return plural;
  "server": [
   null,
   "server"
- ],
- "show less": [
-  null,
-  "zobrazit méně"
- ],
- "show more": [
-  null,
-  "zobrazit více"
  ],
  "shut off": [
   null,

@@ -1123,14 +1123,6 @@ return plural;
   null,
   "服务器"
  ],
- "show less": [
-  null,
-  "显示更少"
- ],
- "show more": [
-  null,
-  "显示更多"
- ],
  "shut off": [
   null,
   "关闭"

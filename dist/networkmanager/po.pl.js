@@ -75,6 +75,10 @@ return plural;
   null,
   "(Opcjonalne)"
  ],
+ "(default)": [
+  null,
+  "(domyślnie)"
+ ],
  "1 day": [
   null,
   "1 dzień"
@@ -123,6 +127,10 @@ return plural;
   null,
   "Aktywna kopia zapasowa"
  ],
+ "Active zones": [
+  null,
+  ""
+ ],
  "Adaptive load balancing": [
   null,
   "Adaptacyjne równoważenie obciążenia"
@@ -158,6 +166,10 @@ return plural;
  "Add VLAN": [
   null,
   "Dodaj VLAN"
+ ],
+ "Add services to following zones:": [
+  null,
+  ""
  ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -423,6 +435,10 @@ return plural;
   null,
   "Adres IP"
  ],
+ "IP Range": [
+  null,
+  ""
+ ],
  "IP Settings": [
   null,
   "Ustawienia IP"
@@ -587,6 +603,10 @@ return plural;
   null,
   "Nie"
  ],
+ "No active zones": [
+  null,
+  ""
+ ],
  "No carrier": [
   null,
   "Brak operatora"
@@ -702,6 +722,14 @@ return plural;
  "Remove $0": [
   null,
   "Usuń $0"
+ ],
+ "Remove service": [
+  null,
+  ""
+ ],
+ "Remove service from zones": [
+  null,
+  ""
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -890,6 +918,14 @@ return plural;
  "You are not authorized to modify the firewall.": [
   null,
   "Brak upoważnienia do modyfikacji zapory sieciowej."
+ ],
+ "Zone": [
+  null,
+  ""
+ ],
+ "Zones": [
+  null,
+  ""
  ],
  "[$0 bytes of binary data]": [
   null,

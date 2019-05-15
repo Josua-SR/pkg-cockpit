@@ -363,6 +363,14 @@ return plural;
   null,
   "W przypadku większości konfiguracji, macvtap nie działa dla gospodarza w celu komunikacji sieciowej gościa."
  ],
+ "Initiator": [
+  null,
+  "Inicjator"
+ ],
+ "Initiator IQN should not be empty": [
+  null,
+  "Inicjator IQN nie może być pusty"
+ ],
  "Install": [
   null,
   "Zainstaluj"
@@ -538,6 +546,10 @@ return plural;
  "No network is defined on this host": [
   null,
   "Na tym gospodarzu nie określono żadnej sieci"
+ ],
+ "No networks available": [
+  null,
+  ""
  ],
  "No storage pool is defined on this host": [
   null,
@@ -901,7 +913,7 @@ return plural;
  ],
  "Up to $0 $1 available on the host": [
   null,
-  ""
+  "Do $0 $1 dostępnej na gospodarzu"
  ],
  "Usage": [
   null,
@@ -1023,6 +1035,10 @@ return plural;
   null,
   "CD-ROM"
  ],
+ "control-label $0": [
+  null,
+  "control-label $0"
+ ],
  "crashed": [
   null,
   "uległo awarii"
@@ -1071,9 +1087,17 @@ return plural;
   null,
   "urządzenie gospodarza"
  ],
+ "iSCSI Initiator IQN": [
+  null,
+  "Inicjator IQN iSCSI"
+ ],
  "iSCSI Target": [
   null,
   "Cel iSCSI"
+ ],
+ "iSCSI direct Target": [
+  null,
+  "Bezpośredni cel iSCSI"
  ],
  "iSCSI target IQN": [
   null,
@@ -1122,14 +1146,6 @@ return plural;
  "server": [
   null,
   "serwer"
- ],
- "show less": [
-  null,
-  "wyświetl mniej"
- ],
- "show more": [
-  null,
-  "wyświetl więcej"
  ],
  "shut off": [
   null,

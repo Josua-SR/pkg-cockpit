@@ -967,6 +967,10 @@ return plural;
   null,
   "łączenie"
  ],
+ "control-label $0": [
+  null,
+  "control-label $0"
+ ],
  "cores": [
   null,
   "rdzenie"
@@ -1122,14 +1126,6 @@ return plural;
  "server": [
   null,
   "serwer"
- ],
- "show less": [
-  null,
-  "wyświetl mniej"
- ],
- "show more": [
-  null,
-  "wyświetl więcej"
  ],
  "shut off": [
   null,

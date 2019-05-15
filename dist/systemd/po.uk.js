@@ -955,6 +955,10 @@ return plural;
   null,
   "Зручна назва вузла"
  ],
+ "Previous boot": [
+  null,
+  "Попереднє завантаження"
+ ],
  "Problem details": [
   null,
   "Подробиці щодо проблеми"

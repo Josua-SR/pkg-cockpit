@@ -1,23 +1,10 @@
-.ovirt-provider-vdsm {
-    padding: 1em;
+.dropdown-buttons-container {
+    display: inline-flex !important;
 }
 
-.ovirt-provider-vdsm-menu {
-    float:right;
-}
-
-.ovirt-provider-vdsm-inline-block {
-    display: inline-block;
-}
-
-.ovirt-provider-vdsm-menu-buttons {
-    display: inline-block;
-    padding: 2px;
-}
-
-.ovirt-provider-vdsm-editor {
-    width:100%;
-    min-height: 300px;
+.btn + .dropdown-menu.dropdown-menu-right  {
+    right: -4px;
+    left: auto;
 }
 a {
     cursor: pointer;
@@ -311,6 +298,12 @@ input[type=number] {
 .ct-select > option {
     background-color: #fff;
 }
+.more-button {
+    padding-left: 10px;
+}
+.notification-message {
+    white-space: pre-wrap;
+}
 .ovirt-provider-overview-icon {
     max-width: 100%;
     max-height: 100%;
@@ -418,17 +411,30 @@ input[type=number] {
         --dialog-delete--padding: 14rem;
     }
 }
-.dropdown-buttons-container {
-    display: inline-flex !important;
-}
-
-.btn + .dropdown-menu.dropdown-menu-right  {
-    right: -4px;
-    left: auto;
-}
 #cockpit_modal_dialog .modal-body.scroll {
     max-height: calc(75vh - 10rem);
     overflow: auto;
+}
+.ovirt-provider-vdsm {
+    padding: 1em;
+}
+
+.ovirt-provider-vdsm-menu {
+    float:right;
+}
+
+.ovirt-provider-vdsm-inline-block {
+    display: inline-block;
+}
+
+.ovirt-provider-vdsm-menu-buttons {
+    display: inline-block;
+    padding: 2px;
+}
+
+.ovirt-provider-vdsm-editor {
+    width:100%;
+    min-height: 300px;
 }
 .ovirt-action-padding {
     padding-right: 5px;
@@ -447,9 +453,6 @@ input[type=number] {
     text-align: right;
     color: #888888;
     font-weight: 600;
-}
-.machines-more-button {
-    padding-left: 10px;
 }
 .boot-order .list-group {
     --machines-boot-list-offset: 15rem;
