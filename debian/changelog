@@ -1,10 +1,10 @@
-cockpit (194-1) UNRELEASED; urgency=medium
+cockpit (194-1) experimental; urgency=medium
 
   * New upstream release:
     - Firewall: Add services to a specific zone
     - Redesigned on/off switch
 
- -- Martin Pitt <mpitt@debian.org>  Wed, 15 May 2019 14:22:08 +0000
+ -- Martin Pitt <mpitt@debian.org>  Wed, 15 May 2019 14:22:53 +0000
 
 cockpit (193-1) experimental; urgency=medium
 
