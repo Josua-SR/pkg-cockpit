@@ -353,7 +353,7 @@ return plural;
  ],
  "Ooops!": [
   null,
-  "Oups !"
+  "Zut !"
  ],
  "Password": [
   null,

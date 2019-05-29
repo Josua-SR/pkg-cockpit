@@ -67,9 +67,17 @@ return plural;
   "language": "ja",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Network": [
+  null,
+  "$0 ネットワーク"
+ ],
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
   "$0 は、多数のオペレーティングシステムで利用できます。インストールするには、GNOME ソフトウェアで検索するか、以下を実行します:"
+ ],
+ "Activate": [
+  null,
+  "有効化"
  ],
  "Add": [
   null,
@@ -78,6 +86,10 @@ return plural;
  "Add Disk": [
   null,
   "ディスクの追加"
+ ],
+ "Additional": [
+  null,
+  "追加"
  ],
  "Address": [
   null,
@@ -89,7 +101,7 @@ return plural;
  ],
  "Always attach": [
   null,
-  ""
+  "常に割り当てる"
  ],
  "Apply": [
   null,
@@ -101,7 +113,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  ""
+  "自動起動"
  ],
  "Available": [
   null,
@@ -109,17 +121,21 @@ return plural;
  ],
  "Boot Order": [
   null,
-  ""
+  "ブート順序"
+ ],
+ "Boot order settings could not be saved": [
+  null,
+  "ブート順序の設定は保存できない"
  ],
  "Bus": [
   null,
   "バス"
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "CHANGE NETWORK STATE アクションに失敗しました"
- ],
  "CPU Type": [
+  null,
+  "CPU タイプ"
+ ],
+ "Cache": [
   null,
   ""
  ],
@@ -187,21 +203,49 @@ return plural;
   null,
   "仮想マシンの作成"
  ],
- "Creation of vm $0 failed": [
+ "Creation of VM $0 failed": [
   null,
-  "vm $0 の作成に失敗しました。"
+  "VM $0 の作成に失敗"
  ],
  "Ctrl+Alt+Del": [
   null,
   "Ctrl+Alt+Del"
  ],
+ "Current Allocation": [
+  null,
+  "現在の割り当て"
+ ],
+ "DHCP Range": [
+  null,
+  "DHCP の範囲"
+ ],
+ "Deactivate": [
+  null,
+  "解除"
+ ],
  "Delete": [
   null,
   "削除"
  ],
+ "Delete Content": [
+  null,
+  "コンテンツの削除"
+ ],
+ "Delete Storage Pool $0": [
+  null,
+  "ストレージプール $0 の削除"
+ ],
  "Delete associated storage files:": [
   null,
   "関連するストレージファイルの削除:"
+ ],
+ "Delete the Volumes inside this Pool": [
+  null,
+  "このプール内のボリュームを削除"
+ ],
+ "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
+  null,
+  "停止状態のストレージプールを削除すると、プールの定義のみを解除することになります。コンテンツは削除されません。"
  ],
  "Device": [
   null,
@@ -219,6 +263,10 @@ return plural;
   null,
   "シリアルコンソールから切断されました。「再接続」ボタンをクリックします。"
  ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  "ディスク $0 は、VM $1 からの切断に失敗しました"
+ ],
  "Disk failed to be attached": [
   null,
   "ディスクの割り当てに失敗しました"
@@ -231,6 +279,10 @@ return plural;
   null,
   "ディスク"
  ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
+ ],
  "Download the MSI from $0": [
   null,
   "MSI を $0 からダウンロードします"
@@ -241,7 +293,15 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  ""
+  "エミュレートされたマシン"
+ ],
+ "Existing Disk Image": [
+  null,
+  "既存のディスクイメージ"
+ ],
+ "Existing disk image on host's file system": [
+  null,
+  "ホストファイルシステム上の既存のディスクイメージ"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -250,10 +310,6 @@ return plural;
  "File": [
   null,
   "File"
- ],
- "Filesystem": [
-  null,
-  "ファイルシステム"
  ],
  "Filesystem Directory": [
   null,
@@ -271,9 +327,13 @@ return plural;
   null,
   "フォーマット"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
+ "Forwarding mode": [
   null,
-  "GET HYPERVISOR MAX VCPU アクションに失敗しました"
+  "転送モード"
+ ],
+ "General": [
+  null,
+  "全般"
  ],
  "GiB": [
   null,
@@ -287,9 +347,17 @@ return plural;
   null,
   "デスクトップビューアーのグラフィックコンソール"
  ],
+ "Hide Performance Options": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "ホスト"
+ ],
+ "Host Device": [
+  null,
+  "ホストデバイス"
  ],
  "Host Name": [
   null,
@@ -299,13 +367,29 @@ return plural;
   null,
   "ホストは空にできません"
  ],
- "INSTALL VM action failed": [
+ "IPv4 Address": [
   null,
-  "INSTALL VM アクションに失敗しました"
+  "IPv4 アドレス"
+ ],
+ "IPv6 Address": [
+  null,
+  "IPv6 アドレス"
  ],
  "Immediately Start VM": [
   null,
   "仮想マシンをすぐに起動"
+ ],
+ "In most configurations, macvtap does not work for host to guest network communication.": [
+  null,
+  "ほとんどの構成で、macvtap は、ホストからゲストへのネットワーク通信には正しく動作しません。"
+ ],
+ "Initiator": [
+  null,
+  "イニシエーター"
+ ],
+ "Initiator IQN should not be empty": [
+  null,
+  "イニシエーター IQN は空にできません"
  ],
  "Install": [
   null,
@@ -323,9 +407,17 @@ return plural;
   null,
   "インストールソースは空欄にできません"
  ],
+ "Interface Type": [
+  null,
+  "インターフェース形式"
+ ],
  "Invalid filename": [
   null,
   "無効なファイル名"
+ ],
+ "Isolated Network": [
+  null,
+  "隔離されたネットワーク"
  ],
  "Launch Remote Viewer": [
   null,
@@ -335,9 +427,17 @@ return plural;
   null,
   "ロード中..."
  ],
+ "Local Install Media": [
+  null,
+  "ローカルインストールメディア"
+ ],
  "MAC Address": [
   null,
   "MAC アドレス"
+ ],
+ "Mac": [
+  null,
+  "Mac"
  ],
  "Mac Address": [
   null,
@@ -347,6 +447,18 @@ return plural;
   null,
   "手動接続"
  ],
+ "Maximum Allocation": [
+  null,
+  "最大割り当て"
+ ],
+ "Maximum Transmission Unit": [
+  null,
+  "Maximum Transmission Unit"
+ ],
+ "Maximum memory could not be saved": [
+  null,
+  "最大メモリーは保存できませんでした"
+ ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
   "ゲスト OS に割り当てられる仮想 CPU の最大数で、これは 1 から $0 の間でなければなりません"
@@ -355,9 +467,13 @@ return plural;
   null,
   "メモリ"
  ],
- "Memory should be positive number": [
+ "Memory could not be saved": [
   null,
-  "メモリーは正の数値である必要があります"
+  "メモリーは保存できませんでした"
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  "128 MiB から最大割り当ての間のメモリーサイズ"
  ],
  "MiB": [
   null,
@@ -375,6 +491,14 @@ return plural;
   null,
   "詳細情報"
  ],
+ "NAT to $0": [
+  null,
+  "$0 への NAT"
+ ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  "VM $1 の NIC $0 は、状態の変更に失敗しました"
+ ],
  "Name": [
   null,
   "名前"
@@ -383,21 +507,41 @@ return plural;
   null,
   "名前は空欄にできません"
  ],
- "Name should not consist of empty characters only": [
+ "Name: ": [
   null,
-  "名前は空欄にできません"
+  "名前: "
+ ],
+ "Netmask": [
+  null,
+  "ネットマスク"
+ ],
+ "Network $0 failed to get activated": [
+  null,
+  "ネットワーク $0 のアクティベートに失敗しました"
+ ],
+ "Network $0 failed to get deactivated": [
+  null,
+  "ネットワーク $0 の停止に失敗しました"
+ ],
+ "Network Boot (PXE)": [
+  null,
+  "ネットワークブート (PXE)"
  ],
  "Network File System": [
   null,
   "ネットワークファイルシステム"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "ネットワークタイプ"
+  "ネットワークインターフェース"
  ],
- "Network settings could not be saved": [
+ "Network Selection does not support PXE.": [
   null,
-  "ネットワーク設定を保存できませんでした"
+  "選択されたネットワークでは PXE がサポートされていません。"
+ ],
+ "Network interface settings could not be saved": [
+  null,
+  "ネットワークインターフェース設定を保存できませんでした"
  ],
  "Networks": [
   null,
@@ -407,6 +551,10 @@ return plural;
   null,
   "新しいボリューム名"
  ],
+ "No Storage Pools available": [
+  null,
+  ""
+ ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
   "このストレージプールにストレージボリュームが定義されていません"
@@ -414,6 +562,10 @@ return plural;
  "No VM is running or defined on this host": [
   null,
   "仮想マシンがこのホストで実行されていないか、定義されていません。"
+ ],
+ "No Virtual Networks": [
+  null,
+  "仮想ネットワークはありません"
  ],
  "No boot device found": [
   null,
@@ -435,17 +587,37 @@ return plural;
   null,
   "この仮想マシンにはネットワークインターフェースが定義されていません"
  ],
+ "No network is defined on this host": [
+  null,
+  "このホストで定義されるネットワークはありません"
+ ],
+ "No networks available": [
+  null,
+  "利用可能なネットワークはありません"
+ ],
  "No storage pool is defined on this host": [
   null,
   "このホストではストレージプールが定義されていません"
  ],
- "No virtual networks": [
+ "None (Isolated Network)": [
   null,
-  "仮想ネットワークがありません"
+  "なし (隔離されたネットワーク)"
  ],
  "OS Vendor": [
   null,
   "OS ベンダー"
+ ],
+ "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
+  null,
+  "ひとつまたは複数の選択されたボリュームがドメインで使用されています。最初にディスクを切断し、ボリュームが削除できるようにします。"
+ ],
+ "Only editable when the guest is shut off": [
+  null,
+  "ゲストがシャットオフされた場合のみ、編集可能です"
+ ],
+ "Open": [
+  null,
+  "開く"
  ],
  "Operating System": [
   null,
@@ -471,11 +643,23 @@ return plural;
   null,
   "ファイルのパス"
  ],
+ "Pause": [
+  null,
+  "一時停止"
+ ],
  "Persistence": [
+  null,
+  "永続"
+ ],
+ "Persistent": [
+  null,
+  "永続"
+ ],
+ "Physical Disk Device": [
   null,
   ""
  ],
- "Persistent": [
+ "Physical disk device on host": [
   null,
   ""
  ],
@@ -507,6 +691,18 @@ return plural;
   null,
   "ゲストへの公開用の推奨されるソケットの数。"
  ],
+ "Prefix": [
+  null,
+  "プレフィックス"
+ ],
+ "Private": [
+  null,
+  "プライベート"
+ ],
+ "Product": [
+  null,
+  "製品"
+ ],
  "Protocol": [
   null,
   "プロトコル"
@@ -535,9 +731,25 @@ return plural;
   null,
   "再起動"
  ],
+ "Resume": [
+  null,
+  "再開"
+ ],
+ "Route to $0": [
+  null,
+  "$0 へのルーティング"
+ ],
+ "Routed Network": [
+  null,
+  "ルーティングされたネットワーク"
+ ],
  "Run": [
   null,
   "実行"
+ ],
+ "Run when host boots": [
+  null,
+  "ホスト起動時に実行します"
  ],
  "SPICE": [
   null,
@@ -575,6 +787,10 @@ return plural;
   null,
   "セッション"
  ],
+ "Show Performance Options": [
+  null,
+  ""
+ ],
  "Shut Down": [
   null,
   "シャットダウン"
@@ -590,6 +806,10 @@ return plural;
  "Source": [
   null,
   "ソース"
+ ],
+ "Source Format": [
+  null,
+  ""
  ],
  "Source Path": [
   null,
@@ -619,6 +839,18 @@ return plural;
   null,
   "状態"
  ],
+ "Storage": [
+  null,
+  "ストレージ"
+ ],
+ "Storage Pool $0 failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool $0 failed to get deactivated": [
+  null,
+  ""
+ ],
  "Storage Pool Name": [
   null,
   "ストレージプール名"
@@ -631,21 +863,21 @@ return plural;
   null,
   "ストレージプール"
  ],
- "Storage Size": [
-  null,
-  "ストレージのサイズ"
- ],
- "Storage Size should not be negative number": [
-  null,
-  "ストレージのサイズは負の値にすることができません"
- ],
  "Storage Volumes": [
   null,
   "ストレージボリューム"
  ],
+ "Storage Volumes could not be deleted": [
+  null,
+  ""
+ ],
  "System": [
   null,
   "システム"
+ ],
+ "Target": [
+  null,
+  "ターゲット"
  ],
  "Target Path": [
   null,
@@ -654,6 +886,10 @@ return plural;
  "Target path should not be empty": [
   null,
   "ターゲットパスは空欄にできません"
+ ],
+ "The Storage Pool could not be deleted": [
+  null,
+  "ストレージプールを削除できませんでした"
  ],
  "The VM crashed.": [
   null,
@@ -699,6 +935,10 @@ return plural;
   null,
   "プールが空です"
  ],
+ "This volume is already used by another VM.": [
+  null,
+  ""
+ ],
  "Threads per core": [
   null,
   "コアあたりのスレッド"
@@ -715,6 +955,10 @@ return plural;
   null,
   "タイプ"
  ],
+ "Type ID": [
+  null,
+  "Type ID"
+ ],
  "URL": [
   null,
   "URL"
@@ -723,9 +967,17 @@ return plural;
   null,
   "固有名"
  ],
+ "Unit": [
+  null,
+  "単位"
+ ],
  "Unplug": [
   null,
   "アンプラグ"
+ ],
+ "Up to $0 $1 available on the host": [
+  null,
+  "このホストでは最大 $0 $1 まで使用できます"
  ],
  "Usage": [
   null,
@@ -739,57 +991,53 @@ return plural;
   null,
   "Used"
  ],
+ "Used by": [
+  null,
+  "使用中"
+ ],
  "VCPU settings could not be saved": [
   null,
   "VCPU 設定を保存できませんでした"
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
+ "VM $0 failed to Reboot": [
   null,
-  "VM CHANGE_NETWORK_STATE アクションに失敗しました"
+  "VM $0 は、再起動に失敗しました"
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
-  "VM DELETE (DESTROY) アクションに失敗しました"
+  "VM $0 は、強制的に再起動させることに失敗しました"
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "VM DELETE (UNDEFINE) アクションに失敗しました"
+  "VM $0 は、強制的にシャットダウンさせることに失敗しました"
  ],
- "VM DELETE action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "VM DELETE アクションに失敗しました"
+  "VM $0 の削除に失敗しました"
  ],
- "VM DETACH_DISK action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "VM DETACH_DISK アクションに失敗しました"
+  "VM $0 のインストールに失敗しました"
  ],
- "VM FORCE OFF action failed": [
+ "VM $0 failed to pause": [
   null,
-  "VM FORCE OFF アクションに失敗しました"
+  "VM $0 の停止に失敗しました"
  ],
- "VM FORCE REBOOT action failed": [
+ "VM $0 failed to resume": [
   null,
-  "VM FORCE REBOOT アクションに失敗しました"
+  "VM $0 の再開に失敗しました"
  ],
- "VM REBOOT action failed": [
+ "VM $0 failed to send NMI": [
   null,
-  "VM REBOOT アクションに失敗しました"
+  "VM $0 は NMI の送信に失敗しました"
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to shutdown": [
   null,
-  "VM SEND マスク不可な割り込みアクションに失敗しました"
+  "VM $0 はシャットダウンに失敗しました"
  ],
- "VM SENDNMI action failed": [
+ "VM $0 failed to start": [
   null,
-  "VM SENDNMI アクションに失敗しました"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "VM SHUT DOWN アクションに失敗しました"
- ],
- "VM START action failed": [
-  null,
-  "VM START アクションに失敗しました"
+  "VM $0 起動に失敗しました"
  ],
  "VNC": [
   null,
@@ -807,9 +1055,17 @@ return plural;
   null,
   "VNC TLS ポート:"
  ],
+ "Vendor": [
+  null,
+  "ベンダー"
+ ],
  "Virtual Machines": [
   null,
   "仮想マシン"
+ ],
+ "Virtual Network": [
+  null,
+  "仮想ネットワーク"
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
@@ -823,6 +1079,14 @@ return plural;
   null,
   "音量"
  ],
+ "WWPN": [
+  null,
+  "WWPN"
+ ],
+ "You need to select the most closely matching OS vendor and Operating System": [
+  null,
+  ""
+ ],
  "active": [
   null,
   "アクティブ"
@@ -834,6 +1098,10 @@ return plural;
  "cdrom": [
   null,
   "cdrom"
+ ],
+ "control-label $0": [
+  null,
+  "control-label $0"
  ],
  "crashed": [
   null,
@@ -875,9 +1143,29 @@ return plural;
   null,
   "ホスト"
  ],
+ "host device": [
+  null,
+  "ホストデバイス"
+ ],
  "hostdev": [
   null,
   "hostdev"
+ ],
+ "iSCSI Initiator IQN": [
+  null,
+  "iSCSI イニシエーター IQN"
+ ],
+ "iSCSI Target": [
+  null,
+  "iSCSI ターゲット"
+ ],
+ "iSCSI direct Target": [
+  null,
+  "iSCSI ダイレクトターゲット"
+ ],
+ "iSCSI target IQN": [
+  null,
+  "iSCSI ターゲット IQN"
  ],
  "idle": [
   null,
@@ -899,10 +1187,6 @@ return plural;
   null,
   "いいえ"
  ],
- "other": [
-  null,
-  "その他"
- ],
  "paused": [
   null,
   "一時停止"
@@ -915,6 +1199,10 @@ return plural;
   null,
   "raw"
  ],
+ "redirected device": [
+  null,
+  "リダイレクトデバイス"
+ ],
  "running": [
   null,
   "実行中"
@@ -922,6 +1210,14 @@ return plural;
  "server": [
   null,
   "サーバー"
+ ],
+ "show less": [
+  null,
+  "表示を減らす"
+ ],
+ "show more": [
+  null,
+  "表示を増やす"
  ],
  "shut off": [
   null,

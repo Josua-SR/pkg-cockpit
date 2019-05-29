@@ -356,9 +356,9 @@ return plural;
   null,
   "Compresión"
  ],
- "Confirm passphrase": [
+ "Confirm": [
   null,
-  "Confirmar palabra de paso"
+  "Confirmar"
  ],
  "Confirm removal with passphrase": [
   null,
@@ -379,6 +379,14 @@ return plural;
  "Create Partition": [
   null,
   "Crear Partición"
+ ],
+ "Create Partition Table": [
+  null,
+  ""
+ ],
+ "Create Partition on $0": [
+  null,
+  ""
  ],
  "Create RAID Device": [
   null,
@@ -403,14 +411,6 @@ return plural;
  "Create new Logical Volume": [
   null,
   "Crear un nuevo Volumen Lógico"
- ],
- "Create Partition on $0": [
-  null,
-  "Crear partición en $0"
- ],
- "Create Partition Table": [
-  null,
-  "Crear tabla de particiones"
  ],
  "Creating RAID Device $target": [
   null,
@@ -439,10 +439,6 @@ return plural;
  "Custom": [
   null,
   "Personalizar"
- ],
- "Custom (Enter filesystem type)": [
-  null,
-  "Personalizado (Ingrese el sistema de archivos)"
  ],
  "Custom encryption options": [
   null,
@@ -568,13 +564,13 @@ return plural;
   null,
   "Eliminando el contenido de $target"
  ],
+ "Encrypt data": [
+  null,
+  ""
+ ],
  "Encrypted $0": [
   null,
   "Encriptado $0"
- ],
- "Encrypted EXT4 (LUKS)": [
-  null,
-  "Encriptado EXT4 (LUKS)"
  ],
  "Encrypted Logical Volume of $0": [
   null,
@@ -583,10 +579,6 @@ return plural;
  "Encrypted Partition of $0": [
   null,
   "Partición encriptada de $0"
- ],
- "Encrypted XFS (LUKS)": [
-  null,
-  "Encriptado XFS (LUKS)"
  ],
  "Encrypted volumes can not be resized here.": [
   null,
@@ -635,10 +627,6 @@ return plural;
  "Filesystem Name": [
   null,
   "Nombre de Sistema de archivos"
- ],
- "Filesystem type": [
-  null,
-  "Tipo de sistema de archivos"
  ],
  "Filesystems": [
   null,
@@ -691,6 +679,10 @@ return plural;
  "Grow": [
   null,
   "Crecer"
+ ],
+ "Grow Content": [
+  null,
+  ""
  ],
  "Grow Logical Volume": [
   null,
@@ -771,6 +763,10 @@ return plural;
  "Keyserver removal may prevent unlocking $0.": [
   null,
   "La eliminación de Keyserver puede evitar el desbloqueo $0."
+ ],
+ "Loading...": [
+  null,
+  "Cargando..."
  ],
  "Local Mount Point": [
   null,
@@ -887,10 +883,6 @@ return plural;
  "NFS Support not installed": [
   null,
   "No está instalado el soporte para NFS"
- ],
- "NTFS - Compatible with most systems": [
-  null,
-  "NTFS - Compatible con la mayoría de los sistemas"
  ],
  "Name": [
   null,
@@ -1012,10 +1004,6 @@ return plural;
   null,
   "No esta corriendo"
  ],
- "Off": [
-  null,
-  "Apagado"
- ],
  "Ok": [
   null,
   "Aceptar"
@@ -1023,10 +1011,6 @@ return plural;
  "Old passphrase": [
   null,
   "Frase de acceso vieja"
- ],
- "On": [
-  null,
-  "Encencido"
  ],
  "Only $0 of $1 are used.": [
   null,
@@ -1232,6 +1216,10 @@ return plural;
   null,
   "Reiniciar"
  ],
+ "Recommended default": [
+  null,
+  ""
+ ],
  "Recovering": [
   null,
   "Recuperando"
@@ -1368,6 +1356,14 @@ return plural;
   null,
   "Configurando dispositivo de retorno $target"
  ],
+ "Show all": [
+  null,
+  ""
+ ],
+ "Show all $0 drives": [
+  null,
+  ""
+ ],
  "Shrink": [
   null,
   "Encogimiento"
@@ -1375,6 +1371,10 @@ return plural;
  "Shrink Logical Volume": [
   null,
   "Encoger Volumen Lógico"
+ ],
+ "Shrink Volume": [
+  null,
+  ""
  ],
  "Size": [
   null,
@@ -1584,6 +1584,10 @@ return plural;
   null,
   "El disco no se puede quitar mientras el dispositivo se está recuperando."
  ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  ""
+ ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "Este volumen necesita ser activado antes de poder modificar el tamaño."
@@ -1716,10 +1720,6 @@ return plural;
   null,
   "No está instalado el soporte para VDO"
  ],
- "VFAT - Compatible with all systems and devices": [
-  null,
-  "VFAT - Compatible con todos los sistemas y dispositivos"
- ],
  "Verify key": [
   null,
   "Verificar clave"
@@ -1744,13 +1744,13 @@ return plural;
   null,
   "Grupos de Volumen"
  ],
+ "Volume size is $0. Content size is $1.": [
+  null,
+  ""
+ ],
  "Waiting for other software management operations to finish": [
   null,
   "Esperando a que finalicen otras operaciones de gestión de software"
- ],
- "Warning": [
-  null,
-  ""
  ],
  "What if tang-show-keys is not available?": [
   null,
@@ -1764,10 +1764,6 @@ return plural;
   null,
   "Escribiendo"
  ],
- "XFS - Red Hat Enterprise Linux 7 default": [
-  null,
-  "XFS - Red Hat Enterprise Linux 7 Predeterminado"
- ],
  "[$0 bytes of binary data]": [
   null,
   "[$0 bites de datos binarios]"
@@ -1779,10 +1775,6 @@ return plural;
  "[no data]": [
   null,
   "[no hay datos]"
- ],
- "ext4 - Red Hat Enterprise Linux 6 default": [
-  null,
-  "ext4 - Red Hat Enterprise Linux 6 Predeterminado"
  ],
  "iSCSI Targets": [
   null,

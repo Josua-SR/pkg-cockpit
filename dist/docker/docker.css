@@ -287,7 +287,8 @@ input[type=number] {
     box-shadow: inset 0 2px 8px rgba(3, 3, 3, 0.2);
 }
 
-.ct-select > option {
+.ct-select optgroup,
+.ct-select option {
     background-color: #fff;
 }
 #cockpit_modal_dialog .modal-body.scroll {
@@ -1391,6 +1392,14 @@ table.drive-list td:nth-child(2) img {
     width: 1px;
     height: 1px;
     overflow: hidden;
+}
+
+.xterm-dim {
+    opacity: 0.5;
+}
+
+.xterm-underline {
+    text-decoration: underline;
 }
 /* Our terminal or logs */
 .console-ct {

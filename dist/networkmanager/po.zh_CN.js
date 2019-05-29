@@ -73,7 +73,11 @@ return plural;
  ],
  "(Optional)": [
   null,
-  ""
+  "(可选)"
+ ],
+ "(default)": [
+  null,
+  "（默认）"
  ],
  "1 day": [
   null,
@@ -123,6 +127,10 @@ return plural;
   null,
   "激活备份"
  ],
+ "Active zones": [
+  null,
+  "活动区域"
+ ],
  "Adaptive load balancing": [
   null,
   "自适应负载均衡"
@@ -159,6 +167,22 @@ return plural;
   null,
   "添加 VLAN"
  ],
+ "Add Zone": [
+  null,
+  ""
+ ],
+ "Add ports to the following zones:": [
+  null,
+  "把端口添加到以下域："
+ ],
+ "Add services to following zones:": [
+  null,
+  "把服务添加到以下区："
+ ],
+ "Add zone": [
+  null,
+  ""
+ ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
   "添加 <b>$0</b> 将会中断与服务器的连接，并且将导致管理界面不可用。"
@@ -182,6 +206,10 @@ return plural;
  "Addresses": [
   null,
   "地址"
+ ],
+ "Allowed Addresses": [
+  null,
+  ""
  ],
  "Allowed Services": [
   null,
@@ -315,6 +343,10 @@ return plural;
   null,
   "自定义端口"
  ],
+ "Custom zones": [
+  null,
+  ""
+ ],
  "DNS": [
   null,
   "DNS"
@@ -347,6 +379,10 @@ return plural;
   null,
   "删除 <b>$0</b> 将会中断与服务器的连接，并且将会导致管理界面不可用。"
  ],
+ "Description": [
+  null,
+  "描述"
+ ],
  "Details": [
   null,
   "详情"
@@ -358,6 +394,10 @@ return plural;
  "Enable Service": [
   null,
   "启用服务"
+ ],
+ "Entire subnet": [
+  null,
+  ""
  ],
  "Ethernet MAC": [
   null,
@@ -382,6 +422,18 @@ return plural;
  "Failed": [
   null,
   "已失败"
+ ],
+ "Failed to add service": [
+  null,
+  "添加服务失败"
+ ],
+ "Failed to add zone": [
+  null,
+  ""
+ ],
+ "Failed to remove service": [
+  null,
+  "删除服务失败"
  ],
  "Filter Services": [
   null,
@@ -423,6 +475,10 @@ return plural;
   null,
   "IP 地址"
  ],
+ "IP Range": [
+  null,
+  "IP 地址范围"
+ ],
  "IP Settings": [
   null,
   "IP 设置"
@@ -454,6 +510,10 @@ return plural;
  "Inactive": [
   null,
   "未激活"
+ ],
+ "Included services": [
+  null,
+  ""
  ],
  "Interfaces": [
   null,
@@ -587,13 +647,25 @@ return plural;
   null,
   "否"
  ],
+ "No active zones": [
+  null,
+  "没有活动区域"
+ ],
  "No carrier": [
   null,
   "无载体"
  ],
+ "No description available": [
+  null,
+  ""
+ ],
  "No open ports": [
   null,
   "没有开放的端口"
+ ],
+ "None": [
+  null,
+  "无"
  ],
  "Not available": [
   null,
@@ -649,7 +721,7 @@ return plural;
  ],
  "Port number and type do not match": [
   null,
-  ""
+  "端口号和类型不匹配"
  ],
  "Ports": [
   null,
@@ -687,9 +759,13 @@ return plural;
   null,
   "随机"
  ],
- "Range must be strictly ordered": [
+ "Range": [
   null,
   ""
+ ],
+ "Range must be strictly ordered": [
+  null,
+  "范围必须排序"
  ],
  "Reboot": [
   null,
@@ -702,6 +778,14 @@ return plural;
  "Remove $0": [
   null,
   "移除 $0"
+ ],
+ "Remove service": [
+  null,
+  "删除服务"
+ ],
+ "Remove service from zones": [
+  null,
+  "从区中删除服务"
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -758,6 +842,10 @@ return plural;
  "Shared": [
   null,
   "共享"
+ ],
+ "Sorted from least trusted to most trusted": [
+  null,
+  ""
  ],
  "Spanning Tree Protocol": [
   null,
@@ -835,6 +923,10 @@ return plural;
   null,
   "该设备不能在这里被管理。"
  ],
+ "Trust level": [
+  null,
+  ""
+ ],
  "UDP": [
   null,
   "UDP"
@@ -857,7 +949,7 @@ return plural;
  ],
  "Unknown service name": [
   null,
-  ""
+  "未知的服务名"
  ],
  "Unmanaged Interfaces": [
   null,
@@ -891,6 +983,14 @@ return plural;
   null,
   "您无权修改防火墙。"
  ],
+ "Zone": [
+  null,
+  "区域"
+ ],
+ "Zones": [
+  null,
+  "区域"
+ ],
  "[$0 bytes of binary data]": [
   null,
   "[$0 字节二进制数据]"
@@ -902,6 +1002,14 @@ return plural;
  "[no data]": [
   null,
   "[没有数据]"
+ ],
+ "show less": [
+  null,
+  "显示更少"
+ ],
+ "show more": [
+  null,
+  "显示更多"
  ],
  "page-title\u0004Networking": [
   null,

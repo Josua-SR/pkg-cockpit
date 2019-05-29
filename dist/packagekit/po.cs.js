@@ -227,17 +227,9 @@ return plural;
   null,
   "Žádné čekající aktualizace"
  ],
- "Off": [
-  null,
-  "Vypnuto"
- ],
  "Ok": [
   null,
   "Ok"
- ],
- "On": [
-  null,
-  "Zapnuto"
  ],
  "Package information": [
   null,

@@ -227,17 +227,9 @@ return plural;
   null,
   "У черзі немає оновлень"
  ],
- "Off": [
-  null,
-  "Вимкнено"
- ],
  "Ok": [
   null,
   "Гаразд"
- ],
- "On": [
-  null,
-  "Увімкнено"
  ],
  "Package information": [
   null,

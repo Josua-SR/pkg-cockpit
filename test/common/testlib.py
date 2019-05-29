@@ -266,6 +266,7 @@ class Browser:
         self.wait_present(text_selector)
         value_id = self.attr(text_selector, "value")
         self.set_val(selector, value_id)
+        self.wait_val(selector, value_id)
 
     def set_input_text(self, selector, val, append=False, value_check=True):
         self.focus(selector)
@@ -455,7 +456,7 @@ class Browser:
                 if reconnect and ex.msg.startswith('timeout'):
                     reconnect = False
                     if self.is_present("#machine-reconnect"):
-                        self.click("#machine-reconnect", True)
+                        self.click("#machine-reconnect")
                         self.wait_not_visible(".curtains-ct")
                         continue
                 raise
@@ -474,16 +475,18 @@ class Browser:
         # We don't need to open the menu, it's enough to simulate a
         # click on the invisible button.
         if entry:
-            self.click(sel + ' a:contains("%s")' % entry, True)
+            self.click(sel + ' a:contains("%s")' % entry)
         else:
             self.click(sel + ' button:first-child')
 
-    def login_and_go(self, path=None, user=None, host=None, authorized=True):
+    def login_and_go(self, path=None, user=None, host=None, authorized=True, urlroot=None):
         if user is None:
             user = self.default_user
         href = path
         if not href:
             href = "/"
+        if urlroot:
+            href = urlroot + href
         if host:
             href = "/@" + host + href
         self.open(href)
@@ -777,9 +780,9 @@ class MachineCase(unittest.TestCase):
             self.check_browser_errors()
         shutil.rmtree(self.tmpdir)
 
-    def login_and_go(self, path=None, user=None, host=None, authorized=True, tls=False):
+    def login_and_go(self, path=None, user=None, host=None, authorized=True, urlroot=None, tls=False):
         self.machine.start_cockpit(host, tls=tls)
-        self.browser.login_and_go(path, user=user, host=host, authorized=authorized)
+        self.browser.login_and_go(path, user=user, host=host, authorized=authorized, urlroot=urlroot)
 
     allow_core_dumps = False
 

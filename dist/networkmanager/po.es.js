@@ -71,6 +71,14 @@ return plural;
   null,
   "$mtu"
  ],
+ "(Optional)": [
+  null,
+  ""
+ ],
+ "(default)": [
+  null,
+  "(predeterminado)"
+ ],
  "1 day": [
   null,
   "1 día"
@@ -119,6 +127,10 @@ return plural;
   null,
   "Copia de seguridad activa"
  ],
+ "Active zones": [
+  null,
+  ""
+ ],
  "Adaptive load balancing": [
   null,
   "Equilibrio de carga adaptativo"
@@ -139,13 +151,13 @@ return plural;
   null,
   "Añadir puente"
  ],
+ "Add Ports": [
+  null,
+  ""
+ ],
  "Add Services": [
   null,
   "Añadir Servicios"
- ],
- "Add Services…": [
-  null,
-  "Añadir Servicios..."
  ],
  "Add Team": [
   null,
@@ -154,6 +166,22 @@ return plural;
  "Add VLAN": [
   null,
   "Añadir VLAN"
+ ],
+ "Add Zone": [
+  null,
+  ""
+ ],
+ "Add ports to the following zones:": [
+  null,
+  ""
+ ],
+ "Add services to following zones:": [
+  null,
+  ""
+ ],
+ "Add zone": [
+  null,
+  ""
  ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -178,6 +206,10 @@ return plural;
  "Addresses": [
   null,
   "Dirección"
+ ],
+ "Allowed Addresses": [
+  null,
+  ""
  ],
  "Allowed Services": [
   null,
@@ -263,6 +295,10 @@ return plural;
   null,
   "Cerrar"
  ],
+ "Comma-separated ports, ranges, and aliases are accepted": [
+  null,
+  ""
+ ],
  "Configure": [
   null,
   "Configurar"
@@ -303,6 +339,14 @@ return plural;
   null,
   "La creación de este equipo romperá la conexión con el servidor y hará que la interfaz de usuario de administración no esté disponible."
  ],
+ "Custom Ports": [
+  null,
+  ""
+ ],
+ "Custom zones": [
+  null,
+  ""
+ ],
  "DNS": [
   null,
   "DNS"
@@ -335,6 +379,10 @@ return plural;
   null,
   "Eliminando <b>$0</b> romperá la conexión al servidor y hara no disponible la administración UI."
  ],
+ "Description": [
+  null,
+  "Descripción "
+ ],
  "Details": [
   null,
   "Detalles"
@@ -346,6 +394,10 @@ return plural;
  "Enable Service": [
   null,
   "Habilitar servicio"
+ ],
+ "Entire subnet": [
+  null,
+  ""
  ],
  "Ethernet MAC": [
   null,
@@ -359,9 +411,29 @@ return plural;
   null,
   "Ethtool"
  ],
+ "Example: 22,ssh,8080,5900-5910": [
+  null,
+  ""
+ ],
+ "Example: 88,2019,nfs,rsync": [
+  null,
+  ""
+ ],
  "Failed": [
   null,
   "Falló"
+ ],
+ "Failed to add service": [
+  null,
+  ""
+ ],
+ "Failed to add zone": [
+  null,
+  ""
+ ],
+ "Failed to remove service": [
+  null,
+  ""
  ],
  "Filter Services": [
   null,
@@ -403,6 +475,10 @@ return plural;
   null,
   "Dirección IP"
  ],
+ "IP Range": [
+  null,
+  ""
+ ],
  "IP Settings": [
   null,
   "Configuración IP"
@@ -435,6 +511,10 @@ return plural;
   null,
   "Inactivo"
  ],
+ "Included services": [
+  null,
+  ""
+ ],
  "Interfaces": [
   null,
   "Interfaces"
@@ -447,6 +527,10 @@ return plural;
   null,
   "La métrica $0 no es válida"
  ],
+ "Invalid port number": [
+  null,
+  ""
+ ],
  "Invalid prefix $0": [
   null,
   "El prefijo $0 no es válido"
@@ -454,6 +538,10 @@ return plural;
  "Invalid prefix or netmask $0": [
   null,
   "El prefijo o la máscara de red $0 no es válido"
+ ],
+ "Invalid range": [
+  null,
+  ""
  ],
  "Keep connection": [
   null,
@@ -559,13 +647,25 @@ return plural;
   null,
   "No"
  ],
+ "No active zones": [
+  null,
+  ""
+ ],
  "No carrier": [
   null,
   "Ningún portador"
  ],
+ "No description available": [
+  null,
+  ""
+ ],
  "No open ports": [
   null,
   "Sin puertos abiertos"
+ ],
+ "None": [
+  null,
+  "Ninguno"
  ],
  "Not available": [
   null,
@@ -619,6 +719,10 @@ return plural;
   null,
   "Por favor instale el $0 paquete"
  ],
+ "Port number and type do not match": [
+  null,
+  ""
+ ],
  "Ports": [
   null,
   "Puertos"
@@ -655,6 +759,14 @@ return plural;
   null,
   "Al azar"
  ],
+ "Range": [
+  null,
+  ""
+ ],
+ "Range must be strictly ordered": [
+  null,
+  ""
+ ],
  "Reboot": [
   null,
   "Reiniciar"
@@ -666,6 +778,14 @@ return plural;
  "Remove $0": [
   null,
   "Quitar $0"
+ ],
+ "Remove service": [
+  null,
+  ""
+ ],
+ "Remove service from zones": [
+  null,
+  ""
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -711,6 +831,10 @@ return plural;
   null,
   "Servicio"
  ],
+ "Services": [
+  null,
+  "Servicios"
+ ],
  "Set to": [
   null,
   "Ajustar a"
@@ -718,6 +842,10 @@ return plural;
  "Shared": [
   null,
   "Compartido"
+ ],
+ "Sorted from least trusted to most trusted": [
+  null,
+  ""
  ],
  "Spanning Tree Protocol": [
   null,
@@ -795,6 +923,10 @@ return plural;
   null,
   "Este dispositivo no se puede manejar aquí."
  ],
+ "Trust level": [
+  null,
+  ""
+ ],
  "UDP": [
   null,
   "UDP:  Protocolo de Datagramas de Usuario, por sus siglas en ingles (User Datagram Protocol)"
@@ -814,6 +946,10 @@ return plural;
  "Unknown configuration": [
   null,
   "Configuración desconocida"
+ ],
+ "Unknown service name": [
+  null,
+  ""
  ],
  "Unmanaged Interfaces": [
   null,
@@ -847,6 +983,14 @@ return plural;
   null,
   "Usted no está autorizado a modificar el cortafuegos."
  ],
+ "Zone": [
+  null,
+  ""
+ ],
+ "Zones": [
+  null,
+  ""
+ ],
  "[$0 bytes of binary data]": [
   null,
   "[$0 bites de datos binarios]"
@@ -858,6 +1002,14 @@ return plural;
  "[no data]": [
   null,
   "[no hay datos]"
+ ],
+ "show less": [
+  null,
+  "mostrar menos"
+ ],
+ "show more": [
+  null,
+  "mostrar más"
  ],
  "page-title\u0004Networking": [
   null,

@@ -955,6 +955,10 @@ return plural;
   null,
   "Nome de Host Bonito"
  ],
+ "Previous boot": [
+  null,
+  ""
+ ],
  "Problem details": [
   null,
   "Detalhes do problema"

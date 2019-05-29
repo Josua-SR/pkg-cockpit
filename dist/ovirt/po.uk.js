@@ -87,6 +87,10 @@ return plural;
   null,
   "Додати диск"
  ],
+ "Additional": [
+  null,
+  "Додаткові"
+ ],
  "Address": [
   null,
   "Адреса"
@@ -150,6 +154,10 @@ return plural;
  "CREATE VM action failed": [
   null,
   "Не вдалося виконати дію CREATE VM"
+ ],
+ "Cache": [
+  null,
+  ""
  ],
  "Cancel": [
   null,
@@ -243,6 +251,10 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "Current Allocation": [
+  null,
+  "Поточне отримання"
+ ],
  "Delete": [
   null,
   "Вилучити"
@@ -290,6 +302,10 @@ return plural;
  "Disks": [
   null,
   "Диски"
+ ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
  ],
  "Download the MSI from $0": [
   null,
@@ -359,6 +375,10 @@ return plural;
   null,
   "HA:"
  ],
+ "Hide Performance Options": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "Вузол"
@@ -407,6 +427,14 @@ return plural;
   null,
   "З’єднання вручну"
  ],
+ "Maximum Allocation": [
+  null,
+  "Максимальне отримання"
+ ],
+ "Maximum memory could not be saved": [
+  null,
+  "Не вдалося зберегти дані щодо максимального обсягу пам'яті"
+ ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
   "Максимальна кількість віртуальних процесорів, наданих для гостьової операційної системи, має бути у межах від 1 до $0"
@@ -414,6 +442,14 @@ return plural;
  "Memory": [
   null,
   "Пам'ять"
+ ],
+ "Memory could not be saved": [
+  null,
+  "Не вдалося зберегти дані щодо обсягу пам'яті"
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  "Обсяг пам'яті між 128 МіБ та максимальним отриманим"
  ],
  "MiB": [
   null,
@@ -455,6 +491,10 @@ return plural;
   null,
   "Назва нового тому"
  ],
+ "No Storage Pools available": [
+  null,
+  ""
+ ],
  "No VM found in oVirt.": [
   null,
   "У oVirt не знайдено ВМ."
@@ -462,6 +502,10 @@ return plural;
  "No VM is running or defined on this host": [
   null,
   "У цій основній системі не запущено або не визначено віртуальних машин"
+ ],
+ "No Virtual Networks": [
+  null,
+  "Немає віртуальних мереж"
  ],
  "No boot device found": [
   null,
@@ -482,10 +526,6 @@ return plural;
  "No oVirt connection": [
   null,
   "Немає з'єднання oVirt"
- ],
- "No virtual networks": [
-  null,
-  "Немає віртуальних мереж"
  ],
  "None (Isolated Network)": [
   null,
@@ -510,6 +550,10 @@ return plural;
  "Ok": [
   null,
   "Гаразд"
+ ],
+ "Only editable when the guest is shut off": [
+  null,
+  "Можна редагувати, лише якщо гостьову систему вимкнено"
  ],
  "Open": [
   null,
@@ -710,6 +754,10 @@ return plural;
  "Session": [
   null,
   "Сеанс"
+ ],
+ "Show Performance Options": [
+  null,
+  ""
  ],
  "Shut Down": [
   null,
@@ -1126,6 +1174,14 @@ return plural;
  "server": [
   null,
   "сервер"
+ ],
+ "show less": [
+  null,
+  "показати менше"
+ ],
+ "show more": [
+  null,
+  "показати більше"
  ],
  "shut off": [
   null,

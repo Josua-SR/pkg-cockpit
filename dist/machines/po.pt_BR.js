@@ -87,6 +87,10 @@ return plural;
   null,
   "Adicionar disco"
  ],
+ "Additional": [
+  null,
+  "Adicional"
+ ],
  "Address": [
   null,
   "Endereço"
@@ -130,6 +134,10 @@ return plural;
  "CPU Type": [
   null,
   "Tipo da CPU"
+ ],
+ "Cache": [
+  null,
+  ""
  ],
  "Cancel": [
   null,
@@ -203,6 +211,10 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "Current Allocation": [
+  null,
+  ""
+ ],
  "DHCP Range": [
   null,
   ""
@@ -266,6 +278,10 @@ return plural;
  "Disks": [
   null,
   "Discos"
+ ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
  ],
  "Download the MSI from $0": [
   null,
@@ -331,6 +347,10 @@ return plural;
   null,
   "Console gráfico no visualizador da área de trabalho"
  ],
+ "Hide Performance Options": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "Máquina"
@@ -360,6 +380,14 @@ return plural;
   "Imediatamente Iniciar VM"
  ],
  "In most configurations, macvtap does not work for host to guest network communication.": [
+  null,
+  ""
+ ],
+ "Initiator": [
+  null,
+  ""
+ ],
+ "Initiator IQN should not be empty": [
   null,
   ""
  ],
@@ -419,7 +447,15 @@ return plural;
   null,
   "Conexão manual"
  ],
+ "Maximum Allocation": [
+  null,
+  ""
+ ],
  "Maximum Transmission Unit": [
+  null,
+  ""
+ ],
+ "Maximum memory could not be saved": [
   null,
   ""
  ],
@@ -430,6 +466,14 @@ return plural;
  "Memory": [
   null,
   "Memória"
+ ],
+ "Memory could not be saved": [
+  null,
+  ""
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  ""
  ],
  "MiB": [
   null,
@@ -507,6 +551,10 @@ return plural;
   null,
   "Novo nome do volume"
  ],
+ "No Storage Pools available": [
+  null,
+  ""
+ ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
   "Nenhum volume de armazenamento definido para este pool de armazenamento"
@@ -514,6 +562,10 @@ return plural;
  "No VM is running or defined on this host": [
   null,
   "Nenhuma VM está sendo executada ou definida neste host"
+ ],
+ "No Virtual Networks": [
+  null,
+  ""
  ],
  "No boot device found": [
   null,
@@ -539,13 +591,13 @@ return plural;
   null,
   ""
  ],
+ "No networks available": [
+  null,
+  ""
+ ],
  "No storage pool is defined on this host": [
   null,
   "Nenhum conjunto de armazenamento é definido neste host"
- ],
- "No virtual networks": [
-  null,
-  "Nenhuma rede virtual"
  ],
  "None (Isolated Network)": [
   null,
@@ -556,6 +608,10 @@ return plural;
   "Fornecedor de SO"
  ],
  "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
+  null,
+  ""
+ ],
+ "Only editable when the guest is shut off": [
   null,
   ""
  ],
@@ -598,6 +654,14 @@ return plural;
  "Persistent": [
   null,
   "Persistente"
+ ],
+ "Physical Disk Device": [
+  null,
+  ""
+ ],
+ "Physical disk device on host": [
+  null,
+  ""
  ],
  "Please enter new volume name": [
   null,
@@ -723,6 +787,10 @@ return plural;
   null,
   "Sessão"
  ],
+ "Show Performance Options": [
+  null,
+  ""
+ ],
  "Shut Down": [
   null,
   "Encerrar"
@@ -738,6 +806,10 @@ return plural;
  "Source": [
   null,
   "Fonte"
+ ],
+ "Source Format": [
+  null,
+  ""
  ],
  "Source Path": [
   null,
@@ -767,6 +839,10 @@ return plural;
   null,
   "Estado"
  ],
+ "Storage": [
+  null,
+  "Armazenamento"
+ ],
  "Storage Pool $0 failed to get activated": [
   null,
   ""
@@ -786,10 +862,6 @@ return plural;
  "Storage Pools": [
   null,
   "Piscinas de Armazenamento"
- ],
- "Storage Size": [
-  null,
-  "Storage Size"
  ],
  "Storage Volumes": [
   null,
@@ -863,6 +935,10 @@ return plural;
   null,
   "A piscina está vazia"
  ],
+ "This volume is already used by another VM.": [
+  null,
+  ""
+ ],
  "Threads per core": [
   null,
   "Tópicos por núcleo"
@@ -898,6 +974,10 @@ return plural;
  "Unplug": [
   null,
   "Desplugar"
+ ],
+ "Up to $0 $1 available on the host": [
+  null,
+  ""
  ],
  "Usage": [
   null,
@@ -1003,6 +1083,10 @@ return plural;
   null,
   ""
  ],
+ "You need to select the most closely matching OS vendor and Operating System": [
+  null,
+  ""
+ ],
  "active": [
   null,
   "ativo"
@@ -1014,6 +1098,10 @@ return plural;
  "cdrom": [
   null,
   "cdrom"
+ ],
+ "control-label $0": [
+  null,
+  ""
  ],
  "crashed": [
   null,
@@ -1063,7 +1151,15 @@ return plural;
   null,
   "hostdev"
  ],
+ "iSCSI Initiator IQN": [
+  null,
+  ""
+ ],
  "iSCSI Target": [
+  null,
+  ""
+ ],
+ "iSCSI direct Target": [
   null,
   ""
  ],
@@ -1114,6 +1210,14 @@ return plural;
  "server": [
   null,
   "servidor"
+ ],
+ "show less": [
+  null,
+  "mostrar menos"
+ ],
+ "show more": [
+  null,
+  "mostrar mais"
  ],
  "shut off": [
   null,

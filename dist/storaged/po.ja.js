@@ -355,9 +355,9 @@ return plural;
   null,
   "圧縮"
  ],
- "Confirm passphrase": [
+ "Confirm": [
   null,
-  "パスフレーズの確認"
+  "確定します"
  ],
  "Confirm removal with passphrase": [
   null,
@@ -378,6 +378,14 @@ return plural;
  "Create Partition": [
   null,
   "パーティションの作成"
+ ],
+ "Create Partition Table": [
+  null,
+  "パーティションテーブルの作成"
+ ],
+ "Create Partition on $0": [
+  null,
+  "$0 上でのパーティションの作成"
  ],
  "Create RAID Device": [
   null,
@@ -402,14 +410,6 @@ return plural;
  "Create new Logical Volume": [
   null,
   "新規論理ボリュームの作成"
- ],
- "Create Partition on $0": [
-  null,
-  "$0 上でのパーティションの作成"
- ],
- "Create Partition Table": [
-  null,
-  "パーティションテーブルの作成"
  ],
  "Creating RAID Device $target": [
   null,
@@ -439,17 +439,9 @@ return plural;
   null,
   "Custom"
  ],
- "Custom (Enter filesystem type)": [
-  null,
-  "カスタム (ファイルシステムタイプの入力)"
- ],
  "Custom encryption options": [
   null,
   "カスタムの暗号化オプション"
- ],
- "Custom mount option": [
-  null,
-  "カスタムのマウントオプション"
  ],
  "Custom mount options": [
   null,
@@ -571,13 +563,13 @@ return plural;
   null,
   "$target を空にしています"
  ],
+ "Encrypt data": [
+  null,
+  "暗号化データ"
+ ],
  "Encrypted $0": [
   null,
   "暗号化された $0"
- ],
- "Encrypted EXT4 (LUKS)": [
-  null,
-  "暗号化された EXT4 (LUKS)"
  ],
  "Encrypted Logical Volume of $0": [
   null,
@@ -586,10 +578,6 @@ return plural;
  "Encrypted Partition of $0": [
   null,
   "暗号化された $0 のパーティション"
- ],
- "Encrypted XFS (LUKS)": [
-  null,
-  "暗号化された XFS (LUKS)"
  ],
  "Encrypted volumes can not be resized here.": [
   null,
@@ -639,13 +627,13 @@ return plural;
   null,
   "ファイルシステム名"
  ],
- "Filesystem type": [
-  null,
-  "ファイルシステムタイプ"
- ],
  "Filesystems": [
   null,
   "ファイルシステム"
+ ],
+ "For legacy applications only. Reduces performance.": [
+  null,
+  "レガシーアプリケーション専用です。パフォーマンスを下げます。"
  ],
  "Force remove passphrase in $0": [
   null,
@@ -681,7 +669,7 @@ return plural;
  ],
  "Free up space in this group: Shrink or delete other logical volumes or add another physical volume.": [
   null,
-  ""
+  "グループ内で領域を解放します: 他の論理ボリュームを縮小または削除するか、新たな物理ボリュームを追加してください。"
  ],
  "Go to now": [
   null,
@@ -690,6 +678,10 @@ return plural;
  "Grow": [
   null,
   "増加"
+ ],
+ "Grow Content": [
+  null,
+  "コンテンツを増やす"
  ],
  "Grow Logical Volume": [
   null,
@@ -771,6 +763,10 @@ return plural;
   null,
   "キーサーバーの削除により、$0 のロック解除ができない可能性があります。"
  ],
+ "Loading...": [
+  null,
+  "読み込み中..."
+ ],
  "Local Mount Point": [
   null,
   "ローカルマウントポイント"
@@ -847,10 +843,6 @@ return plural;
   null,
   "起動時にマウント"
  ],
- "Mount options": [
-  null,
-  "マウントオプション"
- ],
  "Mount point can not be empty": [
   null,
   "マウントポイントは空欄にできません"
@@ -891,10 +883,6 @@ return plural;
   null,
   "NFS サポートはインストールされていません"
  ],
- "NTFS - Compatible with most systems": [
-  null,
-  "NTFS - 最新システムとの互換性あり"
- ],
  "Name": [
   null,
   "名前"
@@ -909,11 +897,11 @@ return plural;
  ],
  "Name cannot be longer than $0 bytes": [
   null,
-  ""
+  "名前は、$0 バイトを超えることができません"
  ],
  "Name cannot be longer than $0 characters": [
   null,
-  ""
+  "名前は、$0 文字を超えることができません"
  ],
  "Name cannot be longer than 127 characters.": [
   null,
@@ -1001,7 +989,7 @@ return plural;
  ],
  "Not enough space to grow.": [
   null,
-  ""
+  "スペースが不足しています。"
  ],
  "Not found": [
   null,
@@ -1015,10 +1003,6 @@ return plural;
   null,
   "実行中ではありません"
  ],
- "Off": [
-  null,
-  "オフ"
- ],
  "Ok": [
   null,
   "OK"
@@ -1026,10 +1010,6 @@ return plural;
  "Old passphrase": [
   null,
   "古いパスフレーズ"
- ],
- "On": [
-  null,
-  "オン"
  ],
  "Only $0 of $1 are used.": [
   null,
@@ -1235,6 +1215,10 @@ return plural;
   null,
   "再起動"
  ],
+ "Recommended default": [
+  null,
+  "推奨されるデフォルト"
+ ],
  "Recovering": [
   null,
   "復旧"
@@ -1311,6 +1295,10 @@ return plural;
   null,
   "$target のサイズ変更"
  ],
+ "Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase.": [
+  null,
+  "暗号化されたファイルシステムのサイズ変更には、ディスクのロック解除が必要です。現在のディスクのパスフレーズを提供してください。"
+ ],
  "Running": [
   null,
   "実行中"
@@ -1322,6 +1310,14 @@ return plural;
  "Save": [
   null,
   "保存"
+ ],
+ "Save space by compressing individual blocks with LZ4": [
+  null,
+  ""
+ ],
+ "Save space by storing identical data blocks just once": [
+  null,
+  ""
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
@@ -1359,6 +1355,14 @@ return plural;
   null,
   "ループデバイス $target の設定"
  ],
+ "Show all": [
+  null,
+  "すべて表示"
+ ],
+ "Show all $0 drives": [
+  null,
+  "$0 ドライブをすべて表示"
+ ],
  "Shrink": [
   null,
   "縮小"
@@ -1366,6 +1370,10 @@ return plural;
  "Shrink Logical Volume": [
   null,
   "論理ボリュームの縮小"
+ ],
+ "Shrink Volume": [
+  null,
+  "ボリュームの縮小"
  ],
  "Size": [
   null,
@@ -1449,7 +1457,7 @@ return plural;
  ],
  "Storage can not be managed on this system.": [
   null,
-  ""
+  "ストレージは、このシステムで管理できません。"
  ],
  "Store passphrase": [
   null,
@@ -1574,6 +1582,10 @@ return plural;
  "This disk cannot be removed while the device is recovering.": [
   null,
   "このディスクは、デバイスが復旧中に取り外すことができません。"
+ ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  "このロジカルボリュームは、コンテンツによって完全には使用されていません。"
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
@@ -1707,10 +1719,6 @@ return plural;
   null,
   "VDO サポートはインストールされていません"
  ],
- "VFAT - Compatible with all systems and devices": [
-  null,
-  "VFAT - すべてのシステムおよびデバイスとの互換性あり"
- ],
  "Verify key": [
   null,
   "キーを検証します"
@@ -1735,6 +1743,10 @@ return plural;
   null,
   "ボリュームグループ"
  ],
+ "Volume size is $0. Content size is $1.": [
+  null,
+  ""
+ ],
  "Waiting for other software management operations to finish": [
   null,
   "他のソフトウェア管理オペレーションが終了するまで待機中"
@@ -1751,10 +1763,6 @@ return plural;
   null,
   "書き込み"
  ],
- "XFS - Red Hat Enterprise Linux 7 default": [
-  null,
-  "XFS - Red Hat Enterprise Linux 7 のデフォルト値"
- ],
  "[$0 bytes of binary data]": [
   null,
   "[バイナリーデータの $0 バイト]"
@@ -1766,10 +1774,6 @@ return plural;
  "[no data]": [
   null,
   "[データなし]"
- ],
- "ext4 - Red Hat Enterprise Linux 6 default": [
-  null,
-  "ext4 - Red Hat Enterprise Linux 6 のデフォルト値"
  ],
  "iSCSI Targets": [
   null,

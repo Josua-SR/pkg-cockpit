@@ -69,7 +69,7 @@ return plural;
  },
  "$0 Package": [
   "$0 Packages",
-  ""
+  "$0 软件包"
  ],
  "$0 is not available from any repository.": [
   null,
@@ -157,7 +157,7 @@ return plural;
  ],
  "Fridays": [
   null,
-  ""
+  "周五"
  ],
  "Ignore": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "Mondays": [
   null,
-  ""
+  "周一"
  ],
  "Name": [
   null,
@@ -219,17 +219,9 @@ return plural;
   null,
   "没有待完成的更新"
  ],
- "Off": [
-  null,
-  "关"
- ],
  "Ok": [
   null,
   "确认"
- ],
- "On": [
-  null,
-  "开"
  ],
  "Package information": [
   null,
@@ -277,7 +269,7 @@ return plural;
  ],
  "Saturdays": [
   null,
-  ""
+  "周六"
  ],
  "Set up": [
   null,
@@ -305,7 +297,7 @@ return plural;
  ],
  "Sundays": [
   null,
-  ""
+  "周日"
  ],
  "System is up to date": [
   null,
@@ -321,7 +313,7 @@ return plural;
  ],
  "Thursdays": [
   null,
-  ""
+  "周四"
  ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
@@ -333,7 +325,7 @@ return plural;
  ],
  "Tuesdays": [
   null,
-  ""
+  "周二"
  ],
  "Update History": [
   null,
@@ -373,7 +365,7 @@ return plural;
  ],
  "Wednesdays": [
   null,
-  ""
+  "周三"
  ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,

@@ -87,6 +87,10 @@ return plural;
   null,
   "Přidat disk"
  ],
+ "Additional": [
+  null,
+  "Další"
+ ],
  "Address": [
   null,
   "Adresa"
@@ -130,6 +134,10 @@ return plural;
  "CPU Type": [
   null,
   "Typ procesoru"
+ ],
+ "Cache": [
+  null,
+  ""
  ],
  "Cancel": [
   null,
@@ -203,6 +211,10 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "Current Allocation": [
+  null,
+  "Stávající přiřazení"
+ ],
  "DHCP Range": [
   null,
   "DHCP rozsah"
@@ -267,6 +279,10 @@ return plural;
   null,
   "Disky"
  ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
+ ],
  "Download the MSI from $0": [
   null,
   "Stáhnout MSI z $0"
@@ -330,6 +346,10 @@ return plural;
  "Graphics Console in Desktop Viewer": [
   null,
   "Grafická konzole v desktopovém prohlížeči"
+ ],
+ "Hide Performance Options": [
+  null,
+  ""
  ],
  "Host": [
   null,
@@ -427,9 +447,17 @@ return plural;
   null,
   "Ruční připojení"
  ],
+ "Maximum Allocation": [
+  null,
+  "Přiřadit nanejvýš"
+ ],
  "Maximum Transmission Unit": [
   null,
   "Přenosová jednotka nejvýše"
+ ],
+ "Maximum memory could not be saved": [
+  null,
+  "Paměťové maximum se nepodařilo uložit"
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
@@ -438,6 +466,14 @@ return plural;
  "Memory": [
   null,
   "Paměť"
+ ],
+ "Memory could not be saved": [
+  null,
+  "Paměť se nepodařilo uložit"
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  "Velikost paměti z rozmezí 128 MiB a maxima"
  ],
  "MiB": [
   null,
@@ -515,6 +551,10 @@ return plural;
   null,
   "Název pro nový svazek"
  ],
+ "No Storage Pools available": [
+  null,
+  ""
+ ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
   "Pro tento fond úložiště nejsou definované žádné úložné svazky"
@@ -522,6 +562,10 @@ return plural;
  "No VM is running or defined on this host": [
   null,
   "Na tomto stroji nejsou spuštěné nebo definované žádné virt. stroje"
+ ],
+ "No Virtual Networks": [
+  null,
+  "Žádné virtuální sítě"
  ],
  "No boot device found": [
   null,
@@ -549,15 +593,11 @@ return plural;
  ],
  "No networks available": [
   null,
-  ""
+  "Žádné sítě k dispozici"
  ],
  "No storage pool is defined on this host": [
   null,
   "Na tomto stroji není definován žádný fond úložiště"
- ],
- "No virtual networks": [
-  null,
-  "Žádné virtuální sítě"
  ],
  "None (Isolated Network)": [
   null,
@@ -570,6 +610,10 @@ return plural;
  "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
   null,
   "Jeden či více z vybraných svazků je používán doménami. Aby bylo možné svazek smazat, je třeba nejprve odpojit disky."
+ ],
+ "Only editable when the guest is shut off": [
+  null,
+  "Upravit je možné pouze pokud je host vypnutý"
  ],
  "Open": [
   null,
@@ -610,6 +654,14 @@ return plural;
  "Persistent": [
   null,
   "Trvalé"
+ ],
+ "Physical Disk Device": [
+  null,
+  ""
+ ],
+ "Physical disk device on host": [
+  null,
+  ""
  ],
  "Please enter new volume name": [
   null,
@@ -735,6 +787,10 @@ return plural;
   null,
   "Sezení"
  ],
+ "Show Performance Options": [
+  null,
+  ""
+ ],
  "Shut Down": [
   null,
   "Vypnout"
@@ -750,6 +806,10 @@ return plural;
  "Source": [
   null,
   "Zdroj"
+ ],
+ "Source Format": [
+  null,
+  ""
  ],
  "Source Path": [
   null,
@@ -779,6 +839,10 @@ return plural;
   null,
   "Stav"
  ],
+ "Storage": [
+  null,
+  "Úložiště"
+ ],
  "Storage Pool $0 failed to get activated": [
   null,
   "Fond úložiště $0 se nepodařilo aktivovat"
@@ -798,10 +862,6 @@ return plural;
  "Storage Pools": [
   null,
   "Fondy úložiště"
- ],
- "Storage Size": [
-  null,
-  "Velikost úložiště"
  ],
  "Storage Volumes": [
   null,
@@ -874,6 +934,10 @@ return plural;
  "The pool is empty": [
   null,
   "Fond je prázdný"
+ ],
+ "This volume is already used by another VM.": [
+  null,
+  ""
  ],
  "Threads per core": [
   null,
@@ -1146,6 +1210,14 @@ return plural;
  "server": [
   null,
   "server"
+ ],
+ "show less": [
+  null,
+  "zobrazit méně"
+ ],
+ "show more": [
+  null,
+  "zobrazit více"
  ],
  "shut off": [
   null,

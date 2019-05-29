@@ -87,6 +87,10 @@ return plural;
   null,
   "Dodaj dysk"
  ],
+ "Additional": [
+  null,
+  "Dodatkowe"
+ ],
  "Address": [
   null,
   "Adres"
@@ -150,6 +154,10 @@ return plural;
  "CREATE VM action failed": [
   null,
   "Działanie CREATE VM się nie powiodło"
+ ],
+ "Cache": [
+  null,
+  ""
  ],
  "Cancel": [
   null,
@@ -243,6 +251,10 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "Current Allocation": [
+  null,
+  "Obecny przydział"
+ ],
  "Delete": [
   null,
   "Usuń"
@@ -290,6 +302,10 @@ return plural;
  "Disks": [
   null,
   "Dyski"
+ ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
  ],
  "Download the MSI from $0": [
   null,
@@ -359,6 +375,10 @@ return plural;
   null,
   "HA:"
  ],
+ "Hide Performance Options": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "Gospodarz"
@@ -407,6 +427,14 @@ return plural;
   null,
   "Ręczne połączenie"
  ],
+ "Maximum Allocation": [
+  null,
+  "Maksymalny przydział"
+ ],
+ "Maximum memory could not be saved": [
+  null,
+  "Nie można zapisać maksymalnej ilości pamięci"
+ ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
   "Maksymalna liczba wirtualnych procesorów przydzielonych do systemu operacyjnego gościa, musi wynosić między 1 a $0"
@@ -414,6 +442,14 @@ return plural;
  "Memory": [
   null,
   "Pamięć"
+ ],
+ "Memory could not be saved": [
+  null,
+  "Nie można zapisać pamięci"
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  "Rozmiar między 128 MiB a maksymalnym przydziałem"
  ],
  "MiB": [
   null,
@@ -455,6 +491,10 @@ return plural;
   null,
   "Nazwa nowego woluminu"
  ],
+ "No Storage Pools available": [
+  null,
+  ""
+ ],
  "No VM found in oVirt.": [
   null,
   "Nie odnaleziono maszyn wirtualnych w oprogramowaniu oVirt."
@@ -462,6 +502,10 @@ return plural;
  "No VM is running or defined on this host": [
   null,
   "Brak uruchomionych lub określonych maszyn wirtualnych na tym gospodarzu"
+ ],
+ "No Virtual Networks": [
+  null,
+  "Brak sieci wirtualnych"
  ],
  "No boot device found": [
   null,
@@ -482,10 +526,6 @@ return plural;
  "No oVirt connection": [
   null,
   "Brak połączenia oVirt"
- ],
- "No virtual networks": [
-  null,
-  "Brak sieci wirtualnych"
  ],
  "None (Isolated Network)": [
   null,
@@ -510,6 +550,10 @@ return plural;
  "Ok": [
   null,
   "OK"
+ ],
+ "Only editable when the guest is shut off": [
+  null,
+  "Można zmieniać tylko przy wyłączonym gościu"
  ],
  "Open": [
   null,
@@ -710,6 +754,10 @@ return plural;
  "Session": [
   null,
   "Sesja"
+ ],
+ "Show Performance Options": [
+  null,
+  ""
  ],
  "Shut Down": [
   null,
@@ -1126,6 +1174,14 @@ return plural;
  "server": [
   null,
   "serwer"
+ ],
+ "show less": [
+  null,
+  "wyświetl mniej"
+ ],
+ "show more": [
+  null,
+  "wyświetl więcej"
  ],
  "shut off": [
   null,

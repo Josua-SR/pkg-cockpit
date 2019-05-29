@@ -67,6 +67,10 @@ return plural;
   "language": "ja",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Package": [
+  "$0 Packages",
+  "$0 パッケージ"
+ ],
  "$0 is not available from any repository.": [
   null,
   "$0 は、あらゆるリポジトリーから利用できません。"
@@ -151,6 +155,10 @@ return plural;
   null,
   "エラータ:"
  ],
+ "Fridays": [
+  null,
+  "毎週金曜日"
+ ],
  "Ignore": [
   null,
   "無視"
@@ -199,6 +207,10 @@ return plural;
   null,
   "利用可能なアップデートをロード中です。しばらくお待ちください..."
  ],
+ "Mondays": [
+  null,
+  "毎週月曜日"
+ ],
  "Name": [
   null,
   "名前"
@@ -207,17 +219,9 @@ return plural;
   null,
   "保留中の更新がありません"
  ],
- "Off": [
-  null,
-  "オフ"
- ],
  "Ok": [
   null,
   "OK"
- ],
- "On": [
-  null,
-  "オン"
  ],
  "Package information": [
   null,
@@ -263,6 +267,10 @@ return plural;
   null,
   "再起動中"
  ],
+ "Saturdays": [
+  null,
+  "毎週土曜日"
+ ],
  "Set up": [
   null,
   "設定"
@@ -287,17 +295,13 @@ return plural;
   null,
   "別のプログラムがパッケージマネージャーを使用中です。しばらくお待ちください..."
  ],
+ "Sundays": [
+  null,
+  "毎週日曜日"
+ ],
  "System is up to date": [
   null,
   "システムは最新の状態です"
- ],
- "The following packages were recently updated:": [
-  null,
-  "以下のパッケージは最近更新されました:"
- ],
- "The following packages were updated $0:": [
-  null,
-  "以下のパッケージが更新されました $0:"
  ],
  "This system is not registered": [
   null,
@@ -307,6 +311,10 @@ return plural;
   null,
   "この Web コンソールは更新されます。"
  ],
+ "Thursdays": [
+  null,
+  "毎週木曜日"
+ ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
   "ソフトウェアアップデートを取得するには、このシステムを Red Hat に登録する必要があります。登録には、Red Hat カスタマーポータルまたはローカルのサブスクリプションサーバーを使用します。"
@@ -314,6 +322,10 @@ return plural;
  "Total size: $0": [
   null,
   "合計サイズ: $0"
+ ],
+ "Tuesdays": [
+  null,
+  "毎週火曜日"
  ],
  "Update History": [
   null,
@@ -351,6 +363,10 @@ return plural;
   null,
   "他のソフトウェア管理オペレーションが終了するまで待機中"
  ],
+ "Wednesdays": [
+  null,
+  "毎週水曜日"
+ ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
   "ブラウザーが切断されますが、更新プロセスへの影響はありません。すぐに再接続して進捗確認を継続できます。"
@@ -378,34 +394,6 @@ return plural;
  "every day": [
   null,
   "毎日"
- ],
- "on Fridays": [
-  null,
-  "毎週金曜日"
- ],
- "on Mondays": [
-  null,
-  "毎週月曜日"
- ],
- "on Saturdays": [
-  null,
-  "毎週土曜日"
- ],
- "on Sundays": [
-  null,
-  "毎週日曜日"
- ],
- "on Thursdays": [
-  null,
-  "毎週木曜日"
- ],
- "on Tuesdays": [
-  null,
-  "毎週火曜日"
- ],
- "on Wednesdays": [
-  null,
-  "毎週水曜日"
  ],
  "security": [
   null,

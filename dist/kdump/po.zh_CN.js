@@ -139,17 +139,9 @@ return plural;
   null,
   "无"
  ],
- "Off": [
-  null,
-  "关"
- ],
  "Ok": [
   null,
   "确认"
- ],
- "On": [
-  null,
-  "开"
  ],
  "On a mounted device": [
   null,

@@ -356,9 +356,9 @@ return plural;
   null,
   "Compressió"
  ],
- "Confirm passphrase": [
+ "Confirm": [
   null,
-  "Confirmació de la contrasenya"
+  "Confirmació"
  ],
  "Confirm removal with passphrase": [
   null,
@@ -439,10 +439,6 @@ return plural;
  "Custom": [
   null,
   "Personalitzat"
- ],
- "Custom (Enter filesystem type)": [
-  null,
-  "Personalitzat (introduïu el tipus del sistema de fitxers)"
  ],
  "Custom encryption options": [
   null,
@@ -568,13 +564,13 @@ return plural;
   null,
   "S'està buidant $target"
  ],
+ "Encrypt data": [
+  null,
+  ""
+ ],
  "Encrypted $0": [
   null,
   "$0 xifrat"
- ],
- "Encrypted EXT4 (LUKS)": [
-  null,
-  "EXT4 xifrat (LUKS)"
  ],
  "Encrypted Logical Volume of $0": [
   null,
@@ -583,10 +579,6 @@ return plural;
  "Encrypted Partition of $0": [
   null,
   "Partició xifrada de $0"
- ],
- "Encrypted XFS (LUKS)": [
-  null,
-  "XFS xifrat (LUKS)"
  ],
  "Encrypted volumes can not be resized here.": [
   null,
@@ -635,10 +627,6 @@ return plural;
  "Filesystem Name": [
   null,
   "Nom del sistema de fitxers"
- ],
- "Filesystem type": [
-  null,
-  "Tipus de sistema de fitxers"
  ],
  "Filesystems": [
   null,
@@ -691,6 +679,10 @@ return plural;
  "Grow": [
   null,
   "Fes créixer"
+ ],
+ "Grow Content": [
+  null,
+  ""
  ],
  "Grow Logical Volume": [
   null,
@@ -771,6 +763,10 @@ return plural;
  "Keyserver removal may prevent unlocking $0.": [
   null,
   ""
+ ],
+ "Loading...": [
+  null,
+  "S'està carregant..."
  ],
  "Local Mount Point": [
   null,
@@ -1008,10 +1004,6 @@ return plural;
   null,
   "No s'està executant"
  ],
- "Off": [
-  null,
-  "Off"
- ],
  "Ok": [
   null,
   "D'acord"
@@ -1019,10 +1011,6 @@ return plural;
  "Old passphrase": [
   null,
   ""
- ],
- "On": [
-  null,
-  "On"
  ],
  "Only $0 of $1 are used.": [
   null,
@@ -1368,11 +1356,23 @@ return plural;
   null,
   "S'està preparant el dispositiu de bucles $target"
  ],
+ "Show all": [
+  null,
+  ""
+ ],
+ "Show all $0 drives": [
+  null,
+  ""
+ ],
  "Shrink": [
   null,
   ""
  ],
  "Shrink Logical Volume": [
+  null,
+  ""
+ ],
+ "Shrink Volume": [
   null,
   ""
  ],
@@ -1584,6 +1584,10 @@ return plural;
   null,
   "Aquest disc no es pot treure quan s'està recuperant el dispositiu."
  ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  ""
+ ],
  "This volume needs to be activated before it can be resized.": [
   null,
   ""
@@ -1740,11 +1744,11 @@ return plural;
   null,
   "Grups de volums"
  ],
- "Waiting for other software management operations to finish": [
+ "Volume size is $0. Content size is $1.": [
   null,
   ""
  ],
- "Warning": [
+ "Waiting for other software management operations to finish": [
   null,
   ""
  ],

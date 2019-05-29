@@ -357,9 +357,9 @@ return plural;
   null,
   "Kompresja"
  ],
- "Confirm passphrase": [
+ "Confirm": [
   null,
-  "Potwierdź hasło"
+  "Potwierdź"
  ],
  "Confirm removal with passphrase": [
   null,
@@ -440,10 +440,6 @@ return plural;
  "Custom": [
   null,
   "Niestandardowe"
- ],
- "Custom (Enter filesystem type)": [
-  null,
-  "Niestandardowe (podanie typu systemu plików)"
  ],
  "Custom encryption options": [
   null,
@@ -569,13 +565,13 @@ return plural;
   null,
   "Opróżnianie $target"
  ],
+ "Encrypt data": [
+  null,
+  "Zaszyfruj dane"
+ ],
  "Encrypted $0": [
   null,
   "Zaszyfrowane $0"
- ],
- "Encrypted EXT4 (LUKS)": [
-  null,
-  "Szyfrowane EXT4 (LUKS)"
  ],
  "Encrypted Logical Volume of $0": [
   null,
@@ -584,10 +580,6 @@ return plural;
  "Encrypted Partition of $0": [
   null,
   "Zaszyfrowana partycja $0"
- ],
- "Encrypted XFS (LUKS)": [
-  null,
-  "Szyfrowane XFS (LUKS)"
  ],
  "Encrypted volumes can not be resized here.": [
   null,
@@ -636,10 +628,6 @@ return plural;
  "Filesystem Name": [
   null,
   "Nazwa systemu plików"
- ],
- "Filesystem type": [
-  null,
-  "Typ systemu plików"
  ],
  "Filesystems": [
   null,
@@ -1017,10 +1005,6 @@ return plural;
   null,
   "Niedziałające"
  ],
- "Off": [
-  null,
-  "Wyłączone"
- ],
  "Ok": [
   null,
   "OK"
@@ -1028,10 +1012,6 @@ return plural;
  "Old passphrase": [
   null,
   "Poprzednie hasło"
- ],
- "On": [
-  null,
-  "Włączone"
  ],
  "Only $0 of $1 are used.": [
   null,

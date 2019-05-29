@@ -87,6 +87,10 @@ return plural;
   null,
   "ディスクの追加"
  ],
+ "Additional": [
+  null,
+  "追加"
+ ],
  "Address": [
   null,
   "アドレス:"
@@ -101,7 +105,7 @@ return plural;
  ],
  "Always attach": [
   null,
-  ""
+  "常に割り当てる"
  ],
  "Apply": [
   null,
@@ -113,7 +117,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  ""
+  "自動起動"
  ],
  "Available": [
   null,
@@ -133,23 +137,27 @@ return plural;
  ],
  "Boot Order": [
   null,
-  ""
+  "ブート順序"
+ ],
+ "Boot order settings could not be saved": [
+  null,
+  "ブート順序の設定は保存できない"
  ],
  "Bus": [
   null,
   "バス"
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "CHANGE NETWORK STATE アクションに失敗しました"
- ],
  "CPU Type": [
   null,
-  ""
+  "CPU タイプ"
  ],
  "CREATE VM action failed": [
   null,
   "CREATE VM アクションに失敗しました"
+ ],
+ "Cache": [
+  null,
+  ""
  ],
  "Cancel": [
   null,
@@ -243,6 +251,10 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "Current Allocation": [
+  null,
+  "現在の割り当て"
+ ],
  "Delete": [
   null,
   "削除"
@@ -275,6 +287,10 @@ return plural;
   null,
   "シリアルコンソールから切断されました。「再接続」ボタンをクリックします。"
  ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  "ディスク $0 は、VM $1 からの切断に失敗しました"
+ ],
  "Disk failed to be attached": [
   null,
   "ディスクの割り当てに失敗しました"
@@ -286,6 +302,10 @@ return plural;
  "Disks": [
   null,
   "ディスク"
+ ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
  ],
  "Download the MSI from $0": [
   null,
@@ -301,11 +321,15 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  ""
+  "エミュレートされたマシン"
  ],
  "Enter New VM name": [
   null,
   "新規仮想マシン名を入力します"
+ ],
+ "FORCEOFF action failed: $0": [
+  null,
+  "FORCEOFF の動作が失敗: $0"
  ],
  "FQDN": [
   null,
@@ -331,10 +355,6 @@ return plural;
   null,
   "フォーマット"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "GET HYPERVISOR MAX VCPU アクションに失敗しました"
- ],
  "GiB": [
   null,
   "GiB"
@@ -355,6 +375,10 @@ return plural;
   null,
   "HA:"
  ],
+ "Hide Performance Options": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "ホスト"
@@ -363,13 +387,13 @@ return plural;
   null,
   "メンテナンスするホスト"
  ],
- "INSTALL VM action failed": [
-  null,
-  "INSTALL VM アクションに失敗しました"
- ],
  "Install": [
   null,
   "インストール"
+ ],
+ "Interface Type": [
+  null,
+  "インターフェース形式"
  ],
  "Launch Remote Viewer": [
   null,
@@ -391,6 +415,10 @@ return plural;
   null,
   "MIGRATE アクションに失敗しました"
  ],
+ "Mac": [
+  null,
+  "Mac"
+ ],
  "Mac Address": [
   null,
   "Mac アドレス"
@@ -399,6 +427,14 @@ return plural;
   null,
   "手動接続"
  ],
+ "Maximum Allocation": [
+  null,
+  "最大割り当て"
+ ],
+ "Maximum memory could not be saved": [
+  null,
+  "最大メモリーは保存できませんでした"
+ ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
   "ゲスト OS に割り当てられる仮想 CPU の最大数で、これは 1 から $0 の間でなければなりません"
@@ -406,6 +442,14 @@ return plural;
  "Memory": [
   null,
   "メモリ"
+ ],
+ "Memory could not be saved": [
+  null,
+  "メモリーは保存できませんでした"
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  "128 MiB から最大割り当ての間のメモリーサイズ"
  ],
  "MiB": [
   null,
@@ -427,25 +471,29 @@ return plural;
   null,
   "詳細情報"
  ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  "VM $1 の NIC $0 は、状態の変更に失敗しました"
+ ],
  "Name": [
   null,
   "名前"
  ],
- "Network Type": [
+ "Network Interfaces": [
   null,
-  "ネットワークタイプ"
+  "ネットワークインターフェース"
  ],
- "Network settings could not be saved": [
+ "Network interface settings could not be saved": [
   null,
-  "ネットワーク設定を保存できませんでした"
- ],
- "Networks": [
-  null,
-  "ネットワーク"
+  "ネットワークインターフェース設定を保存できませんでした"
  ],
  "New Volume Name": [
   null,
   "新しいボリューム名"
+ ],
+ "No Storage Pools available": [
+  null,
+  ""
  ],
  "No VM found in oVirt.": [
   null,
@@ -454,6 +502,10 @@ return plural;
  "No VM is running or defined on this host": [
   null,
   "仮想マシンがこのホストで実行されていないか、定義されていません。"
+ ],
+ "No Virtual Networks": [
+  null,
+  "仮想ネットワークはありません"
  ],
  "No boot device found": [
   null,
@@ -475,9 +527,9 @@ return plural;
   null,
   "oVirt 接続がありません"
  ],
- "No virtual networks": [
+ "None (Isolated Network)": [
   null,
-  "仮想ネットワークがありません"
+  "なし (隔離されたネットワーク)"
  ],
  "Number of virtual CPUs that gonna be used.": [
   null,
@@ -499,6 +551,14 @@ return plural;
   null,
   "OK"
  ],
+ "Only editable when the guest is shut off": [
+  null,
+  "ゲストがシャットオフされた場合のみ、編集可能です"
+ ],
+ "Open": [
+  null,
+  "開く"
+ ],
  "Optimized for:": [
   null,
   "次に対して最適化:"
@@ -507,9 +567,17 @@ return plural;
   null,
   "概要"
  ],
+ "Path": [
+  null,
+  "パス"
+ ],
+ "Pause": [
+  null,
+  "一時停止"
+ ],
  "Persistence": [
   null,
-  ""
+  "永続"
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
@@ -567,6 +635,14 @@ return plural;
   null,
   "メンテナンスの準備中"
  ],
+ "Private": [
+  null,
+  "プライベート"
+ ],
+ "Product": [
+  null,
+  "製品"
+ ],
  "Protocol": [
   null,
   "プロトコル"
@@ -574,6 +650,10 @@ return plural;
  "REBOOT action failed": [
   null,
   "REBOOT アクションに失敗しました"
+ ],
+ "REBOOT_VM action failed: %s0": [
+  null,
+  "REBOOT_VM の動作が失敗: %s0"
  ],
  "Readonly": [
   null,
@@ -599,6 +679,10 @@ return plural;
   null,
   "再起動"
  ],
+ "Resume": [
+  null,
+  "再開"
+ ],
  "Run": [
   null,
   "実行"
@@ -606,6 +690,10 @@ return plural;
  "Run Here": [
   null,
   "ここから実行"
+ ],
+ "Run when host boots": [
+  null,
+  "ホスト起動時に実行します"
  ],
  "Running Since:": [
   null,
@@ -639,6 +727,10 @@ return plural;
   null,
   "START アクションに失敗しました"
  ],
+ "START_VM action failed: %s0": [
+  null,
+  "START_VM の動作が失敗: %s0"
+ ],
  "SUSPEND action failed": [
   null,
   "SUSPEND アクションに失敗しました"
@@ -662,6 +754,10 @@ return plural;
  "Session": [
   null,
   "セッション"
+ ],
+ "Show Performance Options": [
+  null,
+  ""
  ],
  "Shut Down": [
   null,
@@ -710,6 +806,10 @@ return plural;
  "System": [
   null,
   "システム"
+ ],
+ "Target": [
+  null,
+  "ターゲット"
  ],
  "Template": [
   null,
@@ -779,6 +879,14 @@ return plural;
   null,
   "タイプ"
  ],
+ "Type ID": [
+  null,
+  "Type ID"
+ ],
+ "Unit": [
+  null,
+  "単位"
+ ],
  "Unplug": [
   null,
   "アンプラグ"
@@ -807,37 +915,45 @@ return plural;
   null,
   "VDSM サービス管理"
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to Reboot": [
   null,
-  "VM DELETE (DESTROY) アクションに失敗しました"
+  "VM $0 は、再起動に失敗しました"
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
-  "VM DELETE (UNDEFINE) アクションに失敗しました"
+  "VM $0 は、強制的に再起動させることに失敗しました"
  ],
- "VM FORCE OFF action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "VM FORCE OFF アクションに失敗しました"
+  "VM $0 は、強制的にシャットダウンさせることに失敗しました"
  ],
- "VM FORCE REBOOT action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "VM FORCE REBOOT アクションに失敗しました"
+  "VM $0 の削除に失敗しました"
  ],
- "VM REBOOT action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "VM REBOOT アクションに失敗しました"
+  "VM $0 のインストールに失敗しました"
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to pause": [
   null,
-  "VM SEND マスク不可な割り込みアクションに失敗しました"
+  "VM $0 の停止に失敗しました"
  ],
- "VM SHUT DOWN action failed": [
+ "VM $0 failed to resume": [
   null,
-  "VM SHUT DOWN アクションに失敗しました"
+  "VM $0 の再開に失敗しました"
  ],
- "VM START action failed": [
+ "VM $0 failed to send NMI": [
   null,
-  "VM START アクションに失敗しました"
+  "VM $0 は NMI の送信に失敗しました"
+ ],
+ "VM $0 failed to shutdown": [
+  null,
+  "VM $0 はシャットダウンに失敗しました"
+ ],
+ "VM $0 failed to start": [
+  null,
+  "VM $0 起動に失敗しました"
  ],
  "VM icon": [
   null,
@@ -859,6 +975,10 @@ return plural;
   null,
   "VNC TLS ポート:"
  ],
+ "Vendor": [
+  null,
+  "ベンダー"
+ ],
  "Version": [
   null,
   "バージョン"
@@ -879,6 +999,10 @@ return plural;
   null,
   "音量"
  ],
+ "WWPN": [
+  null,
+  "WWPN"
+ ],
  "bridge": [
   null,
   "ブリッジ"
@@ -890,6 +1014,10 @@ return plural;
  "connecting": [
   null,
   "接続中"
+ ],
+ "control-label $0": [
+  null,
+  "control-label $0"
  ],
  "cores": [
   null,
@@ -938,6 +1066,10 @@ return plural;
  "host": [
   null,
   "ホスト"
+ ],
+ "host device": [
+  null,
+  "ホストデバイス"
  ],
  "hostdev": [
   null,
@@ -1011,10 +1143,6 @@ return plural;
   null,
   "oVirt ログインの処理中"
  ],
- "other": [
-  null,
-  "その他"
- ],
  "paused": [
   null,
   "一時停止"
@@ -1035,6 +1163,10 @@ return plural;
   null,
   "再起動"
  ],
+ "redirected device": [
+  null,
+  "リダイレクトデバイス"
+ ],
  "running": [
   null,
   "実行中"
@@ -1042,6 +1174,14 @@ return plural;
  "server": [
   null,
   "サーバー"
+ ],
+ "show less": [
+  null,
+  "表示を減らす"
+ ],
+ "show more": [
+  null,
+  "表示を増やす"
  ],
  "shut off": [
   null,

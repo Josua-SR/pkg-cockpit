@@ -67,10 +67,6 @@ return plural;
   "language": "ja",
   "x-generator": "Zanata 4.6.2"
  },
- "$0 Only users with local credentials will be able to log into this machine. This may also effect other services as DNS resolution settings and the list of trusted CAs may change.": [
-  null,
-  "$0 ローカル認証情報を持つユーザーだけが、このマシンにログインできます。DNS 解決設定と、信頼される CA の一覧が変更する場合があるため、他のサービスにもこれが当てはまることもあります。"
- ],
  "$0 is not available from any repository.": [
   null,
   "$0 は、あらゆるリポジトリーから利用できません。"
@@ -87,13 +83,9 @@ return plural;
   null,
   "管理者パスワード"
  ],
- "Are you sure you want to leave the '$0' domain?": [
+ "After leaving the domain, only users with local credentials will be able to log into this machine. This may also affect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  "'$0' ドメインを解除してもよろしいですか?"
- ],
- "Are you sure you want to leave this domain?": [
-  null,
-  "このドメインを解除してもよろしいですか?"
+  "ドメインの終了後は、ローカル認証情報を持つユーザーだけが、このマシンにログインできます。DNS 解決設定と、信頼される CA の一覧が変更する可能性があるため、他のサービスにも影響を与える場合があります。"
  ],
  "Authentication": [
   null,
@@ -111,9 +103,21 @@ return plural;
   null,
   "インストールされたソフトウェアの確認"
  ],
+ "Client Software": [
+  null,
+  "クライアントソフトウェア"
+ ],
  "Computer OU": [
   null,
   "コンピューター OU"
+ ],
+ "Contacted domain": [
+  null,
+  "接続されたドメイン"
+ ],
+ "Domain": [
+  null,
+  "Domain"
  ],
  "Domain $0 could not be contacted": [
   null,
@@ -141,7 +145,7 @@ return plural;
  ],
  "Host name should not be changed in a domain": [
   null,
-  ""
+  "ドメインでホスト名は変更できません"
  ],
  "Install": [
   null,
@@ -171,13 +175,13 @@ return plural;
   null,
   "このドメインの参加はサポートされていません"
  ],
- "Leave": [
-  null,
-  "脱退"
- ],
  "Leave Domain": [
   null,
   "ドメインの脱退"
+ ],
+ "Login Format": [
+  null,
+  "ログインフォーマット"
  ],
  "More": [
   null,
@@ -215,6 +219,10 @@ return plural;
   null,
   "$0 を削除中"
  ],
+ "Server Software": [
+  null,
+  "サーバーソフトウェア"
+ ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
   "ユーザー <b>$0</b> はレルムを変更することを許可されていません"
@@ -234,6 +242,10 @@ return plural;
  "User Password": [
   null,
   "ユーザーパスワード"
+ ],
+ "Validating address": [
+  null,
+  "アドレスの検証"
  ],
  "Waiting for other software management operations to finish": [
   null,

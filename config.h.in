@@ -87,9 +87,6 @@
    libssh-0.8.5 */
 #undef LIBSSH_085
 
-/* Maximum size of packet messages */
-#undef MAX_PACKET_SIZE
-
 /* Name of package */
 #undef PACKAGE
 

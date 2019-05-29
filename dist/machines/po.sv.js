@@ -87,6 +87,10 @@ return plural;
   null,
   "Lägg till disk"
  ],
+ "Additional": [
+  null,
+  "Ytterligare"
+ ],
  "Address": [
   null,
   "Adress"
@@ -128,6 +132,10 @@ return plural;
   "Buss"
  ],
  "CPU Type": [
+  null,
+  ""
+ ],
+ "Cache": [
   null,
   ""
  ],
@@ -203,6 +211,10 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "Current Allocation": [
+  null,
+  ""
+ ],
  "DHCP Range": [
   null,
   ""
@@ -266,6 +278,10 @@ return plural;
  "Disks": [
   null,
   "Diskar"
+ ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
  ],
  "Download the MSI from $0": [
   null,
@@ -331,6 +347,10 @@ return plural;
   null,
   "Grafisk konsol i skrivbordsvisare"
  ],
+ "Hide Performance Options": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "Värd"
@@ -360,6 +380,14 @@ return plural;
   "Starta VM:en omedelbart"
  ],
  "In most configurations, macvtap does not work for host to guest network communication.": [
+  null,
+  ""
+ ],
+ "Initiator": [
+  null,
+  ""
+ ],
+ "Initiator IQN should not be empty": [
   null,
   ""
  ],
@@ -419,7 +447,15 @@ return plural;
   null,
   "Manuell anslutning"
  ],
+ "Maximum Allocation": [
+  null,
+  ""
+ ],
  "Maximum Transmission Unit": [
+  null,
+  ""
+ ],
+ "Maximum memory could not be saved": [
   null,
   ""
  ],
@@ -430,6 +466,14 @@ return plural;
  "Memory": [
   null,
   "Minne"
+ ],
+ "Memory could not be saved": [
+  null,
+  ""
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  ""
  ],
  "MiB": [
   null,
@@ -507,6 +551,10 @@ return plural;
   null,
   "Nytt volymnamn"
  ],
+ "No Storage Pools available": [
+  null,
+  ""
+ ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
   "Inga lagringsvolymer är definierade för denna lagringspool"
@@ -514,6 +562,10 @@ return plural;
  "No VM is running or defined on this host": [
   null,
   "Ingen VM kör eller är definierad på denna värd."
+ ],
+ "No Virtual Networks": [
+  null,
+  ""
  ],
  "No boot device found": [
   null,
@@ -539,13 +591,13 @@ return plural;
   null,
   ""
  ],
+ "No networks available": [
+  null,
+  ""
+ ],
  "No storage pool is defined on this host": [
   null,
   "Ingen lagringspool är definierad på denna värd"
- ],
- "No virtual networks": [
-  null,
-  "Inga virtuella nätverk"
  ],
  "None (Isolated Network)": [
   null,
@@ -556,6 +608,10 @@ return plural;
   "OS-leverantör"
  ],
  "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
+  null,
+  ""
+ ],
+ "Only editable when the guest is shut off": [
   null,
   ""
  ],
@@ -596,6 +652,14 @@ return plural;
   "Varaktighet"
  ],
  "Persistent": [
+  null,
+  ""
+ ],
+ "Physical Disk Device": [
+  null,
+  ""
+ ],
+ "Physical disk device on host": [
   null,
   ""
  ],
@@ -723,6 +787,10 @@ return plural;
   null,
   "Session"
  ],
+ "Show Performance Options": [
+  null,
+  ""
+ ],
  "Shut Down": [
   null,
   "Stäng av"
@@ -738,6 +806,10 @@ return plural;
  "Source": [
   null,
   "Källa"
+ ],
+ "Source Format": [
+  null,
+  ""
  ],
  "Source Path": [
   null,
@@ -767,6 +839,10 @@ return plural;
   null,
   "Tillstånd"
  ],
+ "Storage": [
+  null,
+  "Lagring"
+ ],
  "Storage Pool $0 failed to get activated": [
   null,
   ""
@@ -786,10 +862,6 @@ return plural;
  "Storage Pools": [
   null,
   "Lagringspooler"
- ],
- "Storage Size": [
-  null,
-  "Lagringsstorlek"
  ],
  "Storage Volumes": [
   null,
@@ -863,6 +935,10 @@ return plural;
   null,
   "Poolen är tom"
  ],
+ "This volume is already used by another VM.": [
+  null,
+  ""
+ ],
  "Threads per core": [
   null,
   "Trådar per kärna"
@@ -898,6 +974,10 @@ return plural;
  "Unplug": [
   null,
   "Koppla ur"
+ ],
+ "Up to $0 $1 available on the host": [
+  null,
+  ""
  ],
  "Usage": [
   null,
@@ -1003,6 +1083,10 @@ return plural;
   null,
   ""
  ],
+ "You need to select the most closely matching OS vendor and Operating System": [
+  null,
+  ""
+ ],
  "active": [
   null,
   "aktiv"
@@ -1014,6 +1098,10 @@ return plural;
  "cdrom": [
   null,
   "cdrom"
+ ],
+ "control-label $0": [
+  null,
+  ""
  ],
  "crashed": [
   null,
@@ -1063,7 +1151,15 @@ return plural;
   null,
   "värdenhet"
  ],
+ "iSCSI Initiator IQN": [
+  null,
+  ""
+ ],
  "iSCSI Target": [
+  null,
+  ""
+ ],
+ "iSCSI direct Target": [
   null,
   ""
  ],
@@ -1114,6 +1210,14 @@ return plural;
  "server": [
   null,
   "server"
+ ],
+ "show less": [
+  null,
+  "visa mindre"
+ ],
+ "show more": [
+  null,
+  "visa mer"
  ],
  "shut off": [
   null,

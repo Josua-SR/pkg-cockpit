@@ -1,5 +1,5 @@
 # Generated Makefile data for sosreport
-# Stamp: Wed May 15 2019 13:00:05 GMT+0000 (Coordinated Universal Time)
+# Stamp: Wed May 29 2019 14:48:15 GMT+0000 (Coordinated Universal Time)
 
 sosreport_INPUTS = \
 	pkg/lib/page.css \

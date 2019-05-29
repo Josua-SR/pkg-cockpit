@@ -87,6 +87,10 @@ return plural;
   null,
   ""
  ],
+ "Additional": [
+  null,
+  "Addicional"
+ ],
  "Address": [
   null,
   "Adreça"
@@ -150,6 +154,10 @@ return plural;
  "CREATE VM action failed": [
   null,
   "Ha fallat l'acció CREATE VM"
+ ],
+ "Cache": [
+  null,
+  ""
  ],
  "Cancel": [
   null,
@@ -243,6 +251,10 @@ return plural;
   null,
   ""
  ],
+ "Current Allocation": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "Suprimeix"
@@ -290,6 +302,10 @@ return plural;
  "Disks": [
   null,
   "Discs"
+ ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
  ],
  "Download the MSI from $0": [
   null,
@@ -359,6 +375,10 @@ return plural;
   null,
   "HA:"
  ],
+ "Hide Performance Options": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "Amfitrió"
@@ -407,6 +427,14 @@ return plural;
   null,
   "Connexió manual"
  ],
+ "Maximum Allocation": [
+  null,
+  ""
+ ],
+ "Maximum memory could not be saved": [
+  null,
+  ""
+ ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
   ""
@@ -414,6 +442,14 @@ return plural;
  "Memory": [
   null,
   "Memòria"
+ ],
+ "Memory could not be saved": [
+  null,
+  ""
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  ""
  ],
  "MiB": [
   null,
@@ -455,6 +491,10 @@ return plural;
   null,
   ""
  ],
+ "No Storage Pools available": [
+  null,
+  ""
+ ],
  "No VM found in oVirt.": [
   null,
   "No s'ha trobat cap MV a oVirt."
@@ -462,6 +502,10 @@ return plural;
  "No VM is running or defined on this host": [
   null,
   "No hi ha cap MV en execució o definida en aquest amfitrió"
+ ],
+ "No Virtual Networks": [
+  null,
+  ""
  ],
  "No boot device found": [
   null,
@@ -480,10 +524,6 @@ return plural;
   "No s'ha definit cap interfície de xarxa per aquesta MV"
  ],
  "No oVirt connection": [
-  null,
-  ""
- ],
- "No virtual networks": [
   null,
   ""
  ],
@@ -510,6 +550,10 @@ return plural;
  "Ok": [
   null,
   "D'acord"
+ ],
+ "Only editable when the guest is shut off": [
+  null,
+  ""
  ],
  "Open": [
   null,
@@ -710,6 +754,10 @@ return plural;
  "Session": [
   null,
   "Sessió"
+ ],
+ "Show Performance Options": [
+  null,
+  ""
  ],
  "Shut Down": [
   null,
@@ -967,6 +1015,10 @@ return plural;
   null,
   "connectant"
  ],
+ "control-label $0": [
+  null,
+  ""
+ ],
  "cores": [
   null,
   "nuclis"
@@ -1122,6 +1174,14 @@ return plural;
  "server": [
   null,
   "servidor"
+ ],
+ "show less": [
+  null,
+  "mostra menys"
+ ],
+ "show more": [
+  null,
+  "mostra més"
  ],
  "shut off": [
   null,

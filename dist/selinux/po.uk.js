@@ -125,14 +125,6 @@ return plural;
   null,
   "Сталося між $0 і $1"
  ],
- "Off": [
-  null,
-  "Вимкнено"
- ],
- "On": [
-  null,
-  "Увімкнено"
- ],
  "SELinux Access Control Errors": [
   null,
   "Помилка керування доступом SELinux"

@@ -227,17 +227,9 @@ return plural;
   null,
   "Brak oczekujących aktualizacji"
  ],
- "Off": [
-  null,
-  "Wyłączone"
- ],
  "Ok": [
   null,
   "OK"
- ],
- "On": [
-  null,
-  "Włączone"
  ],
  "Package information": [
   null,

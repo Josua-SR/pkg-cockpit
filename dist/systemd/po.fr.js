@@ -955,6 +955,10 @@ return plural;
   null,
   "Nom d’hôte pretty"
  ],
+ "Previous boot": [
+  null,
+  "Démarrage précédent"
+ ],
  "Problem details": [
   null,
   "Détails du problème"

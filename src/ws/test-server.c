@@ -390,7 +390,7 @@ on_handle_stream_socket (CockpitWebServer *server,
       g_signal_handler_disconnect (transport, handler);
     }
 
-  cockpit_web_service_socket (service, path, io_stream, headers, input);
+  cockpit_web_service_socket (service, path, io_stream, headers, input, FALSE /* for_tls_proxy */);
 
   /* Keeps ref on itself until it closes */
   g_object_unref (service);
@@ -506,12 +506,12 @@ on_handle_stream_external (CockpitWebServer *server,
           upgrade = g_hash_table_lookup (headers, "Upgrade");
           if (upgrade && g_ascii_strcasecmp (upgrade, "websocket") == 0)
             {
-              cockpit_channel_socket_open (service, open, path, path, io_stream, headers, input);
+              cockpit_channel_socket_open (service, open, path, path, io_stream, headers, input, FALSE /* for_tls_proxy */);
               handled = TRUE;
             }
           else
             {
-              response = cockpit_web_response_new (io_stream, path, path, NULL, headers);
+              response = cockpit_web_response_new (io_stream, path, path, NULL, headers, COCKPIT_WEB_RESPONSE_NONE);
               cockpit_web_response_set_method (response, method);
               cockpit_channel_response_open (service, headers, response, open);
               g_object_unref (response);
@@ -663,6 +663,7 @@ server_ready (void)
   server_roots = cockpit_web_response_resolve_roots (roots);
   server = cockpit_web_server_new (NULL, server_port, /* TCP port to listen to */
                                    NULL, /* TLS cert */
+                                   COCKPIT_WEB_SERVER_NONE,
                                    NULL, /* GCancellable* */
                                    &error);
   if (server == NULL)

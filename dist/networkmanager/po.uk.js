@@ -129,7 +129,7 @@ return plural;
  ],
  "Active zones": [
   null,
-  ""
+  "Активні зони"
  ],
  "Adaptive load balancing": [
   null,
@@ -167,7 +167,19 @@ return plural;
   null,
   "Додати VLAN"
  ],
+ "Add Zone": [
+  null,
+  ""
+ ],
+ "Add ports to the following zones:": [
+  null,
+  "Додати порти до таких записів зон:"
+ ],
  "Add services to following zones:": [
+  null,
+  "Додати служби до таких зон:"
+ ],
+ "Add zone": [
   null,
   ""
  ],
@@ -194,6 +206,10 @@ return plural;
  "Addresses": [
   null,
   "Адреси"
+ ],
+ "Allowed Addresses": [
+  null,
+  ""
  ],
  "Allowed Services": [
   null,
@@ -327,6 +343,10 @@ return plural;
   null,
   "Нетипові порти"
  ],
+ "Custom zones": [
+  null,
+  ""
+ ],
  "DNS": [
   null,
   "DNS"
@@ -359,6 +379,10 @@ return plural;
   null,
   "Вилучення <b>$0</b> призведе до розірвання з’єднання із сервером і зробить адміністративний інтерфейс користувача недоступним."
  ],
+ "Description": [
+  null,
+  "Опис"
+ ],
  "Details": [
   null,
   "Подробиці"
@@ -370,6 +394,10 @@ return plural;
  "Enable Service": [
   null,
   "Увімкнути службу"
+ ],
+ "Entire subnet": [
+  null,
+  ""
  ],
  "Ethernet MAC": [
   null,
@@ -394,6 +422,18 @@ return plural;
  "Failed": [
   null,
   "Помилка"
+ ],
+ "Failed to add service": [
+  null,
+  "Не вдалося додати службу"
+ ],
+ "Failed to add zone": [
+  null,
+  ""
+ ],
+ "Failed to remove service": [
+  null,
+  "Не вдалося вилучити службу"
  ],
  "Filter Services": [
   null,
@@ -437,7 +477,7 @@ return plural;
  ],
  "IP Range": [
   null,
-  ""
+  "Діапазон IP"
  ],
  "IP Settings": [
   null,
@@ -470,6 +510,10 @@ return plural;
  "Inactive": [
   null,
   "Неактивний"
+ ],
+ "Included services": [
+  null,
+  ""
  ],
  "Interfaces": [
   null,
@@ -605,15 +649,23 @@ return plural;
  ],
  "No active zones": [
   null,
-  ""
+  "Немає активних зон"
  ],
  "No carrier": [
   null,
   "Немає сигналу"
  ],
+ "No description available": [
+  null,
+  ""
+ ],
  "No open ports": [
   null,
   "Немає відкрити портів"
+ ],
+ "None": [
+  null,
+  "Немає"
  ],
  "Not available": [
   null,
@@ -707,6 +759,10 @@ return plural;
   null,
   "Випадковий"
  ],
+ "Range": [
+  null,
+  ""
+ ],
  "Range must be strictly ordered": [
   null,
   "Діапазон має бути строго упорядковано"
@@ -725,11 +781,11 @@ return plural;
  ],
  "Remove service": [
   null,
-  ""
+  "Вилучити службу"
  ],
  "Remove service from zones": [
   null,
-  ""
+  "Вилучити службу з зон"
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -786,6 +842,10 @@ return plural;
  "Shared": [
   null,
   "Спільний"
+ ],
+ "Sorted from least trusted to most trusted": [
+  null,
+  ""
  ],
  "Spanning Tree Protocol": [
   null,
@@ -863,6 +923,10 @@ return plural;
   null,
   "Тут не можна керувати цим пристроєм."
  ],
+ "Trust level": [
+  null,
+  ""
+ ],
  "UDP": [
   null,
   "UDP"
@@ -921,11 +985,11 @@ return plural;
  ],
  "Zone": [
   null,
-  ""
+  "Зона"
  ],
  "Zones": [
   null,
-  ""
+  "Зони"
  ],
  "[$0 bytes of binary data]": [
   null,
@@ -938,6 +1002,14 @@ return plural;
  "[no data]": [
   null,
   "[немає даних]"
+ ],
+ "show less": [
+  null,
+  "показати менше"
+ ],
+ "show more": [
+  null,
+  "показати більше"
  ],
  "page-title\u0004Networking": [
   null,

@@ -116,13 +116,13 @@ BuildRequires: libxslt-devel
 BuildRequires: docbook-style-xsl
 BuildRequires: glib-networking
 BuildRequires: sed
-BuildRequires: git
 
 BuildRequires: glib2-devel >= 2.37.4
 BuildRequires: systemd-devel
 BuildRequires: pcp-libs-devel
 BuildRequires: krb5-server
 BuildRequires: gdb
+BuildRequires: openssh-clients
 
 # For documentation
 BuildRequires: xmlto
@@ -158,20 +158,6 @@ Suggests: cockpit-selinux
 %prep
 %setup -q -n cockpit-%{version}
 
-# Apply patches using git in order to support binary patches. Note that
-# we also reset mtimes since patches should be "complete" and include both
-# generated and source file changes
-# Keep this in sync with tools/debian/rules.
-if [ -n "%{patches}" ]; then
-    git init
-    git config user.email "unused@example.com" && git config user.name "Unused"
-    git config core.autocrlf false && git config core.safecrlf false && git config gc.auto 0
-    git add -f . && git commit -a -q -m "Base" && git tag -a initial --message="initial"
-    git am --whitespace=nowarn %{patches}
-    touch -r $(git diff --name-only initial..HEAD) .git Makefile.in
-    rm -rf .git
-fi
-
 %build
 exec 2>&1
 %configure \
@@ -200,11 +186,6 @@ rm -f %{buildroot}/%{_libdir}/cockpit/*.so
 rm -f %{buildroot}/%{_prefix}/%{__lib}/firewalld/services/cockpit.xml
 %endif
 install -p -m 644 AUTHORS COPYING README.md %{buildroot}%{_docdir}/cockpit/
-
-# On RHEL we don't yet show options for changing language
-%if 0%{?rhel}
-echo '{ "linguas": null }' > %{buildroot}%{_datadir}/cockpit/shell/override.json
-%endif
 
 # Build the package lists for resource packages
 echo '%dir %{_datadir}/cockpit/base1' > base.list
@@ -463,13 +444,12 @@ Requires: libpwquality
 Requires: /usr/bin/date
 Provides: cockpit-realmd = %{version}-%{release}
 Provides: cockpit-shell = %{version}-%{release}
-Obsoletes: cockpit-shell < 127
 Provides: cockpit-systemd = %{version}-%{release}
 Provides: cockpit-tuned = %{version}-%{release}
 Provides: cockpit-users = %{version}-%{release}
 %if 0%{?rhel}
 Provides: cockpit-networkmanager = %{version}-%{release}
-Obsoletes: cockpit-networkmanager < 135
+Obsoletes: cockpit-networkmanager
 Requires: NetworkManager
 Provides: cockpit-kdump = %{version}-%{release}
 Requires: kexec-tools
@@ -489,7 +469,7 @@ Provides: cockpit-subscriptions = %{version}-%{release}
 Requires: subscription-manager >= 1.13
 %endif
 # NPM modules which are also available as packages
-Provides: bundled(js-jquery) = 3.3.1
+Provides: bundled(js-jquery) = 3.4.0
 Provides: bundled(js-moment) = 2.24.0
 Provides: bundled(nodejs-flot) = 0.8.3
 Provides: bundled(nodejs-promise) = 8.0.3
@@ -686,7 +666,6 @@ Requires: cockpit-bridge >= 138
 Requires: cockpit-system >= 138
 Requires: openssh-clients
 Provides: cockpit-test-assets = %{version}-%{release}
-Obsoletes: cockpit-test-assets < 132
 
 %description -n cockpit-tests
 This package contains tests and files used while testing Cockpit.

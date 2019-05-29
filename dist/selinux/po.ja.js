@@ -123,14 +123,6 @@ return plural;
   null,
   "$0〜$1 の発生件数"
  ],
- "Off": [
-  null,
-  "オフ"
- ],
- "On": [
-  null,
-  "オン"
- ],
  "SELinux Access Control Errors": [
   null,
   "SELinux アクセス制御エラー"

@@ -124,14 +124,6 @@ return plural;
   null,
   "S'ha produït entre $0 i $1"
  ],
- "Off": [
-  null,
-  "Off"
- ],
- "On": [
-  null,
-  "On"
- ],
  "SELinux Access Control Errors": [
   null,
   "Errors de control d'accés de SELinux"

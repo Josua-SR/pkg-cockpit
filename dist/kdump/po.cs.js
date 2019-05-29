@@ -139,17 +139,9 @@ return plural;
   null,
   "Žádný"
  ],
- "Off": [
-  null,
-  "Vypnuto"
- ],
  "Ok": [
   null,
   "Ok"
- ],
- "On": [
-  null,
-  "Zapnuto"
  ],
  "On a mounted device": [
   null,

@@ -955,6 +955,10 @@ return plural;
   null,
   "Nom d'amfitrió bonic"
  ],
+ "Previous boot": [
+  null,
+  ""
+ ],
  "Problem details": [
   null,
   "Detalls del problema"

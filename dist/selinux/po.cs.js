@@ -125,14 +125,6 @@ return plural;
   null,
   "Vyskytlo se mezi $0 a $1"
  ],
- "Off": [
-  null,
-  "Vypnuto"
- ],
- "On": [
-  null,
-  "Zapnuto"
- ],
  "SELinux Access Control Errors": [
   null,
   "Chyby řízení přístup SELinux"

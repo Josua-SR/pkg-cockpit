@@ -223,17 +223,9 @@ return plural;
   null,
   "Aucune mise à jour en attente"
  ],
- "Off": [
-  null,
-  "De"
- ],
  "Ok": [
   null,
   "Ok"
- ],
- "On": [
-  null,
-  "Sur"
  ],
  "Package information": [
   null,

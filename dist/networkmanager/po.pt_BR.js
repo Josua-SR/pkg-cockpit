@@ -75,6 +75,10 @@ return plural;
   null,
   ""
  ],
+ "(default)": [
+  null,
+  "(padrão)"
+ ],
  "1 day": [
   null,
   "1 dia"
@@ -123,6 +127,10 @@ return plural;
   null,
   "Backup Ativo"
  ],
+ "Active zones": [
+  null,
+  ""
+ ],
  "Adaptive load balancing": [
   null,
   "Balanceamento de carga dinâmico"
@@ -159,6 +167,22 @@ return plural;
   null,
   "Adicionar VLAN"
  ],
+ "Add Zone": [
+  null,
+  ""
+ ],
+ "Add ports to the following zones:": [
+  null,
+  ""
+ ],
+ "Add services to following zones:": [
+  null,
+  ""
+ ],
+ "Add zone": [
+  null,
+  ""
+ ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
   "Adicionando <b>$0</b> a conexão com o servidor será interrompida e tornará a administração da interface do usuário indisponível."
@@ -182,6 +206,10 @@ return plural;
  "Addresses": [
   null,
   "Endereços"
+ ],
+ "Allowed Addresses": [
+  null,
+  ""
  ],
  "Allowed Services": [
   null,
@@ -315,6 +343,10 @@ return plural;
   null,
   ""
  ],
+ "Custom zones": [
+  null,
+  ""
+ ],
  "DNS": [
   null,
   "DNS"
@@ -347,6 +379,10 @@ return plural;
   null,
   "Excluindo <b>$0</b> a conexão com o servidor será encerrada, e tornará a administração da interface do usuário indisponível."
  ],
+ "Description": [
+  null,
+  "Descrição"
+ ],
  "Details": [
   null,
   "Detalhes"
@@ -358,6 +394,10 @@ return plural;
  "Enable Service": [
   null,
   "Ativar serviço"
+ ],
+ "Entire subnet": [
+  null,
+  ""
  ],
  "Ethernet MAC": [
   null,
@@ -382,6 +422,18 @@ return plural;
  "Failed": [
   null,
   "Falhou"
+ ],
+ "Failed to add service": [
+  null,
+  ""
+ ],
+ "Failed to add zone": [
+  null,
+  ""
+ ],
+ "Failed to remove service": [
+  null,
+  ""
  ],
  "Filter Services": [
   null,
@@ -423,6 +475,10 @@ return plural;
   null,
   "Endereço IP"
  ],
+ "IP Range": [
+  null,
+  ""
+ ],
  "IP Settings": [
   null,
   "Configurações de IP"
@@ -454,6 +510,10 @@ return plural;
  "Inactive": [
   null,
   "Inativo"
+ ],
+ "Included services": [
+  null,
+  ""
  ],
  "Interfaces": [
   null,
@@ -587,13 +647,25 @@ return plural;
   null,
   "Não"
  ],
+ "No active zones": [
+  null,
+  ""
+ ],
  "No carrier": [
   null,
   "Sem sinal"
  ],
+ "No description available": [
+  null,
+  ""
+ ],
  "No open ports": [
   null,
   "Sem portas abertas"
+ ],
+ "None": [
+  null,
+  "Nenhum"
  ],
  "Not available": [
   null,
@@ -687,6 +759,10 @@ return plural;
   null,
   "Aleatório(a)"
  ],
+ "Range": [
+  null,
+  ""
+ ],
  "Range must be strictly ordered": [
   null,
   ""
@@ -702,6 +778,14 @@ return plural;
  "Remove $0": [
   null,
   "Remover $0"
+ ],
+ "Remove service": [
+  null,
+  ""
+ ],
+ "Remove service from zones": [
+  null,
+  ""
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -758,6 +842,10 @@ return plural;
  "Shared": [
   null,
   "Compartilhado"
+ ],
+ "Sorted from least trusted to most trusted": [
+  null,
+  ""
  ],
  "Spanning Tree Protocol": [
   null,
@@ -835,6 +923,10 @@ return plural;
   null,
   "Este dispositivo não pode ser gerenciado aqui."
  ],
+ "Trust level": [
+  null,
+  ""
+ ],
  "UDP": [
   null,
   "UDP"
@@ -891,6 +983,14 @@ return plural;
   null,
   "Você não está autorizado a modificar o firewall."
  ],
+ "Zone": [
+  null,
+  ""
+ ],
+ "Zones": [
+  null,
+  ""
+ ],
  "[$0 bytes of binary data]": [
   null,
   "[$0 bytes de data bynária]"
@@ -902,6 +1002,14 @@ return plural;
  "[no data]": [
   null,
   "[sem dados]"
+ ],
+ "show less": [
+  null,
+  "mostrar menos"
+ ],
+ "show more": [
+  null,
+  "mostrar mais"
  ],
  "page-title\u0004Networking": [
   null,
