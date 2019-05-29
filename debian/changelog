@@ -1,4 +1,4 @@
-cockpit (195-1) UNRELEASED; urgency=medium
+cockpit (195-1) experimental; urgency=medium
 
   * New upstream release:
     - Simplified support for external TLS termination
@@ -7,7 +7,7 @@ cockpit (195-1) UNRELEASED; urgency=medium
     - Machines: Support for changing memory allocation
     - Storage: Select encryption type separately from filesystem
 
- -- Martin Pitt <mpitt@debian.org>  Wed, 29 May 2019 15:46:14 +0000
+ -- Martin Pitt <mpitt@debian.org>  Wed, 29 May 2019 15:47:03 +0000
 
 cockpit (194-1) experimental; urgency=medium
 
