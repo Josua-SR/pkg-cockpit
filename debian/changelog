@@ -1,3 +1,14 @@
+cockpit (195-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    - Simplified support for external TLS termination
+    - Firewall: More support for zones
+    - Machines: Additional storage options
+    - Machines: Support for changing memory allocation
+    - Storage: Select encryption type separately from filesystem
+
+ -- Martin Pitt <mpitt@debian.org>  Wed, 29 May 2019 15:46:14 +0000
+
 cockpit (194-1) experimental; urgency=medium
 
   * New upstream release:
