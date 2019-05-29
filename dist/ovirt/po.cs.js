@@ -87,6 +87,10 @@ return plural;
   null,
   "Přidat disk"
  ],
+ "Additional": [
+  null,
+  "Další"
+ ],
  "Address": [
   null,
   "Adresa"
@@ -150,6 +154,10 @@ return plural;
  "CREATE VM action failed": [
   null,
   "Akce VYTVOŘIT VIRT. STROJ se nezdařila"
+ ],
+ "Cache": [
+  null,
+  ""
  ],
  "Cancel": [
   null,
@@ -243,6 +251,10 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "Current Allocation": [
+  null,
+  "Stávající přiřazení"
+ ],
  "Delete": [
   null,
   "Smazat"
@@ -290,6 +302,10 @@ return plural;
  "Disks": [
   null,
   "Disky"
+ ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
  ],
  "Download the MSI from $0": [
   null,
@@ -359,6 +375,10 @@ return plural;
   null,
   "HA:"
  ],
+ "Hide Performance Options": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "Počítač"
@@ -407,6 +427,14 @@ return plural;
   null,
   "Ruční připojení"
  ],
+ "Maximum Allocation": [
+  null,
+  "Přiřadit nanejvýš"
+ ],
+ "Maximum memory could not be saved": [
+  null,
+  "Paměťové maximum se nepodařilo uložit"
+ ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
   "Maximální počet virtuálních procesorů, přiřazených operačnímu systému hosta. Je třeba, aby bylo z rozmezí 1 až $0"
@@ -414,6 +442,14 @@ return plural;
  "Memory": [
   null,
   "Paměť"
+ ],
+ "Memory could not be saved": [
+  null,
+  "Paměť se nepodařilo uložit"
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  "Velikost paměti z rozmezí 128 MiB a maxima"
  ],
  "MiB": [
   null,
@@ -455,6 +491,10 @@ return plural;
   null,
   "Název pro nový svazek"
  ],
+ "No Storage Pools available": [
+  null,
+  ""
+ ],
  "No VM found in oVirt.": [
   null,
   "V oVirt nenalezeny žádné virt. stroje."
@@ -462,6 +502,10 @@ return plural;
  "No VM is running or defined on this host": [
   null,
   "Na tomto stroji nejsou spuštěné nebo definované žádné virt. stroje"
+ ],
+ "No Virtual Networks": [
+  null,
+  "Žádné virtuální sítě"
  ],
  "No boot device found": [
   null,
@@ -482,10 +526,6 @@ return plural;
  "No oVirt connection": [
   null,
   "Žádné připojení k oVirt"
- ],
- "No virtual networks": [
-  null,
-  "Žádné virtuální sítě"
  ],
  "None (Isolated Network)": [
   null,
@@ -510,6 +550,10 @@ return plural;
  "Ok": [
   null,
   "Ok"
+ ],
+ "Only editable when the guest is shut off": [
+  null,
+  "Upravit je možné pouze pokud je host vypnutý"
  ],
  "Open": [
   null,
@@ -710,6 +754,10 @@ return plural;
  "Session": [
   null,
   "Sezení"
+ ],
+ "Show Performance Options": [
+  null,
+  ""
  ],
  "Shut Down": [
   null,
@@ -1126,6 +1174,14 @@ return plural;
  "server": [
   null,
   "server"
+ ],
+ "show less": [
+  null,
+  "zobrazit méně"
+ ],
+ "show more": [
+  null,
+  "zobrazit více"
  ],
  "shut off": [
   null,

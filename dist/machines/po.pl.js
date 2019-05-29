@@ -87,6 +87,10 @@ return plural;
   null,
   "Dodaj dysk"
  ],
+ "Additional": [
+  null,
+  "Dodatkowe"
+ ],
  "Address": [
   null,
   "Adres"
@@ -130,6 +134,10 @@ return plural;
  "CPU Type": [
   null,
   "Typ procesora"
+ ],
+ "Cache": [
+  null,
+  ""
  ],
  "Cancel": [
   null,
@@ -203,6 +211,10 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "Current Allocation": [
+  null,
+  "Obecny przydział"
+ ],
  "DHCP Range": [
   null,
   "Zakres DHCP"
@@ -267,6 +279,10 @@ return plural;
   null,
   "Dyski"
  ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
+ ],
  "Download the MSI from $0": [
   null,
   "Pobierz plik MSI z $0"
@@ -330,6 +346,10 @@ return plural;
  "Graphics Console in Desktop Viewer": [
   null,
   "Konsola graficzna w przeglądarce pulpitu"
+ ],
+ "Hide Performance Options": [
+  null,
+  ""
  ],
  "Host": [
   null,
@@ -427,9 +447,17 @@ return plural;
   null,
   "Ręczne połączenie"
  ],
+ "Maximum Allocation": [
+  null,
+  "Maksymalny przydział"
+ ],
  "Maximum Transmission Unit": [
   null,
   "MTU"
+ ],
+ "Maximum memory could not be saved": [
+  null,
+  "Nie można zapisać maksymalnej ilości pamięci"
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
@@ -438,6 +466,14 @@ return plural;
  "Memory": [
   null,
   "Pamięć"
+ ],
+ "Memory could not be saved": [
+  null,
+  "Nie można zapisać pamięci"
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  "Rozmiar między 128 MiB a maksymalnym przydziałem"
  ],
  "MiB": [
   null,
@@ -515,6 +551,10 @@ return plural;
   null,
   "Nazwa nowego woluminu"
  ],
+ "No Storage Pools available": [
+  null,
+  ""
+ ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
   "Dla tej puli urządzeń do przechowywania danych nie określono żadnych woluminów urządzeń do przechowywania danych"
@@ -522,6 +562,10 @@ return plural;
  "No VM is running or defined on this host": [
   null,
   "Brak uruchomionych lub określonych maszyn wirtualnych na tym gospodarzu"
+ ],
+ "No Virtual Networks": [
+  null,
+  "Brak sieci wirtualnych"
  ],
  "No boot device found": [
   null,
@@ -549,15 +593,11 @@ return plural;
  ],
  "No networks available": [
   null,
-  ""
+  "Brak dostępnych sieci"
  ],
  "No storage pool is defined on this host": [
   null,
   "Na tym gospodarzu nie określono żadnej puli urządzeń do przechowywania danych"
- ],
- "No virtual networks": [
-  null,
-  "Brak sieci wirtualnych"
  ],
  "None (Isolated Network)": [
   null,
@@ -570,6 +610,10 @@ return plural;
  "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
   null,
   "Jeden lub więcej zaznaczonych woluminów jest używanych przez domeny. Należy najpierw odłączyć dyski, aby umożliwić usuwanie woluminów."
+ ],
+ "Only editable when the guest is shut off": [
+  null,
+  "Można zmieniać tylko przy wyłączonym gościu"
  ],
  "Open": [
   null,
@@ -610,6 +654,14 @@ return plural;
  "Persistent": [
   null,
   "Trwałe"
+ ],
+ "Physical Disk Device": [
+  null,
+  ""
+ ],
+ "Physical disk device on host": [
+  null,
+  ""
  ],
  "Please enter new volume name": [
   null,
@@ -735,6 +787,10 @@ return plural;
   null,
   "Sesja"
  ],
+ "Show Performance Options": [
+  null,
+  ""
+ ],
  "Shut Down": [
   null,
   "Wyłącz"
@@ -750,6 +806,10 @@ return plural;
  "Source": [
   null,
   "Źródło"
+ ],
+ "Source Format": [
+  null,
+  ""
  ],
  "Source Path": [
   null,
@@ -779,6 +839,10 @@ return plural;
   null,
   "Stan"
  ],
+ "Storage": [
+  null,
+  "Przechowywanie danych"
+ ],
  "Storage Pool $0 failed to get activated": [
   null,
   "Aktywacja puli urządzeń do przechowywania danych $0 się nie powiodła"
@@ -798,10 +862,6 @@ return plural;
  "Storage Pools": [
   null,
   "Pule urządzeń do przechowywania danych"
- ],
- "Storage Size": [
-  null,
-  "Rozmiar urządzenia do przechowywania danych"
  ],
  "Storage Volumes": [
   null,
@@ -874,6 +934,10 @@ return plural;
  "The pool is empty": [
   null,
   "Pula jest pusta"
+ ],
+ "This volume is already used by another VM.": [
+  null,
+  ""
  ],
  "Threads per core": [
   null,
@@ -1146,6 +1210,14 @@ return plural;
  "server": [
   null,
   "serwer"
+ ],
+ "show less": [
+  null,
+  "wyświetl mniej"
+ ],
+ "show more": [
+  null,
+  "wyświetl więcej"
  ],
  "shut off": [
   null,

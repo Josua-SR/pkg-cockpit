@@ -71,6 +71,14 @@ return plural;
   null,
   "$mtu"
  ],
+ "(Optional)": [
+  null,
+  "(オプション)"
+ ],
+ "(default)": [
+  null,
+  "(デフォルト)"
+ ],
  "1 day": [
   null,
   "1 日"
@@ -119,6 +127,10 @@ return plural;
   null,
   "アクティブなバックアップ"
  ],
+ "Active zones": [
+  null,
+  "アクティブゾーン"
+ ],
  "Adaptive load balancing": [
   null,
   "適応ロードバランス"
@@ -139,13 +151,13 @@ return plural;
   null,
   "ブリッジの追加"
  ],
+ "Add Ports": [
+  null,
+  "ポートの追加"
+ ],
  "Add Services": [
   null,
   "サービスの追加"
- ],
- "Add Services…": [
-  null,
-  "サービスの追加…"
  ],
  "Add Team": [
   null,
@@ -154,6 +166,22 @@ return plural;
  "Add VLAN": [
   null,
   "VLAN の追加"
+ ],
+ "Add Zone": [
+  null,
+  ""
+ ],
+ "Add ports to the following zones:": [
+  null,
+  "以下のゾーンにポートを追加:"
+ ],
+ "Add services to following zones:": [
+  null,
+  "以下のゾーンにサービスを追加:"
+ ],
+ "Add zone": [
+  null,
+  ""
  ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -178,6 +206,10 @@ return plural;
  "Addresses": [
   null,
   "アドレス"
+ ],
+ "Allowed Addresses": [
+  null,
+  ""
  ],
  "Allowed Services": [
   null,
@@ -263,6 +295,10 @@ return plural;
   null,
   "閉じる"
  ],
+ "Comma-separated ports, ranges, and aliases are accepted": [
+  null,
+  "コンマで区切られたポート、範囲、およびエイリアスは許容される"
+ ],
  "Configure": [
   null,
   "設定"
@@ -303,6 +339,14 @@ return plural;
   null,
   "このチームを作成すると、サーバーへの接続が切断され、管理 UI が利用できなくなります。"
  ],
+ "Custom Ports": [
+  null,
+  "カスタムポート"
+ ],
+ "Custom zones": [
+  null,
+  ""
+ ],
  "DNS": [
   null,
   "DNS"
@@ -335,6 +379,10 @@ return plural;
   null,
   "<b>$0</b> を削除すると、サーバーへの接続が切断され、管理 UI が利用できなくなります。"
  ],
+ "Description": [
+  null,
+  "説明"
+ ],
  "Details": [
   null,
   "詳細"
@@ -346,6 +394,10 @@ return plural;
  "Enable Service": [
   null,
   "サービスを有効にします"
+ ],
+ "Entire subnet": [
+  null,
+  ""
  ],
  "Ethernet MAC": [
   null,
@@ -359,9 +411,29 @@ return plural;
   null,
   "Ethtool"
  ],
+ "Example: 22,ssh,8080,5900-5910": [
+  null,
+  "例: 22,ssh,8080,5900-5910"
+ ],
+ "Example: 88,2019,nfs,rsync": [
+  null,
+  "例: 88,2019,nfs,rsync"
+ ],
  "Failed": [
   null,
   "失敗"
+ ],
+ "Failed to add service": [
+  null,
+  "サービスの追加に失敗しました"
+ ],
+ "Failed to add zone": [
+  null,
+  ""
+ ],
+ "Failed to remove service": [
+  null,
+  "サービスの削除に失敗しました"
  ],
  "Filter Services": [
   null,
@@ -403,6 +475,10 @@ return plural;
   null,
   "IP アドレス"
  ],
+ "IP Range": [
+  null,
+  "IP 範囲"
+ ],
  "IP Settings": [
   null,
   "IP 設定"
@@ -435,6 +511,10 @@ return plural;
   null,
   "停止"
  ],
+ "Included services": [
+  null,
+  ""
+ ],
  "Interfaces": [
   null,
   "インターフェース"
@@ -447,6 +527,10 @@ return plural;
   null,
   "無効なメトリック $0"
  ],
+ "Invalid port number": [
+  null,
+  "無効なポート番号"
+ ],
  "Invalid prefix $0": [
   null,
   "無効なプレフィックス $0"
@@ -454,6 +538,10 @@ return plural;
  "Invalid prefix or netmask $0": [
   null,
   "無効なプレフィックスまたはネットマスク $0"
+ ],
+ "Invalid range": [
+  null,
+  "無効な範囲"
  ],
  "Keep connection": [
   null,
@@ -559,13 +647,25 @@ return plural;
   null,
   "いいえ"
  ],
+ "No active zones": [
+  null,
+  "アクティブゾーンはありません"
+ ],
  "No carrier": [
   null,
   "キャリアなし"
  ],
+ "No description available": [
+  null,
+  ""
+ ],
  "No open ports": [
   null,
   "開いているポートはありません"
+ ],
+ "None": [
+  null,
+  "なし"
  ],
  "Not available": [
   null,
@@ -619,6 +719,10 @@ return plural;
   null,
   "$0 パッケージをインストールしてください"
  ],
+ "Port number and type do not match": [
+  null,
+  "ポート番号とタイプが一致しません"
+ ],
  "Ports": [
   null,
   "ポート"
@@ -655,6 +759,14 @@ return plural;
   null,
   "ランダム"
  ],
+ "Range": [
+  null,
+  ""
+ ],
+ "Range must be strictly ordered": [
+  null,
+  "範囲の順序は厳密でなければなりません"
+ ],
  "Reboot": [
   null,
   "再起動"
@@ -666,6 +778,14 @@ return plural;
  "Remove $0": [
   null,
   "$0 の削除"
+ ],
+ "Remove service": [
+  null,
+  "サービスの削除"
+ ],
+ "Remove service from zones": [
+  null,
+  "ゾーンからのサービスの削除"
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -711,6 +831,10 @@ return plural;
   null,
   "サービス"
  ],
+ "Services": [
+  null,
+  "サービス"
+ ],
  "Set to": [
   null,
   "設定値"
@@ -718,6 +842,10 @@ return plural;
  "Shared": [
   null,
   "共有"
+ ],
+ "Sorted from least trusted to most trusted": [
+  null,
+  ""
  ],
  "Spanning Tree Protocol": [
   null,
@@ -795,6 +923,10 @@ return plural;
   null,
   "このデバイスはここで管理できません。"
  ],
+ "Trust level": [
+  null,
+  ""
+ ],
  "UDP": [
   null,
   "UDP"
@@ -814,6 +946,10 @@ return plural;
  "Unknown configuration": [
   null,
   "不明な設定"
+ ],
+ "Unknown service name": [
+  null,
+  "不明なサービス名"
  ],
  "Unmanaged Interfaces": [
   null,
@@ -847,6 +983,14 @@ return plural;
   null,
   "ファイアウォールを修正する権限がありません。"
  ],
+ "Zone": [
+  null,
+  "ゾーン"
+ ],
+ "Zones": [
+  null,
+  "ゾーン"
+ ],
  "[$0 bytes of binary data]": [
   null,
   "[バイナリーデータの $0 バイト]"
@@ -858,6 +1002,14 @@ return plural;
  "[no data]": [
   null,
   "[データなし]"
+ ],
+ "show less": [
+  null,
+  "表示を減らす"
+ ],
+ "show more": [
+  null,
+  "表示を増やす"
  ],
  "page-title\u0004Networking": [
   null,

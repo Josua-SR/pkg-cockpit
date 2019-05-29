@@ -87,6 +87,10 @@ return plural;
   null,
   "Lägg till disk"
  ],
+ "Additional": [
+  null,
+  "Ytterligare"
+ ],
  "Address": [
   null,
   "Adress"
@@ -150,6 +154,10 @@ return plural;
  "CREATE VM action failed": [
   null,
   "Åtgärden SKAPA VM misslyckades"
+ ],
+ "Cache": [
+  null,
+  ""
  ],
  "Cancel": [
   null,
@@ -243,6 +251,10 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "Current Allocation": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "Ta bort"
@@ -290,6 +302,10 @@ return plural;
  "Disks": [
   null,
   "Diskar"
+ ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
  ],
  "Download the MSI from $0": [
   null,
@@ -359,6 +375,10 @@ return plural;
   null,
   "HA:"
  ],
+ "Hide Performance Options": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "Värd"
@@ -407,6 +427,14 @@ return plural;
   null,
   "Manuell anslutning"
  ],
+ "Maximum Allocation": [
+  null,
+  ""
+ ],
+ "Maximum memory could not be saved": [
+  null,
+  ""
+ ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
   "Maximalt antal virtuella CPU:er allokerade till gäst-OS:et, vilket måste vara mellan 1 och $0"
@@ -414,6 +442,14 @@ return plural;
  "Memory": [
   null,
   "Minne"
+ ],
+ "Memory could not be saved": [
+  null,
+  ""
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  ""
  ],
  "MiB": [
   null,
@@ -455,6 +491,10 @@ return plural;
   null,
   "Nytt volymnamn"
  ],
+ "No Storage Pools available": [
+  null,
+  ""
+ ],
  "No VM found in oVirt.": [
   null,
   "Ingen VM hittad i oVirt."
@@ -462,6 +502,10 @@ return plural;
  "No VM is running or defined on this host": [
   null,
   "Ingen VM kör eller är definierad på denna värd."
+ ],
+ "No Virtual Networks": [
+  null,
+  ""
  ],
  "No boot device found": [
   null,
@@ -482,10 +526,6 @@ return plural;
  "No oVirt connection": [
   null,
   "Ingen oVirt-förbindelse"
- ],
- "No virtual networks": [
-  null,
-  "Inga virtuella nätverk"
  ],
  "None (Isolated Network)": [
   null,
@@ -510,6 +550,10 @@ return plural;
  "Ok": [
   null,
   "Ok"
+ ],
+ "Only editable when the guest is shut off": [
+  null,
+  ""
  ],
  "Open": [
   null,
@@ -710,6 +754,10 @@ return plural;
  "Session": [
   null,
   "Session"
+ ],
+ "Show Performance Options": [
+  null,
+  ""
  ],
  "Shut Down": [
   null,
@@ -967,6 +1015,10 @@ return plural;
   null,
   "ansluter"
  ],
+ "control-label $0": [
+  null,
+  ""
+ ],
  "cores": [
   null,
   "kärnor"
@@ -1122,6 +1174,14 @@ return plural;
  "server": [
   null,
   "server"
+ ],
+ "show less": [
+  null,
+  "visa mindre"
+ ],
+ "show more": [
+  null,
+  "visa mer"
  ],
  "shut off": [
   null,

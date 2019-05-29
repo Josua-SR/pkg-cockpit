@@ -356,9 +356,9 @@ return plural;
   null,
   "Compression"
  ],
- "Confirm passphrase": [
+ "Confirm": [
   null,
-  "Confirmer la phrase secrète"
+  "Confirmer"
  ],
  "Confirm removal with passphrase": [
   null,
@@ -439,10 +439,6 @@ return plural;
  "Custom": [
   null,
   "Personnalisé"
- ],
- "Custom (Enter filesystem type)": [
-  null,
-  "Personnalisé (saisir le type de système de fichiers)"
  ],
  "Custom encryption options": [
   null,
@@ -568,13 +564,13 @@ return plural;
   null,
   "$target en cours de vidage"
  ],
+ "Encrypt data": [
+  null,
+  "Chiffrer les données"
+ ],
  "Encrypted $0": [
   null,
   "Chiffré $0"
- ],
- "Encrypted EXT4 (LUKS)": [
-  null,
-  "EXT4 crypté (LUKS)"
  ],
  "Encrypted Logical Volume of $0": [
   null,
@@ -583,10 +579,6 @@ return plural;
  "Encrypted Partition of $0": [
   null,
   "Partition chiffrée de $0"
- ],
- "Encrypted XFS (LUKS)": [
-  null,
-  "XFS chiffré (LUKS)"
  ],
  "Encrypted volumes can not be resized here.": [
   null,
@@ -635,10 +627,6 @@ return plural;
  "Filesystem Name": [
   null,
   "Nom du système de fichiers"
- ],
- "Filesystem type": [
-  null,
-  "Type de système de fichiers"
  ],
  "Filesystems": [
   null,
@@ -1016,10 +1004,6 @@ return plural;
   null,
   "Pas en cours d’exécution"
  ],
- "Off": [
-  null,
-  "De"
- ],
  "Ok": [
   null,
   "Ok"
@@ -1027,10 +1011,6 @@ return plural;
  "Old passphrase": [
   null,
   "Ancienne phrase de passe"
- ],
- "On": [
-  null,
-  "Sur"
  ],
  "Only $0 of $1 are used.": [
   null,
@@ -1378,11 +1358,11 @@ return plural;
  ],
  "Show all": [
   null,
-  ""
+  "Tout afficher"
  ],
  "Show all $0 drives": [
   null,
-  ""
+  "Afficher tous les lecteurs $0 "
  ],
  "Shrink": [
   null,

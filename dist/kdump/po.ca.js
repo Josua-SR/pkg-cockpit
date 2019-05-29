@@ -139,17 +139,9 @@ return plural;
   null,
   "Cap"
  ],
- "Off": [
-  null,
-  "Off"
- ],
  "Ok": [
   null,
   "D'acord"
- ],
- "On": [
-  null,
-  "On"
  ],
  "On a mounted device": [
   null,

@@ -161,6 +161,14 @@
     height: 1px;
     overflow: hidden;
 }
+
+.xterm-dim {
+    opacity: 0.5;
+}
+
+.xterm-underline {
+    text-decoration: underline;
+}
 @charset "UTF-8";
 /* Include this file in your html if you are using the CSP mode. */
 [ng\:cloak],
@@ -413,7 +421,8 @@ input[type=number] {
 .ct-select:active {
   box-shadow: inset 0 2px 8px rgba(3, 3, 3, 0.2);
 }
-.ct-select > option {
+.ct-select optgroup,
+.ct-select option {
   background-color: #fff;
 }
 /* Listing pattern */

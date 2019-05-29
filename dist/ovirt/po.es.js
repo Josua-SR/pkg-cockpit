@@ -87,6 +87,10 @@ return plural;
   null,
   "Añadir disco"
  ],
+ "Additional": [
+  null,
+  "Adicional"
+ ],
  "Address": [
   null,
   "Dirección"
@@ -135,13 +139,13 @@ return plural;
   null,
   ""
  ],
+ "Boot order settings could not be saved": [
+  null,
+  ""
+ ],
  "Bus": [
   null,
   "Bus"
- ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Fallo en la acción CHANGE NETWORK STATE"
  ],
  "CPU Type": [
   null,
@@ -150,6 +154,10 @@ return plural;
  "CREATE VM action failed": [
   null,
   "Fallo en la acción CREATE VM"
+ ],
+ "Cache": [
+  null,
+  ""
  ],
  "Cancel": [
   null,
@@ -243,6 +251,10 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "Current Allocation": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "Eliminar"
@@ -275,6 +287,10 @@ return plural;
   null,
   "Desconectado de la consola serie. Pulse el botón Reconectar."
  ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  ""
+ ],
  "Disk failed to be attached": [
   null,
   "Disco no se pudo adjuntar"
@@ -286,6 +302,10 @@ return plural;
  "Disks": [
   null,
   "Discos"
+ ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
  ],
  "Download the MSI from $0": [
   null,
@@ -306,6 +326,10 @@ return plural;
  "Enter New VM name": [
   null,
   "Introducir Nuevo nombre de VM"
+ ],
+ "FORCEOFF action failed: $0": [
+  null,
+  ""
  ],
  "FQDN": [
   null,
@@ -331,10 +355,6 @@ return plural;
   null,
   "Formato"
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "Falló la acción GET HYPERVISOR MAX VCPU"
- ],
  "GiB": [
   null,
   "GiB"
@@ -355,6 +375,10 @@ return plural;
   null,
   "HA:"
  ],
+ "Hide Performance Options": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "Anfitrión"
@@ -362,10 +386,6 @@ return plural;
  "Host to Maintenance": [
   null,
   "Host para Mantenimiento"
- ],
- "INSTALL VM action failed": [
-  null,
-  "INSTALL VM acción fallada"
  ],
  "Install": [
   null,
@@ -395,6 +415,10 @@ return plural;
   null,
   "Fallo en acción MIGRATE"
  ],
+ "Mac": [
+  null,
+  ""
+ ],
  "Mac Address": [
   null,
   "Dirección MAC"
@@ -403,6 +427,14 @@ return plural;
   null,
   "Conexión Manual"
  ],
+ "Maximum Allocation": [
+  null,
+  ""
+ ],
+ "Maximum memory could not be saved": [
+  null,
+  ""
+ ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
   "Número máximo de CPU virtuales asignadas al SO invitado, entre 1 y $0"
@@ -410,6 +442,14 @@ return plural;
  "Memory": [
   null,
   "Memoria"
+ ],
+ "Memory could not be saved": [
+  null,
+  ""
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  ""
  ],
  "MiB": [
   null,
@@ -431,6 +471,10 @@ return plural;
   null,
   "Mas información"
  ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  ""
+ ],
  "Name": [
   null,
   "Nombre"
@@ -447,6 +491,10 @@ return plural;
   null,
   "Nuevo nombre de volumen"
  ],
+ "No Storage Pools available": [
+  null,
+  ""
+ ],
  "No VM found in oVirt.": [
   null,
   "Mo se ha encontrado VM en oVirt."
@@ -454,6 +502,10 @@ return plural;
  "No VM is running or defined on this host": [
   null,
   "No hay ninguna MV en ejecución o definida en este anfitrión"
+ ],
+ "No Virtual Networks": [
+  null,
+  ""
  ],
  "No boot device found": [
   null,
@@ -474,10 +526,6 @@ return plural;
  "No oVirt connection": [
   null,
   "Sin conexión oVirt"
- ],
- "No virtual networks": [
-  null,
-  "No hay redes virtuales"
  ],
  "None (Isolated Network)": [
   null,
@@ -503,6 +551,10 @@ return plural;
   null,
   "Aceptar"
  ],
+ "Only editable when the guest is shut off": [
+  null,
+  ""
+ ],
  "Open": [
   null,
   ""
@@ -514,6 +566,14 @@ return plural;
  "Overview": [
   null,
   "Visión conjunta"
+ ],
+ "Path": [
+  null,
+  "Trayecto"
+ ],
+ "Pause": [
+  null,
+  ""
  ],
  "Persistence": [
   null,
@@ -579,6 +639,10 @@ return plural;
   null,
   ""
  ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protocolo"
@@ -586,6 +650,10 @@ return plural;
  "REBOOT action failed": [
   null,
   "REBOOT falló acción"
+ ],
+ "REBOOT_VM action failed: %s0": [
+  null,
+  ""
  ],
  "Readonly": [
   null,
@@ -610,6 +678,10 @@ return plural;
  "Restart": [
   null,
   "Reiniciar"
+ ],
+ "Resume": [
+  null,
+  ""
  ],
  "Run": [
   null,
@@ -655,6 +727,10 @@ return plural;
   null,
   "START acción fallada"
  ],
+ "START_VM action failed: %s0": [
+  null,
+  ""
+ ],
  "SUSPEND action failed": [
   null,
   "SUSPEND acción fallada"
@@ -678,6 +754,10 @@ return plural;
  "Session": [
   null,
   "Sesión"
+ ],
+ "Show Performance Options": [
+  null,
+  ""
  ],
  "Shut Down": [
   null,
@@ -726,6 +806,10 @@ return plural;
  "System": [
   null,
   "Sistema"
+ ],
+ "Target": [
+  null,
+  "Objetivo"
  ],
  "Template": [
   null,
@@ -795,6 +879,14 @@ return plural;
   null,
   "Tipo"
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
+ "Unit": [
+  null,
+  "Unidad"
+ ],
  "Unplug": [
   null,
   "Desenchufar"
@@ -823,37 +915,45 @@ return plural;
   null,
   "Gestión de Servicio VDSM"
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to Reboot": [
   null,
-  "La acción VM DELETE (DESTROY) falló"
+  ""
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
-  "La acción VM DELETE (UNDEFINE) falló"
+  ""
  ],
- "VM FORCE OFF action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "VM FORCE OFF falló acción"
+  ""
  ],
- "VM FORCE REBOOT action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "VM FORCE REBOOT falló acción"
+  ""
  ],
- "VM REBOOT action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "VM REBOOT falló acción"
+  ""
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to pause": [
   null,
-  "VM SEND Non-Maskable Interrrupt falló acción"
+  ""
  ],
- "VM SHUT DOWN action failed": [
+ "VM $0 failed to resume": [
   null,
-  "VM SHUT DOWN falló acción"
+  ""
  ],
- "VM START action failed": [
+ "VM $0 failed to send NMI": [
   null,
-  "VM START falló acción"
+  ""
+ ],
+ "VM $0 failed to shutdown": [
+  null,
+  ""
+ ],
+ "VM $0 failed to start": [
+  null,
+  ""
  ],
  "VM icon": [
   null,
@@ -875,6 +975,10 @@ return plural;
   null,
   "Puerto VNC TLS:"
  ],
+ "Vendor": [
+  null,
+  "Proveedor"
+ ],
  "Version": [
   null,
   "Versión"
@@ -895,6 +999,10 @@ return plural;
   null,
   "Volumen"
  ],
+ "WWPN": [
+  null,
+  ""
+ ],
  "bridge": [
   null,
   "puente"
@@ -906,6 +1014,10 @@ return plural;
  "connecting": [
   null,
   "conectando"
+ ],
+ "control-label $0": [
+  null,
+  ""
  ],
  "cores": [
   null,
@@ -954,6 +1066,10 @@ return plural;
  "host": [
   null,
   "huésped"
+ ],
+ "host device": [
+  null,
+  ""
  ],
  "hostdev": [
   null,
@@ -1027,10 +1143,6 @@ return plural;
   null,
   "oVirt acceso progresando"
  ],
- "other": [
-  null,
-  "otro"
- ],
  "paused": [
   null,
   "en pausa"
@@ -1051,6 +1163,10 @@ return plural;
   null,
   "reiniciar"
  ],
+ "redirected device": [
+  null,
+  ""
+ ],
  "running": [
   null,
   "en ejecución"
@@ -1058,6 +1174,14 @@ return plural;
  "server": [
   null,
   "servidor"
+ ],
+ "show less": [
+  null,
+  "mostrar menos"
+ ],
+ "show more": [
+  null,
+  "mostrar más"
  ],
  "shut off": [
   null,

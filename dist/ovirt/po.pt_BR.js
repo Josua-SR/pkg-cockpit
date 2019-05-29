@@ -87,6 +87,10 @@ return plural;
   null,
   "Adicionar disco"
  ],
+ "Additional": [
+  null,
+  "Adicional"
+ ],
  "Address": [
   null,
   "Endereço"
@@ -150,6 +154,10 @@ return plural;
  "CREATE VM action failed": [
   null,
   "A ação CRiar VM falhou"
+ ],
+ "Cache": [
+  null,
+  ""
  ],
  "Cancel": [
   null,
@@ -243,6 +251,10 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "Current Allocation": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "Excluir"
@@ -290,6 +302,10 @@ return plural;
  "Disks": [
   null,
   "Discos"
+ ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
  ],
  "Download the MSI from $0": [
   null,
@@ -359,6 +375,10 @@ return plural;
   null,
   "HA:"
  ],
+ "Hide Performance Options": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "Máquina"
@@ -407,6 +427,14 @@ return plural;
   null,
   "Conexão manual"
  ],
+ "Maximum Allocation": [
+  null,
+  ""
+ ],
+ "Maximum memory could not be saved": [
+  null,
+  ""
+ ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
   "Número máximo de CPUs virtuais alocadas para o sistema operacional virtualizado, que deve estar entre 1 e $0"
@@ -414,6 +442,14 @@ return plural;
  "Memory": [
   null,
   "Memória"
+ ],
+ "Memory could not be saved": [
+  null,
+  ""
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  ""
  ],
  "MiB": [
   null,
@@ -455,6 +491,10 @@ return plural;
   null,
   "Novo nome do volume"
  ],
+ "No Storage Pools available": [
+  null,
+  ""
+ ],
  "No VM found in oVirt.": [
   null,
   "Nenhuma VM encontrada no oVirt."
@@ -462,6 +502,10 @@ return plural;
  "No VM is running or defined on this host": [
   null,
   "Nenhuma VM está sendo executada ou definida neste host"
+ ],
+ "No Virtual Networks": [
+  null,
+  ""
  ],
  "No boot device found": [
   null,
@@ -482,10 +526,6 @@ return plural;
  "No oVirt connection": [
   null,
   "Sem conexão com oVirt"
- ],
- "No virtual networks": [
-  null,
-  "Nenhuma rede virtual"
  ],
  "None (Isolated Network)": [
   null,
@@ -510,6 +550,10 @@ return plural;
  "Ok": [
   null,
   "Ok"
+ ],
+ "Only editable when the guest is shut off": [
+  null,
+  ""
  ],
  "Open": [
   null,
@@ -710,6 +754,10 @@ return plural;
  "Session": [
   null,
   "Sessão"
+ ],
+ "Show Performance Options": [
+  null,
+  ""
  ],
  "Shut Down": [
   null,
@@ -967,6 +1015,10 @@ return plural;
   null,
   "conectando"
  ],
+ "control-label $0": [
+  null,
+  ""
+ ],
  "cores": [
   null,
   "cores"
@@ -1122,6 +1174,14 @@ return plural;
  "server": [
   null,
   "servidor"
+ ],
+ "show less": [
+  null,
+  "mostrar menos"
+ ],
+ "show more": [
+  null,
+  "mostrar mais"
  ],
  "shut off": [
   null,

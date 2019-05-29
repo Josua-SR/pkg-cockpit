@@ -129,7 +129,7 @@ return plural;
  ],
  "Active zones": [
   null,
-  ""
+  "Aktywne strefy"
  ],
  "Adaptive load balancing": [
   null,
@@ -167,7 +167,19 @@ return plural;
   null,
   "Dodaj VLAN"
  ],
+ "Add Zone": [
+  null,
+  ""
+ ],
+ "Add ports to the following zones:": [
+  null,
+  "Dodanie portów do tych stref:"
+ ],
  "Add services to following zones:": [
+  null,
+  "Dodanie usług do tych stref:"
+ ],
+ "Add zone": [
   null,
   ""
  ],
@@ -194,6 +206,10 @@ return plural;
  "Addresses": [
   null,
   "Adresy"
+ ],
+ "Allowed Addresses": [
+  null,
+  ""
  ],
  "Allowed Services": [
   null,
@@ -327,6 +343,10 @@ return plural;
   null,
   "Niestandardowe porty"
  ],
+ "Custom zones": [
+  null,
+  ""
+ ],
  "DNS": [
   null,
   "DNS"
@@ -359,6 +379,10 @@ return plural;
   null,
   "Usunięcie <b>$0</b> zerwie połączenie z serwerem i uniemożliwi korzystanie z interfejsu administracji."
  ],
+ "Description": [
+  null,
+  "Opis"
+ ],
  "Details": [
   null,
   "Szczegóły"
@@ -370,6 +394,10 @@ return plural;
  "Enable Service": [
   null,
   "Włącz usługę"
+ ],
+ "Entire subnet": [
+  null,
+  ""
  ],
  "Ethernet MAC": [
   null,
@@ -394,6 +422,18 @@ return plural;
  "Failed": [
   null,
   "Niepowodzenie"
+ ],
+ "Failed to add service": [
+  null,
+  "Dodanie usługi się nie powiodło"
+ ],
+ "Failed to add zone": [
+  null,
+  ""
+ ],
+ "Failed to remove service": [
+  null,
+  "Usunięcie usługi się nie powiodło"
  ],
  "Filter Services": [
   null,
@@ -437,7 +477,7 @@ return plural;
  ],
  "IP Range": [
   null,
-  ""
+  "Zakres IP"
  ],
  "IP Settings": [
   null,
@@ -470,6 +510,10 @@ return plural;
  "Inactive": [
   null,
   "Nieaktywne"
+ ],
+ "Included services": [
+  null,
+  ""
  ],
  "Interfaces": [
   null,
@@ -605,15 +649,23 @@ return plural;
  ],
  "No active zones": [
   null,
-  ""
+  "Brak aktywnych stref"
  ],
  "No carrier": [
   null,
   "Brak operatora"
  ],
+ "No description available": [
+  null,
+  ""
+ ],
  "No open ports": [
   null,
   "Brak otwartych portów"
+ ],
+ "None": [
+  null,
+  "Brak"
  ],
  "Not available": [
   null,
@@ -707,6 +759,10 @@ return plural;
   null,
   "Losowo"
  ],
+ "Range": [
+  null,
+  ""
+ ],
  "Range must be strictly ordered": [
   null,
   "Zakres musi być w ścisłej kolejności"
@@ -725,11 +781,11 @@ return plural;
  ],
  "Remove service": [
   null,
-  ""
+  "Usuń usługę"
  ],
  "Remove service from zones": [
   null,
-  ""
+  "Usuń usługę ze stref"
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -786,6 +842,10 @@ return plural;
  "Shared": [
   null,
   "Współdzielone"
+ ],
+ "Sorted from least trusted to most trusted": [
+  null,
+  ""
  ],
  "Spanning Tree Protocol": [
   null,
@@ -863,6 +923,10 @@ return plural;
   null,
   "Tutaj nie można zarządzać tym urządzeniem."
  ],
+ "Trust level": [
+  null,
+  ""
+ ],
  "UDP": [
   null,
   "UDP"
@@ -921,11 +985,11 @@ return plural;
  ],
  "Zone": [
   null,
-  ""
+  "Strefa"
  ],
  "Zones": [
   null,
-  ""
+  "Strefy"
  ],
  "[$0 bytes of binary data]": [
   null,
@@ -938,6 +1002,14 @@ return plural;
  "[no data]": [
   null,
   "[brak danych]"
+ ],
+ "show less": [
+  null,
+  "wyświetl mniej"
+ ],
+ "show more": [
+  null,
+  "wyświetl więcej"
  ],
  "page-title\u0004Networking": [
   null,

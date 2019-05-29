@@ -356,9 +356,9 @@ return plural;
   null,
   "Compressão"
  ],
- "Confirm passphrase": [
+ "Confirm": [
   null,
-  "Confirmar senha"
+  "Confirmar"
  ],
  "Confirm removal with passphrase": [
   null,
@@ -439,10 +439,6 @@ return plural;
  "Custom": [
   null,
   "Personalizado"
- ],
- "Custom (Enter filesystem type)": [
-  null,
-  "Customizado (Digite tipo de sistema de arquivos)"
  ],
  "Custom encryption options": [
   null,
@@ -568,13 +564,13 @@ return plural;
   null,
   "Esvaziando $target"
  ],
+ "Encrypt data": [
+  null,
+  ""
+ ],
  "Encrypted $0": [
   null,
   "Encriptado"
- ],
- "Encrypted EXT4 (LUKS)": [
-  null,
-  "Encriptado EXT4 (LUKS)"
  ],
  "Encrypted Logical Volume of $0": [
   null,
@@ -583,10 +579,6 @@ return plural;
  "Encrypted Partition of $0": [
   null,
   "Partição Criptografada de $0"
- ],
- "Encrypted XFS (LUKS)": [
-  null,
-  "Encriptado XFS (LUKS)"
  ],
  "Encrypted volumes can not be resized here.": [
   null,
@@ -635,10 +627,6 @@ return plural;
  "Filesystem Name": [
   null,
   "Nome do Sistema de Arquivos"
- ],
- "Filesystem type": [
-  null,
-  "Tipo do Sistema de Arquivos"
  ],
  "Filesystems": [
   null,
@@ -691,6 +679,10 @@ return plural;
  "Grow": [
   null,
   "Crescer"
+ ],
+ "Grow Content": [
+  null,
+  ""
  ],
  "Grow Logical Volume": [
   null,
@@ -771,6 +763,10 @@ return plural;
  "Keyserver removal may prevent unlocking $0.": [
   null,
   "A remoção do Keyserver pode impedir o desbloqueio de $0."
+ ],
+ "Loading...": [
+  null,
+  "Carregando..."
  ],
  "Local Mount Point": [
   null,
@@ -1008,10 +1004,6 @@ return plural;
   null,
   "Não está rodando"
  ],
- "Off": [
-  null,
-  "Desligado"
- ],
  "Ok": [
   null,
   "Ok"
@@ -1019,10 +1011,6 @@ return plural;
  "Old passphrase": [
   null,
   "Old passphrase"
- ],
- "On": [
-  null,
-  "Ligado"
  ],
  "Only $0 of $1 are used.": [
   null,
@@ -1368,6 +1356,14 @@ return plural;
   null,
   "Configurando o dispositivo de loop $target"
  ],
+ "Show all": [
+  null,
+  ""
+ ],
+ "Show all $0 drives": [
+  null,
+  ""
+ ],
  "Shrink": [
   null,
   "Compactar"
@@ -1375,6 +1371,10 @@ return plural;
  "Shrink Logical Volume": [
   null,
   "Compactar Logical Volume"
+ ],
+ "Shrink Volume": [
+  null,
+  ""
  ],
  "Size": [
   null,
@@ -1584,6 +1584,10 @@ return plural;
   null,
   "Este disco não pode ser removido enquanto o dispositivo está se recuperando."
  ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  ""
+ ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "Este volume precisa ser ativado antes de poder ser redimensionado."
@@ -1740,13 +1744,13 @@ return plural;
   null,
   "Grupos do Volume"
  ],
+ "Volume size is $0. Content size is $1.": [
+  null,
+  ""
+ ],
  "Waiting for other software management operations to finish": [
   null,
   "Aguardando que outras operações de gerenciamento de software terminem"
- ],
- "Warning": [
-  null,
-  ""
  ],
  "What if tang-show-keys is not available?": [
   null,

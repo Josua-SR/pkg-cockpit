@@ -26,6 +26,7 @@ import { units, convertToUnit, digitFilter, toFixedPrecision } from '../helpers.
 import { volumeCreateAndAttach, attachDisk, getVm, getAllStoragePools } from '../actions/provider-actions.js';
 
 import 'form-layout.less';
+import './diskAdd.css';
 
 const _ = cockpit.gettext;
 
@@ -58,8 +59,8 @@ function getFilteredVolumes(vmStoragePool, disks) {
     return filteredVolumesSorted;
 }
 
-const SelectExistingVolume = ({ idPrefix, dialogValues, onValueChanged, vmStoragePools, vmDisks }) => {
-    const vmStoragePool = vmStoragePools[dialogValues.storagePoolName];
+const SelectExistingVolume = ({ idPrefix, storagePoolName, existingVolumeName, onValueChanged, vmStoragePools, vmDisks }) => {
+    const vmStoragePool = vmStoragePools[storagePoolName];
     const filteredVolumes = getFilteredVolumes(vmStoragePool, vmDisks);
 
     let initiallySelected;
@@ -72,7 +73,7 @@ const SelectExistingVolume = ({ idPrefix, dialogValues, onValueChanged, vmStorag
                 </Select.SelectEntry>
             );
         });
-        initiallySelected = dialogValues.existingVolumeName;
+        initiallySelected = existingVolumeName;
     } else {
         content = (
             <Select.SelectEntry data="empty" key="empty-list">
@@ -98,7 +99,7 @@ const SelectExistingVolume = ({ idPrefix, dialogValues, onValueChanged, vmStorag
     );
 };
 
-const PermanentChange = ({ idPrefix, onValueChanged, dialogValues, provider, vm }) => {
+const PermanentChange = ({ idPrefix, onValueChanged, permanent, provider, vm }) => {
     // By default for a running VM, the disk is attached until shut down only. Enable permanent change of the domain.xml
     if (!provider.isRunning(vm.state)) {
         return null;
@@ -110,7 +111,7 @@ const PermanentChange = ({ idPrefix, onValueChanged, dialogValues, provider, vm 
             <label className='checkbox-inline'>
                 <input id={`${idPrefix}-permanent`}
                        type="checkbox"
-                       checked={dialogValues.permanent}
+                       checked={permanent}
                        onChange={e => onValueChanged('permanent', e.target.checked)} />
                 {_("Always attach")}
             </label>
@@ -118,7 +119,7 @@ const PermanentChange = ({ idPrefix, onValueChanged, dialogValues, provider, vm 
     );
 };
 
-const VolumeName = ({ idPrefix, dialogValues, onValueChanged }) => {
+const VolumeName = ({ idPrefix, volumeName, onValueChanged }) => {
     return (
         <React.Fragment>
             <label className='control-label' htmlFor={`${idPrefix}-name`}>
@@ -129,13 +130,13 @@ const VolumeName = ({ idPrefix, dialogValues, onValueChanged }) => {
                    type="text"
                    minLength={1}
                    placeholder={_("New Volume Name")}
-                   value={dialogValues.volumeName || ""}
+                   value={volumeName || ""}
                    onChange={e => onValueChanged('volumeName', e.target.value)} />
         </React.Fragment>
     );
 };
 
-const VolumeDetails = ({ idPrefix, onValueChanged, dialogValues }) => {
+const VolumeDetails = ({ idPrefix, size, unit, diskFileFormat, onValueChanged }) => {
     return (
         <React.Fragment>
             <label className='control-label' htmlFor={`${idPrefix}-size`}>
@@ -145,14 +146,14 @@ const VolumeDetails = ({ idPrefix, onValueChanged, dialogValues }) => {
                 <input id={`${idPrefix}-size`}
                        className="form-control add-disk-size"
                        type="number"
-                       value={toFixedPrecision(dialogValues.size)}
+                       value={toFixedPrecision(size)}
                        onKeyPress={digitFilter}
                        step={1}
                        min={0}
                        onChange={e => onValueChanged('size', e.target.value)} />
 
                 <Select.Select id={`${idPrefix}-unit`}
-                               initial={dialogValues.unit}
+                               initial={unit}
                                onChange={value => onValueChanged('unit', value)}>
                     <Select.SelectEntry data={units.MiB.name} key={units.MiB.name}>
                         {_("MiB")}
@@ -167,7 +168,7 @@ const VolumeDetails = ({ idPrefix, onValueChanged, dialogValues }) => {
             </label>
             <Select.Select id={`${idPrefix}-diskfileformat`}
                            onChange={value => onValueChanged('diskFileFormat', value)}
-                           initial={dialogValues.diskFileFormat}
+                           initial={diskFileFormat}
                            extraClass='form-control ct-form-layout-split'>
                 <Select.SelectEntry data='qcow2' key='qcow2'>
                     {_("qcow2")}
@@ -180,17 +181,18 @@ const VolumeDetails = ({ idPrefix, onValueChanged, dialogValues }) => {
     );
 };
 
-const PoolRow = ({ idPrefix, onValueChanged, dialogValues, vmStoragePools }) => {
+const PoolRow = ({ idPrefix, onValueChanged, storagePoolName, vmStoragePools }) => {
     return (
         <React.Fragment>
             <label className='control-label' htmlFor={`${idPrefix}-select-pool`}>
                 {_("Pool")}
             </label>
             <Select.Select id={`${idPrefix}-select-pool`}
+                           enabled={Object.keys(vmStoragePools).length > 0}
                            onChange={value => onValueChanged('storagePoolName', value)}
-                           initial={dialogValues.storagePoolName}
+                           initial={storagePoolName || _("No Storage Pools available")}
                            extraClass="form-control">
-                {Object.getOwnPropertyNames(vmStoragePools)
+                {Object.keys(vmStoragePools).length > 0 ? Object.getOwnPropertyNames(vmStoragePools)
                         .sort((a, b) => a.localeCompare(b))
                         .map(poolName => {
                             return (
@@ -198,25 +200,86 @@ const PoolRow = ({ idPrefix, onValueChanged, dialogValues, vmStoragePools }) => 
                                     {poolName}
                                 </Select.SelectEntry>
                             );
-                        })}
+                        })
+                    : [<Select.SelectEntry data='no-resource' key='no-resource'>
+                        {_("No Storage Pools available")}
+                    </Select.SelectEntry> ]}
             </Select.Select>
         </React.Fragment>
     );
 };
+
+class PerformanceOptions extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { expanded: false };
+    }
+
+    render() {
+        const cacheModes = ['default', 'none', 'writethrough', 'writeback', 'directsync', 'unsafe'];
+
+        return (
+            <React.Fragment>
+                <div className='expand-collapse-pf' id='expand-collapse-button'>
+                    <div className='expand-collapse-pf-link-container'>
+                        <button className='btn btn-link' onClick={() => this.setState({ expanded: !this.state.expanded })}>
+                            { this.state.expanded ? <span className='fa fa-angle-down' /> : <span className='fa fa-angle-right' /> }
+                            { this.state.expanded ? _("Hide Performance Options") : _("Show Performance Options")}
+                        </button>
+                        <span className="expand-collapse-pf-separator bordered" />
+                    </div>
+                </div>
+
+                {this.state.expanded && <React.Fragment>
+                    <label className='control-label' htmlFor='cache-mode'>
+                        {_("Cache")}
+                    </label>
+                    <Select.Select id={'cache-mode'}
+                        onChange={value => this.props.onValueChanged('cacheMode', value)}
+                        initial={this.props.cacheMode || cacheModes[0]}
+                        extraClass='form-control ct-form-layout-split'>
+                        {cacheModes.map(cacheMode => {
+                            return (
+                                <Select.SelectEntry data={cacheMode} key={cacheMode}>
+                                    {cacheMode}
+                                </Select.SelectEntry>
+                            );
+                        })}
+                    </Select.Select>
+                </React.Fragment>}
+            </React.Fragment>
+        );
+    }
+}
 
 const CreateNewDisk = ({ idPrefix, onValueChanged, dialogValues, vmStoragePools, provider, vm }) => {
     return (
         <React.Fragment>
             <hr />
             <PoolRow idPrefix={idPrefix}
-                     dialogValues={dialogValues}
+                     storagePoolName={dialogValues.storagePoolName}
                      onValueChanged={onValueChanged}
                      vmStoragePools={vmStoragePools} />
-            <hr />
-            <VolumeName idPrefix={idPrefix} dialogValues={dialogValues} onValueChanged={onValueChanged} />
-            <VolumeDetails idPrefix={idPrefix} dialogValues={dialogValues} onValueChanged={onValueChanged} />
-            <hr />
-            <PermanentChange idPrefix={idPrefix} dialogValues={dialogValues} onValueChanged={onValueChanged} provider={provider} vm={vm} />
+            {Object.keys(vmStoragePools).length > 0 &&
+            <React.Fragment>
+                <hr />
+                <VolumeName idPrefix={idPrefix}
+                            volumeName={dialogValues.volumeName}
+                            onValueChanged={onValueChanged} />
+                <VolumeDetails idPrefix={idPrefix}
+                               size={dialogValues.size}
+                               unit={dialogValues.unit}
+                               diskFileFormat={dialogValues.diskFileFormat}
+                               onValueChanged={onValueChanged} />
+                <hr />
+                <PermanentChange idPrefix={idPrefix}
+                                 permanent={dialogValues.permanent}
+                                 onValueChanged={onValueChanged}
+                                 provider={provider}
+                                 vm={vm} />
+                {provider.name == 'LibvirtDBus' && <PerformanceOptions cacheMode={dialogValues.cacheMode}
+                                    onValueChanged={onValueChanged} />}
+            </React.Fragment>}
         </React.Fragment>
     );
 };
@@ -226,13 +289,27 @@ const UseExistingDisk = ({ idPrefix, onValueChanged, dialogValues, vmStoragePool
         <React.Fragment>
             <hr />
             <PoolRow idPrefix={idPrefix}
-                     dialogValues={dialogValues}
+                     storagePoolName={dialogValues.storagePoolName}
                      onValueChanged={onValueChanged}
                      vmStoragePools={vmStoragePools} />
             <hr />
-            <SelectExistingVolume idPrefix={idPrefix} dialogValues={dialogValues} onValueChanged={onValueChanged} vmStoragePools={vmStoragePools} vmDisks={vm.disks} />
-            <hr />
-            <PermanentChange idPrefix={idPrefix} dialogValues={dialogValues} onValueChanged={onValueChanged} provider={provider} vm={vm} />
+            {Object.keys(vmStoragePools).length > 0 &&
+            <React.Fragment>
+                <SelectExistingVolume idPrefix={idPrefix}
+                                      storagePoolName={dialogValues.storagePoolName}
+                                      existingVolumeName={dialogValues.existingVolumeName}
+                                      onValueChanged={onValueChanged}
+                                      vmStoragePools={vmStoragePools}
+                                      vmDisks={vm.disks} />
+                <hr />
+                <PermanentChange idPrefix={idPrefix}
+                                 permanent={dialogValues.PermanentChange}
+                                 onValueChanged={onValueChanged}
+                                 provider={provider}
+                                 vm={vm} />
+                {provider.name == 'LibvirtDBus' && <PerformanceOptions cacheMode={dialogValues.cacheMode}
+                                    onValueChanged={onValueChanged} />}
+            </React.Fragment>}
         </React.Fragment>
     );
 };
@@ -267,7 +344,7 @@ export class AddDiskAction extends React.Component {
          * TODO: Add support for other Storage Pool types.
          */
         const filteredStoragePools = storagePools
-                .filter(pool => pool.connectionName == vm.connectionName && pool.active && pool.type == 'dir')
+                .filter(pool => pool.active && pool.type == 'dir')
                 .reduce((result, filter) => {
                     result[filter.name] = filter.volumes;
                     return result;
@@ -328,7 +405,8 @@ class AddDiskModalBody extends React.Component {
 
         if (key === 'mode' && value === USE_EXISTING) { // user moved to USE_EXISTING subtab
             const poolName = this.state.storagePoolName;
-            stateDelta.existingVolumeName = this.getDefaultVolumeName(poolName);
+            if (poolName)
+                stateDelta.existingVolumeName = this.getDefaultVolumeName(poolName);
         }
 
         this.setState(stateDelta);
@@ -360,7 +438,8 @@ class AddDiskModalBody extends React.Component {
                                                     permanent: this.state.permanent,
                                                     hotplug: this.state.hotplug,
                                                     vmName: vm.name,
-                                                    vmId: vm.id }))
+                                                    vmId: vm.id,
+                                                    cacheMode: this.state.cacheMode }))
                     .fail(exc => this.dialogErrorSet(_("Disk failed to be created"), exc.message))
                     .then(() => { // force reload of VM data, events are not reliable (i.e. for a down VM)
                         this.props.close();
@@ -377,7 +456,8 @@ class AddDiskModalBody extends React.Component {
                                      permanent: this.state.permanent,
                                      hotplug: this.state.hotplug,
                                      vmName: vm.name,
-                                     vmId: vm.id }))
+                                     vmId: vm.id,
+                                     cacheMode: this.state.cacheMode }))
                 .fail(exc => this.dialogErrorSet(_("Disk failed to be attached"), exc.message))
                 .then(() => { // force reload of VM data, events are not reliable (i.e. for a down VM)
                     this.props.close();
@@ -450,7 +530,7 @@ class AddDiskModalBody extends React.Component {
                     <Button id={`${idPrefix}-dialog-cancel`} bsStyle='default' className='btn-cancel' onClick={this.props.close}>
                         {_("Cancel")}
                     </Button>
-                    <Button id={`${idPrefix}-dialog-add`} bsStyle='primary' onClick={this.onAddClicked}>
+                    <Button id={`${idPrefix}-dialog-add`} bsStyle='primary' onClick={this.onAddClicked} disabled={Object.keys(vmStoragePools).length == 0}>
                         {_("Add")}
                     </Button>
                 </Modal.Footer>

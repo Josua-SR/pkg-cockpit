@@ -283,9 +283,17 @@ return plural;
   null,
   "アラート以上のレベル"
  ],
+ "All": [
+  null,
+  "すべて"
+ ],
  "All In One": [
   null,
   "一体型"
+ ],
+ "Appearance:": [
+  null,
+  "Appearance:"
  ],
  "Asset Tag": [
   null,
@@ -297,7 +305,7 @@ return plural;
  ],
  "Automatic Startup": [
   null,
-  ""
+  "自動起動"
  ],
  "Automatically using NTP": [
   null,
@@ -327,6 +335,10 @@ return plural;
   null,
   "バインドする"
  ],
+ "Black": [
+  null,
+  "黒"
+ ],
  "Blade": [
   null,
   "ブレード"
@@ -350,6 +362,14 @@ return plural;
  "CPU": [
   null,
   "CPU"
+ ],
+ "CPU Security": [
+  null,
+  "CPU セキュリティー"
+ ],
+ "CPU Security Toggles": [
+  null,
+  "CPU セキュリティートグル"
  ],
  "Cached": [
   null,
@@ -386,6 +406,10 @@ return plural;
  "Class": [
   null,
   "クラス"
+ ],
+ "Clear All Filters": [
+  null,
+  "すべてのフィルターの消去"
  ],
  "Click to see system hardware information": [
   null,
@@ -427,6 +451,10 @@ return plural;
   null,
   "変換可能"
  ],
+ "Copy": [
+  null,
+  "コピー"
+ ],
  "Create Timer": [
   null,
   "タイマーの作成"
@@ -439,9 +467,17 @@ return plural;
   null,
   "重大以上のレベル"
  ],
+ "Ctrl+Insert": [
+  null,
+  "Ctrl+Insert"
+ ],
  "Current boot": [
   null,
   "現在の起動"
+ ],
+ "Dark": [
+  null,
+  "濃く"
  ],
  "Debug and above": [
   null,
@@ -470,6 +506,10 @@ return plural;
  "Disable": [
   null,
   "無効化"
+ ],
+ "Disable simultaneous multithreading": [
+  null,
+  "同時マルチスレッディングの無効化"
  ],
  "Disabled": [
   null,
@@ -539,6 +579,10 @@ return plural;
   null,
   "拡張シャーシ"
  ],
+ "Filter by name or description...": [
+  null,
+  "名前または説明による絞り込み..."
+ ],
  "Friday": [
   null,
   "金曜日"
@@ -586,10 +630,6 @@ return plural;
  "I/O Wait": [
   null,
   "I/O 待機"
- ],
- "Id": [
-  null,
-  "ID"
  ],
  "Info and above": [
   null,
@@ -675,6 +715,10 @@ return plural;
   null,
   "最後のトリガー"
  ],
+ "Light": [
+  null,
+  "薄く"
+ ],
  "Load earlier entries": [
   null,
   "以前のエントリーのロード"
@@ -751,6 +795,10 @@ return plural;
   null,
   "分"
  ],
+ "Mitigations": [
+  null,
+  "緩和"
+ ],
  "Model": [
   null,
   "モデル"
@@ -790,6 +838,10 @@ return plural;
  "No Delay": [
   null,
   "遅延なし"
+ ],
+ "No Matching Results": [
+  null,
+  "一致する結果はありません"
  ],
  "No host keys found.": [
   null,
@@ -859,6 +911,10 @@ return plural;
   null,
   "一部"
  ],
+ "Paste": [
+  null,
+  "貼り付け"
+ ],
  "Path": [
   null,
   "パス"
@@ -899,6 +955,10 @@ return plural;
   null,
   "プリティホスト名"
  ],
+ "Previous boot": [
+  null,
+  "以前のブート"
+ ],
  "Problem details": [
   null,
   "問題の詳細"
@@ -918,6 +978,10 @@ return plural;
  "Rack Mount Chassis": [
   null,
   "ラックマウントシャーシ"
+ ],
+ "Read more...": [
+  null,
+  "さらに読む..."
  ],
  "Real Host Name": [
   null,
@@ -1021,7 +1085,7 @@ return plural;
  ],
  "Running Since": [
   null,
-  ""
+  "実行開始"
  ],
  "Saturday": [
   null,
@@ -1030,6 +1094,10 @@ return plural;
  "Save": [
   null,
   "保存"
+ ],
+ "Save and reboot": [
+  null,
+  "保存および再起動"
  ],
  "Sealed-case PC": [
   null,
@@ -1046,6 +1114,10 @@ return plural;
  "Security Updates Available": [
   null,
   "セキュリティーの更新を利用できます"
+ ],
+ "Service": [
+  null,
+  "サービス"
  ],
  "Service Logs": [
   null,
@@ -1071,6 +1143,10 @@ return plural;
   null,
   "重大度"
  ],
+ "Shift+Insert": [
+  null,
+  "Shift+Insert"
+ ],
  "Show fingerprints": [
   null,
   "フィンガープリントの表示"
@@ -1086,6 +1162,10 @@ return plural;
  "Sockets": [
   null,
   "ソケット"
+ ],
+ "Software-based workarounds help prevent CPU security issues. These mitigations have the side effect of reducing performance. Change these settings at your own risk.": [
+  null,
+  ""
  ],
  "Space-saving Computer": [
   null,
@@ -1121,7 +1201,7 @@ return plural;
  ],
  "Store Metrics": [
   null,
-  ""
+  "メトリクスの保存"
  ],
  "Sub Chassis": [
   null,
@@ -1182,6 +1262,10 @@ return plural;
  "Terminal": [
   null,
   "端末"
+ ],
+ "The user $0 is not permitted to change cpu security mitigations": [
+  null,
+  "ユーザー $0 は、cpu セキュリティー緩和の変更を許可されていません"
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,
@@ -1318,6 +1402,10 @@ return plural;
  "Weeks": [
   null,
   "週"
+ ],
+ "White": [
+  null,
+  "白"
  ],
  "[$0 bytes of binary data]": [
   null,

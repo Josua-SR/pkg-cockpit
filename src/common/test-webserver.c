@@ -39,6 +39,7 @@ typedef struct {
     const gchar *cert_file;
     gboolean local_only;
     gboolean inet_only;
+    gboolean for_tls_proxy;
 } TestFixture;
 
 #define SKIP_NO_HOSTPORT if (!tc->hostport) { cockpit_test_skip ("No non-loopback network interface available"); return; }
@@ -73,7 +74,12 @@ setup (TestCase *tc,
   else
     address = NULL;
 
-  tc->web_server = cockpit_web_server_new (address, 0, cert, NULL, &error);
+  tc->web_server = cockpit_web_server_new (address,
+                                           0,
+                                           cert,
+                                           (fixture && fixture->for_tls_proxy) ? COCKPIT_WEB_SERVER_FOR_TLS_PROXY : COCKPIT_WEB_SERVER_NONE,
+                                           NULL,
+                                           &error);
   g_assert_no_error (error);
   g_clear_object (&cert);
 
@@ -81,7 +87,7 @@ setup (TestCase *tc,
 
   /* Automatically chosen by the web server */
   g_object_get (tc->web_server, "port", &port, NULL);
-  tc->localport = g_strdup_printf ("localhost:%d", port);
+  tc->localport = g_strdup_printf ("127.0.0.1:%d", port);
   if (str)
     tc->hostport = g_strdup_printf ("%s:%d", str, port);
   if (inet)
@@ -457,6 +463,8 @@ test_webserver_redirect_notls (TestCase *tc,
   gchar *resp;
 
   SKIP_NO_HOSTPORT;
+
+  g_assert (cockpit_web_server_get_flags (tc->web_server) == COCKPIT_WEB_SERVER_NONE);
 
   g_signal_connect (tc->web_server, "handle-resource", G_CALLBACK (on_shell_index_html), NULL);
   resp = perform_http_request (tc->hostport, "GET /shell/index.html HTTP/1.0\r\nHost:test\r\n\r\n", NULL);
@@ -846,7 +854,7 @@ test_bad_address (TestCase *tc,
   gint port;
 
   cockpit_expect_warning ("Couldn't parse IP address from: bad");
-  server = cockpit_web_server_new ("bad", 0, NULL, NULL, &error);
+  server = cockpit_web_server_new ("bad", 0, NULL, COCKPIT_WEB_SERVER_NONE, NULL, &error);
   cockpit_web_server_start (server);
 
   g_assert_no_error (error);
@@ -854,6 +862,26 @@ test_bad_address (TestCase *tc,
   g_assert (port > 0);
 
   g_object_unref (server);
+}
+
+static const TestFixture fixture_for_tls_proxy = {
+    .for_tls_proxy = TRUE
+};
+
+static void
+test_webserver_for_tls_proxy (TestCase *tc,
+                              gconstpointer data)
+{
+  gchar *resp;
+
+  SKIP_NO_HOSTPORT;
+
+  g_assert (cockpit_web_server_get_flags (tc->web_server) == COCKPIT_WEB_SERVER_FOR_TLS_PROXY);
+
+  g_signal_connect (tc->web_server, "handle-resource", G_CALLBACK (on_shell_index_html), NULL);
+  resp = perform_http_request (tc->hostport, "GET /shell/index.html HTTP/1.0\r\nHost:test\r\n\r\n", NULL);
+  cockpit_assert_strmatch (resp, "HTTP/* 200 *\r\n*");
+  g_free (resp);
 }
 
 static const TestFixture fixture_inet_address = {
@@ -919,6 +947,9 @@ main (int argc,
               setup, test_address, teardown);
   g_test_add ("/web-server/bad-address", TestCase, NULL,
               NULL, test_bad_address, NULL);
+
+  g_test_add ("/web-server/for-tls-proxy", TestCase, &fixture_for_tls_proxy,
+              setup, test_webserver_for_tls_proxy, teardown);
 
   return g_test_run ();
 }

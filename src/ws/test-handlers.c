@@ -93,7 +93,7 @@ base_setup (Test *test)
   const gchar *static_roots[] = { SRCDIR "/src/ws", SRCDIR "/src/branding/default", NULL };
   GError *error = NULL;
 
-  test->server = cockpit_web_server_new (NULL, 0, NULL, NULL, &error);
+  test->server = cockpit_web_server_new (NULL, 0, NULL, COCKPIT_WEB_SERVER_NONE, NULL, &error);
   g_assert_no_error (error);
 
   cockpit_web_server_start (test->server);
@@ -124,7 +124,7 @@ setup (Test *test,
        gconstpointer path)
 {
   base_setup (test);
-  test->response = cockpit_web_response_new (test->io, path, path, NULL, NULL);
+  test->response = cockpit_web_response_new (test->io, path, path, NULL, NULL, COCKPIT_WEB_RESPONSE_NONE);
   g_signal_connect (test->response, "done",
                     G_CALLBACK (on_web_response_done_set_flag),
                     &test->response_done);
@@ -386,7 +386,7 @@ setup_default (Test *test,
   base_setup (test);
   test->response = cockpit_web_response_new (test->io,
                                             fixture->org_path ? fixture->org_path : fixture->path,
-                                            fixture->path, NULL, NULL);
+                                            fixture->path, NULL, NULL, COCKPIT_WEB_RESPONSE_NONE);
   g_signal_connect (test->response, "done",
                     G_CALLBACK (on_web_response_done_set_flag),
                     &test->response_done);
@@ -467,7 +467,7 @@ test_resource_checksum (Test *test,
   input = g_memory_input_stream_new ();
   io = mock_io_stream_new (input, output);
   path = "/cockpit/@localhost/checksum";
-  response = cockpit_web_response_new (io, path, path, NULL, NULL);
+  response = cockpit_web_response_new (io, path, path, NULL, NULL, COCKPIT_WEB_RESPONSE_NONE);
   g_signal_connect (response, "done", G_CALLBACK (on_web_response_done_set_flag), &response_done);
   g_assert (cockpit_handler_default (test->server, path, test->headers, response, &test->data));
 
@@ -764,6 +764,7 @@ on_message_get_bytes (WebSocketConnection *ws,
 static void
 test_socket_unauthenticated (void)
 {
+  CockpitWebServer *server;
   WebSocketConnection *client;
   GBytes *received = NULL;
   GIOStream *io_a, *io_b;
@@ -773,8 +774,12 @@ test_socket_unauthenticated (void)
   const gchar *unused;
   gchar *channel;
   JsonObject *options;
+  GError *error = NULL;
 
   make_io_streams (&io_a, &io_b);
+
+  server = cockpit_web_server_new (NULL, 0, NULL, COCKPIT_WEB_SERVER_NONE, NULL, &error);
+  g_assert_no_error (error);
 
   client = g_object_new (WEB_SOCKET_TYPE_CLIENT,
                          "url", "ws://127.0.0.1/unused",
@@ -787,7 +792,7 @@ test_socket_unauthenticated (void)
   /* Matching the above origin */
   cockpit_ws_default_host_header = "127.0.0.1";
 
-  g_assert (cockpit_handler_socket (NULL, "/cockpit/socket", "/cockpit/socket",
+  g_assert (cockpit_handler_socket (server, "/cockpit/socket", "/cockpit/socket",
                                     "GET", io_b, NULL, NULL, NULL));
 
   g_signal_connect (client, "message", G_CALLBACK (on_message_get_bytes), &received);
@@ -818,6 +823,7 @@ test_socket_unauthenticated (void)
 
   g_object_unref (io_a);
   g_object_unref (io_b);
+  g_object_unref (server);
 }
 
 int

@@ -139,17 +139,9 @@ return plural;
   null,
   "Brak"
  ],
- "Off": [
-  null,
-  "Wyłączone"
- ],
  "Ok": [
   null,
   "OK"
- ],
- "On": [
-  null,
-  "Włączone"
  ],
  "On a mounted device": [
   null,

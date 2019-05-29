@@ -31,6 +31,7 @@ import {
     getAllNodeDevices,
     getAllStoragePools,
     getAllVms,
+    getApiData,
     getHypervisorMaxVCPU,
     getNetwork,
     getNodeDevice,
@@ -45,6 +46,7 @@ import {
     undefineNetwork,
     undefineStoragePool,
     undefineVm,
+    updateLibvirtVersion,
     updateOrAddNetwork,
     updateOrAddNodeDevice,
     updateOrAddVm,
@@ -91,6 +93,7 @@ import {
     serialConsoleCommand,
     unknownConnectionName,
     updateBootOrder,
+    updateMaxMemory,
     updateVCPUSettings,
     CONSOLE_VM,
     CHECK_LIBVIRT_STATUS,
@@ -189,7 +192,8 @@ LIBVIRT_DBUS_PROVIDER = {
         vmId,
         vmName,
         permanent,
-        hotplug
+        hotplug,
+        cacheMode,
     }) {
         let flags = Enum.VIR_DOMAIN_AFFECT_CURRENT;
         if (hotplug)
@@ -197,7 +201,7 @@ LIBVIRT_DBUS_PROVIDER = {
         if (permanent)
             flags |= Enum.VIR_DOMAIN_AFFECT_CONFIG;
 
-        let xmlDesc = getDiskXML(poolName, volumeName, format, target);
+        let xmlDesc = getDiskXML(poolName, volumeName, format, target, cacheMode);
 
         // Error handling is done from the calling side
         return () => call(connectionName, vmId, 'org.libvirt.Domain', 'AttachDevice', [xmlDesc, flags], TIMEOUT);
@@ -288,7 +292,8 @@ LIBVIRT_DBUS_PROVIDER = {
         vmId,
         vmName,
         permanent,
-        hotplug
+        hotplug,
+        cacheMode,
     }) {
         let volXmlDesc = getVolumeXML(volumeName, size, format, target);
 
@@ -297,7 +302,7 @@ LIBVIRT_DBUS_PROVIDER = {
                     return call(connectionName, storagePoolPath[0], 'org.libvirt.StoragePool', 'StorageVolCreateXML', [volXmlDesc, 0], TIMEOUT);
                 })
                 .then((volPath) => {
-                    return dispatch(attachDisk({ connectionName, poolName, volumeName, format, target, vmId, permanent, hotplug }));
+                    return dispatch(attachDisk({ connectionName, poolName, volumeName, format, target, vmId, permanent, hotplug, cacheMode }));
                 });
     },
 
@@ -314,13 +319,17 @@ LIBVIRT_DBUS_PROVIDER = {
 
         return (dispatch) => call(connectionName, '/org/libvirt/QEMU', 'org.libvirt.Connect', 'StoragePoolDefineXML', [poolXmlDesc, 0], TIMEOUT)
                 .then(poolPath => {
-                    storagePoolPath = poolPath;
-                    return call(connectionName, storagePoolPath[0], 'org.libvirt.StoragePool', 'Create', [Enum.VIR_STORAGE_POOL_CREATE_NORMAL], TIMEOUT);
+                    storagePoolPath = poolPath[0];
+                    return call(connectionName, storagePoolPath, 'org.libvirt.StoragePool', 'Create', [Enum.VIR_STORAGE_POOL_CREATE_NORMAL], TIMEOUT);
                 })
                 .then(() => {
                     const args = ['org.libvirt.StoragePool', 'Autostart', cockpit.variant('b', autostart)];
 
-                    return call(connectionName, storagePoolPath[0], 'org.freedesktop.DBus.Properties', 'Set', args, TIMEOUT);
+                    return call(connectionName, storagePoolPath, 'org.freedesktop.DBus.Properties', 'Set', args, TIMEOUT);
+                }, exc => {
+                    if (storagePoolPath)
+                        storagePoolUndefine(connectionName, storagePoolPath);
+                    return cockpit.reject(exc);
                 });
     },
 
@@ -461,30 +470,38 @@ LIBVIRT_DBUS_PROVIDER = {
         };
     },
 
-    /*
-     * Initiate read of all VMs
-     *
-     * @returns {Function}
-     */
-    GET_ALL_VMS({
-        connectionName,
-        libvirtServiceName
-    }) {
+    GET_ALL_VMS({ connectionName }) {
+        return dispatch => {
+            call(connectionName, '/org/libvirt/QEMU', 'org.libvirt.Connect', 'ListDomains', [0], TIMEOUT)
+                    .then(objPaths => {
+                        dispatch(deleteUnlistedVMs(connectionName, [], objPaths[0]));
+
+                        // We can't use Promise.all() here until cockpit is able to dispatch es2015 promises
+                        // https://github.com/cockpit-project/cockpit/issues/10956
+                        // eslint-disable-next-line cockpit/no-cockpit-all
+                        return cockpit.all(objPaths[0].map((path) => dispatch(getVm({ connectionName, id:path }))));
+                    })
+                    .fail(ex => console.warn('GET_ALL_VMS action failed:', JSON.stringify(ex)));
+        };
+    },
+
+    GET_API_DATA({ connectionName, libvirtServiceName }) {
         if (connectionName) {
             return dispatch => {
                 dispatch(checkLibvirtStatus(libvirtServiceName));
                 dbus_client(connectionName);
                 startEventMonitor(dispatch, connectionName, libvirtServiceName);
+                dispatch(getAllVms(connectionName));
                 dispatch(getAllStoragePools(connectionName));
                 dispatch(getAllNetworks(connectionName));
                 dispatch(getAllNodeDevices(connectionName));
                 dispatch(getHypervisorMaxVCPU(connectionName));
                 dispatch(getNodeMaxMemory(connectionName));
-                doGetAllVms(dispatch, connectionName);
+                dispatch(getLibvirtVersion(connectionName));
             };
         }
 
-        return unknownConnectionName(getAllVms, libvirtServiceName);
+        return unknownConnectionName(getApiData, libvirtServiceName);
     },
 
     GET_HYPERVISOR_MAX_VCPU({ connectionName }) {
@@ -510,6 +527,7 @@ LIBVIRT_DBUS_PROVIDER = {
     GET_NETWORK({
         id: objPath,
         connectionName,
+        updateOnly,
     }) {
         let props = {};
 
@@ -534,7 +552,7 @@ LIBVIRT_DBUS_PROVIDER = {
                     })
                     .then(xml => {
                         const network = parseNetDumpxml(xml);
-                        dispatch(updateOrAddNetwork(Object.assign({}, props, network)));
+                        dispatch(updateOrAddNetwork(Object.assign({}, props, network), updateOnly));
                     })
                     .catch(ex => console.warn('GET_NETWORK action failed failed for path', objPath, ex));
         };
@@ -580,6 +598,7 @@ LIBVIRT_DBUS_PROVIDER = {
     GET_STORAGE_POOL({
         id: objPath,
         connectionName,
+        updateOnly,
     }) {
         let dumpxmlParams;
         let props = {};
@@ -609,7 +628,7 @@ LIBVIRT_DBUS_PROVIDER = {
                         props.allocation = poolInfo[0][2];
                         props.available = poolInfo[0][3];
 
-                        dispatch(updateOrAddStoragePool(Object.assign({}, dumpxmlParams, props)));
+                        dispatch(updateOrAddStoragePool(Object.assign({}, dumpxmlParams, props), updateOnly));
                         if (props.active)
                             dispatch(getStorageVolumes({ connectionName, poolName: dumpxmlParams.name }));
                     })
@@ -778,6 +797,31 @@ LIBVIRT_DBUS_PROVIDER = {
                 });
     },
 
+    SET_MEMORY({
+        id: objPath,
+        connectionName,
+        memory, // in KiB
+        isRunning
+    }) {
+        let flags = Enum.VIR_DOMAIN_AFFECT_CONFIG;
+        if (isRunning)
+            flags |= Enum.VIR_DOMAIN_AFFECT_LIVE;
+
+        return call(connectionName, objPath, 'org.libvirt.Domain', 'SetMemory', [memory, flags], TIMEOUT);
+    },
+
+    SET_MAX_MEMORY({
+        id: objPath,
+        connectionName,
+        maxMemory // in KiB
+    }) {
+        return call(connectionName, objPath, 'org.libvirt.Domain', 'GetXMLDesc', [0], TIMEOUT)
+                .then(domXml => {
+                    let updatedXML = updateMaxMemory(domXml[0], maxMemory);
+                    return call(connectionName, '/org/libvirt/QEMU', 'org.libvirt.Connect', 'DomainDefineXML', [updatedXML], TIMEOUT);
+                });
+    },
+
     SHUTDOWN_VM({
         connectionName,
         id: objPath
@@ -831,29 +875,6 @@ function getDomainMaxVCPU(capsXML) {
     return vcpuMaxAttr;
 }
 
-export function getVmDisksMap(vms, connectionName) {
-    let vmDisksMap = {};
-
-    for (let vm of vms) {
-        if (vm.connectionName != connectionName)
-            continue;
-
-        if (!(vm.name in vmDisksMap))
-            vmDisksMap[vm.name] = [];
-
-        for (let disk in vm.disks) {
-            const diskProps = vm.disks[disk];
-
-            if (diskProps.type == 'volume')
-                vmDisksMap[vm.name].push({ 'type': 'volume', 'pool': diskProps.source.pool, 'volume': diskProps.source.volume });
-            else if (diskProps.type == 'file')
-                vmDisksMap[vm.name].push({ 'type': 'file', 'source': diskProps.source.file });
-            /* Other disk types should be handled as well when we allow their creation from cockpit UI */
-        }
-    }
-    return vmDisksMap;
-}
-
 /**
  * Calculates disk statistics.
  * @param  {info} Object returned by GetStats method call.
@@ -893,26 +914,6 @@ function calculateDiskStats(info) {
         }
     }
     return disksStats;
-}
-
-/**
- * Update all VMs found by ListDomains method for specific D-Bus connection.
- * @param  {Function} dispatch.
- * @param  {String} connectionName D-Bus connection type; one of session/system.
- */
-function doGetAllVms(dispatch, connectionName) {
-    call(connectionName, '/org/libvirt/QEMU', 'org.libvirt.Connect', 'ListDomains', [0], TIMEOUT)
-            .done(objPaths => {
-                logDebug(`GET_ALL_VMS: object paths: ${JSON.stringify(objPaths)}`);
-
-                dispatch(deleteUnlistedVMs(connectionName, [], objPaths[0]));
-
-                // We can't use Promise.all() here until cockpit is able to dispatch es2015 promises
-                // https://github.com/cockpit-project/cockpit/issues/10956
-                // eslint-disable-next-line cockpit/no-cockpit-all
-                return cockpit.all(objPaths[0].map((path) => dispatch(getVm({ connectionName, id:path }))));
-            })
-            .fail(ex => console.warn("ListDomains failed:", JSON.stringify(ex)));
 }
 
 /**
@@ -1063,6 +1064,7 @@ function startEventMonitorDomains(connectionName, dispatch) {
             logDebug(`signal on ${path}: ${iface}.${signal}(${JSON.stringify(args)})`);
 
             switch (signal) {
+            case 'BalloonChange':
             case 'ControlError':
             case 'DeviceAdded':
             case 'DeviceRemoved':
@@ -1091,7 +1093,7 @@ function startEventMonitorLibvirtd(connectionName, dispatch, libvirtServiceName)
                 if (args[0] === "org.freedesktop.systemd1.Unit" && args[1].ActiveState.v === "deactivating") {
                     dispatch(checkLibvirtStatus(libvirtServiceName));
                     dispatch(deleteUnlistedVMs(connectionName, []));
-                    dispatch(delayPolling(getAllVms(connectionName, libvirtServiceName)));
+                    dispatch(delayPolling(getApiData(connectionName, libvirtServiceName)));
                 }
             }
         );
@@ -1108,8 +1110,10 @@ function startEventMonitorNetworks(connectionName, dispatch) {
             switch (eventType) {
             case Enum.VIR_NETWORK_EVENT_DEFINED:
             case Enum.VIR_NETWORK_EVENT_STARTED:
-            case Enum.VIR_NETWORK_EVENT_STOPPED:
                 dispatch(getNetwork({ connectionName, id:objPath }));
+                break;
+            case Enum.VIR_NETWORK_EVENT_STOPPED:
+                dispatch(getNetwork({ connectionName, id:objPath, updateOnly: true }));
                 break;
             case Enum.VIR_NETWORK_EVENT_UNDEFINED:
                 dispatch(undefineNetwork({ connectionName, id:objPath }));
@@ -1145,9 +1149,11 @@ function startEventMonitorStoragePools(connectionName, dispatch) {
             switch (eventType) {
             case Enum.VIR_STORAGE_POOL_EVENT_DEFINED:
             case Enum.VIR_STORAGE_POOL_EVENT_STARTED:
-            case Enum.VIR_STORAGE_POOL_EVENT_STOPPED:
             case Enum.VIR_STORAGE_POOL_EVENT_CREATED:
                 dispatch(getStoragePool({ connectionName, id:objPath }));
+                break;
+            case Enum.VIR_STORAGE_POOL_EVENT_STOPPED:
+                dispatch(getStoragePool({ connectionName, id:objPath, updateOnly: true }));
                 break;
             case Enum.VIR_STORAGE_POOL_EVENT_UNDEFINED:
                 dispatch(undefineStoragePool({ connectionName, id:objPath }));
@@ -1186,6 +1192,11 @@ function dbus_client(connectionName) {
     }
 
     return clientLibvirt[connectionName];
+}
+
+export function getLibvirtVersion(connectionName) {
+    return (dispatch) => call(connectionName, "/org/libvirt/QEMU", "org.freedesktop.DBus.Properties", "Get", ["org.libvirt.Connect", "LibVersion"], TIMEOUT)
+            .then(version => dispatch(updateLibvirtVersion({ libvirtVersion: version[0].v })));
 }
 
 /**

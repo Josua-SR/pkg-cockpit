@@ -125,14 +125,6 @@ return plural;
   null,
   "Wystąpiło między $0 a $1"
  ],
- "Off": [
-  null,
-  "Wyłączone"
- ],
- "On": [
-  null,
-  "Włączone"
- ],
  "SELinux Access Control Errors": [
   null,
   "Błędy kontroli dostępu SELinuksa"

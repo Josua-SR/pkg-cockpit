@@ -113,7 +113,7 @@ return plural;
  ],
  "Contacted domain": [
   null,
-  ""
+  "联系的域"
  ],
  "Domain": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Login Format": [
   null,
-  ""
+  "登陆格式"
  ],
  "More": [
   null,
@@ -221,7 +221,7 @@ return plural;
  ],
  "Server Software": [
   null,
-  ""
+  "服务器软件"
  ],
  "The user <b>$0</b> is not permitted to modify realms": [
   null,
@@ -245,7 +245,7 @@ return plural;
  ],
  "Validating address": [
   null,
-  ""
+  "验证地址"
  ],
  "Waiting for other software management operations to finish": [
   null,

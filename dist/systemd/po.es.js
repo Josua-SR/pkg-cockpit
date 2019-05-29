@@ -363,6 +363,14 @@ return plural;
   null,
   "CPU"
  ],
+ "CPU Security": [
+  null,
+  ""
+ ],
+ "CPU Security Toggles": [
+  null,
+  ""
+ ],
  "Cached": [
   null,
   "En cache"
@@ -498,6 +506,10 @@ return plural;
  "Disable": [
   null,
   "Desabilitar"
+ ],
+ "Disable simultaneous multithreading": [
+  null,
+  ""
  ],
  "Disabled": [
   null,
@@ -783,6 +795,10 @@ return plural;
   null,
   "Minutos"
  ],
+ "Mitigations": [
+  null,
+  ""
+ ],
  "Model": [
   null,
   "Modelo"
@@ -939,6 +955,10 @@ return plural;
   null,
   "Bonito Nombre de Host"
  ],
+ "Previous boot": [
+  null,
+  ""
+ ],
  "Problem details": [
   null,
   "Detalles del problema"
@@ -958,6 +978,10 @@ return plural;
  "Rack Mount Chassis": [
   null,
   "Chasis Montado en Rack"
+ ],
+ "Read more...": [
+  null,
+  ""
  ],
  "Real Host Name": [
   null,
@@ -1071,6 +1095,10 @@ return plural;
   null,
   "Guardar"
  ],
+ "Save and reboot": [
+  null,
+  ""
+ ],
  "Sealed-case PC": [
   null,
   "PC de Caja Sellada"
@@ -1086,6 +1114,10 @@ return plural;
  "Security Updates Available": [
   null,
   "Actualizaciones de Seguridad Disponibles"
+ ],
+ "Service": [
+  null,
+  "Servicio"
  ],
  "Service Logs": [
   null,
@@ -1130,6 +1162,10 @@ return plural;
  "Sockets": [
   null,
   "Sockets"
+ ],
+ "Software-based workarounds help prevent CPU security issues. These mitigations have the side effect of reducing performance. Change these settings at your own risk.": [
+  null,
+  ""
  ],
  "Space-saving Computer": [
   null,
@@ -1226,6 +1262,10 @@ return plural;
  "Terminal": [
   null,
   "Terminal"
+ ],
+ "The user $0 is not permitted to change cpu security mitigations": [
+  null,
+  ""
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,

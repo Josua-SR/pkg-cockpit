@@ -1,75 +1,10 @@
-.boot-order .list-group {
-    --machines-boot-list-offset: 15rem;
-    max-height: calc(100vh - var(--machines-boot-list-offset));
+/* Standard dialog is too wide */
+#vm-memory-modal > .modal-dialog {
+    max-width: 50rem;
 }
 
-.boot-order-list-view {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.boot-order .pficon-pending {
-    margin-left: 0.5rem;
-}
-
-/* Overriding Patternfly's ListView */
-.boot-order .list-view-pf-body {
-    align-items: baseline;
-    min-height: 26px;
-}
-
-.boot-order .list-group-item {
-    padding: 1rem 1.5rem;
-}
-
-.boot-order .list-view-pf-main-info,
-.boot-order .list-view-pf-checkbox,
-.boot-order .list-view-pf-actions {
-    align-self: baseline;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-.boot-order .list-view-pf-checkbox {
-    position: relative;
-    top: 3px;
-}
-
-.boot-order .list-view-pf-description {
-    flex: 1 0 30%;
-    flex-basis: 30%;
-}
-
-.boot-order .list-view-pf-additional-info {
-    flex-basis: 70%;
-}
-
-.boot-order .list-group-item:not(.is-checked) .list-view-pf-actions {
-    display: none;
-}
-
-.boot-order .ct-form-layout + .ct-form-layout {
-    margin-left: 1rem;
-}
-
-@media screen and (min-width: 769px) {
-    /* Standard dialog is too narrow */
-    .boot-order > .modal-dialog {
-        min-width: 70rem;
-    }
-
-    /* Adjust the spacing offset */
-    .boot-order .list-group {
-        --machines-boot-list-offset: 22rem;
-    }
-
-    /* Add spacer when list-view actions are not visible */
-    .boot-order .list-group-item:not(.is-checked) .list-view-pf-main-info {
-        /* Size of action arrows (26px x 2 - 1px) + padding-left (20px) */
-        margin-right: 71px;
-    }
+#memory-config-dialog input[type=number] {
+    max-width: 7rem;
 }
 a {
     cursor: pointer;
@@ -360,7 +295,8 @@ input[type=number] {
     box-shadow: inset 0 2px 8px rgba(3, 3, 3, 0.2);
 }
 
-.ct-select > option {
+.ct-select optgroup,
+.ct-select option {
     background-color: #fff;
 }
 .file-autocomplete-ct input {
@@ -407,6 +343,9 @@ input[type=number] {
 
 .file-autocomplete-ct .caret:before {
     position: static;
+}
+#expand-collapse-button {
+    grid-column: 1 / -1;
 }
 /* Standard dialog is too narrow and wide dialog is too wide */
 .nic-edit > .modal-dialog {
@@ -523,6 +462,79 @@ input[type=number] {
 }
 .notification-message {
     white-space: pre-wrap;
+}
+.boot-order .list-group {
+    --machines-boot-list-offset: 15rem;
+    max-height: calc(100vh - var(--machines-boot-list-offset));
+}
+
+.boot-order-list-view {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.boot-order .pficon-pending {
+    margin-left: 0.5rem;
+}
+
+/* Overriding Patternfly's ListView */
+.boot-order .list-view-pf-body {
+    align-items: baseline;
+    min-height: 26px;
+}
+
+.boot-order .list-group-item {
+    padding: 1rem 1.5rem;
+}
+
+.boot-order .list-view-pf-main-info,
+.boot-order .list-view-pf-checkbox,
+.boot-order .list-view-pf-actions {
+    align-self: baseline;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.boot-order .list-view-pf-checkbox {
+    position: relative;
+    top: 3px;
+}
+
+.boot-order .list-view-pf-description {
+    flex: 1 0 30%;
+    flex-basis: 30%;
+}
+
+.boot-order .list-view-pf-additional-info {
+    flex-basis: 70%;
+}
+
+.boot-order .list-group-item:not(.is-checked) .list-view-pf-actions {
+    display: none;
+}
+
+.boot-order .ct-form-layout + .ct-form-layout {
+    margin-left: 1rem;
+}
+
+@media screen and (min-width: 769px) {
+    /* Standard dialog is too narrow */
+    .boot-order > .modal-dialog {
+        min-width: 70rem;
+    }
+
+    /* Adjust the spacing offset */
+    .boot-order .list-group {
+        --machines-boot-list-offset: 22rem;
+    }
+
+    /* Add spacer when list-view actions are not visible */
+    .boot-order .list-group-item:not(.is-checked) .list-view-pf-main-info {
+        /* Size of action arrows (26px x 2 - 1px) + padding-left (20px) */
+        margin-right: 71px;
+    }
 }
 .pficon-warning-triangle-o {
     color: #ec7a08; /* pf-orange-400 */
@@ -1155,6 +1167,7 @@ tbody tr.listing-ct-noexpand {
   margin-top: -3px;
   margin-bottom: 3px;
   min-height: 26px;
+  align-self: start;
 }
 .ct-form-layout > :not(.ct-form-layout-relax):not(.spinner) {
   width: auto !important;
@@ -1243,6 +1256,17 @@ tbody tr.listing-ct-noexpand {
   position: relative;
   top: -0.5rem;
 }
+.ct-form-layout .ct-form-box {
+  background: #f5f5f5;
+  /* pf-black-150 */
+  border-width: 1px;
+  border-style: solid;
+  border-color: #bbbbbb;
+  /* pf-black-400 */
+  padding: 0.5rem;
+  padding-top: 1rem;
+  width: 100%;
+}
 .modal .ct-form-layout > .control-label {
   padding-left: 0.5rem;
 }
@@ -1260,6 +1284,12 @@ tbody tr.listing-ct-noexpand {
   .modal {
     --ct-form-layout-columns: 1;
   }
+}
+.ct-form-layout-minmax {
+  grid-template-columns: max-content min-content max-content 1fr;
+}
+.ct-form-layout-maxmin {
+  grid-template-columns: max-content 1fr max-content min-content;
 }
 @media (max-width: 480px) {
   .listing-ct-body .ct-form-layout,
@@ -1447,6 +1477,14 @@ tbody tr.listing-ct-noexpand {
     width: 1px;
     height: 1px;
     overflow: hidden;
+}
+
+.xterm-dim {
+    opacity: 0.5;
+}
+
+.xterm-underline {
+    text-decoration: underline;
 }
 .rbt {
   outline: none;
@@ -1942,7 +1980,8 @@ input[type=number] {
 .ct-select:active {
   box-shadow: inset 0 2px 8px rgba(3, 3, 3, 0.2);
 }
-.ct-select > option {
+.ct-select optgroup,
+.ct-select option {
   background-color: #fff;
 }
 /* Organize cards in a grid instead of BootStrap */
@@ -2766,9 +2805,15 @@ table.pf-table-inline-edit tbody .static {
 .expand-collapse-pf .expand-collapse-pf-separator.bordered {
   border-top: 1px solid #d1d1d1;
 }
-.login-form-error {
+.login-pf-page .alert {
+  margin-bottom: 0;
+}
+.login-pf-page .login-form-error {
   color: #cc0000;
   margin-bottom: 10px;
+}
+.login-pf-page .login-pf-input-warning {
+  margin-top: 5px;
 }
 .dual-list-pf-arrows {
   display: inline-block;
@@ -2851,6 +2896,7 @@ table.pf-table-inline-edit tbody .static {
   border-top: 1px solid #d1d1d1;
 }
 .dual-list-pf-heading {
+  min-height: 29px;
   border-bottom: 1px solid #d1d1d1;
 }
 .dual-list-pf-item {

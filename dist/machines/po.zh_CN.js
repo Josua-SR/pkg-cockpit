@@ -69,7 +69,7 @@ return plural;
  },
  "$0 Network": [
   null,
-  ""
+  "$0 网络"
  ],
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -86,6 +86,10 @@ return plural;
  "Add Disk": [
   null,
   "添加磁盘"
+ ],
+ "Additional": [
+  null,
+  "额外"
  ],
  "Address": [
   null,
@@ -130,6 +134,10 @@ return plural;
  "CPU Type": [
   null,
   "CPU类型"
+ ],
+ "Cache": [
+  null,
+  ""
  ],
  "Cancel": [
   null,
@@ -203,6 +211,10 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "Current Allocation": [
+  null,
+  "当前分配"
+ ],
  "DHCP Range": [
   null,
   "DHCP 范围"
@@ -267,6 +279,10 @@ return plural;
   null,
   "磁盘"
  ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
+ ],
  "Download the MSI from $0": [
   null,
   "从 $0 下载 MSI"
@@ -277,7 +293,7 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  ""
+  "虚拟的机器"
  ],
  "Existing Disk Image": [
   null,
@@ -285,7 +301,7 @@ return plural;
  ],
  "Existing disk image on host's file system": [
   null,
-  ""
+  "主机文件系统上存在的磁盘镜像"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
@@ -313,7 +329,7 @@ return plural;
  ],
  "Forwarding mode": [
   null,
-  ""
+  "转发模式"
  ],
  "General": [
   null,
@@ -331,13 +347,17 @@ return plural;
   null,
   "Desktop Viewer 中的图形控制台"
  ],
+ "Hide Performance Options": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "主机"
  ],
  "Host Device": [
   null,
-  ""
+  "主机设备"
  ],
  "Host Name": [
   null,
@@ -362,6 +382,14 @@ return plural;
  "In most configurations, macvtap does not work for host to guest network communication.": [
   null,
   "在多数配置中，macvtap 不能为主机到客户机的网络通信工作。"
+ ],
+ "Initiator": [
+  null,
+  "启动器"
+ ],
+ "Initiator IQN should not be empty": [
+  null,
+  "启动器 IQN 不能为空"
  ],
  "Install": [
   null,
@@ -419,9 +447,17 @@ return plural;
   null,
   "手动连接"
  ],
+ "Maximum Allocation": [
+  null,
+  "最大分配"
+ ],
  "Maximum Transmission Unit": [
   null,
-  ""
+  "最大传输单元"
+ ],
+ "Maximum memory could not be saved": [
+  null,
+  "最大内存不能被保存"
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
@@ -430,6 +466,14 @@ return plural;
  "Memory": [
   null,
   "内存"
+ ],
+ "Memory could not be saved": [
+  null,
+  "内存不能被保存"
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  "内存大小应该在 128 MiB 和最大分配值之间"
  ],
  "MiB": [
   null,
@@ -449,11 +493,11 @@ return plural;
  ],
  "NAT to $0": [
   null,
-  ""
+  "NAT 到 $0"
  ],
  "NIC $0 of VM $1 failed to change state": [
   null,
-  ""
+  "VM $1 的 NIC $0 改变状态失败"
  ],
  "Name": [
   null,
@@ -465,23 +509,23 @@ return plural;
  ],
  "Name: ": [
   null,
-  ""
+  "名称："
  ],
  "Netmask": [
   null,
-  ""
+  "网络掩码"
  ],
  "Network $0 failed to get activated": [
   null,
-  ""
+  "网络 $0 激活失败"
  ],
  "Network $0 failed to get deactivated": [
   null,
-  ""
+  "网络 $0 取消激活失败"
  ],
  "Network Boot (PXE)": [
   null,
-  ""
+  "网络引导 (PXE)"
  ],
  "Network File System": [
   null,
@@ -489,15 +533,15 @@ return plural;
  ],
  "Network Interfaces": [
   null,
-  ""
+  "网络接口"
  ],
  "Network Selection does not support PXE.": [
   null,
-  ""
+  "网络选择不支持 PXE。"
  ],
  "Network interface settings could not be saved": [
   null,
-  ""
+  "网络接口设置不能被保存"
  ],
  "Networks": [
   null,
@@ -507,6 +551,10 @@ return plural;
   null,
   "新卷名称"
  ],
+ "No Storage Pools available": [
+  null,
+  ""
+ ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
   "没有为这个存储池定义存储卷"
@@ -514,6 +562,10 @@ return plural;
  "No VM is running or defined on this host": [
   null,
   "该主机上没有定义或运行虚拟机。"
+ ],
+ "No Virtual Networks": [
+  null,
+  "没有虚拟网络"
  ],
  "No boot device found": [
   null,
@@ -537,19 +589,19 @@ return plural;
  ],
  "No network is defined on this host": [
   null,
-  ""
+  "没有在这个主机上定义网络"
+ ],
+ "No networks available": [
+  null,
+  "没有可用的网络"
  ],
  "No storage pool is defined on this host": [
   null,
   "没有在这个主机上定义存储池"
  ],
- "No virtual networks": [
-  null,
-  "没有虚拟网络"
- ],
  "None (Isolated Network)": [
   null,
-  ""
+  "无 (隔离的网络)"
  ],
  "OS Vendor": [
   null,
@@ -557,11 +609,15 @@ return plural;
  ],
  "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
   null,
-  ""
+  "一个或多个卷被域使用。需要先分离磁盘后才可以删除卷。"
+ ],
+ "Only editable when the guest is shut off": [
+  null,
+  "只有在客户机关闭后才可以编辑"
  ],
  "Open": [
   null,
-  ""
+  "打开"
  ],
  "Operating System": [
   null,
@@ -589,13 +645,21 @@ return plural;
  ],
  "Pause": [
   null,
-  ""
+  "暂停"
  ],
  "Persistence": [
   null,
-  ""
+  "持久"
  ],
  "Persistent": [
+  null,
+  "持久"
+ ],
+ "Physical Disk Device": [
+  null,
+  ""
+ ],
+ "Physical disk device on host": [
   null,
   ""
  ],
@@ -629,15 +693,15 @@ return plural;
  ],
  "Prefix": [
   null,
-  ""
+  "前缀"
  ],
  "Private": [
   null,
-  ""
+  "私有"
  ],
  "Product": [
   null,
-  ""
+  "产品"
  ],
  "Protocol": [
   null,
@@ -669,15 +733,15 @@ return plural;
  ],
  "Resume": [
   null,
-  ""
+  "恢复"
  ],
  "Route to $0": [
   null,
-  ""
+  "路由到 $0"
  ],
  "Routed Network": [
   null,
-  ""
+  "路由的网络"
  ],
  "Run": [
   null,
@@ -685,7 +749,7 @@ return plural;
  ],
  "Run when host boots": [
   null,
-  ""
+  "在主机引导时运行"
  ],
  "SPICE": [
   null,
@@ -723,6 +787,10 @@ return plural;
   null,
   "会话"
  ],
+ "Show Performance Options": [
+  null,
+  ""
+ ],
  "Shut Down": [
   null,
   "关机"
@@ -738,6 +806,10 @@ return plural;
  "Source": [
   null,
   "源"
+ ],
+ "Source Format": [
+  null,
+  ""
  ],
  "Source Path": [
   null,
@@ -767,13 +839,17 @@ return plural;
   null,
   "状态"
  ],
+ "Storage": [
+  null,
+  "存储"
+ ],
  "Storage Pool $0 failed to get activated": [
   null,
-  ""
+  "存储池 $0 激活失败"
  ],
  "Storage Pool $0 failed to get deactivated": [
   null,
-  ""
+  "存储池 $0 取消激活失败"
  ],
  "Storage Pool Name": [
   null,
@@ -787,17 +863,13 @@ return plural;
   null,
   "存储池"
  ],
- "Storage Size": [
-  null,
-  "存储大小"
- ],
  "Storage Volumes": [
   null,
   "存储卷"
  ],
  "Storage Volumes could not be deleted": [
   null,
-  ""
+  "存储卷不能被删除"
  ],
  "System": [
   null,
@@ -817,7 +889,7 @@ return plural;
  ],
  "The Storage Pool could not be deleted": [
   null,
-  ""
+  "存储池不能被删除"
  ],
  "The VM crashed.": [
   null,
@@ -863,6 +935,10 @@ return plural;
   null,
   "池为空"
  ],
+ "This volume is already used by another VM.": [
+  null,
+  ""
+ ],
  "Threads per core": [
   null,
   "每个内核的线程数"
@@ -881,7 +957,7 @@ return plural;
  ],
  "Type ID": [
   null,
-  ""
+  "类型 ID"
  ],
  "URL": [
   null,
@@ -901,7 +977,7 @@ return plural;
  ],
  "Up to $0 $1 available on the host": [
   null,
-  ""
+  "在主机上最多有 $0 $1 可用"
  ],
  "Usage": [
   null,
@@ -917,7 +993,7 @@ return plural;
  ],
  "Used by": [
   null,
-  ""
+  "用于"
  ],
  "VCPU settings could not be saved": [
   null,
@@ -925,43 +1001,43 @@ return plural;
  ],
  "VM $0 failed to Reboot": [
   null,
-  ""
+  "VM $0 重启失败"
  ],
  "VM $0 failed to force Reboot": [
   null,
-  ""
+  "VM $0 强制重启失败"
  ],
  "VM $0 failed to force shutdown": [
   null,
-  ""
+  "VM $0 强制关闭失败"
  ],
  "VM $0 failed to get deleted": [
   null,
-  ""
+  "VM $0 删除失败"
  ],
  "VM $0 failed to get installed": [
   null,
-  ""
+  "VM $0 安装失败"
  ],
  "VM $0 failed to pause": [
   null,
-  ""
+  "VM $0 暂停失败"
  ],
  "VM $0 failed to resume": [
   null,
-  ""
+  "VM $0 恢复失败"
  ],
  "VM $0 failed to send NMI": [
   null,
-  ""
+  "VM $0 发送 NMI 失败"
  ],
  "VM $0 failed to shutdown": [
   null,
-  ""
+  "VM $0 关闭失败"
  ],
  "VM $0 failed to start": [
   null,
-  ""
+  "VM $0 启动失败"
  ],
  "VNC": [
   null,
@@ -989,7 +1065,7 @@ return plural;
  ],
  "Virtual Network": [
   null,
-  ""
+  "虚拟网络"
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
@@ -1005,11 +1081,11 @@ return plural;
  ],
  "WWPN": [
   null,
-  ""
+  "WWPN"
  ],
  "You need to select the most closely matching OS vendor and Operating System": [
   null,
-  ""
+  "您需要选择最接近的 OS 厂商和操作系统"
  ],
  "active": [
   null,
@@ -1022,6 +1098,10 @@ return plural;
  "cdrom": [
   null,
   "光驱"
+ ],
+ "control-label $0": [
+  null,
+  "control-label $0"
  ],
  "crashed": [
   null,
@@ -1065,19 +1145,27 @@ return plural;
  ],
  "host device": [
   null,
-  ""
+  "主机设备"
  ],
  "hostdev": [
   null,
   "hostdev"
  ],
+ "iSCSI Initiator IQN": [
+  null,
+  "iSCSI Initiator IQN"
+ ],
  "iSCSI Target": [
   null,
-  ""
+  "iSCSI 目标"
+ ],
+ "iSCSI direct Target": [
+  null,
+  "iSCSI 直接目标"
  ],
  "iSCSI target IQN": [
   null,
-  ""
+  "iSCSI 目标 IQN"
  ],
  "idle": [
   null,
@@ -1113,7 +1201,7 @@ return plural;
  ],
  "redirected device": [
   null,
-  ""
+  "重定向设备"
  ],
  "running": [
   null,
@@ -1122,6 +1210,14 @@ return plural;
  "server": [
   null,
   "服务器"
+ ],
+ "show less": [
+  null,
+  "显示更少"
+ ],
+ "show more": [
+  null,
+  "显示更多"
  ],
  "shut off": [
   null,

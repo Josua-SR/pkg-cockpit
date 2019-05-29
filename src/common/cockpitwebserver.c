@@ -56,6 +56,7 @@ struct _CockpitWebServer {
   gint request_timeout;
   gint request_max;
   gboolean redirect_tls;
+  CockpitWebServerFlags flags;
 
   GSocketService *socket_service;
   GMainContext *main_context;
@@ -88,6 +89,7 @@ enum
   PROP_SSL_EXCEPTION_PREFIX,
   PROP_SOCKET_ACTIVATED,
   PROP_REDIRECT_TLS,
+  PROP_FLAGS,
   PROP_URL_ROOT,
 };
 
@@ -183,6 +185,10 @@ cockpit_web_server_get_property (GObject *object,
       g_value_set_boolean (value, server->redirect_tls);
       break;
 
+    case PROP_FLAGS:
+      g_value_set_int (value, server->flags);
+      break;
+
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
       break;
@@ -245,6 +251,10 @@ cockpit_web_server_set_property (GObject *object,
 
     case PROP_REDIRECT_TLS:
       server->redirect_tls = g_value_get_boolean (value);
+      break;
+
+    case PROP_FLAGS:
+      server->flags = g_value_get_int (value);
       break;
 
     default:
@@ -320,7 +330,9 @@ cockpit_web_server_default_handle_stream (CockpitWebServer *self,
     *orig_pos = '\0';
 
   /* TODO: Correct HTTP version for response */
-  response = cockpit_web_response_new (io_stream, original_path, path, pos, headers);
+  response = cockpit_web_response_new (io_stream, original_path, path, pos, headers,
+                                       (self->flags & COCKPIT_WEB_SERVER_FOR_TLS_PROXY) ?
+                                         COCKPIT_WEB_RESPONSE_FOR_TLS_PROXY : COCKPIT_WEB_RESPONSE_NONE);
   cockpit_web_response_set_method (response, method);
   g_signal_connect_data (response, "done", G_CALLBACK (on_web_response_done),
                          g_object_ref (self), (GClosureNotify)g_object_unref, 0);
@@ -432,6 +444,13 @@ cockpit_web_server_class_init (CockpitWebServerClass *klass)
                                    g_param_spec_boolean ("redirect-tls", NULL, NULL, TRUE,
                                                          G_PARAM_READABLE | G_PARAM_STATIC_STRINGS));
 
+  g_object_class_install_property (gobject_class, PROP_FLAGS,
+                                   g_param_spec_int ("flags", NULL, NULL, 0, COCKPIT_WEB_SERVER_FLAGS_MAX, 0,
+                                                     G_PARAM_READABLE |
+                                                     G_PARAM_WRITABLE |
+                                                     G_PARAM_CONSTRUCT_ONLY |
+                                                     G_PARAM_STATIC_STRINGS));
+
   sig_handle_stream = g_signal_new ("handle-stream",
                                     G_OBJECT_CLASS_TYPE (klass),
                                     G_SIGNAL_RUN_LAST,
@@ -466,6 +485,7 @@ CockpitWebServer *
 cockpit_web_server_new (const gchar *address,
                         gint port,
                         GTlsCertificate *certificate,
+                        CockpitWebServerFlags flags,
                         GCancellable *cancellable,
                         GError **error)
 {
@@ -476,6 +496,7 @@ cockpit_web_server_new (const gchar *address,
                              "port", port,
                              "address", address,
                              "certificate", certificate,
+                             "flags", flags,
                              NULL);
   if (initable != NULL)
     return COCKPIT_WEB_SERVER (initable);
@@ -520,6 +541,14 @@ cockpit_web_server_get_redirect_tls (CockpitWebServer *self)
   g_return_val_if_fail (COCKPIT_IS_WEB_SERVER (self), FALSE);
 
   return self->redirect_tls;
+}
+
+CockpitWebServerFlags
+cockpit_web_server_get_flags (CockpitWebServer *self)
+{
+  g_return_val_if_fail (COCKPIT_IS_WEB_SERVER (self), COCKPIT_WEB_SERVER_NONE);
+
+  return self->flags;
 }
 
 GHashTable *
@@ -756,7 +785,9 @@ process_delayed_reply (CockpitRequest *request,
 
   g_assert (request->delayed_reply > 299);
 
-  response = cockpit_web_response_new (request->io, NULL, NULL, NULL, headers);
+  response = cockpit_web_response_new (request->io, NULL, NULL, NULL, headers,
+                                       (request->web_server->flags & COCKPIT_WEB_SERVER_FOR_TLS_PROXY) ?
+                                         COCKPIT_WEB_RESPONSE_FOR_TLS_PROXY : COCKPIT_WEB_RESPONSE_NONE);
   g_signal_connect_data (response, "done", G_CALLBACK (on_web_response_done),
                          g_object_ref (request->web_server), (GClosureNotify)g_object_unref, 0);
 

@@ -75,6 +75,10 @@ return plural;
   null,
   ""
  ],
+ "(default)": [
+  null,
+  "(standard)"
+ ],
  "1 day": [
   null,
   "1 dag"
@@ -123,6 +127,10 @@ return plural;
   null,
   "Aktiv reserv"
  ],
+ "Active zones": [
+  null,
+  ""
+ ],
  "Adaptive load balancing": [
   null,
   "Adaptiv lastbalansering"
@@ -159,6 +167,22 @@ return plural;
   null,
   " Lägg till VLAN"
  ],
+ "Add Zone": [
+  null,
+  ""
+ ],
+ "Add ports to the following zones:": [
+  null,
+  ""
+ ],
+ "Add services to following zones:": [
+  null,
+  ""
+ ],
+ "Add zone": [
+  null,
+  ""
+ ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
   "Att lägga till <b>$0</b> kommer bryta anslutningen till servern, och kommer göra administrationsgränssnittet otillgängligt."
@@ -182,6 +206,10 @@ return plural;
  "Addresses": [
   null,
   "Adresser"
+ ],
+ "Allowed Addresses": [
+  null,
+  ""
  ],
  "Allowed Services": [
   null,
@@ -315,6 +343,10 @@ return plural;
   null,
   ""
  ],
+ "Custom zones": [
+  null,
+  ""
+ ],
  "DNS": [
   null,
   "DNS"
@@ -347,6 +379,10 @@ return plural;
   null,
   "Att ta bort <b>$0</b> kommer bryta anslutningen till servern, och kommer göra administrationsgränssnittet otillgängligt."
  ],
+ "Description": [
+  null,
+  "Beskrivning"
+ ],
  "Details": [
   null,
   "Detaljer"
@@ -358,6 +394,10 @@ return plural;
  "Enable Service": [
   null,
   "Aktivera tjänst"
+ ],
+ "Entire subnet": [
+  null,
+  ""
  ],
  "Ethernet MAC": [
   null,
@@ -382,6 +422,18 @@ return plural;
  "Failed": [
   null,
   "Misslyckades"
+ ],
+ "Failed to add service": [
+  null,
+  ""
+ ],
+ "Failed to add zone": [
+  null,
+  ""
+ ],
+ "Failed to remove service": [
+  null,
+  ""
  ],
  "Filter Services": [
   null,
@@ -423,6 +475,10 @@ return plural;
   null,
   "IP-adress"
  ],
+ "IP Range": [
+  null,
+  ""
+ ],
  "IP Settings": [
   null,
   "IP-inställningar"
@@ -454,6 +510,10 @@ return plural;
  "Inactive": [
   null,
   "Inaktiv"
+ ],
+ "Included services": [
+  null,
+  ""
  ],
  "Interfaces": [
   null,
@@ -587,13 +647,25 @@ return plural;
   null,
   "Nej"
  ],
+ "No active zones": [
+  null,
+  ""
+ ],
  "No carrier": [
   null,
   "Ingen bärvåg"
  ],
+ "No description available": [
+  null,
+  ""
+ ],
  "No open ports": [
   null,
   "Inga öppna portar"
+ ],
+ "None": [
+  null,
+  "Inga"
  ],
  "Not available": [
   null,
@@ -687,6 +759,10 @@ return plural;
   null,
   "Slumpvis"
  ],
+ "Range": [
+  null,
+  ""
+ ],
  "Range must be strictly ordered": [
   null,
   ""
@@ -702,6 +778,14 @@ return plural;
  "Remove $0": [
   null,
   "Ta bort $0"
+ ],
+ "Remove service": [
+  null,
+  ""
+ ],
+ "Remove service from zones": [
+  null,
+  ""
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -758,6 +842,10 @@ return plural;
  "Shared": [
   null,
   "Delad"
+ ],
+ "Sorted from least trusted to most trusted": [
+  null,
+  ""
  ],
  "Spanning Tree Protocol": [
   null,
@@ -835,6 +923,10 @@ return plural;
   null,
   "Denna enhet kan inte hanteras här."
  ],
+ "Trust level": [
+  null,
+  ""
+ ],
  "UDP": [
   null,
   "UDP"
@@ -891,6 +983,14 @@ return plural;
   null,
   "Du har inte rättigheter att ändra brandväggen."
  ],
+ "Zone": [
+  null,
+  ""
+ ],
+ "Zones": [
+  null,
+  ""
+ ],
  "[$0 bytes of binary data]": [
   null,
   "[$0 byte med binärdata]"
@@ -902,6 +1002,14 @@ return plural;
  "[no data]": [
   null,
   "[inga data]"
+ ],
+ "show less": [
+  null,
+  "visa mindre"
+ ],
+ "show more": [
+  null,
+  "visa mer"
  ],
  "page-title\u0004Networking": [
   null,

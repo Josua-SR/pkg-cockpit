@@ -955,6 +955,10 @@ return plural;
   null,
   "Snyggt värdnamn"
  ],
+ "Previous boot": [
+  null,
+  ""
+ ],
  "Problem details": [
   null,
   "Problemdetaljer"

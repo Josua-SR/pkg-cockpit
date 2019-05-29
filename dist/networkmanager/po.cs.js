@@ -129,7 +129,7 @@ return plural;
  ],
  "Active zones": [
   null,
-  ""
+  "Aktivní zóny"
  ],
  "Adaptive load balancing": [
   null,
@@ -167,7 +167,19 @@ return plural;
   null,
   "Přidat VLAN"
  ],
+ "Add Zone": [
+  null,
+  ""
+ ],
+ "Add ports to the following zones:": [
+  null,
+  "Přidat porty do následujících zón:"
+ ],
  "Add services to following zones:": [
+  null,
+  "Přidat služby do následujících zón:"
+ ],
+ "Add zone": [
   null,
   ""
  ],
@@ -194,6 +206,10 @@ return plural;
  "Addresses": [
   null,
   "Adresy"
+ ],
+ "Allowed Addresses": [
+  null,
+  ""
  ],
  "Allowed Services": [
   null,
@@ -327,6 +343,10 @@ return plural;
   null,
   "Uživatelsky určené porty"
  ],
+ "Custom zones": [
+  null,
+  ""
+ ],
  "DNS": [
   null,
   "DNS"
@@ -359,6 +379,10 @@ return plural;
   null,
   "Smazání <b>$0</b> přeruší spojení se serverem a znepřístupní tak rozhraní pro jeho správu."
  ],
+ "Description": [
+  null,
+  "Popis"
+ ],
  "Details": [
   null,
   "Podrobnosti"
@@ -370,6 +394,10 @@ return plural;
  "Enable Service": [
   null,
   "Zapnout službu"
+ ],
+ "Entire subnet": [
+  null,
+  ""
  ],
  "Ethernet MAC": [
   null,
@@ -394,6 +422,18 @@ return plural;
  "Failed": [
   null,
   "Neúspěšné"
+ ],
+ "Failed to add service": [
+  null,
+  "Službu se nepodařilo přidat"
+ ],
+ "Failed to add zone": [
+  null,
+  ""
+ ],
+ "Failed to remove service": [
+  null,
+  "Službu se nepodařilo odbrat"
  ],
  "Filter Services": [
   null,
@@ -437,7 +477,7 @@ return plural;
  ],
  "IP Range": [
   null,
-  ""
+  "Rozsah IP adres"
  ],
  "IP Settings": [
   null,
@@ -470,6 +510,10 @@ return plural;
  "Inactive": [
   null,
   "Neaktivní"
+ ],
+ "Included services": [
+  null,
+  ""
  ],
  "Interfaces": [
   null,
@@ -605,15 +649,23 @@ return plural;
  ],
  "No active zones": [
   null,
-  ""
+  "Žádné aktivní zóny"
  ],
  "No carrier": [
   null,
   "Bez signálu"
  ],
+ "No description available": [
+  null,
+  ""
+ ],
  "No open ports": [
   null,
   "Žádné otevřené porty"
+ ],
+ "None": [
+  null,
+  "Žádný"
  ],
  "Not available": [
   null,
@@ -707,6 +759,10 @@ return plural;
   null,
   "Náhodné"
  ],
+ "Range": [
+  null,
+  ""
+ ],
  "Range must be strictly ordered": [
   null,
   "Je třeba, aby rozsah byl striktně řazený"
@@ -725,11 +781,11 @@ return plural;
  ],
  "Remove service": [
   null,
-  ""
+  "Odebrat službu"
  ],
  "Remove service from zones": [
   null,
-  ""
+  "Odebrat službu ze zón"
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -786,6 +842,10 @@ return plural;
  "Shared": [
   null,
   "Sdílené"
+ ],
+ "Sorted from least trusted to most trusted": [
+  null,
+  ""
  ],
  "Spanning Tree Protocol": [
   null,
@@ -863,6 +923,10 @@ return plural;
   null,
   "Toto zařízení zde nelze spravovat."
  ],
+ "Trust level": [
+  null,
+  ""
+ ],
  "UDP": [
   null,
   "UDP"
@@ -921,11 +985,11 @@ return plural;
  ],
  "Zone": [
   null,
-  ""
+  "Zóna"
  ],
  "Zones": [
   null,
-  ""
+  "Zóny"
  ],
  "[$0 bytes of binary data]": [
   null,
@@ -938,6 +1002,14 @@ return plural;
  "[no data]": [
   null,
   "[žádná data]"
+ ],
+ "show less": [
+  null,
+  "zobrazit méně"
+ ],
+ "show more": [
+  null,
+  "zobrazit více"
  ],
  "page-title\u0004Networking": [
   null,

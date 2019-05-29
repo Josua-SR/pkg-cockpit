@@ -356,9 +356,9 @@ return plural;
   null,
   "Komprimering"
  ],
- "Confirm passphrase": [
+ "Confirm": [
   null,
-  "Bekräfta lösenfras"
+  "Bekräfta"
  ],
  "Confirm removal with passphrase": [
   null,
@@ -439,10 +439,6 @@ return plural;
  "Custom": [
   null,
   "Anpassat"
- ],
- "Custom (Enter filesystem type)": [
-  null,
-  "Anpassat (ange filsystemtyp)"
  ],
  "Custom encryption options": [
   null,
@@ -568,13 +564,13 @@ return plural;
   null,
   "Tömmer $target"
  ],
+ "Encrypt data": [
+  null,
+  ""
+ ],
  "Encrypted $0": [
   null,
   "Krypterad $0"
- ],
- "Encrypted EXT4 (LUKS)": [
-  null,
-  "Krypterat EXT4 (LUKS)"
  ],
  "Encrypted Logical Volume of $0": [
   null,
@@ -583,10 +579,6 @@ return plural;
  "Encrypted Partition of $0": [
   null,
   "Krypterad partition av $0"
- ],
- "Encrypted XFS (LUKS)": [
-  null,
-  "Krypterat XFS (LUKS)"
  ],
  "Encrypted volumes can not be resized here.": [
   null,
@@ -635,10 +627,6 @@ return plural;
  "Filesystem Name": [
   null,
   "Filsystemsnamn"
- ],
- "Filesystem type": [
-  null,
-  "Filsystemstyp"
  ],
  "Filesystems": [
   null,
@@ -691,6 +679,10 @@ return plural;
  "Grow": [
   null,
   "Utöka"
+ ],
+ "Grow Content": [
+  null,
+  ""
  ],
  "Grow Logical Volume": [
   null,
@@ -771,6 +763,10 @@ return plural;
  "Keyserver removal may prevent unlocking $0.": [
   null,
   "Att ta bort nyckelservern kan förhindra upplåsning av $0."
+ ],
+ "Loading...": [
+  null,
+  "Läser in …"
  ],
  "Local Mount Point": [
   null,
@@ -1008,10 +1004,6 @@ return plural;
   null,
   "Kör inte"
  ],
- "Off": [
-  null,
-  "Av"
- ],
  "Ok": [
   null,
   "Ok"
@@ -1019,10 +1011,6 @@ return plural;
  "Old passphrase": [
   null,
   "Gammal lösenfras"
- ],
- "On": [
-  null,
-  "På"
  ],
  "Only $0 of $1 are used.": [
   null,
@@ -1368,6 +1356,14 @@ return plural;
   null,
   "Sätter upp vändslingeenheten $target"
  ],
+ "Show all": [
+  null,
+  ""
+ ],
+ "Show all $0 drives": [
+  null,
+  ""
+ ],
  "Shrink": [
   null,
   "Krymp"
@@ -1375,6 +1371,10 @@ return plural;
  "Shrink Logical Volume": [
   null,
   "Krymp en logisk volym"
+ ],
+ "Shrink Volume": [
+  null,
+  ""
  ],
  "Size": [
   null,
@@ -1584,6 +1584,10 @@ return plural;
   null,
   "Denna disk kan inte tas bort medans enheten återhämtar sig."
  ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  ""
+ ],
  "This volume needs to be activated before it can be resized.": [
   null,
   "Denna volym behöver aktiveras före dess storlek kan ändras."
@@ -1740,13 +1744,13 @@ return plural;
   null,
   "Volymgrupper"
  ],
+ "Volume size is $0. Content size is $1.": [
+  null,
+  ""
+ ],
  "Waiting for other software management operations to finish": [
   null,
   "Väntar på att andra programvaruhanteringsåtgärder skall bli klara"
- ],
- "Warning": [
-  null,
-  ""
  ],
  "What if tang-show-keys is not available?": [
   null,

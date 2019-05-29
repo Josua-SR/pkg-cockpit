@@ -355,9 +355,9 @@ return plural;
   null,
   "压缩"
  ],
- "Confirm passphrase": [
+ "Confirm": [
   null,
-  "确认口令"
+  "确认"
  ],
  "Confirm removal with passphrase": [
   null,
@@ -438,10 +438,6 @@ return plural;
  "Custom": [
   null,
   "自定义"
- ],
- "Custom (Enter filesystem type)": [
-  null,
-  "自定义 (输入文件系统类型)"
  ],
  "Custom encryption options": [
   null,
@@ -567,13 +563,13 @@ return plural;
   null,
   "清空 $target"
  ],
+ "Encrypt data": [
+  null,
+  "加密的数据"
+ ],
  "Encrypted $0": [
   null,
   "已加密 $0"
- ],
- "Encrypted EXT4 (LUKS)": [
-  null,
-  "加密 EXT4 (LUKS)"
  ],
  "Encrypted Logical Volume of $0": [
   null,
@@ -582,10 +578,6 @@ return plural;
  "Encrypted Partition of $0": [
   null,
   "$0 的已加密分区"
- ],
- "Encrypted XFS (LUKS)": [
-  null,
-  "加密 XFS (LUKS)"
  ],
  "Encrypted volumes can not be resized here.": [
   null,
@@ -635,17 +627,13 @@ return plural;
   null,
   "文件系统名称"
  ],
- "Filesystem type": [
-  null,
-  "文件系统类型"
- ],
  "Filesystems": [
   null,
   "文件系统"
  ],
  "For legacy applications only. Reduces performance.": [
   null,
-  ""
+  "只适用老的应用程序。性能会减小。"
  ],
  "Force remove passphrase in $0": [
   null,
@@ -681,7 +669,7 @@ return plural;
  ],
  "Free up space in this group: Shrink or delete other logical volumes or add another physical volume.": [
   null,
-  ""
+  "在这个组中释放更多可用空间：缩小或删除其它逻辑卷或添加另外一个物理卷。"
  ],
  "Go to now": [
   null,
@@ -693,7 +681,7 @@ return plural;
  ],
  "Grow Content": [
   null,
-  ""
+  "增长内容"
  ],
  "Grow Logical Volume": [
   null,
@@ -909,11 +897,11 @@ return plural;
  ],
  "Name cannot be longer than $0 bytes": [
   null,
-  ""
+  "名称不能长于 $0 字节"
  ],
  "Name cannot be longer than $0 characters": [
   null,
-  ""
+  "名称不能长于 $0 个字符"
  ],
  "Name cannot be longer than 127 characters.": [
   null,
@@ -1001,7 +989,7 @@ return plural;
  ],
  "Not enough space to grow.": [
   null,
-  ""
+  "没有足够空间增长"
  ],
  "Not found": [
   null,
@@ -1015,10 +1003,6 @@ return plural;
   null,
   "未运行"
  ],
- "Off": [
-  null,
-  "关"
- ],
  "Ok": [
   null,
   "确认"
@@ -1026,10 +1010,6 @@ return plural;
  "Old passphrase": [
   null,
   "旧密码口令"
- ],
- "On": [
-  null,
-  "开"
  ],
  "Only $0 of $1 are used.": [
   null,
@@ -1237,7 +1217,7 @@ return plural;
  ],
  "Recommended default": [
   null,
-  ""
+  "推荐的默认"
  ],
  "Recovering": [
   null,
@@ -1317,7 +1297,7 @@ return plural;
  ],
  "Resizing an encrypted filesystem requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
-  ""
+  "对一个加密的文件系统调整大小需要解锁磁盘。请提供磁盘的密码。"
  ],
  "Running": [
   null,
@@ -1333,11 +1313,11 @@ return plural;
  ],
  "Save space by compressing individual blocks with LZ4": [
   null,
-  ""
+  "使用 LZ4 压缩独立块以节省空间"
  ],
  "Save space by storing identical data blocks just once": [
   null,
-  ""
+  "通过对相同数据块只保存一次来节省空间"
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
@@ -1377,11 +1357,11 @@ return plural;
  ],
  "Show all": [
   null,
-  ""
+  "显示全部"
  ],
  "Show all $0 drives": [
   null,
-  ""
+  "显示所有 $0 驱动"
  ],
  "Shrink": [
   null,
@@ -1393,7 +1373,7 @@ return plural;
  ],
  "Shrink Volume": [
   null,
-  ""
+  "缩小卷"
  ],
  "Size": [
   null,
@@ -1477,7 +1457,7 @@ return plural;
  ],
  "Storage can not be managed on this system.": [
   null,
-  ""
+  "存储不能在这个系统上管理。"
  ],
  "Store passphrase": [
   null,
@@ -1605,7 +1585,7 @@ return plural;
  ],
  "This logical volume is not completely used by its content.": [
   null,
-  ""
+  "这个逻辑卷没有被它的内容完全使用。"
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
@@ -1765,7 +1745,7 @@ return plural;
  ],
  "Volume size is $0. Content size is $1.": [
   null,
-  ""
+  "卷大小为 $0。内容大小为 $1。"
  ],
  "Waiting for other software management operations to finish": [
   null,

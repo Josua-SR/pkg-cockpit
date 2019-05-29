@@ -87,6 +87,10 @@ return plural;
   null,
   ""
  ],
+ "Additional": [
+  null,
+  "Addicional"
+ ],
  "Address": [
   null,
   "Adreça"
@@ -128,6 +132,10 @@ return plural;
   "Bus"
  ],
  "CPU Type": [
+  null,
+  ""
+ ],
+ "Cache": [
   null,
   ""
  ],
@@ -203,6 +211,10 @@ return plural;
   null,
   ""
  ],
+ "Current Allocation": [
+  null,
+  ""
+ ],
  "DHCP Range": [
   null,
   ""
@@ -266,6 +278,10 @@ return plural;
  "Disks": [
   null,
   "Discs"
+ ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
  ],
  "Download the MSI from $0": [
   null,
@@ -331,6 +347,10 @@ return plural;
   null,
   "Consola gràfica al visualitzador d'escriptoris"
  ],
+ "Hide Performance Options": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "Amfitrió"
@@ -360,6 +380,14 @@ return plural;
   "Inicia automàticament la MV"
  ],
  "In most configurations, macvtap does not work for host to guest network communication.": [
+  null,
+  ""
+ ],
+ "Initiator": [
+  null,
+  ""
+ ],
+ "Initiator IQN should not be empty": [
   null,
   ""
  ],
@@ -419,7 +447,15 @@ return plural;
   null,
   "Connexió manual"
  ],
+ "Maximum Allocation": [
+  null,
+  ""
+ ],
  "Maximum Transmission Unit": [
+  null,
+  ""
+ ],
+ "Maximum memory could not be saved": [
   null,
   ""
  ],
@@ -430,6 +466,14 @@ return plural;
  "Memory": [
   null,
   "Memòria"
+ ],
+ "Memory could not be saved": [
+  null,
+  ""
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  ""
  ],
  "MiB": [
   null,
@@ -507,6 +551,10 @@ return plural;
   null,
   ""
  ],
+ "No Storage Pools available": [
+  null,
+  ""
+ ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
   ""
@@ -514,6 +562,10 @@ return plural;
  "No VM is running or defined on this host": [
   null,
   "No hi ha cap MV en execució o definida en aquest amfitrió"
+ ],
+ "No Virtual Networks": [
+  null,
+  ""
  ],
  "No boot device found": [
   null,
@@ -539,11 +591,11 @@ return plural;
   null,
   ""
  ],
- "No storage pool is defined on this host": [
+ "No networks available": [
   null,
   ""
  ],
- "No virtual networks": [
+ "No storage pool is defined on this host": [
   null,
   ""
  ],
@@ -556,6 +608,10 @@ return plural;
   ""
  ],
  "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
+  null,
+  ""
+ ],
+ "Only editable when the guest is shut off": [
   null,
   ""
  ],
@@ -596,6 +652,14 @@ return plural;
   ""
  ],
  "Persistent": [
+  null,
+  ""
+ ],
+ "Physical Disk Device": [
+  null,
+  ""
+ ],
+ "Physical disk device on host": [
   null,
   ""
  ],
@@ -723,6 +787,10 @@ return plural;
   null,
   "Sessió"
  ],
+ "Show Performance Options": [
+  null,
+  ""
+ ],
  "Shut Down": [
   null,
   "Apaga"
@@ -738,6 +806,10 @@ return plural;
  "Source": [
   null,
   "Origen"
+ ],
+ "Source Format": [
+  null,
+  ""
  ],
  "Source Path": [
   null,
@@ -767,6 +839,10 @@ return plural;
   null,
   "Estat"
  ],
+ "Storage": [
+  null,
+  "Emmagatzematge"
+ ],
  "Storage Pool $0 failed to get activated": [
   null,
   ""
@@ -786,10 +862,6 @@ return plural;
  "Storage Pools": [
   null,
   ""
- ],
- "Storage Size": [
-  null,
-  "Mida de l'emmagatzematge"
  ],
  "Storage Volumes": [
   null,
@@ -863,6 +935,10 @@ return plural;
   null,
   ""
  ],
+ "This volume is already used by another VM.": [
+  null,
+  ""
+ ],
  "Threads per core": [
   null,
   ""
@@ -896,6 +972,10 @@ return plural;
   ""
  ],
  "Unplug": [
+  null,
+  ""
+ ],
+ "Up to $0 $1 available on the host": [
   null,
   ""
  ],
@@ -1003,6 +1083,10 @@ return plural;
   null,
   ""
  ],
+ "You need to select the most closely matching OS vendor and Operating System": [
+  null,
+  ""
+ ],
  "active": [
   null,
   "actiu"
@@ -1014,6 +1098,10 @@ return plural;
  "cdrom": [
   null,
   "cdrom"
+ ],
+ "control-label $0": [
+  null,
+  ""
  ],
  "crashed": [
   null,
@@ -1063,7 +1151,15 @@ return plural;
   null,
   ""
  ],
+ "iSCSI Initiator IQN": [
+  null,
+  ""
+ ],
  "iSCSI Target": [
+  null,
+  ""
+ ],
+ "iSCSI direct Target": [
   null,
   ""
  ],
@@ -1114,6 +1210,14 @@ return plural;
  "server": [
   null,
   "servidor"
+ ],
+ "show less": [
+  null,
+  "mostra menys"
+ ],
+ "show more": [
+  null,
+  "mostra més"
  ],
  "shut off": [
   null,

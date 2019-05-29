@@ -34,6 +34,7 @@ import {
     UPDATE_ADD_VM,
     UPDATE_ADD_STORAGE_POOL,
     UPDATE_LIBVIRT_STATE,
+    UPDATE_LIBVIRT_VERSION,
     UPDATE_OS_INFO_LIST,
     UPDATE_STORAGE_VOLUMES,
     UPDATE_UI_VM,
@@ -107,11 +108,11 @@ function networks(state, action) {
                 .filter(network => (connectionName !== network.connectionName || id != network.id));
     }
     case UPDATE_ADD_NETWORK: {
-        const { network } = action.payload;
+        const { network, updateOnly } = action.payload;
         const connectionName = network.connectionName;
         const index = network.id ? getFirstIndexOfResource(state, 'id', network.id, connectionName)
             : getFirstIndexOfResource(state, 'name', network.name, connectionName);
-        if (index < 0) { // add
+        if (index < 0 && !updateOnly) { // add
             return [...state, network];
         }
 
@@ -239,6 +240,9 @@ function systemInfo(state, action) {
     case UPDATE_LIBVIRT_STATE: {
         return Object.assign({}, state, { libvirtService:  Object.assign({}, state.libvirtService, action.state) });
     }
+    case UPDATE_LIBVIRT_VERSION: {
+        return Object.assign({}, state, { libvirtVersion:  action.libvirtVersion });
+    }
     case SET_LOGGED_IN_USER: {
         return Object.assign({}, state, { loggedUser: action.payload.loggedUser });
     }
@@ -270,10 +274,10 @@ function storagePools(state, action) {
                 .filter(storagePool => (connectionName !== storagePool.connectionName || id != storagePool.id));
     }
     case UPDATE_ADD_STORAGE_POOL: {
-        const { storagePool } = action.payload;
+        const { storagePool, updateOnly, } = action.payload;
         const connectionName = storagePool.connectionName;
         const index = getFirstIndexOfResource(state, 'id', storagePool.id, connectionName);
-        if (index < 0) {
+        if (index < 0 && !updateOnly) {
             return [...state, storagePool];
         }
         const updatedStoragePool = Object.assign({}, state[index], storagePool);

@@ -29,7 +29,7 @@
 </tr></table></div>
 <div class="refsynopsisdiv">
 <h2>Synopsis</h2>
-<div class="cmdsynopsis"><p><code class="command">cockpit-ws</code>  [<code class="option">--help</code>] [<code class="option">--port</code> <em class="replaceable"><code>PORT</code></em>] [<code class="option">--address</code> <em class="replaceable"><code>ADDRESS</code></em>] [<code class="option">--no-tls</code>] [<code class="option">--local-ssh</code>] [<code class="option">--local-session</code> <em class="replaceable"><code>BRIDGE</code></em>]</p></div>
+<div class="cmdsynopsis"><p><code class="command">cockpit-ws</code>  [<code class="option">--help</code>] [<code class="option">--port</code> <em class="replaceable"><code>PORT</code></em>] [<code class="option">--address</code> <em class="replaceable"><code>ADDRESS</code></em>] [<code class="option">--no-tls</code>] [<code class="option">--for-tls-proxy</code>] [<code class="option">--local-ssh</code>] [<code class="option">--local-session</code> <em class="replaceable"><code>BRIDGE</code></em>]</p></div>
 </div>
 <div class="refsect1">
 <a name="cockpit-ws-description"></a><h2>DESCRIPTION</h2>
@@ -126,6 +126,22 @@ getcert request -f ${CERT_FILE} -k ${KEY_FILE} -D $(hostname --fqdn) -C "sed -n 
 <td><p>
             Don't use TLS.
           </p></td>
+</tr>
+<tr>
+<td><p><span class="term"><code class="option">--for-tls-proxy</code></span></p></td>
+<td>
+<p>
+            Tell <span class="command"><strong>cockpit-ws</strong></span> that it is running behind a local reverse proxy that
+            does the TLS termination. Then Cockpit puts https:// URLs into the default
+            <code class="literal">Content-Security-Policy</code>, and accepts only https:// origins, instead of
+            http: ones by default. However, if <code class="literal">Origins</code> is set in the
+            <span class="citerefentry"><span class="refentrytitle">cockpit.conf</span>(5)</span>
+            configuration file, it will override this default.
+          </p>
+<p>
+            This option implies <code class="option">--no-tls</code>.
+          </p>
+</td>
 </tr>
 <tr>
 <td><p><span class="term"><code class="option">--local-ssh</code></span></p></td>

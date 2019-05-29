@@ -123,14 +123,6 @@ return plural;
   null,
   "在 $0 和 $1 间发生"
  ],
- "Off": [
-  null,
-  "关"
- ],
- "On": [
-  null,
-  "开"
- ],
  "SELinux Access Control Errors": [
   null,
   "SELinux 访问控制错误"

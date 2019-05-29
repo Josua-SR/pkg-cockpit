@@ -87,6 +87,10 @@ return plural;
   null,
   "Ajouter un disque"
  ],
+ "Additional": [
+  null,
+  "Additionnel"
+ ],
  "Address": [
   null,
   "Adresse"
@@ -130,6 +134,10 @@ return plural;
  "CPU Type": [
   null,
   "Type de CPU"
+ ],
+ "Cache": [
+  null,
+  ""
  ],
  "Cancel": [
   null,
@@ -203,6 +211,10 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "Current Allocation": [
+  null,
+  "Allocation actuelle"
+ ],
  "DHCP Range": [
   null,
   "Plage DHCP"
@@ -266,6 +278,10 @@ return plural;
  "Disks": [
   null,
   "Disques"
+ ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
  ],
  "Download the MSI from $0": [
   null,
@@ -331,6 +347,10 @@ return plural;
   null,
   "Console graphique dans la visionneuse de bureau"
  ],
+ "Hide Performance Options": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "Hôte"
@@ -362,6 +382,14 @@ return plural;
  "In most configurations, macvtap does not work for host to guest network communication.": [
   null,
   "Dans la plupart des configurations, macvtap ne fonctionne pas pour les communications en réseau entre hôte et invité."
+ ],
+ "Initiator": [
+  null,
+  "Initiateur"
+ ],
+ "Initiator IQN should not be empty": [
+  null,
+  "L'initiateur IQN ne doit pas rester vide"
  ],
  "Install": [
   null,
@@ -419,9 +447,17 @@ return plural;
   null,
   "Connexion manuelle"
  ],
+ "Maximum Allocation": [
+  null,
+  "Allocation maximale"
+ ],
  "Maximum Transmission Unit": [
   null,
   "Unité maximale de transmission (MTU)"
+ ],
+ "Maximum memory could not be saved": [
+  null,
+  "La mémoire maximale n'a pas pu être sauvegardée"
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
@@ -430,6 +466,14 @@ return plural;
  "Memory": [
   null,
   "Mémoire"
+ ],
+ "Memory could not be saved": [
+  null,
+  "La mémoire n'a pas pu être sauvegardée"
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  "La taille de la mémoire est entre 128 Mio et l'allocation maximale"
  ],
  "MiB": [
   null,
@@ -507,6 +551,10 @@ return plural;
   null,
   "Nouveau nom de volume"
  ],
+ "No Storage Pools available": [
+  null,
+  ""
+ ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
   "Aucun volume de stockage n’a été défini pour ce pool de stockage"
@@ -514,6 +562,10 @@ return plural;
  "No VM is running or defined on this host": [
   null,
   "Aucune machine virtuelle n’est en cours d’exécution ou définie sur cet hôte"
+ ],
+ "No Virtual Networks": [
+  null,
+  "Aucun réseau virtuel"
  ],
  "No boot device found": [
   null,
@@ -539,13 +591,13 @@ return plural;
   null,
   "Aucun réseau n’est défini sur cet hôte"
  ],
+ "No networks available": [
+  null,
+  "Aucun réseau disponible"
+ ],
  "No storage pool is defined on this host": [
   null,
   "Aucun pool de stockage n’a été défini sur cet hôte"
- ],
- "No virtual networks": [
-  null,
-  "Aucun réseau virtuel"
  ],
  "None (Isolated Network)": [
   null,
@@ -558,6 +610,10 @@ return plural;
  "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
   null,
   "Un ou plusieurs modules sélectionnés sont utiliés par les domaines. Détachez d’abords les disques pour permettre la suppression du volume."
+ ],
+ "Only editable when the guest is shut off": [
+  null,
+  "Modifiable uniquement quand l'invité est fermé"
  ],
  "Open": [
   null,
@@ -598,6 +654,14 @@ return plural;
  "Persistent": [
   null,
   "Persistant"
+ ],
+ "Physical Disk Device": [
+  null,
+  ""
+ ],
+ "Physical disk device on host": [
+  null,
+  ""
  ],
  "Please enter new volume name": [
   null,
@@ -723,6 +787,10 @@ return plural;
   null,
   "Session"
  ],
+ "Show Performance Options": [
+  null,
+  ""
+ ],
  "Shut Down": [
   null,
   "Fermeture"
@@ -738,6 +806,10 @@ return plural;
  "Source": [
   null,
   "La source"
+ ],
+ "Source Format": [
+  null,
+  ""
  ],
  "Source Path": [
   null,
@@ -767,6 +839,10 @@ return plural;
   null,
   "État"
  ],
+ "Storage": [
+  null,
+  "Stockage"
+ ],
  "Storage Pool $0 failed to get activated": [
   null,
   "Échec de l’activation du pool de stockage $0"
@@ -786,10 +862,6 @@ return plural;
  "Storage Pools": [
   null,
   "Pools de stockage"
- ],
- "Storage Size": [
-  null,
-  "Taille de stockage"
  ],
  "Storage Volumes": [
   null,
@@ -863,6 +935,10 @@ return plural;
   null,
   "La pool est vide"
  ],
+ "This volume is already used by another VM.": [
+  null,
+  ""
+ ],
  "Threads per core": [
   null,
   "Threads par noyaux"
@@ -901,7 +977,7 @@ return plural;
  ],
  "Up to $0 $1 available on the host": [
   null,
-  ""
+  "Jusqu'à $0 $1 disponibles sur l'hôte"
  ],
  "Usage": [
   null,
@@ -1009,7 +1085,7 @@ return plural;
  ],
  "You need to select the most closely matching OS vendor and Operating System": [
   null,
-  ""
+  "Vous devez sélectionner le fournisseur de SE et le Système d'exploitation qui correspondent le mieux"
  ],
  "active": [
   null,
@@ -1022,6 +1098,10 @@ return plural;
  "cdrom": [
   null,
   "CD ROM"
+ ],
+ "control-label $0": [
+  null,
+  "control-label $0"
  ],
  "crashed": [
   null,
@@ -1071,9 +1151,17 @@ return plural;
   null,
   "hostdev"
  ],
+ "iSCSI Initiator IQN": [
+  null,
+  "iSCSI Initiator IQN"
+ ],
  "iSCSI Target": [
   null,
   "Cible iSCSI"
+ ],
+ "iSCSI direct Target": [
+  null,
+  "Cible directe iSCSI"
  ],
  "iSCSI target IQN": [
   null,
@@ -1122,6 +1210,14 @@ return plural;
  "server": [
   null,
   "serveur"
+ ],
+ "show less": [
+  null,
+  "montrer moins"
+ ],
+ "show more": [
+  null,
+  "montrer plus"
  ],
  "shut off": [
   null,

@@ -139,17 +139,9 @@ return plural;
   null,
   "Inga"
  ],
- "Off": [
-  null,
-  "Av"
- ],
  "Ok": [
   null,
   "Ok"
- ],
- "On": [
-  null,
-  "På"
  ],
  "On a mounted device": [
   null,

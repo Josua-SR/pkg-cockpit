@@ -1,4 +1,4 @@
-export function getDiskXML(poolName, volumeName, format, target) {
+export function getDiskXML(poolName, volumeName, format, target, cacheMode) {
     var doc = document.implementation.createDocument('', '', null);
 
     var diskElem = doc.createElement('disk');
@@ -8,6 +8,8 @@ export function getDiskXML(poolName, volumeName, format, target) {
     var driverElem = doc.createElement('driver');
     driverElem.setAttribute('name', 'qemu');
     driverElem.setAttribute('type', format);
+    if (cacheMode)
+        driverElem.setAttribute('cache', cacheMode);
     diskElem.appendChild(driverElem);
 
     var sourceElem = doc.createElement('source');
@@ -96,7 +98,13 @@ export function getPoolXML({ name, type, source, target }) {
         initiatorElem.appendChild(iqnElem);
         sourceElem.appendChild(initiatorElem);
     }
-    if (source.host || source.dir)
+    if (source.format) {
+        let formatElem = doc.createElement('format');
+
+        formatElem.setAttribute('type', source.format);
+        sourceElem.appendChild(formatElem);
+    }
+    if (source.host || source.dir || source.device || source.initiator || source.format)
         poolElem.appendChild(sourceElem);
 
     doc.appendChild(poolElem);

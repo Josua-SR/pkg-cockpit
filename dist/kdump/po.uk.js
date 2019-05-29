@@ -139,17 +139,9 @@ return plural;
   null,
   "Немає"
  ],
- "Off": [
-  null,
-  "Вимкнено"
- ],
  "Ok": [
   null,
   "Гаразд"
- ],
- "On": [
-  null,
-  "Увімкнено"
  ],
  "On a mounted device": [
   null,

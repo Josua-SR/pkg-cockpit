@@ -453,7 +453,7 @@ return plural;
  ],
  "Copy": [
   null,
-  ""
+  "复制"
  ],
  "Create Timer": [
   null,
@@ -581,7 +581,7 @@ return plural;
  ],
  "Filter by name or description...": [
   null,
-  ""
+  "根据名称或描述进行过滤..."
  ],
  "Friday": [
   null,
@@ -797,7 +797,7 @@ return plural;
  ],
  "Mitigations": [
   null,
-  ""
+  "缓解"
  ],
  "Model": [
   null,
@@ -841,7 +841,7 @@ return plural;
  ],
  "No Matching Results": [
   null,
-  ""
+  "没有找到匹配的结果"
  ],
  "No host keys found.": [
   null,
@@ -913,7 +913,7 @@ return plural;
  ],
  "Paste": [
   null,
-  ""
+  "粘贴 "
  ],
  "Path": [
   null,
@@ -955,6 +955,10 @@ return plural;
   null,
   "好主机名"
  ],
+ "Previous boot": [
+  null,
+  "以前的引导"
+ ],
  "Problem details": [
   null,
   "问题详情"
@@ -977,7 +981,7 @@ return plural;
  ],
  "Read more...": [
   null,
-  ""
+  "了解更多..."
  ],
  "Real Host Name": [
   null,
@@ -1081,7 +1085,7 @@ return plural;
  ],
  "Running Since": [
   null,
-  ""
+  "运行自"
  ],
  "Saturday": [
   null,
@@ -1093,7 +1097,7 @@ return plural;
  ],
  "Save and reboot": [
   null,
-  ""
+  "保存并重启"
  ],
  "Sealed-case PC": [
   null,
@@ -1141,7 +1145,7 @@ return plural;
  ],
  "Shift+Insert": [
   null,
-  ""
+  "Shift+Insert"
  ],
  "Show fingerprints": [
   null,
@@ -1161,7 +1165,7 @@ return plural;
  ],
  "Software-based workarounds help prevent CPU security issues. These mitigations have the side effect of reducing performance. Change these settings at your own risk.": [
   null,
-  ""
+  "基于软件的临时解决方案可以帮助防止 CPU 安全问题。这些缓解方案会对性能有一定影响。改变这些设置可能会存在风险。"
  ],
  "Space-saving Computer": [
   null,
@@ -1197,7 +1201,7 @@ return plural;
  ],
  "Store Metrics": [
   null,
-  ""
+  "存储指标数据"
  ],
  "Sub Chassis": [
   null,
@@ -1261,7 +1265,7 @@ return plural;
  ],
  "The user $0 is not permitted to change cpu security mitigations": [
   null,
-  ""
+  "用户 $0 没有权限修改 cpu 安全缓解方案设置"
  ],
  "The user <b>$0</b> does not have permissions for creating timers": [
   null,
@@ -1401,7 +1405,7 @@ return plural;
  ],
  "White": [
   null,
-  ""
+  "白"
  ],
  "[$0 bytes of binary data]": [
   null,

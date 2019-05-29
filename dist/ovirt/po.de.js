@@ -315,10 +315,6 @@ return plural;
   null,
   "Es sollte weniger als die maximale Anzahl virtueller CPUs aktiviert sein."
  ],
- "File": [
-  null,
-  "Datei"
- ],
  "Force Restart": [
   null,
   "Neustart erzwingen"
@@ -578,10 +574,6 @@ return plural;
  "Private": [
   null,
   ""
- ],
- "Protocol": [
-  null,
-  "Protokoll"
  ],
  "REBOOT action failed": [
   null,

@@ -357,9 +357,9 @@ return plural;
   null,
   "Стискання"
  ],
- "Confirm passphrase": [
+ "Confirm": [
   null,
-  "Підтвердить пароль"
+  "Підтвердити"
  ],
  "Confirm removal with passphrase": [
   null,
@@ -440,10 +440,6 @@ return plural;
  "Custom": [
   null,
   "Нетиповий"
- ],
- "Custom (Enter filesystem type)": [
-  null,
-  "Нетипова (Вкажіть тип файлової системи)"
  ],
  "Custom encryption options": [
   null,
@@ -569,13 +565,13 @@ return plural;
   null,
   "Спорожняємо $target"
  ],
+ "Encrypt data": [
+  null,
+  "Зашифрувати дані"
+ ],
  "Encrypted $0": [
   null,
   "Зашифрований $0"
- ],
- "Encrypted EXT4 (LUKS)": [
-  null,
-  "Шифрована EXT4 (LUKS)"
  ],
  "Encrypted Logical Volume of $0": [
   null,
@@ -584,10 +580,6 @@ return plural;
  "Encrypted Partition of $0": [
   null,
   "Шифрований розділ $0"
- ],
- "Encrypted XFS (LUKS)": [
-  null,
-  "Шифрована XFS (LUKS)"
  ],
  "Encrypted volumes can not be resized here.": [
   null,
@@ -636,10 +628,6 @@ return plural;
  "Filesystem Name": [
   null,
   "Назва файлової системи"
- ],
- "Filesystem type": [
-  null,
-  "Тип файлової системи"
  ],
  "Filesystems": [
   null,
@@ -1017,10 +1005,6 @@ return plural;
   null,
   "Зупинено"
  ],
- "Off": [
-  null,
-  "Вимкнено"
- ],
  "Ok": [
   null,
   "Гаразд"
@@ -1028,10 +1012,6 @@ return plural;
  "Old passphrase": [
   null,
   "Старий пароль"
- ],
- "On": [
-  null,
-  "Увімкнено"
  ],
  "Only $0 of $1 are used.": [
   null,

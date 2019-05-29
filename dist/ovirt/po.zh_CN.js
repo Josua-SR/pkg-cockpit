@@ -87,6 +87,10 @@ return plural;
   null,
   "添加磁盘"
  ],
+ "Additional": [
+  null,
+  "额外"
+ ],
  "Address": [
   null,
   "地址"
@@ -150,6 +154,10 @@ return plural;
  "CREATE VM action failed": [
   null,
   "创建虚拟机操作失败"
+ ],
+ "Cache": [
+  null,
+  ""
  ],
  "Cancel": [
   null,
@@ -243,6 +251,10 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "Current Allocation": [
+  null,
+  "当前分配"
+ ],
  "Delete": [
   null,
   "删除"
@@ -291,6 +303,10 @@ return plural;
   null,
   "磁盘"
  ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
+ ],
  "Download the MSI from $0": [
   null,
   "从 $0 下载 MSI"
@@ -305,7 +321,7 @@ return plural;
  ],
  "Emulated Machine": [
   null,
-  ""
+  "虚拟的机器"
  ],
  "Enter New VM name": [
   null,
@@ -313,7 +329,7 @@ return plural;
  ],
  "FORCEOFF action failed: $0": [
   null,
-  ""
+  "FORCEOFF 操作失败 : $0"
  ],
  "FQDN": [
   null,
@@ -358,6 +374,10 @@ return plural;
  "HA:": [
   null,
   "高可用："
+ ],
+ "Hide Performance Options": [
+  null,
+  ""
  ],
  "Host": [
   null,
@@ -407,6 +427,14 @@ return plural;
   null,
   "手动连接"
  ],
+ "Maximum Allocation": [
+  null,
+  "最大分配"
+ ],
+ "Maximum memory could not be saved": [
+  null,
+  "最大内存不能被保存"
+ ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
   "为客户机操作系统分配的最大虚拟 CPU 数，必须介于 1 和 $0 之间"
@@ -414,6 +442,14 @@ return plural;
  "Memory": [
   null,
   "内存"
+ ],
+ "Memory could not be saved": [
+  null,
+  "内存不能被保存"
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  "内存大小应该在 128 MiB 和最大分配值之间"
  ],
  "MiB": [
   null,
@@ -437,7 +473,7 @@ return plural;
  ],
  "NIC $0 of VM $1 failed to change state": [
   null,
-  ""
+  "VM $1 的 NIC $0 改变状态失败"
  ],
  "Name": [
   null,
@@ -445,15 +481,19 @@ return plural;
  ],
  "Network Interfaces": [
   null,
-  ""
+  "网络接口"
  ],
  "Network interface settings could not be saved": [
   null,
-  ""
+  "网络接口设置不能被保存"
  ],
  "New Volume Name": [
   null,
   "新卷名称"
+ ],
+ "No Storage Pools available": [
+  null,
+  ""
  ],
  "No VM found in oVirt.": [
   null,
@@ -462,6 +502,10 @@ return plural;
  "No VM is running or defined on this host": [
   null,
   "该主机上没有定义或运行虚拟机。"
+ ],
+ "No Virtual Networks": [
+  null,
+  "没有虚拟网络"
  ],
  "No boot device found": [
   null,
@@ -483,13 +527,9 @@ return plural;
   null,
   "没有 oVirt 连接"
  ],
- "No virtual networks": [
-  null,
-  "没有虚拟网络"
- ],
  "None (Isolated Network)": [
   null,
-  ""
+  "无 (隔离的网络)"
  ],
  "Number of virtual CPUs that gonna be used.": [
   null,
@@ -511,9 +551,13 @@ return plural;
   null,
   "确认"
  ],
+ "Only editable when the guest is shut off": [
+  null,
+  "只有在客户机关闭后才可以编辑"
+ ],
  "Open": [
   null,
-  ""
+  "打开"
  ],
  "Optimized for:": [
   null,
@@ -529,11 +573,11 @@ return plural;
  ],
  "Pause": [
   null,
-  ""
+  "暂停"
  ],
  "Persistence": [
   null,
-  ""
+  "持久"
  ],
  "Please confirm, the host shall be switched to maintenance mode.": [
   null,
@@ -593,11 +637,11 @@ return plural;
  ],
  "Private": [
   null,
-  ""
+  "私有"
  ],
  "Product": [
   null,
-  ""
+  "产品"
  ],
  "Protocol": [
   null,
@@ -609,7 +653,7 @@ return plural;
  ],
  "REBOOT_VM action failed: %s0": [
   null,
-  ""
+  "REBOOT_VM 操作失败: %s0"
  ],
  "Readonly": [
   null,
@@ -637,7 +681,7 @@ return plural;
  ],
  "Resume": [
   null,
-  ""
+  "恢复"
  ],
  "Run": [
   null,
@@ -649,7 +693,7 @@ return plural;
  ],
  "Run when host boots": [
   null,
-  ""
+  "在主机引导时运行"
  ],
  "Running Since:": [
   null,
@@ -685,7 +729,7 @@ return plural;
  ],
  "START_VM action failed: %s0": [
   null,
-  ""
+  "START_VM 操作失败 : %s0"
  ],
  "SUSPEND action failed": [
   null,
@@ -710,6 +754,10 @@ return plural;
  "Session": [
   null,
   "会话"
+ ],
+ "Show Performance Options": [
+  null,
+  ""
  ],
  "Shut Down": [
   null,
@@ -833,7 +881,7 @@ return plural;
  ],
  "Type ID": [
   null,
-  ""
+  "类型 ID"
  ],
  "Unit": [
   null,
@@ -869,43 +917,43 @@ return plural;
  ],
  "VM $0 failed to Reboot": [
   null,
-  ""
+  "VM $0 重启失败"
  ],
  "VM $0 failed to force Reboot": [
   null,
-  ""
+  "VM $0 强制重启失败"
  ],
  "VM $0 failed to force shutdown": [
   null,
-  ""
+  "VM $0 强制关闭失败"
  ],
  "VM $0 failed to get deleted": [
   null,
-  ""
+  "VM $0 删除失败"
  ],
  "VM $0 failed to get installed": [
   null,
-  ""
+  "VM $0 安装失败"
  ],
  "VM $0 failed to pause": [
   null,
-  ""
+  "VM $0 暂停失败"
  ],
  "VM $0 failed to resume": [
   null,
-  ""
+  "VM $0 恢复失败"
  ],
  "VM $0 failed to send NMI": [
   null,
-  ""
+  "VM $0 发送 NMI 失败"
  ],
  "VM $0 failed to shutdown": [
   null,
-  ""
+  "VM $0 关闭失败"
  ],
  "VM $0 failed to start": [
   null,
-  ""
+  "VM $0 启动失败"
  ],
  "VM icon": [
   null,
@@ -953,7 +1001,7 @@ return plural;
  ],
  "WWPN": [
   null,
-  ""
+  "WWPN"
  ],
  "bridge": [
   null,
@@ -966,6 +1014,10 @@ return plural;
  "connecting": [
   null,
   "正在连接"
+ ],
+ "control-label $0": [
+  null,
+  "control-label $0"
  ],
  "cores": [
   null,
@@ -1017,7 +1069,7 @@ return plural;
  ],
  "host device": [
   null,
-  ""
+  "主机设备"
  ],
  "hostdev": [
   null,
@@ -1113,7 +1165,7 @@ return plural;
  ],
  "redirected device": [
   null,
-  ""
+  "重定向设备"
  ],
  "running": [
   null,
@@ -1122,6 +1174,14 @@ return plural;
  "server": [
   null,
   "服务器"
+ ],
+ "show less": [
+  null,
+  "显示更少"
+ ],
+ "show more": [
+  null,
+  "显示更多"
  ],
  "shut off": [
   null,

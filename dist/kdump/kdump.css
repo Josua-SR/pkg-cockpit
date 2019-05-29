@@ -287,7 +287,8 @@ input[type=number] {
     box-shadow: inset 0 2px 8px rgba(3, 3, 3, 0.2);
 }
 
-.ct-select > option {
+.ct-select optgroup,
+.ct-select option {
     background-color: #fff;
 }
 #cockpit_modal_dialog .modal-body.scroll {
@@ -542,6 +543,7 @@ h1 label.onoff-ct {
   margin-top: -3px;
   margin-bottom: 3px;
   min-height: 26px;
+  align-self: start;
 }
 .ct-form-layout > :not(.ct-form-layout-relax):not(.spinner) {
   width: auto !important;
@@ -630,6 +632,17 @@ h1 label.onoff-ct {
   position: relative;
   top: -0.5rem;
 }
+.ct-form-layout .ct-form-box {
+  background: #f5f5f5;
+  /* pf-black-150 */
+  border-width: 1px;
+  border-style: solid;
+  border-color: #bbbbbb;
+  /* pf-black-400 */
+  padding: 0.5rem;
+  padding-top: 1rem;
+  width: 100%;
+}
 .modal .ct-form-layout > .control-label {
   padding-left: 0.5rem;
 }
@@ -647,6 +660,12 @@ h1 label.onoff-ct {
   .modal {
     --ct-form-layout-columns: 1;
   }
+}
+.ct-form-layout-minmax {
+  grid-template-columns: max-content min-content max-content 1fr;
+}
+.ct-form-layout-maxmin {
+  grid-template-columns: max-content 1fr max-content min-content;
 }
 @media (max-width: 480px) {
   .listing-ct-body .ct-form-layout,

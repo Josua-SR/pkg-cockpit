@@ -67,6 +67,10 @@ return plural;
   "language": "es",
   "x-generator": "Zanata 4.6.2"
  },
+ "$0 Network": [
+  null,
+  ""
+ ],
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
   "$0 esta disponible para muchos sistemas operativos. Para instalarlo, búscalo en \"GNOME Software\" o ejecuta el siguiente comando:"
@@ -82,6 +86,10 @@ return plural;
  "Add Disk": [
   null,
   "Añadir disco"
+ ],
+ "Additional": [
+  null,
+  "Adicional"
  ],
  "Address": [
   null,
@@ -115,15 +123,19 @@ return plural;
   null,
   ""
  ],
+ "Boot order settings could not be saved": [
+  null,
+  ""
+ ],
  "Bus": [
   null,
   "Bus"
  ],
- "CHANGE NETWORK STATE action failed": [
-  null,
-  "Fallo en la acción CHANGE NETWORK STATE"
- ],
  "CPU Type": [
+  null,
+  ""
+ ],
+ "Cache": [
   null,
   ""
  ],
@@ -191,13 +203,17 @@ return plural;
   null,
   "Crear VM"
  ],
- "Creation of vm $0 failed": [
+ "Creation of VM $0 failed": [
   null,
-  "Creación de máquina virtual $0 falló"
+  ""
  ],
  "Ctrl+Alt+Del": [
   null,
   "Ctrl+Alt+Del"
+ ],
+ "Current Allocation": [
+  null,
+  ""
  ],
  "DHCP Range": [
   null,
@@ -247,6 +263,10 @@ return plural;
   null,
   "Desconectado de la consola serie. Pulse el botón Reconectar."
  ],
+ "Disk $0 fail to get detached from VM $1": [
+  null,
+  ""
+ ],
  "Disk failed to be attached": [
   null,
   "Disco no se pudo adjuntar"
@@ -258,6 +278,10 @@ return plural;
  "Disks": [
   null,
   "Discos"
+ ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
  ],
  "Download the MSI from $0": [
   null,
@@ -307,10 +331,6 @@ return plural;
   null,
   ""
  ],
- "GET HYPERVISOR MAX VCPU action failed": [
-  null,
-  "Falló la acción GET HYPERVISOR MAX VCPU"
- ],
  "General": [
   null,
   "General"
@@ -327,9 +347,17 @@ return plural;
   null,
   "Consola Gráfica en Visualizador de Escritorio"
  ],
+ "Hide Performance Options": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "Anfitrión"
+ ],
+ "Host Device": [
+  null,
+  ""
  ],
  "Host Name": [
   null,
@@ -338,10 +366,6 @@ return plural;
  "Host should not be empty": [
   null,
   "El anfitrión no debe estar vacío"
- ],
- "INSTALL VM action failed": [
-  null,
-  "INSTALL VM acción fallada"
  ],
  "IPv4 Address": [
   null,
@@ -354,6 +378,18 @@ return plural;
  "Immediately Start VM": [
   null,
   "Iniciar Inmediatamente VM"
+ ],
+ "In most configurations, macvtap does not work for host to guest network communication.": [
+  null,
+  ""
+ ],
+ "Initiator": [
+  null,
+  ""
+ ],
+ "Initiator IQN should not be empty": [
+  null,
+  ""
  ],
  "Install": [
   null,
@@ -379,6 +415,10 @@ return plural;
   null,
   "Nobre de fichero no válido"
  ],
+ "Isolated Network": [
+  null,
+  ""
+ ],
  "Launch Remote Viewer": [
   null,
   "Lanzar Visualizador remoto"
@@ -395,6 +435,10 @@ return plural;
   null,
   "Dirección MAC"
  ],
+ "Mac": [
+  null,
+  ""
+ ],
  "Mac Address": [
   null,
   "Dirección MAC"
@@ -403,7 +447,15 @@ return plural;
   null,
   "Conexión Manual"
  ],
+ "Maximum Allocation": [
+  null,
+  ""
+ ],
  "Maximum Transmission Unit": [
+  null,
+  ""
+ ],
+ "Maximum memory could not be saved": [
   null,
   ""
  ],
@@ -414,6 +466,14 @@ return plural;
  "Memory": [
   null,
   "Memoria"
+ ],
+ "Memory could not be saved": [
+  null,
+  ""
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  ""
  ],
  "MiB": [
   null,
@@ -431,6 +491,14 @@ return plural;
   null,
   "Mas información"
  ],
+ "NAT to $0": [
+  null,
+  ""
+ ],
+ "NIC $0 of VM $1 failed to change state": [
+  null,
+  ""
+ ],
  "Name": [
   null,
   "Nombre"
@@ -447,11 +515,27 @@ return plural;
   null,
   ""
  ],
+ "Network $0 failed to get activated": [
+  null,
+  ""
+ ],
+ "Network $0 failed to get deactivated": [
+  null,
+  ""
+ ],
+ "Network Boot (PXE)": [
+  null,
+  ""
+ ],
  "Network File System": [
   null,
   "Sistema de archivos de red"
  ],
  "Network Interfaces": [
+  null,
+  ""
+ ],
+ "Network Selection does not support PXE.": [
   null,
   ""
  ],
@@ -467,6 +551,10 @@ return plural;
   null,
   "Nuevo nombre de volumen"
  ],
+ "No Storage Pools available": [
+  null,
+  ""
+ ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
   "No hay volúmenes de almacenamiento definidos para este grupo de almacenamiento"
@@ -474,6 +562,10 @@ return plural;
  "No VM is running or defined on this host": [
   null,
   "No hay ninguna MV en ejecución o definida en este anfitrión"
+ ],
+ "No Virtual Networks": [
+  null,
+  ""
  ],
  "No boot device found": [
   null,
@@ -499,13 +591,13 @@ return plural;
   null,
   ""
  ],
+ "No networks available": [
+  null,
+  ""
+ ],
  "No storage pool is defined on this host": [
   null,
   "Ningún grupo de almacenamiento está definido en este host"
- ],
- "No virtual networks": [
-  null,
-  "No hay redes virtuales"
  ],
  "None (Isolated Network)": [
   null,
@@ -516,6 +608,10 @@ return plural;
   "Proveedor de SO"
  ],
  "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
+  null,
+  ""
+ ],
+ "Only editable when the guest is shut off": [
   null,
   ""
  ],
@@ -547,11 +643,23 @@ return plural;
   null,
   "Ruta al fichero"
  ],
+ "Pause": [
+  null,
+  ""
+ ],
  "Persistence": [
   null,
   ""
  ],
  "Persistent": [
+  null,
+  ""
+ ],
+ "Physical Disk Device": [
+  null,
+  ""
+ ],
+ "Physical disk device on host": [
   null,
   ""
  ],
@@ -591,6 +699,10 @@ return plural;
   null,
   ""
  ],
+ "Product": [
+  null,
+  ""
+ ],
  "Protocol": [
   null,
   "Protocolo"
@@ -618,6 +730,18 @@ return plural;
  "Restart": [
   null,
   "Reiniciar"
+ ],
+ "Resume": [
+  null,
+  ""
+ ],
+ "Route to $0": [
+  null,
+  ""
+ ],
+ "Routed Network": [
+  null,
+  ""
  ],
  "Run": [
   null,
@@ -663,6 +787,10 @@ return plural;
   null,
   "Sesión"
  ],
+ "Show Performance Options": [
+  null,
+  ""
+ ],
  "Shut Down": [
   null,
   "Apagar"
@@ -678,6 +806,10 @@ return plural;
  "Source": [
   null,
   "Fuente"
+ ],
+ "Source Format": [
+  null,
+  ""
  ],
  "Source Path": [
   null,
@@ -707,6 +839,18 @@ return plural;
   null,
   "Estado"
  ],
+ "Storage": [
+  null,
+  "Almacenamiento"
+ ],
+ "Storage Pool $0 failed to get activated": [
+  null,
+  ""
+ ],
+ "Storage Pool $0 failed to get deactivated": [
+  null,
+  ""
+ ],
  "Storage Pool Name": [
   null,
   "Nombre del grupo de almacenamiento"
@@ -715,21 +859,9 @@ return plural;
   null,
   "No se pudo crear la agrupación de almacenamiento"
  ],
- "Storage Pool failed to get activated": [
-  null,
-  ""
- ],
- "Storage Pool failed to get deactivated": [
-  null,
-  ""
- ],
  "Storage Pools": [
   null,
   "Piscinas de almacenamiento"
- ],
- "Storage Size": [
-  null,
-  "Tamaño de Almacenamiento"
  ],
  "Storage Volumes": [
   null,
@@ -742,6 +874,10 @@ return plural;
  "System": [
   null,
   "Sistema"
+ ],
+ "Target": [
+  null,
+  "Objetivo"
  ],
  "Target Path": [
   null,
@@ -799,6 +935,10 @@ return plural;
   null,
   "El grupo está vacío"
  ],
+ "This volume is already used by another VM.": [
+  null,
+  ""
+ ],
  "Threads per core": [
   null,
   "Hilos por núcleo"
@@ -815,6 +955,10 @@ return plural;
   null,
   "Tipo"
  ],
+ "Type ID": [
+  null,
+  ""
+ ],
  "URL": [
   null,
   "URL"
@@ -823,9 +967,17 @@ return plural;
   null,
   "Nombre único"
  ],
+ "Unit": [
+  null,
+  "Unidad"
+ ],
  "Unplug": [
   null,
   "Desenchufar"
+ ],
+ "Up to $0 $1 available on the host": [
+  null,
+  ""
  ],
  "Usage": [
   null,
@@ -847,53 +999,45 @@ return plural;
   null,
   "La configuración de VCPU no se pudo guardar"
  ],
- "VM CHANGE_NETWORK_STATE action failed": [
+ "VM $0 failed to Reboot": [
   null,
-  "La acción de VM CHANGE_NETWORK_STATE falló"
+  ""
  ],
- "VM DELETE (DESTROY) action failed": [
+ "VM $0 failed to force Reboot": [
   null,
-  "La acción VM DELETE (DESTROY) falló"
+  ""
  ],
- "VM DELETE (UNDEFINE) action failed": [
+ "VM $0 failed to force shutdown": [
   null,
-  "La acción VM DELETE (UNDEFINE) falló"
+  ""
  ],
- "VM DELETE action failed": [
+ "VM $0 failed to get deleted": [
   null,
-  "La acción VM BORRAR falló"
+  ""
  ],
- "VM DETACH_DISK action failed": [
+ "VM $0 failed to get installed": [
   null,
-  "Error en la acción de DETACH_DISK de la VM"
+  ""
  ],
- "VM FORCE OFF action failed": [
+ "VM $0 failed to pause": [
   null,
-  "VM FORCE OFF falló acción"
+  ""
  ],
- "VM FORCE REBOOT action failed": [
+ "VM $0 failed to resume": [
   null,
-  "VM FORCE REBOOT falló acción"
+  ""
  ],
- "VM REBOOT action failed": [
+ "VM $0 failed to send NMI": [
   null,
-  "VM REBOOT falló acción"
+  ""
  ],
- "VM SEND Non-Maskable Interrrupt action failed": [
+ "VM $0 failed to shutdown": [
   null,
-  "VM SEND Non-Maskable Interrrupt falló acción"
+  ""
  ],
- "VM SENDNMI action failed": [
+ "VM $0 failed to start": [
   null,
-  "La acción de VM SENDNMI falló"
- ],
- "VM SHUT DOWN action failed": [
-  null,
-  "VM SHUT DOWN falló acción"
- ],
- "VM START action failed": [
-  null,
-  "VM START falló acción"
+  ""
  ],
  "VNC": [
   null,
@@ -911,9 +1055,17 @@ return plural;
   null,
   "Puerto VNC TLS:"
  ],
+ "Vendor": [
+  null,
+  "Proveedor"
+ ],
  "Virtual Machines": [
   null,
   "Máquinas Virtuales"
+ ],
+ "Virtual Network": [
+  null,
+  ""
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
@@ -927,6 +1079,14 @@ return plural;
   null,
   "Volumen"
  ],
+ "WWPN": [
+  null,
+  ""
+ ],
+ "You need to select the most closely matching OS vendor and Operating System": [
+  null,
+  ""
+ ],
  "active": [
   null,
   "activo"
@@ -938,6 +1098,10 @@ return plural;
  "cdrom": [
   null,
   "cdrom"
+ ],
+ "control-label $0": [
+  null,
+  ""
  ],
  "crashed": [
   null,
@@ -979,9 +1143,29 @@ return plural;
   null,
   "huésped"
  ],
+ "host device": [
+  null,
+  ""
+ ],
  "hostdev": [
   null,
   "hostdev"
+ ],
+ "iSCSI Initiator IQN": [
+  null,
+  ""
+ ],
+ "iSCSI Target": [
+  null,
+  ""
+ ],
+ "iSCSI direct Target": [
+  null,
+  ""
+ ],
+ "iSCSI target IQN": [
+  null,
+  ""
  ],
  "idle": [
   null,
@@ -1003,10 +1187,6 @@ return plural;
   null,
   "no"
  ],
- "other": [
-  null,
-  "otro"
- ],
  "paused": [
   null,
   "en pausa"
@@ -1019,6 +1199,10 @@ return plural;
   null,
   "raw"
  ],
+ "redirected device": [
+  null,
+  ""
+ ],
  "running": [
   null,
   "en ejecución"
@@ -1026,6 +1210,14 @@ return plural;
  "server": [
   null,
   "servidor"
+ ],
+ "show less": [
+  null,
+  "mostrar menos"
+ ],
+ "show more": [
+  null,
+  "mostrar más"
  ],
  "shut off": [
   null,

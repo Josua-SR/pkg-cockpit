@@ -223,17 +223,9 @@ return plural;
   null,
   "Inga väntande uppdateringar"
  ],
- "Off": [
-  null,
-  "Av"
- ],
  "Ok": [
   null,
   "Ok"
- ],
- "On": [
-  null,
-  "På"
  ],
  "Package information": [
   null,

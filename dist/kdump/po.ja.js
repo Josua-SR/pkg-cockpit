@@ -139,17 +139,9 @@ return plural;
   null,
   "なし"
  ],
- "Off": [
-  null,
-  "オフ"
- ],
  "Ok": [
   null,
   "OK"
- ],
- "On": [
-  null,
-  "オン"
  ],
  "On a mounted device": [
   null,

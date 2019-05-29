@@ -71,16 +71,18 @@ const StoragePoolNameRow = ({ onValueChanged, dialogValues }) => {
     );
 };
 
-const StoragePoolTypeRow = ({ onValueChanged, dialogValues }) => {
-    const poolTypes = [
+const StoragePoolTypeRow = ({ onValueChanged, dialogValues, libvirtVersion }) => {
+    let poolTypes = [
         { type: 'dir', detail: _("Filesystem Directory") },
         { type: 'netfs', detail:_("Network File System") },
         { type: 'iscsi', detail: _("iSCSI Target") },
-        { type: 'iscsi-direct', detail: _("iSCSI direct Target") }
+        { type: 'disk', detail: _("Physical Disk Device") },
     ];
+    // iscsi-direct exists since 4.7.0
+    if (libvirtVersion && libvirtVersion >= 4007000)
+        poolTypes.push({ type: 'iscsi-direct', detail: _("iSCSI direct Target") });
 
     /* TODO
-        { type: 'disk', detail _("Physical Disk Device") },
         { type: 'fs', detail _("Pre-formated Block Device") },
         { type: 'gluster', detail _("Gluster Filesystem") },
         { type: 'logical', detail _("LVM Volume Group") },
@@ -116,7 +118,7 @@ const StoragePoolTypeRow = ({ onValueChanged, dialogValues }) => {
 const StoragePoolTargetRow = ({ onValueChanged, dialogValues }) => {
     const validationState = dialogValues.target.length == 0 && dialogValues.validationFailed.target ? 'error' : undefined;
 
-    if (['dir', 'netfs', 'iscsi'].includes(dialogValues.type)) {
+    if (['dir', 'netfs', 'iscsi', 'disk'].includes(dialogValues.type)) {
         return (
             <React.Fragment>
                 <label className='control-label'>
@@ -194,11 +196,19 @@ const StoragePoolInitiatorRow = ({ onValueChanged, dialogValues }) => {
 
 const StoragePoolSourceRow = ({ onValueChanged, dialogValues }) => {
     let validationState;
+    let placeholder;
+    const diskPoolSourceFormatTypes = ['dos', 'dvh', 'gpt', 'mac', 'bsd', 'pc98', 'sun', 'lvm2'];
 
-    if (dialogValues.type == 'netfs')
+    if (dialogValues.type == 'netfs') {
         validationState = dialogValues.source.dir.length == 0 && dialogValues.validationFailed.source ? 'error' : undefined;
-    if (dialogValues.type == 'iscsi' || dialogValues.type == 'iscsi-direct')
+        placeholder = _("The directory on the server being exported");
+    } else if (dialogValues.type == 'iscsi' || dialogValues.type == 'iscsi-direct') {
         validationState = dialogValues.source.device.length == 0 && dialogValues.validationFailed.source ? 'error' : undefined;
+        placeholder = _("iSCSI target IQN");
+    } else if (dialogValues.type == 'disk') {
+        validationState = dialogValues.source.device.length == 0 && dialogValues.validationFailed.source ? 'error' : undefined;
+        placeholder = _("Physical disk device on host");
+    }
 
     if (['netfs', 'iscsi', 'iscsi-direct'].includes(dialogValues.type))
         return (
@@ -217,13 +227,50 @@ const StoragePoolSourceRow = ({ onValueChanged, dialogValues }) => {
                                else
                                    return onValueChanged('source', { 'device': e.target.value });
                            }}
-                           placeholder={dialogValues.type == 'netfs' ? _("The directory on the server being exported") : _("iSCSI target IQN")}
+                           placeholder={placeholder}
                            className='form-control' />
                     { validationState == 'error' &&
                     <HelpBlock>
                         <p className="text-danger">{_("Source path should not be empty")}</p>
                     </HelpBlock> }
                 </FormGroup>
+                <hr />
+            </React.Fragment>
+        );
+    else if (dialogValues.type == 'disk')
+        return (
+            <React.Fragment>
+                <label className='control-label' htmlFor='storage-pool-dialog-source'>
+                    {_("Source Path")}
+                </label>
+                <FormGroup className='ct-form-layout-split'
+                           validationState={validationState}
+                           controlId='source'>
+                    <FileAutoComplete id='storage-pool-dialog-source'
+                        placeholder={placeholder}
+                        onChange={value => onValueChanged('source', { 'device': value })} />
+                    { validationState == 'error' &&
+                    <HelpBlock>
+                        <p className="text-danger">{_("Source path should not be empty")}</p>
+                    </HelpBlock> }
+                </FormGroup>
+                <label className='control-label' htmlFor='storage-pool-dialog-source-format'>
+                    {_("Format")}
+                </label>
+                <Select.Select id='storage-pool-dialog-source-format'
+                               extraClass='form-control ct-form-layout-split'
+                               initial={dialogValues.source.format}
+                               onChange={value => onValueChanged('source', { 'format': value })}>
+                    { diskPoolSourceFormatTypes
+                            .map(format => {
+                                return (
+                                    <Select.SelectEntry data={format} key={format}>
+                                        {format}
+                                    </Select.SelectEntry>
+                                );
+                            })
+                    }
+                </Select.Select>
                 <hr />
             </React.Fragment>
         );
@@ -251,11 +298,12 @@ class CreateStoragePoolModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            createInProgress: false,
             dialogError: undefined,
             name: '',
             connectionName: LIBVIRT_SYSTEM_CONNECTION,
             type: 'dir',
-            source: { 'host': '', 'dir': '', 'device': '', 'initiator': '' },
+            source: { 'host': '', 'dir': '', 'device': '', 'initiator': '', 'format': undefined },
             target: '',
             autostart: true,
             validationFailed: {},
@@ -273,8 +321,21 @@ class CreateStoragePoolModal extends React.Component {
             this.setState({
                 source: Object.assign({}, this.state.source, { [property]: propertyValue })
             });
-        } else
+        } else if (key == 'type') {
+            if (value == 'disk') {
+                // When switching to disk type select the default format which is 'dos'
+                this.setState({
+                    source: Object.assign({}, this.state.source, { 'format': 'dos' })
+                });
+            } else {
+                this.setState({
+                    source: Object.assign({}, this.state.source, { 'format': undefined })
+                });
+            }
             this.setState({ [key]: value });
+        } else {
+            this.setState({ [key]: value });
+        }
     }
 
     dialogErrorSet(text, detail) {
@@ -354,21 +415,36 @@ class CreateStoragePoolModal extends React.Component {
             }
         }
 
+        // Mandatory props for disk pool type
+        if (this.state.type == 'disk') {
+            if (this.state.source.device.length == 0) {
+                modalIsIncomplete = true;
+                validationFailed.source = true;
+            }
+            if (this.state.target.length == 0) {
+                modalIsIncomplete = true;
+                validationFailed.target = true;
+            }
+        }
+
         this.setState({ validationFailed });
 
-        if (!modalIsIncomplete)
+        if (!modalIsIncomplete) {
+            this.setState({ createInProgress: true });
             dispatch(createStoragePool(this.state))
                     .fail(exc => {
+                        this.setState({ createInProgress: false });
                         this.dialogErrorSet(_("Storage Pool failed to be created"), exc.message);
                     })
                     .then(() => {
                         this.props.close();
                     });
+        }
     }
 
     render() {
         const defaultBody = (
-            <form className="ct-form-layout">
+            <form className="ct-form-layout ct-form-layout-maxmin">
                 <StoragePoolConnectionRow dialogValues={this.state}
                                           onValueChanged={this.onValueChanged}
                                           loggedUser={this.props.loggedUser} />
@@ -377,6 +453,7 @@ class CreateStoragePoolModal extends React.Component {
                                     onValueChanged={this.onValueChanged} />
                 <hr />
                 <StoragePoolTypeRow dialogValues={this.state}
+                                    libvirtVersion={this.props.libvirtVersion}
                                     onValueChanged={this.onValueChanged} />
                 <hr />
                 <StoragePoolTargetRow dialogValues={this.state}
@@ -403,10 +480,11 @@ class CreateStoragePoolModal extends React.Component {
                 </Modal.Body>
                 <Modal.Footer>
                     {this.state.dialogError && <ModalError dialogError={this.state.dialogError} dialogErrorDetail={this.state.dialogErrorDetail} />}
+                    {this.state.createInProgress && <div className="spinner spinner-sm pull-left" />}
                     <Button bsStyle='default' className='btn-cancel' onClick={ this.props.close }>
                         {_("Cancel")}
                     </Button>
-                    <Button bsStyle='primary' onClick={this.onCreateClicked}>
+                    <Button bsStyle='primary' disabled={this.state.createInProgress} onClick={this.onCreateClicked}>
                         {_("Create")}
                     </Button>
                 </Modal.Footer>
@@ -417,6 +495,7 @@ class CreateStoragePoolModal extends React.Component {
 CreateStoragePoolModal.propTypes = {
     close: PropTypes.func.isRequired,
     dispatch: PropTypes.func.isRequired,
+    libvirtVersion: PropTypes.number,
     loggedUser: PropTypes.object.isRequired,
 };
 
@@ -446,6 +525,7 @@ export class CreateStoragePoolAction extends React.Component {
                 <CreateStoragePoolModal
                     close={this.close}
                     dispatch={this.props.dispatch}
+                    libvirtVersion={this.props.libvirtVersion}
                     loggedUser={this.props.loggedUser} /> }
             </div>
         );
@@ -453,5 +533,6 @@ export class CreateStoragePoolAction extends React.Component {
 }
 CreateStoragePoolAction.propTypes = {
     dispatch: PropTypes.func.isRequired,
+    libvirtVersion: PropTypes.number,
     loggedUser: PropTypes.object.isRequired,
 };

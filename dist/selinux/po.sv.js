@@ -124,14 +124,6 @@ return plural;
   null,
   "Hände mellan $0 och $1"
  ],
- "Off": [
-  null,
-  "Av"
- ],
- "On": [
-  null,
-  "På"
- ],
  "SELinux Access Control Errors": [
   null,
   "SELinux-fel vid åtkomstkontroller"

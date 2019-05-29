@@ -87,6 +87,10 @@ return plural;
   null,
   "Додати диск"
  ],
+ "Additional": [
+  null,
+  "Додаткові"
+ ],
  "Address": [
   null,
   "Адреса"
@@ -130,6 +134,10 @@ return plural;
  "CPU Type": [
   null,
   "Тип процесора"
+ ],
+ "Cache": [
+  null,
+  ""
  ],
  "Cancel": [
   null,
@@ -203,6 +211,10 @@ return plural;
   null,
   "Ctrl+Alt+Del"
  ],
+ "Current Allocation": [
+  null,
+  "Поточне отримання"
+ ],
  "DHCP Range": [
   null,
   "Діапазон DHCP"
@@ -267,6 +279,10 @@ return plural;
   null,
   "Диски"
  ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
+ ],
  "Download the MSI from $0": [
   null,
   "Отримати MSI з $0"
@@ -330,6 +346,10 @@ return plural;
  "Graphics Console in Desktop Viewer": [
   null,
   "Графічна консоль у перегляді стільниці"
+ ],
+ "Hide Performance Options": [
+  null,
+  ""
  ],
  "Host": [
   null,
@@ -427,9 +447,17 @@ return plural;
   null,
   "З’єднання вручну"
  ],
+ "Maximum Allocation": [
+  null,
+  "Максимальне отримання"
+ ],
  "Maximum Transmission Unit": [
   null,
   "Максимальна одиниця передавання"
+ ],
+ "Maximum memory could not be saved": [
+  null,
+  "Не вдалося зберегти дані щодо максимального обсягу пам'яті"
  ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
@@ -438,6 +466,14 @@ return plural;
  "Memory": [
   null,
   "Пам'ять"
+ ],
+ "Memory could not be saved": [
+  null,
+  "Не вдалося зберегти дані щодо обсягу пам'яті"
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  "Обсяг пам'яті між 128 МіБ та максимальним отриманим"
  ],
  "MiB": [
   null,
@@ -515,6 +551,10 @@ return plural;
   null,
   "Назва нового тому"
  ],
+ "No Storage Pools available": [
+  null,
+  ""
+ ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
   "Для цього буфера зберігання сховища не визначено томів сховища"
@@ -522,6 +562,10 @@ return plural;
  "No VM is running or defined on this host": [
   null,
   "У цій основній системі не запущено або не визначено віртуальних машин"
+ ],
+ "No Virtual Networks": [
+  null,
+  "Немає віртуальних мереж"
  ],
  "No boot device found": [
   null,
@@ -549,15 +593,11 @@ return plural;
  ],
  "No networks available": [
   null,
-  ""
+  "Немає доступних мереж"
  ],
  "No storage pool is defined on this host": [
   null,
   "На цьому вузлі не визначено буфера зберігання даних"
- ],
- "No virtual networks": [
-  null,
-  "Немає віртуальних мереж"
  ],
  "None (Isolated Network)": [
   null,
@@ -570,6 +610,10 @@ return plural;
  "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
   null,
   "Один або декілька позначених томів використовуються доменами. Щоб уможливити вилучення цих томів, спочатку від'єднайте диски."
+ ],
+ "Only editable when the guest is shut off": [
+  null,
+  "Можна редагувати, лише якщо гостьову систему вимкнено"
  ],
  "Open": [
   null,
@@ -610,6 +654,14 @@ return plural;
  "Persistent": [
   null,
   "Постійний"
+ ],
+ "Physical Disk Device": [
+  null,
+  ""
+ ],
+ "Physical disk device on host": [
+  null,
+  ""
  ],
  "Please enter new volume name": [
   null,
@@ -735,6 +787,10 @@ return plural;
   null,
   "Сеанс"
  ],
+ "Show Performance Options": [
+  null,
+  ""
+ ],
  "Shut Down": [
   null,
   "Вимкнути"
@@ -750,6 +806,10 @@ return plural;
  "Source": [
   null,
   "Джерело"
+ ],
+ "Source Format": [
+  null,
+  ""
  ],
  "Source Path": [
   null,
@@ -779,6 +839,10 @@ return plural;
   null,
   "Стан"
  ],
+ "Storage": [
+  null,
+  "Сховище даних"
+ ],
  "Storage Pool $0 failed to get activated": [
   null,
   "Не вдалося активувати буфер сховища $0"
@@ -798,10 +862,6 @@ return plural;
  "Storage Pools": [
   null,
   "Буфери даних"
- ],
- "Storage Size": [
-  null,
-  "Розмір зберігання"
  ],
  "Storage Volumes": [
   null,
@@ -874,6 +934,10 @@ return plural;
  "The pool is empty": [
   null,
   "Буфер порожній"
+ ],
+ "This volume is already used by another VM.": [
+  null,
+  ""
  ],
  "Threads per core": [
   null,
@@ -1146,6 +1210,14 @@ return plural;
  "server": [
   null,
   "сервер"
+ ],
+ "show less": [
+  null,
+  "показати менше"
+ ],
+ "show more": [
+  null,
+  "показати більше"
  ],
  "shut off": [
   null,

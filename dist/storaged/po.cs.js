@@ -357,9 +357,9 @@ return plural;
   null,
   "Komprese"
  ],
- "Confirm passphrase": [
+ "Confirm": [
   null,
-  "Potvrdit heslovou frázi"
+  "Potvrdit"
  ],
  "Confirm removal with passphrase": [
   null,
@@ -440,10 +440,6 @@ return plural;
  "Custom": [
   null,
   "Uživatelsky určené"
- ],
- "Custom (Enter filesystem type)": [
-  null,
-  "Uživatelsky určené (zadejte typ souborového systému)"
  ],
  "Custom encryption options": [
   null,
@@ -569,13 +565,13 @@ return plural;
   null,
   "Vyprazdňuje se $target"
  ],
+ "Encrypt data": [
+  null,
+  "Šifrovat data"
+ ],
  "Encrypted $0": [
   null,
   "Šifrované $0"
- ],
- "Encrypted EXT4 (LUKS)": [
-  null,
-  "Šifrované EXT4 (LUKS)"
  ],
  "Encrypted Logical Volume of $0": [
   null,
@@ -584,10 +580,6 @@ return plural;
  "Encrypted Partition of $0": [
   null,
   "Šifrovaný oddíl na $0"
- ],
- "Encrypted XFS (LUKS)": [
-  null,
-  "Šifrované XFS (LUKS)"
  ],
  "Encrypted volumes can not be resized here.": [
   null,
@@ -636,10 +628,6 @@ return plural;
  "Filesystem Name": [
   null,
   "Název souborového systému"
- ],
- "Filesystem type": [
-  null,
-  "Typ souborového systému"
  ],
  "Filesystems": [
   null,
@@ -1017,10 +1005,6 @@ return plural;
   null,
   "Není spuštěné"
  ],
- "Off": [
-  null,
-  "Vypnuto"
- ],
  "Ok": [
   null,
   "Ok"
@@ -1028,10 +1012,6 @@ return plural;
  "Old passphrase": [
   null,
   "Původní heslová fráze"
- ],
- "On": [
-  null,
-  "Zapnuto"
  ],
  "Only $0 of $1 are used.": [
   null,

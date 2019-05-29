@@ -223,17 +223,9 @@ return plural;
   null,
   "No hay actualizaciones pendientes"
  ],
- "Off": [
-  null,
-  "Apagado"
- ],
  "Ok": [
   null,
   "Aceptar"
- ],
- "On": [
-  null,
-  "Encencido"
  ],
  "Package information": [
   null,

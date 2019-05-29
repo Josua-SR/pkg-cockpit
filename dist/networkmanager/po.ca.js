@@ -75,6 +75,10 @@ return plural;
   null,
   ""
  ],
+ "(default)": [
+  null,
+  "(predeterminat)"
+ ],
  "1 day": [
   null,
   "1 dia"
@@ -123,6 +127,10 @@ return plural;
   null,
   "Còpia de seguretat activa"
  ],
+ "Active zones": [
+  null,
+  ""
+ ],
  "Adaptive load balancing": [
   null,
   "Balanceig de càrrega adaptativa"
@@ -159,6 +167,22 @@ return plural;
   null,
   "Afegeix una VLAN"
  ],
+ "Add Zone": [
+  null,
+  ""
+ ],
+ "Add ports to the following zones:": [
+  null,
+  ""
+ ],
+ "Add services to following zones:": [
+  null,
+  ""
+ ],
+ "Add zone": [
+  null,
+  ""
+ ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
   ""
@@ -182,6 +206,10 @@ return plural;
  "Addresses": [
   null,
   "Adreces"
+ ],
+ "Allowed Addresses": [
+  null,
+  ""
  ],
  "Allowed Services": [
   null,
@@ -315,6 +343,10 @@ return plural;
   null,
   ""
  ],
+ "Custom zones": [
+  null,
+  ""
+ ],
  "DNS": [
   null,
   "DNS"
@@ -347,6 +379,10 @@ return plural;
   null,
   ""
  ],
+ "Description": [
+  null,
+  "Descripció"
+ ],
  "Details": [
   null,
   "Detalls"
@@ -356,6 +392,10 @@ return plural;
   "Inhabilitat"
  ],
  "Enable Service": [
+  null,
+  ""
+ ],
+ "Entire subnet": [
   null,
   ""
  ],
@@ -382,6 +422,18 @@ return plural;
  "Failed": [
   null,
   "Ha fallat"
+ ],
+ "Failed to add service": [
+  null,
+  ""
+ ],
+ "Failed to add zone": [
+  null,
+  ""
+ ],
+ "Failed to remove service": [
+  null,
+  ""
  ],
  "Filter Services": [
   null,
@@ -423,6 +475,10 @@ return plural;
   null,
   "Adreça IP"
  ],
+ "IP Range": [
+  null,
+  ""
+ ],
  "IP Settings": [
   null,
   "Ajusts de la IP"
@@ -454,6 +510,10 @@ return plural;
  "Inactive": [
   null,
   "Inactiu"
+ ],
+ "Included services": [
+  null,
+  ""
  ],
  "Interfaces": [
   null,
@@ -587,13 +647,25 @@ return plural;
   null,
   "No"
  ],
+ "No active zones": [
+  null,
+  ""
+ ],
  "No carrier": [
   null,
   "Sense portadora"
  ],
+ "No description available": [
+  null,
+  ""
+ ],
  "No open ports": [
   null,
   ""
+ ],
+ "None": [
+  null,
+  "Cap"
  ],
  "Not available": [
   null,
@@ -687,6 +759,10 @@ return plural;
   null,
   "Aleatòria"
  ],
+ "Range": [
+  null,
+  ""
+ ],
  "Range must be strictly ordered": [
   null,
   ""
@@ -702,6 +778,14 @@ return plural;
  "Remove $0": [
   null,
   "Suprimeix $0"
+ ],
+ "Remove service": [
+  null,
+  ""
+ ],
+ "Remove service from zones": [
+  null,
+  ""
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -758,6 +842,10 @@ return plural;
  "Shared": [
   null,
   "Compartida"
+ ],
+ "Sorted from least trusted to most trusted": [
+  null,
+  ""
  ],
  "Spanning Tree Protocol": [
   null,
@@ -835,6 +923,10 @@ return plural;
   null,
   "Aquest dispositiu no es pot gestionar aquí."
  ],
+ "Trust level": [
+  null,
+  ""
+ ],
  "UDP": [
   null,
   "UDP"
@@ -891,6 +983,14 @@ return plural;
   null,
   ""
  ],
+ "Zone": [
+  null,
+  ""
+ ],
+ "Zones": [
+  null,
+  ""
+ ],
  "[$0 bytes of binary data]": [
   null,
   "[$0 bytes de dades binàries]"
@@ -902,6 +1002,14 @@ return plural;
  "[no data]": [
   null,
   "[sense dades]"
+ ],
+ "show less": [
+  null,
+  "mostra menys"
+ ],
+ "show more": [
+  null,
+  "mostra més"
  ],
  "page-title\u0004Networking": [
   null,
