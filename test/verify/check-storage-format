@@ -1,0 +1,104 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
+# This file is part of Cockpit.
+#
+# Copyright (C) 2015 Red Hat, Inc.
+#
+# Cockpit is free software; you can redistribute it and/or modify it
+# under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation; either version 2.1 of the License, or
+# (at your option) any later version.
+#
+# Cockpit is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
+
+import parent
+from storagelib import *
+from testlib import *
+
+
+class TestStorage(StorageCase):
+
+    def testFormatTooSmall(self):
+        m = self.machine
+        b = self.browser
+
+        # Some day storaged/udisks will support the "dry-run-first" option.
+        #
+        # https://github.com/storaged-project/storaged/pull/82
+
+        storaged_supports_dry_run = (self.storaged_version >= [2, 6, 3])
+
+        self.login_and_go("/storage")
+        b.wait_in_text("#drives", "VirtIO")
+
+        # Try to format a disk that is too small for XFS.
+
+        m.add_disk("5M", serial="DISK1")
+        b.wait_in_text("#drives", "DISK1")
+        b.click('#drives tr:contains("DISK1")')
+        b.wait_present('#storage-detail')
+
+        self.content_head_action(1, "Format")
+        self.dialog_wait_open()
+        self.dialog_set_val("type", "xfs")
+        self.dialog_apply()
+
+        if storaged_supports_dry_run:
+            self.dialog_wait_error(None, "Error creating file system")
+        else:
+            self.dialog_wait_close()
+
+    def testFormatTypes(self):
+        m = self.machine
+        b = self.browser
+
+        self.login_and_go("/storage")
+        b.wait_in_text("#drives", "VirtIO")
+
+        m.add_disk("50M", serial="DISK1")
+        b.wait_in_text("#drives", "DISK1")
+        b.click('#drives tr:contains("DISK1")')
+        b.wait_present('#storage-detail')
+
+        def check_type(type, label_limit):
+            self.content_head_action(1, "Format")
+            self.dialog_wait_open()
+            self.dialog_set_val("type", type)
+            self.dialog_set_val("name", "X" * (label_limit + 1))
+            self.dialog_apply()
+            self.dialog_wait_error("name", "Name cannot be longer than %d characters" % label_limit)
+            self.dialog_set_val("name", "X" * label_limit)
+            self.dialog_apply()
+            self.dialog_wait_close()
+            self.content_row_wait_in_col(1, 1, type + " File System")
+
+        def check_unsupported_type(type):
+            self.content_head_action(1, "Format")
+            self.dialog_wait_open()
+            b.wait_not_present('#dialog li[value=%s]' % type)
+            self.dialog_cancel()
+            self.dialog_wait_close()
+
+        check_type("xfs", 12)
+        check_type("ext4", 16)
+
+        if self.storaged_is_old_udisks:
+            check_unsupported_type("vfat")
+        else:
+            check_type("vfat", 11)
+
+        if self.storaged_is_old_udisks or m.image in ["rhel-7-6", "rhel-7-6-distropkg", "rhel-7-7", "centos-7", "rhel-8-0", "rhel-8-0-distropkg", "rhel-8-1"]:
+            check_unsupported_type("ntfs")
+        else:
+            check_type("ntfs", 128)
+
+
+if __name__ == '__main__':
+    test_main()

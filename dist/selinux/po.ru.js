@@ -107,7 +107,7 @@ return plural;
  ],
  "Install setroubleshoot-server to troubleshoot SELinux events.": [
   null,
-  "Установите setroubleshoot-server для устранения неполадок SELinux."
+  "Установите setroubleshoot-server для устранения неполадок в SELinux."
  ],
  "No SELinux alerts.": [
   null,
@@ -125,14 +125,6 @@ return plural;
   null,
   "Произошло между $0 а также $1"
  ],
- "Off": [
-  null,
-  "Выкл"
- ],
- "On": [
-  null,
-  "Вкл"
- ],
  "SELinux Access Control Errors": [
   null,
   "Ошибки контроля доступа SELinux"
@@ -147,11 +139,11 @@ return plural;
  ],
  "SELinux is disabled on the system": [
   null,
-  "SELinux отключен в системе"
+  "SELinux отключён в системе"
  ],
  "SELinux is disabled on the system.": [
   null,
-  "SELinux отключен в системе."
+  "SELinux отключён в системе."
  ],
  "SELinux system status is unknown.": [
   null,

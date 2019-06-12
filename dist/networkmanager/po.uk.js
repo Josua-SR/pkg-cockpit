@@ -169,7 +169,7 @@ return plural;
  ],
  "Add Zone": [
   null,
-  ""
+  "Додати зону"
  ],
  "Add ports to the following zones:": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Add zone": [
   null,
-  ""
+  "Додати зону"
  ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "Allowed Addresses": [
   null,
-  ""
+  "Дозволені адреси"
  ],
  "Allowed Services": [
   null,
@@ -345,7 +345,7 @@ return plural;
  ],
  "Custom zones": [
   null,
-  ""
+  "Нетипові зони"
  ],
  "DNS": [
   null,
@@ -397,7 +397,7 @@ return plural;
  ],
  "Entire subnet": [
   null,
-  ""
+  "Уся підмережа"
  ],
  "Ethernet MAC": [
   null,
@@ -429,7 +429,7 @@ return plural;
  ],
  "Failed to add zone": [
   null,
-  ""
+  "Не вдалося додати зону"
  ],
  "Failed to remove service": [
   null,
@@ -513,7 +513,7 @@ return plural;
  ],
  "Included services": [
   null,
-  ""
+  "Включені служби"
  ],
  "Interfaces": [
   null,
@@ -657,7 +657,7 @@ return plural;
  ],
  "No description available": [
   null,
-  ""
+  "Немає опису"
  ],
  "No open ports": [
   null,
@@ -761,7 +761,7 @@ return plural;
  ],
  "Range": [
   null,
-  ""
+  "Діапазон"
  ],
  "Range must be strictly ordered": [
   null,
@@ -845,7 +845,7 @@ return plural;
  ],
  "Sorted from least trusted to most trusted": [
   null,
-  ""
+  "Упорядковано від найменшої до найбільшої довіри"
  ],
  "Spanning Tree Protocol": [
   null,
@@ -925,7 +925,7 @@ return plural;
  ],
  "Trust level": [
   null,
-  ""
+  "Рівень довіри"
  ],
  "UDP": [
   null,

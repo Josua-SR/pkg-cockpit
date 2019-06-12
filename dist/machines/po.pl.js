@@ -137,7 +137,7 @@ return plural;
  ],
  "Cache": [
   null,
-  ""
+  "Pamięć podręczna"
  ],
  "Cancel": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "Disks cannot be removed from $0 VMs": [
   null,
-  ""
+  "Nie można usuwać dysków z maszyn wirtualnych $0"
  ],
  "Download the MSI from $0": [
   null,
@@ -349,7 +349,7 @@ return plural;
  ],
  "Hide Performance Options": [
   null,
-  ""
+  "Ukryj opcje wydajności"
  ],
  "Host": [
   null,
@@ -553,7 +553,7 @@ return plural;
  ],
  "No Storage Pools available": [
   null,
-  ""
+  "Brak dostępnych pul urządzeń do przechowywania danych"
  ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
@@ -657,11 +657,11 @@ return plural;
  ],
  "Physical Disk Device": [
   null,
-  ""
+  "Fizyczne urządzenie dyskowe"
  ],
  "Physical disk device on host": [
   null,
-  ""
+  "Fizyczne urządzenie dyskowe na gospodarzu"
  ],
  "Please enter new volume name": [
   null,
@@ -789,7 +789,7 @@ return plural;
  ],
  "Show Performance Options": [
   null,
-  ""
+  "Wyświetl opcje wydajności"
  ],
  "Shut Down": [
   null,
@@ -809,7 +809,7 @@ return plural;
  ],
  "Source Format": [
   null,
-  ""
+  "Format źródłowy"
  ],
  "Source Path": [
   null,
@@ -937,7 +937,7 @@ return plural;
  ],
  "This volume is already used by another VM.": [
   null,
-  ""
+  "Ten wolumin jest już używany przez inną maszynę wirtualną."
  ],
  "Threads per core": [
   null,

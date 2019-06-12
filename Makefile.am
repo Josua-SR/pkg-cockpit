@@ -84,8 +84,8 @@ GZ_RULE = \
 	gzip -n -c $< > $@.tmp && $(MV) $@.tmp $@
 
 UGLIFY_JS = $(srcdir)/node_modules/.bin/uglifyjs
-
 CLEAN_CSS = $(srcdir)/node_modules/.bin/cleancss
+LESSC = $(srcdir)/node_modules/.bin/lessc
 
 MIN_JS_RULE = \
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
@@ -269,7 +269,7 @@ AM_CPPFLAGS = \
 AM_LDFLAGS = -Wl,--as-needed
 
 LOG_DRIVER = $(PYTHON) $(top_srcdir)/tools/tap-driver
-LOG_COMPILER = $(PYTHON) $(top_srcdir)/tools/tap-gtester
+LOG_COMPILER = sh -c '"$$0" "$$@" --tap' # For GLib < 2.62
 
 TEST_EXTENSIONS = .html .sh
 SH_LOG_DRIVER = $(LOG_DRIVER)
@@ -303,7 +303,7 @@ valgrind-suppressions: $(VALGRIND_SUPPRESSIONS)
 	$(AM_V_GEN) cat $^ > $@
 
 check-memory: valgrind-suppressions
-	$(MAKE) LOG_FLAGS="-- valgrind $(VALGRIND_ARGS)" \
+	$(MAKE) LOG_FLAGS="valgrind $(VALGRIND_ARGS)" \
 	        HTML_LOG_FLAGS="valgrind $(VALGRIND_ARGS)" \
 		$(AM_MAKEFLAGS) check TESTS="$(filter-out tools/% bots/%,$(TESTS))"
 recheck-memory: valgrind-suppressions
@@ -371,7 +371,7 @@ dump-dist-gzip:
 # Subdirectories to distribute everything that's committed to git
 COMMITTED_DIST = \
 	tools/ \
-	test/common \
+	test \
 	$(NULL)
 
 # Build up the distribution using $COMMITTED_DIST and include node_modules licenses

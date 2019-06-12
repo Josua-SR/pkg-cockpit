@@ -221,7 +221,7 @@ return plural;
  ],
  "Use proxy server": [
   null,
-  "プロキシーサーバーの使用"
+  "プロキシサーバーの使用"
  ],
  "User": [
   null,

@@ -633,7 +633,7 @@ return plural;
  ],
  "For legacy applications only. Reduces performance.": [
   null,
-  "レガシーアプリケーション専用です。パフォーマンスを下げます。"
+  "レガシーアプリケーション専用です。パフォーマンスが低下します。"
  ],
  "Force remove passphrase in $0": [
   null,
@@ -669,7 +669,7 @@ return plural;
  ],
  "Free up space in this group: Shrink or delete other logical volumes or add another physical volume.": [
   null,
-  "グループ内で領域を解放します: 他の論理ボリュームを縮小または削除するか、新たな物理ボリュームを追加してください。"
+  "このグループ内で領域を解放します: 他の論理ボリュームを縮小または削除するか、新たな物理ボリュームを追加してください。"
  ],
  "Go to now": [
   null,
@@ -1313,11 +1313,11 @@ return plural;
  ],
  "Save space by compressing individual blocks with LZ4": [
   null,
-  ""
+  "LZ4 で個別のブロックを圧縮して空き領域を節約します"
  ],
  "Save space by storing identical data blocks just once": [
   null,
-  ""
+  "同一のデータブロックを 1 回だけ保存することで、空き領域を節約します"
  ],
  "Saving a new passphrase requires unlocking the disk. Please provide a current disk passphrase.": [
   null,
@@ -1585,7 +1585,7 @@ return plural;
  ],
  "This logical volume is not completely used by its content.": [
   null,
-  "このロジカルボリュームは、コンテンツによって完全には使用されていません。"
+  "この論理ボリュームは、コンテンツによって完全には使用されていません。"
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
@@ -1745,7 +1745,7 @@ return plural;
  ],
  "Volume size is $0. Content size is $1.": [
   null,
-  ""
+  "ボリュームサイズは $0 です。コンテンツサイズは $1 です。"
  ],
  "Waiting for other software management operations to finish": [
   null,

@@ -1793,8 +1793,7 @@ CLEANFILES = $(man_MANS) valgrind-suppressions $(NULL) $(MO_FILES) \
 	$(am__append_18) src/ws/cockpit.socket src/ws/cockpit.service \
 	src/ws/cockpit-motd.service $(nodist_tempconf_DATA) \
 	cockpit-desktop $(NULL) $(nodist_appdata_DATA) $(NULL) \
-	mock-pam-conv-mod.so pam_ssh_add.so $(KUBERNETES_DIR)/rpms \
-	$(WS_DIR)/rpms
+	mock-pam-conv-mod.so pam_ssh_add.so $(WS_DIR)/rpms
 DISTCLEANFILES = \
 	$(srcdir)/Makefile \
 	cockpit-cache-*.tar.xz \
@@ -1846,9 +1845,10 @@ EXTRA_DIST = package.json README.md $(NULL) $(WEBPACK_STAMPS) \
 	dist/base1/patternfly-additions.css.map \
 	dist/base1/simple-tap.js src/base1/cockpit.css \
 	src/base1/cockpit.js src/base1/deprecated.js \
-	src/base1/manifest.json src/base1/simple-tap.js \
-	src/base1/test-dbus-common.js $(base_DATA) $(basefonts_DATA) \
-	$(base_TESTS) $(base_TESTS_DEPS) $(base_TESTS_SOURCE) \
+	src/base1/manifest.json src/base1/patternfly-overrides.less \
+	src/base1/simple-tap.js src/base1/test-dbus-common.js \
+	$(base_DATA) $(basefonts_DATA) $(base_TESTS) \
+	$(base_TESTS_DEPS) $(base_TESTS_SOURCE) \
 	$(base_TESTS_JAVASCRIPT) $(NULL) $(centosbranding_DATA) \
 	$(debianbranding_DATA) $(defaultbranding_DATA) \
 	src/branding/default/logo.svg $(NULL) $(fedorabranding_DATA) \
@@ -1921,6 +1921,7 @@ GZ_RULE = \
 
 UGLIFY_JS = $(srcdir)/node_modules/.bin/uglifyjs
 CLEAN_CSS = $(srcdir)/node_modules/.bin/cleancss
+LESSC = $(srcdir)/node_modules/.bin/lessc
 MIN_JS_RULE = \
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
 	$(srcdir)/tools/missing $(UGLIFY_JS) $(filter-out %.deps, $^) --mangle --comments 'preserve' --beautify \
@@ -2032,7 +2033,7 @@ AM_CPPFLAGS = \
 
 AM_LDFLAGS = -Wl,--as-needed
 LOG_DRIVER = $(PYTHON) $(top_srcdir)/tools/tap-driver
-LOG_COMPILER = $(PYTHON) $(top_srcdir)/tools/tap-gtester
+LOG_COMPILER = sh -c '"$$0" "$$@" --tap' # For GLib < 2.62
 TEST_EXTENSIONS = .html .sh
 SH_LOG_DRIVER = $(LOG_DRIVER)
 HTML_LOG_DRIVER = $(LOG_DRIVER)
@@ -2145,7 +2146,7 @@ OPENSANS_FONTS = \
 # Subdirectories to distribute everything that's committed to git
 COMMITTED_DIST = \
 	tools/ \
-	test/common \
+	test \
 	$(NULL)
 
 DIST_TAR_MAIN = tar --format=posix -cf - "$(distdir)"
@@ -3181,7 +3182,6 @@ PAM_SSH_ADD_CHECKS = \
 test_ssh_add_SOURCES = src/pam-ssh-add/test-ssh-add.c
 test_ssh_add_CFLAGS = $(libpam_ssh_add_a_CFLAGS)
 test_ssh_add_LDADD = $(libpam_ssh_add_a_LIBS) libretest.a
-KUBERNETES_DIR = $(srcdir)/containers/kubernetes
 WS_DIR = $(srcdir)/containers/ws
 UNIT_TESTS_DIR = $(srcdir)/containers/unit-tests
 all: $(BUILT_SOURCES) config.h
@@ -9642,7 +9642,7 @@ valgrind-suppressions: $(VALGRIND_SUPPRESSIONS)
 	$(AM_V_GEN) cat $^ > $@
 
 check-memory: valgrind-suppressions
-	$(MAKE) LOG_FLAGS="-- valgrind $(VALGRIND_ARGS)" \
+	$(MAKE) LOG_FLAGS="valgrind $(VALGRIND_ARGS)" \
 	        HTML_LOG_FLAGS="valgrind $(VALGRIND_ARGS)" \
 		$(AM_MAKEFLAGS) check TESTS="$(filter-out tools/% bots/%,$(TESTS))"
 recheck-memory: valgrind-suppressions
@@ -9897,18 +9897,25 @@ dist/base1/cockpit.min.css.map: dist/base1/cockpit.min.css
 dist/base1/patternfly.min.css.map: dist/base1/patternfly.min.css
 
 # Modify the patternfly files appropriately
-dist/base1/patternfly-base.css: dist/base1/patternfly.css.map
+dist/base1/patternfly.css.map: dist/base1/patternfly-base.css
+dist/base1/patternfly-base.css: src/base1/patternfly-overrides.less
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	sed -f $(srcdir)/tools/patternfly.sed $(srcdir)/node_modules/patternfly/dist/css/patternfly.css > $@.tmp && $(MV) $@.tmp $@
-dist/base1/patternfly.css.map:
-	$(V_COPY) $(MKDIR_P) $(dir $@) && \
-	cp $(srcdir)/node_modules/patternfly/dist/css/patternfly.css.map $@.tmp && $(MV) $@.tmp $@
-dist/base1/patternfly-additions.css: dist/base1/patternfly-additions.css.map
+	F=$(srcdir)/node_modules/patternfly/dist/less/patternfly.less && \
+	sed '/@import "variables.less"/ s^$$^\n@import "../../../../src/base1/patternfly-overrides.less";^' $$F > $$F.patched && \
+	$(LESSC) --source-map=dist/base1/patternfly.css.map --source-map-include-source $$F.patched $@.tmp && \
+	sed -i -f $(srcdir)/tools/patternfly.sed $@.tmp && \
+	rm $$F.patched && \
+	$(MV) $@.tmp $@
+
+dist/base1/patternfly-additions.css.map: dist/base1/patternfly-additions.css
+dist/base1/patternfly-additions.css: src/base1/patternfly-overrides.less
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	sed -f $(srcdir)/tools/patternfly.sed $(srcdir)/node_modules/patternfly/dist/css/patternfly-additions.css > $@.tmp && $(MV) $@.tmp $@
-dist/base1/patternfly-additions.css.map:
-	$(V_COPY) $(MKDIR_P) $(dir $@) && \
-	cp $(srcdir)/node_modules/patternfly/dist/css/patternfly-additions.css.map $@.tmp && $(MV) $@.tmp $@
+	F=$(srcdir)/node_modules/patternfly/dist/less/patternfly-additions.less && \
+	sed '/@import "variables.less"/ s^$$^\n@import "../../../../src/base1/patternfly-overrides.less";^' $$F > $$F.patched && \
+	$(LESSC) --source-map=$@.map --source-map-include-source $$F.patched $@.tmp && \
+	sed -i -f $(srcdir)/tools/patternfly.sed $@.tmp && \
+	rm $$F.patched && \
+	$(MV) $@.tmp $@
 
 dist/base1/fonts/fontawesome.woff:
 	$(V_COPY) $(MKDIR_P) $(dir $@) && \
@@ -10132,33 +10139,6 @@ install-exec-local::
 	$(INSTALL) pam_ssh_add.so $(DESTDIR)$(pamdir)
 uninstall-local::
 	$(RM) -f $(DESTDIR)$(pamdir)/pam_ssh_add.so
-
-kubernetes-container:
-	rm -rf $(KUBERNETES_DIR)/rpms && mkdir -p $(KUBERNETES_DIR)/rpms
-	cd $(KUBERNETES_DIR)/rpms && $(abs_srcdir)/tools/make-rpms
-	sudo docker build -t cockpit/kubernetes $(KUBERNETES_DIR)
-
-kubernetes-container-shell:
-	sudo docker run -ti --rm --publish=9001:9090 \
-		--env KUBERNETES_SERVICE_HOST=10.111.112.101 \
-		--env KUBERNETES_SERVICE_PORT=8443 \
-		--env OPENSHIFT_OAUTH_PROVIDER_URL=https://10.111.112.101:8443 \
-		--env OPENSHIFT_OAUTH_CLIENT_ID=cockpit-oauth-devel \
-		--env KUBERNETES_INSECURE=true \
-		--env=COCKPIT_KUBE_INSECURE=true \
-		cockpit/kubernetes /bin/bash
-
-registry-container-shell:
-	sudo docker run -ti --rm --publish=9001:9090 \
-		--env KUBERNETES_SERVICE_HOST=10.111.112.101 \
-		--env KUBERNETES_SERVICE_PORT=8443 \
-		--env OPENSHIFT_OAUTH_PROVIDER_URL=https://10.111.112.101:8443 \
-		--env OPENSHIFT_OAUTH_CLIENT_ID=cockpit-oauth-devel \
-		--env KUBERNETES_INSECURE=true \
-		--env=COCKPIT_KUBE_INSECURE=true \
-		--env=REGISTRY_ONLY=true \
-		--env=REGISTRY_HOST=10.111.112.101:5000 \
-		cockpit/kubernetes /bin/bash
 
 ws-container:
 	rm -rf $(WS_DIR)/rpms && mkdir -p $(WS_DIR)/rpms

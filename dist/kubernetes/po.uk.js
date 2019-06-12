@@ -177,7 +177,7 @@ return plural;
  ],
  "All Projects": [
   null,
-  "Всі проекти"
+  "Всі проєкти"
  ],
  "All Types": [
   null,
@@ -257,7 +257,7 @@ return plural;
  ],
  "Change project": [
   null,
-  "Змінити проект"
+  "Змінити проєкт"
  ],
  "Cinder": [
   null,
@@ -377,7 +377,7 @@ return plural;
  ],
  "Delete Project": [
   null,
-  "Вилучення проекту"
+  "Вилучення проєкту"
  ],
  "Delete Selected": [
   null,
@@ -553,7 +553,7 @@ return plural;
  ],
  "Group or Project": [
   null,
-  "Група або проект"
+  "Група або проєкт"
  ],
  "Groups": [
   null,
@@ -613,7 +613,7 @@ return plural;
  ],
  "Images by project": [
   null,
-  "Образи за проектом"
+  "Образи за проєктом"
  ],
  "Images pushed recently": [
   null,
@@ -625,7 +625,7 @@ return plural;
  ],
  "In order to begin pushing images to the registry, you need to create a project.": [
   null,
-  "Щоб розпочати надсилання образів до реєстру, вам слід створити проект."
+  "Щоб розпочати надсилання образів до реєстру, вам слід створити проєкт."
  ],
  "Interface": [
   null,
@@ -765,7 +765,7 @@ return plural;
  ],
  "New Project": [
   null,
-  "Новий проект"
+  "Новий проєкт"
  ],
  "New image stream": [
   null,
@@ -773,7 +773,7 @@ return plural;
  ],
  "New project": [
   null,
-  "Новий проект"
+  "Новий проєкт"
  ],
  "No": [
   null,
@@ -821,7 +821,7 @@ return plural;
  ],
  "No projects are present.": [
   null,
-  "Немає проектів."
+  "Немає проєктів."
  ],
  "No users are present.": [
   null,
@@ -1033,31 +1033,31 @@ return plural;
  ],
  "Project": [
   null,
-  "Проект"
+  "Проєкт"
  ],
  "Project Members": [
   null,
-  "Учасники проекту"
+  "Учасники проєкту"
  ],
  "Project access policy allows anonymous users to pull images.": [
   null,
-  "Правила доступу до проекту дозволяють анонімним користувачам отримувати образи."
+  "Правила доступу до проєкту дозволяють анонімним користувачам отримувати образи."
  ],
  "Project access policy allows any authenticated user to pull images.": [
   null,
-  "Правила доступу до проекту дозволяють усім розпізнаним користувачам отримувати образи."
+  "Правила доступу до проєкту дозволяють усім розпізнаним користувачам отримувати образи."
  ],
  "Project access policy only allows specific members to access images.": [
   null,
-  "Правила доступу до проекту дозволяють отримувати доступ до образів лише окремим користувачам."
+  "Правила доступу до проєкту дозволяють отримувати доступ до образів лише окремим користувачам."
  ],
  "Project:": [
   null,
-  "Проект:"
+  "Проєкт:"
  ],
  "Projects": [
   null,
-  "Проекти"
+  "Проєкти"
  ],
  "Proxy Version": [
   null,
@@ -1333,7 +1333,7 @@ return plural;
  ],
  "Show all Projects": [
   null,
-  "Показати усі проекти"
+  "Показати усі проєкти"
  ],
  "Show all Replication Controllers": [
   null,
@@ -1457,7 +1457,7 @@ return plural;
  ],
  "The project '{{ projName }}' does not exist.": [
   null,
-  "Проекту «{{ projName }}» не існує."
+  "Проєкту «{{ projName }}» не існує."
  ],
  "The replication controller '{{ target }}' does not exist.": [
   null,

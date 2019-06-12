@@ -137,7 +137,7 @@ return plural;
  ],
  "Cache": [
   null,
-  ""
+  "缓存"
  ],
  "Cancel": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "Disks cannot be removed from $0 VMs": [
   null,
-  ""
+  "磁盘不能从 $0 VM 删除"
  ],
  "Download the MSI from $0": [
   null,
@@ -349,7 +349,7 @@ return plural;
  ],
  "Hide Performance Options": [
   null,
-  ""
+  "隐藏性能选项"
  ],
  "Host": [
   null,
@@ -553,7 +553,7 @@ return plural;
  ],
  "No Storage Pools available": [
   null,
-  ""
+  "没有可用的存储池"
  ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
@@ -657,11 +657,11 @@ return plural;
  ],
  "Physical Disk Device": [
   null,
-  ""
+  "物理磁盘设备"
  ],
  "Physical disk device on host": [
   null,
-  ""
+  "主机上的物理磁盘设备"
  ],
  "Please enter new volume name": [
   null,
@@ -789,7 +789,7 @@ return plural;
  ],
  "Show Performance Options": [
   null,
-  ""
+  "显示性能选项"
  ],
  "Shut Down": [
   null,
@@ -809,7 +809,7 @@ return plural;
  ],
  "Source Format": [
   null,
-  ""
+  "源格式"
  ],
  "Source Path": [
   null,
@@ -937,7 +937,7 @@ return plural;
  ],
  "This volume is already used by another VM.": [
   null,
-  ""
+  "这个卷已被另外一个虚拟机使用"
  ],
  "Threads per core": [
   null,

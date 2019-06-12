@@ -87,6 +87,10 @@ return plural;
   null,
   "Добавить диск"
  ],
+ "Additional": [
+  null,
+  ""
+ ],
  "Address": [
   null,
   "Адрес"
@@ -150,6 +154,10 @@ return plural;
  "CREATE VM action failed": [
   null,
   "Не удалось выполнить операцию CREATE VM"
+ ],
+ "Cache": [
+  null,
+  ""
  ],
  "Cancel": [
   null,
@@ -243,6 +251,10 @@ return plural;
   null,
   "Ctrl + Alt + Del"
  ],
+ "Current Allocation": [
+  null,
+  ""
+ ],
  "Delete": [
   null,
   "Удалить"
@@ -290,6 +302,10 @@ return plural;
  "Disks": [
   null,
   "Диски"
+ ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
  ],
  "Download the MSI from $0": [
   null,
@@ -359,6 +375,10 @@ return plural;
   null,
   "HA:"
  ],
+ "Hide Performance Options": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "Узел"
@@ -407,6 +427,14 @@ return plural;
   null,
   "Ручное подключение"
  ],
+ "Maximum Allocation": [
+  null,
+  ""
+ ],
+ "Maximum memory could not be saved": [
+  null,
+  ""
+ ],
  "Maximum number of virtual CPUs allocated for the guest OS, which must be between 1 and $0": [
   null,
   "Максимальное количество виртуальных процессоров, выделенных для гостевой ОС, которое должно быть от 1 до $0"
@@ -414,6 +442,14 @@ return plural;
  "Memory": [
   null,
   "Память"
+ ],
+ "Memory could not be saved": [
+  null,
+  ""
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  ""
  ],
  "MiB": [
   null,
@@ -455,6 +491,10 @@ return plural;
   null,
   "Новое имя тома"
  ],
+ "No Storage Pools available": [
+  null,
+  ""
+ ],
  "No VM found in oVirt.": [
   null,
   "В vVirt нет VM."
@@ -462,6 +502,10 @@ return plural;
  "No VM is running or defined on this host": [
   null,
   "Никакая виртуальная машина не запущена или не определена на этом хосте"
+ ],
+ "No Virtual Networks": [
+  null,
+  ""
  ],
  "No boot device found": [
   null,
@@ -482,10 +526,6 @@ return plural;
  "No oVirt connection": [
   null,
   "Нет подключения oVirt"
- ],
- "No virtual networks": [
-  null,
-  "Нет виртуальных сетей"
  ],
  "None (Isolated Network)": [
   null,
@@ -510,6 +550,10 @@ return plural;
  "Ok": [
   null,
   "OK"
+ ],
+ "Only editable when the guest is shut off": [
+  null,
+  ""
  ],
  "Open": [
   null,
@@ -549,11 +593,11 @@ return plural;
  ],
  "Please provide fully qualified domain name and port of the oVirt engine.": [
   null,
-  "Предоставьте полное доменное имя и порт устройства oVirt."
+  "Укажите полное доменное имя и порт подсистемы oVirt."
  ],
  "Please provide valid oVirt engine fully qualified domain name (FQDN) and port (443 by default)": [
   null,
-  "Предоставьте действительное полное доменное имя (FQDN) и порт (0) по умолчанию для oVirt."
+  "Укажите допустимые полное доменное имя (FQDN) и порт (по умолчанию 443) для подсистемы oVirt."
  ],
  "Please refer to oVirt's $0 for more information about Remote Viewer setup.": [
   null,
@@ -613,7 +657,7 @@ return plural;
  ],
  "Readonly": [
   null,
-  "Только чтение"
+  "Только для чтения"
  ],
  "Reconnect": [
   null,
@@ -629,11 +673,11 @@ return plural;
  ],
  "Reload": [
   null,
-  "Восстановить"
+  "Перезагрузить"
  ],
  "Restart": [
   null,
-  "Перезапуск"
+  "Перезапустить"
  ],
  "Resume": [
   null,
@@ -641,7 +685,7 @@ return plural;
  ],
  "Run": [
   null,
-  "Запустить"
+  "Запуск"
  ],
  "Run Here": [
   null,
@@ -710,6 +754,10 @@ return plural;
  "Session": [
   null,
   "Сеанс"
+ ],
+ "Show Performance Options": [
+  null,
+  ""
  ],
  "Shut Down": [
   null,
@@ -967,6 +1015,10 @@ return plural;
   null,
   "подключение"
  ],
+ "control-label $0": [
+  null,
+  ""
+ ],
  "cores": [
   null,
   "ядра"
@@ -985,7 +1037,7 @@ return plural;
  ],
  "disabled": [
   null,
-  "отключено"
+  "отключён"
  ],
  "disk": [
   null,
@@ -1122,6 +1174,14 @@ return plural;
  "server": [
   null,
   "сервер"
+ ],
+ "show less": [
+  null,
+  "показывай меньше"
+ ],
+ "show more": [
+  null,
+  "показать больше"
  ],
  "shut off": [
   null,

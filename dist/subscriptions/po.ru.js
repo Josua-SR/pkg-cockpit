@@ -69,11 +69,11 @@ return plural;
  },
  "'Organization' required to register.": [
   null,
-  "«Организация», необходимая для регистрации."
+  "Название организации, необходимое для регистрации."
  ],
  "'Organization' required when using activation keys.": [
   null,
-  "«Организация» требуется при использовании ключей активации."
+  "Название организации, необходимое при использовании ключей активации."
  ],
  "Access denied": [
   null,
@@ -129,7 +129,7 @@ return plural;
  ],
  "Login/password or activation key required to register.": [
   null,
-  "Логин / пароль или ключ активации, необходимые для регистрации."
+  "Имя/пароль пользователя или ключ активации, необходимые для регистрации."
  ],
  "No installed products on the system.": [
   null,

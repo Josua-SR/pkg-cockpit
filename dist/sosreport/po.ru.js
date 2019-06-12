@@ -77,27 +77,27 @@ return plural;
  ],
  "Create Report": [
   null,
-  "Создать отчет"
+  "Создать отчёт"
  ],
  "Create diagnostic report": [
   null,
-  "Создать диагностический отчет"
+  "Создание диагностического отчёта"
  ],
  "Diagnostic reports": [
   null,
-  "Диагностические отчеты"
+  "Диагностические отчёты"
  ],
  "Done!": [
   null,
-  "Готово"
+  "Завершено."
  ],
  "Download report": [
   null,
-  "Скачать отчет"
+  "Загрузить отчёт"
  ],
  "Generating report": [
   null,
-  "Создание отчета"
+  "Создание отчёта..."
  ],
  "No archive has been created.": [
   null,
@@ -109,10 +109,10 @@ return plural;
  ],
  "The generated archive contains data considered sensitive and its content should be reviewed by the originating organization before being passed to any third party.": [
   null,
-  "Сгенерированный архив содержит данные, считающиеся чувствительными, и его содержимое должно быть пересмотрено исходящей организацией до передачи какой-либо третьей стороне."
+  "Сформированный архив содержит данные, считающиеся конфиденциальными, и его содержимое должно быть пересмотрено первоначальной организацией до передачи какой-либо третьей стороне."
  ],
  "This tool will collect system configuration and diagnostic information from this system for use with diagnosing problems with the system.": [
   null,
-  "Этот инструмент будет собирать конфигурацию системы и диагностическую информацию из этой системы для использования при диагностике проблем с системой."
+  "Этот инструмент соберёт информацию о конфигурации системы и диагностическую информацию для использования при диагностике проблем с системой."
  ]
 }));

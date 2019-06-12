@@ -157,7 +157,7 @@ return plural;
  ],
  "Cache": [
   null,
-  ""
+  "Cache"
  ],
  "Cancel": [
   null,
@@ -305,7 +305,7 @@ return plural;
  ],
  "Disks cannot be removed from $0 VMs": [
   null,
-  ""
+  "Les disques n'ont pu être retirés de $0 VMs"
  ],
  "Download the MSI from $0": [
   null,
@@ -377,7 +377,7 @@ return plural;
  ],
  "Hide Performance Options": [
   null,
-  ""
+  "Masquer les options de performance"
  ],
  "Host": [
   null,
@@ -493,7 +493,7 @@ return plural;
  ],
  "No Storage Pools available": [
   null,
-  ""
+  "Aucun pool de stockage disponible"
  ],
  "No VM found in oVirt.": [
   null,
@@ -757,7 +757,7 @@ return plural;
  ],
  "Show Performance Options": [
   null,
-  ""
+  "Afficher les options de performance"
  ],
  "Shut Down": [
   null,

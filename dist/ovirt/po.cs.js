@@ -157,7 +157,7 @@ return plural;
  ],
  "Cache": [
   null,
-  ""
+  "Mezipaměť"
  ],
  "Cancel": [
   null,
@@ -305,7 +305,7 @@ return plural;
  ],
  "Disks cannot be removed from $0 VMs": [
   null,
-  ""
+  "Disky není možné odebrat z $0 virt. strojů"
  ],
  "Download the MSI from $0": [
   null,
@@ -377,7 +377,7 @@ return plural;
  ],
  "Hide Performance Options": [
   null,
-  ""
+  "Předvolby pro výkonnost"
  ],
  "Host": [
   null,
@@ -493,7 +493,7 @@ return plural;
  ],
  "No Storage Pools available": [
   null,
-  ""
+  "Nejsou k dispozici žádné fondy úložiště"
  ],
  "No VM found in oVirt.": [
   null,
@@ -757,7 +757,7 @@ return plural;
  ],
  "Show Performance Options": [
   null,
-  ""
+  "Zobrazit předvolby pro výkonnost"
  ],
  "Shut Down": [
   null,

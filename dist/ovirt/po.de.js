@@ -815,6 +815,10 @@ return plural;
   null,
   "VDSM Service Management"
  ],
+ "VM CHANGE_NETWORK_STATE action failed": [
+  null,
+  "Die VM CHANGE_NETWORK_STATE-Aktion ist fehlgeschlagen"
+ ],
  "VM DELETE (DESTROY) action failed": [
   null,
   "Die Aktion VM DELETE (DESTROY) ist fehlgeschlagen"
@@ -822,6 +826,14 @@ return plural;
  "VM DELETE (UNDEFINE) action failed": [
   null,
   "Die Aktion VM DELETE (UNDEFINE) ist fehlgeschlagen"
+ ],
+ "VM DELETE action failed": [
+  null,
+  "VM DELETE-Aktion ist fehlgeschlagen"
+ ],
+ "VM DETACH_DISK action failed": [
+  null,
+  "VM DETACH_DISK-Aktion ist fehlgeschlagen"
  ],
  "VM FORCE OFF action failed": [
   null,
@@ -838,6 +850,10 @@ return plural;
  "VM SEND Non-Maskable Interrrupt action failed": [
   null,
   "Nicht maskierbare Interrupt-Aktion von VM SEND fehlgeschlagen"
+ ],
+ "VM SENDNMI action failed": [
+  null,
+  "VM SENDNMI-Aktion ist fehlgeschlagen"
  ],
  "VM SHUT DOWN action failed": [
   null,

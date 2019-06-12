@@ -141,7 +141,7 @@ return plural;
  ],
  "Boot order settings could not be saved": [
   null,
-  "ブート順序の設定は保存できない"
+  "ブート順序の設定は保存できませんでした"
  ],
  "Bus": [
   null,
@@ -157,7 +157,7 @@ return plural;
  ],
  "Cache": [
   null,
-  ""
+  "キャッシュ"
  ],
  "Cancel": [
   null,
@@ -305,7 +305,7 @@ return plural;
  ],
  "Disks cannot be removed from $0 VMs": [
   null,
-  ""
+  "$0 VM からディスクを削除できません"
  ],
  "Download the MSI from $0": [
   null,
@@ -377,7 +377,7 @@ return plural;
  ],
  "Hide Performance Options": [
   null,
-  ""
+  "パフォーマンスオプションを非表示にします"
  ],
  "Host": [
   null,
@@ -449,7 +449,7 @@ return plural;
  ],
  "Memory size between 128 MiB and the maximum allocation": [
   null,
-  "128 MiB から最大割り当ての間のメモリーサイズ"
+  "メモリーサイズは、128 MiB から最大割り当ての間です"
  ],
  "MiB": [
   null,
@@ -493,7 +493,7 @@ return plural;
  ],
  "No Storage Pools available": [
   null,
-  ""
+  "利用可能なストレージプールはありません"
  ],
  "No VM found in oVirt.": [
   null,
@@ -757,7 +757,7 @@ return plural;
  ],
  "Show Performance Options": [
   null,
-  ""
+  "パフォーマンスオプションを表示します"
  ],
  "Shut Down": [
   null,
@@ -937,7 +937,7 @@ return plural;
  ],
  "VM $0 failed to pause": [
   null,
-  "VM $0 の停止に失敗しました"
+  "VM $0 の一時停止に失敗しました"
  ],
  "VM $0 failed to resume": [
   null,
@@ -953,7 +953,7 @@ return plural;
  ],
  "VM $0 failed to start": [
   null,
-  "VM $0 起動に失敗しました"
+  "VM $0 は起動に失敗しました"
  ],
  "VM icon": [
   null,

@@ -297,7 +297,7 @@ return plural;
  ],
  "Asset Tag": [
   null,
-  "Tillgångsetikett"
+  "Inventariebeteckning"
  ],
  "At specific time": [
   null,

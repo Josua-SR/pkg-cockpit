@@ -69,7 +69,7 @@ return plural;
  },
  " (shared with the OS)": [
   null,
-  " (совместно с ОС)"
+  " (в общем доступе с ОС)"
  ],
  "$0 shares": [
   null,
@@ -165,9 +165,9 @@ return plural;
  ],
  "Combined usage of $0 CPU core": [
   "Combined usage of $0 CPU cores",
-  "Комбинированное использование $0 Ядро процессора",
-  "Комбинированное использование $0 Процессорные ядра",
-  "Комбинированное использование $0 Процессорные ядра"
+  "Комбинированное использование $0 ядра процессора",
+  "Комбинированное использование $0 ядер процессора",
+  "Комбинированное использование $0 ядер процессора"
  ],
  "Command": [
   null,
@@ -175,7 +175,7 @@ return plural;
  ],
  "Command can't be empty": [
   null,
-  "Команда не может быть пуста"
+  "Команда не может быть пустой"
  ],
  "Command:": [
   null,
@@ -235,7 +235,7 @@ return plural;
  ],
  "Could not reset the storage pool": [
   null,
-  "Не удалось сбросить пул хранения"
+  "Не удалось сбросить пул носителей"
  ],
  "Created": [
   null,
@@ -351,7 +351,7 @@ return plural;
  ],
  "Get new image": [
   null,
-  "Получить новое изображение"
+  "Получить новый образ"
  ],
  "Hand Held": [
   null,
@@ -387,7 +387,7 @@ return plural;
  ],
  "Image Search": [
   null,
-  "Поиск изображений"
+  "Поиск образов"
  ],
  "Image:": [
   null,
@@ -399,7 +399,7 @@ return plural;
  ],
  "Images and running containers": [
   null,
-  "Изображения и беговые контейнеры"
+  "Образы и работающие контейнеры"
  ],
  "Information about the Docker storage pool is not available.": [
   null,
@@ -503,19 +503,19 @@ return plural;
  ],
  "No containers": [
   null,
-  "Нет контейнеров"
+  "Контейнеры отсутствуют"
  ],
  "No containers that match the current filter": [
   null,
-  "Нет контейнеров, соответствующих текущему фильтру"
+  "Отсутствуют контейнеры, соответствующие текущему фильтру"
  ],
  "No images": [
   null,
-  "Нет изображений"
+  "Образы отсутствуют"
  ],
  "No images that match the current filter": [
   null,
-  "Нет изображений, соответствующих текущему фильтру"
+  "Отсутствуют образы, соответствующие текущему фильтру"
  ],
  "No results for $0": [
   null,
@@ -523,11 +523,11 @@ return plural;
  ],
  "No running containers": [
   null,
-  "Нет запущенных контейнеров"
+  "Нет работающих контейнеров"
  ],
  "No running containers that match the current filter": [
   null,
-  "Нет запущенных контейнеров, соответствующих текущему фильтру"
+  "Нет работающих контейнеров, соответствующих текущему фильтру"
  ],
  "Not authorized to access Docker on this system": [
   null,
@@ -593,7 +593,7 @@ return plural;
  ],
  "Portable": [
   null,
-  "портативный"
+  "Портативный"
  ],
  "Ports": [
   null,
@@ -625,7 +625,7 @@ return plural;
  ],
  "Reboot": [
   null,
-  "Перезагрузить"
+  "Перезагрузка"
  ],
  "Reformat and add disks": [
   null,
@@ -637,7 +637,7 @@ return plural;
  ],
  "Reset": [
   null,
-  "Сбросить"
+  "Сброс"
  ],
  "Reset Storage Pool": [
   null,
@@ -649,7 +649,7 @@ return plural;
  ],
  "Restart": [
   null,
-  "Перезапуск"
+  "Перезапустить"
  ],
  "Restart Policy": [
   null,
@@ -665,7 +665,7 @@ return plural;
  ],
  "Run": [
   null,
-  "Запустить"
+  "Запуск"
  ],
  "Run Image": [
   null,
@@ -705,7 +705,7 @@ return plural;
  ],
  "Start": [
   null,
-  "Пуск"
+  "Запустить"
  ],
  "Start Docker": [
   null,
@@ -877,7 +877,7 @@ return plural;
  ],
  "search by name, namespace or description": [
   null,
-  "поиск по имени, пространству имен или описанию"
+  "Поиск по имени, пространству имён или описанию"
  ],
  "select container": [
   null,

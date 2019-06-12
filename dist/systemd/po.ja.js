@@ -1165,7 +1165,7 @@ return plural;
  ],
  "Software-based workarounds help prevent CPU security issues. These mitigations have the side effect of reducing performance. Change these settings at your own risk.": [
   null,
-  ""
+  "ソフトウェアベースの回避策により、CPU セキュリティー問題を回避します。これらの緩和策にはパフォーマンスの低下という副次的な影響があります。リスクをご理解の上、これらの設定を変更してください。"
  ],
  "Space-saving Computer": [
   null,

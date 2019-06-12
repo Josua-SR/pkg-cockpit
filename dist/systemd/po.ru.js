@@ -69,7 +69,7 @@ return plural;
  },
  "$0 Template": [
   null,
-  "$0 шаблон"
+  "$0 Шаблон"
  ],
  "$0 is not available from any repository.": [
   null,
@@ -93,7 +93,7 @@ return plural;
  ],
  "1 min": [
   null,
-  "1 минута"
+  "1 мин"
  ],
  "1 week": [
   null,
@@ -101,51 +101,51 @@ return plural;
  ],
  "10th": [
   null,
-  "десятые"
+  "10-го числа"
  ],
  "11th": [
   null,
-  "11"
+  "11-го числа"
  ],
  "12th": [
   null,
-  "12"
+  "12-го числа"
  ],
  "13th": [
   null,
-  "13-й"
+  "13-го числа"
  ],
  "14th": [
   null,
-  "четырнадцатый"
+  "14-го числа"
  ],
  "15th": [
   null,
-  "пятнадцатый"
+  "15-го числа"
  ],
  "16th": [
   null,
-  "шестнадцатый"
+  "16-го числа"
  ],
  "17th": [
   null,
-  "семнадцатый"
+  "17-го числа"
  ],
  "18th": [
   null,
-  "восемнадцатый"
+  "18-го числа"
  ],
  "19th": [
   null,
-  "девятнадцатый"
+  "19-го числа"
  ],
  "1st": [
   null,
-  "первый"
+  "1-го числа"
  ],
  "2 min": [
   null,
-  "2 мин."
+  "2 мин"
  ],
  "20 Minutes": [
   null,
@@ -153,67 +153,67 @@ return plural;
  ],
  "20th": [
   null,
-  "двадцатый"
+  "20-го числа"
  ],
  "21st": [
   null,
-  "двадцать первый"
+  "21-го числа"
  ],
  "22nd": [
   null,
-  "двадцать второй"
+  "22-го числа"
  ],
  "23rd": [
   null,
-  "двадцать третий"
+  "23-го числа"
  ],
  "24th": [
   null,
-  "двадцать четвёртая"
+  "24-го числа"
  ],
  "25th": [
   null,
-  "двадцать пятый"
+  "25-го числа"
  ],
  "26th": [
   null,
-  "двадцать шестой"
+  "26-го числа"
  ],
  "27th": [
   null,
-  "двадцать седьмой"
+  "27-го числа"
  ],
  "28th": [
   null,
-  "двадцать восьмой"
+  "28-го числа"
  ],
  "29th": [
   null,
-  "двадцать девятая"
+  "29-го числа"
  ],
  "2nd": [
   null,
-  "второй"
+  "2-го числа"
  ],
  "3 min": [
   null,
-  "3 мин."
+  "3 мин"
  ],
  "30th": [
   null,
-  "тридцатые"
+  "30-го числа"
  ],
  "31st": [
   null,
-  "тридцать первый"
+  "31-го числа"
  ],
  "3rd": [
   null,
-  "третий"
+  "3-го числа"
  ],
  "4 min": [
   null,
-  "4 мин."
+  "4 мин"
  ],
  "40 Minutes": [
   null,
@@ -221,7 +221,7 @@ return plural;
  ],
  "4th": [
   null,
-  "четвёртая"
+  "4-го числа"
  ],
  "5 Minutes": [
   null,
@@ -229,7 +229,7 @@ return plural;
  ],
  "5 min": [
   null,
-  "5 минут"
+  "5 мин"
  ],
  "5 minutes": [
   null,
@@ -237,7 +237,7 @@ return plural;
  ],
  "5th": [
   null,
-  "пятые"
+  "5-го числа"
  ],
  "6 hours": [
   null,
@@ -249,19 +249,19 @@ return plural;
  ],
  "6th": [
   null,
-  "шестые"
+  "6-го числа"
  ],
  "7th": [
   null,
-  "седьмые"
+  "7-го числа"
  ],
  "8th": [
   null,
-  "восьмых"
+  "8-го числа"
  ],
  "9th": [
   null,
-  "девятую"
+  "9-го числа"
  ],
  "Additional packages:": [
   null,
@@ -273,7 +273,7 @@ return plural;
  ],
  "After": [
   null,
-  "После"
+  "Через"
  ],
  "After system boot": [
   null,
@@ -285,7 +285,7 @@ return plural;
  ],
  "All": [
   null,
-  ""
+  "Все"
  ],
  "All In One": [
   null,
@@ -293,19 +293,19 @@ return plural;
  ],
  "Appearance:": [
   null,
-  ""
+  "Стиль оформления:"
  ],
  "Asset Tag": [
   null,
-  "Тег секции"
+  "Ярлык/Тег актива"
  ],
  "At specific time": [
   null,
-  "В определенное время"
+  "В определённое время"
  ],
  "Automatic Startup": [
   null,
-  ""
+  "Автоматический запуск"
  ],
  "Automatically using NTP": [
   null,
@@ -337,7 +337,7 @@ return plural;
  ],
  "Black": [
   null,
-  ""
+  "Чёрный"
  ],
  "Blade": [
   null,
@@ -373,7 +373,7 @@ return plural;
  ],
  "Cached": [
   null,
-  "Сохраненная копия"
+  "Кэшировано"
  ],
  "Cancel": [
   null,
@@ -437,11 +437,11 @@ return plural;
  ],
  "Conflicted By": [
   null,
-  "Конфликт"
+  "В конфликте с"
  ],
  "Conflicts": [
   null,
-  "Конфликты"
+  "Конфликтует с"
  ],
  "Consists Of": [
   null,
@@ -461,7 +461,7 @@ return plural;
  ],
  "Create Timers": [
   null,
-  "Создание таймеров"
+  "Создание таймера"
  ],
  "Critical and above": [
   null,
@@ -477,7 +477,7 @@ return plural;
  ],
  "Dark": [
   null,
-  ""
+  "Тёмный"
  ],
  "Debug and above": [
   null,
@@ -513,7 +513,7 @@ return plural;
  ],
  "Disabled": [
   null,
-  "Выключено"
+  "Отключён"
  ],
  "Disk I/O": [
   null,
@@ -529,7 +529,7 @@ return plural;
  ],
  "Don't Repeat": [
   null,
-  "Не повторяйте"
+  "Без повтора"
  ],
  "Downloading $0": [
   null,
@@ -545,7 +545,7 @@ return plural;
  ],
  "Enable Forcefully": [
   null,
-  "Включить принудительно"
+  "Принудительное включение"
  ],
  "Enable stored metrics…": [
   null,
@@ -553,7 +553,7 @@ return plural;
  ],
  "Enabled": [
   null,
-  "Включено"
+  "Включен"
  ],
  "Enhancement Updates Available": [
   null,
@@ -581,7 +581,7 @@ return plural;
  ],
  "Filter by name or description...": [
   null,
-  ""
+  "Фильтровать по имени или описанию..."
  ],
  "Friday": [
   null,
@@ -605,7 +605,7 @@ return plural;
  ],
  "Hardware": [
   null,
-  "Физическое"
+  "Оборудование"
  ],
  "Hardware Information": [
   null,
@@ -617,7 +617,7 @@ return plural;
  ],
  "Hour : Minute": [
   null,
-  "Время: минута"
+  "Часы : Минуты"
  ],
  "Hour needs to be a number between 0-23": [
   null,
@@ -625,7 +625,7 @@ return plural;
  ],
  "Hours": [
   null,
-  "Часы"
+  "час."
  ],
  "I/O Wait": [
   null,
@@ -713,11 +713,11 @@ return plural;
  ],
  "Last Trigger": [
   null,
-  "Последний триггер"
+  "Последнее срабатывание"
  ],
  "Light": [
   null,
-  ""
+  "Светлый"
  ],
  "Load earlier entries": [
   null,
@@ -745,7 +745,7 @@ return plural;
  ],
  "Machine ID": [
   null,
-  "ИД машины"
+  "Идентификатор системы"
  ],
  "Machine SSH Key Fingerprints": [
   null,
@@ -761,11 +761,11 @@ return plural;
  ],
  "Mask": [
   null,
-  "Маска"
+  "Применить маску"
  ],
  "Mask Forcefully": [
   null,
-  "Маска насильно"
+  "Принудительное применение маски"
  ],
  "Memory": [
   null,
@@ -793,7 +793,7 @@ return plural;
  ],
  "Minutes": [
   null,
-  "Минуты"
+  "мин."
  ],
  "Mitigations": [
   null,
@@ -829,7 +829,7 @@ return plural;
  ],
  "Next Run": [
   null,
-  "Следующий прогон"
+  "Следующий запуск"
  ],
  "Nice": [
   null,
@@ -937,7 +937,7 @@ return plural;
  ],
  "Portable": [
   null,
-  "портативный"
+  "Портативный"
  ],
  "Power Options": [
   null,
@@ -945,15 +945,19 @@ return plural;
  ],
  "Preset": [
   null,
-  "Предустановленная"
+  "Предустановка"
  ],
  "Preset Forcefully": [
   null,
-  "Предварительно установленный"
+  "Принудительная предустановка"
  ],
  "Pretty Host Name": [
   null,
   "Довольно имя хоста"
+ ],
+ "Previous boot": [
+  null,
+  ""
  ],
  "Problem details": [
   null,
@@ -993,7 +997,7 @@ return plural;
  ],
  "Reboot": [
   null,
-  "Перезагрузить"
+  "Перезагрузка"
  ],
  "Recent": [
   null,
@@ -1001,7 +1005,7 @@ return plural;
  ],
  "Reload": [
   null,
-  "Восстановить"
+  "Перезагрузить"
  ],
  "Reload Propagated From": [
   null,
@@ -1017,19 +1021,19 @@ return plural;
  ],
  "Repeat Daily": [
   null,
-  "Повторить ежедневно"
+  "Повторять ежедневно"
  ],
  "Repeat Hourly": [
   null,
-  "Повторить почасово"
+  "Повторять ежечасно"
  ],
  "Repeat Monthly": [
   null,
-  "Повторить месяц"
+  "Повторять ежемесячно"
  ],
  "Repeat Weekly": [
   null,
-  "Повторить еженедельно"
+  "Повторять еженедельно"
  ],
  "Repeat Yearly": [
   null,
@@ -1041,7 +1045,7 @@ return plural;
  ],
  "Reported": [
   null,
-  "сообщается"
+  ""
  ],
  "Reporter 'reporter-ureport' not found.": [
   null,
@@ -1053,11 +1057,11 @@ return plural;
  ],
  "Required By": [
   null,
-  "Требуется"
+  "Требуется для"
  ],
  "Requires": [
   null,
-  "Требует"
+  "Требуются"
  ],
  "Requisite": [
   null,
@@ -1069,19 +1073,19 @@ return plural;
  ],
  "Reset": [
   null,
-  "Сбросить"
+  "Сброс"
  ],
  "Restart": [
   null,
-  "Перезапуск"
+  "Перезапустить"
  ],
  "Run": [
   null,
-  "Запустить"
+  "Запуск"
  ],
  "Running Since": [
   null,
-  ""
+  "Время запуска"
  ],
  "Saturday": [
   null,
@@ -1101,11 +1105,11 @@ return plural;
  ],
  "Seconds": [
   null,
-  "Секунды"
+  "сек."
  ],
  "Secure Shell Keys": [
   null,
-  "Защищенные ключи ключей"
+  "Ключи SSH"
  ],
  "Security Updates Available": [
   null,
@@ -1117,11 +1121,11 @@ return plural;
  ],
  "Service Logs": [
   null,
-  "Журналы обслуживания"
+  "Журналы службы"
  ],
  "Service name": [
   null,
-  "Наименование услуги"
+  "Название службы"
  ],
  "Services": [
   null,
@@ -1173,7 +1177,7 @@ return plural;
  ],
  "Start": [
   null,
-  "Пуск"
+  "Запустить"
  ],
  "State": [
   null,
@@ -1301,7 +1305,7 @@ return plural;
  ],
  "This unit is not designed to be enabled explicitly.": [
   null,
-  "Это устройство не предназначено для включения явно."
+  "Этот элемент не предназначено для включения явно."
  ],
  "Thursday": [
   null,
@@ -1349,7 +1353,7 @@ return plural;
  ],
  "Unmask": [
   null,
-  "Разоблачать"
+  "Снять маску"
  ],
  "Updates Available": [
   null,
@@ -1357,9 +1361,9 @@ return plural;
  ],
  "Usage of $0 CPU core": [
   "Usage of $0 CPU cores",
-  "Использование $0 Ядро процессора",
-  "Использование $0 Процессорные ядра",
-  "Использование $0 Процессорные ядра"
+  "Использование $0 ядра процессора",
+  "Использование $0 ядер процессора",
+  "Использование $0 ядер процессора"
  ],
  "Used": [
   null,
@@ -1383,11 +1387,11 @@ return plural;
  ],
  "Wanted By": [
   null,
-  "разыскивается"
+  "Желателен для"
  ],
  "Wants": [
   null,
-  "хочет"
+  "Желательны"
  ],
  "Warning and above": [
   null,
@@ -1399,11 +1403,11 @@ return plural;
  ],
  "Weeks": [
   null,
-  "недели"
+  "нед."
  ],
  "White": [
   null,
-  ""
+  "Белый"
  ],
  "[$0 bytes of binary data]": [
   null,
@@ -1423,9 +1427,9 @@ return plural;
  ],
  "of $0 CPU core": [
   "of $0 CPU cores",
-  "из $0 Ядро процессора",
-  "из $0 Процессорные ядра",
-  "из $0 Процессорные ядра"
+  "из $0 ядра процессора",
+  "из $0 ядер процессора",
+  "из $0 ядер процессора"
  ],
  "undefined": [
   null,

@@ -73,15 +73,15 @@ return plural;
  ],
  "Account Expiration": [
   null,
-  "Срок действия учетной записи"
+  "Срок действия учётной записи"
  ],
  "Account not available or cannot be edited.": [
   null,
-  "Учетная запись недоступна или не может быть изменена."
+  "Учётная запись недоступна или не может быть изменена."
  ],
  "Accounts": [
   null,
-  "Счета"
+  "Учётные записи"
  ],
  "Add key": [
   null,
@@ -97,11 +97,11 @@ return plural;
  ],
  "Authorized Public SSH Keys": [
   null,
-  "Авторизованные общедоступные SSH-ключи"
+  "Авторизованные открытые SSH-ключи"
  ],
  "Back to Accounts": [
   null,
-  "Вернуться к учетным записям"
+  "Вернуться к учётным записям"
  ],
  "Cancel": [
   null,
@@ -117,7 +117,7 @@ return plural;
  ],
  "Confirm": [
   null,
-  "Подтвердить"
+  "Подтверждение пароля"
  ],
  "Confirm New Password": [
   null,
@@ -133,7 +133,7 @@ return plural;
  ],
  "Create New Account": [
   null,
-  "Создать новый аккаунт"
+  "Создать учётную запись"
  ],
  "Delete": [
   null,
@@ -197,15 +197,15 @@ return plural;
  ],
  "Last Login": [
   null,
-  "Последний Войти"
+  "Последний вход"
  ],
  "Local Accounts": [
   null,
-  "Местные учетные записи"
+  "Локальные учётные записи"
  ],
  "Lock Account": [
   null,
-  "Учетная запись"
+  "Заблокировать учётную запись"
  ],
  "Lock account on $0": [
   null,
@@ -229,7 +229,7 @@ return plural;
  ],
  "New Password": [
   null,
-  "новый пароль"
+  "Новый пароль"
  ],
  "New password was not accepted": [
   null,
@@ -249,7 +249,7 @@ return plural;
  ],
  "Old Password": [
   null,
-  "Прежний пароль"
+  "Старый пароль"
  ],
  "Old password not accepted": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "Paste the contents of your public SSH key file here": [
   null,
-  "Вставьте содержимое своего общедоступного ключевого файла SSH здесь."
+  "Вставьте сюда содержимое вашего файла открытого SSH-ключа."
  ],
  "Please specify an expiration date": [
   null,
@@ -301,7 +301,7 @@ return plural;
  ],
  "Reset": [
   null,
-  "Сбросить"
+  "Сброс"
  ],
  "Roles": [
   null,
@@ -353,11 +353,11 @@ return plural;
  ],
  "Unable to delete root account": [
   null,
-  "Не удалось удалить учетную запись root"
+  "Невозможно удалить учётную запись суперпользователя"
  ],
  "Unable to rename root account": [
   null,
-  "Не удалось переименовать учетную запись root"
+  "Невозможно переименовать учётную запись суперпользователя"
  ],
  "Unexpected error": [
   null,
@@ -389,6 +389,6 @@ return plural;
  ],
  "page-title\u0004Accounts": [
   null,
-  "Счета"
+  "Учётные записи"
  ]
 }));
