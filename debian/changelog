@@ -1,10 +1,10 @@
-cockpit (196-1) UNRELEASED; urgency=medium
+cockpit (196-1) experimental; urgency=medium
 
   * New upstream release:
     - machines: Install from iso URL
     - machines: Show IP of network interfaces
 
- -- Martin Pitt <mpitt@debian.org>  Wed, 12 Jun 2019 12:09:46 +0000
+ -- Martin Pitt <mpitt@debian.org>  Wed, 12 Jun 2019 12:11:02 +0000
 
 cockpit (195-1) experimental; urgency=medium
 
