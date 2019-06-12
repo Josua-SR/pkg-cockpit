@@ -69,7 +69,7 @@ return plural;
  },
  "$0 Network": [
   null,
-  ""
+  "$0 Сеть"
  ],
  "$0 is available for most operating systems. To install it, search for it in GNOME Software or run the following:": [
   null,
@@ -86,6 +86,10 @@ return plural;
  "Add Disk": [
   null,
   "Добавить диск"
+ ],
+ "Additional": [
+  null,
+  ""
  ],
  "Address": [
   null,
@@ -128,6 +132,10 @@ return plural;
   "автобус"
  ],
  "CPU Type": [
+  null,
+  ""
+ ],
+ "Cache": [
   null,
   ""
  ],
@@ -203,6 +211,10 @@ return plural;
   null,
   "Ctrl + Alt + Del"
  ],
+ "Current Allocation": [
+  null,
+  ""
+ ],
  "DHCP Range": [
   null,
   ""
@@ -233,7 +245,7 @@ return plural;
  ],
  "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
   null,
-  ""
+  "Удаление неактивного пула носителей только отменит определение пула. Его содержимое не будет удалено."
  ],
  "Device": [
   null,
@@ -266,6 +278,10 @@ return plural;
  "Disks": [
   null,
   "Диски"
+ ],
+ "Disks cannot be removed from $0 VMs": [
+  null,
+  ""
  ],
  "Download the MSI from $0": [
   null,
@@ -331,6 +347,10 @@ return plural;
   null,
   "Графическая консоль в Desktop Viewer"
  ],
+ "Hide Performance Options": [
+  null,
+  ""
+ ],
  "Host": [
   null,
   "Узел"
@@ -360,6 +380,14 @@ return plural;
   "Немедленно запустите VM"
  ],
  "In most configurations, macvtap does not work for host to guest network communication.": [
+  null,
+  ""
+ ],
+ "Initiator": [
+  null,
+  ""
+ ],
+ "Initiator IQN should not be empty": [
   null,
   ""
  ],
@@ -419,7 +447,15 @@ return plural;
   null,
   "Ручное подключение"
  ],
+ "Maximum Allocation": [
+  null,
+  ""
+ ],
  "Maximum Transmission Unit": [
+  null,
+  ""
+ ],
+ "Maximum memory could not be saved": [
   null,
   ""
  ],
@@ -430,6 +466,14 @@ return plural;
  "Memory": [
   null,
   "Память"
+ ],
+ "Memory could not be saved": [
+  null,
+  ""
+ ],
+ "Memory size between 128 MiB and the maximum allocation": [
+  null,
+  ""
  ],
  "MiB": [
   null,
@@ -469,7 +513,7 @@ return plural;
  ],
  "Netmask": [
   null,
-  ""
+  "Маска сети"
  ],
  "Network $0 failed to get activated": [
   null,
@@ -507,6 +551,10 @@ return plural;
   null,
   "Новое имя тома"
  ],
+ "No Storage Pools available": [
+  null,
+  ""
+ ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
   "Для этого пула хранения не определены тома хранения"
@@ -514,6 +562,10 @@ return plural;
  "No VM is running or defined on this host": [
   null,
   "Никакая виртуальная машина не запущена или не определена на этом хосте"
+ ],
+ "No Virtual Networks": [
+  null,
+  ""
  ],
  "No boot device found": [
   null,
@@ -539,13 +591,13 @@ return plural;
   null,
   ""
  ],
+ "No networks available": [
+  null,
+  ""
+ ],
  "No storage pool is defined on this host": [
   null,
   "На этом хосте не определен пул хранения"
- ],
- "No virtual networks": [
-  null,
-  "Нет виртуальных сетей"
  ],
  "None (Isolated Network)": [
   null,
@@ -556,6 +608,10 @@ return plural;
   "Поставщик ОС"
  ],
  "One or more selected volumes are used by domains. Detach the disks first to allow volume deletion.": [
+  null,
+  ""
+ ],
+ "Only editable when the guest is shut off": [
   null,
   ""
  ],
@@ -596,6 +652,14 @@ return plural;
   ""
  ],
  "Persistent": [
+  null,
+  ""
+ ],
+ "Physical Disk Device": [
+  null,
+  ""
+ ],
+ "Physical disk device on host": [
   null,
   ""
  ],
@@ -653,7 +717,7 @@ return plural;
  ],
  "Readonly": [
   null,
-  "Только чтение"
+  "Только для чтения"
  ],
  "Reconnect": [
   null,
@@ -665,7 +729,7 @@ return plural;
  ],
  "Restart": [
   null,
-  "Перезапуск"
+  "Перезапустить"
  ],
  "Resume": [
   null,
@@ -681,7 +745,7 @@ return plural;
  ],
  "Run": [
   null,
-  "Запустить"
+  "Запуск"
  ],
  "Run when host boots": [
   null,
@@ -723,6 +787,10 @@ return plural;
   null,
   "Сеанс"
  ],
+ "Show Performance Options": [
+  null,
+  ""
+ ],
  "Shut Down": [
   null,
   "Выключение"
@@ -738,6 +806,10 @@ return plural;
  "Source": [
   null,
   "Источник"
+ ],
+ "Source Format": [
+  null,
+  ""
  ],
  "Source Path": [
   null,
@@ -767,6 +839,10 @@ return plural;
   null,
   "Состояние"
  ],
+ "Storage": [
+  null,
+  "Хранилище"
+ ],
  "Storage Pool $0 failed to get activated": [
   null,
   ""
@@ -786,10 +862,6 @@ return plural;
  "Storage Pools": [
   null,
   "Бассейны"
- ],
- "Storage Size": [
-  null,
-  "Размер хранилища"
  ],
  "Storage Volumes": [
   null,
@@ -863,6 +935,10 @@ return plural;
   null,
   "Пул пуст"
  ],
+ "This volume is already used by another VM.": [
+  null,
+  ""
+ ],
  "Threads per core": [
   null,
   "Потоков на ядро"
@@ -898,6 +974,10 @@ return plural;
  "Unplug": [
   null,
   "Отключайте"
+ ],
+ "Up to $0 $1 available on the host": [
+  null,
+  ""
  ],
  "Usage": [
   null,
@@ -1003,9 +1083,13 @@ return plural;
   null,
   ""
  ],
+ "You need to select the most closely matching OS vendor and Operating System": [
+  null,
+  ""
+ ],
  "active": [
   null,
-  "активных"
+  "Активно"
  ],
  "bridge": [
   null,
@@ -1014,6 +1098,10 @@ return plural;
  "cdrom": [
   null,
   "CDROM"
+ ],
+ "control-label $0": [
+  null,
+  ""
  ],
  "crashed": [
   null,
@@ -1029,7 +1117,7 @@ return plural;
  ],
  "disabled": [
   null,
-  "отключено"
+  "отключён"
  ],
  "disk": [
   null,
@@ -1063,7 +1151,15 @@ return plural;
   null,
   "hostdev"
  ],
+ "iSCSI Initiator IQN": [
+  null,
+  ""
+ ],
  "iSCSI Target": [
+  null,
+  ""
+ ],
+ "iSCSI direct Target": [
   null,
   ""
  ],
@@ -1077,7 +1173,7 @@ return plural;
  ],
  "inactive": [
   null,
-  "неактивный"
+  "Неактивно"
  ],
  "mcast": [
   null,
@@ -1114,6 +1210,14 @@ return plural;
  "server": [
   null,
   "сервер"
+ ],
+ "show less": [
+  null,
+  "показывай меньше"
+ ],
+ "show more": [
+  null,
+  "показать больше"
  ],
  "shut off": [
   null,

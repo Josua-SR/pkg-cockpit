@@ -169,7 +169,7 @@ return plural;
  ],
  "Add Zone": [
   null,
-  ""
+  "Přidat zónu"
  ],
  "Add ports to the following zones:": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Add zone": [
   null,
-  ""
+  "Přidat zónu"
  ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "Allowed Addresses": [
   null,
-  ""
+  "Adresy, které umožněny"
  ],
  "Allowed Services": [
   null,
@@ -345,7 +345,7 @@ return plural;
  ],
  "Custom zones": [
   null,
-  ""
+  "Uživatelsky určené zóny"
  ],
  "DNS": [
   null,
@@ -397,7 +397,7 @@ return plural;
  ],
  "Entire subnet": [
   null,
-  ""
+  "Celá podsíť"
  ],
  "Ethernet MAC": [
   null,
@@ -429,7 +429,7 @@ return plural;
  ],
  "Failed to add zone": [
   null,
-  ""
+  "Zónu se nepodařilo přidat"
  ],
  "Failed to remove service": [
   null,
@@ -513,7 +513,7 @@ return plural;
  ],
  "Included services": [
   null,
-  ""
+  "Obsažené služby"
  ],
  "Interfaces": [
   null,
@@ -657,7 +657,7 @@ return plural;
  ],
  "No description available": [
   null,
-  ""
+  "Není k dispozici žádný popis"
  ],
  "No open ports": [
   null,
@@ -761,7 +761,7 @@ return plural;
  ],
  "Range": [
   null,
-  ""
+  "Rozsah"
  ],
  "Range must be strictly ordered": [
   null,
@@ -845,7 +845,7 @@ return plural;
  ],
  "Sorted from least trusted to most trusted": [
   null,
-  ""
+  "Seřazeno od nejméně po nejvíce důvěryhodné"
  ],
  "Spanning Tree Protocol": [
   null,
@@ -925,7 +925,7 @@ return plural;
  ],
  "Trust level": [
   null,
-  ""
+  "Stupeň důvěryhodnosti"
  ],
  "UDP": [
   null,

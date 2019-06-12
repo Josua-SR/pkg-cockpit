@@ -125,7 +125,7 @@ return plural;
  ],
  "Boot order settings could not be saved": [
   null,
-  "ブート順序の設定は保存できない"
+  "ブート順序の設定は保存できませんでした"
  ],
  "Bus": [
   null,
@@ -137,7 +137,7 @@ return plural;
  ],
  "Cache": [
   null,
-  ""
+  "キャッシュ"
  ],
  "Cancel": [
   null,
@@ -241,11 +241,11 @@ return plural;
  ],
  "Delete the Volumes inside this Pool": [
   null,
-  "このプール内のボリュームを削除"
+  "このプール内のボリュームを削除します"
  ],
  "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
   null,
-  "停止状態のストレージプールを削除すると、プールの定義のみを解除することになります。コンテンツは削除されません。"
+  "停止状態のストレージプールの削除は、プールの定義を解除するだけです。コンテンツは削除されません。"
  ],
  "Device": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "Disks cannot be removed from $0 VMs": [
   null,
-  ""
+  "$0 VM からディスクを削除できません"
  ],
  "Download the MSI from $0": [
   null,
@@ -349,7 +349,7 @@ return plural;
  ],
  "Hide Performance Options": [
   null,
-  ""
+  "パフォーマンスオプションを非表示にします"
  ],
  "Host": [
   null,
@@ -473,7 +473,7 @@ return plural;
  ],
  "Memory size between 128 MiB and the maximum allocation": [
   null,
-  "128 MiB から最大割り当ての間のメモリーサイズ"
+  "メモリーサイズは、128 MiB から最大割り当ての間です"
  ],
  "MiB": [
   null,
@@ -537,7 +537,7 @@ return plural;
  ],
  "Network Selection does not support PXE.": [
   null,
-  "選択されたネットワークでは PXE がサポートされていません。"
+  "ネットワーク選択では PXE がサポートされていません。"
  ],
  "Network interface settings could not be saved": [
   null,
@@ -553,7 +553,7 @@ return plural;
  ],
  "No Storage Pools available": [
   null,
-  ""
+  "利用可能なストレージプールはありません"
  ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
@@ -657,11 +657,11 @@ return plural;
  ],
  "Physical Disk Device": [
   null,
-  ""
+  "物理ディスクデバイス"
  ],
  "Physical disk device on host": [
   null,
-  ""
+  "ホスト上の物理ディスクデバイス"
  ],
  "Please enter new volume name": [
   null,
@@ -789,7 +789,7 @@ return plural;
  ],
  "Show Performance Options": [
   null,
-  ""
+  "パフォーマンスオプションを表示します"
  ],
  "Shut Down": [
   null,
@@ -809,7 +809,7 @@ return plural;
  ],
  "Source Format": [
   null,
-  ""
+  "ソースフォーマット"
  ],
  "Source Path": [
   null,
@@ -845,11 +845,11 @@ return plural;
  ],
  "Storage Pool $0 failed to get activated": [
   null,
-  ""
+  "ストレージプール $0 は、アクティベートに失敗しました"
  ],
  "Storage Pool $0 failed to get deactivated": [
   null,
-  ""
+  "ストレージプール $0 は、停止に失敗しました"
  ],
  "Storage Pool Name": [
   null,
@@ -869,7 +869,7 @@ return plural;
  ],
  "Storage Volumes could not be deleted": [
   null,
-  ""
+  "ストレージボリュームは削除できませんでした"
  ],
  "System": [
   null,
@@ -937,7 +937,7 @@ return plural;
  ],
  "This volume is already used by another VM.": [
   null,
-  ""
+  "このボリュームは、別の VM によってすでに使用されています。"
  ],
  "Threads per core": [
   null,
@@ -1021,7 +1021,7 @@ return plural;
  ],
  "VM $0 failed to pause": [
   null,
-  "VM $0 の停止に失敗しました"
+  "VM $0 の一時停止に失敗しました"
  ],
  "VM $0 failed to resume": [
   null,
@@ -1037,7 +1037,7 @@ return plural;
  ],
  "VM $0 failed to start": [
   null,
-  "VM $0 起動に失敗しました"
+  "VM $0 は起動に失敗しました"
  ],
  "VNC": [
   null,
@@ -1085,7 +1085,7 @@ return plural;
  ],
  "You need to select the most closely matching OS vendor and Operating System": [
   null,
-  ""
+  "最も合致する OS ベンダーおよびオペレーティングシステムを選択しなければなりません"
  ],
  "active": [
   null,

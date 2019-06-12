@@ -169,7 +169,7 @@ return plural;
  ],
  "Add Zone": [
   null,
-  ""
+  "ゾーンの追加"
  ],
  "Add ports to the following zones:": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Add zone": [
   null,
-  ""
+  "ゾーンの追加"
  ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "Allowed Addresses": [
   null,
-  ""
+  "許可されたアドレス"
  ],
  "Allowed Services": [
   null,
@@ -297,7 +297,7 @@ return plural;
  ],
  "Comma-separated ports, ranges, and aliases are accepted": [
   null,
-  "コンマで区切られたポート、範囲、およびエイリアスは許容される"
+  "コンマで区切られたポート、範囲、およびエイリアスは使用できます"
  ],
  "Configure": [
   null,
@@ -345,7 +345,7 @@ return plural;
  ],
  "Custom zones": [
   null,
-  ""
+  "カスタムゾーン"
  ],
  "DNS": [
   null,
@@ -397,7 +397,7 @@ return plural;
  ],
  "Entire subnet": [
   null,
-  ""
+  "サブネット全体"
  ],
  "Ethernet MAC": [
   null,
@@ -429,7 +429,7 @@ return plural;
  ],
  "Failed to add zone": [
   null,
-  ""
+  "ゾーンの追加に失敗しました"
  ],
  "Failed to remove service": [
   null,
@@ -513,7 +513,7 @@ return plural;
  ],
  "Included services": [
   null,
-  ""
+  "含まれているサービス"
  ],
  "Interfaces": [
   null,
@@ -657,7 +657,7 @@ return plural;
  ],
  "No description available": [
   null,
-  ""
+  "利用可能な説明はありません"
  ],
  "No open ports": [
   null,
@@ -761,7 +761,7 @@ return plural;
  ],
  "Range": [
   null,
-  ""
+  "範囲"
  ],
  "Range must be strictly ordered": [
   null,
@@ -845,7 +845,7 @@ return plural;
  ],
  "Sorted from least trusted to most trusted": [
   null,
-  ""
+  "信頼性が最も低い順から最も高い順による並べ替え"
  ],
  "Spanning Tree Protocol": [
   null,
@@ -925,7 +925,7 @@ return plural;
  ],
  "Trust level": [
   null,
-  ""
+  "信頼レベル"
  ],
  "UDP": [
   null,

@@ -73,7 +73,11 @@ return plural;
  ],
  "(Optional)": [
   null,
-  ""
+  "(необязательно)"
+ ],
+ "(default)": [
+  null,
+  "(по умолчанию)"
  ],
  "1 day": [
   null,
@@ -123,6 +127,10 @@ return plural;
   null,
   "Активный и запасные"
  ],
+ "Active zones": [
+  null,
+  ""
+ ],
  "Adaptive load balancing": [
   null,
   "Адаптивная балансировка нагрузки"
@@ -137,7 +145,7 @@ return plural;
  ],
  "Add Bond": [
   null,
-  "Добавить облигацию"
+  "Добавить связь"
  ],
  "Add Bridge": [
   null,
@@ -158,6 +166,22 @@ return plural;
  "Add VLAN": [
   null,
   "Добавить VLAN"
+ ],
+ "Add Zone": [
+  null,
+  ""
+ ],
+ "Add ports to the following zones:": [
+  null,
+  ""
+ ],
+ "Add services to following zones:": [
+  null,
+  ""
+ ],
+ "Add zone": [
+  null,
+  ""
  ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -182,6 +206,10 @@ return plural;
  "Addresses": [
   null,
   "Адреса"
+ ],
+ "Allowed Addresses": [
+  null,
+  ""
  ],
  "Allowed Services": [
   null,
@@ -237,7 +265,7 @@ return plural;
  ],
  "Broadcast": [
   null,
-  "Рассылка"
+  "Трансляция"
  ],
  "Broken configuration": [
   null,
@@ -315,6 +343,10 @@ return plural;
   null,
   ""
  ],
+ "Custom zones": [
+  null,
+  ""
+ ],
  "DNS": [
   null,
   "DNS"
@@ -347,17 +379,25 @@ return plural;
   null,
   "Удаление <b>$0</b> будет разорвать соединение с сервером и сделает пользовательский интерфейс администрирования недоступным."
  ],
+ "Description": [
+  null,
+  "Описание"
+ ],
  "Details": [
   null,
   "Подробности"
  ],
  "Disabled": [
   null,
-  "Выключено"
+  "Отключён"
  ],
  "Enable Service": [
   null,
   "Включить службу"
+ ],
+ "Entire subnet": [
+  null,
+  ""
  ],
  "Ethernet MAC": [
   null,
@@ -382,6 +422,18 @@ return plural;
  "Failed": [
   null,
   "Сбой"
+ ],
+ "Failed to add service": [
+  null,
+  ""
+ ],
+ "Failed to add zone": [
+  null,
+  ""
+ ],
+ "Failed to remove service": [
+  null,
+  ""
  ],
  "Filter Services": [
   null,
@@ -423,6 +475,10 @@ return plural;
   null,
   "IP"
  ],
+ "IP Range": [
+  null,
+  ""
+ ],
  "IP Settings": [
   null,
   "Настройки IP"
@@ -453,7 +509,11 @@ return plural;
  ],
  "Inactive": [
   null,
-  "Не активно"
+  "Неактивно"
+ ],
+ "Included services": [
+  null,
+  ""
  ],
  "Interfaces": [
   null,
@@ -587,13 +647,25 @@ return plural;
   null,
   "Нет"
  ],
+ "No active zones": [
+  null,
+  ""
+ ],
  "No carrier": [
   null,
   "Нет перевозчика"
  ],
+ "No description available": [
+  null,
+  ""
+ ],
  "No open ports": [
   null,
   "Нет открытых портов"
+ ],
+ "None": [
+  null,
+  "Нет"
  ],
  "Not available": [
   null,
@@ -609,7 +681,7 @@ return plural;
  ],
  "Parent": [
   null,
-  "Родительский"
+  "Родитель"
  ],
  "Parent $parent": [
   null,
@@ -649,7 +721,7 @@ return plural;
  ],
  "Port number and type do not match": [
   null,
-  ""
+  "Номер и тип порта не совпадают"
  ],
  "Ports": [
   null,
@@ -661,7 +733,7 @@ return plural;
  ],
  "Prefix length or Netmask": [
   null,
-  "Длина префикса или сетевая маска"
+  "Длина префикса или маска сети"
  ],
  "Preparing": [
   null,
@@ -687,13 +759,17 @@ return plural;
   null,
   "Случайный"
  ],
+ "Range": [
+  null,
+  ""
+ ],
  "Range must be strictly ordered": [
   null,
   ""
  ],
  "Reboot": [
   null,
-  "Перезагрузить"
+  "Перезагрузка"
  ],
  "Receiving": [
   null,
@@ -702,6 +778,14 @@ return plural;
  "Remove $0": [
   null,
   "Удалить $0"
+ ],
+ "Remove service": [
+  null,
+  ""
+ ],
+ "Remove service from zones": [
+  null,
+  ""
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -713,7 +797,7 @@ return plural;
  ],
  "Round Robin": [
   null,
-  "По-круговой"
+  "Циклический перебор"
  ],
  "Routes": [
   null,
@@ -741,7 +825,7 @@ return plural;
  ],
  "Sending": [
   null,
-  "Отправка"
+  "Передача"
  ],
  "Service": [
   null,
@@ -758,6 +842,10 @@ return plural;
  "Shared": [
   null,
   "Общее"
+ ],
+ "Sorted from least trusted to most trusted": [
+  null,
+  ""
  ],
  "Spanning Tree Protocol": [
   null,
@@ -835,6 +923,10 @@ return plural;
   null,
   "Здесь невозможно управлять этим устройством."
  ],
+ "Trust level": [
+  null,
+  ""
+ ],
  "UDP": [
   null,
   "UDP"
@@ -869,11 +961,11 @@ return plural;
  ],
  "VLAN Id": [
   null,
-  "VLAN Id"
+  "Идентификатор VLAN"
  ],
  "VLAN Settings": [
   null,
-  "Настройки VLAN"
+  "Настройка VLAN"
  ],
  "Waiting": [
   null,
@@ -891,6 +983,14 @@ return plural;
   null,
   "У вас нет прав на изменение брандмауэра."
  ],
+ "Zone": [
+  null,
+  ""
+ ],
+ "Zones": [
+  null,
+  ""
+ ],
  "[$0 bytes of binary data]": [
   null,
   "[$0 байты двоичных данных]"
@@ -902,6 +1002,14 @@ return plural;
  "[no data]": [
   null,
   "[нет данных]"
+ ],
+ "show less": [
+  null,
+  "показывай меньше"
+ ],
+ "show more": [
+  null,
+  "показать больше"
  ],
  "page-title\u0004Networking": [
   null,

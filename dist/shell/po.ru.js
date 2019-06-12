@@ -69,7 +69,7 @@ return plural;
  },
  "A compatible version of Cockpit is not installed on {{#strong}}{{host}}{{/strong}}.": [
   null,
-  "Совместимая версия Cockpit не установлена ​​на {{#strong}}{{host}}{{/strong}}"
+  "Совместимая версия Cockpit не установлена ​​на {{#strong}}{{host}}{{/strong}}."
  ],
  "About Cockpit": [
   null,
@@ -77,7 +77,7 @@ return plural;
  ],
  "Account Settings": [
   null,
-  "Настройки аккаунта"
+  "Параметры учётной записи"
  ],
  "Active Pages": [
   null,
@@ -185,7 +185,7 @@ return plural;
  ],
  "Confirm": [
   null,
-  "Подтвердить"
+  "Подтверждение пароля"
  ],
  "Connect": [
   null,
@@ -301,7 +301,7 @@ return plural;
  ],
  "Login Password": [
   null,
-  "Логин Пароль"
+  "Пароль для входа"
  ],
  "Login has escalated admin privileges": [
   null,
@@ -313,7 +313,7 @@ return plural;
  ],
  "New Password": [
   null,
-  "новый пароль"
+  "Новый пароль"
  ],
  "New password was not accepted": [
   null,
@@ -341,7 +341,7 @@ return plural;
  ],
  "Old Password": [
   null,
-  "Прежний пароль"
+  "Старый пароль"
  ],
  "Old password not accepted": [
   null,
@@ -517,6 +517,6 @@ return plural;
  ],
  "active": [
   null,
-  "активных"
+  "Активно"
  ]
 }));

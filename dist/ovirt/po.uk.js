@@ -157,7 +157,7 @@ return plural;
  ],
  "Cache": [
   null,
-  ""
+  "Кеш"
  ],
  "Cancel": [
   null,
@@ -305,7 +305,7 @@ return plural;
  ],
  "Disks cannot be removed from $0 VMs": [
   null,
-  ""
+  "Не можна вилучати диски з ВМ $0"
  ],
  "Download the MSI from $0": [
   null,
@@ -377,7 +377,7 @@ return plural;
  ],
  "Hide Performance Options": [
   null,
-  ""
+  "Приховати параметри швидкодії"
  ],
  "Host": [
   null,
@@ -493,7 +493,7 @@ return plural;
  ],
  "No Storage Pools available": [
   null,
-  ""
+  "Немає доступних буферів зберігання даних"
  ],
  "No VM found in oVirt.": [
   null,
@@ -757,7 +757,7 @@ return plural;
  ],
  "Show Performance Options": [
   null,
-  ""
+  "Показати параметри швидкодії"
  ],
  "Shut Down": [
   null,

@@ -1,0 +1,531 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
+# This file is part of Cockpit.
+#
+# Copyright (C) 2013 Red Hat, Inc.
+#
+# Cockpit is free software; you can redistribute it and/or modify it
+# under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation; either version 2.1 of the License, or
+# (at your option) any later version.
+#
+# Cockpit is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
+
+import time
+
+import parent
+from testlib import *
+
+
+class TestPages(MachineCase):
+
+    def testBasic(self):
+        m = self.machine
+        b = self.browser
+        m.write("/etc/systemd/system/test.service",
+                """
+[Unit]
+Description=Test Service
+
+[Service]
+ExecStart=/bin/true
+
+[Install]
+WantedBy=default.target
+""")
+        m.write("/etc/systemd/system/test.timer",
+                """
+[Unit]
+Description=Test timer
+
+[Timer]
+OnCalendar=daily
+""")
+        m.execute("systemctl start test.timer")
+
+        self.allow_restart_journal_messages()
+        self.allow_journal_messages("Failed to get realtime timestamp: Cannot assign requested address")
+
+        # On Debian and Ubuntu we have to generate the other locales :S
+        if m.image in ["debian-stable", "debian-testing"]:
+            m.execute("echo 'de_DE.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen && update-locale")
+        elif m.image in ["ubuntu-1804", "ubuntu-stable"]:
+            m.execute("locale-gen de_DE && locale-gen de_DE.UTF-8 && update-locale")
+
+        # On Atomic no locales other than en_US are supported on the host itself
+        # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1186757
+        elif m.image in ["continuous-atomic", "fedora-atomic", "rhel-atomic"]:
+            self.allow_journal_messages("invalid or unusable locale: de_DE.UTF-8")
+
+        # login so that we have a cookie.
+        self.login_and_go("/system/services#/test.service")
+
+        # check that reloading a page with parameters works
+        b.enter_page("/system/services")
+        b.reload()
+        b.enter_page("/system/services")
+        b.wait_text("#service-unit .panel-heading", "Test Service")
+
+        m.restart_cockpit()
+        b.relogin("/system/services")
+        b.wait_text("#service-unit .panel-heading", "Test Service")
+
+        # check that navigating away and back preserves place
+        b.switch_to_top()
+        b.click("a[href='/system']")
+        b.enter_page("/system")
+        b.wait_present("#system_information_hostname_button")
+        b.switch_to_top()
+        b.click("a[href='/system/services']")
+        b.enter_page("/system/services")
+        b.wait_present("#service-unit .panel-heading")
+        b.wait_visible("#service-unit")
+        b.wait_present("ol.breadcrumb")
+        b.wait_text("#service-unit .panel-heading", "Test Service")
+        b.switch_to_top()
+        b.wait_js_cond('window.location.pathname === "/system/services"')
+        b.wait_js_cond('window.location.hash === "#/test.service"')
+
+        # check that when inside the component clicking the navbar
+        # takes you home
+        b.switch_to_top()
+        b.click("a[href='/system/services']")
+        b.enter_page("/system/services")
+        if m.image in ["rhel-7-6-distropkg", "rhel-8-0-distropkg"]:
+            b.wait_present("#services-list-enabled")
+        else:
+            b.wait_present("#services-list")
+        b.wait_not_visible("#service-unit")
+        b.switch_to_top()
+        b.wait_js_cond('window.location.pathname === "/system/services"')
+        b.wait_js_cond('window.location.hash === ""')
+
+        # Navigate inside an iframe
+        b.switch_to_top()
+        b.go("/@localhost/playground/test")
+        b.enter_page("/playground/test")
+        b.click("button:contains('Go down')")
+        b.click("button:contains('Go down')")
+        b.switch_to_top()
+        b.wait_js_cond("window.location.hash == '#/0/1?length=1'")
+
+        # This should be visible now
+        b.switch_to_frame("cockpit1:localhost/playground/test")
+        b.wait_visible("#hidden")
+
+        # This should now say invisible
+        b.switch_to_top()
+        b.go("/@localhost/system/services")
+        b.switch_to_frame("cockpit1:localhost/playground/test")
+        b.wait_not_visible("#hidden")
+
+        b.switch_to_top()
+
+        # The top bar should not be visible on fedora-atomic because no dashboards
+        b.wait_present(".area-ct-body")
+        if "atomic" in m.image:
+            b.wait_present(".area-ct-body.single-nav")
+        else:
+            b.wait_not_present(".area-ct-body.single-nav")
+        b.wait_present("#host-nav")
+
+        # Lets try changing the language
+
+        b.click("#content-user-name")
+        b.click(".display-language-menu a")
+        b.wait_popup('display-language')
+        b.set_val("#display-language select", "de-de")
+        b.click("#display-language-select-button")
+        b.expect_load()
+        # HACK: work around language switching in Chrome not working in current session (issue #8160)
+        b.reload(ignore_cache=True)
+        b.wait_present("#content")
+
+        # Check that the system page is translated
+        b.go("/system")
+        b.enter_page("/system")
+        b.wait_in_text("#server", "Neustarten")
+
+        # Systemd timer localization
+        b.go("/system/services")
+        b.enter_page("/system/services")
+        if m.image in ["rhel-7-6-distropkg", "rhel-8-0-distropkg"]:
+            b.click('#services-filter button[data-pattern=\'\\\.timer\$\']')
+        else:
+            b.click('#services-filter li[data-pattern=\'\\\.timer\$\']')
+        # HACK: the timers' next run/last trigger (col 3/4) don't always get filled (issue #9439)
+        # b.wait_in_text("tr[data-goto-unit='test\.timer'] td:nth-child(3)", "morgen um")
+
+        # BIOS date parsing using moment
+        b.go("/system/hwinfo")
+        b.enter_page("/system/hwinfo")
+        b.wait_in_text("#hwinfo .info-table-ct tbody:nth-of-type(2) tr:nth-of-type(3) td", ".20")
+
+        # Check the playground page
+        b.switch_to_top()
+        b.go("/playground/translate")
+        b.enter_page("/playground/translate")
+
+        # HTML section
+        self.assertEqual(b.text("#translate-html"), "Bereit")
+        self.assertEqual(b.text("#translate-html-context"), "Bereiten")
+        self.assertEqual(b.text("#translate-html-yes"), "Nicht bereit")
+        self.assertEqual(b.attr("#translate-html-title", "title"), u"Nicht verfügbar")
+        self.assertEqual(b.text("#translate-html-title"), "Cancel")
+        self.assertEqual(b.attr("#translate-html-yes-title", "title"), u"Nicht verfügbar")
+        self.assertEqual(b.text("#translate-html-yes-title"), "Abbrechen")
+
+        # Glade section
+        self.assertEqual(b.text("#translatable-glade"), "Leer")
+        self.assertEqual(b.text("#translatable-glade-context"), "Leeren")
+
+        # Mustache section
+        self.assertEqual(b.text("#translatable-mustache"), "Benutzer")
+        self.assertEqual(b.text("#translate-mustache"), "Speicher")
+        self.assertEqual(b.text("#translate-mustache-yes"), "Netzwerk")
+        self.assertEqual(b.attr("#translate-mustache-title", "title"), "Fehler")
+        self.assertEqual(b.text("#translate-mustache-title"), "User")
+        self.assertEqual(b.attr("#translate-mustache-yes-title", "title"), "Fehler")
+        self.assertEqual(b.text("#translate-mustache-yes-title"), "Benutzer")
+
+        # Javascript
+        self.assertEqual(b.text("#underscore-empty"), "Leer")
+        self.assertEqual(b.text("#underscore-context-empty"), "Leeren")
+        self.assertEqual(b.text("#cunderscore-context-empty"), "Leeren")
+        self.assertEqual(b.text("#gettext-control"), "Steuerung")
+        self.assertEqual(b.text("#gettext-context-control"), "Strg")
+        self.assertEqual(b.text("#ngettext-disks-1"), "$0 Festplatte fehlt")
+        self.assertEqual(b.text("#ngettext-disks-2"), "$0 Festplatten fehlen")
+        self.assertEqual(b.text("#ngettext-context-disks-1"), u"$0 Datenträger fehlt")
+        self.assertEqual(b.text("#ngettext-context-disks-2"), u"$0 Datenträger fehlen")
+
+        # Angular
+        self.assertEqual(b.text("#angular-translate"), "Bereit")
+        self.assertEqual(b.text("#angular-context"), "Bereiten")
+        self.assertEqual(b.text("#angular-interpolate"), u"'Marmalade' löschen!!!")
+
+        # Log out and check that login page is translated now
+        b.logout()
+        b.wait_visible('#password-group')
+        b.wait_text("#password-group > label", "Passwort")
+
+        # Test all languages
+        # Test that pages do not oops and that locale is valid
+
+        if m.image not in ["fedora-30"]:
+            return
+
+        def line_sel(i):
+            return '.terminal .xterm-accessibility-tree div:nth-child(%d)' % i
+
+        pages = ["/system", "/system/logs", "/network", "/users", "/system/services", "/system/terminal"]
+
+        self.login_and_go('/system')
+        b.wait_present('#server')
+
+        b.switch_to_top()
+        b.click('#content-user-name')
+        b.click(".display-language-menu a")
+        b.wait_popup('display-language')
+        languages = b.eval_js("ph_select('#display-language-list option').map(function(e) { return e.value })")
+        b.click("#display-language button:nth-child(1)") # Close the menu
+
+        for language in languages:
+            b.go("/system")
+            b.enter_page("/system")
+
+            b.switch_to_top()
+            b.click('#content-user-name')
+            b.click(".display-language-menu a")
+            b.wait_popup('display-language')
+            b.set_val("#display-language select", language)
+            b.click("#display-language-select-button")
+            b.expect_load()
+            # HACK: work around language switching in Chrome not working in current session (issue #8160)
+            b.reload(ignore_cache=True)
+            b.wait_present("#content")
+
+            # Test some pages, end up in terminal
+            for page in pages:
+                b.go(page)
+                b.enter_page(page)
+
+            locale = language.split("-")
+            if len(locale) == 1:
+                locale.append("")
+            locale = "{0}_{1}.UTF-8".format(locale[0], locale[1].upper())
+
+            b.focus('.terminal')
+            function_str = "(function (sel) { return ph_text(sel).trim() != 'Blank line'})"
+            b.wait_js_func(function_str, line_sel(1))
+            b.key_press("echo $LANG\r")
+            b.wait_in_text(line_sel(2), locale)
+
+    def testPtBRLocale(self):
+        m = self.machine
+        b = self.browser
+
+        m.execute('useradd scruffy -s /bin/bash -c \'Scruffy\' || true')
+        m.execute('echo scruffy:foobar | chpasswd')
+
+        self.allow_restart_journal_messages()
+
+        if m.image in ['debian-stable', 'debian-testing']:
+            m.execute('echo \'pt_BR.UTF-8 UTF-8\' >> /etc/locale.gen && locale-gen && update-locale')
+        elif m.image in ['ubuntu-1804', 'ubuntu-stable']:
+            m.execute('locale-gen pt_BR && locale-gen pt_BR.UTF-8 && update-locale')
+
+        # On Atomic no locales other than en_US are supported on the host itself
+        # HACK: https://bugzilla.redhat.com/show_bug.cgi?id=1186757
+        elif m.image in ['continuous-atomic', 'fedora-atomic', 'rhel-atomic']:
+            self.allow_journal_messages('invalid or unusable locale: pt_BR.UTF-8')
+
+        self.login_and_go('/system')
+        b.wait_present('#server')
+        b.switch_to_top()
+        b.click('#content-user-name')
+        b.click('.display-language-menu a')
+        b.wait_popup('display-language')
+        b.set_val('#display-language select', 'pt-br')
+        b.click('#display-language-select-button')
+        b.expect_load()
+        # HACK: work around language switching in Chrome not working in current session (issue #8160)
+        b.reload(ignore_cache=True)
+        b.wait_present('#content')
+
+        # Check that the system page is translated
+        b.go('/system')
+        b.enter_page('/system')
+        b.wait_in_text('#server', 'Reiniciar')
+
+        # Systemd timer localization
+        b.go('/system/services')
+        b.enter_page('/system/services')
+        if m.image in ["rhel-7-6-distropkg", "rhel-8-0-distropkg"]:
+            b.click('#services-filter button[data-pattern=\'\\\.timer\$\']')
+        else:
+            b.click('#services-filter li[data-pattern=\'\\\.timer\$\']')
+        # HACK: the timers' next run/last trigger (col 3/4) don't always get filled (issue #9439)
+        # b.wait_in_text('tr[data-goto-unit=\'test\.timer\'] td:nth-child(3)', 'morgen um')
+
+        # Check the playground page
+        b.switch_to_top()
+        b.go('/playground/translate')
+        b.enter_page('/playground/translate')
+
+        # HTML section
+        self.assertEqual(b.text('#translate-html'), 'Pronto')
+        self.assertEqual(b.text('#translate-html-context'), 'Pronto')
+        self.assertEqual(b.text('#translate-html-yes'), u'Não está pronto')
+        self.assertEqual(b.attr('#translate-html-title', 'title'), u'Indisponível')
+        self.assertEqual(b.text('#translate-html-title'), 'Cancel')
+        self.assertEqual(b.attr('#translate-html-yes-title', 'title'), u'Indisponível')
+        self.assertEqual(b.text('#translate-html-yes-title'), 'Cancelar')
+
+        # Glade section
+        self.assertEqual(b.text('#translatable-glade'), 'Vazio')
+        self.assertEqual(b.text('#translatable-glade-context'), 'Vazio')
+
+        # Mustache section
+        self.assertEqual(b.text('#translatable-mustache'), u'Usuário')
+        self.assertEqual(b.text('#translate-mustache'), u'Memória')
+        self.assertEqual(b.text('#translate-mustache-yes'), 'Rede')
+        self.assertEqual(b.attr('#translate-mustache-title', 'title'), 'Erro')
+        self.assertEqual(b.text('#translate-mustache-title'), 'User')
+        self.assertEqual(b.attr('#translate-mustache-yes-title', 'title'), 'Erro')
+        self.assertEqual(b.text('#translate-mustache-yes-title'), u'Usuário')
+
+        # Javascript
+        self.assertEqual(b.text('#underscore-empty'), 'Vazio')
+        self.assertEqual(b.text('#underscore-context-empty'), 'Vazio')
+        self.assertEqual(b.text('#cunderscore-context-empty'), 'Vazio')
+        self.assertEqual(b.text('#gettext-control'), 'Controle')
+        self.assertEqual(b.text('#gettext-context-control'), 'Controle')
+        self.assertEqual(b.text('#ngettext-disks-1'), u'$0 disco não encontrado')
+        self.assertEqual(b.text('#ngettext-disks-2'), u'$0 discos não encontrados')
+        self.assertEqual(b.text('#ngettext-context-disks-1'), u'$0 disco não encontrado')
+        self.assertEqual(b.text('#ngettext-context-disks-2'), u'$0 discos não encontrados')
+
+        # Angular
+        self.assertEqual(b.text('#angular-translate'), 'Pronto')
+        self.assertEqual(b.text('#angular-context'), 'Pronto')
+        self.assertEqual(b.text('#angular-interpolate'), 'Deletar \'Marmalade\'')
+
+        # Log out and check that login page is translated now
+        b.logout()
+        b.wait_text('#password-group > label', 'Senha')
+
+    def testFrameReload(self):
+        b = self.browser
+        frame = "cockpit1:localhost/playground/test"
+
+        self.login_and_go("/playground/test")
+
+        b.wait_text('#file-content', "0")
+        b.click("#modify-file")
+        b.wait_text('#file-content', "1")
+
+        b.switch_to_top()
+        b.eval_js('ph_set_attr("iframe[name=\'%s\']", "data-ready", null)' % frame)
+        b.eval_js('ph_set_attr("iframe[name=\'%s\']", "src", "../playground/test.html?i=1#/")' % frame)
+        b.wait_present("iframe.container-frame[name='%s'][data-ready]" % frame)
+
+        b.enter_page("/playground/test")
+
+        b.wait_text('#file-content', "1")
+
+        self.allow_restart_journal_messages()
+
+    def testShellReload(self):
+        b = self.browser
+        m = self.machine
+
+        self.login_and_go()
+
+        b.wait_in_text("#host-apps", "System")
+        m.execute("mkdir -p /home/admin/.local/share/cockpit/foo")
+        m.write("/home/admin/.local/share/cockpit/foo/manifest.json",
+                '{ "menu": { "index": { "label": "FOO!" } } }')
+        b.reload()
+        b.wait_in_text("#host-apps", "FOO!")
+
+        self.allow_restart_journal_messages()
+
+    def testReactPatterns(self):
+        b = self.browser
+        m = self.machine
+
+        # prepare a directory for testing file autocomplete widget
+        m.execute("mkdir -p /tmp/stuff/dir1; touch /tmp/stuff/file1.txt")
+
+        self.login_and_go("/playground/react-patterns")
+        # "initially expanded" entry in demo listing
+        b.wait_text("#demo-listing tbody.open th", "initially expanded")
+
+        # test file completion widget
+        b.focus(".file-autocomplete-ct input")
+        for c in list("/tmp/stuff/"):
+            b.key_press(c)
+        # need to wait for the widget's "fast typing" inhibition delay to trigger the completion popup
+        time.sleep(1)
+        b.key_press([" ", "\b"])
+        b.wait_text(".file-autocomplete-ct .dropdown-menu a[data-type='file']", "file1.txt")
+        b.wait_text(".file-autocomplete-ct .dropdown-menu a[data-type='directory']", "dir1/")
+        # no other items; b.text() removes newlines
+        b.wait_text(".file-autocomplete-ct .dropdown-menu", "dir1/file1.txt")
+        b.blur(".file-autocomplete-ct input")
+        b.wait_not_visible(".file-autocomplete-ct .dropdown-menu")
+
+        # now update file1, check robustness with dynamic events
+        m.execute("touch /tmp/stuff/file1.txt")
+        b.focus(".file-autocomplete-ct input")
+        time.sleep(1)
+        b.key_press([" ", "\b"])
+        # this should still be unique
+        b.wait_text(".file-autocomplete-ct .dropdown-menu a[data-type='file']", "file1.txt")
+        # no other items
+        b.wait_text(".file-autocomplete-ct .dropdown-menu", "dir1/file1.txt")
+        b.blur(".file-autocomplete-ct input")
+        b.wait_not_visible(".file-autocomplete-ct .dropdown-menu")
+
+        # add new file
+        m.execute("touch /tmp/stuff/other")
+        b.focus(".file-autocomplete-ct input")
+        # FIXME: need to tickle the widget to re-read the directory by changing out and back in
+        b.key_press(["\b"])
+        time.sleep(1)
+        b.key_press("/")
+        time.sleep(1)
+        b.key_press(" ")
+        b.wait_text(".file-autocomplete-ct .dropdown-menu", "dir1/file1.txtother")
+
+    @skipImage("No PCP available on Atomic", "fedora-atomic", "rhel-atomic", "continuous-atomic")
+    @skipImage("No PCP available on Debian 9", "debian-stable")
+    def testPlots(self):
+        b = self.browser
+        m = self.machine
+
+        m.execute("systemctl start pmcd")
+
+        self.login_and_go("/playground/plot")
+        b.wait_present("#plot_direct")
+        b.wait_present("#plot_pmcd")
+
+        def read_mem_info(machine):
+            info = {}
+            for l in machine.execute("cat /proc/meminfo").splitlines():
+                (name, value) = l.strip().split(":")
+                if value.endswith("kB"):
+                    info[name] = int(value[:-2]) * 1024
+                else:
+                    info[name] = int(value)
+            return info
+
+        b.eval_js("""
+          ph_plot_timestamp = function (sel) {
+            var data = $(sel).data("flot_data")[0]['data'];
+            return data[data.length-1][0];
+          }
+        """)
+
+        b.eval_js("""
+          ph_plot_timestamp_is = function (sel, ts) {
+            return ph_plot_timestamp(sel, 0) >= ts;
+          }
+        """)
+
+        def wait_for_plot(sel, seconds):
+            now = b.call_js_func("ph_plot_timestamp", sel)
+            b.wait_js_func("ph_plot_timestamp_is", sel, now + 20 * 1000)
+
+        # When checking whether the plots show the expected results,
+        # we look for a segment of the data of a certain duration
+        # whose average is in a certain range.  Otherwise any short
+        # outlier will make us miss the expected plateau.  Such
+        # outliers happen frequently with the CPU plot.
+
+        b.eval_js("""
+          ph_plateau = function (data, min, max, duration, label) {
+              var i, j;
+              var sum;  // sum of data[i..j]
+
+              sum = 0;
+              i = 0;
+              for (j = 0; j < data.length; j++) {
+                  sum += data[j][1];
+                  while (i < j && (data[j][0] - data[i][0]) > duration * 1000) {
+                      avg = sum / (j - i + 1);
+                      if ((min === null || avg >= min) && (max === null || avg <= max))
+                          return true;
+                      sum -= data[i][1];
+                      i++;
+                  }
+              }
+            return false;
+          }
+        """)
+
+        b.eval_js("""
+          ph_flot_data_plateau = function (sel, min, max, duration, label) {
+            return ph_plateau($(sel).data("flot_data")[0]['data'], min, max, duration, label);
+          }
+        """)
+
+        meminfo = read_mem_info(m)
+        mem_used = meminfo['MemTotal'] - meminfo['MemAvailable']
+        b.wait_js_func("ph_flot_data_plateau", "#plot_direct", mem_used * 0.95, mem_used * 1.05, 15, "mem")
+
+        meminfo = read_mem_info(m)
+        mem_used = meminfo['MemTotal'] - meminfo['MemAvailable']
+        b.wait_js_func("ph_flot_data_plateau", "#plot_pmcd", mem_used * 0.95, mem_used * 1.05, 15, "mem")
+
+
+if __name__ == '__main__':
+    test_main()

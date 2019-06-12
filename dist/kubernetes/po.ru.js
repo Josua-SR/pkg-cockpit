@@ -69,7 +69,7 @@ return plural;
  },
  " 1\"Do you want to delete the following Nodes?": [
   null,
-  " 1 «Вы хотите удалить следующие узлы?"
+  " 1\"Удалить следующие узлы?"
  ],
  "$0% Free": [
   "$0% Free",
@@ -465,7 +465,7 @@ return plural;
  ],
  "Do you want to remove the image tagged as '{{stream.metadata.namespace}}/{{stream.metadata.name}}:{{tag.tag}}'?": [
   null,
-  "Вы хотите удалить изображение, помеченное как '{{stream.metadata.namespace}}/{{stream.metadata.name}}:{{tag.tag}}«?"
+  "Удалить образ, помеченный как '{{stream.metadata.namespace}}/{{stream.metadata.name}}:{{tag.tag}}'?"
  ],
  "Do you want to remove the role '{{ fields.displayRole }}' from member {{ fields.member.metadata.name }}?": [
   null,
@@ -685,7 +685,7 @@ return plural;
  ],
  "Machine ID": [
   null,
-  "ИД машины"
+  "Идентификатор системы"
  ],
  "Manifest": [
   null,
@@ -1161,7 +1161,7 @@ return plural;
  ],
  "Remove image tag": [
   null,
-  "Удалить тег изображения"
+  "Удалить метку образа"
  ],
  "Remove membership": [
   null,
@@ -1281,7 +1281,7 @@ return plural;
  ],
  "Service Account": [
   null,
-  "Счет службы"
+  "Учётная запись службы"
  ],
  "Services": [
   null,

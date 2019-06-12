@@ -169,7 +169,7 @@ return plural;
  ],
  "Add Zone": [
   null,
-  ""
+  "添加区域"
  ],
  "Add ports to the following zones:": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Add zone": [
   null,
-  ""
+  "添加区域"
  ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "Allowed Addresses": [
   null,
-  ""
+  "允许的地址"
  ],
  "Allowed Services": [
   null,
@@ -345,7 +345,7 @@ return plural;
  ],
  "Custom zones": [
   null,
-  ""
+  "自定义区域"
  ],
  "DNS": [
   null,
@@ -397,7 +397,7 @@ return plural;
  ],
  "Entire subnet": [
   null,
-  ""
+  "整个子网"
  ],
  "Ethernet MAC": [
   null,
@@ -429,7 +429,7 @@ return plural;
  ],
  "Failed to add zone": [
   null,
-  ""
+  "添加区域失败"
  ],
  "Failed to remove service": [
   null,
@@ -513,7 +513,7 @@ return plural;
  ],
  "Included services": [
   null,
-  ""
+  "包括的服务"
  ],
  "Interfaces": [
   null,
@@ -657,7 +657,7 @@ return plural;
  ],
  "No description available": [
   null,
-  ""
+  "没有可用描述"
  ],
  "No open ports": [
   null,
@@ -761,7 +761,7 @@ return plural;
  ],
  "Range": [
   null,
-  ""
+  "范围"
  ],
  "Range must be strictly ordered": [
   null,
@@ -845,7 +845,7 @@ return plural;
  ],
  "Sorted from least trusted to most trusted": [
   null,
-  ""
+  "按最不被信任到最被信任的顺序排序"
  ],
  "Spanning Tree Protocol": [
   null,
@@ -925,7 +925,7 @@ return plural;
  ],
  "Trust level": [
   null,
-  ""
+  "信任级别"
  ],
  "UDP": [
   null,

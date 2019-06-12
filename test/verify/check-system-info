@@ -1,0 +1,599 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
+# This file is part of Cockpit.
+#
+# Copyright (C) 2013 Red Hat, Inc.
+#
+# Cockpit is free software; you can redistribute it and/or modify it
+# under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation; either version 2.1 of the License, or
+# (at your option) any later version.
+#
+# Cockpit is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
+
+import subprocess
+import time
+
+import parent
+import packagelib
+from testlib import *
+
+
+os_release = """
+NAME="Foobar Adventure Linux Server"
+VERSION="2.0 (Day of Doom)"
+ID="foobar"
+VERSION_ID="2.0"
+PRETTY_NAME="Foobar Adventure Linux Server 2.0 (Day of Doom)"
+"""
+
+lscpu = """#!/bin/sh
+echo 'CPU(s):              8'
+echo 'On-line CPU(s) list: 0-7'
+echo 'Thread(s) per core:  {0}'
+echo 'Core(s) per socket:  4'
+echo 'Socket(s):           1'
+"""
+
+def ssh_reconnect(machine, timeout_sec=120):
+    start_time = time.time()
+    error = None
+    while (time.time() - start_time) < timeout_sec:
+        try:
+            machine.execute("true", quiet=True)
+            return
+        except Exception as e:
+            error = e
+        time.sleep(0.5)
+
+    raise error
+
+
+class TestSystemInfo(MachineCase):
+    def setUp(self):
+        MachineCase.setUp(self)
+
+        # Debian will not allow timesyncd to start if any other NTP packge is installed
+        # We only support timesyncd for NTP configuration, so make sure chrony
+        # is not installed in the debian test images
+        if self.machine.image == "debian-testing":
+            self.machine.execute("dpkg --remove chrony");
+
+    @enableAxe
+    def testBasic(self):
+        m = self.machine
+        b = self.browser
+
+        # /etc/os-release might be a symlink and file watching doesn't
+        # follow symlinks, so we remove it and then create a regular
+        # file.
+        #
+        # In addition hostnamed does not expect os-release to change so
+        # we force a restart. Usually any such changes to os-release are
+        # expected to happen during reboot, or picked up after a reboot.
+        #
+        # subscription-manager also screws with os-release so set it
+        # to immutable
+        #
+        m.execute("rm /etc/os-release")
+        m.write("/etc/os-release", os_release)
+        m.execute("chattr +i /etc/os-release && (systemctl restart systemd-hostnamed || systemctl restart hostnamed)")
+
+        self.login_and_go("/system")
+
+        b.wait_visible('#system_information_os_text')
+
+        mid = m.execute("cat /etc/machine-id")
+        b.wait_text('#system_machine_id', mid)
+
+        self.check_axe()
+
+        # Generate a new rsa key and change the config
+        m.execute("ssh-keygen -f /etc/ssh/weirdname -t rsa -N ''")
+        m.execute("chmod 600 /etc/ssh/weirdname")
+        m.execute("restorecon /etc/ssh/weirdname || true")
+
+        supports_alt = False
+        try:
+            m.execute(command="ssh-keygen -l -f /etc/ssh/weirdname -E md5", quiet=True)
+            supports_alt = True
+        except subprocess.CalledProcessError:
+            pass
+
+        if supports_alt:
+            new_default = m.execute("ssh-keygen -l -f /etc/ssh/weirdname -E md5 | cut -d' ' -f2")
+            new_alt = m.execute("ssh-keygen -l -f /etc/ssh/weirdname -E sha256 | cut -d' ' -f2")
+            old_default = m.execute("ssh-keygen -l -f /etc/ssh/ssh_host_rsa_key -E md5 | cut -d' ' -f2")
+            old_alt = m.execute("ssh-keygen -l -f /etc/ssh/ssh_host_rsa_key -E sha256 | cut -d' ' -f2")
+        else:
+            new_default = m.execute("ssh-keygen -l -f /etc/ssh/weirdname | cut -d' ' -f2")
+            new_alt = None
+            old_default = m.execute("ssh-keygen -l -f /etc/ssh/ssh_host_rsa_key | cut -d' ' -f2")
+            old_alt = None
+
+        b.click("#system-ssh-keys-link")
+        b.wait_popup("system_information_ssh_keys")
+        b.wait_not_visible("#system_information_ssh_keys .spinner")
+        b.wait_visible("#system_information_ssh_keys .content")
+        b.wait_in_text("#system_information_ssh_keys .list-group", "ED25519")
+        b.wait_in_text("#system_information_ssh_keys .list-group", "RSA")
+        b.wait_in_text("#system_information_ssh_keys .list-group", "ECDSA")
+        b.wait_not_in_text("#system_information_ssh_keys .list-group", new_default)
+        b.wait_in_text("#system_information_ssh_keys .list-group", old_default)
+        if supports_alt:
+            b.wait_not_in_text("#system_information_ssh_keys .list-group", new_alt)
+            b.wait_in_text("#system_information_ssh_keys .list-group", old_alt)
+
+        b.click("#system_information_ssh_keys button")
+        b.wait_popdown("system_information_ssh_keys")
+
+        # Change ssh config and restart
+        m.execute("sed -i 's,.*HostKey *,#,' /etc/ssh/sshd_config")
+        m.execute("echo '' >> /etc/ssh/sshd_config")
+        m.execute("echo 'HostKey /etc/ssh/weirdname' >> /etc/ssh/sshd_config")
+
+        # Restart sshd but stop socket so we can make sure we are restarted
+        m.execute("( ! systemctl is-active sshd.socket || systemctl stop sshd.socket) && systemctl restart sshd.service")
+        ssh_reconnect(m)
+
+        b.click("#system-ssh-keys-link")
+        b.wait_popup("system_information_ssh_keys")
+        b.wait_not_visible("#system_information_ssh_keys .spinner")
+        b.wait_visible("#system_information_ssh_keys .content")
+        b.wait_not_in_text("#system_information_ssh_keys .list-group", "ED25519")
+        b.wait_in_text("#system_information_ssh_keys .list-group", "RSA")
+        b.wait_not_in_text("#system_information_ssh_keys .list-group", "ECDSA")
+        b.wait_in_text("#system_information_ssh_keys .list-group", new_default)
+        b.wait_not_in_text("#system_information_ssh_keys .list-group", old_default)
+        if supports_alt:
+            b.wait_not_in_text("#system_information_ssh_keys .list-group", old_alt)
+            b.wait_in_text("#system_information_ssh_keys .list-group", new_alt)
+
+        b.wait_text('#system_information_os_text',
+                    "Foobar Adventure Linux Server 2.0 (Day of Doom)")
+
+        m.execute("hostnamectl set-hostname --pretty 'Adventure Box'")
+        b.wait_in_text('#system_information_hostname_button', "Adventure Box")
+
+        b.click('#system_information_hostname_button')
+        b.wait_popup("system_information_change_hostname")
+        b.wait_val("#sich-pretty-hostname", "Adventure Box")
+        b.set_val("#sich-hostname", "host1.cockpit.lan")
+        b.click("#system_information_change_hostname button:contains('Change')")
+        b.wait_popdown("system_information_change_hostname")
+
+        if m.atomic_image:
+            b.wait_text('#system-ostree-version-link', "cockpit-base.1")
+        else:
+            b.wait_not_visible("#system-ostree-version-link")
+
+        b.wait_text('#system_information_hostname_button', "Adventure Box (host1.cockpit.lan)")
+        # HACK /usr/bin/hostname output is delayed in systemd v208, so that DBus gets notified early
+        # this issue is resolved in systemd v219
+        tries_left = 5
+        current_hostname = ""
+        while tries_left > 0:
+            current_hostname = m.execute("hostname")
+            if current_hostname == "host1.cockpit.lan\n":
+                break
+            # wait a bit and try again
+            time.sleep(1)
+            tries_left = tries_left - 1
+
+        self.assertEqual(current_hostname, "host1.cockpit.lan\n")
+
+        b.logout()
+        m.execute("chattr -i /etc/os-release && rm /etc/os-release")
+        m.execute("rm /usr/lib/os-release || true")
+
+        self.login_and_go("/system")
+        b.wait_text('#system_machine_id', mid)
+
+        self.allow_journal_messages("error loading contents of os-release: .*")
+
+    def testTime(self):
+        m = self.machine
+        b = self.browser
+
+        def ntp_enabled():
+            return 'true' in m.execute(
+                'busctl get-property org.freedesktop.timedate1 /org/freedesktop/timedate1 org.freedesktop.timedate1 NTP')
+
+        # make sure system is on expected timezone EEST
+        m.execute("timedatectl set-timezone Europe/Helsinki")
+
+        # Something gets confused when systemd-timesyncd isn't
+        # available.  This is harmless.
+        #
+        self.allow_journal_messages(
+            "org.freedesktop.systemd1: couldn't get property org.freedesktop.systemd1.Service ExecMain at /org/freedesktop/systemd1/unit/systemd_2dtimedated_2eservice: GDBus.Error:org.freedesktop.DBus.Error.UnknownProperty: Unknown property")
+
+        self.login_and_go("/system")
+
+        # Make sure the date loads
+        b.wait_text_not("#system_information_systime_button", "")
+
+        # Change the date
+        b.click("#system_information_systime_button")
+        b.wait_popup("system_information_change_systime")
+        b.click("#change_systime button")
+        b.click("#change_systime li[value=manual_time] a")
+        b.wait_in_text("#change_systime button", "Manually")
+        b.set_val("#systime-date-input", "2020-01-24")
+        b.set_val("#systime-time-hours", "08")
+        b.set_val("#systime-time-minutes", "03")
+        b.click("#systime-apply-button")
+        b.wait_popdown("system_information_change_systime")
+
+        b.wait_text("#system_information_systime_button", "2020-01-24 08:03")
+
+        self.assertFalse(ntp_enabled())
+        self.assertIn("Fri Jan 24 08:03:", m.execute("date"))
+        self.assertIn("EET 2020\n", m.execute("date"))
+
+        # Set to NTP
+        b.click("#system_information_systime_button")
+        b.wait_popup("system_information_change_systime")
+        b.click("#change_systime button")
+        b.click("#change_systime li[value=ntp_time] a")
+        b.wait_in_text("#change_systime button", "Automatically using NTP")
+        b.click("#systime-apply-button")
+        b.wait_popdown("system_information_change_systime")
+
+        wait(ntp_enabled)
+
+        # Change the date
+        b.click("#system_information_systime_button")
+        b.wait_popup("system_information_change_systime")
+        b.click("#change_systime button")
+        b.click("#change_systime li[value=manual_time] a")
+        b.wait_in_text("#change_systime button", "Manually")
+        b.set_val("#systime-date-input", "2018-06-04")
+        b.set_val("#systime-time-hours", "06")
+        b.set_val("#systime-time-minutes", "34")
+        b.click("#systime-apply-button")
+        b.wait_popdown("system_information_change_systime")
+
+        self.assertFalse(ntp_enabled())
+        self.assertIn("Mon Jun  4 06:34:", m.execute("date"))
+        self.assertIn("EEST 2018\n", m.execute("date"))
+
+        self.allow_authorize_journal_messages()
+        b.relogin('/system', authorized=False)
+        b.wait_present('.systime-privileged.disabled')
+        b.mouse('#systime-tooltip', 'mouseover')
+        b.wait_text('#systime-tooltip ~ div.tooltip', 'The user admin is not permitted to change the system time')
+        b.mouse('#systime-tooltip', 'mouseout')
+        b.wait_not_present('#systime-tooltip ~ div.tooltip')
+
+    @skipImage("No NTP servers config", "centos-7", "continuous-atomic",
+               "rhel-7-6", "rhel-7-6-distropkg", "rhel-7-7", "rhel-8-0", "rhel-8-0-distropkg", "rhel-8-1", "rhel-atomic")
+    def testTimeServers(self):
+        m = self.machine
+        b = self.browser
+
+        conf = "/etc/systemd/timesyncd.conf.d/50-cockpit.conf"
+
+        # Use systemd-timedated as the provider of
+        # org.freedesktop.timedate1 instead of timedatex.
+        m.execute("systemctl disable timedatex; systemctl stop timedatex; systemctl unmask systemd-timedated")
+
+        self.login_and_go("/system")
+
+        # Wait until everything is ready to go...
+        b.wait_attr("#system_information_systime_button", "data-timedated-initialized", "true")
+
+        # Add two NTP servers.  We can't expect the servers to be used, so
+        # we only test that they get added.
+        b.click("#system_information_systime_button")
+        b.wait_popup("system_information_change_systime")
+        b.click("#change_systime button")
+        b.click("#change_systime li[value=ntp_time_custom] a")
+        b.wait_in_text("#change_systime button", "Automatically using specific NTP servers")
+        b.set_val("#systime-ntp-servers form:nth-child(1) input", "0.pool.ntp.org")
+        b.click('#systime-ntp-servers form:nth-child(1) button[data-action="add"]')
+        b.set_val("#systime-ntp-servers form:nth-child(2) input", "1.pool.ntp.org")
+        b.click("#systime-apply-button")
+        b.wait_popdown("system_information_change_systime")
+
+        self.assertIn("0.pool.ntp.org", m.execute("grep '^NTP=' %s" % conf))
+        self.assertIn("1.pool.ntp.org", m.execute("grep '^NTP=' %s" % conf))
+
+        # Set conf from the outside, check that we pick that up, and
+        # switch to default servers.
+        m.write(conf, "[Time]\nNTP=2.pool.ntp.org\n")
+        b.click("#system_information_systime_button")
+        b.wait_popup("system_information_change_systime")
+        b.wait_val("#systime-ntp-servers form:nth-child(1) input", "2.pool.ntp.org")
+        b.click("#change_systime button")
+        b.click("#change_systime li[value=ntp_time] a")
+        b.wait_in_text("#change_systime button", "Automatically using NTP")
+        b.wait_not_visible("#systime-ntp-servers")
+        b.click("#systime-apply-button")
+        b.wait_popdown("system_information_change_systime")
+
+        self.assertIn("2.pool.ntp.org", m.execute("grep '^#NTP=' %s" % conf))
+
+    def testMotd(self):
+        m = self.machine
+        b = self.browser
+
+        m.execute("rm -f /etc/motd")
+
+        self.login_and_go("/system")
+        b.wait_present('#motd-box[data-stable=yes]')
+        b.wait_not_visible('#motd-box')
+
+        m.execute("echo Hello >/etc/motd")
+        b.wait_visible('#motd-box')
+        b.wait_in_text('#motd', "Hello")
+
+        b.click('#motd-box button.close')
+        b.wait_not_visible('#motd-box')
+
+        # motd should stay dismissed after a reload
+        b.reload()
+        b.enter_page("/system")
+        b.wait_present('#motd-box[data-stable=yes]')
+        b.wait_not_visible('#motd-box')
+
+        m.execute("echo Hello again >/etc/motd")
+        b.wait_visible('#motd-box')
+        b.wait_in_text('#motd', "Hello again")
+
+        # because of the reload
+        self.allow_restart_journal_messages()
+
+    def testHardwareInfo(self):
+        b = self.browser
+
+        self.login_and_go("/system")
+        b.wait_in_text('#system_information_hardware_text', "QEMU")
+        b.click('#system_information_hardware_text')
+        b.enter_page("/system/hwinfo")
+
+        # system info
+        b.wait_in_text('#hwinfo .info-table-ct', "CPU")
+        # QEMU VM type
+        b.wait_in_text('#hwinfo .info-table-ct tbody:nth-of-type(1) tr:nth-of-type(1) td', "Other")
+        # Name
+        b.wait_in_text('#hwinfo .info-table-ct tbody:nth-of-type(1) tr:nth-of-type(2) td', "Standard PC")
+        # BIOS
+        b.wait_in_text('#hwinfo .info-table-ct tbody:nth-of-type(2) tr:nth-of-type(1) td', "SeaBIOS")
+        # BIOS date; just ensure it's from this century
+        b.wait_in_text('#hwinfo .info-table-ct tbody:nth-of-type(2) tr:nth-of-type(3) td', "/20")
+
+        # PCI
+        b.wait_in_text('#hwinfo .listing-ct caption', "PCI")
+        b.wait_in_text('#hwinfo .listing-ct', "0000:00:00.0")
+
+        # sorted by device class by default; this makes some assumptions about QEMU devices
+        b.wait_in_text('#hwinfo .listing-ct tbody:first-of-type td:nth-of-type(2)', "Bridge")
+        b.wait_in_text('#hwinfo .listing-ct tbody:last-of-type td:nth-of-type(2)', "Unclassified")
+
+        # sort by model
+        b.click('#hwinfo .listing-ct thead th:nth-of-type(3)')
+        b.wait_in_text('#hwinfo .listing-ct tbody:first-of-type td:nth-of-type(3)', "440FX")
+        b.wait_in_text('#hwinfo .listing-ct tbody:last-of-type td:nth-of-type(3)', "Virtio SCSI")
+        b.wait_not_in_text('#hwinfo .listing-ct tbody:last-of-type td:nth-of-type(2)', "Unclassified")
+
+        # go back to system page
+        b.click('.breadcrumb a')
+        b.enter_page("/system")
+
+        # now pretend this is a system without DMI; fixed in PR #11005
+        if self.machine.image in ['rhel-7-6-distropkg', 'rhel-8-0-distropkg']:
+            return
+
+        b.logout()
+        self.machine.execute("mount -t tmpfs none /sys/class/dmi")
+        self.login_and_go("/system")
+        b.wait_present('#system_information_hardware_text')
+        # asset tag should be hidden
+        b.wait_not_visible('#system_information_asset_tag_text')
+        # Hardware can just be a generic link
+        b.wait_text('#system_information_hardware_text', "Details")
+        b.click("#system_information_hardware_text")
+        b.enter_page("/system/hwinfo")
+
+        # CPU should still be shown, but not the DMI fields
+        b.wait_in_text('#hwinfo .info-table-ct', "CPU")
+        self.assertNotIn('Type', b.text('#hwinfo .info-table-ct'))
+        self.assertNotIn('BIOS', b.text('#hwinfo .info-table-ct'))
+
+        # PCI should be shown
+        b.wait_in_text('#hwinfo .listing-ct caption', "PCI")
+        b.wait_in_text('#hwinfo .listing-ct', "0000:00:00.0")
+
+        self.machine.execute("umount /sys/class/dmi")
+
+    @skipImage("Added in pull 11368", "rhel-7-6-distropkg", "rhel-8-0-distropkg")
+    def testCPUSecurityMitigations(self):
+        b = self.browser
+        m = self.machine
+
+        self.login_and_go('/system/hwinfo')
+        b.wait_present('#hwinfo th:contains(CPU)')
+
+        def spoof_threads(threads_per_core, expect_link_present, expect_smt_state=None, cmdline=None):
+            m.write('/usr/local/bin/lscpu', lscpu.format(threads_per_core))
+            m.execute('chmod +x /usr/local/bin/lscpu')
+            if cmdline:
+                m.write('/run/cmdline', cmdline)
+                m.execute('mount --bind /run/cmdline /proc/cmdline')
+
+            b.reload()
+            b.enter_page('/system/hwinfo')
+
+            if not expect_link_present:
+                b.wait_present('#hwinfo th:contains(CPU)')
+                b.wait_not_present('#hwinfo th:contains(CPU Security)')
+            else:
+                b.click('#hwinfo a:contains(Mitigations)')
+
+            if expect_smt_state is not None:
+                b.wait_present('#cpu-mitigations-dialog span:contains(nosmt)')
+                b.wait_present('#cpu-mitigations-dialog #nosmt-switch input' +
+                               (expect_smt_state and ":checked" or ":not(:checked)"))
+
+            if cmdline:
+                m.execute('while ! umount /proc/cmdline; do sleep 1; done')
+                m.execute('rm /run/cmdline')
+
+        # We expect our test VMs to not set nosmt
+        spoof_threads(1, False)
+        spoof_threads(2, True, True, 'param1 param2 nosmt param3=value3')
+        spoof_threads(2, True, True, 'param1 param2 nosmt=force param3=value3')
+        spoof_threads(2, False, cmdline='param1 nosmt=someunknown param3=value3')
+        spoof_threads(2, True, False, None)
+
+        # Enable nosmt option
+        b.reload()
+        b.enter_page('/system/hwinfo')
+        b.click('#hwinfo a:contains(Mitigations)')
+        b.click('#cpu-mitigations-dialog #nosmt-switch input')
+        b.wait_present('#cpu-mitigations-dialog #nosmt-switch input:checked')
+        b.click('#cpu-mitigations-dialog Button:contains(Save and reboot)')
+        m.wait_reboot()
+        self.assertIn('nosmt', m.execute('cat /proc/cmdline'))
+
+        # Ensure that future kernel upgrades also retain the option; various
+        # Fedora and RHEL version are in different stages of the BLS
+        # transition, so there are three cases:
+        # - no BLS, options go into /etc/default/grub and grub.cfg (oldest)
+        # - BLS, options go directly into entries (RHEL 8.0)
+        # - BLS, entries use $kernelopt, that is defined in grubenv (newest)
+        if not m.atomic_image:
+            m.execute(r"""set -e
+. /etc/os-release
+touch /boot/vmlinuz-42.0.0; mkdir -p /lib/modules/42.0.0/
+if type update-grub >/dev/null 2>&1; then
+    update-grub  # Debian/Ubuntu
+else
+    if [ "$ID" = rhel -o "$ID" = centos ] && [ "${VERSION_ID#7}" != "$VERSION_ID" ]; then
+        new-kernel-pkg --package kernel --install 42.0.0  # RHEL/CentOS 7
+    else
+        kernel-install add 42.0.0 /boot/vmlinuz-42.0.0 2>/dev/null # Fedora/RHEL >= 8
+    fi
+fi
+grep -q 'linux.*/vmlinuz-42.0.0.*nosmt' /boot/grub*/grub.cfg ||
+  grep -q '^options.*\bnosmt\b' /boot/loader/entries/*42.0.0*.conf ||
+  ( grub2-editenv list | grep -q kernelopts.*nosmt &&
+    grep -q '^options.*$kernelopts' /boot/loader/entries/*42.0.0*.conf )
+""")
+            # clean up so that next reboot works
+            m.execute(r"""set -e
+. /etc/os-release
+rm /boot/vmlinuz-42.0.0
+if type update-grub >/dev/null 2>&1; then
+    update-grub  # Debian/Ubuntu
+else
+    if [ "$ID" = rhel -o "$ID" = centos ] && [ "${VERSION_ID#7}" != "$VERSION_ID" ]; then
+        new-kernel-pkg --package kernel --remove 42.0.0  # RHEL/CentOS 7
+    else
+        kernel-install remove 42.0.0 /boot/vmlinuz-42.0.0  # Fedora/RHEL >= 8
+    fi
+fi
+""")
+
+        # Disable nosmt option
+        self.login_and_go('/system/hwinfo')
+        b.click('#hwinfo a:contains(Mitigations)')
+        b.wait_present('#cpu-mitigations-dialog span:contains(nosmt)')
+        b.wait_present('#cpu-mitigations-dialog #nosmt-switch input:checked')
+        b.click('#cpu-mitigations-dialog #nosmt-switch input')
+        b.wait_present('#cpu-mitigations-dialog #nosmt-switch input:not(:checked)')
+        b.click('#cpu-mitigations-dialog Button:contains(Save and reboot)')
+        m.wait_reboot()
+        self.assertNotIn('nosmt', m.execute('cat /proc/cmdline'))
+
+        # Behaviour for non-admins
+        self.login_and_go('/system/hwinfo', authorized=False)
+        b.wait_present('#hwinfo th:contains(CPU)')
+        b.mouse('#hwinfo span:contains(Mitigations)', 'mouseover')
+        b.wait_text('#tip-cpu-security .tooltip-inner', 'The user admin is not permitted to change cpu security mitigations')
+
+        # Behaviour if grub update tools are missing
+        b.logout()
+        m.execute('mv /etc/default/grub /etc/default/grub.bak || true')
+        m.write('/tmp/grubby', '#!/bin/sh\necho 0')
+        m.execute('[ ! -f /usr/sbin/grubby ] || mount --bind /tmp/grubby /usr/sbin/grubby')
+        self.login_and_go('/system/hwinfo')
+        b.click('#hwinfo a:contains(Mitigations)')
+        b.click('#cpu-mitigations-dialog #nosmt-switch input')
+        b.wait_present('#cpu-mitigations-dialog #nosmt-switch input:checked')
+        b.click('#cpu-mitigations-dialog Button:contains(Save and reboot)')
+        b.wait_present('#cpu-mitigations-dialog .alert:contains(No supported grub update mechanism found)')
+
+        self.allow_journal_messages('Sourcing file `/etc/default/grub.*',
+                                    'Generating grub configuration file.*',
+                                    'Found linux image.*',
+                                    'Found initrd image.*',
+                                    '.*warning: setlocale: LC_ALL: cannot change locale.*',
+                                    'done')
+        self.allow_authorize_journal_messages()
+        self.allow_restart_journal_messages()
+
+class TestPcp(packagelib.PackageCase):
+
+    @skipImage("cockpit-system doesn't have the install-on-demand feature")
+    @skipImage("doesn't have pcp", "debian-stable")
+    def testEnablePcpLink(self):
+        m = self.machine
+        b = self.browser
+
+        # the atomics don't have pcp and can't install additional software
+        if m.atomic_image:
+            self.login_and_go("/system")
+            b.wait_not_visible("#server-pmlogger-switch")
+            b.wait_not_visible("#system-information-enable-pcp-link")
+            return
+
+        m.execute("pkcon remove -y pcp")
+
+        pmlogger = {
+            "/usr/bin/pmlogger": "",
+            "/etc/systemd/system/pmlogger.service": "[Service]\nExecStart=/bin/sh -c \"while [ ! -f /tmp/pmlogger.start ]; do sleep 1; done\"\nType=oneshot\nRemainAfterExit=true"
+        }
+
+        self.createPackage("cockpit-pcp", "999", "1", content=pmlogger,
+                           postinst="chmod +x /usr/bin/pmlogger; systemctl daemon-reload")
+        self.enableRepo()
+        m.execute("pkcon refresh")
+
+        # the offer to install it should be visible
+        self.login_and_go("/system")
+        b.wait_not_visible("#server-pmlogger-switch")
+        if m.image in ["rhel-7-6-distropkg"]:
+            b.wait_in_text("#system-information-enable-pcp-link", "Enable persistent metrics…")
+        else:
+            b.wait_in_text("#system-information-enable-pcp-link", "Enable stored metrics…")
+        b.click("#system-information-enable-pcp-link")
+        b.wait_present("#cockpit_modal_dialog .modal-footer button.btn-primary:not([disabled])")
+        b.click("#cockpit_modal_dialog .modal-footer button.btn-primary")
+        b.wait_not_present("#cockpit_modal_dialog")
+
+        b.wait_visible("#server-pmlogger-switch")
+        b.wait_not_visible("#system-information-enable-pcp-link")
+
+        if m.image in ["rhel-7-6-distropkg", "rhel-8-0-distropkg"]: # PR #11224
+            return
+
+        # Turn stored metrics on
+        b.wait_present("#server-pmlogger-switch input:not(:checked)")
+        b.click("#server-pmlogger-switch input")
+        b.wait_present("#server-pmlogger-switch input:disabled")
+        m.execute("touch /tmp/pmlogger.start")
+        b.wait_present("#server-pmlogger-switch input:not(:disabled)")
+        b.wait_present("#server-pmlogger-switch input:checked")
+
+
+if __name__ == '__main__':
+    test_main()

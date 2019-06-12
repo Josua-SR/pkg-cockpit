@@ -157,7 +157,7 @@ return plural;
  ],
  "Cache": [
   null,
-  ""
+  "Pamięć podręczna"
  ],
  "Cancel": [
   null,
@@ -305,7 +305,7 @@ return plural;
  ],
  "Disks cannot be removed from $0 VMs": [
   null,
-  ""
+  "Nie można usuwać dysków z maszyn wirtualnych $0"
  ],
  "Download the MSI from $0": [
   null,
@@ -377,7 +377,7 @@ return plural;
  ],
  "Hide Performance Options": [
   null,
-  ""
+  "Ukryj opcje wydajności"
  ],
  "Host": [
   null,
@@ -493,7 +493,7 @@ return plural;
  ],
  "No Storage Pools available": [
   null,
-  ""
+  "Brak dostępnych pul urządzeń do przechowywania danych"
  ],
  "No VM found in oVirt.": [
   null,
@@ -757,7 +757,7 @@ return plural;
  ],
  "Show Performance Options": [
   null,
-  ""
+  "Wyświetl opcje wydajności"
  ],
  "Shut Down": [
   null,

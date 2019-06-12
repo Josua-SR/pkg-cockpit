@@ -85,7 +85,7 @@ return plural;
  ],
  "After leaving the domain, only users with local credentials will be able to log into this machine. This may also affect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  "ドメインの終了後は、ローカル認証情報を持つユーザーだけが、このマシンにログインできます。DNS 解決設定と、信頼される CA の一覧が変更する可能性があるため、他のサービスにも影響を与える場合があります。"
+  "ドメインの終了後は、ローカル認証情報を持つユーザーだけが、このマシンにログインできます。DNS 解決設定および信頼される CA の一覧が変更する可能性があるため、他のサービスにも影響を及ぼす場合があります。"
  ],
  "Authentication": [
   null,

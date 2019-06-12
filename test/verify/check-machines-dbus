@@ -1,0 +1,1018 @@
+#!/usr/bin/python3
+
+# This file is part of Cockpit.
+#
+# Copyright (C) 2018 Red Hat, Inc.
+#
+# Cockpit is free software; you can redistribute it and/or modify it
+# under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation; either version 2.1 of the License, or
+# (at your option) any later version.
+#
+# Cockpit is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
+
+import subprocess
+import unittest
+
+import machineslib
+import parent
+from testlib import *
+
+
+TEST_NETWORK_XML = """
+<network>
+  <name>test_network</name>
+  <forward mode='nat'/>
+  <bridge name='virbr1' stp='on' delay='0'/>
+  <mac address='52:54:00:bc:93:8e'/>
+  <ip address='192.168.123.1' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='192.168.123.2' end='192.168.123.254'/>
+    </dhcp>
+  </ip>
+</network>
+"""
+
+TEST_NETWORK2_XML = """
+<network>
+  <name>test_network2</name>
+  <bridge name='virbr1' stp='on' delay='0'/>
+  <mac address='52:54:00:79:86:29'/>
+  <domain name='test'/>
+  <bandwidth>
+    <inbound average='1000' peak='9000' burst='5000'/>
+    <outbound average='2000' peak='3000' burst='4000'/>
+  </bandwidth>
+  <ip family='ipv6' address='fd00:e81d:a6d7:55::1' prefix='64'>
+    <dhcp>
+      <range start='fd00:e81d:a6d7:55::100' end='fd00:e81d:a6d7:55::1ff'/>
+      <host name='simon' ip='2001:db8:ca2:2:3::1'/>
+      <host id='0:1:0:1:18:aa:62:fe:0:16:3e:44:55:66' ip='2001:db8:ca2:2:3::2'/>
+    </dhcp>
+  </ip>
+  <ip address='192.168.100.1' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='192.168.100.128' end='192.168.100.170'/>
+      <host mac='00:16:3E:5D:C7:9E' name='paul' ip='192.168.122.254'/>
+    </dhcp>
+  </ip>
+</network>
+"""
+
+TEST_NETWORK3_XML = """
+<network>
+  <name>test_network3</name>
+  <forward mode='bridge'/>
+  <bridge name='br0'/>
+</network>
+"""
+
+class TestMachinesDBus(machineslib.TestMachines):
+
+    def skipIfNotLibvirtDbusAvailable(self):
+        try:
+            self.machine.execute("busctl introspect org.libvirt /")
+        except subprocess.CalledProcessError:
+            raise unittest.SkipTest("libvirt-dbus is not available")
+
+    def setUp(self):
+        super(TestMachinesDBus, self).setUp()
+
+        self.skipIfNotLibvirtDbusAvailable()
+        self.provider = "libvirt-dbus"
+
+        # HACK: https://launchpad.net/bugs/1802005
+        if self.machine.image == "ubuntu-stable":
+            self.machine.execute("chmod o+rwx /run/libvirt/libvirt-sock")
+
+    def testAutostart(self):
+        b = self.browser
+        m = self.machine
+
+        self.startVm("subVmTest1")
+
+        self.login_and_go("/machines")
+        b.wait_in_text("body", "Virtual Machines")
+        b.wait_in_text("tbody tr th", "subVmTest1")
+
+        b.click("tbody tr th") # click on the row header
+        b.wait_in_text("#vm-subVmTest1-state", "running")
+
+
+        # set checkbox state and check state of checkbox
+        b.set_checked("#vm-subVmTest1-autostart-checkbox", True) # don't know the initial state of checkbox, so set it to checked
+        b.wait_present("#vm-subVmTest1-autostart-checkbox:checked")
+        # check virsh state
+        autostartState = m.execute("virsh dominfo subVmTest1 | grep 'Autostart:' | awk '{print $2}'").strip()
+        self.assertEqual(autostartState, "enable")
+
+        # change checkbox state and check state of checkbox
+        b.click("#vm-subVmTest1-autostart-checkbox")
+        b.wait_not_present("#vm-subVmTest1-autostart-checkbox:checked")
+        # check virsh state
+        autostartState = m.execute("virsh dominfo subVmTest1 | grep 'Autostart:' | awk '{print $2}'").strip()
+        self.assertEqual(autostartState, "disable")
+
+        # change checkbox state and check state of checkbox
+        b.click("#vm-subVmTest1-autostart-checkbox")
+        b.wait_present("#vm-subVmTest1-autostart-checkbox:checked")
+        # check virsh state
+        autostartState = m.execute("virsh dominfo subVmTest1 | grep 'Autostart:' | awk '{print $2}'").strip()
+        self.assertEqual(autostartState, "enable")
+
+    def testBootOrder(self):
+        b = self.browser
+
+        self.startVm("subVmTest1")
+
+        self.login_and_go("/machines")
+        b.wait_in_text("body", "Virtual Machines")
+        b.wait_in_text("tbody tr th", "subVmTest1")
+
+        b.click("tbody tr th") # click on the row header
+        b.wait_in_text("#vm-subVmTest1-state", "running")
+
+        # Wait for the edit button
+        bootOrder = b.text("#vm-subVmTest1-boot-order")
+
+        # Open dialog
+        b.click("#vm-subVmTest1-boot-order")
+        b.wait_present("#vm-subVmTest1-order-modal-window")
+        # Make sure the footer warning does not appear
+        b.wait_not_present("#vm-subVmTest1-order-modal-min-message")
+        # Move first device down and check whetever succeeded
+        row = b.text("#vm-subVmTest1-order-modal-device-row-1 .list-view-pf-additional-info")
+        b.click("#vm-subVmTest1-order-modal-device-row-0 #vm-subVmTest1-order-modal-down")
+        b.wait_in_text("#vm-subVmTest1-order-modal-device-row-0 .list-view-pf-additional-info", row)
+        # Make sure the footer warning does appear
+        b.wait_present("#vm-subVmTest1-order-modal-min-message")
+
+        # Save
+        b.click("#vm-subVmTest1-order-modal-save")
+        b.wait_not_present("#vm-subVmTest1-order-modal-window")
+        # Make sure warning next to boot order appears
+        b.wait_present("#boot-order-tooltip")
+
+        # Shut off domain and check changes are applied
+        b.click("#vm-subVmTest1-off-caret")
+        b.click("#vm-subVmTest1-forceOff")
+        b.wait_in_text("#vm-subVmTest1-state", "shut off")
+
+        # Check boot order has changed and no warning is shown
+        b.wait_not_in_text("#vm-subVmTest1-boot-order", bootOrder)
+        b.wait_not_present("#boot-order-tooltip")
+
+        bootOrder = b.text("#vm-subVmTest1-boot-order")
+
+        # Open dialog
+        b.click("#vm-subVmTest1-boot-order")
+        b.wait_present("#vm-subVmTest1-order-modal-window")
+        # Make sure the footer warning does not appear
+        b.wait_not_present("#vm-subVmTest1-order-modal-min-message")
+        # Unselect second device
+        b.click("#vm-subVmTest1-order-modal-device-row-1 input")
+        # Make sure the footer warning still does not appear, since machine is shut down
+        b.wait_not_present("#vm-subVmTest1-order-modal-min-message")
+
+        # Save
+        b.click("#vm-subVmTest1-order-modal-save")
+        b.wait_not_present("#vm-subVmTest1-order-modal-window")
+
+        # Check boot order has changed and no warning is shown
+        b.wait_not_in_text("#vm-subVmTest1-boot-order", bootOrder)
+        b.wait_not_present("#boot-order-tooltip")
+
+    def testDomainMemorySettings(self):
+        b = self.browser
+
+        args = self.startVm("subVmTest1")
+
+        self.login_and_go("/machines")
+        b.wait_in_text("body", "Virtual Machines")
+        b.wait_in_text("tbody tr th", "subVmTest1")
+
+        b.click("tbody tr th") # click on the row header
+        b.wait_in_text("#vm-subVmTest1-state", "running")
+
+        b.click("#vm-subVmTest1-overview") # open the "Overview" subtab
+
+        # Wait for the edit link
+        b.click("#vm-subVmTest1-memory-count")
+
+        # Change memory
+        b.wait_present("#vm-subVmTest1-memory-modal-memory")
+        # VM initially should have 256MiB
+        current_memory = int(b.attr("#vm-subVmTest1-memory-modal-memory", "value"))
+        self.assertEqual(current_memory, 256)
+        b.wait_attr("#vm-subVmTest1-memory-modal-max-memory", "readonly", "")
+
+        # Check memory hotunplugging
+        # The balloon driver needs to be loaded to descrease memory
+        wait(lambda: "Linux version" in self.machine.execute("cat {0}".format(args["logfile"])), delay=3)
+
+        b.set_input_text("#vm-subVmTest1-memory-modal-memory", str(current_memory - 10))
+        # Save the memory settings
+        b.click("#vm-subVmTest1-memory-modal-save")
+        b.wait_not_present("#vm-memory-modal")
+
+        b.wait_in_text("#vm-subVmTest1-memory-count", "{0} MiB".format(current_memory - 10))
+
+        # Shut off domain and check changes are  still there
+        b.click("#vm-subVmTest1-off-caret")
+        b.wait_visible("#vm-subVmTest1-forceOff")
+        b.click("#vm-subVmTest1-forceOff")
+        b.wait_in_text("#vm-subVmTest1-state", "shut off")
+        b.wait_in_text("#vm-subVmTest1-memory-count", "{0} MiB".format(current_memory - 10))
+
+        # Click for the edit link
+        b.click("#vm-subVmTest1-memory-count")
+
+        # Verify that limiting max memory in offline VMs bellow memory will decrease memory as well
+        b.set_input_text("#vm-subVmTest1-memory-modal-max-memory", str(current_memory - 20))
+        self.assertEqual(int(b.attr("#vm-subVmTest1-memory-modal-memory", "value")), current_memory - 20)
+
+        # Verify that increasing current memory in offline VMs above max memory will increase max memory as well
+        b.set_input_text("#vm-subVmTest1-memory-modal-memory", str(current_memory))
+        b.wait_attr("#vm-subVmTest1-memory-modal-max-memory", "value", str(current_memory))
+
+        # Verify that unit conversions work
+        b.select_from_dropdown("#vm-subVmTest1-memory-modal-memory-unit", "GiB")
+        b.set_input_text("#vm-subVmTest1-memory-modal-memory", "1")
+        b.wait_attr("#vm-subVmTest1-memory-modal-max-memory", "value", "1024")
+
+        # Save the memory settings
+        b.click("#vm-subVmTest1-memory-modal-save")
+        b.wait_not_present("#vm-memory-modal")
+        b.wait_in_text("#vm-subVmTest1-memory-count", "1 GiB")
+
+    def testDetachDisk(self):
+        b = self.browser
+        m = self.machine
+
+        # prepare libvirt storage pools
+        m.execute("mkdir /mnt/vm_one; chmod a+rwx /mnt/vm_one")
+        m.execute("virsh pool-create-as myPoolOne --type dir --target /mnt/vm_one")
+        m.execute("virsh vol-create-as myPoolOne mydiskofpoolone_1 --capacity 1G --format qcow2")
+        m.execute("virsh vol-create-as myPoolOne mydiskofpoolone_2 --capacity 1G --format qcow2")
+        m.execute("virsh vol-create-as myPoolOne mydiskofpoolone_3 --capacity 1M --format qcow2")
+        wait(lambda: "mydiskofpoolone_1" in m.execute("virsh vol-list myPoolOne"))
+        wait(lambda: "mydiskofpoolone_2" in m.execute("virsh vol-list myPoolOne"))
+        wait(lambda: "mydiskofpoolone_3" in m.execute("virsh vol-list myPoolOne"))
+
+        args = self.startVm("subVmTest1")
+
+        m.execute("virsh attach-disk --domain subVmTest1 --source /mnt/vm_one/mydiskofpoolone_1 --target vdd --targetbus virtio")
+        m.execute("virsh attach-disk --domain subVmTest1 --source /mnt/vm_one/mydiskofpoolone_2 --target vde --targetbus virtio --persistent")
+        m.execute("virsh attach-disk --domain subVmTest1 --source /mnt/vm_one/mydiskofpoolone_3 --target vdf --targetbus virtio --persistent")
+
+        self.login_and_go("/machines")
+        b.wait_in_text("body", "Virtual Machines")
+        b.wait_in_text("tbody tr[data-row-id=vm-subVmTest1] th", "subVmTest1")
+
+        # Test detaching non permanent disk of a running domain
+        b.click("tbody tr[data-row-id=vm-subVmTest1] th") # click on the row header
+        b.wait_in_text("#vm-subVmTest1-state", "running")
+
+        b.click("#vm-subVmTest1-disks") # open the "Disks" subtab
+        b.click("#vm-subVmTest1-disks-vdd-detach")
+        b.wait_not_present("vm-subVmTest1-disks-vdd-target")
+
+        # Test that detaching disk of a running domain will affect the
+        # inactive configuration as well
+        b.click("#vm-subVmTest1-off-caret")
+        b.click("#vm-subVmTest1-forceOff")
+        b.wait_in_text("#vm-subVmTest1-state", "shut off")
+        b.wait_not_present("vm-subVmTest1-disks-vdd-target")
+
+        # Test detaching permanent disk of a stopped domain
+        b.click("#vm-subVmTest1-disks") # open the "Disks" subtab
+        b.click("#vm-subVmTest1-disks-vde-detach")
+        b.wait_not_present("vm-subVmTest1-disks-vde-target")
+
+        # Test detaching disk of a paused domain
+        m.execute("virsh start subVmTest1")
+        # Make sure that the VM booted normally before attempting to suspend it
+        if args["logfile"] is not None:
+            wait(lambda: "Linux version" in m.execute("cat {0}".format(args["logfile"])), delay=3)
+        m.execute("virsh suspend subVmTest1")
+        b.wait_in_text("#vm-subVmTest1-state", "paused")
+        b.wait_attr("#vm-subVmTest1-disks-vdf-detach", "disabled", "")
+
+    def testNetworkSettings(self):
+        b = self.browser
+        m = self.machine
+
+        self.startVm("subVmTest1")
+
+        # Create dummy network
+        m.execute("echo \"{0}\" > /tmp/xml && virsh net-define /tmp/xml && virsh net-start test_network".format(TEST_NETWORK_XML))
+
+        # Create a second bridge to LAN NIC, virbr0 does not make sense but let's use it for test purposes
+        m.execute("virsh attach-interface --persistent subVmTest1 bridge virbr0")
+
+        self.login_and_go("/machines")
+        b.wait_in_text("body", "Virtual Machines")
+        b.wait_in_text("tbody tr th", "subVmTest1")
+
+        b.click("tbody tr th") # click on the row header
+        b.wait_in_text("#vm-subVmTest1-state", "running")
+
+        b.click("#vm-subVmTest1-networks") # open the "Networks" subtab
+
+        # Wait for the edit button
+        b.click("#vm-subVmTest1-network-1-edit-dialog")
+
+        # Make sure the footer warning does not appear until we change something
+        b.wait_not_present("#vm-subVmTest1-network-1-edit-dialog-idle-message")
+
+        # Cancel dialog
+        b.click("#vm-subVmTest1-network-1-edit-dialog-cancel")
+        b.wait_not_present("#vm-subVmTest1-network-1-edit-dialog-modal-window")
+
+        # Fetch current NIC model type
+        current_model_type = b.text("#vm-subVmTest1-network-1-model")
+
+        # Reopen dialog modal
+        b.click("#vm-subVmTest1-network-1-edit-dialog")
+
+        # Change network model type of a running domain
+        b.select_from_dropdown("#vm-subVmTest1-network-1-select-model", "e1000e", substring=True)
+        # Wait for the footer warning to appear
+        b.wait_present("#vm-subVmTest1-network-1-edit-dialog-idle-message")
+        # Change network type and source of a running domain
+        b.wait_in_text("#vm-subVmTest1-network-1-select-type", "network")
+        b.wait_in_text("#vm-subVmTest1-network-1-select-source", "default")
+        b.select_from_dropdown("#vm-subVmTest1-network-1-select-source", "test_network")
+        # Save the network settings
+        b.click("#vm-subVmTest1-network-1-edit-dialog-save")
+        b.wait_not_present("#vm-subVmTest1-network-1-edit-dialog-modal-window")
+        # Wait for the tooltips to appear next to the elements we changed
+        b.wait_in_text("#vm-subVmTest1-network-1-model", current_model_type)
+        b.wait_present("#vm-subVmTest1-network-1-model-tooltip")
+        b.wait_in_text("#vm-subVmTest1-network-1-type", 'network')
+        b.wait_in_text("#vm-subVmTest1-network-1-source", 'default')
+        b.wait_present("#vm-subVmTest1-network-1-source-tooltip")
+
+        # Shut off domain and check changes are applied
+        b.click("#vm-subVmTest1-off-caret")
+        b.click("#vm-subVmTest1-forceOff")
+        b.wait_in_text("#vm-subVmTest1-state", "shut off")
+        b.wait_in_text("#vm-subVmTest1-network-1-model", "e1000e")
+        b.wait_not_present("#vm-subVmTest1-network-1-model-tooltip")
+        b.wait_in_text("#vm-subVmTest1-network-1-type", "network")
+        b.wait_not_present("#vm-subVmTest1-network-1-type-tooltip")
+        b.wait_in_text("#vm-subVmTest1-network-1-source", "test_network")
+        b.wait_not_present("#vm-subVmTest1-network-1-source-tooltip")
+
+        # Remove the network interface
+        m.execute("virsh detach-interface --persistent --type network --domain subVmTest1")
+
+        # We don't get events for shut off VMs so reload the page
+        b.reload()
+        b.enter_page('/machines')
+        b.wait_in_text("body", "Virtual Machines")
+        b.wait_in_text(".cards-pf #card-pf-networks .card-pf-title-link", "Networks")
+        b.wait_in_text("#card-pf-networks .card-pf-aggregate-status-count", "2")
+        b.wait_in_text("tbody tr th", "subVmTest1")
+        b.click("tbody tr[data-row-id=vm-subVmTest1] th") # click on the row header
+        b.click("#vm-subVmTest1-networks") # open the "Networks" subtab
+
+        # Change network type and source from the bridge NIC
+        b.wait_in_text("#vm-subVmTest1-network-1-type", "bridge")
+        b.wait_in_text("#vm-subVmTest1-network-1-source", "virbr0")
+
+        # Open the modal dialog
+        b.click("#vm-subVmTest1-network-1-edit-dialog")
+
+        b.wait_in_text("#vm-subVmTest1-network-1-select-type", "Bridge to LAN")
+        b.select_from_dropdown("#vm-subVmTest1-network-1-select-type", "Virtual network")
+        b.select_from_dropdown("#vm-subVmTest1-network-1-select-source", "test_network")
+
+        # Save the network settings
+        b.click("#vm-subVmTest1-network-1-edit-dialog-save")
+        b.wait_not_present("#vm-subVmTest1-network-1-edit-dialog-modal-window")
+
+        b.wait_in_text("#vm-subVmTest1-network-1-type", "network")
+        b.wait_in_text("#vm-subVmTest1-network-1-source", "test_network")
+
+        # Remove all Virtual Networks and confirm that trying to choose
+        # Virtual Networks type for a NIC disables the save button
+        m.execute("virsh net-destroy test_network && virsh net-destroy default")
+        b.wait_in_text("#card-pf-networks .card-pf-aggregate-status-notification:nth-of-type(1)", "0")
+        m.execute("virsh net-undefine test_network && virsh net-undefine default")
+        b.wait_in_text("#card-pf-networks .card-pf-aggregate-status-notification:nth-of-type(2)", "0")
+        b.wait_in_text("#card-pf-networks .card-pf-aggregate-status-count", "0")
+
+        # Remove the network interface
+        m.execute("virsh detach-interface --persistent --type network --domain subVmTest1")
+
+        # Start the VM in order that the UI picks up the new interface, since we don't get events of shut off domains
+        m.execute("virsh start subVmTest1")
+
+        # Create a second bridge to LAN NIC
+        m.execute("ip link add name br1 type bridge && virsh attach-interface --current subVmTest1 bridge br1")
+
+        # Open the modal dialog
+        b.click("#vm-subVmTest1-network-1-edit-dialog")
+
+        # And ensure that the network sources dropdown is disabled
+        b.wait_in_text("#vm-subVmTest1-network-1-select-type", "Bridge to LAN")
+        b.select_from_dropdown("#vm-subVmTest1-network-1-select-type", "Virtual network")
+        b.wait_present("#vm-subVmTest1-network-1-edit-dialog-save:disabled")
+
+    def testNetworkAutostart(self):
+        b = self.browser
+        m = self.machine
+
+        # Create dummy network
+        m.execute("echo \"{0}\" > /tmp/xml && virsh net-define /tmp/xml".format(TEST_NETWORK2_XML))
+
+        connectionName = m.execute("virsh uri | head -1 | cut -d/ -f4").strip()
+
+        self.login_and_go("/machines")
+        b.wait_in_text("body", "Virtual Machines")
+
+        # Click on Networks card
+        b.wait_in_text(".cards-pf #card-pf-networks .card-pf-title-link", "Networks")
+        b.click(".cards-pf .card-pf-title span:contains(Networks)")
+
+        # Check that all networks are there
+        b.wait_in_text("body", "Networks")
+        b.wait_present("tbody tr[data-row-id=network-test_network2-{0}] th".format(connectionName))
+
+        # Expand row for first network
+        b.click("tbody tr[data-row-id=network-test_network2-{0}] th".format(connectionName)) # click on the row header
+
+        b.wait_present("#network-test_network2-{0}-autostart-checkbox".format(connectionName))
+
+        # set checkbox state and check state of checkbox
+        b.set_checked("#network-test_network2-{0}-autostart-checkbox".format(connectionName), True) # don't know the initial state of checkbox, so set it to checked
+        b.wait_present("#network-test_network2-{0}-autostart-checkbox:checked".format(connectionName))
+        # check virsh state
+        autostartState = m.execute("virsh net-info test_network2 | grep 'Autostart:' | awk '{print $2}'").strip()
+        self.assertEqual(autostartState, "yes")
+
+        # change checkbox state and check state of checkbox
+        b.click("#network-test_network2-{0}-autostart-checkbox".format(connectionName))
+        b.wait_present("#network-test_network2-{0}-autostart-checkbox:not(:checked)".format(connectionName))
+        # check virsh state
+        autostartState = m.execute("virsh net-info test_network2 | grep 'Autostart:' | awk '{print $2}'").strip()
+        self.assertEqual(autostartState, "no")
+
+        # change checkbox state and check state of checkbox
+        b.click("#network-test_network2-{0}-autostart-checkbox".format(connectionName))
+        b.wait_present("#network-test_network2-{0}-autostart-checkbox:checked".format(connectionName))
+        # check virsh state
+        autostartState = m.execute("virsh net-info test_network2 | grep 'Autostart:' | awk '{print $2}'").strip()
+        self.assertEqual(autostartState, "yes")
+
+    def testNetworkState(self):
+        b = self.browser
+        m = self.machine
+
+        # Create dummy network
+        m.execute("echo \"{0}\" > /tmp/xml && virsh net-define /tmp/xml".format(TEST_NETWORK2_XML))
+
+        connectionName = m.execute("virsh uri | head -1 | cut -d/ -f4").strip()
+
+        self.login_and_go("/machines")
+        b.wait_in_text("body", "Virtual Machines")
+
+        # Click on Networks card
+        b.wait_in_text(".cards-pf #card-pf-networks .card-pf-title-link", "Networks")
+        b.click(".cards-pf .card-pf-title span:contains(Networks)")
+
+        # Check that all networks are there
+        b.wait_in_text("body", "Networks")
+        b.wait_present("tbody tr[data-row-id=network-test_network2-{0}] th".format(connectionName))
+
+        # Expand row for first network
+        b.click("tbody tr[data-row-id=network-test_network2-{0}] th".format(connectionName)) # click on the row header
+
+        # activate network
+        b.wait_present("#activate-network-test_network2-{0}".format(connectionName))
+        b.click("#activate-network-test_network2-{0}".format(connectionName))
+        b.wait_in_text("#network-test_network2-{0}-state".format(connectionName), "active")
+        # check virsh state
+        wait(lambda: "yes" == m.execute("virsh net-info test_network2 | grep 'Active:' | awk '{print $2}'").strip(), tries=5)
+
+        # deactivate network
+        b.wait_present("#deactivate-network-test_network2-{0}".format(connectionName))
+        b.click("#deactivate-network-test_network2-{0}".format(connectionName))
+        b.wait_in_text("#network-test_network2-{0}-state".format(connectionName), "inactive")
+        b.wait_present("#activate-network-test_network2-{0}".format(connectionName))
+        # check virsh state
+        wait(lambda: "no" == m.execute("virsh net-info test_network2 | grep 'Active:' | awk '{print $2}'").strip(), tries=5)
+
+    def testNetworks(self):
+        b = self.browser
+        m = self.machine
+
+        # Create dummy network
+        m.execute("echo \"{0}\" > /tmp/xml && virsh net-create /tmp/xml".format(TEST_NETWORK2_XML))
+        m.execute("echo \"{0}\" > /tmp/xml && virsh net-create /tmp/xml".format(TEST_NETWORK3_XML))
+
+        connectionName = m.execute("virsh uri | head -1 | cut -d/ -f4").strip()
+
+        self.login_and_go("/machines")
+        b.wait_in_text("body", "Virtual Machines")
+
+        # Click on Networks card
+        b.wait_in_text(".cards-pf #card-pf-networks .card-pf-title-link", "Networks")
+        b.click(".cards-pf .card-pf-title span:contains(Networks)")
+
+        # Check that all networks are there
+        b.wait_in_text("body", "Networks")
+        b.wait_present("tbody tr[data-row-id=network-test_network2-{0}] th".format(connectionName))
+        b.wait_present("tbody tr[data-row-id=network-test_network3-{0}] th".format(connectionName))
+
+        # Check headers of networks
+        b.wait_in_text("#network-test_network2-{0}-name".format(connectionName), "test_network2")
+        b.wait_in_text("#network-test_network2-{0}-device".format(connectionName), "virbr1")
+        b.wait_in_text("#network-test_network2-{0}-forwarding".format(connectionName), "None (Isolated Network)")
+        b.wait_in_text("#network-test_network3-{0}-name".format(connectionName), "test_network3")
+        b.wait_in_text("#network-test_network3-{0}-device".format(connectionName), "br0")
+        b.wait_in_text("#network-test_network3-{0}-forwarding".format(connectionName), "Bridge")
+
+        # Expand row for first network
+        b.click("tbody tr[data-row-id=network-test_network2-{0}] th".format(connectionName)) # click on the row header
+
+        # Check overview network properties are present
+        b.wait_in_text("#network-test_network2-{0}-persistent".format(connectionName), "no")
+        b.wait_present("#network-test_network2-{0}-autostart-checkbox:not(:checked)".format(connectionName))
+        b.wait_in_text("#network-test_network2-{0}-ipv4-address".format(connectionName), "192.168.100.1")
+        b.wait_in_text("#network-test_network2-{0}-ipv4-netmask".format(connectionName), "255.255.255.0")
+        b.wait_in_text("#network-test_network2-{0}-ipv4-dhcp-range".format(connectionName), "192.168.100.128 - 192.168.100.170")
+        b.wait_in_text("#network-test_network2-{0}-ipv4-dhcp-host-0".format(connectionName), "Name: paul, MAC: 00:16:3E:5D:C7:9E, IP: 192.168.122.254")
+        b.wait_in_text("#network-test_network2-{0}-ipv6-address".format(connectionName), "fd00:e81d:a6d7:55::1")
+        b.wait_in_text("#network-test_network2-{0}-ipv6-prefix".format(connectionName), "64")
+        b.wait_in_text("#network-test_network2-{0}-ipv6-dhcp-range".format(connectionName), "fd00:e81d:a6d7:55::100 - fd00:e81d:a6d7:55::1ff")
+        b.wait_in_text("#network-test_network2-{0}-ipv6-dhcp-host-0".format(connectionName), "Name: simon, IP: 2001:db8:ca2:2:3::1")
+        b.wait_in_text("#network-test_network2-{0}-ipv6-dhcp-host-1".format(connectionName), "ID: 0:1:0:1:18:aa:62:fe:0:16:3e:44:55:66, IP: 2001:db8:ca2:2:3::2")
+
+        # Close expanded row for this pool
+        b.click("tbody tr[data-row-id=network-test_network2-{0}] th".format(connectionName)) # click on the row header
+
+        # Expand row for second network
+        b.click("tbody tr[data-row-id=network-test_network3-{0}] th".format(connectionName)) # click on the row header
+
+        # Check overview network properties are present
+        b.wait_in_text("#network-test_network3-{0}-persistent".format(connectionName), "no")
+        b.wait_present("#network-test_network3-{0}-autostart-checkbox:not(:checked)".format(connectionName))
+
+        # Check overview network properties are not present
+        b.wait_not_present("#network-test_network3-{0}-ipv4-address".format(connectionName))
+        b.wait_not_present("#network-test_network3-{0}-ipv4-netmask".format(connectionName))
+        b.wait_not_present("#network-test_network3-{0}-ipv4-dhcp-range".format(connectionName))
+        b.wait_not_present("#network-test_network3-{0}-ipv4-dhcp-host-0".format(connectionName))
+        b.wait_not_present("#network-test_network3-{0}-ipv6-address".format(connectionName))
+        b.wait_not_present("#network-test_network3-{0}-ipv6-prefix".format(connectionName))
+        b.wait_not_present("#network-test_network3-{0}-ipv6-dhcp-range".format(connectionName))
+        b.wait_not_present("#network-test_network3-{0}-ipv6-dhcp-host-0".format(connectionName))
+
+    def testPause(self):
+        b = self.browser
+        m = self.machine
+
+        self.startVm("subVmTest1")
+
+        self.login_and_go("/machines")
+        b.wait_in_text("body", "Virtual Machines")
+        b.wait_in_text("tbody tr th", "subVmTest1")
+
+        b.click("tbody tr th") # click on the row header
+        b.wait_in_text("#vm-subVmTest1-state", "running")
+
+
+        # pause the machine
+        b.click("#vm-subVmTest1-pause")
+        b.wait_in_text("#vm-subVmTest1-state", "paused")
+        state = m.execute("virsh dominfo subVmTest1 | grep 'State:' | awk '{print $2}'").strip()
+        self.assertEqual(state, "paused")
+
+        # resume the machine
+        b.click("#vm-subVmTest1-resume")
+        b.wait_in_text("#vm-subVmTest1-state", "running")
+        state = m.execute("virsh dominfo subVmTest1 | grep 'State:' | awk '{print $2}'").strip()
+        self.assertEqual(state, "running")
+
+    def testStoragePools(self):
+        b = self.browser
+        m = self.machine
+
+        self.startVm("subVmTest1")
+
+        # prepare libvirt storage pools
+        m.execute("mkdir /mnt/vm_one; mkdir /mnt/vm_two; chmod a+rwx /mnt/vm_one /mnt/vm_two")
+        m.execute("virsh pool-define-as myPoolOne --type dir --target /mnt/vm_one; virsh pool-start myPoolOne")
+        m.execute("virsh pool-define-as myPoolTwo --type dir --target /mnt/vm_two; virsh pool-start myPoolTwo")
+
+        m.execute("virsh vol-create-as myPoolTwo VolumeOne --capacity 1G --format qcow2")
+        m.execute("virsh vol-create-as myPoolTwo VolumeTwo --capacity 1G --format qcow2")
+        wait(lambda: all(volume in m.execute("virsh vol-list myPoolTwo") for volume in ["VolumeOne", "VolumeTwo"]))
+
+        connectionName = m.execute("virsh uri | head -1 | cut -d/ -f4").strip()
+
+        diskXML = """'<disk type="volume" device="disk">
+          <driver name="qemu"/>
+          <source pool="myPoolTwo" volume="VolumeOne"/>
+          <target dev="vdc" bus="virtio"/>
+        </disk>'""".replace("\n", "")
+
+        m.execute("echo {0} > /tmp/disk.xml; virsh attach-device --config --file /tmp/disk.xml subVmTest1".format(diskXML))
+
+        self.login_and_go("/machines")
+        b.wait_in_text("body", "Virtual Machines")
+        b.wait_in_text("tbody tr th", "subVmTest1")
+
+
+        # Shuf off the VM in order to allow deleting volumes that are used as
+        # disks later
+        b.click("tbody tr th") # click on the row header
+        b.click("#vm-subVmTest1-off-caret")
+        b.click("#vm-subVmTest1-forceOff")
+        b.wait_in_text("#vm-subVmTest1-state", "shut off")
+
+        # Click on Storage Pools card
+        b.wait_in_text(".cards-pf #card-pf-storage-pools .card-pf-title-link", "Storage Pools")
+        b.click(".cards-pf .card-pf-title span:contains(Storage Pools)")
+
+        # Check that all defined pools are there
+        b.wait_in_text("body", "Storage Pools")
+        b.wait_present("tbody tr[data-row-id=pool-myPoolOne-{0}] th".format(connectionName))
+        b.wait_present("tbody tr[data-row-id=pool-myPoolTwo-{0}] th".format(connectionName))
+
+        # Check basic pool properties
+        b.click("tbody tr[data-row-id=pool-myPoolOne-{0}] th".format(connectionName)) # click on the row header
+        b.wait_in_text("#pool-myPoolOne-{0}-target-path".format(connectionName), "/mnt/vm_one")
+        b.wait_in_text("#pool-myPoolOne-{0}-type".format(connectionName), "dir")
+
+        # Check storage volumes of a pool
+        b.wait_present("#pool-myPoolOne-{0}-storage-volumes".format(connectionName))
+        b.click("#pool-myPoolOne-{0}-storage-volumes".format(connectionName)) # open the "Storage Volumes" subtab
+        b.wait_present("#pool-myPoolOne-{0}-storage-volumes-list".format(connectionName))
+        b.wait_in_text("#pool-myPoolOne-{0}-storage-volumes-list".format(connectionName),
+                       "No Storage Volumes defined for this Storage Pool")
+
+        # Close expanded row for this pool
+        b.click("tbody tr[data-row-id=pool-myPoolOne-{0}] th".format(connectionName)) # click on the row header
+
+        # Expand row for second storage pool and check list of storage volumes
+        b.click("tbody tr[data-row-id=pool-myPoolTwo-{0}] th".format(connectionName)) # click on the row header
+        b.wait_present("#pool-myPoolTwo-{0}-storage-volumes".format(connectionName))
+        b.click("#pool-myPoolTwo-{0}-storage-volumes".format(connectionName)) # open the "Storage Volumes" subtab
+        b.wait_present("#pool-myPoolTwo-{0}-volume-VolumeOne-name".format(connectionName))
+        b.wait_in_text("#pool-myPoolTwo-{0}-volume-VolumeOne-name".format(connectionName), "VolumeOne")
+        b.wait_in_text("#pool-myPoolTwo-{0}-volume-VolumeTwo-name".format(connectionName), "VolumeTwo")
+        b.wait_not_present("#storage-volumes-delete")
+
+        # Delete Storage Volume that is not used by any VM
+        b.wait_present("tbody tr[data-row-id=pool-myPoolTwo-{0}-volume-VolumeTwo] input[type=checkbox]".format(connectionName))
+        b.click("tbody tr[data-row-id=pool-myPoolTwo-{0}-volume-VolumeTwo] input[type=checkbox]".format(connectionName))
+        b.wait_in_text("#storage-volumes-delete", "Delete 1 volume")
+        b.click("#storage-volumes-delete")
+        b.wait_not_present("#storage-volumes-list tbody tr[data-row-id=pool-myPoolTwo-{0}-volume-VolumeTwo]".format(connectionName))
+
+        # Try to Delete Storage Volume which is used by a VM
+        b.wait_present("tbody tr[data-row-id=pool-myPoolTwo-{0}-volume-VolumeOne] input[type=checkbox]".format(connectionName))
+        b.click("tbody tr[data-row-id=pool-myPoolTwo-{0}-volume-VolumeOne] input[type=checkbox]".format(connectionName))
+        b.wait_present("#storage-volumes-delete:disabled")
+        b.wait_in_text("#storage-volumes-delete", "Delete 1 volume")
+
+        # Test operations on storage pools
+        b.click("tbody tr[data-row-id=pool-myPoolOne-{0}] th".format(connectionName)) # click on the row header
+
+        # Try deactivating and activating a pool
+        b.click("#deactivate-pool-myPoolOne-{0}".format(connectionName))
+        b.wait_in_text("#pool-myPoolOne-{0}-state".format(connectionName), "inactive")
+        b.click("#activate-pool-myPoolOne-{0}".format(connectionName))
+        b.wait_in_text("#pool-myPoolOne-{0}-state".format(connectionName), "active")
+
+        # Backup pool XML to redefine right after
+        m.execute("virsh pool-dumpxml myPoolTwo > /tmp/myPoolTwo.xml")
+
+        b.click("#deactivate-pool-myPoolTwo-{0}".format(connectionName))
+
+        # Delete an inactive Pool. It's volumes won't be deleted
+        b.wait_present("#delete-pool-myPoolTwo-{0}".format(connectionName))
+        b.click("#delete-pool-myPoolTwo-{0}".format(connectionName))
+        b.wait_in_text("div.modal-dialog div.modal-body div.ct-form-layout", "Its content will not be deleted.")
+        b.click('div.modal-footer button:contains("Delete")')
+        b.wait_not_present("div.modal-dialog")
+        b.wait_not_present("#pool-myPoolTwo-{0}-storage-volumes-list".format(connectionName))
+        self.assertNotEqual(m.execute("ls -A /mnt/vm_two"), "")
+
+        # Redefine the deleted Pool
+        m.execute("virsh pool-define /tmp/myPoolTwo.xml")
+        b.wait_present("tbody tr[data-row-id=pool-myPoolTwo-{0}] th".format(connectionName))
+
+        # Activate the Pool
+        b.click("tbody tr[data-row-id=pool-myPoolTwo-{0}] th".format(connectionName)) # click on the row header
+        b.click("#activate-pool-myPoolTwo-{0}".format(connectionName))
+
+        # Delete and active Pool and also its volumes
+        b.wait_present("#delete-pool-myPoolTwo-{0}".format(connectionName))
+        b.click("#delete-pool-myPoolTwo-{0}".format(connectionName))
+        b.wait_present("div.modal-dialog")
+        b.set_checked("input#storage-pool-delete-volumes", True)
+        b.click('div.modal-footer button:contains("Delete")')
+        b.wait_not_present("div.modal-dialog")
+        b.wait_not_present("#pool-myPoolTwo-{0}-storage-volumes-list".format(connectionName))
+        self.assertEqual(m.execute("ls -A /mnt/vm_two"), "")
+
+        # Recreate the myPoolTwo to test Used By column
+        m.execute("mkdir -p /mnt/vm_two; chmod a+rwx /mnt/vm_two")
+        m.execute("virsh pool-define-as myPoolTwo --type dir --target /mnt/vm_two; virsh pool-start myPoolTwo")
+        m.execute("virsh vol-create-as myPoolTwo VolumeOne --capacity 1G --format qcow2 && virsh pool-refresh myPoolTwo")
+
+        wait(lambda: "VolumeOne" in m.execute("virsh vol-list myPoolTwo"))
+        diskXML = """'<disk type="volume" device="disk">
+          <driver name="qemu"/>
+          <source pool="myPoolTwo" volume="VolumeOne"/>
+          <target dev="vdd" bus="virtio"/>
+        </disk>'""".replace("\n", "")
+
+        m.execute("echo {0} > /tmp/disk.xml; virsh attach-device --config --file /tmp/disk.xml subVmTest1".format(diskXML))
+
+        # Expand row for myPoolTwo and check list of storage volumes
+        b.wait_present("tbody tr[data-row-id=pool-myPoolTwo-{0}] th".format(connectionName))
+        b.click("tbody tr[data-row-id=pool-myPoolTwo-{0}] th".format(connectionName)) # click on the row header
+        b.wait_present("#pool-myPoolTwo-{0}-storage-volumes".format(connectionName))
+        b.click("#pool-myPoolTwo-{0}-storage-volumes".format(connectionName)) # open the "Storage Volumes" subtab
+
+        b.wait_present("#pool-myPoolTwo-{0}-volume-VolumeOne-usedby".format(connectionName))
+        b.wait_in_text("#pool-myPoolTwo-{0}-volume-VolumeOne-usedby".format(connectionName), "subVmTest1")
+
+        m.execute("virsh detach-disk --config --target vdd subVmTest1".format(diskXML))
+        b.wait_in_text("#pool-myPoolTwo-{0}-volume-VolumeOne-usedby".format(connectionName), "")
+
+    def testStoragePoolsCreate(self):
+        b = self.browser
+        m = self.machine
+
+        m.execute("mkdir /tmp/my_dir_pool_one")
+        m.execute("mkdir /tmp/my_dir_pool_two")
+        m.execute("mkdir /mnt/exports && echo '/mnt/exports 127.0.0.1/24(rw,sync,no_root_squash,no_subtree_check)' > /etc/exports")
+        m.execute("systemctl restart nfs-server")
+
+        self.login_and_go("/machines")
+        b.wait_in_text("body", "Virtual Machines")
+
+        # Click on Storage Pools card
+        b.wait_in_text(".cards-pf #card-pf-storage-pools .card-pf-title-link", "Storage Pools")
+        b.click(".cards-pf .card-pf-title span:contains(Storage Pools)")
+
+        class StoragePoolCreateDialog(object):
+            def __init__(
+                self, test_obj, name, pool_type=None, target=None, source={},
+                autostart=None, xfail=False, xfail_error=None, remove=True,
+            ):
+                self.test_obj = test_obj
+                self.name = name
+                self.pool_type = pool_type
+                self.target = target
+                self.source = source
+                self.autostart = autostart
+                self.xfail = xfail
+                self.xfail_error = xfail_error
+                self.remove = remove
+
+            def execute(self):
+                self.open()
+                self.fill()
+                self.create()
+                if not self.xfail:
+                    self.verify_dialog()
+                    self.verify_overview()
+                    if self.remove:
+                        self.cleanup()
+
+            def open(self):
+                b.click("#create-storage-pool")
+                b.wait_present("#create-storage-pool-dialog")
+                b.wait_in_text(".modal-dialog .modal-header .modal-title", "Create Storage Pool")
+
+            def fill(self):
+                b.set_input_text("#storage-pool-dialog-name", self.name)
+
+                if self.pool_type:
+                    b.set_val("#storage-pool-dialog-type", self.pool_type)
+
+                if self.target:
+                    b.set_file_autocomplete_val("#storage-pool-dialog-target", self.target)
+
+                if 'source_path' in self.source:
+                    if self.pool_type != 'disk':
+                        b.set_input_text("#storage-pool-dialog-source", self.source['source_path'])
+                    else:
+                        b.set_file_autocomplete_val("#storage-pool-dialog-source", self.source['source_path'])
+
+
+                if 'format' in self.source:
+                    b.select_from_dropdown("#storage-pool-dialog-source-format", self.source['format'])
+
+                if 'host' in self.source:
+                    b.set_input_text("#storage-pool-dialog-host", self.source['host'])
+
+                if 'initiator' in self.source:
+                    b.set_input_text('#storage-pool-dialog-initiator', self.source['initiator'])
+
+                if (self.autostart):
+                    b.click("storage-pool-dialog-autostart")
+
+            def cancel(self):
+                b.click(".modal-footer button:contains(Cancel)")
+                b.wait_not_present("#create-storage-pool-dialog")
+
+            def create(self):
+                b.click(".modal-footer button:contains(Create)")
+
+                if (not self.xfail):
+                    # For the pool types that take some seconds to get created check that the spinner appears.
+                    # Other pool types have the spinner as well, but let's not check this in the tests to avoid race conditions,
+                    # where the spinner disappears very fast
+                    if self.pool_type  in ["netfs", "iscsi", "iscsi-direct"]:
+                        b.wait_present(".modal-footer div.spinner")
+                        b.wait_present(".modal-footer button:contains(Create):disabled")
+                    b.wait_not_present("#create-storage-pool-dialog")
+                else:
+                    # Check incomplete dialog
+                    if (not self.name):
+                        b.wait_present("#create-storage-pool-dialog .modal-body form div.has-error #storage-pool-dialog-name")
+
+                    if (not self.target):
+                        b.wait_present("#create-storage-pool-dialog .modal-body form div.has-error #storage-pool-dialog-target")
+                    # Check errors from backend
+                    if self.xfail_error:
+                        error_location = "#create-storage-pool-dialog .modal-footer .alert-danger"
+                        b.wait_present(error_location)
+                        error_message = b.text(error_location)
+                        self.test_obj.assertIn(self.xfail_error, error_message)
+
+                    self.cancel()
+
+            def verify_dialog(self):
+                # Check that the defined pools is now visible
+                b.wait_in_text("body", "Storage Pools")
+                b.wait_present("tbody tr[data-row-id=pool-{0}-system] th".format(self.name))
+
+                # Verify libvirt XML
+                pool_xml = "virsh -c qemu:///system pool-dumpxml {0}".format(self.name)
+                xmllint_element = "{0} | xmllint --xpath 'string(//pool/{{prop}})' - 2>&1 || true".format(pool_xml)
+
+                self.test_obj.assertEqual(self.name, m.execute(xmllint_element.format(prop='name')).strip())
+                if (self.target):
+                    self.test_obj.assertEqual(self.target, m.execute(xmllint_element.format(prop='target/path')).strip() + '/')
+                self.test_obj.assertEqual(self.pool_type, m.execute(xmllint_element.format(prop='@type')).strip())
+
+                host = m.execute(xmllint_element.format(prop='source/host/@name')).strip()
+                if "host" in self.source:
+                    self.test_obj.assertEqual(self.source["host"], host)
+                else:
+                    self.test_obj.assertEqual("", host.rstrip())
+
+                source_path_dir = m.execute(xmllint_element.format(prop="source/dir/@path")).strip()
+                source_path_device = m.execute(xmllint_element.format(prop="source/device/@path")).strip()
+                if "source_path" in self.source:
+                    self.test_obj.assertTrue(self.source["source_path"] in [source_path_dir, source_path_device])
+                else:
+                    self.test_obj.assertEqual("", host.rstrip())
+
+                initiator = m.execute(xmllint_element.format(prop='source/initiator/iqn/@name')).strip()
+                if "initiator" in self.source:
+                    self.test_obj.assertEqual(self.source["initiator"], initiator)
+                else:
+                    self.test_obj.assertEqual("", initiator.rstrip())
+
+                sourceFormat = m.execute(xmllint_element.format(prop='source/format/@type')).strip()
+                if "format" in self.source:
+                    self.test_obj.assertEqual(self.source["format"], sourceFormat)
+                else:
+                    if self.pool_type == 'netfs':
+                        self.test_obj.assertEqual("auto", sourceFormat)
+                    else:
+                        self.test_obj.assertEqual("", sourceFormat.rstrip())
+
+            def verify_overview(self):
+                # Check basic pool properties
+                connectionName = m.execute("virsh uri | head -1 | cut -d/ -f4").strip()
+                b.click("tbody tr[data-row-id=pool-{0}-{1}] th".format(self.name, connectionName)) # click on the row header
+
+                if self.target:
+                    b.wait_in_text("#pool-{0}-{1}-target-path".format(self.name, connectionName), self.target[:-1])
+                b.wait_in_text("#pool-{0}-{1}-type".format(self.name, connectionName), self.pool_type)
+                if "host" in self.source:
+                    b.wait_in_text("#pool-{0}-{1}-host".format(self.name, connectionName), self.source["host"])
+                if "source_path" in self.source:
+                    b.wait_in_text("#pool-{0}-{1}-source-path".format(self.name, connectionName), self.source["source_path"])
+
+            def cleanup(self):
+                m.execute("virsh pool-destroy {0} && virsh pool-undefine {0}".format(self.name))
+
+        StoragePoolCreateDialog(
+            self,
+            name="my_dir_pool_one",
+            pool_type="dir",
+            target="/tmp/my_dir_pool_one/",
+            remove=False,
+        ).execute()
+
+        # XFAIL: Try to create a pool with used name
+        StoragePoolCreateDialog(
+            self,
+            name="my_dir_pool_one",
+            pool_type="dir",
+            target="/tmp/my_dir_pool_one/",
+            xfail=True,
+            xfail_error="pool 'my_dir_pool_one' already exists"
+        ).execute()
+
+        # Manually remove the created pool
+        m.execute("virsh pool-destroy my_dir_pool_one && virsh pool-undefine my_dir_pool_one")
+
+        # XFAIL: Try to create a pool with incomplete modal dialog
+        StoragePoolCreateDialog(
+            self,
+            name="",
+            pool_type="dir",
+            target="",
+            xfail=True,
+        ).execute()
+
+        StoragePoolCreateDialog(
+            self,
+            name="my_dir_pool_two",
+            pool_type="netfs",
+            target="/tmp/my_dir_pool_two/",
+            source={"host": "127.0.0.1", "source_path": "/mnt/exports"}
+        ).execute()
+
+        # Prepare a ramdisk with gpt partition table to test the disk storage pool type
+        m.add_disk("50M", serial="DISK1")
+        wait(lambda: m.execute("ls -l /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_DISK1"))
+        m.execute("parted /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_DISK1 mklabel gpt")
+
+        StoragePoolCreateDialog(
+            self,
+            name="my_disk_pool",
+            pool_type="disk",
+            target="/media/",
+            source={"source_path": "/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_DISK1", "format": "gpt"},
+        ).execute()
+
+        # Debian and ubuntu images don't have open-iscsi already installed
+        # FIXME: Add open-iscsi to debian and ubuntu images
+        if "debian" not in m.image and "ubuntu" not in m.image:
+            # Preparations for testing ISCSI pools
+
+            target_iqn = "iqn.2019-09.cockpit.lan"
+            orig_iqn = m.execute("sed </etc/iscsi/initiatorname.iscsi -e 's/^.*=//'").rstrip()
+
+            # Increase the iSCSI timeouts for heavy load during our testing
+            m.execute("""sed -i 's|^\(node\..*log.*_timeout = \).*|\\1 60|' /etc/iscsi/iscsid.conf""")
+
+            # Setup a iSCSI target
+            m.execute("""
+                      targetcli /backstores/ramdisk create test 50M
+                      targetcli /iscsi create %(tgt)s
+                      targetcli /iscsi/%(tgt)s/tpg1/luns create /backstores/ramdisk/test
+                      targetcli /iscsi/%(tgt)s/tpg1/acls create %(ini)s
+                      """ % {"tgt": target_iqn, "ini": orig_iqn})
+
+            StoragePoolCreateDialog(
+                self,
+                name="my_iscsi_pool",
+                pool_type="iscsi",
+                target="/dev/disk/by-path/",
+                source={"host": "127.0.0.1", "source_path": target_iqn}
+            ).execute()
+
+            if float(m.execute("virsh --version").strip()[:3]) >= 4.7:
+                # iscsi-direct pool type is available since libvirt 4.7
+                StoragePoolCreateDialog(
+                    self,
+                    name="my_iscsi_direct_pool",
+                    pool_type="iscsi-direct",
+                    source={"host": "127.0.0.1",
+                            "source_path": target_iqn,
+                            "initiator": orig_iqn}
+                ).execute()
+            else:
+                # Ensure that iscsi-direct is absent from the types dropdown
+                b.click("#create-storage-pool")
+                b.wait_present("#create-storage-pool-dialog")
+                b.wait_in_text(".modal-dialog .modal-header .modal-title", "Create Storage Pool")
+                b.click("#storage-pool-dialog-type")
+                b.wait_not_present("#storage-pool-dialog-type option[value*='isci-direct']")
+                b.click(".modal-footer button:contains(Cancel)")
+                b.wait_not_present("#create-storage-pool-dialog")
+
+
+if __name__ == '__main__':
+    test_main()

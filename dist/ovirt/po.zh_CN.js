@@ -157,7 +157,7 @@ return plural;
  ],
  "Cache": [
   null,
-  ""
+  "缓存"
  ],
  "Cancel": [
   null,
@@ -305,7 +305,7 @@ return plural;
  ],
  "Disks cannot be removed from $0 VMs": [
   null,
-  ""
+  "磁盘不能从 $0 VM 删除"
  ],
  "Download the MSI from $0": [
   null,
@@ -377,7 +377,7 @@ return plural;
  ],
  "Hide Performance Options": [
   null,
-  ""
+  "隐藏性能选项"
  ],
  "Host": [
   null,
@@ -493,7 +493,7 @@ return plural;
  ],
  "No Storage Pools available": [
   null,
-  ""
+  "没有可用的存储池"
  ],
  "No VM found in oVirt.": [
   null,
@@ -757,7 +757,7 @@ return plural;
  ],
  "Show Performance Options": [
   null,
-  ""
+  "显示性能选项"
  ],
  "Shut Down": [
   null,

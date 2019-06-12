@@ -285,7 +285,7 @@ return plural;
  ],
  "Configure Kubelet and Proxy": [
   null,
-  "Kubelet およびプロキシーの設定"
+  "Kubelet およびプロキシの設定"
  ],
  "Connect": [
   null,
@@ -1057,7 +1057,7 @@ return plural;
  ],
  "Proxy Version": [
   null,
-  "プロキシーバージョン"
+  "プロキシバージョン"
  ],
  "Pull an image:": [
   null,

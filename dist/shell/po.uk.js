@@ -381,7 +381,7 @@ return plural;
  ],
  "Project website": [
   null,
-  "Сайт проекту"
+  "Сайт проєкту"
  ],
  "Prompting via ssh-add timed out": [
   null,

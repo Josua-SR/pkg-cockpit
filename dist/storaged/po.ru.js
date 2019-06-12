@@ -73,21 +73,21 @@ return plural;
  ],
  "$0 Chunk Size": [
   null,
-  "$0 Размер блока"
+  "размер блока: $0"
  ],
  "$0 Disks": [
   null,
-  "$0 Диски"
+  "дисков: $0"
  ],
  "$0 data + $1 overhead used of $2 ($3)": [
   null,
-  "$0 данные + $1 накладные расходы $2 ($3)"
+  "$0 данных + $1 служебной информации использовано из $2 ($3)"
  ],
  "$0 disk is missing": [
   "$0 disks are missing",
   "$0 диск отсутствует",
-  "$0 диски отсутствуют",
-  "$0 диски отсутствуют"
+  "$0 диска отсутствует",
+  "$0 дисков отсутствует"
  ],
  "$0 filesystems can not be made larger.": [
   null,
@@ -151,7 +151,7 @@ return plural;
  ],
  "1 MiB": [
   null,
-  "1 MiB"
+  "1 МиБ"
  ],
  "1 day": [
   null,
@@ -167,23 +167,23 @@ return plural;
  ],
  "128 KiB": [
   null,
-  "128 KiB"
+  "128 КиБ"
  ],
  "16 KiB": [
   null,
-  "16 KiB"
+  "16 КиБ"
  ],
  "2 MiB": [
   null,
-  "2 MiB"
+  "2 МиБ"
  ],
  "32 KiB": [
   null,
-  "32 KiB"
+  "32 КиБ"
  ],
  "4 KiB": [
   null,
-  "4 KiB"
+  "4 КиБ"
  ],
  "5 minutes": [
   null,
@@ -191,7 +191,7 @@ return plural;
  ],
  "512 KiB": [
   null,
-  "512 KiB"
+  "512 КиБ"
  ],
  "6 hours": [
   null,
@@ -199,11 +199,11 @@ return plural;
  ],
  "64 KiB": [
   null,
-  "64 KiB"
+  "64 КиБ"
  ],
  "8 KiB": [
   null,
-  "8 KiB"
+  "8 КиБ"
  ],
  "A disk is needed.": [
   null,
@@ -357,9 +357,9 @@ return plural;
   null,
   "Сжатие"
  ],
- "Confirm passphrase": [
+ "Confirm": [
   null,
-  "Подтвердить парольную фразу"
+  "Подтверждение пароля"
  ],
  "Confirm removal with passphrase": [
   null,
@@ -440,10 +440,6 @@ return plural;
  "Custom": [
   null,
   "Другой"
- ],
- "Custom (Enter filesystem type)": [
-  null,
-  "Пользовательский (введите тип файловой системы)"
  ],
  "Custom encryption options": [
   null,
@@ -569,13 +565,13 @@ return plural;
   null,
   "Опорожнение $target"
  ],
+ "Encrypt data": [
+  null,
+  ""
+ ],
  "Encrypted $0": [
   null,
   "Зашифрованные $0"
- ],
- "Encrypted EXT4 (LUKS)": [
-  null,
-  "Зашифрованный EXT4 (LUKS)"
  ],
  "Encrypted Logical Volume of $0": [
   null,
@@ -584,10 +580,6 @@ return plural;
  "Encrypted Partition of $0": [
   null,
   "Зашифрованный раздел $0"
- ],
- "Encrypted XFS (LUKS)": [
-  null,
-  "Зашифрованный XFS (LUKS)"
  ],
  "Encrypted volumes can not be resized here.": [
   null,
@@ -636,10 +628,6 @@ return plural;
  "Filesystem Name": [
   null,
   "Имя файловой системы"
- ],
- "Filesystem type": [
-  null,
-  "Тип файловой системы"
  ],
  "Filesystems": [
   null,
@@ -693,6 +681,10 @@ return plural;
   null,
   "расти"
  ],
+ "Grow Content": [
+  null,
+  ""
+ ],
  "Grow Logical Volume": [
   null,
   "Рост логического объема"
@@ -715,7 +707,7 @@ return plural;
  ],
  "Inactive volume": [
   null,
-  "Неактивный объем"
+  "Неактивный том"
  ],
  "Index Memory": [
   null,
@@ -772,6 +764,10 @@ return plural;
  "Keyserver removal may prevent unlocking $0.": [
   null,
   "Удаление Keyserver может предотвратить разблокировку $0"
+ ],
+ "Loading...": [
+  null,
+  "Загрузка..."
  ],
  "Local Mount Point": [
   null,
@@ -843,7 +839,7 @@ return plural;
  ],
  "Mount Point": [
   null,
-  "Точка крепления"
+  "Точка подключения"
  ],
  "Mount at boot": [
   null,
@@ -1009,10 +1005,6 @@ return plural;
   null,
   "Не бегать"
  ],
- "Off": [
-  null,
-  "Выкл"
- ],
  "Ok": [
   null,
   "OK"
@@ -1020,10 +1012,6 @@ return plural;
  "Old passphrase": [
   null,
   "Старая кодовая фраза"
- ],
- "On": [
-  null,
-  "Вкл"
  ],
  "Only $0 of $1 are used.": [
   null,
@@ -1067,7 +1055,7 @@ return plural;
  ],
  "Passphrase cannot be empty": [
   null,
-  "Парольная фраза не может быть пуста"
+  "Парольная фраза не может быть пустой"
  ],
  "Passphrase removal may prevent unlocking $0.": [
   null,
@@ -1223,11 +1211,11 @@ return plural;
  ],
  "Reading": [
   null,
-  "чтение"
+  "Чтение"
  ],
  "Reboot": [
   null,
-  "Перезагрузить"
+  "Перезагрузка"
  ],
  "Recommended default": [
   null,
@@ -1369,6 +1357,14 @@ return plural;
   null,
   "Настройка петлевого устройства $target"
  ],
+ "Show all": [
+  null,
+  ""
+ ],
+ "Show all $0 drives": [
+  null,
+  ""
+ ],
  "Shrink": [
   null,
   "Уменьшить"
@@ -1376,6 +1372,10 @@ return plural;
  "Shrink Logical Volume": [
   null,
   "Термоусадочный логический том"
+ ],
+ "Shrink Volume": [
+  null,
+  ""
  ],
  "Size": [
   null,
@@ -1411,7 +1411,7 @@ return plural;
  ],
  "Start": [
   null,
-  "Пуск"
+  "Запустить"
  ],
  "Start Multipath": [
   null,
@@ -1519,7 +1519,7 @@ return plural;
  ],
  "The filesystem is in use by system services. Proceeding will stop these.": [
   null,
-  "Системные службы используются файловой системой. Продолжающие действия остановят их."
+  "Файловая система используется системными службами. При продолжении они будут остановлены."
  ],
  "The last disk of a RAID device cannot be removed.": [
   null,
@@ -1584,6 +1584,10 @@ return plural;
  "This disk cannot be removed while the device is recovering.": [
   null,
   "Этот диск не может быть удален во время восстановления устройства."
+ ],
+ "This logical volume is not completely used by its content.": [
+  null,
+  ""
  ],
  "This volume needs to be activated before it can be resized.": [
   null,
@@ -1741,13 +1745,13 @@ return plural;
   null,
   "Группы томов"
  ],
+ "Volume size is $0. Content size is $1.": [
+  null,
+  ""
+ ],
  "Waiting for other software management operations to finish": [
   null,
   "Ожидание выполнения других операций управления программным обеспечением"
- ],
- "Warning": [
-  null,
-  ""
  ],
  "What if tang-show-keys is not available?": [
   null,
@@ -1759,7 +1763,7 @@ return plural;
  ],
  "Writing": [
   null,
-  "Пишу"
+  "Запись"
  ],
  "[$0 bytes of binary data]": [
   null,

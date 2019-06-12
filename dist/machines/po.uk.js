@@ -137,7 +137,7 @@ return plural;
  ],
  "Cache": [
   null,
-  ""
+  "Кеш"
  ],
  "Cancel": [
   null,
@@ -281,7 +281,7 @@ return plural;
  ],
  "Disks cannot be removed from $0 VMs": [
   null,
-  ""
+  "Не можна вилучати диски з ВМ $0"
  ],
  "Download the MSI from $0": [
   null,
@@ -349,7 +349,7 @@ return plural;
  ],
  "Hide Performance Options": [
   null,
-  ""
+  "Приховати параметри швидкодії"
  ],
  "Host": [
   null,
@@ -553,7 +553,7 @@ return plural;
  ],
  "No Storage Pools available": [
   null,
-  ""
+  "Немає доступних буферів зберігання даних"
  ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
@@ -657,11 +657,11 @@ return plural;
  ],
  "Physical Disk Device": [
   null,
-  ""
+  "Фізичний пристрій диска"
  ],
  "Physical disk device on host": [
   null,
-  ""
+  "Фізичний пристрій у основній системі"
  ],
  "Please enter new volume name": [
   null,
@@ -789,7 +789,7 @@ return plural;
  ],
  "Show Performance Options": [
   null,
-  ""
+  "Показати параметри швидкодії"
  ],
  "Shut Down": [
   null,
@@ -809,7 +809,7 @@ return plural;
  ],
  "Source Format": [
   null,
-  ""
+  "Початковий формат"
  ],
  "Source Path": [
   null,
@@ -937,7 +937,7 @@ return plural;
  ],
  "This volume is already used by another VM.": [
   null,
-  ""
+  "Цей том вже використано іншою ВМ."
  ],
  "Threads per core": [
   null,

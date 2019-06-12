@@ -169,7 +169,7 @@ return plural;
  ],
  "Add Zone": [
   null,
-  ""
+  "Ajouter une zone"
  ],
  "Add ports to the following zones:": [
   null,
@@ -181,7 +181,7 @@ return plural;
  ],
  "Add zone": [
   null,
-  ""
+  "Ajouter une zone"
  ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -209,7 +209,7 @@ return plural;
  ],
  "Allowed Addresses": [
   null,
-  ""
+  "Adresses autorisées"
  ],
  "Allowed Services": [
   null,
@@ -345,7 +345,7 @@ return plural;
  ],
  "Custom zones": [
   null,
-  ""
+  "Zones personnalisées"
  ],
  "DNS": [
   null,
@@ -397,7 +397,7 @@ return plural;
  ],
  "Entire subnet": [
   null,
-  ""
+  "Ensemble du sous-réseau"
  ],
  "Ethernet MAC": [
   null,
@@ -429,7 +429,7 @@ return plural;
  ],
  "Failed to add zone": [
   null,
-  ""
+  "N'a pas pu ajouter de zone"
  ],
  "Failed to remove service": [
   null,
@@ -513,7 +513,7 @@ return plural;
  ],
  "Included services": [
   null,
-  ""
+  "services inclus"
  ],
  "Interfaces": [
   null,
@@ -657,7 +657,7 @@ return plural;
  ],
  "No description available": [
   null,
-  ""
+  "Aucune description disponible"
  ],
  "No open ports": [
   null,
@@ -761,7 +761,7 @@ return plural;
  ],
  "Range": [
   null,
-  ""
+  "Gamme"
  ],
  "Range must be strictly ordered": [
   null,
@@ -845,7 +845,7 @@ return plural;
  ],
  "Sorted from least trusted to most trusted": [
   null,
-  ""
+  "Ordonner du moins au plus fiable"
  ],
  "Spanning Tree Protocol": [
   null,
@@ -925,7 +925,7 @@ return plural;
  ],
  "Trust level": [
   null,
-  ""
+  "Niveau de confiance"
  ],
  "UDP": [
   null,

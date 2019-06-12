@@ -85,7 +85,7 @@ return plural;
  ],
  "Crash dump location": [
   null,
-  "Место сброса аварии"
+  "Расположение аварийного дампа"
  ],
  "Crash system": [
   null,
@@ -105,7 +105,7 @@ return plural;
  ],
  "Kernel Dump": [
   null,
-  "Сброс ядра"
+  "Дамп ядра"
  ],
  "Loading...": [
   null,
@@ -139,17 +139,9 @@ return plural;
   null,
   "Нет"
  ],
- "Off": [
-  null,
-  "Выкл"
- ],
  "Ok": [
   null,
   "OK"
- ],
- "On": [
-  null,
-  "Вкл"
  ],
  "On a mounted device": [
   null,
@@ -161,7 +153,7 @@ return plural;
  ],
  "Reading...": [
   null,
-  "Чтение ..."
+  "Чтение..."
  ],
  "Remote over NFS": [
   null,
@@ -201,11 +193,11 @@ return plural;
  ],
  "Test Configuration": [
   null,
-  "Конфигурация тестирования"
+  "Проверить конфигурацию"
  ],
  "Test is only available while the kdump service is running.": [
   null,
-  "Тест доступен только во время работы службы kdump."
+  "Проверка доступна только при запущенной службе kdump."
  ],
  "Test kdump settings": [
   null,
@@ -217,7 +209,7 @@ return plural;
  ],
  "This will test the kdump configuration by crashing the kernel.": [
   null,
-  "Это проверит конфигурацию kdump, разбив ядро."
+  "Конфигурация kdump будет проверена путём осуществления умышленного сбоя в ядре."
  ],
  "Unable to apply settings: $0": [
   null,

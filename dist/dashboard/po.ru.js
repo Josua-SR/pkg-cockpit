@@ -89,7 +89,7 @@ return plural;
  ],
  "A compatible version of Cockpit is not installed on {{#strong}}{{host}}{{/strong}}.": [
   null,
-  "Совместимая версия Cockpit не установлена ​​на {{#strong}}{{host}}{{/strong}}"
+  "Совместимая версия Cockpit не установлена ​​на {{#strong}}{{host}}{{/strong}}."
  ],
  "Add": [
   null,
@@ -337,7 +337,7 @@ return plural;
  ],
  "Login Password": [
   null,
-  "Логин Пароль"
+  "Пароль для входа"
  ],
  "Lost connection. Trying to reconnect": [
   null,
@@ -429,7 +429,7 @@ return plural;
  ],
  "Portable": [
   null,
-  "портативный"
+  "Портативный"
  ],
  "Prompting via ssh-add timed out": [
   null,

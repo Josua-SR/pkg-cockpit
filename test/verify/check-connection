@@ -1,0 +1,508 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
+# This file is part of Cockpit.
+#
+# Copyright (C) 2013 Red Hat, Inc.
+#
+# Cockpit is free software; you can redistribute it and/or modify it
+# under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation; either version 2.1 of the License, or
+# (at your option) any later version.
+#
+# Cockpit is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with Cockpit; If not, see <http://www.gnu.org/licenses/>.
+
+import base64
+import time
+
+import parent
+from testlib import *
+
+
+class TestConnection(MachineCase):
+
+    def setUp(self):
+        super().setUp()
+        self.ws_executable = "/usr/libexec/cockpit-ws"
+        if "debian" in self.machine.image or "ubuntu" in self.machine.image:
+            self.ws_executable = "/usr/lib/cockpit/cockpit-ws"
+
+    def testBasic(self):
+        b = self.browser
+        m = self.machine
+
+        m.start_cockpit()
+
+        # take cockpit-ws down on the login page
+        b.open("/system")
+        b.wait_visible("#login")
+        b.set_val("#login-user-input", "admin")
+        b.set_val("#login-password-input", "foobar")
+        m.stop_cockpit()
+        b.click('#login-button')
+        b.wait_text_not('#login-fatal-message', "")
+        m.start_cockpit()
+        b.reload()
+        b.wait_visible("#login")
+        b.set_val("#login-user-input", "admin")
+        b.set_val("#login-password-input", "foobar")
+        b.click('#login-button')
+        b.expect_load()
+        b.enter_page("/system")
+
+        # cookie should not be marked as secure, it's not https
+        cookie = b.cookie("cockpit")
+        self.assertTrue(cookie["httpOnly"])
+        self.assertFalse(cookie["secure"])
+
+        # take cockpit-ws down on the server page
+        m.stop_cockpit()
+        b.switch_to_top()
+        b.wait_in_text(".curtains-ct h1", "Disconnected")
+
+        m.start_cockpit()
+        b.click("#machine-reconnect")
+        b.expect_load()
+        b.wait_visible("#login")
+        b.set_val("#login-user-input", "admin")
+        b.set_val("#login-password-input", "foobar")
+
+        # sever the connection on the login page
+        m.execute("iptables -w -I INPUT -p tcp --dport 9090 -j REJECT --reject-with tcp-reset")
+        b.click('#login-button')
+        with b.wait_timeout(20):
+            b.wait_text_not('#login-fatal-message', "")
+        m.execute("iptables -w -D INPUT -p tcp --dport 9090 -j REJECT --reject-with tcp-reset")
+        b.reload()
+        b.wait_visible("#login")
+        b.set_val("#login-user-input", "admin")
+        b.set_val("#login-password-input", "foobar")
+        b.click('#login-button')
+        b.expect_load()
+        b.enter_page("/system")
+
+        # sever the connection on the server page
+        m.execute("iptables -w -I INPUT -p tcp --dport 9090 -j REJECT")
+        b.switch_to_top()
+        with b.wait_timeout(60):
+            b.wait_visible(".curtains-ct")
+
+        b.wait_in_text(".curtains-ct h1", "Disconnected")
+        b.wait_in_text('.curtains-ct p', "Connection has timed out.")
+        m.execute("iptables -w -D INPUT -p tcp --dport 9090 -j REJECT")
+        b.click("#machine-reconnect")
+        b.expect_load()
+        b.enter_page("/system")
+        b.logout()
+
+        # deleted cookie after logout should not be marked as secure, it's not https
+        cookie = b.cookie("cockpit")
+        self.assertEqual(cookie["value"], "deleted")
+        if m.image != "rhel-7-6-distropkg":
+            # fixed in PR #10766
+            self.assertTrue(cookie["httpOnly"])
+        self.assertFalse(cookie["secure"])
+
+        if not m.atomic_image:  # cannot write to /usr on Atomics, and cockpit-session is in a container
+            # damage cockpit-session permissions (Fedora-ish and Debian-ish path), expect generic error message
+            m.execute("chmod g-x /usr/libexec/cockpit-session 2>/dev/null || chmod g-x /usr/lib/cockpit/cockpit-session")
+            b.open("/system")
+            b.wait_in_text('#login-fatal-message', "Internal error in login process")
+            m.execute("chmod g+x /usr/libexec/cockpit-session 2>/dev/null || chmod g+x /usr/lib/cockpit/cockpit-session")
+
+            self.allow_journal_messages(".*cockpit-session: bridge program failed.*")
+
+            # pretend cockpit-bridge is not installed, expect specific error message
+            m.execute("mv /usr/bin/cockpit-bridge /usr/bin/cockpit-bridge.disabled")
+            b.open("/system")
+            b.wait_visible("#login")
+            b.set_val("#login-user-input", "admin")
+            b.set_val("#login-password-input", "foobar")
+            b.click('#login-button')
+            b.wait_visible('#login-fatal-message')
+            if m.image not in ["rhel-7-6-distropkg"]:
+                b.wait_text('#login-fatal-message', "The cockpit package is not installed")
+            else:
+                # cockpit-ws < 184 had an unspecific error message
+                b.wait_in_text('#login-fatal-message', "Internal error")
+            m.execute("mv /usr/bin/cockpit-bridge.disabled /usr/bin/cockpit-bridge")
+
+        # Reauthorization can fail due to disconnects above
+        self.allow_authorize_journal_messages()
+        self.allow_restart_journal_messages()
+
+        # Lets crash a systemd-crontrolled process and see if we get a proper backtrace in the logs
+        # This helps with debugging failures in the tests elsewhere
+        m.execute("systemctl start systemd-hostnamed; pkill -e -SEGV systemd-hostnam")
+        wait(lambda: m.execute("journalctl -b | grep 'Process.*systemd-hostnam.*of user.*dumped core.'"))
+
+        # Make sure the core dumps exist in the directory, so we can download them
+        cores = m.execute("find /var/lib/systemd/coredump -type f")
+        self.assertNotEqual(cores, "")
+
+        self.allow_core_dumps = True
+        self.allow_journal_messages(".*org.freedesktop.hostname1.*DBus.Error.NoReply.*")
+
+    def testTls(self):
+        m = self.machine
+        b = self.browser
+
+        # Start Cockpit with TLS
+        m.start_cockpit(tls=True)
+
+        # A normal TLS connection works
+        output = m.execute('openssl s_client -connect 172.27.0.15:9090 2>&1')
+        m.message(output)
+        self.assertIn("DONE", output)
+
+        # SSLv3 should not work
+        output = m.execute('openssl s_client -connect 172.27.0.15:9090 -ssl3 2>&1 || true')
+        self.assertNotIn("DONE", output)
+
+        # Some operating systems fail SSL3 on the server side
+        self.assertRegex(output, "Secure Renegotiation IS NOT supported|"
+                         "ssl handshake failure|"
+                         "Option unknown option -ssl3|"
+                         "null ssl method passed|"
+                         "wrong version number")
+
+        # RC4 should not work
+        output = m.execute('! openssl s_client -connect 172.27.0.15:9090 -tls1_2 -cipher RC4 2>&1')
+        self.assertNotIn("DONE", output)
+        self.assertRegex(
+            output, "no cipher match|no ciphers available|ssl handshake failure|Cipher is \(NONE\)")
+
+        # Install a certificate chain, and give it an arbitrary bad file context
+        m.upload(["verify/files/cert-chain.cert"], "/etc/cockpit/ws-certs.d")
+        m.execute("! selinuxenabled || chcon --type svirt_sandbox_file_t /etc/cockpit/ws-certs.d/cert-chain.cert")
+
+        # This should also reset the file context
+        m.restart_cockpit()
+
+        # Should use the new certificates and entire chain should show up
+        output = m.execute('openssl s_client -connect 172.27.0.15:9090 2>&1')
+        self.assertIn("DONE", output)
+        self.assertRegex(output, "s:/?CN *= *localhost")
+        self.assertRegex(output, "1 s:/?OU *= *Intermediate")
+
+        # login handler: correct password
+        m.execute("curl -k -c cockpit.jar -s --head --header 'Authorization: Basic {}' https://127.0.0.1:9090/cockpit/login".format(
+            base64.b64encode(b"admin:foobar").decode(), ))
+        headers = m.execute("curl -k --head -b cockpit.jar -s https://127.0.0.1:9090/")
+        self.assertIn(
+            "default-src 'self' https://127.0.0.1:9090; connect-src 'self' https://127.0.0.1:9090 wss://127.0.0.1:9090", headers)
+        self.assertIn("Access-Control-Allow-Origin: https://127.0.0.1:9090", headers)
+
+        self.allow_journal_messages(
+            ".*Peer failed to perform TLS handshake",
+            ".*Peer sent fatal TLS alert:.*",
+            ".*invalid base64 data in Basic header",
+            ".*Error performing TLS handshake: No supported cipher suites have been found.",
+            ".*Error performing TLS handshake: Could not negotiate a supported cipher suite.")
+
+        # check the Debian smoke test
+        m.upload(["../tools/debian/tests/smoke"], "/tmp")
+        m.execute("/tmp/smoke")
+
+        b.ignore_ssl_certificate_errors(True)
+        self.login_and_go("/system", tls=True)
+        cookie = b.cookie("cockpit")
+        # cookie should be marked as secure
+        self.assertTrue(cookie["httpOnly"])
+        self.assertTrue(cookie["secure"])
+        # same after logout
+        b.logout()
+        cookie = b.cookie("cockpit")
+        self.assertEqual(cookie["value"], "deleted")
+        if m.image not in ["rhel-7-6-distropkg", "rhel-8-0-distropkg"]:
+            # fixed in PR #10766
+            self.assertTrue(cookie["httpOnly"])
+            # fixed in PR #11279
+            self.assertTrue(cookie["secure"])
+
+    def testConfigOrigins(self):
+        m = self.machine
+        m.execute(
+            'mkdir -p /etc/cockpit/ && echo "[WebService]\nOrigins = http://other-origin:9090 http://localhost:9090" > /etc/cockpit/cockpit.conf')
+        m.start_cockpit()
+        output = m.execute('curl -s -f -N -H "Connection: Upgrade" -H "Upgrade: websocket" -H "Origin: http://other-origin:9090" -H "Host: localhost:9090" -H "Sec-Websocket-Key: 3sc2c9IzwRUc3BlSIYwtSA==" -H "Sec-Websocket-Version: 13" http://localhost:9090/cockpit/socket')
+        self.assertIn('"no-session"', output)
+
+        # The socket should also answer at /socket
+        output = m.execute('curl -s -f -N -H "Connection: Upgrade" -H "Upgrade: websocket" -H "Origin: http://other-origin:9090" -H "Host: localhost:9090" -H "Sec-Websocket-Key: 3sc2c9IzwRUc3BlSIYwtSA==" -H "Sec-Websocket-Version: 13" http://localhost:9090/socket')
+        self.assertIn('"no-session"', output)
+
+        self.allow_journal_messages('peer did not close io when expected')
+
+    @skipImage("Atomic doesn't use socket", "fedora-atomic", "rhel-atomic", "continuous-atomic")
+    def testSocket(self):
+        m = self.machine
+
+        if m.image not in ["rhel-7-6-distropkg"]:
+            self.assertIn("systemctl", m.execute("cat /etc/issue.d/cockpit.issue"))
+            self.assertIn("systemctl", m.execute("cat /etc/motd.d/cockpit"))
+            self.assertNotIn("9090", m.execute("cat /etc/motd.d/cockpit"))
+        m.start_cockpit()
+
+        if m.image not in ["rhel-7-6-distropkg"]:
+            self.assertNotIn("systemctl", m.execute("cat /etc/motd.d/cockpit"))
+            self.assertIn("9090", m.execute("cat /etc/issue.d/cockpit.issue"))
+            self.assertIn("9090", m.execute("cat /etc/motd.d/cockpit"))
+
+        m.execute("systemctl stop cockpit.socket")
+
+        # Change port according to documentation: https://cockpit-project.org/guide/latest/listen.html
+        m.execute('! selinuxenabled || semanage port -m -t websm_port_t -p tcp 443')
+        m.execute(
+            'mkdir -p /etc/systemd/system/cockpit.socket.d/ && printf "[Socket]\nListenStream=\nListenStream=443" > /etc/systemd/system/cockpit.socket.d/listen.conf')
+
+        # cockpit-ws from base package
+        if m.image not in ["rhel-7-6-distropkg"]:
+            self.assertIn("systemctl", m.execute("cat /etc/issue.d/cockpit.issue"))
+            self.assertIn("systemctl", m.execute("cat /etc/motd.d/cockpit"))
+            self.assertNotIn("9090", m.execute("cat /etc/motd.d/cockpit"))
+            self.assertNotIn("443", m.execute("cat /etc/motd.d/cockpit"))
+        m.start_cockpit(tls=True)
+
+        # cockpit-ws from base package
+        if m.image not in ["rhel-7-6-distropkg"]:
+            self.assertNotIn("systemctl", m.execute("cat /etc/motd.d/cockpit"))
+            self.assertNotIn("9090", m.execute("cat /etc/motd.d/cockpit"))
+            self.assertIn("443", m.execute("cat /etc/issue.d/cockpit.issue"))
+            self.assertIn("443", m.execute("cat /etc/motd.d/cockpit"))
+
+        output = m.execute('curl -k https://localhost 2>&1 || true')
+        self.assertIn('Loading...', output)
+
+        output = m.execute('curl -k https://localhost:9090 2>&1 || true')
+        self.assertIn('Connection refused', output)
+
+        self.allow_journal_messages(".*Peer failed to perform TLS handshake")
+
+    @skipImage("Atomic doesn't have cockpit-ws", "fedora-atomic", "rhel-atomic", "continuous-atomic")
+    def testCommandline(self):
+        m = self.machine
+        m.execute(
+            'mkdir -p /test/cockpit/ws-certs.d && echo "[WebService]\nLoginTitle = A Custom Title" > /test/cockpit/cockpit.conf')
+        m.execute('mkdir -p /test/cockpit/static/ && echo "<!DOCTYPE html><html><head></head><body><p>Custom Default Root</p></body></html>" > /test/cockpit/static/login.html')
+
+        m.execute("XDG_CONFIG_DIRS=/test XDG_DATA_DIRS=/test remotectl certificate --ensure")
+        self.assertTrue(m.execute("ls /test/cockpit/ws-certs.d/*"))
+        self.assertFalse(m.execute("ls /etc/cockpit/ws-certs.d/* || true"))
+
+        m.execute("XDG_CONFIG_DIRS=/test XDG_DATA_DIRS=/test {} --port 9000 --address 127.0.0.1 0<&- &>/dev/null &".format(self.ws_executable))
+
+        # The port may not be available immediately, so wait for it
+        wait(lambda: 'A Custom Title' in m.execute('curl -s -k https://localhost:9000/'))
+
+        output = m.execute('curl -s -S -k https://172.27.0.15:9000/ 2>&1 || true')
+        self.assertIn('Connection refused', output)
+
+    def testHeadRequest(self):
+        m = self.machine
+        m.start_cockpit()
+
+        # static handler
+        headers = m.execute("curl -s --head http://172.27.0.15:9090/cockpit/static/login.min.html")
+        self.assertIn("HTTP/1.1 200 OK\r\n", headers)
+        self.assertIn("Content-Type: text/html\r\n", headers)
+        # login.html is not always accessible as a file (e. g. in Atomic), so just assert a reasonable content length
+        self.assertIn("Content-Length: ", headers)
+        length = int(headers.split('Content-Length: ', 1)[1].split()[0])
+        self.assertGreater(length, 10000)
+        self.assertLess(length, 100000)
+
+        # login handler: wrong password
+        headers = m.execute("curl -s --head --header 'Authorization: Basic {}' http://172.27.0.15:9090/cockpit/login".format(
+            base64.b64encode(b"admin:hahawrong").decode()))
+        self.assertIn("HTTP/1.1 401 Authentication failed\r\n", headers)
+        self.assertNotIn("Set-Cookie:", headers)
+
+        # login handler: correct password
+        headers = m.execute("curl -s --head --header 'Authorization: Basic {}' http://172.27.0.15:9090/cockpit/login".format(
+            base64.b64encode(b"admin:foobar").decode()))
+        self.assertIn("HTTP/1.1 200 OK\r\n", headers)
+        self.assertIn("Set-Cookie: cockpit", headers)
+
+        # socket handler; this should refuse HEAD (as it makes little sense on sockets), so 404
+        headers = m.execute("curl -s --head http://172.27.0.15:9090/cockpit/socket")
+        self.assertIn("HTTP/1.1 404 Not Found\r\n", headers)
+
+        # external channel handler; unauthenticated, thus 404
+        headers = m.execute("curl -s --head http://172.27.0.15:9090/cockpit+123/channel/foo")
+        self.assertIn("HTTP/1.1 404 Not Found\r\n", headers)
+
+    def testFlowControl(self):
+        m = self.machine
+        b = self.browser
+
+        self.login_and_go("/playground/speed", user="root")
+
+        # Check the speed playground page
+        b.switch_to_top()
+        b.go("/playground/speed")
+        b.enter_page("/playground/speed")
+
+        b.wait_text_not("#pid", "")
+        pid = b.text("#pid")
+
+        b.set_val("#read-path", "/dev/vda")
+        b.click("#read-sideband")
+
+        b.wait_text_not("#speed", "")
+        time.sleep(20)
+        output = m.execute("cat /proc/{}/statm".format(pid))
+        rss = int(output.split(" ")[0])
+
+        # This fails when flow control is not present
+        self.assertLess(rss, 200000)
+
+    @skipImage("Atomic doesn't have cockpit-ws installed", "fedora-atomic", "rhel-atomic", "continuous-atomic")
+    @skipImage("Added in 184", "rhel-7-6-distropkg")
+    def testLocalSession(self):
+        m = self.machine
+
+        # start ws with --local-session, let it spawn bridge; ensure that this works without /etc/cockpit/
+        m.spawn("su - -c 'G_MESSAGES_DEBUG=all XDG_CONFIG_DIRS=/usr/local %s -p 9999 -a 127.0.0.90 "
+                "--local-session=cockpit-bridge' admin" % self.ws_executable,
+                "cockpit-ws-local")
+        m.wait_for_cockpit_running('127.0.0.90', 9999)
+        # System frame should work directly, no login page
+        out = m.execute("curl --compressed http://127.0.0.90:9999/cockpit/@localhost/system/index.html")
+        self.assertIn('id="system_machine_id"', out)
+        self.assertIn('data-action="shutdown"', out)
+
+        # shut it down, wait until it is gone
+        m.execute("pkill -ef cockpit-ws")
+
+        # start ws with --local-session and existing running bridge
+        script = '''#!/bin/bash -eu
+coproc env G_MESSAGES_DEBUG=all cockpit-bridge
+G_MESSAGES_DEBUG=all XDG_CONFIG_DIRS=/usr/local %s -p 9999 -a 127.0.0.90 --local-session=- <&${COPROC[0]} >&${COPROC[1]}
+''' % self.ws_executable
+        m.execute(["tee", "/tmp/local.sh"], input=script)
+        m.execute("chmod a+x /tmp/local.sh")
+        m.spawn("su - -c /tmp/local.sh admin", "local.sh")
+        m.wait_for_cockpit_running('127.0.0.90', 9999)
+
+        # System frame should work directly, no login page
+        out = m.execute("curl --compressed http://127.0.0.90:9999/cockpit/@localhost/system/index.html")
+        self.assertIn('id="system_machine_id"', out)
+        self.assertIn('data-action="shutdown"', out)
+
+        self.allow_journal_messages("couldn't register polkit authentication agent.*")
+
+    @skipImage("Atomic doesn't have cockpit-ws installed", "fedora-atomic", "rhel-atomic", "continuous-atomic")
+    @skipImage("Kernel does not allow user namespaces", "centos-7", "rhel-7-6", "rhel-7-7", "debian-stable", "debian-testing")
+    @skipImage("Simple paths added in PR #11701", "rhel-7-6-distropkg")
+    def testCockpitDesktop(self):
+        cases = [(['/cockpit/@localhost/system/index.html', 'system', 'system/index', 'system/'],
+                  ['id="system_machine_id"', 'data-action="shutdown"']
+                 ),
+                 (['/cockpit/@localhost/network/firewall.html', 'network/firewall'],
+                  ['div id="firewall"', 'script src="firewall.js"']
+                 ),
+                 (['/cockpit/@localhost/playground/react-patterns.html', 'playground/react-patterns'],
+                  ['script src="react-patterns.js"']
+                 ),
+                ]
+
+        m = self.machine
+
+        if "debian" in m.image or "ubuntu" in m.image:
+            cockpit_desktop = "/usr/lib/cockpit/cockpit-desktop"
+        else:
+            cockpit_desktop = "/usr/libexec/cockpit-desktop"
+
+        for (pages, asserts) in cases:
+            if m.image == "rhel-8-0-distropkg": # rhel-8-0-distropkg can handle only full paths, see #11701
+                pages = [pages[0]]
+            for page in pages:
+                m.execute('''su - -c 'BROWSER="curl --silent --compressed -o /tmp/out.html" %s %s' admin''' %
+                          (cockpit_desktop, page))
+
+                out = m.execute("cat /tmp/out.html")
+                for a in asserts:
+                    self.assertIn(a, out)
+
+                # should clean up processes
+                self.assertEqual(m.execute("! pgrep -a cockpit-ws && ! pgrep -a cockpit-bridge"), "")
+
+        self.allow_journal_messages("couldn't register polkit authentication agent.*")
+
+    @skipImage("missing socat", "fedora-atomic", "rhel-atomic", "continuous-atomic", "centos-7")
+    @skipImage("Added in PR #11813", "rhel-7-6-distropkg", "rhel-8-0-distropkg")
+    def testReverseTlsProxy(self):
+        m = self.machine
+        b = self.browser
+
+        # set up a poor man's reverse TLS proxy with socat
+        m.upload(["../src/bridge/mock-server.crt", "../src/bridge/mock-server.key"], "/tmp")
+        m.spawn("socat OPENSSL-LISTEN:9090,reuseaddr,fork,cert=/tmp/mock-server.crt,"
+                "key=/tmp/mock-server.key,verify=0 TCP:localhost:9099",
+                "socat.log")
+
+        # ws with plain --no-tls should fail after login with mismatching Origin (expected http, got https)
+        m.spawn("su -s /bin/sh -c '%s --no-tls -p 9099 -a 127.0.0.1' cockpit-ws" % self.ws_executable,
+                "ws-notls.log")
+        m.wait_for_cockpit_running(tls=True)
+
+        b.ignore_ssl_certificate_errors(True)
+        b.open("https://%s:%s/system" % (b.address, b.port))
+        b.wait_visible("#login")
+        b.set_val("#login-user-input", "admin")
+        b.set_val("#login-password-input", "foobar")
+        b.click('#login-button')
+        b.expect_load()
+
+        def check_wss_log():
+            for log in self.browser.get_js_log():
+                if 'Error during WebSocket handshake: Unexpected response code: 403' in log:
+                    return True
+            return False
+        wait(check_wss_log)
+
+        wait(lambda: "received request from bad Origin" in m.execute("journalctl -b -t cockpit-ws"))
+
+        # sanity check: HTTP does not work
+        m.execute("! curl http://localhost:9090")
+
+        m.execute("pkill -e cockpit-ws; while pgrep -a cockpit-ws; do sleep 1; done")
+        # this page failure is reeally noisy
+        self.allow_authorize_journal_messages()
+        self.allow_restart_journal_messages()
+        self.allow_journal_messages(".*No authentication agent found.*")
+        self.allow_journal_messages("couldn't register polkit authentication agent.*")
+        self.allow_journal_messages("received request from bad Origin.*")
+        self.allow_journal_messages(".*invalid handshake.*")
+        self.allow_browser_errors(".*received unsupported version in init message.*")
+        self.allow_browser_errors(".*received message before init.*")
+        self.allow_browser_errors("Error reading machine id")
+
+        # ws with --for-tls-proxy accepts only https origins, thus should work
+        m.spawn("su -s /bin/sh -c '%s --for-tls-proxy -p 9099 -a 127.0.0.1' cockpit-ws" % self.ws_executable,
+                "ws-fortlsproxy.log")
+        m.wait_for_cockpit_running(tls=True)
+        b.open("https://%s:%s/system" % (b.address, b.port))
+        b.wait_visible("#login")
+        b.set_val("#login-user-input", "admin")
+        b.set_val("#login-password-input", "foobar")
+        b.click('#login-button')
+        b.expect_load()
+        b.wait_visible('#content')
+        b.enter_page("/system")
+        b.logout()
+
+        # should have https:// URLs in Content-Security-Policy
+        out = m.execute("curl --insecure --head https://localhost:9090/")
+        self.assertIn("Content-Security-Policy: connect-src 'self' https://localhost:9090 wss://localhost:9090;", out)
+
+
+if __name__ == '__main__':
+    test_main()
