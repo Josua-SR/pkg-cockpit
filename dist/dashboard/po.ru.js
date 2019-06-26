@@ -13,47 +13,6 @@
         loaded = true;
     }
 
-    function transformAngular(data, prev) {
-        var key, context, parts, value, result = { };
-        for (key in data) {
-            if (key === "")
-                continue;
-            parts = key.split("\u0004");
-            value = data[key];
-            if (parts[1]) {
-                context = parts[0];
-                key = parts[1];
-            } else {
-                context = "$$noContext";
-                key = parts[0];
-            }
-            if (value[0] === null)
-                value = value[1];
-            else
-                value = value.slice(1);
-            if (!(key in result))
-                result[key] = { };
-            result[key][context] = value;
-        }
-        return angular.extend(prev, result);
-    }
-
-    /* Load into angular here */
-    if (typeof angular === 'object') {
-        try {
-            module = angular.module(["gettext"]);
-        } catch(ex) { console.log(ex); /* Either no angular or angular-gettext */ };
-        if (module) {
-            loaded = true;
-            module.run(['gettextCatalog', function(gettextCatalog) {
-                var lang = data[""]["language"];
-                var prev = (gettextCatalog.getCurrentLanguage() == lang) ? gettextCatalog.strings : { };
-                gettextCatalog.setStrings(lang, transformAngular(data, prev));
-                gettextCatalog.setCurrentLanguage(lang);
-            }]);
-        }
-    }
-
     if (!loaded)
         root.po = data;
 
@@ -97,7 +56,7 @@ return plural;
  ],
  "Add Machine to Dashboard": [
   null,
-  "Добавить машину в панель инструментов"
+  "Добавление компьютера на информационную панель"
  ],
  "Address": [
   null,
@@ -109,15 +68,15 @@ return plural;
  ],
  "All In One": [
   null,
-  "Все в одном"
+  "Всё в одном"
  ],
  "Authentication": [
   null,
-  "Проверка доступа"
+  "Проверка подлинности"
  ],
  "Authentication Failed": [
   null,
-  "Ошибка аутентификации"
+  "Ошибка проверки подлинности"
  ],
  "Available": [
   null,
@@ -129,15 +88,15 @@ return plural;
  ],
  "Blade": [
   null,
-  "лопасть"
+  "Блейд-сервер"
  ],
  "Blade enclosure": [
   null,
-  "Корпус лезвия"
+  "Корзина"
  ],
  "Bus Expansion Chassis": [
   null,
-  "Шина расширения шины"
+  "Корпус расширения шины"
  ],
  "CPU": [
   null,
@@ -145,7 +104,7 @@ return plural;
  ],
  "Can't load image": [
   null,
-  "Не удается загрузить изображение"
+  "Не удаётся загрузить образ"
  ],
  "Cancel": [
   null,
@@ -161,31 +120,31 @@ return plural;
  ],
  "Cockpit could not contact the given host $0. Make sure it has ssh running on port $1, or specify another port in the address.": [
   null,
-  "Кабина не могла связаться с данным хостом $0Убедитесь, что ssh работает на порту $1, или указать другой порт в адресе."
+  "Не удалось установить связь между Cockpit и заданным узлом $0. Убедитесь, что на порте $1 работает SSH, или укажите другой порт в адресе."
  ],
  "Cockpit is not installed": [
   null,
-  "Кабина не установлена"
+  "Cockpit не установлен"
  ],
  "Cockpit was unable to contact {{#strong}}{{host}}{{/strong}}.": [
   null,
-  "Кабина не смогла связаться {{#strong}}{{host}}{{/strong}}"
+  "Не удалось установить связь между Cockpit и {{#strong}}{{host}}{{/strong}}."
  ],
  "Cockpit was unable to log in to {{#strong}}{{host}}{{/strong}}. {{#can_sync}}You may want to try to {{#sync_link}}synchronize users{{/sync_link}}.{{/can_sync}} For more authentication options and troubleshooting support please upgrade cockpit-ws to a newer version.": [
   null,
-  "Cockpit не смог войти в систему {{#strong}}{{host}}{{/strong}} {{#can_sync}}Вы можете попытаться {{#sync_link}}синхронизировать пользователей{{/sync_link}}{{/can_sync}} Для получения дополнительных параметров проверки подлинности и устранения неполадок обновите версию кабины экипажа до более новой версии."
+  "Не удалось выполнить вход в {{#strong}}{{host}}{{/strong}} с помощью Cockpit. {{#can_sync}}Вы можете попытаться {{#sync_link}}синхронизировать пользователей{{/sync_link}}.{{/can_sync}} Для получения дополнительных параметров проверки подлинности и устранения неполадок обновите cockpit-ws до новой версии."
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}.": [
   null,
-  "Кабина не смогла войти в {{#strong}}{{host}}{{/strong}}"
+  "Не удалось выполнить вход в {{#strong}}{{host}}{{/strong}} с помощью Cockpit."
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. To use this machine with cockpit you will need to enable one of the following authentication methods in the sshd config on {{#strong}}{{host}}{{/strong}}:": [
   null,
-  "Кабина не смогла войти в {{#strong}}{{host}}{{/strong}}Чтобы использовать эту машину с кабиной, вам необходимо включить один из следующих методов проверки подлинности в конфигурации sshd {{#strong}}{{host}}{{/strong}}:"
+  "Не удалось выполнить вход в {{#strong}}{{host}}{{/strong}} с помощью Cockpit. Для использования Cockpit на этом компьютере вам необходимо включить один из следующих методов проверки подлинности в конфигурации SSHD на {{#strong}}{{host}}{{/strong}}:"
  ],
  "Cockpit was unable to log into {{#strong}}{{host}}{{/strong}}. You can change your authentication credentials below. {{#can_sync}}You may prefer to {{#sync_link}}synchronize accounts and passwords{{/sync_link}}.{{/can_sync}}": [
   null,
-  "Кабина не смогла войти в {{#strong}}{{host}}{{/strong}}Вы можете изменить учетные данные для проверки подлинности ниже. {{#can_sync}}Вы можете предпочесть {{#sync_link}}синхронизировать учетные записи и пароли{{/sync_link}}{{/can_sync}}"
+  "Не удалось выполнить вход в {{#strong}}{{host}}{{/strong}} с помощью Cockpit. Вы можете изменить учётные данные для проверки подлинности ниже. {{#can_sync}}Возможно, вы предпочтёте {{#sync_link}}синхронизировать учётные записи и пароли{{/sync_link}}.{{/can_sync}}"
  ],
  "Color": [
   null,
@@ -193,39 +152,39 @@ return plural;
  ],
  "Compact PCI": [
   null,
-  "Компактный PCI"
+  "CompactPCI"
  ],
  "Connect": [
   null,
-  "Подключаться"
+  "Подключиться"
  ],
  "Connecting simultaneously to more than {{ limit }} machines is unsupported.": [
   null,
-  "Одновременное подключение к {{ limit }} машины не поддерживаются."
+  "Одновременное подключение к количеству компьютеров, превышающему {{ limit }}, не поддерживается."
  ],
  "Connection Error": [
   null,
-  "Ошибка соединения"
+  "Ошибка подключения"
  ],
  "Convertible": [
   null,
-  "конвертируемый"
+  "Компьютер-трансформер"
  ],
  "Could not contact {{host}}": [
   null,
-  "Не удалось связаться {{host}}"
+  "Не удалось связаться с {{host}}"
  ],
  "Dashboard": [
   null,
-  "Обзор"
+  "Панель мониторинга"
  ],
  "Desktop": [
   null,
-  "Рабочий стол"
+  "Настольный компьютер"
  ],
  "Detachable": [
   null,
-  "отрывной"
+  "Съёмный компьютер"
  ],
  "Disk I/O": [
   null,
@@ -237,23 +196,23 @@ return plural;
  ],
  "Edit Server": [
   null,
-  "Изменить сервер"
+  "Изменение сервера"
  ],
  "Embedded PC": [
   null,
-  "Встроенный ПК"
+  "Встраиваемый компьютер"
  ],
  "Enter IP address or host name": [
   null,
-  "Введите IP-адрес или имя хоста"
+  "Введите IP-адрес или имя узла"
  ],
  "Entering a different password here means you will need to retype it every time you reconnect to this machine": [
   null,
-  "Ввод другого пароля здесь означает, что вам нужно будет перепечатывать его каждый раз, когда вы снова подключаетесь к этой машине"
+  "Ввод другого пароля здесь приведёт к тому, что вам придётся вводить его заново при каждом подключении к этому компьютеру"
  ],
  "Error loading users: {{perm_failed}}": [
   null,
-  "Ошибка при загрузке пользователей: {{perm_failed}}"
+  "Произошла ошибка при загрузке пользователей: {{perm_failed}}"
  ],
  "Expansion Chassis": [
   null,
@@ -261,7 +220,7 @@ return plural;
  ],
  "Failed to add machine: $0": [
   null,
-  "Не удалось добавить машину: $0"
+  "Не удалось добавить компьютер: $0"
  ],
  "Failed to change password": [
   null,
@@ -269,7 +228,7 @@ return plural;
  ],
  "Failed to edit machine: $0": [
   null,
-  "Не удалось изменить машину: $0"
+  "Не удалось изменить компьютер: $0"
  ],
  "Fingerprint": [
   null,
@@ -277,11 +236,11 @@ return plural;
  ],
  "Go to now": [
   null,
-  "Перейдите к"
+  "Текущий момент"
  ],
  "Hand Held": [
   null,
-  "Ручная работа"
+  "Карманный компьютер"
  ],
  "Host Name": [
   null,

@@ -31,14 +31,8 @@ non_manageable_images = [
     "ubuntu-stable"
 ]
 
-rootfs_not_in_volume_group_images = [
-    "centos-7",
-]
-
-
 def can_manage(machine):
-    return (machine.image not in non_manageable_images and
-            machine.image not in rootfs_not_in_volume_group_images)
+    return machine.image not in non_manageable_images
 
 
 @skipImage("No cockpit-docker on i386", "fedora-i386")
@@ -117,7 +111,6 @@ class TestDockerStorage(MachineCase):
             b.wait_visible("#machine-troubleshoot")
             b.click('#machine-troubleshoot')
             b.wait_popup('troubleshoot-dialog')
-            b.wait_present("#troubleshoot-dialog .btn-primary:not([disabled])")
             b.wait_text('#troubleshoot-dialog .btn-primary', "Add")
             b.click('#troubleshoot-dialog .btn-primary')
             b.wait_in_text('#troubleshoot-dialog', "Fingerprint")

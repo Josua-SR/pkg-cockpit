@@ -13,47 +13,6 @@
         loaded = true;
     }
 
-    function transformAngular(data, prev) {
-        var key, context, parts, value, result = { };
-        for (key in data) {
-            if (key === "")
-                continue;
-            parts = key.split("\u0004");
-            value = data[key];
-            if (parts[1]) {
-                context = parts[0];
-                key = parts[1];
-            } else {
-                context = "$$noContext";
-                key = parts[0];
-            }
-            if (value[0] === null)
-                value = value[1];
-            else
-                value = value.slice(1);
-            if (!(key in result))
-                result[key] = { };
-            result[key][context] = value;
-        }
-        return angular.extend(prev, result);
-    }
-
-    /* Load into angular here */
-    if (typeof angular === 'object') {
-        try {
-            module = angular.module(["gettext"]);
-        } catch(ex) { console.log(ex); /* Either no angular or angular-gettext */ };
-        if (module) {
-            loaded = true;
-            module.run(['gettextCatalog', function(gettextCatalog) {
-                var lang = data[""]["language"];
-                var prev = (gettextCatalog.getCurrentLanguage() == lang) ? gettextCatalog.strings : { };
-                gettextCatalog.setStrings(lang, transformAngular(data, prev));
-                gettextCatalog.setCurrentLanguage(lang);
-            }]);
-        }
-    }
-
     if (!loaded)
         root.po = data;
 
@@ -89,7 +48,7 @@ return plural;
  ],
  "Additional": [
   null,
-  ""
+  "추가 "
  ],
  "Address": [
   null,
@@ -137,7 +96,7 @@ return plural;
  ],
  "Cache": [
   null,
-  ""
+  "캐시 "
  ],
  "Cancel": [
   null,
@@ -149,7 +108,7 @@ return plural;
  ],
  "Changes will take effect after shutting down the VM": [
   null,
-  ""
+  "VM 종료 후 변경사항이 적용됩니다. "
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
@@ -157,11 +116,11 @@ return plural;
  ],
  "Connect with any $0 viewer application.": [
   null,
-  ""
+  " $0 뷰어 애플리케이션에 연결합니다. "
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  ""
+  "SPICE 또는 VNC 뷰어 애플리케이션에 연결합니다. "
  ],
  "Connecting": [
   null,
@@ -205,7 +164,7 @@ return plural;
  ],
  "Creation of VM $0 failed": [
   null,
-  ""
+  "VM $0 생성에 실패했습니다 "
  ],
  "Ctrl+Alt+Del": [
   null,
@@ -213,11 +172,11 @@ return plural;
  ],
  "Current Allocation": [
   null,
-  ""
+  "현재 할당 "
  ],
  "DHCP Range": [
   null,
-  ""
+  "DHCP 범위 "
  ],
  "Deactivate": [
   null,
@@ -229,7 +188,7 @@ return plural;
  ],
  "Delete Content": [
   null,
-  ""
+  "컨텐츠 삭제 "
  ],
  "Delete Storage Pool $0": [
   null,
@@ -303,6 +262,10 @@ return plural;
   null,
   "호스트의 파일 시스템에서 기존 디스크 이미지 "
  ],
+ "Failed to fetch the IP addresses of the interfaces present in $0": [
+  null,
+  ""
+ ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
   ""
@@ -313,7 +276,7 @@ return plural;
  ],
  "Filesystem Directory": [
   null,
-  ""
+  "파일 시스템 디렉토리 "
  ],
  "Force Restart": [
   null,
@@ -341,7 +304,7 @@ return plural;
  ],
  "Graphics Console (VNC)": [
   null,
-  ""
+  "그래픽 콘솔 (VNC)"
  ],
  "Graphics Console in Desktop Viewer": [
   null,
@@ -367,6 +330,10 @@ return plural;
   null,
   ""
  ],
+ "IP Address": [
+  null,
+  "IP 주소"
+ ],
  "IPv4 Address": [
   null,
   "IPv4 주소 "
@@ -381,7 +348,7 @@ return plural;
  ],
  "In most configurations, macvtap does not work for host to guest network communication.": [
   null,
-  ""
+  "대부분의 설정에서 macvtap는 호스트와 게스트 간 네트워크 통신에서 작동하지 않습니다."
  ],
  "Initiator": [
   null,
@@ -405,7 +372,7 @@ return plural;
  ],
  "Installation Source should not be empty": [
   null,
-  ""
+  "설치 소스를 비워둘 수 없습니다 "
  ],
  "Interface Type": [
   null,
@@ -413,11 +380,11 @@ return plural;
  ],
  "Invalid filename": [
   null,
-  ""
+  "잘못된 파일 이름 "
  ],
  "Isolated Network": [
   null,
-  ""
+  "독립된 네트워크"
  ],
  "Launch Remote Viewer": [
   null,
@@ -429,7 +396,7 @@ return plural;
  ],
  "Local Install Media": [
   null,
-  ""
+  "로컬 설치 미디어 "
  ],
  "MAC Address": [
   null,
@@ -505,7 +472,7 @@ return plural;
  ],
  "Name should not be empty": [
   null,
-  ""
+  "이름은 비워 둘 수 없습니다."
  ],
  "Name: ": [
   null,
@@ -553,7 +520,7 @@ return plural;
  ],
  "No Storage Pools available": [
   null,
-  ""
+  "스토리지 풀을 사용할 수 없음 "
  ],
  "No Storage Volumes defined for this Storage Pool": [
   null,
@@ -565,7 +532,7 @@ return plural;
  ],
  "No Virtual Networks": [
   null,
-  ""
+  "가상 네트워크가 없습니다 "
  ],
  "No boot device found": [
   null,
@@ -581,7 +548,7 @@ return plural;
  ],
  "No matching files found": [
   null,
-  ""
+  "일치하는 파일을 찾을 수 없음 "
  ],
  "No network interfaces defined for this VM": [
   null,
@@ -622,6 +589,10 @@ return plural;
  "Operating System": [
   null,
   "운영 체제"
+ ],
+ "Operation is in progress": [
+  null,
+  ""
  ],
  "Overview": [
   null,
@@ -957,7 +928,7 @@ return plural;
  ],
  "Type ID": [
   null,
-  ""
+  "ID 입력 "
  ],
  "URL": [
   null,
@@ -971,7 +942,15 @@ return plural;
   null,
   "단위"
  ],
+ "Unknown": [
+  null,
+  "알 수 없음"
+ ],
  "Unplug": [
+  null,
+  ""
+ ],
+ "Up to $0 $1 available in the default location": [
   null,
   ""
  ],
@@ -997,7 +976,7 @@ return plural;
  ],
  "VCPU settings could not be saved": [
   null,
-  ""
+  "VCPU 설정을 저장할 수 없습니다 "
  ],
  "VM $0 failed to Reboot": [
   null,
@@ -1065,7 +1044,7 @@ return plural;
  ],
  "Virtual Network": [
   null,
-  ""
+  "가상 네트워크"
  ],
  "Virtualization Service (libvirt) is Not Active": [
   null,
@@ -1081,7 +1060,7 @@ return plural;
  ],
  "WWPN": [
   null,
-  ""
+  "WWPN"
  ],
  "You need to select the most closely matching OS vendor and Operating System": [
   null,
@@ -1101,11 +1080,11 @@ return plural;
  ],
  "control-label $0": [
   null,
-  ""
+  "control-label $0"
  ],
  "crashed": [
   null,
-  ""
+  "충돌됨"
  ],
  "custom": [
   null,
@@ -1145,7 +1124,7 @@ return plural;
  ],
  "host device": [
   null,
-  ""
+  "호스트 장치 "
  ],
  "hostdev": [
   null,
@@ -1153,11 +1132,11 @@ return plural;
  ],
  "iSCSI Initiator IQN": [
   null,
-  ""
+  "iSCSI 개시자 IQN"
  ],
  "iSCSI Target": [
   null,
-  ""
+  "iSCSI 대상"
  ],
  "iSCSI direct Target": [
   null,
@@ -1165,11 +1144,11 @@ return plural;
  ],
  "iSCSI target IQN": [
   null,
-  ""
+  "iSCSI 대상 IQN"
  ],
  "idle": [
   null,
-  ""
+  "유휴상태"
  ],
  "inactive": [
   null,
@@ -1201,7 +1180,7 @@ return plural;
  ],
  "redirected device": [
   null,
-  ""
+  "리디렉트된 장치 "
  ],
  "running": [
   null,

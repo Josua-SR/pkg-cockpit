@@ -13,47 +13,6 @@
         loaded = true;
     }
 
-    function transformAngular(data, prev) {
-        var key, context, parts, value, result = { };
-        for (key in data) {
-            if (key === "")
-                continue;
-            parts = key.split("\u0004");
-            value = data[key];
-            if (parts[1]) {
-                context = parts[0];
-                key = parts[1];
-            } else {
-                context = "$$noContext";
-                key = parts[0];
-            }
-            if (value[0] === null)
-                value = value[1];
-            else
-                value = value.slice(1);
-            if (!(key in result))
-                result[key] = { };
-            result[key][context] = value;
-        }
-        return angular.extend(prev, result);
-    }
-
-    /* Load into angular here */
-    if (typeof angular === 'object') {
-        try {
-            module = angular.module(["gettext"]);
-        } catch(ex) { console.log(ex); /* Either no angular or angular-gettext */ };
-        if (module) {
-            loaded = true;
-            module.run(['gettextCatalog', function(gettextCatalog) {
-                var lang = data[""]["language"];
-                var prev = (gettextCatalog.getCurrentLanguage() == lang) ? gettextCatalog.strings : { };
-                gettextCatalog.setStrings(lang, transformAngular(data, prev));
-                gettextCatalog.setCurrentLanguage(lang);
-            }]);
-        }
-    }
-
     if (!loaded)
         root.po = data;
 
@@ -273,7 +232,7 @@ return plural;
  ],
  "After": [
   null,
-  "Через"
+  "Через/After="
  ],
  "After system boot": [
   null,
@@ -281,7 +240,7 @@ return plural;
  ],
  "Alert and above": [
   null,
-  "Предупреждение и выше"
+  "Оповещение и выше"
  ],
  "All": [
   null,
@@ -289,11 +248,11 @@ return plural;
  ],
  "All In One": [
   null,
-  "Все в одном"
+  "Всё в одном"
  ],
  "Appearance:": [
   null,
-  "Стиль оформления:"
+  "Стиль отображения:"
  ],
  "Asset Tag": [
   null,
@@ -313,7 +272,7 @@ return plural;
  ],
  "Automatically using specific NTP servers": [
   null,
-  "Автоматическое использование определенных NTP-серверов"
+  "Автоматическое использование определённых NTP-серверов"
  ],
  "BIOS": [
   null,
@@ -329,11 +288,11 @@ return plural;
  ],
  "Before": [
   null,
-  "До"
+  "Before="
  ],
  "Binds To": [
   null,
-  "Привязывается к"
+  "BindsTo="
  ],
  "Black": [
   null,
@@ -341,15 +300,15 @@ return plural;
  ],
  "Blade": [
   null,
-  "лопасть"
+  "Блейд-сервер"
  ],
  "Blade enclosure": [
   null,
-  "Корпус лезвия"
+  "Корзина"
  ],
  "Bound By": [
   null,
-  "Связано"
+  "BoundBy="
  ],
  "Bug Fix Updates Available": [
   null,
@@ -357,7 +316,7 @@ return plural;
  ],
  "Bus Expansion Chassis": [
   null,
-  "Шина расширения шины"
+  "Корпус расширения шины"
  ],
  "CPU": [
   null,
@@ -365,7 +324,7 @@ return plural;
  ],
  "CPU Security": [
   null,
-  ""
+  "Безопасность процессора"
  ],
  "CPU Security Toggles": [
   null,
@@ -389,7 +348,7 @@ return plural;
  ],
  "Change Host Name": [
   null,
-  "Изменить имя хоста"
+  "Изменить имя узла"
  ],
  "Change System Time": [
   null,
@@ -397,7 +356,7 @@ return plural;
  ],
  "Checking for updates…": [
   null,
-  "Проверка обновлений…"
+  "Проверка наличия обновлений…"
  ],
  "Checking installed software": [
   null,
@@ -409,11 +368,11 @@ return plural;
  ],
  "Clear All Filters": [
   null,
-  ""
+  "Сбросить все фильтры"
  ],
  "Click to see system hardware information": [
   null,
-  "Нажмите, чтобы просмотреть информацию о системном оборудовании"
+  "Щёлкните для просмотра информации об оборудовании"
  ],
  "Close": [
   null,
@@ -425,35 +384,35 @@ return plural;
  ],
  "Compact PCI": [
   null,
-  "Компактный PCI"
+  "CompactPCI"
  ],
  "Condition $0=$1 was not met": [
   null,
-  "Состояние $0знак равно$1 не было выполнено"
+  "Не выполнено условие $0=$1"
  ],
  "Condition failed": [
   null,
-  "Не удалось выполнить условие"
+  "Условие не выполнено"
  ],
  "Conflicted By": [
   null,
-  "В конфликте с"
+  "ConflictedBy="
  ],
  "Conflicts": [
   null,
-  "Конфликтует с"
+  "Conflicts="
  ],
  "Consists Of": [
   null,
-  "Состоит из"
+  "ConsistsOf="
  ],
  "Convertible": [
   null,
-  "конвертируемый"
+  "Компьютер-трансформер"
  ],
  "Copy": [
   null,
-  ""
+  "Копировать"
  ],
  "Create Timer": [
   null,
@@ -469,11 +428,11 @@ return plural;
  ],
  "Ctrl+Insert": [
   null,
-  ""
+  "Ctrl+Insert"
  ],
  "Current boot": [
   null,
-  "Текущая загрузка"
+  "Текущая сессия"
  ],
  "Dark": [
   null,
@@ -485,7 +444,7 @@ return plural;
  ],
  "Delay": [
   null,
-  "задержка"
+  "Задержка"
  ],
  "Description": [
   null,
@@ -493,11 +452,11 @@ return plural;
  ],
  "Desktop": [
   null,
-  "Рабочий стол"
+  "Настольный компьютер"
  ],
  "Detachable": [
   null,
-  "отрывной"
+  "Съёмный компьютер"
  ],
  "Details": [
   null,
@@ -509,11 +468,11 @@ return plural;
  ],
  "Disable simultaneous multithreading": [
   null,
-  ""
+  "Отключить одновременную многопотоковость"
  ],
  "Disabled": [
   null,
-  "Отключён"
+  "Отключено"
  ],
  "Disk I/O": [
   null,
@@ -533,11 +492,11 @@ return plural;
  ],
  "Downloading $0": [
   null,
-  "загрузка $0"
+  "Загрузка $0"
  ],
  "Embedded PC": [
   null,
-  "Встроенный ПК"
+  "Встраиваемый компьютер"
  ],
  "Enable": [
   null,
@@ -545,19 +504,19 @@ return plural;
  ],
  "Enable Forcefully": [
   null,
-  "Принудительное включение"
+  "Включить принудительно"
  ],
  "Enable stored metrics…": [
   null,
-  "Включить сохраненные метрики ..."
+  "Включить сохранённые показатели..."
  ],
  "Enabled": [
   null,
-  "Включен"
+  "Включено"
  ],
  "Enhancement Updates Available": [
   null,
-  "Доступны обновленные обновления"
+  "Доступны улучшения"
  ],
  "Entry": [
   null,
@@ -589,19 +548,19 @@ return plural;
  ],
  "General": [
   null,
-  "Общие"
+  "Общее"
  ],
  "Go to": [
   null,
-  "Идти к"
+  "Переход..."
  ],
  "Go to now": [
   null,
-  "Перейдите к"
+  "Текущий момент"
  ],
  "Hand Held": [
   null,
-  "Ручная работа"
+  "Карманный компьютер"
  ],
  "Hardware": [
   null,
@@ -609,7 +568,7 @@ return plural;
  ],
  "Hardware Information": [
   null,
-  "Информация об оборудовании"
+  "Сведения об оборудовании"
  ],
  "Host Name": [
   null,
@@ -621,11 +580,11 @@ return plural;
  ],
  "Hour needs to be a number between 0-23": [
   null,
-  "Час должен быть числом от 0 до 23"
+  "Количество часов должно лежать в интервале от 0 до 23"
  ],
  "Hours": [
   null,
-  "час."
+  "ч"
  ],
  "I/O Wait": [
   null,
@@ -793,7 +752,7 @@ return plural;
  ],
  "Minutes": [
   null,
-  "мин."
+  "мин"
  ],
  "Mitigations": [
   null,
@@ -1105,7 +1064,7 @@ return plural;
  ],
  "Seconds": [
   null,
-  "сек."
+  "с"
  ],
  "Secure Shell Keys": [
   null,
@@ -1185,7 +1144,7 @@ return plural;
  ],
  "Static": [
   null,
-  "Статический"
+  "Статически"
  ],
  "Status": [
   null,
@@ -1201,7 +1160,7 @@ return plural;
  ],
  "Store Metrics": [
   null,
-  ""
+  "Сохранять показатели"
  ],
  "Sub Chassis": [
   null,
@@ -1403,7 +1362,7 @@ return plural;
  ],
  "Weeks": [
   null,
-  "нед."
+  "нед"
  ],
  "White": [
   null,

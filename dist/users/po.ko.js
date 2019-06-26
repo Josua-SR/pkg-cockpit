@@ -13,47 +13,6 @@
         loaded = true;
     }
 
-    function transformAngular(data, prev) {
-        var key, context, parts, value, result = { };
-        for (key in data) {
-            if (key === "")
-                continue;
-            parts = key.split("\u0004");
-            value = data[key];
-            if (parts[1]) {
-                context = parts[0];
-                key = parts[1];
-            } else {
-                context = "$$noContext";
-                key = parts[0];
-            }
-            if (value[0] === null)
-                value = value[1];
-            else
-                value = value.slice(1);
-            if (!(key in result))
-                result[key] = { };
-            result[key][context] = value;
-        }
-        return angular.extend(prev, result);
-    }
-
-    /* Load into angular here */
-    if (typeof angular === 'object') {
-        try {
-            module = angular.module(["gettext"]);
-        } catch(ex) { console.log(ex); /* Either no angular or angular-gettext */ };
-        if (module) {
-            loaded = true;
-            module.run(['gettextCatalog', function(gettextCatalog) {
-                var lang = data[""]["language"];
-                var prev = (gettextCatalog.getCurrentLanguage() == lang) ? gettextCatalog.strings : { };
-                gettextCatalog.setStrings(lang, transformAngular(data, prev));
-                gettextCatalog.setCurrentLanguage(lang);
-            }]);
-        }
-    }
-
     if (!loaded)
         root.po = data;
 
@@ -141,7 +100,7 @@ return plural;
  ],
  "Delete $0": [
   null,
-  ""
+  "$0 삭제 "
  ],
  "Delete Files": [
   null,
@@ -205,7 +164,7 @@ return plural;
  ],
  "Lock Account": [
   null,
-  ""
+  "계정 잠금 "
  ],
  "Lock account on $0": [
   null,
@@ -349,15 +308,15 @@ return plural;
  ],
  "This user name already exists": [
   null,
-  ""
+  "이 사용자 이름이 이미 존재합니다. "
  ],
  "Unable to delete root account": [
   null,
-  ""
+  "root 계정을 삭제할 수 없음 "
  ],
  "Unable to rename root account": [
   null,
-  ""
+  "root 계정 이름을 다시 설정할 수 없습니다 "
  ],
  "Unexpected error": [
   null,
@@ -381,7 +340,7 @@ return plural;
  ],
  "You must wait longer to change your password": [
   null,
-  ""
+  "암호 변경을 위해 조금더 기다려 주십시오."
  ],
  "translatable": [
   null,

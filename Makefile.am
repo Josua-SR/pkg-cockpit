@@ -154,10 +154,8 @@ WEBPACK_PACKAGES = \
 	dashboard \
 	docker \
 	kdump \
-	kubernetes \
 	machines \
 	networkmanager \
-	ovirt \
 	pcp \
 	packagekit \
 	playground \
@@ -167,7 +165,6 @@ WEBPACK_PACKAGES = \
 	sosreport \
 	ssh \
 	storaged \
-	subscriptions \
 	systemd \
 	tuned \
 	users \

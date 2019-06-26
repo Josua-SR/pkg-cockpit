@@ -13,47 +13,6 @@
         loaded = true;
     }
 
-    function transformAngular(data, prev) {
-        var key, context, parts, value, result = { };
-        for (key in data) {
-            if (key === "")
-                continue;
-            parts = key.split("\u0004");
-            value = data[key];
-            if (parts[1]) {
-                context = parts[0];
-                key = parts[1];
-            } else {
-                context = "$$noContext";
-                key = parts[0];
-            }
-            if (value[0] === null)
-                value = value[1];
-            else
-                value = value.slice(1);
-            if (!(key in result))
-                result[key] = { };
-            result[key][context] = value;
-        }
-        return angular.extend(prev, result);
-    }
-
-    /* Load into angular here */
-    if (typeof angular === 'object') {
-        try {
-            module = angular.module(["gettext"]);
-        } catch(ex) { console.log(ex); /* Either no angular or angular-gettext */ };
-        if (module) {
-            loaded = true;
-            module.run(['gettextCatalog', function(gettextCatalog) {
-                var lang = data[""]["language"];
-                var prev = (gettextCatalog.getCurrentLanguage() == lang) ? gettextCatalog.strings : { };
-                gettextCatalog.setStrings(lang, transformAngular(data, prev));
-                gettextCatalog.setCurrentLanguage(lang);
-            }]);
-        }
-    }
-
     if (!loaded)
         root.po = data;
 
@@ -79,31 +38,31 @@ return plural;
  ],
  "Applying solution...": [
   null,
-  "Применение решения ..."
+  "Применение решения..."
  ],
  "Audit log": [
   null,
-  "Журнал"
+  "Журнал аудита"
  ],
  "Connecting to SETroubleshoot daemon...": [
   null,
-  "Подключение к демону SETroubleshoot ..."
+  "Подключение к демону SETroubleshoot..."
  ],
  "Enforce policy:": [
   null,
-  "Принудительная политика:"
+  "Применить политику:"
  ],
  "Error while deleting alert: $0": [
   null,
-  "Ошибка при удалении предупреждения: $0"
+  "Ошибка при удалении оповещения: $0"
  ],
  "Error while setting SELinux mode: '$0'": [
   null,
-  "Ошибка при установке режима SELinux:$0'"
+  "Ошибка при установке режима SELinux: «$0»"
  ],
  "Failed to delete alert: $0": [
   null,
-  "Не удалось удалить предупреждение: $0"
+  "Не удалось удалить оповещение: $0"
  ],
  "Install setroubleshoot-server to troubleshoot SELinux events.": [
   null,
@@ -111,7 +70,7 @@ return plural;
  ],
  "No SELinux alerts.": [
   null,
-  "Нет предупреждений SELinux."
+  "Оповещения SELinux отсутствуют."
  ],
  "Not connected": [
   null,
@@ -175,11 +134,11 @@ return plural;
  ],
  "Unable to get alert details.": [
   null,
-  "Не удалось получить подробные сведения."
+  "Не удалось получить сведения об оповещении."
  ],
  "Unable to get alert: $0": [
   null,
-  "Не удалось получить предупреждение: $0"
+  "Не удалось получить оповещение: $0"
  ],
  "Unable to run fix: %0": [
   null,

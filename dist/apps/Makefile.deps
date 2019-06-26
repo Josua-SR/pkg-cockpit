@@ -1,13 +1,7 @@
 # Generated Makefile data for apps
-# Stamp: Wed Jun 12 2019 11:23:45 GMT+0000 (Coordinated Universal Time)
+# Stamp: Wed Jun 26 2019 11:42:43 GMT+0000 (Coordinated Universal Time)
 
 apps_INPUTS = \
-	node_modules/promise/LICENSE \
-	node_modules/promise/lib/core.js \
-	node_modules/promise/lib/es6-extensions.js \
-	node_modules/promise/package.json \
-	node_modules/promise/polyfill-done.js \
-	node_modules/promise/polyfill.js \
 	node_modules/prop-types/LICENSE \
 	node_modules/prop-types/README.md \
 	node_modules/prop-types/factoryWithThrowingShims.js \
@@ -73,7 +67,7 @@ apps_TESTS = \
 
 dist/apps/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/promise/lib/core.js -N node_modules/promise/lib/es6-extensions.js -N node_modules/promise/polyfill-done.js -N node_modules/promise/polyfill.js -N node_modules/prop-types/factoryWithThrowingShims.js -N node_modules/prop-types/index.js -N node_modules/prop-types/lib/ReactPropTypesSecret.js -N node_modules/react-dom/cjs/react-dom.production.min.js -N node_modules/react-dom/index.js -N node_modules/react/cjs/react.production.min.js -N node_modules/react/index.js -N pkg/apps/application-list.jsx -N pkg/apps/application.css -N pkg/apps/application.jsx -N pkg/apps/appstream.js -N pkg/apps/default.png -N pkg/apps/index.html -N pkg/apps/index.jsx -N pkg/apps/packagekit.js -N pkg/apps/utils.jsx -N pkg/apps/watch-appstream.py -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/inotify.py -N pkg/lib/packagekit.js -N pkg/lib/page.css -N pkg/lib/polyfills.js -N pkg/lib/python.js -N pkg/lib/table.css $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/prop-types/factoryWithThrowingShims.js -N node_modules/prop-types/index.js -N node_modules/prop-types/lib/ReactPropTypesSecret.js -N node_modules/react-dom/cjs/react-dom.production.min.js -N node_modules/react-dom/index.js -N node_modules/react/cjs/react.production.min.js -N node_modules/react/index.js -N pkg/apps/application-list.jsx -N pkg/apps/application.css -N pkg/apps/application.jsx -N pkg/apps/appstream.js -N pkg/apps/default.png -N pkg/apps/index.html -N pkg/apps/index.jsx -N pkg/apps/packagekit.js -N pkg/apps/utils.jsx -N pkg/apps/watch-appstream.py -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/inotify.py -N pkg/lib/packagekit.js -N pkg/lib/page.css -N pkg/lib/polyfills.js -N pkg/lib/python.js -N pkg/lib/table.css $< > $@.tmp && mv $@.tmp $@
 
 dist/apps/stamp: $(apps_INPUTS)
 
@@ -88,18 +82,6 @@ dist/apps/apps.min.js.map: dist/apps/stamp
 dist/apps/default.png: dist/apps/stamp
 
 dist/apps/index.html: dist/apps/stamp
-
-node_modules/promise/LICENSE:
-
-node_modules/promise/lib/core.js:
-
-node_modules/promise/lib/es6-extensions.js:
-
-node_modules/promise/package.json:
-
-node_modules/promise/polyfill-done.js:
-
-node_modules/promise/polyfill.js:
 
 node_modules/prop-types/LICENSE:
 

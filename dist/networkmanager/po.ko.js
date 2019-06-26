@@ -13,47 +13,6 @@
         loaded = true;
     }
 
-    function transformAngular(data, prev) {
-        var key, context, parts, value, result = { };
-        for (key in data) {
-            if (key === "")
-                continue;
-            parts = key.split("\u0004");
-            value = data[key];
-            if (parts[1]) {
-                context = parts[0];
-                key = parts[1];
-            } else {
-                context = "$$noContext";
-                key = parts[0];
-            }
-            if (value[0] === null)
-                value = value[1];
-            else
-                value = value.slice(1);
-            if (!(key in result))
-                result[key] = { };
-            result[key][context] = value;
-        }
-        return angular.extend(prev, result);
-    }
-
-    /* Load into angular here */
-    if (typeof angular === 'object') {
-        try {
-            module = angular.module(["gettext"]);
-        } catch(ex) { console.log(ex); /* Either no angular or angular-gettext */ };
-        if (module) {
-            loaded = true;
-            module.run(['gettextCatalog', function(gettextCatalog) {
-                var lang = data[""]["language"];
-                var prev = (gettextCatalog.getCurrentLanguage() == lang) ? gettextCatalog.strings : { };
-                gettextCatalog.setStrings(lang, transformAngular(data, prev));
-                gettextCatalog.setCurrentLanguage(lang);
-            }]);
-        }
-    }
-
     if (!loaded)
         root.po = data;
 
@@ -73,7 +32,7 @@ return plural;
  ],
  "(Optional)": [
   null,
-  ""
+  "(옵션)"
  ],
  "(default)": [
   null,
@@ -129,7 +88,7 @@ return plural;
  ],
  "Active zones": [
   null,
-  ""
+  "활성 영역 "
  ],
  "Adaptive load balancing": [
   null,
@@ -209,7 +168,7 @@ return plural;
  ],
  "Allowed Addresses": [
   null,
-  ""
+  "허용된 주소 "
  ],
  "Allowed Services": [
   null,
@@ -325,27 +284,27 @@ return plural;
  ],
  "Creating this VLAN will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "이 VLAN을 생성하면 서버와의 연결이 끊어지고 관리 UI를 사용할 수 없게 됩니다. "
  ],
  "Creating this bond will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "이 본드를 생성하면 서버와의 연결이 끊어지고 관리 UI를 사용할 수 없게 됩니다. "
  ],
  "Creating this bridge will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "이 브릿지를 생성하면 서버와의 연결이 끊어지고 관리 UI를 사용할 수 없게 됩니다. "
  ],
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  ""
+  "이 팀을 생성하면 서버와의 연결이 끊어지고 관리 UI를 사용할 수 없게 됩니다. "
  ],
  "Custom Ports": [
   null,
-  ""
+  "사용자 지정 포트 "
  ],
  "Custom zones": [
   null,
-  ""
+  "사용자 지정 영역 "
  ],
  "DNS": [
   null,
@@ -373,7 +332,7 @@ return plural;
  ],
  "Delete $0": [
   null,
-  ""
+  "$0 삭제 "
  ],
  "Deleting <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
@@ -401,15 +360,15 @@ return plural;
  ],
  "Ethernet MAC": [
   null,
-  ""
+  "Ethernet MAC"
  ],
  "Ethernet MTU": [
   null,
-  ""
+  "Ethernet MTU"
  ],
  "Ethtool": [
   null,
-  ""
+  "Ethtool"
  ],
  "Example: 22,ssh,8080,5900-5910": [
   null,
@@ -423,6 +382,10 @@ return plural;
   null,
   "실패하였습니다"
  ],
+ "Failed to add port": [
+  null,
+  ""
+ ],
  "Failed to add service": [
   null,
   "서비스 추가 실패 "
@@ -433,7 +396,7 @@ return plural;
  ],
  "Failed to remove service": [
   null,
-  ""
+  "서비스를 제거하지 못했습니다 "
  ],
  "Filter Services": [
   null,
@@ -477,7 +440,7 @@ return plural;
  ],
  "IP Range": [
   null,
-  ""
+  "IP 범위 "
  ],
  "IP Settings": [
   null,
@@ -521,7 +484,7 @@ return plural;
  ],
  "Invalid address $0": [
   null,
-  "잘못된 포트"
+  "잘못된 주소 $0"
  ],
  "Invalid metric $0": [
   null,
@@ -549,7 +512,7 @@ return plural;
  ],
  "LACP Key": [
   null,
-  ""
+  "LACP 키 "
  ],
  "Link Monitoring": [
   null,
@@ -603,10 +566,6 @@ return plural;
   null,
   "최대 메세지 수명 $max_age"
  ],
- "Members": [
-  null,
-  "맴버"
- ],
  "Mode": [
   null,
   "모드"
@@ -657,7 +616,7 @@ return plural;
  ],
  "No description available": [
   null,
-  ""
+  "사용 가능한 설명이 없음"
  ],
  "No open ports": [
   null,
@@ -949,7 +908,7 @@ return plural;
  ],
  "Unknown service name": [
   null,
-  ""
+  "알 수 없는 서비스 이름"
  ],
  "Unmanaged Interfaces": [
   null,
@@ -985,11 +944,11 @@ return plural;
  ],
  "Zone": [
   null,
-  ""
+  "영역 "
  ],
  "Zones": [
   null,
-  ""
+  "영역 "
  ],
  "[$0 bytes of binary data]": [
   null,
@@ -997,11 +956,11 @@ return plural;
  ],
  "[binary data]": [
   null,
-  ""
+  "[바이너리 데이터]"
  ],
  "[no data]": [
   null,
-  ""
+  "[데이터 없음]"
  ],
  "show less": [
   null,

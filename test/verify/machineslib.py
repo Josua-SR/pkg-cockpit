@@ -167,7 +167,7 @@ reboot"""
 # rmmod kvm-intel && modprobe kvm-intel || true
 
 
-@skipImage("Atomic cannot run virtual machines", "fedora-atomic", "rhel-atomic", "continuous-atomic")
+@skipImage("Atomic cannot run virtual machines", "fedora-atomic")
 class TestMachines(NetworkCase):
     created_pool = False
     provider = None
@@ -176,12 +176,7 @@ class TestMachines(NetworkCase):
         MachineCase.setUp(self)
         self.startLibvirt()
 
-        # enforce use of cockpit-machines instead of cockpit-machines-ovirt
         m = self.machine
-        m.execute(
-            "sed -i 's/\"priority\".*$/\"priority\": 100,/' {0}".format("/usr/share/cockpit/machines/manifest.json"))
-        m.execute(
-            "[ ! -e {0} ] || sed -i 's/\"priority\".*$/\"priority\": 0,/' {0}".format("/usr/share/cockpit/ovirt/manifest.json"))
         # we don't have configuration to open the firewall for local libvirt machines, so just stop firewalld
         m.execute("systemctl stop firewalld; systemctl try-restart libvirtd")
 
@@ -574,6 +569,102 @@ class TestMachines(NetworkCase):
         b = self.browser
         m = self.machine
 
+        class VMAddDiskDialog(object):
+            def __init__(
+                self, test_obj, pool_name=None, volume_name=None,
+                vm_name='subVmTest1',
+                volume_size=1, volume_size_unit='GiB',
+                use_existing_volume=False,
+                expected_target='vda', permanent=False, cache_mode=None
+            ):
+                print(pool_name, volume_name)
+                self.test_obj = test_obj
+                self.vm_name = vm_name
+                self.pool_name = pool_name
+                self.use_existing_volume = use_existing_volume
+                self.volume_name = volume_name
+                self.volume_size = volume_size
+                self.volume_size_unit = volume_size_unit
+                self.expected_target = expected_target
+                self.permanent = permanent
+                self.cache_mode = cache_mode
+
+            def execute(self):
+                self.open()
+                self.fill()
+                self.add_disk()
+                self.verify_disk_added()
+
+            def open(self):
+                b.click("#vm-{0}-disks-adddisk".format(self.vm_name)) # button
+                b.wait_in_text(".modal-dialog .modal-header .modal-title", "Add Disk")
+
+                b.wait_present("label:contains(Create New)")
+                if self.use_existing_volume:
+                    b.click("label:contains(Use Existing)")
+
+                return self
+
+            def fill(self):
+                if not self.use_existing_volume:
+                    # Choose storage pool
+                    b.select_from_dropdown("#vm-{0}-disks-adddisk-new-select-pool".format(self.vm_name), self.pool_name)
+                    # Insert name for the new volume
+                    b.set_input_text("#vm-{0}-disks-adddisk-new-name".format(self.vm_name), self.volume_name)
+                    # Insert size for the new volume
+                    b.set_input_text("#vm-{0}-disks-adddisk-new-size".format(self.vm_name), str(self.volume_size))
+                    b.select_from_dropdown("#vm-{0}-disks-adddisk-new-unit".format(self.vm_name), self.volume_size_unit)
+
+                    # Switch between format types to ensure availability
+                    b.select_from_dropdown("#vm-{0}-disks-adddisk-new-diskfileformat".format(self.vm_name), "raw") # verify content of the dropdown box
+                    b.select_from_dropdown("#vm-{0}-disks-adddisk-new-diskfileformat".format(self.vm_name), "qcow2") # and switch it back
+
+                    # Configure persistency - by default the check box in unchecked for running VMs
+                    if self.permanent:
+                        b.click("#vm-{0}-disks-adddisk-new-permanent".format(self.vm_name))
+                else:
+                    # Choose storage pool
+                    b.select_from_dropdown("#vm-{0}-disks-adddisk-existing-select-pool".format(self.vm_name), self.pool_name)
+                    # Select from the available volumes
+                    b.select_from_dropdown("#vm-{0}-disks-adddisk-existing-select-volume".format(self.vm_name), self.volume_name)
+
+                    # Configure persistency - by default the check box in unchecked for running VMs
+                    if self.permanent:
+                        b.click("#vm-{0}-disks-adddisk-existing-permanent".format(self.vm_name))
+
+                # Configure performance options
+                if self.test_obj.provider == "libvirt-dbus" and self.cache_mode:
+                    b.click("div.modal-dialog button:contains(Show Performance Options)")
+                    b.select_from_dropdown("div.modal-dialog #cache-mode", self.cache_mode)
+                else:
+                    b.wait_not_present("#div.modal-dialog #cache-mode")
+
+                return self
+
+            def add_disk(self):
+                b.click(".modal-footer button:contains(Add)")
+                b.wait_not_present("vm-{0}-disks-adddisk-dialog-modal-window".format(self.vm_name))
+
+                return self
+
+            def verify_disk_added(self):
+                b.wait_in_text("#vm-{0}-disks-{1}-bus".format(self.vm_name, self.expected_target), "virtio")
+                b.wait_in_text("#vm-{0}-disks-{1}-device".format(self.vm_name, self.expected_target), "disk")
+
+                # Detect volume format
+                detect_format_cmd = "virsh dumpxml {0} | xmllint --xpath '/domain/devices/disk[@type=\"{1}\"]/driver[@type=\"qcow2\"]' -"
+
+                if self.test_obj.provider == "libvirt-dbus":
+                    b.wait_in_text('#vm-{0}-disks-{1}-source-volume'.format(self.vm_name, self.expected_target), self.volume_name)
+                    if self.cache_mode:
+                        b.wait_in_text("#vm-{0}-disks-{1}-cache".format(self.vm_name, self.expected_target), self.cache_mode)
+                    m.execute(detect_format_cmd.format(self.vm_name, "volume"))
+                else:
+                    b.wait_in_text('#vm-{0}-disks-{1}-source-file'.format(self.vm_name, self.expected_target), self.volume_name)
+                    m.execute(detect_format_cmd.format(self.vm_name, "file"))
+
+                return self
+
         # prepare libvirt storage pools
         m.execute("mkdir /mnt/vm_one ; mkdir /mnt/vm_two ; mkdir /mnt/default_tmp ; chmod a+rwx /mnt/vm_one /mnt/vm_two /mnt/default_tmp")
         m.execute("virsh pool-define-as default_tmp --type dir --target /mnt/default_tmp && virsh pool-start default_tmp")
@@ -585,65 +676,72 @@ class TestMachines(NetworkCase):
         m.execute("virsh vol-create-as myPoolTwo mydiskofpooltwo_permanent --capacity 1G --format qcow2")
         wait(lambda: "mydiskofpooltwo_permanent" in m.execute("virsh vol-list myPoolTwo"))
 
+        # Prepare a local NFS pool
+        m.execute("mkdir /mnt/nfs-pool && mkdir /mnt/exports && echo '/mnt/exports 127.0.0.1/24(rw,sync,no_root_squash,no_subtree_check,fsid=0)' > /etc/exports")
+        m.execute("systemctl restart nfs-server")
+        m.execute("virsh pool-define-as nfs-pool --type netfs --target /mnt/nfs-pool --source-host 127.0.0.1 --source-path /mnt/exports && virsh pool-start nfs-pool")
+        # And create a volume on it in order to test use existing volume dialog
+        m.execute("virsh vol-create-as --pool nfs-pool --name nfs-volume-0 --capacity 1M --format qcow2")
+
+        # Prepare an iscsi pool
+        # Debian and ubuntu images don't have open-iscsi already installed
+        # FIXME: Add open-iscsi to debian and ubuntu images
+        if "debian" not in m.image and "ubuntu" not in m.image:
+            # Preparations for testing ISCSI pools
+
+            target_iqn = "iqn.2019-09.cockpit.lan"
+            orig_iqn = m.execute("sed </etc/iscsi/initiatorname.iscsi -e 's/^.*=//'").rstrip()
+
+            # Increase the iSCSI timeouts for heavy load during our testing
+            m.execute("""sed -i 's|^\(node\..*log.*_timeout = \).*|\\1 60|' /etc/iscsi/iscsid.conf""")
+
+            # Setup a iSCSI target
+            m.execute("""
+                      targetcli /backstores/ramdisk create test 50M
+                      targetcli /iscsi create %(tgt)s
+                      targetcli /iscsi/%(tgt)s/tpg1/luns create /backstores/ramdisk/test
+                      targetcli /iscsi/%(tgt)s/tpg1/acls create %(ini)s
+                      """ % {"tgt": target_iqn, "ini": orig_iqn})
+
+            m.execute("virsh pool-define-as iscsi-pool --type iscsi --target /dev/disk/by-path --source-host 127.0.0.1 --source-dev {0} && virsh pool-start iscsi-pool".format(target_iqn))
+            wait(lambda: "unit:0:0:0" in self.machine.execute("virsh pool-refresh iscsi-pool && virsh vol-list iscsi-pool"), delay=3)
+
         self.startVm("subVmTest1")
 
         self.login_and_go("/machines")
         b.wait_in_text("body", "Virtual Machines")
-        b.wait_in_text("tbody tr[data-row-id=vm-subVmTest1] th", "subVmTest1")
 
-        b.click("tbody tr[data-row-id=vm-subVmTest1] th") # click on the row header
+        b.click("tbody tr[data-row-id=vm-subVmTest1] th")
         b.wait_in_text("#vm-subVmTest1-state", "running")
-
         b.click("#vm-subVmTest1-disks") # open the "Disks" subtab
 
-        b.click("#vm-subVmTest1-disks-adddisk") # button
-        b.wait_present("label:contains(Create New)") # radio button label in the modal dialog
+        VMAddDiskDialog(
+            self,
+            pool_name='myPoolOne',
+            volume_name='mydiskofpoolone_temporary',
+            use_existing_volume=False,
+            volume_size=2048,
+            volume_size_unit='MiB',
+            permanent=False,
+            expected_target='vdc',
+        ).execute()
 
-        b.select_from_dropdown("#vm-subVmTest1-disks-adddisk-new-select-pool", "myPoolOne")
-        b.set_input_text("#vm-subVmTest1-disks-adddisk-new-name", "mydiskofpoolone_temporary")
-        b.set_input_text("#vm-subVmTest1-disks-adddisk-new-size", "2048")
-        b.select_from_dropdown("#vm-subVmTest1-disks-adddisk-new-select-pool", "myPoolOne")
-        b.select_from_dropdown("#vm-subVmTest1-disks-adddisk-new-unit", "MiB")
-        b.select_from_dropdown("#vm-subVmTest1-disks-adddisk-new-diskfileformat", "raw") # verify content of the dropdown box
-        b.select_from_dropdown("#vm-subVmTest1-disks-adddisk-new-diskfileformat", "qcow2") # and switch it back
+        VMAddDiskDialog(
+            self,
+            pool_name='myPoolOne',
+            volume_name='mydiskofpoolone_permanent',
+            use_existing_volume=False,
+            volume_size=2,
+            permanent=True,
+            cache_mode='writeback',
+            expected_target='vdd',
+        ).execute()
 
-        # keep "Attach permanently" un-checked (by default)
-        b.wait_in_text("#vm-subVmTest1-state", "running") # re-check
-        b.click("#vm-subVmTest1-disks-adddisk-dialog-add")
-        b.wait_not_present("#vm-subVmTest1-test-disks-adddisk-dialog-modal-window")
-        b.wait_in_text("#vm-subVmTest1-disks-vdc-bus", "virtio")
-        b.wait_in_text("#vm-subVmTest1-disks-vdc-device", "disk")
-        # should be gone after shut down
-        if self.provider == "libvirt-dbus":
-            b.wait_in_text('#vm-subVmTest1-disks-vdc-source-volume', "mydiskofpoolone_temporary")
-        else:
-            b.wait_in_text('#vm-subVmTest1-disks-vdc-source-file', "mydiskofpoolone_temporary")
-
-        b.click("#vm-subVmTest1-disks-adddisk")
-        b.click("#vm-subVmTest1-disks-adddisk-new-permanent")
-        b.select_from_dropdown("#vm-subVmTest1-disks-adddisk-new-select-pool", "myPoolOne")
-        b.set_input_text("#vm-subVmTest1-disks-adddisk-new-name", "mydiskofpoolone_permanent")
-        b.set_input_text("#vm-subVmTest1-disks-adddisk-new-size", "2") # keep GiB and qcow2 format
-        if self.provider == "libvirt-dbus":
-            b.click("div.modal-dialog button:contains(Show Performance Options)")
-            b.select_from_dropdown("div.modal-dialog #cache-mode", "writeback")
-        else:
-            b.wait_not_present("#div.modal-dialog #cache-mode")
-        b.click("#vm-subVmTest1-disks-adddisk-dialog-add")
-        b.wait_not_present("#vm-subVmTest1-test-disks-adddisk-dialog-modal-window")
-        b.wait_in_text("#vm-subVmTest1-disks-vdd-bus", "virtio")
-        b.wait_in_text("#vm-subVmTest1-disks-vdd-device", "disk")
-        # should survive the shut down
-        if self.provider == "libvirt-dbus":
-            b.wait_in_text("#vm-subVmTest1-disks-vdd-source-volume",
-                           "mydiskofpoolone_permanent")
-            b.wait_in_text("#vm-subVmTest1-disks-vdd-cache", "writeback")
-        else:
-            b.wait_in_text("#vm-subVmTest1-disks-vdd-source-file",
-                           "mydiskofpoolone_permanent")
-
-        b.click("#vm-subVmTest1-disks-adddisk") # radio button label in the modal dialog
-        b.click("label:contains(Use Existing)") # radio button label in the modal dialog
+        VMAddDiskDialog(
+            self,
+            pool_name='myPoolOne',
+            use_existing_volume=True,
+        ).open()
         b.select_from_dropdown("#vm-subVmTest1-disks-adddisk-existing-select-pool", "myPoolOne")
         # since both disks are already attached
         b.wait_attr("#vm-subVmTest1-disks-adddisk-existing-select-volume", "disabled", "")
@@ -651,57 +749,55 @@ class TestMachines(NetworkCase):
         b.click("#vm-subVmTest1-disks-adddisk-dialog-cancel")
         b.wait_not_present("#vm-subVmTest1-test-disks-adddisk-dialog-modal-window")
 
-        b.click("#vm-subVmTest1-disks-adddisk") # radio button label in the modal dialog
-        b.click("label:contains(Use Existing)") # radio button label in the modal dialog
-        b.click("#vm-subVmTest1-disks-adddisk-existing-permanent")
-        b.select_from_dropdown("#vm-subVmTest1-disks-adddisk-existing-select-pool", "myPoolTwo")
-        b.select_from_dropdown("#vm-subVmTest1-disks-adddisk-existing-select-volume", "mydiskofpooltwo_permanent")
-        b.click("#vm-subVmTest1-disks-adddisk-dialog-add")
-
-        b.wait_not_present("#vm-subVmTest1-test-disks-adddisk-dialog-modal-window")
-        b.wait_in_text("#vm-subVmTest1-disks-vde-bus", "virtio")
-        b.wait_in_text("#vm-subVmTest1-disks-vde-device", "disk")
-        if self.provider == "libvirt-dbus":
-            b.wait_in_text("#vm-subVmTest1-disks-vde-source-volume",
-                           "mydiskofpooltwo_permanent")
-        else:
-            b.wait_in_text("#vm-subVmTest1-disks-vde-source-file",
-                           "mydiskofpooltwo_permanent")
-
-        detect_format_cmd = "virsh dumpxml subVmTest1 | xmllint --xpath '/domain/devices/disk[@type=\"{0}\"]/driver[@type=\"qcow2\"]' -"
-        if self.provider == "libvirt-dbus":
-            m.execute(detect_format_cmd.format("volume"))
-        else:
-            m.execute(detect_format_cmd.format("file"))
-
-        # FIXME: This causes either "unable to execute QEMU command 'device_add': Failed to get "write" lock"
-        # or adding the _temporary volume results in showing that the _permanent one actually gets added
-        # See https://github.com/cockpit-project/cockpit/issues/9945
-        # b.click("#vm-subVmTest1-disks-adddisk")
-        # b.click(".add-disk-dialog label:contains(Use Existing)") # radio button label in the modal dialog
-        # b.select_from_dropdown("#vm-subVmTest1-disks-adddisk-existing-select-pool", "myPoolTwo")
-        # b.select_from_dropdown("#vm-subVmTest1-disks-adddisk-existing-select-volume", "mydiskofpooltwo_temporary")
-        # b.select_from_dropdown("#vm-subVmTest1-disks-adddisk-existing-target", "vdb")
-        # b.click(".modal-footer button:contains(Add)")
-        # b.wait_not_present("#cockpit_modal_dialog")
-        # b.wait_in_text("#vm-subVmTest1-disks-vdb-target", "vdb")
-        # b.wait_in_text("#vm-subVmTest1-disks-vdb-bus", "virtio")
-        # b.wait_in_text("#vm-subVmTest1-disks-vdb-device", "disk")
-        # b.wait_in_text("#vm-subVmTest1-disks-vdb-source", "/mnt/vm_two/mydiskofpooltwo_temporary")
+        VMAddDiskDialog(
+            self,
+            pool_name='myPoolTwo',
+            volume_name='mydiskofpooltwo_permanent',
+            volume_size=2,
+            permanent=True,
+            use_existing_volume=True,
+            expected_target='vde',
+        ).execute()
 
         # check the autoselected options
-        b.click("#vm-subVmTest1-disks-adddisk") # radio button label in modal dialog
-        b.click("label:contains(Use Existing)")
         # default_tmp pool should be autoselected since it's the first in alphabetical order
         # defaultVol volume should be autoselected since it's the only volume in default_tmp pool
-        b.click("#vm-subVmTest1-disks-adddisk-dialog-add")
-        b.wait_not_present("#vm-subVmTest1-test-disks-adddisk-dialog-modal-window")
-        b.wait_in_text("#vm-subVmTest1-disks-vdf-bus", "virtio")
-        b.wait_in_text("#vm-subVmTest1-disks-vdf-device", "disk")
-        if self.provider == "libvirt-dbus":
-            b.wait_in_text("#vm-subVmTest1-disks-vdf-source-volume", "defaultVol")
-        else:
-            b.wait_in_text("#vm-subVmTest1-disks-vdf-source-file", "defaultVol")
+        VMAddDiskDialog(
+            self,
+            pool_name='default_tmp',
+            volume_name='defaultVol',
+            use_existing_volume=True,
+            expected_target='vdf',
+        ).open().add_disk().verify_disk_added()
+
+        VMAddDiskDialog(
+            self,
+            pool_name='nfs-pool',
+            volume_name='nfs-volume-0',
+            use_existing_volume=True,
+            volume_size=1,
+            volume_size_unit='MiB',
+            expected_target='vdg',
+        ).execute()
+
+        VMAddDiskDialog(
+            self,
+            pool_name='nfs-pool',
+            volume_name='nfs-volume-1',
+            volume_size=1,
+            volume_size_unit='MiB',
+            expected_target='vdh',
+        ).execute()
+
+        if "debian" not in m.image and "ubuntu" not in m.image:
+            # ISCSI driver does not support virStorageVolCreate API
+            VMAddDiskDialog(
+                self,
+                pool_name='iscsi-pool',
+                volume_name='unit:0:0:0',
+                expected_target='vdi',
+                use_existing_volume='True',
+            ).execute()
 
         # shut off
         b.click("#vm-subVmTest1-off-caret")
@@ -716,9 +812,14 @@ class TestMachines(NetworkCase):
 
         if self.provider == "libvirt-dbus":
             # Undefine all Storage Pools and  confirm that the Add Disk dialog is disabled
-            m.execute("virsh pool-destroy default_tmp && virsh pool-destroy myPoolOne && virsh pool-destroy myPoolTwo && virsh pool-destroy images")
+            active_pools = filter(lambda pool: pool != '', m.execute("virsh pool-list --name").split('\n'))
+            print(active_pools)
+            for pool in active_pools:
+                m.execute("virsh pool-destroy {0}".format(pool))
             b.wait_in_text("#card-pf-storage-pools .card-pf-aggregate-status-notification:nth-of-type(1)", "0")
-            m.execute("virsh pool-undefine default_tmp && virsh pool-undefine myPoolOne && virsh pool-undefine myPoolTwo && virsh pool-undefine images")
+            inactive_pools = filter(lambda pool: pool != '', m.execute("virsh pool-list --inactive --name").split('\n'))
+            for pool in inactive_pools:
+                m.execute("virsh pool-undefine {0}".format(pool))
             b.wait_in_text("#card-pf-storage-pools .card-pf-aggregate-status-notification:nth-of-type(2)", "0")
             b.click("#vm-subVmTest1-disks-adddisk") # radio button label in modal dialog
             b.wait_present("#vm-subVmTest1-disks-adddisk-dialog-add:disabled")
@@ -1124,6 +1225,16 @@ class TestMachines(NetworkCase):
 
         runner.checkEnvIsEmpty()
 
+        # define default storage pool for system connection
+        cmds = [
+            "virsh pool-define-as default --type dir --target /var/lib/libvirt/images",
+            "virsh pool-start default"
+        ]
+        self.machine.execute(" && ".join(cmds))
+        self.browser.reload()
+        self.browser.enter_page('/machines')
+        self.browser.wait_in_text("body", "Virtual Machines")
+
         # test just the DIALOG CREATION and cancel
         print("    *\n    * validation errors and ui info/warn messages expected:\n    * ")
         cancelDialogTest(TestMachines.VmDialog(self, sourceType='file',
@@ -1155,23 +1266,19 @@ class TestMachines(NetworkCase):
         # try to CREATE WITH DIALOG ERROR
 
         # name
-        checkDialogFormValidationTest(TestMachines.VmDialog(self, "", storage_size='1'), {"Name": "Name should not be empty"})
+        checkDialogFormValidationTest(TestMachines.VmDialog(self, "", storage_size=1), {"Name": "Name should not be empty"})
 
         # location
         checkDialogFormValidationTest(TestMachines.VmDialog(self, sourceType='url',
-                                                            location="invalid/url", storage_size='1',
+                                                            location="invalid/url", storage_size=1,
                                                             os_vendor=config.NOVELL_VENDOR,
                                                             os_name=config.NOVELL_NETWARE_4), {"Source": "Source should start with"})
 
-        # disk
-        checkDialogErrorTest(TestMachines.VmDialog(self, location=config.NOVELL_MOCKUP_ISO_PATH,
-                                                   storage_size=10000, storage_size_unit='GiB',
-                                                   os_vendor=config.NOVELL_VENDOR,
-                                                   os_name=config.NOVELL_NETWARE_6,
-                                                   start_vm=True), ["space"])
+        # memory
+        checkDialogFormValidationTest(TestMachines.VmDialog(self, storage_size=1, memory_size=0), {"Memory": "Memory must not be 0"})
 
         # start vm
-        checkDialogFormValidationTest(TestMachines.VmDialog(self, storage_size='1',
+        checkDialogFormValidationTest(TestMachines.VmDialog(self, storage_size=1,
                                                             os_vendor=config.NOVELL_VENDOR,
                                                             os_name=config.NOVELL_NETWARE_6, start_vm=True),
                                       {"Source": "Installation Source should not be empty"})
@@ -1214,6 +1321,16 @@ class TestMachines(NetworkCase):
                                          os_name=config.MACOS_X_TIGER,
                                          start_vm=False,
                                          connection='session'))
+
+        # Try setting the storage size to value bigger than it's available
+        # The dialog should auto-adjust it to match the pool's available space
+        createTest(TestMachines.VmDialog(self, sourceType='file',
+                                         location=config.NOVELL_MOCKUP_ISO_PATH,
+                                         memory_size=100, memory_size_unit='MiB',
+                                         storage_size=100000, storage_size_unit='GiB',
+                                         os_vendor=config.APPLE_VENDOR,
+                                         os_name=config.MACOS_X_TIGER,
+                                         start_vm=False))
 
         # Try setting the memory to value bigger than it's available on the OS
         # The dialog should auto-adjust it to match the OS'es total memory
@@ -1445,7 +1562,7 @@ class TestMachines(NetworkCase):
                                              start_vm=False))
 
             # When switching from PXE mode to anything else make sure that the source input is empty
-            checkDialogFormValidationTest(TestMachines.VmDialog(self, storage_size='1',
+            checkDialogFormValidationTest(TestMachines.VmDialog(self, storage_size=1,
                                                                 sourceType='pxe',
                                                                 location="Host Device {0}: macvtap".format(iface),
                                                                 sourceTypeSecondChoice='url',
@@ -1530,7 +1647,7 @@ class TestMachines(NetworkCase):
 
         def __init__(self, test_obj, name=None,
                      sourceType='file', sourceTypeSecondChoice=None, location='',
-                     memory_size=1, memory_size_unit='GiB',
+                     memory_size=256, memory_size_unit='MiB',
                      storage_size=None, storage_size_unit='GiB',
                      os_vendor=None,
                      os_name=None,
@@ -1573,7 +1690,6 @@ class TestMachines(NetworkCase):
         def open(self):
             b = self.browser
 
-            b.wait_present("#create-new-vm:not([disabled])")
             b.click("#create-new-vm")
             b.wait_present("#create-vm-dialog")
             b.wait_in_text(".modal-dialog .modal-header .modal-title", "Create New Virtual Machine")
@@ -1668,7 +1784,15 @@ class TestMachines(NetworkCase):
                     b.wait_not_present("#storage-size")
                 else:
                     b.select_from_dropdown("#storage-size-unit-select", self.storage_size_unit)
-                    b.set_input_text("#storage-size", str(self.storage_size))
+                    b.set_input_text("#storage-size", str(self.storage_size), value_check=False)
+                    # helpblock will be missing if available storage size could not be calculated (no default storage pool found)
+                    # test images sometimes may not have default storage pool defined for session connection
+                    if self.connection != "session":
+                        help_block_line = b.text("#storage-size-helpblock")
+                        space_available = [int(s) for s in help_block_line.split() if s.isdigit()][0]
+                        # Write the final storage size back to self so that other function can read it
+                        self.storage_size = min(self.storage_size, space_available)
+                        b.wait_val("#storage-size", self.storage_size)
 
             b.select_from_dropdown("#vendor-select", self.os_vendor, substring=True)
             b.select_from_dropdown("#system-select", self.os_name, substring=True)
@@ -1677,7 +1801,7 @@ class TestMachines(NetworkCase):
             # value according to the available total memory on the host
             b.select_from_dropdown("#memory-size-unit-select", self.memory_size_unit)
             b.set_input_text("#memory-size", str(self.memory_size), value_check=False)
-            help_block_line = b.text("label:contains(Memory) ~ .ct-validation-wrapper .help-block")
+            help_block_line = b.text("#memory-size-helpblock")
             host_total_memory = [int(s) for s in help_block_line.split() if s.isdigit()][0]
             # Write the final memory back to self so that other function can read it
             self.memory_size = min(self.memory_size, host_total_memory)
@@ -1722,6 +1846,8 @@ class TestMachines(NetworkCase):
                 b.wait_visible(error_location)
                 if (error_msg):
                     b.wait_in_text(error_location, error_msg)
+
+            b.wait_present(".modal-footer button:contains(Create):disabled")
 
             return self
 
@@ -1859,7 +1985,7 @@ class TestMachines(NetworkCase):
                     b.wait_in_text("#vm-{0}-disks-vda-device".format(name), "disk")
                 else:
                     b.wait_in_text("#vm-{0}-disks-hda-device".format(name), "disk")
-            elif (dialog.storage_pool == 'No Storage' and dialog.sourceType == 'file') or (dialog.sourceType == 'url' and dialog.start_vm):
+            elif dialog.start_vm and (((dialog.storage_pool == 'No Storage' or dialog.storage_size == 0) and dialog.sourceType == 'file') or dialog.sourceType == 'url'):
                 b.wait_in_text("#vm-{0}-disks-hda-device".format(name), "cdrom")
             else:
                 b.wait_in_text("tbody tr td div.listing-ct-body", "No disks defined")

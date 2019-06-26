@@ -7,7 +7,7 @@
 <link rel="home" href="index.html" title="Cockpit Guide">
 <link rel="up" href="features.html" title="Part II. Feature Internals">
 <link rel="prev" href="feature-packagekit.html" title="Package Updates">
-<link rel="next" href="feature-ovirtvirtualmachines.html" title="oVirt Virtual Machines">
+<link rel="next" href="development.html" title="Part III. Developer Guide">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -16,7 +16,7 @@
 <td><a accesskey="u" href="features.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
 <td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
 <th width="100%" align="center">Cockpit Guide</th>
-<td><a accesskey="n" href="feature-ovirtvirtualmachines.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+<td><a accesskey="n" href="development.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
 </tr></table>
 <div class="chapter">
 <div class="titlepage"><div><div><h2 class="title">
@@ -58,17 +58,7 @@
 <div class="titlepage"><div><div><h2 class="title" style="clear: both">
 <a name="feature-virtualmachines-extending"></a>Extensions</h2></div></div></div>
 <p>
-            Base package <span class="emphasis"><em>cockpit-machines</em></span> for management of virtual machines is based on Libvirt and
-            can be farther extended for features of higher level management applications (like oVirt) via concept
-            of providers (i.e. <a class="link" href="feature-ovirtvirtualmachines.html" title="oVirt Virtual Machines">oVirt Virtual Machines</a>).
-        </p>
-<p>
-            Both <span class="emphasis"><em>cockpit-machines-ovirt</em></span> and <span class="emphasis"><em>cockpit-machines</em></span> RPM packages can be
-            installed together but only one of them can be loaded at a time depending on the <span class="emphasis"><em>priority</em></span>
-            attribute set in <span class="emphasis"><em>manifest.json</em></span> files.
-        </p>
-<p>
-            By default, <span class="emphasis"><em>cockpit-machines-ovirt</em></span> takes precedence over <span class="emphasis"><em>cockpit-machines</em></span>.
+            Base package <span class="emphasis"><em>cockpit-machines</em></span> for management of virtual machines is based on Libvirt.
         </p>
 <p>
             New features for <span class="emphasis"><em>cockpit-machines</em></span> should be only implemented for the componenent

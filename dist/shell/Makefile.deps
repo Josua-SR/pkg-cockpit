@@ -1,5 +1,5 @@
 # Generated Makefile data for shell
-# Stamp: Wed Jun 12 2019 11:23:45 GMT+0000 (Coordinated Universal Time)
+# Stamp: Wed Jun 26 2019 11:42:44 GMT+0000 (Coordinated Universal Time)
 
 shell_INPUTS = \
 	node_modules/bootstrap/LICENSE \
@@ -71,7 +71,6 @@ shell_INPUTS = \
 	pkg/shell/images/server-large.png \
 	pkg/shell/images/server-small.png \
 	pkg/shell/index-no-machines.js \
-	pkg/shell/index-stub.js \
 	pkg/shell/index.html \
 	pkg/shell/index.js \
 	pkg/shell/indexes.js \
@@ -80,7 +79,6 @@ shell_INPUTS = \
 	pkg/shell/shell.less \
 	pkg/shell/simple.html \
 	pkg/shell/ssh-file-autocomplete.jsx \
-	pkg/shell/stub.html \
 	pkg/shell/switcher.less \
 	pkg/shell/variables.less \
 	$(NULL)
@@ -93,10 +91,6 @@ shell_OUTPUTS = \
 	dist/shell/index-no-machines.css.map \
 	dist/shell/index-no-machines.min.js \
 	dist/shell/index-no-machines.min.js.map \
-	dist/shell/index-stub.css \
-	dist/shell/index-stub.css.map \
-	dist/shell/index-stub.min.js \
-	dist/shell/index-stub.min.js.map \
 	dist/shell/index.css \
 	dist/shell/index.css.map \
 	dist/shell/index.html \
@@ -104,7 +98,6 @@ shell_OUTPUTS = \
 	dist/shell/index.min.js.map \
 	dist/shell/shell.html \
 	dist/shell/simple.html \
-	dist/shell/stub.html \
 	$(NULL)
 
 shell_PO = dist/shell/po.js $(patsubst %,dist/shell/po.%.js,$(LINGUAS))
@@ -115,22 +108,17 @@ shell_INSTALL = \
 	dist/shell/images/server-small.png \
 	dist/shell/index-no-machines.css.gz \
 	dist/shell/index-no-machines.min.js.gz \
-	dist/shell/index-stub.css.gz \
-	dist/shell/index-stub.min.js.gz \
 	dist/shell/index.css.gz \
 	dist/shell/index.html \
 	dist/shell/index.min.js.gz \
 	dist/shell/shell.html.gz \
 	dist/shell/simple.html \
-	dist/shell/stub.html \
 	$(addsuffix .gz,$(shell_PO)) \
 	$(NULL)
 
 shell_DEBUG = \
 	dist/shell/index-no-machines.css.map \
 	dist/shell/index-no-machines.min.js.map \
-	dist/shell/index-stub.css.map \
-	dist/shell/index-stub.min.js.map \
 	dist/shell/index.css.map \
 	dist/shell/index.min.js.map \
 	$(NULL)
@@ -140,7 +128,7 @@ shell_TESTS = \
 
 dist/shell/%.po: po/%.po
 	$(AM_V_GEN) $(MKDIR_P) $(dir $@) && \
-	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/mustache/mustache.js -N node_modules/patternfly/dist/less/color-variables.less -N node_modules/patternfly/dist/less/variables.less -N node_modules/prop-types/factoryWithThrowingShims.js -N node_modules/prop-types/index.js -N node_modules/prop-types/lib/ReactPropTypesSecret.js -N node_modules/react-dom/cjs/react-dom.production.min.js -N node_modules/react-dom/index.js -N node_modules/react/cjs/react.production.min.js -N node_modules/react/index.js -N node_modules/throttle-debounce/dist/index.esm.js -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-file-autocomplete.css -N pkg/lib/cockpit-components-file-autocomplete.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-onoff.jsx -N pkg/lib/cockpit-components-onoff.less -N pkg/lib/credentials-ssh-private-keys.sh -N pkg/lib/credentials-ssh-remove-key.sh -N pkg/lib/credentials.js -N pkg/lib/listing.less -N pkg/lib/machine-add.html -N pkg/lib/machine-auth-failed.html -N pkg/lib/machine-change-auth.html -N pkg/lib/machine-change-port.html -N pkg/lib/machine-color-picker.html -N pkg/lib/machine-dialogs.js -N pkg/lib/machine-invalid-hostkey.html -N pkg/lib/machine-not-supported.html -N pkg/lib/machine-sync-users.html -N pkg/lib/machine-unknown-hostkey.html -N pkg/lib/machines.js -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/table.css -N pkg/lib/variables.less -N pkg/shell/active-pages-dialog.jsx -N pkg/shell/active-pages.js -N pkg/shell/active-pages.less -N pkg/shell/base_index.js -N pkg/shell/credentials.js -N pkg/shell/images/server-error.png -N pkg/shell/images/server-large.png -N pkg/shell/images/server-small.png -N pkg/shell/index-no-machines.js -N pkg/shell/index-stub.js -N pkg/shell/index.html -N pkg/shell/index.js -N pkg/shell/indexes.js -N pkg/shell/privileges.js -N pkg/shell/shell.html -N pkg/shell/shell.less -N pkg/shell/simple.html -N pkg/shell/ssh-file-autocomplete.jsx -N pkg/shell/stub.html -N pkg/shell/switcher.less -N pkg/shell/variables.less $(addprefix -N ,$(shell find pkg/ -name manifest.json)) $< > $@.tmp && mv $@.tmp $@
+	$(MSGGREP) -N node_modules/bootstrap/less/variables.less -N node_modules/mustache/mustache.js -N node_modules/patternfly/dist/less/color-variables.less -N node_modules/patternfly/dist/less/variables.less -N node_modules/prop-types/factoryWithThrowingShims.js -N node_modules/prop-types/index.js -N node_modules/prop-types/lib/ReactPropTypesSecret.js -N node_modules/react-dom/cjs/react-dom.production.min.js -N node_modules/react-dom/index.js -N node_modules/react/cjs/react.production.min.js -N node_modules/react/index.js -N node_modules/throttle-debounce/dist/index.esm.js -N pkg/lib/cockpit-components-dialog.css -N pkg/lib/cockpit-components-dialog.jsx -N pkg/lib/cockpit-components-file-autocomplete.css -N pkg/lib/cockpit-components-file-autocomplete.jsx -N pkg/lib/cockpit-components-listing.jsx -N pkg/lib/cockpit-components-onoff.jsx -N pkg/lib/cockpit-components-onoff.less -N pkg/lib/credentials-ssh-private-keys.sh -N pkg/lib/credentials-ssh-remove-key.sh -N pkg/lib/credentials.js -N pkg/lib/listing.less -N pkg/lib/machine-add.html -N pkg/lib/machine-auth-failed.html -N pkg/lib/machine-change-auth.html -N pkg/lib/machine-change-port.html -N pkg/lib/machine-color-picker.html -N pkg/lib/machine-dialogs.js -N pkg/lib/machine-invalid-hostkey.html -N pkg/lib/machine-not-supported.html -N pkg/lib/machine-sync-users.html -N pkg/lib/machine-unknown-hostkey.html -N pkg/lib/machines.js -N pkg/lib/mustache.js -N pkg/lib/page.css -N pkg/lib/patterns.js -N pkg/lib/table.css -N pkg/lib/variables.less -N pkg/shell/active-pages-dialog.jsx -N pkg/shell/active-pages.js -N pkg/shell/active-pages.less -N pkg/shell/base_index.js -N pkg/shell/credentials.js -N pkg/shell/images/server-error.png -N pkg/shell/images/server-large.png -N pkg/shell/images/server-small.png -N pkg/shell/index-no-machines.js -N pkg/shell/index.html -N pkg/shell/index.js -N pkg/shell/indexes.js -N pkg/shell/privileges.js -N pkg/shell/shell.html -N pkg/shell/shell.less -N pkg/shell/simple.html -N pkg/shell/ssh-file-autocomplete.jsx -N pkg/shell/switcher.less -N pkg/shell/variables.less $(addprefix -N ,$(shell find pkg/ -name manifest.json)) $< > $@.tmp && mv $@.tmp $@
 
 dist/shell/stamp: $(shell_INPUTS)
 
@@ -158,14 +146,6 @@ dist/shell/index-no-machines.min.js: dist/shell/stamp
 
 dist/shell/index-no-machines.min.js.map: dist/shell/stamp
 
-dist/shell/index-stub.css: dist/shell/stamp
-
-dist/shell/index-stub.css.map: dist/shell/stamp
-
-dist/shell/index-stub.min.js: dist/shell/stamp
-
-dist/shell/index-stub.min.js.map: dist/shell/stamp
-
 dist/shell/index.css: dist/shell/stamp
 
 dist/shell/index.css.map: dist/shell/stamp
@@ -179,8 +159,6 @@ dist/shell/index.min.js.map: dist/shell/stamp
 dist/shell/shell.html: dist/shell/stamp
 
 dist/shell/simple.html: dist/shell/stamp
-
-dist/shell/stub.html: dist/shell/stamp
 
 node_modules/bootstrap/LICENSE:
 
@@ -320,8 +298,6 @@ pkg/shell/images/server-small.png:
 
 pkg/shell/index-no-machines.js:
 
-pkg/shell/index-stub.js:
-
 pkg/shell/index.html:
 
 pkg/shell/index.js:
@@ -337,8 +313,6 @@ pkg/shell/shell.less:
 pkg/shell/simple.html:
 
 pkg/shell/ssh-file-autocomplete.jsx:
-
-pkg/shell/stub.html:
 
 pkg/shell/switcher.less:
 

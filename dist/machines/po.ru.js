@@ -13,47 +13,6 @@
         loaded = true;
     }
 
-    function transformAngular(data, prev) {
-        var key, context, parts, value, result = { };
-        for (key in data) {
-            if (key === "")
-                continue;
-            parts = key.split("\u0004");
-            value = data[key];
-            if (parts[1]) {
-                context = parts[0];
-                key = parts[1];
-            } else {
-                context = "$$noContext";
-                key = parts[0];
-            }
-            if (value[0] === null)
-                value = value[1];
-            else
-                value = value.slice(1);
-            if (!(key in result))
-                result[key] = { };
-            result[key][context] = value;
-        }
-        return angular.extend(prev, result);
-    }
-
-    /* Load into angular here */
-    if (typeof angular === 'object') {
-        try {
-            module = angular.module(["gettext"]);
-        } catch(ex) { console.log(ex); /* Either no angular or angular-gettext */ };
-        if (module) {
-            loaded = true;
-            module.run(['gettextCatalog', function(gettextCatalog) {
-                var lang = data[""]["language"];
-                var prev = (gettextCatalog.getCurrentLanguage() == lang) ? gettextCatalog.strings : { };
-                gettextCatalog.setStrings(lang, transformAngular(data, prev));
-                gettextCatalog.setCurrentLanguage(lang);
-            }]);
-        }
-    }
-
     if (!loaded)
         root.po = data;
 
@@ -89,7 +48,7 @@ return plural;
  ],
  "Additional": [
   null,
-  ""
+  "Дополнительно"
  ],
  "Address": [
   null,
@@ -101,7 +60,7 @@ return plural;
  ],
  "Always attach": [
   null,
-  ""
+  "Всегда подключать"
  ],
  "Apply": [
   null,
@@ -113,7 +72,7 @@ return plural;
  ],
  "Autostart": [
   null,
-  ""
+  "Автозапуск"
  ],
  "Available": [
   null,
@@ -121,23 +80,23 @@ return plural;
  ],
  "Boot Order": [
   null,
-  ""
+  "Порядок загрузки"
  ],
  "Boot order settings could not be saved": [
   null,
-  ""
+  "Не удалось сохранить параметры порядка загрузки"
  ],
  "Bus": [
   null,
-  "автобус"
+  "Шина"
  ],
  "CPU Type": [
   null,
-  ""
+  "Тип процессора"
  ],
  "Cache": [
   null,
-  ""
+  "Кэш"
  ],
  "Cancel": [
   null,
@@ -145,7 +104,7 @@ return plural;
  ],
  "Capacity": [
   null,
-  "Объем"
+  "Ёмкость"
  ],
  "Changes will take effect after shutting down the VM": [
   null,
@@ -153,15 +112,15 @@ return plural;
  ],
  "Clicking \"Launch Remote Viewer\" will download a .vv file and launch $0.": [
   null,
-  "Нажав «Launch Remote Viewer», вы загрузите файл .vv и запустите $0"
+  "После нажатия «Launch Remote Viewer» будет загружен файл .vv и выполнен запуск $0"
  ],
  "Connect with any $0 viewer application.": [
   null,
-  "Подключитесь к любому $0 приложение для просмотра."
+  "Подключиться с помощью любого $0-клиента."
  ],
  "Connect with any SPICE or VNC viewer application.": [
   null,
-  "Подключайтесь к любому приложению SPICE или VNC."
+  "Подключиться с помощью любого клиента SPICE или VNC."
  ],
  "Connecting": [
   null,
@@ -173,7 +132,7 @@ return plural;
  ],
  "Connection": [
   null,
-  "Соединение"
+  "Подключение"
  ],
  "Console Type": [
   null,
@@ -181,11 +140,11 @@ return plural;
  ],
  "Consoles": [
   null,
-  "консоли"
+  "Консоли"
  ],
  "Cores per socket": [
   null,
-  "Ядер на сокет"
+  "Количество ядер на сокет"
  ],
  "Create": [
   null,
@@ -193,11 +152,11 @@ return plural;
  ],
  "Create New": [
   null,
-  "Создать"
+  "Создать новый"
  ],
  "Create Storage Pool": [
   null,
-  "Создать пул хранения"
+  "Создать пул носителей"
  ],
  "Create VM": [
   null,
@@ -205,19 +164,19 @@ return plural;
  ],
  "Creation of VM $0 failed": [
   null,
-  ""
+  "Ошибка создания виртуальной машины $0"
  ],
  "Ctrl+Alt+Del": [
   null,
-  "Ctrl + Alt + Del"
+  "Ctrl+Alt+Del"
  ],
  "Current Allocation": [
   null,
-  ""
+  "Текущее распределение"
  ],
  "DHCP Range": [
   null,
-  ""
+  "Диапазон адресов DHCP"
  ],
  "Deactivate": [
   null,
@@ -229,19 +188,19 @@ return plural;
  ],
  "Delete Content": [
   null,
-  ""
+  "Удалить содержимое"
  ],
  "Delete Storage Pool $0": [
   null,
-  ""
+  "Удаление пула носителей $0"
  ],
  "Delete associated storage files:": [
   null,
-  "Удаление связанных файлов хранения:"
+  "Удаление связанных файлов хранилища:"
  ],
  "Delete the Volumes inside this Pool": [
   null,
-  ""
+  "Удалить тома в этом пуле"
  ],
  "Deleting an inactive Storage Pool will only undefine the Pool. Its content will not be deleted.": [
   null,
@@ -257,15 +216,15 @@ return plural;
  ],
  "Disconnected": [
   null,
-  "Отключен"
+  "Отключено"
  ],
  "Disconnected from serial console. Click the Reconnect button.": [
   null,
-  "Отключен от последовательной консоли. Нажмите кнопку «Повторное подключение»."
+  "Подключение к последовательной консоли прервано. Нажмите кнопку «Повторить подключение»."
  ],
  "Disk $0 fail to get detached from VM $1": [
   null,
-  ""
+  "Не удалось отключить диск $0 от виртуальной машины $1"
  ],
  "Disk failed to be attached": [
   null,
@@ -281,31 +240,35 @@ return plural;
  ],
  "Disks cannot be removed from $0 VMs": [
   null,
-  ""
+  "Невозможно удалить диски из виртуальных машин с состоянием «$0»"
  ],
  "Download the MSI from $0": [
   null,
-  "Загрузите MSI из $0"
+  "Загрузить MSI-файл с сайта $0"
  ],
  "Edit": [
   null,
-  "Правка"
+  "Изменить"
  ],
  "Emulated Machine": [
   null,
-  ""
+  "Эмулированный компьютер"
  ],
  "Existing Disk Image": [
   null,
-  ""
+  "Существующий образ диска"
  ],
  "Existing disk image on host's file system": [
   null,
-  ""
+  "Существующий образ диска в файловой системе узла"
+ ],
+ "Failed to fetch the IP addresses of the interfaces present in $0": [
+  null,
+  "Не удалось получить IP-адреса интерфейсов, присутствующих в $0"
  ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
-  "Меньше, чем максимальное количество виртуальных процессоров должно быть включено."
+  "Количество включённых виртуальных ЦП должно быть меньше их максимального числа."
  ],
  "File": [
   null,
@@ -317,23 +280,23 @@ return plural;
  ],
  "Force Restart": [
   null,
-  "Принудительный перезапуск"
+  "Принудительная перезагрузка"
  ],
  "Force Shut Down": [
   null,
-  "Завершение работы"
+  "Принудительное завершение работы"
  ],
  "Format": [
   null,
-  "Формат"
+  "Форматировать"
  ],
  "Forwarding mode": [
   null,
-  ""
+  "Режим переадресации"
  ],
  "General": [
   null,
-  "Общие"
+  "Общее"
  ],
  "GiB": [
   null,
@@ -345,11 +308,11 @@ return plural;
  ],
  "Graphics Console in Desktop Viewer": [
   null,
-  "Графическая консоль в Desktop Viewer"
+  "Графическая консоль в средстве просмотра для рабочего стола"
  ],
  "Hide Performance Options": [
   null,
-  ""
+  "Скрыть параметры быстродействия"
  ],
  "Host": [
   null,
@@ -357,7 +320,7 @@ return plural;
  ],
  "Host Device": [
   null,
-  ""
+  "Главное устройство"
  ],
  "Host Name": [
   null,
@@ -365,15 +328,19 @@ return plural;
  ],
  "Host should not be empty": [
   null,
-  "Хост не должен быть пустым"
+  "Имя узла не должно быть пустым"
+ ],
+ "IP Address": [
+  null,
+  "IP-адрес"
  ],
  "IPv4 Address": [
   null,
-  ""
+  "IPv4-адрес"
  ],
  "IPv6 Address": [
   null,
-  ""
+  "IPv6-адрес"
  ],
  "Immediately Start VM": [
   null,
@@ -623,6 +590,10 @@ return plural;
   null,
   "Операционная система"
  ],
+ "Operation is in progress": [
+  null,
+  ""
+ ],
  "Overview": [
   null,
   "Обзор"
@@ -789,7 +760,7 @@ return plural;
  ],
  "Show Performance Options": [
   null,
-  ""
+  "Показать параметры быстродействия"
  ],
  "Shut Down": [
   null,
@@ -971,9 +942,17 @@ return plural;
   null,
   "Сервис"
  ],
+ "Unknown": [
+  null,
+  "Неизвестно"
+ ],
  "Unplug": [
   null,
   "Отключайте"
+ ],
+ "Up to $0 $1 available in the default location": [
+  null,
+  ""
  ],
  "Up to $0 $1 available on the host": [
   null,

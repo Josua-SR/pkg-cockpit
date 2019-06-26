@@ -38,8 +38,6 @@ class PackageCase(MachineCase):
             self.backend = "apt"
         elif self.machine.image.startswith("fedora") or self.machine.image in ["rhel-8-0", "rhel-8-0-distropkg", "rhel-8-1"]:
             self.backend = "dnf"
-        elif self.machine.image in ["centos-7", "rhel-7-6", "rhel-7-6-distropkg", "rhel-7-7"]:
-            self.backend = "yum"
         else:
             raise NotImplementedError("unknown image " + self.machine.image)
 
@@ -253,7 +251,7 @@ rm -rf ~/rpmbuild
                                     xz -c Packages > Packages.xz
                                     O=$(apt-ftparchive -o APT::FTPArchive::Release::Origin=cockpittest release .); echo "$O" > Release
                                     echo 'Changelogs: http://localhost:12345/changelogs/@CHANGEPATH@' >> Release
-                                    setsid python -m SimpleHTTPServer 12345 >/dev/null 2>&1 < /dev/null &
+                                    setsid python3 -m http.server 12345 >/dev/null 2>&1 < /dev/null &
                                     '''.format(self.repo_dir))
             self.machine.wait_for_cockpit_running(port=12345)  # wait for changelog HTTP server to start up
         else:

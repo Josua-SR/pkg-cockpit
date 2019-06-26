@@ -13,47 +13,6 @@
         loaded = true;
     }
 
-    function transformAngular(data, prev) {
-        var key, context, parts, value, result = { };
-        for (key in data) {
-            if (key === "")
-                continue;
-            parts = key.split("\u0004");
-            value = data[key];
-            if (parts[1]) {
-                context = parts[0];
-                key = parts[1];
-            } else {
-                context = "$$noContext";
-                key = parts[0];
-            }
-            if (value[0] === null)
-                value = value[1];
-            else
-                value = value.slice(1);
-            if (!(key in result))
-                result[key] = { };
-            result[key][context] = value;
-        }
-        return angular.extend(prev, result);
-    }
-
-    /* Load into angular here */
-    if (typeof angular === 'object') {
-        try {
-            module = angular.module(["gettext"]);
-        } catch(ex) { console.log(ex); /* Either no angular or angular-gettext */ };
-        if (module) {
-            loaded = true;
-            module.run(['gettextCatalog', function(gettextCatalog) {
-                var lang = data[""]["language"];
-                var prev = (gettextCatalog.getCurrentLanguage() == lang) ? gettextCatalog.strings : { };
-                gettextCatalog.setStrings(lang, transformAngular(data, prev));
-                gettextCatalog.setCurrentLanguage(lang);
-            }]);
-        }
-    }
-
     if (!loaded)
         root.po = data;
 
@@ -361,7 +320,7 @@ return plural;
  ],
  "Confirm removal with passphrase": [
   null,
-  ""
+  "암호문 삭제 확인 "
  ],
  "Content": [
   null,
@@ -441,7 +400,7 @@ return plural;
  ],
  "Custom encryption options": [
   null,
-  ""
+  "사용자 지정 암호화 옵션 "
  ],
  "Custom mount options": [
   null,
@@ -453,7 +412,7 @@ return plural;
  ],
  "Data Used": [
   null,
-  ""
+  "사용된 데이터 "
  ],
  "Deactivate": [
   null,
@@ -461,7 +420,7 @@ return plural;
  ],
  "Deactivating $target": [
   null,
-  ""
+  "$target 비활성화 중 "
  ],
  "Deduplication": [
   null,
@@ -497,7 +456,7 @@ return plural;
  ],
  "Deleting a volume group will erase all data on it.": [
   null,
-  ""
+  "볼륨 그룹을 삭제하면 내부의 모든 데이터도 함께 삭제됩니다. "
  ],
  "Deleting volume group $target": [
   null,
@@ -533,15 +492,15 @@ return plural;
  ],
  "Downloading $0": [
   null,
-  ""
+  "$0 다운로드 중 "
  ],
  "Drive": [
   null,
-  ""
+  "드라이브"
  ],
  "Drives": [
   null,
-  ""
+  "드라이브 "
  ],
  "Edit": [
   null,
@@ -557,7 +516,7 @@ return plural;
  ],
  "Ejecting $target": [
   null,
-  ""
+  "$target 꺼내는 중 "
  ],
  "Emptying $target": [
   null,
@@ -593,7 +552,7 @@ return plural;
  ],
  "Encryption Options": [
   null,
-  ""
+  "암호화 옵션 "
  ],
  "Erase": [
   null,
@@ -645,7 +604,7 @@ return plural;
  ],
  "Format $0": [
   null,
-  ""
+  "$0 포맷 "
  ],
  "Format Disk $0": [
   null,
@@ -797,7 +756,7 @@ return plural;
  ],
  "Logical Volume of $0": [
   null,
-  ""
+  "$0 논리 볼륨 "
  ],
  "Make sure the key hash from the Tang server matches:": [
   null,
@@ -845,11 +804,11 @@ return plural;
  ],
  "Mount point can not be empty": [
   null,
-  ""
+  "마운트 지점을 비워둘 수 없습니다 "
  ],
  "Mount point cannot be empty.": [
   null,
-  ""
+  "마운트 지점을 비워둘 수 없습니다. "
  ],
  "Mount point must start with \"/\".": [
   null,
@@ -869,7 +828,7 @@ return plural;
  ],
  "Mounting $target": [
   null,
-  ""
+  "$target 마운트 중 "
  ],
  "NFS Mount": [
   null,
@@ -897,7 +856,7 @@ return plural;
  ],
  "Name cannot be longer than $0 bytes": [
   null,
-  ""
+  "이름은 $0 바이트보다 길 수 없습니다 "
  ],
  "Name cannot be longer than $0 characters": [
   null,
@@ -905,15 +864,15 @@ return plural;
  ],
  "Name cannot be longer than 127 characters.": [
   null,
-  ""
+  "이름은 127자보다 길 수 없습니다."
  ],
  "Name cannot contain the character '$0'.": [
   null,
-  ""
+  "이름에는 문자 '$0'를 포함할 수 없습니다."
  ],
  "Name cannot contain whitespace.": [
   null,
-  ""
+  "이름에는 공백이 없어야 합니다."
  ],
  "New NFS Mount": [
   null,
@@ -937,15 +896,15 @@ return plural;
  ],
  "No NFS mounts set up": [
   null,
-  ""
+  "NFS 마운트 설정 없음 "
  ],
  "No available slots": [
   null,
-  ""
+  "사용 가능한 슬롯이 없습니다 "
  ],
  "No disks are available.": [
   null,
-  ""
+  "사용 가능한 디스크가 없습니다."
  ],
  "No drives attached": [
   null,
@@ -957,7 +916,7 @@ return plural;
  ],
  "No free space": [
   null,
-  ""
+  "여유공간이 없습니다."
  ],
  "No iSCSI targets set up": [
   null,
@@ -1561,7 +1520,7 @@ return plural;
  ],
  "This device is currently used for RAID devices.": [
   null,
-  ""
+  "현재 이 장치는 RAID 장치로 사용되고 있습니다. "
  ],
  "This device is currently used for RAID devices. Proceeding will remove it from its RAID devices.": [
   null,
@@ -1569,11 +1528,11 @@ return plural;
  ],
  "This device is currently used for VDO devices.": [
   null,
-  ""
+  "현재 이 장치는 VDO 장치로 사용되고 있습니다. "
  ],
  "This device is currently used for volume groups.": [
   null,
-  ""
+  "현재 이 장치는 볼륨 그룹으로 사용되고 있습니다. "
  ],
  "This device is currently used for volume groups. Proceeding will remove it from its volume groups.": [
   null,
@@ -1593,7 +1552,7 @@ return plural;
  ],
  "Total size: $0": [
   null,
-  ""
+  "전체 크기: $0"
  ],
  "Trust key": [
   null,
@@ -1609,15 +1568,15 @@ return plural;
  ],
  "Unable to reach server": [
   null,
-  ""
+  "서버에 연결할 수 없습니다 "
  ],
  "Unable to remove mount": [
   null,
-  ""
+  "마운트를 제거할 수 없습니다 "
  ],
  "Unable to unmount filesystem": [
   null,
-  ""
+  "파일 시스템을 마운트 해제할 수 없습니다 "
  ],
  "Unit": [
   null,
@@ -1653,11 +1612,11 @@ return plural;
  ],
  "Unlocking $target": [
   null,
-  ""
+  "$target 잠금 해제 중 "
  ],
  "Unlocking disk...": [
   null,
-  ""
+  "디스크 잠금 해제 중..."
  ],
  "Unmount": [
   null,
@@ -1665,11 +1624,11 @@ return plural;
  ],
  "Unmounting $target": [
   null,
-  ""
+  "$target 마운트 해제 중 "
  ],
  "Unrecognized Data": [
   null,
-  ""
+  "인식되지 않는 데이터 "
  ],
  "Unrecognized data can not be made smaller here.": [
   null,
@@ -1757,7 +1716,7 @@ return plural;
  ],
  "Write-mostly": [
   null,
-  ""
+  "Write-mostly"
  ],
  "Writing": [
   null,
@@ -1769,11 +1728,11 @@ return plural;
  ],
  "[binary data]": [
   null,
-  ""
+  "[바이너리 데이터]"
  ],
  "[no data]": [
   null,
-  ""
+  "[데이터 없음]"
  ],
  "iSCSI Targets": [
   null,
@@ -1801,7 +1760,7 @@ return plural;
  ],
  "storage-id-desc\u0004Encrypted data": [
   null,
-  ""
+  "암호화된 데이터 "
  ],
  "storage-id-desc\u0004Other Data": [
   null,
@@ -1813,7 +1772,7 @@ return plural;
  ],
  "storage-id-desc\u0004Unrecognized Data": [
   null,
-  ""
+  "인식되지 않는 데이터 "
  ],
  "storage-id-desc\u0004VDO Backing": [
   null,
@@ -1821,7 +1780,7 @@ return plural;
  ],
  "storage\u0004Drive": [
   null,
-  ""
+  "드라이브"
  ],
  "storage\u0004Hard Disk": [
   null,

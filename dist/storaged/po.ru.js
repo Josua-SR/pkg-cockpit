@@ -13,47 +13,6 @@
         loaded = true;
     }
 
-    function transformAngular(data, prev) {
-        var key, context, parts, value, result = { };
-        for (key in data) {
-            if (key === "")
-                continue;
-            parts = key.split("\u0004");
-            value = data[key];
-            if (parts[1]) {
-                context = parts[0];
-                key = parts[1];
-            } else {
-                context = "$$noContext";
-                key = parts[0];
-            }
-            if (value[0] === null)
-                value = value[1];
-            else
-                value = value.slice(1);
-            if (!(key in result))
-                result[key] = { };
-            result[key][context] = value;
-        }
-        return angular.extend(prev, result);
-    }
-
-    /* Load into angular here */
-    if (typeof angular === 'object') {
-        try {
-            module = angular.module(["gettext"]);
-        } catch(ex) { console.log(ex); /* Either no angular or angular-gettext */ };
-        if (module) {
-            loaded = true;
-            module.run(['gettextCatalog', function(gettextCatalog) {
-                var lang = data[""]["language"];
-                var prev = (gettextCatalog.getCurrentLanguage() == lang) ? gettextCatalog.strings : { };
-                gettextCatalog.setStrings(lang, transformAngular(data, prev));
-                gettextCatalog.setCurrentLanguage(lang);
-            }]);
-        }
-    }
-
     if (!loaded)
         root.po = data;
 
@@ -219,11 +178,11 @@ return plural;
  ],
  "Activating $target": [
   null,
-  "Активация $target"
+  "Включение $target"
  ],
  "Active since": [
   null,
-  "Действует с"
+  "Активно с"
  ],
  "Add": [
   null,
@@ -231,11 +190,11 @@ return plural;
  ],
  "Add Disks": [
   null,
-  "Добавить диски"
+  "Добавление дисков"
  ],
  "Add Key": [
   null,
-  "Добавить ключ"
+  "Добавление ключа"
  ],
  "Add iSCSI Portal": [
   null,
@@ -243,7 +202,7 @@ return plural;
  ],
  "Adding physical volume to $target": [
   null,
-  "Добавление физического объема в $target"
+  "Добавление физического тома в $target"
  ],
  "Additional packages:": [
   null,
@@ -259,7 +218,7 @@ return plural;
  ],
  "Address is not a valid URL": [
   null,
-  "Адрес не является действительным URL"
+  "Недопустимое значение URL-адреса"
  ],
  "Apply": [
   null,
@@ -267,19 +226,19 @@ return plural;
  ],
  "At least $0 disks are needed.": [
   null,
-  "По крайней мере $0 диски необходимы."
+  "Минимально необходимое количество дисков: $0."
  ],
  "At least one disk is needed.": [
   null,
-  "Требуется хотя бы один диск."
+  "Необходим хотя бы один диск."
  ],
  "Authentication required": [
   null,
-  "Требуется проверка подлинности"
+  "Необходима проверка подлинности"
  ],
  "Available targets on $0": [
   null,
-  "Доступные цели по $0"
+  "Доступные цели на $0"
  ],
  "Backing Device": [
   null,
@@ -291,15 +250,15 @@ return plural;
  ],
  "Block device for filesystems": [
   null,
-  "Блочное устройство для файловых систем"
+  "Устройство блочного ввода-вывода для файловых систем"
  ],
  "Blocked": [
   null,
-  "блокированный"
+  "Заблокировано"
  ],
  "Can't delete while unlocked": [
   null,
-  "Не удается удалить при разблокировке"
+  "Невозможно удалить в разблокированном состоянии"
  ],
  "Cancel": [
   null,
@@ -311,7 +270,7 @@ return plural;
  ],
  "Change iSCSI Initiator Name": [
   null,
-  "Изменение имени инициатора iSCSI"
+  "Изменить имя инициатора iSCSI"
  ],
  "Change passphrase": [
   null,
@@ -319,7 +278,7 @@ return plural;
  ],
  "Checking $target": [
   null,
-  "проверка $target"
+  "Проверка $target"
  ],
  "Checking RAID Device $target": [
   null,
@@ -339,7 +298,7 @@ return plural;
  ],
  "Cleaning up for $target": [
   null,
-  "Уборка для $target"
+  "Очистка данных $target"
  ],
  "Close": [
   null,
@@ -351,7 +310,7 @@ return plural;
  ],
  "Compatible with modern system and hard disks > 2TB (GPT)": [
   null,
-  "Совместимость с современной системой и жесткими дисками> 2TB (GPT)"
+  "Совместимость с современными системами и жёсткими дисками объёмом более 2 ТБ (GPT)"
  ],
  "Compression": [
   null,
@@ -359,7 +318,7 @@ return plural;
  ],
  "Confirm": [
   null,
-  "Подтверждение пароля"
+  "Подтверждение"
  ],
  "Confirm removal with passphrase": [
   null,
@@ -383,19 +342,19 @@ return plural;
  ],
  "Create Partition Table": [
   null,
-  ""
+  "Создать таблицу разделов"
  ],
  "Create Partition on $0": [
   null,
-  ""
+  "Создание раздела на $0"
  ],
  "Create RAID Device": [
   null,
-  "Создание устройства RAID"
+  "Создание RAID-устройства"
  ],
  "Create Snapshot": [
   null,
-  "Создать снимок"
+  "Создание моментального снимка"
  ],
  "Create Thin Volume": [
   null,
@@ -419,7 +378,7 @@ return plural;
  ],
  "Creating filesystem on $target": [
   null,
-  "Создание файловой системы $target"
+  "Создание файловой системы на $target"
  ],
  "Creating logical volume $target": [
   null,
@@ -439,7 +398,7 @@ return plural;
  ],
  "Custom": [
   null,
-  "Другой"
+  "Настраиваемое"
  ],
  "Custom encryption options": [
   null,
@@ -447,15 +406,15 @@ return plural;
  ],
  "Custom mount options": [
   null,
-  "Пользовательские параметры монтирования"
+  "Пользовательские параметры подключения"
  ],
  "DISK IS FAILING": [
   null,
-  "ДИСК НЕ УДАЛЯЕТ"
+  "СБОЙ В РАБОТЕ ДИСКА"
  ],
  "Data Used": [
   null,
-  "Используемые данные"
+  "Использованные данные"
  ],
  "Deactivate": [
   null,
@@ -463,11 +422,11 @@ return plural;
  ],
  "Deactivating $target": [
   null,
-  "деактивация $target"
+  "Отключение $target"
  ],
  "Deduplication": [
   null,
-  "дедупликации"
+  "Дедупликация"
  ],
  "Default": [
   null,
@@ -483,23 +442,23 @@ return plural;
  ],
  "Deleting a RAID device will erase all data on it.": [
   null,
-  "Удаление RAID-устройства приведет к удалению всех данных."
+  "Удаление RAID-устройства приведёт к удалению всех данных на нём."
  ],
  "Deleting a VDO device will erase all data on it.": [
   null,
-  "При удалении устройства VDO все данные будут удалены."
+  "Удаление устройства VDO приведёт к удалению всех данных на нём."
  ],
  "Deleting a logical volume will delete all data in it.": [
   null,
-  "При удалении логического тома все данные будут удалены."
+  "Удаление логического тома приведёт к удалению всех данных в нём."
  ],
  "Deleting a partition will delete all data in it.": [
   null,
-  "Удаление раздела приведет к удалению в нем всех данных."
+  "Удаление раздела приведёт к удалению всех данных в нём."
  ],
  "Deleting a volume group will erase all data on it.": [
   null,
-  "Удаление группы томов приведет к удалению всех данных."
+  "Удаление группы томов приведёт к удалению всех данных в них."
  ],
  "Deleting volume group $target": [
   null,
@@ -523,7 +482,7 @@ return plural;
  ],
  "Disk passphrase": [
   null,
-  "Диск-кодовая фраза"
+  "Парольная фраза диска"
  ],
  "Disks": [
   null,
@@ -531,47 +490,47 @@ return plural;
  ],
  "Don't overwrite existing data": [
   null,
-  "Не перезаписывать существующие данные"
+  "Не заменять существующие данные"
  ],
  "Downloading $0": [
   null,
-  "загрузка $0"
+  "Загрузка $0"
  ],
  "Drive": [
   null,
-  "Привод"
+  "Устройство"
  ],
  "Drives": [
   null,
-  "приводы"
+  "Устройства"
  ],
  "Edit": [
   null,
-  "Правка"
+  "Изменить"
  ],
  "Edit Tang keyserver": [
   null,
-  "Редактировать Tang keyserver"
+  "Изменение сервера криптографических ключей Tang"
  ],
  "Editing a key requires a free slot": [
   null,
-  "Для редактирования ключа требуется свободный слот"
+  "Для редактирования ключа необходим свободный слот"
  ],
  "Ejecting $target": [
   null,
-  "Выброс $target"
+  "Извлечение $target"
  ],
  "Emptying $target": [
   null,
-  "Опорожнение $target"
+  "Очистка $target"
  ],
  "Encrypt data": [
   null,
-  ""
+  "Шифровать данные"
  ],
  "Encrypted $0": [
   null,
-  "Зашифрованные $0"
+  "Зашифрованный $0"
  ],
  "Encrypted Logical Volume of $0": [
   null,
@@ -583,11 +542,11 @@ return plural;
  ],
  "Encrypted volumes can not be resized here.": [
   null,
-  "Здесь не могут быть изменены размеры зашифрованных томов."
+  "Невозможно изменить размер зашифрованных томов."
  ],
  "Encrypted volumes need to be unlocked before they can be resized.": [
   null,
-  "Зашифрованные тома необходимо разблокировать, прежде чем их можно будет изменить."
+  "Зашифрованные тома необходимо разблокировать, прежде чем станет возможным изменение их размера."
  ],
  "Encryption": [
   null,
@@ -611,11 +570,11 @@ return plural;
  ],
  "Extended Partition": [
   null,
-  "Расширенный раздел"
+  "Дополнительный раздел"
  ],
  "FAILED": [
   null,
-  "НЕ УДАЛОСЬ"
+  "СБОЙ"
  ],
  "Filesystem": [
   null,
@@ -623,7 +582,7 @@ return plural;
  ],
  "Filesystem Mounting": [
   null,
-  "Монтаж файловой системы"
+  "Подключение файловой системы"
  ],
  "Filesystem Name": [
   null,
@@ -631,35 +590,35 @@ return plural;
  ],
  "Filesystems": [
   null,
-  "Файловые"
+  "Файловые системы"
  ],
  "For legacy applications only. Reduces performance.": [
   null,
-  ""
+  "Только для устаревших приложений. Установка данного флажка снижает производительность."
  ],
  "Force remove passphrase in $0": [
   null,
-  "Принудительное удаление кодовой фразы в $0"
+  "Принудительно удалить парольную фразу в $0"
  ],
  "Format": [
   null,
-  "Формат"
+  "Форматировать"
  ],
  "Format $0": [
   null,
-  "Формат $0"
+  "Форматирование $0"
  ],
  "Format Disk $0": [
   null,
-  "Отформатировать диск $0"
+  "Форматирование диска $0"
  ],
  "Formatting a disk will erase all data on it.": [
   null,
-  "При форматировании диска будут удалены все данные."
+  "При форматировании диска все данные на нём будут удалены."
  ],
  "Formatting a storage device will erase all data on it.": [
   null,
-  "При форматировании устройства хранения все данные будут удалены."
+  "При форматировании запоминающего устройства все данные на нём будут удалены."
  ],
  "Free": [
   null,
@@ -667,35 +626,35 @@ return plural;
  ],
  "Free Space": [
   null,
-  "Свободное место"
+  "свободного места"
  ],
  "Free up space in this group: Shrink or delete other logical volumes or add another physical volume.": [
   null,
-  ""
+  "Освободите место в этой группе: сожмите или удалите другие логические тома или добавьте новый физический том."
  ],
  "Go to now": [
   null,
-  "Перейдите к"
+  "Текущий момент"
  ],
  "Grow": [
   null,
-  "расти"
+  "Расширить"
  ],
  "Grow Content": [
   null,
-  ""
+  "Расширить содержимое"
  ],
  "Grow Logical Volume": [
   null,
-  "Рост логического объема"
+  "Расширение логического тома"
  ],
  "Grow logical size of $0": [
   null,
-  "Растите логический размер $0"
+  "Расширение логического размера $0"
  ],
  "Grow to take all space": [
   null,
-  "Растите все пространство"
+  "Расширить на всё пространство"
  ],
  "If tang-show-keys is not available, run the following:": [
   null,
@@ -867,7 +826,7 @@ return plural;
  ],
  "Mounting": [
   null,
-  "монтаж"
+  "Подключение"
  ],
  "Mounting $target": [
   null,
@@ -875,11 +834,11 @@ return plural;
  ],
  "NFS Mount": [
   null,
-  "Крепление NFS"
+  "Подключение по NFS"
  ],
  "NFS Mounts": [
   null,
-  "Крепления NFS"
+  "Подключения по NFS"
  ],
  "NFS Support not installed": [
   null,
@@ -919,7 +878,7 @@ return plural;
  ],
  "New NFS Mount": [
   null,
-  "Новая гора NFS"
+  "Новое подключение по NFS"
  ],
  "New passphrase": [
   null,
@@ -939,7 +898,7 @@ return plural;
  ],
  "No NFS mounts set up": [
   null,
-  "Нет монтируемых NFS"
+  "Подключения по NFS отсутствуют"
  ],
  "No available slots": [
   null,
@@ -1031,7 +990,7 @@ return plural;
  ],
  "Overwrite existing data with zeros": [
   null,
-  "Перезаписать существующие данные с нулями"
+  "Заменять существующие данные нулями"
  ],
  "PackageKit crashed": [
   null,
@@ -1375,7 +1334,7 @@ return plural;
  ],
  "Shrink Volume": [
   null,
-  ""
+  "Сжать том"
  ],
  "Size": [
   null,
@@ -1551,7 +1510,7 @@ return plural;
  ],
  "This NFS mount is in use and only its options can be changed.": [
   null,
-  "Это монтирование NFS используется, и только его параметры могут быть изменены."
+  "Данное подключение по NFS используется. Возможно только изменение его параметров."
  ],
  "This VDO device does not use all of its backing device.": [
   null,
@@ -1823,11 +1782,11 @@ return plural;
  ],
  "storage\u0004Drive": [
   null,
-  "Привод"
+  "Накопитель"
  ],
  "storage\u0004Hard Disk": [
   null,
-  "Жесткий диск"
+  "Жёсткий диск"
  ],
  "storage\u0004Optical Drive": [
   null,
