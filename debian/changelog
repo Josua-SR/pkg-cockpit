@@ -1,10 +1,10 @@
-cockpit (197-1) UNRELEASED; urgency=medium
+cockpit (197-1) experimental; urgency=medium
 
   * New upstream release:
     - Machines: Support all storage pool types for new disks
     - Machines: Show available space on host at VM creation
 
- -- Martin Pitt <mpitt@debian.org>  Wed, 26 Jun 2019 12:51:08 +0000
+ -- Martin Pitt <mpitt@debian.org>  Wed, 26 Jun 2019 12:53:30 +0000
 
 cockpit (196-1) experimental; urgency=medium
 
