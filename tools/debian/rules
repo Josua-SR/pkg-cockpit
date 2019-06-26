@@ -9,7 +9,7 @@ ifneq ($(shell dpkg -s libpcp3-dev >/dev/null 2>&1 && echo yes),yes)
 endif
 
 # newer firewalld ships cockpit.xml, but keep it for backports
-FIREWALLD_SERVICE = $(findstring $(shell . /etc/os-release; echo $$VERSION_ID),8 9 16.04 18.04)
+FIREWALLD_SERVICE = $(findstring $(shell . /etc/os-release; echo $$VERSION_ID),9 18.04)
 ifeq ($(FIREWALLD_SERVICE),)
 	WS_CONFLICTS = firewalld (<< 0.6.0)
 endif
@@ -42,11 +42,9 @@ override_dh_install:
 	dpkg-vendor --derives-from ubuntu || rm -r debian/tmp/usr/share/cockpit/branding/ubuntu
 
 	# unpackaged modules
-	for m in kdump kubernetes selinux subscriptions ovirt; do rm -r debian/tmp/usr/share/cockpit/$$m; done
+	for m in kdump selinux; do rm -r debian/tmp/usr/share/cockpit/$$m; done
 	rm debian/tmp/usr/share/metainfo/org.cockpit-project.cockpit-kdump.metainfo.xml
 	rm debian/tmp/usr/share/metainfo/org.cockpit-project.cockpit-selinux.metainfo.xml
-	# part of kubernetes
-	rm -f debian/tmp/usr/lib/cockpit/cockpit-stub
 
 	dh_install --fail-missing -Xusr/src/debug
 	make install-tests DESTDIR=debian/cockpit-tests

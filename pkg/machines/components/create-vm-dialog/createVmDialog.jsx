@@ -62,17 +62,56 @@ const LOCAL_INSTALL_MEDIA_SOURCE = 'file';
 const EXISTING_DISK_IMAGE_SOURCE = 'disk_image';
 const PXE_SOURCE = 'pxe';
 
-/**
- * Returns an array of storage pools, filtered by connection and presence of volumes
+const permission = cockpit.permission({ admin: true });
+
+/* Returns pool's available space
+ * Pool needs to be referenced by it's name or path.
+ *
+ * @param {array} storagePools
+ * @param {string} poolName
+ * @param {string} poolPath
+ * @param {string} connectionName
+ * @returns {number}
+ */
+function getPoolSpaceAvailable({ storagePools, poolName, poolPath, connectionName }) {
+    storagePools = storagePools.filter(pool => pool.connectionName === connectionName);
+
+    let storagePool;
+    if (poolName)
+        storagePool = storagePools.find(pool => pool.name === poolName);
+    else if (poolPath)
+        storagePool = storagePools.find(pool => pool.target.path === poolPath);
+
+    return storagePool ? storagePool.available : undefined;
+}
+
+/* Returns available space of default storage pool
+ *
+ * First it tries to find storage pool called "default"
+ * If there is none, a pool with path "/var/lib/libvirt/images" (system connection)
+ * or "~/.local/share/libvirt/images" (session connection)
+ * If no default pool could be found, virt-install will create a pool named "default",
+ * whose available space we cannot predict
+ * see: virtinstall/storage.py - StoragePool.build_default_pool()
  *
  * @param {array} storagePools
  * @param {string} connectionName
- * @returns {array}
+ * @returns {number}
  */
-function filterStoragePools(storagePools, connectionName) {
-    return storagePools.filter(pool => pool.volumes &&
-                                       pool.volumes.length &&
-                                       pool.connectionName === connectionName);
+function getSpaceAvailable(storagePools, connectionName) {
+    let space = getPoolSpaceAvailable({ storagePools, poolName: "default", connectionName });
+
+    if (!space) {
+        let poolPath;
+        if (connectionName === LIBVIRT_SYSTEM_CONNECTION)
+            poolPath = "/var/lib/libvirt/images";
+        else if (permission.user)
+            poolPath = permission.user.home + "/.local/share/libvirt/images";
+
+        space = getPoolSpaceAvailable({ storagePools, poolPath, connectionName });
+    }
+
+    return space;
 }
 
 function validateParams(vmParams) {
@@ -111,6 +150,10 @@ function validateParams(vmParams) {
         }
     } else {
         validationFailed['source'] = _("Installation Source should not be empty");
+    }
+
+    if (vmParams.memorySize === 0) {
+        validationFailed['memory'] = _("Memory must not be 0");
     }
 
     return validationFailed;
@@ -297,24 +340,30 @@ const OSRow = ({ vendor, osInfoList, os, vendors, onValueChanged, validationFail
     );
 };
 
-const MemoryRow = ({ memorySize, memorySizeUnit, nodeMaxMemory, onValueChanged }) => {
+const MemoryRow = ({ memorySize, memorySizeUnit, nodeMaxMemory, onValueChanged, validationFailed }) => {
+    const validationStateMemory = validationFailed.memory ? 'error' : undefined;
+
     return (
         <React.Fragment>
             <label htmlFor='memory-size' className='control-label'>
                 {_("Memory")}
             </label>
-            <FormGroup bsClass='ct-validation-wrapper' controlId='memory'>
+            <FormGroup validationState={validationStateMemory} bsClass='form-group ct-validation-wrapper' controlId='memory'>
                 <MemorySelectRow id='memory-size'
                     value={memorySize}
                     maxValue={nodeMaxMemory && convertToUnit(nodeMaxMemory, units.KiB, memorySizeUnit)}
                     initialUnit={memorySizeUnit}
                     onValueChange={e => onValueChanged('memorySize', e.target.value)}
                     onUnitChange={value => onValueChanged('memorySizeUnit', value)} />
-                {nodeMaxMemory &&
+                {validationStateMemory === "error" &&
                 <HelpBlock>
+                    <p className="text-danger">{validationFailed.memory}</p>
+                </HelpBlock> }
+                {nodeMaxMemory &&
+                <HelpBlock id="memory-size-helpblock">
                     {cockpit.format(
                         _("Up to $0 $1 available on the host"),
-                        Math.round(convertToUnit(nodeMaxMemory, units.KiB, memorySizeUnit)),
+                        Math.floor(convertToUnit(nodeMaxMemory, units.KiB, memorySizeUnit)),
                         memorySizeUnit,
                     )}
                 </HelpBlock>}
@@ -323,7 +372,7 @@ const MemoryRow = ({ memorySize, memorySizeUnit, nodeMaxMemory, onValueChanged }
     );
 };
 
-const StorageRow = ({ storageSize, storageSizeUnit, onValueChanged, storagePoolName, storagePools, storageVolume, vms }) => {
+const StorageRow = ({ connectionName, storageSize, storageSizeUnit, onValueChanged, storagePoolName, storagePools, storageVolume, vms }) => {
     let volumeEntries;
     let isVolumeUsed = {};
     // Existing storage pool is chosen
@@ -335,6 +384,8 @@ const StorageRow = ({ storageSize, storageSizeUnit, onValueChanged, storagePoolN
             storagePool.volumes.map(vol => <Select.SelectEntry data={vol.name} key={vol.name}>{vol.name}</Select.SelectEntry>)
         );
     }
+
+    const poolSpaceAvailable = getSpaceAvailable(storagePools, connectionName);
 
     return (
         <React.Fragment>
@@ -348,7 +399,10 @@ const StorageRow = ({ storageSize, storageSizeUnit, onValueChanged, storagePoolN
                 <Select.SelectEntry data="NoStorage" key="NoStorage">{"No Storage"}</Select.SelectEntry>
                 <Select.SelectDivider />
                 <optgroup key="Storage Pools" label="Storage Pools">
-                    { storagePools.map(pool => <Select.SelectEntry data={pool.name} key={pool.name}>{pool.name}</Select.SelectEntry>)}
+                    { storagePools.map(pool => {
+                        if (pool.volumes && pool.volumes.length)
+                            return <Select.SelectEntry data={pool.name} key={pool.name}>{pool.name}</Select.SelectEntry>;
+                    })}
                 </optgroup>
             </Select.Select>
 
@@ -375,11 +429,22 @@ const StorageRow = ({ storageSize, storageSizeUnit, onValueChanged, storagePoolN
                 <label htmlFor='storage-size' className='control-label'>
                     {_("Size")}
                 </label>
-                <MemorySelectRow id={"storage-size"}
-                    value={storageSize}
-                    initialUnit={storageSizeUnit}
-                    onValueChange={e => onValueChanged('storageSize', e.target.value)}
-                    onUnitChange={value => onValueChanged('storageSizeUnit', value)} />
+                <FormGroup bsClass='ct-validation-wrapper' controlId='storage'>
+                    <MemorySelectRow id={"storage-size"}
+                        value={storageSize}
+                        maxValue={poolSpaceAvailable && convertToUnit(poolSpaceAvailable, units.B, storageSizeUnit)}
+                        initialUnit={storageSizeUnit}
+                        onValueChange={e => onValueChanged('storageSize', e.target.value)}
+                        onUnitChange={value => onValueChanged('storageSizeUnit', value)} />
+                    {poolSpaceAvailable &&
+                    <HelpBlock id="storage-size-helpblock">
+                        {cockpit.format(
+                            _("Up to $0 $1 available in the default location"),
+                            Math.floor(convertToUnit(poolSpaceAvailable, units.B, storageSizeUnit)),
+                            storageSizeUnit,
+                        )}
+                    </HelpBlock>}
+                </FormGroup>
             </React.Fragment> }
         </React.Fragment>
     );
@@ -398,7 +463,8 @@ class CreateVmModal extends React.Component {
             vendor: NOT_SPECIFIED,
             vendors: prepareVendors(props.osInfoList),
             os: OTHER_OS_SHORT_ID,
-            memorySize: convertToUnit(1024, units.MiB, units.GiB), // tied to Unit
+            memorySize: Math.min(convertToUnit(1024, units.MiB, units.GiB), // tied to Unit
+                                 Math.floor(convertToUnit(props.nodeMaxMemory, units.KiB, units.GiB))),
             memorySizeUnit: units.GiB.name,
             storageSize: 10, // GiB
             storageSizeUnit: units.GiB.name,
@@ -469,7 +535,7 @@ class CreateVmModal extends React.Component {
             }
             break;
         case 'storagePool': {
-            const storagePool = filterStoragePools(this.props.storagePools, this.state.connectionName).find(pool => pool.name === value);
+            const storagePool = this.props.storagePools.filter(pool => pool.connectionName === this.state.connectionName).find(pool => pool.name === value);
             const storageVolumes = storagePool ? storagePool.volumes : undefined;
             const storageVolume = storageVolumes ? storageVolumes[0] : undefined;
             this.setState({
@@ -484,14 +550,23 @@ class CreateVmModal extends React.Component {
         case 'memorySize':
             value = Math.min(
                 value,
-                Math.round(convertToUnit(this.props.nodeMaxMemory, units.KiB, this.state.memorySizeUnit))
+                Math.floor(convertToUnit(this.props.nodeMaxMemory, units.KiB, this.state.memorySizeUnit))
             );
             this.setState({ [key]: value });
             break;
-        case 'storageSize':
+        case 'storageSize': {
+            const storagePools = this.props.storagePools.filter(pool => pool.connectionName === this.state.connectionName);
+            const spaceAvailable = getSpaceAvailable(storagePools, this.state.connectionName);
+            if (spaceAvailable) {
+                value = Math.min(
+                    value,
+                    Math.floor(convertToUnit(spaceAvailable, units.B, this.state.storageSizeUnit))
+                );
+            }
             this.setState({ [key]: value });
             value = convertToUnit(value, this.state.storageSizeUnit, units.GiB);
             break;
+        }
         case 'memorySizeUnit':
             this.setState({ [key]: value });
             key = 'memorySize';
@@ -600,11 +675,12 @@ class CreateVmModal extends React.Component {
                 { this.state.sourceType != EXISTING_DISK_IMAGE_SOURCE &&
                 <React.Fragment>
                     <StorageRow
+                        connectionName={this.state.connectionName}
                         storageSize={this.state.storageSize}
                         storageSizeUnit={this.state.storageSizeUnit}
                         onValueChanged={this.onValueChanged}
                         storagePoolName={this.state.storagePool}
-                        storagePools={filterStoragePools(storagePools, this.state.connectionName)}
+                        storagePools={storagePools.filter(pool => pool.connectionName === this.state.connectionName)}
                         storageVolume={this.state.storageVolume}
                         vms={vms}
                     />
@@ -616,6 +692,7 @@ class CreateVmModal extends React.Component {
                     memorySizeUnit={this.state.memorySizeUnit}
                     nodeMaxMemory={nodeMaxMemory}
                     onValueChanged={this.onValueChanged}
+                    validationFailed={validationFailed}
                 />
 
                 <hr />
@@ -653,7 +730,9 @@ class CreateVmModal extends React.Component {
                     <Button bsStyle='default' className='btn-cancel' onClick={ this.props.close }>
                         {_("Cancel")}
                     </Button>
-                    <Button bsStyle='primary' onClick={this.onCreateClicked}>
+                    <Button bsStyle='primary'
+                            disabled={Object.getOwnPropertyNames(validationFailed).length > 0}
+                            onClick={this.onCreateClicked}>
                         {_("Create")}
                     </Button>
                 </Modal.Footer>

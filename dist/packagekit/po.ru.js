@@ -13,47 +13,6 @@
         loaded = true;
     }
 
-    function transformAngular(data, prev) {
-        var key, context, parts, value, result = { };
-        for (key in data) {
-            if (key === "")
-                continue;
-            parts = key.split("\u0004");
-            value = data[key];
-            if (parts[1]) {
-                context = parts[0];
-                key = parts[1];
-            } else {
-                context = "$$noContext";
-                key = parts[0];
-            }
-            if (value[0] === null)
-                value = value[1];
-            else
-                value = value.slice(1);
-            if (!(key in result))
-                result[key] = { };
-            result[key][context] = value;
-        }
-        return angular.extend(prev, result);
-    }
-
-    /* Load into angular here */
-    if (typeof angular === 'object') {
-        try {
-            module = angular.module(["gettext"]);
-        } catch(ex) { console.log(ex); /* Either no angular or angular-gettext */ };
-        if (module) {
-            loaded = true;
-            module.run(['gettextCatalog', function(gettextCatalog) {
-                var lang = data[""]["language"];
-                var prev = (gettextCatalog.getCurrentLanguage() == lang) ? gettextCatalog.strings : { };
-                gettextCatalog.setStrings(lang, transformAngular(data, prev));
-                gettextCatalog.setCurrentLanguage(lang);
-            }]);
-        }
-    }
-
     if (!loaded)
         root.po = data;
 
@@ -117,11 +76,11 @@ return plural;
  ],
  "Applying updates failed": [
   null,
-  "Не удалось выполнить обновление"
+  "Не удалось применить обновления"
  ],
  "Automatic Updates": [
   null,
-  "Автоматические обновления"
+  "Автоматическое обновление"
  ],
  "Available Updates": [
   null,
@@ -149,27 +108,27 @@ return plural;
  ],
  "Downloaded": [
   null,
-  "загруженный"
+  "Загружено"
  ],
  "Downloading": [
   null,
-  "Загрузка..."
+  "Загрузка"
  ],
  "Downloading $0": [
   null,
-  "загрузка $0"
+  "Загрузка $0"
  ],
  "Errata:": [
   null,
-  "Исправление: "
+  "Опечатки:"
  ],
  "Fridays": [
   null,
-  ""
+  "По пятницам"
  ],
  "Ignore": [
   null,
-  "Пропустить"
+  "Игнорировать"
  ],
  "Initializing...": [
   null,
@@ -217,7 +176,7 @@ return plural;
  ],
  "Mondays": [
   null,
-  ""
+  "По понедельникам"
  ],
  "Name": [
   null,
@@ -277,7 +236,7 @@ return plural;
  ],
  "Saturdays": [
   null,
-  ""
+  "По субботам"
  ],
  "Set up": [
   null,
@@ -305,7 +264,7 @@ return plural;
  ],
  "Sundays": [
   null,
-  ""
+  "По воскресеньям"
  ],
  "System is up to date": [
   null,
@@ -321,7 +280,7 @@ return plural;
  ],
  "Thursdays": [
   null,
-  ""
+  "По четвергам"
  ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
@@ -333,7 +292,7 @@ return plural;
  ],
  "Tuesdays": [
   null,
-  ""
+  "По вторникам"
  ],
  "Update History": [
   null,
@@ -373,7 +332,7 @@ return plural;
  ],
  "Wednesdays": [
   null,
-  ""
+  "По средам"
  ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,

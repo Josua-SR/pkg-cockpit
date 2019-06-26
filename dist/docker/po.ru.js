@@ -13,47 +13,6 @@
         loaded = true;
     }
 
-    function transformAngular(data, prev) {
-        var key, context, parts, value, result = { };
-        for (key in data) {
-            if (key === "")
-                continue;
-            parts = key.split("\u0004");
-            value = data[key];
-            if (parts[1]) {
-                context = parts[0];
-                key = parts[1];
-            } else {
-                context = "$$noContext";
-                key = parts[0];
-            }
-            if (value[0] === null)
-                value = value[1];
-            else
-                value = value.slice(1);
-            if (!(key in result))
-                result[key] = { };
-            result[key][context] = value;
-        }
-        return angular.extend(prev, result);
-    }
-
-    /* Load into angular here */
-    if (typeof angular === 'object') {
-        try {
-            module = angular.module(["gettext"]);
-        } catch(ex) { console.log(ex); /* Either no angular or angular-gettext */ };
-        if (module) {
-            loaded = true;
-            module.run(['gettextCatalog', function(gettextCatalog) {
-                var lang = data[""]["language"];
-                var prev = (gettextCatalog.getCurrentLanguage() == lang) ? gettextCatalog.strings : { };
-                gettextCatalog.setStrings(lang, transformAngular(data, prev));
-                gettextCatalog.setCurrentLanguage(lang);
-            }]);
-        }
-    }
-
     if (!loaded)
         root.po = data;
 
@@ -81,7 +40,7 @@ return plural;
  ],
  "Add Additional Storage": [
   null,
-  "Добавить дополнительное хранилище"
+  "Добавление дополнительного хранилища"
  ],
  "Add Storage": [
   null,
@@ -97,11 +56,11 @@ return plural;
  ],
  "All In One": [
   null,
-  "Все в одном"
+  "Всё в одном"
  ],
  "All data on selected disks will be erased and disks will be added to the storage pool.": [
   null,
-  "Все данные на выбранных дисках будут удалены, а диски будут добавлены в пул хранения."
+  "Все данные на выбранных дисках будут удалены, а диски будут добавлены в пул носителей."
  ],
  "Always": [
   null,
@@ -113,15 +72,15 @@ return plural;
  ],
  "Blade": [
   null,
-  "лопасть"
+  "Блейд-сервер"
  ],
  "Blade enclosure": [
   null,
-  "Корпус лезвия"
+  "Корзина"
  ],
  "Bus Expansion Chassis": [
   null,
-  "Шина расширения шины"
+  "Корпус расширения шины"
  ],
  "CPU": [
   null,
@@ -129,15 +88,15 @@ return plural;
  ],
  "CPU priority": [
   null,
-  "Приоритет процессора"
+  "Приоритет ЦП"
  ],
  "CPU usage:": [
   null,
-  "Использование процессора:"
+  "Использование ЦП:"
  ],
  "Can&rsquo;t connect to Docker": [
   null,
-  "Can & rsquo; t подключиться к Docker"
+  "Не удаётся подключиться к Docker"
  ],
  "Cancel": [
   null,
@@ -149,7 +108,7 @@ return plural;
  ],
  "Change resource limits": [
   null,
-  "Изменение ограничений ресурсов"
+  "Изменить ограничения ресурсов"
  ],
  "Change resources limits": [
   null,
@@ -187,15 +146,15 @@ return plural;
  ],
  "Commit Image": [
   null,
-  "Commit Image"
+  "Сохранить образ"
  ],
  "Compact PCI": [
   null,
-  "Компактный PCI"
+  "CompactPCI"
  ],
  "Configure storage...": [
   null,
-  "Настроить хранилище ..."
+  "Настроить хранилище..."
  ],
  "Connecting to Docker": [
   null,
@@ -207,15 +166,15 @@ return plural;
  ],
  "Container Name": [
   null,
-  "Название контейнера"
+  "Имя контейнера"
  ],
  "Container is currently marked as not running, but regular stopping failed.": [
   null,
-  "Контейнер в настоящее время отмечен как не запущенный, но регулярная остановка не удалась."
+  "Контейнер помечен как незапущенный, но выполнить его обычную остановку не удалось."
  ],
  "Container is currently running.": [
   null,
-  "Контейнер в настоящее время запущен."
+  "Контейнер сейчас запущен."
  ],
  "Container:": [
   null,
@@ -227,7 +186,7 @@ return plural;
  ],
  "Convertible": [
   null,
-  "конвертируемый"
+  "Компьютер-трансформер"
  ],
  "Could not add all disks": [
   null,
@@ -239,11 +198,11 @@ return plural;
  ],
  "Created": [
   null,
-  "Создан"
+  "Дата создания"
  ],
  "Created:": [
   null,
-  "Создан:"
+  "Дата создания:"
  ],
  "Default": [
   null,
@@ -255,15 +214,15 @@ return plural;
  ],
  "Deleting a container will erase all data in it.": [
   null,
-  "Удаление контейнера приведет к удалению всех данных."
+  "Удаление контейнера приведёт к удалению всех данных в нем."
  ],
  "Desktop": [
   null,
-  "Рабочий стол"
+  "Настольный компьютер"
  ],
  "Detachable": [
   null,
-  "отрывной"
+  "Съёмный компьютер"
  ],
  "Details": [
   null,
@@ -271,7 +230,7 @@ return plural;
  ],
  "Docker is not installed or activated on the system": [
   null,
-  "Докер не установлен или не активирован в системе"
+  "Docker не установлен или не активирован в системе"
  ],
  "Docking Station": [
   null,
@@ -283,19 +242,19 @@ return plural;
  ],
  "Drive": [
   null,
-  "Привод"
+  "Устройство"
  ],
  "Duplicate alias": [
   null,
-  "Дублировать псевдоним"
+  "Повторяющийся псевдоним"
  ],
  "Duplicate port": [
   null,
-  "Дублированный порт"
+  "Повторяющийся порт"
  ],
  "Embedded PC": [
   null,
-  "Встроенный ПК"
+  "Встраиваемый компьютер"
  ],
  "Entrypoint": [
   null,
@@ -303,11 +262,11 @@ return plural;
  ],
  "Environment": [
   null,
-  "Окружение"
+  "Среда"
  ],
  "Erase containers and reset storage pool": [
   null,
-  "Удаление контейнеров и сброс пула хранения"
+  "Удалить контейнеры и сбросить пул носителей"
  ],
  "Error message from Docker:": [
   null,
@@ -319,7 +278,7 @@ return plural;
  ],
  "Exited $ExitCode": [
   null,
-  "возбужденном $ExitCode"
+  "Выход с кодом $ExitCode"
  ],
  "Expansion Chassis": [
   null,
@@ -327,7 +286,7 @@ return plural;
  ],
  "Expose container ports": [
   null,
-  "Экспортировать порты контейнера"
+  "Показывать порты контейнера"
  ],
  "Failed to start Docker: $0": [
   null,
@@ -339,7 +298,7 @@ return plural;
  ],
  "Force Delete": [
   null,
-  "Удалить силу"
+  "Принудительно удалить"
  ],
  "Free": [
   null,
@@ -355,11 +314,11 @@ return plural;
  ],
  "Hand Held": [
   null,
-  "Ручная работа"
+  "Карманный компьютер"
  ],
  "Hard Disk": [
   null,
-  "Жесткий диск"
+  "Жёсткий диск"
  ],
  "IP Address:": [
   null,
@@ -367,7 +326,7 @@ return plural;
  ],
  "IP Prefix Length:": [
   null,
-  "IP Префикс Длина:"
+  "Длина префикса сети:"
  ],
  "Id": [
   null,
@@ -375,11 +334,11 @@ return plural;
  ],
  "Id:": [
   null,
-  "Я бы:"
+  "Идентификатор:"
  ],
  "Image": [
   null,
-  "Изображение"
+  "Образ"
  ],
  "Image $0": [
   null,
@@ -641,11 +600,11 @@ return plural;
  ],
  "Reset Storage Pool": [
   null,
-  "Сброс пула хранения"
+  "Сброс пула носителей"
  ],
  "Resetting the storage pool will erase all containers and release disks in the pool.": [
   null,
-  "Сброс пула хранения приведет к удалению всех контейнеров и выпуску дисков в пуле."
+  "Сброс пула носителей приведёт к удалению всех контейнеров и освобождению дисков в пуле."
  ],
  "Restart": [
   null,

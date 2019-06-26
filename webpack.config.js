@@ -24,15 +24,6 @@ var info = {
             "kdump/kdump.css",
         ],
 
-        "kubernetes/kubernetes": [
-            "kubernetes/styles/main.less",
-            "kubernetes/scripts/main.js",
-        ],
-        "kubernetes/registry": [
-            "kubernetes/styles/registry.less",
-            "kubernetes/scripts/registry.js",
-        ],
-
         "machines/machines": [
             "machines/index.js",
             "machines/machines.less",
@@ -45,12 +36,6 @@ var info = {
 
         "networkmanager/firewall": [
             "networkmanager/firewall.jsx"
-        ],
-
-
-        "ovirt/ovirt": [
-            "ovirt/index.js",
-            "ovirt/ovirt.less",
         ],
 
         "playground/exception": [
@@ -97,9 +82,6 @@ var info = {
             "shell/index.js",
             "shell/shell.less",
         ],
-        "shell/index-stub": [
-            "shell/index-stub.js",
-        ],
         "shell/index-no-machines": [
             "shell/index-no-machines.js",
         ],
@@ -111,11 +93,6 @@ var info = {
 
         "storaged/storage": [
             "storaged/devices.jsx"
-        ],
-
-        "subscriptions/subscriptions": [
-            "subscriptions/main.js",
-            "subscriptions/subscriptions.css",
         ],
 
         "systemd/services": [
@@ -167,15 +144,6 @@ var info = {
 
         "storaged/test-util",
 
-        "kubernetes/scripts/test-utils",
-        "kubernetes/scripts/test-images",
-        "kubernetes/scripts/test-projects",
-        "kubernetes/scripts/test-nodes",
-        "kubernetes/scripts/test-kube-client",
-        "kubernetes/scripts/test-tags",
-        "kubernetes/scripts/test-connection",
-        "kubernetes/scripts/test-volumes",
-
         "machines/test-machines",
     ],
 
@@ -191,17 +159,11 @@ var info = {
 
         "kdump/index.html",
 
-        "kubernetes/override.json",
-        "kubernetes/index.html",
-        "kubernetes/registry.html",
-
         "machines/index.html",
 
         "networkmanager/index.html",
         "networkmanager/firewall.html",
         "networkmanager/manifest.json",
-
-        "ovirt/index.html",
 
         "packagekit/index.html",
 
@@ -225,7 +187,6 @@ var info = {
         "shell/index.html",
         "shell/simple.html",
         "shell/shell.html",
-        "shell/stub.html",
 
         "sosreport/index.html",
         "sosreport/sosreport.png",
@@ -353,8 +314,6 @@ info.tests.forEach(function(test) {
 });
 
 var aliases = {
-    "angular": "angular/angular.js",
-    "angular-route": "angular-route/angular-route.js",
     "d3": "d3/d3.js",
     "moment": "moment/moment.js",
     "term": "term.js-cockpit/src/term.js"
@@ -445,16 +404,6 @@ module.exports = {
                     }
                 }]
             },
-            {
-                test: /[\/]angular\.js$/,
-                use: [{
-                    loader: 'exports-loader',
-
-                    options: {
-                        angular: true
-                    }
-                }]
-            }
         ],
     }
 };

@@ -13,47 +13,6 @@
         loaded = true;
     }
 
-    function transformAngular(data, prev) {
-        var key, context, parts, value, result = { };
-        for (key in data) {
-            if (key === "")
-                continue;
-            parts = key.split("\u0004");
-            value = data[key];
-            if (parts[1]) {
-                context = parts[0];
-                key = parts[1];
-            } else {
-                context = "$$noContext";
-                key = parts[0];
-            }
-            if (value[0] === null)
-                value = value[1];
-            else
-                value = value.slice(1);
-            if (!(key in result))
-                result[key] = { };
-            result[key][context] = value;
-        }
-        return angular.extend(prev, result);
-    }
-
-    /* Load into angular here */
-    if (typeof angular === 'object') {
-        try {
-            module = angular.module(["gettext"]);
-        } catch(ex) { console.log(ex); /* Either no angular or angular-gettext */ };
-        if (module) {
-            loaded = true;
-            module.run(['gettextCatalog', function(gettextCatalog) {
-                var lang = data[""]["language"];
-                var prev = (gettextCatalog.getCurrentLanguage() == lang) ? gettextCatalog.strings : { };
-                gettextCatalog.setStrings(lang, transformAngular(data, prev));
-                gettextCatalog.setCurrentLanguage(lang);
-            }]);
-        }
-    }
-
     if (!loaded)
         root.po = data;
 
@@ -85,7 +44,7 @@ return plural;
  ],
  "After leaving the domain, only users with local credentials will be able to log into this machine. This may also affect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  ""
+  "도메인 종료 후 로컬 인증 정보가 있는 사용자만 시스템에 로그인할 수 있습니다. 이 경우 DNS 확인 설정 및 신뢰할 수 있는 CA 목록이 변경될 수 있으므로 다른 서비스에도 영향을 미칠 수 있습니다. "
  ],
  "Authentication": [
   null,
@@ -105,7 +64,7 @@ return plural;
  ],
  "Client Software": [
   null,
-  ""
+  "클라이언트 소프트웨어 "
  ],
  "Computer OU": [
   null,
@@ -141,7 +100,7 @@ return plural;
  ],
  "Downloading $0": [
   null,
-  ""
+  "$0 다운로드 중 "
  ],
  "Host name should not be changed in a domain": [
   null,
@@ -233,7 +192,7 @@ return plural;
  ],
  "Total size: $0": [
   null,
-  ""
+  "전체 크기: $0"
  ],
  "User Name": [
   null,

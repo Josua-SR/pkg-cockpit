@@ -57,7 +57,6 @@ def fix_bridge(m):
 
 
 def check_failed_state(b, expected_title):
-    b.wait_present("#troubleshoot-dialog .btn-default:not([disabled])")
     b.wait_in_text('#troubleshoot-dialog .btn-default', "Close")
     b.wait_in_text('#troubleshoot-dialog h4', expected_title)
     b.click("#troubleshoot-dialog .btn-default")
@@ -69,7 +68,6 @@ def start_machine_troubleshoot(b, new=False, known_host=False):
     b.click('#machine-troubleshoot')
     b.wait_popup('troubleshoot-dialog')
     if (new):
-        b.wait_present("#troubleshoot-dialog .btn-primary:not([disabled])")
         b.wait_text('#troubleshoot-dialog .btn-primary', "Add")
         b.click('#troubleshoot-dialog .btn-primary')
 
@@ -201,9 +199,8 @@ class TestMultiMachineAdd(MachineCase):
                                     ".*: bridge failed: .*",
                                     ".*: bridge program failed: Child process exited with code .*")
 
-    @skipImage("Newer version (>= 0.8.5) of libssh required", "debian-stable", "debian-testing",
-               "ubuntu-1804", "ubuntu-stable", "fedora-atomic", "rhel-atomic", "continuous-atomic",
-               "rhel-8-0", "rhel-8-0-distropkg", "centos-7", "rhel-7-6", "rhel-7-6-distropkg", "rhel-7-7")
+    @skipImage("Newer version (>= 0.8.5) of libssh required", "debian-stable",
+               "ubuntu-1804", "fedora-atomic", "rhel-8-0", "rhel-8-0-distropkg")
     def testGlobalSSHConfig(self):
         b = self.browser
         m = self.machine
@@ -388,10 +385,7 @@ class TestMultiMachine(MachineCase):
         b.click('#login-button')
         b.wait_visible("#login-error-message")
 
-        if m.image in ['rhel-7-6-distropkg']:
-            login_options = '#option-group span'
-        else:
-            login_options = '#show-other-login-options'
+        login_options = '#show-other-login-options'
 
         # Connect to bad machine
         b.set_val("#login-password-input", "bad-password")
@@ -419,7 +413,7 @@ class TestMultiMachine(MachineCase):
         b.click('#login-button')
         b.wait_in_text("#server-name", "10.111.113.2")
         # fixed in PR #11736: accept unknown hosts
-        if m.image in ["rhel-7-6-distropkg", "rhel-8-0-distropkg"]:
+        if m.image in ["rhel-8-0-distropkg"]:
             b.wait_visible("#login-error-message")
             b.wait_in_text("#login-error-message", "Host is unknown")
         else:
@@ -712,7 +706,6 @@ class TestMultiMachine(MachineCase):
         # Bad hostkey
         break_hostkey(m1, "10.111.113.2")
         start_machine_troubleshoot(b, True, True)
-        b.wait_present("#troubleshoot-dialog .btn-default:not([disabled])")
         b.wait_in_text('#troubleshoot-dialog .btn-default', "Close")
         b.wait_in_text('#troubleshoot-dialog h4', "Incorrect Host Key")
         b.wait_in_text("#troubleshoot-dialog", "10.111.113.2")
@@ -725,7 +718,6 @@ class TestMultiMachine(MachineCase):
         break_hostkey(m1, "10.111.113.2", filename="/home/admin/.ssh/known_hosts")
 
         start_machine_troubleshoot(b, True, True)
-        b.wait_present("#troubleshoot-dialog .btn-default:not([disabled])")
         b.wait_in_text('#troubleshoot-dialog .btn-default', "Close")
         b.wait_in_text('#troubleshoot-dialog h4', "Incorrect Host Key")
         b.wait_in_text("#troubleshoot-dialog", "10.111.113.2")
@@ -763,7 +755,6 @@ class TestMultiMachine(MachineCase):
         b.click("#machine-reconnect")
         start_machine_troubleshoot(b)
         b.wait_in_text('#troubleshoot-dialog h4', "Unknown Host Key")
-        b.wait_present("#troubleshoot-dialog .btn-primary:not([disabled])")
         b.wait_in_text('#troubleshoot-dialog .btn-primary', "Connect")
         b.click('#troubleshoot-dialog .btn-primary')
         b.wait_popdown('troubleshoot-dialog')
@@ -845,10 +836,8 @@ class TestMultiMachine(MachineCase):
         b.set_val("#edit-machine-port", "2222")
         b.click('#troubleshoot-dialog .btn-primary')
         # Using libssh's knownhosts api port is taken into account when verifying a host
-        if m1.image not in ['rhel-7-6', 'rhel-7-6-distropkg', "rhel-7-7", 'continuous-atomic',
-                            'rhel-atomic', 'debian-stable', 'centos-7', 'ubuntu-1804']:
+        if m1.image not in ['debian-stable', 'ubuntu-1804']:
             b.wait_in_text('#troubleshoot-dialog h4', "Unknown Host Key")
-            b.wait_present("#troubleshoot-dialog .btn-primary:not([disabled])")
             b.wait_in_text('#troubleshoot-dialog .btn-primary', "Connect")
             b.click('#troubleshoot-dialog .btn-primary')
         b.wait_in_text('#troubleshoot-dialog h4', "Log in to")

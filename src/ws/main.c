@@ -126,9 +126,8 @@ main (int argc,
   g_autoptr(GMainLoop) loop = NULL;
   g_autofree gchar *login_html = NULL;
   g_autofree gchar *login_po_html = NULL;
-  CockpitWebServer *server = NULL;
+  g_autoptr(CockpitWebServer) server = NULL;
   CockpitHandlerData data;
-  CockpitPipe *pipe = NULL;
   int outfd = -1;
 
   signal (SIGPIPE, SIG_IGN);
@@ -178,7 +177,7 @@ main (int argc,
     }
   else
     {
-      cert_path = cockpit_certificate_locate (FALSE, &error);
+      cert_path = cockpit_certificate_locate_gerror (&error);
       if (cert_path != NULL)
         certificate = cockpit_certificate_load (cert_path, &error);
       if (certificate == NULL)
@@ -189,7 +188,7 @@ main (int argc,
   loop = g_main_loop_new (NULL, FALSE);
 
   data.os_release = cockpit_system_load_os_release ();
-  data.auth = cockpit_auth_new (opt_local_ssh);
+  data.auth = cockpit_auth_new (opt_local_ssh, opt_for_tls_proxy ? COCKPIT_AUTH_FOR_TLS_PROXY : COCKPIT_AUTH_NONE);
   roots = setup_static_roots (data.os_release);
 
   data.branding_roots = (const gchar **)roots;
@@ -246,6 +245,7 @@ main (int argc,
 
   if (opt_local_session)
     {
+      g_autoptr(CockpitPipe) pipe = NULL;
       struct passwd *pwd;
 
       if (g_str_equal (opt_local_session, "-"))
@@ -267,7 +267,6 @@ main (int argc,
           goto out;
         }
       cockpit_auth_local_async (data.auth, pwd->pw_name, pipe, on_local_ready, g_object_ref (server));
-      g_object_unref (pipe);
     }
   else
     {
@@ -290,7 +289,6 @@ out:
     close (outfd);
   if (error)
     g_printerr ("cockpit-ws: %s\n", error->message);
-  g_clear_object (&server);
   g_clear_object (&data.auth);
   if (data.os_release)
     g_hash_table_unref (data.os_release);

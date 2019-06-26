@@ -118,14 +118,13 @@ class TestShutdownRestart(MachineCase):
         m2.start_cockpit()
         b2.login_and_go("/system")
 
-        if m.image not in ["continuous-atomic", "fedora-atomic", "rhel-atomic"]:
+        if m.image not in ["fedora-atomic"]:
             # Add machine with static IP to m2
             b2.switch_to_top()
             b2.go("/@10.111.113.1")
             b2.wait_visible("#machine-troubleshoot")
             b2.click('#machine-troubleshoot')
             b2.wait_popup('troubleshoot-dialog')
-            b2.wait_present("#troubleshoot-dialog .btn-primary:not([disabled])")
             b2.wait_text('#troubleshoot-dialog .btn-primary', "Add")
             b2.click('#troubleshoot-dialog .btn-primary')
             b2.wait_in_text('#troubleshoot-dialog', "Fingerprint")

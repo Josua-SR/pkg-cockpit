@@ -13,47 +13,6 @@
         loaded = true;
     }
 
-    function transformAngular(data, prev) {
-        var key, context, parts, value, result = { };
-        for (key in data) {
-            if (key === "")
-                continue;
-            parts = key.split("\u0004");
-            value = data[key];
-            if (parts[1]) {
-                context = parts[0];
-                key = parts[1];
-            } else {
-                context = "$$noContext";
-                key = parts[0];
-            }
-            if (value[0] === null)
-                value = value[1];
-            else
-                value = value.slice(1);
-            if (!(key in result))
-                result[key] = { };
-            result[key][context] = value;
-        }
-        return angular.extend(prev, result);
-    }
-
-    /* Load into angular here */
-    if (typeof angular === 'object') {
-        try {
-            module = angular.module(["gettext"]);
-        } catch(ex) { console.log(ex); /* Either no angular or angular-gettext */ };
-        if (module) {
-            loaded = true;
-            module.run(['gettextCatalog', function(gettextCatalog) {
-                var lang = data[""]["language"];
-                var prev = (gettextCatalog.getCurrentLanguage() == lang) ? gettextCatalog.strings : { };
-                gettextCatalog.setStrings(lang, transformAngular(data, prev));
-                gettextCatalog.setCurrentLanguage(lang);
-            }]);
-        }
-    }
-
     if (!loaded)
         root.po = data;
 
@@ -161,7 +120,7 @@ return plural;
  ],
  "Combined memory usage": [
   null,
-  ""
+  "총 메모리 사용량 "
  ],
  "Combined usage of $0 CPU core": [
   "Combined usage of $0 CPU cores",
@@ -189,7 +148,7 @@ return plural;
  ],
  "Compact PCI": [
   null,
-  ""
+  "PCI 압축 "
  ],
  "Configure storage...": [
   null,
@@ -281,7 +240,7 @@ return plural;
  ],
  "Drive": [
   null,
-  ""
+  "드라이브"
  ],
  "Duplicate alias": [
   null,
@@ -397,7 +356,7 @@ return plural;
  ],
  "Images and running containers": [
   null,
-  ""
+  "이미지 및 실행 중인 컨테이너 "
  ],
  "Information about the Docker storage pool is not available.": [
   null,
@@ -473,7 +432,7 @@ return plural;
  ],
  "Mount container volumes": [
   null,
-  ""
+  "컨테이너 볼륨 마운트 "
  ],
  "Multi-system Chassis": [
   null,
@@ -781,7 +740,7 @@ return plural;
  ],
  "This image does not exist.": [
   null,
-  ""
+  "이미지가 존재하지 않습니다."
  ],
  "Total": [
   null,
@@ -849,11 +808,11 @@ return plural;
  ],
  "[binary data]": [
   null,
-  ""
+  "[바이너리 데이터]"
  ],
  "[no data]": [
   null,
-  ""
+  "[데이터 없음]"
  ],
  "alias": [
   null,

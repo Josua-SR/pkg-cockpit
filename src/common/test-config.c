@@ -68,44 +68,65 @@ test_get_bool (void)
 }
 
 static void
-test_get_guint (void)
+test_get_uint (void)
 {
   cockpit_config_file = SRCDIR "/src/ws/mock-config/cockpit/cockpit.conf";
 
-  g_assert_cmpuint (cockpit_conf_guint ("bad-section", "value", 1, 999, 0), ==,  1);
-  g_assert_cmpuint (cockpit_conf_guint ("Section2", "missing", 1, 999, 0), ==,  1);
-  g_assert_cmpuint (cockpit_conf_guint ("Section2", "mixed", 10, 999, 0), ==,  10);
-  g_assert_cmpuint (cockpit_conf_guint ("Section2", "value1", 10, 999, 0), ==,  10);
-  g_assert_cmpuint (cockpit_conf_guint ("Section2", "toolarge", 10, 999, 0), ==,  10);
-  g_assert_cmpuint (cockpit_conf_guint ("Section2", "one", 10, 999, 0), ==,  1);
-  g_assert_cmpuint (cockpit_conf_guint ("Section2", "one", 1, 999, 2), ==,  2);
-  g_assert_cmpuint (cockpit_conf_guint ("Section2", "one", 1, 0, 0), ==,  0);
+  g_assert_cmpuint (cockpit_conf_uint ("bad-section", "value", 1, 999, 0), ==,  1);
+  g_assert_cmpuint (cockpit_conf_uint ("Section2", "missing", 1, 999, 0), ==,  1);
+  g_assert_cmpuint (cockpit_conf_uint ("Section2", "mixed", 10, 999, 0), ==,  10);
+  g_assert_cmpuint (cockpit_conf_uint ("Section2", "value1", 10, 999, 0), ==,  10);
+  g_assert_cmpuint (cockpit_conf_uint ("Section2", "toolarge", 10, 999, 0), ==,  10);
+  g_assert_cmpuint (cockpit_conf_uint ("Section2", "one", 10, 999, 0), ==,  1);
+  g_assert_cmpuint (cockpit_conf_uint ("Section2", "one", 1, 999, 2), ==,  2);
+  g_assert_cmpuint (cockpit_conf_uint ("Section2", "one", 1, 0, 0), ==,  0);
   cockpit_conf_cleanup ();
 }
 
 static void
 test_get_strvs (void)
 {
-  const gchar **comma = NULL;
-  const gchar **space = NULL;
-  const gchar **one = NULL;
+  const gchar **list = NULL;
 
   cockpit_config_file = SRCDIR "/src/ws/mock-config/cockpit/cockpit.conf";
 
   g_assert_null (cockpit_conf_strv ("bad-section", "value", ' '));
   g_assert_null (cockpit_conf_strv ("Section1", "value", ' '));
 
-  one = cockpit_conf_strv ("Section2", "value1", ' ');
-  g_assert_cmpstr (one[0], ==, "string");
+  /* empty list */
+  list = cockpit_conf_strv ("Section2", "empty", ':');
+  g_assert_null (list[0]);
 
-  space = cockpit_conf_strv ("Section2", "value2", ' ');
-  g_assert_cmpstr (space[0], ==, "commas,");
-  g_assert_cmpstr (space[1], ==, "or");
-  g_assert_cmpstr (space[2], ==, "spaces");
+  /* list with one element */
+  list = cockpit_conf_strv ("Section2", "value1", ' ');
+  g_assert_cmpstr (list[0], ==, "string");
+  g_assert_null (list[1]);
 
-  comma = cockpit_conf_strv ("Section2", "value2", ',');
-  g_assert_cmpstr (comma[0], ==, "commas");
-  g_assert_cmpstr (comma[1], ==, " or spaces");
+  /* list with space separator */
+  list = cockpit_conf_strv ("Section2", "value2", ' ');
+  g_assert_cmpstr (list[0], ==, "commas,");
+  g_assert_cmpstr (list[1], ==, "or");
+  g_assert_cmpstr (list[2], ==, "spaces");
+  g_assert_null (list[3]);
+
+  /* list with comma separator */
+  list = cockpit_conf_strv ("Section2", "value3", ',');
+  g_assert_cmpstr (list[0], ==, "commas");
+  g_assert_cmpstr (list[1], ==, " or spaces");
+  g_assert_null (list[2]);
+
+  /* list with only a separator */
+  list = cockpit_conf_strv ("Section2", "emptystrv", ':');
+  g_assert_cmpstr (list[0], ==, "");
+  g_assert_cmpstr (list[1], ==, "");
+  g_assert_null (list[2]);
+
+  /* list with empty value in the middle */
+  list = cockpit_conf_strv ("Section2", "strvemptyitems", ':');
+  g_assert_cmpstr (list[0], ==, "one");
+  g_assert_cmpstr (list[1], ==, "");
+  g_assert_cmpstr (list[2], ==, "three");
+  g_assert_null (list[3]);
 
   cockpit_conf_cleanup ();
 }
@@ -136,7 +157,7 @@ main (int argc,
   cockpit_test_init (&argc, &argv);
 
   g_test_add_func ("/conf/test-bool", test_get_bool);
-  g_test_add_func ("/conf/test-guint", test_get_guint);
+  g_test_add_func ("/conf/test-uint", test_get_uint);
   g_test_add_func ("/conf/test-strings", test_get_strings);
   g_test_add_func ("/conf/test-strvs", test_get_strvs);
   g_test_add_func ("/conf/fail_load", test_fail_load);

@@ -13,47 +13,6 @@
         loaded = true;
     }
 
-    function transformAngular(data, prev) {
-        var key, context, parts, value, result = { };
-        for (key in data) {
-            if (key === "")
-                continue;
-            parts = key.split("\u0004");
-            value = data[key];
-            if (parts[1]) {
-                context = parts[0];
-                key = parts[1];
-            } else {
-                context = "$$noContext";
-                key = parts[0];
-            }
-            if (value[0] === null)
-                value = value[1];
-            else
-                value = value.slice(1);
-            if (!(key in result))
-                result[key] = { };
-            result[key][context] = value;
-        }
-        return angular.extend(prev, result);
-    }
-
-    /* Load into angular here */
-    if (typeof angular === 'object') {
-        try {
-            module = angular.module(["gettext"]);
-        } catch(ex) { console.log(ex); /* Either no angular or angular-gettext */ };
-        if (module) {
-            loaded = true;
-            module.run(['gettextCatalog', function(gettextCatalog) {
-                var lang = data[""]["language"];
-                var prev = (gettextCatalog.getCurrentLanguage() == lang) ? gettextCatalog.strings : { };
-                gettextCatalog.setStrings(lang, transformAngular(data, prev));
-                gettextCatalog.setCurrentLanguage(lang);
-            }]);
-        }
-    }
-
     if (!loaded)
         root.po = data;
 
@@ -117,7 +76,7 @@ return plural;
  ],
  "ARP Ping": [
   null,
-  "ARP Ping"
+  "Проверка связи ARP"
  ],
  "Active": [
   null,
@@ -125,11 +84,11 @@ return plural;
  ],
  "Active Backup": [
   null,
-  "Активный и запасные"
+  "Активное резервирование"
  ],
  "Active zones": [
   null,
-  ""
+  "Активные зоны"
  ],
  "Adaptive load balancing": [
   null,
@@ -141,7 +100,7 @@ return plural;
  ],
  "Add $0": [
   null,
-  "добавлять $0"
+  "Добавить $0"
  ],
  "Add Bond": [
   null,
@@ -153,15 +112,15 @@ return plural;
  ],
  "Add Ports": [
   null,
-  ""
+  "Добавить порты"
  ],
  "Add Services": [
   null,
-  "Добавить услуги"
+  "Добавить службы"
  ],
  "Add Team": [
   null,
-  "Добавить команду"
+  "Добавить сопряжение"
  ],
  "Add VLAN": [
   null,
@@ -169,23 +128,23 @@ return plural;
  ],
  "Add Zone": [
   null,
-  ""
+  "Добавить зону"
  ],
  "Add ports to the following zones:": [
   null,
-  ""
+  "Добавить порты в следующие зоны:"
  ],
  "Add services to following zones:": [
   null,
-  ""
+  "Добавить службы в следующие зоны:"
  ],
  "Add zone": [
   null,
-  ""
+  "Добавить зону"
  ],
  "Adding <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "Добавление <b>$0</b> будет разорвать соединение с сервером и сделает пользовательский интерфейс администрирования недоступным."
+  "Добавление <b>$0</b> приведёт к разрыву соединения с сервером и недоступности интерфейса администратора."
  ],
  "Additional DNS $val": [
   null,
@@ -209,11 +168,11 @@ return plural;
  ],
  "Allowed Addresses": [
   null,
-  ""
+  "Разрешённые адреса"
  ],
  "Allowed Services": [
   null,
-  "Разрешенные услуги"
+  "Разрешённые службы"
  ],
  "Apply": [
   null,
@@ -233,19 +192,19 @@ return plural;
  ],
  "Automatic (DHCP)": [
   null,
-  "Автоматический (DHCP)"
+  "Автоматически (DHCP)"
  ],
  "Balancer": [
   null,
-  "балансер"
+  "Подсистема балансировки"
  ],
  "Bond": [
   null,
-  "Агрегация"
+  "Объединение"
  ],
  "Bond Settings": [
   null,
-  "Настройки связи"
+  "Параметры объединения"
  ],
  "Bridge": [
   null,
@@ -253,11 +212,11 @@ return plural;
  ],
  "Bridge Port Settings": [
   null,
-  "Настройки порта моста"
+  "Параметры порта моста"
  ],
  "Bridge Settings": [
   null,
-  "Настройки моста"
+  "Параметры моста"
  ],
  "Bridge port": [
   null,
@@ -269,7 +228,7 @@ return plural;
  ],
  "Broken configuration": [
   null,
-  "Сломанная конфигурация"
+  "Неверная конфигурация"
  ],
  "Cancel": [
   null,
@@ -277,7 +236,7 @@ return plural;
  ],
  "Carrier": [
   null,
-  "Перевозчик"
+  "Несущая частота"
  ],
  "Change the settings": [
   null,
@@ -285,7 +244,7 @@ return plural;
  ],
  "Changing the settings will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "Изменение настроек приведет к поломке соединения с сервером и сделает пользовательский интерфейс администрирования недоступным."
+  "Изменение настроек приведёт к разрыву соединения с сервером и недоступности интерфейса администратора."
  ],
  "Checking IP": [
   null,
@@ -297,11 +256,11 @@ return plural;
  ],
  "Comma-separated ports, ranges, and aliases are accepted": [
   null,
-  ""
+  "Допустимы порты, диапазоны и псевдонимы с разделителями-запятыми"
  ],
  "Configure": [
   null,
-  "Настройка"
+  "Настроить"
  ],
  "Configuring": [
   null,
@@ -317,35 +276,35 @@ return plural;
  ],
  "Connection will be lost": [
   null,
-  "Соединение будет потеряно"
+  "Подключение будет прервано"
  ],
  "Create it": [
   null,
-  "Создать это"
+  "Создать"
  ],
  "Creating this VLAN will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "Создание этой VLAN приведет к поломке соединения с сервером и сделает пользовательский интерфейс администрирования недоступным."
+  "Создание этой VLAN приведёт к разрыву соединения с сервером и недоступности интерфейса администратора."
  ],
  "Creating this bond will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "Создание этой связи приведет к поломке соединения с сервером и сделает пользовательский интерфейс администрирования недоступным."
+  "Создание этого объединения приведёт к разрыву соединения с сервером и недоступности интерфейса администратора."
  ],
  "Creating this bridge will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "Создание этого моста приведет к поломке соединения с сервером и сделает пользовательский интерфейс администрирования недоступным."
+  "Создание этого моста приведёт к разрыву соединения с сервером и недоступности интерфейса администратора."
  ],
  "Creating this team will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "Создание этой команды нарушит соединение с сервером и сделает пользовательский интерфейс администрирования недоступным."
+  "Создание этого сопряжения приведёт к разрыву соединения с сервером и недоступности интерфейса администратора."
  ],
  "Custom Ports": [
   null,
-  ""
+  "Настраиваемые порты"
  ],
  "Custom zones": [
   null,
-  ""
+  "Настраиваемые зоны"
  ],
  "DNS": [
   null,
@@ -357,15 +316,15 @@ return plural;
  ],
  "DNS Search Domains": [
   null,
-  "DNS Search Domains"
+  "Домены поиска DNS"
  ],
  "DNS Search Domains $val": [
   null,
-  "DNS Search Domains $val"
+  "Домены поиска DNS $val"
  ],
  "Deactivating": [
   null,
-  "деактивация"
+  "Отключение"
  ],
  "Delete": [
   null,
@@ -373,11 +332,11 @@ return plural;
  ],
  "Delete $0": [
   null,
-  "удалять $0"
+  "Удалить $0"
  ],
  "Deleting <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "Удаление <b>$0</b> будет разорвать соединение с сервером и сделает пользовательский интерфейс администрирования недоступным."
+  "Удаление <b>$0</b> приведёт к разрыву соединения с сервером и недоступности интерфейса администратора."
  ],
  "Description": [
   null,
@@ -389,7 +348,7 @@ return plural;
  ],
  "Disabled": [
   null,
-  "Отключён"
+  "Отключено"
  ],
  "Enable Service": [
   null,
@@ -397,7 +356,7 @@ return plural;
  ],
  "Entire subnet": [
   null,
-  ""
+  "Адрес всей подсети"
  ],
  "Ethernet MAC": [
   null,
@@ -413,31 +372,35 @@ return plural;
  ],
  "Example: 22,ssh,8080,5900-5910": [
   null,
-  ""
+  "Пример: 22, ssh, 8080, 5900-5910"
  ],
  "Example: 88,2019,nfs,rsync": [
   null,
-  ""
+  "Пример: 88, 2019, nfs, rsync"
  ],
  "Failed": [
   null,
   "Сбой"
  ],
- "Failed to add service": [
+ "Failed to add port": [
   null,
   ""
+ ],
+ "Failed to add service": [
+  null,
+  "Не удалось добавить службу"
  ],
  "Failed to add zone": [
   null,
-  ""
+  "Не удалось добавить зону"
  ],
  "Failed to remove service": [
   null,
-  ""
+  "Не удалось удалить службу"
  ],
  "Filter Services": [
   null,
-  "Услуги фильтра"
+  "Фильтровать службы"
  ],
  "Firewall": [
   null,
@@ -445,43 +408,43 @@ return plural;
  ],
  "Firewall is not available": [
   null,
-  "Брандмауэр недоступен"
+  "Межсетевой экран недоступен"
  ],
  "Forward delay $forward_delay": [
   null,
-  "Задержка вперед $forward_delay"
+  "Задержка смены состояний $forward_delay"
  ],
  "General": [
   null,
-  "Общие"
+  "Общее"
  ],
  "Go to now": [
   null,
-  "Перейдите к"
+  "Текущий момент"
  ],
  "Hair Pin mode": [
   null,
-  "Режим Pin Pin"
+  "Режим Hairpin"
  ],
  "Hairpin mode": [
   null,
-  "Режим разворота пакетов"
+  "Режим Hairpin"
  ],
  "Hello time $hello_time": [
   null,
-  "Привет, время $hello_время"
+  "Время приветствия $hello_time"
  ],
  "IP Address": [
   null,
-  "IP"
+  "IP-адрес"
  ],
  "IP Range": [
   null,
-  ""
+  "Диапазон IP-адресов"
  ],
  "IP Settings": [
   null,
-  "Настройки IP"
+  "Параметры IP"
  ],
  "IPv4": [
   null,
@@ -501,11 +464,11 @@ return plural;
  ],
  "Id $id": [
   null,
-  "Я бы $id"
+  "Идентификатор $id"
  ],
  "Ignore": [
   null,
-  "Пропустить"
+  "Игнорировать"
  ],
  "Inactive": [
   null,
@@ -601,11 +564,7 @@ return plural;
  ],
  "Maximum message age $max_age": [
   null,
-  "Максимальный возраст сообщения $max_возраст"
- ],
- "Members": [
-  null,
-  "члены"
+  "Максимальное время жизни сообщения $max_age"
  ],
  "Mode": [
   null,
@@ -789,7 +748,7 @@ return plural;
  ],
  "Removing <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "Удаление <b>$0</b> будет разорвать соединение с сервером и сделает пользовательский интерфейс администрирования недоступным."
+  "Удаление <b>$0</b> приведёт к разрыву соединения с сервером и недоступности интерфейса администратора."
  ],
  "Restoring connection": [
   null,
@@ -809,19 +768,19 @@ return plural;
  ],
  "STP Forward delay": [
   null,
-  "STP Forward delay"
+  "Задержка смены состояний"
  ],
  "STP Hello time": [
   null,
-  "Время приветствия STP"
+  "Время приветствия"
  ],
  "STP Maximum message age": [
   null,
-  "STP Максимальный возраст сообщения"
+  "Максимальное время жизни сообщения"
  ],
  "STP Priority": [
   null,
-  "Приоритет STP"
+  "Приоритет"
  ],
  "Sending": [
   null,
@@ -853,7 +812,7 @@ return plural;
  ],
  "Spanning Tree Protocol (STP)": [
   null,
-  "Протокол связующего дерева (STP)"
+  "Протокол покрывающего дерева (STP)"
  ],
  "Stable": [
   null,
@@ -881,15 +840,15 @@ return plural;
  ],
  "Switching off <b>$0</b>  will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "Выключение <b>$0</b>  будет разорвать соединение с сервером и сделает пользовательский интерфейс администрирования недоступным."
+  "Отключение <b>$0</b> приведёт к разрыву соединения с сервером и недоступности интерфейса администратора."
  ],
  "Switching off <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "Выключение <b>$0</b> будет разорвать соединение с сервером и сделает пользовательский интерфейс администрирования недоступным."
+  "Отключение <b>$0</b> приведёт к разрыву соединения с сервером и недоступности интерфейса администратора."
  ],
  "Switching on <b>$0</b> will break the connection to the server, and will make the administration UI unavailable.": [
   null,
-  "Включение <b>$0</b> будет разорвать соединение с сервером и сделает пользовательский интерфейс администрирования недоступным."
+  "Включение <b>$0</b> приведёт к разрыву соединения с сервером и недоступности интерфейса администратора."
  ],
  "TCP": [
   null,

@@ -42,8 +42,6 @@ gboolean cockpit_webserver_want_certificate = FALSE;
 guint cockpit_webserver_request_timeout = 30;
 gsize cockpit_webserver_request_maximum = 4096;
 
-typedef struct _CockpitWebServerClass CockpitWebServerClass;
-
 struct _CockpitWebServer {
   GObject parent_instance;
 
@@ -61,23 +59,6 @@ struct _CockpitWebServer {
   GSocketService *socket_service;
   GMainContext *main_context;
   GHashTable *requests;
-};
-
-struct _CockpitWebServerClass {
-  GObjectClass parent_class;
-
-  gboolean (* handle_stream)   (CockpitWebServer *server,
-                                const gchar *original_path,
-                                const gchar *path,
-                                const gchar *method,
-                                GIOStream *io_stream,
-                                GHashTable *headers,
-                                GByteArray *input);
-
-  gboolean (* handle_resource) (CockpitWebServer *server,
-                                const gchar *path,
-                                GHashTable *headers,
-                                CockpitWebResponse *response);
 };
 
 enum
@@ -300,6 +281,16 @@ on_web_response_done (CockpitWebResponse *response,
 }
 
 static gboolean
+cockpit_web_server_default_handle_resource (CockpitWebServer *self,
+                                            const gchar *path,
+                                            GHashTable *headers,
+                                            CockpitWebResponse *response)
+{
+  cockpit_web_response_error (response, 404, NULL, NULL);
+  return TRUE;
+}
+
+static gboolean
 cockpit_web_server_default_handle_stream (CockpitWebServer *self,
                                           const gchar *original_path,
                                           const gchar *path,
@@ -373,29 +364,19 @@ cockpit_web_server_default_handle_stream (CockpitWebServer *self,
                  response,
                  &claimed);
 
-  /* TODO: Here is where we would plug keep-alive into respnse */
+  if (!claimed)
+    claimed = cockpit_web_server_default_handle_resource (self, path, headers, response);
+
+  /* TODO: Here is where we would plug keep-alive into response */
   g_object_unref (response);
 
   return claimed;
-}
-
-static gboolean
-cockpit_web_server_default_handle_resource (CockpitWebServer *self,
-                                            const gchar *path,
-                                            GHashTable *headers,
-                                            CockpitWebResponse *response)
-{
-  cockpit_web_response_error (response, 404, NULL, NULL);
-  return TRUE;
 }
 
 static void
 cockpit_web_server_class_init (CockpitWebServerClass *klass)
 {
   GObjectClass *gobject_class;
-
-  klass->handle_stream = cockpit_web_server_default_handle_stream;
-  klass->handle_resource = cockpit_web_server_default_handle_resource;
 
   gobject_class = G_OBJECT_CLASS (klass);
   gobject_class->dispose = cockpit_web_server_dispose;
@@ -454,7 +435,7 @@ cockpit_web_server_class_init (CockpitWebServerClass *klass)
   sig_handle_stream = g_signal_new ("handle-stream",
                                     G_OBJECT_CLASS_TYPE (klass),
                                     G_SIGNAL_RUN_LAST,
-                                    G_STRUCT_OFFSET (CockpitWebServerClass, handle_stream),
+                                    0, /* class offset */
                                     g_signal_accumulator_true_handled,
                                     NULL, /* accu_data */
                                     g_cclosure_marshal_generic,
@@ -470,7 +451,7 @@ cockpit_web_server_class_init (CockpitWebServerClass *klass)
   sig_handle_resource = g_signal_new ("handle-resource",
                                       G_OBJECT_CLASS_TYPE (klass),
                                       G_SIGNAL_RUN_LAST | G_SIGNAL_DETAILED,
-                                      G_STRUCT_OFFSET (CockpitWebServerClass, handle_resource),
+                                      0, /* class offset */
                                       g_signal_accumulator_true_handled,
                                       NULL, /* accu_data */
                                       g_cclosure_marshal_generic,
@@ -869,6 +850,10 @@ process_request (CockpitRequest *request,
                  headers,
                  request->buffer,
                  &claimed);
+
+  if (!claimed)
+    claimed = cockpit_web_server_default_handle_stream (request->web_server, path, actual_path, method,
+                                                        request->io, headers, request->buffer);
 
   if (!claimed)
     g_critical ("no handler responded to request: %s", actual_path);

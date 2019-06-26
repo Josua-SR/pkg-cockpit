@@ -13,47 +13,6 @@
         loaded = true;
     }
 
-    function transformAngular(data, prev) {
-        var key, context, parts, value, result = { };
-        for (key in data) {
-            if (key === "")
-                continue;
-            parts = key.split("\u0004");
-            value = data[key];
-            if (parts[1]) {
-                context = parts[0];
-                key = parts[1];
-            } else {
-                context = "$$noContext";
-                key = parts[0];
-            }
-            if (value[0] === null)
-                value = value[1];
-            else
-                value = value.slice(1);
-            if (!(key in result))
-                result[key] = { };
-            result[key][context] = value;
-        }
-        return angular.extend(prev, result);
-    }
-
-    /* Load into angular here */
-    if (typeof angular === 'object') {
-        try {
-            module = angular.module(["gettext"]);
-        } catch(ex) { console.log(ex); /* Either no angular or angular-gettext */ };
-        if (module) {
-            loaded = true;
-            module.run(['gettextCatalog', function(gettextCatalog) {
-                var lang = data[""]["language"];
-                var prev = (gettextCatalog.getCurrentLanguage() == lang) ? gettextCatalog.strings : { };
-                gettextCatalog.setStrings(lang, transformAngular(data, prev));
-                gettextCatalog.setCurrentLanguage(lang);
-            }]);
-        }
-    }
-
     if (!loaded)
         root.po = data;
 
@@ -369,7 +328,7 @@ return plural;
  ],
  "CPU Security Toggles": [
   null,
-  ""
+  "CPU 보안 전환 "
  ],
  "Cached": [
   null,
@@ -381,7 +340,7 @@ return plural;
  ],
  "Cannot schedule event in the past": [
   null,
-  ""
+  "이전 이벤트를 예약할 수 없습니다. "
  ],
  "Change": [
   null,
@@ -409,7 +368,7 @@ return plural;
  ],
  "Clear All Filters": [
   null,
-  ""
+  "모든 필터 지우기"
  ],
  "Click to see system hardware information": [
   null,
@@ -425,11 +384,11 @@ return plural;
  ],
  "Compact PCI": [
   null,
-  ""
+  "PCI 압축 "
  ],
  "Condition $0=$1 was not met": [
   null,
-  ""
+  "조건 $0=$1이 충족되지 않았습니다. "
  ],
  "Condition failed": [
   null,
@@ -469,7 +428,7 @@ return plural;
  ],
  "Ctrl+Insert": [
   null,
-  ""
+  "Ctrl+Insert"
  ],
  "Current boot": [
   null,
@@ -485,7 +444,7 @@ return plural;
  ],
  "Delay": [
   null,
-  ""
+  "지연 "
  ],
  "Description": [
   null,
@@ -533,7 +492,7 @@ return plural;
  ],
  "Downloading $0": [
   null,
-  ""
+  "$0 다운로드 중 "
  ],
  "Embedded PC": [
   null,
@@ -673,7 +632,7 @@ return plural;
  ],
  "Invalid time zone": [
   null,
-  ""
+  "잘못된 시간대 "
  ],
  "IoT Gateway": [
   null,
@@ -685,15 +644,15 @@ return plural;
  ],
  "Journal": [
   null,
-  ""
+  "저널 "
  ],
  "Journal entry": [
   null,
-  ""
+  "저널 엔트리 "
  ],
  "Journal entry not found": [
   null,
-  ""
+  "저널 엔트리를 찾을 수 없습니다 "
  ],
  "Kernel": [
   null,
@@ -729,7 +688,7 @@ return plural;
  ],
  "Log messages": [
   null,
-  ""
+  "로그 메세지 "
  ],
  "Logs": [
   null,
@@ -745,7 +704,7 @@ return plural;
  ],
  "Machine ID": [
   null,
-  ""
+  "장치 ID"
  ],
  "Machine SSH Key Fingerprints": [
   null,
@@ -773,7 +732,7 @@ return plural;
  ],
  "Memory & Swap": [
   null,
-  ""
+  "메모리 & 스왑 "
  ],
  "Message to logged in users": [
   null,
@@ -837,7 +796,7 @@ return plural;
  ],
  "No Delay": [
   null,
-  ""
+  "지연없음 "
  ],
  "No Matching Results": [
   null,
@@ -1297,7 +1256,7 @@ return plural;
  ],
  "This field cannot be empty.": [
   null,
-  ""
+  "이 필드를 비워둘 수 없습니다."
  ],
  "This unit is an instance of the $0 template.": [
   null,
@@ -1321,7 +1280,7 @@ return plural;
  ],
  "Total size: $0": [
   null,
-  ""
+  "전체 크기: $0"
  ],
  "Tower": [
   null,
@@ -1413,11 +1372,11 @@ return plural;
  ],
  "[binary data]": [
   null,
-  ""
+  "[바이너리 데이터]"
  ],
  "[no data]": [
   null,
-  ""
+  "[데이터 없음]"
  ],
  "failed to list ssh host keys: $0": [
   null,
@@ -1425,7 +1384,7 @@ return plural;
  ],
  "of $0 CPU core": [
   "of $0 CPU cores",
-  ""
+  "$0 CPU 코어 "
  ],
  "undefined": [
   null,

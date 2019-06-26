@@ -91,16 +91,12 @@ struct _CockpitWebResponse {
   GList *filters;
 };
 
-typedef struct {
-  GObjectClass parent;
-} CockpitWebResponseClass;
-
 /* A megabyte is when we start to consider queue full enough */
 #define QUEUE_PRESSURE 1024UL * 1024UL
 
 static guint signal__done;
 
-static void      cockpit_web_response_flow_iface_init      (CockpitFlowIface *iface);
+static void      cockpit_web_response_flow_iface_init      (CockpitFlowInterface *iface);
 
 G_DEFINE_TYPE_WITH_CODE (CockpitWebResponse, cockpit_web_response, G_TYPE_OBJECT,
                          G_IMPLEMENT_INTERFACE (COCKPIT_TYPE_FLOW, cockpit_web_response_flow_iface_init));
@@ -1939,7 +1935,7 @@ cockpit_web_response_get_protocol (CockpitWebResponse *self,
 }
 
 static void
-cockpit_web_response_flow_iface_init (CockpitFlowIface *iface)
+cockpit_web_response_flow_iface_init (CockpitFlowInterface *iface)
 {
   /* No implementation */
 }

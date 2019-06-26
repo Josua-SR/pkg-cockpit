@@ -290,8 +290,7 @@ LIBVIRT_PROVIDER = {
     GET_STORAGE_VOLUMES({ connectionName, poolName }) {
         logDebug(`${this.name}.GET_STORAGE_VOLUMES(connectionName='${connectionName}', poolName='${poolName}')`);
         const connection = VMS_CONFIG.Virsh.connections[connectionName].params.join(' ');
-        // Caution: output of virsh v1.3.1 (ubuntu-1604) and v3.7.0 differs, the 'grep' unifies it
-        const command = `virsh ${connection} -q pool-refresh ${poolName} && virsh ${connection} -q -r vol-list ${poolName} --details | (grep file || true)`;
+        const command = `virsh ${connection} -q pool-refresh ${poolName} && virsh ${connection} -q -r vol-list ${poolName} --details`;
         let data = '';
         return dispatch => cockpit
                 .script(command, null, { err: "message", environ: ['LC_ALL=en_US.UTF-8'] })
@@ -309,7 +308,8 @@ LIBVIRT_PROVIDER = {
         logDebug(`${this.name}.CREATE_AND_ATTACH_VOLUME("`, connectionName, '", "', poolName, '", "', volumeName, '", "', size, '", "', format, '", "', target, '", "', vmName, '"');
         const connection = VMS_CONFIG.Virsh.connections[connectionName].params.join(' ');
         // Workaround: The "grep" part of the command bellow is a workaround for old version of virsh (1.3.1 , ubuntu-1604), since the "virsh -q vol-create-as" produces extra line there
-        const command = `(virsh ${connection} -q vol-create-as ${poolName} ${volumeName} --capacity ${size}M --format ${format} && virsh ${connection} -q vol-path ${volumeName} --pool ${poolName}) | grep -v 'Vol ${volumeName} created'`;
+        const formatArg = format ? `--format ${format}` : '';
+        const command = `(virsh ${connection} -q vol-create-as ${poolName} ${volumeName} --capacity ${size}M ${formatArg} && virsh ${connection} -q vol-path ${volumeName} --pool ${poolName}) | grep -v 'Vol ${volumeName} created'`;
         logDebug('CREATE_AND_ATTACH_VOLUME command: ', command);
         return dispatch => cockpit.script(command, null, { err: "message", environ: ['LC_ALL=en_US.UTF-8'] })
                 .then(() => {
@@ -559,7 +559,7 @@ function parseStorageVolumes(dispatch, connectionName, poolName, volumes) {
                 .filter(volume => !!volume) // non-empty lines
                 .map(volume => {
                     const fields = volume.split(/\s\s+/); // two spaces at least; lowers chance for bug with spaces in the volume name
-                    if (fields.length < 3 || fields[2] !== 'file') {
+                    if (fields.length < 3 || fields[2] === 'dir') {
                         // skip 'dir' type; use just flatten dir-pool structure
                         return null;
                     }

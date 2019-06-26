@@ -13,47 +13,6 @@
         loaded = true;
     }
 
-    function transformAngular(data, prev) {
-        var key, context, parts, value, result = { };
-        for (key in data) {
-            if (key === "")
-                continue;
-            parts = key.split("\u0004");
-            value = data[key];
-            if (parts[1]) {
-                context = parts[0];
-                key = parts[1];
-            } else {
-                context = "$$noContext";
-                key = parts[0];
-            }
-            if (value[0] === null)
-                value = value[1];
-            else
-                value = value.slice(1);
-            if (!(key in result))
-                result[key] = { };
-            result[key][context] = value;
-        }
-        return angular.extend(prev, result);
-    }
-
-    /* Load into angular here */
-    if (typeof angular === 'object') {
-        try {
-            module = angular.module(["gettext"]);
-        } catch(ex) { console.log(ex); /* Either no angular or angular-gettext */ };
-        if (module) {
-            loaded = true;
-            module.run(['gettextCatalog', function(gettextCatalog) {
-                var lang = data[""]["language"];
-                var prev = (gettextCatalog.getCurrentLanguage() == lang) ? gettextCatalog.strings : { };
-                gettextCatalog.setStrings(lang, transformAngular(data, prev));
-                gettextCatalog.setCurrentLanguage(lang);
-            }]);
-        }
-    }
-
     if (!loaded)
         root.po = data;
 
@@ -85,11 +44,11 @@ return plural;
  ],
  "After leaving the domain, only users with local credentials will be able to log into this machine. This may also affect other services as DNS resolution settings and the list of trusted CAs may change.": [
   null,
-  ""
+  "После выхода из домена только пользователи с локальными учётными данными смогут выполнить вход в эту систему. Это также может повлиять и на другие службы, поскольку параметры разрешения DNS и список доверенных центров сертификации могут измениться."
  ],
  "Authentication": [
   null,
-  "Проверка доступа"
+  "Проверка подлинности"
  ],
  "Automatic": [
   null,
@@ -105,7 +64,7 @@ return plural;
  ],
  "Client Software": [
   null,
-  ""
+  "Клиентское программное обеспечение"
  ],
  "Computer OU": [
   null,
@@ -113,7 +72,7 @@ return plural;
  ],
  "Contacted domain": [
   null,
-  ""
+  "Связь с доменом установлена"
  ],
  "Domain": [
   null,
@@ -121,7 +80,7 @@ return plural;
  ],
  "Domain $0 could not be contacted": [
   null,
-  "Домен $0 не удалось связаться"
+  "Не удалось установить связь с доменом $0"
  ],
  "Domain $0 is not supported": [
   null,
@@ -141,11 +100,11 @@ return plural;
  ],
  "Downloading $0": [
   null,
-  "загрузка $0"
+  "Загрузка $0"
  ],
  "Host name should not be changed in a domain": [
   null,
-  ""
+  "Имя узла не должно изменяться в домене"
  ],
  "Install": [
   null,

@@ -13,47 +13,6 @@
         loaded = true;
     }
 
-    function transformAngular(data, prev) {
-        var key, context, parts, value, result = { };
-        for (key in data) {
-            if (key === "")
-                continue;
-            parts = key.split("\u0004");
-            value = data[key];
-            if (parts[1]) {
-                context = parts[0];
-                key = parts[1];
-            } else {
-                context = "$$noContext";
-                key = parts[0];
-            }
-            if (value[0] === null)
-                value = value[1];
-            else
-                value = value.slice(1);
-            if (!(key in result))
-                result[key] = { };
-            result[key][context] = value;
-        }
-        return angular.extend(prev, result);
-    }
-
-    /* Load into angular here */
-    if (typeof angular === 'object') {
-        try {
-            module = angular.module(["gettext"]);
-        } catch(ex) { console.log(ex); /* Either no angular or angular-gettext */ };
-        if (module) {
-            loaded = true;
-            module.run(['gettextCatalog', function(gettextCatalog) {
-                var lang = data[""]["language"];
-                var prev = (gettextCatalog.getCurrentLanguage() == lang) ? gettextCatalog.strings : { };
-                gettextCatalog.setStrings(lang, transformAngular(data, prev));
-                gettextCatalog.setCurrentLanguage(lang);
-            }]);
-        }
-    }
-
     if (!loaded)
         root.po = data;
 
@@ -303,6 +262,10 @@ return plural;
   null,
   "Existující obraz disku na souborovém systému hostitele"
  ],
+ "Failed to fetch the IP addresses of the interfaces present in $0": [
+  null,
+  "Nepodařilo se zjistit IP adresy rozhraní nacházející se v $0"
+ ],
  "Fewer than the maximum number of virtual CPUs should be enabled.": [
   null,
   "Mělo by být zapnuto méně než maximální počet virtuálních procesorů."
@@ -366,6 +329,10 @@ return plural;
  "Host should not be empty": [
   null,
   "Hostitele je třeba vyplnit"
+ ],
+ "IP Address": [
+  null,
+  "IP adresa"
  ],
  "IPv4 Address": [
   null,
@@ -622,6 +589,10 @@ return plural;
  "Operating System": [
   null,
   "Operační systém"
+ ],
+ "Operation is in progress": [
+  null,
+  ""
  ],
  "Overview": [
   null,
@@ -971,9 +942,17 @@ return plural;
   null,
   "Jednotka"
  ],
+ "Unknown": [
+  null,
+  "Neznámé"
+ ],
  "Unplug": [
   null,
   "Odpojit"
+ ],
+ "Up to $0 $1 available in the default location": [
+  null,
+  ""
  ],
  "Up to $0 $1 available on the host": [
   null,

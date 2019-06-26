@@ -80,22 +80,6 @@ License: CC0-1.0
  On Debian systems, the complete text of the Creative Commons Zero v1.0
  Universal Public License is in "/usr/share/common-licenses/LGPL-2.1".
 
-Files: node_modules/angular/*
-Copyright: Copyright (c) 2010-2015 Google, Inc. http://angularjs.org
-License: MIT
-
-Files: node_modules/angular-bootstrap-npm/*
-Copyright: Copyright (c) 2014 Neohapsis Inc.
-License: MIT
-
-Files: node_modules/angular-gettext/*
-Copyright: Copyright (C) 2013-2017 by Ruben Vermeersch <ruben@rocketeer.be>
-License: MIT
-
-Files: node_modules/angular-route/*
-Copyright: Copyright (c) 2010-2015 Google, Inc. http://angularjs.org
-License: MIT
-
 Files: node_modules/bootstrap/*
 Copyright: Copyright (c) 2011-2019 Twitter, Inc.
 License: MIT
@@ -125,20 +109,6 @@ Files: node_modules/json-stable-stringify-without-jsonify/*
 Copyright: James Halliday
 License: MIT
 
-Files: node_modules/kubernetes-container-terminal/*
-Copyright: Copyright (C) 1991, 1999 Free Software Foundation, Inc.
- Copyright (C) 2015 Red Hat, Inc.
-License: LGPL-2.1
-
-Files: node_modules/kubernetes-object-describer/*
-Copyright: Jessica Forrester
-License: Apache-2.0
-
-Files: node_modules/kubernetes-topology-graph/*
-Copyright: Copyright (C) 1991, 1999 Free Software Foundation, Inc.
- Copyright (C) 2015 Red Hat, Inc.
-License: LGPL-2.1
-
 Files: node_modules/moment/*
 Copyright: Copyright (c) JS Foundation and other contributors
 License: MIT
@@ -148,10 +118,6 @@ Copyright: Copyright (c) 2009 Chris Wanstrath (Ruby)
  Copyright (c) 2010-2014 Jan Lehnardt (JavaScript)
  Copyright (c) 2010-2015 The mustache.js community
 License: MIT
-
-Files: node_modules/object-describer/*
-Copyright: Jessica Forrester
-License: Apache-2.0
 
 Files: node_modules/patternfly/*
 Copyright: Modifications to Bootstrap are copyright 2013 Red Hat, Inc.
@@ -163,10 +129,6 @@ License: Apache-2.0
 
 Files: node_modules/patternfly-react/*
 Copyright: Copyright (c) 2019 Red Hat, Inc.
-License: MIT
-
-Files: node_modules/promise/*
-Copyright: Copyright (c) 2014 Forbes Lindesay
 License: MIT
 
 Files: node_modules/prop-types/*
@@ -206,17 +168,6 @@ License: MIT
 
 Files: node_modules/redux-thunk/*
 Copyright: Copyright (c) 2015-present Dan Abramov
-License: MIT
-
-Files: node_modules/registry-image-widgets/*
-Copyright: Copyright (C) 1991, 1999 Free Software Foundation, Inc.
- Copyright (C) 2016 Red Hat, Inc.
-License: LGPL-2.1
-
-Files: node_modules/term.js-cockpit/*
-Copyright: Copyright (c) 2011 Fabrice Bellard
- Copyright (c) 2012-2013, Christopher Jeffrey (MIT License)
- Copyright (c) 2012-2013, Christopher Jeffrey (https://github.com/chjj/)
 License: MIT
 
 Files: node_modules/throttle-debounce/*

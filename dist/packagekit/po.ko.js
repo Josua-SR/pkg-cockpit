@@ -13,47 +13,6 @@
         loaded = true;
     }
 
-    function transformAngular(data, prev) {
-        var key, context, parts, value, result = { };
-        for (key in data) {
-            if (key === "")
-                continue;
-            parts = key.split("\u0004");
-            value = data[key];
-            if (parts[1]) {
-                context = parts[0];
-                key = parts[1];
-            } else {
-                context = "$$noContext";
-                key = parts[0];
-            }
-            if (value[0] === null)
-                value = value[1];
-            else
-                value = value.slice(1);
-            if (!(key in result))
-                result[key] = { };
-            result[key][context] = value;
-        }
-        return angular.extend(prev, result);
-    }
-
-    /* Load into angular here */
-    if (typeof angular === 'object') {
-        try {
-            module = angular.module(["gettext"]);
-        } catch(ex) { console.log(ex); /* Either no angular or angular-gettext */ };
-        if (module) {
-            loaded = true;
-            module.run(['gettextCatalog', function(gettextCatalog) {
-                var lang = data[""]["language"];
-                var prev = (gettextCatalog.getCurrentLanguage() == lang) ? gettextCatalog.strings : { };
-                gettextCatalog.setStrings(lang, transformAngular(data, prev));
-                gettextCatalog.setCurrentLanguage(lang);
-            }]);
-        }
-    }
-
     if (!loaded)
         root.po = data;
 
@@ -145,11 +104,11 @@ return plural;
  ],
  "Downloading": [
   null,
-  ""
+  "다운로드 중 "
  ],
  "Downloading $0": [
   null,
-  ""
+  "$0 다운로드 중 "
  ],
  "Errata:": [
   null,
@@ -165,7 +124,7 @@ return plural;
  ],
  "Initializing...": [
   null,
-  ""
+  "초기화 중 "
  ],
  "Install": [
   null,
@@ -305,15 +264,15 @@ return plural;
  ],
  "This system is not registered": [
   null,
-  ""
+  "이 시스템은 등록되어 있지 않습니다 "
  ],
  "This web console will be updated.": [
   null,
-  ""
+  "이 웹 콘솔은 업데이트됩니다."
  ],
  "Thursdays": [
   null,
-  ""
+  "목요일 "
  ],
  "To get software updates, this system needs to be registered with Red Hat, either using the Red Hat Customer Portal or a local subscription server.": [
   null,
@@ -321,11 +280,11 @@ return plural;
  ],
  "Total size: $0": [
   null,
-  ""
+  "전체 크기: $0"
  ],
  "Tuesdays": [
   null,
-  ""
+  "화요일 "
  ],
  "Update History": [
   null,
@@ -365,7 +324,7 @@ return plural;
  ],
  "Wednesdays": [
   null,
-  ""
+  "수요일 "
  ],
  "Your browser will disconnect, but this does not affect the update process. You can reconnect in a few moments to continue watching the progress.": [
   null,
